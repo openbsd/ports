@@ -5,3 +5,6 @@ Open Source. FreeMat includes several novel features such as a codeless
 interface to external C/C++/FORTRAN code, parallel/distributed
 algorithm development (via MPI), and plotting and visualization
 capabilities.
+
+Multi-platform regression test suite is shipped with this version.
+Use run_tests command to verify the functionality of your installation.

@@ -1,19 +1,19 @@
-$OpenBSD: patch-libs_libXP_QTTerm_cpp,v 1.1 2007/03/24 14:14:50 martynas Exp $
---- libs/libXP/QTTerm.cpp.orig	Thu Dec 28 16:02:27 2006
-+++ libs/libXP/QTTerm.cpp	Sat Mar 24 15:46:48 2007
-@@ -207,11 +207,11 @@ void QTTerm::PaintRectangle(QPainter *paint, QRect rec
+$OpenBSD: patch-libs_libXP_QTTerm_cpp,v 1.2 2007/04/20 19:11:51 martynas Exp $
+--- libs/libXP/QTTerm.cpp.orig	Mon Feb  5 01:19:52 2007
++++ libs/libXP/QTTerm.cpp	Mon Apr 16 11:05:47 2007
+@@ -213,11 +213,11 @@ void QTTerm::PaintRectangle(QPainter *paint, QRect rec
    paint->eraseRect(rect);
    int col_start, col_stop;
    int row_start, row_stop;
--  col_start = (int)floor(rect.left()/m_char_w);
--  col_stop = (int)ceil(rect.right()/m_char_w);
-+  col_start = (int)floor((double)rect.left()/m_char_w);
-+  col_stop = (int)ceil((double)rect.right()/m_char_w);
+-  col_start = (int)floor(rect.left()/((float)m_char_w));
+-  col_stop = (int)ceil(rect.right()/((float)m_char_w));
++  col_start = (int)floor(rect.left()/((double)m_char_w));
++  col_stop = (int)ceil(rect.right()/((double)m_char_w));
    col_stop = qMin(col_stop,m_width-1);
--  row_start = (int)ceil(rect.top()/m_char_h);
--  row_stop = (int)floor(rect.bottom()/m_char_h);
-+  row_start = (int)ceil((double)rect.top()/m_char_h);
-+  row_stop = (int)floor((double)rect.bottom()/m_char_h);
+-  row_start = (int)ceil(rect.top()/((float)m_char_h));
+-  row_stop = (int)floor(rect.bottom()/((float)m_char_h));
++  row_start = (int)ceil(rect.top()/((double)m_char_h));
++  row_stop = (int)floor(rect.bottom()/((double)m_char_h));
    row_stop = qMin(row_stop,m_height-1);
  
  
