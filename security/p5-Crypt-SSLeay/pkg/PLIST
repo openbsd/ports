@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:36:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/04/21 20:19:33 martynas Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/SSLeay/
@@ -16,3 +16,4 @@ ${P5ARCH}/auto/Crypt/SSLeay/
 ${P5ARCH}/auto/Crypt/SSLeay/SSLeay.bs
 ${P5ARCH}/auto/Crypt/SSLeay/SSLeay.so
 @man man/man3p/Crypt::SSLeay.3p
+@man man/man3p/Net::SSL.3p

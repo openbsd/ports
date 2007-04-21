@@ -1,20 +1,16 @@
---- Makefile.PL.orig	2003-04-22 07:38:06.000000000 +0200
-+++ Makefile.PL	2004-05-16 11:38:18.000000000 +0200
-@@ -13,7 +13,7 @@ my $currdir = dirname($0) || '.';
- chdir($currdir) || die("can't change to $currdir: $!");
- 
- # FIND POSSIBLE SSL INSTALLATIONS
--my @POSSIBLE_SSL_DIRS = qw(/usr/local/openssl /usr/local/ssl /local/ssl /opt/ssl /usr/local /local /usr);
-+my @POSSIBLE_SSL_DIRS = qw(/usr);
- if($^O eq 'MSWin32') {
-     unshift(@POSSIBLE_SSL_DIRS, 'c:/openssl');
+$OpenBSD: patch-Makefile_PL,v 1.5 2007/04/21 20:19:33 martynas Exp $
+--- Makefile.PL.orig	Wed Mar 28 20:45:44 2007
++++ Makefile.PL	Sat Apr 21 23:07:47 2007
+@@ -40,12 +40,6 @@ elsif ($^O eq 'VMS') {
+ else {
+     # Unix and the rest
+     @POSSIBLE_SSL_DIRS = qw(
+-        /usr/local/openssl
+-        /usr/local/ssl
+-        /local/ssl
+-        /opt/ssl
+-        /usr/local
+-        /local
+         /usr
+     );
  }
-@@ -51,7 +51,7 @@ if($opt_default && (@CANDIDATE == 1) && 
- 	unless($CANDIDATE[0][0]) {
- 	    print "No OpenSSL installation found, usually in $POSSIBLE_SSL_DIRS[0]\n";
- 	}
--	$SSL_DIR = prompt "Which OpenSSL build path do you want to link against?", $CANDIDATE[0][0];
-+	$SSL_DIR = $CANDIDATE[0][0];
-     }
- }
- 
