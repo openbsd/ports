@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/04/21 07:45:50 aanriot Exp $
+--- configure.orig	Fri Apr 20 18:55:12 2007
++++ configure	Fri Apr 20 18:55:19 2007
+@@ -6350,7 +6350,7 @@ fi
+ 
+ UFRAW_CFLAGS="-ffast-math -fomit-frame-pointer"
+ if test "x$GCC" = "xyes"; then
+-    UFRAW_CFLAGS="$UFRAW_CFLAGS -W -Wall -O3"
++    UFRAW_CFLAGS="$UFRAW_CFLAGS $CFLAGS"
+ fi
+ 
+ # windows will require some special attention
