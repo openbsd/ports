@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/02/26 15:15:38 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/04/21 07:37:42 steven Exp $
 
 COMMENT=	"get information from Excel spreadsheets"
 
 MODULES=	cpan
-DISTNAME=	Spreadsheet-ParseExcel-0.28
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Spreadsheet-ParseExcel-0.30
 CATEGORIES=	misc
 
 # Perl
