@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/04/01 20:55:29 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/04/22 20:47:09 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"jabber client written in pygtk"
 DISTNAME=	gajim-0.11.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net x11
 MASTER_SITES=	${HOMEPAGE}downloads/
@@ -37,12 +37,13 @@ LIB_DEPENDS=	gtkspell::textproc/gtkspell \
 RUN_DEPENDS=	:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat \
 		::net/py-dns \
 		::databases/py-sqlite2 \
-		::x11/py-gtk2
+		::x11/py-gtk2 \
+		:dbus-python-*:x11/dbus-python
 WANTLIB=	X11 Xext Xss Xrender fontconfig freetype m z \
 		aspell atk-1.0.>=1011.0 cairo gdk-x11-2.0.>=600.0 \
 		gdk_pixbuf-2.0.>=600.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 gtk-x11-2.0.>=600.0 pango-1.0.>=800.0 \
-		pangocairo-1.0 pangoft2-1.0 png glitz
+		pangocairo-1.0 pangoft2-1.0 png glitz Xau Xdmcp expat
 
 MAKE_ENV+=	PY_CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/python${PYTHON_VER}" \
 		PY_PREFIX=${LOCALBASE} \
