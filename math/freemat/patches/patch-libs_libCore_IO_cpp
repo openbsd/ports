@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_libCore_IO_cpp,v 1.3 2007/04/22 14:43:41 martynas Exp $
+--- libs/libCore/IO.cpp.orig	Fri Apr 13 23:07:45 2007
++++ libs/libCore/IO.cpp	Mon Apr 16 11:06:00 2007
+@@ -509,7 +509,7 @@ ArrayVector FreadFunction(int nargout, const ArrayVect
+     fseek(fptr->fp,0L,SEEK_END);
+     fsize = ftell(fptr->fp) - fcpos;
+     fseek(fptr->fp,fcpos,SEEK_SET);
+-    dp[infiniteDim] = ceil((float)(fsize/elementSize/elementCount));
++    dp[infiniteDim] = ceil((double)(fsize/elementSize/elementCount));
+     elementCount *= (int) dp[infiniteDim];
+   }
+   // Next, we allocate space for the result

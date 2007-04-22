@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/04/20 19:11:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2007/04/22 14:43:41 martynas Exp $
 
 COMMENT=	"environment for rapid engineering and scientific processing"
 
-V=		3.1
+V=		3.2
 DISTNAME=	FreeMat-${V}
 PKGNAME=	freemat-${V}
 
@@ -43,7 +43,6 @@ CONFIGURE_ENV=	F77=${FC} \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/amd -I${LOCALBASE}/include/umfpack -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4"
-MAKE_FLAGS=	resourcedir="${LOCALBASE}/share/FreeMat-${V}"
 
 SUBST_VARS=	V
 
