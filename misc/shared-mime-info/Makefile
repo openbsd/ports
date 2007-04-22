@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/04/22 20:41:13 jasper Exp $
 
-COMMENT=		"Shared mime database for desktops"
+COMMENT=		"shared mime database for desktops"
 
-VERSION=		0.15
+VERSION=		0.21
 DISTNAME=		shared-mime-info-${VERSION}
-PKGNAME=		${DISTNAME}p1
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
@@ -16,9 +15,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c iconv intl m z
+WANTLIB=		c m z
 
-MASTER_SITES=		http://www.freedesktop.org/software/shared-mime-info/
+MASTER_SITES=		http://freedesktop.org/~hadess/
+EXTRACT_SUFX=		.tar.bz2
+
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		glib-2.0::devel/glib2 \

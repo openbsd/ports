@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.4 2007/04/22 20:41:13 jasper Exp $
+--- Makefile.in.orig	Wed Apr 18 11:45:03 2007
++++ Makefile.in	Sun Apr 22 21:36:49 2007
+@@ -274,7 +274,7 @@ EXTRA_DIST = \
+ 
+ CLEANFILES = freedesktop.org.xml po/stamp-it
+ DISTCLEANFILES = intltool-extract intltool-merge intltool-update
+-pkgconfigdir = $(datadir)/pkgconfig
++pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = shared-mime-info.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
