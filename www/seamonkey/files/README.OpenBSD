@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2007/03/26 20:41:37 martynas Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2007/04/22 15:04:39 martynas Exp $
 
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
@@ -20,3 +20,10 @@ $
 
 Information on building Java (on some platforms) can be found in
 http://www.openbsd.org/faq/faq13.html#javaflash
+
+Internationalization
+
+This package contains internationalizations for all supported
+languages.  To configure Seamonkey for your language, go to
+Edit->Preferences->Appearance->Languages/Content and select your
+favorite Language/Content pack.

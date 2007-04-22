@@ -1,0 +1,28 @@
+#!/bin/sh
+# $OpenBSD: genchrome,v 1.1 2007/04/22 15:04:39 martynas Exp $
+# Generate installed-chrome.txt entries for SeaMonkey
+
+if [ $# -ne 2 ]; then
+	echo "usage: $0 [file] [language]"
+	exit 1
+fi
+
+xx=`echo "$2" | cut -d- -f1`
+YY=`echo "$2" | cut -d- -f2`
+
+# xx-YY.jar
+grep "registerChrome(.*[,(] *cf *,.*);" "$1" |
+	cut -d\" -f2 |
+	sed "s/^/locale,install,url,jar:resource:\/chrome\/$2.jar!\/locale\/$2\//"
+
+# YY.jar
+grep "registerChrome(.*[,(] *rf *,.*);" "$1" |
+	cut -d\" -f2 |
+	sed "s/^/locale,install,url,jar:resource:\/chrome\/$YY.jar!\/locale\/$YY\//"
+
+# xx-unix.jar
+grep "registerChrome(.*[,(] *pf *,.*);" "$1" |
+	cut -d\" -f2 |
+	sort |	# not 100% true, but hey, i've checked
+	uniq |	# and every install.js has same 3 entries.
+	sed "s/^/locale,install,url,jar:resource:\/chrome\/$xx-unix.jar!\/locale\/$2\//"

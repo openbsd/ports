@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/03/26 20:41:38 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2007/04/22 15:04:39 martynas Exp $
 %%SHARED%%
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -7,17 +7,40 @@ seamonkey/LICENSE
 seamonkey/README.OpenBSD
 seamonkey/TestGtkEmbed
 seamonkey/chrome/
+seamonkey/chrome/AD.jar
+seamonkey/chrome/AT.jar
+seamonkey/chrome/BY.jar
+seamonkey/chrome/CZ.jar
+seamonkey/chrome/FR.jar
+seamonkey/chrome/IL.jar
+seamonkey/chrome/IT.jar
+seamonkey/chrome/PL.jar
+seamonkey/chrome/RU.jar
 seamonkey/chrome/US.jar
+seamonkey/chrome/be-BY.jar
+seamonkey/chrome/be-unix.jar
+seamonkey/chrome/ca-AD.jar
+seamonkey/chrome/ca-unix.jar
 seamonkey/chrome/chatzilla.jar
 seamonkey/chrome/chromelist.txt
 seamonkey/chrome/classic.jar
 seamonkey/chrome/comm.jar
 seamonkey/chrome/content-packs.jar
+seamonkey/chrome/cs-CZ.jar
+seamonkey/chrome/cs-unix.jar
+seamonkey/chrome/de-AT.jar
+seamonkey/chrome/de-unix.jar
 seamonkey/chrome/embed-sample.jar
 seamonkey/chrome/en-US.jar
 seamonkey/chrome/en-mac.jar
 seamonkey/chrome/en-unix.jar
 seamonkey/chrome/en-win.jar
+seamonkey/chrome/es-ES.jar
+seamonkey/chrome/es-unix.jar
+seamonkey/chrome/fr-FR.jar
+seamonkey/chrome/fr-unix.jar
+seamonkey/chrome/he-IL.jar
+seamonkey/chrome/he-unix.jar
 seamonkey/chrome/help.jar
 seamonkey/chrome/icons/
 seamonkey/chrome/icons/default/
@@ -59,12 +82,18 @@ seamonkey/chrome/icons/default/winInspectorMain16.xpm
 seamonkey/chrome/inspector.jar
 seamonkey/chrome/inspector.manifest
 seamonkey/chrome/installed-chrome.txt
+seamonkey/chrome/it-IT.jar
+seamonkey/chrome/it-unix.jar
 seamonkey/chrome/messenger.jar
 seamonkey/chrome/modern.jar
 seamonkey/chrome/pipnss.jar
 seamonkey/chrome/pippki.jar
+seamonkey/chrome/pl-PL.jar
+seamonkey/chrome/pl-unix.jar
 seamonkey/chrome/reporter.jar
 seamonkey/chrome/reporter.manifest
+seamonkey/chrome/ru-RU.jar
+seamonkey/chrome/ru-unix.jar
 seamonkey/chrome/sroaming.jar
 seamonkey/chrome/toolkit.jar
 seamonkey/chrome/venkman.jar
@@ -301,6 +330,7 @@ seamonkey/init.d/README
 seamonkey/mozilla-xremote-client
 seamonkey/nsinstall
 seamonkey/plugins/
+seamonkey/regchrome
 seamonkey/regxpcom
 seamonkey/res/
 seamonkey/res/EditorOverride.css
@@ -490,7 +520,11 @@ seamonkey/searchplugins/jeeves.gif
 seamonkey/searchplugins/jeeves.src
 @cwd ${LOCALBASE}/seamonkey
 @exec rm -rf /tmp/.mozilla
+@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regchrome
 @exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regxpcom
 @exec rm -rf /tmp/.mozilla
+@unexec rm -f %D/chrome/chrome.rdf
+@unexec rm -f %D/chrome/overlays.rdf
+@unexec rm -f %D/chrome/stylesheets.rdf
 @unexec rm -f %D/components/compreg.dat
 @unexec rm -f %D/components/xpti.dat

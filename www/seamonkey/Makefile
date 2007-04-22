@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/04/07 17:41:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2007/04/22 15:04:39 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -9,8 +9,8 @@ COMMENT-devel=  "devel files for Gecko"
 VER=		1.1.1
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
-PKGNAME-main=	seamonkey-${VER}p0
-PKGNAME-devel=	seamonkey-devel-${VER}p0
+PKGNAME-main=	seamonkey-${VER}p1
+PKGNAME-devel=	seamonkey-devel-${VER}p1
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -46,17 +46,33 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
+MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/contrib-localized/
+
+LANGUAGES=	de-AT be-BY ca-AD cs-CZ es-ES fr-FR he-IL it-IT pl-PL ru-RU
+BINLANGS=	be-BY fr-FR pl-PL
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+.for i in ${LANGUAGES}
+DISTFILES+=	seamonkey-${VER}.$i.langpack.xpi:0
+.endfor
+
+EXTRACT_CASES += *.xpi) \
+	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR}/`basename $$archive .langpack.xpi | sed "s/.*-${VER}\.//"`;;
+
+DIST_SUBDIR=	seamonkey-${VER}
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=  :zip->=2.3:archivers/zip
+BUILD_DEPENDS=  :zip->=2.3:archivers/zip \
+		:unzip-*:archivers/unzip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 WANTLIB=	c glib-2.0 m pthread stdc++
 
 RUN_DEPENDS-main= :esound-*:audio/esound
-WANTLIB-main=	${WANTLIB} X11 Xext Xft Xinerama Xrender Xt atk-1.0 \
-		cairo fontconfig freetype glitz gmodule-2.0 gobject-2.0 \
+WANTLIB-main=	${WANTLIB} X11 Xau Xdmcp Xft Xinerama Xrender Xt atk-1.0 \
+		cairo expat fontconfig freetype glitz gmodule-2.0 gobject-2.0 \
 		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 png z
 
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
@@ -117,6 +133,13 @@ MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/seamonkey
 
 post-extract:
+.for i in ${BINLANGS}	# normalize
+	@mv -f ${WRKDIR}/$i/bin/* ${WRKDIR}/$i/
+	@rmdir ${WRKDIR}/$i/bin
+.endfor
+.for i in ${LANGUAGES}
+	@rm -f ${WRKDIR}/$i/chrome/*-{mac,win}.jar
+.endfor
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
@@ -146,13 +169,18 @@ do-install:
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/TestGtkEmbed \
 		${MOB}/mozilla-xremote-client ${MOB}/nsinstall \
-		${MOB}/regxpcom ${MOB}/seamonkey-bin ${MOB}/xpcshell \
-		${MOB}/xpicleanup ${MOB}/xpidl ${MOB}/xpt_dump \
-		${MOB}/xpt_link ${MOZ}
+		${MOB}/regchrome ${MOB}/regxpcom ${MOB}/seamonkey-bin \
+		${MOB}/xpcshell ${MOB}/xpicleanup ${MOB}/xpidl \
+		${MOB}/xpt_dump ${MOB}/xpt_link ${MOZ}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 	${INSTALL_MAN} ${WRKSRC}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
+.for i in ${LANGUAGES}
+	${INSTALL_DATA} ${WRKDIR}/$i/chrome/*.jar ${MOZ}/chrome/
+	sh ${FILESDIR}/genchrome ${WRKDIR}/$i/install.js $i \
+		>> ${MOZ}/chrome/installed-chrome.txt
+.endfor
 
 .include <bsd.port.mk>

@@ -1,0 +1,42 @@
+$OpenBSD: patch-extensions_content-packs_resources_content_pref-contentpacks_xul,v 1.1 2007/04/22 15:04:39 martynas Exp $
+--- extensions/content-packs/resources/content/pref-contentpacks.xul.orig	Sat Mar 11 02:03:19 2006
++++ extensions/content-packs/resources/content/pref-contentpacks.xul	Fri Apr 20 23:38:31 2007
+@@ -213,7 +213,8 @@
+       <rule chrome:localeVersion="&lang.version;">
+         <listitem uri="..." translation="true" nselected="false" 
+                   label="rdf:http://www.mozilla.org/rdf/chrome#displayName"
+-                  value="rdf:http://www.mozilla.org/rdf/chrome#name"/>
++                  value="rdf:http://www.mozilla.org/rdf/chrome#name" 
++                  style="height: 28px"/>
+       </rule>
+ 
+       <!-- This rule "falls through" to match obsolete language packs -->
+@@ -232,7 +233,8 @@
+         </bindings>
+         <action>
+           <listitem uri="?member" label="?label ?version &update.label;" value="?value"
+-                    translation="true" nselected="false" class="outofdate"/>
++                    translation="true" nselected="false" class="outofdate" 
++                    style="height: 28px"/>
+         </action>
+       </rule>
+     </template>
+@@ -273,14 +275,16 @@
+       <rule chrome:localeType="region" chrome:localeVersion="&content.version;">
+         <listitem uri="..." translation="true" nselected="false"
+                   label="rdf:http://www.mozilla.org/rdf/chrome#displayName"
+-                  value="rdf:http://www.mozilla.org/rdf/chrome#name"/>
++                  value="rdf:http://www.mozilla.org/rdf/chrome#name" 
++                  style="height: 28px"/>
+       </rule>
+ 
+       <!-- This rule "falls through" to match obsolete content packs -->
+       <rule chrome:localeType="region">
+         <listitem uri="..." translation="true" nselected="false" class="outofdate"
+                   label="rdf:http://www.mozilla.org/rdf/chrome#displayName &update.label;"
+-                  value="rdf:http://www.mozilla.org/rdf/chrome#name"/>
++                  value="rdf:http://www.mozilla.org/rdf/chrome#name"
++                  style="height: 28px"/>
+       </rule>
+     
+     </template>
