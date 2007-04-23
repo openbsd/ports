@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2004/11/12 21:46:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2007/04/23 15:38:04 steven Exp $
 bin/xslt-config
 bin/xsltproc
 include/libexslt/
@@ -37,13 +37,15 @@ lib/xsltConf.sh
 @man man/man1/xsltproc.1
 @man man/man3/libexslt.3
 @man man/man3/libxslt.3
-share/aclocal/
 share/aclocal/libxslt.m4
 share/doc/libxslt/
 share/doc/libxslt/html/
 share/doc/libxslt/html/API.html
 share/doc/libxslt/html/APIchunk0.html
 share/doc/libxslt/html/APIchunk1.html
+share/doc/libxslt/html/APIchunk10.html
+share/doc/libxslt/html/APIchunk11.html
+share/doc/libxslt/html/APIchunk12.html
 share/doc/libxslt/html/APIchunk2.html
 share/doc/libxslt/html/APIchunk3.html
 share/doc/libxslt/html/APIchunk4.html
