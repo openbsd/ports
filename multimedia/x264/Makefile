@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/23 10:20:48 ajacoutot Exp $
 
 COMMENT=	"free h264/avc encoder"
 
 V=		20070325
 DISTNAME=	x264-snapshot-${V}-2245
-PKGNAME=	x264-${V}
+PKGNAME=	x264-${V}p0
 SHARED_LIBS=	x264	0.0	# 5.0
 CATEGORIES=	multimedia
 
@@ -37,6 +37,7 @@ BUILD_DEPENDS+=	::devel/nasm
 .endif
 
 pre-configure:
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/configure
+	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g; s,!!X11BASE!!,${X11BASE},g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

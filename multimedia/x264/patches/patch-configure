@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
---- configure.orig	Sun Mar 25 22:45:02 2007
-+++ configure	Sat Apr  7 07:26:53 2007
+$OpenBSD: patch-configure,v 1.2 2007/04/23 10:20:48 ajacoutot Exp $
+--- configure.orig	Sun Mar 25 13:45:02 2007
++++ configure	Fri Apr 20 13:54:14 2007
 @@ -46,7 +46,7 @@ as_check() {
  
  rm -f config.h config.mak x264.pc
@@ -10,7 +10,17 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
  exec_prefix='${prefix}'
  bindir='${exec_prefix}/bin'
  libdir='${exec_prefix}/lib'
-@@ -375,14 +375,14 @@ if [ "$pic" = "yes" ] ; then
+@@ -334,6 +334,9 @@ if test "$pthread" = "auto" ; then
+                 CFLAGS="$CFLAGS -DPTW32_STATIC_LIB"
+             fi
+             ;;
++        OPENBSD)
++            cc_check pthread.h -pthread && pthread="yes" && libpthread="-pthread"
++            ;;
+         *)
+             cc_check pthread.h -lpthread && pthread="yes" && libpthread="-lpthread"
+             ;;
+@@ -375,14 +378,14 @@ if [ "$pic" = "yes" ] ; then
  fi
  
  if [ "$debug" != "yes" -a "$gprof" != "yes" ]; then
@@ -28,7 +38,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
  fi
  
  if cc_check "stdio.h" "" "fseeko(stdin,0,0);" ; then
-@@ -426,7 +426,6 @@ echo '' >> config.mak
+@@ -426,7 +429,6 @@ echo '' >> config.mak
  cp config.mak gtk/config.mak
  
  if [ "$shared" = "yes" ]; then
@@ -36,3 +46,12 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
      echo "SONAME=libx264.so.$API" >> config.mak
      echo 'default: $(SONAME)' >> config.mak
      if [ "$gtk" = "yes" ]; then
+@@ -441,7 +443,7 @@ fi
+ 
+ ./version.sh
+ 
+-pclibs="-L$libdir -lx264 $libpthread"
++pclibs="-L$libdir -lx264 -lm $libpthread"
+ 
+ cat > x264.pc << EOF
+ prefix=$prefix
