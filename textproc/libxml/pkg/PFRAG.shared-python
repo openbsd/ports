@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-python,v 1.1 2006/10/30 11:10:11 bernd Exp $
+@comment $OpenBSD: PFRAG.shared-python,v 1.2 2007/04/23 15:34:04 steven Exp $
 lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/drv_libxml2.py
@@ -11,6 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/libxml2mod.so
 share/examples/libxml2/
 share/examples/libxml2/attribs.py
 share/examples/libxml2/build.py
+share/examples/libxml2/compareNodes.py
 share/examples/libxml2/ctxterror.py
 share/examples/libxml2/cutnpaste.py
 share/examples/libxml2/dtdvalid.py
