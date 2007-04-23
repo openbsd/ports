@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/09/06 04:06:36 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/04/23 16:22:46 jasper Exp $
 %%SHARED%%
 include/atk-1.0/
 include/atk-1.0/atk/
@@ -10,8 +10,10 @@ include/atk-1.0/atk/atkdocument.h
 include/atk-1.0/atk/atkeditabletext.h
 include/atk-1.0/atk/atkgobjectaccessible.h
 include/atk-1.0/atk/atkhyperlink.h
+include/atk-1.0/atk/atkhyperlinkimpl.h
 include/atk-1.0/atk/atkhypertext.h
 include/atk-1.0/atk/atkimage.h
+include/atk-1.0/atk/atkmisc.h
 include/atk-1.0/atk/atknoopobject.h
 include/atk-1.0/atk/atknoopobjectfactory.h
 include/atk-1.0/atk/atkobject.h
@@ -35,7 +37,44 @@ lib/pkgconfig/atk.pc
 @comment share/gtk-doc/
 @comment share/gtk-doc/html/
 @comment share/gtk-doc/html/atk/
+share/gtk-doc/html/atk/AtkAction.html
+share/gtk-doc/html/atk/AtkComponent.html
+share/gtk-doc/html/atk/AtkDocument.html
+share/gtk-doc/html/atk/AtkEditableText.html
+share/gtk-doc/html/atk/AtkGObjectAccessible.html
+share/gtk-doc/html/atk/AtkHyperlink.html
+share/gtk-doc/html/atk/AtkHypertext.html
+share/gtk-doc/html/atk/AtkImage.html
+share/gtk-doc/html/atk/AtkNoOpObject.html
+share/gtk-doc/html/atk/AtkNoOpObjectFactory.html
+share/gtk-doc/html/atk/AtkObject.html
+share/gtk-doc/html/atk/AtkObjectFactory.html
+share/gtk-doc/html/atk/AtkRegistry.html
+share/gtk-doc/html/atk/AtkRelation.html
+share/gtk-doc/html/atk/AtkRelationSet.html
+share/gtk-doc/html/atk/AtkSelection.html
+share/gtk-doc/html/atk/AtkStreamableContent.html
+share/gtk-doc/html/atk/AtkTable.html
+share/gtk-doc/html/atk/AtkText.html
+share/gtk-doc/html/atk/AtkUtil.html
+share/gtk-doc/html/atk/AtkValue.html
+share/gtk-doc/html/atk/atk-AtkHyperlinkImpl.html
+share/gtk-doc/html/atk/atk-AtkState.html
+share/gtk-doc/html/atk/atk-AtkStateSet.html
+share/gtk-doc/html/atk/atk.devhelp
+share/gtk-doc/html/atk/atk.devhelp2
+share/gtk-doc/html/atk/atk.html
 @comment share/gtk-doc/html/atk/home.png
+share/gtk-doc/html/atk/index.html
+share/gtk-doc/html/atk/index.sgml
+share/gtk-doc/html/atk/ix01.html
+share/gtk-doc/html/atk/ix02.html
+share/gtk-doc/html/atk/ix03.html
+share/gtk-doc/html/atk/ix04.html
+share/gtk-doc/html/atk/ix05.html
+share/gtk-doc/html/atk/ix06.html
+share/gtk-doc/html/atk/ix07.html
 @comment share/gtk-doc/html/atk/left.png
 @comment share/gtk-doc/html/atk/right.png
+share/gtk-doc/html/atk/style.css
 @comment share/gtk-doc/html/atk/up.png
