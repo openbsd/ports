@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgnomeui_gnome-ui-init_c,v 1.4 2004/06/23 03:26:16 marcm Exp $
---- libgnomeui/gnome-ui-init.c.orig	2004-02-16 01:29:26.000000000 -0700
-+++ libgnomeui/gnome-ui-init.c	2004-06-20 12:21:41.000000000 -0600
-@@ -760,11 +760,11 @@ static void libgnomeui_segv_handle(int s
+$OpenBSD: patch-libgnomeui_gnome-ui-init_c,v 1.5 2007/04/23 16:38:45 steven Exp $
+--- libgnomeui/gnome-ui-init.c.orig	Thu Jun 30 17:42:22 2005
++++ libgnomeui/gnome-ui-init.c	Fri Apr 13 17:52:44 2007
+@@ -760,11 +760,11 @@ static void libgnomeui_segv_handle(int signum)
  		/* Child process */
  		execl (GNOMEUISERVERDIR "/gnome_segv2", GNOMEUISERVERDIR "/gnome_segv",
  		       g_get_prgname (), buf,

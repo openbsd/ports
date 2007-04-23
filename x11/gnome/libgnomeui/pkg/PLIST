@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/01/08 15:23:32 steven Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/04/23 16:38:46 steven Exp $
 include/libgnomeui-2.0/
 include/libgnomeui-2.0/gnome.h
 include/libgnomeui-2.0/libgnomeui/
@@ -53,10 +53,10 @@ include/libgnomeui-2.0/libgnomeui/gnome-window.h
 include/libgnomeui-2.0/libgnomeui/gnometypebuiltins.h
 include/libgnomeui-2.0/libgnomeui/libgnomeui.h
 lib/gtk-2.0/
-lib/gtk-2.0/2.4.0/
-lib/gtk-2.0/2.4.0/filesystems/
-lib/gtk-2.0/2.4.0/filesystems/libgnome-vfs.a
-lib/gtk-2.0/2.4.0/filesystems/libgnome-vfs.la
+lib/gtk-2.0/2.10.0/
+lib/gtk-2.0/2.10.0/filesystems/
+lib/gtk-2.0/2.10.0/filesystems/libgnome-vfs.a
+lib/gtk-2.0/2.10.0/filesystems/libgnome-vfs.la
 lib/libglade/
 lib/libglade/2.0/
 lib/libglade/2.0/libgnome.a

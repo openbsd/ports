@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/04/23 16:38:45 steven Exp $
 
 COMMENT=		"user interface components for GNOME"
 
 DISTNAME=		libgnomeui-2.10.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS=		gnomeui-2	1000.1
 CATEGORIES=		x11/gnome
 
