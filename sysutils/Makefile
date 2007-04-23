@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2007/04/13 08:29:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.125 2007/04/23 09:06:53 msf Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -35,6 +35,7 @@
      SUBDIR += knutclient
      SUBDIR += libretto-config
      SUBDIR += login_ldap
+     SUBDIR += logpp
      SUBDIR += lsof
      SUBDIR += mac-robber
      SUBDIR += memtester
