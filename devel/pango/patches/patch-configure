@@ -1,12 +1,21 @@
-$OpenBSD: patch-configure,v 1.11 2006/06/03 18:23:03 brad Exp $
---- configure.orig	Fri May 26 16:43:16 2006
-+++ configure	Thu Jun  1 06:39:08 2006
-@@ -23008,7 +23008,7 @@ fi
- if test "$pango_os_win32" != yes; then
-     # libtool option to control which symbols are exported
-     # right now, symbols starting with _ are not exported
--    LIBRARY_LIBTOOL_OPTIONS="-version-info $LT_VERSION_INFO "'-export-symbols-regex "^pango_.*"'
-+    LIBRARY_LIBTOOL_OPTIONS='-export-symbols-regex "^pango_.*"'
-     MODULE_LIBTOOL_OPTIONS="-export-dynamic -avoid-version "'-export-symbols-regex "^script_engine_.*"'
+$OpenBSD: patch-configure,v 1.12 2007/04/23 16:24:18 jasper Exp $
+--- configure.orig	Fri Apr 20 17:58:51 2007
++++ configure	Fri Apr 20 18:54:23 2007
+@@ -20970,7 +20970,7 @@ if test -n "$PKG_CONFIG"; then
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+-  pkg_cv_FONTCONFIG_LIBS=`$PKG_CONFIG --libs "fontconfig >= 1.0.1" 2>/dev/null`
++  pkg_cv_FONTCONFIG_LIBS="`$PKG_CONFIG --libs "fontconfig >= 1.0.1" 2>/dev/null ` -lexpat"
  else
-     # We currently use .def files on Windows
+   pkg_failed=yes
+ fi
+@@ -21184,7 +21184,7 @@ if test -n "$PKG_CONFIG"; then
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+-  pkg_cv_XFT_LIBS=`$PKG_CONFIG --libs "xft >= 2.0.0 xrender" 2>/dev/null`
++  pkg_cv_XFT_LIBS="`$PKG_CONFIG --libs "xft >= 2.0.0 xrender" 2>/dev/null` -lexpat"
+ else
+   pkg_failed=yes
+ fi
