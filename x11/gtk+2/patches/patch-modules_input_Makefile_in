@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_input_Makefile_in,v 1.12 2006/05/22 01:49:08 brad Exp $
---- modules/input/Makefile.in.orig	Fri Dec  9 13:28:15 2005
-+++ modules/input/Makefile.in	Sat May 13 16:52:41 2006
-@@ -802,19 +802,13 @@ install-data-hook:
+$OpenBSD: patch-modules_input_Makefile_in,v 1.13 2007/04/23 16:29:05 jasper Exp $
+--- modules/input/Makefile.in.orig	Mon Mar 12 15:16:06 2007
++++ modules/input/Makefile.in	Fri Apr 20 19:19:51 2007
+@@ -824,19 +824,13 @@ install-data-hook:
  	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
  	  echo "$(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules" ; \
  	  $(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules ; \
