@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/02/11 00:56:58 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/04/23 14:08:36 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,6 +39,11 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 
+# The regression tests require a running instance of X.
+# You will also need to set the XAUTHORITY environment variable to point 
+# to the appropriate .Xauthority file. 
+
+REGRESS_IS_INTERACTIVE= Yes
 REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 pre-patch:
