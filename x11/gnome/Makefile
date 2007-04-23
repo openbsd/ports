@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.26 2007/03/20 16:15:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2007/04/23 17:44:24 jasper Exp $
 
      SUBDIR += applets2
+     SUBDIR += audio
      SUBDIR += backgrounds
      SUBDIR += bonobo
      SUBDIR += controlcenter
