@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/23 17:27:04 jasper Exp $
+%%SHARED%%
+bin/notify-send
+include/libnotify/
+include/libnotify/notification.h
+include/libnotify/notify-enum-types.h
+include/libnotify/notify.h
+lib/libnotify.a
+lib/libnotify.la
+lib/pkgconfig/
+lib/pkgconfig/libnotify.pc
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libnotify/
+share/gtk-doc/html/libnotify/NotifyNotification.html
+share/gtk-doc/html/libnotify/ch01.html
+share/gtk-doc/html/libnotify/home.png
+share/gtk-doc/html/libnotify/index.html
+share/gtk-doc/html/libnotify/index.sgml
+share/gtk-doc/html/libnotify/left.png
+share/gtk-doc/html/libnotify/libnotify-notify.html
+share/gtk-doc/html/libnotify/libnotify.devhelp
+share/gtk-doc/html/libnotify/libnotify.devhelp2
+share/gtk-doc/html/libnotify/right.png
+share/gtk-doc/html/libnotify/style.css
+share/gtk-doc/html/libnotify/up.png

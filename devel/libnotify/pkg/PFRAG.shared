@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/04/23 17:27:04 jasper Exp $
+@lib lib/libnotify.so.${LIBnotify_VERSION}
