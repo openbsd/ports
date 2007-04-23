@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/04/23 16:40:04 steven Exp $
+@comment $OpenBSD: PLIST,v 1.18 2007/04/23 17:33:12 jasper Exp $
 @conflict gtk-thinice-engine-*
 @conflict gtk2-clearlooks-engine-*
 @conflict gnome-themes-<2.10
@@ -30,6 +30,36 @@ lib/gtk-2.0/2.10.0/engines/libthinice.a
 lib/gtk-2.0/2.10.0/engines/libthinice.la
 lib/gtk-2.0/2.10.0/engines/libthinice.so
 lib/pkgconfig/gtk-engines-2.pc
+share/gtk-engines/
+share/gtk-engines/clearlooks.xml
+share/gtk-engines/crux.xml
+share/gtk-engines/glide.xml
+share/gtk-engines/hc.xml
+share/gtk-engines/industrial.xml
+share/gtk-engines/mist.xml
+share/gtk-engines/redmond.xml
+share/gtk-engines/smooth.xml
+share/gtk-engines/thinice.xml
+share/locale/ar/LC_MESSAGES/gtk-engines.mo
+share/locale/bg/LC_MESSAGES/gtk-engines.mo
+share/locale/ca/LC_MESSAGES/gtk-engines.mo
+share/locale/da/LC_MESSAGES/gtk-engines.mo
+share/locale/de/LC_MESSAGES/gtk-engines.mo
+share/locale/dz/LC_MESSAGES/gtk-engines.mo
+share/locale/en_GB/LC_MESSAGES/gtk-engines.mo
+share/locale/es/LC_MESSAGES/gtk-engines.mo
+share/locale/et/LC_MESSAGES/gtk-engines.mo
+share/locale/fr/LC_MESSAGES/gtk-engines.mo
+share/locale/gl/LC_MESSAGES/gtk-engines.mo
+share/locale/gu/LC_MESSAGES/gtk-engines.mo
+share/locale/ko/LC_MESSAGES/gtk-engines.mo
+share/locale/mk/LC_MESSAGES/gtk-engines.mo
+share/locale/nl/LC_MESSAGES/gtk-engines.mo
+share/locale/pa/LC_MESSAGES/gtk-engines.mo
+share/locale/pt/LC_MESSAGES/gtk-engines.mo
+share/locale/pt_BR/LC_MESSAGES/gtk-engines.mo
+share/locale/sv/LC_MESSAGES/gtk-engines.mo
+share/locale/uk/LC_MESSAGES/gtk-engines.mo
 share/themes/Clearlooks/
 share/themes/Clearlooks/gtk-2.0/
 share/themes/Clearlooks/gtk-2.0/gtkrc
