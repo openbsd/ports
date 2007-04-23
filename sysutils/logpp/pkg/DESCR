@@ -1,0 +1,16 @@
+Logpp is a tool for preprocessing event logs and feeding relevant
+information to other programs for storing or in-depth analysis.
+
+During its work, logpp reads lines appended to input files (like tail(1)
+in -f mode), matches the lines with patterns (e.g., regular
+expressions), converts matching lines according to given templates, and
+writes the results to given destinations.
+
+Logpp supports multi-line matching and several types of output
+destinations like regular files, FIFOs, external programs, and the
+system logger.Therefore, logpp can act as a filter in front of the
+more complex event log analysis system and increase the system's
+performance by weeding out irrelevant log data; it can work as a syslog
+gateway between the system logger and the application that doesn't use
+syslog(3); it can convert multiline log messages to shorter single
+line messages, and accomplish other log pre-processing tasks.
