@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/02/11 00:56:58 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/04/23 16:40:04 steven Exp $
 
 COMMENT=	"theme engine for GTK2"
 V=		4.2.3.1
 DISTNAME=	gtk-xfce-engine-2.2.8
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/

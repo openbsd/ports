@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/02/11 00:56:58 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/04/23 16:40:04 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		"collection of theme engines for GTK+2"
 
 V=			2.8.2
 DISTNAME=		gtk-engines-${V}
-PKGNAME=		gtk-engines2-${V}p1
+PKGNAME=		gtk-engines2-${V}p2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org

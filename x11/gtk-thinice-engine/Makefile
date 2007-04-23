@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/03/31 13:27:11 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/04/23 16:40:04 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		"simple, clean theme engine for GTK+2"
 
 VERSION=		2.0.2
 DISTNAME=		gtk-thinice-engine-${VERSION}
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		x11
 
 HOMEPAGE=		http://thinice.sourceforge.net/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/06/13 05:09:10 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/04/23 16:40:04 steven Exp $
 %%SHARED%%
 bin/rsvg
 bin/rsvg-view
@@ -9,17 +9,19 @@ include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg-gz.h
 include/librsvg-2/librsvg/rsvg.h
 lib/gtk-2.0/
-lib/gtk-2.0/2.4.0/
-lib/gtk-2.0/2.4.0/engines/
-lib/gtk-2.0/2.4.0/engines/libsvg.a
-lib/gtk-2.0/2.4.0/engines/libsvg.la
-lib/gtk-2.0/2.4.0/loaders/
-lib/gtk-2.0/2.4.0/loaders/svg_loader.a
-lib/gtk-2.0/2.4.0/loaders/svg_loader.la
+lib/gtk-2.0/2.10.0/
+lib/gtk-2.0/2.10.0/engines/
+lib/gtk-2.0/2.10.0/engines/libsvg.a
+lib/gtk-2.0/2.10.0/engines/libsvg.la
+lib/gtk-2.0/2.10.0/loaders/
+lib/gtk-2.0/2.10.0/loaders/svg_loader.a
+lib/gtk-2.0/2.10.0/loaders/svg_loader.la
 lib/librsvg-2.a
 lib/librsvg-2.la
-lib/mozilla/
-lib/mozilla/plugins/
+@comment lib/mozilla/
+@comment lib/mozilla/plugins/
+@comment lib/mozilla/plugins/libmozsvgdec.a
+@comment lib/mozilla/plugins/libmozsvgdec.la
 lib/pkgconfig/
 lib/pkgconfig/librsvg-2.0.pc
 @man man/man1/rsvg.1

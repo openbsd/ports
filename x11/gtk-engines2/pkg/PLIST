@@ -1,34 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/02/07 20:05:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2007/04/23 16:40:04 steven Exp $
 @conflict gtk-thinice-engine-*
 @conflict gtk2-clearlooks-engine-*
 @conflict gnome-themes-<2.10
-lib/gtk-2.0/2.4.0/engines/libclearlooks.a
-lib/gtk-2.0/2.4.0/engines/libclearlooks.la
-lib/gtk-2.0/2.4.0/engines/libclearlooks.so
-lib/gtk-2.0/2.4.0/engines/libcrux-engine.a
-lib/gtk-2.0/2.4.0/engines/libcrux-engine.la
-lib/gtk-2.0/2.4.0/engines/libcrux-engine.so
-lib/gtk-2.0/2.4.0/engines/libglide.a
-lib/gtk-2.0/2.4.0/engines/libglide.la
-lib/gtk-2.0/2.4.0/engines/libglide.so
-lib/gtk-2.0/2.4.0/engines/libhcengine.a
-lib/gtk-2.0/2.4.0/engines/libhcengine.la
-lib/gtk-2.0/2.4.0/engines/libhcengine.so
-lib/gtk-2.0/2.4.0/engines/libindustrial.a
-lib/gtk-2.0/2.4.0/engines/libindustrial.la
-lib/gtk-2.0/2.4.0/engines/libindustrial.so
-lib/gtk-2.0/2.4.0/engines/libmist.a
-lib/gtk-2.0/2.4.0/engines/libmist.la
-lib/gtk-2.0/2.4.0/engines/libmist.so
-lib/gtk-2.0/2.4.0/engines/libredmond95.a
-lib/gtk-2.0/2.4.0/engines/libredmond95.la
-lib/gtk-2.0/2.4.0/engines/libredmond95.so
-lib/gtk-2.0/2.4.0/engines/libsmooth.a
-lib/gtk-2.0/2.4.0/engines/libsmooth.la
-lib/gtk-2.0/2.4.0/engines/libsmooth.so
-lib/gtk-2.0/2.4.0/engines/libthinice.a
-lib/gtk-2.0/2.4.0/engines/libthinice.la
-lib/gtk-2.0/2.4.0/engines/libthinice.so
+lib/gtk-2.0/2.10.0/engines/libclearlooks.a
+lib/gtk-2.0/2.10.0/engines/libclearlooks.la
+lib/gtk-2.0/2.10.0/engines/libclearlooks.so
+lib/gtk-2.0/2.10.0/engines/libcrux-engine.a
+lib/gtk-2.0/2.10.0/engines/libcrux-engine.la
+lib/gtk-2.0/2.10.0/engines/libcrux-engine.so
+lib/gtk-2.0/2.10.0/engines/libglide.a
+lib/gtk-2.0/2.10.0/engines/libglide.la
+lib/gtk-2.0/2.10.0/engines/libglide.so
+lib/gtk-2.0/2.10.0/engines/libhcengine.a
+lib/gtk-2.0/2.10.0/engines/libhcengine.la
+lib/gtk-2.0/2.10.0/engines/libhcengine.so
+lib/gtk-2.0/2.10.0/engines/libindustrial.a
+lib/gtk-2.0/2.10.0/engines/libindustrial.la
+lib/gtk-2.0/2.10.0/engines/libindustrial.so
+lib/gtk-2.0/2.10.0/engines/libmist.a
+lib/gtk-2.0/2.10.0/engines/libmist.la
+lib/gtk-2.0/2.10.0/engines/libmist.so
+lib/gtk-2.0/2.10.0/engines/libredmond95.a
+lib/gtk-2.0/2.10.0/engines/libredmond95.la
+lib/gtk-2.0/2.10.0/engines/libredmond95.so
+lib/gtk-2.0/2.10.0/engines/libsmooth.a
+lib/gtk-2.0/2.10.0/engines/libsmooth.la
+lib/gtk-2.0/2.10.0/engines/libsmooth.so
+lib/gtk-2.0/2.10.0/engines/libthinice.a
+lib/gtk-2.0/2.10.0/engines/libthinice.la
+lib/gtk-2.0/2.10.0/engines/libthinice.so
 lib/pkgconfig/gtk-engines-2.pc
 share/themes/Clearlooks/
 share/themes/Clearlooks/gtk-2.0/
