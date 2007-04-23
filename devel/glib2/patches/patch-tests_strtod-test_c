@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_strtod-test_c,v 1.1 2005/11/13 06:22:03 marcm Exp $
---- tests/strtod-test.c.orig	Mon Oct 31 21:27:53 2005
-+++ tests/strtod-test.c	Mon Oct 31 21:28:22 2005
-@@ -71,14 +71,12 @@ main ()
+$OpenBSD: patch-tests_strtod-test_c,v 1.2 2007/04/23 16:22:07 jasper Exp $
+--- tests/strtod-test.c.orig	Fri Mar  9 05:01:32 2007
++++ tests/strtod-test.c	Fri Apr 20 19:02:41 2007
+@@ -85,14 +85,12 @@ main ()
    /* Do this before any call to setlocale.  */
    our_nan = atof ("NaN");
  #endif
@@ -16,7 +16,7 @@ $OpenBSD: patch-tests_strtod-test_c,v 1.1 2005/11/13 06:22:03 marcm Exp $
  
    test_string ("123.123", 123.123, FALSE, 0);
    test_string ("123.123e2", 123.123e2, FALSE, 0);
-@@ -91,10 +89,6 @@ main ()
+@@ -105,10 +103,6 @@ main ()
    test_string ("5,4", 5.0, TRUE, 1);
    /* the following are for #156421 */
    test_string ("1e1", 1e1, FALSE, 0); 

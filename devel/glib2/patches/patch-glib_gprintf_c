@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_gprintf_c,v 1.2 2005/05/24 21:26:17 marcm Exp $
---- glib/gprintf.c.orig	Sun Mar 13 20:02:07 2005
-+++ glib/gprintf.c	Sat Apr 16 19:13:32 2005
-@@ -89,6 +89,8 @@ g_fprintf (FILE        *file, 
+$OpenBSD: patch-glib_gprintf_c,v 1.3 2007/04/23 16:22:07 jasper Exp $
+--- glib/gprintf.c.orig	Fri Mar  9 05:01:39 2007
++++ glib/gprintf.c	Fri Apr 20 19:02:41 2007
+@@ -87,6 +87,8 @@ g_fprintf (FILE        *file, 
    return retval;
  }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-glib_gprintf_c,v 1.2 2005/05/24 21:26:17 marcm Exp $
  /**
   * g_sprintf:
   * @string: the buffer to hold the output.
-@@ -210,6 +212,8 @@ g_vfprintf (FILE        *file,
+@@ -208,6 +210,8 @@ g_vfprintf (FILE        *file,
    return _g_vfprintf (file, format, args);
  }
  

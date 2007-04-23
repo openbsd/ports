@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.29 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2007/04/23 16:22:07 jasper Exp $
 
 COMMENT-main=		"general-purpose utility library"
 COMMENT-docs=		"glib2 documentation"
 
-VERSION=		2.10.3
+VERSION=		2.12.11
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p0
+PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org
 
-SHARED_LIBS +=	glib-2.0             1000.3   # .1000.3
-SHARED_LIBS +=	gobject-2.0          1000.3   # .1000.3
-SHARED_LIBS +=	gmodule-2.0          1000.3   # .1000.3
-SHARED_LIBS +=	gthread-2.0          1000.3   # .1000.3
+SHARED_LIBS +=	glib-2.0             1200.11   # .1200.11
+SHARED_LIBS +=	gobject-2.0          1200.11   # .1200.11
+SHARED_LIBS +=	gmodule-2.0          1200.11   # .1200.11
+SHARED_LIBS +=	gthread-2.0          1200.11   # .1200.11
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.10/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.12/}
 EXTRACT_SUFX=		.tar.bz2
 
 MULTI_PACKAGES=		-main -docs
@@ -43,7 +43,6 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

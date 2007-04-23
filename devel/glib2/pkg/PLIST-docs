@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-docs,v 1.11 2006/05/22 01:39:36 brad Exp $
+@comment $OpenBSD: PLIST-docs,v 1.12 2007/04/23 16:22:07 jasper Exp $
 @conflict glib2-<2.4.6
+share/aclocal/
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/glib/
@@ -9,7 +10,9 @@ share/gtk-doc/html/glib/glib-Asynchronous-Queues.html
 share/gtk-doc/html/glib/glib-Atomic-Operations.html
 share/gtk-doc/html/glib/glib-Automatic-String-Completion.html
 share/gtk-doc/html/glib/glib-Balanced-Binary-Trees.html
+share/gtk-doc/html/glib/glib-Base64-Encoding.html
 share/gtk-doc/html/glib/glib-Basic-Types.html
+share/gtk-doc/html/glib/glib-Bookmark-file-parser.html
 share/gtk-doc/html/glib/glib-Byte-Arrays.html
 share/gtk-doc/html/glib/glib-Byte-Order-Macros.html
 share/gtk-doc/html/glib/glib-Caches.html
@@ -86,6 +89,7 @@ share/gtk-doc/html/glib/ix04.html
 share/gtk-doc/html/glib/ix05.html
 share/gtk-doc/html/glib/ix06.html
 share/gtk-doc/html/glib/ix07.html
+share/gtk-doc/html/glib/ix08.html
 share/gtk-doc/html/glib/left.png
 share/gtk-doc/html/glib/mainloop-states.gif
 share/gtk-doc/html/glib/right.png
@@ -146,6 +150,7 @@ share/gtk-doc/html/gobject/ix04.html
 share/gtk-doc/html/gobject/ix05.html
 share/gtk-doc/html/gobject/ix06.html
 share/gtk-doc/html/gobject/ix07.html
+share/gtk-doc/html/gobject/ix08.html
 share/gtk-doc/html/gobject/left.png
 share/gtk-doc/html/gobject/pr01.html
 share/gtk-doc/html/gobject/pt01.html
