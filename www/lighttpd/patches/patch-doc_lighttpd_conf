@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_lighttpd_conf,v 1.1 2007/04/24 05:09:41 ckuethe Exp $
+--- doc/lighttpd.conf.orig	Wed Oct  4 15:29:19 2006
++++ doc/lighttpd.conf	Sun Apr 15 10:56:19 2007
+@@ -183,10 +183,10 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
+ #server.chroot              = "/"
+ 
+ ## change uid to <uid> (default: don't care)
+-#server.username            = "wwwrun"
++server.username            = "_lighttpd"
+ 
+ ## change uid to <uid> (default: don't care)
+-#server.groupname           = "wwwrun"
++server.groupname           = "_lighttpd"
+ 
+ #### compress module
+ #compress.cache-dir         = "/tmp/lighttpd/cache/compress/"
