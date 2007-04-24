@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2007/04/23 16:22:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2007/04/24 18:21:14 jasper Exp $
 
 COMMENT-main=		"general-purpose utility library"
 COMMENT-docs=		"glib2 documentation"
 
 VERSION=		2.12.11
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}
+PKGNAME-main=		glib2-${VERSION}p0
 PKGNAME-docs=		glib2-docs-${VERSION}
 CATEGORIES=		devel
 
@@ -45,6 +45,10 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# Port has "/usr/local" hardcoded, we prefer ${LOCALBASE}
+pre-build:
+	perl -pi -e "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/glib/gutils.c
 
 # Work around an issue in our libtool where -pthread is not listed as a 
 # dependency
