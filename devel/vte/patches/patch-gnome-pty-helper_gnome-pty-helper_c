@@ -1,20 +1,12 @@
-$OpenBSD: patch-gnome-pty-helper_gnome-pty-helper_c,v 1.1 2003/10/07 05:47:58 marcm Exp $
---- gnome-pty-helper/gnome-pty-helper.c.orig	2003-09-08 15:32:27.000000000 -0700
-+++ gnome-pty-helper/gnome-pty-helper.c	2003-09-08 15:32:59.000000000 -0700
-@@ -42,6 +42,7 @@ extern char *strdup(const char *);
- #include <unistd.h>
- #include <string.h>
- #include <signal.h>
-+#include <sys/param.h>
- #include <fcntl.h>
- #include <termios.h>
- #include <errno.h>
-@@ -93,7 +94,7 @@ static pty_info *pty_list;
- #endif
- #endif /* CMSG_DATA */
+$OpenBSD: patch-gnome-pty-helper_gnome-pty-helper_c,v 1.2 2007/04/24 22:02:19 martynas Exp $
+--- gnome-pty-helper/gnome-pty-helper.c.orig	Fri Mar 23 16:14:44 2007
++++ gnome-pty-helper/gnome-pty-helper.c	Fri Mar 23 16:15:42 2007
+@@ -101,7 +101,7 @@ static int CONTROLLEN;
+ static int
+ init_msg_pass (void)
+ {
+-	CONTROLLEN = (CMSG_DATA (cmptr) - (unsigned char *)cmptr) + sizeof(int);
++	CONTROLLEN = (CMSG_DATA (cmptr) - (unsigned char *)cmptr) + sizeof(long);
+ 	cmptr = malloc (CONTROLLEN);
  
--#define CONTROLLEN (sizeof (struct cmsghdr)  + sizeof (int))
-+#define CONTROLLEN (sizeof (struct cmsghdr)  + sizeof (long))
- 
- static struct cmsghdr *cmptr;
- 
+ 	if (cmptr)
