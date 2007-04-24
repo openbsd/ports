@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2007/01/01 17:56:39 deanna Exp $
---- Makefile.in.orig	Tue Oct 17 02:38:48 2006
-+++ Makefile.in	Sun Nov 26 04:23:21 2006
-@@ -25,9 +25,9 @@ SOURCES = $(libchicken_la_SOURCES) $(lib
+$OpenBSD: patch-Makefile_in,v 1.6 2007/04/24 17:07:19 martynas Exp $
+--- Makefile.in.orig	Thu Mar  1 12:49:50 2007
++++ Makefile.in	Sun Apr 22 00:11:29 2007
+@@ -25,9 +25,9 @@ SOURCES = $(libchicken_la_SOURCES) $(libuchicken_la_SO
  srcdir = @srcdir@
  top_srcdir = @top_srcdir@
  VPATH = @srcdir@
@@ -14,7 +14,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/01/01 17:56:39 deanna Exp $
  top_builddir = .
  am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
  INSTALL = @INSTALL@
-@@ -348,7 +348,7 @@ C_INSTALL_CXX = \"$(CXX)\"
+@@ -380,7 +380,7 @@ C_INSTALL_CXX = \"$(CXX)\"
  C_INSTALL_CFLAGS = \"-DHAVE_CHICKEN_CONFIG_H $(CFLAGS)\"
  C_INSTALL_SHARE_HOME = \"$(pkgdatadir)\"
  C_INSTALL_BIN_HOME = \"$(bindir)\"
@@ -23,7 +23,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/01/01 17:56:39 deanna Exp $
  C_INSTALL_LIB_HOME = \"$(libdir)\"
  C_INSTALL_STATIC_LIB_HOME = \"$(libdir)\"
  C_INSTALL_INCLUDE_HOME = \"$(includedir)\"
-@@ -485,7 +485,6 @@ $(top_builddir)/config.status: $(top_src
+@@ -535,7 +535,6 @@ $(top_builddir)/config.status: $(top_srcdir)/configure
  	$(SHELL) ./config.status --recheck
  
  $(top_srcdir)/configure:  $(am__configure_deps)
@@ -31,7 +31,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/01/01 17:56:39 deanna Exp $
  $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
  	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
  
-@@ -499,7 +498,6 @@ stamp-h1: $(srcdir)/chicken-config.h.in 
+@@ -549,7 +548,6 @@ stamp-h1: $(srcdir)/chicken-config.h.in $(top_builddir
  	@rm -f stamp-h1
  	cd $(top_builddir) && $(SHELL) ./config.status chicken-config.h
  $(srcdir)/chicken-config.h.in:  $(am__configure_deps) 
@@ -39,7 +39,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/01/01 17:56:39 deanna Exp $
  	rm -f stamp-h1
  	touch $@
  
-@@ -667,13 +665,13 @@ libchicken_la-extras.lo: extras.c
+@@ -717,13 +715,13 @@ libchicken_la-extras.lo: extras.c
  	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-extras.lo `test -f 'extras.c' || echo '$(srcdir)/'`extras.c
  
  libchicken_la-library.o: library.c
@@ -55,7 +55,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/01/01 17:56:39 deanna Exp $
  
  libchicken_la-lolevel.o: lolevel.c
  	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-lolevel.o `test -f 'lolevel.c' || echo '$(srcdir)/'`lolevel.c
-@@ -1041,8 +1039,8 @@ install-pkgdataDATA: $(pkgdata_DATA)
+@@ -1415,8 +1413,8 @@ install-pkgdataDATA: $(pkgdata_DATA)
  	@list='$(pkgdata_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f="`echo $$p | sed -e 's|^.*/||'`"; \
@@ -66,7 +66,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/01/01 17:56:39 deanna Exp $
  	done
  
  uninstall-pkgdataDATA:
-@@ -1473,11 +1471,11 @@ regex.exports: $(regexexports)
+@@ -1841,11 +1839,11 @@ chicken-defaults.h: chicken-defaults.h.in Makefile
  
  # Install docs and sources.
  install-data-local:

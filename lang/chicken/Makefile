@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/01 17:56:39 deanna Exp $
+# $OpenBSD: Makefile,v 1.6 2007/04/24 17:07:19 martynas Exp $
 
 COMMENT=	"practical and portable Scheme system"
 
-DISTNAME=	chicken-2.5
+DISTNAME=	chicken-2.6
 
 SHARED_LIBS +=	chicken              1.0      # .0.0
 SHARED_LIBS +=	uchicken             1.0      # .0.0

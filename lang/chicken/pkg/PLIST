@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/01/01 17:56:39 deanna Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/04/24 17:07:19 martynas Exp $
 %%SHARED%%
 bin/chicken
 bin/chicken-profile
@@ -19,7 +19,6 @@ lib/libuchicken.la
 @man man/man1/csi.1
 share/chicken/
 share/chicken/1/
-share/chicken/banner.scm
 share/chicken/chicken-ffi-macros.scm
 share/chicken/chicken-more-macros.scm
 share/chicken/eval.exports
