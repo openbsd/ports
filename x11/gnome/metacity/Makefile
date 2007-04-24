@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/04/24 16:41:59 jasper Exp $
 
-COMMENT=		"Boring window manager for the adult in you."
+COMMENT=		"boring window manager for the adult in you."
 
-DISTNAME=		metacity-2.10.3
-PKGNAME=		${DISTNAME}p2
+DISTNAME=		metacity-2.18.2
 SHARED_LIBS=		metacity-private 0.0
 CATEGORIES=		x11 x11/gnome
 
@@ -14,21 +13,20 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE ORBit-2 SM X11 Xext Xinerama Xrandr Xrender \
-		atk-1.0 c fontconfig freetype gdk-x11-2.0 \
-		gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
-		pango-1.0 pangoft2-1.0 pangocairo-1.0 \
-		popt pthread cairo glitz png z
+WANTLIB=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi \
+		Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
+		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/metacity/2.10/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/metacity/2.18/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			startup-notification-1::devel/startup-notification
+			startup-notification-1::devel/startup-notification \
+			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
@@ -36,10 +34,8 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/metacity
-CONFIGURE_ARGS+=	--disable-schemas-install
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/metacity && \
