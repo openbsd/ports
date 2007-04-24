@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_services_name_Makefile_in,v 1.1 2006/01/02 17:04:20 bernd Exp $
---- src/services/name/Makefile.in.orig	Mon Jan  2 17:02:59 2006
-+++ src/services/name/Makefile.in	Mon Jan  2 17:03:28 2006
-@@ -143,7 +143,7 @@ libORBitservicesinclude_HEADERS = \
- 
+$OpenBSD: patch-src_services_name_Makefile_in,v 1.2 2007/04/24 12:41:34 jasper Exp $
+--- src/services/name/Makefile.in.orig	Mon Feb 26 19:16:08 2007
++++ src/services/name/Makefile.in	Sat Mar 17 23:32:43 2007
+@@ -277,7 +277,7 @@ libORBitservicesinclude_HEADERS = \
+ 	CosNaming_impl.h
  
  libORBitCosNaming_2_la_LDFLAGS = \
 -	-version-info $(LT_VERSION)					\
