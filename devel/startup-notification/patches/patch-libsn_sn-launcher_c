@@ -1,7 +1,7 @@
-$OpenBSD: patch-libsn_sn-launcher_c,v 1.2 2006/05/13 16:19:36 steven Exp $
---- libsn/sn-launcher.c.orig	Tue Oct 26 22:07:27 2004
-+++ libsn/sn-launcher.c	Wed May 25 16:44:54 2005
-@@ -220,7 +220,7 @@ sn_launcher_context_initiate (SnLauncher
+$OpenBSD: patch-libsn_sn-launcher_c,v 1.3 2007/04/24 12:48:25 jasper Exp $
+--- libsn/sn-launcher.c.orig	Sat Mar 17 21:16:29 2007
++++ libsn/sn-launcher.c	Mon Apr 23 22:58:14 2007
+@@ -220,7 +220,7 @@ sn_launcher_context_initiate (SnLauncherContext *conte
    ++i;  
  
    names[i] = "SCREEN";
@@ -10,7 +10,7 @@ $OpenBSD: patch-libsn_sn-launcher_c,v 1.2 2006/05/13 16:19:36 steven Exp $
    values[i] = screenbuf;
    ++i;
    
-@@ -241,7 +241,7 @@ sn_launcher_context_initiate (SnLauncher
+@@ -241,7 +241,7 @@ sn_launcher_context_initiate (SnLauncherContext *conte
    if (context->workspace >= 0)
      {
        names[i] = "DESKTOP";
