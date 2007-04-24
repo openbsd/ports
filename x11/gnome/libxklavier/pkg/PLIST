@@ -1,11 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/10/11 04:27:24 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/04/24 21:11:03 jasper Exp $
 include/libxklavier/
+include/libxklavier/xkl_config_item.h
+include/libxklavier/xkl_config_rec.h
+include/libxklavier/xkl_config_registry.h
+include/libxklavier/xkl_engine.h
+include/libxklavier/xkl_engine_marshal.h
 include/libxklavier/xklavier.h
-include/libxklavier/xklavier_config.h
 lib/libxklavier.a
 lib/libxklavier.la
 lib/pkgconfig/
 lib/pkgconfig/libxklavier.pc
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libxklavier/
+share/gtk-doc/html/libxklavier/ch01.html
+share/gtk-doc/html/libxklavier/ch02.html
+share/gtk-doc/html/libxklavier/home.png
+share/gtk-doc/html/libxklavier/index.html
+share/gtk-doc/html/libxklavier/index.sgml
+share/gtk-doc/html/libxklavier/left.png
+share/gtk-doc/html/libxklavier/libxklavier-XklConfigItem.html
+share/gtk-doc/html/libxklavier/libxklavier-XklConfigRec.html
+share/gtk-doc/html/libxklavier/libxklavier-XklConfigRegistry.html
+share/gtk-doc/html/libxklavier/libxklavier-XklEngine.html
+share/gtk-doc/html/libxklavier/libxklavier-xklavier.html
+share/gtk-doc/html/libxklavier/libxklavier.devhelp
+share/gtk-doc/html/libxklavier/libxklavier.devhelp2
+share/gtk-doc/html/libxklavier/right.png
+share/gtk-doc/html/libxklavier/style.css
+share/gtk-doc/html/libxklavier/up.png
 share/libxklavier/
 share/libxklavier/xfree86.xml
 %%SHARED%%
