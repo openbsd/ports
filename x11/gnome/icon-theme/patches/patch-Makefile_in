@@ -1,11 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2007/01/18 21:52:52 jasper Exp $
---- Makefile.in.orig	Tue Nov 21 15:58:48 2006
-+++ Makefile.in	Wed Jan 17 17:33:10 2007
-@@ -200,7 +200,7 @@ sysconfdir = @sysconfdir@
+$OpenBSD: patch-Makefile_in,v 1.2 2007/04/24 19:46:24 jasper Exp $
+--- Makefile.in.orig	Mon Mar 12 20:40:15 2007
++++ Makefile.in	Tue Apr 24 21:03:50 2007
+@@ -198,8 +198,8 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  themedir = @themedir@
- SUBDIRS = 8x8 16x16 22x22 24x24 32x32 48x48 scalable po
+-SUBDIRS = 8x8 16x16 22x22 24x24 32x32 48x48 scalable po
 -pkgconfigdir = $(datadir)/pkgconfig
++SUBDIRS = 8x8 16x16 22x22 24x24 32x32 48x48 scalable
 +pkgconfigdir = $(libdir)/pkgconfig
  pkgconfig_DATA = gnome-icon-theme.pc
  THEME_IN_FILES = index.theme.in

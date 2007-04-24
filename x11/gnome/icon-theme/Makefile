@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/18 21:52:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2007/04/24 19:46:24 jasper Exp $
 
-COMMENT=		"the base GNOME icon theme"
+COMMENT=		"base icon theme for GNOME"
 
-DISTNAME=		gnome-icon-theme-2.16.1
+DISTNAME=		gnome-icon-theme-2.18.0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-icon-theme/2.16/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-icon-theme/2.18/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -16,12 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		::devel/gettext \
+BUILD_DEPENDS=		:gettext-*:devel/gettext \
 			::textproc/p5-XML-Parser \
-			::textproc/intltool \
-			::x11/hicolor-icon-theme \
 			:icon-naming-utils->=0.8.1:x11/icon-naming-utils
-RUN_DEPENDS=		::x11/hicolor-icon-theme
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
