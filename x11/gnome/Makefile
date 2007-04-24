@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2007/04/23 17:44:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2007/04/24 19:59:44 jasper Exp $
 
      SUBDIR += applets2
      SUBDIR += audio
@@ -39,6 +39,7 @@
      SUBDIR += session
      SUBDIR += terminal
      SUBDIR += themes
+     SUBDIR += themes-extras
      SUBDIR += users-guide
      SUBDIR += utils
      SUBDIR += vfs
