@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2007/04/24 20:55:56 jasper Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
-V=			2.5.1
+V=			2.6.0
 DISTNAME=		libglade-${V}
-PKGNAME=		libglade2-${V}p7
-SHARED_LIBS +=	glade-2.0            0.7      # .0.7
+PKGNAME=		libglade2-${V}
+SHARED_LIBS +=	glade-2.0            0.8      # .0.7
 
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libglade/2.5/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libglade/2.6/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -18,13 +18,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xau Xdmcp Xrender expat m z \
-			atk-1.0 fontconfig freetype \
-			glib-2.0 gmodule-2.0 gobject-2.0 \
-			pango-1.0 pangoft2-1.0 \
-			pangocairo-1.0 cairo glitz png
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender atk-1.0 cairo expat fontconfig freetype glib-2.0 \
+		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png z
 
 MODULES=		devel/gettext
+RUN_DEPENDS=		:python-expat-*:lang/python/2.5,-expat
+BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 			xml2.>=7:libxml->=2.6.16p6:textproc/libxml
 
@@ -36,10 +37,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
-# Build the libglade-convert script even if we don't have Python.
-# Other ports that need it will have to have a python-expat *_DEPENDS.
 post-install:
-	@sed 's,@PYTHON@,${LOCALBASE}/bin/python,' ${WRKSRC}/libglade-convert.in > ${PREFIX}/bin/libglade-convert
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2
 	${INSTALL_DATA} ${FILESDIR}/libglade2.spec ${PREFIX}/share/libxml2
 
