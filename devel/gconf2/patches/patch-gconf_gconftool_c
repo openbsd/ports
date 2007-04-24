@@ -1,12 +1,12 @@
-$OpenBSD: patch-gconf_gconftool_c,v 1.5 2004/12/30 04:30:12 marcm Exp $
---- gconf/gconftool.c.orig	Mon Aug 30 00:35:33 2004
-+++ gconf/gconftool.c	Wed Dec 22 18:48:43 2004
-@@ -4008,7 +4008,7 @@ do_get_default_source (const gchar** arg
+$OpenBSD: patch-gconf_gconftool_c,v 1.6 2007/04/24 12:53:38 jasper Exp $
+--- gconf/gconftool.c.orig	Fri Mar  2 23:10:13 2007
++++ gconf/gconftool.c	Thu Apr 19 20:32:10 2007
+@@ -4049,7 +4049,7 @@ do_get_default_source (const gchar** args)
      }
  
    /* Use default database */
--  source = g_strconcat("xml::", GCONF_ETCDIR, "/gconf.xml.defaults", NULL);
-+  source = g_strconcat(GCONF_CONFIG_SOURCE, NULL);
+-  source = g_strconcat("xml:merged:", GCONF_ETCDIR, "/gconf.xml.defaults", NULL);
++  source = g_strconcat("xml:merged:", "/var/db/gconf/gconf.xml.defaults", NULL);
    g_print ("%s\n", source);
    g_free(source);
  

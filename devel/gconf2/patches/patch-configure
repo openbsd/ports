@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.6 2007/04/24 12:53:37 jasper Exp $
+--- configure.orig	Mon Mar 19 01:10:53 2007
++++ configure	Mon Mar 19 01:11:06 2007
+@@ -21939,6 +21939,8 @@ else
+   LDAP_SUPPORT_FALSE=
+ fi
+ 
++LDAP_SUPPORT_TRUE='#'
++LDAP_SUPPORT_FALSE=
+ 
+ if test "$os_win32" != yes; then
+ 

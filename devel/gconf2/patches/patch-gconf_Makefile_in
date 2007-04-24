@@ -1,10 +1,14 @@
---- gconf/Makefile.in.orig	Tue Oct 12 09:49:08 2004
-+++ gconf/Makefile.in	Wed Dec 22 18:48:43 2004
-@@ -208,6 +208,7 @@ INCLUDES = \
- 	-DVERSION=\""$(VERSION)"\"					\
- 	-DGCONF_ENABLE_INTERNALS=1					\
- 	-DGCONFD=\""$(GCONFD_BINARY_NAME)"\"				\
-+	-DGCONF_CONFIG_SOURCE=\""$(GCONF_CONFIG_SOURCE)"\"		\
- 	$(NULL)
+$OpenBSD: patch-gconf_Makefile_in,v 1.8 2007/04/24 12:53:38 jasper Exp $
+--- gconf/Makefile.in.orig	Mon Mar 19 01:50:27 2007
++++ gconf/Makefile.in	Mon Mar 19 01:51:46 2007
+@@ -797,8 +797,8 @@ default.path: $(srcdir)/default.path.in
+ 		<$(srcdir)/default.path.in >default.path
  
+ install-data-local: default.path
+-	$(mkinstalldirs) $(DESTDIR)$(sysgconfdir)/$(MAJOR_VERSION)
+-	$(INSTALL_DATA) default.path $(DESTDIR)$(sysgconfdir)/$(MAJOR_VERSION)/path
++	$(mkinstalldirs) $(DESTDIR)$(datarootdir)/examples/gconf2
++	$(INSTALL_DATA) default.path $(DESTDIR)$(datarootdir)/examples/gconf2/path
  
+ uninstall-local:
+ 	rm -f $(DESTDIR)$(sysgconfdir)/$(MAJOR_VERSION)/path

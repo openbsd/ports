@@ -1,50 +1,40 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2007/04/24 12:53:37 jasper Exp $
 
-COMMENT=		"configuration database system for GNOME"
+COMMENT=	"configuration database system for GNOME"
 
-VERSION=		2.10.1
-DISTNAME=		GConf-${VERSION}
-PKGNAME=		gconf2-${VERSION}p4
-SHARED_LIBS +=	gconf-2              5.0      # .5.0
+VERSION=	2.18.0.1
+DISTNAME=	GConf-${VERSION}
+PKGNAME=	gconf2-${VERSION}
+SHARED_LIBS +=	gconf-2         5.2           # .5.2
+CATEGORIES=	devel
 
-CATEGORIES=		devel
-
-HOMEPAGE=		http://www.gnome.org/projects/gconf/
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/GConf/2.10/}
-EXTRACT_SUFX=           .tar.bz2
-
-MODULES=		devel/gettext
-
-LIB_DEPENDS=		ORBit-2::devel/ORBit2 \
-			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-			xml2.>=6::textproc/libxml
+HOMEPAGE=	http://www.gnome.org/projects/gconf/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xau Xdmcp Xrender atk-1.0 c expat m \
-			fontconfig freetype glib-2.0 gmodule-2.0 \
-			gobject-2.0 gthread-2.0 pango-1.0 \
-			pangoft2-1.0 pangocairo-1.0 cairo glitz png \
-			popt pthread z
+PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender atk-1.0 c cairo expat fontconfig freetype glitz \
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z
 
-DEFAULT_GCONF_SOURCE=	xml::/var/db/gconf/gconf.xml.defaults
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/GConf/2.18/}
+EXTRACT_SUFX=		.tar.bz2
 
-USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--disable-gtk-conf
-CONFIGURE_ARGS+=	--enable-gconf-source=${DEFAULT_GCONF_SOURCE}
-CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+MODULES=	devel/gettext
+BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
+LIB_DEPENDS=	glib-2.0.>=1200.0,gmodule-2.0.>=1200.0,gobject-2.0.>=1200.0,gthread-2.0.>=1200.0::devel/glib2 \
+		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		ORBit-2.>=2.0::devel/ORBit2 \
+		xml2.>=9::textproc/libxml
 
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gconf2; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gconf2; \
+USE_LIBTOOL=	Yes
+USE_GMAKE=	Yes
+USE_X11=	Yes
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -1,19 +1,30 @@
---- gconf/default.path.in.orig	Thu Jul  8 22:44:44 2004
-+++ gconf/default.path.in	Wed Dec 22 18:48:43 2004
-@@ -6,7 +6,7 @@
+$OpenBSD: patch-gconf_default_path_in,v 1.5 2007/04/24 12:53:38 jasper Exp $
+--- gconf/default.path.in.orig	Mon Mar 19 01:21:37 2007
++++ gconf/default.path.in	Mon Mar 19 01:22:39 2007
+@@ -6,12 +6,12 @@
  # See the GConf manual for details
  
  # Look first in systemwide mandatory settings directory
--xml:readonly:@EXPANDED_SYSGCONFDIR@/gconf.xml.mandatory
+-xml:readonly:@sysgconfdir@/gconf.xml.mandatory
 +xml:readonly:/var/db/gconf/gconf.xml.mandatory
  
  # To read in any mandatory settings that the Sys Admin may have created
  # prior to a desktop system upgrade. The SysAdmin can stick read-only system
-@@ -26,7 +26,7 @@ xml:readwrite:$(HOME)/.gconf
- include @EXPANDED_SYSGCONFDIR@/2/local-defaults.path
+ # wide sources in this file.
+-include @sysgconfdir@/2/local-mandatory.path
++include /var/db/gconf/2/local-mandatory.path
+ 
+ # Now see where users want us to look - basically the user can stick arbitrary 
+ # sources in a ~/.gconf.path file and they're inserted here
+@@ -23,10 +23,10 @@ xml:readwrite:$(HOME)/.gconf
+ # To read in any defaults settings that the Sys Admin may have created
+ # prior to a desktop system upgrade. The SysAdmin can stick default values
+ # system-wide in this file.
+-include @sysgconfdir@/2/local-defaults.path
++include /var/db/gconf/2/local-defaults.path
  
  # Finally, look at the systemwide defaults
--xml:readonly:@EXPANDED_SYSGCONFDIR@/gconf.xml.defaults
+-xml:readonly:@sysgconfdir@/gconf.xml.defaults
 +xml:readonly:/var/db/gconf/gconf.xml.defaults
  
  

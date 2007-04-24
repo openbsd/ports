@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2006/01/06 17:51:02 bernd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2007/04/24 12:53:38 jasper Exp $
+lib/GConf/2/libgconfbackend-oldxml.so
 lib/GConf/2/libgconfbackend-xml.so
 @lib lib/libgconf-2.so.${LIBgconf-2_VERSION}
