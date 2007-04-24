@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_socketmodule_c,v 1.1 2006/11/01 20:59:18 alek Exp $
---- Modules/socketmodule.c.orig	Tue Aug 15 08:10:24 2006
-+++ Modules/socketmodule.c	Mon Sep 18 06:31:10 2006
+$OpenBSD: patch-Modules_socketmodule_c,v 1.2 2007/04/24 23:32:47 djm Exp $
+--- Modules/socketmodule.c.orig	Sun Apr  1 04:56:11 2007
++++ Modules/socketmodule.c	Fri Apr 20 13:29:23 2007
 @@ -73,9 +73,6 @@ Local naming conventions:
  #include "Python.h"
  #include "structmember.h"
@@ -11,7 +11,7 @@ $OpenBSD: patch-Modules_socketmodule_c,v 1.1 2006/11/01 20:59:18 alek Exp $
  /* Socket object documentation */
  PyDoc_STRVAR(sock_doc,
  "socket([family[, type[, proto]]]) -> socket object\n\
-@@ -1927,12 +1924,18 @@ internal_connect(PySocketSockObject *s, 
+@@ -1921,12 +1918,18 @@ internal_connect(PySocketSockObject *s, struct sockadd
  		if (res < 0 && errno == EINPROGRESS && IS_SELECTABLE(s)) {
  			timeout = internal_select(s, 1);
  			if (timeout == 0) {
@@ -34,7 +34,7 @@ $OpenBSD: patch-Modules_socketmodule_c,v 1.1 2006/11/01 20:59:18 alek Exp $
  			else
  				res = EWOULDBLOCK;	/* timed out */
  		}
-@@ -3602,7 +3605,7 @@ socket_inet_aton(PyObject *self, PyObjec
+@@ -3602,7 +3605,7 @@ socket_inet_aton(PyObject *self, PyObject *args)
  
  #if !defined(HAVE_INET_ATON) || defined(USE_INET_ATON_WEAKLINK)
  	/* Have to use inet_addr() instead */

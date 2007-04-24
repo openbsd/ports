@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.1 2006/11/01 20:59:18 alek Exp $
---- setup.py.orig	Thu Aug 10 01:42:18 2006
-+++ setup.py	Sat Oct 21 11:56:30 2006
+$OpenBSD: patch-setup_py,v 1.2 2007/04/24 23:32:47 djm Exp $
+--- setup.py.orig	Wed Feb 14 23:53:41 2007
++++ setup.py	Fri Apr 20 13:31:43 2007
 @@ -592,209 +592,14 @@ class PyBuildExt(build_ext):
              exts.append( Extension('_sha512', ['sha512module.c']) )
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-setup_py,v 1.1 2006/11/01 20:59:18 alek Exp $
 -        # a release.  Most open source OSes come with one or more
 -        # versions of BerkeleyDB already installed.
 -
--        max_db_ver = (4, 4)
+-        max_db_ver = (4, 5)
 -        min_db_ver = (3, 3)
 -        db_setup_debug = False   # verbose debug prints from this script?
 -
@@ -36,7 +36,7 @@ $OpenBSD: patch-setup_py,v 1.1 2006/11/01 20:59:18 alek Exp $
 -            '/sw/include/db3',
 -        ]
 -        # 4.x minor number specific paths
--        for x in (0,1,2,3,4):
+-        for x in (0,1,2,3,4,5):
 -            db_inc_paths.append('/usr/include/db4%d' % x)
 -            db_inc_paths.append('/usr/include/db4.%d' % x)
 -            db_inc_paths.append('/usr/local/BerkeleyDB.4.%d/include' % x)
@@ -44,7 +44,7 @@ $OpenBSD: patch-setup_py,v 1.1 2006/11/01 20:59:18 alek Exp $
 -            db_inc_paths.append('/pkg/db-4.%d/include' % x)
 -            db_inc_paths.append('/opt/db-4.%d/include' % x)
 -        # 3.x minor number specific paths
--        for x in (2,3):
+-        for x in (3,):
 -            db_inc_paths.append('/usr/include/db3%d' % x)
 -            db_inc_paths.append('/usr/local/BerkeleyDB.3.%d/include' % x)
 -            db_inc_paths.append('/usr/local/include/db3%d' % x)
@@ -213,7 +213,7 @@ $OpenBSD: patch-setup_py,v 1.1 2006/11/01 20:59:18 alek Exp $
 -            sqlite_libdir = [os.path.abspath(os.path.dirname(sqlite_libfile))]
 -
 -        if sqlite_incdir and sqlite_libdir:
-+	if !!USE_SQLITE!!:
++        if !!USE_SQLITE!!:
              sqlite_srcs = ['_sqlite/cache.c',
                  '_sqlite/connection.c',
                  '_sqlite/cursor.c',
@@ -359,7 +359,7 @@ $OpenBSD: patch-setup_py,v 1.1 2006/11/01 20:59:18 alek Exp $
  
      def detect_tkinter_darwin(self, inc_dirs, lib_dirs):
          # The _tkinter module, using frameworks. Since frameworks are quite
-@@ -1515,8 +1291,7 @@ def main():
+@@ -1516,8 +1292,7 @@ def main():
            ext_modules=[Extension('_struct', ['_struct.c'])],
  
            # Scripts to install

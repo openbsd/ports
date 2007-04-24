@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 20:48:23 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/04/24 23:32:47 djm Exp $
 @option no-default-conflict
 @conflict python->=2.5,<2.6
 @pkgpath lang/python/2.5
@@ -1365,7 +1365,7 @@ lib/python2.5/keyword.py
 lib/python2.5/keyword.pyc
 lib/python2.5/keyword.pyo
 lib/python2.5/lib-dynload/
-lib/python2.5/lib-dynload/Python-2.5-py2.5.egg-info
+lib/python2.5/lib-dynload/Python-2.5.1-py2.5.egg-info
 lib/python2.5/lib-dynload/_bisect.so
 lib/python2.5/lib-dynload/_codecs_cn.so
 lib/python2.5/lib-dynload/_codecs_hk.so
@@ -1680,6 +1680,15 @@ lib/python2.5/telnetlib.pyo
 lib/python2.5/tempfile.py
 lib/python2.5/tempfile.pyc
 lib/python2.5/tempfile.pyo
+lib/python2.5/test/infinite_reload.py
+lib/python2.5/test/infinite_reload.pyc
+lib/python2.5/test/infinite_reload.pyo
+lib/python2.5/test/test_complex_args.py
+lib/python2.5/test/test_complex_args.pyc
+lib/python2.5/test/test_complex_args.pyo
+lib/python2.5/test/test_structmembers.py
+lib/python2.5/test/test_structmembers.pyc
+lib/python2.5/test/test_structmembers.pyo
 lib/python2.5/textwrap.py
 lib/python2.5/textwrap.pyc
 lib/python2.5/textwrap.pyo

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2007/02/16 22:56:48 steven Exp $
---- configure.in.orig	Tue Sep  5 04:54:42 2006
-+++ configure.in	Fri Feb 16 20:57:34 2007
+$OpenBSD: patch-configure_in,v 1.3 2007/04/24 23:32:47 djm Exp $
+--- configure.in.orig	Mon Mar 12 21:50:51 2007
++++ configure.in	Fri Apr 20 13:29:23 2007
 @@ -201,7 +201,7 @@ case $ac_sys_system/$ac_sys_release in
    # On OpenBSD, select(2) is not available if _XOPEN_SOURCE is defined,
    # even though select is a POSIX function. Reported by J. Ribbens.
@@ -8,9 +8,9 @@ $OpenBSD: patch-configure_in,v 1.2 2007/02/16 22:56:48 steven Exp $
 -  OpenBSD/2.* | OpenBSD/3.@<:@0123456789@:>@ | OpenBSD/4.@<:@0@:>@) 
 +  OpenBSD*) 
      define_xopen_source=no;;
-   # On Solaris 2.6, sys/wait.h is inconsistent in the usage
-   # of union __?sigval. Reported by Stuart Bishop.
-@@ -1508,19 +1508,7 @@ then
+   # Defining _XOPEN_SOURCE on NetBSD version prior to the introduction of
+   # _NETBSD_SOURCE disables certain features (eg. setgroups). Reported by
+@@ -1509,19 +1509,7 @@ then
  			LDSHARED="ld -Bshareable ${LDFLAGS}"
  		fi;;
  	OpenBSD*)
@@ -31,7 +31,7 @@ $OpenBSD: patch-configure_in,v 1.2 2007/02/16 22:56:48 steven Exp $
  	NetBSD*|DragonFly*) LDSHARED="cc -shared ${LDFLAGS}";;
  	OpenUNIX*|UnixWare*)
  		if test "$GCC" = "yes"
-@@ -1662,9 +1650,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic li
+@@ -1665,9 +1653,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
  
  # only check for sem_ini if thread support is requested
  if test "$with_threads" = "yes" -o -z "$with_threads"; then

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.1 2006/11/01 20:59:18 alek Exp $
---- Makefile.pre.in.orig	Mon Jul 31 02:20:10 2006
-+++ Makefile.pre.in	Mon Sep 18 06:31:10 2006
-@@ -337,6 +337,7 @@ $(BUILDPYTHON):	Modules/python.o $(LIBRA
+$OpenBSD: patch-Makefile_pre_in,v 1.2 2007/04/24 23:32:47 djm Exp $
+--- Makefile.pre.in.orig	Sat Dec  9 07:46:13 2006
++++ Makefile.pre.in	Fri Apr 20 13:29:23 2007
+@@ -337,6 +337,7 @@ $(BUILDPYTHON):	Modules/python.o $(LIBRARY) $(LDLIBRAR
  		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
  			Modules/python.o \
  			$(BLDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)

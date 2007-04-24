@@ -1,7 +1,7 @@
-$OpenBSD: patch-Lib_test_test_timeout_py,v 1.1 2006/11/01 20:59:18 alek Exp $
+$OpenBSD: patch-Lib_test_test_timeout_py,v 1.2 2007/04/24 23:32:47 djm Exp $
 --- Lib/test/test_timeout.py.orig	Mon Jun 12 06:25:56 2006
-+++ Lib/test/test_timeout.py	Mon Sep 18 06:31:10 2006
-@@ -108,7 +108,7 @@ class TimeoutTestCase(unittest.TestCase)
++++ Lib/test/test_timeout.py	Fri Apr 20 13:29:23 2007
+@@ -108,7 +108,7 @@ class TimeoutTestCase(unittest.TestCase):
  
      def testConnectTimeout(self):
          # Test connect() timeout
