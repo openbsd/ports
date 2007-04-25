@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dock_c,v 1.1 2007/04/25 11:33:21 wilfried Exp $
+--- src/dock.c.orig	Sat Oct 23 05:10:40 2004
++++ src/dock.c	Wed Mar 14 21:17:01 2007
+@@ -2977,7 +2977,7 @@ execCommand(WAppIcon *btn, char *command
+ 
+     wtokensplit(cmdline, &argv, &argc);
+ 
+-    if (argv==NULL) {
++    if (!argc) {
+         if (cmdline)
+             wfree(cmdline);
+         if (state)

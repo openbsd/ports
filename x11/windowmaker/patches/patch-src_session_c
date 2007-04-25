@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_session_c,v 1.1 2007/04/25 11:34:00 wilfried Exp $
+--- src/session.c.orig	Fri Mar 11 22:35:38 2005
++++ src/session.c	Wed Mar 14 21:17:06 2007
+@@ -381,7 +381,7 @@ execCommand(WScreen *scr, char *command,
+ 
+     wtokensplit(command, &argv, &argc);
+ 
+-    if (argv==NULL) {
++    if (!argc) {
+         return 0;
+     }
+ 
