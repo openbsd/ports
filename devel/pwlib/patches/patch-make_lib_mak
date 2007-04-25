@@ -1,0 +1,60 @@
+$OpenBSD: patch-make_lib_mak,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
+--- make/lib.mak.orig	Sun Sep 25 12:51:23 2005
++++ make/lib.mak	Mon Apr 23 14:35:56 2007
+@@ -131,6 +131,9 @@ ifneq ($(OSTYPE),Darwin)
+   LIBNAME_MIN	= $(LIBNAME_MAJ).$(MINOR_VERSION)
+   ifeq ($(BUILD_TYPE),.)
+     LIBNAME_PAT	= $(LIBNAME_MIN).$(BUILD_NUMBER)
++   ifeq ($(OSTYPE),OpenBSD)
++     LIBNAME_PAT = $(LIBNAME_MIN)
++   endif
+   else
+     LIBNAME_PAT	= $(LIBNAME_MIN)-$(BUILD_TYPE)$(BUILD_NUMBER)
+   endif
+@@ -151,7 +154,7 @@ CLEAN_FILES += $(LIBDIR)/$(LIBNAME_PAT) $(LIBDIR)/$(LI
+ ifneq ($(P_SHAREDLIB),1)
+   STATIC_LIB_FILE = $(LIBDIR)/$(LIB_FILENAME)
+ else
+-  STATIC_LIB_FILE = $(LIBDIR)/$(subst .$(LIB_SUFFIX),_s.$(STATICLIBEXT),$(LIB_FILENAME))
++  STATIC_LIB_FILE = $(LIBDIR)/$(subst .$(LIB_SUFFIX),.$(STATICLIBEXT),$(LIB_FILENAME))
+ endif
+ 
+ $(LIBDIR)/$(LIB_FILENAME) : $(TARGETLIB)
+@@ -178,7 +181,7 @@ ifeq ($(P_SHAREDLIB),1)
+   endif
+ 
+   ifneq ($(OSTYPE), QNX)
+-    ifneq (,$(findstring $(OSTYPE),FreeBSD OpenBSDs))
++    ifneq (,$(findstring $(OSTYPE),FreeBSD OpenBSD))
+       ifdef P_PTHREADS
+         EXTLIBS += -pthread
+       endif
+@@ -207,10 +210,16 @@ ifeq ($(P_SHAREDLIB),1)
+     LD = $(CPLUS)
+   endif
+ 
++  ifeq ($(MACHTYPE),x86_64)
++      LDSOOPTS += -fPIC
++  endif
++
+   $(LIBDIR)/$(LIB_FILENAME): $(LIBDIR)/$(LIBNAME_PAT)
++ifneq ($(OSTYPE),OpenBSD)
+ 	cd $(LIBDIR) ; rm -f $(LIB_FILENAME) ; ln -sf $(LIBNAME_PAT) $(LIB_FILENAME)
+ 	cd $(LIBDIR) ; rm -f $(LIBNAME_MAJ) ;  ln -sf $(LIBNAME_PAT) $(LIBNAME_MAJ)
+ 	cd $(LIBDIR) ; rm -f $(LIBNAME_MIN) ;  ln -sf $(LIBNAME_PAT) $(LIBNAME_MIN)
++endif
+ 
+   $(LIBDIR)/$(LIBNAME_PAT): $(STATIC_LIB_FILE)
+ 	@echo EXTLIBS = $(EXTLIBS)
+@@ -220,9 +229,11 @@ ifeq ($(P_SHAREDLIB),1)
+ 
+   install: $(LIBDIR)/$(LIBNAME_PAT)
+ 	$(INSTALL) $(LIBDIR)/$(LIBNAME_PAT) $(INSTALLLIB_DIR)/$(LIBNAME_PAT)
++ifneq ($(OSTYPE),OpenBSD)
+ 	ln -sf $(LIBNAME_PAT) $(INSTALLLIB_DIR)/$(LIB_FILENAME)
+ 	ln -sf $(LIBNAME_PAT) $(INSTALLLIB_DIR)/$(LIBNAME_MAJ)
+ 	ln -sf $(LIBNAME_PAT) $(INSTALLLIB_DIR)/$(LIBNAME_MIN)
++endif
+ 
+ endif # P_SHAREDLIB
+ 

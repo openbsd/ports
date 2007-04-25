@@ -1,0 +1,8 @@
+PWLib is a moderately large class library that has its genesis many
+years ago as a method to product applications to run on both Microsoft
+Windows and Unix X-Window systems.
+Since then the system has grown to include many classes that assist in
+writing complete multi-platform applications. Classes for I/O
+portability, multi-threading portability, aid in producing unix daemons
+and NT services portably and all sorts of internet protocols were added
+over the years. The library now also supports the open H323 project.

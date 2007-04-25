@@ -1,0 +1,12 @@
+$OpenBSD: patch-make_ptbuildopts_mak_in,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
+--- make/ptbuildopts.mak.in.orig	Tue Apr 10 15:12:28 2007
++++ make/ptbuildopts.mak.in	Tue Apr 10 15:12:57 2007
+@@ -13,7 +13,7 @@ MACHTYPE   = @MACHTYPE@
+ OSTYPE	   = @OSTYPE@
+ OSRELEASE  = @OSRELEASE@
+ 
+-STDCCFLAGS    += @STDCCFLAGS@
++STDCCFLAGS    += @STDCCFLAGS@ -I@INSTALLPREFIX@/include
+ STDCXXFLAGS   += @STDCXXFLAGS@
+ OPTSTDCCFLAGS += @OPTSTDCCFLAGS@
+ LDFLAGS	      += @LDFLAGS@

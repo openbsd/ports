@@ -1,0 +1,65 @@
+$OpenBSD: patch-make_unix_mak,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
+--- make/unix.mak.orig	Tue Jan 17 19:57:17 2006
++++ make/unix.mak	Mon Apr 16 20:52:38 2007
+@@ -443,7 +443,7 @@ endif # P_SHAREDLIB
+ 
+ 
+ STATIC_LIBS	:= libstdc++.a libg++.a libm.a libc.a
+-SYSLIBDIR	:= $(shell $(PWLIBDIR)/make/ptlib-config --libdir)
++SYSLIBDIR	:= $(shell !!PREFIX!!/bin/ptlib-config --libdir)
+ 
+ endif # linux
+ 
+@@ -470,7 +470,7 @@ endif # FreeBSD
+ ifeq ($(OSTYPE),OpenBSD)
+ 
+ ifeq ($(MACHTYPE),x86)
+-STDCCFLAGS	+= -m486
++#STDCCFLAGS	+= -m486
+ endif
+ 
+ LDLIBS		+= -lossaudio
+@@ -492,7 +492,7 @@ endif
+ 
+ LDLIBS		+= -lossaudio
+ 
+-STDCCFLAGS += -I$(UNIX_INC_DIR) -I$(PWLIBDIR)/include
++STDCCFLAGS += -I$(PWLIBDIR)/include
+ 
+ # enable the USE_PTH line to compile using pth
+ # enable the USE_NATIVE_THREADS line to compile using native threads
+@@ -897,11 +897,11 @@ LIB_SUFFIX	= $(SHAREDLIBEXT)
+ LIB_TYPE	=
+ else   
+ LIB_SUFFIX	= a 
+-LIB_TYPE	= _s
++LIB_TYPE	=
+ endif # P_SHAREDLIB
+ 
+ ifndef INSTALL_DIR
+-INSTALL_DIR	= /usr/local
++INSTALL_DIR	= ${PREFIX}
+ endif
+ 
+ ifndef INSTALLBIN_DIR
+@@ -939,8 +939,10 @@ endif
+ PW_LIBDIR	= $(PWLIBDIR)/lib
+ 
+ # set name of the PT library
+-PTLIB_BASE	= pt_$(PLATFORM_TYPE)_$(OBJ_SUFFIX)
++PTLIB_BASE	= pt
++ifndef PTLIB_FILE
+ PTLIB_FILE	= lib$(PTLIB_BASE)$(LIB_TYPE).$(LIB_SUFFIX)
++endif
+ PT_OBJBASE	= obj_$(PLATFORM_TYPE)_$(OBJDIR_SUFFIX)
+ PT_OBJDIR	= $(PW_LIBDIR)/$(PT_OBJBASE)
+ 
+@@ -970,7 +972,7 @@ ifneq ($(OSTYPE),Darwin)
+   ifeq ($(OSTYPE),solaris)
+     OPTCCFLAGS	+= -xO3 
+   else
+-    OPTCCFLAGS	+= -Os 
++    OPTCCFLAGS	+=
+   endif
+ else
+   OPTCCFLAGS	+= -O2

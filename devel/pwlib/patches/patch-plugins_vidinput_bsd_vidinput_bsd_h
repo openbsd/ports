@@ -1,0 +1,91 @@
+$OpenBSD: patch-plugins_vidinput_bsd_vidinput_bsd_h,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
+--- plugins/vidinput_bsd/vidinput_bsd.h.orig	Tue Aug  9 11:08:09 2005
++++ plugins/vidinput_bsd/vidinput_bsd.h	Thu Apr 12 15:13:32 2007
+@@ -2,6 +2,14 @@
+ //#include <sys/mman.h>
+ //#include <sys/time.h>
+ 
++#ifndef _PVIDEOIOBSDCAPTURE
++
++#define _PVIDEOIOBSDCAPTURE
++
++#ifdef __GNUC__   
++#pragma interface
++#endif
++
+ #include <ptlib.h>
+ #include <ptlib/videoio.h>
+ #include <ptlib/vconvert.h>
+@@ -10,6 +18,8 @@
+ #include <machine/ioctl_meteor.h>
+ #endif
+ 
++#include <sys/mman.h>
++
+ #if defined(P_OPENBSD) || defined(P_NETBSD)
+ #if P_OPENBSD >= 200105
+ #include <dev/ic/bt8xx.h>
+@@ -20,20 +30,25 @@
+ #endif
+ #endif
+ 
+-class PVideoInputDevice_BSDCAPTURE: public PVideoInputDevice
++#if !P_USE_INLINES
++#include <ptlib/contain.inl>
++#endif
++
++
++class PVideoInputDevice_BSDCAPTURE : public PVideoInputDevice
+ {
+ 
++  PCLASSINFO(PVideoInputDevice_BSDCAPTURE, PVideoInputDevice);
++
+ public:
+   PVideoInputDevice_BSDCAPTURE();
+   ~PVideoInputDevice_BSDCAPTURE();
+ 
+-  static PStringList GetInputDeviceNames();
++  BOOL Open(
++    const PString &deviceName,
++    BOOL startImmediate = TRUE
++  );
+ 
+-  PStringList GetDeviceNames() const
+-  { return GetInputDeviceNames(); }
+-
+-  BOOL Open(const PString &deviceName, BOOL startImmediate);
+-
+   BOOL IsOpen();
+ 
+   BOOL Close();
+@@ -43,11 +58,21 @@ class PVideoInputDevice_BSDCAPTURE: public PVideoInput
+ 
+   BOOL IsCapturing();
+ 
++  static PStringList GetInputDeviceNames();
++
++  PStringList GetDeviceNames() const
++  { return GetInputDeviceNames(); }
++
+   PINDEX GetMaxFrameBytes();
+ 
+-  BOOL GetFrame(PBYTEArray & frame);
+-  BOOL GetFrameData(BYTE*, PINDEX*);
+-  BOOL GetFrameDataNoDelay(BYTE*, PINDEX*);
++  BOOL GetFrameData(
++    BYTE * buffer,
++    PINDEX * bytesReturned = NULL
++  );
++  BOOL GetFrameDataNoDelay(
++    BYTE * buffer,
++    PINDEX * bytesReturned = NULL
++  );
+ 
+   BOOL GetFrameSizeLimits(unsigned int&, unsigned int&,
+ 			  unsigned int&, unsigned int&);
+@@ -99,3 +124,5 @@ class PVideoInputDevice_BSDCAPTURE: public PVideoInput
+   int    mmap_size;
+  
+ };
++
++#endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_sound_oss_sound_oss_cxx,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
+--- plugins/sound_oss/sound_oss.cxx.orig	Mon Apr 16 20:35:31 2007
++++ plugins/sound_oss/sound_oss.cxx	Mon Apr 16 20:37:28 2007
+@@ -383,7 +383,7 @@ static void CollectSoundDevices(PDirectory devdir, POr
+         // When adding these to the 'dsp' string array, only the first one
+         // found is used.
+ 
+-#ifndef P_NETBSD
++#ifndef P_OPENBSD
+         // Look for dsp
+         if (filename == "dsp") {
+           dsp.SetAt(0, devname);

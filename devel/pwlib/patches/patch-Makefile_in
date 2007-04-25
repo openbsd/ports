@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
+--- Makefile.in.orig	Wed Apr  6 12:10:54 2005
++++ Makefile.in	Tue Apr 24 13:05:07 2007
+@@ -254,23 +254,7 @@ install:
+                      $(DESTDIR)$(PREFIX)/share/pwlib/make ; \
+ 		do mkdir -p $$dir ; chmod 755 $$dir ; \
+ 	done )
+-	$(INSTALL) -m 444 lib/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ ; \
+-		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ \
+-	)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(PTLIB_FILE).@MAJOR_VERSION@ ; \
+-		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(PTLIB_FILE).@MAJOR_VERSION@ \
+-	)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(PTLIB_FILE) ; \
+-		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(PTLIB_FILE) \
+-	)
+-	(cd $(DESTDIR)$(LIBDIR); \
+-		rm -f  libpt.@SHAREDLIBEXT@ ; \
+-		ln -sf $(PTLIB_FILE) libpt.@SHAREDLIBEXT@ \
+-	)
++	$(INSTALL) -m 444 lib/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ $(DESTDIR)$(LIBDIR)
+ ifeq (1, $(HAS_PLUGINS))
+ 	cd plugins/pwlib/device/ ; \
+ 	( for dir in ./* ;\
+@@ -295,8 +279,7 @@ endif
+ 	(for fn in make/*.mak ; \
+ 		do $(INSTALL) -m 444 $$fn $(DESTDIR)$(PREFIX)/share/pwlib/make; \
+ 	done)
+-	$(INSTALL) -m 755 make/ptlib-config $(DESTDIR)$(PREFIX)/share/pwlib/make/
+-	(cd $(DESTDIR)$(PREFIX)/bin; rm -f ptlib-config ; ln -snf ../share/pwlib/make/ptlib-config ptlib-config)
++	$(INSTALL) -m 755 make/ptlib-config $(DESTDIR)$(PREFIX)/bin/
+ 
+ uninstall:
+ 	rm -rf $(DESTDIR)$(PREFIX)/include/ptlib \

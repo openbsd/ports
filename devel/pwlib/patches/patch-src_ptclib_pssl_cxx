@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ptclib_pssl_cxx,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
+--- src/ptclib/pssl.cxx.orig	Wed Nov 30 13:47:41 2005
++++ src/ptclib/pssl.cxx	Mon Apr  9 11:36:16 2007
+@@ -769,7 +769,7 @@ PSSLDiffieHellman::~PSSLDiffieHellman()
+     DH_free(dh);
+ }
+ 
+-#ifdef __BEOS__
++#if defined(__BEOS__) || (defined(__OpenBSD__) && !defined(__PPC__))
+ // 2/21/04 Yuri Kiryanov - fix for compiler choke on BeOS for usage of
+ // SSL function d2i_DHparams_bio below in PSSLDiffieHellman::Load
+ #undef  d2i_DHparams_bio

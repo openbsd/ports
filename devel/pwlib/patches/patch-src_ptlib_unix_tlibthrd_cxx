@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_ptlib_unix_tlibthrd_cxx,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
+--- src/ptlib/unix/tlibthrd.cxx.orig	Wed Apr 18 17:23:12 2007
++++ src/ptlib/unix/tlibthrd.cxx	Wed Apr 18 17:23:51 2007
+@@ -1739,7 +1739,7 @@ PTimedMutex::PTimedMutex()
+ #if P_HAS_RECURSIVE_MUTEX
+   pthread_mutexattr_t attr;
+   PAssertPTHREAD(pthread_mutexattr_init, (&attr));
+-  PAssertPTHREAD(pthread_mutexattr_settype, (&attr, PTHREAD_MUTEX_RECURSIVE_NP));
++  PAssertPTHREAD(pthread_mutexattr_settype, (&attr, PTHREAD_MUTEX_RECURSIVE));
+   PAssertPTHREAD(pthread_mutex_init, (&mutex, &attr));
+   PAssertPTHREAD(pthread_mutexattr_destroy, (&attr));
+ #else
+@@ -1754,7 +1754,7 @@ PTimedMutex::PTimedMutex(const PTimedMutex & /*mut*/)
+ #if P_HAS_RECURSIVE_MUTEX
+   pthread_mutexattr_t attr;
+   PAssertPTHREAD(pthread_mutexattr_init, (&attr));
+-  PAssertPTHREAD(pthread_mutexattr_settype, (&attr, PTHREAD_MUTEX_RECURSIVE_NP));
++  PAssertPTHREAD(pthread_mutexattr_settype, (&attr, PTHREAD_MUTEX_RECURSIVE));
+   PAssertPTHREAD(pthread_mutex_init, (&mutex, &attr));
+   PAssertPTHREAD(pthread_mutexattr_destroy, (&attr));
+ #else

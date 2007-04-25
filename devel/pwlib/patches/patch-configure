@@ -1,0 +1,36 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
+--- configure.orig	Wed Feb 22 12:53:28 2006
++++ configure	Mon Apr 23 16:59:26 2007
+@@ -1951,7 +1951,7 @@ LIBDIR=${libdir}
+ MAJOR_VERSION=`cat ${PWLIBDIR}/version.h | grep MAJOR_VERSION | cut -f3 -d' '`
+ MINOR_VERSION=`cat ${PWLIBDIR}/version.h | grep MINOR_VERSION | cut -f3 -d' '`
+ BUILD_NUMBER=`cat ${PWLIBDIR}/version.h | grep BUILD_NUMBER | cut -f3 -d' '`
+-PWLIB_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}.${BUILD_NUMBER}"
++PWLIB_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}"
+ 
+ 
+ 
+@@ -4567,8 +4567,12 @@ else
+ fi
+ 
+ if test ${HAS_PTHREADS} = yes ; then
+-  ENDLDLIBS="$ENDLDLIBS -lpthread"
+-  STDCCFLAGS="$STDCCFLAGS -D_REENTRANT"
++  if test ${OSTYPE} = OpenBSD ; then
++    ENDLDLIBS="$ENDLDLIBS -pthread"
++  else
++    ENDLDLIBS="$ENDLDLIBS -lpthread"
++  fi
++    STDCCFLAGS="$STDCCFLAGS -D_REENTRANT"
+ else
+   if test ${OSTYPE} = FreeBSD ; then
+     HAS_PTHREADS=yes
+@@ -4789,7 +4793,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ int
+ main ()
+ {
+-pthread_mutexattr_t attr; pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE_NP);
++pthread_mutexattr_t attr; pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+   ;
+   return 0;
+ }

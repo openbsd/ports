@@ -1,0 +1,16 @@
+$OpenBSD: patch-make_ptlib-config_in,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
+--- make/ptlib-config.in.orig	Sun Sep 18 13:05:36 2005
++++ make/ptlib-config.in	Wed Apr 11 18:13:29 2007
+@@ -5,10 +5,10 @@
+ #
+ 
+ VERSION="@PWLIB_VERSION@"
+-CCFLAGS="@STDCCFLAGS@"
++CCFLAGS="@STDCCFLAGS@ -I@INSTALLPREFIX@/include"
+ LDFLAGS="@LDFLAGS@"
+ LIBS="@ENDLDLIBS@ -lpt"
+-LIBDIR="@LIBDIR@"
++LIBDIR="!!PREFIX!!/lib"
+ PWINSTDIR="@INSTALLPREFIX@/share/pwlib"
+ MACHTYPE="@MACHTYPE@"
+ OSTYPE="@OSTYPE@"
