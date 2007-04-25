@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/04/13 20:40:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2007/04/25 10:48:35 wilfried Exp $
 
 COMMENT=	"visual administration console for MySQL"
 
-DISTNAME=	mysql-gui-tools-5.0r9
-PKGNAME=	mysql-administrator-1.2.8p0
+DISTNAME=	mysql-gui-tools-5.0r11
+PKGNAME=	mysql-administrator-1.2.11
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/administrator/
@@ -16,16 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLGUITools/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQLAdministrationSuite/ \
-		ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLAdministrationSuite/ \
-		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLAdministrationSuite/
+MASTER_SITES=	http://mysql.serenitynet.com/Downloads/MySQLGUITools/
 
-WANTLIB=	X11 Xau Xdmcp Xrender c crypto fontconfig freetype m pthread \
-		ssl stdc++ util z atk-1.0 atkmm-1.6 gdk-x11-2.0 glitz png \
-		gdk_pixbuf-2.0 gdkmm-2.4 glibmm-2.4 \
-		gtk-x11-2.0 pango-1.0 pangomm-1.4.>=1.0 \
-		pangoft2-1.0 pangocairo-1.0 sigc-2.0 cairo expat
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
+		c cairo cairomm-1.0 crypto expat fontconfig freetype atk-1.0 \
+		atkmm-1.6 gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 glibmm-2.4 \
+		glitz gtk-x11-2.0 m pango-1.0 pangomm-1.4.>=1.0 pangoft2-1.0 \
+		pangocairo-1.0 png pthread sigc-2.0 ssl stdc++ util z
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common
