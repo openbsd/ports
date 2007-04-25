@@ -1,4 +1,4 @@
-# $OpenBS$
+# $OpenBSD: Makefile,v 1.17 2007/04/25 09:57:04 jasper Exp $
 
 COMMENT=		"themes collection for GNOME"
 
