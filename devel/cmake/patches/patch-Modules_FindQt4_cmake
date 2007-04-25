@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.1 2007/03/20 11:23:10 espie Exp $
---- Modules/FindQt4.cmake.orig	Tue Mar 20 12:20:58 2007
-+++ Modules/FindQt4.cmake	Tue Mar 20 12:21:06 2007
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.2 2007/04/25 14:56:13 espie Exp $
+--- Modules/FindQt4.cmake.orig	Wed Jan 10 18:59:12 2007
++++ Modules/FindQt4.cmake	Wed Apr 25 16:43:46 2007
 @@ -174,7 +174,7 @@ SET(QT_USE_FILE ${CMAKE_ROOT}/Modules/UseQt4.cmake)
  SET( QT_DEFINITIONS "")
  
@@ -10,3 +10,12 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.1 2007/03/20 11:23:10 espie Exp $
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
    $ENV{QTDIR}/bin
+@@ -882,7 +882,7 @@ IF (QT4_QMAKE_FOUND)
+   ###############################################
+ 
+   SET(QT_GUI_LIB_DEPENDENCIES "")
+-  SET(QT_CORE_LIB_DEPENDENCIES "")
++  SET(QT_CORE_LIB_DEPENDENCIES "-pthread")
+   
+   # shared build needs -DQT_SHARED
+   IF(NOT QT_CONFIG MATCHES "static")
