@@ -1,7 +1,7 @@
-$OpenBSD: patch-serverconfig_c,v 1.2 2007/03/26 06:57:56 ajacoutot Exp $
---- serverconfig.c.orig	Sat Feb 17 19:30:11 2007
-+++ serverconfig.c	Sat Feb 17 19:31:38 2007
-@@ -13,7 +13,7 @@
+$OpenBSD: patch-serverconfig_c,v 1.3 2007/04/25 13:55:58 ajacoutot Exp $
+--- serverconfig.c.orig	Wed Apr 25 10:19:10 2007
++++ serverconfig.c	Wed Apr 25 15:49:45 2007
+@@ -15,7 +15,7 @@
  #include "libstr.h"
  #include "libfs.h"
  

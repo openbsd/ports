@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/26 06:57:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/04/25 13:55:58 ajacoutot Exp $
 @newgroup _hiawatha:579
 @newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
 @man man/man1/cgi-wrapper.1
 @man man/man1/hiawatha.1
+@man man/man1/newroot.1
 @man man/man1/php-fcgi.1
 @man man/man1/wigwam.1
 @mode u+s

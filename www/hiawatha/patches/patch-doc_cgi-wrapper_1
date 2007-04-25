@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_cgi-wrapper_1,v 1.1 2007/03/26 06:57:56 ajacoutot Exp $
---- doc/cgi-wrapper.1.orig	Sat Feb 17 19:16:27 2007
-+++ doc/cgi-wrapper.1	Sat Feb 17 19:17:10 2007
+$OpenBSD: patch-doc_cgi-wrapper_1,v 1.2 2007/04/25 13:55:58 ajacoutot Exp $
+--- doc/cgi-wrapper.1.orig	Wed Mar  7 00:33:48 2007
++++ doc/cgi-wrapper.1	Wed Apr 25 15:49:45 2007
 @@ -11,7 +11,7 @@ cgi-wrapper
  The CGI-wrapper can be used to run certain CGI programs with a different userid then the webserver's userid. To function properly, the CGI-wrapper binary needs the su-bit. To prevent abuse, it has the necessary security checks. As a result, the CGI-wrapper can only be executed by the Hiawatha webserver.
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-doc_cgi-wrapper_1,v 1.1 2007/03/26 06:57:56 ajacoutot Exp $
 +The CGI-wrapper can be configured via the configuration file !!SYSCONFDIR!!/hiawatha/cgi-wrapper.conf. The following options are available:
  .TP
  .B CGIhandler = <CGI handler>[, <CGI handler>, ...]
- Normally, only files inside the DocumentRoot will be executed. CGI-handlers are usually not inside this directory. Use this option to specify binaries that are outside the DocumentRoot and the CGI-wrapper is still allowed to execute.
+ Normally, only files inside the WebsiteRoot will be executed. CGI-handlers are usually not inside this directory. Use this option to specify binaries that are outside the WebsiteRoot and the CGI-wrapper is still allowed to execute.
