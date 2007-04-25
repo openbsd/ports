@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/04/25 05:33:48 msf Exp $
 
 COMMENT= 	"module for inspecting Perl's symbol table"
 
 MODULES=	cpan
-DISTNAME=	Devel-Symdump-2.0604
+DISTNAME=	Devel-Symdump-2.07
 CATEGORIES=	devel perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
