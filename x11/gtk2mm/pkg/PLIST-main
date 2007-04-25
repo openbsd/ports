@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 18:42:20 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/04/25 10:40:44 wilfried Exp $
 @pkgpath x11/gtk2mm
 %%SHARED%%
 include/atkmm-1.6/
@@ -117,6 +117,7 @@ include/gtkmm-2.4/gtkmm/adjustment.h
 include/gtkmm-2.4/gtkmm/alignment.h
 include/gtkmm-2.4/gtkmm/arrow.h
 include/gtkmm-2.4/gtkmm/aspectframe.h
+include/gtkmm-2.4/gtkmm/assistant.h
 include/gtkmm-2.4/gtkmm/base.h
 include/gtkmm-2.4/gtkmm/bin.h
 include/gtkmm-2.4/gtkmm/box.h
@@ -127,9 +128,11 @@ include/gtkmm-2.4/gtkmm/celleditable.h
 include/gtkmm-2.4/gtkmm/celllayout.h
 include/gtkmm-2.4/gtkmm/cellrenderer.h
 include/gtkmm-2.4/gtkmm/cellrenderer_generation.h
+include/gtkmm-2.4/gtkmm/cellrendereraccel.h
 include/gtkmm-2.4/gtkmm/cellrenderercombo.h
 include/gtkmm-2.4/gtkmm/cellrendererpixbuf.h
 include/gtkmm-2.4/gtkmm/cellrendererprogress.h
+include/gtkmm-2.4/gtkmm/cellrendererspin.h
 include/gtkmm-2.4/gtkmm/cellrenderertext.h
 include/gtkmm-2.4/gtkmm/cellrenderertoggle.h
 include/gtkmm-2.4/gtkmm/cellview.h
@@ -177,7 +180,9 @@ include/gtkmm-2.4/gtkmm/invisible.h
 include/gtkmm-2.4/gtkmm/item.h
 include/gtkmm-2.4/gtkmm/label.h
 include/gtkmm-2.4/gtkmm/layout.h
+include/gtkmm-2.4/gtkmm/linkbutton.h
 include/gtkmm-2.4/gtkmm/liststore.h
+include/gtkmm-2.4/gtkmm/listviewtext.h
 include/gtkmm-2.4/gtkmm/main.h
 include/gtkmm-2.4/gtkmm/menu.h
 include/gtkmm-2.4/gtkmm/menu_elems.h
@@ -190,8 +195,18 @@ include/gtkmm-2.4/gtkmm/misc.h
 include/gtkmm-2.4/gtkmm/notebook.h
 include/gtkmm-2.4/gtkmm/object.h
 include/gtkmm-2.4/gtkmm/optionmenu.h
+include/gtkmm-2.4/gtkmm/pagesetup.h
+include/gtkmm-2.4/gtkmm/pagesetupunixdialog.h
 include/gtkmm-2.4/gtkmm/paned.h
+include/gtkmm-2.4/gtkmm/papersize.h
 include/gtkmm-2.4/gtkmm/plug.h
+include/gtkmm-2.4/gtkmm/printcontext.h
+include/gtkmm-2.4/gtkmm/printer.h
+include/gtkmm-2.4/gtkmm/printjob.h
+include/gtkmm-2.4/gtkmm/printoperation.h
+include/gtkmm-2.4/gtkmm/printoperationpreview.h
+include/gtkmm-2.4/gtkmm/printsettings.h
+include/gtkmm-2.4/gtkmm/printunixdialog.h
 include/gtkmm-2.4/gtkmm/private/
 include/gtkmm-2.4/gtkmm/private/aboutdialog_p.h
 include/gtkmm-2.4/gtkmm/private/accelgroup_p.h
@@ -202,6 +217,7 @@ include/gtkmm-2.4/gtkmm/private/adjustment_p.h
 include/gtkmm-2.4/gtkmm/private/alignment_p.h
 include/gtkmm-2.4/gtkmm/private/arrow_p.h
 include/gtkmm-2.4/gtkmm/private/aspectframe_p.h
+include/gtkmm-2.4/gtkmm/private/assistant_p.h
 include/gtkmm-2.4/gtkmm/private/bin_p.h
 include/gtkmm-2.4/gtkmm/private/box_p.h
 include/gtkmm-2.4/gtkmm/private/button_p.h
@@ -210,9 +226,11 @@ include/gtkmm-2.4/gtkmm/private/calendar_p.h
 include/gtkmm-2.4/gtkmm/private/celleditable_p.h
 include/gtkmm-2.4/gtkmm/private/celllayout_p.h
 include/gtkmm-2.4/gtkmm/private/cellrenderer_p.h
+include/gtkmm-2.4/gtkmm/private/cellrendereraccel_p.h
 include/gtkmm-2.4/gtkmm/private/cellrenderercombo_p.h
 include/gtkmm-2.4/gtkmm/private/cellrendererpixbuf_p.h
 include/gtkmm-2.4/gtkmm/private/cellrendererprogress_p.h
+include/gtkmm-2.4/gtkmm/private/cellrendererspin_p.h
 include/gtkmm-2.4/gtkmm/private/cellrenderertext_p.h
 include/gtkmm-2.4/gtkmm/private/cellrenderertoggle_p.h
 include/gtkmm-2.4/gtkmm/private/cellview_p.h
@@ -258,6 +276,7 @@ include/gtkmm-2.4/gtkmm/private/invisible_p.h
 include/gtkmm-2.4/gtkmm/private/item_p.h
 include/gtkmm-2.4/gtkmm/private/label_p.h
 include/gtkmm-2.4/gtkmm/private/layout_p.h
+include/gtkmm-2.4/gtkmm/private/linkbutton_p.h
 include/gtkmm-2.4/gtkmm/private/liststore_p.h
 include/gtkmm-2.4/gtkmm/private/main_p.h
 include/gtkmm-2.4/gtkmm/private/menu_p.h
@@ -270,8 +289,18 @@ include/gtkmm-2.4/gtkmm/private/misc_p.h
 include/gtkmm-2.4/gtkmm/private/notebook_p.h
 include/gtkmm-2.4/gtkmm/private/object_p.h
 include/gtkmm-2.4/gtkmm/private/optionmenu_p.h
+include/gtkmm-2.4/gtkmm/private/pagesetup_p.h
+include/gtkmm-2.4/gtkmm/private/pagesetupunixdialog_p.h
 include/gtkmm-2.4/gtkmm/private/paned_p.h
+include/gtkmm-2.4/gtkmm/private/papersize_p.h
 include/gtkmm-2.4/gtkmm/private/plug_p.h
+include/gtkmm-2.4/gtkmm/private/printcontext_p.h
+include/gtkmm-2.4/gtkmm/private/printer_p.h
+include/gtkmm-2.4/gtkmm/private/printjob_p.h
+include/gtkmm-2.4/gtkmm/private/printoperation_p.h
+include/gtkmm-2.4/gtkmm/private/printoperationpreview_p.h
+include/gtkmm-2.4/gtkmm/private/printsettings_p.h
+include/gtkmm-2.4/gtkmm/private/printunixdialog_p.h
 include/gtkmm-2.4/gtkmm/private/progressbar_p.h
 include/gtkmm-2.4/gtkmm/private/radioaction_p.h
 include/gtkmm-2.4/gtkmm/private/radiobutton_p.h
@@ -279,6 +308,13 @@ include/gtkmm-2.4/gtkmm/private/radiomenuitem_p.h
 include/gtkmm-2.4/gtkmm/private/radiotoolbutton_p.h
 include/gtkmm-2.4/gtkmm/private/range_p.h
 include/gtkmm-2.4/gtkmm/private/rc_p.h
+include/gtkmm-2.4/gtkmm/private/recentchooser_p.h
+include/gtkmm-2.4/gtkmm/private/recentchooserdialog_p.h
+include/gtkmm-2.4/gtkmm/private/recentchoosermenu_p.h
+include/gtkmm-2.4/gtkmm/private/recentchooserwidget_p.h
+include/gtkmm-2.4/gtkmm/private/recentfilter_p.h
+include/gtkmm-2.4/gtkmm/private/recentinfo_p.h
+include/gtkmm-2.4/gtkmm/private/recentmanager_p.h
 include/gtkmm-2.4/gtkmm/private/ruler_p.h
 include/gtkmm-2.4/gtkmm/private/scale_p.h
 include/gtkmm-2.4/gtkmm/private/scrollbar_p.h
@@ -292,6 +328,7 @@ include/gtkmm-2.4/gtkmm/private/sizegroup_p.h
 include/gtkmm-2.4/gtkmm/private/socket_p.h
 include/gtkmm-2.4/gtkmm/private/spinbutton_p.h
 include/gtkmm-2.4/gtkmm/private/statusbar_p.h
+include/gtkmm-2.4/gtkmm/private/statusicon_p.h
 include/gtkmm-2.4/gtkmm/private/stockitem_p.h
 include/gtkmm-2.4/gtkmm/private/style_p.h
 include/gtkmm-2.4/gtkmm/private/table_p.h
@@ -337,6 +374,13 @@ include/gtkmm-2.4/gtkmm/radiomenuitem.h
 include/gtkmm-2.4/gtkmm/radiotoolbutton.h
 include/gtkmm-2.4/gtkmm/range.h
 include/gtkmm-2.4/gtkmm/rc.h
+include/gtkmm-2.4/gtkmm/recentchooser.h
+include/gtkmm-2.4/gtkmm/recentchooserdialog.h
+include/gtkmm-2.4/gtkmm/recentchoosermenu.h
+include/gtkmm-2.4/gtkmm/recentchooserwidget.h
+include/gtkmm-2.4/gtkmm/recentfilter.h
+include/gtkmm-2.4/gtkmm/recentinfo.h
+include/gtkmm-2.4/gtkmm/recentmanager.h
 include/gtkmm-2.4/gtkmm/ruler.h
 include/gtkmm-2.4/gtkmm/scale.h
 include/gtkmm-2.4/gtkmm/scrollbar.h
@@ -351,6 +395,7 @@ include/gtkmm-2.4/gtkmm/sizegroup.h
 include/gtkmm-2.4/gtkmm/socket.h
 include/gtkmm-2.4/gtkmm/spinbutton.h
 include/gtkmm-2.4/gtkmm/statusbar.h
+include/gtkmm-2.4/gtkmm/statusicon.h
 include/gtkmm-2.4/gtkmm/stock.h
 include/gtkmm-2.4/gtkmm/stockid.h
 include/gtkmm-2.4/gtkmm/stockitem.h
@@ -400,6 +445,7 @@ include/pangomm-1.4/pangomm.h
 include/pangomm-1.4/pangomm/attributes.h
 include/pangomm-1.4/pangomm/attriter.h
 include/pangomm-1.4/pangomm/attrlist.h
+include/pangomm-1.4/pangomm/cairofontmap.h
 include/pangomm-1.4/pangomm/color.h
 include/pangomm-1.4/pangomm/context.h
 include/pangomm-1.4/pangomm/coverage.h
@@ -423,6 +469,7 @@ include/pangomm-1.4/pangomm/private/
 include/pangomm-1.4/pangomm/private/attributes_p.h
 include/pangomm-1.4/pangomm/private/attriter_p.h
 include/pangomm-1.4/pangomm/private/attrlist_p.h
+include/pangomm-1.4/pangomm/private/cairofontmap_p.h
 include/pangomm-1.4/pangomm/private/color_p.h
 include/pangomm-1.4/pangomm/private/context_p.h
 include/pangomm-1.4/pangomm/private/coverage_p.h
