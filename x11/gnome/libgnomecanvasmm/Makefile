@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/11 00:56:58 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/25 10:43:02 wilfried Exp $
 
 COMMENT=		"C++ interface to the graphics library for GNOME"
 
 DISTNAME=		libgnomecanvasmm-2.16.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		gnomecanvasmm-2.6	0.0	# .1.6
 CATEGORIES=		x11/gnome
 
@@ -17,11 +17,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xrender art_lgpl_2 atk-1.0 cairo fontconfig \
-			ICE SM freetype gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
-			glib-2.0 glitz gmodule-2.0 gobject-2.0 m \
+WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+			Xrender art_lgpl_2 atk-1.0 cairo cairomm-1.0 expat \
+			fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+			gtk-x11-2.0  glib-2.0 glitz gmodule-2.0 gobject-2.0 m \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
-	
+
 MODULES=		devel/gettext
 
 LIB_DEPENDS=		glibmm-2.4:glib2mm->=2.8:devel/glib2mm \
