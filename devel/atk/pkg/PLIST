@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/04/23 16:22:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/04/25 11:04:55 jasper Exp $
 %%SHARED%%
 include/atk-1.0/
 include/atk-1.0/atk/
@@ -34,9 +34,9 @@ lib/libatk-1.0.a
 lib/libatk-1.0.la
 lib/pkgconfig/
 lib/pkgconfig/atk.pc
-@comment share/gtk-doc/
-@comment share/gtk-doc/html/
-@comment share/gtk-doc/html/atk/
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/atk/
 share/gtk-doc/html/atk/AtkAction.html
 share/gtk-doc/html/atk/AtkComponent.html
 share/gtk-doc/html/atk/AtkDocument.html
@@ -64,7 +64,7 @@ share/gtk-doc/html/atk/atk-AtkStateSet.html
 share/gtk-doc/html/atk/atk.devhelp
 share/gtk-doc/html/atk/atk.devhelp2
 share/gtk-doc/html/atk/atk.html
-@comment share/gtk-doc/html/atk/home.png
+share/gtk-doc/html/atk/home.png
 share/gtk-doc/html/atk/index.html
 share/gtk-doc/html/atk/index.sgml
 share/gtk-doc/html/atk/ix01.html
@@ -74,7 +74,7 @@ share/gtk-doc/html/atk/ix04.html
 share/gtk-doc/html/atk/ix05.html
 share/gtk-doc/html/atk/ix06.html
 share/gtk-doc/html/atk/ix07.html
-@comment share/gtk-doc/html/atk/left.png
-@comment share/gtk-doc/html/atk/right.png
+share/gtk-doc/html/atk/left.png
+share/gtk-doc/html/atk/right.png
 share/gtk-doc/html/atk/style.css
-@comment share/gtk-doc/html/atk/up.png
+share/gtk-doc/html/atk/up.png
