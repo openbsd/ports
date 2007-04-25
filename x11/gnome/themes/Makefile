@@ -3,6 +3,7 @@
 COMMENT=		"themes collection for GNOME"
 
 DISTNAME=		gnome-themes-2.18.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
@@ -16,10 +17,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		:gtk-engines2-*:x11/gtk-engines2 \
+BUILD_DEPENDS=		:gtk-engines2->=2.9:x11/gtk-engines2 \
 			:icon-naming-utils-*:x11/icon-naming-utils \
 			:gettext-*:devel/gettext
-RUN_DEPENDS=		:gtk-engines2-*:x11/gtk-engines2
+RUN_DEPENDS=		:gtk-engines2->=2.9:x11/gtk-engines2
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
