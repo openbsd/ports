@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_main_c,v 1.1 2007/04/25 11:34:47 wilfried Exp $
+--- src/main.c.orig	Mon Oct 25 03:32:51 2004
++++ src/main.c	Wed Mar 14 22:50:36 2007
+@@ -331,6 +331,7 @@ ExecuteShellCommand(WScreen *scr, char *
+  * forked by wmaker.
+  *---------------------------------------------------------------------------
+  */
++#if 0
+ void
+ StartLogShell(WScreen *scr)
+ {
+@@ -403,7 +404,7 @@ StartLogShell(WScreen *scr)
+         LogStdErr = err_fd[0];
+     }
+ }
+-
++#endif
+ 
+ /*
+  *---------------------------------------------------------------------
