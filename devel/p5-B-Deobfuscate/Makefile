@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/04 10:44:46 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/25 01:12:50 msf Exp $
 
 COMMENT=	"Perl module for use in de-obfuscating source code"
 
 MODULES=	cpan
 
-DISTNAME=	B-Deobfuscate-0.16
+DISTNAME=	B-Deobfuscate-0.18
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

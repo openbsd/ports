@@ -1,4 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/04/25 01:12:50 msf Exp $
+${P5SITE}/B/Deobfuscate/
 ${P5SITE}/B/Deobfuscate.pm
 ${P5SITE}/B/Deobfuscate.pod
+${P5SITE}/B/Deobfuscate/Dict/
+${P5SITE}/B/Deobfuscate/Dict/Flowers.pm
+${P5SITE}/B/Deobfuscate/Dict/PGPHashWords.pm
 @man man/man3p/B::Deobfuscate.3p
+@man man/man3p/B::Deobfuscate::Dict::Flowers.3p
+@man man/man3p/B::Deobfuscate::Dict::PGPHashWords.3p
