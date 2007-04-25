@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2007/03/23 04:29:38 msf Exp $
+# $OpenBSD: Makefile,v 1.180 2007/04/25 10:27:16 wilfried Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += blender
      SUBDIR += cadubi
      SUBDIR += cairo
+     SUBDIR += cairomm
      SUBDIR += camlimages
      SUBDIR += comix
      SUBDIR += compface
