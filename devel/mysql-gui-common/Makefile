@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/30 07:59:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2007/04/25 10:48:10 wilfried Exp $
 
 COMMENT=	"common libraries and data for the MySQL GUI Suites"
 
-DISTNAME=	mysql-gui-tools-5.0r9
-PKGNAME=	mysql-gui-common-5.0.6.1r9
+DISTNAME=	mysql-gui-tools-5.0r11
+PKGNAME=	mysql-gui-common-5.0.6.1r11
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.mysql.com/products/tools/administrator/
@@ -16,10 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLGUITools/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQLGUITools/ \
-		ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLGUITools/ \
-		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLGUITools/
+MASTER_SITES=	http://mysql.serenitynet.com/Downloads/MySQLGUITools/
 
 BUILD_DEPENDS=	::devel/gettext \
 		:libxml->=2.6.2:textproc/libxml \
