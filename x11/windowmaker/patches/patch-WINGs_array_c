@@ -1,0 +1,12 @@
+$OpenBSD: patch-WINGs_array_c,v 1.1 2007/04/25 11:32:30 wilfried Exp $
+--- WINGs/array.c.orig	Tue Oct 12 20:28:08 2004
++++ WINGs/array.c	Wed Mar 14 21:16:40 2007
+@@ -230,6 +230,8 @@ WMGetFromArray(WMArray *array, int index
+ void*
+ WMPopFromArray(WMArray *array)
+ {
++    wassertr(array->itemCount > 0);
++
+     array->itemCount--;
+ 
+     return array->items[array->itemCount];
