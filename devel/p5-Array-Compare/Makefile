@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/04/25 01:01:28 msf Exp $
 
 COMMENT=	"Perl module for comparing arrays"
 
 MODULES=	cpan
-DISTNAME=	Array-Compare-1.13
+DISTNAME=	Array-Compare-1.14
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
