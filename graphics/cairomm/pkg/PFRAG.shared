@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/04/25 10:23:26 wilfried Exp $
+@lib lib/libcairomm-1.0.so.${LIBcairomm-1.0_VERSION}
