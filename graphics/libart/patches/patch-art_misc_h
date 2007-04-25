@@ -1,0 +1,21 @@
+$OpenBSD: patch-art_misc_h,v 1.1 2007/04/25 14:17:09 jasper Exp $
+--- art_misc.h.orig	Wed Apr 25 11:55:05 2007
++++ art_misc.h	Wed Apr 25 11:55:35 2007
+@@ -34,9 +34,17 @@
+ #include <libart_lgpl/art_config.h>
+ #endif
+ 
++#ifdef __cplusplus
++extern "C" {
++#endif /* __cplusplus */
++
+ void *art_alloc(size_t size);
+ void art_free(void *ptr);
+ void *art_realloc(void *ptr, size_t size);
++
++#ifdef __cplusplus
++}
++#endif /* __cplusplus */
+ 
+ /* These aren't, strictly speaking, configuration macros, but they're
+    damn handy to have around, and may be worth playing with for
