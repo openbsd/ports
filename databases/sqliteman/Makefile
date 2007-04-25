@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/14 11:43:43 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/25 15:04:21 espie Exp $
 
 COMMENT=	'gui for sqlite'
 CATEGORIES=	databases x11
 
-DISTNAME=	sqliteman-0.99-20070403
-PKGNAME=	sqliteman-0.99.20070403
+DISTNAME=	sqliteman-0.99-20070421
+PKGNAME=	sqliteman-0.99.20070421
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqliteman/}
+HOMEPAGE=http://sourceforge.net/projects/sqliteman/
 
 WRKDIST=	${WRKDIR}/sqliteman-0.99
 
