@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/04/13 20:40:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2007/04/25 10:49:20 wilfried Exp $
 
 COMMENT=	"visual query tool for MySQL"
 
-DISTNAME=	mysql-gui-tools-5.0r9
-PKGNAME=	mysql-query-browser-1.2.9p0
+DISTNAME=	mysql-gui-tools-5.0r11
+PKGNAME=	mysql-query-browser-1.2.11
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/query-browser/
@@ -16,20 +16,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLGUITools/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQLGUITools/ \
-		ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLGUITools/ \
-		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLGUITools/
+MASTER_SITES=	http://mysql.serenitynet.com/Downloads/MySQLGUITools/
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xrender c crypto fontconfig freetype m \
-		pthread ssl stdc++ z expat glitz png \
-		ORBit-2 art_lgpl_2 atk-1.0 atkmm-1.6 bonobo-2 \
-		bonobo-activation bonoboui-2 gconf-2 gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gdkmm-2.4 glibmm-2.4 \
-		gnome-2 gnomecanvas-2 gnomeprint-2-2.>=1.0 \
-		gnomeprintui-2-2.>=1.0 gnomeui-2 gnomevfs-2 gtk-x11-2.0 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pangomm-1.4 popt sigc-2.0 cairo
+WANTLIB=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
+		Xrandr Xrender art_lgpl_2 atk-1.0 atkmm-1.6 bonobo-2 \
+		bonobo-activation bonoboui-2 c cairo cairomm-1.0 crypto expat \
+		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gdkmm-2.4 glibmm-2.4 glitz gnome-2 gnomecanvas-2 \
+		gnomeprint-2-2.>=1.0 gnomeprintui-2-2.>=1.0 gnomeui-2 \
+		gnomevfs-2 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pangomm-1.4 png popt pthread sigc-2.0 ssl stdc++ z
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	::textproc/p5-XML-Parser \
