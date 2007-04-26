@@ -1,0 +1,9 @@
+To be able to use the H.263 codec (from FFmpeg), you must create a link
+from ${LOCALBASE}/lib/libavcodec.so.X.Y to
+${LOCALBASE}/lib/pwlib/libavcodec.so so that it can be loaded as a
+run-time module by OpenH323.
+To do so run the following command as root:
+
+ ln -sf ${LOCALBASE}/lib/libavcodec.so.X.Y ${LOCALBASE}/lib/pwlib/libavcodec.so
+
+where X and Y are the corresponding major and minor version numbers.

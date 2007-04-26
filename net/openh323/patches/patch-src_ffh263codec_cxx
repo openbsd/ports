@@ -1,0 +1,69 @@
+$OpenBSD: patch-src_ffh263codec_cxx,v 1.1 2007/04/26 14:10:30 ajacoutot Exp $
+--- src/ffh263codec.cxx.orig	Wed Dec  8 03:03:59 2004
++++ src/ffh263codec.cxx	Sat Apr 14 17:26:09 2007
+@@ -193,7 +193,7 @@ class FfmpgLink : public H323DynaLink
+ 
+   AVFrame *AvcodecAllocFrame(void);
+ 
+-  BOOL IsLoaded();
++  //BOOL IsLoaded();
+ 
+   int AvcodecClose(AVCodecContext *ctx);
+   int AvcodecDecodeVideo(AVCodecContext *ctx, AVFrame *picture, int *got_picture_ptr, BYTE *buf, int buf_size);
+@@ -217,7 +217,9 @@ class FfmpgLink : public H323DynaLink
+ 
+   void (*Favcodec_get_context_defaults)(AVCodecContext *s);
+   void (*Favcodec_init)(void);
++#ifdef H323_RFC2190_AVCODEC
+   void (*Favcodec_set_print_fn)(void (*print_fn)(char *));
++#endif
+   void (*Favcodec_register_all)(void);
+ };           
+ 
+@@ -287,17 +289,21 @@ FfmpgLink::FfmpgLink()
+     return;
+   }
+ 
++#ifdef H323_RFC2190_AVCODEC
+   if (!GetFunction("avcodec_set_print_fn",          (Function &)Favcodec_set_print_fn)) {
+     cerr <<  "Failed to load avcodec_set_print_fn" << endl;
+     return;
+   }
++#endif
+    
+   /* must be called before using avcodec lib */
+   Favcodec_init();
+   
+   Favcodec_register_all();
+   
++#ifdef H323_RFC2190_AVCODEC
+   Favcodec_set_print_fn(h263_ffmpeg_printon);
++#endif
+ 
+   isLoadedOK = TRUE;
+ }
+@@ -388,10 +394,12 @@ void FfmpgLink::AvcodecInit(void)
+   Favcodec_init();
+ }
+ 
++#ifdef H323_RFC2190_AVCODEC
+ void FfmpgLink::AvcodecSetPrintFn(void (*print_fn)(char *))
+ {
+   Favcodec_set_print_fn(print_fn);
+ }
++#endif
+ 
+ void FfmpgLink::AFavcodecRegisterAll(void)
+ {
+@@ -614,9 +622,9 @@ void H323_FFH263Codec::InitialiseCodec()
+     }
+ 
+ #ifdef FRAME_RATE_BASE  
+-    context->frame_rate = framesPerSec * FRAME_RATE_BASE;
++    context->time_base.den = framesPerSec * FRAME_RATE_BASE;
+ #else
+-    context->frame_rate = framesPerSec * DEFAULT_FRAME_RATE_BASE;
++    context->time_base.den = framesPerSec * DEFAULT_FRAME_RATE_BASE;
+ #endif
+ 
+     context->rtp_mode = 0;

@@ -1,74 +1,66 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/28 14:04:16 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2007/04/26 14:10:30 ajacoutot Exp $
 
-BROKEN=			"Needs upgrade to newer version"
+SHARED_ONLY=	Yes
 
-COMMENT=		"H.323 Video Conferencing library"
+COMMENT=	"H.323 video conferencing library"
 
-VERSION=		1.8.5
-DISTNAME=		openh323-${VERSION}
-CATEGORIES=		net
+DISTNAME=	openh323-v1_18_0
+PKGNAME=	openh323-1.18.0
+CATEGORIES=	net devel
 
-HOMEPAGE=		http://www.openh323.org/
+EXTRACT_SUFX=	-src-tar.gz
 
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
+SHARED_LIBS=	h323	1.18    # 1.18
 
-# MPL 
+HOMEPAGE=	http://www.voxgratia.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# MPL - LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.openh323.org/bin/ \
-			http://www.de.openh323.org/bin/
+MASTER_SITES=	${HOMEPAGE}/releases/
 
-DISTFILES=		openh323_${VERSION}.tar.gz \
-			pwlib_1.2.17.tar.gz
+WANTLIB=	crypto expat ossaudio pthread ssl
 
-BUILD_DEPENDS=		::devel/bison
-USE_GMAKE=		Yes
+LIB_DEPENDS=	pt.>=1::devel/pwlib \
+		speex.>=4::audio/speex \
+		avutil.>=2::graphics/ffmpeg
 
-VMEM_WARNING=		Yes
+WRKDIST=	${WRKDIR}/${DISTNAME:S/-/_/}
+SUBST_VARS=	LOCALBASE
 
-ALL_TARGET=		opt
-MAKE_FLAGS=		CC="${CC}" CXX="${CXX}" \
-			CFLAGS="${CFLAGS} ${CXXFLAGS} -pthread"
-MAKE_ENV=		PWLIBDIR=${WRKDIR}/pwlib \
-			OPENH323DIR=${WRKDIR}/openh323
+USE_GMAKE=	Yes
+ALL_TARGET=	optshared
+NO_REGRESS=	Yes
 
-.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
- ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
- ${MACHINE_ARCH} == "arm")
-MAKE_ENV+=      ENDIAN="PLITTLE_ENDIAN"
-.else
-.       if (${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64" || \
-        ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "powerpc" || \
-        ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "mips64")
-MAKE_ENV+=      ENDIAN="PBIG_ENDIAN"
-.       else
-ERRORS+= "Fatal: Unknown endianness for ${MACHINE_ARCH}"
-.       endif
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg" \
+		LDFLAGS="-L${LOCALBASE}/lib -pthread -lavutil"
+CONFIGURE_ARGS=	--enable-h263avcodec \
+		--disable-localspeex
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
+CFLAGS+=	-fPIC
 .endif
 
-WRKDIST=		${WRKDIR}
-WRKSRC=			${WRKDIST}/openh323
+MAKE_ENV+=	STDCCFLAGS="${STDCCFLAGS} -I${WRKSRC}/include" \
+		CC=${CC} CPLUS=${CXX} BUILDSELF="1"
 
-PWLDIR=		${WRKDIST}/pwlib
-OPHDIR=		${WRKDIST}/openh323
+do-extract:
+	@tar xzf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR}
 
-do-install:
-	${INSTALL_DATA} ${PWLDIR}/include/ptlib.h ${PREFIX}/include
-	${INSTALL_DATA_DIR} ${PREFIX}/include/ptclib
-	${INSTALL_DATA} ${PWLDIR}/include/ptclib/*.h ${PREFIX}/include/ptclib
-	${INSTALL_DATA_DIR} ${PREFIX}/include/ptlib
-	${INSTALL_DATA} ${PWLDIR}/include/ptlib/*.h ${PREFIX}/include/ptlib
-	${INSTALL_DATA} ${PWLDIR}/lib/libpt.so.* ${PREFIX}/lib
-	${INSTALL_DATA} ${PWLDIR}/lib/libpt.a ${PREFIX}/lib
-
-	${INSTALL_DATA_DIR} ${PREFIX}/include/openh323
-	${INSTALL_DATA} ${OPHDIR}/include/*.h ${PREFIX}/include/openh323
-	${INSTALL_DATA} ${OPHDIR}/lib/libh323.so.* ${PREFIX}/lib
-	${INSTALL_DATA} ${OPHDIR}/lib/libh323.a ${PREFIX}/lib
-
-	${INSTALL_PROGRAM} ${OPHDIR}/samples/simple/obj_OpenBSD_*_r/simph323 ${PREFIX}/bin
+pre-configure:
+	@perl -pi -e 's,MAJOR_VERSION.*,MAJOR_VERSION ${LIBh323_VERSION:R},g;' \
+		-e 's,MINOR_VERSION.*,MINOR_VERSION ${LIBh323_VERSION:E},g' \
+		${WRKSRC}/version.h
+	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+		${WRKSRC}/plugins/audio/Speex/Makefile.in
+	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g;' \
+		-e 's,!!SOSUFX!!,so.${LIBh323_VERSION},g' \
+		${WRKSRC}/openh323u.mak.in
 
 .include <bsd.port.mk>
