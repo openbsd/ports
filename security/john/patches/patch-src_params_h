@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_params_h,v 1.4 2006/07/16 18:17:25 sturm Exp $
+$OpenBSD: patch-src_params_h,v 1.5 2007/04/26 04:14:02 ray Exp $
 --- src/params.h.orig	Mon Mar 20 00:34:15 2006
 +++ src/params.h	Sun Jul 16 20:07:29 2006
 @@ -49,15 +49,15 @@
@@ -16,7 +16,16 @@ $OpenBSD: patch-src_params_h,v 1.4 2006/07/16 18:17:25 sturm Exp $
  #endif
  #ifndef JOHN_SYSTEMWIDE_HOME
 -#define JOHN_SYSTEMWIDE_HOME		"/usr/share/john"
-+#define JOHN_SYSTEMWIDE_HOME		"%%SYSCONFDIR%%"
++#define JOHN_SYSTEMWIDE_HOME		"%%PREFIX%%/share/john"
  #endif
  #define JOHN_PRIVATE_HOME		"~/.john"
  #endif
+@@ -101,7 +101,7 @@
+ /*
+  * File names.
+  */
+-#define CFG_FULL_NAME			"$JOHN/john.conf"
++#define CFG_FULL_NAME			"%%SYSCONFDIR%%/john.conf"
+ #define CFG_ALT_NAME			"$JOHN/john.ini"
+ #if JOHN_SYSTEMWIDE
+ #define CFG_PRIVATE_FULL_NAME		JOHN_PRIVATE_HOME "/john.conf"
