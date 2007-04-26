@@ -1,7 +1,8 @@
-# $OpenBSD: kde.port.mk,v 1.22 2006/08/01 16:20:46 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.23 2007/04/26 07:39:09 espie Exp $
 
 SHARED_ONLY?=	Yes
 
+MODKDE_VERSION?=
 MODULES+=	x11/qt3
 MODQT_OVERRIDE_UIC?=No
 MODQT_MT?=Yes
@@ -17,6 +18,7 @@ MODKDE_CONFIGURE_ARGS=${MODQT_CONFIGURE_ARGS}
 MODKDE_CONFIGURE_ARGS+=	--with-extra-libs="${LOCALBASE}/lib/db4:${LOCALBASE}/lib/samba:${LOCALBASE}/lib"
 MODKDE_CONFIGURE_ARGS+=	--with-extra-includes="${LOCALBASE}/include/db4:${LOCALBASE}/include/libpng:${LOCALBASE}/include"
 MODKDE_CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
+MODKDE_CONFIGURE_ARGS+=	--disable-libfam
 MODKDE_CONFIGURE_ARGS+=	--enable-mitshm
 MODKDE_CONFIGURE_ARGS+=	--with-xinerama
 .if ${FLAVOR:L:Mdebug}
@@ -48,7 +50,6 @@ MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 KDE=lib/kde3
 SUBST_VARS+=	KDE
 
-MODKDE_VERSION?=
 SUP_PATCH_LIST?=
 .if ${MODKDE_VERSION} == "3.1"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.1/patch-* patch-* ${SUP_PATCH_LIST}
