@@ -1,0 +1,4 @@
+To start the gatekeeper as the unpriviledged ${GNUGK_ID} user, as root:
+
+ ${PREFIX}/bin/gnugk -c /etc/gnugk.ini -u _gnugk \
+	-o /var/log/gnugk/gnugk.log --pid /var/run/gnugk/gnugk.pid >/dev/null &

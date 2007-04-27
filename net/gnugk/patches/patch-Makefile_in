@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/04/27 21:10:42 ajacoutot Exp $
+--- Makefile.in.orig	Thu Jul  6 20:25:19 2006
++++ Makefile.in	Fri Apr 27 17:01:28 2007
+@@ -111,7 +111,7 @@ STDCCFLAGS = $(temp_STDCCFLAGS)
+ # GK version infomation
+ STDCCFLAGS	+= -DMAJOR_VERSION=@GNUGK_MAJOR_VERSION@ -DMINOR_VERSION=@GNUGK_MINOR_VERSION@ -DBUILD_NUMBER=@GNUGK_BUILD_NUMBER@
+ 
+-OPTCCFLAGS	= -O2
++OPTCCFLAGS	=
+ 
+ # special dependency to ensure version.cxx is rebuilt each time gnugk is recompiled
+ # so the proper build timestamp is included
+@@ -127,7 +127,7 @@ doc:
+ 
+ install: install-addpasswd
+ 
+-install-addpasswd: addpasswd
++install-addpasswd:
+ 	$(INSTALL) $(OBJDIR)/addpasswd $(INSTALLBIN_DIR)
+ 
+ #

@@ -1,0 +1,12 @@
+$OpenBSD: patch-RasSrv_cxx,v 1.1.1.1 2007/04/27 21:10:42 ajacoutot Exp $
+--- RasSrv.cxx.orig	Fri Apr 27 15:53:41 2007
++++ RasSrv.cxx	Fri Apr 27 15:54:12 2007
+@@ -50,7 +50,7 @@ using namespace std;
+ using Routing::Route;
+ 
+ #ifndef NEED_BROADCASTLISTENER
+-#if (defined P_LINUX) || (defined P_FREEBSD) || (defined P_HPUX9) || (defined P_SOLARIS)
++#if (defined P_LINUX) || (defined P_FREEBSD) || (defined P_HPUX9) || (defined P_SOLARIS) || (defined P_OPENBSD)
+ // On some OS we don't get broadcasts on a socket that is
+ // bound to a specific interface. For those we have to start
+ // a listener just for those broadcasts.

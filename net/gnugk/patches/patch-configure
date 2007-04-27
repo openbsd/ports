@@ -1,0 +1,47 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/04/27 21:10:42 ajacoutot Exp $
+--- configure.orig	Fri Jun  2 11:21:34 2006
++++ configure	Sun Apr 15 15:09:15 2007
+@@ -3043,25 +3043,9 @@ fi
+ 
+ echo "PTLib version is ${PWLIB_VERSION}"
+ 
+-if test ${PWLIB_MAJOR_VERSION} -lt 1; then
+-  echo "Error: at leat PWLib version 1.7.5.2 (Pandora) required"
+-  exit
+-fi
+-if test ${PWLIB_MAJOR_VERSION} -eq 1; then
+-  if test ${PWLIB_MINOR_VERSION} -lt 7; then
+-    echo "Error: at leat PWLib version 1.7.5.2 (Pandora) required"
+-    exit
+-  elif test ${PWLIB_MINOR_VERSION} -eq 7; then
+-    if test ${PWLIB_BUILD_NUMBER} -lt 5; then
+-      echo "Error: at leat PWLib version 1.7.5.2 (Pandora) required"
+-      exit
+-    fi
+-  fi
+-fi
+ 
+ 
+ 
+-
+ NEEDOPENH323PREFIX=0
+ 
+ if test "${OPENH323DIR:-unset}" != "unset" ; then
+@@ -3886,7 +3870,7 @@ echo $ECHO_N "checking for PQconnectdb in -lpq... $ECH
+ 
+ 		for try in /usr/lib /usr/local/lib /usr/local/pgsql/lib $pgsql_lib_dir; do
+ 			if test -d $try; then
+-				LIBS="$old_LIBS -L$try -lpq -lcrypt ${PGSQL_LIBS}"
++				LIBS="$old_LIBS -L$try -lpq -lcrypto ${PGSQL_LIBS}"
+ 				cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -3924,7 +3908,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-   PGSQL_LIBS="-lpq -lcrypt ${PGSQL_LIBS}"
++   PGSQL_LIBS="-lpq -lcrypto ${PGSQL_LIBS}"
+ 					  PGSQL_LDFLAGS="-L$try"
+ 
+ 

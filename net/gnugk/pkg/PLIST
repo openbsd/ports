@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/27 21:10:42 ajacoutot Exp $
+@newgroup ${GNUGK_ID}:586
+@newuser ${GNUGK_ID}:586:586:daemon:Gatekeeper Daemon:/var/empty:/sbin/nologin
+bin/addpasswd
+bin/gnugk
+@man man/man1/gnugk.1
+share/doc/gnugk/
+share/doc/gnugk/identifiers.txt
+share/doc/gnugk/keepalive.txt
+share/doc/gnugk/known_bugs.txt
+share/doc/gnugk/performance.txt
+share/doc/gnugk/radauth.txt
+share/doc/gnugk/trace_levels.txt
+share/examples/gnugk/
+share/examples/gnugk/child.ini
+share/examples/gnugk/clirw.ini
+share/examples/gnugk/complete.ini
+share/examples/gnugk/enum.ini
+share/examples/gnugk/fileacct.ini
+share/examples/gnugk/gnugk.ini
+@mode 640
+@group ${GNUGK_ID}
+@sample ${SYSCONFDIR}/gnugk.ini
+@mode
+@group
+share/examples/gnugk/ipauth.ini
+share/examples/gnugk/mysql.ini
+share/examples/gnugk/nat.ini
+share/examples/gnugk/neighbor.ini
+share/examples/gnugk/proxy.ini
+share/examples/gnugk/radacct.ini
+share/examples/gnugk/radaliasauth.ini
+share/examples/gnugk/radauth.ini
+share/examples/gnugk/routed.ini
+share/examples/gnugk/rrqauth.ini
+share/examples/gnugk/sql.ini
+share/examples/gnugk/status.ini
+share/examples/gnugk/syslog.ini
+share/examples/gnugk/uri.ini
+share/examples/gnugk/vqueue.ini
+@owner ${GNUGK_ID}
+@sample /var/log/gnugk/
+@sample /var/run/gnugk/
