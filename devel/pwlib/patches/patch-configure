@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2007/04/27 13:38:09 ajacoutot Exp $
 --- configure.orig	Wed Feb 22 12:53:28 2006
-+++ configure	Mon Apr 23 16:59:26 2007
++++ configure	Fri Apr 27 15:28:49 2007
 @@ -1951,7 +1951,7 @@ LIBDIR=${libdir}
  MAJOR_VERSION=`cat ${PWLIBDIR}/version.h | grep MAJOR_VERSION | cut -f3 -d' '`
  MINOR_VERSION=`cat ${PWLIBDIR}/version.h | grep MINOR_VERSION | cut -f3 -d' '`
@@ -34,3 +34,23 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
    ;
    return 0;
  }
+@@ -5495,19 +5499,9 @@ fi
+ 
+ 
+ 
+-if test "x$LIB64" != "x" ; then
+-
+ cat >>confdefs.h <<_ACEOF
+-#define P_DEFAULT_PLUGIN_DIR "${INSTALLPREFIX}/lib64/pwlib"
+-_ACEOF
+-
+-else
+-
+-cat >>confdefs.h <<_ACEOF
+ #define P_DEFAULT_PLUGIN_DIR "${INSTALLPREFIX}/lib/pwlib"
+ _ACEOF
+-
+-fi
+ 
+ 
+ 

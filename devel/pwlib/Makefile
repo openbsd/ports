@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/27 13:38:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"portable Windows library"
 
 DISTNAME=	pwlib-v1_10_3
-PKGNAME=	pwlib-1.10.3
+PKGNAME=	pwlib-1.10.3p0
 CATEGORIES=	devel
 
 EXTRACT_SUFX=	-src-tar.gz
