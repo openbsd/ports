@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_IMon_c++,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+--- src/IMon.c++.orig	Sat Jan 18 15:18:12 2003
++++ src/IMon.c++	Sat Feb 10 19:44:25 2007
+@@ -32,9 +32,10 @@
+ #else
+ #include <linux/imon.h>
+ #endif
++#else
++#include "imon-compat.h"
+ #endif
+ 
+-#include <sys/sysmacros.h>
+ #include <unistd.h>
+ 
+ #include "Interest.h"

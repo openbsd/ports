@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_FileSystemTable_c++,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+--- src/FileSystemTable.c++.orig	Sat Jan 18 15:18:12 2003
++++ src/FileSystemTable.c++	Tue Apr 24 20:03:39 2007
+@@ -255,7 +255,6 @@ FileSystemTable::find(const char *path, const Cred& cr
+     //  create_fs_by_name initializes our "root" member variable.
+     if (!fs_by_name)
+     {   create_fs_by_name();
+-	mtab_watcher = new InternalClient(mtab_name, mtab_event_handler, NULL);
+     }
+ 
+     cr.become_user();

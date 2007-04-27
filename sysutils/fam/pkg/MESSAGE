@@ -1,0 +1,21 @@
+Because FAM uses RPC, please make sure you have following line in the
+system portmapper file (/etc/rpc):
+
+sgi_fam         391002  fam     # File Alteration Monitor
+
+Also make sure that the RPC port mapper is enabled by checking whether
+portmap=YES is in /etc/rc.conf.local.  After that, restart the portmap(8)
+server.
+
+Furthermore, you have to enable the FAM daemon.  There are two ways to do
+this: through inetd(8) or as a standalone server.  If you prefer the former
+way, add the following line to /etc/inetd.conf:
+
+sgi_fam/1-2     stream  rpc/tcp wait    root    ${PREFIX}/sbin/famd famd
+
+and reload inetd(8) daemon.  To enable the FAM daemon in as a standalone
+server add the following lines to /etc/rc.local file:
+
+if [ -x ${PREFIX}/sbin/famd ]; then
+	${PREFIX}/sbin/famd -T 0
+fi

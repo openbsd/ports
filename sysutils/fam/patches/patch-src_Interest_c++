@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Interest_c++,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+--- src/Interest.c++.orig	Sat Feb 10 16:43:43 2007
++++ src/Interest.c++	Sat Feb 10 16:43:47 2007
+@@ -23,7 +23,6 @@
+ #include "Interest.h"
+ 
+ #include <sys/param.h>
+-#include <sys/sysmacros.h>
+ 
+ #include <errno.h>
+ #include <string.h>

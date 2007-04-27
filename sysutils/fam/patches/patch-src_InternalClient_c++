@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_InternalClient_c++,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+--- src/InternalClient.c++.orig	Sat Jan 18 15:18:12 2003
++++ src/InternalClient.c++	Tue Apr 24 20:03:39 2007
+@@ -35,8 +35,8 @@ InternalClient::InternalClient(const char *filename,
+ {
+     assert(filename);
+     assert(h);
+-    assert(filename[0] == '/');
+     Log::debug("%s watching %s", name(), filename);
++    assert(filename[0] == '/');
+     interest = new File(filename, this, Request(0), Cred::SuperUser);
+ }
+ 

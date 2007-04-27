@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_Listener_c++,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+--- src/Listener.c++.orig	Mon Jan 20 01:37:29 2003
++++ src/Listener.c++	Tue Apr 24 20:03:39 2007
+@@ -22,6 +22,9 @@
+ 
+ #include "Listener.h"
+ 
++#include <stdlib.h>
++#include <stdio.h>
++
+ #include <assert.h>
+ #include <fcntl.h>
+ #include <sys/types.h>
+@@ -204,8 +207,6 @@ Listener::create_local_client(TCP_Client &inet_client,
+     //  Unset TMPDIR to ensure that tempnam() works as desired
+ #ifdef HAVE_UNSETENV
+     unsetenv("TMPDIR");
+-#else
+-    putenv("TMPDIR=");
+ #endif
+ 
+     char *tmpfile = tempnam("/tmp", ".fam");

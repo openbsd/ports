@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+--- src/Makefile.in.orig	Mon Jan 20 01:38:44 2003
++++ src/Makefile.in	Tue Apr 24 20:03:42 2007
+@@ -161,6 +161,7 @@ famd_SOURCES = \
+   main.c++ \
+   timeval.c++ \
+   timeval.h \
++  mntent_compat.c++ \
+   @MONITOR_FUNCS@.c++
+ 
+ 
+@@ -185,7 +186,7 @@ am_famd_OBJECTS = Activity.$(OBJEXT) Client.$(OBJEXT) 
+ 	Scheduler.$(OBJEXT) ServerConnection.$(OBJEXT) \
+ 	ServerHost.$(OBJEXT) ServerHostRef.$(OBJEXT) \
+ 	TCP_Client.$(OBJEXT) main.$(OBJEXT) timeval.$(OBJEXT) \
+-	@MONITOR_FUNCS@.$(OBJEXT)
++	mntent_compat.c++ @MONITOR_FUNCS@.$(OBJEXT)
+ famd_OBJECTS = $(am_famd_OBJECTS)
+ famd_LDADD = $(LDADD)
+ famd_DEPENDENCIES =

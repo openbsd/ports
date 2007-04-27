@@ -1,0 +1,11 @@
+$OpenBSD: patch-conf-fam_conf,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+--- conf/fam.conf.orig	Sun Jan 19 13:20:52 2003
++++ conf/fam.conf	Fri Apr 27 22:52:14 2007
+@@ -51,3 +51,7 @@ xtab_verification = true
+ #
+ #nfs_polling_interval = 6
+ 
++#
++#  bind fam to 127.0.0.1 by default, so it won't allow external connections
++#
++bind = 127.0.0.1

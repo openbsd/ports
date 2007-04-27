@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+--- configure.ac.orig	Sat Feb 10 16:08:00 2007
++++ configure.ac	Sat Feb 10 16:08:13 2007
+@@ -38,7 +38,7 @@ if test "$have_sys_imon_h"; then
+ elif test "$have_linux_imon_h"; then
+ 	MONITOR_FUNCS=IMonLinux
+ else
+-	MONITOR_FUNCS=IMonNone
++	MONITOR_FUNCS=IMonKQueue
+ fi
+ AC_SUBST(MONITOR_FUNCS)
+ 
