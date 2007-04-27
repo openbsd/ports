@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.3 2007/04/27 18:42:18 matthieu Exp $
+bin/wm2
+@man man/cat1/wm2.0
