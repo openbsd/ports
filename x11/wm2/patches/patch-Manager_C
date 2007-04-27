@@ -1,0 +1,59 @@
+$OpenBSD: patch-Manager_C,v 1.1.1.1 2007/04/27 18:31:12 matthieu Exp $
+--- Manager.C.orig	Fri Mar 21 12:12:30 1997
++++ Manager.C	Wed Apr 11 22:29:23 2007
+@@ -191,11 +191,11 @@ int WindowManager::errorHandler(Display *d, XErrorEven
+ 
+     char msg[100], number[30], request[100];
+     XGetErrorText(d, e->error_code, msg, 100);
+-    sprintf(number, "%d", e->request_code);
++    snprintf(number, sizeof(number), "%d", e->request_code);
+     XGetErrorDatabaseText(d, "XRequest", number, "", request, 100);
+ 
+-    if (request[0] == '\0') sprintf(request, "<request-code-%d>",
+-				    e->request_code);
++    if (request[0] == '\0') snprintf(request, sizeof(request), 
++	"<request-code-%d>", e->request_code);
+ 
+     fprintf(stderr, "wm2: %s (0x%lx): %s\n", request, e->resourceid, msg);
+ 
+@@ -321,7 +321,7 @@ unsigned long WindowManager::allocateColour(char *name
+ 	 &nearest, &ideal)) {
+ 
+ 	char error[100];
+-	sprintf(error, "couldn't load %s colour", desc);
++	snprintf(error, sizeof(error), "couldn't load %s colour", desc);
+ 	fatal(error);
+ 
+     } else return nearest.pixel;
+@@ -368,7 +368,7 @@ Time WindowManager::timestamp(Boolean reset)
+     return m_currentTime;
+ }
+ 
+-void WindowManager::sigHandler()
++void WindowManager::sigHandler(int)
+ {
+     m_signalled = True;
+ }
+@@ -521,11 +521,6 @@ Boolean WindowManager::raiseTransients(Client *c)
+     }
+ }
+ 
+-#ifdef sgi
+-extern "C" {
+-extern int putenv(char *);	/* not POSIX */
+-}
+-#endif
+ 
+ void WindowManager::spawn()
+ {
+@@ -543,8 +538,8 @@ void WindowManager::spawn()
+ 
+ 	    if (displayName && (displayName[0] != '\0')) {
+ 
+-		char *pstring = (char *)malloc(strlen(displayName) + 10);
+-		sprintf(pstring, "DISPLAY=%s", displayName);
++		char *pstring;
++		asprintf(&pstring, "DISPLAY=%s", displayName);
+ 		putenv(pstring);
+ 	    }
+ 

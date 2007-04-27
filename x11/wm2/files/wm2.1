@@ -1,0 +1,136 @@
+.\"	$OpenBSD: wm2.1,v 1.1.1.1 2007/04/27 18:31:12 matthieu Exp $
+.Dd March 28, 1998
+.Dt WM2 1
+.Os
+.Sh NAME
+.Nm wm2
+.Nd a window manager
+.Sh SYNOPSIS
+.Nm wm2
+.Sh DESCRIPTION
+.Nm wm2
+is a window manager for X.  It provides an unusual style of window
+decoration and as little functionality as I feel comfortable with in a
+window manager.  wm2 is not configurable, except by editing the source
+and recompiling the code, and is really intended for people who don't
+particularly want their window manager to be too friendly.
+.Pp
+.Nm wm2
+provides:
+.Bl -dash
+.It
+Decorative frames for your windows.
+.It
+The ability to move, resize, hide and restore windows.
+.It
+No icons.
+.It
+No configurable root menus, buttons or mouse or keyboard bindings.
+.It
+No virtual desktop, toolbars or integrated applications.
+.El
+.Sh USAGE
+To run wm2, make sure you're not already running a window manager,
+make sure the DISPLAY variable is correctly set, and then execute the
+file 
+.Nm wm2 .
+There are no command-line options or X resources, and
+there is no start-up file.  If your X server doesn't support the Shape
+extension, wm2 will exit (and will never work on your server); if it
+can't find the required fonts or allocate the required colours, it
+will also exit (but you should be able to fix this by changing the
+definitions in 
+.Pa Config.h
+and recompiling).
+.Pp
+Available window manipulations are:
+.Bl -dash
+.It
+To focus a window: depends on the focus policy you selected
+in 
+.Pa Config.h
+before compiling.  See "Focus policy", below.
+.It
+To raise a window: click on its tab or frame, unless you have
+auto-raise on focus set in 
+.Pa Config.h .
+.It
+To move a window: make sure it's in focus, then click and drag
+on its tab.
+.It
+To hide a window: make sure it's in focus, then click on the
+button at the top of its tab.
+.It
+To recover a hidden window: click left button on the root
+window for the root menu, and choose the window you want.
+.It
+To start a new xterm: use the first item on root menu ("New").
+.It
+To delete a window: make sure it's in focus, click on the
+button on the tab, hold the mouse button for at least a
+second and a half until the cursor changes to a cross, then
+release.  (I know, it's not very easy.  On the other hand,
+things like Windows-95 tend to obscure the fact that most
+windows already have a perfectly good Close option.  If the
+default delay doesn't suit you, change it in 
+.Pa Config.h
+and recompile.)
+.It
+To resize a window: make sure it's in focus, then click and
+drag on its bottom-right corner.  For a constrained resize,
+click and drag on the bottom-left or top-right corner of
+the enclosing window frame.
+.It
+To flip around amongst the windows on-screen: click with the right
+mouse button on the root window or on any window's frame or tab.
+.It
+To exit from wm2: move the mouse pointer to the very edge of the
+screen at the extreme lower-right corner, and click left button on
+the root window for the root menu.  The menu should have an extra
+option labelled "Exit wm2"; select this.
+.El
+All move and resize operations are opaque.
+.Sh FOCUS POLICY
+.Pa Config.h
+contains settings for focus policy.  There are three things
+you can define to either True or False: CONFIG_CLICK_TO_FOCUS,
+CONFIG_RAISE_ON_FOCUS and CONFIG_AUTO_RAISE.  The first two are
+connected: together they define a focus policy.  The third is a
+separate focus policy on its own and will only work if the first two
+are both False.  CONFIG_AUTO_RAISE differs from
+(!CONFIG_CLICK_TO_FOCUS && CONFIG_RAISE_ON_FOCUS) only in that it
+provides a short delay before raising each window.  The delay is also
+definable in 
+.Pa Config.h .
+.Sh XTERM
+Some versions of xterm and rxvt run badly with wm2.  If you use xterm
+and find that it refreshes the window excessively slowly, you might
+like to try experimenting with a different terminal emulation program.
+I think it might help to ensure that the scrollbar is on the
+right-hand side of the rxvt window and is thick enough that wmx's
+resize handle doesn't obscure any of the text area.
+.Sh SEE ALSO
+.Xr twm 1 ,
+.Xr fvwm 1
+.Sh AUTHORS
+wm2 was written by Chris Cannam, recycling a lot of code and structure
+from "9wm" by David Hogan (see http://www.cs.su.oz.au/~dhog/ ).  9wm
+is written in C, so very little of the code is used verbatim, but the
+intention was to reuse and a lot of the resulting code is
+recognisable.  (Also 9wm's minimalism was rather inspiring.)  I've
+made enough changes to make it very probable that any bugs you find
+will be my fault rather than David's.
+.Pp
+wm2 also uses version 2.0 of Alan Richardson's "xvertext"
+font-rotation routines.
+.Pp
+The sideways tabs on the window frames were Andy Green's idea.
+.Pp
+If you want to hack the code into something else for your own
+amusement, please go ahead.  Feel free to modify and redistribute, as
+long as you retain the original copyrights as appropriate.
+.Pp
+This manual page was written by Matthieu Herrb, from the README file.
+.Sh BUGS
+The principal bug is that wm2 now has too many features.  That aside,
+if you find a bug, please report it to me (preferably with a fix).

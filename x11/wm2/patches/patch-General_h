@@ -1,0 +1,30 @@
+$OpenBSD: patch-General_h,v 1.1.1.1 2007/04/27 18:31:12 matthieu Exp $
+--- General.h.orig	Fri Mar 21 12:12:30 1997
++++ General.h	Wed Apr 11 22:29:23 2007
+@@ -10,12 +10,11 @@
+ #undef _POSIX_SOURCE
+ #endif
+ 
+-#define _POSIX_SOURCE 1
+-
+ #include <stdio.h>
+ #include <signal.h>
+ #include <errno.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ #include <X11/X.h>
+ #include <X11/Xlib.h>
+@@ -29,10 +28,10 @@
+ // True and False are defined in Xlib.h
+ typedef char Boolean;
+ 
+-#define NewString(x) (strcpy((char *)malloc(strlen(x)+1),(x)))
++#define NewString(x) (strdup(x))
+ 
+ #ifndef SIGNAL_CALLBACK_TYPE
+-#define SIGNAL_CALLBACK_TYPE (void (*)(...))
++#define SIGNAL_CALLBACK_TYPE (void (*)(int))
+ #endif
+ 
+ #define signal(x,y)     \
