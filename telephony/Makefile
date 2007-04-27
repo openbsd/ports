@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/16 20:18:44 ian Exp $
+# $OpenBSD: Makefile,v 1.7 2007/04/27 13:36:50 ajacoutot Exp $
 
      SUBDIR += app_conference
      SUBDIR += asterisk
@@ -6,6 +6,7 @@
      SUBDIR += asterisk-sounds
      SUBDIR += fobbit
      SUBDIR += libosip2
+     SUBDIR += ohphone
      SUBDIR += siproxd
 
 .include <bsd.port.subdir.mk>
