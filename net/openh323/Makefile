@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/26 14:10:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/04/27 13:26:38 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"H.323 video conferencing library"
 
 DISTNAME=	openh323-v1_18_0
-PKGNAME=	openh323-1.18.0
+PKGNAME=	openh323-1.18.0p0
 CATEGORIES=	net devel
 
 EXTRACT_SUFX=	-src-tar.gz

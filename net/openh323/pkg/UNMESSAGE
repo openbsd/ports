@@ -1,0 +1,4 @@
+If you don't intend to use this package anymore, you should remove the
+link to libavcodec. To do so run the following command as root:
+
+ rm ${LOCALBASE}/lib/pwlib/libavcodec.so
