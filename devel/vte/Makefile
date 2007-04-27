@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/04/24 22:02:19 martynas Exp $
+# $OpenBSD: Makefile,v 1.20 2007/04/27 10:37:57 ajacoutot Exp $
 
 COMMENT=		"terminal emulation library"
 
@@ -23,6 +23,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/vte/0.16/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
+BUILD_DEPENDS=		::textproc/p5-XML-Parser
 LIB_DEPENDS=		gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
 
 USE_X11=		Yes
