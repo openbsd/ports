@@ -1,49 +1,32 @@
---- ltmain.sh.orig	Sun Dec  5 11:28:48 2004
-+++ ltmain.sh	Sun Dec 12 08:00:37 2004
-@@ -1374,6 +1374,17 @@ EOF
- 	continue
- 	;;
- 
-+	-pthread)
-+	case $host in
-+	    *-*-openbsd*)
-+	    deplibs="deplibs $arg"
-+	    ;;
-+	    *)
-+	    continue
-+	    ;;
-+	esac
-+	;;
-+
-       -module)
- 	module=yes
- 	continue
-@@ -2024,6 +2035,21 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.7 2007/04/27 22:54:23 jasper Exp $
+--- ltmain.sh.orig	Sat Mar 24 10:50:11 2007
++++ ltmain.sh	Sat Mar 24 10:54:02 2007
+@@ -2306,6 +2306,21 @@ EOF
  	  fi
  	  continue
  	  ;;
-+	  
-+	  -pthread)
-+	  case $linkmode in
-+	      lib)
-+	      deplibs="$deplib $deplibs"
-+	      newdependency_libs="$deplib $newdependency_libs"
-+	      ;;
-+	      prog)
-+	      compile_deplibs="$deplib $compile_deplibs"
-+	      finalize_deplibs="$deplib $finalize_deplibs"
-+	      ;;
-+	  esac
-+	  continue
-+	  ;;
++	 
++	 -pthread)
++	 case $linkmode in
++	     lib)
++	     deplibs="$deplib $deplibs"
++	     newdependency_libs="$deplib $newdependency_libs"
++	     ;;
++	     prog)
++	     compile_deplibs="$deplib $compile_deplibs"
++	     finalize_deplibs="$deplib $finalize_deplibs"
++	     ;;
++	 esac
++	 continue
++	 ;;
 +
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
-@@ -2274,10 +2300,6 @@ EOF
- 	link_static=no # Whether the deplib will be linked statically
+@@ -2572,10 +2587,6 @@ EOF
+ 	fi
  	if test -n "$library_names" &&
- 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
+ 	   { test "$use_static_libs" = no || test -z "$old_library"; }; then
 -	  if test "$installed" = no; then
 -	    notinst_deplibs="$notinst_deplibs $lib"
 -	    need_relink=yes
@@ -51,11 +34,11 @@
  	  # This is a shared library
  
  	  # Warn about portability, can't link against -module's on
-@@ -5827,40 +5849,6 @@ relink_command=\"$relink_command\""
+@@ -6300,40 +6311,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
--    $echo "----------------------------------------------------------------------"
+-    $echo "X----------------------------------------------------------------------" | $Xsed
 -    $echo "Libraries have been installed in:"
 -    for libdir in $libdirs; do
 -      $echo "   $libdir"
@@ -88,7 +71,7 @@
 -    $echo
 -    $echo "See any operating system documentation about shared libraries for"
 -    $echo "more information, such as the ld(1) and ld.so(8) manual pages."
--    $echo "----------------------------------------------------------------------"
+-    $echo "X----------------------------------------------------------------------" | $Xsed
      exit $EXIT_SUCCESS
      ;;
  
