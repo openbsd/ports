@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/01/08 13:25:22 steven Exp $
+@comment $OpenBSD: PLIST,v 1.18 2007/04/27 22:20:41 jasper Exp $
 bin/activation-client
 bin/bonobo-activation-run-query
 bin/bonobo-slay
@@ -11,6 +11,7 @@ include/bonobo-activation-2.0/bonobo-activation/Bonobo_Unknown.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-activate.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-async.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-init.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-mime.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-register.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-server-info.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-shlib.h
@@ -96,6 +97,7 @@ share/gtk-doc/html/bonobo-activation/bonobo-activation-Query-and-Activation.html
 share/gtk-doc/html/bonobo-activation/bonobo-activation-Registration.html
 share/gtk-doc/html/bonobo-activation/bonobo-activation-Utilities.html
 share/gtk-doc/html/bonobo-activation/bonobo-activation.devhelp
+share/gtk-doc/html/bonobo-activation/bonobo-activation.devhelp2
 share/gtk-doc/html/bonobo-activation/bonobo-activation.png
 share/gtk-doc/html/bonobo-activation/checklist.html
 share/gtk-doc/html/bonobo-activation/configuring.html
@@ -121,6 +123,7 @@ share/gtk-doc/html/libbonobo/general.html
 share/gtk-doc/html/libbonobo/home.png
 share/gtk-doc/html/libbonobo/index.html
 share/gtk-doc/html/libbonobo/index.sgml
+share/gtk-doc/html/libbonobo/ix01.html
 share/gtk-doc/html/libbonobo/left.png
 share/gtk-doc/html/libbonobo/libbonobo-bonobo-app-client.html
 share/gtk-doc/html/libbonobo/libbonobo-bonobo-application.html
@@ -157,6 +160,7 @@ share/gtk-doc/html/libbonobo/libbonobo-bonobo-stream-memory.html
 share/gtk-doc/html/libbonobo/libbonobo-bonobo-types.html
 share/gtk-doc/html/libbonobo/libbonobo-faq.html
 share/gtk-doc/html/libbonobo/libbonobo.devhelp
+share/gtk-doc/html/libbonobo/libbonobo.devhelp2
 share/gtk-doc/html/libbonobo/misc.html
 share/gtk-doc/html/libbonobo/monikers-overview.html
 share/gtk-doc/html/libbonobo/monikers.html
@@ -217,6 +221,9 @@ share/locale/bg/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/bn_IN/
+share/locale/bn_IN/LC_MESSAGES/
+share/locale/bn_IN/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libbonobo-2.0.mo
@@ -227,6 +234,9 @@ share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/da/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/de/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/el/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
@@ -262,7 +272,13 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/it/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ja/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ko/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
+share/locale/ku/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/li/
 share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/libbonobo-2.0.mo
@@ -270,6 +286,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/lv/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/mg/
+share/locale/mg/LC_MESSAGES/
+share/locale/mg/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/libbonobo-2.0.mo
@@ -288,7 +307,9 @@ share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/nl/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/nn/LC_MESSAGES/libbonobo-2.0.mo
-share/locale/no/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
+share/locale/or/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libbonobo-2.0.mo
@@ -326,5 +347,8 @@ share/locale/yi/
 share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/zh_HK/
+share/locale/zh_HK/LC_MESSAGES/
+share/locale/zh_HK/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 %%SHARED%%
