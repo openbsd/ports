@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_cxx,v 1.1.1.1 2007/04/27 13:36:09 ajacoutot Exp $
+--- main.cxx.orig	Tue Jul 13 03:57:20 2004
++++ main.cxx	Sat Apr 14 21:14:51 2007
+@@ -570,6 +570,8 @@
+ //#include "t120proto.h"
+ 
+ 
++#undef P_SDL
++
+ #ifdef DEPRECATED_CU30
+ #include "cu30codec.h"
+ #endif
