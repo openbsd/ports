@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2007/04/27 18:40:39 bernd Exp $
 
 COMMENT=	"GNU gettext"
 
 DISTNAME=	gettext-0.14.6
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	intl                 3.0      # .7.3
 SHARED_LIBS +=	asprintf             1.0      # .0.0
 SHARED_LIBS +=	gettextlib           0.0      # .0.0
@@ -23,15 +24,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	expat.>=4::textproc/expat
-WANTLIB=	c
+WANTLIB=	c expat
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-included-gettext \
 		--with-libiconv-prefix="${LOCALBASE}" \
-		--with-libexpat-prefix="${LOCALBASE}" \
+		--with-libexpat-prefix="${X11BASE}" \
 		--mandir="${PREFIX}/man"
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux

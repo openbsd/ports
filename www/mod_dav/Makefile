@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/04/27 18:47:07 bernd Exp $
 
 COMMENT=	"class 1 and 2 DAV server for the Apache webserver"
 
@@ -7,7 +7,7 @@ COMMENT=	"class 1 and 2 DAV server for the Apache webserver"
 SHARED_ONLY=	Yes
 
 DISTNAME=	mod_dav-1.0.3-1.3.6
-PKGNAME=	mod_dav-1.0.3p1
+PKGNAME=	mod_dav-1.0.3p2
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.webdav.org/mod_dav/
@@ -22,11 +22,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		expat.>=2::textproc/expat
+WANTLIB=		expat
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
-			--with-expat=${LOCALBASE}
+			--with-expat=${X11BASE}
 
 SUBST_VARS=	PKGNAME
 
