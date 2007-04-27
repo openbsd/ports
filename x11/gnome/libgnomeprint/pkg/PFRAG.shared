@@ -1,6 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/08 13:48:31 steven Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2007/04/27 22:45:01 jasper Exp $
 @lib lib/libgnomeprint-2-2.so.${LIBgnomeprint-2-2_VERSION}
-lib/libgnomeprint/${VERSION}/modules/libgnomeprintlpd.so
-lib/libgnomeprint/${VERSION}/modules/transports/libgnomeprint-custom.so
-lib/libgnomeprint/${VERSION}/modules/transports/libgnomeprint-file.so
-lib/libgnomeprint/${VERSION}/modules/transports/libgnomeprint-lpr.so

@@ -1,17 +1,9 @@
---- configure.orig	Wed Mar 30 14:28:44 2005
-+++ configure	Tue Apr  5 09:34:04 2005
-@@ -9397,7 +9397,7 @@ nto-qnx*)
- openbsd*)
-   version_type=sunos
-   need_lib_prefix=no
--  need_version=yes
-+  need_version=no
-   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-   shlibpath_var=LD_LIBRARY_PATH
-@@ -23958,7 +23958,7 @@ GNOME_PRINT_DATA_DIR='${datadir}/libgnom
- GNOME_PRINT_DATA_DIR=$GNOME_PRINT_DATA_DIR
- 
+$OpenBSD: patch-configure,v 1.7 2007/04/27 22:45:01 jasper Exp $
+--- configure.orig	Mon Mar 12 16:39:26 2007
++++ configure	Thu Apr 19 23:17:02 2007
+@@ -24874,7 +24874,7 @@ echo "$as_me: error: Could not find flex" >&2;}
+    { (exit 1); exit 1; }; }
+ fi
  
 -LIBGNOMEPRINT_CFLAGS="$GP_CFLAGS $FREETYPE_CFLAGS"
 +LIBGNOMEPRINT_CFLAGS="$FREETYPE_CFLAGS $GP_CFLAGS"
