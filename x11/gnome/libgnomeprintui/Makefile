@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/02/11 00:56:58 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/04/27 22:46:41 jasper Exp $
 
 COMMENT=		"user interface components for libgnomeprint"
 
-DISTNAME=		libgnomeprintui-2.10.2
-PKGNAME=		${DISTNAME}p4
-SHARED_LIBS=		gnomeprintui-2-2	1.0
+DISTNAME=		libgnomeprintui-2.18.0
+SHARED_LIBS +=	gnomeprintui-2-2    2.0      # .1.0
 CATEGORIES=		x11/gnome devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
@@ -14,13 +13,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE SM X11 Xext Xrender fontconfig freetype z \
-		art_lgpl_2 atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		xml2 cairo glitz png
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender art_lgpl_2 atk-1.0 cairo expat fontconfig freetype \
+		gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprintui/2.10/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprintui/2.18/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
@@ -36,7 +35,6 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
