@@ -1,7 +1,7 @@
-$OpenBSD: patch-gal_e-table_e-table-group_c,v 1.1.1.1 2003/10/14 20:26:08 marcm Exp $
---- gal/e-table/e-table-group.c.orig	2003-08-24 20:52:40.000000000 -0700
-+++ gal/e-table/e-table-group.c	2003-08-24 20:53:22.000000000 -0700
-@@ -136,7 +136,7 @@ e_table_group_construct (GnomeCanvasGrou
+$OpenBSD: patch-gal_e-table_e-table-group_c,v 1.2 2007/04/27 22:28:30 jasper Exp $
+--- gal/e-table/e-table-group.c.orig	Fri Apr 29 16:16:03 2005
++++ gal/e-table/e-table-group.c	Wed Apr 25 18:50:52 2007
+@@ -139,7 +139,7 @@ e_table_group_construct (GnomeCanvasGroup *parent,
  	g_object_ref (etg->model);
  	g_object_set (G_OBJECT (etg),
  		"parent", parent,

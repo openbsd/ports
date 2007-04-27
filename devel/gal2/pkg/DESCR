@@ -1,5 +1,5 @@
-This module contains some library functions that came from Gnumeric
-and Evolution.  The idea is to reuse the code across various larger
-GNOME applications that might want to use it.  The API is not frozen
-and might change at any time.  Larger class renaming might happen
-at any point without notice.  Use this library at your own risk.
+This module contains some library functions that came from Gnumeric and
+Evolution. The idea is to reuse the code across various larger GNOME
+applications that might want to use it. The API is not frozen and might
+change at any time. Larger class renaming might happen at any point
+without notice. Use this library at your own risk.
