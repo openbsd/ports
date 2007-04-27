@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.9 2007/04/27 22:38:11 jasper Exp $
+@lib lib/libgailutil.so.${LIBgailutil_VERSION}
