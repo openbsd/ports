@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgnomevfs_xdgmime_c,v 1.1 2005/05/24 21:50:12 marcm Exp $
---- libgnomevfs/xdgmime.c.orig	Tue Dec 14 07:30:30 2004
-+++ libgnomevfs/xdgmime.c	Mon Apr  4 22:37:37 2005
-@@ -207,7 +207,7 @@ xdg_run_command_on_dirs (XdgDirectoryFun
+$OpenBSD: patch-libgnomevfs_xdgmime_c,v 1.2 2007/04/27 22:06:38 jasper Exp $
+--- libgnomevfs/xdgmime.c.orig	Tue Apr 10 14:03:59 2007
++++ libgnomevfs/xdgmime.c	Thu Apr 19 21:20:04 2007
+@@ -236,7 +236,7 @@ xdg_run_command_on_dirs (XdgDirectoryFunc  func,
  
    xdg_data_dirs = getenv ("XDG_DATA_DIRS");
    if (xdg_data_dirs == NULL)

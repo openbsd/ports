@@ -1,60 +1,62 @@
-# $OpenBSD: Makefile,v 1.20 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/04/27 22:06:37 jasper Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		"GNOME Virtual File System"
 
-VERSION=		2.10.1
+VERSION=		2.18.1
 DISTNAME=		gnome-vfs-${VERSION}
-PKGNAME=		gnome-vfs2-${VERSION}p0
-SHARED_LIBS=		gnomevfs-2 1000.1
-CATEGORIES=		devel x11/gnome
+PKGNAME=		gnome-vfs2-${VERSION}
+SHARED_LIBS +=	gnomevfs-2       1800.1       # .1800.1
+CATEGORIES=		x11/gnome
+
 HOMEPAGE=		http://www.gnome.org/
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.10/}
-
-MODULES=		devel/gettext
-
-LIB_DEPENDS=		bonobo-2,bonobo-activation::x11/gnome/libbonobo \
-			bz2::archivers/bzip2 \
-			cdda_paranoia,cdda_interface::audio/cdparanoia \
-			gconf-2::devel/gconf2
-
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:gnome-mime-data->=2.0.0:x11/gnome/mime-data
-RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data \
-			:shared-mime-info-*:misc/shared-mime-info
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ORBit-2 ORBitCosNaming-2 glib-2.0 \
-			gmodule-2.0 gobject-2.0 gthread-2.0 popt \
-			xml2 c crypto m pthread ssl z
+WANTLIB += c crypto dbus-1 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += m pthread rpcsvc ssl stdc++ util z
+
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.18/}
+EXTRACT_SUFX=		.tar.bz2
+
+MODULES=		devel/gettext
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
+			:gnome-mime-data->=2.0.0:x11/gnome/mime-data
+LIB_DEPENDS=		dbus-glib-1.>=3::x11/dbus-glib \
+			fam::sysutils/fam \
+			xml2.>=9::textproc/libxml \
+			gconf-2.>=5::devel/gconf2 \
+			cdda_interface,cdda_paranoia::audio/cdparanoia \
+			bz2.>=10::archivers/bzip2 \
+			ORBit-2.>=2::devel/ORBit2
+RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu old
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
-CONFIGURE_ARGS+=	--disable-gtk-doc
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-vfs2
-CONFIGURE_ARGS+=	--disable-ipv6 \
+CONFIGURE_STYLE= 	gnu
+CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-vfs2 \
+			--disable-schemas-install \
+			--enable-openssl \
+			--enable-cdda \
+			--disable-avahi \
 			--disable-howl \
 			--disable-samba
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-# This port has "/usr/local" hardcoded, we prefer ${LOCALBASE}
 pre-build:
-	for i in gnome-vfs-mime-info.c xdgmime.c; do \
-		perl -pi -e "s,/usr/local,${LOCALBASE},g" \
-			${WRKSRC}/libgnomevfs/$$i; \
-	done
+	perl -pi -e "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/libgnomevfs/xdgmime.c
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-vfs2; \
 	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/gnome-vfs2/
 
 .include <bsd.port.mk>
+
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"

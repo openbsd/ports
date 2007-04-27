@@ -1,32 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2005/05/24 21:50:12 marcm Exp $
---- configure.orig	Mon Mar  7 00:15:59 2005
-+++ configure	Mon Apr  4 23:33:26 2005
-@@ -9087,7 +9087,7 @@ nto-qnx*)
- openbsd*)
-   version_type=sunos
-   need_lib_prefix=no
--  need_version=yes
-+  need_version=no
-   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-   shlibpath_var=LD_LIBRARY_PATH
-@@ -23359,6 +23359,7 @@ echo "${ECHO_T}$LINGUAS" >&6
- 
- 
- 
-+LIBS="$LIBS $INTLLIBS"
- for ac_func in ngettext
- do
- as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
-@@ -26284,6 +26285,7 @@ cat >>conftest.$ac_ext <<_ACEOF
- #include <sys/vfs.h>
- #endif
- #ifdef HAVE_SYS_MOUNT_H
-+#include <sys/param.h>
- #include <sys/mount.h>
- #endif
- #ifdef HAVE_SYS_STATFS_H
-@@ -33918,7 +33920,7 @@ if test "${openssl_libs+set}" = set; the
+$OpenBSD: patch-configure,v 1.10 2007/04/27 22:06:38 jasper Exp $
+--- configure.orig	Thu Apr 19 21:09:55 2007
++++ configure	Thu Apr 19 21:11:28 2007
+@@ -33402,7 +33402,7 @@ if test "${openssl_libs+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -35,19 +10,21 @@ $OpenBSD: patch-configure,v 1.9 2005/05/24 21:50:12 marcm Exp $
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -37241,6 +37243,7 @@ _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <sys/param.h>
- #include <sys/mount.h>
+@@ -33700,7 +33700,7 @@ if test "${openssl_libs+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
  
+-		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
++		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto"
+ 		cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
  _ACEOF
-@@ -37262,6 +37265,7 @@ _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <sys/param.h>
- #include <sys/mount.h>
- #include <sys/fs_types.h>
+@@ -38563,7 +38563,7 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lfam  $LIBS"
++LIBS="-lfam  -lm $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
  _ACEOF
