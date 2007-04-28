@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.1 2005/10/08 20:05:32 brad Exp $
-@comment lib/lighttpd/mod_mysql_vhost.a
+@comment $OpenBSD: PFRAG.mysql,v 1.2 2007/04/28 10:08:01 rui Exp $
 @comment lib/lighttpd/mod_mysql_vhost.la
 lib/lighttpd/mod_mysql_vhost.so
