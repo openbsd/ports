@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2007/03/26 19:39:01 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.35 2007/04/28 18:43:30 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"object-oriented web application server"
 
 VERSION=	2.10.3
 DISTNAME=	Zope-${VERSION}-final
-PKGNAME=	${DISTNAME:S/-final//:L}p0
+PKGNAME=	${DISTNAME:S/-final//:L}p1
 CATEGORIES=     www
 
 HOMEPAGE=	http://www.zope.org/
@@ -25,8 +25,7 @@ EXTRACT_SUFX=	.tgz
 MODPY_VERSION=	2.4
 MODULES=	lang/python
 
-RUN_DEPENDS+=	::textproc/expat \
-		${MODPY_EXPAT_DEPENDS}
+RUN_DEPENDS+=	${MODPY_EXPAT_DEPENDS}
 
 BUILD_ARGS=		--build-base=${WRKSRC} \
 			--build-lib="${WRKSRC}/build-lib" \
