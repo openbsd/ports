@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/28 10:36:28 steven Exp $
 
 COMMENT=	"File Alteration Monitor"
 
@@ -31,7 +31,7 @@ post-patch:
 	rm -f ${WRKSRC}/configure
 
 pre-configure:
-	cp ${FILESDIR}/* ${WRKSRC}/src
+	cp ${FILESDIR}/*.* ${WRKSRC}/src
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fam/
