@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/14 06:23:23 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/28 11:49:56 mbalmer Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -7,6 +7,8 @@ SHARED_ONLY=	Yes
 COMMENT=        "Apache FastCGI module"
 
 DISTNAME=       mod_fastcgi-2.4.2
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=     www
 
 HOMEPAGE=       http://www.fastcgi.com/
