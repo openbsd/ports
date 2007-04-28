@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.108 2007/04/19 19:00:51 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.109 2007/04/28 10:31:11 espie Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -217,12 +217,12 @@ MASTER_SITE_HORDE+=		\
 	ftp://ftp.de.horde.org/horde.org/
 
 MASTER_SITE_APACHE+= \
-	http://apache.sunsite.ualberta.ca/ \
 	http://mirrors.isc.org/pub/apache/ \
 	ftp://ftp.gbnet.net/pub/apache/dist/ \
 	http://sunsite.tus.ac.jp/pub/apache/ \
 	ftp://ftp.apache.de/mirrors/dev.apache.org/dist/ \
 	ftp://ftp.planetmirror.com/pub/apache/dist/ \
+	http://apache.sunsite.ualberta.ca/ \
 	http://www.apache.org/dist/
 
 MASTER_SITE_BERLIOS+=	\
