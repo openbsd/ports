@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2007/01/01 23:10:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2007/04/28 19:58:26 sturm Exp $
 
 FULLPKGNAME-main=	php4-extensions-${V}p1
 COMMENT-main=	"informational package about PHP4 extensions"
@@ -288,8 +288,8 @@ CONFIGURE_ARGS+=	--without-xmlrpc
 MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		"XML RPC functions for php4"
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
-LIB_DEPENDS-xmlrpc=	expat.>=2::textproc/expat
-WANTLIB-xmlrpc=		${WANTLIB} iconv
+WANTLIB-xmlrpc=		${WANTLIB} expat iconv
+FULLPKGNAME-xmlrpc=	php4-xmlrpc-${V}p2
 .endif
 
 # xslt
@@ -300,9 +300,10 @@ CONFIGURE_ARGS+=	--disable-xslt
 MULTI_PACKAGES+=	-xslt
 COMMENT-xslt=		"xslt transformation extensions for php4"
 CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared,${LOCALBASE} \
-			--with-expat-dir=${LOCALBASE}
-LIB_DEPENDS-xslt=	sablot.>=96::textproc/sablotron expat.>=2::textproc/expat
-WANTLIB-xslt=		${WANTLIB} iconv
+			--with-expat-dir=${X11BASE}
+LIB_DEPENDS-xslt=	sablot.>=96::textproc/sablotron
+WANTLIB-xslt=		${WANTLIB} expat iconv
+FULLPKGNAME-xslt=	php4-xslt-${V}p2
 .endif
 
 .for i in ${MULTI_PACKAGES}
