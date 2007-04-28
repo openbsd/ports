@@ -1,4 +1,4 @@
-* Important note for users familar with former versions of this package:
+* Important note for users familiar with former versions of this package:
   The postgresql-server package does no longer install a default database.
 
 To use the postgresql server you have to create a database first.
