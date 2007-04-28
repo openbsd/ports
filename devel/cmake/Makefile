@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/25 14:56:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/04/28 10:10:29 bernd Exp $
 
 HOMEPAGE=		http://www.cmake.org/
 CATEGORIES=		devel
 COMMENT=		portable build system
 DISTNAME=		cmake-2.4.6
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 MASTER_SITES=		${HOMEPAGE}files/v2.4/
 MAINTAINER=		Marc Espie <espie@openbsd.org>
 
@@ -25,10 +25,9 @@ CONFIGURE_ARGS=		--prefix=${LOCALBASE} --docdir=/share/doc/CMake \
 
 
 LIB_DEPENDS=		curl::net/curl \
-			expat::textproc/expat \
 			xmlrpc,xmlrpc_client,xmlrpc_util,xmlrpc_xmlparse,xmlrpc_xmltok::net/xmlrpc-c 
 
-WANTLIB=	m curses c stdc++ z crypto pthread ssl
+WANTLIB=	expat m curses c stdc++ z crypto pthread ssl
 
 # Add these if you need to figure out what's going on.
 #CONFIGURE_ARGS+=	--verbose

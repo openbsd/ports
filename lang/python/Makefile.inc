@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.45 2007/01/10 16:57:56 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.46 2007/04/28 10:06:24 bernd Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -60,7 +60,7 @@ RUN_DEPENDS-idle=	${RUN_DEPENDS} \
 LIB_DEPENDS-tkinter=	tk84:tk-8.4.*:x11/tk/8.4
 WANTLIB-tkinter=	tcl84 X11
 LIB_DEPENDS-mpz=	gmp::devel/gmp
-LIB_DEPENDS-expat=	expat.>=4.0:expat->=1.95.6:textproc/expat
+WANTLIB-expat=		expat
 LIB_DEPENDS-sqlite=	sqlite3.>=8.7::databases/sqlite3
 
 SETUP_PY=	"s,!!LOCALBASE!!,${LOCALBASE},g" \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.2 2006/11/01 20:38:37 alek Exp $
+$OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
 --- setup.py.orig	Sun Oct  8 19:41:25 2006
-+++ setup.py	Sat Oct 21 15:19:51 2006
++++ setup.py	Tue Apr 24 14:01:43 2007
 @@ -521,141 +521,13 @@ class PyBuildExt(build_ext):
          # of available releases can be found at
          #
@@ -166,7 +166,7 @@ $OpenBSD: patch-setup_py,v 1.2 2006/11/01 20:38:37 alek Exp $
              exts.append( Extension('bz2', ['bz2module.c'],
                                     libraries = ['bz2']) )
  
-@@ -806,19 +678,18 @@ class PyBuildExt(build_ext):
+@@ -806,19 +678,19 @@ class PyBuildExt(build_ext):
          #
          # More information on Expat can be found at www.libexpat.org.
          #
@@ -190,7 +190,8 @@ $OpenBSD: patch-setup_py,v 1.2 2006/11/01 20:38:37 alek Exp $
 +                ]
 +            exts.append(Extension('pyexpat',
 +                                  define_macros = define_macros,
-+                                  include_dirs = ["!!LOCALBASE!!/include", expatinc],
++                                  include_dirs = ["!!X11BASE!!/include", expatinc],
++                                  library_dirs = ["!!X11BASE!!/lib"],
 +                                  sources = ['pyexpat.c',
 +                                             ],
 +                                  libraries = ["expat"]
@@ -198,7 +199,7 @@ $OpenBSD: patch-setup_py,v 1.2 2006/11/01 20:38:37 alek Exp $
  
          # Hye-Shik Chang's CJKCodecs modules.
          if have_unicode:
-@@ -954,7 +825,16 @@ class PyBuildExt(build_ext):
+@@ -954,7 +826,16 @@ class PyBuildExt(build_ext):
          self.extensions.extend(exts)
  
          # Call the method for detecting whether _tkinter can be compiled
@@ -216,7 +217,7 @@ $OpenBSD: patch-setup_py,v 1.2 2006/11/01 20:38:37 alek Exp $
  
      def detect_tkinter_darwin(self, inc_dirs, lib_dirs):
          # The _tkinter module, using frameworks. Since frameworks are quite
-@@ -1224,8 +1104,7 @@ def main():
+@@ -1224,8 +1105,7 @@ def main():
            ext_modules=[Extension('struct', ['structmodule.c'])],
  
            # Scripts to install
