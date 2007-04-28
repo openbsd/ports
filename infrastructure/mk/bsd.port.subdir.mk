@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.83 2007/04/07 09:55:13 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.84 2007/04/28 10:19:41 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -99,6 +99,8 @@ _subdir_fragment = \
 	for subdir in ${_FULLSUBDIR}; do \
 		if ! $${_STARTDIR_SEEN}; then \
 			case "${STARTDIR}" in \
+			$$subdir) \
+				_STARTDIR_SEEN=true;; \
 			$$subdir*) \
 				;; \
 			*) \
