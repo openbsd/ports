@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/04/15 07:40:27 steven Exp $
+# $OpenBSD: Makefile,v 1.36 2007/04/28 16:03:21 bernd Exp $
 
 COMMENT-main=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -8,12 +8,12 @@ COMMENT-ap2=	"apache2 subversion modules"
 
 VERSION=	1.4.3
 DISTNAME=	subversion-${VERSION}
-PKGNAME=	${DISTNAME}p1
-PKGNAME-main=	${DISTNAME}p2
-PKGNAME-perl=	p5-SVN-${VERSION}
-PKGNAME-python=	py-subversion-${VERSION}
-PKGNAME-ruby=	ruby-subversion-${VERSION}p0
-PKGNAME-ap2=	ap2-subversion-${VERSION}
+PKGNAME=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
+PKGNAME-perl=	p5-SVN-${VERSION}p0
+PKGNAME-python=	py-subversion-${VERSION}p0
+PKGNAME-ruby=	ruby-subversion-${VERSION}p1
+PKGNAME-ap2=	ap2-subversion-${VERSION}p0
 
 SO_VERSION=	1.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -46,11 +46,10 @@ SUBST_VARS=	PYTHON_VER
 
 MODULES=	devel/gettext
 
-WANTLIB=	apr-1 db z
+WANTLIB=	apr-1 expat db z
 
 LIB_DEPENDS=	neon.>=24:neon->=0.24.7:net/neon \
-		aprutil-1::devel/apr-util \
-		expat.>=4::textproc/expat
+		aprutil-1::devel/apr-util
 
 MULTI_PACKAGES=	-main
 
@@ -75,8 +74,7 @@ SHARED_ONLY=	Yes
 
 WANTLIB-perl=	${WANTLIB} aprutil-1
 RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
-LIB_DEPENDS-perl=	expat.>=4::textproc/expat \
-			${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
 	svn_repos-1 svn_wc-1 svn_client-1
 LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
@@ -84,8 +82,7 @@ LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversio
 
 WANTLIB-python=	${WANTLIB} crypto m ssl neon xml2 aprutil-1
 RUN_DEPENDS-python=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-LIB_DEPENDS-python=	expat.>=4::textproc/expat \
-			python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
+LIB_DEPENDS-python=	python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 			${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
