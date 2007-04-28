@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/03/28 07:02:07 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/04/28 14:02:26 bernd Exp $
 
 COMMENT=	"companion library to APR"
 
 DISTNAME=	apr-util-1.2.7
-PKGNAME=	${DISTNAME}p1
-FULLPKGNAME=	apr-util${MT}-1.2.7p1
+PKGNAME=	${DISTNAME}p2
+FULLPKGNAME=	apr-util${MT}-1.2.7p2
 SHARED_LIBS +=	aprutil-1${MT}          2.7      # .2.7
 
 CATEGORIES=	devel
@@ -24,8 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
-LIB_DEPENDS=	lib/db4/db.=4:db-4.*:databases/db/v4 \
-		expat.>=4:expat->=1.95.6:textproc/expat
+WANTLIB=	expat
+LIB_DEPENDS=	lib/db4/db.=4:db-4.*:databases/db/v4
 
 MODULES=	converters/libiconv		
 USE_LIBTOOL=	Yes
@@ -33,7 +33,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-dbm=db4 \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib/db4 \
-		--with-expat=${LOCALBASE} \
+		--with-expat=${X11BASE} \
 		--with-iconv=${LOCALBASE} \
 		--includedir=${LOCALBASE}/include/apr-1${MT}/ \
 		--with-apr=${LOCALBASE}/bin/apr-1${MT}-config
