@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/20 23:03:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/28 14:58:21 bernd Exp $
 
 COMMENT=	"glib bindings for dbus message system"
 
 DISTNAME=	dbus-glib-0.73
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	dbus-glib-1          3.0      # .3.0
 CATEGORIES=	x11
 
@@ -26,7 +27,8 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread"
 
 pre-build:
