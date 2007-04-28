@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/04/07 14:54:12 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/04/28 19:45:41 sturm Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -6,16 +6,14 @@ COMMENT=		"test-bed browser/authoring tool of the W3C"
 
 AMAYA_VERSION=		5.1
 DISTNAME=		amaya-src-${AMAYA_VERSION}
-PKGNAME=		amaya-${AMAYA_VERSION}p2
+PKGNAME=		amaya-${AMAYA_VERSION}p3
 
 HOMEPAGE=		http://www.w3.org/Amaya/
 
 FLAVORS=		motif gtk
 FLAVOR?=		motif
 
-LIB_DEPENDS+=	 	expat.>=2::textproc/expat
-
-WANTLIB=		ICE SM X11 Xext Xp Xt c m z
+WANTLIB=		ICE SM X11 Xext Xp Xt c expat m z
 
 USE_X11=		Yes
 
@@ -51,8 +49,8 @@ AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/../libwww/config
 CONFIGURE_SCRIPT=	../configure
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-			LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+			LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--without-graphic-libs
 
 # We need to regenerate configure in two places, Amaya/ and libwww/
