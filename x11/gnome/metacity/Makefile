@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/24 16:41:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2007/04/29 21:04:18 alek Exp $
 
 COMMENT=		"boring window manager for the adult in you."
 
@@ -34,6 +34,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/metacity
+CONFIGURE_ARGS+=	--disable-schemas-install
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
