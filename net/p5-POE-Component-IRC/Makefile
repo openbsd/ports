@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/02/02 14:52:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2007/04/29 19:22:40 jasper Exp $
 
 COMMENT=	"event-driven IRC-client module"
 
-DISTNAME=	POE-Component-IRC-5.22
+DISTNAME=	POE-Component-IRC-5.26
 CATEGORIES=	net
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
