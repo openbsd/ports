@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2007/04/14 15:58:03 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2007/04/29 10:24:23 kili Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT-main=	"generic shared library support script"
@@ -6,7 +6,7 @@ COMMENT-ltdl=	"GNU libtool system independent dlopen wrapper"
 
 VERSION=	1.5.22
 DISTNAME=	libtool-${VERSION}
-PKGNAME-main=	${DISTNAME}p10
+PKGNAME-main=	${DISTNAME}p11
 PKGNAME-ltdl=	libltdl-${VERSION}p2
 SHARED_LIBS=		ltdl 4.3
 MODGNU_SHARED_LIBS=	ltdl '-no-undefined'
@@ -30,6 +30,13 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --infodir=${PREFIX}/info
+
+# Strictly speaking, forcing GREP in MAKE_ENV should suffice, since the
+# libtool reconfigures during the build. But we want to play it safe for
+# future changes/updates, so force GREP in CONFIGURE_ENV, too.
+CONFIGURE_ENV=	GREP=/usr/bin/grep
+MAKE_ENV=	GREP=/usr/bin/grep
+
 FAKE_FLAGS=	 ${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 MULTI_PACKAGES=	-main -ltdl
