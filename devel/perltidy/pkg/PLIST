@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/06/16 17:31:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/04/29 09:29:31 jasper Exp $
 bin/perltidy
 ${P5SITE}/Perl/
 ${P5SITE}/Perl/Tidy.pm
@@ -11,6 +11,7 @@ share/doc/perltidy/tutorial.pod
 share/examples/perltidy/
 share/examples/perltidy/README
 share/examples/perltidy/bbtidy.pl
+share/examples/perltidy/break_long_quotes.pl
 share/examples/perltidy/ex_mp.pl
 share/examples/perltidy/find_naughty.pl
 share/examples/perltidy/lextest
