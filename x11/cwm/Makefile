@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/04/29 08:27:32 jasper Exp $
+
+COMES_WITH=	4.2
 
 COMMENT=	"calm window manager"
 DISTNAME=	cwm-3
