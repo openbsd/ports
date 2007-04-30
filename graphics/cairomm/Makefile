@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/25 10:23:26 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/30 11:02:07 wilfried Exp $
 
 COMMENT=		"C++ interface for cairo"
 
 DISTNAME=		cairomm-1.2.4
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		cairomm-1.0	1.0
 CATEGORIES=		graphics
 
@@ -21,7 +22,6 @@ WANTLIB=		X11 Xau Xdmcp Xrender expat fontconfig freetype glitz \
 MASTER_SITES=		http://cairographics.org/releases/
 
 LIB_DEPENDS=		cairo:cairo->=1.2:graphics/cairo
-LIB_DEPENDS+=		expat.>=6::textproc/expat # temp
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
