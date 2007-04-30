@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/26 09:54:34 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2007/04/30 17:03:52 bernd Exp $
 
 COMMENT-main=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -7,9 +7,9 @@ COMMENT-mess=	"emulates game consoles and old home computers"
 VERSION=	0.104
 DISTNAME=	xmame-${VERSION}
 
-PKGNAME-main=	xmame+xmess-${VERSION}p0
-PKGNAME-mame=	xmame-${VERSION}
-PKGNAME-mess=	xmess-${VERSION}
+PKGNAME-main=	xmame+xmess-${VERSION}p1
+PKGNAME-mame=	xmame-${VERSION}p0
+PKGNAME-mess=	xmess-${VERSION}p0
 
 CATEGORIES=	emulators games
 MASTER_SITES=	${HOMEPAGE}/download/ \
@@ -36,7 +36,7 @@ PERMIT_PACKAGE_CDROM=	"may not sell"
 PERMIT_PACKAGE_FTP=	"Yes"
 PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	"Yes"
-WANTLIB=		X11 Xext Xv Xxf86dga Xxf86vm c m usbhid z
+WANTLIB=		X11 Xext Xv Xxf86dga Xxf86vm expat c m usbhid z
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -101,16 +101,14 @@ MAKE_FLAGS+=	MY_CPU=${MACHINE_ARCH}
 MAKE_FLAGS+=	MY_CPU=risc
 .endif
 
-LIB_DEPENDS+=	expat::textproc/expat
-
 MAKE_ENV=	PREFIX="${PREFIX}"
 MAKE_FILE=	Makefile.OpenBSD
 FAKE_FLAGS=	${MAKE_FLAGS}
 MAKE_FLAGS+=	ARCH=openbsd \
 		CC="${CC}" CFLAGS="${CFLAGS}" \
 		DISPLAY_METHOD="${DISPLAY_METHOD}" \
-		INCLUDES="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lexpat -lz" GLLIBS="" \
+		INCLUDES="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lexpat -lz" GLLIBS="" \
 		INSTALL_PROGRAM_DIR="${INSTALL_PROGRAM_DIR}" \
 		INSTALL_MAN_DIR="${INSTALL_MAN_DIR}" \
 		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
