@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-pt-PT,v 1.1 2007/04/30 22:43:55 martynas Exp $
+mozilla-thunderbird/extensions/langpack-pt-PT@thunderbird.mozilla.org/
+mozilla-thunderbird/extensions/langpack-pt-PT@thunderbird.mozilla.org/chrome/
+mozilla-thunderbird/extensions/langpack-pt-PT@thunderbird.mozilla.org/chrome.manifest
+mozilla-thunderbird/extensions/langpack-pt-PT@thunderbird.mozilla.org/chrome/chromelist.txt
+mozilla-thunderbird/extensions/langpack-pt-PT@thunderbird.mozilla.org/chrome/pt-PT.jar
+mozilla-thunderbird/extensions/langpack-pt-PT@thunderbird.mozilla.org/install.rdf
