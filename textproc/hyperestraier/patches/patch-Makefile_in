@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/16 10:38:40 bernd Exp $
---- Makefile.in.orig	Wed Nov  1 03:45:38 2006
-+++ Makefile.in	Sat Nov 18 19:08:22 2006
-@@ -22,14 +22,13 @@ PROTVER = @PROTVER@
+$OpenBSD: patch-Makefile_in,v 1.2 2007/04/30 17:30:39 bernd Exp $
+--- Makefile.in.orig	Tue Feb 27 01:10:36 2007
++++ Makefile.in	Thu Apr 12 13:06:24 2007
+@@ -22,15 +22,14 @@ PROTVER = @PROTVER@
  # Targets
  MYHEADS = estraier.h estmtdb.h estnode.h
  MYLIBOBJS = estraier.o estmtdb.o estnode.o md5.o
@@ -9,17 +9,18 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/16 10:38:40 bernd Exp $
 -  libestraier.so.$(LIBVER) libestraier.so
 +MYLIBS = libestraier.a libestraier.so.$(LIBVER).$(LIBREV)
  MYBINS = estcmd estmttest estmaster estbutler estcall estwaver estload
- MYCGIS = estseek.cgi estfraud.cgi estproxy.cgi
+ MYCGIS = estseek.cgi estfraud.cgi estproxy.cgi estscout.cgi estsupt.cgi
  MYSCRIPTS = estconfig estwolefind
- MYCONFS = estseek.conf estseek.tmpl estseek.top estseek.help estfraud.conf estproxy.conf \
+ MYCONFS = estseek.conf estseek.tmpl estseek.top estseek.help \
+   estfraud.conf estproxy.conf estscout.conf estsupt.conf \
 -  estresult.dtd estraier.idl locale filter increm
 -MYDOCS = COPYING ChangeLog THANKS doc
-+  estresult.dtd estraier.idl
++  estresult.dtd estraier.idl 
 +MYDOCS = doc/*.html doc/*.css doc/*.png
  MYMAN1S = estconfig.1 estcmd.1 estmaster.1 estwaver.1 estcall.1
  MYMAN3S = estraier.3 estnode.3
  MYPCS = hyperestraier.pc
-@@ -47,25 +46,25 @@ MYHEADDIR = @includedir@
+@@ -48,25 +47,25 @@ MYHEADDIR = @includedir@
  MYLIBDIR = @libdir@
  MYBINDIR = @bindir@
  MYLIBEXECDIR = @libexecdir@
@@ -32,27 +33,27 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/16 10:38:40 bernd Exp $
  
  # Building binaries
 -CC = @CC@
--CPPFLAGS = -I. -I$(HOME)/include -I/usr/local/include -I/usr/include/qdbm @MYCPPOPTS@ \
+-CPPFLAGS = -I. -I$(MYHEADDIR) -I$(HOME)/include -I/usr/local/include -I/usr/include/qdbm \
 +#CC = @CC@
-+CPPFLAGS = -I. -I/usr/local/include -I/usr/include/qdbm @MYCPPOPTS@ \
-   -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
++CPPFLAGS = -I. -I/usr/local/include -I/usr/include/qdbm \
+   @MYCPPOPTS@ -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
    -DPIC=1 -D_THREAD_SAFE=1 -D_REENTRANT=1 @MYDEFS@
 -CFLAGS = @MYCFLAGS@
--LDFLAGS = -L. -L$(HOME)/lib -L/usr/local/lib @MYLDOPTS@
+-LDFLAGS = -L. -L$(MYLIBDIR) -L$(HOME)/lib -L/usr/local/lib @MYLDOPTS@
 +CFLAGS += @MYCFLAGS@
 +LDFLAGS = -L. -L/usr/local/lib @MYLDOPTS@
  LIBS = @LIBS@
  MTLIBS = @MYMTLIBS@
  SKLIBS = @MYSKLIBS@
  APPLIBS = @MYAPPLIBS@
--LDENV = LD_RUN_PATH=/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:@MYRUNPATH@:.
--RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:@MYRUNPATH@
+-LDENV = LD_RUN_PATH=/lib:/usr/lib:$(MYLIBDIR):$(HOME)/lib:/usr/local/lib:@MYRUNPATH@:.
+-RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:$(MYLIBDIR):$(HOME)/lib:/usr/local/lib:@MYRUNPATH@
 +LDENV = LD_RUN_PATH=/lib:/usr/lib:/usr/local/lib:@MYRUNPATH@:.
 +RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:/usr/local/lib:@MYRUNPATH@
  MYPOSTCMD = @MYPOSTCMD@
  
  
-@@ -111,22 +110,22 @@ version :
+@@ -112,22 +111,22 @@ version :
  
  
  install :
@@ -91,7 +92,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/16 10:38:40 bernd Exp $
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using Hyper Estraier.\n'
-@@ -594,13 +593,13 @@ libestraier.a : $(MYLIBOBJS)
+@@ -628,13 +627,13 @@ libestraier.a : $(MYLIBOBJS)
  	$(AR) $(ARFLAGS) $@ $(MYLIBOBJS)
  
  

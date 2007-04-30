@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/16 10:38:40 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/04/30 17:30:40 bernd Exp $
 %%SHARED%%
 bin/estbutler
 bin/estcall
@@ -31,10 +31,13 @@ share/doc/hyperestraier/estfraud.conf
 share/doc/hyperestraier/estproxy.conf
 share/doc/hyperestraier/estraier.idl
 share/doc/hyperestraier/estresult.dtd
+share/doc/hyperestraier/estscout.conf
 share/doc/hyperestraier/estseek.conf
 share/doc/hyperestraier/estseek.help
 share/doc/hyperestraier/estseek.tmpl
 share/doc/hyperestraier/estseek.top
+share/doc/hyperestraier/estsupt.conf
+share/doc/hyperestraier/gateframe.png
 share/doc/hyperestraier/icon16.png
 share/doc/hyperestraier/index.html
 share/doc/hyperestraier/index.ja.html

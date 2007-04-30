@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/01/16 10:38:40 bernd Exp $
---- configure.orig	Fri Sep 22 20:29:43 2006
-+++ configure	Fri Sep 22 20:29:50 2006
-@@ -2378,7 +2378,7 @@ then
+$OpenBSD: patch-configure,v 1.2 2007/04/30 17:30:39 bernd Exp $
+--- configure.orig	Mon Mar  5 01:29:42 2007
++++ configure	Thu Apr 12 12:58:39 2007
+@@ -2395,7 +2395,7 @@ then
    fi
    if uname | egrep -i 'BSD' > /dev/null 2>&1
    then

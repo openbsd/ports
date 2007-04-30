@@ -1,16 +1,16 @@
-$OpenBSD: patch-rubynative_Makefile_in,v 1.1.1.1 2007/01/18 10:38:47 bernd Exp $
---- rubynative/Makefile.in.orig	Thu Nov 24 18:36:57 2005
-+++ rubynative/Makefile.in	Fri Jan  5 22:21:01 2007
-@@ -28,7 +28,7 @@ DESTDIR =
+$OpenBSD: patch-rubynative_Makefile_in,v 1.2 2007/04/30 17:30:40 bernd Exp $
+--- rubynative/Makefile.in.orig	Wed Feb 21 01:06:29 2007
++++ rubynative/Makefile.in	Thu Apr 12 14:44:05 2007
+@@ -29,7 +29,7 @@ DESTDIR =
  # Building binaries
  RUBY = @RUBY@
  RDOC = @RDOC@
--RUNENV = LD_LIBRARY_PATH=.:..:/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:@MYRUNPATH@
-+RUNENV = LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:@MYRUNPATH@
+-RUNENV = LD_LIBRARY_PATH=.:..:/lib:/usr/lib:$(MYLIBDIR):$(HOME)/lib:/usr/local/lib:@MYRUNPATH@
++RUNENV = LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib:@MYRUNPATH@
  
  
  
-@@ -52,10 +52,10 @@ clean :
+@@ -53,10 +53,10 @@ clean :
  
  
  install :
