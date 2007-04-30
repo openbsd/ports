@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/21 12:02:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/04/30 10:09:14 ajacoutot Exp $
 
 COMMENT=	"set of tools to create, alter and inspect Matroska files"
 
 DISTNAME=	mkvtoolnix-2.0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -19,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/sources/
 
-WANTLIB=	c ebml m ogg stdc++ z
+WANTLIB=	c ebml m ogg stdc++ z expat
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	FLAC.>=7::audio/flac \
@@ -28,8 +29,7 @@ LIB_DEPENDS=	FLAC.>=7::audio/flac \
 		lzo.>=1::archivers/lzo \
 		matroska:libmatroska->=0.8.1:multimedia/libmatroska \
 		vorbis.>=5::audio/libvorbis \
-		magic.>=1::devel/libmagic \
-		expat.>=6::textproc/expat
+		magic.>=1::devel/libmagic
 
 MAKE_FLAGS+=	V=1
 
@@ -37,8 +37,8 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		ac_cv_has_nl_langinfo=no
 
 CONFIGURE_ARGS=	--enable-lzo \
