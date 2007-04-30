@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2006/12/21 21:41:44 kurt Exp $
-@lib mozilla-thunderbird/extensions/${GUID}/components/libenigmime.so.${LIBenigmime_VERSION}
