@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.28 2007/04/30 12:22:51 espie Exp $
 
 COMMENT-main=		"GStreamer Streaming-media framework plug-ins."
 
@@ -83,7 +83,7 @@ PLUGINS+=		a52
 PSEUDO_FLAVORS+=	no_${PLUGIN}
 .  if !${FLAVOR:L:Mno_${PLUGIN}} && !${FLAVOR:L:Mminimal}
 MULTI_PACKAGES+=	-${PLUGIN}
-PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p12
+PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p13
 BASENAME-${PLUGIN}=	gstreamer-${PLUGIN}
 .  endif
 .endfor
@@ -157,9 +157,10 @@ LIB_DEPENDS-flac=	FLAC::audio/flac \
 # gnomevfs
 COMMENT-gnome=		"GStreamer plugin supporting GNOME VFS"
 WANTLIB-gnome=		crypto ssl gconf-2 \
-			ORBit-2 ORBitCosNaming-2 bonobo-activation bonobo-2 \
+			ORBit-2 ORBitCosNaming-2 bonobo-activation \
 			${myWANTLIB}
 LIB_DEPENDS-gnome=	gnomevfs-2::x11/gnome/vfs2 \
+			bonobo-2::x11/gnome/libbonobo \
 			${myLIB_DEPENDS}
 OPTIONS-gnome=		gnome_vfs
 
