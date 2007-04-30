@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/04/30 15:11:03 espie Exp $
 
 COMMENT-main=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
@@ -6,7 +6,7 @@ COMMENT-gnome=		"GNOME specific extensions to libgsf"
 VERSION=		1.11.1
 DISTNAME=		libgsf-${VERSION}
 PKGNAME-main=		${DISTNAME}p3
-PKGNAME-gnome=		libgsf-gnome-${VERSION}p3
+PKGNAME-gnome=		libgsf-gnome-${VERSION}p4
 SHARED_LIBS +=	gsf-1                12.1     # .12.1
 SHARED_LIBS +=	gsf-gnome-1          12.1     # .12.1
 
@@ -17,6 +17,7 @@ HOMEPAGE=		http://www.gnome.org/
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -50,11 +51,12 @@ MULTI_PACKAGES+= -gnome
 .endif
 
 LIB_DEPENDS-gnome=${LIB_DEPENDS} \
-		gnomevfs-2::x11/gnome/vfs2 \
+		gnomevfs-2.>=1800:gnome-vfs2->=2.18:x11/gnome/vfs2 \
+		bonobo-2,bonobo-activation::x11/gnome/libbonobo \
 		gsf-1::${BUILD_PKGPATH}
-WANTLIB-gnome=	crypto popt ssl ORBitCosNaming-2 \
-		ORBit-2 bonobo-2 bonobo-activation gmodule-2.0 \
-		gthread-2.0 gconf-2 m z
+WANTLIB-gnome=	crypto ssl ORBitCosNaming-2 \
+		ORBit-2 gmodule-2.0 \
+		gthread-2.0 gconf-2 m z dbus-1 dbus-glib-1 util
 
 .if ${MULTI_PACKAGES:M-gnome}
 CONFIGURE_ARGS+= --with-gnome
