@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/07 00:59:02 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/04/30 09:24:43 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,6 +25,7 @@ LIB_DEPENDS+=	dbus-1.>=5::x11/dbus \
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--disable-html-docs
 CONFIGURE_ENV+=	PYTHON=${MODPY_BIN}
 
 NO_REGRESS=	Yes
