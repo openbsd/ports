@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/17 20:41:01 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/04/30 09:52:22 robert Exp $
 
 COMMENT=	"library for importing and exporting WordPerfect(tm) documents"
 
@@ -23,7 +23,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libwpd/}
 
 WANTLIB=	c m stdc++ z bz2 glib-2.0 gobject-2.0 iconv intl xml2
 
-LIB_DEPENDS=	gsf-1::devel/libgsf
+LIB_DEPENDS=		gsf-1::devel/libgsf
+REGRESS_DEPENDS=	::devel/cppunit
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
