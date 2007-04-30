@@ -1,0 +1,29 @@
+$OpenBSD: patch-img_h,v 1.1.1.1 2007/04/30 13:38:50 claudio Exp $
+--- img.h.orig	Tue Apr 24 14:45:52 2007
++++ img.h	Tue Apr 24 14:47:02 2007
+@@ -20,13 +20,15 @@
+ #   include <stdint.h>          /* C99 standard */
+ #endif
+ 
++#include <sys/endian.h>
++
+ #include <stdio.h>
+ 
+ typedef uint8_t chan;
+ typedef uint32_t pel;
+ 
+ /* Yuk. GDKRGB expects data in a specific ordering. */
+-#if defined(DRIFTNET_LITTLE_ENDIAN)
++#if defined(_LITTLE_ENDIAN)
+ #   define PEL(r, g, b)        ((pel)((chan)(r) | ((chan)(g) << 8) | ((chan)(b) << 16)))
+ #   define PELA(r, g, b, a)    ((pel)((chan)(r) | ((chan)(g) << 8) | ((chan)(b) << 16) | ((chan)(a) << 24)))
+ 
+@@ -34,7 +36,7 @@ typedef uint32_t pel;
+ #   define GETG(p)             ((chan)(((p) & (pel)0x0000ff00) >>  8))
+ #   define GETB(p)             ((chan)(((p) & (pel)0x00ff0000) >> 16))
+ #   define GETA(p)             ((chan)(((p) & (pel)0xff000000) >> 24))
+-#elif defined(DRIFTNET_BIG_ENDIAN)
++#elif defined(_BIG_ENDIAN)
+ #   define PEL(r, g, b)        ((pel)(((chan)(r) << 24) | ((chan)(g) << 16) | ((chan)(b) << 8)))
+ #   define PELA(r, g, b, a)    ((pel)(((chan)(r) << 24) | ((chan)(g) << 16) | ((chan)(b) << 8) | ((chan)(a))))
+ 

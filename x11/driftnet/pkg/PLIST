@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/30 13:38:50 claudio Exp $
+bin/driftnet
+@man man/man1/driftnet.1
