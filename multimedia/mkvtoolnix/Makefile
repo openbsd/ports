@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/30 10:09:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/04/30 10:49:22 ajacoutot Exp $
 
 COMMENT=	"set of tools to create, alter and inspect Matroska files"
 
@@ -35,6 +35,7 @@ MAKE_FLAGS+=	V=1
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
+USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
@@ -51,7 +52,6 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=--disable-gui
 .else
-USE_X11=	Yes
 WANTLIB+=	pthread
 LIB_DEPENDS+=	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 CONFIGURE_ARGS+=--enable-gui
