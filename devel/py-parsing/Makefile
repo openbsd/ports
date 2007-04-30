@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/30 10:45:57 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2007/04/30 18:16:16 alek Exp $
 
 COMMENT=	"Python parsing module"
 
-DISTNAME=	pyparsing-1.4.4
+DISTNAME=	pyparsing-1.4.6
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pyparsing.sourceforge.net/
+
+MAINTAINER=	Will Maier <willmaier@ml1.net>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

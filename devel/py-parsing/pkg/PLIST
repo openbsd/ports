@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/10/30 10:45:57 xsa Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.8 2007/04/30 18:16:16 alek Exp $
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing.pyc
 share/doc/py-parsing/
@@ -46,11 +44,9 @@ share/doc/py-parsing/parserFwk.pyparsing.ParseExpression-class.html
 share/doc/py-parsing/parserFwk.pyparsing.ParseFatalException-class.html
 share/doc/py-parsing/parserFwk.pyparsing.ParseResults-class.html
 share/doc/py-parsing/parserFwk.pyparsing.ParserElement-class.html
-share/doc/py-parsing/parserFwk.pyparsing.PositionToken-class.html
 share/doc/py-parsing/parserFwk.pyparsing.QuotedString-class.html
 share/doc/py-parsing/parserFwk.pyparsing.RecursiveGrammarException-class.html
 share/doc/py-parsing/parserFwk.pyparsing.Regex-class.html
-share/doc/py-parsing/parserFwk.pyparsing.ReparseException-class.html
 share/doc/py-parsing/parserFwk.pyparsing.SkipTo-class.html
 share/doc/py-parsing/parserFwk.pyparsing.StringEnd-class.html
 share/doc/py-parsing/parserFwk.pyparsing.StringStart-class.html
@@ -71,6 +67,8 @@ share/examples/py-parsing/AcManForm.dfm
 share/examples/py-parsing/LAparser.py
 share/examples/py-parsing/SimpleCalc.py
 share/examples/py-parsing/SingleForm.dfm
+share/examples/py-parsing/adventureEngine.py
+share/examples/py-parsing/cLibHeader.py
 share/examples/py-parsing/chemicalFormulas.py
 share/examples/py-parsing/commasep.py
 share/examples/py-parsing/configParse.py
@@ -85,21 +83,29 @@ share/examples/py-parsing/getNTPserversNew.py
 share/examples/py-parsing/greeting.py
 share/examples/py-parsing/greetingInGreek.py
 share/examples/py-parsing/greetingInKorean.py
+share/examples/py-parsing/holaMundo.py
+share/examples/py-parsing/htmlStripper.py
 share/examples/py-parsing/httpServerLogParser.py
 share/examples/py-parsing/idlParse.py
 share/examples/py-parsing/indentedGrammarExample.py
+share/examples/py-parsing/jsonParser.py
 share/examples/py-parsing/linenoExample.py
+share/examples/py-parsing/list1.py
 share/examples/py-parsing/listAllMatches.py
+share/examples/py-parsing/macroExpander.py
 share/examples/py-parsing/makeHTMLTagExample.py
 share/examples/py-parsing/mozilla.ics
 share/examples/py-parsing/mozillaCalendarParser.py
 share/examples/py-parsing/parseListString.py
+share/examples/py-parsing/parsePythonValue.py
 share/examples/py-parsing/pgn.py
 share/examples/py-parsing/pythonGrammarParser.py
 share/examples/py-parsing/removeLineBreaks.py
 share/examples/py-parsing/romanNumerals.py
 share/examples/py-parsing/scanExamples.py
+share/examples/py-parsing/scanYahoo.py
 share/examples/py-parsing/searchparser.py
+share/examples/py-parsing/sexpParser.py
 share/examples/py-parsing/simpleArith.py
 share/examples/py-parsing/simpleBool.py
 share/examples/py-parsing/simpleSQL.py
