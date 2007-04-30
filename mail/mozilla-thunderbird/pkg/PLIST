@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/01/23 12:34:06 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/04/30 22:40:31 martynas Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
@@ -30,13 +30,12 @@ mozilla-thunderbird/chrome/messenger.jar
 mozilla-thunderbird/chrome/messenger.manifest
 mozilla-thunderbird/chrome/newsblog.jar
 mozilla-thunderbird/chrome/newsblog.manifest
-mozilla-thunderbird/chrome/offline.jar
-mozilla-thunderbird/chrome/offline.manifest
 mozilla-thunderbird/chrome/pippki.jar
 mozilla-thunderbird/chrome/pippki.manifest
 mozilla-thunderbird/chrome/toolkit.jar
 mozilla-thunderbird/chrome/toolkit.manifest
 mozilla-thunderbird/components/
+mozilla-thunderbird/components/FeedProcessor.js
 mozilla-thunderbird/components/accessibility-atk.xpt
 mozilla-thunderbird/components/accessibility.xpt
 mozilla-thunderbird/components/addrbook.xpt
@@ -68,6 +67,8 @@ mozilla-thunderbird/components/dom_events.xpt
 mozilla-thunderbird/components/dom_html.xpt
 mozilla-thunderbird/components/dom_loadsave.xpt
 mozilla-thunderbird/components/dom_range.xpt
+mozilla-thunderbird/components/dom_sidebar.xpt
+mozilla-thunderbird/components/dom_storage.xpt
 mozilla-thunderbird/components/dom_stylesheets.xpt
 mozilla-thunderbird/components/dom_svg.xpt
 mozilla-thunderbird/components/dom_traversal.xpt
@@ -75,12 +76,13 @@ mozilla-thunderbird/components/dom_views.xpt
 mozilla-thunderbird/components/dom_xbl.xpt
 mozilla-thunderbird/components/dom_xpath.xpt
 mozilla-thunderbird/components/dom_xul.xpt
-mozilla-thunderbird/components/downloadmanager.xpt
 mozilla-thunderbird/components/downloads.xpt
 mozilla-thunderbird/components/editor.xpt
 mozilla-thunderbird/components/embed_base.xpt
 mozilla-thunderbird/components/extensions.xpt
 mozilla-thunderbird/components/exthandler.xpt
+mozilla-thunderbird/components/fastfind.xpt
+mozilla-thunderbird/components/feeds.xpt
 mozilla-thunderbird/components/filepicker.xpt
 mozilla-thunderbird/components/find.xpt
 mozilla-thunderbird/components/gfx.xpt
@@ -90,6 +92,7 @@ mozilla-thunderbird/components/htmlparser.xpt
 mozilla-thunderbird/components/imglib2.xpt
 mozilla-thunderbird/components/impComm4xMail.xpt
 mozilla-thunderbird/components/import.xpt
+mozilla-thunderbird/components/inspector.xpt
 mozilla-thunderbird/components/intl.xpt
 mozilla-thunderbird/components/jar.xpt
 mozilla-thunderbird/components/jsconsole-clhandler.js
@@ -119,9 +122,6 @@ mozilla-thunderbird/components/msglocal.xpt
 mozilla-thunderbird/components/msgnews.xpt
 mozilla-thunderbird/components/msgsearch.xpt
 mozilla-thunderbird/components/msgsmime.xpt
-mozilla-thunderbird/components/myspell/
-mozilla-thunderbird/components/myspell/en-US.aff
-mozilla-thunderbird/components/myspell/en-US.dic
 mozilla-thunderbird/components/necko.xpt
 mozilla-thunderbird/components/necko_about.xpt
 mozilla-thunderbird/components/necko_cache.xpt
@@ -140,16 +140,21 @@ mozilla-thunderbird/components/nsAbLDAPAttributeMap.js
 mozilla-thunderbird/components/nsCloseAllWindows.js
 mozilla-thunderbird/components/nsComposerCmdLineHandler.js
 mozilla-thunderbird/components/nsDefaultCLH.js
-mozilla-thunderbird/components/nsDownloadProgressListener.js
 mozilla-thunderbird/components/nsExtensionManager.js
 mozilla-thunderbird/components/nsFilePicker.js
 mozilla-thunderbird/components/nsHelperAppDlg.js
 mozilla-thunderbird/components/nsInterfaceInfoToIDL.js
 mozilla-thunderbird/components/nsLDAPPrefsService.js
 mozilla-thunderbird/components/nsMailDefaultHandler.js
+mozilla-thunderbird/components/nsPhishingProtectionApplication.js
 mozilla-thunderbird/components/nsProgressDialog.js
 mozilla-thunderbird/components/nsProxyAutoConfig.js
+mozilla-thunderbird/components/nsSetDefaultMail.js
+mozilla-thunderbird/components/nsURLFormatter.js
 mozilla-thunderbird/components/nsUpdateService.js
+mozilla-thunderbird/components/nsUrlClassifierLib.js
+mozilla-thunderbird/components/nsUrlClassifierListManager.js
+mozilla-thunderbird/components/nsUrlClassifierTable.js
 mozilla-thunderbird/components/offlineStartup.js
 mozilla-thunderbird/components/pipboot.xpt
 mozilla-thunderbird/components/pipnss.xpt
@@ -160,11 +165,13 @@ mozilla-thunderbird/components/profile.xpt
 mozilla-thunderbird/components/progressDlg.xpt
 mozilla-thunderbird/components/proxyObjInst.xpt
 mozilla-thunderbird/components/rdf.xpt
+mozilla-thunderbird/components/saxparser.xpt
+mozilla-thunderbird/components/shellservice.xpt
 mozilla-thunderbird/components/shistory.xpt
-mozilla-thunderbird/components/sidebar.xpt
 mozilla-thunderbird/components/signonviewer.xpt
 mozilla-thunderbird/components/smime-service.js
 mozilla-thunderbird/components/spellchecker.xpt
+mozilla-thunderbird/components/storage.xpt
 mozilla-thunderbird/components/toolkitprofile.xpt
 mozilla-thunderbird/components/toolkitremote.xpt
 mozilla-thunderbird/components/txmgr.xpt
@@ -173,6 +180,8 @@ mozilla-thunderbird/components/uconv.xpt
 mozilla-thunderbird/components/unicharutil.xpt
 mozilla-thunderbird/components/update.xpt
 mozilla-thunderbird/components/uriloader.xpt
+mozilla-thunderbird/components/url-classifier.xpt
+mozilla-thunderbird/components/urlformatter.xpt
 mozilla-thunderbird/components/wallet.xpt
 mozilla-thunderbird/components/walleteditor.xpt
 mozilla-thunderbird/components/walletpreview.xpt
@@ -183,7 +192,7 @@ mozilla-thunderbird/components/websrvcs.xpt
 mozilla-thunderbird/components/widget.xpt
 mozilla-thunderbird/components/windowds.xpt
 mozilla-thunderbird/components/windowwatcher.xpt
-mozilla-thunderbird/components/xmlextras.xpt
+mozilla-thunderbird/components/xpautocomplete.xpt
 mozilla-thunderbird/components/xpcom_base.xpt
 mozilla-thunderbird/components/xpcom_components.xpt
 mozilla-thunderbird/components/xpcom_ds.xpt
@@ -200,15 +209,7 @@ mozilla-thunderbird/defaults/
 mozilla-thunderbird/defaults/autoconfig/
 mozilla-thunderbird/defaults/autoconfig/platform.js
 mozilla-thunderbird/defaults/autoconfig/prefcalls.js
-mozilla-thunderbird/defaults/isp/
-mozilla-thunderbird/defaults/isp/US/
-mozilla-thunderbird/defaults/isp/US/movemail.rdf
-mozilla-thunderbird/defaults/isp/US/rss.rdf
-mozilla-thunderbird/defaults/isp/movemail.rdf
-mozilla-thunderbird/defaults/isp/rss.rdf
 mozilla-thunderbird/defaults/messenger/
-mozilla-thunderbird/defaults/messenger/SpamAssassin.sfd
-mozilla-thunderbird/defaults/messenger/SpamPal.sfd
 mozilla-thunderbird/defaults/messenger/US/
 mozilla-thunderbird/defaults/messenger/US/mailViews.dat
 mozilla-thunderbird/defaults/messenger/mailViews.dat
@@ -220,6 +221,7 @@ mozilla-thunderbird/defaults/pref/composer.js
 mozilla-thunderbird/defaults/pref/mailnews.js
 mozilla-thunderbird/defaults/pref/mdn.js
 mozilla-thunderbird/defaults/pref/smime.js
+mozilla-thunderbird/defaults/pref/thunderbird-branding.js
 mozilla-thunderbird/defaults/profile/
 mozilla-thunderbird/defaults/profile/US/
 mozilla-thunderbird/defaults/profile/US/localstore.rdf
@@ -235,6 +237,9 @@ mozilla-thunderbird/defaults/wallet/SchemaConcat.tbl
 mozilla-thunderbird/defaults/wallet/SchemaStrings.tbl
 mozilla-thunderbird/defaults/wallet/StateSchema.tbl
 mozilla-thunderbird/defaults/wallet/VcardSchema.tbl
+mozilla-thunderbird/dictionaries/
+mozilla-thunderbird/dictionaries/en-US.aff
+mozilla-thunderbird/dictionaries/en-US.dic
 mozilla-thunderbird/extensions/
 mozilla-thunderbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
 mozilla-thunderbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
@@ -242,8 +247,11 @@ mozilla-thunderbird/greprefs/
 mozilla-thunderbird/greprefs/all.js
 mozilla-thunderbird/greprefs/security-prefs.js
 mozilla-thunderbird/greprefs/xpinstall.js
-mozilla-thunderbird/mozicon16.xpm
-mozilla-thunderbird/mozicon50.xpm
+mozilla-thunderbird/icons/
+mozilla-thunderbird/icons/mozicon16.xpm
+mozilla-thunderbird/icons/mozicon50.xpm
+mozilla-thunderbird/init.d/
+mozilla-thunderbird/init.d/README
 mozilla-thunderbird/mozilla-thunderbird-bin
 mozilla-thunderbird/mozilla-xremote-client
 mozilla-thunderbird/regxpcom

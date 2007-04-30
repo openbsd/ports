@@ -1,4 +1,4 @@
-$OpenBSD: patch-modules_plugin_base_public_nptypes_h,v 1.2 2006/01/23 12:34:06 wilfried Exp $
+$OpenBSD: patch-modules_plugin_base_public_nptypes_h,v 1.3 2007/04/30 22:40:31 martynas Exp $
 --- modules/plugin/base/public/nptypes.h.orig	Thu May 19 23:49:42 2005
 +++ modules/plugin/base/public/nptypes.h	Sat Sep 10 09:27:13 2005
 @@ -67,10 +67,8 @@
@@ -18,7 +18,7 @@ $OpenBSD: patch-modules_plugin_base_public_nptypes_h,v 1.2 2006/01/23 12:34:06 w
    #else
    /*
 -   * FreeBSD defines uint32_t and bool.
-+   * FreeBSD, and OpenBSD defines uint32_t and bool.
++   * FreeBSD and OpenBSD define uint32_t and bool.
     */
      #include <inttypes.h>
      #include <stdbool.h>

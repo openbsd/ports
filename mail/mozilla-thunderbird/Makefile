@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.54 2007/04/06 14:48:57 martynas Exp $
+# $OpenBSD: Makefile,v 1.55 2007/04/30 22:40:31 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
-VER=		1.5.0.10
+VER=		2.0.0.0
 DISTNAME=	mozilla
 PKGNAME=	mozilla-thunderbird-${VER}
-SO_VERSION=	12.1
+SO_VERSION=	13.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
 # bumped and/or SO_VERSION changes, remember to update enigmail's
 # SO_VERSION and LIB_DEPENDS to match.
 
 .for _lib in accessibility appcomps auth autoconfig caps chrome commandlines \
-	composer docshell editor embedcomponents fileview freebl3 gfx_gtk \
-	gfxps gfxpsshar gkgfx gklayout gtkembedmoz gtkxtbin htmlpars i18n \
-	imglib2 import jar50 jsd ldap50 mail mailcomps mork mozfind mozjs \
-	mozldap msgsmime myspell necko necko2 nsappshell nss3 nssckbi pipboot \
-	pipnss pippki pref prldap50 rdf remoteservice smime3 \
-	softokn3 spellchecker ssl3 system-pref toolkitcomps txmgr uconv \
-	universalchardet wallet walletviewers webbrwsr websrvcs widget_gtk2 \
-	xmlextras xpcom xpcom_compat xpcom_compat_c xpcom_core xpconnect \
-	xpinstall xpistub
+	composer docshell editor embedcomponents fileview gfx_gtk gfxps \
+	gfxpsshar gkgfx gklayout gtkembedmoz gtkxtbin htmlpars i18n imglib2 \
+	import jar50 jsd ldap50 mail mailcomps mork mozfind mozjs mozldap \
+	msgsmime myspell necko necko2 nsappshell pipboot \
+	pipnss pippki pref prldap50 rdf remoteservice \
+	spellchecker storagecomps system-pref toolkitcomps transformiix \
+	txmgr uconv universalchardet wallet walletviewers webbrwsr websrvcs \
+	widget_gtk2 xmlextras xpcom xpcom_compat xpcom_compat_c xpcom_core \
+	xpconnect xpinstall xpistub
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
@@ -36,9 +36,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 Xext Xft Xrender Xinerama Xt c fontconfig freetype m pthread z \
+WANTLIB=	X11 Xau Xdmcp Xft Xrender Xinerama Xt c expat \
+		fontconfig freetype m pthread z \
 		atk-1.0 cairo glib-2.0 gmodule-2.0 gobject-2.0 glitz \
-		jpeg pango-1.0 pangoft2-1.0 pangocairo-1.0 png stdc++
+		jpeg pango-1.0 pangoft2-1.0 pangocairo-1.0 pangox-1.0 \
+		png stdc++
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
@@ -48,7 +50,8 @@ RUN_DEPENDS=	:esound-*:audio/esound
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
+		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
+		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 
 VMEM_WARNING=	Yes
 
@@ -56,7 +59,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS=	Yes
-SUBST_VARS=	LOCALBASE SO_VERSION
+SUBST_VARS=	LOCALBASE
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
 				${WRKSRC}/directory/c-sdk/config/autoconf
@@ -67,9 +70,10 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-system-nspr		\
+		--with-system-nss		\
 		--with-pthreads			\
 		--enable-xft			\
-		--enable-optimize=-Os		\
+		--disable-optimize		\
 		--enable-default-toolkit=gtk2	\
 		--disable-debug			\
 		--disable-tests			\
@@ -82,7 +86,8 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--enable-svg			\
 		--enable-svg-renderer=cairo	\
 		--enable-system-cairo		\
-		--enable-canvas
+		--enable-canvas			\
+		--enable-official-branding
 
 #  from mail/config/mozconfig
 CONFIGURE_ARGS+=--enable-application=mail
@@ -91,13 +96,17 @@ MAKE_ENV=	MOZ_CO_PROJECT=mail \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
-		SO_VERSION="${SO_VERSION}" \
-		NSPR_LIB_DIR="${LOCALBASE}/lib"
+		SO_VERSION="${SO_VERSION}"
 CONFIGURE_ENV=	${MAKE_ENV} \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
+		MOZ_ENABLE_COREXFONTS=1 \
+		topsrcdir=${WRKSRC}
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-thunderbird
+
+DATADIRS=	chrome components defaults dictionaries extensions \
+		greprefs icons init.d res
 
 post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
@@ -110,22 +119,21 @@ pre-configure:
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 
 do-install:
-.for dir in chrome components defaults extensions greprefs res
-	${INSTALL_DATA_DIR} ${MOZ}/${dir}
-	@cd ${MOB} && ${TAR} -chf - ${dir} | \
-		${TAR} -xf - -C ${MOZ}
-.endfor
-	@cd ${MOB} && ${TAR} -chf - *.so.??.? | \
-		${TAR} -xf - -C ${MOZ}
-	@chmod 444 ${MOZ}/*.so.??.? ${MOZ}/components/*.so.??.? ${MOZ}/components/*.js
-	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
+	@cd ${MOB} && \
+		find ${DATADIRS} -type d \
+			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \;
+	@cd ${MOB} && \
+		find ${DATADIRS} ! -type d \
+			-exec ${INSTALL_DATA} -m 644 {} ${MOZ}/{} \;
+	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
-
-	${INSTALL_DATA} ${WRKSRC}/mail/app/mozicon16.xpm ${WRKSRC}/mail/app/mozicon50.xpm ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/thunderbird ${MOB}/thunderbird-config ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${MOB}/thunderbird \
+		${MOB}/thunderbird-config ${PREFIX}/bin/
 	ln -f ${PREFIX}/bin/thunderbird ${PREFIX}/bin/mozilla-thunderbird
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/thunderbird-bin ${MOB}/mozilla-xremote-client ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/regxpcom \
+		${MOB}/thunderbird-bin \
+		${MOB}/mozilla-xremote-client ${MOZ}
 	ln -f ${MOZ}/thunderbird-bin ${MOZ}/mozilla-thunderbird-bin
 
 .include <bsd.port.mk>

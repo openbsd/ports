@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2007/03/19 22:02:38 martynas Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2007/04/30 22:40:31 martynas Exp $
 @lib mozilla-thunderbird/components/libaccessibility.so.${LIBaccessibility_VERSION}
 @lib mozilla-thunderbird/components/libappcomps.so.${LIBappcomps_VERSION}
 @lib mozilla-thunderbird/components/libauth.so.${LIBauth_VERSION}
@@ -37,8 +37,10 @@
 @lib mozilla-thunderbird/components/librdf.so.${LIBrdf_VERSION}
 @lib mozilla-thunderbird/components/libremoteservice.so.${LIBremoteservice_VERSION}
 @lib mozilla-thunderbird/components/libspellchecker.so.${LIBspellchecker_VERSION}
+@lib mozilla-thunderbird/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
 @lib mozilla-thunderbird/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
 @lib mozilla-thunderbird/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
+@lib mozilla-thunderbird/components/libtransformiix.so.${LIBtransformiix_VERSION}
 @lib mozilla-thunderbird/components/libtxmgr.so.${LIBtxmgr_VERSION}
 @lib mozilla-thunderbird/components/libuconv.so.${LIBuconv_VERSION}
 @lib mozilla-thunderbird/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
@@ -51,19 +53,13 @@
 @lib mozilla-thunderbird/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
 @lib mozilla-thunderbird/components/libxpconnect.so.${LIBxpconnect_VERSION}
 @lib mozilla-thunderbird/components/libxpinstall.so.${LIBxpinstall_VERSION}
-@lib mozilla-thunderbird/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib mozilla-thunderbird/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
 @lib mozilla-thunderbird/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib mozilla-thunderbird/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
 @lib mozilla-thunderbird/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
 @lib mozilla-thunderbird/libldap50.so.${LIBldap50_VERSION}
 @lib mozilla-thunderbird/libmozjs.so.${LIBmozjs_VERSION}
-@lib mozilla-thunderbird/libnss3.so.${LIBnss3_VERSION}
-@lib mozilla-thunderbird/libnssckbi.so.${LIBnssckbi_VERSION}
 @lib mozilla-thunderbird/libprldap50.so.${LIBprldap50_VERSION}
-@lib mozilla-thunderbird/libsmime3.so.${LIBsmime3_VERSION}
-@lib mozilla-thunderbird/libsoftokn3.so.${LIBsoftokn3_VERSION}
-@lib mozilla-thunderbird/libssl3.so.${LIBssl3_VERSION}
 @lib mozilla-thunderbird/libxpcom.so.${LIBxpcom_VERSION}
 @lib mozilla-thunderbird/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
 @lib mozilla-thunderbird/libxpcom_core.so.${LIBxpcom_core_VERSION}
