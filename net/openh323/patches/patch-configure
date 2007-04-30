@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/04/30 10:34:47 ajacoutot Exp $
+--- configure.orig	Mon Apr 30 10:16:18 2007
++++ configure	Mon Apr 30 10:16:33 2007
+@@ -3041,7 +3041,7 @@ LIBDIR="${libdir}"
+ MAJOR_VERSION=`cat ${OPENH323DIR}/version.h | grep MAJOR_VERSION | cut -f3 -d' '`
+ MINOR_VERSION=`cat ${OPENH323DIR}/version.h | grep MINOR_VERSION | cut -f3 -d' '`
+ BUILD_NUMBER=`cat ${OPENH323DIR}/version.h | grep BUILD_NUMBER | cut -f3 -d' '`
+-OPENH323_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}.${BUILD_NUMBER}"
++OPENH323_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}"
+ 
+ 
+ 

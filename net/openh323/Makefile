@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/04/27 13:26:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/04/30 10:34:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"H.323 video conferencing library"
 
 DISTNAME=	openh323-v1_18_0
-PKGNAME=	openh323-1.18.0p0
+PKGNAME=	openh323-1.18.0p1
 CATEGORIES=	net devel
 
 EXTRACT_SUFX=	-src-tar.gz
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.voxgratia.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# MPL - LGPL
+# MPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/releases/
 
-WANTLIB=	crypto expat ossaudio pthread ssl
+WANTLIB=	crypto expat ossaudio ssl
 
 LIB_DEPENDS=	pt.>=1::devel/pwlib \
 		speex.>=4::audio/speex \
