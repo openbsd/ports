@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2007/05/01 20:05:10 naddy Exp $
+$OpenBSD: patch-configure,v 1.7 2007/05/01 20:20:49 naddy Exp $
 --- configure.orig	Sun Jul  9 16:51:14 2006
-+++ configure	Tue May  1 22:03:06 2007
++++ configure	Tue May  1 22:06:27 2007
 @@ -25613,8 +25613,12 @@ _ACEOF
  fi
  done
@@ -124,3 +124,12 @@ $OpenBSD: patch-configure,v 1.6 2007/05/01 20:05:10 naddy Exp $
      fi
      ;;
    sparc*-*-linux*)
+@@ -53489,7 +53505,7 @@ eval XINE_SCRIPTPATH="$XINE_DATADIR/xine/scripts"
+ 
+ XINE_BUILD_CC="`$CC -v 2>&1 | tail -n 1`"
+ XINE_BUILD_OS="`uname -s -r -m`"
+-XINE_BUILD_DATE="`date \"+%a %d %b %Y %T\"`"
++XINE_BUILD_DATE=`date "+%a %d %b %Y %T"`
+ 
+ 
+ 

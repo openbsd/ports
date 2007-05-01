@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/04/14 11:57:39 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/01 20:20:48 naddy Exp $
 
 COMMENT=		"multimedia decoding library"
 
 V=			1.1.2
 DISTNAME=		xine-lib-${V}
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
 SHARED_LIBS=		xine	14.1
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 
-WANTLIB=		ICE SM X11 Xext Xinerama Xv freetype \
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xinerama Xv freetype \
 			jpeg lcms m usbhid z
 
 .if ${MACHINE_ARCH} == "i386"
