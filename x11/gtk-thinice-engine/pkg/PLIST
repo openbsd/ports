@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/04/23 16:40:04 steven Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/05/01 17:34:01 bernd Exp $
 @conflict gtk-engines2-*
 lib/gtk-2.0/2.10.0/engines/libthinice.la
 lib/gtk-2.0/2.10.0/engines/libthinice.so
@@ -8,4 +8,3 @@ share/themes/ThinIce/ICON.png
 share/themes/ThinIce/README.html
 share/themes/ThinIce/gtk-2.0/
 share/themes/ThinIce/gtk-2.0/gtkrc
-%%SHARED%%
