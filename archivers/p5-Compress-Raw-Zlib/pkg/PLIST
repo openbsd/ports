@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/01 09:42:02 steven Exp $
+${P5ARCH}/
+${P5ARCH}/Compress/
+${P5ARCH}/Compress/Raw/
+${P5ARCH}/Compress/Raw/Zlib.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Compress/
+${P5ARCH}/auto/Compress/Raw/
+${P5ARCH}/auto/Compress/Raw/Zlib/
+${P5ARCH}/auto/Compress/Raw/Zlib/Zlib.bs
+${P5ARCH}/auto/Compress/Raw/Zlib/Zlib.so
+${P5ARCH}/auto/Compress/Raw/Zlib/autosplit.ix
+@man man/man3p/Compress::Raw::Zlib.3p

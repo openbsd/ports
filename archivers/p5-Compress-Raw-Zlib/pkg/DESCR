@@ -1,0 +1,2 @@
+The Compress::Raw::Zlib module provides a Perl interface to the zlib
+compression library.

@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_in,v 1.1.1.1 2007/05/01 09:42:02 steven Exp $
+--- config.in.orig	Wed Mar 21 21:30:22 2007
++++ config.in	Wed Mar 21 21:31:40 2007
+@@ -16,9 +16,9 @@
+ #    Setting the Gzip OS Code
+ #
+ 
+-BUILD_ZLIB      = True
+-INCLUDE         = ./zlib-src
+-LIB             = ./zlib-src
++BUILD_ZLIB      = False
++INCLUDE         = /usr/include
++LIB             = /usr/lib
+ 
+ OLD_ZLIB        = False
+ GZIP_OS_CODE    = AUTO_DETECT
