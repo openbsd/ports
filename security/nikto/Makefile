@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/02/18 10:29:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/01 15:55:55 rui Exp $
 
 COMMENT=	"Web and CGI vulnerability scanner with SSL support"
 
-DISTNAME=	nikto-1.35
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	nikto-1.36
 CATEGORIES=	security www
 
 HOMEPAGE=	http://www.cirt.net/code/nikto.shtml
@@ -30,6 +29,7 @@ pre-configure:
 	perl -pi -e 's,config.txt,${SYSCONFDIR}/nikto.conf,' ${WRKSRC}/nikto.pl
 	perl -pi -e 's,docs/CHANGES\.txt,doc/nikto/CHANGES.txt,g' \
 		${WRKSRC}/plugins/nikto_core.plugin
+	perl -pi -e 's,nikto\.pl,nikto,g' ${WRKSRC}/docs/nikto-1.36.man
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nikto
@@ -45,6 +45,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/nikto_usage.txt ${PREFIX}/share/doc/nikto
 	${INSTALL_DATA} ${WRKSRC}/docs/README_plugins.txt ${PREFIX}/share/doc/nikto
 	${INSTALL_DATA} ${WRKSRC}/docs/CHANGES.txt ${PREFIX}/share/doc/nikto
-	${INSTALL_MAN} ${WRKSRC}/docs/nikto-1.34.man ${PREFIX}/man/man1/nikto.1
+	${INSTALL_MAN} ${WRKSRC}/docs/nikto-1.36.man ${PREFIX}/man/man1/nikto.1
 	
 .include <bsd.port.mk>

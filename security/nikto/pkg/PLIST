@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/09/23 16:51:04 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/05/01 15:55:55 rui Exp $
 bin/nikto
 @man man/man1/nikto.1
 share/doc/nikto/
@@ -29,6 +29,8 @@ share/nikto/nikto_outdated.plugin
 share/nikto/nikto_passfiles.plugin
 @comment no checksum
 share/nikto/nikto_plugin_order.txt
+@comment no checksum
+share/nikto/nikto_put_del_test.plugin
 @comment no checksum
 share/nikto/nikto_realms.plugin
 @comment no checksum
