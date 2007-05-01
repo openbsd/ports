@@ -1,0 +1,2 @@
+IO::Compress::Zlib provides a Perl interface to allow reading 
+and writing of RFC 1950, 1951, 1952 (i.e. gzip) and zip files/buffers.

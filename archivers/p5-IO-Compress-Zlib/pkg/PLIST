@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/01 19:57:17 steven Exp $
+${P5SITE}/IO/Compress/Adapter/
+${P5SITE}/IO/Compress/Adapter/Deflate.pm
+${P5SITE}/IO/Compress/Adapter/Identity.pm
+${P5SITE}/IO/Compress/Deflate.pm
+${P5SITE}/IO/Compress/Gzip/
+${P5SITE}/IO/Compress/Gzip.pm
+${P5SITE}/IO/Compress/Gzip/Constants.pm
+${P5SITE}/IO/Compress/RawDeflate.pm
+${P5SITE}/IO/Compress/Zip/
+${P5SITE}/IO/Compress/Zip.pm
+${P5SITE}/IO/Compress/Zip/Constants.pm
+${P5SITE}/IO/Compress/Zlib/
+${P5SITE}/IO/Compress/Zlib/Constants.pm
+${P5SITE}/IO/Compress/Zlib/Extra.pm
+${P5SITE}/IO/Uncompress/Adapter/
+${P5SITE}/IO/Uncompress/Adapter/Identity.pm
+${P5SITE}/IO/Uncompress/Adapter/Inflate.pm
+${P5SITE}/IO/Uncompress/AnyInflate.pm
+${P5SITE}/IO/Uncompress/Gunzip.pm
+${P5SITE}/IO/Uncompress/Inflate.pm
+${P5SITE}/IO/Uncompress/RawInflate.pm
+${P5SITE}/IO/Uncompress/Unzip.pm
+@man man/man3p/IO::Compress::Deflate.3p
+@man man/man3p/IO::Compress::Gzip.3p
+@man man/man3p/IO::Compress::RawDeflate.3p
+@man man/man3p/IO::Compress::Zip.3p
+@man man/man3p/IO::Uncompress::AnyInflate.3p
+@man man/man3p/IO::Uncompress::Gunzip.3p
+@man man/man3p/IO::Uncompress::Inflate.3p
+@man man/man3p/IO::Uncompress::RawInflate.3p
+@man man/man3p/IO::Uncompress::Unzip.3p
+share/examples/p5-IO-Compress-Zlib/
+share/examples/p5-IO-Compress-Zlib/anycat
+share/examples/p5-IO-Compress-Zlib/gzappend
+share/examples/p5-IO-Compress-Zlib/gzcat
+share/examples/p5-IO-Compress-Zlib/gzgrep
+share/examples/p5-IO-Compress-Zlib/gzstream
