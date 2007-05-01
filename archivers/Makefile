@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2007/04/20 17:50:42 steven Exp $
+# $OpenBSD: Makefile,v 1.32 2007/05/01 08:34:45 steven Exp $
 
      SUBDIR += arc
      SUBDIR += bzip
@@ -24,6 +24,7 @@
      SUBDIR += p5-Archive-Zip
      SUBDIR += p5-Compress-LZO
      SUBDIR += p5-Compress-Zlib
+     SUBDIR += p5-IO-Compress-Base
      SUBDIR += p5-IO-Zlib
      SUBDIR += p5-PerlIO-gzip
      SUBDIR += p7zip
