@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2007/04/25 10:40:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.17 2007/05/01 21:35:57 bernd Exp $
 
 COMMENT-main=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
 
 VERSION=		2.10.9
 DISTNAME=		gtkmm-${VERSION}
-PKGNAME-main=		gtk2mm-${VERSION}
+PKGNAME-main=		gtk2mm-${VERSION}p0
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
@@ -36,7 +36,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		glibmm-2.4:glib2mm->=2.12:devel/glib2mm \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0:gtk+2->=2.8:x11/gtk+2 \
 			cairomm-1.0::graphics/cairomm
-LIB_DEPENDS+=		expat.>=6::textproc/expat # temp
 
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
