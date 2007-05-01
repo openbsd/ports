@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.276 2007/04/30 13:41:11 claudio Exp $
+# $OpenBSD: Makefile,v 1.277 2007/05/01 20:54:25 bernd Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -80,7 +80,6 @@
      SUBDIR += gtkglext
      SUBDIR += gtkmm
      SUBDIR += gtksourceview
-     SUBDIR += gtop
      SUBDIR += gxmessage
      SUBDIR += hicolor-icon-theme
      SUBDIR += icewm

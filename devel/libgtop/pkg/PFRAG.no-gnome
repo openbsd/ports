@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.no-gnome,v 1.6 2004/09/18 10:55:04 espie Exp $
-@conflict gnome-libs-*
-include/popt-gnome.h
-lib/libgnomesupport.a
-lib/libgnomesupport.la
-lib/libgtop/
-lib/libgtop/include/
-lib/libgtop/include/gnomesupport.h
-%%SHARED%%

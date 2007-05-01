@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.guile,v 1.3 2004/09/15 19:38:49 espie Exp $
-lib/libgtop_guile.a
-lib/libgtop_guile.la
-lib/libgtop_guile_names.a
-lib/libgtop_guile_names.la
-%%SHARED%%

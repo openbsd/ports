@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-no-gnome,v 1.2 2006/01/03 18:07:28 bernd Exp $
-@lib lib/libgnomesupport.so.${LIBgnomesupport_VERSION}
