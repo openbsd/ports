@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/04/17 10:00:26 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/05/01 12:00:58 mbalmer Exp $
+@group daemon
 mantis/
 mantis/account_delete.php
 mantis/account_page.php
