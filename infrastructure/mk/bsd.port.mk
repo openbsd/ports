@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.892 2007/04/30 12:44:46 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.893 2007/05/01 17:17:54 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1379,11 +1379,11 @@ ${_CACHE_REPO}/${_PKGFILE${_S}}:
 
 ${_PACKAGE_COOKIE${_S}}:
 	@mkdir -p ${@D}
-.  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING)
+.  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@f=${_CACHE_REPO}/${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${MAKE} $$f && \
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
-		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING=Yes $@
+		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes $@
 .  else
 	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
 .    if target(pre-package)
