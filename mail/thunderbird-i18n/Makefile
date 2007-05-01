@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/30 22:43:55 martynas Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/01 12:43:17 ajacoutot Exp $
+
+PKG_ARCH=	*
 
 COMMENT-main=	"${MAINLANG} language pack for Thunderbird"
 V=		2.0.0.0
