@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2007/02/19 22:59:33 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2007/05/01 12:55:13 todd Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 arm i386 powerpc
 
 COMMENT=		"multi system emulator"
 
-DISTNAME=		qemu-0.8.2
-PKGNAME=		${DISTNAME}p4
+DISTNAME=		qemu-0.9.0
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://fabrice.bellard.free.fr/qemu/
@@ -21,10 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 BUILD_DEPENDS=		::textproc/texi2html
-LIB_DEPENDS=    	SDL::devel/sdl
 USE_GMAKE=		Yes
-USE_X11=		Yes
-WANTLIB=		m z ossaudio X11 Xext usbhid pthread c
+WANTLIB=		m z ossaudio c
 CONFIGURE_STYLE=	gnu
 
 # Currently, the regression tests are utterly broken.
@@ -32,6 +29,20 @@ REGRESS_TARGET=		test test2
 
 .if ${MACHINE_ARCH} == "amd64"
 PATCH_LIST=     patch-* misc-*
+.endif
+
+FLAVORS=		no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_x11}
+CONFIGURE_ARGS+=	--disable-gfx-check \
+			--disable-sdl
+.else
+LIB_DEPENDS=    	SDL::devel/sdl \
+			aa::graphics/aalib
+
+USE_X11=		Yes
+WANTLIB+=		X11 Xext pthread usbhid
 .endif
 
 post-install:

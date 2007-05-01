@@ -1,0 +1,141 @@
+$OpenBSD: patch-block-raw_c,v 1.1 2007/05/01 12:55:14 todd Exp $
+--- block-raw.c.orig	Mon Feb  5 17:01:54 2007
++++ block-raw.c	Tue Apr  3 08:21:25 2007
+@@ -25,7 +25,9 @@
+ #include "block_int.h"
+ #include <assert.h>
+ #ifndef _WIN32
++#ifndef CONFIG_NO_AIO
+ #include <aio.h>
++#endif
+ 
+ #ifndef QEMU_TOOL
+ #include "exec-all.h"
+@@ -53,10 +55,16 @@
+ #include <linux/cdrom.h>
+ #include <linux/fd.h>
+ #endif
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__)
+ #include <sys/disk.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/ioctl.h>
++#include <sys/disklabel.h>
++#include <sys/dkio.h>
++#endif
++
+ //#define DEBUG_FLOPPY
+ 
+ #define FTYPE_FILE   0
+@@ -158,6 +166,7 @@ static int raw_pwrite(BlockDriverState *bs, int64_t of
+ }
+ 
+ /***********************************************************/
++#ifndef CONFIG_NO_AIO
+ /* Unix AIO using POSIX AIO */
+ 
+ typedef struct RawAIOCB {
+@@ -380,6 +389,37 @@ static void raw_aio_cancel(BlockDriverAIOCB *blockacb)
+     }
+ }
+ 
++# else /* !CONFIG_NO_AIO */
++
++void qemu_aio_init(void)
++{
++}
++
++void qemu_aio_poll(void)
++{
++}
++
++void qemu_aio_flush(void)
++{
++}
++
++void qemu_aio_wait_start(void)
++{
++}
++
++void qemu_aio_wait(void)
++{
++#ifndef QEMU_TOOL
++	qemu_bh_poll();
++#endif
++}
++
++void qemu_aio_wait_end(void)
++{
++}
++
++#endif /* !CONFIG_NO_AIO */
++
+ static void raw_close(BlockDriverState *bs)
+ {
+     BDRVRawState *s = bs->opaque;
+@@ -399,8 +439,25 @@ static int raw_truncate(BlockDriverState *bs, int64_t 
+     return 0;
+ }
+ 
++#ifdef __OpenBSD__
+ static int64_t  raw_getlength(BlockDriverState *bs)
+ {
++	int fd = ((BDRVRawState*)bs->opaque)->fd;
++	struct stat st;
++	if(fstat(fd, &st))
++	  return -1;
++	if(S_ISCHR(st.st_mode) || S_ISBLK(st.st_mode)){
++	  struct disklabel dl;
++	  if(ioctl(fd, DIOCGDINFO, &dl))
++	    return -1;
++	  return (uint64_t)dl.d_secsize *
++		dl.d_partitions[DISKPART(st.st_rdev)].p_size;
++	}else
++	  return st.st_size;
++}
++#else /* !__OpenBSD__ */
++static int64_t  raw_getlength(BlockDriverState *bs)
++{
+     BDRVRawState *s = bs->opaque;
+     int fd = s->fd;
+     int64_t size;
+@@ -445,6 +502,7 @@ static int64_t  raw_getlength(BlockDriverState *bs)
+     }
+     return size;
+ }
++#endif
+ 
+ static int raw_create(const char *filename, int64_t total_size,
+                       const char *backing_file, int flags)
+@@ -479,11 +537,13 @@ BlockDriver bdrv_raw = {
+     raw_close,
+     raw_create,
+     raw_flush,
+-    
++
++#ifndef CONFIG_NO_AIO
+     .bdrv_aio_read = raw_aio_read,
+     .bdrv_aio_write = raw_aio_write,
+     .bdrv_aio_cancel = raw_aio_cancel,
+     .aiocb_size = sizeof(RawAIOCB),
++#endif /* !CONFIG_NO_AIO */
+     .protocol_name = "file",
+     .bdrv_pread = raw_pread,
+     .bdrv_pwrite = raw_pwrite,
+@@ -815,11 +875,13 @@ BlockDriver bdrv_host_device = {
+     raw_close,
+     NULL,
+     raw_flush,
+-    
++
++#ifndef CONFIG_NO_AIO
+     .bdrv_aio_read = raw_aio_read,
+     .bdrv_aio_write = raw_aio_write,
+     .bdrv_aio_cancel = raw_aio_cancel,
+     .aiocb_size = sizeof(RawAIOCB),
++#endif /* !CONFIG_NO_AIO */
+     .bdrv_pread = raw_pread,
+     .bdrv_pwrite = raw_pwrite,
+     .bdrv_getlength = raw_getlength,

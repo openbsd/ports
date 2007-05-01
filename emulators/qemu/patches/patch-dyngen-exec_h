@@ -1,6 +1,6 @@
-$OpenBSD: patch-dyngen-exec_h,v 1.4 2006/12/22 17:31:45 todd Exp $
---- dyngen-exec.h.orig	Sat Jul 22 13:23:34 2006
-+++ dyngen-exec.h	Sun Nov 12 17:10:10 2006
+$OpenBSD: patch-dyngen-exec_h,v 1.5 2007/05/01 12:55:14 todd Exp $
+--- dyngen-exec.h.orig	Mon Feb  5 17:01:54 2007
++++ dyngen-exec.h	Sat Mar 10 16:39:39 2007
 @@ -27,11 +27,15 @@
  #define _FILEDEFED
  #endif
@@ -24,9 +24,9 @@ $OpenBSD: patch-dyngen-exec_h,v 1.4 2006/12/22 17:31:45 todd Exp $
  #endif
 +#endif
  
- #define INT8_MIN		(-128)
- #define INT16_MIN		(-32767-1)
-@@ -75,11 +80,15 @@ typedef signed long long int64_t;
+ /* XXX: This may be wrong for 64-bit ILP32 hosts.  */
+ typedef void * host_reg_t;
+@@ -78,11 +83,15 @@ typedef void * host_reg_t;
  #define UINT32_MAX		(4294967295U)
  #define UINT64_MAX		((uint64_t)(18446744073709551615))
  

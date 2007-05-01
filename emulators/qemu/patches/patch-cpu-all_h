@@ -1,17 +1,21 @@
-$OpenBSD: patch-cpu-all_h,v 1.1 2007/02/19 12:43:38 robert Exp $
---- cpu-all.h.orig	Mon Feb 19 10:54:26 2007
-+++ cpu-all.h	Mon Feb 19 10:56:42 2007
-@@ -992,6 +992,24 @@ static inline int64_t cpu_get_real_ticks
-         return rval.i64;
+$OpenBSD: patch-cpu-all_h,v 1.2 2007/05/01 12:55:14 todd Exp $
+--- cpu-all.h.orig	Mon Feb  5 17:01:54 2007
++++ cpu-all.h	Tue Apr  3 08:21:26 2007
+@@ -1002,13 +1002,22 @@ static inline int64_t cpu_get_real_ticks (void)
  #endif
  }
-+#else
+ #else
+-/* The host CPU doesn't have an easily accessible cycle counter.
+-   Just return a monotonically increasing vlue.  This will be totally wrong,
+-   but hopefully better than nothing.  */
 +# warning non-optimized CPU
 +#include <sys/time.h>
 +#include <time.h>
 +
-+static inline int64_t cpu_get_real_ticks (void)
-+{
+ static inline int64_t cpu_get_real_ticks (void)
+ {
+-    static int64_t ticks = 0;
+-    return ticks++;
 +	struct timeval tv;
 +	static int64_t i = 0;
 +	int64_t j;
@@ -22,7 +26,6 @@ $OpenBSD: patch-cpu-all_h,v 1.1 2007/02/19 12:43:38 robert Exp $
 +	} while (i == j);
 +	i = j;
 +	return j;
-+}
+ }
  #endif
  
- /* profiling */

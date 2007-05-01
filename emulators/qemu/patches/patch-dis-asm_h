@@ -1,6 +1,6 @@
-$OpenBSD: patch-dis-asm_h,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- dis-asm.h.orig	Mon Jan  3 17:35:10 2005
-+++ dis-asm.h	Sun Feb 27 15:47:13 2005
+$OpenBSD: patch-dis-asm_h,v 1.2 2007/05/01 12:55:14 todd Exp $
+--- dis-asm.h.orig	Mon Feb  5 17:01:54 2007
++++ dis-asm.h	Sat Mar 10 16:39:39 2007
 @@ -13,6 +13,7 @@
  #include <stdio.h>
  #include <string.h>

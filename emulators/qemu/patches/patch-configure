@@ -1,18 +1,20 @@
-$OpenBSD: patch-configure,v 1.7 2007/02/19 12:43:38 robert Exp $
---- configure.orig	Sat Jul 22 19:23:34 2006
-+++ configure	Tue Feb 13 09:22:48 2007
-@@ -21,8 +21,8 @@ prefix=""
+$OpenBSD: patch-configure,v 1.8 2007/05/01 12:55:14 todd Exp $
+--- configure.orig	Mon Feb  5 17:01:54 2007
++++ configure	Tue Apr  3 08:21:26 2007
+@@ -21,10 +21,10 @@ prefix=""
  interp_prefix="/usr/gnemul/qemu-%M"
  static="no"
  cross_prefix=""
 -cc="gcc"
--host_cc="gcc"
 +cc="${CC:-cc}"
+ gcc3_search="yes"
+ gcc3_list="gcc-3.4 gcc34 gcc-3.3 gcc33 gcc-3.2 gcc32"
+-host_cc="gcc"
 +host_cc="${CC:-cc}"
  ar="ar"
  make="make"
  install="install"
-@@ -42,7 +42,7 @@ case "$cpu" in
+@@ -44,7 +44,7 @@ case "$cpu" in
    alpha)
      cpu="alpha"
    ;;
@@ -21,7 +23,7 @@ $OpenBSD: patch-configure,v 1.7 2007/02/19 12:43:38 robert Exp $
      cpu="powerpc"
    ;;
    mips)
-@@ -66,6 +66,9 @@ case "$cpu" in
+@@ -68,6 +68,9 @@ case "$cpu" in
    x86_64|amd64)
      cpu="x86_64"
    ;;
@@ -31,7 +33,7 @@ $OpenBSD: patch-configure,v 1.7 2007/02/19 12:43:38 robert Exp $
    *)
      cpu="unknown"
    ;;
-@@ -121,6 +124,7 @@ oss="yes"
+@@ -122,6 +125,7 @@ oss="yes"
  ;;
  OpenBSD)
  bsd="yes"
@@ -39,7 +41,7 @@ $OpenBSD: patch-configure,v 1.7 2007/02/19 12:43:38 robert Exp $
  oss="yes"
  ;;
  Darwin)
-@@ -509,7 +513,7 @@ else
+@@ -573,7 +577,7 @@ else
  if test -z "$prefix" ; then
      prefix="/usr/local"
  fi
@@ -48,7 +50,7 @@ $OpenBSD: patch-configure,v 1.7 2007/02/19 12:43:38 robert Exp $
  datadir="$prefix/share/qemu"
  docdir="$prefix/share/doc/qemu"
  bindir="$prefix/bin"
-@@ -537,9 +541,7 @@ if test "$darwin" = "yes" ; then
+@@ -601,9 +605,7 @@ if test "$darwin" = "yes" ; then
      echo "Cocoa support     $cocoa"
  fi
  echo "SDL support       $sdl"
@@ -59,7 +61,15 @@ $OpenBSD: patch-configure,v 1.7 2007/02/19 12:43:38 robert Exp $
  echo "mingw32 support   $mingw32"
  echo "Adlib support     $adlib"
  echo "CoreAudio support $coreaudio"
-@@ -602,6 +604,9 @@ if test "$cpu" = "i386" ; then
+@@ -648,6 +650,7 @@ echo "mandir=$mandir" >> $config_mak
+ echo "datadir=$datadir" >> $config_mak
+ echo "docdir=$docdir" >> $config_mak
+ echo "#define CONFIG_QEMU_SHAREDIR \"$datadir\"" >> $config_h
++echo "#define CONFIG_NO_AIO 1" >> $config_h
+ echo "MAKE=$make" >> $config_mak
+ echo "INSTALL=$install" >> $config_mak
+ echo "CC=$cc" >> $config_mak
+@@ -667,6 +670,9 @@ if test "$cpu" = "i386" ; then
  elif test "$cpu" = "x86_64" ; then
    echo "ARCH=x86_64" >> $config_mak
    echo "#define HOST_X86_64 1" >> $config_h
@@ -69,7 +79,7 @@ $OpenBSD: patch-configure,v 1.7 2007/02/19 12:43:38 robert Exp $
  elif test "$cpu" = "armv4b" ; then
    echo "ARCH=arm" >> $config_mak
    echo "#define HOST_ARM 1" >> $config_h
-@@ -681,6 +686,9 @@ fi
+@@ -746,6 +752,9 @@ fi
  if test "$oss" = "yes" ; then
    echo "CONFIG_OSS=yes" >> $config_mak
    echo "#define CONFIG_OSS 1" >> $config_h
@@ -79,9 +89,9 @@ $OpenBSD: patch-configure,v 1.7 2007/02/19 12:43:38 robert Exp $
  fi
  if test "$coreaudio" = "yes" ; then
    echo "CONFIG_COREAUDIO=yes" >> $config_mak
-@@ -715,6 +723,13 @@ fi
- if [ "$build_acpi_tables" = "yes" ] ; then
-   echo "BUILD_ACPI_TABLES=yes" >> $config_mak
+@@ -777,6 +786,13 @@ echo "TARGET_DIRS=$target_list" >> $config_mak
+ if [ "$build_docs" = "yes" ] ; then
+   echo "BUILD_DOCS=yes" >> $config_mak
  fi
 +
 +if [ "$openbsd" = "yes" ] ; then

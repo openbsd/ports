@@ -1,6 +1,7 @@
---- vl.c.orig	Sat Jul 22 19:23:34 2006
-+++ vl.c	Mon Feb 19 11:30:23 2007
-@@ -43,7 +43,8 @@
+$OpenBSD: patch-vl_c,v 1.14 2007/05/01 12:55:14 todd Exp $
+--- vl.c.orig	Mon Feb  5 17:01:54 2007
++++ vl.c	Sat Apr 21 19:48:30 2007
+@@ -44,7 +44,8 @@
  #include <netdb.h>
  #ifdef _BSD
  #include <sys/stat.h>
@@ -10,37 +11,15 @@
  #include <libutil.h>
  #endif
  #else
-@@ -291,7 +292,7 @@ void isa_unassign_ioport(int start, int 
- 
- /***********************************************************/
- 
--void pstrcpy(char *buf, int buf_size, const char *str)
-+void pstrcpy(char *buf, size_t buf_size, const char *str)
- {
-     int c;
-     char *q = buf;
-@@ -309,7 +310,7 @@ void pstrcpy(char *buf, int buf_size, co
- }
- 
- /* strcat and truncate. */
--char *pstrcat(char *buf, int buf_size, const char *s)
-+char *pstrcat(char *buf, size_t buf_size, const char *s)
- {
-     int len;
-     len = strlen(buf);
-@@ -1408,6 +1409,11 @@ static void stdio_read(void *opaque)
-     uint8_t buf[1];
-     
-     size = read(0, buf, 1);
-+    if (size == 0) {
-+        /* stdin has been closed. Remove it from the active list.  */
-+        qemu_set_fd_handler2(0, NULL, NULL, NULL, NULL);
-+        return;
-+    }
-     if (size > 0)
-         stdio_received_byte(buf[0]);
- }
-@@ -2631,7 +2637,7 @@ static int parse_macaddr(uint8_t *macadd
+@@ -168,6 +169,7 @@ const char *vnc_display;
+ int acpi_enabled = 1;
+ int fd_bootchk = 1;
+ int no_reboot = 0;
++int scsi_enabled = 0;
+ int daemonize = 0;
+ const char *option_rom[MAX_OPTION_ROMS];
+ int nb_option_roms;
+@@ -2808,7 +2810,7 @@ static int parse_macaddr(uint8_t *macaddr, const char 
      return 0;
  }
  
@@ -49,7 +28,7 @@
  {
      const char *p, *p1;
      int len;
-@@ -3029,11 +3035,85 @@ static int tap_open(char *ifname, int if
+@@ -3226,11 +3228,85 @@ static int tap_open(char *ifname, int ifname_size)
      char *dev;
      struct stat s;
  
@@ -135,7 +114,15 @@
  
      fstat(fd, &s);
      dev = devname(s.st_rdev, S_IFCHR);
-@@ -3279,7 +3359,7 @@ static int net_socket_mcast_create(struc
+@@ -3282,6 +3358,7 @@ static int net_tap_init(VLANState *vlan, const char *i
+     char *args[3];
+     char **parg;
+     char ifname[128];
++    bzero(&ifname,sizeof(ifname));
+ 
+     if (ifname1 != NULL)
+         pstrcpy(ifname, sizeof(ifname), ifname1);
+@@ -3476,7 +3553,7 @@ static int net_socket_mcast_create(struct sockaddr_in 
      /* Force mcast msgs to loopback (eg. several QEMUs in same host */
      val = 1;
      ret=setsockopt(fd, IPPROTO_IP, IP_MULTICAST_LOOP, 
@@ -144,7 +131,7 @@
      if (ret < 0) {
  	perror("setsockopt(SOL_IP, IP_MULTICAST_LOOP)");
  	goto fail;
-@@ -3535,7 +3615,8 @@ static int net_socket_mcast_init(VLANSta
+@@ -3732,7 +3809,8 @@ static int net_socket_mcast_init(VLANState *vlan, cons
  
  }
  
@@ -154,31 +141,81 @@
                             const char *tag, const char *str)
  {
      const char *p;
-@@ -3660,17 +3741,21 @@ int net_client_init(const char *str)
+@@ -3856,6 +3934,8 @@ static int net_client_init(const char *str)
+     if (!strcmp(device, "tap")) {
          char ifname[64];
          char setup_script[1024];
++	bzero(&ifname,sizeof(ifname));
++	bzero(&setup_script,sizeof(setup_script));
          int fd;
-+        bzero(&ifname,sizeof(ifname));
-+        bzero(&setup_script,sizeof(setup_script));
          if (get_param_value(buf, sizeof(buf), "fd", p) > 0) {
              fd = strtol(buf, NULL, 0);
-             ret = -1;
+@@ -3863,13 +3943,13 @@ static int net_client_init(const char *str)
              if (net_tap_fd_init(vlan, fd))
                  ret = 0;
          } else {
--            get_param_value(ifname, sizeof(ifname), "ifname", p);
+-            if (get_param_value(ifname, sizeof(ifname), "ifname", p) <= 0) {
+-                ifname[0] = '\0';
+-            }
              if (get_param_value(setup_script, sizeof(setup_script), "script", p) == 0) {
                  pstrcpy(setup_script, sizeof(setup_script), DEFAULT_NETWORK_SCRIPT);
              }
 -            ret = net_tap_init(vlan, ifname, setup_script);
 +            if (get_param_value(ifname, sizeof(ifname), "ifname", p) == 0)
-+               ret = net_tap_init(vlan, NULL, setup_script);
-+            else
-+               ret = net_tap_init(vlan, ifname, setup_script);
++		ret = net_tap_init(vlan, NULL, setup_script);
++	    else
++		ret = net_tap_init(vlan, NULL, setup_script);
          }
      } else
  #endif
-@@ -5671,7 +5756,7 @@ int main(int argc, char **argv)
+@@ -6117,6 +6197,7 @@ void help(void)
+            "-no-acpi        disable ACPI\n"
+ #endif
+            "-no-reboot      exit instead of rebooting\n"
++           "-scsienable     enable scsi devices\n"
+            "-loadvm file    start right away with a saved state (loadvm in monitor)\n"
+ 	   "-vnc display    start a VNC server on display\n"
+ #ifndef _WIN32
+@@ -6205,7 +6286,8 @@ enum {
+     QEMU_OPTION_no_reboot,
+     QEMU_OPTION_daemonize,
+     QEMU_OPTION_option_rom,
+-    QEMU_OPTION_semihosting
++    QEMU_OPTION_semihosting,
++    QEMU_OPTION_scsi
+ };
+ 
+ typedef struct QEMUOption {
+@@ -6281,6 +6363,7 @@ const QEMUOption qemu_options[] = {
+     { "usbdevice", HAS_ARG, QEMU_OPTION_usbdevice },
+     { "smp", HAS_ARG, QEMU_OPTION_smp },
+     { "vnc", HAS_ARG, QEMU_OPTION_vnc },
++    { "scsienable", 0, QEMU_OPTION_scsi },
+ 
+     /* temporary options */
+     { "usb", 0, QEMU_OPTION_usb },
+@@ -6570,7 +6653,11 @@ int main(int argc, char **argv)
+     gdbstub_port = DEFAULT_GDBSTUB_PORT;
+ #endif
+     snapshot = 0;
++#if defined(CONFIG_SDL) || defined(CONFIG_COCOA)
+     nographic = 0;
++#else
++    nographic = 1;
++#endif
+     kernel_filename = NULL;
+     kernel_cmdline = "";
+ #ifdef TARGET_PPC
+@@ -6580,14 +6667,14 @@ int main(int argc, char **argv)
+ #endif
+     cyls = heads = secs = 0;
+     translation = BIOS_ATA_TRANSLATION_AUTO;
+-    pstrcpy(monitor_device, sizeof(monitor_device), "vc");
++    pstrcpy(monitor_device, sizeof(monitor_device), nographic ? "stdio" : "vc" );
+ 
+-    pstrcpy(serial_devices[0], sizeof(serial_devices[0]), "vc");
++    pstrcpy(serial_devices[0], sizeof(serial_devices[0]), nographic ? "stdio" : "vc");
+     for(i = 1; i < MAX_SERIAL_PORTS; i++)
          serial_devices[i][0] = '\0';
      serial_device_index = 0;
      
@@ -187,3 +224,13 @@
      for(i = 1; i < MAX_PARALLEL_PORTS; i++)
          parallel_devices[i][0] = '\0';
      parallel_device_index = 0;
+@@ -6940,6 +7027,9 @@ int main(int argc, char **argv)
+ 		break;
+             case QEMU_OPTION_no_acpi:
+                 acpi_enabled = 0;
++                break;
++            case QEMU_OPTION_scsi:
++                scsi_enabled = 1;
+                 break;
+             case QEMU_OPTION_no_reboot:
+                 no_reboot = 1;

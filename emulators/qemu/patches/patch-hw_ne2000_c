@@ -1,0 +1,12 @@
+$OpenBSD: patch-hw_ne2000_c,v 1.4 2007/05/01 12:55:14 todd Exp $
+--- hw/ne2000.c.orig	Thu Apr  5 17:24:58 2007
++++ hw/ne2000.c	Thu Apr  5 17:25:11 2007
+@@ -206,7 +206,7 @@ static int ne2000_buffer_full(NE2000State *s)
+ 
+     index = s->curpag << 8;
+     boundary = s->boundary << 8;
+-    if (index <= boundary)
++    if (index < boundary)
+         avail = boundary - index;
+     else
+         avail = (s->stop - s->start) - (index - boundary);

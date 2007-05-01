@@ -1,6 +1,6 @@
-$OpenBSD: patch-target-i386_helper2_c,v 1.4 2006/12/22 17:31:45 todd Exp $
---- target-i386/helper2.c.orig	Sat Jul 22 13:23:34 2006
-+++ target-i386/helper2.c	Sun Nov 12 17:10:10 2006
+$OpenBSD: patch-target-i386_helper2_c,v 1.5 2007/05/01 12:55:14 todd Exp $
+--- target-i386/helper2.c.orig	Mon Feb  5 17:01:54 2007
++++ target-i386/helper2.c	Mon Mar 12 15:48:39 2007
 @@ -127,7 +127,7 @@ CPUX86State *cpu_x86_init(void)
                  env->cpuid_model[i >> 2] |= c << (8 * (i & 3));
              }
@@ -10,12 +10,12 @@ $OpenBSD: patch-target-i386_helper2_c,v 1.4 2006/12/22 17:31:45 todd Exp $
          /* currently not enabled for std i386 because not fully tested */
          env->cpuid_ext2_features = (env->cpuid_features & 0x0183F3FF);
          env->cpuid_ext2_features |= CPUID_EXT2_LM | CPUID_EXT2_SYSCALL | CPUID_EXT2_NX;
-@@ -135,7 +135,7 @@ CPUX86State *cpu_x86_init(void)
- 
-         /* these features are needed for Win64 and aren't fully implemented */
+@@ -137,7 +137,7 @@ CPUX86State *cpu_x86_init(void)
          env->cpuid_features |= CPUID_MTRR | CPUID_CLFLUSH | CPUID_MCA;
+         /* this feature is needed for Solaris and isn't fully implemented */
+         env->cpuid_features |= CPUID_PSE36;
 -#endif
-+/* #endif -- To run Mac OS X x86  */
++/* #endif -- To run Mac OS X x86 */
      }
      cpu_reset(env);
  #ifdef USE_KQEMU

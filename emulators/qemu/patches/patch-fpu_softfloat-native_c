@@ -1,6 +1,6 @@
-$OpenBSD: patch-fpu_softfloat-native_c,v 1.1 2005/08/11 01:15:17 todd Exp $
---- fpu/softfloat-native.c.orig	Wed Apr 27 13:53:34 2005
-+++ fpu/softfloat-native.c	Wed Apr 27 14:26:20 2005
+$OpenBSD: patch-fpu_softfloat-native_c,v 1.2 2007/05/01 12:55:14 todd Exp $
+--- fpu/softfloat-native.c.orig	Mon Feb  5 17:01:54 2007
++++ fpu/softfloat-native.c	Sat Mar 10 16:39:39 2007
 @@ -1,6 +1,7 @@
  /* Native implementation of soft float functions. Only a single status
     context is supported */

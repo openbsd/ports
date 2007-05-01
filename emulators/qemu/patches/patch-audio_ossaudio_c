@@ -1,6 +1,6 @@
-$OpenBSD: patch-audio_ossaudio_c,v 1.2 2005/12/27 07:56:15 todd Exp $
---- audio/ossaudio.c.orig	Mon Dec 19 16:51:53 2005
-+++ audio/ossaudio.c	Tue Dec 20 11:00:04 2005
+$OpenBSD: patch-audio_ossaudio_c,v 1.3 2007/05/01 12:55:14 todd Exp $
+--- audio/ossaudio.c.orig	Mon Feb  5 17:01:54 2007
++++ audio/ossaudio.c	Sat Mar 10 16:39:38 2007
 @@ -21,10 +21,15 @@
   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   * THE SOFTWARE.

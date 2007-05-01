@@ -1,0 +1,27 @@
+$OpenBSD: patch-block-qcow2_c,v 1.1 2007/05/01 12:55:14 todd Exp $
+--- block-qcow2.c.orig	Mon Feb  5 17:01:54 2007
++++ block-qcow2.c	Fri Apr  6 13:05:45 2007
+@@ -1884,6 +1884,8 @@ static int grow_refcount_table(BlockDriverState *bs, i
+     int new_table_size, new_table_size2, refcount_table_clusters, i, ret;
+     uint64_t *new_table;
+     int64_t table_offset;
++    int old_table_size;
++    int64_t old_table_offset;
+     uint64_t data64;
+     uint32_t data32;
+ 
+@@ -1931,10 +1933,14 @@ static int grow_refcount_table(BlockDriverState *bs, i
+                     &data32, sizeof(data32)) != sizeof(data32))
+         goto fail;
+     qemu_free(s->refcount_table);
++    old_table_offset = s->refcount_table_offset;
++    old_table_size = s->refcount_table_size;
+     s->refcount_table = new_table;
+     s->refcount_table_size = new_table_size;
++    s->refcount_table_offset = table_offset;
+ 
+     update_refcount(bs, table_offset, new_table_size2, 1);
++    free_clusters(bs, old_table_offset, old_table_size * sizeof(uint64_t));
+     return 0;
+  fail:
+     free_clusters(bs, table_offset, new_table_size2);

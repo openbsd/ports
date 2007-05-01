@@ -1,0 +1,47 @@
+$OpenBSD: patch-hw_pc_c,v 1.6 2007/05/01 12:55:14 todd Exp $
+--- hw/pc.c.orig	Mon Feb  5 17:01:54 2007
++++ hw/pc.c	Fri Apr  6 13:07:38 2007
+@@ -711,23 +711,36 @@ static void pc_init1(int ram_size, int vga_ram_size, i
+     if (i440fx_state) {
+         i440fx_init_memory_mappings(i440fx_state);
+     }
+-#if 0
+     /* ??? Need to figure out some way for the user to
+        specify SCSI devices.  */
+-    if (pci_enabled) {
++    if (pci_enabled && scsi_enabled) {
+         void *scsi;
+         BlockDriverState *bdrv;
+ 
+         scsi = lsi_scsi_init(pci_bus, -1);
+-        bdrv = bdrv_new("scsidisk");
+-        bdrv_open(bdrv, "scsi_disk.img", 0);
++        bdrv = bdrv_new("scsidisk0");
++        bdrv_open(bdrv, "scsi_disk0.img", 0);
+         lsi_scsi_attach(scsi, bdrv, -1);
+-        bdrv = bdrv_new("scsicd");
+-        bdrv_open(bdrv, "scsi_cd.iso", 0);
++        bdrv = bdrv_new("scsidisk1");
++        bdrv_open(bdrv, "scsi_disk1.img", 0);
++        lsi_scsi_attach(scsi, bdrv, -1);
++        bdrv = bdrv_new("scsidisk2");
++        bdrv_open(bdrv, "scsi_disk2.img", 0);
++        lsi_scsi_attach(scsi, bdrv, -1);
++        bdrv = bdrv_new("scsidisk3");
++        bdrv_open(bdrv, "scsi_disk3.img", 0);
++        lsi_scsi_attach(scsi, bdrv, -1);
++        bdrv = bdrv_new("scsidisk4");
++        bdrv_open(bdrv, "scsi_disk4.img", 0);
++        lsi_scsi_attach(scsi, bdrv, -1);
++        bdrv = bdrv_new("scsidisk5");
++        bdrv_open(bdrv, "scsi_disk5.img", 0);
++        lsi_scsi_attach(scsi, bdrv, -1);
++        bdrv = bdrv_new("scsicd0");
++        bdrv_open(bdrv, "scsi_cd0.iso", 0);
+         bdrv_set_type_hint(bdrv, BDRV_TYPE_CDROM);
+         lsi_scsi_attach(scsi, bdrv, -1);
+     }
+-#endif
+ }
+ 
+ static void pc_init_pci(int ram_size, int vga_ram_size, int boot_device,

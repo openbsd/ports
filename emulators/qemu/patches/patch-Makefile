@@ -1,7 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.5 2006/12/22 17:31:45 todd Exp $
---- Makefile.orig	Sat Jul 22 13:23:34 2006
-+++ Makefile	Sun Nov 12 17:10:10 2006
-@@ -44,7 +44,7 @@ clean:
+$OpenBSD: patch-Makefile,v 1.6 2007/05/01 12:55:14 todd Exp $
+--- Makefile.orig	Mon Feb  5 17:01:54 2007
++++ Makefile	Tue Mar 20 19:21:54 2007
+@@ -27,7 +27,7 @@ endif
+ ifndef CONFIG_DARWIN
+ ifndef CONFIG_WIN32
+ ifndef CONFIG_SOLARIS
+-LIBS+=-lrt
++#LIBS+=-lrt
+ endif
+ endif
+ endif
+@@ -51,7 +51,7 @@ clean:
  	rm -f *.o *.a $(TOOLS) dyngen$(EXESUF) TAGS *.pod *~ */*~
  	$(MAKE) -C tests clean
  	for d in $(TARGET_DIRS); do \
@@ -10,7 +19,7 @@ $OpenBSD: patch-Makefile,v 1.5 2006/12/22 17:31:45 todd Exp $
          done
  
  distclean: clean
-@@ -98,7 +98,7 @@ cscope:
+@@ -106,7 +106,7 @@ cscope:
  
  # documentation
  %.html: %.texi

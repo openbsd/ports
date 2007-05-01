@@ -1,16 +1,16 @@
-$OpenBSD: patch-qemu-img_c,v 1.2 2006/12/22 17:31:45 todd Exp $
---- qemu-img.c.orig	Sat Jul 22 13:23:34 2006
-+++ qemu-img.c	Sun Nov 12 17:10:10 2006
-@@ -62,7 +62,7 @@ char *qemu_strdup(const char *str)
-     return ptr;
- }
+$OpenBSD: patch-cutils_c,v 1.1 2007/05/01 12:55:14 todd Exp $
+--- cutils.c.orig	Mon Feb  5 17:01:54 2007
++++ cutils.c	Tue Apr  3 08:21:27 2007
+@@ -23,7 +23,7 @@
+  */
+ #include "vl.h"
  
 -void pstrcpy(char *buf, int buf_size, const char *str)
 +void pstrcpy(char *buf, size_t buf_size, const char *str)
  {
      int c;
      char *q = buf;
-@@ -80,7 +80,7 @@ void pstrcpy(char *buf, int buf_size, co
+@@ -41,7 +41,7 @@ void pstrcpy(char *buf, int buf_size, const char *str)
  }
  
  /* strcat and truncate. */
