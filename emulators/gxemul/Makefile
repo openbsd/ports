@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/04/15 08:08:38 grange Exp $
+# $OpenBSD: Makefile,v 1.15 2007/05/01 10:04:27 grange Exp $
 
 COMMENT=		"ARM/MIPS/PowerPC/SuperH machines emulator"
 
-DISTNAME=		gxemul-0.4.5
+DISTNAME=		gxemul-0.4.5.1
 CATEGORIES=		emulators
 HOMEPAGE=		http://gavare.se/gxemul/
 
