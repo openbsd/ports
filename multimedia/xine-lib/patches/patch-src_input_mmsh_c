@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_mmsh_c,v 1.1 2006/12/07 09:21:01 steven Exp $
---- src/input/mmsh.c.orig	Mon Dec  4 14:44:07 2006
-+++ src/input/mmsh.c	Mon Dec  4 14:45:35 2006
+$OpenBSD: patch-src_input_mmsh_c,v 1.2 2007/05/01 20:05:10 naddy Exp $
+--- src/input/mmsh.c.orig	Sun Jul  9 16:37:35 2006
++++ src/input/mmsh.c	Tue May  1 22:03:06 2007
 @@ -182,7 +182,7 @@ struct mmsh_s {
    int           num_stream_ids;
    int           stream_ids[ASF_MAX_NUM_STREAMS];
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_input_mmsh_c,v 1.1 2006/12/07 09:21:01 steven Exp $
    int64_t       file_length;
    char          guid[37];
    uint32_t      bitrates[ASF_MAX_NUM_STREAMS];
-@@ -491,6 +491,10 @@ static void interp_header (mmsh_t *this)
+@@ -491,6 +491,10 @@ static void interp_header (mmsh_t *this) {
        case GUID_ASF_FILE_PROPERTIES:
  
          this->packet_length = LE_32(this->asf_header + i + 92 - 24);

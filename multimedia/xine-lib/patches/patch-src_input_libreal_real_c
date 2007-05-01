@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_input_libreal_real_c,v 1.4 2007/01/02 19:42:59 robert Exp $
---- src/input/libreal/real.c.orig	Sun Jul  9 10:37:40 2006
-+++ src/input/libreal/real.c	Mon Jan  1 15:28:07 2007
-@@ -51,9 +51,10 @@ static const unsigned char xor_table[] =
+$OpenBSD: patch-src_input_libreal_real_c,v 1.5 2007/05/01 20:05:10 naddy Exp $
+--- src/input/libreal/real.c.orig	Sun Jul  9 16:37:40 2006
++++ src/input/libreal/real.c	Tue May  1 22:03:06 2007
+@@ -51,9 +51,10 @@ static const unsigned char xor_table[] = {
  #define BE_32C(x,y) do { *(uint32_t *)(x) = be2me_32((y)); } while(0)
  #define LE_32C(x,y) do { *(uint32_t *)(x) = le2me_32((y)); } while(0)
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_input_libreal_real_c,v 1.4 2007/01/02 19:42:59 robert Exp $
  static void hash(char *field, char *param) {
  
    uint32_t a, b, c, d;
-@@ -472,11 +473,11 @@ rmff_header_t *real_parse_sdp(char *data
+@@ -472,11 +473,11 @@ rmff_header_t *real_parse_sdp(char *data, char **strea
      int j=0;
      int n;
      char b[64];

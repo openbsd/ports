@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2006/11/25 05:40:31 pvalchev Exp $
---- configure.orig	Sun Jul  9 08:51:14 2006
-+++ configure	Fri Nov 24 21:54:09 2006
+$OpenBSD: patch-configure,v 1.6 2007/05/01 20:05:10 naddy Exp $
+--- configure.orig	Sun Jul  9 16:51:14 2006
++++ configure	Tue May  1 22:03:06 2007
 @@ -25613,8 +25613,12 @@ _ACEOF
  fi
  done
@@ -70,7 +70,7 @@ $OpenBSD: patch-configure,v 1.5 2006/11/25 05:40:31 pvalchev Exp $
  
  if test x$ac_have_xv = "xyes"; then
    HAVE_XV_TRUE=
-@@ -40297,7 +40313,7 @@ elif test x"$external_a52dec" = "xyes"; 
+@@ -40297,7 +40313,7 @@ elif test x"$external_a52dec" = "xyes"; then
    have_a52="yes"
  
  
@@ -79,7 +79,7 @@ $OpenBSD: patch-configure,v 1.5 2006/11/25 05:40:31 pvalchev Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  { echo "$as_me:$LINENO: checking for $ac_header" >&5
-@@ -40469,7 +40485,7 @@ if test $ac_cv_lib_a52_a52_init = yes; t
+@@ -40469,7 +40485,7 @@ if test $ac_cv_lib_a52_a52_init = yes; then
  #define HAVE_LIBA52 1
  _ACEOF
  
@@ -88,7 +88,7 @@ $OpenBSD: patch-configure,v 1.5 2006/11/25 05:40:31 pvalchev Exp $
  
  else
    have_a52="no"
-@@ -40900,7 +40916,7 @@ if test "${ac_cv_lib_mng_mng_initialize+
+@@ -40900,7 +40916,7 @@ if test "${ac_cv_lib_mng_mng_initialize+set}" = set; t
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -97,7 +97,7 @@ $OpenBSD: patch-configure,v 1.5 2006/11/25 05:40:31 pvalchev Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -41123,7 +41139,7 @@ echo "${ECHO_T}$ac_cv_header_libmng_h" >
+@@ -41123,7 +41139,7 @@ echo "${ECHO_T}$ac_cv_header_libmng_h" >&6; }
  fi
  if test $ac_cv_header_libmng_h = yes; then
     have_libmng=yes

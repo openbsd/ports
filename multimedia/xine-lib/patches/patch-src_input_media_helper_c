@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_input_media_helper_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/input/media_helper.c.orig	Thu Jan  5 00:56:48 2006
-+++ src/input/media_helper.c	Thu Jan  5 00:57:11 2006
-@@ -59,7 +59,7 @@ static int media_umount_media(const char
+$OpenBSD: patch-src_input_media_helper_c,v 1.2 2007/05/01 20:05:10 naddy Exp $
+--- src/input/media_helper.c.orig	Sun Jul  9 16:37:35 2006
++++ src/input/media_helper.c	Tue May  1 22:03:06 2007
+@@ -59,7 +59,7 @@ static int media_umount_media(const char *device)
  
    pid=fork();
    if (pid == 0) {
