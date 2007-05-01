@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/01 08:33:56 steven Exp $
+${P5SITE}/File/
+${P5SITE}/File/GlobMapper.pm
+${P5SITE}/IO/
+${P5SITE}/IO/Compress/
+${P5SITE}/IO/Compress/Base/
+${P5SITE}/IO/Compress/Base.pm
+${P5SITE}/IO/Compress/Base/Common.pm
+${P5SITE}/IO/Uncompress/
+${P5SITE}/IO/Uncompress/AnyUncompress.pm
+${P5SITE}/IO/Uncompress/Base.pm
+@man man/man3p/File::GlobMapper.3p
+@man man/man3p/IO::Compress::Base.3p
+@man man/man3p/IO::Uncompress::AnyUncompress.3p
+@man man/man3p/IO::Uncompress::Base.3p
