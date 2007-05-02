@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/04/29 13:13:55 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2007/05/02 08:15:16 bernd Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -33,7 +33,7 @@ SUBST_VARS+=		CONFDIR
 
 CONFIGURE_ARGS=		--sysconfdir=${CONFDIR}
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 USE_GMAKE=		Yes
