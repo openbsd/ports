@@ -5,3 +5,6 @@ CLI front-end to accomplish this.
 
 Commercial support is available from Easy Software Products, and
 more information regarding this can be found at the homepage.
+
+Flavors:
+	* no_x11 - don't build X11 support

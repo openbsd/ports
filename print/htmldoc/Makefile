@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2006/12/26 14:07:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2007/05/02 18:34:00 ajacoutot Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
 V=			1.8.27
 DISTNAME=		htmldoc-${V}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=     	print www
 
 HOMEPAGE=		http://www.htmldoc.org/
@@ -16,9 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		png ssl X11 m crypto c jpeg Xext z Xpm
-
-USE_X11=		Yes
+WANTLIB=		c crypto m ssl z
 
 DISTFILES=		${DISTNAME}-source${EXTRACT_SUFX}
 MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/${V}/ \
@@ -26,11 +24,23 @@ MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/${V}/ \
 			ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/htmldoc/${V}/ \
 			ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/htmldoc/${V}/
 
+FLAVORS=		no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_x11}
+CONFIGURE_ARGS+=	--without-gui
+LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
+			png.>=2::graphics/png
+.else
 LIB_DEPENDS=		fltk.>=1,fltk_images.>=1::x11/fltk
+WANTLIB+=		X11 Xau Xdmcp Xext Xpm jpeg png
+USE_X11=		Yes
+.endif
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" \
-			CXXFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include \
+				-I${LOCALBASE}/include/libpng" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 PORTHOME=		${WRKDIR}
 
