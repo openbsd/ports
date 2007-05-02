@@ -1,0 +1,14 @@
+$OpenBSD: patch-decoders_speex_c,v 1.1 2007/05/02 19:01:07 naddy Exp $
+--- decoders/speex.c.orig	Wed May  2 19:00:16 2007
++++ decoders/speex.c	Wed May  2 19:00:27 2007
+@@ -51,8 +51,8 @@
+ #include <assert.h>
+ 
+ #include <ogg/ogg.h>
+-#include <speex.h>
+-#include <speex_header.h>
++#include <speex/speex.h>
++#include <speex/speex_header.h>
+ 
+ #include "SDL_sound.h"
+ 

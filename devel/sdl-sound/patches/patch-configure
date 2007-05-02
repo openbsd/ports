@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2006/08/31 06:14:29 sturm Exp $
+$OpenBSD: patch-configure,v 1.2 2007/05/02 19:01:07 naddy Exp $
 --- configure.orig	Sun Oct 12 20:54:57 2003
-+++ configure	Thu Aug 31 08:11:50 2006
++++ configure	Wed May  2 19:01:01 2007
 @@ -7363,16 +7363,11 @@ int main (int argc, char *argv[])
      }
    else
@@ -31,3 +31,21 @@ $OpenBSD: patch-configure,v 1.1 2006/08/31 06:14:29 sturm Exp $
    VORBISFILE_LIBS="-lvorbisfile"
    VORBISENC_LIBS="-lvorbisenc"
  
+@@ -8241,7 +8236,7 @@ else
+   cat >conftest.$ac_ext <<_ACEOF
+ #line 8242 "configure"
+ #include "confdefs.h"
+-#include <speex.h>
++#include <speex/speex.h>
+ _ACEOF
+ if { (eval echo "$as_me:8246: \"$ac_cpp conftest.$ac_ext\"") >&5
+   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+@@ -8328,7 +8323,7 @@ if test $ac_cv_lib_speex_speex_bits_init = yes; then
+ fi
+ 
+   if test "x$have_ogg_hdr" = "xyes" -a "x$have_ogg_lib" = "xyes" -a "x$have_speex_hdr" = "xyes" -a "x$have_speex_lib" = "xyes"; then
+-    LIBS="$LIBS -logg -lspeex"
++    LIBS="$LIBS -lspeex -logg"
+     cat >>confdefs.h <<\EOF
+ #define SOUND_SUPPORTS_SPEEX 1
+ EOF
