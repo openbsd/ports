@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2007/03/21 15:51:54 jolan Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/02 17:29:25 jolan Exp $
 
 COMMENT=	"open source multi-protocol PBX and telephony toolkit"
-DISTNAME=	asterisk-1.2.17
+DISTNAME=	asterisk-1.2.18
 CATEGORIES=	telephony
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
 
@@ -25,14 +25,11 @@ MAKE_ENV+=	SYSCONFDIR='${SYSCONFDIR}' MAKEFLAGS+=-DWITHOUT_ZAPTEL
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asterisk/agi
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asterisk/default
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asterisk/openbsd
 	${INSTALL_DATA} ${WRKSRC}/{BUGS,SECURITY} ${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA} ${WRKSRC}/doc/README.* ${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA} ${WRKSRC}/agi/agi-test.agi \
-		${PREFIX}/share/examples/asterisk/agi
 	${INSTALL_DATA} ${WRKSRC}/configs/* ${PREFIX}/share/examples/asterisk/default
 	${INSTALL_DATA} ${FILESDIR}/*.sample ${PREFIX}/share/examples/asterisk/openbsd
 

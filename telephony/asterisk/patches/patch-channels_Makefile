@@ -1,7 +1,7 @@
-$OpenBSD: patch-channels_Makefile,v 1.4 2007/03/21 15:51:54 jolan Exp $
---- channels/Makefile.orig	Mon Mar  5 23:18:49 2007
-+++ channels/Makefile	Wed Mar 21 14:39:08 2007
-@@ -44,9 +44,11 @@ CYGSOLIB=-L.. -L. -L../res -lasterisk.dl
+$OpenBSD: patch-channels_Makefile,v 1.5 2007/05/02 17:29:25 jolan Exp $
+--- channels/Makefile.orig	Mon Mar 26 11:21:56 2007
++++ channels/Makefile	Wed Apr 25 09:17:17 2007
+@@ -44,9 +44,11 @@ CYGSOLIB=-L.. -L. -L../res -lasterisk.dll -lres_featur
  CYG_CHAN_AGENT=-lres_monitor.so
  endif
  

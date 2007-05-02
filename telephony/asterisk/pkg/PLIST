@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/02/11 01:03:28 ian Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/05/02 17:29:25 jolan Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
@@ -512,12 +512,14 @@ share/doc/asterisk/queuelog.txt
 @comment share/doc/asterisk/voicemail_odbc_postgresql.txt
 share/examples/asterisk/
 @sample /var/asterisk/
-@sample ${SYSCONFDIR}/asterisk/
 share/examples/asterisk/agi/
 @sample /var/asterisk/agi-bin/
 share/examples/asterisk/agi/agi-test.agi
 @sample /var/asterisk/agi-bin/agi-test.agi
+share/examples/asterisk/agi/eagi-sphinx-test
+share/examples/asterisk/agi/eagi-test
 share/examples/asterisk/default/
+@sample ${SYSCONFDIR}/asterisk/
 share/examples/asterisk/default/adsi.conf.sample
 share/examples/asterisk/default/adtranvofr.conf.sample
 share/examples/asterisk/default/agents.conf.sample
