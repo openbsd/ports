@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lib_drivers_OssDriver_cpp,v 1.1.1.1 2006/09/25 18:56:00 grange Exp $
+$OpenBSD: patch-src_lib_drivers_OssDriver_cpp,v 1.2 2007/05/02 17:51:16 grange Exp $
 --- src/lib/drivers/OssDriver.cpp.orig	Tue Oct 18 02:32:04 2005
-+++ src/lib/drivers/OssDriver.cpp	Mon Sep 25 00:10:41 2006
++++ src/lib/drivers/OssDriver.cpp	Wed May  2 21:36:46 2007
 @@ -41,6 +41,7 @@ unsigned nNextFrames = 0;
  
  void* ossDriver_processCaller(void* param)
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_lib_drivers_OssDriver_cpp,v 1.1.1.1 2006/09/25 18:56:00 gran
  	// stolen from amSynth
  	struct sched_param sched;
  	sched.sched_priority = 50;
-@@ -50,6 +51,7 @@ void* ossDriver_processCaller(void* para
+@@ -50,6 +51,7 @@ void* ossDriver_processCaller(void* param)
  		m_pOssDriverInstance->warningLog("Can't set realtime scheduling for OSS Driver");
  	}
  	m_pOssDriverInstance->infoLog( "Scheduling priority = " + toString( sched.sched_priority ) );
@@ -26,3 +26,17 @@ $OpenBSD: patch-src_lib_drivers_OssDriver_cpp,v 1.1.1.1 2006/09/25 18:56:00 gran
  	audioDevice = "/dev/audio";
  #else
  	audioDevice = preferencesMng->m_sOSSDevice;
+@@ -178,11 +180,13 @@ int OssDriver::connect() {
+ 
+ 	infoLog( "Blocksize audio = " + toString( bs ) );
+ 
++#ifndef __OpenBSD__
+ 	if (bs != ( 1 << bufferBits) ){
+ 		errorLog("ERROR_IOCTL: unable to set BlockSize");
+ 		close(fd);
+ 		return 1;
+ 	}
++#endif
+ 
+ 	int format = AFMT_S16_LE;
+ 	if (ioctl(fd, SNDCTL_DSP_SETFMT, &format) == -1) {

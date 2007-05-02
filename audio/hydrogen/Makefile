@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/08 16:41:59 grange Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/02 17:51:16 grange Exp $
 
 COMMENT=		"software drum machine"
 DISTNAME=		hydrogen-0.9.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio
 HOMEPAGE=		http://www.hydrogen-music.org/
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>

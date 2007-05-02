@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/09/25 18:56:00 grange Exp $
---- Makefile.in.orig	Mon Sep 25 00:27:37 2006
-+++ Makefile.in	Mon Sep 25 00:28:00 2006
-@@ -219,13 +219,12 @@ hydrogenCUI: hydrogenCUI.mak $(hydrogen_
+$OpenBSD: patch-Makefile_in,v 1.2 2007/05/02 17:51:16 grange Exp $
+--- Makefile.in.orig	Thu Nov 10 21:00:08 2005
++++ Makefile.in	Wed May  2 21:23:27 2007
+@@ -219,13 +219,12 @@ hydrogenCUI: hydrogenCUI.mak $(hydrogen_headers) $(hyd
  	@make -f hydrogenCUI.mak hydrogenCUI
  
  install:
