@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.500 2007/05/01 20:54:25 bernd Exp $
+# $OpenBSD: Makefile,v 1.501 2007/05/03 10:30:34 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -530,6 +530,7 @@
      SUBDIR += pygame
      SUBDIR += pyrex
      SUBDIR += pyusb
+     SUBDIR += qt4-eventsview
      SUBDIR += rapidsvn
      SUBDIR += rats
      SUBDIR += remake
