@@ -18,4 +18,6 @@ be up at all times.
 Gaim is under constant development, and releases are usually frequent.
 
 Flavors:
-       gtkspell - Build with spell checking support
+	audio - Build with gstreamer support
+	debug - Enable debugging
+	gtkspell - Build with spell checking support
