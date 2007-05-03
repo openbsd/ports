@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_main_cpp,v 1.1.1.1 2007/05/03 10:29:11 espie Exp $
+--- test/main.cpp.orig	Thu May  3 12:20:10 2007
++++ test/main.cpp	Thu May  3 12:20:17 2007
+@@ -22,7 +22,7 @@
+ #include <QPushButton>
+ #include <QMotifStyle>
+ 
+-#include "../lib/eventsview.h"
++#include <eventsview.h>
+ 
+ 
+ int main(int argc, char *argv[])

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/03 10:29:11 espie Exp $
+%%SHARED%%
+include/X11/qt4/
+include/X11/qt4/eventsview.h
+share/examples/eventsview/
+share/examples/eventsview/Makefile
+share/examples/eventsview/main.cpp
+share/examples/eventsview/test

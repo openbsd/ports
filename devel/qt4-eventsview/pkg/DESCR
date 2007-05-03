@@ -1,0 +1,4 @@
+eventsview is a simple watcher for qt4 events, can be very useful to
+understand how qt4 works, or to debug program behavior.
+
+No documentation, but a simple functional example in ${SAMPLE}
