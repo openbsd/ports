@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/30 07:28:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/03 11:25:17 msf Exp $
 
 COMMENT=	"package management framework for the Ruby language"
 
@@ -8,8 +8,6 @@ PKGNAME= 	ruby-gems-$V
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docs.rubygems.org/
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
