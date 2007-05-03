@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2007/04/18 00:18:35 espie Exp $
+# $OpenBSD: Makefile,v 1.270 2007/05/03 09:32:16 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -258,6 +258,7 @@
      SUBDIR += wwwoffle
      SUBDIR += xmhtml
      SUBDIR += xoops
+     SUBDIR += yui
      SUBDIR += zope
      SUBDIR += zope-cmf
      SUBDIR += zope-cmfquickinstaller
