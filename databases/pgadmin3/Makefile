@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/18 13:54:06 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/03 07:42:55 aanriot Exp $
 
 COMMENT=	"administration and development platform for PostgreSQL"
 
 VERSION=	1.4.3
 DISTNAME=	pgadmin3-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases devel
 
 HOMEPAGE=	http://www.pgadmin.org/
@@ -21,6 +22,8 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/pgadmin3/release/v${VERSION}/src/
 
 LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_html,wx_gtk2_stc,wx_gtk2_ogl,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.6.3:x11/wxWidgets \
 		pq.>=4::databases/postgresql
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::databases/postgresql,-docs
 
 CONFIGURE_STYLE=gnu
 
@@ -39,5 +42,8 @@ pre-build:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DOCDIR}/
 	@cp -R ${WRKSRC}/docs/* ${PREFIX}/${DOCDIR}/
+	@rm -rf ${PREFIX}/${DOCDIR}/en_US/pg/
+	@ln -s ${LOCALBASE}/share/doc/postgresql/html/ \
+		${PREFIX}/${DOCDIR}/en_US/pg/
 
 .include <bsd.port.mk>

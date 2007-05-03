@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_en_US_pgadmin3_hhc,v 1.1 2007/05/03 07:42:55 aanriot Exp $
+--- docs/en_US/pgadmin3.hhc.orig	Tue May  1 00:02:31 2007
++++ docs/en_US/pgadmin3.hhc	Tue May  1 00:09:03 2007
+@@ -198,7 +198,7 @@
+ 		</UL>
+ 	</UL>
+ 	<LI> <OBJECT type="text/sitemap">
+-		<param name="Name" value="PostgreSQL 8.1.4 Documentation">
++		<param name="Name" value="PostgreSQL Documentation">
+ 		<param name="Local" value="pg/index.html">
+ 		</OBJECT>
+ 	<UL>
