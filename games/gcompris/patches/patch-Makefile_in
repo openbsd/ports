@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/26 17:40:57 ajacoutot Exp $
---- Makefile.in.orig	Sat Nov 18 14:37:19 2006
-+++ Makefile.in	Wed Jan 17 15:06:05 2007
-@@ -789,7 +789,7 @@ info: info-recursive
+$OpenBSD: patch-Makefile_in,v 1.2 2007/05/03 17:42:55 ajacoutot Exp $
+--- Makefile.in.orig	Sun Apr 29 17:35:22 2007
++++ Makefile.in	Mon Apr 30 20:00:14 2007
+@@ -867,7 +867,7 @@ info: info-recursive
  
  info-am:
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/26 17:40:57 ajacoutot Exp $
  	install-data-local install-iconDATA
  
  install-exec-am:
-@@ -849,7 +849,7 @@ install-data-local:
+@@ -927,7 +927,7 @@ install-data-local:
  	@$(NORMAL_INSTALL)
  	if test -d $(srcdir)/$(PACKAGE_DATA_DIR); then \
  	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR); \
--	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude CVS --exclude .xvpics --exclude "1[1-9].ogg"  --exclude "2?.ogg" * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
-+	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar -cf - -s '/^.*Makefile.*$$//' -s '/^.*\.in.*$$//' -s '/^.*~.*$$//' -s '/^.*CVS.*$$//' -s '/^.*\.xvpics.*$$//' -s '/^.*1[1-9]\.ogg.*$$//' -s '/^.*2.\.ogg.*$$//' * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
+-	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude .svn --exclude .xvpics --exclude "1[1-9].ogg"  --exclude "2?.ogg" * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
++	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar -cf - -s '/^.*Makefile.*$$//' -s '/^.*\.in.*$$//' -s '/^.*~.*$$//' -s '/^.*svn.*$$//' -s '/^.*\.xvpics.*$$//' -s '/^.*1[1-9]\.ogg.*$$//' -s '/^.*2.\.ogg.*$$//' * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
  	fi
  
  dist-hook:

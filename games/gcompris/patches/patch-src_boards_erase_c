@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_boards_erase_c,v 1.1 2007/05/03 17:42:55 ajacoutot Exp $
+--- src/boards/erase.c.orig	Thu May  3 17:03:28 2007
++++ src/boards/erase.c	Thu May  3 16:58:32 2007
+@@ -517,14 +517,6 @@ canvas_event(GnomeCanvas *canvas, GdkEvent *event)
+   switch (event->type)
+     {
+     case GDK_BUTTON_PRESS:
+-      if (board_mode == NORMAL) {
+-	int x = event->button.x;
+-	int y = event->button.y;
+-	int item_x = x / (BOARDWIDTH/number_of_item_x);
+-	int item_y = y / (BOARDHEIGHT/number_of_item_y);
+-	if (items_per_cell[item_x * number_of_item_x + item_y] == 0)
+-	  add_one_item(x, y, 1);
+-      }
+       break;
+     default:
+       break;

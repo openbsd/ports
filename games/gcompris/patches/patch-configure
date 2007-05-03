@@ -1,0 +1,57 @@
+$OpenBSD: patch-configure,v 1.1 2007/05/03 17:42:55 ajacoutot Exp $
+--- configure.orig	Sun Apr 29 16:22:57 2007
++++ configure	Tue May  1 10:21:39 2007
+@@ -23439,13 +23439,13 @@ _ACEOF
+ 
+ 		if test "x$enable_binreloc_threads" = "xyes"; then
+ 
+-{ echo "$as_me:$LINENO: checking for pthread_getspecific in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_getspecific in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_getspecific in -pthread" >&5
++echo $ECHO_N "checking for pthread_getspecific in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_getspecific+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -23505,7 +23505,7 @@ if test $ac_cv_lib_pthread_pthread_getspecific = yes; 
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 
+@@ -23530,7 +23530,7 @@ fi
+ echo "${ECHO_T}$br_cv_binreloc_threads" >&6; }
+ 
+ 		if test "x$br_cv_binreloc_threads" = "xyes"; then
+-			BINRELOC_LIBS="-lpthread"
++			BINRELOC_LIBS="-pthread"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define BR_PTHREAD 1
+@@ -25847,9 +25847,6 @@ fi
+ 
+ 
+ XLIBADD=
+-if "x$x_libraries" != "x"; then
+-  XLIBADD=" -L$x_libraries "
+-fi
+ 
+ # Check whether --enable-xf86vidmode was given.
+ if test "${enable_xf86vidmode+set}" = set; then
+@@ -28201,7 +28198,7 @@ if test  "x$PYTHON_LIBS" = "x" ; then
+ 
+    python_libdir=`$PYTHON -c "import distutils.sysconfig ; print distutils.sysconfig.get_config_var(\"LIBDIR\")"`
+ 
+-   PYTHON_LIBS="-L${python_libdir} ${python_link}"
++   PYTHON_LIBS="-L${python_libdir} ${python_link} -lutil"
+ fi
+ 
+ 

@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/03 17:42:55 ajacoutot Exp $
 
 COMMENT=	"educational game for children"
 
-DISTNAME=	gcompris-8.2.2
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gcompris-1	0.0		# .0.0
+DISTNAME=	gcompris-8.3.1
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -19,12 +17,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gcompris/}
 
-WANTLIB=	ICE SM SDL X11 Xext Xrender Xxf86vm atk-1.0 c cairo smpeg z \
+WANTLIB=	Xau Xdmcp SDL X11 Xext Xrender atk-1.0 c cairo smpeg z \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 xml2 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m mikmod ogg pango-1.0 pangocairo-1.0 util \
 		pangoft2-1.0 png pthread usbhid vorbis vorbisfile \
-		art_lgpl_2
+		art_lgpl_2 Xxf86vm expat Xcursor Xfixes Xi Xinerama Xrandr
 
 MODULES=	devel/gettext lang/python
 
@@ -36,7 +34,6 @@ LIB_DEPENDS=	python${MODPY_VERSION}::lang/python/${MODPY_VERSION} \
 		SDL_mixer.>=3::devel/sdl-mixer \
 		gnet-2.0::net/gnet \
 		sqlite3::databases/sqlite3 \
-		popt::devel/popt \
 		gnomecanvas-2::x11/gnome/libgnomecanvas
 RUN_DEPENDS=	::games/gnuchess \
 		::databases/py-sqlite2 \
@@ -49,9 +46,8 @@ USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		LIBS="-pthread -lutil"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
@@ -61,10 +57,11 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-py-build-only \
 		--disable-cairo \
 		--disable-rpath \
-		--with-x
+		--with-x \
+		--with-python=${MODPY_BIN}
 
 pre-configure:
-	perl -pi -e 's,\@INTLTOOL_MERGE\@,${LOCALBASE}/bin/intltool-merge,g;' \
+	@perl -pi -e 's,\@INTLTOOL_MERGE\@,${LOCALBASE}/bin/intltool-merge,g;' \
 		-e 's,\@INTLTOOL_UPDATE\@,${LOCALBASE}/bin/intltool-update,g;' \
 		-e 's,\@INTLTOOL_EXTRACT\@,${LOCALBASE}/bin/intltool-extract,g' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/po/Makefile.in.in

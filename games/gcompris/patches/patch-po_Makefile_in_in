@@ -1,11 +1,11 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2007/01/26 17:40:57 ajacoutot Exp $
---- po/Makefile.in.in.orig	Fri Jul  7 14:01:54 2006
-+++ po/Makefile.in.in	Fri Jan 12 11:02:26 2007
-@@ -212,9 +212,6 @@ Makefile POTFILES: stamp-it
+$OpenBSD: patch-po_Makefile_in_in,v 1.2 2007/05/03 17:42:55 ajacoutot Exp $
+--- po/Makefile.in.in.orig	Mon Apr 30 19:34:26 2007
++++ po/Makefile.in.in	Mon Apr 30 19:34:54 2007
+@@ -209,9 +209,6 @@ Makefile POTFILES: stamp-it
  	fi
  
- stamp-it: Makefile.in.in ../config.status POTFILES.in
--	cd .. \
+ stamp-it: Makefile.in.in $(top_builddir)/config.status POTFILES.in
+-	cd $(top_builddir) \
 -	  && CONFIG_FILES=$(subdir)/Makefile.in CONFIG_HEADERS= CONFIG_LINKS= \
 -	       $(SHELL) ./config.status
  
