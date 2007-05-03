@@ -1,0 +1,7 @@
+Yahoo user interface toolkit is a javascript library.
+This kit installs directly under ${PREFIX}, this is
+the documentation and examples packages.
+
+Beware, the examples are mostly functional with a
+default apache install. It's probably a good idea to
+restrict access to the ${EX} directory.
