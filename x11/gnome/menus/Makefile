@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/03 13:30:16 alek Exp $
 
 COMMENT=		"Implementation of the FreeDesktop Desktop Menu Spec"
 
-VERSION=		2.10.2
-DISTNAME=		gnome-menus-${VERSION}
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		gnome-menus-2.10.2
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		gnome-menu 0.0
 CATEGORIES=		x11/gnome
 
@@ -18,9 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto m pthread ssl z \
 			glib-2.0 gthread-2.0 \
 			gmodule-2.0 gobject-2.0 \
-			ORBit-2 ORBitCosNaming-2 \
-			bonobo-activation bonobo-2 \
-			popt xml2 gconf-2.>=5
+			ORBit-2 xml2 gconf-2.>=5
+WANTLIB += dbus-1 dbus-glib-1 util
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-menus/2.10/}
 EXTRACT_SUFX=		.tar.bz2
