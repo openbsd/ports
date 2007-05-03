@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/03 11:25:17 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/03 11:28:48 msf Exp $
 
 COMMENT=	"action controller and action view of rails MVC framework"
 
 DISTNAME=	actionwebservice-1.1.6
-PKGNAME=	ruby-${DISTNAME}p1
+PKGNAME=	ruby-${DISTNAME}p2
 CATEGORIES=	www
 
 # MIT License

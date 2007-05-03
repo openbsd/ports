@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/03 11:25:17 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/03 11:28:48 msf Exp $
 
 COMMENT=	"utility classes and extensions for rails framework" 
 
 DISTNAME=       activesupport-1.3.1
-PKGNAME=	ruby-${DISTNAME}p1
+PKGNAME=	ruby-${DISTNAME}p2
 CATEGORIES=     devel
 
 # MIT License

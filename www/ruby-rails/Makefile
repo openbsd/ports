@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/03 11:25:17 msf Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/03 11:28:49 msf Exp $
 
 COMMENT=	"ruby MVC web application framework"
 
 DISTNAME=	rails-1.1.6
-PKGNAME=	ruby-${DISTNAME}p0
+PKGNAME=	ruby-${DISTNAME}p1
 CATEGORIES=	www 
 
 # MIT License
