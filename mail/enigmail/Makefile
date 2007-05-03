@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/30 22:41:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/03 13:35:50 kurt Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,7 @@ COMMENT=	"GnuPG extension for Thunderbird"
 
 VER=		0.95.0
 DISTNAME=	enigmail-${VER}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail security
 
 SHARED_LIBS=	enigmime	13.0
@@ -66,5 +67,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${GLOBALDIR}
 	unzip -q ${MOZBIN}/${ENIGMAIL_XPI} -d ${GLOBALDIR}
+	mv ${GLOBALDIR}/platform/OpenBSD_*/components/libenigmime.so.* \
+		${GLOBALDIR}/components/
 
 .include <bsd.port.mk>
