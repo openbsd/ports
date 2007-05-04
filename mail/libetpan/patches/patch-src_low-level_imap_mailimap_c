@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_low-level_imap_mailimap_c,v 1.1 2007/05/04 23:33:05 deanna Exp $
+--- src/low-level/imap/mailimap.c.orig	Tue Apr 17 00:23:20 2007
++++ src/low-level/imap/mailimap.c	Tue Apr 17 00:25:52 2007
+@@ -2458,18 +2458,22 @@ static int parse_greeting(mailimap * session,
+   greeting_store(session, greeting);
+ 
+   if (greeting->gr_type == MAILIMAP_GREETING_RESP_COND_BYE) {
+-    if (mmap_string_assign(session->imap_response_buffer,
+-            greeting->gr_data.gr_bye->rsp_text->rsp_text) == NULL)
+-      return MAILIMAP_ERROR_MEMORY;
++    if (greeting->gr_data.gr_bye->rsp_text->rsp_text != NULL) {
++      if (mmap_string_assign(session->imap_response_buffer,
++              greeting->gr_data.gr_bye->rsp_text->rsp_text) == NULL)
++        return MAILIMAP_ERROR_MEMORY;
++    }
+ 
+     session->imap_response = session->imap_response_buffer->str;
+     
+     return MAILIMAP_ERROR_DONT_ACCEPT_CONNECTION;
+   }
+ 
+-  if (mmap_string_assign(session->imap_response_buffer,
+-          greeting->gr_data.gr_auth->rsp_text->rsp_text) == NULL)
+-    return MAILIMAP_ERROR_MEMORY;
++  if (greeting->gr_data.gr_auth->rsp_text->rsp_text != NULL) {
++    if (mmap_string_assign(session->imap_response_buffer,
++            greeting->gr_data.gr_auth->rsp_text->rsp_text) == NULL)
++      return MAILIMAP_ERROR_MEMORY;
++  }
+ 
+   session->imap_response = session->imap_response_buffer->str;
+ 
