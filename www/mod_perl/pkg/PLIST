@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/11/26 10:18:06 alek Exp $
+@comment $OpenBSD: PLIST,v 1.18 2007/05/04 08:43:05 bernd Exp $
 lib/mod_perl.so
 ${P5ARCH}/
 ${P5ARCH}/Apache/
@@ -37,6 +37,7 @@ ${P5ARCH}/Apache/Symdump.pm
 ${P5ARCH}/Apache/Table.pm
 ${P5ARCH}/Apache/URI.pm
 ${P5ARCH}/Apache/Util.pm
+${P5ARCH}/Apache/fork.pm
 ${P5ARCH}/Apache/httpd_conf.pm
 ${P5ARCH}/Apache/src.pm
 ${P5ARCH}/Apache/testold.pm
@@ -97,6 +98,7 @@ ${P5ARCH}/mod_perl_tuning.pod
 @man man/man3p/Apache::Table.3p
 @man man/man3p/Apache::URI.3p
 @man man/man3p/Apache::Util.3p
+@man man/man3p/Apache::fork.3p
 @man man/man3p/Apache::httpd_conf.3p
 @man man/man3p/Apache::src.3p
 @man man/man3p/Apache::testold.3p
