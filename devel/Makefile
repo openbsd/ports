@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.502 2007/05/03 13:24:52 alek Exp $
+# $OpenBSD: Makefile,v 1.503 2007/05/04 17:58:55 alek Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -510,6 +510,8 @@
      SUBDIR += py-ctypes
      SUBDIR += py-dateutil
      SUBDIR += py-fpconst
+     SUBDIR += py-logilab-astng
+     SUBDIR += py-logilab-common
      SUBDIR += py-mxDateTime
      SUBDIR += py-openbsd
      SUBDIR += py-optik
@@ -529,6 +531,7 @@
      SUBDIR += py-urwid
      SUBDIR += py-zopeinterface
      SUBDIR += pygame
+     SUBDIR += pylint
      SUBDIR += pyrex
      SUBDIR += pyusb
      SUBDIR += qt4-eventsview
