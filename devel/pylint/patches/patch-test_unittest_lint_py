@@ -1,0 +1,25 @@
+$OpenBSD: patch-test_unittest_lint_py,v 1.1.1.1 2007/05/04 17:43:27 alek Exp $
+--- test/unittest_lint.py.orig	Fri Aug 25 16:43:27 2006
++++ test/unittest_lint.py	Mon Apr  9 14:04:05 2007
+@@ -82,7 +82,7 @@ class RunTC(TestCase):
+         self._test_run([], 1)
+         
+     def test_no_ext_file(self):
+-        self._test_run([join(INPUTDIR, 'noext')], no_exit_fail=False)
++        self._test_run(['--persistent=n', join(INPUTDIR, 'noext')], no_exit_fail=False)
+ 
+         
+ class PyLinterTC(TestCase):
+@@ -232,6 +232,12 @@ class ConfigTC(TestCase):
+         os.environ.pop('PYLINTRC', None)
+ 
+     def test_pylint_home(self):
++        if os.environ.has_key('PYLINTHOME'):
++            pylintd = os.environ['PYLINTHOME']
++            reload(config)
++            self.assertEquals(config.PYLINT_HOME, pylintd)
++            return
++
+         uhome = os.path.expanduser('~')
+         if uhome == '~':
+             expected = '.pylint.d'

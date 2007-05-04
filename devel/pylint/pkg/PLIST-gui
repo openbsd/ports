@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gui,v 1.1.1.1 2007/05/04 17:43:27 alek Exp $
+bin/pylint-gui

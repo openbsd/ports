@@ -1,0 +1,32 @@
+$OpenBSD: patch-test_smoketest_py,v 1.1.1.1 2007/05/04 17:43:27 alek Exp $
+--- test/smoketest.py.orig	Mon Apr  9 13:35:10 2007
++++ test/smoketest.py	Mon Apr  9 13:35:58 2007
+@@ -25,23 +25,23 @@ class LintSmokeTest(TestCase):
+         
+     def test1(self):
+         """make pylint checking itself"""
+-        Run(['--include-ids=y', 'pylint'], reporter=TextReporter(StringIO()), quiet=1)
++        Run(['--persistent=n', '--include-ids=y', 'pylint'], reporter=TextReporter(StringIO()), quiet=1)
+     
+     def test2(self):
+         """make pylint checking itself"""
+-        Run(['pylint.lint'], reporter=ParseableTextReporter(StringIO()), quiet=1)
++        Run(['--persistent=n', 'pylint.lint'], reporter=ParseableTextReporter(StringIO()), quiet=1)
+     
+     def test3(self):
+         """make pylint checking itself"""
+-        Run(['pylint.checkers'], reporter=HTMLReporter(StringIO()), quiet=1)
++        Run(['--persistent=n', 'pylint.checkers'], reporter=HTMLReporter(StringIO()), quiet=1)
+     
+     def test4(self):
+         """make pylint checking itself"""
+-        Run(['pylint.checkers'], reporter=ColorizedTextReporter(StringIO()), quiet=1)
++        Run(['--persistent=n', 'pylint.checkers'], reporter=ColorizedTextReporter(StringIO()), quiet=1)
+     
+     def test5(self):
+         """make pylint checking itself"""
+-        Run(['pylint.checkers'], reporter=VSTextReporter(StringIO()), quiet=1)
++        Run(['--persistent=n', 'pylint.checkers'], reporter=VSTextReporter(StringIO()), quiet=1)
+     
+     def test_generate_config_option(self):
+         """make pylint checking itself"""

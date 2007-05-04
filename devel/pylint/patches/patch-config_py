@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_py,v 1.1.1.1 2007/05/04 17:43:27 alek Exp $
+--- config.py.orig	Thu Feb 22 11:30:06 2007
++++ config.py	Mon Apr  9 13:34:51 2007
+@@ -25,10 +25,11 @@ from os.path import exists, isfile, join, expanduser, 
+ 
+ # pylint home is used to save old runs results ################################
+ 
++USER_HOME = expanduser('~')
++
+ if os.environ.has_key('PYLINTHOME'):
+     PYLINT_HOME = os.environ['PYLINTHOME']
+ else:
+-    USER_HOME = expanduser('~')
+     if USER_HOME == '~':
+         PYLINT_HOME = ".pylint.d"
+     else:

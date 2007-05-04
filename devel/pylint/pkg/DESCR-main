@@ -1,0 +1,7 @@
+Pylint is a lint-like tool for Python code. It performs almost all the
+verifications that pychecker does, and additionally can perform some
+stylistic verification and coding standard enforcements. The checked
+code is assigned a mark based on the number and the severity of the
+encountered problems. The previous mark of a given piece of code is
+cached so that you can see if the code quality has improved since the
+last check.
