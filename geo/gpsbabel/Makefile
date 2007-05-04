@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/15 17:39:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/04 09:56:34 bernd Exp $
 
 COMMENT-main=		"GPS waypoint, track, and route conversion tool"
 COMMENT-gui=		"Tk front-end to gpsbabel"
 
 VERSION=		1.3.2
 DISTNAME=		gpsbabel-${VERSION}
-PKGNAME-main=		gpsbabel-${VERSION}p1
-PKGNAME-gui=		gpsbabel-gui-${VERSION}p0
+PKGNAME-main=		gpsbabel-${VERSION}p2
+PKGNAME-gui=		gpsbabel-gui-${VERSION}p1
 CATEGORIES=		geo
 
 HOMEPAGE=		http://www.gpsbabel.org/
@@ -26,8 +26,8 @@ CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-zlib=system \
 			--with-shapefile=system \
 			--with-doc=./babelweb
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			WEB=${WRKSRC} 
 
 USE_GMAKE=		Yes
@@ -37,11 +37,10 @@ MULTI_PACKAGES=		-main -gui
 BUILD_DEPENDS=		::textproc/libxslt \
 			::textproc/docbook \
 			::textproc/docbook-xsl
-LIB_DEPENDS-main=	expat.>=4::textproc/expat \
-			usb.>=1::devel/libusb \
+LIB_DEPENDS-main=	usb.>=1::devel/libusb \
 			shp.>=1::devel/shapelib
 
-WANTLIB-main=		m c z
+WANTLIB-main=		expat m c z
 
 LIB_DEPENDS-gui=
 PKG_ARCH-gui=	*

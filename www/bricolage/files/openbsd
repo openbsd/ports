@@ -1,4 +1,4 @@
-# $OpenBSD: openbsd,v 1.1.1.1 2006/11/10 17:04:54 sturm Exp $
+# $OpenBSD: openbsd,v 1.2 2007/05/04 09:57:52 bernd Exp $
 # Required programs.  PG_CONFIG_PATH is the location of PostgreSQL's pg_config 
 # script.  APACHE_PATH is the path to the Apache 1.3 executable.  APACHE_EXE is
 # the filename of the executable itself.  EXPAT_PATH is the path to the Expat 
@@ -8,7 +8,7 @@
 PG_CONFIG_PATH = /usr/local/bin
 APACHE_PATH = /usr/sbin
 APACHE_EXE  = httpd
-EXPAT_PATH  = /sw/lib
+EXPAT_PATH  = %%X11BASE%%/lib
 EXPAT_FILE  = libexpat.la, libexpat.a
 
 # Apache settings.  APACHE_USER and APACHE_GROUP are the user and group that

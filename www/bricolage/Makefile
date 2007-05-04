@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/04 09:57:52 bernd Exp $
 
 COMMENT=	"content management system"
 
 DISTNAME=	bricolage-1.10.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://www.bricolage.cc/
@@ -53,8 +54,8 @@ ALL_TARGET=	build
 PKG_ARCH=	*
 
 do-configure:
-	@sed -e "s,%%PREFIX%%,${PREFIX}," ${FILESDIR}/openbsd > \
-		${WRKSRC}/inst/defaults/standard
+	@sed -e "s,%%PREFIX%%,${PREFIX}," -e "s,%%X11BASE%%,${X11BASE}," \
+		${FILESDIR}/openbsd > ${WRKSRC}/inst/defaults/standard
 	@perl -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/inst/config.pl \
 		${WRKSRC}/INSTALL ${WRKSRC}/bin/bric_*
 	@cd ${WRKSRC} && make all

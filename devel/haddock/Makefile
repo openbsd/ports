@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/20 13:07:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/04 09:56:02 bernd Exp $
 
 COMMENT=	"documentation tool for the functional language Haskell"
 
 V=		0.6
 DISTNAME=	haddock-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/haddock/
@@ -20,8 +21,7 @@ DISTFILES=	${DISTNAME}-src.tar.gz \
 BUILD_DEPENDS+=	::textproc/docbook	::textproc/docbook-dsssl \
 		::textproc/sgmlformat	::textproc/openjade      \
 		::textproc/iso8879	::textproc/linuxdoc      \
-		::textproc/html		::print/jadetex          \
-		::textproc/expat 
+		::textproc/html		::print/jadetex
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest

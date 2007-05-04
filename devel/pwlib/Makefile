@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/27 13:38:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/04 09:57:05 bernd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"portable Windows library"
 
 DISTNAME=	pwlib-v1_10_3
-PKGNAME=	pwlib-1.10.3p0
+PKGNAME=	pwlib-1.10.3p1
 CATEGORIES=	devel
 
 EXTRACT_SUFX=	-src-tar.gz
@@ -37,8 +37,8 @@ MAKE_ENV+=	STDCCFLAGS="${STDCCFLAGS} -I${LOCALBASE}/include" \
 		CC=${CC} CPLUS=${CXX}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-plugins \
 		--enable-oss \
 		--enable-bsdvideo \
