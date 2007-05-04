@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_inc_c,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
---- src/inc.c.orig	Mon Mar  5 23:44:46 2007
-+++ src/inc.c	Thu Mar 22 16:22:10 2007
+$OpenBSD: patch-src_inc_c,v 1.2 2007/05/04 12:13:14 steven Exp $
+--- src/inc.c.orig	Tue Apr  3 12:52:24 2007
++++ src/inc.c	Thu Apr 19 19:48:15 2007
 @@ -69,7 +69,7 @@ static GdkPixbuf *currentpix;
  static GdkPixbuf *errorpix;
  static GdkPixbuf *okpix;
@@ -9,8 +9,8 @@ $OpenBSD: patch-src_inc_c,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
 +#define MESSAGEBUFSIZE	8192
  
  static void inc_finished		(MainWindow		*mainwin,
- 					 gboolean		 new_messages);
-@@ -921,7 +921,7 @@ static void inc_progress_dialog_set_label(IncProgressD
+ 					 gboolean		 new_messages,
+@@ -924,7 +924,7 @@ static void inc_progress_dialog_set_label(IncProgressD
  static void inc_progress_dialog_set_progress(IncProgressDialog *inc_dialog,
  					     IncSession *inc_session)
  {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
---- configure.orig	Mon Mar  5 23:56:48 2007
-+++ configure	Thu Mar 22 01:31:28 2007
-@@ -27911,7 +27911,7 @@ echo $ECHO_N "checking for GNU/aspell - version >= $mi
+$OpenBSD: patch-configure,v 1.2 2007/05/04 12:13:14 steven Exp $
+--- configure.orig	Thu Apr 19 03:11:30 2007
++++ configure	Thu Apr 19 19:48:15 2007
+@@ -27930,7 +27930,7 @@ echo $ECHO_N "checking for GNU/aspell - version >= $mi
          use_aspell=no ac_cv_enable_aspell=no
       else
          ASPELL_CFLAGS="-I$aspell_includes"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
          aspell_version=`$ASPELL version|sed -e "s/\(@(#) International Ispell Version 3.1.20 (but really Aspell \)\(.*\))/\2/"`
          rm -f conf.aspelltest
          if test "$cross_compiling" = yes; then
-@@ -29538,7 +29538,7 @@ if test "${ac_cv_lib_pisock_unpack_Address+set}" = set
+@@ -29651,7 +29651,7 @@ if test "${ac_cv_lib_pisock_unpack_Address+set}" = set
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -29594,7 +29594,7 @@ fi
+@@ -29707,7 +29707,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_pisock_unpack_Address" >&5
  echo "${ECHO_T}$ac_cv_lib_pisock_unpack_Address" >&6; }
  if test $ac_cv_lib_pisock_unpack_Address = yes; then

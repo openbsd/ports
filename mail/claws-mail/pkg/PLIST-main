@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/04/20 05:42:51 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2007/05/04 12:13:14 steven Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 bin/claws-mail
@@ -175,6 +175,7 @@ include/claws-mail/prefs_folder_item.h
 include/claws-mail/prefs_fonts.h
 include/claws-mail/prefs_gtk.h
 include/claws-mail/prefs_image_viewer.h
+include/claws-mail/prefs_logging.h
 include/claws-mail/prefs_matcher.h
 include/claws-mail/prefs_message.h
 include/claws-mail/prefs_msg_colors.h

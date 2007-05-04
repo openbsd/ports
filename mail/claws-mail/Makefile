@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/20 05:42:51 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/04 12:13:14 steven Exp $
 
 COMMENT-main=		"mail and news client"
 COMMENT-docs=		"documentation"
@@ -7,14 +7,14 @@ COMMENT-clamav=		"clamav plugin"
 COMMENT-dillo=		"dillo plugin"
 COMMENT-spamassassin=	"spamassassin plugin"
 
-V=			2.8.1
+V=			2.9.1
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}p1
-FULLPKGNAME-docs=		claws-mail-docs-${V}p1
-FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p1
-FULLPKGNAME-clamav=		claws-mail-clamav-${V}p1
-FULLPKGNAME-dillo=		claws-mail-dillo-${V}p1
-FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}p1
+PKGNAME-main=			${DISTNAME}
+FULLPKGNAME-docs=		claws-mail-docs-${V}
+FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
+FULLPKGNAME-clamav=		claws-mail-clamav-${V}
+FULLPKGNAME-dillo=		claws-mail-dillo-${V}
+FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 
 CATEGORIES=		mail news
 
