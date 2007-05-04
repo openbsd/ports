@@ -1,0 +1,14 @@
+$OpenBSD: patch-fileutils_py,v 1.1.1.1 2007/05/04 17:35:03 alek Exp $
+--- fileutils.py.orig	Tue Dec 12 11:59:27 2006
++++ fileutils.py	Thu Feb 22 15:06:06 2007
+@@ -64,10 +64,6 @@ def first_level_directory(path):
+ def abspath_listdir(path):
+     """lists path's content using absolute paths
+ 
+-    >>> os.listdir('/home')
+-    ['adim', 'alf', 'arthur', 'auc']    
+-    >>> abspath_listdir('/home')
+-    ['/home/adim', '/home/alf', '/home/arthur', '/home/auc']
+     """
+     path = abspath(path)
+     return [join(path, filename) for filename in listdir(path)]

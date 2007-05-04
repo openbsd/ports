@@ -1,0 +1,21 @@
+$OpenBSD: patch-test_unittest_db_py,v 1.1.1.1 2007/05/04 17:35:03 alek Exp $
+--- test/unittest_db.py.orig	Wed Apr 11 22:55:12 2007
++++ test/unittest_db.py	Wed Apr 11 23:00:00 2007
+@@ -54,6 +54,8 @@ class getCnxTC(TestCase):
+         self.passwd = 'adim'
+         
+     def testPsyco(self):
++        self.skip("let's skip psycopg test as it requires working pgsql database")
++        return
+         set_prefered_driver('postgres', 'psycopg')
+         try:
+             cnx = get_connection('postgres',
+@@ -81,6 +83,8 @@ class getCnxTC(TestCase):
+             self.skip('python-pygresql is not installed')
+ 
+     def testMysql(self):
++        self.skip("let's skip mysql test as it requires working mysql database")
++        return
+         set_prefered_driver('mysql', 'MySQLdb')
+         try:
+             cnx = get_connection('mysql', self.host, database='', user='root',
