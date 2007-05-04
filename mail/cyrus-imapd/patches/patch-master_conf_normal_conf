@@ -1,0 +1,25 @@
+$OpenBSD: patch-master_conf_normal_conf,v 1.1 2007/05/04 08:05:00 ajacoutot Exp $
+--- master/conf/normal.conf.orig	Fri May  4 09:47:10 2007
++++ master/conf/normal.conf	Fri May  4 09:50:57 2007
+@@ -5,17 +5,17 @@ START {
+   recover	cmd="ctl_cyrusdb -r"
+ 
+   # this is only necessary if using idled for IMAP IDLE
+-#  idled		cmd="idled"
++  idled		cmd="idled"
+ }
+ 
+ # UNIX sockets start with a slash and are put into /var/imap/socket
+ SERVICES {
+   # add or remove based on preferences
+   imap		cmd="imapd" listen="imap" prefork=0
+-  imaps		cmd="imapd -s" listen="imaps" prefork=0
++#  imaps		cmd="imapd -s" listen="imaps" prefork=0
+   pop3		cmd="pop3d" listen="pop3" prefork=0
+-  pop3s		cmd="pop3d -s" listen="pop3s" prefork=0
+-  sieve		cmd="timsieved" listen="sieve" prefork=0
++#  pop3s		cmd="pop3d -s" listen="pop3s" prefork=0
++#  sieve		cmd="timsieved" listen="sieve" prefork=0
+ 
+   # these are only necessary if receiving/exporting usenet via NNTP
+ #  nntp		cmd="nntpd" listen="nntp" prefork=0
