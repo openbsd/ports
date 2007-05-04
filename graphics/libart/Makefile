@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2007/04/25 14:17:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/04 17:42:09 jasper Exp $
 
 COMMENT=		"high-performance 2D graphics library"
 
 VERSION=		2.3.19
 DISTNAME=		libart_lgpl-${VERSION}
-PKGNAME=		libart-${VERSION}p0
+PKGNAME=		libart-${VERSION}p1
 SHARED_LIBS +=	art_lgpl_2           5.19     # .5.19
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.artofcode.com/libart.html
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # lgpl
 PERMIT_PACKAGE_CDROM=	Yes
