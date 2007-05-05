@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/01/14 20:49:06 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2007/05/05 09:59:01 jasper Exp $
 
 COMMENT=	"module for writing rpc servers and clients"
 
@@ -16,5 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:p5-Net-Daemon->=0.13:net/p5-Net-Daemon
 BUILD_DEPENDS=	${RUN_DEPENDS}
+
+CPAN_AUTHOR=	JWIED
 
 .include <bsd.port.mk>
