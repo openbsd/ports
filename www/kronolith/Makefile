@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/29 13:37:12 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.14 2007/05/05 13:59:52 mbalmer Exp $ 
 
 COMMENT=	"web based calendar application using the horde framework"
 
 HORDE_MODULE=	kronolith
 HORDE_NAME=	Kronolith
 
-DISTNAME=	${HORDE_MODULE}-h3-2.1.4
+DISTNAME=	${HORDE_MODULE}-h3-2.1.5
 CATEGORIES=	www mail
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
