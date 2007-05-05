@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/11/10 14:42:38 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/05/05 13:41:12 mbalmer Exp $
 horde/
 horde/COPYING
 horde/README
@@ -142,11 +142,11 @@ horde/lib/Horde/Auth/login.php
 horde/lib/Horde/Auth/mcal.php
 horde/lib/Horde/Auth/pam.php
 horde/lib/Horde/Auth/passwd.php
+horde/lib/Horde/Auth/peclsasl.php
 horde/lib/Horde/Auth/radius.php
-horde/lib/Horde/Auth/sasl.php
 horde/lib/Horde/Auth/smb.php
+horde/lib/Horde/Auth/smbclient.php
 horde/lib/Horde/Auth/sql.php
-horde/lib/Horde/Auth/yahoo.php
 horde/lib/Horde/Block/
 horde/lib/Horde/Block.php
 horde/lib/Horde/Block/Collection.php
@@ -358,7 +358,6 @@ horde/lib/Horde/RPC/xmlrpc.php
 horde/lib/Horde/Registry.php
 horde/lib/Horde/SQL/
 horde/lib/Horde/SQL.php
-horde/lib/Horde/SQL/Attributes.php
 horde/lib/Horde/SQL/Keywords.php
 horde/lib/Horde/Scheduler/
 horde/lib/Horde/Scheduler.php
@@ -438,6 +437,7 @@ horde/lib/Horde/iCalendar/vjournal.php
 horde/lib/Horde/iCalendar/vnote.php
 horde/lib/Horde/iCalendar/vtimezone.php
 horde/lib/Horde/iCalendar/vtodo.php
+horde/lib/Horde/scripts/
 horde/lib/Horde/tests/
 horde/lib/Net/
 horde/lib/Net/IMSP/
@@ -562,6 +562,7 @@ horde/locale/bs_BA/LC_MESSAGES/horde.mo
 horde/locale/ca_ES/
 horde/locale/ca_ES/LC_MESSAGES/
 horde/locale/ca_ES/LC_MESSAGES/horde.mo
+horde/locale/ca_ES/help.xml
 horde/locale/cs_CZ/
 horde/locale/cs_CZ/LC_MESSAGES/
 horde/locale/cs_CZ/LC_MESSAGES/horde.mo
@@ -753,15 +754,12 @@ horde/scripts/SCRIPTS
 horde/scripts/cookie_login.php
 horde/scripts/count_sessions.php
 horde/scripts/create-symlinks.php
-horde/scripts/crond
 horde/scripts/get_login.php
 horde/scripts/http_login_refer.php
 horde/scripts/ldap/
 horde/scripts/ldap/horde.schema
-horde/scripts/migrate_user_categories.php
 horde/scripts/remove_prefs.php
 horde/scripts/set_perms.sh
-horde/scripts/setup.php
 horde/scripts/sql/
 horde/scripts/sql/README
 horde/scripts/sql/README.OCI8
@@ -797,7 +795,6 @@ horde/scripts/sql/horde_vfs.pgsql.sql
 horde/scripts/sql/horde_vfs.sql
 horde/scripts/sql/script.initial_horde_user.sql
 horde/scripts/temp-cleanup.cron
-horde/scripts/themes_check.php
 horde/scripts/upgrades/
 horde/scripts/upgrades/2.2_to_3.0.mysql.sql
 horde/scripts/upgrades/2.2_to_3.0.oci8.sql
@@ -807,6 +804,7 @@ horde/scripts/upgrades/2006-06-29_horde_prefs_indexes.sql
 horde/scripts/upgrades/3.0_to_3.1.mysql.sql
 horde/scripts/upgrades/3.0_to_3.1.oci8.sql
 horde/scripts/upgrades/3.0_to_3.1.sql
+horde/scripts/upgrades/migrate_user_categories.php
 horde/scripts/upgrades/move_history_out_of_datatree.php
 horde/services/
 horde/services/cacheview.php
@@ -929,8 +927,9 @@ horde/services/portal/index.php
 horde/services/portal/mobile.php
 horde/services/portal/rpcsum.php
 horde/services/portal/sidebar.php
-horde/services/portal/syncml.php
+horde/services/prefs/
 horde/services/prefs.php
+horde/services/prefs/index.php
 horde/services/problem.php
 horde/services/resetpassword.php
 horde/services/shares/
