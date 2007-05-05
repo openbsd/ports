@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/11/04 08:11:18 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/05/05 14:03:43 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
@@ -30,6 +30,7 @@ horde/${HORDE_MODULE}/ics.php
 horde/${HORDE_MODULE}/index.php
 horde/${HORDE_MODULE}/js/
 horde/${HORDE_MODULE}/js/fixUnstyledOptions.js
+horde/${HORDE_MODULE}/js/prototype.js
 horde/${HORDE_MODULE}/js/tables.js
 horde/${HORDE_MODULE}/lib/
 horde/${HORDE_MODULE}/lib/.htaccess
@@ -56,6 +57,10 @@ horde/${HORDE_MODULE}/locale/ar_SY/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/bg_BG/
 horde/${HORDE_MODULE}/locale/bg_BG/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/bg_BG/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ca_ES/
+horde/${HORDE_MODULE}/locale/ca_ES/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/ca_ES/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ca_ES/help.xml
 horde/${HORDE_MODULE}/locale/cs_CZ/
 horde/${HORDE_MODULE}/locale/cs_CZ/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/cs_CZ/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -152,6 +157,7 @@ horde/${HORDE_MODULE}/po/
 horde/${HORDE_MODULE}/po/README
 horde/${HORDE_MODULE}/po/ar_SY.po
 horde/${HORDE_MODULE}/po/bg_BG.po
+horde/${HORDE_MODULE}/po/ca_ES.po
 horde/${HORDE_MODULE}/po/cs_CZ.po
 horde/${HORDE_MODULE}/po/da_DK.po
 horde/${HORDE_MODULE}/po/de_DE.po
@@ -180,6 +186,7 @@ horde/${HORDE_MODULE}/po/sl_SI.po
 horde/${HORDE_MODULE}/po/sv_SE.po
 horde/${HORDE_MODULE}/po/zh_CN.po
 horde/${HORDE_MODULE}/po/zh_TW.po
+horde/${HORDE_MODULE}/pref_api.php
 horde/${HORDE_MODULE}/scripts/
 horde/${HORDE_MODULE}/scripts/.htaccess
 horde/${HORDE_MODULE}/scripts/import_vtodos.php
