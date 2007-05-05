@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/11/05 15:53:25 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/05/05 13:57:12 mbalmer Exp $
 horde/turba/
 horde/turba/LICENSE
 horde/turba/README
@@ -74,6 +74,8 @@ horde/turba/lib/Turba.php
 horde/turba/lib/api.php
 horde/turba/lib/base.php
 horde/turba/lib/prefs.php
+horde/turba/lib/tests/
+horde/turba/lib/tests/tovcard.phpt
 horde/turba/lib/version.php
 horde/turba/locale/
 horde/turba/locale/.htaccess
@@ -86,6 +88,7 @@ horde/turba/locale/bg_BG/LC_MESSAGES/turba.mo
 horde/turba/locale/ca_ES/
 horde/turba/locale/ca_ES/LC_MESSAGES/
 horde/turba/locale/ca_ES/LC_MESSAGES/turba.mo
+horde/turba/locale/ca_ES/help.xml
 horde/turba/locale/cs_CZ/
 horde/turba/locale/cs_CZ/LC_MESSAGES/
 horde/turba/locale/cs_CZ/LC_MESSAGES/turba.mo
@@ -119,6 +122,7 @@ horde/turba/locale/fi_FI/help.xml
 horde/turba/locale/fr_FR/
 horde/turba/locale/fr_FR/LC_MESSAGES/
 horde/turba/locale/fr_FR/LC_MESSAGES/turba.mo
+horde/turba/locale/fr_FR/help.xml
 horde/turba/locale/gl_ES/
 horde/turba/locale/gl_ES/LC_MESSAGES/
 horde/turba/locale/gl_ES/LC_MESSAGES/turba.mo
