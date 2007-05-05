@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.455 2007/04/27 21:13:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.456 2007/05/05 16:05:22 claudio Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -308,6 +308,7 @@
      SUBDIR += samba,cups,ldap
      SUBDIR += samba,ldap
      SUBDIR += scapy
+     SUBDIR += scapy6
      SUBDIR += scli
      SUBDIR += ser
      SUBDIR += sharity-light
