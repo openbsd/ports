@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/05 16:03:05 claudio Exp $
+bin/scapy6
+lib/python${MODPY_VERSION}/site-packages/scapy6.py
