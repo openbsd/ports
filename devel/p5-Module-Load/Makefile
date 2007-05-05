@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/05 09:19:26 jasper Exp $
 
 COMMENT=	"runtime require of both modules and files"
 
 MODULES=	cpan
 DISTNAME=	Module-Load-0.10
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
 # perl
 PERMIT_PACKAGE_FTP=	Yes
