@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/01 10:49:00 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.3 2007/05/05 14:02:13 mbalmer Exp $ 
 
 COMMENT=	"mail filter rules for imp"
 
 HORDE_MODULE=	ingo
 HORDE_NAME=	Ingo
 
-DISTNAME=	${HORDE_MODULE}-h3-1.1.2
+DISTNAME=	${HORDE_MODULE}-h3-1.1.3
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/01 10:49:00 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/05/05 14:02:13 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/LICENSE
 horde/${HORDE_MODULE}/README
@@ -60,6 +60,7 @@ horde/${HORDE_MODULE}/locale/
 horde/${HORDE_MODULE}/locale/ca_ES/
 horde/${HORDE_MODULE}/locale/ca_ES/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/ca_ES/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ca_ES/help.xml
 horde/${HORDE_MODULE}/locale/cs_CZ/
 horde/${HORDE_MODULE}/locale/cs_CZ/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/cs_CZ/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -89,6 +90,7 @@ horde/${HORDE_MODULE}/locale/fi_FI/help.xml
 horde/${HORDE_MODULE}/locale/fr_FR/
 horde/${HORDE_MODULE}/locale/fr_FR/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/fr_FR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/fr_FR/help.xml
 horde/${HORDE_MODULE}/locale/hu_HU/
 horde/${HORDE_MODULE}/locale/hu_HU/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/hu_HU/LC_MESSAGES/${HORDE_MODULE}.mo
