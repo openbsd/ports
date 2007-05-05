@@ -1,0 +1,38 @@
+$OpenBSD: patch-scapy_py,v 1.1 2007/05/05 14:23:18 claudio Exp $
+--- scapy.py.orig	Mon Apr  9 15:17:35 2007
++++ scapy.py	Sat May  5 15:59:19 2007
+@@ -1152,7 +1152,7 @@ if not LINUX:
+                 dest,mask,gw,netif,mxfrg,rtt,ref,flg = l.split()[:8]
+             else:
+                 if mtu_present:
+-                    dest,gw,flg,ref,use,mtu,netif = l.split()[:7]
++                    dest,gw,flg,ref,use,mtu,netif = l.split(None, 6)[:7]
+                 else:
+                     dest,gw,flg,ref,use,netif = l.split()[:6]
+             if flg.find("Lc") >= 0:
+@@ -1172,6 +1172,8 @@ if not LINUX:
+                 dest, = struct.unpack("I",inet_aton(dest))
+             if not "G" in flg:
+                 gw = '0.0.0.0'
++            if 'L' in netif:
++		_,netif = netif.split()
+             ifaddr = get_if_addr(netif)
+             routes.append((dest,netmask,gw,netif,ifaddr))
+         f.close()
+@@ -9847,7 +9849,8 @@ class PcapWriter:
+         """
+         
+         if self.header_done == 0:
+-            if self.linktype == None:
++            linktype = self.linktype
++            if linktype == None:
+                 if isinstance(pkt,Packet):
+                     linktype = LLNumTypes.get(pkt.__class__,1)
+                 else:
+@@ -12190,4 +12193,5 @@ def read_config_file(configfile):
+ if __name__ == "__main__":
+     interact()
+ else:
+-    read_config_file(DEFAULT_CONFIG_FILE)
++    if DEFAULT_CONFIG_FILE:
++        read_config_file(DEFAULT_CONFIG_FILE)

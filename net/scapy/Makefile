@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/03 09:43:03 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/05 14:23:18 claudio Exp $
 
 COMMENT=	"powerful interactive packet manipulation in python"
 
-DISTNAME=	scapy-1.0.4
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	scapy-1.1.1
 CATEGORIES=	net
 
 HOMEPAGE=	http://secdev.org/projects/scapy/
@@ -30,7 +29,6 @@ PKG_ARCH=	*
 NO_REGRESS=	Yes
 
 do-build:
-	gunzip < ${WRKSRC}/scapy.1.gz > ${WRKBUILD}/scapy.1
 	perl -p -i -e "s,^(\#\S+ \S+ )python\$$,#!${MODPY_BIN}," \
 		${WRKSRC}/*.py
 	perl -p -i -e "s,/etc/ethertypes,${SYSCONFDIR}/ethertypes,g" \
