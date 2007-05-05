@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/27 21:23:30 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/05 17:44:51 simon Exp $
 
 COMMENT= 	"Catalyst FormBuilder Base Controller"
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Controller-FormBuilder-0.03
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

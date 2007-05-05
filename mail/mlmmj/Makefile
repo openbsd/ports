@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/27 12:56:07 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/05 17:44:51 simon Exp $
 
 COMMENT=	"mailing list manager"
 
 DISTNAME=	mlmmj-1.2.13
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	mail
 
 HOMEPAGE=	http://mlmmj.mmj.dk/
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

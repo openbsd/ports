@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/22 20:20:28 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/05 17:44:51 simon Exp $
 
 COMMENT=	"bomberman clone with multiplayer mode"
 
 DISTNAME=	bomberclone-0.11.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 HOMEPAGE=	http://www.bomberclone.de/
 

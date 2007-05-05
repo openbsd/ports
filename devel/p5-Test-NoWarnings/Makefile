@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/25 15:17:52 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:51 simon Exp $
 
 COMMENT=        "forbids warnings while testing"
 
 MODULES=	cpan
 DISTNAME=	Test-NoWarnings-0.083
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=     devel
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

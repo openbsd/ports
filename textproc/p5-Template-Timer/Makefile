@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/25 13:40:28 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:51 simon Exp $
 
 COMMENT= 	"rudimentary profiling module for Template Toolkit"
 
 DISTNAME=	Template-Timer-0.04
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	textproc
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

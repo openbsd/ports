@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/27 12:56:07 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:52 simon Exp $
 
 COMMENT= 	"catalyst file storage backend for session data"
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-Session-Store-File-0.10
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

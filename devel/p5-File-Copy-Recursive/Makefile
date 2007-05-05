@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/18 10:46:18 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/05 17:44:50 simon Exp $
 
 COMMENT=        "recursive copy of files and directories"
 
 MODULES=	cpan
 DISTNAME=	File-Copy-Recursive-0.31
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=     devel
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

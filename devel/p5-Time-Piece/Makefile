@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/07 11:10:42 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/05 17:44:51 simon Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	"object oriented time interface"
 
 MODULES=	cpan
 DISTNAME=	Time-Piece-1.11
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

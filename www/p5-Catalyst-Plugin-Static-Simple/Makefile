@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/27 12:56:07 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:52 simon Exp $
 
 COMMENT= 	"serving static pages with catalyst"
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-Static-Simple-0.15
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

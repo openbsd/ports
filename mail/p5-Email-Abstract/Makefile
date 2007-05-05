@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/25 13:40:28 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/05 17:44:51 simon Exp $
 
 COMMENT= 	"unified interface to mail representations"
 
 MODULES=	cpan
 DISTNAME=	Email-Abstract-2.131
-PKGNAME=	p5-${DISTNAME}p1
+PKGNAME=	p5-${DISTNAME}p2
 CATEGORIES=	mail
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/17 16:54:26 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/05 17:44:52 simon Exp $
 
 COMMENT= 	"MVC Web Application Framework"
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Runtime-5.7007
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=	Yes

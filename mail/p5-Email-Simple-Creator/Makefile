@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/25 13:40:28 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/05 17:44:51 simon Exp $
 
 COMMENT= 	"Email::Simple constructor for starting anew"
 
 MODULES=	cpan
 
 DISTNAME=	Email-Simple-Creator-1.41
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	mail
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=	Yes

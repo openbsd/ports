@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/25 13:40:28 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/05 17:44:51 simon Exp $
 
 COMMENT= 	"catalyst plugin to Config::Any"
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-ConfigLoader-0.13
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	www
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

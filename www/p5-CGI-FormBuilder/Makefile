@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/22 16:32:48 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/05 17:44:51 simon Exp $
 
 COMMENT=	"easily generate and process stateful forms"
 
 MODULES=	cpan
 DISTNAME=	CGI-FormBuilder-3.0501
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 HOMEPAGE=	http://www.formbuilder.org/
 

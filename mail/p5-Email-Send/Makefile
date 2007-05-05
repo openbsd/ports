@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/18 11:03:17 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:51 simon Exp $
 
 COMMENT= 	"simply sending Email"
 
 MODULES=	cpan
 
 DISTNAME=	Email-Send-2.185
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	mail
 
-MAINTAINER=	Simon Dassow <simon@openbsd.org>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
