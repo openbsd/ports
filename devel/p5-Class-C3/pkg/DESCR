@@ -1,3 +1,6 @@
 This is pragma to change Perl 5's standard method resolution order from
 depth-first left-to-right (a.k.a - pre-order) to the more sophisticated
 C3 method resolution order.
+
+For faster results, install p5-Class-C3-XS as well. Class::C3 will
+automatically use it.
