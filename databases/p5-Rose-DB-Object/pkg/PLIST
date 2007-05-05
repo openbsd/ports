@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 22:13:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/05 10:17:56 espie Exp $
 ${P5SITE}/Rose/DB/Object/
 ${P5SITE}/Rose/DB/Object.pm
 ${P5SITE}/Rose/DB/Object/Cached.pm
@@ -6,6 +6,7 @@ ${P5SITE}/Rose/DB/Object/Constants.pm
 ${P5SITE}/Rose/DB/Object/ConventionManager/
 ${P5SITE}/Rose/DB/Object/ConventionManager.pm
 ${P5SITE}/Rose/DB/Object/ConventionManager/Null.pm
+${P5SITE}/Rose/DB/Object/Exception.pm
 ${P5SITE}/Rose/DB/Object/Helpers.pm
 ${P5SITE}/Rose/DB/Object/Iterator.pm
 ${P5SITE}/Rose/DB/Object/Loader.pm
@@ -24,6 +25,7 @@ ${P5SITE}/Rose/DB/Object/Metadata/Auto.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Auto/Generic.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Auto/Informix.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Auto/MySQL.pm
+${P5SITE}/Rose/DB/Object/Metadata/Auto/Oracle.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Auto/Pg.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Auto/SQLite.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Column/
@@ -44,8 +46,10 @@ ${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction3.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction4.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction5.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToMinute.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToMonth.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Column/DatetimeYearToSecond.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Column/Decimal.pm
+${P5SITE}/Rose/DB/Object/Metadata/Column/DoublePrecision.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Column/Enum.pm
 ${P5SITE}/Rose/DB/Object/Metadata/Column/Epoch/
 ${P5SITE}/Rose/DB/Object/Metadata/Column/Epoch.pm
@@ -117,8 +121,10 @@ ${P5SITE}/Rose/DB/Object/Util.pm
 @man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction4.3p
 @man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToFraction5.3p
 @man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToMinute.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToMonth.3p
 @man man/man3p/Rose::DB::Object::Metadata::Column::DatetimeYearToSecond.3p
 @man man/man3p/Rose::DB::Object::Metadata::Column::Decimal.3p
+@man man/man3p/Rose::DB::Object::Metadata::Column::DoublePrecision.3p
 @man man/man3p/Rose::DB::Object::Metadata::Column::Enum.3p
 @man man/man3p/Rose::DB::Object::Metadata::Column::Epoch.3p
 @man man/man3p/Rose::DB::Object::Metadata::Column::Epoch::HiRes.3p

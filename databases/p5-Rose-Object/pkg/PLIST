@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 18:01:33 espie Exp $
-${P5SITE}/Rose/
+@comment $OpenBSD: PLIST,v 1.2 2007/05/05 10:17:56 espie Exp $
 ${P5SITE}/Rose/Class/
 ${P5SITE}/Rose/Class.pm
 ${P5SITE}/Rose/Class/MakeMethods/
@@ -11,6 +10,7 @@ ${P5SITE}/Rose/Object/MakeMethods/
 ${P5SITE}/Rose/Object/MakeMethods.pm
 ${P5SITE}/Rose/Object/MakeMethods/DateTime.pm
 ${P5SITE}/Rose/Object/MakeMethods/Generic.pm
+${P5SITE}/Rose/Object/MixIn.pm
 @man man/man3p/Rose::Class.3p
 @man man/man3p/Rose::Class::MakeMethods::Generic.3p
 @man man/man3p/Rose::Class::MakeMethods::Set.3p
@@ -18,3 +18,4 @@ ${P5SITE}/Rose/Object/MakeMethods/Generic.pm
 @man man/man3p/Rose::Object::MakeMethods.3p
 @man man/man3p/Rose::Object::MakeMethods::DateTime.3p
 @man man/man3p/Rose::Object::MakeMethods::Generic.3p
+@man man/man3p/Rose::Object::MixIn.3p

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 21:35:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/05 10:17:56 espie Exp $
 ${P5SITE}/Rose/DB/
 ${P5SITE}/Rose/DB.pm
 ${P5SITE}/Rose/DB/Constants.pm
@@ -10,6 +10,7 @@ ${P5SITE}/Rose/DB/Pg.pm
 ${P5SITE}/Rose/DB/Registry/
 ${P5SITE}/Rose/DB/Registry.pm
 ${P5SITE}/Rose/DB/Registry/Entry.pm
+@comment ${P5SITE}/Rose/DB/Registry/Entry.pm.orig
 ${P5SITE}/Rose/DB/SQLite.pm
 ${P5SITE}/Rose/DB/Tutorial.pod
 @man man/man3p/Rose::DB.3p

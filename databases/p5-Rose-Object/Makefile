@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/10 18:01:33 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/05 10:17:56 espie Exp $
 
 COMMENT=	"object oriented DBMS for perl"
 
 MODULES=	cpan
 
-DISTNAME=	Rose-Object-0.821
+DISTNAME=	Rose-Object-0.83
 CATEGORIES=	databases devel
 
 # perl
