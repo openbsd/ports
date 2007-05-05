@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/12 20:52:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/05 08:30:41 jasper Exp $
 
-COMMENT=		"GTK+ music manager for various Creative and Dell audio players"
+COMMENT=		"GTK+ tool for managing Creative and Dell audio players"
 
-DISTNAME=		gnomad2-2.8.11
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		gnomad2-2.8.12
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -14,10 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xau Xdmcp Xrender c expat fontconfig freetype m \
-			pthread z \
-			gmodule-2.0 atk-1.0 gobject-2.0 glitz png \
-		        pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender atk-1.0 c cairo expat fontconfig freetype glitz \
+		m png pthread z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gnomad2/}
 
@@ -29,14 +27,14 @@ CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 
 LIB_DEPENDS=		id3tag.>=3::audio/libid3tag \
 			njb::audio/libnjb \
-	                glib-2.0.>=400.2,gthread-2.0.>=400.2::devel/glib2 \
+	                glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 			mtp::devel/libmtp \
 			usb.>=8::devel/libusb \
+			pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango \
 			dbus-1.>=6::x11/dbus \
 			dbus-glib-1.>=2::x11/dbus-glib \
 			gdk_pixbuf-2.0.>=400.3,gdk-x11-2.0.>=400.3,gtk-x11-2.0.>=0.5::x11/gtk+2
 
-BUILD_DEPENDS=		::textproc/intltool \
-			::textproc/p5-XML-Parser
+BUILD_DEPENDS=		::textproc/p5-XML-Parser
 
 .include <bsd.port.mk>
