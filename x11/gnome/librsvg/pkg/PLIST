@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/04/23 16:40:04 steven Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/05/06 15:24:49 jasper Exp $
 %%SHARED%%
 bin/rsvg
+bin/rsvg-convert
 bin/rsvg-view
 include/librsvg-2/
 include/librsvg-2/librsvg/
 include/librsvg-2/librsvg/librsvg-enum-types.h
 include/librsvg-2/librsvg/librsvg-features.h
-include/librsvg-2/librsvg/rsvg-gz.h
+include/librsvg-2/librsvg/rsvg-cairo.h
 include/librsvg-2/librsvg/rsvg.h
 lib/gtk-2.0/
 lib/gtk-2.0/2.10.0/
@@ -20,8 +21,6 @@ lib/librsvg-2.a
 lib/librsvg-2.la
 @comment lib/mozilla/
 @comment lib/mozilla/plugins/
-@comment lib/mozilla/plugins/libmozsvgdec.a
-@comment lib/mozilla/plugins/libmozsvgdec.la
 lib/pkgconfig/
 lib/pkgconfig/librsvg-2.0.pc
 @man man/man1/rsvg.1
@@ -33,15 +32,17 @@ share/gtk-doc/html/rsvg/index.html
 share/gtk-doc/html/rsvg/index.sgml
 share/gtk-doc/html/rsvg/ix01.html
 share/gtk-doc/html/rsvg/left.png
+share/gtk-doc/html/rsvg/pt02.html
+share/gtk-doc/html/rsvg/pt03.html
+share/gtk-doc/html/rsvg/pt04.html
 share/gtk-doc/html/rsvg/right.png
-share/gtk-doc/html/rsvg/rn01.html
-share/gtk-doc/html/rsvg/rn02.html
-share/gtk-doc/html/rsvg/rn03.html
-share/gtk-doc/html/rsvg/rsvg-Convenience-Functions.html
+share/gtk-doc/html/rsvg/rsvg-Cairo.html
 share/gtk-doc/html/rsvg/rsvg-Core-API.html
-share/gtk-doc/html/rsvg/rsvg-Creating-a-SVGZ-reader.html
+share/gtk-doc/html/rsvg/rsvg-GdkPixbuf.html
 share/gtk-doc/html/rsvg/rsvg.devhelp
+share/gtk-doc/html/rsvg/rsvg.devhelp2
 share/gtk-doc/html/rsvg/rsvg.html
+share/gtk-doc/html/rsvg/style.css
 share/gtk-doc/html/rsvg/up.png
 share/pixmaps/
 share/pixmaps/svg-viewer.svg
