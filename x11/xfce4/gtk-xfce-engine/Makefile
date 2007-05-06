@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2007/04/23 16:40:04 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/05/06 15:14:47 steven Exp $
 
 COMMENT=	"theme engine for GTK2"
-V=		4.2.3.1
-DISTNAME=	gtk-xfce-engine-2.2.8
-PKGNAME=	${DISTNAME}p6
+V=		4.4.1
+DISTNAME=	gtk-xfce-engine-2.4.1
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.xfce.org/
+MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
@@ -15,9 +16,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2
-RUN_DEPENDS=	:xfwm4-*:x11/xfce4/xfwm4
-WANTLIB=	ICE SM X11 Xext Xrender atk-1.0 fontconfig freetype \
+
+LIB_DEPENDS=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+RUN_DEPENDS=	:xfwm4->=4.0:x11/xfce4/xfwm4
+WANTLIB=	X11 Xrender Xau Xdmcp atk-1.0 fontconfig freetype expat \
+		Xcursor Xext Xfixes Xi Xinerama Xrandr \
 		glib-2.0 gmodule-2.0 gobject-2.0 m z png \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo glitz
 
