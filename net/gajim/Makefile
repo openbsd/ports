@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2007/04/22 20:47:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2007/05/06 19:09:24 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"jabber client written in pygtk"
 DISTNAME=	gajim-0.11.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net x11
 MASTER_SITES=	${HOMEPAGE}downloads/
@@ -17,10 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-PYTHON_VER=	2.4
-
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	PYTHON=${MODPY_BIN} \
+		CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-gtkspell
 
 USE_X11=	Yes
@@ -28,13 +28,12 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext lang/python
 
 BUILD_DEPENDS=	::textproc/intltool \
 		${RUN_DEPENDS}
-LIB_DEPENDS=	gtkspell::textproc/gtkspell \
-		python${PYTHON_VER}::lang/python/${PYTHON_VER}
-RUN_DEPENDS=	:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat \
+LIB_DEPENDS=	gtkspell::textproc/gtkspell
+RUN_DEPENDS=	${MODPY_EXPAT_DEPENDS} \
 		::net/py-dns \
 		::databases/py-sqlite2 \
 		::x11/py-gtk2 \
@@ -44,11 +43,6 @@ WANTLIB=	X11 Xext Xss Xrender fontconfig freetype m z \
 		gdk_pixbuf-2.0.>=600.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 gtk-x11-2.0.>=600.0 pango-1.0.>=800.0 \
 		pangocairo-1.0 pangoft2-1.0 png glitz Xau Xdmcp expat
-
-MAKE_ENV+=	PY_CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/python${PYTHON_VER}" \
-		PY_PREFIX=${LOCALBASE} \
-		CC=${CC} LDFLAGS=-L${LOCALBASE}/lib
-MAKE_FLAGS=	PYTHONVER=${PYTHON_VER}
-FAKE_FLAGS=	DESTDIR=${DESTDIR} PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
+WANTLIB += Xcursor Xfixes Xi Xinerama Xrandr
 
 .include <bsd.port.mk>
