@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/05/05 13:30:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/06 15:19:28 jasper Exp $
 
 COMMENT=		"user interface components for GNOME"
 
 DISTNAME=		libgnomeui-2.18.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	gnomeui-2      1800.1         # .1800.1
 CATEGORIES=		x11/gnome
 
@@ -27,6 +28,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gnome-keyring.>=1::x11/gnome/keyring \
 			gnome-2.>=1800::x11/gnome/libgnome \
 			gnomecanvas-2.>=1400::x11/gnome/libgnomecanvas \
@@ -36,8 +38,7 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-gtk-doc
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
