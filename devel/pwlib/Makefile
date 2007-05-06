@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/04 09:57:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/06 13:24:32 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,7 +33,8 @@ NO_REGRESS=	Yes
 
 USE_GMAKE=	Yes
 ALL_TARGET=	optshared
-MAKE_ENV+=	STDCCFLAGS="${STDCCFLAGS} -I${LOCALBASE}/include" \
+MAKE_ENV+=	STDCCFLAGS="${STDCCFLAGS} -I${X11BASE}/include \
+			-I${LOCALBASE}/include" \
 		CC=${CC} CPLUS=${CXX}
 
 CONFIGURE_STYLE=gnu
