@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/05 07:25:31 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/06 22:35:55 alek Exp $
 
-COMMENT=	"a gtk2 comic book viewer"
+COMMENT=	"gtk2 comic book viewer"
 
 DISTNAME=	comix-3.6.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -15,21 +16,23 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=comix/}
 
-MODPY_VERSION?= 2.4
-
+MODULES=	lang/python
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::lang/python/${MODPY_VERSION} \
-		::graphics/py-Imaging \
+RUN_DEPENDS=	::graphics/py-Imaging \
 		::x11/py-gtk2 
 
-NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 PYTHON=		${LOCALBASE}/bin/python${MODPY_VERSION}
 
+do-build:
+		# defined as empty to override do-build target from python module
+
 do-install:
-		cd ${WRKSRC} && ${PYTHON} install.py --installdir ${PREFIX} \
+		cd ${WRKSRC} && ${MODPY_BIN} install.py --installdir ${PREFIX} \
 		       	--no-mime --no-balloon install
+		perl -pi -e "s,#!/usr/bin/env python,#!${MODPY_BIN}," \
+			${PREFIX}/bin/comix
 
 PKG_ARCH=	*
 
