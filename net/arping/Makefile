@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/05/23 23:58:03 mjc Exp $
+# $OpenBSD: Makefile,v 1.24 2007/05/06 22:05:01 espie Exp $
 
 DISTNAME=	arping-2.05
 PKGNAME=	${DISTNAME}p0
@@ -11,7 +11,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
 COMMENT=	"ARP level ping utility"
-HOMEPAGE=	"http://www.habets.pp.se/synscan/programs.php?prog=ARPing"
+HOMEPAGE=	http://www.habets.pp.se/synscan/programs.php?prog=ARPing
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/ \
 		ftp://rt.fm/pub/arping/
 
