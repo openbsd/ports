@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.22 2006/10/27 10:12:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2007/05/06 13:28:31 mbalmer Exp $
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
+bin/sa-compile
 bin/sa-learn
 bin/sa-update
 bin/spamassassin
@@ -10,6 +11,7 @@ ${P5SITE}/Mail/SpamAssassin/
 ${P5SITE}/Mail/SpamAssassin.pm
 ${P5SITE}/Mail/SpamAssassin/AICache.pm
 ${P5SITE}/Mail/SpamAssassin/ArchiveIterator.pm
+${P5SITE}/Mail/SpamAssassin/AsyncLoop.pm
 ${P5SITE}/Mail/SpamAssassin/AutoWhitelist.pm
 ${P5SITE}/Mail/SpamAssassin/Bayes/
 ${P5SITE}/Mail/SpamAssassin/Bayes.pm
@@ -32,7 +34,6 @@ ${P5SITE}/Mail/SpamAssassin/Constants.pm
 ${P5SITE}/Mail/SpamAssassin/DBBasedAddrList.pm
 ${P5SITE}/Mail/SpamAssassin/Dns.pm
 ${P5SITE}/Mail/SpamAssassin/DnsResolver.pm
-${P5SITE}/Mail/SpamAssassin/EvalTests.pm
 ${P5SITE}/Mail/SpamAssassin/HTML.pm
 ${P5SITE}/Mail/SpamAssassin/Locales.pm
 ${P5SITE}/Mail/SpamAssassin/Locker/
@@ -58,24 +59,43 @@ ${P5SITE}/Mail/SpamAssassin/PerMsgStatus.pm
 ${P5SITE}/Mail/SpamAssassin/PersistentAddrList.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/
 ${P5SITE}/Mail/SpamAssassin/Plugin.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/ASN.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AWL.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AccessDB.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AntiVirus.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AutoLearnThreshold.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/Bayes.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/BodyEval.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/BodyRuleBaseExtractor.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/Check.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DCC.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DKIM.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/DNSEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DomainKeys.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/HTMLEval.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/HTTPSMismatch.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Hashcash.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/HeaderEval.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/ImageInfo.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/MIMEEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/MIMEHeader.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/OneLineBodyRuleType.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Pyzor.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Razor2.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/RelayCountry.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/RelayEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/ReplaceTags.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/Rule2XSBody.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/SPF.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/Shortcircuit.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/SpamCop.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Test.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/TextCat.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/URIDNSBL.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/URIDetail.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/URIEval.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/VBounce.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/WLBLEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/WhiteListSubject.pm
 ${P5SITE}/Mail/SpamAssassin/PluginHandler.pm
 ${P5SITE}/Mail/SpamAssassin/Reporter.pm
@@ -88,15 +108,19 @@ ${P5SITE}/Mail/SpamAssassin/Util.pm
 ${P5SITE}/Mail/SpamAssassin/Util/DependencyInfo.pm
 ${P5SITE}/Mail/SpamAssassin/Util/Progress.pm
 ${P5SITE}/Mail/SpamAssassin/Util/RegistrarBoundaries.pm
+${P5SITE}/Mail/SpamAssassin/Util/TieOneStringHash.pm
 ${P5SITE}/spamassassin-run.pod
+@man man/man1/sa-compile.1
 @man man/man1/sa-learn.1
 @man man/man1/sa-update.1
+@man man/man1/spamassassin-run.1
 @man man/man1/spamassassin.1
 @man man/man1/spamc.1
 @man man/man1/spamd.1
 @man man/man3p/Mail::SpamAssassin.3p
 @man man/man3p/Mail::SpamAssassin::AICache.3p
 @man man/man3p/Mail::SpamAssassin::ArchiveIterator.3p
+@man man/man3p/Mail::SpamAssassin::AsyncLoop.3p
 @man man/man3p/Mail::SpamAssassin::AutoWhitelist.3p
 @man man/man3p/Mail::SpamAssassin::Bayes.3p
 @man man/man3p/Mail::SpamAssassin::BayesStore.3p
@@ -120,24 +144,32 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::PerMsgStatus.3p
 @man man/man3p/Mail::SpamAssassin::PersistentAddrList.3p
 @man man/man3p/Mail::SpamAssassin::Plugin.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::ASN.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AWL.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AccessDB.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AntiVirus.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AutoLearnThreshold.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::BodyRuleBaseExtractor.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::Check.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DCC.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DKIM.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DomainKeys.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Hashcash.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEHeader.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Pyzor.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Razor2.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::RelayCountry.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::ReplaceTags.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::Rule2XSBody.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::SPF.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::Shortcircuit.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::SpamCop.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Test.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::TextCat.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::URIDNSBL.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::URIDetail.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::VBounce.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::WhiteListSubject.3p
 @man man/man3p/Mail::SpamAssassin::PluginHandler.3p
 @man man/man3p/Mail::SpamAssassin::SQLBasedAddrList.3p
@@ -164,28 +196,30 @@ share/examples/SpamAssassin/v310.pre
 @sample ${CONFDIR}/v310.pre
 share/examples/SpamAssassin/v312.pre
 @sample ${CONFDIR}/v312.pre
+share/examples/SpamAssassin/v320.pre
 share/spamassassin/
-share/spamassassin/10_misc.cf
+share/spamassassin/10_default_prefs.cf
 share/spamassassin/20_advance_fee.cf
-share/spamassassin/20_anti_ratware.cf
 share/spamassassin/20_body_tests.cf
 share/spamassassin/20_compensate.cf
 share/spamassassin/20_dnsbl_tests.cf
 share/spamassassin/20_drugs.cf
+share/spamassassin/20_dynrdns.cf
 share/spamassassin/20_fake_helo_tests.cf
 share/spamassassin/20_head_tests.cf
 share/spamassassin/20_html_tests.cf
+share/spamassassin/20_imageinfo.cf
 share/spamassassin/20_meta_tests.cf
 share/spamassassin/20_net_tests.cf
 share/spamassassin/20_phrases.cf
 share/spamassassin/20_porn.cf
 share/spamassassin/20_ratware.cf
 share/spamassassin/20_uri_tests.cf
+share/spamassassin/20_vbounce.cf
 share/spamassassin/23_bayes.cf
 share/spamassassin/25_accessdb.cf
 share/spamassassin/25_antivirus.cf
-share/spamassassin/25_body_tests_es.cf
-share/spamassassin/25_body_tests_pl.cf
+share/spamassassin/25_asn.cf
 share/spamassassin/25_dcc.cf
 share/spamassassin/25_dkim.cf
 share/spamassassin/25_domainkeys.cf
@@ -204,14 +238,15 @@ share/spamassassin/30_text_pl.cf
 share/spamassassin/30_text_pt_br.cf
 share/spamassassin/50_scores.cf
 share/spamassassin/60_awl.cf
+share/spamassassin/60_shortcircuit.cf
 share/spamassassin/60_whitelist.cf
 share/spamassassin/60_whitelist_dk.cf
 share/spamassassin/60_whitelist_dkim.cf
 share/spamassassin/60_whitelist_spf.cf
 share/spamassassin/60_whitelist_subject.cf
+share/spamassassin/72_active.cf
 share/spamassassin/languages
 share/spamassassin/sa-update-pubkey.txt
-share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
 @owner _spamdaemon
 @group _spamdaemon
