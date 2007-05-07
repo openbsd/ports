@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/02 20:19:29 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/07 15:06:03 ajacoutot Exp $
 bin/gftp
 bin/gftp-text
 @man man/man1/gftp.1
@@ -42,15 +42,11 @@ share/locale/ar/LC_MESSAGES/gftp.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gftp.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/gftp.mo
 share/locale/bg/LC_MESSAGES/gftp.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gftp.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gftp.mo
 share/locale/cs/LC_MESSAGES/gftp.mo
 share/locale/da/LC_MESSAGES/gftp.mo
@@ -65,8 +61,6 @@ share/locale/en_GB/LC_MESSAGES/gftp.mo
 share/locale/es/LC_MESSAGES/gftp.mo
 share/locale/fi/LC_MESSAGES/gftp.mo
 share/locale/fr/LC_MESSAGES/gftp.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gftp.mo
 share/locale/hr/LC_MESSAGES/gftp.mo
 share/locale/hu/LC_MESSAGES/gftp.mo
@@ -96,8 +90,6 @@ share/locale/sk/LC_MESSAGES/gftp.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gftp.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gftp.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/

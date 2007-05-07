@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/07 15:06:03 ajacoutot Exp $
 
 COMMENT=	"multithreaded gtk2 file transfer client"
 
 DISTNAME=	gftp-2.0.18
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	net
 
 HOMEPAGE=	http://gftp.seul.org/
@@ -23,7 +23,6 @@ WANTLIB=	readline c m ncurses util
 
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
@@ -36,15 +35,17 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
-LIB_DEPENDS=	glib.1::devel/glib
+BUILD_DEPENDS=	::devel/gettext
+LIB_DEPENDS=	glib.>=1::devel/glib
 CONFIGURE_ARGS+=--disable-gtkport --disable-gtk20
 .else
 USE_X11=	Yes
+MODULES=	devel/gettext
 LIB_DEPENDS=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x11/gtk+2
-WANTLIB+=	freetype pthread X11 Xext Xrender fontconfig z \
-		gthread-2.0 glib-2.0 gmodule-2.0 glitz png \
-		gobject-2.0 atk-1.0 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 cairo
+WANTLIB+=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender atk-1.0 cairo expat fontconfig freetype \
+		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z
 .endif
 
 .include <bsd.port.mk>
