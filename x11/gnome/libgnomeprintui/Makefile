@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/04/27 22:46:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/07 11:46:58 jasper Exp $
 
 COMMENT=		"user interface components for libgnomeprint"
 
-DISTNAME=		libgnomeprintui-2.18.0
+VERSION=		2.18.0
+DISTNAME=		libgnomeprintui-${VERSION}
 SHARED_LIBS +=	gnomeprintui-2-2    2.0      # .1.0
 CATEGORIES=		x11/gnome devel
 
@@ -37,5 +38,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+SUBST_VARS=		VERSION
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/04/27 22:45:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/05/07 11:46:58 jasper Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -37,5 +37,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--without-cups
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+SUBST_VARS=		VERSION
 
 .include <bsd.port.mk>

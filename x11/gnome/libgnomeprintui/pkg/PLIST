@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/04/27 22:46:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/05/07 11:46:58 jasper Exp $
 include/libgnomeprintui-2.2/
 include/libgnomeprintui-2.2/libgnomeprintui/
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-font-dialog.h
@@ -35,8 +35,8 @@ share/gtk-doc/html/libgnomeprintui/right.png
 share/gtk-doc/html/libgnomeprintui/style.css
 share/gtk-doc/html/libgnomeprintui/up.png
 share/libgnomeprintui/
-share/libgnomeprintui/2.18.0/
-share/libgnomeprintui/2.18.0/gnome-print-job-preview.xml
+share/libgnomeprintui/${VERSION}/
+share/libgnomeprintui/${VERSION}/gnome-print-job-preview.xml
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/libgnomeprintui-2.2.mo
