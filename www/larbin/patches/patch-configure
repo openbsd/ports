@@ -1,0 +1,58 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/05/07 11:17:07 jasper Exp $
+--- configure.orig	Sat May 18 21:08:25 2002
++++ configure	Fri May  4 20:35:23 2007
+@@ -1,8 +1,5 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-# configure adns
+-(cd adns; ./configure)
+-
+ #configure larbin itself
+ cat /dev/null > config.h
+ cat /dev/null > config.make
+@@ -11,32 +8,18 @@ if [ -e /proc/self/status ]; then
+     echo "#define HAS_PROC_SELF_STATUS" >> config.h
+ fi
+ 
+-# find existing programs
+-function exists () {
+-    command -v $1 2> /dev/null > /dev/null;
+-}
+-
+-if exists gmake; then
+-    echo "MAKE=gmake" >> config.make
+-    export MAKE=gmake
+-else
+     echo "MAKE=make" >> config.make
+     export MAKE=make
+-fi
+ 
+-if exists gcc; then
+-    echo "CC=gcc" >> config.make
+-    export CC=gcc
+-fi
++    echo "CC=cc" >> config.make
++    export CC=cc
+ 
+-if exists g++; then
+-    echo "CXX=g++" >> config.make
+-fi
++    echo "CXX=c++" >> config.make
+ 
+ #find libraries to use
+ echo "int main () { return 0; }" > test.c
+ 
+-function testlib () {
++function testlib {
+     if $CC $1 -o test test.c 2> /dev/null > /dev/null; then
+         echo "LIBS +=" $1 >> config.make
+     fi
+@@ -52,7 +35,6 @@ rm -f test test.c test.o
+ 
+ # run make dep
+ touch .depend
+-touch adns/.depend
+ touch src/.depend
+ touch src/fetch/.depend
+ touch src/interf/.depend

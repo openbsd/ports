@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2007/05/07 11:17:07 jasper Exp $
+--- src/Makefile.orig	Sat Apr 28 11:02:16 2007
++++ src/Makefile	Sat Apr 28 11:03:17 2007
+@@ -17,7 +17,7 @@ clean distclean dep prof debug: options.h config.h 
+ 
+ larbin: $(ABS-UTILS-OBJ) $(ABS-FETCH-OBJ) $(ABS-INTERF-OBJ) $(ABS-MAIN-OBJ)
+ 	$(CXX) $(MF) $(LIBS) -o larbin $(ABS-UTILS-OBJ) \
+-	$(ABS-FETCH-OBJ) $(ABS-INTERF-OBJ) $(ABS-MAIN-OBJ) ../adns/libadns.a
++	$(ABS-FETCH-OBJ) $(ABS-INTERF-OBJ) $(ABS-MAIN-OBJ) ${ADNSDIR}/../lib/libadns.a
+ 
+ dep-here:
+ 	makedepend -f- -I$(BASEDIR) -Y *.cc 2> /dev/null > .depend

@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/05/07 11:17:07 jasper Exp $
+--- Makefile.orig	Sat Apr 28 00:41:06 2007
++++ Makefile	Sat Apr 28 00:41:46 2007
+@@ -7,17 +7,14 @@ dep:
+ 	(cd src; $(MAKE) dep)
+ 
+ all debug prof:
+-	(cd adns; $(MAKE))
+ 	(cd src; $(MAKE) $@)
+ 	cp src/larbin .
+ 
+ clean: cleanhere
+ 	(cd src; $(MAKE) clean)
+-	(cd adns; $(MAKE) clean)
+ 
+ distclean: cleanhere
+ 	(cd src; $(MAKE) distclean)
+-	(cd adns; $(MAKE) distclean)
+ 	$(RM) config.h config.make .depend
+ 	$(RM) larbin
+ 

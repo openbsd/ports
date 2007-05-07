@@ -1,0 +1,4 @@
+Larbin is a web crawler (also called (web) robot, spider, scooter...).
+It is intended to fetch a large number of web pages to fill the database
+of a search engine. With a network fast enough, Larbin should be able to
+fetch more than 100 millions pages on a standard PC.

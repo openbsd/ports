@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/07 11:17:07 jasper Exp $
+bin/larbin
+share/doc/larbin/
+share/doc/larbin/custom-eng.html
+share/doc/larbin/download.html
+share/doc/larbin/index-eng.html
+share/doc/larbin/index.html
+share/doc/larbin/l-en.jpg
+share/doc/larbin/l-fr.jpg
+share/doc/larbin/use-eng.html
+share/examples/larbin/
+@sample ${SYSCONFDIR}/larbin/
+share/examples/larbin/larbin.conf.sample
+@sample ${SYSCONFDIR}/larbin/larbin.conf
