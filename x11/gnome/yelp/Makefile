@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/04/27 22:54:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2007/05/07 19:03:04 jasper Exp $
 
 COMMENT=		"GNOME help browser"
 
 DISTNAME=		yelp-2.18.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -28,12 +29,13 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=		::devel/xulrunner,-devel \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper->=0.3.14:textproc/scrollkeeper \
 			:docbook-dsssl-*:textproc/docbook-dsssl \
 			:gnome2-user-docs-*:x11/gnome/users-guide
 LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
-			xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunner,-devel \
+			xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunner,-main \
 			gnomeui-2::x11/gnome/libgnomeui \
 			exslt,xslt::textproc/libxslt
 
@@ -42,6 +44,7 @@ USE_LIBTOOL=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--with-gecko=xulrunner \
+			--disable-schemas-install \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/yelp/
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/xulrunner/include/" \
 			LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/04/27 22:54:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/05/07 19:03:04 jasper Exp $
 bin/gnome-help
 bin/yelp
 share/applications/
@@ -174,9 +174,11 @@ share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/yelp.mo
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/yelp/*.schemas > /dev/null
 share/schemas/
 share/schemas/yelp/
 share/schemas/yelp/yelp.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/yelp/*.schemas > /dev/null
 share/yelp/
 share/yelp/default.css
 share/yelp/icons/
