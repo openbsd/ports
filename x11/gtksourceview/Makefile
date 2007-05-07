@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2007/04/27 22:47:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2007/05/07 09:13:48 jasper Exp $
 
 COMMENT=		"text widget that extends GTK2's GtkTextView widget"
 DISTNAME=		gtksourceview-1.8.5
 SHARED_LIBS +=	gtksourceview-1.0    1.1      # .0.0
 CATEGORIES=		x11
 
-HOMEPAGE=		http://gtksourceview.sourceforge.net/	
+HOMEPAGE=		http://gtksourceview.sourceforge.net/
 
-MAINTAINER=		Thomas Delaet <thomas@delaet.org>	
+MAINTAINER=		Thomas Delaet <thomas@delaet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +19,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtksourceview/1.8/}	
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtksourceview/1.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
