@@ -1,7 +1,7 @@
-$OpenBSD: patch-filter_imagetops_c,v 1.2 2006/10/01 10:43:38 mbalmer Exp $
---- filter/imagetops.c.orig	Wed Sep 20 11:18:55 2006
-+++ filter/imagetops.c	Wed Sep 20 11:19:41 2006
-@@ -166,6 +166,8 @@ main(int  argc,				/* I - Number of comm
+$OpenBSD: patch-filter_imagetops_c,v 1.3 2007/05/07 13:58:07 ajacoutot Exp $
+--- filter/imagetops.c.orig	Mon Oct  2 18:26:04 2006
++++ filter/imagetops.c	Mon May  7 15:47:41 2007
+@@ -166,6 +166,8 @@ main(int  argc,				/* I - Number of command-line argum
    sat  = 100;
    g    = 1.0;
    b    = 1.0;

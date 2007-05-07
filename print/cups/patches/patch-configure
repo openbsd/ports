@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2006/10/01 10:43:38 mbalmer Exp $
---- configure.orig	Wed Sep 20 10:55:26 2006
-+++ configure	Wed Sep 20 10:56:29 2006
-@@ -7772,8 +7772,8 @@ if test x$enable_shared != xno; then
+$OpenBSD: patch-configure,v 1.4 2007/05/07 13:58:07 ajacoutot Exp $
+--- configure.orig	Thu Nov 16 15:51:56 2006
++++ configure	Mon May  7 15:49:38 2007
+@@ -7910,8 +7910,8 @@ if test x$enable_shared != xno; then
  			DSOFLAGS="$DSOFLAGS -set_version,sgi2.6,-soname,\`basename \$@\` -shared \$(OPTIM)"
  			;;
  		OSF1* | Linux | GNU | *BSD*)
@@ -12,3 +12,12 @@ $OpenBSD: patch-configure,v 1.3 2006/10/01 10:43:38 mbalmer Exp $
  			DSO="\$(CC)"
  			DSOFLAGS="$DSOFLAGS -Wl,-soname,\`basename \$@\` -shared \$(OPTIM)"
  			;;
+@@ -8162,7 +8162,7 @@ if test -n "$GCC"; then
+ 	if test -z "$OPTIM"; then
+ 		if test "x$with_optim" = x; then
+ 			# Default to optimize-for-size and debug
+-       			OPTIM="-Os -g"
++       			OPTIM=""
+ 		else
+ 			OPTIM="$with_optim $OPTIM"
+ 		fi

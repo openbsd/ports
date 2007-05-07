@@ -1,7 +1,7 @@
-$OpenBSD: patch-backend_betest_c,v 1.2 2006/10/01 10:43:38 mbalmer Exp $
---- backend/betest.c.orig	Wed Sep 20 10:50:46 2006
-+++ backend/betest.c	Wed Sep 20 10:51:14 2006
-@@ -76,7 +76,7 @@ main(int  argc,		/* I - Number of comman
+$OpenBSD: patch-backend_betest_c,v 1.3 2007/05/07 13:58:07 ajacoutot Exp $
+--- backend/betest.c.orig	Fri Feb 18 03:18:11 2005
++++ backend/betest.c	Mon May  7 15:47:41 2007
+@@ -76,7 +76,7 @@ main(int  argc,		/* I - Number of command-line argumen
    */
  
    execl(backend, argv[1], argv[2], argv[3], argv[4], argv[5], argv[6], argv[7],
