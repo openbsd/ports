@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/04/24 19:29:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/05/07 08:45:22 bernd Exp $
+@conflict gtk2-clearlooks-engine-*
 share/icons/
 share/icons/Crux/
 share/icons/Crux/16x16/

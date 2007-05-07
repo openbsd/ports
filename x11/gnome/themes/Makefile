@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/04/25 09:57:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/05/07 08:45:22 bernd Exp $
 
 COMMENT=		"themes collection for GNOME"
 
 DISTNAME=		gnome-themes-2.18.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
