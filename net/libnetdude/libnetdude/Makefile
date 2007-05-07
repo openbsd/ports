@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/08 10:23:02 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/07 14:55:58 espie Exp $
 
-COMMENT=	"packet manipulation backend of the Netdude trace file editing framework"
+COMMENT=	"packet manipulation backend of Netdude framework"
 
 DISTNAME=	libnetdude-0.7
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	netdude	0.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
