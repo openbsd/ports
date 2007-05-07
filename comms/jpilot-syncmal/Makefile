@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/13 14:50:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/07 14:11:00 ajacoutot Exp $
 
 COMMENT=	"MAL plugin for J-Pilot"
 
 DISTNAME=	jpilot-syncmal-0.80
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	comms palm
 
 HOMEPAGE=	http://jasonday.home.att.net/code/syncmal/
@@ -18,12 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-WANTLIB=	X11 Xau Xdmcp Xrender expat fontconfig freetype m z \
-		atk-1.0.>=1011 cairo.>=4 gdk-x11-2.0.>=802 \
-		gdk_pixbuf-2.0.>=802 glib-2.0.>=1000 glitz.>=1 \
-		gmodule-2.0.>=1000 gobject-2.0.>=1000 \
-		gtk-x11-2.0.>=802 pango-1.0.>=1200 \
-		pangocairo-1.0.>=1200 pangoft2-1.0.>=1200
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender atk-1.0 cairo expat fontconfig freetype \
+		gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 z
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	::comms/jpilot
