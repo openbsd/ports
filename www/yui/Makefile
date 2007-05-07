@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/03 09:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/07 08:33:12 bernd Exp $
 
 COMMENT-main=	'yahoo ui library toolkit'
 COMMENT-docs=	'yahoo ui library examples'
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 V=		2.2.2
 EXTRACT_SUFX=	.zip
 DISTNAME=	yui_$V
-PKGNAME-main=	yui-$V
+PKGNAME-main=	yui-$Vp0
 PKGNAME-docs=	yui-doc-$V
 MULTI_PACKAGES=	-main -docs
 PKG_ARCH=	*
