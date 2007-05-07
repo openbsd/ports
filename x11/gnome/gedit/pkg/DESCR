@@ -1,6 +1,6 @@
-gedit is a small and lightweight UTF-8 text editor for the
-GNOME environment.  gedit uses a Multiple Document Interface
-(MDI), which lets you edit more than one document at the same time.
+gedit is a small and lightweight UTF-8 text editor for the GNOME
+environment.  gedit uses a Multiple Document Interface (MDI), which lets
+you edit more than one document at the same time.
 
-gedit supports most standard editing features, plus several not found
-in your  average text editor (plugins being the most notable of these).
+gedit supports most standard editing features, plus several not found in
+your  average text editor (plugins being the most notable of these).
