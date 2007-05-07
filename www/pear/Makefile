@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/20 11:12:22 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/07 13:46:59 bernd Exp $
 
 COMMENT-main=	"base classes for common PHP tasks"
 COMMENT-utils=	"utilities for managing pear extensions"
@@ -6,8 +6,8 @@ COMMENT-utils=	"utilities for managing pear extensions"
 VERSION=	1.5.0
 DISTNAME=	pear-${VERSION}
 PKGNAME=	${DISTNAME}
-PKGNAME-main=	${DISTNAME}
-PKGNAME-utils=	pear-utils-${VERSION}
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-utils=	pear-utils-${VERSION}p0
 CATEGORIES=	www devel
 
 EXTRACT_SUFX=	.tar.bz2

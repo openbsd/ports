@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/03/19 23:13:23 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/05/07 13:46:59 bernd Exp $
 @conflict php5-pear-*
+@conflict php4-pear-*
 @pkgpath www/php5/core,-pear
 @group daemon
 pear/

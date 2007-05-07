@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-pear,v 1.17 2006/11/23 20:08:33 espie Exp $
+@comment $OpenBSD: PLIST-pear,v 1.18 2007/05/07 13:46:59 bernd Exp $
 @conflict php5-pear-*
+@conflict pear-*
 @group daemon
 pear/
 pear/build/
