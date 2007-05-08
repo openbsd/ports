@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/28 09:18:51 bernd Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/08 09:48:07 bernd Exp $
 
 COMMENT-main=		"GIT - Tree History Storage Tool"
 COMMENT-svn=		"GIT - subversion interoperability tools"
 
-V=			1.5.1.1
+V=			1.5.1.3
 DISTNAME=		git-${V}
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-svn=		git-svn-${V}p0
+PKGNAME-main=		${DISTNAME}
+PKGNAME-svn=		git-svn-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://git.or.cz/
@@ -72,6 +72,7 @@ post-install:
 		${PREFIX}/share/doc/git
 
 do-regress:
-	cd ${WRKSRC} && NO_SVN_TESTS=Yes ${MAKE_PROGRAM} TAR=${TAR} test
+	cd ${WRKSRC} && ${MAKE_ENV} NO_SVN_TESTS=Yes ${MAKE_PROGRAM} \
+		HOME=${WRKDIST}/t/trash TAR=${TAR} test
 
 .include <bsd.port.mk>
