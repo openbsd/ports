@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/08 08:33:34 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/08 09:03:34 steven Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
      SUBDIR+= libxfce4mcs
+     SUBDIR+= libxfce4util
      SUBDIR+= libxfcegui4
      SUBDIR+= mousepad
      SUBDIR+= xfcalendar

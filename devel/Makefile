@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.504 2007/05/05 09:28:00 espie Exp $
+# $OpenBSD: Makefile,v 1.505 2007/05/08 09:03:34 steven Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -155,7 +155,6 @@
      SUBDIR += libuta
      SUBDIR += libutf
      SUBDIR += libwnck
-     SUBDIR += libxfce4util
      SUBDIR += libzvt
      SUBDIR += lincvs
      SUBDIR += lpeg
