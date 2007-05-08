@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/08 15:08:24 matthieu Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/08 15:10:15 matthieu Exp $
 
 COMMENT=	"top-like X server resources usage display tool"
 DISTNAME=	xrestop-0.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.freedesktop.org/wiki/Software_2fxrestop
