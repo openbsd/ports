@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/02 19:02:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/08 16:56:10 jasper Exp $
 
 COMMENT=		"generates lists of words given certain information"
-DISTNAME=		WordGenerator-1.6
+DISTNAME=		WordGenerator-1.7
 CATEGORIES=		misc education
 
 HOMEPAGE=		http://billposer.org/Software/WordGenerator.html
@@ -31,7 +31,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/SampleConfiguration \
 		${PREFIX}/share/examples/wordgenerator
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wordgenerator
-	${INSTALL_DATA} ${WRKSRC}/Configuration \
+	${INSTALL_DATA} ${WRKSRC}/README_CONFIGURATION \
 		${PREFIX}/share/doc/wordgenerator
 
 .include <bsd.port.mk>
