@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/20 00:52:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/08 08:30:36 steven Exp $
 
+     SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
      SUBDIR+= libxfce4mcs
      SUBDIR+= libxfcegui4
