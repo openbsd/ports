@@ -1,0 +1,3 @@
+Terminal is a lightweight and easy to use terminal emulator for the X
+windowing system. It features tabbed windows, fake transparency, and
+handles http/mailto URLs through configurable external applications.
