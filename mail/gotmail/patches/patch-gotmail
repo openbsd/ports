@@ -1,7 +1,7 @@
-$OpenBSD: patch-gotmail,v 1.1.1.1 2006/12/29 12:21:03 jasper Exp $
---- gotmail.orig	Tue Oct 10 00:09:44 2006
-+++ gotmail	Fri Dec 29 13:16:02 2006
-@@ -156,7 +156,7 @@ my($conf_onlyspamscan) = 0; # 0 = no, 1 
+$OpenBSD: patch-gotmail,v 1.2 2007/05/08 20:06:48 kurt Exp $
+--- gotmail.orig	Sat Apr  7 22:00:30 2007
++++ gotmail	Tue May  8 15:17:32 2007
+@@ -156,7 +156,7 @@ my($conf_onlyspamscan) = 0; # 0 = no, 1 = yes
  my($conf_deletespam) = 0; # 0 = no, 1 = yes
  my($conf_movespam) = "";
  my($conf_spamscore) = 4.5;
