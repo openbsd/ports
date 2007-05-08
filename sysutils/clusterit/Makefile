@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/08 16:16:56 steven Exp $
 
 COMMENT=		"suite of clustering tools based on IBM's PSSP"
 
 DISTNAME=		clusterit-2.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.garbled.net/clusterit.html

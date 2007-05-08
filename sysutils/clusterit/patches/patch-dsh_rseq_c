@@ -1,7 +1,7 @@
-$OpenBSD: patch-dsh_rseq_c,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
---- dsh/rseq.c.orig	Sun Jun 11 17:12:09 2006
-+++ dsh/rseq.c	Sun Jun 11 17:12:12 2006
-@@ -324,7 +324,7 @@ do_command(char **argv, int allrun, char
+$OpenBSD: patch-dsh_rseq_c,v 1.2 2007/05/08 16:16:56 steven Exp $
+--- dsh/rseq.c.orig	Wed Feb  1 19:07:16 2006
++++ dsh/rseq.c	Tue May  8 18:13:38 2007
+@@ -324,7 +324,7 @@ do_command(char **argv, int allrun, char *username)
      /* set up the remote command */
      rsh = getenv("RCMD_CMD");
      if (rsh == NULL)

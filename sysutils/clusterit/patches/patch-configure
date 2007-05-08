@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2007/05/08 16:16:56 steven Exp $
+--- configure.orig	Wed Feb  1 12:07:16 2006
++++ configure	Mon May  7 11:43:31 2007
+@@ -1528,7 +1528,7 @@ else
+   fi
+ fi
+ 
+-for ac_prog in gawk mawk nawk awk
++for ac_prog in awk nawk gawk mawk 
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -1761,7 +1761,7 @@ am__tar='${AMTAR} chof - "$$tardir"'; am__untar='${AMT
+ 
+ 
+ # Checks for programs.
+-for ac_prog in gawk /usr/xpg4/bin/awk awk
++for ac_prog in awk gawk /usr/xpg4/bin/awk
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
