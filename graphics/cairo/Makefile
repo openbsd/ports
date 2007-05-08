@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/03/26 21:22:13 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/08 08:44:58 ajacoutot Exp $
 
 COMMENT=		"vector graphics library"
 
 DISTNAME=		cairo-1.2.6
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=	cairo                6.0      # .11.3
 CATEGORIES=		graphics
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://cairographics.org/introduction
 
 MAINTAINER=		Eric Faurot <eric.faurot@gmail.com>
 
-WANTLIB=		ICE SM X11.>=10 Xext Xrender freetype fontconfig m z
+WANTLIB=		X11.>=10 Xau Xdmcp expat Xrender freetype fontconfig m z
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
