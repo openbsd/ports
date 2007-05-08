@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_thunar-uca_Makefile_in,v 1.1.1.1 2007/05/08 15:14:23 steven Exp $
+--- plugins/thunar-uca/Makefile.in.orig	Sat Mar 31 19:12:41 2007
++++ plugins/thunar-uca/Makefile.in	Sat Mar 31 19:12:58 2007
+@@ -410,7 +410,7 @@ thunar_uca_la_LDFLAGS = \
+ 	-module								\
+ 	$(PLATFORM_LDFLAGS)
+ 
+-defaultsdir = $(sysconfdir)/xdg/Thunar
++defaultsdir = $(prefix)/share/examples/Thunar
+ defaults_in_files = uca.xml.in
+ defaults_DATA = $(defaults_in_files:.xml.in=.xml)
+ EXTRA_DIST = \

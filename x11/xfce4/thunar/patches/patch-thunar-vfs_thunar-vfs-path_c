@@ -1,0 +1,12 @@
+$OpenBSD: patch-thunar-vfs_thunar-vfs-path_c,v 1.1.1.1 2007/05/08 15:14:23 steven Exp $
+--- thunar-vfs/thunar-vfs-path.c.orig	Sat Jan 20 21:39:09 2007
++++ thunar-vfs/thunar-vfs-path.c	Tue May  8 19:00:31 2007
+@@ -1142,7 +1142,7 @@ _thunar_vfs_path_init (void)
+   path->parent = NULL;
+   home_components[0] = path;
+   *((guint *) thunar_vfs_path_get_name (path)) = THUNAR_VFS_PATH_ROOT;
+-  offset += sizeof (ThunarVfsPath) + sizeof (guint);
++  offset += sizeof (ThunarVfsPath) + sizeof (gpointer);
+ 
+   /* add the remaining path components */
+   for (component = components; *component != NULL; ++component)
