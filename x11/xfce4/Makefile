@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/08 14:55:15 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/05/08 15:15:04 steven Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
@@ -8,6 +8,7 @@
      SUBDIR+= mousepad
      SUBDIR+= orage
      SUBDIR+= terminal
+     SUBDIR+= thunar
      SUBDIR+= xfce-mcs-manager
      SUBDIR+= xfce-mcs-plugins
      SUBDIR+= xfce-utils
@@ -30,7 +31,6 @@
      SUBDIR+= xfce4-weather
      SUBDIR+= xfce4-xkb
      SUBDIR+= xfdesktop
-     SUBDIR+= xffm
      SUBDIR+= xfwm4
      SUBDIR+= xfwm4-themes
 
