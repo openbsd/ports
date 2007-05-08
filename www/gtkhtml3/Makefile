@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/08 08:07:07 jasper Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
-VERSION=		3.6.2
+VERSION=		3.14.1
+API_VERSION=		3.14
 DISTNAME=		gtkhtml-${VERSION}
-PKGNAME=		gtkhtml3-${VERSION}p3
+PKGNAME=		gtkhtml3-${VERSION}
+SHARED_LIBS +=	gtkhtml-3.14         0.0         # .19.0
 CATEGORIES=    		www
-SHARED_LIBS=		gtkhtml-${API_VERSION}	18.2
-MODGNU_SHARED_LIBS=	gtkhtml-${API_VERSION}	''
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -18,26 +18,25 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xrender fontconfig freetype m z \
-			ssl crypto \
-			ORBit-2 ORBitCosNaming-2 audiofile esd jpeg \
-			art_lgpl_2 atk-1.0 gconf-2 glade-2.0.>=0.4 \
-			gnome-keyring bonobo-2 bonobo-activation bonoboui-2 \
-			pango-1.0.>=600.0 pangoft2-1.0.>=600.0 cairo \
-			pangocairo-1.0.>=600.0 glib-2.0 gmodule-2.0 \
-			gobject-2.0 gthread-2.0 glitz png \
-			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
-			gnome-2.>=800.0 gnomecanvas-2.>=800.0 \
-			gnomeprint-2-2.>=1.0 gnomevfs-2.>=800.2 popt xml2
-			
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkhtml/3.6/}
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
+		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
+		audiofile bonobo-2 bonobo-activation bonoboui-2 cairo \
+		crypto esd expat fontconfig freetype gconf-2 gdk-x11-2.0 \
+		gdk_pixbuf-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
+		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
+		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png popt ssl util xml2 z
+
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkhtml/3.14/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
-LIB_DEPENDS=		gailutil::x11/gnome/gail \
-			gnomeprintui-2-2::x11/gnome/libgnomeprintui \
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
+			:gnome-icon-theme-*:x11/gnome/icon-theme
+LIB_DEPENDS=		dbus-1::x11/dbus \
+			dbus-glib-1::x11/dbus-glib \
+			gailutil::x11/gnome/gail \
 			gnomeui-2::x11/gnome/libgnomeui
 
 USE_X11=		Yes
@@ -49,7 +48,8 @@ CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-API_VERSION=		3.6
 SUBST_VARS=		API_VERSION
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

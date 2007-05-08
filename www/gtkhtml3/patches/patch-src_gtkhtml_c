@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtkhtml_c,v 1.1 2007/05/08 08:07:07 jasper Exp $
+--- src/gtkhtml.c.orig	Thu Apr  5 11:15:35 2007
++++ src/gtkhtml.c	Wed Apr 25 21:24:00 2007
+@@ -3164,7 +3164,7 @@ gtk_html_class_init (GtkHTMLClass *klass)
+ 	add_bindings (klass);
+ 	gtk_html_accessibility_init ();
+ 
+-	filename = g_build_filename (PREFIX, "share", GTKHTML_RELEASE_STRING, "keybindingsrc.emacs", NULL);
++	filename = g_build_filename (PREFIX, "share/gnome", GTKHTML_RELEASE_STRING, "keybindingsrc.emacs", NULL);
+ 	gtk_rc_parse (filename);
+ 	g_free (filename);
+ 	html_class->emacs_bindings = gtk_binding_set_find ("gtkhtml-bindings-emacs");
