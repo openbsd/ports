@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/05/08 19:54:58 naddy Exp $
+--- Makefile.orig	Sun Aug  3 18:18:42 2003
++++ Makefile	Tue May  8 21:17:02 2007
+@@ -3,6 +3,7 @@ VERSION=\"0.9.1\"
+ PACKAGE=\"libspeex\"
+ 
+ INCDIRS=`xmms-config --cflags`
++LIBDIRS=`xmms-config --libs`
+ CFLAGS = -Wall
+ OBJS = http.o config.o fileinfo.o speexutil.o # utf8.o
+ GUIOBJS = gui/interface.o gui/support.o gui/callbacks.o
+@@ -11,10 +12,10 @@ GUISRCS = gui/interface.c gui/interface.h gui/support.
+ all: libspeex.so
+ 
+ $(GUIOBJS): $(GUISRCS)
+-	$(MAKE) -C $(@D) all
++	cd gui; $(MAKE) all
+ 
+ libspeex.so: libspeex.c libspeex.h $(OBJS) $(GUIOBJS)
+-	$(CC) -shared -logg -lspeex -lgtk -lpthread -lxmms $(INCDIRS) $(CFLAGS) -DVERSION=$(VERSION) -DPACKAGE=\"libspeex\" -o libspeex.so libspeex.c $(OBJS) $(GUIOBJS)
++	$(CC) -shared -lspeex -logg -lm -pthread -lxmms $(LIBDIRS) $(INCDIRS) $(CFLAGS) -DVERSION=$(VERSION) -DPACKAGE=\"libspeex\" -o libspeex.so libspeex.c $(OBJS) $(GUIOBJS)
+ 
+ #utf8.o: utf8.c utf8.h
+ #	$(CC) -c $(INCDIRS) $(CFLAGS) -DHAVE_ICONV -DICONV_CONST= -o utf8.o utf8.c

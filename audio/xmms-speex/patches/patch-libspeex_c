@@ -1,0 +1,21 @@
+$OpenBSD: patch-libspeex_c,v 1.1.1.1 2007/05/08 19:54:58 naddy Exp $
+--- libspeex.c.orig	Tue May  8 21:43:11 2007
++++ libspeex.c	Tue May  8 21:43:30 2007
+@@ -39,7 +39,7 @@
+ 
+ #define VBR_UPDATE_FREQ 1000
+ #define BUFFER_LEN 200
+-#define TITLE_HACK
++#undef TITLE_HACK
+ 
+ static void init (void);
+ 
+@@ -102,7 +102,7 @@ InputPlugin *get_iplugin_info(void)
+ #ifdef TITLE_HACK
+ 	speex_ip.description = " Speex plugin " VERSION;
+ #else
+-	speex_ip.description = "Speex plugin " VERSION
++	speex_ip.description = "Speex plugin " VERSION;
+ #endif
+ 
+ 	return &speex_ip;
