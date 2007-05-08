@@ -1,8 +1,13 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/11/10 22:57:40 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2007/05/08 08:45:58 steven Exp $
+@lib lib/libxfce4panel.so.${LIBxfce4panel_VERSION}
 lib/xfce4/mcs-plugins/libxfce4settings.so
+lib/xfce4/panel-plugins/libactions.so
 lib/xfce4/panel-plugins/libclock.so
-lib/xfce4/panel-plugins/libmailcheck.so
+lib/xfce4/panel-plugins/libiconbox.so
+lib/xfce4/panel-plugins/liblauncher.so
 lib/xfce4/panel-plugins/libpager.so
 lib/xfce4/panel-plugins/libseparator.so
-lib/xfce4/panel-plugins/libswitcher.so
-lib/xfce4/panel-plugins/libsystembuttons.so
+lib/xfce4/panel-plugins/libshowdesktop.so
+lib/xfce4/panel-plugins/libsystray.so
+lib/xfce4/panel-plugins/libtasklist.so
+lib/xfce4/panel-plugins/libwindowlist.so
