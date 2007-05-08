@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/08 13:49:52 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/08 14:19:14 steven Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
@@ -15,11 +15,9 @@
      SUBDIR+= xfce4-battery
      SUBDIR+= xfce4-bglist-editor
      SUBDIR+= xfce4-clipman
-     SUBDIR+= xfce4-datetime
      SUBDIR+= xfce4-diskperf
      SUBDIR+= xfce4-fsguard
      SUBDIR+= xfce4-icon-theme
-     SUBDIR+= xfce4-iconbox
      SUBDIR+= xfce4-lua-graph
      SUBDIR+= xfce4-minicmd
      SUBDIR+= xfce4-mixer
@@ -27,12 +25,7 @@
      SUBDIR+= xfce4-notes
      SUBDIR+= xfce4-panel
      SUBDIR+= xfce4-session
-     SUBDIR+= xfce4-showdesktop
      SUBDIR+= xfce4-systemload
-     SUBDIR+= xfce4-systray
-     SUBDIR+= xfce4-taskbar
-     SUBDIR+= xfce4-toys
-     SUBDIR+= xfce4-trigger-launcher
      SUBDIR+= xfce4-wavelan
      SUBDIR+= xfce4-weather
      SUBDIR+= xfce4-xkb
