@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/11/10 22:57:38 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/05/08 08:39:44 steven Exp $
 bin/xfce-mcs-manager
 bin/xfce-setting-show
 include/xfce4/
@@ -13,9 +13,6 @@ share/icons/hicolor/
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/xfce4-settings.png
-share/locale/af/
-share/locale/af/LC_MESSAGES/
-share/locale/af/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce-mcs-manager.mo
@@ -29,8 +26,10 @@ share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ca/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/cs/LC_MESSAGES/xfce-mcs-manager.mo
-share/locale/da/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/el/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
@@ -49,6 +48,7 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/fi/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/fr/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/gl/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/xfce-mcs-manager.mo
@@ -59,13 +59,16 @@ share/locale/hi/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/hu/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/it/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ja/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ko/LC_MESSAGES/xfce-mcs-manager.mo
-share/locale/ku/
-share/locale/ku/LC_MESSAGES/
-share/locale/ku/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
+share/locale/mk/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/mr/
 share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/xfce-mcs-manager.mo
@@ -87,7 +90,6 @@ share/locale/pt_PT/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ro/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ru/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/sk/LC_MESSAGES/xfce-mcs-manager.mo
-share/locale/sl/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/sv/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
@@ -112,9 +114,10 @@ share/xfce4/doc/fr/images/smgr_from_panel.png
 share/xfce4/doc/fr/images/smgr_from_root_menu.png
 share/xfce4/doc/fr/images/smgr_from_setup_button.png
 share/xfce4/doc/fr/xfce-mcs-manager.html
-share/xfce4/doc/he/
-share/xfce4/doc/he/images/
-share/xfce4/doc/he/images/settings_manager.png
-share/xfce4/doc/he/images/smgr_from_root_menu.png
-share/xfce4/doc/he/images/smgr_from_setup_button.png
-share/xfce4/doc/he/xfce-mcs-manager.html
+share/xfce4/doc/it/
+share/xfce4/doc/it/images/
+share/xfce4/doc/it/images/settings_manager.png
+share/xfce4/doc/it/images/smgr_from_panel.png
+share/xfce4/doc/it/images/smgr_from_root_menu.png
+share/xfce4/doc/it/images/smgr_from_setup_button.png
+share/xfce4/doc/it/xfce-mcs-manager.html
