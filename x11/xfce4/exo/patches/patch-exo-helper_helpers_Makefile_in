@@ -1,0 +1,12 @@
+$OpenBSD: patch-exo-helper_helpers_Makefile_in,v 1.1.1.1 2007/05/08 08:30:01 steven Exp $
+--- exo-helper/helpers/Makefile.in.orig	Sat Jan 20 15:06:03 2007
++++ exo-helper/helpers/Makefile.in	Tue May  8 12:24:42 2007
+@@ -289,7 +289,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-defaultsdir = $(sysconfdir)/xdg/xfce4
++defaultsdir =  $(prefix)/share/examples/xfce4
+ defaults_DATA = helpers.rc
+ desktopdir = $(datadir)/xfce4/helpers
+ desktop_in_in_files = \

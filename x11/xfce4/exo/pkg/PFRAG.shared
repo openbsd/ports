@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/08 08:30:01 steven Exp $
+@lib lib/libexo-0.3.so.${LIBexo-0.3_VERSION}
+@lib lib/libexo-hal-0.3.so.${LIBexo-hal-0.3_VERSION}
+lib/xfce4/mcs-plugins/exo-preferred-applications-settings.so
