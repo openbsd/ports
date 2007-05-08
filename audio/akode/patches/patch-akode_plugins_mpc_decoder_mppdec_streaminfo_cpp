@@ -1,7 +1,7 @@
-$OpenBSD: patch-akode_plugins_mpc_decoder_mppdec_streaminfo_cpp,v 1.1.1.1 2006/03/10 10:40:16 espie Exp $
---- akode/plugins/mpc_decoder/mppdec/streaminfo.cpp.orig	Fri Mar 10 11:33:38 2006
-+++ akode/plugins/mpc_decoder/mppdec/streaminfo.cpp	Fri Mar 10 11:33:50 2006
-@@ -143,6 +143,7 @@ int StreamInfo::ReadHeaderSV6 ( unsigned
+$OpenBSD: patch-akode_plugins_mpc_decoder_mppdec_streaminfo_cpp,v 1.2 2007/05/08 15:16:37 naddy Exp $
+--- akode/plugins/mpc_decoder/mppdec/streaminfo.cpp.orig	Mon Apr  4 15:38:05 2005
++++ akode/plugins/mpc_decoder/mppdec/streaminfo.cpp	Wed May  2 23:06:53 2007
+@@ -143,6 +143,7 @@ int StreamInfo::ReadHeaderSV6 ( unsigned int HeaderDat
      return ERROR_CODE_OK;
  }
  

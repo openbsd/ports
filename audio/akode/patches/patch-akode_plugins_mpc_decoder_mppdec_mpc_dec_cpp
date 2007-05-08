@@ -1,7 +1,7 @@
-$OpenBSD: patch-akode_plugins_mpc_decoder_mppdec_mpc_dec_cpp,v 1.1.1.1 2006/03/10 10:40:16 espie Exp $
---- akode/plugins/mpc_decoder/mppdec/mpc_dec.cpp.orig	Fri Mar 10 11:33:14 2006
-+++ akode/plugins/mpc_decoder/mppdec/mpc_dec.cpp	Fri Mar 10 11:33:21 2006
-@@ -1056,6 +1056,7 @@ void MPC_decoder::UpdateBuffer ( unsigne
+$OpenBSD: patch-akode_plugins_mpc_decoder_mppdec_mpc_dec_cpp,v 1.2 2007/05/08 15:16:37 naddy Exp $
+--- akode/plugins/mpc_decoder/mppdec/mpc_dec.cpp.orig	Mon Apr  4 15:38:05 2005
++++ akode/plugins/mpc_decoder/mppdec/mpc_dec.cpp	Wed May  2 23:06:53 2007
+@@ -1056,6 +1056,7 @@ void MPC_decoder::UpdateBuffer ( unsigned int RING )
          f_read_dword ( Speicher + (RING & MEMSIZE2), MEMSIZE2 );      // update buffer
  }
  

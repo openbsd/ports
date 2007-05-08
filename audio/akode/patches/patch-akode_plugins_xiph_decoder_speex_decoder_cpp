@@ -1,0 +1,18 @@
+$OpenBSD: patch-akode_plugins_xiph_decoder_speex_decoder_cpp,v 1.1 2007/05/08 15:16:37 naddy Exp $
+--- akode/plugins/xiph_decoder/speex_decoder.cpp.orig	Sat May  5 17:14:13 2007
++++ akode/plugins/xiph_decoder/speex_decoder.cpp	Sat May  5 17:15:06 2007
+@@ -25,10 +25,10 @@
+ extern "C" {
+ #include <string.h>
+ #include <stdlib.h>
+-#include <speex.h>
+-#include <speex_header.h>
+-#include <speex_callbacks.h>
+-#include <speex_stereo.h>
++#include <speex/speex.h>
++#include <speex/speex_header.h>
++#include <speex/speex_callbacks.h>
++#include <speex/speex_stereo.h>
+ #include <ogg/ogg.h>
+ }
+ 

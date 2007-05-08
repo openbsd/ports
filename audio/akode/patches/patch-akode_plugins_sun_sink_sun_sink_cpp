@@ -1,24 +1,24 @@
-$OpenBSD: patch-akode_plugins_sun_sink_sun_sink_cpp,v 1.1.1.1 2006/03/10 10:40:16 espie Exp $
---- akode/plugins/sun_sink/sun_sink.cpp.orig	Wed Feb 22 12:52:14 2006
-+++ akode/plugins/sun_sink/sun_sink.cpp	Wed Feb 22 14:21:18 2006
-@@ -20,13 +20,15 @@
+$OpenBSD: patch-akode_plugins_sun_sink_sun_sink_cpp,v 1.2 2007/05/08 15:16:37 naddy Exp $
+--- akode/plugins/sun_sink/sun_sink.cpp.orig	Fri Oct 28 10:57:18 2005
++++ akode/plugins/sun_sink/sun_sink.cpp	Wed May  2 23:07:55 2007
+@@ -20,13 +20,14 @@
  
  #include <config.h>
  
 +#include <sys/types.h>
 +#include <sys/ioctl.h>
-+#include <string.h>
  #include <sys/audioio.h>
  
- #include <sys/ioctl.h>
+-#include <sys/ioctl.h>
  #include <errno.h>
  #include <fcntl.h>
++#include <string.h>
  #include <unistd.h>
 -#include <alloca.h>
  
  #include <audioframe.h>
  #include "sun_sink.h"
-@@ -97,7 +99,7 @@ int SunSink::setAudioConfiguration(const
+@@ -97,7 +98,7 @@ int SunSink::setAudioConfiguration(const AudioConfigur
  {
      d->config = *config;
  

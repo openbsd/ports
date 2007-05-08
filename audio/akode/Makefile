@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/08 15:16:37 naddy Exp $
 COMMENT=	"Decoding Library for KDE Multimedia"
 
-DISTNAME=	akode-2.0
+DISTNAME=	akode-2.0.2
 PKGNAME=	${DISTNAME}
-SHARED_LIBS +=	akode                2.0      # .2.0
+SHARED_LIBS +=	akode                2.1      # .2.0
 
 CATEGORIES=	audio multimedia x11/kde
 
 HOMEPAGE=	http://www.kde-apps.org/content/show.php?content=30375
 
-MAINTAINER=	David Love <david@shef.ac.uk>
-
-MASTER_SITES=	http://www.kde-apps.org/content/files/
-EXTRACT_SUFX=	.tar.gz
+MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
+EXTRACT_SUFX=	.tar.bz2
 DISTFILES=	30375-${DISTNAME}${EXTRACT_SUFX}
 
 # LGPL
@@ -34,23 +32,9 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.59
+AUTOCONF_VERSION=	2.60
 CONFIGURE=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
-
-
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib
-
-
-# Force the plugins to link as modules
-PLUGINS=		libakode_mpc_decoder \
-			libakode_mpeg_decoder \
-			lib/libakode_oss_sink \
-			lib/libakode_sun_sink \
-			lib/libakode_xiph_decoder
-
-.for _n in ${PLUGINS}
-    MAKE_FLAGS+=    lib${_n}_la_LDFLAGS='-module -avoid-version'
-.endfor
 
 .include <bsd.port.mk>
