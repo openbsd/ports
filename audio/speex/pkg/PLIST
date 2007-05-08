@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/06 14:37:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/05/08 15:17:48 naddy Exp $
 bin/speexdec
 bin/speexenc
 include/speex/
-include/speex.h
 include/speex/speex.h
 include/speex/speex_bits.h
 include/speex/speex_callbacks.h
+include/speex/speex_config_types.h
+include/speex/speex_echo.h
 include/speex/speex_header.h
+include/speex/speex_jitter.h
+include/speex/speex_preprocess.h
 include/speex/speex_stereo.h
-include/speex_bits.h
-include/speex_callbacks.h
-include/speex_header.h
-include/speex_stereo.h
+include/speex/speex_types.h
 lib/libspeex.a
 lib/libspeex.la
 lib/pkgconfig/
