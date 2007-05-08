@@ -1,0 +1,9 @@
+$OpenBSD: patch-hotspot_build_bsd_platform_i486,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/build/bsd/platform_i486.orig	Wed Mar 21 09:51:51 2007
++++ hotspot/build/bsd/platform_i486	Wed Mar 21 09:52:09 2007
+@@ -10,4 +10,4 @@ compiler = gcc
+ 
+ gnu_dis_arch = i386
+ 
+-sysdefs = -DLINUX -D_GNU_SOURCE -DIA32
++sysdefs = -D_ALLBSD_SOURCE -D_GNU_SOURCE -DIA32

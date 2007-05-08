@@ -1,0 +1,15 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_assembler_bsd_amd64_cpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/os_cpu/bsd_amd64/vm/assembler_bsd_amd64.cpp.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os_cpu/bsd_amd64/vm/assembler_bsd_amd64.cpp	Mon Apr 16 08:42:39 2007
+@@ -77,5 +77,11 @@ void MacroAssembler::get_thread(Register thread)
+ // user address space, no null pointer check is needed.
+ bool MacroAssembler::needs_explicit_null_check(int offset)
+ {
++#ifdef _ALLBSD_SOURCE
++  //XXXBSD: need to verify this. can page at 0 get mmaped?
++  bool offset_in_first_page =   0 <= offset  &&  offset < os::vm_page_size();
++  return !offset_in_first_page;
++#else
+   return offset < 0 || offset >= 0x100000;
++#endif
+ }

@@ -1,0 +1,256 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp	Mon Apr 16 08:42:39 2007
+@@ -47,8 +47,60 @@
+ #include <sys/wait.h>
+ #include <pwd.h>
+ #include <poll.h>
++#ifndef __OpenBSD__
+ #include <ucontext.h>
++#endif
+ 
++#ifdef _ALLBSD_SOURCE
++# include <pthread_np.h>
++#endif
++
++# ifdef __FreeBSD__
++#  define context_rip uc_mcontext.mc_rip
++#  define context_rsp uc_mcontext.mc_rsp
++#  define context_rax uc_mcontext.mc_rax
++#  define context_rbx uc_mcontext.mc_rbx
++#  define context_rcx uc_mcontext.mc_rcx
++#  define context_rdx uc_mcontext.mc_rdx
++#  define context_rbp uc_mcontext.mc_rbp
++#  define context_rsi uc_mcontext.mc_rsi
++#  define context_rdi uc_mcontext.mc_rdi
++#  define context_r8  uc_mcontext.mc_r8
++#  define context_r9  uc_mcontext.mc_r9
++#  define context_r10 uc_mcontext.mc_r10
++#  define context_r11 uc_mcontext.mc_r11
++#  define context_r12 uc_mcontext.mc_r12
++#  define context_r13 uc_mcontext.mc_r13
++#  define context_r14 uc_mcontext.mc_r14
++#  define context_r15 uc_mcontext.mc_r15
++#  define context_flags uc_mcontext.mc_flags
++#  define context_trapno uc_mcontext.mc_trapno
++#  define context_err uc_mcontext.mc_err
++# endif
++
++# ifdef __OpenBSD__
++#  define context_rip sc_rip
++#  define context_rsp sc_rsp
++#  define context_rax sc_rax
++#  define context_rbx sc_rbx
++#  define context_rcx sc_rcx
++#  define context_rdx sc_rdx
++#  define context_rbp sc_rbp
++#  define context_rsi sc_rsi
++#  define context_rdi sc_rdi
++#  define context_r8  sc_r8
++#  define context_r9  sc_r9
++#  define context_r10 sc_r10
++#  define context_r11 sc_r11
++#  define context_r12 sc_r12
++#  define context_r13 sc_r13
++#  define context_r14 sc_r14
++#  define context_r15 sc_r15
++#  define context_flags sc_rflags
++#  define context_trapno sc_trapno
++#  define context_err sc_err
++# endif
++
+ address os::current_stack_pointer()
+ {
+   register void *rsp __asm__ ("rsp");
+@@ -71,17 +123,17 @@ void os::initialize_thread()
+ 
+ address os::Bsd::ucontext_get_pc(ucontext_t* uc)
+ {
+-  return (address) uc->uc_mcontext.gregs[REG_RIP];
++  return (address) uc->context_rip;
+ }
+ 
+ intptr_t* os::Bsd::ucontext_get_sp(ucontext_t* uc)
+ {
+-  return (intptr_t*) uc->uc_mcontext.gregs[REG_RSP];
++  return (intptr_t*) uc->context_rsp;
+ }
+ 
+ intptr_t* os::Bsd::ucontext_get_fp(ucontext_t* uc)
+ {
+-  return (intptr_t*) uc->uc_mcontext.gregs[REG_RBP];
++  return (intptr_t*) uc->context_rbp;
+ }
+ 
+ // For Forte Analyzer AsyncGetCallTrace profiling support - thread is
+@@ -232,11 +284,11 @@ JVM_handle_bsd_signal(int sig,
+     pc = os::Bsd::ucontext_get_pc(uc);
+ 
+     if (pc == (address) Fetch32PFI) { 
+-       uc->uc_mcontext.gregs[REG_RIP] = intptr_t (Fetch32Resume) ; 
++       uc->context_rip = intptr_t (Fetch32Resume) ; 
+        return 1 ; 
+     } 
+     if (pc == (address) FetchNPFI) { 
+-       uc->uc_mcontext.gregs[REG_RIP] = intptr_t (FetchNResume) ; 
++       uc->context_rip = intptr_t (FetchNResume) ; 
+        return 1 ; 
+     } 
+ 
+@@ -267,6 +319,7 @@ JVM_handle_bsd_signal(int sig,
+           // to handle_unexpected_exception way down below.
+           thread->disable_stack_red_zone();
+           tty->print_raw_cr("An irrecoverable stack overflow has occurred.");
++#ifndef _ALLBSD_SOURCE
+         } else {
+           // Accessing stack address below sp may cause SEGV if current
+           // thread has MAP_GROWSDOWN stack. This should only happen when
+@@ -282,6 +335,7 @@ JVM_handle_bsd_signal(int sig,
+           } else {
+              fatal("recursive segv. expanding stack.");
+           }
++#endif
+         } 
+       }
+     }
+@@ -291,7 +345,7 @@ JVM_handle_bsd_signal(int sig,
+       // a fault inside compiled code, the interpreter, or a stub
+ 
+ #ifndef CORE
+-      if (sig == SIGSEGV && (address) info->si_addr == os::get_polling_page()) {
++      if ((sig == SIGSEGV || sig == SIGBUS) && (address) info->si_addr == os::get_polling_page()) {
+         stub = SharedRuntime::get_poll_stub(pc);
+       } else if (sig == SIGBUS /*&& info->si_code == BUS_OBJERR */) {
+ 	// BugId 4454115: A read from a MappedByteBuffer can fault
+@@ -314,7 +368,7 @@ JVM_handle_bsd_signal(int sig,
+                                               SharedRuntime::
+                                               IMPLICIT_DIVIDE_BY_ZERO);
+ 
+-      } else if (sig == SIGSEGV &&
++      } else if ((sig == SIGSEGV || sig == SIGBUS) &&
+                !MacroAssembler::needs_explicit_null_check((intptr_t)
+                                                           info->si_addr)) {
+         // Determination of interpreter/vtable stub/compiled code null
+@@ -354,7 +408,7 @@ JVM_handle_bsd_signal(int sig,
+     // save all thread context in case we need to restore it
+     thread->set_saved_exception_pc(pc);
+ 
+-    uc->uc_mcontext.gregs[REG_RIP] = (greg_t) stub;
++    uc->context_rip = (long) stub;
+     return true;
+   }
+ 
+@@ -389,6 +443,7 @@ void os::Bsd::init_thread_fpu_state(void)
+   // Nothing to do
+ }
+ 
++#ifndef _ALLBSD_SOURCE
+ int os::Bsd::get_fpu_control_word() {
+   return 0;
+ }
+@@ -396,6 +451,7 @@ int os::Bsd::get_fpu_control_word() {
+ void os::Bsd::set_fpu_control_word(int fpu) {
+   // nothing
+ }
++#endif
+ 
+ ///////////////////////////////////////////////////////////////////////////////
+ // thread stack
+@@ -452,6 +508,36 @@ size_t os::Bsd::default_guard_size(os::ThreadType thr_
+ //    pthread_attr_getstack()
+ 
+ static void current_stack_region(address* bottom, size_t* size) {
++#ifdef __OpenBSD__
++  stack_t ss;
++  int rslt = pthread_stackseg_np(pthread_self(), &ss);
++
++  if (rslt != 0)
++    fatal1("pthread_stackseg_np failed with err = %d", rslt);
++
++  *bottom = (address)((char *)ss.ss_sp - ss.ss_size);
++  *size   = ss.ss_size;
++#elif defined(_ALLBSD_SOURCE)
++  pthread_attr_t attr;
++
++  int rslt = pthread_attr_init(&attr);
++
++  // JVM needs to know exact stack location, abort if it fails
++  if (rslt != 0)
++    fatal1("pthread_attr_init failed with err = %d", rslt);
++
++  rslt = pthread_attr_get_np(pthread_self(), &attr);
++
++  if (rslt != 0)
++    fatal1("pthread_attr_get_np failed with err = %d", rslt);
++
++  if (pthread_attr_getstackaddr(&attr, (void **)bottom) != 0 ||
++    pthread_attr_getstacksize(&attr, size) != 0) {
++    fatal("Can not locate current stack attributes!");
++  }
++
++  pthread_attr_destroy(&attr);
++#else
+   if (os::Bsd::is_initial_thread()) {
+      // initial thread needs special handling because pthread_getattr_np()
+      // may return bogus value.
+@@ -478,6 +564,7 @@ static void current_stack_region(address* bottom, size
+      pthread_attr_destroy(&attr);
+ 
+   }
++#endif
+   assert(os::current_stack_pointer() >= *bottom &&
+          os::current_stack_pointer() < *bottom + *size, "just checking");
+ }
+@@ -510,32 +597,31 @@ void os::print_context(outputStream* st, void* context
+ 
+   ucontext_t* uc = (ucontext_t*) context;
+   st->print_cr("Registers:");
+-  st->print(  "RAX=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RAX]);
+-  st->print(", RBX=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RBX]);
+-  st->print(", RCX=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RCX]);
+-  st->print(", RDX=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RDX]);
++  st->print(  "RAX=" INTPTR_FORMAT, uc->context_rax);
++  st->print(", RBX=" INTPTR_FORMAT, uc->context_rbx);
++  st->print(", RCX=" INTPTR_FORMAT, uc->context_rcx);
++  st->print(", RDX=" INTPTR_FORMAT, uc->context_rdx);
+   st->cr();
+-  st->print(  "RSP=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RSP]);
+-  st->print(", RBP=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RBP]);
+-  st->print(", RSI=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RSI]);
+-  st->print(", RDI=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RDI]);
++  st->print(  "RSP=" INTPTR_FORMAT, uc->context_rsp);
++  st->print(", RBP=" INTPTR_FORMAT, uc->context_rbp);
++  st->print(", RSI=" INTPTR_FORMAT, uc->context_rsi);
++  st->print(", RDI=" INTPTR_FORMAT, uc->context_rdi);
+   st->cr();
+-  st->print(  "R8 =" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_R8]);
+-  st->print(", R9 =" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_R9]);
+-  st->print(", R10=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_R10]);
+-  st->print(", R11=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_R11]);
++  st->print(  "R8 =" INTPTR_FORMAT, uc->context_r8);
++  st->print(", R9 =" INTPTR_FORMAT, uc->context_r9);
++  st->print(", R10=" INTPTR_FORMAT, uc->context_r10);
++  st->print(", R11=" INTPTR_FORMAT, uc->context_r11);
+   st->cr();
+-  st->print(  "R12=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_R12]);
+-  st->print(", R13=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_R13]);
+-  st->print(", R14=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_R14]);
+-  st->print(", R15=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_R15]);
++  st->print(  "R12=" INTPTR_FORMAT, uc->context_r12);
++  st->print(", R13=" INTPTR_FORMAT, uc->context_r13);
++  st->print(", R14=" INTPTR_FORMAT, uc->context_r14);
++  st->print(", R15=" INTPTR_FORMAT, uc->context_r15);
+   st->cr();
+-  st->print(  "RIP=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RIP]);
+-  st->print(", EFL=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_EFL]);
+-  st->print(", CSGSFS=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_CSGSFS]);
+-  st->print(", ERR=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_ERR]);
++  st->print(  "RIP=" INTPTR_FORMAT, uc->context_rip);
++  st->print(", EFL=" INTPTR_FORMAT, uc->context_flags);
++  st->print(", ERR=" INTPTR_FORMAT, uc->context_err);
+   st->cr();
+-  st->print("  TRAPNO=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_TRAPNO]);
++  st->print("  TRAPNO=" INTPTR_FORMAT, uc->context_trapno);
+   st->cr();
+   st->cr();
+ 

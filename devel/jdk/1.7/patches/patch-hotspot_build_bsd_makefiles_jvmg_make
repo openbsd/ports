@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_jvmg_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/build/bsd/makefiles/jvmg.make.orig	Mon Apr 30 09:47:42 2007
++++ hotspot/build/bsd/makefiles/jvmg.make	Mon Apr 30 09:49:03 2007
+@@ -24,6 +24,8 @@
+ 
+ # Sets make macros for making debug version of VM
+ 
++DEBUG_CFLAGS/compactingPermGenGen.o = -O1
++
+ # Compiler specific DEBUG_CFLAGS are passed in from gcc.make, sparcWorks.make
+ DEBUG_CFLAGS/DEFAULT= $(DEBUG_CFLAGS)
+ DEBUG_CFLAGS/BYFILE = $(DEBUG_CFLAGS/$@)$(DEBUG_CFLAGS/DEFAULT$(DEBUG_CFLAGS/$@))

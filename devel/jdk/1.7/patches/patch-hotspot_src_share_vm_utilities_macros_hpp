@@ -1,0 +1,18 @@
+$OpenBSD: patch-hotspot_src_share_vm_utilities_macros_hpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/share/vm/utilities/macros.hpp.orig	Tue Apr 10 04:02:20 2007
++++ hotspot/src/share/vm/utilities/macros.hpp	Mon Apr 16 08:42:39 2007
+@@ -135,6 +135,14 @@
+ #define NOT_WINDOWS(code) code
+ #endif
+ 
++#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#define BSD_ONLY(code) code
++#define NOT_BSD(code)
++#else
++#define BSD_ONLY(code)
++#define NOT_BSD(code) code
++#endif
++
+ #ifdef IA32
+ #define IA32_ONLY(code) code
+ #define NOT_IA32(code)

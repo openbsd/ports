@@ -1,0 +1,60 @@
+$OpenBSD: patch-hotspot_src_share_vm_includeDB_compiler2,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/share/vm/includeDB_compiler2.orig	Tue Apr 10 04:01:37 2007
++++ hotspot/src/share/vm/includeDB_compiler2	Mon Apr 16 08:42:39 2007
+@@ -139,7 +139,7 @@ c2compiler.cpp                          runtime.hpp
+ 
+ c2compiler.hpp                          abstractCompiler.hpp
+ 
+-c2_init_<arch>.cpp                      compile.hpp
++c2_init_<arch>.cpp                      node.hpp
+ 
+ callGenerator.hpp                       callnode.hpp
+ callGenerator.hpp                       compile.hpp
+@@ -391,6 +391,7 @@ debug.cpp                               disassembler_<
+ debug.cpp                               icBuffer.hpp
+ debug.cpp                               nmethod.hpp
+ debug.cpp                               vtableStubs.hpp
++debug.cpp                               node.hpp
+ 
+ debug_<arch>.cpp                        nmethod.hpp
+ 
+@@ -498,11 +499,14 @@ exceptionHandlerTable.hpp               methodOop.hpp
+ 
+ exceptions.cpp                          compileBroker.hpp
+ 
++filemap.hpp                             node.hpp
++
+ fprofiler.cpp                           compile.hpp
+ fprofiler.cpp                           deoptimization.hpp
+ fprofiler.cpp                           icBuffer.hpp
+ fprofiler.cpp                           nmethod.hpp
+ fprofiler.cpp                           vtableStubs.hpp
++fprofiler.cpp                           node.hpp
+ 
+ frame.cpp                               codeCache.hpp
+ frame.cpp                               nmethod.hpp
+@@ -550,6 +554,8 @@ generateOptoStub.cpp                    rootnode.hpp
+ generateOptoStub.cpp                    runtime.hpp
+ generateOptoStub.cpp                    type.hpp
+ 
++genOopClosures.inline.hpp               node.hpp
++
+ globals.hpp                             c2_globals_<arch>.hpp
+ globals.hpp                             c2_globals_<os_family>.hpp
+ 
+@@ -944,6 +950,7 @@ oopMap.cpp                              nmethod.hpp
+ oopMap.cpp                              oopMap.hpp
+ oopMap.cpp                              scopeDesc.hpp
+ oopMap.cpp                              signature.hpp
++oopMap.cpp                              node.hpp
+ 
+ oopMap.hpp                              allocation.hpp
+ oopMap.hpp                              compressedStream.hpp
+@@ -1051,6 +1058,7 @@ phase.cpp                               compile.hpp
+ phase.cpp                               compileBroker.hpp
+ phase.cpp                               nmethod.hpp
+ phase.cpp                               phase.hpp
++phase.cpp                               node.hpp
+ 
+ phase.hpp                               port.hpp
+ phase.hpp                               timer.hpp

@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_vmStructs_bsd_amd64_hpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/os_cpu/bsd_amd64/vm/vmStructs_bsd_amd64.hpp.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os_cpu/bsd_amd64/vm/vmStructs_bsd_amd64.hpp	Mon Apr 16 08:42:39 2007
+@@ -34,7 +34,7 @@
+   /******************************/                                            \
+   /* Threads (NOTE: incomplete) */                                            \
+   /******************************/                                            \
+-  nonstatic_field(OSThread, _thread_id, pid_t)                                \
++  nonstatic_field(OSThread, _thread_id, pthread_t)                            \
+   nonstatic_field(OSThread, _pthread_id, pthread_t)                           \
+   /* This must be the last entry, and must be present */                      \
+   last_entry()

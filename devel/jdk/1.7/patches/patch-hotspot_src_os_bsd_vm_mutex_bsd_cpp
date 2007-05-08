@@ -1,0 +1,49 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_mutex_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/src/os/bsd/vm/mutex_bsd.cpp.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os/bsd/vm/mutex_bsd.cpp	Mon Apr 16 08:42:39 2007
+@@ -252,7 +252,7 @@ bool Monitor::wait(bool no_safepoint_check, long timeo
+     }
+     
+     // If wait was interrupted by a signal or timeout, do not use up a ticket
+-    if (wait_status == EINTR || wait_status == ETIME || wait_status == ETIMEDOUT) {
++    if (wait_status == EINTR || wait_status == ETIMEDOUT) {
+       ++_tickets;		// will be decremented again below
+       break;
+     }
+@@ -267,7 +267,7 @@ bool Monitor::wait(bool no_safepoint_check, long timeo
+ #endif
+    
+   // return true if timed out
+-  return (wait_status == ETIME || wait_status == ETIMEDOUT);
++  return (wait_status == ETIMEDOUT);
+ }
+ 
+ 
+@@ -343,7 +343,7 @@ bool Monitor::notify_all() {
+  * of "now + 100,000,000". This places a limit on the timeout of about 3.17
+  * years from "now".
+  */
+-static void unpackTime(timespec* absTime, bool isAbsolute, jlong time) {
++static void unpackTime(struct timespec* absTime, bool isAbsolute, jlong time) {
+   assert (time > 0, "convertTime");
+ 
+   struct timeval now;
+@@ -402,7 +402,7 @@ void Parker::park(bool isAbsolute, jlong time) {
+   }
+ 
+   // Next, demultiplex/decode time arguments
+-  timespec absTime;
++  struct timespec absTime;
+   if (time < 0) { // don't wait at all
+     return; 
+   }
+@@ -455,8 +455,7 @@ void Parker::park(bool isAbsolute, jlong time) {
+     }
+   }
+   assert_status(status == 0 || status == EINTR || 
+-                status == ETIME || status == ETIMEDOUT, 
+-                status, "cond_timedwait");
++                status == ETIMEDOUT, status, "cond_timedwait");
+ 
+ #ifdef ASSERT
+   pthread_sigmask(SIG_SETMASK, &oldsigs, NULL);

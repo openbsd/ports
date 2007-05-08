@@ -1,0 +1,191 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.hpp.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os/bsd/vm/os_bsd.hpp	Mon Apr 16 08:42:39 2007
+@@ -50,6 +50,7 @@ class Bsd {
+   static int sigflags[MAXSIGNUM];
+ 
+   static int (*_clock_gettime)(clockid_t, struct timespec *);
++#ifndef _ALLBSD_SOURCE
+   static int (*_pthread_getcpuclockid)(pthread_t, clockid_t *);
+ 
+   static address   _initial_thread_stack_bottom;
+@@ -61,42 +62,78 @@ class Bsd {
+   static bool _is_floating_stack;
+   static bool _is_NPTL;
+   static bool _supports_fast_thread_cpu_time;
++#endif
+ 
+  protected:
+ 
+   static julong _physical_memory;
+   static pthread_t _main_thread;
++#ifndef _ALLBSD_SOURCE
+   static Mutex* _createThread_lock;
++#endif
+   static int _page_size;
+ 
+   static julong available_memory();
+   static julong physical_memory() { return _physical_memory; }
+   static void initialize_system_info();
+ 
++#ifndef _ALLBSD_SOURCE
+   static void set_glibc_version(char *s)      { _glibc_version = s; }
+   static void set_libpthread_version(char *s) { _libpthread_version = s; }
++#endif
+ 
+   static bool supports_variable_stack_size();
+ 
++#ifndef _ALLBSD_SOURCE
+   static void set_is_NPTL()                   { _is_NPTL = true;  }
+   static void set_is_BsdThreads()           { _is_NPTL = false; }
+   static void set_is_floating_stack()         { _is_floating_stack = true; }
++#endif
+ 
+  public:
+ 
++#ifdef _ALLBSD_SOURCE
++//XXXBSD: ported from solaris version
++  enum {
++    clear_interrupted = true
++  };
++  static void setup_interruptible(JavaThread* thread);
++  static void setup_interruptible_already_blocked(JavaThread* thread);
++  static JavaThread* setup_interruptible();
++  static void cleanup_interruptible(JavaThread* thread);
++
++  // perf counter incrementers used by _INTERRUPTIBLE 
++
++  static void bump_interrupted_before_count();
++  static void bump_interrupted_during_count();
++
++#ifdef ASSERT
++  static JavaThread* setup_interruptible_native();
++  static void cleanup_interruptible_native(JavaThread* thread);
++#endif
++
++#endif
++
+   static void init_thread_fpu_state();
++#ifndef _ALLBSD_SOURCE
+   static int  get_fpu_control_word();
+   static void set_fpu_control_word(int fpu_control);
++#endif
+   static pthread_t main_thread(void)                                { return _main_thread; }
++
++#ifndef _ALLBSD_SOURCE
+   // returns kernel thread id (similar to LWP id on Solaris), which can be
+   // used to access /proc
+   static pid_t gettid();
+   static void set_createThread_lock(Mutex* lk)                      { _createThread_lock = lk; }
+   static Mutex* createThread_lock(void)                             { return _createThread_lock; }
++#endif
+   static void hotspot_sigmask(Thread* thread);
+ 
++#ifndef _ALLBSD_SOURCE
+   static address   initial_thread_stack_bottom(void)                { return _initial_thread_stack_bottom; }
+   static uintptr_t initial_thread_stack_size(void)                  { return _initial_thread_stack_size; }
++#endif
+   static bool is_initial_thread(void);
+ 
+   static int page_size(void)                                        { return _page_size; }
+@@ -133,6 +170,7 @@ class Bsd {
+   static struct sigaction *get_chained_signal_action(int sig);
+   static bool chained_handler(int sig, siginfo_t* siginfo, void* context);
+ 
++#ifndef _ALLBSD_SOURCE
+   // GNU libc and libpthread version strings
+   static char *glibc_version()                { return _glibc_version; }
+   static char *libpthread_version()           { return _libpthread_version; }
+@@ -146,6 +184,7 @@ class Bsd {
+   static bool is_floating_stack()             { return _is_floating_stack; }
+ 
+   static void libpthread_init();
++#endif
+ 
+   // Minimum stack size a thread can be created with (allowing
+   // the VM to completely create the thread and enter user code)
+@@ -155,17 +194,21 @@ class Bsd {
+   static size_t default_stack_size(os::ThreadType thr_type);
+   static size_t default_guard_size(os::ThreadType thr_type);
+ 
++#ifndef _ALLBSD_SOURCE
+   static void capture_initial_stack(size_t max_size);
+ 
+   // Stack overflow handling
+   static bool manually_expand_stack(JavaThread * t, address addr);
+   static int max_register_window_saves_before_flushing();
++#endif
+ 
+   // Real-time clock functions
+   static void clock_init(void);
+ 
++#ifndef _ALLBSD_SOURCE
+   // fast POSIX clocks support
+   static void fast_thread_clock_init(void);
++#endif
+ 
+   static bool supports_monotonic_clock() {
+     return _clock_gettime != NULL;
+@@ -175,6 +218,7 @@ class Bsd {
+     return _clock_gettime ? _clock_gettime(clock_id, tp) : -1;
+   }
+ 
++#ifndef _ALLBSD_SOURCE
+   static int pthread_getcpuclockid(pthread_t tid, clockid_t *clock_id) {
+     return _pthread_getcpuclockid ? _pthread_getcpuclockid(tid, clock_id) : -1;
+   }
+@@ -184,6 +228,7 @@ class Bsd {
+   }
+ 
+   static jlong fast_thread_cpu_time(clockid_t clockid);
++#endif
+ 
+   // Stack repair handling
+ 
+@@ -250,7 +295,7 @@ class Bsd {
+       int status = pthread_mutex_unlock(_mutex);
+       assert_status(status == 0, status, "mutex_unlock");
+     }
+-    int timedwait(timespec* abstime) {
++    int timedwait(struct timespec* abstime) {
+       verify();
+       ++_nParked ; 
+       int status = safe_cond_timedwait(_cond, _mutex, abstime);
+@@ -264,12 +309,11 @@ class Bsd {
+          pthread_cond_init (_cond, NULL) ; 
+       }
+       assert_status(status == 0 || status == EINTR || 
+-		    status == ETIME || status == ETIMEDOUT, 
+-		    status, "cond_timedwait");
++		    status == ETIMEDOUT, status, "cond_timedwait");
+       return status;
+     }
+     int timedwait(jlong millis) {
+-      timespec abst;
++      struct timespec abst;
+       Event::compute_abstime(&abst, millis);
+       return timedwait(&abst);
+     }
+@@ -278,11 +322,6 @@ class Bsd {
+       ++_nParked ; 
+       int status = pthread_cond_wait(_cond, _mutex);
+       --_nParked ; 
+-      // for some reason, under 2.7 lwp_cond_wait() may return ETIME ...
+-      // Treat this the same as if the wait was interrupted
+-      if(status == ETIME) {
+-	status = EINTR;
+-      }
+       assert_status(status == 0 || status == EINTR, status, "cond_wait");
+       return status;
+     }
+@@ -352,8 +391,9 @@ class Bsd {
+      _count = 0;
+     }
+ 
++// XXXBSD TODO: sync with 1.5 version
+     // utility to compute the abstime argument to timedwait:
+-    static struct timespec* compute_abstime(timespec* abstime, jlong millis) {
++    static struct timespec* compute_abstime(struct timespec* abstime, jlong millis) {
+       // millis is the relative timeout time
+       // abstime will be the absolute timeout time
+       if (millis < 0)  millis = 0;

@@ -1,0 +1,26 @@
+$OpenBSD: patch-hotspot_make_defs_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/make/defs.make.orig	Tue Apr 10 04:00:13 2007
++++ hotspot/make/defs.make	Mon Apr 16 08:42:38 2007
+@@ -93,13 +93,20 @@ endif
+ # Windows should have OS predefined
+ ifeq ($(OS),)
+   OS   := $(shell uname -s)
++  ifneq ($(findstring BSD,$(OS)),)
++    OS=bsd
++  endif
+   HOST := $(shell uname -n)
+ endif
+ 
+-# If not SunOS and not Linux, assume Windows
++# If not SunOS, not Linux and not BSD, assume Windows
+ ifneq ($(OS), Linux)
+   ifneq ($(OS), SunOS)
+-    OSNAME=windows
++    ifneq ($(OS), bsd)
++      OSNAME=windows
++    else
++      OSNAME=bsd
++    endif
+   else
+     OSNAME=solaris
+   endif

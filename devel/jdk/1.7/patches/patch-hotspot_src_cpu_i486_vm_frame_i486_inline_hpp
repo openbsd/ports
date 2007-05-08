@@ -1,0 +1,30 @@
+$OpenBSD: patch-hotspot_src_cpu_i486_vm_frame_i486_inline_hpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/cpu/i486/vm/frame_i486.inline.hpp.orig	Tue Apr 10 04:01:26 2007
++++ hotspot/src/cpu/i486/vm/frame_i486.inline.hpp	Mon Apr 16 08:42:38 2007
+@@ -40,7 +40,7 @@ inline frame::frame() { 
+ #endif // CORE
+ }
+ 
+-inline frame:: frame(jint* sp, jint* fp, address pc) { 
++inline frame:: frame(intptr_t* sp, intptr_t* fp, address pc) { 
+   _sp = sp;
+   _unextended_sp = sp;
+   _fp = fp;
+@@ -58,7 +58,7 @@ inline frame:: frame(jint* sp, jint* fp, address pc) {
+ #endif // CORE
+ }
+ 
+-inline frame:: frame(jint* sp, jint* unextended_sp, jint* fp, address pc) { 
++inline frame:: frame(intptr_t* sp, intptr_t* unextended_sp, intptr_t* fp, address pc) { 
+   _sp = sp;
+   _unextended_sp = unextended_sp;
+   _fp = fp;
+@@ -76,7 +76,7 @@ inline frame:: frame(jint* sp, jint* unextended_sp, ji
+ #endif // CORE
+ }
+ 
+-inline frame::frame(jint* sp, jint* fp) {
++inline frame::frame(intptr_t* sp, intptr_t* fp) {
+   _sp = sp;
+   _unextended_sp = sp;
+   _fp = fp;

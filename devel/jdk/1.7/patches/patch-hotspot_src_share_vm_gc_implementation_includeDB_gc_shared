@@ -1,0 +1,21 @@
+$OpenBSD: patch-hotspot_src_share_vm_gc_implementation_includeDB_gc_shared,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/share/vm/gc_implementation/includeDB_gc_shared.orig	Tue Apr 10 04:01:45 2007
++++ hotspot/src/share/vm/gc_implementation/includeDB_gc_shared	Mon Apr 16 08:42:39 2007
+@@ -42,7 +42,7 @@ ageTable.cpp                            gcAdaptivePoli
+ ageTable.cpp                            resourceArea.hpp
+ ageTable.cpp                            sharedHeap.hpp
+ 
+-ageTable.hpp                            markOop.hpp
++ageTable.hpp                            markOop.inline.hpp
+ ageTable.hpp                            oop.hpp
+ ageTable.hpp                            perfData.hpp
+ 
+@@ -112,7 +112,7 @@ markSweep.cpp                           oop.inline.hpp
+ 
+ markSweep.hpp                           growableArray.hpp
+ markSweep.hpp                           jvmpi.hpp
+-markSweep.hpp                           markOop.hpp
++markSweep.hpp                           markOop.inline.hpp
+ markSweep.hpp                           oop.hpp
+ markSweep.hpp                           timer.hpp
+ markSweep.hpp                           universe.hpp

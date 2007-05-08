@@ -1,0 +1,43 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/build/bsd/makefiles/vm.make.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/build/bsd/makefiles/vm.make	Mon Apr 16 08:42:38 2007
+@@ -100,6 +100,10 @@ CPPFLAGS =           \
+   ${RELEASE_VERSION} \
+   ${VM_DISTRO}
+ 
++ifdef DEFAULT_LIBPATH
++CPPFLAGS += -DDEFAULT_LIBPATH="\"$(DEFAULT_LIBPATH)\""
++endif
++
+ # CFLAGS_WARN holds compiler options to suppress/enable warnings.
+ CFLAGS += $(CFLAGS_WARN/BYFILE)
+ 
+@@ -109,7 +113,7 @@ CFLAGS += $(CFLAGS/NOEX)
+ # Extra flags from gnumake's invocation or environment
+ CFLAGS += $(EXTRA_CFLAGS)
+ 
+-LIBS += -lm -ldl -lpthread
++LIBS += -lm -pthread
+ 
+ # By default, link the *.o into the library, not the executable.
+ LINK_INTO$(LINK_INTO) = LIBJVM
+@@ -152,10 +156,17 @@ else
+   # get around library dependency and compatibility issues. Must use gcc not
+   # g++ to link.
+   LFLAGS_VM                += $(STATIC_LIBGCC)
+-  LIBS_VM                  += $(STATIC_STDCXX) $(LIBS)
++ifeq ($(BUILDARCH), i486)
++  LIBS_VM                  += $(STATIC_STDCXX)
+ endif
++  LIBS_VM                  += $(LIBS)
++endif
+ 
+-LINK_VM = $(LINK_LIB.c)
++ifeq ($(BUILDARCH), i486)
++  LINK_VM = $(LINK_LIB.c)
++else
++  LINK_VM = $(LINK_LIB.CC)
++endif
+ 
+ # rule for building precompiled header
+ $(PRECOMPILED_HEADER): $(Precompiled_Files)

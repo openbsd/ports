@@ -1,0 +1,18 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_jsig_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/build/bsd/makefiles/jsig.make.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/build/bsd/makefiles/jsig.make	Mon Apr 16 08:42:38 2007
+@@ -39,12 +39,12 @@ LIBJSIG_MAPFILE = $(MAKEFILES_DIR)/mapfile-vers-jsig
+ # cause problems with interposing. See CR: 6466665
+ # LFLAGS_JSIG += $(MAPFLAG:FILENAME=$(LIBJSIG_MAPFILE))
+ 
+-LFLAGS_JSIG += -D_GNU_SOURCE -D_REENTRANT
++LFLAGS_JSIG += -D_GNU_SOURCE -pthread
+ 
+ $(LIBJSIG): $(JSIGSRCDIR)/jsig.c $(LIBJSIG_MAPFILE)
+ 	@echo Making signal interposition lib...
+ 	$(QUIETLY) $(CC) $(SYMFLAG) $(ARCHFLAG) $(SHARED_FLAG) $(PICFLAG) \
+-                         $(LFLAGS_JSIG) -o $@ $< -ldl
++                         $(LFLAGS_JSIG) -o $@ $<
+ 
+ install_jsig: $(LIBJSIG)
+ 	@echo "Copying $(LIBJSIG) to $(DEST_JSIG)"

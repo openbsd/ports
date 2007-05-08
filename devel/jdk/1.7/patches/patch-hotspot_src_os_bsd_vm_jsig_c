@@ -1,0 +1,13 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_jsig_c,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/os/bsd/vm/jsig.c.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os/bsd/vm/jsig.c	Mon Apr 16 08:42:38 2007
+@@ -146,7 +146,8 @@ sa_handler_t signal(int sig, sa_handler_t disp) {
+ }
+ 
+ sa_handler_t sigset(int sig, sa_handler_t disp) {
+-  return set_signal(sig, disp, true);
++  printf("sigset() is not supported by BSD");
++  exit(0);
+  }
+ 
+ static int call_os_sigaction(int sig, const struct sigaction  *act,

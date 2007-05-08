@@ -1,0 +1,45 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/build/bsd/makefiles/gcc.make.orig	Mon Apr 30 19:56:06 2007
++++ hotspot/build/bsd/makefiles/gcc.make	Mon Apr 30 21:42:08 2007
+@@ -50,19 +50,12 @@ PICFLAG = -fPIC
+ 
+ VM_PICFLAG/LIBJVM = $(PICFLAG)
+ VM_PICFLAG/AOUT   =
+-
+-ifneq ($(BUILDARCH), i486)
+ VM_PICFLAG        = $(VM_PICFLAG/$(LINK_INTO))
+-else
+-# PIC has significant overhead on x86, build nonpic VM for now.
+-# Link JVM at a "good" base location to avoid unnecessary .text patching.
+-JVM_BASE_ADDR     = 0x06000000
+-endif
+ 
+ CFLAGS += $(VM_PICFLAG)
+ CFLAGS += -fno-rtti
+ CFLAGS += -fno-exceptions
+-CFLAGS += -D_REENTRANT
++CFLAGS += -pthread
+ CFLAGS += -fcheck-new
+ 
+ ARCHFLAG = $(ARCHFLAG/$(BUILDARCH))
+@@ -129,6 +122,11 @@ endif
+ # Enable linker optimization
+ LFLAGS += -Xlinker -O1
+ 
++# XXXBSD: need this until j2se is ported and libfontmanager/libjavaplugin_nscp
++# can be linked with needed libs (supc++ etc). For now it is getting some symbols
++# from libjvm.
++LDNOMAP = true
++
+ # Use $(MAPFLAG:FILENAME=real_file_name) to specify a map file.
+ MAPFLAG = -Xlinker --version-script=FILENAME
+ 
+@@ -136,7 +134,7 @@ MAPFLAG = -Xlinker --version-script=FILENAME
+ SONAMEFLAG = -Xlinker -soname=SONAME
+ 
+ # Build shared library
+-SHARED_FLAG = -shared
++SHARED_FLAG = -shared $(VM_PICFLAG)
+ 
+ # Keep symbols even they are not used
+ AOUT_FLAGS += -export-dynamic

@@ -1,0 +1,28 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_i486_vm_bsd_i486_s,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/src/os_cpu/bsd_i486/vm/bsd_i486.s.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os_cpu/bsd_i486/vm/bsd_i486.s	Mon Apr 16 08:42:39 2007
+@@ -29,6 +29,7 @@
+ 	# point or use it in the same manner as does the server
+ 	# compiler.
+ 	
++	.globl fixcw
+         .globl _Copy_conjoint_bytes
+         .globl _Copy_arrayof_conjoint_bytes
+         .globl _Copy_conjoint_jshorts_atomic
+@@ -41,6 +42,16 @@
+         .globl _Atomic_cmpxchg_long
+ 
+ 	.text
++
++# Support for void os::Bsd::init_thread_fpu_state() in os_bsd_i486.cpp
++# Set fpu to 53 bit precision.  This happens too early to use a stub.
++# ported from os_solaris_i486.s
++	.align   16
++fixcw:
++	pushl    $0x27f
++	fldcw    0(%esp)
++	popl     %eax
++	ret
+ 
+         .globl  SafeFetch32, Fetch32PFI, Fetch32Resume
+         .globl  SafeFetchN

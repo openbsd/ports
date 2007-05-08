@@ -1,0 +1,34 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_sa_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/build/bsd/makefiles/sa.make.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/build/bsd/makefiles/sa.make	Mon Apr 16 08:42:38 2007
+@@ -31,6 +31,7 @@
+ include $(GAMMADIR)/build/bsd/makefiles/rules.make
+ 
+ AGENT_DIR = $(GAMMADIR)/agent
++SASRCDIR = $(AGENT_DIR)/src/os/$(Platform_os_family)
+ 
+ include $(GAMMADIR)/build/sa.files
+ 
+@@ -42,7 +43,7 @@ SA_CLASSPATH = $(BOOT_JAVA_HOME)/lib/tools.jar
+ 
+ # gnumake 3.78.1 does not accept the *s that
+ # are in AGENT_ALLFILES, so use the shell to expand them
+-AGENT_ALLFILES := $(shell /usr/bin/test -d $(AGENT_DIR) && /bin/ls $(AGENT_ALLFILES))
++AGENT_ALLFILES := $(shell /bin/test -d $(AGENT_DIR) && /bin/ls $(AGENT_ALLFILES))
+ 
+ SA_CLASSDIR = $(GENERATED)/saclasses
+ 
+@@ -54,11 +55,11 @@ SA_VERSION = $(HS_MAJOR_VER).$(HS_MINOR_VER).$(HS_MICR
+ SA_VERSION_PROP = "sun.jvm.hotspot.runtime.VM.supportedVersion=$(SA_VERSION)"
+ SA_PROPERTIES = $(SA_CLASSDIR)/sa.properties
+ 
+-# if $(AGENT_DIR) does not exist, we don't build SA
++# if $(SASRCDIR) does not exist, we don't build SA
+ # also, we don't build SA on Itanium.
+ 
+ all: 
+-	if [ -d $(AGENT_DIR) -a "$(SRCARCH)" != "ia64" ] ; then \
++	if [ -d $(SASRCDIR) -a "$(SRCARCH)" != "ia64" ] ; then \
+ 	   $(MAKE) -f sa.make $(GENERATED)/sa-jdi.jar; \
+ 	fi
+ 

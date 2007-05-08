@@ -1,0 +1,82 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_osThread_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/os/bsd/vm/osThread_bsd.hpp.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os/bsd/vm/osThread_bsd.hpp	Mon Apr 16 08:42:39 2007
+@@ -39,6 +39,12 @@
+ 
+  private:
+ 
++#ifdef _ALLBSD_SOURCE
++  // _thread_id and _pthread_id are the same on BSD
++  // keep both to minimize code divergence in os_bsd.cpp
++  pthread_t _thread_id;
++  pthread_t _pthread_id;
++#else
+   // _thread_id is kernel thread id (similar to LWP id on Solaris). Each
+   // thread has a unique thread_id (BsdThreads or NPTL). It can be used
+   // to access /proc.
+@@ -47,6 +53,7 @@
+   // _pthread_id is the pthread id, which is used by library calls
+   // (e.g. pthread_kill).
+   pthread_t _pthread_id;
++#endif
+ 
+   sigset_t _caller_sigmask; // Caller's signal mask
+ 
+@@ -56,12 +63,18 @@
+   sigset_t  caller_sigmask() const       { return _caller_sigmask; }
+   void    set_caller_sigmask(sigset_t sigmask)  { _caller_sigmask = sigmask; }
+ 
++#ifdef _ALLBSD_SOURCE
++  pthread_t thread_id() const {
++    return _thread_id;
++  }
++#else
+   pid_t thread_id() const {
+     return _thread_id;
+   }
++#endif
+ #ifndef PRODUCT
+   // Used for debugging, return a unique integer for each thread.
+-  int thread_identifier() const   { return _thread_id; }
++  intptr_t thread_identifier() const   { return (intptr_t)_pthread_id; }
+ #endif
+ #ifdef ASSERT
+   // We expect no reposition failures so kill vm if we get one.
+@@ -70,9 +83,15 @@
+     return false;
+   }
+ #endif // ASSERT
++#ifdef _ALLBSD_SOURCE
++  void set_thread_id(pthread_t id) {
++    _thread_id = id;
++  }
++#else
+   void set_thread_id(pid_t id) {
+     _thread_id = id;
+   }
++#endif
+   pthread_t pthread_id() const {
+     return _pthread_id;
+   }
+@@ -130,6 +149,9 @@
+ 
+   os::Bsd::Event* _interrupt_event;
+   Monitor* _startThread_lock;     // sync parent and child in thread creation
++#ifdef _ALLBSD_SOURCE
++  JavaThreadState      _saved_interrupt_thread_state;       // the thread state before a system call -- restored afterward
++#endif
+ 
+ public:
+ 
+@@ -143,6 +165,11 @@
+   Monitor* startThread_lock() const {
+     return _startThread_lock;
+   }
++
++#ifdef _ALLBSD_SOURCE
++  JavaThreadState   saved_interrupt_thread_state()                              { return _saved_interrupt_thread_state; }
++  void              set_saved_interrupt_thread_state(JavaThreadState state)     { _saved_interrupt_thread_state = state; }
++#endif
+ 
+   // ***************************************************************
+   // Platform dependent initialization and cleanup

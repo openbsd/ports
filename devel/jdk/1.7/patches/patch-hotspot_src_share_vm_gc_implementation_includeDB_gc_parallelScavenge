@@ -1,0 +1,11 @@
+$OpenBSD: patch-hotspot_src_share_vm_gc_implementation_includeDB_gc_parallelScavenge,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/share/vm/gc_implementation/includeDB_gc_parallelScavenge.orig	Tue Apr 10 04:01:45 2007
++++ hotspot/src/share/vm/gc_implementation/includeDB_gc_parallelScavenge	Mon Apr 16 08:42:39 2007
+@@ -90,6 +90,7 @@ gcTaskManager.cpp                       gcTaskManager.
+ gcTaskManager.cpp                       gcTaskThread.hpp
+ gcTaskManager.cpp                       mutex.hpp
+ gcTaskManager.cpp                       mutexLocker.hpp
++gcTaskManager.cpp                       thread_<os_family>.inline.hpp
+ 
+ gcTaskThread.hpp                        thread.hpp
+ 

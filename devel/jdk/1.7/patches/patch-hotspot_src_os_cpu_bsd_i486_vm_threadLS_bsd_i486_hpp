@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_i486_vm_threadLS_bsd_i486_hpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/os_cpu/bsd_i486/vm/threadLS_bsd_i486.hpp.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os_cpu/bsd_i486/vm/threadLS_bsd_i486.hpp	Mon Apr 16 08:42:39 2007
+@@ -29,8 +29,10 @@
+ 
+   // map stack pointer to thread pointer - see notes in threadLS_bsd_i486.cpp
+   #define SP_BITLENGTH  32
++#ifndef _ALLBSD_SOURCE
+   #define PAGE_SHIFT    12
+   #define PAGE_SIZE     (1UL << PAGE_SHIFT)
++#endif
+   static Thread* _sp_map[1UL << (SP_BITLENGTH - PAGE_SHIFT)];
+ 
+ public:

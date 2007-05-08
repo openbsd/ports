@@ -1,0 +1,61 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_defs_make,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/build/bsd/makefiles/defs.make.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/build/bsd/makefiles/defs.make	Mon Apr 16 08:42:38 2007
+@@ -61,32 +61,31 @@ ifeq ($(ARCH), sparc64)
+   HS_ARCH            = sparc
+ endif
+ 
+-# x86_64
+-ifeq ($(ARCH), x86_64) 
+-  ifeq ($(ARCH_DATA_MODEL), 64)
++# amd64
++ifeq ($(ARCH), amd64) 
+     ARCH_DATA_MODEL = 64
+     MAKE_ARGS       += LP64=1
+     PLATFORM        = bsd-amd64
+     VM_PLATFORM     = bsd_amd64
+     HS_ARCH         = amd64
+-  else
+-    ARCH_DATA_MODEL = 32
+-    PLATFORM        = bsd-i586
+-    VM_PLATFORM     = bsd_i486
+-    HS_ARCH         = i486
+-    # We have to reset ARCH to i686 since SRCARCH relies on it
+-    ARCH            = i686   
+-  endif
+ endif
+ 
+-# i686
+-ifeq ($(ARCH), i686)
++# i386
++ifeq ($(ARCH), i386)
+   ARCH_DATA_MODEL  = 32
+   PLATFORM         = bsd-i586
+   VM_PLATFORM      = bsd_i486
+   HS_ARCH          = i486
+ endif
+ 
++# i486
++ifeq ($(ARCH), i486)
++  ARCH_DATA_MODEL  = 32
++  PLATFORM         = bsd-i586
++  VM_PLATFORM      = bsd_i486
++  HS_ARCH          = i486
++endif
++
+ JDK_INCLUDE_SUBDIR=bsd
+ MAKE_ARGS += HOTSPOT_BUILD_VERSION=$(FULL_VERSION)
+ # FIXUP: The subdirectory for a debug build is NOT the same on all platforms
+@@ -102,12 +101,4 @@ ifeq ($(ARCH_DATA_MODEL), 32)
+   EXPORT_LIST += $(EXPORT_CLIENT_DIR)/Xusage.txt
+   EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjsig.so
+   EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjvm.so 
+-  EXPORT_LIST += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.so
+-  EXPORT_LIST += $(EXPORT_LIB_DIR)/sa-jdi.jar 
+-else
+-  ifeq ($(ARCH),ia64)
+-    else
+-      EXPORT_LIST += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.so
+-      EXPORT_LIST += $(EXPORT_LIB_DIR)/sa-jdi.jar
+-    endif
+ endif

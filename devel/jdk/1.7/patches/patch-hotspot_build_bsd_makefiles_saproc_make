@@ -1,0 +1,17 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_saproc_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/build/bsd/makefiles/saproc.make.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/build/bsd/makefiles/saproc.make	Mon Apr 16 08:42:38 2007
+@@ -43,11 +43,11 @@ SAMAPFILE = $(SASRCDIR)/mapfile
+ 
+ DEST_SAPROC = $(JDK_LIBDIR)/$(LIBSAPROC)
+ 
+-# if $(AGENT_DIR) does not exist, we don't build SA
++# if $(SASRCDIR) does not exist, we don't build SA
+ # also, we don't build SA on Itanium.
+ 
+ checkAndBuildSA:
+-	$(QUIETLY) if [ -d $(AGENT_DIR) -a "$(SRCARCH)" != "ia64" ] ; then \
++	$(QUIETLY) if [ -d $(SASRCDIR) -a "$(SRCARCH)" != "ia64" ] ; then \
+ 	   $(MAKE) -f vm.make $(LIBSAPROC); \
+ 	fi
+ 

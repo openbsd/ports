@@ -1,0 +1,38 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_perfMemory_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/os/bsd/vm/perfMemory_bsd.cpp.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os/bsd/vm/perfMemory_bsd.cpp	Mon Apr 16 08:42:39 2007
+@@ -233,6 +233,7 @@ static bool is_directory_secure(const char* path) {
+ //
+ static char* get_user_name(uid_t uid) {
+ 
++#ifndef _ALLBSD_SOURCE
+   struct passwd pwent;
+ 
+   // determine the max pwbuf size from sysconf, and hardcode
+@@ -283,6 +284,26 @@ static char* get_user_name(uid_t uid) {
+ 
+   FREE_C_HEAP_ARRAY(char, pwbuf);
+   return user_name;
++
++#else
++
++  struct passwd* p = getpwuid(uid);
++  if (PrintMiscellaneous && Verbose) {
++    if (p == NULL) {
++      jio_fprintf(stderr, "Could not retrieve passwd entry: %s\n",
++                          strerror(errno));
++    }
++    else {
++      jio_fprintf(stderr, "Could not determine user name: %s\n",
++                           p->pw_name == NULL ? "pw_name = NULL" :
++                                                "pw_name zero length");
++    }
++  }
++
++  char* user_name = NEW_C_HEAP_ARRAY(char, strlen(p->pw_name) + 1);
++  strcpy(user_name, p->pw_name);
++  return user_name;
++#endif
+ }
+ 
+ // return the name of the user that owns the process identified by vmid.

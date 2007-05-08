@@ -1,0 +1,21 @@
+$OpenBSD: patch-hotspot_src_share_vm_interpreter_bytecodeTracer_cpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
+--- hotspot/src/share/vm/interpreter/bytecodeTracer.cpp.orig	Tue Apr 10 04:01:48 2007
++++ hotspot/src/share/vm/interpreter/bytecodeTracer.cpp	Mon Apr 16 08:42:39 2007
+@@ -77,7 +77,7 @@ class BytecodePrinter: public BytecodeClosure {
+       // the incoming method.  We could lose a line of trace output.
+       // This is acceptable in a debug-only feature.
+       tty->cr();
+-      tty->print("[%d] ", (int) Thread::current()->osthread()->thread_id());
++      tty->print("[%ld] ", (long) Thread::current()->osthread()->thread_id());
+       method->print_name(tty);
+       tty->cr();
+       _current_method = method();
+@@ -90,7 +90,7 @@ class BytecodePrinter: public BytecodeClosure {
+       code = Bytecodes::cast(*bcp);
+     }
+     int bci = bcp - method->code_base();
+-    tty->print("[%d] ", (int) Thread::current()->osthread()->thread_id());
++    tty->print("[%ld] ", (long) Thread::current()->osthread()->thread_id());
+     if (Verbose) {
+       tty->print("%8d  %4d  " INTPTR_FORMAT " " INTPTR_FORMAT " %s", 
+ 	   BytecodeCounter::counter_value(), bci, tos, tos2, Bytecodes::name(code));

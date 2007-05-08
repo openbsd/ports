@@ -1,0 +1,19 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_jvm_bsd_h,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+--- hotspot/src/os/bsd/vm/jvm_bsd.h.orig	Mon Apr 16 08:42:36 2007
++++ hotspot/src/os/bsd/vm/jvm_bsd.h	Mon Apr 16 08:42:39 2007
+@@ -93,6 +93,15 @@
+ #define SHUTDOWN2_SIGNAL SIGINT
+ #define SHUTDOWN3_SIGNAL SIGTERM
+ 
++/* XXXBSD: compat? */
++#ifdef __OpenBSD__
++#define SIGRTMIN        1
++#define SIGRTMAX        31
++#else
++#define SIGRTMIN        33
++#define SIGRTMAX        63
++#endif
++
+ #endif /* JVM_MD_H */
+ 
+ // Reconciliation History
