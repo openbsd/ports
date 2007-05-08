@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/09 14:27:56 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/08 15:08:24 matthieu Exp $
 
 COMMENT=	"top-like X server resources usage display tool"
 DISTNAME=	xrestop-0.3
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.freedesktop.org/software/xrestop/
 
-WANTLIB=	XRes Xext X11 ncurses c
+WANTLIB=	XRes Xext X11 Xau Xdmcp ncurses c
 
 SEPARATE_BUILD=	concurrent
 USE_X11=	Yes	
