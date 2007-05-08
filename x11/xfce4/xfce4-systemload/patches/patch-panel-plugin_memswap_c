@@ -1,7 +1,16 @@
-$OpenBSD: patch-panel-plugin_memswap_c,v 1.1.1.1 2005/05/12 04:38:51 jolan Exp $
---- panel-plugin/memswap.c.orig	2003-11-13 12:52:01.000000000 -0600
-+++ panel-plugin/memswap.c	2003-12-16 14:34:16.000000000 -0600
-@@ -381,7 +381,7 @@ gint read_memswap(gulong *mem, gulong *s
+$OpenBSD: patch-panel-plugin_memswap_c,v 1.2 2007/05/08 22:12:18 steven Exp $
+--- panel-plugin/memswap.c.orig	Wed Jan 17 19:01:09 2007
++++ panel-plugin/memswap.c	Fri Apr  6 22:48:24 2007
+@@ -288,7 +288,7 @@ gint read_memswap(gulong *mem, gulong *swap, gulong *M
+         /* 64-bit datatype */
+         if(sizeof(size_t) == 8) {
+             mib[0] = CTL_HW;
+-            mib[1] = HW_PHYSMEM64;
++            mib[1] = HW_PHYSMEM;
+         }
+         /* assume 32-bit datatype */
+         else {
+@@ -391,7 +391,7 @@ gint read_memswap(gulong *mem, gulong *swap, gulong *M
  #include <unistd.h>
  #include <uvm/uvm_param.h>
  
@@ -10,3 +19,12 @@ $OpenBSD: patch-panel-plugin_memswap_c,v 1.1.1.1 2005/05/12 04:38:51 jolan Exp $
  static size_t MFree = 0;
  static size_t MUsed = 0;
  static size_t STotal = 0;
+@@ -409,7 +409,7 @@ gint read_memswap(gulong *mem, gulong *swap, gulong *M
+         /* 64-bit datatype */
+         if(sizeof(size_t) == 8) {
+             mib[0] = CTL_HW;
+-            mib[1] = HW_PHYSMEM64;
++            mib[1] = HW_PHYSMEM;
+         }
+         /* assume 32-bit datatype */
+         else {

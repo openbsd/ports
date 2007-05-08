@@ -1,7 +1,7 @@
-$OpenBSD: patch-panel-plugin_uptime_c,v 1.1.1.1 2005/05/12 04:38:51 jolan Exp $
---- panel-plugin/uptime.c.orig	2003-11-13 13:01:50.000000000 -0600
-+++ panel-plugin/uptime.c	2003-12-16 02:21:37.000000000 -0600
-@@ -94,7 +94,7 @@ gulong read_uptime()
+$OpenBSD: patch-panel-plugin_uptime_c,v 1.2 2007/05/08 22:12:18 steven Exp $
+--- panel-plugin/uptime.c.orig	Wed Jan 17 19:01:09 2007
++++ panel-plugin/uptime.c	Fri Apr  6 22:46:53 2007
+@@ -92,7 +92,7 @@ gulong read_uptime()
     int mib[2] = {CTL_KERN, KERN_BOOTTIME};
     struct timeval boottime;
     time_t now;
