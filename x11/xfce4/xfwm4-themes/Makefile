@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/11 04:30:05 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/08 08:57:53 steven Exp $
 PKG_ARCH=	*
 
 COMMENT=	"window decoration themes for xfwm4"
-V=		4.2.3
+V=		4.4.1
 DISTNAME=	xfwm4-themes-${V}
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/
+MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,8 +14,11 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
+EXTRACT_SUFX=	.tar.bz2
+
 USE_LIBTOOL=	No
 
-RUN_DEPENDS=	:xfwm4-*:x11/xfce4/xfwm4
+RUN_DEPENDS=	:xfwm4->=4.4.1:x11/xfce4/xfwm4
 
 .include <bsd.port.mk>
