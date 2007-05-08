@@ -1,0 +1,12 @@
+$OpenBSD: patch-scapy_1,v 1.1 2007/05/08 12:47:06 aanriot Exp $
+--- scapy.1.orig	Tue May  8 10:55:07 2007
++++ scapy.1	Tue May  8 10:58:07 2007
+@@ -66,7 +66,7 @@ Just run \fBscapy\fP and try the following commands in
+ .LP
+ Test the robustness of a network stack with invalid packets:
+ .nf
+-sr(IP(dst="172.16.1.1", ihl=2, options="\verb$\x02$", version=3)/ICMP())
++sr(IP(dst="172.16.1.1", ihl=2, options="0x02", version=3)/ICMP())
+ .fi
+ 
+ .LP
