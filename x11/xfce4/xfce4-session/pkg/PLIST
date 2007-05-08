@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/11/10 22:57:40 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/05/08 14:14:03 steven Exp $
 %%SHARED%%
+bin/xfce4-autostart-editor
 bin/xfce4-session
 bin/xfce4-session-logout
+bin/xfce4-tips
 include/xfce4/xfce4-session-4.2/
 include/xfce4/xfce4-session-4.2/libxfsm/
 include/xfce4/xfce4-session-4.2/libxfsm/xfsm-splash-engine.h
@@ -30,6 +32,11 @@ libexec/xfsm-shutdown-helper
 @man man/man1/xfce4-session.1
 share/applications/xfce-session-settings.desktop
 share/applications/xfce-splash-settings.desktop
+share/applications/xfce4-autostart-editor.desktop
+share/examples/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/autostart/xfce4-tips-autostart.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/xfce4-tips-autostart.desktop
 share/examples/xfce4-session/
 @sample ${SYSCONFDIR}/xdg/xfce4-session/
 share/examples/xfce4-session/xfce4-session.rc
@@ -39,6 +46,8 @@ share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-splash.png
+share/icons/hicolor/48x48/apps/xfsm-logout.png
+share/icons/hicolor/48x48/apps/xfsm-reboot.png
 share/icons/hicolor/48x48/apps/xfsm-shutdown.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
@@ -51,15 +60,14 @@ share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xfce4-session.svg
 share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
-share/locale/af/LC_MESSAGES/xfce4-session.mo
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
 share/locale/az/LC_MESSAGES/xfce4-session.mo
 share/locale/be/LC_MESSAGES/xfce4-session.mo
 share/locale/bn_IN/LC_MESSAGES/xfce4-session.mo
 share/locale/ca/LC_MESSAGES/xfce4-session.mo
 share/locale/cs/LC_MESSAGES/xfce4-session.mo
-share/locale/da/LC_MESSAGES/xfce4-session.mo
 share/locale/de/LC_MESSAGES/xfce4-session.mo
+share/locale/dz/LC_MESSAGES/xfce4-session.mo
 share/locale/el/LC_MESSAGES/xfce4-session.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-session.mo
 share/locale/eo/LC_MESSAGES/xfce4-session.mo
@@ -70,15 +78,17 @@ share/locale/eu/LC_MESSAGES/xfce4-session.mo
 share/locale/fa/LC_MESSAGES/xfce4-session.mo
 share/locale/fi/LC_MESSAGES/xfce4-session.mo
 share/locale/fr/LC_MESSAGES/xfce4-session.mo
+share/locale/gl/LC_MESSAGES/xfce4-session.mo
 share/locale/gu/LC_MESSAGES/xfce4-session.mo
 share/locale/he/LC_MESSAGES/xfce4-session.mo
 share/locale/hi/LC_MESSAGES/xfce4-session.mo
 share/locale/hu/LC_MESSAGES/xfce4-session.mo
 share/locale/it/LC_MESSAGES/xfce4-session.mo
 share/locale/ja/LC_MESSAGES/xfce4-session.mo
+share/locale/ka/LC_MESSAGES/xfce4-session.mo
 share/locale/ko/LC_MESSAGES/xfce4-session.mo
-share/locale/ku/LC_MESSAGES/xfce4-session.mo
 share/locale/lt/LC_MESSAGES/xfce4-session.mo
+share/locale/mk/LC_MESSAGES/xfce4-session.mo
 share/locale/mr/LC_MESSAGES/xfce4-session.mo
 share/locale/ms/LC_MESSAGES/xfce4-session.mo
 share/locale/nb_NO/LC_MESSAGES/xfce4-session.mo
@@ -90,7 +100,6 @@ share/locale/pt_PT/LC_MESSAGES/xfce4-session.mo
 share/locale/ro/LC_MESSAGES/xfce4-session.mo
 share/locale/ru/LC_MESSAGES/xfce4-session.mo
 share/locale/sk/LC_MESSAGES/xfce4-session.mo
-share/locale/sl/LC_MESSAGES/xfce4-session.mo
 share/locale/sv/LC_MESSAGES/xfce4-session.mo
 share/locale/ta/LC_MESSAGES/xfce4-session.mo
 share/locale/tr/LC_MESSAGES/xfce4-session.mo
@@ -111,7 +120,6 @@ share/xfce4/doc/fr/images/xfsm-advanced.png
 share/xfce4/doc/fr/images/xfsm-general.png
 share/xfce4/doc/fr/images/xfsm-splash.png
 share/xfce4/doc/fr/xfce4-session.html
-share/xfce4/doc/he/images/xfsm-advanced.png
-share/xfce4/doc/he/images/xfsm-general.png
-share/xfce4/doc/he/images/xfsm-splash.png
-share/xfce4/doc/he/xfce4-session.html
+share/xfce4/tips/
+share/xfce4/tips/tips
+share/xfce4/tips/tips.dat

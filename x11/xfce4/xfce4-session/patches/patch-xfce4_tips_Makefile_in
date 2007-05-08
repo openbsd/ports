@@ -1,0 +1,11 @@
+--- xfce4-tips/Makefile.in.old	Mon Feb 19 10:07:27 2007
++++ xfce4-tips/Makefile.in	Mon Feb 19 10:08:27 2007
+@@ -292,7 +292,7 @@
+ xfce4_tips_LDADD = \
+ 	@LIBXFCEGUI4_LIBS@
+ 
+-desktopdir = $(sysconfdir)/xdg/autostart
++desktopdir = $(prefix)/share/examples/autostart
+ desktop_in_files = xfce4-tips-autostart.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ EXTRA_DIST = \

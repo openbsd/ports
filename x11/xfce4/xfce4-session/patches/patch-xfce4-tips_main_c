@@ -1,0 +1,17 @@
+$OpenBSD: patch-xfce4-tips_main_c,v 1.1 2007/05/08 14:14:03 steven Exp $
+--- xfce4-tips/main.c.orig	Tue Apr 24 23:40:51 2007
++++ xfce4-tips/main.c	Tue Apr 24 23:41:12 2007
+@@ -115,11 +115,11 @@ next_cb(GtkWidget *btn, GtkTextBuffer *textbuf)
+ 
+   switch (option) {
+   case OPTION_TIPS:
+-    strcpy(buffer, "fortune " TIPSDIR "/tips");
++    strcpy(buffer, "/usr/games/fortune " TIPSDIR "/tips");
+     break;
+ 
+   case OPTION_FORTUNES:
+-    strcpy(buffer, "fortune");
++    strcpy(buffer, "/usr/games/fortune");
+     break;
+   }
+ 

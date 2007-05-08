@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2006/12/16 12:22:37 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/08 14:14:03 steven Exp $
 
 COMMENT=	"xfce4 session manager"
-V=		4.2.3
-DISTNAME=	xfce4-session-${V}
-PKGNAME=	${DISTNAME}p2
-SHARED_LIBS=	xfsm-4.2 0.1
-MODGNU_SHARED_LIBS=	xfsm-4.2 -export-dynamic
-LIBxfsm-4.2_ALIAS=	xfsm_4_2
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
-HOMEPAGE=	http://www.xfce.org/
+V=		4.4.1
+DISTNAME=	xfce4-session-${V}
+
+SHARED_LIBS +=  xfsm-4.2             0.1      # .0.1
+
+HOMEPAGE=	http://www.xfce.org/projects/xfce4-session/
+MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,12 +16,22 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
+EXTRACT_SUFX=	.tar.bz2
+
+USE_GMAKE=	Yes
+
+CONFIGURE_ARGS= --disable-dbus
+
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager
-LIB_DEPENDS=	xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
-		xfce4mcs-client.>=2.3::x11/xfce4/libxfce4mcs
-RUN_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager
-WANTLIB=	ICE SM X11 Xext Xrender c fontconfig freetype m \
+BUILD_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
+		::textproc/intltool
+LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4 \
+		xfce4mcs-client.>=3.5::x11/xfce4/libxfce4mcs
+RUN_DEPENDS=	:xfce-mcs-manager->=4.4.1:x11/xfce4/xfce-mcs-manager
+
+WANTLIB=	ICE SM X11 Xau Xdmcp Xrender c fontconfig freetype m \
+		Xcursor Xext Xfixes Xi Xinerama Xrandr expat \
 		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png z \
