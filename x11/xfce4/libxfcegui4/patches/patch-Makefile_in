@@ -1,12 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2005/11/10 22:57:38 jolan Exp $
---- Makefile.in.orig	Sun Nov  6 04:44:28 2005
-+++ Makefile.in	Thu Nov 10 05:34:13 2005
-@@ -249,7 +249,7 @@ sbindir = @sbindir@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
--SUBDIRS = libxfcegui4 xfce4-modules docs po pixmaps
-+SUBDIRS = libxfcegui4 xfce4-modules po pixmaps
- hicolordir = $(datadir)/xfce4
- hicolor_DATA = hicolor-index.theme
- EXTRA_DIST = \
+$OpenBSD: patch-Makefile_in,v 1.3 2007/05/08 08:28:39 steven Exp $
+--- Makefile.in.orig	Wed Apr 18 22:01:54 2007
++++ Makefile.in	Wed Apr 18 22:02:04 2007
+@@ -234,7 +234,6 @@ target_alias = @target_alias@
+ SUBDIRS = \
+ 	icons								\
+ 	libxfcegui4							\
+-	docs								\
+ 	po
+ 
+ AUTOMAKE_OPTIONS = \
