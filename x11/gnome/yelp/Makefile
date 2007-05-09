@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/05/07 19:03:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2007/05/09 08:25:54 ajacoutot Exp $
 
 COMMENT=		"GNOME help browser"
 
@@ -30,7 +30,8 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		::devel/xulrunner,-devel \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+			:gnome-doc-utils-*:x11/gnome/doc-utils
 RUN_DEPENDS=		:scrollkeeper->=0.3.14:textproc/scrollkeeper \
 			:docbook-dsssl-*:textproc/docbook-dsssl \
 			:gnome2-user-docs-*:x11/gnome/users-guide
