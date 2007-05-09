@@ -1,0 +1,12 @@
+$OpenBSD: patch-src-tilda_c,v 1.1.1.1 2007/05/09 19:10:27 jasper Exp $
+--- src/tilda.c.orig	Tue Nov 28 06:56:43 2006
++++ src/tilda.c	Wed May  9 16:39:10 2007
+@@ -224,7 +224,7 @@ static void clean_tmp (tilda_window *tw)
+ #endif
+ 
+     FILE *ptr;
+-    const gchar *cmd = "ps -C tilda -o pid=";
++    const gchar *cmd = "/usr/bin/pgrep tilda";
+     gchar buf[16]; /* Really shouldn't need more than 6 */
+     gint i;
+ 

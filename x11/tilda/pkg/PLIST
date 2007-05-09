@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/09 19:10:27 jasper Exp $
+bin/tilda
+share/applications/
+share/applications/tilda.desktop
+share/doc/tilda/
+share/doc/tilda/README
+share/pixmaps/
+share/pixmaps/tilda.png
