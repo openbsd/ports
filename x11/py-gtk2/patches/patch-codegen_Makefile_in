@@ -1,7 +1,7 @@
-$OpenBSD: patch-codegen_Makefile_in,v 1.2 2006/06/27 19:14:00 naddy Exp $
---- codegen/Makefile.in.orig	Tue Jun 20 20:51:27 2006
-+++ codegen/Makefile.in	Tue Jun 20 20:51:53 2006
-@@ -207,7 +207,7 @@ sysconfdir = @sysconfdir@
+$OpenBSD: patch-codegen_Makefile_in,v 1.3 2007/05/09 21:35:52 alek Exp $
+--- codegen/Makefile.in.orig	Mon Feb  5 21:55:35 2007
++++ codegen/Makefile.in	Sun May  6 06:14:33 2007
+@@ -212,7 +212,7 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  PLATFORM_VERSION = 2.0
  bin_SCRIPTS = pygtk-codegen-$(PLATFORM_VERSION)

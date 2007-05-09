@@ -1,12 +1,12 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.2 2006/06/27 19:14:01 naddy Exp $
---- examples/Makefile.in.orig	Thu Apr  6 00:54:31 2006
-+++ examples/Makefile.in	Tue Jun 20 20:53:02 2006
-@@ -555,7 +555,7 @@ pygtk-demo/pygtk-demo: pygtk-demo/pygtk-
- 	-mkdir pygtk-demo
- 	sed -e s!\@PYTHON\@!@PYTHON@! \
- 	    -e s!\@libdir\@!@libdir@! \
+$OpenBSD: patch-examples_Makefile_in,v 1.3 2007/05/09 21:35:52 alek Exp $
+--- examples/Makefile.in.orig	Mon Feb  5 21:55:35 2007
++++ examples/Makefile.in	Sun May  6 06:14:57 2007
+@@ -564,7 +564,7 @@ pygtk-demo/pygtk-demo: pygtk-demo/pygtk-demo.in
+ 	@mkdir -p pygtk-demo
+ 	@sed -e s!\@PYTHON\@!@PYTHON@! \
+ 	     -e s!\@libdir\@!@libdir@! \
 -		< $< > $@
 +		< $? > $@
- 	chmod a+x $@
+ 	@chmod a+x $@
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
