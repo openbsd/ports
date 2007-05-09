@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/05/09 08:25:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2007/05/09 14:15:10 jasper Exp $
 
 COMMENT=		"GNOME help browser"
 
 DISTNAME=		yelp-2.18.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -34,7 +34,8 @@ BUILD_DEPENDS=		::devel/xulrunner,-devel \
 			:gnome-doc-utils-*:x11/gnome/doc-utils
 RUN_DEPENDS=		:scrollkeeper->=0.3.14:textproc/scrollkeeper \
 			:docbook-dsssl-*:textproc/docbook-dsssl \
-			:gnome2-user-docs-*:x11/gnome/users-guide
+			:gnome2-user-docs-*:x11/gnome/users-guide \
+			:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
 			xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunner,-main \
 			gnomeui-2::x11/gnome/libgnomeui \
