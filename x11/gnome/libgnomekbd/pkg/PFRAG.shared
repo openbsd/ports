@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/09 19:14:29 jasper Exp $
+@lib lib/libgnomekbd.so.${LIBgnomekbd_VERSION}
+@lib lib/libgnomekbdui.so.${LIBgnomekbdui_VERSION}
