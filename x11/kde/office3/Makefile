@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2007/02/23 21:46:30 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2007/05/09 11:31:43 bernd Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -8,6 +8,7 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=	kstore               3.0      # .3.0
 SHARED_LIBS +=	kwmf                 3.0      # .3.0

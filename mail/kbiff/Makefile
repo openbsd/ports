@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2007/05/09 11:38:52 bernd Exp $
 
 COMMENT=		"new mail notification utility for KDE"
 
 DISTNAME=		kbiff-3.8
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		kbiff 2.0
 CATEGORIES=		mail
 EXTRACT_SUFX=		.tar.bz2

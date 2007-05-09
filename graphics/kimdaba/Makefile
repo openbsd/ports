@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/29 10:41:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/09 11:33:49 bernd Exp $
 
 COMMENT=		"kde image database"
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kphotoalbum-3.0
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://ktown.kde.org/kphotoalbum/
 MASTER_SITES=		${HOMEPAGE}download/

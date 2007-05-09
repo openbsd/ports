@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/02/23 22:24:18 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/05/09 11:31:43 bernd Exp $
 
 LANGS= ca cs cy da de el en_GB es et eu fi fr \
 	hu it ja lv ms nb nl pl pt pt_BR ru sk sl sr sr@Latn \
@@ -15,7 +15,7 @@ FLAVORS+=$l
 .  if ${FLAVOR:L:M${l:L}}
 DISTFILES=koffice-l10n-$l-${VERSION}.tar.bz2
 WRKDIST=${WRKDIR}/koffice-l10n-$l-${VERSION}
-FULLPKGNAME=koffice-i18n-$l-${VERSION:S/-//g}
+FULLPKGNAME=koffice-i18n-$l-${VERSION:S/-//g}p0
 COMMENT= "$l translations for KDE"
 PLIST=${PKGDIR}/PLIST-$l
 DOC=share/doc/HTML/$l/

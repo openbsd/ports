@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2007/02/14 17:24:18 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2007/05/09 11:31:43 bernd Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=			"gcc spins on x_20.cpp"
@@ -8,7 +8,7 @@ COMMENT= 		"K Desktop Environment, extra language support"
 CATEGORIES=		x11 x11/kde devel
 VERSION=		3.5.6
 DISTNAME=		kdebindings-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 MODKDE_VERSION=		3.5.3
 SHARED_LIBS +=	kjsembed             2.0      # .1.0
 SHARED_LIBS +=	smokeqt              4.0      # .3.2
@@ -19,7 +19,7 @@ SHARED_LIBS +=	smokekde             4.0      # .3.2
 #SHARED_LIBS +=	korundum                      # .0.0
 
 LIB_DEPENDS=DCOP,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmdi,knewstuff,kparts,kscript,kspell,kutils,kwalletclient::x11/kde/libs3 \
-	qui-mt::x11/qt3,mt \
+	qui-mt::x11/qt3 \
 	ruby::lang/ruby
 
 WANTLIB=	GLU Xext stdc++ X11 util m ICE Xrender SM pthread \

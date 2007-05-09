@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2007/01/28 13:18:51 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/05/09 11:31:44 bernd Exp $
 
 COMMENT= 		"web development tool"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.6
 DISTNAME=		kdewebdev-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.3
 SHARED_LIBS +=	kommanderplugin      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidget      1.0      # .0.0

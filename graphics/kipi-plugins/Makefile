@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/28 20:14:45 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/09 11:33:49 bernd Exp $
 
 COMMENT=		"kde image plugins"
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kipi-plugins-0.1.3
 EXTRACT_SUFX=		.tar.bz2
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kipi/}
 SHARED_LIBS +=	kipiplugins          0.0      # .0.1
 
 SHARED_ONLY=Yes
-LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
+LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3 \
 		kdecore.>=6,DCOP,kwalletclient,khtml,kjs,kutils,kparts,kdeui,kdesu,kio,kdefx,kdeprint::x11/kde/libs3 \
 		kipi::graphics/libkipi \
 		exiv2::graphics/exiv2 \

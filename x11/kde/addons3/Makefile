@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2007/01/28 13:18:50 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2007/05/09 11:31:43 bernd Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.6
 DISTNAME=		kdeaddons-${VERSION}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.3
 
 LIB_DEPENDS= kdecore.>=6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmediaplayer,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \

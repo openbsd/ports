@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2007/01/28 17:23:20 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2007/05/09 11:31:43 bernd Exp $
 
 LANGS=  af ar az bg bn br bs ca cs cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk nb nds nl nn \
@@ -13,7 +13,7 @@ FLAVOR?=fr
 SUBST_VARS=I C
 .if ${FLAVOR:L:Msr@latn}
 RUN_DEPENDS+=	::x11/kde/i18n3,sr
-FULLPKGNAME=kde-i18n-${FLAVOR}-${VERSION}
+FULLPKGNAME=kde-i18n-${FLAVOR}-${VERSION}p0
 .endif
 
 .for l in ${LANGS}
@@ -21,7 +21,7 @@ FLAVORS+=$l
 .  if ${FLAVOR:L:M${l:L}}
 DISTFILES=kde-i18n-$l-${VERSION}.tar.bz2
 WRKDIST=${WRKDIR}/kde-i18n-$l-${VERSION}
-FULLPKGNAME?=kde-i18n-$l-${VERSION}
+FULLPKGNAME?=kde-i18n-$l-${VERSION}p0
 COMMENT= "$l translations for KDE"
 PLIST=${PKGDIR}/PLIST-$l
 DOC=share/doc/HTML/$l/

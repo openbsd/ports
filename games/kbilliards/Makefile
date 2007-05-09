@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/09 11:39:19 bernd Exp $
 
 COMMENT= 		"billiard game"
 CATEGORIES=		x11 x11/kde games
 MODULES=		x11/kde
 DISTNAME=		kbilliards-0.7
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/
 EXTRACT_SUFX=		.tar.bz2

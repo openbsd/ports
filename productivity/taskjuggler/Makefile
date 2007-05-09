@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/02/01 21:20:11 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/09 11:37:29 bernd Exp $
 
 COMMENT=	"project management tool"
 
 DISTNAME=	taskjuggler-2.3.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	productivity
 SHARED_LIBS=	taskjuggler	3.4
 

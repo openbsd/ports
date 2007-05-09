@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2007/04/01 10:27:31 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2007/05/09 11:31:43 bernd Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
@@ -7,7 +7,7 @@ VERSION=		3.5.6
 DISTNAME=		kdepim-${VERSION}
 PATCHFILES=		kdepim-3.5.6-tz-patch.bz2:1
 MASTER_SITES1=		ftp://quatramaran.ens.fr/pub/espie/
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 MODKDE_VERSION=		3.5.3
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2007/03/15 08:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/09 11:33:49 bernd Exp $
 
 COMMENT=		"plugins for digikam"
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		digikamimageplugins-0.9.1
+PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://extragear.kde.org/apps/digikamimageplugins/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 
 SHARED_ONLY=Yes
-LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
+LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3 \
 		kdecore.>=6,kwalletclient,DCOP,kio,kdefx,kdeprint,kdesu,kdeui,kparts,kutils,kabc,vcard,kresources,khtml,kjs::x11/kde/libs3 \
 		digikam::graphics/digikam
 

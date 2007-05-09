@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/04/12 20:24:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2007/05/09 11:39:55 bernd Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
@@ -7,12 +7,12 @@ HOMEPAGE=	http://amarok.kde.org/
 V=		1.4.5
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME=	amarok-$V
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 EXTRACT_SUFX=	.tar.bz2
 
 FLAVORS=	debug
 
-LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3,mt \
+LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3 \
 		kdecore.>=6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,kio,kdesu,kjs,knewstuff,kdnssd::x11/kde/libs3 \
 		tag.>=5.0:taglib->=1.4:audio/taglib \
 		xine::multimedia/xine-lib \

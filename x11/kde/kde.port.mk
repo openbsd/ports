@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.23 2007/04/26 07:39:09 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.24 2007/05/09 11:31:43 bernd Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -56,31 +56,31 @@ PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.1/patch-* patch-* ${SUP_PATCH_LIST}
 .elif ${MODKDE_VERSION} == "3.2"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.2/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-LIB_DEPENDS+=lib/qt3/qt-mt.>=3.20::x11/qt3,mt
+LIB_DEPENDS+=lib/qt3/qt-mt.>=3.20::x11/qt3
 .elif ${MODKDE_VERSION} == "3.2.3"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.2.3/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-LIB_DEPENDS+=lib/qt3/qt-mt.>=3.20::x11/qt3,mt
+LIB_DEPENDS+=lib/qt3/qt-mt.>=3.20::x11/qt3
 .elif ${MODKDE_VERSION} == "3.3.0"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.2.3/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3,mt
+LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3
 .elif ${MODKDE_VERSION} == "3.4"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.4/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3,mt
+LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3
 .elif ${MODKDE_VERSION} == "3.5"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.5/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3,mt
+LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3
 .elif ${MODKDE_VERSION} == "3.5.2"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.5.2/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3,mt
+LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3
 .elif ${MODKDE_VERSION} == "3.5.3"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.5.3/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3,mt
+LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3
 .elif ${MODKDE_VERSION} == "2.2.2"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-2.2.2/patch-* patch-* ${SUP_PATCH_LIST}
 .endif
