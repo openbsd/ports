@@ -1,4 +1,26 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/22 21:58:24 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/05/09 14:01:55 naddy Exp $
 @pkgpath net/transmission
 bin/transmissioncli
 @man man/man1/transmissioncli.1
+@comment share/locale/
+@comment share/locale/bg/
+@comment share/locale/bg/LC_MESSAGES/
+@comment share/locale/es/
+@comment share/locale/es/LC_MESSAGES/
+@comment share/locale/fi/
+@comment share/locale/fi/LC_MESSAGES/
+@comment share/locale/fr/
+@comment share/locale/fr/LC_MESSAGES/
+@comment share/locale/it/
+@comment share/locale/it/LC_MESSAGES/
+@comment share/locale/pl/
+@comment share/locale/pl/LC_MESSAGES/
+@comment share/locale/ro/
+@comment share/locale/ro/LC_MESSAGES/
+@comment share/locale/ru/
+@comment share/locale/ru/LC_MESSAGES/
+@comment share/locale/sv/
+@comment share/locale/sv/LC_MESSAGES/
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_transmissioncli

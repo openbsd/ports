@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/09 14:01:54 naddy Exp $
 
 COMMENT-main=	"lightweight BitTorrent client"
 COMMENT-gui=	"lightweight BitTorrent client with graphical interface"
 
-VER=		0.6.1
+VER=		0.72
 DISTNAME=	Transmission-${VER}
 PKGNAME-main=	transmission-${VER}
-PKGNAME-gui=	transmission-gui-${VER}p0
+PKGNAME-gui=	transmission-gui-${VER}
 CATEGORIES=	net
 HOMEPAGE=	http://transmission.m0k.org/
 
@@ -29,24 +29,28 @@ WANTLIB=	c crypto m pthread
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}'
+CONFIGURE_ARGS=	--prefix="${PREFIX}"
 
 .if ${FLAVOR:L:Mno_gui}
 CONFIGURE_ARGS+=--disable-gtk
 .else
 MULTI_PACKAGES+=-gui
 MODULES=	devel/gettext
-WANTLIB-gui=	${WANTLIB} X11 Xext Xrender fontconfig freetype z \
-		atk-1.0.>=1011.0 glib-2.0.>=1000.0 gmodule-2.0.>=1000.0 \
-		gobject-2.0.>=1000.0 pango-1.0.>=1200.0 pangoft2-1.0.>=1200.0 \
-		pangocairo-1.0.>=1200.0 cairo glitz png
-LIB_DEPENDS=	gdk_pixbuf-2.0.>=802.0,gdk-x11-2.0.>=802.0,gtk-x11-2.0.>=802.0::x11/gtk+2
+WANTLIB-gui=	${WANTLIB} X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
+		Xrandr Xrender atk-1.0.>=1809.0 cairo expat fontconfig \
+		freetype glib-2.0.>=1200.0 glitz gmodule-2.0.>=1200.0 \
+		gobject-2.0.>=1200.0 pango-1.0.>=1300.0 pangoft2-1.0.>=1300.0 \
+		pangocairo-1.0.>=1300.0 png z
+LIB_DEPENDS=	gdk_pixbuf-2.0.>=1000.0,gdk-x11-2.0.>=1000.0,gtk-x11-2.0.>=1000.0::x11/gtk+2
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=
 USE_X11=	Yes
-CONFIGURE_ARGS+=--gettext-prefix=${LOCALBASE}
 .endif
 
 NO_REGRESS=	Yes
+
+# a space character in WRKDIST is painful
+post-extract:
+	@mv ${WRKDIR}/Transmission\ .72 ${WRKDIST}
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-$OpenBSD: patch-mk_common_mk,v 1.2 2007/04/08 17:36:59 naddy Exp $
---- mk/common.mk.orig	Sun Jun 25 23:34:31 2006
-+++ mk/common.mk	Sun Apr  8 19:34:23 2007
+$OpenBSD: patch-mk_common_mk,v 1.3 2007/05/09 14:01:55 naddy Exp $
+--- mk/common.mk.orig	Wed Apr 18 00:38:42 2007
++++ mk/common.mk	Sat Apr 21 16:03:36 2007
 @@ -1,8 +1,6 @@
- # $Id: patch-mk_common_mk,v 1.2 2007/04/08 17:36:59 naddy Exp $
+ # $Id: patch-mk_common_mk,v 1.3 2007/05/09 14:01:55 naddy Exp $
  
 -TMPCFLAGS   = -g -Wall -W -O3 -funroll-loops -D_FILE_OFFSET_BITS=64 \
 -              -D_LARGEFILE_SOURCE -D_GNU_SOURCE \
@@ -11,40 +11,46 @@ $OpenBSD: patch-mk_common_mk,v 1.2 2007/04/08 17:36:59 naddy Exp $
  TMPCXXFLAGS = $(TMPCFLAGS)
  TMPLDFLAGS  =
  
-@@ -17,7 +15,8 @@ endif
- endif
- 
- ifeq ($(PTHREAD),yes)
--ifeq ($(SYSTEM),FreeBSD)
-+ifneq ($(filter FreeBSD OpenBSD,$(SYSTEM)),)
-+TMPCFLAGS  += -pthread
- TMPLDFLAGS += -pthread
- else
- TMPLDFLAGS += -lpthread
-@@ -62,20 +61,20 @@ endef
+@@ -91,32 +89,32 @@ endef
  
  define INSTALL_BIN_RULE
         @echo "Install $<"
--       @$(MKDIR) $(PREFIX)/bin
--       @$(CP) $< $(PREFIX)/bin/
-+       @$(BSD_INSTALL_PROGRAM_DIR) $(PREFIX)/bin
-+       @$(BSD_INSTALL_PROGRAM) $< $(PREFIX)/bin/
+-       @$(MKDIR) $(DESTDIR)$(PREFIX)/bin
+-       @$(CP) $< $(DESTDIR)$(PREFIX)/bin/
++       @$(BSD_INSTALL_PROGRAM_DIR) $(DESTDIR)$(PREFIX)/bin
++       @$(BSD_INSTALL_PROGRAM) $< $(DESTDIR)$(PREFIX)/bin/
  endef
  
  define INSTALL_LOCALE_RULE
         @echo "Install $<"
--       @$(MKDIR) $(LOCALEDIR)/$*/LC_MESSAGES
--       @$(CP) $< $(LOCALEDIR)/$*/LC_MESSAGES/transmission-gtk.mo
-+       @$(BSD_INSTALL_DATA_DIR) $(LOCALEDIR)/$*/LC_MESSAGES
-+       @$(BSD_INSTALL_DATA) $< $(LOCALEDIR)/$*/LC_MESSAGES/transmission-gtk.mo
+-       @$(MKDIR) $(DESTDIR)$(LOCALEDIR)/$*/LC_MESSAGES
+-       @$(CP) $< $(DESTDIR)$(LOCALEDIR)/$*/LC_MESSAGES/transmission-gtk.mo
++       @$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(LOCALEDIR)/$*/LC_MESSAGES
++       @$(BSD_INSTALL_DATA) $< $(DESTDIR)$(LOCALEDIR)/$*/LC_MESSAGES/transmission-gtk.mo
  endef
  
  define INSTALL_MAN_RULE
  	@echo "Install $<"
--	@$(MKDIR) $(PREFIX)/man/man1
--	@$(CP) $< $(PREFIX)/man/man1/
-+	@$(BSD_INSTALL_MAN_DIR) $(PREFIX)/man/man1
-+	@$(BSD_INSTALL_MAN) $< $(PREFIX)/man/man1/
+-	@$(MKDIR) $(DESTDIR)$(PREFIX)/man/man1
+-	@$(CP) $< $(DESTDIR)$(PREFIX)/man/man1/
++	@$(BSD_INSTALL_MAN_DIR) $(DESTDIR)$(PREFIX)/man/man1
++	@$(BSD_INSTALL_MAN) $< $(DESTDIR)$(PREFIX)/man/man1/
  endef
  
- RM    = rm -Rf
+ define INSTALL_DESKTOP_RULE
+ 	@echo "Install $<"
+-	@$(MKDIR) $(DESTDIR)$(PREFIX)/share/applications
+-	@$(CP) $< $(DESTDIR)$(PREFIX)/share/applications/
++	@$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(PREFIX)/share/applications
++	@$(BSD_INSTALL_DATA) $< $(DESTDIR)$(PREFIX)/share/applications/
+ endef
+ 
+ define INSTALL_ICON_RULE
+ 	@echo "Install $<"
+-	@$(MKDIR) $(DESTDIR)$(PREFIX)/share/pixmaps
+-	@$(CP) $< $(DESTDIR)$(PREFIX)/share/pixmaps/
++	@$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(PREFIX)/share/pixmaps
++	@$(BSD_INSTALL_DATA) $< $(DESTDIR)$(PREFIX)/share/pixmaps/
+ endef
+ 
+ RM       = rm -Rf
