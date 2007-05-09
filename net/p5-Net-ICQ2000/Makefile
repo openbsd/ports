@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/09 12:52:46 kurt Exp $
 
 COMMENT=	"module for ICQv7 protocol realisation"
 
@@ -14,6 +14,6 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
-MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
+MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq.old/
 
 .include <bsd.port.mk>
