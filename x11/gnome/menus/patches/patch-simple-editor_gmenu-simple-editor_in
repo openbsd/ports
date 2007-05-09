@@ -1,0 +1,9 @@
+$OpenBSD: patch-simple-editor_gmenu-simple-editor_in,v 1.1 2007/05/09 21:13:54 jasper Exp $
+--- simple-editor/gmenu-simple-editor.in.orig	Tue May  8 10:45:39 2007
++++ simple-editor/gmenu-simple-editor.in	Tue May  8 10:45:41 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!!!MODPY_BIN!!
+ 
+ #
+ # Copyright (C) 2005 Red Hat, Inc.

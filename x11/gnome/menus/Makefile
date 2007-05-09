@@ -1,47 +1,46 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/03 13:30:16 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/09 21:13:54 jasper Exp $
 
-COMMENT=		"Implementation of the FreeDesktop Desktop Menu Spec"
+SHARED_ONLY=		Yes
 
-DISTNAME=		gnome-menus-2.10.2
-PKGNAME=		${DISTNAME}p1
-SHARED_LIBS=		gnome-menu 0.0
+COMMENT=		"implementation of the FreeDesktop Desktop Menu Spec"
+
+DISTNAME=		gnome-menus-2.18.0
+SHARED_LIBS +=	gnome-menu           3.9      # .3.9
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
+
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-menus/2.18/}
+EXTRACT_SUFX=		.tar.bz2
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m pthread ssl z \
-			glib-2.0 gthread-2.0 \
-			gmodule-2.0 gobject-2.0 \
-			ORBit-2 xml2 gconf-2.>=5
-WANTLIB += dbus-1 dbus-glib-1 util
+WANTLIB=		m rpcsvc stdc++ c pthread
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-menus/2.10/}
-EXTRACT_SUFX=		.tar.bz2
-
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			lang/python
 
 BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
-LIB_DEPENDS=		gnomevfs-2::x11/gnome/vfs2
+LIB_DEPENDS=		glib-2.0.>=0::devel/glib2 \
+			fam.>=0::sysutils/fam
+RUN_DEPENDS=		:py-gtk2->=2.10.3:x11/py-gtk2
 
-USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-# Note to those who follow:
-# Don't jack with SYSCONFDIR here unless you fully grok the
-# "XDG Base Directory Specification" -- unless you really want to
-# spend hours figuring out why you just broke *everything*
-#CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
-CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -lm" \
+			PYTHON="${MODPY_BIN}"
+
+pre-configure:
+	perl -pi -e 's,!!MODPY_BIN!!,${MODPY_BIN},' \
+		${WRKSRC}/simple-editor/gmenu-simple-editor.in
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-menus; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-menus/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-menus
+	mv ${WRKINST}${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-menus
 
 .include <bsd.port.mk>
