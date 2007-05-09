@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/share/vm/utilities/vmError.cpp.orig	Tue Apr 10 04:02:20 2007
-+++ hotspot/src/share/vm/utilities/vmError.cpp	Mon Apr 16 08:42:40 2007
+$OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.2 2007/05/09 15:48:31 kurt Exp $
+--- hotspot/src/share/vm/utilities/vmError.cpp.orig	Sun May  6 05:01:21 2007
++++ hotspot/src/share/vm/utilities/vmError.cpp	Tue May  8 15:45:42 2007
 @@ -34,7 +34,7 @@ const char *env_list[] = {
    "JAVA_HOME", "JRE_HOME", "JAVA_TOOL_OPTIONS", "_JAVA_OPTIONS", "CLASSPATH", 
    "JAVA_COMPILER", "PATH", "USERNAME",
@@ -10,9 +10,9 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.1.1.1 2007/05/08 
    "LD_LIBRARY_PATH", "LD_PRELOAD", "SHELL", "DISPLAY", 
    "HOSTTYPE", "OSTYPE", "ARCH", "MACHTYPE",
  
-@@ -163,10 +163,17 @@ static char* next_OnError_command(char* buf, int bufle
+@@ -168,9 +168,16 @@ static char* next_OnError_command(char* buf, int bufle
  
- static void print_bug_submit_message(outputStream *out) {
+ static void print_bug_submit_message(outputStream *out, Thread *thread) {
    if (out == NULL) return;
 +#ifdef __FreeBSD__
 +  out->print_raw_cr("#");
@@ -23,12 +23,11 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.1.1.1 2007/05/08 
    out->print_raw_cr("# If you would like to submit a bug report, please visit:");
    out->print_raw   ("#   ");
    out->print_raw_cr(Arguments::java_vendor_url_bug());
-   out->print_raw_cr("#");
 +#endif
- }
- 
- // Return a string to describe the error
-@@ -752,7 +759,7 @@ void VMError::report_and_die() {
+   // If the crash is in native code, encourage user to submit a bug to the
+   // provider of that code.
+   if (thread && thread->is_Java_thread()) {
+@@ -793,7 +800,7 @@ void VMError::report_and_die() {
      const char* ptr = OnError;
      while ((cmd = next_OnError_command(buffer, sizeof(buffer), &ptr)) != NULL){
        out.print_raw   ("#   Executing ");

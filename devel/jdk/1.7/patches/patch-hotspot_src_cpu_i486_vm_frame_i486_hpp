@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_cpu_i486_vm_frame_i486_hpp,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/src/cpu/i486/vm/frame_i486.hpp.orig	Tue Apr 10 04:01:26 2007
-+++ hotspot/src/cpu/i486/vm/frame_i486.hpp	Mon Apr 16 08:42:38 2007
-@@ -106,7 +106,7 @@
+$OpenBSD: patch-hotspot_src_cpu_i486_vm_frame_i486_hpp,v 1.2 2007/05/09 15:48:31 kurt Exp $
+--- hotspot/src/cpu/i486/vm/frame_i486.hpp.orig	Sun May  6 05:00:54 2007
++++ hotspot/src/cpu/i486/vm/frame_i486.hpp	Tue May  8 15:33:13 2007
+@@ -102,7 +102,7 @@
  
    frame(intptr_t* sp, intptr_t* unextended_sp, intptr_t* fp, address pc);
  

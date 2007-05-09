@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Mon Apr 16 08:42:39 2007
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.2 2007/05/09 15:48:31 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Tue May  8 15:33:11 2007
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Tue May  8 15:38:54 2007
 @@ -50,13 +50,26 @@
  # include <semaphore.h>
  # include <fcntl.h>
@@ -273,7 +273,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  // Thread start routine for all newly created threads
-@@ -735,8 +881,13 @@ static void *java_start(Thread *thread) {
+@@ -735,6 +881,10 @@ static void *java_start(Thread *thread) {
      return NULL;
    }
  
@@ -283,11 +283,16 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
 +#else
    // thread_id is kernel thread id (similar to Solaris LWP id)
    osthread->set_thread_id(os::Bsd::gettid());
-+#endif
  
+@@ -744,6 +894,7 @@ static void *java_start(Thread *thread) {
+       thread->set_lgrp_id(lgrp_id);
+     }
+   }
++#endif
    // initialize signal mask for this thread
    os::Bsd::hotspot_sigmask(thread);
-@@ -818,17 +969,22 @@ bool os::create_thread(Thread* thread, ThreadType thr_
+ 
+@@ -824,17 +975,22 @@ bool os::create_thread(Thread* thread, ThreadType thr_
      // let pthread_create() pick the default value.
    }
  
@@ -310,7 +315,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
      pthread_t tid;
      int ret = pthread_create(&tid, &attr, (void* (*)(void*)) java_start, thread);
-@@ -842,7 +998,9 @@ bool os::create_thread(Thread* thread, ThreadType thr_
+@@ -848,7 +1004,9 @@ bool os::create_thread(Thread* thread, ThreadType thr_
        // Need to clean up stuff we've allocated so far
        thread->set_osthread(NULL);
        delete osthread;
@@ -320,7 +325,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
        return false;
      }
  
-@@ -858,9 +1016,11 @@ bool os::create_thread(Thread* thread, ThreadType thr_
+@@ -864,9 +1022,11 @@ bool os::create_thread(Thread* thread, ThreadType thr_
        }
      }
  
@@ -332,7 +337,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    }
  
    // Aborted due to thread limit being reached
-@@ -898,7 +1058,11 @@ bool os::create_attached_thread(JavaThread* thread) {
+@@ -904,7 +1064,11 @@ bool os::create_attached_thread(JavaThread* thread) {
    }
  
    // Store pthread info into the OSThread
@@ -344,15 +349,15 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    osthread->set_pthread_id(::pthread_self());
  
    // initialize floating point control register
-@@ -909,6 +1073,7 @@ bool os::create_attached_thread(JavaThread* thread) {
+@@ -915,6 +1079,7 @@ bool os::create_attached_thread(JavaThread* thread) {
  
    thread->set_osthread(osthread);
-   
+ 
 +#ifndef _ALLBSD_SOURCE
-   if (os::Bsd::is_initial_thread()) {
-     // If current thread is initial thread, its stack is mapped on demand,
-     // see notes about MAP_GROWSDOWN. Here we try to force kernel to map
-@@ -928,6 +1093,7 @@ bool os::create_attached_thread(JavaThread* thread) {
+   if (UseNUMA) {
+     int lgrp_id = os::numa_get_group_id();
+     if (lgrp_id != -1) {
+@@ -941,6 +1106,7 @@ bool os::create_attached_thread(JavaThread* thread) {
      os::Bsd::manually_expand_stack(jt, addr);
      osthread->clear_expanding_stack();
    }
@@ -360,7 +365,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
    // initialize signal mask for this thread
    // and save the caller's signal mask
-@@ -986,6 +1152,7 @@ extern "C" Thread* get_thread() {
+@@ -999,6 +1165,7 @@ extern "C" Thread* get_thread() {
  //////////////////////////////////////////////////////////////////////////////
  // initial thread
  
@@ -368,7 +373,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  // Check if current thread is the initial thread, similar to Solaris thr_main.
  bool os::Bsd::is_initial_thread(void) {
    char dummy;
-@@ -1213,6 +1380,7 @@ void os::Bsd::capture_initial_stack(size_t max_size) {
+@@ -1229,6 +1396,7 @@ void os::Bsd::capture_initial_stack(size_t max_size) {
    _initial_thread_stack_size = align_size_down(_initial_thread_stack_size, page_size());
    _initial_thread_stack_bottom = (address)stack_top - _initial_thread_stack_size;
  }
@@ -376,7 +381,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
  ////////////////////////////////////////////////////////////////////////////////
  // time support
-@@ -1245,7 +1413,18 @@ jlong os::javaTimeMillis() {
+@@ -1267,7 +1435,18 @@ jlong os::javaTimeMillis() {
  #define CLOCK_MONOTONIC (1)
  #endif
  
@@ -395,7 +400,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    // we do dlopen's in this particular order due to bug in bsd
    // dynamical loader (see 6348968) leading to crash on exit
    void* handle = dlopen("librt.so.1", RTLD_LAZY);
-@@ -1280,7 +1459,9 @@ void os::Bsd::clock_init() {
+@@ -1302,7 +1481,9 @@ void os::Bsd::clock_init() {
      }
    }
  }
@@ -405,7 +410,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  #ifndef SYS_clock_getres
  
  #if defined(IA32) || defined(AMD64)
-@@ -1319,6 +1500,7 @@ void os::Bsd::fast_thread_clock_init() {
+@@ -1341,6 +1522,7 @@ void os::Bsd::fast_thread_clock_init() {
      _pthread_getcpuclockid = pthread_getcpuclockid_func;
    }
  }
@@ -413,7 +418,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
  jlong os::javaTimeNanos() {
    if (Bsd::supports_monotonic_clock()) {
-@@ -1499,6 +1681,23 @@ bool os::dll_address_to_function_name(address addr, ch
+@@ -1528,6 +1710,23 @@ bool os::dll_address_to_function_name(address addr, ch
    }
  }
  
@@ -437,7 +442,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  struct _address_to_library_name {
    address addr;          // input : memory address
    size_t  buflen;        //         size of fname
-@@ -1573,6 +1772,7 @@ bool os::dll_address_to_library_name(address addr, cha
+@@ -1602,6 +1801,7 @@ bool os::dll_address_to_library_name(address addr, cha
       return false;
    }
  }
@@ -445,7 +450,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
    // Loads .dll/.so and 
    // in case of error it checks if .dll/.so was built for the
-@@ -1630,6 +1830,18 @@ void * os::dll_load(const char *filename, char *ebuf, 
+@@ -1659,6 +1859,18 @@ void * os::dll_load(const char *filename, char *ebuf, 
    #define EM_486          6               /* Intel 80486 */
    #endif
  
@@ -464,7 +469,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    static const arch_t arch_array[]={ 
      {EM_386,         EM_386,     ELFCLASS32, ELFDATA2LSB, (char*)"IA 32"},
      {EM_486,         EM_386,     ELFCLASS32, ELFDATA2LSB, (char*)"IA 32"},
-@@ -1732,7 +1944,41 @@ bool _print_ascii_file(const char* filename, outputStr
+@@ -1762,7 +1974,41 @@ bool _print_ascii_file(const char* filename, outputStr
  
  void os::print_dll_info(outputStream *st) {
     st->print_cr("Dynamic libraries:");
@@ -506,7 +511,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
     char fname[32];
     pid_t pid = os::Bsd::gettid();
  
-@@ -1741,6 +1987,7 @@ void os::print_dll_info(outputStream *st) {
+@@ -1771,6 +2017,7 @@ void os::print_dll_info(outputStream *st) {
     if (!_print_ascii_file(fname, st)) {
       st->print("Can not get library information for pid = %d\n", pid);
     }
@@ -514,7 +519,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  
-@@ -1773,6 +2020,7 @@ void os::print_os_info(outputStream* st) {
+@@ -1803,6 +2050,7 @@ void os::print_os_info(outputStream* st) {
    st->print(name.machine);
    st->cr();
  
@@ -522,7 +527,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    // Print warning if unsafe chroot environment detected
    if (unsafe_chroot_detected) {
      st->print("WARNING!! ");
-@@ -1787,6 +2035,7 @@ void os::print_os_info(outputStream* st) {
+@@ -1817,6 +2065,7 @@ void os::print_os_info(outputStream* st) {
       st->print("(%s stack)", os::Bsd::is_floating_stack() ? "floating" : "fixed");
    }
    st->cr();
@@ -530,7 +535,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
    // rlimit
    st->print("rlimit:");
-@@ -1812,6 +2061,7 @@ void os::print_os_info(outputStream* st) {
+@@ -1842,6 +2091,7 @@ void os::print_os_info(outputStream* st) {
    if (rlim.rlim_cur == RLIM_INFINITY) st->print("infinity");
    else st->print("%d", rlim.rlim_cur);
  
@@ -538,7 +543,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    st->print(", AS ");
    getrlimit(RLIMIT_AS, &rlim);
    if (rlim.rlim_cur == RLIM_INFINITY) st->print("infinity");
-@@ -1824,6 +2074,7 @@ void os::print_os_info(outputStream* st) {
+@@ -1854,6 +2104,7 @@ void os::print_os_info(outputStream* st) {
    os::loadavg(loadavg, 3);
    st->print("%0.02f %0.02f %0.02f", loadavg[0], loadavg[1], loadavg[2]);
    st->cr();
@@ -546,7 +551,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  void os::print_memory_info(outputStream* st) {
-@@ -1831,18 +2082,22 @@ void os::print_memory_info(outputStream* st) {
+@@ -1861,18 +2112,22 @@ void os::print_memory_info(outputStream* st) {
    st->print("Memory:");
    st->print(" %dk page", os::vm_page_size()>>10);
  
@@ -569,7 +574,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    st->cr();
  }
  
-@@ -2146,10 +2401,15 @@ void bsd_wrap_code(char* base, size_t size) {
+@@ -2212,10 +2467,15 @@ void bsd_wrap_code(char* base, size_t size) {
  //       left at the time of mmap(). This could be a potential  
  //       problem.                                               
  bool os::commit_memory(char* addr, size_t size) {
@@ -585,7 +590,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  bool os::commit_memory(char* addr, size_t size, size_t alignment_hint) {
-@@ -2170,10 +2430,15 @@ size_t os::numa_get_leaf_groups(int *ids, size_t size)
+@@ -2246,10 +2506,15 @@ char *os::scan_pages(char *start, char* end, page_info
  }
  
  bool os::uncommit_memory(char* addr, size_t size) {
@@ -601,7 +606,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  static address _highest_vm_reserved_address = NULL;
-@@ -2262,6 +2527,9 @@ bool os::unguard_memory(char* addr, size_t size) {
+@@ -2338,6 +2603,9 @@ bool os::unguard_memory(char* addr, size_t size) {
  static size_t _large_page_size = 0;
  
  bool os::large_page_init() {
@@ -611,7 +616,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    if (!UseLargePages) return false;
  
    if (LargePageSizeInBytes) {
-@@ -2309,6 +2577,7 @@ bool os::large_page_init() {
+@@ -2385,6 +2653,7 @@ bool os::large_page_init() {
    // We optimistically assume the support is available. If later it turns out
    // not true, VM will automatically switch to use regular page size.
    return true;
@@ -619,7 +624,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  #ifndef SHM_HUGETLB
-@@ -2479,9 +2748,11 @@ char* os::attempt_reserve_memory_at(size_t bytes, char
+@@ -2555,9 +2824,11 @@ char* os::attempt_reserve_memory_at(size_t bytes, char
  }
  
  size_t os::read(int fd, void *buf, unsigned int nBytes) {
@@ -632,7 +637,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  // TODO-FIXME: reconcile Solaris' os::sleep with the bsd variation.
  // Solaris uses poll(), bsd uses park().  
  // Poll() is likely a better choice, assuming that Thread.interrupt()
-@@ -2600,9 +2871,28 @@ void os::loop_breaker(int attempts) {
+@@ -2676,9 +2947,28 @@ void os::loop_breaker(int attempts) {
  // this reason, the code should not be used as default (ThreadPriorityPolicy=0).
  // It is only used when ThreadPriorityPolicy=1 and requires root privilege.
  
@@ -661,7 +666,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
     4,              // 1 MinPriority
     3,              // 2
     2,              // 3
-@@ -2617,6 +2907,7 @@ int os::java_to_os_priority[MaxPriority + 1] = {
+@@ -2693,6 +2983,7 @@ int os::java_to_os_priority[MaxPriority + 1] = {
  
    -5               // 10 MaxPriority
  };
@@ -669,7 +674,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
  static int prio_init() {
    if (ThreadPriorityPolicy == 1) {
-@@ -2636,8 +2927,17 @@ static int prio_init() {
+@@ -2712,8 +3003,17 @@ static int prio_init() {
  OSReturn os::set_native_priority(Thread* thread, int newpri) {
    if ( !UseThreadPriorities || ThreadPriorityPolicy == 0 ) return OS_OK;
  
@@ -687,7 +692,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -2647,7 +2947,11 @@ OSReturn os::get_native_priority(const Thread* const t
+@@ -2723,7 +3023,11 @@ OSReturn os::get_native_priority(const Thread* const t
    }
  
    errno = 0;
@@ -699,7 +704,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    return (*priority_ptr != -1 || errno == 0 ? OS_OK : OS_ERR);
  }
  
-@@ -2757,7 +3061,7 @@ static int SR_initialize() {
+@@ -2833,7 +3137,7 @@ static int SR_initialize() {
    /* Get signal number to use for suspend/resume */
    if ((s = ::getenv("_JAVA_SR_SIGNUM")) != 0) {
      int sig = ::strtol(s, 0, 10);
@@ -708,7 +713,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  	SR_signum = sig;
      }
    }
-@@ -3121,6 +3425,7 @@ void os::Bsd::install_signal_handlers() {
+@@ -3197,6 +3501,7 @@ void os::Bsd::install_signal_handlers() {
    }
  }
  
@@ -716,7 +721,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  // This is the fastest way to get thread cpu time on Bsd.
  // Returns cpu time (user+sys) for any thread, not only for current.
  // POSIX compliant clocks are implemented in the kernels 2.6.16+.
-@@ -3135,6 +3440,7 @@ jlong os::Bsd::fast_thread_cpu_time(clockid_t clockid)
+@@ -3211,6 +3516,7 @@ jlong os::Bsd::fast_thread_cpu_time(clockid_t clockid)
  
    return (tp.tv_sec * SEC_IN_NANOSECS) + tp.tv_nsec;
  }
@@ -724,7 +729,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
  /////
  // glibc on Bsd platform uses non-documented flag
-@@ -3356,16 +3662,16 @@ void os::init(void) {
+@@ -3432,16 +3738,16 @@ void os::init(void) {
  
    _initial_pid = (java_launcher_pid > 0) ? java_launcher_pid : getpid();
  
@@ -744,7 +749,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    }
  
    Bsd::initialize_system_info();
-@@ -3387,7 +3693,9 @@ extern "C" {
+@@ -3463,7 +3769,9 @@ extern "C" {
  // this is called _after_ the global arguments have been parsed
  jint os::init_2(void)
  {
@@ -754,7 +759,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
    // Allocate a single page and mark it as readable for safepoint polling
    address polling_page = (address) ::mmap(NULL, Bsd::page_size(), PROT_READ, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
-@@ -3436,6 +3744,7 @@ jint os::init_2(void)
+@@ -3512,6 +3820,7 @@ jint os::init_2(void)
    JavaThread::set_stack_size_at_create(round_to(threadStackSizeInBytes,
          vm_page_size()));
  
@@ -762,7 +767,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
    Bsd::capture_initial_stack(JavaThread::stack_size_at_create());
  
    Bsd::libpthread_init();
-@@ -3444,6 +3753,7 @@ jint os::init_2(void)
+@@ -3520,6 +3829,7 @@ jint os::init_2(void)
            Bsd::glibc_version(), Bsd::libpthread_version(), 
            Bsd::is_floating_stack() ? "floating stack" : "fixed stack");
    }
@@ -770,7 +775,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
    if (MaxFDLimit) {
      // set the number of file descriptors to max. print out error
-@@ -3463,8 +3773,10 @@ jint os::init_2(void)
+@@ -3539,8 +3849,10 @@ jint os::init_2(void)
      }
    }
  
@@ -781,7 +786,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
    // Initialize HPI.
    jint hpi_result = hpi::initialize();
-@@ -3511,11 +3823,15 @@ void os::make_polling_page_readable(void) {
+@@ -3587,11 +3899,15 @@ void os::make_polling_page_readable(void) {
  };
  
  int os::active_processor_count() {
@@ -797,7 +802,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  bool os::distribute_processes(uint length, uint* distribution) {
-@@ -3557,6 +3873,9 @@ ExtendedPC os::get_thread_pc(Thread* thread) {
+@@ -3633,6 +3949,9 @@ ExtendedPC os::get_thread_pc(Thread* thread) {
  
  int os::Bsd::safe_cond_timedwait(pthread_cond_t *_cond, pthread_mutex_t *_mutex, const struct timespec *_abstime)
  {
@@ -807,7 +812,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
     if (is_NPTL()) {
        return pthread_cond_timedwait(_cond, _mutex, _abstime);
     } else {
-@@ -3572,6 +3891,7 @@ int os::Bsd::safe_cond_timedwait(pthread_cond_t *_cond
+@@ -3648,6 +3967,7 @@ int os::Bsd::safe_cond_timedwait(pthread_cond_t *_cond
  #endif // IA64
        return status;
     }
@@ -815,7 +820,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  ////////////////////////////////////////////////////////////////////////////////
-@@ -3707,17 +4027,17 @@ int os::create_binary_file(const char* path, bool rewr
+@@ -3783,17 +4103,17 @@ int os::create_binary_file(const char* path, bool rewr
    if (!rewrite_existing) {
      oflags |= O_EXCL;
    }
@@ -836,7 +841,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  }
  
  // Map a block of memory.
-@@ -3767,6 +4087,7 @@ bool os::unmap_memory(char* addr, size_t bytes) {
+@@ -3843,6 +4163,7 @@ bool os::unmap_memory(char* addr, size_t bytes) {
    return munmap(addr, bytes) == 0;
  }
  
@@ -844,7 +849,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  static jlong slow_thread_cpu_time(Thread *thread, bool user_sys_cpu_time);
  
  static clockid_t thread_cpu_clockid(Thread* thread) {
-@@ -3778,6 +4099,7 @@ static clockid_t thread_cpu_clockid(Thread* thread) {
+@@ -3854,6 +4175,7 @@ static clockid_t thread_cpu_clockid(Thread* thread) {
    assert(rc == 0, "pthread_getcpuclockid is expected to return 0 code");
    return clockid;
  }
@@ -852,7 +857,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
  // current_thread_cpu_time(bool) and thread_cpu_time(Thread*, bool) 
  // are used by JVM M&M and JVMTI to get user+sys or user CPU time
-@@ -3787,39 +4109,48 @@ static clockid_t thread_cpu_clockid(Thread* thread) {
+@@ -3863,39 +4185,48 @@ static clockid_t thread_cpu_clockid(Thread* thread) {
  // the fast estimate available on the platform.
  
  jlong os::current_thread_cpu_time() {
@@ -901,7 +906,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  //
  //  -1 on error.
  // 
-@@ -3908,6 +4239,7 @@ static jlong slow_thread_cpu_time(Thread *thread, bool
+@@ -3984,6 +4315,7 @@ static jlong slow_thread_cpu_time(Thread *thread, bool
      return (jlong)user_time * (1000000000 / clock_tics_per_sec);
    }
  }
@@ -909,7 +914,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
  
  void os::current_thread_cpu_time_info(jvmtiTimerInfo *info_ptr) {
    info_ptr->max_value = ALL_64_BITS;       // will not wrap in less than 64 bits
-@@ -3924,7 +4256,11 @@ void os::thread_cpu_time_info(jvmtiTimerInfo *info_ptr
+@@ -4000,7 +4332,11 @@ void os::thread_cpu_time_info(jvmtiTimerInfo *info_ptr
  }
  
  bool os::is_thread_cpu_time_supported() {
@@ -920,8 +925,8 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
 +#endif
  }
  
- bool os::thread_is_running(JavaThread* tp) {
-@@ -4098,7 +4434,7 @@ void os::PlatformEvent::park() {       // AKA "down()"
+ #ifdef JVMPI_SUPPORT
+@@ -4176,7 +4512,7 @@ void os::PlatformEvent::park() {       // AKA "down()"
          status = pthread_cond_wait(_cond, _mutex);
          // for some reason, under 2.7 lwp_cond_wait() may return ETIME ...
          // Treat this the same as if the wait was interrupted
@@ -930,7 +935,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:19 k
          assert_status(status == 0 || status == EINTR, status, "cond_wait");
       }
       -- _nParked ; 
-@@ -4156,10 +4492,10 @@ int os::PlatformEvent::park(jlong millis) {
+@@ -4234,10 +4570,10 @@ int os::PlatformEvent::park(jlong millis) {
        pthread_cond_init (_cond, NULL) ;
      }
      assert_status(status == 0 || status == EINTR || 

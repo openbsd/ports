@@ -1,13 +1,13 @@
-$OpenBSD: patch-hotspot_src_share_vm_runtime_vm_version_cpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/share/vm/runtime/vm_version.cpp.orig	Tue Apr 10 04:02:18 2007
-+++ hotspot/src/share/vm/runtime/vm_version.cpp	Mon Apr 16 08:42:39 2007
-@@ -225,7 +225,8 @@ const char* Abstract_VM_Version::internal_vm_info_stri
+$OpenBSD: patch-hotspot_src_share_vm_runtime_vm_version_cpp,v 1.2 2007/05/09 15:48:31 kurt Exp $
+--- hotspot/src/share/vm/runtime/vm_version.cpp.orig	Sun May  6 05:01:20 2007
++++ hotspot/src/share/vm/runtime/vm_version.cpp	Tue May  8 15:33:14 2007
+@@ -190,7 +190,8 @@ const char* Abstract_VM_Version::vm_release() {
  
-   #define OS     LINUX_ONLY("linux")             \
+ #define OS       LINUX_ONLY("linux")             \
                   WINDOWS_ONLY("windows")         \
 -                 SOLARIS_ONLY("solaris")
 +                 SOLARIS_ONLY("solaris")         \
 +		 BSD_ONLY("bsd")
  
-   #define CPU    IA32_ONLY("x86")                \
+ #define CPU      IA32_ONLY("x86")                \
                   IA64_ONLY("ia64")               \

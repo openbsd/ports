@@ -1,20 +1,18 @@
-$OpenBSD: patch-hotspot_src_share_vm_gc_implementation_includeDB_gc_shared,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/share/vm/gc_implementation/includeDB_gc_shared.orig	Tue Apr 10 04:01:45 2007
-+++ hotspot/src/share/vm/gc_implementation/includeDB_gc_shared	Mon Apr 16 08:42:39 2007
-@@ -42,7 +42,7 @@ ageTable.cpp                            gcAdaptivePoli
- ageTable.cpp                            resourceArea.hpp
+$OpenBSD: patch-hotspot_src_share_vm_gc_implementation_includeDB_gc_shared,v 1.2 2007/05/09 15:48:31 kurt Exp $
+--- hotspot/src/share/vm/gc_implementation/includeDB_gc_shared.orig	Tue May  8 16:39:24 2007
++++ hotspot/src/share/vm/gc_implementation/includeDB_gc_shared	Tue May  8 16:56:10 2007
+@@ -43,6 +43,7 @@ ageTable.cpp                            resourceArea.h
  ageTable.cpp                            sharedHeap.hpp
  
--ageTable.hpp                            markOop.hpp
+ ageTable.hpp                            markOop.hpp
 +ageTable.hpp                            markOop.inline.hpp
  ageTable.hpp                            oop.hpp
  ageTable.hpp                            perfData.hpp
  
-@@ -112,7 +112,7 @@ markSweep.cpp                           oop.inline.hpp
- 
- markSweep.hpp                           growableArray.hpp
- markSweep.hpp                           jvmpi.hpp
--markSweep.hpp                           markOop.hpp
+@@ -115,6 +116,7 @@ markSweep.hpp                           growableArray.
+ // markSweep.hpp                           jvmpi.hpp
+ // #endif // JVMPI_SUPPORT
+ markSweep.hpp                           markOop.hpp
 +markSweep.hpp                           markOop.inline.hpp
  markSweep.hpp                           oop.hpp
  markSweep.hpp                           timer.hpp

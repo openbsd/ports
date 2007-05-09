@@ -1,60 +1,43 @@
-$OpenBSD: patch-hotspot_src_share_vm_includeDB_compiler2,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/share/vm/includeDB_compiler2.orig	Tue Apr 10 04:01:37 2007
-+++ hotspot/src/share/vm/includeDB_compiler2	Mon Apr 16 08:42:39 2007
-@@ -139,7 +139,7 @@ c2compiler.cpp                          runtime.hpp
+$OpenBSD: patch-hotspot_src_share_vm_includeDB_compiler2,v 1.2 2007/05/09 15:48:31 kurt Exp $
+--- hotspot/src/share/vm/includeDB_compiler2.orig	Tue May  8 16:37:23 2007
++++ hotspot/src/share/vm/includeDB_compiler2	Tue May  8 18:12:36 2007
+@@ -137,6 +137,7 @@ c2_globals_<os_family>.hpp              globalDefiniti
+ c2_globals_<os_family>.hpp              macros.hpp
  
- c2compiler.hpp                          abstractCompiler.hpp
- 
--c2_init_<arch>.cpp                      compile.hpp
+ c2_init_<arch>.cpp                      compile.hpp
 +c2_init_<arch>.cpp                      node.hpp
  
+ c2compiler.cpp                          ad_<arch>.hpp
+ c2compiler.cpp                          c2compiler.hpp
+@@ -160,6 +161,7 @@ callGenerator.cpp                       subnode.hpp
  callGenerator.hpp                       callnode.hpp
  callGenerator.hpp                       compile.hpp
-@@ -391,6 +391,7 @@ debug.cpp                               disassembler_<
- debug.cpp                               icBuffer.hpp
- debug.cpp                               nmethod.hpp
- debug.cpp                               vtableStubs.hpp
-+debug.cpp                               node.hpp
+ callGenerator.hpp                       deoptimization.hpp
++callGenerator.hpp                       node.hpp
+ callGenerator.hpp                       type.hpp
  
- debug_<arch>.cpp                        nmethod.hpp
+ callnode.cpp                            callnode.hpp
+@@ -476,6 +478,7 @@ graphKit.hpp                            cfgnode.hpp
+ graphKit.hpp                            ciEnv.hpp
+ graphKit.hpp                            compile.hpp
+ graphKit.hpp                            deoptimization.hpp
++graphKit.hpp                            node.hpp
+ graphKit.hpp                            phaseX.hpp
+ graphKit.hpp                            type.hpp
  
-@@ -498,11 +499,14 @@ exceptionHandlerTable.hpp               methodOop.hpp
+@@ -518,6 +521,7 @@ indexSet.cpp                            regmask.hpp
  
- exceptions.cpp                          compileBroker.hpp
+ indexSet.hpp                            allocation.hpp
+ indexSet.hpp                            compile.hpp
++indexSet.hpp                            node.hpp
+ indexSet.hpp                            regmask.hpp
+ indexSet.hpp                            resourceArea.hpp
  
-+filemap.hpp                             node.hpp
-+
- fprofiler.cpp                           compile.hpp
- fprofiler.cpp                           deoptimization.hpp
- fprofiler.cpp                           icBuffer.hpp
- fprofiler.cpp                           nmethod.hpp
- fprofiler.cpp                           vtableStubs.hpp
-+fprofiler.cpp                           node.hpp
- 
- frame.cpp                               codeCache.hpp
- frame.cpp                               nmethod.hpp
-@@ -550,6 +554,8 @@ generateOptoStub.cpp                    rootnode.hpp
- generateOptoStub.cpp                    runtime.hpp
- generateOptoStub.cpp                    type.hpp
- 
-+genOopClosures.inline.hpp               node.hpp
-+
- globals.hpp                             c2_globals_<arch>.hpp
- globals.hpp                             c2_globals_<os_family>.hpp
- 
-@@ -944,6 +950,7 @@ oopMap.cpp                              nmethod.hpp
- oopMap.cpp                              oopMap.hpp
- oopMap.cpp                              scopeDesc.hpp
- oopMap.cpp                              signature.hpp
-+oopMap.cpp                              node.hpp
- 
- oopMap.hpp                              allocation.hpp
- oopMap.hpp                              compressedStream.hpp
-@@ -1051,6 +1058,7 @@ phase.cpp                               compile.hpp
+@@ -834,6 +838,7 @@ parseHelper.cpp                         systemDictiona
+ phase.cpp                               compile.hpp
  phase.cpp                               compileBroker.hpp
  phase.cpp                               nmethod.hpp
- phase.cpp                               phase.hpp
 +phase.cpp                               node.hpp
+ phase.cpp                               phase.hpp
  
  phase.hpp                               port.hpp
- phase.hpp                               timer.hpp

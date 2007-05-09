@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp	Mon Apr 16 08:42:39 2007
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.2 2007/05/09 15:48:31 kurt Exp $
+--- hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp.orig	Tue May  8 15:33:12 2007
++++ hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp	Tue May  8 15:42:26 2007
 @@ -47,8 +47,60 @@
  #include <sys/wait.h>
  #include <pwd.h>
@@ -83,7 +83,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.1.1.1 2007/
  }
  
  // For Forte Analyzer AsyncGetCallTrace profiling support - thread is
-@@ -232,11 +284,11 @@ JVM_handle_bsd_signal(int sig,
+@@ -236,16 +288,16 @@ JVM_handle_bsd_signal(int sig,
      pc = os::Bsd::ucontext_get_pc(uc);
  
      if (pc == (address) Fetch32PFI) { 
@@ -97,7 +97,13 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.1.1.1 2007/
         return 1 ; 
      } 
  
-@@ -267,6 +319,7 @@ JVM_handle_bsd_signal(int sig,
+     // Handle ALL stack overflow variations here
+-    if (sig == SIGSEGV) {
++    if (sig == SIGSEGV || sig == SIGBUS) {
+       address addr = (address) info->si_addr;
+ 
+       // check if fault address is within thread stack
+@@ -271,6 +323,7 @@ JVM_handle_bsd_signal(int sig,
            // to handle_unexpected_exception way down below.
            thread->disable_stack_red_zone();
            tty->print_raw_cr("An irrecoverable stack overflow has occurred.");
@@ -105,7 +111,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.1.1.1 2007/
          } else {
            // Accessing stack address below sp may cause SEGV if current
            // thread has MAP_GROWSDOWN stack. This should only happen when
-@@ -282,6 +335,7 @@ JVM_handle_bsd_signal(int sig,
+@@ -286,6 +339,7 @@ JVM_handle_bsd_signal(int sig,
            } else {
               fatal("recursive segv. expanding stack.");
            }
@@ -113,16 +119,16 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.1.1.1 2007/
          } 
        }
      }
-@@ -291,7 +345,7 @@ JVM_handle_bsd_signal(int sig,
+@@ -294,7 +348,7 @@ JVM_handle_bsd_signal(int sig,
+       // Java thread running in Java code => find exception handler if any
        // a fault inside compiled code, the interpreter, or a stub
  
- #ifndef CORE
 -      if (sig == SIGSEGV && (address) info->si_addr == os::get_polling_page()) {
 +      if ((sig == SIGSEGV || sig == SIGBUS) && (address) info->si_addr == os::get_polling_page()) {
          stub = SharedRuntime::get_poll_stub(pc);
        } else if (sig == SIGBUS /*&& info->si_code == BUS_OBJERR */) {
  	// BugId 4454115: A read from a MappedByteBuffer can fault
-@@ -314,7 +368,7 @@ JVM_handle_bsd_signal(int sig,
+@@ -316,7 +370,7 @@ JVM_handle_bsd_signal(int sig,
                                                SharedRuntime::
                                                IMPLICIT_DIVIDE_BY_ZERO);
  
@@ -130,7 +136,16 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.1.1.1 2007/
 +      } else if ((sig == SIGSEGV || sig == SIGBUS) &&
                 !MacroAssembler::needs_explicit_null_check((intptr_t)
                                                            info->si_addr)) {
-         // Determination of interpreter/vtable stub/compiled code null
+         stub =
+@@ -344,7 +398,7 @@ JVM_handle_bsd_signal(int sig,
+     // process of write protecting the memory serialization page.
+     // It write enables the page immediately after protecting it
+     // so we can just return to retry the write.
+-    if ((sig == SIGSEGV) &&
++    if ((sig == SIGSEGV || sig == SIGBUS) &&
+         os::is_memory_serialize_page(thread, (address)info->si_addr)) {
+       return true;
+     }
 @@ -354,7 +408,7 @@ JVM_handle_bsd_signal(int sig,
      // save all thread context in case we need to restore it
      thread->set_saved_exception_pc(pc);

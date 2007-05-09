@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/09 15:48:31 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	i386 amd64
 
 COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 V=			1.7.0
-B=			b11
-DISTNAME=		hotspot-7-ea-src-${B}-10_apr_2007
-PKGNAME=		jdk-${V}
+B=			b12
+DISTNAME=		openjdk-7-ea-src-${B}-06_may_2007
+PKGNAME=		jdk-${V}p0
 
 CATEGORIES=		devel/jdk java
 
-HOMEPAGE=		https://openjdk.dev.java.net/
-MASTER_SITES=		http://www.java.net/download/openjdk/jdk7/promoted/${B}/
+HOMEPAGE=		http://openjdk.java.net/
+MASTER_SITES=		http://www.java.net/download/openjdk/40ec4ed263a6dfce13b8cf18fa046058/jdk7/promoted/${B}/
 EXTRACT_SUFX=		.zip
 
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
@@ -49,7 +49,7 @@ JDKHOME=		jdk-${V}
 
 SUBST_VARS=		JDKHOME
 
-WRKDIST=		${WRKDIR}
+WRKDIST=		${WRKDIR}/openjdk
 WRKBUILD=		${WRKDIST}/hotspot/make
 JVMARCH=		${MACHINE_ARCH:S/i386/i486/}
 OUTPUTDIR1=		${WRKDIST}/hotspot/build/bsd/bsd_${JVMARCH}_compiler1
