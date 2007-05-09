@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2005/12/23 16:06:27 todd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/09 23:46:39 rui Exp $
 
 COMMENT=		"SOCKS client wrapper for *BSD"
-DISTNAME=		dsocks-1.2
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		dsocks-1.6
 CATEGORIES=		net
 SHARED_LIBS=		dsocks 1.0
 
