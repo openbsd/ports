@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/04/24 19:59:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2007/05/09 19:16:24 jasper Exp $
 
      SUBDIR += applets2
      SUBDIR += audio
@@ -22,6 +22,7 @@
      SUBDIR += libgnomecanvas
      SUBDIR += libgnomecanvasmm
      SUBDIR += libgnomecups
+     SUBDIR += libgnomekbd
      SUBDIR += libgnomeui
      SUBDIR += libgnomeprint
      SUBDIR += libgnomeprintui
