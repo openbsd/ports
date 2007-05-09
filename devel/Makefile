@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.505 2007/05/08 09:03:34 steven Exp $
+# $OpenBSD: Makefile,v 1.506 2007/05/09 21:55:50 alek Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -510,6 +510,7 @@
      SUBDIR += py-ctypes
      SUBDIR += py-dateutil
      SUBDIR += py-fpconst
+     SUBDIR += py-gobject
      SUBDIR += py-logilab-astng
      SUBDIR += py-logilab-common
      SUBDIR += py-mxDateTime
