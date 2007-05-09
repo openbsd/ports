@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/05/06 11:32:34 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/05/09 06:00:28 steven Exp $
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
 %%SHARED%%
@@ -6,9 +6,9 @@ bin/gsf
 bin/gsf-vba-dump
 include/libgsf-1/
 include/libgsf-1/gsf/
-include/libgsf-1/gsf-win32/
-include/libgsf-1/gsf-win32/gsf-input-win32.h
-include/libgsf-1/gsf-win32/gsf-output-win32.h
+@comment include/libgsf-1/gsf-win32/
+@comment include/libgsf-1/gsf-win32/gsf-input-win32.h
+@comment include/libgsf-1/gsf-win32/gsf-output-win32.h
 include/libgsf-1/gsf/gsf-blob.h
 include/libgsf-1/gsf/gsf-clip-data.h
 include/libgsf-1/gsf/gsf-doc-meta-data.h
