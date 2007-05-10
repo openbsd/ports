@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2007/02/22 00:17:09 steven Exp $
+# $OpenBSD: Makefile,v 1.66 2007/05/10 11:38:28 steven Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
-DISTNAME=	gnupg-1.4.6
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	gnupg-1.4.7
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
@@ -33,7 +32,7 @@ LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
 		curl.>=3::net/curl
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.59
+AUTOCONF_VERSION= 2.60
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 CONFIGURE_ARGS+= --disable-gnupg-iconv
 .if ${MACHINE_ARCH} == "m68k"

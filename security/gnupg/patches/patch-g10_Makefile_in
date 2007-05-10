@@ -1,12 +1,12 @@
-$OpenBSD: patch-g10_Makefile_in,v 1.5 2007/01/16 09:50:36 bernd Exp $
---- g10/Makefile.in.orig	Wed Dec  6 10:15:28 2006
-+++ g10/Makefile.in	Thu Jan 11 12:02:52 2007
-@@ -353,7 +353,7 @@ sbindir = @sbindir@
+$OpenBSD: patch-g10_Makefile_in,v 1.6 2007/05/10 11:38:28 steven Exp $
+--- g10/Makefile.in.orig	Mon Mar  5 10:44:42 2007
++++ g10/Makefile.in	Thu May 10 11:13:41 2007
+@@ -368,7 +368,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
 -AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/intl \
 +AM_CPPFLAGS = -I$(top_srcdir)/include \
  	@LIBUSB_CPPFLAGS@ $(am__append_1)
- EXTRA_DIST = options.skel
  needed_libs = ../cipher/libcipher.a ../mpi/libmpi.a ../util/libutil.a
+ other_libs = $(LIBICONV) $(DNSLIBS) $(LIBINTL) $(CAPLIBS)
