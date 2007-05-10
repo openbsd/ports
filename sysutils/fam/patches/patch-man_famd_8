@@ -1,0 +1,23 @@
+$OpenBSD: patch-man_famd_8,v 1.1 2007/05/10 19:56:19 ajacoutot Exp $
+--- man/famd.8.orig	Thu May 10 14:53:46 2007
++++ man/famd.8	Thu May 10 14:56:18 2007
+@@ -21,7 +21,7 @@ independently.  Only one instance of \fBfamd\fR can be
+ run at a time.
+ .P
+ \fBfamd\fR can be configured by editing the famd configuration
+-file (see \fIfamd.conf(5)\fR for further details) or by
++file (see \fIfam.conf(5)\fR for further details) or by
+ providing the following command line options:
+ .SH OPTIONS
+ .TP
+@@ -63,8 +63,8 @@ A value of 0 causes \fBfamd\fR to run forever.
+ files that the client can \fBstat\fR.
+ .SH FILES
+ .TP
+-\fI/usr/local/etc/famd.conf\fR
++\fI!!SYSCONFDIR!!/fam.conf\fR
+ Default \fBfamd\fR configuration file.
+ .SH "SEE ALSO"
+-fam(3), famd.conf(5), inetd(8), portmap(8), stat(1), xinetd(8)
++fam(3), fam.conf(5), inetd(8), portmap(8), stat(1), xinetd(8)
+ .SH BUGS

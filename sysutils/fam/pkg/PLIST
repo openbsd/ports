@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/10 19:56:19 ajacoutot Exp $
 %%SHARED%%
 include/fam.h
 lib/libfam.a
 lib/libfam.la
 @man man/man3/fam.3
-@man man/man5/famd.conf.5
+@man man/man5/fam.conf.5
 @man man/man8/famd.8
 sbin/famd
 share/examples/fam/

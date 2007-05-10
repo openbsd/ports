@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/09 06:12:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/10 19:56:19 ajacoutot Exp $
 
 COMMENT=	"File Alteration Monitor"
 
 DISTNAME=	fam-2.7.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS +=	fam	0.0	# .0.0
 CATEGORIES=	sysutils
 
@@ -32,7 +32,10 @@ post-patch:
 	rm -f ${WRKSRC}/configure
 
 pre-configure:
+	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
+		${WRKSRC}/man/famd.conf.5 ${WRKSRC}/man/famd.8
 	cp ${FILESDIR}/*.* ${WRKSRC}/src
+	mv ${WRKSRC}/man/famd.conf.5 ${WRKSRC}/man/fam.conf.5
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fam/

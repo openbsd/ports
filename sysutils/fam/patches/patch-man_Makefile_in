@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1 2007/05/10 19:56:19 ajacoutot Exp $
+--- man/Makefile.in.orig	Thu May 10 14:57:42 2007
++++ man/Makefile.in	Thu May 10 14:57:59 2007
+@@ -90,7 +90,7 @@ am__quote = @am__quote@
+ install_sh = @install_sh@
+ INCLUDES = @FAM_INC@ -DFAM_CONF=\"@FAM_CONF@\"
+ 
+-man_MANS = fam.3 famd.conf.5 famd.8
++man_MANS = fam.3 fam.conf.5 famd.8
+ 
+ EXTRA_DIST = $(man_MANS)
+ subdir = man

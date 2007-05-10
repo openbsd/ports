@@ -1,0 +1,17 @@
+$OpenBSD: patch-man_famd_conf_5,v 1.1 2007/05/10 19:56:19 ajacoutot Exp $
+--- man/famd.conf.5.orig	Thu May 10 14:54:06 2007
++++ man/famd.conf.5	Thu May 10 14:59:23 2007
+@@ -1,10 +1,10 @@
+-.TH FAMD.CONF "5" "January 19, 2003" "famd.conf (fam 2.6.10)" "SGI"
++.TH FAM.CONF "5" "January 19, 2003" "fam.conf (fam 2.6.10)" "SGI"
+ .SH NAME
+-famd.conf \- The File Alteration Monitor (FAM) configuration file
++fam.conf \- The File Alteration Monitor (FAM) configuration file
+ .SH SYNOPSIS
+ In addition to its command line options, \fBfamd\fR's behavior
+ can also be controlled through its configuration file.  By
+-default, this is \fI/usr/local/etc/fam.conf\fR.  The \fB\-c\fR
++default, this is \fI!!SYSCONFDIR!!/fam.conf\fR.  The \fB\-c\fR
+ command line option can be used to specify an alternate file.
+ .SH "FILE FORMAT"
+ Configuration lines are in the format \fBoption=value\fR.
