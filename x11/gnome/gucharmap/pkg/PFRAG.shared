@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/10 19:30:12 jasper Exp $
+@lib lib/libgucharmap.so.${LIBgucharmap_VERSION}
