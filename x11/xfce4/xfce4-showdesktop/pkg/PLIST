@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/08/17 16:02:05 espie Exp $
-@conflict xfce4-showdesktop-plugin-*
-%%SHARED%%
-lib/xfce4/panel-plugins/libshowdesktop.a
-lib/xfce4/panel-plugins/libshowdesktop.la
-share/locale/de/LC_MESSAGES/xfce4-showdesktop.mo
-share/locale/es/LC_MESSAGES/xfce4-showdesktop.mo
-share/locale/ko/LC_MESSAGES/xfce4-showdesktop.mo
-share/locale/pl/LC_MESSAGES/xfce4-showdesktop.mo

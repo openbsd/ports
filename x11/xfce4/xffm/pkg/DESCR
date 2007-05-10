@@ -1,5 +1,0 @@
-xffm is the xfce4 file manager.
-
-xffm may also be used to browse samba network shares.  If you wish to
-utilize the "SMB Network" tab of xffm, pkg_add samba or look at
-net/samba in the ports tree.
