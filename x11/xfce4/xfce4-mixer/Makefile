@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/16 12:22:37 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/10 06:39:04 steven Exp $
 
 COMMENT=	"volume mixer module for xfce4-panel"
-V=		4.2.3
-DISTNAME=	xfce4-mixer-${V}
-SHARED_LIBS=    xfce4mixer 0.0
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
-HOMEPAGE=	http://www.xfce.org/
+V=		4.4.1
+DISTNAME=	xfce4-mixer-${V}
+SHARED_LIBS=	xfce4mixer 1.0
+
+HOMEPAGE=	http://www.xfce.org/projects/xfce4-mixer/
+MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,21 +15,26 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
+EXTRACT_SUFX=	.tar.bz2
+
+USE_GMAKE=	Yes
+
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
-		:xfce4-panel-*:x11/xfce4/xfce4-panel
-LIB_DEPENDS=	xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
-		xfce4mcs-client.>=2.3::x11/xfce4/libxfce4mcs \
-		xml2.>=9::textproc/libxml
-RUN_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
-		:xfce4-panel-*:x11/xfce4/xfce4-panel
-WANTLIB=	ICE Xrender SM freetype c Xext m fontconfig X11 z \
+LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4 \
+		xfce4mcs-client.>=3.5::x11/xfce4/libxfce4mcs \
+		xml2.>=9::textproc/libxml \
+		xfce4panel.>=2.2::x11/xfce4/xfce4-panel
+RUN_DEPENDS=	:xfce-mcs-manager->=4.4.1:x11/xfce4/xfce-mcs-manager
+WANTLIB=	ICE Xrender Xau Xdmcp expat SM freetype fontconfig X11 \
+		Xcursor Xext Xfixes Xi Xinerama Xrandr c m z \
 		gmodule-2.0 glib-2.0 pangocairo-1.0 pango-1.0 \
 		gdk_pixbuf-2.0 gtk-x11-2.0 gdk-x11-2.0 pangoft2-1.0 \
 		cairo startup-notification-1 glitz atk-1.0 png \
 		gobject-2.0 xfce4util.>=1 ossaudio
 
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-sound=oss
+CONFIGURE_ARGS=	--with-sound=oss \
+		--enable-mighty-mouse \
+		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
