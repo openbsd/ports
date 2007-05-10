@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2007/05/09 19:16:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2007/05/10 19:31:27 jasper Exp $
 
      SUBDIR += applets2
      SUBDIR += audio
@@ -14,6 +14,7 @@
      SUBDIR += gdm
      SUBDIR += gedit
      SUBDIR += ggv
+     SUBDIR += gucharmap
      SUBDIR += icon-theme
      SUBDIR += keyring
      SUBDIR += libbonobo
