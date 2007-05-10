@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.21 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/05/10 19:29:32 alek Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
-DISTNAME=	gimp-2.2.13
-SHARED_LIBS=	gimp-2.0	200.13	\
-		gimpbase-2.0	200.13	\
-		gimpcolor-2.0	200.13	\
-		gimpmath-2.0	200.13	\
-		gimpmodule-2.0	200.13	\
-		gimpthumb-2.0	200.13	\
-		gimpui-2.0	200.13	\
-		gimpwidgets-2.0	200.13
+DISTNAME=	gimp-2.2.14
+SHARED_LIBS=	gimp-2.0	200.14	\
+		gimpbase-2.0	200.14	\
+		gimpcolor-2.0	200.14	\
+		gimpmath-2.0	200.14	\
+		gimpmodule-2.0	200.14	\
+		gimpthumb-2.0	200.14	\
+		gimpui-2.0	200.14	\
+		gimpwidgets-2.0	200.14
 
 CATEGORIES=	graphics
 DIR=		gimp/v2.2
@@ -42,6 +42,7 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		gobject-2.0 jpeg.>=62 lcms.>=1 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png.>=4 \
 		pthread ncurses xml2 z cairo glitz
+WANTLIB += Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
 
 MODULES=	devel/gettext
 

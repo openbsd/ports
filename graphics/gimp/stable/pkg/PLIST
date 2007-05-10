@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/10/12 11:08:28 steven Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/05/10 19:29:32 alek Exp $
 %%SHARED%%
 bin/gimp
 bin/gimp-2.2
@@ -1349,6 +1349,7 @@ share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpColorSpace.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpHSV.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpRGB.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor.devhelp
+share/gtk-doc/html/libgimpcolor/libgimpcolor.devhelp2
 share/gtk-doc/html/libgimpcolor/libgimpcolor.html
 share/gtk-doc/html/libgimpcolor/right.png
 share/gtk-doc/html/libgimpcolor/style.css
@@ -1363,6 +1364,7 @@ share/gtk-doc/html/libgimpmath/libgimpmath-GimpMath.html
 share/gtk-doc/html/libgimpmath/libgimpmath-GimpMatrix.html
 share/gtk-doc/html/libgimpmath/libgimpmath-GimpVector.html
 share/gtk-doc/html/libgimpmath/libgimpmath.devhelp
+share/gtk-doc/html/libgimpmath/libgimpmath.devhelp2
 share/gtk-doc/html/libgimpmath/libgimpmath.html
 share/gtk-doc/html/libgimpmath/right.png
 share/gtk-doc/html/libgimpmath/style.css
@@ -1375,6 +1377,7 @@ share/gtk-doc/html/libgimpmodule/index.html
 share/gtk-doc/html/libgimpmodule/index.sgml
 share/gtk-doc/html/libgimpmodule/left.png
 share/gtk-doc/html/libgimpmodule/libgimpmodule.devhelp
+share/gtk-doc/html/libgimpmodule/libgimpmodule.devhelp2
 share/gtk-doc/html/libgimpmodule/libgimpmodule.html
 share/gtk-doc/html/libgimpmodule/right.png
 share/gtk-doc/html/libgimpmodule/style.css
@@ -1835,10 +1838,6 @@ share/locale/nl/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/nl/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/nl/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/nl/LC_MESSAGES/gimp20.mo
-share/locale/no/LC_MESSAGES/gimp20-libgimp.mo
-share/locale/no/LC_MESSAGES/gimp20-script-fu.mo
-share/locale/no/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/no/LC_MESSAGES/gimp20.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gimp20-libgimp.mo
