@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/12 14:18:53 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/10 14:33:19 ajacoutot Exp $
 
 COMMENT=	"another eMule p2p client"
 
 DISTNAME=	aMule-2.1.3
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.amule.org/
@@ -25,7 +25,7 @@ USE_GMAKE=	Yes
 WANTLIB=	X11 c m pthread stdc++ z
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-debug --enable-optimize --with-x
+CONFIGURE_ARGS=	--disable-debug --with-x
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 NO_REGRESS=	Yes
