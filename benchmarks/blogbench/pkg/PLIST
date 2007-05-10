@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/10 11:17:20 ajacoutot Exp $
+bin/blogbench
+@man man/man8/blogbench.8
