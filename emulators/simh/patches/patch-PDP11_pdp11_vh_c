@@ -1,7 +1,7 @@
-$OpenBSD: patch-PDP11_pdp11_vh_c,v 1.1 2006/07/10 17:55:44 fgsch Exp $
---- PDP11/pdp11_vh.c.orig	Sat Jul  8 19:19:57 2006
-+++ PDP11/pdp11_vh.c	Sat Jul  8 19:19:59 2006
-@@ -85,7 +85,7 @@ extern FILE	*sim_log;
+$OpenBSD: patch-PDP11_pdp11_vh_c,v 1.2 2007/05/10 21:01:15 matthieu Exp $
+--- PDP11/pdp11_vh.c.orig	Sun Oct 29 11:39:20 2006
++++ PDP11/pdp11_vh.c	Tue May  8 21:33:31 2007
+@@ -86,7 +86,7 @@ extern FILE	*sim_log;
  #endif
  #define	VH_MNOMASK	(VH_MUXES - 1)
  

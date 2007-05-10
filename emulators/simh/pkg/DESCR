@@ -19,3 +19,6 @@ Simulators included in this package:
 	- MITS Altair 8800, with both 8080 and Z80
 	- Royal-Mcbee LGP-30, LGP-21
 	- Scientific Data Systems SDS 940
+
+See http://www.openbsd.org/vax-simh.html for instructions on how to run
+OpenBSD/vax on simh-vax.

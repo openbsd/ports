@@ -1,6 +1,6 @@
-$OpenBSD: patch-VAX_vax780_sbi_c,v 1.1 2006/07/10 17:55:44 fgsch Exp $
---- VAX/vax780_sbi.c.orig	Thu May 11 08:53:04 2006
-+++ VAX/vax780_sbi.c	Sat Jul  8 19:18:19 2006
+$OpenBSD: patch-VAX_vax780_sbi_c,v 1.2 2007/05/10 21:01:15 matthieu Exp $
+--- VAX/vax780_sbi.c.orig	Thu May 11 07:53:04 2006
++++ VAX/vax780_sbi.c	Tue May  8 21:33:31 2007
 @@ -32,6 +32,10 @@
  
  #include "vax_defs.h"
@@ -12,7 +12,7 @@ $OpenBSD: patch-VAX_vax780_sbi_c,v 1.1 2006/07/10 17:55:44 fgsch Exp $
  /* 11/780 specific IPRs */
  
  /* Writeable control store */
-@@ -643,10 +647,10 @@ t_stat cpu_boot (int32 unitno, DEVICE *d
+@@ -643,10 +647,10 @@ t_stat cpu_boot (int32 unitno, DEVICE *dptr)
  {
  t_stat r;
  
