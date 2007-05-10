@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/08 15:28:36 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/05/10 13:40:30 steven Exp $
 bin/startxfce4
 bin/xfbrowser4
 bin/xfce4-about
@@ -10,6 +10,7 @@ bin/xfterm4
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.xfce.RunDialog.service
+@sample ${SYSCONFDIR}/xdg/xfce4/
 share/examples/xfce4/xinitrc
 @sample ${SYSCONFDIR}/xdg/xfce4/xinitrc
 share/icons/hicolor/48x48/apps/xfce4-logo.png
