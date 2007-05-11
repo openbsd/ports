@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/11 19:01:26 steven Exp $
+bin/verve-focus
+libexec/xfce4/
+libexec/xfce4/panel-plugins/
+libexec/xfce4/panel-plugins/xfce4-verve-plugin
+share/locale/ca/LC_MESSAGES/verve-plugin.mo
+share/locale/cs/LC_MESSAGES/verve-plugin.mo
+share/locale/de/LC_MESSAGES/verve-plugin.mo
+share/locale/el/LC_MESSAGES/verve-plugin.mo
+share/locale/eo/LC_MESSAGES/verve-plugin.mo
+share/locale/eu/LC_MESSAGES/verve-plugin.mo
+share/locale/fi/LC_MESSAGES/verve-plugin.mo
+share/locale/fr/LC_MESSAGES/verve-plugin.mo
+share/locale/hu/LC_MESSAGES/verve-plugin.mo
+share/locale/it/LC_MESSAGES/verve-plugin.mo
+share/locale/ja/LC_MESSAGES/verve-plugin.mo
+share/locale/nl/LC_MESSAGES/verve-plugin.mo
+share/locale/pa/LC_MESSAGES/verve-plugin.mo
+share/locale/pl/LC_MESSAGES/verve-plugin.mo
+share/locale/pt_BR/LC_MESSAGES/verve-plugin.mo
+share/locale/ru/LC_MESSAGES/verve-plugin.mo
+share/locale/vi/LC_MESSAGES/verve-plugin.mo
+share/locale/zh_TW/LC_MESSAGES/verve-plugin.mo
+share/xfce4/panel-plugins/verve.desktop
