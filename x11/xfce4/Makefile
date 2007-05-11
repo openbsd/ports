@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/11 19:06:29 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/05/11 19:11:49 steven Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
@@ -20,7 +20,6 @@
      SUBDIR+= xfce4-fsguard
      SUBDIR+= xfce4-icon-theme
      SUBDIR+= xfce4-lua-graph
-     SUBDIR+= xfce4-minicmd
      SUBDIR+= xfce4-mixer
      SUBDIR+= xfce4-netload
      SUBDIR+= xfce4-notes
