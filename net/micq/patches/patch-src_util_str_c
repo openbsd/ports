@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_util_str_c,v 1.1 2007/05/11 11:25:17 bernd Exp $
+
+http://micq.org/pipermail/micq-list/2007-April/001483.html
+Should be fixed in micq >0.5.3.
+
+--- src/util_str.c.orig	Wed May  9 21:54:15 2007
++++ src/util_str.c	Wed May  9 21:54:43 2007
+@@ -412,7 +412,8 @@ const char *s_time (time_t *stamp)
+         stamp = NULL;
+     }
+     now = *localtime (&nowsec);
+-    
++
++    s_init (&str, "", 32);
+     while (!rc)
+     {
+         rc = strftime (str.txt, str.max,
