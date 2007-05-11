@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/01/09 11:32:23 alek Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/05/11 13:02:39 jasper Exp $
 include/eel-2/
 include/eel-2/eel/
 include/eel-2/eel/eel-accessibility.h
@@ -10,12 +10,10 @@ include/eel-2/eel/eel-background.h
 include/eel-2/eel/eel-canvas-rect-ellipse.h
 include/eel-2/eel/eel-canvas-util.h
 include/eel-2/eel/eel-canvas.h
-include/eel-2/eel/eel-cell-renderer-pixbuf-list.h
 include/eel-2/eel/eel-dateedit-extensions.h
 include/eel-2/eel/eel-debug-drawing.h
 include/eel-2/eel/eel-debug.h
 include/eel-2/eel/eel-editable-label.h
-include/eel-2/eel/eel-ellipsizing-label.h
 include/eel-2/eel/eel-enumeration.h
 include/eel-2/eel/eel-features.h
 include/eel-2/eel/eel-gconf-extensions.h
@@ -68,6 +66,9 @@ share/locale/bg/LC_MESSAGES/eel-2.0.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/eel-2.0.mo
+share/locale/bn_IN/
+share/locale/bn_IN/LC_MESSAGES/
+share/locale/bn_IN/LC_MESSAGES/eel-2.0.mo
 share/locale/br/
 share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/eel-2.0.mo
@@ -81,6 +82,9 @@ share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/eel-2.0.mo
 share/locale/da/LC_MESSAGES/eel-2.0.mo
 share/locale/de/LC_MESSAGES/eel-2.0.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/eel-2.0.mo
 share/locale/el/LC_MESSAGES/eel-2.0.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
@@ -115,10 +119,19 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/eel-2.0.mo
 share/locale/it/LC_MESSAGES/eel-2.0.mo
 share/locale/ja/LC_MESSAGES/eel-2.0.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/eel-2.0.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/eel-2.0.mo
 share/locale/ko/LC_MESSAGES/eel-2.0.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
+share/locale/ku/LC_MESSAGES/eel-2.0.mo
+share/locale/ky/
+share/locale/ky/LC_MESSAGES/
+share/locale/ky/LC_MESSAGES/eel-2.0.mo
 share/locale/li/
 share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/eel-2.0.mo
@@ -147,7 +160,6 @@ share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/eel-2.0.mo
 share/locale/nl/LC_MESSAGES/eel-2.0.mo
 share/locale/nn/LC_MESSAGES/eel-2.0.mo
-share/locale/no/LC_MESSAGES/eel-2.0.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/eel-2.0.mo
@@ -179,6 +191,9 @@ share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/eel-2.0.mo
 share/locale/tr/LC_MESSAGES/eel-2.0.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/eel-2.0.mo
 share/locale/uk/LC_MESSAGES/eel-2.0.mo
 share/locale/vi/LC_MESSAGES/eel-2.0.mo
 share/locale/wa/
@@ -188,5 +203,8 @@ share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/eel-2.0.mo
+share/locale/zh_HK/
+share/locale/zh_HK/LC_MESSAGES/
+share/locale/zh_HK/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/eel-2.0.mo
 %%SHARED%%
