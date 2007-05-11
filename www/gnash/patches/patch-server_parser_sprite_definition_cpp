@@ -1,0 +1,12 @@
+$OpenBSD: patch-server_parser_sprite_definition_cpp,v 1.1 2007/05/11 20:20:23 deanna Exp $
+--- server/parser/sprite_definition.cpp.orig	Sat Oct 28 18:58:32 2006
++++ server/parser/sprite_definition.cpp	Fri May 11 12:40:53 2007
+@@ -104,6 +104,8 @@ sprite_definition::read(stream* in)
+ 			IF_VERBOSE_PARSE (
+ 		    log_parse("  show_frame (sprite)");
+ 		    	);
++
++		    assert(m_loading_frame < m_frame_count);
+ 		    m_loading_frame++;
+ 		}
+ 		else if (_tag_loaders.get(tag_type, &lf))
