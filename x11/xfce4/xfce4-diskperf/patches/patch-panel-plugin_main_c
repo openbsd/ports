@@ -1,7 +1,7 @@
-$OpenBSD: patch-panel-plugin_main_c,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
---- panel-plugin/main.c.orig	Wed Aug 25 05:08:40 2004
-+++ panel-plugin/main.c	Sat Feb 19 21:44:08 2005
-@@ -94,7 +94,7 @@ typedef enum monitor_bar_order_t {
+$OpenBSD: patch-panel-plugin_main_c,v 1.2 2007/05/11 14:02:02 steven Exp $
+--- panel-plugin/main.c.orig	Thu Jan 18 18:12:07 2007
++++ panel-plugin/main.c	Fri May 11 15:52:04 2007
+@@ -80,7 +80,7 @@ typedef enum monitor_bar_order_t {
  typedef struct param_t {
      /* Configurable parameters */
      char            acDevice[64];
@@ -10,7 +10,7 @@ $OpenBSD: patch-panel-plugin_main_c,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
      dev_t           st_rdev;
  #endif
      int             fTitleDisplayed;
-@@ -162,7 +162,7 @@ static int DisplayPerf (struct plugin_t 
+@@ -151,7 +151,7 @@ static int DisplayPerf (struct diskperf_t *p_poPlugin)
      const double    K = 1.0 * 1000 * 1000 * 1000 / 1024 / 1024;
      /* bytes/ns --> MB/s */
      double          arPerf[NMONITORS], arBusy[NMONITORS], *prData, *pr;
@@ -19,7 +19,7 @@ $OpenBSD: patch-panel-plugin_main_c,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
      int             status, i;
  
      if (!s_poToolTips)
-@@ -170,7 +170,7 @@ static int DisplayPerf (struct plugin_t 
+@@ -159,7 +159,7 @@ static int DisplayPerf (struct diskperf_t *p_poPlugin)
  
      memset (&oPerf, 0, sizeof (oPerf));
      oPerf.qlen = -1;
@@ -28,7 +28,7 @@ $OpenBSD: patch-panel-plugin_main_c,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
      status = DevGetPerfData (poConf->acDevice, &oPerf);
  #else
      status = DevGetPerfData (&(poConf->st_rdev), &oPerf);
-@@ -210,7 +210,7 @@ static int DisplayPerf (struct plugin_t 
+@@ -199,7 +199,7 @@ static int DisplayPerf (struct diskperf_t *p_poPlugin)
  	}
      }
  
@@ -37,8 +37,8 @@ $OpenBSD: patch-panel-plugin_main_c,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
  	     "----------------\n"
  	     "I/O    (MB/s)\n"
  	     "  Read :%3u\n"
-@@ -408,7 +408,7 @@ static plugin_t *NewPlugin ()
-     struct plugin_t *poPlugin;
+@@ -400,7 +400,7 @@ static diskperf_t *diskperf_create_control (XfcePanelP
+     struct diskperf_t *poPlugin;
      struct param_t *poConf;
      struct monitor_t *poMonitor;
 -#if !defined(__NetBSD__)
@@ -46,35 +46,26 @@ $OpenBSD: patch-panel-plugin_main_c,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
      struct stat     oStat;
      int             status;
  #endif
-@@ -418,7 +418,7 @@ static plugin_t *NewPlugin ()
-     poConf = &(poPlugin->oConf.oParam);
-     poMonitor = &(poPlugin->oMonitor);
+@@ -412,7 +412,7 @@ static diskperf_t *diskperf_create_control (XfcePanelP
  
+     poPlugin->plugin = plugin;
+     
 -#if defined(__NetBSD__)
 +#if defined(__NetBSD__) || defined(__OpenBSD__)
      strcpy (poConf->acDevice, "wd0");
      strcpy (poConf->acTitle, "wd0");
  #else
-@@ -510,7 +510,7 @@ static void plugin_read_config (Control 
-     Widget_t       *pw2ndBar = poPlugin->oMonitor.awProgressBar + 1;
-     xmlNodePtr      poNode;
-     char           *pc;
+@@ -500,7 +500,7 @@ static void diskperf_read_config (XfcePanelPlugin *plu
+     if ((value = xfce_rc_read_entry (rc, (CONF_DEVICE), NULL))) {
+         memset (poConf->acDevice, 0, sizeof (poConf->acDevice));
+         strncpy (poConf->acDevice, value, sizeof (poConf->acDevice) - 1);
 -#if !defined(__NetBSD__)
 +#if !defined(__NetBSD__) && !defined(__OpenBSD__)
-     struct stat     oStat;
-     int             status;
+         status = stat (poConf->acDevice, &oStat);
+         poConf->st_rdev = (status == -1 ? 0 : oStat.st_rdev);
  #endif
-@@ -526,7 +526,7 @@ static void plugin_read_config (Control 
- 	    memset (poConf->acDevice, 0, sizeof (poConf->acDevice));
- 	    strncpy (poConf->acDevice, pc, sizeof (poConf->acDevice) - 1);
- 	    xmlFree (pc);
--#if !defined(__NetBSD__)
-+#if !defined(__NetBSD__) && !defined(__OpenBSD__)
- 	    status = stat (poConf->acDevice, &oStat);
- 	    poConf->st_rdev = (status == -1 ? 0 : oStat.st_rdev);
- #endif
-@@ -662,7 +662,7 @@ static void SetDevice (Widget_t p_wTF, v
-     struct plugin_t *poPlugin = (plugin_t *) p_pvPlugin;
+@@ -623,7 +623,7 @@ static void SetDevice (Widget_t p_wTF, void *p_pvPlugi
+     struct diskperf_t *poPlugin = (diskperf_t *) p_pvPlugin;
      struct param_t *poConf = &(poPlugin->oConf.oParam);
      const char     *pcDevice = gtk_entry_get_text (GTK_ENTRY (p_wTF));
 -#if !defined(__NetBSD__)

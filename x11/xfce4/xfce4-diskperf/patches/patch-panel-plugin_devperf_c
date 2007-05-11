@@ -1,7 +1,7 @@
-$OpenBSD: patch-panel-plugin_devperf_c,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
---- panel-plugin/devperf.c.orig	Sun Nov 30 04:58:54 2003
-+++ panel-plugin/devperf.c	Sat Feb 19 21:44:08 2005
-@@ -317,6 +317,82 @@ int DevGetPerfData (const void *p_pvDevi
+$OpenBSD: patch-panel-plugin_devperf_c,v 1.2 2007/05/11 14:02:02 steven Exp $
+--- panel-plugin/devperf.c.orig	Thu Jan 18 18:12:07 2007
++++ panel-plugin/devperf.c	Fri May 11 15:48:55 2007
+@@ -305,6 +305,82 @@ int DevGetPerfData (const void *p_pvDevice, struct dev
  /* *INDENT-ON* */
  	/**************************	NetBSD End	***************/
  
