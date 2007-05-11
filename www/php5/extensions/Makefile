@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2007/04/01 21:37:27 robert Exp $
+# $OpenBSD: Makefile,v 1.35 2007/05/11 15:05:15 robert Exp $
 
-FULLPKGNAME-main=	php5-extensions-${V}p0
+FULLPKGNAME-main=	php5-extensions-${V}
 COMMENT-main=		"informational package about PHP5 extensions"
 
 MULTI_PACKAGES=	-main

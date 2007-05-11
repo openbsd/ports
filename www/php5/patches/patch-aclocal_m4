@@ -1,4 +1,4 @@
-$OpenBSD: patch-aclocal_m4,v 1.7 2007/04/01 21:37:27 robert Exp $
+$OpenBSD: patch-aclocal_m4,v 1.8 2007/05/11 15:05:15 robert Exp $
 --- aclocal.m4.orig	Wed Feb  7 01:47:35 2007
 +++ aclocal.m4	Sun Apr  1 14:04:45 2007
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
@@ -56,7 +56,7 @@ $OpenBSD: patch-aclocal_m4,v 1.7 2007/04/01 21:37:27 robert Exp $
        PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
      fi
    fi
-@@ -4290,7 +4279,7 @@ openbsd*)
+@@ -4320,7 +4309,7 @@ openbsd*)
      *)                         need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

@@ -1,4 +1,4 @@
-$OpenBSD: patch-php_ini-recommended,v 1.8 2007/04/01 21:37:27 robert Exp $
+$OpenBSD: patch-php_ini-recommended,v 1.9 2007/05/11 15:05:15 robert Exp $
 --- php.ini-recommended.orig	Thu Dec 21 14:05:27 2006
 +++ php.ini-recommended	Sun Apr  1 13:42:42 2007
 @@ -500,10 +500,7 @@ default_mimetype = "text/html"
@@ -113,7 +113,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.8 2007/04/01 21:37:27 robert Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -715,13 +637,6 @@ default_socket_timeout = 60
+@@ -721,13 +643,6 @@ default_socket_timeout = 60
  define_syslog_variables  = Off
  
  [mail function]
@@ -127,7 +127,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.8 2007/04/01 21:37:27 robert Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1300,6 +1215,53 @@ soap.wsdl_cache_dir="/tmp"
+@@ -1306,6 +1221,53 @@ soap.wsdl_cache_dir="/tmp"
  ; instead of original one.
  soap.wsdl_cache_ttl=86400
  
