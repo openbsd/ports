@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.49 2007/02/01 07:58:29 todd Exp $
+@comment $OpenBSD: PLIST,v 1.50 2007/05/12 15:21:36 alek Exp $
+@conflict pidgin-*
 bin/gaim
 bin/gaim-client-example
 bin/gaim-remote
