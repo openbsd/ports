@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/12 10:30:51 bernd Exp $
+
 ONLY_FOR_ARCHS=	arm i386 powerpc sparc
 
 COMMENT=	"battery monitor panel plugin for xfce4"
-DISTNAME=	xfce4-battery-plugin-0.3.0
-PKGNAME=	${DISTNAME:S/-plugin//}p2
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=xfce-goodies/}
 
-HOMEPAGE=	http://xfce-goodies.berlios.de/
+V=		0.5.0
+DISTNAME=	xfce4-battery-plugin-${V}
+PKGNAME=	xfce4-battery-${V}
+
+HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-battery-plugin/
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,15 +16,20 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-battery-plugin/
+EXTRACT_SUFX=	.tar.bz2
+
+USE_GMAKE=	Yes
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:xfce4-panel-*:x11/xfce4/xfce4-panel
-LIB_DEPENDS=	xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
-		xml2.>=9.0::textproc/libxml
-RUN_DEPENDS=	:xfce4-panel-*:x11/xfce4/xfce4-panel
-WANTLIB=	ICE SM X11 Xext Xrender fontconfig freetype m z \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
-		startup-notification-1 xfce4util.>=1
+
+LIB_DEPENDS=	xfce4panel::x11/xfce4/xfce4-panel
+
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
+		atk-1.0 c cairo expat fontconfig freetype gdk-x11-2.0 \
+		gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		png xfce4util xfcegui4 z
+
+
 
 .include <bsd.port.mk>

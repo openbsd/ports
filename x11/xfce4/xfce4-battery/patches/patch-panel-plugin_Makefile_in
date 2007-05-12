@@ -1,27 +1,28 @@
-$OpenBSD: patch-panel-plugin_Makefile_in,v 1.2 2005/11/10 22:57:39 jolan Exp $
---- panel-plugin/Makefile.in.orig	Sat Aug  6 06:13:24 2005
-+++ panel-plugin/Makefile.in	Thu Nov 10 15:34:39 2005
-@@ -52,14 +52,13 @@ pluginLTLIBRARIES_INSTALL = $(INSTALL)
- LTLIBRARIES = $(plugin_LTLIBRARIES)
- libbattmon_la_DEPENDENCIES =
- am_libbattmon_la_OBJECTS = libbattmon_la-apmlib.lo \
--	libbattmon_la-libacpi.lo libbattmon_la-battmon.lo
-+	libbattmon_la-battmon.lo
- libbattmon_la_OBJECTS = $(am_libbattmon_la_OBJECTS)
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/libbattmon_la-apmlib.Plo \
- @AMDEP_TRUE@	./$(DEPDIR)/libbattmon_la-battmon.Plo \
--@AMDEP_TRUE@	./$(DEPDIR)/libbattmon_la-libacpi.Plo
- COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
- 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) \
-@@ -269,7 +268,6 @@ distclean-compile:
+$OpenBSD: patch-panel-plugin_Makefile_in,v 1.3 2007/05/12 10:30:51 bernd Exp $
+--- panel-plugin/Makefile.in.orig	Fri May 11 15:03:05 2007
++++ panel-plugin/Makefile.in	Fri May 11 15:04:09 2007
+@@ -51,7 +51,6 @@ pluginPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(plugin_PROGRAMS)
+ am_xfce4_battery_plugin_OBJECTS =  \
+ 	xfce4_battery_plugin-battery.$(OBJEXT) \
+-	xfce4_battery_plugin-libacpi.$(OBJEXT) \
+ 	xfce4_battery_plugin-libapm.$(OBJEXT)
+ xfce4_battery_plugin_OBJECTS = $(am_xfce4_battery_plugin_OBJECTS)
+ am__DEPENDENCIES_1 =
+@@ -257,8 +256,6 @@ plugindir = \
  
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbattmon_la-apmlib.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbattmon_la-battmon.Plo@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbattmon_la-libacpi.Plo@am__quote@
+ xfce4_battery_plugin_SOURCES = \
+ 	battery.c							\
+-	libacpi.h							\
+-	libacpi.c							\
+ 	libapm.h							\
+ 	libapm.c
+ 
+@@ -357,7 +354,6 @@ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xfce4_battery_plugin-battery.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xfce4_battery_plugin-libacpi.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xfce4_battery_plugin-libapm.Po@am__quote@
  
  .c.o:
- @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \

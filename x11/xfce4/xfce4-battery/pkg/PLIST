@@ -1,5 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/08/16 09:49:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/05/12 10:30:51 bernd Exp $
 @conflict xfce4-battery-plugin-*
-%%SHARED%%
-lib/xfce4/panel-plugins/libbattmon.a
-lib/xfce4/panel-plugins/libbattmon.la
+libexec/xfce4/
+libexec/xfce4/panel-plugins/
+libexec/xfce4/panel-plugins/xfce4-battery-plugin
+share/icons/hicolor/16x16/devices/
+share/icons/hicolor/16x16/devices/battery.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/devices/
+share/icons/hicolor/22x22/devices/battery.png
+share/icons/hicolor/24x24/devices/
+share/icons/hicolor/24x24/devices/battery.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/devices/
+share/icons/hicolor/32x32/devices/battery.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/devices/
+share/icons/hicolor/scalable/devices/battery.svg
+share/locale/ca/LC_MESSAGES/xfce4-battery-plugin.mo
+share/locale/cs/LC_MESSAGES/xfce4-battery-plugin.mo
+share/locale/eu/LC_MESSAGES/xfce4-battery-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-battery-plugin.mo
+share/locale/pl/LC_MESSAGES/xfce4-battery-plugin.mo
+share/xfce4/panel-plugins/battmon.desktop

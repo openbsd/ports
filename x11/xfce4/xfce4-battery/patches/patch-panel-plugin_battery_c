@@ -1,0 +1,58 @@
+$OpenBSD: patch-panel-plugin_battery_c,v 1.1 2007/05/12 10:30:51 bernd Exp $
+--- panel-plugin/battery.c.orig	Wed Jan 17 18:56:51 2007
++++ panel-plugin/battery.c	Fri May 11 15:07:46 2007
+@@ -30,6 +30,7 @@
+ #elif __OpenBSD__
+ #include <sys/param.h>
+ #include <machine/apmvar.h>
++#define APMDEVICE "/dev/apm"
+ #elif __NetBSD__
+ #include <sys/param.h>
+ #include <sys/ioctl.h>
+@@ -209,10 +210,10 @@ detect_battery_info(t_battmon *battmon)
+       battmon->method = BM_BROKEN;
+       fd = open(APMDEVICE, O_RDONLY);
+       if (fd == -1) return FALSE;
+-      +      if (ioctl(fd, APM_IOC_GETPOWER, &apm) == -1) {
++      if (ioctl(fd, APM_IOC_GETPOWER, &apm) == -1) {
+         close(fd);
+              return FALSE;
+-    }
++      }
+       close(fd);
+       battmon->method = BM_USE_APM;
+ 
+@@ -302,11 +303,13 @@ update_apm_status(t_battmon *battmon)
+       battmon->method = BM_BROKEN;
+       fd = open(APMDEVICE, O_RDONLY);
+       if (fd == -1) return TRUE;
+-      if (ioctl(fd, APM_IOC_GETPOWER, &apminfo) == -1)
++      if (ioctl(fd, APM_IOC_GETPOWER, &apm) == -1)
+             return TRUE;
+       close(fd);
+       charge = apm.battery_life;
+       time_remaining = apm.minutes_left;
++      if ((time_remaining / 60) > 99)
++          time_remaining = 0;
+       acline = apm.ac_state ? TRUE : FALSE;
+ 
+ #else
+@@ -507,7 +510,7 @@ battmon.c:241: for each function it appears in.)
+ 
+     gtk_tooltips_set_tip (battmon->tips, battmon->ebox, buffer, NULL);
+ 
+-    if(battmon->options.display_power){
++    if(0){
+       gtk_widget_show((GtkWidget *)battmon->acfan);
+       gtk_widget_show((GtkWidget *)battmon->temp);
+ 
+@@ -1333,9 +1336,6 @@ battmon_create_options(XfcePanelPlugin *plugin, t_batt
+ 
+     dialog->cb_disp_tooltip_time = gtk_check_button_new_with_mnemonic(_("Display time remaining in tooltip"));
+     gtk_box_pack_start(GTK_BOX(vbox2), dialog->cb_disp_tooltip_time, FALSE, FALSE, 0);
+-
+-    dialog->cb_disp_power = gtk_check_button_new_with_mnemonic(_("Display power"));
+-    gtk_box_pack_start(GTK_BOX(vbox2), dialog->cb_disp_power, FALSE, FALSE, 0);
+ 
+     dialog->cb_disp_icon = gtk_check_button_new_with_mnemonic(_("Display icon"));
+     gtk_box_pack_start(GTK_BOX(vbox2), dialog->cb_disp_icon, FALSE, FALSE, 0);
