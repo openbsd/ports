@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.457 2007/05/09 21:40:12 msf Exp $
+# $OpenBSD: Makefile,v 1.458 2007/05/12 15:26:18 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -267,6 +267,7 @@
      SUBDIR += pen
      SUBDIR += pfflowd
      SUBDIR += pfstat
+     SUBDIR += pidgin
      SUBDIR += pktstat
      SUBDIR += plushs
      SUBDIR += poink
