@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: find-plist-issues,v 1.6 2006/03/04 13:02:04 espie Exp $
+# $OpenBSD: find-plist-issues,v 1.7 2007/05/12 14:56:21 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -52,7 +52,7 @@ sub fix
 {
 	my ($self, $l) = @_;
 	if ($self->{def} eq 'def') {
-		my @m = OpenBSD::PkgSpec::match($self->{pattern}, @$l);
+		my @m = OpenBSD::PkgSpec->new($self->{pattern})->match_ref($l);
 		if (@m > 0) {
 			$self->{def} = $m[0];
 		} else {
@@ -234,7 +234,7 @@ sub analyze_dirs
 	} unless defined $db->{$pkgname};
 	my $t = $db->{$pkgname};
 
-	$plist->visit('check_common_dirs', $t)
+	$plist->check_common_dirs($t)
 }
 
 sub parent_has_dir
@@ -322,7 +322,7 @@ sub handle_plist
 	if ($opt_C) {
 	    $conflicts->{$plist->pkgname()} = 
 		OpenBSD::PkgCfl->make_conflict_list($plist);
-	    $plist->visit('register', $filehash, $dephash, $plist->pkgname(), \@available);
+	    $plist->register($filehash, $dephash, $plist->pkgname(), \@available);
 	}
 	if ($opt_D) {
 	    analyze_dirs($plist, $db);
