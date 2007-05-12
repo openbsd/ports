@@ -1,27 +1,20 @@
-$OpenBSD: patch-configure,v 1.6 2005/05/26 03:39:32 marcm Exp $
---- configure.orig	Mon Mar  7 01:19:32 2005
-+++ configure	Wed May 25 17:42:18 2005
-@@ -9593,7 +9593,7 @@ nto-qnx*)
- openbsd*)
-   version_type=sunos
-   need_lib_prefix=no
--  need_version=yes
-+  need_version=no
-   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-   shlibpath_var=LD_LIBRARY_PATH
-@@ -25062,6 +25062,7 @@ fi
+$OpenBSD: patch-configure,v 1.7 2007/05/12 16:15:12 jasper Exp $
+--- configure.orig	Tue Apr 10 14:57:54 2007
++++ configure	Fri Apr 20 20:48:51 2007
+@@ -24899,7 +24899,7 @@ fi
  
  
  
+-
 +if 0; then
  echo "$as_me:$LINENO: checking for libExif" >&5
  echo $ECHO_N "checking for libExif... $ECHO_C" >&6
  
-@@ -25278,6 +25279,7 @@ echo "$as_me: error: Library requirement
-   fi
+@@ -25228,7 +25228,7 @@ _ACEOF
  
-   fi
+ 
+ fi
+-
 +fi
  
  

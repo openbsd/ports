@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2006/01/10 04:03:20 naddy Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2007/05/12 16:15:13 jasper Exp $
 @lib lib/libnautilus-extension.so.${LIBnautilus-extension_VERSION}
-@lib lib/libnautilus-private.so.${LIBnautilus-private_VERSION}
