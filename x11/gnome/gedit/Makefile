@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/07 19:38:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/05/12 20:52:31 jasper Exp $
 
 COMMENT=		"lightweight GNOME text editor"
 DISTNAME=		gedit-2.18.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		editors x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/gedit/
 
-MAINTAINER=		Thomas Delaet <thomas@delaet.org>	
+MAINTAINER=		Thomas Delaet <thomas@delaet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +24,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
 		pthread ssl stdc++ util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gedit/2.18/}	
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gedit/2.18/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
@@ -37,6 +38,7 @@ LIB_DEPENDS=		enchant::textproc/enchant \
 			gnomeui-2::x11/gnome/libgnomeui \
 			gtksourceview-1.0::x11/gtksourceview
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+			::devel/desktop-file-utils \
 			:gnome-doc-utils-*:x11/gnome/doc-utils \
 			:yelp-*:x11/gnome/yelp
 
