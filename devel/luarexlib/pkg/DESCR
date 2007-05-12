@@ -1,0 +1,2 @@
+luarexlib provides bindings of the two principal regular expression
+library interfaces (POSIX and PCRE) to Lua 5.1.

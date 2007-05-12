@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/12 09:25:13 pedro Exp $
+%%SHARED%%
+doc/
+doc/luarexlib/
+doc/luarexlib/html4css1.css
+doc/luarexlib/lrexlib.css
+doc/luarexlib/manual.html
