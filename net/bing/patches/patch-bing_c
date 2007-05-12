@@ -1,7 +1,30 @@
-$OpenBSD: patch-bing_c,v 1.1 2002/09/17 09:06:23 pvalchev Exp $
---- bing.c.orig	Thu Jul 20 17:45:32 1995
-+++ bing.c	Tue Sep 17 02:56:49 2002
-@@ -1228,17 +1228,30 @@ int main(argc, argv)
+$OpenBSD: patch-bing_c,v 1.2 2007/05/12 21:36:28 rui Exp $
+--- bing.c.orig	Fri Jan 19 18:28:53 2001
++++ bing.c	Sat May 12 14:52:52 2007
+@@ -755,7 +755,7 @@ int pr_pack(buf, cc, from)
+ 	static int old_rrlen;
+ 	static char old_rr[MAX_IPOPTLEN];
+ 	struct ip *ip;
+-	struct timeval tv, *tp;
++	struct timeval tv, tv2, *tp;
+ 	double triptime;
+ 	int hlen, dupflag;
+ 
+@@ -798,9 +798,12 @@ int pr_pack(buf, cc, from)
+ 	cc -= hlen;
+ 	icp = (struct icmp *)(buf + hlen);
+ 	if (icp->icmp_type == ICMP_ECHOREPLY) {
++		char *tmp;
+ 		if (icp->icmp_id != ident)
+ 			return -1;			/* 'Twas not our ECHO */
+-		tp = (struct timeval *)ICMP_TO_DATA(icp);
++		tmp = (char *)ICMP_TO_DATA(icp);
++		memcpy(&tv2, tmp, sizeof(tv2));
++		tp = &tv2;
+ 		tvsub(&tv, tp);
+ 		triptime = tv_usval(&tv);
+ 
+@@ -1231,17 +1234,30 @@ int main(argc, argv)
  	struct hoststats *hs1, *hs2;
  	int ntrans, nloops, bits;
  	int i;
@@ -17,24 +40,24 @@ $OpenBSD: patch-bing_c,v 1.1 2002/09/17 09:06:23 pvalchev Exp $
  	hs1 = &hoststats1;
  	hs2 = &hoststats2;
  
-+	if (!(proto = getprotobyname("icmp"))) {
-+		(void)fprintf(stderr, "bing: unknown protocol icmp.\n");
-+		exit(1);
-+	}
-+	if ((s = socket(AF_INET, SOCK_RAW, proto->p_proto)) < 0) {
-+		perror("bing: socket");
-+		exit(1);
-+	}
-+	/* Revoke privileges */
-+	if (seteuid(getuid()) == -1 || setuid(getuid()) == -1) {
-+		err(1, "unable to drop permissions");
-+		exit(1);
-+	}
++        if (!(proto = getprotobyname("icmp"))) {
++                (void)fprintf(stderr, "bing: unknown protocol icmp.\n");
++                exit(1);
++        }
++        if ((s = socket(AF_INET, SOCK_RAW, proto->p_proto)) < 0) {
++                perror("bing: socket");
++                exit(1);
++        }
++        /* Revoke privileges */
++       if (seteuid(getuid()) == -1 || setuid(getuid()) == -1) {
++               err(1, "unable to drop permissions");
++               exit(1);
++       }
 +
  	preload = 0;
  	datap = &outpack[8 + sizeof(struct timeval)];
  	while ((ch = getopt(argc, argv, "I:LRc:dDe:fh:i:l:nPp:rS:s:t:vVwz")) != EOF)
-@@ -1395,15 +1408,6 @@ int main(argc, argv)
+@@ -1398,15 +1414,6 @@ int main(argc, argv)
  
  	ident = getpid() & 0xFFFF;
  
