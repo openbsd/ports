@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.93 2007/04/08 15:22:49 espie Exp $
+# $OpenBSD: make-plist,v 1.94 2007/05/12 14:02:08 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -93,6 +93,8 @@ sub parse_arg
 	} elsif (m/\=/) {
 		my $back = $`;
 		my $v = $';
+		$v =~ s/^\'(.*)\'$/$1/;
+		$v =~ s/^\"(.*)\"$/$1/;
 		if ($back =~ m/^LIB(.*)_VERSION$/) {
 			$known_libs{$1}=$v;
 			push(@libbacksubst, ["\${$back}", $v]) if $v ne '';
