@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/09 19:14:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/12 22:56:50 jasper Exp $
 
 COMMENT=		"keyboard configuration library"
 
 DISTNAME=		libgnomekbd-2.18.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	gnomekbd             1.0      # .1.0
 SHARED_LIBS +=	gnomekbdui           1.0      # .1.0
 CATEGORIES=		x11/gnome devel
+
+HOMEPAGE=		http://www.gnome.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,9 +39,9 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control-center2
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I/usr/X11R6/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
++			--disable-schemas-install \
++			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libgnomekbd
++CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 NO_REGRESS=		Yes # Broken, but not very usefull to fix
 
