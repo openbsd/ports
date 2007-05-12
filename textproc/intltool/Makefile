@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/01 20:08:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/12 19:07:20 jasper Exp $
 
 COMMENT=		"internationalization tool"
 
-DISTNAME=		intltool-0.35.2
+DISTNAME=		intltool-0.35.5
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.gnome.org
