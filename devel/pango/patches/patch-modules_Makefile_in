@@ -1,16 +1,16 @@
-$OpenBSD: patch-modules_Makefile_in,v 1.11 2007/04/23 16:24:18 jasper Exp $
---- modules/Makefile.in.orig	Mon Mar 12 22:58:18 2007
-+++ modules/Makefile.in	Sun Mar 18 18:22:38 2007
-@@ -655,21 +655,11 @@ uninstall-info: uninstall-info-recursive
+$OpenBSD: patch-modules_Makefile_in,v 1.12 2007/05/12 20:22:20 jasper Exp $
+--- modules/Makefile.in.orig	Fri Apr 27 08:47:50 2007
++++ modules/Makefile.in	Fri May  4 23:46:39 2007
+@@ -657,21 +657,11 @@ uninstall-info: uninstall-info-recursive
  @CROSS_COMPILING_FALSE@all-local: pango.modules
  
- install-data-local: $(top_builddir)/pango/pango-querymodules
+ install-data-local: $(top_builddir)/pango/pango-querymodules$(EXEEXT)
 -	@if $(RUN_QUERY_MODULES_TEST) ; then 				\
 -	  echo $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/pango \&\& 	\
--	  $(top_builddir)/pango/pango-querymodules 			\
+-	  $(top_builddir)/pango/pango-querymodules$(EXEEXT) 			\
 -		\> $(DESTDIR)$(sysconfdir)/pango/pango.modules ;	\
 -	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/pango && 		\
--	  $(top_builddir)/pango/pango-querymodules 			\
+-	  $(top_builddir)/pango/pango-querymodules$(EXEEXT) 			\
 -		> $(DESTDIR)$(sysconfdir)/pango/pango.modules ;		\
 -	else								\
 -	  echo "***" ; 							\
