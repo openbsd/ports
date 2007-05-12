@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_larbin_make,v 1.1.1.1 2007/05/07 11:17:07 jasper Exp $
+$OpenBSD: patch-src_larbin_make,v 1.2 2007/05/12 06:47:56 steven Exp $
 --- src/larbin.make.orig	Tue Jul  8 22:25:24 2003
 +++ src/larbin.make	Fri May  4 20:35:06 2007
 @@ -1,4 +1,4 @@
@@ -13,8 +13,8 @@ $OpenBSD: patch-src_larbin_make,v 1.1.1.1 2007/05/07 11:17:07 jasper Exp $
  
 -CFLAGS:=-O3 -Wall -D_REENTRANT
 -CXXFLAGS:= -Wno-deprecated -Wall -O3 -D_REENTRANT -I- -I$(BASEDIR) -I$(ADNSDIR)
-+CFLAGS:= -Wall -D_REENTRANT
-+CXXFLAGS:= !!CXXFLAGS!! -Wno-deprecated -Wall -D_REENTRANT -I- -I$(BASEDIR) -I$(ADNSDIR)
++CFLAGS+= -Wall -D_REENTRANT
++CXXFLAGS+= -Wno-deprecated -Wall -D_REENTRANT -I- -I$(BASEDIR) -I$(ADNSDIR)
  RM:=rm -f
  
  first: all

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/07 11:17:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/12 06:47:56 steven Exp $
 
 COMMENT=	"little and fast Web crawler"
 
@@ -22,12 +22,13 @@ RUN_DEPENDS=		::net/adns
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	simple
+CONFIGURE_ENV=		CC="${CC}" MAKE=${MAKE_PROGRAM}
+MAKE_ENV=		CC="${CC}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 NO_REGRESS=		Yes
 
-pre-patch:
-	perl -pi -e 's,!!CC!!,${CC},g; s,!!CXX!!,${CXX},g' ${WRKSRC}/configure
-	perl -pi -e 's,!!CXXFLAGS!!,${CFLAGS},' ${WRKSRC}/src/larbin.make
+pre-configure:
 	perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},' ${WRKSRC}/src/global.cc
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/larbin ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/larbin
