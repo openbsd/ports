@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/24 12:41:02 dassow Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/12 15:25:37 simon Exp $
 
 COMMENT=	"parses a MIME Content-Type Header"
 
 MODULES=	cpan
-DISTNAME=	Email-MIME-ContentType-1.01
+DISTNAME=	Email-MIME-ContentType-1.014
 CATEGORIES=	mail
 
 MAINTAINER=	Sam Smith <s@msmith.net>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/24 12:41:02 dassow Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/12 15:25:38 simon Exp $
 
 COMMENT=	"simple module for handling email messages"
 
 MODULES=	cpan
-DISTNAME=	Email-Simple-1.92
+DISTNAME=	Email-Simple-1.999
 CATEGORIES=	mail
 
 MAINTAINER=	Sam Smith <s@msmith.net>
