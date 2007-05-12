@@ -1,9 +1,0 @@
-$OpenBSD: patch-examples_gzstream,v 1.2 2005/07/05 13:48:10 naddy Exp $
---- examples/gzstream.orig	Tue Jul  5 15:41:41 2005
-+++ examples/gzstream	Tue Jul  5 15:42:21 2005
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/perl
- 
- use strict ;
- local ($^W) = 1; #use warnings ;
