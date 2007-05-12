@@ -1,0 +1,20 @@
+$OpenBSD: patch-pidgin_gtknotify_c,v 1.1.1.1 2007/05/12 15:19:36 alek Exp $
+--- pidgin/gtknotify.c.orig	Mon Apr 30 05:14:26 2007
++++ pidgin/gtknotify.c	Tue May  1 23:11:28 2007
+@@ -925,7 +925,16 @@ uri_command(const char *command, gboolean sync)
+ 			g_error_free(error);
+ 		}
+ 		else
++#if HAVE_SIGNAL_H
++		{
++			extern int real_status;
++
++			if (WIFEXITED(real_status))
++				ret = WEXITSTATUS(real_status);
++		}
++#else
+ 			ret = status;
++#endif
+ 	}
+ 	else
+ 	{

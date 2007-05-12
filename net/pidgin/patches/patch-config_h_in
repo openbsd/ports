@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_h_in,v 1.1.1.1 2007/05/12 15:19:35 alek Exp $
+--- config.h.in.orig	Mon Apr 30 05:39:14 2007
++++ config.h.in	Tue May  1 23:19:10 2007
+@@ -154,6 +154,12 @@
+ /* Define to 1 if you have the <nss.h> header file. */
+ #undef HAVE_NSS_H
+ 
++/* Define if you have OpenSSL */
++#undef HAVE_OPENSSL
++
++/* Define to 1 if you have the <openssl/ssl.h> header file. */
++#undef HAVE_OPENSSL_SSL_H
++
+ /* Define if we have Pango 1.4 or newer. */
+ #undef HAVE_PANGO14
+ 

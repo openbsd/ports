@@ -1,0 +1,82 @@
+$OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.1.1.1 2007/05/12 15:19:36 alek Exp $
+--- libpurple/plugins/ssl/Makefile.in.orig	Fri May  4 07:24:29 2007
++++ libpurple/plugins/ssl/Makefile.in	Fri May  4 21:11:16 2007
+@@ -57,6 +57,12 @@ am__installdirs = "$(DESTDIR)$(plugindir)"
+ pluginLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(plugin_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
++@PLUGINS_TRUE@ssl_openssl_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
++@PLUGINS_TRUE@  $(am__DEPENDENCIES_1)
++am__ssl_openssl_la_SOURCES_DIST = ssl-openssl.c
++@PLUGINS_TRUE@am_ssl_openssl_la_OBJECTS = ssl-openssl.lo
++ssl_openssl_la_OBJECTS = $(am_ssl_openssl_la_OBJECTS)
++@PLUGINS_TRUE@am_ssl_openssl_la_rpath = -rpath $(plugindir)
+ @PLUGINS_TRUE@ssl_gnutls_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ @PLUGINS_TRUE@	$(am__DEPENDENCIES_1)
+ am__ssl_gnutls_la_SOURCES_DIST = ssl-gnutls.c
+@@ -87,7 +93,7 @@ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CF
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ SOURCES = $(ssl_gnutls_la_SOURCES) $(ssl_nss_la_SOURCES) \
+ 	$(ssl_la_SOURCES)
+-DIST_SOURCES = $(am__ssl_gnutls_la_SOURCES_DIST) \
++DIST_SOURCES = $(am__ssl_openssl_la_SOURCES_DIST) $(am__ssl_gnutls_la_SOURCES_DIST) \
+ 	$(am__ssl_nss_la_SOURCES_DIST) $(am__ssl_la_SOURCES_DIST)
+ ETAGS = etags
+ CTAGS = ctags
+@@ -198,6 +204,8 @@ GNT_MAJOR_VERSION = @GNT_MAJOR_VERSION@
+ GNT_MICRO_VERSION = @GNT_MICRO_VERSION@
+ GNT_MINOR_VERSION = @GNT_MINOR_VERSION@
+ GNT_VERSION = @GNT_VERSION@
++OPENSSL_CFLAGS = @OPENSSL_CFLAGS@
++OPENSSL_LIBS = @OPENSSL_LIBS@
+ GNUTLS_CFLAGS = @GNUTLS_CFLAGS@
+ GNUTLS_LIBS = @GNUTLS_LIBS@
+ GREP = @GREP@
+@@ -342,6 +350,8 @@ TCL_LIBS = @TCL_LIBS@
+ TK_LIBS = @TK_LIBS@
+ USE_GCONFTOOL_FALSE = @USE_GCONFTOOL_FALSE@
+ USE_GCONFTOOL_TRUE = @USE_GCONFTOOL_TRUE@
++USE_OPENSSL_FALSE = @USE_OPENSSL_FALSE@
++USE_OPENSSL_TRUE = @USE_OPENSSL_TRUE@
+ USE_GNUTLS_FALSE = @USE_GNUTLS_FALSE@
+ USE_GNUTLS_TRUE = @USE_GNUTLS_TRUE@
+ USE_INTERNAL_LIBGADU_FALSE = @USE_INTERNAL_LIBGADU_FALSE@
+@@ -434,17 +444,21 @@ EXTRA_DIST = \
+ 
+ plugindir = $(libdir)/purple-$(PURPLE_MAJOR_VERSION)
+ ssl_la_LDFLAGS = -module -avoid-version
++ssl_openssl_la_LDFLAGS = -module -avoid-version
+ ssl_gnutls_la_LDFLAGS = -module -avoid-version
+ ssl_nss_la_LDFLAGS = -module -avoid-version
+ @PLUGINS_TRUE@plugin_LTLIBRARIES = \
+ @PLUGINS_TRUE@	ssl.la           \
++@PLUGINS_TRUE@	ssl-openssl.la   \
+ @PLUGINS_TRUE@	ssl-gnutls.la    \
+ @PLUGINS_TRUE@	ssl-nss.la
+ 
+ @PLUGINS_TRUE@ssl_la_SOURCES = ssl.c
++@PLUGINS_TRUE@ssl_openssl_la_SOURCES = ssl-openssl.c
+ @PLUGINS_TRUE@ssl_gnutls_la_SOURCES = ssl-gnutls.c
+ @PLUGINS_TRUE@ssl_nss_la_SOURCES = ssl-nss.c
+ @PLUGINS_TRUE@ssl_la_LIBADD = $(GLIB_LIBS)
++@PLUGINS_TRUE@ssl_openssl_la_LIBADD = $(GLIB_LIBS) $(OPENSSL_LIBS)
+ @PLUGINS_TRUE@ssl_gnutls_la_LIBADD = $(GLIB_LIBS) $(GNUTLS_LIBS)
+ @PLUGINS_TRUE@ssl_nss_la_LIBADD = $(GLIB_LIBS) $(NSS_LIBS)
+ AM_CPPFLAGS = \
+@@ -518,6 +532,8 @@ clean-pluginLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
++ssl-openssl.la: $(ssl_openssl_la_OBJECTS) $(ssl_openssl_la_DEPENDENCIES)
++	$(LINK) $(am_ssl_openssl_la_rpath) $(ssl_openssl_la_LDFLAGS) $(ssl_openssl_la_OBJECTS) $(ssl_openssl_la_LIBADD) $(LIBS)
+ ssl-gnutls.la: $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_DEPENDENCIES) 
+ 	$(LINK) $(am_ssl_gnutls_la_rpath) $(ssl_gnutls_la_LDFLAGS) $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_LIBADD) $(LIBS)
+ ssl-nss.la: $(ssl_nss_la_OBJECTS) $(ssl_nss_la_DEPENDENCIES) 
+@@ -532,6 +548,7 @@ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl-openssl.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl_gnutls_la-ssl-gnutls.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl_nss_la-ssl-nss.Plo@am__quote@
+ 

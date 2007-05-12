@@ -1,0 +1,16 @@
+$OpenBSD: patch-libpurple_protocols_oscar_Makefile_am,v 1.1.1.1 2007/05/12 15:19:36 alek Exp $
+--- libpurple/protocols/oscar/Makefile.am.orig	Thu Jan 18 23:28:23 2007
++++ libpurple/protocols/oscar/Makefile.am	Fri Jan 19 22:02:01 2007
+@@ -70,10 +70,10 @@ liboscar_la_SOURCES = $(OSCARSOURCES)
+ liboscar_la_LIBADD  = $(GLIB_LIBS)
+ 
+ libaim_la_SOURCES = libaim.c
+-libaim_la_LIBADD = liboscar.la
++libaim_la_LIBADD = liboscar.la -Wl,-rpath,$(pkgdir)
+ 
+ libicq_la_SOURCES = libicq.c
+-libicq_la_LIBADD = liboscar.la
++libicq_la_LIBADD = liboscar.la -Wl,-rpath,$(pkgdir)
+ 
+ endif
+ 

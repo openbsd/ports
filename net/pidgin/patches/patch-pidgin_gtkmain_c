@@ -1,0 +1,20 @@
+$OpenBSD: patch-pidgin_gtkmain_c,v 1.1.1.1 2007/05/12 15:19:36 alek Exp $
+--- pidgin/gtkmain.c.orig	Mon Apr 30 05:37:55 2007
++++ pidgin/gtkmain.c	Tue May  1 23:11:28 2007
+@@ -86,6 +86,7 @@ static SnDisplay *sn_display = NULL;
+ #endif
+ 
+ #ifdef HAVE_SIGNAL_H
++int real_status;
+ 
+ /*
+  * Lists of signals we wish to catch and those we wish to ignore.
+@@ -186,6 +187,8 @@ clean_pid()
+ 	do {
+ 		pid = waitpid(-1, &status, WNOHANG);
+ 	} while (pid != 0 && pid != (pid_t)-1);
++
++	real_status = status;
+ 
+ 	if ((pid == (pid_t) - 1) && (errno != ECHILD)) {
+ 		char errmsg[BUFSIZ];

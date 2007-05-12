@@ -1,0 +1,12 @@
+$OpenBSD: patch-finch_libgnt_Makefile_in,v 1.1.1.1 2007/05/12 15:19:36 alek Exp $
+--- finch/libgnt/Makefile.in.orig	Mon Apr 30 06:17:52 2007
++++ finch/libgnt/Makefile.in	Tue May  1 23:11:26 2007
+@@ -434,7 +434,7 @@ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ EXTRA_DIST = genmarshal
+-SUBDIRS = . wms
++SUBDIRS = .
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = gnt.pc
+ lib_LTLIBRARIES = libgnt.la

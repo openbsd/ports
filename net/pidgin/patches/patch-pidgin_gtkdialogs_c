@@ -1,0 +1,16 @@
+$OpenBSD: patch-pidgin_gtkdialogs_c,v 1.1.1.1 2007/05/12 15:19:36 alek Exp $
+--- pidgin/gtkdialogs.c.orig	Mon Apr 30 03:26:53 2007
++++ pidgin/gtkdialogs.c	Tue May  1 23:11:28 2007
+@@ -558,6 +558,12 @@ g_string_append(str, "<br/>  <b>Library Support</b><br
+ 	g_string_append(str, "    <b>GtkSpell:</b> Disabled<br/>");
+ #endif
+ 
++#ifdef HAVE_OPENSSL
++	g_string_append(str, "    <b>OpenSSL:</b> Enabled<br/>");
++#else
++	g_string_append(str, "    <b>OpenSSL:</b> Disabled<br/>");
++#endif
++
+ #ifdef HAVE_GNUTLS
+ 	g_string_append(str, "    <b>GnuTLS:</b> Enabled<br/>");
+ #else

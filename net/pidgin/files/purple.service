@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=im.pidgin.purple.PurpleService
+Exec=!!LOCALBASE!!/bin/pidgin
