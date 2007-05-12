@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.49 2007/04/23 16:29:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2007/05/12 20:24:56 jasper Exp $
 
 SHARED_ONLY=			Yes
 
 COMMENT-main=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
 
-VERSION=			2.10.10
+VERSION=			2.10.12
 DISTNAME=			gtk+-${VERSION}
 PKGNAME-main=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-SHARED_LIBS +=	gdk_pixbuf-2.0       1000.10  # .1000.10
-SHARED_LIBS +=	gdk-x11-2.0          1000.10  # .1000.10
-SHARED_LIBS +=	gtk-x11-2.0          1000.10  # .1000.10
-SHARED_LIBS +=	gdk_pixbuf_xlib-2.0  1000.10  # .1000.10
+SHARED_LIBS +=	gdk_pixbuf-2.0       1000.12  # .1000.12
+SHARED_LIBS +=	gdk-x11-2.0          1000.12  # .1000.12
+SHARED_LIBS +=	gtk-x11-2.0          1000.12  # .1000.12
+SHARED_LIBS +=	gdk_pixbuf_xlib-2.0  1000.12  # .1000.12
 CATEGORIES=			x11 devel
 
 HOMEPAGE=			http://www.gtk.org
@@ -53,7 +53,8 @@ USE_LIBTOOL=			Yes
 CONFIGURE_STYLE=		gnu
 CONFIGURE_ARGS+=		--with-xinput=yes
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-				LDFLAGS="-L${LOCALBASE}/lib"
+				LDFLAGS="-L${LOCALBASE}/lib" \
+				ENABLE_CUPS="no"
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point

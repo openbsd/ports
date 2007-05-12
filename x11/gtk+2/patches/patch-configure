@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.14 2007/05/12 20:24:56 jasper Exp $
+--- configure.orig	Sat May 12 16:41:09 2007
++++ configure	Sat May 12 16:41:50 2007
+@@ -34215,7 +34215,9 @@
+ 
+ fi
+ 
+-
++if test "x$ENABLE_CUPS"  != "xyes"; then
++  CUPS_CONFIG=no
++fi
+ if test "x$CUPS_CONFIG" != "xno"; then
+   HAVE_CUPS_TRUE=
+   HAVE_CUPS_FALSE='#'
