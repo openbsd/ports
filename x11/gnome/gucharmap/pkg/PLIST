@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/10 19:30:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/13 18:01:47 jasper Exp $
 %%SHARED%%
 bin/charmap
 bin/gnome-character-map
@@ -184,5 +184,9 @@ share/omf/gucharmap/gucharmap-ru.omf
 share/omf/gucharmap/gucharmap-sv.omf
 share/omf/gucharmap/gucharmap-zh_CN.omf
 share/omf/gucharmap/gucharmap-zh_TW.omf
-@exec %D/bin/gtk-update-icon-cache -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/scrollkeeper-update -q
+@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

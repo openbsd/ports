@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/10 19:30:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/13 18:01:47 jasper Exp $
 
 COMMENT=		"Unicode character map for the GNOME project"
 
 DISTNAME=		gucharmap-1.10.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11/gnome
 SHARED_LIBS +=	gucharmap            0.0      # .6.1
+
+HOMEPAGE=		http://www.gnome.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +29,8 @@ EXTRACT_SUFX=	.tar.bz2
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=	:yelp-*:x11/gnome/yelp
+RUN_DEPENDS=	:yelp-*:x11/gnome/yelp \
+		:desktop-file-utils-*:devel/desktop-file-utils
 
 MODULES=		devel/gettext
 
@@ -39,5 +43,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-gnome
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>
