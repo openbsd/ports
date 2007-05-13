@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/13 20:03:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2007/05/13 21:34:23 jasper Exp $
 
 COMMENT=		"Eye of GNOME: an image viewing and cataloging program"
 
 DISTNAME=		eog-2.18.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		graphics x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/	
@@ -30,12 +31,14 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
-			:scrollkeeper-*:textproc/scrollkeeper
+			:scrollkeeper-*:textproc/scrollkeeper \
+			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 LIB_DEPENDS=		gnome-desktop-2.>=5::x11/gnome/desktop \
 			exif::graphics/libexif \
 			lcms.>=1::graphics/lcms
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
-			:desktop-file-utils-*:devel/desktop-file-utils
+			:desktop-file-utils-*:devel/desktop-file-utils \
+			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 			
 
 USE_X11=		Yes
