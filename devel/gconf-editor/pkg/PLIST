@@ -1,29 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/01/20 08:47:54 steven Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/05/13 18:04:40 jasper Exp $
 bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/
 share/applications/gconf-editor.desktop
-share/examples/gconf-editor/
-share/examples/gconf-editor/gconf/
-@sample ${SYSCONFDIR}/gconf/
-share/examples/gconf-editor/gconf/schemas/
-@sample ${SYSCONFDIR}/gconf/schemas/
-share/examples/gconf-editor/gconf/schemas/gconf-editor.schemas
-@sample ${SYSCONFDIR}/gconf/schemas/gconf-editor.schemas
 share/gnome/
 share/gnome/help/
 share/gnome/help/gconf-editor/
 share/gnome/help/gconf-editor/C/
 share/gnome/help/gconf-editor/C/figures/
-share/gnome/help/gconf-editor/C/figures/entry-blank.png
-share/gnome/help/gconf-editor/C/figures/entry-bool.png
-share/gnome/help/gconf-editor/C/figures/entry-list.png
-share/gnome/help/gconf-editor/C/figures/entry-number.png
-share/gnome/help/gconf-editor/C/figures/entry-schema.png
-share/gnome/help/gconf-editor/C/figures/entry-string.png
 share/gnome/help/gconf-editor/C/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/C/gconf-editor.xml
 share/gnome/help/gconf-editor/C/legal.xml
+share/gnome/help/gconf-editor/fr/
+share/gnome/help/gconf-editor/fr/figures/
+share/gnome/help/gconf-editor/fr/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/fr/gconf-editor.xml
+share/gnome/help/gconf-editor/it/
+share/gnome/help/gconf-editor/it/figures/
+share/gnome/help/gconf-editor/it/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/it/gconf-editor.xml
+share/gnome/help/gconf-editor/sv/
+share/gnome/help/gconf-editor/sv/figures/
+share/gnome/help/gconf-editor/sv/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/sv/gconf-editor.xml
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/48x48/
@@ -35,10 +34,19 @@ share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gconf-editor.mo
 share/locale/az/LC_MESSAGES/gconf-editor.mo
 share/locale/be/LC_MESSAGES/gconf-editor.mo
+share/locale/be@latin/
+share/locale/be@latin/LC_MESSAGES/
+share/locale/be@latin/LC_MESSAGES/gconf-editor.mo
 share/locale/bg/LC_MESSAGES/gconf-editor.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gconf-editor.mo
+share/locale/bn_IN/
+share/locale/bn_IN/LC_MESSAGES/
+share/locale/bn_IN/LC_MESSAGES/gconf-editor.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
+share/locale/br/LC_MESSAGES/gconf-editor.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/gconf-editor.mo
@@ -49,6 +57,9 @@ share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/gconf-editor.mo
 share/locale/da/LC_MESSAGES/gconf-editor.mo
 share/locale/de/LC_MESSAGES/gconf-editor.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/gconf-editor.mo
 share/locale/el/LC_MESSAGES/gconf-editor.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
@@ -80,8 +91,14 @@ share/locale/hu/LC_MESSAGES/gconf-editor.mo
 share/locale/id/LC_MESSAGES/gconf-editor.mo
 share/locale/it/LC_MESSAGES/gconf-editor.mo
 share/locale/ja/LC_MESSAGES/gconf-editor.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/gconf-editor.mo
 share/locale/kn/LC_MESSAGES/gconf-editor.mo
 share/locale/ko/LC_MESSAGES/gconf-editor.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
+share/locale/ku/LC_MESSAGES/gconf-editor.mo
 share/locale/li/
 share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/gconf-editor.mo
@@ -89,6 +106,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gconf-editor.mo
 share/locale/lv/LC_MESSAGES/gconf-editor.mo
+share/locale/mg/
+share/locale/mg/LC_MESSAGES/
+share/locale/mg/LC_MESSAGES/gconf-editor.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gconf-editor.mo
@@ -109,7 +129,6 @@ share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/gconf-editor.mo
 share/locale/nl/LC_MESSAGES/gconf-editor.mo
-share/locale/no/LC_MESSAGES/gconf-editor.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gconf-editor.mo
@@ -121,6 +140,9 @@ share/locale/pt/LC_MESSAGES/gconf-editor.mo
 share/locale/pt_BR/LC_MESSAGES/gconf-editor.mo
 share/locale/ro/LC_MESSAGES/gconf-editor.mo
 share/locale/ru/LC_MESSAGES/gconf-editor.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/gconf-editor.mo
 share/locale/sk/LC_MESSAGES/gconf-editor.mo
 share/locale/sl/LC_MESSAGES/gconf-editor.mo
 share/locale/sq/
@@ -132,16 +154,31 @@ share/locale/sv/LC_MESSAGES/gconf-editor.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gconf-editor.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/gconf-editor.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gconf-editor.mo
 share/locale/tr/LC_MESSAGES/gconf-editor.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/gconf-editor.mo
 share/locale/uk/LC_MESSAGES/gconf-editor.mo
 share/locale/vi/LC_MESSAGES/gconf-editor.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_CN/LC_MESSAGES/gconf-editor.mo
+share/locale/zh_HK/
+share/locale/zh_HK/LC_MESSAGES/
+share/locale/zh_HK/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 share/omf/gconf-editor/
 share/omf/gconf-editor/gconf-editor-C.omf
+share/omf/gconf-editor/gconf-editor-fr.omf
+share/omf/gconf-editor/gconf-editor-it.omf
+share/omf/gconf-editor/gconf-editor-sv.omf
 share/pixmaps/
 share/pixmaps/gconf-editor/
 share/pixmaps/gconf-editor/entry-blank.png
@@ -152,5 +189,14 @@ share/pixmaps/gconf-editor/entry-schema.png
 share/pixmaps/gconf-editor/entry-string.png
 share/pixmaps/gconf-editor/folder-closed.png
 share/pixmaps/gconf-editor/folder-open.png
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gconf-editor/*.schemas > /dev/null
+share/schemas/
+share/schemas/gconf-editor/
+share/schemas/gconf-editor/gconf-editor.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gconf-editor/*.schemas > /dev/null
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
