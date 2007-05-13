@@ -6,3 +6,6 @@ events.
 
 TPB has an on-screen display (OSD) to show volume, mute, brightness
 and some other information.
+
+Please note that TPB doesn't always work with MP enabled kernels because
+of issues with /dev/nvram
