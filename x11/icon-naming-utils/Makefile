@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/17 16:18:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/13 18:30:41 jasper Exp $
 
 COMMENT=		"compatibility tools from the Tango project"
 
-DISTNAME=		icon-naming-utils-0.8.1
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		icon-naming-utils-0.8.2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tango.freedesktop.org/
@@ -15,7 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}releases/
-EXTRACT_SUFX=		.tar.gz
 
 RUN_DEPENDS=		:p5-XML-Simple-*:textproc/p5-XML-Simple
 BUILD_DEPENDS=		${RUN_DEPENDS}
