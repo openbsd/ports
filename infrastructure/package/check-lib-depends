@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.4 2004/11/13 11:49:48 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.5 2007/05/13 08:03:47 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -159,7 +159,7 @@ sub analyze
 		walked => 0
 	} unless defined $db->{$pkgname};
 	my $t = $db->{$pkgname};
-	$plist->visit('check_libs', $t, $where, @l);
+	$plist->check_libs($t, $where, @l);
 	rmtree($where);
 }
 

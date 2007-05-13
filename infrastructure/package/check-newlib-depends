@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.25 2007/04/08 12:36:04 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.26 2007/05/13 08:03:47 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -165,7 +165,7 @@ sub register_dependencies
 	my $pkgname = $plist->pkgname();
 	my $h = {};
 	$dependencies->{$pkgname} = $h;
-	$plist->visit('depwalk', $h);
+	$plist->depwalk($h);
 }
 
 sub get_plist
@@ -312,7 +312,7 @@ sub analyze
 
 	my $pkgname = $plist->pkgname();
 	my $t = { haslib => {}, needlib => {} };
-	$plist->visit('check_wantlibs', $t, $where, @l);
+	$plist->check_wantlibs($t, $where, @l);
 	if (!defined $dependencies->{$pkgname}) {
 		register_dependencies($plist);
 		OpenBSD::SharedLibs::add_plist_libs($plist);

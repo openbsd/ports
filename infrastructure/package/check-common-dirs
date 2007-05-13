@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.6 2005/02/26 13:21:58 espie Exp $
+# $OpenBSD: check-common-dirs,v 1.7 2007/05/13 08:03:47 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -94,7 +94,7 @@ sub analyze
 	} unless defined $db->{$pkgname};
 	my $t = $db->{$pkgname};
 
-	$plist->visit('check_common_dirs', $t)
+	$plist->check_common_dirs($t);
 }
 
 sub parent_has_dir
