@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mame,v 1.7 2005/10/02 01:39:38 fgsch Exp $
+@comment $OpenBSD: PLIST-mame,v 1.8 2007/05/13 12:11:25 aanriot Exp $
 @conflict xmame+xmess-*
 @conflict xmess-*
 bin/romcmp
@@ -56,15 +56,11 @@ share/xmame/cab/glmamejau/cabtitle.jpg
 share/xmame/cab/glmamejau/glmamejau.cab
 share/xmame/cab/trans/
 share/xmame/cab/trans/trans.cab
-share/xmame/cheat.dat
 share/xmame/ctrlr/
 share/xmame/ctrlr/hotrod.cfg
 share/xmame/ctrlr/hotrodse.cfg
 share/xmame/ctrlr/slikstik.cfg
 share/xmame/ctrlr/standard.cfg
 share/xmame/ctrlr/xarcade.cfg
-share/xmame/hiscore.dat
-share/xmame/history.dat
-share/xmame/unofficial_hiscore.txt
 share/xmame/xmamerc
 @sample ${SYSCONFDIR}/xmamerc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main-sdl,v 1.1 2006/11/26 09:54:34 espie Exp $
+@comment $OpenBSD: PLIST-main-sdl,v 1.2 2007/05/13 12:11:25 aanriot Exp $
 @conflict xmame-*
 @conflict xmess-*
 bin/chdman
@@ -94,16 +94,12 @@ share/doc/xmame/xmame.css
 share/doc/xmame/xmamerc.dist
 share/doc/xmame/xmessrc.dist
 share/xmame/
-share/xmame/cheat.dat
 share/xmame/ctrlr/
 share/xmame/ctrlr/hotrod.cfg
 share/xmame/ctrlr/hotrodse.cfg
 share/xmame/ctrlr/slikstik.cfg
 share/xmame/ctrlr/standard.cfg
 share/xmame/ctrlr/xarcade.cfg
-share/xmame/hiscore.dat
-share/xmame/history.dat
-share/xmame/unofficial_hiscore.txt
 share/xmame/xmamerc
 @sample ${SYSCONFDIR}/xmamerc
 share/xmess/

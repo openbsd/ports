@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/04/30 17:03:52 bernd Exp $
+# $OpenBSD: Makefile,v 1.29 2007/05/13 12:11:25 aanriot Exp $
 
 COMMENT-main=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -7,31 +7,21 @@ COMMENT-mess=	"emulates game consoles and old home computers"
 VERSION=	0.104
 DISTNAME=	xmame-${VERSION}
 
-PKGNAME-main=	xmame+xmess-${VERSION}p1
-PKGNAME-mame=	xmame-${VERSION}p0
-PKGNAME-mess=	xmess-${VERSION}p0
+PKGNAME-main=	xmame+xmess-${VERSION}p2
+PKGNAME-mame=	xmame-${VERSION}p1
+PKGNAME-mess=	xmess-${VERSION}p1
 
 CATEGORIES=	emulators games
-MASTER_SITES=	${HOMEPAGE}/download/ \
-		${HOMEPAGE}/download/historic/ \
-		ftp://ftp.kaupp.cx/pub/xmame/ \
-		http://www.atlantilde.com/~aanriot/distfiles/
-MASTER_SITES0=	http://www.mameworld.net/highscore/ \
-		http://www.atlantilde.com/~aanriot/distfiles/
+MASTER_SITES=	ftp://xmame.kaupp.us/pub/xmame/ \
+		http://www.energyhq.be/files/ \
+		http://www.pkix.net/mirror/x.mame.net/
 
 HOMEPAGE=	http://x.mame.net
-
-HISCORE_FILE=	uhsdat${VERSION:S/.//}.zip
-HISTORY_FILE=	history1_02.zip
-CHEAT_FILE=	cheat_20051018.zip
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${HISCORE_FILE}:0 \
-		${HISTORY_FILE} ${CHEAT_FILE}
 
 # Need to know endianness
 ONLY_FOR_ARCHS=	amd64 alpha hppa i386 m68k sparc
 
-# xmame license, see
-# http://x.mame.net/license.html
+# xmame license, see http://x.mame.net/license.html
 PERMIT_PACKAGE_CDROM=	"may not sell"
 PERMIT_PACKAGE_FTP=	"Yes"
 PERMIT_DISTFILES_CDROM=	"may not sell"
@@ -47,12 +37,7 @@ USE_X11=	Yes
 
 MULTI_PACKAGES=	-main -mame -mess
 
-FLAVORS=	x11 sdl
-FLAVORS+=	esd
-
-#XXX arts coredumps, net broken
-#FLAVORS+=	arts net
-
+FLAVORS=	esd sdl x11
 FLAVOR?=	x11 
 
 .if ${FLAVOR:L:Msdl} && ${FLAVOR:L:Mx11}
@@ -68,17 +53,6 @@ DISPLAY_METHOD=	x11
 LIB_DEPENDS+=	jpeg.::graphics/jpeg
 MAKE_FLAGS+=	X11_OPENGL=1
 .endif
-
-# XXX coredump
-#.if ${FLAVOR:L:Marts}
-#LIB_DEPENDS+=	artsc::x11/kde/arts3
-#MAKE_FLAGS+=	SOUND_ARTS_SMOTEK=1 SOUND_ARTS_TEIRA=1
-#.endif
-
-# XXX broken
-#.if ${FLAVOR:L:Mnet}
-#MAKE_FLAGS+=	XMAME_NET=1
-#.endif
 
 .if ${FLAVOR:L:Mesd}
 LIB_DEPENDS+=	esd::audio/esound
@@ -151,11 +125,6 @@ MESS_DOCS=	imgtool.txt messnew.txt style.css wintoc.xml faq.htm \
 		windows/mgebios.htm windows/instbios.htm windows/runsw.htm \
 		windows/suppsys.htm
 
-post-extract:
-	${UNZIP} -u ${FULLDISTDIR}/${HISCORE_FILE} -d ${WRKDIR}
-	${UNZIP} -u ${FULLDISTDIR}/${HISTORY_FILE} -d ${WRKDIR}
-	${UNZIP} -u ${FULLDISTDIR}/${CHEAT_FILE} -d ${WRKDIR}
-
 post-patch:
 	@cp ${FILESDIR}/${MAKE_FILE} ${WRKSRC}
 
@@ -184,7 +153,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/xmame-${DISPLAY_METHOD}rc \
 		${PREFIX}/share/xmame/xmamerc
 	${INSTALL_DATA} ${WRKSRC}/ctrlr/* ${PREFIX}/share/xmame/ctrlr
-	${INSTALL_DATA} ${WRKDIR}/*.{dat,txt} ${PREFIX}/share/xmame
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xmess/hash
 	${INSTALL_DATA} ${WRKSRC}/hash/* ${PREFIX}/share/xmess/hash
 	${INSTALL_DATA} ${FILESDIR}/xmess-${DISPLAY_METHOD}rc \
