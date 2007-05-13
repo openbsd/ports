@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2004/07/25 00:31:56 marcm Exp $
---- Makefile.in.orig	Thu Jul 22 19:21:19 2004
-+++ Makefile.in	Thu Jul 22 19:23:21 2004
-@@ -133,7 +133,7 @@ desktop_DATA = $(desktop_in_files:.deskt
+$OpenBSD: patch-Makefile_in,v 1.2 2007/05/13 20:03:24 jasper Exp $
+--- Makefile.in.orig	Thu Apr 19 23:31:30 2007
++++ Makefile.in	Thu Apr 19 23:31:58 2007
+@@ -231,7 +231,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop
  gladedir = $(datadir)/eog/glade
  glade_DATA = eog.glade
  
