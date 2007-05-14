@@ -1,15 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/08/17 16:02:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/05/14 17:54:35 steven Exp $
 @conflict xfce4-weather-plugin-*
-%%SHARED%%
-lib/xfce4/panel-plugins/libweather.a
-lib/xfce4/panel-plugins/libweather.la
-share/locale/de/LC_MESSAGES/xfce4-weather.mo
-share/locale/fr/LC_MESSAGES/xfce4-weather.mo
-share/locale/nl/LC_MESSAGES/xfce4-weather.mo
+libexec/xfce4/
+libexec/xfce4/panel-plugins/
+libexec/xfce4/panel-plugins/xfce4-weather-plugin
+share/icons/hicolor/48x48/apps/xfce4-weather.png
+share/locale/ca/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/cs/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/de/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/eu/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/fi/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/gl/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/hu/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/lt/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/nl/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/sk/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-weather-plugin.mo
+share/xfce4/panel-plugins/weather.desktop
 share/xfce4/weather/
 share/xfce4/weather/icons/
 share/xfce4/weather/icons/liquid/
-share/xfce4/weather/icons/liquid/-.png
+share/xfce4/weather/icons/liquid/0.png
 share/xfce4/weather/icons/liquid/1.png
 share/xfce4/weather/icons/liquid/10.png
 share/xfce4/weather/icons/liquid/11.png
@@ -57,3 +68,4 @@ share/xfce4/weather/icons/liquid/6.png
 share/xfce4/weather/icons/liquid/7.png
 share/xfce4/weather/icons/liquid/8.png
 share/xfce4/weather/icons/liquid/9.png
+share/xfce4/weather/icons/liquid/99.png
