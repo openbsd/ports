@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: gen-package-pages,v 1.13 2006/10/26 00:41:45 pvalchev Exp $
+# $OpenBSD: gen-package-pages,v 1.14 2007/05/14 16:16:17 pvalchev Exp $
 
 # Copyright (c) 2004 Michael Coulter
 #
@@ -40,11 +40,11 @@ use subs qw(dprint gen_arch_page gen_pkg_page gen_pkg_listing_page getfile
     htmlfile gen_index_page arch_body arch_foot arch_head index_head 
     index_foot pkg_list pkg_long);
 
-our $osrev = "4.0";
+our $osrev = "4.1";
 our $debug = 0;
 our $html;
 
-my @arches = qw(alpha amd64 arm hppa i386 m68k mips64 powerpc sparc sparc64 vax);
+my @arches = qw(alpha amd64 arm hppa i386 m68k mips64 powerpc sh sparc sparc64 vax);
 my $pkgpath = "/home/ftp/pub/OpenBSD/$osrev/packages";
 my $htmlbase = "html";
 
