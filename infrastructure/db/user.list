@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.72 2007/04/27 21:12:25 ajacoutot Exp $
+$OpenBSD: user.list,v 1.73 2007/05/14 21:42:47 ckuethe Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -95,3 +95,4 @@ id  user		group		port options
 584 _nepenthes		_nepenthes	net/nepenthes
 585 _lighttpd		_lighttpd	www/lighttpd
 586 _gnugk		_gnugk		net/gnugk
+587 _darkstat		_darkstat	net/darkstat

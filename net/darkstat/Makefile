@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/02/12 18:07:12 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/14 21:42:47 ckuethe Exp $
 
 COMMENT=		"network statistics gatherer with graphs"
 
-DISTNAME=		darkstat-3.0.540
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		darkstat-3.0.619
 CATEGORIES=		net www
 
 HOMEPAGE=		http://dmr.ath.cx/net/darkstat/
@@ -20,6 +19,7 @@ MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-privdrop-user=_darkstat
 
 NO_REGRESS=		Yes
 
