@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/14 05:51:43 jasper Exp $
 
 COMMENT-main=		"multimedia framework - good plugins"
 COMMENT-aalib=		"multimedia framework - aalib plugin"
@@ -20,7 +20,7 @@ DISTNAME=		gst-plugins-good-$V
 PKGNAME-main=		gstreamer-plugins-good-$V
 PKGNAME-aalib=		gstreamer-aalib-$V
 PKGNAME-cairo=		gstreamer-cairo-$Vp0
-PKGNAME-gconf=		gstreamer-confelements-$V
+PKGNAME-gconf=		gstreamer-confelements-$Vp0
 PKGNAME-esd=		gstreamer-esd-$V
 PKGNAME-flac=		gstreamer-flac-$V
 PKGNAME-speex=		gstreamer-speex-$V
@@ -66,8 +66,9 @@ LIB_DEPENDS-cairo=	${LIB_DEPENDS} \
 			cairo::graphics/cairo
 
 WANTLIB-gconf=		${WANTLIB} \
-			ORBit-2 popt
+			ORBit-2
 LIB_DEPENDS-gconf=	${LIB_DEPENDS} \
+			popt::devel/popt \
 			gconf-2::devel/gconf2
 
 WANTLIB-esd=		${WANTLIB} \
