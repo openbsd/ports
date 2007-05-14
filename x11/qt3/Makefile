@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2007/05/09 11:48:17 bernd Exp $
+# $OpenBSD: Makefile,v 1.78 2007/05/14 08:22:00 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -12,7 +12,7 @@ PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}p1
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}p1
 PKGNAME-examples=	qt3-examples-${VERSION}p1
-PKGNAME-main=		qt3-mt-${VERSION}p4
+PKGNAME-main=		qt3-mt-${VERSION}p5
 FULLPKGNAME-html=	qt3-html-${VERSION}
 PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}p1
 SHARED_LIBS=		qt-mt	31.0 \
