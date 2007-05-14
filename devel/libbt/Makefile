@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/01 22:55:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/14 20:40:15 naddy Exp $
 
 COMMENT=	"C reimplementation of the BitTorrent core protocols"
 DISTNAME=	libbt-1.03
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libbt/}
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		c crypto m ssl z
+WANTLIB=		c crypto idn m ssl z
 
 NO_REGRESS=	Yes
 USE_X11=	Yes	# for makedepend

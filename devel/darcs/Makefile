@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/04/13 03:58:53 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/05/14 20:40:15 naddy Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
 DISTNAME=	darcs-1.0.8
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 HOMEPAGE=	http://www.darcs.net/
 MASTER_SITES=	${HOMEPAGE}
@@ -34,6 +34,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto curses m ssl z
+WANTLIB=		c crypto curses idn m ssl z
 
 .include <bsd.port.mk>
