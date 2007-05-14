@@ -1,6 +1,6 @@
-$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.7 2007/04/18 13:20:48 kurt Exp $
+$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.8 2007/05/14 17:13:01 kurt Exp $
 --- instsetoo_native/util/makefile.mk.orig.port	Thu Mar  1 06:46:53 2007
-+++ instsetoo_native/util/makefile.mk	Wed Apr 18 03:46:25 2007
++++ instsetoo_native/util/makefile.mk	Tue May  8 08:42:19 2007
 @@ -54,12 +54,14 @@ PYTHONPATH:=$(PWD)$/$(BIN):$(SOLARLIBDIR):$(SOLARLIBDI
  .ENDIF			# "$(GUI)"=="WNT"
  .EXPORT: PYTHONPATH
@@ -16,6 +16,15 @@ $OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.7 2007/04/18 13:20:48 kurt
  
  .EXPORT: ENABLE_DOWNLOADSETS
  .EXPORT: LAST_MINOR
+@@ -131,7 +133,7 @@ updatepack:
+ 
+ .IF "$(alllangiso)"!=""
+ 
+-openoffice: $(foreach,i,$(alllangiso) openoffice_$i)
++openoffice: openoffice_en-US
+ 
+ openofficedev: $(foreach,i,$(alllangiso) openofficedev_$i)
+ 
 @@ -199,7 +201,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
  openoffice_% :
  .ENDIF			# "$(PKGFORMAT)"!=""

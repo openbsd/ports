@@ -1,0 +1,37 @@
+$OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_language_txt,v 1.1 2007/05/14 17:13:01 kurt Exp $
+--- instsetoo_native/inc_openoffice/unix/packagelist_language.txt.orig.port	Tue May  8 10:05:04 2007
++++ instsetoo_native/inc_openoffice/unix/packagelist_language.txt	Tue May  8 10:05:51 2007
+@@ -28,7 +28,7 @@ copyright = "1999-2006 by OpenOffice.org"
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Language module for %PRODUCTNAME %PRODUCTVERSION, language %LANGUAGESTRING"
+-destpath = "/opt/openoffice.org%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -43,7 +43,7 @@ copyright = "1999-2006 by OpenOffice.org"
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Language fonts module for %PRODUCTNAME %PRODUCTVERSION, language %LANGUAGESTRING"
+-destpath = "/opt/openoffice.org%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -58,7 +58,7 @@ copyright = "1999-2006 by OpenOffice.org"
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Language resource module for %PRODUCTNAME %PRODUCTVERSION, language %LANGUAGESTRING"
+-destpath = "/opt/openoffice.org%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -73,5 +73,5 @@ copyright = "1999-2006 by OpenOffice.org"
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Language help module for %PRODUCTNAME %PRODUCTVERSION, language %LANGUAGESTRING"
+-destpath = "/opt/openoffice.org%PRODUCTVERSION"
++destpath = "openoffice"
+ End

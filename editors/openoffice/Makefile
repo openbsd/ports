@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2007/03/29 10:53:42 robert Exp $
+# $OpenBSD: Makefile,v 1.52 2007/05/14 17:13:01 kurt Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -26,6 +26,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 HOMEPAGE=	http://www.openoffice.org/
 MASTER_SITES=	http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/ \
 		http://humppa.hu/ooo/ \
+		ftp://ftp.ussg.iu.edu/pub/openoffice/stable/${VERSION}/ \
 		ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stable/${VERSION}/ \
 		ftp://ftp.tu-chemnitz.de/pub/openoffice/stable/${VERSION}/ \
 		ftp://ftp.nluug.nl/pub/office/openoffice/stable/${VERSION}/ \
@@ -168,9 +169,10 @@ MAKE_ENV+=	envcflags="${CFLAGS}"
 TCSH=		${LOCALBASE}/bin/tcsh
 
 .if ${FLAVOR:L:Mcleanobj}
-BUILD_CMD=	cd instsetoo_native && build.pl --all --dlv_switch -deloutput
+BUILD_CMD=	cd instsetoo_native && build.pl --all --dlv_switch -deloutput && \
+		cd util && dmake ooolanguagepack
 .else
-BUILD_CMD=	dmake
+BUILD_CMD=	dmake && cd instsetoo_native/util && dmake ooolanguagepack
 .endif
 
 pre-patch:
@@ -198,8 +200,13 @@ do-install:
 			${INSTALL_DATA} $$ICONS ${PREFIX}/share/icons/openoffice; \
 		done
 
-.for l in en-US ${LANGS}
-	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/$l/openbsd-* && \
+	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/en-US/openbsd-* && \
+		for SW in `ls -1 *.sw`; do \
+			${TAR} xf $$SW -C ${PREFIX}; \
+		done
+
+.for l in ${LANGS}
+	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice_languagepack/portable/install/$l/openbsd-* && \
 		for SW in `ls -1 *.sw`; do \
 			${TAR} xf $$SW -C ${PREFIX}; \
 		done
