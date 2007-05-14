@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/10 07:43:39 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/14 22:24:26 naddy Exp $
 
 COMMENT-main=		"mail and news client"
 COMMENT-docs=		"documentation"
@@ -9,12 +9,12 @@ COMMENT-spamassassin=	"spamassassin plugin"
 
 V=			2.9.2
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}
-FULLPKGNAME-docs=		claws-mail-docs-${V}
-FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
-FULLPKGNAME-clamav=		claws-mail-clamav-${V}
-FULLPKGNAME-dillo=		claws-mail-dillo-${V}
-FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}
+PKGNAME-main=			${DISTNAME}p0
+FULLPKGNAME-docs=		claws-mail-docs-${V}p0
+FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p0
+FULLPKGNAME-clamav=		claws-mail-clamav-${V}p0
+FULLPKGNAME-dillo=		claws-mail-dillo-${V}p0
+FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}p0
 
 CATEGORIES=		mail news
 
@@ -50,13 +50,13 @@ RUN_DEPENDS-dillo=	::${BUILD_PKGPATH} \
 RUN_DEPENDS-spamassassin=::${BUILD_PKGPATH} \
 			::mail/p5-Mail-SpamAssassin 
 
-WANTLIB=		X11 Xau Xdmcp Xrender crypto expat fontconfig \
-			freetype m ssl z
+WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+			Xrender crypto expat fontconfig freetype m ssl z
 
 WANTLIB-main=		${WANTLIB} ICE SM c pthread stdc++
 
 WANTLIB-docs=		
-WANTLIB-clamav=		${WANTLIB} bz2 gmp
+WANTLIB-clamav=		${WANTLIB} bz2 gmp idn
 
 LIB_DEPENDS=		atk-1.0::devel/atk \
 			cairo::graphics/cairo \
