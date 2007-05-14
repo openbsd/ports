@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/08 14:58:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/14 13:20:12 msf Exp $
 COMMENT-main=	'multilingual input method library'
 COMMENT-gtk=	'uim for gtk'
 COMMENT-qt=	'uim for qt'
@@ -13,7 +13,7 @@ DISTNAME=	uim-$V
 MASTER_SITES=	http://uim.freedesktop.org/releases/uim/stable/
 HOMEPAGE=	http://uim.freedesktop.org/wiki/
 PKGNAME-main=	uim-$V
-PKGNAME-gtk=	uim-gtk-$V
+PKGNAME-gtk=	uim-gtk-$Vp0
 PKGNAME-qt=	uim-qt-$V
 PKGNAME-kde=	uim-kde-$V
 PKGNAME-gnome=	uim-gnome-$V
@@ -78,7 +78,7 @@ WANTLIB-gnome=	${WANTLIB-gtk} ICE SM crypto gthread-2.0 jpeg pthread ssl \
 
 
 
-MAKE_FLAGS=	moduledir='${LOCALBASE}/lib/gtk-2.0/2.4.0/immodules' \
+MAKE_FLAGS=	moduledir='${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules' \
 		UIM_QT_LDFLAGS='-pthread -L${X11BASE}/lib -L${MODQT_LIBDIR} -lqt-mt -lXext -lX11' \
 		itlocaledir=${TRUEPREFIX}/share/locale
 
