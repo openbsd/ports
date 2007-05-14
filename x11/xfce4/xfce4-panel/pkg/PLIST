@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/08 08:45:58 steven Exp $
-@pkgpath x11/xfce4/xfce4-datetime
-@pkgpath x11/xfce4/xfce4-iconbox
-@pkgpath x11/xfce4/xfce4-showdesktop
-@pkgpath x11/xfce4/xfce4-systray
-@pkgpath x11/xfce4/xfce4-taskbar
-@pkgpath x11/xfce4/xfce4-trigger-launcher
+@comment $OpenBSD: PLIST,v 1.5 2007/05/14 06:44:36 steven Exp $
+@conflict xfce4-datetime-*
+@conflict xfce4-iconbox-*
+@conflict xfce4-showdesktop-*
+@conflict xfce4-systray-*
+@conflict xfce4-taskbar-*
+@conflict xfce4-trigger-launcher-*
 %%SHARED%%
 bin/xfce4-iconbox
 bin/xfce4-panel

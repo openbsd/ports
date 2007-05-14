@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/08 15:14:23 steven Exp $
-@pkgpath x11/xfce4/xffm
+@comment $OpenBSD: PLIST,v 1.2 2007/05/14 06:44:36 steven Exp $
+@conflict xffm-*
 %%SHARED%%
 bin/Thunar
 bin/thunar

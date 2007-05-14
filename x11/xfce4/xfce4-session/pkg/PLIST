@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/08 14:14:03 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/05/14 06:44:36 steven Exp $
+@conflict xfce4-toys-*
 %%SHARED%%
 bin/xfce4-autostart-editor
 bin/xfce4-session

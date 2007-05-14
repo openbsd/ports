@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/08 14:54:44 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/14 06:44:36 steven Exp $
 
 COMMENT=	"advanced calendar for xfce4"
 
 V=		4.5.9.3
 DISTNAME=	orage-${V}
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.xfce.org/projects/orage/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>

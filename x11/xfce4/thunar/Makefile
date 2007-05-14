@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/08 15:14:23 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/14 06:44:36 steven Exp $
 
 COMMENT=	"lightweight file manager for xfce4"
 
 V=		0.8.0
 DISTNAME=	Thunar-${V}
-PKGNAME=	thunar-${V}
+PKGNAME=	thunar-${V}p0
 
 SHARED_LIBS +=  thunarx-1            4.2      # .4.2
 SHARED_LIBS +=  thunar-vfs-1         4.2      # .4.2
