@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2006/03/11 18:03:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/15 22:09:31 rui Exp $
 
 COMMENT=	"VPN scanner and identifier"
-DISTNAME=	ike-scan-1.8
+DISTNAME=	ike-scan-1.9
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}download/
 
