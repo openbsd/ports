@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/04 12:38:19 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/15 08:27:28 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT= 	"checks if the documentation of a Perl module is comprehensive"
+COMMENT= 	"check if the documentation of a module is comprehensive"
 
 MODULES=	cpan
 DISTNAME=	Pod-Coverage-0.18
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

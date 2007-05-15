@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/09 13:10:34 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/15 08:27:28 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python Secure Internet Live Conferencing (silc) toolkit bindings"
+COMMENT=	"Python bindings for the SILC toolkit"
 
-DISTNAME=	pysilc-0.4
-PKGNAME=	${DISTNAME:S/py/py-/}
+V=		0.4
+DISTNAME=	pysilc-${V}
+PKGNAME=	py-silc-${V}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.liquidx.net/pysilc/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/15 08:27:28 steven Exp $
 
-COMMENT=	"parametrical modeling of three-dimensional humanoid characters"
+COMMENT=	"parametrical modeling of 3D humanoid characters"
 
 DISTNAME=	makehuman-0.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.dedalo-3d.com/
