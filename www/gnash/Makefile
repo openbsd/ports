@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/11 20:20:23 deanna Exp $
+# $OpenBSD: Makefile,v 1.10 2007/05/15 17:01:01 naddy Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"flash player with firefox browser plugin"
 DISTNAME=	gnash-0.7.2
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS +=	gnashbase 1.0
 SHARED_LIBS +=	gnashgeo 1.0
 SHARED_LIBS +=	gnashamf 1.0
@@ -42,11 +42,12 @@ LIB_DEPENDS+=	curl.>=4::net/curl \
 		avcodec.>=7,avutil.>=1,avformat.>=7::graphics/ffmpeg \
 		gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
 
-WANTLIB=	freetype fontconfig Xrender ossaudio usbhid \
-		ICE SM Xext X11 z stdc++ m pthread c ssl crypto \
+WANTLIB=	Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat \
+		freetype fontconfig Xrender ossaudio usbhid \
+		Xext X11 z stdc++ m pthread c ssl crypto \
 		faac faad mp3lame ogg vorbis vorbisenc cairo \
 		glib-2.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 pangox-1.0 \
-		gobject-2.0 gmodule-2.0 atk-1.0 png jpeg glitz SDL
+		gobject-2.0 gmodule-2.0 atk-1.0 png jpeg glitz SDL idn
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/05/11 15:05:15 robert Exp $
+# $OpenBSD: Makefile,v 1.36 2007/05/15 17:01:01 naddy Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 COMMENT-main=		"informational package about PHP5 extensions"
@@ -48,7 +48,8 @@ MULTI_PACKAGES+=	-curl
 COMMENT-curl=		"curl URL library extensions for php5"
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	curl.>=2::net/curl
-WANTLIB-curl=		${WANTLIB} crypto ssl z
+WANTLIB-curl=		${WANTLIB} crypto idn ssl z
+FULLPKGNAME-curl=	php5-curl-${V}p0
 .endif
 
 # dba

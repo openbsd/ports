@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2007/04/28 19:58:26 sturm Exp $
+# $OpenBSD: Makefile,v 1.55 2007/05/15 17:01:01 naddy Exp $
 
 FULLPKGNAME-main=	php4-extensions-${V}p1
 COMMENT-main=	"informational package about PHP4 extensions"
@@ -46,7 +46,8 @@ MULTI_PACKAGES+=	-curl
 COMMENT-curl=		"curl URL library extensions for php4"
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	curl.>=2::net/curl
-WANTLIB-curl=		${WANTLIB} crypto ssl z
+WANTLIB-curl=		${WANTLIB} crypto idn ssl z
+FULLPKGNAME-curl=	php4-curl-${V}p2
 .endif
 
 # dba
@@ -289,7 +290,8 @@ MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		"XML RPC functions for php4"
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 WANTLIB-xmlrpc=		${WANTLIB} expat iconv
-FULLPKGNAME-xmlrpc=	php4-xmlrpc-${V}p2
+LIB_DEPENDS-xmlrpc=
+FULLPKGNAME-xmlrpc=	php4-xmlrpc-${V}p3
 .endif
 
 # xslt

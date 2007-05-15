@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/16 17:52:07 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/15 17:01:01 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"perl binding for curl"
 
 MODULES=	cpan
 DISTNAME=	p5-WWW-Curl-20040519
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www net
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		crypto ssl z 
+WANTLIB=		crypto idn ssl z 
 
 LIB_DEPENDS=	curl.>=2.2::net/curl
 
