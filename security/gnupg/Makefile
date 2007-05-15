@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2007/05/10 11:38:28 steven Exp $
+# $OpenBSD: Makefile,v 1.67 2007/05/15 15:09:12 naddy Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
 DISTNAME=	gnupg-1.4.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
@@ -25,7 +26,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c z readline termcap ssl crypto
+WANTLIB=		c z readline termcap ssl crypto idn
 
 MODULES= devel/gettext
 LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \

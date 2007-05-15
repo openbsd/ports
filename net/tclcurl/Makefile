@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/05/15 15:09:12 naddy Exp $
 
 COMMENT=		"Tcl bindings for Curl"
 NOT_FOR_ARCHS= 		${NO_SHARED_ARCHS}
 
 DISTNAME=		TclCurl-0.10.5
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		net
 
 HOMEPAGE=		http://personal.iddeo.es/andresgarci/tclcurl/english/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		crypto ssl z 
+WANTLIB=		crypto idn ssl z 
 
 MASTER_SITES=		${HOMEPAGE}download/tarball/
 

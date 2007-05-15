@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/15 15:09:12 naddy Exp $
 
 COMMENT=	"XML-RPC C/C++ client-server implementation"
 CATEGORIES=	net devel textproc
 
 DISTNAME=	xmlrpc-c-1.06.08
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tgz
 SHARED_LIBS +=	xmlrpc_util          0.0      # .9.4
 SHARED_LIBS +=	xmlrpc_abyss         0.0      # .9.4
@@ -17,7 +18,7 @@ SHARED_LIBS +=	xmlrpc_server_cgi    0.0      # .9.4
 
 HOMEPAGE=	http://xmlrpc-c.sourceforge.net/
 
-WANTLIB += c crypto pthread ssl z
+WANTLIB += c crypto iconv idn pthread ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlrpc-c/}
 

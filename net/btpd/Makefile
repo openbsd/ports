@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/03 08:39:50 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/15 15:09:12 naddy Exp $
 
 COMMENT=		"BitTorrent Protocol Daemon"
 
 DISTNAME=		btpd-0.12
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 MAINTAINER=		Martin Cronier <hex29a@openbsd.se>
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c z ssl m event crypto pthread
+WANTLIB=		c crypto event idn m pthread ssl z
 LIB_DEPENDS=	 	curl::net/curl
 
 CONFIGURE_STYLE=	gnu
