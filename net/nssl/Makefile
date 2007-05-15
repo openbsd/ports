@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/06 05:24:55 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/15 09:10:26 steven Exp $
 
-COMMENT=		"netcat-like program with transparent Secure Socket Layer support"
+COMMENT=		"netcat-like program with transparent SSL support"
 
 DISTNAME=		nssl.005
-PKGNAME=		nssl-005
+PKGNAME=		nssl-005p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://nssl.sourceforge.net/
