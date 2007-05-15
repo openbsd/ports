@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2007/04/07 14:54:12 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/05/15 14:01:19 martynas Exp $
 
+SHARED_ONLY=	Yes
 COMMENT=	"extremely lightweight and simple web browser for gnome"
 
-M=		1.4
-V=		1.4.8
+M=		2.18
+V=		2.18.1
 DISTNAME=	epiphany-${V}
-PKGNAME=	${DISTNAME}p5
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
-
-MAINTAINER=	Igor Boehm <igor@bytelabs.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,52 +17,48 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/epiphany/$M/}
-EXTRACT_SUFX=	.tar.bz2
 
-MOZDIR=		mozilla
-
-BUILD_DEPENDS=	:mozilla-devel->=1.7.13p2:www/mozilla,-devel \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-		:scrollkeeper-*:textproc/scrollkeeper
-RUN_DEPENDS=	:gnome-desktop-*:x11/gnome/desktop \
+BUILD_DEPENDS=	:mozilla-firefox-devel->=2.0:www/mozilla-firefox,-devel
+BUILD_DEPENDS+=	${RUN_DEPENDS}
+RUN_DEPENDS=	:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
+		:gnome-icon-theme-*:x11/gnome/icon-theme \
 		:gnome-themes-*:x11/gnome/themes \
-		:gnome-icon-theme-*:x11/gnome/icon-theme
-LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
-		${MOZDIR}/gtkembedmoz,${MOZDIR}/xpcom:mozilla->=1.7.13p2:www/mozilla
+		:iso-codes-*:devel/iso-codes \
+		:scrollkeeper-*:textproc/scrollkeeper \
+		:yelp-*:x11/gnome/yelp
+LIB_DEPENDS=	gnome-desktop-2::x11/gnome/desktop \
+		gnomeui-2.>=1400::x11/gnome/libgnomeui \
+		mozilla-firefox/gtkembedmoz,mozilla-firefox/mozjs,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:mozilla-firefox->=2.0:www/mozilla-firefox \
+		xml2.>=6.12::textproc/libxml \
+		xslt.>=1::textproc/libxslt
 
 MODULES=	devel/gettext
 
-WANTLIB=	ORBit-2 ORBitCosNaming-2 art_lgpl_2 atk-1.0 \
-		audiofile bonobo-2 bonobo-activation bonoboui-2 esd \
-		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
-		glib-2.0 gmodule-2.0 gtk-x11-2.0 \
-		jpeg gnome-2 gnome-keyring gnomecanvas-2 \
-		gnomevfs-2 gobject-2.0 gthread-2.0 nspr4 pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 plc4 plds4 cairo glitz png \
-		popt xml2 ICE SM X11 Xext Xrender c crypto fontconfig \
-		freetype m pthread ssl stdc++ z
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
+		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
+		audiofile bonobo-2 bonobo-activation bonoboui-2 c cairo \
+		crypto dbus-1 dbus-glib-1 esd expat fontconfig freetype \
+		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 \
+		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
+		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
+		m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 plc4 \
+		plds4 png popt pthread ssl startup-notification-1 util z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \
-		--program-suffix=-bin \
+CONFIGURE_ARGS+=--with-gecko=firefox \
+		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \
 		--disable-schemas-install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/${MOZDIR} -L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/mozilla-firefox -L${LOCALBASE}/lib" \
+		HOME=/tmp
 
 SUBST_VARS+=	M
 
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
-
-post-install:
-	@rm -f ${PREFIX}/bin/epiphany
-	${INSTALL_SCRIPT} ${FILESDIR}/epiphany ${PREFIX}/bin
-	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' \
-		-e 's|%%MOZDIR%%|${MOZDIR}|g;'\
-		 ${PREFIX}/bin/epiphany
+post-configure:
+	rm -fr /tmp/.mozilla
 
 .include <bsd.port.mk>
