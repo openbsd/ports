@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/04/13 14:30:43 kurt Exp $
+# $OpenBSD: Makefile,v 1.33 2007/05/15 18:40:26 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,7 +11,7 @@ COMMENT-browser=	"HTML Browser Widget library for swt/eclipse"
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p0
 PKGNAME-swt=		swt-${ECLIPSE_VER}
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
@@ -68,9 +68,11 @@ MULTI_PACKAGES=		-main -swt -gnome -browser
 
 RUN_DEPENDS-main=	::java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
-			:${PKGNAME-swt}:devel/eclipse/sdk,-browser
+			:${PKGNAME-browser}:devel/eclipse/sdk,-browser
 LIB_DEPENDS-main=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-WANTLIB-main=		X11 Xau Xdmcp Xrender c expat m z fontconfig \
+
+WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
+			Xrandr Xrender c expat m z fontconfig \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 glitz png iconv intl \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo
