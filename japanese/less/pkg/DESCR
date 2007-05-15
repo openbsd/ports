@@ -4,8 +4,6 @@
        before starting, so with large input files  it  starts  up
        faster  than  text editors like vi (1).
 
-  This enhanced less support ISO 2022 code extension techniques and
+This enhanced less supports ISO 2022 code extension techniques and
 Japanese codes(EUC Japanese, SJIS) and compressed(or gzipped) file
-viewing. The author of this patch is jam@pobox.com. See 
-	${HOMEPAGE}
-for the latest info.
+viewing. The author of this patch is jam@pobox.com.

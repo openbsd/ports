@@ -26,5 +26,3 @@ The current OpenBSD port does not support a joystick.
 Important: when sound is available, don't use `limit speed', as sound
 output will pace the emulator automatically, whereas `limit speed' will
 interfere and produce garbled output.
-
-See ${HOMEPAGE} for details.

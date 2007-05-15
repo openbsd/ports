@@ -5,13 +5,13 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
-# $OpenBSD: Makefile,v 1.18 2006/08/10 15:06:27 bernd Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/15 09:24:09 steven Exp $
 #
 
 COMMENT=	"less + zcat + ISO-2022 - a pager similar to more and pg"
 
 DISTNAME=	less-332
-PKGNAME=	ja-less-3.32pl2.48
+PKGNAME=	ja-less-3.32pl2.48p0
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GNU:=less/}
 HOMEPAGE=	http://www.pobox.com/~jam/less/
