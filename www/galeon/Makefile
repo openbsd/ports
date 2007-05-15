@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2007/04/07 14:54:12 steven Exp $
+# $OpenBSD: Makefile,v 1.34 2007/05/15 14:47:36 martynas Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
-V=		1.3.21
+V=		2.0.3
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}p7
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -14,48 +13,51 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB= ORBit-2 ORBitCosNaming-2 art_lgpl_2 atk-1.0 audiofile \
-	 bonobo-2 bonobo-activation bonoboui-2 esd gconf-2 \
-	 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 \
-	 gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
-	 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
-	 pango-1.0 pangoft2-1.0 pangocairo-1.0 popt cairo glitz \
-	 startup-notification-1 xml2 ICE SM X11 Xext Xrender png \
-	 c crypto fontconfig freetype m pthread ssl stdc++ z \
-	 nspr4 plc4 plds4
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
+		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
+		audiofile bonobo-2 bonobo-activation bonoboui-2 c cairo \
+		crypto dbus-1 dbus-glib-1 esd expat fontconfig freetype \
+		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 \
+		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
+		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
+		m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 plc4 \
+		plds4 png popt pthread ssl startup-notification-1 stdc++ \
+		util z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:mozilla->=1.7.13p2:www/mozilla \
-		:mozilla-devel->=1.7.13p2:www/mozilla,-devel \
+BUILD_DEPENDS=	:mozilla-firefox-devel->=2.0:www/mozilla-firefox,-devel \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-		:scrollkeeper->=0.3.12:textproc/scrollkeeper
-LIB_DEPENDS= 	gnome-desktop-2::x11/gnome/desktop \
-		gnomeui-2::x11/gnome/libgnomeui \
-		mozilla/gtkembedmoz,mozilla/xpcom:mozilla->=1.7.13p2:www/mozilla
+		${RUN_DEPENDS}
+RUN_DEPENDS=	:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
+		:gnome-icon-theme-*:x11/gnome/icon-theme \
+		:gnome-themes-*:x11/gnome/themes \
+		:iso-codes-*:devel/iso-codes \
+		:scrollkeeper-*:textproc/scrollkeeper \
+		:yelp-*:x11/gnome/yelp
+LIB_DEPENDS=	gnome-desktop-2::x11/gnome/desktop \
+		gnomeui-2.>=1400::x11/gnome/libgnomeui \
+		mozilla-firefox/gtkembedmoz,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:mozilla-firefox->=2.0:www/mozilla-firefox \
+		xml2.>=6.12::textproc/libxml
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/mozilla -L${LOCALBASE}/lib" \
-		MOZILLA_CONFIG=${LOCALBASE}/mozilla/mozilla-config
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/mozilla-firefox -L${LOCALBASE}/lib"
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/galeon \
+CONFIGURE_ARGS=	--with-mozilla=firefox \
+		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/galeon \
 		--disable-schemas-install \
 		--disable-gtkhtml
 
 WRKDIST=	${WRKDIR}/galeon-${V}/
 
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
-
 post-install:
-	@mv -f ${PREFIX}/bin/galeon ${PREFIX}/bin/galeon-bin
-	${INSTALL_SCRIPT} ${FILESDIR}/galeon ${PREFIX}/bin
-	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' ${PREFIX}/bin/galeon
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/galeon/sound/events
+	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/sound/events/galeon.soundlist ${PREFIX}/share/examples/galeon/sound/events/
 
 .include <bsd.port.mk>
