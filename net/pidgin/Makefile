@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/12 15:19:35 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/15 10:07:26 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, SILC and Zephyr client"
+COMMENT=	"multi-protocol instant messaging client"
 
 DISTNAME=	pidgin-2.0.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	jabber               0.0      # .0.0
 SHARED_LIBS +=	oscar                0.0      # .0.0
 SHARED_LIBS +=	purple               0.0      # .0.0
