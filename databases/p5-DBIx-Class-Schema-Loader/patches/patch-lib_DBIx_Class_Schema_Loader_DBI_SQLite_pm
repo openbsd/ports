@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_DBIx_Class_Schema_Loader_DBI_SQLite_pm,v 1.1 2007/05/15 10:38:42 espie Exp $
+--- lib/DBIx/Class/Schema/Loader/DBI/SQLite.pm.orig	Tue May 15 11:22:01 2007
++++ lib/DBIx/Class/Schema/Loader/DBI/SQLite.pm	Tue May 15 11:23:49 2007
+@@ -42,7 +42,7 @@ sub _sqlite_parse_table {
+     $sth->finish;
+ 
+     # Cut "CREATE TABLE ( )" blabla...
+-    $sql =~ /^[\w\s]+\((.*)\)$/si;
++    $sql =~ /^[\w\s\']+\((.*)\)$/si;
+     my $cols = $1;
+ 
+     # strip single-line comments
