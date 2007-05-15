@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/22 08:45:36 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/15 19:30:42 kili Exp $
 
 COMMENT=		"IVY plug-in for Eclipse IDE"
 
-VERSION=		1.1.0.v20061009130000
+VERSION=		1.2.0
 DISTNAME=		org.jayasoft.ivyde.eclipse_${VERSION}
-PKGNAME=		eclipse-plugin-ivyde-${VERSION:C,\.v[0-9]*,,}
+PKGNAME=		eclipse-plugin-ivyde-${VERSION}
 CATEGORIES=		devel/eclipse/plugins java
 EXTRACT_SUFX=		.zip
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=		http://www.jayasoft.org/ivyde
+HOMEPAGE=		http://incubator.apache.org/ivy/ivyde/
 
-MASTER_SITES=		http://www.jayasoft.org/downloads/ivyde/
+MASTER_SITES=		http://www.jaya.free.fr/downloads/ivyde/
 
 RUN_DEPENDS=		:eclipse-sdk-*:devel/eclipse/sdk
 
