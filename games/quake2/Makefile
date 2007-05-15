@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/07 12:13:41 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/15 21:40:01 martynas Exp $
 
 ONLY_FOR_ARCHS= 	i386
 SHARED_ONLY=		Yes
@@ -21,7 +21,6 @@ WANTLIB=		ICE SM X11 Xext Xxf86dga Xxf86vm c m ossaudio pthread \
 			usbhid
 
 MASTER_SITES=		http://www.quakeforge.net/files/quake2forge/
-EXTRACT_SUFX=		.tar.gz
 
 LIB_DEPENDS=		SDL::devel/sdl
 

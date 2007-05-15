@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/15 21:40:01 martynas Exp $
 
 COMMENT=		"KDE UPS Monitoring tool"
 
@@ -20,7 +20,6 @@ WANTLIB=		jpeg ICE SM X11 Xext Xrender c m png pthread stdc++ \
 			util z idn iconv
 
 MASTER_SITES=		ftp://ftp.buzuluk.cz/pub/alo/knutclient/
-EXTRACT_SUFX=		.tar.gz
 
 # Patch Hack
 MODULES=		x11/kde

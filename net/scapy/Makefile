@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/08 12:47:06 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/15 21:40:01 martynas Exp $
 
 COMMENT=	"powerful interactive packet manipulation in python"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ethertypes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_SUFX=	.tar.gz
 
 MODULES=	lang/python
 
