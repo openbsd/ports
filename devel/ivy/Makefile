@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/16 02:48:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/15 19:29:49 kili Exp $
 
 COMMENT=		"dependency manager for Java"
 
-VERSION=		1.4
+VERSION=		1.4.1
 DISTNAME=		ivy-${VERSION}-bin
-PKGNAME=		ivy-${VERSION}p1
+PKGNAME=		ivy-${VERSION}
 CATEGORIES=		devel java
 WRKDIST=		${WRKDIR}/ivy-${VERSION}
 
-HOMEPAGE=		http://www.jayasoft.org/ivy/
+HOMEPAGE=		http://incubator.apache.org/ivy/
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
@@ -18,13 +18,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.jayasoft.org/downloads/ivy/${VERSION}/
+MASTER_SITES=		http://www.jaya.free.fr/downloads/ivy/${VERSION}/
 EXTRACT_SUFX=		.zip
 
 SUBST_VARS=		VERSION
 
 MODULES=	java
-MODJAVA_VER=	1.3+
+MODJAVA_VER=	1.4+
 MODJAVA_JRERUN=	yes
 
 RUN_DEPENDS=	::java/javaPathHelper
