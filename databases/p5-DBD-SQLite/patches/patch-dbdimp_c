@@ -1,0 +1,23 @@
+$OpenBSD: patch-dbdimp_c,v 1.3 2007/05/15 09:37:58 espie Exp $
+--- dbdimp.c.orig	Mon Apr 10 03:50:05 2006
++++ dbdimp.c	Tue May 15 11:09:38 2007
+@@ -677,11 +677,14 @@ sqlite_st_FETCH_attrib (SV *sth, imp_sth_t *imp_sth, S
+         retsv = sv_2mortal(newRV(sv_2mortal((SV*)av)));
+         for (n = 0; n < i; n++) {
+             const char *fieldtype = sqlite3_column_decltype(imp_sth->stmt, n);
+-            int type = sqlite3_column_type(imp_sth->stmt, n);
+-            /* warn("got type: %d = %s\n", type, fieldtype); */
+-            type = type_to_odbc_type(type);
+-            /* av_store(av, n, newSViv(type)); */
+-            av_store(av, n, newSVpv(fieldtype, 0));
++	    int type = sqlite3_column_type(imp_sth->stmt, n);
++	    /* warn("got type: %d = %s\n", type, fieldtype); */
++	    type = type_to_odbc_type(type);
++	    /* av_store(av, n, newSViv(type)); */
++	    if (fieldtype)
++		    av_store(av, n, newSVpv(fieldtype, 0));
++	    else
++		    av_store(av, n, newSVpv("VARCHAR", 0));
+         }
+     }
+     else if (strEQ(key, "NULLABLE")) {
