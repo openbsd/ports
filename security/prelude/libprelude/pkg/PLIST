@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/04/15 11:37:16 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/05/15 10:56:55 msf Exp $
 @newgroup _prelude:564
 @newuser _prelude:564:564:daemon:Prelude IDS:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -130,5 +130,7 @@ share/examples/libprelude/profile/
 @owner _prelude
 @group _prelude
 @sample /var/prelude/
+@mode 700
+@sample /var/spool/prelude/
 @extraunexec rm -rf ${SYSCONFDIR}/prelude/*
 @extraunexec rm -rf /var/prelude/*
