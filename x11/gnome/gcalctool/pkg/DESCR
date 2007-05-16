@@ -1,0 +1,5 @@
+Gcalctool is the default GNOME desktop calculator.
+
+It has Basic, Financial and Scientific modes. Internally it uses
+multiple precision arithmetic to produce results to a high degree of
+accuracy.
