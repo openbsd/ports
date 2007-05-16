@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2007/05/16 22:18:38 jasper Exp $
+@lib lib/libgweather.so.${LIBgweather_VERSION}

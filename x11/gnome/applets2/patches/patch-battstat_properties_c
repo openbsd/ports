@@ -1,0 +1,11 @@
+$OpenBSD: patch-battstat_properties_c,v 1.6 2007/05/16 22:18:38 jasper Exp $
+--- battstat/properties.c.orig	Sat Dec 23 20:52:59 2006
++++ battstat/properties.c	Sat Dec 23 20:57:11 2006
+@@ -29,6 +29,7 @@
+ #include <sys/ioctl.h>
+ #include <sys/types.h>
+ #ifdef HAVE_SYS_SYSCTL_H
++#include <sys/param.h>
+ #include <sys/sysctl.h>
+ #endif
+ 

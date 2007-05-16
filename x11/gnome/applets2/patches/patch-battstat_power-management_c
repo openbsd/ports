@@ -1,15 +1,15 @@
-$OpenBSD: patch-battstat_power-management_c,v 1.1 2005/05/26 03:39:30 marcm Exp $
---- battstat/power-management.c.orig	Mon Apr 11 21:19:55 2005
-+++ battstat/power-management.c	Mon Apr 11 21:26:38 2005
-@@ -29,6 +29,7 @@
- #include <sys/ioctl.h>
+$OpenBSD: patch-battstat_power-management_c,v 1.2 2007/05/16 22:18:38 jasper Exp $
+--- battstat/power-management.c.orig	Tue Oct 24 00:50:49 2006
++++ battstat/power-management.c	Sat Dec 23 21:10:00 2006
+@@ -28,6 +28,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
+ #ifdef HAVE_SYS_SYSCTL_H
 +#include <sys/param.h>
  #include <sys/sysctl.h>
+ #endif
  
- #include <err.h>
-@@ -129,12 +130,13 @@ apm_readinfo (BatteryStatus *status)
+@@ -248,12 +249,13 @@ apm_readinfo (BatteryStatus *status)
    /* Code for OpenBSD by Joe Ammond <jra@twinight.org>. Using the same
       procedure as for FreeBSD.
    */

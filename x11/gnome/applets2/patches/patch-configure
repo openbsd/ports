@@ -1,0 +1,91 @@
+$OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
+--- configure.orig	Tue Nov 21 04:16:41 2006
++++ configure	Sat Dec 23 23:16:11 2006
+@@ -22903,6 +22903,7 @@ echo "${ECHO_T}yes" >&6; }
+ 	:
+ fi
+ 
++if false; then # force skip gail detection
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for GAILUTIL" >&5
+@@ -23016,6 +23017,7 @@ echo "${ECHO_T}yes" >&6; }
+ fi
+ 
+ 
++fi # force skip gail detection
+ 
+ 
+ pkg_failed=no
+@@ -24953,7 +24955,7 @@ _ACEOF
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"${datadir}/locale"`
++  ac_define_dir=`eval echo "${datadir}/locale"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   GNOMELOCALEDIR="$ac_define_dir"
+ 
+@@ -29036,7 +29038,7 @@ gladedir="${pkgdatadir}/glade"
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"${iconsdir}"`
++  ac_define_dir=`eval echo "${iconsdir}"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   GNOME_ICONDIR="$ac_define_dir"
+ 
+@@ -29049,7 +29051,7 @@ _ACEOF
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"${pixmapsdir}"`
++  ac_define_dir=`eval echo "${pixmapsdir}"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   GNOME_PIXMAPSDIR="$ac_define_dir"
+ 
+@@ -29062,7 +29064,7 @@ _ACEOF
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"${gladedir}"`
++  ac_define_dir=`eval echo "${gladedir}"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   GNOME_GLADEDIR="$ac_define_dir"
+ 
+@@ -29075,7 +29077,7 @@ _ACEOF
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"${datadir}"`
++  ac_define_dir=`eval echo "${datadir}"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   DATADIR="$ac_define_dir"
+ 
+@@ -29088,7 +29090,7 @@ _ACEOF
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"${sysconfdir}"`
++  ac_define_dir=`eval echo "${sysconfdir}"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   SYSCONFDIR="$ac_define_dir"
+ 
+@@ -29101,7 +29103,7 @@ _ACEOF
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"${libdir}"`
++  ac_define_dir=`eval echo "${libdir}"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   LIBDIR="$ac_define_dir"
+ 
+@@ -29114,7 +29116,7 @@ _ACEOF
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"$prefix"`
++  ac_define_dir=`eval echo "$prefix"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   PREFIX="$ac_define_dir"
+ 
