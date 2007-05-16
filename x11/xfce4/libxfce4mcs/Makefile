@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/08 08:28:39 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"settings management library used by most xfce4 modules"
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_FTP=	Yes
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext
 LIB_DEPENDS=	startup-notification-1::devel/startup-notification \
 		xfce4util.>=1.10::x11/xfce4/libxfce4util
 WANTLIB +=	ICE SM X11 Xau Xdmcp glib-2.0 gobject-2.0

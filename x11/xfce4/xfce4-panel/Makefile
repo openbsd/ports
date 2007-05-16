@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/14 06:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/05/16 14:22:41 steven Exp $
 
 COMMENT=	"panel for Xfce4 desktop"
 V=		4.4.1
@@ -21,7 +21,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 
-MODULES=	devel/gettext
 BUILD_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=3.5,xfce4mcs-manager.>=3.5::x11/xfce4/libxfce4mcs

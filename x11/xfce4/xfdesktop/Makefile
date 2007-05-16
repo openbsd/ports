@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/08 16:10:48 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/05/16 14:22:41 steven Exp $
 
 COMMENT=	"xfce4 desktop manager"
 
@@ -18,8 +18,6 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
-
-MODULES=	devel/gettext
 
 CONFIGURE_ARGS=	--enable-thunarx \
 		--enable-exo

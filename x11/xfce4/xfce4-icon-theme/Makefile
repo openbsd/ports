@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/08 08:48:52 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/16 14:22:40 steven Exp $
 PKG_ARCH=	*
 
 COMMENT=	"icon theme for xfce4"
@@ -19,6 +19,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	No
+MODULES=
 
 RUN_DEPENDS=	:xfce4-panel->=4.4.1:x11/xfce4/xfce4-panel
 

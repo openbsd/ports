@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/08 08:39:44 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"settings manager for xfce4"
 V=		4.4.1
@@ -16,8 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext
-
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=3.5,xfce4mcs-manager.>=3.5::x11/xfce4/libxfce4mcs
 
@@ -29,5 +27,6 @@ WANTLIB=	ICE SM X11 Xrender Xau Xdmcp expat c fontconfig freetype m \
 		startup-notification-1 xfce4util.>=1
 
 USE_GMAKE=	Yes
+CONFIGURE_ARGS=	--enable-debug=full
 
 .include <bsd.port.mk>

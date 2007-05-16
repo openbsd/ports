@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/14 06:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"advanced calendar for xfce4"
 
@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIST}-svn
 
 USE_GMAKE=	Yes
 
-MODULES=	devel/gettext
 LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4 \
 		xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
 		dbus-glib-1::x11/dbus-glib \

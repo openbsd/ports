@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/14 06:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"settings manager plug-ins for xfce4"
 
@@ -19,7 +19,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
-MODULES=	devel/gettext
 LIB_DEPENDS=	xfce4mcs-client.>=3.5,xfce4mcs-manager.>=3.5::x11/xfce4/libxfce4mcs \
 		xfcegui4.>=4::x11/xfce4/libxfcegui4
 RUN_DEPENDS=	:xfce-mcs-manager->=4.4.0:x11/xfce4/xfce-mcs-manager

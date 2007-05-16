@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/14 06:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"lightweight file manager for xfce4"
 
@@ -28,8 +28,6 @@ CONFIGURE_ARGS=	--disable-gnome-thumbnailers \
 		--enable-startup-notification \
 		--enable-exif \
 		--enable-pcre
-
-MODULES=	devel/gettext
 
 LIB_DEPENDS=	exo-0.3.>=4::x11/xfce4/exo \
 		pcre.>=1.0::devel/pcre \

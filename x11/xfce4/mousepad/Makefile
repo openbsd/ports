@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/08 08:33:12 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"really simple text editor for xfce4"
 
@@ -19,9 +19,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 
-MODULES=	devel/gettext
-
-BUILD_DEPENDS=	::textproc/p5-XML-Parser
 LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4
 
 WANTLIB= ICE SM X11 Xau Xdmcp Xrender atk-1.0 c cairo expat z \

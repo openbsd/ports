@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/08 08:28:39 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"widget library for xfce4"
 V=		4.4.1
@@ -16,8 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 EXTRACT_SUFX=	.tar.bz2
-
-MODULES=	devel/gettext
 
 LIB_DEPENDS=	xfce4util.>=1.10::x11/xfce4/libxfce4util \
 		startup-notification-1::devel/startup-notification \

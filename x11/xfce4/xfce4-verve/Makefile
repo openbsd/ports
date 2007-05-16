@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/11 19:01:26 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/16 14:22:41 steven Exp $
 
 COMMENT=	"command line plugin for the xfce4 panel"
 
@@ -18,7 +18,6 @@ MASTER_SITES=	http://goodies.xfce.org/releases/verve-plugin/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
-MODULES=	devel/gettext
 LIB_DEPENDS=	xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
 		xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		dbus-glib-1::x11/dbus-glib \

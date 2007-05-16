@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/12 10:30:51 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/16 14:22:40 steven Exp $
 
 ONLY_FOR_ARCHS=	arm i386 powerpc sparc
 
@@ -20,7 +20,6 @@ MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-battery-plugin/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
-MODULES=	devel/gettext
 
 LIB_DEPENDS=	xfce4panel::x11/xfce4/xfce4-panel
 

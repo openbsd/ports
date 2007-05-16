@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/06 08:35:46 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"basic utility library for xfce4"
 V=		4.4.1
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	c
-MODULES=	devel/gettext
 LIB_DEPENDS=	glib-2.0.>=1200,gobject-2.0.>=1200::devel/glib2
 
 CONFIGURE_ARGS+=--disable-gtk-doc

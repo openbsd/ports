@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/10 12:10:35 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/05/16 14:22:41 steven Exp $
 
 COMMENT=	"xfce4 window manager"
 V=		4.4.1
@@ -16,9 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 EXTRACT_SUFX=	.tar.bz2
 
-USE_GMAKE=	yes
+USE_GMAKE=	Yes
 
-MODULES=	devel/gettext
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=3.5,xfce4mcs-manager.>=3.5::x11/xfce4/libxfce4mcs

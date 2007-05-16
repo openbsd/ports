@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/08 13:49:25 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"lightweight vte-based terminal for xfce4"
 
@@ -19,8 +19,6 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce-4.4.1/src/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
-
-MODULES=	devel/gettext
 
 LIB_DEPENDS=	exo-0.3.>=4::x11/xfce4/exo \
 		dbus-glib-1::x11/dbus-glib \

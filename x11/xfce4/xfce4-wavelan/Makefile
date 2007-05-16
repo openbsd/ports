@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/12 10:33:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/16 14:22:41 steven Exp $
 
 BROKEN=		"No release available that works with xfce 4.4."
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MODULES=	devel/gettext
 BUILD_DEPENDS=	:xfce4-panel-*:x11/xfce4/xfce4-panel
 LIB_DEPENDS=	xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
 		xml2.>=9.0::textproc/libxml

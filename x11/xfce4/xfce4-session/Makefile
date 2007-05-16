@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/14 06:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/05/16 14:22:41 steven Exp $
 
 COMMENT=	"xfce4 session manager"
 
@@ -24,9 +24,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_ARGS= --disable-dbus
 
-MODULES=	devel/gettext
-BUILD_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
-		::textproc/intltool
+BUILD_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager
 LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=3.5::x11/xfce4/libxfce4mcs
 RUN_DEPENDS=	:xfce-mcs-manager->=4.4.1:x11/xfce4/xfce-mcs-manager

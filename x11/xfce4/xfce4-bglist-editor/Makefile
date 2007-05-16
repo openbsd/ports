@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/12 10:33:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/16 14:22:40 steven Exp $
 
 BROKEN=			"No release available that works with xfce 4.4."
 
@@ -21,7 +21,6 @@ WANTLIB=		ICE SM X11 Xext Xrender fontconfig c freetype m \
 
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=xfce-goodies/}
 
-MODULES=		devel/gettext
 BUILD_DEPENDS=		:xfce4-panel-*:x11/xfce4/xfce4-panel
 LIB_DEPENDS=		xfcegui4.>=3.4::x11/xfce4/libxfcegui4 \
 			startup-notification-1::devel/startup-notification

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/14 17:54:35 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/05/16 14:22:41 steven Exp $
 
 COMMENT=	"see temperature/weather conditions on the xfce4 panel"
 
@@ -19,7 +19,6 @@ MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-weather-plugin/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
-MODULES=	devel/gettext
 LIB_DEPENDS=	xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
 		xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		xml2.>=9::textproc/libxml

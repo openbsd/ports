@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/08 08:30:01 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"extension library for xfce4"
 
@@ -24,10 +24,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_ARGS=	--enable-mcs-plugin --disable-python
 
-MODULES=	devel/gettext
-
-BUILD_DEPENDS=	:p5-URI-*:www/p5-URI \
-		::textproc/intltool
+BUILD_DEPENDS=	:p5-URI-*:www/p5-URI
 LIB_DEPENDS=	xfce4mcs-client.>=3.5,xfce4mcs-manager.>=3.5::x11/xfce4/xfce-mcs-manager \
 		xfcegui4.>=4::x11/xfce4/libxfcegui4
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/14 06:35:36 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"monitors a chosen mountpoint for free disk space"
 
@@ -19,11 +19,9 @@ MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-fsguard-plugin/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
-MODULES=	devel/gettext
 LIB_DEPENDS=	xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
 		xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 
-BUILD_DEPENDS=	::textproc/p5-XML-Parser
 RUN_DEPENDS=	:xfce4-panel->=4.4.1:x11/xfce4/xfce4-panel
 
 WANTLIB=	X11 Xdmcp Xrender Xau fontconfig freetype m z c \

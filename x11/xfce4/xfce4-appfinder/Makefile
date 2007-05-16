@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/08 13:38:33 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"xfce4 application finder"
 
@@ -19,7 +19,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 
-MODULES=	devel/gettext
 LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4
 
 WANTLIB=	X11 Xau Xdmcp Xrender c fontconfig freetype m \

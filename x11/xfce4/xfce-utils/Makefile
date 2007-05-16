@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/10 13:40:30 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"essential utilities and scripts for xfce4"
 
@@ -20,7 +20,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 
-MODULES=	devel/gettext
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		dbus-glib-1::x11/dbus-glib \
 		dbus-1.>=6::x11/dbus

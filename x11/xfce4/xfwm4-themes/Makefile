@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/08 08:57:53 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/16 14:22:41 steven Exp $
 PKG_ARCH=	*
 
 COMMENT=	"window decoration themes for xfwm4"
@@ -18,6 +18,7 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_LIBTOOL=	No
+MODULES=
 
 RUN_DEPENDS=	:xfwm4->=4.4.1:x11/xfce4/xfwm4
 

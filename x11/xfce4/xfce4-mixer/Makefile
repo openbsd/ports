@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/10 06:39:04 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/16 14:22:40 steven Exp $
 
 COMMENT=	"volume mixer module for xfce4-panel"
 
@@ -20,7 +20,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 
-MODULES=	devel/gettext
 LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=3.5::x11/xfce4/libxfce4mcs \
 		xml2.>=9::textproc/libxml \
