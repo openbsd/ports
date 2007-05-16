@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/25 07:23:37 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/16 06:53:29 steven Exp $
 ONLY_FOR_ARCHS=	amd64 i386
 
-COMMENT=	"tool for dumping DMI/SMBIOS contents in human-readable format"	
+COMMENT=	"dump DMI/SMBIOS contents in human-readable format"	
 DISTNAME=	dmidecode-2.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://savannah.nongnu.org/download/dmidecode/
 
