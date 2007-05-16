@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/15 10:07:26 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/16 13:08:15 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"multi-protocol instant messaging client"
 
 DISTNAME=	pidgin-2.0.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	jabber               0.0      # .0.0
 SHARED_LIBS +=	oscar                0.0      # .0.0
 SHARED_LIBS +=	purple               0.0      # .0.0
@@ -78,9 +78,8 @@ MAKE_FLAGS+=    GSTREAMER_CFLAGS= GSTREAMER_LIBS=
 .endif
 
 .if ${FLAVOR:L:Mdebug}
-CFLAGS=		-O0
-CONFIGURE_ARGS+=--enable-debug
-
+CFLAGS+=	-O0
+CONFIGURE_ARGS+=--enable-debug --disable-mcheck
 INSTALL_STRIP=
 .endif
 
