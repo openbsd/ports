@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/30 01:06:38 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/05/16 09:57:25 steven Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-COMMENT=	"module for generating and manipulating images"
+COMMENT=	"generate and manipulate images"
 
 DISTNAME=	Imager-0.39
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	graphics perl5
 
-HOMEPAGE=	http://search.cpan.org/dist/Imager/
+HOMEPAGE=	http://imager.perl.org/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
