@@ -1,43 +1,78 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/01/22 11:05:02 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/05/16 15:59:23 aanriot Exp $
 bin/sarg
 @man man/man1/sarg.1
 share/examples/sarg/
 @sample ${SYSCONFDIR}/sarg/
 share/examples/sarg/css.tpl
+@sample ${SYSCONFDIR}/sarg/css.tpl
 share/examples/sarg/exclude_codes
 @sample ${SYSCONFDIR}/sarg/exclude_codes
 share/examples/sarg/fonts/
+@sample ${SYSCONFDIR}/sarg/fonts/
 share/examples/sarg/fonts/FreeSans.ttf
+@sample ${SYSCONFDIR}/sarg/fonts/FreeSans.ttf
 share/examples/sarg/images/
+@sample ${SYSCONFDIR}/sarg/images/
 share/examples/sarg/images/datetime.png
+@sample ${SYSCONFDIR}/sarg/images/datetime.png
 share/examples/sarg/images/graph.png
+@sample ${SYSCONFDIR}/sarg/images/graph.png
 share/examples/sarg/images/sarg-squidguard-block.png
+@sample ${SYSCONFDIR}/sarg/images/sarg-squidguard-block.png
 share/examples/sarg/images/sarg.png
+@sample ${SYSCONFDIR}/sarg/images/sarg.png
 share/examples/sarg/languages/
+@sample ${SYSCONFDIR}/sarg/languages/
 share/examples/sarg/languages/Bulgarian_windows1251
+@sample ${SYSCONFDIR}/sarg/languages/Bulgarian_windows1251
 share/examples/sarg/languages/Catalan
+@sample ${SYSCONFDIR}/sarg/languages/Catalan
 share/examples/sarg/languages/Czech
+@sample ${SYSCONFDIR}/sarg/languages/Czech
+share/examples/sarg/languages/Czech_UTF8
+@sample ${SYSCONFDIR}/sarg/languages/Czech_UTF8
 share/examples/sarg/languages/Dutch
+@sample ${SYSCONFDIR}/sarg/languages/Dutch
 share/examples/sarg/languages/English
+@sample ${SYSCONFDIR}/sarg/languages/English
 share/examples/sarg/languages/French
+@sample ${SYSCONFDIR}/sarg/languages/French
 share/examples/sarg/languages/German
+@sample ${SYSCONFDIR}/sarg/languages/German
 share/examples/sarg/languages/Greek
+@sample ${SYSCONFDIR}/sarg/languages/Greek
 share/examples/sarg/languages/Hungarian
+@sample ${SYSCONFDIR}/sarg/languages/Hungarian
 share/examples/sarg/languages/Indonesian
+@sample ${SYSCONFDIR}/sarg/languages/Indonesian
 share/examples/sarg/languages/Italian
+@sample ${SYSCONFDIR}/sarg/languages/Italian
 share/examples/sarg/languages/Japanese
+@sample ${SYSCONFDIR}/sarg/languages/Japanese
 share/examples/sarg/languages/Latvian
+@sample ${SYSCONFDIR}/sarg/languages/Latvian
 share/examples/sarg/languages/Polish
+@sample ${SYSCONFDIR}/sarg/languages/Polish
 share/examples/sarg/languages/Portuguese
+@sample ${SYSCONFDIR}/sarg/languages/Portuguese
 share/examples/sarg/languages/Romanian
+@sample ${SYSCONFDIR}/sarg/languages/Romanian
 share/examples/sarg/languages/Russian_UTF-8
+@sample ${SYSCONFDIR}/sarg/languages/Russian_UTF-8
 share/examples/sarg/languages/Russian_koi8
+@sample ${SYSCONFDIR}/sarg/languages/Russian_koi8
 share/examples/sarg/languages/Russian_windows1251
+@sample ${SYSCONFDIR}/sarg/languages/Russian_windows1251
 share/examples/sarg/languages/Serbian
+@sample ${SYSCONFDIR}/sarg/languages/Serbian
 share/examples/sarg/languages/Slovak
+@sample ${SYSCONFDIR}/sarg/languages/Slovak
 share/examples/sarg/languages/Spanish
+@sample ${SYSCONFDIR}/sarg/languages/Spanish
 share/examples/sarg/languages/Turkish
+@sample ${SYSCONFDIR}/sarg/languages/Turkish
 share/examples/sarg/languages/Ukrainian_windows1251
+@sample ${SYSCONFDIR}/sarg/languages/Ukrainian_windows1251
 share/examples/sarg/sarg-php/
 share/examples/sarg/sarg-php/language.php
 share/examples/sarg/sarg-php/locale/

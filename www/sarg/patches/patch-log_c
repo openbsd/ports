@@ -1,20 +1,35 @@
---- log.c.orig	Tue Nov 29 17:39:45 2005
-+++ log.c	Thu Jan 26 21:31:44 2006
-@@ -148,7 +148,7 @@ int main(argc,argv)
-    SquidGuardLogFormat[0]='\0';
+$OpenBSD: patch-log_c,v 1.2 2007/05/16 15:59:23 aanriot Exp $
+--- log.c.orig	Wed Apr  4 08:25:56 2007
++++ log.c	Wed Apr  4 08:31:27 2007
+@@ -145,7 +145,7 @@
     SquidGuardLogAlternate[0]='\0';
+    arq[0]='\0';
  
 -   strcpy(AccessLog,"/usr/local/squid/var/logs/access.log");
 +   strcpy(AccessLog,"/var/squid/logs/access.log");
     sprintf(ExcludeCodes,"%s/exclude_codes",SYSCONFDIR);
     strcpy(GraphDaysBytesBarColor,"orange");
     strcpy(BgColor,"#ffffff");
-@@ -163,7 +163,7 @@ int main(argc,argv)
+@@ -160,7 +160,7 @@
     strcpy(LogoTextColor,"#006699");
     strcpy(FontSize,"9px");
     strcpy(TempDir,"/tmp");
--   strcpy(OutputDir,"/usr/local/etc/httpd/htdocs/squid-reports");
+-   strcpy(OutputDir,"/var/www/html/squid-reports");
 +   strcpy(OutputDir,"/var/www/htdocs/sarg");
     strcpy(Ip2Name,"no");
     strcpy(DateFormat,"u");
     strcpy(OverwriteReport,"no");
+@@ -197,11 +197,11 @@
+    strcpy(ShowSargInfo,"yes");
+    strcpy(ShowSargLogo,"yes");
+    strcpy(ParsedOutputLog,"no");
+-   strcpy(ParsedOutputLogCompress,"/bin/gzip");
++   strcpy(ParsedOutputLogCompress,"/usr/bin/gzip");
+    strcpy(DisplayedValues,"abbreviation");
+    strcpy(HeaderFontSize,"9px");
+    strcpy(TitleFontSize,"11px");
+-   strcpy(AuthUserFile,"/usr/local/sarg/passwd");
++   strcpy(AuthUserFile,"/etc/sarg/passwd");
+    strcpy(AuthName,"SARG, Restricted Access");
+    strcpy(AuthType,"basic");
+    strcpy(Require,"require user admin %u");

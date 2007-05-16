@@ -1,3 +1,4 @@
+$openBSD$
 --- splitlog.c.orig	Tue Nov 29 17:39:45 2005
 +++ splitlog.c	Thu Jan 26 21:31:44 2006
 @@ -39,7 +39,7 @@ void splitlog(char *arq, char *df, int d
