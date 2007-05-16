@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/14 21:44:35 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/16 21:46:13 ckuethe Exp $
 
 COMMENT=	"Utility to test for faulty memory system"
 
 DISTNAME=	memtester-4.0.7
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	sysutils
 
