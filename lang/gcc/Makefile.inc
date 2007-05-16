@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2006/11/22 17:40:43 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2007/05/16 10:19:14 steven Exp $
 
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
@@ -29,6 +29,8 @@ PKGNAME-f95?=	g95-${FULL_PKGVERSION}
 PKGNAME-java?=	gcj-${FULL_PKGVERSION}
 PKGNAME-objc?=	gobjc-${FULL_PKGVERSION}
 PKGNAME-ada?=	gnat-${FULL_PKGVERSION}
+
+HOMEPAGE?=	http://gcc.gnu.org/
 
 DIST_SUBDIR=gcc
 CONFIG=${MACHINE_ARCH}-unknown-openbsd${OSREV}
