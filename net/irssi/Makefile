@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2007/05/16 19:29:11 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
 
-DISTNAME=	irssi-0.8.10
-DISTFILES=	irssi-0.8.10a.tar.gz
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	irssi-0.8.11
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.irssi.org/
@@ -47,12 +45,18 @@ CONFIGURE_ARGS+=	--with-socks
 BUILD_DEPENDS+=		::security/dante
 .endif
 
+MAKE_FLAGS=	scriptdir="${SYSCONFDIR}/irssi/scripts" \
+		themedir="${SYSCONFDIR}/irssi/themes"
+FAKE_FLAGS=	DESTDIR=${WRKINST} \
+		confdir="${PREFIX}/share/examples/irssi" \
+		scriptdir="${PREFIX}/share/examples/irssi/scripts" \
+		themedir="${PREFIX}/share/examples/irssi/themes"
+
 pre-configure:
 	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g;" \
 		-e "s,!!SYSCONFDIR!!,${SYSCONFDIR},g" ${WRKSRC}/docs/irssi.1
 
 post-install:
-	${INSTALL_DATA} ${WRKDIST}/irssi.conf ${PREFIX}/share/examples/irssi
 	@rm -rf ${PREFIX}/include
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/04/18 20:30:03 steven Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/05/16 19:29:11 martynas Exp $
 bin/irssi
 lib/irssi/
 lib/irssi/modules/
@@ -42,19 +42,33 @@ share/examples/irssi/irssi.conf
 share/examples/irssi/scripts/
 @sample ${SYSCONFDIR}/irssi/scripts/
 share/examples/irssi/scripts/autoop.pl
+@sample ${SYSCONFDIR}/irssi/scripts/autoop.pl
 share/examples/irssi/scripts/autorejoin.pl
+@sample ${SYSCONFDIR}/irssi/scripts/autorejoin.pl
 share/examples/irssi/scripts/buf.pl
+@sample ${SYSCONFDIR}/irssi/scripts/buf.pl
 share/examples/irssi/scripts/command.pl
+@sample ${SYSCONFDIR}/irssi/scripts/command.pl
 share/examples/irssi/scripts/dns.pl
+@sample ${SYSCONFDIR}/irssi/scripts/dns.pl
 share/examples/irssi/scripts/kills.pl
+@sample ${SYSCONFDIR}/irssi/scripts/kills.pl
 share/examples/irssi/scripts/mail.pl
+@sample ${SYSCONFDIR}/irssi/scripts/mail.pl
 share/examples/irssi/scripts/mlock.pl
+@sample ${SYSCONFDIR}/irssi/scripts/mlock.pl
 share/examples/irssi/scripts/msg-event.pl
+@sample ${SYSCONFDIR}/irssi/scripts/msg-event.pl
 share/examples/irssi/scripts/quitmsg.pl
+@sample ${SYSCONFDIR}/irssi/scripts/quitmsg.pl
 share/examples/irssi/scripts/redirect.pl
+@sample ${SYSCONFDIR}/irssi/scripts/redirect.pl
 share/examples/irssi/scripts/scriptassist.pl
+@sample ${SYSCONFDIR}/irssi/scripts/scriptassist.pl
 share/examples/irssi/scripts/splitlong.pl
+@sample ${SYSCONFDIR}/irssi/scripts/splitlong.pl
 share/examples/irssi/scripts/usercount.pl
+@sample ${SYSCONFDIR}/irssi/scripts/usercount.pl
 share/examples/irssi/themes/
 @sample ${SYSCONFDIR}/irssi/themes/
 share/examples/irssi/themes/colorless.theme

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_core_settings_c,v 1.1 2006/04/18 20:30:03 steven Exp $
---- src/core/settings.c.orig	Sun Mar 26 23:59:41 2006
-+++ src/core/settings.c	Mon Mar 27 00:13:38 2006
-@@ -674,7 +674,7 @@ static CONFIG_REC *parse_configfile(cons
+$OpenBSD: patch-src_core_settings_c,v 1.2 2007/05/16 19:29:11 martynas Exp $
+--- src/core/settings.c.orig	Wed Apr 25 21:13:56 2007
++++ src/core/settings.c	Sun May 13 15:38:40 2007
+@@ -674,7 +674,7 @@ static CONFIG_REC *parse_configfile(const char *fname)
  	else {
  		/* user configuration file not found, use the default one
  		   from sysconfdir */

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_irc_proxy_Makefile_in,v 1.2 2006/04/18 20:30:03 steven Exp $
---- src/irc/proxy/Makefile.in.orig	Sun Dec 11 23:47:47 2005
-+++ src/irc/proxy/Makefile.in	Sun Mar 19 01:28:02 2006
-@@ -129,7 +129,7 @@ module_LTLIBRARIES = libirc_proxy.la
- INCLUDES =  	-I$(top_srcdir)/src 	-I$(top_srcdir)/src/core/ 	-I$(top_srcdir)/src/irc/core/ 	$(GLIB_CFLAGS)
- 
+$OpenBSD: patch-src_irc_proxy_Makefile_in,v 1.3 2007/05/16 19:29:11 martynas Exp $
+--- src/irc/proxy/Makefile.in.orig	Sat Apr 28 20:40:31 2007
++++ src/irc/proxy/Makefile.in	Sat Apr 28 20:36:44 2007
+@@ -244,7 +244,7 @@ INCLUDES = \
+ 	-I$(top_srcdir)/src/irc/core/ \
+ 	$(GLIB_CFLAGS)
  
 -libirc_proxy_la_LDFLAGS = -module
 +libirc_proxy_la_LDFLAGS = -module -avoid-version
- 
  libirc_proxy_la_DEPENDENCIES = libirc_proxy.a
- 
+ libirc_proxy_la_SOURCES = \
+ 	proxy.c \
