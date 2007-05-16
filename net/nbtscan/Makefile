@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/16 14:28:20 kurt Exp $
 
 COMMENT=	"NetBIOS name network scanner"
 
 DISTNAME=	nbtscan-1.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
-MASTER_SITES=	http://www.inetcat.org/software/
+MASTER_SITES=	http://www.inetcat.net/software/
 
-HOMEPAGE=	http://www.inetcat.org/software/nbtscan.html
+HOMEPAGE=	http://www.inetcat.net/software/nbtscan.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
