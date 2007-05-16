@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/13 11:20:24 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/05/16 09:56:38 steven Exp $
 
 COMMENT=	"universal digital camera picture control tool"
 
 DISTNAME=	gphoto-0.4.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	gphoto_canon		0.0	\
 		gphoto_casio_qv		0.0	\
 		gphoto_coolpix600	0.0	\

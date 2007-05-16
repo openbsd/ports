@@ -10,5 +10,4 @@ gPhoto sports a new HTML engine, that let's you create your
 gallery "themes" (HTML with special tags), and publish images 
 to the web.  A directory browse mode has also been implemented.
 
-gPhoto supports a wide array of digital camera models.  Visit
-${HOMEPAGE}cameras.php3 for an updated list.
+gPhoto supports a wide array of digital camera models.
