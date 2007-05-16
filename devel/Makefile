@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.508 2007/05/12 09:45:13 pedro Exp $
+# $OpenBSD: Makefile,v 1.509 2007/05/16 14:11:53 steven Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -540,6 +540,7 @@
      SUBDIR += qt4-eventsview
      SUBDIR += rapidsvn
      SUBDIR += rats
+     SUBDIR += re2c
      SUBDIR += remake
      SUBDIR += ruby-actionpack
      SUBDIR += ruby-activesupport
