@@ -1,0 +1,6 @@
+re2c is a tool for writing very fast and very flexible scanners.
+re2c focuses on generating high efficient code for regular expression
+matching. As a result this allows a much broader range of use than
+any traditional lexer offers. And last but not least re2c generates
+warning free code that is equal to hand-written code in terms of
+size, speed and quality.

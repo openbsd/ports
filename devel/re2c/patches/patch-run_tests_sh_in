@@ -1,0 +1,9 @@
+$OpenBSD: patch-run_tests_sh_in,v 1.1.1.1 2007/05/16 14:10:57 steven Exp $
+--- run_tests.sh.in.orig	Mon May  7 00:39:42 2007
++++ run_tests.sh.in	Mon May  7 00:39:46 2007
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ _XPG=1
+ result=0
+ errcnt=0
