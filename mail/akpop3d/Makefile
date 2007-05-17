@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/17 20:34:07 steven Exp $
 
 COMMENT=	"small and secure POP3 daemon"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl
 
-MASTER_SITES=	${HOMEPAGE} \
+MASTER_SITES=	http://www.synflood.at/akpop3d/ \
 		http://www.mguillaud.net/ports/akpop3d/
 EXTRACT_SUFX=	.tar.bz2
 
