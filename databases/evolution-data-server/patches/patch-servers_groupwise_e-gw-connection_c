@@ -1,7 +1,7 @@
-$OpenBSD: patch-servers_groupwise_e-gw-connection_c,v 1.1 2006/01/06 00:10:41 pvalchev Exp $
---- servers/groupwise/e-gw-connection.c.orig	Thu Jan  5 12:35:48 2006
-+++ servers/groupwise/e-gw-connection.c	Thu Jan  5 12:36:10 2006
-@@ -1764,8 +1764,8 @@ e_gw_connection_get_categories (EGwConne
+$OpenBSD: patch-servers_groupwise_e-gw-connection_c,v 1.2 2007/05/17 14:40:53 jasper Exp $
+--- servers/groupwise/e-gw-connection.c.orig	Wed Jan  3 11:09:26 2007
++++ servers/groupwise/e-gw-connection.c	Sun Apr 22 21:11:41 2007
+@@ -1996,8 +1996,8 @@ e_gw_connection_get_categories (EGwConnection *cnc, GH
  	EGwConnectionPrivate *priv;
          SoupSoapParameter *param, *subparam, *second_level_child;
  	char *id, *name;
