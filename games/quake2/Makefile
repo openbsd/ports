@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/15 21:40:01 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/17 14:24:05 jasper Exp $
 
 ONLY_FOR_ARCHS= 	i386
 SHARED_ONLY=		Yes
@@ -6,7 +6,7 @@ SHARED_ONLY=		Yes
 COMMENT=		"first person shooter"
 
 DISTNAME=		quake2-0.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		games
 
 HOMEPAGE=		http://www.quakeforge.net/
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xxf86dga Xxf86vm c m ossaudio pthread \
 			usbhid
 
-MASTER_SITES=		http://www.quakeforge.net/files/quake2forge/
+MASTER_SITES=		${HOMEPAGE}/files/quake2/ \
+			http://humppa.nl/distfiles/
 
 LIB_DEPENDS=		SDL::devel/sdl
 
