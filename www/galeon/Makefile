@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2007/05/15 14:47:36 martynas Exp $
+# $OpenBSD: Makefile,v 1.35 2007/05/17 17:47:38 martynas Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
 V=		2.0.3
 DISTNAME=	galeon-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -22,7 +23,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
 		m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 plc4 \
 		plds4 png popt pthread ssl startup-notification-1 stdc++ \
-		util z
+		util z \
+		freebl3 nss3 nssckbi smime3 softokn3 ssl3
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 
@@ -42,8 +44,8 @@ LIB_DEPENDS=	gnome-desktop-2::x11/gnome/desktop \
 		mozilla-firefox/gtkembedmoz,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:mozilla-firefox->=2.0:www/mozilla-firefox \
 		xml2.>=6.12::textproc/libxml
 
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/mozilla-firefox -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nss -I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lfreebl3 -lnss3 -lnssckbi -lsmime3 -lsoftokn3 -lssl3 -pthread -L${X11BASE}/lib -L${LOCALBASE}/mozilla-firefox"
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
