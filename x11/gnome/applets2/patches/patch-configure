@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
---- configure.orig	Tue Nov 21 04:16:41 2006
-+++ configure	Sat Dec 23 23:16:11 2006
-@@ -22903,6 +22903,7 @@ echo "${ECHO_T}yes" >&6; }
+$OpenBSD: patch-configure,v 1.11 2007/05/17 14:12:20 jasper Exp $
+--- configure.orig	Mon Mar 12 14:04:16 2007
++++ configure	Thu May 17 16:08:05 2007
+@@ -22939,6 +22939,7 @@ echo "${ECHO_T}yes" >&6; }
  	:
  fi
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
  
  pkg_failed=no
  { echo "$as_me:$LINENO: checking for GAILUTIL" >&5
-@@ -23016,6 +23017,7 @@ echo "${ECHO_T}yes" >&6; }
+@@ -23052,6 +23053,7 @@ echo "${ECHO_T}yes" >&6; }
  fi
  
  
@@ -17,7 +17,29 @@ $OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
  
  
  pkg_failed=no
-@@ -24953,7 +24955,7 @@ _ACEOF
+@@ -23928,8 +23930,8 @@ else
+   BUILD_KEYBOARD_APPLET_FALSE=
+ fi
+ 
++if false; then # force skip gnome settings daeon detection
+ 
+-
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for GNOME_SETTINGS_DAEMON" >&5
+ echo $ECHO_N "checking for GNOME_SETTINGS_DAEMON... $ECHO_C" >&6; }
+@@ -24006,10 +24008,10 @@ if test "x$HAVE_GNOME_SETTINGS_DAEMON" = "xno"; then
+ echo "$as_me: WARNING: gnome-settings-daemon DBUS API is required to build modem-applet." >&2;}
+ fi
+ 
++fi # force skip gnome settings daemon detection
+ 
+ 
+ 
+-
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for LIBWNCK" >&5
+ echo $ECHO_N "checking for LIBWNCK... $ECHO_C" >&6; }
+@@ -25117,7 +25119,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -26,7 +48,7 @@ $OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GNOMELOCALEDIR="$ac_define_dir"
  
-@@ -29036,7 +29038,7 @@ gladedir="${pkgdatadir}/glade"
+@@ -28684,7 +28686,7 @@ gladedir="${pkgdatadir}/glade"
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -35,7 +57,7 @@ $OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GNOME_ICONDIR="$ac_define_dir"
  
-@@ -29049,7 +29051,7 @@ _ACEOF
+@@ -28697,7 +28699,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -44,7 +66,7 @@ $OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GNOME_PIXMAPSDIR="$ac_define_dir"
  
-@@ -29062,7 +29064,7 @@ _ACEOF
+@@ -28710,7 +28712,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -53,7 +75,7 @@ $OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GNOME_GLADEDIR="$ac_define_dir"
  
-@@ -29075,7 +29077,7 @@ _ACEOF
+@@ -28723,7 +28725,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -62,7 +84,7 @@ $OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    DATADIR="$ac_define_dir"
  
-@@ -29088,7 +29090,7 @@ _ACEOF
+@@ -28736,7 +28738,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -71,7 +93,7 @@ $OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    SYSCONFDIR="$ac_define_dir"
  
-@@ -29101,7 +29103,7 @@ _ACEOF
+@@ -28749,7 +28751,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -80,7 +102,7 @@ $OpenBSD: patch-configure,v 1.10 2007/05/16 22:18:38 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    LIBDIR="$ac_define_dir"
  
-@@ -29114,7 +29116,7 @@ _ACEOF
+@@ -28762,7 +28764,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'

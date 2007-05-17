@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2007/05/16 22:18:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2007/05/17 14:12:20 jasper Exp $
 
 COMMENT-main=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
 
 VERSION=		2.18.0
 DISTNAME=		gnome-applets-${VERSION}
-PKGNAME-main=		gnome-applets2-${VERSION}
-PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
+PKGNAME-main=		gnome-applets2-${VERSION}p0
+PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p0
 SHARED_LIBS +=	gweather             0.0      # .0.0
 CATEGORIES=		x11 x11/gnome
 
@@ -60,7 +60,6 @@ MULTI_PACKAGES=		-main
 CONFIGURE_ARGS+=	--disable-battstat
 .else
 MULTI_PACKAGES+=	-battstat
-WANTLIB+=		Xau
 .endif
 
 USE_X11=		Yes
