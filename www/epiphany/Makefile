@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/15 14:01:19 martynas Exp $
+# $OpenBSD: Makefile,v 1.14 2007/05/17 17:48:53 martynas Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	"extremely lightweight and simple web browser for gnome"
@@ -6,6 +6,7 @@ COMMENT=	"extremely lightweight and simple web browser for gnome"
 M=		2.18
 V=		2.18.1
 DISTNAME=	epiphany-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
@@ -42,7 +43,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
 		m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 plc4 \
-		plds4 png popt pthread ssl startup-notification-1 util z
+		plds4 png popt pthread ssl startup-notification-1 util z \
+		freebl3 nss3 nssckbi smime3 softokn3 ssl3
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -52,8 +54,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-gecko=firefox \
 		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \
 		--disable-schemas-install
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/mozilla-firefox -L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nss -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lfreebl3 -lnss3 -lnssckbi -lsmime3 -lsoftokn3 -lssl3 -pthread -L${LOCALBASE}/mozilla-firefox" \
 		HOME=/tmp
 
 SUBST_VARS+=	M
