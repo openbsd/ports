@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/06 22:22:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/17 18:15:51 aanriot Exp $
 
 COMMENT=		"check shell scripts for bash-specific constructs"
 
 DISTNAME=		checkbashisms-0.1
+PKGNAME=		${DISTNAME}p0
 DISTFILES=
 CATEGORIES=		sysutils devel
 
@@ -14,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/checkbashisms.pl \
