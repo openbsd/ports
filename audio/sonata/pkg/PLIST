@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/17 21:27:37 jasper Exp $
+bin/sonata
+lib/python${MODPY_VERSION}/site-packages/mmkeys.so
+lib/python${MODPY_VERSION}/site-packages/mpdclient3.py
+lib/python${MODPY_VERSION}/site-packages/mpdclient3.pyc
+lib/python${MODPY_VERSION}/site-packages/sonata.py
+lib/python${MODPY_VERSION}/site-packages/sonata.pyc
+share/applications/
+share/applications/sonata.desktop
+share/locale/de/LC_MESSAGES/sonata.mo
+share/locale/fr/LC_MESSAGES/sonata.mo
+share/locale/pl/LC_MESSAGES/sonata.mo
+share/locale/ru/LC_MESSAGES/sonata.mo
+share/locale/uk/LC_MESSAGES/sonata.mo
+share/locale/zh_CN/LC_MESSAGES/sonata.mo
+share/pixmaps/
+share/pixmaps/sonata-album.png
+share/pixmaps/sonata-artist.png
+share/pixmaps/sonata-stock_volume-max.png
+share/pixmaps/sonata-stock_volume-med.png
+share/pixmaps/sonata-stock_volume-min.png
+share/pixmaps/sonata-stock_volume-mute.png
+share/pixmaps/sonata.png
+share/pixmaps/sonata_large.png
+share/pixmaps/sonatacd.png
+share/pixmaps/sonatacd_large.png
