@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/30 09:52:22 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/17 04:50:58 steven Exp $
 
-COMMENT=	"library for importing and exporting WordPerfect(tm) documents"
+COMMENT=	"import and export WordPerfect(tm) documents"
 
 DISTNAME=	libwpd-0.8.9
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc
 
 SHARED_LIBS=	wpd		8.9 \
