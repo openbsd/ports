@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/17 09:25:47 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/05/17 10:50:48 steven Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
@@ -16,6 +16,7 @@
      SUBDIR+= xfce4-battery
      SUBDIR+= xfce4-bglist-editor
      SUBDIR+= xfce4-clipman
+     SUBDIR+= xfce4-dict
      SUBDIR+= xfce4-diskperf
      SUBDIR+= xfce4-fsguard
      SUBDIR+= xfce4-genmon
