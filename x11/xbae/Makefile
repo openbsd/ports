@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/31 11:49:24 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/17 05:03:49 steven Exp $
 
-COMMENT=		A Motif-based widget which displays a grid of cells as a spreadsheet
+COMMENT=	"Motif-based table widget"
 
-DISTNAME=		xbae-4.60.4
+DISTNAME=	xbae-4.60.4
+PKGNAME=	${DISTNAME}p0
 
-SHARED_LIBS=		Xbae 4.60
+SHARED_LIBS=	Xbae 4.60
 
-CATEGORIES=		x11 math
+CATEGORIES=	x11 math
 
-HOMEPAGE=		http://xbae.sourceforge.net/
+HOMEPAGE=	http://xbae.sourceforge.net/
 
-MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
+MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +26,7 @@ USE_LIBTOOL=	 Yes
 USE_X11=	 Yes
 USE_MOTIF=	 Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	 --datadir=${LOCALBASE}/share/doc \
+CONFIGURE_ARGS=	 --datadir=${PREFIX}/share/doc \
 		 --enable-production
 
 .include <bsd.port.mk>
