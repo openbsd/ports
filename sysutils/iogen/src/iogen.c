@@ -1,4 +1,4 @@
-/* $OpenBSD: iogen.c,v 1.8 2007/04/16 17:46:31 marco Exp $ */
+/* $OpenBSD: iogen.c,v 1.9 2007/05/18 14:48:16 marco Exp $ */
 /*
  * Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
  *
@@ -53,6 +53,7 @@ volatile sig_atomic_t	update_res = 0;
 off_t			file_size;
 off_t			io_size;
 int			interval;
+int			timeout = -1;
 int			read_perc;
 int			randomize;
 char			target_dir[MAXPATHLEN];
@@ -141,7 +142,7 @@ err_log(int flags, const char *fmt, ...)
 
 	if (flags & LOGERR)
 		snprintf(buf, sizeof buf, "%s: %s", buf, strerror(errno_save));
-
+		
 	syslog(flags & LOGFATAL ? LOG_CRIT : LOG_NOTICE, buf);
 
 	if (flags & LOGKILLALL)
@@ -331,6 +332,7 @@ usage(void)
 	fprintf(stderr, "-f <result directory>; Default = iogen.res\n");
 	fprintf(stderr, "-n <number of io processes>; Default = 1\n");
 	fprintf(stderr, "-t <seconds between update>; Default = 60 seconds\n");
+	fprintf(stderr, "-T <seconds to timeout io>; Default = disabled\n");
 	fprintf(stderr, "-P <payload pattern>; ? displays patterns, Default = readable text\n");
 	fprintf(stderr, "-k kill all running io processes\n\n");
 	fprintf(stderr, "If parameters are omited defaults will be used.\n");
@@ -382,6 +384,19 @@ void
 sigalarm(int sig)
 {
 	update_res = 1;
+}
+
+void
+sigtimeout(int sig)
+{
+	/*
+	 * XXX we can't set a flag because IO is wedged; terminate program.
+	 * traditional race conditions are (mostly) not applicable because
+	 * the main loop is not running.  This is not pretty but it should
+	 * work.
+	 */
+	err_log(LOGFATAL | LOGKILLALL,
+	    "i/o timeout (%ds) in process %i", timeout, getpid());
 }
 
 void
@@ -509,6 +524,12 @@ run_io(void)
 		    "could not install ALARM handler in process %i",
 		    getpid());
 
+	if (timeout != -1)
+		if (signal(SIGALRM, sigtimeout) == SIG_ERR)
+			err_log(LOGERR | LOGFATAL,
+			    "could not install TIMEOUT handler in process %i",
+			    getpid());
+
 	/* poor mans memory test */
 	src = malloc(io_size);
 	if (!src)
@@ -590,6 +611,9 @@ run_io(void)
 			fflush(resfile);
 			alarm(interval);
 		}
+
+		if (timeout != -1)
+			alarm(timeout);
 
 		/* reads */
 		for (i = 0; i < max_reads; i++) {
@@ -686,7 +710,7 @@ main(int argc, char *argv[])
 	strlcpy(target_dir, "./", sizeof target_dir);
 	strlcpy(result_dir, "./", sizeof result_dir);
 
-	while ((ch = getopt(argc, argv, "b:d:f:kn:p:rs:t:P:")) != -1) {
+	while ((ch = getopt(argc, argv, "b:d:f:kn:p:rs:t:T:P:")) != -1) {
 		switch (ch) {
 		case 'b':
 			io_size = atoll(optarg) *
@@ -753,6 +777,14 @@ main(int argc, char *argv[])
 			if (interval < 1)
 				errx(1, "time slice too small");
 			if (interval > 3600)
+				errx(1, "time slice too large");
+			break;
+		case 'T':
+			timeout = atoi(optarg);
+
+			if (timeout < 1)
+				errx(1, "time slice too small");
+			if (timeout > 3600)
 				errx(1, "time slice too large");
 			break;
 		case 'P':

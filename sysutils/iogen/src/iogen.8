@@ -1,4 +1,4 @@
-.\" $OpenBSD: iogen.8,v 1.7 2007/04/16 17:46:31 marco Exp $
+.\" $OpenBSD: iogen.8,v 1.8 2007/05/18 14:48:16 marco Exp $
 .\"
 .\" Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
 .\"
@@ -88,6 +88,10 @@ Under heavy I/O this value can be skewed due to
 the asynchronous nature of
 .Xr alarm 3 .
 The default is 60 seconds.
+.It Fl T Ar I/O timeout
+This determines the maximum time an I/O run is allowed to take to complete.
+If the timeout is reached all iogen processes will be terminated.
+The default is disabled.
 .El
 .Pp
 Although the algorithm for I/O generation is incredibly simple,
