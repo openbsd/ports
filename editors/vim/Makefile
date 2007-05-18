@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.81 2007/03/16 17:54:38 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.82 2007/05/18 15:18:59 ckuethe Exp $
 
 COMMENT-main=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
-DISTNAME=	vim-7.0
-REVISION=	216
-VERSION=	7.0.${REVISION}
+DISTNAME=	vim-7.1
+REVISION=	2
+VERSION=	7.1.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
@@ -15,23 +15,19 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		ftp://ftp.home.vim.org/pub/vim/unix/ \
 		ftp://ftp.berlin.de.vim.org/unix/
-MASTER_SITES0=	${MASTER_SITES:S/unix/patches\/7.0/}
+MASTER_SITES0=	${MASTER_SITES:S/unix/patches\/7.1/}
 MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
 DISTFILES=	${DISTNAME}.tar.bz2 \
 		${DISTNAME}-lang.tar.gz:1 
-DIST_SUBDIR=	vim7
+DIST_SUBDIR=	vim71
 
 HOMEPAGE=	http://www.vim.org/
 MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 PATCHFILES=	#
-# The patches ignored with egrep are for non-unix platforms. If we
-# attempt to use them, patch fails because they refer to files only
-# found in the vim-extra (ie. non-unix) source archive.
-_patches!=	jot -w%03d - 1 ${REVISION} 1 | \
-	egrep -v '005|027|028|032|045|057|065|074|108|130|132|138|156|161|170|171|180|197|198|208|215'
+_patches!=	jot -w%03d - 1 ${REVISION} 1
 .for p in ${_patches}
-PATCHFILES+=	7.0.${p}:0
+PATCHFILES+=	7.1.${p}:0
 .endfor
 
 # allow vim to build on m68k and vax
