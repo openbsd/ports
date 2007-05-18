@@ -9,5 +9,8 @@ and on the sensor side:
 # prelude-adduser register nepenthes "idmef:w" \
         <manager address> --uid 564 --gid 564
  
-Then, fill in ${SYSCONFDIR}/nepenthes/log-prelude.conf if needed, before
-starting nepenthes.
+Then, enable prelude logging in ${SYSCONFDIR}/nepenthes/nepenthes.conf
+(uncomment the "logprelude.so" line).
+
+Eventually, fill in ${SYSCONFDIR}/nepenthes/log-prelude.conf if needed,
+before starting nepenthes.

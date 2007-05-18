@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/15 15:09:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/18 08:05:59 aanriot Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"determine the malware activity on a network"
 
 DISTNAME= 	nepenthes-0.2.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
 HOMEPAGE=	http://nepenthes.mwcollect.org/
