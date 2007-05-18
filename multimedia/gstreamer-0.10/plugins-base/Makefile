@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/03/17 21:35:31 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/18 21:44:54 jasper Exp $
 
 COMMENT-main=		"multimedia framework - plugins base"
 COMMENT-gnome=		"multimedia framework - gnome vfs plugin"
@@ -11,7 +11,7 @@ COMMENT-pango=		"multimedia framework - pango renderer"
 V=			0.10.12
 DISTNAME=		gst-plugins-base-$V
 PKGNAME-main=		gstreamer-plugins-base-$V
-PKGNAME-gnome=		gstreamer-gnome-$V
+PKGNAME-gnome=		gstreamer-gnome-$Vp0
 PKGNAME-cdda=		gstreamer-cdda-$V
 PKGNAME-ogg=		gstreamer-ogg-$V
 PKGNAME-theora=		gstreamer-theora-$V
@@ -45,10 +45,11 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 RUN_DEPENDS-main=	
 			
 WANTLIB-gnome=		${WANTLIB} \
-			ORBit-2 ORBitCosNaming-2 bonobo-2 \
-			bonobo-activation crypto gconf-2 ssl popt \
+			ORBit-2 ORBitCosNaming-2 crypto gconf-2 ssl \
 			gstbase-0.10
 LIB_DEPENDS-gnome= 	${LIB_DEPENDS} \
+			popt::devel/popt \
+			bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
 			gnomevfs-2::x11/gnome/vfs2
 
 WANTLIB-cdda=		${WANTLIB} \
