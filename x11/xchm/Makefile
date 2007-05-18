@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:41:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/18 21:55:07 martynas Exp $
 
 COMMENT=	"display chm files"
 
-DISTNAME=	xchm-1.10
+DISTNAME=	xchm-1.13
 CATEGORIES=	devel textproc x11
 
 HOMEPAGE=	http://xchm.sourceforge.net/
@@ -22,5 +22,7 @@ WANTLIB=	m c stdc++ pthread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
