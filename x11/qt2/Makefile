@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2006/11/20 12:02:29 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2007/05/18 09:12:59 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -9,7 +9,7 @@ VERSION=	3.2
 DISTNAME=	qt-2.${VERSION}
 CATEGORIES=	x11
 
-PKGNAME-main=		qt2-${VERSION}p3
+PKGNAME-main=		qt2-${VERSION}p4
 PKGNAME-examples=	qt2-examples-${VERSION}p0
 PKGNAME-html=		qt2-html-${VERSION}p0
 
