@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/02/02 16:24:28 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/18 02:32:12 kurt Exp $
 
 COMMENT=		"UML diagram framework for Eclipse"
 
-V=			2.0.0
+V=			2.0.3
 DISTNAME=		uml2-SDK-${V}
 PKGNAME=		eclipse-plugin-uml2-sdk-${V}
 CATEGORIES=		devel/eclipse/plugins java
@@ -19,9 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.eclipse.org/tools/uml2/downloads/drops/${V}/R200606221411/
+MASTER_SITES=		http://download.eclipse.org/modeling/mdt/uml2/downloads/drops/${V}/R200702141227/
 
-RUN_DEPENDS=		:eclipse-plugin-emf-sdk->=2.2:devel/eclipse/plugins/emf
+RUN_DEPENDS=		:eclipse-plugin-emf-sdk->=2.2.2:devel/eclipse/plugins/emf
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes

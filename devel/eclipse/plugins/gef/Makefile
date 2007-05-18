@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/02/02 16:24:28 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/18 02:32:12 kurt Exp $
 
 COMMENT=		"graphical editing environment for eclipse"
 
-V=			3.2
+V=			3.2.2
 DISTNAME=		GEF-SDK-${V}
 PKGNAME=		eclipse-plugin-gef-sdk-${V}
 CATEGORIES=		devel/eclipse/plugins java
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.eclipse.org/tools/gef/downloads/drops/R-3.2-200606270816/
+MASTER_SITES=		http://download.eclipse.org/tools/gef/downloads/drops/R-3.2.2-200702081315/
 
 RUN_DEPENDS=		:eclipse-sdk->=3.2:devel/eclipse/sdk
 
