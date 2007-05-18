@@ -1,0 +1,11 @@
+$OpenBSD: patch-sqliteman_main_cpp,v 1.1 2007/05/18 00:12:49 espie Exp $
+--- sqliteman/main.cpp.orig	Fri May 18 02:00:33 2007
++++ sqliteman/main.cpp	Fri May 18 02:00:41 2007
+@@ -7,6 +7,7 @@ for which a new license (GPL+exception) is in place.
+ 
+ #include <iostream>
+ #include <signal.h>
++#include <unistd.h>
+ 
+ #include <QApplication>
+ #include <QIcon>
