@@ -1,19 +1,19 @@
-$OpenBSD: patch-config_Xsession_in,v 1.4 2005/05/26 03:39:31 marcm Exp $
---- config/Xsession.in.orig	Thu Feb  3 14:57:45 2005
-+++ config/Xsession.in	Wed May 18 21:04:10 2005
-@@ -218,15 +218,16 @@ if [ "x$command" = "xdefault" ] ; then
-   elif [ -x /etc/X11/Xclients ]; then
-     command="/etc/X11/Xclients"
-   else
--    echo "$0: Cannot find Xclients"
--    # FIXME: kind of an evil failsafe
--    command="xsm"
-+    # Load the OpenBSD default Xsession...
-+    command="/etc/X11/xdm/Xsession"
-+    # hack around running two agents
-+    NO_SSH=yes
+$OpenBSD: patch-config_Xsession_in,v 1.5 2007/05/18 17:20:40 jasper Exp $
+--- config/Xsession.in.orig	Sat Apr 21 13:13:28 2007
++++ config/Xsession.in	Sat Apr 21 13:15:31 2007
+@@ -223,7 +223,10 @@ if [ "x$command" = "xdefault" ] ; then
+ 	disptext=`gettextfunc "System has no Xclients file, so starting a failsafe xterm session.  Windows will have focus only if the mouse pointer is above them.  To get out of this mode type 'exit' in the window."`
+       "$zenity" --info --text "$disptext"
+     else
+-      echo "$0: Cannot find Xclients"
++      # Load the OpenBSD default Xsession...
++      command="/etc/X11/xdm/Xsession"
++      # hack around running two agents
++      NO_SSH=yes
+     fi
+     exec xterm -geometry 80x24+0+0
    fi
- fi
+@@ -231,7 +234,7 @@ fi
  
  # add ssh-agent if found
  sshagent="`gdmwhich ssh-agent`"

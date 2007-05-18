@@ -1,20 +1,20 @@
-$OpenBSD: patch-config_Makefile_in,v 1.6 2005/05/26 03:39:31 marcm Exp $
---- config/Makefile.in.orig	Mon Apr 11 21:37:31 2005
-+++ config/Makefile.in	Wed May 18 21:04:10 2005
-@@ -252,7 +252,7 @@ localedir = $(sysconfdir)/gdm
- bisessdir = $(datadir)/gdm/BuiltInSessions
- instsessdir = $(datadir)/xsessions
- initdir = $(sysconfdir)/gdm/Init
+$OpenBSD: patch-config_Makefile_in,v 1.7 2007/05/18 17:20:40 jasper Exp $
+--- config/Makefile.in.orig	Sat Apr 21 13:12:24 2007
++++ config/Makefile.in	Sat Apr 21 13:13:11 2007
+@@ -267,7 +267,7 @@ am__leading_dot = @am__leading_dot@
+ am__quote = @am__quote@
+ am__tar = @am__tar@
+ am__untar = @am__untar@
 -authdir = $(localstatedir)/gdm
 +authdir = $(localstatedir)/db/gdm
- logdir = $(localstatedir)/log/gdm
- gnomercdir = $(sysconfdir)/gdm
- postdir = $(sysconfdir)/gdm/PostSession
-@@ -586,7 +586,6 @@ install-data-hook: gdm.conf Xsession gno
- 
+ bindir = @bindir@
+ build = @build@
+ build_alias = @build_alias@
+@@ -711,7 +711,6 @@ install-data-hook: gdm.conf gdm.conf-custom Xsession I
  	if test '!' -d $(DESTDIR)$(authdir); then \
  		$(mkinstalldirs) $(DESTDIR)$(authdir); \
--		chown root:gdm $(DESTDIR)$(authdir); \
  		chmod 1770 $(DESTDIR)$(authdir); \
+-		chown root:gdm $(DESTDIR)$(authdir) || : ; \
  	fi
  
+ 	system=`uname`; \

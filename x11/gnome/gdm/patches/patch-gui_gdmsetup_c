@@ -1,7 +1,7 @@
-$OpenBSD: patch-gui_gdmsetup_c,v 1.1 2004/09/15 04:15:25 marcm Exp $
---- gui/gdmsetup.c.orig	Wed Aug 18 12:27:40 2004
-+++ gui/gdmsetup.c	Fri Sep 10 20:42:41 2004
-@@ -2025,7 +2025,7 @@ install_response (GtkWidget *chooser, gi
+$OpenBSD: patch-gui_gdmsetup_c,v 1.2 2007/05/18 17:20:40 jasper Exp $
+--- gui/gdmsetup.c.orig	Sat Apr 21 13:38:12 2007
++++ gui/gdmsetup.c	Sat Apr 21 13:38:29 2007
+@@ -5532,7 +5532,7 @@ install_theme_file (gchar *filename, GtkListStore *sto
  		/* HACK! */
  		argv[0] = chown;
  		argv[1] = "-R";

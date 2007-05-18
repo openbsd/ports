@@ -1,16 +1,16 @@
-$OpenBSD: patch-daemon_slave_c,v 1.5 2005/05/26 03:39:31 marcm Exp $
---- daemon/slave.c.orig	Mon Mar  7 12:40:10 2005
-+++ daemon/slave.c	Wed May 18 21:04:12 2005
-@@ -2655,7 +2655,7 @@ gdm_slave_greeter (void)
+$OpenBSD: patch-daemon_slave_c,v 1.6 2007/05/18 17:20:40 jasper Exp $
+--- daemon/slave.c.orig	Sat Apr 21 13:30:03 2007
++++ daemon/slave.c	Sat Apr 21 13:31:27 2007
+@@ -2707,7 +2707,7 @@ gdm_slave_greeter (void)
  
- 	exec_command (EXPANDED_BINDIR "/gdmlogin", NULL);
+ 	exec_command (LIBEXECDIR "/gdmlogin", NULL);
  
--	VE_IGNORE_EINTR (execl (EXPANDED_BINDIR "/gdmlogin", EXPANDED_BINDIR "/gdmlogin", NULL));
-+	VE_IGNORE_EINTR (execl (EXPANDED_BINDIR "/gdmlogin", EXPANDED_BINDIR "/gdmlogin", (void *)NULL));
+-	VE_IGNORE_EINTR (execl (LIBEXECDIR "/gdmlogin", LIBEXECDIR "/gdmlogin", NULL));
++	VE_IGNORE_EINTR (execl (LIBEXECDIR "/gdmlogin", LIBEXECDIR "/gdmlogin", (void *)NULL));
  
  	gdm_error_box (d,
  		       GTK_MESSAGE_ERROR,
-@@ -3569,8 +3569,7 @@ session_child_run (struct passwd *pwent,
+@@ -3643,8 +3643,7 @@ session_child_run (struct passwd *pwent,
  	if (setusercontext (NULL, pwent, pwent->pw_uid,
  			    LOGIN_SETLOGIN | LOGIN_SETPATH |
  			    LOGIN_SETPRIORITY | LOGIN_SETRESOURCES |
@@ -18,14 +18,5 @@ $OpenBSD: patch-daemon_slave_c,v 1.5 2005/05/26 03:39:31 marcm Exp $
 -			    LOGIN_SETENV) < 0)
 +			    LOGIN_SETUMASK | LOGIN_SETUSER) < 0)
  		gdm_child_exit (DISPLAY_REMANAGE,
- 				_("%s: setusercontext() failed for %s. "
+ 				_("%s: setusercontext () failed for %s. "
  				  "Aborting."), "session_child_run",
-@@ -4846,7 +4845,7 @@ check_for_interruption (const char *msg)
- 					execl (GdmSoundProgram,
- 					       GdmSoundProgram,
- 					       GdmSoundOnLoginFile,
--					       NULL);
-+					       (void *)NULL);
- 
- 					_exit (0);
- 				}

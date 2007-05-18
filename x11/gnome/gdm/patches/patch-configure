@@ -1,25 +1,25 @@
-$OpenBSD: patch-configure,v 1.5 2005/05/26 03:39:31 marcm Exp $
---- configure.orig	Mon Apr 11 21:37:37 2005
-+++ configure	Wed May 18 21:41:47 2005
-@@ -27279,7 +27279,6 @@ else
+$OpenBSD: patch-configure,v 1.6 2007/05/18 17:20:40 jasper Exp $
+--- configure.orig	Sat Apr 21 13:18:28 2007
++++ configure	Sat Apr 21 13:22:28 2007
+@@ -31596,7 +31596,6 @@ else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
--LIBWRAP_PATH=""
+-	LIBWRAP_PATH=""
  fi
- rm -f conftest.err conftest.$ac_objext \
-       conftest$ac_exeext conftest.$ac_ext
-@@ -28770,7 +28769,7 @@ cat >>confdefs.h <<_ACEOF
- _ACEOF
  
+ rm -f core conftest.err conftest.$ac_objext \
+@@ -33737,7 +33736,7 @@ fi
+ #
+ # Define some variables to represent the directories we use.
+ #
+-authdir=${localstatedir}/gdm
++authdir=${localstatedir}/db/gdm
  
--AUTHDIR_TMP="$localstatedir/gdm"
-+AUTHDIR_TMP="$localstatedir/db/gdm"
- EXPANDED_AUTHDIR=`eval echo $AUTHDIR_TMP`
+ gdmlocaledir=${gdmconfdir}
  
- cat >>confdefs.h <<_ACEOF
-@@ -28961,9 +28960,9 @@ case "$host" in
-         ;;
+@@ -34138,9 +34137,9 @@ case "$host" in
+ 	;;
  *)
          GDM_USER_PATH="/bin:/usr/bin"
 -        HALT_COMMAND="/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
@@ -27,10 +27,10 @@ $OpenBSD: patch-configure,v 1.5 2005/05/26 03:39:31 marcm Exp $
          REBOOT_COMMAND="/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now"
 -        SUSPEND_COMMAND=""
 +        SUSPEND_COMMAND="/usr/sbin/zzz"
-         ;;
- esac
- 
-@@ -28976,7 +28975,14 @@ if test ! -h /usr/X11R6 -a -x /usr/X11R6
+         XSESSION_SHELL=/bin/sh
+         SOUND_PROGRAM=/usr/bin/play
+         GDMGNOMESESSIONCMD=gnome-session
+@@ -34156,7 +34155,14 @@ if test ! -h /usr/X11R6 -a -x /usr/X11R6/bin/X; then
     X_SERVER_PATH="/usr/X11R6/bin"
     X_SERVER="/usr/X11R6/bin/X"
     GDM_USER_PATH="$GDM_USER_PATH:/usr/X11R6/bin"

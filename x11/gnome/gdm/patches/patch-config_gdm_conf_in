@@ -1,22 +1,32 @@
---- config/gdm.conf.in.orig	Mon Feb 14 14:49:35 2005
-+++ config/gdm.conf.in	Wed May 18 21:04:11 2005
-@@ -71,8 +71,8 @@ TimedLoginDelay=30
- # User and group used for running gdm GUI applicaitons.  By default this
- # is set to user gdm and group gdm.  This user/group should have very
- # limited permissions and access to ony the gdm directories and files.
+$OpenBSD: patch-config_gdm_conf_in,v 1.6 2007/05/18 17:20:40 jasper Exp $
+--- config/gdm.conf.in.orig	Mon Apr  9 08:15:16 2007
++++ config/gdm.conf.in	Fri May 18 19:34:41 2007
+@@ -99,8 +99,8 @@ TimedLoginDelay=30
+ # User and group used for running GDM GUI applicaitons.  By default this is set
+ # to user "gdm" and group "gdm".  This user/group should have very limited
+ # permissions and access to ony the gdm directories and files.
 -User=gdm
 -Group=gdm
 +User=_x11
 +Group=_x11
+ 
  # To try to kill all clients started at greeter time or in the Init script.
- # doesn't always work, only if those clients have a window of their own
- #KillInitClients=true
-@@ -135,7 +135,7 @@ Xnest=@X_XNEST_PATH@/Xnest @X_XNEST_CONF
- # we force X to use specific vts.  turn VTAllocation to false if this
- # is causing problems.
+ # does not always work, only if those clients have a window of their own.
+@@ -178,7 +178,7 @@ XnestUnscaledFontPath=@X_XNEST_UNSCALED_FONTPATH@
+ # X to use specific vts.  turn VTAllocation to false if this is causing
+ # problems.
  #FirstVT=7
 -#VTAllocation=true
 +VTAllocation=false
- # Should double login be treated with a warning (and possibility to change
- # vts on linux and freebsd systems for console logins)
+ # Should double login be treated with a warning (and possibility to change VT's
+ # on Linux and FreeBSD systems for console logins)
  #DoubleLoginWarning=true
+@@ -353,7 +353,7 @@ Browser=false
+ # User ID's less than the MinimalUID value will not be included in the face
+ # browser or in the gdmselection list for Automatic/Timed login.  They will not
+ # be displayed regardless of the settings for Include and Exclude.
+-#MinimalUID=100
++MinimalUID=1000
+ # Users listed in Include will be included in the face browser and in the
+ # gdmsetup selection list for Automatic/Timed login.  Users should be separated
+ # by commas.
