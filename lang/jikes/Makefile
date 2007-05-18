@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/05 00:43:45 ian Exp $
+# $OpenBSD: Makefile,v 1.15 2007/05/18 06:52:16 steven Exp $
 
 COMMENT="compile Java source into .class files (quickly!)"
 
 # Jikes, a fast Java compiler. 
 
 DISTNAME=	jikes-1.22
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	lang
 HOMEPAGE=	http://jikes.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jikes/}
