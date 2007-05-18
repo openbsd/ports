@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/20 02:26:18 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/18 02:27:51 kurt Exp $
 
 COMMENT=		"SubVersion (CVS replacement) plug-in for Eclipse IDE"
 
-V=			1.0.3
+V=			1.2.1
 DISTNAME=		site-${V}
 PKGNAME=		eclipse-plugin-subclipse-${V}
 CATEGORIES=		devel/eclipse/plugins java
@@ -19,14 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://subclipse.tigris.org/
 
-MASTER_SITES=		http://subclipse.tigris.org/files/documents/906/32730/
+MASTER_SITES=		http://subclipse.tigris.org/files/documents/906/37653/
 
 # Try to use in-tree lynx since tigris' brain-dead web site insists
 # on doing a redirection loop if you don't handle cookes, which default
 # FETCH_CMD does not.
 FETCH_CMD=		lynx -accept_all_cookies -source >${DISTDIR}/$$f
 
-RUN_DEPENDS=		:eclipse-sdk-*:devel/eclipse/sdk
+RUN_DEPENDS=		:eclipse-sdk->=3.2:devel/eclipse/sdk
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
