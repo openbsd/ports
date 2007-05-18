@@ -1,0 +1,10 @@
+--- cgi/cgiwrap.c.orig	Thu Apr 26 13:58:52 2007
++++ cgi/cgiwrap.c	Thu Apr 26 13:59:00 2007
+@@ -11,7 +11,6 @@
+ 
+ #include "cs_config.h"
+ 
+-#include <features.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <stdlib.h>
