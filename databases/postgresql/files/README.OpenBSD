@@ -33,10 +33,10 @@ add the following lines to /etc/rc.local and /etc/rc.shutdown, respectively:
 /etc/rc.local:
 
 if [ -x !!PREFIX!!/bin/pg_ctl ]; then
+	echo -n ' postgresql'
 	su -l _postgresql -c "nohup !!PREFIX!!/bin/pg_ctl start \
 	    -D /var/postgresql/data -l /var/postgresql/logfile \
-	    -o '-D /var/postgresql/data'"
-	echo -n ' postgresql'
+	    -o '-D /var/postgresql/data' >/dev/null"
 fi
 
 /etc/rc.shutdown:
