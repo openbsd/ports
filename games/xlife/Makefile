@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/13 10:08:13 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/05/18 21:44:30 espie Exp $
 
 COMMENT=	"John Horton Conway's Game of Life"
 
 DISTNAME=	xlife-5.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.catb.org/~esr/software.html
