@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/18 10:00:25 espie Exp $
 
-COMMENT=	"report errors from perspective of caller of a clan of modules"
+COMMENT=	"Carp for clan of modules"
 
 MODULES=	cpan
 DISTNAME=	Carp-Clan-5.3
-PKGNAME=	p5-${DISTNAME}p1
+PKGNAME=	p5-${DISTNAME}p2
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
