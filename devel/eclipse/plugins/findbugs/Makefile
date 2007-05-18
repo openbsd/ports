@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/02 16:52:13 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/18 02:27:10 kurt Exp $
 
 COMMENT=		"Eclipse plugin for Java program checker (bytecode analyzer)"
 
-V=			1.1.3
-DISTNAME=		edu.umd.cs.findbugs.plugin.eclipse_${V}.20070105
+V=			1.2.0
+DISTNAME=		edu.umd.cs.findbugs.plugin.eclipse_${V}.20070425
 EXTRACT_SUFX=           .zip
 PKGNAME=		eclipse-plugin-findbugs-${V}
 PKG_ARCH=		*
