@@ -1,0 +1,39 @@
+--- drivers/bcmxcp.c.orig	Fri May 18 13:57:40 2007
++++ drivers/bcmxcp.c	Fri May 18 13:57:26 2007
+@@ -732,18 +732,6 @@ void upsdrv_initinfo(void)
+ 	/* Set driver version info */
+ 	dstate_setinfo("driver.version.internal", "%s", DRV_VERSION);
+ 
+-	/* Get information on Phases from UPS */
+-	res = command_read_sequence(PW_UPS_TOP_DATA_REQ, answer);
+-	if (res <= 0)
+-		fatal_with_errno("Could not communicate with the ups");
+-
+-	nphases = (answer[0] & 0x0F) +1;
+-	dstate_setinfo("input.phases", "%d", nphases);
+-
+-
+-	/* Init BCM/XCP <-> NUT meter map */
+-	init_meter_map();
+-
+ 	/* Init BCM/XCP alarm descriptions */
+ 	init_alarm_map();
+ 
+@@ -786,8 +774,15 @@ void upsdrv_initinfo(void)
+ 	}
+ 	dstate_setinfo("ups.power.nominal", "%d", iRating);
+ 
+-	/* Skip	UPS' number of phases and phase angle, as NUT do not care */
+-	iIndex += 2;
++	/* Get information on Phases from UPS */
++	nphases = (answer[iIndex++]);
++	dstate_setinfo("output.phases", "%d", nphases);
++
++	/* Init BCM/XCP <-> NUT meter map */
++	init_meter_map();
++
++	/* Skip UPS' phase angle, as NUT do not care */
++	iIndex += 1;
+ 	
+ 	/* Get length of UPS description */
+ 	len = answer[iIndex++];

@@ -1,7 +1,7 @@
-$OpenBSD: patch-clients_upsset_c,v 1.4 2004/09/27 03:10:24 marcm Exp $
---- clients/upsset.c.orig	Mon Mar  8 04:09:03 2004
-+++ clients/upsset.c	Thu Sep 16 08:48:42 2004
-@@ -202,7 +202,7 @@ static void do_pickups(const char *currf
+$OpenBSD: patch-clients_upsset_c,v 1.5 2007/05/18 12:22:46 henning Exp $
+--- clients/upsset.c.orig	Mon Jul 10 14:33:14 2006
++++ clients/upsset.c	Fri May 18 13:54:23 2007
+@@ -202,7 +202,7 @@ static void do_pickups(const char *currfunc)
  	char	hostfn[SMALLBUF];
  	PCONF_CTX	ctx;
  

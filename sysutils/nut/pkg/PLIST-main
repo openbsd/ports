@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 19:36:43 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/05/18 12:22:46 henning Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
 @pkgpath sysutils/nut,snmp
 @pkgpath sysutils/nut,no_cgi,snmp
 @newuser ${NUT_USER}:${NUT_ID}:::UPS User:/var/empty:/sbin/nologin
+bin/al175
 bin/apcsmart
 bin/bcmxcp
 bin/belkin
@@ -25,13 +26,17 @@ bin/ippon
 bin/isbmex
 bin/liebert
 bin/masterguard
+bin/megatec
 bin/metasys
 bin/mge-shut
 bin/mge-utalk
 bin/mustek
+bin/nitram
 bin/oneac
+bin/optiups
 bin/powercom
-bin/powermust
+bin/powerpanel
+bin/rhino
 bin/safenet
 bin/sms
 bin/solis
@@ -44,6 +49,11 @@ bin/upsdrvctl
 bin/upslog
 bin/upsrw
 bin/victronups
+@comment html/
+@comment html/bottom.html
+@comment html/header.html
+@comment html/index.html
+html/nut-banner.png
 @man man/man5/hosts.conf.5
 @man man/man5/ups.conf.5
 @man man/man5/upsd.conf.5
@@ -52,6 +62,7 @@ bin/victronups
 @man man/man5/upssched.conf.5
 @man man/man5/upsset.conf.5
 @man man/man5/upsstats.html.5
+@man man/man8/al175.8
 @man man/man8/apcsmart.8
 @man man/man8/bcmxcp.8
 @man man/man8/belkin.8
@@ -61,23 +72,26 @@ bin/victronups
 @man man/man8/bestups.8
 @man man/man8/cpsups.8
 @man man/man8/cyberpower.8
+@man man/man8/dummy-ups.8
 @man man/man8/etapro.8
 @man man/man8/everups.8
 @man man/man8/fentonups.8
-@man man/man8/gamatronic.8
 @man man/man8/genericups.8
 @man man/man8/ippon.8
 @man man/man8/isbmex.8
 @man man/man8/liebert.8
 @man man/man8/masterguard.8
+@man man/man8/megatec.8
 @man man/man8/metasys.8
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
 @man man/man8/mustek.8
+@man man/man8/nitram.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
+@man man/man8/optiups.8
 @man man/man8/powercom.8
-@man man/man8/powermust.8
+@man man/man8/powerpanel.8
 @man man/man8/safenet.8
 @man man/man8/sms.8
 @man man/man8/solis.8
@@ -102,6 +116,8 @@ sbin/upssched
 share/doc/nut/
 share/doc/nut/FAQ
 share/doc/nut/README
+share/doc/nut/acpi.txt
+share/doc/nut/al175-vars.txt
 share/doc/nut/big-servers.txt
 share/doc/nut/cables/
 share/doc/nut/cables/apc-rs500-serial.txt
@@ -122,6 +138,7 @@ share/doc/nut/design.txt
 share/doc/nut/developers.txt
 share/doc/nut/hid-subdrivers.txt
 share/doc/nut/ideas.txt
+share/doc/nut/megatec.txt
 share/doc/nut/new-drivers.txt
 share/doc/nut/new-names.txt
 share/doc/nut/osd-notify.txt

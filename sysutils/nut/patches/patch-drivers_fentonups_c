@@ -1,7 +1,7 @@
-$OpenBSD: patch-drivers_fentonups_c,v 1.2 2006/05/03 17:32:09 henning Exp $
---- drivers/fentonups.c.orig	Thu May 26 14:22:27 2005
-+++ drivers/fentonups.c	Mon May  1 18:16:55 2006
-@@ -34,14 +34,17 @@ static	float	lowvolt = 0, voltrange, chr
+$OpenBSD: patch-drivers_fentonups_c,v 1.3 2007/05/18 12:22:46 henning Exp $
+--- drivers/fentonups.c.orig	Tue Dec 19 04:18:58 2006
++++ drivers/fentonups.c	Fri May 18 13:54:23 2007
+@@ -34,14 +34,17 @@ static	float	lowvolt = 0, voltrange, chrglow = 0, chrg
  static	int	lownorm, highnorm;
  
  /* handle devices which don't give a properly formatted I string */

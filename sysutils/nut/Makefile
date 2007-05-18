@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/25 19:36:43 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/05/18 12:22:45 henning Exp $
 
 COMMENT-main=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
 COMMENT-snmp=		"driver for monitoring UPSs via SNMP"
 
-VERSION=		2.0.3
-DISTNAME=		nut-${VERSION}
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-cgi=		nut-cgi-${VERSION}
-PKGNAME-snmp=		nut-snmp-${VERSION}
+DISTNAME=		nut-2.0.5
+PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
+PKGNAME-snmp=		${DISTNAME:S/-/-snmp-}
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.networkupstools.org/
+
 MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 MASTER_SITES=		http://random.networkupstools.org/source/2.0/
@@ -28,12 +27,13 @@ NUT_ID=			529
 SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID
 
 CONFIGURE_STYLE=	gnu old
-CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/nut
-CONFIGURE_ARGS+=	--datadir=${LOCALBASE}/share/ups
-CONFIGURE_ARGS+=	--with-statepath=/var/db/nut
-CONFIGURE_ARGS+=	--with-user=${NUT_USER}
-CONFIGURE_ARGS+=	--with-ssl
-CONFIGURE_ARGS+=	--enable-strip
+CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/nut \
+			--datadir=${PREFIX}/share/ups \
+			--mandir=${PREFIX}/man \
+			--with-statepath=/var/db/nut \
+			--with-user=${NUT_USER} \
+			--with-ssl \
+			--enable-strip
 
 ALL_TARGET=		all
 INSTALL_TARGET=		install
@@ -48,7 +48,7 @@ MULTI_PACKAGES+=	-cgi
 MULTI_PACKAGES+=	-snmp
 .endif
 
-PREFIX-cgi=			${WEB_ROOT}
+PREFIX-cgi=		${WEB_ROOT}
 WANTLIB-cgi=
 
 LIB_DEPENDS-snmp=	netsnmp::net/net-snmp
@@ -56,10 +56,10 @@ LIB_DEPENDS-snmp=	netsnmp::net/net-snmp
 .if ${MULTI_PACKAGES:M-cgi}
 BUILD_DEPENDS+=		:gd->=1.8.3:graphics/gd
 
-CONFIGURE_ARGS+=	--with-cgi
-CONFIGURE_ARGS+=	--with-cgipath="${WEB_ROOT}/cgi-bin/nut"
-CONFIGURE_ARGS+=	--with-gd-libs="-L${LOCALBASE}/lib -lgd -lpng -lz -ljpeg -lm"
-CONFIGURE_ARGS+=	--with-gd-includes="-I${LOCALBASE}/include"
+CONFIGURE_ARGS+=	--with-cgi \
+			--with-cgipath="${WEB_ROOT}/cgi-bin/nut" \
+			--with-gd-libs="-L${PREFIX}/lib -lgd -lpng -lz -ljpeg -lm" \
+			--with-gd-includes="-I${PREFIX}/include"
 
 ALL_TARGET+=		cgi
 INSTALL_TARGET+=	install-cgi
