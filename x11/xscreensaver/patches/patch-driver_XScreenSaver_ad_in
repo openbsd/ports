@@ -1,7 +1,7 @@
-$OpenBSD: patch-driver_XScreenSaver_ad_in,v 1.4 2005/06/03 05:38:32 marcm Exp $
---- driver/XScreenSaver.ad.in.orig	Sun Mar 20 21:06:35 2005
-+++ driver/XScreenSaver.ad.in	Sun Apr 17 23:31:32 2005
-@@ -191,7 +191,7 @@ GetViewPortIsFullOfLies: False
+$OpenBSD: patch-driver_XScreenSaver_ad_in,v 1.5 2007/05/18 19:11:37 martynas Exp $
+--- driver/XScreenSaver.ad.in.orig	Sat Apr 21 06:33:17 2007
++++ driver/XScreenSaver.ad.in	Mon May 14 20:34:42 2007
+@@ -186,7 +186,7 @@ GetViewPortIsFullOfLies: False
  				noseguy -root				    \n\
  				flame -root				    \n\
  -				lmorph -root				    \n\

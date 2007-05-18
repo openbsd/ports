@@ -1,6 +1,6 @@
---- configure.orig	Thu Nov  2 21:06:36 2006
-+++ configure	Thu Nov  2 21:13:35 2006
-@@ -8925,7 +8925,7 @@
+--- configure.orig	Sat Apr 21 06:33:15 2007
++++ configure	Mon May 14 20:34:42 2007
+@@ -10306,7 +10306,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8995,7 +8995,7 @@
+@@ -10389,7 +10389,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +18,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9067,7 +9067,7 @@
+@@ -10474,7 +10474,7 @@ fi
  	  fi
  
            if test "$gt_cv_func_dgettext_libintl" = "yes"; then
@@ -27,7 +27,7 @@
            fi
  
  	  if test "$gt_cv_func_dgettext_libc" = "yes" \
-@@ -16029,7 +16029,7 @@
+@@ -18193,7 +18193,7 @@ if test "${ac_cv_lib_pthread_pthread_create+set}" = se
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -36,9 +36,9 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -16088,7 +16088,7 @@
- echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
+@@ -18265,7 +18265,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then
 -  GL_LIBS="-lpthread"
 +  GL_LIBS="-pthread"

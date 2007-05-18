@@ -1,6 +1,6 @@
---- hacks/deco.c.orig	Thu Nov  2 21:01:08 2006
-+++ hacks/deco.c	Thu Nov  2 21:03:06 2006
-@@ -134,7 +134,6 @@
+--- hacks/deco.c.orig	Mon Feb 13 00:01:40 2006
++++ hacks/deco.c	Mon May 14 20:34:43 2007
+@@ -134,7 +134,6 @@ deco_free (Display *dpy, Window window, void *closure)
    free (st);
  }
  
