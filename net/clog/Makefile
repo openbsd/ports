@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/16 00:31:20 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/18 19:19:11 steven Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1997/11/05 11:39:40 obrien Exp $
 
 COMMENT=	"tcp connection logger daemon"
@@ -6,8 +6,7 @@ COMMENT=	"tcp connection logger daemon"
 DISTNAME=	clog-1.6
 CATEGORIES=	net security
 
-MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.saturn.net/clog/ \
-		ftp://ftp.rediris.es/mirror/coast/tools/unix/clog/
+MASTER_SITES=	ftp://ftp.rediris.es/mirror/coast/tools/unix/logutils/clog/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
