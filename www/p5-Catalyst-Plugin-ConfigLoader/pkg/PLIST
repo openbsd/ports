@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 20:34:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/18 19:17:27 simon Exp $
 ${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/ConfigLoader/
 ${P5SITE}/Catalyst/Plugin/ConfigLoader.pm
+${P5SITE}/Catalyst/Plugin/ConfigLoader/Manual.pod
 @man man/man3p/Catalyst::Plugin::ConfigLoader.3p
+@man man/man3p/Catalyst::Plugin::ConfigLoader::Manual.3p
