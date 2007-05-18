@@ -1,0 +1,11 @@
+$OpenBSD: patch-baobab_src_baobab-utils_c,v 1.1 2007/05/18 14:07:39 jasper Exp $
+--- baobab/src/baobab-utils.c.orig	Tue Dec 12 10:36:07 2006
++++ baobab/src/baobab-utils.c	Tue Dec 12 10:36:13 2006
+@@ -27,7 +27,6 @@
+ #include <stdlib.h>
+ #include <sys/stat.h>
+ #include <string.h>
+-#include <monetary.h>
+ #include <glib/gi18n.h>
+ #include <glib/gprintf.h>
+ #include <gtk/gtk.h>

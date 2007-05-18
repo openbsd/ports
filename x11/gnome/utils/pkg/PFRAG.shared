@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2007/05/18 14:07:39 jasper Exp $
+@lib lib/libgdict-1.0.so.${LIBgdict-1.0_VERSION}
