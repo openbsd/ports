@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/26 13:03:57 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/18 19:27:15 pedro Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"parsing expression grammars library for lua"
-DISTNAME=	lpeg-0.5
+DISTNAME=	lpeg-0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 RUN_DEPENDS=	::lang/lua
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS=::devel/lpeg
 
 ALL_TARGET=	lpeg.so
 MAKE_FILE=	makefile
@@ -29,7 +28,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc.html ${PREFIX}/share/doc/lpeg
 
 do-regress:
-	${LOCALBASE}/bin/lua ${WRKSRC}/re.lua
-	${LOCALBASE}/bin/lua ${WRKSRC}/test.lua
+	cd ${WRKDIST} && ${LOCALBASE}/bin/lua test.lua
 
 .include <bsd.port.mk>
