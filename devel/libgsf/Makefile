@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2007/05/09 22:00:01 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2007/05/19 09:13:54 jasper Exp $
 
 COMMENT-main=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
 
 VERSION=		1.14.3
 DISTNAME=		libgsf-${VERSION}
-PKGNAME-main=		${DISTNAME}p1
-PKGNAME-gnome=		libgsf-gnome-${VERSION}p0
+PKGNAME-main=		${DISTNAME}p2
+PKGNAME-gnome=		libgsf-gnome-${VERSION}p1
 SHARED_LIBS +=  gsf-1                114.3     # .114.3
 SHARED_LIBS +=  gsf-gnome-1          114.3     # .114.3
 
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

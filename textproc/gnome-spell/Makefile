@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2007/04/07 14:05:34 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/05/19 09:13:54 jasper Exp $
 
 COMMENT=		"a Gnome/Bonobo component for spell checking"
 
 VERSION=		1.0.6
 DISTNAME=		gnome-spell-${VERSION}
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=    		textproc
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

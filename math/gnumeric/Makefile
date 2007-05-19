@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/19 09:13:54 jasper Exp $
 
 COMMENT=		"spreadsheet application for GNOME"
 
 VERSION=		1.4.3
 DISTNAME=		gnumeric-${VERSION}
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=    		math x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/gnumeric/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

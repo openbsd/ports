@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2007/05/19 09:13:54 jasper Exp $
 
 COMMENT=		"GNOME Application Libs"
 
 DISTNAME=		gal-0.24
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 SHARED_LIBS +=	gal                  24.0     # .24.0
 
 CATEGORIES=    		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

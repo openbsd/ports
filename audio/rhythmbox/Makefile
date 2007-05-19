@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2007/04/12 20:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/19 09:13:54 jasper Exp $
 
 COMMENT=		"Music Management Application"
 
 DISTNAME=		rhythmbox-0.8.8
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.rhythmbox.org
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/rhythmbox/0.8/}
 

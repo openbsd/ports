@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2007/03/01 16:46:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/05/19 09:13:54 jasper Exp $
 
 COMMENT=		"SOAP implementation in C"
 
 DISTNAME=		libsoup-2.2.100
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		soup-2.2	13.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

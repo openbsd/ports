@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/05/19 09:13:54 jasper Exp $
 
 COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
 
 VERSION=		0.3.14
 DISTNAME=		scrollkeeper-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS=		scrollkeeper	1.0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://scrollkeeper.sourceforge.net
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/scrollkeeper/0.3/}
 EXTRACT_SUFX=		.tar.bz2

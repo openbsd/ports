@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/08 08:07:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2007/05/19 09:13:54 jasper Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
 VERSION=		3.14.1
 API_VERSION=		3.14
 DISTNAME=		gtkhtml-${VERSION}
-PKGNAME=		gtkhtml3-${VERSION}
+PKGNAME=		gtkhtml3-${VERSION}p0
 SHARED_LIBS +=	gtkhtml-3.14         0.0         # .19.0
 CATEGORIES=    		www
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
