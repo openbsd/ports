@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2007/04/25 10:27:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.181 2007/05/19 14:24:48 steven Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -101,6 +101,7 @@
      SUBDIR += netpbm
      SUBDIR += openexr
      SUBDIR += openjpeg
+     SUBDIR += p5-Cairo
      SUBDIR += p5-Chart
      SUBDIR += p5-GD
      SUBDIR += p5-GD-Barcode
