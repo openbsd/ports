@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/19 10:10:24 steven Exp $
+bin/execflow
+${P5SITE}/Event/
+${P5SITE}/Event/ExecFlow/
+${P5SITE}/Event/ExecFlow.pm
+${P5SITE}/Event/ExecFlow/Callbacks.pm
+${P5SITE}/Event/ExecFlow/Frontend/
+${P5SITE}/Event/ExecFlow/Frontend.pm
+${P5SITE}/Event/ExecFlow/Frontend/Term.pm
+${P5SITE}/Event/ExecFlow/Job/
+${P5SITE}/Event/ExecFlow/Job.pm
+${P5SITE}/Event/ExecFlow/Job/Code.pm
+${P5SITE}/Event/ExecFlow/Job/Command.pm
+${P5SITE}/Event/ExecFlow/Job/Group.pm
+${P5SITE}/Event/ExecFlow/Scheduler/
+${P5SITE}/Event/ExecFlow/Scheduler.pm
+${P5SITE}/Event/ExecFlow/Scheduler/SimpleMax.pm
+@man man/man3p/Event::ExecFlow.3p
+@man man/man3p/Event::ExecFlow::Callbacks.3p
+@man man/man3p/Event::ExecFlow::Frontend.3p
+@man man/man3p/Event::ExecFlow::Job.3p
+@man man/man3p/Event::ExecFlow::Job::Code.3p
+@man man/man3p/Event::ExecFlow::Job::Command.3p
+@man man/man3p/Event::ExecFlow::Job::Group.3p
+@man man/man3p/Event::ExecFlow::Scheduler.3p
+@man man/man3p/Event::ExecFlow::Scheduler::SimpleMax.3p
