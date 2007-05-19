@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/19 14:24:01 steven Exp $
+${P5ARCH}/
+${P5ARCH}/Cairo/
+${P5ARCH}/Cairo.pm
+${P5ARCH}/Cairo/Install/
+${P5ARCH}/Cairo/Install/Files.pm
+${P5ARCH}/Cairo/Install/cairo-perl-auto.h
+${P5ARCH}/Cairo/Install/cairo-perl-auto.typemap
+${P5ARCH}/Cairo/Install/cairo-perl.h
+${P5ARCH}/Cairo/Install/cairo-perl.typemap
+${P5ARCH}/Cairo/Install/doctypes
+${P5ARCH}/auto/
+${P5ARCH}/auto/Cairo/
+${P5ARCH}/auto/Cairo/Cairo.bs
+${P5ARCH}/auto/Cairo/Cairo.so
+@man man/man3p/Cairo.3p
