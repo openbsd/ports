@@ -1,0 +1,296 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/19 10:09:27 steven Exp $
+${P5SITE}/Locale/
+${P5SITE}/Locale/Messages.pm
+${P5SITE}/Locale/Recode/
+${P5SITE}/Locale/Recode.pm
+${P5SITE}/Locale/Recode/_Aliases.pm
+${P5SITE}/Locale/Recode/_Conversions.pm
+${P5SITE}/Locale/RecodeData/
+${P5SITE}/Locale/RecodeData.pm
+${P5SITE}/Locale/RecodeData/ASMO_449.pm
+${P5SITE}/Locale/RecodeData/ATARI_ST.pm
+${P5SITE}/Locale/RecodeData/ATARI_ST_EURO.pm
+${P5SITE}/Locale/RecodeData/CP10007.pm
+${P5SITE}/Locale/RecodeData/CP1250.pm
+${P5SITE}/Locale/RecodeData/CP1251.pm
+${P5SITE}/Locale/RecodeData/CP1252.pm
+${P5SITE}/Locale/RecodeData/CP1253.pm
+${P5SITE}/Locale/RecodeData/CP1254.pm
+${P5SITE}/Locale/RecodeData/CP1256.pm
+${P5SITE}/Locale/RecodeData/CP1257.pm
+${P5SITE}/Locale/RecodeData/CSN_369103.pm
+${P5SITE}/Locale/RecodeData/CWI.pm
+${P5SITE}/Locale/RecodeData/DEC_MCS.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_AT_DE.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_AT_DE_A.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_CA_FR.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_DK_NO.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_DK_NO_A.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_ES.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_ES_A.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_ES_S.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_FI_SE.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_FI_SE_A.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_FR.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_IS_FRISS.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_IT.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_PT.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_UK.pm
+${P5SITE}/Locale/RecodeData/EBCDIC_US.pm
+${P5SITE}/Locale/RecodeData/ECMA_CYRILLIC.pm
+${P5SITE}/Locale/RecodeData/GEORGIAN_ACADEMY.pm
+${P5SITE}/Locale/RecodeData/GEORGIAN_PS.pm
+${P5SITE}/Locale/RecodeData/GOST_19768_74.pm
+${P5SITE}/Locale/RecodeData/GREEK7.pm
+${P5SITE}/Locale/RecodeData/GREEK7_OLD.pm
+${P5SITE}/Locale/RecodeData/GREEK_CCITT.pm
+${P5SITE}/Locale/RecodeData/HP_ROMAN8.pm
+${P5SITE}/Locale/RecodeData/IBM037.pm
+${P5SITE}/Locale/RecodeData/IBM038.pm
+${P5SITE}/Locale/RecodeData/IBM1004.pm
+${P5SITE}/Locale/RecodeData/IBM1026.pm
+${P5SITE}/Locale/RecodeData/IBM1047.pm
+${P5SITE}/Locale/RecodeData/IBM256.pm
+${P5SITE}/Locale/RecodeData/IBM273.pm
+${P5SITE}/Locale/RecodeData/IBM274.pm
+${P5SITE}/Locale/RecodeData/IBM275.pm
+${P5SITE}/Locale/RecodeData/IBM277.pm
+${P5SITE}/Locale/RecodeData/IBM278.pm
+${P5SITE}/Locale/RecodeData/IBM280.pm
+${P5SITE}/Locale/RecodeData/IBM281.pm
+${P5SITE}/Locale/RecodeData/IBM284.pm
+${P5SITE}/Locale/RecodeData/IBM285.pm
+${P5SITE}/Locale/RecodeData/IBM290.pm
+${P5SITE}/Locale/RecodeData/IBM297.pm
+${P5SITE}/Locale/RecodeData/IBM420.pm
+${P5SITE}/Locale/RecodeData/IBM423.pm
+${P5SITE}/Locale/RecodeData/IBM424.pm
+${P5SITE}/Locale/RecodeData/IBM437.pm
+${P5SITE}/Locale/RecodeData/IBM500.pm
+${P5SITE}/Locale/RecodeData/IBM850.pm
+${P5SITE}/Locale/RecodeData/IBM851.pm
+${P5SITE}/Locale/RecodeData/IBM852.pm
+${P5SITE}/Locale/RecodeData/IBM855.pm
+${P5SITE}/Locale/RecodeData/IBM857.pm
+${P5SITE}/Locale/RecodeData/IBM860.pm
+${P5SITE}/Locale/RecodeData/IBM861.pm
+${P5SITE}/Locale/RecodeData/IBM862.pm
+${P5SITE}/Locale/RecodeData/IBM863.pm
+${P5SITE}/Locale/RecodeData/IBM864.pm
+${P5SITE}/Locale/RecodeData/IBM865.pm
+${P5SITE}/Locale/RecodeData/IBM866.pm
+${P5SITE}/Locale/RecodeData/IBM868.pm
+${P5SITE}/Locale/RecodeData/IBM869.pm
+${P5SITE}/Locale/RecodeData/IBM870.pm
+${P5SITE}/Locale/RecodeData/IBM871.pm
+${P5SITE}/Locale/RecodeData/IBM874.pm
+${P5SITE}/Locale/RecodeData/IBM875.pm
+${P5SITE}/Locale/RecodeData/IBM880.pm
+${P5SITE}/Locale/RecodeData/IBM891.pm
+${P5SITE}/Locale/RecodeData/IBM903.pm
+${P5SITE}/Locale/RecodeData/IBM904.pm
+${P5SITE}/Locale/RecodeData/IBM905.pm
+${P5SITE}/Locale/RecodeData/IBM918.pm
+${P5SITE}/Locale/RecodeData/IEC_P27_1.pm
+${P5SITE}/Locale/RecodeData/INIS.pm
+${P5SITE}/Locale/RecodeData/INIS_8.pm
+${P5SITE}/Locale/RecodeData/INIS_CYRILLIC.pm
+${P5SITE}/Locale/RecodeData/ISO_10367_BOX.pm
+${P5SITE}/Locale/RecodeData/ISO_2033_1983.pm
+${P5SITE}/Locale/RecodeData/ISO_5427.pm
+${P5SITE}/Locale/RecodeData/ISO_5427_EXT.pm
+${P5SITE}/Locale/RecodeData/ISO_5428.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_1.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_10.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_11.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_13.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_14.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_15.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_16.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_2.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_3.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_4.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_5.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_6.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_7.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_8.pm
+${P5SITE}/Locale/RecodeData/ISO_8859_9.pm
+${P5SITE}/Locale/RecodeData/KOI8_R.pm
+${P5SITE}/Locale/RecodeData/KOI8_RU.pm
+${P5SITE}/Locale/RecodeData/KOI8_T.pm
+${P5SITE}/Locale/RecodeData/KOI8_U.pm
+${P5SITE}/Locale/RecodeData/KOI_8.pm
+${P5SITE}/Locale/RecodeData/LATIN_GREEK.pm
+${P5SITE}/Locale/RecodeData/LATIN_GREEK_1.pm
+${P5SITE}/Locale/RecodeData/MACARABIC.pm
+${P5SITE}/Locale/RecodeData/MACCROATIAN.pm
+${P5SITE}/Locale/RecodeData/MACCYRILLIC.pm
+${P5SITE}/Locale/RecodeData/MACGREEK.pm
+${P5SITE}/Locale/RecodeData/MACHEBREW.pm
+${P5SITE}/Locale/RecodeData/MACICELAND.pm
+${P5SITE}/Locale/RecodeData/MACINTOSH.pm
+${P5SITE}/Locale/RecodeData/MACROMANIA.pm
+${P5SITE}/Locale/RecodeData/MACTHAI.pm
+${P5SITE}/Locale/RecodeData/MACTURKISH.pm
+${P5SITE}/Locale/RecodeData/MACUKRAINE.pm
+${P5SITE}/Locale/RecodeData/MAC_IS.pm
+${P5SITE}/Locale/RecodeData/MAC_SAMI.pm
+${P5SITE}/Locale/RecodeData/MAC_UK.pm
+${P5SITE}/Locale/RecodeData/NATS_DANO.pm
+${P5SITE}/Locale/RecodeData/NATS_SEFI.pm
+${P5SITE}/Locale/RecodeData/NEXTSTEP.pm
+${P5SITE}/Locale/RecodeData/SAMI_WS2.pm
+${P5SITE}/Locale/RecodeData/TIS_620.pm
+${P5SITE}/Locale/RecodeData/US_ASCII.pm
+${P5SITE}/Locale/RecodeData/UTF_8.pm
+${P5SITE}/Locale/RecodeData/VISCII.pm
+${P5SITE}/Locale/RecodeData/_Encode.pm
+${P5SITE}/Locale/TextDomain.pm
+${P5SITE}/Locale/gettext_pp.pm
+${P5SITE}/Locale/gettext_xs.pod
+@man man/man3p/Locale::Messages.3p
+@man man/man3p/Locale::Recode.3p
+@man man/man3p/Locale::Recode::_Aliases.3p
+@man man/man3p/Locale::Recode::_Conversions.3p
+@man man/man3p/Locale::RecodeData.3p
+@man man/man3p/Locale::RecodeData::ASMO_449.3p
+@man man/man3p/Locale::RecodeData::ATARI_ST.3p
+@man man/man3p/Locale::RecodeData::ATARI_ST_EURO.3p
+@man man/man3p/Locale::RecodeData::CP10007.3p
+@man man/man3p/Locale::RecodeData::CP1250.3p
+@man man/man3p/Locale::RecodeData::CP1251.3p
+@man man/man3p/Locale::RecodeData::CP1252.3p
+@man man/man3p/Locale::RecodeData::CP1253.3p
+@man man/man3p/Locale::RecodeData::CP1254.3p
+@man man/man3p/Locale::RecodeData::CP1256.3p
+@man man/man3p/Locale::RecodeData::CP1257.3p
+@man man/man3p/Locale::RecodeData::CSN_369103.3p
+@man man/man3p/Locale::RecodeData::CWI.3p
+@man man/man3p/Locale::RecodeData::DEC_MCS.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_AT_DE.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_AT_DE_A.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_CA_FR.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_DK_NO.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_DK_NO_A.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_ES.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_ES_A.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_ES_S.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_FI_SE.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_FI_SE_A.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_FR.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_IS_FRISS.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_IT.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_PT.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_UK.3p
+@man man/man3p/Locale::RecodeData::EBCDIC_US.3p
+@man man/man3p/Locale::RecodeData::ECMA_CYRILLIC.3p
+@man man/man3p/Locale::RecodeData::GEORGIAN_ACADEMY.3p
+@man man/man3p/Locale::RecodeData::GEORGIAN_PS.3p
+@man man/man3p/Locale::RecodeData::GOST_19768_74.3p
+@man man/man3p/Locale::RecodeData::GREEK7.3p
+@man man/man3p/Locale::RecodeData::GREEK7_OLD.3p
+@man man/man3p/Locale::RecodeData::GREEK_CCITT.3p
+@man man/man3p/Locale::RecodeData::HP_ROMAN8.3p
+@man man/man3p/Locale::RecodeData::IBM037.3p
+@man man/man3p/Locale::RecodeData::IBM038.3p
+@man man/man3p/Locale::RecodeData::IBM1004.3p
+@man man/man3p/Locale::RecodeData::IBM1026.3p
+@man man/man3p/Locale::RecodeData::IBM1047.3p
+@man man/man3p/Locale::RecodeData::IBM256.3p
+@man man/man3p/Locale::RecodeData::IBM273.3p
+@man man/man3p/Locale::RecodeData::IBM274.3p
+@man man/man3p/Locale::RecodeData::IBM275.3p
+@man man/man3p/Locale::RecodeData::IBM277.3p
+@man man/man3p/Locale::RecodeData::IBM278.3p
+@man man/man3p/Locale::RecodeData::IBM280.3p
+@man man/man3p/Locale::RecodeData::IBM281.3p
+@man man/man3p/Locale::RecodeData::IBM284.3p
+@man man/man3p/Locale::RecodeData::IBM285.3p
+@man man/man3p/Locale::RecodeData::IBM290.3p
+@man man/man3p/Locale::RecodeData::IBM297.3p
+@man man/man3p/Locale::RecodeData::IBM420.3p
+@man man/man3p/Locale::RecodeData::IBM423.3p
+@man man/man3p/Locale::RecodeData::IBM424.3p
+@man man/man3p/Locale::RecodeData::IBM437.3p
+@man man/man3p/Locale::RecodeData::IBM500.3p
+@man man/man3p/Locale::RecodeData::IBM850.3p
+@man man/man3p/Locale::RecodeData::IBM851.3p
+@man man/man3p/Locale::RecodeData::IBM852.3p
+@man man/man3p/Locale::RecodeData::IBM855.3p
+@man man/man3p/Locale::RecodeData::IBM857.3p
+@man man/man3p/Locale::RecodeData::IBM860.3p
+@man man/man3p/Locale::RecodeData::IBM861.3p
+@man man/man3p/Locale::RecodeData::IBM862.3p
+@man man/man3p/Locale::RecodeData::IBM863.3p
+@man man/man3p/Locale::RecodeData::IBM864.3p
+@man man/man3p/Locale::RecodeData::IBM865.3p
+@man man/man3p/Locale::RecodeData::IBM866.3p
+@man man/man3p/Locale::RecodeData::IBM868.3p
+@man man/man3p/Locale::RecodeData::IBM869.3p
+@man man/man3p/Locale::RecodeData::IBM870.3p
+@man man/man3p/Locale::RecodeData::IBM871.3p
+@man man/man3p/Locale::RecodeData::IBM874.3p
+@man man/man3p/Locale::RecodeData::IBM875.3p
+@man man/man3p/Locale::RecodeData::IBM880.3p
+@man man/man3p/Locale::RecodeData::IBM891.3p
+@man man/man3p/Locale::RecodeData::IBM903.3p
+@man man/man3p/Locale::RecodeData::IBM904.3p
+@man man/man3p/Locale::RecodeData::IBM905.3p
+@man man/man3p/Locale::RecodeData::IBM918.3p
+@man man/man3p/Locale::RecodeData::IEC_P27_1.3p
+@man man/man3p/Locale::RecodeData::INIS.3p
+@man man/man3p/Locale::RecodeData::INIS_8.3p
+@man man/man3p/Locale::RecodeData::INIS_CYRILLIC.3p
+@man man/man3p/Locale::RecodeData::ISO_10367_BOX.3p
+@man man/man3p/Locale::RecodeData::ISO_2033_1983.3p
+@man man/man3p/Locale::RecodeData::ISO_5427.3p
+@man man/man3p/Locale::RecodeData::ISO_5427_EXT.3p
+@man man/man3p/Locale::RecodeData::ISO_5428.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_1.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_10.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_11.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_13.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_14.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_15.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_16.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_2.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_3.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_4.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_5.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_6.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_7.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_8.3p
+@man man/man3p/Locale::RecodeData::ISO_8859_9.3p
+@man man/man3p/Locale::RecodeData::KOI8_R.3p
+@man man/man3p/Locale::RecodeData::KOI8_RU.3p
+@man man/man3p/Locale::RecodeData::KOI8_T.3p
+@man man/man3p/Locale::RecodeData::KOI8_U.3p
+@man man/man3p/Locale::RecodeData::KOI_8.3p
+@man man/man3p/Locale::RecodeData::LATIN_GREEK.3p
+@man man/man3p/Locale::RecodeData::LATIN_GREEK_1.3p
+@man man/man3p/Locale::RecodeData::MACARABIC.3p
+@man man/man3p/Locale::RecodeData::MACCROATIAN.3p
+@man man/man3p/Locale::RecodeData::MACCYRILLIC.3p
+@man man/man3p/Locale::RecodeData::MACGREEK.3p
+@man man/man3p/Locale::RecodeData::MACHEBREW.3p
+@man man/man3p/Locale::RecodeData::MACICELAND.3p
+@man man/man3p/Locale::RecodeData::MACINTOSH.3p
+@man man/man3p/Locale::RecodeData::MACROMANIA.3p
+@man man/man3p/Locale::RecodeData::MACTHAI.3p
+@man man/man3p/Locale::RecodeData::MACTURKISH.3p
+@man man/man3p/Locale::RecodeData::MACUKRAINE.3p
+@man man/man3p/Locale::RecodeData::MAC_IS.3p
+@man man/man3p/Locale::RecodeData::MAC_SAMI.3p
+@man man/man3p/Locale::RecodeData::MAC_UK.3p
+@man man/man3p/Locale::RecodeData::NATS_DANO.3p
+@man man/man3p/Locale::RecodeData::NATS_SEFI.3p
+@man man/man3p/Locale::RecodeData::NEXTSTEP.3p
+@man man/man3p/Locale::RecodeData::SAMI_WS2.3p
+@man man/man3p/Locale::RecodeData::TIS_620.3p
+@man man/man3p/Locale::RecodeData::US_ASCII.3p
+@man man/man3p/Locale::RecodeData::UTF_8.3p
+@man man/man3p/Locale::RecodeData::VISCII.3p
+@man man/man3p/Locale::RecodeData::_Encode.3p
+@man man/man3p/Locale::TextDomain.3p
+@man man/man3p/Locale::gettext_pp.3p
+@man man/man3p/Locale::gettext_xs.3p
