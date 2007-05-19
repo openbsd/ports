@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_top,v 1.3 2006/01/10 19:08:21 steven Exp $
---- Makefile.top.orig	Mon Jun 20 15:37:46 2005
-+++ Makefile.top	Tue Jan 10 19:44:49 2006
-@@ -34,7 +34,9 @@ INSTALL_PREFIX  = @INSTALL_PREFIX@
+$OpenBSD: patch-Makefile_top,v 1.4 2007/05/19 10:52:06 rui Exp $
+--- Makefile.top.orig	Sat May  5 19:20:47 2007
++++ Makefile.top	Sat May  5 19:27:00 2007
+@@ -34,7 +34,9 @@ INSTALL_PREFIX  = $(DESTDIR)
  #
  INSTALL		= $(LIBTOOL) --mode=install @INSTALL@
  UNINSTALL	= $(LIBTOOL) --mode=uninstall rm -f
@@ -12,16 +12,17 @@ $OpenBSD: patch-Makefile_top,v 1.3 2006/01/10 19:08:21 steven Exp $
  SED		= @SED@
  LN_S		= @LN_S@
  AUTOCONF	= @AUTOCONF@
-@@ -74,10 +76,10 @@ LIBREVISION = 3
- # generally, LIBCURRENT should stay the same unless major changes occur.
- # Increment REVISION every release.  
- # Increment AGE if new stuff is available.
--LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -version-info $(LIBCURRENT):$(LIBREVISION):$(LIBAGE) -o
+@@ -77,11 +79,10 @@ LINKCC	        = @LINKCC@
+ LIBCURRENT  = 15
+ LIBAGE      = 0
+ LIBREVISION = 0
+-
+-LIB_LD_CMD      = $(LIBTOOL) --mode=link $(LINKCC) $(CFLAGS) -rpath $(libdir) -version-info $(LIBCURRENT):$(LIBREVISION):$(LIBAGE) -o
 +LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -o
  LIB_EXTENSION   = la
  LIB_VERSION     =
 -LIB_LDCONFIG_CMD = $(LIBTOOL) --mode=finish $(libdir)
 +LIB_LDCONFIG_CMD = :
- LINK		= $(LIBTOOL) --mode=link $(CC)
+ LINK		= $(LIBTOOL) --mode=link $(LINKCC)
  # RANLIB 	= @RANLIB@
  RANLIB		= :

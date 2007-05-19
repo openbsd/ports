@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/24 21:14:29 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/05/19 10:52:06 rui Exp $
 
 COMMENT-main=	"extendable SNMP implementation"
 COMMENT-perl=	"SNMP modules for Perl"
 
-DISTNAME=	net-snmp-5.1.3
-PKGNAME-main=	${DISTNAME}p5
-PKGNAME-perl=	p5-SNMP-5.1.3p3
-SHARED_LIBS=	netsnmp		6.3	\
-		netsnmpagent	6.3	\
-		netsnmphelpers	6.3	\
-		netsnmpmibs	6.3	\
-		netsnmptrapd	6.3
+DISTNAME=	net-snmp-5.4
+PKGNAME-main=	${DISTNAME}
+PKGNAME-perl=	p5-SNMP-5.4
+SHARED_LIBS=	netsnmp		7.0	\
+		netsnmpagent	7.0	\
+		netsnmphelpers	7.0	\
+		netsnmpmibs	7.0	\
+		netsnmptrapd	7.0
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
@@ -23,17 +23,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		crypto kvm m wrap z
+WANTLIB=		c crypto kvm m perl util wrap
 
 MULTI_PACKAGES=	-main -perl
 
 LIB_DEPENDS-perl=	netsnmpmibs,netsnmphelpers,netsnmpagent,netsnmp::net/net-snmp,-main
-WANTLIB-main=	${WANTLIB} c
+WANTLIB-main=	${WANTLIB}
 
 NET_SNMP_MIB_LIST= host disman/event-mib smux mibII/mta_sendmail
 
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --with-libwrap --with-perl-modules \
 	--with-copy-persistent-files="no" \
 	--with-mib-modules="${NET_SNMP_MIB_LIST}" \

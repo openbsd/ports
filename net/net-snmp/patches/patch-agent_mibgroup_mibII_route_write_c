@@ -1,122 +1,122 @@
-$OpenBSD: patch-agent_mibgroup_mibII_route_write_c,v 1.1 2005/06/13 22:42:00 naddy Exp $
---- agent/mibgroup/mibII/route_write.c.orig	Fri Jul  9 02:34:30 2004
-+++ agent/mibgroup/mibII/route_write.c	Mon Jun 13 23:14:23 2005
-@@ -102,7 +102,7 @@
+$OpenBSD: patch-agent_mibgroup_mibII_route_write_c,v 1.2 2007/05/19 10:52:06 rui Exp $
+--- agent/mibgroup/mibII/route_write.c.orig	Sat May  5 19:48:04 2007
++++ agent/mibgroup/mibII/route_write.c	Sat May  5 20:10:26 2007
+@@ -97,7 +97,7 @@
  int
  addRoute(u_long dstip, u_long gwip, u_long iff, u_short flags)
  {
--#ifndef dynix
-+#if !(defined dynix || defined darwin || defined __OpenBSD__)
+-#if defined SIOCADDRT && !defined(irix6)
++#if defined SIOCADDRT && !(defined irix6 || defined __OpenBSD__)
      struct sockaddr_in dst;
      struct sockaddr_in gateway;
      int             s, rc;
-@@ -141,6 +141,50 @@ addRoute(u_long dstip, u_long gwip, u_lo
+@@ -133,6 +133,50 @@ addRoute(u_long dstip, u_long gwip, u_long iff, u_shor
+         snmp_log_perror("ioctl");
      return rc;
- #endif
  
-+#elif defined darwin || defined __OpenBSD__
++#elif defined __OpenBSD__
 +
-+	int	s, rc;
-+	struct {
-+		struct	rt_msghdr hdr;
-+		struct	sockaddr_in dst;
-+		struct	sockaddr_in gateway;
-+	} rtmsg;
++       int     s, rc;
++       struct {
++               struct  rt_msghdr hdr;
++               struct  sockaddr_in dst;
++               struct  sockaddr_in gateway;
++       } rtmsg;
 +
-+	s = socket(PF_ROUTE, SOCK_RAW, 0);
-+	if (s < 0) {
++       s = socket(PF_ROUTE, SOCK_RAW, 0);
++       if (s < 0) {
 +            snmp_log_perror("socket");
 +            return -1;
-+	}
++       }
 +
-+	shutdown(s, SHUT_RD);
++       shutdown(s, SHUT_RD);
 +
-+	/* possible panic otherwise */
-+	flags |= (RTF_UP | RTF_GATEWAY);
++       /* possible panic otherwise */
++       flags |= (RTF_UP | RTF_GATEWAY);
 +
-+	bzero(&rtmsg, sizeof(rtmsg));
++       bzero(&rtmsg, sizeof(rtmsg));
 +
-+	rtmsg.hdr.rtm_type = RTM_ADD;
-+	rtmsg.hdr.rtm_version = RTM_VERSION;
-+	rtmsg.hdr.rtm_addrs = RTA_DST | RTA_GATEWAY;
-+	rtmsg.hdr.rtm_flags = RTF_GATEWAY;
++       rtmsg.hdr.rtm_type = RTM_ADD;
++       rtmsg.hdr.rtm_version = RTM_VERSION;
++       rtmsg.hdr.rtm_addrs = RTA_DST | RTA_GATEWAY;
++       rtmsg.hdr.rtm_flags = RTF_GATEWAY;
 +
-+	rtmsg.dst.sin_len = sizeof(rtmsg.dst);
-+	rtmsg.dst.sin_family = AF_INET;
-+	rtmsg.dst.sin_addr.s_addr = htonl(dstip);
++       rtmsg.dst.sin_len = sizeof(rtmsg.dst);
++       rtmsg.dst.sin_family = AF_INET;
++       rtmsg.dst.sin_addr.s_addr = htonl(dstip);
 +
-+	rtmsg.gateway.sin_len = sizeof(rtmsg.gateway);
-+	rtmsg.gateway.sin_family = AF_INET;
-+	rtmsg.gateway.sin_addr.s_addr = htonl(gwip);
++       rtmsg.gateway.sin_len = sizeof(rtmsg.gateway);
++       rtmsg.gateway.sin_family = AF_INET;
++       rtmsg.gateway.sin_addr.s_addr = htonl(gwip);
 +
-+	rc = sizeof(rtmsg);
-+	rtmsg.hdr.rtm_msglen = rc;
++       rc = sizeof(rtmsg);
++       rtmsg.hdr.rtm_msglen = rc;
 +
-+	if ((rc = write(s, &rtmsg, rc)) < 0) {
-+		snmp_log_perror("writing to routing socket");
-+		return -1;
-+	}
-+	return (rc);
++       if ((rc = write(s, &rtmsg, rc)) < 0) {
++               snmp_log_perror("writing to routing socket");
++               return -1;
++       }
++       return (rc);
 +
- #else                           /* dynix */
-     /*
-      *  Throws up the following errors:
-@@ -166,7 +210,7 @@ addRoute(u_long dstip, u_long gwip, u_lo
+ #else                           /* SIOCADDRT */
+     return -1;
+ #endif
+@@ -143,7 +187,7 @@ addRoute(u_long dstip, u_long gwip, u_long iff, u_shor
  int
  delRoute(u_long dstip, u_long gwip, u_long iff, u_short flags)
  {
--#ifndef dynix
-+#if !(defined dynix || defined darwin || defined __OpenBSD__)
+-#if defined SIOCDELRT && !defined(irix6)
++#if defined SIOCDELRT && !(defined irix6 || defined __OpenBSD__)
  
      struct sockaddr_in dst;
      struct sockaddr_in gateway;
-@@ -204,6 +248,49 @@ delRoute(u_long dstip, u_long gwip, u_lo
+@@ -177,7 +221,49 @@ delRoute(u_long dstip, u_long gwip, u_long iff, u_shor
+     rc = ioctl(s, SIOCDELRT, (caddr_t) & route);
      close(s);
      return rc;
- #endif
-+#elif defined darwin || defined __OpenBSD__
++#elif defined __OpenBSD__
+ 
++       int     s, rc;
++       struct {
++               struct  rt_msghdr hdr;
++               struct  sockaddr_in dst;
++               struct  sockaddr_in gateway;
++       } rtmsg;
 +
-+	int	s, rc;
-+	struct {
-+		struct	rt_msghdr hdr;
-+		struct	sockaddr_in dst;
-+		struct	sockaddr_in gateway;
-+	} rtmsg;
-+
-+	s = socket(PF_ROUTE, SOCK_RAW, 0);
-+	if (s < 0) {
++       s = socket(PF_ROUTE, SOCK_RAW, 0);
++       if (s < 0) {
 +            snmp_log_perror("socket");
 +            return -1;
-+	}
++       }
 +
-+	shutdown(s, SHUT_RD);
++       shutdown(s, SHUT_RD);
 +
-+	/* possible panic otherwise */
-+	flags |= (RTF_UP | RTF_GATEWAY);
++       /* possible panic otherwise */
++       flags |= (RTF_UP | RTF_GATEWAY);
 +
-+	bzero(&rtmsg, sizeof(rtmsg));
++       bzero(&rtmsg, sizeof(rtmsg));
 +
-+	rtmsg.hdr.rtm_type = RTM_DELETE;
-+	rtmsg.hdr.rtm_version = RTM_VERSION;
-+	rtmsg.hdr.rtm_addrs = RTA_DST | RTA_GATEWAY;
-+	rtmsg.hdr.rtm_flags = RTF_GATEWAY;
++       rtmsg.hdr.rtm_type = RTM_DELETE;
++       rtmsg.hdr.rtm_version = RTM_VERSION;
++       rtmsg.hdr.rtm_addrs = RTA_DST | RTA_GATEWAY;
++       rtmsg.hdr.rtm_flags = RTF_GATEWAY;
 +
-+	rtmsg.dst.sin_len = sizeof(rtmsg.dst);
-+	rtmsg.dst.sin_family = AF_INET;
-+	rtmsg.dst.sin_addr.s_addr = htonl(dstip);
++       rtmsg.dst.sin_len = sizeof(rtmsg.dst);
++       rtmsg.dst.sin_family = AF_INET;
++       rtmsg.dst.sin_addr.s_addr = htonl(dstip);
 +
-+	rtmsg.gateway.sin_len = sizeof(rtmsg.gateway);
-+	rtmsg.gateway.sin_family = AF_INET;
-+	rtmsg.gateway.sin_addr.s_addr = htonl(gwip);
++       rtmsg.gateway.sin_len = sizeof(rtmsg.gateway);
++       rtmsg.gateway.sin_family = AF_INET;
++       rtmsg.gateway.sin_addr.s_addr = htonl(gwip);
 +
-+	rc = sizeof(rtmsg);
-+	rtmsg.hdr.rtm_msglen = rc;
++       rc = sizeof(rtmsg);
++       rtmsg.hdr.rtm_msglen = rc;
 +
-+	if ((rc = write(s, &rtmsg, rc)) < 0) {
-+		snmp_log_perror("writing to routing socket");
-+		return -1;
-+	}
-+	return (rc);
- 
- #else                           /* dynix */
-     /*
++       if ((rc = write(s, &rtmsg, rc)) < 0) {
++               snmp_log_perror("writing to routing socket");
++               return -1;
++       }
++       return (rc);
+ #else                           /* SIOCDELRT */
+     return 0;
+ #endif

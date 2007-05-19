@@ -1,24 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2006/01/10 19:08:21 steven Exp $
---- configure.orig	Thu Jun 30 04:45:09 2005
-+++ configure	Mon Jan  9 23:42:41 2006
-@@ -7452,6 +7452,7 @@ openbsd*)
-   need_lib_prefix=no
-   need_version=no
-   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
-     case "$host_os" in
-     openbsd2.[89] | openbsd2.[89].*)
-       shlibpath_overrides_runpath=no
-@@ -7464,7 +7465,7 @@ openbsd*)
-     shlibpath_overrides_runpath=yes
-   fi
-   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
--  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-+  finish_cmds=''
-   shlibpath_var=LD_LIBRARY_PATH
-   ;;
- 
-@@ -9807,34 +9808,6 @@ fi
+$OpenBSD: patch-configure,v 1.5 2007/05/19 10:52:06 rui Exp $
+--- configure.orig	Sat May  5 20:26:01 2007
++++ configure	Sat May  5 20:38:25 2007
+@@ -21042,34 +21042,6 @@ fi
  echo "$as_me:$LINENO: result: $EXTRACPPFLAGS" >&5
  echo "${ECHO_T}$EXTRACPPFLAGS" >&6
  
@@ -29,9 +12,9 @@ $OpenBSD: patch-configure,v 1.4 2006/01/10 19:08:21 steven Exp $
 -fi
 -
 -fch=`echo $prefix | sed 's/\(.\).*/\1/'`
--if test $fch != "/" ; then
+-if test "x$fch" != "x/" ; then
 -   sch=`echo $prefix | sed 's/.\(.\).*/\1/'`
--   if test $sch != ":" ; then
+-   if test "x$sch" != "x:" ; then
 -      prefix=`pwd`/$prefix
 -      echo "adjusting prefix to $prefix"
 -   fi
@@ -42,9 +25,9 @@ $OpenBSD: patch-configure,v 1.4 2006/01/10 19:08:21 steven Exp $
 -fi
 -
 -fch=`echo $exec_prefix | sed 's/\(.\).*/\1/'`
--if test $fch != "/" ; then
+-if test "x$fch" != "x/" ; then
 -   sch=`echo $exec_prefix | sed 's/.\(.\).*/\1/'`
--   if test $sch != ":" ; then
+-   if test "x$sch" != "x:" ; then
 -      exec_prefix=`pwd`/$exec_prefix
 -      echo "adjusting exec_prefix to $exec_prefix"
 -   fi
@@ -53,7 +36,7 @@ $OpenBSD: patch-configure,v 1.4 2006/01/10 19:08:21 steven Exp $
  # Set SNMPLIBPATH & SNMPSHAREPATH
  
  SNMPLIBPATH=""
-@@ -14282,6 +14255,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -27070,6 +27042,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -61,7 +44,7 @@ $OpenBSD: patch-configure,v 1.4 2006/01/10 19:08:21 steven Exp $
  #include <tcpd.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -14326,6 +14300,7 @@ _ACEOF
+@@ -27114,6 +27087,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -69,16 +52,16 @@ $OpenBSD: patch-configure,v 1.4 2006/01/10 19:08:21 steven Exp $
  #include <tcpd.h>
  _ACEOF
  if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
-@@ -17818,7 +17793,7 @@ done
+@@ -32130,7 +32104,7 @@ done
  
  
  
--for ac_header in malloc.h sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_types.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h sys/user.h sys/proc.h sys/mbuf.h sys/mount.h
+-for ac_header in malloc.h net/if_dl.h sys/sysctl.h stdlib.h net/if_types.h sys/queue.h osreldate.h machine/types.h sys/user.h sys/proc.h sys/mbuf.h sys/mount.h
 +for ac_header in sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_types.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h sys/user.h sys/proc.h sys/mbuf.h sys/mount.h
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for $ac_header" >&5
-@@ -20777,7 +20752,6 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -35608,7 +35582,6 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  

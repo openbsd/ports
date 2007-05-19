@@ -1,8 +1,14 @@
-@comment $OpenBSD: PFRAG.shared-perl,v 1.1 2005/09/09 19:10:52 marcm Exp $
+@comment $OpenBSD: PFRAG.shared-perl,v 1.2 2007/05/19 10:52:07 rui Exp $
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/TrapReceiver.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent/Support.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/ASN.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/ASN.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/OID.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/OID.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/TrapReceiver.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/TrapReceiver.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/TrapReceiver/autosplit.ix
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/agent.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/agent.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/default_store.bs
