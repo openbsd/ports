@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:50 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/19 21:01:30 simon Exp $
 
 COMMENT=        "standalone extensible Perl module installer"
 
 MODULES=	cpan
-DISTNAME=	Module-Install-0.64
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Module-Install-0.67
 CATEGORIES=     devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
