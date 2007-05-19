@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/19 10:06:53 steven Exp $
+${P5SITE}/Event/
+${P5SITE}/Event/RPC/
+${P5SITE}/Event/RPC.pm
+${P5SITE}/Event/RPC/AuthPasswdHash.pm
+${P5SITE}/Event/RPC/Client.pm
+${P5SITE}/Event/RPC/Connection.pm
+${P5SITE}/Event/RPC/LogConnection.pm
+${P5SITE}/Event/RPC/Logger.pm
+${P5SITE}/Event/RPC/Loop/
+${P5SITE}/Event/RPC/Loop.pm
+${P5SITE}/Event/RPC/Loop/Event.pm
+${P5SITE}/Event/RPC/Loop/Glib.pm
+${P5SITE}/Event/RPC/Message.pm
+${P5SITE}/Event/RPC/Server.pm
+@man man/man3p/Event::RPC.3p
+@man man/man3p/Event::RPC::Client.3p
+@man man/man3p/Event::RPC::Connection.3p
+@man man/man3p/Event::RPC::LogConnection.3p
+@man man/man3p/Event::RPC::Logger.3p
+@man man/man3p/Event::RPC::Loop.3p
+@man man/man3p/Event::RPC::Loop::Event.3p
+@man man/man3p/Event::RPC::Loop::Glib.3p
+@man man/man3p/Event::RPC::Message.3p
+@man man/man3p/Event::RPC::Server.3p
