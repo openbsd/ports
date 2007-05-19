@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.509 2007/05/16 14:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.510 2007/05/19 10:13:13 steven Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -191,6 +191,7 @@
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Permute
+     SUBDIR += p5-AnyEvent
      SUBDIR += p5-App-CLI
      SUBDIR += p5-App-Info
      SUBDIR += p5-AppConfig
@@ -293,6 +294,7 @@
      SUBDIR += p5-Env-PS1 
      SUBDIR += p5-Error
      SUBDIR += p5-Event
+     SUBDIR += p5-Event-ExecFlow
      SUBDIR += p5-Event-Lib
      SUBDIR += p5-Exception-Class
      SUBDIR += p5-Expect
@@ -484,6 +486,7 @@
      SUBDIR += p5-YAML
      SUBDIR += p5-YAML-Syck
      SUBDIR += p5-capitalization
+     SUBDIR += p5-libintl
      SUBDIR += p5-prefork
      SUBDIR += p5-version
      SUBDIR += pango
