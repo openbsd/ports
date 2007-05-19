@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/19 10:08:18 steven Exp $
+${P5SITE}/AnyEvent/
+${P5SITE}/AnyEvent.pm
+${P5SITE}/AnyEvent/Impl/
+${P5SITE}/AnyEvent/Impl/Coro.pm
+${P5SITE}/AnyEvent/Impl/Event.pm
+${P5SITE}/AnyEvent/Impl/Glib.pm
+${P5SITE}/AnyEvent/Impl/Perl.pm
+${P5SITE}/AnyEvent/Impl/Tk.pm
+@man man/man3p/AnyEvent.3p
