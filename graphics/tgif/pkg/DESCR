@@ -1,8 +1,6 @@
 Tgif is an interactive drawing tool that allows the user to draw and
 manipulate objects in the X Window System. It's also a hyper-graphics (or
-hyper-structured-graphics) browser on the World-Wide-Web. Its hyper-text
-home page is ${HOMEPAGE} and its hyper-graphics
-home page is ${HOMEPAGE}index.obj.
+hyper-structured-graphics) browser on the World-Wide-Web. 
 
 Tgif drawings can be converted to a variety of formats, including GIF,
 encapsulated PostScript and XBM.
