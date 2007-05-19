@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2006/10/27 09:44:21 aanriot Exp $
+# $OpenBSD: Makefile,v 1.10 2007/05/19 11:19:50 aanriot Exp $
 
 COMMENT=	"next generation scanning tool"
 
 DISTNAME=	amap-5.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=    	security
 
-HOMEPAGE=	http://thc.segfault.net/thc-amap/
+HOMEPAGE=	http://thc.org/thc-amap/
 
 # GPL with changes
 PERMIT_PACKAGE_CDROM=	No
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://thc.segfault.net/releases/ \
+MASTER_SITES=	http://thc.org/releases/ \
 		${MASTER_SITE_PACKETSTORM:=groups/thc/}
 
 WANTLIB=	c crypto ssl
