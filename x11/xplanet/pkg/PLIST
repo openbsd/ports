@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/12/01 16:50:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/05/19 09:06:49 kili Exp $
 bin/xplanet
 @man man/man1/xplanet.1
 share/xplanet/
@@ -29,6 +29,7 @@ share/xplanet/images/shuttle.png
 share/xplanet/images/smile.png
 share/xplanet/images/sublunar.png
 share/xplanet/images/subsolar.png
+share/xplanet/images/sun.jpg
 share/xplanet/markers/
 share/xplanet/markers/README
 share/xplanet/markers/brightStars

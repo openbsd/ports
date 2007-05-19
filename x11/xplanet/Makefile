@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2006/12/01 16:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2007/05/19 09:06:49 kili Exp $
 
 COMMENT=	"Draw pictures of the earth textured by an image"
 
-DISTNAME=	xplanet-1.1.2
-PKGNAME=	${DISTNAME}p33
+DISTNAME=	xplanet-1.2.0
 CATEGORIES=	astro geo x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -16,8 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c charset fontconfig freetype glib-2.0 gmodule-2.0 \
-			gobject-2.0 iconv intl jpeg m png stdc++ z X11
+WANTLIB=		c charset expat fontconfig freetype glib-2.0 \
+			gmodule-2.0 gobject-2.0 iconv intl jpeg m png \
+			stdc++ z X11
 
 LIB_DEPENDS=		pango-1.0.>=399.1,pangoft2-1.0.>=399.1::devel/pango \
 			gif.>=5::graphics/libungif \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=		--without-xscreensaver \
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				-I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/openbsd_markers \

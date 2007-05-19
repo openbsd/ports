@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Options_cpp,v 1.1.1.1 2005/05/24 19:15:53 robert Exp $
---- src/Options.cpp.orig	Wed Apr 13 13:46:38 2005
-+++ src/Options.cpp	Wed Apr 13 13:47:05 2005
-@@ -100,7 +100,7 @@
+$OpenBSD: patch-src_Options_cpp,v 1.2 2007/05/19 09:06:49 kili Exp $
+--- src/Options.cpp.orig	Tue Jun 14 19:36:45 2005
++++ src/Options.cpp	Sat Apr 28 16:42:07 2007
+@@ -104,7 +104,7 @@ Options::Options() :
      oX_(0),
      oY_(0),
      oZ_(0),

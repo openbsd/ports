@@ -1,0 +1,11 @@
+--- src/libprojection/ProjectionIcosagnomonic.cpp.orig	Tue Jun 14 20:10:36 2005
++++ src/libprojection/ProjectionIcosagnomonic.cpp	Thu May  3 14:49:44 2007
+@@ -102,7 +102,7 @@ ProjectionIcosagnomonic::PointLL::sameSide(const Point
+     double dp1 = PointXYZ::dotP(cp, p1);
+     double dp2 = PointXYZ::dotP(cp, p2);
+ 
+-    return (signbit(dp1) == signbit(dp2) || fabs(dp1) < 1e-10);    
++    return ((dp1 < 0.0) == (dp2 < 0.0) || fabs(dp1) < 1e-10);    
+ }
+ 
+ bool
