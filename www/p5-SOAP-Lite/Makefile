@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/16 17:52:07 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/20 12:49:51 simon Exp $
 
 COMMENT=	"client and server-side SOAP implementation"
 
 MODULES=	cpan
-DISTNAME=	SOAP-Lite-0.55
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	SOAP-Lite-0.69
 CATEGORIES=	www
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,5 +30,8 @@ CONFIGURE_ARGS+=	--noprompt \
 			--IO-Server --noMQ \
 			--noJABBER --MIMEParser \
 			--TCP --HTTP
+
+post-extract:
+	rm -rf ${WRKSRC}/lib/OldDocs
 
 .include <bsd.port.mk>
