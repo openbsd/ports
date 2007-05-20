@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.12 2007/05/13 08:03:47 espie Exp $
+# $OpenBSD: register-plist,v 1.13 2007/05/20 17:27:51 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -59,6 +59,10 @@ sub compare
 	}
 }
 
+sub remove_auxiliary
+{
+	return 0;
+}
 
 package OpenBSD::PackingElement::FileBase;
 
@@ -141,6 +145,61 @@ sub compare
 	return 1;
 }
 
+package OpenBSD::PackingElement::InfoFile;
+
+sub remove_auxiliary
+{
+	my ($self, $list) = @_;
+
+	my $stem = $self->{name};
+	my $i;
+	for ($i = 1; @$list > 0 && $list->[0]->{name} eq "$stem-$i"; $i++) {
+		shift @$list;
+	}
+	return $i;
+}
+
+package OpenBSD::PackingElement::Manpage;
+
+sub remove_auxiliary
+{
+	my ($self, $list) = @_;
+	if ($self->can("is_source") && $self->is_source && @$list > 0 && 
+	    ref($list->[0]) eq ref($self) && 
+	    $list->[0]->{name} eq $self->source_to_dest) {
+		shift @$list;
+		return 1;
+	}
+	return 0;
+}
+
+sub compare
+{
+	my ($self, $self2) = @_;
+
+	# both elements must be manpages
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+
+	# identical
+	if ($self->{name} eq $self2->{name}) {
+		return 0;
+	}
+
+	return 1 if !$self->can("is_source");
+	# one is the conversion of the other
+	if ($self->is_source && $self->source_to_dest eq $self2->{name}) {
+		return 2;
+	}
+	if ($self2->is_source && $self2->source_to_dest eq $self->{name}) {
+		return 2;
+	}
+
+	# or they're different beasts.
+	return 1;
+}
+
 package OpenBSD::PackingElement::ExtraInfo;
 
 sub compare
@@ -185,19 +244,9 @@ sub my_compare
 		if ($r == 2) {
 			$final = 2;
 		}
-		# zap info-* files from compared stuff.
-		if ($e->isa("OpenBSD::PackingElement::InfoFile")) {
-			my $stem = $e->{name};
-			my ($i, $j);
-			for ($i = 1; @$l > 0 && $l->[0]->{name} eq "$stem-$i"; $i++) {
-				shift @$l;
-			}
-			for ($j = 1; @$l2 > 0 && $l2->[0]->{name} eq "$stem-$j"; $j++) {
-				shift @$l2;
-			}
-			if ($i != $j) {
-				$final = 2;
-			}
+		# zap extra info-* files and man pages
+		if ($e->remove_auxiliary($l) != $e2->remove_auxiliary($l2)) {
+			$final = 2;
 		}
 	}
 	if (@$l2 > 0) {
