@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/20 13:22:31 jasper Exp $
 
 COMMENT=		"mail notification for freedesktop.org-compliant system trays"
-DISTNAME=		mail-notification-1.0
-PKGNAME=		${DISTNAME}p3
+DISTNAME=		mail-notification-4.0
 CATEGORIES=		mail	
 
 HOMEPAGE=		http://www.nongnu.org/mailnotify/
@@ -14,47 +13,45 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
+		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
+		audiofile bonobo-2 bonobo-activation bonoboui-2 c cairo \
+		crypto dbus-1 dbus-glib-1 esd expat fam fontconfig \
+		freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-desktop-2 \
+		gnome-keyring gnome-menu gnomecanvas-2 gnomeui-2 gnomevfs-2 \
+		gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 png popt pthread rpcsvc \
+		ssl startup-notification-1 stdc++ util xml2 z
 
 MASTER_SITES=		http://savannah.nongnu.org/download/mailnotify/
 
 MODULES=		devel/gettext 
-BUILD_DEPENDS+=         :scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS=         :scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
-RUN_DEPENDS+=		:scrollkeeper-*:textproc/scrollkeeper \
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme-*:x11/gnome/icon-theme
-LIB_DEPENDS+=		eel-2::x11/gnome/eel
+LIB_DEPENDS=		notify::devel/libnotify \
+			eel-2::x11/gnome/eel
+
 USE_X11=		Yes
 USE_GMAKE=		Yes
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=        --sysconfdir="${CONFDIR}"
-CONFIGURE_ARGS+=	--disable-schemas-install \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/mail-notification \
-			--disable-mime --disable-sasl --disable-gmail
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/mail-notification \
+			--disable-schemas-install \
+			--disable-evolution \
 
-CONFDIR=		${SYSCONFDIR}/gnome
-SUBST_VARS=		CONFDIR
-
-WANTLIB=		pthread ICE c z xml2 X11 Xext Xrender cairo glitz png \
-			SM popt fontconfig crypto freetype ssl m art_lgpl_2 \
-			atk-1.0 bonobo-2 bonobo-activation bonoboui-2 \
-			gconf-2 gdk-x11-2.0 ORBit-2 gailutil gnomeui-2 \
-			gdk_pixbuf-2.0 glade-2.0 glib-2.0 \
-			gmodule-2.0 gnome-2 gnomecanvas-2 gnomevfs-2 \
-			gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-			pango-1.0 pangoft2-1.0 pangocairo-1.0
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch: 
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mail-notification
-	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/sound/events/mail-notification.soundlist \
-			${PREFIX}/share/examples/mail-notification.soundlist
-	${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/mail-notification
-	${INSTALL_DATA} ${WRKSRC}/data/mail-notification.schemas \
-			${PREFIX}/share/schemas/mail-notification/
+	mv ${WRKINST}${SYSCONFDIR}/* ${PREFIX}/share/examples/mail-notification
 
 .include <bsd.port.mk>
+
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
