@@ -4,5 +4,4 @@ particular implementations and can be used for implementing SIP
 End-Point, Proxy or any kind of more specific SIP Agent such as
 B2BUA.
 
-Documentation is only available online at
-${HOMEPAGE}doc/html/
+Documentation is only available online.

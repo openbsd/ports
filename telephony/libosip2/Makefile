@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/26 13:13:45 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/20 13:26:58 steven Exp $
 
 COMMENT=	"GNU oSIP library"
 
 DISTNAME=	libosip2-2.2.0
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=		osip2		3.0 \
-			osipparser2	3.0
-MODGNU_SHARED_LIBS=	osip2		'' \
-			osipparser2	''
-LIBosip2_ALIAS=		realosip2
-LIBosipparser2_ALIAS=	realosipparser2
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	osip2		3.0 \
+		osipparser2	3.0
 
 CATEGORIES=	telephony devel
 
