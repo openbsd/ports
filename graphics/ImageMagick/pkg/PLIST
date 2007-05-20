@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2007/01/31 14:34:58 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.36 2007/05/20 19:44:47 steven Exp $
 !%%no_x11%%
 %%SHARED%%
 bin/Magick++-config
@@ -33,7 +33,6 @@ include/magick/PreRvIcccm.h
 include/magick/animate.h
 include/magick/annotate.h
 include/magick/api.h
-include/magick/attribute.h
 include/magick/blob.h
 include/magick/cache-view.h
 include/magick/cache.h
@@ -111,6 +110,7 @@ include/wand/compare.h
 include/wand/composite.h
 include/wand/conjure.h
 include/wand/convert.h
+include/wand/deprecate.h
 include/wand/display.h
 include/wand/drawing-wand.h
 include/wand/identify.h
@@ -177,6 +177,10 @@ share/doc/ImageMagick/images/
 share/doc/ImageMagick/images/arc.png
 share/doc/ImageMagick/images/background.jpg
 share/doc/ImageMagick/images/black.png
+share/doc/ImageMagick/images/bluebells_clipped.jpg
+share/doc/ImageMagick/images/bluebells_darker.jpg
+share/doc/ImageMagick/images/bluebells_lin.jpg
+share/doc/ImageMagick/images/bluebells_log.jpg
 share/doc/ImageMagick/images/button.gif
 share/doc/ImageMagick/images/configure.jpg
 share/doc/ImageMagick/images/definitive-guide.png
@@ -259,7 +263,6 @@ share/doc/ImageMagick/www/api/
 share/doc/ImageMagick/www/api.html
 share/doc/ImageMagick/www/api/animate.html
 share/doc/ImageMagick/www/api/annotate.html
-share/doc/ImageMagick/www/api/attribute.html
 share/doc/ImageMagick/www/api/blob.html
 share/doc/ImageMagick/www/api/cache.html
 share/doc/ImageMagick/www/api/color.html
@@ -279,7 +282,7 @@ share/doc/ImageMagick/www/api/image.html
 share/doc/ImageMagick/www/api/layer.html
 share/doc/ImageMagick/www/api/list.html
 share/doc/ImageMagick/www/api/magick-image.html
-share/doc/ImageMagick/www/api/magick-property.php
+share/doc/ImageMagick/www/api/magick-property.html
 share/doc/ImageMagick/www/api/magick-wand.html
 share/doc/ImageMagick/www/api/magick.html
 share/doc/ImageMagick/www/api/memory.html
@@ -318,6 +321,7 @@ share/doc/ImageMagick/www/download.html
 share/doc/ImageMagick/www/examples.html
 share/doc/ImageMagick/www/formats.html
 share/doc/ImageMagick/www/fx.html
+share/doc/ImageMagick/www/high-dynamic-range.html
 share/doc/ImageMagick/www/history.html
 share/doc/ImageMagick/www/identify.html
 share/doc/ImageMagick/www/import.html
@@ -333,6 +337,7 @@ share/doc/ImageMagick/www/mailing-list.html
 share/doc/ImageMagick/www/miff.html
 share/doc/ImageMagick/www/mogrify.html
 share/doc/ImageMagick/www/montage.html
+share/doc/ImageMagick/www/motion-picture.html
 share/doc/ImageMagick/www/perl-magick.html
 share/doc/ImageMagick/www/quantize.html
 share/doc/ImageMagick/www/resources.html

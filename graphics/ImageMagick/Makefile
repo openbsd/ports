@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.95 2007/04/09 20:47:27 kili Exp $
+# $OpenBSD: Makefile,v 1.96 2007/05/20 19:44:47 steven Exp $
 
 COMMENT=		"image processing tools"
 
-VER=			6.3.2
+VER=			6.3.4
 DASHVER=		1
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		ImageMagick-${VER}.${DASHVER}p0
+PKGNAME=		ImageMagick-${VER}.${DASHVER}
 SHARED_LIBS=		Magick++	12.0	\
 			Magick		12.0	\
 			Wand		12.0
@@ -47,6 +47,7 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--without-fpx \
 			--without-gvc \
 			--without-modules \
+			--without-openexr \
 			--without-threads \
 			--without-perl \
 			--without-rsvg \

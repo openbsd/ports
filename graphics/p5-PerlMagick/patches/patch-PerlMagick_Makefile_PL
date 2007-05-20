@@ -1,8 +1,8 @@
-$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.9 2007/01/31 14:34:58 bernd Exp $
---- PerlMagick/Makefile.PL.orig	Fri Jan 19 16:59:33 2007
-+++ PerlMagick/Makefile.PL	Tue Jan 23 18:46:25 2007
+$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.10 2007/05/20 19:44:47 steven Exp $
+--- PerlMagick/Makefile.PL.orig	Sat May 12 06:05:24 2007
++++ PerlMagick/Makefile.PL	Wed May 16 18:07:03 2007
 @@ -44,13 +44,13 @@ WriteMakefile
-    'DEFINE'	=> ' -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES=1 -DHAVE_CONFIG_H',     # e.g., '-DHAVE_SOMETHING' 
+    'DEFINE'	=> ' -D_LARGE_FILES=1 -DHAVE_CONFIG_H',     # e.g., '-DHAVE_SOMETHING' 
  
     # Header search specfication and preprocessor flags
 -   'INC'	=> '-I../ -I.. -I/usr/include/freetype2 -I/usr/include/libxml2',
@@ -21,7 +21,7 @@ $OpenBSD: patch-PerlMagick_Makefile_PL,v 1.9 2007/01/31 14:34:58 bernd Exp $
     'INSTALLBIN'	=> '/usr/bin',
  
     # Library specification
--   'LIBS'	=> [ '-L/usr/lib -lfreetype -llcms -ltiff -lfreetype -ljpeg -lfontconfig -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lpthread -lm -lpthread' ],
+-   'LIBS'	=> [ '-L/usr/lib -L../magick/.libs -lMagick -L/usr/lib64 -lfreetype -llcms -ltiff -lfreetype -ljpeg -lfontconfig -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lpthread -lm -lpthread' ],
 +   'LIBS'      => [ '-L%%LOCALBASE%%/lib -lMagick -L%%X11BASE%%/lib -ljbig -llcms -ltiff -lfreetype -ljasper -ljpeg -lpng -lXext -lXt -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lm' ],
  
     # Perl binary name (if a Perl binary is built)
