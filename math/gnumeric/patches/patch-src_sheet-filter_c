@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sheet-filter_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/sheet-filter.c.orig	Sun Oct 17 05:36:05 2004
++++ src/sheet-filter.c	Fri May 18 23:06:21 2007
+@@ -563,7 +563,7 @@ filter_foo_view_init (SheetObjectViewIface *sov_iface)
+ typedef FooCanvasWidget		FilterFooView;
+ typedef FooCanvasWidgetClass	FilterFooViewClass;
+ static GSF_CLASS_FULL (FilterFooView, filter_foo_view,
+-	NULL, NULL,
++	NULL, NULL, NULL, NULL, NULL,
+ 	FOO_TYPE_CANVAS_WIDGET, 0,
+ 	GSF_INTERFACE (filter_foo_view_init, SHEET_OBJECT_VIEW_TYPE))
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cut-n-paste-code_goffice_graph_gog-error-bar_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/cut-n-paste-code/goffice/graph/gog-error-bar.c.orig	Thu Dec  2 15:57:26 2004
++++ src/cut-n-paste-code/goffice/graph/gog-error-bar.c	Fri May 18 23:06:21 2007
+@@ -488,8 +488,8 @@ gog_error_bar_persist_init (GogPersistClass *iface)
+ }
+ 
+ GSF_CLASS_FULL (GogErrorBar, gog_error_bar,
+-		gog_error_bar_class_init, gog_error_bar_init,
+-		G_TYPE_OBJECT, 0,
++		NULL, NULL, gog_error_bar_class_init, NULL,
++		gog_error_bar_init, G_TYPE_OBJECT, 0,
+ 		GSF_INTERFACE (gog_error_bar_persist_init, GOG_PERSIST_TYPE))
+ 
+ 

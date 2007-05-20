@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_command-context-stderr_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/command-context-stderr.c.orig	Sun Jun 13 21:48:34 2004
++++ src/command-context-stderr.c	Fri May 18 23:06:21 2007
+@@ -107,6 +107,6 @@ ccs_gnm_cmd_context_init (GnmCmdContextClass *cc_class
+ }
+ 
+ GSF_CLASS_FULL (CmdContextStderr, cmd_context_stderr,
+-		NULL, ccs_init,
+-		G_TYPE_OBJECT, 0,
++		NULL, NULL, NULL, NULL,
++		ccs_init, G_TYPE_OBJECT, 0,
+ 		GSF_INTERFACE (ccs_gnm_cmd_context_init, GNM_CMD_CONTEXT_TYPE))

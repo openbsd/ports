@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cut-n-paste-code_goffice_graph_gog-axis_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/cut-n-paste-code/goffice/graph/gog-axis.c.orig	Wed Feb  9 23:54:29 2005
++++ src/cut-n-paste-code/goffice/graph/gog-axis.c	Fri May 18 23:06:21 2007
+@@ -1678,8 +1678,8 @@ gog_axis_dataset_init (GogDatasetClass *iface)
+ }
+ 
+ GSF_CLASS_FULL (GogAxis, gog_axis,
+-		gog_axis_class_init, gog_axis_init,
+-		GOG_STYLED_OBJECT_TYPE, 0,
++		NULL, NULL, gog_axis_class_init, NULL,
++		gog_axis_init, GOG_STYLED_OBJECT_TYPE, 0,
+ 		GSF_INTERFACE (gog_axis_dataset_init, GOG_DATASET_TYPE))
+ 
+ 

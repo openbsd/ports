@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sheet-object-graph_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/sheet-object-graph.c.orig	Fri Oct 29 07:13:13 2004
++++ src/sheet-object-graph.c	Fri May 18 23:06:21 2007
+@@ -94,7 +94,7 @@ so_graph_foo_view_init (SheetObjectViewIface *sov_ifac
+ typedef GogControlFooCanvas		SOGraphFooView;
+ typedef GogControlFooCanvasClass	SOGraphFooViewClass;
+ static GSF_CLASS_FULL (SOGraphFooView, so_graph_foo_view,
+-	NULL, NULL,
++	NULL, NULL, NULL, NULL, NULL,
+ 	GOG_CONTROL_FOOCANVAS_TYPE, 0,
+ 	GSF_INTERFACE (so_graph_foo_view_init, SHEET_OBJECT_VIEW_TYPE))
+ 

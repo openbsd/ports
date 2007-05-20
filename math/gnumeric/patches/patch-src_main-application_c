@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main-application_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/main-application.c.orig	Wed Mar  9 18:59:33 2005
++++ src/main-application.c	Sat May 19 00:42:21 2007
+@@ -10,6 +10,8 @@
+  * Copyright (C) 2002-2004, Jon Kåre Hellan
+  */
+ 
++#undef GNOME_DISABLE_DEPRECATED
++
+ #include <gnumeric-config.h>
+ #include <glib/gi18n.h>
+ #include "gnumeric.h"

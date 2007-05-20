@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cut-n-paste-code_goffice_graph_gog-label_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/cut-n-paste-code/goffice/graph/gog-label.c.orig	Mon Oct 25 23:36:05 2004
++++ src/cut-n-paste-code/goffice/graph/gog-label.c	Fri May 18 23:06:21 2007
+@@ -176,8 +176,8 @@ gog_label_dataset_init (GogDatasetClass *iface)
+ }
+ 
+ GSF_CLASS_FULL (GogLabel, gog_label,
+-		gog_label_class_init, NULL,
+-		GOG_OUTLINED_OBJECT_TYPE, 0,
++		NULL, NULL, gog_label_class_init, NULL,
++		NULL, GOG_STYLED_OBJECT_TYPE, 0,
+ 		GSF_INTERFACE (gog_label_dataset_init, GOG_DATASET_TYPE))
+ 
+ /************************************************************************/

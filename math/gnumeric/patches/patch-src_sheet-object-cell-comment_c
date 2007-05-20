@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sheet-object-cell-comment_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/sheet-object-cell-comment.c.orig	Fri Jan 14 07:48:29 2005
++++ src/sheet-object-cell-comment.c	Fri May 18 23:06:21 2007
+@@ -123,7 +123,7 @@ comment_foo_view_init (SheetObjectViewIface *sov_iface
+ typedef FooCanvasPolygon	CommentFooView;
+ typedef FooCanvasPolygonClass	CommentFooViewClass;
+ static GSF_CLASS_FULL (CommentFooView, comment_foo_view,
+-	NULL, NULL,
++	NULL, NULL,NULL,NULL,NULL,
+ 	FOO_TYPE_CANVAS_POLYGON, 0,
+ 	GSF_INTERFACE (comment_foo_view_init, SHEET_OBJECT_VIEW_TYPE))
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gnm-so-line_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/gnm-so-line.c.orig	Tue Nov 30 20:37:07 2004
++++ src/gnm-so-line.c	Fri May 18 23:06:21 2007
+@@ -111,7 +111,7 @@ so_line_foo_view_init (SheetObjectViewIface *sov_iface
+ typedef FooCanvasLine		LineFooView;
+ typedef FooCanvasLineClass	LineFooViewClass;
+ static GSF_CLASS_FULL (LineFooView, so_line_foo_view,
+-	NULL, NULL,
++	NULL, NULL,NULL, NULL,NULL,
+ 	FOO_TYPE_CANVAS_LINE, 0,
+ 	GSF_INTERFACE (so_line_foo_view_init, SHEET_OBJECT_VIEW_TYPE))
+ #endif /* WITH_GTK */

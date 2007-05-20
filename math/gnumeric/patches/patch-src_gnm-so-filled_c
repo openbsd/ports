@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_gnm-so-filled_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/gnm-so-filled.c.orig	Sun Oct 17 05:36:05 2004
++++ src/gnm-so-filled.c	Fri May 18 23:06:21 2007
+@@ -113,7 +113,7 @@ so_filled_foo_view_init (SheetObjectViewIface *sov_ifa
+ typedef FooCanvasGroup		FilledFooView;
+ typedef FooCanvasGroupClass	FilledFooViewClass;
+ static GSF_CLASS_FULL (FilledFooView, so_filled_foo_view,
+-	NULL, NULL,
++	NULL, NULL, NULL, NULL, NULL,
+ 	FOO_TYPE_CANVAS_GROUP, 0,
+ 	GSF_INTERFACE (so_filled_foo_view_init, SHEET_OBJECT_VIEW_TYPE))
+ #endif /* WITH_GTK */
+@@ -632,7 +632,7 @@ so_polygon_foo_view_init (SheetObjectViewIface *sov_if
+ typedef FooCanvasPolygon	PolygonFooView;
+ typedef FooCanvasPolygonClass	PolygonFooViewClass;
+ static GSF_CLASS_FULL (PolygonFooView, so_polygon_foo_view,
+-	NULL, NULL,
++	NULL, NULL, NULL, NULL, NULL,
+ 	FOO_TYPE_CANVAS_POLYGON, 0,
+ 	GSF_INTERFACE (so_polygon_foo_view_init, SHEET_OBJECT_VIEW_TYPE))
+ #endif /* WITH_GTK */

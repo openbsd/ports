@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cut-n-paste-code_goffice_gui-utils_go-combo-box_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/cut-n-paste-code/goffice/gui-utils/go-combo-box.c.orig	Sun Mar 21 07:35:08 2004
++++ src/cut-n-paste-code/goffice/gui-utils/go-combo-box.c	Sat May 19 00:14:15 2007
+@@ -24,6 +24,8 @@
+  * 02111-1307, USA.
+  */
+ 
++#undef GTK_DISABLE_DEPRECATED
++
+ #include <goffice/goffice-config.h>
+ #include "go-combo-box.h"
+ #include "go-marshalers.h"

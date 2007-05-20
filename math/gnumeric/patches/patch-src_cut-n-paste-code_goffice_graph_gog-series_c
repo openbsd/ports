@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cut-n-paste-code_goffice_graph_gog-series_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/cut-n-paste-code/goffice/graph/gog-series.c.orig	Wed Jan  5 20:05:53 2005
++++ src/cut-n-paste-code/goffice/graph/gog-series.c	Fri May 18 23:06:21 2007
+@@ -589,8 +589,8 @@ gog_series_dataset_init (GogDatasetClass *iface)
+ }
+ 
+ GSF_CLASS_FULL (GogSeries, gog_series,
+-		gog_series_class_init, gog_series_init,
+-		GOG_STYLED_OBJECT_TYPE, 0,
++		NULL, NULL, gog_series_class_init, NULL,
++		gog_series_init, GOG_STYLED_OBJECT_TYPE, 0,
+ 		GSF_INTERFACE (gog_series_dataset_init, GOG_DATASET_TYPE))
+ 
+ /**

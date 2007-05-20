@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2007/05/19 09:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2007/05/20 13:39:56 martynas Exp $
 
 COMMENT=		"spreadsheet application for GNOME"
 
 VERSION=		1.4.3
 DISTNAME=		gnumeric-${VERSION}
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 CATEGORIES=    		math x11/gnome
 
@@ -24,7 +24,10 @@ WANTLIB=		ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext \
 			gnomeprint-2-2 gnomevfs-2 gobject-2.0 \
 			gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 \
 			pangoft2-1.0 pangocairo-1.0 cairo glitz png \
-			popt pthread ssl xml2 z
+			popt pthread ssl xml2 z \
+			Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr dbus-1 \
+			dbus-glib-1 expat util
+
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnumeric/1.4/}
 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_io-context-gtk_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/io-context-gtk.c.orig	Sat Oct 30 06:51:35 2004
++++ src/io-context-gtk.c	Fri May 18 23:06:21 2007
+@@ -367,8 +367,8 @@ icg_init (IOContextGtk *icg)
+ }
+ 
+ GSF_CLASS_FULL (IOContextGtk, io_context_gtk,
+-		icg_class_init, icg_init,
+-		TYPE_IO_CONTEXT, 0,
++		NULL, NULL, icg_class_init, NULL,
++		icg_init, TYPE_IO_CONTEXT, 0,
+ 		GSF_INTERFACE (icg_gnm_cmd_context_init, GNM_CMD_CONTEXT_TYPE))
+ 
+ void

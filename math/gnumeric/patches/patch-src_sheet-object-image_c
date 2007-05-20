@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sheet-object-image_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/sheet-object-image.c.orig	Sat Dec 18 06:48:37 2004
++++ src/sheet-object-image.c	Fri May 18 23:06:21 2007
+@@ -90,7 +90,7 @@ so_image_foo_view_init (SheetObjectViewIface *sov_ifac
+ typedef FooCanvasPixbuf		SOImageFooView;
+ typedef FooCanvasPixbufClass	SOImageFooViewClass;
+ static GSF_CLASS_FULL (SOImageFooView, so_image_foo_view,
+-	NULL, NULL,
++	NULL, NULL, NULL, NULL, NULL,
+ 	FOO_TYPE_CANVAS_PIXBUF, 0,
+ 	GSF_INTERFACE (so_image_foo_view_init, SHEET_OBJECT_VIEW_TYPE))
+ 

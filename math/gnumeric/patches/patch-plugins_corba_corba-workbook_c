@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_corba_corba-workbook_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- plugins/corba/corba-workbook.c.orig	Fri Sep 24 23:35:15 2004
++++ plugins/corba/corba-workbook.c	Fri May 18 23:06:21 2007
+@@ -313,8 +313,8 @@ wbcc_init (WorkbookControlCORBA *wbcc)
+ }
+ 
+ GSF_CLASS_FULL (WorkbookControlCORBA, workbook_control_corba,
+-		wbcc_class_init, wbcc_init, 
+-		WORKBOOK_CONTROL_TYPE, 0,
++		NULL, NULL,wbcc_class_init, NULL,
++		wbcc_init, WORKBOOK_CONTROL_TYPE, 0,
+ 		GSF_INTERFACE (wbcc_gnm_cmd_context_init,
+ 			       GNM_CMD_CONTEXT_TYPE))
+ 

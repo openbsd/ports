@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cut-n-paste-code_goffice_cut-n-paste_pcre_pcre_c,v 1.1 2005/08/27 21:10:39 mbalmer Exp $
---- src/cut-n-paste-code/goffice/cut-n-paste/pcre/pcre.c.orig	Fri Oct 29 20:13:19 2004
-+++ src/cut-n-paste-code/goffice/cut-n-paste/pcre/pcre.c	Sat Aug 27 12:10:16 2005
-@@ -1062,14 +1062,30 @@ read_repeat_counts(const uschar *p, int 
+$OpenBSD: patch-src_cut-n-paste-code_goffice_cut-n-paste_pcre_pcre_c,v 1.2 2007/05/20 13:39:56 martynas Exp $
+--- src/cut-n-paste-code/goffice/cut-n-paste/pcre/pcre.c.orig	Fri Oct 29 21:13:19 2004
++++ src/cut-n-paste-code/goffice/cut-n-paste/pcre/pcre.c	Fri May 18 22:38:00 2007
+@@ -1062,14 +1062,30 @@ read_repeat_counts(const uschar *p, int *minp, int *ma
  int min = 0;
  int max = -1;
  

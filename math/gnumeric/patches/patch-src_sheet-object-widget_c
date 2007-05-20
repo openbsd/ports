@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sheet-object-widget_c,v 1.1 2007/05/20 13:39:56 martynas Exp $
+--- src/sheet-object-widget.c.orig	Wed Feb  9 23:54:29 2005
++++ src/sheet-object-widget.c	Fri May 18 23:06:21 2007
+@@ -99,7 +99,7 @@ so_widget_foo_view_init (SheetObjectViewIface *sov_ifa
+ typedef FooCanvasWidget		SOWidgetFooView;
+ typedef FooCanvasWidgetClass	SOWidgetFooViewClass;
+ static GSF_CLASS_FULL (SOWidgetFooView, so_widget_foo_view,
+-	NULL, NULL,
++       NULL, NULL, NULL, NULL, NULL,
+ 	FOO_TYPE_CANVAS_WIDGET, 0,
+ 	GSF_INTERFACE (so_widget_foo_view_init, SHEET_OBJECT_VIEW_TYPE))
+ 
