@@ -1,2 +1,11 @@
-SILC protocol plugin for irssi. See http://www.silcnet.org/ and 
-${HOMEPAGE} for details.
+SILC is a protocol which allows you to chat using strongly encrypted
+connections and secure authentication mechanisms. In other words,
+SILC is a secure IRC variant.
+
+Thanks to Irssi's modularity it is rather easy to extend the SILC
+client with an additional protocol handler. Even better, the protocol
+can be compiled as a module and loaded during runtime in a "normal"
+Irssi client.
+
+SILC plugin is just a bunch of Makefiles taking the SILC client's
+source and compiling the protocol handler as a module.

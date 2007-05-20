@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/16 19:30:01 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/20 14:35:13 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ DISTNAME=	irssi-${IRSSI_VERSION}
 DISTFILES=	${DISTNAME}a.tar.gz \
 		silc-plugin-${SILC_VERSION}.tar.gz:0 \
 		silc-client-${SILC_VERSION}.tar.gz:1
-PKGNAME=	irssi-silc-${SILC_VERSION}p1
+PKGNAME=	irssi-silc-${SILC_VERSION}p2
 CATEGORIES=	net
 
 HOMEPAGE=	http://penguin-breeder.org/silc/

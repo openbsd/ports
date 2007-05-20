@@ -1,2 +1,14 @@
-Xinvest is a free personal finance tracking and performance tool for the X
-Window System.
+Xinvest is a personal finance tracking and performance tool for
+UNIX using the X Window System.
+
+With Xinvest you can:
+- Centralize record keeping by storing all transactions in account
+specific files;
+- Use currency exchange rates, converting accounts from different
+currencies into your local one;
+- Calculate yield, total and annualized returns (including the
+effects of buys, sells, and dividends);
+- View asset allocation of accounts in a portfolio;
+- Use the provided financial calculator with commonly used equations.
+Included are FV, PV, FV of sum of payments, and periodic loan
+payments.
