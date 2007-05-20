@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/20 13:22:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/20 13:24:09 jasper Exp $
 
 COMMENT=		"mail notification for freedesktop.org-compliant system trays"
 DISTNAME=		mail-notification-4.0
@@ -40,7 +40,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/mail-notification \
 			--disable-schemas-install \
-			--disable-evolution \
+			--disable-evolution
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
