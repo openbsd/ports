@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tag_cpp,v 1.1 2004/01/05 13:53:35 espie Exp $
---- src/tag.cpp.orig	2004-01-05 03:47:13.000000000 +0100
-+++ src/tag.cpp	2004-01-05 03:47:26.000000000 +0100
-@@ -851,12 +851,14 @@ ID3_Frame* ID3_Tag::Find(ID3_FrameID id,
+$OpenBSD: patch-src_tag_cpp,v 1.2 2007/05/20 13:02:16 bernd Exp $
+--- src/tag.cpp.orig	Sun Mar  2 01:23:00 2003
++++ src/tag.cpp	Tue May  8 13:08:06 2007
+@@ -851,12 +851,14 @@ ID3_Frame* ID3_Tag::Find(ID3_FrameID id, ID3_FieldID f
    return _impl->Find(id, fld, str);
  }
  

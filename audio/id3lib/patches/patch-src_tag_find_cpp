@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tag_find_cpp,v 1.1 2004/01/05 13:53:35 espie Exp $
---- src/tag_find.cpp.orig	2004-01-05 03:45:43.000000000 +0100
-+++ src/tag_find.cpp	2004-01-05 03:46:00.000000000 +0100
-@@ -151,6 +151,7 @@ ID3_Frame *ID3_TagImpl::Find(ID3_FrameID
+$OpenBSD: patch-src_tag_find_cpp,v 1.2 2007/05/20 13:02:16 bernd Exp $
+--- src/tag_find.cpp.orig	Sun Mar  2 01:23:00 2003
++++ src/tag_find.cpp	Tue May  8 13:08:06 2007
+@@ -151,6 +151,7 @@ ID3_Frame *ID3_TagImpl::Find(ID3_FrameID id, ID3_Field
    return frame;
  }
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_tag_find_cpp,v 1.1 2004/01/05 13:53:35 espie Exp $
  ID3_Frame *ID3_TagImpl::Find(ID3_FrameID id, ID3_FieldID fldID, WString data) const
  {
    ID3_Frame *frame = NULL;
-@@ -198,6 +199,7 @@ ID3_Frame *ID3_TagImpl::Find(ID3_FrameID
+@@ -198,6 +199,7 @@ ID3_Frame *ID3_TagImpl::Find(ID3_FrameID id, ID3_Field
  
    return frame;
  }

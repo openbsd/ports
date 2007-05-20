@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_utils_cpp,v 1.1 2004/01/05 13:53:35 espie Exp $
---- src/utils.cpp.orig	2004-01-05 03:47:33.000000000 +0100
-+++ src/utils.cpp	2004-01-05 03:47:47.000000000 +0100
+$OpenBSD: patch-src_utils_cpp,v 1.2 2007/05/20 13:02:16 bernd Exp $
+--- src/utils.cpp.orig	Sun Mar  2 01:23:00 2003
++++ src/utils.cpp	Tue May  8 13:08:06 2007
 @@ -380,6 +380,7 @@ String dami::toString(uint32 val)
    return text;
  }
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_utils_cpp,v 1.1 2004/01/05 13:53:35 espie Exp $
  WString dami::toWString(const unicode_t buf[], size_t len)
  {
    WString str;
-@@ -391,4 +392,5 @@ WString dami::toWString(const unicode_t 
+@@ -391,4 +392,5 @@ WString dami::toWString(const unicode_t buf[], size_t 
    }
    return str;
  }
