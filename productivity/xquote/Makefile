@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/31 11:57:10 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/20 13:43:16 steven Exp $
 
-COMMENT= 		Xquote is a free WWW quote retrieval tool for the X Window System
+COMMENT= 		"WWW quote retrieval tool"
 
 DISTNAME=		xquote-2.6.10
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		productivity x11
 
 HOMEPAGE= 		http://xinvest.dotsrc.org/
