@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/05 14:42:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/20 13:05:27 jasper Exp $
 
-COMMENT=		"music player daemon"
-
-DISTNAME=		mpd-0.12.1
+COMMENT=		"Music Player Daemon"
+DISTNAME=		mpd-0.12.2
 CATEGORIES=		audio
-
 HOMEPAGE=		http://www.musicpd.org/
-
 MAINTAINER=		Tobias Ulmer <tobiasu@tmux.org>
 
 # GPL
@@ -15,38 +12,51 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m pthread theora z
+WANTLIB=		c m pthread z
 
 MASTER_SITES=		${HOMEPAGE}uploads/files/
 
 MODULES=		converters/libiconv
 
-LIB_DEPENDS=		vorbis,vorbisfile,vorbisenc::audio/libvorbis \
-			audiofile::devel/libaudiofile \
-			ao.>=3::audio/libao \
+LIB_DEPENDS=		audiofile::devel/libaudiofile \
+			ao::audio/libao \
 			faad::audio/faad \
-			id3tag.>=3::audio/libid3tag \
-			mad.>=2::audio/libmad \
-			ogg.>=5::audio/libogg \
-			OggFLAC.>=3,FLAC.>=7::audio/flac \
-			mikmod.>=2::audio/libmikmod \
-			mpcdec.>=1::audio/libmpcdec \
-			shout.>=5::net/libshout \
-			speex.>=4::audio/speex
+			id3tag::audio/libid3tag \
+			mad::audio/libmad \
+			mikmod::audio/libmikmod \
+			mpcdec::audio/libmpcdec
 
-USE_LIBTOOL=		Yes
+FLAVORS=		tremor
+FLAVOR?=
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-ao \
-			--enable-mod \
-			--enable-shout \
+CONFIGURE_ARGS+=        --enable-ao \
 			--disable-alsa \
-			--disable-oss \
-			--disable-pulse \
-			--disable-sun \
+                        --disable-oss \
+                        --disable-pulse \
+                        --disable-sun \
+			--enable-mod \
 			--bindir=${PREFIX}/sbin
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+# OggFLAC and tremor tests
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if ${FLAVOR:L:Mtremor}
+CONFIGURE_ARGS+=	--with-tremor \
+			--disable-oggflac \
+			--disable-shout
+LIB_DEPENDS+=		vorbisidec::audio/tremor \
+			FLAC::audio/flac
+.else
+
+WANTLIB+=		theora
+LIB_DEPENDS+=		vorbis,vorbisfile,vorbisenc::audio/libvorbis \
+			ogg::audio/libogg \
+			OggFLAC,FLAC::audio/flac \
+			speex::audio/speex \
+			shout::net/libshout
+.endif
+
+USE_LIBTOOL=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpd
