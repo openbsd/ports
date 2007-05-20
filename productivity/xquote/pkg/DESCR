@@ -1,1 +1,8 @@
-Xquote is a free WWW quote retrieval tool for the X Window System.
+Xquote is a WWW ticker symbol quote retrieval program for UNIX
+systems using the X Window System.  Xquote retrieves quotes from a
+number of net sources. It takes a ticker symbol (stock, mutual fund,
+currency) and displays info in a table or ticker tape. The table
+data displayed is selectable, and includes price, date, change,
+volume, yield, 52 week high/low, day high/low, P/E, dividend, full
+name, basically whatever can be reliably retrieved from multiple
+sources.

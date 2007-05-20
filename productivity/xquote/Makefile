@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/20 13:43:16 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/20 14:07:12 martynas Exp $
 
 COMMENT= 		"WWW quote retrieval tool"
 
 DISTNAME=		xquote-2.6.10
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		productivity x11
 
 HOMEPAGE= 		http://xinvest.dotsrc.org/
