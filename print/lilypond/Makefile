@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/01 22:07:44 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/20 14:14:37 kili Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	"LilyPond - music notation for everyone"
-COMMENT-docs=	"LilyPond documentation"
+COMMENT-main=	"text based music notation system"
+COMMENT-docs=	"lilypond documentation"
 
 VERSION=	2.8.8
 DISTNAME=	lilypond-${VERSION}
 DISTNAME-docs=	${DISTNAME}-1.documentation
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-docs=	${DISTNAME:S,-,-docs-,}
+PKGNAME-main=	${DISTNAME}p1
+PKGNAME-docs=	${DISTNAME:S,-,-docs-,}p0
 CATEGORIES=	print
 
 DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
