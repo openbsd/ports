@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.12 2006/11/13 02:11:39 brad Exp $
---- src/Makefile.in.orig	Sun Oct 29 21:21:34 2006
-+++ src/Makefile.in	Sat Nov  4 15:50:31 2006
-@@ -224,7 +224,7 @@ CPP = @CPP@
+$OpenBSD: patch-src_Makefile_in,v 1.13 2007/05/20 00:52:32 todd Exp $
+--- src/Makefile.in.orig	Sat May  5 18:06:55 2007
++++ src/Makefile.in	Sat May 12 23:44:43 2007
+@@ -223,7 +223,7 @@ CPP = @CPP@
  CPPFLAGS = @CPPFLAGS@
  CRYPTLIB = @CRYPTLIB@
  CYGPATH_W = @CYGPATH_W@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.12 2006/11/13 02:11:39 brad Exp $
  DEPDIR = @DEPDIR@
  DIGEST_AUTH_HELPERS = @DIGEST_AUTH_HELPERS@
  ECHO_C = @ECHO_C@
-@@ -374,7 +374,7 @@ prefix = @prefix@
+@@ -373,7 +373,7 @@ prefix = @prefix@
  program_transform_name = @program_transform_name@
  sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.12 2006/11/13 02:11:39 brad Exp $
  target_alias = @target_alias@
  @USE_DNSSERVER_FALSE@DNSSOURCE = dns_internal.c
  @USE_DNSSERVER_TRUE@DNSSOURCE = dns.c
-@@ -605,8 +605,8 @@ EXTRA_DIST = \
+@@ -610,8 +610,8 @@ EXTRA_DIST = \
  DEFAULT_HTTP_PORT = @CACHE_HTTP_PORT@
  DEFAULT_ICP_PORT = @CACHE_ICP_PORT@
  DEFAULT_PREFIX = $(prefix)
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.12 2006/11/13 02:11:39 brad Exp $
  DEFAULT_DNSSERVER = $(libexecdir)/`echo dnsserver | sed '$(transform);s/$$/$(EXEEXT)/'`
  DEFAULT_LOG_PREFIX = $(localstatedir)/logs
  DEFAULT_CACHE_LOG = $(DEFAULT_LOG_PREFIX)/cache.log
-@@ -866,37 +866,37 @@ distclean-compile:
+@@ -871,37 +871,37 @@ distclean-compile:
  uninstall-info-am:
  install-dataDATA: $(data_DATA)
  	@$(NORMAL_INSTALL)
@@ -78,7 +78,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.12 2006/11/13 02:11:39 brad Exp $
  	done
  
  # This directory's subdirectories are mostly independent; you can cd
-@@ -1079,7 +1079,7 @@ check: $(BUILT_SOURCES)
+@@ -1084,7 +1084,7 @@ check: $(BUILT_SOURCES)
  all-am: Makefile $(PROGRAMS) $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
@@ -87,7 +87,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.12 2006/11/13 02:11:39 brad Exp $
  	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -1217,7 +1217,7 @@ cf.data: cf.data.pre Makefile
+@@ -1222,7 +1222,7 @@ cf.data: cf.data.pre Makefile
  	sed "\
  	s%@DEFAULT_HTTP_PORT@%$(DEFAULT_HTTP_PORT)%g;\
  	s%@DEFAULT_ICP_PORT@%$(DEFAULT_ICP_PORT)%g;\
