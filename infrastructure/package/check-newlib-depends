@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.32 2007/05/21 20:52:33 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.33 2007/05/21 21:02:14 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -169,7 +169,7 @@ our @ISA=(qw(Issue));
 sub print
 {
 	my $self = shift;
-	print "Missing $self->{lib}".$self->origin." ($self->{binary}) (NOT REACHABLE\n";
+	print "Missing $self->{lib}".$self->origin." ($self->{binary}) (NOT REACHABLE)\n";
 }
 
 
@@ -393,7 +393,7 @@ sub report_lib_issue
 			return Issue::indirect_dependency->new($lib, $binary, $p);
 		}
 	}
-	return Issue->not_reachable($lib,, $binary, @r);
+	return Issue::not_reachable->new($lib,, $binary, @r);
 }
 
 sub print_list
@@ -432,11 +432,9 @@ sub analyze
 		$fullname = $fullname->[0] if $opt_f;
 		if (!defined $t->{haslib}->{$lib}) {
 			my $issue = report_lib_issue($plist, $lib, $fullname);
-			if (!$issue) {
-				$issue->print;
-				$errors++;
-				$issue->record_wantlib($r->{wantlib});
-			}
+			$issue->print;
+			$errors++;
+			$issue->record_wantlib($r->{wantlib});
 		}
 		$t->{haslib}->{$lib} = 2;
 	}
