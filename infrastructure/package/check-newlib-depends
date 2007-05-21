@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.26 2007/05/13 08:03:47 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.27 2007/05/21 14:15:31 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -54,7 +54,11 @@ sub create
 package OpenBSD::PackingList;
 
 package OpenBSD::PackingElement;
-sub check_wantlibs
+sub record_needed_libs
+{
+}
+
+sub register_libs
 {
 }
 
@@ -63,12 +67,22 @@ sub depwalk
 }
 
 package OpenBSD::PackingElement::Wantlib;
-sub check_wantlibs
+sub register_libs
 {
-	my ($item, $t, $where, $handle) = @_;
+	my ($item, $t) = @_;
 	my $name = $item->{name};
 	$name =~ s/^(.*\/)?(.*)\.(\d+)\.\d+$/$2.$3/;
-	$t->{haslib}->{$name} = 1;
+	$t->{$name} = 1;
+}
+
+package OpenBSD::PackingElement::Lib;
+
+sub register_libs
+{
+	my ($item, $t) = @_;
+	if ($item->fullname =~ m/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/) {
+		$t->{"$2.$3"} = 2;
+	}
 }
 
 package OpenBSD::PackingElement::FileBase;
@@ -80,7 +94,7 @@ sub shellquote
 	return $_;
 }
 
-sub check_wantlibs
+sub record_needed_libs
 {
 	my ($item, $t, $where, $handle) = @_;
 	my $fullname = File::Spec->canonpath($item->fullname());
@@ -128,17 +142,11 @@ sub check_wantlibs
 			next if $lib =~ m/\.so$/;
 			$lib =~ s/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/$2.$3/;
 			if ($main::opt_f) {
-			    if (!defined $t->{needlib}->{$lib}) {
-				$t->{needlib}->{$lib} = [];
-			    }
-			    push(@{$t->{needlib}->{$lib}}, $fullname);
+			    push(@{$t->{$lib}}, $fullname);
 			} else {
-			    $t->{needlib}->{$lib} = $fullname;
+			    $t->{$lib} = $fullname;
 			}
 		}
-	}
-	if ($fullname =~ m/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/) {
-		$t->{haslib}->{"$2.$3"} = 2;
 	}
 	if (!defined $main::opt_B) {
 		unlink($where.$fullname);
@@ -312,7 +320,9 @@ sub analyze
 
 	my $pkgname = $plist->pkgname();
 	my $t = { haslib => {}, needlib => {} };
-	$plist->check_wantlibs($t, $where, @l);
+	$plist->record_needed_libs($t->{needlib}, $where, @l);
+	$plist->register_libs($t->{haslib});
+
 	if (!defined $dependencies->{$pkgname}) {
 		register_dependencies($plist);
 		OpenBSD::SharedLibs::add_plist_libs($plist);
