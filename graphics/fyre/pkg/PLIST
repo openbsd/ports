@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/21 14:24:06 jasper Exp $
+bin/fyre
+share/fyre/
+share/fyre/about-box.fa
+share/fyre/animation-render.glade
+share/fyre/explorer.glade
+share/fyre/metadata-emblem.png
+share/icons/hicolor/16x16/apps/fyre.png
+share/icons/hicolor/22x22/apps/fyre.png
+share/icons/hicolor/24x24/apps/fyre.png
+share/icons/hicolor/48x48/mimetypes/application-x-fyre-animation.png
+share/icons/hicolor/scalable/apps/fyre.svg
+share/mime/
+share/mime/packages/
+share/mime/packages/fyre.xml
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec %D/bin/update-mime-database %D/share/mime

@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_animation_c,v 1.1.1.1 2007/05/21 14:24:06 jasper Exp $
+--- src/animation.c.orig	Fri May 18 22:57:11 2007
++++ src/animation.c	Fri May 18 22:57:16 2007
+@@ -312,6 +312,7 @@ void animation_store_chunk(AnimChunkState *state,
+     gchar *tempstring;
+     Spline *spline;
+     GdkPixdata pixdata;
++    guint64 word;
+ 
+     switch (type) {
+ 
+@@ -350,9 +351,11 @@ void animation_store_chunk(AnimChunkState *state,
+ 
+     case CHUNK_DURATION:
+ 	/* The transition duration, as a double */
++	word = *(guint64*)(data);
++	word = GUINT64_FROM_LE(word);
+ 	if (length == sizeof(gdouble)) {
+ 	    gtk_list_store_set(state->self->model, &state->iter,
+-			       ANIMATION_MODEL_DURATION, *(gdouble*)data,
++			       ANIMATION_MODEL_DURATION, *(gdouble*)&word,
+ 			       -1);
+ 	}
+ 	else {

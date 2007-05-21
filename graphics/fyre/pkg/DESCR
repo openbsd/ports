@@ -1,0 +1,5 @@
+Fyre is a tool for producing computational artwork based on histograms
+of iterated chaotic functions. At the moment, it implements the Peter de
+Jong map in a fixed-function pipeline with an interactive GTK+ frontend
+and a command line interface for easy and efficient rendering of
+high-resolution, high quality images.

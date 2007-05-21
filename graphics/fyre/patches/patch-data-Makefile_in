@@ -1,0 +1,21 @@
+$OpenBSD: patch-data-Makefile_in,v 1.1.1.1 2007/05/21 14:24:06 jasper Exp $
+--- data/Makefile.in.orig	Mon Oct  9 06:01:08 2006
++++ data/Makefile.in	Mon May 21 14:53:37 2007
+@@ -187,13 +187,13 @@ fyredata_DATA = \
+ 	metadata-emblem.png	\
+ 	about-box.fa
+ 
+-@ENABLE_FDODESKTOP_TRUE@desktopdir = $(datadir)/applications
+-@ENABLE_FDODESKTOP_TRUE@desktop_DATA = fyre.desktop
+-@ENABLE_FDODESKTOP_FALSE@update_fdodesktop = /bin/true
++@ENABLE_FDODESKTOP_TRUE@desktopdir =
++@ENABLE_FDODESKTOP_TRUE@desktop_DATA =
++@ENABLE_FDODESKTOP_FALSE@update_fdodesktop = /usr/bin/true
+ @ENABLE_FDODESKTOP_TRUE@update_fdodesktop = update-desktop-database
+ @ENABLE_XDGMIME_TRUE@xdgmimedir = $(datadir)/mime/packages
+ @ENABLE_XDGMIME_TRUE@xdgmime_DATA = fyre.xml
+-@ENABLE_XDGMIME_FALSE@update_xdgmime = /bin/true
++@ENABLE_XDGMIME_FALSE@update_xdgmime = /usr/bin/true
+ @ENABLE_XDGMIME_TRUE@update_xdgmime = update-mime-database $(datadir)/mime
+ @ENABLE_XDGMIME_TRUE@xdgicondir = $(datadir)/icons/hicolor/48x48/mimetypes
+ @ENABLE_XDGMIME_TRUE@xdgicon_DATA = application-x-fyre-animation.png
