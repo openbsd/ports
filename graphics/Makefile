@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2007/05/19 14:24:48 steven Exp $
+# $OpenBSD: Makefile,v 1.182 2007/05/21 14:27:54 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -39,6 +39,7 @@
      SUBDIR += flash
      SUBDIR += fnlib
      SUBDIR += fxtv
+     SUBDIR += fyre
      SUBDIR += gd
      SUBDIR += gdk-pixbuf
      SUBDIR += gfract
