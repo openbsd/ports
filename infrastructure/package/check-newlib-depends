@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.34 2007/05/21 21:23:45 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.35 2007/05/21 21:24:56 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -457,7 +457,6 @@ sub analyze
 	for my $k (sort keys %{$t->{haslib}}) {
 		my $v = $t->{haslib}->{$k};
 		next if $v == 2;
-		print "WANTLIB:       ", $self->stringize, " (system lib)\n";
 		print "Extra:         $k\n";
 	}
 	print_list("\tWANTLIB +=", $r->{wantlib});
