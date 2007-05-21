@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_cdaudio_Makefile,v 1.1.1.1 2006/12/27 16:49:25 steven Exp $
---- src/cdaudio/Makefile.orig	Mon Dec 25 10:31:44 2006
-+++ src/cdaudio/Makefile	Mon Dec 25 10:31:59 2006
-@@ -10,5 +10,6 @@ SOURCES = cdaudio.c cddb.c cdinfo.c conf
+$OpenBSD: patch-src_cdaudio_Makefile,v 1.2 2007/05/21 11:34:07 steven Exp $
+--- src/cdaudio/Makefile.orig	Tue Jan 30 17:04:43 2007
++++ src/cdaudio/Makefile	Sun Apr  8 11:19:45 2007
+@@ -11,5 +11,6 @@ SOURCES = cdaudio.c cddb.c cdinfo.c configure.c http.c
  OBJECTS = ${SOURCES:.c=.o}
  
- CFLAGS += $(PICFLAGS) $(GTK_CFLAGS) -I../../intl -I../.. -I../..
+ CFLAGS += $(PICFLAGS) $(GTK_CFLAGS) $(GLIB_CFLAGS) $(PANGO_CFLAGS) -I../../intl -I../.. -I../..
 +LDFLAGS += -lossaudio
  
  include ../../mk/objective.mk
