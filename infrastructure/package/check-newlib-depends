@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.36 2007/05/21 21:38:01 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.37 2007/05/21 21:43:50 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -239,7 +239,7 @@ sub record_needed_libs
 	if ($fullname =~ m,^/usr/local/emul/freebsd/,) {
 		$freebsd_bin = 1;
 	}
-	if ($linux_bin || $freebsd_bin || $item->{symlink}) {
+	if ($linux_bin || $freebsd_bin || $item->{symlink} || $item->{link}) {
 		$source->skip($item);
 		return;
 	}
