@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.893 2007/05/01 17:17:54 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.894 2007/05/21 11:18:10 steven Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -193,7 +193,7 @@ _clean += -f
 .endif
 # check that clean is clean
 _okay_words = depends work fake -f flavors dist install sub packages package \
-	readmes bulk force
+	readmes bulk force plist
 .for _w in ${_clean:L}
 .  if !${_okay_words:M${_w}}
 ERRORS += "Fatal: unknown clean command: ${_w}"
@@ -2317,6 +2317,9 @@ _internal-clean:
 .endif
 .if ${_clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
+.endif
+.if ${_clean:L:Mplist}
+	cd ${PLIST_DB} && rm -f ${PKGNAMES}
 .endif
 
 # mirroring utilities
