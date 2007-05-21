@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.35 2007/05/21 21:24:56 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.36 2007/05/21 21:38:01 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -59,7 +59,7 @@ package RealFileSource;
 sub new
 {
 	my ($class, $handle, $location) = @_;
-	bless {handle => $handle, location => $location }, $class
+	bless {handle => $handle, location => $location }, $class;
 }
 
 sub prepare_to_extract
@@ -67,11 +67,12 @@ sub prepare_to_extract
 	my ($self, $item) = @_;
 	require OpenBSD::ArcCheck;
 	my $o = $self->{handle}->next;
-	$o->{destdir} = $self->{location};
-	$o->{cwd} = $item->{cwd};
+	$o->{cwd} = $item->cwd;
 	if (!$o->check_name($item)) {
 		die "Error checking name for $o->{name} vs. $item->{name}\n";
 	}
+	$o->{name} = $item->fullname;
+	$o->{destdir} = $self->{location};
 	return $o;
 }
 
@@ -243,7 +244,6 @@ sub record_needed_libs
 		return;
 	}
 	my $n = shellquote($source->retrieve($item));
-	# this will fail because of links, so we don't care.
 	my $cmd;
 	if ($main::opt_o) {
 		open($cmd, "ldd -f 'NEEDED lib%o.so.%m.%n\\n'|");
