@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2007/04/08 22:00:21 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2007/05/21 16:13:41 aanriot Exp $
 #
 
     SUBDIR += base64
@@ -27,7 +27,6 @@
     SUBDIR += p5-JSON
     SUBDIR += p5-Jcode
     SUBDIR += p5-MARC-Record
-    SUBDIR += p5-MIME-Base64
     SUBDIR += p5-Net-IDN-Nameprep
     SUBDIR += p5-Text-Iconv
     SUBDIR += p5-Unicode-Map
