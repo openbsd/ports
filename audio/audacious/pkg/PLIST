@@ -1,25 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/27 16:46:09 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/21 11:30:26 steven Exp $
 bin/audacious
 bin/audtool
 include/audacious/
 include/audacious/beepctrl.h
 include/audacious/configdb.h
-include/audacious/dirbrowser.h
 include/audacious/formatter.h
+include/audacious/hook.h
+include/audacious/i18n.h
+include/audacious/id3tag.h
 include/audacious/input.h
 include/audacious/main.h
 include/audacious/output.h
 include/audacious/playlist.h
 include/audacious/playlist_container.h
 include/audacious/plugin.h
-include/audacious/prefswin.h
 include/audacious/rcfile.h
+include/audacious/strings.h
 include/audacious/titlestring.h
+include/audacious/ui_fileinfopopup.h
+include/audacious/ui_preferences.h
 include/audacious/util.h
 include/audacious/vfs.h
+include/audacious/vfs_buffer.h
+include/audacious/vfs_buffered_file.h
 include/audacious/xconvert.h
-include/audacious/xentry.h
-include/audacious/xml_document.h
+lib/audacious/
+lib/audacious/libaudid3tag.so
 @lib lib/libaudacious.so.${LIBaudacious_VERSION}
 lib/pkgconfig/audacious.pc
 @man man/man1/audacious.1
@@ -119,9 +125,7 @@ share/audacious/Skins/TinyPlayer/titlebar.png
 share/audacious/Skins/TinyPlayer/viscolor.txt
 share/audacious/Skins/TinyPlayer/volume.png
 share/audacious/glade/
-share/audacious/glade/addfiles.glade
 share/audacious/glade/fileinfo.glade
-share/audacious/glade/fileinfo_popup.glade
 share/audacious/glade/prefswin.glade
 share/audacious/images/
 share/audacious/images/about-logo.png
@@ -133,7 +137,13 @@ share/audacious/images/eq.png
 share/audacious/images/mouse.png
 share/audacious/images/playlist.png
 share/audacious/images/plugins.png
+share/audacious/ui/
+share/audacious/ui/equalizer.ui
+share/audacious/ui/mainwin.ui
+share/audacious/ui/playlist.ui
+share/locale/bg/LC_MESSAGES/audacious.mo
 share/locale/br/LC_MESSAGES/audacious.mo
+share/locale/ca/LC_MESSAGES/audacious.mo
 share/locale/cs/LC_MESSAGES/audacious.mo
 share/locale/cy/LC_MESSAGES/audacious.mo
 share/locale/de/LC_MESSAGES/audacious.mo
@@ -142,6 +152,7 @@ share/locale/es/LC_MESSAGES/audacious.mo
 share/locale/fi/LC_MESSAGES/audacious.mo
 share/locale/fr/LC_MESSAGES/audacious.mo
 share/locale/hi/LC_MESSAGES/audacious.mo
+share/locale/hr/LC_MESSAGES/audacious.mo
 share/locale/hu/LC_MESSAGES/audacious.mo
 share/locale/it/LC_MESSAGES/audacious.mo
 share/locale/ja/LC_MESSAGES/audacious.mo
@@ -155,7 +166,10 @@ share/locale/pt_BR/LC_MESSAGES/audacious.mo
 share/locale/ro/LC_MESSAGES/audacious.mo
 share/locale/ru/LC_MESSAGES/audacious.mo
 share/locale/sk/LC_MESSAGES/audacious.mo
+share/locale/sr/LC_MESSAGES/audacious.mo
+share/locale/sr@Latn/LC_MESSAGES/audacious.mo
 share/locale/sv/LC_MESSAGES/audacious.mo
+share/locale/tr/LC_MESSAGES/audacious.mo
 share/locale/uk/LC_MESSAGES/audacious.mo
 share/locale/zh_CN/LC_MESSAGES/audacious.mo
 share/locale/zh_TW/LC_MESSAGES/audacious.mo

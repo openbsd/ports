@@ -1,6 +1,0 @@
-$OpenBSD: patch-audacious_build_stamp_c,v 1.1.1.1 2006/12/27 16:46:09 steven Exp $
---- audacious/build_stamp.c.orig	Mon Dec 25 00:36:20 2006
-+++ audacious/build_stamp.c	Mon Dec 25 00:36:47 2006
-@@ -0,0 +1,2 @@
-+#include <glib.h>
-+const gchar *svn_stamp = "1.2.2";
