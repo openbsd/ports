@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_cairo-xlib-surface-private_h,v 1.1 2007/05/21 12:35:33 steven Exp $
+--- src/cairo-xlib-surface-private.h.orig	Sat May  5 16:10:26 2007
++++ src/cairo-xlib-surface-private.h	Sat May  5 16:10:51 2007
+@@ -39,6 +39,8 @@
+ 
+ typedef struct _cairo_xlib_surface cairo_xlib_surface_t;
+ 
++struct clut_r3g3b2;
++
+ struct _cairo_xlib_surface {
+     cairo_surface_t base;
+ 
+@@ -88,6 +90,9 @@ struct _cairo_xlib_surface {
+     cairo_filter_t filter;
+     int repeat;
+     XTransform xtransform;
++
++    struct clut_r3g3b2 *clut;
++    int workaround;
+ };
+ 
+ #endif /* CAIRO_XLIB_SURFACE_PRIVATE_H */

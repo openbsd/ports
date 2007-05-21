@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/02/06 21:29:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/05/21 12:35:33 steven Exp $
 %%SHARED%%
 include/cairo/
+include/cairo/cairo-deprecated.h
 include/cairo/cairo-features.h
 include/cairo/cairo-ft.h
 include/cairo/cairo-glitz.h
@@ -38,7 +39,7 @@ share/gtk-doc/html/cairo/bindings-patterns.html
 share/gtk-doc/html/cairo/bindings-return-values.html
 share/gtk-doc/html/cairo/bindings-streams.html
 share/gtk-doc/html/cairo/bindings-surfaces.html
-share/gtk-doc/html/cairo/cairo-Error-handling.html
+share/gtk-doc/html/cairo/cairo-Error-Handling.html
 share/gtk-doc/html/cairo/cairo-Font-Options.html
 share/gtk-doc/html/cairo/cairo-FreeType-Fonts.html
 share/gtk-doc/html/cairo/cairo-Image-Surfaces.html
@@ -67,6 +68,7 @@ share/gtk-doc/html/cairo/index.html
 share/gtk-doc/html/cairo/index.sgml
 share/gtk-doc/html/cairo/ix01.html
 share/gtk-doc/html/cairo/ix02.html
+share/gtk-doc/html/cairo/ix03.html
 share/gtk-doc/html/cairo/language-bindings.html
 share/gtk-doc/html/cairo/left.png
 share/gtk-doc/html/cairo/pt01.html

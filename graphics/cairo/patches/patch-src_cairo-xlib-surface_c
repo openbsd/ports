@@ -1,29 +1,11 @@
-$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.4 2007/03/18 14:48:45 kurt Exp $
---- src/cairo-xlib-surface.c.orig	Thu Nov  2 23:53:40 2006
-+++ src/cairo-xlib-surface.c	Sat Mar 17 14:20:44 2007
-@@ -81,6 +81,8 @@ _cairo_xlib_surface_show_glyphs (void   
- 
- #define CAIRO_ASSUME_PIXMAP	20
- 
-+struct clut_r3g3b2;
-+
- struct _cairo_xlib_surface {
-     cairo_surface_t base;
- 
-@@ -126,6 +128,9 @@ struct _cairo_xlib_surface {
-     int num_clip_rects;
- 
-     XRenderPictFormat *xrender_format;
-+
-+    struct clut_r3g3b2 *clut;
-+    int workaround;
- };
- 
- #define CAIRO_SURFACE_RENDER_AT_LEAST(surface, major, minor)	\
-@@ -504,6 +509,254 @@ _swap_ximage_to_native (XImage *ximage)
+$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.5 2007/05/21 12:35:33 steven Exp $
+--- src/cairo-xlib-surface.c.orig	Tue May  1 19:39:47 2007
++++ src/cairo-xlib-surface.c	Sat May  5 18:47:44 2007
+@@ -446,6 +446,255 @@ _swap_ximage_to_native (XImage *ximage)
      }
  }
  
++
 +#if 0
 +static void _set_optimal_cmap(Display *dpy, Colormap cmap) {
 +    int i, r, g, b;
@@ -275,11 +257,8 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.4 2007/03/18 14:48:45 kurt Exp $
  static cairo_status_t
  _get_image_surface (cairo_xlib_surface_t    *surface,
  		    cairo_rectangle_int16_t *interest_rect,
-@@ -652,25 +905,106 @@ _get_image_surface (cairo_xlib_surface_t
- 						 ximage->width,
- 						 ximage->height,
+@@ -604,9 +853,14 @@ _get_image_surface (cairo_xlib_surface_t    *surface,
  						 ximage->bytes_per_line);
-+	
  	if (image->base.status)
  	    goto FAIL;
 +	if (surface->workaround != WORKAROUND_NONE) {
@@ -289,14 +268,19 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.4 2007/03/18 14:48:45 kurt Exp $
      }
      else
      {
++#if 0
  	/*
--	 * XXX This can't work.  We must convert the data to one of the
--	 * supported pixman formats.  Pixman needs another function
--	 * which takes data in an arbitrary format and converts it
--	 * to something supported by that library.
+ 	 * XXX This can't work.  We must convert the data to one of the
+ 	 * supported pixman formats.  Pixman needs another function
+@@ -621,6 +875,98 @@ _get_image_surface (cairo_xlib_surface_t    *surface,
+ 						    ximage->bytes_per_line);
+ 	if (image->base.status)
+ 	    goto FAIL;
++#else
++	/*
 +	 * Otherwise, we construct a buffer containing RGB24 data
 +	 * using the specified workaround.
- 	 */
++	 */
 +	uint32_t *data, *dst, *clut;
 +	uint8_t  *src8;
 +	uint16_t *src16;
@@ -375,25 +359,20 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.4 2007/03/18 14:48:45 kurt Exp $
 +	    goto FAIL;
 +	}
 +	free(ximage->data);
- 	image = (cairo_image_surface_t*)
--	    _cairo_image_surface_create_with_masks ((unsigned char *) ximage->data,
--						    &masks,
--						    ximage->width,
--						    ximage->height,
--						    ximage->bytes_per_line);
--	if (image->base.status)
++	image = (cairo_image_surface_t*)
 +	    cairo_image_surface_create_for_data((unsigned char *)data, CAIRO_FORMAT_RGB24, ximage->width, ximage->height, ximage->width*4);
 +	
 +	if (image->base.status) {
 +	    fprintf(stderr, "cairo-xlib: cairo_image_surface_create_for_data failed\n");
 +	    free(data);
- 	    goto FAIL;
++	    goto FAIL;
 +	}
++#endif
      }
  
      /* Let the surface take ownership of the data */
-@@ -743,29 +1077,132 @@ _cairo_xlib_surface_ensure_gc (cairo_xli
-     _cairo_xlib_surface_set_gc_clip_rects (surface);
+@@ -698,6 +1044,30 @@ _cairo_xlib_surface_ensure_gc (cairo_xlib_surface_t *s
+     return CAIRO_STATUS_SUCCESS;
  }
  
 +static int
@@ -423,27 +402,24 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.4 2007/03/18 14:48:45 kurt Exp $
  static cairo_status_t
  _draw_image_surface (cairo_xlib_surface_t   *surface,
  		     cairo_image_surface_t  *image,
- 		     int                    dst_x,
- 		     int                    dst_y)
- {
+@@ -713,19 +1083,98 @@ _draw_image_surface (cairo_xlib_surface_t   *surface,
+     int native_byte_order = _native_byte_order_lsb () ? LSBFirst : MSBFirst;
+     cairo_status_t status;
+ 
 +    static unsigned char *buf = NULL;
 +    static int size = 0;
-     XImage ximage;
--    unsigned int bpp, alpha, red, green, blue;
-+    unsigned int bpp, alpha, red, green, blue, stride, depth;
-+    int i, j;
++    int i, j, depth, stride;
 +    unsigned char *data, *ilut;
 +    uint32_t *src;
 +    uint8_t *dst8;
 +    uint16_t *dst16;
-     int native_byte_order = _native_byte_order_lsb () ? LSBFirst : MSBFirst;
- 
++
      pixman_format_get_masks (pixman_image_get_format (image->pixman_image),
  			     &bpp, &alpha, &red, &green, &blue);
-+    
-+    
-+    switch(surface->workaround) {
  
++
++    switch(surface->workaround) {
++
 +    case WORKAROUND_NONE:
 +	/* Default behaviour is supposed to work */
 +	stride = image->stride;
@@ -512,7 +488,6 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.4 2007/03/18 14:48:45 kurt Exp $
 +	break;
 +    }
 +    
-+
      ximage.width = image->width;
      ximage.height = image->height;
      ximage.format = ZPixmap;
@@ -529,10 +504,19 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.4 2007/03/18 14:48:45 kurt Exp $
      ximage.bits_per_pixel = bpp;
      ximage.red_mask = red;
      ximage.green_mask = green;
-@@ -1890,7 +2327,35 @@ _cairo_xlib_surface_create_internal (Dis
+@@ -1793,6 +2242,7 @@ _cairo_xlib_surface_create_internal (Display		       *
+ 				     int			height,
+ 				     int			depth)
+ {
++    static int _trace = -1;
+     cairo_xlib_surface_t *surface;
+     cairo_xlib_screen_info_t *screen_info;
+ 
+@@ -1885,7 +2335,38 @@ _cairo_xlib_surface_create_internal (Display		       *
      surface->have_clip_rects = FALSE;
-     surface->clip_rects = NULL;
+     surface->clip_rects = surface->embedded_clip_rects;
      surface->num_clip_rects = 0;
++    
 +    surface->clut = NULL;
 +    surface->workaround = WORKAROUND_NONE;
  
@@ -555,8 +539,10 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.4 2007/03/18 14:48:45 kurt Exp $
 +	    }
 +	}
 +    }
-+    
-+    if(getenv("DEBUG_CAIRO_XLIB")) {
++
++    if(_trace == -1)
++	_trace = getenv("DEBUG_CAIRO_XLIB") ? 1 : 0;
++    if(_trace) {
 +	fprintf(stderr, "New surface with workaround %s\n",
 +		workarounds[surface->workaround]);
 +	_print_surface(surface);
