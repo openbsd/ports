@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.30 2007/05/21 20:20:50 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.31 2007/05/21 20:39:27 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -101,7 +101,56 @@ sub clean
 	unlink($self->extracted_name($item));
 }
 
-package OpenBSD::PackingList;
+package Issue;
+sub new
+{
+	my ($class, $lib, $binary, @packages) = @_;
+	bless { lib => $lib, binary => $binary, packages => \@packages }, 
+		$class;
+}
+
+sub origin
+{
+	my $self = shift;
+	if (@{$self->{packages}} > 0) {
+		return " from ".join(',', @{$self->{packages}});
+	} else {
+		return "";
+	}
+}
+
+package Issue::system_lib;
+our @ISA=(qw(Issue));
+sub print
+{
+	my $self = shift;
+	print "Missing system lib: $self->{lib} ($self->{binary})\n";
+}
+
+package Issue::direct_dependency;
+our @ISA=(qw(Issue));
+sub print
+{
+	my $self = shift;
+	print "Missing $self->{lib}".$self->origin." ($self->{binary}) (probably LIB_DEPENDS\n";
+}
+
+package Issue::indirect_dependency;
+our @ISA=(qw(Issue));
+sub print
+{
+	my $self = shift;
+	print "Missing $self->{lib}".$self->origin." ($self->{binary}) (reachable through dependencies: WANTLIB)\n";
+}
+
+package Issue::not_reachable;
+our @ISA=(qw(Issue));
+sub print
+{
+	my $self = shift;
+	print "Missing $self->{lib}".$self->origin." ($self->{binary}) (NOT REACHABLE\n";
+}
+
 
 package OpenBSD::PackingElement;
 sub record_needed_libs
@@ -288,7 +337,8 @@ sub report_lib_issue
 	for my $dir (qw(/usr /usr/X11R6)) {
 		my @r = OpenBSD::SharedLibs::lookup_libspec($dir, $libspec);
 		if (grep { $_ eq 'system' } @r) {
-			print "Missing system lib: $lib ($binary)\n";
+			my $i = Issue::system_lib->new($lib, $binary);
+			$i->print;
 			$errors++;
 			$r->{wantlib}->{$want} = 1;
 			return;
@@ -304,7 +354,8 @@ sub report_lib_issue
 	if (@r > 0) {
 		for my $p (@r) {
 			if (defined $dependencies->{$plist->pkgname}->{$p}) {
-				print "Missing: $lib from $p ($binary) (probably LIB_DEPENDS)\n";
+				my $i = Issue::direct_dependency->new($lib, $binary, $p);
+				$i->print;
 				$errors++;
 				return;
 			}
@@ -323,20 +374,17 @@ sub report_lib_issue
 		push(@todo, %{$dependencies->{$dep}});
 	}
 	@r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
-	if (@r > 0) {
-		for my $p (@r) {
-			if (defined $done->{$p}) {
-				print "Missing: $lib from $p ($binary) (reachable through dependencies: WANTLIB)\n";
-				$r->{wantlib}->{$want} = 1;
-				$errors++;
-				return;
-			}
+	for my $p (@r) {
+		if (defined $done->{$p}) {
+			my $i = Issue::indirect_dependency->new($lib, $binary, $p);
+			$i->print;
+			$r->{wantlib}->{$want} = 1;
+			$errors++;
+			return;
 		}
-		print "Missing $lib (coming from ", join(',', @r), " ($binary) (NOT REACHABLE)\n";
-		$errors++;
-		return;
 	}
-	print "Missing: $lib ($binary): NOT REACHABLE\n";
+	my $i = Issue->not_reachable($lib,, $binary, @r);
+	$i->print;
 	$errors++;
 }
 
