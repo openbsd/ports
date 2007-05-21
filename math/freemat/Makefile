@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/04/22 14:43:41 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2007/05/21 16:48:33 espie Exp $
 
 COMMENT=	"environment for rapid engineering and scientific processing"
 
@@ -42,7 +42,7 @@ CONFIGURE_STYLE=  gnu
 CONFIGURE_ENV=	F77=${FC} \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/amd -I${LOCALBASE}/include/umfpack -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4"
+		PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4/pkgconfig:${LOCALBASE}/lib/qt4"
 
 SUBST_VARS=	V
 
