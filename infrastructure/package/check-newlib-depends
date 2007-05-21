@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.31 2007/05/21 20:39:27 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.32 2007/05/21 20:52:33 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -119,6 +119,18 @@ sub origin
 	}
 }
 
+sub do_record_wantlib
+{
+	my ($self, $h) = @_;
+	my $want = $self->{lib};
+	$want =~ s/\.\d+$//;
+	$h->{$want} = 1;
+}
+
+sub record_wantlib
+{
+}
+
 package Issue::system_lib;
 our @ISA=(qw(Issue));
 sub print
@@ -127,6 +139,10 @@ sub print
 	print "Missing system lib: $self->{lib} ($self->{binary})\n";
 }
 
+sub record_wantlib
+{
+	&Issue::do_record_wantlib;
+}
 package Issue::direct_dependency;
 our @ISA=(qw(Issue));
 sub print
@@ -141,6 +157,11 @@ sub print
 {
 	my $self = shift;
 	print "Missing $self->{lib}".$self->origin." ($self->{binary}) (reachable through dependencies: WANTLIB)\n";
+}
+
+sub record_wantlib
+{
+	&Issue::do_record_wantlib;
 }
 
 package Issue::not_reachable;
@@ -328,7 +349,7 @@ sub handle_dependency
 
 sub report_lib_issue
 {
-	my ($plist, $lib, $binary, $r) = @_;
+	my ($plist, $lib, $binary) = @_;
 
 	OpenBSD::SharedLibs::add_system_libs('/');
 	my $libspec = "$lib.0";
@@ -337,11 +358,7 @@ sub report_lib_issue
 	for my $dir (qw(/usr /usr/X11R6)) {
 		my @r = OpenBSD::SharedLibs::lookup_libspec($dir, $libspec);
 		if (grep { $_ eq 'system' } @r) {
-			my $i = Issue::system_lib->new($lib, $binary);
-			$i->print;
-			$errors++;
-			$r->{wantlib}->{$want} = 1;
-			return;
+			return Issue::system_lib->new($lib, $binary);
 		}
 	}
 
@@ -354,10 +371,7 @@ sub report_lib_issue
 	if (@r > 0) {
 		for my $p (@r) {
 			if (defined $dependencies->{$plist->pkgname}->{$p}) {
-				my $i = Issue::direct_dependency->new($lib, $binary, $p);
-				$i->print;
-				$errors++;
-				return;
+				return Issue::direct_dependency->new($lib, $binary, $p);
 			}
 		}
 	}
@@ -376,16 +390,10 @@ sub report_lib_issue
 	@r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
 	for my $p (@r) {
 		if (defined $done->{$p}) {
-			my $i = Issue::indirect_dependency->new($lib, $binary, $p);
-			$i->print;
-			$r->{wantlib}->{$want} = 1;
-			$errors++;
-			return;
+			return Issue::indirect_dependency->new($lib, $binary, $p);
 		}
 	}
-	my $i = Issue->not_reachable($lib,, $binary, @r);
-	$i->print;
-	$errors++;
+	return Issue->not_reachable($lib,, $binary, @r);
 }
 
 sub print_list
@@ -423,7 +431,12 @@ sub analyze
 		my $fullname = $t->{needlib}->{$lib};
 		$fullname = $fullname->[0] if $opt_f;
 		if (!defined $t->{haslib}->{$lib}) {
-			report_lib_issue($plist, $lib, $fullname, $r);
+			my $issue = report_lib_issue($plist, $lib, $fullname);
+			if (!$issue) {
+				$issue->print;
+				$errors++;
+				$issue->record_wantlib($r->{wantlib});
+			}
 		}
 		$t->{haslib}->{$lib} = 2;
 	}
