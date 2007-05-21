@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.29 2007/05/21 20:14:28 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.30 2007/05/21 20:20:50 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -284,12 +284,12 @@ sub report_lib_issue
 	OpenBSD::SharedLibs::add_system_libs('/');
 	my $libspec = "$lib.0";
 	my $want = $lib;
+	$want =~ s/\.\d+$//;
 	for my $dir (qw(/usr /usr/X11R6)) {
 		my @r = OpenBSD::SharedLibs::lookup_libspec($dir, $libspec);
 		if (grep { $_ eq 'system' } @r) {
-			print "Missing system lib: $want ($binary)\n";
+			print "Missing system lib: $lib ($binary)\n";
 			$errors++;
-			$want =~ s/\.\d+$//;
 			$r->{wantlib}->{$want} = 1;
 			return;
 		}
@@ -304,7 +304,7 @@ sub report_lib_issue
 	if (@r > 0) {
 		for my $p (@r) {
 			if (defined $dependencies->{$plist->pkgname}->{$p}) {
-				print "Missing: $want from $p ($binary) (probably LIB_DEPENDS)\n";
+				print "Missing: $lib from $p ($binary) (probably LIB_DEPENDS)\n";
 				$errors++;
 				return;
 			}
@@ -326,18 +326,17 @@ sub report_lib_issue
 	if (@r > 0) {
 		for my $p (@r) {
 			if (defined $done->{$p}) {
-				print "Missing: $want from $p ($binary) (reachable through dependencies: WANTLIB)\n";
-				$want =~ s/\.\d+$//;
+				print "Missing: $lib from $p ($binary) (reachable through dependencies: WANTLIB)\n";
 				$r->{wantlib}->{$want} = 1;
 				$errors++;
 				return;
 			}
 		}
-		print "Missing $want (coming from ", join(',', @r), " ($binary) (NOT REACHABLE)\n";
+		print "Missing $lib (coming from ", join(',', @r), " ($binary) (NOT REACHABLE)\n";
 		$errors++;
 		return;
 	}
-	print "Missing: $want ($binary): NOT REACHABLE\n";
+	print "Missing: $lib ($binary): NOT REACHABLE\n";
 	$errors++;
 }
 
