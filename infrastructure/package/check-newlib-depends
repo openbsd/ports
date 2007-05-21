@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.28 2007/05/21 14:41:38 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.29 2007/05/21 20:14:28 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -254,13 +254,13 @@ sub handle_dependency
 	my ($pkgname, $pkgpath) = @_;
 	my $plist = get_plist($pkgname, $pkgpath);
 
-	if (!defined $plist || !defined $plist->pkgname()) {
+	if (!defined $plist || !defined $plist->pkgname) {
 		print "Error: can't solve dependency for $pkgname/$pkgpath\n";
 		print "Error: use -d directory or set the PORTSDIR correctly\n";
 		return;
 	}
 
-	if ($plist->pkgname() ne $pkgname) {
+	if ($plist->pkgname ne $pkgname) {
 		delete $dependencies->{$pkgname};
 		for my $p (keys %$dependencies) {
 			if ($dependencies->{$p}->{$pkgname}) {
@@ -295,7 +295,7 @@ sub report_lib_issue
 		}
 	}
 
-	while (my ($p, $pkgpath) = each %{$dependencies->{$plist->pkgname()}}) {
+	while (my ($p, $pkgpath) = each %{$dependencies->{$plist->pkgname}}) {
 		next if defined $dependencies->{$p};
 		handle_dependency($p, $pkgpath);
 	}
@@ -303,7 +303,7 @@ sub report_lib_issue
 	my @r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
 	if (@r > 0) {
 		for my $p (@r) {
-			if (defined $dependencies->{$plist->pkgname()}->{$p}) {
+			if (defined $dependencies->{$plist->pkgname}->{$p}) {
 				print "Missing: $want from $p ($binary) (probably LIB_DEPENDS)\n";
 				$errors++;
 				return;
@@ -311,7 +311,7 @@ sub report_lib_issue
 		}
 	}
 	# okay, let's walk for WANTLIB
-	my @todo = %{$dependencies->{$plist->pkgname()}};
+	my @todo = %{$dependencies->{$plist->pkgname}};
 	my $done = {};
 	while (@todo >= 2) {
 		my $path = pop @todo;
