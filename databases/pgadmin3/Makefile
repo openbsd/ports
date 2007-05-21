@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/03 07:42:55 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/21 15:49:30 naddy Exp $
 
 COMMENT=	"administration and development platform for PostgreSQL"
 
@@ -44,6 +44,6 @@ post-install:
 	@cp -R ${WRKSRC}/docs/* ${PREFIX}/${DOCDIR}/
 	@rm -rf ${PREFIX}/${DOCDIR}/en_US/pg/
 	@ln -s ${LOCALBASE}/share/doc/postgresql/html/ \
-		${PREFIX}/${DOCDIR}/en_US/pg/
+		${PREFIX}/${DOCDIR}/en_US/pg
 
 .include <bsd.port.mk>
