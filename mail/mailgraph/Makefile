@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/18 15:31:55 saad Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/22 17:23:53 naddy Exp $
 
-COMMENT=	"a RRDtool frontend for Postfix statistics"
+COMMENT=	"RRDtool frontend for Postfix statistics"
 
 VERSION=	1.12
 DISTNAME=	mailgraph-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}/pub/ \

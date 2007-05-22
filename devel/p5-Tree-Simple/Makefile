@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/05 06:16:38 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/22 17:23:53 naddy Exp $
 
-COMMENT=	"A simple tree object"
+COMMENT=	"simple tree object"
 
 MODULES=	cpan
 DISTNAME=	Tree-Simple-1.17
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
