@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2007/04/27 22:02:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.127 2007/05/22 15:30:37 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -23,6 +23,7 @@
      SUBDIR += e2fsprogs
      SUBDIR += expiretable
      SUBDIR += fam
+     SUBDIR += filelight
      SUBDIR += findlib
      SUBDIR += freedt
      SUBDIR += ggrep
