@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/05/22 21:08:17 steven Exp $
+--- configure.orig	Tue May 22 18:09:01 2007
++++ configure	Tue May 22 18:09:27 2007
+@@ -18838,7 +18838,7 @@ echo "${ECHO_T}$am_cv_python_pyexecdir" >&6
+ # Checks for libraries ---
+ 
+ # get rid of the -export-dynamic stuff from the configure flags ...
+-export_dynamic=`(./libtool --config; echo eval echo \\$export_dynamic_flag_spec) | sh`
++export_dynamic=`(./libtool --config; echo eval echo \\$export_dynamic_flag_spec) | SED=/usr/bin/sed sh`
+ 
+ # cairo
+ 
