@@ -1,12 +1,144 @@
-$OpenBSD: patch-thunar-vfs_thunar-vfs-path_c,v 1.1.1.1 2007/05/08 15:14:23 steven Exp $
+$OpenBSD: patch-thunar-vfs_thunar-vfs-path_c,v 1.2 2007/05/22 15:37:37 steven Exp $
 --- thunar-vfs/thunar-vfs-path.c.orig	Sat Jan 20 21:39:09 2007
-+++ thunar-vfs/thunar-vfs-path.c	Tue May  8 19:00:31 2007
-@@ -1142,7 +1142,7 @@ _thunar_vfs_path_init (void)
++++ thunar-vfs/thunar-vfs-path.c	Mon May 21 18:45:55 2007
+@@ -46,11 +46,11 @@
+ 
+ /* Masks to handle the 4-byte aligned path names */
+ #if G_BYTE_ORDER == G_LITTLE_ENDIAN
+-#define THUNAR_VFS_PATH_MASK (0xffu << ((sizeof (guint) - 1) * 8))
++#define THUNAR_VFS_PATH_MASK (0xffu << ((sizeof (gsize) - 1) * 8))
+ #define THUNAR_VFS_PATH_ROOT (0x2fu)
+ #elif G_BYTE_ORDER == G_BIG_ENDIAN
+ #define THUNAR_VFS_PATH_MASK (0xffu)
+-#define THUNAR_VFS_PATH_ROOT (0x2fu << ((sizeof (guint) - 1) * 8))
++#define THUNAR_VFS_PATH_ROOT (0x2fu << ((sizeof (gsize) - 1) * 8))
+ #else
+ #error "Unsupported endianess"
+ #endif
+@@ -484,7 +484,7 @@ void
+ thunar_vfs_path_unref (ThunarVfsPath *path)
+ {
+   ThunarVfsPath *parent;
+-  const guint   *p;
++  const gsize   *p;
+ 
+   while (path != NULL && (g_atomic_int_exchange_and_add (&path->ref_count, -1) & ~THUNAR_VFS_PATH_SCHEME_MASK) == 1)
+     {
+@@ -519,7 +519,7 @@ thunar_vfs_path_unref (ThunarVfsPath *path)
+       THUNAR_VFS_PATH_DEBUG_REMOVE (path);
+ 
+       /* release the path resources (we need to determine the size for the slice allocator) */
+-      for (p = (const guint *) thunar_vfs_path_get_name (path); (*p & THUNAR_VFS_PATH_MASK) != 0u; ++p)
++      for (p = (const gsize *) thunar_vfs_path_get_name (path); (*p & THUNAR_VFS_PATH_MASK) != 0u; ++p)
+         ;
+       _thunar_vfs_slice_free1 (((const guint8 *) (p + 1)) - ((const guint8 *) path), path);
+ 
+@@ -570,8 +570,8 @@ thunar_vfs_path_equal (gconstpointer path_ptr_a,
+ {
+   const ThunarVfsPath *path_a = path_ptr_a;
+   const ThunarVfsPath *path_b = path_ptr_b;
+-  const guint         *a;
+-  const guint         *b;
++  const gsize         *a;
++  const gsize         *b;
+ 
+   /* compare the schemes */
+   if (thunar_vfs_path_get_scheme (path_a) != thunar_vfs_path_get_scheme (path_b))
+@@ -583,8 +583,8 @@ again:
+     return TRUE;
+ 
+   /* compare the last path component */
+-  a = (const guint *) thunar_vfs_path_get_name (path_a);
+-  b = (const guint *) thunar_vfs_path_get_name (path_b);
++  a = (const gsize *) thunar_vfs_path_get_name (path_a);
++  b = (const gsize *) thunar_vfs_path_get_name (path_b);
+   for (;;)
+     {
+       if (*a != *b)
+@@ -1120,7 +1120,7 @@ _thunar_vfs_path_init (void)
+   _thunar_vfs_return_if_fail (n_home_components == 0);
+ 
+   /* include the root element */
+-  n_bytes = sizeof (ThunarVfsPath) + sizeof (guint);
++  n_bytes = sizeof (ThunarVfsPath) + sizeof (gsize);
+   n_home_components = 1;
+ 
+   /* split the home path into its components */
+@@ -1128,7 +1128,7 @@ _thunar_vfs_path_init (void)
+   for (component = components; *component != NULL; ++component)
+     if (G_LIKELY (**component != '\0'))
+       {
+-        n_bytes += sizeof (ThunarVfsPath) + ((strlen (*component) + sizeof (guint)) / sizeof (guint)) * sizeof (guint);
++        n_bytes += sizeof (ThunarVfsPath) + ((strlen (*component) + sizeof (gsize)) / sizeof (gsize)) * sizeof (gsize);
+         n_home_components += 1;
+       }
+ 
+@@ -1141,8 +1141,8 @@ _thunar_vfs_path_init (void)
+   path->ref_count = 1;
    path->parent = NULL;
    home_components[0] = path;
-   *((guint *) thunar_vfs_path_get_name (path)) = THUNAR_VFS_PATH_ROOT;
+-  *((guint *) thunar_vfs_path_get_name (path)) = THUNAR_VFS_PATH_ROOT;
 -  offset += sizeof (ThunarVfsPath) + sizeof (guint);
-+  offset += sizeof (ThunarVfsPath) + sizeof (gpointer);
++  *((gsize *) thunar_vfs_path_get_name (path)) = THUNAR_VFS_PATH_ROOT;
++  offset += sizeof (ThunarVfsPath) + sizeof (gsize);
  
    /* add the remaining path components */
    for (component = components; *component != NULL; ++component)
+@@ -1155,7 +1155,7 @@ _thunar_vfs_path_init (void)
+         home_components[++n] = path;
+ 
+         /* calculate the offset for the next home path component */
+-        offset += sizeof (ThunarVfsPath) + ((strlen (*component) + sizeof (guint)) / sizeof (guint)) * sizeof (guint);
++        offset += sizeof (ThunarVfsPath) + ((strlen (*component) + sizeof (gsize)) / sizeof (gsize)) * sizeof (gsize);
+ 
+         /* copy the path */
+         for (s = *component, t = (gchar *) thunar_vfs_path_get_name (path); *s != '\0'; )
+@@ -1170,10 +1170,10 @@ _thunar_vfs_path_init (void)
+   g_assert (n_home_components == n + 1);
+ 
+   /* allocate the trash root path */
+-  _thunar_vfs_path_trash_root = g_malloc (sizeof (ThunarVfsPath) + sizeof (guint));
++  _thunar_vfs_path_trash_root = g_malloc (sizeof (ThunarVfsPath) + sizeof (gsize));
+   _thunar_vfs_path_trash_root->ref_count = 1 | THUNAR_VFS_PATH_SCHEME_TRASH;
+   _thunar_vfs_path_trash_root->parent = NULL;
+-  *((guint *) thunar_vfs_path_get_name (_thunar_vfs_path_trash_root)) = THUNAR_VFS_PATH_ROOT;
++  *((gsize *) thunar_vfs_path_get_name (_thunar_vfs_path_trash_root)) = THUNAR_VFS_PATH_ROOT;
+ 
+   /* cleanup */
+   g_strfreev (components);
+@@ -1252,7 +1252,7 @@ _thunar_vfs_path_new_relative (ThunarVfsPath *parent,
+       /* determine the length of the path component in bytes */
+       for (s1 = s + 1; *s1 != '\0' && *s1 != G_DIR_SEPARATOR; ++s1)
+         ;
+-      n = (((s1 - s) + sizeof (guint)) / sizeof (guint)) * sizeof (guint)
++      n = (((s1 - s) + sizeof (gsize)) / sizeof (gsize)) * sizeof (gsize)
+         + sizeof (ThunarVfsPath);
+ 
+       /* allocate memory for the new path component */
+@@ -1264,7 +1264,7 @@ _thunar_vfs_path_new_relative (ThunarVfsPath *parent,
+       THUNAR_VFS_PATH_DEBUG_INSERT (path);
+ 
+       /* zero out the last word to have the name zero-terminated */
+-      *(((guint *) (((gchar *) path) + n)) - 1) = 0;
++      *(((gsize *) (((gchar *) path) + n)) - 1) = 0;
+ 
+       /* copy the path component name */
+       for (t = (gchar *) thunar_vfs_path_get_name (path); *s != '\0' && *s != G_DIR_SEPARATOR; )
+@@ -1325,7 +1325,7 @@ _thunar_vfs_path_child (ThunarVfsPath *parent,
+   /* determine the length of the name in bytes */
+   for (s = name + 1; *s != '\0'; ++s)
+     ;
+-  n = (((s - name) + sizeof (guint)) / sizeof (guint)) * sizeof (guint)
++  n = (((s - name) + sizeof (gsize)) / sizeof (gsize)) * sizeof (gsize)
+     + sizeof (ThunarVfsPath);
+ 
+   /* allocate memory for the new path component */
+@@ -1337,7 +1337,7 @@ _thunar_vfs_path_child (ThunarVfsPath *parent,
+   THUNAR_VFS_PATH_DEBUG_INSERT (path);
+ 
+   /* zero out the last word to have the name zero-terminated */
+-  *(((guint *) (((gchar *) path) + n)) - 1) = 0;
++  *(((gsize *) (((gchar *) path) + n)) - 1) = 0;
+ 
+   /* copy the path component name */
+   for (s = name, t = (gchar *) thunar_vfs_path_get_name (path); *s != '\0'; )
