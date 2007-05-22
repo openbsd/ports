@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/19 21:01:30 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/22 21:13:07 simon Exp $
 
 COMMENT=        "standalone extensible Perl module installer"
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	::archivers/p5-Archive-Tar \
 		::devel/p5-Module-CoreList \
 		::devel/p5-Module-ScanDeps \
 		::devel/p5-PAR-Dist
+BUILD_DEPENDS=	::devel/p5-version
 
 CONFIGURE_ARGS=	--skip
 
