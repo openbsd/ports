@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/03/06 18:30:31 kurt Exp $
+# $OpenBSD: Makefile,v 1.21 2007/05/22 18:47:14 ajacoutot Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -8,8 +8,8 @@ COMMENT-docs=		"HTML Documentation for NSPR"
 
 VER=			4.6.5
 DISTNAME=		nspr-${VER}
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-docs=		nspr-docs-${VER}
+PKGNAME-main=		${DISTNAME}p1
+PKGNAME-docs=		nspr-docs-${VER}p0
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			nspr-reference${EXTRACT_SUFX}:0
 
@@ -22,7 +22,7 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://www.mozilla.org/projects/nspr/index.html
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 WANTLIB-main=		c
 
