@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_network_qsslcertificate_cpp,v 1.1 2007/05/22 09:09:32 espie Exp $
+--- src/network/qsslcertificate.cpp.orig	Mon May 21 17:51:39 2007
++++ src/network/qsslcertificate.cpp	Mon May 21 17:52:22 2007
+@@ -106,7 +106,7 @@
+ 
+ #include <QtCore/qatomic.h>
+ #include <QtCore/qdatetime.h>
+-#ifndef QT_NO_DEBUG
++#ifndef QT_NO_DEBUG_STREAM
+ #include <QtCore/qdebug.h>
+ #endif
+ #include <QtCore/qdir.h>
+@@ -670,7 +670,7 @@ QList<QSslCertificate> QSslCertificatePrivate::certifi
+     return certificates;
+ }
+ 
+-#ifndef QT_NO_DEBUG
++#ifndef QT_NO_DEBUG_STREAM
+ QDebug operator<<(QDebug debug, const QSslCertificate &certificate)
+ {
+     debug << "QSslCertificate("

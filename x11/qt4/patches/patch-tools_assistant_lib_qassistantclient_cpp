@@ -1,17 +1,17 @@
-$OpenBSD: patch-tools_assistant_lib_qassistantclient_cpp,v 1.4 2007/03/17 17:58:17 espie Exp $
---- tools/assistant/lib/qassistantclient.cpp.orig	Wed Feb 21 10:58:51 2007
-+++ tools/assistant/lib/qassistantclient.cpp	Sat Mar 17 10:47:28 2007
+$OpenBSD: patch-tools_assistant_lib_qassistantclient_cpp,v 1.5 2007/05/22 09:09:32 espie Exp $
+--- tools/assistant/lib/qassistantclient.cpp.orig	Mon Mar 19 21:15:06 2007
++++ tools/assistant/lib/qassistantclient.cpp	Sat Apr 21 20:57:27 2007
 @@ -172,11 +172,11 @@ QAssistantClient::QAssistantClient( const QString &pat
-     : QObject( parent ), host ( "localhost" )
+     : QObject( parent ), host ( QLatin1String("localhost") )
  {
      if ( path.isEmpty() )
--        assistantCommand = "assistant";
-+        assistantCommand = "assistant4";
+-        assistantCommand = QLatin1String("assistant");
++        assistantCommand = QLatin1String("assistant4");
      else {
          QFileInfo fi( path );
          if ( fi.isDir() )
--            assistantCommand = path + "/assistant";
-+            assistantCommand = path + "/assistant4";
+-            assistantCommand = path + QLatin1String("/assistant");
++            assistantCommand = path + QLatin1String("/assistant4");
          else
              assistantCommand = path;
      }

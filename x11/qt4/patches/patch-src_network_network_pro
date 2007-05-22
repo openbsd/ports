@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_network_network_pro,v 1.1 2007/05/22 09:09:32 espie Exp $
+--- src/network/network.pro.orig	Mon May 21 01:43:02 2007
++++ src/network/network.pro	Mon May 21 01:43:25 2007
+@@ -74,11 +74,8 @@ contains(QT_CONFIG, openssl) {
+                qsslsocket_openssl.cpp \
+                qsslsocket_openssl_symbols.cpp
+ 
+-    # Only for static builds, we link against OpenSSL.
+-    contains(CONFIG, static) {
+         win32:LIBS += ssleay32 libeay32
+         unix:LIBS += -lssl -lcrypto
+-    }
+ 
+     # Include Qt's default CA bundle
+     RESOURCES += network.qrc

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_network_qsslcertificate_h,v 1.1 2007/05/22 09:09:32 espie Exp $
+--- src/network/qsslcertificate.h.orig	Mon May 21 17:51:39 2007
++++ src/network/qsslcertificate.h	Mon May 21 17:52:28 2007
+@@ -117,7 +117,7 @@ class Q_NETWORK_EXPORT QSslCertificate (private)
+     friend class QSslSocketBackendPrivate;
+ };
+ 
+-#ifndef QT_NO_DEBUG
++#ifndef QT_NO_DEBUG_STREAM
+ class QDebug;
+ Q_NETWORK_EXPORT QDebug operator<<(QDebug debug, const QSslCertificate &certificate);
+ Q_NETWORK_EXPORT QDebug operator<<(QDebug debug, QSslCertificate::SubjectInfo info);

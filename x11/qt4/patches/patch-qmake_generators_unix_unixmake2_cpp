@@ -1,7 +1,7 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.4 2007/03/17 17:58:17 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Wed Feb 21 10:59:01 2007
-+++ qmake/generators/unix/unixmake2.cpp	Sat Mar 17 10:47:27 2007
-@@ -206,10 +206,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.5 2007/05/22 09:09:32 espie Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	Sun May  6 17:54:47 2007
++++ qmake/generators/unix/unixmake2.cpp	Sun May 13 16:27:00 2007
+@@ -213,10 +213,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              t << "TARGETD       = " << escapeFilePath(var("TARGET_x.y")) << endl;
              t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
          } else if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
@@ -14,7 +14,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.4 2007/03/17 17:58:17 es
          } else {
              t << "TARGETD       = " << escapeFilePath(var("TARGET_x")) << endl;
              t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
-@@ -518,31 +516,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -526,31 +524,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              t << endl << endl;
          } else if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
              t << "\n\t"
@@ -49,17 +49,18 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.4 2007/03/17 17:58:17 es
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
-@@ -857,8 +846,7 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
-         t << "\t-$(DEL_FILE) " << "$(TARGET)" << " " << endl;
-     if(!project->isActiveConfig("staticlib") && project->values("QMAKE_APP_FLAG").isEmpty() &&
-        !project->isActiveConfig("plugin") && !project->isActiveConfig("compile_libtool"))
--        t << "\t-$(DEL_FILE) " << destdir << "$(TARGET0) " << destdir << "$(TARGET1) "
+@@ -843,9 +832,7 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+         t << "\t-$(LIBTOOL) --mode=clean $(DEL_FILE) " << "$(TARGET)" << endl;
+     } else if(!project->isActiveConfig("staticlib") && project->values("QMAKE_APP_FLAG").isEmpty() &&
+        !project->isActiveConfig("plugin")) {
+-        t << "\t-$(DEL_FILE) " << destdir << "$(TARGET)" << " " << endl
+-          << "\t-$(DEL_FILE) " << destdir << "$(TARGET0) " << destdir << "$(TARGET1) "
 -          << destdir << "$(TARGET2) $(TARGETA)" << endl;
-+        t << "\t-$(DEL_FILE) " << " $(TARGETA)" << endl;
-     {
-         QString ofile = Option::fixPathToTargetOS(fileFixify(Option::output.fileName()));
-         if(!ofile.isEmpty())
-@@ -927,6 +915,10 @@ void UnixMakefileGenerator::init2()
++        t << "\t-$(DEL_FILE) " << "$(TARGET)" << " " << endl;
+     } else {
+         t << "\t-$(DEL_FILE) " << "$(TARGET)" << " " << endl;
+     }
+@@ -943,6 +930,10 @@ void UnixMakefileGenerator::init2()
      project->values("VER_MAJ").append(l[0]);
      project->values("VER_MIN").append(l[1]);
      project->values("VER_PAT").append(l[2]);
@@ -70,7 +71,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.4 2007/03/17 17:58:17 es
      if(project->isEmpty("QMAKE_FRAMEWORK_VERSION"))
          project->values("QMAKE_FRAMEWORK_VERSION").append(project->values("VER_MAJ").first());
  
-@@ -1058,7 +1050,7 @@ void UnixMakefileGenerator::init2()
+@@ -1074,7 +1065,7 @@ void UnixMakefileGenerator::init2()
                                                              project->first("VER_MIN") +  "." +
                                                              project->first("VER_PAT"));
              }

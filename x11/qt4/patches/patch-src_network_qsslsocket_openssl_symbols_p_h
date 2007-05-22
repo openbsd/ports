@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_network_qsslsocket_openssl_symbols_p_h,v 1.1 2007/05/22 09:09:32 espie Exp $
+--- src/network/qsslsocket_openssl_symbols_p.h.orig	Mon May 21 01:44:35 2007
++++ src/network/qsslsocket_openssl_symbols_p.h	Mon May 21 01:44:44 2007
+@@ -54,7 +54,7 @@
+ 
+ #define DUMMYARG
+ 
+-#ifdef QT_SHARED
++#if 0
+ // **************** Shared declarations ******************
+ // ret func(arg)
+ 

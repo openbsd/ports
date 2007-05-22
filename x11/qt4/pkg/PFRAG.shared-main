@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/21 19:25:47 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2007/05/22 09:09:32 espie Exp $
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/libQtAssistantClient.so.${LIBQtAssistantClient_VERSION}
 @lib lib/libQtCore.so.${LIBQtCore_VERSION}
@@ -8,6 +8,7 @@
 @lib lib/libQtGui.so.${LIBQtGui_VERSION}
 @lib lib/libQtNetwork.so.${LIBQtNetwork_VERSION}
 @lib lib/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
+@lib lib/libQtScript.so.${LIBQtScript_VERSION}
 @lib lib/libQtSql.so.${LIBQtSql_VERSION}
 @lib lib/libQtSvg.so.${LIBQtSvg_VERSION}
 @lib lib/libQtTest.so.${LIBQtTest_VERSION}
@@ -21,6 +22,7 @@
 @lib lib/qt4/libQtGui.so.${LIBQtGui_VERSION}
 @lib lib/qt4/libQtNetwork.so.${LIBQtNetwork_VERSION}
 @lib lib/qt4/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
+@lib lib/qt4/libQtScript.so.${LIBQtScript_VERSION}
 @lib lib/qt4/libQtSql.so.${LIBQtSql_VERSION}
 @lib lib/qt4/libQtSvg.so.${LIBQtSvg_VERSION}
 @lib lib/qt4/libQtTest.so.${LIBQtTest_VERSION}
@@ -37,4 +39,5 @@ lib/qt4/plugins/imageformats/libqgif.so
 lib/qt4/plugins/imageformats/libqjpeg.so
 lib/qt4/plugins/imageformats/libqmng.so
 lib/qt4/plugins/imageformats/libqsvg.so
+lib/qt4/plugins/imageformats/libqtiff.so
 lib/qt4/plugins/inputmethods/libqimsw-multi.so

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_network_qsslcipher_h,v 1.1 2007/05/22 09:09:32 espie Exp $
+--- src/network/qsslcipher.h.orig	Mon May 21 17:51:39 2007
++++ src/network/qsslcipher.h	Mon May 21 17:52:45 2007
+@@ -82,7 +82,7 @@ class Q_NETWORK_EXPORT QSslCipher (private)
+     friend class QSslSocketBackendPrivate;
+ };
+ 
+-#ifndef QT_NO_DEBUG
++#ifndef QT_NO_DEBUG_STREAM
+ class QDebug;
+ Q_NETWORK_EXPORT QDebug operator<<(QDebug debug, const QSslCipher &cipher);
+ #endif

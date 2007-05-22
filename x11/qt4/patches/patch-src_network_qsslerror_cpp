@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_network_qsslerror_cpp,v 1.1 2007/05/22 09:09:32 espie Exp $
+--- src/network/qsslerror.cpp.orig	Mon May 21 17:51:39 2007
++++ src/network/qsslerror.cpp	Mon May 21 17:52:54 2007
+@@ -86,7 +86,7 @@
+ */
+ 
+ #include "qsslerror.h"
+-#ifndef QT_NO_DEBUG
++#ifndef QT_NO_DEBUG_STREAM
+ #include <QtCore/qdebug.h>
+ #endif
+ 
+@@ -239,7 +239,7 @@ QSslCertificate QSslError::certificate() const
+     return d->certificate;
+ }
+ 
+-#ifndef QT_NO_DEBUG
++#ifndef QT_NO_DEBUG_STREAM
+ //class QDebug;
+ QDebug operator<<(QDebug debug, const QSslError &error)
+ {

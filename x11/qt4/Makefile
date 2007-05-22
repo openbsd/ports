@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2007/05/17 23:54:24 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2007/05/22 09:09:32 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -14,30 +14,30 @@ PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-PKGNAME-main=		qt4-${VERSION}p2
+PKGNAME-main=		qt4-${VERSION}
 FULLPKGNAME-html=	qt4-html-${VERSION}
-SHARED_LIBS=	Qt3Support 7.0 \
-		QtCore 6.2 \
-		QtDesigner 6.1 \
-		QtDesignerComponents 6.1 \
-		QtGui 7.0 \
-		QtNetwork 6.2 \
-		QtOpenGL 6.2 \
-		QtSql 6.2 \
-		QtXml 6.1 \
-		QtSvg 6.2 \
-		QtTest 6.1 \
-		QtAssistantClient 2.1 \
-		QtDBus 0.1 
+SHARED_LIBS=	Qt3Support 8.0 \
+		QtCore 7.0 \
+		QtDesigner 7.0 \
+		QtDesignerComponents 7.0 \
+		QtGui 8.0 \
+		QtNetwork 7.0 \
+		QtOpenGL 7.0 \
+		QtSql 7.0 \
+		QtXml 7.0 \
+		QtSvg 7.0 \
+		QtTest 7.0 \
+		QtAssistantClient 3.0 \
+		QtDBus 1.0 \
+		QtScript 0.0
 
 
-VERSION=	4.2.3
+VERSION=	4.3.0rc1
 DISTNAME=	qt-x11-opensource-src-${VERSION}
 
 
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.rediris.es/mirror/Qt/source/ \
-		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/ \
+MASTER_SITES=	ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/ \
 		ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/ \
 		ftp://ftp.tu-chemnitz.de/pub/Qt/qt/source/ \
 		http://ftp.silug.org/pub/qt/source/ \
@@ -66,6 +66,7 @@ MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 PORTHOME=	${WRKDIST}
 
 CONFIGURE_STYLE= simple
+SEPARATE_BUILD=	simple
 CONFIGURE_ARGS=	-qt-gif -system-libpng -system-libjpeg -system-zlib \
 		-sm -no-g++-exceptions -system-sqlite \
 		-v -stl -xrender -fast \
@@ -77,7 +78,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libpng -system-libjpeg -system-zlib \
 		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include \
-		-L${WRKSRC}/lib \
+		-L${WRKBUILD}/lib \
 		-L${LOCALBASE}/lib
 
 .if ${FLAVOR:L:Mdebug}
@@ -102,7 +103,6 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -I${LOCALBASE}/include/postgresql/server \
 	    -L${LOCALBASE}/lib \
 	    -I${LOCALBASE}/include -plugin-sql-psql
-CONFIGURE_ARGS+= -plugin-sql-sqlite
 
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" 
 
@@ -128,7 +128,7 @@ WANTLIB=		iconv intl
 
 commonWANTLIB=		ICE Xrender c GLU SM freetype pthread Xrandr Xinerama \
 			stdc++ Xcursor Xext GL Xi m X11.>=10 z fontconfig \
-			Xfixes
+			Xfixes ssl crypto
 commonLIB_DEPENDS=	png.>=2::graphics/png \
 			dbus-1::x11/dbus
 
@@ -140,7 +140,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 			jpeg::graphics/jpeg \
 			mng::graphics/libmng
 WANTLIB-main=		${WANTLIB} ${commonWANTLIB} \
-			lcms
+			lcms tiff
 
 
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
@@ -165,7 +165,7 @@ WANTLIB-sqlite=		${WANTLIB} ${sqlWANTLIB}
 
 
 LIB_DEPENDS-examples=	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus::${BUILD_PKGPATH}
+			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus,QtScript::${BUILD_PKGPATH}
 WANTLIB-examples=	${WANTLIB} ${commonWANTLIB}
 
 
@@ -180,7 +180,7 @@ QT_EXAMPLES=	${QT_BASEDIR}/examples
 QT_DOC=		${PREFIX}/share/doc/qt4
 QT_PLUGINSDIR=	${QT_BASEDIR}/plugins
 QT_BINDIR=	${QT_BASEDIR}/bin
-QT_PKGCFGDIR=	${QT_BASEDIR}
+QT_PKGCFGDIR=	${QT_BASEDIR}/pkgconfig
 
 DOCS=	OPENSOURCE-NOTICE.TXT README
 
@@ -207,7 +207,7 @@ post-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	# programs
 	${INSTALL_PROGRAM_DIR} ${QT_BINDIR} 
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/{findtr,syncqt} ${QT_BINDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/{findtr,syncqt} ${QT_BINDIR}
 .for p in ${PROGRAMS4} 
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p4
 .endfor
