@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2007/03/22 20:21:07 simon Exp $
+# $OpenBSD: Makefile,v 1.141 2007/05/22 18:32:32 msf Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -119,6 +119,7 @@
      SUBDIR += wesnoth,tinygui
      SUBDIR += wmminichess
      SUBDIR += wmtictactoe
+     SUBDIR += wormux
      SUBDIR += wtf
      SUBDIR += xasteroids
      SUBDIR += xbat
