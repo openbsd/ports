@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.14 2006/11/26 10:16:22 steven Exp $
+# $OpenBSD: python.port.mk,v 1.15 2007/05/22 15:34:26 martynas Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -13,12 +13,14 @@ BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 .endif
 RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
 
+.if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
-.if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
 MODPY_SETUPUTILS_DEPEND?=:py-setuptools-*:devel/py-setuptools
 MODPY_RUN_DEPENDS+=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS+=		${MODPY_SETUPUTILS_DEPEND}
+# The setuptools uses test target
+REGRESS_TARGET?=	test
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
@@ -70,7 +72,7 @@ do-install:
 .  if !target(do-regress) && \
       defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
 do-regress:
-	${_MODPY_CMD} test
+	${_MODPY_CMD} ${REGRESS_TARGET}
 .  endif
 
 .endif
