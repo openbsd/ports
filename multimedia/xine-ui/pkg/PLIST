@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/24 22:46:37 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/22 08:11:08 steven Exp $
 @comment bin/fbxine
 bin/xine
 bin/xine-bugreport
@@ -53,10 +53,25 @@ share/doc/xine-ui/README_pl
 share/doc/xine-ui/README_uk
 share/doc/xitk/
 share/doc/xitk/README
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/xine.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/xine.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/xine.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/xine.png
 share/locale/cs/LC_MESSAGES/xine-ui.mo
 share/locale/cs/LC_MESSAGES/xitk.mo
 share/locale/de/LC_MESSAGES/xine-ui.mo
 share/locale/de/LC_MESSAGES/xitk.mo
+share/locale/eo/LC_MESSAGES/xine-ui.mo
 share/locale/es/LC_MESSAGES/xine-ui.mo
 share/locale/es/LC_MESSAGES/xitk.mo
 share/locale/eu/
@@ -69,6 +84,8 @@ share/locale/it/LC_MESSAGES/xine-ui.mo
 share/locale/it/LC_MESSAGES/xitk.mo
 share/locale/ja/LC_MESSAGES/xine-ui.mo
 share/locale/ja/LC_MESSAGES/xitk.mo
+share/locale/nb/LC_MESSAGES/xine-ui.mo
+share/locale/nb/LC_MESSAGES/xitk.mo
 share/locale/pl/LC_MESSAGES/xine-ui.mo
 share/locale/pl/LC_MESSAGES/xitk.mo
 share/locale/pt_BR/LC_MESSAGES/xine-ui.mo
@@ -81,10 +98,6 @@ share/locale/uk/LC_MESSAGES/xine-ui.mo
 share/locale/uk/LC_MESSAGES/xitk.mo
 share/pixmaps/
 share/pixmaps/xine.xpm
-share/pixmaps/xine_16x16.png
-share/pixmaps/xine_22x22.png
-share/pixmaps/xine_32x32.png
-share/pixmaps/xine_48x48.png
 share/xine/
 share/xine/desktop/
 share/xine/desktop/xine.desktop

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/14 22:24:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/22 08:11:08 steven Exp $
 
 COMMENT=		"multimedia player"
 
-DISTNAME=		xine-ui-0.99.4
-PKGNAME=		${DISTNAME}p2
+DISTNAME=		xine-ui-0.99.5
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://xinehq.de/
@@ -22,8 +21,8 @@ LIB_DEPENDS=		xine.>=14::multimedia/xine-lib \
 			curl.>=2::net/curl \
 			png.>=4::graphics/png
 
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xinerama Xtst Xv Xxf86vm \
-			c crypto freetype idn m ncurses pthread readline ssl z
+WANTLIB=		X11 Xau Xdmcp Xext Xinerama Xtst Xv Xxf86vm \
+			c crypto m ncurses pthread readline ssl z
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
@@ -36,7 +35,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-aalib \
 			--without-libcaca
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>

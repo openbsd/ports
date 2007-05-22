@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_xitk_Imlib-light_utils_c,v 1.1.1.1 2006/03/24 22:46:37 jakemsr Exp $
---- src/xitk/Imlib-light/utils.c.orig	Sun Jan  8 22:56:23 2006
-+++ src/xitk/Imlib-light/utils.c	Sun Jan  8 22:57:57 2006
-@@ -154,7 +154,7 @@ Imlib_clone_image(ImlibData * id, ImlibI
+$OpenBSD: patch-src_xitk_Imlib-light_utils_c,v 1.2 2007/05/22 08:11:08 steven Exp $
+--- src/xitk/Imlib-light/utils.c.orig	Thu Apr 20 21:02:13 2006
++++ src/xitk/Imlib-light/utils.c	Wed May 16 17:38:59 2007
+@@ -154,7 +154,7 @@ Imlib_clone_image(ImlibData * id, ImlibImage * im)
    s = malloc(strlen(im->filename) + 320);
    if (s)
      {
