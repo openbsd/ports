@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.279 2007/05/13 19:49:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.280 2007/05/22 07:56:09 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -135,6 +135,7 @@
      SUBDIR += pbrowser
      SUBDIR += peksystray
      SUBDIR += pekwm
+     SUBDIR += pidgin-guifications
      SUBDIR += piewm
      SUBDIR += pwm
      SUBDIR += py-Gtk
