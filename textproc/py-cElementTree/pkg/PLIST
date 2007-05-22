@@ -1,2 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1 2005/01/26 21:31:55 alek Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2007/05/22 15:42:37 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/cElementTree.so
+share/doc/py-cElementTree/
+share/doc/py-cElementTree/README
+share/examples/py-cElementTree/
+share/examples/py-cElementTree/simple-ns.xml
+share/examples/py-cElementTree/simple.xml

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/22 02:33:43 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/22 15:40:19 martynas Exp $
 lib/python${MODPY_VERSION}/site-packages/elementtree/
 lib/python${MODPY_VERSION}/site-packages/elementtree/ElementInclude.py
 lib/python${MODPY_VERSION}/site-packages/elementtree/ElementInclude.pyc
@@ -22,3 +22,18 @@ lib/python${MODPY_VERSION}/site-packages/elementtree/XMLTreeBuilder.py
 lib/python${MODPY_VERSION}/site-packages/elementtree/XMLTreeBuilder.pyc
 lib/python${MODPY_VERSION}/site-packages/elementtree/__init__.py
 lib/python${MODPY_VERSION}/site-packages/elementtree/__init__.pyc
+share/doc/py-ElementTree/
+share/doc/py-ElementTree/effbot.css
+share/doc/py-ElementTree/index.html
+share/doc/py-ElementTree/pythondoc-elementtree.ElementInclude.html
+share/doc/py-ElementTree/pythondoc-elementtree.ElementPath.html
+share/doc/py-ElementTree/pythondoc-elementtree.ElementTree.html
+share/doc/py-ElementTree/pythondoc-elementtree.HTMLTreeBuilder.html
+share/doc/py-ElementTree/pythondoc-elementtree.SgmlopXMLTreeBuilder.html
+share/doc/py-ElementTree/pythondoc-elementtree.SimpleXMLTreeBuilder.html
+share/doc/py-ElementTree/pythondoc-elementtree.SimpleXMLWriter.html
+share/doc/py-ElementTree/pythondoc-elementtree.TidyTools.html
+share/doc/py-ElementTree/pythondoc-elementtree.XMLTreeBuilder.html
+share/examples/py-ElementTree/
+share/examples/py-ElementTree/simple-ns.xml
+share/examples/py-ElementTree/simple.xml

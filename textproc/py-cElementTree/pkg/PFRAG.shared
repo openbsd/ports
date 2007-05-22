@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/01/22 02:36:56 alek Exp $
-lib/python${MODPY_VERSION}/site-packages/cElementTree.so
