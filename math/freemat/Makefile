@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/21 16:48:33 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/22 09:10:22 espie Exp $
 
 COMMENT=	"environment for rapid engineering and scientific processing"
 
 V=		3.2
 DISTNAME=	FreeMat-${V}
-PKGNAME=	freemat-${V}
+PKGNAME=	freemat-${V}p0
 
 CATEGORIES=	graphics math
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	GL GLU ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr \
 		Xrender c curses fontconfig freetype g2c glib-2.0 \
-		m png pthread stdc++ z amd gthread-2.0
+		m png pthread stdc++ z amd gthread-2.0 ssl crypto
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}
 
@@ -33,6 +33,7 @@ LIB_DEPENDS=	avcall::devel/ffcall \
 		pcre::devel/pcre \
 		umfpack::math/umfpack \
 		QtGui,QtNetwork,QtOpenGL,QtXml::x11/qt4
+
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
