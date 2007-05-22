@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.12 2007/04/08 16:16:06 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.13 2007/05/22 20:57:25 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -10,6 +10,9 @@ MODPERL_BUILD ?= Build
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
 .  if !${PKGPATH:M*devel/p5-Module-Build}
 BUILD_DEPENDS+=	::devel/p5-Module-Build
+.    if !${PKGPATH:M*devel/p5-version}
+BUILD_DEPENDS+=	::devel/p5-version
+.    endif
 .  endif
 MODPERL_configure= \
 	arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
