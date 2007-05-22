@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_part_radialMap_segmentTip_cpp,v 1.1.1.1 2007/05/22 15:29:38 ajacoutot Exp $
+--- src/part/radialMap/segmentTip.cpp.orig	Mon Aug  6 01:00:00 2001
++++ src/part/radialMap/segmentTip.cpp	Tue May 22 15:58:39 2007
+@@ -23,9 +23,11 @@ bool isBackingStoreActive()
+     // # xdpyinfo | grep backing
+     // options:    backing-store YES, save-unders YES
+ 
+-    char buffer[4096];
++    char buffer[8192];
+     FILE *xdpyinfo = popen( "xdpyinfo", "r" );
+-    int const N = fread( (void*)buffer, sizeof(char), 4096, xdpyinfo );
++    int N = fread( (void*)buffer, sizeof(char), sizeof(buffer), xdpyinfo );
++    if (N == sizeof(buffer))
++	N--;
+     buffer[ N ] = '\0';
+     pclose( xdpyinfo );
+ 

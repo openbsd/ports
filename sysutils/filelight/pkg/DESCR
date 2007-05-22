@@ -1,0 +1,5 @@
+Filelight creates an interactive map of concentric segmented-rings that
+helps visualise disk usage on your computer.
+It is like a pie-chart, but the segments nest, allowing you to see not
+only which directories take up all your space, but which directories and
+files inside those directories are the real culprits.
