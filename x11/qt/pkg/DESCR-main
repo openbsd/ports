@@ -1,7 +1,7 @@
 Qt is a toolkit for building a GUI for X in C++.
 There are some user documentation files in {QT_DOC}, but
 the main documentation is in the qt-html package,
-or on the web (${HOMEPAGE}).
+or on the web.
 
 There is also a qt-examples package, that contains a tutorial and
 simple example programs (source + binaries).
