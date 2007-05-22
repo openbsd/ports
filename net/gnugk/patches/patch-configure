@@ -1,47 +1,60 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/04/27 21:10:42 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2007/05/22 11:16:12 ajacoutot Exp $
 --- configure.orig	Fri Jun  2 11:21:34 2006
-+++ configure	Sun Apr 15 15:09:15 2007
-@@ -3043,25 +3043,9 @@ fi
- 
- echo "PTLib version is ${PWLIB_VERSION}"
- 
--if test ${PWLIB_MAJOR_VERSION} -lt 1; then
--  echo "Error: at leat PWLib version 1.7.5.2 (Pandora) required"
--  exit
--fi
--if test ${PWLIB_MAJOR_VERSION} -eq 1; then
--  if test ${PWLIB_MINOR_VERSION} -lt 7; then
--    echo "Error: at leat PWLib version 1.7.5.2 (Pandora) required"
--    exit
--  elif test ${PWLIB_MINOR_VERSION} -eq 7; then
--    if test ${PWLIB_BUILD_NUMBER} -lt 5; then
--      echo "Error: at leat PWLib version 1.7.5.2 (Pandora) required"
--      exit
--    fi
--  fi
--fi
- 
- 
- 
--
- NEEDOPENH323PREFIX=0
- 
- if test "${OPENH323DIR:-unset}" != "unset" ; then
-@@ -3886,7 +3870,7 @@ echo $ECHO_N "checking for PQconnectdb in -lpq... $ECH
++++ configure	Mon Apr 30 12:13:53 2007
+@@ -3032,9 +3032,14 @@ fi
+   fi
+ else
+   PWLIB_VERSION=`${PTLIB_CONFIG} --version`
+-  PWLIB_MAJOR_VERSION=`echo "${PWLIB_VERSION}" | sed -e "s/\([0-9]*\)\.[0-9]*\.[0-9]*.*/\1/"`
+-  PWLIB_MINOR_VERSION=`echo "${PWLIB_VERSION}" | sed -e 's/[0-9]*\.\([0-9]*\)\.[0-9]*.*/\1/'`
+-  PWLIB_BUILD_NUMBER=`echo "${PWLIB_VERSION}" | sed -e 's/[0-9]*\.[0-9]*\.\([0-9]*\).*/\1/'`
++    if test `uname -s` = OpenBSD ; then
++      PWLIB_MAJOR_VERSION=`echo "${PWLIB_VERSION}" | sed -e "s/\([0-9]*\)\.[0-9]*\.*/\1/"`
++      PWLIB_MINOR_VERSION=`echo "${PWLIB_VERSION}" | sed -e 's/[0-9]*\.\([0-9]*\)\.*/\1/'`
++    else
++      PWLIB_MAJOR_VERSION=`echo "${PWLIB_VERSION}" | sed -e "s/\([0-9]*\)\.[0-9]*\.[0-9]*.*/\1/"`
++      PWLIB_MINOR_VERSION=`echo "${PWLIB_VERSION}" | sed -e 's/[0-9]*\.\([0-9]*\)\.[0-9]*.*/\1/'`
++  fi
++    PWLIB_BUILD_NUMBER=`echo "${PWLIB_VERSION}" | sed -e 's/[0-9]*\.[0-9]*\.\([0-9]*\).*/\1/'`
+ fi
+ if test "${PWLIB_VERSION:-unset}" = "unset" -o "${PWLIB_VERSION}" = ".."; then
+   echo "Error: could not determine PWLib version"
+@@ -3317,7 +3322,11 @@ if test "${HAS_OPENH323_VERSIONFILE:-unset}" != "unset
+     echo "Error: Could not determine OpenH323 version"
+     exit
+   fi
+-  OPENH323_VERSION="${OPENH323_MAJOR_VERSION}.${OPENH323_MINOR_VERSION}.${OPENH323_BUILD_NUMBER}"
++  if test `uname -s` = OpenBSD ; then
++    OPENH323_VERSION="${OPENH323_MAJOR_VERSION}.${OPENH323_MINOR_VERSION}"
++  else
++    OPENH323_VERSION="${OPENH323_MAJOR_VERSION}.${OPENH323_MINOR_VERSION}.${OPENH323_BUILD_NUMBER}"
++  fi
+   echo "OpenH323 version is ${OPENH323_VERSION}"
+ else
+   echo "Error: Could not determine OpenH323 version"
+@@ -3886,7 +3895,11 @@ echo $ECHO_N "checking for PQconnectdb in -lpq... $ECH
  
  		for try in /usr/lib /usr/local/lib /usr/local/pgsql/lib $pgsql_lib_dir; do
  			if test -d $try; then
 -				LIBS="$old_LIBS -L$try -lpq -lcrypt ${PGSQL_LIBS}"
-+				LIBS="$old_LIBS -L$try -lpq -lcrypto ${PGSQL_LIBS}"
++				if test `uname -s` = OpenBSD ; then
++				  LIBS="$old_LIBS -L$try -lpq -lcrypto ${PGSQL_LIBS}"
++				else 
++				  LIBS="$old_LIBS -L$try -lpq -lcrypt ${PGSQL_LIBS}"
++				fi 
  				cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -3924,7 +3908,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+@@ -3924,7 +3937,11 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
 -   PGSQL_LIBS="-lpq -lcrypt ${PGSQL_LIBS}"
-+   PGSQL_LIBS="-lpq -lcrypto ${PGSQL_LIBS}"
++   if test `uname -s` = OpenBSD ; then
++     PGSQL_LIBS="-lpq -lcrypto ${PGSQL_LIBS}"
++   else
++     PGSQL_LIBS="-lpq -lcrypt ${PGSQL_LIBS}"
++   fi
  					  PGSQL_LDFLAGS="-L$try"
  
  
