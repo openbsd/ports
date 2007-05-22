@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/22 22:48:04 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/22 17:28:39 naddy Exp $
 
-COMMENT=	"an implementation of the IMAP protocol for PHP"
+COMMENT=	"implementation of the IMAP protocol for PHP"
 
 DISTNAME=	Net_IMAP-1.0.3
-PKGNAME=	pear-${DISTNAME:S/_/-/}p1
+PKGNAME=	pear-${DISTNAME:S/_/-/}p2
 CATEGORIES=	net pear
 
 MASTER_SITES=	http://pear.php.net/get/

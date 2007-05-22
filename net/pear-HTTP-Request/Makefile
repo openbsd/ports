@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/22 22:48:04 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/22 17:28:39 naddy Exp $
 
-COMMENT=	"an easy way to perform HTTP requests for PHP"
+COMMENT=	"easy way to perform HTTP requests for PHP"
 
 DISTNAME=	HTTP_Request-1.4.0
-PKGNAME=	pear-${DISTNAME:S/_/-/}p0
+PKGNAME=	pear-${DISTNAME:S/_/-/}p1
 CATEGORIES=	net pear
 
 MASTER_SITES=	http://pear.php.net/get/

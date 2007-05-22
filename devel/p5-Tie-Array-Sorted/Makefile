@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/06 13:39:34 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/22 17:28:38 naddy Exp $
 
-COMMENT=	"an array which is kept ordered"
+COMMENT=	"array which is kept ordered"
 
 MODULES=	cpan
 DISTNAME=	Tie-Array-Sorted-1.41
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
