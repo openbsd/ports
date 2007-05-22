@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/05/22 20:49:01 ajacoutot Exp $
+--- configure.orig	Tue May 22 22:33:39 2007
++++ configure	Tue May 22 22:35:14 2007
+@@ -7316,7 +7316,7 @@ echo "${ECHO_T}$gccver" >&6; }
+     if test "x${debug}" = "xyes"; then
+         GCC_FLAGS="$GCC_FLAGS -O0 -g -DDEBUG"
+     else
+-        GCC_FLAGS="$GCC_FLAGS -O2"
++        GCC_FLAGS="$GCC_FLAGS"
+     fi
+ 
+             CFLAGS="$GCC_FLAGS"

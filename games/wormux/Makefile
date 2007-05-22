@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/22 18:31:33 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/22 20:49:01 ajacoutot Exp $
 
 COMMENT=		"free software clone of Worms(R) game concept"
 
 DISTNAME=		wormux-0.7.9
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		games
 
 HOMEPAGE=		http://wormux.org
@@ -13,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		SDL X11 Xext c crypto glib-2.0 glibmm-2.4 gobject-2.0 \
-			iconv idn intl m pthread sigc-2.0 ssl stdc++ usbhid \
-			xml2 z
+			idn m pthread sigc-2.0 ssl stdc++ usbhid xml2 z
 
 MASTER_SITES=		http://download.gna.org/wormux/
 
@@ -26,8 +26,9 @@ LIB_DEPENDS=		SDL_gfx::devel/sdl-gfx \
 			curl.>=5::net/curl \
 			xml++-2.6::textproc/libxml++
 
+MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
