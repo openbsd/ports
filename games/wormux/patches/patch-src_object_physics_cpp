@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_object_physics_cpp,v 1.1.1.1 2007/05/22 18:31:33 msf Exp $
+--- src/object/physics.cpp.orig	Tue Apr 10 15:25:46 2007
++++ src/object/physics.cpp	Tue Apr 10 15:26:18 2007
+@@ -33,6 +33,7 @@
+ #include "../tool/debug.h"
+ #include "../tool/math_tools.h"
+ #include "../map/wind.h"
++#include "../include/openbsd.h"
+ 
+ // Physical constants
+ const double STOP_REBOUND_LIMIT = 0.5 ;

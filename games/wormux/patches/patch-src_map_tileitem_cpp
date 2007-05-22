@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_map_tileitem_cpp,v 1.1.1.1 2007/05/22 18:31:33 msf Exp $
+--- src/map/tileitem.cpp.orig	Sun Jan 28 15:03:48 2007
++++ src/map/tileitem.cpp	Sun May 20 17:29:28 2007
+@@ -125,15 +125,14 @@ void TileItem_AlphaSoftware::Dig(const Point2i &center
+   while ( (uint) y <= center.y + radius + EXPLOSION_BORDER_SIZE&& y < CELL_SIZE.y )
+   {
+     //Abscisse distance from the center of the circle to the circle
+-    int dac = center.y - y;
++    int dac = y - center.y;
+ 
+     //Angle on the circle
+-    float angle = asin( (float)dac / (float)radius);
++    float angle = asin( (float)dac / (float)(radius + EXPLOSION_BORDER_SIZE));
+ 
+     //Zone of the line which needs to be emptied
+     int start_x, end_x, lenght;
+     lenght = (int) ((float) radius * cos (angle));
+-    lenght = lenght > 0 ? lenght : - lenght;
+     start_x = center.x - lenght;
+     lenght *= 2;
+     end_x = start_x + lenght;
+@@ -144,7 +143,6 @@ void TileItem_AlphaSoftware::Dig(const Point2i &center
+     int bstart_x, bend_x, blenght;
+     angle = asin( (float)dac / (float)(radius + EXPLOSION_BORDER_SIZE));
+     blenght = (int) ((float) (radius + EXPLOSION_BORDER_SIZE) * cos (angle));
+-    blenght = blenght > 0 ? blenght : - blenght;
+     bstart_x = center.x - blenght;
+     bend_x = bstart_x + (blenght - lenght/2);
+     Darken(bstart_x, bend_x, buf, bpp);

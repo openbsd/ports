@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_map_ground_cpp,v 1.1.1.1 2007/05/22 18:31:33 msf Exp $
+--- src/map/ground.cpp.orig	Tue Apr 10 15:27:08 2007
++++ src/map/ground.cpp	Tue Apr 10 15:27:14 2007
+@@ -33,6 +33,7 @@
+ #include "../include/constant.h"
+ #include "../tool/i18n.h"
+ #include "../tool/resource_manager.h"
++#include "../include/openbsd.h"
+ 
+ Ground::Ground()
+ { //FIXME (a effacer)
