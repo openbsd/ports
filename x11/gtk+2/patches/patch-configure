@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2007/05/12 20:24:56 jasper Exp $
---- configure.orig	Sat May 12 16:41:09 2007
-+++ configure	Sat May 12 16:41:50 2007
-@@ -34215,7 +34215,9 @@
+$OpenBSD: patch-configure,v 1.15 2007/05/23 14:26:26 steven Exp $
+--- configure.orig	Wed May  2 18:28:50 2007
++++ configure	Tue May 22 17:53:30 2007
+@@ -34215,7 +34215,9 @@ _ACEOF
  
  fi
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2007/05/12 20:24:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2007/05/23 14:26:25 steven Exp $
 
 SHARED_ONLY=			Yes
 
@@ -7,7 +7,7 @@ COMMENT-docs=           	"gtk+-2 documentation"
 
 VERSION=			2.10.12
 DISTNAME=			gtk+-${VERSION}
-PKGNAME-main=			gtk+2-${VERSION}
+PKGNAME-main=			gtk+2-${VERSION}p0
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 SHARED_LIBS +=	gdk_pixbuf-2.0       1000.12  # .1000.12
 SHARED_LIBS +=	gdk-x11-2.0          1000.12  # .1000.12
