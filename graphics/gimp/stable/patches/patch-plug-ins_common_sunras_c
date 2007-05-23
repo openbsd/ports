@@ -1,0 +1,12 @@
+$OpenBSD: patch-plug-ins_common_sunras_c,v 1.1 2007/05/23 21:15:22 rui Exp $
+--- plug-ins/common/sunras.c.orig	Wed May 23 21:54:14 2007
++++ plug-ins/common/sunras.c	Wed May 23 21:55:05 2007
+@@ -873,7 +873,7 @@ set_color_table (gint32           image_ID,
+   ncols = sunhdr->l_ras_maplength / 3;
+   if (ncols <= 0) return;
+ 
+-  for (j = 0; j < ncols; j++)
++  for (j = 0; j < MIN (ncols, 256); j++)
+     {
+       ColorMap[j*3]   = suncolmap[j];
+       ColorMap[j*3+1] = suncolmap[j+ncols];
