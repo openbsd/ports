@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/05/19 09:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2007/05/23 18:43:38 jasper Exp $
 
 COMMENT-main=		"GStreamer Streaming-media framework plug-ins."
 
@@ -6,6 +6,7 @@ VERSION=		0.8.11
 PATCHLEVEL=		
 DISTNAME=		gst-plugins-${VERSION}
 PKGNAME-main=		gstreamer-plugins-${VERSION}p14
+# Don't forget about PKGNAME-${PLUGIN} (See below)
 SHARED_LIBS=		gstgconf-0.8		1.0 \
 			gstinterfaces-0.8	1.0 \
 			gstmedia-info-0.8	1.0 \
@@ -81,7 +82,7 @@ PLUGINS+=		a52
 PSEUDO_FLAVORS+=	no_${PLUGIN}
 .  if !${FLAVOR:L:Mno_${PLUGIN}} && !${FLAVOR:L:Mminimal}
 MULTI_PACKAGES+=	-${PLUGIN}
-PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p13
+PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p14
 BASENAME-${PLUGIN}=	gstreamer-${PLUGIN}
 .  endif
 .endfor
