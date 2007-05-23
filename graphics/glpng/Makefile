@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/20 18:41:42 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/23 06:28:03 ajacoutot Exp $
 
 COMMENT=	"load PNG graphics files and bind them to an OpenGL texture"
 
 VERSION=	1.45
 DISTNAME=	glpng
-PKGNAME=	${DISTNAME}-${VERSION}
+PKGNAME=	${DISTNAME}-${VERSION}p0
 SHARED_LIBS=	glpng 0.0
 CATEGORIES=	graphics
 
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.wyatt100.freeserve.co.uk/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes

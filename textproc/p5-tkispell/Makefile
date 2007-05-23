@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/17 15:36:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/23 06:28:03 ajacoutot Exp $
 
 COMMENT=	"Perl/Tk graphical user interface to GNU ispell"
 
 DISTNAME=	tkispell-0.18
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 CPAN_AUTHOR=	RKIES
 

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/23 06:28:03 ajacoutot Exp $
 
 COMMENT=	"library to share image and audio files between projects"
 
 DISTNAME=	libassetml-1.2.1
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	assetml              0.0      # .0.0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.ofset.org/assetml/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

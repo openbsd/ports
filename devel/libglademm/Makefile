@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2007/04/25 10:44:28 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/23 06:28:03 ajacoutot Exp $
 
 COMMENT-main=	"C++ bindings for libglade"
 COMMENT-docs=	"C++ bindings for libglade documentation"
 
 V=		2.6.3
 DISTNAME=	libglademm-${V}
-PKGNAME-main=	${DISTNAME}p3
-PKGNAME-docs=	libglademm-docs-${V}
+PKGNAME-main=	${DISTNAME}p4
+PKGNAME-docs=	libglademm-docs-${V}p0
 SHARED_LIBS +=	glademm-2.4          1.5      # .1.5
 CATEGORIES=	devel
 
 HOMEPAGE=	http://gtkmm.sourceforge.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

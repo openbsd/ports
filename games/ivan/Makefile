@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/04 18:56:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/23 06:28:03 ajacoutot Exp $
 
 .if ${MACHINE_ARCH} == "sparc64"
 BROKEN=	"SIGBUS on sparc64 when starting"
@@ -7,11 +7,10 @@ BROKEN=	"SIGBUS on sparc64 when starting"
 COMMENT=	"graphical roguelike game"
 
 DISTNAME=	ivan-0.50
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 
 HOMEPAGE=	http://ivan.sourceforge.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
