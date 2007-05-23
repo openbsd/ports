@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:52 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/23 20:56:18 simon Exp $
 
 COMMENT= 	"serving static pages with catalyst"
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-Static-Simple-0.15
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Catalyst-Plugin-Static-Simple-0.17
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -18,9 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
 		::mail/p5-MIME-Types
 REGRESS_DEPENDS=::www/p5-Catalyst-Plugin-SubRequest
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes
-
-CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>
