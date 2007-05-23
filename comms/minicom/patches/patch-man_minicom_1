@@ -1,16 +1,13 @@
-$OpenBSD: patch-man_minicom_1,v 1.1 2003/03/28 21:27:52 rohee Exp $
-
-Cross reference other minicom programs.
-
---- man/minicom.1.orig	Mon Mar 24 23:55:56 2003
-+++ man/minicom.1	Tue Mar 25 00:02:31 2003
-@@ -821,6 +821,9 @@
- $HOME/minicom.log
+$OpenBSD: patch-man_minicom_1,v 1.2 2007/05/23 16:40:56 ckuethe Exp $
+--- man/minicom.1.orig	Thu May 17 12:29:24 2007
++++ man/minicom.1	Thu May 17 12:31:10 2007
+@@ -812,7 +812,8 @@ $HOME/minicom.log
  /usr/share/locale/*/LC_MESSAGES/minicom.mo
  .fi
-+.SH "SEE ALSO"
+ .SH SEE ALSO
+-.BR runscript (1)
 +\fIascii-xfr\fP(1),
 +\fIrunscript\fP(1)
- .SH VERSION
- Minicom is now up to version 2.00.0.
- .SH AUTHORS
+ .SH BUGS
+ Please report any bugs to
+ .IR minicom-devel@lists.alioth.debian.org .

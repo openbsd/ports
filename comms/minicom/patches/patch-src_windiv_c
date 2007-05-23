@@ -1,27 +1,11 @@
-$OpenBSD: patch-src_windiv_c,v 1.1 2002/03/22 05:31:37 form Exp $
---- src/windiv.c.orig	Tue Feb  1 02:12:08 2000
-+++ src/windiv.c	Fri Mar 22 09:03:35 2002
+$OpenBSD: patch-src_windiv_c,v 1.2 2007/05/23 16:40:56 ckuethe Exp $
+--- src/windiv.c.orig	Thu May 17 12:50:11 2007
++++ src/windiv.c	Thu May 17 12:50:13 2007
 @@ -19,6 +19,7 @@
  #include "rcsid.h"
- RCSID("$Id: patch-src_windiv_c,v 1.1 2002/03/22 05:31:37 form Exp $")
+ RCSID("$Id: patch-src_windiv_c,v 1.2 2007/05/23 16:40:56 ckuethe Exp $")
  
 +#include <sys/types.h>
  #include <dirent.h>
  #include <sys/stat.h>
  #include "port.h"
-@@ -251,8 +252,14 @@ char *file_dir;
- 
-       /* get regular files */
-       dirlist[nCnt].d_ino    = dirent->d_ino;
--      dirlist[nCnt].d_off    = dirent->d_off;
-       dirlist[nCnt].d_reclen = dirent->d_reclen;
-+#if (defined(BSD) && (BSD >= 199306))
-+      dirlist[nCnt].d_type   = dirent->d_type;
-+      dirlist[nCnt].d_namlen = dirent->d_namlen;
-+#else
-+      dirlist[nCnt].d_off    = dirent->d_off;
-+#endif
-+
-       strcpy(dirlist[nCnt].d_name, dirent->d_name );
-       nMaxWidth = max(nMaxWidth, strlen(dirent->d_name));
-       nCnt++;

@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/09/14 23:24:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2007/05/23 16:40:56 ckuethe Exp $
 bin/ascii-xfr
 @mode 555
 bin/minicom
 @mode
 bin/runscript
+bin/xminicom
 @man man/man1/ascii-xfr.1
 @man man/man1/minicom.1
 @man man/man1/runscript.1
+@man man/man1/xminicom.1
 share/doc/minicom/
 share/doc/minicom/AUTHORS
 share/doc/minicom/Announce-1.78
@@ -22,7 +24,6 @@ share/doc/minicom/Locales
 share/doc/minicom/Macros
 share/doc/minicom/QuickStart.modemu
 share/doc/minicom/README.lrzsz
-share/doc/minicom/RedHat
 share/doc/minicom/TODO.lrzsz
 share/doc/minicom/Todo
 share/doc/minicom/Todo.175
@@ -72,19 +73,23 @@ share/examples/minicom/minicom.users.sample
 @group
 @sample ${SYSCONFDIR}/minicom/minicom.users
 @mode
-share/locale/cs_CZ/
-share/locale/cs_CZ/LC_MESSAGES/
-share/locale/cs_CZ/LC_MESSAGES/minicom.mo
+share/locale/cs/LC_MESSAGES/minicom.mo
+share/locale/da/LC_MESSAGES/minicom.mo
+share/locale/de/LC_MESSAGES/minicom.mo
 share/locale/es/LC_MESSAGES/minicom.mo
-share/locale/fi_FI/
-share/locale/fi_FI/LC_MESSAGES/
-share/locale/fi_FI/LC_MESSAGES/minicom.mo
+share/locale/fi/LC_MESSAGES/minicom.mo
 share/locale/fr/LC_MESSAGES/minicom.mo
+share/locale/hu/LC_MESSAGES/minicom.mo
 share/locale/ja/LC_MESSAGES/minicom.mo
-share/locale/ja_JP.SJIS/
-share/locale/ja_JP.SJIS/LC_MESSAGES/
-share/locale/ja_JP.SJIS/LC_MESSAGES/minicom.mo
+share/locale/no/LC_MESSAGES/minicom.mo
 share/locale/pl/LC_MESSAGES/minicom.mo
 share/locale/pt_BR/LC_MESSAGES/minicom.mo
+share/locale/ro/LC_MESSAGES/minicom.mo
 share/locale/ru/LC_MESSAGES/minicom.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/minicom.mo
+share/locale/sv/LC_MESSAGES/minicom.mo
+share/locale/vi/LC_MESSAGES/minicom.mo
+share/locale/zh_TW/LC_MESSAGES/minicom.mo
 @extraunexec rm -rf ${SYSCONFDIR}/minicom/*

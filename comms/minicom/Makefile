@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.46 2006/07/13 06:47:09 steven Exp $
+# $OpenBSD: Makefile,v 1.47 2007/05/23 16:40:55 ckuethe Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
-VER=			2.00.0
-DISTNAME=		minicom-${VER}.src
-PKGNAME=		minicom-${VER}p2
+DISTNAME=		minicom-2.2
 CATEGORIES=		comms
-MASTER_SITES=		${MASTER_SITE_SUNSITE:=apps/serialcomm/dialout/}
+MASTER_SITES=		http://alioth.debian.org/frs/download.php/1806/
 
 HOMEPAGE=		http://alioth.debian.org/projects/minicom/
+MAINTAINER=		Chris Kuethe <ckuethe@openbsd.org>
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		::comms/kermit \
@@ -21,21 +20,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 
-WRKDIST=		${WRKDIR}/minicom-${VER}
-
 COPTS+=			-DHAS_EUID
-AUTOCONF_VERSION=	2.13
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=		--enable-cfg-dir=${SYSCONFDIR}/minicom \
-			--enable-lock-dir=/var/spool/lock
-
-pre-configure:
-	@perl -pi -e "s@/usr/local/bin/@${LOCALBASE}/bin/@g;s@/sz@/lsz@g; \
-		s@/sb@/lsb@g;s@/sx@/lsx@g;s@/rz@/lrz@g;s@/rb@/lrb@g; \
-		s@/rx@/lrx@g" ${WRKSRC}/src/rwconf.c
-
+			--enable-lock-dir=/var/spool/lock \
+			--enable-dfl-port=/dev/cua00 \
+			--enable-dfl-baud=9600
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/minicom

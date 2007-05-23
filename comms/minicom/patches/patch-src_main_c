@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_main_c,v 1.1 2007/05/23 16:40:56 ckuethe Exp $
+--- src/main.c.orig	Mon Oct 31 05:13:51 2005
++++ src/main.c	Thu May 17 12:55:59 2007
+@@ -22,6 +22,9 @@
+ #include "rcsid.h"
+ RCSID("$Id: patch-src_main_c,v 1.1 2007/05/23 16:40:56 ckuethe Exp $")
+ 
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <termios.h>
+ #include "port.h"
+ #include "minicom.h"
+ #include "intl.h"
+@@ -326,12 +329,22 @@ int open_term(int doinit)
+   /* Set CLOCAL mode */
+   m_nohang(portfd);
+ 
++  /* maybe, just maybe, we're looking at a GPS */
++  do {
++    int nmeadisc = NMEADISC;
++    struct tstamps tstamps;
++
++    tstamps.ts_set = TIOCM_CAR;
++    tstamps.ts_clr = 0;
++    ioctl(portfd, TIOCSETD, &nmeadisc);
++    ioctl(portfd, TIOCSTSTAMP, &tstamps);
++  } while (0);
++
+   /* Set Hangup on Close if program crashes. (Hehe) */
+   m_hupcl(portfd, 1);
+-  if (doinit > 0)
+-    m_flush(portfd);
++  if (doinit > 0) m_flush(portfd);
+   drop_privs();
+-  return 0;
++  return(0);
+ }
+ 
+ 
+@@ -476,7 +489,7 @@ void time_status(void)
+   if (online < 0)
+     wprintf(st, " %12.12s ", P_HASDCD[0] == 'Y' ? _("Offline") : _("OFFLINE"));
+   else
+-    wprintf(st, " %s %02ld:%02ld", P_HASDCD[0] == 'Y' ? _("Online") : _("ONLINE"),
++    wprintf(st, " %s %02d:%02d", P_HASDCD[0] == 'Y' ? _("Online") : _("ONLINE"),
+             online / 3600, (online / 60) % 60);
+ 
+   ret_csr();

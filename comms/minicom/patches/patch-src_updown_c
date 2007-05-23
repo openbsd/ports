@@ -1,12 +1,21 @@
-$OpenBSD: patch-src_updown_c,v 1.1 2002/03/22 05:31:37 form Exp $
---- src/updown.c.orig	Wed Jul  4 23:27:47 2001
-+++ src/updown.c	Fri Mar 22 09:02:49 2002
-@@ -245,7 +245,7 @@ int nr;
+$OpenBSD: patch-src_updown_c,v 1.2 2007/05/23 16:40:56 ckuethe Exp $
+--- src/updown.c.orig	Sun Aug 14 14:39:30 2005
++++ src/updown.c	Thu May 17 12:58:26 2007
+@@ -40,7 +40,7 @@ static int mcd(char *dir)
+ {
+   char buf[256];
+   char err[50];
+-  static char odir[256];
++  static char odir[PATH_MAX];
+   static int init = 0;
+ 
+   if (!init) {
+@@ -240,7 +240,7 @@ void updown(int what, int nr)
      do_log("%s", cmdline);   /* jl 22.06.97 */
  
    if (P_PFULL(g) == 'N') {
 -    win = wopen(10, 7, 70, 13, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
 +    win = wopen(5, 5, 74, 11, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
      snprintf(title, sizeof(title), _("%.30s %s - Press CTRL-C to quit"), P_PNAME(g),
- 	    what == 'U' ? _("upload") : _("download"));
+              what == 'U' ? _("upload") : _("download"));
      wtitle(win, TMID, title);

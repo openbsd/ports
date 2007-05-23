@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_util_c,v 1.1 2002/03/22 05:31:37 form Exp $
---- src/util.c.orig	Fri Mar 22 09:05:52 2002
-+++ src/util.c	Fri Mar 22 09:13:15 2002
-@@ -172,11 +172,16 @@ char *cmd, *in, *out, *err;
+$OpenBSD: patch-src_util_c,v 1.2 2007/05/23 16:40:56 ckuethe Exp $
+--- src/util.c.orig	Thu May 17 12:48:49 2007
++++ src/util.c	Thu May 17 12:48:54 2007
+@@ -178,11 +178,16 @@ int fastsystem(char *cmd, char *in, char *out, char *e
  /* Drop all priviliges (irreversable). */
- void drop_all_privs()
+ void drop_all_privs(void)
  {
 +#ifdef HAS_EUID
 +  setegid(real_gid);
@@ -18,38 +18,38 @@ $OpenBSD: patch-src_util_c,v 1.1 2002/03/22 05:31:37 form Exp $
  
    /* Drop it. */
    setgid(real_gid);
-@@ -189,22 +194,36 @@ void drop_all_privs()
+@@ -195,22 +200,36 @@ void drop_all_privs(void)
  /* Drop priviliges (swap uid's) */
- void drop_privs()
+ void drop_privs(void)
  {
 +#ifdef HAS_EUID
 +  setegid(real_gid);
 +  if (seteuid(real_uid) < 0)
-+	fprintf(stderr, _("minicom: cannot seteuid(%d)\n"), real_uid);
++    fprintf(stderr, _("minicom: cannot seteuid(%d)\n"), real_uid);
 +  not_suid = 1;
 +#else
  #ifdef HAS_REUID
    setregid(eff_gid, real_gid);
    if (setreuid(eff_uid, real_uid) < 0)
- 	fprintf(stderr, _("minicom: cannot setreuid(%d, %d)\n"), eff_uid, real_uid);
+     fprintf(stderr, _("minicom: cannot setreuid(%d, %d)\n"), eff_uid, real_uid);
    not_suid = 1;
  #endif
 +#endif
  }
  
  /* Set priviliges (swap uid's) */
- void set_privs()
+ void set_privs(void)
  {
 +#ifdef HAS_EUID
 +  setegid(eff_gid);
 +  if (seteuid(eff_uid) < 0)
-+	fprintf(stderr, _("minicom: cannot seteuid(%d)\n"), eff_uid);
++    fprintf(stderr, _("minicom: cannot seteuid(%d, %d)\n"), eff_uid);
 +  not_suid = 0;
 +#else
  #ifdef HAS_REUID
    setregid(real_gid, eff_gid);
    if (setreuid(real_uid, eff_uid) < 0)
- 	fprintf(stderr, _("minicom: cannot setreuid(%d, %d)\n"), real_uid, eff_uid);
+     fprintf(stderr, _("minicom: cannot setreuid(%d, %d)\n"), real_uid, eff_uid);
    not_suid = 0;
 +#endif
  #endif

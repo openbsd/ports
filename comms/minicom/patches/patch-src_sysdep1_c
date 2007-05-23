@@ -1,36 +1,38 @@
-$OpenBSD: patch-src_sysdep1_c,v 1.1 2002/03/22 05:31:37 form Exp $
---- src/sysdep1.c.orig	Sat Jun 24 23:01:29 2000
-+++ src/sysdep1.c	Fri Mar 22 08:53:13 2002
-@@ -71,12 +71,12 @@ int fd, on;
- void m_setrts(fd)
- int fd;
- {
+$OpenBSD: patch-src_sysdep1_c,v 1.2 2007/05/23 16:40:56 ckuethe Exp $
+--- src/sysdep1.c.orig	Thu May 17 12:41:20 2007
++++ src/sysdep1.c	Thu May 17 12:43:13 2007
+@@ -80,13 +80,13 @@ void m_setrts(int fd)
+   if (portfd_is_socket)
+     return;
+ #endif
 -#if defined(TIOCM_RTS) && defined(TIOCMODG)
 +#if defined(TIOCM_RTS) && defined(TIOCMGET)
-   int mcs=0;
+   {
+     int mcs=0;
  
--  ioctl(fd, TIOCMODG, &mcs);
-+  ioctl(fd, TIOCMGET, &mcs);
-   mcs |= TIOCM_RTS;
--  ioctl(fd, TIOCMODS, &mcs);
-+  ioctl(fd, TIOCMSET, &mcs);
+-    ioctl(fd, TIOCMODG, &mcs);
++    ioctl(fd, TIOCMGET, &mcs);
+     mcs |= TIOCM_RTS;
+-    ioctl(fd, TIOCMODS, &mcs);
++    ioctl(fd, TIOCMSET, &mcs);
+   }
  #endif
  #ifdef _COHERENT
-   ioctl(fd, TIOCSRTS, 0);
-@@ -182,10 +182,10 @@ int fd;
- int m_getdcd(fd)
- int fd;
- {
+@@ -209,11 +209,11 @@ int m_getdcd(int fd)
+     return portfd_is_connected;
+   }
+ #endif
 -#ifdef TIOCMODG
 +#ifdef TIOCMGET
-   int mcs=0;
-    
--  ioctl(fd, TIOCMODG, &mcs);
-+  ioctl(fd, TIOCMGET, &mcs);
-   return(mcs & TIOCM_CAR ? 1 : 0);
+   {
+     int mcs=0;
+ 
+-    ioctl(fd, TIOCMODG, &mcs);
++    ioctl(fd, TIOCMGET, &mcs);
+     return mcs & TIOCM_CAR ? 1 : 0;
+   }
  #else
-   (void)fd;
-@@ -223,8 +223,8 @@ int fd;
+@@ -255,8 +255,8 @@ void m_savestate(int fd)
    ioctl(fd, TIOCLGET, &lsw);
  #  endif
  #endif
@@ -41,7 +43,7 @@ $OpenBSD: patch-src_sysdep1_c,v 1.1 2002/03/22 05:31:37 form Exp $
  #endif
  }
  
-@@ -245,8 +245,8 @@ int fd;
+@@ -280,8 +280,8 @@ void m_restorestate(int fd)
    ioctl(fd, TIOCLSET, &lsw);
  #  endif
  #endif
