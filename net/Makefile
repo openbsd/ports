@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.460 2007/05/24 11:44:25 steven Exp $
+# $OpenBSD: Makefile,v 1.461 2007/05/24 21:37:17 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -270,6 +270,7 @@
      SUBDIR += pfstat
      SUBDIR += pidgin
      SUBDIR += pidgin-icb
+     SUBDIR += pidgin-tlen
      SUBDIR += pktstat
      SUBDIR += plushs
      SUBDIR += poink
