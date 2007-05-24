@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/24 13:38:11 ajacoutot Exp $
+@lib lib/libSDL_Pango.so.${LIBSDL_Pango_VERSION}

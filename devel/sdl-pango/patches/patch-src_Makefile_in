@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/05/24 13:38:11 ajacoutot Exp $
+--- src/Makefile.in.orig	Tue Nov 28 11:44:40 2006
++++ src/Makefile.in	Tue Nov 28 11:45:18 2006
+@@ -196,7 +196,7 @@ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ lib_LTLIBRARIES = libSDL_Pango.la
+-libSDL_Pangoincludedir = $(includedir)
++libSDL_Pangoincludedir = $(includedir)/SDL
+ libSDL_Pangoinclude_HEADERS = SDL_Pango.h
+ libSDL_Pango_la_SOURCES = SDL_Pango.c
+ libSDL_Pango_la_LDFLAGS = \

@@ -1,0 +1,75 @@
+$OpenBSD: patch-src_SDL_Pango_h,v 1.1.1.1 2007/05/24 13:38:11 ajacoutot Exp $
+--- src/SDL_Pango.h.orig	Tue Mar 27 10:12:28 2007
++++ src/SDL_Pango.h	Tue Mar 27 10:16:11 2007
+@@ -47,10 +47,10 @@ typedef struct _SDLPango_Matrix {
+ } SDLPango_Matrix;
+ 
+ const SDLPango_Matrix _MATRIX_WHITE_BACK
+-    = {255, 0, 0, 0,
+-       255, 0, 0, 0,
+-       255, 0, 0, 0,
+-       255, 255, 0, 0,};
++    = {{{255, 0, 0, 0},
++       {255, 0, 0, 0},
++       {255, 0, 0, 0},
++       {255, 255, 0, 0}}};
+ 
+ /*!
+     Specifies white back and black letter.
+@@ -58,40 +58,40 @@ const SDLPango_Matrix _MATRIX_WHITE_BACK
+ const SDLPango_Matrix *MATRIX_WHITE_BACK = &_MATRIX_WHITE_BACK;
+ 
+ const SDLPango_Matrix _MATRIX_BLACK_BACK
+-    = {0, 255, 0, 0,
+-       0, 255, 0, 0,
+-       0, 255, 0, 0,
+-       255, 255, 0, 0,};
++    = {{{0, 255, 0, 0},
++       {0, 255, 0, 0},
++       {0, 255, 0, 0},
++       {255, 255, 0, 0}}};
+ /*!
+     Specifies black back and white letter.
+ */
+ const SDLPango_Matrix *MATRIX_BLACK_BACK = &_MATRIX_BLACK_BACK;
+ 
+ const SDLPango_Matrix _MATRIX_TRANSPARENT_BACK_BLACK_LETTER
+-    = {0, 0, 0, 0,
+-       0, 0, 0, 0,
+-       0, 0, 0, 0,
+-       0, 255, 0, 0,};
++    = {{{0, 0, 0, 0},
++       {0, 0, 0, 0},
++       {0, 0, 0, 0},
++       {0, 255, 0, 0}}};
+ /*!
+     Specifies transparent back and black letter.
+ */
+ const SDLPango_Matrix *MATRIX_TRANSPARENT_BACK_BLACK_LETTER = &_MATRIX_TRANSPARENT_BACK_BLACK_LETTER;
+ 
+ const SDLPango_Matrix _MATRIX_TRANSPARENT_BACK_WHITE_LETTER
+-    = {255, 255, 0, 0,
+-       255, 255, 0, 0,
+-       255, 255, 0, 0,
+-       0, 255, 0, 0,};
++    = {{{255, 255, 0, 0},
++       {255, 255, 0, 0},
++       {255, 255, 0, 0},
++       {0, 255, 0, 0}}};
+ /*!
+     Specifies transparent back and white letter.
+ */
+ const SDLPango_Matrix *MATRIX_TRANSPARENT_BACK_WHITE_LETTER = &_MATRIX_TRANSPARENT_BACK_WHITE_LETTER;
+ 
+ const SDLPango_Matrix _MATRIX_TRANSPARENT_BACK_TRANSPARENT_LETTER
+-    = {255, 255, 0, 0,
+-       255, 255, 0, 0,
+-       255, 255, 0, 0,
+-       0, 0, 0, 0,};
++    = {{{255, 255, 0, 0},
++       {255, 255, 0, 0},
++       {255, 255, 0, 0},
++       {0, 0, 0, 0}}};
+ /*!
+     Specifies transparent back and transparent letter.
+     This is useful for KARAOKE like rendering.
