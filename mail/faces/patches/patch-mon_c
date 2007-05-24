@@ -1,0 +1,25 @@
+$OpenBSD: patch-mon_c,v 1.1 2007/05/24 08:35:13 jasper Exp $
+--- mon.c.orig	Thu May 24 10:13:45 2007
++++ mon.c	Thu May 24 10:14:27 2007
+@@ -23,19 +23,9 @@
+ #endif /* SYSV32 || hpux */
+ #include <sys/types.h>
+ #include <sys/stat.h>
+-#if ( !defined(mips) && !defined(TOPIX) ) || defined(ultrix)
++
+ #include <sys/time.h>
+-#else
+-#ifdef SYSTYPE_BSD43
+-#include <sys/time.h>
+-#else
+-#ifndef TOPIX
+-#include <bsd/sys/time.h>
+-#else
+-#include <sys/bsd_time.h>
+-#endif /*TOPIX*/
+-#endif /*SYSTYPE_BSD43*/
+-#endif /*( !defined(mips) && !defined(TOPIX) ) || defined(ultrix)*/
++
+ #include <sys/file.h>
+ #ifndef NOUTIME
+ #ifndef TOPIX

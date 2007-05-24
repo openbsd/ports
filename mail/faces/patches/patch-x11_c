@@ -1,7 +1,33 @@
-$OpenBSD: patch-x11_c,v 1.1 2000/06/04 23:08:35 espie Exp $
 --- x11.c.orig	Tue Nov 19 05:00:50 1991
-+++ x11.c	Mon Jun  5 00:48:26 2000
-@@ -58,7 +58,6 @@
++++ x11.c	Thu May 24 10:23:45 2007
+@@ -18,24 +18,11 @@
+  
+ #include <stdio.h>
+ #include <ctype.h>
+-#if ( !defined(mips) && !defined(TOPIX) ) || defined(ultrix)
++
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/param.h>
+-#else
+-#ifdef SYSTYPE_BSD43
+-#include <sys/types.h>
+-#include <sys/time.h>
+-#else
+-#ifndef TOPIX
+-#include <bsd/sys/types.h>
+-#include <bsd/sys/time.h>
+-#include <sys/param.h>
+-#else
+-#include <sys/bsd_time.h>
+-#endif /*TOPIX*/
+-#endif /*SYSTYPE_BSD43*/
+-#endif /*( !defined(mips) && !defined(TOPIX) ) || defined(ultrix)*/
++
+ #include "faces.h"
+ #include "extern.h"
+ 
+@@ -58,7 +45,6 @@
  
  #define  F_ICON              0         /* Icon index to frame array. */
  #define  F_WINDOW            1         /* Window index to frame array. */
@@ -9,7 +35,7 @@ $OpenBSD: patch-x11_c,v 1.1 2000/06/04 23:08:35 espie Exp $
  #define  FRAME_MASK          (ButtonPressMask  | ExposureMask | \
                                ButtonMotionMask | KeyPressMask)
  #define  ICON_MASK            ExposureMask
-@@ -364,11 +363,13 @@ char *argv[] ;
+@@ -364,11 +350,13 @@ char *argv[] ;
    init_font() ;
    gc_mask = GCFont | GCForeground | GCBackground | GCGraphicsExposures ;
    gc_val.font = sfont->fid ;
@@ -25,7 +51,7 @@ $OpenBSD: patch-x11_c,v 1.1 2000/06/04 23:08:35 espie Exp $
    tilegc = XCreateGC(dpy, root, gc_mask, &gc_val) ;
    if (depth == 1) XSetFillStyle(dpy, tilegc, FillOpaqueStippled) ;
    else            XSetFillStyle(dpy, tilegc, FillTiled) ;
-@@ -459,7 +460,11 @@ load_resources()
+@@ -459,7 +447,11 @@ load_resources()
  
    home = getenv("HOME") ;
    XrmInitialize() ;
@@ -37,7 +63,7 @@ $OpenBSD: patch-x11_c,v 1.1 2000/06/04 23:08:35 espie Exp $
   
  /* Get applications defaults file, if any. */
   
-@@ -576,14 +581,14 @@ char *argv[] ;
+@@ -576,14 +568,14 @@ char *argv[] ;
    winattrs.event_mask = FRAME_MASK ;
  
    frame[F_WINDOW] = XCreateWindow(dpy, root, size.x, size.y,
@@ -54,7 +80,7 @@ $OpenBSD: patch-x11_c,v 1.1 2000/06/04 23:08:35 espie Exp $
                          CopyFromParent, InputOutput, CopyFromParent, 
                          CWBackPixel | CWBorderPixel | CWEventMask, &winattrs) ;
  
-@@ -856,6 +861,7 @@ char *str ;
+@@ -856,6 +848,7 @@ char *str ;
    XFillRectangle(dpy, pr[(int) dtype], gc, x, y-9,
                   (unsigned int) textwidth+2, 13) ;
    XSetFunction(dpy, gc, GXxor) ;
