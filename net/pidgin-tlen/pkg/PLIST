@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/24 21:31:43 alek Exp $
+lib/purple-2/libtlen.so
+share/pixmaps/pidgin/protocols/16/tlen.png
+share/pixmaps/pidgin/protocols/22/tlen.png
+share/pixmaps/pidgin/protocols/48/tlen.png
