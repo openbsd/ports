@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_SequenceTest_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
---- tests/SequenceTest.cpp.orig	Sun Oct 29 02:05:36 2006
-+++ tests/SequenceTest.cpp	Sat Dec  9 20:07:16 2006
-@@ -21,7 +21,7 @@ public:
+$OpenBSD: patch-tests_SequenceTest_cpp,v 1.2 2007/05/24 09:45:01 ajacoutot Exp $
+--- tests/SequenceTest.cpp.orig	Sun Oct 29 01:05:36 2006
++++ tests/SequenceTest.cpp	Thu May 24 11:02:18 2007
+@@ -21,7 +21,7 @@ class SequenceTest (public)
  
     void SetUp()
     {
@@ -10,7 +10,7 @@ $OpenBSD: patch-tests_SequenceTest_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
        mDirManager = new DirManager;
  
        mSequence = new Sequence(mDirManager, floatSample);
-@@ -81,7 +81,8 @@ public:
+@@ -81,7 +81,8 @@ class SequenceTest (public)
        delete mSequence;
        mSequence = NULL;
  

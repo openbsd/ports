@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib-src_libnyquist_cmt_cext_h,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- lib-src/libnyquist/cmt/cext.h.orig	Tue Jan 11 19:56:02 2005
-+++ lib-src/libnyquist/cmt/cext.h	Tue Jan 11 19:56:02 2005
-@@ -54,6 +54,8 @@ EXIT(n)  -- calls exit(n) after shutting
+$OpenBSD: patch-lib-src_libnyquist_cmt_cext_h,v 1.2 2007/05/24 09:45:01 ajacoutot Exp $
+--- lib-src/libnyquist/cmt/cext.h.orig	Sun Oct 29 01:05:50 2006
++++ lib-src/libnyquist/cmt/cext.h	Thu May 24 11:02:16 2007
+@@ -54,6 +54,8 @@ EXIT(n)  -- calls exit(n) after shutting down/dealloca
  #include <sys/types.h>
  #endif
  

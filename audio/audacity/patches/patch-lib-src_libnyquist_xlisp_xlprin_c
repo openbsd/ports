@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib-src_libnyquist_xlisp_xlprin_c,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- lib-src/libnyquist/xlisp/xlprin.c.orig	Tue Jan 11 19:43:02 2005
-+++ lib-src/libnyquist/xlisp/xlprin.c	Tue Jan 11 19:45:30 2005
-@@ -245,7 +245,7 @@ LOCAL void putqstring(LVAL fptr, LVAL st
+$OpenBSD: patch-lib-src_libnyquist_xlisp_xlprin_c,v 1.2 2007/05/24 09:45:01 ajacoutot Exp $
+--- lib-src/libnyquist/xlisp/xlprin.c.orig	Sun Oct 29 01:05:50 2006
++++ lib-src/libnyquist/xlisp/xlprin.c	Thu May 24 11:02:17 2007
+@@ -245,7 +245,7 @@ LOCAL void putqstring(LVAL fptr, LVAL str)
  void putatm(LVAL fptr, char *tag, LVAL val)
  {
      sprintf(buf,"#<%s: #",tag); xlputstr(fptr,buf);
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib-src_libnyquist_xlisp_xlprin_c,v 1.1.1.1 2006/01/12 08:59:27 
      xlputc(fptr,'>');
  }
  
-@@ -254,7 +254,7 @@ LOCAL void putsubr(LVAL fptr, char *tag,
+@@ -254,7 +254,7 @@ LOCAL void putsubr(LVAL fptr, char *tag, LVAL val)
  {
      sprintf(buf,"#<%s-%s: #",tag,funtab[getoffset(val)].fd_name);
      xlputstr(fptr,buf);
@@ -19,7 +19,7 @@ $OpenBSD: patch-lib-src_libnyquist_xlisp_xlprin_c,v 1.1.1.1 2006/01/12 08:59:27 
      xlputc(fptr,'>');
  }
  
-@@ -267,7 +267,7 @@ LOCAL void putclosure(LVAL fptr, LVAL va
+@@ -267,7 +267,7 @@ LOCAL void putclosure(LVAL fptr, LVAL val)
      else
          strcpy(buf,"#<Closure: #");
      xlputstr(fptr,buf);

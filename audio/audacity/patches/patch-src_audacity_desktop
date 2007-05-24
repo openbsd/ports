@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_audacity_desktop,v 1.1 2007/05/24 09:45:01 ajacoutot Exp $
+--- src/audacity.desktop.orig	Thu May 24 11:02:45 2007
++++ src/audacity.desktop	Thu May 24 11:08:40 2007
+@@ -1,4 +1,4 @@
+-﻿[Desktop Entry]
++[Desktop Entry]
+ Encoding=UTF-8
+ 
+ Name=Audacity Sound Editor
+@@ -11,7 +11,7 @@ Comment=Record and edit audio files
+ Comment[de]=Audio-Dateien aufnehmen und bearbeiten
+ Comment[ru]=Запись и редактирование звуковых файлов
+ 
+-Icon=/usr/share/audacity/audacity.xpm
++Icon=audacity.xpm
+ 
+ Type=Application
+ Categories=Application;AudioVideo;Audio;Multimedia;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib-src_allegro_mfallegro_cpp,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- lib-src/allegro/mfallegro.cpp.orig	Tue Jan 11 20:31:25 2005
-+++ lib-src/allegro/mfallegro.cpp	Tue Jan 11 20:31:25 2005
-@@ -121,7 +121,7 @@ void Allegro_midifile_reader::Mf_starttr
+$OpenBSD: patch-lib-src_allegro_mfallegro_cpp,v 1.2 2007/05/24 09:45:01 ajacoutot Exp $
+--- lib-src/allegro/mfallegro.cpp.orig	Sun Oct 29 01:05:59 2006
++++ lib-src/allegro/mfallegro.cpp	Thu May 24 11:02:16 2007
+@@ -121,7 +121,7 @@ void Allegro_midifile_reader::Mf_starttrack()
  void Allegro_midifile_reader::Mf_endtrack()
  {
      tracks.append(track);

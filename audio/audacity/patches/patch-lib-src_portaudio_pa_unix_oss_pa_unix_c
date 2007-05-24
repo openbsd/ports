@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_c,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- lib-src/portaudio/pa_unix_oss/pa_unix.c.orig	Thu Nov 18 07:17:34 2004
-+++ lib-src/portaudio/pa_unix_oss/pa_unix.c	Tue Jan 11 08:56:46 2005
-@@ -399,6 +399,7 @@ static int PaHost_CanaryProc( PaHostSoun
+$OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_c,v 1.2 2007/05/24 09:45:01 ajacoutot Exp $
+--- lib-src/portaudio/pa_unix_oss/pa_unix.c.orig	Sun Oct 29 01:05:50 2006
++++ lib-src/portaudio/pa_unix_oss/pa_unix.c	Thu May 24 11:02:17 2007
+@@ -399,6 +399,7 @@ static int PaHost_CanaryProc( PaHostSoundControl   *pa
      return result;
  }
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_c,v 1.1.1.1 2006/01/12 08:
  /*******************************************************************************************
   * Monitor audio thread and lower its it if it hogs the CPU.
   * To prevent getting killed, the audio thread must update a
-@@ -598,6 +599,7 @@ static PaError PaHost_BoostPriority( int
+@@ -598,6 +599,7 @@ static PaError PaHost_BoostPriority( internalPortAudio
  
      return result;
  }
@@ -17,7 +17,7 @@ $OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_c,v 1.1.1.1 2006/01/12 08:
  
  /*******************************************************************************************/
  static PaError Pa_AudioThreadProc( internalPortAudioStream   *past )
-@@ -613,8 +615,10 @@ static PaError Pa_AudioThreadProc( inter
+@@ -613,8 +615,10 @@ static PaError Pa_AudioThreadProc( internalPortAudioSt
      GSRegisterCurrentThread(); /* SB20010904 */
  #endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_c,v 1.1.1.1 2006/01/12 08:
  
      past->past_IsActive = 1;
      DBUG(("entering thread.\n"));
-@@ -680,7 +684,9 @@ static PaError Pa_AudioThreadProc( inter
+@@ -680,7 +684,9 @@ static PaError Pa_AudioThreadProc( internalPortAudioSt
      DBUG(("Pa_AudioThreadProc: left audio loop.\n"));
  
      past->past_IsActive = 0;
@@ -38,7 +38,7 @@ $OpenBSD: patch-lib-src_portaudio_pa_unix_oss_pa_unix_c,v 1.1.1.1 2006/01/12 08:
  
  error:
      DBUG(("leaving audio thread.\n"));
-@@ -810,7 +816,7 @@ PaError PaHost_OpenStream( internalPortA
+@@ -810,7 +816,7 @@ PaError PaHost_OpenStream( internalPortAudioStream   *
                             past->past_NumUserBuffers, past->past_FramesPerUserBuffer,
                             past->past_NumOutputChannels );
              result = Pa_SetupDeviceFormat( pahsc->pahsc_OutputHandle,

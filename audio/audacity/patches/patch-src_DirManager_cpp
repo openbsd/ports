@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
---- src/DirManager.cpp.orig	Sun Oct 29 02:05:26 2006
-+++ src/DirManager.cpp	Sat Dec  9 20:19:42 2006
+$OpenBSD: patch-src_DirManager_cpp,v 1.2 2007/05/24 09:45:01 ajacoutot Exp $
+--- src/DirManager.cpp.orig	Sun Oct 29 01:05:26 2006
++++ src/DirManager.cpp	Thu May 24 11:02:17 2007
 @@ -69,7 +69,9 @@
  #include "blockfile/PCMAliasBlockFile.h"
  #include "DirManager.h"
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
  #include "Prefs.h"
  #include "widgets/Warning.h"
  #include "widgets/MultiDialog.h"
-@@ -163,9 +165,13 @@ static int rm_dash_rf_enumerate_i(wxStri
+@@ -163,9 +165,13 @@ static int rm_dash_rf_enumerate_i(wxString dirpath, 
                                    wxString dirspec,
                                    int files_p,int dirs_p,
                                    int progress_count,int progress_bias,
@@ -25,7 +25,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
     int count=0;
     bool cont;
  
-@@ -183,9 +189,24 @@ static int rm_dash_rf_enumerate_i(wxStri
+@@ -183,9 +189,24 @@ static int rm_dash_rf_enumerate_i(wxString dirpath, 
              
              cont = dir.GetNext(&name);
              
@@ -50,7 +50,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
           }
        }
  
-@@ -194,7 +215,11 @@ static int rm_dash_rf_enumerate_i(wxStri
+@@ -194,7 +215,11 @@ static int rm_dash_rf_enumerate_i(wxString dirpath, 
           wxString subdirpath=dirpath + wxFILE_SEP_PATH + name;
           count+=rm_dash_rf_enumerate_i(subdirpath,flist,wxEmptyString,
                                       files_p,dirs_p,progress_count,
@@ -62,7 +62,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
           cont = dir.GetNext(&name);
        }
     }
-@@ -214,17 +239,29 @@ static int rm_dash_rf_enumerate_prompt(w
+@@ -214,17 +239,29 @@ static int rm_dash_rf_enumerate_prompt(wxString dirpat
                                         int files_p,int dirs_p,
                                         int progress_count,
                                         const wxChar *prompt){
@@ -92,7 +92,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
  
     return count;
  }
-@@ -235,7 +272,11 @@ static int rm_dash_rf_enumerate(wxString
+@@ -235,7 +272,11 @@ static int rm_dash_rf_enumerate(wxString dirpath,
                                  int files_p,int dirs_p){
  
     return rm_dash_rf_enumerate_i(dirpath, flist, dirspec, files_p,dirs_p,
@@ -104,7 +104,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
  
  }
  
-@@ -244,10 +285,15 @@ static void rm_dash_rf_execute(wxArraySt
+@@ -244,10 +285,15 @@ static void rm_dash_rf_execute(wxArrayString &fList, 
                                 int count, int files_p, int dirs_p,
                                 const wxChar *prompt){
  
@@ -120,7 +120,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
    
     for (int i = 0; i < count; i++) {
        const wxChar *file = fList[i].c_str();
-@@ -258,12 +304,30 @@ static void rm_dash_rf_execute(wxArraySt
+@@ -258,12 +304,30 @@ static void rm_dash_rf_execute(wxArrayString &fList, 
           wxRmdir(file);
        }
  
@@ -151,7 +151,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
  }
  
  // static
-@@ -326,13 +390,20 @@ bool DirManager::SetProject(wxString & p
+@@ -326,13 +390,20 @@ bool DirManager::SetProject(wxString & projPath, wxStr
        saved version of the old project must not be moved,
        otherwise the old project would not be safe. */
  
@@ -172,7 +172,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
  
     BlockHash::iterator i=blockFileHash.begin();
     bool success = true;
-@@ -345,8 +416,22 @@ bool DirManager::SetProject(wxString & p
+@@ -345,8 +416,22 @@ bool DirManager::SetProject(wxString & projPath, wxStr
           success = MoveToNewProjectDirectory(b);
        }
  
@@ -195,7 +195,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
  
        i++;
        count++;
-@@ -366,8 +451,13 @@ bool DirManager::SetProject(wxString & p
+@@ -366,8 +451,13 @@ bool DirManager::SetProject(wxString & projPath, wxStr
           BlockFile *b = i->second;
           MoveToNewProjectDirectory(b);
  
@@ -209,7 +209,7 @@ $OpenBSD: patch-src_DirManager_cpp,v 1.1 2006/12/17 12:12:59 ajacoutot Exp $
  
           i++;
           count--;
-@@ -377,14 +467,24 @@ bool DirManager::SetProject(wxString & p
+@@ -377,14 +467,24 @@ bool DirManager::SetProject(wxString & projPath, wxStr
        this->projPath = oldPath;
        this->projName = oldName;
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib-src_libnyquist_snd_sndheader_c,v 1.1.1.1 2006/01/12 08:59:27 steven Exp $
---- lib-src/libnyquist/snd/sndheader.c.orig	Tue Jan 11 20:58:31 2005
-+++ lib-src/libnyquist/snd/sndheader.c	Tue Jan 11 21:02:41 2005
-@@ -923,7 +923,7 @@ void snd_write_header(snd_type snd, long
+$OpenBSD: patch-lib-src_libnyquist_snd_sndheader_c,v 1.2 2007/05/24 09:45:01 ajacoutot Exp $
+--- lib-src/libnyquist/snd/sndheader.c.orig	Sun Oct 29 01:05:50 2006
++++ lib-src/libnyquist/snd/sndheader.c	Thu May 24 11:02:17 2007
+@@ -923,7 +923,7 @@ void snd_write_header(snd_type snd, long *flags)
              8 /*SSND hdr*/ + 8 /*SSND chunk*/;
          if (snd->format.bits != 8 && snd->format.bits != 16) {
              char msg[64];
