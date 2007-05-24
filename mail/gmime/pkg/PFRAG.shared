@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/24 13:38:53 jasper Exp $
+@lib lib/libgmime-2.0.so.${LIBgmime-2.0_VERSION}
