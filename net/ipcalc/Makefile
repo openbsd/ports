@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/04 17:37:51 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/24 14:02:19 pyr Exp $
 
 COMMENT=	"small network calculator"
 
-DISTNAME=	ipcalc-1.2
+DISTNAME=	ipcalc-1.3
 CATEGORIES=	net
 
 HOMEPAGE=	http://spootnik.org/ipcalc/
@@ -19,8 +19,5 @@ MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=	Yes
 WANTLIB=	c
-
-do-configure:
-	@perl -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
