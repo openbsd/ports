@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/24 11:43:41 steven Exp $
+lib/purple-2/libicb.so
+share/pixmaps/pidgin/protocols/16/icb.png
+share/pixmaps/pidgin/protocols/22/icb.png
+share/pixmaps/pidgin/protocols/48/icb.png
