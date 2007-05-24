@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/24 12:44:53 pyr Exp $
+bin/sclock
+@man man/cat1/sclock.0
