@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2007/04/22 13:21:11 aanriot Exp $
+# $OpenBSD: Makefile,v 1.50 2007/05/25 16:24:49 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.6
 DISTNAME=	vlc-${V}
-PKGNAME=	vlc-${V}p6
+PKGNAME=	vlc-${V}p7
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 		id3tag.>=3.0::audio/libid3tag \
 		mad.>=2.1::audio/libmad \
 		mpeg2::graphics/libmpeg2 \
-		avcodec.>=7.0,avformat.>=7.0,postproc.>=7.0,avutil.>=1.0::graphics/ffmpeg \
+		avcodec.>=7.0,avformat.>=7.0,postproc.>=7.0::graphics/ffmpeg \
 		fribidi::devel/fribidi \
 		a52::audio/liba52 \
 		theora.>=1::multimedia/libtheora \
@@ -42,8 +42,8 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 
 WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
-		ossaudio pthread stdc++ usbhid z Xau Xdmcp \
-		SDL jpeg tiff faac faad mp3lame ogg vorbis vorbisenc
+		pthread stdc++ usbhid z Xau Xdmcp \
+		SDL jpeg tiff faad ogg vorbis vorbisenc
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
