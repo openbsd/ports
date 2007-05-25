@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_regression_sh,v 1.1 2007/01/23 09:34:45 robert Exp $
---- tests/regression.sh.orig	Sat Dec  2 17:03:28 2006
-+++ tests/regression.sh	Sat Dec  9 20:16:17 2006
-@@ -89,7 +89,7 @@ fi
+$OpenBSD: patch-tests_regression_sh,v 1.2 2007/05/25 15:54:14 jakemsr Exp $
+--- tests/regression.sh.orig	Tue Apr 17 21:21:06 2007
++++ tests/regression.sh	Tue Apr 17 22:02:51 2007
+@@ -91,7 +91,7 @@ fi
  
  
  # various files
@@ -10,7 +10,7 @@ $OpenBSD: patch-tests_regression_sh,v 1.1 2007/01/23 09:34:45 robert Exp $
  tiny_psnr="./tiny_psnr"
  reffile="$2"
  benchfile="$datadir/ffmpeg.bench"
-@@ -103,6 +103,8 @@ if [ X"`echo | md5sum 2> /dev/null`" != 
+@@ -107,6 +107,8 @@ if [ X"`echo | md5sum 2> /dev/null`" != X ]; then
      do_md5sum() { md5sum -b $1; }
  elif [ -x /sbin/md5 ]; then
      do_md5sum() { /sbin/md5 -r $1 | sed 's# \**\./# *./#'; }

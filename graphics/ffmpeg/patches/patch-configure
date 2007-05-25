@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure,v 1.15 2007/05/25 15:54:14 jakemsr Exp $
+--- configure.orig	Tue May  1 13:26:05 2007
++++ configure	Wed May  2 23:46:49 2007
+@@ -2126,11 +2126,11 @@ EOF
+ pkgconfig_generate libavutil "FFmpeg utility library" "$lavu_version" -lavutil "" ffmpeg
+ pkgconfig_generate_uninstalled libavutil "FFmpeg utility library" "$lavu_version"
+ 
+-pkgconfig_generate libavcodec "FFmpeg codec library" "$lavc_version" "-lavcodec $extralibs" "$pkg_requires libavutil = $lavu_version" ffmpeg
+-pkgconfig_generate_uninstalled libavcodec "FFmpeg codec library" "$lavc_version" "$extralibs" "$pkg_requires libavutil = $lavu_version"
++pkgconfig_generate libavcodec "FFmpeg codec library" "$lavc_version" "-lavcodec -pthread" "" ffmpeg
++pkgconfig_generate_uninstalled libavcodec "FFmpeg codec library" "$lavc_version" "-pthread" ""
+ 
+-pkgconfig_generate libavformat "FFmpeg container format library" "$lavf_version" "-lavformat $extralibs" "$pkg_requires libavcodec = $lavc_version" ffmpeg
+-pkgconfig_generate_uninstalled libavformat "FFmpeg container format library" "$lavf_version" "$extralibs" "$pkg_requires libavcodec = $lavc_version"
++pkgconfig_generate libavformat "FFmpeg container format library" "$lavf_version" -lavformat "" ffmpeg
++pkgconfig_generate_uninstalled libavformat "FFmpeg container format library" "$lavf_version" "" ""
+ 
+ if enabled pp; then
+   pkgconfig_generate libpostproc "FFmpeg post processing library" "$pp_version" -lpostproc "" postproc
+@@ -2138,11 +2138,11 @@ if enabled pp; then
+ fi
+ 
+ if enabled swscaler; then
+-  pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" -lswscale "libavutil = $lavu_version" ffmpeg
+-  pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" "libavutil = $lavu_version"
++  pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" -lswscale "" ffmpeg
++  pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" ""
+ else
+-  pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" "" "$pkg_requires libavcodec = $lavc_version" ffmpeg
+-  pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" "$pkg_requires libavcodec = $lavc_version"
++  pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" "" "" ffmpeg
++  pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" ""
+   apply libswscale.pc sed s/^Libs:.*$/Libs:/
+   apply libswscale-uninstalled.pc sed s/^Libs:.*$/Libs:/
+ fi

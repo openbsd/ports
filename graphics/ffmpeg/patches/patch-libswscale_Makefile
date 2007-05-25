@@ -1,16 +1,12 @@
-$OpenBSD: patch-libswscale_Makefile,v 1.1 2007/01/23 09:34:45 robert Exp $
---- libswscale/Makefile.orig	Tue Jan  2 19:01:04 2007
-+++ libswscale/Makefile	Tue Jan  2 19:02:35 2007
-@@ -3,11 +3,9 @@ include ../config.mak
+$OpenBSD: patch-libswscale_Makefile,v 1.2 2007/05/25 15:54:14 jakemsr Exp $
+--- libswscale/Makefile.orig	Wed Apr  4 21:25:05 2007
++++ libswscale/Makefile	Thu Apr 19 05:00:48 2007
+@@ -2,7 +2,7 @@
+ include ../config.mak
  
  NAME=swscale
- ifeq ($(BUILD_SHARED),yes)
 -LIBVERSION=$(SWSVERSION)
 +LIBVERSION=$(LIBswscale_VERSION)
  LIBMAJOR=$(SWSMAJOR)
- endif
--
--EXTRALIBS := -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) $(EXTRALIBS)
  
- OBJS= swscale.o rgb2rgb.o
- ifeq ($(TARGET_ALTIVEC),yes)
+ EXTRALIBS := -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) $(EXTRALIBS)

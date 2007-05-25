@@ -1,12 +1,23 @@
-$OpenBSD: patch-libavformat_Makefile,v 1.12 2007/01/23 09:34:45 robert Exp $
---- libavformat/Makefile.orig	Sun Dec 24 06:51:43 2006
-+++ libavformat/Makefile	Tue Jan  2 18:22:01 2007
-@@ -195,7 +195,7 @@ OBJS += $(OBJS-yes)
+$OpenBSD: patch-libavformat_Makefile,v 1.13 2007/05/25 15:54:14 jakemsr Exp $
+--- libavformat/Makefile.orig	Tue May  1 13:26:05 2007
++++ libavformat/Makefile	Tue May  1 13:29:58 2007
+@@ -154,8 +154,9 @@ OBJS+= framehook.o
+ OBJS-$(CONFIG_VIDEO_GRAB_V4L_DEMUXER)    += grab.o
+ OBJS-$(CONFIG_VIDEO_GRAB_BKTR_DEMUXER)   += grab_bktr.o
+ 
+-EXTRALIBS := -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) \
++#EXTRALIBS := -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) \
+              -lavcodec$(BUILDSUF) -L$(BUILD_ROOT)/libavcodec $(EXTRALIBS)
++EXTRALIBS=${LIBavformat_EXTRALIBS}
+ 
+ CPPOBJS-$(CONFIG_AUDIO_BEOS)             += beosaudio.o
+ 
+@@ -170,7 +171,7 @@ OBJS-$(CONFIG_TCP_PROTOCOL)              += tcp.o
+ OBJS-$(CONFIG_UDP_PROTOCOL)              += udp.o
  
  NAME=avformat
- ifeq ($(BUILD_SHARED),yes)
 -LIBVERSION=$(LAVFVERSION)
 +LIBVERSION=$(LIBavformat_VERSION)
  LIBMAJOR=$(LAVFMAJOR)
- endif
  
+ include ../common.mak

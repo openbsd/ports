@@ -1,16 +1,35 @@
-$OpenBSD: patch-libavcodec_Makefile,v 1.13 2007/01/23 09:34:45 robert Exp $
---- libavcodec/Makefile.orig	Mon Jan  8 01:24:14 2007
-+++ libavcodec/Makefile	Mon Jan  8 13:43:41 2007
-@@ -402,11 +402,9 @@ CFLAGS += $(CFLAGS-yes)
- OBJS += $(OBJS-yes)
- ASM_OBJS += $(ASM_OBJS-yes)
+$OpenBSD: patch-libavcodec_Makefile,v 1.14 2007/05/25 15:54:14 jakemsr Exp $
+--- libavcodec/Makefile.orig	Tue May  1 13:26:00 2007
++++ libavcodec/Makefile	Thu May  3 12:09:35 2007
+@@ -335,7 +335,7 @@ ASM_OBJS-$(HAVE_ARMV6)                 += armv4l/simpl
+ 
+ OBJS-$(TARGET_ARCH_SPARC)              += sparc/dsputil_vis.o \
+ 
+-sparc/dsputil_vis.o: CFLAGS += -mcpu=ultrasparc -mtune=ultrasparc
++# sparc/dsputil_vis.o: CFLAGS += -mcpu=ultrasparc -mtune=ultrasparc
+ 
+ OBJS-$(HAVE_MLIB)                      += mlib/dsputil_mlib.o \
+ 
+@@ -380,10 +380,11 @@ ASM_OBJS-$(TARGET_ARCH_BFIN)           += bfin/pixels_
+                                           bfin/idct_bfin.o   \
+                                           bfin/fdct_bfin.o   \
  
 -EXTRALIBS := -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) $(EXTRALIBS)
--
++#EXTRALIBS := -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) $(EXTRALIBS)
++EXTRALIBS=${LIBavcodec_EXTRALIBS}
+ 
  NAME=avcodec
- ifeq ($(BUILD_SHARED),yes)
 -LIBVERSION=$(LAVCVERSION)
 +LIBVERSION=$(LIBavcodec_VERSION)
  LIBMAJOR=$(LAVCMAJOR)
- endif
+ 
+ TESTS= imgresample-test fft-test dct-test
+@@ -413,7 +414,7 @@ cpuid_test: i386/cputest.c
+ 	$(CC) $(CFLAGS) -D__TEST__ -o $@ $<
+ 
+ imgresample-test: imgresample.c $(LIB)
+-	$(CC) $(CFLAGS) -DTEST -o $@ $^ $(EXTRALIBS)
++	$(CC) $(CFLAGS) -DTEST -o $@ $^ $(LIBavcodec_EXTRALIBS)
+ 
+ dct-test: dct-test.o fdctref.o $(LIB)
  

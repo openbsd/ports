@@ -1,12 +1,12 @@
-$OpenBSD: patch-common_mak,v 1.3 2007/01/23 09:34:45 robert Exp $
---- common.mak.orig	Tue Jan  2 18:27:55 2007
-+++ common.mak	Tue Jan  2 18:28:19 2007
-@@ -63,13 +63,7 @@ install-libs: $(INSTLIBTARGETS)
+$OpenBSD: patch-common_mak,v 1.4 2007/05/25 15:54:14 jakemsr Exp $
+--- common.mak.orig	Wed Apr  4 21:25:05 2007
++++ common.mak	Wed May  2 23:36:42 2007
+@@ -64,13 +64,7 @@ install-libs: $(INSTLIBTARGETS)
  
  install-lib-shared: $(SLIBNAME)
  	install -d "$(shlibdir)"
--	install $(INSTALLSTRIP) -m 755 $(SLIBNAME) \
--		"$(shlibdir)/$(SLIBNAME_WITH_VERSION)"
+-	install -m 755 $(SLIBNAME) "$(shlibdir)/$(SLIBNAME_WITH_VERSION)"
+-	$(STRIP) "$(shlibdir)/$(SLIBNAME_WITH_VERSION)"
 -	cd "$(shlibdir)" && \
 -		ln -sf $(SLIBNAME_WITH_VERSION) $(SLIBNAME_WITH_MAJOR)
 -	cd "$(shlibdir)" && \
