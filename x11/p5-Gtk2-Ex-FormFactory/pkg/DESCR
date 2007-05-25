@@ -1,0 +1,12 @@
+Gtk2::Ex::FormFactory is a framework which tries to make building complex
+GUIs easy, by offering these two main features:
+
+ * Consistent looking GUI without the need to code resp. tune each widget by
+   hand. Instead you declare the structure of your GUI, connect it to the
+   data of your program (which should be a well defined set of objects) and
+   control how this structure is transformed into a specific layout in a
+   very generic way.
+
+ * Automatically keep widget and object states in sync (in both directions),
+   even with complex data structures with a lot of internal dependencies,
+   object nesting etc.

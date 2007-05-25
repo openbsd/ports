@@ -1,0 +1,82 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/25 05:28:12 steven Exp $
+${P5SITE}/Gtk2/
+${P5SITE}/Gtk2/Ex/
+${P5SITE}/Gtk2/Ex/FormFactory/
+${P5SITE}/Gtk2/Ex/FormFactory.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Button.pm
+${P5SITE}/Gtk2/Ex/FormFactory/CheckButton.pm
+${P5SITE}/Gtk2/Ex/FormFactory/CheckButtonGroup.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Combo.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Container.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Context.pm
+${P5SITE}/Gtk2/Ex/FormFactory/DialogButtons.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Entry.pm
+${P5SITE}/Gtk2/Ex/FormFactory/ExecFlow.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Expander.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Form.pm
+${P5SITE}/Gtk2/Ex/FormFactory/GtkWidget.pm
+${P5SITE}/Gtk2/Ex/FormFactory/HBox.pm
+${P5SITE}/Gtk2/Ex/FormFactory/HSeparator.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Image.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Intro.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Label.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Layout.pm
+${P5SITE}/Gtk2/Ex/FormFactory/List.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Loader.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Menu.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Notebook.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Popup.pm
+${P5SITE}/Gtk2/Ex/FormFactory/ProgressBar.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Proxy.pm
+${P5SITE}/Gtk2/Ex/FormFactory/ProxyBuffered.pm
+${P5SITE}/Gtk2/Ex/FormFactory/RadioButton.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Rules.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Table.pm
+${P5SITE}/Gtk2/Ex/FormFactory/TextView.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Timestamp.pm
+${P5SITE}/Gtk2/Ex/FormFactory/ToggleButton.pm
+${P5SITE}/Gtk2/Ex/FormFactory/VBox.pm
+${P5SITE}/Gtk2/Ex/FormFactory/VPaned.pm
+${P5SITE}/Gtk2/Ex/FormFactory/VSeparator.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Widget.pm
+${P5SITE}/Gtk2/Ex/FormFactory/Window.pm
+${P5SITE}/Gtk2/Ex/FormFactory/YesNo.pm
+@man man/man3p/Gtk2::Ex::FormFactory.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Button.3p
+@man man/man3p/Gtk2::Ex::FormFactory::CheckButton.3p
+@man man/man3p/Gtk2::Ex::FormFactory::CheckButtonGroup.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Combo.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Container.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Context.3p
+@man man/man3p/Gtk2::Ex::FormFactory::DialogButtons.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Entry.3p
+@man man/man3p/Gtk2::Ex::FormFactory::ExecFlow.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Expander.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Form.3p
+@man man/man3p/Gtk2::Ex::FormFactory::GtkWidget.3p
+@man man/man3p/Gtk2::Ex::FormFactory::HBox.3p
+@man man/man3p/Gtk2::Ex::FormFactory::HSeparator.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Image.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Intro.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Label.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Layout.3p
+@man man/man3p/Gtk2::Ex::FormFactory::List.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Loader.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Menu.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Notebook.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Popup.3p
+@man man/man3p/Gtk2::Ex::FormFactory::ProgressBar.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Proxy.3p
+@man man/man3p/Gtk2::Ex::FormFactory::ProxyBuffered.3p
+@man man/man3p/Gtk2::Ex::FormFactory::RadioButton.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Rules.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Table.3p
+@man man/man3p/Gtk2::Ex::FormFactory::TextView.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Timestamp.3p
+@man man/man3p/Gtk2::Ex::FormFactory::ToggleButton.3p
+@man man/man3p/Gtk2::Ex::FormFactory::VBox.3p
+@man man/man3p/Gtk2::Ex::FormFactory::VPaned.3p
+@man man/man3p/Gtk2::Ex::FormFactory::VSeparator.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Widget.3p
+@man man/man3p/Gtk2::Ex::FormFactory::Window.3p
+@man man/man3p/Gtk2::Ex::FormFactory::YesNo.3p
