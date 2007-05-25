@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2005/04/19 12:53:21 alek Exp $
+# $OpenBSD: Makefile,v 1.42 2007/05/25 00:50:50 aanriot Exp $
 
 COMMENT=		"SLang-based newsreader"
 
 VERSION=		0.9.8.1
 DISTNAME=		slrn-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		news
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=slrn/}
@@ -26,7 +26,6 @@ PATCHFILES+=    	slrn-${VERSION}-$i.diff:0
 PATCH_DIST_STRIP=-p1
 
 NO_REGRESS=		Yes
-USE_GMAKE=		Yes
 LIB_DEPENDS=		slang.::devel/libslang
 MODULES=		devel/gettext
 
