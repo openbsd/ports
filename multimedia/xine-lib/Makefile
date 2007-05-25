@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/01 20:20:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2007/05/25 16:16:37 jakemsr Exp $
 
 COMMENT=		"multimedia decoding library"
 
 V=			1.1.2
 DISTNAME=		xine-lib-${V}
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
 SHARED_LIBS=		xine	14.1
@@ -32,7 +32,7 @@ MODULES=		gettext
 LIB_DEPENDS=		FLAC.>=5::audio/flac \
 			SDL.>=3::devel/sdl \
 			a52::audio/liba52 \
-			avcodec.>=7,postproc.>=7,avutil.>=1::graphics/ffmpeg \
+			avcodec.>=7,postproc.>=7::graphics/ffmpeg \
 			dvdnav.>=5::multimedia/libdvdnav \
 			mad.>=2::audio/libmad \
 			mng.>=3::graphics/libmng \
@@ -79,9 +79,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			FFMPEG_CPPFLAGS="-I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include/postproc" \
-			FFMPEG_LIBS="-lavcodec -lavutil -lpostproc -lm -lz -pthread" \
-			FFMPEG_POSTPROC_LIBS="-lpostproc"
+			FFMPEG_CPPFLAGS="$$(pkg-config --cflags libavcodec libpostproc)" \
+			FFMPEG_LIBS="$$(pkg-config --libs libavcodec libpostproc)" \
+			FFMPEG_POSTPROC_LIBS="$$(pkg-config --libs libpostproc)"
 
 post-patch:
 .if ${MACHINE_ARCH} == "i386"
