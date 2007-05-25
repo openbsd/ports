@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/22 18:47:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/25 16:56:55 martynas Exp $
 
 COMMENT=	"ORBit2 Python bindings"
 
-V=		2.14.1
+V=		2.14.2
 DISTNAME=	pyorbit-${V}
-PKGNAME=	py-orbit-${V}p2
-CATEGORIES=	devel
+PKGNAME=	py-orbit-${V}
+CATEGORIES=	devel lang/python
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -38,5 +38,16 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \
 		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-orbit
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/py-orbit/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-orbit/{echo,threaded}
+	${INSTALL_DATA} ${WRKSRC}/examples/echo/*.{idl,py} ${PREFIX}/share/examples/py-orbit/echo/
+	${INSTALL_DATA} ${WRKSRC}/examples/threaded/*.{idl,py} ${PREFIX}/share/examples/py-orbit/threaded/
+
+do-regress: fake
+	cd ${WRKSRC}/tests && \
+		env PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages" ${MODPY_BIN} everything_inprocess.py -v
 
 .include <bsd.port.mk>

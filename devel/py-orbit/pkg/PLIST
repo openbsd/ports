@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/14 21:19:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/25 16:56:56 martynas Exp $
 %%SHARED%%
 include/pyorbit-2/
 include/pyorbit-2/pyorbit.h
@@ -12,3 +12,17 @@ lib/python${MODPY_VERSION}/site-packages/ORBit.la
 lib/python${MODPY_VERSION}/site-packages/PortableServer.py
 lib/python${MODPY_VERSION}/site-packages/PortableServer.pyc
 lib/python${MODPY_VERSION}/site-packages/PortableServer.pyo
+share/doc/py-orbit/
+share/doc/py-orbit/README
+share/examples/py-orbit/
+share/examples/py-orbit/echo/
+share/examples/py-orbit/echo/echo-client-async.py
+share/examples/py-orbit/echo/echo-client.py
+share/examples/py-orbit/echo/echo-server.py
+share/examples/py-orbit/echo/echo.idl
+share/examples/py-orbit/threaded/
+share/examples/py-orbit/threaded/client.py
+share/examples/py-orbit/threaded/pyt.idl
+share/examples/py-orbit/threaded/server.py
+share/examples/py-orbit/threaded/thread-hints-client.py
+share/examples/py-orbit/threaded/thread-hints-server.py
