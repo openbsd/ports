@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.47 2007/05/25 14:32:37 espie Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdeaddons-${VERSION}
-PKGNAME=		${DISTNAME}p0
-MODKDE_VERSION=		3.5.3
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION=		3.5.7
 
 LIB_DEPENDS= kdecore.>=6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmediaplayer,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
 	SDL.>=1:sdl-*-!no_x11:devel/sdl \
@@ -21,16 +21,12 @@ LIB_DEPENDS= kdecore.>=6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces,k
 
 SEPARATE_BUILD=flavored
 
-USE_X11=	Yes
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS+=	--tag=disable-static
-
 WANTLIB=	ICE SM X11 Xext Xi Xrender art_lgpl_2 artsflow artsflow_idl \
 		audiofile c esd glib glib-2.0 gmodule gmodule-2.0 \
 		iconv intl jpeg kimproxy kmedia2_idl m mad mcop ogg \
 		ossaudio pcre pcreposix png pthread qtmcop soundserver_idl \
 		stdc++ usbhid util vorbis vorbisenc vorbisfile z \
-		gthread-2.0 idn
+		gthread-2.0 idn Xau Xdmcp fam rpcsvc
 #WANTLIB+=	noatunarts 
 
 .include <bsd.port.mk>

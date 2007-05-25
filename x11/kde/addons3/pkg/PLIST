@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2006/08/03 23:37:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2007/05/25 14:32:37 espie Exp $
 bin/atlantikdesigner
 bin/fsview
 bin/jpegorient
@@ -153,11 +153,21 @@ ${KDE}/webarchivethumbnail.so
 share/applications/kde/atlantikdesigner.desktop
 share/applications/kde/ksig.desktop
 share/applnk/.hidden/arkplugin.desktop
+share/applnk/.hidden/crashesplugin.desktop
+share/applnk/.hidden/dirfilterplugin.desktop
+share/applnk/.hidden/fsview.desktop
 share/applnk/.hidden/katefll.desktop
 share/applnk/.hidden/kcmkuick.desktop
+share/applnk/.hidden/khtmlsettingsplugin.desktop
+share/applnk/.hidden/kimgalleryplugin.desktop
 share/applnk/.hidden/kuickplugin.desktop
 share/applnk/.hidden/lnkforward.desktop
 share/applnk/.hidden/mediaplayerplugin.desktop
+share/applnk/.hidden/plugin_babelfish.desktop
+share/applnk/.hidden/plugin_domtreeviewer.desktop
+share/applnk/.hidden/plugin_validators.desktop
+share/applnk/.hidden/plugin_webarchiver.desktop
+share/applnk/.hidden/uachangerplugin.desktop
 share/apps/akregator/pics/rss.png
 share/apps/atlantikdesigner/
 share/apps/atlantikdesigner/atlantikdesignerui.rc
@@ -419,6 +429,11 @@ share/doc/HTML/en/konq-plugins/webarchiver/
 share/doc/HTML/en/konq-plugins/webarchiver/common
 share/doc/HTML/en/konq-plugins/webarchiver/index.cache.bz2
 share/doc/HTML/en/konq-plugins/webarchiver/index.docbook
+share/doc/HTML/en/ksig/
+share/doc/HTML/en/ksig/common
+share/doc/HTML/en/ksig/index.cache.bz2
+share/doc/HTML/en/ksig/index.docbook
+share/doc/HTML/en/ksig/screenshot.png
 share/icons/crystalsvg/16x16/actions/babelfish.png
 share/icons/crystalsvg/16x16/actions/cssvalidator.png
 share/icons/crystalsvg/16x16/actions/domtreeviewer.png

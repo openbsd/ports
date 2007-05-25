@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2006/02/16 11:55:22 espie Exp $
---- configure.in.orig	Fri Jan 20 18:14:37 2006
-+++ configure.in	Thu Feb 16 12:11:34 2006
-@@ -397,9 +397,6 @@ if test "x$with_berkeley_db" != xno; the
+$OpenBSD: patch-configure_in,v 1.2 2007/05/25 14:32:37 espie Exp $
+--- configure.in.orig	Mon May 14 13:25:10 2007
++++ configure.in	Fri May 25 13:58:57 2007
+@@ -397,9 +397,6 @@ if test "x$with_berkeley_db" != xno; then
    KDE_CHECK_HEADER([db_cxx.h],
      [:], [berkeley_db=no])
  
