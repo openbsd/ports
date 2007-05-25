@@ -1,9 +1,0 @@
-Mozilla is an open-source web browser, designed for standards
-compliance, performance and portability.
-
-Mozilla looks for plugins in ~/.mozilla/plugins
-${LOCALBASE}/mozilla/plugins
-and ${LOCALBASE}/lib/mozilla-plugins.
-
-To disable anti-aliasing (xft) altogether set GDK_USE_XFT=0 in the
-environment.
