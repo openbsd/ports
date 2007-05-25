@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/01/23 10:39:01 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2007/05/25 16:13:48 jakemsr Exp $
 
 COMMENT=		"video stream processing tools"
 
 DISTNAME=		transcode-1.0.3rc2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
@@ -12,8 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xaw Xext Xi Xpm Xt Xv c freetype \
-			m pthread usbhid z glib gmodule intl
+WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xi Xpm Xt Xv \
+			c freetype m pthread usbhid z glib gmodule intl
 
 MASTER_SITES=		http://fromani.exit1.org/
 
@@ -31,7 +32,7 @@ PATCH_LIST=		patch-* gcc-*
 
 LIB_DEPENDS=		SDL.>=2::devel/sdl \
 			a52::audio/liba52 \
-			avcodec.>=7,avutil.>=1::graphics/ffmpeg \
+			avcodec.>=7::graphics/ffmpeg \
 			dv.>=4::multimedia/libdv \
 			dvdread.>=3::devel/libdvdread \
 			gdk.>=1.2,gtk.>=1.2::x11/gtk+ \
@@ -60,7 +61,7 @@ SHARED_ONLY=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			LIBAVCODEC_EXTRA_LIBS="-lavutil -lm -lz -pthread"
+			LIBAVCODEC_EXTRA_LIBS="-pthread"
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
