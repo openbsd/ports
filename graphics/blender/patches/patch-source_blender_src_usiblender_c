@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_blender_src_usiblender_c,v 1.3 2006/07/26 06:45:27 steven Exp $
---- source/blender/src/usiblender.c.orig	Wed Jul  5 11:35:05 2006
-+++ source/blender/src/usiblender.c	Fri Jul 21 16:51:11 2006
-@@ -162,9 +162,7 @@ static void init_userdef_file(void)
+$OpenBSD: patch-source_blender_src_usiblender_c,v 1.4 2007/05/25 12:19:14 steven Exp $
+--- source/blender/src/usiblender.c.orig	Mon Apr 16 20:32:47 2007
++++ source/blender/src/usiblender.c	Sun May 20 14:53:12 2007
+@@ -173,9 +173,7 @@ static void init_userdef_file(void)
  	}
  	if(U.mixbufsize==0) U.mixbufsize= 2048;
  	if (BLI_streq(U.tempdir, "/")) {

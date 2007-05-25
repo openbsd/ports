@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_blender_blenloader_intern_writefile_c,v 1.1 2006/07/26 06:45:27 steven Exp $
---- source/blender/blenloader/intern/writefile.c.orig	Sat Jul 22 19:40:14 2006
-+++ source/blender/blenloader/intern/writefile.c	Sat Jul 22 19:40:31 2006
-@@ -1680,7 +1680,7 @@ int BLO_write_file(char *dir, int write_
+$OpenBSD: patch-source_blender_blenloader_intern_writefile_c,v 1.2 2007/05/25 12:19:14 steven Exp $
+--- source/blender/blenloader/intern/writefile.c.orig	Mon Apr  9 14:45:42 2007
++++ source/blender/blenloader/intern/writefile.c	Sun May 20 14:53:11 2007
+@@ -1911,7 +1911,7 @@ int BLO_write_file(char *dir, int write_flags, char **
  
  	sprintf(tempname, "%s@", dir);
  

@@ -1,12 +1,12 @@
-$OpenBSD: patch-intern_ghost_SConscript,v 1.1 2006/07/30 07:29:13 steven Exp $
---- intern/ghost/SConscript.orig	Sun Jul 30 08:27:02 2006
-+++ intern/ghost/SConscript	Sun Jul 30 08:27:19 2006
-@@ -22,7 +22,7 @@ elif window_system == 'darwin':
-     for f in pf:
-         sources.remove('intern' + os.sep + f + 'Win32.cpp')
-         sources.remove('intern' + os.sep + f + 'X11.cpp')
--elif window_system == 'openbsd3':
-+elif window_system == 'openbsd3' or window_system == 'openbsd4':
+$OpenBSD: patch-intern_ghost_SConscript,v 1.2 2007/05/25 12:19:14 steven Exp $
+--- intern/ghost/SConscript.orig	Mon Nov 13 07:40:08 2006
++++ intern/ghost/SConscript	Sat Mar 24 08:20:39 2007
+@@ -10,7 +10,7 @@ sources = env.Glob('intern/*.cpp')
+ 
+ pf = ['GHOST_DisplayManager', 'GHOST_System', 'GHOST_Window']
+ 
+-if window_system in ('linux2', 'openbsd3', 'sunos5', 'freebsd6'):
++if window_system in ('linux2', 'openbsd3', 'openbsd4', 'sunos5', 'freebsd6'):
      for f in pf:
          sources.remove('intern' + os.sep + f + 'Win32.cpp')
          sources.remove('intern' + os.sep + f + 'Carbon.cpp')

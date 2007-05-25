@@ -1,12 +1,12 @@
-$OpenBSD: patch-extern_solid_SConscript,v 1.3 2006/07/30 07:29:13 steven Exp $
---- extern/solid/SConscript.orig	Sun Jul 30 08:26:02 2006
-+++ extern/solid/SConscript	Sun Jul 30 08:26:17 2006
+$OpenBSD: patch-extern_solid_SConscript,v 1.4 2007/05/25 12:19:14 steven Exp $
+--- extern/solid/SConscript.orig	Sun Jan 28 15:55:57 2007
++++ extern/solid/SConscript	Sat Mar 24 08:19:46 2007
 @@ -12,7 +12,7 @@ if env['OURPLATFORM']=='win32-vc':
  elif env['OURPLATFORM']=='win32-mingw':
      defs += ' NDEBUG'
      cflags += ['-O2']
--elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='openbsd3':
-+elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='openbsd3' or sys.platform=='openbsd4':
+-elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='openbsd3' or sys.platform=='sunos5':
++elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='openbsd3' or sys.platform=='openbsd4' or sys.platform=='sunos5':
      defs += ' NDEBUG'
      cflags += ['-O2']
  elif sys.platform=='darwin' :

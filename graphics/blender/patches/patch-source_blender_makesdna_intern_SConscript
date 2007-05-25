@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_blender_makesdna_intern_SConscript,v 1.1 2006/07/26 06:45:27 steven Exp $
---- source/blender/makesdna/intern/SConscript.orig	Mon Mar 13 12:42:49 2006
-+++ source/blender/makesdna/intern/SConscript	Sat Jul 22 17:03:36 2006
-@@ -11,7 +11,7 @@ source_files = ['makesdna.c', '#intern/g
+$OpenBSD: patch-source_blender_makesdna_intern_SConscript,v 1.2 2007/05/25 12:19:14 steven Exp $
+--- source/blender/makesdna/intern/SConscript.orig	Tue Mar 27 17:43:59 2007
++++ source/blender/makesdna/intern/SConscript	Sun May 20 15:01:31 2007
+@@ -11,7 +11,7 @@ source_files = ['makesdna.c']
  
  makesdna_tool = env.Copy()
  dna = env.Copy()
@@ -10,20 +10,18 @@ $OpenBSD: patch-source_blender_makesdna_intern_SConscript,v 1.1 2006/07/26 06:45
  
  makesdna_tool.Append (CPPPATH = ['#/intern/guardedalloc',
                                   '../../makesdna'])
-@@ -24,13 +24,13 @@ if env['OURPLATFORM'] == 'linuxcross':
+@@ -24,12 +24,12 @@ if env['OURPLATFORM'] == 'linuxcross':
  if sys.platform != 'cygwin':
      makesdna_tool.Append (CCFLAGS = cflags)
  makesdna_tool.Append (CPPDEFINES = defines)
 -makesdna_tool.Append (LIBPATH = '#'+root_build_dir+'/lib')
 +makesdna_tool.Append (LIBPATH = root_build_dir+'/lib')
  
--makesdna_tool.Program (target = '#'+root_build_dir+os.sep+'makesdna', source = source_files)
-+makesdna_tool.Program (target = root_build_dir+os.sep+'makesdna', source = source_files)
+ if env['OURPLATFORM'] == 'linux2' and root_build_dir[0]==os.sep:
+     makesdna = makesdna_tool.Program (target = root_build_dir+'/makesdna', source = source_files, LIBS=['bf_guardedalloc'])
+ else:
+-    makesdna = makesdna_tool.Program (target = '#'+root_build_dir+'/makesdna', source = source_files, LIBS=['bf_guardedalloc'])
++    makesdna = makesdna_tool.Program (target = root_build_dir+'/makesdna', source = source_files, LIBS=['bf_guardedalloc'])
  
  dna_dict = dna.Dictionary()
- makesdna_name = root_build_dir+'/makesdna' + dna_dict['PROGSUFFIX']
--dna.Depends ('dna.c', '#'+makesdna_name)
-+dna.Depends ('dna.c', makesdna_name)
- if env['OURPLATFORM'] != 'linuxcross':
-     dna.Command ('dna.c', '', root_build_dir+os.sep+"makesdna $TARGET")
- else:
+ dna.Depends ('dna.c', makesdna)

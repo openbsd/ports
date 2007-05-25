@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/05/25 12:19:14 steven Exp $
 
 COMMENT=	"3D creation software"
 
-DISTNAME=	blender-2.42
+DISTNAME=	blender-2.44
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.blender.org/
@@ -35,8 +35,6 @@ SEPARATE_BUILD=	simple
 USE_X11=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/${DISTNAME:S/-//}
-
 CFLAGS+=	-fPIC -funsigned-char -fno-strict-aliasing
 
 post-extract:
@@ -44,7 +42,7 @@ post-extract:
 
 do-build:
 	@${SETENV} ${MAKE_ENV} scons -C ${WRKSRC} blendernogame \
-		CC=${CC} CXX=${CXX} \
+		CC=${CC} CXX=${CXX} C_WARN="-Wall" \
 		CFLAGS="${CFLAGS}" CCFLAGS="${CXXFLAGS}" \
 		REL_CFLAGS= REL_CCFLAGS= \
 		BF_BUILDDIR=${WRKBUILD} \
