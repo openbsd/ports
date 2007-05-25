@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2006/08/03 23:37:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2007/05/25 09:49:55 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -1145,6 +1145,7 @@ share/doc/HTML/en/kmix/index.cache.bz2
 share/doc/HTML/en/kmix/index.docbook
 share/doc/HTML/en/kmix/kmix-channel-playback.png
 share/doc/HTML/en/kmix/kmix-channel-record.png
+share/doc/HTML/en/kmix/kmix-channel-switches.png
 share/doc/HTML/en/kmix/kmix-window.png
 share/doc/HTML/en/krec/
 share/doc/HTML/en/krec/common

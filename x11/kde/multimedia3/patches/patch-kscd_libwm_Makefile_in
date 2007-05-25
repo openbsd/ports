@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.15 2006/02/16 08:25:11 espie Exp $
---- kscd/libwm/Makefile.in.orig	Fri Jan 20 18:48:35 2006
-+++ kscd/libwm/Makefile.in	Wed Feb 15 12:13:03 2006
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.16 2007/05/25 09:49:55 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Mon May 14 13:37:23 2007
++++ kscd/libwm/Makefile.in	Thu May 24 16:28:55 2007
 @@ -16,7 +16,7 @@
  @SET_MAKE@
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.15 2006/02/16 08:25:11 espie Exp $
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
  am__depfiles_maybe = depfiles
-@@ -87,8 +87,8 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=c
+@@ -87,8 +87,8 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
  CCLD = $(CC)
  LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
@@ -56,7 +56,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.15 2006/02/16 08:25:11 espie Exp $
  #>- RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
  #>- 	html-recursive info-recursive install-data-recursive \
  #>- 	install-exec-recursive install-info-recursive \
-@@ -481,10 +481,10 @@ xine_artsplugin_SUBDIR_included_TRUE = @
+@@ -487,10 +487,10 @@ xine_artsplugin_SUBDIR_included_TRUE = @xine_artsplugi
  subdirs = include
  SUBDIRS = audio
  INCLUDES = $(all_includes) 
@@ -71,7 +71,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.15 2006/02/16 08:25:11 espie Exp $
  database.c index.c scsi.c cdda.c plat_linux_cdda.c plat_sun_cdda.c\
  plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
  plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
-@@ -548,8 +548,8 @@ clean-noinstLTLIBRARIES:
+@@ -554,8 +554,8 @@ clean-noinstLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -82,7 +82,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.15 2006/02/16 08:25:11 espie Exp $
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -891,8 +891,8 @@ uninstall-info: uninstall-info-recursive
+@@ -897,8 +897,8 @@ uninstall-info: uninstall-info-recursive
  	tags tags-recursive uninstall uninstall-am uninstall-info-am
  
  
@@ -93,7 +93,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.15 2006/02/16 08:25:11 espie Exp $
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
-@@ -943,19 +943,19 @@ bcheck-am:
+@@ -949,19 +949,19 @@ bcheck-am:
  
  #>+ 3
  final:

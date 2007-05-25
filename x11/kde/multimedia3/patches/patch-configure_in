@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.25 2006/10/12 23:12:19 espie Exp $
---- configure.in.orig	Mon Oct  2 20:14:51 2006
-+++ configure.in	Sat Oct  7 10:16:39 2006
+$OpenBSD: patch-configure_in,v 1.26 2007/05/25 09:49:55 espie Exp $
+--- configure.in.orig	Mon May 14 13:36:25 2007
++++ configure.in	Thu May 24 16:28:55 2007
 @@ -164,22 +164,22 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
      [:], [have_oggvorbis=no])
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-configure_in,v 1.25 2006/10/12 23:12:19 espie Exp $
      AC_DEFINE(OGG_VORBIS, 1, [Define if you have ogg/vorbis installed])
    fi
  
-@@ -628,10 +628,13 @@ if test x$build_arts != xyes || test x$h
+@@ -628,10 +628,13 @@ if test x$build_arts != xyes || test x$have_akode != x
  then
    DO_NOT_COMPILE="$DO_NOT_COMPILE akode_artsplugin"
  else

@@ -1,6 +1,6 @@
-$OpenBSD: patch-kdm_backend_auth_c,v 1.5 2006/02/03 12:23:15 espie Exp $
---- kdm/backend/auth.c.orig	Thu Jan 19 18:03:14 2006
-+++ kdm/backend/auth.c	Tue Jan 24 12:11:35 2006
+$OpenBSD: patch-kdm_backend_auth_c,v 1.6 2007/05/25 09:49:54 espie Exp $
+--- kdm/backend/auth.c.orig	Fri Mar 17 11:17:47 2006
++++ kdm/backend/auth.c	Mon May 14 19:06:23 2007
 @@ -41,6 +41,9 @@ from the copyright holder.
  #include <sys/stat.h>
  #include <fcntl.h>
@@ -11,7 +11,7 @@ $OpenBSD: patch-kdm_backend_auth_c,v 1.5 2006/02/03 12:23:15 espie Exp $
  
  #include <sys/ioctl.h>
  
-@@ -288,6 +291,25 @@ SaveServerAuthorizations( struct display
+@@ -288,6 +291,25 @@ SaveServerAuthorizations( struct display *d, Xauth **a
  			return FALSE;
  		}
  	}

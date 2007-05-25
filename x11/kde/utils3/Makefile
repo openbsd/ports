@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2007/05/09 11:31:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.49 2007/05/25 09:49:56 espie Exp $
 
 COMMENT= 		"K Desktop Environment, utilities"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdeutils-${VERSION}
-PKGNAME=		${DISTNAME}p1
-MODKDE_VERSION=		3.5.3
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION=		3.5.7
 SHARED_LIBS +=	khexeditcommon       1.0      # .0.0
 SHARED_LIBS +=	kcmlaptop            1.0      # .0.0
 SHARED_LIBS +=	kmilo                2.0      # .1.0
@@ -24,9 +24,7 @@ SEPARATE_BUILD=flavored
 
 WANTLIB=	ICE SM X11 Xext Xrender Xtst art_lgpl_2 c crypto jpeg m \
 		png pthread stdc++ util z gmodule intl iconv Xi kvm glib \
-		idn
+		idn Xau Xdmcp fam rpcsvc
 
-USE_X11=	Yes
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS+=	--tag=disable-static
+
 .include <bsd.port.mk>

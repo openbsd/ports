@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/03/18 21:36:14 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2007/05/25 09:49:54 espie Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -1999,7 +1999,7 @@ share/apps/kthememanager/themes/YellowOnBlue/YellowOnBlue.xml
 share/apps/kwin/
 share/apps/kwin/b2.desktop
 share/apps/kwin/default_rules/
-share/apps/kwin/default_rules/fsp_workarounds_1
+share/apps/kwin/default_rules/fsp_workarounds_1.kwinrules
 share/apps/kwin/eventsrc
 share/apps/kwin/keramik.desktop
 share/apps/kwin/laptop.desktop
@@ -4020,6 +4020,9 @@ share/locale/l10n/mc/flag.png
 share/locale/l10n/md/
 share/locale/l10n/md/entry.desktop
 share/locale/l10n/md/flag.png
+share/locale/l10n/me/
+share/locale/l10n/me/entry.desktop
+share/locale/l10n/me/flag.png
 share/locale/l10n/mg/
 share/locale/l10n/mg/entry.desktop
 share/locale/l10n/mg/flag.png
@@ -4163,6 +4166,9 @@ share/locale/l10n/qa/flag.png
 share/locale/l10n/ro/
 share/locale/l10n/ro/entry.desktop
 share/locale/l10n/ro/flag.png
+share/locale/l10n/rs/
+share/locale/l10n/rs/entry.desktop
+share/locale/l10n/rs/flag.png
 share/locale/l10n/ru/
 share/locale/l10n/ru/entry.desktop
 share/locale/l10n/ru/flag.png
@@ -4317,9 +4323,6 @@ share/locale/l10n/ws/flag.png
 share/locale/l10n/ye/
 share/locale/l10n/ye/entry.desktop
 share/locale/l10n/ye/flag.png
-share/locale/l10n/yu/
-share/locale/l10n/yu/entry.desktop
-share/locale/l10n/yu/flag.png
 share/locale/l10n/za/
 share/locale/l10n/za/entry.desktop
 share/locale/l10n/za/flag.png

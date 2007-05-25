@@ -1,7 +1,7 @@
-$OpenBSD: patch-flow_gsl_gslmakefile_inc,v 1.2 2005/03/29 21:18:34 espie Exp $
---- flow/gsl/gslmakefile.inc.orig	Thu Feb  3 11:19:06 2005
-+++ flow/gsl/gslmakefile.inc	Wed Mar 23 08:57:54 2005
-@@ -35,12 +35,15 @@ GSL_NOINST_PROGS = gslwchunk gsltests gs
+$OpenBSD: patch-flow_gsl_gslmakefile_inc,v 1.3 2007/05/25 09:49:54 espie Exp $
+--- flow/gsl/gslmakefile.inc.orig	Sat Sep 10 10:13:33 2005
++++ flow/gsl/gslmakefile.inc	Mon May 14 15:34:21 2007
+@@ -35,12 +35,15 @@ GSL_NOINST_PROGS = gslwchunk gsltests gslffttest
  gslwchunk_SOURCES = gslwchunk.c
  gslwchunk_LDADD = $(GSL_progs_ldadd)
  gslwchunk_LDFLAGS = $(USE_THREADS)

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.27 2007/05/25 09:49:53 espie Exp $
 
 COMMENT= 		"X11 toolkit, accessibility aids"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdeaccessibility-${VERSION}
-PKGNAME=		${DISTNAME}p0
-MODKDE_VERSION?=	3.5.3
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION?=	3.5.7
 SHARED_LIBS +=	KTTSD_Lib            1.0      # .0.1
 SHARED_LIBS +=	kttsd                2.0      # .1.0
 
@@ -22,7 +22,4 @@ WANTLIB=	ICE SM X11 Xext Xrender Xtst art_lgpl_2 c jpeg \
 		glib-2.0 soundserver_idl \
 		kmedia2_idl artsflow vorbis mcop idn
 
-USE_X11=	Yes
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS=	--tag disable-static
 .include <bsd.port.mk>

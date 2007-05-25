@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.49 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.50 2007/05/25 09:49:55 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdepim-${VERSION}
-PATCHFILES=		kdepim-3.5.6-tz-patch.bz2:1
-MASTER_SITES1=		ftp://quatramaran.ens.fr/pub/espie/
-PKGNAME=		${DISTNAME}p5
-MODKDE_VERSION=		3.5.3
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION=		3.5.7
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
 SHARED_LIBS +=	kode                 2.0      # .1.0
@@ -68,7 +66,8 @@ WANTLIB=	Xss audiofile stdc++ ossaudio X11 jpeg util m \
 		c artsflow ogg mcop png iconv Xext \
 		artsflow_idl art_lgpl_2 mad qtmcop glib-2.0 \
 		glib-2.0 ICE soundserver_idl Xrender \
-		gpg-error vorbis pcre esd z sasl2 idn
+		gpg-error vorbis pcre esd z sasl2 idn \
+		Xau Xdmcp fam rpcsvc
 
 FLAVORS=	debug
 LIB_DEPENDS+=	pisock::comms/pilot-link
@@ -95,8 +94,5 @@ FULLPKGNAME-kpilot = kpilot-${VERSION}p0
 # make sure we do not grab boost on the way
 CONFIGURE_ENV+= ac_cv_header_boost_format_hpp=no
 
-USE_X11=	Yes
-USE_LIBTOOL=Yes
-LIBTOOL_FLAGS+=--tag disable-static
 SEPARATE_BUILD=	flavored
 .include <bsd.port.mk>

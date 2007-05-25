@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2007/01/28 13:18:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2007/05/25 09:49:54 espie Exp $
 bin/apmount
 bin/blinken
 bin/celestrongps
@@ -93,6 +93,7 @@ share/applications/kde/ktouch.desktop
 share/applications/kde/kturtle.desktop
 share/applications/kde/kverbos.desktop
 share/applications/kde/kvoctrain.desktop
+share/applications/kde/kwordquiz.desktop
 share/applnk/
 share/applnk/Edutainment/
 share/applnk/Edutainment/Languages/
@@ -101,7 +102,6 @@ share/applnk/Edutainment/Mathematics/
 share/applnk/Edutainment/Mathematics/.directory
 share/applnk/Edutainment/Miscellaneous/
 share/applnk/Edutainment/Miscellaneous/.directory
-share/applnk/Edutainment/Miscellaneous/kwordquiz.desktop
 share/applnk/Edutainment/Science/
 share/applnk/Edutainment/Science/.directory
 share/applnk/Edutainment/Tools/
@@ -1269,6 +1269,7 @@ share/apps/klettres/icons/crystalsvg/scalable/actions/klettres_desert.svgz
 share/apps/klettres/icons/crystalsvg/scalable/actions/klettres_grownup.svgz
 share/apps/klettres/icons/crystalsvg/scalable/actions/klettres_kids.svgz
 share/apps/klettres/klettresui.rc
+share/apps/klettres/nds.txt
 share/apps/klettres/pics/
 share/apps/klettres/pics/klettres_desert.png
 share/apps/klettres/pics/klettres_grownup.png

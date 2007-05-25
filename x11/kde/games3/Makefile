@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.47 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.48 2007/05/25 09:49:54 espie Exp $
 
 COMMENT=		"K Desktop Environment, games"
 
 CATEGORIES=		x11 x11/kde games
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdegames-${VERSION}
-PKGNAME=		${DISTNAME}p0
-MODKDE_VERSION=		3.5.3
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION=		3.5.7
 SHARED_LIBS +=	kdegames             4.0      # .3.0
 SHARED_LIBS +=	atlantic             4.0      # .3.0
 SHARED_LIBS +=	atlantikclient       4.0      # .3.0
@@ -20,10 +20,7 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
 		audiofile c esd glib-2.0 gmodule-2.0 gthread-2.0 \
 		jpeg kmedia2_idl kwalletclient m mad mcop ogg ossaudio png \
 		pthread qtmcop soundserver_idl stdc++ util vorbis vorbisenc \
-		vorbisfile z iconv intl idn
+		vorbisfile z iconv intl idn Xau Xdmcp fam rpcsvc
 
-USE_X11=	Yes
-USE_LIBTOOL=Yes
-LIBTOOL_FLAGS=--tag=disable-static
 
 .include <bsd.port.mk>

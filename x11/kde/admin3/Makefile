@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.24 2007/05/25 09:49:53 espie Exp $
 
 COMMENT= 		"K Desktop Environment, admin tools"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdeadmin-${VERSION}
-PKGNAME=		${DISTNAME}p1
-MODKDE_VERSION?=	3.5.3
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION?=	3.5.7
 
 LIB_DEPENDS=	DCOP,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kntlm::x11/kde/libs3
 FLAVORS=		debug
@@ -13,10 +13,7 @@ FLAVORS=		debug
 SEPARATE_BUILD=	flavored
 
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg kabc kresources \
-		kwalletclient m png pthread stdc++ util vcard z iconv idn
-
-USE_X11=	Yes
-USE_LIBTOOL=Yes
-LIBTOOL_FLAGS=--tag=disable-static
+		kwalletclient m png pthread stdc++ util vcard z iconv idn \
+		Xau Xdmcp fam rpcsvc
 
 .include <bsd.port.mk>

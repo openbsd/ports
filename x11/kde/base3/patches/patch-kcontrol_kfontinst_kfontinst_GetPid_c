@@ -1,6 +1,6 @@
-$OpenBSD: patch-kcontrol_kfontinst_kfontinst_GetPid_c,v 1.1 2005/03/30 19:25:23 espie Exp $
---- kcontrol/kfontinst/kfontinst/GetPid.c.orig	Wed Mar 30 12:59:19 2005
-+++ kcontrol/kfontinst/kfontinst/GetPid.c	Wed Mar 30 13:00:11 2005
+$OpenBSD: patch-kcontrol_kfontinst_kfontinst_GetPid_c,v 1.2 2007/05/25 09:49:54 espie Exp $
+--- kcontrol/kfontinst/kfontinst/GetPid.c.orig	Mon May 14 09:55:38 2007
++++ kcontrol/kfontinst/kfontinst/GetPid.c	Mon May 14 19:06:23 2007
 @@ -55,6 +55,7 @@
          Linux         Tested on Linux 2.4
          FreeBSD       Tested on FreeBSD 5.1 by Brian Ledbetter <brian@shadowcom.net>
@@ -9,7 +9,7 @@ $OpenBSD: patch-kcontrol_kfontinst_kfontinst_GetPid_c,v 1.1 2005/03/30 19:25:23 
          Irix
          Solaris       Tested on Solaris 8 x86 by Torsten Kasch <tk@Genetik.Uni-Bielefeld.DE>
          HP-UX         Tested on HP-UX B.11.11 U 9000/800
-@@ -160,7 +161,7 @@ unsigned int kfi_getPid(const char *proc
+@@ -160,7 +161,7 @@ unsigned int kfi_getPid(const char *proc, unsigned int
      return error ? 0 : pid;
  }
  

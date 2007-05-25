@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/03/30 08:15:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/05/25 09:49:54 espie Exp $
 @conflict kdelibs-<3
 bin/artsc-config
 bin/artscat
@@ -95,38 +95,38 @@ include/arts/weakreference.h
 include/artsc/
 include/artsc/artsc.h
 include/artsc/artsc_export.h
-lib/libartsc.a
 lib/libartsc.la
-lib/libartscbackend.a
+@lib lib/libartsc.so.${LIBartsc_VERSION}
 lib/libartscbackend.la
-lib/libartsdsp.a
+@lib lib/libartscbackend.so.${LIBartscbackend_VERSION}
 lib/libartsdsp.la
-lib/libartsdsp_st.a
+@lib lib/libartsdsp.so.${LIBartsdsp_VERSION}
 lib/libartsdsp_st.la
-lib/libartsflow.a
+@lib lib/libartsdsp_st.so.${LIBartsdsp_st_VERSION}
 lib/libartsflow.la
-lib/libartsflow_idl.a
+@lib lib/libartsflow.so.${LIBartsflow_VERSION}
 lib/libartsflow_idl.la
-lib/libartsgslplayobject.a
+@lib lib/libartsflow_idl.so.${LIBartsflow_idl_VERSION}
 lib/libartsgslplayobject.la
-lib/libartswavplayobject.a
+@lib lib/libartsgslplayobject.so.${LIBartsgslplayobject_VERSION}
 lib/libartswavplayobject.la
-lib/libgmcop.a
+@lib lib/libartswavplayobject.so.${LIBartswavplayobject_VERSION}
 lib/libgmcop.la
-lib/libkmedia2.a
+@lib lib/libgmcop.so.${LIBgmcop_VERSION}
 lib/libkmedia2.la
-lib/libkmedia2_idl.a
+@lib lib/libkmedia2.so.${LIBkmedia2_VERSION}
 lib/libkmedia2_idl.la
-lib/libmcop.a
+@lib lib/libkmedia2_idl.so.${LIBkmedia2_idl_VERSION}
 lib/libmcop.la
-lib/libmcop_mt.a
+@lib lib/libmcop.so.${LIBmcop_VERSION}
 lib/libmcop_mt.la
-lib/libqtmcop.a
+@lib lib/libmcop_mt.so.${LIBmcop_mt_VERSION}
 lib/libqtmcop.la
-lib/libsoundserver_idl.a
+@lib lib/libqtmcop.so.${LIBqtmcop_VERSION}
 lib/libsoundserver_idl.la
-lib/libx11globalcomm.a
+@lib lib/libsoundserver_idl.so.${LIBsoundserver_idl_VERSION}
 lib/libx11globalcomm.la
+@lib lib/libx11globalcomm.so.${LIBx11globalcomm_VERSION}
 lib/mcop/
 lib/mcop/Arts/
 lib/mcop/Arts/DataHandlePlay.mcopclass
@@ -155,4 +155,3 @@ lib/mcop/soundserver.mcopclass
 lib/mcop/soundserver.mcoptype
 lib/mcop/x11globalcomm.mcopclass
 lib/mcop/x11globalcomm.mcoptype
-%%SHARED%%

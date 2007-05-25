@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2007/03/18 23:33:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.35 2007/05/25 09:49:55 espie Exp $
 @conflict sirc-*
 bin/dsirc
 bin/feedbrowser
@@ -598,6 +598,8 @@ share/apps/kopete/styles/Clear/Contents/Resources/Outgoing/Content.html
 share/apps/kopete/styles/Clear/Contents/Resources/Outgoing/NextContent.html
 share/apps/kopete/styles/Clear/Contents/Resources/Outgoing/buddy_icon.png
 share/apps/kopete/styles/Clear/Contents/Resources/Status.html
+share/apps/kopete/styles/Clear/Contents/Resources/Variants/
+share/apps/kopete/styles/Clear/Contents/Resources/Variants/No_avatars.css
 share/apps/kopete/styles/Clear/Contents/Resources/images/
 share/apps/kopete/styles/Clear/Contents/Resources/images/body-background.png
 share/apps/kopete/styles/Clear/Contents/Resources/images/body-inbound-arrow.png

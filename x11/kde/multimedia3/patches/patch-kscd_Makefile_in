@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_Makefile_in,v 1.14 2006/02/16 08:25:11 espie Exp $
---- kscd/Makefile.in.orig	Thu Feb 16 00:03:02 2006
-+++ kscd/Makefile.in	Thu Feb 16 00:03:12 2006
+$OpenBSD: patch-kscd_Makefile_in,v 1.15 2007/05/25 09:49:55 espie Exp $
+--- kscd/Makefile.in.orig	Mon May 14 13:37:23 2007
++++ kscd/Makefile.in	Thu May 24 16:28:55 2007
 @@ -58,7 +58,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(noinst_LTLIBRARIES)
@@ -10,7 +10,7 @@ $OpenBSD: patch-kscd_Makefile_in,v 1.14 2006/02/16 08:25:11 espie Exp $
  am_libkcompactdisc_la_OBJECTS = kcompactdisc.lo
  #>- libkcompactdisc_la_OBJECTS = $(am_libkcompactdisc_la_OBJECTS)
  #>+ 1
-@@ -526,7 +526,7 @@ kscd_SOURCES= kscd.cpp  ledlamp.cpp \
+@@ -532,7 +532,7 @@ kscd_SOURCES= kscd.cpp  ledlamp.cpp \
  
  noinst_LTLIBRARIES = libkcompactdisc.la
  libkcompactdisc_la_SOURCES = kcompactdisc.cpp

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.80 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.81 2007/05/25 09:49:54 espie Exp $
 
 COMMENT-main=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 #PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0
 
-PKGNAME-main=		${DISTNAME}p2
-PKGNAME-cups=		kdecups-${VERSION}p1
-MODKDE_VERSION?=	3.5.3
+PKGNAME-main=		${DISTNAME}
+PKGNAME-cups=		kdecups-${VERSION}
+MODKDE_VERSION=		3.5.7
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
 SHARED_LIBS +=	kdefx                7.0      # .6.0
 SHARED_LIBS +=	kdefakes             7.0      # .6.0
@@ -60,9 +60,10 @@ MULTI_PACKAGES=	-main -cups
 CONFIGURE_ARGS+= --enable-cups
 
 LIB_DEPENDS=	art_lgpl_2::graphics/libart \
-		idn::devel/libidn
+		idn::devel/libidn \
+		fam::sysutils/fam
 WANTLIB=	intl iconv util jpeg m X11 ICE Xrender c SM pthread \
-		stdc++ Xext z png
+		stdc++ Xext z png rpcsvc Xau Xdmcp
 
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		artsflow.>=1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
@@ -91,7 +92,6 @@ WANTLIB-cups=	${WANTLIB} \
 		crypto ssl
 
 
-USE_X11=	Yes
 SEPARATE_BUILD=	flavored
 SAMPLECONFDIR=${TRUEPREFIX}/share/apps/kde-conf-sample
 EXTRA_CONFIG=xdg/menus/applications.menu
@@ -105,7 +105,5 @@ post-extract:
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/libtool ${PREFIX}/bin/kdelibtool
 
-USE_LIBTOOL=Yes
-LIBTOOL_FLAGS=--tag=disable-static
 .include <bsd.port.mk>
 MODGNU_AUTOCONF_FILES+= dcop/dcop-path.h.in

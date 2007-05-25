@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.60 2007/05/25 09:49:53 espie Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
-DISTNAME=		arts-1.5.6
-MODKDE_VERSION?=	3.5.3
-PKGNAME=		${DISTNAME}p0
+VERSION=		3.5.7
+DISTNAME=		arts-1.5.7
+MODKDE_VERSION?=	3.5.7
+PKGNAME=		${DISTNAME}
 
 SHARED_LIBS +=	mcop                 2.0      # .1.0
 SHARED_LIBS +=	artsflow_idl         2.0      # .1.0
@@ -24,7 +24,6 @@ SHARED_LIBS +=	gmcop                2.0      # .1.0
 SHARED_LIBS +=	qtmcop               2.0      # .1.0
 SHARED_LIBS +=	x11globalcomm        2.0      # .1.0
 
-SHARED_ONLY=		No
 LIB_DEPENDS= 	audiofile::devel/libaudiofile \
 		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2 \
 		vorbis,vorbisfile::audio/libvorbis \
@@ -35,11 +34,9 @@ LIB_DEPENDS= 	audiofile::devel/libaudiofile \
 SEPARATE_BUILD=flavored
 
 CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	${ENABLE_SHARED} --enable-static
+CONFIGURE_ARGS+=	${ENABLE_SHARED}
 
-USE_X11=	Yes
-USE_LIBTOOL=	Yes
 WANTLIB=	ICE SM X11 Xext c iconv intl jpeg m ossaudio png pthread \
-		stdc++ vorbisenc z
+		stdc++ vorbisenc z Xau Xdmcp
 		
 .include <bsd.port.mk>

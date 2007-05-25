@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.73 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.74 2007/05/25 09:49:54 espie Exp $
 
 COMMENT-main= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
 COMMENT-samba=		"K Desktop Environment, samba support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdebase-${VERSION}
-PKGNAME-main=		${DISTNAME}p1
-PKGNAME-samba=		kdesamba-${VERSION}p0
-MODKDE_VERSION?=	3.5.3
+PKGNAME-main=		${DISTNAME}
+PKGNAME-samba=		kdesamba-${VERSION}
+MODKDE_VERSION?=	3.5.7
 SHARED_LIBS +=	konq                 7.0      # .6.0
 SHARED_LIBS +=	kateutils            1.0      # .0.0
 SHARED_LIBS +=	kateinterfaces       1.0      # .0.0
@@ -27,7 +27,7 @@ MULTI_PACKAGES=		-main -samba
 FLAVORS=		debug
 
 LIB_DEPENDS=	kdecore.>=6,DCOP,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
-WANTLIB=	ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv
+WANTLIB=	ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv fam rpcsvc stdc++ Xdmcp Xau 
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		kabc,katepartinterfaces,kdefakes,kdnssd,kdeprint,kdeprint_management,khtml,kjs,knewstuff,kmid,kparts,kresources,kscreensaver,ktexteditor,kutils,vcard,artskde::x11/kde/libs3 \
@@ -39,10 +39,11 @@ WANTLIB-main=	${WANTLIB} \
 		Xcursor Xrandr Xss Xt Xtst Xxf86misc \
 		artsflow artsflow_idl audiofile c crypto esd \
 		freetype intl kmedia2_idl mad mcop ogg ossaudio \
-		pcre pcreposix qtmcop soundserver_idl ssl stdc++ \
+		pcre pcreposix qtmcop soundserver_idl ssl \
 		vorbis vorbisenc vorbisfile xkbfile GLU fontenc \
 		Xinerama Xft Xfixes fontconfig GL Xcomposite Xdamage \
-		Half Imath IlmImf Iex Xdmcp Xau asn1 com_err gssapi krb5
+		Half Imath IlmImf Iex asn1 com_err gssapi krb5 \
+		expat
 
 
 LIB_DEPENDS-samba= ${LIB_DEPENDS} \
@@ -67,8 +68,5 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
 
 FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
-USE_LIBTOOL=Yes
-USE_X11=	Yes
-LIBTOOL_FLAGS=--tag=disable-static
 
 .include <bsd.port.mk>

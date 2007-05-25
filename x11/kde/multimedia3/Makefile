@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.50 2007/05/25 09:49:54 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdemultimedia-${VERSION}
-PKGNAME=		${DISTNAME}p0
-MODKDE_VERSION=		3.5.3
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION=		3.5.7
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
 SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0
 SHARED_LIBS +=	artsmidi             1.0      # .0.0
@@ -42,7 +42,6 @@ LIB_DEPENDS= DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,k
 	vorbis,vorbisenc::audio/libvorbis \
 	cdda_paranoia,cdda_interface::audio/cdparanoia \
 	tag::audio/taglib \
-	popt::devel/popt \
 	gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core \
 	ltdl::devel/libtool,-ltdl \
 	theora::multimedia/libtheora \
@@ -51,10 +50,6 @@ LIB_DEPENDS= DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,k
 
 EXTRA_CONFIG=	xdg/menus/applications-merged/kde-multimedia-music.menu 
 SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample
-
-USE_X11=	Yes
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS+=	--tag=disable-static
 
 FAKE_FLAGS=$(MAKE_FLAGS) DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
 RUN_DEPENDS=:xanim-*:graphics/xanim
@@ -67,6 +62,7 @@ WANTLIB=	ICE SM X11 Xext Xrender Xv Xxf86dga Xxf86vm art_lgpl_2 \
 		gmodule-2.0 gthread-2.0 iconv intl jpeg kmedia2_idl m \
 		mad mcop ossaudio png pthread qtmcop soundserver_idl stdc++ \
 		util vorbisfile z gobject-2.0 pcreposix xml2 pcre freetype \
-		idn
+		idn Xau Xdmcp fam rpcsvc
+
 
 .include <bsd.port.mk>

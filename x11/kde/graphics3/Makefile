@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.70 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.71 2007/05/25 09:49:54 espie Exp $
 
 COMMENT-main=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
 COMMENT-kpov=		"KDE modeller for povray"
 COMMENT-sane=		"KDE interface to scanners"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
+VERSION=		3.5.7
 DISTNAME=		kdegraphics-${VERSION}
-MODKDE_VERSION=		3.5.3
+MODKDE_VERSION=		3.5.7
 
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-kamera=	kamera-${VERSION}p0
-PKGNAME-kpov=	kpovmodeller-${VERSION}p0
-PKGNAME-sane=	ksane-${VERSION}p0
+PKGNAME-main=	${DISTNAME}
+PKGNAME-kamera=	kamera-${VERSION}
+PKGNAME-kpov=	kpovmodeller-${VERSION}
+PKGNAME-sane=	ksane-${VERSION}
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -30,7 +30,7 @@ SHARED_LIBS +=	kscan                2.0      # .1.0
 BUILD_DEPENDS=		::print/teTeX/base
 LIB_DEPENDS=		kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu::x11/kde/libs3
 WANTLIB=		X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext \
-			m idn iconv
+			m idn iconv Xau Xdmcp fam rpcsvc stdc++
 
 
 RUN_DEPENDS-main=	:ghostscript-*:print/ghostscript/gnu
@@ -44,13 +44,14 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			poppler-qt::print/poppler,-qt
 WANTLIB-main=		${WANTLIB} \
 			tiff fontconfig lcms Xrender ICE c \
-			freetype stdc++ pcreposix pcre Xxf86vm SM Xext Xft
+			freetype pcreposix pcre Xxf86vm SM Xext Xft \
+			cairo expat glitz
 
 
 LIB_DEPENDS-kpov=	${LIB_DEPENDS} \
 			kparts::x11/kde/libs3
 RUN_DEPENDS-kpov=	::graphics/povray
-WANTLIB-kpov=		${WANTLIB} GL stdc++ freetype Xrender Xmu GLU c Xi 
+WANTLIB-kpov=		${WANTLIB} GL freetype Xrender Xmu GLU c Xi  Xt
 
 
 LIB_DEPENDS-kamera= 	${LIB_DEPENDS} \
@@ -61,7 +62,7 @@ WANTLIB-kamera=		${WANTLIB} exif Xrender intl
 LIB_DEPENDS-sane= 	${LIB_DEPENDS-kamera} \
 			ktexteditor,vcard,kabc,kparts,kresources,kspell,kdeprint::x11/kde/libs3 \
 			sane::graphics/sane-backends
-WANTLIB-sane=		${WANTLIB-kamera} usb tiff stdc++ c
+WANTLIB-sane=		${WANTLIB-kamera} usb tiff c
 
 
 CONFIGURE_ENV+=	\
@@ -74,9 +75,6 @@ post-patch:
 SUP_PATCH_LIST=	gcc-*
 .endif
 
-USE_X11=	Yes
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_ENV+=	TIFF_LIBS='-L${LOCALBASE}/lib -ltiff -ljpeg -lz' \
 		TIFF_CFLAGS='-I${LOCALBASE}/include'
 

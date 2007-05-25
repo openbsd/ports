@@ -1,6 +1,6 @@
-$OpenBSD: patch-gmcop_Makefile_in,v 1.9 2006/01/13 11:34:06 espie Exp $
---- gmcop/Makefile.in.orig	Sun Nov 20 20:55:24 2005
-+++ gmcop/Makefile.in	Fri Dec 30 16:54:56 2005
+$OpenBSD: patch-gmcop_Makefile_in,v 1.10 2007/05/25 09:49:54 espie Exp $
+--- gmcop/Makefile.in.orig	Mon May 14 13:23:29 2007
++++ gmcop/Makefile.in	Mon May 14 15:34:39 2007
 @@ -140,7 +140,7 @@ F77 = @F77@
  FFLAGS = @FFLAGS@
  FRAMEWORK_COREAUDIO = @FRAMEWORK_COREAUDIO@
@@ -8,5 +8,5 @@ $OpenBSD: patch-gmcop_Makefile_in,v 1.9 2006/01/13 11:34:06 espie Exp $
 -GLIB_LDFLAGS = @GLIB_LDFLAGS@
 +GLIB_LDFLAGS = @GLIB_LDFLAGS@ -pthread
  GLIB_LIBADD = @GLIB_LIBADD@
+ GREP = @GREP@
  GSL_CFLAGS = @GSL_CFLAGS@
- GSL_HAVE_LIBMAD = @GSL_HAVE_LIBMAD@

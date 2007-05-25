@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/01/28 13:18:51 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/05/25 09:49:54 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -150,7 +150,6 @@ include/kabc/resource.h
 include/kabc/resourcedir.h
 include/kabc/resourcefile.h
 include/kabc/resourceldapkio.h
-include/kabc/resourcenet.h
 include/kabc/resourceselectdialog.h
 include/kabc/secrecy.h
 include/kabc/sortmode.h
@@ -788,8 +787,6 @@ ${KDE}/kabc_file.la
 ${KDE}/kabc_file.so
 ${KDE}/kabc_ldapkio.la
 ${KDE}/kabc_ldapkio.so
-${KDE}/kabc_net.la
-${KDE}/kabc_net.so
 ${KDE}/kabcformat_binary.la
 ${KDE}/kabcformat_binary.so
 ${KDE}/kaddprinterwizard.la
@@ -943,8 +940,6 @@ lib/libkabc_file.la
 @lib lib/libkabc_file.so.${LIBkabc_file_VERSION}
 lib/libkabc_ldapkio.la
 @lib lib/libkabc_ldapkio.so.${LIBkabc_ldapkio_VERSION}
-lib/libkabc_net.la
-@lib lib/libkabc_net.so.${LIBkabc_net_VERSION}
 lib/libkatepartinterfaces.la
 @lib lib/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
 lib/libkdecore.la
@@ -1582,6 +1577,7 @@ share/apps/ksgmltools2/customization/de/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/de/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/de/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/de/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/de/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/de/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/de/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/de/lang.entities
@@ -1746,6 +1742,7 @@ share/apps/ksgmltools2/customization/fr/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/fr/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/fr/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/fr/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/fr/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/fr/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/fr/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/fr/lang.entities
@@ -5459,6 +5456,7 @@ share/mimelnk/audio/x-mpegurl.desktop
 share/mimelnk/audio/x-ms-wma.desktop
 share/mimelnk/audio/x-musepack.desktop
 share/mimelnk/audio/x-oggflac.desktop
+share/mimelnk/audio/x-pn-realaudio-plugin.desktop
 share/mimelnk/audio/x-pn-realaudio.desktop
 share/mimelnk/audio/x-scpls.desktop
 share/mimelnk/audio/x-speex.desktop
@@ -5627,7 +5625,6 @@ share/services/kresources/kabc/
 share/services/kresources/kabc/dir.desktop
 share/services/kresources/kabc/file.desktop
 share/services/kresources/kabc/ldapkio.desktop
-share/services/kresources/kabc/net.desktop
 share/services/kresources/kabc_manager.desktop
 share/services/kspell_aspell.desktop
 share/services/kspell_ispell.desktop

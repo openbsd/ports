@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_yaf_yafxplayer_Makefile_in,v 1.8 2006/02/16 08:25:12 espie Exp $
---- mpeglib/example/yaf/yafxplayer/Makefile.in.orig	Thu Feb 16 06:14:51 2006
-+++ mpeglib/example/yaf/yafxplayer/Makefile.in	Thu Feb 16 06:15:00 2006
-@@ -492,7 +492,7 @@ libyafxplayer_la_SOURCES = commandTableX
+$OpenBSD: patch-mpeglib_example_yaf_yafxplayer_Makefile_in,v 1.9 2007/05/25 09:49:55 espie Exp $
+--- mpeglib/example/yaf/yafxplayer/Makefile.in.orig	Mon May 14 13:37:23 2007
++++ mpeglib/example/yaf/yafxplayer/Makefile.in	Thu May 24 16:28:55 2007
+@@ -498,7 +498,7 @@ libyafxplayer_la_SOURCES = commandTableXPlayer.cpp \
  #>- 					-no-undefined -avoid-version
  #>+ 2
  libyafxplayer_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) \
