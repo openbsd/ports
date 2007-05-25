@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/15 17:01:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/25 16:17:45 jakemsr Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"flash player with firefox browser plugin"
 DISTNAME=	gnash-0.7.2
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 SHARED_LIBS +=	gnashbase 1.0
 SHARED_LIBS +=	gnashgeo 1.0
 SHARED_LIBS +=	gnashamf 1.0
@@ -43,9 +43,8 @@ LIB_DEPENDS+=	curl.>=4::net/curl \
 		gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
 
 WANTLIB=	Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat \
-		freetype fontconfig Xrender ossaudio usbhid \
-		Xext X11 z stdc++ m pthread c ssl crypto \
-		faac faad mp3lame ogg vorbis vorbisenc cairo \
+		freetype fontconfig Xrender usbhid Xext X11 z \
+		stdc++ m pthread c ssl crypto ogg cairo \
 		glib-2.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 pangox-1.0 \
 		gobject-2.0 gmodule-2.0 atk-1.0 png jpeg glitz SDL idn
 
