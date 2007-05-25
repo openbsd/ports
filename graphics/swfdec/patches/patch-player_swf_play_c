@@ -1,7 +1,7 @@
-$OpenBSD: patch-player_swf_play_c,v 1.1.1.1 2003/06/24 08:11:14 jolan Exp $
---- player/swf_play.c.orig	Thu Apr  3 22:11:57 2003
-+++ player/swf_play.c	Sat Jun 14 14:26:41 2003
-@@ -390,7 +390,7 @@ static void embedded (GtkPlug *plug, gpo
+$OpenBSD: patch-player_swf_play_c,v 1.2 2007/05/25 16:23:51 martynas Exp $
+--- player/swf_play.c.orig	Fri Apr  4 07:11:57 2003
++++ player/swf_play.c	Thu May 24 19:05:49 2007
+@@ -390,7 +390,7 @@ static void embedded (GtkPlug *plug, gpointer data)
  static gboolean input(GIOChannel *chan, GIOCondition cond, gpointer ignored)
  {
  	char *data;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugin_plugin_c,v 1.1.1.1 2003/06/24 08:11:14 jolan Exp $
---- plugin/plugin.c.orig	Thu Nov 21 02:51:38 2002
-+++ plugin/plugin.c	Wed Jun 11 02:24:05 2003
+$OpenBSD: patch-plugin_plugin_c,v 1.2 2007/05/25 16:23:51 martynas Exp $
+--- plugin/plugin.c.orig	Thu Nov 21 10:51:38 2002
++++ plugin/plugin.c	Thu May 24 19:05:49 2007
 @@ -1,8 +1,9 @@
  
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-plugin_plugin_c,v 1.1.1.1 2003/06/24 08:11:14 jolan Exp $
  #include <sys/wait.h>
  #include <config.h>
  
-@@ -240,7 +241,7 @@ static void plugin_stream_as_file(NPP in
+@@ -240,7 +241,7 @@ static void plugin_stream_as_file(NPP instance, NPStre
  
  /* exported functions */
  

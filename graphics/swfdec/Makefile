@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/05/25 16:23:51 martynas Exp $
 
 COMMENT=	"flash rendering library"
 DISTNAME=	swfdec-0.2.2
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	swfdec	0.0
-CATEGORIES=	graphics www/mozilla
+CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swfdec/}
 
 HOMEPAGE=	http://swfdec.sourceforge.net/
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=	ICE SM X11 Xext Xrender atk-1.0 c fontconfig \
-		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pthread usbhid z m cairo glitz png
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender atk-1.0 c cairo expat fontconfig freetype glib-2.0 \
+		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png pthread usbhid z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	SDL::devel/sdl \
@@ -29,7 +29,8 @@ LIB_DEPENDS=	SDL::devel/sdl \
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.57
 CONFIGURE_ARGS+=--disable-pixbuf-loader
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -39,10 +40,10 @@ FLAVORS=	plugin
 FLAVOR?=
 
 .if ${FLAVOR:L:Mplugin}
-MOZ=mozilla
-BUILD_DEPENDS=	:mozilla-devel->=1.4:www/mozilla,-devel
+WANTLIB+=	ICE SM Xt
+BUILD_DEPENDS=	:mozilla-firefox-devel->=2.0:www/mozilla-firefox,-devel
 CFLAGS+=	-DMOZ_X11
-PORTPATH+=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/${MOZ}
+CONFIGURE_ENV+=	ENABLE_PLUGIN=Yes
 .endif
 
 .include <bsd.port.mk>

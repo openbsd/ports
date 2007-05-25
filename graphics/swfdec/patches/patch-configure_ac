@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1 2007/05/25 16:23:51 martynas Exp $
+--- configure.ac.orig	Sun May 18 23:53:41 2003
++++ configure.ac	Thu May 24 19:15:33 2007
+@@ -84,12 +84,8 @@ if test "x$HAVE_MAD" = xyes; then
+ fi
+ 
+ MOZILLA_CFLAGS=
+-if test -z "$MOZILLA_CONFIG"; then
+-  AC_PATH_PROG(MOZILLA_CONFIG, mozilla-config, no)
+-fi
+-if test "x$MOZILLA_CONFIG" != "xno"; then
+-  _mozilla_include_dir=`mozilla-config --cflags|sed 's/-I\(.*\) .*/\1/'`
+-  MOZILLA_CFLAGS="-I$_mozilla_include_dir/plugin -I$_mozilla_include_dir/java -I$_mozilla_include_dir/nspr"
++if test -n "$ENABLE_PLUGIN"; then
++  MOZILLA_CFLAGS=`pkg-config firefox-plugin --cflags`
+ else
+   AC_MSG_WARN([mozilla-config not found. Mozilla/Netscape plugin will not be built])
+ fi
