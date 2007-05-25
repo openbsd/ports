@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.894 2007/05/21 11:18:10 steven Exp $
+#	$OpenBSD: bsd.port.mk,v 1.895 2007/05/25 13:07:41 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -581,10 +581,8 @@ WRKSRC ?= ${WRKDIST}
 
 .if ${SEPARATE_BUILD:L} != "no"
 WRKBUILD ?= ${WRKDIR}/build-${MACHINE_ARCH}${_FLAVOR_EXT2}
-WRKPKG ?= ${WRKBUILD}/pkg
 .else
 WRKBUILD ?= ${WRKSRC}
-WRKPKG ?= ${WRKDIR}/pkg
 .endif
 WRKCONF ?= ${WRKBUILD}
 
@@ -715,34 +713,29 @@ _lt_libs += lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT \
 	MAINTAINER BASE_PKGPATH
 _tmpvars =
-_SED_SUBST = sed
 
 _PKG_ADD_AUTO ?=
 .if ${_SOLVING_DEP:L} == "yes"
 _PKG_ADD_AUTO += -a
 .endif
 
-_PKG_ARGS += -DFLAVORS='${FLAVOR_EXT}'
-_tmpvars += FLAVORS='${FLAVOR_EXT}'
-_SED_SUBST += -e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
+_PKG_ARGS += -DFLAVORS=${FLAVOR_EXT:Q}
+_tmpvars += FLAVORS=${FLAVOR_EXT:Q}
 _PKG_ARGS += -B ${WRKINST}
 .if ${LOCALBASE} != "/usr/local"
 _PKG_ARGS += -L${LOCALBASE}
 .endif
 
 .for _S in ${MULTI_PACKAGES}
-_SED_SUBST${_S} = ${_SED_SUBST}
 PKG_ARGS${_S} ?= ${PKG_ARGS}
 PKG_ARGS${_S} += ${_PKG_ARGS}
 .  for _v in ${SUBST_VARS}
 .    if defined(${_v}${_S})
-PKG_ARGS${_S} += -D${_v}='${${_v}${_S}}'
-_SED_SUBST${_S} += -e 's|$${${_v}}|${${_v}${_S}}|g'
-_tmpvars += ${_v}${_S}='${${_v}${_S}}'
+PKG_ARGS${_S} += -D${_v}=${${_v}${_S}:Q}
+_tmpvars += ${_v}${_S}=${${_v}${_S}:Q}
 .    else
-_SED_SUBST${_S} += -e 's|$${${_v}}|${${_v}}|g'
-PKG_ARGS${_S} += -D${_v}='${${_v}}'
-_tmpvars += ${_v}='${${_v}}'
+PKG_ARGS${_S} += -D${_v}=${${_v}:Q}
+_tmpvars += ${_v}=${${_v}:Q}
 .    endif
 .  endfor
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
@@ -829,8 +822,7 @@ _PKG_PREREQ =
 
 .for _S in ${MULTI_PACKAGES}
 # Fill out package command, and package dependencies
-_PKG_PREREQ += ${WRKPKG}/DESCR${_S} ${WRKPKG}/COMMENT${_S}
-PKG_ARGS${_S} += -c '${WRKPKG}/COMMENT${_S}' -d ${WRKPKG}/DESCR${_S}
+PKG_ARGS${_S} += -DCOMMENT=${_COMMENT${_S}:Q} -d ${DESCR${_S}}
 PKG_ARGS${_S} += -f ${PLIST${_S}} -p ${PREFIX${_S}}
 .  if defined(MESSAGE${_S})
 PKG_ARGS${_S} += -M ${MESSAGE${_S}}
@@ -1397,7 +1389,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
       deps=`SUBPACKAGE=${_S} ${MAKE} _print-package-args` && \
-	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; then \
+	  if ${SUDO} ${PKG_CMD} $$deps ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; then \
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${_S}}; \
 		if ${_check_lib_depends} ${_PACKAGE_COOKIE${_S}} && \
 			${_register_plist} ${_PACKAGE_COOKIE${_S}}; then \
@@ -1439,17 +1431,6 @@ ${_INSTALL_COOKIE${_S}}:
 .  endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
 
-
-# create the packing stuff from source
-${WRKPKG}/COMMENT${_S}:
-	@echo ${_COMMENT${_S}} >$@
-
-${WRKPKG}/DESCR${_S}: ${DESCR${_S}}
-	@${_SED_SUBST${_S}} <$? >$@.tmp && mv -f $@.tmp $@
-	@echo "\nMaintainer: ${MAINTAINER}" >>$@
-.  if defined(HOMEPAGE)
-	@fgrep -q '$${HOMEPAGE}' $? || echo "\nWWW: ${HOMEPAGE}" >>$@
-.  endif
 
 ${_UPDATE_COOKIE${_S}}:
 	@cd ${.CURDIR} && exec ${MAKE} _internal-package
@@ -2042,7 +2023,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
-	@mkdir -p ${WRKBUILD} ${WRKPKG}
+	@mkdir -p ${WRKBUILD}
 .if target(pre-configure)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-configure
 .endif
@@ -2126,7 +2107,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 		exit 1; \
 	fi
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
-	@${_SED_SUBST} ${MTREE_FILE}| \
+	@cat ${MTREE_FILE}| \
 		${SUDO} /usr/sbin/mtree -U -e -d -n -p ${WRKINST} >/dev/null
 .for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -r ${_p}
@@ -2188,7 +2169,7 @@ print-plist:
 	@${_plist_header}; ${PKG_CMD} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; ${_plist_footer}
 
 print-plist-with-depends:
-	@${_plist_header}; ${PKG_CMD} -n -q `SUBPACKAGE=${SUBPACKAGE} ${MAKE} _print-package-args|sort -u` ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
+	@${_plist_header}; ${PKG_CMD} -n -q `SUBPACKAGE=${SUBPACKAGE} ${MAKE} _print-package-args` ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
 
 print-plist-all:
 .for _S in ${MULTI_PACKAGES}
@@ -2199,7 +2180,7 @@ print-plist-all:
 print-plist-all-with-depends:
 .for _S in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
-	@${_plist_header}; ${PKG_CMD} -n -q `SUBPACKAGE=${_S} ${MAKE} _print-package-args|sort -u` ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}};${_plist_footer}
+	@${_plist_header}; ${PKG_CMD} -n -q `SUBPACKAGE=${_S} ${MAKE} _print-package-args` ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}};${_plist_footer}
 .endfor
 
 print-plist-contents:
@@ -2319,7 +2300,9 @@ _internal-clean:
 	rm -f ${_BULK_COOKIE}
 .endif
 .if ${_clean:L:Mplist}
-	cd ${PLIST_DB} && rm -f ${PKGNAMES}
+.  for _d in ${PLIST_DB:S/:/ /}
+	cd ${_d} && rm -f ${PKGNAMES}
+.  endfor
 .endif
 
 # mirroring utilities
