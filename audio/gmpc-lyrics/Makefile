@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/19 07:27:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/26 15:13:40 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"lyrics fetcher, for gmpc"
 
-VERSION=		0.14.0
+VERSION=		0.15.0
 DISTNAME=		gmpc-lyrics-${VERSION}
 CATEGORIES=		audio
 
-HOMEPAGE=		http://cms.qballcow.nl/index.php?page=Plugins
+MAINTAINER=		Landry Breuil <gaston@gcu.info>
+
+HOMEPAGE=		http://sarine.nl/gmpc-plugins-lyrics-provider
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/12 20:24:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/26 15:13:40 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Amazon cover art provider for gmpc"
 
-VERSION=	0.14.0
+VERSION=	0.15.0
 DISTNAME=	gmpc-coveramazon-${VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
-HOMEPAGE=	http://cms.qballcow.nl/index.php?page=Plugins
+MAINTAINER=	Landry Breuil <gaston@gcu.info>
+
+HOMEPAGE=	http://sarine.nl/amazon-provider
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
