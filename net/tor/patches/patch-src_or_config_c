@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_or_config_c,v 1.1 2007/05/26 17:09:05 rui Exp $
+--- src/or/config.c.orig	Fri May 25 01:51:40 2007
++++ src/or/config.c	Sat May 26 17:03:09 2007
+@@ -3901,7 +3901,7 @@ check_libevent_version(const char *m, int server)
+ #if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
+   if (server && version < LE_13B) {
+     thread_unsafe = 1;
+-    sad_os = "BSD variants"
++    sad_os = "BSD variants";
+       }
+ #elif defined(__APPLE__) || defined(__darwin__)
+   if (server && version < LE_13B) {

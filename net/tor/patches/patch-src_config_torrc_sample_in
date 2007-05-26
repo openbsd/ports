@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_config_torrc_sample_in,v 1.3 2007/05/02 18:20:44 rui Exp $
---- src/config/torrc.sample.in.orig	Tue May  1 14:17:58 2007
-+++ src/config/torrc.sample.in	Tue May  1 14:19:23 2007
+$OpenBSD: patch-src_config_torrc_sample_in,v 1.4 2007/05/26 17:09:05 rui Exp $
+--- src/config/torrc.sample.in.orig	Fri May 25 01:51:41 2007
++++ src/config/torrc.sample.in	Sat May 26 17:03:09 2007
 @@ -43,18 +43,18 @@ SocksListenAddress 127.0.0.1 # accept connections only
  ## Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log
  #Log debug file @LOCALSTATEDIR@/log/tor/debug.log
