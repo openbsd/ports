@@ -14,6 +14,8 @@ MD5 (bash/bash32-012) = TyS2lqt4vfrk+ct+tZuDXQ==
 MD5 (bash/bash32-013) = fECt2/EYeiauHINz7Tg0Qg==
 MD5 (bash/bash32-014) = KOiMn4Z56ZrFkNSkqCJ8Vg==
 MD5 (bash/bash32-015) = fBfSlnW9DUlHDxYndDhfgA==
+MD5 (bash/bash32-016) = oe2qmLREn+IgX6dUSLexBQ==
+MD5 (bash/bash32-017) = iJ7RGbv502NmC5oBJ/Ne+g==
 RMD160 (bash/bash-3.2.tar.gz) = pz95CBfZi+N1o23vVnc3SY4zqvE=
 RMD160 (bash/bash32-001) = Yz9utrK0g0UjTEQrg1q7lNEODa0=
 RMD160 (bash/bash32-002) = XQ8Nq4WRl3hLFcaD1U56UFqENMM=
@@ -30,6 +32,8 @@ RMD160 (bash/bash32-012) = wgEdPYqABKzVgRJWjmEVEfm95f8=
 RMD160 (bash/bash32-013) = Td/q/qfkUTdsVtF4NgealjKY3wY=
 RMD160 (bash/bash32-014) = z0enBbAAOb3CzFzTfdIKWLAprzM=
 RMD160 (bash/bash32-015) = ZTXrJLjTDOl1ax58DSHAlGsdNU4=
+RMD160 (bash/bash32-016) = z97X/BubwyjE+xFnxTb8vSh1ZhU=
+RMD160 (bash/bash32-017) = c2bqjAEJtBqb9aNpql+lb0uHkvE=
 SHA1 (bash/bash-3.2.tar.gz) = /mRmx+6YBh4ETa4DR8pdGo6rSg0=
 SHA1 (bash/bash32-001) = zsLUtiq/M2GiL7mlMkK4ono4/gI=
 SHA1 (bash/bash32-002) = pqcmUWHIKJWfSJwimyddYDm3XCE=
@@ -46,6 +50,8 @@ SHA1 (bash/bash32-012) = eJYqVftqPWrESJUZfFPzvaz5llg=
 SHA1 (bash/bash32-013) = 0Fzz4AaAUqjmI4s0/J9MF1GS5Bk=
 SHA1 (bash/bash32-014) = KHVYF+BEQ0QH3aS+CRihis5iL90=
 SHA1 (bash/bash32-015) = qq5wi3bQkE06inAG9vZt9or0+6o=
+SHA1 (bash/bash32-016) = Iyk2RFmg7/ZhToiZVNBAxs/ZhGs=
+SHA1 (bash/bash32-017) = FTXsD+S4V436aOSnGxfVgnxmaus=
 SHA256 (bash/bash-3.2.tar.gz) = JsmQJbWeMHeTALaK23ZPgkl00mek18wbNH0Uojk/n7Q=
 SHA256 (bash/bash32-001) = vtpgzmGG+vo2zQqY25ztQs/2ja7kNCzKcxZ/sPL0Pqo=
 SHA256 (bash/bash32-002) = oMpJo8R2eK0HTJkL3IcfzsaAdJt/BPLe9lJ/BMWJxAo=
@@ -62,6 +68,8 @@ SHA256 (bash/bash32-012) = Re9K2Y8vIYqjrOwVhCrhuDN2nB2+L5DJu6ALvklJ/EM=
 SHA256 (bash/bash32-013) = n7+JPDg/RdJeW8XJ6ujSs0lSHyiJRbO9IceBeEuB9pM=
 SHA256 (bash/bash32-014) = YrsaTXD295OMpwpqp/5vSzd6tfRQx3VrIrQd47vZjtY=
 SHA256 (bash/bash32-015) = 3kBCXoNijrdDHzk0CsCbQrX89ISlZTUoUZYbPpF9h3E=
+SHA256 (bash/bash32-016) = er9mu7o+vWtkKBkPPrylmr3Av6OVfxpyVInec5HC2fE=
+SHA256 (bash/bash32-017) = lRqioHs4247qjnNo06w2r2Cvf1reRVIVAGIpzjgV3+A=
 SIZE (bash/bash-3.2.tar.gz) = 2529838
 SIZE (bash/bash32-001) = 1539
 SIZE (bash/bash32-002) = 1524
@@ -78,3 +86,5 @@ SIZE (bash/bash32-012) = 2555
 SIZE (bash/bash32-013) = 1852
 SIZE (bash/bash32-014) = 8141
 SIZE (bash/bash32-015) = 2293
+SIZE (bash/bash32-016) = 1620
+SIZE (bash/bash32-017) = 2611
