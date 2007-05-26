@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/26 03:31:59 pyr Exp $
 
 COMMENT=	"small EWMH compliant pager"
 
-DISTNAME=	netwmpager-1.9
+DISTNAME=	netwmpager-1.11
 CATEGORIES=	x11
 
 HOMEPAGE=	http://onion.dynserv.net/~timo/netwmpager.html
 
-MAINTAINER=	Pierre-Yves Ritschard <pierre-yves@spootnik.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xrender c m fontconfig freetype 
+WANTLIB=		X11 Xau Xdmcp Xft Xrender expat z c m \
+			fontconfig freetype 
 
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/
 EXTRACT_SUFX=	.tar.bz2
