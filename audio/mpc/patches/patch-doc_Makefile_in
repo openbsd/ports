@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Sat Feb 10 02:45:18 2007
-+++ doc/Makefile.in	Sat Feb 10 02:45:25 2007
-@@ -77,7 +77,7 @@
+--- doc/Makefile.in.orig	Wed Mar 21 19:22:57 2007
++++ doc/Makefile.in	Sat May 26 15:59:01 2007
+@@ -79,7 +79,7 @@ install_sh = @install_sh@
  man_MANS = mpc.1
  pkgdata_DATA = 
  docdir = $(prefix)/share/doc/$(PACKAGE)
