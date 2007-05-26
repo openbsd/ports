@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/15 08:41:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/26 14:47:46 ajacoutot Exp $
 
-COMMENT=	"tool for monitoring the security of installed softwares"
+COMMENT=	"monitor the security of installed softwares"
 
-DISTNAME=	advchk-1.20
+DISTNAME=	advchk-2.00
 CATEGORIES=	security
 
 HOMEPAGE=	http://advchk.unixgu.ru/
