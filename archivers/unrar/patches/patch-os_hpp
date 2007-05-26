@@ -1,0 +1,19 @@
+$OpenBSD: patch-os_hpp,v 1.1 2007/05/26 21:42:58 rui Exp $
+--- os.hpp.orig	Sat May 26 19:11:08 2007
++++ os.hpp	Sat May 26 19:17:50 2007
+@@ -227,12 +227,12 @@ typedef const char* MSGID;
+   #endif
+ #endif
+ 
+-#if !defined(BIG_ENDIAN) && !defined(_WIN_CE) && defined(_WIN_32)
++#if defined(ALLOW_NOT_ALIGNED_INT)
+ /* allow not aligned integer access, increases speed in some operations */
+-#define ALLOW_NOT_ALIGNED_INT
++#undef ALLOW_NOT_ALIGNED_INT
+ #endif
+ 
+-#if defined(__sparc) || defined(sparc) || defined(__sparcv9)
++#ifndef STRICT_ALIGNMENT_REQUIRED
+ /* prohibit not aligned access to data structures in text comression
+    algorithm, increases memory requirements */
+ #define STRICT_ALIGNMENT_REQUIRED
