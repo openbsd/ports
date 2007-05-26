@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_pcre_ruleset_Makefile_in,v 1.4 2006/12/30 16:32:47 aanriot Exp $
---- plugins/pcre/ruleset/Makefile.in.orig	Wed Dec 20 17:46:21 2006
-+++ plugins/pcre/ruleset/Makefile.in	Mon Dec 25 19:50:07 2006
-@@ -204,7 +204,7 @@ build_alias = @build_alias@
+$OpenBSD: patch-plugins_pcre_ruleset_Makefile_in,v 1.5 2007/05/26 01:14:33 aanriot Exp $
+--- plugins/pcre/ruleset/Makefile.in.orig	Wed May  2 11:19:40 2007
++++ plugins/pcre/ruleset/Makefile.in	Thu May 17 13:16:34 2007
+@@ -358,7 +358,7 @@ build_alias = @build_alias@
  build_cpu = @build_cpu@
  build_os = @build_os@
  build_vendor = @build_vendor@

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/30 16:32:47 aanriot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/26 01:14:33 aanriot Exp $
 
 COMMENT=	"Prelude log analyzer"
 
-DISTNAME=	prelude-lml-0.9.8.1
+DISTNAME=	prelude-lml-0.9.9
 
 WANTLIB=	c pthread z gcrypt gpg-error gnutls
 MODULES=	devel/gettext

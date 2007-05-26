@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/12/30 16:32:47 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/05/26 01:14:33 aanriot Exp $
 %%SHARED%%
 bin/prelude-lml
 include/prelude-lml/
@@ -24,12 +24,16 @@ share/examples/prelude-lml/ruleset/arbor.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/arbor.rules
 share/examples/prelude-lml/ruleset/arpwatch.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/arpwatch.rules
+share/examples/prelude-lml/ruleset/bonding.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/bonding.rules
 share/examples/prelude-lml/ruleset/cacti-thold.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/cacti-thold.rules
 share/examples/prelude-lml/ruleset/checkpoint.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/checkpoint.rules
 share/examples/prelude-lml/ruleset/cisco-asa.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-asa.rules
+share/examples/prelude-lml/ruleset/cisco-common.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-common.rules
 share/examples/prelude-lml/ruleset/cisco-css.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/cisco-css.rules
 share/examples/prelude-lml/ruleset/cisco-ips.rules
