@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/16 13:08:15 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/26 19:56:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"multi-protocol instant messaging client"
 
 DISTNAME=	pidgin-2.0.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS +=	jabber               0.0      # .0.0
 SHARED_LIBS +=	oscar                0.0      # .0.0
 SHARED_LIBS +=	purple               0.0      # .0.0
@@ -65,6 +65,8 @@ CONFIGURE_ARGS+= --disable-gevolution \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAKE_FLAGS+=	CFLAGS="${CFLAGS}"
 
 FLAVORS=	audio debug gtkspell
 FLAVOR?=	
