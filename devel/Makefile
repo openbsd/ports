@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.511 2007/05/24 13:38:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.512 2007/05/26 20:24:38 jason Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -72,6 +72,7 @@
      SUBDIR += gconfmm
      SUBDIR += geany
      SUBDIR += gengameng
+     SUBDIR += geotiff
      SUBDIR += gettext
      SUBDIR += getxml
      SUBDIR += giblib
@@ -505,6 +506,7 @@
      SUBDIR += poedit
      SUBDIR += popt
      SUBDIR += prc-tools
+     SUBDIR += proj
      SUBDIR += pscan
      SUBDIR += pth
      SUBDIR += pwlib
