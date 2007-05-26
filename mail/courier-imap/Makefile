@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2006/11/25 20:20:07 steven Exp $
+# $OpenBSD: Makefile,v 1.52 2007/05/26 10:35:51 steven Exp $
 
 COMMENT-main=		"imap server for maildir format mailboxes"
 COMMENT-pop3=		"pop3 server for maildir format mailboxes"
@@ -36,7 +36,7 @@ LIB_DEPENDS=		courierauthsasl.>=0,courierauth.>=0::mail/courier-authlib
 
 COURIERSTATE=           /var/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
-SUBST_VARS=		COURIERSTATE BASE_PKGPATH
+SUBST_VARS=		COURIERSTATE
 SYSCONFDIR=/etc/courier
 
 CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
