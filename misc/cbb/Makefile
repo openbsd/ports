@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2005/02/09 00:15:20 alek Exp $
+# $OpenBSD: Makefile,v 1.27 2007/05/26 14:05:44 aanriot Exp $
 
 COMMENT=	"checkbook balancing tool"
 
 DISTNAME=	cbb-0.73
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	misc
 HOMEPAGE=	http://cbb.sourceforge.net/
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	:plan-*:misc/plan \
 
 NO_BUILD=       Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 pre-configure:
 	@mv ${WRKSRC}/install.pl ${WRKSRC}/install.pl.in
