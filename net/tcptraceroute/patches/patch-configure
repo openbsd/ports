@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.1 2007/05/26 22:06:19 rui Exp $
+--- configure.orig	Wed Mar 29 02:49:55 2006
++++ configure	Sun Apr 29 15:11:06 2007
+@@ -3713,7 +3713,7 @@ echo "$as_me: using libpcap in $withval" >&6;}
+ 
+ fi;
+ 
+-LIBNET_CONFIG="libnet-config"	# relative, using $PATH
++LIBNET_CONFIG="libnet-config-1.1"	# relative, using $PATH
+ 
+ # Check whether --with-libnet or --without-libnet was given.
+ if test "${with_libnet+set}" = set; then
+@@ -3727,9 +3727,11 @@ if test "${with_libnet+set}" = set; then
+ 
+ 		test -f "$withval/libnet.h"			&&	LIBNETCC="$LIBNETCC -I$withval"
+ 		test -f "$withval/include/libnet.h"	&&	LIBNETCC="$LIBNETCC -I$withval/include"
++		test -f "$withval/include/libnet-1.1/libnet.h"	&&	LIBNETCC="$LIBNETCC -I$withval/include/libnet-1.1"
+ 
+ 		test -f "$withval/libnet.a"			&&	LIBNETLD="$LIBNETLD -L$withval"
+ 		test -f "$withval/lib/libnet.a"		&&	LIBNETLD="$LIBNETLD -L$withval/lib"
++		test -f "$withval/lib/libnet-1.1/libnet.a"	&&	LIBNETLD="$LIBNETLD -L$withval/lib/libnet-1.1"
+ 
+ 		if test -z "$LIBNETCC" -o -z "$LIBNETLD"
+ 		then

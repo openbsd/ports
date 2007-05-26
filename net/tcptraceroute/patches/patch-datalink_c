@@ -1,0 +1,30 @@
+$OpenBSD: patch-datalink_c,v 1.1 2007/05/26 22:06:19 rui Exp $
+--- datalink.c.orig	Sun Apr 29 11:49:51 2007
++++ datalink.c	Sun Apr 29 11:49:54 2007
+@@ -137,7 +137,7 @@ void getinterfaces(void)
+ 	struct ifconf ifc;
+ 	struct ifreq *ifrp, ifr;
+ 	int numreqs, i, s;
+-	u_long addr;
++	u_int32_t addr;
+ 	int salen;
+ 	char *x;
+ 
+@@ -278,7 +278,7 @@ void getinterfaces(void)
+  * given destination address.
+  */
+ 
+-u_long findsrc(u_long dest)
++u_int32_t findsrc(u_int32_t dest)
+ {
+ 	struct sockaddr_in sinsrc, sindest;
+ 	int s, size;
+@@ -314,7 +314,7 @@ u_long findsrc(u_long dest)
+  * interface exists with an address of 127.0.0.1.
+  */
+ 
+-char *finddev(u_long with_src)
++char *finddev(u_int32_t with_src)
+ {
+ 	struct interface_entry *p;
+ 	char *device = NULL;

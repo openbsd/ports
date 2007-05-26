@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2005/05/24 00:10:44 mjc Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/26 22:06:19 rui Exp $
 
 COMMENT=		"traceroute implementation using TCP packets"
 
-DISTNAME=		tcptraceroute-1.4
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		tcptraceroute-1.5beta7
 CATEGORIES=    		net
 
 HOMEPAGE=		http://michael.toren.net/code/tcptraceroute/
@@ -17,21 +16,18 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap 
 
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--with-libnet=${PREFIX} \
+			--enable-noselect-default
+
 MASTER_SITES=		http://michael.toren.net/code/tcptraceroute/
 
-LIB_DEPENDS=		lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+LIB_DEPENDS=		lib/libnet-1.1/net.=11:libnet-1.1*:net/libnet/1.1
 
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
-ALL_TARGET=
-
 NO_REGRESS=		Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcptraceroute ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/tcptraceroute.8 ${PREFIX}/man/man8
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tcptraceroute
-	${INSTALL_DATA} ${WRKSRC}/examples.txt ${PREFIX}/share/examples/tcptraceroute
+USE_GMAKE=		Yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-tcptraceroute_h,v 1.1 2007/05/26 22:06:19 rui Exp $
+--- tcptraceroute.h.orig	Sun Apr 29 11:49:51 2007
++++ tcptraceroute.h	Sun Apr 29 11:49:54 2007
+@@ -76,7 +76,7 @@ Updates are available from http://michael.toren.net/co
+ #include "probe.h"
+ #include "capture.h"
+ 
+-extern u_long dst_ip, src_ip, isn;
++extern u_int32_t dst_ip, src_ip, isn;
+ extern u_short src_prt, dst_prt;
+ extern char *device, *name, *dst, *src;
+ extern char dst_name[], dst_prt_name[], filter[], errbuf[];

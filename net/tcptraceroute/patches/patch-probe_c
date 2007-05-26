@@ -1,0 +1,12 @@
+$OpenBSD: patch-probe_c,v 1.1 2007/05/26 22:06:19 rui Exp $
+--- probe.c.orig	Sun Apr 29 11:49:51 2007
++++ probe.c	Sun Apr 29 11:49:54 2007
+@@ -297,7 +297,7 @@ void showprobe(proberecord *record)
+ 	/* Variables to keep state between calls */
+ 	static char laststate[TEXTSIZE];
+ 	static int lastttl;
+-	static u_long lastaddr, lastdnat_ip;
++	static u_int32_t lastaddr, lastdnat_ip;
+ 	static u_short lastdnat_dport;
+ 
+ 	static int everprinthost;	// have we ever printed the hostname?

@@ -1,0 +1,21 @@
+$OpenBSD: patch-main_c,v 1.1 2007/05/26 22:06:19 rui Exp $
+--- main.c.orig	Sun Apr 29 11:49:51 2007
++++ main.c	Sun Apr 29 11:49:54 2007
+@@ -23,7 +23,7 @@
+ #include "tcptraceroute.h"
+ 
+ /* globals */
+-u_long dst_ip, src_ip, isn;
++u_int32_t dst_ip, src_ip, isn;
+ u_short src_prt, dst_prt;
+ char *device, *name, *dst, *src;
+ char dst_name[TEXTSIZE], dst_prt_name[TEXTSIZE], filter[TEXTSIZE];
+@@ -43,7 +43,7 @@ char errbuf [PCAP_ERRBUF_SIZE > LIBNET_ERRBUF_SIZE ?
+ void defaults(void)
+ {
+ 	struct servent *serv;
+-	u_long recommended_src;
++	u_int32_t recommended_src;
+ 
+ 	getinterfaces();
+ 

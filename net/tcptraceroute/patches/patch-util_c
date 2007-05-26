@@ -1,0 +1,21 @@
+$OpenBSD: patch-util_c,v 1.1 2007/05/26 22:06:19 rui Exp $
+--- util.c.orig	Sun Apr 29 11:49:51 2007
++++ util.c	Sun Apr 29 11:49:54 2007
+@@ -219,7 +219,7 @@ int tvsign(struct timeval *tv)
+  * I was debugging.  I really could get by with only 2 now, but *shrug*.
+  */
+ 
+-char *iptos(u_long in)
++char *iptos(u_int32_t in)
+ {
+ 	static char output[IPTOSBUFFERS][IPTOSBUFSIZ];
+ 	static short which;
+@@ -236,7 +236,7 @@ char *iptos(u_long in)
+  * RFC1918 space.
+  */
+ 
+-char *iptohost(u_long in)
++char *iptohost(u_int32_t in)
+ {
+ 	u_char *p = (u_char *)&in;
+ 

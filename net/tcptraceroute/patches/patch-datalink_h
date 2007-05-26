@@ -1,0 +1,19 @@
+$OpenBSD: patch-datalink_h,v 1.1 2007/05/26 22:06:19 rui Exp $
+--- datalink.h.orig	Sun Apr 29 11:49:51 2007
++++ datalink.h	Sun Apr 29 11:49:54 2007
+@@ -29,12 +29,12 @@ extern struct datalinktype {
+ /* interface linked list, built by getinterfaces() */
+ extern struct interface_entry {
+ 	char *name;
+-	u_long addr;
++	u_int32_t addr;
+ 	struct interface_entry *next;
+ } *interfaces;
+ 
+ int datalinkoffset(int);
+ char *datalinkname(int);
+ void getinterfaces(void);
+-u_long findsrc(u_long);
+-char *finddev(u_long);
++u_int32_t findsrc(u_int32_t);
++char *finddev(u_int32_t);

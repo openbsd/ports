@@ -1,0 +1,12 @@
+$OpenBSD: patch-probe_h,v 1.1 2007/05/26 22:06:19 rui Exp $
+--- probe.h.orig	Sun Apr 29 11:49:51 2007
++++ probe.h	Sun Apr 29 11:49:54 2007
+@@ -43,7 +43,7 @@ typedef struct {
+ 	u_short id, src_prt, dnat_dport;
+ 	struct timeval timestamp;
+ 	double delta;
+-	u_long addr, dnat_ip;
++	u_int32_t addr, dnat_ip;
+ 	char *state;
+ 	char *string;
+ } proberecord;
