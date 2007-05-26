@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/03 09:48:04 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/26 14:34:20 pyr Exp $
 
 COMMENT=	"Python cgi/fastcgi/mod_python framework"
 
 DISTNAME=	jonpy-0.06
-PKGNAME=	py-${DISTNAME}p0
+PKGNAME=	py-${DISTNAME}p1
 CATEGORIES=    	www
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jonpy/}
 
 HOMEPAGE=	http://jonpy.sourceforge.net/
-
-MAINTAINER=	Pierre-Yves Ritschard <pierre-yves.ritschard@oxalide.com>
 
 # Python License
 PERMIT_PACKAGE_CDROM=	Yes
