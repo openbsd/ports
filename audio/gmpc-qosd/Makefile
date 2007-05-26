@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/19 07:34:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/26 15:14:58 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"fancy display that shows information, for gmpc"
 
-VERSION=		0.14.0
+VERSION=		0.15.0
 DISTNAME=		gmpc-qosd-${VERSION}
 CATEGORIES=		audio
 
-HOMEPAGE=		http://cms.qballcow.nl/index.php?page=Plugins
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+
+HOMEPAGE=		http://sarine.nl/q-on-screen-display
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/19 15:14:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/26 15:14:58 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"adds the omitted stop button, for gmpc"
 
-VERSION=		0.14.0
+VERSION=		0.15.0
 DISTNAME=		gmpc-stopbutton-${VERSION}
 CATEGORIES=		audio
 
-HOMEPAGE=		http://cms.qballcow.nl/index.php?page=Plugins
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+
+HOMEPAGE=		http://sarine.nl/gmpc-plugins-stopbutton
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
