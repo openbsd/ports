@@ -1,0 +1,26 @@
+$OpenBSD: patch-pfe_Makefile_in,v 1.1 2007/05/26 04:03:08 aanriot Exp $
+--- pfe/Makefile.in.orig	Mon Mar  3 23:04:11 2003
++++ pfe/Makefile.in	Fri May 25 19:45:59 2007
+@@ -98,11 +98,11 @@ install_sh = @install_sh@
+ libpfe_LIBADD = @libpfe_LIBADD@
+ libpfe_VERSION = @libpfe_VERSION@
+ libpfe_la = @libpfe_la@
+-DEBUG = @WITHOUT_OPT@ @DEBUG@
++DEBUG =
+ GCC_WARN = @GCC_WARN@
+ LIB_TERM = @LIB_TERM@
+ 
+-OPTIM = @WITH_OPT@    @OPTIM@
++OPTIM =
+ PFE_DEFS = @PFE_DEFS@
+ USER_CONFIG = @USER_CONFIG@
+ WITH_CFLAGS = @WITH_CFLAGS@
+@@ -184,7 +184,7 @@ pkginc_gen_headers = double-sub.h \
+ 
+ # note: on k12xx, we link dl-internal directly since we also link main-k12
+ # but the dl-internal knows only zchar-ext, the other modules are external.
+-CCOPTS = @cc_opt_pipe@ @cc_opt_write_strings@ @cc_opt_strict_prototypes@
++CCOPTS = @cc_opt_write_strings@ @cc_opt_strict_prototypes@
+ INCLUDES = $(OPT_FLOAT) $(OPTIM) $(DEBUG) $(PFE_DEFS) \
+  $(CCOPTS) $(GCC_WARN) $(WITH_CFLAGS) $(USER_CONFIG)
+ 

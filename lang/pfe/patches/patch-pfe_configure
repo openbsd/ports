@@ -1,7 +1,42 @@
-$OpenBSD: patch-pfe_configure,v 1.1 2005/12/30 23:21:16 alek Exp $
---- pfe/configure.orig	Mon Dec 26 14:30:13 2005
-+++ pfe/configure	Mon Dec 26 14:30:39 2005
-@@ -11746,21 +11746,6 @@ echo "${ECHO_T}:can use --with-regs with
+$OpenBSD: patch-pfe_configure,v 1.2 2007/05/26 04:03:08 aanriot Exp $
+--- pfe/configure.orig	Mon Mar  3 23:04:06 2003
++++ pfe/configure	Fri May 25 23:05:36 2007
+@@ -7358,7 +7358,7 @@ then
+   then
+     ac_compile_warnings_opt='-Wall'
+   fi
+-  CXXFLAGS="$CXXFLAGS $ac_compile_warnings_opt"
++  CXXFLAGS="$CXXFLAGS"
+   ac_compile_warnings_msg="$ac_compile_warnings_opt for C++"
+ fi
+ 
+@@ -7368,7 +7368,7 @@ then
+   then
+     ac_compile_warnings_opt='-Wall'
+   fi
+-  CFLAGS="$CFLAGS $ac_compile_warnings_opt"
++  CFLAGS="$CFLAGS"
+   ac_compile_warnings_msg="$ac_compile_warnings_msg $ac_compile_warnings_opt for C"
+ fi
+ echo "$as_me:7374: result: $ac_compile_warnings_msg" >&5
+@@ -11681,7 +11681,7 @@ EOF
+       rm -f conftest.*
+     fi
+     if test -n "$ac_cv_prog_cc_warnings"; then
+-      CFLAGS="$CFLAGS $ac_cv_prog_cc_warnings"
++      CFLAGS="$CFLAGS"
+     else
+       ac_cv_prog_cc_warnings="unknown"
+     fi
+@@ -11693,7 +11693,6 @@ echo "${ECHO_T}$ac_cv_prog_cc_warnings" >&6
+ GCC_WARN="" ; OPTIM="" ; DEBUG=""
+ echo "$as_me:11694: checking optimize level \"$WITHVAL_OPT\" is..." >&5
+ echo $ECHO_N "checking optimize level \"$WITHVAL_OPT\" is...... $ECHO_C" >&6
+-CFLAGS=`echo " $CFLAGS " | sed -e 's/ -O[0-9]* / /'`
+ opt_level="$WITHVAL_OPT"
+ if test "$GCC" = "yes" ; then
+    OPTIM="-O$opt_level"
+@@ -11746,21 +11745,6 @@ echo "${ECHO_T}:can use --with-regs with traditional g
  echo "${ECHO_T}:and use --with-regs on unknown gcc version" >&6 ;;
    esac ;;
  esac

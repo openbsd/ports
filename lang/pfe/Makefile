@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/30 16:24:05 aanriot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/26 04:03:08 aanriot Exp $
 
 COMMENT=	"Portable Forth Environment"
 
 DISTNAME=	pfe-0.32.94
-PKGNAME=	${DISTNAME}p2
-SHARED_LIBS=		pfe 32.94 \
-			pfe-0 32.94
+PKGNAME=	${DISTNAME}p3
+SHARED_LIBS +=	pfe			32.95	# .32.94
+SHARED_LIBS +=	pfe-0			32.95
 CATEGORIES=    	lang
 
 HOMEPAGE=	http://pfe.sourceforge.net/
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pfe/}
 WANTLIB=	c m ncurses
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=		--mandir=${PREFIX}/man
 
 USE_LIBTOOL=	Yes
 
