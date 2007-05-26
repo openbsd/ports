@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2006/04/16 19:12:40 aanriot Exp $
+# $OpenBSD: Makefile,v 1.20 2007/05/26 01:12:02 aanriot Exp $
 
 DISTNAME=	scanlogd-2.2.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 COMMENT=	"TCP port scan detection tool"
 
 HOMEPAGE=	http://www.openwall.com/scanlogd/
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 MASTER_SITES=	ftp://ftp.openwall.com/pub/projects/scanlogd/ \
 		${HOMEPAGE}
@@ -21,7 +20,7 @@ WANTLIB=		c pcap
 BUILD_DEPENDS=	::net/libnids
 LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS=""
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 ALL_TARGET=	libnids
 NO_REGRESS=	Yes
