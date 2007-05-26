@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.282 2007/05/25 05:29:29 steven Exp $
+# $OpenBSD: Makefile,v 1.283 2007/05/26 17:12:19 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -134,6 +134,7 @@
      SUBDIR += p5-Tk-Stderr
      SUBDIR += paragui
      SUBDIR += pbrowser
+     SUBDIR += pcmanfm
      SUBDIR += peksystray
      SUBDIR += pekwm
      SUBDIR += pidgin-guifications
