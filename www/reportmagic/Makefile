@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2004/04/13 19:38:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/26 14:18:52 aanriot Exp $
 
 COMMENT=	"make pretty graphs from Analog logfiles"
 
 VERSION=	2.21
 DISTNAME=	rmagic-${VERSION}
-PKGNAME=	reportmagic-${VERSION}
+PKGNAME=	reportmagic-${VERSION}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.reportmagic.org/
@@ -29,6 +29,7 @@ RUN_DEPENDS=	::graphics/p5-GD-Graph3d \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	@perl -i -pe "s:%%PREFIX%%:${TRUEPREFIX}:g" \
