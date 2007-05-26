@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/05/15 10:56:55 msf Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/05/26 01:13:53 aanriot Exp $
 %%SHARED%%
 bin/prelude-manager
 include/prelude-manager/
@@ -10,6 +10,9 @@ lib/prelude-manager/decodes/normalize.la
 lib/prelude-manager/filters/
 lib/prelude-manager/filters/idmef-criteria.a
 lib/prelude-manager/filters/idmef-criteria.la
+lib/prelude-manager/filters/thresholding.a
+lib/prelude-manager/filters/thresholding.la
+lib/prelude-manager/filters/thresholding.so
 lib/prelude-manager/reports/
 lib/prelude-manager/reports/db.a
 lib/prelude-manager/reports/db.la
