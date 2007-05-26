@@ -3,7 +3,7 @@
 # This script actually produces another shell-script that you may edit
 # before executing.
 
-# $OpenBSD: clean-old,v 1.2 2005/06/04 22:53:03 mbalmer Exp $
+# $OpenBSD: clean-old,v 1.3 2007/05/26 20:20:38 espie Exp $
 #
 # Copyright (c) 2000 Marc Espie.
 # 
@@ -48,5 +48,5 @@ rm force$$
 find . -type f -print|sed -e 's,^\./,,' |grep -v '^Makefile$' |sort -u >$TMP2
 echo "#! /bin/sh"
 echo "cd $DISTDIR"
-diff -u $TMP1 $TMP2|tail +3|grep '^\+'|sed -e 's,^\+,rm ,'|sed -e 's,&,\\&,'
+diff -u $TMP1 $TMP2|tail +3|grep '^\+'|sed -e 's,^\+,rm ,'|sed -e 's,&,\\&,g'
 rm $TMP1 $TMP2
