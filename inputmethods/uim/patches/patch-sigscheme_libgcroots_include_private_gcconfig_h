@@ -1,0 +1,14 @@
+$OpenBSD: patch-sigscheme_libgcroots_include_private_gcconfig_h,v 1.1 2007/05/26 03:49:38 pvalchev Exp $
+--- sigscheme/libgcroots/include/private/gcconfig.h.orig	Thu May 24 20:38:41 2007
++++ sigscheme/libgcroots/include/private/gcconfig.h	Thu May 24 20:38:56 2007
+@@ -316,6 +316,10 @@
+ #   define OPENBSD
+ #   define mach_type_known
+ # endif
++# if defined(__OpenBSD__) && defined(__x86_64__)
++#   define X86_64
++#   define mach_type_known
++# endif
+ # if defined(FREEBSD) && (defined(i386) || defined(__i386__))
+ #   define I386
+ #   define mach_type_known
