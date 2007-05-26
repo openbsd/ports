@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_mak,v 1.1 2007/05/26 12:25:10 kili Exp $
+--- src/lib.mak.orig	Mon May 15 21:00:31 2006
++++ src/lib.mak	Sun Apr 22 20:45:37 2007
+@@ -25,7 +25,7 @@ GLO_=$(O_)$(GLOBJ)
+ GLI_=$(GLGENDIR) $(II)$(GLSRCDIR)
+ GLF_=
+ GLCCFLAGS=$(I_)$(GLI_)$(_I) $(GLF_)
+-GLCC=$(CC_) $(GLCCFLAGS)
++GLCC=$(CC) $(GLCCFLAGS) $(CCFLAGS)
+ GLICCCC=$(CC_) $(I_)$(GLI_) $(II)$(ICCI_)$(_I) $(ICCCF_) $(GLF_)
+ GLJCC=$(CC_) $(I_)$(GLI_) $(II)$(JI_)$(_I) $(JCF_) $(GLF_)
+ GLZCC=$(CC_) $(I_)$(GLI_) $(II)$(ZI_)$(_I) $(ZCF_) $(GLF_)

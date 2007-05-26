@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_jasper_mak,v 1.1 2007/05/26 12:25:10 kili Exp $
+--- src/jasper.mak.orig	Mon Mar 13 17:18:19 2006
++++ src/jasper.mak	Sun Apr 22 20:39:01 2007
+@@ -159,7 +159,7 @@ JAS_EXCF_=\
+         $(D_)EXCLUDE_PNG_SUPPORT$(_D_)1$(_D)
+ 
+ # define our specific compiler
+-JAS_CC=$(CC_) $(CFLAGS) $(I_)$(JASGEN) $(II)$(JPXI_)$(_I) $(JPXCF_) $(JAS_EXCF_)
++JAS_CC=$(CC) $(I_)$(JASGEN) $(II)$(JPXI_)$(_I) $(JPXCF_) $(JAS_EXCF_) $(CFLAGS)
+ JASO_=$(O_)$(JASOBJ)
+ 
+ # switch in the selected .dev

@@ -1,38 +1,32 @@
-# $OpenBSD: Makefile,v 1.48 2007/01/01 22:54:46 kili Exp $
+# $OpenBSD: Makefile,v 1.49 2007/05/26 12:25:10 kili Exp $
 
 COMMENT=	"GNU PostScript interpreter"
 
 VERSION=	8.54
 DISTNAME=	ghostscript-${VERSION}-gpl
-PKGNAME=	${DISTNAME:S,-gpl,,}p0
+PKGNAME=	${DISTNAME:S,-gpl,,}p1
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	9.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ghostscript/}
-MASTER_SITES1=	${PDF_SITES}
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
-
-GS_SOURCES=	${DISTNAME}${EXTRACT_SUFX}
-DISTFILES=	${GS_SOURCES} pdf_sec.ps:1
-EXTRACT_ONLY=	${GS_SOURCES}
 
 FLAVOR_STRING=	${FLAVOR_EXT:S/-/,/g}
 
 SUBST_VARS=	VERSION FLAVOR_STRING
-DIST_SUBDIR=	gs
 
 # GPL 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		m c z jasper jpeg png
+WANTLIB=		m c z jpeg png
 
 
 RUN_DEPENDS=	:ghostscript-fonts-*:print/ghostscript/gnu-fonts
 
-LIB_DEPENDS=	::graphics/png ::graphics/jpeg ::graphics/jasper
+LIB_DEPENDS=	::graphics/png ::graphics/jpeg
 
 BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		INSTALL_DATA='${INSTALL_DATA}' \
@@ -106,8 +100,7 @@ MAKE_FLAGS=	${BASE_FLAGS}
 CFLAGS+=	-DSYS_TYPES_HAS_STDINT_TYPES
 
 INCPATHS=	-I${LOCALBASE}/include				\
-		-I${LOCALBASE}/include/libpng			\
-		-I${LOCALBASE}/include/jasper
+		-I${LOCALBASE}/include/libpng
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=	gnu
@@ -115,8 +108,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${INCPATHS}"			\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
 		LIBS=-ljpeg
 
-
-# The pdf_sec.ps non-stub version has been moved to a separate package
 
 FLAVORS=	a4 gtk no_x11
 FLAVOR?=
@@ -161,7 +152,7 @@ post-extract:
 	find ${WRKDIST} -name '*.orig' -type f | xargs -r rm
 
 pre-configure:
-	rm -rf ${WRKDIST}/{jasper,jpeg,libpng,zlib}
+	rm -rf ${WRKDIST}/{jpeg,libpng,zlib}
 
 pre-build:
 	mkdir -p ${WRKDIST}/obj
@@ -193,6 +184,5 @@ post-install:
 		ln -sf ps2pdf.1 ps2pdf13.1 && \
 		ln -sf ps2pdf.1 ps2pdf14.1 && \
 		ln -sf ps2ps.1 eps2eps.1
-	${INSTALL_DATA} ${FULLDISTDIR}/pdf_sec.ps ${PREFIX}/${PDFDIR}
 
 .include <bsd.port.mk>
