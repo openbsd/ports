@@ -1,21 +1,25 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/15 11:40:48 aanriot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/26 01:16:13 aanriot Exp $
 
 COMMENT=	"Prelude Management Console"
 
-DISTNAME=	prewikka-0.9.9
+DISTNAME=	prewikka-0.9.11
 PKGNAME=	prelude-${DISTNAME}
 
 MODULES=	lang/python
 
 BUILD_DEPENDS=	:py-cheetah-*:devel/py-cheetah
 
-RUN_DEPENDS=	:prelude-manager-*:security/prelude/manager \
+RUN_DEPENDS=	:prelude-manager-*:security/prelude/manager	\
 		:py-cheetah-*:devel/py-cheetah
 
 pre-install:
-	@perl -pi -e "s,%%PREFIX%%,${PREFIX},"		\
+	@${INSTALL_DATA} ${FILESDIR}/siteconfig.py		\
 		${WRKSRC}/prewikka/siteconfig.py
-	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR},"	\
+	@perl -pi -e "s,%%PREFIX%%,${PREFIX},"			\
+		${WRKSRC}/prewikka/siteconfig.py
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR},"		\
+		${WRKSRC}/prewikka/siteconfig.py
+	@perl -pi -e "s,%%VERSION%%,${DISTNAME:S/prewikka-//},"	\
 		${WRKSRC}/prewikka/siteconfig.py
 
 post-install:

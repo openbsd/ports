@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/04/15 11:40:48 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/05/26 01:16:13 aanriot Exp $
 bin/prewikka-httpd
 lib/python${MODPY_VERSION}/site-packages/prewikka/
 lib/python${MODPY_VERSION}/site-packages/prewikka/Auth.py
@@ -25,14 +25,14 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/ModPythonHandler.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/ModPythonHandler.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/MyConfigParser.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/MyConfigParser.pyc
-lib/python${MODPY_VERSION}/site-packages/prewikka/ParametersNormalizer.py
-lib/python${MODPY_VERSION}/site-packages/prewikka/ParametersNormalizer.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/Request.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/Request.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/User.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/User.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/__init__.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/localization.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/localization.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/__init__.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/__init__.pyc
@@ -125,6 +125,11 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/views/usermanagement.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/views/usermanagement.pyc
 share/doc/prewikka/
 share/doc/prewikka/README.OpenBSD
+share/locale/de/LC_MESSAGES/prewikka.mo
+share/locale/es/LC_MESSAGES/prewikka.mo
+share/locale/fr/LC_MESSAGES/prewikka.mo
+share/locale/pt_BR/LC_MESSAGES/prewikka.mo
+share/locale/ru/LC_MESSAGES/prewikka.mo
 share/prewikka/
 share/prewikka/cgi-bin/
 share/prewikka/cgi-bin/prewikka.cgi
@@ -134,11 +139,14 @@ share/prewikka/conf/prewikka.conf
 @sample ${SYSCONFDIR}/prewikka/prewikka.conf
 share/prewikka/database/
 share/prewikka/database/mysql-update-0.9.1.sql
+share/prewikka/database/mysql-update-0.9.11.sql
 share/prewikka/database/mysql.sql
 share/prewikka/database/mysql2pgsql.sh
 share/prewikka/database/mysql2sqlite.sh
 share/prewikka/database/pgsql-update-0.9.1.sql
+share/prewikka/database/pgsql-update-0.9.11.sql
 share/prewikka/database/pgsql.sql
+share/prewikka/database/sqlite-update-0.9.11.sql
 share/prewikka/database/sqlite.sql
 share/prewikka/htdocs/
 share/prewikka/htdocs/css/

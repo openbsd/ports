@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
---- setup.py.orig	Fri Jun 23 04:18:57 2006
-+++ setup.py	Fri Jun 23 04:20:19 2006
-@@ -117,7 +117,7 @@ class my_install(install):
+$OpenBSD: patch-setup_py,v 1.2 2007/05/26 01:16:13 aanriot Exp $
+--- setup.py.orig	Thu Apr  5 17:21:20 2007
++++ setup.py	Fri May 18 14:21:59 2007
+@@ -152,7 +152,7 @@ class my_install(install):
      def finalize_options(self):
          ### if no prefix is given, configuration should go to /etc or in {prefix}/etc otherwise
          if self.prefix:
@@ -10,3 +10,11 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2006/06/26 18:04:25 aanriot Exp $
          else:
              self.conf_prefix = "/etc/prewikka"
  
+@@ -178,7 +178,6 @@ class my_install(install):
+     def run(self):
+         os.umask(022)
+         self.install_conf()
+-        self.init_siteconfig()
+         install.run(self)
+         
+         for dir in ("/",
