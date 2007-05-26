@@ -1,7 +1,26 @@
-$OpenBSD: patch-configure,v 1.1 2005/05/24 00:13:31 mjc Exp $
---- configure.orig	Sun May 22 13:27:59 2005
-+++ configure	Sun May 22 13:29:04 2005
-@@ -2022,14 +2022,14 @@ if test "${with_libnet+set}" = set; then
+$OpenBSD: patch-configure,v 1.2 2007/05/26 23:13:25 aanriot Exp $
+--- configure.orig	Wed Jul 18 07:05:38 2001
++++ configure	Sat May 26 16:01:41 2007
+@@ -982,7 +982,6 @@ fi
+ 
+ ac_test_CFLAGS="${CFLAGS+set}"
+ ac_save_CFLAGS="$CFLAGS"
+-CFLAGS=
+ echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
+ echo "configure:988: checking whether ${CC-cc} accepts -g" >&5
+ if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
+@@ -1154,10 +1158,6 @@ EOF
+ 
+ fi
+ 
+-if test $ac_cv_prog_gcc = yes; then
+-  CCOPTS='-O3 -Wall'
+-  CFLAGS="$CCOPTS"
+-fi
+ 
+ # Extract the first word of "md5sum", so it can be a program name with args.
+ set dummy md5sum; ac_word=$2
+@@ -2022,14 +2023,14 @@ if test "${with_libnet+set}" = set; then
                  echo $ac_n "checking Using libnet in""... $ac_c" 1>&6
  echo "configure:2024: checking Using libnet in" >&5
                  echo "$ac_t""$withval" 1>&6
