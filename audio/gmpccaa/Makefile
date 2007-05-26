@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/26 15:13:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/26 21:08:07 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/plugins/
+MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/plugins/ \
+			http://humppa.nl/distfiles/gmpc/
 
 WANTLIB=		X11 Xau Xdmcp Xrender atk-1.0 cairo expat fontconfig \
 			freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \

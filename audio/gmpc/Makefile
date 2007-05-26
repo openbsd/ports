@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/26 15:10:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/26 21:08:07 jasper Exp $
 
 COMMENT=		"gnome music player client"
 
@@ -21,7 +21,8 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xcursor Xext Xfixes Xi Xinerama Xrandr \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 idn m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread ssl xml2 z
 
-MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/
+MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/ \
+			http://humppa.nl/distfiles/gmpc/
 
 MODULES=		devel/gettext gcc3
 

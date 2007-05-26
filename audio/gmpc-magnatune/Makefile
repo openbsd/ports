@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/26 15:14:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/26 21:08:07 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,7 +22,8 @@ WANTLIB=	X11 Xau Xdmcp Xrender atk-1.0 cairo expat fontconfig \
 		glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m mpd pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png xml2 z
 
-MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/plugins/
+MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/plugins/ \
+			http://humppa.nl/distfiles/gmpc/
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc
