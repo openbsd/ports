@@ -1,6 +1,6 @@
---- config.mk.orig	Tue Dec 19 11:49:03 2006
-+++ config.mk	Wed Dec 27 21:09:16 2006
-@@ -4,19 +4,19 @@
+--- config.mk.orig	Mon May 21 14:35:47 2007
++++ config.mk	Sat May 26 18:36:47 2007
+@@ -4,19 +4,19 @@ VERSION = 3.1
  # Customize below to fit your system
  
  # paths
@@ -22,16 +22,15 @@
  
  # flags
 -CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
--LDFLAGS = ${LIBS}
-+CFLAGS += ${INCS} -DVERSION=\"${VERSION}\"
-+LDFLAGS += ${LIBS}
+-LDFLAGS = -s ${LIBS}
++CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
++LDFLAGS = ${LIBS}
  #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = -g ${LIBS}
  
-@@ -26,5 +26,5 @@
+@@ -26,4 +26,4 @@ LDFLAGS = -s ${LIBS}
  #CFLAGS += -xtarget=ultra
  
  # compiler and linker
 -CC = cc
-+# CC = cc
- LD = ${CC}
++#CC = cc

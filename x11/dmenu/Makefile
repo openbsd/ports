@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/19 21:38:40 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/26 16:39:45 ajacoutot Exp $
 
 COMMENT=		"dynamic menu for X11"
-DISTNAME=		dmenu-2.1
+DISTNAME=		dmenu-3.1
 
 CATEGORIES=		x11
-HOMEPAGE=		http://tools.suckless.org/
+HOMEPAGE=		http://www.suckless.org/wiki/tools/xlib
 
 MAINTAINER=		Tobias Ulmer <tobiasu@tmux.org>
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 c
 
-MASTER_SITES=		${HOMEPAGE}download/
+MASTER_SITES=		http://www.suckless.org/download/
 
 FAKE_FLAGS=		DESTDIR=""
 
