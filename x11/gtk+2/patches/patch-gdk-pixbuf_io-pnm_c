@@ -1,0 +1,15 @@
+$OpenBSD: patch-gdk-pixbuf_io-pnm_c,v 1.1 2007/05/26 02:44:55 kili Exp $
+
+Found by puffy.pbm. Thanks :-)
+
+--- gdk-pixbuf/io-pnm.c.orig	Wed May  2 18:27:11 2007
++++ gdk-pixbuf/io-pnm.c	Thu May 24 10:58:39 2007
+@@ -135,7 +135,7 @@ explode_bitmap_into_buf (PnmLoaderContext *context)
+ 		to -= 3;
+ 		bit++;
+ 		
+-		if (bit > 7) {
++		if (bit > 7 && x > 0) {
+ 			from--;
+ 			data = from[0];
+ 			bit = 0;
