@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/14 19:35:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/26 15:10:51 jasper Exp $
 
 COMMENT=		"gnome music player client"
 
-VERSION=		0.14.0
+VERSION=		0.15.0
 DISTNAME=		gmpc-${VERSION}
-PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio
+
+MAINTAINER=		Landry Breuil <gaston@gcu.info>
 
 HOMEPAGE=		http://sarine.nl/gmpc
 
@@ -33,11 +34,11 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS=		::textproc/p5-XML-Parser
-
+RUN_DEPENDS=		::x11/hicolor-icon-theme
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
-LIB_DEPENDS=		mpd:libmpd->=0.13:audio/libmpd \
+LIB_DEPENDS=		mpd:libmpd->=0.14:audio/libmpd \
 			glade-2.0::devel/libglade2 \
 			curl::net/curl
 

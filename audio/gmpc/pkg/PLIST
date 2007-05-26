@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/23 23:42:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/05/26 15:10:51 jasper Exp $
 bin/gmpc
 include/gmpc/
 include/gmpc/TreeSearchWidget.h
 include/gmpc/config1.h
+include/gmpc/gmpc-clicklabel.h
+include/gmpc/gmpc-metaimage.h
+include/gmpc/gmpc-mpddata-model.h
+include/gmpc/gmpc-mpddata-treeview.h
+include/gmpc/gmpc-profiles.h
 include/gmpc/gmpc_easy_download.h
 include/gmpc/metadata.h
 include/gmpc/plugin.h
@@ -18,17 +23,38 @@ share/gmpc/gmpc-tray-disconnected.png
 share/gmpc/gmpc-tray-pause.png
 share/gmpc/gmpc-tray-play.png
 share/gmpc/gmpc-tray.png
+share/gmpc/gmpc-volume.png
 share/gmpc/gmpc.glade
 share/gmpc/gmpc.png
+share/gmpc/hicolor/
+share/gmpc/hicolor/16x16/
+share/gmpc/hicolor/16x16/actions/
+share/gmpc/hicolor/16x16/actions/media-playlist.png
+share/gmpc/hicolor/16x16/actions/media-tag.png
+share/gmpc/hicolor/16x16/actions/playlist-browser.png
+share/gmpc/hicolor/16x16/actions/playlist-search-browser.png
+share/gmpc/hicolor/16x16/actions/tag-browser.png
+share/gmpc/hicolor/22x22/
+share/gmpc/hicolor/22x22/actions/
+share/gmpc/hicolor/22x22/actions/media-playlist.png
+share/gmpc/hicolor/32x32/
+share/gmpc/hicolor/32x32/actions/
+share/gmpc/hicolor/32x32/actions/media-playlist.png
+share/gmpc/hicolor/32x32/actions/media-tag.png
+share/gmpc/hicolor/32x32/actions/playlist-browser.png
+share/gmpc/hicolor/32x32/actions/playlist-search-browser.png
+share/gmpc/hicolor/32x32/actions/tag-browser.png
+share/gmpc/hicolor/48x48/
+share/gmpc/hicolor/48x48/actions/
+share/gmpc/hicolor/48x48/actions/media-playlist.png
+share/gmpc/hicolor/48x48/actions/media-tag.png
+share/gmpc/hicolor/48x48/actions/tag-browser.png
 share/gmpc/media-album.png
 share/gmpc/media-artist.png
 share/gmpc/media-audiofile.png
-share/gmpc/media-playlist.png
+share/gmpc/media-playback-start.png
 share/gmpc/media-stream.png
-share/gmpc/player-repeat.png
-share/gmpc/player-shuffle.png
 share/gmpc/playlist3.glade
-share/gmpc/stock_volume.png
 share/locale/de/LC_MESSAGES/gmpc.mo
 share/locale/fr/LC_MESSAGES/gmpc.mo
 share/locale/gl/LC_MESSAGES/gmpc.mo
@@ -37,3 +63,5 @@ share/locale/pl/LC_MESSAGES/gmpc.mo
 share/locale/ru/LC_MESSAGES/gmpc.mo
 share/pixmaps/
 share/pixmaps/gmpc.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

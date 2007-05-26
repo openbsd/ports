@@ -1,18 +1,13 @@
---- po/POTFILES.in.orig	Wed Mar 21 21:50:36 2007
-+++ po/POTFILES.in	Wed Mar 21 21:50:57 2007
-@@ -6,7 +6,6 @@ glade/playlist3.glade
- src/bacon-volume.c
- src/config1.c
- src/edit_markup.c
--src/eggtrayicon.back.c
- src/eggtrayicon.c
- src/id3info.c
- src/main.c
-@@ -27,7 +26,6 @@ src/tray-icon.c
- src/TreeSearchWidget.c
- src/eggcellrendererkeys.c
- src/gmpc-metaimage.c
--src/gmpc-metaimage.gob
- src/playlist3-metadata-browser.c
- src/playlist3-find2-browser.c
- src/playlist3-find3-browser.c
+$OpenBSD: patch-po-POTFILES_in,v 1.2 2007/05/26 15:10:51 jasper Exp $
+--- po/POTFILES.in.orig	Sat May 19 22:40:12 2007
++++ po/POTFILES.in	Thu May 24 20:57:50 2007
+@@ -30,10 +30,4 @@ src/browsers/playlist3-metadata-browser.c
+ src/browsers/playlist3-tag-browser.c
+ src/egg/eggcellrendererkeys.c
+ src/egg/eggtrayicon.c
+-src/gob/gmpc-clicklabel.gob  
+-src/gob/gmpc-mpddata-model.gob
+-src/gob/gmpc-connection.gob  
+-src/gob/gmpc-mpddata-treeview.gob
+-src/gob/gmpc-metaimage.gob   
+-src/gob/gmpc-profiles.gob
