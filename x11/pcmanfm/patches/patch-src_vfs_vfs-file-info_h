@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_vfs_vfs-file-info_h,v 1.1.1.1 2007/05/26 17:11:48 ajacoutot Exp $
+--- src/vfs/vfs-file-info.h.orig	Tue May  8 12:27:26 2007
++++ src/vfs/vfs-file-info.h	Tue May  8 12:27:43 2007
+@@ -46,7 +46,7 @@ struct _VFSFileInfo
+     time_t atime;
+     /* FIXME: blksize_t blksize; */
+     long blksize;
+-    blkcnt_t blocks;
++    int32_t blocks;
+ 
+     char* name; /* real name on file system */
+     char* disp_name;  /* displayed name (in UTF-8) */

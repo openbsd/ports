@@ -1,0 +1,15 @@
+PCManfm is an extremely fast and lightweight file manager which features
+tabbed browsing and a user-friendly interface.
+
+Some of its highlights:
+ * can be started in one second on normal machine
+ * tabbed browsing (similar to Firefox)
+ * drag & drop support
+ * files can be dragged among tabs
+ * load large directories in reasonable time
+ * file association support (default application)
+ * basic thumbnail support
+ * bookmarks support
+ * handles non-UTF-8 encoded filenames correctly
+ * provide icon view and detailed list view
+ * standard compliant (follows freedesktop.org)

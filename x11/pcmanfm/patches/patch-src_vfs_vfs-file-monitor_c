@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_vfs_vfs-file-monitor_c,v 1.1.1.1 2007/05/26 17:11:48 ajacoutot Exp $
+--- src/vfs/vfs-file-monitor.c.orig	Tue May 22 10:44:05 2007
++++ src/vfs/vfs-file-monitor.c	Tue May 22 10:43:53 2007
+@@ -65,10 +65,8 @@ static gboolean connect_to_fam()
+ 
+     if ( FAMOpen( &fam ) )
+     {
+-        fam_io_channel = NULL;
+-        fam.fd = -1;
+         g_warning( "There is no FAM/gamin server\n" );
+-        return FALSE;
++        exit( 1 );
+     }
+ #if HAVE_FAMNOEXISTS
+     /*
