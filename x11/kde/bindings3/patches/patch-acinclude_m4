@@ -1,0 +1,14 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2007/05/27 16:49:44 espie Exp $
+--- acinclude.m4.orig	Fri May 25 16:11:24 2007
++++ acinclude.m4	Fri May 25 16:11:35 2007
+@@ -4624,8 +4624,8 @@ fi
+ 
+ AC_DEFUN([KDE_CHECK_PYTHON],
+ [
+-  KDE_CHECK_PYTHON_INTERN("2.5",
+-    [KDE_CHECK_PYTHON_INTERN("2.4",
++  KDE_CHECK_PYTHON_INTERN("2.4",
++    [KDE_CHECK_PYTHON_INTERN("2.5",
+      [KDE_CHECK_PYTHON_INTERN("2.3", 
+        [KDE_CHECK_PYTHON_INTERN("2.2", 
+          [KDE_CHECK_PYTHON_INTERN("2.1", 
