@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.461 2007/05/24 21:37:17 alek Exp $
+# $OpenBSD: Makefile,v 1.462 2007/05/27 19:35:31 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -138,6 +138,7 @@
      SUBDIR += libst
      SUBDIR += libtorrent
      SUBDIR += livemedia
+     SUBDIR += loudmouth
      SUBDIR += luasocket
      SUBDIR += maradns
      SUBDIR += mbrowse
