@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2007/05/21 14:27:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.183 2007/05/27 13:53:51 steven Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -116,6 +116,7 @@
      SUBDIR += p5-Image-ExifTool
      SUBDIR += p5-Image-Imlib2
      SUBDIR += p5-Image-Info
+     SUBDIR += p5-Image-MetaData-JPEG
      SUBDIR += p5-Image-Size
      SUBDIR += p5-Imager
      SUBDIR += p5-PerlMagick
