@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_manual_html,v 1.1.1.1 2007/05/27 15:34:55 kili Exp $
+
+Just point to the upstream GPL.
+
+--- doc/manual.html.orig	Sat May  5 16:22:50 2007
++++ doc/manual.html	Sat May 26 18:53:47 2007
+@@ -54,7 +54,7 @@ along with this program; if not, write to the Free Sof
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.<BR></P>
+ 
+ <P>Blob Wars : Metal Blob Solid is distributed and licensed under the GNU General Public License. You can read
+-the full license by clicking <A HREF="LICENSE">here</A>.</P>
++the full license by clicking <A HREF="http://www.gnu.org/licenses/gpl.txt">here</A>.</P>
+ 
+ <P>This license agreement is shown the first time the game is played. IT MUST NOT BE REMOVED UNDER ANY
+ CIRCUMSTANCES. DO NOT DISTRIBUTE THIS GAME IN ANY FORM WHERE THE USER DOES NOT SEE THE LICENSE.</P>

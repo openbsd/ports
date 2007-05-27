@@ -1,0 +1,95 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2007/05/27 15:34:55 kili Exp $
+--- makefile.orig	Sat May  5 16:22:48 2007
++++ makefile	Sun May 27 17:24:06 2007
+@@ -1,15 +1,14 @@
+ PROG = blobwars
+ PAKNAME = blobwars.pak
+-DOCS = doc/*
++DOCS = doc/*.{gif,png,html}
+ ICONS = icons/
+ 
+ VERSION = 1.07
+ RELEASE = 1
+ USEPAK = 1
+ 
+-PREFIX=$(DESTDIR)/usr
+-BINDIR = $(PREFIX)/games/
+-DATADIR = $(PREFIX)/share/games/blobwars/
++BINDIR = $(PREFIX)/bin/
++DATADIR = $(PREFIX)/share/$(PROG)/data/
+ DOCDIR = $(PREFIX)/share/doc/$(PROG)/
+ ICONDIR = $(PREFIX)/share/icons/hicolor/
+ DESKTOPDIR = $(PREFIX)/share/applications/
+@@ -19,7 +18,7 @@ CXXFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION)
+ CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DUNIX -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall
+ CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\"
+ CXXFLAGS += $(CFLAGS)
+-LIBS = `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
++LIBS = `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz -lintl -liconv
+ 
+ OBJS += aquaBoss.o bosses.o bullets.o cutscene.o
+ OBJS += CAudio.o CBoss.o CCollision.o CCutscene.o CData.o CEffect.o CEngine.o CEntity.o CFileData.o CGame.o 
+@@ -38,7 +37,7 @@ PAKOBJS = CFileData.o pak.o
+ LOCALE_MO = $(patsubst %.po,%.mo,$(wildcard locale/*.po))
+ 
+ # top-level rule to create the program.
+-all: $(PROG) pak $(LOCALE_MO)
++all: $(PROG) buildpak $(LOCALE_MO)
+ 
+ # compiling other source files.
+ %.o: src/%.cpp src/%.h src/defs.h src/defines.h src/headers.h
+@@ -61,35 +60,33 @@ mapeditor: $(MAPOBJS)
+ clean:
+ 	$(RM) $(GAMEOBJS) mapEditor.o pak.o $(PROG) $(PAKNAME) pak mapeditor $(LOCALE_MO)
+ 	
+-buildpak:
++buildpak: pak
+ 	./pak data gfx music sound $(PAKNAME)
+ 
+ # install
+ install:
++	$(BSD_INSTALL_PROGRAM_DIR) $(BINDIR)
++	$(BSD_INSTALL_DATA_DIR) $(DATADIR)
++	$(BSD_INSTALL_DATA_DIR) $(DOCDIR)
++	$(BSD_INSTALL_DATA_DIR) $(ICONDIR)16x16/apps
++	$(BSD_INSTALL_DATA_DIR) $(ICONDIR)32x32/apps
++	$(BSD_INSTALL_DATA_DIR) $(ICONDIR)64x64/apps
++	$(BSD_INSTALL_DATA_DIR) $(DESKTOPDIR)
+ 
+-	./pak data gfx music sound $(PAKNAME)
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR)
++	$(BSD_INSTALL_DATA) $(PAKNAME) $(DATADIR)
++	$(BSD_INSTALL_DATA) $(DOCS) $(DOCDIR)
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).png $(ICONDIR)32x32/apps
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG)-mini.png \
++		$(ICONDIR)16x16/apps/$(PROG).png
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG)-large.png \
++		$(ICONDIR)64x64/apps/$(PROG).png
++	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).desktop $(DESKTOPDIR)
+ 
+-	mkdir -p $(BINDIR)
+-	mkdir -p $(DATADIR)
+-	mkdir -p $(DOCDIR)
+-	mkdir -p $(ICONDIR)16x16/apps
+-	mkdir -p $(ICONDIR)32x32/apps
+-	mkdir -p $(ICONDIR)64x64/apps
+-	mkdir -p $(DESKTOPDIR)
+-
+-	install -o root -g games -m 755 $(PROG) $(BINDIR)$(PROG)
+-	install -o root -g games -m 644 $(PAKNAME) $(DATADIR)$(PAKNAME)
+-	install -o root -g games -m 644 $(DOCS) $(DOCDIR)
+-	cp $(ICONS)$(PROG).png $(ICONDIR)32x32/apps/
+-	cp $(ICONS)$(PROG)-mini.png $(ICONDIR)16x16/apps/$(PROG).png
+-	cp $(ICONS)$(PROG)-large.png $(ICONDIR)64x64/apps/$(PROG).png
+-	cp $(ICONS)$(PROG).desktop $(DESKTOPDIR)
+-
+ 	@for f in $(LOCALE_MO); do \
+ 		lang=`echo $$f | sed -e 's/^locale\///;s/\.mo$$//'`; \
+-		mkdir -p $(LOCALEDIR)$$lang/LC_MESSAGES; \
+-		echo "cp $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
+-		cp $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
++		$(BSD_INSTALL_DATA_DIR) $(LOCALEDIR)$$lang/LC_MESSAGES; \
++		$(BSD_INSTALL_DATA) $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
+ 	done
+ 
+ uninstall:
