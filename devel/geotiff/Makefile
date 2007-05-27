@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/26 20:23:47 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/27 19:07:09 jason Exp $
 
 COMMENT=	"GIS TIFF interchange library"
 
 DISTNAME=	libgeotiff-1.2.3
-CATEGORIES=    	devel
+CATEGORIES=    	devel geo
 SHARED_LIBS=	geotiff 1.2
 
 HOMEPAGE=	http://www.remotesensing.org/geotiff/geotiff.html

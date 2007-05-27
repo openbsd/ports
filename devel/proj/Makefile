@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/26 19:09:01 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/27 19:07:09 jason Exp $
 
 COMMENT=	"cartographic projection utilities"
 
 DISTNAME=	proj-4.4.9
-CATEGORIES=    	devel
+CATEGORIES=    	devel geo
 SHARED_LIBS=	proj 5.0
 
 DATUMGRID=	proj-datumgrid-1.3.zip
