@@ -1,0 +1,4 @@
+Psycopg2 is a PostgreSQL database adapter for the Python programming
+language.  It was written from scratch with the aim of being small,
+fast and stable. It supports the full Python DBAPI-2.0 and is thread
+safe.
