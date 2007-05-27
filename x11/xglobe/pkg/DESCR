@@ -5,11 +5,11 @@ XGlobe uses a world map image which is mapped to the globe.
 With a good map this can look very nice.
 It is possible to mark locations on the globe.
 
-As a bonus, this package includes an `OpenBSD markers' file, which collates
+Also look for the openbsd-markers package, which collates
 the location of many major developers and other people from the OpenBSD
 community.
 
-${HOMEPAGE} points to a fairly extensive collection of maps.
+Look at the home page of this project for a fairly extensive collection of maps.
 
 Available flavors:
 no_map
