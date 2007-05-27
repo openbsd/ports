@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/18 08:05:59 aanriot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/27 20:49:26 aanriot Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"determine the malware activity on a network"
@@ -46,6 +46,8 @@ FLAVORS=        prelude
 FLAVOR?=
 
 .if ${FLAVOR:L:Mprelude}
+BROKEN=		"phreading issues"
+
 LIB_DEPENDS+=   prelude.>=8::security/prelude/libprelude
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include  \
                 -I${LOCALBASE}/include/libprelude/" \
