@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:49:24 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/27 14:06:06 martynas Exp $
 
 COMMENT=	"RSS and Atom feeds parser written in Python"
 
-DISTNAME=	feedparser-4.1
+V=		4.1
+DISTNAME=	feedparser-${V}
 PKGNAME=	py-${DISTNAME}p0
-CATEGORIES=	textproc
+CATEGORIES=	textproc lang/python
 
 HOMEPAGE=	http://www.feedparser.org/
 
@@ -17,11 +18,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=feedparser/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		feedparser-tests-${V}${EXTRACT_SUFX}
 EXTRACT_SUFX=	.zip
 
 MODULES=	lang/python
-
-NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}
 
@@ -38,5 +39,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/*.{rdf,xml} ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/images/*.{gif,png} ${DOCSDIR}/images
+
+do-regress:
+	cd ${WRKSRC} && ${MODPY_BIN} feedparsertest.py
 
 .include <bsd.port.mk>
