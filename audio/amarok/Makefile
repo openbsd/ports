@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/05/27 20:37:58 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/05/27 21:30:05 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
@@ -7,7 +7,7 @@ HOMEPAGE=	http://amarok.kde.org/
 V=		1.4.5
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME=	amarok-$V
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 EXTRACT_SUFX=	.tar.bz2
 
 FLAVORS=	debug
@@ -24,7 +24,8 @@ WANTLIB=	stdc++ Xext Xrender z X11 Xau Xdmcp util m SM c \
 		pthread ICE idn freetype \
 		iconv pcre pcreposix \
 		jpeg png art_lgpl_2 intl usb \
-		gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+		gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
+		fam rpcsvc
 		
 LIB_DEPENDS+=	konqsidebarplugin::x11/kde/base3
 

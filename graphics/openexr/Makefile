@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/24 23:09:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/27 21:30:05 espie Exp $
 
 COMMENT-main=	'high dynamic range image format'
 COMMENT-tools=	'image viewing tools for OpenEXR'
@@ -12,7 +12,7 @@ V=		1.2.2
 DISTNAME=	OpenEXR-$V
 MULTI_PACKAGES=	-main -tools -doc
 PKGNAME-main=	OpenEXR-$Vp3
-PKGNAME-tools=  OpenEXR-tools-$V
+PKGNAME-tools=  OpenEXR-tools-$Vp0
 PKGNAME-doc=	OpenEXR-doc-$Vp0
 SHARED_LIBS=	Half	3.0	\
 		Iex	3.0	\
@@ -28,7 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS-tools=	fltk,fltk_gl::x11/fltk \
 			Half,Iex,IlmImf,Imath,::graphics/openexr
-WANTLIB-tools=		GL GLU X11 Xext c m stdc++ z
+WANTLIB-tools=		GL GLU X11 Xext c m stdc++ z Xau Xdmcp
 PKG_ARCH-doc=		*
 
 # Regress unhappy with separate build
