@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/22 18:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2007/05/27 09:13:56 jasper Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT-main=	"network file distribution system"
@@ -24,7 +24,6 @@ MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ \
-		ftp://ftp.nectec.or.th/pub/FreeBSD/ \
 		ftp://ftp.dnsbalance.ring.gr.jp/pub/FreeBSD/
 MASTER_SITES:=	${MASTER_SITES:=development/CVSup/snapshots/}
 

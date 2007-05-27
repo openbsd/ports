@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.110 2007/05/18 20:26:32 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.111 2007/05/27 09:13:56 jasper Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -190,8 +190,7 @@ MASTER_SITE_FREEBSD_LOCAL+=	\
 	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
 	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
 	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	ftp://ftp.nectec.or.th/pub/FreeBSD/ports/local-distfiles/
+	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/
 
 MASTER_SITE_PACKETSTORM+=	\
 	http://packetstorm.linuxsecurity.com/ \
