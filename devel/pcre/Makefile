@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/19 09:46:43 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/05/27 14:31:03 ajacoutot Exp $
 
 COMMENT=	"perl-compatible regular expression library"
 
 DISTNAME=	pcre-6.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=		pcre		1.0 \
 			pcrecpp		2.0 \
 			pcreposix	1.0
@@ -25,7 +25,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-utf8 \
+			--enable-unicode-properties
 
 USE_LIBTOOL=		Yes
 
