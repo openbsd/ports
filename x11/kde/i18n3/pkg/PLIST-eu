@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-eu,v 1.8 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-eu,v 1.9 2007/05/27 20:38:41 espie Exp $
 share/doc/HTML/eu/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -556,7 +556,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

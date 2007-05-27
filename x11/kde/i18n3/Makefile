@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.44 2007/05/27 20:38:40 espie Exp $
 
-LANGS=  af ar az bg bn br bs ca cs cy da de el en_GB eo es et eu fa \
-	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk nb nds nl nn \
-	pa pl pt pt_BR ro ru rw se sk sl sr sr@Latn ss sv ta tg tr uk uz \
-	vi zh_CN zh_TW
+LANGS=  af ar az bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
+	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
+	nl nn pa pl pt pt_BR ro ru rw se sk sl sr sr@Latn ss sv ta tg th \
+	tr uk uz vi zh_CN zh_TW
 
 # some extra vars to compact PLISTs
 I=index.docbook
@@ -13,7 +13,7 @@ FLAVOR?=fr
 SUBST_VARS=I C
 .if ${FLAVOR:L:Msr@latn}
 RUN_DEPENDS+=	::x11/kde/i18n3,sr
-FULLPKGNAME=kde-i18n-${FLAVOR}-${VERSION}p0
+FULLPKGNAME=kde-i18n-${FLAVOR}-${VERSION}
 .endif
 
 .for l in ${LANGS}
@@ -21,7 +21,7 @@ FLAVORS+=$l
 .  if ${FLAVOR:L:M${l:L}}
 DISTFILES=kde-i18n-$l-${VERSION}.tar.bz2
 WRKDIST=${WRKDIR}/kde-i18n-$l-${VERSION}
-FULLPKGNAME?=kde-i18n-$l-${VERSION}p0
+FULLPKGNAME?=kde-i18n-$l-${VERSION}
 COMMENT= "$l translations for KDE"
 PLIST=${PKGDIR}/PLIST-$l
 DOC=share/doc/HTML/$l/
@@ -33,9 +33,9 @@ SUBST_VARS+=DOC LOC
 
 DISTNAME=		kde-i18n-${VERSION}
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.6
+VERSION=		3.5.7
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
-MASTER_SITES=	${MASTER_SITE_KDE:=stable/3.5.6/src/kde-i18n/}
+MASTER_SITES=	${MASTER_SITE_KDE:=stable/3.5.7/src/kde-i18n/}
 
 BUILD_DEPENDS = ::x11/kde/libs3
 RUN_DEPENDS = ::x11/kde/libs3

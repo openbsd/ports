@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sl,v 1.10 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-sl,v 1.11 2007/05/27 20:38:41 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sl.xml
 share/apps/khangman/
@@ -905,7 +905,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

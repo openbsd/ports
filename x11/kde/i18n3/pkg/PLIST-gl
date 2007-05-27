@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gl,v 1.4 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-gl,v 1.5 2007/05/27 20:38:41 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -16,10 +16,12 @@ ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
 ${LOC}babelfish.mo
 ${LOC}blinken.mo
+${LOC}cervisia.mo
 ${LOC}charlatanui.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
+${LOC}cvsservice.mo
 ${LOC}dcoprss.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -85,6 +87,8 @@ ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbruch.mo
 ${LOC}kbstateapplet.mo
+${LOC}kbugbuster.mo
+${LOC}kcachegrind.mo
 ${LOC}kcalc.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
@@ -137,6 +141,7 @@ ${LOC}kcmlaptop.mo
 ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
+${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmedia.mo
 ${LOC}kcmnic.mo
@@ -151,6 +156,7 @@ ${LOC}kcmsmserver.mo
 ${LOC}kcmspellchecking.mo
 ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
+${LOC}kcmthinkpad.mo
 ${LOC}kcmusb.mo
 ${LOC}kcmview1394.mo
 ${LOC}kcmwifi.mo
@@ -163,6 +169,7 @@ ${LOC}kdcop.mo
 ${LOC}kdebugdialog.mo
 ${LOC}kdelibs.mo
 ${LOC}kdelibs_colors.mo
+${LOC}kdelirc.mo
 ${LOC}kdepasswd.mo
 ${LOC}kdepimresources.mo
 ${LOC}kdepimwizards.mo
@@ -170,8 +177,11 @@ ${LOC}kdeprint.mo
 ${LOC}kdeprint_part.mo
 ${LOC}kdeprintfax.mo
 ${LOC}kdesktop.mo
+${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevdesigner.mo
+${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdgantt.mo
 ${LOC}kdialog.mo
@@ -253,6 +263,8 @@ ${LOC}kgreet_classic.mo
 ${LOC}kgreet_winbind.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
+${LOC}khexedit.mo
+${LOC}khexedit2part.mo
 ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
@@ -287,6 +299,7 @@ ${LOC}kio_sftp.mo
 ${LOC}kio_sieve.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smtp.mo
+${LOC}kio_svn.mo
 ${LOC}kio_system.mo
 ${LOC}kio_tar.mo
 ${LOC}kio_thumbnail.mo
@@ -315,6 +328,12 @@ ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
 ${LOC}kmid.mo
+${LOC}kmilo_delli8k.mo
+${LOC}kmilo_generic.mo
+${LOC}kmilo_kvaio.mo
+${LOC}kmilo_powerbook.mo
+${LOC}kmilo_thinkpad.mo
+${LOC}kmilod.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
@@ -334,6 +353,7 @@ ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpaint.mo
 ${LOC}kolourpicker.mo
+${LOC}kompare.mo
 ${LOC}konnector_dummy.mo
 ${LOC}konnector_kabc.mo
 ${LOC}konnector_kcal.mo
@@ -369,8 +389,10 @@ ${LOC}krandr.mo
 ${LOC}krdb.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
+${LOC}kregexpeditor.mo
 ${LOC}kres_birthday.mo
 ${LOC}kres_blogging.mo
+${LOC}kres_bugzilla.mo
 ${LOC}kres_exchange.mo
 ${LOC}kres_featureplan.mo
 ${LOC}kres_groupware.mo
@@ -516,6 +538,7 @@ ${LOC}tippecanoe.mo
 ${LOC}trashapplet.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
+${LOC}umbrello.mo
 ${LOC}useraccount.mo
 ${LOC}validatorsplugin.mo
 ${LOC}wakeup.mo

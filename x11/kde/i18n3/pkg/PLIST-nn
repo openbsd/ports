@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nn,v 1.6 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-nn,v 1.7 2007/05/27 20:38:41 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/nn/
@@ -16,6 +16,7 @@ ${LOC}artscontrol.mo
 ${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}babelfish.mo
+${LOC}blinken.mo
 ${LOC}charlatanui.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo

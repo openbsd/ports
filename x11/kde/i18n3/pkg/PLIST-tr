@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tr,v 1.7 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-tr,v 1.8 2007/05/27 20:38:41 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/tr/
@@ -610,7 +610,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

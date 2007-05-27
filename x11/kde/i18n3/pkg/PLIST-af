@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-af,v 1.6 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-af,v 1.7 2007/05/27 20:38:41 espie Exp $
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 ${LOC}alsaplayerui.mo
@@ -375,7 +375,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo

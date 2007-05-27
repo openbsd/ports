@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt_BR,v 1.10 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-pt_BR,v 1.11 2007/05/27 20:38:41 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.pt_BR.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -616,6 +616,7 @@ ${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
+${DOC}khelpcenter/userguide/customizing-desktop.docbook
 ${DOC}khelpcenter/userguide/email.docbook
 ${DOC}khelpcenter/userguide/extragear-applications.docbook
 ${DOC}khelpcenter/userguide/file-sharing.docbook
@@ -1898,6 +1899,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -1985,12 +1987,6 @@ ${LOC}kolourpaint.mo
 ${LOC}kolourpicker.mo
 ${LOC}kommander.mo
 ${LOC}kompare.mo
-${LOC}konnector_dummy.mo
-${LOC}konnector_kabc.mo
-${LOC}konnector_kcal.mo
-${LOC}konnector_local.mo
-${LOC}konnector_qtopia.mo
-${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqsidebar_news.mo
@@ -2153,7 +2149,6 @@ ${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
 ${LOC}mf_konqplugin.mo
 ${LOC}minitoolsplugin.mo
-${LOC}multisynk.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo
@@ -2161,7 +2156,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

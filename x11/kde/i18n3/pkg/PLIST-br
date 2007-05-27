@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-br,v 1.4 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-br,v 1.5 2007/05/27 20:38:41 espie Exp $
 share/locale/br/
 share/locale/br/LC_MESSAGES/
 ${LOC}akregator.mo
@@ -542,7 +542,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en_GB,v 1.7 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-en_GB,v 1.8 2007/05/27 20:38:41 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.en_GB.xml
 share/apps/klettres/
 share/apps/klettres/en_GB/
@@ -80,6 +80,7 @@ ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
 ${DOC}kalarm/
+${DOC}kalarm/alarmmessage.png
 ${DOC}kalarm/common
 ${DOC}kalarm/editwindow.png
 ${DOC}kalarm/${C}
@@ -1290,7 +1291,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

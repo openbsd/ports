@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sk,v 1.10 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-sk,v 1.11 2007/05/27 20:38:41 espie Exp $
 @conflict kdeedu-<3.3
 share/apps/katepart/syntax/logohighlightstyle.sk.xml
 share/apps/klettres/
@@ -1329,12 +1329,6 @@ ${LOC}kolourpaint.mo
 ${LOC}kolourpicker.mo
 ${LOC}kommander.mo
 ${LOC}kompare.mo
-${LOC}konnector_dummy.mo
-${LOC}konnector_kabc.mo
-${LOC}konnector_kcal.mo
-${LOC}konnector_local.mo
-${LOC}konnector_qtopia.mo
-${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqsidebar_metabar.mo
@@ -1480,7 +1474,6 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
-${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo
@@ -1500,7 +1493,6 @@ ${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
 ${LOC}mf_konqplugin.mo
 ${LOC}minitoolsplugin.mo
-${LOC}multisynk.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo
@@ -1508,7 +1500,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

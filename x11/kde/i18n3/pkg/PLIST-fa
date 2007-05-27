@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fa,v 1.4 2006/10/12 23:12:18 espie Exp $
+@comment $OpenBSD: PLIST-fa,v 1.5 2007/05/27 20:38:41 espie Exp $
 share/locale/fa/COPYING
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
@@ -274,6 +274,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -363,12 +364,6 @@ ${LOC}kolourpaint.mo
 ${LOC}kolourpicker.mo
 ${LOC}kommander.mo
 ${LOC}kompare.mo
-${LOC}konnector_dummy.mo
-${LOC}konnector_kabc.mo
-${LOC}konnector_kcal.mo
-${LOC}konnector_local.mo
-${LOC}konnector_qtopia.mo
-${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqsidebar_metabar.mo
@@ -533,7 +528,6 @@ ${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
 ${LOC}mf_konqplugin.mo
 ${LOC}minitoolsplugin.mo
-${LOC}multisynk.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo
@@ -541,7 +535,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

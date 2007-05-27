@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nb,v 1.7 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-nb,v 1.8 2007/05/27 20:38:41 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -545,7 +545,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

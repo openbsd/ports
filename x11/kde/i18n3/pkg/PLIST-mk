@@ -1,4 +1,22 @@
-@comment $OpenBSD: PLIST-mk,v 1.10 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-mk,v 1.11 2007/05/27 20:38:41 espie Exp $
+share/apps/katepart/syntax/logohighlightstyle.mk_MK.xml
+share/apps/kturtle/
+share/apps/kturtle/data/
+share/apps/kturtle/data/logokeywords.mk_MK.xml
+share/apps/kturtle/examples/
+share/apps/kturtle/examples/mk_MK/
+share/apps/kturtle/examples/mk_MK/boiplatno.logo
+share/apps/kturtle/examples/mk_MK/cvekje.logo
+share/apps/kturtle/examples/mk_MK/izvitkano.logo
+share/apps/kturtle/examples/mk_MK/kde.logo
+share/apps/kturtle/examples/mk_MK/kvadrat.logo
+share/apps/kturtle/examples/mk_MK/kvadratii.logo
+share/apps/kturtle/examples/mk_MK/reklama.logo
+share/apps/kturtle/examples/mk_MK/slucajnoime.logo
+share/apps/kturtle/examples/mk_MK/strelka.logo
+share/apps/kturtle/examples/mk_MK/tablicamnozenje.logo
+share/apps/kturtle/examples/mk_MK/triagolnicii.logo
+share/apps/kturtle/examples/mk_MK/triagolnik.logo
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -266,6 +284,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kinetd.mo
@@ -351,12 +370,6 @@ ${LOC}kolf.mo
 ${LOC}kolourpaint.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
-${LOC}konnector_dummy.mo
-${LOC}konnector_kabc.mo
-${LOC}konnector_kcal.mo
-${LOC}konnector_local.mo
-${LOC}konnector_qtopia.mo
-${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqsidebar_metabar.mo
@@ -520,7 +533,6 @@ ${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
 ${LOC}mf_konqplugin.mo
 ${LOC}minitoolsplugin.mo
-${LOC}multisynk.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo

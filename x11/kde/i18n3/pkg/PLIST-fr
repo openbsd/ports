@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.12 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-fr,v 1.13 2007/05/27 20:38:41 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -186,9 +186,15 @@ ${DOC}kandy/${I}
 ${DOC}kappfinder/
 ${DOC}kappfinder/man-kappfinder.1.docbook
 ${DOC}karm/
+${DOC}karm/clipboard-history.png
 ${DOC}karm/common
+${DOC}karm/copy-this-task.png
+${DOC}karm/csvexport.png
+${DOC}karm/daterange.png
+${DOC}karm/idle-detect.png
 ${DOC}karm/${C}
 ${DOC}karm/${I}
+${DOC}karm/karm.png
 ${DOC}kasteroids/
 ${DOC}kasteroids/common
 ${DOC}kasteroids/${C}
@@ -754,6 +760,7 @@ ${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/control-center.docbook
 ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
+${DOC}khelpcenter/userguide/customizing-desktop.docbook
 ${DOC}khelpcenter/userguide/email.docbook
 ${DOC}khelpcenter/userguide/extragear-applications.docbook
 ${DOC}khelpcenter/userguide/file-sharing.docbook
@@ -818,6 +825,7 @@ ${DOC}khelpcenter/userguide/screen-captures.docbook
 ${DOC}khelpcenter/userguide/services.png
 ${DOC}khelpcenter/userguide/shared-sessions.docbook
 ${DOC}khelpcenter/userguide/shortcuts.docbook
+${DOC}khelpcenter/userguide/splash-screen.png
 ${DOC}khelpcenter/userguide/staff.docbook
 ${DOC}khelpcenter/userguide/standard-menu-entries.docbook
 ${DOC}khelpcenter/userguide/switching-sessions.docbook
@@ -1154,6 +1162,10 @@ ${DOC}kmplot/menu.docbook
 ${DOC}kmplot/reference.docbook
 ${DOC}kmplot/settingsdlg.png
 ${DOC}kmplot/using.docbook
+${DOC}knetattach/
+${DOC}knetattach/common
+${DOC}knetattach/${C}
+${DOC}knetattach/${I}
 ${DOC}knetworkconf/
 ${DOC}knetworkconf/common
 ${DOC}knetworkconf/${C}
@@ -1223,6 +1235,21 @@ ${DOC}kolf/
 ${DOC}kolf/common
 ${DOC}kolf/${C}
 ${DOC}kolf/${I}
+${DOC}kolourpaint/
+${DOC}kolourpaint/common
+${DOC}kolourpaint/image_balance.png
+${DOC}kolourpaint/image_emboss.png
+${DOC}kolourpaint/image_flatten.png
+${DOC}kolourpaint/image_flip.png
+${DOC}kolourpaint/image_invert.png
+${DOC}kolourpaint/image_reduce_colors.png
+${DOC}kolourpaint/image_resize_scale.png
+${DOC}kolourpaint/image_rotate.png
+${DOC}kolourpaint/image_skew.png
+${DOC}kolourpaint/image_soften_sharpen.png
+${DOC}kolourpaint/${C}
+${DOC}kolourpaint/${I}
+${DOC}kolourpaint/kolourpaint-main.png
 ${DOC}kompare/
 ${DOC}kompare/common
 ${DOC}kompare/${C}
@@ -1334,6 +1361,7 @@ ${DOC}kooka/kooka_gocr.png
 ${DOC}kooka/kooka_gocr_result.png
 ${DOC}kooka/kooka_mainctrl.png
 ${DOC}kopete/
+${DOC}kopete/chatstyle.docbook
 ${DOC}kopete/common
 ${DOC}kopete/${C}
 ${DOC}kopete/${I}
@@ -2449,7 +2477,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

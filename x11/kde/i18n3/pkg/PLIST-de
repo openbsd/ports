@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-de,v 1.12 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-de,v 1.13 2007/05/27 20:38:41 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -1200,7 +1200,6 @@ ${DOC}kmplot/install.docbook
 ${DOC}kmplot/introduction.docbook
 ${DOC}kmplot/main.png
 ${DOC}kmplot/man-kmplot.1.docbook
-${DOC}kmplot/menu.docbook
 ${DOC}kmplot/reference.docbook
 ${DOC}kmplot/settingsdlg.png
 ${DOC}kmplot/using.docbook
@@ -1366,10 +1365,6 @@ ${DOC}konq-plugins/mediaplayer/
 ${DOC}konq-plugins/mediaplayer/common
 ${DOC}konq-plugins/mediaplayer/${C}
 ${DOC}konq-plugins/mediaplayer/${I}
-${DOC}konq-plugins/smbmounter/
-${DOC}konq-plugins/smbmounter/common
-${DOC}konq-plugins/smbmounter/${C}
-${DOC}konq-plugins/smbmounter/${I}
 ${DOC}konq-plugins/uachanger/
 ${DOC}konq-plugins/uachanger/common
 ${DOC}konq-plugins/uachanger/${C}
@@ -1444,8 +1439,6 @@ ${DOC}korganizer/event-attendees.png
 ${DOC}korganizer/event-freebusy.png
 ${DOC}korganizer/event-general.png
 ${DOC}korganizer/event-recurrence.png
-${DOC}korganizer/exchange-plugin.docbook
-${DOC}korganizer/group-scheduling.docbook
 ${DOC}korganizer/${C}
 ${DOC}korganizer/${I}
 ${DOC}korganizer/korganizer-resource.png
@@ -1473,7 +1466,6 @@ ${DOC}kpat/common
 ${DOC}kpat/${C}
 ${DOC}kpat/${I}
 ${DOC}kpat/man-kpat.6.docbook
-${DOC}kpat/man.docbook
 ${DOC}kpdf/
 ${DOC}kpdf/common
 ${DOC}kpdf/configure.png
@@ -2464,12 +2456,6 @@ ${LOC}kolourpaint.mo
 ${LOC}kolourpicker.mo
 ${LOC}kommander.mo
 ${LOC}kompare.mo
-${LOC}konnector_dummy.mo
-${LOC}konnector_kabc.mo
-${LOC}konnector_kcal.mo
-${LOC}konnector_local.mo
-${LOC}konnector_qtopia.mo
-${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqsidebar_metabar.mo
@@ -2615,7 +2601,6 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
-${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo
@@ -2635,7 +2620,6 @@ ${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
 ${LOC}mf_konqplugin.mo
 ${LOC}minitoolsplugin.mo
-${LOC}multisynk.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo
@@ -2643,7 +2627,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-km,v 1.5 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-km,v 1.6 2007/05/27 20:38:41 espie Exp $
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 ${LOC}akregator.mo
@@ -62,7 +62,6 @@ ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
 ${LOC}katecppsymbolviewer.mo
-${LOC}katedefaultproject.mo
 ${LOC}katefiletemplates.mo
 ${LOC}katefll_initplugin.mo
 ${LOC}katefll_plugin.mo
@@ -372,6 +371,7 @@ ${LOC}kooka.mo
 ${LOC}kopete.mo
 ${LOC}korganizer.mo
 ${LOC}korn.mo
+${LOC}kpackage.mo
 ${LOC}kpager.mo
 ${LOC}kpartapp.mo
 ${LOC}kpat.mo
@@ -433,7 +433,6 @@ ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
 ${LOC}ktalkd.mo
-${LOC}ktaskbarapplet.mo
 ${LOC}kteatime.mo
 ${LOC}ktexteditor_autobookmarker.mo
 ${LOC}ktexteditor_docwordcompletion.mo
@@ -543,7 +542,6 @@ ${LOC}rellinks.mo
 ${LOC}searchbarplugin.mo
 ${LOC}superkaramba.mo
 ${LOC}synaescope.mo
-${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo
 ${LOC}trashapplet.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ro,v 1.10 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST-ro,v 1.11 2007/05/27 20:38:41 espie Exp $
 @conflict kde-i18n-de-<3.4
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -653,7 +653,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

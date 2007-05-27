@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ca,v 1.11 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-ca,v 1.12 2007/05/27 20:38:41 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.ca.xml
 share/apps/khangman/
@@ -713,6 +713,11 @@ ${DOC}kmessedwords/
 ${DOC}kmessedwords/common
 ${DOC}kmessedwords/${C}
 ${DOC}kmessedwords/${I}
+${DOC}kmix/
+${DOC}kmix/common
+${DOC}kmix/${C}
+${DOC}kmix/${I}
+${DOC}kmix/kmix-window.png
 ${DOC}kmoon/
 ${DOC}kmoon/common
 ${DOC}kmoon/${C}
@@ -838,6 +843,19 @@ ${DOC}kontact/
 ${DOC}kontact/common
 ${DOC}kontact/${C}
 ${DOC}kontact/${I}
+${DOC}korganizer/
+${DOC}korganizer/common
+${DOC}korganizer/event-attachments.png
+${DOC}korganizer/event-attendees.png
+${DOC}korganizer/event-freebusy.png
+${DOC}korganizer/event-general.png
+${DOC}korganizer/event-recurrence.png
+${DOC}korganizer/${C}
+${DOC}korganizer/${I}
+${DOC}korganizer/outlook-to-vcalendar.docbook
+${DOC}korganizer/plugins-chapter.docbook
+${DOC}korganizer/remotefile-resource.png
+${DOC}korganizer/todo-general.png
 ${DOC}kpackage/
 ${DOC}kpackage/common
 ${DOC}kpackage/${C}
@@ -875,6 +893,10 @@ ${DOC}krfb/
 ${DOC}krfb/common
 ${DOC}krfb/${C}
 ${DOC}krfb/${I}
+${DOC}ksig/
+${DOC}ksig/common
+${DOC}ksig/${C}
+${DOC}ksig/${I}
 ${DOC}ksim/
 ${DOC}ksim/common
 ${DOC}ksim/${C}
@@ -1432,12 +1454,6 @@ ${LOC}kolourpaint.mo
 ${LOC}kolourpicker.mo
 ${LOC}kommander.mo
 ${LOC}kompare.mo
-${LOC}konnector_dummy.mo
-${LOC}konnector_kabc.mo
-${LOC}konnector_kcal.mo
-${LOC}konnector_local.mo
-${LOC}konnector_qtopia.mo
-${LOC}konnector_remote.mo
 ${LOC}konqsidebar_delicious.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqsidebar_metabar.mo
@@ -1583,7 +1599,6 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
-${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo
@@ -1603,7 +1618,6 @@ ${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
 ${LOC}mf_konqplugin.mo
 ${LOC}minitoolsplugin.mo
-${LOC}multisynk.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo
@@ -1611,7 +1625,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

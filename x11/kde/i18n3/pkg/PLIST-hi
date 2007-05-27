@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hi,v 1.5 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-hi,v 1.6 2007/05/27 20:38:41 espie Exp $
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -454,7 +454,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo
 ${LOC}searchbarplugin.mo

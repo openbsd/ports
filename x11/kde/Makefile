@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2007/04/05 18:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2007/05/27 20:38:40 espie Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -28,6 +28,7 @@
      SUBDIR+=i18n3,bs
      SUBDIR+=i18n3,ca
      SUBDIR+=i18n3,cs
+     SUBDIR+=i18n3,csb
      SUBDIR+=i18n3,cy
      SUBDIR+=i18n3,da
      SUBDIR+=i18n3,de
@@ -56,6 +57,8 @@
      SUBDIR+=i18n3,lt
      SUBDIR+=i18n3,lv
      SUBDIR+=i18n3,mk
+     SUBDIR+=i18n3,mn
+     SUBDIR+=i18n3,ms
      SUBDIR+=i18n3,nb
      SUBDIR+=i18n3,nds
      SUBDIR+=i18n3,nl
@@ -76,6 +79,7 @@
      SUBDIR+=i18n3,sv
      SUBDIR+=i18n3,ta
      SUBDIR+=i18n3,tg
+     SUBDIR+=i18n3,th
      SUBDIR+=i18n3,tr
      SUBDIR+=i18n3,uk
      SUBDIR+=i18n3,uz

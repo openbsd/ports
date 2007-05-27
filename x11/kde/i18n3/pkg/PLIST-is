@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-is,v 1.8 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-is,v 1.9 2007/05/27 20:38:41 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -272,6 +272,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kimagemapeditor.mo
@@ -538,7 +539,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

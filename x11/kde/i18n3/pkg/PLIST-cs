@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cs,v 1.10 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-cs,v 1.11 2007/05/27 20:38:41 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/cs.txt
@@ -427,7 +427,6 @@ ${LOC}kfile_dvi.mo
 ${LOC}kfile_exr.mo
 ${LOC}kfile_flac.mo
 ${LOC}kfile_folder.mo
-${LOC}kfile_font.mo
 ${LOC}kfile_gif.mo
 ${LOC}kfile_html.mo
 ${LOC}kfile_ico.mo
@@ -524,6 +523,7 @@ ${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
+${LOC}kitchensync.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
@@ -726,6 +726,7 @@ ${LOC}libkickermenu_recentdocs.mo
 ${LOC}libkickermenu_remotemenu.mo
 ${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
+${LOC}libkitchensync.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkmime.mo
 ${LOC}libkonq.mo
@@ -753,7 +754,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

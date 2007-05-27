@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tg,v 1.7 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-tg,v 1.8 2007/05/27 20:38:41 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -158,6 +158,7 @@ ${LOC}kcmperformance.mo
 ${LOC}kcmprintmgr.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
+${LOC}kcmshell.mo
 ${LOC}kcmsmartcard.mo
 ${LOC}kcmsmserver.mo
 ${LOC}kcmspellchecking.mo
@@ -400,6 +401,7 @@ ${LOC}ksplashthemes.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
+${LOC}kstyle_highcontrast_config.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
@@ -492,7 +494,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

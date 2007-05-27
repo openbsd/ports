@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-da,v 1.9 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-da,v 1.10 2007/05/27 20:38:41 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/da.txt
@@ -1418,6 +1418,10 @@ ${DOC}kshisen/
 ${DOC}kshisen/common
 ${DOC}kshisen/${C}
 ${DOC}kshisen/${I}
+${DOC}ksig/
+${DOC}ksig/common
+${DOC}ksig/${C}
+${DOC}ksig/${I}
 ${DOC}ksim/
 ${DOC}ksim/common
 ${DOC}ksim/${C}
@@ -1699,11 +1703,6 @@ ${DOC}lskat/
 ${DOC}lskat/common
 ${DOC}lskat/${C}
 ${DOC}lskat/${I}
-${DOC}multisynk/
-${DOC}multisynk/common
-${DOC}multisynk/${C}
-${DOC}multisynk/${I}
-${DOC}multisynk/konnectors-chapter.docbook
 ${DOC}noatun/
 ${DOC}noatun/common
 ${DOC}noatun/${C}
@@ -2317,7 +2316,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

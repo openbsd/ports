@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh_CN,v 1.7 2007/01/28 17:23:20 espie Exp $
+@comment $OpenBSD: PLIST-zh_CN,v 1.8 2007/05/27 20:38:41 espie Exp $
 share/doc/HTML/zh_CN/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -196,6 +196,7 @@ ${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
+${LOC}kdjview.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
@@ -203,6 +204,7 @@ ${LOC}kedit.mo
 ${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
+${LOC}kfaxview.mo
 ${LOC}kfifteenapplet.mo
 ${LOC}kfile_au.mo
 ${LOC}kfile_avi.mo
@@ -416,6 +418,7 @@ ${LOC}krfb.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
+${LOC}ksayit.mo
 ${LOC}kscd.mo
 ${LOC}kscreensaver.mo
 ${LOC}kshisen.mo
@@ -458,6 +461,7 @@ ${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}kttsd.mo
 ${LOC}ktuberling.mo
+${LOC}kturtle.mo
 ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
@@ -475,6 +479,7 @@ ${LOC}kviewshell.mo
 ${LOC}kviewviewer.mo
 ${LOC}kvoctrain.mo
 ${LOC}kwalletmanager.mo
+${LOC}kwatchgnupg.mo
 ${LOC}kweather.mo
 ${LOC}kwifimanager.mo
 ${LOC}kwin.mo
@@ -531,7 +536,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo
