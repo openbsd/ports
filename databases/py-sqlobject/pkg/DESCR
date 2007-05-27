@@ -1,0 +1,5 @@
+SQLObject is a popular Object Relational Manager for providing an
+object interface to your database, with tables as classes, rows as
+instances, and columns as attributes.  SQLObject includes a
+Python-object-based query language that makes SQL more abstract,
+and provides substantial database independence for applications.
