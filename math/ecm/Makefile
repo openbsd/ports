@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/14 18:52:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/27 04:59:07 pvalchev Exp $
 
 COMMENT=	"elliptic curve method (ECM) factorization library"
 
-DISTNAME=	ecm-6.1.1
+DISTNAME=	ecm-6.1.2
 CATEGORIES=	math
 
 HOMEPAGE=	http://gforge.inria.fr/projects/ecm/
 
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/912/
+MASTER_SITES=	http://gforge.inria.fr/frs/download.php/1498/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
