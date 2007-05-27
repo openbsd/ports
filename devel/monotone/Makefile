@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/03 13:23:44 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/27 10:43:48 alek Exp $
 
 COMMENT=	"distributed version control system"
 
-VERSION=	0.34
+VERSION=	0.35
 DISTNAME=	monotone-${VERSION}
 CATEGORIES=	devel
 
@@ -19,6 +19,7 @@ WANTLIB += c m pthread stdc++ z
 
 MASTER_SITES=	${HOMEPAGE}downloads/${VERSION}/
 
+MODULES=	devel/gettext
 BUILD_DEPENDS=	:boost-headers-*:devel/boost,-main
 LIB_DEPENDS=	boost_filesystem.>=0,boost_regex.>=0::devel/boost,-libs 
 

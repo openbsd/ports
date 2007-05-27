@@ -1,27 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/03 13:23:44 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/27 10:43:48 alek Exp $
 bin/mtn
 @info info/monotone.info
 share/doc/monotone/
 share/doc/monotone/monotone.html
-share/locale/
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/monotone.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/monotone.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/monotone.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/monotone.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/monotone.mo
-share/locale/pt_BR/
-share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/monotone.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/monotone.mo
