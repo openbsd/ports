@@ -1,39 +1,12 @@
-$OpenBSD: patch-config_f_h,v 1.2 2006/12/02 14:36:23 kurt Exp $
---- config_f.h.orig	Fri Mar  4 08:46:04 2005
-+++ config_f.h	Thu Nov 30 21:16:44 2006
-@@ -69,7 +69,11 @@
-  *		if you don't have <nl_types.h>, you don't want
-  *		to define this.
-  */
-+#ifdef __OpenBSD__
-+#define NLS_CATALOGS
-+#else
- #undef NLS_CATALOGS
-+#endif
- 
- /*
-  * LOGINFIRST   Source ~/.login before ~/.cshrc
-@@ -96,12 +100,12 @@
- /*
-  * DOTLAST      put "." last in the default path, for security reasons
-  */
--#define DOTLAST
-+#undef DOTLAST
- 
- /*
-  * NODOT	Don't put "." in the default path, for security reasons
-  */
--#undef NODOT
-+#define NODOT
- 
- /*
-  * AUTOLOGOUT	tries to determine if it should set autologout depending
-@@ -149,7 +153,7 @@
+$OpenBSD: patch-config_f_h,v 1.3 2007/05/27 18:04:47 naddy Exp $
+--- config_f.h.orig	Sat May 26 15:34:04 2007
++++ config_f.h	Sat May 26 15:36:05 2007
+@@ -143,7 +143,7 @@
   *		This can be much slower and no memory statistics will be
   *		provided.
   */
--#if defined(__MACHTEN__) || defined(PURIFY) || defined(MALLOC_TRACE) || defined(_OSD_POSIX) || defined(__MVS__)
-+#if defined(__MACHTEN__) || defined(PURIFY) || defined(MALLOC_TRACE) || defined(_OSD_POSIX) || defined(__MVS__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+-#if defined(__MACHTEN__) || defined(PURIFY) || defined(MALLOC_TRACE) || defined(_OSD_POSIX) || defined(__MVS__) || defined (__linux__)
++#if defined(__MACHTEN__) || defined(PURIFY) || defined(MALLOC_TRACE) || defined(_OSD_POSIX) || defined(__MVS__) || defined (__linux__) || defined (__OpenBSD__)
  # define SYSMALLOC
  #else
  # undef SYSMALLOC

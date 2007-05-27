@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2006/02/10 11:33:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2007/05/27 18:04:47 naddy Exp $
 @pkgpath shells/tcsh,static
 @shell bin/tcsh
 @man man/man1/tcsh.1
@@ -8,6 +8,7 @@ share/nls/de_CH.ISO_8859-1/tcsh.cat
 share/nls/de_DE.ISO_8859-1/tcsh.cat
 share/nls/el_GR.ISO_8859-7/tcsh.cat
 share/nls/es_ES.ISO_8859-1/tcsh.cat
+share/nls/et_EE.ISO-8859-1/tcsh.cat
 share/nls/fi_FI.ISO_8859-1/tcsh.cat
 share/nls/fr_BE.ISO_8859-1/tcsh.cat
 share/nls/fr_CA.ISO_8859-1/tcsh.cat
@@ -16,5 +17,6 @@ share/nls/fr_FR.ISO_8859-1/tcsh.cat
 share/nls/it_CH.ISO_8859-1/tcsh.cat
 share/nls/it_IT.ISO_8859-1/tcsh.cat
 share/nls/ja_JP.EUC/tcsh.cat
+share/nls/pl_PL.ISO_8859-2/tcsh.cat
 share/nls/ru_RU.KOI8-R/tcsh.cat
 share/nls/uk_UA.KOI8-U/tcsh.cat
