@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.895 2007/05/25 13:07:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.896 2007/05/27 11:53:39 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2393,7 +2393,7 @@ describe:
 .  else
 	@echo -n "${PREFIX${_S}}|"
 .  endif
-	@echo -n ${_COMMENT${_S}}"|"; \
+	@echo -n ${_COMMENT${_S}:S/^"//:S/"$//:S/^'//:S/'$//:Q}"|"; \
 	if [ -f ${DESCR${_S}} ]; then \
 		echo -n "${DESCR${_S}:S,^${PORTSDIR}/,,}|"; \
 	else \
