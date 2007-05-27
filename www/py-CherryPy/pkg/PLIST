@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/24 12:51:27 alek Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/05/27 15:25:37 martynas Exp $
+@conflict py-cherrypy2-*
 lib/python${MODPY_VERSION}/site-packages/cherrypy/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.pyc
