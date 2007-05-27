@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests-Makefile_in,v 1.1.1.1 2007/05/27 19:33:15 jasper Exp $
+--- tests/Makefile.in.orig	Mon Apr 30 01:53:15 2007
++++ tests/Makefile.in	Sun May 27 12:11:39 2007
+@@ -55,7 +55,7 @@ test_objects_LDADD = $(LDADD)
+ am_test_parser_OBJECTS = test-parser.$(OBJEXT)
+ test_parser_OBJECTS = $(am_test_parser_OBJECTS)
+ test_parser_LDADD = $(LDADD)
+-DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
++DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir) -I${TRUEPREFIX}/include
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+@@ -131,7 +131,7 @@ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ -lcheck
+ LIBGNUTLS_CFLAGS = @LIBGNUTLS_CFLAGS@
+ LIBGNUTLS_CONFIG = @LIBGNUTLS_CONFIG@
+ LIBGNUTLS_LIBS = @LIBGNUTLS_LIBS@

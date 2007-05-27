@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/27 19:33:15 jasper Exp $
+@lib lib/libloudmouth-1.so.${LIBloudmouth-1_VERSION}
