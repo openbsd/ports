@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/27 13:53:35 steven Exp $
+${P5SITE}/Image/
+${P5SITE}/Image/MetaData/
+${P5SITE}/Image/MetaData/JPEG/
+${P5SITE}/Image/MetaData/JPEG.pm
+${P5SITE}/Image/MetaData/JPEG.pod
+${P5SITE}/Image/MetaData/JPEG/Backtrace.pm
+${P5SITE}/Image/MetaData/JPEG/JPEG_app13.pl
+${P5SITE}/Image/MetaData/JPEG/JPEG_app1_exif.pl
+${P5SITE}/Image/MetaData/JPEG/JPEG_comments.pl
+${P5SITE}/Image/MetaData/JPEG/JPEG_various.pl
+${P5SITE}/Image/MetaData/JPEG/MakerNotes.pod
+${P5SITE}/Image/MetaData/JPEG/Record.pm
+${P5SITE}/Image/MetaData/JPEG/Segment.pm
+${P5SITE}/Image/MetaData/JPEG/Segment_dumpers.pl
+${P5SITE}/Image/MetaData/JPEG/Segment_parsers.pl
+${P5SITE}/Image/MetaData/JPEG/Structures.pod
+${P5SITE}/Image/MetaData/JPEG/Tables.pm
+${P5SITE}/Image/MetaData/JPEG/Tables_makernotes.pl
+${P5SITE}/Image/MetaData/JPEG/TagLists.pod
+@man man/man3p/Image::MetaData::JPEG.3p
+@man man/man3p/Image::MetaData::JPEG::MakerNotes.3p
+@man man/man3p/Image::MetaData::JPEG::Structures.3p
+@man man/man3p/Image::MetaData::JPEG::TagLists.3p

@@ -1,0 +1,4 @@
+This package provides an interface for reading and interpreting the content
+of JPEG segments, in particular of those segments containing metadata (like
+TIFF headers, thumbnails, Exif info, IPTC info, comments, ...). Some
+segments can even be modified and rewritten to disk.
