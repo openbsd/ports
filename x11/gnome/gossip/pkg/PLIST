@@ -1,0 +1,144 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/27 19:38:47 jasper Exp $
+bin/gossip
+lib/bonobo/
+lib/bonobo/servers/
+lib/bonobo/servers/GNOME_Peekaboo_Applet.server
+libexec/peekaboo-applet
+share/applications/gossip.desktop
+share/examples/gossip/
+@sample ${SYSCONFDIR}/gnome/
+share/examples/gossip/sound/
+@sample ${SYSCONFDIR}/gnome/sound/
+share/examples/gossip/sound/events/
+@sample ${SYSCONFDIR}/gnome/sound/events/
+share/examples/gossip/sound/events/gossip.soundlist
+@sample ${SYSCONFDIR}/gnome/sound/gossip.soundlist
+share/gnome/help/gossip/
+share/gnome/help/gossip/C/
+share/gnome/help/gossip/C/figures/
+share/gnome/help/gossip/C/figures/gossip-available.png
+share/gnome/help/gossip/C/figures/gossip-away.png
+share/gnome/help/gossip/C/figures/gossip-busy.png
+share/gnome/help/gossip/C/figures/gossip-extended-away.png
+share/gnome/help/gossip/C/figures/gossip-offline.png
+share/gnome/help/gossip/C/figures/gossip-personal-details.png
+share/gnome/help/gossip/C/figures/gossip-roster.png
+share/gnome/help/gossip/C/gossip.xml
+share/gnome/help/gossip/C/legal.xml
+share/gnome/help/gossip/es/
+share/gnome/help/gossip/es/figures/
+share/gnome/help/gossip/es/figures/gossip-available.png
+share/gnome/help/gossip/es/figures/gossip-away.png
+share/gnome/help/gossip/es/figures/gossip-busy.png
+share/gnome/help/gossip/es/figures/gossip-extended-away.png
+share/gnome/help/gossip/es/figures/gossip-offline.png
+share/gnome/help/gossip/es/figures/gossip-personal-details.png
+share/gnome/help/gossip/es/figures/gossip-roster.png
+share/gnome/help/gossip/es/gossip.xml
+share/gnome/help/gossip/sv/
+share/gnome/help/gossip/sv/figures/
+share/gnome/help/gossip/sv/figures/gossip-available.png
+share/gnome/help/gossip/sv/figures/gossip-away.png
+share/gnome/help/gossip/sv/figures/gossip-busy.png
+share/gnome/help/gossip/sv/figures/gossip-extended-away.png
+share/gnome/help/gossip/sv/figures/gossip-offline.png
+share/gnome/help/gossip/sv/figures/gossip-personal-details.png
+share/gnome/help/gossip/sv/figures/gossip-roster.png
+share/gnome/help/gossip/sv/gossip.xml
+share/gossip/
+share/gossip/GNOME_Peekaboo_Applet.xml
+share/gossip/chat.glade
+share/gossip/file-transfer.glade
+share/gossip/gossip-account.dtd
+share/gossip/gossip-available.png
+share/gossip/gossip-away.png
+share/gossip/gossip-busy.png
+share/gossip/gossip-chatroom.dtd
+share/gossip/gossip-contact-groups.dtd
+share/gossip/gossip-contact.dtd
+share/gossip/gossip-extended-away.png
+share/gossip/gossip-group-message.png
+share/gossip/gossip-log.xsl
+share/gossip/gossip-logo.png
+share/gossip/gossip-message.png
+share/gossip/gossip-offline.png
+share/gossip/gossip-pending.png
+share/gossip/gossip-status-presets.dtd
+share/gossip/gossip-typing.png
+share/gossip/group-chat.glade
+share/gossip/main.glade
+share/gossip/protocols/
+share/gossip/protocols/aim.protocol
+share/gossip/protocols/gossip-protocol.dtd
+share/gossip/protocols/icq.protocol
+share/gossip/protocols/msn.protocol
+share/gossip/protocols/yahoo.protocol
+share/gossip/vcard_16.png
+share/gossip/vcard_48.png
+share/icons/hicolor/16x16/apps/gossip.png
+share/icons/hicolor/22x22/apps/gossip.png
+share/icons/hicolor/32x32/apps/gossip.png
+share/icons/hicolor/48x48/apps/gossip.png
+share/icons/hicolor/scalable/apps/gossip.svg
+share/locale/ar/LC_MESSAGES/gossip.mo
+share/locale/az/LC_MESSAGES/gossip.mo
+share/locale/bg/LC_MESSAGES/gossip.mo
+share/locale/ca/LC_MESSAGES/gossip.mo
+share/locale/cs/LC_MESSAGES/gossip.mo
+share/locale/cy/LC_MESSAGES/gossip.mo
+share/locale/da/LC_MESSAGES/gossip.mo
+share/locale/de/LC_MESSAGES/gossip.mo
+share/locale/dz/LC_MESSAGES/gossip.mo
+share/locale/el/LC_MESSAGES/gossip.mo
+share/locale/en_CA/LC_MESSAGES/gossip.mo
+share/locale/en_GB/LC_MESSAGES/gossip.mo
+share/locale/eo/LC_MESSAGES/gossip.mo
+share/locale/es/LC_MESSAGES/gossip.mo
+share/locale/eu/LC_MESSAGES/gossip.mo
+share/locale/fi/LC_MESSAGES/gossip.mo
+share/locale/fr/LC_MESSAGES/gossip.mo
+share/locale/ga/LC_MESSAGES/gossip.mo
+share/locale/hr/LC_MESSAGES/gossip.mo
+share/locale/hu/LC_MESSAGES/gossip.mo
+share/locale/it/LC_MESSAGES/gossip.mo
+share/locale/lt/LC_MESSAGES/gossip.mo
+share/locale/ml/LC_MESSAGES/gossip.mo
+share/locale/ms/LC_MESSAGES/gossip.mo
+share/locale/nb/LC_MESSAGES/gossip.mo
+share/locale/ne/LC_MESSAGES/gossip.mo
+share/locale/nl/LC_MESSAGES/gossip.mo
+share/locale/pl/LC_MESSAGES/gossip.mo
+share/locale/pt/LC_MESSAGES/gossip.mo
+share/locale/pt_BR/LC_MESSAGES/gossip.mo
+share/locale/ru/LC_MESSAGES/gossip.mo
+share/locale/sq/LC_MESSAGES/gossip.mo
+share/locale/sr/LC_MESSAGES/gossip.mo
+share/locale/sr@Latn/LC_MESSAGES/gossip.mo
+share/locale/sv/LC_MESSAGES/gossip.mo
+share/locale/tr/LC_MESSAGES/gossip.mo
+share/locale/uk/LC_MESSAGES/gossip.mo
+share/locale/vi/LC_MESSAGES/gossip.mo
+share/locale/zh_CN/LC_MESSAGES/gossip.mo
+share/locale/zh_HK/LC_MESSAGES/gossip.mo
+share/locale/zh_TW/LC_MESSAGES/gossip.mo
+share/omf/gossip/
+share/omf/gossip/gossip-C.omf
+share/omf/gossip/gossip-es.omf
+share/omf/gossip/gossip-sv.omf
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gossip/*.schemas > /dev/null
+share/schemas/gossip/
+share/schemas/gossip/gossip.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gossip/*.schemas > /dev/null
+share/sounds/
+share/sounds/gossip/
+share/sounds/gossip/chat1.wav
+share/sounds/gossip/chat2.wav
+share/sounds/gossip/offline.wav
+share/sounds/gossip/online.wav
+share/sounds/gossip/send.wav
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+@exec %D/bin/scrollkeeper-update -q
+@unexec %D/bin/scrollkeeper-update -q
