@@ -1,4 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/09/12 04:29:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/05/27 14:45:33 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/native_libs.txt
+lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/__init__.pyc
@@ -23,21 +29,13 @@ lib/python${MODPY_VERSION}/site-packages/MySQLdb/converters.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/converters.pyc
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/cursors.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/cursors.pyc
-lib/python${MODPY_VERSION}/site-packages/MySQLdb/mxdatetimes.py
-lib/python${MODPY_VERSION}/site-packages/MySQLdb/mxdatetimes.pyc
-lib/python${MODPY_VERSION}/site-packages/MySQLdb/pytimes.py
-lib/python${MODPY_VERSION}/site-packages/MySQLdb/pytimes.pyc
-lib/python${MODPY_VERSION}/site-packages/MySQLdb/sets.py
-lib/python${MODPY_VERSION}/site-packages/MySQLdb/sets.pyc
-lib/python${MODPY_VERSION}/site-packages/MySQLdb/stringtimes.py
-lib/python${MODPY_VERSION}/site-packages/MySQLdb/stringtimes.pyc
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/release.py
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/release.pyc
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/times.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/times.pyc
 lib/python${MODPY_VERSION}/site-packages/_mysql.so
 lib/python${MODPY_VERSION}/site-packages/_mysql_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/_mysql_exceptions.pyc
 share/doc/MySQL-python/
-share/doc/MySQL-python/MySQLdb.html
-share/doc/MySQL-python/README.html
-share/doc/MySQL-python/index.html
-share/doc/MySQL-python/pep-0249.html
+share/doc/MySQL-python/FAQ.txt
+share/doc/MySQL-python/MySQLdb.txt
