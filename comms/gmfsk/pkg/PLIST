@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/28 18:47:06 jason Exp $
+bin/gmfsk
+share/gnome/
+share/gnome/help/
+share/gnome/help/gmfsk/
+share/gnome/help/gmfsk/C/
+share/gnome/help/gmfsk/C/fdl-appendix.xml
+share/gnome/help/gmfsk/C/figures/
+share/gnome/help/gmfsk/C/figures/gmfsk_start_window.png
+share/gnome/help/gmfsk/C/figures/note.png
+share/gnome/help/gmfsk/C/figures/tip.png
+share/gnome/help/gmfsk/C/figures/warning.png
+share/gnome/help/gmfsk/C/gmfsk.xml
+share/gnome/help/gmfsk/C/legal.xml
+share/omf/
+share/omf/gmfsk/
+share/omf/gmfsk/gmfsk-C.omf
+share/pixmaps/
+share/pixmaps/gmfsk/
+share/pixmaps/gmfsk/gnome-screenshot.png
+share/pixmaps/gmfsk/mfsk.png
+share/pixmaps/gmfsk/pause.xpm
+share/pixmaps/gmfsk/rx.xpm
+share/pixmaps/gmfsk/tune.xpm
+share/pixmaps/gmfsk/tx.xpm

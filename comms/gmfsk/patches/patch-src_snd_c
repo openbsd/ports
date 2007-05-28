@@ -1,0 +1,188 @@
+$OpenBSD: patch-src_snd_c,v 1.1.1.1 2007/05/28 18:47:06 jason Exp $
+--- src/snd.c.orig	Sat Apr 17 13:24:11 2004
++++ src/snd.c	Wed Nov 23 11:04:58 2005
+@@ -36,7 +36,12 @@
+ #include <fcntl.h>
+ #include <time.h>
+ 
+-#include <sys/soundcard.h>
++#ifdef __OpenBSD__
++# include <sys/audioio.h>
++#else
++# include <sys/soundcard.h>
++#endif
++
+ #include <sys/ioctl.h>
+ 
+ #include "snd.h"
+@@ -139,9 +144,11 @@ static gint opensnd(gint direction)
+ 	audio_buf_info info;
+ 	gchar *str;
+ #endif
+-	guint sndparam, wanted;
++	audio_info_t ainfo;
+ 	gint fd;
+ 
++	AUDIO_INITINFO(&ainfo);
++
+ 	if (!config.device) {
+ 		snderr("opensnd: device not set");
+ 		return -1;
+@@ -166,17 +173,11 @@ static gint opensnd(gint direction)
+ #endif
+ 
+ 	/* non-blocking open */
+-	if ((fd = open(config.device, direction | O_NONBLOCK)) < 0) {
++	if ((fd = open(config.device, direction)) < 0) {
+ 		snderr("opensnd: open: %s: %m", config.device);
+ 		return -1;
+ 	}
+ 
+-	/* make it block again - (SNDCTL_DSP_NONBLOCK ???) */
+-	if (fcntl(fd, F_SETFL, fcntl(fd, F_GETFL) & ~O_NONBLOCK) < 0) {
+-		snderr("opensnd: ioctl: SNDCTL_DSP_NONBLOCK: %m");
+-		goto error;
+-	}
+-
+ #ifdef SND_DEBUG
+ 	if (config.flags & SND_FLAG_8BIT)
+ 		str = "8 bit unsigned";
+@@ -186,20 +187,15 @@ static gint opensnd(gint direction)
+ 	dprintf("Setting sample format (%s)...\n", str);
+ #endif
+ 
+-	if (config.flags & SND_FLAG_8BIT)
+-		wanted = AFMT_U8;	/* 8 bit unsigned */
+-	else
+-		wanted = AFMT_S16_NE;	/* 16 bit signed, native byteorder */
+-
+-	sndparam = wanted;
+-	if (ioctl(fd, SNDCTL_DSP_SETFMT, &sndparam) < 0) {
+-		snderr("opensnd: ioctl: SNDCTL_DSP_SETFMT: %m");
+-		goto error;
++	if (config.flags & SND_FLAG_8BIT) {
++		ainfo.record.encoding = ainfo.play.encoding =
++		    AUDIO_ENCODING_ULINEAR;
++		ainfo.record.precision = ainfo.play.precision = 8;
++	} else {
++		ainfo.record.encoding = ainfo.play.encoding =
++		    AUDIO_ENCODING_SLINEAR;
++		ainfo.record.precision = ainfo.play.precision = 16;
+ 	}
+-	if (sndparam != wanted) {
+-		snderr("opensnd: Requested sample format not supported");
+-		goto error;
+-	}
+ 
+ #ifdef SND_DEBUG
+ 	dprintf("Setting %s audio...\n",
+@@ -207,61 +203,34 @@ static gint opensnd(gint direction)
+ #endif
+ 
+ 	if (config.flags & SND_FLAG_STEREO)
+-		wanted = 1;		/* stereo */
++		ainfo.record.channels = ainfo.play.channels = 2;
+ 	else
+-		wanted = 0;		/* mono */
++		ainfo.record.channels = ainfo.play.channels = 1;
+ 
+-	sndparam = wanted;
+-	if (ioctl(fd, SNDCTL_DSP_STEREO, &sndparam) < 0) {
+-		snderr("opensnd: ioctl: SNDCTL_DSP_STEREO: %m");
+-		goto error;
+-	}
+-	if (sndparam != wanted) {
+-		snderr("opensnd: Cannot set %s audio",
+-		       (config.flags & SND_FLAG_STEREO) ? "stereo" : "mono");
+-		goto error;
+-	}
+-
+ #ifdef SND_DEBUG
+ 	dprintf("Setting samplerate to %u...\n", config.samplerate);
+ #endif
+ 
+-	sndparam = config.samplerate;
+-	if (ioctl(fd, SNDCTL_DSP_SPEED, &sndparam) < 0) {
+-		snderr("opensnd: ioctl: SNDCTL_DSP_SPEED: %m");
+-		goto error;
+-	}
+-	if (sndparam != config.samplerate) {
+-		g_warning("Sampling rate is %u, requested %u\n",
+-			  sndparam,
+-			  config.samplerate);
+-	}
+-	config.samplerate = sndparam;
++	ainfo.record.sample_rate = ainfo.play.sample_rate = config.samplerate;
+ 
+ 	/* Request a buffer size of 512 samples */
+-	if (config.flags & SND_FLAG_8BIT)
+-		sndparam = 0x00000009;
+-	else
+-		sndparam = 0x0000000A;
++	ainfo.blocksize = 512;
++	if ((config.flags & SND_FLAG_8BIT) == 0)
++		ainfo.blocksize *= 2;
+ 
+ 	if (config.flags & SND_FLAG_STEREO)
+-		sndparam += 1;
++		ainfo.blocksize *= 2;
+ 
+ 	/* Unlimited amount of buffers for RX, four for TX */
+ 	if (direction == O_RDONLY)
+-		sndparam |= 0x7FFF0000;
++		ainfo.hiwat = 65536;
+ 	else
+-		sndparam |= 0x00040000;
++		ainfo.hiwat = 4;
+ 
+ #ifdef SND_DEBUG
+ 	dprintf("Setting fragment size (param = 0x%08X)...\n", sndparam);
+ #endif
+ 
+-	if (ioctl(fd, SNDCTL_DSP_SETFRAGMENT, &sndparam) < 0) {
+-		snderr("opensnd: ioctl: SNDCTL_DSP_SETFRAGMENT: %m");
+-		goto error;
+-	}
+-
+ #ifdef SND_DEBUG
+ 	if (direction == O_RDONLY) {
+ 		if (ioctl(fd, SNDCTL_DSP_GETISPACE, &info) < 0) {
+@@ -281,6 +250,27 @@ static gint opensnd(gint direction)
+ 	dprintf("-- \n");
+ #endif
+ 
++	if (ioctl(fd, AUDIO_SETINFO, &ainfo) == -1) {
++		snderr("sndopen: setinfo failed: %m");
++		goto error;
++	}
++
++	if (ioctl(fd, AUDIO_GETINFO, &ainfo) == -1) {
++		snderr("sndopen: getinfo failed: %m");
++		goto error;
++	}
++
++#ifdef SND_DEBUG
++	printf("samplerate: play %u / record %u / want %u\n",
++	    ainfo.play.sample_rate, ainfo.record.sample_rate,
++	    config.samplerate);
++	printf("channels: play %u / record %u / want %u\n",
++	    ainfo.play.channels, ainfo.record.channels,
++	    (config.flags & SND_FLAG_STEREO) ? 2 : 1);
++#endif
++
++	config.samplerate = ainfo.play.sample_rate;
++
+ 	return fd;
+ 
+ error:
+@@ -453,8 +443,8 @@ void sound_close(void)
+ 
+ 	/* never close stdin/out/err */
+ 	if (snd_fd > 2) {
+-		if (ioctl(snd_fd, SNDCTL_DSP_SYNC, 0) < 0)
+-			snderr("sound_close: ioctl: SNDCTL_DSP_SYNC: %m");
++		if (ioctl(snd_fd, AUDIO_FLUSH, 0) < 0)
++			snderr("sound_close: ioctl: AUDIO_FLUSH: %m");
+ 		close(snd_fd);
+ 		snd_fd = -1;
+ 	}
