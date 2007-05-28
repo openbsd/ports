@@ -1,0 +1,60 @@
+$OpenBSD: patch-src_interface_c,v 1.1.1.1 2007/05/28 17:19:37 jason Exp $
+--- src/interface.c.orig	Tue May 30 14:50:50 2006
++++ src/interface.c	Fri Aug 18 12:59:11 2006
+@@ -87,6 +87,16 @@
+ #include <Xm/XmAll.h>
+ #include <X11/cursorfont.h>
+ 
++#ifdef __OpenBSD__
++#include <paths.h>
++#endif
++
++#ifdef _PATH_UUCPLOCK
++#define	LOCK_DIR	_PATH_UUCPLOCK
++#else
++#define	LOCK_DIR	"/var/lock"
++#endif
++
+ #include "xastir.h"
+ #include "symbols.h"
+ #include "main.h"
+@@ -4209,7 +4219,7 @@ int serial_detach(int port) {
+         }
+ 
+         // Delete lockfile
+-        xastir_snprintf(fn, sizeof(fn), "/var/lock/LCK..%s", get_device_name_only(port_data[port].device_name));
++        xastir_snprintf(fn, sizeof(fn), "%s/LCK..%s", LOCK_DIR, get_device_name_only(port_data[port].device_name));
+         if (debug_level & 2)
+             fprintf(stderr,"Delete lock file %s\n",fn);
+ 
+@@ -4283,7 +4293,7 @@ int serial_init (int port) {
+ 
+ 
+     // check for lock file
+-    xastir_snprintf(fn, sizeof(fn), "/var/lock/LCK..%s",
++    xastir_snprintf(fn, sizeof(fn), "%s/LCK..%s", LOCK_DIR,
+             get_device_name_only(port_data[port].device_name));
+     if (filethere(fn) == 1) {
+         // Also look for pid of other process and see if it is a valid lock
+@@ -4354,8 +4364,20 @@ int serial_init (int port) {
+         return (-1);
+     }
+ 
++#ifdef NMEADISC
++    if (port_data[port].device_type == DEVICE_SERIAL_GPS) {
++        int ldisc = NMEADISC, ret;
++
++        ENABLE_SETUID_PRIVILEGE;
++        ret = ioctl(port_data[port].channel, TIOCSETD, &ldisc);
++        DISABLE_SETUID_PRIVILEGE;
++        if (ret == -1)
++	    fprintf(stderr, "couldn't set nmea discipline on port %d", port);
++    }
++#endif
++
+     // Attempt to create the lock file
+-    xastir_snprintf(fn, sizeof(fn), "/var/lock/LCK..%s", get_device_name_only(port_data[port].device_name));
++    xastir_snprintf(fn, sizeof(fn), "%s/LCK..%s", LOCK_DIR, get_device_name_only(port_data[port].device_name));
+     if (debug_level & 2)
+         fprintf(stderr,"Create lock file %s\n",fn);
+ 
