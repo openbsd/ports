@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/28 17:46:57 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/28 20:05:29 jason Exp $
 
 COMMENT=	"NEC2++ antenna simulator"
 
@@ -10,6 +10,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Jason Wright <jason@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
