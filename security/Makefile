@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2007/05/28 07:27:32 steven Exp $
+# $OpenBSD: Makefile,v 1.184 2007/05/28 12:35:15 steven Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -37,7 +37,6 @@
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
-     SUBDIR += gaim-otr
      SUBDIR += gnupg
      SUBDIR += gnutls
      SUBDIR += gpa
