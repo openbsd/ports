@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.5 2005/04/20 22:07:39 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2007/05/28 16:30:23 kili Exp $
 
-PKGNAME?=	${DISTNAME:C/-([0-9])$/_\1/}
+PKGNAME?=	${DISTNAME:C/-([0-9])$/_\1/}p0
 
 DIST_SUBDIR?=	aspell
 
@@ -18,5 +18,5 @@ NO_REGRESS?=	Yes
 
 CONFIGURE_STYLE?=simple
 
-BUILD_DEPENDS?=	::textproc/aspell/core
-RUN_DEPENDS?=	${BUILD_DEPENDS}
+RUN_DEPENDS?=	::textproc/aspell/core
+BUILD_DEPENDS?=	${RUN_DEPENDS}
