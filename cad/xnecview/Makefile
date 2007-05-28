@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/28 17:49:39 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/28 20:06:24 jason Exp $
 
 COMMENT=	"NEC2 antenna simulator visualizer"
 
@@ -14,6 +14,7 @@ HOMEPAGE=	http://www.cs.utwente.nl/~ptdeboer/ham/xnecview/
 
 MAINTAINER=	Jason Wright <jason@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
