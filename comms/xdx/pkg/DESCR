@@ -1,0 +1,11 @@
+xdx - tcp/ip DX-cluster client for Amateur Radio
+================================================
+ 
+Xdx is a DX-cluster client which shows a list with DX announcements and a
+separate text widget with WWV, WCY, "To ALL" and other server messages.
+
+What is a DX Cluster?
+=====================
+A DX Cluster is a means for Amateur (Ham) Radio operators to tell each other,
+in realtime, about DX stations (other interesting or rare Amateur Radio 
+stations all over the world).
