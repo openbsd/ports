@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/05/28 17:16:33 jason Exp $
+--- Makefile.orig	Thu Mar  9 11:28:59 2006
++++ Makefile	Sat May 26 11:56:23 2007
+@@ -1,5 +1,6 @@
+ # Makefile for colrdx, copyright 2005, 2006 Joop Stakenborg <pg4i@amsat.org>
+ 
++PREFIX?=/usr/local
+ VERSION=1.02
+ 
+ all: colrdx
+@@ -9,8 +10,8 @@ colrdx: colrdx.c
+ 	-lncurses -o colrdx
+ 
+ install:
+-	install -s -o root -g root colrdx $(DESTDIR)/usr/bin
+-	install -m 0644 colrdx.1 $(DESTDIR)/usr/share/man/man1
++	install -s -m 755 colrdx $(PREFIX)/bin
++	install -m 644 colrdx.1 $(PREFIX)/man/man1
+ 	
+ clean:
+ 	rm -f colrdx *~ build colrdx-$(VERSION).tar.gz

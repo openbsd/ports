@@ -1,0 +1,4 @@
+colrdx is a simple tcp/ip dx cluster client with color support,
+mostly based on colrconv by Tomi Manninen.  This client is mostly
+suited for low-end systems as it is text based and does not depend
+on any X based gui.
