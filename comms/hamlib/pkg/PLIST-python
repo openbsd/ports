@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-python,v 1.1.1.1 2007/05/28 17:07:27 jason Exp $
+%%SHARED%%
+lib/_Hamlib.a
+lib/_Hamlib.la
+lib/python/
+lib/python/Hamlib.py
+lib/python/Hamlib.pyc
+lib/python/Hamlib.pyo

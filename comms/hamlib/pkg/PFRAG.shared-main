@@ -1,0 +1,33 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2007/05/28 17:07:27 jason Exp $
+lib/hamlib-alinco.so
+lib/hamlib-aor.so
+lib/hamlib-drake.so
+lib/hamlib-dummy.so
+lib/hamlib-easycomm.so
+lib/hamlib-flexradio.so
+lib/hamlib-fodtrack.so
+lib/hamlib-icom.so
+lib/hamlib-jrc.so
+lib/hamlib-kachina.so
+lib/hamlib-kenwood.so
+lib/hamlib-kit.so
+lib/hamlib-lowe.so
+lib/hamlib-microtune.so
+lib/hamlib-pcr.so
+lib/hamlib-racal.so
+lib/hamlib-rft.so
+lib/hamlib-rotorez.so
+lib/hamlib-rpcrig.so
+lib/hamlib-rpcrot.so
+lib/hamlib-sartek.so
+lib/hamlib-skanti.so
+lib/hamlib-tapr.so
+lib/hamlib-tentec.so
+lib/hamlib-tuner.so
+lib/hamlib-uniden.so
+lib/hamlib-winradio.so
+lib/hamlib-wj.so
+lib/hamlib-yaesu.so
+@lib lib/libhamlib++.so.${LIBhamlib++_VERSION}
+@lib lib/libhamlib.so.${LIBhamlib_VERSION}
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Hamlib/Hamlib.so
