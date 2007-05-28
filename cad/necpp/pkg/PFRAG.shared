@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/28 17:46:57 jason Exp $
+@lib lib/libnecpp.so.${LIBnecpp_VERSION}

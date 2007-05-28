@@ -1,0 +1,10 @@
+The Numerical Electromagnetics Code (NEC-2) is a comprehensive
+package for the analysis of the electromagnetic properties of
+structures. It can analyse radiating properties i.e. antenna
+gain, as well as scattering properties (radar cross section)
+of structures. NEC-2 was originally written in FORTRAN.
+
+NEC2++ is an extensive rewrite of NEC-2 in C++ by Tim Molteno.
+This work was helped tremendously by the work of N. Kyriazis
+who ported NEC-2 to C. The new portions of code are licensed
+under the GNU Public License (GPL).
