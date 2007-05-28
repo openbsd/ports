@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/27 13:47:55 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/28 14:47:54 aanriot Exp $
 
 PKG_ARCH=	*
 
@@ -6,7 +6,7 @@ COMMENT-main=	"${MAINLANG} dictionary for Mozilla"
 V=		1.0
 NAME=		mozilla-dicts
 PKGNAME=	${NAME}-${MAINLANG}-${V}
-PKGNAME-main=	${NAME}-${MAINLANG}-${V}p1
+PKGNAME-main=	${NAME}-${MAINLANG}-${V}p2
 
 CATEGORIES=	textproc
 
@@ -42,14 +42,11 @@ MULTI_PACKAGES=	-main
 .for i in ${OTHERLANGS}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${V}p1
+PKGNAME-$i=	${NAME}-$i-${V}p2
 COMMENT-$i=	$i dictionary for Mozilla
 .endfor
 
 SUBST_VARS=	MAINLANG
-
-# use the same for all subpackages
-MESSAGE=	${PKGDIR}/MESSAGE
 
 do-extract:
 .for i in ${MAINLANG} ${OTHERLANGS}
