@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2006/11/20 09:34:56 robert Exp $
+# $OpenBSD: Makefile,v 1.61 2007/05/28 22:50:53 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -35,6 +35,7 @@
      SUBDIR += openoffice,cleanobj
      SUBDIR += scintilla
      SUBDIR += scite
+     SUBDIR += subtitleeditor
      SUBDIR += ted
      SUBDIR += texmaker
      SUBDIR += textedit
