@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/26 19:56:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/05/28 12:43:34 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"multi-protocol instant messaging client"
 
-DISTNAME=	pidgin-2.0.0
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	pidgin-2.0.1
 SHARED_LIBS +=	jabber               0.0      # .0.0
 SHARED_LIBS +=	oscar                0.0      # .0.0
 SHARED_LIBS +=	purple               0.0      # .0.0
@@ -50,7 +49,7 @@ LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= --disable-gevolution \
 		 --disable-gnutls \
 		 --disable-nss \

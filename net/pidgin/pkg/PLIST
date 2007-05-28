@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/12 15:19:36 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/28 12:43:34 steven Exp $
 @conflict gaim-*
 bin/finch
 bin/pidgin
@@ -362,6 +362,7 @@ share/pixmaps/pidgin/animations/16/typing1.png
 share/pixmaps/pidgin/animations/16/typing2.png
 share/pixmaps/pidgin/animations/16/typing3.png
 share/pixmaps/pidgin/animations/16/typing4.png
+share/pixmaps/pidgin/animations/16/typing5.png
 share/pixmaps/pidgin/arrow-down.xpm
 share/pixmaps/pidgin/arrow-left.xpm
 share/pixmaps/pidgin/arrow-right.xpm
@@ -589,6 +590,7 @@ share/pixmaps/pidgin/protocols/16/
 share/pixmaps/pidgin/protocols/16/aim.png
 share/pixmaps/pidgin/protocols/16/bonjour.png
 share/pixmaps/pidgin/protocols/16/gadu-gadu.png
+share/pixmaps/pidgin/protocols/16/google-talk.png
 share/pixmaps/pidgin/protocols/16/icq.png
 share/pixmaps/pidgin/protocols/16/irc.png
 share/pixmaps/pidgin/protocols/16/jabber.png
@@ -604,6 +606,7 @@ share/pixmaps/pidgin/protocols/22/
 share/pixmaps/pidgin/protocols/22/aim.png
 share/pixmaps/pidgin/protocols/22/bonjour.png
 share/pixmaps/pidgin/protocols/22/gadu-gadu.png
+share/pixmaps/pidgin/protocols/22/google-talk.png
 share/pixmaps/pidgin/protocols/22/icq.png
 share/pixmaps/pidgin/protocols/22/irc.png
 share/pixmaps/pidgin/protocols/22/jabber.png

@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_h_in,v 1.1.1.1 2007/05/12 15:19:35 alek Exp $
---- config.h.in.orig	Mon Apr 30 05:39:14 2007
-+++ config.h.in	Tue May  1 23:19:10 2007
-@@ -154,6 +154,12 @@
+$OpenBSD: patch-config_h_in,v 1.2 2007/05/28 12:43:34 steven Exp $
+--- config.h.in.orig	Fri May 25 12:28:50 2007
++++ config.h.in	Mon May 28 01:57:22 2007
+@@ -150,6 +150,12 @@
  /* Define to 1 if you have the <nss.h> header file. */
  #undef HAVE_NSS_H
  

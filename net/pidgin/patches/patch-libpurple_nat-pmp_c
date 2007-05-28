@@ -1,11 +1,12 @@
-$OpenBSD: patch-libpurple_nat-pmp_c,v 1.1.1.1 2007/05/12 15:19:36 alek Exp $
---- libpurple/nat-pmp.c.orig	Sat May  5 14:55:20 2007
-+++ libpurple/nat-pmp.c	Sat May  5 14:55:27 2007
-@@ -53,6 +53,7 @@
- 
- #include <errno.h>
+$OpenBSD: patch-libpurple_nat-pmp_c,v 1.2 2007/05/28 12:43:34 steven Exp $
+--- libpurple/nat-pmp.c.orig	Fri May 25 12:28:21 2007
++++ libpurple/nat-pmp.c	Mon May 28 01:58:28 2007
+@@ -42,6 +42,8 @@
+ #include <sys/socket.h>
+ #endif
  
 +#undef NET_RT_DUMP
- #ifdef NET_RT_DUMP
- 
- #define PMP_DEBUG	1
++
+ /* We will need sysctl() and NET_RT_DUMP, both of which are not present
+  * on all platforms, to continue. */
+ #if defined(HAVE_SYS_SYSCTL_H) && defined(NET_RT_DUMP)
