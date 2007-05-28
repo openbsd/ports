@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2007/05/21 11:34:07 steven Exp $
+$OpenBSD: patch-configure,v 1.3 2007/05/28 18:24:49 steven Exp $
 --- configure.orig	Fri May  4 12:50:56 2007
-+++ configure	Fri May 18 11:53:30 2007
++++ configure	Sun May 27 18:00:05 2007
 @@ -6639,7 +6639,7 @@ fi
  
  
@@ -10,3 +10,18 @@ $OpenBSD: patch-configure,v 1.2 2007/05/21 11:34:07 steven Exp $
  OUTPUT_PLUGINS="disk_writer null"
  EFFECT_PLUGINS="audiocompress ladspa voice_removal sndstretch stereo_plugin echo_plugin"
  GENERAL_PLUGINS="song_change alarm"
+@@ -7791,11 +7791,11 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+   { echo "$as_me:$LINENO: result: SSE2 yes" >&5
+ echo "${ECHO_T}SSE2 yes" >&6; }
+ 
+-cat >>confdefs.h <<\_ACEOF
++#cat >>confdefs.h <<\_ACEOF
+ #define HAVE_SSE2 1
+-_ACEOF
++#_ACEOF
+ 
+-SIMD_CFLAGS=-msse2
++#SIMD_CFLAGS=-msse2
+ else
+   echo "$as_me: program exited with status $ac_status" >&5
+ echo "$as_me: failed program was:" >&5
