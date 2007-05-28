@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/28 16:16:55 jcs Exp $
+${P5SITE}/Asterisk/
+${P5SITE}/Asterisk.pm
+${P5SITE}/Asterisk/AGI.pm
+${P5SITE}/Asterisk/Manager.pm
+${P5SITE}/Asterisk/Outgoing.pm
+${P5SITE}/Asterisk/QCall.pm
+${P5SITE}/Asterisk/Voicemail.pm
+@man man/man3p/Asterisk::AGI.3p
+@man man/man3p/Asterisk::Manager.3p
+@man man/man3p/Asterisk::Outgoing.3p
+@man man/man3p/Asterisk::Voicemail.3p
