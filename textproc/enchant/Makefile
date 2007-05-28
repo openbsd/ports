@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/10 19:11:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/28 23:21:21 ajacoutot Exp $
 
 COMMENT=	"generic spell checking library/wrapper"
 
 DISTNAME=	enchant-1.3.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	enchant              4.0      # .4.0
 CATEGORIES=	textproc
 
@@ -27,7 +28,8 @@ MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ENV=	ac_cv_lib_aspell_new_aspell_config=yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm"
 CONFIGURE_ARGS=	--enable-aspell \
 		--with-aspell-prefix=${LOCALBASE} \
 		--enable-ispell \
