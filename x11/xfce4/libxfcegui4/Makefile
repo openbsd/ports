@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/24 07:06:35 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/05/28 19:53:06 steven Exp $
 
 COMMENT=	"widget library for xfce4"
 V=		4.4.1
 DISTNAME=	libxfcegui4-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=  xfcegui4             4.0      # .6.5
 
 HOMEPAGE=	http://www.xfce.org/

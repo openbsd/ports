@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/10 06:48:42 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/05/28 19:53:07 steven Exp $
 %%SHARED%%
 lib/xfce4/
 lib/xfce4/mcs-plugins/
@@ -90,3 +90,5 @@ share/xfce4/doc/it/images/keyboard_settings.png
 share/xfce4/doc/it/images/mouse_settings.png
 share/xfce4/doc/it/images/user_interface_settings.png
 share/xfce4/doc/it/xfce-mcs-plugins.html
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

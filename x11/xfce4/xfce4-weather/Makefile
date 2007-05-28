@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/16 14:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/05/28 19:53:07 steven Exp $
 
 COMMENT=	"see temperature/weather conditions on the xfce4 panel"
 
 V=		0.6.0
 DISTNAME=	xfce4-weather-plugin-${V}
-PKGNAME=	xfce4-weather-${V}
+PKGNAME=	xfce4-weather-${V}p0
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin
 MAINTAINER=	Landry Breuil <gaston@gcu.info>

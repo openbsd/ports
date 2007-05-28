@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/08 13:49:25 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/28 19:53:07 steven Exp $
 bin/Terminal
 bin/terminal
 libexec/TerminalHelp
@@ -160,3 +160,5 @@ share/locale/zh_CN/LC_MESSAGES/Terminal.mo
 share/locale/zh_TW/LC_MESSAGES/Terminal.mo
 share/pixmaps/
 share/pixmaps/terminal.xpm
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/10 19:18:15 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/05/28 19:53:07 steven Exp $
 bin/xfce4-popup-notes
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
@@ -24,3 +24,5 @@ share/locale/nl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-notes-plugin.mo
 share/xfce4/panel-plugins/xfce4-notes-plugin.desktop
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

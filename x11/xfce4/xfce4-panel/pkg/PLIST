@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/05/14 06:44:36 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/05/28 19:53:07 steven Exp $
 @conflict xfce4-datetime-*
 @conflict xfce4-iconbox-*
 @conflict xfce4-showdesktop-*
@@ -175,3 +175,5 @@ share/xfce4/panel-plugins/showdesktop.desktop
 share/xfce4/panel-plugins/systray.desktop
 share/xfce4/panel-plugins/tasklist.desktop
 share/xfce4/panel-plugins/windowlist.desktop
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/05/24 07:06:35 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/05/28 19:53:06 steven Exp $
 @conflict xfce4-panel-<4.4.1
 %%SHARED%%
 include/xfce4/
@@ -149,3 +149,5 @@ share/locale/tr/LC_MESSAGES/libxfcegui4.mo
 share/locale/uk/LC_MESSAGES/libxfcegui4.mo
 share/locale/zh_CN/LC_MESSAGES/libxfcegui4.mo
 share/locale/zh_TW/LC_MESSAGES/libxfcegui4.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

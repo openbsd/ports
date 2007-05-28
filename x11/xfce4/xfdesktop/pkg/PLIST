@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/05/08 16:10:48 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/05/28 19:53:07 steven Exp $
 %%SHARED%%
 bin/xfce4-menueditor
 bin/xfce4-popup-menu
@@ -169,3 +169,5 @@ share/xfce4/doc/fr/images/xfdesktop-editor.png
 share/xfce4/doc/fr/images/xfdesktop-list.png
 share/xfce4/doc/fr/xfdesktop.html
 share/xfce4/panel-plugins/xfce4-menu.desktop
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

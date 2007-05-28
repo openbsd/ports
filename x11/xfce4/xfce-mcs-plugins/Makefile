@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/16 14:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/05/28 19:53:07 steven Exp $
 
 COMMENT=	"settings manager plug-ins for xfce4"
 
 V=		4.4.1
 DISTNAME=	xfce-mcs-plugins-${V}
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.xfce.org/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>

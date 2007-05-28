@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/16 14:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/28 19:53:06 steven Exp $
 
 COMMENT=	"extension library for xfce4"
 
 V=		0.3.2
 DISTNAME=	exo-${V}
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=  exo-0.3              4.0      # .4.0
 SHARED_LIBS +=  exo-hal-0.3          4.0      # .4.0

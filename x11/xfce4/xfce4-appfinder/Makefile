@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/16 14:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/05/28 19:53:07 steven Exp $
 
 COMMENT=	"xfce4 application finder"
 
 V=		4.4.1
 DISTNAME=	xfce4-appfinder-${V}
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.xfce.org/projects/xfce4-appfinder/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
