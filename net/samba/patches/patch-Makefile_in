@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2007/04/06 14:20:35 ajacoutot Exp $
---- Makefile.in.orig	Sun Feb  4 19:59:28 2007
-+++ Makefile.in	Fri Apr  6 14:47:46 2007
-@@ -103,11 +103,13 @@ LOCKDIR = @lockdir@
+$OpenBSD: patch-Makefile_in,v 1.8 2007/05/28 20:03:01 mbalmer Exp $
+--- Makefile.in.orig	Wed Apr 25 11:39:00 2007
++++ Makefile.in	Thu May 17 10:17:30 2007
+@@ -109,11 +109,13 @@ LOCKDIR = @lockdir@
  # the directory where pid files go
  PIDDIR = @piddir@
  
@@ -17,34 +17,34 @@ $OpenBSD: patch-Makefile_in,v 1.7 2007/04/06 14:20:35 ajacoutot Exp $
  LIBMSRPC_MAJOR=0
  LIBMSRPC_MINOR=1
  
-@@ -1099,11 +1101,10 @@ bin/smbwrapper.@SHLIBEXT@: $(PICOBJS) bin/.dummy
- 		$(KRB5LIBS) $(LDAP_LIBS) \
- 		@SONAMEFLAG@`basename $@`
+@@ -1152,11 +1154,10 @@ bin/libaddns.a: proto_exists $(LIBADDNS_OBJ)
+ 	@echo Linking libaddns non-shared library $@
+ 	@-$(AR) -rc $@ $(LIBADDNS_OBJ)
  
--bin/libsmbclient.@SHLIBEXT@: $(LIBSMBCLIENT_PICOBJS)
-+bin/libsmbclient.@SHLIBEXT@.$(LIBsmbclient_VERSION): $(LIBSMBCLIENT_PICOBJS)
+-bin/libsmbclient.@SHLIBEXT@: proto_exists $(LIBSMBCLIENT_OBJ)
++bin/libsmbclient.@SHLIBEXT@.$(LIBsmbclient_VERSION): proto_exists $(LIBSMBCLIENT_OBJ)
  	@echo Linking libsmbclient shared library $@
- 	@$(SHLD) $(LDSHFLAGS) -o $@ $(LIBSMBCLIENT_PICOBJS) $(LDFLAGS) $(LIBS) \
--		$(KRB5LIBS) $(LDAP_LIBS) \
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(LIBSMBCLIENT_OBJ) $(LIBS) \
+-		$(KRB5LIBS) $(LDAP_LIBS) $(NSCD_LIBS) \
 -		@SONAMEFLAG@`basename $@`.$(LIBSMBCLIENT_MAJOR)
-+		$(KRB5LIBS) $(LDAP_LIBS)
++		$(KRB5LIBS) $(LDAP_LIBS) $(NSCD_LIBS)
  
- bin/libsmbclient.a: $(LIBSMBCLIENT_PICOBJS)
+ bin/libsmbclient.a: proto_exists $(LIBSMBCLIENT_OBJ)
  	@echo Linking libsmbclient non-shared library $@
-@@ -1119,10 +1120,9 @@ bin/libsmbsharemodes.a: $(LIBSMBSHAREMODES_PICOBJS)
+@@ -1172,10 +1173,9 @@ bin/libsmbsharemodes.a: proto_exists $(LIBSMBSHAREMODE
  	@echo Linking libsmbsharemodes non-shared library $@
- 	@-$(AR) -rc $@ $(LIBSMBSHAREMODES_PICOBJS)
+ 	@-$(AR) -rc $@ $(LIBSMBSHAREMODES_OBJ)
  
--bin/libmsrpc.@SHLIBEXT@: $(CAC_PICOBJS)
-+bin/libmsrpc.@SHLIBEXT@.$(LIBmsrpc_VERSION): $(CAC_PICOBJS)
+-bin/libmsrpc.@SHLIBEXT@: proto_exists $(CAC_OBJ)
++bin/libmsrpc.@SHLIBEXT@.$(LIBmsrpc_VERSION): proto_exists $(CAC_OBJ)
  	@echo Linking libmsrpc shared library $@
--	@$(SHLD) $(LDSHFLAGS) -o $@ $(CAC_PICOBJS) $(LDFLAGS) $(LIBS) \
+-	@$(SHLD) $(LDSHFLAGS) -o $@ $(CAC_OBJ) $(LIBS) \
 -	@SONAMEFLAG@`basename $@`.$(LIBMSRPC_MAJOR)
-+	@$(SHLD) $(LDSHFLAGS) -o $@ $(CAC_PICOBJS) $(LDFLAGS) $(LIBS)
++	@$(SHLD) $(LDSHFLAGS) -o $@ $(CAC_OBJ) $(LIBS)
  
- bin/libmsrpc.a: $(CAC_PICOBJS)
+ bin/libmsrpc.a: proto_exists $(CAC_OBJ)
  	@echo Linking libmsrpc non-shared library $@
-@@ -1478,14 +1478,14 @@ installswat: installdirs installmsg
+@@ -1618,14 +1618,14 @@ installswat: installdirs installmsg
  
  installclientlib: installdirs libsmbclient
  	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS) $(DESTDIR) $(LIBDIR)

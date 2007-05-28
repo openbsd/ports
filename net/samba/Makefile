@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.81 2007/04/06 14:20:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2007/05/28 20:03:01 mbalmer Exp $
 
 COMMENT-main=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
-DISTNAME=		samba-3.0.24
-PKGNAME-main=		${DISTNAME}p1
+DISTNAME=		samba-3.0.25a
+PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
-SHARED_LIBS=		smbclient	0.3 \
-			msrpc		0.2
+SHARED_LIBS=		smbclient	1.0 \
+			msrpc		1.0
 
 CATEGORIES=	net
 
@@ -43,8 +43,7 @@ SAMBA_LOGDIR=   /var/log
 SUBST_VARS=     CONFDIR LOCALBASE SYSCONFDIR
 
 SEPARATE_BUILD= concurrent
-AUTOCONF_VERSION= 2.59
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --localstatedir="/var" \
 		--sbindir="${PREFIX}/libexec" \
 		--with-configdir="${CONFDIR}" \

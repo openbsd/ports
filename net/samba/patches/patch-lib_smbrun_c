@@ -1,21 +1,21 @@
-$OpenBSD: patch-lib_smbrun_c,v 1.4 2007/04/06 14:20:35 ajacoutot Exp $
---- lib/smbrun.c.orig	Thu Apr 20 04:29:23 2006
-+++ lib/smbrun.c	Fri Apr  6 14:46:58 2007
-@@ -173,7 +173,7 @@ int smbrun(const char *cmd, int *outfd)
+$OpenBSD: patch-lib_smbrun_c,v 1.5 2007/05/28 20:03:01 mbalmer Exp $
+--- lib/smbrun.c.orig	Fri May 11 04:32:55 2007
++++ lib/smbrun.c	Thu May 17 10:22:53 2007
+@@ -178,7 +178,7 @@ static int smbrun_internal(const char *cmd, int *outfd
+ 		if (!newcmd) {
+ 			exit(82);
+ 		}
+-		execl("/bin/sh","sh","-c",newcmd,NULL);  
++		execl("/bin/sh","sh","-c",newcmd,(void *)NULL);  
  	}
- #endif
- 
--	execl("/bin/sh","sh","-c",cmd,NULL);  
-+	execl("/bin/sh","sh","-c",cmd,(void *)NULL);  
  	
  	/* not reached */
- 	exit(82);
-@@ -301,7 +301,7 @@ int smbrunsecret(const char *cmd, const char *secret)
+@@ -324,7 +324,7 @@ int smbrunsecret(const char *cmd, const char *secret)
  	}
  #endif
  
 -	execl("/bin/sh", "sh", "-c", cmd, NULL);  
 +	execl("/bin/sh", "sh", "-c", cmd, (void *)NULL);  
- 	
+ 
  	/* not reached */
  	exit(82);

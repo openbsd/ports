@@ -1,9 +1,9 @@
---- ../docs/manpages/swat.8.orig	Fri Jan 12 11:03:28 2007
-+++ ../docs/manpages/swat.8	Fri Jan 12 11:04:46 2007
-@@ -95,26 +95,6 @@
- .TP 3n
- -h|--help
+--- ../docs/manpages/swat.8.orig	Fri May 11 04:02:07 2007
++++ ../docs/manpages/swat.8	Thu May 17 10:21:36 2007
+@@ -111,24 +111,6 @@
+ .RS 3n
  Print a summary of command line options.
+ .RE
 -.SH "INSTALLATION"
 -.PP
 -Swat is included as binary package with most distributions. The package manager in this case takes care of the installation and configuration. This section is only for those who have compiled swat from scratch.
@@ -22,12 +22,10 @@
 -.TP 3n
 -&#8226;
 -/usr/local/samba/swat/help/*
--.sp
--.RE
  .SS "Inetd Installation"
  .PP
  You need to edit your
-@@ -142,7 +122,7 @@
+@@ -156,7 +138,7 @@
  \fI/etc/inetd.conf\fR
  you should add a line like this:
  .PP
@@ -36,12 +34,13 @@
  .PP
  Once you have edited
  \fI/etc/services\fR
-@@ -165,13 +145,11 @@
- \fI/etc/services\fR
+@@ -182,14 +164,12 @@
  This file must contain a mapping of service name (e.g., swat) to service port (e.g., 901) and protocol type (e.g., tcp).
- .TP 3n
+ .RE
+ .PP
 -\fI/usr/local/samba/lib/smb.conf\fR
-+\fI!!SYSCONFDIR!!/samba/smb.conf\fR
++\fI!!SYSCONFDIR!!/samba/lib/smb.conf\fR
+ .RS 3n
  This is the default location of the
  \fBsmb.conf\fR(5)
 -server configuration file that swat edits. Other common places that systems install this file are
@@ -50,6 +49,6 @@
 -\fI/etc/smb.conf \fR. This file describes all the services the server is to make available to clients.
 +server configuration file that swat edits.
 +This file describes all the services the server is to make available to clients.
+ .RE
  .SH "WARNINGS"
  .PP
- \fBswat\fR

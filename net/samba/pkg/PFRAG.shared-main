@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/25 13:00:41 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2007/05/28 20:03:01 mbalmer Exp $
 @lib lib/libmsrpc.so.${LIBmsrpc_VERSION}
 @lib lib/libsmbclient.so.${LIBsmbclient_VERSION}
 lib/samba/auth/script.so
@@ -7,6 +7,7 @@ lib/samba/charset/CP437.so
 lib/samba/charset/CP850.so
 @lib lib/samba/libmsrpc.so.${LIBmsrpc_VERSION}
 @lib lib/samba/libsmbclient.so.${LIBsmbclient_VERSION}
+lib/samba/libsmbsharemodes.so
 lib/samba/vfs/
 lib/samba/vfs/audit.so
 lib/samba/vfs/cap.so
@@ -16,6 +17,7 @@ lib/samba/vfs/extd_audit.so
 lib/samba/vfs/fake_perms.so
 lib/samba/vfs/full_audit.so
 lib/samba/vfs/netatalk.so
+lib/samba/vfs/readahead.so
 lib/samba/vfs/readonly.so
 lib/samba/vfs/recycle.so
 lib/samba/vfs/shadow_copy.so
