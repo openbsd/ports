@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/28 07:26:33 steven Exp $
+lib/pidgin/pidgin-otr.a
+lib/pidgin/pidgin-otr.la
+lib/pidgin/pidgin-otr.so
