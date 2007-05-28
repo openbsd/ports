@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/15 16:08:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/05/28 14:20:43 jasper Exp $
 bin/geany
 @man man/man1/geany.1
 share/applications/
@@ -17,6 +17,12 @@ share/doc/geany/html/apb.html
 share/doc/geany/html/apbs02.html
 share/doc/geany/html/apbs03.html
 share/doc/geany/html/apc.html
+share/doc/geany/html/apcs02.html
+share/doc/geany/html/apcs03.html
+share/doc/geany/html/apd.html
+share/doc/geany/html/apds02.html
+share/doc/geany/html/apds03.html
+share/doc/geany/html/ape.html
 share/doc/geany/html/ch01.html
 share/doc/geany/html/ch01s02.html
 share/doc/geany/html/ch01s03.html
@@ -33,6 +39,9 @@ share/doc/geany/html/ch03s06.html
 share/doc/geany/html/ch03s07.html
 share/doc/geany/html/ch03s08.html
 share/doc/geany/html/ch03s09.html
+share/doc/geany/html/ch03s10.html
+share/doc/geany/html/ch03s11.html
+share/doc/geany/html/ch03s12.html
 share/doc/geany/html/ch04.html
 share/doc/geany/html/ch04s02.html
 share/doc/geany/html/ch04s03.html
@@ -67,9 +76,12 @@ share/geany/filetypes.diff
 share/geany/filetypes.docbook
 share/geany/filetypes.ferite
 share/geany/filetypes.fortran
+share/geany/filetypes.haskell
 share/geany/filetypes.html
 share/geany/filetypes.java
+share/geany/filetypes.javascript
 share/geany/filetypes.latex
+share/geany/filetypes.lua
 share/geany/filetypes.makefile
 share/geany/filetypes.oms
 share/geany/filetypes.pascal

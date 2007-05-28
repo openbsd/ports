@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/05/28 14:20:43 jasper Exp $
 
 COMMENT=	"small and lightweight IDE"
 
-DISTNAME=	geany-0.10.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	geany-0.11
 CATEGORIES=	devel
 
 HOMEPAGE=	http://geany.uvena.de/
@@ -24,16 +23,15 @@ MODULES=	devel/gettext
 USE_X11=	Yes
 USE_GMAKE=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xrender expat stdc++ c m z \
-		glib-2.0 gmodule-2.0 gobject-2.0 glitz png \
+WANTLIB=	X11 Xext Xrender Xau Xcursor Xdmcp Xfixes Xi \
+		Xinerama Xrandr expat stdc++ c m z glitz png \
+		glib-2.0 gmodule-2.0 gobject-2.0 \
 		fontconfig freetype atk-1.0 cairo \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 CONFIGURE_STYLE=gnu
-
-CONFIGURE_ARGS= CPPFLAGS="-I${LOCALBASE}/include"
 
 FLAVORS=	vte
 FLAVOR?=
