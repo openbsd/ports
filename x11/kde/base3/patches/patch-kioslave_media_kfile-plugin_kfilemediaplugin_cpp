@@ -1,0 +1,11 @@
+$OpenBSD: patch-kioslave_media_kfile-plugin_kfilemediaplugin_cpp,v 1.3 2007/05/28 20:15:55 espie Exp $
+--- kioslave/media/kfile-plugin/kfilemediaplugin.cpp.orig	Mon May 14 20:25:23 2007
++++ kioslave/media/kfile-plugin/kfilemediaplugin.cpp	Mon May 14 20:26:53 2007
+@@ -33,6 +33,7 @@
+ #ifdef HAVE_STATVFS
+ # include <sys/statvfs.h>
+ #else
++# include <sys/param.h>
+ # include <sys/mount.h>
+ # define statvfs statfs
+ # define f_frsize f_bsize
