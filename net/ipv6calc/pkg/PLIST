@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/10/07 15:58:20 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/05/28 17:23:05 rui Exp $
 bin/ipv6calc
+bin/ipv6loganon
 bin/ipv6logconv
 bin/ipv6logstats
+@man man/man8/ipv6calc.8
+@man man/man8/ipv6loganon.8
+@man man/man8/ipv6logconv.8
+@man man/man8/ipv6logstats.8
