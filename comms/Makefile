@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2007/01/23 13:37:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2007/05/28 17:17:23 jason Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
      SUBDIR += bottlerocket
      SUBDIR += conserver
+     SUBDIR += colrdx
      SUBDIR += efax
      SUBDIR += flipit
      SUBDIR += gnokii
      SUBDIR += gnokii,no_x11
+     SUBDIR += hamlib
      SUBDIR += hylafax
      SUBDIR += hylafax,a4
      SUBDIR += jpilot
@@ -30,6 +32,7 @@
      SUBDIR += sredird
      SUBDIR += tkhylafax
      SUBDIR += wy60
+     SUBDIR += xdx
      SUBDIR += xcept
      SUBDIR += zmtx-zmrx
 
