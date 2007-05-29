@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/25 16:13:48 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.15 2007/05/29 05:33:16 pvalchev Exp $
 
 COMMENT=		"video stream processing tools"
 
@@ -18,7 +18,7 @@ WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xi Xpm Xt Xv \
 
 MASTER_SITES=		http://fromani.exit1.org/
 
-FLAVORS=		lzo mjpegtools quicktime
+FLAVORS=		lzo mjpegtools quicktime altivec
 FLAVOR?=
 
 .if ${MACHINE_ARCH} == "i386"
@@ -111,6 +111,13 @@ WANTLIB+=		png
 PKG_ARGS+=		-Dquicktime=1
 .else
 PKG_ARGS+=		-Dquicktime=0
+.endif
+
+.if ${FLAVOR:L:Maltivec}
+ONLY_FOR_ARCHS=		powerpc
+CONFIGURE_ARGS+=	--enable-altivec
+.else
+CONFIGURE_ARGS==	--disable-altivec
 .endif
 
 .include <bsd.port.mk>
