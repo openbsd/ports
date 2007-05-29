@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/06/23 20:23:06 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/05/29 21:16:03 naddy Exp $
 bin/bggen
 bin/vdcomp
 bin/xcmap
@@ -10,5 +10,5 @@ bin/xvpictoppm
 @man man/man1/xv.1
 @man man/man1/xvpictoppm.1
 share/doc/xv/
-share/doc/xv/README
+share/doc/xv/xvdocs.pdf
 share/doc/xv/xvdocs.ps

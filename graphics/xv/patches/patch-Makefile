@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1 2005/06/23 20:23:05 sturm Exp $
---- Makefile.orig	Thu Jun 23 21:59:31 2005
-+++ Makefile	Thu Jun 23 21:59:31 2005
+$OpenBSD: patch-Makefile,v 1.2 2007/05/29 21:16:03 naddy Exp $
+--- Makefile.orig	Sun May 27 00:46:00 2007
++++ Makefile	Sun May 27 01:14:26 2007
 @@ -1,7 +1,7 @@
  # Makefile for xv
  
@@ -8,45 +8,59 @@ $OpenBSD: patch-Makefile,v 1.1 2005/06/23 20:23:05 sturm Exp $
 -CC = cc
 +#CC = cc
  #CC = gcc -ansi
- # note that -ansi kills __USE_MISC (gcc 2.95.3), which (at least in Linux)
+ # note that -ansi kills __USE_MISC (gcc 2.95.3), which, at least on Linux,
  # determines whether stdlib.h includes prototypes for mktemp(), random(), etc.
-@@ -34,8 +34,8 @@ CCOPTS = -O
- ### In general, if your X11 include files and libX11.a library aren't in the
- ### 'standard' places in which the C compiler looks, you should add '-L' and
- ### '-I' options on the CCOPTS line to tell the compiler where said files are.
-+CCOPTS += -I$(X11BASE)/include -L$(X11BASE)/lib $(USERCFLAGS)
+@@ -18,7 +18,7 @@ CC = cc
+ #       -Wuninitialized -Wparentheses
  
--
- # BeOS _may_ need to use a different version (below), but probably not
- CLEANDIR = cleandir
  
-@@ -47,7 +47,6 @@ MANDIR = $(PREFIX)/man/man1
+-CCOPTS = -O
++CCOPTS:= $(CFLAGS)
+ #
+ # these are the usual optimization and warning options for gcc; all such
+ # warnings but one (mktemp() use) have been eliminated (at least on Linux):
+@@ -56,13 +56,13 @@ CLEANDIR = cleandir
+ ### NOTE: Users of old K&R compilers (i.e., any version not supporting C89
+ ### string concatenation, such as "fub" "ar" => "fubar") should update
+ ### xvtext.c:1831 (or thereabouts) if either PREFIX or DOCDIR changes:
+-PREFIX = /usr/local
++#PREFIX = /usr/local
+ BINDIR = $(PREFIX)/bin
+-MANDIR = $(PREFIX)/share/man/man1
++MANDIR = $(PREFIX)/man/man1
  MANSUF = 1
- DOCDIR = $(PREFIX)/doc/xv-3.10a
+ DOCDIR = $(PREFIX)/share/doc/xv
  LIBDIR = $(PREFIX)/lib/xv
--SYSCONFDIR = $(PREFIX)/etc
+-SYSCONFDIR = /etc
++#SYSCONFDIR = /etc
  DESTDIR =
  
  
-@@ -64,8 +63,8 @@ buildit: all
+@@ -87,7 +87,7 @@ buildit: all
+ TIFF    = -DDOTIFF -DUSE_TILED_TIFF_BOTLEFT_FIX
+ ###
+ #TIFFDIR = tiff
+-TIFFDIR = /usr
++TIFFDIR = $(LOCALBASE)
+ #TIFFDIR = /usr/local
+ #TIFFDIR = ../../libtiff
+ ###
+@@ -117,7 +117,7 @@ TIFFLIB = -L$(TIFFDIR)/lib -ltiff
  ###
  JPEG    = -DDOJPEG
  #JPEGDIR = jpeg
 -JPEGDIR = /usr
--#JPEGDIR = /usr/local
-+#JPEGDIR = /usr
 +JPEGDIR = $(LOCALBASE)
+ #JPEGDIR = /usr/local
  #JPEGDIR = ../../libjpeg
- ###
- JPEGINC = -I$(JPEGDIR)/include
-@@ -89,11 +88,11 @@ JPEGLIB = -L$(JPEGDIR)/lib -ljpeg
+ #JPEGDIR = /usr/sfw
+@@ -143,11 +143,11 @@ JPEGLIB = -L$(JPEGDIR)/lib -ljpeg
  ### on your machine, *COMMENT OUT* the following lines
  ###
  PNG    = -DDOPNG
 -PNGDIR = /usr
--#PNGDIR = /usr/local
-+#PNGDIR = /usr
 +PNGDIR = $(LOCALBASE)
+ #PNGDIR = /usr/local
  #PNGDIR = ../../libpng
  ###
 -PNGINC = -I$(PNGDIR)/include
@@ -54,31 +68,76 @@ $OpenBSD: patch-Makefile,v 1.1 2005/06/23 20:23:05 sturm Exp $
  #PNGINC = -I$(PNGDIR)
  ###
  PNGLIB = -L$(PNGDIR)/lib -lpng
-@@ -131,8 +130,8 @@ ZLIBLIB = -L$(ZLIBDIR)/lib -lz
- #TIFF    = -DDOTIFF
- TIFF    = -DDOTIFF -DUSE_TILED_TIFF_BOTLEFT_FIX
- #TIFFDIR = tiff
--TIFFDIR = /usr
--#TIFFDIR = /usr/local
-+#TIFFDIR = /usr
-+TIFFDIR = $(LOCALBASE)
- #TIFFDIR = ../../libtiff
+@@ -179,13 +179,13 @@ ZLIBLIB = -L$(ZLIBDIR)/lib -lz
+ JP2K    = -DDOJP2K
  ###
- TIFFINC = -I$(TIFFDIR)/include
-@@ -298,7 +297,7 @@ CFLAGS = $(CCOPTS) $(PNG) $(PNGINC) $(ZL
+ #JP2KDIR = ../../jasper
+-JP2KDIR = /usr/local/lib
++JP2KDIR = $(LOCALBASE)
+ ###
+ #JP2KINC = -I$(JP2KDIR)
+-JP2KINC = -I/usr/local/include
++JP2KINC = -I$(JP2KDIR)/include
+ ###
+ #JP2KLIB = -L$(JP2KDIR) -ljasper
+-JP2KLIB = $(JP2KDIR)/libjasper.a
++JP2KLIB = -L$(JP2KDIR)/lib -ljasper
+ 
+ 
+ ###
+@@ -260,6 +260,7 @@ PDS = -DDOPDS
+ # For Interactive/SunSoft Unix ISC 4.0  (whatever *that* is!)
+ #MCHN = -DSVR4 -DBSDTYPES
+ 
++MCHN = -I${X11BASE}/include
+ 
+ #----------'Roll Your Own' Options----------
+ 
+@@ -342,7 +343,7 @@ CFLAGS = $(CCOPTS) $(PNG) $(PNGINC) $(ZLIBINC) $(JPEG)
  	-DSYSCONFDIR=\"$(SYSCONFDIR)\" -DXVEXECPATH=\"$(LIBDIR)\"
  
  ### remove -lm for BeOS:
--LIBS = $(TIFFLIB) $(JPEGLIB) $(PNGLIB) $(ZLIBLIB) -L/usr/X11R6/lib -lX11 -lm
-+LIBS = $(TIFFLIB) $(JPEGLIB) $(PNGLIB) $(ZLIBLIB) -L$(X11BASE)/lib -lX11 -lm
- #LIBS = $(TIFFLIB) $(JPEGLIB) $(PNGLIB) $(ZLIBLIB) -lX11
+-LIBS = $(TIFFLIB) $(JPEGLIB) $(PNGLIB) $(ZLIBLIB) $(JP2KLIB) -L/usr/X11R6/lib -lX11 -lm
++LIBS = $(TIFFLIB) $(JPEGLIB) $(PNGLIB) $(ZLIBLIB) $(JP2KLIB) -L$(X11BASE)/lib -lX11 -lXdmcp -lXau -lm
+ #LIBS = $(TIFFLIB) $(JPEGLIB) $(PNGLIB) $(ZLIBLIB) $(JP2KLIB) -lX11
  
  OBJS = 	xv.o xvevent.o xvroot.o xvmisc.o xvimage.o xvcolor.o xvsmooth.o \
-@@ -359,7 +358,6 @@ install: all
- 	cp docs/xcmap.man  $(DESTDIR)$(MANDIR)/xcmap.$(MANSUF)
- 	cp docs/xvp2p.man  $(DESTDIR)$(MANDIR)/xvpictoppm.$(MANSUF)
- 	cp docs/vdcomp.man $(DESTDIR)$(MANDIR)/vdcomp.$(MANSUF)
--	cp docs/xvdocs.ps* $(DESTDIR)$(LIBDIR) # or $(DESTDIR)$(DOCDIR)
+@@ -399,28 +400,18 @@ clean:  xvclean
+ # could also do some shell trickery here to attempt mkdir only if dir is
+ # missing (e.g., "test -d <dir> || $(MKDIR) <dir>")
+ install: all
+-	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	cp xv bggen vdcomp xcmap xvpictoppm $(DESTDIR)$(BINDIR)/.
+-	chmod 755 $(DESTDIR)$(BINDIR)/xv $(DESTDIR)$(BINDIR)/bggen \
+-	  $(DESTDIR)$(BINDIR)/vdcomp $(DESTDIR)$(BINDIR)/xcmap \
+-	  $(DESTDIR)$(BINDIR)/xvpictoppm
++	$(BSD_INSTALL_PROGRAM_DIR) $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_PROGRAM) xv bggen vdcomp xcmap xvpictoppm $(DESTDIR)$(BINDIR)/.
+ #
+-	$(MKDIR) $(DESTDIR)$(MANDIR)
+-	cp docs/xv.man     $(DESTDIR)$(MANDIR)/xv.$(MANSUF)
+-	cp docs/bggen.man  $(DESTDIR)$(MANDIR)/bggen.$(MANSUF)
+-	cp docs/xcmap.man  $(DESTDIR)$(MANDIR)/xcmap.$(MANSUF)
+-	cp docs/xvp2p.man  $(DESTDIR)$(MANDIR)/xvpictoppm.$(MANSUF)
+-	cp docs/vdcomp.man $(DESTDIR)$(MANDIR)/vdcomp.$(MANSUF)
+-	chmod 644 $(DESTDIR)$(MANDIR)/xv.$(MANSUF) \
+-	  $(DESTDIR)$(MANDIR)/bggen.$(MANSUF) \
+-	  $(DESTDIR)$(MANDIR)/xcmap.$(MANSUF) \
+-	  $(DESTDIR)$(MANDIR)/xvpictoppm.$(MANSUF) \
+-	  $(DESTDIR)$(MANDIR)/vdcomp.$(MANSUF)
++	$(BSD_INSTALL_MAN_DIR) $(DESTDIR)$(MANDIR)
++	$(BSD_INSTALL_MAN) docs/xv.man     $(DESTDIR)$(MANDIR)/xv.$(MANSUF)
++	$(BSD_INSTALL_MAN) docs/bggen.man  $(DESTDIR)$(MANDIR)/bggen.$(MANSUF)
++	$(BSD_INSTALL_MAN) docs/xcmap.man  $(DESTDIR)$(MANDIR)/xcmap.$(MANSUF)
++	$(BSD_INSTALL_MAN) docs/xvp2p.man  $(DESTDIR)$(MANDIR)/xvpictoppm.$(MANSUF)
++	$(BSD_INSTALL_MAN) docs/vdcomp.man $(DESTDIR)$(MANDIR)/vdcomp.$(MANSUF)
+ #
+-	$(MKDIR) $(DESTDIR)$(DOCDIR)		# or $(DESTDIR)$(LIBDIR)
+-	cp README.jumbo docs/xvdocs.pdf docs/xvdocs.ps $(DESTDIR)$(DOCDIR)/.
+-	chmod 644 $(DESTDIR)$(DOCDIR)/README.jumbo \
+-	  $(DESTDIR)$(DOCDIR)/xvdocs.pdf $(DESTDIR)$(DOCDIR)/xvdocs.ps
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(DOCDIR)		# or $(DESTDIR)$(LIBDIR)
++	$(BSD_INSTALL_DATA) docs/xvdocs.pdf docs/xvdocs.ps $(DESTDIR)$(DOCDIR)/.
+ #
+ 	#$(MKDIR) $(DESTDIR)$(SYSCONFDIR)
  	#cp xv_mgcsfx.sample $(DESTDIR)$(SYSCONFDIR)/xv_mgcsfx
- 
- tar:

@@ -1,0 +1,13 @@
+$OpenBSD: patch-xvpcd_c,v 1.1 2007/05/29 21:16:03 naddy Exp $
+--- xvpcd.c.orig	Sun May 27 00:39:02 2007
++++ xvpcd.c	Sun May 27 00:39:29 2007
+@@ -30,9 +30,6 @@
+ #ifdef HAVE_PCD
+ 
+ #include <memory.h>
+-#ifndef alloca
+-#  include <alloca.h> /* "not in POSIX or SUSv3" according to Linux man page */
+-#endif                /* ...but required for Sun C compiler (alloca = macro) */
+ 
+ #define  TRACE  0
+ #if TRACE

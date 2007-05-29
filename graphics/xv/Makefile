@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2007/04/06 22:21:30 espie Exp $
-# Original from: Marco S Hyman <marc@OpenBSD.ORG>
+# $OpenBSD: Makefile,v 1.34 2007/05/29 21:16:03 naddy Exp $
 
 COMMENT=	"X11 image display and modification tool"
 
 DISTNAME=	xv-3.10a
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	graphics x11
 
 MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.cis.upenn.edu/pub/xv/ \
@@ -12,38 +11,31 @@ MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.cis.upenn.edu/pub/xv/ \
 		http://gd.tuwien.ac.at/graphics/xv/ \
 		ftp://ftp.cis.upenn.edu/pub/xv/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=png-mng/}
-DISTFILES=	${DISTNAME}.tar.gz xv-3.10a-jumbo-patches-20050501.tar.bz2:0
+DISTFILES=	${DISTNAME}.tar.gz xv-3.10a-jumbo-patches-20070520.tar.gz:0
 DIST_SUBDIR=	xv
 
 HOMEPAGE=	http://www.trilon.com/xv/index.html
-
-LIB_DEPENDS=    jpeg.>=62.::graphics/jpeg \
-		tiff.>=35.::graphics/tiff \
-		png.>=2.::graphics/png
-
-FAKE=		lib
 
 PERMIT_PACKAGE_CDROM=	"Must buy license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"Must buy license"
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c m z
 
-USE_X11=		Yes
-NO_REGRESS=		Yes
+LIB_DEPENDS=	jpeg.>=62.::graphics/jpeg \
+		jasper.>=2.::graphics/jasper \
+		tiff.>=38.::graphics/tiff \
+		png.>=5.::graphics/png
 
-MAKE_FLAGS+=		USERCFLAGS="${CFLAGS}"
+WANTLIB=	X11 Xau Xdmcp c m z
+
+USE_X11=	Yes
+MAKE_ENV=	SYSCONFDIR="$(SYSCONFDIR)"
+FAKE_FLAGS=
+
+NO_REGRESS=	Yes
 
 pre-patch:
-	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-fix-patch-20050410.txt
-	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-enh-patch-20050501.txt
-
-post-install:
-	@for f in bggen vdcomp xcmap xv xvpictoppm; do \
-	    strip ${PREFIX}/bin/$$f; \
-	done
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xv
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xv
-	${INSTALL_DATA} ${WRKSRC}/docs/xvdocs.ps ${PREFIX}/share/doc/xv
+	@${PATCH} ${PATCH_DIST_ARGS} -p1 \
+		< ${WRKDIR}/xv-3.10a-jumbo-fix-enh-patch-20070520.txt
 
 .include <bsd.port.mk>
