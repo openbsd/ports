@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/17 10:50:48 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/05/29 07:41:45 steven Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
@@ -28,6 +28,7 @@
      SUBDIR+= xfce4-panel
      SUBDIR+= xfce4-session
      SUBDIR+= xfce4-systemload
+     SUBDIR+= xfce4-time-out
      SUBDIR+= xfce4-verve
      SUBDIR+= xfce4-wavelan
      SUBDIR+= xfce4-weather
