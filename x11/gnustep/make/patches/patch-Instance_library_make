@@ -1,0 +1,12 @@
+$OpenBSD: patch-Instance_library_make,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
+--- Instance/library.make.orig	Fri May 11 11:29:00 2007
++++ Instance/library.make	Fri May 11 11:31:08 2007
+@@ -182,7 +182,7 @@ endif
+ ifneq ($(BUILD_DLL),yes)
+ 
+ LIBRARY_FILE = $(LIBRARY_NAME_WITH_LIB)$(SHARED_LIBEXT)
+-VERSION_LIBRARY_FILE = $(LIBRARY_FILE).$(VERSION)
++VERSION_LIBRARY_FILE = $(LIBRARY_FILE).$(INTERFACE_VERSION)
+ SONAME_LIBRARY_FILE  = $(LIBRARY_FILE).$(INTERFACE_VERSION)
+ 
+ else # BUILD_DLL

@@ -1,0 +1,32 @@
+$OpenBSD: patch-Instance_bundle_make,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
+--- Instance/bundle.make.orig	Tue May 15 17:29:03 2007
++++ Instance/bundle.make	Tue May 15 17:29:09 2007
+@@ -83,6 +83,8 @@ ALL_BUNDLE_LIBS =						\
+ 
+ ifeq ($(BUILD_DLL),yes)
+ BUNDLE_OBJ_EXT = $(DLL_LIBEXT)
++else
++BUNDLE_OBJ_EXT = $(SHARED_LIBEXT)
+ endif
+ 
+ endif # OBJ_FILES_TO_LINK
+@@ -268,9 +270,6 @@ $(BUNDLE_DIR)/Resources/Info-gnustep.plist: $(BUNDLE_D
+ 	  echo "  NSMainNibFile = \"$(MAIN_MODEL_FILE)\";"; \
+ 	  echo "  NSPrincipalClass = \"$(PRINCIPAL_CLASS)\";"; \
+ 	  echo "}") >$@$(END_ECHO)
+-	$(ECHO_NOTHING)if [ -r "$(GNUSTEP_INSTANCE)Info.plist" ]; then \
+-	  plmerge $@ $(GNUSTEP_INSTANCE)Info.plist; \
+-	fi$(END_ECHO)
+ else # following code for when no object file is built
+ # GNUstep bundles
+ $(BUNDLE_DIR)/Resources/Info-gnustep.plist: $(BUNDLE_DIR)/Resources \
+@@ -279,9 +278,6 @@ $(BUNDLE_DIR)/Resources/Info-gnustep.plist: $(BUNDLE_D
+ 	$(ECHO_CREATING)(echo "{"; echo '  NOTE = "Automatically generated, do not edit!";'; \
+ 	  echo "  NSMainNibFile = \"$(MAIN_MODEL_FILE)\";"; \
+ 	  echo "}") >$@$(END_ECHO)
+-	$(ECHO_NOTHING)if [ -r "$(GNUSTEP_INSTANCE)Info.plist" ]; then \
+-	  plmerge $@ $(GNUSTEP_INSTANCE)Info.plist; \
+-	fi$(END_ECHO)
+ endif
+ 
+ endif # FOUNDATION_LIB != apple

@@ -1,0 +1,30 @@
+$OpenBSD: patch-GNUmakefile_in,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
+--- GNUmakefile.in.orig	Thu Mar  8 18:15:05 2007
++++ GNUmakefile.in	Sat May 12 12:30:48 2007
+@@ -69,7 +69,7 @@ export GNUSTEP_TARGET_LDIR
+ export MAYBE_LIBRARY_COMBO
+ 
+ INSTALL		= @INSTALL@
+-INSTALL_PROGRAM	= @INSTALL_PROGRAM@
++INSTALL_PROGRAM	= @INSTALL_SCRIPT@
+ INSTALL_DATA	= @INSTALL_DATA@
+ 
+ VERTAG = $(subst .,_,$(GNUSTEP_MAKE_VERSION))
+@@ -124,7 +124,6 @@ install: generated-files
+ 	 echo "Creating makefile directories in: $(makedir)"; \
+ 	 $(srcdir)/mkinstalldirs \
+ 		$(makedir) \
+-		$(makedir)/$(GNUSTEP_TARGET_CPU) \
+ 		$(makedir)/$(GNUSTEP_TARGET_DIR) \
+ 		$(makedir)/$(GNUSTEP_TARGET_LDIR) \
+ 		$(makedir)/Additional \
+@@ -133,9 +132,6 @@ install: generated-files
+ 		$(makedir)/Instance \
+ 		$(makedir)/Instance/Shared \
+ 		$(makedir)/Instance/Documentation)
+-	$(EC)(echo "Installing GNUstep configuration file in $(GNUSTEP_CONFIG_FILE)"; \
+-	 $(srcdir)/mkinstalldirs "$(GNUSTEP_CONFIG_FILE_DIR)"; \
+-	 $(INSTALL_DATA) GNUstep.conf "$(GNUSTEP_CONFIG_FILE)")
+ 	 $(EC)(echo "Installing gnustep-make support software")
+ 	 $(EC)(for f in config.guess config.sub install-sh mkinstalldirs \
+ 		clean_cpu.sh clean_os.sh \

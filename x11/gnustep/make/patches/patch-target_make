@@ -1,0 +1,34 @@
+$OpenBSD: patch-target_make,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
+--- target.make.orig	Fri Mar  9 12:42:00 2007
++++ target.make	Wed May 23 15:47:43 2007
+@@ -748,18 +748,17 @@ SHARED_LIB_LINK_CMD = \
+ 	  $(RM_LN_S) $(LIB_LINK_FILE); \
+           if [ "$(LIB_LINK_SONAME_FILE)" != "$(LIB_LINK_VERSION_FILE)" ]; then\
+             $(RM_LN_S) $(LIB_LINK_SONAME_FILE);\
+-            $(LN_S) $(LIB_LINK_VERSION_FILE) $(LIB_LINK_SONAME_FILE); \
+-          fi; \
+-	  $(LN_S) $(LIB_LINK_SONAME_FILE) $(LIB_LINK_FILE))
++          fi;)
+ AFTER_INSTALL_SHARED_LIB_CMD = \
+ 	(cd $(LIB_LINK_INSTALL_DIR); \
+ 	  $(RM_LN_S) $(LIB_LINK_FILE); \
+           if [ "$(LIB_LINK_SONAME_FILE)" != "$(LIB_LINK_VERSION_FILE)" ]; then\
+             $(RM_LN_S) $(LIB_LINK_SONAME_FILE);\
+-            $(LN_S) $(LIB_LINK_VERSION_FILE) $(LIB_LINK_SONAME_FILE); \
+           fi; \
+-	  $(LN_S) $(LIB_LINK_SONAME_FILE) $(LIB_LINK_FILE); \
+ 	)
++AFTER_INSTALL_SHARED_LIB_CHOWN = \
++	(cd $(LIB_LINK_INSTALL_DIR); \
++	chown $(CHOWN_TO) $(LIB_LINK_SONAME_FILE))
+ 
+ OBJ_MERGE_CMD		= \
+ 	$(CC) -nostdlib -r $(ALL_LDFLAGS) -o $(GNUSTEP_OBJ_DIR)/$(SUBPROJECT_PRODUCT) $^ ;
+@@ -772,6 +771,7 @@ BUNDLE_LD	= $(CC)
+ BUNDLE_LDFLAGS  += -shared -fPIC
+ ADDITIONAL_LDFLAGS += -Wl,-E
+ STATIC_LDFLAGS += -static
++OBJC_LIBS += -pthread
+ 
+ # nm on OpenBSD is rather like on Darwin
+ EXTRACT_CLASS_NAMES_COMMAND = nm  -g $$object_file | sed -n -e '/[^U] __objc_class_name_/ {s/[0-9a-f]* [^U] __objc_class_name_//p;}'

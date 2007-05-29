@@ -1,0 +1,24 @@
+$OpenBSD: patch-Instance_application_make,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
+--- Instance/application.make.orig	Fri Mar 16 06:23:56 2007
++++ Instance/application.make	Mon May 28 20:17:38 2007
+@@ -277,9 +277,6 @@ $(APP_INFO_PLIST_FILE): $(GNUSTEP_STAMP_DEPEND) $(GNUS
+ 	  fi; \
+ 	  echo "  NSPrincipalClass = \"$(PRINCIPAL_CLASS)\";"; \
+ 	  echo "}") >$@$(END_ECHO)
+-	 -$(ECHO_NOTHING)if [ -r "$(GNUSTEP_INSTANCE)Info.plist" ]; then \
+-	   plmerge $@ "$(GNUSTEP_INSTANCE)Info.plist"; \
+-	  fi$(END_ECHO)
+ endif
+ 
+ $(APP_DIR)/Resources/$(GNUSTEP_INSTANCE).desktop: \
+@@ -338,9 +335,7 @@ ifeq ($(HAS_LN_S), yes)
+ internal-install-app-wrapper: $(GNUSTEP_TOOLS)/$(GNUSTEP_TARGET_LDIR)
+ 	$(ECHO_NOTHING)\
+ 	  cd $(GNUSTEP_TOOLS)/$(GNUSTEP_TARGET_LDIR); \
+-	  $(RM_LN_S) $(GNUSTEP_INSTANCE); \
+-	  $(LN_S) `$(REL_PATH_SCRIPT) $(GNUSTEP_TOOLS)/$(GNUSTEP_TARGET_LDIR) $(APP_INSTALL_DIR)/$(APP_FILE_NAME)` \
+-	          $(GNUSTEP_INSTANCE)$(END_ECHO)
++	  $(RM_LN_S) $(GNUSTEP_INSTANCE)$(END_ECHO)
+ else
+ # Not sure that we can use relative paths with 'exec' in a portable
+ # way.  We want the stuff to work with DESTDIR, so in this case we use
