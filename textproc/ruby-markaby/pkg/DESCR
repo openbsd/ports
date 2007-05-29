@@ -1,0 +1,4 @@
+Markaby is a very short bit of code for writing HTML pages in pure
+Ruby.  It is an alternative to ERb which weaves the two languages
+together.  Also a replacement for templating languages which use
+primitive languages that blend with HTML.
