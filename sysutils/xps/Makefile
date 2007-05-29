@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/29 21:40:14 rui Exp $
 
-DISTNAME=       xps-3.21
+DISTNAME=       xps-4.2
 CATEGORIES=     sysutils x11
 
-MASTER_SITES=   ftp://netwinder.org/users/r/rocky/
+MASTER_SITES=	http://internap.dl.sourceforge.net/sourceforge/motif-pstree/
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm util 
+WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm
 
 COMMENT=	"graphically display and update dynamically the process tree"
 
@@ -27,9 +27,9 @@ USE_MOTIF=		any
 NO_REGRESS=		Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/xps ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKBUILD}/docs/xps.man ${PREFIX}/man/man1/xps.1
-	${INSTALL_DATA} ${WRKBUILD}/Xps \
+	${INSTALL_PROGRAM} ${WRKBUILD}/src/xps ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKBUILD}/doc/xps.1 ${PREFIX}/man/man1/xps.1
+	${INSTALL_DATA} ${WRKBUILD}/src/Xps \
 		${PREFIX}/lib/X11/app-defaults
 
 .include <bsd.port.mk>
