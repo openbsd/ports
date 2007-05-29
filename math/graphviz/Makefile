@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/05/04 11:33:14 bernd Exp $
+# $OpenBSD: Makefile,v 1.23 2007/05/29 11:22:30 kili Exp $
 
 COMMENT-main=	"graph drawing software"
 
 DISTNAME=	graphviz-2.12
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 CATEGORIES=	math devel graphics
 MULTI_PACKAGES=	-main
 
@@ -80,11 +80,11 @@ WANTLIB+=	atk-1.0 crypto gthread-2.0 ssl \
 		bonobo-activation bonoboui-2 esd gconf-2 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 popt xml2
 
-BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4 \
+RUN_DEPENDS=	:tk-8.4.*:x11/tk/8.4 \
 		:tcl->=8.4.7p5:lang/tcl/8.4 \
-		::devel/swig \
 		::lang/guile
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::devel/swig
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
