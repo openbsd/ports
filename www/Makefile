@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.273 2007/05/27 15:34:58 martynas Exp $
+# $OpenBSD: Makefile,v 1.274 2007/05/29 20:20:59 jcs Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -226,6 +226,7 @@
      SUBDIR += reportmagic
      SUBDIR += rt
      SUBDIR += ruby-actionwebservice
+     SUBDIR += ruby-fcgi
      SUBDIR += ruby-mongrel
      SUBDIR += ruby-rails
      SUBDIR += sarg
