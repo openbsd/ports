@@ -1,0 +1,11 @@
+$OpenBSD: patch-Fonts_GNUmakefile_postamble,v 1.1.1.1 2007/05/29 03:03:08 ajacoutot Exp $
+--- Fonts/GNUmakefile.postamble.orig	Tue May 15 17:56:25 2007
++++ Fonts/GNUmakefile.postamble	Tue May 15 17:56:39 2007
+@@ -38,6 +38,7 @@ after-install::
+ 	for file in $(FONT_INSTALL_FILES); do \
+ 	  ($(TAR) cfX - $(GNUSTEP_MAKEFILES)/tar-exclude-list $$file) | (cd $(back-resources_INSTALL_DIR); $(TAR) xf -) ;\
+ 	done
++	$(ECHO_CHOWNING)$(CHOWN) -R $(CHOWN_TO) $(back-resources_INSTALL_DIR)$(END_ECHO)
+ 
+ # Things to do before uninstalling
+ before-uninstall::

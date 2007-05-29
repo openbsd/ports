@@ -1,0 +1,12 @@
+$OpenBSD: patch-Tools_GNUmakefile_postamble,v 1.1.1.1 2007/05/29 03:03:08 ajacoutot Exp $
+--- Tools/GNUmakefile.postamble.orig	Fri May 11 17:52:42 2007
++++ Tools/GNUmakefile.postamble	Fri May 11 17:52:52 2007
+@@ -50,8 +50,6 @@ after-install::
+ 	for file in $(MAN1_PAGES) __done; do \
+ 	  if [ $$file != __done ]; then \
+ 	    $(INSTALL_DATA) $$file $(GNUSTEP_DOCUMENTATION_MAN)/man1/$$file; \
+-	    which gzip && rm -f $(GNUSTEP_DOCUMENTATION_MAN)/man1/$$file.gz \
+-	    && gzip -9 $(GNUSTEP_DOCUMENTATION_MAN)/man1/$$file; \
+ 	  fi; \
+ 	done;
+ 
