@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/05/29 05:33:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2007/05/29 23:06:58 ajacoutot Exp $
 
 COMMENT=		"video stream processing tools"
 
 DISTNAME=		transcode-1.0.3rc2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
@@ -117,7 +117,7 @@ PKG_ARGS+=		-Dquicktime=0
 ONLY_FOR_ARCHS=		powerpc
 CONFIGURE_ARGS+=	--enable-altivec
 .else
-CONFIGURE_ARGS==	--disable-altivec
+CONFIGURE_ARGS+=	--disable-altivec
 .endif
 
 .include <bsd.port.mk>
