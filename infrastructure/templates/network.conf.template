@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.112 2007/05/29 14:40:42 ajacoutot Exp $
+# $OpenBSD: network.conf.template,v 1.113 2007/05/29 16:57:00 naddy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -54,7 +54,6 @@ MASTER_SITE_GNU+=	\
 	ftp://mirrors.dotsrc.org/gnu/ \
 	ftp://ftp.wustl.edu/pub/gnu/ \
 	ftp://ftp.kddilabs.jp/GNU/ \
-	ftp://sunsite.org.uk/package/gnu/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/ \
 	ftp://ftp.rediris.es/mirror/gnu/gnu/ \
 	ftp://ftp.cs.univ-paris8.fr/mirrors/ftp.gnu.org/ \
@@ -95,7 +94,6 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/ \
 	ftp://ftp.kddilabs.jp/Linux/metalab.unc.edu/ \
 	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/ \
-	ftp://sunsite.org.uk/packages/linux/sunsite.unc-mirror/ \
 	ftp://ftp.nluug.nl/vol/4/metalab/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/
 
@@ -148,7 +146,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/modules/by-module/ \
 	ftp://ftp.duke.edu/pub/perl/modules/by-module/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/ \
-	ftp://sunsite.org.uk/package/cpan/modules/by-module/ \
+	ftp://ftp.flirble.org/pub/CPAN/modules/by-module/
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/ \
 	http://www.cpan.dk/modules/by-module/ \
 	ftp://mirrors.dotsrc.org/cpan/modules/by-module/
