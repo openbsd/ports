@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.111 2007/05/27 09:13:56 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.112 2007/05/29 14:40:42 ajacoutot Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -54,7 +54,6 @@ MASTER_SITE_GNU+=	\
 	ftp://mirrors.dotsrc.org/gnu/ \
 	ftp://ftp.wustl.edu/pub/gnu/ \
 	ftp://ftp.kddilabs.jp/GNU/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/gnu/ \
 	ftp://sunsite.org.uk/package/gnu/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/ \
 	ftp://ftp.rediris.es/mirror/gnu/gnu/ \
@@ -124,9 +123,13 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/ \
 	ftp://ftp.unina.it/pub/linux/GNOME/ \
 	ftp://ftp.dit.upm.es/linux/gnome/ \
-	ftp://ftp.dataplus.se/pub/linux/gnome/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
-	ftp://ftp.linux.org.uk/mirrors/ftp.gnome.org/ \
+	ftp://ftp.no.gnome.org/pub/GNOME/ \
+	http://fr2.rpmfind.net/linux/gnome.org/ \
+	http://ftp.acc.umu.se/pub/GNOME/ \
+	http://planetmirror.com/pub/gnome/ \
+	http://mirror.aarnet.edu.au/pub/GNOME/ \
+	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/ \
 	ftp://ftp.gnome.org/pub/GNOME/
 	
 MASTER_SITE_PERL_CPAN+=	\
@@ -168,8 +171,6 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.oregonstate.edu/pub/kde/ \
 	ftp://ftp.tuniv.szczecin.pl/pub/kde/ \
 	ftp://ftp.kddilabs.jp/X11/kde/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/ \
-	ftp://ftp.dataplus.se/pub/linux/kde/ \
 	ftp://ftp.uvsq.fr/pub/X11/kde/ \
  	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
  	ftp://ftp.sunet.se/pub/X11/kde/ \
