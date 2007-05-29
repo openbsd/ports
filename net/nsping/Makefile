@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2007/05/29 00:56:54 aanriot Exp $
 
 COMMENT=	"DNS ping"
 
@@ -6,7 +6,7 @@ DISTNAME=	nsping-0.8
 DISTFILES=	nsping.tar.gz
 CATEGORIES=	net
 
-MASTER_SITES=	http://www.enteract.com/~tqbf/
+MASTER_SITE_OPENBSD=	Yes
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
