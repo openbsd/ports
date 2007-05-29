@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2007/05/27 13:53:51 steven Exp $
+# $OpenBSD: Makefile,v 1.184 2007/05/29 17:09:34 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -94,6 +94,7 @@
      SUBDIR += libwmf
      SUBDIR += luagd
      SUBDIR += makehuman
+     SUBDIR += mapivi
      SUBDIR += mhgui
      SUBDIR += mpeg-lib
      SUBDIR += mpeg_encode
