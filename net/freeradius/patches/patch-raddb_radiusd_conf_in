@@ -1,6 +1,6 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
---- raddb/radiusd.conf.in.orig	Fri Feb 10 16:12:02 2006
-+++ raddb/radiusd.conf.in	Mon Apr 10 21:58:08 2006
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.2 2007/05/29 20:21:26 rui Exp $
+--- raddb/radiusd.conf.in.orig	Sun Feb  4 15:28:46 2007
++++ raddb/radiusd.conf.in	Sat May 26 21:57:01 2007
 @@ -23,7 +23,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
@@ -41,7 +41,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
  
  
  # CLIENTS CONFIGURATION
-@@ -657,7 +657,7 @@ modules {
+@@ -665,7 +665,7 @@ modules {
  	#  For all EAP related authentications.
  	#  Now in another file, because it is very large.
  	#
@@ -50,7 +50,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
  
  	# Microsoft CHAP authentication
  	#
-@@ -1221,7 +1221,7 @@ $INCLUDE ${confdir}/eap.conf
+@@ -1253,7 +1253,7 @@ $INCLUDE ${confdir}/eap.conf
  	#  For MS-SQL, use:	 	${confdir}/mssql.conf
  	#  For Oracle, use:	 	${confdir}/oraclesql.conf
  	#

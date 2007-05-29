@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/25 19:34:54 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/29 20:21:26 rui Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,15 +8,15 @@ COMMENT-mysql=		"freeradius mysql rlm addon"
 COMMENT-pgsql=		"freeradius pgsql rlm addon"
 COMMENT-ldap=		"freeradius ldap rlm addon"
 
-V=			1.1.1
+V=			1.1.6
 DISTNAME=		freeradius-$V
-PKGNAME-main=		${DISTNAME}p2
+PKGNAME-main=		${DISTNAME}
 PKGNAME-iodbc=		freeradius-iodbc-$V
 PKGNAME-mysql=		freeradius-mysql-$V
 PKGNAME-pgsql=		freeradius-pgsql-$V
-PKGNAME-ldap=		freeradius-ldap-${V}p0
-SHARED_LIBS=		eap	1.0 \
-			radius	1.0
+PKGNAME-ldap=		freeradius-ldap-${V}
+SHARED_LIBS=		eap	2.0 \
+			radius	2.0
 
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
@@ -62,6 +62,7 @@ BUILD_DEPENDS=	::net/net-snmp
 LIB_DEPENDS=	gdbm.>=3::databases/gdbm \
 		ltdl.>=4::devel/libtool,-ltdl
 
+CFLAGS+=       -I${LOCALBASE}/include
 
 .if ${FLAVOR:L:Mno_iodbc}
 CONFIGURE_ARGS+=--without-rlm_sql_iodbc

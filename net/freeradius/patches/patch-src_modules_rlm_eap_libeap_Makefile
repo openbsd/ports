@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_modules_rlm_eap_libeap_Makefile,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
---- src/modules/rlm_eap/libeap/Makefile.orig	Fri Feb 10 20:47:09 2006
-+++ src/modules/rlm_eap/libeap/Makefile	Wed Mar 29 22:54:34 2006
+$OpenBSD: patch-src_modules_rlm_eap_libeap_Makefile,v 1.2 2007/05/29 20:21:26 rui Exp $
+--- src/modules/rlm_eap/libeap/Makefile.orig	Wed May  2 22:07:43 2007
++++ src/modules/rlm_eap/libeap/Makefile	Wed May  2 22:08:15 2007
 @@ -27,7 +27,7 @@ TARGET		= $(LIBPREFIX)eap
  all: $(TARGET).la
  
@@ -10,9 +10,9 @@ $OpenBSD: patch-src_modules_rlm_eap_libeap_Makefile,v 1.1.1.1 2006/04/16 14:37:0
  	$(LDFLAGS) $(LINK_MODE) -o $@ -rpath $(libdir) $^ \
  	$(top_builddir)/src/lib/libradius.la $(LIBS)
  
-@@ -39,5 +39,3 @@ clean:
- 
+@@ -40,5 +40,3 @@ clean:
  install: all
- 	$(LIBTOOL) --mode=install $(INSTALL) -c $(TARGET).la $(R)$(libdir)
+ 	$(LIBTOOL) --mode=install $(INSTALL) -c $(TARGET).la \
+ 		$(R)$(libdir)/$(TARGET).la
 -	rm -f $(R)$(libdir)/$(TARGET)-$(RADIUSD_VERSION).la;
 -	ln -s $(TARGET).la $(R)$(libdir)/$(TARGET)-$(RADIUSD_VERSION).la

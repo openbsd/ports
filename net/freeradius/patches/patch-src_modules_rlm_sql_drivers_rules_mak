@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_modules_rlm_sql_drivers_rules_mak,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
---- src/modules/rlm_sql/drivers/rules.mak.orig	Fri Feb 10 20:47:19 2006
-+++ src/modules/rlm_sql/drivers/rules.mak	Wed Mar 29 22:29:15 2006
+$OpenBSD: patch-src_modules_rlm_sql_drivers_rules_mak,v 1.2 2007/05/29 20:21:26 rui Exp $
+--- src/modules/rlm_sql/drivers/rules.mak.orig	Thu Jul  6 17:54:34 2006
++++ src/modules/rlm_sql/drivers/rules.mak	Sat May 26 21:57:02 2007
 @@ -99,9 +99,9 @@ build-module: $(TARGET).la
  	@cp $< ../lib
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_modules_rlm_sql_drivers_rules_mak,v 1.1.1.1 2006/04/16 14:37
  
  #######################################################################
  #
-@@ -137,4 +137,4 @@ reconfig:
+@@ -142,4 +142,4 @@ reconfig:
  #  Otherwise, install the libraries into $(libdir)
  #
  install:

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 19:34:54 steven Exp $
-@pkgpath net/freeradius
+@comment $OpenBSD: PLIST-main,v 1.2 2007/05/29 20:21:26 rui Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
+@pkgpath net/freeradius
 @newgroup _freeradius:559
 @newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
 bin/radclient
@@ -98,9 +98,6 @@ lib/freeradius/rlm_mschap.so
 lib/freeradius/rlm_ns_mta_md5.a
 lib/freeradius/rlm_ns_mta_md5.la
 lib/freeradius/rlm_ns_mta_md5.so
-lib/freeradius/rlm_otp.a
-lib/freeradius/rlm_otp.la
-lib/freeradius/rlm_otp.so
 lib/freeradius/rlm_pap.a
 lib/freeradius/rlm_pap.la
 lib/freeradius/rlm_pap.so
@@ -258,22 +255,22 @@ share/doc/freeradius/rlm_eap
 share/doc/freeradius/rlm_fastusers
 share/doc/freeradius/rlm_krb5
 share/doc/freeradius/rlm_ldap
-share/doc/freeradius/rlm_otp
 share/doc/freeradius/rlm_pam
 share/doc/freeradius/rlm_passwd
 share/doc/freeradius/rlm_python
 share/doc/freeradius/rlm_sim_triplets
 share/doc/freeradius/rlm_sql
 share/doc/freeradius/rlm_sqlcounter
+share/doc/freeradius/rlm_sqlippool
 share/doc/freeradius/supervise-radiusd.txt
 share/doc/freeradius/tuning_guide
 share/doc/freeradius/variables.txt
 share/examples/freeradius/
-@group _freeradius
 @mode 750
+@group _freeradius
 @sample ${SYSCONFDIR}/raddb/
-@group
 @mode
+@group
 share/examples/freeradius/acct_users
 @sample ${SYSCONFDIR}/raddb/acct_users
 share/examples/freeradius/attrs
@@ -316,7 +313,6 @@ share/examples/freeradius/naslist
 share/examples/freeradius/naspasswd
 share/examples/freeradius/oraclesql.conf
 share/examples/freeradius/otp.conf
-share/examples/freeradius/otppasswd.sample
 share/examples/freeradius/postgresql.conf
 share/examples/freeradius/preproxy_users
 @sample ${SYSCONFDIR}/raddb/preproxy_users
@@ -327,6 +323,7 @@ share/examples/freeradius/realms
 share/examples/freeradius/snmp.conf
 @sample ${SYSCONFDIR}/raddb/snmp.conf
 share/examples/freeradius/sql.conf
+share/examples/freeradius/sqlippool.conf
 share/examples/freeradius/users
 @sample ${SYSCONFDIR}/raddb/users
 share/freeradius/
@@ -339,9 +336,11 @@ share/freeradius/dictionary.airespace
 share/freeradius/dictionary.alcatel
 share/freeradius/dictionary.alteon
 share/freeradius/dictionary.altiga
+share/freeradius/dictionary.alvarion
 share/freeradius/dictionary.aptis
 share/freeradius/dictionary.aruba
 share/freeradius/dictionary.ascend
+share/freeradius/dictionary.asn
 share/freeradius/dictionary.avaya
 share/freeradius/dictionary.bay
 share/freeradius/dictionary.bintec
@@ -356,7 +355,7 @@ share/freeradius/dictionary.colubris
 share/freeradius/dictionary.columbia_university
 share/freeradius/dictionary.compat
 share/freeradius/dictionary.cosine
-share/freeradius/dictionary.digest
+share/freeradius/dictionary.digium
 share/freeradius/dictionary.epygi
 share/freeradius/dictionary.ericsson
 share/freeradius/dictionary.erx
@@ -388,6 +387,7 @@ share/freeradius/dictionary.nomadix
 share/freeradius/dictionary.nortel
 share/freeradius/dictionary.ntua
 share/freeradius/dictionary.packeteer
+share/freeradius/dictionary.patton
 share/freeradius/dictionary.propel
 share/freeradius/dictionary.quintum
 share/freeradius/dictionary.redback
@@ -400,19 +400,28 @@ share/freeradius/dictionary.rfc2869
 share/freeradius/dictionary.rfc3162
 share/freeradius/dictionary.rfc3576
 share/freeradius/dictionary.rfc3580
+share/freeradius/dictionary.rfc4372
+share/freeradius/dictionary.rfc4590
+share/freeradius/dictionary.rfc4675
+share/freeradius/dictionary.rfc4679
+share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
+share/freeradius/dictionary.schulzrinne-sipping
 share/freeradius/dictionary.shasta
 share/freeradius/dictionary.shiva
+share/freeradius/dictionary.sofaware
 share/freeradius/dictionary.sonicwall
 share/freeradius/dictionary.springtide
 share/freeradius/dictionary.starent
 share/freeradius/dictionary.t_systems_nova
 share/freeradius/dictionary.telebit
 share/freeradius/dictionary.trapeze
+share/freeradius/dictionary.tropos
 share/freeradius/dictionary.unix
 share/freeradius/dictionary.usr
 share/freeradius/dictionary.valemount
 share/freeradius/dictionary.versanet
+share/freeradius/dictionary.walabi
 share/freeradius/dictionary.waverider
 share/freeradius/dictionary.wispr
 share/freeradius/dictionary.xedia

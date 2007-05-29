@@ -1,7 +1,22 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
---- Makefile.orig	Wed Mar 29 22:30:25 2006
-+++ Makefile	Wed Mar 29 22:30:37 2006
-@@ -57,7 +57,6 @@ install:
+$OpenBSD: patch-Makefile,v 1.2 2007/05/29 20:21:26 rui Exp $
+--- Makefile.orig	Fri Jun 23 05:31:58 2006
++++ Makefile	Sat May 26 21:59:36 2007
+@@ -40,14 +40,6 @@ clean:
+ #
+ export DESTDIR := $(R)
+ install:
+-	$(INSTALL) -d -m 755	$(R)$(sbindir)
+-	$(INSTALL) -d -m 755	$(R)$(bindir)
+-	$(INSTALL) -d -m 755	$(R)$(raddbdir)
+-	$(INSTALL) -d -m 755	$(R)$(mandir)
+-	$(INSTALL) -d -m 755	$(R)$(RUNDIR)
+-	$(INSTALL) -d -m 700	$(R)$(logdir)
+-	$(INSTALL) -d -m 700	$(R)$(radacctdir)
+-	$(INSTALL) -d -m 755	$(R)$(datadir)
+ 	$(INSTALL) -d -m 755	$(R)$(dictdir)
+ 	for i in 1 5 8; do \
+ 		$(INSTALL) -d -m 755	$(R)$(mandir)/man$$i; \
+@@ -61,7 +53,6 @@ install:
  	for i in dictionary*; do \
  		$(INSTALL) -m 644 $$i $(R)$(dictdir); \
  	done
