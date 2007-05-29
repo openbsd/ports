@@ -1,0 +1,12 @@
+$OpenBSD: patch-gui_Finger_Finger_h,v 1.1.1.1 2007/05/29 03:03:52 ajacoutot Exp $
+--- gui/Finger/Finger.h.orig	Mon May 28 19:20:52 2007
++++ gui/Finger/Finger.h	Mon May 28 19:21:05 2007
+@@ -28,7 +28,7 @@
+  * distributing this program bundled in some distribution.)  
+  */
+ #define FINGER_DEFAULT_COMMAND     @"/usr/bin/finger"
+-#define PING_DEFAULT_COMMAND       @"/bin/ping"
++#define PING_DEFAULT_COMMAND       @"/sbin/ping"
+ #define TRACEROUTE_DEFAULT_COMMAND @"/usr/sbin/traceroute"
+ #define WHOIS_DEFAULT_COMMAND      @"/usr/bin/whois"
+ #define DEFAULT_BUTTON_SIZE        @"Large"

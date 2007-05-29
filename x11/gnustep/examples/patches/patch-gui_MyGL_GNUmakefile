@@ -1,0 +1,12 @@
+$OpenBSD: patch-gui_MyGL_GNUmakefile,v 1.1.1.1 2007/05/29 03:03:52 ajacoutot Exp $
+--- gui/MyGL/GNUmakefile.orig	Mon May 28 19:28:11 2007
++++ gui/MyGL/GNUmakefile	Mon May 28 19:29:32 2007
+@@ -9,6 +9,7 @@ MyGL_APPLICATION_ICON=MyGL.tiff
+ MyGL_OBJC_FILES = main.m AppController.m
+ MyGL_RESOURCE_FILES = MyGL.gorm MyGL.tiff
+ 
+-ADDITIONAL_TOOL_LIBS += -lGL -lGLU -lm
++ADDITIONAL_TOOL_LIBS += -L!!X11BASE!!/lib -lGL -lGLU -lm
++ADDITIONAL_INCLUDE_DIRS += -I!!X11BASE!!/include
+ 
+ include $(GNUSTEP_MAKEFILES)/application.make

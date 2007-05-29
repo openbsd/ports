@@ -1,0 +1,16 @@
+$OpenBSD: patch-gui_GNUmakefile,v 1.1.1.1 2007/05/29 03:03:52 ajacoutot Exp $
+--- gui/GNUmakefile.orig	Wed May 23 22:11:28 2007
++++ gui/GNUmakefile	Mon May 28 18:57:42 2007
+@@ -31,7 +31,11 @@ SUBPROJECTS =             \
+ 	Ink               \
+ 	ExampleService    \
+ 	MyGL		  \
+-	GSTest
++	GSTest		  \
++	ToolbarExample	  \
++	Finger		  \
++	GFractal	  \
++	HostAddress
+ 
+ include GNUmakefile.preamble
+ 

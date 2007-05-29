@@ -1,0 +1,11 @@
+$OpenBSD: patch-gui_HostAddress_main_m,v 1.1.1.1 2007/05/29 03:03:52 ajacoutot Exp $
+--- gui/HostAddress/main.m.orig	Mon May 28 20:37:06 2007
++++ gui/HostAddress/main.m	Mon May 28 20:37:13 2007
+@@ -54,7 +54,6 @@ void createMenu()
+   info = AUTORELEASE([[NSMenu alloc] init]);
+   [menu setSubmenu:info forItem:[menu itemWithTitle:@"Info"]];
+   [info addItemWithTitle:@"Info Panel..." action:@selector(showInfoPanel:) keyEquivalent:@""];
+-  [info addItemWithTitle:@"Preferences" action:@selector(showPrefPanel:) keyEquivalent:@""];
+   [info addItemWithTitle:@"Help" action:action keyEquivalent:@"?"];
+ 
+   edit = AUTORELEASE([[NSMenu alloc] init]);
