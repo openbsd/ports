@@ -1,0 +1,12 @@
+$OpenBSD: patch-balance_h,v 1.1 2007/05/29 18:56:24 rui Exp $
+--- balance.h.orig	Tue May 29 18:10:23 2007
++++ balance.h	Tue May 29 18:11:05 2007
+@@ -66,7 +66,7 @@
+  * this should be a directory that isn't cleaned up periodically, or at
+  * reboot of the machine (/tmp is cleaned at reboot on many OS versions)
+  */
+-#define SHMDIR 		"/var/run/balance/"
++#define SHMDIR 		"/var/balance/"
+ #define	SHMFILESUFFIX	".shm"
+ 
+ #define MAXCHANNELS 		16	/* max channels in group          */

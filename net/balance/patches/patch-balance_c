@@ -1,81 +1,51 @@
-$OpenBSD: patch-balance_c,v 1.6 2003/06/30 18:46:23 pvalchev Exp $
---- balance.c.orig	Sat Sep 15 16:34:56 2001
-+++ balance.c	Tue Jun 24 11:35:55 2003
-@@ -673,11 +673,13 @@ static usage() {
-   char* version;
-   char* revision_copy;
-   char* token;
+$OpenBSD: patch-balance_c,v 1.7 2007/05/29 18:56:24 rui Exp $
+--- balance.c.orig	Sun May 27 18:49:46 2007
++++ balance.c	Sun May 27 18:55:58 2007
+@@ -809,11 +809,13 @@ void initialize_release_variables(void)
+   char *version;
+   char *revision_copy;
+   char *token;
 +  size_t rev_len;
  
--  if((revision_copy=(char*) malloc(strlen(revision)+1))==NULL) {
+-  if ((revision_copy = (char *) malloc(strlen(revision) + 1)) == NULL) {
 +  rev_len = strlen(revision)+1;
-+  if((revision_copy=(char*) malloc(rev_len))==NULL) {
-     fprintf(stderr,"malloc problem in usage()\n");
++  if ((revision_copy = (char *) malloc(rev_len)) == NULL) {
+     fprintf(stderr, "malloc problem in initialize_release_variables()\n");
    } else {
 -    strcpy(revision_copy, revision);
 +    strlcpy(revision_copy, revision, rev_len);
-     token=strtok(revision_copy," ");
-     token=strtok(NULL," ");
-     version=token!=NULL?token:"*undefined*";
-@@ -882,7 +884,8 @@ shell() {
- 	printf("  version               show version id\n");
- 
-       } else if(mycmp(command,"disable")) {
--        char* arg, n; 
-+        char* arg;
-+	int n;
-         if((arg=strtok(NULL," \t\n")) != NULL) {
- 	  n=atoi(arg);
- 	  if(n<0 || n >= grp_nchannels(common,currentgroup)) {
-@@ -900,7 +903,8 @@ shell() {
+     token = strtok(revision_copy, " ");
+     token = strtok(NULL, " ");
+     version = token != NULL ? token : "0.0";
+@@ -1136,7 +1138,8 @@ int shell(char *argument)
  	  printf("syntax error\n");
  	}
-       } else if(mycmp(command,"group")) {
--        char* arg, n; 
-+        char* arg;
+       } else if (mycmp(command, "group")) {
+-	char *arg, n;
++	char *arg;
 +	int n;
-         if((arg=strtok(NULL," \t\n")) != NULL) {
- 	  n=atoi(arg);
-           if(n>=MAXGROUPS || n<0) {
-@@ -913,7 +917,8 @@ shell() {
- 	}
- 
-       } else if(mycmp(command,"reset")) {	// reset channel counters
--        char* arg, n; 
-+        char* arg;
-+	int n;
- 
-         if((arg=strtok(NULL," \t\n")) != NULL) {
- 	  n=atoi(arg);
-@@ -931,7 +936,8 @@ shell() {
- 
-       } else if(mycmp(command,"enable")) {
- 
--        char* arg, n; 
-+        char* arg;
-+	int n;
-         if((arg=strtok(NULL," \t\n")) != NULL) {
- 	  n=atoi(arg);
- 	  if(n<0 || n >= grp_nchannels(common,currentgroup)) {
-@@ -1122,10 +1128,10 @@ char	*argv[];
-   serv_addr.sin_family      = AF_INET;
-   if(bindhost != NULL) {
+ 	if ((arg = strtok(NULL, " \t\n")) != NULL) {
+ 	  n = atoi(arg);
+ 	  if (n >= MAXGROUPS || n < 0) {
+@@ -1472,10 +1475,10 @@ int main(int argc, char *argv[])
+   serv_addr.sin_family = AF_INET;
+   if (bindhost != NULL) {
      setipaddress(&serv_addr.sin_addr, bindhost);
 -    sprintf(bindhost_address, inet_ntoa(serv_addr.sin_addr));
 +    snprintf(bindhost_address, sizeof(bindhost_address), inet_ntoa(serv_addr.sin_addr));
    } else {
-     serv_addr.sin_addr.s_addr=htonl(INADDR_ANY);
--    sprintf(bindhost_address,"0.0.0.0");
+     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+-    sprintf(bindhost_address, "0.0.0.0");
 +    snprintf(bindhost_address, sizeof(bindhost_address), "0.0.0.0");
    }
-   serv_addr.sin_port=htons(source_port);
+   serv_addr.sin_port = htons(source_port);
  
-@@ -1135,7 +1141,7 @@ char	*argv[];
-      struct stat buffer;
-      int fd;
+@@ -1493,7 +1496,7 @@ int main(int argc, char *argv[])
+     }
+     umask(old);
+   }
+-  sprintf(rendezvousfile, "%sbalance.%d.%s", SHMDIR, source_port,
++  snprintf(rendezvousfile, sizeof(rendezvousfile), "%sbalance.%d.%s", SHMDIR, source_port,
+ 	  bindhost_address);
  
--     sprintf(rendezvousfile,"%sbalance.%d.%s",SHMDIR,source_port,bindhost_address);
-+     snprintf(rendezvousfile, sizeof(rendezvousfile), "%sbalance.%d.%s", SHMDIR, source_port, bindhost_address);
- 
-      if(stat(rendezvousfile, &buffer) == -1) {
-        // File existiert (noch) nicht ...
+   if (stat(rendezvousfile, &buffer) == -1) {
