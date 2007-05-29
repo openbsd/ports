@@ -1,14 +1,25 @@
-$OpenBSD: patch-sigscheme_libgcroots_include_private_gcconfig_h,v 1.1 2007/05/26 03:49:38 pvalchev Exp $
---- sigscheme/libgcroots/include/private/gcconfig.h.orig	Thu May 24 20:38:41 2007
-+++ sigscheme/libgcroots/include/private/gcconfig.h	Thu May 24 20:38:56 2007
-@@ -316,6 +316,10 @@
- #   define OPENBSD
- #   define mach_type_known
+$OpenBSD: patch-sigscheme_libgcroots_include_private_gcconfig_h,v 1.2 2007/05/29 05:37:35 pvalchev Exp $
+--- sigscheme/libgcroots/include/private/gcconfig.h.orig	Fri Jan  5 20:00:59 2007
++++ sigscheme/libgcroots/include/private/gcconfig.h	Mon May 28 23:36:16 2007
+@@ -83,6 +83,10 @@
+ #    define SPARC
+ #    define mach_type_known
  # endif
-+# if defined(__OpenBSD__) && defined(__x86_64__)
-+#   define X86_64
++# if defined(OPENBSD) && defined(__powerpc__)
++#    define POWERPC
++#    define mach_type_known
++# endif
+ # if defined(NETBSD) && (defined(m68k) || defined(__m68k__))
+ #    define M68K
+ #    define mach_type_known
+@@ -314,6 +318,10 @@
+ # if defined(__OpenBSD__) && (defined(i386) || defined(__i386__))
+ #   define I386
+ #   define OPENBSD
 +#   define mach_type_known
 +# endif
- # if defined(FREEBSD) && (defined(i386) || defined(__i386__))
- #   define I386
++# if defined(__OpenBSD__) && defined(__x86_64__)
++#   define X86_64
  #   define mach_type_known
+ # endif
+ # if defined(FREEBSD) && (defined(i386) || defined(__i386__))
