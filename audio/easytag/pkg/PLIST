@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/05 16:14:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/05/29 10:27:33 bernd Exp $
 bin/easytag
 @man man/man1/easytag.1
+share/applications/
+share/applications/easytag.desktop
 share/doc/easytag/
-share/doc/easytag/README
 share/doc/easytag/USERS-GUIDE
-share/gnome/
-share/gnome/apps/
-share/gnome/apps/Multimedia/
-share/gnome/apps/Multimedia/easytag.desktop
+share/easytag/
+share/easytag/ChangeLog
+share/easytag/EasyTAG_logo.xpm
+share/locale/bg/LC_MESSAGES/easytag.mo
 share/locale/cs/LC_MESSAGES/easytag.mo
+share/locale/da/LC_MESSAGES/easytag.mo
 share/locale/de/LC_MESSAGES/easytag.mo
+share/locale/el/LC_MESSAGES/easytag.mo
 share/locale/es/LC_MESSAGES/easytag.mo
 share/locale/fr/LC_MESSAGES/easytag.mo
 share/locale/hu/LC_MESSAGES/easytag.mo
@@ -17,10 +20,11 @@ share/locale/it/LC_MESSAGES/easytag.mo
 share/locale/ja/LC_MESSAGES/easytag.mo
 share/locale/nl/LC_MESSAGES/easytag.mo
 share/locale/pl/LC_MESSAGES/easytag.mo
+share/locale/pt_BR/LC_MESSAGES/easytag.mo
 share/locale/ro/LC_MESSAGES/easytag.mo
 share/locale/ru/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
+share/locale/zh_CN/LC_MESSAGES/easytag.mo
 share/pixmaps/
 share/pixmaps/EasyTAG.xpm
-share/pixmaps/EasyTAG_logo.xpm
