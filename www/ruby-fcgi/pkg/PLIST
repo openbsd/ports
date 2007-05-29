@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/29 20:19:49 jcs Exp $
+%%SHARED%%
+lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ChangeLog
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README.signals
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/MANIFEST
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/Makefile
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/extconf.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/fcgi.c
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/fcgi.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fcgi/mkmf.log
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/fcgi.rb
+lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec
