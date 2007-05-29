@@ -1,0 +1,2 @@
+PDF::Writer for Ruby provides the ability to create PDF documents
+using only native Ruby libraries.
