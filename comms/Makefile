@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2007/05/28 18:47:43 jason Exp $
+# $OpenBSD: Makefile,v 1.39 2007/05/29 04:50:02 jason Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -36,6 +36,7 @@
      SUBDIR += xastir
      SUBDIR += xdx
      SUBDIR += xcept
+     SUBDIR += xlog
      SUBDIR += zmtx-zmrx
 
 .include <bsd.port.subdir.mk>
