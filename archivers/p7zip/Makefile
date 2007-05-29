@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/08 17:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/29 21:55:05 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	"file archiver with high compression ratio"
 COMMENT-rar=	"rar modules for p7zip"
 
-V=		4.45
+V=		4.47
 DISTNAME=	p7zip_${V}_src_all
 PKGNAME=	p7zip-${V}
 PKGNAME-main=	p7zip-${V}
@@ -40,7 +40,7 @@ MAKE_FLAGS=	MYCC="${CC}" MYCXX="${CXX}" \
 		MYCFLAGS="${CFLAGS}" MYCXXFLAGS="${CXXFLAGS}"
 
 ALL_TARGET=	all3
-REGRESS_TARGET=	test
+REGRESS_TARGET=	all_test
 
 do-configure:
 	cp ${WRKSRC}/makefile.openbsd ${WRKSRC}/makefile.machine
