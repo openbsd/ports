@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.113 2007/05/29 16:57:00 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.114 2007/05/29 17:36:32 aanriot Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -146,7 +146,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/modules/by-module/ \
 	ftp://ftp.duke.edu/pub/perl/modules/by-module/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/ \
-	ftp://ftp.flirble.org/pub/CPAN/modules/by-module/
+	ftp://ftp.flirble.org/pub/CPAN/modules/by-module/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/ \
 	http://www.cpan.dk/modules/by-module/ \
 	ftp://mirrors.dotsrc.org/cpan/modules/by-module/
