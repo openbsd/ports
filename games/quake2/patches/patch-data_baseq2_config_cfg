@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_baseq2_config_cfg,v 1.1 2007/05/29 14:49:16 claudio Exp $
+--- data/baseq2/config.cfg.orig	Tue May 29 05:26:39 2007
++++ data/baseq2/config.cfg	Tue May 29 05:28:15 2007
+@@ -116,9 +116,9 @@ set hostname "noname"
+ set sndbits "16"
+ set sndspeed "0"
+ set sndchannels "2"
+-set snddevice "/dev/dsp"
++set snddevice "/dev/audio"
+ set cd_volume "1"
+-set cd_dev "/dev/cdrom"
++set cd_dev "/dev/rcd0c"
+ set cl_drawfps "1"
+ set in_dgamouse "1"
+ set vid_ref "softx"

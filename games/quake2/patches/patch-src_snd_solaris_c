@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_snd_solaris_c,v 1.1.1.1 2007/03/16 18:26:01 claudio Exp $
---- src/snd_solaris.c.orig	Mon Mar 15 13:50:17 2004
-+++ src/snd_solaris.c	Sun Jan 22 00:04:45 2006
-@@ -27,12 +27,12 @@ Foundation, Inc., 59 Temple Place - Suit
+$OpenBSD: patch-src_snd_solaris_c,v 1.2 2007/05/29 14:49:16 claudio Exp $
+--- src/snd_solaris.c.orig	Mon Mar 15 13:50:39 2004
++++ src/snd_solaris.c	Tue May 29 05:20:07 2007
+@@ -27,12 +27,12 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #include <unistd.h>
  #include <fcntl.h>
  #include <errno.h>
@@ -108,7 +108,7 @@ $OpenBSD: patch-src_snd_solaris_c,v 1.1.1.1 2007/03/16 18:26:01 claudio Exp $
  	    close(audio_fd);
  	    audio_fd = -1;
  		}
-@@ -211,7 +210,7 @@ Send sound to device if buffer isn't rea
+@@ -211,7 +210,7 @@ Send sound to device if buffer isn't really the dma bu
  */
  void SNDDMA_Submit(void)
  {
