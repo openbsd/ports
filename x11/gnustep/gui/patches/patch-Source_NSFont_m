@@ -1,0 +1,37 @@
+$OpenBSD: patch-Source_NSFont_m,v 1.1.1.1 2007/05/29 03:02:10 ajacoutot Exp $
+--- Source/NSFont.m.orig	Mon May 28 14:37:58 2007
++++ Source/NSFont.m	Mon May 28 14:39:49 2007
+@@ -163,13 +163,13 @@ keyForFont(NSString *name, const float *matrix, BOOL f
+   <list>
+     <item>NSBoldFontSize            (none)</item>
+     <item>NSControlContentFontSize  (none)</item>
+-    <item>NSFontSize                12 (System Font Size)</item>
++    <item>NSFontSize                9 (System Font Size)</item>
+     <item>NSLabelFontSize           (none)</item>
+     <item>NSMenuFontSize            (none)</item>
+     <item>NSMiniFontSize            6</item>
+     <item>NSMessageFontSize         (none)</item>
+     <item>NSPaletteFontSize         (none)</item>
+-    <item>NSSmallFontSize           9</item>
++    <item>NSSmallFontSize           8</item>
+     <item>NSTitleBarFontSize        (none)</item>
+     <item>NSToolTipsFontSize        (none)</item>
+     <item>NSUserFixedPitchFontSize  (none)</item>
+@@ -587,7 +587,7 @@ static void setNSFont(NSString *key, NSFont *font)
+   
+   if (fontSize == 0)
+     {
+-      fontSize = 9;
++      fontSize = 8;
+     }
+ 
+   return fontSize;
+@@ -599,7 +599,7 @@ static void setNSFont(NSString *key, NSFont *font)
+   
+   if (fontSize == 0)
+     {
+-      fontSize = 12;
++      fontSize = 9;
+     }
+ 
+   return fontSize;

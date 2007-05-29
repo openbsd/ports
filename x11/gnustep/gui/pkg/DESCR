@@ -1,0 +1,6 @@
+The GNUstep gui library is a library of graphical user interface classes
+written completely in the Objective-C language; the classes are based
+upon the OpenStep specification as release by NeXT Software, Inc.  These
+classes include graphical objects such as buttons, text fields, popup
+lists, browser lists, and windows; there are also many associated
+classes for handling events, colors, fonts, pasteboards and images.
