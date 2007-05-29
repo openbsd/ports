@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gui_tracedialog_c,v 1.1.1.1 2007/05/29 04:48:59 jason Exp $
+--- src/gui_tracedialog.c.orig	Wed Nov 23 12:12:36 2005
++++ src/gui_tracedialog.c	Wed Nov 23 12:13:26 2005
+@@ -67,10 +67,8 @@ stop_tracing (void)
+ 	fclose (finfo.fd);
+ 	dup2 (saved_fd, STDERR_FILENO);
+ 	close (saved_fd);
+-#ifndef __NetBSD__
+-#ifndef WIN32
++#if !defined(__NetBSD__) && !defined(__OpenBSD__) && !defined(WIN32)
+ 	stderr = fdopen (STDERR_FILENO, "w");
+-#endif
+ #endif
+ 	hamlibresult = start_hamlib (preferences.radio, preferences.device,
+ 		RIG_DEBUG_NONE, preferences.polltime);

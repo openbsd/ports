@@ -1,0 +1,4 @@
+xlog is a GTK+ logging program for Amateur Radio Operators. The main
+window consists of a button bar, QSO frame, and a browseable log. Logs
+will be saved to a flat text file. You can create, open and close logs
+as you need them.
