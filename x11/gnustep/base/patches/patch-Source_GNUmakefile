@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_GNUmakefile,v 1.1.1.1 2007/05/29 03:01:35 ajacoutot Exp $
+--- Source/GNUmakefile.orig	Wed May 23 15:49:24 2007
++++ Source/GNUmakefile	Wed May 23 15:49:33 2007
+@@ -91,11 +91,6 @@ GSLocale.m \
+ preface.m \
+ mframe.m
+ 
+-ifeq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
+-GNU_MFILES += thr-pthread.m
+-OBJC_LIBS += -lpthread
+-endif
+-
+ ifneq ($(OBJC_RUNTIME_LIB), gnu)
+ GNU_MFILES += objc-gnu2next.m
+ ifeq ($(HAVE_PTHREAD_H), yes)

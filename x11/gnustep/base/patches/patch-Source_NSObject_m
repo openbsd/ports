@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_NSObject_m,v 1.1.1.1 2007/05/29 03:01:35 ajacoutot Exp $
+--- Source/NSObject.m.orig	Mon May 28 17:25:27 2007
++++ Source/NSObject.m	Mon May 28 17:26:02 2007
+@@ -1092,7 +1092,7 @@ GSDescriptionForClassMethod(pcl self, SEL aSel)
+ #endif
+ #endif
+ 
+-#if defined(__FreeBSD__) && defined(__i386__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__) && defined(__i386__)
+       // Manipulate the FPU to add the exception mask. (Fixes SIGFPE
+       // problems on *BSD)
+       // Note this only works on x86

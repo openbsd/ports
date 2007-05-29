@@ -1,0 +1,10 @@
+To be able to use gdomap(8), add the following lines to services(5):
+ gdomap 538/tcp # GNUstep distrib objects
+ gdomap 538/udp # GNUstep distrib objects
+
+Then see rc(8) to have "${PREFIX}/bin/gdomap -p" launched at boot time.
+
+To be able to fully use the GNUstep framework, you should also add the
+following lines to your ~/.xsession or ~/.xinitrc:
+ . ${PREFIX}/share/GNUstep/Makefiles/GNUstep.sh
+ ${PREFIX}/bin/gdnc
