@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2007/05/29 04:37:56 jcs Exp $
+# $OpenBSD: Makefile,v 1.198 2007/05/29 20:15:47 jcs Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -185,8 +185,10 @@
      SUBDIR += py-rtf
      SUBDIR += py-xml
      SUBDIR += rman
+     SUBDIR += ruby-builder
      SUBDIR += ruby-fastercsv
      SUBDIR += ruby-hyperestraier
+     SUBDIR += ruby-markaby
      SUBDIR += ruby-pdf-writer
      SUBDIR += rxp
      SUBDIR += sablotron
