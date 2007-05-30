@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.464 2007/05/28 12:35:14 steven Exp $
+# $OpenBSD: Makefile,v 1.465 2007/05/30 02:35:47 robert Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -160,6 +160,7 @@
      SUBDIR += netatalk
      SUBDIR += netdude
      SUBDIR += netpipes
+     SUBDIR += netrate
      SUBDIR += netsed
      SUBDIR += ngrep
      SUBDIR += nicotine
