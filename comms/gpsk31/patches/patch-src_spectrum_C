@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_spectrum_C,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
+--- src/spectrum.C.orig	Tue May 29 22:58:21 2007
++++ src/spectrum.C	Tue May 29 22:58:28 2007
+@@ -27,7 +27,7 @@
+ #include <stdlib.h>
+ #include <sys/ioctl.h>
+ #include <fcntl.h>
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ 
+ #include <gtk/gtk.h>
+ #include <stdio.h>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gpsk_conf,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
+--- gpsk.conf.orig	Tue May 29 23:20:30 2007
++++ gpsk.conf	Tue May 29 23:20:36 2007
+@@ -39,7 +39,7 @@ freq = 1000
+ dcd_level = 13
+ lsb = 0
+ ptt_device = "/dev/ttyS1"
+-audio_device = "/dev/dsp"
++audio_device = "/dev/audio"
+ #
+ # Use new demodulator/rx filter?
+ #

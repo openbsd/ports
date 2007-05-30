@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
+bin/gpsk31
+@man man/man1/gpsk31.1
+share/applications/
+share/applications/gpsk31.desktop
+share/gpsk31/
+share/gpsk31/README
+share/gpsk31/gpsk.conf
+share/gpsk31/psk31.cod
+share/nls/pl_PL.ISO_8859-2/
+share/pixmaps/
+share/pixmaps/gpsk31.png

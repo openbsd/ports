@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_server-main_C,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
+--- src/server-main.C.orig	Wed Nov  2 01:54:12 2005
++++ src/server-main.C	Tue May 29 23:15:53 2007
+@@ -19,7 +19,7 @@
+  *   thread and from user interface thread (==interface functions)
+  */
+ 
+-
++#include <sys/types.h>
+ #include <sys/mman.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -33,7 +33,7 @@
+ #include <netinet/in.h>
+ #include <sys/time.h>
+ #include <fcntl.h>
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/ioctl.h>
+ #include "psk31-receiver.h"
+ #include "psk31-transmitter.h"
+@@ -60,7 +60,7 @@ int full_duplex;
+ int chans;
+ int size;
+ int bits;
+-static char *audio_path="/dev/dsp";
++static char *audio_path="/dev/audio";
+ static char *ptt_path=NULL;
+ static int audiofd=-1, pttfd=-1;
+ static int ptt_invert=0;

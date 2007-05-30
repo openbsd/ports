@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_psk31-transmitter_C,v 1.1.1.1 2007/05/30 05:27:44 jason Exp $
+--- src/psk31-transmitter.C.orig	Tue May 29 22:56:14 2007
++++ src/psk31-transmitter.C	Tue May 29 22:56:29 2007
+@@ -11,7 +11,7 @@
+ #include <errno.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/ioctl.h>
+ #include "psk31-coder.h"
+ #include "psk31-transmitter.h"
