@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/30 20:41:54 jason Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/05/30 21:28:40 steven Exp $
 %%SHARED%%
 bin/geotifcp
 bin/listgeo
@@ -50,4 +50,3 @@ share/epsg_csv/projop_wparm.csv
 share/epsg_csv/stateplane.csv
 share/epsg_csv/unit_of_measure.csv
 share/epsg_csv/version_history.csv
-share/nls/pl_PL.ISO_8859-2/
