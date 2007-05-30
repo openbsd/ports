@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/03 11:28:48 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/30 23:34:36 jcs Exp $
 
 COMMENT=	"package management framework for the Ruby language"
 
-V=		0.9.0
+V=		0.9.4
 DISTNAME=	rubygems-$V
-PKGNAME= 	ruby-gems-$Vp0
+PKGNAME= 	ruby-gems-$V
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docs.rubygems.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/11289/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/20989/
 EXTRACT_SUFX=	.tgz
 
 MODULES= 	lang/ruby
