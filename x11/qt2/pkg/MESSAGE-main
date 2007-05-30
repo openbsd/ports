@@ -1,4 +1,0 @@
-Man pages for qt2 have been installed in ${QT_LIBDIR}/man,
-to avoid collision with the qt1 manual pages.
-
-You may wish to add this directory to /etc/man.conf.
