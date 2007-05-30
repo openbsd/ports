@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/30 05:55:56 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/30 19:46:04 jason Exp $
 
 COMMENT=	"radio contest logger"
 
-PKGNAME=	tlf-0.9.30
-DISTNAME=	$(PKGNAME)
+DISTNAME=	tlf-0.9.30
+PKGNAME=	$(DISTNAME)
 CATEGORIES=	comms hamradio
 
 HOMEPAGE=	http://home.iae.nl/users/reinc/TLF-0.2.html
