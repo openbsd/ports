@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/29 04:48:59 jason Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/30 21:56:38 jason Exp $
 bin/xlog
 @man man/man1/xlog.1
 share/applications/
@@ -31,7 +31,6 @@ share/locale/sv/LC_MESSAGES/xlog.mo
 share/mime/
 share/mime/packages/
 share/mime/packages/xlog.xml
-share/nls/pl_PL.ISO_8859-2/
 share/pixmaps/
 share/pixmaps/gnome-mime-text-x-xlog.png
 share/pixmaps/xlog/
