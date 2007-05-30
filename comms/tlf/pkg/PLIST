@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/30 05:55:56 jason Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/30 21:54:17 jason Exp $
 bin/soundlog
 bin/tlf
 @man man/man1/tlf.1
-share/nls/pl_PL.ISO_8859-2/
 share/tlf/
 share/tlf/arrlsections
 share/tlf/callmaster
