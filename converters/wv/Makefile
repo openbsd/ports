@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/30 02:39:15 aanriot Exp $
 
 COMMENT=	"convert various Microsoft formats into HTML/PNG"
 
 DISTNAME=	wv-0.7.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 
@@ -18,12 +19,13 @@ WANTLIB=		ICE SM X11 c freetype jpeg m xml2 z
 MODULES=	converters/libiconv
 LIB_DEPENDS=	wmf.>=6,wmflite.>=6::graphics/libwmf \
 		png.>=2::graphics/png \
-		Magick.>=5::graphics/ImageMagick \
 		glib.>=1::devel/glib
+RUN_DEPENDS=	::graphics/ImageMagick
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
+CONFIGURE_ENV+=	 CPPFLAGS="-I${LOCALBASE}/include/libpng/"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ARGS+= --with-png=${LOCALBASE} --with-exporter \
 		--with-libiconv=${LOCALBASE} \
