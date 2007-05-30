@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/30 02:35:17 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/30 04:12:29 robert Exp $
 
 COMMENT=		"FreeBSD's tcp/udp traffic generator"
 
 DISTNAME=		netrate-20070208
-CATEGORIES=		net
+CATEGORIES=		benchmarks net
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
