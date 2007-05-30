@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/23 22:05:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/30 19:51:38 naddy Exp $
 
 COMMENT=		"small and secure replacement for syslogd"
 
-DISTNAME=		socklog-2.0.1
+DISTNAME=		socklog-2.1.0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.smarden.org/socklog/
 
-MAINTAINER=		Lars Hansson <lars@unet.net.ph>
+MAINTAINER=		Christian Rueger <cr+openbsd@rueger-net.de>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}
-WRKDIST=		${WRKDIR}/admin/socklog-2.0.1
+WRKDIST=		${WRKDIR}/admin/${DISTNAME}
 WRKSRC=			${WRKDIST}/src
 BINPROGRAMS=		tryto uncat
 SBINPROGRAMS=		socklog socklog-check socklog-conf
