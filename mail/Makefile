@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2007/05/24 13:39:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.182 2007/05/30 14:31:36 steven Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -151,6 +151,7 @@
      SUBDIR += py-milter
      SUBDIR += razor-agents
      SUBDIR += relaydb
+     SUBDIR += roundcubemail
      SUBDIR += ruby-actionmailer
      SUBDIR += signify
      SUBDIR += sma
