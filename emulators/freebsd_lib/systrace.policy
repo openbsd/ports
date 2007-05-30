@@ -1,5 +1,5 @@
-# $OpenBSD: systrace.policy,v 1.2 2005/02/09 20:36:29 sturm Exp $
-Policy: ${TRUEPREFIX}/sbin/ldconfig, Emulation: freebsd
+# $OpenBSD: systrace.policy,v 1.3 2007/05/30 15:29:43 espie Exp $
+Policy: ${TRUEBASE}/sbin/ldconfig, Emulation: freebsd
 	freebsd-__sysctl: permit
 	freebsd-break: permit
 	freebsd-close: permit
