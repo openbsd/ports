@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/13 18:01:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"Unicode character map for the GNOME project"
 
@@ -6,8 +6,6 @@ DISTNAME=		gucharmap-1.10.0
 PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11/gnome
 SHARED_LIBS +=	gucharmap            0.0      # .6.1
-
-HOMEPAGE=		http://www.gnome.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

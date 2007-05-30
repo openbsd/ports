@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/05/06 15:19:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"user interface components for GNOME"
 
@@ -6,8 +6,6 @@ DISTNAME=		libgnomeui-2.18.1
 PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	gnomeui-2      1800.1         # .1800.1
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

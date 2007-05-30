@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/04/27 22:13:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2007/05/30 09:56:31 jasper Exp $
 
 COMMENT=		"dialogs for Gnome"
 
 DISTNAME=		zenity-2.18.1
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

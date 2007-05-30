@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2007/05/13 14:08:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"GNOME panel"
 
 DISTNAME=		gnome-panel-2.18.1
 SHARED_LIBS=	panel-applet-2       2.17      # .2.17
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 x11/gnome
-
-HOMEPAGE=		http://www.gnome.org
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-panel/2.18/}
 EXTRACT_SUFX=           .tar.bz2

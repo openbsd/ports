@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/27 22:23:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"user interface components for bonobo"
 
 DISTNAME=		libbonoboui-2.18.0
 SHARED_LIBS +=	bonoboui-2         1.0        # .0.0
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

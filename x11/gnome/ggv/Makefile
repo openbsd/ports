@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/04/07 13:40:23 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"GNOME frontend for GhostScript"
 DISTNAME=		ggv-2.8.3
 PKGNAME=		${DISTNAME}p3
 CATEGORIES=		print x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/	
 
 MAINTAINER=		Thomas Delaet <thomas@delaet.org>	
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/05/18 14:17:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -8,7 +8,6 @@ PKGNAME=		control-center2-${VERSION}
 SHARED_LIBS +=	gnome-window-settings 1.0      # .1.0
 
 CATEGORIES=		x11 x11/gnome
-HOMEPAGE=		http://www.gnome.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

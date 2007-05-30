@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/05/16 18:50:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=	"GNOME terminal"
 
 DISTNAME=	gnome-terminal-2.18.0
 CATEGORIES=	x11/gnome
-
-HOMEPAGE=	http://www.gnome.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

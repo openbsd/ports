@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/04/27 22:20:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"GNOME component and compound document system" 
 
@@ -6,8 +6,6 @@ DISTNAME=		libbonobo-2.18.0
 SHARED_LIBS +=	bonobo-activation    5.0      # .4.0
 SHARED_LIBS +=	bonobo-2             1.0      # .0.0
 CATEGORIES=		devel
-
-HOMEPAGE=		http://www.gnome.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

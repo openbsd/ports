@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/09 21:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/05/30 09:56:30 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,8 +7,6 @@ COMMENT=		"implementation of the FreeDesktop Desktop Menu Spec"
 DISTNAME=		gnome-menus-2.18.0
 SHARED_LIBS +=	gnome-menu           3.9      # .3.9
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-menus/2.18/}
 EXTRACT_SUFX=		.tar.bz2

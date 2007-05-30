@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2007/05/18 14:07:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"GNOME utility programs"
 
 DISTNAME=		gnome-utils-2.18.1
 SHARED_LIBS +=  gdict-1.0      5.12      # .5.12
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

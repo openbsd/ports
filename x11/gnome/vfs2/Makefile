@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/04/27 22:06:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2007/05/30 09:56:30 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,8 +9,6 @@ DISTNAME=		gnome-vfs-${VERSION}
 PKGNAME=		gnome-vfs2-${VERSION}
 SHARED_LIBS +=	gnomevfs-2       1800.1       # .1800.1
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

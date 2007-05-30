@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/20 16:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/30 09:56:29 jasper Exp $
 
 COMMENT=		"wallpapers for Gnome"
 
 DISTNAME=		gnome-backgrounds-2.16.2
 
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-backgrounds/2.16/}
 EXTRACT_SUFX=           .tar.bz2

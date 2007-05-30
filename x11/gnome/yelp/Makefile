@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/09 14:15:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"GNOME help browser"
 
 DISTNAME=		yelp-2.18.1
 PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2007/04/27 22:33:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"GNOME Accessibility Implementation Library"
 
 DISTNAME=		gail-1.18.0
 SHARED_LIBS +=	gailutil         18.1         # .18.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel x11/gnome
-
-HOMEPAGE=		http://www.gnome.org
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/25 09:53:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=	"collection of documentation utilities for the GNOME project"
 
 DISTNAME=	gnome-doc-utils-0.10.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11/gnome textproc
-
-HOMEPAGE=	http://www.gnome.org
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

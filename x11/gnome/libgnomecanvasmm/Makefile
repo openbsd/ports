@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/25 10:43:02 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"C++ interface to the graphics library for GNOME"
 
 DISTNAME=		libgnomecanvasmm-2.16.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS=		gnomecanvasmm-2.6	0.0	# .1.6
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomecanvasmm/2.16/}
 EXTRACT_SUFX=		.tar.bz2

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/16 22:38:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"GTK2 desktop calculator"
 
 DISTNAME=		gcalctool-5.9.14
 CATEGORIES=		x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2007/05/07 08:45:22 bernd Exp $
+# $OpenBSD: Makefile,v 1.19 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"themes collection for GNOME"
 
 DISTNAME=		gnome-themes-2.18.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11 x11/gnome
-
-HOMEPAGE=		http://www.gnome.org
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-themes/2.18/}
 EXTRACT_SUFX=           .tar.bz2

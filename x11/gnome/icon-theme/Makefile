@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/24 19:46:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"base icon theme for GNOME"
 
 DISTNAME=		gnome-icon-theme-2.18.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 x11/gnome
-
-HOMEPAGE=		http://www.gnome.org
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-icon-theme/2.18/}
 EXTRACT_SUFX=           .tar.bz2

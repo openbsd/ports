@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2006/10/03 19:46:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2007/05/30 09:56:30 jasper Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -14,8 +14,6 @@ SHARED_LIBS=		art_lgpl	4.0	\
 			zvt		6.0
 
 CATEGORIES=		x11 x11/gnome
-
-HOMEPAGE=		http://www.gnome.org/
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-libs/1.4/}
 
