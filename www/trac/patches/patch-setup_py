@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2006/03/21 21:17:10 msf Exp $
---- setup.py.orig	Mon Dec  5 10:23:47 2005
-+++ setup.py	Mon Dec  5 10:24:36 2005
-@@ -225,7 +225,7 @@ facilities.
+$OpenBSD: patch-setup_py,v 1.2 2007/05/30 22:03:04 naddy Exp $
+--- setup.py.orig	Fri Apr 20 14:41:52 2007
++++ setup.py	Wed May 16 11:59:03 2007
+@@ -230,7 +230,7 @@ facilities.
                    (_p('share/trac/htdocs'), glob(_p('htdocs/*.*')) + [_p('htdocs/README')]),
                    (_p('share/trac/htdocs/css'), glob(_p('htdocs/css/*'))),
                    (_p('share/trac/htdocs/js'), glob(_p('htdocs/js/*'))),

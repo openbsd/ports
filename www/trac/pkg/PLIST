@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/11/10 07:46:25 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/05/30 22:03:04 naddy Exp $
 bin/trac-admin
 bin/tracd
 lib/python${MODPY_VERSION}/site-packages/trac/
@@ -70,7 +70,6 @@ lib/python${MODPY_VERSION}/site-packages/trac/scripts/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/scripts/admin.py
 lib/python${MODPY_VERSION}/site-packages/trac/scripts/admin.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/siteconfig.py
-lib/python${MODPY_VERSION}/site-packages/trac/siteconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/test.py
 lib/python${MODPY_VERSION}/site-packages/trac/test.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/
@@ -113,6 +112,8 @@ lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db18.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db18.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db19.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db19.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db20.py
+lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db20.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db3.py
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db3.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/upgrades/db4.py
