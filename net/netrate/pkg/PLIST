@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/30 02:35:17 robert Exp $
+bin/netblast
+bin/netreceive
+bin/netsend

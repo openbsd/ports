@@ -1,0 +1,11 @@
+netreceive is a UDP packet sink; packets received are copied to user
+space and discarded.
+
+netsend is a UDP packet generator, sending at a rate configured on
+the command line.
+
+netblast is a UDP packet generator, sending at as high a rate as
+possible.
+
+These tools are repackaged from the FreeBSD source tree
+(/usr/src/tools/tools/netrate).
