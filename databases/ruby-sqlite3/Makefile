@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/11 10:55:37 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/30 23:35:34 jcs Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"access a SQLite3 database from ruby"
 
 VERSION=	1.2.1
 DISTNAME=	sqlite3-ruby-${VERSION}
-PKGNAME=	ruby-sqlite3-${VERSION}
+PKGNAME=	ruby-sqlite3-${VERSION}p0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://sqlite-ruby.rubyforge.org/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/24 10:35:16 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/30 23:36:33 jcs Exp $
 bin/mongrel_rails
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -736,7 +736,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/http11/MANIFEST
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/http11/Makefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/http11/ext_help.h
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/http11/extconf.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/http11/gem_make.out
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/http11/http11.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/http11/http11.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/http11/http11.so
