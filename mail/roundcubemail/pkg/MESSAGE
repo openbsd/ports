@@ -1,0 +1,9 @@
+RoundCube webmail has been installed into ${INSTDIR}
+
+Proceed to complete the installation or upgrade by reading:
+${INSTDIR}/INSTALL
+${INSTDIR}/UPGRADING
+
+A database is required to use this package; PostgreSQL, MySQL and
+SQLite are supported. If you have no requirements for either of the
+full-scale RDBMS, you might like to install the php5-sqlite package.

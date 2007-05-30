@@ -1,0 +1,10 @@
+RoundCube Webmail is a browser-based multilingual IMAP client with
+an application-like user interface. It provides full functionality
+you expect from an e-mail client, including MIME support, address
+book, folder manipulation, message searching and spell checking.
+
+The user interface is fully skinnable using XHTML and CSS 2; client
+browsers require cookies and JavaScript, including XMLHttpRequest.
+
+RoundCube Webmail is written in PHP and requires a database;
+MySQL, PostgreSQL and SQLite are supported.
