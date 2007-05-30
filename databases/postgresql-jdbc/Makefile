@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/17 07:55:40 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/30 23:29:42 kili Exp $
 
 COMMENT-main=		"JDBC Driver for PostgreSQL"
 COMMENT-docs=		"API docs for PostgreSQL JDBC Driver"
 
-V=			8.2-504
+V=			8.2-505
 DISTNAME=		postgresql-jdbc-$V
 PKGNAME-main=		postgresql-jdbc-${V:S/-/./}
 PKGNAME-docs=		postgresql-jdbc-docs-${V:S/-/./}
@@ -30,8 +30,7 @@ MODJAVA_VER?=		1.5+
 MODJAVA_JRERUN=		yes
 
 BUILD_DEPENDS=		::devel/apache-ant
-REGRESS_DEPENDS=	${BUILD_DEPENDS} \
-			::databases/postgresql \
+REGRESS_DEPENDS=	::databases/postgresql \
 			:junit-3.8.2:java/junit
 RUN_DEPENDS-docs=
 
