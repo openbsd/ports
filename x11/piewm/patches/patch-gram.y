@@ -1,6 +1,7 @@
---- gram.y.orig	Fri Jun  8 15:21:39 2001
-+++ gram.y	Fri Jun  8 15:21:52 2001
-@@ -71,7 +71,7 @@
+$OpenBSD: patch-gram.y,v 1.2 2007/05/30 18:57:20 jasper Exp $
+--- gram.y.orig	Thu Jan  1 07:33:42 1998
++++ gram.y	Wed May 30 20:54:10 2007
+@@ -71,7 +71,7 @@ unsigned int mods_used = (ShiftMask | ControlMask | Mo
  extern int do_single_keyword(), do_string_keyword(), do_number_keyword();
  extern name_list **do_colorlist_keyword();
  extern int do_color_keyword();
