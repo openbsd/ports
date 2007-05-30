@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/26 20:23:47 jason Exp $
-lib/libgeotiff.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2007/05/30 20:41:54 jason Exp $
 @lib lib/libgeotiff.so.${LIBgeotiff_VERSION}

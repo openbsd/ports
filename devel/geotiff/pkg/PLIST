@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/26 20:23:47 jason Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/05/30 20:41:54 jason Exp $
 %%SHARED%%
 bin/geotifcp
 bin/listgeo
@@ -24,8 +24,6 @@ include/geotiffio.h
 include/geovalues.h
 include/xtiffio.h
 lib/libgeotiff.a
-lib/libgeotiff.so.1
-lib/libgeotiff.so.1.2.3
 share/epsg_csv/
 share/epsg_csv/alias.csv
 share/epsg_csv/area.csv
@@ -52,3 +50,4 @@ share/epsg_csv/projop_wparm.csv
 share/epsg_csv/stateplane.csv
 share/epsg_csv/unit_of_measure.csv
 share/epsg_csv/version_history.csv
+share/nls/pl_PL.ISO_8859-2/

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/05/30 20:41:54 jason Exp $
+--- configure.orig	Thu Mar 16 10:48:39 2006
++++ configure	Thu Mar 16 10:37:59 2006
+@@ -2728,7 +2728,7 @@ if test "$LD_SHARED" != "/bin/true" ; th
+ 	          GEOTIFF_DLL=cyggeotiff-1.dll
+ 	          GEOTIFF_IMP=libgeotiff.dll.a
+                   LD_SHARED="gcc -shared -Wl,--export-all -Wl,--out-implib=\$(GEOTIFF_IMP)" ;;
+-    *) GEOTIFF_SO=libgeotiff.${SO_EXT}.$VERSION_MAJOR.$VERSION_MINOR.$VERSION_POINT ;;
++    *) GEOTIFF_SO=libgeotiff.${SO_EXT}.$VERSION_MAJOR.$VERSION_MINOR ;;
+   esac
+ fi
+ GEOTIFF_SO=$GEOTIFF_SO

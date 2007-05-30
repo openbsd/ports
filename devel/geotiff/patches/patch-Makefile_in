@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/05/30 20:41:54 jason Exp $
+--- Makefile.in.orig	Thu Mar 16 10:18:49 2006
++++ Makefile.in	Thu Mar 16 10:50:17 2006
+@@ -101,8 +101,8 @@ libgeotiff.a: ${OBJS}
+ 
+ $(GEOTIFF_SO): ${OBJS}
+ 	${LD_SHARED} ${OBJS} ${LIBS} -o $(GEOTIFF_SO)
+-	rm -f libgeotiff.$(SO_EXT)
+-	${LN} $(GEOTIFF_SO) libgeotiff.$(SO_EXT)
++#	rm -f libgeotiff.$(SO_EXT)
++#	${LN} $(GEOTIFF_SO) libgeotiff.$(SO_EXT)
+ 
+ Progs:
+ 	${CD} ${BIN};\
+@@ -206,14 +206,6 @@ install:
+ 			$(INSTALL) $(GEOTIFF_SO) $(DESTDIR)${bindir}; \
+ 		else \
+ 			$(INSTALL) $(GEOTIFF_SO) $(DESTDIR)${libdir}; \
+-			(cd $(DESTDIR)${libdir} ; \
+-			rm -f libgeotiff.$(SO_EXT).$(VERSION_MAJOR).$(VERSION_MINOR); \
+-			${LN} $(GEOTIFF_SO) libgeotiff.$(SO_EXT).$(VERSION_MAJOR).$(VERSION_MINOR); \
+-			rm -f libgeotiff.$(SO_EXT).$(VERSION_MAJOR); \
+-			${LN} libgeotiff.$(SO_EXT).$(VERSION_MAJOR).$(VERSION_MINOR) \
+-			libgeotiff.$(SO_EXT).$(VERSION_MAJOR); \
+-			rm -f libgeotiff.$(SO_EXT); \
+-			${LN} libgeotiff.$(SO_EXT).$(VERSION_MAJOR) libgeotiff.$(SO_EXT); );\
+ 		fi;\
+ 	fi
+ 
