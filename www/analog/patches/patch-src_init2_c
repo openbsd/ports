@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_init2_c,v 1.1 2005/04/18 22:32:36 naddy Exp $
---- src/init2.c.orig	Sun Mar 23 14:57:02 2003
-+++ src/init2.c	Mon Apr 18 21:42:41 2005
-@@ -244,10 +244,10 @@ void configchoice(void *opt, char *cmd, 
+$OpenBSD: patch-src_init2_c,v 1.2 2007/05/30 22:33:11 naddy Exp $
+--- src/init2.c.orig	Sun Dec 19 06:51:30 2004
++++ src/init2.c	Wed May 30 16:25:24 2007
+@@ -226,10 +226,10 @@ void configchoice(void *opt, char *cmd, char *arg1, ch
      return;
    }
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_init2_c,v 1.1 2005/04/18 22:32:36 naddy Exp $
      choices = chartchoices;
  #endif
    else if (STREQ(cmd, "OUTPUT"))
-@@ -260,7 +260,7 @@ void configchoice(void *opt, char *cmd, 
+@@ -242,7 +242,7 @@ void configchoice(void *opt, char *cmd, char *arg1, ch
      choices = langchoices;
    else if (STREQ(cmd, "GOTOS"))
      choices = gotochoices;

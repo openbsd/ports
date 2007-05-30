@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_utils_c,v 1.1 2005/04/18 22:32:36 naddy Exp $
---- src/utils.c.orig	Mon Apr 18 21:48:29 2005
-+++ src/utils.c	Mon Apr 18 21:48:56 2005
-@@ -690,7 +690,7 @@ logical wildmatch(char *s, char *p, char
+$OpenBSD: patch-src_utils_c,v 1.2 2007/05/30 22:33:11 naddy Exp $
+--- src/utils.c.orig	Sun Dec 19 06:51:31 2004
++++ src/utils.c	Wed May 30 16:25:24 2007
+@@ -706,7 +706,7 @@ logical wildmatch(char *s, char *p, char *whole, int n
       below. */
    ss = strchr(s, '\0');
    pp = strchr(p, '\0');

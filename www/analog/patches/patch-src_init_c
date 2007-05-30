@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_init_c,v 1.1 2005/04/18 22:32:36 naddy Exp $
---- src/init.c.orig	Mon Apr 18 22:47:03 2005
-+++ src/init.c	Mon Apr 18 22:47:31 2005
-@@ -1435,7 +1435,6 @@ choice strtoinfmt(Inputformat **ans, cha
+$OpenBSD: patch-src_init_c,v 1.2 2007/05/30 22:33:11 naddy Exp $
+--- src/init.c.orig	Sun Dec 19 06:51:30 2004
++++ src/init.c	Wed May 30 16:25:24 2007
+@@ -1458,7 +1458,6 @@ choice strtoinfmt(Inputformat **ans, char *s, choice *
  	c++;
        if (*c == 'S')
  	done = TRUE;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_init_c,v 1.1 2005/04/18 22:32:36 naddy Exp $
      }
    }
    if (!done) {
-@@ -1446,7 +1445,6 @@ choice strtoinfmt(Inputformat **ans, cha
+@@ -1469,7 +1468,6 @@ choice strtoinfmt(Inputformat **ans, char *s, choice *
  	  c++;
  	if (*c == 's')
  	  *c = 'S';

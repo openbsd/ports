@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_big_cfg,v 1.2 2001/11/22 11:10:39 form Exp $
---- examples/big.cfg.orig	Wed Nov  7 17:06:35 2001
-+++ examples/big.cfg	Thu Nov 22 17:05:07 2001
+$OpenBSD: patch-examples_big_cfg,v 1.3 2007/05/30 22:33:11 naddy Exp $
+--- examples/big.cfg.orig	Sun Dec 19 06:51:23 2004
++++ examples/big.cfg	Wed May 30 16:25:24 2007
 @@ -19,7 +19,7 @@
  # it must go here, above the LOGFILE commands.
  # LOGFORMAT MICROSOFT-NA
@@ -18,4 +18,4 @@ $OpenBSD: patch-examples_big_cfg,v 1.2 2001/11/22 11:10:39 form Exp $
 +IMAGEDIR analog-images/
  #
  # Whether to use PNG or GIF images
- PNGIMAGES OFF
+ PNGIMAGES ON
