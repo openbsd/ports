@@ -1,9 +1,0 @@
-$OpenBSD: patch-libgaim_gaim-remote,v 1.1 2007/02/07 01:07:18 todd Exp $
---- libgaim/gaim-remote.orig	Fri Feb  2 17:22:36 2007
-+++ libgaim/gaim-remote	Fri Feb  2 17:22:59 2007
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!%python%
- 
- import dbus
- import re

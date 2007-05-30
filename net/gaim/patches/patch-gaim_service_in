@@ -1,9 +1,0 @@
-$OpenBSD: patch-gaim_service_in,v 1.1 2007/03/25 10:04:17 alek Exp $
---- gaim.service.in.orig	Thu Jan 18 23:28:24 2007
-+++ gaim.service.in	Wed Mar 21 23:39:11 2007
-@@ -1,3 +1,3 @@
- [D-BUS Service]
--Name=org.gaim.GaimService
--Exec=@bindir@/gaim
-+Name=net.sf.gaim.GaimService
-+Exec=@prefix@/bin/gaim

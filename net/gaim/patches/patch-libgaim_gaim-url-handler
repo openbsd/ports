@@ -1,9 +1,0 @@
-$OpenBSD: patch-libgaim_gaim-url-handler,v 1.1 2007/02/07 01:07:18 todd Exp $
---- libgaim/gaim-url-handler.orig	Fri Feb  2 17:18:14 2007
-+++ libgaim/gaim-url-handler	Fri Feb  2 17:19:23 2007
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!%python%
- 
- import dbus
- import re
