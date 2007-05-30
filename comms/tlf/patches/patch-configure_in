@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2007/05/30 05:55:56 jason Exp $
+--- configure.in.orig	Mon Oct 24 05:17:40 2005
++++ configure.in	Mon Oct 31 15:02:13 2005
+@@ -17,6 +17,7 @@ AC_CHECK_LIB([m], [atan])
+ AC_CHECK_LIB([pthread], [pthread_create])
+ ACX_PTHREAD
+ AC_CHECK_LIB([ncurses], [initscr])
++AC_CHECK_LIB([ossaudio], [_oss_ioctl])
+ 
+ #dnl check for HAMLIB
+ #AC_CHECK_LIB(hamlib,main,,AC_MSG_ERROR([Hamradio control libraries (hamlib) not found! ABORTED!]))

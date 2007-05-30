@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_Makefile_am,v 1.1.1.1 2007/05/30 05:55:56 jason Exp $
+--- doc/Makefile.am.orig	Wed Nov 23 00:46:53 2005
++++ doc/Makefile.am	Wed Nov 23 00:47:05 2005
+@@ -3,5 +3,5 @@ EXTRA_DIST = README
+ CLEANFILES = *~
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(pkgdatadir)/doc
+-	install -m 0644 README $(pkgdatadir)/doc
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc
++	install -m 0644 README $(DESTDIR)$(pkgdatadir)/doc

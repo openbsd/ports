@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/30 05:55:56 jason Exp $
+bin/soundlog
+bin/tlf
+@man man/man1/tlf.1
+share/nls/pl_PL.ISO_8859-2/
+share/tlf/
+share/tlf/arrlsections
+share/tlf/callmaster
+share/tlf/cty.dat
+share/tlf/doc/
+share/tlf/doc/README
+share/tlf/ea_sections
+share/tlf/logcfg.dat
+share/tlf/paccmults
+share/tlf/rules/
+share/tlf/rules/arrldx_dx
+share/tlf/rules/arrldx_usa
+share/tlf/rules/arrlfd
+share/tlf/rules/arrlss
+share/tlf/rules/cqww
+share/tlf/rules/dxped
+share/tlf/rules/eusprint
+share/tlf/rules/lzdx
+share/tlf/rules/pacc_dx
+share/tlf/rules/pacc_pa
+share/tlf/rules/qso
+share/tlf/rules/spdx_dx
+share/tlf/rules/spdx_sp
+share/tlf/rules/ssa_mt
+share/tlf/rules/template
+share/tlf/rules/wpx
+share/tlf/spdxmults
+share/tlf/ssamults

@@ -1,0 +1,41 @@
+$OpenBSD: patch-rules_Makefile_am,v 1.1.1.1 2007/05/30 05:55:56 jason Exp $
+--- rules/Makefile.am.orig	Wed Nov 23 00:47:24 2005
++++ rules/Makefile.am	Wed Nov 23 00:48:15 2005
+@@ -6,20 +6,20 @@ SUBDIRS =
+ CLEANFILES = *~
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(pkgdatadir)/rules
+-	install -m 0644 arrldx_dx $(pkgdatadir)/rules
+-	install -m 0644 arrldx_usa $(pkgdatadir)/rules
+-	install -m 0644 arrlfd $(pkgdatadir)/rules
+-	install -m 0644 arrlss $(pkgdatadir)/rules
+-	install -m 0644 cqww $(pkgdatadir)/rules
+-	install -m 0644 dxped $(pkgdatadir)/rules
+-	install -m 0644 eusprint $(pkgdatadir)/rules
+-	install -m 0644 lzdx $(pkgdatadir)/rules
+-	install -m 0644 pacc_pa $(pkgdatadir)/rules
+-	install -m 0644 pacc_dx $(pkgdatadir)/rules
+-	install -m 0644 qso $(pkgdatadir)/rules
+-	install -m 0644 spdx_dx $(pkgdatadir)/rules
+-	install -m 0644 spdx_sp $(pkgdatadir)/rules
+-	install -m 0644 ssa_mt $(pkgdatadir)/rules
+-	install -m 0644 template $(pkgdatadir)/rules
+-	install -m 0644 wpx $(pkgdatadir)/rules
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 arrldx_dx $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 arrldx_usa $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 arrlfd $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 arrlss $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 cqww $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 dxped $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 eusprint $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 lzdx $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 pacc_pa $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 pacc_dx $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 qso $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 spdx_dx $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 spdx_sp $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 ssa_mt $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 template $(DESTDIR)$(pkgdatadir)/rules
++	install -m 0644 wpx $(DESTDIR)$(pkgdatadir)/rules

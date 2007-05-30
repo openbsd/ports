@@ -1,0 +1,26 @@
+$OpenBSD: patch-share_Makefile_am,v 1.1.1.1 2007/05/30 05:55:56 jason Exp $
+--- share/Makefile.am.orig	Wed Nov 23 00:49:08 2005
++++ share/Makefile.am	Wed Nov 23 00:49:31 2005
+@@ -4,14 +4,14 @@ EXTRA_DIST = callmaster cty.dat logcfg.d
+ 			spdxmults ssamults
+ 
+ install-data-local:
+-	install -m 0644 callmaster $(pkgdatadir)
+-	install -m 0644 cty.dat $(pkgdatadir)
+-	install -m 0644 logcfg.dat $(pkgdatadir)
+-	install -m 0644 arrlsections $(pkgdatadir)
+-	install -m 0644 ea_sections $(pkgdatadir)
+-	install -m 0644 paccmults $(pkgdatadir)
+-	install -m 0644 spdxmults $(pkgdatadir)
+-	install -m 0644 ssamults $(pkgdatadir)
++	install -m 0644 callmaster $(DESTDIR)$(pkgdatadir)
++	install -m 0644 cty.dat $(DESTDIR)$(pkgdatadir)
++	install -m 0644 logcfg.dat $(DESTDIR)$(pkgdatadir)
++	install -m 0644 arrlsections $(DESTDIR)$(pkgdatadir)
++	install -m 0644 ea_sections $(DESTDIR)$(pkgdatadir)
++	install -m 0644 paccmults $(DESTDIR)$(pkgdatadir)
++	install -m 0644 spdxmults $(DESTDIR)$(pkgdatadir)
++	install -m 0644 ssamults $(DESTDIR)$(pkgdatadir)
+ 
+ uninstall:
+ 	rm -rf $(pkgdatadir)
