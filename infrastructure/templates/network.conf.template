@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.114 2007/05/29 17:36:32 aanriot Exp $
+# $OpenBSD: network.conf.template,v 1.115 2007/05/30 23:16:25 ajacoutot Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -68,7 +68,6 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.kddilabs.jp/X11/ftp.x.org/contrib/ \
 	ftp://ftp.uvsq.fr/pub/X11/x.org/contrib/ \
 	ftp://ftp.chg.ru/pub/X11/x.org/contrib/ \
-	ftp://ftp.duke.edu/pub/X11/contrib/ \
 	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/
 
 MASTER_SITE_R5CONTRIB+=	\
@@ -139,12 +138,13 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.kddilabs.jp/lang/perl/CPAN/modules/by-module/ \
 	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/ \
 	ftp://mirror.hiwaay.net/CPAN/modules/by-module/ \
-	ftp://ftp.uos.ac.kr/CPAN/modules/by-module/ \
 	ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/modules/by-module/ \
 	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/ \
 	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/ \
 	ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/modules/by-module/ \
-	ftp://ftp.duke.edu/pub/perl/modules/by-module/ \
+	ftp://mirror.datapipe.net/pub/CPAN/modules/by-module/ \
+	ftp://cpan.mirrors.tds.net/pub/CPAN/modules/by-module/ \
+	ftp://ftp.epix.net/pub/languages/perl/modules/by-module/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/ \
 	ftp://ftp.flirble.org/pub/CPAN/modules/by-module/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/ \
