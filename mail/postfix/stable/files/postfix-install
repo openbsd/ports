@@ -1,10 +1,9 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.16 2007/04/02 11:37:43 jakob Exp $
+# $OpenBSD: postfix-install,v 1.1 2007/05/31 10:19:00 espie Exp $
 #
-# Pre/post-installation setup of postfix
+# Post-installation setup of postfix
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/postfix
 SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/postfix
 SPOOL_DIR=/var/spool/postfix
@@ -27,14 +26,12 @@ do_spooldir()
 do_mailwrapper()
 {
     echo "-> Creating /etc/mailer.conf.postfix"
-    cat <<MAILER >/tmp/mailer.conf.$$
+    cat <<MAILER  | sed "s@y0y0y0@$PREFIX@g" >/etc/mailer.conf.postfix
 sendmail	y0y0y0/sbin/sendmail
 send-mail	y0y0y0/sbin/sendmail
 mailq		y0y0y0/sbin/sendmail
 newaliases	y0y0y0/sbin/sendmail
 MAILER
-    sed "s@y0y0y0@$PREFIX@g" /tmp/mailer.conf.$$ >/etc/mailer.conf.postfix
-    rm -f /tmp/mailer.conf.$$
     chown root:wheel /etc/mailer.conf.postfix
     chmod 644 /etc/mailer.conf.postfix
 }
@@ -64,7 +61,7 @@ do_configs()
 	echo ""
 
 	echo "+---------------"
-	echo "| The existing configuration files in $CONFIG_DIR has been preserved."
+	echo "| The existing configuration files in $CONFIG_DIR have been preserved."
 	echo "| You may want to compare them to the current sample files,"
 	echo "| $SAMPLE_CONFIG_DIR, and update your configuration as needed."
 	echo "|"
@@ -80,7 +77,7 @@ do_configs()
 	$PINSTALL first-install-reminder
 
 	echo "+---------------"
-	echo "| Configuration files has been installed in $CONFIG_DIR."
+	echo "| Configuration files have been installed in $CONFIG_DIR."
 	echo "| Please update these files to meet your needs."
 	echo "+---------------"
     fi
@@ -88,49 +85,6 @@ do_configs()
     $PINSTALL set-permissions create-missing
 }
 
-# Function: tell the user what s/he needs to do to use the port just installed
-#
-do_notice()
-{
-    echo "+---------------"
-    echo "| Postfix can be set up to replace sendmail entirely. Please read the"
-    echo "| documentation at file:$PREFIX/share/doc/postfix/html/index.html or"
-    echo "| http://www.postfix.org/ carefully before you decide to do this!"
-    echo "|"
-    echo "| To replace sendmail with postfix you have to install a new mailer.conf"
-    echo "| using the following command:"
-    echo "|"
-    echo "|     $PREFIX/sbin/postfix-enable"
-    echo "|"
-    echo "| If you want to restore sendmail, this is done using the following command:"
-    echo "|"
-    echo "|     $PREFIX/sbin/postfix-disable"
-    echo "+---------------"
-    echo ""
-}
-
-# verify proper execution
-#
-if [ $# -ne 2 ]; then
-    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
-    exit 1
-fi
-
-# Verify/process the command
-#
-case $2 in
-    PRE-INSTALL)
-	;;
-    POST-INSTALL)
-	do_mailwrapper
-	do_spooldir
-        do_configs $1
-	do_notice
-	;;
-    *)
-	echo "Usage: `basename $0` distname <PRE-INSTALL|POST-INSTALL>" >&2
-	exit 1
-	;;
-esac
-
-exit 0
+do_mailwrapper
+do_spooldir
+do_configs

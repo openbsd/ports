@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.63 2007/03/19 10:24:51 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.64 2007/05/31 10:19:00 espie Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -107,6 +107,7 @@ do-install:
 		)
 	@${INSTALL_SCRIPT} ${FILESDIR}/postfix-enable ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${FILESDIR}/postfix-disable ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${FILESDIR}/postfix-install ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/sbin/qshape
 	@${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${PREFIX}/man/man1
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
