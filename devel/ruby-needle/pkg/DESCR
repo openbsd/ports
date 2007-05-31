@@ -1,0 +1,3 @@
+Needle is a dependency-injection/inversion-of-control container for
+Ruby, which takes advantage of Ruby's dynamic nature to provide a
+rich and powerful interface for managing dependencies.
