@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_vmmon_openbsd_host_c,v 1.1 2006/07/16 15:13:27 mcbride Exp $
---- source/vmmon/openbsd/host.c.orig	Sun Mar 14 21:58:50 2004
-+++ source/vmmon/openbsd/host.c	Sun Jul 16 12:31:29 2006
+$OpenBSD: patch-source_vmmon_openbsd_host_c,v 1.2 2007/05/31 20:31:36 aanriot Exp $
+--- source/vmmon/openbsd/host.c.orig	Sun Mar 14 14:58:50 2004
++++ source/vmmon/openbsd/host.c	Wed May 30 23:07:39 2007
 @@ -59,6 +59,8 @@ lyaev Exp $
  #include <sys/proc.h>
  
@@ -29,3 +29,19 @@ $OpenBSD: patch-source_vmmon_openbsd_host_c,v 1.1 2006/07/16 15:13:27 mcbride Ex
  }
  
  /*
+@@ -665,7 +664,6 @@ HostIF_UserToDriverPtr(VMDriver *vm, // IN
+ 	if (vm->crossvaddr != NULL)
+ 		Warning("KernelAddr already allocated\n");
+ 
+-	PHOLD(CURLWP);
+ 	uvm_vslock(curproc, addr, PAGE_SIZE,
+ 	    VM_PROT_READ|VM_PROT_WRITE|VM_PROT_EXECUTE);
+ 
+@@ -674,7 +672,6 @@ HostIF_UserToDriverPtr(VMDriver *vm, // IN
+ 	pmap_extract(vm_map_pmap(&curproc->p_vmspace->vm_map), uaddr, &paddr);
+ 	pmap_kenter_pa(kvaddr, paddr,
+ 	    VM_PROT_READ | VM_PROT_WRITE | VM_PROT_EXECUTE);
+-	PRELE(CURLWP);
+ 	vm->crossvaddr = (void *)kvaddr;
+ 	vm->crossuaddr = addr;
+ #ifdef DEBUG

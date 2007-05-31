@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_vmmon_include_x86_h,v 1.1 2006/07/16 15:13:27 mcbride Exp $
---- source/vmmon/include/x86.h.orig	Fri Jul 14 11:13:04 2006
-+++ source/vmmon/include/x86.h	Fri Jul 14 11:12:52 2006
-@@ -299,14 +299,16 @@ OpsizeValue(uint32 value,	// IN: The 32 
+$OpenBSD: patch-source_vmmon_include_x86_h,v 1.2 2007/05/31 20:31:36 aanriot Exp $
+--- source/vmmon/include/x86.h.orig	Mon Jul 21 14:39:10 2003
++++ source/vmmon/include/x86.h	Wed May 30 22:53:16 2007
+@@ -299,14 +299,16 @@ OpsizeValue(uint32 value,	// IN: The 32 bit value to b
  
  #define MSR_L2CFG            0x0000011e
  #if !defined(__NetBSD__) || !defined(MSR_TSC)
