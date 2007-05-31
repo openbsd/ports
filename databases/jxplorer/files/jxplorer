@@ -1,0 +1,39 @@
+#!/bin/sh
+# $OpenBSD: jxplorer,v 1.1.1.1 2007/05/31 18:13:15 aanriot Exp $
+
+# jxplorer runtime wrapper
+
+PATH=%%PREFIX%%/share/jxplorer/
+DIRS="plugins security"
+FILES="bookmarks.txt jxconfig.txt quicksearch.txt search_filters.txt"
+LINKS="htmldocs icons images templates"
+
+# create user preferences if they don't exist
+
+if [ ! -d $HOME/.jxplorer/ ]; then
+
+	for d in $DIRS; do
+		/bin/mkdir -p $HOME/.jxplorer/$d
+	done
+
+	for f in $FILES; do
+		/usr/bin/touch $HOME/.jxplorer/$f
+	done
+
+	for l in $LINKS; do
+		/bin/ln -s $PATH/$l $HOME/.jxplorer/
+	done
+
+	/bin/cp $PATH/security/cacerts $HOME/.jxplorer/security/cacerts
+	/bin/cp $PATH/security/clientcerts $HOME/.jxplorer/security/clientcerts
+fi
+
+# jxplorer is creating stuff in the working directory so go there
+
+cd $HOME/.jxplorer/
+
+if [ "$1" = "console" ] ; then
+	/bin/sh $PATH/jxplorer.sh console
+else
+	/bin/sh $PATH/jxplorer.sh
+fi

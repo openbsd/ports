@@ -1,0 +1,70 @@
+$OpenBSD: patch-jxplorer_sh,v 1.1.1.1 2007/05/31 18:13:15 aanriot Exp $
+--- jxplorer.sh.orig	Mon Feb 26 21:08:36 2007
++++ jxplorer.sh	Wed May 30 08:40:36 2007
+@@ -1,24 +1,19 @@
+ #!/bin/sh
+ # OpenDirectory  jxstart.sh $Revision: 1.1.1.1 $  $Date: 2007/05/31 18:13:15 $
+ 
+-if [ -x $JAVA_HOME/bin/java ]; then
+-   JAVA_LOC=$JAVA_HOME/bin/java
+-elif [ -x /opt/jre/bin/java ]; then
+-    JAVA_LOC=/opt/jre/bin/java
+-elif [ -x /opt/ca/jre/bin/java ]; then
+-    JAVA_LOC=/opt/ca/jre/bin/java
+-elif [ -x /opt/ca/etrustdirectory/jre/bin/java ]; then
+-    JAVA_LOC=/opt/ca/etrustdirectory/jre/bin/java
+-elif [ -x /opt/CA/eTrustDirectory/jre/bin/java ]; then
+-    JAVA_LOC=/opt/CA/eTrustDirectory/jre/bin/java
++if [ -x %%JAVA_HOME%%/bin/java ]; then
++    JAVA_LOC=%%JAVA_HOME%%/bin/java
+ else
+     JAVA_LOC=java
+ fi
+ 
++# use an absolute path instead of a relative one
++jars=%%PREFIX%%/share/jxplorer/jars
++
+ # Find directory of JRE
+ ${JAVA_LOC} -version  >/dev/null 2>&1
+ if [ "$?" != "0" ] ; then
+-	OPTJX=/opt/jxplorer
++	OPTJX=%%JAVA_HOME%%/bin/java
+ 
+ 	# $OPTJX MUST be the JXplorer install directory, or a link to it, and contain the JRE
+ 
+@@ -29,7 +24,7 @@ if [ "$?" != "0" ] ; then
+ 	fi
+ 
+ 	cd $OPTJX
+-        JAVAV=/opt/jxplorer/jre/bin/java
++        JAVAV=%%JAVA_HOME%%/bin/java
+ else
+         JAVAV=${JAVA_LOC}
+ fi
+@@ -38,14 +33,14 @@ echo "starting JXplorer..."
+ echo
+ FAIL=0
+ if [ "$1" = "console" ] ; then
+-    $JAVAV -cp .:jars/jxplorer.jar:jars/help.jar:jars/jhall.jar:jars/junit.jar:jars/ldapsec.jar:jars/log4j.jar:jars/dsml/activation.jar:jars/dsml/commons-logging.jar:jars/dsml/dom4j.jar:jars/dsml/jxext.jar:jars/dsml/mail.jar:jars/dsml/providerutil.jar:jars/dsml/saaj-api.jar:jars/dsml/saaj-ri.jar com.ca.directory.jxplorer.JXplorer
++    $JAVAV -Dcom.apple.macos.useScreenMenuBar=true -cp .:$jars/jxplorer.jar:$jars/help.jar:$jars/jhall.jar:$jars/junit.jar:$jars/ldapsec.jar:$jars/log4j.jar:$jars/dsml/activation.jar:$jars/dsml/commons-logging.jar:$jars/dsml/dom4j.jar:$jars/dsml/jxext.jar:$jars/dsml/mail.jar:$jars/dsml/providerutil.jar:$jars/dsml/saaj-api.jar:$jars/dsml/saaj-ri.jar com.ca.directory.jxplorer.JXplorer
+ 
+     if [ "$?" != "0" ]; then
+         FAIL=1
+     fi
+ else
+-    echo "Use \"jxstart.sh console\" if you want logging to the console"
+-    $JAVAV -cp .:jars/jxplorer.jar:jars/help.jar:jars/jhall.jar:jars/junit.jar:jars/ldapsec.jar:jars/log4j.jar:jars/dsml/activation.jar:jars/dsml/commons-logging.jar:jars/dsml/dom4j.jar:jars/dsml/jxext.jar:jars/dsml/mail.jar:jars/dsml/providerutil.jar:jars/dsml/saaj-api.jar:jars/dsml/saaj-ri.jar com.ca.directory.jxplorer.JXplorer  >/dev/null 2>&1
++    echo "Use \"jxplorer console\" if you want logging to the console"
++    $JAVAV -Dcom.apple.macos.useScreenMenuBar=true -cp .:$jars/jxplorer.jar:$jars/help.jar:$jars/jhall.jar:$jars/junit.jar:$jars/ldapsec.jar:$jars/log4j.jar:$jars/dsml/activation.jar:$jars/dsml/commons-logging.jar:$jars/dsml/dom4j.jar:$jars/dsml/jxext.jar:$jars/dsml/mail.jar:$jars/dsml/providerutil.jar:$jars/dsml/saaj-api.jar:$jars/dsml/saaj-ri.jar com.ca.directory.jxplorer.JXplorer  >/dev/null 2>&1
+ 
+     if [ "$?" != "0" ]; then
+         FAIL=1
+@@ -67,7 +62,7 @@ running this from. Make sure the DISPLAY environment v
+ Otherwise, ask your Unix Systems Administrator for more information on running
+ X Windows applications.
+ 
+-If you require more information run "$0 console" and check the
++If you require more information run "jxplorer console" and check the
+ error produced.
+ !
+ 

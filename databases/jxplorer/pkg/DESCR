@@ -1,0 +1,5 @@
+JXplorer is an open source ldap browser originally developed by Computer
+Associates' eTrust Directory development lab. It is a standards
+compliant general purpose ldap browser that can be used to read and
+search any ldap directory, or any X500 directory with an ldap
+interface.
