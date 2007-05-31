@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.7 2007/03/25 11:24:02 mbalmer Exp $
+$OpenBSD: patch-configure,v 1.8 2007/05/31 16:02:27 aanriot Exp $
 --- configure.orig	Thu Mar  1 23:46:19 2007
 +++ configure	Tue Mar 13 09:27:55 2007
 @@ -21664,11 +21664,11 @@ cat >>conftest.$ac_ext <<_ACEOF
@@ -15,14 +15,6 @@ $OpenBSD: patch-configure,v 1.7 2007/03/25 11:24:02 mbalmer Exp $
    ;
    return 0;
  }
-@@ -22225,6 +22225,7 @@ _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <sys/types.h>
- #include <netinet/in.h>
- 
- #include <resolv.h>
 @@ -23145,11 +23146,9 @@ _ACEOF
      ;;
  openbsd*)
@@ -38,19 +30,3 @@ $OpenBSD: patch-configure,v 1.7 2007/03/25 11:24:02 mbalmer Exp $
  	TH_SAFE="-thread-safe"
  
  cat >>confdefs.h <<\_ACEOF
-@@ -24250,6 +24249,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
-+#include <sys/types.h>
- #include <tcpd.h>
- int allow_severity = 0;
- int deny_severity  = 0;
-@@ -24302,6 +24302,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
-+#include <sys/types.h>
- #include <tcpd.h>
- int allow_severity = 0;
- int deny_severity  = 0;
