@@ -1,10 +1,10 @@
-# $OpenBSD: gnome.port.mk,v 1.3 2007/05/31 12:07:22 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.4 2007/05/31 12:18:47 jasper Exp $
 # Module for GNOME related ports
 
 CATEGORIES+=		x11/gnome
 
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
-V=			${GNOME_VERSION:C/:*.[0-9]$//}
+V=			${GNOME_VERSION:C/:*.[0-9]*$//}
 
 USE_LIBTOOL?=		Yes
 USE_X11=		Yes
