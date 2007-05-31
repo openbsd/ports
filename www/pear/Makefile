@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/07 13:46:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/05/31 10:32:08 kili Exp $
 
 COMMENT-main=	"base classes for common PHP tasks"
 COMMENT-utils=	"utilities for managing pear extensions"
@@ -6,7 +6,7 @@ COMMENT-utils=	"utilities for managing pear extensions"
 VERSION=	1.5.0
 DISTNAME=	pear-${VERSION}
 PKGNAME=	${DISTNAME}
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 PKGNAME-utils=	pear-utils-${VERSION}p0
 CATEGORIES=	www devel
 
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=		-main -utils
 
 BUILD_DEPENDS=		:php5-core-*:www/php5/core
-RUN_DEPENDS-main=	${BUILD_DEPENDS} \
+RUN_DEPENDS-main=	:php5-core-*:www/php5/core \
 			::www/pear,-utils
 
 # Most of pear have to live in /var/www where apache is chroot'ed to.
