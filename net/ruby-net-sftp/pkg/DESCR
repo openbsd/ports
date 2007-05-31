@@ -1,0 +1,5 @@
+Net::SFTP is a pure-Ruby implementation of the SFTP protocol.
+That's "SFTP" as in "Secure File Transfer Protocol", as defined as
+an adjuct to the SSH specification.  _Not_ "SFTP" as in "Secure FTP"
+(a _completely_ different beast).  Nor is it an implementation of
+the "Simple File Transfer Protocol" (which is in no way secure).
