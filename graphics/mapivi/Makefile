@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/29 17:16:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/05/31 06:52:23 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	"image viewer and organizer"
 
 DISTNAME=	mapivi091
-PKGNAME=	mapivi-0.91p0
+PKGNAME=	mapivi-0.91p1
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://mapivi.de.vu/
@@ -33,7 +33,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 pre-configure:
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' ${WRKSRC}/mapivi
+	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/mapivi
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mapivi

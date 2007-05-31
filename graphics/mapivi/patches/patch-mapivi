@@ -1,4 +1,4 @@
-$OpenBSD: patch-mapivi,v 1.1.1.1 2007/05/29 17:08:59 ajacoutot Exp $
+$OpenBSD: patch-mapivi,v 1.2 2007/05/31 06:52:24 ajacoutot Exp $
 --- mapivi.orig	Tue Oct 31 04:21:59 2006
 +++ mapivi	Tue May 29 18:56:03 2007
 @@ -341,7 +341,7 @@ my $nrToConvert     = 0;
@@ -6,7 +6,7 @@ $OpenBSD: patch-mapivi,v 1.1.1.1 2007/05/29 17:08:59 ajacoutot Exp $
  
  my $trashdir        = "$configdir/trash";     # the trashcan
 -my $plugindir       = "$configdir/PlugIns";   # the mapivi plugin dir
-+my $plugindir       = "!!LOCALBASE!!/share/mapivi/PlugIns";   # the mapivi plugin dir
++my $plugindir       = "!!PREFIX!!/share/mapivi/PlugIns";   # the mapivi plugin dir
  my $iptcdir         = "$configdir/IPTC_templates";  # the IPTC templates directory
  my $configFile      = "$configdir/mapivirc";  # the configuration file
  my $file_Entry_values = "$configdir/Entry_values";
@@ -45,7 +45,7 @@ $OpenBSD: patch-mapivi,v 1.1.1.1 2007/05/29 17:08:59 ajacoutot Exp $
  			  "ColorProgress"   => "#106dba",
  			  "ColorPicker"     => "red", # last color selected with color picker
 -			  "DefaultThumb"    => "$configdir/EmptyThumb.jpg",
-+			  "DefaultThumb"    => "!!LOCALBASE!!/share/mapivi/EmptyThumb.jpg",
++			  "DefaultThumb"    => "!!PREFIX!!/share/mapivi/EmptyThumb.jpg",
  			  "Copyright"       => "copyright (c) $copyright_year Herrmann",
  			  "Comment"         => "This picture was taken in south africa ...",
  			  "MaxProcs"        => 1,
@@ -81,7 +81,7 @@ $OpenBSD: patch-mapivi,v 1.1.1.1 2007/05/29 17:08:59 ajacoutot Exp $
  	my $func         = shift;
  
 -	my $pic   = "$configdir/$picName";
-+	my $pic   = "!!LOCALBASE!!/share/mapivi/$picName";
++	my $pic   = "!!PREFIX!!/share/mapivi/$picName";
  	my $image = $parentWidget->Photo(-file => $pic) if -f $pic;
  
  	if ($image) {
