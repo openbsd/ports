@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.516 2007/05/31 03:42:05 jcs Exp $
+# $OpenBSD: Makefile,v 1.517 2007/05/31 13:29:51 martynas Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -521,6 +521,7 @@
      SUBDIR += py-logilab-astng
      SUBDIR += py-logilab-common
      SUBDIR += py-mxDateTime
+     SUBDIR += py-nose
      SUBDIR += py-openbsd
      SUBDIR += py-optik
      SUBDIR += py-orbit
