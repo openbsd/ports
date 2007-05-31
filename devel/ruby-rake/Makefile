@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/03 11:28:48 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2007/05/31 15:02:43 jcs Exp $
 
 COMMENT=	"ruby make"
 
-DISTNAME=	rake-0.7.1
-PKGNAME=	ruby-${DISTNAME}p2
+DISTNAME=	rake-0.7.3
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	devel
 
 # MIT License
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 HOMEPAGE=       http://rake.rubyforge.org/
 
-MASTER_SITES=   http://rubyforge.org/frs/download.php/9498/
+MASTER_SITES=   http://rubyforge.org/frs/download.php/19878/
 
 MODULES=	lang/ruby
 
