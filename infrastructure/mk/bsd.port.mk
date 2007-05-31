@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.896 2007/05/27 11:53:39 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.897 2007/05/31 10:52:16 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -762,13 +762,15 @@ UNMESSAGE ?= ${PKGDIR}/UNMESSAGE
 .  endif
 
 .  if exists(${PKGDIR}/INSTALL)
+ERRORS += "INSTALL script support is deprecated"
 PKG_ARGS- += -i ${PKGDIR}/INSTALL
 .  endif
 .  if exists(${PKGDIR}/DEINSTALL)
+ERRORS += "DEINSTALL script support is deprecated"
 PKG_ARGS- += -k ${PKGDIR}/DEINSTALL
 .  endif
 .  if exists(${PKGDIR}/REQ)
-PKG_ARGS- += -r ${PKGDIR}/REQ
+ERRORS += "Fatal: REQ script support is obsolete"
 .  endif
 .  if exists(${PKGDIR}/MODULE.pm)
 PKG_ARGS- += -m ${PKGDIR}/MODULE.pm
@@ -801,13 +803,15 @@ UNMESSAGE${_S} ?= ${PKGDIR}/UNMESSAGE${_S}
 DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 
 .    if exists(${PKGDIR}/INSTALL${_S})
+ERRORS += "INSTALL script support is deprecated"
 PKG_ARGS${_S} += -i ${PKGDIR}/INSTALL${_S}
 .    endif
 .    if exists(${PKGDIR}/DEINSTALL${_S})
+ERRORS += "DEINSTALL script support is deprecated"
 PKG_ARGS${_S} += -k ${PKGDIR}/DEINSTALL${_S}
 .    endif
 .    if exists(${PKGDIR}/REQ${_S})
-PKG_ARGS${_S} += -r ${PKGDIR}/REQ${_S}
+ERRORS += "Fatal: REQ script support is obsolete"
 .    endif
 .    if exists(${PKGDIR}/MODULE${_S}.pm)
 PKG_ARGS${_S} += -m ${PKGDIR}/MODULE${_S}.pm
@@ -817,8 +821,6 @@ PKG_ARGS${_S} += -m ${PKGDIR}/MODULE${_S}.pm
 
 MTREE_FILE ?=
 MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
-
-_PKG_PREREQ =
 
 .for _S in ${MULTI_PACKAGES}
 # Fill out package command, and package dependencies
@@ -1377,7 +1379,7 @@ ${_PACKAGE_COOKIE${_S}}:
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes $@
 .  else
-	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS} ${_PKG_PREREQ}
+	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
 .    if target(pre-package)
 	@cd ${.CURDIR} && exec ${MAKE} pre-package
 .    endif
