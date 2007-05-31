@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2007/05/30 14:31:36 steven Exp $
+# $OpenBSD: Makefile,v 1.183 2007/05/31 18:08:11 aanriot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -86,6 +86,7 @@
      SUBDIR += majordomo
      SUBDIR += mboxgrep
      SUBDIR += metamail
+     SUBDIR += mew
      SUBDIR += milter-greylist
      SUBDIR += milter-regex
      SUBDIR += milter-spamd
