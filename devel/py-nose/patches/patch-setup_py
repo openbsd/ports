@@ -1,0 +1,10 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2007/05/31 13:28:51 martynas Exp $
+--- setup.py.orig	Sun Apr 22 01:40:40 2007
++++ setup.py	Mon May 21 20:49:58 2007
+@@ -1,6 +1,4 @@
+ import sys
+-import ez_setup
+-ez_setup.use_setuptools()
+ 
+ from setuptools import setup, find_packages
+ from nose import __version__ as VERSION
