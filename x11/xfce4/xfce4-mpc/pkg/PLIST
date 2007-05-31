@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/31 12:28:13 steven Exp $
+libexec/xfce4/
+libexec/xfce4/panel-plugins/
+libexec/xfce4/panel-plugins/xfce4-mpc-plugin
+share/locale/cs/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/fr/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/pl/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/xfce4/panel-plugins/xfce4-mpc-plugin.desktop
