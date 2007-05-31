@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dnsmasq_h,v 1.1 2007/03/17 21:55:54 jolan Exp $
---- src/dnsmasq.h.orig	Sun Mar  4 15:11:27 2007
-+++ src/dnsmasq.h	Sun Mar  4 15:11:47 2007
-@@ -437,7 +437,7 @@ struct ping_result {
+$OpenBSD: patch-src_dnsmasq_h,v 1.2 2007/05/31 04:28:33 rui Exp $
+--- src/dnsmasq.h.orig	Fri Apr 20 11:53:38 2007
++++ src/dnsmasq.h	Sat May 26 18:26:21 2007
+@@ -452,7 +452,7 @@ struct ping_result {
  struct tftp_file {
    int refcount, fd;
    off_t size;
