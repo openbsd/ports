@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2006/12/22 15:47:41 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/05/31 15:52:28 jasper Exp $
+
+BROKEN= 	"needs an update"
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
