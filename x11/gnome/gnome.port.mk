@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.4 2007/05/31 12:18:47 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.5 2007/05/31 12:49:08 jasper Exp $
 # Module for GNOME related ports
 
 CATEGORIES+=		x11/gnome
@@ -17,9 +17,6 @@ RUN_DEPENDS+=		${MODGNOME_RUN_DEPENDS}
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${V}/}
 EXTRACT_SUFX?=		.tar.bz2
-
-MODGNOME_CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE?=		Yes
 
