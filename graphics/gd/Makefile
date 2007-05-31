@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2007/04/08 15:31:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.49 2007/05/31 18:32:06 rui Exp $
 
 COMMENT=	"library for dynamic creation of images"
 
 DISTNAME=	gd-2.0.34
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	gd	20.34
 CATEGORIES=	graphics
 MASTER_SITES=	${HOMEPAGE}releases/
