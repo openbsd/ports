@@ -1,0 +1,12 @@
+rendercheck is a set of simple tests of the X Render extension.  It is
+designed for authors of Render implementations in X servers
+
+Tests currently include:
+ * destination coordinates correctness
+ * source coordinates correctness
+ * transformed (FilterNearest) source coordinates correctness
+ * composite with and without mask (with/without component alpha), with
+   1x1 repeating Pictures and 10x10 Pictures.
+ * linear gradients
+ * repeating sources/masks at POT and non-POT sizes
+ * some regression tests for bugs from freedesktop.org bugzilla
