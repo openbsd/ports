@@ -1,10 +1,9 @@
-# $OpenBSD: gnome.port.mk,v 1.5 2007/05/31 12:49:08 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.6 2007/06/01 17:29:09 jasper Exp $
 # Module for GNOME related ports
 
 CATEGORIES+=		x11/gnome
 
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
-V=			${GNOME_VERSION:C/:*.[0-9]*$//}
 
 USE_LIBTOOL?=		Yes
 USE_X11=		Yes
@@ -15,7 +14,7 @@ BUILD_DEPENDS+=	 	:intltool-*:textproc/intltool \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser	
 RUN_DEPENDS+=		${MODGNOME_RUN_DEPENDS}
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${V}/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:R}/}
 EXTRACT_SUFX?=		.tar.bz2
 
 USE_GMAKE?=		Yes
