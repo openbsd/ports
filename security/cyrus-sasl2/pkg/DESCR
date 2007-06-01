@@ -6,3 +6,8 @@ protocol includes a command for identifying and authenticating a user to a
 server and for optionally negotiating protection of subsequent protocol
 interactions. If its use is negotiated, a security layer is inserted
 between the protocol and the connection.
+
+Available flavors:
+	db4 - use Berkeley DB v4 for SASLDB (instead of ndbm)
+	ldap - enable LDAPDB auxprop plugin and LDAP enabled saslauthd
+	mysql pgsql sqlite - enable SQL auxprop plugin (choose one)
