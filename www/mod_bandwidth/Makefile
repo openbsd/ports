@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/01 07:36:32 ajacoutot Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -6,8 +6,10 @@ SHARED_ONLY=	Yes
 
 COMMENT=	"bandwidth limiter for Apache"
 
+V=		2.0.6
 DISTFILES=	mod_bandwidth.c cleanlink.pl
-DISTNAME=	mod_bandwidth-2.0.6
+DISTNAME=	mod_bandwidth-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=     www
 MASTER_SITES=	ftp://ftp.cohprog.com/pub/apache/module/
 
@@ -22,7 +24,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 SUBST_VARS=	PKGNAME HOMEPAGE
-DIST_SUBDIR=	${DISTNAME}
+DIST_SUBDIR=	${DISTNAME:S/-${V}//}
 NO_REGRESS=	Yes
 
 do-extract:
