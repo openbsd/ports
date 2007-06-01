@@ -1,0 +1,12 @@
+$OpenBSD: patch-devel-docs_Makefile_in,v 1.1 2007/06/01 16:44:41 jasper Exp $
+--- devel-docs/Makefile.in.orig	Thu Aug 15 15:25:52 2002
++++ devel-docs/Makefile.in	Sat Nov 30 12:41:16 2002
+@@ -173,7 +173,7 @@ EXTRA_DIST = \
+ 	$(TEXT_FILES)
+ 
+ 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc/gnome-libs
+ doc_DATA = $(TEXT_FILES)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgnomeui_gnome-dns_c,v 1.3 2007/06/01 16:44:42 jasper Exp $
+--- libgnomeui/gnome-dns.c.orig	Sun Sep 12 02:39:37 1999
++++ libgnomeui/gnome-dns.c	Fri Jun  1 18:38:20 2007
+@@ -402,7 +402,7 @@ static gint gnome_dns_create_server(void)
+ 	if (pid == 0) {
+ 	  dup2(pipefd0[0], 0);
+ 	  dup2(pipefd1[1], 1);
+-	  execlp("dns-helper", "dns-helper", NULL);
++	  execlp("dns-helper", "dns-helper", (void *)NULL);
+ 	  /* does not return */
+ 	}
+ 	/* else */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-devel-docs_gnorba_Makefile_in,v 1.4 2007/06/01 16:44:41 jasper Exp $
+--- devel-docs/gnorba/Makefile.in.orig	Thu Aug 15 15:26:05 2002
++++ devel-docs/gnorba/Makefile.in	Sat Nov 30 12:41:16 2002
+@@ -344,7 +344,7 @@ install-data-local: 
+ 	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
+ 	  done; \
+ 	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
+-	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR); \
++	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR) || true; \
+ 	  echo '-- Fixing Crossreferences' ; \
+ 	  gtkdoc-fixxref --module=$(DOC_MODULE) --html-dir=$(HTML_DIR) || true; \
+ 	fi)
