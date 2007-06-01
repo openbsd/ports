@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/29 04:25:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/01 16:28:31 jcs Exp $
 
 COMMENT=	"generic active transaction support for ruby objects"
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/17139/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=trans-simple/}
 
 MODULES=	lang/ruby
 

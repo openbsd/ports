@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/29 04:24:52 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/01 16:28:31 jcs Exp $
 
 COMMENT=	"simple rake/rubygems helper for project Rakefiles"
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/20913/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=seattlerb/}
 
 MODULES=	lang/ruby
 

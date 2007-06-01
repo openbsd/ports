@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/31 03:40:57 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/01 16:28:31 jcs Exp $
 
 COMMENT=	"dependency-injection/inversion-of-control container for Ruby"
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7842/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=needle/}
 
 MODULES=	lang/ruby
 

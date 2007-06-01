@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/29 20:09:25 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/01 16:24:48 jcs Exp $
 
 COMMENT=	"HTML templating language for Ruby"
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/13597/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=markaby/}
 
 MODULES=	lang/ruby
 

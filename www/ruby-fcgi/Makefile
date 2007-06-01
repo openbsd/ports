@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/29 20:19:49 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/01 16:29:35 jcs Exp $
 
 COMMENT=	"ruby FastCGI library"
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/11885/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=fcgi/}
 
 MODULES=	lang/ruby
 
