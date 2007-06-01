@@ -1,0 +1,12 @@
+$OpenBSD: patch-INSTALL,v 1.1 2007/06/01 10:24:30 steven Exp $
+--- INSTALL.orig	Fri Jun  1 12:21:24 2007
++++ INSTALL	Fri Jun  1 12:21:37 2007
+@@ -75,7 +75,7 @@ an example how you can setup the sqlite.db for roundcu
+ # sqlite -init SQL/sqlite.initial.sql sqlite.db
+ 
+ Make sure your configuration points to the sqlite.db file and that the
+-webserver can write to the file.
++webserver can write to the file and the directory containing the file.
+ 
+ 
+ * PostgreSQL
