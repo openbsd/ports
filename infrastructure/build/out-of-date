@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.15 2005/11/06 09:34:20 espie Exp $
+# $OpenBSD: out-of-date,v 1.16 2007/06/01 15:01:50 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -97,8 +97,8 @@ sub collect_port_versions
 	my $count = 0;
 	my $total = scalar @subdirs;
 
-	OpenBSD::ProgressMeter::enable();
-	OpenBSD::ProgressMeter::set_header("Collecting port versions");
+	my $progress = OpenBSD::ProgressMeter->new;
+	$progress->set_header("Collecting port versions");
 	my ($fh, $old) = fh_open($cmd);
 	my $subdir     = "";
 	while (<$fh>) {
@@ -106,7 +106,7 @@ sub collect_port_versions
 		if (/^\=\=\=\>\s+(\S+)/) {
 			$subdir = $1;
 			$count++;
-			OpenBSD::ProgressMeter::show($count, $total);
+			$progress->show($count, $total);
 			next;
 		}
 		next unless $_ or $subdir;
@@ -123,7 +123,7 @@ sub collect_port_versions
 		$port->{$subdir}->{version} = $version;
 	}
 	fh_close($fh, $old);
-	OpenBSD::ProgressMeter::next();
+	$progress->next;
 
 	return $port, $error;
 }
@@ -154,8 +154,8 @@ sub collect_port_signatures
 
 	my $count = 0;
 	my $total = scalar @subdirs;
-	OpenBSD::ProgressMeter::enable();
-	OpenBSD::ProgressMeter::set_header("Collecting port signatures");
+	my $progress = OpenBSD::ProgressMeter->new;
+	$progress->set_header("Collecting port signatures");
 	my ($fh, $old) = fh_open($cmd);
 	my $subdir     = "";
 	while (<$fh>) {
@@ -163,14 +163,14 @@ sub collect_port_signatures
 		if (/^\=\=\=\>\s+(\S+)/) {
 			$subdir = $1;
 			$count++;
-			OpenBSD::ProgressMeter::show($count, $total);
+			$progress->show($count, $total);
 			next;
 		}
 		next unless $_ or $subdir;
 		$port->{$subdir}->{signature} = $_;
 	}
 	fh_close($fh, $old);
-	OpenBSD::ProgressMeter::next();
+	$progress->next;
 }
 
 sub split_sig
