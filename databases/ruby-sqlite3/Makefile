@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/30 23:35:34 jcs Exp $
+# $OpenBSD: Makefile,v 1.4 2007/06/01 11:00:14 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://rubyforge.org/frs/download.php/17095/
+MASTER_SITES=		${MASTER_SITE_RUBYFORGE:=sqlite-ruby/}
 
 MODULES=		lang/ruby
 

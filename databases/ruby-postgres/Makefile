@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/30 23:35:08 jcs Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/01 11:00:14 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9553/
+MASTER_SITES=   ${MASTER_SITE_RUBYFORGE:=ruby-postgres/}
 
 MODULES=	lang/ruby
 

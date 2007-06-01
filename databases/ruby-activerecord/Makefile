@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/03 11:28:48 msf Exp $
+# $OpenBSD: Makefile,v 1.7 2007/06/01 11:00:14 alek Exp $
 
 COMMENT=	"object relation model implementation for ruby"
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/12245/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=activerecord/}
 
 MODULES=	lang/ruby
 
