@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2007/06/01 15:24:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2007/06/01 16:49:22 ajacoutot Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
 DISTNAME=	cyrus-sasl-2.1.21
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 SHARED_LIBS=	anonymous	2.21 \
 		crammd5		2.21 \
 		digestmd5	2.21 \
@@ -95,7 +95,7 @@ CFLAGS+=	-I${LOCALBASE}/include/postgresql
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql}
 BROKEN=		choose either mysql or pgsql or sqlite
 .endif
-LIB_DEPENDS=	sqlite.>=8.6::databases/sqlite
+LIB_DEPENDS+=	sqlite.>=8.6::databases/sqlite
 CONFIGURE_ARGS+=--enable-sql \
 		--without-mysql \
 		--without-pgsql \
