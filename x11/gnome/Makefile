@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2007/06/01 16:44:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2007/06/01 18:07:52 ajacoutot Exp $
 
      SUBDIR += applets2
      SUBDIR += audio
@@ -37,6 +37,7 @@
      SUBDIR += nautilus
      SUBDIR += oaf
      SUBDIR += panel
+     SUBDIR += py-gnome
      SUBDIR += session
      SUBDIR += terminal
      SUBDIR += themes
