@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2006/01/06 17:51:01 bernd Exp $
-lib/GConf/1/libgconfbackend-xml.so
-@lib lib/libgconf-1.so.${LIBgconf-1_VERSION}
-@lib lib/libgconf-gtk-1.so.${LIBgconf-gtk-1_VERSION}
