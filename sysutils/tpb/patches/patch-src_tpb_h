@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tpb_h,v 1.1 2004/12/14 23:23:18 jcs Exp $
---- src/tpb.h.orig	Thu Dec  2 11:30:36 2004
-+++ src/tpb.h	Thu Dec  2 11:30:58 2004
+$OpenBSD: patch-src_tpb_h,v 1.2 2007/06/01 16:44:11 jcs Exp $
+--- src/tpb.h.orig	Mon Jul 18 08:15:59 2005
++++ src/tpb.h	Thu May 31 20:04:13 2007
 @@ -28,6 +28,8 @@
  #define _(String) (String)
  #endif /* ENABLE_NLS */
@@ -10,3 +10,11 @@ $OpenBSD: patch-src_tpb_h,v 1.1 2004/12/14 23:23:18 jcs Exp $
  #define MAX_VOLUME 100
  #define CALLBACK_CMD_LENGTH 256
  #define CALLBACK_CMD_ARGS 30
+@@ -68,6 +70,7 @@ typedef struct {
+   unsigned int volume_toggle;       /* volume toggle */
+   unsigned int mute_toggle;         /* mute toggle */
+   unsigned int ac_state;            /* ac connected */
++  unsigned int battery_level;       /* battery level */
+   unsigned int powermgt_ac;         /* power management mode ac */
+   unsigned int powermgt_battery;    /* power management mode battery */
+ } t_thinkpad_state;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tpb_c,v 1.3 2007/06/01 01:54:53 jcs Exp $
+$OpenBSD: patch-src_tpb_c,v 1.4 2007/06/01 16:44:11 jcs Exp $
 --- src/tpb.c.orig	Mon Jul 18 08:15:59 2005
-+++ src/tpb.c	Thu May 31 19:51:17 2007
++++ src/tpb.c	Fri Jun  1 10:34:14 2007
 @@ -25,13 +25,21 @@
  #include <sys/wait.h>
  #include <locale.h>
@@ -23,8 +23,13 @@ $OpenBSD: patch-src_tpb_c,v 1.3 2007/06/01 01:54:53 jcs Exp $
  #include "config.h"
  
  #if ENABLE_NLS
-@@ -86,6 +94,8 @@ int *xerrorhandler(Display *display, XErrorEvent *even
+@@ -84,8 +92,13 @@ int apmiser_running(void);
+ int *xerrorhandler(Display *display, XErrorEvent *event);
+ #endif /* HAVE_LIBX11 */
  void sig_chld_handler(int signo);
++#ifdef __OpenBSD__
++const char *apm_battery_level(int state);
++#endif
  /* }}} */
  
 +int nfd = -1;
@@ -32,7 +37,7 @@ $OpenBSD: patch-src_tpb_c,v 1.3 2007/06/01 01:54:53 jcs Exp $
  int main(int argc, char **argv) /* {{{ */
  {
    t_thinkpad_state thinkpad_state, last_thinkpad_state;
-@@ -103,6 +113,17 @@ int main(int argc, char **argv) /* {{{ */
+@@ -103,6 +116,17 @@ int main(int argc, char **argv) /* {{{ */
    Display *display = NULL;
  #endif /* HAVE_LIBX11 */
  
@@ -50,7 +55,7 @@ $OpenBSD: patch-src_tpb_c,v 1.3 2007/06/01 01:54:53 jcs Exp $
    /* zero thinkpad_state */
    memset(&thinkpad_state, 0, sizeof(thinkpad_state));
  
-@@ -143,7 +164,7 @@ int main(int argc, char **argv) /* {{{ */
+@@ -143,7 +167,7 @@ int main(int argc, char **argv) /* {{{ */
  
    /* become a daemon if requested */
    if(cfg.daemon == STATE_ON) {
@@ -59,7 +64,36 @@ $OpenBSD: patch-src_tpb_c,v 1.3 2007/06/01 01:54:53 jcs Exp $
    }
  
    /* initialize osd */
-@@ -980,7 +1001,6 @@ Display *init_xgrabkey(void) /* {{{ */
+@@ -638,6 +662,28 @@ int main(int argc, char **argv) /* {{{ */
+ #endif /* HAVE_LIBXOSD */
+     } /* }}} */
+ 
++#ifdef __OpenBSD__
++    /* determine the level of battery {{{ */
++    if(thinkpad_state.battery_level != last_thinkpad_state.battery_level) {
++      if(cfg.verbose == STATE_ON) {
++	printf(_("Battery level changed: %s\n"), _(apm_battery_level(thinkpad_state.battery_level)));
++      }
++      if(cfg.callback != NULL) {
++	snprintf(callback_cmd, sizeof(callback_cmd), "%s battery_level %s", cfg.callback, _(apm_battery_level(thinkpad_state.battery_level)));
++	if(fork_app(callback_cmd) != 0) {
++	  _exit(0);
++	}
++      }
++#ifdef HAVE_LIBXOSD
++      if(osd_ptr != NULL &&
++	 ((cfg.osd == STATE_OFF && cfg.osdpowermgt == STATE_ON) || (cfg.osd == STATE_ON && cfg.osdpowermgt != STATE_OFF))) {
++	xosd_display(osd_ptr, 0, XOSD_printf, "Battery level changed to %s", apm_battery_level(thinkpad_state.battery_level));
++	xosd_display(osd_ptr, 1, XOSD_string, "");
++      }
++#endif /* HAVE_LIBXOSD */
++    } /* }}} */
++#endif
++
+     /* determine power management mode AC {{{ */
+     if(thinkpad_state.powermgt_ac != last_thinkpad_state.powermgt_ac) {
+       switch(thinkpad_state.powermgt_ac) {
+@@ -980,7 +1026,6 @@ Display *init_xgrabkey(void) /* {{{ */
  /* get the current state from the nvram */
  int get_nvram_state(t_thinkpad_state *thinkpad_state) /* {{{ */
  {
@@ -67,7 +101,7 @@ $OpenBSD: patch-src_tpb_c,v 1.3 2007/06/01 01:54:53 jcs Exp $
    unsigned char buffer[114];
    struct {
      int pos;
-@@ -994,26 +1014,20 @@ int get_nvram_state(t_thinkpad_state *thinkpad_state) 
+@@ -994,26 +1039,20 @@ int get_nvram_state(t_thinkpad_state *thinkpad_state) 
    };
    int pos_len_idx = 0;
  
@@ -100,7 +134,7 @@ $OpenBSD: patch-src_tpb_c,v 1.3 2007/06/01 01:54:53 jcs Exp $
        perror(NULL);
        return -1;
      }
-@@ -1045,11 +1059,26 @@ int get_nvram_state(t_thinkpad_state *thinkpad_state) 
+@@ -1045,11 +1084,28 @@ int get_nvram_state(t_thinkpad_state *thinkpad_state) 
  /* get the current state from the apm subsystem */
  int get_apm_state(t_thinkpad_state *thinkpad_state) /* {{{ */
  {
@@ -121,14 +155,16 @@ $OpenBSD: patch-src_tpb_c,v 1.3 2007/06/01 01:54:53 jcs Exp $
 +    fdsc = open("/dev/apm", O_RDONLY);
 +
 +  if (fdsc) {
-+    if (ioctl(fdsc, APM_IOC_GETPOWER, &info) == 0)
++    if (ioctl(fdsc, APM_IOC_GETPOWER, &info) == 0) {
 +      thinkpad_state->ac_state = (info.ac_state ? STATE_ON : STATE_OFF);
++      thinkpad_state->battery_level = info.battery_state;
++    }
 +  }
 +#else
    /* Read the state of the ac line from proc filesystem.
     * Documentation of /proc/apm from linux kernel (/usr/src/linux/arch/i386/kernel/apm.c)
     * 
-@@ -1122,6 +1151,7 @@ int get_apm_state(t_thinkpad_state *thinkpad_state) /*
+@@ -1122,6 +1178,7 @@ int get_apm_state(t_thinkpad_state *thinkpad_state) /*
        thinkpad_state->ac_state = STATE_ON;
        break;
    }
@@ -136,15 +172,44 @@ $OpenBSD: patch-src_tpb_c,v 1.3 2007/06/01 01:54:53 jcs Exp $
  
    return 0;
  } /* }}} */
-@@ -1282,6 +1312,11 @@ void set_nvram_volume_level(t_thinkpad_state *thinkpad
- {
+@@ -1283,6 +1340,11 @@ void set_nvram_volume_level(t_thinkpad_state *thinkpad
    int  fdsc;
    char buffer;
-+
+ 
 +#ifdef __OpenBSD__
 +  /* nvram writing not supported in OpenBSD */
 +  return;
 +#endif
- 
++
    /* only use writeback to nvram when cfg.mixersteps is different from DEFAULT_MIXERSTEPS */
    if(cfg.mixersteps != DEFAULT_MIXERSTEPS) {
+     /* open nvram */
+@@ -1466,5 +1528,28 @@ void sig_chld_handler(int signo) /* {{{ */
+   waitpid(-1, &status, WNOHANG);
+   return;
+ } /* }}} */
++
++#ifdef __OpenBSD__
++const char *
++apm_battery_level(int state)
++{
++  switch (state) {
++  case APM_BATT_HIGH:
++    return "high";
++  case APM_BATT_LOW:
++    return "low";
++  case APM_BATT_CRITICAL:
++    return "CRITICAL";
++  case APM_BATT_CHARGING:
++    return "charging";
++  case APM_BATTERY_ABSENT:
++    return "absent";
++  case APM_BATT_UNKNOWN:
++    return "unknown";
++  default:
++    return "invalid battery state";
++  }
++}
++#endif
+ 
+ /* vim600:set fen:set fdm=marker:set fdl=0: */
