@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2007/06/01 17:33:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.288 2007/06/01 18:27:20 matthieu Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -182,7 +182,6 @@
      SUBDIR += tktable
      SUBDIR += trayer
      SUBDIR += treewm
-     SUBDIR += ttmkfdir
      SUBDIR += tvtwm
      SUBDIR += type1inst
      SUBDIR += unclutter
