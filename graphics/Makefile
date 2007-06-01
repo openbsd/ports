@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2007/06/01 15:05:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.186 2007/06/01 15:19:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -59,7 +59,6 @@
      SUBDIR += gphoto2
      SUBDIR += gqview
      SUBDIR += gracula
-     SUBDIR += gthumb
      SUBDIR += gtkam
      SUBDIR += gtksee
      SUBDIR += gwenview
