@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.467 2007/05/31 04:00:30 jcs Exp $
+# $OpenBSD: Makefile,v 1.468 2007/06/01 15:04:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -74,7 +74,6 @@
      SUBDIR += freeradius
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
-     SUBDIR += gabber
      SUBDIR += gajim
      SUBDIR += gftp
      SUBDIR += gmudix
