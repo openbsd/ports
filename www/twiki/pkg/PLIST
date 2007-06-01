@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/08/02 22:19:06 aanriot Exp $
-@extra cgi-bin/twiki/
+@comment $OpenBSD: PLIST,v 1.6 2007/06/01 22:07:39 aanriot Exp $
+cgi-bin/twiki/
+cgi-bin/twiki/LocalLib.cfg
+cgi-bin/twiki/LocalLib.cfg.txt
 cgi-bin/twiki/attach
 cgi-bin/twiki/changes
+cgi-bin/twiki/configure
 cgi-bin/twiki/edit
-cgi-bin/twiki/geturl
-cgi-bin/twiki/installpasswd
-cgi-bin/twiki/mailnotify
+cgi-bin/twiki/login
+cgi-bin/twiki/logon
 cgi-bin/twiki/manage
 cgi-bin/twiki/oops
 cgi-bin/twiki/passwd
@@ -14,62 +16,68 @@ cgi-bin/twiki/rdiff
 cgi-bin/twiki/rdiffauth
 cgi-bin/twiki/register
 cgi-bin/twiki/rename
+cgi-bin/twiki/resetpasswd
+cgi-bin/twiki/rest
 cgi-bin/twiki/save
 cgi-bin/twiki/search
 cgi-bin/twiki/setlib.cfg
 cgi-bin/twiki/statistics
-cgi-bin/twiki/testenv
+cgi-bin/twiki/twiki
 cgi-bin/twiki/upload
 cgi-bin/twiki/view
 cgi-bin/twiki/viewauth
 cgi-bin/twiki/viewfile
 conf/httpd-twiki.conf
-@extra htdocs/twiki/
+htdocs/twiki/
+htdocs/twiki/INSTALL.html
 @owner www
 @group www
-htdocs/twiki/TWikiDocumentation.html
 htdocs/twiki/TWikiHistory.html
+@owner
+@group
+htdocs/twiki/TWikiReleaseNotes04x01.html
+htdocs/twiki/TWikiUpgradeGuide.html
+@owner www
+@group www
 htdocs/twiki/data/
-htdocs/twiki/data/.htpasswd
 htdocs/twiki/data/Main/
-@comment no checksum
-htdocs/twiki/data/Main/.changes
-@comment no checksum
-htdocs/twiki/data/Main/.mailnotify
-htdocs/twiki/data/Main/FileAttachment.txt
-htdocs/twiki/data/Main/LondonOffice.txt
 htdocs/twiki/data/Main/NobodyGroup.txt
-htdocs/twiki/data/Main/OfficeLocations.txt
-htdocs/twiki/data/Main/PeterThoeny.txt
-htdocs/twiki/data/Main/SanJoseOffice.txt
+htdocs/twiki/data/Main/PatternSkinUserViewTemplate.txt
 htdocs/twiki/data/Main/TWikiAdminGroup.txt
+htdocs/twiki/data/Main/TWikiContributor.txt
 htdocs/twiki/data/Main/TWikiGroupTemplate.txt
 htdocs/twiki/data/Main/TWikiGroups.txt
 htdocs/twiki/data/Main/TWikiGuest.txt
+htdocs/twiki/data/Main/TWikiGuestLeftBar.txt
 htdocs/twiki/data/Main/TWikiPreferences.txt
-@owner
-@group
-@extra htdocs/twiki/data/Main/TWikiUsers.txt
-@extra htdocs/twiki/data/Main/TWikiVariables.txt
-@extra htdocs/twiki/data/Main/TokyoOffice.txt
-@extra htdocs/twiki/data/Main/WebChanges.txt
-@extra htdocs/twiki/data/Main/WebHome.txt
-@extra htdocs/twiki/data/Main/WebIndex.txt
-@extra htdocs/twiki/data/Main/WebLeftBar.txt
-@extra htdocs/twiki/data/Main/WebNotify.txt
-@extra htdocs/twiki/data/Main/WebPreferences.txt
-@extra htdocs/twiki/data/Main/WebRss.txt
-@extra htdocs/twiki/data/Main/WebSearch.txt
-@extra htdocs/twiki/data/Main/WebSearchAdvanced.txt
-@extra htdocs/twiki/data/Main/WebStatistics.txt
-@extra htdocs/twiki/data/Main/WebTopicList.txt
-@owner www
-@group www
+htdocs/twiki/data/Main/TWikiRegistrationAgent.txt
+htdocs/twiki/data/Main/TWikiUsers.txt
+htdocs/twiki/data/Main/UnknownUser.txt
+htdocs/twiki/data/Main/UserForm.txt
+htdocs/twiki/data/Main/UserHomepageHeader.txt
+htdocs/twiki/data/Main/UserList.txt
+htdocs/twiki/data/Main/UserListByDateJoined.txt
+htdocs/twiki/data/Main/UserListByLocation.txt
+htdocs/twiki/data/Main/UserListByPhotograph.txt
+htdocs/twiki/data/Main/UserListHeader.txt
+htdocs/twiki/data/Main/UserViewTemplate.txt
+htdocs/twiki/data/Main/WebAtom.txt
+htdocs/twiki/data/Main/WebChanges.txt
+htdocs/twiki/data/Main/WebHome.txt
+htdocs/twiki/data/Main/WebIndex.txt
+htdocs/twiki/data/Main/WebLeftBar.txt
+htdocs/twiki/data/Main/WebNotify.txt
+htdocs/twiki/data/Main/WebPreferences.txt
+htdocs/twiki/data/Main/WebRss.txt
+htdocs/twiki/data/Main/WebSearch.txt
+htdocs/twiki/data/Main/WebSearchAdvanced.txt
+htdocs/twiki/data/Main/WebStatistics.txt
+htdocs/twiki/data/Main/WebTopicCreator.txt
+htdocs/twiki/data/Main/WebTopicList.txt
 htdocs/twiki/data/Sandbox/
-@comment no checksum
-htdocs/twiki/data/Sandbox/.changes
-@comment no checksum
-htdocs/twiki/data/Sandbox/.mailnotify
+htdocs/twiki/data/Sandbox/CommentPluginExampleComments.txt
+htdocs/twiki/data/Sandbox/PluginTestEmptyPlugin.txt
+htdocs/twiki/data/Sandbox/WebAtom.txt
 htdocs/twiki/data/Sandbox/WebChanges.txt
 htdocs/twiki/data/Sandbox/WebHome.txt
 htdocs/twiki/data/Sandbox/WebIndex.txt
@@ -80,124 +88,409 @@ htdocs/twiki/data/Sandbox/WebRss.txt
 htdocs/twiki/data/Sandbox/WebSearch.txt
 htdocs/twiki/data/Sandbox/WebSearchAdvanced.txt
 htdocs/twiki/data/Sandbox/WebStatistics.txt
+@owner
+@group
+htdocs/twiki/data/Sandbox/WebTopicCreator.txt
+@owner www
+@group www
 htdocs/twiki/data/Sandbox/WebTopicList.txt
 htdocs/twiki/data/TWiki/
-@comment no checksum
-htdocs/twiki/data/TWiki/.changes
-@comment no checksum
-htdocs/twiki/data/TWiki/.mailnotify
 htdocs/twiki/data/TWiki/ATasteOfTWiki.txt
-htdocs/twiki/data/TWiki/ATasteOfTWikiTemplate.txt
 htdocs/twiki/data/TWiki/AccessKeys.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/AdminDocumentationCategory.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/AdminSkillsAssumptions.txt
-htdocs/twiki/data/TWiki/AdminTools.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/AdminToolsCategory.txt
+htdocs/twiki/data/TWiki/AnApplicationWithWikiForm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/AppendixEncodeURLsWithUTF8.txt
-htdocs/twiki/data/TWiki/AppendixFileSystem.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/BehaviourContrib.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/BookView.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/BulkRegistration.txt
+htdocs/twiki/data/TWiki/BulkResetPassword.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/BumpyWord.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/CategoryCategory.txt
+htdocs/twiki/data/TWiki/ChangeEmailAddress.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/ChangePassword.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/ClassMethod.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/ClassicSkin.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/ClassicSkinLogin.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/CommentPlugin.txt
-htdocs/twiki/data/TWiki/CommentsTmpl.txt
-htdocs/twiki/data/TWiki/DefaultPlugin.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/CommentPluginExamples.txt
+htdocs/twiki/data/TWiki/CommentPluginTemplate.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/DeleteOrRenameATopic.txt
 htdocs/twiki/data/TWiki/DeleteOrRenameAnAttachment.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/DeveloperDocumentationCategory.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/DontNotify.txt
-htdocs/twiki/data/TWiki/DragonSkin.txt
-htdocs/twiki/data/TWiki/DragonSkinCustomize.txt
-htdocs/twiki/data/TWiki/DragonSkinInstall.txt
-htdocs/twiki/data/TWiki/DragonSkinSiteMap.txt
 htdocs/twiki/data/TWiki/EditDoesNotIncreaseTheRevision.txt
 htdocs/twiki/data/TWiki/EditTablePlugin.txt
 htdocs/twiki/data/TWiki/EmptyPlugin.txt
 htdocs/twiki/data/TWiki/ExampleTopicTemplate.txt
 htdocs/twiki/data/TWiki/FileAttachment.txt
 htdocs/twiki/data/TWiki/FileAttribute.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/ForceNewRevision.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/FormattedSearch.txt
 htdocs/twiki/data/TWiki/GnuGeneralPublicLicense.txt
 htdocs/twiki/data/TWiki/GoBox.txt
 htdocs/twiki/data/TWiki/GoodStyle.txt
 htdocs/twiki/data/TWiki/HiddenAttachment.txt
-htdocs/twiki/data/TWiki/HowToLogOff.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/HierarchicalNavigation.txt
+htdocs/twiki/data/TWiki/HierarchicalNavigationChildExample.txt
+htdocs/twiki/data/TWiki/IfStatements.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/IncludeTopicsAndWebPages.txt
-htdocs/twiki/data/TWiki/InstallPassword.txt
 htdocs/twiki/data/TWiki/InstalledPlugins.txt
 htdocs/twiki/data/TWiki/InstantEnhancements.txt
 htdocs/twiki/data/TWiki/InterWikis.txt
 htdocs/twiki/data/TWiki/InterwikiPlugin.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/JSCalendarContrib.txt
+htdocs/twiki/data/TWiki/KupuContrib.txt
+htdocs/twiki/data/TWiki/LanguageSelector.txt
+htdocs/twiki/data/TWiki/LoginName.txt
+htdocs/twiki/data/TWiki/MailerContrib.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/MainFeatures.txt
 htdocs/twiki/data/TWiki/ManagingTopics.txt
 htdocs/twiki/data/TWiki/ManagingUsers.txt
 htdocs/twiki/data/TWiki/ManagingWebs.txt
-htdocs/twiki/data/TWiki/MetaDataDefinition.txt
-htdocs/twiki/data/TWiki/MetaDataRendering.txt
 htdocs/twiki/data/TWiki/MoveTopic.txt
 htdocs/twiki/data/TWiki/NewUserTemplate.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/ObjectMethod.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/PatternSkin.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/PatternSkinColorSettings.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/PatternSkinCss.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/PatternSkinCssCookbook.txt
+htdocs/twiki/data/TWiki/PatternSkinCssCookbookCenterPage.txt
+htdocs/twiki/data/TWiki/PatternSkinCssCookbookCenterPageBorder.txt
+htdocs/twiki/data/TWiki/PatternSkinCssCookbookEditTableStyle.txt
+htdocs/twiki/data/TWiki/PatternSkinCssCookbookFonts.txt
+htdocs/twiki/data/TWiki/PatternSkinCssCookbookNoLeftBar.txt
+htdocs/twiki/data/TWiki/PatternSkinCssCookbookNoTopBar.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/PatternSkinCustomization.txt
-htdocs/twiki/data/TWiki/PatternSkinPalette.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/PatternSkinElements.txt
+htdocs/twiki/data/TWiki/PatternSkinHeaderArt.txt
+htdocs/twiki/data/TWiki/PatternSkinJavascripts.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/PeterThoeny.txt
 htdocs/twiki/data/TWiki/PlainSkin.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/PreferencesPlugin.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/PreviewBackground.txt
 htdocs/twiki/data/TWiki/PrintSkin.txt
 htdocs/twiki/data/TWiki/QuietSave.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/RegistrationApprovals.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/RegularExpression.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/RenameWeb.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/RenderListPlugin.txt
 htdocs/twiki/data/TWiki/ResetPassword.txt
 htdocs/twiki/data/TWiki/SearchDoesNotWork.txt
 htdocs/twiki/data/TWiki/SearchHelp.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/SearchPatternCookbook.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/SimultaneousEdits.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/SiteChanges.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/SiteMap.txt
-htdocs/twiki/data/TWiki/SiteUsageStatistics.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/SitePermissions.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/SlideShowPlugin.txt
 htdocs/twiki/data/TWiki/SmiliesPlugin.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/SourceCode.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/SpreadSheetPlugin.txt
 htdocs/twiki/data/TWiki/StandardColors.txt
 htdocs/twiki/data/TWiki/StartingPoints.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/StaticMethod.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiAccessControl.txt
-htdocs/twiki/data/TWiki/TWikiAdminCookBook.txt
-htdocs/twiki/data/TWiki/TWikiCategoryTable.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiAccessControlExceptionDotPm.txt
+htdocs/twiki/data/TWiki/TWikiAccessDotPm.txt
+htdocs/twiki/data/TWiki/TWikiAddOns.txt
+htdocs/twiki/data/TWiki/TWikiAttachDotPm.txt
+htdocs/twiki/data/TWiki/TWikiAttrsDotPm.txt
+htdocs/twiki/data/TWiki/TWikiClientApacheLoginDotPm.txt
+htdocs/twiki/data/TWiki/TWikiClientDotPm.txt
+htdocs/twiki/data/TWiki/TWikiClientTemplateLoginDotPm.txt
+htdocs/twiki/data/TWiki/TWikiCompatibilityDotPm.txt
+htdocs/twiki/data/TWiki/TWikiConfigureLoadDotPm.txt
+htdocs/twiki/data/TWiki/TWikiConfigureUIsEXTENDDotPm.txt
+htdocs/twiki/data/TWiki/TWikiContribs.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiContributor.txt
 htdocs/twiki/data/TWiki/TWikiCss.txt
 htdocs/twiki/data/TWiki/TWikiDocGraphics.txt
 htdocs/twiki/data/TWiki/TWikiDocumentation.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiDownload.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiEditingShorthand.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiEnhancementRequests.txt
 htdocs/twiki/data/TWiki/TWikiFAQ.txt
 htdocs/twiki/data/TWiki/TWikiFaqTemplate.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiFormDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiForms.txt
-htdocs/twiki/data/TWiki/TWikiFuncModule.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiFuncDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiGlossary.txt
 htdocs/twiki/data/TWiki/TWikiHistory.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiI18NDotPm.txt
+htdocs/twiki/data/TWiki/TWikiI18NExtractDotPm.txt
+htdocs/twiki/data/TWiki/TWikiIfDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiInstallationGuide.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiJavascripts.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiLogos.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiMergeDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiMetaData.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiMetaDotPm.txt
+htdocs/twiki/data/TWiki/TWikiNetDotPm.txt
+htdocs/twiki/data/TWiki/TWikiOopsExceptionDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiPlannedFeatures.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiPluginDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiPlugins.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiPluginsDotPm.txt
+htdocs/twiki/data/TWiki/TWikiPluralsDotPm.txt
+@owner www
+@group www
 @comment no checksum
 htdocs/twiki/data/TWiki/TWikiPreferences.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiPreferencesForm.txt
+htdocs/twiki/data/TWiki/TWikiPrefsDotPm.txt
+htdocs/twiki/data/TWiki/TWikiPrefsParserDotPm.txt
+htdocs/twiki/data/TWiki/TWikiPrefsPrefsCacheDotPm.txt
+htdocs/twiki/data/TWiki/TWikiReferenceManual.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiRegistration.txt
-htdocs/twiki/data/TWiki/TWikiRegistrationPub.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiReleaseNotes04x00.txt
+htdocs/twiki/data/TWiki/TWikiReleaseNotes04x01.txt
+htdocs/twiki/data/TWiki/TWikiRenderDotPm.txt
+htdocs/twiki/data/TWiki/TWikiRenderingShortcut.txt
+htdocs/twiki/data/TWiki/TWikiSandboxDotPm.txt
+htdocs/twiki/data/TWiki/TWikiScripts.txt
+htdocs/twiki/data/TWiki/TWikiSearchDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiShorthand.txt
 htdocs/twiki/data/TWiki/TWikiSite.txt
 htdocs/twiki/data/TWiki/TWikiSiteTools.txt
 htdocs/twiki/data/TWiki/TWikiSkinBrowser.txt
 htdocs/twiki/data/TWiki/TWikiSkins.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiStoreDotPm.txt
+htdocs/twiki/data/TWiki/TWikiStoreRcsFileDotPm.txt
+htdocs/twiki/data/TWiki/TWikiStoreRcsLiteDotPm.txt
+htdocs/twiki/data/TWiki/TWikiStoreRcsWrapDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiSystemRequirements.txt
 htdocs/twiki/data/TWiki/TWikiTemplates.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiTemplatesDotPm.txt
+htdocs/twiki/data/TWiki/TWikiTimeDotPm.txt
+htdocs/twiki/data/TWiki/TWikiTip001.txt
+htdocs/twiki/data/TWiki/TWikiTip002.txt
+htdocs/twiki/data/TWiki/TWikiTip003.txt
+htdocs/twiki/data/TWiki/TWikiTip004.txt
+htdocs/twiki/data/TWiki/TWikiTip005.txt
+htdocs/twiki/data/TWiki/TWikiTip006.txt
+htdocs/twiki/data/TWiki/TWikiTip007.txt
+htdocs/twiki/data/TWiki/TWikiTip008.txt
+htdocs/twiki/data/TWiki/TWikiTip009.txt
+htdocs/twiki/data/TWiki/TWikiTip010.txt
+htdocs/twiki/data/TWiki/TWikiTip011.txt
+htdocs/twiki/data/TWiki/TWikiTip012.txt
+htdocs/twiki/data/TWiki/TWikiTip013.txt
+htdocs/twiki/data/TWiki/TWikiTip014.txt
+htdocs/twiki/data/TWiki/TWikiTip015.txt
+htdocs/twiki/data/TWiki/TWikiTip016.txt
+htdocs/twiki/data/TWiki/TWikiTip017.txt
+htdocs/twiki/data/TWiki/TWikiTip018.txt
+htdocs/twiki/data/TWiki/TWikiTip019.txt
+htdocs/twiki/data/TWiki/TWikiTip020.txt
+htdocs/twiki/data/TWiki/TWikiTip021.txt
+htdocs/twiki/data/TWiki/TWikiTip022.txt
+htdocs/twiki/data/TWiki/TWikiTip023.txt
+htdocs/twiki/data/TWiki/TWikiTip024.txt
+htdocs/twiki/data/TWiki/TWikiTip025.txt
+htdocs/twiki/data/TWiki/TWikiTip026.txt
+htdocs/twiki/data/TWiki/TWikiTip027.txt
+htdocs/twiki/data/TWiki/TWikiTip028.txt
+htdocs/twiki/data/TWiki/TWikiTip029.txt
+htdocs/twiki/data/TWiki/TWikiTips.txt
+htdocs/twiki/data/TWiki/TWikiTipsOfTheDay.txt
+htdocs/twiki/data/TWiki/TWikiTipsOfTheDayAddNew.txt
+htdocs/twiki/data/TWiki/TWikiTipsOfTheDayAdmin.txt
+htdocs/twiki/data/TWiki/TWikiTipsOfTheDayInclude.txt
+htdocs/twiki/data/TWiki/TWikiTipsOfTheDayTemplate.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiTopics.txt
 htdocs/twiki/data/TWiki/TWikiTutorial.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiUIChangeFormDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUIDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUIEditDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUIManageDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUIOopsDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUIRDiffDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUIRegisterDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUISaveDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUISearchDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUIStatisticsDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUIUploadDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUIViewDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiUpgradeGuide.txt
-htdocs/twiki/data/TWiki/TWikiUpgradeTo01Dec2000.txt
-htdocs/twiki/data/TWiki/TWikiUpgradeTo01Dec2001.txt
-htdocs/twiki/data/TWiki/TWikiUpgradeTo01Feb2003.txt
-htdocs/twiki/data/TWiki/TWikiUpgradeTo01May2000.txt
 htdocs/twiki/data/TWiki/TWikiUserAuthentication.txt
-htdocs/twiki/data/TWiki/TWikiUsernameVsLoginUsername.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiUserDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUserSetting.txt
+htdocs/twiki/data/TWiki/TWikiUsersApacheHtpasswdUserDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUsersDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUsersGuide.txt
+htdocs/twiki/data/TWiki/TWikiUsersPasswordDotPm.txt
+htdocs/twiki/data/TWiki/TWikiUsersTWikiUserMappingDotPm.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiVariables.txt
-htdocs/twiki/data/TWiki/TWikiVariablesAtoM.txt
-htdocs/twiki/data/TWiki/TWikiVariablesNtoZ.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TWikiVariablesQuickStart.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/TWikiWebsTable.txt
 htdocs/twiki/data/TWiki/TablePlugin.txt
 htdocs/twiki/data/TWiki/TemplateWeb.txt
@@ -205,8 +498,149 @@ htdocs/twiki/data/TWiki/TextEditor.txt
 htdocs/twiki/data/TWiki/TextFormattingFAQ.txt
 htdocs/twiki/data/TWiki/TextFormattingRules.txt
 htdocs/twiki/data/TWiki/TimBernersLee.txt
-htdocs/twiki/data/TWiki/UnlockTopic.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/TimeInterval.txt
+htdocs/twiki/data/TWiki/TipsContrib.txt
+htdocs/twiki/data/TWiki/TwistyContrib.txt
+htdocs/twiki/data/TWiki/TwistyPlugin.txt
+htdocs/twiki/data/TWiki/UserDocumentationCategory.txt
+htdocs/twiki/data/TWiki/UserToolsCategory.txt
+htdocs/twiki/data/TWiki/UsingHTML.txt
+htdocs/twiki/data/TWiki/VarACTIVATEDPLUGINS.txt
+htdocs/twiki/data/TWiki/VarALLVARIABLES.txt
+htdocs/twiki/data/TWiki/VarAQUA.txt
+htdocs/twiki/data/TWiki/VarATTACHURL.txt
+htdocs/twiki/data/TWiki/VarATTACHURLPATH.txt
+htdocs/twiki/data/TWiki/VarAUTHREALM.txt
+htdocs/twiki/data/TWiki/VarBASETOPIC.txt
+htdocs/twiki/data/TWiki/VarBASEWEB.txt
+htdocs/twiki/data/TWiki/VarBB.txt
+htdocs/twiki/data/TWiki/VarBB2.txt
+htdocs/twiki/data/TWiki/VarBB3.txt
+htdocs/twiki/data/TWiki/VarBB4.txt
+htdocs/twiki/data/TWiki/VarBLACK.txt
+htdocs/twiki/data/TWiki/VarBLUE.txt
+htdocs/twiki/data/TWiki/VarBR.txt
+htdocs/twiki/data/TWiki/VarBROWN.txt
+htdocs/twiki/data/TWiki/VarBULLET.txt
+htdocs/twiki/data/TWiki/VarDATE.txt
+htdocs/twiki/data/TWiki/VarDISPLAYTIME.txt
+htdocs/twiki/data/TWiki/VarDISPLAYTIME2.txt
+htdocs/twiki/data/TWiki/VarENCODE.txt
+htdocs/twiki/data/TWiki/VarENDCOLOR.txt
+htdocs/twiki/data/TWiki/VarENDSECTION.txt
+htdocs/twiki/data/TWiki/VarFAILEDPLUGINS.txt
+htdocs/twiki/data/TWiki/VarFORMFIELD.txt
+htdocs/twiki/data/TWiki/VarGMTIME.txt
+htdocs/twiki/data/TWiki/VarGMTIME2.txt
+htdocs/twiki/data/TWiki/VarGRAY.txt
+htdocs/twiki/data/TWiki/VarGREEN.txt
+htdocs/twiki/data/TWiki/VarGROUPS.txt
+htdocs/twiki/data/TWiki/VarH.txt
+htdocs/twiki/data/TWiki/VarHOMETOPIC.txt
+htdocs/twiki/data/TWiki/VarHTTP.txt
+htdocs/twiki/data/TWiki/VarHTTPHOST.txt
+htdocs/twiki/data/TWiki/VarHTTPS.txt
+htdocs/twiki/data/TWiki/VarI.txt
+htdocs/twiki/data/TWiki/VarICON.txt
+htdocs/twiki/data/TWiki/VarICONURL.txt
+htdocs/twiki/data/TWiki/VarICONURLPATH.txt
+htdocs/twiki/data/TWiki/VarIF.txt
+htdocs/twiki/data/TWiki/VarINCLUDE.txt
+htdocs/twiki/data/TWiki/VarINCLUDINGTOPIC.txt
+htdocs/twiki/data/TWiki/VarINCLUDINGWEB.txt
+htdocs/twiki/data/TWiki/VarLANGUAGE.txt
+htdocs/twiki/data/TWiki/VarLANGUAGES.txt
+htdocs/twiki/data/TWiki/VarLIME.txt
+htdocs/twiki/data/TWiki/VarLOCALSITEPREFS.txt
+htdocs/twiki/data/TWiki/VarLOGIN.txt
+htdocs/twiki/data/TWiki/VarLOGOUT.txt
+htdocs/twiki/data/TWiki/VarM.txt
+htdocs/twiki/data/TWiki/VarMAINWEB.txt
+htdocs/twiki/data/TWiki/VarMAKETEXT.txt
+htdocs/twiki/data/TWiki/VarMAROON.txt
+htdocs/twiki/data/TWiki/VarMETA.txt
+htdocs/twiki/data/TWiki/VarMETASEARCH.txt
+htdocs/twiki/data/TWiki/VarN.txt
+htdocs/twiki/data/TWiki/VarNAVY.txt
+htdocs/twiki/data/TWiki/VarNOP.txt
+htdocs/twiki/data/TWiki/VarNOTIFYTOPIC.txt
+htdocs/twiki/data/TWiki/VarOLIVE.txt
+htdocs/twiki/data/TWiki/VarORANGE.txt
+htdocs/twiki/data/TWiki/VarP.txt
+htdocs/twiki/data/TWiki/VarPINK.txt
+htdocs/twiki/data/TWiki/VarPLUGINDESCRIPTIONS.txt
+htdocs/twiki/data/TWiki/VarPLUGINVERSION.txt
+htdocs/twiki/data/TWiki/VarPUBURL.txt
+htdocs/twiki/data/TWiki/VarPUBURLPATH.txt
+htdocs/twiki/data/TWiki/VarPURPLE.txt
+htdocs/twiki/data/TWiki/VarQ.txt
+htdocs/twiki/data/TWiki/VarQUERYPARAMS.txt
+htdocs/twiki/data/TWiki/VarQUERYSTRING.txt
+htdocs/twiki/data/TWiki/VarRED.txt
+htdocs/twiki/data/TWiki/VarREMOTEADDR.txt
+htdocs/twiki/data/TWiki/VarREMOTEPORT.txt
+htdocs/twiki/data/TWiki/VarREMOTEUSER.txt
+htdocs/twiki/data/TWiki/VarREVINFO.txt
+htdocs/twiki/data/TWiki/VarREVINFO2.txt
+htdocs/twiki/data/TWiki/VarS.txt
+htdocs/twiki/data/TWiki/VarSCRIPTNAME.txt
+htdocs/twiki/data/TWiki/VarSCRIPTSUFFIX.txt
+htdocs/twiki/data/TWiki/VarSCRIPTURL.txt
+htdocs/twiki/data/TWiki/VarSCRIPTURL2.txt
+htdocs/twiki/data/TWiki/VarSCRIPTURLPATH.txt
+htdocs/twiki/data/TWiki/VarSCRIPTURLPATH2.txt
+htdocs/twiki/data/TWiki/VarSEARCH.txt
+htdocs/twiki/data/TWiki/VarSERVERTIME.txt
+htdocs/twiki/data/TWiki/VarSERVERTIME2.txt
+htdocs/twiki/data/TWiki/VarSESSIONID.txt
+htdocs/twiki/data/TWiki/VarSESSIONVAR.txt
+htdocs/twiki/data/TWiki/VarSESSIONVARIABLE.txt
+htdocs/twiki/data/TWiki/VarSILVER.txt
+htdocs/twiki/data/TWiki/VarSPACEDTOPIC.txt
+htdocs/twiki/data/TWiki/VarSPACEOUT.txt
+htdocs/twiki/data/TWiki/VarSTARTINCLUDE.txt
+htdocs/twiki/data/TWiki/VarSTARTSECTION.txt
+htdocs/twiki/data/TWiki/VarSTATISTICSTOPIC.txt
+htdocs/twiki/data/TWiki/VarSTOPINCLUDE.txt
+htdocs/twiki/data/TWiki/VarT.txt
+htdocs/twiki/data/TWiki/VarTEAL.txt
+htdocs/twiki/data/TWiki/VarTOC.txt
+htdocs/twiki/data/TWiki/VarTOC2.txt
+htdocs/twiki/data/TWiki/VarTOPIC.txt
+htdocs/twiki/data/TWiki/VarTOPICLIST.txt
+htdocs/twiki/data/TWiki/VarTOPICURL.txt
+htdocs/twiki/data/TWiki/VarTWIKIWEB.txt
+htdocs/twiki/data/TWiki/VarU.txt
+htdocs/twiki/data/TWiki/VarURLPARAM.txt
+htdocs/twiki/data/TWiki/VarUSERINFO.txt
+htdocs/twiki/data/TWiki/VarUSERNAME.txt
+htdocs/twiki/data/TWiki/VarVAR.txt
+htdocs/twiki/data/TWiki/VarVBAR.txt
+htdocs/twiki/data/TWiki/VarWEB.txt
+htdocs/twiki/data/TWiki/VarWEBLIST.txt
+htdocs/twiki/data/TWiki/VarWEBPREFSTOPIC.txt
+htdocs/twiki/data/TWiki/VarWHITE.txt
+htdocs/twiki/data/TWiki/VarWIKIHOMEURL.txt
+htdocs/twiki/data/TWiki/VarWIKINAME.txt
+htdocs/twiki/data/TWiki/VarWIKIPREFSTOPIC.txt
+htdocs/twiki/data/TWiki/VarWIKITOOLNAME.txt
+htdocs/twiki/data/TWiki/VarWIKIUSERNAME.txt
+htdocs/twiki/data/TWiki/VarWIKIUSERSTOPIC.txt
+htdocs/twiki/data/TWiki/VarWIKIVERSION.txt
+htdocs/twiki/data/TWiki/VarX.txt
+htdocs/twiki/data/TWiki/VarY.txt
+htdocs/twiki/data/TWiki/VarYELLOW.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/WabiSabi.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/WebAtom.txt
+htdocs/twiki/data/TWiki/WebAtomBase.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/WebBottomBar.txt
 htdocs/twiki/data/TWiki/WebChanges.txt
 htdocs/twiki/data/TWiki/WebChangesAlert.txt
@@ -215,21 +649,52 @@ htdocs/twiki/data/TWiki/WebIndex.txt
 htdocs/twiki/data/TWiki/WebLeftBar.txt
 htdocs/twiki/data/TWiki/WebLeftBarCookbook.txt
 htdocs/twiki/data/TWiki/WebLeftBarExample.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/WebLeftBarLogin.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/WebLeftBarPersonalTemplate.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/WebLeftBarSearch.txt
+htdocs/twiki/data/TWiki/WebLeftBarWebsList.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/WebNotify.txt
 htdocs/twiki/data/TWiki/WebPreferences.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/WebPreferencesHelp.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/WebRss.txt
 htdocs/twiki/data/TWiki/WebRssBase.txt
 htdocs/twiki/data/TWiki/WebSearch.txt
 htdocs/twiki/data/TWiki/WebSearchAdvanced.txt
 htdocs/twiki/data/TWiki/WebSiteTools.txt
 htdocs/twiki/data/TWiki/WebStatistics.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/WebTemplateTopics.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/WebTopBar.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/WebTopicCreator.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/WebTopicEditTemplate.txt
 htdocs/twiki/data/TWiki/WebTopicList.txt
 htdocs/twiki/data/TWiki/WebTopicNonWikiTemplate.txt
 htdocs/twiki/data/TWiki/WebTopicViewTemplate.txt
 htdocs/twiki/data/TWiki/WelcomeGuest.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/WhatDoesTWikiStandFor.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/WhatIsWikiWiki.txt
 htdocs/twiki/data/TWiki/WikiCulture.txt
 htdocs/twiki/data/TWiki/WikiName.txt
@@ -237,33 +702,43 @@ htdocs/twiki/data/TWiki/WikiNotation.txt
 htdocs/twiki/data/TWiki/WikiReferences.txt
 htdocs/twiki/data/TWiki/WikiSyntax.txt
 htdocs/twiki/data/TWiki/WikiSyntaxSummary.txt
-htdocs/twiki/data/TWiki/WikiTopic.txt
 htdocs/twiki/data/TWiki/WikiWikiClones.txt
 htdocs/twiki/data/TWiki/WikiWord.txt
-htdocs/twiki/data/TWiki/WindowsInstallCookbook.txt
-htdocs/twiki/data/TWiki/WindowsInstallSummary.txt
+@owner
+@group
+htdocs/twiki/data/TWiki/WysiwygPlugin.txt
+htdocs/twiki/data/TWiki/WysiwygPluginTopicLister.txt
+@owner www
+@group www
 htdocs/twiki/data/TWiki/YouAreHere.txt
 htdocs/twiki/data/Trash/
-@comment no checksum
-htdocs/twiki/data/Trash/.changes
-@comment no checksum
-htdocs/twiki/data/Trash/.mailnotify
 htdocs/twiki/data/Trash/TrashAttachment.txt
+@owner
+@group
+htdocs/twiki/data/Trash/WebAtom.txt
+@owner www
+@group www
 htdocs/twiki/data/Trash/WebChanges.txt
 htdocs/twiki/data/Trash/WebHome.txt
 htdocs/twiki/data/Trash/WebIndex.txt
 htdocs/twiki/data/Trash/WebLeftBar.txt
 htdocs/twiki/data/Trash/WebNotify.txt
 htdocs/twiki/data/Trash/WebPreferences.txt
+@owner
+@group
+htdocs/twiki/data/Trash/WebRss.txt
+@owner www
+@group www
 htdocs/twiki/data/Trash/WebSearch.txt
 htdocs/twiki/data/Trash/WebSearchAdvanced.txt
 htdocs/twiki/data/Trash/WebStatistics.txt
 htdocs/twiki/data/Trash/WebTopicList.txt
 htdocs/twiki/data/_default/
-@comment no checksum
-htdocs/twiki/data/_default/.changes
-@comment no checksum
-htdocs/twiki/data/_default/.mailnotify
+@owner
+@group
+htdocs/twiki/data/_default/WebAtom.txt
+@owner www
+@group www
 htdocs/twiki/data/_default/WebChanges.txt
 htdocs/twiki/data/_default/WebHome.txt
 htdocs/twiki/data/_default/WebIndex.txt
@@ -274,150 +749,1061 @@ htdocs/twiki/data/_default/WebRss.txt
 htdocs/twiki/data/_default/WebSearch.txt
 htdocs/twiki/data/_default/WebSearchAdvanced.txt
 htdocs/twiki/data/_default/WebStatistics.txt
+@owner
+@group
+htdocs/twiki/data/_default/WebTopicCreator.txt
+@owner www
+@group www
 htdocs/twiki/data/_default/WebTopicList.txt
-htdocs/twiki/data/debug.txt
+@owner
+@group
+htdocs/twiki/data/_empty/
+htdocs/twiki/data/_empty/WebPreferences.txt
+@owner www
+@group www
 htdocs/twiki/data/mime.types
-htdocs/twiki/data/warning.txt
 htdocs/twiki/index.html
 htdocs/twiki/lib/
-htdocs/twiki/lib/Algorithm/
-htdocs/twiki/lib/Algorithm/Diff.pm
+@owner
+@group
+htdocs/twiki/lib/Assert.pm
+htdocs/twiki/lib/CPAN/
+htdocs/twiki/lib/CPAN/lib/
+htdocs/twiki/lib/CPAN/lib/Algorithm/
+htdocs/twiki/lib/CPAN/lib/Algorithm/Diff.pm
+htdocs/twiki/lib/CPAN/lib/Error.pm
+htdocs/twiki/lib/CPAN/lib/Locale/
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/Extract/
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/Extract.pm
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/Extract/Run.pm
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/Lexicon/
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/Lexicon.pm
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/Lexicon/Auto.pm
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/Lexicon/Gettext.pm
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/Lexicon/Msgcat.pm
+htdocs/twiki/lib/CPAN/lib/Locale/Maketext/Lexicon/Tie.pm
+htdocs/twiki/lib/CPAN/lib/Text/
+htdocs/twiki/lib/CPAN/lib/Text/Diff.pm
+htdocs/twiki/lib/DEPENDENCIES
+htdocs/twiki/lib/LocalSite.cfg.txt
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/
-htdocs/twiki/lib/TWiki.cfg
 htdocs/twiki/lib/TWiki.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki.spec
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Access.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/AccessControlException.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Attach.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Attrs.pm
+htdocs/twiki/lib/TWiki/Client/
+htdocs/twiki/lib/TWiki/Client.pm
+htdocs/twiki/lib/TWiki/Client/ApacheLogin.pm
+htdocs/twiki/lib/TWiki/Client/TemplateLogin.pm
+htdocs/twiki/lib/TWiki/Compatibility.pm
+htdocs/twiki/lib/TWiki/Configure/
+htdocs/twiki/lib/TWiki/Configure/CSS.pm
+htdocs/twiki/lib/TWiki/Configure/Checker.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/
+htdocs/twiki/lib/TWiki/Configure/Checkers/AuthScripts.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/BasicSanity.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/CGISetup.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/ConfigurationLogName.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/DataDir.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/DebugFileName.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/DefaultUrlHost.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/DispScriptUrlPath.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/Environment.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/Htpasswd/
+htdocs/twiki/lib/TWiki/Configure/Checkers/Htpasswd/Encoding.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/Htpasswd/FileName.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/LocalesDir.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/LogFileName.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/LoginManager.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/LoginNameFilterIn.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/LowerNational.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/MSWin32.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/MailProgram.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/MimeTypesFileName.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/MinPasswordLength.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/NameFilter.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/OS.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/PubDir.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/PubUrlPath.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/Checker.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/EgrepCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/ExtOption.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/FgrepCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/asciiFileSuffixes.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/ciCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/ciDateCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/coCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/delRevCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/diffCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/histCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/infoCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/initBinaryCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/initTextCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/lockCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/rlogDateCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/tmpBinaryCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RCS/unlockCmd.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/RegistrationApprovals.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/ScriptSuffix.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/ScriptUrlPath.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/Sessions/
+htdocs/twiki/lib/TWiki/Configure/Checkers/Sessions/ExpireAfter.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/Site/
+htdocs/twiki/lib/TWiki/Configure/Checkers/Site/CharSet.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/Site/Locale.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/StoreImpl.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/TempfileDir.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/TemplateDir.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/UploadFilter.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/UpperNational.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/UseClientSessions.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/UseLocale.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/WarningFileName.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/WebMasterEmail.pm
+htdocs/twiki/lib/TWiki/Configure/Checkers/cygwin.pm
+htdocs/twiki/lib/TWiki/Configure/Item.pm
+htdocs/twiki/lib/TWiki/Configure/JS.pm
+htdocs/twiki/lib/TWiki/Configure/LANGUAGES.pm
+htdocs/twiki/lib/TWiki/Configure/Load.pm
+htdocs/twiki/lib/TWiki/Configure/PLUGINS.pm
+htdocs/twiki/lib/TWiki/Configure/Pluggable.pm
+htdocs/twiki/lib/TWiki/Configure/Root.pm
+htdocs/twiki/lib/TWiki/Configure/Section.pm
+htdocs/twiki/lib/TWiki/Configure/TWikiCfg.pm
+htdocs/twiki/lib/TWiki/Configure/Type.pm
+htdocs/twiki/lib/TWiki/Configure/Types/
+htdocs/twiki/lib/TWiki/Configure/Types/BOOLEAN.pm
+htdocs/twiki/lib/TWiki/Configure/Types/COMMAND.pm
+htdocs/twiki/lib/TWiki/Configure/Types/LANGUAGE.pm
+htdocs/twiki/lib/TWiki/Configure/Types/NUMBER.pm
+htdocs/twiki/lib/TWiki/Configure/Types/OCTAL.pm
+htdocs/twiki/lib/TWiki/Configure/Types/PASSWORD.pm
+htdocs/twiki/lib/TWiki/Configure/Types/PATH.pm
+htdocs/twiki/lib/TWiki/Configure/Types/PERL.pm
+htdocs/twiki/lib/TWiki/Configure/Types/REGEX.pm
+htdocs/twiki/lib/TWiki/Configure/Types/SELECT.pm
+htdocs/twiki/lib/TWiki/Configure/Types/SELECTCLASS.pm
+htdocs/twiki/lib/TWiki/Configure/Types/STRING.pm
+htdocs/twiki/lib/TWiki/Configure/Types/UNKNOWN.pm
+htdocs/twiki/lib/TWiki/Configure/Types/URL.pm
+htdocs/twiki/lib/TWiki/Configure/Types/URLPATH.pm
+htdocs/twiki/lib/TWiki/Configure/UI.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/
+htdocs/twiki/lib/TWiki/Configure/UIs/AUTH.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/EXTEND.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/EXTENSIONS.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/LANGUAGES.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/MAIN.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/PLUGINS.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/PasswordProtected.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/Root.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/Section.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/TAGS.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/UPDATE.pm
+htdocs/twiki/lib/TWiki/Configure/UIs/Value.pm
+htdocs/twiki/lib/TWiki/Configure/Value.pm
+htdocs/twiki/lib/TWiki/Configure/Valuer.pm
+htdocs/twiki/lib/TWiki/Contrib/
+htdocs/twiki/lib/TWiki/Contrib/ClassicSkin.pm
+htdocs/twiki/lib/TWiki/Contrib/JSCalendarContrib.pm
+htdocs/twiki/lib/TWiki/Contrib/KupuContrib.pm
+htdocs/twiki/lib/TWiki/Contrib/Mailer.pm
+htdocs/twiki/lib/TWiki/Contrib/MailerContrib/
+htdocs/twiki/lib/TWiki/Contrib/MailerContrib/Change.pm
+htdocs/twiki/lib/TWiki/Contrib/MailerContrib/Subscriber.pm
+htdocs/twiki/lib/TWiki/Contrib/MailerContrib/Subscription.pm
+htdocs/twiki/lib/TWiki/Contrib/MailerContrib/UpData.pm
+htdocs/twiki/lib/TWiki/Contrib/MailerContrib/WebNotify.pm
+htdocs/twiki/lib/TWiki/Contrib/PatternSkin.pm
+htdocs/twiki/lib/TWiki/Contrib/TipsContrib.pm
+htdocs/twiki/lib/TWiki/Contrib/TwistyContrib.pm
+htdocs/twiki/lib/TWiki/Data/
+htdocs/twiki/lib/TWiki/Data/DelimitedFile.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Form.pm
 htdocs/twiki/lib/TWiki/Func.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/I18N/
+htdocs/twiki/lib/TWiki/I18N.pm
+htdocs/twiki/lib/TWiki/I18N/Extract.pm
+htdocs/twiki/lib/TWiki/I18N/Fallback.pm
+htdocs/twiki/lib/TWiki/If.pm
+htdocs/twiki/lib/TWiki/Merge.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Meta.pm
 htdocs/twiki/lib/TWiki/Net.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/OopsException.pm
+htdocs/twiki/lib/TWiki/Plugin.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Plugins/
 htdocs/twiki/lib/TWiki/Plugins.pm
 htdocs/twiki/lib/TWiki/Plugins/CommentPlugin/
 htdocs/twiki/lib/TWiki/Plugins/CommentPlugin.pm
-htdocs/twiki/lib/TWiki/Plugins/CommentPlugin/Attrs.pm
 htdocs/twiki/lib/TWiki/Plugins/CommentPlugin/Comment.pm
-htdocs/twiki/lib/TWiki/Plugins/CommentPlugin/Templates.pm
-htdocs/twiki/lib/TWiki/Plugins/CommentPlugin/build.pl
-htdocs/twiki/lib/TWiki/Plugins/CommentPlugin/test.zip
-htdocs/twiki/lib/TWiki/Plugins/DefaultPlugin.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Plugins/EditTablePlugin/
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Plugins/EditTablePlugin.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Plugins/EditTablePlugin/Core.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Plugins/EmptyPlugin.pm
 htdocs/twiki/lib/TWiki/Plugins/InterwikiPlugin.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Plugins/PreferencesPlugin.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Plugins/RenderListPlugin.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Plugins/SlideShowPlugin/
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Plugins/SlideShowPlugin.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Plugins/SlideShowPlugin/SlideShow.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Plugins/SmiliesPlugin.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Plugins/SpreadSheetPlugin/
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Plugins/SpreadSheetPlugin.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Plugins/SpreadSheetPlugin/Calc.pm
+htdocs/twiki/lib/TWiki/Plugins/TablePlugin/
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Plugins/TablePlugin.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Plugins/TablePlugin/Core.pm
+htdocs/twiki/lib/TWiki/Plugins/TwistyPlugin.pm
+htdocs/twiki/lib/TWiki/Plugins/WysiwygPlugin/
+htdocs/twiki/lib/TWiki/Plugins/WysiwygPlugin.pm
+htdocs/twiki/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML/
+htdocs/twiki/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML.pm
+htdocs/twiki/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML/Leaf.pm
+htdocs/twiki/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML/Node.pm
+htdocs/twiki/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML/WC.pm
+htdocs/twiki/lib/TWiki/Plugins/WysiwygPlugin/TML2HTML.pm
+htdocs/twiki/lib/TWiki/Plurals.pm
+htdocs/twiki/lib/TWiki/Prefs/
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Prefs.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Prefs/Parser.pm
+htdocs/twiki/lib/TWiki/Prefs/PrefsCache.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Render.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Sandbox.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/Search.pm
 htdocs/twiki/lib/TWiki/Store/
 htdocs/twiki/lib/TWiki/Store.pm
 htdocs/twiki/lib/TWiki/Store/RcsFile.pm
 htdocs/twiki/lib/TWiki/Store/RcsLite.pm
 htdocs/twiki/lib/TWiki/Store/RcsWrap.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Templates.pm
+htdocs/twiki/lib/TWiki/Time.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/UI/
 htdocs/twiki/lib/TWiki/UI.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/UI/ChangeForm.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/UI/Changes.pm
 htdocs/twiki/lib/TWiki/UI/Edit.pm
 htdocs/twiki/lib/TWiki/UI/Manage.pm
 htdocs/twiki/lib/TWiki/UI/Oops.pm
 htdocs/twiki/lib/TWiki/UI/Preview.pm
 htdocs/twiki/lib/TWiki/UI/RDiff.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/UI/Register.pm
+@owner www
+@group www
 htdocs/twiki/lib/TWiki/UI/Save.pm
 htdocs/twiki/lib/TWiki/UI/Search.pm
 htdocs/twiki/lib/TWiki/UI/Statistics.pm
 htdocs/twiki/lib/TWiki/UI/Upload.pm
 htdocs/twiki/lib/TWiki/UI/View.pm
-htdocs/twiki/lib/TWiki/UI/Viewfile.pm
-htdocs/twiki/lib/TWiki/Upgrade/
-htdocs/twiki/lib/TWiki/Upgrade/TWikiCfg.pm
-htdocs/twiki/lib/TWiki/Upgrade/UpdateTopics.pm
-htdocs/twiki/lib/TWiki/Upgrade/UpdateTopicsManualSymlinks.pm
-htdocs/twiki/lib/TWiki/User/
 htdocs/twiki/lib/TWiki/User.pm
-htdocs/twiki/lib/TWiki/User/HtPasswdUser.pm
-htdocs/twiki/lib/TWiki/User/NoPasswdUser.pm
-htdocs/twiki/lib/Text/
-htdocs/twiki/lib/Text/Diff.pm
+@owner
+@group
+htdocs/twiki/lib/TWiki/Users/
+htdocs/twiki/lib/TWiki/Users.pm
+htdocs/twiki/lib/TWiki/Users/ApacheHtpasswdUser.pm
+htdocs/twiki/lib/TWiki/Users/HtPasswdUser.pm
+htdocs/twiki/lib/TWiki/Users/Password.pm
+htdocs/twiki/lib/TWiki/Users/TWikiUserMapping.pm
+@owner www
+@group www
 htdocs/twiki/pub/
+@owner
+@group
+htdocs/twiki/pub-htaccess.txt
+@owner www
+@group www
 htdocs/twiki/pub/Main/
+@owner
+@group
+htdocs/twiki/pub/Main/WebPreferences/
+htdocs/twiki/pub/Main/WebPreferences/favicon.ico
+htdocs/twiki/pub/Main/WebPreferences/logo.gif
+@owner www
+@group www
 htdocs/twiki/pub/Sandbox/
+@owner
+@group
+htdocs/twiki/pub/Sandbox/WebPreferences/
+htdocs/twiki/pub/Sandbox/WebPreferences/favicon.ico
+htdocs/twiki/pub/Sandbox/WebPreferences/logo.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/
 htdocs/twiki/pub/TWiki/ATasteOfTWiki/
-htdocs/twiki/pub/TWiki/ATasteOfTWiki/anarchy.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/ATasteOfTWiki/BT_logo.gif
+htdocs/twiki/pub/TWiki/ATasteOfTWiki/Disney_logo.gif
+htdocs/twiki/pub/TWiki/ATasteOfTWiki/EpicGames_logo.gif
+htdocs/twiki/pub/TWiki/ATasteOfTWiki/Motorola_logo.gif
+htdocs/twiki/pub/TWiki/ATasteOfTWiki/SAP_logo.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/ATasteOfTWiki/hula.gif
 htdocs/twiki/pub/TWiki/ATasteOfTWiki/lego.gif
 htdocs/twiki/pub/TWiki/ATasteOfTWiki/myco.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/ATasteOfTWiki/whiteboard.gif
+htdocs/twiki/pub/TWiki/BehaviourContrib/
+htdocs/twiki/pub/TWiki/BehaviourContrib/behaviour.compressed.js
+htdocs/twiki/pub/TWiki/BehaviourContrib/behaviour.js
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/ClassicSkin/
 htdocs/twiki/pub/TWiki/ClassicSkin/fullscreen.gif
 htdocs/twiki/pub/TWiki/ClassicSkin/screenshot.gif
-htdocs/twiki/pub/TWiki/DragonSkin/
-htdocs/twiki/pub/TWiki/DragonSkin/fullscreen.gif
-htdocs/twiki/pub/TWiki/DragonSkin/gray.theme.css
-htdocs/twiki/pub/TWiki/DragonSkin/monochrome.theme.css
-htdocs/twiki/pub/TWiki/DragonSkin/screenshot.gif
-htdocs/twiki/pub/TWiki/DragonSkin/spacer.gif
-htdocs/twiki/pub/TWiki/DragonSkin/tabstyle.theme.css
-htdocs/twiki/pub/TWiki/DragonSkin/typography.css
 htdocs/twiki/pub/TWiki/EditTablePlugin/
 htdocs/twiki/pub/TWiki/EditTablePlugin/EditTablePluginCalendarExample.gif
-htdocs/twiki/pub/TWiki/EditTablePlugin/README
 htdocs/twiki/pub/TWiki/EditTablePlugin/ScreenshotEditCell1.gif
 htdocs/twiki/pub/TWiki/EditTablePlugin/ScreenshotEditCell2.gif
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-af.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-br.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-ca.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-cs-win.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-da.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-de.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-du.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-el.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-en.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-es.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-fr.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-hr-utf8.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-hr.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-hu.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-it.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-jp.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-nl.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-no.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-pl.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-pt.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-ro.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-ru.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-setup.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-sk.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-sp.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-sv.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-system.css
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-tr.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar-zh.js
-htdocs/twiki/pub/TWiki/EditTablePlugin/calendar.js
 htdocs/twiki/pub/TWiki/EditTablePlugin/edittable.gif
 htdocs/twiki/pub/TWiki/EditTablePlugin/img.gif
 htdocs/twiki/pub/TWiki/EditTablePlugin/menuarrow.gif
-htdocs/twiki/pub/TWiki/EditTablePlugin/release-notes.html
 htdocs/twiki/pub/TWiki/FileAttachment/
 htdocs/twiki/pub/TWiki/FileAttachment/Sample.txt
 htdocs/twiki/pub/TWiki/FileAttachment/Smile.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/JSCalendarContrib/
+htdocs/twiki/pub/TWiki/JSCalendarContrib/ChangeLog
+htdocs/twiki/pub/TWiki/JSCalendarContrib/README
+htdocs/twiki/pub/TWiki/JSCalendarContrib/bugtest-hidden-selects.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-blue.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-blue2.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-brown.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-green.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-setup.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-setup_stripped.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-system.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-tas.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-win2k-1.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-win2k-2.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-win2k-cold-1.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar-win2k-cold-2.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar.php
+htdocs/twiki/pub/TWiki/JSCalendarContrib/calendar_stripped.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/dayinfo.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/doc/
+htdocs/twiki/pub/TWiki/JSCalendarContrib/doc/html/
+htdocs/twiki/pub/TWiki/JSCalendarContrib/doc/html/field-button.jpg
+htdocs/twiki/pub/TWiki/JSCalendarContrib/doc/html/reference-Z-S.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/doc/html/reference.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/doc/html/reference.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/doc/reference.pdf
+htdocs/twiki/pub/TWiki/JSCalendarContrib/img.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/index.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-af.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-al.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-bg.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-big5-utf8.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-big5.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-br.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-ca.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-cs-utf8.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-cs-win.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-da.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-de.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-du.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-el.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-en.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-es.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-fi.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-fr.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-he-utf8.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-hr-utf8.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-hr.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-hu.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-it.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-jp.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-ko-utf8.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-ko.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-lt-utf8.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-lt.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-lv.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-nl.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-no.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-pl-utf8.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-pl.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-pt.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-ro.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-ru.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-ru_win_.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-si.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-sk.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-sp.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-sv.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-tr.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/calendar-zh.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/lang/cn_utf8.js
+htdocs/twiki/pub/TWiki/JSCalendarContrib/menuarrow.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/menuarrow2.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/multiple-dates.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/release-notes.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/simple-1.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/simple-2.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/simple-3.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/active-bg.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/dark-bg.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/hover-bg.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/menuarrow.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/normal-bg.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/rowhover-bg.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/status-bg.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/theme.css
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/title-bg.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/today-bg.gif
+htdocs/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/transparent-bg.png
+htdocs/twiki/pub/TWiki/JSCalendarContrib/test-position.html
+htdocs/twiki/pub/TWiki/JSCalendarContrib/test.php
+htdocs/twiki/pub/TWiki/JSCalendarContrib/twiki.js
+htdocs/twiki/pub/TWiki/KupuContrib/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/Extensions/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/Extensions/Install.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/Makefile
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/__init__.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/README.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/body.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/exit.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/kupudrawerstyles.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/kupumacros.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/kupustyles.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/lenya.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/lenya.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/toolbar.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/toolboxes.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/wire.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/kupu/xmlconfig.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/content2edit.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/drawers/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/drawers/imagedrawer.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/drawers/imagelibraries.xml.jx
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/drawers/kupudrawerstyles.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/drawers/libraries.xml.jx
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/drawers/linkdrawer.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/drawers/linklibraries.xml.jx
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/drawers/publication_image_library.xml.jx
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/drawers/sitetree_link_library.xml.jx
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/i18n.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/images/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/images/emblem-generic.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/images/exit.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/images/page-image.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/images/pub-image.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/images/right_arrow.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/images/sitetree-link.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/kupumacros.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/kupusave.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/page2kupu.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/pageassets2kupulibrary.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/apache-lenya/lenya/sitetree2kupulibrary.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/cnf/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/cnf/head.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/cnf/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/cnf/toolboxes.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/cnf/wire.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/cnf/xmlconfig.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/fulldoc.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupu-pox.cgi
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupu.cgi
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupu.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupu.pox
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupu.pox.jspx
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupubasetools.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupubeforeunload.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupublank.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupucleanupexpressions.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupucnf.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupucnftable.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupucontentfilters.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupucontentstyles.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupucontextmenu.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/allimages.xml
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/drawer.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/drawer.xsl.metadata
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/imagelibrary.xml
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/kupubuttons.xml
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/linklibrary.xml
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos.xml
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/bitflux_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/bitflux_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/bubnbros.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/bubnbros_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/codespeak_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/codespeak_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/diver_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/diver_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/eth_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/eth_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/infrae_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/infrae_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/kupu_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/kupu_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/lenya_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/lenya_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/opensource.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/opensource_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/oscom4_banner.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/oscom4_banner_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/oscom_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/oscom_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/plone_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/plone_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/pypy_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/pypy_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/silva_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/silva_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/twiki_logo.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/twiki_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/zea_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/zea_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/zope_logo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawers/logos/zope_logo_preview.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupudrawerstyles.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupueditor.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuform.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuhelpers.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/background-color.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/bold.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/bold.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/buttons.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/caret.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/closed.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/copy.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/create-new.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/cut.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/definitionlist.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/document.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/exit.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/exthyperlink.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/folder.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/fonts.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/format.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/hr.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/image.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/indent.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/indent.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/inthyperlink.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/italic.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/italic.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/justify-center.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/justify-full.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/justify-left.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/justify-right.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/kupu_icon.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/kupulibrary.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/kupusearch_icon.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/larger-text.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/link.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/opened.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/ordered-list.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/outdent.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/paste.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/redo-disabled.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/redo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/remove.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/save.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/size.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/smaller-text.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/space.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/strikethrough.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/subscript.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/superscript.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/table.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/text-check.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/text-color.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/toolbarbg_blue.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/toolbarbg_green.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/toolbarbg_purple.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/toolbarbg_wood.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/underline.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/underline.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/undo-disabled.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/undo.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/unlink.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/unordered-list.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/view-source.png
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/zoom-in.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuimages/zoom-out.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuinit.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuinit_experimental.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuinit_form.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuinit_genericelements.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuinit_multi.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuinspector.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuloggers.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupumacros.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupumulti.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupumultieditor.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupunoi18n.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupupopups/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupupopups/image.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupupopups/link.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupusaveonpart.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupusourceedit.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupuspellchecker.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupustart.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupustart_form.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupustart_multi.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kupustyles.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/kuputoolcollapser.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/sarissa.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/sarissa_ieemu_xpath.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/common/spellcheck.cgi
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/config.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/configure.zcml
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/body.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/colorchooser.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/contextmenu.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/drawers.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/form.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/head.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/html.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/save.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/saveonpart.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/sourceedit.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/spellchecker.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/toolbar.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/toolboxes.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/wire.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/default/xmlconfig.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/dist-apache-lenya.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/dist-cnf.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/dist-form.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/dist-multi.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/dist-plone.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/dist-silva.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/dist-zope2.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/dist.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/BEFOREUNLOAD.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/CHANGES.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/CONTRIBUTING.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/CREDITS.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/CUSTOMIZING.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/EXTENDING.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/FAQ.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/IMAGEUPLOADER.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/INSTALL.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/JSAPI.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/LIBRARIES.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/LICENSE.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/OLDBROWSERS.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/PLONE2.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/README.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/STYLEGUIDE.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/TEMPLATE-SYSTEM.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/TODO.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/ZOPE2.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/default.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/docutils.conf
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/doc/file-template
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/form/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/form/body.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/form/head.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/form/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/form/save.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-cs.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-da.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-de.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-el.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-eo.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-fi.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-fr.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-he.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-ja.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-nl.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-pt-br.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-pt.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-sr-Latn.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-sr.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-zh-cn.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu-zh.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupu.pot
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupuconfig-da.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupuconfig-fr.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupuconfig-ja.po
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/i18n/kupuconfig.pot
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/kupu-i18nextract-sa-diff.patch
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/kupu_icon.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/make-jspx.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/make.bat
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/make.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/multi/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/multi/body.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/multi/head.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/multi/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/multi/save.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/multi/toolboxes.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/ReftextField.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/TODO.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/__init__.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/beforeunload.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/body.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/drawers.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/head.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/html2captioned.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/interfaces.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu2html.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_config.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/contentUsesKupu.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/convertContentForKupu.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/emptypage.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuGetResourceTypes.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuInfoForBrains.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuMyItems.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuRecentItems.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuSearch.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuUploadImage.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuUploadImage.py.metadata
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupu_wysiwyg_support.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupublank.html.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupucollection.xml.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupucollection.xml.pt.metadata
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupulibraries.xml.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupumyitems.xml.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuplone.css.dtml
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuploneeditor.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuploneinit.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupuploneui.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupurecentitems.xml.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupusaveonpart.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/kupusearch.xml.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/anchor.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/bgcolor.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/bold.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/center.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/definitionlist.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/delete_icon.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/hr.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/hyperlink.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/indent.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/italic.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/left_just.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/list.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/numbered_list.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/outdent.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/redo.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/right_just.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/space.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/strikethrough.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/subscript.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/superscript.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/table.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/textcolor.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/tools.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/underline.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/undo.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/unformat.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/plonekupuimages/view-source.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/resolveuid.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/sample-kupu-customisation-policy.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/kupu_plone_layer/wysiwyg_support.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/libraries.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/librarytool.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/permissions.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/plonelibrarytool.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/resource_types.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/scanner.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/sourceedit.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/__init__.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/framework.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/input/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/input/baduid.in
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/input/linked.in
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/input/minimal.in
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/input/notcaptioned.in
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/input/notquoted.in
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/input/simple.in
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/output/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/output/baduid.out
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/output/linked.out
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/output/minimal.out
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/output/notcaptioned.out
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/output/notquoted.out
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/output/simple.out
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/runalltests.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/runme.cmd
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/test_browserSupportsKupu.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/test_html2captioned.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/test_librarymanager.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/tests/test_resourcetypemapper.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/toolbar.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/wire.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/wysiwyg_support.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/xmlconfig.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/plone/zmi_docs.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/python/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/python/__init__.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/python/nationalizer.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/python/spellcheck.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/refresh.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/roundup/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/roundup/kupuinit.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/roundup/kupustyles.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/body.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/closed_arrow.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/contextmenu.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/drawers.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/head.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/imagedrawer.xsl.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/kupudrawerstyles.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/kupumacros.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/kupusilvainit.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/kupusilvatools.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/librarydrawer.xsl
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/opened_arrow.gif
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/saveonpart.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/toolbar.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/toolboxes.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/wire.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/silva/xmlconfig.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tests/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tests/run_tests.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tests/test_beforeunload.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tests/test_kupubasetools.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tests/test_kupueditor.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tests/test_kupuhelpers.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tests/test_kupuinit.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tests/test_plone.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tests/test_xhtml.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tools/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tools/compress.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tools/convert_to_utf-8.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/tools/makepox.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/version.txt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/Makefile
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/body.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/browser.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/dist.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/empty.html
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/head.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/kupuinit.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/kupustart.js
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/kupustyles.css
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/make.bat
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/wire.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/widgeteer/xmlconfig.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/__init__.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/addKupuEditor.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/body.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/contextmenu.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/drawers.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/example.pt
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/head.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/html.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/include.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/saveonpart.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/sourceedit.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/wire.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope2/xmlconfig.kupu
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope3/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope3/__init__.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope3/browser/
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope3/browser/__init__.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope3/browser/configure.zcml
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope3/configure.zcml
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope3/field.py
+htdocs/twiki/pub/TWiki/KupuContrib/_kupu/zope3/interfaces.py
+htdocs/twiki/pub/TWiki/KupuContrib/bold.png
+htdocs/twiki/pub/TWiki/KupuContrib/cancel.png
+htdocs/twiki/pub/TWiki/KupuContrib/code.png
+htdocs/twiki/pub/TWiki/KupuContrib/definition-list.png
+htdocs/twiki/pub/TWiki/KupuContrib/exthyperlink.png
+htdocs/twiki/pub/TWiki/KupuContrib/help.png
+htdocs/twiki/pub/TWiki/KupuContrib/indent.png
+htdocs/twiki/pub/TWiki/KupuContrib/inthyperlink.png
+htdocs/twiki/pub/TWiki/KupuContrib/italic.png
+htdocs/twiki/pub/TWiki/KupuContrib/kupuinit.js
+htdocs/twiki/pub/TWiki/KupuContrib/kupustart.js
+htdocs/twiki/pub/TWiki/KupuContrib/kuputwiki.css
+htdocs/twiki/pub/TWiki/KupuContrib/new-attachment.png
+htdocs/twiki/pub/TWiki/KupuContrib/new-image.png
+htdocs/twiki/pub/TWiki/KupuContrib/nop.png
+htdocs/twiki/pub/TWiki/KupuContrib/ordered-list.png
+htdocs/twiki/pub/TWiki/KupuContrib/outdent.png
+htdocs/twiki/pub/TWiki/KupuContrib/redo.png
+htdocs/twiki/pub/TWiki/KupuContrib/remove.png
+htdocs/twiki/pub/TWiki/KupuContrib/save.png
+htdocs/twiki/pub/TWiki/KupuContrib/screenshot.jpg
+htdocs/twiki/pub/TWiki/KupuContrib/separator.png
+htdocs/twiki/pub/TWiki/KupuContrib/smiley.png
+htdocs/twiki/pub/TWiki/KupuContrib/strings.png
+htdocs/twiki/pub/TWiki/KupuContrib/table.png
+htdocs/twiki/pub/TWiki/KupuContrib/text-color.png
+htdocs/twiki/pub/TWiki/KupuContrib/twikitools.js
+htdocs/twiki/pub/TWiki/KupuContrib/undo.png
+htdocs/twiki/pub/TWiki/KupuContrib/unordered-list.png
+htdocs/twiki/pub/TWiki/KupuContrib/vars.png
+htdocs/twiki/pub/TWiki/KupuContrib/verbatim-watermark.png
+htdocs/twiki/pub/TWiki/KupuContrib/verbatim.png
+htdocs/twiki/pub/TWiki/KupuContrib/view-source.png
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/PatternSkin/
-htdocs/twiki/pub/TWiki/PatternSkin/i_arrow_down.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/PatternSkin/TWiki_header.gif
+htdocs/twiki/pub/TWiki/PatternSkin/TWiki_header.psd
+htdocs/twiki/pub/TWiki/PatternSkin/background_action.gif
+htdocs/twiki/pub/TWiki/PatternSkin/background_button.gif
+htdocs/twiki/pub/TWiki/PatternSkin/background_form_element.gif
+htdocs/twiki/pub/TWiki/PatternSkin/background_input.gif
+htdocs/twiki/pub/TWiki/PatternSkin/background_submit.gif
+htdocs/twiki/pub/TWiki/PatternSkin/bullet-blue.gif
+htdocs/twiki/pub/TWiki/PatternSkin/bullet-child-black.gif
+htdocs/twiki/pub/TWiki/PatternSkin/bullet-child.gif
+htdocs/twiki/pub/TWiki/PatternSkin/bullet-down.gif
+htdocs/twiki/pub/TWiki/PatternSkin/bullet-lock.gif
+htdocs/twiki/pub/TWiki/PatternSkin/bullet-parent.gif
+htdocs/twiki/pub/TWiki/PatternSkin/colors.css
+htdocs/twiki/pub/TWiki/PatternSkin/form_gradient.gif
+htdocs/twiki/pub/TWiki/PatternSkin/gradient_blue.gif
+htdocs/twiki/pub/TWiki/PatternSkin/gradient_yellow.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/PatternSkin/layout.css
-htdocs/twiki/pub/TWiki/PatternSkin/patternskin_screenshot.gif
-htdocs/twiki/pub/TWiki/PatternSkin/patternskin_screenshot_full.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/PatternSkin/oopsmore_diff_debug.gif
+htdocs/twiki/pub/TWiki/PatternSkin/oopsmore_diff_sequential.gif
+htdocs/twiki/pub/TWiki/PatternSkin/oopsmore_diff_sidebyside.gif
+htdocs/twiki/pub/TWiki/PatternSkin/pattern.js
+htdocs/twiki/pub/TWiki/PatternSkin/patternskin_screenshot.jpg
+htdocs/twiki/pub/TWiki/PatternSkin/patternskin_screenshot_full.png
+htdocs/twiki/pub/TWiki/PatternSkin/print.css
+htdocs/twiki/pub/TWiki/PatternSkin/striped_blue.gif
+htdocs/twiki/pub/TWiki/PatternSkin/striped_gray.gif
+htdocs/twiki/pub/TWiki/PatternSkin/striped_pageshadow.gif
+htdocs/twiki/pub/TWiki/PatternSkin/striped_white.gif
+htdocs/twiki/pub/TWiki/PatternSkin/striped_yellow.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/PatternSkin/style.css
 htdocs/twiki/pub/TWiki/PatternSkinCss/
 htdocs/twiki/pub/TWiki/PatternSkinCss/CSS_element_layout_view.pattern.tmpl.png
+@owner
+@group
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookCenterPage/
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookCenterPage/centerpage.css
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookCenterPageBorder/
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookCenterPageBorder/centerpageborder.css
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookCenterPageBorder/gradient_page.gif
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookEditTableStyle/
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookEditTableStyle/edittable.css
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookFonts/
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookFonts/fonts.css
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookNoLeftBar/
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookNoLeftBar/hideleftbar.css
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookNoTopBar/
+htdocs/twiki/pub/TWiki/PatternSkinCssCookbookNoTopBar/notopbar.css
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/PatternSkinCustomization/
 htdocs/twiki/pub/TWiki/PatternSkinCustomization/LowRes.css
-htdocs/twiki/pub/TWiki/PatternSkinPalette/
-htdocs/twiki/pub/TWiki/PatternSkinPalette/PatternSkinPalette.css
-htdocs/twiki/pub/TWiki/PatternSkinPalette/filterColours.pl.txt
-htdocs/twiki/pub/TWiki/PatternSkinPalette/makeColourTable.pl.txt
-htdocs/twiki/pub/TWiki/PatternSkinPalette/textmask.gif
 htdocs/twiki/pub/TWiki/PlainSkin/
 htdocs/twiki/pub/TWiki/PlainSkin/fullscreen.gif
 htdocs/twiki/pub/TWiki/PlainSkin/screenshot.gif
@@ -437,7 +1823,17 @@ htdocs/twiki/pub/TWiki/RenderListPlugin/dot_ur.gif
 htdocs/twiki/pub/TWiki/RenderListPlugin/email.gif
 htdocs/twiki/pub/TWiki/RenderListPlugin/empty.gif
 htdocs/twiki/pub/TWiki/RenderListPlugin/file.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/RenderListPlugin/files.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/RenderListPlugin/folder.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/RenderListPlugin/folders.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/RenderListPlugin/globe.gif
 htdocs/twiki/pub/TWiki/RenderListPlugin/group.gif
 htdocs/twiki/pub/TWiki/RenderListPlugin/home.gif
@@ -477,14 +1873,33 @@ htdocs/twiki/pub/TWiki/SmiliesPlugin/mad.gif
 htdocs/twiki/pub/TWiki/SmiliesPlugin/no.gif
 htdocs/twiki/pub/TWiki/SmiliesPlugin/redface.gif
 htdocs/twiki/pub/TWiki/SmiliesPlugin/rolleyes.gif
-htdocs/twiki/pub/TWiki/SmiliesPlugin/scull.gif
 htdocs/twiki/pub/TWiki/SmiliesPlugin/sealed.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/SmiliesPlugin/skull.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/SmiliesPlugin/smile.gif
 htdocs/twiki/pub/TWiki/SmiliesPlugin/thumbs.gif
 htdocs/twiki/pub/TWiki/SmiliesPlugin/tongue.gif
 htdocs/twiki/pub/TWiki/SmiliesPlugin/wink.gif
 htdocs/twiki/pub/TWiki/SmiliesPlugin/yes.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWiki/
+htdocs/twiki/pub/TWiki/TWiki/thoth_baboon.gif
+htdocs/twiki/pub/TWiki/TWikiContributor/
+htdocs/twiki/pub/TWiki/TWikiContributor/AUTHORS
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/_filetypes.txt
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/addon.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/application.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowbdown.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowbleft.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowbright.gif
@@ -492,16 +1907,64 @@ htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowbup.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowdot.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowdown.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowleft.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowright-small.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowright.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/arrowup.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/as.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/attachfile.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/bat.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/bmp.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/book.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/bubble.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/building.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/buildings.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/c.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/cachetopic.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/changes-small.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/changes.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/checked.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/choice-cancel.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/choice-no.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/choice-yes.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/closed.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/code.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/days.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/detail.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/dll.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/doc.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/done.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/dot_ld.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/dot_lr.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/dot_lrd.gif
@@ -513,10 +1976,43 @@ htdocs/twiki/pub/TWiki/TWikiDocGraphics/dot_udr.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/dot_ul.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/dot_ulr.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/dot_ur.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/down.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/download.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/edittopic.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/else.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/eml.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/empty.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/exe.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/external.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/filter.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/fla.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/flag-gray-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/flag-gray.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/flag.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/folder.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/fon.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/gear.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/gif.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/globe.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/go_back.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/go_end.gif
@@ -525,12 +2021,53 @@ htdocs/twiki/pub/TWiki/TWikiDocGraphics/go_ff.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/go_forward.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/go_start.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/group.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/h.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/hand.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/help.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/hlp.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/home.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/hourglass.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/html.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/index.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/indexlist.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/info.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/java.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/jpg.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/js.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/key.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-aqua.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-blue.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-box-aqua.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-box-blue.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-box-gray.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-box-green.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-box-orange.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-box-purple.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-box-red.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-box-yellow.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-gray.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-green.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-orange.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-purple.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-red.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/led-yellow.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/left.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/line_ld.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/line_lr.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/line_lrd.gif
@@ -547,209 +2084,568 @@ htdocs/twiki/pub/TWiki/TWikiDocGraphics/lockfolder.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/lockfoldergray.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/locktopic.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/locktopicgray.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/logout.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/mail.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/mdb.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/minus.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/monospace.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/more-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/more.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/mov.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/move.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/mp3.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/new.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/newtopic.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/note.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/notify.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/package.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/parked.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/pdf.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/pencil.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/person.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/persons.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/pl.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/plugin.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/plus.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/png.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/ppt.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/printtopic.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/proportional.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/ps.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/puzzle.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/py.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/question.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/ram.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/recentchanges.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/refreshtopic.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/reg.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/rfc.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/right.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/rss-feed.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/rss-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/save.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/search-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/searchpackage.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/searchtag.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/searchtopic.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/sh.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/skin.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/sniff.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/sort.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/stargold.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/starred.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/statistics.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/stop.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/swf.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tablesortdiamond.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tablesortdown.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tablesortup.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag-black.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag-blue.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag-brown.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag-green.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag-magenta.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag-orange.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag-purple.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag-red.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag-yellow.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/tag.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/target.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/tip.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/todo.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/toggleclose-mini.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/toggleclose-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/toggleclose.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/togglecloseleft-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/toggleopen-mini.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/toggleopen-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/toggleopen.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/toggleopenleft-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/toggleopenleft.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/topicbacklinks.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/topicdiffs.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/trash.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/ttf.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/twiki.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/txt.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/unchecked.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/up.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/updated.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/viewtopic.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/warning.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/watch.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/wav.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/web-bg-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/web-bg.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/wip.gif
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/wrench.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/wri.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/xls.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiDocGraphics/xml-feed.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/xml-small.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/xml.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/xsl.gif
+htdocs/twiki/pub/TWiki/TWikiDocGraphics/zip.gif
+htdocs/twiki/pub/TWiki/TWikiJavascripts/
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twiki.compressed.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twiki.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiArray.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiCSS.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiEvent.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiForm.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiFunction.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiHTML.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiPref.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiString.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiStringUnicodeChars.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiWindow.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twiki_attach.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twiki_edit.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twiki_renamebase.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twiki_renamedelete.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikilib.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/twikiuiToggle.js
+htdocs/twiki/pub/TWiki/TWikiJavascripts/unicode_chars.js
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiLogos/
-htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot121x54.gif
-htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot121x54a.gif
-htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot131x64.gif
-htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot46x50.gif
-htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot81x119.gif
-htdocs/twiki/pub/TWiki/TWikiLogos/twikiRobot88x31.gif
-htdocs/twiki/pub/TWiki/TWikiLogos/twikilogo88x31.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-124x35-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-124x35.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-140x40-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-140x40.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-158x45-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-158x45.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-169x130-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-169x130.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-16x16-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-16x16.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-175x50-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-175x50.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-235x67-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-235x67.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-34x26-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-34x26.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-3640x1038-b.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-456x130-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-456x130.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-46x35-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-46x35.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-52x40-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-52x40.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-58x45-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-58x45.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-65x50-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-65x50.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-80x15.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-80x15.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-87x67-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-87x67.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-88x31-t.gif
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo-88x31.png
+htdocs/twiki/pub/TWiki/TWikiLogos/T-logo.svg
+htdocs/twiki/pub/TWiki/TWikiLogos/favicon.ico
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/TWikiTemplates/
 htdocs/twiki/pub/TWiki/TWikiTemplates/testscreen.gif
 htdocs/twiki/pub/TWiki/TablePlugin/
 htdocs/twiki/pub/TWiki/TablePlugin/diamond.gif
 htdocs/twiki/pub/TWiki/TablePlugin/down.gif
 htdocs/twiki/pub/TWiki/TablePlugin/up.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/TwistyContrib/
+htdocs/twiki/pub/TWiki/TwistyContrib/twist.compressed.js
+htdocs/twiki/pub/TWiki/TwistyContrib/twist.css
+htdocs/twiki/pub/TWiki/TwistyContrib/twist.js
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/WabiSabi/
 htdocs/twiki/pub/TWiki/WabiSabi/wabisabi.gif
+@owner
+@group
+htdocs/twiki/pub/TWiki/WebPreferences/
+htdocs/twiki/pub/TWiki/WebPreferences/Dakar.gif
+htdocs/twiki/pub/TWiki/WebPreferences/favicon.ico
+htdocs/twiki/pub/TWiki/WebPreferences/logo.gif
+@owner www
+@group www
 htdocs/twiki/pub/TWiki/WindowsInstallCookbook/
 htdocs/twiki/pub/TWiki/WindowsInstallCookbook/cygwin-icon.gif
 htdocs/twiki/pub/Trash/
-htdocs/twiki/pub/Trash/TrashAttachment/
-htdocs/twiki/pub/favicon.ico
-htdocs/twiki/pub/icn/
-htdocs/twiki/pub/icn/_filetypes.txt
-htdocs/twiki/pub/icn/bat.gif
-htdocs/twiki/pub/icn/bmp.gif
-htdocs/twiki/pub/icn/c.gif
-htdocs/twiki/pub/icn/dll.gif
-htdocs/twiki/pub/icn/doc.gif
-htdocs/twiki/pub/icn/down.gif
-htdocs/twiki/pub/icn/else.gif
-htdocs/twiki/pub/icn/eml.gif
-htdocs/twiki/pub/icn/exe.gif
-htdocs/twiki/pub/icn/fon.gif
-htdocs/twiki/pub/icn/h.gif
-htdocs/twiki/pub/icn/hlp.gif
-htdocs/twiki/pub/icn/html.gif
-htdocs/twiki/pub/icn/java.gif
-htdocs/twiki/pub/icn/js.gif
-htdocs/twiki/pub/icn/mdb.gif
-htdocs/twiki/pub/icn/mov.gif
-htdocs/twiki/pub/icn/pdf.gif
-htdocs/twiki/pub/icn/pl.gif
-htdocs/twiki/pub/icn/ppt.gif
-htdocs/twiki/pub/icn/ps.gif
-htdocs/twiki/pub/icn/py.gif
-htdocs/twiki/pub/icn/ram.gif
-htdocs/twiki/pub/icn/reg.gif
-htdocs/twiki/pub/icn/sh.gif
-htdocs/twiki/pub/icn/sniff.gif
-htdocs/twiki/pub/icn/ttf.gif
-htdocs/twiki/pub/icn/txt.gif
-htdocs/twiki/pub/icn/up.gif
-htdocs/twiki/pub/icn/wav.gif
-htdocs/twiki/pub/icn/wri.gif
-htdocs/twiki/pub/icn/xls.gif
-htdocs/twiki/pub/icn/xml.gif
-htdocs/twiki/pub/icn/xsl.gif
-htdocs/twiki/pub/icn/zip.gif
-htdocs/twiki/pub/wikiHome.gif
+@owner
+@group
+htdocs/twiki/pub/Trash/WebPreferences/
+htdocs/twiki/pub/Trash/WebPreferences/favicon.ico
+htdocs/twiki/pub/Trash/WebPreferences/logo.gif
+htdocs/twiki/pub/_default/
+htdocs/twiki/pub/_default/WebPreferences/
+htdocs/twiki/pub/_default/WebPreferences/favicon.ico
+htdocs/twiki/pub/_default/WebPreferences/logo.gif
+htdocs/twiki/pub/_work_areas/
+htdocs/twiki/pub/_work_areas/.htaccess
+htdocs/twiki/pub/_work_areas/README
+htdocs/twiki/readme.txt
+@owner www
+@group www
 htdocs/twiki/robots.txt
+@owner
+@group
+htdocs/twiki/root-htaccess.txt
+htdocs/twiki/subdir-htaccess.txt
+@owner www
+@group www
 htdocs/twiki/templates/
-htdocs/twiki/templates/attach.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/addform.classic.tmpl
+htdocs/twiki/templates/addform.pattern.tmpl
+htdocs/twiki/templates/addform.tmpl
+htdocs/twiki/templates/attach.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/attach.pattern.tmpl
 htdocs/twiki/templates/attach.tmpl
+@owner
+@group
+htdocs/twiki/templates/attachagain.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/attachagain.pattern.tmpl
 htdocs/twiki/templates/attachagain.tmpl
+@owner
+@group
+htdocs/twiki/templates/attachnew.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/attachnew.pattern.tmpl
 htdocs/twiki/templates/attachnew.tmpl
+@owner
+@group
+htdocs/twiki/templates/attachtables.classic.tmpl
+htdocs/twiki/templates/attachtables.kupu.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/attachtables.pattern.tmpl
 htdocs/twiki/templates/attachtables.tmpl
-htdocs/twiki/templates/changeform.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/backlinks.classic.tmpl
+htdocs/twiki/templates/backlinks.pattern.tmpl
+htdocs/twiki/templates/backlinks.tmpl
+htdocs/twiki/templates/backlinksallwebs.classic.tmpl
+htdocs/twiki/templates/backlinksallwebs.pattern.tmpl
+htdocs/twiki/templates/backlinksallwebs.tmpl
+htdocs/twiki/templates/backlinksweb.classic.tmpl
+htdocs/twiki/templates/backlinksweb.pattern.tmpl
+htdocs/twiki/templates/backlinksweb.tmpl
+htdocs/twiki/templates/body.pattern.tmpl
+htdocs/twiki/templates/changeform.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/changeform.pattern.tmpl
 htdocs/twiki/templates/changeform.tmpl
-htdocs/twiki/templates/changes.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/changes.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/changes.pattern.tmpl
 htdocs/twiki/templates/changes.tmpl
 htdocs/twiki/templates/comments.tmpl
-htdocs/twiki/templates/dragoncssvars.dragon.tmpl
-htdocs/twiki/templates/dragonmenu.dragon.tmpl
-htdocs/twiki/templates/edit.dragon.tmpl
-htdocs/twiki/templates/edit.iejs.tmpl
+@owner
+@group
+htdocs/twiki/templates/constants.pattern.tmpl
+htdocs/twiki/templates/css.classic.tmpl
+htdocs/twiki/templates/css.tmpl
+htdocs/twiki/templates/cssmediatypes.classic.tmpl
+htdocs/twiki/templates/cssmediatypes.tmpl
+htdocs/twiki/templates/edit.classic.tmpl
+htdocs/twiki/templates/edit.kupu.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/edit.pattern.tmpl
 htdocs/twiki/templates/edit.tmpl
+@owner
+@group
+htdocs/twiki/templates/editform.classic.tmpl
+htdocs/twiki/templates/editform.pattern.tmpl
+htdocs/twiki/templates/editform.tmpl
+htdocs/twiki/templates/edittext.classic.tmpl
+htdocs/twiki/templates/edittext.pattern.tmpl
+htdocs/twiki/templates/edittext.tmpl
+htdocs/twiki/templates/form.classic.tmpl
+htdocs/twiki/templates/form.pattern.tmpl
+htdocs/twiki/templates/form.tmpl
+htdocs/twiki/templates/formtables.classic.tmpl
+htdocs/twiki/templates/formtables.pattern.tmpl
+htdocs/twiki/templates/formtables.tmpl
+htdocs/twiki/templates/javascript.pattern.tmpl
+htdocs/twiki/templates/login.classic.tmpl
+htdocs/twiki/templates/login.pattern.tmpl
+htdocs/twiki/templates/login.tmpl
+htdocs/twiki/templates/logo.pattern.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/mailnotify.tmpl
-htdocs/twiki/templates/moveattachment.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/mailresetpassword.classic.tmpl
+htdocs/twiki/templates/mailresetpassword.tmpl
+htdocs/twiki/templates/messages.tmpl
+htdocs/twiki/templates/moveattachment.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/moveattachment.pattern.tmpl
 htdocs/twiki/templates/moveattachment.tmpl
-htdocs/twiki/templates/oopsaccesschange.tmpl
-htdocs/twiki/templates/oopsaccessgroup.tmpl
-htdocs/twiki/templates/oopsaccessmanage.tmpl
-htdocs/twiki/templates/oopsaccessrename.tmpl
-htdocs/twiki/templates/oopsaccessview.tmpl
-htdocs/twiki/templates/oopsattachnotopic.tmpl
-htdocs/twiki/templates/oopsauth.tmpl
-htdocs/twiki/templates/oopsbadcharset.tmpl
-htdocs/twiki/templates/oopsbadpwformat.tmpl
-htdocs/twiki/templates/oopschangepasswd.tmpl
-htdocs/twiki/templates/oopscreatenewtopic.tmpl
-htdocs/twiki/templates/oopsempty.tmpl
-htdocs/twiki/templates/oopslocked.pattern.tmpl
-htdocs/twiki/templates/oopslocked.tmpl
-htdocs/twiki/templates/oopslockedrename.pattern.tmpl
-htdocs/twiki/templates/oopslockedrename.tmpl
-htdocs/twiki/templates/oopsmanage.tmpl
-htdocs/twiki/templates/oopsmissing.tmpl
-htdocs/twiki/templates/oopsmngcreateweb.tmpl
+@owner
+@group
+htdocs/twiki/templates/newsletter.tmpl
+htdocs/twiki/templates/oops.pattern.tmpl
+htdocs/twiki/templates/oopsaccessdenied.classic.tmpl
+htdocs/twiki/templates/oopsaccessdenied.pattern.tmpl
+htdocs/twiki/templates/oopsaccessdenied.tmpl
+htdocs/twiki/templates/oopsalerts.classic.tmpl
+htdocs/twiki/templates/oopsalerts.tmpl
+htdocs/twiki/templates/oopsattention.classic.tmpl
+htdocs/twiki/templates/oopsattention.pattern.tmpl
+htdocs/twiki/templates/oopsattention.tmpl
+htdocs/twiki/templates/oopschangelanguage.tmpl
+htdocs/twiki/templates/oopsgeneric.tmpl
+htdocs/twiki/templates/oopslanguagechanged.pattern.tmpl
+htdocs/twiki/templates/oopslanguagechanged.tmpl
+htdocs/twiki/templates/oopsleaseconflict.classic.tmpl
+htdocs/twiki/templates/oopsleaseconflict.pattern.tmpl
+htdocs/twiki/templates/oopsleaseconflict.tmpl
+htdocs/twiki/templates/oopsmore.classic.tmpl
+htdocs/twiki/templates/oopsmore.pattern.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/oopsmore.tmpl
-htdocs/twiki/templates/oopsmoveerr.tmpl
-htdocs/twiki/templates/oopsnoformdef.tmpl
-htdocs/twiki/templates/oopsnotwikiuser.tmpl
-htdocs/twiki/templates/oopsnoweb.tmpl
-htdocs/twiki/templates/oopspreview.tmpl
-htdocs/twiki/templates/oopsregemail.tmpl
-htdocs/twiki/templates/oopsregerr.tmpl
-htdocs/twiki/templates/oopsregexist.tmpl
-htdocs/twiki/templates/oopsregpasswd.tmpl
-htdocs/twiki/templates/oopsregrequ.tmpl
-htdocs/twiki/templates/oopsregthanks.tmpl
-htdocs/twiki/templates/oopsregwiki.tmpl
-htdocs/twiki/templates/oopsremoveuserdone.tmpl
-htdocs/twiki/templates/oopsrenameerr.tmpl
-htdocs/twiki/templates/oopsrenamenotwikiword.tmpl
-htdocs/twiki/templates/oopsresetpasswd.tmpl
-htdocs/twiki/templates/oopsrev.tmpl
-htdocs/twiki/templates/oopssave.tmpl
+@owner
+@group
+htdocs/twiki/templates/oopsmorebacklinks.pattern.tmpl
+htdocs/twiki/templates/oopsmorechildtopics.pattern.tmpl
+htdocs/twiki/templates/oopsmorecompare.pattern.tmpl
+htdocs/twiki/templates/oopsmoredelete.pattern.tmpl
+htdocs/twiki/templates/oopsmorerename.pattern.tmpl
+htdocs/twiki/templates/oopsmorerevision.pattern.tmpl
+htdocs/twiki/templates/oopsmoresetparent.pattern.tmpl
+htdocs/twiki/templates/oopsmoresettings.pattern.tmpl
+htdocs/twiki/templates/oopssaveerr.pattern.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/oopssaveerr.tmpl
-htdocs/twiki/templates/oopssendmailerr.tmpl
-htdocs/twiki/templates/oopstopicexists.tmpl
-htdocs/twiki/templates/oopsupload.tmpl
-htdocs/twiki/templates/oopsuploadlimit.tmpl
-htdocs/twiki/templates/oopswrongpassword.tmpl
-htdocs/twiki/templates/preview.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/page.pattern.tmpl
+htdocs/twiki/templates/preview.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/preview.pattern.tmpl
 htdocs/twiki/templates/preview.tmpl
-htdocs/twiki/templates/rdiff.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/rdiff.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/rdiff.pattern.tmpl
 htdocs/twiki/templates/rdiff.tmpl
-htdocs/twiki/templates/registernotify.pattern.tmpl
+@owner
+@group
+htdocs/twiki/templates/registerconfirm.classic.tmpl
+htdocs/twiki/templates/registerconfirm.tmpl
+htdocs/twiki/templates/registernotify.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/registernotify.tmpl
+@owner
+@group
+htdocs/twiki/templates/registernotifyadmin.classic.tmpl
+htdocs/twiki/templates/registernotifyadmin.tmpl
+htdocs/twiki/templates/rename.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/rename.pattern.tmpl
 htdocs/twiki/templates/rename.tmpl
-htdocs/twiki/templates/renamebase.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/renameattachmentdelete.pattern.tmpl
+htdocs/twiki/templates/renamebase.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/renamebase.pattern.tmpl
 htdocs/twiki/templates/renamebase.tmpl
+@owner
+@group
+htdocs/twiki/templates/renameconfirm.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/renameconfirm.pattern.tmpl
 htdocs/twiki/templates/renameconfirm.tmpl
+@owner
+@group
+htdocs/twiki/templates/renamedelete.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/renamedelete.pattern.tmpl
 htdocs/twiki/templates/renamedelete.tmpl
-htdocs/twiki/templates/renamerefs.pattern.tmpl
-htdocs/twiki/templates/renamerefs.tmpl
-htdocs/twiki/templates/search.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/renameweb.classic.tmpl
+htdocs/twiki/templates/renameweb.pattern.tmpl
+htdocs/twiki/templates/renameweb.tmpl
+htdocs/twiki/templates/renamewebbase.classic.tmpl
+htdocs/twiki/templates/renamewebbase.pattern.tmpl
+htdocs/twiki/templates/renamewebbase.tmpl
+htdocs/twiki/templates/renamewebconfirm.classic.tmpl
+htdocs/twiki/templates/renamewebconfirm.pattern.tmpl
+htdocs/twiki/templates/renamewebconfirm.tmpl
+htdocs/twiki/templates/renamewebdelete.classic.tmpl
+htdocs/twiki/templates/renamewebdelete.tmpl
+htdocs/twiki/templates/search.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/search.pattern.tmpl
+@owner
+@group
+htdocs/twiki/templates/search.text.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/search.tmpl
-htdocs/twiki/templates/searchbookview.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/searchbase.pattern.tmpl
+htdocs/twiki/templates/searchbookview.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/searchbookview.pattern.tmpl
 htdocs/twiki/templates/searchbookview.tmpl
-htdocs/twiki/templates/searchformat.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/searchformat.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/searchformat.pattern.tmpl
 htdocs/twiki/templates/searchformat.tmpl
+@owner
+@group
+htdocs/twiki/templates/searchmeta.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/searchmeta.pattern.tmpl
 htdocs/twiki/templates/searchmeta.tmpl
-htdocs/twiki/templates/searchrenameview.dragon.tmpl
-htdocs/twiki/templates/searchrenameview.pattern.tmpl
-htdocs/twiki/templates/searchrenameview.tmpl
-htdocs/twiki/templates/twiki.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/settings.classic.tmpl
+htdocs/twiki/templates/settings.pattern.tmpl
+htdocs/twiki/templates/settings.tmpl
+htdocs/twiki/templates/styles.pattern.tmpl
+htdocs/twiki/templates/stylesdynamic.pattern.tmpl
+htdocs/twiki/templates/twiki.classic.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/twiki.pattern.tmpl
 htdocs/twiki/templates/twiki.tmpl
-htdocs/twiki/templates/view.dragon.tmpl
+@owner
+@group
+htdocs/twiki/templates/view.classic.tmpl
+htdocs/twiki/templates/view.kupu.tmpl
+htdocs/twiki/templates/view.kupuxml.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/view.pattern.tmpl
-htdocs/twiki/templates/view.plain.pattern.tmpl
 htdocs/twiki/templates/view.plain.tmpl
-htdocs/twiki/templates/view.print.pattern.tmpl
 htdocs/twiki/templates/view.print.tmpl
 htdocs/twiki/templates/view.rss.tmpl
+@owner
+@group
+htdocs/twiki/templates/view.rssatom.tmpl
+@owner www
+@group www
 htdocs/twiki/templates/view.text.tmpl
 htdocs/twiki/templates/view.tmpl
+@owner
+@group
+htdocs/twiki/templates/view.xml.tmpl
+htdocs/twiki/templates/viewbottombar.pattern.tmpl
+htdocs/twiki/templates/viewleftbar.pattern.tmpl
+htdocs/twiki/templates/viewnoleftbar.pattern.tmpl
+htdocs/twiki/templates/viewnotopbar.pattern.tmpl
+htdocs/twiki/templates/viewplain.pattern.tmpl
+htdocs/twiki/templates/viewprint.classic.tmpl
+htdocs/twiki/templates/viewprint.pattern.tmpl
+htdocs/twiki/templates/viewprint.tmpl
+htdocs/twiki/templates/viewrightbar.pattern.tmpl
+htdocs/twiki/templates/viewtoolbar.pattern.tmpl
+htdocs/twiki/templates/viewtopbar.pattern.tmpl
+htdocs/twiki/templates/viewtopicactionbuttons.pattern.tmpl
+htdocs/twiki/tools/
+htdocs/twiki/tools/geturl.pl
+htdocs/twiki/tools/html2tml.pl
+htdocs/twiki/tools/mailnotify
+htdocs/twiki/tools/rewriteshbang.pl
+htdocs/twiki/tools/tick_twiki.pl
+htdocs/twiki/tools/upgrade_emails.pl
+@sample htdocs/twiki/locales/
+@extra htdocs/twiki/lib/LocalSite.cfg

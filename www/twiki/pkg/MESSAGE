@@ -1,6 +1,6 @@
 If you're using Apache, run it in non-chrooted mode, or create a correct
 environment with sendmail(8), egrep(1) etc. You should add
-"include /var/www/conf/httpd-twiki.conf" to your httpd.conf.
+"Include /var/www/conf/httpd-twiki.conf" to your httpd.conf.
 
 You have to customize your twiki installation (like WIKIWEBMASTER)
 in ${PREFIX}/htdocs/twiki/data/TWiki/TWikiPreferences.txt

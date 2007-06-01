@@ -1,0 +1,11 @@
+--- bin/LocalLib.cfg.orig	Sun Feb  4 19:11:35 2007
++++ bin/LocalLib.cfg	Fri Feb 23 12:47:56 2007
+@@ -19,7 +19,7 @@
+ # REQUIRED
+ # The absolute path to the 'lib' directory in your installation..
+
+-$twikiLibPath = "/absolute/path/to/your/lib";
++$twikiLibPath = "%%WWWDOCDIR%%/lib";
+
+
+ # -------------- Extra path components to include in @INC
