@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/03/21 08:19:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/01 06:37:16 ajacoutot Exp $
 
 COMMENT=	"scanner frontend for SANE"
 
 DISTNAME=	xsane-0.994
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/xsane/ \
@@ -22,10 +23,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	freetype c pthread m fontconfig X11 Xext Xrender z gphoto2.>=2 \
-		gphoto2_port.>=5 glib-2.0 gmodule-2.0 pango-1.0 glitz \
-		pangocairo-1.0 pangoft2-1.0 cairo.>=4 tiff.>=38 \
-		usb.>=8 jpeg.>=62 atk-1.0 png.>=5 gobject-2.0
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender z atk-1.0 c cairo expat fontconfig freetype \
+		glib-2.0 glitz gmodule-2.0 gobject-2.0 gphoto2 \
+		gphoto2_port jpeg m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png pthread tiff usb
 
 MODULES=	gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
