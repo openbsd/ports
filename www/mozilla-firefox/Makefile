@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2007/04/07 17:40:02 kili Exp $
+# $OpenBSD: Makefile,v 1.74 2007/06/01 08:03:42 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -6,11 +6,11 @@ ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 COMMENT-main=	"redesign of Mozilla's browser component"
 COMMENT-devel=	"devel files for Gecko"
 
-VER=		2.0.0.3
+VER=		2.0.0.4
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}p0
-PKGNAME-devel=	mozilla-firefox-devel-${VER}p0
+PKGNAME-main=	mozilla-firefox-${VER}
+PKGNAME-devel=	mozilla-firefox-devel-${VER}
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -51,7 +51,8 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
-WANTLIB=	X11 Xext Xrender atk-1.0 c cairo fontconfig freetype \
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender atk-1.0 c cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread stdc++ z
 
@@ -117,6 +118,10 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-firefox
 
+DATADIRS=	chrome components defaults dictionaries extensions \
+		greprefs icons init.d plugins res searchplugins
+DISTDIRS=	include idl
+
 post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
@@ -130,18 +135,16 @@ post-build:
 	@cd ${WRKSRC}/xpfe/bootstrap && ${MAKE_PROGRAM} firefox.1
 
 do-install:
-.for dir in include idl
-	${INSTALL_DATA_DIR} ${MOZ}/${dir}
-	@cd ${WRKSRC}/dist && ${TAR} -chf - ${dir} | \
-		${TAR} -xf - -C ${MOZ}
-.endfor
-.for dir in chrome components defaults dictionaries extensions greprefs icons \
-	init.d plugins res searchplugins
-	${INSTALL_DATA_DIR} ${MOZ}/${dir}
-	@cd ${MOB} && ${TAR} -chf - ${dir}/ | \
-		${TAR} -xf - -C ${MOZ}
-	@find ${MOZ} -type f -exec chmod 644 {} \;
-.endfor
+	cd ${WRKSRC}/dist && \
+		find ${DISTDIRS} -type d \
+			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
+		find ${DISTDIRS} ! -type d \
+			-exec ${INSTALL_DATA} {} ${MOZ}/{} \;
+	cd ${MOB} && \
+		find ${DATADIRS} -type d \
+			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
+		find ${DATADIRS} ! -type d \
+			-exec ${INSTALL_DATA} -m 644 {} ${MOZ}/{} \;
 	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}

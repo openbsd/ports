@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.1 2007/01/12 21:46:17 kurt Exp $
+@comment $OpenBSD: PLIST-devel,v 1.2 2007/06/01 08:03:42 martynas Exp $
 bin/firefox-config
 lib/pkgconfig/firefox-gtkmozembed.pc
 lib/pkgconfig/firefox-js.pc
@@ -978,6 +978,7 @@ mozilla-firefox/idl/nsIUploadChannel.idl
 mozilla-firefox/idl/nsIUrlClassifierDBService.idl
 mozilla-firefox/idl/nsIUrlClassifierStreamUpdater.idl
 mozilla-firefox/idl/nsIUrlClassifierTable.idl
+mozilla-firefox/idl/nsIUrlClassifierUtils.idl
 mozilla-firefox/idl/nsIUrlListManager.idl
 mozilla-firefox/idl/nsIUserCertPicker.idl
 mozilla-firefox/idl/nsIUserInfo.idl
@@ -2631,6 +2632,7 @@ mozilla-firefox/include/url-classifier/
 mozilla-firefox/include/url-classifier/nsIUrlClassifierDBService.h
 mozilla-firefox/include/url-classifier/nsIUrlClassifierStreamUpdater.h
 mozilla-firefox/include/url-classifier/nsIUrlClassifierTable.h
+mozilla-firefox/include/url-classifier/nsIUrlClassifierUtils.h
 mozilla-firefox/include/url-classifier/nsIUrlListManager.h
 mozilla-firefox/include/urlformatter/
 mozilla-firefox/include/urlformatter/nsIURLFormatter.h
