@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/26 11:10:07 espie Exp $
-lib/bonobo/monikers/libmoniker_std.so
-lib/bonobo/plugin/libstorage_efs.so
-lib/bonobo/plugin/libstorage_fs.so
-@lib lib/libbonobo-print.so.${LIBbonobo-print_VERSION}
-@lib lib/libbonobo.so.${LIBbonobo_VERSION}
-@lib lib/libbonobox.so.${LIBbonobox_VERSION}
-@lib lib/libefs.so.${LIBefs_VERSION}

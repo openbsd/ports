@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2007/05/27 19:40:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2007/06/01 15:28:05 jasper Exp $
 
      SUBDIR += applets2
      SUBDIR += audio
      SUBDIR += backgrounds
-     SUBDIR += bonobo
-     SUBDIR += controlcenter
      SUBDIR += controlcenter2
      SUBDIR += desktop
      SUBDIR += doc-utils
@@ -31,7 +29,6 @@
      SUBDIR += libgnomeprintui
      SUBDIR += libgtkhtml
      SUBDIR += librsvg
-     SUBDIR += libs
      SUBDIR += libxklavier
      SUBDIR += menus
      SUBDIR += metacity
@@ -39,14 +36,12 @@
      SUBDIR += nautilus
      SUBDIR += oaf
      SUBDIR += panel
-     SUBDIR += print
      SUBDIR += session
      SUBDIR += terminal
      SUBDIR += themes
      SUBDIR += themes-extras
      SUBDIR += users-guide
      SUBDIR += utils
-     SUBDIR += vfs
      SUBDIR += vfs2
      SUBDIR += vfsmm
      SUBDIR += yelp

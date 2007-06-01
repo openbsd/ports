@@ -1,5 +1,0 @@
-Bonobo is the GNOME foundation for writing and implementing reusable
-software Components.  Components are pieces of software that provide
-a well-defined interface and are designed to be used in cooperation
-with other components.  In the Bonobo universe, CORBA is used as
-the communication layer that binds components together.
