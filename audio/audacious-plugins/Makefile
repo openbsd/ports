@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/28 18:24:49 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/01 18:19:45 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -70,9 +70,5 @@ CONFIGURE_ARGS+=	--enable-ipv6 \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_header_altivec_h=no
-
-pre-configure:
-	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},' \
-		${WRKSRC}/src/aac/src/Makefile
 
 .include <bsd.port.mk>

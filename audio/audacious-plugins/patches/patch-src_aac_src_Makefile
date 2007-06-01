@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_aac_src_Makefile,v 1.2 2007/05/21 11:34:07 steven Exp $
+$OpenBSD: patch-src_aac_src_Makefile,v 1.3 2007/06/01 18:19:45 jakemsr Exp $
 --- src/aac/src/Makefile.orig	Wed Apr  4 20:38:00 2007
 +++ src/aac/src/Makefile	Sun Apr  8 11:28:33 2007
 @@ -8,7 +8,7 @@ CFLAGS += $(PICFLAGS)
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_aac_src_Makefile,v 1.2 2007/05/21 11:34:07 steven Exp $
  LIBDIR = $(plugindir)/$(INPUT_PLUGIN_DIR)
  LIBADD = $(GTK_LIBS) $(GLIB_LIBS) $(PANGO_LIBS)
 -LDFLAGS += ../libfaad2/libfaad.a ../mp4ff/libmp4ff.a -lstdc++
-+LDFLAGS += -L!!LOCALBASE!!/lib -lfaad -lmp4ff -lstdc++
++LDFLAGS += -L$(LOCALBASE)/lib -lfaad -lmp4ff -lstdc++
  
  SOURCES = libmp4.c mp4_utils.c aac_utils.c tagging_mp4.c
  
