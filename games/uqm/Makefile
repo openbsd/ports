@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/12/23 09:32:03 jolan Exp $
+# $OpenBSD: Makefile,v 1.22 2007/06/01 02:06:01 jolan Exp $
 # XXX hardcoded endian list
 
 COMMENT-main=		"ur-quan masters: sdl port of star control 2; multiplayer"
@@ -10,7 +10,7 @@ COMMENT-threedomusic=	"ur-quan masters: 3DO music content"
 COMMENT-voice=		"ur-quan masters: speech content"
 
 VER=			0.6.0
-DISTNAME=		uqm-${VER}
+DISTNAME=		uqm-0.6.2
 CATEGORIES=		games x11
 PDIST=			${DISTNAME}-source.tgz
 CDIST=			uqm-${VER}-content.uqm
@@ -23,7 +23,7 @@ DISTFILES=		${PDIST} ${CDIST}
 SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
-PKGNAME-main=		uqm-${VER}
+PKGNAME-main=		uqm-0.6.2
 PKGNAME-content=	uqm-content-${VER}
 PKGNAME-remix1=		uqm-remix1-${VER}
 PKGNAME-remix2=		uqm-remix2-${VER}
