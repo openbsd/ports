@@ -1,0 +1,13 @@
+$OpenBSD: patch-avidemux_ADM_lavcodec_mpegvideo_c,v 1.1 2007/06/01 00:36:43 ajacoutot Exp $
+--- avidemux/ADM_lavcodec/mpegvideo.c.orig	Thu Jul 20 08:41:37 2006
++++ avidemux/ADM_lavcodec/mpegvideo.c	Fri Jun  1 00:55:07 2007
+@@ -292,9 +292,6 @@ int DCT_common_init(MpegEncContext *s)
+ #ifdef ARCH_ARMV4L
+     MPV_common_init_armv4l(s);
+ #endif
+-#ifdef ARCH_POWERPC
+-    MPV_common_init_ppc(s);
+-#endif
+ 
+ #ifdef CONFIG_ENCODERS
+     s->fast_dct_quantize= s->dct_quantize;

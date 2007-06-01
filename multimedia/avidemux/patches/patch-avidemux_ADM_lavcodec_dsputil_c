@@ -1,0 +1,13 @@
+$OpenBSD: patch-avidemux_ADM_lavcodec_dsputil_c,v 1.1 2007/06/01 00:36:43 ajacoutot Exp $
+--- avidemux/ADM_lavcodec/dsputil.c.orig	Fri Jun  1 00:23:29 2007
++++ avidemux/ADM_lavcodec/dsputil.c	Fri Jun  1 00:23:57 2007
+@@ -4119,9 +4119,6 @@ void dsputil_init(DSPContext* c, AVCodecContext *avctx
+ #ifdef ARCH_ALPHA
+     dsputil_init_alpha(c, avctx);
+ #endif
+-#ifdef ARCH_POWERPC
+-    dsputil_init_ppc(c, avctx);
+-#endif
+ #ifdef HAVE_MMI
+     dsputil_init_mmi(c, avctx);
+ #endif
