@@ -1,3 +1,0 @@
-This program is for users of xfsft by Juliusz Chroboczek and Mark
-Leisher. It reads TrueType fonts and creates a suitable fonts.scale
-file for use with the above mentioned X font server.
