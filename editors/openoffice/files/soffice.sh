@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: soffice.sh,v 1.6 2007/02/09 00:50:17 kurt Exp $
+# $OpenBSD: soffice.sh,v 1.7 2007/06/01 05:00:04 ajacoutot Exp $
 #
 
 # Since the openoffice-java package may not exist
@@ -9,6 +9,12 @@ JAVA_HOME=$(javaPathHelper -h openoffice-java 2> /dev/null)
 
 if [ -n "${JAVA_HOME}" ]; then
 	export JAVA_HOME
+fi
+
+# This is needed for OpenOffice.org to be able to open files with
+# special character(s) in their name
+if [ ! "${LC_CTYPE}" ]; then
+	export LC_CTYPE="en_US.ISO8859-15"
 fi
 
 case "$0"
