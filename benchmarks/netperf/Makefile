@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/06/01 22:36:52 naddy Exp $
 
 COMMENT=	"Network performance benchmark"
 
 DISTNAME=	netperf-2.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	benchmarks net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MAKE_FILE=	makefile
-MAKE_FLAGS+=	CC="${CC}" CFLAGS='-O -DDEBUG_LOG_FILE="\"/tmp/netperf.debug\"" -DUSE_LOOPER -DDO_DNS'
+MAKE_FLAGS+=	CC="${CC}" CFLAGS='${CFLAGS} -DDEBUG_LOG_FILE="\"/tmp/netperf.debug\"" -DUSE_LOOPER -DDO_DNS'
 
 NO_REGRESS=	Yes
 
