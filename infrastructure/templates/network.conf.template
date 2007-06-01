@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.115 2007/05/30 23:16:25 ajacoutot Exp $
+# $OpenBSD: network.conf.template,v 1.116 2007/06/01 10:57:48 alek Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -228,3 +228,7 @@ MASTER_SITE_APACHE+= \
 MASTER_SITE_BERLIOS+=	\
 	http://download.berlios.de/ \
 	http://download2.berlios.de/ \
+
+MASTER_SITE_RUBYFORGE+= \
+	http://files.rubyforge.mmmultiworks.com/ \
+	http://files.rubyforge.vm.bytemark.co.uk/
