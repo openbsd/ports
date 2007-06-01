@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.897 2007/05/31 10:52:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.898 2007/06/01 13:15:21 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1645,21 +1645,21 @@ _internal-fetch _internal-checksum _internal-extract _internal-patch \
 .else
 
 .  if ${ELF_TOOLCHAIN:L} == "no"
-_NEWLIB_DEPENDS_FLAGS=-o
+_LIB_DEPENDS_FLAGS=-o
 .  else
-_NEWLIB_DEPENDS_FLAGS=
+_LIB_DEPENDS_FLAGS=
 .  endif
 
 lib-depends-check:
 	@cd ${.CURDIR} && exec ${MAKE} package
-	@perl ${PORTSDIR}/infrastructure/package/check-newlib-depends \
-		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE}
+	@perl ${PORTSDIR}/infrastructure/package/check-lib-depends \
+		${_LIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE}
 
 port-lib-depends-check: ${_FAKE_COOKIE}
 .  for _S in ${MULTI_PACKAGES}
 	@-SUBPACKAGE=${_S} ${MAKE} print-plist-with-depends | \
-	 perl ${PORTSDIR}/infrastructure/package/check-newlib-depends \
-		${_NEWLIB_DEPENDS_FLAGS} -d ${_PKG_REPO} -B ${WRKINST}
+	 perl ${PORTSDIR}/infrastructure/package/check-lib-depends \
+		${_LIB_DEPENDS_FLAGS} -d ${_PKG_REPO} -B ${WRKINST}
 .  endfor
 
 _internal-manpages-check: ${_FAKE_COOKIE}
@@ -2153,7 +2153,7 @@ _register_plist =:
 _register_plist = perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB}
 .endif
 .if ${CHECK_LIB_DEPENDS:L} == "yes"
-_check_lib_depends =perl ${PORTSDIR}/infrastructure/package/check-newlib-depends -d ${_PKG_REPO} -B ${WRKINST}
+_check_lib_depends =perl ${PORTSDIR}/infrastructure/package/check-lib-depends -d ${_PKG_REPO} -B ${WRKINST}
 .else
 _check_lib_depends =:
 .endif
