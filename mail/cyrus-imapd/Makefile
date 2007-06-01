@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/04 08:05:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2007/06/01 15:23:12 ajacoutot Exp $
 
 COMMENT-main=	"Cyrus IMAP server"
 COMMENT-perl=	"perl utils for the Cyrus IMAP server"
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/imap/ \
-		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
+		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/imap/
 
 WANTLIB=	crypto ssl 
 
