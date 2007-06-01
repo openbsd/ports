@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/08 06:53:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/01 07:39:02 ajacoutot Exp $
 
 COMMENT=	"suite of educational games for young children"
 
@@ -24,7 +24,6 @@ RUN_DEPENDS=	:pygame->=1.7:devel/pygame \
 		:python-expat-${MODPY_VERSION}.*:lang/python/${MODPY_VERSION},-expat
 
 PKG_ARCH=	*
-USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 

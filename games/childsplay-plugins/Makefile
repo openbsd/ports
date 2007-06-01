@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/26 11:11:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/01 07:39:02 ajacoutot Exp $
 
 COMMENT=	"additional games modules for childsplay"
 
@@ -25,7 +25,6 @@ MODULES=	lang/python
 RUN_DEPENDS=	:childsplay->=0.84:games/childsplay
 
 PKG_ARCH=	*
-USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
