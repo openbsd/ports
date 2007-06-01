@@ -1,12 +1,0 @@
-$OpenBSD: patch-src_htmlcluealigned_h,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
---- src/htmlcluealigned.h.orig	Mon Apr 15 14:41:31 2002
-+++ src/htmlcluealigned.h	Mon Apr 15 14:42:01 2002
-@@ -38,7 +38,7 @@ struct _HTMLClueAlignedClass {
- };
- 
- 
--extern HTMLClueAlignedClass html_cluealigned_class;
-+/* extern HTMLClueAlignedClass html_cluealigned_class; */
- 
- 
- void        html_cluealigned_type_init   (void);
