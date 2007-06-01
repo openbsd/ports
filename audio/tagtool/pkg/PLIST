@@ -1,7 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 21:55:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/06/01 18:48:46 jasper Exp $
 bin/tagtool
 share/applications/
 share/applications/tagtool.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/TagTool.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/TagTool.svg
 share/locale/bg/LC_MESSAGES/tagtool.mo
 share/locale/cs/LC_MESSAGES/tagtool.mo
 share/locale/de/LC_MESSAGES/tagtool.mo
@@ -14,13 +22,15 @@ share/locale/it/LC_MESSAGES/tagtool.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/tagtool.mo
+share/locale/nl/LC_MESSAGES/tagtool.mo
+share/locale/pl/LC_MESSAGES/tagtool.mo
 share/locale/pt/LC_MESSAGES/tagtool.mo
+share/locale/pt_BR/LC_MESSAGES/tagtool.mo
 share/locale/ru/LC_MESSAGES/tagtool.mo
+share/locale/sv/LC_MESSAGES/tagtool.mo
 share/locale/ua/
 share/locale/ua/LC_MESSAGES/
 share/locale/ua/LC_MESSAGES/tagtool.mo
-share/pixmaps/
-share/pixmaps/TagTool.png
 share/tagtool/
 share/tagtool/TagTool.png
 share/tagtool/edit.png
@@ -39,3 +49,5 @@ share/tagtool/tab_rename.png
 share/tagtool/tab_tag.png
 share/tagtool/tagtool.glade
 share/tagtool/warn.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

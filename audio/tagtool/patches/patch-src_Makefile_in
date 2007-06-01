@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2007/06/01 18:48:46 jasper Exp $
+--- src/Makefile.in.orig	Tue Feb 27 21:34:13 2007
++++ src/Makefile.in	Fri Jun  1 20:41:18 2007
+@@ -189,7 +189,7 @@ resource_DATA = tagtool.glade preferences.dtd
+ @ENABLE_VORBIS_FALSE@vorbis_cflags = 
+ @ENABLE_VORBIS_TRUE@vorbis_cflags = -DENABLE_VORBIS
+ 
+-tagtool_CFLAGS = -Wall -Wno-pointer-sign $(GTK_CFLAGS) ${mp3_cflags} 	\
++tagtool_CFLAGS = -Wall $(GTK_CFLAGS) ${mp3_cflags} 	\
+ 	${vorbis_cflags} -DDATADIR='"$(datadir)/${PACKAGE_NAME}"'
+ 
+ 
