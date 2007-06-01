@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.gnome,v 1.4 2004/09/15 19:38:49 espie Exp $
-lib/libglade-gnome.a
-lib/libglade-gnome.la
-lib/pkgconfig/libglade-gnome.pc
-%%SHARED%%
