@@ -1,0 +1,13 @@
+$OpenBSD: patch-t_g4_dbfile_json_t,v 1.1.1.1 2007/06/01 22:00:35 aanriot Exp $
+--- t/g4_dbfile_json.t.orig	Wed Apr 12 07:42:14 2006
++++ t/g4_dbfile_json.t	Fri Jun  1 10:37:31 2007
+@@ -14,7 +14,8 @@ our %options = (
+     'JSON::Syck'      =>  { skip    =>  [85 .. 89, 91 .. 101] },
+ );
+ 
+-plan skip_all => 'DB_File is NOT available' unless eval { require DB_File };
++# broken on OpenBSD with perl 5.8.8 (also reported by p5p)
++plan skip_all => 'DB_File is NOT available';
+ 
+ foreach my $i (keys(%options)) {
+     $serializers{$i}++ if eval "use $i (); 1";

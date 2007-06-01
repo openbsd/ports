@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/01 22:00:35 aanriot Exp $
+${P5SITE}/CGI/Session/
+${P5SITE}/CGI/Session.pm
+${P5SITE}/CGI/Session/Driver/
+${P5SITE}/CGI/Session/Driver.pm
+${P5SITE}/CGI/Session/Driver/DBI.pm
+${P5SITE}/CGI/Session/Driver/db_file.pm
+${P5SITE}/CGI/Session/Driver/file.pm
+${P5SITE}/CGI/Session/Driver/mysql.pm
+${P5SITE}/CGI/Session/Driver/postgresql.pm
+${P5SITE}/CGI/Session/Driver/sqlite.pm
+${P5SITE}/CGI/Session/ErrorHandler.pm
+${P5SITE}/CGI/Session/ID/
+${P5SITE}/CGI/Session/ID/incr.pm
+${P5SITE}/CGI/Session/ID/md5.pm
+${P5SITE}/CGI/Session/ID/static.pm
+${P5SITE}/CGI/Session/Serialize/
+${P5SITE}/CGI/Session/Serialize/default.pm
+${P5SITE}/CGI/Session/Serialize/freezethaw.pm
+${P5SITE}/CGI/Session/Serialize/json.pm
+${P5SITE}/CGI/Session/Serialize/storable.pm
+${P5SITE}/CGI/Session/Serialize/yaml.pm
+${P5SITE}/CGI/Session/Test/
+${P5SITE}/CGI/Session/Test/Default.pm
+${P5SITE}/CGI/Session/Tutorial.pm
+@man man/man3p/CGI::Session.3p
+@man man/man3p/CGI::Session::Driver.3p
+@man man/man3p/CGI::Session::Driver::DBI.3p
+@man man/man3p/CGI::Session::Driver::db_file.3p
+@man man/man3p/CGI::Session::Driver::file.3p
+@man man/man3p/CGI::Session::Driver::mysql.3p
+@man man/man3p/CGI::Session::Driver::postgresql.3p
+@man man/man3p/CGI::Session::Driver::sqlite.3p
+@man man/man3p/CGI::Session::ErrorHandler.3p
+@man man/man3p/CGI::Session::ID::incr.3p
+@man man/man3p/CGI::Session::ID::md5.3p
+@man man/man3p/CGI::Session::ID::static.3p
+@man man/man3p/CGI::Session::Serialize::default.3p
+@man man/man3p/CGI::Session::Serialize::freezethaw.3p
+@man man/man3p/CGI::Session::Serialize::json.3p
+@man man/man3p/CGI::Session::Serialize::storable.3p
+@man man/man3p/CGI::Session::Serialize::yaml.3p
+@man man/man3p/CGI::Session::Test::Default.3p
+@man man/man3p/CGI::Session::Tutorial.3p
