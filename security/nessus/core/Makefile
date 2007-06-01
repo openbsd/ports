@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/04/03 13:55:59 aanriot Exp $
+# $OpenBSD: Makefile,v 1.17 2007/06/01 05:50:36 aanriot Exp $
 
 COMMENT=	"network security scanner"
 DISTNAME=	nessus-core-${V}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 FLAVORS=	no_x11
 FLAVOR?=
@@ -15,9 +15,10 @@ BUILD_DEPENDS=	:bison-*:devel/bison
 .if empty(FLAVOR:L:Mno_x11)
 USE_X11=	Yes
 MODULES=	devel/gettext
-WANTLIB+=	atk-1.0 cairo.>=4 fontconfig freetype glib-2.0 \
+WANTLIB+=	atk-1.0 cairo.>=4 expat fontconfig freetype glib-2.0 \
 		gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 glitz png X11 Xext Xrender z
+		pangoft2-1.0 glitz png X11 Xau Xcursor Xdmcp Xext \
+		Xrender Xfixes Xi Xinerama Xrandr z
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gtk
 .else
