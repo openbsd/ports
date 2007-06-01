@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/06/01 02:06:01 jolan Exp $
-# XXX hardcoded endian list
+# $OpenBSD: Makefile,v 1.23 2007/06/01 02:11:23 jolan Exp $
 
 COMMENT-main=		"ur-quan masters: sdl port of star control 2; multiplayer"
 COMMENT-content=	"ur-quan masters: game content"
@@ -87,10 +86,10 @@ DISTFILES+=	${VDIST}
 MULTI_PACKAGES+=-voice
 .endif
 
+BYTEORDER!=sysctl -n hw.byteorder
+
 do-configure:
-.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
-	${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" || \
-	${MACHINE_ARCH} == "vax")
+.if ${BYTEORDER} == "1234"
 	@sed -e "s|@PREFIX@|${PREFIX}|g ; s|@ENDIAN@|undef|g" \
 		${FILESDIR}/config_unix.h > ${WRKSRC}/src/config_unix.h
 .else
