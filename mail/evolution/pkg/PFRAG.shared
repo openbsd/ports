@@ -1,49 +1,58 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/28 08:02:16 steven Exp $
-lib/evolution/${PARENT_VERS}/components/libevolution-addressbook.so
-lib/evolution/${PARENT_VERS}/components/libevolution-calendar.so
-lib/evolution/${PARENT_VERS}/components/libevolution-mail.so
-lib/evolution/${PARENT_VERS}/evolution-calendar-importers/libevolution-calendar-importers.so
-@lib lib/evolution/${PARENT_VERS}/libeabutil.so.${LIBeabutil_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libeconduit.so.${LIBeconduit_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libecontacteditor.so.${LIBecontacteditor_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libecontactlisteditor.so.${LIBecontactlisteditor_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libefilterbar.so.${LIBefilterbar_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libemiscwidgets.so.${LIBemiscwidgets_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libeshell.so.${LIBeshell_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libetimezonedialog.so.${LIBetimezonedialog_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libeutil.so.${LIBeutil_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libevolution-a11y.so.${LIBevolution-a11y_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libevolution-addressbook-a11y.so.${LIBevolution-addressbook-a11y_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libevolution-calendar-a11y.so.${LIBevolution-calendar-a11y_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libevolution-importer.so.${LIBevolution-importer_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libevolution-mail-importers.so.${LIBevolution-mail-importers_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libevolution-widgets-a11y.so.${LIBevolution-widgets-a11y_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libfilter.so.${LIBfilter_VERSION}
-@lib lib/evolution/${PARENT_VERS}/libmenus.so.${LIBmenus_VERSION}
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-addressbook-file.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-addressbook-groupwise.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-audio-inline.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-calendar-file.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-calendar-http.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-calendar-weather.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-compose-send-options.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-copy-tool.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-default-source.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-evolution-bbdb.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-evolution-startup-wizard.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-exchange-account-settings.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-gw-account-setup.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-itip-formatter.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-mail-folder-unsubscribe.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-mail-to-task.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-mailing-list-actions.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-mark-calendar-offline.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-plugin-manager.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-prefer-plain.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-save-attachments.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-save-calendar.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-select-one-source.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-send-options.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-shared-folder.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-status-track.so
-lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-subject-thread.so
+@comment $OpenBSD: PFRAG.shared,v 1.10 2007/06/02 11:32:11 jasper Exp $
+lib/evolution/2.10/components/libevolution-addressbook.so
+lib/evolution/2.10/components/libevolution-calendar.so
+lib/evolution/2.10/components/libevolution-mail.so
+@lib lib/evolution/2.10/libeabutil.so.${LIBeabutil_VERSION}
+@lib lib/evolution/2.10/libeconduit.so.${LIBeconduit_VERSION}
+@lib lib/evolution/2.10/libecontacteditor.so.${LIBecontacteditor_VERSION}
+@lib lib/evolution/2.10/libecontactlisteditor.so.${LIBecontactlisteditor_VERSION}
+@lib lib/evolution/2.10/libefilterbar.so.${LIBefilterbar_VERSION}
+@lib lib/evolution/2.10/libemiscwidgets.so.${LIBemiscwidgets_VERSION}
+@lib lib/evolution/2.10/libeshell.so.${LIBeshell_VERSION}
+@lib lib/evolution/2.10/libessmime.so.${LIBessmime_VERSION}
+@lib lib/evolution/2.10/libetable.so.${LIBetable_VERSION}
+@lib lib/evolution/2.10/libetext.so.${LIBetext_VERSION}
+@lib lib/evolution/2.10/libetimezonedialog.so.${LIBetimezonedialog_VERSION}
+@lib lib/evolution/2.10/libeutil.so.${LIBeutil_VERSION}
+@lib lib/evolution/2.10/libevolution-a11y.so.${LIBevolution-a11y_VERSION}
+@lib lib/evolution/2.10/libevolution-addressbook-a11y.so.${LIBevolution-addressbook-a11y_VERSION}
+@lib lib/evolution/2.10/libevolution-addressbook-importers.so.${LIBevolution-addressbook-importers_VERSION}
+@lib lib/evolution/2.10/libevolution-calendar-a11y.so.${LIBevolution-calendar-a11y_VERSION}
+@lib lib/evolution/2.10/libevolution-calendar-importers.so.${LIBevolution-calendar-importers_VERSION}
+@lib lib/evolution/2.10/libevolution-mail-importers.so.${LIBevolution-mail-importers_VERSION}
+@lib lib/evolution/2.10/libevolution-smime.so.${LIBevolution-smime_VERSION}
+@lib lib/evolution/2.10/libevolution-widgets-a11y.so.${LIBevolution-widgets-a11y_VERSION}
+@lib lib/evolution/2.10/libfilter.so.${LIBfilter_VERSION}
+@lib lib/evolution/2.10/libmenus.so.${LIBmenus_VERSION}
+lib/evolution/2.10/plugins/libmail-account-disable.so
+lib/evolution/2.10/plugins/liborg-gnome-addressbook-file.so
+lib/evolution/2.10/plugins/liborg-gnome-audio-inline.so
+lib/evolution/2.10/plugins/liborg-gnome-calendar-file.so
+lib/evolution/2.10/plugins/liborg-gnome-calendar-http.so
+lib/evolution/2.10/plugins/liborg-gnome-calendar-weather.so
+lib/evolution/2.10/plugins/liborg-gnome-copy-tool.so
+lib/evolution/2.10/plugins/liborg-gnome-default-mailer.so
+lib/evolution/2.10/plugins/liborg-gnome-default-source.so
+lib/evolution/2.10/plugins/liborg-gnome-evolution-bbdb.so
+lib/evolution/2.10/plugins/liborg-gnome-evolution-caldav.so
+lib/evolution/2.10/plugins/liborg-gnome-evolution-hula-account-setup.so
+lib/evolution/2.10/plugins/liborg-gnome-evolution-mail-attachments-import-ics.so
+lib/evolution/2.10/plugins/liborg-gnome-evolution-startup-wizard.so
+lib/evolution/2.10/plugins/liborg-gnome-exchange-operations.so
+lib/evolution/2.10/plugins/liborg-gnome-groupwise-features.so
+lib/evolution/2.10/plugins/liborg-gnome-gw-account-setup.so
+lib/evolution/2.10/plugins/liborg-gnome-imap-features.so
+lib/evolution/2.10/plugins/liborg-gnome-itip-formatter.so
+lib/evolution/2.10/plugins/liborg-gnome-mail-to-task.so
+lib/evolution/2.10/plugins/liborg-gnome-mailing-list-actions.so
+lib/evolution/2.10/plugins/liborg-gnome-mark-all-read.so
+lib/evolution/2.10/plugins/liborg-gnome-mark-calendar-offline.so
+lib/evolution/2.10/plugins/liborg-gnome-new-mail-notify.so
+lib/evolution/2.10/plugins/liborg-gnome-plugin-manager.so
+lib/evolution/2.10/plugins/liborg-gnome-prefer-plain.so
+lib/evolution/2.10/plugins/liborg-gnome-print-message.so
+lib/evolution/2.10/plugins/liborg-gnome-publish-calendar.so
+lib/evolution/2.10/plugins/liborg-gnome-sa-junk-plugin.so
+lib/evolution/2.10/plugins/liborg-gnome-save-calendar.so
+lib/evolution/2.10/plugins/liborg-gnome-select-one-source.so
+lib/evolution/2.10/plugins/liborg-gnome-subject-thread.so

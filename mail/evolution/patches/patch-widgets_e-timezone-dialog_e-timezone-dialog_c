@@ -1,0 +1,30 @@
+$OpenBSD: patch-widgets_e-timezone-dialog_e-timezone-dialog_c,v 1.1 2007/06/02 11:32:11 jasper Exp $
+--- widgets/e-timezone-dialog/e-timezone-dialog.c.orig	Thu Apr 26 00:04:48 2007
++++ widgets/e-timezone-dialog/e-timezone-dialog.c	Thu Apr 26 00:06:16 2007
+@@ -80,8 +80,6 @@
+ 
+ #ifndef G_OS_WIN32 /* Declared properly in time.h already */
+ extern char *tzname[2];
+-extern long timezone;
+-extern int daylight;
+ #endif
+ 
+ static void e_timezone_dialog_class_init	(ETimezoneDialogClass *class);
+@@ -314,6 +312,8 @@
+ 	t_gmt = mktime (&gmt);
+ 	t_local = mktime (&local);
+ 	diff = t_local - t_gmt;
++	if (local.tm_isdst == 1)
++		diff += 3600;
+ 
+ 	return diff;
+ }
+@@ -324,7 +324,7 @@
+ 	icaltimezone *zone;
+ 	
+ 	tzset();
+-	zone =  icaltimezone_get_builtin_timezone_from_offset (-timezone, tzname[0]);
++	zone =  icaltimezone_get_builtin_timezone_from_offset (-get_local_offset(), tzname[0]);
+ 
+ 	return zone;
+ }

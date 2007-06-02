@@ -1,60 +1,22 @@
-$OpenBSD: patch-configure,v 1.1 2005/09/08 04:52:12 marcm Exp $
---- configure.orig	Sat Jun  4 03:48:17 2005
-+++ configure	Fri Aug 19 12:12:19 2005
-@@ -25861,9 +25861,6 @@ LIBS=$ac_check_lib_save_LIBS
+$OpenBSD: patch-configure,v 1.2 2007/06/02 11:32:11 jasper Exp $
+--- configure.orig	Wed Apr 25 23:38:07 2007
++++ configure	Wed Apr 25 23:39:56 2007
+@@ -27802,9 +27802,6 @@ LIBS=$ac_check_lib_save_LIBS
  fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_query" >&5
- echo "${ECHO_T}$ac_cv_lib_resolv_res_query" >&6
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_query" >&5
+ echo "${ECHO_T}$ac_cv_lib_resolv_res_query" >&6; }
 -if test $ac_cv_lib_resolv_res_query = yes; then
 -  LDAP_LIBS="-lresolv"
 -fi
  
- 		echo "$as_me:$LINENO: checking for bind in -lsocket" >&5
- echo $ECHO_N "checking for bind in -lsocket... $ECHO_C" >&6
-@@ -26661,8 +26658,8 @@ fi
- 
- 
- 
--THREADS_LIBS="$PTHREAD_LIB"
--THREADS_CFLAGS="$PTHREAD_CFLAGS"
-+THREADS_LIBS="-pthread"
-+THREADS_CFLAGS="-pthread"
- 
- 
- 
-@@ -27110,7 +27107,7 @@ if test "x${with_krb5}" != "xno"; then
+ 		{ echo "$as_me:$LINENO: checking for bind in -lsocket" >&5
+ echo $ECHO_N "checking for bind in -lsocket... $ECHO_C" >&6; }
+@@ -30819,7 +30816,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
 -	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
 +	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
- 	echo "$as_me:$LINENO: checking for Kerberos 5" >&5
- echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6
+ 	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
+ echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
  if test "${ac_cv_lib_kerberos5+set}" = set; then
-@@ -28291,7 +28288,7 @@ Please specify the path to libnspr4.a
- Example: --with-nspr-libs=/usr/lib" >&2;}
-    { (exit 1); exit 1; }; }
-        				else
--	       				nsprlibs="-ldl $with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
-+	       				nsprlibs="$with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
- 				fi
- 			else
- 				nsprlibs="-ldl -lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
-@@ -28585,7 +28582,7 @@ Please specify the path to libnss3.a
- Example: --with-nspr-libs=/usr/lib/mozilla" >&2;}
-    { (exit 1); exit 1; }; }
- 				else
--					nsslibs="-ldb1 $with_nss_libs/libnssckfw.a $with_nss_libs/libasn1.a $with_nss_libs/libcrmf.a $with_nss_libs/libswfci.a $with_nss_libs/libjar.a $with_nss_libs/libpkcs12.a $with_nss_libs/libpkcs7.a $with_nss_libs/libpki1.a $with_nss_libs/libsmime.a $with_nss_libs/libssl.a $with_nss_libs/libnss.a $with_nss_libs/libpk11wrap.a $with_nss_libs/libsoftokn.a $with_nss_libs/libfreebl.a $with_nss_libs/libnsspki.a $with_nss_libs/libnssdev.a $with_nss_libs/libcryptohi.a $with_nss_libs/libcerthi.a $with_nss_libs/libcertdb.a $with_nss_libs/libsecutil.a $with_nss_libs/libnssb.a"
-+					nsslibs="$with_nss_libs/libnssckfw.a $with_nss_libs/libasn1.a $with_nss_libs/libcrmf.a $with_nss_libs/libswfci.a $with_nss_libs/libjar.a $with_nss_libs/libpkcs12.a $with_nss_libs/libpkcs7.a $with_nss_libs/libsmime.a $with_nss_libs/libssl.a $with_nss_libs/libnss.a $with_nss_libs/libpk11wrap.a $with_nss_libs/libsoftokn.a $with_nss_libs/libfreebl.a $with_nss_libs/libnsspki.a $with_nss_libs/libnssdev.a $with_nss_libs/libcryptohi.a $with_nss_libs/libcerthi.a $with_nss_libs/libcertdb.a $with_nss_libs/libsecutil.a $with_nss_libs/libnssb.a"
- 					case "$host" in
- 						*solaris*)
- 						nsslibs="$nsslibs $with_nss_libs/libfreebl.a"
-@@ -28814,7 +28811,7 @@ fi
- echo "$as_me:$LINENO: checking for command to kill processes" >&5
- echo $ECHO_N "checking for command to kill processes... $ECHO_C" >&6
- 
--if test `uname -s` = "SunOS" ; then
-+if test `uname -s` = "SunOS" || test `uname -s` = "OpenBSD" ; then
- 	KILL_PROCESS_CMD="pkill";
- else
- 	KILL_PROCESS_CMD="killall";

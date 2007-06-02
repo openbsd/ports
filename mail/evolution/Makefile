@@ -1,102 +1,79 @@
-# $OpenBSD: Makefile,v 1.31 2007/04/28 16:17:26 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2007/06/02 11:32:11 jasper Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 
-PARENT_VERS=		2.2
-VERSION=		${PARENT_VERS}.3
-DISTNAME=		evolution-${VERSION}
-PKGNAME=		${DISTNAME}p4
+R=			2.10
+DISTNAME=		evolution-${R}.1
 CATEGORIES=    		mail x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
 
-SHARED_LIBS=		eabutil				0.0	\
-			econduit			0.0	\
-			econtacteditor			0.0	\
-			econtactlisteditor		0.0	\
-			efilterbar			0.0	\
-			emiscwidgets			0.0	\
-			eshell				0.0	\
-			essmime				0.0	\
-			etimezonedialog			0.0	\
-			evolution-smime			0.0	\
-			eutil				0.0	\
-			evolution-a11y			0.0	\
-			evolution-addressbook-a11y	0.0	\
-			evolution-calendar-a11y		0.0	\
-			evolution-importer		0.0	\
-			evolution-mail-importers	0.0	\
-			evolution-widgets-a11y		0.0	\
-			filter				0.0	\
-			menus				0.0
+SO_VERSION=		1.0
+.for _lib in eabutil econduit econtacteditor econtactlisteditor efilterbar \
+emiscwidgets eshell essmime etable etext etimezonedialog eutil evolution-a11y \
+evolution-addressbook-a11y evolution-addressbook-importers \
+evolution-calendar-a11y evolution-calendar-importers evolution-mail-importers \
+evolution-smime evolution-widgets-a11y filter menus
+SHARED_LIBS+=	${_lib}	${SO_VERSION}
+.endfor
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xrender \
-			c crypto fontconfig freetype pthread m ssl z \
-			ORBit-2 ORBitCosNaming-2 art_lgpl_2.>=5 atk-1.0 \
-			audiofile bonobo-2 bonobo-activation.>=4.0 bonoboui-2 \
-			esd.>=2 gailutil.>=17 gconf-2 glade-2.0 \
-			glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-			pango-1.0 pangoft2-1.0 pangocairo-1.0 \
-			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
-			gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
-			gnomeprint-2-2 gnomeprintui-2-2 cairo glitz png \
-			jpeg popt sasl2 soup-2.2.>=7.0 xml2 \
-			asn1 com_err gssapi krb5
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
+		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 asn1 \
+		atk-1.0 audiofile bonobo-2 bonobo-activation bonoboui-2 \
+		c cairo com_err crypto dbus-1 dbus-glib-1 esd expat \
+		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
+		gnomecanvas-2 gnomeprint-2-2 gnomeui-2 \
+		gnomevfs-2 gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 \
+		jpeg krb5 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 plc4 \
+		plds4 png popt pthread sasl2 soup-2.2 ssl util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:S@$@sources/evolution/${PARENT_VERS}/@}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/evolution/${R}/}
 EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		devel/gettext
 
-# XXX: Needs gal2-2.4.2, gtkhtml3-3.6.1, eds-1.2.2
 BUILD_DEPENDS=		:bison-*:devel/bison \
 			:scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
-LIB_DEPENDS=		camel-1.2,camel-provider-1.2.>=4.1,ebook-1.2.>=4.1,ecal-1.2.>=2.1,edataserver-1.2.>=4.0,edataserverui-1.2.>=5.1,egroupwise-1.2.>=5.0::databases/evolution-data-server \
-			gal-2.4,gal-a11y-2.4::devel/gal2 \
-			gtkhtml-3.6.>=18.2::www/gtkhtml3 \
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+			:desktop-file-utils-*:devel/desktop-file-utils \
+			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
+			:control-center2-*:x11/gnome/controlcenter2:
+LIB_DEPENDS=		camel-1.2,camel-provider-1.2.>=4.1,ebook-1.2.>=4.1,ecal-1.2.>=2.1,edataserver-1.2.>=4.0,edataserverui-1.2.>=5.1,egroupwise-1.2.>=5.0,exchange-storage-1.2.>=3.0::databases/evolution-data-server \
+			gtkhtml-3.14.>=0.0::www/gtkhtml3 \
 			lber.>=7,ldap.>=7::databases/openldap \
-			gstreamer-0.8.>=5.0:gstreamer-0.8.*:devel/gstreamer
+			gstreamer-0.8.>=5.0:gstreamer-0.8.*:devel/gstreamer \
+			gnomeprintui-2-2::x11/gnome/libgnomeprintui \
+			nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 YACC=			bison
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evolution
-CONFIGURE_ARGS+=	--enable-ipv6
-CONFIGURE_ARGS+=	--disable-pilot-conduits
-CONFIGURE_ARGS+=	--disable-gtk-doc
-CONFIGURE_ARGS+=        --enable-default-binary
-CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
-CONFIGURE_ARGS+=	--with-sub-version=" OpenBSD/Ports"
-CONFIGURE_ARGS+=	--with-krb5=/usr
-CONFIGURE_ARGS+=	--with-krb5-includes=/usr/include/kerberosV
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evolution \
+			--enable-ipv6 \
+			--enable-nss=yes \
+			--enable-smime=yes \
+			--enable-default-binary \
+			--disable-pilot-conduits \
+			--disable-gtk-doc \
+			--with-openldap=${LOCALBASE} \
+			--with-sub-version=" OpenBSD/Ports" \
+			--with-krb5=/usr \
+			--with-krb5-includes=/usr/include/kerberosV
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib/evolution/${PARENT_VERS}:${LOCALBASE}/lib -Z"
-SUBST_VARS=		PARENT_VERS
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib/evolution/${R}:${LOCALBASE}/lib -Z"
 
-FLAVORS=		ssl
-FLAVOR?=
-
-.if ${FLAVOR:L:Mssl}
-BUILD_DEPENDS=		::www/mozilla,-devel
-CONFIGURE_ARGS+=	--with-nspr-libs=${LOCALBASE}/mozilla/lib
-CONFIGURE_ARGS+=	--with-nspr-includes=${LOCALBASE}/mozilla/include/nspr
-CONFIGURE_ARGS+=	--with-nss-libs=${LOCALBASE}/mozilla/lib
-CONFIGURE_ARGS+=	--with-nss-includes=${LOCALBASE}/mozilla/include/nss
-CONFIGURE_ARGS+=	--enable-nss=static
-CONFIGURE_ARGS+=	--enable-smime=yes
-.else
-CONFIGURE_ARGS+=	--disable-nss
-.endif
+SUBST_VARS=		${R}
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
@@ -119,6 +96,6 @@ pre-configure:
 	fi
 
 post-install:
-	find ${PREFIX}/share/evolution/${PARENT_VERS}/default -perm 444 -exec chmod 644 {} \;
+	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;
 
 .include <bsd.port.mk>

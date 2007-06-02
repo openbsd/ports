@@ -1,12 +1,12 @@
-$OpenBSD: patch-shell_main_c,v 1.1 2005/09/08 04:52:12 marcm Exp $
---- shell/main.c.orig	Tue May 24 06:21:50 2005
-+++ shell/main.c	Fri Aug 19 12:12:19 2005
-@@ -525,7 +525,7 @@ main (int argc, char **argv)
- 	}
- 
- 	if (killev) {
--		execl (EVOLUTION_TOOLSDIR "/killev", "killev", NULL);
-+		execl (EVOLUTION_TOOLSDIR "/killev", "killev", (void *)NULL);
+$OpenBSD: patch-shell_main_c,v 1.2 2007/06/02 11:32:11 jasper Exp $
+--- shell/main.c.orig	Mon Apr  9 15:07:48 2007
++++ shell/main.c	Wed Apr 25 23:32:07 2007
+@@ -533,7 +533,7 @@ main (int argc, char **argv)
+ 		filename = g_build_filename (EVOLUTION_TOOLSDIR,
+ 					     "killev",
+ 					     NULL);
+-		execl (filename, "killev", NULL);
++		execl (filename, "killev", (void *)NULL);
  		/* Not reached */
  		exit (0);
  	}
