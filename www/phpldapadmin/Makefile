@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/04 22:15:06 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.9 2007/06/02 00:15:40 rui Exp $ 
 
 COMMENT=	"web-based LDAP browser to manage LDAP servers"
 
 VERSION=	1.0.1
 DISTNAME=	phpldapadmin-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 HOMEPAGE=	http://phpldapadmin.sourceforge.net/	
 
