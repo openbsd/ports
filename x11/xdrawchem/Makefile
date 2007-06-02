@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/07 14:01:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/02 08:39:34 ajacoutot Exp $
 
 COMMENT=	"two-dimensional molecule drawing program"
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-qtincdir=${MODQT_INCDIR} \
 		--with-qtlibdir=${MODQT_LIBDIR}
 
-.if ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "powerpc"
 PATCH_LIST=	patch-* gcc-*
 .endif
 
