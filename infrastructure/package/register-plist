@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.14 2007/05/21 21:24:56 espie Exp $
+# $OpenBSD: register-plist,v 1.15 2007/06/02 12:23:28 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -169,7 +169,7 @@ package OpenBSD::PackingElement::Manpage;
 sub remove_auxiliary
 {
 	my ($self, $list) = @_;
-	if ($self->can("is_source") && $self->is_source && @$list > 0 && 
+	if ($self->is_source && @$list > 0 && 
 	    ref($list->[0]) eq ref($self) && 
 	    $list->[0]->{name} eq $self->source_to_dest) {
 		shift @$list;
@@ -192,7 +192,6 @@ sub compare
 		return 0;
 	}
 
-	return 1 if !$self->can("is_source");
 	# one is the conversion of the other
 	if ($self->is_source && $self->source_to_dest eq $self2->{name}) {
 		return 2;
