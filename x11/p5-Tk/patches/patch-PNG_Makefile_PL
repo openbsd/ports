@@ -1,7 +1,7 @@
-$OpenBSD: patch-PNG_Makefile_PL,v 1.1 2005/07/05 21:10:44 naddy Exp $
---- PNG/Makefile.PL.orig	Tue Jul  5 20:57:20 2005
-+++ PNG/Makefile.PL	Tue Jul  5 20:58:11 2005
-@@ -15,7 +15,7 @@ foreach my $file (qw(zlib/Makefile.PL li
+$OpenBSD: patch-PNG_Makefile_PL,v 1.2 2007/06/02 14:54:53 ajacoutot Exp $
+--- PNG/Makefile.PL.orig	Tue Dec 30 11:45:03 2003
++++ PNG/Makefile.PL	Sat Jun  2 16:10:46 2007
+@@ -15,7 +15,7 @@ foreach my $file (qw(zlib/Makefile.PL libpng/Makefile.
   }
  
  if ($Tk::MMtry::VERSION ge '4.007' &&

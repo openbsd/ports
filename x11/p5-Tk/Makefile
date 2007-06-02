@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/21 20:58:51 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2007/06/02 14:54:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-demo=	"demonstrate the features of ptk"
 MODULES=	cpan
 VERSION=	804.027
 DISTNAME=	Tk-${VERSION}
-PKGNAME-main=	p5-Tk-${VERSION}p1
+PKGNAME-main=	p5-Tk-${VERSION}p2
 PKGNAME-demo=	p5-Tk-demo-${VERSION}p0
 CATEGORIES=	x11 devel
 
