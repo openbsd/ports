@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: dolock,v 1.2 2005/11/01 10:54:42 sturm Exp $
+# $OpenBSD: dolock,v 1.3 2007/06/02 12:03:56 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -19,7 +19,7 @@ use warnings;
 use Fcntl;
 use File::Basename;
 
-if (@ARGV != 1) {
+if (@ARGV == 0) {
 	exit(1);
 }
 my $fname = shift;
@@ -33,6 +33,9 @@ unless (-d $dname) {
 
 while(1) {
 	if (sysopen my $handle, $fname, O_WRONLY | O_EXCL | O_CREAT, 0666) {
+		if (@ARGV)  {
+			print $handle join("\n", @ARGV), "\n";
+		}
 		close($handle);
 		exit(0);
 	}
