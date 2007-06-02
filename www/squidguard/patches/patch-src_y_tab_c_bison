@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_y_tab_c_bison,v 1.1.1.1 2007/06/02 15:26:54 aanriot Exp $
+--- src/y.tab.c.bison.orig	Fri Mar 16 05:15:05 2007
++++ src/y.tab.c.bison	Fri Jun  1 19:58:04 2007
+@@ -189,9 +189,12 @@
+ #include "sg.h"
+ 
+ #ifdef HAVE_LIBLDAP
+-#include "lber.h"
+-#include "ldap.h"
++#ifndef LDAP_DEPRECATED
++#define LDAP_DEPRECATED 1
+ #endif
++#include <lber.h>
++#include <ldap.h>
++#endif
+ 
+ #include "sgEx.h"
+ 
+@@ -2943,7 +2946,7 @@ struct Source *sgFindSource (bsrc, net, ident, domain)
+ 	  founduser = 1;
+ 	  unblockeduser = 1;
+ 	  if(s->userquota.seconds != 0){
+-            struct UserInfo uq;
++            // struct UserInfo uq;
+ 	    time_t t = time(NULL) + globalDebugTimeDelta;
+ 	    //sgLogError("status %d time %d lasttime %d consumed %d", userquota->status, userquota->time, userquota->last, userquota->consumed);
+ 	    //sgLogError("renew %d seconds %d", s->userquota.renew, s->userquota.seconds);
+@@ -3929,11 +3932,14 @@ void sgTimeSetAcl()
+   for(rew = Rewrite; rew != NULL; rew = rew->next){
+     if(rew->time != NULL){
+       rew->active = rew->time->active;
+-      if(rew->within == OUTSIDE)
+-	if(rew->active)
++      if(rew->within == OUTSIDE) {
++	if(rew->active) {
+ 	  rew->active = 0;
+-	else
++	}
++	else  {
+ 	  rew->active = 1;
++	}
++      }
+     }
+   }
+ }

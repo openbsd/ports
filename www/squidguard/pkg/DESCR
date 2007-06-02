@@ -1,0 +1,6 @@
+squidGuard is a combined filter, redirector and access controller plugin
+for Squid. It can be used to limit the web access for some users, block
+access to URLs, redirect trafic, etc.
+
+Flavors:
+	ldap - Build with LDAP support
