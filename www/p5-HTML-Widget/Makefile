@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/05 17:44:52 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/06/02 15:32:00 simon Exp $
 
 COMMENT=	"HTML widget and validation framework"
 
-DISTNAME=	HTML-Widget-1.10
-PKGNAME=	p5-${DISTNAME}p3
+DISTNAME=	HTML-Widget-1.11
 CATEGORIES=	www
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +18,7 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor-Chained \
 		::devel/p5-Date-Calc \
 		::devel/p5-Module-Pluggable-Fast \
 		::mail/p5-Email-Valid \
-		::www/p5-HTML-Tree \
+		:p5-HTML-Tree->=3.23:www/p5-HTML-Tree \
 		::www/p5-HTML-Scrubber 
 REGRESS_DEPENDS=::devel/p5-Test-NoWarnings
 

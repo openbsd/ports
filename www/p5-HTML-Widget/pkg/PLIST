@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/05 20:40:19 espie Exp $
-${P5SITE}/HTML/
+@comment $OpenBSD: PLIST,v 1.3 2007/06/02 15:32:00 simon Exp $
 ${P5SITE}/HTML/Widget/
 ${P5SITE}/HTML/Widget.pm
 ${P5SITE}/HTML/Widget/Accessor.pm
@@ -10,6 +9,7 @@ ${P5SITE}/HTML/Widget/Constraint/ASCII.pm
 ${P5SITE}/HTML/Widget/Constraint/All.pm
 ${P5SITE}/HTML/Widget/Constraint/AllOrNone.pm
 ${P5SITE}/HTML/Widget/Constraint/Any.pm
+${P5SITE}/HTML/Widget/Constraint/Bool.pm
 ${P5SITE}/HTML/Widget/Constraint/Callback.pm
 ${P5SITE}/HTML/Widget/Constraint/CallbackOnce.pm
 ${P5SITE}/HTML/Widget/Constraint/Date.pm
@@ -26,6 +26,7 @@ ${P5SITE}/HTML/Widget/Constraint/Number.pm
 ${P5SITE}/HTML/Widget/Constraint/Printable.pm
 ${P5SITE}/HTML/Widget/Constraint/Range.pm
 ${P5SITE}/HTML/Widget/Constraint/Regex.pm
+${P5SITE}/HTML/Widget/Constraint/SingleValue.pm
 ${P5SITE}/HTML/Widget/Constraint/String.pm
 ${P5SITE}/HTML/Widget/Constraint/Time.pm
 ${P5SITE}/HTML/Widget/Container.pm
@@ -68,6 +69,7 @@ ${P5SITE}/HTML/Widget/Result.pm
 @man man/man3p/HTML::Widget::Constraint::All.3p
 @man man/man3p/HTML::Widget::Constraint::AllOrNone.3p
 @man man/man3p/HTML::Widget::Constraint::Any.3p
+@man man/man3p/HTML::Widget::Constraint::Bool.3p
 @man man/man3p/HTML::Widget::Constraint::Callback.3p
 @man man/man3p/HTML::Widget::Constraint::CallbackOnce.3p
 @man man/man3p/HTML::Widget::Constraint::Date.3p
@@ -84,6 +86,7 @@ ${P5SITE}/HTML/Widget/Result.pm
 @man man/man3p/HTML::Widget::Constraint::Printable.3p
 @man man/man3p/HTML::Widget::Constraint::Range.3p
 @man man/man3p/HTML::Widget::Constraint::Regex.3p
+@man man/man3p/HTML::Widget::Constraint::SingleValue.3p
 @man man/man3p/HTML::Widget::Constraint::String.3p
 @man man/man3p/HTML::Widget::Constraint::Time.3p
 @man man/man3p/HTML::Widget::Container.3p
