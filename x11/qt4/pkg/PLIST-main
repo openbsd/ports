@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2007/05/22 09:09:32 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2007/06/02 08:27:36 espie Exp $
 @pkgpath x11/qt4
 %%SHARED%%
 bin/assistant4
@@ -1156,7 +1156,6 @@ include/X11/qt4/QtDesigner/QDesignerPromotionInterface
 include/X11/qt4/QtDesigner/QDesignerPropertyEditorInterface
 include/X11/qt4/QtDesigner/QDesignerPropertySheetExtension
 include/X11/qt4/QtDesigner/QDesignerResourceBrowserInterface
-include/X11/qt4/QtDesigner/QDesignerScriptExtension
 include/X11/qt4/QtDesigner/QDesignerTaskMenuExtension
 include/X11/qt4/QtDesigner/QDesignerWidgetBoxInterface
 include/X11/qt4/QtDesigner/QDesignerWidgetDataBaseInterface
@@ -1202,7 +1201,6 @@ include/X11/qt4/QtDesigner/qdesigner_components.h
 include/X11/qt4/QtDesigner/qdesigner_components_global.h
 include/X11/qt4/QtDesigner/qdesignerexportwidget.h
 include/X11/qt4/QtDesigner/qextensionmanager.h
-include/X11/qt4/QtDesigner/script.h
 include/X11/qt4/QtDesigner/sdk_global.h
 include/X11/qt4/QtDesigner/taskmenu.h
 include/X11/qt4/QtDesigner/uilib_global.h
@@ -2310,6 +2308,7 @@ lib/qt4/phrasebooks/finnish.qph
 lib/qt4/phrasebooks/french.qph
 lib/qt4/phrasebooks/german.qph
 lib/qt4/phrasebooks/italian.qph
+lib/qt4/phrasebooks/japanese.qph
 lib/qt4/phrasebooks/norwegian.qph
 lib/qt4/phrasebooks/russian.qph
 lib/qt4/phrasebooks/spanish.qph
@@ -2339,13 +2338,16 @@ lib/qt4/plugins/sqldrivers/
 lib/qt4/q3porting.xml
 lib/qt4/translations/
 lib/qt4/translations/assistant_de.qm
+lib/qt4/translations/assistant_ja.qm
 lib/qt4/translations/designer_de.qm
 lib/qt4/translations/designer_ja.qm
+lib/qt4/translations/linguist_ja.qm
 lib/qt4/translations/qt_ar.qm
 lib/qt4/translations/qt_de.qm
 lib/qt4/translations/qt_es.qm
 lib/qt4/translations/qt_fr.qm
 lib/qt4/translations/qt_iw.qm
+lib/qt4/translations/qt_ja_jp.qm
 lib/qt4/translations/qt_pt.qm
 lib/qt4/translations/qt_ru.qm
 lib/qt4/translations/qt_sk.qm

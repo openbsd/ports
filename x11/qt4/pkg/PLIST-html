@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.10 2007/05/22 09:09:32 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.11 2007/06/02 08:27:36 espie Exp $
 share/doc/qt4/
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
@@ -620,7 +620,6 @@ share/doc/qt4/html/images/designer-widget-box.png
 share/doc/qt4/html/images/designer-widget-tool.png
 share/doc/qt4/html/images/diagonalGradient.png
 share/doc/qt4/html/images/diagramscene.png
-share/doc/qt4/html/images/dialogbuttonboxexample.png
 share/doc/qt4/html/images/digitalclock-example.png
 share/doc/qt4/html/images/dirview-example.png
 share/doc/qt4/html/images/dockwidgets-example.png
@@ -703,6 +702,7 @@ share/doc/qt4/html/images/javaiterators1.png
 share/doc/qt4/html/images/javaiterators2.png
 share/doc/qt4/html/images/layout1.png
 share/doc/qt4/html/images/layout2.png
+share/doc/qt4/html/images/licensewizard-example.png
 share/doc/qt4/html/images/licensewizard-flow.png
 share/doc/qt4/html/images/lineedits-example.png
 share/doc/qt4/html/images/linguist-arrowpad_en.png
@@ -1098,6 +1098,7 @@ share/doc/qt4/html/images/relationaltablemodel-example.png
 share/doc/qt4/html/images/resources.png
 share/doc/qt4/html/images/richtext-document.png
 share/doc/qt4/html/images/rintersect.png
+share/doc/qt4/html/images/rsslistingexample.png
 share/doc/qt4/html/images/rsubtract.png
 share/doc/qt4/html/images/runion.png
 share/doc/qt4/html/images/rxor.png
@@ -1186,6 +1187,10 @@ share/doc/qt4/html/images/torrent-example.png
 share/doc/qt4/html/images/transformations-example.png
 share/doc/qt4/html/images/treemodel-structure.png
 share/doc/qt4/html/images/treemodelcompleter-example.png
+share/doc/qt4/html/images/trivialwizard-example-conclusion.png
+share/doc/qt4/html/images/trivialwizard-example-flow.png
+share/doc/qt4/html/images/trivialwizard-example-introduction.png
+share/doc/qt4/html/images/trivialwizard-example-registration.png
 share/doc/qt4/html/images/trolltech-logo.png
 share/doc/qt4/html/images/tutorial8-layout.png
 share/doc/qt4/html/images/tutorial8-reallayout.png
@@ -1638,7 +1643,6 @@ share/doc/qt4/html/painting-painterpaths-renderarea-h.html
 share/doc/qt4/html/painting-painterpaths-window-cpp.html
 share/doc/qt4/html/painting-painterpaths-window-h.html
 share/doc/qt4/html/painting-painterpaths.html
-share/doc/qt4/html/painting-separations.html
 share/doc/qt4/html/painting-svgviewer-main-cpp.html
 share/doc/qt4/html/painting-svgviewer-mainwindow-cpp.html
 share/doc/qt4/html/painting-svgviewer-mainwindow-h.html
@@ -2270,8 +2274,6 @@ share/doc/qt4/html/qdesignerpropertyeditorinterface-members.html
 share/doc/qt4/html/qdesignerpropertyeditorinterface.html
 share/doc/qt4/html/qdesignerpropertysheetextension-members.html
 share/doc/qt4/html/qdesignerpropertysheetextension.html
-share/doc/qt4/html/qdesignerscriptextension-members.html
-share/doc/qt4/html/qdesignerscriptextension.html
 share/doc/qt4/html/qdesignertaskmenuextension-members.html
 share/doc/qt4/html/qdesignertaskmenuextension.html
 share/doc/qt4/html/qdesignerwidgetboxinterface-members.html
@@ -2443,8 +2445,6 @@ share/doc/qt4/html/qglwidget-members.html
 share/doc/qt4/html/qglwidget-obsolete.html
 share/doc/qt4/html/qglwidget-qt3.html
 share/doc/qt4/html/qglwidget.html
-share/doc/qt4/html/qglwindowsurface-members.html
-share/doc/qt4/html/qglwindowsurface.html
 share/doc/qt4/html/qgradient-members.html
 share/doc/qt4/html/qgradient.html
 share/doc/qt4/html/qgraphicsellipseitem-members.html
@@ -3346,6 +3346,12 @@ share/doc/qt4/html/qtooltip-qt3.html
 share/doc/qt4/html/qtooltip.html
 share/doc/qt4/html/qtopengl.html
 share/doc/qt4/html/qtopiacore-accel.html
+share/doc/qt4/html/qtopiacore-ahigl-qscreenahigl-qws-cpp.html
+share/doc/qt4/html/qtopiacore-ahigl-qscreenahigl-qws-h.html
+share/doc/qt4/html/qtopiacore-ahigl-qscreenahiglplugin-cpp.html
+share/doc/qt4/html/qtopiacore-ahigl-qwindowsurface-ahigl-cpp.html
+share/doc/qt4/html/qtopiacore-ahigl-qwindowsurface-ahigl-p-h.html
+share/doc/qt4/html/qtopiacore-ahigl.html
 share/doc/qt4/html/qtopiacore-architecture.html
 share/doc/qt4/html/qtopiacore-charinput.html
 share/doc/qt4/html/qtopiacore-crosscompiling.html
@@ -3492,6 +3498,8 @@ share/doc/qt4/html/qwsembedwidget-members.html
 share/doc/qt4/html/qwsembedwidget.html
 share/doc/qt4/html/qwsevent-members.html
 share/doc/qt4/html/qwsevent.html
+share/doc/qt4/html/qwsglwindowsurface-members.html
+share/doc/qt4/html/qwsglwindowsurface.html
 share/doc/qt4/html/qwsinputmethod-members.html
 share/doc/qt4/html/qwsinputmethod-obsolete.html
 share/doc/qt4/html/qwsinputmethod.html
@@ -3603,7 +3611,6 @@ share/doc/qt4/html/script-context2d-scripts-bezier-js.html
 share/doc/qt4/html/script-context2d-scripts-clock-js.html
 share/doc/qt4/html/script-context2d-scripts-fill1-js.html
 share/doc/qt4/html/script-context2d-scripts-grad-js.html
-share/doc/qt4/html/script-context2d-scripts-image-js.html
 share/doc/qt4/html/script-context2d-scripts-linecap-js.html
 share/doc/qt4/html/script-context2d-scripts-linestye-js.html
 share/doc/qt4/html/script-context2d-scripts-moveto-js.html
@@ -3871,12 +3878,6 @@ share/doc/qt4/html/widgets-charactermap-main-cpp.html
 share/doc/qt4/html/widgets-charactermap-mainwindow-cpp.html
 share/doc/qt4/html/widgets-charactermap-mainwindow-h.html
 share/doc/qt4/html/widgets-charactermap.html
-share/doc/qt4/html/widgets-dialogbuttonbox-addbuttondialog-cpp.html
-share/doc/qt4/html/widgets-dialogbuttonbox-addbuttondialog-h.html
-share/doc/qt4/html/widgets-dialogbuttonbox-main-cpp.html
-share/doc/qt4/html/widgets-dialogbuttonbox-mainwindow-cpp.html
-share/doc/qt4/html/widgets-dialogbuttonbox-mainwindow-h.html
-share/doc/qt4/html/widgets-dialogbuttonbox.html
 share/doc/qt4/html/widgets-digitalclock-digitalclock-cpp.html
 share/doc/qt4/html/widgets-digitalclock-digitalclock-h.html
 share/doc/qt4/html/widgets-digitalclock-main-cpp.html
@@ -3984,6 +3985,10 @@ share/doc/qt4/html/xml-dombookmarks-mainwindow-h.html
 share/doc/qt4/html/xml-dombookmarks-xbeltree-cpp.html
 share/doc/qt4/html/xml-dombookmarks-xbeltree-h.html
 share/doc/qt4/html/xml-dombookmarks.html
+share/doc/qt4/html/xml-rsslisting-main-cpp.html
+share/doc/qt4/html/xml-rsslisting-rsslisting-cpp.html
+share/doc/qt4/html/xml-rsslisting-rsslisting-h.html
+share/doc/qt4/html/xml-rsslisting.html
 share/doc/qt4/html/xml-saxbookmarks-main-cpp.html
 share/doc/qt4/html/xml-saxbookmarks-mainwindow-cpp.html
 share/doc/qt4/html/xml-saxbookmarks-mainwindow-h.html

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2007/05/22 09:09:32 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2007/06/02 08:27:36 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -32,7 +32,7 @@ SHARED_LIBS=	Qt3Support 8.0 \
 		QtScript 0.0
 
 
-VERSION=	4.3.0rc1
+VERSION=	4.3.0
 DISTNAME=	qt-x11-opensource-src-${VERSION}
 
 
