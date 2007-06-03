@@ -1,0 +1,30 @@
+$OpenBSD: patch-keximdb_src_keximdb_Makefile_in,v 1.1.1.1 2007/06/03 09:55:08 espie Exp $
+--- keximdb/src/keximdb/Makefile.in.orig	Fri Sep  8 00:55:13 2006
++++ keximdb/src/keximdb/Makefile.in	Sun Jun  3 10:40:14 2007
+@@ -62,8 +62,7 @@ am__installdirs = "$(DESTDIR)$(kde_moduledir)" \
+ kde_moduleLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(kde_module_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-keximigrate_mdb_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1) ../mdbtools/libmdb/libmdb.la
++keximigrate_mdb_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_keximigrate_mdb_la_OBJECTS = mdbmigrate.lo
+ #>- keximigrate_mdb_la_OBJECTS = $(am_keximigrate_mdb_la_OBJECTS)
+ #>+ 1
+@@ -363,14 +362,14 @@ kde_services_DATA = keximigrate_mdb.desktop
+ keximigrate_mdb_la_SOURCES = mdbmigrate.cpp
+ AM_CPPFLAGS = \
+   -DMDB_NO_BACKENDS=1 -DMDB_NO_STATS=1 \
+-  -I$(top_srcdir)/keximdb/src/mdbtools/include \
++  -I$(LOCALBASE)/include \
+   -I$(KEXIDB_INC) -I$(KEXIDB_INC)/kexidb \
+   $(GLIB_CFLAGS) $(all_includes)
+ 
+ #>- keximigrate_mdb_la_METASOURCES = AUTO
+ keximigrate_mdb_la_LIBADD = \
+   $(LIB_QT) $(GLIB_LIBADD) -L$(KEXIDB_LIB) -lkeximigrate \
+-  ../mdbtools/libmdb/libmdb.la
++  -L${LOCALBASE}/lib -lmdb
+ 
+ #>- keximigrate_mdb_la_LDFLAGS = \
+ #>-   $(all_libraries) $(GLIB_LDFLAGS) \

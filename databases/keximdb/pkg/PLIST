@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/03 09:55:08 espie Exp $
+${KDE}/keximigrate_mdb.la
+${KDE}/keximigrate_mdb.so
+share/services/keximigrate_mdb.desktop

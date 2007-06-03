@@ -1,0 +1,12 @@
+$OpenBSD: patch-keximdb_src_Makefile_in,v 1.1.1.1 2007/06/03 09:55:08 espie Exp $
+--- keximdb/src/Makefile.in.orig	Sun Jun  3 10:31:02 2007
++++ keximdb/src/Makefile.in	Sun Jun  3 10:31:16 2007
+@@ -327,7 +327,7 @@ x_libraries = @x_libraries@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-SUBDIRS = mdbtools keximdb
++SUBDIRS = keximdb
+ #>- all: all-recursive
+ #>+ 1
+ all: docs-am  all-recursive
