@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/03 16:59:35 steven Exp $
+bin/ocrad
+@info info/ocrad.info
+@man man/man1/ocrad.1
+share/doc/ocrad/
+share/doc/ocrad/README
