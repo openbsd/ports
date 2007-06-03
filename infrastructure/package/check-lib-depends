@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.7 2007/05/23 10:34:15 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.8 2007/06/03 09:21:50 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -34,7 +34,12 @@ our ($opt_o, $opt_d, $opt_f, $opt_B);
 my $errors = 0;
 
 
+# FileSource: where we get the files to analyze
+package FileSource;
+
+# FakeFileSource : file system
 package FakeFileSource;
+our @ISA=(qw(FileSource));
 sub new
 {
 	my ($class, $location) = @_;
@@ -55,7 +60,9 @@ sub clean
 {
 }
 
+# RealFileSource: package archive
 package RealFileSource;
+our @ISA=(qw(FileSource));
 sub new
 {
 	my ($class, $handle, $location) = @_;
@@ -102,6 +109,74 @@ sub clean
 	unlink($self->extracted_name($item));
 }
 
+# Recorder: how we keep track of which binary uses which library
+package Recorder;
+sub new
+{
+	my $class = shift;
+	return bless {}, $class;
+}
+
+sub reduce_libname
+{
+	my ($self, $lib) = @_;
+	$lib =~ s/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/$2.$3/;
+	return $lib;
+}
+
+sub libs
+{
+	my $self = shift;
+	return keys %$self;
+}
+
+# SimpleRecorder: remember one single binary for each library
+package SimpleRecorder;
+our @ISA=(qw(Recorder));
+sub record
+{
+	my ($self, $lib, $filename) = @_;
+	$self->{$self->reduce_libname($lib)} = $filename;
+}
+
+sub binary
+{
+	my ($self, $lib) = @_;
+	return $self->{$lib};
+}
+
+# AllRecorder: remember all binaries for each library
+package AllRecorder;
+our @ISA=(qw(Recorder));
+sub record
+{
+	my ($self, $lib, $filename) = @_;
+	push(@{$self->{$self->reduce_libname($lib)}}, $filename);
+}
+
+sub binaries
+{
+	my ($self, $lib) = @_;
+	return @{$self->{$lib}};
+}
+sub binary
+{
+	my ($self, $lib) = @_;
+	return $self->{$lib}->[0];
+}
+
+sub dump
+{
+	my $self = shift;
+	for my $lib (sort $self->libs) {
+		print "$lib:\t\n";
+		for my $binary (sort $self->binaries($lib)) {
+			print "\t$binary\n";
+		}
+	}
+}
+
+# Issue: intermediate objects that record problems with libraries
 package Issue;
 sub new
 {
@@ -228,7 +303,7 @@ sub shellquote
 
 sub record_needed_libs
 {
-	my ($item, $t, $source) = @_;
+	my ($item, $dest, $source) = @_;
 	my $fullname = File::Spec->canonpath($item->fullname);
 
 	my $linux_bin = 0;
@@ -267,12 +342,7 @@ sub record_needed_libs
 		for my $lib (@l) {
 			# don't look for modules
 			next if $lib =~ m/\.so$/;
-			$lib =~ s/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/$2.$3/;
-			if ($main::opt_f) {
-			    push(@{$t->{$lib}}, $fullname);
-			} else {
-			    $t->{$lib} = $fullname;
-			}
+			$dest->record($lib, $fullname);
 		}
 	}
 	$source->clean($item);
@@ -426,51 +496,45 @@ sub print_list
 
 sub analyze 
 {
-	my ($plist, $db, $source, @l) = @_;
+	my ($plist, $source, @l) = @_;
 
-	my $pkgname = $plist->pkgname();
-	my $t = { haslib => {}, needlib => {} };
-	$plist->record_needed_libs($t->{needlib}, $source, @l);
-	$plist->register_libs($t->{haslib});
+	my $pkgname = $plist->pkgname;
+	my $needed_libs = $opt_f ? AllRecorder->new : SimpleRecorder->new;
+	my $has_libs = {};
+	$plist->record_needed_libs($needed_libs, $source, @l);
+	$plist->register_libs($has_libs);
 
 	if (!defined $dependencies->{$pkgname}) {
 		register_dependencies($plist);
 		OpenBSD::SharedLibs::add_libs_from_plist($plist);
 	}
 	my $r = { wantlib => {}, libdepends => {}, wantlib2 => {} };
-	for my $lib (sort keys %{$t->{needlib}}) {
-		my $fullname = $t->{needlib}->{$lib};
-		$fullname = $fullname->[0] if $opt_f;
-		if (!defined $t->{haslib}->{$lib}) {
+	for my $lib (sort $needed_libs->libs) {
+		my $fullname = $needed_libs->binary($lib);
+		if (!defined $has_libs->{$lib}) {
 			my $issue = report_lib_issue($plist, $lib, $fullname);
 			$issue->print;
 			$errors++;
 			$issue->record_wantlib($r->{wantlib});
-		} elsif ($t->{haslib}->{$lib} == 1) {
+		} elsif ($has_libs->{$lib} == 1) {
 			my $issue = report_lib_issue($plist, $lib, $fullname);
 			if ($issue->print_error_not_reachable) {
 				$errors++;
 			}
 		}
-		$t->{haslib}->{$lib} = 2;
+		$has_libs->{$lib} = 2;
 	}
-	for my $k (sort keys %{$t->{haslib}}) {
-		my $v = $t->{haslib}->{$k};
+	for my $k (sort keys %$has_libs) {
+		my $v = $has_libs->{$k};
 		next if $v == 2;
 		print "Extra:         $k\n";
 	}
 	print_list("\tWANTLIB +=", $r->{wantlib});
 	if ($opt_f) {
-	    for my $lib (sort keys %{$t->{needlib}}) {
-		    print "$lib:\t\n";
-		    for my $binary (sort @{$t->{needlib}->{$lib}}) {
-			    print "\t$binary\n";
-		    }
-	    }
+	    $needed_libs->dump;
 	}
 }
 
-my $db = {};
 sub do_pkg
 {
 	my $pkgname = shift;
@@ -478,15 +542,15 @@ sub do_pkg
 	print "\n$pkgname:\n";
 	my $true_package = OpenBSD::PackageLocator->find($pkgname);
 	return 0 unless $true_package;
-	my $dir = $true_package->info();
+	my $dir = $true_package->info;
 	# twice read
 	return 0 unless -d $dir;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	if ($opt_B) {
-		analyze($plist, $db, FakeFileSource->new($opt_B));
+		analyze($plist, FakeFileSource->new($opt_B));
 	} else {
 		my $temp = File::Temp::mkdtemp("/tmp/zoinx.XXXXXXXXXX");
-		analyze($plist, $db, RealFileSource->new($true_package, $temp));
+		analyze($plist, RealFileSource->new($true_package, $temp));
 		rmtree($temp);
 	}
 	$true_package->close;
@@ -504,7 +568,7 @@ sub do_plist
 	} else {
 		my $pkgname = $plist->pkgname;
 		print "\n$pkgname:\n";
-		analyze($plist, $db, FakeFileSource->new($opt_B));
+		analyze($plist, FakeFileSource->new($opt_B));
 	}
 }
 
