@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.901 2007/06/03 12:51:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.902 2007/06/03 22:30:25 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2174,7 +2174,14 @@ print-plist:
 	@${_plist_header}; ${PKG_CMD} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; ${_plist_footer}
 
 print-plist-with-depends:
-	@${_plist_header}; ${PKG_CMD} -n -q `SUBPACKAGE=${SUBPACKAGE} ${MAKE} _print-package-args` ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
+	@${_plist_header}; \
+	if a=`SUBPACKAGE=${SUBPACKAGE} ${MAKE} _print-package-args`; \
+	then \
+		${PKG_CMD} -n -q $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
+	else \
+		exit 1; \
+	fi ; \
+	${_plist_footer}
 
 print-plist-all:
 .for _S in ${MULTI_PACKAGES}
@@ -2185,7 +2192,14 @@ print-plist-all:
 print-plist-all-with-depends:
 .for _S in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
-	@${_plist_header}; ${PKG_CMD} -n -q `SUBPACKAGE=${_S} ${MAKE} _print-package-args` ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}};${_plist_footer}
+	@${_plist_header}; \
+	if a=`SUBPACKAGE=${_S} ${MAKE} _print-package-args`; \
+	then \
+		${PKG_CMD} -n -q $$a ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; \
+	else \
+		exit 1; \
+	fi; \
+	${_plist_footer}
 .endfor
 
 print-plist-contents:
