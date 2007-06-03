@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2007/05/31 18:14:31 aanriot Exp $
+# $OpenBSD: Makefile,v 1.119 2007/06/03 09:58:42 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -13,6 +13,7 @@
      SUBDIR += gq
      SUBDIR += iodbc
      SUBDIR += jxplorer
+     SUBDIR += keximdb
      SUBDIR += libpqxx
      SUBDIR += luasqlite3
      SUBDIR += mdbtools/snapshot
