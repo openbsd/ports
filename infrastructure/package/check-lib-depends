@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.9 2007/06/03 10:32:23 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.10 2007/06/03 11:01:10 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -31,7 +31,7 @@ use OpenBSD::SharedLibs;
 use File::Temp;
 use Getopt::Std;
 
-our ($opt_o, $opt_d, $opt_f, $opt_F, $opt_B);
+our ($opt_o, $opt_d, $opt_f, $opt_F, $opt_B, $opt_s, $opt_O);
 my $errors = 0;
 
 
@@ -168,11 +168,11 @@ sub binary
 
 sub dump
 {
-	my $self = shift;
+	my ($self, $fh) = @_;
 	for my $lib (sort $self->libs) {
-		print "$lib:\t\n";
+		print $fh "$lib:\t\n";
 		for my $binary (sort $self->binaries($lib)) {
-			print "\t$binary\n";
+			print $fh "\t$binary\n";
 		}
 	}
 }
@@ -182,17 +182,34 @@ our @ISA=(qw(Recorder));
 sub record
 {
 	my ($self, $lib, $filename) = @_;
-	push(@{$self->{$filename}}, $self->reduce_libname($lib));
+	push(@{$self->{$filename}}, $lib);
 }
 
 sub dump
 {
-	my $self = shift;
+	my ($self, $fh) = @_;
 	while (my ($binary, $libs) = each %$self) {
-		print $binary, ": ", join(',', @$libs), "\n";
+		print $fh $binary, ": ", join(',', @$libs), "\n";
 	}
 }
 
+sub retrieve
+{
+	my ($self, $filename) = @_;
+	open(my $fh, '<', $filename) or die "Can't read $filename: $!";
+	local $_;
+	while (<$fh>) {
+		chomp;
+		if (m/^(.*?)\:\s(.*)$/) {
+			my ($binary, $libs) = ($1, $2);
+			my @libs = split(/,/, $libs);
+			$self->{$binary}= \@libs;
+		} else {
+			print "Can't parse $_\n";
+		}
+	}
+	close $fh;
+}
 
 # Issue: intermediate objects that record problems with libraries
 package Issue;
@@ -292,6 +309,10 @@ sub record_needed_libs
 {
 }
 
+sub find_libs
+{
+}
+
 sub register_libs
 {
 }
@@ -326,6 +347,17 @@ sub shellquote
 	local $_ = shift;
 	s/[*?;() #\\'"`\${}]/\\$&/g;
 	return $_;
+}
+
+sub find_libs
+{
+	my ($item, $dest, $special) = @_;
+	my $fullname = $item->fullname;
+	if (defined $special->{$fullname}) {
+		for my $lib (@{$special->{$fullname}}) {
+			$dest->record($lib, $fullname);
+		}
+	}
 }
 
 sub record_needed_libs
@@ -385,7 +417,7 @@ sub depwalk
 
 package main;
 
-getopts('od:f:B:F:');
+getopts('od:f:B:F:s:O:');
 
 my $dependencies = {};
 
@@ -528,7 +560,13 @@ sub analyze
 	my $pkgname = $plist->pkgname;
 	my $needed_libs = $opt_f ? AllRecorder->new : SimpleRecorder->new;
 	my $has_libs = {};
-	$plist->record_needed_libs($needed_libs, $source, @l);
+	if ($opt_s) {
+		my $special =  DumpRecorder->new;
+		$special->retrieve($opt_s);
+		$plist->find_libs($needed_libs, $special);
+	} else {
+		$plist->record_needed_libs($needed_libs, $source, @l);
+	}
 	$plist->register_libs($has_libs);
 
 	if (!defined $dependencies->{$pkgname}) {
@@ -558,7 +596,7 @@ sub analyze
 	}
 	print_list("\tWANTLIB +=", $r->{wantlib});
 	if ($opt_f) {
-	    $needed_libs->dump;
+	    $needed_libs->dump(\*STDOUT);
 	}
 }
 
@@ -602,19 +640,24 @@ sub do_plist
 if ($opt_F) {
 	my $recorder = DumpRecorder->new;
 	my $cwd = $opt_F;
-	$cwd .= '/' unless $cwd =~ m/\/$/;
-	my $source = FakeFileSource->new($cwd);
+	my $source = FakeFileSource->new($opt_F);
 	File::Find::find({
 		wanted => sub {
 		    return unless -f $_;
 		    my $name = $_;
-		    $name =~ s/^\Q$opt_F\E\///;
+		    $name =~ s/^\Q$opt_F\E//;
 		    # XXX hack FileBase object;
 		    my $i = bless {name => $name}, "MyFile";
 		    $i->record_needed_libs($recorder, $source);
 		},
 		no_chdir => 1 }, $opt_F);
-	$recorder->dump;
+	if ($opt_O) {
+		open my $fh, '>', $opt_O or die "Can't write to $opt_O: $!";
+		$recorder->dump($fh);
+		close $fh;
+	} else {
+		$recorder->dump(\*STDOUT);
+	}
 	exit(0);
 }
 if (@ARGV == 0 && defined $opt_B) {
