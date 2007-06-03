@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.10 2007/06/03 11:01:10 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.11 2007/06/03 11:57:36 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -424,7 +424,7 @@ my $dependencies = {};
 sub register_dependencies
 {
 	my $plist = shift;
-	my $pkgname = $plist->pkgname();
+	my $pkgname = $plist->pkgname;
 	my $h = {};
 	$dependencies->{$pkgname} = $h;
 	$plist->depwalk($h);
@@ -438,13 +438,12 @@ sub get_plist
 	if (defined $opt_d) {
 		my $location = "$opt_d/$pkgname.tgz";
 
-		my $true_package = OpenBSD::PackageLocator->find($pkgname);
+		my $true_package = OpenBSD::PackageLocator->find($location);
 		if ($true_package) {
-			my $dir = $true_package->info();
-			# twice read
+			my $dir = $true_package->info;
 			if (-d $dir) {
 				my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
-				$true_package->close();
+				$true_package->close;
 				rmtree($dir);
 				return $plist;
 			}
@@ -474,7 +473,7 @@ sub handle_dependency
 		delete $dependencies->{$pkgname};
 		for my $p (keys %$dependencies) {
 			if ($dependencies->{$p}->{$pkgname}) {
-				$dependencies->{$p}->{$plist->pkgname()} =
+				$dependencies->{$p}->{$plist->pkgname} =
 				    $dependencies->{$p}->{$pkgname};
 				delete $dependencies->{$p}->{$pkgname};
 			}
@@ -484,7 +483,7 @@ sub handle_dependency
 	register_dependencies($plist);
 	OpenBSD::SharedLibs::add_libs_from_plist($plist);
 
-	return $plist->pkgname();
+	return $plist->pkgname;
 }
 
 sub report_lib_issue
