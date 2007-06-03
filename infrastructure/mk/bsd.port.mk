@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.900 2007/06/03 11:06:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.901 2007/06/03 12:51:59 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2899,58 +2899,31 @@ dump-vars:
 .endif
 
 .PHONY: \
-	_build-dir-depends _fetch-makefile _fetch-onefile \
-	_print-packagename \
-	_recurse-all-dir-depends \
-	_recurse-run-dir-depends _refetch \
-	addsum _print-package-args \
-	all all-dir-depends build \
-	build-depends build-depends-list build-dir-depends \
-	checkpatch checksum clean \
-	clean-depends configure deinstall \
-	delete-package \
-	depends \
-	describe distclean distpatch \
-	do-build do-configure do-distpatch \
-	do-extract do-fetch do-install \
-	do-package do-regress extract \
-	fake fetch fetch-all \
-	fetch-makefile full-all-depends full-build-depends \
-	full-run-depends homepage-links install \
-	lib-depends lib-depends-check lib-depends-list \
-	link-categories makesum manpages-check \
-	package patch \
-	plist post-build post-configure \
-	post-distpatch post-extract post-fetch \
-	post-install post-package post-patch \
-	post-regress pre-build pre-configure \
-	pre-extract pre-fake pre-fetch \
-	pre-install pre-package pre-patch \
-	pre-regress print-build-depends print-package-signature \
-	print-run-depends \
-	readmes readme rebuild \
-	regress regress-depends \
-	reinstall repackage run-depends \
-	run-depends-list run-dir-depends show verbose-show dump-vars \
-	uninstall unlink-categories update-patches \
-	update-plist port-lib-depends-check \
-	license-check _license-check \
-	_internal-extract _internal-distpatch _internal-configure \
-	_internal-build _internal-all _internal_install _internal-fake \
-	_internal-package _internal-package-only \
-	_internal-fetch _internal-checksum \
-	_internal-depends _internal-lib-depends _internal-buildwantlib-depends \
-	_internal-runwantlib-depends \
-	_internal-buildlib-depends _internal_runlib-depends \
-	_internal-build-depends \
-	_internal-run-depends _internal-regress-depends \
-	_internal-regress _internal-clean \
-	_internal-manpages-check _internal-plist _internal-update-plist \
-	_internal-update update print-plist print-plist-contents \
-	_list-port-libs _print-package-signature-lib _print-package-signature-run \
-	show-required-by peek-ftp _internal-subpackage \
-	_internal-install-all install-all \
-	subpackage _internal-subupdate _internal-update \
-	regress-dir-depends _recurse-regress-dir-depends \
-	full-regress-depends print-plist-all \
-	print-plist-with-depends print-plist-all-with-depends
+	${_recursive_targets} ${_recursive_describe_targets}  \
+	${_recursive_depends_targets} \
+	_build-dir-depends _fetch-makefile _fetch-onefile _internal-all \
+	_internal-build _internal-build-depends _internal-buildlib-depends \
+	_internal-buildwantlib-depends _internal-checksum _internal-clean \
+	_internal-configure _internal-depends _internal-distpatch \
+	_internal-extract _internal-fake _internal-fetch _internal-install-all \
+	_internal-lib-depends _internal-manpages-check _internal-package \
+	_internal-package-only _internal-plist _internal-regress \
+	_internal-regress-depends _internal-run-depends \
+	_internal-runwantlib-depends _internal-subpackage _internal-subupdate \
+	_internal-update _internal-update _internal-update-plist \
+	_internal_install _internal_runlib-depends _license-check \
+	_list-port-libs _print-package-args _print-package-signature-lib \
+	_print-package-signature-run _print-packagename _recurse-all-dir-depends \
+	_recurse-regress-dir-depends _recurse-run-dir-depends _refetch addsum \
+	build-depends build-depends-list checkpatch clean clean-depends \
+	delete-package depends distpatch do-build do-configure do-distpatch \
+	do-extract do-fetch do-install do-package do-regress fetch-all \
+	full-all-depends full-build-depends full-regress-depends \
+	full-run-depends install-all lib-depends lib-depends-list makesum \
+	peek-ftp plist port-lib-depends-check post-build post-configure \
+	post-distpatch post-extract post-fetch post-install post-package \
+	post-patch post-regress pre-build pre-configure pre-extract pre-fake \
+	pre-fetch pre-install pre-package pre-patch pre-regress \
+	print-build-depends print-run-depends readme readmes rebuild \
+	regress-depends repackage run-depends run-depends-list show-required-by \
+	subpackage uninstall update-patches update-plist

@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.12 2006/12/26 15:00:24 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.13 2007/06/03 12:51:59 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -89,4 +89,18 @@ REPORT_PROBLEM ?= echo "$$subdir ($@)">>${REPORT_PROBLEM_LOGFILE}
 .else
 REPORT_PROBLEM ?= exit 1
 .endif
+
+_recursive_targets = \
+	all build checksum configure deinstall distclean extract fake fetch \
+	fetch-makefile install lib-depends-check license-check link-categories \
+	manpages-check package patch print-package-signature regress reinstall \
+	unlink-categories update
+
+_recursive_describe_targets = \
+	describe dump-vars homepage-links print-plist print-plist-all \
+	print-plist-all-with-depends print-plist-contents \
+	print-plist-with-depends show verbose-show
+
+_recursive_depends_targets = \
+	all-dir-depends build-dir-depends regress-dir-depends run-dir-depends
 

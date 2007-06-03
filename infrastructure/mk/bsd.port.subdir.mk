@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.84 2007/04/28 10:19:41 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.85 2007/06/03 12:51:59 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -115,25 +115,20 @@ _subdir_fragment = \
 		_STARTDIR_SEEN=true; \
 	done
 
-.for __target in all fetch package fake extract patch configure \
-	build distclean deinstall install update \
-	reinstall checksum fetch-makefile \
-	link-categories unlink-categories regress lib-depends-check \
-	newlib-depends-check manpages-check license-check \
-	print-package-signature 
+.for __target in ${_recursive_targets}
 
 ${__target}:
 	@${_subdir_fragment}
 .endfor
 
-.for __target in describe show verbose-show dump-vars \
+.for __target in ${_recursive_describe_targets}
 	homepage-links print-plist print-plist-contents \
 	print-plist-all print-plist-with-depends print-plist-all-with-depends
 ${__target}:
 	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
 .endfor
 
-.for __target in all-dir-depends build-dir-depends run-dir-depends regress-dir-depends
+.for __target in ${_recursive_depends_targets}
 
 ${__target}: 
 	@${_depfile_fragment}; echo_msg=:; ${_subdir_fragment}
@@ -181,11 +176,5 @@ ${READMES_TOP}/${PKGPATH}/README.html:
 		${README} > $@
 	@rm ${TMPDIR}/subdirs
 
-.PHONY: all fetch package fake extract configure \
-	build describe distclean deinstall install update \
-	reinstall checksum show verbose-show dump-vars fetch-makefile \
-	link-categories unlink-categories regress lib-depends-check \
-	newlib-depends-check \
-	homepage-links manpages-check license-check \
-	all-dir-depends build-dir-depends run-dir-depends regress-dir-depends \
-	clean readmes print-package-signature
+.PHONY: ${_recursive_targets} ${_recursive_describe_targets} \
+	${_recursive_depends_targets} clean readmes
