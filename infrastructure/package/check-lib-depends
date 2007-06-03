@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.8 2007/06/03 09:21:50 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.9 2007/06/03 10:32:23 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -20,6 +20,7 @@
 use strict;
 use warnings;
 
+use File::Find;
 use File::Spec;
 use File::Path;
 use File::Basename;
@@ -30,7 +31,7 @@ use OpenBSD::SharedLibs;
 use File::Temp;
 use Getopt::Std;
 
-our ($opt_o, $opt_d, $opt_f, $opt_B);
+our ($opt_o, $opt_d, $opt_f, $opt_F, $opt_B);
 my $errors = 0;
 
 
@@ -176,6 +177,23 @@ sub dump
 	}
 }
 
+package DumpRecorder;
+our @ISA=(qw(Recorder));
+sub record
+{
+	my ($self, $lib, $filename) = @_;
+	push(@{$self->{$filename}}, $self->reduce_libname($lib));
+}
+
+sub dump
+{
+	my $self = shift;
+	while (my ($binary, $libs) = each %$self) {
+		print $binary, ": ", join(',', @$libs), "\n";
+	}
+}
+
+
 # Issue: intermediate objects that record problems with libraries
 package Issue;
 sub new
@@ -258,6 +276,15 @@ sub print_error_not_reachable
 	my $self = shift;
 	print "Bogus WANTLIB: ", $self->stringize, " (NOT REACHABLE)\n";
 	return 1;
+}
+
+package MyFile;
+our @ISA=(qw(OpenBSD::PackingElement::FileBase));
+
+sub fullname
+{
+	my $self = shift;
+	return $self->{name};
 }
 
 package OpenBSD::PackingElement;
@@ -358,7 +385,7 @@ sub depwalk
 
 package main;
 
-getopts('od:f:B:');
+getopts('od:f:B:F:');
 
 my $dependencies = {};
 
@@ -572,6 +599,24 @@ sub do_plist
 	}
 }
 
+if ($opt_F) {
+	my $recorder = DumpRecorder->new;
+	my $cwd = $opt_F;
+	$cwd .= '/' unless $cwd =~ m/\/$/;
+	my $source = FakeFileSource->new($cwd);
+	File::Find::find({
+		wanted => sub {
+		    return unless -f $_;
+		    my $name = $_;
+		    $name =~ s/^\Q$opt_F\E\///;
+		    # XXX hack FileBase object;
+		    my $i = bless {name => $name}, "MyFile";
+		    $i->record_needed_libs($recorder, $source);
+		},
+		no_chdir => 1 }, $opt_F);
+	$recorder->dump;
+	exit(0);
+}
 if (@ARGV == 0 && defined $opt_B) {
 	do_plist();
 } else {
