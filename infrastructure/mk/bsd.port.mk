@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.898 2007/06/01 13:15:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.899 2007/06/03 11:03:06 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1307,10 +1307,10 @@ _LOCKS_HELD ?=
 LOCK_VERBOSE ?= No
 .if !empty(LOCKDIR)
 .  if ${LOCK_VERBOSE:L} == "yes"
-_LOCK = echo "Locking $$lock from $@"; ${LOCK_CMD} ${LOCKDIR}/$$lock.lock
+_LOCK = echo "Locking $$lock (${BUILD_PKGPATH}) from $@"; ${LOCK_CMD} ${LOCKDIR}/$$lock.lock ${BUILD_PKGPATH}
 _UNLOCK = echo "Unlocking $$lock from $@"; ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 .  else
-_LOCK = ${LOCK_CMD} ${LOCKDIR}/$$lock.lock
+_LOCK = ${LOCK_CMD} ${LOCKDIR}/$$lock.lock ${BUILD_PKGPATH}
 _UNLOCK = ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 .  endif
 .  if ${SEPARATE_BUILD:L:Mflavored}
@@ -1655,11 +1655,14 @@ lib-depends-check:
 	@perl ${PORTSDIR}/infrastructure/package/check-lib-depends \
 		${_LIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE}
 
-port-lib-depends-check: ${_FAKE_COOKIE}
+${WRKINST}/.saved_libs: ${_FAKE_COOKIE}
+	@${SUDO} perl ${PORTSDIR}/infrastructure/package/check-lib-depends -F ${WRKINST} -O $@
+
+port-lib-depends-check: ${WRKINST}/.saved_libs
 .  for _S in ${MULTI_PACKAGES}
 	@-SUBPACKAGE=${_S} ${MAKE} print-plist-with-depends | \
 	 perl ${PORTSDIR}/infrastructure/package/check-lib-depends \
-		${_LIB_DEPENDS_FLAGS} -d ${_PKG_REPO} -B ${WRKINST}
+		${_LIB_DEPENDS_FLAGS} -d ${_PKG_REPO} -B ${WRKINST} -s ${WRKINST}/.saved_libs
 .  endfor
 
 _internal-manpages-check: ${_FAKE_COOKIE}
