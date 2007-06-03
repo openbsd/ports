@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.85 2007/06/03 12:51:59 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.86 2007/06/03 22:25:01 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -116,14 +116,11 @@ _subdir_fragment = \
 	done
 
 .for __target in ${_recursive_targets}
-
 ${__target}:
 	@${_subdir_fragment}
 .endfor
 
 .for __target in ${_recursive_describe_targets}
-	homepage-links print-plist print-plist-contents \
-	print-plist-all print-plist-with-depends print-plist-all-with-depends
 ${__target}:
 	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
 .endfor
