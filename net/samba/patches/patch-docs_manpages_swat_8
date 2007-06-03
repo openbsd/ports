@@ -39,7 +39,7 @@
  .RE
  .PP
 -\fI/usr/local/samba/lib/smb.conf\fR
-+\fI!!SYSCONFDIR!!/samba/lib/smb.conf\fR
++\fI!!SYSCONFDIR!!/samba/smb.conf\fR
  .RS 3n
  This is the default location of the
  \fBsmb.conf\fR(5)
