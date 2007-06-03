@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2007/06/01 15:19:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.187 2007/06/03 17:00:14 steven Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -99,6 +99,7 @@
      SUBDIR += mpeg_play
      SUBDIR += mplex
      SUBDIR += netpbm
+     SUBDIR += ocrad
      SUBDIR += openexr
      SUBDIR += openjpeg
      SUBDIR += p5-Cairo
