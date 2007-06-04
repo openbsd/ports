@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/17 17:48:53 martynas Exp $
+# $OpenBSD: Makefile,v 1.15 2007/06/04 18:35:36 martynas Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	"extremely lightweight and simple web browser for gnome"
 
 M=		2.18
-V=		2.18.1
+V=		2.18.2
 DISTNAME=	epiphany-${V}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
@@ -53,6 +52,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-gecko=firefox \
 		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \
+		--disable-python \
 		--disable-schemas-install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nss -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lfreebl3 -lnss3 -lnssckbi -lsmime3 -lsoftokn3 -lssl3 -pthread -L${LOCALBASE}/mozilla-firefox" \
