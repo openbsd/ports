@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/01 16:28:31 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/04 18:00:00 espie Exp $
 
 COMMENT=	"simple rake/rubygems helper for project Rakefiles"
 
 DISTNAME=	hoe-1.2.1
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	devel
 
 # mit
@@ -17,7 +17,8 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=seattlerb/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-rubyforge-0.4.2:devel/ruby-rubyforge
+RUN_DEPENDS=	:ruby-rubyforge-0.4.2:devel/ruby-rubyforge \
+		:ruby-rake->=0.7.2:devel/ruby-rake
 
 CONFIGURE_STYLE=ruby gem
 
