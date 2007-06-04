@@ -1,0 +1,13 @@
+The Devel::SawAmpersand module only provides one function:
+
+$bool = Devel::SawAmpersand::sawampersand();
+
+which is set to true if perl saw any of $`, $', $& in its code.
+
+Devel::FindAmpersand is a bit more precise.
+
+B::FindAmpersand is supposed to scan code to look for those variables,
+but it doesn't appear to be very reliable.
+
+Due to some design decisions, regexp matching suffers from performance
+issues as soon as one of these variables is used.
