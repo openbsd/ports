@@ -1,0 +1,12 @@
+$OpenBSD: patch-gui_MyGL_AppController_m,v 1.1 2007/06/04 11:09:13 ajacoutot Exp $
+--- gui/MyGL/AppController.m.orig	Sun Jun  3 15:47:05 2007
++++ gui/MyGL/AppController.m	Sun Jun  3 15:47:48 2007
+@@ -418,7 +418,7 @@ static char initialized = 0;
+ 
+ 	h = [MySAX new];
+ 	p = [GSXMLParser parserWithSAXHandler:h
+-					   withContentsOfFile:@"girl.dae"];
++					   withContentsOfFile:@"!!PREFIX!!/libexec/GNUstep/MyGL.app/Resources/girl.dae"];
+ 	if ([p parse])
+ 	{
+ 		[meshArray addObject:[h currentMesh]];

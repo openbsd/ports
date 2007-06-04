@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/29 03:03:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/06/04 11:09:13 ajacoutot Exp $
 lib/GNUstep/ApplicationSupport/
 lib/GNUstep/ApplicationSupport/GSTest/
 lib/GNUstep/ApplicationSupport/GSTest/Composite-test.bundle/
@@ -183,6 +183,7 @@ libexec/GNUstep/MyGL.app/Resources/MyGL.gorm/
 libexec/GNUstep/MyGL.app/Resources/MyGL.gorm/data.classes
 libexec/GNUstep/MyGL.app/Resources/MyGL.gorm/data.info
 libexec/GNUstep/MyGL.app/Resources/MyGL.gorm/objects.gorm
+libexec/GNUstep/MyGL.app/Resources/girl.dae
 libexec/GNUstep/MyGL.app/stamp.make
 libexec/GNUstep/NSBrowserTest.app/
 libexec/GNUstep/NSBrowserTest.app/NSBrowserTest
