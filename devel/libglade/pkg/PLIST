@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:38:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/06/04 17:34:57 espie Exp $
 bin/libglade-config
 bin/libglade-xgettext
 include/libglade-1.0/
@@ -27,5 +27,4 @@ share/gnome/html/libglade/libglade-libglade-initialisation.html
 share/gnome/html/libglade/libglade-libglade-sax-parser.html
 share/gnome/html/libglade/libglade-notes.html
 share/gnome/html/libglade/libglade.html
-%%gnome%%
 %%SHARED%%
