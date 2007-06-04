@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2007/03/31 11:58:27 martynas Exp $
+# $OpenBSD: Makefile,v 1.14 2007/06/04 09:51:28 sturm Exp $
 
      SUBDIR += bruce
      SUBDIR += devtodo
-     SUBDIR += gnucash
      SUBDIR += grisbi
      SUBDIR += gtimer
      SUBDIR += ledger
