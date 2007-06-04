@@ -13,9 +13,11 @@ To have Samba start whenever the machine boots, add the following lines to the
 ${SYSCONFDIR}/rc.local script:
 
 if [ -x ${LOCALBASE}/libexec/smbd ]; then
+	echo -n ' smbd'
 	${LOCALBASE}/libexec/smbd
 fi
 if [ -x ${LOCALBASE}/libexec/nmbd ]; then
+	echo -n ' nmbd'
 	${LOCALBASE}/libexec/nmbd
 fi
 
