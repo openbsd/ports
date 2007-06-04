@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/12/04 01:20:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/06/04 19:33:17 espie Exp $
 bin/kaffeine
 include/kaffeine/
 include/kaffeine/kaffeineaudioencoder.h
@@ -37,6 +37,8 @@ share/apps/konqueror/servicemenus/kaffeine_play_dvd.desktop
 share/apps/konqueror/servicemenus/kaffeine_play_vcd.desktop
 share/apps/profiles/
 share/apps/profiles/kaffeine.profile.xml
+@comment share/doc/HTML/en/doc/
+@comment share/doc/HTML/en/doc/CMakeLists.txt
 share/doc/HTML/en/kaffeine/
 share/doc/HTML/en/kaffeine/common
 share/doc/HTML/en/kaffeine/discwindow.png

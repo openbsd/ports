@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/09 11:38:09 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2007/06/04 19:33:17 espie Exp $
 
 CATEGORIES=	multimedia x11 x11/kde
 COMMENT=	'video player for kde'
 
 HOMEPAGE=	http://kaffeine.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kaffeine/}
-DISTNAME=	kaffeine-0.8.3
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	kaffeine-0.8.4
+PKGNAME=	${DISTNAME}
 EXTRACT_SUFX=	.tar.bz2
 
 		
@@ -41,7 +41,9 @@ LIB_DEPENDS=		kdecore.>=7,DCOP,kdesu,kio,kdefx,kparts,kutils,kdeprint,kdeui,kwal
 
 WANTLIB=	X11 ICE Xrender SM Xext freetype Xinerama \
 		util m pthread z c stdc++ \
-		pcre pcreposix iconv jpeg ogg png idn intl art_lgpl_2
+		pcre pcreposix iconv jpeg ogg png idn intl art_lgpl_2 \
+	        Xau Xdmcp Xtst fam rpcsvc
+
 
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
