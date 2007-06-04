@@ -1,7 +1,15 @@
-$OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
---- ltmain.in.orig	Sun Dec 18 22:43:52 2005
-+++ ltmain.in	Sun Apr  1 23:51:38 2007
-@@ -2073,6 +2073,17 @@ EOF
+$OpenBSD: patch-ltmain_in,v 1.26 2007/06/04 19:00:16 kurt Exp $
+--- ltmain.in.orig	Sun Dec 18 16:43:52 2005
++++ ltmain.in	Mon May 21 22:20:24 2007
+@@ -1604,6 +1604,7 @@ EOF
+ 	compiler_flags="$compiler_flags $arg"
+ 	compile_command="$compile_command $arg"
+ 	finalize_command="$finalize_command $arg"
++	deplibs="$deplibs $arg"
+ 	continue
+ 	;;
+ 
+@@ -2073,6 +2074,17 @@ EOF
  	;;
      esac
      for pass in $passes; do
@@ -19,7 +27,15 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
        if test "$linkmode,$pass" = "lib,link" ||
  	 test "$linkmode,$pass" = "prog,scan"; then
  	libs="$deplibs"
-@@ -2334,20 +2345,20 @@ EOF
+@@ -2100,6 +2112,7 @@ EOF
+ 	    finalize_deplibs="$deplib $finalize_deplibs"
+ 	  else
+ 	    compiler_flags="$compiler_flags $deplib"
++	    test "$linkmode" = lib && newdependency_libs="$deplib $newdependency_libs"
+ 	  fi
+ 	  continue
+ 	  ;;
+@@ -2334,20 +2347,20 @@ EOF
  	    # It is a libtool convenience library, so add in its objects.
  	    convenience="$convenience $ladir/$objdir/$old_library"
  	    old_convenience="$old_convenience $ladir/$objdir/$old_library"
@@ -50,7 +66,7 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
  	  continue
  	fi # $pass = conv
  
-@@ -2542,7 +2553,7 @@ EOF
+@@ -2542,7 +2555,7 @@ EOF
  	   { test "$use_static_libs" = no || test -z "$old_library"; }; then
  	  if test "$installed" = no; then
  	    notinst_deplibs="$notinst_deplibs $lib"
@@ -59,7 +75,7 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
  	  fi
  	  # This is a shared library
  
-@@ -2741,7 +2752,7 @@ EOF
+@@ -2741,7 +2754,7 @@ EOF
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
@@ -68,7 +84,7 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -3359,6 +3370,20 @@ EOF
+@@ -3359,6 +3372,20 @@ EOF
  	  major=
  	  versuffix=
  	  verstring=""
@@ -89,7 +105,7 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
  	fi
  
  	# Check to see if the archive will have undefined symbols.
-@@ -5797,6 +5822,10 @@ relink_command=\"$relink_command\""
+@@ -5797,6 +5824,10 @@ relink_command=\"$relink_command\""
        esac
        install_prog="$install_prog $arg"
      done
@@ -100,7 +116,7 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
  
      if test -z "$install_prog"; then
        $echo "$modename: you must specify an install program" 1>&2
-@@ -5951,8 +5980,8 @@ relink_command=\"$relink_command\""
+@@ -5951,8 +5982,8 @@ relink_command=\"$relink_command\""
  	  test -n "$relink_command" && srcname="$realname"T
  
  	  # Install the shared library and build the symlinks.
@@ -111,7 +127,7 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
  	  if test -n "$stripme" && test -n "$striplib"; then
  	    $show "$striplib $destdir/$realname"
  	    $run eval "$striplib $destdir/$realname" || exit $?
-@@ -5997,8 +6026,8 @@ relink_command=\"$relink_command\""
+@@ -5997,8 +6028,8 @@ relink_command=\"$relink_command\""
  	# Install the pseudo-library for information purposes.
  	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
  	instname="$dir/$name"i
@@ -122,7 +138,7 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
  
  	# Maybe install the static library, too.
  	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"
-@@ -6033,8 +6062,8 @@ relink_command=\"$relink_command\""
+@@ -6033,8 +6064,8 @@ relink_command=\"$relink_command\""
  
  	# Install the libtool object if requested.
  	if test -n "$destfile"; then
@@ -133,7 +149,7 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
  	fi
  
  	# Install the old object if enabled.
-@@ -6042,8 +6071,8 @@ relink_command=\"$relink_command\""
+@@ -6042,8 +6073,8 @@ relink_command=\"$relink_command\""
  	  # Deduce the name of the old-style object file.
  	  staticobj=`$echo "X$file" | $Xsed -e "$lo2o"`
  
@@ -144,7 +160,7 @@ $OpenBSD: patch-ltmain_in,v 1.25 2007/04/14 15:58:03 espie Exp $
  	fi
  	exit $EXIT_SUCCESS
  	;;
-@@ -6257,40 +6286,6 @@ relink_command=\"$relink_command\""
+@@ -6257,40 +6288,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
