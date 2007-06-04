@@ -1,6 +1,6 @@
-$OpenBSD: patch-test_lua,v 1.1 2006/09/24 17:18:16 pedro Exp $
---- test.lua.orig	Sun Sep 24 14:10:11 2006
-+++ test.lua	Sun Sep 24 14:10:17 2006
+$OpenBSD: patch-test_lua,v 1.2 2007/06/04 19:39:59 pedro Exp $
+--- test.lua.orig	Mon Jun  4 21:03:19 2007
++++ test.lua	Mon Jun  4 21:03:26 2007
 @@ -1,4 +1,5 @@
  -- test alarm
 +require("alarm")

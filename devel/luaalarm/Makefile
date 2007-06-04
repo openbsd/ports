@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/17 11:56:56 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/04 19:39:59 pedro Exp $
 
 COMMENT=	"alarm library for the lua language"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 DISTNAME=	lalarm
-DATE=		20030709
-PKGNAME=	luaalarm-${DATE}p1
-DIST_SUBDIR=	luaalarm-${DATE}
+DATE=		20061011
+PKGNAME=	luaalarm-${DATE}
+DIST_SUBDIR=	${PKGNAME}
 WRKDIST=	${WRKDIR}/alarm
 CATEGORIES=	devel
 
@@ -27,5 +27,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
 	${INSTALL_DATA} ${WRKSRC}/alarm.so ${PREFIX}/lib/lua/5.1
+
+do-regress:
+	rm -f ${WRKDIST}/alarm.lua
+	cd ${WRKDIST} && ${LOCALBASE}/bin/lua test.lua
 
 .include <bsd.port.mk>
