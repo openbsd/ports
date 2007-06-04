@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/04 16:39:54 ajacoutot Exp $
+bin/yeahlaunch
+share/doc/yeahlaunch/
+share/doc/yeahlaunch/README
