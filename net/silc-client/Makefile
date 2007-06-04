@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2007/04/01 20:43:59 steven Exp $
+# $OpenBSD: Makefile,v 1.40 2007/06/04 11:40:56 martynas Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 
@@ -19,7 +19,6 @@ WANTLIB=		c ncurses
 MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 		ftp://ftp.silcnet.org/silc/client/sources/ \
 		http://www.planetmirror.com/pub/silcnet/client/sources/ \
-		ftp://ftp.au.silcnet.org/pub/silcnet/client/sources/ \
 		http://munitions.vipul.net/software/mirrors/silc/client/sources/ \
 		ftp://ftp.no.silcnet.org/pub/silc/client/sources/ \
 		http://the.wiretapped.net/security/network-security/silc/client/sources/ \

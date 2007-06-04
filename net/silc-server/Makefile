@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/05/24 08:27:34 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2007/06/04 11:40:56 martynas Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
@@ -19,7 +19,6 @@ WANTLIB=		c
 MASTER_SITES=	http://ftp.silcnet.org/server/sources/ \
 		ftp://ftp.silcnet.org/silc/server/sources/ \
 		http://www.planetmirror.com/pub/silcnet/server/sources/ \
-		ftp://ftp.au.silcnet.org/pub/silcnet/server/sources/ \
 		http://munitions.vipul.net/software/mirrors/silc/server/sources/ \
 		ftp://ftp.no.silcnet.org/pub/silc/server/sources/ \
 		http://the.wiretapped.net/security/network-security/silc/server/sources/ \

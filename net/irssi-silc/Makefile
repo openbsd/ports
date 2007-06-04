@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/20 14:35:13 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2007/06/04 11:40:56 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,6 @@ MASTER_SITES0=	${HOMEPAGE}/download/ \
 MASTER_SITES1=	http://ftp.silcnet.org/client/sources/ \
 		ftp://ftp.silcnet.org/silc/client/sources/ \
 		http://www.planetmirror.com/pub/silcnet/client/sources/ \
-		ftp://ftp.au.silcnet.org/pub/silcnet/client/sources/ \
 		http://munitions.vipul.net/software/mirrors/silc/client/sources/ \
 		ftp://ftp.no.silcnet.org/pub/silc/client/sources/ \
 		http://the.wiretapped.net/security/network-security/silc/client/sources/ \
