@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.902 2007/06/03 22:30:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.903 2007/06/04 12:15:09 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2912,17 +2912,15 @@ dump-vars:
 .  endfor
 .endif
 
-.PHONY: \
-	${_recursive_targets} ${_recursive_describe_targets}  \
-	${_recursive_depends_targets} \
-	_build-dir-depends _fetch-makefile _fetch-onefile _internal-all \
-	_internal-build _internal-build-depends _internal-buildlib-depends \
-	_internal-buildwantlib-depends _internal-checksum _internal-clean \
-	_internal-configure _internal-depends _internal-distpatch \
-	_internal-extract _internal-fake _internal-fetch _internal-install-all \
-	_internal-lib-depends _internal-manpages-check _internal-package \
-	_internal-package-only _internal-plist _internal-regress \
-	_internal-regress-depends _internal-run-depends \
+_all_phony = ${_recursive_depends_targets} ${_recursive_describe_targets} \
+	${_recursive_targets} _build-dir-depends _fetch-makefile _fetch-onefile \
+	_internal-all _internal-build _internal-build-depends \
+	_internal-buildlib-depends _internal-buildwantlib-depends \
+	_internal-checksum _internal-clean _internal-configure _internal-depends \
+	_internal-distpatch _internal-extract _internal-fake _internal-fetch \
+	_internal-install-all _internal-lib-depends _internal-manpages-check \
+	_internal-package _internal-package-only _internal-plist \
+	_internal-regress _internal-regress-depends _internal-run-depends \
 	_internal-runwantlib-depends _internal-subpackage _internal-subupdate \
 	_internal-update _internal-update _internal-update-plist \
 	_internal_install _internal_runlib-depends _license-check \
@@ -2941,3 +2939,13 @@ dump-vars:
 	print-build-depends print-run-depends readme readmes rebuild \
 	regress-depends repackage run-depends run-depends-list show-required-by \
 	subpackage uninstall update-patches update-plist
+
+.if defined(_DEBUG_TARGETS)
+.  for _t in ${_all_phony}
+.    if !target(${_t})
+ERRORS += "Fatal: phony target ${_t} does not exist"
+.    endif
+.  endfor
+.endif
+
+.PHONY: ${_all_phony}
