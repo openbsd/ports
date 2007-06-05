@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/05 21:08:16 jasper Exp $
+${P5SITE}/Audio/
+${P5SITE}/Audio/MPD/
+${P5SITE}/Audio/MPD/Common/
+${P5SITE}/Audio/MPD/Common.pm
+${P5SITE}/Audio/MPD/Common/Item/
+${P5SITE}/Audio/MPD/Common/Item.pm
+${P5SITE}/Audio/MPD/Common/Item/Directory.pm
+${P5SITE}/Audio/MPD/Common/Item/Playlist.pm
+${P5SITE}/Audio/MPD/Common/Item/Song.pm
+${P5SITE}/Audio/MPD/Common/Stats.pm
+${P5SITE}/Audio/MPD/Common/Status.pm
+${P5SITE}/Audio/MPD/Common/Time.pm
+@man man/man3p/Audio::MPD::Common.3p
+@man man/man3p/Audio::MPD::Common::Item.3p
+@man man/man3p/Audio::MPD::Common::Item::Directory.3p
+@man man/man3p/Audio::MPD::Common::Item::Playlist.3p
+@man man/man3p/Audio::MPD::Common::Item::Song.3p
+@man man/man3p/Audio::MPD::Common::Stats.3p
+@man man/man3p/Audio::MPD::Common::Status.3p
+@man man/man3p/Audio::MPD::Common::Time.3p

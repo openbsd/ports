@@ -1,0 +1,4 @@
+Audio::MPD::Common is a bunch of common classes used by both Audio::MPD
+and POE::Component::Client::MPD (two modules meant to access Music
+Player Daemon, aka mpd). Since those classes are independent of the
+runloop (poe or non-poe aware), Audio::MPD::Common comes to the rescue.
