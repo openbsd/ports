@@ -4,6 +4,9 @@ offers full text to speech through a number of APIs.  Festival is
 multi-lingual (currently English, Welsh and Spanish) though English is
 the most advanced.
 
+Please note that this port does not include any default voices and will
+not properly function until an appropriate voice is installed.
+
 FLAVORs:
 
 	ogi - Oregon Graduate Institute's residual LPC Synthesizer
