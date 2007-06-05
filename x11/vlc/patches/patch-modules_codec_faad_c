@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_codec_faad_c,v 1.2 2007/04/08 17:34:20 ajacoutot Exp $
---- modules/codec/faad.c.orig	Sat Dec  9 02:12:20 2006
-+++ modules/codec/faad.c	Sun Apr  8 10:45:29 2007
+$OpenBSD: patch-modules_codec_faad_c,v 1.3 2007/06/05 01:53:04 jolan Exp $
+--- modules/codec/faad.c.orig	Tue Apr 17 17:45:11 2007
++++ modules/codec/faad.c	Fri May 11 23:50:40 2007
 @@ -315,6 +315,9 @@ static aout_buffer_t *DecodeBlock( decoder_t *p_dec, b
          p_dec->fmt_out.audio.i_rate = frame.samplerate;
          p_dec->fmt_out.audio.i_channels = frame.channels;
@@ -18,4 +18,4 @@ $OpenBSD: patch-modules_codec_faad_c,v 1.2 2007/04/08 17:34:20 ajacoutot Exp $
 +#endif
  
          /* Convert frame.channel_position to our own channel values */
-         for( i = 0; i < frame.channels; i++ )
+         p_dec->fmt_out.audio.i_physical_channels = 0;

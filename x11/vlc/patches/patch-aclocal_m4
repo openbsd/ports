@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.5 2006/12/23 13:31:31 jolan Exp $
---- aclocal.m4.orig	Fri Dec  8 19:33:37 2006
-+++ aclocal.m4	Sat Dec 23 06:31:31 2006
+$OpenBSD: patch-aclocal_m4,v 1.6 2007/06/05 01:53:04 jolan Exp $
+--- aclocal.m4.orig	Tue Apr 17 17:46:03 2007
++++ aclocal.m4	Fri May 11 23:51:38 2007
 @@ -1041,7 +1041,7 @@ AC_DEFUN([VLC_LIBRARY_SUFFIX], [
      darwin*)
        LIBEXT=".dylib"
@@ -19,7 +19,7 @@ $OpenBSD: patch-aclocal_m4,v 1.5 2006/12/23 13:31:31 jolan Exp $
        SYMPREF="_"
        ;;
    esac
-@@ -8754,9 +8754,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
+@@ -8755,9 +8755,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
            found_so=
            found_a=
            if test $use_additional = yes; then
@@ -31,7 +31,7 @@ $OpenBSD: patch-aclocal_m4,v 1.5 2006/12/23 13:31:31 jolan Exp $
                if test -f "$additional_libdir/lib$name.la"; then
                  found_la="$additional_libdir/lib$name.la"
                fi
-@@ -8776,9 +8776,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
+@@ -8777,9 +8777,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
                case "$x" in
                  -L*)
                    dir=`echo "X$x" | sed -e 's/^X-L//'`

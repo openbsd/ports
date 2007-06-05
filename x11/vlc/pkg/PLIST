@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2007/04/20 07:21:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2007/06/05 01:53:04 jolan Exp $
 %%altivec%%
 %%win32%%
 %%x86opt%%
@@ -97,6 +97,7 @@ lib/vlc/codec/libsdl_image_plugin.so
 lib/vlc/codec/libspudec_plugin.so
 lib/vlc/codec/libsubsdec_plugin.so
 lib/vlc/codec/libsvcdsub_plugin.so
+lib/vlc/codec/libtelx_plugin.so
 lib/vlc/codec/libvorbis_plugin.so
 lib/vlc/codec/libx264_plugin.so
 lib/vlc/control/
@@ -278,6 +279,7 @@ share/locale/th/LC_MESSAGES/vlc.mo
 share/locale/tr/LC_MESSAGES/vlc.mo
 share/locale/zh_CN/LC_MESSAGES/vlc.mo
 share/locale/zh_TW/LC_MESSAGES/vlc.mo
+share/nls/pl_PL.ISO_8859-2/
 share/vlc/
 share/vlc/http/
 share/vlc/http/.hosts

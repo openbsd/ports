@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.no-no_web,v 1.1 2006/12/24 01:57:16 jolan Exp $
+@comment $OpenBSD: PFRAG.no-no_web,v 1.2 2007/06/05 01:53:04 jolan Exp $
 @comment lib/mozilla/
-@comment lib/mozilla/plugins/
-@comment lib/mozilla/plugins/libvlcplugin.so
 lib/mozilla-plugins/
 lib/mozilla-plugins/libvlcplugin.so
+@comment lib/mozilla/plugins/
+@comment lib/mozilla/plugins/libvlcplugin.so
