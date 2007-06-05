@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2007/03/22 23:41:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2007/06/05 10:50:07 ajacoutot Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
@@ -9,7 +9,6 @@ SHARED_LIBS +=	pisync               1.0      # .0.2
 
 CATEGORIES=	comms palm
 MASTER_SITES=	http://downloads.pilot-link.org/ \
-		http://www.slackware.at/data/slackware-10.2/source/l/pilot-link/ \
 		http://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/ \
 		http://gentoo.oregonstate.edu/distfiles/
 
