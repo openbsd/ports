@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/01 20:03:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/06/05 08:08:01 ajacoutot Exp $
 
 COMMENT=	"multi-tabbed terminal emulator"
 
 DISTNAME=	mrxvt-0.5.2 
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mrxvt.1${EXTRACT_SUFX}:0
@@ -25,8 +25,8 @@ BUILD_DEPENDS=	:bzip2-*:archivers/bzip2
 LIB_DEPENDS=	jpeg.>=62.::graphics/jpeg \
 		png.>=2.::graphics/png
 
-WANTLIB=	ICE SM X11 Xext Xrender Xpm c fontconfig freetype util \
-		m z Xft Xau Xdmcp expat
+WANTLIB=	ICE SM X11 Xrender Xpm c fontconfig freetype util m z \
+		Xft Xau Xdmcp expat
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-menubar \
