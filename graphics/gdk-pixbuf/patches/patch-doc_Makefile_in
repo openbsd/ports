@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.6 2002/11/14 21:03:41 marcm Exp $
---- doc/Makefile.in.orig	Sat Sep 28 01:10:28 2002
-+++ doc/Makefile.in	Mon Oct  7 17:36:43 2002
+$OpenBSD: patch-doc_Makefile_in,v 1.7 2007/06/05 14:48:06 naddy Exp $
+--- doc/Makefile.in.orig	Fri Jun  1 15:36:43 2007
++++ doc/Makefile.in	Fri Jun  1 15:36:58 2007
 @@ -256,7 +256,7 @@ install-am: all-am
  install: install-am
  uninstall-am:
  uninstall: uninstall-am
 -all-am: Makefile all-local
-+all-am: Makefile $(DATA)
++all-am: Makefile
  all-redirect: all-am
  install-strip:
  	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install

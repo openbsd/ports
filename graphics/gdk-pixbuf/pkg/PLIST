@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 10:42:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2007/06/05 14:48:06 naddy Exp $
 @pkgpath graphics/gdk-pixbuf
+@pkgpath graphucs/gdk-pixbuf,-main
 @pkgpath graphics/gdk-pixbuf,no_gnome
 bin/gdk-pixbuf-config
 include/gdk-pixbuf-1.0/

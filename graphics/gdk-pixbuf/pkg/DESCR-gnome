@@ -1,7 +1,0 @@
-The GdkPixbuf library is a replacement for Imlib.  GdkPixbuf provides 
-the following: a basic data structure to provide reference-counted images, 
-functions to load images synchronously from disk or progressively from 
-arbitrary data buffers, and convenience functions to transform pixbufs 
-and render them to drawables. 
-
-The GNOME Canvas Pixbuf library.
