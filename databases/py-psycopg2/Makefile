@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/27 14:58:30 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/05 10:06:24 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,6 @@ WANTLIB=		pq
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 
 MODULES=	lang/python
-BUILD_DEPENDS=	:postgresql-server-*:databases/postgresql,-server
 RUN_DEPENDS=	:postgresql-client-*:databases/postgresql
 
 NO_REGRESS=	Yes
