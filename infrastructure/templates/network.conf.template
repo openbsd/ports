@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.116 2007/06/01 10:57:48 alek Exp $
+# $OpenBSD: network.conf.template,v 1.117 2007/06/05 18:06:46 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -52,14 +52,16 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.cs.tu-berlin.de/pub/gnu/ \
 	ftp://aeneas.mit.edu/pub/gnu/ \
 	ftp://mirrors.dotsrc.org/gnu/ \
-	ftp://ftp.wustl.edu/pub/gnu/ \
+	ftp://ftp.ibiblio.org/pub/mirrors/gnu/ftp/gnu/ \
 	ftp://ftp.kddilabs.jp/GNU/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/ \
-	ftp://ftp.rediris.es/mirror/gnu/gnu/ \
-	ftp://ftp.cs.univ-paris8.fr/mirrors/ftp.gnu.org/ \
+	ftp://ftp.cs.univ-paris8.fr/mirrors/ftp.gnu.org/gnu/ \
+	ftp://ftp.ist.utl.pt/pub/GNU/gnu/gnu/ \
+	ftp://ftp.digitaltrust.it/pub/gnu/ \
+	ftp://mirror.cict.fr/gnu/ \
+	ftp://ftp.wayne.edu/pub/gnu/ \
 	ftp://ftp.chg.ru/pub/gnu/ \
-	ftp://ftp.uvsq.fr/pub/gnu/ \
-  	ftp://ftp.sunet.se/pub/gnu/
+	ftp://ftp.sunet.se/pub/gnu/
 
 MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/ \
