@@ -1,29 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/04/29 19:19:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/06/05 21:11:21 jasper Exp $
 bin/mpd-dynamic
-${P5SITE}/Audio/
-${P5SITE}/Audio/MPD/
 ${P5SITE}/Audio/MPD.pm
 ${P5SITE}/Audio/MPD/Collection.pm
-${P5SITE}/Audio/MPD/Item/
-${P5SITE}/Audio/MPD/Item.pm
-${P5SITE}/Audio/MPD/Item/Directory.pm
-${P5SITE}/Audio/MPD/Item/Song.pm
 ${P5SITE}/Audio/MPD/Playlist.pm
-${P5SITE}/Audio/MPD/Stats.pm
-${P5SITE}/Audio/MPD/Status.pm
 ${P5SITE}/Audio/MPD/Test.pm
-${P5SITE}/Audio/MPD/Time.pm
 @man man/man1/mpd-dynamic.1
 @man man/man3p/Audio::MPD.3p
 @man man/man3p/Audio::MPD::Collection.3p
-@man man/man3p/Audio::MPD::Item.3p
-@man man/man3p/Audio::MPD::Item::Directory.3p
-@man man/man3p/Audio::MPD::Item::Song.3p
 @man man/man3p/Audio::MPD::Playlist.3p
-@man man/man3p/Audio::MPD::Stats.3p
-@man man/man3p/Audio::MPD::Status.3p
 @man man/man3p/Audio::MPD::Test.3p
-@man man/man3p/Audio::MPD::Time.3p
 share/examples/p5-Audio-MPD/
 share/examples/p5-Audio-MPD/example.pl
 share/examples/p5-Audio-MPD/mpc.pl
