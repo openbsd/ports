@@ -42,7 +42,7 @@ Offset: 0       Signature: 0xAA55
 When booting, the kernel will use the disklabel from the first OpenBSD
 partition found, therefor grub has to set the partition type of unused
 partitions to another value as can be seen in
-%%PREFIX%%/share/examples/grub/menu.lst. The type of the last
+%%TRUEPREFIX%%/share/examples/grub/menu.lst. The type of the last
 partition, in this case partition 3, has to stay at 0xa6 in all cases,
 otherwise grub won't be able to find its /grub/menu.lst file. This means
 you have to install grub in the OpenBSD partition with the largest number.

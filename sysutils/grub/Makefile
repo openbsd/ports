@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/13 08:29:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/05 18:25:22 bernd Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"GRand Unified Bootloader"
 
 DISTNAME=	grub-0.97
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.gnu.org/software/grub/
@@ -29,7 +30,7 @@ CFLAGS=		-ftrampolines -fno-stack-protector
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/grub
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/grub
-	@perl -pi -e "s,%%PREFIX%%,${PREFIX}," \
+	@perl -pi -e "s,%%TRUEPREFIX%%,${TRUEPREFIX}," \
 		${PREFIX}/share/doc/grub/README.OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/grub
 	${INSTALL_DATA} ${FILESDIR}/menu.lst ${PREFIX}/share/examples/grub
