@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2007/05/27 15:35:33 kili Exp $
+# $OpenBSD: Makefile,v 1.143 2007/06/05 14:58:09 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -66,6 +66,7 @@
      SUBDIR += lgeneral
      SUBDIR += life
      SUBDIR += lincity
+     SUBDIR += londonlaw
      SUBDIR += mirrormagic
      SUBDIR += moon-buggy
      SUBDIR += moonlander
