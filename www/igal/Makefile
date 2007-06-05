@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/06 07:40:17 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/05 15:34:42 jasper Exp $
 
 COMMENT=	"online Image GALlery generator"
 
 DISTNAME=	igal-1.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www graphics
 
-HOMEPAGE=	http://www.stanford.edu/~epop/igal/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
+HOMEPAGE=	http://nanoheat.stanford.edu/epop/igal/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
