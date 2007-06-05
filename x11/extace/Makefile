@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/01 20:03:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/05 08:00:44 ajacoutot Exp $
 
 COMMENT=	"audio visualization plugin for the X-Window System"
 
 DISTNAME=	extace-1.9.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11 audio
 
 HOMEPAGE=	http://extace.sourceforge.net/
@@ -18,16 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=extace/}
 
-WANTLIB=	ICE SM X11 Xext Xi c m pthread z jpeg png tiff ungif \
-		Xau Xdmcp
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xi audiofile c gdk glib \
+		gmodule gthread gtk jpeg m png pthread tiff ungif z
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	audiofile::devel/libaudiofile \
-		esd.>=2::audio/esound \
+LIB_DEPENDS=	esd.>=2::audio/esound \
 		fftw3.>=4::math/fftw3 \
-		gdk.>=2,gtk.>=2::x11/gtk+ \
-		gdk_imlib.>=19::graphics/imlib \
-		glib.>=1,gmodule.>=1,gthread.>=1::devel/glib
+		gdk_imlib.>=19::graphics/imlib
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
