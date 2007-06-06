@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_install_locations,v 1.1 2006/03/24 20:12:28 sturm Exp $
---- build/install.locations.orig	Wed Nov 13 17:10:49 2002
-+++ build/install.locations	Wed Nov 13 17:11:38 2002
+$OpenBSD: patch-build_install_locations,v 1.2 2007/06/06 23:29:55 rui Exp $
+--- build/install.locations.orig	Sun May  5 13:11:47 2002
++++ build/install.locations	Wed Jun  6 11:37:20 2007
 @@ -33,7 +33,7 @@ MAN5="$PREFIX/man/man5/"
  # The directory to put man pages which describe the server programs
  MAN8="$PREFIX/man/man8/"
