@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/16 20:45:39 grange Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/06/06 21:12:23 uwe Exp $
 %%SHARED%%
 include/bluetooth.h
 include/sdp.h
@@ -20,6 +20,8 @@ lib/libsdp_pic.a
 @man man/cat3/SDP_PUT8.0
 @man man/cat3/bluetooth.0
 @man man/cat3/bt_aton.0
+@man man/cat3/bt_devaddr.0
+@man man/cat3/bt_devname.0
 @man man/cat3/bt_endhostent.0
 @man man/cat3/bt_endprotoent.0
 @man man/cat3/bt_gethostbyaddr.0
@@ -42,3 +44,9 @@ lib/libsdp_pic.a
 @man man/cat3/sdp_search.0
 @man man/cat3/sdp_unregister_service.0
 @man man/cat3/sdp_uuid2desc.0
+share/examples/bluetooth/
+@sample ${SYSCONFDIR}/bluetooth/
+share/examples/bluetooth/hosts
+@sample ${SYSCONFDIR}/bluetooth/hosts
+share/examples/bluetooth/protocols
+@sample ${SYSCONFDIR}/bluetooth/protocols
