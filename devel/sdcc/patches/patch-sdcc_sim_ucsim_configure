@@ -1,7 +1,7 @@
-$OpenBSD: patch-sdcc_sim_ucsim_configure,v 1.1.1.1 2006/12/30 18:45:32 jasper Exp $
---- sim/ucsim/configure.orig	Sun Jun 18 23:08:05 2006
-+++ sim/ucsim/configure	Mon Dec 25 11:58:00 2006
-@@ -6681,11 +6681,11 @@ cygwin* | mingw* | pw32*)
+$OpenBSD: patch-sdcc_sim_ucsim_configure,v 1.2 2007/06/06 17:23:09 jasper Exp $
+--- sim/ucsim/configure.orig	Sun Jan 21 10:09:01 2007
++++ sim/ucsim/configure	Wed Jun  6 19:13:16 2007
+@@ -7316,11 +7316,11 @@ cygwin* | mingw* | pw32*)
    yes,cygwin*)
      library_names_spec='$libname.dll.a'
      soname_spec='`echo ${libname} | sed -e 's/^lib/cyg/'``echo ${release} | sed -e 's/[.]/-/g'`${versuffix}.dll'
