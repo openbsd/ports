@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/05/14 20:40:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2007/06/06 19:52:17 kili Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
-DISTNAME=	darcs-1.0.8
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	darcs-1.0.9
+
 CATEGORIES=	devel
 HOMEPAGE=	http://www.darcs.net/
 MASTER_SITES=	${HOMEPAGE}
@@ -16,18 +16,19 @@ LIB_DEPENDS=	curl.>=2::net/curl \
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-                --datadir=${PREFIX}/share \
-                --libexecdir=${PREFIX}/libexec/darcs \
-                --sysconfdir=${PREFIX}/share/darcs \
-                --disable-mmap
+		--datadir=${PREFIX}/share \
+		--libexecdir=${PREFIX}/libexec/darcs \
+		--sysconfdir=${PREFIX}/share/darcs \
+		--disable-mmap \
+		--without-docs
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" CFLAGS=""
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
-INSTALL_TARGET= install installserver installdocs
+INSTALL_TARGET=	install installserver installdocs
 MAKE_ENV+= 	DARCS=${WRKSRC}/darcs
-REGRESS_TARGET= check
+REGRESS_TARGET=	check
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

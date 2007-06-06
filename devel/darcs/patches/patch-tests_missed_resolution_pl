@@ -1,13 +1,18 @@
-$OpenBSD: patch-tests_missed_resolution_pl,v 1.1 2005/05/09 03:41:34 dons Exp $
---- tests/missed_resolution.pl.orig	Mon May  9 11:03:08 2005
-+++ tests/missed_resolution.pl	Mon May  9 11:14:37 2005
-@@ -47,7 +47,9 @@ darcs "pull --all ../tmp2";
+--- tests/missed_resolution.pl.orig	Mon Jun  4 13:39:21 2007
++++ tests/missed_resolution.pl	Tue Jun  5 14:56:20 2007
+@@ -46,8 +46,14 @@ darcs "pull --all ../tmp2";
+ # we should have a marked conflict now.
  # we resolve it simply by removing conflict markers.
  
- # I'm too lazy to translate this to Perl right now. 
+-# I'm too lazy to translate this to Perl right now. 
 -`grep -v '\(\^ \^\|\*\*\|v v\)' A > tmp`;
-+#`grep -v '\(\^ \^\|\*\*\|v v\)' A > tmp`;
-+`sed '/\*\*/d;/v v/d;/\^ \^/d' A > tmp`;
++open(A, "A") || die;                                                                                  
++open(TMP, ">tmp") || die;                                                                             
++while (<A>) {                                                                                         
++       (/\^ \^|\*\*|v v/) or print TMP;                                                               
++}                                                                                                     
++close(A);                                                                                             
++close(TMP);                                                                                           
 +
  mv('tmp','A');
  
