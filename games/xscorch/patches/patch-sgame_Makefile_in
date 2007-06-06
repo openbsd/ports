@@ -1,0 +1,11 @@
+$OpenBSD: patch-sgame_Makefile_in,v 1.1.1.1 2007/06/06 19:32:25 jasper Exp $
+--- sgame/Makefile.in.orig	Wed Jun  6 14:32:03 2007
++++ sgame/Makefile.in	Wed Jun  6 14:32:44 2007
+@@ -253,6 +253,7 @@ libscorch_game.a: $(libscorch_game_a_OBJECTS) $(libsco
+ 	-rm -f libscorch_game.a
+ 	$(AR) cru libscorch_game.a $(libscorch_game_a_OBJECTS) $(libscorch_game_a_LIBADD)
+ 	$(RANLIB) libscorch_game.a
++	-ln -s libscorch_game.a libscorch_game_dup.a
+ 
+ tags: TAGS
+ 

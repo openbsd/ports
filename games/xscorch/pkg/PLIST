@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/06 19:32:25 jasper Exp $
+bin/xscorch
+bin/xscorch-server
+@man man/man6/xscorch.6
+share/xscorch/
+share/xscorch/accessories.def
+share/xscorch/copying.txt
+share/xscorch/images/
+share/xscorch/images/xscorch-icon.xpm
+share/xscorch/images/xscorch-logo.xpm
+share/xscorch/profiles.def
+share/xscorch/scorings.def
+share/xscorch/sounds/
+share/xscorch/sounds/README
+share/xscorch/weapons.def
+share/xscorch/xscorch.txt
