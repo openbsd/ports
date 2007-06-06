@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/08/07 18:31:33 wcobb Exp $
+# $OpenBSD: Makefile,v 1.8 2007/06/06 11:39:53 steven Exp $
 
 COMMENT=		"stand-alone shell with built-in commands"
 
 VERSION=		3.6
 DISTNAME=		sash-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		shells
 HOMEPAGE=		http://www.canb.auug.org.au/~dbell/
 
