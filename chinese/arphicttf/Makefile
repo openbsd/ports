@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2006/04/08 20:28:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2007/06/06 12:47:56 ajacoutot Exp $
 
 COMMENT=	"chinese big5/gb truetype fonts"
 
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_X11=	Yes
 PKG_ARCH=	*
 
 WRKDIST=        ${WRKDIR}/arphic 

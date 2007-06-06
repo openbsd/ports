@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 23:59:36 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/06 12:47:56 ajacoutot Exp $
 
 COMMENT=	"japanese true type fonts"
 
@@ -20,6 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_JP:=efont/10087/}
 
 USE_X11=		Yes
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 PKG_ARCH=		*
 

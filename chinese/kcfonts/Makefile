@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/06/28 14:16:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2007/06/06 12:47:56 ajacoutot Exp $
 
 COMMENT=	"extra chinese fonts"
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE= imake
 EXTRACT_ONLY=
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_X11=	Yes
 PKG_ARCH=	*
 
 FONTS=		kc8x15.pcf.gz kc12x24.pcf.gz kc15f.pcf.gz kc24f.pcf.gz

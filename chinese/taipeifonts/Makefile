@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/06/28 14:16:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.23 2007/06/06 12:47:56 ajacoutot Exp $
 
 COMMENT=	"extra chinese fonts"
 
@@ -22,6 +22,7 @@ FONTS=		taipei16.pcf.gz taipeik20.pcf.gz taipeim20.pcf.gz \
 DISTFILES=	${FONTS}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+USE_X11=	Yes
 PKG_ARCH=	*
 EXTRACT_ONLY=
 

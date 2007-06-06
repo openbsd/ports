@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/27 00:52:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2007/06/06 12:47:56 ajacoutot Exp $
 
 COMMENT=	"extra japanese fonts, marumoji"
 
@@ -31,6 +31,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No fee
 PERMIT_PACKAGE_FTP=	Yes
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 FONTDIR=${PREFIX}/lib/X11/fonts/ja
