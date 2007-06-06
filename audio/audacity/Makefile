@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/06/06 09:35:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2007/06/06 18:27:17 ajacoutot Exp $
 
 COMMENT=	"free audio editor"
 
 V=		1.3.3
 DISTNAME=	audacity-src-${V}
-PKGNAME=	audacity-${V}
+PKGNAME=	audacity-${V}p0
 CATEGORIES=     audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=audacity/}
@@ -57,7 +57,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-ladspa \
 			--with-portmixer \
 			--with-soundtouch=local \
-			--with-portaudio=v19 \
+			--with-portaudio=v18 \
 			--with-help
 
 MAKE_FLAGS=		CC="${CC}"
