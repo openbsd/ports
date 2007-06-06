@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2007/04/01 19:43:56 steven Exp $
+$OpenBSD: patch-configure,v 1.4 2007/06/06 09:45:59 steven Exp $
 --- configure.orig	Tue May 30 01:07:42 2006
-+++ configure	Sun Apr  1 21:36:50 2007
++++ configure	Wed Jun  6 13:10:29 2007
 @@ -468,7 +468,7 @@ ac_includes_default="\
  # include <unistd.h>
  #endif"
@@ -45,7 +45,71 @@ $OpenBSD: patch-configure,v 1.3 2007/04/01 19:43:56 steven Exp $
    osf3*)
      case $cc_basename in
        KCC*)
-@@ -22166,7 +22175,7 @@ fi;
+@@ -22030,8 +22039,7 @@ echo "$as_me: WARNING: $OCTAVE not found, disabling Oc
+         # Get Octave version
+         echo "$as_me:$LINENO: checking Octave version" >&5
+ echo $ECHO_N "checking Octave version... $ECHO_C" >&6
+-        OCTAVE_VERSION=`$OCTAVE --version | sed 's/^.*version //;q' \
+-                        | sed 's/ .*$//'`
++        OCTAVE_VERSION=`octave-config -p VERSION`
+         echo "$as_me:$LINENO: result: $OCTAVE_VERSION" >&5
+ echo "${ECHO_T}$OCTAVE_VERSION" >&6
+ 
+@@ -22043,29 +22051,15 @@ echo "${ECHO_T}$OCTAVE_VERSION" >&6
+         echo "$as_me:$LINENO: checking Octave prefix" >&5
+ echo $ECHO_N "checking Octave prefix... $ECHO_C" >&6
+ 
+-OCTAVE_PREFIX=`$OCTAVE -q -f <<EOF
+-        printf(octave_config_info("prefix"));
+-EOF`
++OCTAVE_PREFIX=`octave-config -p PREFIX`
+         echo "$as_me:$LINENO: result: $OCTAVE_PREFIX" >&5
+ echo "${ECHO_T}$OCTAVE_PREFIX" >&6
+ 
+         echo "$as_me:$LINENO: checking Octave m dir" >&5
+ echo $ECHO_N "checking Octave m dir... $ECHO_C" >&6
+-	if test -n "`echo $OCTAVE_VERSION | sed 's/^2.1//p;d;q'`" ; then
+-            # Octave version 2.1
+ 
+-OCTAVE_M_DIR=`$OCTAVE -q -f <<EOF
+-        printf(octave_config_info("localfcnfiledir"));
+-EOF`
+-        else
+-            # Octave version 2.0
++OCTAVE_M_DIR=`octave-config -p LOCALFCNFILEDIR`
+ 
+-OCTAVE_M_DIR=`$OCTAVE -q -f <<EOF
+-        printf(octave_config_info("localfcnfilepath"));
+-EOF`
+-            OCTAVE_M_DIR=`echo $OCTAVE_M_DIR | sed 's/[^:]*://g;s://$::'`
+-        fi
+-
+ 	# If the Octave prefix does not coincide with the PLplot one, then
+ 	# install the .oct file in the same directory of the .m scripts,
+         # with the Octave prefix being replaced by the PLplot one.
+@@ -22078,20 +22072,9 @@ echo "${ECHO_T}$OCTAVE_M_DIR" >&6
+ 
+         echo "$as_me:$LINENO: checking Octave oct dir" >&5
+ echo $ECHO_N "checking Octave oct dir... $ECHO_C" >&6
+-	if test -n "`echo $OCTAVE_VERSION | sed 's/^2.1//p;d;q'`" ; then
+-            # Octave version 2.1
+ 
+-OCTAVE_OCT_DIR=`$OCTAVE -q -f <<EOF
+-        printf(octave_config_info("localoctfiledir"));
+-EOF`
+-        else
+-            # Octave version 2.0
++OCTAVE_OCT_DIR=`octave-config -p LOCALOCTFILEDIR`
+ 
+-OCTAVE_OCT_DIR=`$OCTAVE -q -f <<EOF
+-        printf(octave_config_info("localoctfilepath"));
+-EOF`
+-            OCTAVE_OCT_DIR=`echo $OCTAVE_OCT_DIR | sed 's/[^:]*://g;s://$::'`
+-        fi
+ 	if test "$OCTAVE_PREFIX" != "$prefix" ; then
+   	    OCTAVE_OCT_DIR=$PLPLOT_OCTAVE_DIR
+ 	fi
+@@ -22166,7 +22149,7 @@ fi;
  ITKLIBSTR=-litk
  TKLIBSTR=-ltk
  ITCLLIBSTR=-litcl
@@ -54,7 +118,7 @@ $OpenBSD: patch-configure,v 1.3 2007/04/01 19:43:56 steven Exp $
  
  # ----------------------------------------------------------------------------
  # Make some guesses where the Tcl/Tk include files and libraries are.
-@@ -23211,7 +23220,7 @@ echo "$as_me: \"User-specified path to libfreetype2 is
+@@ -23211,7 +23194,7 @@ echo "$as_me: \"User-specified path to libfreetype2 is
      if test "$with_freetype2_libdir" = "/usr/lib"; then
          with_freetype2_libdir=default
      fi
@@ -63,7 +127,7 @@ $OpenBSD: patch-configure,v 1.3 2007/04/01 19:43:56 steven Exp $
      FREETYPELIBCMD=""
      FREETYPELIBPATH=""
  
-@@ -23563,36 +23572,36 @@ with_freetype_symbol_bold_italic_font=timesbi.ttf
+@@ -23563,36 +23546,36 @@ with_freetype_symbol_bold_italic_font=timesbi.ttf
  ;;
   *)
  
@@ -130,7 +194,7 @@ $OpenBSD: patch-configure,v 1.3 2007/04/01 19:43:56 steven Exp $
  
  ;;
  esac
-@@ -36881,6 +36890,7 @@ s,@RPATHCMD@,$RPATHCMD,;t t
+@@ -36881,6 +36864,7 @@ s,@RPATHCMD@,$RPATHCMD,;t t
  s,@with_rpath_TRUE@,$with_rpath_TRUE,;t t
  s,@with_rpath_FALSE@,$with_rpath_FALSE,;t t
  s,@DATA_DIR@,$DATA_DIR,;t t
