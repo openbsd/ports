@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2007/06/05 14:58:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.144 2007/06/06 19:38:55 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -159,6 +159,7 @@
      SUBDIR += xripple
      SUBDIR += xroach
      SUBDIR += xscavenger
+     SUBDIR += xscorch
      SUBDIR += xscrabble
      SUBDIR += xskat
      SUBDIR += xsol
