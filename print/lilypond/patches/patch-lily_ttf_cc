@@ -1,0 +1,14 @@
+$OpenBSD: patch-lily_ttf_cc,v 1.1 2007/06/06 20:36:23 kili Exp $
+
+Refacturing and backporting fallout?
+
+--- lily/ttf.cc.orig	Sat May 19 16:49:56 2007
++++ lily/ttf.cc	Mon May 21 11:33:48 2007
+@@ -174,7 +174,6 @@ void t42_write_table (void *out, FT_Face face, unsigne
+ 	  {
+ 	    chunks.push_back (last_offset - last_chunk);
+ 	    last_chunk = last_offset;
+-	    assert (cur_chunk_idx < 100);/* FIXME: only for static arrays */
+ 	  }
+ 
+ 	last_offset = offset;

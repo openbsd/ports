@@ -1,19 +1,19 @@
-$OpenBSD: patch-stepmake_aclocal_m4,v 1.1.1.1 2006/10/29 19:27:12 kili Exp $
+$OpenBSD: patch-stepmake_aclocal_m4,v 1.2 2007/06/06 20:36:23 kili Exp $
 
 # Make the version check more robust against multiple line output
 # for $whatever --version, and use awk(1) instead of sh(1) for
 # comparing version numbers (it fails for fontforge, since our sh(1)
 # doesn't yet have 64-bit arithmetic).
 
---- stepmake/aclocal.m4.orig	Tue Sep 19 15:13:52 2006
-+++ stepmake/aclocal.m4	Sat Oct  7 22:05:56 2006
-@@ -31,9 +31,14 @@ AC_DEFUN(STEPMAKE_GET_VERSION, [
+--- stepmake/aclocal.m4.orig	Tue May  1 17:28:45 2007
++++ stepmake/aclocal.m4	Sun May  6 17:57:23 2007
+@@ -32,9 +32,14 @@ AC_DEFUN(STEPMAKE_GET_VERSION, [
      ## for compatibility reasons.
- 
+     
      ## grab the first version number in  --version output.
 -    eval _ver=\"\`("$1" --version || "$1" -V) 2>&1 | grep '\(^\| \)[0-9][0-9]*\.[0-9]' \
 -        | head -n 1 \
--	| tr ' ' '\n' | grep '[0-9]\.[0-9]' | head -n 1 | sed 's/\([0-9.]*\).*/\1/g'\`\"
+-	| tr ' ' '\n' | sed 's/\([0-9][0-9]*\.[0-9][0-9.]*\).*/\1/g' | grep '\(^\| \)[0-9][0-9]*\.[0-9]' | head -n 1\`\"
 +    eval '_ver=\`'"$1"' --version 2>&1\` || _ver=\`'"$1"' -V 2>&1\` &&
 +	 _ver=\`echo $_ver |
 +	 	grep '\''[0-9]\.[0-9]'\'' |
@@ -25,7 +25,7 @@ $OpenBSD: patch-stepmake_aclocal_m4,v 1.1.1.1 2006/10/29 19:27:12 kili Exp $
  
      if test -z "$_ver"; then
          ## If empty, try date [fontforge]
-@@ -48,12 +53,9 @@ AC_DEFUN(STEPMAKE_GET_VERSION, [
+@@ -49,12 +54,9 @@ AC_DEFUN(STEPMAKE_GET_VERSION, [
  # Calculate simplistic numeric version from version string ($1)
  # As yet, we have no need for something more elaborate.
  AC_DEFUN(STEPMAKE_NUMERIC_VERSION, [

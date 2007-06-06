@@ -1,15 +1,18 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.1.1.1 2006/10/29 19:27:12 kili Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.2 2007/06/06 20:36:23 kili Exp $
 
-# We don't want to use GNU tar for this.
+# No rsync, just use pax(1).
+# This isn't of any use yet, but hopefully it will be in the future when
+# we're able to build the documentation by ourselves.
 
---- GNUmakefile.in.orig	Tue Aug  8 23:32:18 2006
-+++ GNUmakefile.in	Sat Oct  7 22:03:19 2006
-@@ -93,7 +93,7 @@ local-WWW-post:
- ## rewrite file names so we lose out-www
- 	rm -rf $(outdir)/web-root/
- 	mkdir $(outdir)/web-root/  
--	cat $(outdir)/weblist | (cd $(top-build-dir); tar -cf-  -T- ) | \
-+	tar -cf- -C $(top-build-dir) -I $(outdir)/weblist | \
- 		tar -C $(outdir)/web-root/ -xf -  
- 	for dir in $(outdir)/web-root/ ; do  \
- 		cd $$dir && \
+--- GNUmakefile.in.orig	Sun Dec 24 17:45:50 2006
++++ GNUmakefile.in	Wed Dec 27 17:30:35 2006
+@@ -57,7 +57,8 @@ doc: 
+ 
+ install-WWW:
+ 	-$(INSTALL) -m 755 -d $(DESTDIR)$(webdir)
+-	rsync -rl $(outdir)/offline-root/ $(DESTDIR)$(webdir)
++	pax -rw -s @^$(outdir)/offline-root@@ \
++		$(outdir)/offline-root $(DESTDIR)$(webdir)
+ 	$(MAKE) -C Documentation/user local-install-WWW
+ 	$(MAKE) -C Documentation/user install-info
+ 
