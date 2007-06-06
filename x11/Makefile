@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.290 2007/06/04 16:40:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.291 2007/06/06 16:17:25 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -97,6 +97,7 @@
      SUBDIR += lablgtk
      SUBDIR += lesstif
      SUBDIR += libdnd
+     SUBDIR += liberation-fonts
      SUBDIR += lupe
      SUBDIR += matchbox
      SUBDIR += mlterm
