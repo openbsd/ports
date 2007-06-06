@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_audacity_desktop,v 1.1 2007/05/24 09:45:01 ajacoutot Exp $
---- src/audacity.desktop.orig	Thu May 24 11:02:45 2007
-+++ src/audacity.desktop	Thu May 24 11:08:40 2007
+$OpenBSD: patch-src_audacity_desktop,v 1.2 2007/06/06 09:35:18 ajacoutot Exp $
+--- src/audacity.desktop.orig	Fri May 18 06:56:01 2007
++++ src/audacity.desktop	Wed Jun  6 09:40:38 2007
 @@ -1,4 +1,4 @@
 -﻿[Desktop Entry]
 +[Desktop Entry]

@@ -1,69 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2007/05/24 09:45:01 ajacoutot Exp $
---- src/Makefile.in.orig	Sun Oct 29 01:05:27 2006
-+++ src/Makefile.in	Thu May 24 11:02:18 2007
-@@ -176,12 +176,9 @@ OBJS = \
- 	widgets/Grid.o \
- 	widgets/ImageRoll.o \
- 	widgets/Meter.o \
--	widgets/MultiDialog.o \
- 	widgets/Ruler.o \
- 	widgets/TimeTextCtrl.o \
--	widgets/Warning.o \
- 	xml/XMLFileReader.o \
--	xml/XMLWriter.o \
- 	@OPTOBJS@
+$OpenBSD: patch-src_Makefile_in,v 1.5 2007/06/06 09:35:18 ajacoutot Exp $
+--- src/Makefile.in.orig	Tue Jun  5 10:59:23 2007
++++ src/Makefile.in	Tue Jun  5 10:59:40 2007
+@@ -20,7 +20,7 @@ PRECOMP_CFLAGS = @PRECOMP_CFLAGS@
+ LOCAL_LIBS = @LOCAL_LIBS@
+ EXTRAOBJS = @EXTRAOBJS@
+ EXTRATARGETS = @EXTRATARGETS@
+-LIBS = @LIBS@ @PA_LIBS@
++LIBS = @LIBS@
+ DIRS=blockfile commands effects effects/ladspa effects/nyquist export import prefs toolbars widgets xml
  
- TEMPORARILY_DISABLED_IMPORTER_OBJS = \
-@@ -189,23 +186,33 @@ TEMPORARILY_DISABLED_IMPORTER_OBJS = \
- 	import/ImportPCM.o \
- 	import/ImportRaw.o \
- 
--LIBAUDACITY_OBJS = \
-+LIBAUDACITY_OBJS_CORE = \
- 	BlockFile.o \
- 	Dither.o \
--	DirManager.o \
- 	FileFormats.o \
--	Prefs.o \
- 	SampleFormat.o \
- 	Sequence.o \
- 	Internat.o \
-+	widgets/MultiDialog.o \
-+	widgets/Warning.o \
- 	blockfile/LegacyBlockFile.o \
- 	blockfile/LegacyAliasBlockFile.o \
- 	blockfile/SilentBlockFile.o \
- 	blockfile/SimpleBlockFile.o \
- 	blockfile/PCMAliasBlockFile.o \
- 	xml/XMLTagHandler.o \
-+	xml/XMLWriter.o \
- 
-+LIBAUDACITY_OBJS_NO_PROJECT_LEVEL = \
-+	DirManager_no_project_level.o \
-+	Prefs_no_project_level.o \
- 
-+LIBAUDACITY_OBJS = \
-+	DirManager.o \
-+	Prefs.o \
-+	$(LIBAUDACITY_OBJS_CORE) \
-+
-+
- ########################################
- # DEPENDENCIES
- 
-@@ -214,7 +221,14 @@ LIBAUDACITY_SOURCES = $(LIBAUDACITY_OBJS:%.o=%.cpp)
- 
- ########################################
- 
--all: $(DIRS) libaudacity.a ../audacity $(EXTRATARGETS)
-+all: $(DIRS) libaudacity.a libaudacity_tests.a ../audacity $(EXTRATARGETS)
-+
-+no_project_level:
-+	$(CCC) -c $(CXXFLAGS) $(CPPFLAGS) -DNO_PROJECT_LEVEL -o DirManager_no_project_level.o DirManager.cpp
-+	$(CCC) -c $(CXXFLAGS) $(CPPFLAGS) -DNO_PROJECT_LEVEL -o Prefs_no_project_level.o Prefs.cpp
-+
-+libaudacity_tests.a: no_project_level
-+	ar rcs libaudacity_tests.a $(LIBAUDACITY_OBJS_NO_PROJECT_LEVEL) $(LIBAUDACITY_OBJS_CORE)
- 
- libaudacity.a: $(LIBAUDACITY_OBJS)
- 	ar rcs libaudacity.a $(LIBAUDACITY_OBJS)
+ srcdir=@srcdir@

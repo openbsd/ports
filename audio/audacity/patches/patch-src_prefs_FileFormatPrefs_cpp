@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_prefs_FileFormatPrefs_cpp,v 1.1 2007/06/06 09:35:18 ajacoutot Exp $
+--- src/prefs/FileFormatPrefs.cpp.orig	Wed Jun  6 09:18:13 2007
++++ src/prefs/FileFormatPrefs.cpp	Wed Jun  6 09:19:03 2007
+@@ -109,8 +109,8 @@ void FileFormatPrefs::PopulateOrExchange( ShuttleGui &
+             wxALL | wxALIGN_LEFT | wxALIGN_CENTRE_VERTICAL );
+          S.Id( ID_MP3_FIND_BUTTON ).AddButton( _("&Find Library"), 
+             wxALL | wxALIGN_LEFT | wxALIGN_CENTRE_VERTICAL );
+-         S.Id( ID_MP3_DOWN_BUTTON ).AddButton( _("&Download free copy of LAME"), 
+-            wxALL | wxALIGN_LEFT | wxALIGN_CENTRE_VERTICAL );
++/*         S.Id( ID_MP3_DOWN_BUTTON ).AddButton( _("&Download free copy of LAME"), 
++            wxALL | wxALIGN_LEFT | wxALIGN_CENTRE_VERTICAL ); */
+       S.EndHorizontalLay();
+    }
+    S.EndStatic();

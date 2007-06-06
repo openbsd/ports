@@ -1,38 +1,32 @@
-$OpenBSD: patch-src_export_ExportMP3_cpp,v 1.4 2007/05/24 09:45:01 ajacoutot Exp $
---- src/export/ExportMP3.cpp.orig	Sun Oct 29 01:05:27 2006
-+++ src/export/ExportMP3.cpp	Thu May 24 11:02:18 2007
-@@ -268,7 +268,7 @@ bool MP3Exporter::FindLibrary(wxWindow *parent)
-          
-          wxString GetLibraryTypeString()
-          {
--            return wxString(_("Only libmp3lame.so|libmp3lame.so|Primary Shared Object files (*.so)|*.so|Extended Libraries (*.so*)|*.so*|All Files (*)|*"));
-+            return wxString(_("Only libmp3lame.so.X.Y|libmp3lame.so.*|Extended Libraries (*.so.*)|*.so.*|Primary Shared Object files (*.so)|*.so|All Files (*)|*"));
+$OpenBSD: patch-src_export_ExportMP3_cpp,v 1.5 2007/06/06 09:35:18 ajacoutot Exp $
+--- src/export/ExportMP3.cpp.orig	Fri May 18 06:55:50 2007
++++ src/export/ExportMP3.cpp	Wed Jun  6 09:22:02 2007
+@@ -523,8 +523,8 @@ class FindDialog : public wxDialog (public)
+                mPathText = S.AddTextBox(wxT(""), mLibPath.GetFullPath(), 0);
+             }
+             S.Id(ID_BROWSE).AddButton(_("Browse..."), wxALIGN_RIGHT);
+-            S.AddVariableText(_("To get a free copy of Lame, click here -->"), true);
+-            S.Id(ID_DLOAD).AddButton(_("Download..."), wxALIGN_RIGHT);
++/*            S.AddVariableText(_("To get a free copy of Lame, click here -->"), true);
++            S.Id(ID_DLOAD).AddButton(_("Download..."), wxALIGN_RIGHT); */
           }
-          
-          wxString GetLibraryMessage()
-@@ -276,10 +276,12 @@ bool MP3Exporter::FindLibrary(wxWindow *parent)
-             /* i18n-hint: This message is used on Unix/Linux */
-             return _("Audacity does not export MP3 files directly, but instead uses the \n"
-                    "freely available LAME library to handle MP3 file encoding.  You must \n"
--                   "obtain libmp3lame.so separately, either by downloading it or building \n"
--                   "it from the sources, and then locate the file for Audacity.  You only \n"
--                   "need to do this once.\n\n"
--                   "Would you like to locate libmp3lame.so now?");
-+                   "install the lame package on your OpenBSD system using pkg_add(1), or\n"
-+                   "alternatively you can install the port from the audio/lame subdirectory\n"
-+                   "of the ports tree.\n\n"
-+                   "The library is usually located under !!LOCALBASE!!/lib and its filename\n"
-+                   "should be libmp3lame.so.X.Y, where X and Y are version numbers.\n"
-+                   "If you are ready, click Yes to locate the library file on your system.\n");
-          }
+          S.EndMultiColumn();
+          S.SetBorder(5);
+@@ -1488,7 +1488,7 @@ class LameExporter : public MP3Exporter (public)
  
-          bool  LoadLibrary() {
-@@ -523,7 +525,7 @@ void ReleaseMP3Exporter()
-          
-       wxString GetLibraryPath()
-       {
--         return wxT("/usr/local/lib");
-+         return wxT("!!LOCALBASE!!/lib");
-       }
+    wxString GetLibraryPath()
+    {
+-      return wxT("/usr/lib");
++      return wxT("!!LOCALBASE!!/lib");
+    }
  
-          wxString GetLibraryName()
+    wxString GetLibraryName()
+@@ -1498,7 +1498,7 @@ class LameExporter : public MP3Exporter (public)
+ 
+    wxString GetLibraryTypeString()
+    {
+-      return wxString(_("Only libmp3lame.so|libmp3lame.so|Primary Shared Object files (*.so)|*.so|Extended Libraries (*.so*)|*.so*|All Files (*)|*"));
++      return wxString(_("libmp3lame.so.X.Y|libmp3lame.so.*|libmp3lame.so|Primary Shared Object files (*.so)|*.so|Extended Libraries (*.so*)|*.so*|All Files (*)|*"));
+    }
+ 
+ #endif

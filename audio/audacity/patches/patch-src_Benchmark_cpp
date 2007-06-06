@@ -1,0 +1,83 @@
+$OpenBSD: patch-src_Benchmark_cpp,v 1.1 2007/06/06 09:35:18 ajacoutot Exp $
+--- src/Benchmark.cpp.orig	Tue Jun  5 14:55:41 2007
++++ src/Benchmark.cpp	Tue Jun  5 14:36:27 2007
+@@ -37,6 +37,7 @@ of the BlockFile system.
+ #include "Project.h"
+ #include "WaveTrack.h"
+ #include "Sequence.h"
++#include "Prefs.h"
+ 
+ #include "FileDialog.h"
+ 
+@@ -330,6 +331,10 @@ void BenchmarkDialog::OnRun( wxCommandEvent &event )
+       return;
+    }
+ 
++   bool editClipCanMove = true;
++   gPrefs->Read(wxT("/GUI/EditClipCanMove"), &editClipCanMove);
++   gPrefs->Write(wxT("/GUI/EditClipCanMove"), false);
++
+    Sequence::SetMaxDiskBlockSize(blockSize * 1024);
+ 
+    wxBusyCursor busy;
+@@ -425,7 +430,7 @@ void BenchmarkDialog::OnRun( wxCommandEvent &event )
+ 
+       t->Paste(double (y0 * scale), tmp);
+ 
+-      if (t->GetClipByIndex(0)->GetSequence()->GetNumSamples() != (sampleCount)len * scale) {
++      if (t->GetClipByIndex(0)->GetSequence()->GetNumSamples() != (sampleCount) len * scale) {
+          Printf(wxT("Trial %d\n"), z);
+          Printf(wxT("Expected len %d, track len %d.\n"), len * scale,
+                 t->GetClipByIndex(0)->GetSequence()->GetNumSamples());
+@@ -443,8 +448,6 @@ void BenchmarkDialog::OnRun( wxCommandEvent &event )
+       // Paste
+       for (i = 0; i < xlen; i++)
+          small1[y0 + i] = small2[i];
+-
+-      delete tmp;
+    }
+ 
+    elapsed = timer.Time();
+@@ -513,33 +516,28 @@ void BenchmarkDialog::OnRun( wxCommandEvent &event )
+           wxT("simultaneous tracks that could be played at once: %.1f\n"),
+           (len*scale/44100.0)/(elapsed/1000.0));
+ 
+-   delete t;
++   goto success;
+ 
+-   delete[]small1;
+-   delete[]small2;
+-   delete[]block;
+-
+-   delete fact;
+-   delete d;
+-
+-   Sequence::SetMaxDiskBlockSize(1048576);
+-   HoldPrint(false);
+-
+-   return;
+-
+  fail:
+    Printf(wxT("TEST FAILED!!!\n"));
+ 
++ success:
++   if (tmp)
++      delete tmp;
++
+    delete t;
+ 
+    delete[]small1;
+    delete[]small2;
+    delete[]block;
+ 
+-   delete d;
++   delete fact;
++   d->Deref();
+ 
+    Sequence::SetMaxDiskBlockSize(1048576);
+    HoldPrint(false);
++
++   gPrefs->Write(wxT("/GUI/EditClipCanMove"), editClipCanMove);
+ }
+ 
+ 

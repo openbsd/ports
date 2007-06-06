@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/24 09:45:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/06/06 09:35:19 ajacoutot Exp $
 bin/audacity
 @man man/man1/audacity.1
 share/applications/
 share/applications/audacity.desktop
 share/audacity/
-share/audacity/audacity-1.2-help.htb
 share/audacity/nyquist/
 share/audacity/nyquist/bug.lsp
 share/audacity/nyquist/dspprims.lsp
@@ -34,9 +33,6 @@ share/audacity/plug-ins/highpass.ny
 share/audacity/plug-ins/lowpass.ny
 share/audacity/plug-ins/pluck.ny
 share/audacity/plug-ins/tremolo.ny
-share/doc/audacity/
-share/doc/audacity/LICENSE.txt
-share/doc/audacity/README.txt
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/audacity.mo
@@ -44,8 +40,14 @@ share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/audacity.mo
 share/locale/bg/LC_MESSAGES/audacity.mo
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
+share/locale/bn/LC_MESSAGES/audacity.mo
 share/locale/ca/LC_MESSAGES/audacity.mo
 share/locale/cs/LC_MESSAGES/audacity.mo
+share/locale/cy/
+share/locale/cy/LC_MESSAGES/
+share/locale/cy/LC_MESSAGES/audacity.mo
 share/locale/da/LC_MESSAGES/audacity.mo
 share/locale/de/LC_MESSAGES/audacity.mo
 share/locale/el/LC_MESSAGES/audacity.mo
@@ -56,6 +58,7 @@ share/locale/eu/LC_MESSAGES/audacity.mo
 share/locale/fi/LC_MESSAGES/audacity.mo
 share/locale/fr/LC_MESSAGES/audacity.mo
 share/locale/ga/LC_MESSAGES/audacity.mo
+share/locale/gl/LC_MESSAGES/audacity.mo
 share/locale/hu/LC_MESSAGES/audacity.mo
 share/locale/it/LC_MESSAGES/audacity.mo
 share/locale/ja/LC_MESSAGES/audacity.mo
@@ -67,9 +70,14 @@ share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/audacity.mo
 share/locale/nb/LC_MESSAGES/audacity.mo
 share/locale/nl/LC_MESSAGES/audacity.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/audacity.mo
 share/locale/pl/LC_MESSAGES/audacity.mo
 share/locale/pt/LC_MESSAGES/audacity.mo
+share/locale/ro/LC_MESSAGES/audacity.mo
 share/locale/ru/LC_MESSAGES/audacity.mo
+share/locale/sk/LC_MESSAGES/audacity.mo
 share/locale/sl/LC_MESSAGES/audacity.mo
 share/locale/sv/LC_MESSAGES/audacity.mo
 share/locale/tr/LC_MESSAGES/audacity.mo

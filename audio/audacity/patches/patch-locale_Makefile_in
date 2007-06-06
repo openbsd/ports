@@ -1,7 +1,7 @@
-$OpenBSD: patch-locale_Makefile_in,v 1.1 2006/10/12 14:26:04 alek Exp $
---- locale/Makefile.in.orig	Sun Oct  8 21:22:47 2006
-+++ locale/Makefile.in	Sun Oct  8 21:22:59 2006
-@@ -71,8 +71,8 @@ FORCE:
+$OpenBSD: patch-locale_Makefile_in,v 1.2 2007/06/06 09:35:18 ajacoutot Exp $
+--- locale/Makefile.in.orig	Wed Mar 28 09:36:54 2007
++++ locale/Makefile.in	Wed Mar 28 09:37:27 2007
+@@ -86,8 +86,8 @@ FORCE:
  
  install: allmo
  	linguas='$(LINGUAS)'; for lang in $$linguas ; do \
