@@ -1,4 +1,4 @@
-# $OpenBSD: systrace.policy,v 1.8 2007/01/31 18:14:36 kurt Exp $
+# $OpenBSD: systrace.policy,v 1.9 2007/06/06 04:33:33 steven Exp $
 Policy: ${WRKDIR}/j2sdk-1_3_1_19-linux-i586.bin, Emulation: linux
 	linux-brk: permit
 	linux-chmod: permit
@@ -37,7 +37,7 @@ Policy: ${WRKSRC}/bin/i386/green_threads/jar, Emulation: linux
 	linux-fsread: permit
 	linux-fstat64: permit
 	linux-fswrite: filename match "${WRKDIR}" then permit
-	linux-getcwd: permit
+	linux-__getcwd: permit
 	linux-getdents64: permit
 	linux-getegid: permit
 	linux-geteuid: permit
