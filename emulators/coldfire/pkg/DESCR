@@ -1,0 +1,19 @@
+The Coldfire Emulator is a Motorola Coldfire 5206 Emulator.  It's
+original beginnings date back to the fourth term (2nd year) of the
+University of Waterloo's Computer Engineering program (summer of 1999).
+The Electrical and Computer Engineering (E&CE) 222 course - Digital
+Computers - taught Motorola Coldfire 5206 assembly as an introduction to
+machine assembly language.  Since the Computer Engineering class of 2002
+is twice the size of previous classes, the demand for Coldfire boards
+was much greater than their availability.  (Also the fact that several
+classmates apparently didn't understand "NO food or drinks in the labs"
+and kept getting the labs deadbolted on us didn't help).  Thus, David
+Grant began his emulator project to work on labs without requiring the
+actual hardware boards.  Although the emulator progressed far enough to
+be used for the first three labs, interrupts were not yet implemented so
+the real boards were used for the final assignment.  The next term
+featured the course E&CE 354 - Real-Time Operating Systems - where a
+project involved writing a real-time executive (RTX) for the Motorola
+Coldfire 5206 platform. (Insert same problems with availability and
+stupid classmates here). So, the emulator was dusted off and developed
+in parallel with the RTX.

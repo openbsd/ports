@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/07 11:46:07 martin Exp $
+bin/coldfire
+share/coldfire/
+share/coldfire/arnewsh-5206.board
+share/coldfire/cjdesign-5307.board
+share/coldfire/elia-5307.board
+share/coldfire/lite-5206e.board
