@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2006/10/17 22:34:27 sturm Exp $
+# $OpenBSD: Makefile,v 1.38 2007/06/07 11:47:15 martin Exp $
 
     SUBDIR += BasiliskII
     SUBDIR += bochs
     SUBDIR += bochs,debug
+    SUBDIR += coldfire
     SUBDIR += dosbox
     SUBDIR += fedora
     SUBDIR += freebsd_lib
