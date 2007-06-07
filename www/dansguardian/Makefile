@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/07 13:16:14 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/07 14:36:46 aanriot Exp $
 
 COMMENT=	true web content filtering for all
 DISTNAME=	dansguardian-2.9.8.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www net
 
 HOMEPAGE=	http://www.dansguardian.org/
@@ -15,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++ z
 
-MASTER_SITES=		http://dansguardian.org/downloads/2/Beta/
+MASTER_SITES=		http://www.obsd.fr/OpenBSD/distfiles/
 
 LIB_DEPENDS=		pcre.>=1,pcreposix.>=1::devel/pcre
 
