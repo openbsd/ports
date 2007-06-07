@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/03/15 14:00:26 msf Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/06/07 07:34:04 steven Exp $
 ${P5ARCH}/
 ${P5ARCH}/Glib/
 ${P5ARCH}/Glib.pm
+${P5ARCH}/Glib/BookmarkFile.pod
 ${P5ARCH}/Glib/Boxed.pod
 ${P5ARCH}/Glib/CodeGen.pm
 ${P5ARCH}/Glib/Error.pod
@@ -46,6 +47,7 @@ ${P5ARCH}/auto/Glib/
 ${P5ARCH}/auto/Glib/Glib.bs
 ${P5ARCH}/auto/Glib/Glib.so
 @man man/man3p/Glib.3p
+@man man/man3p/Glib::BookmarkFile.3p
 @man man/man3p/Glib::Boxed.3p
 @man man/man3p/Glib::CodeGen.3p
 @man man/man3p/Glib::Error.3p
