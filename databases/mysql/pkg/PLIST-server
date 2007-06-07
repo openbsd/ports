@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.26 2007/04/09 22:43:06 ckuethe Exp $
+@comment $OpenBSD: PLIST-server,v 1.27 2007/06/07 20:35:35 ckuethe Exp $
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
 bin/comp_err
@@ -40,7 +40,10 @@ lib/mysql/libmysys.a
 lib/mysql/libvio.a
 libexec/mysqld
 libexec/mysqlmanager
+@man man/man1/comp_err.1
+@man man/man1/innochecksum.1
 @man man/man1/make_win_bin_dist.1
+@man man/man1/make_win_src_distribution.1
 @man man/man1/msql2mysql.1
 @man man/man1/my_print_defaults.1
 @man man/man1/myisam_ftdump.1
@@ -48,36 +51,26 @@ libexec/mysqlmanager
 @man man/man1/myisamlog.1
 @man man/man1/myisampack.1
 @man man/man1/mysql.server.1
+@man man/man1/mysql_convert_table_format.1
 @man man/man1/mysql_explain_log.1
+@man man/man1/mysql_find_rows.1
+@man man/man1/mysql_fix_extensions.1
 @man man/man1/mysql_fix_privilege_tables.1
 @man man/man1/mysql_install_db.1
+@man man/man1/mysql_secure_installation.1
+@man man/man1/mysql_setpermission.1
+@man man/man1/mysql_tableinfo.1
 @man man/man1/mysql_upgrade.1
+@man man/man1/mysql_waitpid.1
 @man man/man1/mysql_zap.1
 @man man/man1/mysqlaccess.1
 @man man/man1/mysqld_multi.1
 @man man/man1/mysqld_safe.1
 @man man/man1/mysqlhotcopy.1
-@man man/man1/ndb_config.1
-@man man/man1/ndb_cpcd.1
-@man man/man1/ndb_delete_all.1
-@man man/man1/ndb_desc.1
-@man man/man1/ndb_drop_index.1
-@man man/man1/ndb_drop_table.1
-@man man/man1/ndb_error_reporter.1
-@man man/man1/ndb_mgm.1
-@man man/man1/ndb_mgmd.1
-@man man/man1/ndb_print_backup_file.1
-@man man/man1/ndb_print_schema_file.1
-@man man/man1/ndb_print_sys_file.1
-@man man/man1/ndb_restore.1
-@man man/man1/ndb_select_all.1
-@man man/man1/ndb_select_count.1
-@man man/man1/ndb_show_tables.1
-@man man/man1/ndb_size.pl.1
-@man man/man1/ndb_waiter.1
-@man man/man1/ndbd.1
 @man man/man1/perror.1
 @man man/man1/replace.1
+@man man/man1/resolve_stack_dump.1
+@man man/man1/resolveip.1
 @man man/man1/safe_mysqld.1
 @man man/man8/mysqld.8
 @man man/man8/mysqlmanager.8
@@ -147,6 +140,9 @@ share/mysql/my-small.cnf
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/mysql_fix_privilege_tables.sql
+share/mysql/mysql_system_tables.sql
+share/mysql/mysql_system_tables_data.sql
+share/mysql/mysql_test_data_timezone.sql
 share/mysql/ndb-config-2-node.ini
 share/mysql/norwegian/
 share/mysql/norwegian-ny/

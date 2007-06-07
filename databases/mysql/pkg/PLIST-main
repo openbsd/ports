@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/01/25 07:41:48 jakob Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2007/06/07 20:35:35 ckuethe Exp $
 @pkgpath databases/mysql
 bin/mysql
 bin/mysql_client_test
 bin/mysql_config
-bin/mysql_create_system_tables
 bin/mysql_tzinfo_to_sql
 bin/mysqladmin
 bin/mysqlbinlog
@@ -16,6 +15,7 @@ bin/mysqltest
 bin/mysqltestmanager-pwgen
 bin/mysqltestmanagerc
 include/mysql/
+include/mysql/decimal.h
 include/mysql/errmsg.h
 include/mysql/keycache.h
 include/mysql/m_ctype.h
@@ -30,7 +30,6 @@ include/mysql/my_list.h
 include/mysql/my_net.h
 include/mysql/my_no_pthread.h
 include/mysql/my_pthread.h
-include/mysql/my_semaphore.h
 include/mysql/my_sys.h
 include/mysql/my_xml.h
 include/mysql/mysql.h
@@ -62,4 +61,7 @@ lib/mysql/libmysqlclient_r.la
 @man man/man1/mysqldump.1
 @man man/man1/mysqlimport.1
 @man man/man1/mysqlman.1
+@man man/man1/mysqlmanager-pwgen.1
+@man man/man1/mysqlmanagerc.1
 @man man/man1/mysqlshow.1
+@man man/man1/mysqltest.1

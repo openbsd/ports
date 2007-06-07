@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.6 2007/04/09 22:43:06 ckuethe Exp $
---- scripts/mysql_install_db.sh.orig	Mon Mar  5 20:21:13 2007
-+++ scripts/mysql_install_db.sh	Sat Mar 31 19:01:27 2007
-@@ -22,7 +22,8 @@
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.7 2007/06/07 20:35:35 ckuethe Exp $
+--- scripts/mysql_install_db.sh.orig	Wed May  2 16:39:59 2007
++++ scripts/mysql_install_db.sh	Sun May 13 03:41:46 2007
+@@ -21,7 +21,8 @@
  in_rpm=0
  windows=0
  defaults=""
@@ -11,58 +11,64 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.6 2007/04/09 22:43:06 ckuethe Ex
  
  case "$1" in
      --no-defaults|--defaults-file=*|--defaults-extra-file=*)
-@@ -52,6 +53,7 @@ parse_arguments() {
+@@ -59,6 +60,7 @@ parse_arguments() {
          # as 'user' (crucial e.g. if log-bin=/some_other_path/
          # where a chown of datadir won't help)
  	 user=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
 +      --group=*) group=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --skip-name-resolve) ip_only=1 ;;
-       --verbose) verbose=1 ;;
+       --verbose) verbose=1 ;; # Obsolete
        --rpm) in_rpm=1 ;;
-@@ -209,12 +211,10 @@ fi
+@@ -248,20 +250,18 @@ fi
  
  # Create database directories mysql & test
+ if test ! -d $ldata; then
+-  mkdir $ldata;
++  mkdir -p $ldata;
+   chmod 700 $ldata ;
+ fi
+ if test ! -d $ldata/mysql; then
+-  mkdir $ldata/mysql;
++  mkdir -p $ldata/mysql;
+   chmod 700 $ldata/mysql ;
+ fi
+ if test ! -d $ldata/test; then
+-  mkdir $ldata/test;
++  mkdir -p $ldata/test;
+   chmod 700 $ldata/test ;
+ fi
+-if test -w / -a ! -z "$user"; then
+-  chown $user $ldata $ldata/mysql $ldata/test;
+-fi
++chown -f $user:$group $ldata $ldata/mysql $ldata/test
  
--  if test ! -d $ldata; then mkdir $ldata; chmod 700 $ldata ; fi
--  if test ! -d $ldata/mysql; then mkdir $ldata/mysql;  chmod 700 $ldata/mysql ; fi
--  if test ! -d $ldata/test; then mkdir $ldata/test;  chmod 700 $ldata/test ; fi
--  if test -w / -a ! -z "$user"; then
--    chown $user $ldata $ldata/mysql $ldata/test;
--  fi
-+  if test ! -d $ldata; then mkdir -p $ldata; chmod 700 $ldata ; fi
-+  if test ! -d $ldata/mysql; then mkdir -p $ldata/mysql;  chmod 700 $ldata/mysql ; fi
-+  if test ! -d $ldata/test; then mkdir -p $ldata/test;  chmod 700 $ldata/test ; fi
-+  chown -f $user:$group $ldata $ldata/mysql $ldata/test;
- 
- if test ! -f $mdata/db.frm
- then
-@@ -259,13 +259,6 @@ then
-       echo ""
+ if test -n "$user"; then
+   args="$args --user=$user"
+@@ -296,11 +296,6 @@ then
      fi
    fi
--  if test "$in_rpm" = 0 -a "$windows" = 0
--  then
--    echo ""
--    echo "To start mysqld at boot time you have to copy support-files/mysql.server"
--    echo "to the right place for your system"
--    echo
--  fi
+ 
+-  s_echo ""
+-  s_echo "To start mysqld at boot time you have to copy"
+-  s_echo "support-files/mysql.server to the right place for your system"
+-  s_echo
+-
    if test "$windows" -eq 0
    then
-   echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
-@@ -283,15 +276,6 @@ then
-     echo "able to use the new GRANT command!"
-   fi
-   echo
--  if test "$in_rpm" = "0"
--  then
--    echo "You can start the MySQL daemon with:"
--    echo "cd @prefix@ ; $bindir/mysqld_safe &"
--    echo
--    echo "You can test the MySQL daemon with the benchmarks in the 'sql-bench' directory:"
--    echo "cd sql-bench ; perl run-all-tests"
--    echo
--  fi
-   echo "Please report any problems with the @scriptdir@/mysqlbug script!"
-   echo
-   echo "The latest information about MySQL is available on the web at"
+     # A root password should of course also be set on Windows!
+@@ -315,15 +310,6 @@ then
+     echo "$bindir/mysqladmin -u root -h $hostname password 'new-password'"
+     echo "See the manual for more instructions."
+ 
+-    if test "$in_rpm" = "0"
+-    then
+-      echo "You can start the MySQL daemon with:"
+-      echo "cd @prefix@ ; $bindir/mysqld_safe &"
+-      echo
+-      echo "You can test the MySQL daemon with mysql-test-run.pl"
+-      echo "cd mysql-test ; perl mysql-test-run.pl"
+-      echo
+-    fi
+     echo "Please report any problems with the @scriptdir@/mysqlbug script!"
+     echo
+     echo "The latest information about MySQL is available on the web at"
