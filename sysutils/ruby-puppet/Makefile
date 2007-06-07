@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/11 07:46:38 mcbride Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/07 12:07:20 msf Exp $
 
 COMMENT=	"centralised configuration management for networks"
 
 VERSION=	0.22.4
 DISTNAME=	puppet-${VERSION}
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	sysutils net
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://reductivelabs.com/projects/puppet/
 MASTER_SITES=	http://reductivelabs.com/downloads/puppet/
 
-MAINTAINER=	Robert Nagy <robert@openbsd.org>
+MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
