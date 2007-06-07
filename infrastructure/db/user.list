@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.73 2007/05/14 21:42:47 ckuethe Exp $
+$OpenBSD: user.list,v 1.74 2007/06/07 12:56:33 aanriot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -96,3 +96,4 @@ id  user		group		port options
 585 _lighttpd		_lighttpd	www/lighttpd
 586 _gnugk		_gnugk		net/gnugk
 587 _darkstat		_darkstat	net/darkstat
+588 _dansguardian	_dansguardian	www/dansguardian
