@@ -1,7 +1,7 @@
 Using PostgreSQL in an OpenBSD environment
 
 At least two different accounts are involved when working with PostgreSQL:
-One is an OpenBSD userid, '_posgresql', which is used as the userid of files
+One is an OpenBSD userid, '_postgresql', which is used as the userid of files
 that are part of PostgreSQL.  The other, usually named 'postgres', is not an
 OpenBSD userid, i.e. you will not find it in /etc/passwd, but an account
 internal to the database system.  The 'postgres' account is called the dba
