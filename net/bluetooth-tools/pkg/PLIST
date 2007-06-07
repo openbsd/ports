@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/06/07 13:10:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/06/07 13:28:19 jasper Exp $
 @newgroup _sdpd:589
-@newuser _sdpd:589:_sdpd:Service Discovery Protol Daemon:/nonexistent:/sbin/nologin
+@newuser _sdpd:589:_sdpd::Service Discovery Protol Daemon:/nonexistent:/sbin/nologin
 bin/btpin
 bin/rfcomm_sppd
 bin/sdpquery
