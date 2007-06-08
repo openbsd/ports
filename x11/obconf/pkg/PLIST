@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/14 01:15:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/06/08 18:42:01 ajacoutot Exp $
 bin/obconf
 share/applications/
 share/applications/obconf.desktop
+share/mime/
+share/mime/packages/
+share/mime/packages/obconf.xml
+share/mimelnk/
+share/mimelnk/application/
+share/mimelnk/application/x-openbox-theme.desktop
 share/obconf/
 share/obconf/obconf.glade

@@ -1,24 +1,26 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/08 18:42:01 ajacoutot Exp $
 
-COMMENT=	"configuration utility for openbox"
+COMMENT=	configuration utility for openbox
 
-DISTNAME=	obconf-1.6
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	obconf-2.0.0
 CATEGORIES=	x11
-MASTER_SITES=	http://tr.openmonkey.com/files/obconf/
+MASTER_SITES=	http://icculus.org/openbox/obconf/
 
-HOMEPAGE=	http://tr.openmonkey.com/pages/obconf/
+HOMEPAGE=	http://icculus.org/openbox/index.php/Obconf
 
-WANTLIB=	glib-2.0 ICE SM X11 Xext Xft Xrender \
-		atk-1.0 c fontconfig iconv intl xml2 \
-		gmodule-2.0 gobject-2.0 m pango-1.0 glitz png \
-		pangocairo-1.0 pangoft2-1.0 freetype \
-		cairo z
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
+WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
+		Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 iconv intl m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pangoxft-1.0 png xml2 z
 
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glade-2.0.>=0.1::devel/libglade2 \
 		startup-notification-1::devel/startup-notification \
-		obparser,obrender::x11/openbox
+		obparser.>=4,obrender.>=4::x11/openbox
+
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -28,8 +30,5 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
