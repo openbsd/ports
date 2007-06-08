@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2007/06/03 09:58:42 espie Exp $
+# $OpenBSD: Makefile,v 1.120 2007/06/08 17:19:39 simon Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -32,6 +32,7 @@
      SUBDIR += p5-BerkeleyDB
      SUBDIR += p5-Catalyst-Controller-Rose
      SUBDIR += p5-Catalyst-Model-CDBI
+     SUBDIR += p5-Catalyst-Model-DBI
      SUBDIR += p5-Catalyst-Model-DBIC-Schema
      SUBDIR += p5-Catalyst-Model-RDBO
      SUBDIR += p5-Class-DBI
