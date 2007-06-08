@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.5 2007/03/26 20:41:38 martynas Exp $
+@comment $OpenBSD: PLIST-devel,v 1.6 2007/06/08 11:49:47 martynas Exp $
 @conflict seamonkey-<1.0.7p1
 bin/seamonkey-config
 lib/pkgconfig/seamonkey-gtkmozembed.pc
@@ -792,6 +792,7 @@ seamonkey/idl/nsIMsgProgress.idl
 seamonkey/idl/nsIMsgProtocolInfo.idl
 seamonkey/idl/nsIMsgPurgeService.idl
 seamonkey/idl/nsIMsgQuote.idl
+seamonkey/idl/nsIMsgQuotingOutputStreamListener.idl
 seamonkey/idl/nsIMsgRDFDataSource.idl
 seamonkey/idl/nsIMsgRecipientArray.idl
 seamonkey/idl/nsIMsgSMIMECompFields.idl
@@ -2576,6 +2577,7 @@ seamonkey/include/msgcompose/nsIMsgComposeProgressParams.h
 seamonkey/include/msgcompose/nsIMsgComposeSecure.h
 seamonkey/include/msgcompose/nsIMsgComposeService.h
 seamonkey/include/msgcompose/nsIMsgQuote.h
+seamonkey/include/msgcompose/nsIMsgQuotingOutputStreamListener.h
 seamonkey/include/msgcompose/nsIMsgRecipientArray.h
 seamonkey/include/msgcompose/nsIMsgSend.h
 seamonkey/include/msgcompose/nsIMsgSendLater.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/22 15:04:39 martynas Exp $
+# $OpenBSD: Makefile,v 1.11 2007/06/08 11:49:47 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -6,11 +6,11 @@ ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 COMMENT-main=	"integrated mozilla application suite"
 COMMENT-devel=  "devel files for Gecko"
 
-VER=		1.1.1
+VER=		1.1.2
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
-PKGNAME-main=	seamonkey-${VER}p1
-PKGNAME-devel=	seamonkey-devel-${VER}p1
+PKGNAME-main=	seamonkey-${VER}
+PKGNAME-devel=	seamonkey-devel-${VER}
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -48,8 +48,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
 MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/contrib-localized/
 
-LANGUAGES=	de-AT be-BY ca-AD cs-CZ es-ES fr-FR he-IL it-IT pl-PL ru-RU
-BINLANGS=	be-BY fr-FR pl-PL
+LANGUAGES=	cs-CZ de-AT el-GR es-ES it-IT pl-PL pt-BR
+BINLANGS=	el-GR pl-PL pt-BR
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -71,9 +71,11 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 WANTLIB=	c glib-2.0 m pthread stdc++
 
 RUN_DEPENDS-main= :esound-*:audio/esound
-WANTLIB-main=	${WANTLIB} X11 Xau Xdmcp Xft Xinerama Xrender Xt atk-1.0 \
-		cairo expat fontconfig freetype glitz gmodule-2.0 gobject-2.0 \
-		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 png z
+WANTLIB-main=	${WANTLIB} X11 Xau Xcursor Xdmcp Xext Xfixes Xft \
+		Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo expat \
+		fontconfig freetype glitz gmodule-2.0 gobject-2.0 \
+		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 \
+		png z \
 
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
 		seamonkey/mozjs,seamonkey/xpcom,seamonkey/xpcom_core:${PKGNAME-main}:www/seamonkey,-main
@@ -132,6 +134,10 @@ WRKDIST=	${WRKDIR}/mozilla
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/seamonkey
 
+DATADIRS=	chrome components defaults dictionaries greprefs \
+		init.d plugins res searchplugins
+DISTDIRS=	include idl
+
 post-extract:
 .for i in ${BINLANGS}	# normalize
 	@mv -f ${WRKDIR}/$i/bin/* ${WRKDIR}/$i/
@@ -150,18 +156,16 @@ pre-configure:
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 
 do-install:
-.for dir in include idl
-	${INSTALL_DATA_DIR} ${MOZ}/${dir}
-	@cd ${WRKSRC}/dist && ${TAR} -chf - ${dir} | \
-		${TAR} -xf - -C ${MOZ}
-.endfor
-.for dir in chrome components defaults dictionaries greprefs init.d plugins \
-	res searchplugins
-	${INSTALL_DATA_DIR} ${MOZ}/${dir}
-	@cd ${MOB} && ${TAR} -chf - ${dir} | \
-		${TAR} -xf - -C ${MOZ}
-	@find ${MOZ} -type f -exec chmod 644 {} \;
-.endfor
+	cd ${WRKSRC}/dist && \
+		find ${DISTDIRS} -type d \
+			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
+		find ${DISTDIRS} ! -type d \
+			-exec ${INSTALL_DATA} {} ${MOZ}/{} \;
+	cd ${MOB} && \
+		find ${DATADIRS} -type d \
+			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
+		find ${DATADIRS} ! -type d \
+			-exec ${INSTALL_DATA} -m 644 {} ${MOZ}/{} \;
 	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}

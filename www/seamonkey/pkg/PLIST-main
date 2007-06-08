@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2007/04/22 15:04:39 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2007/06/08 11:49:47 martynas Exp $
 %%SHARED%%
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -7,20 +7,12 @@ seamonkey/LICENSE
 seamonkey/README.OpenBSD
 seamonkey/TestGtkEmbed
 seamonkey/chrome/
-seamonkey/chrome/AD.jar
 seamonkey/chrome/AT.jar
-seamonkey/chrome/BY.jar
+seamonkey/chrome/BR.jar
 seamonkey/chrome/CZ.jar
-seamonkey/chrome/FR.jar
-seamonkey/chrome/IL.jar
 seamonkey/chrome/IT.jar
 seamonkey/chrome/PL.jar
-seamonkey/chrome/RU.jar
 seamonkey/chrome/US.jar
-seamonkey/chrome/be-BY.jar
-seamonkey/chrome/be-unix.jar
-seamonkey/chrome/ca-AD.jar
-seamonkey/chrome/ca-unix.jar
 seamonkey/chrome/chatzilla.jar
 seamonkey/chrome/chromelist.txt
 seamonkey/chrome/classic.jar
@@ -30,6 +22,8 @@ seamonkey/chrome/cs-CZ.jar
 seamonkey/chrome/cs-unix.jar
 seamonkey/chrome/de-AT.jar
 seamonkey/chrome/de-unix.jar
+seamonkey/chrome/el-GR.jar
+seamonkey/chrome/el-unix.jar
 seamonkey/chrome/embed-sample.jar
 seamonkey/chrome/en-US.jar
 seamonkey/chrome/en-mac.jar
@@ -37,10 +31,6 @@ seamonkey/chrome/en-unix.jar
 seamonkey/chrome/en-win.jar
 seamonkey/chrome/es-ES.jar
 seamonkey/chrome/es-unix.jar
-seamonkey/chrome/fr-FR.jar
-seamonkey/chrome/fr-unix.jar
-seamonkey/chrome/he-IL.jar
-seamonkey/chrome/he-unix.jar
 seamonkey/chrome/help.jar
 seamonkey/chrome/icons/
 seamonkey/chrome/icons/default/
@@ -90,10 +80,10 @@ seamonkey/chrome/pipnss.jar
 seamonkey/chrome/pippki.jar
 seamonkey/chrome/pl-PL.jar
 seamonkey/chrome/pl-unix.jar
+seamonkey/chrome/pt-BR.jar
+seamonkey/chrome/pt-unix.jar
 seamonkey/chrome/reporter.jar
 seamonkey/chrome/reporter.manifest
-seamonkey/chrome/ru-RU.jar
-seamonkey/chrome/ru-unix.jar
 seamonkey/chrome/sroaming.jar
 seamonkey/chrome/toolkit.jar
 seamonkey/chrome/venkman.jar
@@ -274,13 +264,7 @@ seamonkey/defaults/
 seamonkey/defaults/autoconfig/
 seamonkey/defaults/autoconfig/platform.js
 seamonkey/defaults/autoconfig/prefcalls.js
-seamonkey/defaults/isp/
-seamonkey/defaults/isp/US/
-seamonkey/defaults/isp/US/movemail.rdf
-seamonkey/defaults/isp/movemail.rdf
 seamonkey/defaults/messenger/
-seamonkey/defaults/messenger/SpamAssassin.sfd
-seamonkey/defaults/messenger/SpamPal.sfd
 seamonkey/defaults/messenger/US/
 seamonkey/defaults/messenger/US/mailViews.dat
 seamonkey/defaults/messenger/mailViews.dat
