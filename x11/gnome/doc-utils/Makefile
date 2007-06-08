@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/06/08 19:12:29 martynas Exp $
 
 COMMENT=	"collection of documentation utilities for the GNOME project"
 
@@ -18,7 +18,8 @@ EXTRACT_SUFX=	.tar.bz2
 MODULES=	lang/python
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:py-libxml-*:textproc/libxml,-python \
-		:libxslt-*:textproc/libxslt
+		:libxslt-*:textproc/libxslt \
+		:docbook-*:textproc/docbook
 RUN_DEPENDS=	:py-libxml-*:textproc/libxml,-python \
 		:libxslt-*:textproc/libxslt \
 		:scrollkeeper-*:textproc/scrollkeeper
