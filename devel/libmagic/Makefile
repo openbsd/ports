@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/27 11:04:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/06/08 17:49:40 rui Exp $
 
 COMMENT=	"library to determine file type"
-V=		4.20
+V=		4.21
 DISTNAME= 	file-${V}
-PKGNAME=	libmagic-${V}p0
+PKGNAME=	libmagic-${V}
 SHARED_LIBS=	magic	1.0
 CATEGORIES=	sysutils
 

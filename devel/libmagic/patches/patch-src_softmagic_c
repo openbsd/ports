@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_softmagic_c,v 1.1 2007/03/17 21:43:20 jolan Exp $
---- src/softmagic.c.orig	Sun Mar  4 21:19:20 2007
-+++ src/softmagic.c	Sun Mar  4 21:21:18 2007
-@@ -314,21 +314,26 @@ check_fmt(struct magic_set *ms, struct m
+$OpenBSD: patch-src_softmagic_c,v 1.2 2007/06/08 17:49:40 rui Exp $
+--- src/softmagic.c.orig	Tue May  8 15:44:18 2007
++++ src/softmagic.c	Thu Jun  7 23:54:20 2007
+@@ -288,21 +288,26 @@ check_fmt(struct magic_set *ms, struct magic *m)
  
  #ifndef HAVE_STRNDUP
  char * strndup(const char *, size_t);
