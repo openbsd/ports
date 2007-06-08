@@ -1,0 +1,31 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/06/08 18:41:39 ajacoutot Exp $
+--- Makefile.in.orig	Tue Jun  5 18:06:37 2007
++++ Makefile.in	Thu Jun  7 09:15:32 2007
+@@ -790,11 +790,6 @@ dist_noinst_DATA = \
+ 	tests/urgent.c
+ 
+ dist_doc_DATA = \
+-	COMPLIANCE \
+-	README \
+-	AUTHORS \
+-	CHANGELOG \
+-	COPYING \
+ 	data/rc.xsd \
+ 	data/menu.xsd \
+ 	doc/rc-mouse-focus.xml
+@@ -2118,12 +2113,12 @@ uninstall-dist_pixmapDATA:
+ 	done
+ install-dist_rcDATA: $(dist_rc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(rcdir)" || $(mkdir_p) "$(DESTDIR)$(rcdir)"
++	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
+ 	@list='$(dist_rc_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(dist_rcDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(rcdir)/$$f'"; \
+-	  $(dist_rcDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(rcdir)/$$f"; \
++	  echo " $(dist_rcDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
++	  $(dist_rcDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+ 	done
+ 
+ uninstall-dist_rcDATA:
