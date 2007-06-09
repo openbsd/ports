@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2007/02/23 21:46:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2007/06/09 23:10:45 espie Exp $
 bin/karbon
 bin/kchart
 bin/kexi
@@ -143,6 +143,7 @@ include/kexidb/lookupfieldschema.h
 include/kexidb/migratemanager.h
 include/kexidb/msghandler.h
 include/kexidb/object.h
+include/kexidb/parser.h
 include/kexidb/preparedstatement.h
 include/kexidb/queryschema.h
 include/kexidb/queryschemaparameter.h
@@ -204,6 +205,7 @@ include/kis_filter_config_widget.h
 include/kis_filter_configuration.h
 include/kis_filter_manager.h
 include/kis_filter_registry.h
+include/kis_filter_strategy.h
 include/kis_filters_listview.h
 include/kis_generic_registry.h
 include/kis_global.h
@@ -229,6 +231,7 @@ include/kis_iteratorpixeltrait.h
 include/kis_iterators_pixel.h
 include/kis_label_zoom.h
 include/kis_layer.h
+include/kis_layer_visitor.h
 include/kis_layerbox.h
 include/kis_layerlist.h
 include/kis_matrix_widget.ui.h
@@ -241,6 +244,7 @@ include/kis_nameserver.h
 include/kis_opengl_image_context.h
 include/kis_paint_device.h
 include/kis_paint_device_iface.h
+include/kis_paint_layer.h
 include/kis_painter.h
 include/kis_paintop.h
 include/kis_paintop_box.h
@@ -273,6 +277,7 @@ include/kis_tool_paint.h
 include/kis_tool_registry.h
 include/kis_tool_types.h
 include/kis_transaction.h
+include/kis_transform_worker.h
 include/kis_types.h
 include/kis_u16_base_colorspace.h
 include/kis_u8_base_colorspace.h
@@ -491,6 +496,8 @@ ${KDE}/kritascripting.la
 ${KDE}/kritascripting.so
 ${KDE}/kritaselectiontools.la
 ${KDE}/kritaselectiontools.so
+${KDE}/kritaselectopaque.la
+${KDE}/kritaselectopaque.so
 ${KDE}/kritaseparatechannels.la
 ${KDE}/kritaseparatechannels.so
 ${KDE}/kritashearimage.la
@@ -777,6 +784,8 @@ ${KDE}/libwmlimport.la
 ${KDE}/libwmlimport.so
 ${KDE}/libwpexport.la
 ${KDE}/libwpexport.so
+${KDE}/libwpimport.la
+${KDE}/libwpimport.so
 ${KDE}/libxsltexport.la
 ${KDE}/libxsltexport.so
 ${KDE}/libxsltimport.la
@@ -926,6 +935,7 @@ share/applications/kde/kchart.desktop
 share/applications/kde/kexi.desktop
 share/applications/kde/kformula.desktop
 share/applications/kde/kivio.desktop
+share/applications/kde/koffice.desktop
 share/applications/kde/koshell.desktop
 share/applications/kde/kplato.desktop
 share/applications/kde/kpresenter.desktop
@@ -3826,6 +3836,7 @@ share/apps/kritaplugins/modify_selection.rc
 share/apps/kritaplugins/rotateimage.rc
 share/apps/kritaplugins/screenshot-krita.rc
 share/apps/kritaplugins/scripting.rc
+share/apps/kritaplugins/selectopaque.rc
 share/apps/kritaplugins/shearimage.rc
 share/apps/kritaplugins/substrate.rc
 share/apps/kritaplugins/wetplugin.rc
@@ -4394,6 +4405,7 @@ share/doc/HTML/en/koffice/TODO
 share/doc/HTML/en/koffice/common
 share/doc/HTML/en/koffice/index.cache.bz2
 share/doc/HTML/en/koffice/index.docbook
+share/doc/HTML/en/koffice/koffice.desktop
 share/doc/HTML/en/koshell/
 share/doc/HTML/en/koshell/common
 share/doc/HTML/en/koshell/index.cache.bz2
@@ -5402,6 +5414,7 @@ share/services/kritaroundcornersfilter.desktop
 share/services/kritascreenshot.desktop
 share/services/kritascripting.desktop
 share/services/kritaselectiontools.desktop
+share/services/kritaselectopaque.desktop
 share/services/kritaseparatechannels.desktop
 share/services/kritashearimage.desktop
 share/services/kritasmalltilesfilter.desktop
@@ -5465,6 +5478,7 @@ share/services/kword_rtf_import.desktop
 share/services/kword_wml_export.desktop
 share/services/kword_wml_import.desktop
 share/services/kword_wp_export.desktop
+share/services/kword_wp_import.desktop
 share/services/kwordpart.desktop
 share/services/kwserialletter_classic.desktop
 share/services/kwserialletter_qtsqldb_power.desktop

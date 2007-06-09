@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.45 2007/05/09 11:31:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.46 2007/06/09 23:10:45 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
-VERSION=		1.6.2
+VERSION=		1.6.3
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}
 
 SHARED_LIBS +=	kstore               3.0      # .3.0
 SHARED_LIBS +=	kwmf                 3.0      # .3.0
@@ -65,14 +65,12 @@ SHARED_LIBS +=	kchartimageexport    4.0      # .4.0
 SHARED_LIBS +=	kwordexportfilters   2.0      # .1.1
 SHARED_LIBS +=	kpresenterimageexport 4.0      # .4.0
 
-FLAVORS=debug
 FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
 
 SEPARATE_BUILD=	flavored
 
-MODKDE_VERSION=	3.5.3
-AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
-AUTOCONF_VERSION=2.59
+MODKDE_VERSION=	3.5.7
+AUTOCONF_VERSION=2.61
 
 LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kspell,kabc,kjs,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell2,knewstuff,kmdi::x11/kde/libs3 \
 		python2.4:python-2.4.*:lang/python/2.4 \
@@ -84,7 +82,8 @@ LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kpart
 		ruby::lang/ruby \
 		exif.>=12::graphics/libexif \
 		poppler-qt::print/poppler,-qt \
-		GraphicsMagick::graphics/GraphicsMagick
+		GraphicsMagick::graphics/GraphicsMagick \
+		wpd::textproc/libwpd
 
 
 WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
@@ -93,14 +92,13 @@ WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
 		m mad mcop ogg ossaudio pcre pcreposix png pthread qtmcop \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
 		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \
-		IlmImf Half Imath Iex idn GL GLU poppler
+		IlmImf Half Imath Iex idn GL GLU poppler \
+		Xau Xdmcp cairo expat fam glitz rpcsvc
+
 
 
 CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
 LIB_DEPENDS+=	pqxx::databases/libpqxx \
 		pq::databases/postgresql
 
-USE_X11=	Yes
-USE_LIBTOOL=Yes
-LIBTOOL_FLAGS=--tag=disable-static
 .include <bsd.port.mk>
