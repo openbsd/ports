@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/06 23:29:55 rui Exp $
+# $OpenBSD: Makefile,v 1.7 2007/06/09 11:15:48 rui Exp $
 
 VERSION=	1.2.12.06
 COMMENT=	"simple and performant DNS server"
 DISTNAME=	maradns-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.maradns.org/
