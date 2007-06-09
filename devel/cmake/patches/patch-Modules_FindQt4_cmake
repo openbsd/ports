@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.2 2007/04/25 14:56:13 espie Exp $
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.3 2007/06/09 09:09:44 espie Exp $
 --- Modules/FindQt4.cmake.orig	Wed Jan 10 18:59:12 2007
-+++ Modules/FindQt4.cmake	Wed Apr 25 16:43:46 2007
++++ Modules/FindQt4.cmake	Sat Jun  9 11:07:53 2007
 @@ -174,7 +174,7 @@ SET(QT_USE_FILE ${CMAKE_ROOT}/Modules/UseQt4.cmake)
  SET( QT_DEFINITIONS "")
  
@@ -10,12 +10,51 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.2 2007/04/25 14:56:13 espie Exp $
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
    $ENV{QTDIR}/bin
-@@ -882,7 +882,7 @@ IF (QT4_QMAKE_FOUND)
+@@ -882,7 +882,8 @@ IF (QT4_QMAKE_FOUND)
    ###############################################
  
    SET(QT_GUI_LIB_DEPENDENCIES "")
 -  SET(QT_CORE_LIB_DEPENDENCIES "")
 +  SET(QT_CORE_LIB_DEPENDENCIES "-pthread")
++  SET(QT_DBUS_LIB_DEPENDENCIES "")
    
    # shared build needs -DQT_SHARED
    IF(NOT QT_CONFIG MATCHES "static")
+@@ -897,7 +898,37 @@ IF (QT4_QMAKE_FOUND)
+     FIND_LIBRARY(QT_PNG_LIBRARY NAMES png)
+     SET(QT_GUI_LIB_DEPENDENCIES ${QT_GUI_LIB_DEPENDENCIES} ${QT_PNG_LIBRARY})
+     MARK_AS_ADVANCED(QT_PNG_LIBRARY)
++    FIND_PATH(QT_PNG_INCLUDE_DIR png.h
++    /usr/local/include
++    /usr/include
++    /usr/local/include/libpng             # OpenBSD
++    )
++    MARK_AS_ADVANCED(QT_PNG_INCLUDE_DIR)
++    SET(QT_INCLUDES ${QT_INCLUDES} ${QT_PNG_INCLUDE_DIR})
++
+   ENDIF(QT_QCONFIG MATCHES "system-png")
++
++  IF(QT_QCONFIG MATCHES "glib")
++    FIND_LIBRARY(QT_GTHREAD_LIBRARY NAMES gthread-2.0)
++    FIND_LIBRARY(QT_GLIB_LIBRARY NAMES glib-2.0)
++    MARK_AS_ADVANCED(QT_GLIB_LIBRARY)
++    MARK_AS_ADVANCED(QT_GTHREAD_LIBRARY)
++    SET(QT_GUI_LIB_DEPENDENCIES ${QT_GUI_LIB_DEPENDENCIES} ${QT_GTHREAD_LIBRARY} ${QT_GLIB_LIBRARY})
++  ENDIF(QT_QCONFIG MATCHES "glib")
++
++  IF(QT_QCONFIG MATCHES "gnu-libiconv")
++    FIND_LIBRARY(QT_LIBINTL NAMES intl)
++    FIND_LIBRARY(QT_LIBICONV NAMES iconv)
++    MARK_AS_ADVANCED(QT_LIBICONV)
++    MARK_AS_ADVANCED(QT_LIBINTL)
++    SET(QT_CORE_LIB_DEPENDENCIES ${QT_CORE_LIB_DEPENDENCIES} ${QT_LIBICONV} ${QT_LIBICONV})
++  ENDIF(QT_QCONFIG MATCHES "gnu-libiconv")
++
++  IF(QT_QCONFIG MATCHES "qdbus")
++    FIND_LIBRARY(QT_DBUS NAMES dbus-1)
++    MARK_AS_ADVANCED(QT_DBUS)
++    SET(QT_DBUS_LIB_DEPENDENCIES ${QT_DBUS_LIB_DEPENDENCIES} ${QT_DBUS})
++  ENDIF(QT_QCONFIG MATCHES "qdbus")
+   
+   # for X11, get X11 library directory
+   IF(Q_WS_X11)
