@@ -1,0 +1,23 @@
+$OpenBSD: patch-shell_source_unix_sysshell_makefile_mk,v 1.1 2007/06/09 10:42:56 steven Exp $
+--- shell/source/unix/sysshell/makefile.mk.orig.port	Fri Jan 19 14:08:02 2007
++++ shell/source/unix/sysshell/makefile.mk	Thu Jun  7 07:26:10 2007
+@@ -48,6 +48,11 @@ ENABLE_EXCEPTIONS=TRUE
+ CFLAGS+=-DSYSTEM_EXPAT
+ .ENDIF
+ 
++.IF "$(ENABLE_GTK)" != ""
++PKGCONFIG_MODULES=gtk+-2.0
++.INCLUDE: pkg_config.mk
++.ENDIF
++
+ # --- Files --------------------------------------------------------
+ 
+ LIB1OBJFILES=$(SLO)$/systemshell.obj
+@@ -72,6 +77,7 @@ SHL1STDLIBS=$(EXPATASCII3RDLIB)\
+ 	$(CPPULIB)\
+ 	$(CPPUHELPERLIB)\
+ 	$(COMPHELPERLIB)
++SHL1STDLIBS+=$(PKGCONFIG_LIBS:s/ -lpangoxft-1.0//)
+ .ENDIF # MACOSX
+ 
+ SHL1LIBS=$(SLB)$/xmlparser.lib

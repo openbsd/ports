@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2007/06/01 05:00:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2007/06/09 10:42:56 steven Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,7 +10,7 @@ VERSION=	2.2.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOF680_m14
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p1
+PKGNAME-main=	openoffice-${VERSION}p2
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
@@ -90,7 +90,8 @@ LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.
 		neon.>=24::net/neon \
 		sndfile.>=1::audio/libsndfile \
 		wpd.>=8::textproc/libwpd
-WANTLIB-main=	ICE SM X11 Xau Xdmcp Xext Xrender atk-1.0 c cairo expat \
+WANTLIB-main=	ICE SM X11 Xau Xdmcp Xext Xrender Xcursor Xfixes Xi Xinerama \
+		Xrandr atk-1.0 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl ossaudio jpeg m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread stdc++ util xml2 z
