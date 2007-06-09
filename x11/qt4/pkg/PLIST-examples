@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.12 2007/06/02 08:27:36 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.13 2007/06/09 23:13:09 espie Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 bin/pixeltool
@@ -596,8 +596,8 @@ lib/qt4/examples/graphicsview/portedasteroids/portedasteroids.pro
 lib/qt4/examples/graphicsview/portedasteroids/portedasteroids.qrc
 lib/qt4/examples/graphicsview/portedasteroids/sounds/
 lib/qt4/examples/graphicsview/portedasteroids/sounds/Explosion.wav
-lib/qt4/examples/graphicsview/portedasteroids/sprites.h
 lib/qt4/examples/graphicsview/portedasteroids/sprites/
+lib/qt4/examples/graphicsview/portedasteroids/sprites.h
 lib/qt4/examples/graphicsview/portedasteroids/sprites/.pbm
 lib/qt4/examples/graphicsview/portedasteroids/sprites/bits/
 lib/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits.ini
@@ -833,8 +833,8 @@ lib/qt4/examples/itemviews/itemviews.pro
 lib/qt4/examples/itemviews/pixelator/
 lib/qt4/examples/itemviews/pixelator/imagemodel.cpp
 lib/qt4/examples/itemviews/pixelator/imagemodel.h
-lib/qt4/examples/itemviews/pixelator/images.qrc
 lib/qt4/examples/itemviews/pixelator/images/
+lib/qt4/examples/itemviews/pixelator/images.qrc
 lib/qt4/examples/itemviews/pixelator/images/qt.png
 lib/qt4/examples/itemviews/pixelator/main.cpp
 lib/qt4/examples/itemviews/pixelator/mainwindow.cpp
@@ -1121,8 +1121,8 @@ lib/qt4/examples/network/torrent/filemanager.cpp
 lib/qt4/examples/network/torrent/filemanager.h
 lib/qt4/examples/network/torrent/forms/
 lib/qt4/examples/network/torrent/forms/addtorrentform.ui
-lib/qt4/examples/network/torrent/icons.qrc
 lib/qt4/examples/network/torrent/icons/
+lib/qt4/examples/network/torrent/icons.qrc
 lib/qt4/examples/network/torrent/icons/1downarrow.png
 lib/qt4/examples/network/torrent/icons/1uparrow.png
 lib/qt4/examples/network/torrent/icons/bottom.png
