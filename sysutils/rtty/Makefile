@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2006/02/05 11:38:24 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/06/09 16:17:35 naddy Exp $
 
-COMMENT=	"multiuser "tip"/"cu" replacement with logging"
+COMMENT=	multiuser tip/cu replacement with logging
 
 DISTNAME=       rtty-4.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 
-# License: BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
