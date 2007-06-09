@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/05 17:39:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/09 17:59:52 martynas Exp $
 
 PKG_ARCH=	*
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://mirrors.protection.cx/~jolan/mozilla-dicts/${V}/ \
+MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/dicts/${V}/ \
 		http://www.obsd.fr/OpenBSD/distfiles/mozilla/dictionaries/${V}/
 
 # define one language for the main package
