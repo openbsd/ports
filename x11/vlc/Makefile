@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2007/06/05 01:53:04 jolan Exp $
+# $OpenBSD: Makefile,v 1.52 2007/06/10 15:03:50 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,7 +47,7 @@ WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${WRKSRC}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		CPPFLAGS="-I${WRKSRC}/include -I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		XPIDL="${LOCALBASE}/seamonkey/xpidl"
 
 CONFIGURE_ARGS+=--disable-pth \
