@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/06/09 23:13:09 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2007/06/10 21:23:10 espie Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples for qt4"
@@ -14,7 +14,7 @@ PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}p0
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-PKGNAME-main=		qt4-${VERSION}p0
+PKGNAME-main=		qt4-${VERSION}p1
 FULLPKGNAME-html=	qt4-html-${VERSION}
 SHARED_LIBS=	Qt3Support 8.0 \
 		QtCore 7.0 \
@@ -221,7 +221,7 @@ post-install:
 	    rm $$i.bak; \
 	done
 	# this helps qdbuscpp2xml
-	cd ${QT_BINDIR} && ln -s moc moc4
+	cd ${QT_BINDIR} && ln -sf moc moc4
 .for l v in ${SHARED_LIBS}
 	ln -sf qt4/lib$l.so.$v ${PREFIX}/lib
 .endfor
