@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_daemon_daemonconfiguratortest_h,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- test/daemon/daemonconfiguratortest.h.orig	Mon Mar 26 23:08:51 2007
++++ test/daemon/daemonconfiguratortest.h	Thu Jun  7 20:24:40 2007
+@@ -20,8 +20,8 @@
+ #ifndef UNIT_TEST_DAEMONCONFIGURATORTEST_H
+ #define UNIT_TEST_DAEMONCONFIGURATORTEST_H
+ 
+-#include <TestFixture.h>
+-#include <extensions/HelperMacros.h>
++#include <cppunit/TestFixture.h>
++#include <cppunit/extensions/HelperMacros.h>
+ 
+ #include <string>
+ 

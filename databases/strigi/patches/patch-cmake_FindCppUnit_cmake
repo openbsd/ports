@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_FindCppUnit_cmake,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- cmake/FindCppUnit.cmake.orig	Thu Jun  7 20:22:19 2007
++++ cmake/FindCppUnit.cmake	Thu Jun  7 20:22:45 2007
+@@ -5,7 +5,7 @@
+ # CPPUNIT_INCLUDE_DIR - the libcppunit include directory
+ # CPPUNIT_LIBRARIES - libcppunit library
+ 
+-FIND_PATH(CPPUNIT_INCLUDE_DIR Test.h PATHS /usr/include/cppunit /usr/local/include/cppunit )
++FIND_PATH(CPPUNIT_INCLUDE_DIR cppunit/Test.h PATHS /usr/include /usr/local/include )
+ FIND_LIBRARY(CPPUNIT_LIBRARIES NAMES cppunit PATHS /usr/lib /usr/local/lib )
+ 
+ # IF(CPPUNIT_INCLUDE_DIR)

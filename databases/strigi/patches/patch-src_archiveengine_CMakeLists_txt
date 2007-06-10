@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_archiveengine_CMakeLists_txt,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- src/archiveengine/CMakeLists.txt.orig	Fri Jun  8 22:59:16 2007
++++ src/archiveengine/CMakeLists.txt	Fri Jun  8 22:59:32 2007
+@@ -11,4 +11,4 @@ add_library(archiveengine
+ 	streamengine.cpp
+ )
+ 
+-target_link_libraries(archiveengine ${QT_QTCORE_LIBRARY} streams)
++target_link_libraries(archiveengine ${QT_QTCORE_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} streams)

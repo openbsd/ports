@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_searchclient_filterwidget_CMakeLists_txt,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- src/searchclient/filterwidget/CMakeLists.txt.orig	Fri Jun  8 22:57:48 2007
++++ src/searchclient/filterwidget/CMakeLists.txt	Fri Jun  8 22:58:05 2007
+@@ -7,7 +7,7 @@ qt4_wrap_cpp(filterwidget_MOC_SRCS ${filterwidget_MOC_
+ 
+ add_library(filterwidget ${filterwidget_SRCS} ${filterwidget_MOC_SRCS})
+ 
+-target_link_libraries(filterwidget ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(filterwidget ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES})
+ 
+ add_executable(filterwidgettest filterwidgettest.cpp)
+ 

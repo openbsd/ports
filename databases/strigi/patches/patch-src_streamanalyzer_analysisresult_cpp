@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_streamanalyzer_analysisresult_cpp,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- src/streamanalyzer/analysisresult.cpp.orig	Thu Jun  7 20:34:49 2007
++++ src/streamanalyzer/analysisresult.cpp	Thu Jun  7 20:35:01 2007
+@@ -72,7 +72,7 @@ Latin1Converter::_fromLatin1(char*& o, const char* dat
+         l = outlen;
+     }
+     o = out;
+-#if defined(_WIN32) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(_WIN32) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+     const char* inp = (char*)data;
+ #else
+ 	char* inp = (char*)data;

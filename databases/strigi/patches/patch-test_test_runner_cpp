@@ -1,0 +1,18 @@
+$OpenBSD: patch-test_test_runner_cpp,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- test/test_runner.cpp.orig	Thu Jun  7 21:14:37 2007
++++ test/test_runner.cpp	Thu Jun  7 21:14:45 2007
+@@ -18,10 +18,10 @@
+  * Boston, MA 02110-1301, USA.
+  */
+ 
+-#include <TestCaller.h>
+-#include <extensions/TestFactoryRegistry.h>
+-#include <TestResult.h>
+-#include <TextTestRunner.h>
++#include <cppunit/TestCaller.h>
++#include <cppunit/extensions/TestFactoryRegistry.h>
++#include <cppunit/TestResult.h>
++#include <cppunit/TextTestRunner.h>
+ 
+ int main()
+ {

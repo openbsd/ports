@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_archivereader_qclient_CMakeLists_txt,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- src/archivereader/qclient/CMakeLists.txt.orig	Fri Jun  8 23:00:40 2007
++++ src/archivereader/qclient/CMakeLists.txt	Fri Jun  8 23:01:00 2007
+@@ -13,5 +13,5 @@ set(qclient_MOC_HDRS filebrowser.h)
+ qt4_wrap_cpp(qclient_MOC_SRCS ${qclient_MOC_HDRS})
+ add_executable(qclient ${qclient_SRCS} ${qclient_MOC_SRCS})
+ target_link_libraries(qclient streams
+-    ${QT_QTGUI_LIBRARY} ${QT_QTCORE_LIBRARY})
++    ${QT_QTGUI_LIBRARY} ${QT_QTCORE_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES})
+ 

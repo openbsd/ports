@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_daemon_indexscheduler_cpp,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- src/daemon/indexscheduler.cpp.orig	Tue May  1 22:41:25 2007
++++ src/daemon/indexscheduler.cpp	Thu Jun  7 20:11:52 2007
+@@ -102,7 +102,7 @@ IndexScheduler::index() {
+         dbfiles = reader->files(0);
+ 
+         char buff [20];
+-        snprintf(buff, 20* sizeof (char), "%i", dbfiles.size());
++        snprintf(buff, 20* sizeof (char), "%li", long(dbfiles.size()));
+         STRIGI_LOG_DEBUG ("strigi.IndexScheduler", string(buff) + " real files in the database")
+ 
+         // first loop through all files
+@@ -130,10 +130,10 @@ IndexScheduler::index() {
+             }
+         }
+ 
+-        snprintf(buff, 20* sizeof (char), "%i", dbfiles.size());
++        snprintf(buff, 20* sizeof (char), "%li", long(dbfiles.size()));
+         STRIGI_LOG_DEBUG ("strigi.IndexScheduler", string(buff) + " files to remove")
+ 
+-        snprintf(buff, 20* sizeof (char), "%i", toindex.size());
++        snprintf(buff, 20* sizeof (char), "%li", long(toindex.size()));
+         STRIGI_LOG_DEBUG ("strigi.IndexScheduler", string(buff) + " files to add or update")
+     }
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_indextests_indexwritertester_h,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- test/indextests/indexwritertester.h.orig	Thu Jun  7 21:14:01 2007
++++ test/indextests/indexwritertester.h	Thu Jun  7 21:14:07 2007
+@@ -20,8 +20,8 @@
+ #ifndef UNIT_TEST_INDEX_WRITER_TESTER_H
+ #define UNIT_TEST_INDEX_WRITER_TESTER_H
+ 
+-#include <TestFixture.h>
+-#include <extensions/HelperMacros.h>
++#include <cppunit/TestFixture.h>
++#include <cppunit/extensions/HelperMacros.h>
+ #include <string>
+ 
+ namespace Strigi {

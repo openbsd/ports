@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_streams_mailinputstream_cpp,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- src/streams/mailinputstream.cpp.orig	Thu Jun  7 20:26:08 2007
++++ src/streams/mailinputstream.cpp	Thu Jun  7 20:31:30 2007
+@@ -29,6 +29,7 @@
+ #include "base64inputstream.h"
+ #include <cstring>
+ #include <sstream>
++#include <iconv.h>
+ 
+ using namespace std;
+ using namespace Strigi;
+@@ -70,11 +71,16 @@ decode(const string& enc, const string& data) {
+     string s;
+     iconv_t const conv(iconv_open("UTF-8", enc.c_str()));
+     if (conv == (iconv_t)-1) return s;
++#if defined(__OpenBSD__)
++    const char* in = (char*)data.c_str();
++#else
+     char* in = (char*)data.c_str();
++#endif
+     size_t ilen = data.length();
+     size_t olen = 4*ilen;
+     char* out = (char*)malloc(olen);
+     char* mem = out;
++    // XXX
+     size_t r = iconv(conv, &in, &ilen, &out, &olen);
+     if (r != (size_t)-1) {
+         s.assign(mem, out-mem);

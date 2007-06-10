@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_searchclient_qtdbus_CMakeLists_txt,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- src/searchclient/qtdbus/CMakeLists.txt.orig	Fri Jun  8 23:38:21 2007
++++ src/searchclient/qtdbus/CMakeLists.txt	Fri Jun  8 23:38:58 2007
+@@ -19,7 +19,7 @@ qt4_wrap_cpp(strigiqtdbusclient_MOC_SRCS ${strigiqtdbu
+ add_library(strigiqtdbusclient SHARED ${strigiqtdbusclient_SRCS}
+   ${strigiqtdbusclient_MOC_SRCS})
+ 
+-target_link_libraries(strigiqtdbusclient ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY})
++target_link_libraries(strigiqtdbusclient ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES})
+ set_target_properties(strigiqtdbusclient
+                  PROPERTIES VERSION ${STRIGI_VERSION}
+                  SOVERSION ${STRIGI_VERSION_MAJOR}
+@@ -37,4 +37,4 @@ set(strigiasynctest_SRCS strigiasynctest.cpp strigiasy
+ set(strigiasynctest_MOC_HDRS strigiasyncwidget.h)
+ qt4_wrap_cpp(strigiasynctest_MOC_SRCS ${strigiasynctest_MOC_HDRS})
+ add_executable(strigiasynctest ${strigiasynctest_SRCS} ${strigiasynctest_MOC_SRCS})
+-target_link_libraries(strigiasynctest strigiqtdbusclient ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(strigiasynctest strigiqtdbusclient ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES})

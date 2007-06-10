@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sqliteindexer_CMakeLists_txt,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- src/sqliteindexer/CMakeLists.txt.orig	Sun Apr 22 23:44:28 2007
++++ src/sqliteindexer/CMakeLists.txt	Thu Jun  7 20:13:44 2007
+@@ -10,7 +10,7 @@ add_library(sqliteindex
+ 	sqliteindexwriter.cpp
+ )
+ 
+-target_link_libraries(sqliteindex streamanalyzer ${SQLITE_LIBRARIES})
++target_link_libraries(sqliteindex streamanalyzer ${SQLITE_LIBRARIES} pthread)
+ 
+ add_executable(sqliteindexer sqliteindexer.cpp)
+ target_link_libraries(sqliteindexer sqliteindex sqlite3)

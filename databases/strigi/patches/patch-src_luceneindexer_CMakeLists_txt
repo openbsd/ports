@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_luceneindexer_CMakeLists_txt,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+--- src/luceneindexer/CMakeLists.txt.orig	Thu May  3 23:08:10 2007
++++ src/luceneindexer/CMakeLists.txt	Thu Jun  7 21:09:55 2007
+@@ -17,7 +17,11 @@ ENDIF(WIN32)
+ # CLucene requires exception support and has no support for visibility=hidden
+ # so we must use the default (i.e. public) value for -fvisibility
+ IF(NOT WIN32)
++IF(__STRIGI_HAVE_GCC_VISIBILITY)
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexceptions -fvisibility=default")
++ELSE(__STRIGI_HAVE_GCC_VISIBILITY)
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexceptions")
++ENDIF(__STRIGI_HAVE_GCC_VISIBILITY)
+ ENDIF(NOT WIN32)
+ 
+ set(cluceneindex_SRCS
+@@ -36,7 +40,7 @@ set_target_properties(cluceneindex
+     DEFINE_SYMBOL MAKE_CLUCENEINDEXER_LIB
+ )
+ 
+-target_link_libraries(cluceneindex streamanalyzer ${CLUCENE_LIBRARY})
++target_link_libraries(cluceneindex streamanalyzer ${CLUCENE_LIBRARY} pthread)
+ 
+ add_executable(luceneindexer luceneindexer.cpp)
+ target_link_libraries(luceneindexer cluceneindex)
