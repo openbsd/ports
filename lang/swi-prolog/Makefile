@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/02/14 16:55:28 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/10 23:32:27 kili Exp $
 
 CATEGORIES=		lang
 V=			5.6.27
@@ -21,7 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
-AUTOCONF_DIR=		${WRKDIST}/src
+AUTOCONF_DIR=		${WRKSRC}/src
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/src \
+				${WRKSRC}/packages/jpl \
+				${WRKSRC}/packages/xpce/src
 CONFIGURE_ARGS=		--enable-mt \
 			--disable-custom-flags \
 			--with-world \
