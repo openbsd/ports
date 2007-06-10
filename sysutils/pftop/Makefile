@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/11 10:17:47 canacar Exp $
+# $OpenBSD: Makefile,v 1.7 2007/06/10 14:22:09 canacar Exp $
 #
 
 COMMENT=	"curses-based real time state and rule display for pf"
 
-DISTNAME=	pftop-0.5
+DISTNAME=	pftop-0.6
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.eee.metu.edu.tr/~canacar/pftop/
-MAINTAINER=	Can Erkin Acar <canacar@eee.metu.edu.tr>
+MAINTAINER=	Can Erkin Acar <canacar@openbsd.org>
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,4 +18,5 @@ WANTLIB=		c curses
 
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
+MAKE_ENV=	OSLEVEL=42
 .include <bsd.port.mk>
