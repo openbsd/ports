@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/03 13:35:50 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/11 07:42:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -67,7 +67,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${GLOBALDIR}
 	unzip -q ${MOZBIN}/${ENIGMAIL_XPI} -d ${GLOBALDIR}
-	mv ${GLOBALDIR}/platform/OpenBSD_*/components/libenigmime.so.* \
+	mv ${GLOBALDIR}/platform/OpenBSD*/components/libenigmime.so.* \
 		${GLOBALDIR}/components/
 
 .include <bsd.port.mk>
