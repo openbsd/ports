@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1 2007/06/11 08:56:43 ajacoutot Exp $
+--- data/Makefile.in.orig	Mon Jun 11 10:39:01 2007
++++ data/Makefile.in	Mon Jun 11 10:39:11 2007
+@@ -439,7 +439,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-cfgdataDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-recursive
+ 
