@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/06/11 08:56:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2007/06/11 09:03:17 ajacoutot Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
@@ -15,24 +15,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xext Xft Xpm Xrandr Xrender Xau \
-			Xdmcp Xinerama expat z c fontconfig freetype m \
-			stdc++
+WANTLIB=	ICE SM X11 Xext Xft Xpm Xrandr Xrender Xau Xdmcp \
+		Xinerama expat z c fontconfig freetype m stdc++
 
-MASTER_SITES=		${HOMEPAGE}files/
+MASTER_SITES=	${HOMEPAGE}files/
 
-LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
-			png.>=5::graphics/png
+LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
+		png.>=5::graphics/png
 
-USE_X11= 		Yes
-CONFIGURE_STYLE=	simple
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --sysconfdir=${SYSCONFDIR} \
-			--mandir=${PREFIX}/man --enable-xinerama
-NO_REGRESS=		Yes
-#USE_GMAKE=		Yes
+USE_X11= 	Yes
+CONFIGURE_STYLE=simple
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=--prefix=${PREFIX} --sysconfdir=${SYSCONFDIR} \
+		--mandir=${PREFIX}/man --enable-xinerama
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pekwm
