@@ -1,63 +1,29 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2006/06/01 08:06:45 jolan Exp $
---- Makefile.orig	Sun Mar 26 13:32:00 2006
-+++ Makefile	Sun May 28 21:12:34 2006
-@@ -292,7 +292,7 @@ CFLAGS_HOST = $(BASECFLAGS)
- endif
- 
- 
--CC_VERSION = $(shell $(CC) -dumpversion | cut -c 1,3)
-+CC_VERSION = 0
- 
- # GNU make can only test for (in)equality
- # this is a workaround to test for >=
-@@ -379,7 +379,7 @@ LDFLAGS += -mno-cygwin
+$OpenBSD: patch-Makefile,v 1.2 2007/06/11 10:56:28 mk Exp $
+--- Makefile.orig	Fri Apr 20 21:47:49 2007
++++ Makefile	Tue May 29 15:00:57 2007
+@@ -408,7 +408,6 @@ LRT:=
  endif
  endif
  
 -CFLAGS += $(BASECFLAGS)
-+#CFLAGS += $(BASECFLAGS)
  
  ifdef UNIX
  CDEFS += -DUNIX
-@@ -821,7 +821,7 @@ endian_target.h: $(ENDIAN_CHECK)
+@@ -929,7 +928,7 @@ endif
  
- $(ENDIAN_CHECK): endian_check.c
+ $(STRGEN): strgen/strgen.c string.c endian_host.h table/control_codes.h
  	@echo '===> Compiling and Linking $@'
--	$(Q)$(CC_HOST) $(CFLAGS_HOST) $(CDEFS) $< -o $@
-+	$(Q)$(CC_HOST) $(CFLAGS) $(CDEFS) $< -o $@
- 
- 
- $(TTD): $(OBJS) $(MAKE_CONFIG)
-@@ -830,7 +830,7 @@ $(TTD): $(OBJS) $(MAKE_CONFIG)
- 
- $(STRGEN): strgen/strgen.c endian_host.h
- 	@echo '===> Compiling and Linking $@'
--	$(Q)$(CC_HOST) $(CFLAGS_HOST) $(CDEFS) $< -o $@
-+	$(Q)$(CC_HOST) $(CFLAGS) $(CDEFS) $< -o $@
+-	$(Q)$(CC_HOST) $(CFLAGS_HOST) -DSTRGEN strgen/strgen.c string.c -o $@
++	$(Q)$(CC_HOST) $(CFLAGS) -DSTRGEN strgen/strgen.c string.c -o $@
  
  table/strings.h: lang/english.txt $(STRGEN)
  	@echo '===> Generating $@'
-@@ -926,9 +926,9 @@ endif
- 						 $(ICON_DIR_INSTALL) \
- 	           $(BINARY_DIR_INSTALL)
- ifndef USE_HOMEDIR
--	mkdir -p $(PERSONAL_DIR)/scenario
-+	#mkdir -p $(PERSONAL_DIR)/scenario
- else
--	mkdir -p $(DATA_DIR_INSTALL)/scenario
-+	#mkdir -p $(DATA_DIR_INSTALL)/scenario
- endif
- 	install $(TTD) $(BINARY_DIR_INSTALL)
- 	install -m 644 lang/*.lng $(DATA_DIR_INSTALL)/lang
-@@ -937,9 +937,9 @@ endif
- 	install -m 644 media/openttd.64.png $(ICON_DIR_INSTALL)
- 	install -m 644 media/openttd.32.xpm $(ICON_DIR_INSTALL)
- ifndef USE_HOMEDIR
--	cp scenario/* $(PERSONAL_DIR)/scenario/
-+	#cp scenario/* $(PERSONAL_DIR)/scenario/
- else
--	cp scenario/* $(DATA_DIR_INSTALL)/scenario/
-+	#cp scenario/* $(DATA_DIR_INSTALL)/scenario/
- endif
- else	#MorphOS
- install:
+@@ -953,8 +952,6 @@ release: all
+ 	$(Q)cp -R $(TTD)                      "/t/openttd-$(REV)-morphos/"
+ 	$(Q)cp data/*                         "/t/openttd-$(REV)-morphos/data/"
+ 	$(Q)cp lang/*.lng                     "/t/openttd-$(REV)-morphos/lang/"
+-	$(Q)-cp scenario/*.scn                "/t/openttd-$(REV)-morphos/scenario/"
+-	$(Q)-cp scenario/heightmap/*          "/t/openttd-$(REV)-morphos/scenario/heightmap/"
+ 	$(Q)cp readme.txt                     "/t/openttd-$(REV)-morphos/docs/ReadMe"
+ 	$(Q)cp COPYING                        "/t/openttd-$(REV)-morphos/docs/"
+ 	$(Q)cp changelog.txt                  "/t/openttd-$(REV)-morphos/docs/ChangeLog"

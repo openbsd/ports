@@ -1,8 +1,8 @@
-$OpenBSD: patch-endian_check_c,v 1.2 2007/02/22 22:02:13 jasper Exp $
---- endian_check.c.orig	Tue Dec  6 15:35:10 2005
-+++ endian_check.c	Wed Feb 21 12:07:43 2007
+$OpenBSD: patch-endian_check_c,v 1.3 2007/06/11 10:56:28 mk Exp $
+--- endian_check.c.orig	Tue May 29 14:57:42 2007
++++ endian_check.c	Tue May 29 14:58:01 2007
 @@ -1,6 +1,7 @@
- /* $Id: patch-endian_check_c,v 1.2 2007/02/22 22:02:13 jasper Exp $ */
+ /* $Id: patch-endian_check_c,v 1.3 2007/06/11 10:56:28 mk Exp $ */
  
  #include <stdio.h>
 +#include <string.h>

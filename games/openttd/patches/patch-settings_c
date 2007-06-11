@@ -1,21 +1,21 @@
-$OpenBSD: patch-settings_c,v 1.1.1.1 2006/06/01 08:06:45 jolan Exp $
---- settings.c.orig	Wed Mar 22 05:17:21 2006
-+++ settings.c	Thu Jun  1 00:50:15 2006
-@@ -733,7 +733,7 @@ static void save_setting_desc(IniFile *i
- //***************************
+$OpenBSD: patch-settings_c,v 1.2 2007/06/11 10:56:28 mk Exp $
+--- settings.c.orig	Tue Apr 10 11:57:35 2007
++++ settings.c	Tue May 29 15:00:57 2007
+@@ -1163,7 +1163,7 @@ static int32 EngineRenewMoneyUpdate(int32 p1)
+ /* End - Callback Functions */
  
  #ifndef EXTERNAL_PLAYER
 -#define EXTERNAL_PLAYER "timidity"
 +#define EXTERNAL_PLAYER "midiplay"
  #endif
  
- static const SettingDesc music_settings[] = {
-@@ -742,7 +742,7 @@ static const SettingDesc music_settings[
- 	{"effect_vol",SDT_UINT8,	(void*)128,		&msf.effect_vol, NULL},
- 	{"custom_1",	SDT_INTLIST | SDT_UINT8 | lengthof(msf.custom_1) << 16, NULL, &msf.custom_1, NULL},
- 	{"custom_2",	SDT_INTLIST | SDT_UINT8 | lengthof(msf.custom_2) << 16, NULL, &msf.custom_2, NULL},
--	{"playing",		SDT_BOOL,		(void*)true,	&msf.btn_down, NULL},
-+	{"playing",		SDT_BOOL,		(void*)false,	&msf.btn_down, NULL},
- 	{"shuffle",		SDT_BOOL,		(void*)false, &msf.shuffle, NULL},
- 	{"extmidi",   SDT_STRINGBUF | (lengthof(msf.extmidi)<<16), EXTERNAL_PLAYER, &msf.extmidi, NULL},
- 	{NULL,				0,					NULL,					NULL,																NULL}
+ static const SettingDesc _music_settings[] = {
+@@ -1172,7 +1172,7 @@ static const SettingDesc _music_settings[] = {
+ 	 SDT_VAR(MusicFileSettings, effect_vol, SLE_UINT8, S, 0, 128, 0, 100, 1,  STR_NULL, NULL),
+ 	SDT_LIST(MusicFileSettings, custom_1,   SLE_UINT8, S, 0, NULL,            STR_NULL, NULL),
+ 	SDT_LIST(MusicFileSettings, custom_2,   SLE_UINT8, S, 0, NULL,            STR_NULL, NULL),
+-	SDT_BOOL(MusicFileSettings, playing,               S, 0, true,            STR_NULL, NULL),
++	SDT_BOOL(MusicFileSettings, playing,               S, 0, false,            STR_NULL, NULL),
+ 	SDT_BOOL(MusicFileSettings, shuffle,               S, 0, false,           STR_NULL, NULL),
+ 	 SDT_STR(MusicFileSettings, extmidi,     SLE_STRB, S, 0, EXTERNAL_PLAYER, STR_NULL, NULL),
+ 	 SDT_END()
