@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-perl,v 1.5 2006/03/12 23:11:31 robert Exp $
-@conflict p5-Data-UUID-*
+@comment $OpenBSD: PLIST-perl,v 1.6 2007/06/11 11:01:27 simon Exp $
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/perllocal.pod
