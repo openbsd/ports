@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/06/11 20:19:59 jasper Exp $
 
-COMMENT=		"graphical representation of CVS repository"
+COMMENT=		graphical representation of CVS repository
 
-DISTNAME=		cvsgraph-1.5.1
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		cvsgraph-1.6.1
 CATEGORIES=		devel
 HOMEPAGE=		http://www.akhphd.au.dk/~bertho/cvsgraph
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
-
-# GPL 2
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -41,7 +38,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cvsgraph
 	${INSTALL_DATA} ${WRKSRC}/cvsgraph.conf \
 			${PREFIX}/share/examples/cvsgraph
-	${INSTALL_MAN}  ${WRKSRC}/cvsgraph.conf.5 ${PREFIX}/man/man5
-	${INSTALL_MAN}  ${WRKSRC}/cvsgraph.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cvsgraph.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cvsgraph.conf.5 ${PREFIX}/man/man5
 
 .include <bsd.port.mk>
