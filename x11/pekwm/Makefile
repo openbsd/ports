@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/06/11 09:03:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/06/11 11:19:23 ajacoutot Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
 DISTNAME=	pekwm-0.1.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pekwm.org/
@@ -24,13 +25,13 @@ LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=5::graphics/png
 
 USE_X11= 	Yes
-CONFIGURE_STYLE=simple
+NO_REGRESS=	Yes
+
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--prefix=${PREFIX} --sysconfdir=${SYSCONFDIR} \
-		--mandir=${PREFIX}/man --enable-xinerama
-NO_REGRESS=	Yes
+CONFIGURE_ARGS=	--enable-xinerama
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pekwm
