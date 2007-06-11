@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/17 13:41:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/11 05:41:30 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,6 @@ WANTLIB=	X11 Xext Xrender fontconfig freetype m z atk-1.0 cairo \
 MODULES=	cpan devel/gettext
 
 USE_X11=	Yes
-USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	::devel/p5-ExtUtils-Depends \
 		::devel/p5-ExtUtils-PkgConfig \
