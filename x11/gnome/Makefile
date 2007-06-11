@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/06/01 18:07:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2007/06/11 23:01:26 jasper Exp $
 
      SUBDIR += applets2
      SUBDIR += audio
@@ -31,6 +31,7 @@
      SUBDIR += librsvg
      SUBDIR += libs
      SUBDIR += libxklavier
+     SUBDIR += media
      SUBDIR += menus
      SUBDIR += metacity
      SUBDIR += mime-data
