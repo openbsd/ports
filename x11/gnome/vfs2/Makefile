@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2007/06/11 13:12:51 martynas Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		"GNOME Virtual File System"
 
 VERSION=		2.18.1
 DISTNAME=		gnome-vfs-${VERSION}
-PKGNAME=		gnome-vfs2-${VERSION}
+PKGNAME=		gnome-vfs2-${VERSION}p0
 SHARED_LIBS +=	gnomevfs-2       1800.1       # .1800.1
 CATEGORIES=		x11/gnome
 
