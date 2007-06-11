@@ -1,6 +1,6 @@
-$OpenBSD: patch-nut_1,v 1.3 2007/03/31 08:58:30 martynas Exp $
---- nut.1.orig	Tue Mar 27 22:02:15 2007
-+++ nut.1	Sat Mar 31 00:04:22 2007
+$OpenBSD: patch-nut_1,v 1.4 2007/06/11 21:02:40 jasper Exp $
+--- nut.1.orig	Thu Jun  7 00:21:06 2007
++++ nut.1	Thu Jun  7 00:22:56 2007
 @@ -1,17 +1,17 @@
 -.\" manual page [] for nut
 +.\" manual page [] for nutdb
@@ -9,8 +9,8 @@ $OpenBSD: patch-nut_1,v 1.3 2007/03/31 08:58:30 martynas Exp $
  .\" LP paragraph
  .\" IP indented paragraph
  .\" TP hanging label
--.TH "nut" "1" "2007.03.27" "" ""
-+.TH "nutdb" "1" "2007.03.27" "" ""
+-.TH "nut" "1" "2007.04.12" "" ""
++.TH "nutdb" "1" "2007.04.12" "" ""
  .SH "NAME"
 -.B nut \- analyze meals with the USDA Nutrient Database
 +.B nutdb \- analyze meals with the USDA Nutrient Database
@@ -33,6 +33,15 @@ $OpenBSD: patch-nut_1,v 1.3 2007/03/31 08:58:30 martynas Exp $
  can be called with an optional argument to specify a database subdirectory.
  For example, if a user tracks meals for other family members, each person
  can have his own database, and each database is entirely separate.
+@@ -84,7 +84,7 @@ By pressing "m" the macronutrient ratios are reset to 
+ values in the analysis, including calories, protein, carbohydrates,
+ and fats.
+ (There is also an "n" option, not shown in the prompt, which works just
+-like "m" but sets the groups of fatty acids to NUT reference values, and sets the micronutrients by percentage rather than absolute values.)
++like "m" but sets the groups of fatty acids to NUTDB reference values, and sets the micronutrients by percentage rather than absolute values.)
+ By pressing "e" all values are reset to the absolute values in the
+ analysis.
+ By pressing "o" all DV defaults are restored.
 @@ -146,7 +146,7 @@ desired,
  and provides an opportunity to adjust the weight of the servings to allow
  for water gained or lost in preparation.
