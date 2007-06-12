@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.278 2007/06/07 13:18:56 aanriot Exp $
+# $OpenBSD: Makefile,v 1.279 2007/06/12 16:39:30 martynas Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -81,7 +81,6 @@
      SUBDIR += moodle,mysql
      SUBDIR += moodle,pgsql
      SUBDIR += mozilla-firefox
-     SUBDIR += mozilla-firefox,debug
      SUBDIR += mozplugger
      SUBDIR += mycalendar
      SUBDIR += nag
