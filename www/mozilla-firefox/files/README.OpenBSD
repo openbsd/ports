@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.4 2007/02/05 00:11:55 espie Exp $
+$OpenBSD: README.OpenBSD,v 1.5 2007/06/12 16:45:37 martynas Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
@@ -7,17 +7,8 @@ reproduce the problem before filing bugs.  To create a new profile,
 start Firefox with the -ProfileManager switch, e.g.
 firefox -ProfileManager, and click "Create Profile".
 
-If Firefox doesn't start at all, first try starting it with
--safe-mode switch, which disables extensions and themes for your
-session.
-
-If you still can't start Firefox, use the -debug flavor package instead.
-If you can't fix the problem yourself, remember to provide output
-when sending bug report.
-
-Firefox will silently fail to print when it runs out of file
-descriptors. If Firefox doesn't print a page increase your file
-descriptors limit and try again.
+If Firefox doesn't start at all, try starting it with -safe-mode
+switch, which disables extensions and themes for your session.
 
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
