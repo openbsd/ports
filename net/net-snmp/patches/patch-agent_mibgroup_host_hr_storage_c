@@ -1,7 +1,17 @@
-$OpenBSD: patch-agent_mibgroup_host_hr_storage_c,v 1.2 2005/06/13 20:33:17 naddy Exp $
---- agent/mibgroup/host/hr_storage.c.orig	Fri Jun 18 20:39:14 2004
-+++ agent/mibgroup/host/hr_storage.c	Mon Jun 13 22:31:56 2005
-@@ -140,6 +140,7 @@
+$OpenBSD: patch-agent_mibgroup_host_hr_storage_c,v 1.3 2007/06/13 15:15:01 ajacoutot Exp $
+--- agent/mibgroup/host/hr_storage.c.orig	Thu Oct 12 03:54:57 2006
++++ agent/mibgroup/host/hr_storage.c	Wed Jun 13 08:19:40 2007
+@@ -76,6 +76,9 @@
+ #endif                          /* vm/vm.h */
+ #endif                          /* sys/vm.h */
+ #if defined(HAVE_UVM_UVM_PARAM_H) && defined(HAVE_UVM_UVM_EXTERN_H)
++#if defined(HAVE_SYS_QUEUE_H)
++#include <sys/queue.h>
++#endif
+ #include <uvm/uvm_param.h>
+ #include <uvm/uvm_extern.h>
+ #elif defined(HAVE_VM_VM_PARAM_H) && defined(HAVE_VM_VM_EXTERN_H)
+@@ -175,6 +178,7 @@
  #include <net-snmp/library/read_config.h>
  
  #define HRSTORE_MONOTONICALLY_INCREASING
