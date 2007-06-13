@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/12/07 20:11:49 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/06/13 07:19:06 jakob Exp $
 bin/pcre-config
 bin/pcregrep
 bin/pcretest
@@ -6,6 +6,7 @@ include/pcre.h
 include/pcre_scanner.h
 include/pcre_stringpiece.h
 include/pcrecpp.h
+include/pcrecpparg.h
 include/pcreposix.h
 lib/libpcre.a
 lib/libpcre.la
@@ -15,10 +16,13 @@ lib/libpcreposix.a
 lib/libpcreposix.la
 lib/pkgconfig/
 lib/pkgconfig/libpcre.pc
+lib/pkgconfig/libpcrecpp.pc
+@man man/man1/pcre-config.1
 @man man/man1/pcregrep.1
 @man man/man1/pcretest.1
 @man man/man3/pcre.3
 @man man/man3/pcre_compile.3
+@man man/man3/pcre_compile2.3
 @man man/man3/pcre_config.3
 @man man/man3/pcre_copy_named_substring.3
 @man man/man3/pcre_copy_substring.3
@@ -29,6 +33,7 @@ lib/pkgconfig/libpcre.pc
 @man man/man3/pcre_fullinfo.3
 @man man/man3/pcre_get_named_substring.3
 @man man/man3/pcre_get_stringnumber.3
+@man man/man3/pcre_get_stringtable_entries.3
 @man man/man3/pcre_get_substring.3
 @man man/man3/pcre_get_substring_list.3
 @man man/man3/pcre_info.3
@@ -42,8 +47,61 @@ lib/pkgconfig/libpcre.pc
 @man man/man3/pcrecompat.3
 @man man/man3/pcrecpp.3
 @man man/man3/pcrematching.3
+@man man/man3/pcrepartial.3
 @man man/man3/pcrepattern.3
 @man man/man3/pcreperform.3
 @man man/man3/pcreposix.3
+@man man/man3/pcreprecompile.3
 @man man/man3/pcresample.3
 %%SHARED%%
+@man man/man3/pcrestack.3
+share/doc/pcre/
+share/doc/pcre/AUTHORS
+share/doc/pcre/COPYING
+share/doc/pcre/ChangeLog
+share/doc/pcre/LICENCE
+share/doc/pcre/NEWS
+share/doc/pcre/README
+share/doc/pcre/html/
+share/doc/pcre/html/index.html
+share/doc/pcre/html/pcre-config.html
+share/doc/pcre/html/pcre.html
+share/doc/pcre/html/pcre_compile.html
+share/doc/pcre/html/pcre_compile2.html
+share/doc/pcre/html/pcre_config.html
+share/doc/pcre/html/pcre_copy_named_substring.html
+share/doc/pcre/html/pcre_copy_substring.html
+share/doc/pcre/html/pcre_dfa_exec.html
+share/doc/pcre/html/pcre_exec.html
+share/doc/pcre/html/pcre_free_substring.html
+share/doc/pcre/html/pcre_free_substring_list.html
+share/doc/pcre/html/pcre_fullinfo.html
+share/doc/pcre/html/pcre_get_named_substring.html
+share/doc/pcre/html/pcre_get_stringnumber.html
+share/doc/pcre/html/pcre_get_stringtable_entries.html
+share/doc/pcre/html/pcre_get_substring.html
+share/doc/pcre/html/pcre_get_substring_list.html
+share/doc/pcre/html/pcre_info.html
+share/doc/pcre/html/pcre_maketables.html
+share/doc/pcre/html/pcre_refcount.html
+share/doc/pcre/html/pcre_study.html
+share/doc/pcre/html/pcre_version.html
+share/doc/pcre/html/pcreapi.html
+share/doc/pcre/html/pcrebuild.html
+share/doc/pcre/html/pcrecallout.html
+share/doc/pcre/html/pcrecompat.html
+share/doc/pcre/html/pcrecpp.html
+share/doc/pcre/html/pcregrep.html
+share/doc/pcre/html/pcrematching.html
+share/doc/pcre/html/pcrepartial.html
+share/doc/pcre/html/pcrepattern.html
+share/doc/pcre/html/pcreperform.html
+share/doc/pcre/html/pcreposix.html
+share/doc/pcre/html/pcreprecompile.html
+share/doc/pcre/html/pcresample.html
+share/doc/pcre/html/pcrestack.html
+share/doc/pcre/html/pcretest.html
+share/doc/pcre/pcre-config.txt
+share/doc/pcre/pcre.txt
+share/doc/pcre/pcregrep.txt
+share/doc/pcre/pcretest.txt
