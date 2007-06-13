@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_input_input_net_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
+--- src/input/input_net.c.orig	Sun Apr 15 10:42:16 2007
++++ src/input/input_net.c	Sun May 20 22:40:02 2007
+@@ -274,7 +274,7 @@ static off_t net_plugin_read (input_plugin_t *this_gen
+     xprintf(this->stream->xine, XINE_VERBOSITY_DEBUG, "input_net: got %" PRIdMAX " bytes (%" PRIdMAX "/%" PRIdMAX " bytes read)\n", (intmax_t)n, (intmax_t)total, (intmax_t)len);
+   
+     if (n < 0) {
+-      _x_message(this->stream, XINE_MSG_READ_ERROR, this->host_port, NULL);
++      _x_message(this->stream, XINE_MSG_READ_ERROR, this->host_port, (char *)NULL);
+       return 0;
+     }
+ 

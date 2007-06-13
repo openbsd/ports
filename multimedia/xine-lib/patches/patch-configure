@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2007/05/01 20:20:49 naddy Exp $
---- configure.orig	Sun Jul  9 16:51:14 2006
-+++ configure	Tue May  1 22:06:27 2007
-@@ -25613,8 +25613,12 @@ _ACEOF
+$OpenBSD: patch-configure,v 1.8 2007/06/13 10:58:29 jakemsr Exp $
+--- configure.orig	Wed Jun  6 06:41:05 2007
++++ configure	Fri Jun  8 17:27:46 2007
+@@ -24480,6 +24480,9 @@ _ACEOF
  fi
  done
  
@@ -10,67 +10,24 @@ $OpenBSD: patch-configure,v 1.7 2007/05/01 20:20:49 naddy Exp $
 +INTLLIBS=$LTLIBINTL
  
  
-+
  { echo "$as_me:$LINENO: checking whether byte ordering is bigendian" >&5
- echo $ECHO_N "checking whether byte ordering is bigendian... $ECHO_C" >&6; }
- if test "${ac_cv_c_bigendian+set}" = set; then
-@@ -27729,6 +27733,13 @@ echo "$as_me: WARNING:
-     fi
-     ;;
+@@ -30535,13 +30538,13 @@ t q
+ b
+ :q
+ q"
+-x_lib_location="`ls -1 "${x_libraries:-/usr/local/lib}/libX11.so"* "${x_libraries:-/usr/lib}/libX11.so"* 2>/dev/null | sed -e \"${soname_script}\"`"
++x_lib_location="`ls -1 "${x_libraries:-/usr/local/lib}/libX11.so"* "${x_libraries:-/usr/lib}/libX11.so"* 2>/dev/null | sed 1q`"
  
-+  *-*-openbsd*)
-+    THREAD_LIBS="-pthread"
-+    THREAD_CPPFLAGS="-pthread"
-+    have_pthread=yes
-+
-+    ;;
-+
-   *-*-hpux11*)
-     THREAD_LIBS="-lpthread"
-     have_pthread=yes
-@@ -28905,7 +28916,7 @@ fi
-                  "ac_cv_lib_avcodec_pp_get_context" \
-                  "ac_cv_lib_postproc_pp_get_context" \
-                  "ac_cv_lib_avcodec_register_avcodec"; do
--          $as_unset $i || test "${$i+set}" != set || { $i=; export $i; }
-+          $as_unset $i || test "$i+set" != set || { $i=; export $i; }
-         done
+ cat >>confdefs.h <<_ACEOF
+ #define LIBX11_SO "${x_lib_location:-libX11.so}"
+ _ACEOF
  
-                 if test "${ac_cv_header_avcodec_h+set}" = set; then
-@@ -33078,8 +33089,12 @@ _ACEOF
+-x_lib_location="`ls -1 "${x_libraries:-/usr/local/lib}/libXv.so"*  "${x_libraries:-/usr/lib}/libXv.so"*  2>/dev/null | sed -e \"${soname_script}\"`"
++x_lib_location="`ls -1 "${x_libraries:-/usr/local/lib}/libXv.so"*  "${x_libraries:-/usr/lib}/libXv.so"*  2>/dev/null | sed 1q`"
  
- 
-      ac_have_xv="yes"
-+
-+XV_LIB="-lXv"
-+
-+if test 0 -eq 1 ; then
-      case x$XV_LIB in
--      x*.a)
-+      x*_pic.a)
- 
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_XV_STATIC 1
-@@ -33088,8 +33103,8 @@ _ACEOF
-         ac_have_xv_static="yes"
-         XV_LIB="$xv_path/$XV_LIB"
-         ;;
--      x*.so)
--        XV_LIB=`echo $XV_LIB | sed 's/^lib/-l/; s/\.so$//'`
-+      x*.so.*)
-+        XV_LIB="-lXv"
-         ;;
-       *)
-         { { echo "$as_me:$LINENO: error: sorry, I don't know about $XV_LIB" >&5
-@@ -33113,6 +33128,7 @@ fi
- 
- fi
- 
-+fi
- 
- if test x$ac_have_xv = "xyes"; then
-   HAVE_XV_TRUE=
-@@ -40297,7 +40313,7 @@ elif test x"$external_a52dec" = "xyes"; then
+ cat >>confdefs.h <<_ACEOF
+ #define LIBXV_SO "${x_lib_location:-libXv.so}"
+@@ -37681,7 +37684,7 @@ elif test "x$external_a52dec" = "xyes"; then
    have_a52="yes"
  
  
@@ -79,7 +36,7 @@ $OpenBSD: patch-configure,v 1.7 2007/05/01 20:20:49 naddy Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  { echo "$as_me:$LINENO: checking for $ac_header" >&5
-@@ -40469,7 +40485,7 @@ if test $ac_cv_lib_a52_a52_init = yes; then
+@@ -37820,7 +37823,7 @@ if test $ac_cv_lib_a52_a52_init = yes; then
  #define HAVE_LIBA52 1
  _ACEOF
  
@@ -88,7 +45,7 @@ $OpenBSD: patch-configure,v 1.7 2007/05/01 20:20:49 naddy Exp $
  
  else
    have_a52="no"
-@@ -40900,7 +40916,7 @@ if test "${ac_cv_lib_mng_mng_initialize+set}" = set; t
+@@ -38398,7 +38401,7 @@ if test "${ac_cv_lib_mng_mng_initialize+set}" = set; t
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -97,7 +54,7 @@ $OpenBSD: patch-configure,v 1.7 2007/05/01 20:20:49 naddy Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -41123,7 +41139,7 @@ echo "${ECHO_T}$ac_cv_header_libmng_h" >&6; }
+@@ -38581,7 +38584,7 @@ echo "${ECHO_T}$ac_cv_header_libmng_h" >&6; }
  fi
  if test $ac_cv_header_libmng_h = yes; then
     have_libmng=yes
@@ -106,30 +63,30 @@ $OpenBSD: patch-configure,v 1.7 2007/05/01 20:20:49 naddy Exp $
  else
    { echo "$as_me:$LINENO: result: *** All libmng dependent parts will be disabled ***" >&5
  echo "${ECHO_T}*** All libmng dependent parts will be disabled ***" >&6; }
-@@ -53028,7 +53044,7 @@ cat >>confdefs.h <<_ACEOF
+@@ -49392,7 +49395,7 @@ cat >>confdefs.h <<_ACEOF
  _ACEOF
  
-         CFLAGS="$CFLAGS -faltivec"
--        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -force_cpusubtype_ALL -faltivec"
-+        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -faltivec"
+         CFLAGS="$CFLAGS -faltivec -maltivec"
+-        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -force_cpusubtype_ALL -faltivec -maltivec"
++        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -faltivec -maltivec"
      fi
      ;;
    ppc-*-linux* | powerpc-*)
-@@ -53208,7 +53224,7 @@ cat >>confdefs.h <<_ACEOF
- _ACEOF
+@@ -49860,7 +49863,7 @@ eval XINE_SCRIPTPATH="$XINE_DATADIR/xine/scripts"
  
-         CFLAGS="$CFLAGS -maltivec"
--        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -force_cpusubtype_ALL -maltivec"
-+        LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -maltivec"
-     fi
-     ;;
-   sparc*-*-linux*)
-@@ -53489,7 +53505,7 @@ eval XINE_SCRIPTPATH="$XINE_DATADIR/xine/scripts"
- 
- XINE_BUILD_CC="`$CC -v 2>&1 | tail -n 1`"
+ XINE_BUILD_CC="`$CC -v 2>&1 | tail -1 2>/dev/null`"
  XINE_BUILD_OS="`uname -s -r -m`"
 -XINE_BUILD_DATE="`date \"+%a %d %b %Y %T\"`"
-+XINE_BUILD_DATE=`date "+%a %d %b %Y %T"`
++XINE_BUILD_DATE="`date "+%a %d %b %Y %T"`"
  
  
  
+@@ -50692,7 +50695,7 @@ rm -f core conftest.err conftest.$ac_objext conftest_i
+     { echo "$as_me:$LINENO: result: $ac_cv_try_ldflags_ok" >&5
+ echo "${ECHO_T}$ac_cv_try_ldflags_ok" >&6; }
+     if test x"$ac_cv_try_ldflags_ok" = x"yes"; then
+-        NOUNDEF="-Wl,-z,defs"
++        : # NOUNDEF="-Wl,-z,defs"
+     else
+         :
+     fi

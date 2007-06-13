@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_xine-utils_cpu_accel_c,v 1.1.1.1 2006/03/24 22:43:41 jakemsr Exp $
---- src/xine-utils/cpu_accel.c.orig	Fri Jul 29 13:31:13 2005
-+++ src/xine-utils/cpu_accel.c	Fri Dec 30 00:36:21 2005
+$OpenBSD: patch-src_xine-utils_cpu_accel_c,v 1.2 2007/06/13 10:58:29 jakemsr Exp $
+--- src/xine-utils/cpu_accel.c.orig	Thu Mar 29 15:45:12 2007
++++ src/xine-utils/cpu_accel.c	Sun May 20 22:40:14 2007
 @@ -56,6 +56,12 @@ static uint32_t arch_accel (void)
    /* No need to test for this on AMD64, we know what the
       platform has.  */

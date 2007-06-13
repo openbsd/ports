@@ -1,0 +1,99 @@
+$OpenBSD: patch-src_input_input_http_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
+--- src/input/input_http.c.orig	Fri May 11 14:33:21 2007
++++ src/input/input_http.c	Fri Jun  8 17:30:34 2007
+@@ -396,7 +396,7 @@ static off_t http_plugin_read_int (http_input_plugin_t
+   
+ error:
+   if (!_x_action_pending(this->stream)) 
+-    _x_message (this->stream, XINE_MSG_READ_ERROR, this->host, NULL);
++    _x_message (this->stream, XINE_MSG_READ_ERROR, this->host, (char *)NULL);
+   xine_log (this->stream->xine, XINE_LOG_MSG, _("input_http: read error %d\n"), errno);
+   return read_bytes;
+ }
+@@ -651,7 +651,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+       if (http_plugin_basicauth (this_class->proxyuser,
+ 			         this_class->proxypassword,
+ 				 this->proxyauth, BUFSIZE)) {
+-	_x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "proxy error", NULL);
++	_x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "proxy error", (char *)NULL);
+ 	return 0;
+       }
+     }
+@@ -660,7 +660,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+   
+   if (!_x_parse_url(this->mrl, &this->proto, &this->host, &this->port,
+                     &this->user, &this->password, &this->uri)) {
+-    _x_message(this->stream, XINE_MSG_GENERAL_WARNING, "malformed url", NULL);
++    _x_message(this->stream, XINE_MSG_GENERAL_WARNING, "malformed url", (char *)NULL);
+     return 0;
+   }
+   use_proxy = use_proxy && _x_use_proxy(this_class, this->host);
+@@ -670,7 +670,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+   
+   if (this->user && strlen(this->user)) {
+     if (http_plugin_basicauth (this->user, this->password, this->auth, BUFSIZE)) {
+-      _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "basic auth error", NULL);
++      _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "basic auth error", (char *)NULL);
+       return -1;
+     }
+   }
+@@ -724,7 +724,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+     } while ((res == XIO_TIMEOUT) && (progress <= 100000));
+ 
+     if (res != XIO_READY) {
+-      _x_message(this->stream, XINE_MSG_NETWORK_UNREACHABLE, this->mrl, NULL);
++      _x_message(this->stream, XINE_MSG_NETWORK_UNREACHABLE, this->mrl, (char *)NULL);
+       return -3;
+     }
+   }
+@@ -769,7 +769,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+            VERSION);
+   buflen = strlen(this->buf);
+   if (_x_io_tcp_write (this->stream, this->fh, this->buf, buflen) != buflen) {
+-    _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "couldn't send request", NULL);
++    _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "couldn't send request", (char *)NULL);
+     xprintf(this_class->xine, XINE_VERBOSITY_DEBUG, "input_http: couldn't send request\n");
+     return -4;
+   }
+@@ -813,7 +813,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+ 	    (sscanf(this->buf, "ICY %d %50[^\015\012]", /* icecast 1 ? */
+ 		    &httpcode, httpstatus) != 2)
+ 	   ) {
+-	    _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "invalid http answer", NULL);
++	    _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "invalid http answer", (char *)NULL);
+ 	    xine_log (this->stream->xine, XINE_LOG_MSG, 
+ 		      _("input_http: invalid http answer\n"));
+ 	    return -6;
+@@ -824,20 +824,20 @@ static int http_plugin_open (input_plugin_t *this_gen 
+ 		    _("input_http: 3xx redirection: >%d %s<\n"),
+ 		    httpcode, httpstatus);
+ 	} else if (httpcode == 404) {
+-	  _x_message(this->stream, XINE_MSG_FILE_NOT_FOUND, this->mrl, NULL);
++	  _x_message(this->stream, XINE_MSG_FILE_NOT_FOUND, this->mrl, (char *)NULL);
+ 	  xine_log (this->stream->xine, XINE_LOG_MSG,
+ 		    _("input_http: http status not 2xx: >%d %s<\n"),
+ 		                        httpcode, httpstatus);
+ 	  return -7;
+ 	} else if (httpcode == 403 || httpcode == 401) {
+-          _x_message(this->stream, XINE_MSG_PERMISSION_ERROR, this->mrl, NULL);
++          _x_message(this->stream, XINE_MSG_PERMISSION_ERROR, this->mrl, (char *)NULL);
+ 	  xine_log (this->stream->xine, XINE_LOG_MSG,
+ 		    _("input_http: http status not 2xx: >%d %s<\n"),
+ 		    httpcode, httpstatus);
+ 	  return -8;
+ 	} else if (httpcode < 200 || httpcode >= 300) {
+ 	  _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "http status not 2xx: ",
+-	               httpstatus, NULL);
++	               httpstatus, (char *)NULL);
+       	  xine_log (this->stream->xine, XINE_LOG_MSG,
+ 		    _("input_http: http status not 2xx: >%d %s<\n"),
+ 		    httpcode, httpstatus);
+@@ -916,7 +916,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+     } else
+       len ++;
+     if ( len >= BUFSIZE ) {
+-       _x_message(this->stream, XINE_MSG_PERMISSION_ERROR, this->mrl, NULL);
++       _x_message(this->stream, XINE_MSG_PERMISSION_ERROR, this->mrl, (char *)NULL);
+        xine_log (this->stream->xine, XINE_LOG_MSG,
+          _("input_http: buffer exhausted after %d bytes."), BUFSIZE);
+        return -10;

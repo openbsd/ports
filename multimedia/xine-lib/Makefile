@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/25 16:16:37 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.14 2007/06/13 10:58:28 jakemsr Exp $
 
 COMMENT=		"multimedia decoding library"
 
-V=			1.1.2
+V=			1.1.7
 DISTNAME=		xine-lib-${V}
-PKGNAME=		${DISTNAME}p7
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
-SHARED_LIBS=		xine	14.1
+SHARED_LIBS=		xine	18.1
 
 HOMEPAGE=		http://xinehq.de/
 
@@ -19,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xinerama Xv freetype \
-			jpeg lcms m usbhid z
+WANTLIB=		X11 Xau Xdmcp Xext Xinerama Xv expat \
+			freetype fontconfig jpeg lcms m usbhid z
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=		-Di386=1
@@ -55,33 +54,46 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-mlib \
 			--disable-opengl \
 			--disable-fb \
+			--disable-syncfb \
+			--disable-directfb \
+			--disable-v4l \
+			--disable-dxr3 \
 			--disable-vidix \
 			--disable-aalib \
-			--disable-caca \
-			--disable-polypaudio \
+			--without-caca \
+			--without-xcb \
+			--without-pulseaudio \
 			--disable-oss \
-			--disable-alsa \
-			--disable-arts \
-			--disable-esd \
-			--disable-gnome \
-			--disable-imagemagick \
+			--without-alsa \
+			--without-arts \
+			--without-esound \
+			--without-jack \
+			--without-imagemagick \
 			--disable-samba \
-			--disable-vcd \
+			--disable-xvmc \
 			--enable-shared-xv \
 			--disable-static-xv \
 			--disable-gnomevfs \
 			--disable-gdkpixbuf \
-			--with-external-ffmpeg=${LOCALBASE} \
-			--with-external-dvdnav \
-			--with-external-a52dec \
-			--with-external-libmad \
-			--with-internal-vcdlibs
+			--with-libflac \
+			--with-freetype \
+			--with-fontconfig \
+			--disable-vcd \
+			--with-external-ffmpeg=yes \
+			--with-external-dvdnav=yes \
+			--with-external-a52dec=yes \
+			--with-external-libmad=yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			FFMPEG_CPPFLAGS="$$(pkg-config --cflags libavcodec libpostproc)" \
 			FFMPEG_LIBS="$$(pkg-config --libs libavcodec libpostproc)" \
-			FFMPEG_POSTPROC_LIBS="$$(pkg-config --libs libpostproc)"
+			FFMPEG_POSTPROC_LIBS="$$(pkg-config --libs libavcodec libpostproc)" \
+			PTHREAD_LIBS="-pthread" \
+			PTHREAD_CFLAGS="-pthread" \
+			XV_LIBS="-lXv" \
+			SDL_LIBS="$$(sdl-config --libs)" \
+			SDL_CFLAGS="$$(sdl-config --cflags)"
 
 post-patch:
 .if ${MACHINE_ARCH} == "i386"

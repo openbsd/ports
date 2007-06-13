@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_vcd_libcdio_iso9660_fs_c,v 1.2 2006/10/12 04:48:14 brad Exp $
---- src/input/vcd/libcdio/iso9660_fs.c.orig	Sun Jul  9 10:37:48 2006
-+++ src/input/vcd/libcdio/iso9660_fs.c	Fri Sep 15 17:53:21 2006
+$OpenBSD: patch-src_input_vcd_libcdio_iso9660_fs_c,v 1.3 2007/06/13 10:58:29 jakemsr Exp $
+--- src/input/vcd/libcdio/iso9660_fs.c.orig	Sun Apr 15 10:42:16 2007
++++ src/input/vcd/libcdio/iso9660_fs.c	Sun May 20 22:40:02 2007
 @@ -33,6 +33,7 @@
  
  #ifdef HAVE_ICONV

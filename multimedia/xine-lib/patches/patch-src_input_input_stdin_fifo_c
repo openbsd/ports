@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_input_input_stdin_fifo_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
+--- src/input/input_stdin_fifo.c.orig	Sun Apr 15 10:42:16 2007
++++ src/input/input_stdin_fifo.c	Sun May 20 22:40:02 2007
+@@ -106,7 +106,7 @@ static off_t stdin_plugin_read (input_plugin_t *this_g
+     lprintf ("got %"PRId64" bytes (%"PRId64"/%"PRId64" bytes read)\n", n,total,len);
+   
+     if (n < 0) {
+-      _x_message(this->stream, XINE_MSG_READ_ERROR, NULL);
++      _x_message(this->stream, XINE_MSG_READ_ERROR, (char *)NULL);
+       return 0;
+     }
+ 

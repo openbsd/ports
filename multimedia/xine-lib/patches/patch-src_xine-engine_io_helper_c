@@ -1,0 +1,122 @@
+$OpenBSD: patch-src_xine-engine_io_helper_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
+--- src/xine-engine/io_helper.c.orig	Sun Apr 15 10:42:17 2007
++++ src/xine-engine/io_helper.c	Sun May 20 22:40:14 2007
+@@ -56,19 +56,19 @@ static int _x_io_tcp_connect_ipv4(xine_stream_t *strea
+   
+   h = gethostbyname(host);
+   if (h == NULL) {
+-    _x_message(stream, XINE_MSG_UNKNOWN_HOST, "unable to resolve", host, NULL);
++    _x_message(stream, XINE_MSG_UNKNOWN_HOST, "unable to resolve", host, (char *)NULL);
+     return -1;
+   }
+ 
+   s = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);  
+   if (s == -1) {
+-    _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "failed to create socket", strerror(errno), NULL);
++    _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "failed to create socket", strerror(errno), (char *)NULL);
+     return -1;
+   }
+ 
+ #ifndef WIN32
+   if (fcntl (s, F_SETFL, fcntl (s, F_GETFL) | O_NONBLOCK) == -1) {
+-    _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "can't put socket in non-blocking mode", strerror(errno), NULL);
++    _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "can't put socket in non-blocking mode", strerror(errno), (char *)NULL);
+     return -1;
+   }
+ #else
+@@ -79,7 +79,7 @@ static int _x_io_tcp_connect_ipv4(xine_stream_t *strea
+     rc = ioctlsocket(s, FIONBIO, &non_block);
+ 
+     if (rc == SOCKET_ERROR) {
+-      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "can't put socket in non-blocking mode", strerror(errno), NULL);
++      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "can't put socket in non-blocking mode", strerror(errno), (char *)NULL);
+ 	  return -1;
+     }
+   }
+@@ -102,7 +102,7 @@ static int _x_io_tcp_connect_ipv4(xine_stream_t *strea
+         xprintf(stream->xine, XINE_VERBOSITY_DEBUG, "io_helper: WSAGetLastError() = %d\n", WSAGetLastError());
+ #endif /* WIN32 */
+ 
+-      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, strerror(errno), NULL);
++      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, strerror(errno), (char *)NULL);
+       close(s);
+       continue;
+     }
+@@ -136,7 +136,7 @@ int _x_io_tcp_connect(xine_stream_t *stream, const cha
+ 
+   if (error) {
+     _x_message(stream, XINE_MSG_UNKNOWN_HOST, 
+-		 "unable to resolve", host, NULL);
++		 "unable to resolve", host, (char *)NULL);
+     return -1;
+   }
+ 
+@@ -147,7 +147,7 @@ int _x_io_tcp_connect(xine_stream_t *stream, const cha
+       s = socket(tmpaddr->ai_family, SOCK_STREAM, IPPROTO_TCP);  
+       if (s == -1) {
+ 	  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, 
+-		       "failed to create socket", strerror(errno), NULL);
++		       "failed to create socket", strerror(errno), (char *)NULL);
+ 	  tmpaddr = tmpaddr->ai_next;
+ 	  continue;
+       }
+@@ -160,7 +160,7 @@ int _x_io_tcp_connect(xine_stream_t *stream, const cha
+       if ( ! tmpaddr->ai_next ) {
+ #ifndef WIN32
+ 	if (fcntl (s, F_SETFL, fcntl (s, F_GETFL) | O_NONBLOCK) == -1) {
+-	  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "can't put socket in non-blocking mode", strerror(errno), NULL);
++	  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "can't put socket in non-blocking mode", strerror(errno), (char *)NULL);
+ 	  return -1;
+ 	}
+ #else
+@@ -170,7 +170,7 @@ int _x_io_tcp_connect(xine_stream_t *stream, const cha
+ 	rc = ioctlsocket(s, FIONBIO, &non_block);
+ 
+ 	if (rc == SOCKET_ERROR) {
+-	  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "can't put socket in non-blocking mode", strerror(errno), NULL);
++	  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "can't put socket in non-blocking mode", strerror(errno), (char *)NULL);
+ 	  return -1;
+ 	}
+ #endif
+@@ -200,7 +200,7 @@ int _x_io_tcp_connect(xine_stream_t *stream, const cha
+     tmpaddr = tmpaddr->ai_next;
+   }
+ 
+-  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, strerror(error), NULL);
++  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, strerror(error), (char *)NULL);
+   
+   return -1;
+ #endif
+@@ -311,11 +311,11 @@ int _x_io_tcp_connect_finish(xine_stream_t *stream, in
+     int err;
+     
+     if ((getsockopt(fd, SOL_SOCKET, SO_ERROR, (void *)&err, &len)) == -1) {
+-      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, _("failed to get status of socket"), strerror(errno), NULL);
++      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, _("failed to get status of socket"), strerror(errno), (char *)NULL);
+       return XIO_ERROR;
+     }
+     if (err) {
+-      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, strerror(errno), NULL);
++      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, strerror(errno), (char *)NULL);
+       return XIO_ERROR;
+     }
+   }
+@@ -383,15 +383,15 @@ static off_t xio_rw_abort(xine_stream_t *stream, int f
+         continue;
+ 
+       if (errno == EACCES) {
+-        _x_message(stream, XINE_MSG_PERMISSION_ERROR, NULL, NULL);
++        _x_message(stream, XINE_MSG_PERMISSION_ERROR, NULL, (char *)NULL);
+ 	xine_log (stream->xine, XINE_LOG_MSG,
+ 		  _("io_helper: Permission denied\n"));
+       } else if (errno == ENOENT) {
+-        _x_message(stream, XINE_MSG_FILE_NOT_FOUND, NULL, NULL);
++        _x_message(stream, XINE_MSG_FILE_NOT_FOUND, NULL, (char *)NULL);
+ 	xine_log (stream->xine, XINE_LOG_MSG,
+ 		  _("io_helper: File not found\n"));
+       } else if (errno == ECONNREFUSED) {
+-	_x_message(stream, XINE_MSG_CONNECTION_REFUSED, NULL, NULL);
++	_x_message(stream, XINE_MSG_CONNECTION_REFUSED, NULL, (char *)NULL);
+ 	xine_log (stream->xine, XINE_LOG_MSG,
+ 		  _("io_helper: Connection Refused\n"));
+       } else {

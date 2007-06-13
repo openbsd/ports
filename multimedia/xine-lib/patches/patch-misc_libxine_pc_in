@@ -1,0 +1,13 @@
+$OpenBSD: patch-misc_libxine_pc_in,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
+--- misc/libxine.pc.in.orig	Fri May 25 23:09:41 2007
++++ misc/libxine.pc.in	Fri May 25 23:10:32 2007
+@@ -7,7 +7,7 @@ Name: libxine
+ Description: The xine engine library
+ Version: @XINE_MAJOR@.@XINE_MINOR@.@XINE_SUB@
+ Requires:
+-Libs: -L${libdir} -lxine
++Libs: -L${libdir} -lxine @PTHREAD_LIBS@
+ Libs.private: @ZLIB_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@ @LIBICONV@ @RT_LIBS@
+-Cflags: -I${includedir}
++Cflags: -I${includedir} @PTHREAD_CFLAGS@
+ Cflags.private: @PTHREAD_CFLAGS@

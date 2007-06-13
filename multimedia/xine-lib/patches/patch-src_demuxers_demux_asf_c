@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_demuxers_demux_asf_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
+--- src/demuxers/demux_asf.c.orig	Sun Apr 15 10:42:15 2007
++++ src/demuxers/demux_asf.c	Sun May 20 22:40:02 2007
+@@ -427,7 +427,7 @@ static int asf_read_header (demux_asf_t *this) {
+ 	xine_log(this->stream->xine, XINE_LOG_MSG,
+ 		 _("demux_asf: warning: The stream id=%d is encrypted.\n"), asf_stream->stream_number);
+ 	_x_message(this->stream, XINE_MSG_ENCRYPTED_SOURCE,
+-		   _("Media stream scrambled/encrypted"), NULL);
++		   _("Media stream scrambled/encrypted"), (char *)NULL);
+ 	this->mode = ASF_MODE_ENCRYPTED_CONTENT;
+       }
+     }

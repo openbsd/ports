@@ -1,0 +1,12 @@
+$OpenBSD: patch-misc_xine-config_in,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
+--- misc/xine-config.in.orig	Fri May 25 23:08:44 2007
++++ misc/xine-config.in	Fri May 25 23:09:14 2007
+@@ -104,7 +104,7 @@ if test "$echo_cflags" = "yes"; then
+ fi
+ 
+ if test "$echo_libs" = "yes"; then
+-      echo -L@libdir@ -lxine @ZLIB_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@ @LIBICONV@ @RT_LIBS@
++      echo -L@libdir@ -lxine @PTHREAD_LIBS@
+ fi      
+ if test "$echo_plugindir" = "yes"; then
+       echo "@XINE_PLUGINPATH@"

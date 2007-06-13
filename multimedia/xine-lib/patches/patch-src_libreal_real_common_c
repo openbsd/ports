@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libreal_real_common_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
+--- src/libreal/real_common.c.orig	Sun Apr 15 10:42:16 2007
++++ src/libreal/real_common.c	Sun May 20 22:40:10 2007
+@@ -145,7 +145,7 @@ void *_x_real_codec_open(xine_stream_t *const stream, 
+ 	     LOG_MODULE ": error loading %s: %s\n", codecpath, dlerror());
+   }
+ 
+-  _x_message(stream, XINE_MSG_LIBRARY_LOAD_ERROR, codec_name, NULL);
++  _x_message(stream, XINE_MSG_LIBRARY_LOAD_ERROR, codec_name, (char *)NULL);
+   
+   return NULL;
+ }

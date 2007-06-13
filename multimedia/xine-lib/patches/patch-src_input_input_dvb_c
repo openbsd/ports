@@ -1,14 +1,21 @@
-$OpenBSD: patch-src_input_input_dvb_c,v 1.3 2007/05/01 20:05:10 naddy Exp $
---- src/input/input_dvb.c.orig	Sun Jul  9 16:37:35 2006
-+++ src/input/input_dvb.c	Tue May  1 22:03:06 2007
-@@ -986,8 +986,8 @@ static int tuner_tune_it (tuner_t *this, struct dvb_fr
+$OpenBSD: patch-src_input_input_dvb_c,v 1.4 2007/06/13 10:58:29 jakemsr Exp $
+--- src/input/input_dvb.c.orig	Wed May 16 15:40:49 2007
++++ src/input/input_dvb.c	Fri Jun  8 17:27:46 2007
+@@ -894,7 +894,7 @@ static channel_t *load_channels(xine_t *xine, xine_str
+   if (!f) {
+     xprintf(xine, XINE_VERBOSITY_LOG, _("input_dvb: failed to open dvb channel file '%s': %s\n"), filename, strerror (errno));
+     if (!f && stream)
+-      _x_message(stream, XINE_MSG_FILE_NOT_FOUND, filename, "Please run the dvbscan utility.", NULL);
++      _x_message(stream, XINE_MSG_FILE_NOT_FOUND, filename, "Please run the dvbscan utility.", (char *)NULL);
+     return NULL;
+   }
+   if (fstat(fileno(f), &st) || !S_ISREG (st.st_mode)) {
+@@ -2550,7 +2550,7 @@ static off_t dvb_plugin_read (input_plugin_t *this_gen
  
-   if (poll(pfd,1,3000)){
-       if (pfd[0].revents & POLLIN){
--	  if (ioctl(this->fd_frontend, FE_GET_EVENT, &event) == -EOVERFLOW){
--	      print_error("EOVERFLOW");
-+	  if (ioctl(this->fd_frontend, FE_GET_EVENT, &event) == -EINVAL){
-+	      print_error("EINVAL");
- 	      return 0;
- 	  }
- 	  if (event.parameters.frequency <= 0)
+   /* no data for several seconds - tell the user a possible reason */
+   if(this->read_failcount==5){
+-    _x_message(this->stream,1,"DVB Signal Lost.  Please check connections.", NULL); 
++    _x_message(this->stream,1,"DVB Signal Lost.  Please check connections.", (char *)NULL); 
+   }
+ #ifdef DVB_NO_BUFFERING
+   if(this->newchannel){

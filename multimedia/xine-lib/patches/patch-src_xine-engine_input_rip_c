@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_xine-engine_input_rip_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
+--- src/xine-engine/input_rip.c.orig	Mon Apr 16 18:00:50 2007
++++ src/xine-engine/input_rip.c	Sun May 20 22:40:14 2007
+@@ -568,7 +568,7 @@ input_plugin_t *_x_rip_plugin_get_instance (xine_strea
+     xine_log(stream->xine, XINE_LOG_MSG,
+ 	     _("input_rip: target directory wasn't specified, please fill out the option 'media.capture.save_dir'\n"));
+     _x_message(stream, XINE_MSG_SECURITY,
+-	       _("The stream save feature is disabled until you set media.capture.save_dir in the configuration."), NULL);
++	       _("The stream save feature is disabled until you set media.capture.save_dir in the configuration."), (char *)NULL);
+     return NULL;
+   }
+ 
+@@ -577,7 +577,7 @@ input_plugin_t *_x_rip_plugin_get_instance (xine_strea
+     xine_log(stream->xine, XINE_LOG_MSG, 
+ 	     _("input_rip: ripping/caching of this source is not permitted!\n"));
+     _x_message(stream, XINE_MSG_SECURITY,
+-	       _("xine is not allowed to save from this source. (possibly copyrighted material?)"), NULL);
++	       _("xine is not allowed to save from this source. (possibly copyrighted material?)"), (char *)NULL);
+     return NULL;
+   }
+ #endif
