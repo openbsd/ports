@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/04/13 04:50:18 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/06/13 15:07:34 alek Exp $
 bin/ipython
 bin/irunner
 bin/pycolor
@@ -42,20 +42,30 @@ lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipipe.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipipe.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_completers.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_completers.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_constants.py
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_constants.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_defaults.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_defaults.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_exportdb.py
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_exportdb.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_extutil.py
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_extutil.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_gnuglobal.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_gnuglobal.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_p4.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_p4.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_pydb.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_pydb.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_render.py
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_render.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_signals.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_signals.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_stock_completers.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_stock_completers.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_system_conf.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_system_conf.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_which.py
+lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ipy_which.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/jobctrl.py
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/jobctrl.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/Extensions/ledit.py
@@ -123,8 +133,6 @@ lib/python${MODPY_VERSION}/site-packages/IPython/external/__init__.py
 lib/python${MODPY_VERSION}/site-packages/IPython/external/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/external/simplegeneric.py
 lib/python${MODPY_VERSION}/site-packages/IPython/external/simplegeneric.pyc
-lib/python${MODPY_VERSION}/site-packages/IPython/external/thread2.py
-lib/python${MODPY_VERSION}/site-packages/IPython/external/thread2.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/genutils.py
 lib/python${MODPY_VERSION}/site-packages/IPython/genutils.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/hooks.py
@@ -168,7 +176,6 @@ lib/python${MODPY_VERSION}/site-packages/IPython/winconsole.pyc
 @man man/man1/ipython.1
 @man man/man1/pycolor.1
 share/doc/ipython/
-share/doc/ipython/crossref.png
 share/doc/ipython/footnode.html
 share/doc/ipython/img1.png
 share/doc/ipython/img2.png
