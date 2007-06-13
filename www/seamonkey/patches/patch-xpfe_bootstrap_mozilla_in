@@ -1,15 +1,21 @@
-$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.2 2007/03/26 20:41:38 martynas Exp $
+$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.3 2007/06/13 12:09:19 martynas Exp $
 --- xpfe/bootstrap/mozilla.in.orig	Mon Aug 21 01:44:28 2006
-+++ xpfe/bootstrap/mozilla.in	Mon Mar 19 08:06:50 2007
-@@ -93,6 +93,7 @@ moz_pis_startstop_scripts()
++++ xpfe/bootstrap/mozilla.in	Wed Jun 13 00:17:15 2007
+@@ -92,7 +92,13 @@ moz_pis_startstop_scripts()
+ #uncomment for debugging
  #set -x
  
++LIMIT=`ulimit -n`
++if [ $LIMIT -lt 128 -a "${LIMIT}" != "unlimited" ]; then
++	ulimit -Sn 128
++fi
++
  moz_libdir=%MOZAPPDIR%
 +MOZ_PLUGIN_PATH=_LOCALBASE_/lib/mozilla-plugins
  MRE_HOME=%MREDIR%
  
  # Use run-mozilla.sh in the current dir if it exists
-@@ -273,7 +274,11 @@ do
+@@ -273,7 +279,11 @@ do
    esac
  done
  

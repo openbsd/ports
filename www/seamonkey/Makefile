@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/06/08 11:49:47 martynas Exp $
+# $OpenBSD: Makefile,v 1.12 2007/06/13 12:09:19 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -9,8 +9,8 @@ COMMENT-devel=  "devel files for Gecko"
 VER=		1.1.2
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
-PKGNAME-main=	seamonkey-${VER}
-PKGNAME-devel=	seamonkey-devel-${VER}
+PKGNAME-main=	seamonkey-${VER}p0
+PKGNAME-devel=	seamonkey-devel-${VER}p0
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
