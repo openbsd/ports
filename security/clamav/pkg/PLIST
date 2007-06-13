@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/04/11 17:54:11 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/06/13 17:25:00 aanriot Exp $
 @newgroup _clamav:539
 @newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
 bin/clamav-config
@@ -37,8 +37,11 @@ share/examples/clamav/freshclam.conf
 @owner _clamav
 @group _clamav
 @sample /var/db/clamav/
+@sample /var/spool/clamav/
 @sample /var/clamav/
 @mode 0700
 @sample /var/clamav/quarantine/
+@sample /var/clamav/tmp/
 @extraunexec rm -fr /var/db/clamav/*
-@extraunexec rm -fr /var/clamav/quarantine/*
+@extraunexec rm -fr /var/spool/clamav/*
+@extraunexec rm -fr /var/clamav/*
