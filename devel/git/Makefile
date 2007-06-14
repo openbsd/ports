@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/08 09:48:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2007/06/14 21:44:49 bernd Exp $
 
 COMMENT-main=		"GIT - Tree History Storage Tool"
 COMMENT-svn=		"GIT - subversion interoperability tools"
 
-V=			1.5.1.3
+V=			1.5.2.1
 DISTNAME=		git-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
@@ -50,7 +50,8 @@ LIB_DEPENDS-svn=
 PKG_ARCH-svn=		*
 
 MAKE_ENV=		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \
-			SYSCONFDIR=${SYSCONFDIR}
+			SYSCONFDIR=${SYSCONFDIR} \
+			TCLTK_PATH=${LOCALBASE}/bin/wish8.4
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

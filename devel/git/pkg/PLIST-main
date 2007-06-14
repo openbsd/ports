@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/05/08 09:48:07 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2007/06/14 21:44:49 bernd Exp $
 @pkgpath devel/git
 bin/git
 bin/git-add
@@ -15,6 +15,7 @@ bin/git-blame
 bin/git-branch
 bin/git-bundle
 bin/git-cat-file
+bin/git-check-attr
 bin/git-check-ref-format
 bin/git-checkout
 bin/git-checkout-index
@@ -76,6 +77,7 @@ bin/git-merge-ours
 bin/git-merge-recursive
 bin/git-merge-resolve
 bin/git-merge-stupid
+bin/git-merge-subtree
 bin/git-merge-tree
 bin/git-mergetool
 bin/git-mktag
@@ -155,6 +157,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-branch.1
 @man man/man1/git-bundle.1
 @man man/man1/git-cat-file.1
+@man man/man1/git-check-attr.1
 @man man/man1/git-check-ref-format.1
 @man man/man1/git-checkout-index.1
 @man man/man1/git-checkout.1
@@ -272,6 +275,8 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git.1
 @man man/man1/gitk.1
 @man man/man3p/Git.3p
+@man man/man5/gitattributes.5
+@man man/man5/gitignore.5
 share/doc/git/
 share/doc/git/RelNotes-1.5.0.1.txt
 share/doc/git/RelNotes-1.5.0.2.txt
@@ -284,7 +289,12 @@ share/doc/git/RelNotes-1.5.0.txt
 share/doc/git/RelNotes-1.5.1.1.txt
 share/doc/git/RelNotes-1.5.1.2.txt
 share/doc/git/RelNotes-1.5.1.3.txt
+share/doc/git/RelNotes-1.5.1.4.txt
+share/doc/git/RelNotes-1.5.1.5.txt
+share/doc/git/RelNotes-1.5.1.6.txt
 share/doc/git/RelNotes-1.5.1.txt
+share/doc/git/RelNotes-1.5.2.1.txt
+share/doc/git/RelNotes-1.5.2.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
@@ -334,6 +344,8 @@ share/doc/git/git-bundle.html
 share/doc/git/git-bundle.txt
 share/doc/git/git-cat-file.html
 share/doc/git/git-cat-file.txt
+share/doc/git/git-check-attr.html
+share/doc/git/git-check-attr.txt
 share/doc/git/git-check-ref-format.html
 share/doc/git/git-check-ref-format.txt
 share/doc/git/git-checkout-index.html
@@ -572,6 +584,10 @@ share/doc/git/git-write-tree.html
 share/doc/git/git-write-tree.txt
 share/doc/git/git.html
 share/doc/git/git.txt
+share/doc/git/gitattributes.html
+share/doc/git/gitattributes.txt
+share/doc/git/gitignore.html
+share/doc/git/gitignore.txt
 share/doc/git/gitk.html
 share/doc/git/gitk.txt
 share/doc/git/glossary.html
@@ -581,9 +597,6 @@ share/doc/git/hooks.txt
 share/doc/git/howto/
 share/doc/git/howto-index.html
 share/doc/git/howto-index.txt
-share/doc/git/howto/dangling-objects.txt
-share/doc/git/howto/isolate-bugs-with-bisect.txt
-share/doc/git/howto/make-dist.txt
 share/doc/git/howto/rebase-and-edit.txt
 share/doc/git/howto/rebase-from-internal-branch.txt
 share/doc/git/howto/rebuild-from-update-hook.txt
@@ -593,12 +606,12 @@ share/doc/git/howto/separating-topic-branches.txt
 share/doc/git/howto/setup-git-server-over-http.txt
 share/doc/git/howto/update-hook-example.txt
 share/doc/git/howto/use-git-daemon.txt
-share/doc/git/howto/using-topic-branches.txt
 share/doc/git/i18n.txt
 share/doc/git/index.html
 share/doc/git/merge-options.txt
 share/doc/git/merge-strategies.txt
 share/doc/git/pretty-formats.txt
+share/doc/git/pretty-options.txt
 share/doc/git/pull-fetch-param.txt
 share/doc/git/repository-layout.html
 share/doc/git/repository-layout.txt
@@ -630,3 +643,21 @@ share/git-core/templates/hooks/pre-rebase
 share/git-core/templates/hooks/update
 share/git-core/templates/info/
 share/git-core/templates/info/exclude
+share/git-gui/
+share/git-gui/lib/
+share/git-gui/lib/blame.tcl
+share/git-gui/lib/branch.tcl
+share/git-gui/lib/browser.tcl
+share/git-gui/lib/class.tcl
+share/git-gui/lib/commit.tcl
+share/git-gui/lib/console.tcl
+share/git-gui/lib/database.tcl
+share/git-gui/lib/diff.tcl
+share/git-gui/lib/error.tcl
+share/git-gui/lib/index.tcl
+share/git-gui/lib/merge.tcl
+share/git-gui/lib/option.tcl
+share/git-gui/lib/remote.tcl
+share/git-gui/lib/shortcut.tcl
+share/git-gui/lib/tclIndex
+share/git-gui/lib/transport.tcl
