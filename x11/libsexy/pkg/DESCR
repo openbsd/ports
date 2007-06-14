@@ -1,0 +1,3 @@
+collection of GTK+ widgets that extend the functionality of such
+standard widgets as GtkEntry and GtkLabel by subclassing them and
+working around the limitations of the widgets.

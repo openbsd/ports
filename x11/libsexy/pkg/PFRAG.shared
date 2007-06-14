@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/06/14 19:20:10 steven Exp $
+@lib lib/libsexy.so.${LIBsexy_VERSION}
