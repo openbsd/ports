@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2007/06/13 15:15:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2007/06/14 18:19:24 ajacoutot Exp $
 
 COMMENT-main=	"extendable SNMP implementation"
 COMMENT-perl=	"SNMP modules for Perl"
 
 DISTNAME=	net-snmp-5.4
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 PKGNAME-perl=	p5-SNMP-5.4
 SHARED_LIBS=	netsnmp		7.0	\
 		netsnmpagent	7.0	\

@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_helpers_Makefile_in,v 1.2 2006/01/08 11:36:04 steven Exp $
---- agent/helpers/Makefile.in.orig	Tue Jan  3 16:40:36 2006
-+++ agent/helpers/Makefile.in	Tue Jan  3 16:41:10 2006
-@@ -4,7 +4,7 @@ top_builddir=../..
+$OpenBSD: patch-agent_helpers_Makefile_in,v 1.3 2007/06/14 18:19:24 ajacoutot Exp $
+--- agent/helpers/Makefile.in.orig	Thu Sep 14 11:53:44 2006
++++ agent/helpers/Makefile.in	Thu Jun 14 18:53:36 2007
+@@ -12,7 +12,7 @@ top_builddir=../..
  # What to install
  #
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-agent_helpers_Makefile_in,v 1.2 2006/01/08 11:36:04 steven Exp $
  INCLUDESUBDIR=agent
  INCLUDESUBDIRHEADERS=all_helpers.h \
  	baby_steps.h \
-@@ -109,6 +109,6 @@ LOBJS = all_helpers.lo \
+@@ -131,6 +131,6 @@ LOBJS = all_helpers.lo \
  
  all: standardall
  

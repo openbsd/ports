@@ -1,7 +1,7 @@
-$OpenBSD: patch-perl_SNMP_Makefile_PL,v 1.1 2004/08/09 15:04:17 danh Exp $
---- perl/SNMP/Makefile.PL.orig	Mon Aug  9 10:24:28 2004
-+++ perl/SNMP/Makefile.PL	Mon Aug  9 10:24:36 2004
-@@ -18,7 +18,7 @@ sub InitMakeParams {
+$OpenBSD: patch-perl_SNMP_Makefile_PL,v 1.2 2007/06/14 18:19:24 ajacoutot Exp $
+--- perl/SNMP/Makefile.PL.orig	Fri Sep 15 14:47:00 2006
++++ perl/SNMP/Makefile.PL	Thu Jun 14 18:53:38 2007
+@@ -21,7 +21,7 @@ sub InitMakeParams {
      my %Params = (
  		  NAME         => 'SNMP',
  		  dist         => { SUFFIX => "gz", COMPRESS => "gzip -9f"},

@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.3 2005/11/05 19:09:38 bernd Exp $
---- agent/mibgroup/mibII/tcpTable.c.orig	Mon Jun 20 15:17:03 2005
-+++ agent/mibgroup/mibII/tcpTable.c	Fri Nov  4 01:25:25 2005
-@@ -450,7 +450,7 @@ tcpTable_next_entry( void **loop_context
+$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.4 2007/06/14 18:19:24 ajacoutot Exp $
+--- agent/mibgroup/mibII/tcpTable.c.orig	Tue Nov  7 00:43:27 2006
++++ agent/mibgroup/mibII/tcpTable.c	Thu Jun 14 18:53:37 2007
+@@ -450,7 +450,7 @@ tcpTable_next_entry( void **loop_context,
       * and update the loop context ready for the next one.
       */
      *data_context = (void*)entry;
@@ -10,7 +10,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.3 2005/11/05 19:09:38 bernd 
      return index;
  }
  
-@@ -460,7 +460,7 @@ tcpTable_free(netsnmp_cache *cache, void
+@@ -460,7 +460,7 @@ tcpTable_free(netsnmp_cache *cache, void *magic)
      TCPTABLE_ENTRY_TYPE *p;
      while (tcp_head) {
          p = tcp_head;
@@ -19,7 +19,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.3 2005/11/05 19:09:38 bernd 
          free(p);
      }
  
-@@ -796,7 +796,7 @@ tcpTable_load(netsnmp_cache *cache, void
+@@ -803,7 +803,7 @@ tcpTable_load(netsnmp_cache *cache, void *vmagic)
              nnew->state == 8 /*  closeWait  */ )
              tcp_estab++;
  

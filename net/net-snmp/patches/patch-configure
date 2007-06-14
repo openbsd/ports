@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2007/06/13 15:15:01 ajacoutot Exp $
---- configure.orig	Fri Nov 24 10:56:15 2006
-+++ configure	Wed Jun 13 08:10:43 2007
+$OpenBSD: patch-configure,v 1.7 2007/06/14 18:19:24 ajacoutot Exp $
+--- configure.orig	Sat May  5 20:26:01 2007
++++ configure	Sat May  5 20:38:25 2007
 @@ -21042,34 +21042,6 @@ fi
  echo "$as_me:$LINENO: result: $EXTRACPPFLAGS" >&5
  echo "${ECHO_T}$EXTRACPPFLAGS" >&6
@@ -61,17 +61,7 @@ $OpenBSD: patch-configure,v 1.6 2007/06/13 15:15:01 ajacoutot Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for $ac_header" >&5
-@@ -32536,6 +32510,9 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#if HAVE_SYS_QUEUE_H
-+#include <sys/queue.h>
-+#endif
- #include <$ac_header>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -35608,7 +35585,6 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -35608,7 +35582,6 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
