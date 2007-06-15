@@ -1,8 +1,10 @@
-$OpenBSD: patch-src_src_pro,v 1.1.1.1 2006/12/26 10:37:51 ajacoutot Exp $
---- src/src.pro.orig	Tue Dec 26 11:11:25 2006
-+++ src/src.pro	Tue Dec 26 11:11:42 2006
-@@ -51,3 +51,4 @@ thread \
+$OpenBSD: patch-src_src_pro,v 1.2 2007/06/15 11:49:01 ajacoutot Exp $
+--- src/src.pro.orig	Mon May 14 00:22:46 2007
++++ src/src.pro	Fri Jun 15 13:19:06 2007
+@@ -61,3 +61,6 @@ thread \
  qt \
  opengl
  TARGET = ../bin/k3dsurf
++QMAKE_CXX = !!CXX!!
++QMAKE_LINK = !!CXX!!
 +QMAKE_CXXFLAGS_RELEASE += !!CXXFLAGS!!
