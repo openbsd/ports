@@ -1,7 +1,7 @@
-$OpenBSD: patch-mutt_tunnel_c,v 1.1 2002/12/29 09:34:48 pvalchev Exp $
---- mutt_tunnel.c.orig	Tue Sep  4 03:18:32 2001
-+++ mutt_tunnel.c	Sun Dec 29 00:40:54 2002
-@@ -91,7 +91,7 @@ static int tunnel_socket_open (CONNECTIO
+$OpenBSD: patch-mutt_tunnel_c,v 1.2 2007/06/15 19:01:07 kili Exp $
+--- mutt_tunnel.c.orig	Wed May 23 03:17:53 2007
++++ mutt_tunnel.c	Mon May 28 19:10:48 2007
+@@ -91,7 +91,7 @@ static int tunnel_socket_open (CONNECTION *conn)
      /* Don't let the subprocess think it can use the controlling tty */
      setsid ();
  

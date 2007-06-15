@@ -1,6 +1,6 @@
-$OpenBSD: patch-browser_c,v 1.3 2004/01/16 01:59:09 fgsch Exp $
---- browser.c.orig	2002-07-24 06:33:59.000000000 -0300
-+++ browser.c	2004-01-15 23:00:44.000000000 -0300
+$OpenBSD: patch-browser_c,v 1.4 2007/06/15 19:01:07 kili Exp $
+--- browser.c.orig	Wed May 23 03:17:52 2007
++++ browser.c	Mon May 28 19:10:48 2007
 @@ -22,6 +22,7 @@
  #include "buffy.h"
  #include "mapping.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-browser_c,v 1.3 2004/01/16 01:59:09 fgsch Exp $
  #include "mailbox.h"
  #include "browser.h"
  #ifdef USE_IMAP
-@@ -346,6 +347,21 @@ static void init_state (struct browser_s
+@@ -346,6 +347,21 @@ static void init_state (struct browser_state *state, M
      menu->data = state->entry;
  }
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-browser_c,v 1.3 2004/01/16 01:59:09 fgsch Exp $
  static int examine_directory (MUTTMENU *menu, struct browser_state *state,
  			      char *d, const char *prefix)
  {
-@@ -409,6 +425,7 @@ static int examine_directory (MUTTMENU *
+@@ -409,6 +425,7 @@ static int examine_directory (MUTTMENU *menu, struct b
      tmp = Incoming;
      while (tmp && mutt_strcmp (buffer, tmp->path))
        tmp = tmp->next;
@@ -39,7 +39,7 @@ $OpenBSD: patch-browser_c,v 1.3 2004/01/16 01:59:09 fgsch Exp $
      add_folder (menu, state, de->d_name, &s, (tmp) ? tmp->new : 0);
    }
    closedir (dp);  
-@@ -454,6 +471,7 @@ static int examine_mailboxes (MUTTMENU *
+@@ -454,6 +471,7 @@ static int examine_mailboxes (MUTTMENU *menu, struct b
      strfcpy (buffer, NONULL(tmp->path), sizeof (buffer));
      mutt_pretty_mailbox (buffer);
  

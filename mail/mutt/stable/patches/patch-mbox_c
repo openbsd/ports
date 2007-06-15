@@ -1,6 +1,6 @@
-$OpenBSD: patch-mbox_c,v 1.3 2004/02/19 20:43:22 brad Exp $
---- mbox.c.orig	2002-02-28 02:59:24.000000000 -0500
-+++ mbox.c	2004-02-17 00:48:33.000000000 -0500
+$OpenBSD: patch-mbox_c,v 1.4 2007/06/15 19:01:07 kili Exp $
+--- mbox.c.orig	Wed May 23 03:17:53 2007
++++ mbox.c	Mon May 28 19:10:48 2007
 @@ -288,7 +288,7 @@ int mbox_parse_mailbox (CONTEXT *ctx)
  
        if (!ctx->quiet && ReadInc && ((count % ReadInc == 0) || count == 1))
@@ -10,7 +10,7 @@ $OpenBSD: patch-mbox_c,v 1.3 2004/02/19 20:43:22 brad Exp $
  
        if (ctx->msgcount == ctx->hdrmax)
  	mx_alloc_memory (ctx);
-@@ -796,7 +796,7 @@ int mbox_sync_mailbox (CONTEXT *ctx, int
+@@ -796,7 +796,7 @@ int mbox_sync_mailbox (CONTEXT *ctx, int *index_hint)
        j++;
        if (!ctx->quiet && WriteInc && ((i % WriteInc) == 0 || j == 1))
  	mutt_message (_("Writing messages... %d (%d%%)"), i,
