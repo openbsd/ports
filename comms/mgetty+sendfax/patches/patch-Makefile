@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2007/03/23 20:28:28 ajacoutot Exp $
---- Makefile.orig	Wed Feb 22 14:58:33 2006
-+++ Makefile	Fri Mar 23 20:32:35 2007
+$OpenBSD: patch-Makefile,v 1.5 2007/06/15 11:30:38 ajacoutot Exp $
+--- Makefile.orig	Fri Jun 15 13:15:56 2007
++++ Makefile	Fri Jun 15 13:22:40 2007
 @@ -4,7 +4,7 @@
  #
  # this is the C compiler to use (on SunOS, the standard "cc" does not
@@ -96,7 +96,7 @@ $OpenBSD: patch-Makefile,v 1.4 2007/03/23 20:28:28 ajacoutot Exp $
  
  # a few C files need extra compiler arguments
  
-@@ -578,7 +578,7 @@ bindist: all doc-all sedscript
+@@ -573,7 +573,7 @@ bindist: all doc-all sedscript
  	cd bindist; gtar cvvfz mgetty$(MR).$(SR)-bin.tgz *
  
  
@@ -105,7 +105,7 @@ $OpenBSD: patch-Makefile,v 1.4 2007/03/23 20:28:28 ajacoutot Exp $
  
  install.bin: mgetty sendfax newslock \
  		login.config mgetty.config sendfax.config 
-@@ -586,30 +586,31 @@ install.bin: mgetty sendfax newslock \
+@@ -581,30 +581,31 @@ install.bin: mgetty sendfax newslock \
  # binaries
  #
  	-test -d $(BINDIR)  || ( ./mkidirs $(BINDIR)  ; chmod 755 $(BINDIR)  )
@@ -154,7 +154,7 @@ $OpenBSD: patch-Makefile,v 1.4 2007/03/23 20:28:28 ajacoutot Exp $
  #
  # test for outdated stuff
  #
-@@ -623,28 +624,28 @@ install.bin: mgetty sendfax newslock \
+@@ -618,28 +619,28 @@ install.bin: mgetty sendfax newslock \
  #
  # fax spool directories
  #
@@ -197,7 +197,7 @@ $OpenBSD: patch-Makefile,v 1.4 2007/03/23 20:28:28 ajacoutot Exp $
  				FAX_OUT_USER=$(FAX_OUT_USER) \
  				BINDIR=$(BINDIR) SBINDIR=$(SBINDIR) \
  				LIBDIR=$(LIBDIR) CONFDIR=$(CONFDIR)
-@@ -654,14 +655,14 @@ install.bin: mgetty sendfax newslock \
+@@ -649,14 +650,14 @@ install.bin: mgetty sendfax newslock \
  	if [ ! -z "$(INSTALL_MECHO)" ] ; then \
  	    cd compat ; \
  	    $(CC) $(CFLAGS) -o mg.echo mg.echo.c && \
@@ -214,7 +214,7 @@ $OpenBSD: patch-Makefile,v 1.4 2007/03/23 20:28:28 ajacoutot Exp $
  				MAN1DIR=$(MAN1DIR) \
  				MAN4DIR=$(MAN4DIR) \
  				MAN5DIR=$(MAN5DIR) \
-@@ -672,7 +673,7 @@ install.doc:
+@@ -667,7 +668,7 @@ install.doc:
  # WWW frontend stuff
  #
  install.www:
@@ -223,7 +223,7 @@ $OpenBSD: patch-Makefile,v 1.4 2007/03/23 20:28:28 ajacoutot Exp $
  				BINDIR=$(BINDIR) \
  				LIBDIR=$(LIBDIR) CONFDIR=$(CONFDIR)
  #
-@@ -690,7 +691,7 @@ vgetty:
+@@ -685,7 +686,7 @@ vgetty:
  
  vgetty-install: sedscript
  	cd voice; $(MAKE) CFLAGS="$(CFLAGS)" CC="$(CC)" LDFLAGS="$(LDFLAGS)" \

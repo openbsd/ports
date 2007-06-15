@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2007/03/23 20:28:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2007/06/15 11:30:38 ajacoutot Exp $
 
 COMMENT=	"handle external logins, send and receive faxes"
 
-VERSION=	1.1.35
-RELEASE=	Feb22
+VERSION=	1.1.36
+RELEASE=	Jun15
 DISTNAME=	mgetty${VERSION}-${RELEASE}
-PKGNAME=	mgetty+sendfax-${VERSION}p5
+PKGNAME=	mgetty+sendfax-${VERSION}
 CATEGORIES=	comms
 
 HOMEPAGE=	http://mgetty.greenie.net/

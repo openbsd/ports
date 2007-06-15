@@ -1,7 +1,7 @@
-$OpenBSD: patch-fax_faxspool_in,v 1.1 2005/09/25 18:18:24 aanriot Exp $
---- fax/faxspool.in.orig	Sun Feb 27 13:10:51 2005
-+++ fax/faxspool.in	Sun Sep 11 13:26:33 2005
-@@ -401,11 +401,11 @@ fs_cvt_pdf()
+$OpenBSD: patch-fax_faxspool_in,v 1.2 2007/06/15 11:30:38 ajacoutot Exp $
+--- fax/faxspool.in.orig	Fri Jan 19 08:38:22 2007
++++ fax/faxspool.in	Fri Jun 15 11:26:19 2007
+@@ -407,11 +407,11 @@ fs_cvt_pdf()
  
  # user name (for fax header only! auth is done by faxq-helper via getuid())
  ##########
