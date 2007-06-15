@@ -1,0 +1,105 @@
+$OpenBSD: patch-script_harch,v 1.1 2007/06/15 21:28:19 kili Exp $
+
+No harch black magic for OpenBSD, we don't need this.
+
+--- script/harch.orig	Fri Jul  7 18:01:16 2006
++++ script/harch	Mon Jun 11 15:44:28 2007
+@@ -1,97 +1,2 @@
+ #!/bin/sh
+-#       harch - determine canonical processor architecture
+-#		Nov 1998: first used.
+-#		May 1999: ensure that small differences (e.g. kernel version)
+-#			  don't matter.
+-
+-PROCESSOR=
+-OS=
+-REL=
+-
+-#  Unfortunately, there are a variety of incompatible
+-#  ways of detecting architecture, so try them all!
+-
+-if uname >/dev/null 2>&1
+-then
+-  if uname -p >/dev/null 2>&1
+-  then PROCESSOR=`uname -p`
+-    case "$PROCESSOR" in
+-    unknown|*\ *)
+-      PROCESSOR=`uname -m`
+-      ;;
+-    esac
+-  else
+-    if arch >/dev/null 2>&1
+-    then PROCESSOR=`arch`
+-    else PROCESSOR=`uname -m`
+-    fi
+-  fi
+-  OS=`uname -s`
+-  REL=`uname -r`
+-else
+-  if arch >/dev/null 2>&1
+-  then PROCESSOR=`arch`
+-  else
+-    if machine >/dev/null 2>&1
+-    then PROCESSOR=`machine`
+-    else PROCESSOR='unknown'
+-    fi
+-  fi
+-  OS=unknown
+-fi
+-
+-
+-# Remove whitespace and slashes.
+-PROCESSOR=`echo $PROCESSOR | tr '/ 	' '.'`
+-OS=`echo $OS | tr '/ 	' '-'`
+-REL=`echo $REL | tr '/ 	' '-'`
+-
+-# Canonicalise equivalent processor families to one representative member.
+-case $PROCESSOR in
+-  i[3456789]86)	PROCESSOR=ix86;;
+-  athlon)       PROCESSOR=ix86;;
+-  sun3*)	PROCESSOR=sun3;;
+-  sun4*)	PROCESSOR=sun4;;
+-  sparc*)	PROCESSOR=sparc;;
+-esac
+-
+-# Keep OS release number only if it might be relevant.
+-case $OS in
+-  unknown)	;;
+-  Linux)	;;
+-  CYGWIN*)      ;;
+-  MINGW*)       ;;
+-  *BSD)		;;
+-# BSD/OS)	OS="BSD-OS"$REL ;;	-- removed by slash->dash translation.
+-  SunOS)	case $REL in
+-		  3*) OS=SunOS3;;
+-		  4*) OS=SunOS4;;
+-		  5*) OS=solaris2;;
+-		  6*) OS=solaris3;;
+-		  *)  OS=SunOS-$REL;;
+-		esac;;
+-  Darwin)	case $REL in
+-		  5*) OS=Darwin5;;
+-		  6*) OS=Darwin6;;
+-		  7*) OS=Darwin7;;
+-		  8*) OS=Darwin8;;
+-		  *)  OS=Darwin-$REL;;
+-		esac;;
+-  IRIX*)	case $REL in
+-		  5*) OS=IRIX5;;
+-		  6*) OS=IRIX6;;
+-		  *)  OS=IRIX-$REL;;
+-		esac;;
+-  AIX)		if oslevel >/dev/null 2>&1	# AIX just has to be different
+-                then OS=$OS-`oslevel`
+-                else OS=$OS-unknown
+-                fi
+-                if lsattr -EHl proc0 | grep -i powerpc >/dev/null 2>&1
+-                then PROCESSOR=powerpc
+-                else PROCESSOR=power
+-                fi ;;
+-  *)		OS=$OS-$REL;;
+-esac
+-
+-# And that's it.
+-echo $PROCESSOR-$OS
++echo OpenBSD

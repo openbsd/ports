@@ -1,15 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/18 10:55:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/06/15 21:28:19 kili Exp $
 @conflict nhc98-*
 bin/harch
 bin/hi
 bin/hmake
 bin/hmake-config
+bin/runhs
 lib/hmake/
-lib/hmake/${MACHINE_ARCH}-OpenBSD/
-lib/hmake/${MACHINE_ARCH}-OpenBSD/HInteractive
-lib/hmake/${MACHINE_ARCH}-OpenBSD/MkConfig
-lib/hmake/${MACHINE_ARCH}-OpenBSD/MkProg
-lib/hmake/${MACHINE_ARCH}-OpenBSD/Older
-lib/hmake/${MACHINE_ARCH}-OpenBSD/config
-lib/hmake/${MACHINE_ARCH}-OpenBSD/hmakerc
+lib/hmake/OpenBSD/
+lib/hmake/OpenBSD/HInteractive
+lib/hmake/OpenBSD/MkConfig
+lib/hmake/OpenBSD/MkProg
+lib/hmake/OpenBSD/Older
+lib/hmake/OpenBSD/config
+lib/hmake/OpenBSD/hmakerc
+lib/hmake/OpenBSD/runhs
 @man man/man1/hmake.1
+@comment man/man1/hmake.1.orig
+share/doc/hmake/
+share/doc/hmake/bugs.html
+share/doc/hmake/changes.html
+share/doc/hmake/hi-commands.html
+share/doc/hmake/hmake-config.html
+share/doc/hmake/hmake.html
+share/doc/hmake/index.html
+share/doc/hmake/interactive.html
+share/doc/hmake/lineedit.html
+share/doc/hmake/runhs.html

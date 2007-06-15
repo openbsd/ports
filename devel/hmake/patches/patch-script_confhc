@@ -1,0 +1,15 @@
+$OpenBSD: patch-script_confhc,v 1.1 2007/06/15 21:28:19 kili Exp $
+
+cpp output from ghc has changed
+
+--- script/confhc.orig	Fri Jul  7 18:01:16 2006
++++ script/confhc	Sat Jun  2 20:43:58 2007
+@@ -78,7 +78,7 @@ fi
+ ghcsym () {
+   echo __GLASGOW_HASKELL__ >ghcsym.hs;
+   $1 -E -cpp -optP-P ghcsym.hs -o ghcsym.out;
+-  grep -v '^#' ghcsym.out | grep -v '^$' > $2;
++  grep -v '#' ghcsym.out | grep -v '^$' > $2;
+   rm -f ghcsym.hs ghcsym.out;
+ }
+ echo -n "  Looking for ghc...   "

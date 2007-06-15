@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.7 2007/03/18 16:58:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/06/15 21:28:19 kili Exp $
 
 COMMENT=	"compilation manager for Haskell programs"
  
-V=		3.10
+V=		3.13
 DISTNAME=	hmake-${V}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/hmake/
-MAINTAINER=	Don Stewart <dons@openbsd.org>
+MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
 MODULES=	lang/ghc
+CONFIGURE_ARGS=	--buildwith=ghc
 
-MASTER_SITES=	http://www.haskell.org/hmake/ \
-		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
-		http://www.cs.york.ac.uk/fp/hmake/
+MASTER_SITES=	${HOMEPAGE} \
+		http://www.cs.york.ac.uk/fp/hmake/ \
+		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
@@ -29,4 +29,7 @@ WANTLIB=		c gmp m ncurses readline
 
 post-install:
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/lib/hmake
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hmake
+	${INSTALL_DATA} ${WRKSRC}/docs/hmake/* ${PREFIX}/share/doc/hmake
+
 .include <bsd.port.mk>

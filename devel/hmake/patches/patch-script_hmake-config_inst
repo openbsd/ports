@@ -1,0 +1,15 @@
+$OpenBSD: patch-script_hmake-config_inst,v 1.1 2007/06/15 21:28:19 kili Exp $
+
+We don't have to care about different archs installed at the same place.
+
+--- script/hmake-config.inst.orig	Fri Jul  7 18:01:16 2006
++++ script/hmake-config.inst	Mon Jun 11 15:50:21 2007
+@@ -4,7 +4,7 @@
+ 
+ INSTALLVER="InstallVer"
+ SCRIPTDIR=${SCRIPTDIR-ScriptDir}
+-MACHINE=${MACHINE-"`$SCRIPTDIR/harch`"}
++MACHINE=OpenBSD
+ HMAKEDIR=${HMAKEDIR-ExecutableDir}
+ HMAKECONFDIR=${HMAKECONFDIR-ConfDir}
+ TMP=${TMP-/tmp}

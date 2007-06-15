@@ -1,0 +1,33 @@
+$OpenBSD: patch-man_hmake_1,v 1.1 2007/06/15 21:28:19 kili Exp $
+
+No MACHINE, just OpenBSD.
+
+--- man/hmake.1.orig	Fri Jul  7 18:01:16 2006
++++ man/hmake.1	Mon Jun 11 16:49:03 2007
+@@ -139,11 +139,11 @@ empty.
+ .TP
+ .B MKPROG
+ if set, it is used as the location of the main program, instead of the
+-default /usr/local/lib/hmake/$MACHINE/MkProg.
++default /usr/local/lib/hmake/OpenBSD/MkProg.
+ .TP
+ .B OLDER
+ if set, it is used as the location of the help program `Older',
+-instead of the default /usr/local/lib/hmake/$MACHINE/Older.
++instead of the default /usr/local/lib/hmake/OpenBSD/Older.
+ .TP
+ .B NHC98INCDIR
+ if set, it is used as the location of the directory containing
+@@ -167,10 +167,10 @@ if set, is interpreted as a colon-separated list of di
+ for interface files for the Prelude and standard libraries (for ghc only).
+ The default is $GHCINCDIR/std:$GHCINCDIR/exts.
+ .SH FILES
+-.B /usr/local/lib/hmake/$(MACHINE)/MkProg
++.B /usr/local/lib/hmake/OpenBSD/MkProg
+ the main program
+ .PP
+-.B /usr/local/lib/hmake/$(MACHINE)/Older
++.B /usr/local/lib/hmake/OpenBSD/Older
+ help program to determine if a target is out of date.
+ .SH SEE ALSO
+ nhc98(1), hbc(1), ghc(1), lmlmake(1), make(1)

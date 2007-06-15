@@ -1,0 +1,15 @@
+$OpenBSD: patch-script_hi_inst,v 1.1 2007/06/15 21:28:19 kili Exp $
+
+We don't have to care about different archs installed at the same place.
+
+--- script/hi.inst.orig	Fri Jul  7 18:01:16 2006
++++ script/hi.inst	Mon Jun 11 15:49:31 2007
+@@ -5,7 +5,7 @@
+ SCRIPTDIR=${SCRIPTDIR-ScriptDir}
+ HMAKEDIR=${HMAKEDIR-ExecutableDir}
+ HMAKECONFDIR=${HMAKECONFDIR-ConfDir}
+-MACHINE=${MACHINE-"`$SCRIPTDIR/harch`"}
++MACHINE=OpenBSD
+ INSTALLVER="InstallVer"
+ export MACHINE INSTALLVER HMAKEDIR HMAKECONFDIR SCRIPTDIR
+ 
