@@ -1,37 +1,36 @@
-$OpenBSD: patch-instsetoo_native_inc_openoffice_unix_packagelist_language_txt,v 1.1 2007/05/14 17:13:01 kurt Exp $
---- instsetoo_native/inc_openoffice/unix/packagelist_language.txt.orig.port	Tue May  8 10:05:04 2007
-+++ instsetoo_native/inc_openoffice/unix/packagelist_language.txt	Tue May  8 10:05:51 2007
-@@ -28,7 +28,7 @@ copyright = "1999-2006 by OpenOffice.org"
+--- instsetoo_native/inc_openoffice/unix/packagelist_language.txt.orig.port	Tue May  8 13:49:46 2007
++++ instsetoo_native/inc_openoffice/unix/packagelist_language.txt	Fri Jun 15 09:31:34 2007
+@@ -28,7 +28,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
- vendor = "OpenOffice.org"
+ vendor = "%PRODUCTNAME"
  description = "Language module for %PRODUCTNAME %PRODUCTVERSION, language %LANGUAGESTRING"
--destpath = "/opt/openoffice.org%PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +destpath = "openoffice"
  End
  
  Start
-@@ -43,7 +43,7 @@ copyright = "1999-2006 by OpenOffice.org"
+@@ -43,7 +43,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
- vendor = "OpenOffice.org"
+ vendor = "%PRODUCTNAME"
  description = "Language fonts module for %PRODUCTNAME %PRODUCTVERSION, language %LANGUAGESTRING"
--destpath = "/opt/openoffice.org%PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +destpath = "openoffice"
  End
  
  Start
-@@ -58,7 +58,7 @@ copyright = "1999-2006 by OpenOffice.org"
+@@ -58,7 +58,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
- vendor = "OpenOffice.org"
+ vendor = "%PRODUCTNAME"
  description = "Language resource module for %PRODUCTNAME %PRODUCTVERSION, language %LANGUAGESTRING"
--destpath = "/opt/openoffice.org%PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +destpath = "openoffice"
  End
  
  Start
-@@ -73,5 +73,5 @@ copyright = "1999-2006 by OpenOffice.org"
+@@ -73,5 +73,5 @@ copyright = "1999-2006 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
- vendor = "OpenOffice.org"
+ vendor = "%PRODUCTNAME"
  description = "Language help module for %PRODUCTNAME %PRODUCTVERSION, language %LANGUAGESTRING"
--destpath = "/opt/openoffice.org%PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +destpath = "openoffice"
  End

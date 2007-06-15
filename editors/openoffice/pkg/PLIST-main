@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2007/03/19 13:15:30 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2007/06/15 07:42:17 robert Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -188,6 +188,7 @@ openoffice/presets/gallery/sg100.thm
 openoffice/presets/gallery/sg30.sdv
 openoffice/presets/gallery/sg30.thm
 openoffice/program/
+openoffice/program/about.bmp
 openoffice/program/bootstraprc
 openoffice/program/cde-open-url
 openoffice/program/configimport
