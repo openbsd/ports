@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/11 01:19:06 uwe Exp $
+# $OpenBSD: Makefile,v 1.8 2007/06/16 10:10:07 bernd Exp $
 
 COMMENT=		bluetooth network tools
 DISTNAME=		bluetooth-tools-20070611
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 MAINTAINER=		Uwe Stuehler <uwe@openbsd.org>
 
@@ -13,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.bsdx.de/openbsd/distfiles/
 
-WANTLIB=		c util
+WANTLIB=		c event util
 LIB_DEPENDS=		bluetooth.>=2.0,sdp.>=2.0::devel/bluetooth-libs
 
 MAKE_ENV=		BINDIR=${TRUEPREFIX}/bin \
