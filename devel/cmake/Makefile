@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/06/09 09:09:44 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/06/16 13:01:37 espie Exp $
 
 HOMEPAGE=		http://www.cmake.org/
 CATEGORIES=		devel
 COMMENT=		portable build system
 DISTNAME=		cmake-2.4.6
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 MASTER_SITES=		${HOMEPAGE}files/v2.4/
 MAINTAINER=		Marc Espie <espie@openbsd.org>
 
