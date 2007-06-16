@@ -1,0 +1,3 @@
+Devhelp is an API documentation browser for GNOME 2. It works natively
+with gtk-doc (the API reference framework developed for GTK+ and used
+throughout GNOME for API documentation).

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/06/16 17:41:24 jasper Exp $
+@lib lib/libdevhelp-1.so.${LIBdevhelp-1_VERSION}
