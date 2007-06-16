@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.11 2007/06/03 11:57:36 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.12 2007/06/16 20:15:33 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -131,6 +131,10 @@ sub libs
 	return keys %$self;
 }
 
+sub record_rpath
+{
+}
+
 # SimpleRecorder: remember one single binary for each library
 package SimpleRecorder;
 our @ISA=(qw(Recorder));
@@ -182,14 +186,24 @@ our @ISA=(qw(Recorder));
 sub record
 {
 	my ($self, $lib, $filename) = @_;
-	push(@{$self->{$filename}}, $lib);
+	push(@{$self->{$filename}->{libs}}, $lib);
+}
+
+sub record_rpath
+{
+	my ($self, $path, $filename) = @_;
+	push(@{$self->{$filename}->{rpath}}, $path);
 }
 
 sub dump
 {
 	my ($self, $fh) = @_;
-	while (my ($binary, $libs) = each %$self) {
-		print $fh $binary, ": ", join(',', @$libs), "\n";
+	while (my ($binary, $v) = each %$self) {
+		print $fh $binary;
+		if (defined $v->{rpath}) {
+			print $fh "(", join(':', @{$v->{rpath}}), ")";
+		}
+		print $fh ": ", join(',', @{$v->{libs}}), "\n";
 	}
 }
 
@@ -202,6 +216,9 @@ sub retrieve
 		chomp;
 		if (m/^(.*?)\:\s(.*)$/) {
 			my ($binary, $libs) = ($1, $2);
+			if ($binary =~ m/^(.*)\(.*\)$/) {
+				$binary = $1;
+			}
 			my @libs = split(/,/, $libs);
 			$self->{$binary}= \@libs;
 		} else {
@@ -393,6 +410,17 @@ sub record_needed_libs
 			if ($lib eq 'libc.so.6') {
 				$linux_bin = 1;
 			}
+		} elsif ($line =~ m/^\s+RPATH\s+(.*)\s*$/) {
+			my $p = {};
+			for my $path (split /\:/, $1) {
+				next if $path eq '/usr/local/lib';
+				next if $path eq '/usr/X11R6/lib';
+				next if $path eq '/usr/lib';
+				$p->{$path} = 1;
+			}
+			for my $path (keys %$p) {
+				$dest->record_rpath($path, $fullname);
+			}
 		}
 	}
 	close($cmd);
@@ -450,6 +478,7 @@ sub get_plist
 		}
 	}
 	# ask the ports tree
+	print "Asking ports for dependency $pkgname($pkgpath)\n";
 	my $portsdir = $ENV{PORTSDIR} || "/usr/ports";
 	my $make = $ENV{MAKE} || "make";
 	open my $fh, "cd $portsdir && env -i SUBDIR=$pkgpath ECHO_MSG=: make print-plist-with-depends |" or return undef;
@@ -465,7 +494,6 @@ sub handle_dependency
 
 	if (!defined $plist || !defined $plist->pkgname) {
 		print "Error: can't solve dependency for $pkgname/$pkgpath\n";
-		print "Error: use -d directory or set the PORTSDIR correctly\n";
 		return;
 	}
 
@@ -521,8 +549,10 @@ sub report_lib_issue
 		my $path = pop @todo;
 		my $dep = pop @todo;
 		next if $done->{$dep};
+		$done->{$dep} = 1;
 		$dep = handle_dependency($dep, $path)
 		    	unless defined $dependencies->{$dep};
+		next if !defined $dep;
 		$done->{$dep} = 1;
 		push(@todo, %{$dependencies->{$dep}});
 	}
