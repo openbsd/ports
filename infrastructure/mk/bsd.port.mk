@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.903 2007/06/04 12:15:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.904 2007/06/16 09:57:03 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1377,7 +1377,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	@f=${_CACHE_REPO}/${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${MAKE} $$f && \
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
-		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes $@
+		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
 .  else
 	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
 .    if target(pre-package)
@@ -1412,7 +1412,11 @@ ${_PACKAGE_COOKIE${_S}}:
 # The real install
 
 ${_INSTALL_COOKIE${_S}}:
+.  if ${FETCH_PACKAGES:L} == "yes"
+	@cd ${.CURDIR} && exec ${MAKE} subpackage
+.  else
 	@cd ${.CURDIR} && exec ${MAKE} package
+.  endif
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=install \
 		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
 		_internal-runwantlib-depends
