@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2007/06/11 23:01:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2007/06/16 17:42:19 jasper Exp $
 
      SUBDIR += applets2
      SUBDIR += audio
      SUBDIR += backgrounds
      SUBDIR += controlcenter2
      SUBDIR += desktop
+     SUBDIR += devhelp
      SUBDIR += doc-utils
      SUBDIR += eel
      SUBDIR += eog
