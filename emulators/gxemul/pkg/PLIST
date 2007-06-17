@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/05/01 10:04:27 grange Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/06/17 08:36:27 grange Exp $
 bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -73,6 +73,8 @@ share/doc/gxemul/20070318-netbsd-macppc.png
 share/doc/gxemul/20070318-netbsd-macppc_small.png
 share/doc/gxemul/20070419-openbsd-landisk.png
 share/doc/gxemul/20070419-openbsd-landisk_small.png
+share/doc/gxemul/20070616-netbsd-pmppc-diskless.png
+share/doc/gxemul/20070616-netbsd-pmppc-diskless_small.png
 share/doc/gxemul/configfiles.html
 share/doc/gxemul/debian-1-small.png
 share/doc/gxemul/debian-1.png
