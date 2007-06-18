@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.50 2006/11/03 17:03:28 espie Exp $
+# $OpenBSD: Makefile.template,v 1.51 2007/06/18 15:21:10 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -34,8 +34,12 @@ CATEGORIES=		???
 #HOMEPAGE=		???	URL
 
 # where to send bitches about this port
-# Put a full-fledged email address, like
+# Put a complete email address with a real name, e.g.,
 # MAINTAINER=	John Doe <doe57@machine.somewhere.org>
+# if you maintain several ports, try to use the same line each time.
+# MAINTAINER implies some amount of responsibility.
+# If you no longer use the port, or are unwilling/unable to handle issues
+# in a timely manner, *leave the field blank*.
 # Default value is ports@openbsd.org, no need to fill in
 #MAINTAINER=		???
 
