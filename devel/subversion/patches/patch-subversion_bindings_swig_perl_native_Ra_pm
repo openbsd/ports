@@ -1,7 +1,7 @@
-$OpenBSD: patch-subversion_bindings_swig_perl_native_Ra_pm,v 1.1 2006/09/30 06:23:58 steven Exp $
---- subversion/bindings/swig/perl/native/Ra.pm.orig	Thu Sep 21 16:04:27 2006
-+++ subversion/bindings/swig/perl/native/Ra.pm	Thu Sep 21 16:07:55 2006
-@@ -64,7 +64,7 @@ objects, with the session_baton and pool
+$OpenBSD: patch-subversion_bindings_swig_perl_native_Ra_pm,v 1.2 2007/06/18 06:34:48 steven Exp $
+--- subversion/bindings/swig/perl/native/Ra.pm.orig	Fri Jun 17 11:14:04 2005
++++ subversion/bindings/swig/perl/native/Ra.pm	Mon Jun 11 08:38:35 2007
+@@ -64,7 +64,7 @@ objects, with the session_baton and pool omitted.
  
  require SVN::Client;
  
