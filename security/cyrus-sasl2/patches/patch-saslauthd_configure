@@ -1,6 +1,6 @@
-$OpenBSD: patch-saslauthd_configure,v 1.11 2006/02/02 18:41:20 jakob Exp $
---- saslauthd/configure.orig	Sun May 15 07:59:04 2005
-+++ saslauthd/configure	Tue Jan 24 19:33:31 2006
+$OpenBSD: patch-saslauthd_configure,v 1.12 2007/06/18 12:31:20 ajacoutot Exp $
+--- saslauthd/configure.orig	Thu May 18 21:30:20 2006
++++ saslauthd/configure	Fri Jun  1 08:49:08 2007
 @@ -753,10 +753,10 @@ ac_env_CC_set=${CC+set}
  ac_env_CC_value=$CC
  ac_cv_env_CC_set=${CC+set}
@@ -9,32 +9,50 @@ $OpenBSD: patch-saslauthd_configure,v 1.11 2006/02/02 18:41:20 jakob Exp $
 -ac_env_CFLAGS_value=$CFLAGS
 -ac_cv_env_CFLAGS_set=${CFLAGS+set}
 -ac_cv_env_CFLAGS_value=$CFLAGS
-+# ac_env_CFLAGS_set=${CFLAGS+set}
-+# ac_env_CFLAGS_value=$CFLAGS
-+# ac_cv_env_CFLAGS_set=${CFLAGS+set}
-+# ac_cv_env_CFLAGS_value=$CFLAGS
++#ac_env_CFLAGS_set=${CFLAGS+set}
++#ac_env_CFLAGS_value=$CFLAGS
++#ac_cv_env_CFLAGS_set=${CFLAGS+set}
++#ac_cv_env_CFLAGS_value=$CFLAGS
  ac_env_LDFLAGS_set=${LDFLAGS+set}
  ac_env_LDFLAGS_value=$LDFLAGS
  ac_cv_env_LDFLAGS_set=${LDFLAGS+set}
-@@ -5612,7 +5612,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+@@ -3617,7 +3617,7 @@ echo "${ECHO_T}$ac_cv_func_res_search" >&6
+ if test $ac_cv_func_res_search = yes; then
+   :
+ else
+-  LIBS="-lresolv $LIB_SOCKET $save_LIBS"
++  LIBS="$LIB_SOCKET $save_LIBS"
+ 		cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -3658,7 +3658,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  LIB_SOCKET="-lresolv $LIB_SOCKET"
++  LIB_SOCKET="$LIB_SOCKET"
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -5673,7 +5673,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+# LIBS="-lresolv  $LIBS"
++LIBS="$LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -5665,7 +5665,7 @@ if test $ac_cv_lib_resolv_res_search = y
+@@ -5726,7 +5726,7 @@ if test $ac_cv_lib_resolv_res_search = yes; then
  #define HAVE_LIBRESOLV 1
  _ACEOF
  
 -  LIBS="-lresolv $LIBS"
-+# LIBS="-lresolv $LIBS"
++  LIBS="$LIBS"
  
  fi
  
-@@ -6377,6 +6377,9 @@ if test "$gssapi" != no; then
+@@ -6438,6 +6438,9 @@ if test "$gssapi" != no; then
      *-*-aix*)
        platform=__aix
        ;;
@@ -44,7 +62,7 @@ $OpenBSD: patch-saslauthd_configure,v 1.11 2006/02/02 18:41:20 jakob Exp $
      *)
        { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
  echo "$as_me: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&2;}
-@@ -6391,7 +6394,7 @@ echo "$as_me: error: CyberSafe was force
+@@ -6452,7 +6455,7 @@ echo "$as_me: error: CyberSafe was forced, cannot cont
    cmu_saved_CPPFLAGS=$CPPFLAGS
  
    if test -d ${gssapi}; then
@@ -53,30 +71,30 @@ $OpenBSD: patch-saslauthd_configure,v 1.11 2006/02/02 18:41:20 jakob Exp $
  # We want to keep -I in our CPPFLAGS, but only if we succeed
      cmu_saved_CPPFLAGS=$CPPFLAGS
      LDFLAGS="$LDFLAGS -L$gssapi/lib"
-@@ -6702,7 +6705,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+@@ -6763,7 +6766,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
++LIBS="$LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -6755,7 +6758,7 @@ if test $ac_cv_lib_resolv_res_search = y
+@@ -6816,7 +6819,7 @@ if test $ac_cv_lib_resolv_res_search = yes; then
  #define HAVE_LIBRESOLV 1
  _ACEOF
  
 -  LIBS="-lresolv $LIBS"
-+# LIBS="-lresolv $LIBS"
++  LIBS="$LIBS"
  
  fi
  
-@@ -7128,12 +7131,12 @@ fi
+@@ -7249,12 +7252,12 @@ fi
    fi
  
    if test "$gss_impl" = "mit"; then
--    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
--    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
+-    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err ${K5SUP}"
+-    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
 +    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err"
 +    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libcrypto.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    elif test "$gss_impl" = "heimdal"; then
@@ -88,30 +106,39 @@ $OpenBSD: patch-saslauthd_configure,v 1.11 2006/02/02 18:41:20 jakob Exp $
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
-@@ -7323,7 +7326,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+@@ -7444,7 +7447,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
++LIBS="$LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -9568,7 +9571,7 @@ if test "${ac_cv_lib_resolv_inet_aton+se
+@@ -7493,7 +7496,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_search" >&5
+ echo "${ECHO_T}$ac_cv_lib_resolv_res_search" >&6
+ if test $ac_cv_lib_resolv_res_search = yes; then
+-  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
++  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS"
+ fi
+ 
+   SASL_MECHS="$SASL_MECHS libgssapiv2.la"
+@@ -9704,7 +9707,7 @@ if test "${ac_cv_lib_resolv_inet_aton+set}" = set; the
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+#LIBS="-lresolv  $LIBS"
++LIBS="$LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -9621,7 +9624,7 @@ if test $ac_cv_lib_resolv_inet_aton = ye
+@@ -9757,7 +9760,7 @@ if test $ac_cv_lib_resolv_inet_aton = yes; then
  #define HAVE_LIBRESOLV 1
  _ACEOF
  
 -  LIBS="-lresolv $LIBS"
-+# LIBS="-lresolv $LIBS"
++  LIBS="$LIBS"
  
  fi
  

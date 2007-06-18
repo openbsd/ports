@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/12/18 10:37:26 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/06/18 12:31:20 ajacoutot Exp $
 @conflict cyrus-sasl-*
 include/sasl/
 include/sasl/hmac-md5.h
@@ -50,6 +50,7 @@ lib/sasl2/libsasldb.la
 @man man/man3/sasl_errdetail.3
 @man man/man3/sasl_errors.3
 @man man/man3/sasl_errstring.3
+@man man/man3/sasl_getconfpath_t.3
 @man man/man3/sasl_getopt_t.3
 @man man/man3/sasl_getpath_t.3
 @man man/man3/sasl_getprop.3
@@ -70,8 +71,10 @@ lib/sasl2/libsasldb.la
 @man man/man3/sasl_setprop.3
 @man man/man3/sasl_user_exists.3
 @man man/man3/sasl_verifyfile_t.3
+@man man/man8/pluginviewer.8
 @man man/man8/sasldblistusers2.8
 @man man/man8/saslpasswd2.8
+sbin/pluginviewer
 sbin/saslauthd
 sbin/sasldblistusers2
 sbin/saslpasswd2
@@ -117,9 +120,7 @@ share/doc/sasl2/sysadmin.html
 share/doc/sasl2/testing.txt
 share/doc/sasl2/upgrading.html
 share/doc/sasl2/windows.html
-%%mysql%%
-%%pgsql%%
-%%sqlite%%
+%%sql%%
 %%SHARED%%
 @sample /var/sasl2/
 @extraunexec rm -rf /var/sasl2/*

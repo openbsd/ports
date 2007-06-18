@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.39 2007/06/01 16:49:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2007/06/18 12:31:20 ajacoutot Exp $
 
-COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
+COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
-DISTNAME=	cyrus-sasl-2.1.21
-PKGNAME=	${DISTNAME}p5
-SHARED_LIBS=	anonymous	2.21 \
-		crammd5		2.21 \
-		digestmd5	2.21 \
-		gssapiv2	2.21 \
-		login		2.21 \
-		otp		2.21 \
-		plain		2.21 \
-		sasl2		2.21 \
-		sasldb		2.21 \
-		sql		2.21
+DISTNAME=	cyrus-sasl-2.1.22
+SHARED_LIBS=	anonymous	2.22 \
+		crammd5		2.22 \
+		digestmd5	2.22 \
+		gssapiv2	2.22 \
+		login		2.22 \
+		otp		2.22 \
+		plain		2.22 \
+		sasl2		2.22 \
+		sasldb		2.22 \
+		sql		2.22
 CATEGORIES=	security
 
 HOMEPAGE=	http://asg.web.cmu.edu/sasl/
@@ -49,6 +48,9 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config
 FLAVORS=	db4 ldap mysql pgsql sqlite
 FLAVOR?=
 
+BRKFLAVORMSG=	choose either mysql, pgsql or sqlite
+PKG_ARGS?=	-Dsql=0
+
 .if ${FLAVOR:L:Mdb4}
 CONFIGURE_ARGS+=--with-dblib=berkeley \
 		--with-bdb-libdir="${LOCALBASE}/lib/db4" \
@@ -69,8 +71,9 @@ CONFIGURE_ARGS+=--without-ldap
 
 .if ${FLAVOR:L:Mmysql}
 .if ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
-BROKEN=		choose either mysql or pgsql or sqlite
+BROKEN=		${BRKFLAVORMSG}
 .endif
+PKG_ARGS=	-Dsql=1
 LIB_DEPENDS+=	lib/mysql/mysqlclient.>=10::databases/mysql
 WANTLIB+=	m ssl z
 CONFIGURE_ARGS+=--enable-sql \
@@ -81,8 +84,9 @@ CONFIGURE_ARGS+=--enable-sql \
 
 .if ${FLAVOR:L:Mpgsql}
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Msqlite}
-BROKEN=		choose either mysql or pgsql or sqlite
+BROKEN=		${BRKFLAVORMSG}
 .endif
+PKG_ARGS=	-Dsql=1
 LIB_DEPENDS+=	pq.>=3:postgresql-client-*:databases/postgresql
 CONFIGURE_ARGS+=--enable-sql \
 		--without-mysql \
@@ -93,8 +97,9 @@ CFLAGS+=	-I${LOCALBASE}/include/postgresql
 
 .if ${FLAVOR:L:Msqlite}
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql}
-BROKEN=		choose either mysql or pgsql or sqlite
+BROKEN=		${BRKFLAVORMSG}
 .endif
+PKG_ARGS=	-Dsql=1
 LIB_DEPENDS+=	sqlite.>=8.6::databases/sqlite
 CONFIGURE_ARGS+=--enable-sql \
 		--without-mysql \
@@ -102,7 +107,7 @@ CONFIGURE_ARGS+=--enable-sql \
 		--with-sqlite
 .endif
 
-post-extract:
+pre-configure:
 	@perl -pi -e "s,/usr/local/etc,${SYSCONFDIR},g" \
 		${WRKSRC}/saslauthd/saslauthd.mdoc
 

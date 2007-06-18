@@ -1,11 +1,11 @@
-The Cyrus SASL (Simple Authentication and Security Layer) Library v2
+The Cyrus SASL (Simple Authentication and Security Layer) Library v2.
 
-SASL is the Simple Authentication and Security Layer, a method for adding
-authentication support to connection-based protocols. To use SASL, a
-protocol includes a command for identifying and authenticating a user to a
-server and for optionally negotiating protection of subsequent protocol
-interactions. If its use is negotiated, a security layer is inserted
-between the protocol and the connection.
+SASL is the Simple Authentication and Security Layer, a method for
+adding authentication support to connection-based protocols. To use
+SASL, a protocol includes a command for identifying and authenticating a
+user to a server and for optionally negotiating protection of subsequent
+protocol interactions. If its use is negotiated, a security layer is
+inserted between the protocol and the connection.
 
 Available flavors:
 	db4 - use Berkeley DB v4 for SASLDB (instead of ndbm)

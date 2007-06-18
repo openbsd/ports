@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-sql,v 1.4 2007/06/18 12:31:20 ajacoutot Exp $
+@lib lib/sasl2/libsql.so.${LIBsql_VERSION}
