@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.468 2007/06/01 15:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.469 2007/06/18 18:42:05 kurt Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -265,6 +265,7 @@
      SUBDIR += pfflowd
      SUBDIR += pfstat
      SUBDIR += pidgin
+     SUBDIR += pidgin,gtkspell
      SUBDIR += pidgin-icb
      SUBDIR += pidgin-tlen
      SUBDIR += pktstat
