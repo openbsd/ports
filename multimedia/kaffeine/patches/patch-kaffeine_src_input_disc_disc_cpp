@@ -1,0 +1,21 @@
+$OpenBSD: patch-kaffeine_src_input_disc_disc_cpp,v 1.1 2007/06/18 23:24:06 jakemsr Exp $
+--- kaffeine/src/input/disc/disc.cpp.orig	Sun May 27 01:31:44 2007
++++ kaffeine/src/input/disc/disc.cpp	Sun May 27 01:32:39 2007
+@@ -426,13 +426,13 @@ void Disc::startCD( const QString &device, bool rip )
+ 			else if ( devList.count()==1 )
+ 				s.append( devList[0] );
+ 			else {
+-				s.append( "/dev/cdrom" );
+-				s.append( "/dev/dvd" );
++				s.append( "/dev/rcd0c" );
++				s.append( "/dev/rcd1c" );
+ 			}
+ 		}
+ 		else {
+-			s.append( "/dev/cdrom" );
+-			s.append( "/dev/dvd" );
++			s.append( "/dev/rcd0c" );
++			s.append( "/dev/rcd1c" );
+ 		}
+ 	}
+ 

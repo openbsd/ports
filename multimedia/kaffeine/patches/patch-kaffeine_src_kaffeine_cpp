@@ -1,6 +1,6 @@
-$OpenBSD: patch-kaffeine_src_kaffeine_cpp,v 1.2 2007/04/07 16:29:15 espie Exp $
---- kaffeine/src/kaffeine.cpp.orig	Sun Nov 26 20:12:23 2006
-+++ kaffeine/src/kaffeine.cpp	Sat Apr  7 18:18:13 2007
+$OpenBSD: patch-kaffeine_src_kaffeine_cpp,v 1.3 2007/06/18 23:24:06 jakemsr Exp $
+--- kaffeine/src/kaffeine.cpp.orig	Fri Apr 13 10:54:43 2007
++++ kaffeine/src/kaffeine.cpp	Mon Apr 30 00:16:51 2007
 @@ -25,6 +25,8 @@
  
  #include "kaffeine.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-kaffeine_src_kaffeine_cpp,v 1.2 2007/04/07 16:29:15 espie Exp $
  #include <dcopref.h>
  #include <kkeydialog.h>
  #include <kfiledialog.h>
-@@ -85,6 +87,7 @@
+@@ -87,6 +89,7 @@
  
  #define DEFAULT_PLAYER_PART "xine_part"
  
