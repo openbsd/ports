@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/06/02 11:32:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2007/06/18 17:39:18 martin Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 
@@ -40,6 +40,7 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:bison-*:devel/bison \
 			:scrollkeeper-*:textproc/scrollkeeper \
+			:gnome-doc-utils-*:x11/gnome/doc-utils: \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:desktop-file-utils-*:devel/desktop-file-utils \
