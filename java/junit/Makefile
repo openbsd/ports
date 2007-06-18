@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/04/15 23:08:22 ian Exp $
+# $OpenBSD: Makefile,v 1.14 2007/06/18 15:50:16 ian Exp $
 
 COMMENT=	"regression testing utility for use with the Java language"
 
 VERSION=	3.8.2
 DISTNAME=	junit${VERSION}
-PKGNAME=	junit-${VERSION}
+PKGNAME=	junit-${VERSION}p0
 INSTALLDIR=	${PKGNAME}
 SUBST_VARS+=	INSTALLDIR
 CATEGORIES=	java devel
@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=junit/}
 EXTRACT_SUFX=	.zip 
 
 MODULES=	java
-MODJAVA_VER=	1.3+
+MODJAVA_VER=	1.4+
 MODJAVA_JRERUN=	yes
 
 BUILD_DEPENDS=	:apache-ant-*:devel/apache-ant
@@ -36,7 +36,7 @@ post-extract:
 
 do-build:
 		@cd ${WRKDIST} && exec ${SETENV} ${MAKE_ENV} ant -q \
-		-Dant.build.javac.source="1.3" -Dant.build.javac.target="1.3"
+		-Dant.build.javac.source="1.4" -Dant.build.javac.target="1.4"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/${INSTALLDIR}
