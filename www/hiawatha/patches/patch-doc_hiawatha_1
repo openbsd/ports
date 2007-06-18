@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_hiawatha_1,v 1.3 2007/04/25 13:55:58 ajacoutot Exp $
---- doc/hiawatha.1.orig	Tue Mar 13 15:50:39 2007
-+++ doc/hiawatha.1	Wed Apr 25 15:49:45 2007
+$OpenBSD: patch-doc_hiawatha_1,v 1.4 2007/06/18 07:51:50 ajacoutot Exp $
+--- doc/hiawatha.1.orig	Fri Jun 15 10:41:04 2007
++++ doc/hiawatha.1	Mon Jun 18 09:42:06 2007
 @@ -23,7 +23,7 @@ hiawatha \- Advanced and secure webserver
  Hiawatha is a secure webserver for Unix. It has been written with 'being secure' as its main goal. Hiawatha has lots of features that no other webserver has. This and the fact that Hiawatha's source code is free of security-bugs, makes Hiawatha the most secure webserver available.
  .br
@@ -46,7 +46,7 @@ $OpenBSD: patch-doc_hiawatha_1,v 1.3 2007/04/25 13:55:58 ajacoutot Exp $
  .TP
  .B TimeForCGI = <time>
  Maximum time in seconds for a CGI-process to finish its job.
-@@ -595,13 +595,13 @@ and
+@@ -633,13 +633,13 @@ and
  .B UseGZfile
  
  .SH MIMETYPES
@@ -62,7 +62,7 @@ $OpenBSD: patch-doc_hiawatha_1,v 1.3 2007/04/25 13:55:58 ajacoutot Exp $
  .TP
  .B <main-mimetype>/[<sub-mimetype>]:<uploadspeed in kB/s>
  Example: audio/mpeg:30  or  video/:30
-@@ -628,15 +628,15 @@ Will unban all clients.
+@@ -666,15 +666,15 @@ Will unban all clients.
  Will disconnect all clients.
  
  .SH FILES
