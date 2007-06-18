@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_FindFreeType2_cmake,v 1.1 2007/06/18 11:58:11 ajacoutot Exp $
+--- cmake/FindFreeType2.cmake.orig	Thu Jun 14 20:00:55 2007
++++ cmake/FindFreeType2.cmake	Thu Jun 14 20:01:15 2007
+@@ -15,7 +15,7 @@
+   FIND_PATH(FreeType2_INCLUDE_DIR 
+     freetype/config/ftheader.h
+     /usr/include/freetype2
+-    /usr/X11R6/include/freetype
++    !!X11BASE!!/include/freetype2
+     )
+ 
+   FIND_LIBRARY(FreeType2_LIBRARIES
