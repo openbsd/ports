@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.8 2007/06/05 01:53:04 jolan Exp $
---- configure.ac.orig	Tue Apr 17 17:45:31 2007
-+++ configure.ac	Fri May 11 23:51:38 2007
+$OpenBSD: patch-configure_ac,v 1.9 2007/06/18 23:14:20 ajacoutot Exp $
+--- configure.ac.orig	Sat Jun 16 10:25:19 2007
++++ configure.ac	Mon Jun 18 17:34:39 2007
 @@ -210,7 +210,7 @@ case "${target_os}" in
      VLC_ADD_CFLAGS([libvlc],[-x objective-c])
      VLC_ADD_CFLAGS([vlc],[-x objective-c])
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure_ac,v 1.8 2007/06/05 01:53:04 jolan Exp $
    AC_CHECK_LIB(pthread,main,THREAD_LIB="-lpthread")
  fi
  if test "${THREAD_LIB}" = "error"; then
-@@ -2675,7 +2678,7 @@ dnl Look for a ffmpeg-config (we are on debian )
+@@ -2695,7 +2698,7 @@ dnl Look for a ffmpeg-config (we are on debian )
   else
  
  dnl Trying with pkg-config
@@ -38,7 +38,7 @@ $OpenBSD: patch-configure_ac,v 1.8 2007/06/05 01:53:04 jolan Exp $
      [
       AC_CHECK_HEADERS(ffmpeg/avcodec.h, [], [AC_MSG_ERROR([Missing header file ffmpeg/avcodec.h.])] )
       AC_CHECK_HEADERS(ffmpeg/avformat.h)
-@@ -3337,13 +3340,13 @@ AC_ARG_ENABLE(png,
+@@ -3357,13 +3360,13 @@ AC_ARG_ENABLE(png,
    [  --enable-png            PNG support (default enabled)])
  if test "${enable_png}" != "no"; then
  AC_CHECK_HEADERS(png.h, [

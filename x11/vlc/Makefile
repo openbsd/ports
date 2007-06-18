@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2007/06/10 15:03:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2007/06/18 23:14:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
-V=		0.8.6b
+
+V=		0.8.6c
 DISTNAME=	vlc-${V}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
@@ -58,7 +59,7 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-debug \
 		--disable-release \
 		--without-contrib \
-		--disable-livedotcom \
+		--disable-live555 \
 		--disable-v4l \
 		--disable-pvr \
 		--disable-vcdx \

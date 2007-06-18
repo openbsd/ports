@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2007/06/05 01:53:04 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.28 2007/06/18 23:14:20 ajacoutot Exp $
 %%altivec%%
 %%win32%%
 %%x86opt%%
@@ -245,6 +245,7 @@ share/locale/de/LC_MESSAGES/vlc.mo
 share/locale/en_GB/LC_MESSAGES/vlc.mo
 share/locale/es/LC_MESSAGES/vlc.mo
 share/locale/eu/LC_MESSAGES/vlc.mo
+share/locale/fa/LC_MESSAGES/vlc.mo
 share/locale/fr/LC_MESSAGES/vlc.mo
 share/locale/fur/
 share/locale/fur/LC_MESSAGES/
@@ -279,7 +280,6 @@ share/locale/th/LC_MESSAGES/vlc.mo
 share/locale/tr/LC_MESSAGES/vlc.mo
 share/locale/zh_CN/LC_MESSAGES/vlc.mo
 share/locale/zh_TW/LC_MESSAGES/vlc.mo
-share/nls/pl_PL.ISO_8859-2/
 share/vlc/
 share/vlc/http/
 share/vlc/http/.hosts
