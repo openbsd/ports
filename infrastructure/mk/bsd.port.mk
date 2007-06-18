@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.904 2007/06/16 09:57:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.905 2007/06/18 23:04:02 jakemsr Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1656,7 +1656,7 @@ _LIB_DEPENDS_FLAGS=
 
 lib-depends-check:
 	@cd ${.CURDIR} && exec ${MAKE} package
-	@perl ${PORTSDIR}/infrastructure/package/check-lib-depends \
+	@PORTSDIR=${PORTSDIR} perl ${PORTSDIR}/infrastructure/package/check-lib-depends \
 		${_LIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE}
 
 ${WRKINST}/.saved_libs: ${_FAKE_COOKIE}
@@ -1665,7 +1665,7 @@ ${WRKINST}/.saved_libs: ${_FAKE_COOKIE}
 port-lib-depends-check: ${WRKINST}/.saved_libs
 .  for _S in ${MULTI_PACKAGES}
 	@-SUBPACKAGE=${_S} ${MAKE} print-plist-with-depends | \
-	 perl ${PORTSDIR}/infrastructure/package/check-lib-depends \
+	 PORTSDIR=${PORTSDIR} perl ${PORTSDIR}/infrastructure/package/check-lib-depends \
 		${_LIB_DEPENDS_FLAGS} -d ${_PKG_REPO} -B ${WRKINST} -s ${WRKINST}/.saved_libs
 .  endfor
 
