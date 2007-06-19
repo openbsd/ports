@@ -1,5 +1,5 @@
 --- gcc/config.gcc.orig	Sat Feb  3 06:25:20 2007
-+++ gcc/config.gcc	Sun Mar 18 23:58:43 2007
++++ gcc/config.gcc	Wed Jun 13 20:34:15 2007
 @@ -618,7 +618,7 @@ alpha*-*-netbsd*)
  	;;
  alpha*-*-openbsd*)
@@ -44,6 +44,23 @@
  	case ${target} in
  	mips*el-*-openbsd*)
  	    tm_defines="${tm_defines} TARGET_ENDIAN_DEFAULT=0";;
+@@ -1682,11 +1687,11 @@ pdp11-*-bsd)
+ pdp11-*-*)
+ 	use_fixproto=yes
+ 	;;
+-# port not yet contributed
+-#powerpc-*-openbsd*)
+-#	tmake_file="${tmake_file} rs6000/t-fprules rs6000/t-fprules-fpbit "
+-#	extra_headers=
+-#	;;
++powerpc-*-openbsd*)
++	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/openbsd.h"
++	tmake_file="${tmake_file} rs6000/t-openbsd"
++	extra_options="${extra_options} rs6000/sysv4.opt"
++	;;
+ powerpc64-*-linux*)
+ 	tm_file="${tm_file} dbxelf.h elfos.h svr4.h freebsd-spec.h rs6000/sysv4.h"
+ 	test x$with_cpu != x || cpu_is_64bit=yes
 @@ -2150,7 +2155,7 @@ sparc-*-netbsdelf*)
  	extra_options="${extra_options} sparc/long-double-switch.opt"
  	;;

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.PPC-main,v 1.1 2007/06/19 21:23:38 ajacoutot Exp $
+lib/gcc/${CONFIG}/${V}/crtsavres.o
+lib/gcc/${CONFIG}/${V}/include/altivec.h
+lib/gcc/${CONFIG}/${V}/include/ppc-asm.h
+lib/gcc/${CONFIG}/${V}/include/spe.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/altivec.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/ppc-asm.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/spe.h
