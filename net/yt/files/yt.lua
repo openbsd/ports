@@ -1,5 +1,5 @@
 #!%%LOCALBASE%%/bin/lua
--- $OpenBSD: yt.lua,v 1.2 2007/02/24 09:52:01 sturm Exp $
+-- $OpenBSD: yt.lua,v 1.3 2007/06/19 17:32:52 pedro Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -37,7 +37,7 @@ e_flv = string.format("%q", flv)
 e_avi = string.format("%q", avi)
 
 -- Look for the video ID.
-pattern = "player2.swf[?]video_id=(.-)\","
+pattern = "player2.swf.*video_id=(.-)\","
 id = assert(string.match(body, pattern))
 
 -- Fetch the video.
