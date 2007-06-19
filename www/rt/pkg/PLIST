@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/19 23:42:21 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/06/19 21:45:04 msf Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -738,8 +738,8 @@ share/rt3/local/po/
 @owner www
 @group www
 @sample /var/www/rt3/
-@sample /var/www/rt3/mason_data
-@sample /var/www/rt3/mason_data/cache
-@sample /var/www/rt3/mason_data/etc
-@sample /var/www/rt3/mason_data/obj
-@sample /var/www/rt3/session_data
+@sample /var/www/rt3/mason_data/
+@sample /var/www/rt3/mason_data/cache/
+@sample /var/www/rt3/mason_data/etc/
+@sample /var/www/rt3/mason_data/obj/
+@sample /var/www/rt3/session_data/

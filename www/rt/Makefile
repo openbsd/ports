@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/19 23:42:20 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/19 21:45:04 msf Exp $
 
 COMMENT=		"industrial-grade ticketing system"
 
 DISTNAME=		rt-3.6.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.bestpractical.com/rt/
