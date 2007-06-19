@@ -1,0 +1,2 @@
+This is the OSSP uuid binding for the PostgreSQL RDBMS, providing
+native UUID data type support.
