@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.7 2007/04/11 20:28:15 jakob Exp $
+@comment $OpenBSD: PLIST-server,v 1.8 2007/06/19 19:18:49 jakob Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
@@ -84,6 +84,7 @@ share/doc/dovecot/wiki/Authentication.RestrictAccess.txt
 share/doc/dovecot/wiki/Authentication.txt
 share/doc/dovecot/wiki/BasicConfiguration.txt
 share/doc/dovecot/wiki/Chrooting.txt
+share/doc/dovecot/wiki/Clients.NegativeUIDs.txt
 share/doc/dovecot/wiki/Clients.txt
 share/doc/dovecot/wiki/CommandLine.txt
 share/doc/dovecot/wiki/CompilingSource.txt
@@ -101,6 +102,11 @@ share/doc/dovecot/wiki/Design.Processes.txt
 share/doc/dovecot/wiki/Design.txt
 share/doc/dovecot/wiki/FindMailLocation.txt
 share/doc/dovecot/wiki/FinishBasicConfiguration.txt
+share/doc/dovecot/wiki/HowTo.EximAndDovecotSASL.txt
+share/doc/dovecot/wiki/HowTo.PostfixAndDovecotSASL.txt
+share/doc/dovecot/wiki/HowTo.SimpleVirtualInstall.txt
+share/doc/dovecot/wiki/HowTo.txt
+share/doc/dovecot/wiki/IndexFiles.txt
 share/doc/dovecot/wiki/InetdInstall.txt
 share/doc/dovecot/wiki/Iptables.txt
 share/doc/dovecot/wiki/LDA.Exim.txt
@@ -160,7 +166,6 @@ share/doc/dovecot/wiki/Plugins.txt
 share/doc/dovecot/wiki/PopBSMTPAndDovecot.txt
 share/doc/dovecot/wiki/PopRelay.txt
 share/doc/dovecot/wiki/PostLoginScripting.txt
-share/doc/dovecot/wiki/PostfixAndDovecotSASL.txt
 share/doc/dovecot/wiki/QuickConfiguration.txt
 share/doc/dovecot/wiki/Quota.Dict.txt
 share/doc/dovecot/wiki/Quota.Dirsize.txt
@@ -179,6 +184,7 @@ share/doc/dovecot/wiki/SharedMailboxes.txt
 share/doc/dovecot/wiki/SystemUsers.txt
 share/doc/dovecot/wiki/TestInstallation.txt
 share/doc/dovecot/wiki/TestPop3Installation.txt
+share/doc/dovecot/wiki/TimeMovedBackwards.txt
 share/doc/dovecot/wiki/UpgradingDovecot.txt
 share/doc/dovecot/wiki/UserDatabase.ExtraFields.txt
 share/doc/dovecot/wiki/UserDatabase.Prefetch.txt

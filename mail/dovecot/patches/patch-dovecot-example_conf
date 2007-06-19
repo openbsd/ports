@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.36 2007/04/11 20:28:15 jakob Exp $
---- dovecot-example.conf.orig	Fri Mar 30 13:36:18 2007
-+++ dovecot-example.conf	Wed Apr 11 22:10:52 2007
+$OpenBSD: patch-dovecot-example_conf,v 1.37 2007/06/19 19:18:49 jakob Exp $
+--- dovecot-example.conf.orig	Wed Jun 13 02:47:39 2007
++++ dovecot-example.conf	Tue Jun 19 21:03:10 2007
 @@ -10,13 +10,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -147,7 +147,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.36 2007/04/11 20:28:15 jakob Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -784,7 +783,7 @@ auth default {
+@@ -785,7 +784,7 @@ auth default {
    # database (passwd usually), you can use static userdb.
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work. <doc/wiki/PasswordDatabase.PAM.txt>
@@ -156,16 +156,16 @@ $OpenBSD: patch-dovecot-example_conf,v 1.36 2007/04/11 20:28:15 jakob Exp $
      # [blocking=yes] [session=yes] [setcred=yes]
      # [cache_key=<key>] [<service name>]
      #
-@@ -817,7 +816,7 @@ auth default {
+@@ -818,7 +817,7 @@ auth default {
      #   args = session=yes *
      #   args = cache_key=%u dovecot
      #args = dovecot
 -  }
 +  #}
  
-   # /etc/passwd or similar, using getpwnam()
+   # System users (NSS, /etc/passwd, or similiar)
    # In many systems nowadays this uses Name Service Switch, which is
-@@ -836,10 +835,10 @@ auth default {
+@@ -838,10 +837,10 @@ auth default {
  
    # PAM-like authentication for OpenBSD.
    # <doc/wiki/PasswordDatabase.BSDAuth.txt>
