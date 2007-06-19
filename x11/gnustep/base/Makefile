@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/29 03:01:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/19 15:16:16 ajacoutot Exp $
 
 COMMENT=	"GNUstep base library"
 
 DISTNAME=	gnustep-base-1.14.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gnustep-base 1.14	# .1.14
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB=	c crypto iberty iconv m objc pthread ssl xml2 z
+WANTLIB=	c crypto iconv m objc pthread ssl xml2 z
 
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
