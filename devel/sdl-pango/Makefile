@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/24 13:38:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/19 21:51:30 ajacoutot Exp $
 
 COMMENT=	"SDL wrapper around the Pango library"
 
 V=		0.1.2
 DISTNAME=	SDL_Pango-${V}
-PKGNAME=	sdl-pango-${V}
+PKGNAME=	sdl-pango-${V}p0
 SHARED_LIBS=	SDL_Pango 0.0	# .2.0
 CATEGORIES=	devel x11
 
 HOMEPAGE=	http://sdlpango.sourceforge.net/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,6 +40,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE=	Yes
 REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+
+.if ${MACHINE_ARCH} == "powerpc"
+BUILD_DEPENDS+=	::lang/gcc/4.2
+LIBTOOL_FLAGS=	--tag=CC
+MAKE_FLAGS=	CC=${LOCALBASE}/bin/egcc
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdl-pango
