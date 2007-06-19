@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2007/05/29 02:59:11 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2007/06/19 15:19:27 ajacoutot Exp $
+
+BROKEN=		needs libobjc with threads support
 
 CATEGORIES+=	x11/gnustep
 DIST_SUBDIR=	gnustep
@@ -13,4 +15,5 @@ MAKE_FILE?=	GNUmakefile
 
 MAINTAINER?=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
+# install the gnustep-examples package if you need a test suite
 NO_REGRESS=	Yes
