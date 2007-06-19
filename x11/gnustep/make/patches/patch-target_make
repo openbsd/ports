@@ -1,6 +1,6 @@
-$OpenBSD: patch-target_make,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
+$OpenBSD: patch-target_make,v 1.2 2007/06/19 15:13:39 ajacoutot Exp $
 --- target.make.orig	Fri Mar  9 12:42:00 2007
-+++ target.make	Wed May 23 15:47:43 2007
++++ target.make	Tue Jun 19 09:40:31 2007
 @@ -748,18 +748,17 @@ SHARED_LIB_LINK_CMD = \
  	  $(RM_LN_S) $(LIB_LINK_FILE); \
            if [ "$(LIB_LINK_SONAME_FILE)" != "$(LIB_LINK_VERSION_FILE)" ]; then\
@@ -24,11 +24,3 @@ $OpenBSD: patch-target_make,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
  
  OBJ_MERGE_CMD		= \
  	$(CC) -nostdlib -r $(ALL_LDFLAGS) -o $(GNUSTEP_OBJ_DIR)/$(SUBPROJECT_PRODUCT) $^ ;
-@@ -772,6 +771,7 @@ BUNDLE_LD	= $(CC)
- BUNDLE_LDFLAGS  += -shared -fPIC
- ADDITIONAL_LDFLAGS += -Wl,-E
- STATIC_LDFLAGS += -static
-+OBJC_LIBS += -pthread
- 
- # nm on OpenBSD is rather like on Darwin
- EXTRACT_CLASS_NAMES_COMMAND = nm  -g $$object_file | sed -n -e '/[^U] __objc_class_name_/ {s/[0-9a-f]* [^U] __objc_class_name_//p;}'
