@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.3 2007/06/19 18:10:26 rui Exp $
+--- configure.orig	Mon Jun 18 14:27:25 2007
++++ configure	Mon Jun 18 14:28:29 2007
+@@ -5879,6 +5879,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ extern char pcap_version[];
+ int main() {
+   int major, minor1, minor2;
++  exit(0); /* fool it, use our libpcap */
+   sscanf(pcap_version,"%d.%d.%d", &major, &minor1, &minor2);
+   if (major > 0)
+     exit(0);
