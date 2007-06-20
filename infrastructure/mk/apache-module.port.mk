@@ -1,4 +1,4 @@
-# $OpenBSD: apache-module.port.mk,v 1.1 2007/06/20 12:23:17 espie Exp $
+# $OpenBSD: apache-module.port.mk,v 1.2 2007/06/20 13:55:41 espie Exp $
 # simplify installation of apache modules
 # written by Marc Espie 2007, public domain
 #
@@ -50,7 +50,7 @@ MODAPACHE_CREATE_ENABLE_SCRIPT = \
 	echo 'fi'
 
 MODAPACHE_INSTALL= \
-	${INSTALL_DATA} ${MODAPACHE_FILE} ${PREFIX}/lib; \
+	${INSTALL_DATA} ${MODAPACHE_FILE} ${PREFIX}/lib/${MODAPACHE_MODULE}; \
 	${INSTALL_SCRIPT} ${WRKBUILD}/${MODAPACHE_ENABLE} ${PREFIX}/sbin
 
 SUBST_VARS += MODAPACHE_MODULE MODAPACHE_ENABLE MODAPACHE_FINAL MODAPACHE_NAME
