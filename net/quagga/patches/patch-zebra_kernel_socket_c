@@ -1,16 +1,12 @@
-$OpenBSD: patch-zebra_kernel_socket_c,v 1.1 2005/06/09 20:42:37 robert Exp $
---- zebra/kernel_socket.c.orig	Mon Oct 20 14:15:29 2003
-+++ zebra/kernel_socket.c	Thu Jun  9 13:55:35 2005
-@@ -76,8 +76,12 @@
+$OpenBSD: patch-zebra_kernel_socket_c,v 1.2 2007/06/20 18:05:36 rui Exp $
+--- zebra/kernel_socket.c.orig	Fri Jun 15 17:15:18 2007
++++ zebra/kernel_socket.c	Fri Jun 15 17:14:52 2007
+@@ -136,7 +136,7 @@ struct message rtm_type_str[] =
    {RTM_REDIRECT, "RTM_REDIRECT"},
    {RTM_MISS,     "RTM_MISS"},
    {RTM_LOCK,     "RTM_LOCK"},
+-#ifdef OLDADD
 +#ifdef RTM_OLDADD
    {RTM_OLDADD,   "RTM_OLDADD"},
-+#endif /* RTM_OLDADD */
-+#ifdef RTM_OLDDEL
-   {RTM_OLDDEL,   "RTM_OLDDEL"},
-+#endif /* RTM_OLDDEL */
-   {RTM_RESOLVE,  "RTM_RESOLVE"},
-   {RTM_NEWADDR,  "RTM_NEWADDR"},
-   {RTM_DELADDR,  "RTM_DELADDR"},
+ #endif /* RTM_OLDADD */
+ #ifdef RTM_OLDDEL

@@ -1,20 +1,17 @@
-$OpenBSD: patch-zebra_zebra_snmp_c,v 1.1 2004/10/13 03:10:49 danh Exp $
---- zebra/zebra_snmp.c.orig	Wed Jun 18 21:21:08 2003
-+++ zebra/zebra_snmp.c	Tue Oct 12 22:50:06 2004
-@@ -22,12 +22,14 @@
+$OpenBSD: patch-zebra_zebra_snmp_c,v 1.2 2007/06/20 18:05:36 rui Exp $
+--- zebra/zebra_snmp.c.orig	Sat Jun 16 20:34:39 2007
++++ zebra/zebra_snmp.c	Sat Jun 16 20:35:10 2007
+@@ -22,12 +22,8 @@
  #include <zebra.h>
  
  #ifdef HAVE_SNMP
 -#ifdef HAVE_NETSNMP
-+#ifdef HAVE_NET_SNMP
  #include <net-snmp/net-snmp-config.h>
 -#endif
+-#include <asn1.h>
+-#include <snmp.h>
+-#include <snmp_impl.h>
 +#include <net-snmp/net-snmp-includes.h>
-+#else
- #include <asn1.h>
- #include <snmp.h>
- #include <snmp_impl.h>
-+#endif /* HAVE_NET_SNMP */
  
  #include "if.h"
  #include "log.h"

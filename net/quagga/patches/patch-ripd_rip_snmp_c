@@ -1,20 +1,17 @@
-$OpenBSD: patch-ripd_rip_snmp_c,v 1.1 2004/10/13 03:10:49 danh Exp $
---- ripd/rip_snmp.c.orig	Wed Jun 18 21:21:07 2003
-+++ ripd/rip_snmp.c	Tue Oct 12 22:51:50 2004
-@@ -22,12 +22,14 @@
+$OpenBSD: patch-ripd_rip_snmp_c,v 1.2 2007/06/20 18:05:36 rui Exp $
+--- ripd/rip_snmp.c.orig	Sat Jun 16 20:33:53 2007
++++ ripd/rip_snmp.c	Sat Jun 16 20:34:20 2007
+@@ -22,12 +22,8 @@
  #include <zebra.h>
  
  #ifdef HAVE_SNMP
 -#ifdef HAVE_NETSNMP
-+#ifdef HAVE_NET_SNMP
  #include <net-snmp/net-snmp-config.h>
 -#endif
+-#include <asn1.h>
+-#include <snmp.h>
+-#include <snmp_impl.h>
 +#include <net-snmp/net-snmp-includes.h>
-+#else
- #include <asn1.h>
- #include <snmp.h>
- #include <snmp_impl.h>
-+#endif /* HAVE_NET_SNMP */
  
  #include "if.h"
  #include "log.h"

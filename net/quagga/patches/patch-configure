@@ -1,48 +1,49 @@
-$OpenBSD: patch-configure,v 1.2 2004/10/13 03:13:15 danh Exp $
---- configure.orig	Sun Nov  2 00:14:09 2003
-+++ configure	Tue Oct 12 22:58:38 2004
-@@ -7512,7 +7512,7 @@ if test "${ac_cv_lib_netsnmp_asn_parse_i
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lnetsnmp  $LIBS"
-+LIBS="-lnetsnmp -lm $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -7571,7 +7571,7 @@ if test "${ac_cv_lib_netsnmp_asn_parse_i
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lnetsnmp "-lcrypto" $LIBS"
-+LIBS="-lnetsnmp -lcrypto -lm $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -7987,7 +7987,7 @@ fi
-   fi
- 
-   if test "${HAVE_SNMP}" = "yes"; then
--    for ac_snmp in /usr/include/net-snmp/library/asn1.h /usr/include/ucd-snmp/asn1.h /usr/local/include/ucd-snmp/asn1.h /dev/null
-+    for ac_snmp in /usr/include/net-snmp/library/asn1.h /usr/local/include/net-snmp/library/asn1.h /usr/include/ucd-snmp/asn1.h /usr/local/include/ucd-snmp/asn1.h /dev/null
-     do
-       test -f "${ac_snmp}" && break
-     done
-@@ -8051,7 +8051,7 @@ cat >>confdefs.h <<\_ACEOF
+$OpenBSD: patch-configure,v 1.3 2007/06/20 18:05:36 rui Exp $
+--- configure.orig	Sun Apr 29 21:14:32 2007
++++ configure	Sat Jun 16 00:11:09 2007
+@@ -19895,6 +19895,15 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#ifdef HAVE_SYS_SOCKET_H
++#include <sys/socket.h>
++#endif
++#ifdef HAVE_NET_IF_H
++#include <net/if.h>
++#endif
++#ifdef HAVE_NETINET_IN_H
++#include <netinet/in.h>
++#endif
+ #include <$ac_header>
  _ACEOF
+ rm -f conftest.$ac_objext
+@@ -23640,6 +23649,18 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#ifdef HAVE_SYS_SOCKET_H
++#include <sys/socket.h>
++#endif
++#ifdef HAVE_NET_IF_H
++#include <net/if.h>
++#endif
++#ifdef HAVE_IPV6
++#include <netinet/in.h>
++#endif
++#ifdef HAVE_NETINET6_IN6_VAR_H
++#include <netinet6/in6_var.h>
++#endif
+ #include <$ac_header>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -28184,10 +28205,3 @@ log file mask           : ${enable_logfile_mask}
  
-       		CFLAGS="${CFLAGS} -I/usr/local/include/net-snmp"
--      		LIBS="${LIBS} -L/usr/local/lib -lnetsnmp"
-+      		LIBS="${LIBS} -L/usr/local/lib -lnetsnmp -lm"
-       		;;
-     esac
-     if test "${NEED_CRYPTO}" = "yes"; then
-@@ -9190,7 +9190,7 @@ fi
- echo "$as_me:$LINENO: result: $ac_cv_htonl_works" >&5
- echo "${ECHO_T}$ac_cv_htonl_works" >&6
- 
--                                                                                                                                  ac_config_files="$ac_config_files Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile ospfclient/Makefile redhat/quagga.spec lib/version.h"
-+                                                                                                                                  ac_config_files="$ac_config_files Makefile lib/Makefile zebra/Makefile ripd/Makefile ripngd/Makefile bgpd/Makefile ospfd/Makefile ospf6d/Makefile vtysh/Makefile doc/Makefile doc/bgpd.8 doc/ospf6d.8 doc/ospfd.8 doc/ripd.8 doc/ripngd.8 doc/vtysh.1 doc/zebra.8 ospfclient/Makefile redhat/quagga.spec lib/version.h"
- cat >confcache <<\_ACEOF
- # This file is a shell script that caches the results of configure
- # tests run on this system so they can be shared between configure
+ The above user and group must have read/write access to the state file
+ directory and to the config files in the config file directory."
+-
+-if test x"$quagga_cv_gnu_make" = x"no"; then echo "
+-Warning: The ${MAKE-make} programme detected, either in your path or
+-via the MAKE variable, is not GNU Make. GNU make may be installed as
+-gmake on some systems. and is required to complete a build of Quagga
+-" > /dev/stderr
+-fi

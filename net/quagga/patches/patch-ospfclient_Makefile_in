@@ -1,21 +1,13 @@
-$OpenBSD: patch-ospfclient_Makefile_in,v 1.1 2004/01/02 06:45:19 david Exp $
---- ospfclient/Makefile.in.orig	2003-11-01 23:54:59.000000000 -0600
-+++ ospfclient/Makefile.in	2003-12-31 15:13:22.000000000 -0600
-@@ -77,7 +77,7 @@ DEPDIR = @DEPDIR@
- IF_METHOD = @IF_METHOD@
- IF_PROC = @IF_PROC@
- 
--INCLUDES = -I../lib -I../
-+INCLUDES = @INCLUDES@ -I.. -I$(top_srcdir) -I$(top_srcdir)/lib
- INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
- IPFORWARD = @IPFORWARD@
- KERNEL_METHOD = @KERNEL_METHOD@
-@@ -104,6 +104,8 @@ ZEBRA = @ZEBRA@
- am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
+$OpenBSD: patch-ospfclient_Makefile_in,v 1.2 2007/06/20 18:05:36 rui Exp $
+--- ospfclient/Makefile.in.orig	Fri Jun 15 17:11:45 2007
++++ ospfclient/Makefile.in	Fri Jun 15 17:11:32 2007
+@@ -109,7 +109,8 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
 +DEFS = @DEFS@ -DSYSCONFDIR=\"$(sysconfdir)/\"
 +INSTALL_SDATA = @INSTALL@ -m 600
- 
- lib_LIBRARIES = libospfapiclient.a
- sbin_PROGRAMS = ospfclient
+ DEPDIR = @DEPDIR@
+ ECHO = @ECHO@
+ ECHO_C = @ECHO_C@

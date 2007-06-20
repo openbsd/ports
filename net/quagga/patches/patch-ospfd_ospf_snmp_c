@@ -1,20 +1,17 @@
-$OpenBSD: patch-ospfd_ospf_snmp_c,v 1.1 2004/10/13 03:10:49 danh Exp $
---- ospfd/ospf_snmp.c.orig	Mon Sep 29 12:59:43 2003
-+++ ospfd/ospf_snmp.c	Tue Oct 12 22:52:24 2004
-@@ -24,12 +24,14 @@
+$OpenBSD: patch-ospfd_ospf_snmp_c,v 1.2 2007/06/20 18:05:36 rui Exp $
+--- ospfd/ospf_snmp.c.orig	Sat Jun 16 20:33:07 2007
++++ ospfd/ospf_snmp.c	Sat Jun 16 20:33:32 2007
+@@ -25,12 +25,8 @@
  #include <zebra.h>
  
  #ifdef HAVE_SNMP
 -#ifdef HAVE_NETSNMP
-+#ifdef HAVE_NET_SNMP
  #include <net-snmp/net-snmp-config.h>
 -#endif
+-#include <asn1.h>
+-#include <snmp.h>
+-#include <snmp_impl.h>
 +#include <net-snmp/net-snmp-includes.h>
-+#else
- #include <asn1.h>
- #include <snmp.h>
- #include <snmp_impl.h>
-+#endif /* HAVE_NET_SNMP */
  
  #include "if.h"
  #include "log.h"

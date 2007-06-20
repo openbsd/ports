@@ -1,4 +1,5 @@
 Sample Quagga configuration files have been installed in
-${PREFIX}/share/examples/zebra
-Please rename and install these files into ${CONFDIR}
-Change the configuration to meet your needs.
+${PREFIX}/share/examples/quagga You will need to create a ${CONFDIR}
+directory and install your configuration files there.
+
+You will also need to create a ${STATEDIR} directory for quagga runtime.

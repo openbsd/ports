@@ -1,57 +1,37 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2003/12/11 19:00:59 david Exp $
---- doc/Makefile.in.orig	2003-11-01 23:26:38.000000000 -0600
-+++ doc/Makefile.in	2003-11-17 19:40:12.000000000 -0600
-@@ -36,6 +36,7 @@ oldincludedir = /usr/include
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2007/06/20 18:05:36 rui Exp $
+--- doc/Makefile.in.orig	Fri Jun 15 17:05:39 2007
++++ doc/Makefile.in	Fri Jun 15 17:05:20 2007
+@@ -19,6 +19,7 @@ VPATH = @srcdir@
  pkgdatadir = $(datadir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
 +builddir = @builddir@
  top_builddir = ..
- 
- ACLOCAL = @ACLOCAL@
-@@ -84,6 +85,7 @@ LIBCAP = @LIBCAP@
- LIBPAM = @LIBPAM@
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+ INSTALL = @INSTALL@
+@@ -125,6 +126,7 @@ LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
  LIB_IPV6 = @LIB_IPV6@
  LIB_REGEX = @LIB_REGEX@
 +MAKEINFOFLAGS = --no-split -I $(srcdir)
- MULTIPATH_NUM = @MULTIPATH_NUM@
- OSPF6D = @OSPF6D@
- OSPFAPI = @OSPFAPI@
-@@ -141,21 +143,19 @@ quagga.info: quagga.texi $(quagga_TEXINF
- quagga.dvi: quagga.texi $(quagga_TEXINFOS)
- 
- .texi.info:
--	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
--	cd $(srcdir) \
--	  && $(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) \
--	       `echo $< | sed 's,.*/,,'`
-+	@rm -f $@ $@-[0-9] $@-[0-9][0-9]
-+	$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) \
-+	  `echo $< | sed 's,.*/,,'`
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+ MAKEINFO = @MAKEINFO@
+@@ -331,7 +333,7 @@ distclean-libtool:
  
  .texi.dvi:
- 	TEXINPUTS="$(srcdir)$(PATH_SEPARATOR)$$TEXINPUTS" \
+ 	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS" \
 -	MAKEINFO='$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir)' \
-+	MAKEINFO='$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) ' \
++	MAKEINFO='$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS)' \
  	$(TEXI2DVI) $<
  
- .texi:
--	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
--	cd $(srcdir) \
--	  && $(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) \
--	       `echo $< | sed 's,.*/,,'`
-+	@rm -f $@ $@-[0-9] $@-[0-9][0-9]
-+	$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) \
-+	  `echo $< | sed 's,.*/,,'`
- 
- MAKEINFO = @MAKEINFO@
- TEXI2DVI = texi2dvi
-@@ -382,7 +382,7 @@ install-info-am: $(INFO_DEPS)
- 	$(mkinstalldirs) $(DESTDIR)$(infodir)
- 	@list='$(INFO_DEPS)'; \
- 	for file in $$list; do \
--	  d=$(srcdir); \
-+	  d=$(builddir); \
- 	  for ifile in echo $$d/$$file $$d/$$file-[0-9] $$d/$$file-[0-9][0-9]; do \
- 	    if test -f $$ifile; then \
- 	      relfile=`expr "$$ifile" : "$$d/\(.*\)"`; \
+ .texi.pdf:
+@@ -624,7 +626,7 @@ install-info-am: $(INFO_DEPS)
+ 	  case $$file in \
+ 	    $(srcdir)/*) file=`echo "$$file" | sed "s|^$$srcdirstrip/||"`;; \
+ 	  esac; \
+-	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
++	  if test -f $$file; then d=.; else d=$(buildir); fi; \
+ 	  file_i=`echo "$$file" | sed 's|\.info$$||;s|$$|.i|'`; \
+ 	  for ifile in $$d/$$file $$d/$$file-[0-9] $$d/$$file-[0-9][0-9] \
+                        $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \

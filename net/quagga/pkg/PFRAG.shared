@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2007/06/20 18:05:36 rui Exp $
+@lib lib/libospf.so.${LIBospf_VERSION}
+@lib lib/libzebra.so.${LIBzebra_VERSION}

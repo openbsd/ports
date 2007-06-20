@@ -1,20 +1,17 @@
-$OpenBSD: patch-bgpd_bgp_snmp_c,v 1.1 2004/10/13 03:10:49 danh Exp $
---- bgpd/bgp_snmp.c.orig	Wed Jun 18 21:21:07 2003
-+++ bgpd/bgp_snmp.c	Tue Oct 12 22:51:17 2004
-@@ -21,12 +21,14 @@ Software Foundation, Inc., 59 Temple Pla
+$OpenBSD: patch-bgpd_bgp_snmp_c,v 1.2 2007/06/20 18:05:36 rui Exp $
+--- bgpd/bgp_snmp.c.orig	Sat Jun 16 20:31:05 2007
++++ bgpd/bgp_snmp.c	Sat Jun 16 20:31:42 2007
+@@ -21,12 +21,8 @@ Software Foundation, Inc., 59 Temple Place - Suite 330
  #include <zebra.h>
  
  #ifdef HAVE_SNMP
 -#ifdef HAVE_NETSNMP
-+#ifdef HAVE_NET_SNMP
  #include <net-snmp/net-snmp-config.h>
 -#endif
+-#include <asn1.h>
+-#include <snmp.h>
+-#include <snmp_impl.h>
 +#include <net-snmp/net-snmp-includes.h>
-+#else
- #include <asn1.h>
- #include <snmp.h>
- #include <snmp_impl.h>
-+#endif /* HAVE_NET_SNMP */
  
  #include "if.h"
  #include "log.h"
