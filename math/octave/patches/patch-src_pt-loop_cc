@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_pt-loop_cc,v 1.1 2007/06/20 08:51:42 steven Exp $
+--- src/pt-loop.cc.orig	Mon Apr 30 19:12:45 2007
++++ src/pt-loop.cc	Mon May 28 17:59:32 2007
+@@ -263,7 +263,9 @@ tree_simple_for_command::do_for_loop_once (octave_lval
+ 	{ \
+           if (nrows == 0) \
+             { \
+-	      octave_value val (MTYPE (dim_vector (0, 1))); \
++	      MTYPE tarray (dim_vector (0, 1)); \
++ \
++	      octave_value val (tarray); \
+  \
+ 	      for (octave_idx_type i = 0; i < steps; i++) \
+ 		{ \

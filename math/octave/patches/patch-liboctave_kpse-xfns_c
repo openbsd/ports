@@ -1,7 +1,7 @@
-$OpenBSD: patch-liboctave_kpse-xfns_c,v 1.1 2005/11/20 17:44:20 naddy Exp $
---- liboctave/kpse-xfns.c.orig	Mon Nov 14 16:54:46 2005
-+++ liboctave/kpse-xfns.c	Mon Nov 14 16:55:54 2005
-@@ -24,6 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fi
+$OpenBSD: patch-liboctave_kpse-xfns_c,v 1.2 2007/06/20 08:51:42 steven Exp $
+--- liboctave/kpse-xfns.c.orig	Tue Apr 26 21:24:29 2005
++++ liboctave/kpse-xfns.c	Sat May 26 22:28:32 2007
+@@ -24,6 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
  #endif
  
  #include <string.h>

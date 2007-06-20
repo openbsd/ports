@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_interpreter_Makefile_in,v 1.2 2005/11/20 17:44:20 naddy Exp $
---- doc/interpreter/Makefile.in.orig	Fri Nov 11 20:46:57 2005
-+++ doc/interpreter/Makefile.in	Sat Nov 12 19:43:14 2005
-@@ -65,7 +65,7 @@ SPELL = $(patsubst %.texi, %.spell, $(TE
+$OpenBSD: patch-doc_interpreter_Makefile_in,v 1.3 2007/06/20 08:51:42 steven Exp $
+--- doc/interpreter/Makefile.in.orig	Tue May 22 18:33:06 2007
++++ doc/interpreter/Makefile.in	Mon May 28 19:41:51 2007
+@@ -109,7 +109,7 @@ SPELL = $(patsubst %.texi, %.spell, $(TEXINFO))
  	$(SED) -e 's/@@/ at /g' -e 's/@[a-zA-Z]*//g' $< | spell > $@.tmp
  	mv $@.tmp $@
  
@@ -10,3 +10,12 @@ $OpenBSD: patch-doc_interpreter_Makefile_in,v 1.2 2005/11/20 17:44:20 naddy Exp 
  .PHONY: all
  
  $(TEXINFO): src-DOCSTRINGS scripts-DOCSTRINGS munge-texi$(BUILD_EXEEXT)
+@@ -174,7 +174,7 @@ $(HTML_IMAGES_PNG): HTML/%.png : %.png
+ 	  echo "creating HTML directory"; \
+ 	  mkdir HTML; \
+ 	fi
+-	$(INSTALL_DATA) $(filter-out html-dir, $<) HTML
++	cp $(filter-out html-dir, $<) HTML
+ 
+ ## Unset DISPLAY here to avoid problems with the -title option for
+ ## gnuplot (it doesn't work if we are calling pgnuplot).  Sleep for

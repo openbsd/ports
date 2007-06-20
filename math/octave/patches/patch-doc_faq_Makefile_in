@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_faq_Makefile_in,v 1.1 2005/11/20 17:44:20 naddy Exp $
---- doc/faq/Makefile.in.orig	Sun Nov 13 01:00:03 2005
-+++ doc/faq/Makefile.in	Sun Nov 13 01:00:14 2005
-@@ -36,7 +36,7 @@ SPELL := $(patsubst %.texi, %.spell, $(A
+$OpenBSD: patch-doc_faq_Makefile_in,v 1.2 2007/06/20 08:51:42 steven Exp $
+--- doc/faq/Makefile.in.orig	Tue Mar 27 19:31:54 2007
++++ doc/faq/Makefile.in	Sat May 26 22:28:32 2007
+@@ -35,7 +35,7 @@ SPELL := $(patsubst %.texi, %.spell, $(ALL_TEXINFO))
  	$(SED) -e 's/@@/ at /g' -e 's/@[a-zA-Z]*//g' $< | spell > $@.tmp
  	mv $@.tmp $@
  

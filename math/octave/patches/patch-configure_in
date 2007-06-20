@@ -1,26 +1,26 @@
-$OpenBSD: patch-configure_in,v 1.3 2005/12/24 20:05:27 steven Exp $
---- configure.in.orig	Fri Nov 11 20:46:55 2005
-+++ configure.in	Sun Nov 20 16:53:15 2005
-@@ -57,7 +57,7 @@ OCTAVE_SET_DEFAULT(localapifcnfiledir,
+$OpenBSD: patch-configure_in,v 1.4 2007/06/20 08:51:42 steven Exp $
+--- configure.in.orig	Thu Apr 26 21:00:48 2007
++++ configure.in	Sat May 26 22:28:32 2007
+@@ -95,7 +95,7 @@ OCTAVE_SET_DEFAULT(localfcnfiledir, '$(datadir)/octave
+ OCTAVE_SET_DEFAULT(localapifcnfiledir,
+   '$(datadir)/octave/site/$(api_version)/m')
  OCTAVE_SET_DEFAULT(localverfcnfiledir, '$(datadir)/octave/$(version)/site/m')
- OCTAVE_SET_DEFAULT(localfcnfilepath,
-   '$(localverfcnfiledir)//:$(localapifcnfiledir)//:$(localfcnfiledir)//')
 -OCTAVE_SET_DEFAULT(octlibdir, '$(libdir)/octave-$(version)')
 +OCTAVE_SET_DEFAULT(octlibdir, '$(libdir)')
  OCTAVE_SET_DEFAULT(archlibdir,
    '$(libexecdir)/octave/$(version)/exec/$(canonical_host_type)')
  OCTAVE_SET_DEFAULT(localarchlibdir,
-@@ -413,7 +413,7 @@ AC_ARG_WITH(fftw, 
- if test "$with_fftw" = "yes"; then
+@@ -561,7 +561,7 @@ AC_ARG_WITH(fftw, 
+ if test "$with_fftw" = yes; then
    have_fftw3_header=no
    with_fftw3=no
 -  AC_CHECK_HEADER(fftw3.h, [have_fftw3_header=yes; break])
 +  AC_CHECK_HEADER(fftw3.h, [have_fftw3_header=yes])
    if test "$have_fftw3_header" = yes; then
-       AC_CHECK_LIB(fftw3, fftw_plan_dft_1d, [FFTW_LIBS="-lfftw3"; with_fftw3=yes])
+     AC_CHECK_LIB(fftw3, fftw_plan_dft_1d, [FFTW_LIBS="-lfftw3"; with_fftw3=yes])
    fi
-@@ -678,9 +678,13 @@ TEMPLATE_AR='$(AR)'
- TEMPLATE_ARFLAGS="$ARFLAGS"
+@@ -1084,9 +1084,13 @@ OCTAVE_DLL_DEFS=
+ OCTINTERP_DLL_DEFS=
  library_path_var=LD_LIBRARY_PATH
  case "$canonical_host_type" in
 -  *-*-386bsd* | *-*-openbsd* | *-*-netbsd*)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2005/12/24 20:05:27 steven Exp $
---- src/Makefile.in.orig	Fri Nov 11 20:48:22 2005
-+++ src/Makefile.in	Sat Dec 24 12:30:10 2005
-@@ -247,6 +247,9 @@ else
+$OpenBSD: patch-src_Makefile_in,v 1.4 2007/06/20 08:51:42 steven Exp $
+--- src/Makefile.in.orig	Tue May 22 18:33:06 2007
++++ src/Makefile.in	Sat May 26 22:35:32 2007
+@@ -277,6 +277,9 @@ else
    PIC_XERBLA = $(XERBLA)
  endif
  
@@ -10,40 +10,40 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2005/12/24 20:05:27 steven Exp $
 +
  ifeq ($(SHARED_LIBS), true)
    ifeq ($(STATIC_LIBS), true)
-     LIBRARIES = liboctinterp.$(LIBEXT) liboctinterp.$(SHLEXT_VER)
-@@ -270,12 +273,8 @@ liboctinterp.$(LIBEXT): $(OBJECTS) $(XER
+     LIBRARIES = $(LIBPRE)octinterp.$(LIBEXT) $(LIBPRE)octinterp.$(SHLEXT_VER)
+@@ -300,12 +303,8 @@ $(LIBPRE)octinterp.$(LIBEXT): $(OBJECTS) $(XERBLA)
  	$(TEMPLATE_AR) $(TEMPLATE_ARFLAGS) $@ $^
  	$(RANLIB) $@
  
--liboctinterp.$(SHLEXT_VER): liboctinterp.$(SHLEXT)
-+liboctinterp.$(SHLEXT_VER): $(PICOBJ) $(PIC_XERBLA)
+-$(LIBPRE)octinterp.$(SHLEXT_VER): $(LIBPRE)octinterp.$(SHLEXT)
++$(LIBPRE)octinterp.$(SHLEXT_VER): $(PICOBJ) $(PIC_XERBLA)
  	rm -f $@
 -	$(LN_S) $< $@
 -
--liboctinterp.$(SHLEXT): $(PICOBJ) $(PIC_XERBLA)
+-$(LIBPRE)octinterp.$(SHLEXT): $(PICOBJ) $(PIC_XERBLA)
 -	rm -f $@
  	$(SH_LD) $(SH_LDFLAGS) $(SONAME_FLAGS) -o $@ $^ $(OCTINTERP_LINK_DEPS)
  
- stamp-oct-links: $(OCT_FILES)
-@@ -368,8 +367,7 @@ install-strip:
+ stamp-prereq: defaults.h oct-conf.h oct-gperf.h parse.cc lex.cc __gnuplot_raw__.cc $(OPT_HANDLERS)
+@@ -397,8 +396,7 @@ install-strip:
  install-bin:
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
  	rm -f $(DESTDIR)$(bindir)/octave$(EXEEXT)
 -	$(INSTALL_PROGRAM) octave$(EXEEXT) $(DESTDIR)$(bindir)/octave-$(version)$(EXEEXT)
--	$(LN_S) octave-$(version)$(EXEEXT) $(DESTDIR)$(bindir)/octave$(EXEEXT)
-+	$(INSTALL_PROGRAM) octave$(EXEEXT) $(DESTDIR)$(bindir)/octave
+-	cd $(DESTDIR)$(bindir) ; $(LN_S) octave-$(version)$(EXEEXT) octave$(EXEEXT)
++	$(INSTALL_PROGRAM) octave$(EXEEXT) $(DESTDIR)$(bindir)/octave$(EXEEXT)
  .PHONY: install-bin
  
  install-oct:
-@@ -393,10 +391,8 @@ install-lib:
+@@ -422,10 +420,8 @@ install-lib:
  	fi
  	if $(SHARED_LIBS); then \
- 	  rm -f $(DESTDIR)$(octlibdir)/liboctinterp.$(SHLEXT_VER); \
--	  $(INSTALL) liboctinterp.$(SHLLIB) \
-+	  $(INSTALL) liboctinterp.$(SHLLIB_VER) \
- 	    $(DESTDIR)$(octlibdir)/liboctinterp.$(SHLLIB_VER); \
--	  rm -f $(DESTDIR)$(octlibdir)/liboctinterp.$(SHLLIB); \
--	  $(LN_S) liboctinterp.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/liboctinterp.$(SHLLIB); \
+ 	  rm -f $(DESTDIR)$(octlibdir)/$(LIBPRE)octinterp.$(SHLEXT_VER); \
+-	  $(INSTALL) $(LIBPRE)octinterp.$(SHLLIB) \
++	  $(INSTALL) $(LIBPRE)octinterp.$(SHLLIB_VER) \
+ 	    $(DESTDIR)$(octlibdir)/$(LIBPRE)octinterp.$(SHLLIB_VER); \
+-	  rm -f $(DESTDIR)$(octlibdir)/$(LIBPRE)octinterp.$(SHLLIB); \
+-	  (cd $(DESTDIR)$(octlibdir) ; $(LN_S) $(LIBPRE)octinterp.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/$(LIBPRE)octinterp.$(SHLLIB)); \
  	  if  test x$(SHLBIN) != x ; then \
- 	    rm -f $(DESTDIR)$(bindir)/liboctinterp.$(SHLBIN); \
+ 	    rm -f $(DESTDIR)$(bindir)/$(LIBPRE)octinterp.$(SHLBIN); \
  	    $(INSTALL_PROGRAM) \

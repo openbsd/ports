@@ -1,7 +1,7 @@
-$OpenBSD: patch-libcruft_Makefile_in,v 1.4 2005/12/24 20:05:27 steven Exp $
---- libcruft/Makefile.in.orig	Fri Nov 11 20:47:15 2005
-+++ libcruft/Makefile.in	Sat Dec 24 12:28:55 2005
-@@ -78,6 +78,9 @@ ifeq ($(SHARED_LIBS), true)
+$OpenBSD: patch-libcruft_Makefile_in,v 1.5 2007/06/20 08:51:42 steven Exp $
+--- libcruft/Makefile.in.orig	Wed Apr  4 18:10:26 2007
++++ libcruft/Makefile.in	Sat May 26 22:33:24 2007
+@@ -82,6 +82,9 @@ ifeq ($(SHARED_LIBS), true)
    endif
  endif
  
@@ -10,29 +10,30 @@ $OpenBSD: patch-libcruft_Makefile_in,v 1.4 2005/12/24 20:05:27 steven Exp $
 +
  ifeq ($(SHARED_LIBS), true)
    ifeq ($(STATIC_LIBS), true)
-     LIBRARIES = libcruft.$(LIBEXT) libcruft.$(SHLEXT_VER)
-@@ -101,12 +104,8 @@ libcruft.$(LIBEXT): $(CRUFT_OBJ)
+     LIBRARIES = $(LIBPRE)cruft.$(LIBEXT) $(LIBPRE)cruft.$(SHLEXT_VER)
+@@ -111,12 +114,8 @@ $(LIBPRE)cruft.$(LIBEXT): $(CRUFT_OBJ)
  	$(AR) $(ARFLAGS) $@ $^
  	$(RANLIB) $@
  
--libcruft.$(SHLEXT_VER): libcruft.$(SHLEXT)
-+libcruft.$(SHLEXT_VER): $(CRUFT_PICOBJ)
+-$(LIBPRE)cruft.$(SHLEXT_VER): $(LIBPRE)cruft.$(SHLEXT)
++$(LIBPRE)cruft.$(SHLEXT_VER): $(CRUFT_PICOBJ)
  	rm -f $@
 -	$(LN_S) $< $@
 -
--libcruft.$(SHLEXT): $(CRUFT_PICOBJ)
+-$(LIBPRE)cruft.$(SHLEXT): $(CRUFT_PICOBJ)
 -	rm -f $@
  	$(SH_LD) $(SH_LDFLAGS) $(SONAME_FLAGS) -o $@ $^ $(LINK_DEPS)
  
  $(CRUFT_OBJ):
-@@ -131,9 +130,7 @@ install::
+@@ -141,10 +140,7 @@ install::
  	if $(SHARED_LIBS); then \
- 	  rm -f $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB_VER); \
+ 	  rm -f $(DESTDIR)$(octlibdir)/$(LIBPRE)cruft.$(SHLLIB_VER); \
  	  $(INSTALL) \
--	    libcruft.$(SHLLIB) $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB_VER); \
--	  rm -f $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB); \
--	  $(LN_S) libcruft.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB); \
-+	    libcruft.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB_VER); \
+-	    $(LIBPRE)cruft.$(SHLLIB) $(DESTDIR)$(octlibdir)/$(LIBPRE)cruft.$(SHLLIB_VER); \
+-	  rm -f $(DESTDIR)$(octlibdir)/$(LIBPRE)cruft.$(SHLLIB); \
+-	  (cd $(DESTDIR)$(octlibdir); \
+-	  $(LN_S) $(LIBPRE)cruft.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/$(LIBPRE)cruft.$(SHLLIB)); \
++	    $(LIBPRE)cruft.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/$(LIBPRE)cruft.$(SHLLIB_VER); \
  	  if  test x$(SHLBIN) != x ; then \
- 	    rm -f $(DESTDIR)$(bindir)/libcruft.$(SHLBIN); \
+ 	    rm -f $(DESTDIR)$(bindir)/$(LIBPRE)cruft.$(SHLBIN); \
  	    $(INSTALL_PROGRAM) \

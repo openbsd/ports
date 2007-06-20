@@ -1,0 +1,18 @@
+$OpenBSD: patch-run-octave_in,v 1.1 2007/06/20 08:51:42 steven Exp $
+--- run-octave.in.orig	Mon May 28 18:03:29 2007
++++ run-octave.in	Mon May 28 18:19:11 2007
+@@ -53,12 +53,12 @@ fi
+ 
+ if [ -n "$args" ]; then
+   OCTAVE_SITE_INITFILE="$top_srcdir/scripts/startup/main-rcfile" \
+-  LD_PRELOAD="$liboctinterp $liboctave $libcruft" \
++#  LD_PRELOAD="$liboctinterp $liboctave $libcruft" \
+   %library_path_var%="$builddir/src:$builddir/liboctave:$builddir/libcruft:$%library_path_var%" \
+     exec $driver "$builddir/src/octave" --no-initial-path --path="$LOADPATH" --image-path="$IMAGEPATH" "$@"
+ else
+   OCTAVE_SITE_INITFILE="$top_srcdir/scripts/startup/main-rcfile" \
+-  LD_PRELOAD="$liboctinterp $liboctave $libcruft" \
++#  LD_PRELOAD="$liboctinterp $liboctave $libcruft" \
+   %library_path_var%="$builddir/src:$builddir/liboctave:$builddir/libcruft:$%library_path_var%" \
+     exec $driver "$builddir/src/octave" "$@"
+ fi

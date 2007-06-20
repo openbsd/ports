@@ -1,0 +1,17 @@
+$OpenBSD: patch-libcruft_mkf77def_in,v 1.1 2007/06/20 08:51:42 steven Exp $
+--- libcruft/mkf77def.in.orig	Sun May 27 04:23:55 2007
++++ libcruft/mkf77def.in	Sun May 27 04:24:59 2007
+@@ -25,7 +25,10 @@ else
+   awkcmd="$AWK '{ printf (\"%s%s\n\", tolower (\$0), \"$uscore\"); }'"
+ fi
+ 
+-$SED -n \
+-  -e 'y/ABCDEFGHIJLKMNOPQRSTUVWXYZ/abcdefghijlkmnopqrstuvwxyz/' \
+-  -e 's/^\(      \|	\)[ 	]*\(.*function\|subroutine\|entry\)[ 	]*\([^ 	(]*\).*$/\3/p' | \
++#$SED -n \
++#  -e 'y/ABCDEFGHIJLKMNOPQRSTUVWXYZ/abcdefghijlkmnopqrstuvwxyz/' \
++#  -e 's/^\(      \|	\)[ 	]*\(.*function\|subroutine\|entry\)[ 	]*\([^ 	(]*\).*$/\3/p' | \
++perl -pi \
++  -e 's/([A-Z])/\l\1/g;' \
++  -e 's/^\s+(.*function|subroutine|entry)\s*([^\s(]*).*$/\2/ or $_=undef' | \
+   eval $awkcmd
