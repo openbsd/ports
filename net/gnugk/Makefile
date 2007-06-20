@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/27 21:10:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/20 14:40:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"H.323 gatekeeper"
+COMMENT=	H.323 gatekeeper
 
 DISTNAME=	gnugk-2.2.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net telephony
 
 HOMEPAGE=	http://www.gnugk.org/
