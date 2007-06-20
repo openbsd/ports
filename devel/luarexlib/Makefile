@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/12 09:25:13 pedro Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/20 05:32:51 sturm Exp $
 
 COMMENT=	"lua binding of posix and pcre regex libraries"
 SHARED_ONLY=	Yes
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::lang/lua
 LIB_DEPENDS=	pcre.>=1.0::devel/pcre
 
