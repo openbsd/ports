@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/02/08 12:39:57 alek Exp $
-lib/libdav.so
-sbin/mod_dav-enable
+@comment $OpenBSD: PLIST,v 1.4 2007/06/21 19:34:12 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_dav/
 share/doc/mod_dav/INSTALL
 share/doc/mod_dav/LICENSE.html
 share/doc/mod_dav/README
-@unexec rm -f /usr/lib/apache/modules/mod_dav.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}
