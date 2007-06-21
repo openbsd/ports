@@ -1,4 +1,8 @@
-# $OpenBSD: README.OpenBSD,v 1.1 2007/06/21 10:46:21 ajacoutot Exp $
+# $OpenBSD: README.OpenBSD,v 1.2 2007/06/21 13:28:52 ajacoutot Exp $
+
+#
+# post-install optionnal steps
+#
 
 To take advantage of all the features from the GNUstep framework, you
 should add the following lines to your ~/.xsession or ~/.xinitrc:
@@ -13,3 +17,29 @@ gnustep-base), add the following lines to services(5):
  gdomap 538/udp # GNUstep distrib objects
 
 Then see rc(8) to have "!!PREFIX!!/bin/gdomap -p" launched at boot time.
+
+#
+# running applications
+#
+
+While opening GNUstep applications using their complete path is possible
+(i.e. ${PREFIX}/libexec/GNUstep/ApplicationName.app/ApplicationName),
+you're advised to use the "openapp" wrapper to do so.
+For instance, to start the Calculator application, you would use:
+ ${PREFIX}/bin/openapp Calculator
+
+
+According to your display, you may find the fonts to be too large/small
+for your taste.
+To change the default fonts size ("9"), use the following command:
+ ${PREFIX}/bin/defaults write NSGlobalDomain NSFontSize <fontsize>
+
+#
+# documentation
+#
+
+Official GNUstep documentations are available from this page:
+http://www.gnustep.org/experience/documentation.html
+
+A more user oriented "GNUstep Configuration Guide" is available here:
+http://gnustep.made-it.com/Configuration/index.html
