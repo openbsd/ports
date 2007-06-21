@@ -1,4 +1,4 @@
-# $OpenBSD: apache-module.port.mk,v 1.3 2007/06/20 14:43:17 espie Exp $
+# $OpenBSD: apache-module.port.mk,v 1.4 2007/06/21 06:11:11 simon Exp $
 # simplify installation of apache modules
 # written by Marc Espie 2007, public domain
 #
@@ -18,7 +18,7 @@
 # - create and install an axps wrapper
 
 # subst_vars are provided:
-# MODAPACHE_MODULE, MODAPACHE_ENABLE, MODAPACHE_FINAL, MODAPACHE_NAME
+# MODAPACHE_MODULE, MODAPACHE_ENABLE, MODAPACHE_FINAL
 
 # a typical packing-list (minimal) will be:
 # lib/${MODAPACHE_MODULE}
