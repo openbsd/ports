@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2007/06/18 23:14:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2007/06/21 08:12:14 ajacoutot Exp $
 %%altivec%%
 %%win32%%
 %%x86opt%%
@@ -456,3 +456,5 @@ share/vlc/vlc32x32.png
 share/vlc/vlc32x32.xpm
 share/vlc/vlc48x48.ico
 share/vlc/vlc48x48.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

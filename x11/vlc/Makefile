@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2007/06/18 23:14:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2007/06/21 08:12:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	"videolan client; multimedia player"
 
 V=		0.8.6c
 DISTNAME=	vlc-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -46,7 +47,7 @@ WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 		SDL jpeg tiff faad ogg vorbis vorbisenc
 
 CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION=2.61
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${WRKSRC}/include -I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		XPIDL="${LOCALBASE}/seamonkey/xpidl"
@@ -128,7 +129,8 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-bonjour \
 		--disable-daap \
 		--disable-pda \
-		--disable-xosd
+		--disable-xosd \
+		--disable-notify
 
 CONFIGURE_ARGS+=--enable-ncurses \
 		--enable-sout \
