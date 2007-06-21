@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2007/06/21 17:26:29 bernd Exp $
+--- configure.ac.orig	Sat Apr  7 11:41:40 2007
++++ configure.ac	Sat Apr  7 11:41:58 2007
+@@ -531,7 +531,7 @@ docdir=$mutt_cv_docdir
+ AC_SUBST(docdir)
+ 
+ if test x$mutt_cv_setgid = xyes; then
+-        DOTLOCK_GROUP='mail'
++        DOTLOCK_GROUP='wheel'
+         DOTLOCK_PERMISSION=2755
+ else
+         DOTLOCK_GROUP=''

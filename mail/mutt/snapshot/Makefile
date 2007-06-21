@@ -1,12 +1,20 @@
-# $OpenBSD: Makefile,v 1.41 2007/05/04 09:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.42 2007/06/21 17:26:29 bernd Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
-VERSION=	1.5.12
+VERSION=	1.5.16
 DISTNAME=	mutt-${VERSION}
-PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	${MASTER_SITES_MUTT:=devel/}
 
-FLAVORS=	hcache idn sidebar
+FLAVORS=	idn sidebar
+
+AUTOCONF_VERSION=2.60
+
+CONFIGURE_ARGS=	--enable-smtp \
+		--mandir=${PREFIX}/man \
+		--enable-hcache \
+		--without-gdbm
+
+LIB_DEPENDS=	qdbm.>=14::databases/qdbm
 
 .include <bsd.port.mk>

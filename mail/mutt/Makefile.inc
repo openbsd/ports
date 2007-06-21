@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2006/08/03 19:56:08 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2007/06/21 17:26:29 bernd Exp $
 
 CATEGORIES=	mail
 
@@ -10,7 +10,7 @@ MASTER_SITES_MUTT= ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		   ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
 
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-MASTER_SITES1=	http://mirrors.protection.cx/~jolan/
+MASTER_SITES1=	http://spacehopper.org/
 
 MODULES=	devel/gettext
 
@@ -27,7 +27,7 @@ FLAVOR?=
 
 AUTOCONF_VERSION?= 2.59
 CONFIGURE_STYLE= autoconf old
-CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
+CONFIGURE_ARGS+=--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
 		--enable-flock \
 		--disable-fcntl \
@@ -70,13 +70,6 @@ CONFIGURE_ARGS+=	--with-mixmaster="${LOCALBASE}/sbin/mixmaster"
 RUN_DEPENDS+=		::mail/mixmaster
 .endif
 
-.if ${FLAVOR:L:Mhcache}
-CONFIGURE_ARGS+=	--enable-hcache --without-qdbm
-LIB_DEPENDS+=		gdbm.>=2::databases/gdbm
-.else
-CONFIGURE_ARGS+=	--without-gdbm --without-qdbm
-.endif
-
 .if ${FLAVOR:L:Midn}
 CONFIGURE_ARGS+=	--with-idn
 LIB_DEPENDS+=		idn.>=16::devel/libidn
@@ -85,10 +78,10 @@ CONFIGURE_ARGS+=	--without-idn
 .endif
 
 .if ${FLAVOR:L:Msidebar}
-PATCHFILES+=		patch-1.5.12.sidebar.20060720.txt-fixed:1
+PATCHFILES+=		patch-1.5.16.sidebar.txt:1
 PATCH_DIST_STRIP=	-p1
 .else
-SUPDISTFILES+=		patch-1.5.12.sidebar.20060720.txt-fixed:1
+SUPDISTFILES+=		patch-1.5.16.sidebar.txt:1
 .endif
 
 .if defined(HOMESPOOL)

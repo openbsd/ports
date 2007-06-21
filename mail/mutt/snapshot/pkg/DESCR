@@ -13,13 +13,13 @@ Other features include:
 - Delivery Status Notification (DSN) support
 - PGP/MIME (RFC2015)
 - small and efficient
+- Maildir/IMAP/POP3 header caching support
 
 Flavors:
 	slang	   - build using the S-Lang library for screen handling
 	compressed - build with compressed folder support
 		     (see: http://www.spinnaker.de/mutt/compressed/)
 	mixmaster  - build with anonymous remailing support
-	hcache	   - build with maildir header caching support
 	idn	   - build with internationalized domain name support
 	sidebar	   - adds a sidebar that has a folder list
 		     (see: http://thomer.com/mutt/)

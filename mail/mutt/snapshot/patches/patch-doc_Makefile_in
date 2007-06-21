@@ -1,16 +1,16 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.5 2006/08/02 14:30:09 bernd Exp $
---- doc/Makefile.in.orig	Wed Jul  5 10:40:07 2006
-+++ doc/Makefile.in	Sat Jul 15 11:08:39 2006
-@@ -71,7 +71,7 @@ topsrcdir_DOCFILES = COPYRIGHT GPL INSTA
- all: ../makedoc$(EXEEXT)
+$OpenBSD: patch-doc_Makefile_in,v 1.6 2007/06/21 17:26:29 bernd Exp $
+--- doc/Makefile.in.orig	Fri Apr  6 09:17:10 2007
++++ doc/Makefile.in	Sat Apr  7 11:40:35 2007
+@@ -395,7 +395,7 @@ uninstall-am: uninstall-info-am uninstall-local
+ all:
  	$(MAKE) makedoc-all
  
 -makedoc-all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
 +makedoc-all: mutt.1 muttrc.man
  
- install: makedoc-all instdoc
+ install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -171,8 +171,8 @@ update-doc: stamp-doc-xml stamp-doc-chun
+@@ -472,8 +472,8 @@ update-doc: stamp-doc-xml stamp-doc-chunked manual.txt
  
  muttrc.man: ../makedoc$(EXEEXT) $(top_srcdir)/init.h muttrc.man.head muttrc.man.tail
  	$(MAKEDOC_CPP) $(top_srcdir)/init.h | ../makedoc -m | 	    \
@@ -19,5 +19,5 @@ $OpenBSD: patch-doc_Makefile_in,v 1.5 2006/08/02 14:30:09 bernd Exp $
 +		cat $(srcdir)/muttrc.man.head - $(srcdir)/muttrc.man.tail | \
 +		/usr/bin/tbl > muttrc.man
  
- EDIT = sed -e 's,@sysconfdir\@,$(sysconfdir),g' \
- 	-e 's,@bindir\@,$(bindir),g' \
+ mutt.1: $(srcdir)/mutt.man
+ 	$(EDIT) $(srcdir)/mutt.man > $@
