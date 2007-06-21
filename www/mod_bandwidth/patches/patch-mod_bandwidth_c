@@ -1,7 +1,7 @@
-$OpenBSD: patch-mod_bandwidth_c,v 1.1.1.1 2006/10/18 14:58:30 ajacoutot Exp $
---- mod_bandwidth.c.orig	Fri Sep 22 08:50:16 2006
-+++ mod_bandwidth.c	Fri Sep 22 08:59:52 2006
-@@ -144,11 +144,15 @@
+$OpenBSD: patch-mod_bandwidth_c,v 1.2 2007/06/21 10:58:38 ajacoutot Exp $
+--- mod_bandwidth.c.orig	Thu Jun 21 09:46:46 2007
++++ mod_bandwidth.c	Thu Jun 21 09:48:12 2007
+@@ -145,11 +145,15 @@
   *  /==== by Awesome Walrus <walrus@amur.ru> =====================\
   * -  BandWidthDataDir
   *    Syntax  : BandWidthDataDir <directory>
@@ -18,7 +18,7 @@ $OpenBSD: patch-mod_bandwidth_c,v 1.1.1.1 2006/10/18 14:58:30 ajacoutot Exp $
   *  \==== by Awesome Walrus <walrus@amur.ru> =====================/
   *
   * -  BandWidthModule 
-@@ -496,7 +500,8 @@ static const char *bandwidthmodule(cmd_p
+@@ -500,7 +504,8 @@ static const char *bandwidthmodule(cmd_parms *cmd, ban
  static const char *set_bandwidth_data_dir(cmd_parms *cmd, void *dummy, char *arg) {
      arg = ap_os_canonical_filename(cmd->pool, arg);
  

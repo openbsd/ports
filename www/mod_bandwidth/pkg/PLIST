@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/18 14:58:30 ajacoutot Exp $
-lib/mod_bandwidth.so
+@comment $OpenBSD: PLIST,v 1.2 2007/06/21 10:58:38 ajacoutot Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
 sbin/cleanlink.pl
-sbin/mod_bandwidth-enable
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_bandwidth/
 share/doc/mod_bandwidth/README.mod_bandwidth
-@unexec rm -f /usr/lib/apache/modules/mod_bandwidth.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}
