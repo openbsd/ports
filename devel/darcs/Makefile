@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/06/06 19:52:17 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2007/06/21 15:13:45 kili Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
 DISTNAME=	darcs-1.0.9
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	devel
 HOMEPAGE=	http://www.darcs.net/
@@ -18,11 +19,13 @@ CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir=${PREFIX}/share \
 		--libexecdir=${PREFIX}/libexec/darcs \
+		--mandir=${PREFIX}/man \
 		--sysconfdir=${PREFIX}/share/darcs \
 		--disable-mmap \
 		--without-docs
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" CFLAGS=""
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" CFLAGS="" \
+		GREP=/usr/bin/grep AWK=/usr/bin/awk
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
