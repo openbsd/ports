@@ -1,3 +1,0 @@
-You should add the following line to your ~/.xsession or ~/.xinitrc
-after sourcing GNUstep.sh (from gnustep-base):
- ${PREFIX}/bin/gpbs

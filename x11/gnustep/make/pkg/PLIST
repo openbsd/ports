@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/06/21 10:46:21 ajacoutot Exp $
 bin/debugapp
 bin/gnustep-config
 bin/openapp
@@ -131,3 +131,4 @@ share/GNUstep/Makefiles/test-library.make
 share/GNUstep/Makefiles/test-tool.make
 share/GNUstep/Makefiles/tool.make
 share/GNUstep/Makefiles/vendor.sh
+share/GNUstep/README.OpenBSD

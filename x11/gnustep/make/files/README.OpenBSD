@@ -1,0 +1,15 @@
+# $OpenBSD: README.OpenBSD,v 1.1 2007/06/21 10:46:21 ajacoutot Exp $
+
+To take advantage of all the features from the GNUstep framework, you
+should add the following lines to your ~/.xsession or ~/.xinitrc:
+ . !!PREFIX!!/share/GNUstep/Makefiles/GNUstep.sh # (from gnustep-base)
+ !!PREFIX!!/bin/gdnc # notifications daemon (from gnustep-base)
+ !!PREFIX!!/bin/gpbs # clipboard/pasteboard daemon (from gnustep-back)
+
+
+To enable gdomap(8), the distributed objects lookup daemon (from
+gnustep-base), add the following lines to services(5):
+ gdomap 538/tcp # GNUstep distrib objects
+ gdomap 538/udp # GNUstep distrib objects
+
+Then see rc(8) to have "!!PREFIX!!/bin/gdomap -p" launched at boot time.

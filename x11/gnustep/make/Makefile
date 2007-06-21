@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/19 15:13:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/21 10:46:21 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	"GNUstep makefile package"
 
 DISTNAME=	gnustep-make-2.0.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/
@@ -34,6 +34,8 @@ pre-configure:
 		> ${WRKSRC}/FilesystemLayouts/openbsd
 
 post-install:
+	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
+		< ${FILESDIR}/README.OpenBSD > ${PREFIX}/share/GNUstep/README.OpenBSD
 	${INSTALL_DATA} ${WRKSRC}/GNUstep.conf \
 		${PREFIX}/share/GNUstep/GNUstep.conf
 	${INSTALL_MAN} ${WRKSRC}/Documentation/openapp.1 \
