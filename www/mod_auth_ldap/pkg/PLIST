@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/02/13 11:04:24 mbalmer Exp $
-lib/auth_ldap.so
-sbin/mod_auth_ldap-enable
+@comment $OpenBSD: PLIST,v 1.4 2007/06/21 20:25:40 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_auth_ldap/
 share/doc/mod_auth_ldap/auth_ldap.html
-@unexec rm -f /usr/lib/apache/modules/auth_ldap.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}
