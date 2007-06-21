@@ -1,7 +1,7 @@
 To finish the install of ${PKGNAME}, you need
 to enable the module using the following command
 
-	${PREFIX}/sbin/mod_ruby-enable
+	${PREFIX}/sbin/${MODAPACHE_ENABLE}
 
 Also, see the example configuration file:
 ${PREFIX}/share/examples/mod_ruby/httpd.conf

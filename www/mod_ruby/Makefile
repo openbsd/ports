@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/26 19:45:58 bernd Exp $
-
-# This port currently only works with archs supporting dynamic loading
-# and has Apache that supports DSO's.
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.5 2007/06/21 20:54:33 simon Exp $
 
 COMMENT=		"module that embeds Ruby into Apache"
 
@@ -13,12 +9,16 @@ HOMEPAGE=		http://modruby.net/
 
 MAINTAINER=		Adam Montague <amontague@siriushosting.com>
 
+MODULES=		apache-module
+
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
+
+MODAPACHE_NAME=		ruby
 
 MASTER_SITES=		http://modruby.net/archive/
 
@@ -36,14 +36,11 @@ INSTALL_TARGET=		install-ruby
 SUBST_VARS=		PKGNAME
 
 post-build:
-	@sed 's,!!PREFIX!!,${PREFIX},' \
-		< ${FILESDIR}/mod_ruby-enable \
-		> ${WRKBUILD}/mod_ruby-enable
+	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 post-install:
-	${INSTALL_DATA} ${WRKBUILD}/mod_ruby.so ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKBUILD}/mod_ruby-enable ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mod_ruby
 	${INSTALL_DATA} ${WRKSRC}/examples/httpd.conf ${PREFIX}/share/examples/mod_ruby/
+	${MODAPACHE_INSTALL}
 
 .include <bsd.port.mk>

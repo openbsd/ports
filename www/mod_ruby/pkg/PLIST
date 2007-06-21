@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/26 19:45:58 bernd Exp $
-lib/mod_ruby.so
+@comment $OpenBSD: PLIST,v 1.3 2007/06/21 20:54:33 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
 lib/ruby/1.8/apache/
 lib/ruby/1.8/apache/erb-run.rb
 lib/ruby/1.8/apache/eruby-debug.rb
@@ -12,7 +13,7 @@ lib/ruby/1.8/apache/ruby-debug.rb
 lib/ruby/1.8/apache/ruby-profile.rb
 lib/ruby/1.8/apache/ruby-run.rb
 lib/ruby/1.8/auto-reload.rb
-sbin/mod_ruby-enable
+sbin/${MODAPACHE_ENABLE}
 share/examples/mod_ruby/
 share/examples/mod_ruby/httpd.conf
-@extra /usr/lib/apache/modules/mod_ruby.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}
