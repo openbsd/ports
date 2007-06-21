@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/06 21:18:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2007/06/21 19:45:31 kurt Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -6,7 +6,7 @@ SHARED_ONLY=		Yes
 
 COMMENT=		"Apache-Tomcat AJP Connector"
 
-V=			1.2.21
+V=			1.2.23
 DISTNAME=		tomcat-connectors-${V}-src
 PKGNAME=		mod_jk-${V}
 CATEGORIES=		www
