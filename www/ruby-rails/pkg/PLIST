@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/08/12 07:37:15 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/06/22 03:47:18 jcs Exp $
 bin/rails
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGELOG
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/MIT-LICENSE
@@ -17,6 +18,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/performance/benchmarker
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/performance/profiler
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/plugin
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/process/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/process/inspector
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/process/reaper
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/process/spawner
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/rails
@@ -32,6 +34,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/builtin/rails_info/rails_info_cont
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/apache.conf
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/databases/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/databases/frontbase.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/databases/mysql.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/databases/oracle.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/databases/postgresql.yml
@@ -91,13 +94,16 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/performance/benchmark
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/performance/profiler.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/plugin.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/process/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/process/inspector.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/process/reaper.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/process/spawner.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/process/spinner.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/runner.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/server.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/base.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/lighttpd.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/mongrel.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/webrick.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/update.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/console_app.rb
@@ -112,6 +118,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/base.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/commands.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generated_attribute.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/applications/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/applications/app/
@@ -152,6 +159,12 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/com
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/model/templates/migration.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/model/templates/model.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/model/templates/unit_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/observer/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/observer/USAGE
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/observer/observer_generator.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/observer/templates/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/observer/templates/observer.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/observer/templates/unit_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/plugin/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/plugin/USAGE
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/plugin/plugin_generator.rb
@@ -164,7 +177,19 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/com
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/plugin/templates/install.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/plugin/templates/plugin.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/plugin/templates/tasks.rake
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/plugin/templates/uninstall.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/plugin/templates/unit_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/resource_generator.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/templates/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/templates/USAGE
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/templates/controller.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/templates/fixtures.yml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/templates/functional_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/templates/helper.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/templates/migration.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/templates/model.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/resource/templates/unit_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold/USAGE
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb
@@ -180,6 +205,23 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/com
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold/templates/view_list.rhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold/templates/view_new.rhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold/templates/view_show.rhtml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/USAGE
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/scaffold_resource_generator.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/controller.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/fixtures.yml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/functional_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/helper.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/layout.rhtml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/migration.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/model.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/style.css
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/unit_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/view_edit.rhtml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/view_index.rhtml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/view_new.rhtml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/scaffold_resource/templates/view_show.rhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/session_migration/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/session_migration/USAGE
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails_generator/generators/components/session_migration/session_migration_generator.rb
