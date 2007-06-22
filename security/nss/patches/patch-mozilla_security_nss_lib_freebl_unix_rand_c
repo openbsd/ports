@@ -1,0 +1,33 @@
+$OpenBSD: patch-mozilla_security_nss_lib_freebl_unix_rand_c,v 1.1 2007/06/22 13:37:58 kurt Exp $
+--- mozilla/security/nss/lib/freebl/unix_rand.c.orig	Thu Jun 21 14:25:55 2007
++++ mozilla/security/nss/lib/freebl/unix_rand.c	Thu Jun 21 14:41:25 2007
+@@ -843,21 +843,19 @@ safe_popen(char *cmd)
+ static int
+ safe_pclose(FILE *fp)
+ {
+-    pid_t pid;
+-    int count, status;
++    pid_t pid, ret;
++    int status;
+ 
+     if ((pid = safe_popen_pid) == 0)
+ 	return -1;
+     safe_popen_pid = 0;
+ 
+-    /* if the child hasn't exited, kill it -- we're done with its output */
+-    count = 0;
+-    while (waitpid(pid, &status, WNOHANG) == 0) {
+-    	if (kill(pid, SIGKILL) < 0 && errno == ESRCH)
+-	    break;
+-	if (++count == 1000)
+-	    break;
+-    }
++    /* kill the child in case it hasn't exited -- we're done with its output */
++    kill(pid, SIGKILL);
++
++    do {
++	ret = waitpid(pid, &status, 0);
++    } while (ret == (pid_t) -1 && errno == EINTR);
+ 
+     /* Reset SIGCHLD signal hander before returning */
+     sigaction(SIGCHLD, &oldact, NULL);
