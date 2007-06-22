@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/14 06:23:23 mbalmer Exp $
-lib/mod_fastcgi.so
-sbin/mod_fastcgi-enable
+@comment $OpenBSD: PLIST,v 1.2 2007/06/22 14:48:23 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_fastcgi/
 share/doc/mod_fastcgi/LICENSE.TERMS
 share/doc/mod_fastcgi/mod_fastcgi.html
+@unexec-delete rm -f ${MODAPACHE_FINAL}
+@comment share/doc/mod_fastcgi/mod_fastcgi.html.orig

@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/28 11:49:56 mbalmer Exp $
-
-# This port currently only works with archs supporting dynamic loading
-# and has Apache that supports DSO's.
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.3 2007/06/22 14:48:23 simon Exp $
 
 COMMENT=        "Apache FastCGI module"
 
@@ -14,6 +10,9 @@ CATEGORIES=     www
 HOMEPAGE=       http://www.fastcgi.com/
 
 MASTER_SITES=   ${HOMEPAGE}dist/
+
+MODULES=	apache-module
+MODAPACHE_NAME=	fastcgi
 
 MAINTAINER=     Marc Balmer <mbalmer@openbsd.org>
 
@@ -27,16 +26,13 @@ NO_REGRESS=     Yes
 
 do-build:
 	(cd ${WRKBUILD}; apxs -o mod_fastcgi.so -c *.c)
-	
+
 post-build:
-	sed 's,!!PREFIX!!,${PREFIX},' \
-		< ${FILESDIR}/mod_fastcgi-enable \
-		> ${WRKBUILD}/mod_fastcgi-enable
+	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:
-	${INSTALL_DATA} ${WRKBUILD}/mod_fastcgi.so ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKBUILD}/mod_fastcgi-enable ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mod_fastcgi
 	${INSTALL_DATA} ${WRKBUILD}/docs/* ${PREFIX}/share/doc/mod_fastcgi
-	
+	${MODAPACHE_INSTALL}
+
 .include <bsd.port.mk>

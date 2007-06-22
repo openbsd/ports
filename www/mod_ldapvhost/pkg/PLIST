@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/22 09:04:03 mbalmer Exp $
-lib/mod_ldapvhost.so
-sbin/mod_ldapvhost-enable
+@comment $OpenBSD: PLIST,v 1.3 2007/06/22 14:53:20 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_ldapvhost/
 share/doc/mod_ldapvhost/mod_ldapvhost.conf
 share/doc/mod_ldapvhost/msys.schema
 share/doc/mod_ldapvhost/vhost.schema
+@unexec-delete rm -f ${MODAPACHE_FINAL}
