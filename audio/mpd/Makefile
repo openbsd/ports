@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/20 13:05:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/22 11:42:14 jasper Exp $
 
 COMMENT=		"Music Player Daemon"
-DISTNAME=		mpd-0.12.2
+DISTNAME=		mpd-0.13.0
 CATEGORIES=		audio
 HOMEPAGE=		http://www.musicpd.org/
 MAINTAINER=		Tobias Ulmer <tobiasu@tmux.org>
@@ -20,6 +20,7 @@ MODULES=		converters/libiconv
 
 LIB_DEPENDS=		audiofile::devel/libaudiofile \
 			ao::audio/libao \
+			samplerate::audio/libsamplerate \
 			faad::audio/faad \
 			id3tag::audio/libid3tag \
 			mad::audio/libmad \

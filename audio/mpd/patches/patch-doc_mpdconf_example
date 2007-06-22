@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.3 2006/11/05 14:42:56 bernd Exp $
---- doc/mpdconf.example.orig	Wed Oct 11 01:56:54 2006
-+++ doc/mpdconf.example	Fri Oct 27 20:07:43 2006
+$OpenBSD: patch-doc_mpdconf_example,v 1.4 2007/06/22 11:42:14 jasper Exp $
+--- doc/mpdconf.example.orig	Mon May 28 15:19:30 2007
++++ doc/mpdconf.example	Fri Jun 22 13:31:06 2007
 @@ -2,11 +2,11 @@
  # See the mpd.conf man page for a more detailed description of each parameter.
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.3 2006/11/05 14:42:56 bernd Exp $
  ################################################################
  
  
-@@ -15,13 +15,13 @@ error_file                      "~/.mpd/
+@@ -15,13 +15,13 @@ error_file                      "~/.mpd/mpd.error"
  # If you wish to use mpd --kill to stop MPD, then you must
  # specify a file here in which to store MPD's process ID.
  #
@@ -34,7 +34,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.3 2006/11/05 14:42:56 bernd Exp $
  #
  ################################################################
  
-@@ -33,11 +33,11 @@ error_file                      "~/.mpd/
+@@ -33,11 +33,11 @@ error_file                      "~/.mpd/mpd.error"
  # started by.  If left unspecified, MPD will not drop root
  # privileges at all (not recommended).
  #
@@ -48,7 +48,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.3 2006/11/05 14:42:56 bernd Exp $
  #port                            "6600"
  #
  # Controls the amount of information that is logged.  Can be
-@@ -94,6 +94,12 @@ error_file                      "~/.mpd/
+@@ -100,6 +100,12 @@ error_file                      "~/.mpd/mpd.error"
  #        format                  "44100:16:2" # optional
  #}
  #
@@ -61,7 +61,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.3 2006/11/05 14:42:56 bernd Exp $
  # An example of a shout output (for streaming to Icecast):
  #
  #audio_output {
-@@ -136,12 +142,12 @@ error_file                      "~/.mpd/
+@@ -149,12 +155,12 @@ error_file                      "~/.mpd/mpd.error"
  #
  #mixer_type                      "oss"
  #mixer_device                    "/dev/mixer"

@@ -1,6 +1,6 @@
---- configure.orig	Fri Apr 20 22:42:09 2007
-+++ configure	Fri Apr 20 22:43:20 2007
-@@ -28410,7 +28410,7 @@
+--- configure.orig	Mon May 28 15:20:18 2007
++++ configure	Fri Jun 22 13:31:06 2007
+@@ -28646,7 +28646,7 @@ fi
      LIBOGGFLAC_LIBS="-L$libdir"
    fi
  
