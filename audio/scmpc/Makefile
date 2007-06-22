@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/18 22:27:56 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/22 12:34:13 msf Exp $
 
 COMMENT=		"client for MPD to submit tracks to Audioscrobbler"
 CATEGORIES=		audio
 DISTNAME=		scmpc-0.2.2
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://scmpc.berlios.de/
 

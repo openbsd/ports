@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Dec  2 21:59:18 2006
-+++ Makefile.in	Fri Dec  8 16:40:45 2006
-@@ -17,7 +17,7 @@ LIBS := @LIBS@ @libcurl_LIBS@ @confuse_L
+--- Makefile.in.orig	Sun Dec  3 05:59:18 2006
++++ Makefile.in	Fri Jun 22 00:06:00 2007
+@@ -17,7 +17,7 @@ LIBS := @LIBS@ @libcurl_LIBS@ @confuse_LIBS@ @libdaemo
  LIBOBJS := @LIBOBJS@
  
  # This is probably broken if gcc isn't being used...
