@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/22 14:43:13 jasper Exp $
+bin/eyeD3
+lib/python${MODPY_VERSION}/site-packages/eyeD3/
+lib/python${MODPY_VERSION}/site-packages/eyeD3/__init__.py
+lib/python${MODPY_VERSION}/site-packages/eyeD3/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/eyeD3/binfuncs.py
+lib/python${MODPY_VERSION}/site-packages/eyeD3/binfuncs.pyc
+lib/python${MODPY_VERSION}/site-packages/eyeD3/frames.py
+lib/python${MODPY_VERSION}/site-packages/eyeD3/frames.pyc
+lib/python${MODPY_VERSION}/site-packages/eyeD3/mp3.py
+lib/python${MODPY_VERSION}/site-packages/eyeD3/mp3.pyc
+lib/python${MODPY_VERSION}/site-packages/eyeD3/tag.py
+lib/python${MODPY_VERSION}/site-packages/eyeD3/tag.pyc
+lib/python${MODPY_VERSION}/site-packages/eyeD3/utils.py
+lib/python${MODPY_VERSION}/site-packages/eyeD3/utils.pyc
+@man man/man1/eyeD3.1
+share/doc/eyeD3-0.6.14/
+share/doc/eyeD3-0.6.14/README
