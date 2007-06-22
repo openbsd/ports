@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/03 11:28:48 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/22 03:43:01 jcs Exp $
 
 COMMENT=	"utility classes and extensions for rails framework" 
 
-DISTNAME=       activesupport-1.3.1
-PKGNAME=	ruby-${DISTNAME}p2
+DISTNAME=       activesupport-1.4.2
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=     devel
 
 # MIT License
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=   http://rubyforge.org/frs/download.php/9562/
+MASTER_SITES=   ${MASTER_SITE_RUBYFORGE:=activesupport/}
 
 MODULES=	lang/ruby
 
