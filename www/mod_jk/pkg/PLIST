@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/05 01:04:11 kurt Exp $
-lib/mod_jk.so
-sbin/mod_jk-enable
+@comment $OpenBSD: PLIST,v 1.6 2007/06/22 19:11:55 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_jk/
 share/doc/mod_jk/LICENSE
 share/doc/mod_jk/NOTICE
@@ -14,4 +15,4 @@ share/examples/mod_jk/workers.properties
 share/examples/mod_jk/workers.properties.minimal
 @mode 444
 @sample /var/www/conf/workers.properties
-@unexec rm -f /usr/lib/apache/modules/mod_jk.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}

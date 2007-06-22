@@ -1,7 +1,7 @@
 To finish the install, you need to enable the mod_jk
 module using the following command as root:
 
-      ${PREFIX}/sbin/mod_jk-enable
+      ${PREFIX}/sbin/${MODAPACHE_ENABLE}
 
 If you already have Apache running on your machine,
 you should not use "apachectl restart" - instead,
