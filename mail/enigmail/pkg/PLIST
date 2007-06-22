@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/03 13:35:50 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/06/22 18:59:19 martynas Exp $
 mozilla-thunderbird/extensions/${GUID}/
 mozilla-thunderbird/extensions/${GUID}/chrome/
 mozilla-thunderbird/extensions/${GUID}/chrome.manifest
+mozilla-thunderbird/extensions/${GUID}/chrome/enigmail-locale.jar
 mozilla-thunderbird/extensions/${GUID}/chrome/enigmail-skin-tbird.jar
 mozilla-thunderbird/extensions/${GUID}/chrome/enigmail-skin.jar
 mozilla-thunderbird/extensions/${GUID}/chrome/enigmail.jar
@@ -17,6 +18,5 @@ mozilla-thunderbird/extensions/${GUID}/defaults/pref/
 mozilla-thunderbird/extensions/${GUID}/defaults/pref/enigmail.js
 mozilla-thunderbird/extensions/${GUID}/defaults/preferences/
 mozilla-thunderbird/extensions/${GUID}/defaults/preferences/enigmail.js
-mozilla-thunderbird/extensions/${GUID}/enigmail.spec
 mozilla-thunderbird/extensions/${GUID}/install.js
 mozilla-thunderbird/extensions/${GUID}/install.rdf
