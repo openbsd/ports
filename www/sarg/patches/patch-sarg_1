@@ -1,7 +1,7 @@
-$OpenBSD: patch-sarg_1,v 1.1 2006/01/28 21:22:07 aanriot Exp $
---- sarg.1.orig	Tue Nov 29 17:39:45 2005
-+++ sarg.1	Fri Jan 27 22:47:44 2006
-@@ -131,9 +131,9 @@ Convert the logfile's date/time field to
+$OpenBSD: patch-sarg_1,v 1.2 2007/06/22 12:48:25 martynas Exp $
+--- sarg.1.orig	Tue Jan  2 21:11:26 2007
++++ sarg.1	Wed Jun 20 21:25:08 2007
+@@ -131,9 +131,9 @@ Convert the logfile's date/time field to human-readabl
  .B \-split
  Split the log file by date in \fB-d\fP parameter.
  .SH FILES

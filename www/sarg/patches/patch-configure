@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2007/05/16 15:59:23 aanriot Exp $
---- configure.orig	Wed Apr  4 07:28:32 2007
-+++ configure	Wed Apr  4 07:29:17 2007
-@@ -2335,12 +2335,6 @@
+$OpenBSD: patch-configure,v 1.5 2007/06/22 12:48:25 martynas Exp $
+--- configure.orig	Tue Jan  2 21:11:26 2007
++++ configure	Tue Jun 19 20:24:58 2007
+@@ -2335,12 +2335,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  ;;
  esac
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.4 2007/05/16 15:59:23 aanriot Exp $
  case "$host" in
     *-solaris*)
     LDFLAGS="${LDFLAGS} -lsocket -lnsl"
-@@ -3990,7 +3984,7 @@
+@@ -3990,7 +3984,7 @@ done
  
  for ac_header in stdio.h stdlib.h string.h strings.h sys/time.h time.h unistd.h sys/dirent.h \
  		 dirent.h sys/socket.h netdb.h arpa/inet.h sys/types.h netinet/in.h sys/stat.h \

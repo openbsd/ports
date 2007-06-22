@@ -1,7 +1,7 @@
-$openBSD$
---- splitlog.c.orig	Tue Nov 29 17:39:45 2005
-+++ splitlog.c	Thu Jan 26 21:31:44 2006
-@@ -39,7 +39,7 @@ void splitlog(char *arq, char *df, int d
+$OpenBSD: patch-splitlog_c,v 1.4 2007/06/22 12:48:25 martynas Exp $
+--- splitlog.c.orig	Tue Jan  2 21:11:26 2007
++++ splitlog.c	Tue Jun 19 20:24:58 2007
+@@ -39,7 +39,7 @@ void splitlog(char *arq, char *df, int dfrom, int dunt
     struct tm *t;
  
     if(arq[0] == '\0')
@@ -10,7 +10,7 @@ $openBSD$
  
     if((fp_in=fopen(arq,"r"))==NULL) {
        fprintf(stderr, "SARG: (splitlog) %s: %s\n",text[8],arq);
-@@ -52,7 +52,7 @@ void splitlog(char *arq, char *df, int d
+@@ -52,7 +52,7 @@ void splitlog(char *arq, char *df, int dfrom, int dunt
        t=localtime(&tt);
  
        if(dfrom) {
@@ -19,7 +19,7 @@ $openBSD$
           idata=atoi(wdata);
  	 if(idata < dfrom || idata > duntil)
           continue;
-@@ -64,9 +64,9 @@ void splitlog(char *arq, char *df, int d
+@@ -64,9 +64,9 @@ void splitlog(char *arq, char *df, int dfrom, int dunt
        }
  
        if(strncmp(df,"e",1) == 0)
