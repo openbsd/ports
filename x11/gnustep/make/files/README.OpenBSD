@@ -1,4 +1,4 @@
-# $OpenBSD: README.OpenBSD,v 1.2 2007/06/21 13:28:52 ajacoutot Exp $
+# $OpenBSD: README.OpenBSD,v 1.3 2007/06/22 14:47:08 ajacoutot Exp $
 
 #
 # post-install optionnal steps
@@ -23,16 +23,16 @@ Then see rc(8) to have "!!PREFIX!!/bin/gdomap -p" launched at boot time.
 #
 
 While opening GNUstep applications using their complete path is possible
-(i.e. ${PREFIX}/libexec/GNUstep/ApplicationName.app/ApplicationName),
+(i.e. !!PREFIX!!/libexec/GNUstep/ApplicationName.app/ApplicationName),
 you're advised to use the "openapp" wrapper to do so.
 For instance, to start the Calculator application, you would use:
- ${PREFIX}/bin/openapp Calculator
+ !!PREFIX!!/bin/openapp Calculator
 
 
 According to your display, you may find the fonts to be too large/small
 for your taste.
 To change the default fonts size ("9"), use the following command:
- ${PREFIX}/bin/defaults write NSGlobalDomain NSFontSize <fontsize>
+ !!PREFIX!!/bin/defaults write NSGlobalDomain NSFontSize <fontsize>
 
 #
 # documentation
