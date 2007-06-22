@@ -2,10 +2,3 @@ Mozilla Thunderbird is a redesign of the integrated Mozilla App-Suite
 mail component. Its goal is to leverage much of the existing
 functionality of that product to produce a stand-alone mail application
 that is simple and extensible.
-
-Thunderbird looks for plugins in ~/.mozilla/plugins
-${LOCALBASE}/mozilla-thunderbird/plugins
-and ${LOCALBASE}/lib/mozilla-plugins.
-
-To disable anti-aliasing (xft) altogether set GDK_USE_XFT=0 in the
-environment.

@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/04/30 22:40:31 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/06/22 18:51:30 martynas Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
 bin/thunderbird-config
 mozilla-thunderbird/
 mozilla-thunderbird/LICENSE
+mozilla-thunderbird/README.OpenBSD
 mozilla-thunderbird/chrome/
 mozilla-thunderbird/chrome/US.jar
 mozilla-thunderbird/chrome/chromelist.txt

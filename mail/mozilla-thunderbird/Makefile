@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.56 2007/06/13 12:06:59 martynas Exp $
+# $OpenBSD: Makefile,v 1.57 2007/06/22 18:51:30 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
-COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
+COMMENT=	"redesign of Mozilla's mail component"
 
-VER=		2.0.0.0
+VER=		2.0.0.4
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p0
+PKGNAME=	mozilla-thunderbird-${VER}
 SO_VERSION=	13.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
@@ -31,16 +31,16 @@ CATEGORIES=	mail news
 
 HOMEPAGE=	http://www.mozilla.org/projects/thunderbird/
 
-# mozilla public license
+# MPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 Xau Xdmcp Xft Xrender Xinerama Xt c expat \
-		fontconfig freetype m pthread z \
-		atk-1.0 cairo glib-2.0 gmodule-2.0 gobject-2.0 glitz \
-		jpeg pango-1.0 pangoft2-1.0 pangocairo-1.0 pangox-1.0 \
-		png stdc++
+WANTLIB=        X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi Xinerama \
+                Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
+                freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+                jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+                pangox-1.0 png pthread stdc++ z
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
@@ -87,10 +87,8 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--enable-svg-renderer=cairo	\
 		--enable-system-cairo		\
 		--enable-canvas			\
-		--enable-official-branding
-
-#  from mail/config/mozconfig
-CONFIGURE_ARGS+=--enable-application=mail
+		--enable-official-branding	\
+		--enable-application=mail
 
 MAKE_ENV=	MOZ_CO_PROJECT=mail \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
@@ -121,12 +119,11 @@ pre-configure:
 do-install:
 	@cd ${MOB} && \
 		find ${DATADIRS} -type d \
-			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \;
-	@cd ${MOB} && \
+			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
 		find ${DATADIRS} ! -type d \
 			-exec ${INSTALL_DATA} -m 644 {} ${MOZ}/{} \;
-	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
+	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} \
+		${WRKSRC}/LICENSE ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/thunderbird \
 		${MOB}/thunderbird-config ${PREFIX}/bin/
 	ln -f ${PREFIX}/bin/thunderbird ${PREFIX}/bin/mozilla-thunderbird
@@ -135,5 +132,7 @@ do-install:
 		${MOB}/thunderbird-bin \
 		${MOB}/mozilla-xremote-client ${MOZ}
 	ln -f ${MOZ}/thunderbird-bin ${MOZ}/mozilla-thunderbird-bin
+	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
+		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 
 .include <bsd.port.mk>

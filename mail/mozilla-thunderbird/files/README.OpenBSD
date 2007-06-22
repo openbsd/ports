@@ -1,0 +1,21 @@
+$OpenBSD: README.OpenBSD,v 1.1 2007/06/22 18:51:30 martynas Exp $
+
+If you encounter strange problems or Thunderbird doesn't start at
+all, try the -safe-mode switch.
+
+To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
+
+Links
+
+To make Thunderbird open links using Firefox, shut down Thunderbird
+and add these lines to ~/.thunderbird/<something>.default/prefs.js:
+
+user_pref("network.protocol-handler.app.ftp", "!!PREFIX!!/bin/firefox");
+user_pref("network.protocol-handler.app.http", "!!PREFIX!!/bin/firefox");
+user_pref("network.protocol-handler.app.https", "!!PREFIX!!/bin/firefox");
+
+Plugins
+
+Thunderbird looks for plugins in ~/.mozilla/plugins
+${LOCALBASE}/mozilla-thunderbird/plugins and
+${LOCALBASE}/lib/mozilla-plugins.

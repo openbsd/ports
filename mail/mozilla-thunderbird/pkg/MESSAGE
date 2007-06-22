@@ -1,9 +1,2 @@
-If you encounter strange problems or thunderbird doesn't start at
-all, try the -safe-mode switch.
-
-To make Thunderbird open links using Firefox, shut down Thunderbird
-and add these lines to ~/.thunderbird/<something>.default/prefs.js:
-
-user_pref("network.protocol-handler.app.ftp", "${PREFIX}/bin/firefox");
-user_pref("network.protocol-handler.app.http", "${PREFIX}/bin/firefox");
-user_pref("network.protocol-handler.app.https", "${PREFIX}/bin/firefox");
+Please see ${PREFIX}/mozilla-thunderbird/README.OpenBSD for information
+about running Firefox on OpenBSD.
