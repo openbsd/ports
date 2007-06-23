@@ -1,10 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/22 18:59:19 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2007/06/23 09:28:02 steven Exp $
 
 SHARED_ONLY=	Yes
-
-.if ${MACHINE_ARCH} == "sparc64"
-BROKEN=		"Thunderbird hangs when accessing items from the OpenPGP menu"
-.endif
 
 COMMENT=	"GnuPG extension for Thunderbird"
 
