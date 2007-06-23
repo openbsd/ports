@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.905 2007/06/18 23:04:02 jakemsr Exp $
+#	$OpenBSD: bsd.port.mk,v 1.906 2007/06/23 09:39:18 steven Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -592,6 +592,8 @@ FAKE_TARGET ?= ${INSTALL_TARGET}
 
 REGRESS_TARGET ?= regress
 REGRESS_FLAGS ?= ${MAKE_FLAGS}
+REGRESS_LOGFILE ?= ${WRKDIR}/regress.log
+REGRESS_LOG ?= | tee ${REGRESS_LOGFILE}
 
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 
@@ -2094,11 +2096,11 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} pre-regress
 .  endif
 .  if target(do-regress)
-	@cd ${.CURDIR} && exec ${MAKE} do-regress
+	@cd ${.CURDIR} && exec ${MAKE} do-regress ${REGRESS_LOG}
 .  else
 # What REGRESS normally does:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
+		${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET} ${REGRESS_LOG}
 # End of REGRESS
 .  endif
 .  if target(post-regress)
