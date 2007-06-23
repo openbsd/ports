@@ -1,5 +1,5 @@
 #!%%LOCALBASE%%/bin/lua
--- $OpenBSD: yt.lua,v 1.3 2007/06/19 17:32:52 pedro Exp $
+-- $OpenBSD: yt.lua,v 1.4 2007/06/23 05:16:22 sturm Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -28,6 +28,7 @@ title = assert(string.match(body, pattern))
 
 -- Build a name for the files the video will be stored in.
 file = string.gsub(title, " ", "_")
+file = string.gsub(title, "[^%w-]", "_")
 file = "youtube-" .. string.lower(file)
 flv = file .. ".flv"
 avi = file .. ".avi"
