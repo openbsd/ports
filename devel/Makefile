@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.520 2007/06/04 18:38:27 espie Exp $
+# $OpenBSD: Makefile,v 1.521 2007/06/23 21:47:27 martynas Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -513,6 +513,7 @@
      SUBDIR += py-cheetah
      SUBDIR += py-ctypes
      SUBDIR += py-dateutil
+     SUBDIR += py-decoratortools
      SUBDIR += py-fpconst
      SUBDIR += py-gobject
      SUBDIR += py-logilab-astng
@@ -524,9 +525,11 @@
      SUBDIR += py-orbit
      SUBDIR += py-parsing
      SUBDIR += py-pexpect
+     SUBDIR += py-protocols
      SUBDIR += py-psyco
      SUBDIR += py-radix
      SUBDIR += py-rcsparse
+     SUBDIR += py-ruledispatch
      SUBDIR += py-setuptools
      SUBDIR += py-silc
      SUBDIR += py-tpg
