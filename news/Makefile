@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/01/26 23:12:34 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/06/24 16:59:06 jasper Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
      SUBDIR += aub
+     SUBDIR += hellanzb
      SUBDIR += leafnode
      SUBDIR += linleech
      SUBDIR += newsfetch
