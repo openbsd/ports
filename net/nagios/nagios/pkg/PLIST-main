@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/02/13 21:59:13 sturm Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/06/24 08:29:35 sturm Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _nagios:550
 @newuser _nagios:550:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
@@ -9,6 +9,7 @@ share/examples/nagios/cgi.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/
 @sample ${CHROOT}${SYSCONFDIR}/nagios/cgi.cfg
 share/examples/nagios/commands.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/commands.cfg
 share/examples/nagios/httpd.conf
 share/examples/nagios/localhost.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/localhost.cfg
@@ -22,7 +23,6 @@ share/examples/nagios/resource.cfg
 @sample ${CHROOT}/var/log/nagios/
 @sample ${CHROOT}/var/log/nagios/archives/
 @sample ${CHROOT}/var/nagios/
-@sample /var/run/nagios/
 @mode 775
 @group www
 @sample ${CHROOT}/var/nagios/rw/

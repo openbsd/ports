@@ -2,3 +2,10 @@ Sample configuration files and web server configuration can be found in
 ${PREFIX}/share/examples/nagios.
 
 Beware that Nagios might or might not work correctly on 64bit machines.
+
+To start nagios automatically, add these lines to /etc/rc.local
+
+if [ -x ${PREFIX}/sbin/nagios ]; then
+	install -d -o _nagios /var/run/nagios
+	echo -n ' nagios'; ${PREFIX}/sbin/nagios -d ${SYSCONFDIR}/nagios/nagios.cfg
+fi
