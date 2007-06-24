@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.280 2007/06/24 19:20:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.281 2007/06/24 22:07:20 martynas Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -224,6 +224,7 @@
      SUBDIR += py-jonpy
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
+     SUBDIR += py-paste-script
      SUBDIR += pyblosxom
      SUBDIR += rawdog
      SUBDIR += reportmagic
