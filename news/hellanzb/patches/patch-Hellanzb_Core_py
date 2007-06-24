@@ -1,0 +1,12 @@
+$OpenBSD: patch-Hellanzb_Core_py,v 1.1.1.1 2007/06/24 16:57:40 jasper Exp $
+--- Hellanzb/Core.py.orig	Mon Jun 11 00:58:14 2007
++++ Hellanzb/Core.py	Mon Jun 11 00:58:40 2007
+@@ -35,7 +35,7 @@ def findAndLoadConfig(optionalConfigFile = None):
+             sys.exit(1)
+ 
+     # look for conf in this order: sys.prefix, ./, or ./etc/
+-    confDirs = [os.path.join(sys.prefix, 'etc')]
++    confDirs = [os.path.join('!!SYSCONFDIR!!')]
+     try:
+         confDirs.append(os.path.join(os.getcwd(), 'etc'))
+         confDirs.append(os.getcwd())

@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2007/06/24 16:57:40 jasper Exp $
+--- setup.py.orig	Tue Mar 27 06:20:43 2007
++++ setup.py	Mon Jun 11 00:43:49 2007
+@@ -38,8 +38,8 @@ def runSetup():
+         packages = [ 'Hellanzb', 'Hellanzb.NZBLeecher', 'Hellanzb.HellaXMLRPC',
+                      'Hellanzb.external', 'Hellanzb.external.elementtree' ],
+         scripts = [ 'hellanzb.py' ],
+-        data_files = [ ( 'etc', [ 'etc/hellanzb.conf.sample' ] ),
+-                       ( 'share/doc/hellanzb', [ 'CHANGELOG', 'CREDITS', 'README', 'LICENSE' ] ) ],
++        data_files = [ ( 'share/examples/hellanzb', [ 'etc/hellanzb.conf.sample' ] ),
++                       ( 'share/doc/hellanzb', [ 'README'] ) ],
+         )
+     py2app_options = dict(
+         app = [ 'hellanzb.py' ],

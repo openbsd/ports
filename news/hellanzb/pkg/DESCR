@@ -1,0 +1,6 @@
+hellanzb is a Python application designed for *nix environments that
+retrieves nzb files and fully processes them. The goal being to make
+getting files from Usenet (e.g.: Giganews Newsgroups) as hands-free as
+possible. Once fully installed, all thats required is moving an nzb file
+to the queue directory. The rest; fetching, par-checking, un-raring,
+etc. is taken care of by hellanzb.
