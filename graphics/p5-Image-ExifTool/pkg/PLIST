@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/01/03 05:58:32 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/06/24 15:34:45 steven Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -31,6 +31,8 @@ ${P5SITE}/Image/ExifTool/FujiFilm.pm
 ${P5SITE}/Image/ExifTool/GIF.pm
 ${P5SITE}/Image/ExifTool/GPS.pm
 ${P5SITE}/Image/ExifTool/GeoTiff.pm
+${P5SITE}/Image/ExifTool/HP.pm
+${P5SITE}/Image/ExifTool/HTML.pm
 ${P5SITE}/Image/ExifTool/HtmlDump.pm
 ${P5SITE}/Image/ExifTool/ICC_Profile.pm
 ${P5SITE}/Image/ExifTool/ID3.pm
@@ -114,6 +116,8 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::GIF.3p
 @man man/man3p/Image::ExifTool::GPS.3p
 @man man/man3p/Image::ExifTool::GeoTiff.3p
+@man man/man3p/Image::ExifTool::HP.3p
+@man man/man3p/Image::ExifTool::HTML.3p
 @man man/man3p/Image::ExifTool::HtmlDump.3p
 @man man/man3p/Image::ExifTool::ICC_Profile.3p
 @man man/man3p/Image::ExifTool::ID3.3p
