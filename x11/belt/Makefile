@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2007/06/24 21:53:27 martynas Exp $
 
 COMMENT=		"Small menubar for X11 written in Perl/Tk"
 DISTNAME=		belt-1.21
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=     	x11
 
-HOMEPAGE=		http://www.stacken.kth.se/~maxz/programming.html#belt
+HOMEPAGE=		http://www.stacken.kth.se/~maxz/programming.html\#belt
 MASTER_SITES=		http://www.stacken.kth.se/~maxz/files/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

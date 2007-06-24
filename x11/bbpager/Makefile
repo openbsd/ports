@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2005/09/23 18:54:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2007/06/24 21:53:27 martynas Exp $
 
-COMMENT=	"pager for the Blackbox window manager."
+COMMENT=	"pager for the Blackbox window manager"
 
 DISTNAME=	bbpager-0.3.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 
-HOMEPAGE=	http://bbtools.windsofstorm.net/available.phtml#bbpager
+HOMEPAGE=	http://bbtools.windsofstorm.net/available.phtml\#bbpager
 
 MAINTAINER=	Josh Rivel <dorqus@freek.com>
 

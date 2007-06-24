@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/21 20:39:03 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/06/24 21:53:27 martynas Exp $
 
 COMMENT-main=	"X11 keyboard accessibility tool"
 COMMENT-gui=	"GUI for xkbset"
 
 DISTNAME=	xkbset-0.5
-PKGNAME-main=	xkbset-0.5p0
-PKGNAME-gui=	xkbset-gui-0.5
+PKGNAME-main=	xkbset-0.5p1
+PKGNAME-gui=	xkbset-gui-0.5p0
 CATEGORIES=	x11
 MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://www.math.missouri.edu/~stephen/software/#xkbset
+HOMEPAGE=	http://www.math.missouri.edu/~stephen/software/\#xkbset
 MASTER_SITES=	http://www.math.missouri.edu/~stephen/software/xkbset/
 
 MAKE_FLAGS=	X11BASE="${X11BASE}"

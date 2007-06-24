@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/01 07:37:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/24 21:53:27 martynas Exp $
 
 COMMENT=	"GTK2 based xmessage clone"
 
 DISTNAME=	gxmessage-2.6.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
-HOMEPAGE=	http://homepages.ihug.co.nz/~trmusson/programs.html#gxmessage
+HOMEPAGE=	http://homepages.ihug.co.nz/~trmusson/programs.html\#gxmessage
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
