@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/24 21:56:36 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/configobj.py
+lib/python${MODPY_VERSION}/site-packages/configobj.pyc
+lib/python${MODPY_VERSION}/site-packages/validate.py
+lib/python${MODPY_VERSION}/site-packages/validate.pyc
+share/doc/py-configobj/
+share/doc/py-configobj/BSD-LICENSE.html
+share/doc/py-configobj/BSD-LICENSE.txt
+share/doc/py-configobj/configobj.html
+share/doc/py-configobj/configobj.txt
+share/doc/py-configobj/images/
+share/doc/py-configobj/images/new_python.gif
+share/doc/py-configobj/images/osi-certified-120x100.gif
+share/doc/py-configobj/images/pythonbanner.gif
+share/doc/py-configobj/smilies/
+share/doc/py-configobj/smilies/biggrin.gif
+share/doc/py-configobj/smilies/cool.gif
+share/doc/py-configobj/smilies/exclaim.gif
+share/doc/py-configobj/smilies/sad.gif
+share/doc/py-configobj/smilies/smile.gif
+share/doc/py-configobj/smilies/wink.gif
+share/doc/py-configobj/stylesheets/
+share/doc/py-configobj/stylesheets/default.css
+share/doc/py-configobj/stylesheets/pysrc.css
+share/doc/py-configobj/stylesheets/voidspace_docutils.css
+share/doc/py-configobj/validate.html
+share/doc/py-configobj/validate.txt
