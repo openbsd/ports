@@ -1,0 +1,11 @@
+$OpenBSD: patch-docs_test_docs_py,v 1.1 2007/06/24 10:37:12 martynas Exp $
+--- docs/test_docs.py.orig	Sun Apr  1 00:06:44 2007
++++ docs/test_docs.py	Sat Jun 23 16:59:07 2007
+@@ -1,7 +1,6 @@
+ import os, sys
+ from py.compat import doctest
+ import pkg_resources
+-pkg_resources.require('FormEncode[testing]')
+ 
+ sys.path.insert(
+     0, os.path.join(os.path.dirname(os.path.dirname(__file__)), 'formencode'))
