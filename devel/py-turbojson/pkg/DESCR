@@ -1,0 +1,3 @@
+This package provides a template engine plugin, allowing you to
+easily use Json with TurboGears, Buffet or other systems that support
+python.templating.engines.

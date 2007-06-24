@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/24 21:58:12 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/TurboJson-1.0-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/TurboJson-1.0-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/TurboJson-1.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/TurboJson-1.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/TurboJson-1.0-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/TurboJson-1.0-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/TurboJson-1.0-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/TurboJson-1.0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/turbojson/
+lib/python${MODPY_VERSION}/site-packages/turbojson/__init__.py
+lib/python${MODPY_VERSION}/site-packages/turbojson/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/turbojson/jsonify.py
+lib/python${MODPY_VERSION}/site-packages/turbojson/jsonify.pyc
+lib/python${MODPY_VERSION}/site-packages/turbojson/jsonsupport.py
+lib/python${MODPY_VERSION}/site-packages/turbojson/jsonsupport.pyc
+lib/python${MODPY_VERSION}/site-packages/turbojson/tests/
+lib/python${MODPY_VERSION}/site-packages/turbojson/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/turbojson/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/turbojson/tests/test_jsonify.py
+lib/python${MODPY_VERSION}/site-packages/turbojson/tests/test_jsonify.pyc
