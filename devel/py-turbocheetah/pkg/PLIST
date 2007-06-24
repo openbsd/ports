@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/24 22:01:47 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/TurboCheetah-0.9.5-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/TurboCheetah-0.9.5-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/TurboCheetah-0.9.5-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/TurboCheetah-0.9.5-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/TurboCheetah-0.9.5-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/TurboCheetah-0.9.5-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/TurboCheetah-0.9.5-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/TurboCheetah-0.9.5-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/__init__.py
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/cheetahsupport.py
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/cheetahsupport.pyc
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/tests/
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/tests/test_template.py
+lib/python${MODPY_VERSION}/site-packages/turbocheetah/tests/test_template.pyc
