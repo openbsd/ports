@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.522 2007/06/24 10:30:22 martynas Exp $
+# $OpenBSD: Makefile,v 1.523 2007/06/24 22:06:44 martynas Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -511,11 +511,13 @@
      SUBDIR += py-SOAPpy
      SUBDIR += py-asn1
      SUBDIR += py-cheetah
+     SUBDIR += py-configobj
      SUBDIR += py-ctypes
      SUBDIR += py-dateutil
      SUBDIR += py-decoratortools
      SUBDIR += py-fpconst
      SUBDIR += py-gobject
+     SUBDIR += py-kid
      SUBDIR += py-logilab-astng
      SUBDIR += py-logilab-common
      SUBDIR += py-mxDateTime
@@ -533,12 +535,17 @@
      SUBDIR += py-ruledispatch
      SUBDIR += py-setuptools
      SUBDIR += py-silc
+     SUBDIR += py-simplejson
      SUBDIR += py-tpg
+     SUBDIR += py-turbocheetah
+     SUBDIR += py-turbojson
+     SUBDIR += py-turbokid
      SUBDIR += py-twisted
      SUBDIR += py-tz
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += py-urwid
+     SUBDIR += py-wsgiutils
      SUBDIR += py-zopeinterface
      SUBDIR += pygame
      SUBDIR += pylint
