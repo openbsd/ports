@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/19 21:51:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/06/25 14:25:30 ajacoutot Exp $
 
 COMMENT=	"SDL wrapper around the Pango library"
 
@@ -29,7 +29,10 @@ WANTLIB=	X11 Xau Xdmcp Xext expat fontconfig freetype m usbhid \
 LIB_DEPENDS=	SDL.>=7::devel/sdl \
 		pango-1.0.>=1.3,pangoft2-1.0.>=1.3::devel/pango
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext gcc4
+
+MODGCC4_ARCHES= powerpc
+MODGCC4_LANGS=  c
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
@@ -40,12 +43,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE=	Yes
 REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
-
-.if ${MACHINE_ARCH} == "powerpc"
-BUILD_DEPENDS+=	::lang/gcc/4.2
-LIBTOOL_FLAGS=	--tag=CC
-MAKE_FLAGS=	CC=${LOCALBASE}/bin/egcc
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdl-pango
