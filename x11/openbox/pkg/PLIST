@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/06/08 18:41:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/06/25 10:54:47 ajacoutot Exp $
 %%SHARED%%
 bin/gnome-panel-control
 bin/openbox
@@ -69,6 +69,7 @@ share/locale/et/LC_MESSAGES/openbox.mo
 share/locale/fi/LC_MESSAGES/openbox.mo
 share/locale/fr/LC_MESSAGES/openbox.mo
 share/locale/it/LC_MESSAGES/openbox.mo
+share/locale/ja/LC_MESSAGES/openbox.mo
 share/locale/nl/LC_MESSAGES/openbox.mo
 share/locale/no/LC_MESSAGES/openbox.mo
 share/locale/pl/LC_MESSAGES/openbox.mo
@@ -77,6 +78,7 @@ share/locale/pt_BR/LC_MESSAGES/openbox.mo
 share/locale/ru/LC_MESSAGES/openbox.mo
 share/locale/sk/LC_MESSAGES/openbox.mo
 share/locale/sv/LC_MESSAGES/openbox.mo
+share/locale/vi/LC_MESSAGES/openbox.mo
 share/locale/zh_CN/LC_MESSAGES/openbox.mo
 share/locale/zh_TW/LC_MESSAGES/openbox.mo
 share/pixmaps/
@@ -128,6 +130,12 @@ share/themes/Natura/openbox-3/max_toggled.xbm
 share/themes/Natura/openbox-3/shade.xbm
 share/themes/Natura/openbox-3/shade_hover.xbm
 share/themes/Natura/openbox-3/themerc
+share/themes/Onyx/
+share/themes/Onyx-Citrus/
+share/themes/Onyx-Citrus/openbox-3/
+share/themes/Onyx-Citrus/openbox-3/themerc
+share/themes/Onyx/openbox-3/
+share/themes/Onyx/openbox-3/themerc
 share/themes/Orang/
 share/themes/Orang/openbox-3/
 share/themes/Orang/openbox-3/themerc

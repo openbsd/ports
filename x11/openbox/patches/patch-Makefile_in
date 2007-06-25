@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2007/06/08 18:41:39 ajacoutot Exp $
---- Makefile.in.orig	Tue Jun  5 18:06:37 2007
-+++ Makefile.in	Thu Jun  7 09:15:32 2007
-@@ -790,11 +790,6 @@ dist_noinst_DATA = \
+$OpenBSD: patch-Makefile_in,v 1.2 2007/06/25 10:54:47 ajacoutot Exp $
+--- Makefile.in.orig	Mon Jun 11 01:32:27 2007
++++ Makefile.in	Sat Jun 23 11:19:20 2007
+@@ -804,11 +804,6 @@ dist_noinst_DATA = \
  	tests/urgent.c
  
  dist_doc_DATA = \
@@ -13,7 +13,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2007/06/08 18:41:39 ajacoutot Exp $
  	data/rc.xsd \
  	data/menu.xsd \
  	doc/rc-mouse-focus.xml
-@@ -2118,12 +2113,12 @@ uninstall-dist_pixmapDATA:
+@@ -2166,12 +2161,12 @@ uninstall-dist_pixmapDATA:
  	done
  install-dist_rcDATA: $(dist_rc_DATA)
  	@$(NORMAL_INSTALL)
