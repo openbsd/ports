@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/05/27 14:45:33 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/06/25 17:12:29 martynas Exp $
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -36,6 +36,6 @@ lib/python${MODPY_VERSION}/site-packages/MySQLdb/times.pyc
 lib/python${MODPY_VERSION}/site-packages/_mysql.so
 lib/python${MODPY_VERSION}/site-packages/_mysql_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/_mysql_exceptions.pyc
-share/doc/MySQL-python/
-share/doc/MySQL-python/FAQ.txt
-share/doc/MySQL-python/MySQLdb.txt
+share/doc/py-mysql/
+share/doc/py-mysql/FAQ.txt
+share/doc/py-mysql/MySQLdb.txt

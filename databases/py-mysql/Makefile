@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/05/27 14:45:33 martynas Exp $
+# $OpenBSD: Makefile,v 1.29 2007/06/25 17:12:29 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"Python interface to MySQL"
 
 VERSION=	1.2.2
 DISTNAME=	MySQL-python-${VERSION}
-PKGNAME=	py-mysql-${VERSION}
+PKGNAME=	py-mysql-${VERSION}p0
 CATEGORIES=	databases lang/python
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mysql-python/}
@@ -26,10 +26,9 @@ LIB_DEPENDS=	lib/mysql/mysqlclient_r.>=14::databases/mysql
 NO_REGRESS=	Yes
 
 MODPY_SETUPTOOLS= Yes
-DOC_DIR=	  ${PREFIX}/share/doc/MySQL-python
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOC_DIR}
-	${INSTALL_DATA} ${WRKBUILD}/doc/*.txt ${DOC_DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-mysql
+	${INSTALL_DATA} ${WRKBUILD}/doc/*.txt ${PREFIX}/share/doc/py-mysql/
 
 .include <bsd.port.mk>
