@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2007/06/04 19:02:45 kurt Exp $
+# $OpenBSD: Makefile,v 1.34 2007/06/25 15:28:44 ajacoutot Exp $
 
 COMMENT-main=		"general-purpose utility library"
 COMMENT-docs=		"glib2 documentation"
 
 VERSION=		2.12.12
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p0
+PKGNAME-main=		glib2-${VERSION}p1
 PKGNAME-docs=		glib2-docs-${VERSION}
 CATEGORIES=		devel
 
@@ -37,6 +37,12 @@ RUN_DEPENDS-docs=
 # hppa's threads are broken (configure test gives Bus error)...
 .if (${MACHINE_ARCH} == "hppa")
 CONFIGURE_ARGS+=	--disable-threads
+.endif
+
+# disable optimization on powerpc because it can lead to a
+# segfault under some circumstances
+.if ${MACHINE_ARCH} == "powerpc"
+PATCH_LIST=		patch-* PPC-patch-glib_Makefile_in
 .endif
 
 USE_GMAKE=		Yes
