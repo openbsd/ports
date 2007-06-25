@@ -11,6 +11,11 @@ http://localhost/mantis
 
 Some important notes:
 
+Choose a database system:
+
+Mantis can use a PostgreSQL or MySQL database.  Install either the php5-pgsql
+or the php5-mysql package before you use Mantis.
+
 MySQL Database:
 
 Install the database such that the Unix socket is in

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/01 12:00:58 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.5 2007/06/25 12:12:15 mbalmer Exp $
 
 COMMENT=	"web based bug tracking"
 
 DISTNAME=	mantis-1.0.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 HOMEPAGE=	http://www.mantisbugtracker.com/
 
@@ -25,8 +25,7 @@ PREFIX=		/var/www
 INSTDIR=	/var/www/mantis
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-mysql->=5.0.0:www/php5/extensions,-mysql \
-		:mini_sendmail-chroot->=1.3.6:mail/mini_sendmail,-chroot
+RUN_DEPENDS=	:mini_sendmail-chroot->=1.3.6:mail/mini_sendmail,-chroot
 
 do-install:
 	@-test ! -d ${PREFIX}/mantis && mkdir ${PREFIX}/mantis
