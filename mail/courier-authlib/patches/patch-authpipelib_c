@@ -1,7 +1,7 @@
-$OpenBSD: patch-authpipelib_c,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
---- authpipelib.c.orig	Tue Dec 27 15:22:17 2005
-+++ authpipelib.c	Tue Dec 27 15:22:52 2005
-@@ -42,7 +42,7 @@ static void execChild(int to[], int from
+$OpenBSD: patch-authpipelib_c,v 1.2 2007/06/25 12:12:26 espie Exp $
+--- authpipelib.c.orig	Thu Aug 11 01:41:21 2005
++++ authpipelib.c	Mon Jun 25 12:35:33 2007
+@@ -42,7 +42,7 @@ static void execChild(int to[], int from[])
  	close(STDOUT_FILENO); dup2(from[1], STDOUT_FILENO);
  	close(to[0]); close(to[1]); close(from[0]); close(from[1]);
  
