@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2007/06/04 18:20:16 martynas Exp $
+# $OpenBSD: Makefile,v 1.24 2007/06/26 17:21:46 jasper Exp $
 
 COMMENT=		"terminal emulation library"
 
-DISTNAME=		vte-0.16.4
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		vte-0.16.6
+PKGNAME=		${DISTNAME}
 CATEGORIES=		devel
-SHARED_LIBS +=  vte                  11.8    # .11.8
+SHARED_LIBS +=  vte                  11.9    # .11.10
 
 HOMEPAGE=		http://www.gnome.org/
 
