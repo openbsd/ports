@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/18 17:20:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/06/26 21:08:29 martynas Exp $
 
 COMMENT=		"GNOME display manager"
 
-DISTNAME=		gdm-2.18.1
+DISTNAME=		gdm-2.18.2
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/

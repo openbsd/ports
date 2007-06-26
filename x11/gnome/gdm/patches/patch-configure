@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2007/05/18 17:20:40 jasper Exp $
---- configure.orig	Sat Apr 21 13:18:28 2007
-+++ configure	Sat Apr 21 13:22:28 2007
-@@ -31596,7 +31596,6 @@ else
+$OpenBSD: patch-configure,v 1.7 2007/06/26 21:08:29 martynas Exp $
+--- configure.orig	Tue May 29 03:34:14 2007
++++ configure	Tue Jun 26 23:49:42 2007
+@@ -31665,7 +31665,6 @@ else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.6 2007/05/18 17:20:40 jasper Exp $
  fi
  
  rm -f core conftest.err conftest.$ac_objext \
-@@ -33737,7 +33736,7 @@ fi
+@@ -33806,7 +33805,7 @@ fi
  #
  # Define some variables to represent the directories we use.
  #
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.6 2007/05/18 17:20:40 jasper Exp $
  
  gdmlocaledir=${gdmconfdir}
  
-@@ -34138,9 +34137,9 @@ case "$host" in
+@@ -34207,9 +34206,9 @@ case "$host" in
  	;;
  *)
          GDM_USER_PATH="/bin:/usr/bin"
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure,v 1.6 2007/05/18 17:20:40 jasper Exp $
          XSESSION_SHELL=/bin/sh
          SOUND_PROGRAM=/usr/bin/play
          GDMGNOMESESSIONCMD=gnome-session
-@@ -34156,7 +34155,14 @@ if test ! -h /usr/X11R6 -a -x /usr/X11R6/bin/X; then
+@@ -34225,7 +34224,14 @@ if test ! -h /usr/X11R6 -a -x /usr/X11R6/bin/X; then
     X_SERVER_PATH="/usr/X11R6/bin"
     X_SERVER="/usr/X11R6/bin/X"
     GDM_USER_PATH="$GDM_USER_PATH:/usr/X11R6/bin"
