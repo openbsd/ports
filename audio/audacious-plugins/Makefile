@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/01 18:19:45 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.7 2007/06/26 17:11:39 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	"input and output plugins for audacious"
 COMMENT-arts=	"arts helper and plugin for audacious"
 
-V=		1.3.4
+V=		1.3.5
 DISTNAME=	audacious-plugins-$V
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}
 PKGNAME-arts=	audacious-arts-$V
 CATEGORIES=	audio multimedia
 
@@ -42,7 +42,7 @@ WANTLIB=	X11 Xau Xdmcp Xrender Xcursor Xext Xfixes Xi Xinerama Xrandr \
 		glib-2.0 gthread-2.0 gmodule-2.0 gobject-2.0 \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 glitz png
 
-WANTLIB-main=	${WANTLIB} Xcomposite crypto ssl ossaudio stdc++ ogg usbhid xml2
+WANTLIB-main=	${WANTLIB} Xcomposite ossaudio stdc++ ogg usbhid xml2
 WANTLIB-arts=	${WANTLIB} Xext c pthread
 
 BUILD_DEPENDS=	${RUN_DEPENDS-main}
