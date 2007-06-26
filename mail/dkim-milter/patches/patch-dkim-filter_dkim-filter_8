@@ -1,7 +1,7 @@
-$OpenBSD: patch-dkim-filter_dkim-filter_8,v 1.1.1.1 2006/07/31 15:40:22 jakob Exp $
---- dkim-filter/dkim-filter.8.orig	Fri Jun  9 02:35:50 2006
-+++ dkim-filter/dkim-filter.8	Mon Jul 31 17:16:34 2006
-@@ -198,6 +198,7 @@ See also the NOTES section below.
+$OpenBSD: patch-dkim-filter_dkim-filter_8,v 1.2 2007/06/26 21:12:47 jakob Exp $
+--- dkim-filter/dkim-filter.8.orig	Mon Jun 25 22:25:47 2007
++++ dkim-filter/dkim-filter.8	Tue Jun 26 22:59:30 2007
+@@ -248,6 +248,7 @@ See also the NOTES section below.
  Attempts to be come the specified
  .I userid
  before starting operations.
