@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/25 08:19:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/26 09:35:15 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,9 +20,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/
-DISTFILES=	murrine/${DISTNAME}.tar.bz2 \
+MASTER_SITES0=	http://cimi.netsons.org/media/download_gallery/murrine/
+DIST_SUBDIR=	${DISTNAME}
+DISTFILES=	${DISTNAME}.tar.bz2:0 \
 		MurrineThemePack.tar.bz2 \
-		Murrina{FancyCandy,VerdeOlivo,AquaIsh,Gilouche,LoveGray}.tar.bz2
+		MurrinaFancyCandy.tar.bz2 \
+		MurrinaVerdeOlivo.tar.bz2 \
+		MurrinaAquaIsh.tar.bz2 \
+		MurrinaGilouche.tar.bz2 \
+		MurrinaLoveGray.tar.bz2
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender cairo expat fontconfig freetype glitz m png z \
