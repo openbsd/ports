@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/19 09:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/06/26 22:04:45 jasper Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
-VERSION=		3.14.1
+VERSION=		3.14.2
 API_VERSION=		3.14
 DISTNAME=		gtkhtml-${VERSION}
-PKGNAME=		gtkhtml3-${VERSION}p0
+PKGNAME=		gtkhtml3-${VERSION}
 SHARED_LIBS +=	gtkhtml-3.14         0.0         # .19.0
 CATEGORIES=    		www
 
