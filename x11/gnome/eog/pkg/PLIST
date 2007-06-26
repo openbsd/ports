@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/05/13 20:03:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/06/26 20:29:31 martynas Exp $
 bin/eog
 share/applications/
 share/applications/eog.desktop
@@ -90,7 +90,6 @@ share/gnome/help/eog/zh_TW/eog.xml
 share/gnome/help/eog/zh_TW/figures/
 share/gnome/help/eog/zh_TW/figures/eog_start_window.png
 share/gnome/help/eog/zh_TW/legal.xml
-share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
@@ -206,6 +205,9 @@ share/locale/nn/LC_MESSAGES/eog.mo
 share/locale/nso/
 share/locale/nso/LC_MESSAGES/
 share/locale/nso/LC_MESSAGES/eog.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/eog.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/eog.mo

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/06/26 20:29:31 martynas Exp $
 
 COMMENT=		"Eye of GNOME: an image viewing and cataloging program"
 
-DISTNAME=		eog-2.18.1
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		eog-2.18.2
 CATEGORIES=		graphics x11/gnome
 
 MAINTAINER=		Thomas Delaet <thomas@delaet.org>

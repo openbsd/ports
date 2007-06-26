@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2007/05/13 20:03:24 jasper Exp $
---- Makefile.in.orig	Thu Apr 19 23:31:30 2007
-+++ Makefile.in	Thu Apr 19 23:31:58 2007
-@@ -231,7 +231,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop
+$OpenBSD: patch-Makefile_in,v 1.3 2007/06/26 20:29:31 martynas Exp $
+--- Makefile.in.orig	Mon May 28 21:21:14 2007
++++ Makefile.in	Tue Jun 26 21:10:45 2007
+@@ -276,7 +276,7 @@ desktop_in_files = eog.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
  gladedir = $(datadir)/eog/glade
  glade_DATA = eog.glade
- 
 -schemasdir = $(sysconfdir)/gconf/schemas
 +schemasdir = $(GCONF_SCHEMA_FILE_DIR)
  schemas_in_files = eog.schemas.in
  schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
- 
+ icondir = $(datadir)/pixmaps
