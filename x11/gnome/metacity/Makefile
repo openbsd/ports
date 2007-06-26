@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2007/04/29 21:04:18 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2007/06/26 19:42:40 martynas Exp $
 
 COMMENT=		"boring window manager for the adult in you."
 
-DISTNAME=		metacity-2.18.2
+DISTNAME=		metacity-2.18.5
 SHARED_LIBS=		metacity-private 0.0
 CATEGORIES=		x11 x11/gnome
 
