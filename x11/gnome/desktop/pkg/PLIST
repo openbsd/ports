@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/05/12 16:13:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/06/26 22:25:12 martynas Exp $
 bin/gnome-about
 include/gnome-desktop-2.0/
 include/gnome-desktop-2.0/libgnome/
@@ -36,6 +36,8 @@ share/gnome/help/fdl/es/
 share/gnome/help/fdl/es/fdl.xml
 share/gnome/help/fdl/fr/
 share/gnome/help/fdl/fr/fdl.xml
+share/gnome/help/fdl/ko/
+share/gnome/help/fdl/ko/fdl.xml
 share/gnome/help/fdl/sv/
 share/gnome/help/fdl/sv/fdl.xml
 share/gnome/help/fdl/uk/
@@ -53,6 +55,8 @@ share/gnome/help/gpl/fi/
 share/gnome/help/gpl/fi/gpl.xml
 share/gnome/help/gpl/fr/
 share/gnome/help/gpl/fr/gpl.xml
+share/gnome/help/gpl/ko/
+share/gnome/help/gpl/ko/gpl.xml
 share/gnome/help/gpl/pa/
 share/gnome/help/gpl/pa/gpl.xml
 share/gnome/help/gpl/sv/
@@ -72,6 +76,8 @@ share/gnome/help/lgpl/es/
 share/gnome/help/lgpl/es/lgpl.xml
 share/gnome/help/lgpl/fr/
 share/gnome/help/lgpl/fr/lgpl.xml
+share/gnome/help/lgpl/ko/
+share/gnome/help/lgpl/ko/lgpl.xml
 share/gnome/help/lgpl/pa/
 share/gnome/help/lgpl/pa/lgpl.xml
 share/gnome/help/lgpl/sv/
@@ -218,6 +224,9 @@ share/locale/nn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nso/
 share/locale/nso/LC_MESSAGES/
 share/locale/nso/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -286,6 +295,7 @@ share/omf/fdl/fdl-C.omf
 share/omf/fdl/fdl-ar.omf
 share/omf/fdl/fdl-es.omf
 share/omf/fdl/fdl-fr.omf
+share/omf/fdl/fdl-ko.omf
 share/omf/fdl/fdl-sv.omf
 share/omf/fdl/fdl-uk.omf
 share/omf/gpl/
@@ -295,6 +305,7 @@ share/omf/gpl/gpl-ca.omf
 share/omf/gpl/gpl-es.omf
 share/omf/gpl/gpl-fi.omf
 share/omf/gpl/gpl-fr.omf
+share/omf/gpl/gpl-ko.omf
 share/omf/gpl/gpl-pa.omf
 share/omf/gpl/gpl-sv.omf
 share/omf/gpl/gpl-uk.omf
@@ -305,6 +316,7 @@ share/omf/lgpl/lgpl-C.omf
 share/omf/lgpl/lgpl-ar.omf
 share/omf/lgpl/lgpl-es.omf
 share/omf/lgpl/lgpl-fr.omf
+share/omf/lgpl/lgpl-ko.omf
 share/omf/lgpl/lgpl-pa.omf
 share/omf/lgpl/lgpl-sv.omf
 share/omf/lgpl/lgpl-uk.omf
