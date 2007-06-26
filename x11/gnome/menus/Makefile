@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2007/06/26 20:00:39 martynas Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"implementation of the FreeDesktop Desktop Menu Spec"
 
-DISTNAME=		gnome-menus-2.18.0
+DISTNAME=		gnome-menus-2.18.2
 SHARED_LIBS +=	gnome-menu           3.9      # .3.9
 CATEGORIES=		x11/gnome
 

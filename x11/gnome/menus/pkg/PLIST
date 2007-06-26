@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/05/11 15:03:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/06/26 20:00:39 martynas Exp $
 bin/gmenu-simple-editor
 bin/gnome-menu-spec-test
 include/gnome-menus/
@@ -123,6 +123,9 @@ share/locale/nb/LC_MESSAGES/gnome-menus.mo
 share/locale/ne/LC_MESSAGES/gnome-menus.mo
 share/locale/nl/LC_MESSAGES/gnome-menus.mo
 share/locale/nn/LC_MESSAGES/gnome-menus.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/gnome-menus.mo
 share/locale/or/LC_MESSAGES/gnome-menus.mo
 share/locale/pa/LC_MESSAGES/gnome-menus.mo
 share/locale/pl/LC_MESSAGES/gnome-menus.mo
