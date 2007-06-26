@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/12 23:28:42 jcs Exp $
-
-# This port currently only works with archs supporting dynamic loading
-# and has Apache that supports DSO's.
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.15 2007/06/26 19:19:46 simon Exp $
 
 DISTNAME=	mod_auth_radius-1.5.7
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www
+MODULES+=	apache-module
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MODAPACHE_NAME=		radius_auth
+MODAPACHE_ENABLE=	mod_auth_radius-enable
+MODAPACHE_MODULE=	mod_auth_radius.so
 
 COMMENT=	"Apache RADIUS authentication module"
 HOMEPAGE=	http://www.freeradius.org/mod_auth_radius/
@@ -25,17 +26,14 @@ WRKDIST=	${WRKDIR}/${DISTNAME}
 
 do-build:
 	@cd ${WRKSRC}; /usr/sbin/apxs -c mod_auth_radius.c
-	@sed 's,!!PREFIX!!,${PREFIX},' \
-		< ${FILESDIR}/mod_auth_radius-enable \
-		> ${WRKBUILD}/mod_auth_radius-enable
+	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mod_auth_radius
-	${INSTALL_DATA} ${WRKSRC}/mod_auth_radius.so ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKBUILD}/mod_auth_radius-enable ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/httpd.conf \
 		${PREFIX}/share/examples/mod_auth_radius/httpd.conf-example
 	${INSTALL_DATA} ${WRKSRC}/htaccess \
 		${PREFIX}/share/examples/mod_auth_radius/htaccess-example
+	${MODAPACHE_INSTALL}
 
 .include <bsd.port.mk>

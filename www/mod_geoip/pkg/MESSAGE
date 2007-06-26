@@ -1,7 +1,7 @@
 To finish the install of mod_geoip, you need
 to enable the module using the following command
 
-  ${PREFIX}/sbin/mod_geoip-enable
+  ${PREFIX}/sbin/${MODAPACHE_ENABLE}
 
 If you already have Apache running on your machine,
 you should not use "apachectl restart" - instead,

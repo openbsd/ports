@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/01/11 08:20:26 jolan Exp $
-lib/mod_auth_bsd.so
-sbin/mod_auth_bsd-enable
+@comment $OpenBSD: PLIST,v 1.5 2007/06/26 19:19:45 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_auth_bsd/
 share/doc/mod_auth_bsd/README
-@extra /usr/lib/apache/modules/mod_auth_bsd.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}

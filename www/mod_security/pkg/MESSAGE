@@ -1,7 +1,7 @@
 To finish the install of ${PKGNAME}, you need
 to enable the module using the following command
 
-  ${PREFIX}/sbin/mod_security-enable
+  ${PREFIX}/sbin/${MODAPACHE_ENABLE}
 
 The manual is found at ${PREFIX}/share/doc/mod_security.
 

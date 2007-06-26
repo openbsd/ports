@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/01/26 00:08:45 alek Exp $
-lib/mod_mp3.so
-sbin/mod_mp3-enable
+@comment $OpenBSD: PLIST,v 1.4 2007/06/26 19:19:46 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_mp3/
 share/doc/mod_mp3/faq.html
 share/examples/mod_mp3/
 share/examples/mod_mp3/mp3.conf
 %%mysql%%
 %%postgresql%%
-@unexec rm -f /usr/lib/apache/modules/mod_mp3.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}

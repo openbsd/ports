@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/10/13 12:56:25 danh Exp $
-lib/mod_frontpage.so
-@mode 0444
-@sample /usr/lib/apache/modules/mod_frontpage.so
+@comment $OpenBSD: PLIST,v 1.7 2007/06/26 19:19:46 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
 @mode 4555
 sbin/fpexec
 @mode
 sbin/fpstatic
-sbin/mod_frontpage-enable
+sbin/${MODAPACHE_ENABLE}
+@unexec-delete rm -f ${MODAPACHE_FINAL}

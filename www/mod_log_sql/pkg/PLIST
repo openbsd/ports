@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/02/05 10:49:49 alek Exp $
-lib/mod_log_sql.so
-sbin/mod_log_sql-enable
+@comment $OpenBSD: PLIST,v 1.4 2007/06/26 19:19:46 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_log_sql/
 share/doc/mod_log_sql/contents.png
 share/doc/mod_log_sql/documentation.css
@@ -24,4 +25,4 @@ share/doc/mod_log_sql/up_g.png
 share/examples/mod_log_sql/
 share/examples/mod_log_sql/create_tables.sql
 share/examples/mod_log_sql/make_combined_log.pl
-@unexec rm -f /usr/lib/apache/modules/mod_log_sql.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}

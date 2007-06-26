@@ -1,7 +1,7 @@
 To finish the install of ${PKGNAME}, you need
 to enable the module using the following command
 
-  ${PREFIX}/sbin/mod_gzip-enable
+  ${PREFIX}/sbin/${MODAPACHE_ENABLE}
 
 Also, copy the following file into your Apache config:
 ${PREFIX}/share/examples/mod_gzip/mod_gzip.conf.sample

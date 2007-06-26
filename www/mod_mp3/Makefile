@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/06/26 19:19:46 simon Exp $
 
 COMMENT=	"turns Apache into an MP3 or Ogg streaming server"
 
-# This port currently only works with archs supporting dynamic loading
-# and has Apache that supports DSO's.
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
-
 DISTNAME=	mod_mp3-0.39
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www audio
 MASTER_SITES=	http://download.tangent.org/ \
 		ftp://ftp.tangent.org/pub/apache/
 
 HOMEPAGE=	http://tangent.org/
+
+MODULES+=	apache-module
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,6 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	mysql postgresql
 FLAVOR?=
+
+MODAPACHE_NAME=		mp3
+MODAPACHE_LOCATION=	${WRKBUILD}/src
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
@@ -52,13 +53,9 @@ EXAMPLES+=	${EXAMPLESRC}/pgsql_schema
 .endif
 
 post-build:
-	@sed 's,!!PREFIX!!,${PREFIX},' \
-		< ${FILESDIR}/mod_mp3-enable \
-		> ${WRKBUILD}/mod_mp3-enable
+	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:
-	${INSTALL_DATA} ${WRKBUILD}/src/mod_mp3.so ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKBUILD}/mod_mp3-enable ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mod_mp3
 	${INSTALL_DATA} ${WRKSRC}/faq.html ${PREFIX}/share/doc/mod_mp3
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mod_mp3
@@ -66,5 +63,6 @@ do-install:
 .if defined(EXAMPLES)
 	${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/mod_mp3
 .endif
+	${MODAPACHE_INSTALL}
 
 .include <bsd.port.mk>

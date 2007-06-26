@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/10/13 10:16:31 xsa Exp $
-lib/mod_layout.so
-sbin/mod_layout-enable
+@comment $OpenBSD: PLIST,v 1.4 2007/06/26 19:19:46 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_layout/
 share/doc/mod_layout/directives/
 share/doc/mod_layout/directives/Layout.html
@@ -38,4 +39,4 @@ share/doc/mod_layout/directives/LayoutProxy.html
 share/doc/mod_layout/directives/LayoutReplaceTags.html
 share/doc/mod_layout/directives/LayoutTimeFormat.html
 share/doc/mod_layout/faq.html
-@extra /usr/lib/apache/modules/mod_layout.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}

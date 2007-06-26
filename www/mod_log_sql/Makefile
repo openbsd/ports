@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/06/26 19:19:46 simon Exp $
 
 COMMENT=	"Apache module for logging to an SQL database"
 
-# This port currently only works with archs supporting dynamic loading
-# and has Apache that supports DSO's.
-SHARED_ONLY=	Yes
-
 DISTNAME=	mod_log_sql-1.18
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.outoforder.cc/projects/apache/mod_log_sql/
+
+MODULES+=	apache-module
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,6 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		z
+
+MODAPACHE_NAME=		sql_log
+MODAPACHE_ENABLE=	mod_log_sql-enable
+MODAPACHE_MODULE=	mod_log_sql.so
 
 MASTER_SITES=	http://www.outoforder.cc/downloads/mod_log_sql/
 EXTRACT_SUFX=	.tar.bz2
@@ -36,13 +38,9 @@ FLAGS=		-I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib \
 do-build:
 	cd ${WRKBUILD} && \
 		${APXS} -c -o mod_log_sql.so ${FLAGS} mod_log_sql.c
-	@sed 's,!!PREFIX!!,${PREFIX},' \
-		< ${FILESDIR}/mod_log_sql-enable \
-		> ${WRKBUILD}/mod_log_sql-enable
+	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:
-	${INSTALL_DATA} ${WRKBUILD}/mod_log_sql.so ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKBUILD}/mod_log_sql-enable ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mod_log_sql
 	for p in ${EXAMPLES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$$p \
@@ -51,5 +49,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mod_log_sql
 	${INSTALL_DATA} ${WRKSRC}/Documentation/HTML/* \
 		${PREFIX}/share/doc/mod_log_sql
+	${MODAPACHE_INSTALL}
 
 .include <bsd.port.mk>

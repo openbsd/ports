@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2007/06/26 19:19:46 simon Exp $
 
 COMMENT=	"Microsoft FrontPage Server extensions for Apache"
 
@@ -6,13 +6,15 @@ ONLY_FOR_ARCHS=	i386
 
 VERSION=	1.6.2
 DISTNAME=	mod_frontpage_mirfak-${VERSION}
-PKGNAME=	mod_frontpage-${VERSION}
+PKGNAME=	mod_frontpage-${VERSION}p0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mirfak/}
 
 HOMEPAGE=	http://mirfak.sourceforge.net
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
+
+MODULES+=	apache-module
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,6 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 SEPARATE_BUILD=	concurrent
+
+MODAPACHE_NAME=	frontpage
 
 APXS=		/usr/sbin/apxs
 CC!=		${APXS} -q CC
@@ -50,14 +54,12 @@ do-build:
 	${CC} ${CFLAGS} ${DEF2} ${INC} -o ${WRKBUILD}/fpexec ${WRKSRC}/fpexec.c
 	${CC} ${CFLAGS} ${DEF2} ${INC} \
 	    -o ${WRKBUILD}/fpstatic ${WRKSRC}/fpstatic.c
-	@sed 's,!!PREFIX!!,${PREFIX},' ${FILESDIR}/mod_frontpage-enable > \
-	    ${WRKBUILD}/mod_frontpage-enable
+	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:
-	${INSTALL_DATA} ${WRKBUILD}/mod_frontpage.so ${PREFIX}/lib/
-	${INSTALL_SCRIPT} ${WRKBUILD}/mod_frontpage-enable ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKBUILD}/fpexec ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKBUILD}/fpstatic ${PREFIX}/sbin/
 	@chown root:www ${PREFIX}/sbin/fpexec ${PREFIX}/sbin/fpstatic
+	${MODAPACHE_INSTALL}
 
 .include <bsd.port.mk>

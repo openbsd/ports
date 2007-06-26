@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/01/26 02:24:06 alek Exp $
-lib/mod_gzip.so
-sbin/mod_gzip-enable
+@comment $OpenBSD: PLIST,v 1.6 2007/06/26 19:19:46 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_gzip/
 share/doc/mod_gzip/browser.htm
 share/doc/mod_gzip/cache.htm
@@ -18,4 +19,4 @@ share/doc/mod_gzip/valid-xhtml11.png
 share/doc/mod_gzip/versions.htm
 share/examples/mod_gzip/
 share/examples/mod_gzip/mod_gzip.conf.sample
-@unexec rm -f /usr/lib/apache/modules/mod_gzip.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}

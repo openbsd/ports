@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.18 2007/05/04 08:43:05 bernd Exp $
-lib/mod_perl.so
+@comment $OpenBSD: PLIST,v 1.19 2007/06/26 19:19:46 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
 ${P5ARCH}/
 ${P5ARCH}/Apache/
 ${P5ARCH}/Apache.pm
@@ -109,7 +110,7 @@ ${P5ARCH}/mod_perl_tuning.pod
 @man man/man3p/mod_perl_method_handlers.3p
 @man man/man3p/mod_perl_traps.3p
 @man man/man3p/mod_perl_tuning.3p
-sbin/mod_perl-enable
+sbin/${MODAPACHE_ENABLE}
 share/doc/mod_perl/
 share/doc/mod_perl/mod_perl.html
-@unexec rm -f /usr/lib/apache/modules/mod_perl.so
+@unexec-delete rm -f ${MODAPACHE_FINAL}

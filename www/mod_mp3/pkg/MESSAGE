@@ -1,7 +1,7 @@
 To finish the install of mod_mp3, you need
 to enable the module by using the following command
 
-  ${PREFIX}/sbin/mod_mp3-enable	
+  ${PREFIX}/sbin/${MODAPACHE_ENABLE}
 
 Also, copy the following file into your Apache config
 directory:

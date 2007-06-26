@@ -1,7 +1,7 @@
 To finish the install of mod_auth_radius, you need
 to enable the module using the following command
 
-  ${PREFIX}/sbin/mod_auth_radius-enable
+  ${PREFIX}/sbin/${MODAPACHE_ENABLE}
 
 Also, copy the following file into your Apache config:
 ${PREFIX}/share/examples/mod_auth_radius/httpd.conf-example
