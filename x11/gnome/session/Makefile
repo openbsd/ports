@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2007/06/26 22:26:32 martynas Exp $
 
 COMMENT=		"GNOME session"
 
-DISTNAME=		gnome-session-2.18.0
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		gnome-session-2.18.2
 CATEGORIES=		x11 x11/gnome
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-session/2.18/}
