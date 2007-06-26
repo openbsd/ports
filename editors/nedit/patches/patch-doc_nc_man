@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_nc_man,v 1.5 2004/11/04 08:07:11 djm Exp $
---- doc/nc.man.orig	Fri Oct  1 07:03:59 2004
-+++ doc/nc.man	Sat Oct 16 17:45:26 2004
+$OpenBSD: patch-doc_nc_man,v 1.6 2007/06/26 19:54:53 jasper Exp $
+--- doc/nc.man.orig	Thu Sep 30 23:03:59 2004
++++ doc/nc.man	Fri Jun 22 17:30:03 2007
 @@ -128,13 +128,13 @@
  .rm #[ #] #H #V #F C
  .\" ========================================================================
@@ -19,7 +19,7 @@ $OpenBSD: patch-doc_nc_man,v 1.5 2004/11/04 08:07:11 djm Exp $
     [\fB\-ask\fR] [\fB\-noask\fR] [\fB\-svrname\fR \fIname\fR] [\fB\-svrcmd\fR \fIcommand\fR] 
     [\fB\-lm\fR \fIlanguagemode\fR] 
     [\fB\-geometry\fR \fIgeometry\fR | \fB\-g\fR \fIgeometry\fR] [\fB\-icon\fR | \fB\-iconic\fR] 
-@@ -144,14 +144,14 @@ nc [\fB\-read\fR] [\fB\-create\fR] [\fB\
+@@ -144,14 +144,14 @@ nc [\fB\-read\fR] [\fB\-create\fR] [\fB\-line\fR \fIn\
     [\fB\-V\fR | \fB\-version\fR] [\fB\-\-\fR] [file...]
  .SH "DESCRIPTION"
  .IX Header "DESCRIPTION"
@@ -62,7 +62,7 @@ $OpenBSD: patch-doc_nc_man,v 1.5 2004/11/04 08:07:11 djm Exp $
  the X resource `nc.serverCommand', by default, \fI\*(L"nedit \-server\*(R"\fR.
  .IP "\fB\-lm\fR \fIlanguagemode\fR" 4
  .IX Item "-lm languagemode"
-@@ -221,11 +221,11 @@ Under rare conditions (such as a slow co
+@@ -221,11 +221,11 @@ Under rare conditions (such as a slow connection), it 
  increase the time-out period. In most cases, the default is fine. 
  .IP "\fB\-wait\fR" 4
  .IX Item "-wait"

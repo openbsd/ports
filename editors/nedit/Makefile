@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2007/02/19 14:42:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2007/06/26 19:54:53 jasper Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		"X11/Motif GUI text editor"
 
 DISTNAME=		nedit-5.5
+PKGNAME=		${DISTNAME}p0
 DISTFILES=		${DISTNAME}-src.tar.gz wrapmark.diff:0
 CATEGORIES=		editors x11
 
@@ -15,8 +16,6 @@ MASTER_SITES=		http://www.nedit.org/ftp/v5_5/ \
 MASTER_SITES0=		http://www.obsd.fr/OpenBSD/distfiles/
 
 HOMEPAGE=		http://www.nedit.org/
-
-MAINTAINER=		Damien Miller <djm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

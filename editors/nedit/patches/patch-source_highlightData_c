@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_highlightData_c,v 1.1 2007/06/26 19:54:53 jasper Exp $
+--- source/highlightData.c.orig	Sun Aug  1 12:06:10 2004
++++ source/highlightData.c	Fri Jun 22 17:37:08 2007
+@@ -265,7 +265,7 @@ static char *DefaultPatternSets[] = {
+ 	preprocessor keywords:\"<__(?:LINE|FILE|DATE|TIME|STDC)__>\":::Preprocessor::\n\
+ 	character constant:\"L?'\":\"'\":\"[^\\\\][^']\":Character Const::\n\
+ 	numeric constant:\"(?<!\\Y)(?:(?:0(?:x|X)[0-9a-fA-F]*)|(?:(?:[0-9]+\\.?[0-9]*)|(?:\\.[0-9]+))(?:(?:e|E)(?:\\+|-)?[0-9]+)?)(?:L|l|UL|ul|u|U|F|f)?(?!\\Y)\":::Numeric Const::D\n\
+-	storage keyword:\"<(?:class|typename|typeid|template|friend|virtual|inline|explicit|operator|public|private|protected|const|extern|auto|register|static|mutable|unsigned|signed|volatile|char|double|float|int|long|short|bool|wchar_t|void|typedef|struct|union|enum|asm|export)>\":::Storage Type::D\n\
++	storage keyword:\"<(?:class|typename|typeid|template|friend|virtual|inline|explicit|operator|public|private|protected|const|extern|auto|register|static|mutable|unsigned|signed|volatile|char|double|float|int|long|short|bool|wchar_t|void|u_char|u_short|u_int|u_long|u_int8_t|u_int16_t|u_int32_t|u_int64_t|int8_t|int16_t|int32_t|int64_t|typedef|struct|union|enum|asm|export)>\":::Storage Type::D\n\
+ 	keyword:\"<(?:new|delete|this|return|goto|if|else|case|default|switch|break|continue|while|do|for|try|catch|throw|sizeof|true|false|namespace|using|dynamic_cast|static_cast|reinterpret_cast|const_cast)>\":::Keyword::D\n\
+ 	braces:\"[{}]\":::Keyword::D}",
+     "C:1:0 {\n\

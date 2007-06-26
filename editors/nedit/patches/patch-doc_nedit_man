@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_nedit_man,v 1.4 2004/11/04 08:07:11 djm Exp $
---- doc/nedit.man.orig	Fri Oct  1 07:03:59 2004
-+++ doc/nedit.man	Sat Oct 16 17:44:11 2004
+$OpenBSD: patch-doc_nedit_man,v 1.5 2007/06/26 19:54:53 jasper Exp $
+--- doc/nedit.man.orig	Thu Sep 30 23:03:59 2004
++++ doc/nedit.man	Fri Jun 22 17:30:03 2007
 @@ -168,14 +168,14 @@ Go to line number \fIn\fR.
  .IP "\fB\-server\fR" 4
  .IX Item "-server"
@@ -19,7 +19,7 @@ $OpenBSD: patch-doc_nedit_man,v 1.4 2004/11/04 08:07:11 djm Exp $
  .IP "\fB\-tags\fR \fIfile\fR" 4
  .IX Item "-tags file"
  Load a file of directions for finding definitions of program subroutines and
-@@ -249,7 +249,7 @@ Set the value of an X resource to overri
+@@ -249,7 +249,7 @@ Set the value of an X resource to override a default v
  .IP "\fB\-svrname\fR \fIname\fR" 4
  .IX Item "-svrname name"
  When starting nedit in server mode, name the server, such that it responds to
@@ -28,7 +28,7 @@ $OpenBSD: patch-doc_nedit_man,v 1.4 2004/11/04 08:07:11 djm Exp $
  naming servers, you can run several simultaneously, and direct files and
  commands specifically to any one. Specifying a non-empty name automatically
  designates this session as an NEdit server, as though \fB\-server\fR were specified.
-@@ -344,7 +344,7 @@ NEdit sources, executables, additional d
+@@ -344,7 +344,7 @@ NEdit sources, executables, additional documentation, 
  are available from the NEdit web site at http://nedit.org.
  .SH "SEE ALSO"
  .IX Header "SEE ALSO"
