@@ -1,0 +1,133 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/26 21:03:17 jasper Exp $
+%%SHARED%%
+bin/ecppc
+bin/ecppl
+bin/ecppll
+bin/tntnet
+bin/tntnet-config
+include/tnt/
+include/tnt/compident.h
+include/tnt/comploader.h
+include/tnt/component.h
+include/tnt/componentfactory.h
+include/tnt/contentdisposition.h
+include/tnt/contenttype.h
+include/tnt/convert.h
+include/tnt/cookie.h
+include/tnt/data.h
+include/tnt/deflatestream.h
+include/tnt/ecpp.h
+include/tnt/encoding.h
+include/tnt/htmlescostream.h
+include/tnt/http.h
+include/tnt/httperror.h
+include/tnt/httpheader.h
+include/tnt/httpmessage.h
+include/tnt/httpparser.h
+include/tnt/httpreply.h
+include/tnt/httprequest.h
+include/tnt/inflatestream.h
+include/tnt/langlib.h
+include/tnt/messageattribute.h
+include/tnt/messageheader.h
+include/tnt/messageheaderparser.h
+include/tnt/mimedb.h
+include/tnt/multipart.h
+include/tnt/object.h
+include/tnt/objectptr.h
+include/tnt/objecttemplate.h
+include/tnt/parser.h
+include/tnt/pointer.h
+include/tnt/savepoint.h
+include/tnt/scope.h
+include/tnt/scopemanager.h
+include/tnt/sessionscope.h
+include/tnt/sodata.h
+include/tnt/stringlessignorecase.h
+include/tnt/tntconfig.h
+include/tnt/unzipfile.h
+include/tnt/urlmapper.h
+include/tnt/zdata.h
+lib/libtntnet.a
+lib/libtntnet.la
+lib/libtntnet_cgi.a
+lib/libtntnet_cgi.la
+lib/libtntnet_sdk.a
+lib/libtntnet_sdk.la
+lib/tntnet/
+lib/tntnet/alldemos.a
+lib/tntnet/alldemos.la
+lib/tntnet/alldemos.so.0.0
+lib/tntnet/calc.a
+lib/tntnet/calc.la
+lib/tntnet/calc.so.0.0
+lib/tntnet/calcajax.a
+lib/tntnet/calcajax.la
+lib/tntnet/calcajax.so.0.0
+lib/tntnet/calci18n.a
+lib/tntnet/calci18n.la
+lib/tntnet/calci18n.so.0.0
+lib/tntnet/calcmvc.a
+lib/tntnet/calcmvc.la
+lib/tntnet/calcmvc.so.0.0
+lib/tntnet/chat.a
+lib/tntnet/chat.la
+lib/tntnet/chat.so.0.0
+lib/tntnet/comp.a
+lib/tntnet/comp.la
+lib/tntnet/comp.so.0.0
+lib/tntnet/config.a
+lib/tntnet/config.la
+lib/tntnet/config.so.0.0
+lib/tntnet/controls.a
+lib/tntnet/controls.la
+lib/tntnet/controls.so.0.0
+lib/tntnet/cookie.a
+lib/tntnet/cookie.la
+lib/tntnet/cookie.so.0.0
+lib/tntnet/extlib.a
+lib/tntnet/extlib.la
+lib/tntnet/extlib.so.0.0
+lib/tntnet/hello.a
+lib/tntnet/hello.la
+lib/tntnet/hello.so.0.0
+lib/tntnet/savepoint.a
+lib/tntnet/savepoint.la
+lib/tntnet/savepoint.so.0.0
+lib/tntnet/session.a
+lib/tntnet/session.la
+lib/tntnet/session.so.0.0
+lib/tntnet/sprintf.a
+lib/tntnet/sprintf.la
+lib/tntnet/sprintf.so.0.0
+lib/tntnet/strings.a
+lib/tntnet/strings.la
+lib/tntnet/strings.so.0.0
+lib/tntnet/tntnet.a
+lib/tntnet/tntnet.la
+lib/tntnet/tntnet.so.6.1
+lib/tntnet/upload.a
+lib/tntnet/upload.la
+lib/tntnet/upload.so.0.0
+@man man/man1/ecppc.1
+@man man/man1/ecppl.1
+@man man/man1/ecppll.1
+@man man/man1/tntnet-config.1
+@man man/man7/ecpp.7
+@man man/man7/tntnet.conf.7
+@man man/man7/tntnet.properties.7
+@man man/man8/tntnet.8
+share/doc/tntnet/
+share/doc/tntnet/quick-start-guide.pdf
+share/doc/tntnet/tntnet-configuration.pdf
+share/doc/tntnet/tntnet.pdf
+share/examples/tntnet/
+@sample ${SYSCONFDIR}/tntnet/
+share/examples/tntnet/mime.conf
+@sample ${SYSCONFDIR}/tntnet/mime.conf
+share/examples/tntnet/tntnet.conf
+@sample ${SYSCONFDIR}/tntnet/tntnet.conf
+share/examples/tntnet/tntnet.properties
+@sample ${SYSCONFDIR}/tntnet/tntnet.properties
+share/tntnet/
+share/tntnet/ecpp.vim

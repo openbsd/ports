@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/06/26 21:03:17 jasper Exp $
+@lib lib/libtntnet.so.${LIBtntnet_VERSION}
+@lib lib/libtntnet_cgi.so.${LIBtntnet_cgi_VERSION}
+@lib lib/libtntnet_sdk.so.${LIBtntnet_sdk_VERSION}

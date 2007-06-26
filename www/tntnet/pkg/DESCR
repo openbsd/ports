@@ -1,0 +1,8 @@
+Tntnet is a web application server for web applications written in C++.
+
+You can write a Web-page with HTML and with special tags you embed
+C++-code into the page for active contents. These pages, called
+components are compiled into C++-classes with the ecpp-compilier
+"ecppc", then compiled into objectcode and linked into a shared library.
+This shared library is loaded by the webserver "tntnet" on request and
+executed.
