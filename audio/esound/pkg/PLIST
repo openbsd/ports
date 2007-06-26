@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/08/05 03:02:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/06/26 17:10:29 martynas Exp $
 bin/esd
 bin/esd-config
 bin/esdcat
@@ -18,7 +18,6 @@ lib/pkgconfig/esound.pc
 @man man/man1/esd.1
 @man man/man1/esdcat.1
 @man man/man1/esdctl.1
-@man man/man1/esddsp.1
 @man man/man1/esdfilt.1
 @man man/man1/esdloop.1
 @man man/man1/esdmon.1

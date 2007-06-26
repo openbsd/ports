@@ -1,6 +1,7 @@
---- esd.c.orig	Wed Jan 14 07:00:46 2004
-+++ esd.c	Thu Jun 24 20:07:12 2004
-@@ -236,12 +236,12 @@ struct stat dir_stats;
+$OpenBSD: patch-esd_c,v 1.1 2007/06/26 17:10:29 martynas Exp $
+--- esd.c.orig	Thu May  3 23:28:35 2007
++++ esd.c	Sat Jun  2 23:17:14 2007
+@@ -274,12 +274,12 @@ struct stat dir_stats;
  
  #if defined(S_ISVTX)
  #define ESD_UNIX_SOCKET_DIR_MODE (S_IRUSR|S_IWUSR|S_IXUSR|\

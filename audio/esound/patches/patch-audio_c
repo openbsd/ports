@@ -1,11 +1,39 @@
---- audio.c.orig	Tue Jun  4 10:40:44 2002
-+++ audio.c	Fri Jul 19 18:32:52 2002
-@@ -25,6 +25,8 @@ static int esd_audio_fd = -1;
- #  include "audio_alsa.c"
- #elif defined(DRIVER_ALSA_09)
- #include "audio_alsa09.c"
-+#elif defined(DRIVER_SUN)
-+#  include "audio_sun.c"
- #elif defined(DRIVER_OSS)
- #  include "audio_oss.c"
- #elif defined(DRIVER_AIX)
+$OpenBSD: patch-audio_c,v 1.3 2007/06/26 17:10:29 martynas Exp $
+--- audio.c.orig	Thu Apr 19 17:43:59 2007
++++ audio.c	Sat Jun  2 23:15:49 2007
+@@ -20,34 +20,7 @@ static int esd_audio_fd = -1;
+ /*******************************************************************/
+ /* returns audio_fd for use by main prog - platform dependent */
+ 
+-/* ALSA before OSS as ALSA is OSS compatible */
+-#if defined(DRIVER_ALSA_09)
+-#  include "audio_alsa09.c"
+-#elif defined(DRIVER_ALSA) || defined(DRIVER_NEWALSA) 
+-#  include "audio_alsa.c"
+-#elif defined(DRIVER_OSS)
+-#  include "audio_oss.c"
+-#elif defined(DRIVER_AIX)
+-#  include "audio_aix.c"
+-#elif defined(DRIVER_IRIX)
+-#  include "audio_irix.c"
+-#elif defined(DRIVER_HPUX)
+-#  include "audio_hpux.c"
+-#elif defined(DRIVER_OSF)
+-#  include "audio_osf.c"
+-#elif defined(DRIVER_SOLARIS)
+-#  include "audio_solaris.c"
+-#elif defined(DRIVER_MKLINUX)
+-#  include "audio_mklinux.c"
+-#elif defined(DRIVER_DART)
+-#  include "audio_dart.c"
+-#elif defined(DRIVER_COREAUDIO)
+-#  include "audio_coreaudio.c"
+-#elif defined(DRIVER_ARTS)
+-#  include "audio_arts.c"
+-#else
+-#  include "audio_none.c"
+-#endif
++#include "audio_sun.c"
+ 
+ /*******************************************************************/
+ /* display available devices */

@@ -1,1 +1,6 @@
-sound library for Enlightenment
+Esound is an audio mixing server that allows multiple applications
+to output sound to the same audio device.
+
+Esound is seriously lacking in features required for a modern desktop
+environment, particularly for multi-channel audio and audio/video
+synchronization.
