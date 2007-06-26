@@ -1,0 +1,15 @@
+XMPP4R is a XMPP/Jabber library for Ruby. Its goal is to provide a
+complete framework to develop Jabber-related applications or scripts
+in Ruby.
+
+Features:
+
+    * Fully object-oriented (well, it's Ruby ;)
+    * Aims at being XMPP compliant
+    * Threaded
+    * Well unit-tested and documented code
+	* Uses well-known and well-tested software like REXML, instead
+	  of reinventing the wheel
+    * Very easy to extend
+	* Released under Ruby's license, which is compatible with the
+	  GNU GPL via an explicit dual-licensing clause.
