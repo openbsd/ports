@@ -1,6 +1,6 @@
-$OpenBSD: patch-suballoc_cpp,v 1.2 2007/05/26 16:55:53 rui Exp $
---- suballoc.cpp.orig	Mon Apr 16 10:49:26 2007
-+++ suballoc.cpp	Sat May 26 16:38:03 2007
+$OpenBSD: patch-suballoc_cpp,v 1.3 2007/06/26 19:47:59 rui Exp $
+--- suballoc.cpp.orig	Tue May 22 06:03:02 2007
++++ suballoc.cpp	Mon Jun 25 19:34:54 2007
 @@ -31,10 +31,16 @@ inline void* SubAllocator::RemoveNode(int indx) 
    return RetVal;
  }

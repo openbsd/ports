@@ -1,6 +1,6 @@
-$OpenBSD: patch-os_hpp,v 1.1 2007/05/26 21:42:58 rui Exp $
---- os.hpp.orig	Sat May 26 19:11:08 2007
-+++ os.hpp	Sat May 26 19:17:50 2007
+$OpenBSD: patch-os_hpp,v 1.2 2007/06/26 19:47:59 rui Exp $
+--- os.hpp.orig	Tue May 22 06:03:02 2007
++++ os.hpp	Mon Jun 25 19:34:54 2007
 @@ -227,12 +227,12 @@ typedef const char* MSGID;
    #endif
  #endif
