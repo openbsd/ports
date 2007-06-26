@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.469 2007/06/18 18:42:05 kurt Exp $
+# $OpenBSD: Makefile,v 1.470 2007/06/26 14:09:11 jcs Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -306,6 +306,7 @@
      SUBDIR += ruby-net-sftp
      SUBDIR += ruby-net-ssh
      SUBDIR += ruby-pcap
+     SUBDIR += ruby-xmpp4r
      SUBDIR += samba
      SUBDIR += samba,cups
      SUBDIR += samba,cups,ldap
