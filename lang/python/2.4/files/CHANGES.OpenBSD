@@ -1,3 +1,5 @@
+$OpenBSD: CHANGES.OpenBSD,v 1.2 2007/06/26 16:50:18 martynas Exp $
+
 As required by item 3 of the PSF license, here is a brief summary
 of changes made to this version of Python for the OpenBSD package.
 
@@ -11,14 +13,10 @@ of changes made to this version of Python for the OpenBSD package.
 3.  OpenBSD threads are used for threading support.
 
 4.  The interpreter is called "python2.4" in order to support multiple
-    versions of Python coexisting on the same system.  If no "python"
-    binary exists, a symlink to "python2.4" is created when package
-    is installed.
-    Same process applies to IDLE binary (idle) and pydoc.
+    versions of Python coexisting on the same system.  The same
+    applies to the idle and pydoc binaries.
 
 5.  Regression tests have been taught about OpenBSD.
 
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python.
-
-$OpenBSD: CHANGES.OpenBSD,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
