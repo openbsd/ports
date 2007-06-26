@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/06/26 22:25:37 martynas Exp $
 
 COMMENT=		"keyboard configuration library"
 
-DISTNAME=		libgnomekbd-2.18.1
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		libgnomekbd-2.18.2
 SHARED_LIBS +=	gnomekbd             1.0      # .1.0
 SHARED_LIBS +=	gnomekbdui           1.0      # .1.0
 CATEGORIES=		x11/gnome devel
