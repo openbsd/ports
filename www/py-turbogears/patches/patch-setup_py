@@ -1,0 +1,63 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2007/06/26 23:23:42 martynas Exp $
+--- setup.py.orig	Wed May  2 20:59:28 2007
++++ setup.py	Tue May 22 00:16:49 2007
+@@ -12,37 +12,10 @@ if sys.version_info < (2, 3):
+ execfile(os.path.join("turbogears", "release.py"))
+ 
+ # setup params
+-install_requires = [
+-        "TurboJson >= 0.9.9",
+-        "TurboCheetah >= 0.9.5",
+-        "TurboKid >= 1.0.1",
+-        "CherryPy >= 2.2.1,<3.0.0alpha",
+-        "simplejson >= 1.3",
+-        "elementtree >= 1.2.6",
+-        "PasteScript >= 0.9.7",
+-        "FormEncode >= 0.7.1",
+-        "setuptools >= 0.6c2",
+-        "RuleDispatch >= 0.5a0.dev-r2303",
+-        "DecoratorTools >= 1.4",
+-        "ConfigObj >= 4.3.2"]
+ tgtesttools =  ["nose >= 0.9.1", "SQLAlchemy>=0.3"]
+ standard = ["SQLObject>=0.8,<0.10dev"]
+ 
+-# python 2.5 compatible list
+-if sys.version_info < (2, 5):
+-    install_requires.extend([
+-        "cElementTree >= 1.0.5",
+-        ])
+-    tgtesttools.extend([
+-        "pysqlite"
+-        ])
+-    standard = ["SQLObject==bugfix,>=0.7.1dev-r1860,<=0.7.99"]
+-else:
+-    install_requires.extend([
+-        "Cheetah >= 2.0rc7",
+-        ])
+ 
+-
+ setup(
+     name="TurboGears",
+     version=version,
+@@ -72,7 +45,6 @@ The latest development version is available in
+ the TurboGears subversion repository</a>.""",
+     url="http://www.turbogears.org",
+     zip_safe=False,
+-    install_requires = install_requires,
+     packages=find_packages(),
+     include_package_data=True,
+     exclude_package_data={"thirdparty": ["*"]},
+@@ -119,13 +91,6 @@ the TurboGears subversion repository</a>.""",
+     catwalk = turbogears.toolbox.catwalk:CatWalk
+ 
+     """,
+-    extras_require = {
+-        "exp" : ["TGFastData"],
+-        "standard" : standard,
+-        "future" : ["Genshi>=0.3", "SQLAlchemy>=0.3"],
+-        "testtools" : ["nose >= 0.9.1"],
+-        "tgtesttools" : tgtesttools,
+-    },
+     classifiers = [
+         'Development Status :: 5 - Production/Stable',
+         'Environment :: Console',
