@@ -1,12 +1,12 @@
-$OpenBSD: patch-globals_c,v 1.6 2007/01/27 00:02:57 steven Exp $
---- globals.c.orig	Fri Dec 15 23:56:43 2006
-+++ globals.c	Sat Jan 27 01:00:03 2007
-@@ -49,7 +49,7 @@ int		debug_level;			/* current debug lev
+$OpenBSD: patch-globals_c,v 1.7 2007/06/26 05:51:02 steven Exp $
+--- globals.c.orig	Sat Apr 28 15:34:20 2007
++++ globals.c	Tue Jun 26 07:48:15 2007
+@@ -49,7 +49,7 @@ int		debug_level;				/* current debug level */
  #endif
  
  /* variables having to do with color mode */
 -int		color_flag = true;		/* true for color mode */
 +int		color_flag = false;		/* true for color mode */
  int		bold_colors;			/* true for bold colors */
- int		cur_color = -1;			/* current color */
+ int		cur_color = -1;			/* current color on the terminal */
  
