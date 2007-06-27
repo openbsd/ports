@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_Locale_TextDomain_pm,v 1.1 2007/06/27 20:33:14 steven Exp $
+--- lib/Locale/TextDomain.pm.orig	Wed Jun 27 18:22:44 2007
++++ lib/Locale/TextDomain.pm	Wed Jun 27 18:27:12 2007
+@@ -95,8 +95,7 @@ BEGIN {
+ 	# Add default search directories, but only if they exist.
+ 	for my $dir (qw (/usr/share/locale /usr/local/share/locale)) {
+         if (-d $dir) {
+-            @default_dirs = ($dir);
+-            last;
++            push @default_dirs, $dir;
+         }
+     }
+ }
+@@ -221,8 +220,10 @@ sub import
+     # Remember that we still have to bind that textdomain to
+     # a directory.
+     unless (exists $bound_dirs{$textdomain}) {
+-		@search_dirs = map $_ . '/LocaleData', @INC, @default_dirs
+-			unless @search_dirs;
++		unless (@search_dirs) {
++			@search_dirs = map $_ . '/LocaleData', @INC;
++			push @search_dirs, @default_dirs;
++		}
+ 		$bound_dirs{$textdomain} = \@search_dirs;
+     }
+ 	
