@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.11 2007/01/16 02:47:14 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.12 2007/06/27 21:33:33 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -41,7 +41,7 @@ MODJAVA_JRERUN?=no
    ONLY_FOR_ARCHS?= amd64
 .  if ${NO_BUILD:L} != "yes"
      JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
-     BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
+     BUILD_DEPENDS+= :jdk-1.5.0*:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
      MODJAVA_RUN_DEPENDS= :jdk->=1.5.0|jre->=1.5.0|kaffe-*|jamvm-*:devel/jdk/1.5
@@ -53,7 +53,7 @@ MODJAVA_JRERUN?=no
 .  if ${NO_BUILD:L} != "yes"
 .    if ${MACHINE_ARCH} == "i386" 
        JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
-       BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
+       BUILD_DEPENDS+= :jdk-1.5.0*:devel/jdk/1.5
 .    else
        JAVA_HOME= ${LOCALBASE}/jdk-1.3.1
        BUILD_DEPENDS+= :jdk-1.3.1:devel/jdk/1.3
@@ -85,7 +85,7 @@ MODJAVA_JRERUN?=no
    ONLY_FOR_ARCHS?= i386
 .  if ${NO_BUILD:L} != "yes"
      JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
-     BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
+     BUILD_DEPENDS+= :jdk-1.5.0*:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
 .    if ${MODJAVA_VER} == "1.4+"
@@ -104,7 +104,7 @@ MODJAVA_JRERUN?=no
    ONLY_FOR_ARCHS?= i386 amd64
 .  if ${NO_BUILD:L} != "yes"
      JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
-     BUILD_DEPENDS+= :jdk-1.5.0:devel/jdk/1.5
+     BUILD_DEPENDS+= :jdk-1.5.0*:devel/jdk/1.5
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
      _MODJAVA_RUNDEP= jdk-1.5.0|jre-1.5.0
