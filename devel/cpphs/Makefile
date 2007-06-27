@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/20 13:07:19 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/06/27 13:14:02 ajacoutot Exp $
 
 COMMENT=	"liberalised reimplementation of cpp in Haskell"
 
@@ -15,7 +15,7 @@ MODULES=	ghc
 HC=		ghc
 HC_OPTS=	-O -o cpphs --make
 .else
-BUILD_DEPENDS+=	bin/hmake::lang/nhc98
+BUILD_DEPENDS+=	:bin/hmake:lang/nhc98
 HC=		hmake 
 HC_OPTS=	-package base
 .endif
