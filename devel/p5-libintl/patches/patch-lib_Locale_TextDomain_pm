@@ -1,6 +1,15 @@
-$OpenBSD: patch-lib_Locale_TextDomain_pm,v 1.1 2007/06/27 20:33:14 steven Exp $
---- lib/Locale/TextDomain.pm.orig	Wed Jun 27 18:22:44 2007
-+++ lib/Locale/TextDomain.pm	Wed Jun 27 18:27:12 2007
+$OpenBSD: patch-lib_Locale_TextDomain_pm,v 1.2 2007/06/27 21:09:48 steven Exp $
+--- lib/Locale/TextDomain.pm.orig	Wed Sep 28 01:29:38 2005
++++ lib/Locale/TextDomain.pm	Wed Jun 27 23:07:26 2007
+@@ -79,7 +79,7 @@ use vars qw (@ISA @EXPORT %__ $__);
+ 
+ my %textdomains = ();
+ my %bound_dirs = ();
+-my @default_dirs = ();
++my @default_dirs;
+ 
+ sub __ ($);
+ 	
 @@ -95,8 +95,7 @@ BEGIN {
  	# Add default search directories, but only if they exist.
  	for my $dir (qw (/usr/share/locale /usr/local/share/locale)) {
