@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/29 14:40:33 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2007/06/27 22:47:29 kurt Exp $
 
 COMMENT=		"Perl plugin for Eclipse IDE"
 
-V=			0.4.0
-DISTNAME=		org.epic.updatesite_0.4.0_20060804
+V=			0.5.33
+DISTNAME=		org.epic.updatesite_0.5.33_20070406
 PKGNAME=		eclipse-plugin-epic-${V}
 CATEGORIES=		devel/eclipse/plugins perl
 
