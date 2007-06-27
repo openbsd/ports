@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2007/06/12 17:45:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2007/06/27 20:13:14 naddy Exp $
 
 COMMENT=		lightweight Emacs clone
-DISTNAME=		zile-2.2.34
+DISTNAME=		zile-2.2.35
 CATEGORIES=		editors
 HOMEPAGE=		http://zile.sourceforge.net/
 
