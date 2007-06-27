@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/05/24 09:59:04 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/06/27 08:27:27 mbalmer Exp $
 wordpress/
 wordpress/index.php
 wordpress/license.txt
@@ -343,6 +343,7 @@ wordpress/wp-includes/js/tinymce/themes/advanced/anchor.htm
 wordpress/wp-includes/js/tinymce/themes/advanced/charmap.htm
 wordpress/wp-includes/js/tinymce/themes/advanced/color_picker.htm
 wordpress/wp-includes/js/tinymce/themes/advanced/css/
+wordpress/wp-includes/js/tinymce/themes/advanced/css/colorpicker.css
 wordpress/wp-includes/js/tinymce/themes/advanced/css/editor_content.css
 wordpress/wp-includes/js/tinymce/themes/advanced/css/editor_popup.css
 wordpress/wp-includes/js/tinymce/themes/advanced/css/editor_ui.css
@@ -369,6 +370,7 @@ wordpress/wp-includes/js/tinymce/themes/advanced/images/cleanup.gif
 wordpress/wp-includes/js/tinymce/themes/advanced/images/close.gif
 wordpress/wp-includes/js/tinymce/themes/advanced/images/code.gif
 wordpress/wp-includes/js/tinymce/themes/advanced/images/color.gif
+wordpress/wp-includes/js/tinymce/themes/advanced/images/colors.jpg
 wordpress/wp-includes/js/tinymce/themes/advanced/images/copy.gif
 wordpress/wp-includes/js/tinymce/themes/advanced/images/custom_1.gif
 wordpress/wp-includes/js/tinymce/themes/advanced/images/cut.gif
