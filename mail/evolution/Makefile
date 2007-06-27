@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2007/06/18 17:39:18 martin Exp $
+# $OpenBSD: Makefile,v 1.34 2007/06/27 08:27:40 ajacoutot Exp $
 
-COMMENT=		"integrated email and PIM software for GNOME"
+COMMENT=		integrated email and PIM software for GNOME
 
 R=			2.10
 DISTNAME=		evolution-${R}.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=    		mail x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
@@ -51,7 +52,8 @@ LIB_DEPENDS=		camel-1.2,camel-provider-1.2.>=4.1,ebook-1.2.>=4.1,ecal-1.2.>=2.1,
 			lber.>=7,ldap.>=7::databases/openldap \
 			gstreamer-0.8.>=5.0:gstreamer-0.8.*:devel/gstreamer \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui \
-			nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
+			nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss \
+			notify.>=2::devel/libnotify
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
