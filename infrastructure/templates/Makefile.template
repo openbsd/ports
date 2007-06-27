@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.51 2007/06/18 15:21:10 espie Exp $
+# $OpenBSD: Makefile.template,v 1.52 2007/06/27 07:15:32 steven Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -16,8 +16,8 @@
 #
 # Very short description of the package, 60 chars max
 #
-COMMENT=		"???"
-# COMMENT-foo=		"???"	for multi packages
+COMMENT=		???
+# COMMENT-foo=		???	for multi packages
 
 #
 # What port/package will be created
