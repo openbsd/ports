@@ -1,0 +1,13 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_product_make,v 1.1 2007/06/27 21:51:09 kurt Exp $
+--- hotspot/build/bsd/makefiles/product.make.orig	Wed Jun 13 14:23:17 2007
++++ hotspot/build/bsd/makefiles/product.make	Wed Jun 13 14:24:00 2007
+@@ -20,6 +20,9 @@ CFLAGS$(HOTSPARC_GENERIC) += $(OPT_CFLAGS/BYFILE)
+ # Set the environment variable HOTSPARC_GENERIC to "true"
+ # to inhibit the effect of the previous line on CFLAGS.
+ 
++# Linker mapfile
++MAPFILE = $(GAMMADIR)/build/linux/makefiles/mapfile-vers-product
++
+ G_SUFFIX =
+ SYSDEFS += -DPRODUCT
+ VERSION = optimized

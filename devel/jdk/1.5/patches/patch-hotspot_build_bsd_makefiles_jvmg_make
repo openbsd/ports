@@ -1,0 +1,13 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_jvmg_make,v 1.1 2007/06/27 21:51:09 kurt Exp $
+--- hotspot/build/bsd/makefiles/jvmg.make.orig	Wed Jun 13 14:22:18 2007
++++ hotspot/build/bsd/makefiles/jvmg.make	Wed Jun 13 14:21:52 2007
+@@ -15,6 +15,9 @@ CFLAGS += $(DEBUG_CFLAGS/BYFILE)
+ # Set the environment variable HOTSPARC_GENERIC to "true"
+ # to inhibit the effect of the previous line on CFLAGS.
+ 
++# Linker mapfile
++MAPFILE = $(GAMMADIR)/build/linux/makefiles/mapfile-vers-debug
++
+ G_SUFFIX = _g
+ VERSION = optimized
+ SYSDEFS += -DASSERT -DDEBUG

@@ -1,43 +1,47 @@
-# $OpenBSD: Makefile,v 1.37 2007/05/01 02:05:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.38 2007/06/27 21:51:09 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
 
 COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
-V=			1.5.0
-DISTNAME=		jdk-1_5_0
+V=			1.5.0.11
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p31
-PKGNAME-jre=		jre-${V}p31
+PKGNAME-main=		jdk-${V}
+PKGNAME-jre=		jre-${V}
 
 CATEGORIES=		devel/jdk java
 
 MULTI_PACKAGES= 	-main -jre
 
-# wwws is not a typo in the following:
-HOMEPAGE=		http://wwws.sun.com/software/communitysource/j2se/java2/
+HOMEPAGE=		https://tiger.dev.java.net/
 
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
-DISTFILES=		${DISTNAME}-src-scsl.zip \
-			${DISTNAME}-bin-scsl.zip \
-			bsd-jdk15-patches-4.tar.bz2
+JRLSRC=			jdk-1_5_0_11-fcs-src-b03-jrl-15_dec_2006.jar
+JRLBIN=			jdk-1_5_0_11-fcs-bin-b03-jrl-15_dec_2006.jar
+PATCHSET=		bsd-jdk15-patches-5.tar.bz2
 
-# Sun Community Source License
-# http://www.sun.com/software/communitysource/j2se/java2/license.html
-PERMIT_PACKAGE_CDROM=	"SCSL"
-PERMIT_PACKAGE_FTP=	"SCSL"
-PERMIT_DISTFILES_CDROM= "SCSL"
-PERMIT_DISTFILES_FTP=	"SCSL"
+DISTFILES=		${JRLSRC} \
+			${JRLBIN} \
+			${PATCHSET}
 
-# TCK (Technology Compatibility Kit) covered by yet another license...
-NO_REGRESS=		yes
+MASTER_SITES=		http://www.java.net/download/tiger/tiger_u11/
+
+# Java Research License
+# http://www.java.net/jrl.csp
+PERMIT_PACKAGE_CDROM=	"JRL"
+PERMIT_PACKAGE_FTP=	"JRL"
+PERMIT_DISTFILES_CDROM= "JRL"
+PERMIT_DISTFILES_FTP=	"JRL"
+
+NO_REGRESS=		Yes
 
 VMEM_WARNING=		Yes
-BUILD_DEPENDS=		:gtar-*:archivers/gtar \
-			:zip-*:archivers/zip
-RUN_DEPENDS=		:zip-*:archivers/zip
+BUILD_DEPENDS=		::archivers/gtar \
+			::archivers/zip \
+			::archivers/unzip \
+			::archivers/bzip2
 USE_MOTIF=		openmotif
 MODULES=		converters/libiconv
 WANTLIB=		X11 Xext Xi Xp Xt Xtst c m ossaudio pthread stdc++ z
@@ -57,17 +61,19 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			CC="${CC}" \
 			CXX="${CXX}" \
 			DEFAULT_LD_LIBRARY_PATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
+			USER="${USER}" \
 			HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu`
 
 # Error message for distfile.
 FETCH_MANUALLY=		"You must manually fetch the distribution files, place"
 FETCH_MANUALLY+=	"them in ${FULLDISTDIR} and then run make again."
-FETCH_MANUALLY+=	"Get the SCSL source \& binary files:"
-FETCH_MANUALLY+=	"    ${DISTNAME}-src-scsl.zip"
-FETCH_MANUALLY+=	"    ${DISTNAME}-bin-scsl.zip"
-FETCH_MANUALLY+=	"from http://wwws.sun.com/software/communitysource/j2se/java2/download.html"
+FETCH_MANUALLY+=	"Get the 'Update 11 Source under the JRL license' file:"
+FETCH_MANUALLY+=	"    ${JRLSRC} and"
+FETCH_MANUALLY+=	"    the 'Source Binaries needed for Source Build' file:"
+FETCH_MANUALLY+=	"    ${JRLBIN}"
+FETCH_MANUALLY+=	"from http://download.java.net/tiger/"
 FETCH_MANUALLY+=	"Get the BSD patchset file:"
-FETCH_MANUALLY+=	"    bsd-jdk15-patches-4.tar.bz2"
+FETCH_MANUALLY+=	"   ${PATCHSET}"
 FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk15.html"
 
 FLAVORS=		no_web with_ipv6
@@ -78,15 +84,18 @@ FLAVOR?=
 MAKE_ENV+=		DONT_ENABLE_IPV6="YES"
 .endif
 
+# handle jar files in post-extract
+EXTRACT_CASES+=		*.jar) true ;;
+
 .if ${FLAVOR:L:Mnative_bootstrap}
 BUILD_DEPENDS+=		:jdk-1.5*:devel/jdk/1.5
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
-DISTFILES+=		jdk-1_5_0-solaris-i586.tar.Z \
+DISTFILES+=		jdk-1_5_0_11-solaris-i586.tar.Z \
 			xalan-j_2_7_0-bin.tar.gz
-FETCH_MANUALLY+=	"Get the solaris x86 jdk file:"
-FETCH_MANUALLY+=	"    jdk-1_5_0-solaris-i586.tar.Z"
-FETCH_MANUALLY+=	"from http://java.sun.com/products/archive/j2se/5.0/index.html"
+FETCH_MANUALLY+=	"Get 'JDK 5.0 Update 11' for 'Solaris x86 packages' file:"
+FETCH_MANUALLY+=	"    jdk-1_5_0_11-solaris-i586.tar.Z"
+FETCH_MANUALLY+=	"from http://java.sun.com/javase/downloads/index_jdk5.jsp"
 FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
 FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
 FETCH_MANUALLY+=	"from http://www.apache.org/dist/xml/xalan-j/"
@@ -114,8 +123,8 @@ MESSAGE=		/dev/null
 MAKE_ENV+=		DONT_BUILD_DEPLOY="YES"
 .endif
 
-JDKHOME=		jdk-${V}
-JREHOME=		jre-${V}
+JDKHOME=		jdk-1.5.0
+JREHOME=		jre-1.5.0
 
 SUBST_VARS=		JDKHOME JREHOME
 
@@ -133,13 +142,22 @@ JDKIMAGEDIR=		${OUTPUTDIR}/j2sdk-image
 JDKIMAGEDIR_G=		${OUTPUTDIR}/j2sdk-debug-image
 JREIMAGEDIR=		${OUTPUTDIR}/j2re-image
 
-.if !${FLAVOR:L:Mnative_bootstrap}
 post-extract:
+	@mkdir ${WRKDIR}/tmp && \
+		${CC} ${CFLAGS} -o ${WRKDIR}/tmp/x_x2zip ${FILESDIR}/x_x2zip.c
+.for jar in ${JRLSRC} ${JRLBIN}
+	@cd ${WRKDIR}/tmp && \
+		unzip -qo ${FULLDISTDIR}/${jar} X_X && \
+		./x_x2zip "YES I ACCEPT THE CLICK THROUGH LICENSE.  " X_X && \
+		cd ${WRKDIR} && \
+		unzip -q ${WRKDIR}/tmp/X_X.zip -x */lib*.so
+.endfor
+	@rm -rf ${WRKDIR}/tmp
+.if !${FLAVOR:L:Mnative_bootstrap}
 	@mkdir -p ${OUTPUTDIR}/classes
 	@cd ${OUTPUTDIR}/classes && \
-		${LOCALBASE}/kaffe/bin/jar xf ${WRKDIR}/${RT_JAR} && \
-		${LOCALBASE}/kaffe/bin/jar xf ${WRKDIR}/${TOOLS_JAR} && \
-		rm -rf META-INF
+		unzip -q ${WRKDIR}/${RT_JAR} -x META-INF* && \
+		unzip -qn ${WRKDIR}/${TOOLS_JAR} -x META-INF*
 	@rm -rf ${WRKDIR}/SUNWj5*
 .endif
 

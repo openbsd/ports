@@ -1,7 +1,7 @@
-$OpenBSD: patch-j2se_make_common_Defs_gmk,v 1.5 2007/04/08 12:43:06 kurt Exp $
---- j2se/make/common/Defs.gmk.orig	Thu Mar 29 20:06:38 2007
-+++ j2se/make/common/Defs.gmk	Thu Mar 29 20:06:41 2007
-@@ -604,9 +604,14 @@ JAVAC_CMD 	   = $(JAVAC) $(JAVAC_VMFLAGS_J) $(JAVACFLA
+$OpenBSD: patch-j2se_make_common_Defs_gmk,v 1.6 2007/06/27 21:51:09 kurt Exp $
+--- j2se/make/common/Defs.gmk.orig	Thu May 17 16:56:22 2007
++++ j2se/make/common/Defs.gmk	Thu May 17 16:59:46 2007
+@@ -610,9 +610,14 @@ JAVAC_CMD 	   = $(JAVAC) $(JAVAC_VMFLAGS_J) $(JAVACFLA
  # variable in $(BUILDDIR)/java/GNUmakefile.
  #
  JAVA_BOOT      = $(BOOTDIR)/bin/java -Xbootclasspath/p:$(BUILDDIR)/sun/javac/javac/gjc.jar
