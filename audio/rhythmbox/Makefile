@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/19 09:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2007/06/28 16:30:09 martynas Exp $
 
 COMMENT=		"Music Management Application"
 
 DISTNAME=		rhythmbox-0.8.8
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.rhythmbox.org
@@ -33,7 +33,8 @@ BUILD_DEPENDS=  	:scrollkeeper-*:textproc/scrollkeeper \
 			:gstreamer-gnome-0.8.*:devel/gstreamer-plugins,-gnome
 LIB_DEPENDS= 		gstgconf-0.8::devel/gstreamer-plugins \
 			gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
+			:scrollkeeper-*:textproc/scrollkeeper \
 			:gstreamer-flac-0.8.*:devel/gstreamer-plugins,-flac \
 			:gstreamer-gnome-0.8.*:devel/gstreamer-plugins,-gnome \
 			:gstreamer-mad-0.8.*:devel/gstreamer-plugins,-mad \
