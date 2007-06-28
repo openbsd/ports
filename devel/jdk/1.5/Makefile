@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2007/06/27 21:51:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.39 2007/06/28 03:20:20 ian Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -71,7 +71,7 @@ FETCH_MANUALLY+=	"Get the 'Update 11 Source under the JRL license' file:"
 FETCH_MANUALLY+=	"    ${JRLSRC} and"
 FETCH_MANUALLY+=	"    the 'Source Binaries needed for Source Build' file:"
 FETCH_MANUALLY+=	"    ${JRLBIN}"
-FETCH_MANUALLY+=	"from http://download.java.net/tiger/"
+FETCH_MANUALLY+=	"from http://download.java.net/tiger/tiger_u11/"
 FETCH_MANUALLY+=	"Get the BSD patchset file:"
 FETCH_MANUALLY+=	"   ${PATCHSET}"
 FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk15.html"
