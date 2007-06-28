@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2007/06/26 22:57:01 simon Exp $
+# $OpenBSD: Makefile,v 1.146 2007/06/28 15:38:25 simon Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -52,6 +52,7 @@
      SUBDIR += gnuchess
      SUBDIR += gnugo
      SUBDIR += gnushogi
+     SUBDIR += gtetrinet
      SUBDIR += gtkballs
      SUBDIR += gtkpool
      SUBDIR += hackdata
