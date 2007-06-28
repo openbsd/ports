@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.283 2007/06/26 23:25:03 martynas Exp $
+# $OpenBSD: Makefile,v 1.284 2007/06/28 16:22:41 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -40,6 +40,7 @@
      SUBDIR += larbin
      SUBDIR += libcroco
      SUBDIR += libghttp
+     SUBDIR += liferea
      SUBDIR += lighttpd
      SUBDIR += lighttpd,ldap
      SUBDIR += lighttpd,ldap,mysql
