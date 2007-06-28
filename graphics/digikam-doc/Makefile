@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/09 11:33:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2007/06/28 16:03:49 espie Exp $
 
 COMMENT=		"documentation for digikam"
 CATEGORIES=		graphics x11 x11/kde
-V=			0.8.2
+V=			0.9.2-beta2
 DISTNAME=		digikam-doc-$V
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		digikam-doc-0.9.2beta2
 HOMEPAGE=		http://www.digikam.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES=		${DISTNAME}.tar.bz2
@@ -12,9 +12,9 @@ DISTFILES=		${DISTNAME}.tar.bz2
 SHARED_ONLY=Yes
 
 MODULES=	x11/kde
-MODKDE_VERSION=		3.5.3
+MODKDE_VERSION=		3.5.7
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.59
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 BUILD_DEPENDS+=		::x11/kde/libs3
 USE_GMAKE?=		Yes
