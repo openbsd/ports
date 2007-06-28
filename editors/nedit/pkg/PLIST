@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:01:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/06/28 12:32:19 ajacoutot Exp $
+@pkgpath ${BASE_PKGPATH}
+@pkgpath ${BASE_PKGPATH},wrapmark
 bin/ncl
 bin/nedit
 lib/X11/app-defaults/NEdit

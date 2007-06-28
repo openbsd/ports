@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.35 2007/06/26 19:54:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2007/06/28 12:32:19 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		"X11/Motif GUI text editor"
 
 DISTNAME=		nedit-5.5
-PKGNAME=		${DISTNAME}p0
-DISTFILES=		${DISTNAME}-src.tar.gz wrapmark.diff:0
+PKGNAME=		${DISTNAME}p1
+DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX}
+PATCHFILES=		wrapmark.diff:0
 CATEGORIES=		editors x11
-
-EXTRACT_ONLY=		${DISTNAME}-src.tar.gz
 
 MASTER_SITES=		http://www.nedit.org/ftp/v5_5/ \
 			${MASTER_SITE_SOURCEFORGE:=nedit/}
@@ -29,12 +28,7 @@ ALL_TARGET=		openbsd
 
 NO_REGRESS=		Yes
 
-FLAVORS=		wrapmark
 FLAVOR?=
-
-.if ${FLAVOR:L:Mwrapmark}
-PATCH_LIST=		patch-* ${DISTDIR}/wrapmark.diff
-.endif
 
 .if ${FLAVOR:L:Mlesstif}
 CFLAGS+=	-DBUILD_UNTESTED_NEDIT
