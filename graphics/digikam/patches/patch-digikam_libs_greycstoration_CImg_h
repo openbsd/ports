@@ -1,0 +1,28 @@
+$OpenBSD: patch-digikam_libs_greycstoration_CImg_h,v 1.1 2007/06/28 15:10:34 espie Exp $
+--- digikam/libs/greycstoration/CImg.h.orig	Wed Jun 13 20:06:04 2007
++++ digikam/libs/greycstoration/CImg.h	Thu Jun 28 15:45:31 2007
+@@ -78,7 +78,7 @@
+ #ifndef cimg_OS
+ #if defined(sun)         || defined(__sun)      || defined(linux)       || defined(__linux) \
+  || defined(__linux__)   || defined(__CYGWIN__) || defined(BSD)         || defined(__FreeBSD__) \
+- || defined(__OPENBSD__) || defined(__MACOSX__) || defined(__APPLE__)   || defined(sgi) \
++ || defined(__OpenBSD__) || defined(__MACOSX__) || defined(__APPLE__)   || defined(sgi) \
+  || defined(__sgi)
+ // Unix-like (Linux, Solaris, BSD, MacOSX, Irix,...).
+ #define cimg_OS            1
+@@ -201,6 +201,7 @@
+ #if cimg_OS==1
+ #include <sys/time.h>
+ #include <unistd.h>
++#include <pthread.h>
+ #elif cimg_OS==2
+ #include <windows.h>
+ // Discard unuseful macros in windows.h
+@@ -216,7 +217,6 @@
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include <X11/keysym.h>
+-#include <pthread.h>
+ #ifdef cimg_use_xshm
+ #include <sys/ipc.h>
+ #include <sys/shm.h>

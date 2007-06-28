@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2007/05/09 11:33:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2007/06/28 15:10:34 espie Exp $
 
 COMMENT=		"digital image kde application"
 CATEGORIES=		graphics x11 x11/kde
-V=			0.9.1
+V=			0.9.2
 DISTNAME=		digikam-$V
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 SHARED_LIBS +=	digikam              2.0      # .0.0
 HOMEPAGE=		http://www.digikam.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
@@ -17,21 +17,19 @@ LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3 \
 		kipi::graphics/libkipi \
 		sqlite3::databases/sqlite3 \
 		tiff::graphics/tiff \
-		kexiv2::graphics/libkexiv2 \
+		kexiv2.>=1.0:libkexiv2->=0.1.5:graphics/libkexiv2 \
+		kdcraw::graphics/libkdcraw \
 		lcms::graphics/lcms
 
 WANTLIB=	util m c ICE Xrender SM pthread z stdc++ \
 		Xext X11 jpeg png art_lgpl_2 exif intl iconv idn \
-		exiv2 jasper pcre pcreposix
+		exiv2 jasper pcre pcreposix Xau Xdmcp fam rpcsvc
 
 MODULES=	x11/kde
 
-USE_X11=		Yes
-USE_LIBTOOL=		Yes
-LIBTOOL_FLAGS+=		--tag=disable-static
-MODKDE_VERSION=		3.5.3
+MODKDE_VERSION=		3.5.7
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.59
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
