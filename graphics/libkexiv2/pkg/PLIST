@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/15 08:05:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/06/28 15:08:59 espie Exp $
 include/libkexiv2/
 include/libkexiv2/kexiv2.h
 include/libkexiv2/libkexiv2_export.h
 include/libkexiv2/version.h
-lib/libkexiv2.a
 lib/libkexiv2.la
 @lib lib/libkexiv2.so.${LIBkexiv2_VERSION}
 lib/pkgconfig/libkexiv2.pc
