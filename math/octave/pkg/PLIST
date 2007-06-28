@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/06/20 08:51:42 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/06/28 08:03:07 steven Exp $
 %%SHARED%%
 bin/mkoctfile
 bin/octave
@@ -2174,7 +2174,6 @@ share/doc/octave/liboctave/Quadratic-Programming.html
 share/doc/octave/liboctave/Quadrature.html
 share/doc/octave/liboctave/Ranges.html
 share/doc/octave/liboctave/index.html
-share/nls/pl_PL.ISO_8859-2/
 share/octave/
 share/octave/${VERSION}/
 share/octave/${VERSION}/NEWS
