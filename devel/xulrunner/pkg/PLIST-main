@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/01/12 20:35:15 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/06/28 19:50:05 martynas Exp $
 %%SHARED%%
 bin/xulrunner
+bin/xulrunner-config
 xulrunner/
 xulrunner/LICENSE
 xulrunner/TestGtkEmbed
@@ -20,6 +21,7 @@ xulrunner/chrome/pippki.manifest
 xulrunner/chrome/toolkit.jar
 xulrunner/chrome/toolkit.manifest
 xulrunner/components/
+xulrunner/components/FeedProcessor.js
 xulrunner/components/accessibility-atk.xpt
 xulrunner/components/accessibility.xpt
 xulrunner/components/alerts.xpt
@@ -50,6 +52,8 @@ xulrunner/components/dom_events.xpt
 xulrunner/components/dom_html.xpt
 xulrunner/components/dom_loadsave.xpt
 xulrunner/components/dom_range.xpt
+xulrunner/components/dom_sidebar.xpt
+xulrunner/components/dom_storage.xpt
 xulrunner/components/dom_stylesheets.xpt
 xulrunner/components/dom_svg.xpt
 xulrunner/components/dom_traversal.xpt
@@ -63,6 +67,7 @@ xulrunner/components/embed_base.xpt
 xulrunner/components/extensions.xpt
 xulrunner/components/exthandler.xpt
 xulrunner/components/fastfind.xpt
+xulrunner/components/feeds.xpt
 xulrunner/components/filepicker.xpt
 xulrunner/components/find.xpt
 xulrunner/components/gfx.xpt
@@ -70,6 +75,7 @@ xulrunner/components/gksvgrenderer.xpt
 xulrunner/components/history.xpt
 xulrunner/components/htmlparser.xpt
 xulrunner/components/imglib2.xpt
+xulrunner/components/inspector.xpt
 xulrunner/components/intl.xpt
 xulrunner/components/jar.xpt
 xulrunner/components/jsconsole-clhandler.js
@@ -109,6 +115,7 @@ xulrunner/components/nsKillAll.js
 xulrunner/components/nsProgressDialog.js
 xulrunner/components/nsProxyAutoConfig.js
 xulrunner/components/nsResetPref.js
+xulrunner/components/nsURLFormatter.js
 xulrunner/components/nsUpdateService.js
 xulrunner/components/nsXULAppInstall.js
 xulrunner/components/nsXmlRpcClient.js
@@ -125,7 +132,9 @@ xulrunner/components/progressDlg.xpt
 xulrunner/components/proxyObjInst.xpt
 xulrunner/components/rdf.xpt
 xulrunner/components/satchel.xpt
+xulrunner/components/saxparser.xpt
 xulrunner/components/shistory.xpt
+xulrunner/components/storage.xpt
 xulrunner/components/toolkitprofile.xpt
 xulrunner/components/toolkitremote.xpt
 xulrunner/components/txmgr.xpt
@@ -134,6 +143,7 @@ xulrunner/components/uconv.xpt
 xulrunner/components/unicharutil.xpt
 xulrunner/components/update.xpt
 xulrunner/components/uriloader.xpt
+xulrunner/components/urlformatter.xpt
 xulrunner/components/webBrowser_core.xpt
 xulrunner/components/webbrowserpersist.xpt
 xulrunner/components/webshell_idls.xpt
@@ -142,7 +152,6 @@ xulrunner/components/widget.xpt
 xulrunner/components/windowds.xpt
 xulrunner/components/windowwatcher.xpt
 xulrunner/components/xml-rpc.xpt
-xulrunner/components/xmlextras.xpt
 xulrunner/components/xpcom_base.xpt
 xulrunner/components/xpcom_components.xpt
 xulrunner/components/xpcom_ds.xpt
@@ -172,9 +181,6 @@ xulrunner/defaults/profile/US/localstore.rdf
 xulrunner/defaults/profile/chrome/
 xulrunner/defaults/profile/chrome/userChrome-example.css
 xulrunner/defaults/profile/chrome/userContent-example.css
-xulrunner/defaults/profile/extensions/
-xulrunner/defaults/profile/extensions/Extensions.rdf
-xulrunner/defaults/profile/extensions/installed-extensions.txt
 xulrunner/defaults/profile/localstore.rdf
 xulrunner/greprefs/
 xulrunner/greprefs/all.js
@@ -184,10 +190,9 @@ xulrunner/icons/
 xulrunner/icons/document.png
 xulrunner/icons/mozicon16.xpm
 xulrunner/icons/mozicon50.xpm
-xulrunner/mozicon16.xpm
-xulrunner/mozicon50.xpm
 xulrunner/mozilla-xremote-client
 xulrunner/nsinstall
+xulrunner/plugins/
 xulrunner/regxpcom
 xulrunner/res/
 xulrunner/res/EditorOverride.css

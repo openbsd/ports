@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2007/01/05 14:44:48 kurt Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2007/06/28 19:50:05 martynas Exp $
 @lib xulrunner/components/libauth.so.${LIBauth_VERSION}
 @lib xulrunner/components/libautoconfig.so.${LIBautoconfig_VERSION}
 @lib xulrunner/components/libfileview.so.${LIBfileview_VERSION}
@@ -13,10 +13,7 @@
 @lib xulrunner/components/libxulutil.so.${LIBxulutil_VERSION}
 @lib xulrunner/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
 @lib xulrunner/libmozjs.so.${LIBmozjs_VERSION}
-@lib xulrunner/libnss3.so.${LIBnss3_VERSION}
-@lib xulrunner/libnssckbi.so.${LIBnssckbi_VERSION}
-@lib xulrunner/libsmime3.so.${LIBsmime3_VERSION}
-@lib xulrunner/libsoftokn3.so.${LIBsoftokn3_VERSION}
-@lib xulrunner/libssl3.so.${LIBssl3_VERSION}
 @lib xulrunner/libxpcom.so.${LIBxpcom_VERSION}
 @lib xulrunner/libxul.so.${LIBxul_VERSION}
+@lib xulrunner/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
+@lib xulrunner/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
