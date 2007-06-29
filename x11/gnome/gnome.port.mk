@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.9 2007/06/29 19:35:00 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.10 2007/06/29 19:36:43 jasper Exp $
 # Module for GNOME related ports
 
 CATEGORIES+=		x11/gnome
@@ -7,7 +7,7 @@ DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 
 USE_LIBTOOL?=		Yes
-USE_X11=		Yes
+USE_X11?=		Yes
 
 MODGNOME_RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
@@ -22,7 +22,6 @@ USE_GMAKE?=		Yes
 
 #ifdef notyet
 #CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/${PROJECT}/
-#			--disable-schemas-install \ 
+#			--disable-schemas-install \
 #			--disable-scrollkeeper
-# schema-install en scrollkeeper eerst "invoeren", later gconf-schema gebruiken
 #endif
