@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.906 2007/06/23 09:39:18 steven Exp $
+#	$OpenBSD: bsd.port.mk,v 1.907 2007/06/29 10:24:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -138,7 +138,8 @@ CLEANDEPENDS_${PKGPATH} ?= ${CLEANDEPENDS}
 # Commands and command settings.
 PKG_DBDIR ?= /var/db/pkg
 
-FETCH_CMD ?= /usr/bin/ftp -V -m
+FTP_KEEPALIVE ?= 0
+FETCH_CMD ?= /usr/bin/ftp -V -m -k ${FTP_KEEPALIVE}
 
 PKG_TMPDIR ?= /var/tmp
 PKG_CMD ?= /usr/sbin/pkg_create
