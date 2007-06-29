@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/06/29 21:38:31 martynas Exp $
 
-COMMENT=	"small utility which displays system activity."
+COMMENT=	"small utility which displays system activity"
 
 DISTNAME=	hot-babe-0.2.2
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://dindinx.net/hotbabe/
