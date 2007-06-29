@@ -10,13 +10,13 @@ obvious aesthetic ones:
   * For some Haskell systems, notably Hugs on Windows, a true cpp is
     not available by default.
   * Even for the other Haskell systems, the common cpp provided by the
-    gcc 3.x series is changing subtly in ways that are incompatible
-    with Haskell's syntax. There have always been problems with, for
-    instance, string gaps, and prime characters in identifiers. These
-    problems are only going to get worse.
+    gcc 3.x and 4.x series has changed subtly in ways that are
+    incompatible with Haskell's syntax. There have always been
+    problems with, for instance, string gaps, and prime characters
+    in identifiers. These problems are only going to get worse.
 
-So, it seemed right to attempt to provide an alternative to cpp, both
-more compatible with Haskell, and itself written in Haskell so that it
+So, it seemed right to provide an alternative to cpp, both more
+compatible with Haskell, and itself written in Haskell so that it
 can be distributed with compilers. This version of the C pre-processor
 is pretty-much feature-complete, and compatible with the -traditional
 style.
