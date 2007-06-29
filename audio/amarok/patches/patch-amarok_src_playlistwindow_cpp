@@ -1,7 +1,7 @@
-$OpenBSD: patch-amarok_src_playlistwindow_cpp,v 1.1 2007/03/18 11:11:26 espie Exp $
---- amarok/src/playlistwindow.cpp.orig	Sun Mar 18 11:46:26 2007
-+++ amarok/src/playlistwindow.cpp	Sun Mar 18 11:46:39 2007
-@@ -1273,3 +1273,4 @@ void DynamicTitle::paintEvent(QPaintEvent* /*e*/)
+$OpenBSD: patch-amarok_src_playlistwindow_cpp,v 1.2 2007/06/29 10:22:14 espie Exp $
+--- amarok/src/playlistwindow.cpp.orig	Sun Jun 17 21:51:49 2007
++++ amarok/src/playlistwindow.cpp	Wed Jun 27 17:42:14 2007
+@@ -1241,3 +1241,4 @@ void DynamicTitle::paintEvent(QPaintEvent* /*e*/)
  }
  
  #include "playlistwindow.moc"

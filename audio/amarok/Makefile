@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2007/05/27 21:30:05 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/06/29 10:22:14 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
 
 HOMEPAGE=	http://amarok.kde.org/
-V=		1.4.5
+V=		1.4.6
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME=	amarok-$V
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}
 EXTRACT_SUFX=	.tar.bz2
 
 FLAVORS=	debug
@@ -25,7 +25,7 @@ WANTLIB=	stdc++ Xext Xrender z X11 Xau Xdmcp util m SM c \
 		iconv pcre pcreposix \
 		jpeg png art_lgpl_2 intl usb \
 		gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		fam rpcsvc
+		fam rpcsvc expat fontconfig
 		
 LIB_DEPENDS+=	konqsidebarplugin::x11/kde/base3
 
@@ -36,13 +36,12 @@ SHARED_LIBS +=	http11               0.0      # .0.0
 MODULES=	x11/kde
 MODKDE_VERSION=		3.5.7
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.60
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
-MAKE_FLAGS+=		LIBRESOLV=
 
 LIB_DEPENDS+=		ruby::lang/ruby
 
