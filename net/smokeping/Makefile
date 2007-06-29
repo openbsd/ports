@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/06/29 06:58:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2007/06/29 09:13:29 jakob Exp $
 
 COMMENT=	"latency logging and graphing system"
 
 VERSION=	2.1.1
 DISTNAME=	smokeping-${VERSION}
+PKGNAME=	smokeping-${VERSION}p0
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
@@ -19,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::devel/p5-Config-Grammar \
-		:p5-RRD-*:net/rrdtool,-perl \
+		::net/rrdtool \
 		::net/p5-SNMP_Session \
 		::net/fping \
 		::www/p5-CGI-SpeedyCGI
