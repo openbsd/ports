@@ -1,11 +1,11 @@
 Before using xmcd/cda for the first time, you must
 set up the software by running the following program:
 
-      $PREFIX/sbin/xmcdconfig
+      ${PREFIX}/sbin/xmcdconfig
 
 Xmcd/cda will not work until that is done.
 
 You may also want to set up cron(8) to run the
-$PREFIX/share/xmcd/scripts/genidx script periodically
+${PREFIX}/share/xmcd/scripts/genidx script periodically
 (e.g., nightly) to re-generate the local discography
 category index pages.
