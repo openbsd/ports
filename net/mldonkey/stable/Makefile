@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2007/04/19 23:04:53 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/06/29 19:17:08 espie Exp $
 
-COMMENT=	'e-donkey client'
+COMMENT=	e-donkey client
 CATEGORIES=	net
-
-MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_FTP=	Yes
@@ -22,7 +20,7 @@ HOMEPAGE=	http://mldonkey.sourceforge.net/Main_Page
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
 DISTNAME=	mldonkey-2.8.4
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_ARGS+=--enable-gui=newgui1
