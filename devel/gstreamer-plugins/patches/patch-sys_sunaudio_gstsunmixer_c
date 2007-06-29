@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_sunaudio_gstsunmixer_c,v 1.2 2005/05/24 21:33:33 marcm Exp $
+$OpenBSD: patch-sys_sunaudio_gstsunmixer_c,v 1.3 2007/06/29 06:13:44 jakemsr Exp $
 --- sys/sunaudio/gstsunmixer.c.orig	Wed Dec 22 06:49:06 2004
-+++ sys/sunaudio/gstsunmixer.c	Mon Apr 11 15:06:16 2005
-@@ -284,12 +284,6 @@ gst_sunaudiomixer_set_mute (GstMixer * m
++++ sys/sunaudio/gstsunmixer.c	Fri Jun  1 22:17:43 2007
+@@ -284,12 +284,6 @@ gst_sunaudiomixer_set_mute (GstMixer * mixer,
  
    AUDIO_INITINFO (&audioinfo);
  

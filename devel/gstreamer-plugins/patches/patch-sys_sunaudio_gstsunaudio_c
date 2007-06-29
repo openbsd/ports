@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_sunaudio_gstsunaudio_c,v 1.2 2005/05/24 21:33:33 marcm Exp $
+$OpenBSD: patch-sys_sunaudio_gstsunaudio_c,v 1.3 2007/06/29 06:13:44 jakemsr Exp $
 --- sys/sunaudio/gstsunaudio.c.orig	Wed Dec 15 10:23:31 2004
-+++ sys/sunaudio/gstsunaudio.c	Mon Apr 11 15:06:16 2005
++++ sys/sunaudio/gstsunaudio.c	Fri Jun  1 22:17:43 2007
 @@ -28,7 +28,10 @@
  #include <string.h>
  #include <unistd.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudio_c,v 1.2 2005/05/24 21:33:33 marcm Exp $
  #include "gstsunelement.h"
  #include "gstsunmixer.h"
  #include "gstsunaudiosrc.h"
-@@ -184,8 +187,8 @@ gst_sunaudiosink_class_init (GstSunAudio
+@@ -184,8 +187,8 @@ gst_sunaudiosink_class_init (GstSunAudioSinkClass * kl
    gstelement_class->change_state = gst_sunaudiosink_change_state;
  
    g_object_class_install_property (gobject_class, ARG_DEVICE,
@@ -23,7 +23,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudio_c,v 1.2 2005/05/24 21:33:33 marcm Exp $
    g_object_class_install_property (gobject_class, ARG_BUFFER_SIZE,
        g_param_spec_int ("buffer_size", "Buffer Size", "Buffer Size",
            1, G_MAXINT, 64, G_PARAM_READWRITE));
-@@ -210,7 +213,7 @@ gst_sunaudiosink_init (GstSunAudioSink *
+@@ -210,7 +213,7 @@ gst_sunaudiosink_init (GstSunAudioSink * sunaudiosink)
  
    audiodev = g_getenv ("AUDIODEV");
    if (audiodev == NULL)
@@ -32,7 +32,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudio_c,v 1.2 2005/05/24 21:33:33 marcm Exp $
    sunaudiosink->device = g_strdup (audiodev);
  }
  
-@@ -296,10 +299,9 @@ gst_sunaudiosink_setparams (GstSunAudioS
+@@ -296,10 +299,9 @@ gst_sunaudiosink_setparams (GstSunAudioSink * sunaudio
    ainfo.play.sample_rate = sunaudiosink->rate;
    ainfo.play.channels = sunaudiosink->channels;
    ainfo.play.precision = sunaudiosink->width;
@@ -44,7 +44,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudio_c,v 1.2 2005/05/24 21:33:33 marcm Exp $
  
    ret = ioctl (sunaudiosink->fd, AUDIO_SETINFO, &ainfo);
    if (ret == -1) {
-@@ -343,10 +345,6 @@ gst_sunaudiosink_open (GstSunAudioSink *
+@@ -343,10 +345,6 @@ gst_sunaudiosink_open (GstSunAudioSink * sunaudiosink)
    }
  
    GST_INFO ("monitor_gain %d", sunaudiosink->info.monitor_gain);

@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_oss_gstosselement_c,v 1.2 2005/05/24 21:33:33 marcm Exp $
+$OpenBSD: patch-sys_oss_gstosselement_c,v 1.3 2007/06/29 06:13:44 jakemsr Exp $
 --- sys/oss/gstosselement.c.orig	Tue Feb 22 07:23:05 2005
-+++ sys/oss/gstosselement.c	Mon Apr 11 15:06:16 2005
-@@ -263,7 +263,7 @@ gst_osselement_class_probe_devices (GstO
++++ sys/oss/gstosselement.c	Fri Jun  1 22:17:42 2007
+@@ -263,7 +263,7 @@ gst_osselement_class_probe_devices (GstOssElementClass
    if (!init && !check) {
  #define MIXER 0
  #define DSP   1
@@ -10,7 +10,7 @@ $OpenBSD: patch-sys_oss_gstosselement_c,v 1.2 2005/05/24 21:33:33 marcm Exp $
      ,
      {"/dev/sound/mixer", "/dev/sound/dsp"}
      ,
-@@ -424,7 +424,7 @@ gst_ossprobe_interface_init (GstProperty
+@@ -424,7 +424,7 @@ gst_ossprobe_interface_init (GstPropertyProbeInterface
  static void
  gst_osselement_init (GstOssElement * oss)
  {

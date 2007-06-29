@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_cdrom_gstcdplayer_ioctl_bsd_h,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
---- sys/cdrom/gstcdplayer_ioctl_bsd.h.orig	2004-03-15 11:25:26.000000000 -0800
-+++ sys/cdrom/gstcdplayer_ioctl_bsd.h	2004-04-05 22:28:22.000000000 -0700
-@@ -224,6 +224,7 @@ gboolean cd_start(struct cd *cd,gint sta
+$OpenBSD: patch-sys_cdrom_gstcdplayer_ioctl_bsd_h,v 1.2 2007/06/29 06:13:44 jakemsr Exp $
+--- sys/cdrom/gstcdplayer_ioctl_bsd.h.orig	Mon Mar 15 08:32:53 2004
++++ sys/cdrom/gstcdplayer_ioctl_bsd.h	Fri Jun  1 22:17:42 2007
+@@ -224,6 +224,7 @@ gboolean cd_start(struct cd *cd,gint start_track,gint 
  		return FALSE;
  	}
  

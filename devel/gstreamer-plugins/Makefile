@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2007/05/23 18:43:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2007/06/29 06:13:44 jakemsr Exp $
 
 COMMENT-main=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.11
-PATCHLEVEL=		
 DISTNAME=		gst-plugins-${VERSION}
-PKGNAME-main=		gstreamer-plugins-${VERSION}p14
+PKGNAME-main=		gstreamer-plugins-${VERSION}p15
 # Don't forget about PKGNAME-${PLUGIN} (See below)
 SHARED_LIBS=		gstgconf-0.8		1.0 \
 			gstinterfaces-0.8	1.0 \
@@ -58,6 +57,7 @@ myLIB_DEPENDS=		gstreamer-0.8.>=5.0:gstreamer-0.8.*:devel/gstreamer \
 			${MODGETTEXT_LIB_DEPENDS}
 
 WANTLIB-main=		ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xv \
+			Xcursor Xi Xinerama Xrandr \
 			expat fontconfig freetype ossaudio \
 			atk-1.0 ORBit-2 \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 \
@@ -82,7 +82,7 @@ PLUGINS+=		a52
 PSEUDO_FLAVORS+=	no_${PLUGIN}
 .  if !${FLAVOR:L:Mno_${PLUGIN}} && !${FLAVOR:L:Mminimal}
 MULTI_PACKAGES+=	-${PLUGIN}
-PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}${PATCHLEVEL}p14
+PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}p15
 BASENAME-${PLUGIN}=	gstreamer-${PLUGIN}
 .  endif
 .endfor
@@ -144,7 +144,7 @@ LIB_DEPENDS-esd=	esd.>=2::audio/esound \
 # faad
 COMMENT-faad=		"GStreamer plugin for decoding AAC files"
 WANTLIB-faad=		${myWANTLIB}
-LIB_DEPENDS-faad=	faad::audio/faad \
+LIB_DEPENDS-faad=	faad.>=1::audio/faad \
 			${myLIB_DEPENDS}
 
 # flac
@@ -155,7 +155,7 @@ LIB_DEPENDS-flac=	FLAC::audio/flac \
 
 # gnomevfs
 COMMENT-gnome=		"GStreamer plugin supporting GNOME VFS"
-WANTLIB-gnome=		crypto ssl gconf-2 \
+WANTLIB-gnome=		ORBit-2 crypto ssl gconf-2 \
 			dbus-1 dbus-glib-1 util \
 			${myWANTLIB}
 LIB_DEPENDS-gnome=	gnomevfs-2.>=1800:gnome-vfs2->=2.18:x11/gnome/vfs2 \
