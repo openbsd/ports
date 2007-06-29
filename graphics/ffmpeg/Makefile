@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2007/05/25 15:54:14 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.28 2007/06/29 06:15:52 jakemsr Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 
 DISTNAME=		ffmpeg-svn-20070501
-PKGNAME=		${DISTNAME:S/-svn//}
+PKGNAME=		${DISTNAME:S/-svn//}p0
 SHARED_LIBS=		avutil		3.0 \
 			avcodec		9.0 \
 			avformat	9.0 \
@@ -26,7 +26,7 @@ MASTER_SITES=		http://jakemsr.trancell.org/distfiles/
 BUILD_DEPENDS=		::textproc/texi2html
 LIB_DEPENDS=		SDL.>=4::devel/sdl \
 			faac::audio/faac \
-			faad::audio/faad \
+			faad.>=1::audio/faad \
 			mp3lame.>=0.1::audio/lame \
 			vorbis.>=4.0,vorbisenc.>=2.0::audio/libvorbis \
 			a52::audio/liba52 \
