@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/06/15 21:28:19 kili Exp $
-@conflict nhc98-*
+@comment $OpenBSD: PLIST,v 1.7 2007/06/29 11:07:17 kili Exp $
 bin/harch
 bin/hi
 bin/hmake
@@ -15,7 +14,6 @@ lib/hmake/OpenBSD/config
 lib/hmake/OpenBSD/hmakerc
 lib/hmake/OpenBSD/runhs
 @man man/man1/hmake.1
-@comment man/man1/hmake.1.orig
 share/doc/hmake/
 share/doc/hmake/bugs.html
 share/doc/hmake/changes.html
