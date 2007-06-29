@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/06/29 06:58:22 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/06/29 17:49:56 jasper Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeping
@@ -52,6 +52,11 @@ ${PMDIR}/Smokeping/probes/basevars.pm
 ${PMDIR}/Smokeping/probes/passwordchecker.pm
 ${PMDIR}/Smokeping/probes/skel.pm
 ${PMDIR}/Smokeping/sorters/
+${PMDIR}/Smokeping/sorters/Loss.pm
+${PMDIR}/Smokeping/sorters/Max.pm
+${PMDIR}/Smokeping/sorters/Median.pm
+${PMDIR}/Smokeping/sorters/StdDev.pm
+${PMDIR}/Smokeping/sorters/base.pm
 @man man/man1/smokeping.1
 @man man/man1/smokeping.cgi.1
 share/doc/smokeping/

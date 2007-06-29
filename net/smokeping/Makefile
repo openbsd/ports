@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/06/29 09:13:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2007/06/29 17:49:56 jasper Exp $
 
 COMMENT=	"latency logging and graphing system"
 
 VERSION=	2.1.1
 DISTNAME=	smokeping-${VERSION}
-PKGNAME=	smokeping-${VERSION}p0
+PKGNAME=	smokeping-${VERSION}p1
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
@@ -34,6 +34,9 @@ SUBST_VARS=	PMDIR
 
 ETCFILES=	basepage.html config smokemail tmail
 
+post-extract:
+	@find ${WRKDIST} -name \*.tmp -print0 | xargs -0 rm
+
 do-install:
 	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g;" \
@@ -48,20 +51,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/smokeping
 	${INSTALL_SCRIPT} ${WRKSRC}/htdocs/smokeping.cgi \
 		${PREFIX}/share/examples/smokeping/smokeping.cgi
-	${INSTALL_DATA_DIR} ${PREFIX}/${PMDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/Smokeping.pm ${PREFIX}/${PMDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/${PMDIR}/Smokeping
-	${INSTALL_DATA} ${WRKSRC}/lib/Smokeping/*.pm \
-		${PREFIX}/${PMDIR}/Smokeping
-	${INSTALL_DATA_DIR} ${PREFIX}/${PMDIR}/Smokeping/matchers
-	${INSTALL_DATA} ${WRKSRC}/lib/Smokeping/matchers/*.pm \
-		${PREFIX}/${PMDIR}/Smokeping/matchers
-	${INSTALL_DATA_DIR} ${PREFIX}/${PMDIR}/Smokeping/probes
-	${INSTALL_DATA} ${WRKSRC}/lib/Smokeping/probes/*.pm \
-		${PREFIX}/${PMDIR}/Smokeping/probes
-	${INSTALL_DATA_DIR} ${PREFIX}/${PMDIR}/Smokeping/sorters
-	${INSTALL_DATA} ${WRKSRC}/lib/Smokeping/probes/*.pm \
-		${PREFIX}/${PMDIR}/Smokeping/probes
+	cd ${WRKSRC}/lib/; tar cf - Smokeping* | \
+		tar xf - -C ${PREFIX}/${PMDIR}/
 	${INSTALL_MAN} ${WRKSRC}/doc/smokeping*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/smokeping
