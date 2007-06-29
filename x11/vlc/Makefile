@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2007/06/21 08:12:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2007/06/29 21:33:08 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"videolan client; multimedia player"
 
 V=		0.8.6c
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -41,6 +41,7 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
                 dvdread.>=3.0::devel/libdvdread \
 		x264::multimedia/x264 \
 		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 		pthread stdc++ usbhid z Xau Xdmcp \
