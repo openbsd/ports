@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/06/19 19:40:01 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/06/29 06:58:22 jakob Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeping
 ${PMDIR}/Smokeping/
 ${PMDIR}/Smokeping.pm
+${PMDIR}/Smokeping/Colorspace.pm
 ${PMDIR}/Smokeping/Examples.pm
 ${PMDIR}/Smokeping/RRDtools.pm
 ${PMDIR}/Smokeping/ciscoRttMonMIB.pm
 ${PMDIR}/Smokeping/matchers/
 ${PMDIR}/Smokeping/matchers/Avgratio.pm
+${PMDIR}/Smokeping/matchers/CheckLatency.pm
+${PMDIR}/Smokeping/matchers/CheckLoss.pm
 ${PMDIR}/Smokeping/matchers/Median.pm
+${PMDIR}/Smokeping/matchers/Medratio.pm
 ${PMDIR}/Smokeping/matchers/base.pm
 ${PMDIR}/Smokeping/probes/
 ${PMDIR}/Smokeping/probes/AnotherDNS.pm
@@ -21,31 +25,43 @@ ${PMDIR}/Smokeping/probes/Curl.pm
 ${PMDIR}/Smokeping/probes/DNS.pm
 ${PMDIR}/Smokeping/probes/EchoPing.pm
 ${PMDIR}/Smokeping/probes/EchoPingChargen.pm
+${PMDIR}/Smokeping/probes/EchoPingDNS.pm
 ${PMDIR}/Smokeping/probes/EchoPingDiscard.pm
 ${PMDIR}/Smokeping/probes/EchoPingHttp.pm
 ${PMDIR}/Smokeping/probes/EchoPingHttps.pm
 ${PMDIR}/Smokeping/probes/EchoPingIcp.pm
+${PMDIR}/Smokeping/probes/EchoPingLDAP.pm
+${PMDIR}/Smokeping/probes/EchoPingPlugin.pm
 ${PMDIR}/Smokeping/probes/EchoPingSmtp.pm
+${PMDIR}/Smokeping/probes/EchoPingWhois.pm
 ${PMDIR}/Smokeping/probes/FPing.pm
 ${PMDIR}/Smokeping/probes/FPing6.pm
+${PMDIR}/Smokeping/probes/FTPtransfer.pm
 ${PMDIR}/Smokeping/probes/IOSPing.pm
 ${PMDIR}/Smokeping/probes/LDAP.pm
 ${PMDIR}/Smokeping/probes/Radius.pm
 ${PMDIR}/Smokeping/probes/RemoteFPing.pm
 ${PMDIR}/Smokeping/probes/SSH.pm
+${PMDIR}/Smokeping/probes/TacacsPlus.pm
 ${PMDIR}/Smokeping/probes/TelnetIOSPing.pm
+${PMDIR}/Smokeping/probes/TelnetJunOSPing.pm
+${PMDIR}/Smokeping/probes/WebProxyFilter.pm
 ${PMDIR}/Smokeping/probes/base.pm
 ${PMDIR}/Smokeping/probes/basefork.pm
 ${PMDIR}/Smokeping/probes/basevars.pm
 ${PMDIR}/Smokeping/probes/passwordchecker.pm
 ${PMDIR}/Smokeping/probes/skel.pm
+${PMDIR}/Smokeping/sorters/
 @man man/man1/smokeping.1
 @man man/man1/smokeping.cgi.1
 share/doc/smokeping/
 share/doc/smokeping/Smokeping.txt
 share/doc/smokeping/matchers/
 share/doc/smokeping/matchers/Avgratio.txt
+share/doc/smokeping/matchers/CheckLatency.txt
+share/doc/smokeping/matchers/CheckLoss.txt
 share/doc/smokeping/matchers/Median.txt
+share/doc/smokeping/matchers/Medratio.txt
 share/doc/smokeping/matchers/base.txt
 share/doc/smokeping/probes/
 share/doc/smokeping/probes/AnotherDNS.txt
@@ -57,19 +73,27 @@ share/doc/smokeping/probes/Curl.txt
 share/doc/smokeping/probes/DNS.txt
 share/doc/smokeping/probes/EchoPing.txt
 share/doc/smokeping/probes/EchoPingChargen.txt
+share/doc/smokeping/probes/EchoPingDNS.txt
 share/doc/smokeping/probes/EchoPingDiscard.txt
 share/doc/smokeping/probes/EchoPingHttp.txt
 share/doc/smokeping/probes/EchoPingHttps.txt
 share/doc/smokeping/probes/EchoPingIcp.txt
+share/doc/smokeping/probes/EchoPingLDAP.txt
+share/doc/smokeping/probes/EchoPingPlugin.txt
 share/doc/smokeping/probes/EchoPingSmtp.txt
+share/doc/smokeping/probes/EchoPingWhois.txt
 share/doc/smokeping/probes/FPing.txt
 share/doc/smokeping/probes/FPing6.txt
+share/doc/smokeping/probes/FTPtransfer.txt
 share/doc/smokeping/probes/IOSPing.txt
 share/doc/smokeping/probes/LDAP.txt
 share/doc/smokeping/probes/Radius.txt
 share/doc/smokeping/probes/RemoteFPing.txt
 share/doc/smokeping/probes/SSH.txt
+share/doc/smokeping/probes/TacacsPlus.txt
 share/doc/smokeping/probes/TelnetIOSPing.txt
+share/doc/smokeping/probes/TelnetJunOSPing.txt
+share/doc/smokeping/probes/WebProxyFilter.txt
 share/doc/smokeping/probes/base.txt
 share/doc/smokeping/probes/basefork.txt
 share/doc/smokeping/probes/basevars.txt
@@ -82,6 +106,12 @@ share/doc/smokeping/smokeping_examples.txt
 share/doc/smokeping/smokeping_extend.txt
 share/doc/smokeping/smokeping_install.txt
 share/doc/smokeping/smokeping_upgrade.txt
+share/doc/smokeping/sorters/
+share/doc/smokeping/sorters/Loss.txt
+share/doc/smokeping/sorters/Max.txt
+share/doc/smokeping/sorters/Median.txt
+share/doc/smokeping/sorters/StdDev.txt
+share/doc/smokeping/sorters/base.txt
 share/doc/smokeping/tSmoke.txt
 share/examples/smokeping/
 @sample ${SYSCONFDIR}/smokeping/
@@ -104,7 +134,6 @@ share/examples/smokeping/tmail
 @group _smokeping
 @sample /var/db/smokeping/
 @sample /var/www/htdocs/smokeping/
-@mode 0755
 @owner www
 @group
 @sample /var/www/htdocs/smokeping/img/

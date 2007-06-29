@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2007/04/03 14:53:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2007/06/29 06:58:22 jakob Exp $
 
 COMMENT=	"latency logging and graphing system"
 
-VERSION=	2.0.9
+VERSION=	2.1.1
 DISTNAME=	smokeping-${VERSION}
-PKGNAME=	smokeping-${VERSION}p0
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
 
 HOMEPAGE=	http://oss.oetiker.ch/smokeping/
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu@spacehopper.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::devel/p5-Config-Grammar \
-		::net/rrdtool \
+		:p5-RRD-*:net/rrdtool,-perl \
 		::net/p5-SNMP_Session \
 		::net/fping \
 		::www/p5-CGI-SpeedyCGI
@@ -41,7 +40,8 @@ do-install:
 	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g" \
 		< ${WRKSRC}/bin/smokeping.dist > ${WRKSRC}/bin/smokeping
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin/smokeping
-	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g" \
+	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		< ${WRKSRC}/htdocs/smokeping.cgi.dist \
 		> ${WRKSRC}/htdocs/smokeping.cgi
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/smokeping
@@ -58,6 +58,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${PMDIR}/Smokeping/probes
 	${INSTALL_DATA} ${WRKSRC}/lib/Smokeping/probes/*.pm \
 		${PREFIX}/${PMDIR}/Smokeping/probes
+	${INSTALL_DATA_DIR} ${PREFIX}/${PMDIR}/Smokeping/sorters
+	${INSTALL_DATA} ${WRKSRC}/lib/Smokeping/probes/*.pm \
+		${PREFIX}/${PMDIR}/Smokeping/probes
 	${INSTALL_MAN} ${WRKSRC}/doc/smokeping*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/smokeping
@@ -67,6 +70,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping/probes
 	${INSTALL_DATA} ${WRKSRC}/doc/Smokeping/probes/*.txt \
 		${PREFIX}/share/doc/smokeping/probes
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping/sorters
+	${INSTALL_DATA} ${WRKSRC}/doc/Smokeping/sorters/*.txt \
+		${PREFIX}/share/doc/smokeping/sorters
 .for file in ${ETCFILES}
 	${INSTALL_DATA} ${WRKSRC}/etc/${file}.dist \
 		${PREFIX}/share/examples/smokeping/${file}
