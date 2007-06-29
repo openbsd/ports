@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2007/06/28 15:08:23 espie Exp $
+# $OpenBSD: Makefile,v 1.189 2007/06/29 22:12:39 espie Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -24,8 +24,6 @@
      SUBDIR += dia
      SUBDIR += digikam
      SUBDIR += digikam-doc
-     SUBDIR += digikam-image-plugins
-     SUBDIR += digikam-image-plugins-doc
      SUBDIR += djvulibre
      SUBDIR += djvulibre,no_x11
      SUBDIR += dumpmpeg
