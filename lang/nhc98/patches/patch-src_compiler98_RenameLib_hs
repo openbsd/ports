@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_compiler98_RenameLib_hs,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+From patch-1.18-newtype. Put here because I'd problems fetching it
+from ftp.cs.york.ac.uk.
+
+--- src/compiler98/RenameLib.hs.orig	Wed Dec 22 13:58:35 2004
++++ src/compiler98/RenameLib.hs	Thu Jun  7 15:14:04 2007
+@@ -216,7 +216,7 @@ keepRS (RenameState flags unique rps rts rt st derived
+ 	      (coni:_) ->
+ 		 case (ntI . dropJust . lookupAT st ) coni of
+   	           (NewType _ [] _ [NTcons c _ _,res]) -> (synType,(u,c):newType)
+-  	           (NewType _ [] _ [NTvar v _,res]) -> (synType,(u,v):newType)
++  	           (NewType _ [] _ [NTvar v _,res]) -> (synType,      newType)
+   	           (NewType _ [] _ [NTapp v1 v2,res]) -> (synType,newType)
+ 			-- ^ MW hack: omits potential circularity check!
+   	           (NewType _ [] _ (_:_:_)) ->

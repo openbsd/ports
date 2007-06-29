@@ -1,0 +1,15 @@
+$OpenBSD: patch-script_hood_inst,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+We don't have to care about different archs installed at the same place.
+
+--- script/hood.inst.orig	Mon Jun  4 12:45:23 2001
++++ script/hood.inst	Sat Jun  9 19:20:15 2007
+@@ -3,7 +3,7 @@
+ 
+ NHC98BINDIR=${NHC98BINDIR-ScriptDir}
+ NHC98LIBDIR=${NHC98LIBDIR-ExecutableDir}
+-MACHINE=`${NHC98BINDIR}/harch`
++MACHINE=OpenBSD
+ 
+ #if [ ! -d $NHC98LIBDIR/$MACHINE ]
+ #then

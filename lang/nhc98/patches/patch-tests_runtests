@@ -1,0 +1,22 @@
+$OpenBSD: patch-tests_runtests,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+Don't use bash.
+
+If there are unexpected results, bail out.
+
+--- tests/runtests.orig	Fri Mar  4 11:26:34 2005
++++ tests/runtests	Sat Jun  9 14:15:47 2007
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # Run haskell test suites.
+ 
+ if uname -a | grep -i CYGWIN >/dev/null
+@@ -70,6 +70,7 @@ run () {
+   echo >&2 "                  / of which $hmakeok known / $hmakebad bad"
+   echo >&2 "$outok outputs match / $outbad outputs differ"
+   echo >&2 "$errok errors  match / $errbad errors  differ"
++  return $((hmakebad || outbad || errbad))
+ }
+ 
+ clean () {

@@ -1,0 +1,15 @@
+$OpenBSD: patch-script_hsc2hs_inst,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+We don't have to care about different archs installed at the same place.
+
+--- script/hsc2hs.inst.orig	Sun Jun 27 22:44:41 2004
++++ script/hsc2hs.inst	Sat Jun  9 19:33:47 2007
+@@ -4,7 +4,7 @@
+ SCRIPTDIR=${SCRIPTDIR-ScriptDir}
+ EXEDIR=${EXEDIR-ExecutableDir}
+ INCDIR=${INCDIR-IncludeDir}
+-MACHINE=${MACHINE-"`$SCRIPTDIR/harch`"}
++MACHINE=OpenBSD
+ export MACHINE EXEDIR SCRIPTDIR
+ 
+ if [ ! -d $EXEDIR/$MACHINE ]

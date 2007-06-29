@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+Don't be so picky about the compiler used to build nhc.
+
+--- configure.orig	Fri Mar 11 10:32:56 2005
++++ configure	Sat Jun  9 12:07:35 2007
+@@ -104,7 +104,7 @@ NEWHEAP=$HEAP
+ 
+ MOREEVIL=no
+ case $CCC in	# versions of gcc >= 3.3 require extra evil in the evil mangler!
+-  *gcc*) if $CCC --version | head -1 | grep "3.3" >/dev/null
++  *cc*) if $CCC --version | head -1 | grep "3.3" >/dev/null
+          then MOREEVIL=yes
+          fi ;;
+ esac
+@@ -323,8 +323,7 @@ then
+   fi
+   case $BUILDWITH in
+     hbc|xtc)   RTSFLAG=no;;
+-    ghc*|nhc*) RTSFLAG=yes;;
+-    gcc)       RTSFLAG=yes;;
++    *)         RTSFLAG=yes;;
+   esac
+   echo "nhc98comp uses RTS delimiters?              $RTSFLAG"
+   if [ "$BUILDOPTS" != "" ]

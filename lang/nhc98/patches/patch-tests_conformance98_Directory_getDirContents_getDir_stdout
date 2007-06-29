@@ -1,0 +1,20 @@
+$OpenBSD: patch-tests_conformance98_Directory_getDirContents_getDir_stdout,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+CVS directories are deleted in the post-extract target.
+
+--- tests/conformance98/Directory/getDirContents/getDir.stdout.orig	Thu Aug  5 14:49:29 2004
++++ tests/conformance98/Directory/getDirContents/getDir.stdout	Thu Jun 14 01:32:06 2007
+@@ -1,12 +1,12 @@
+ Current Dir: tests/conformance98/Directory/getDirContents
+     .
+     ..
+-    CVS
+     Main
+     Main.hi
+     Main.hs
+     Main.o
+     getDir.stdout
++    getDir.stdout.orig
+     hmake.err
+     tmp.err
+     tmp.out

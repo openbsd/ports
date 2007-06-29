@@ -1,0 +1,13 @@
+$OpenBSD: patch-script_greencard_inst,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+We don't have to care about different archs installed at the same place.
+
+--- script/greencard.inst.orig	Thu Jul 25 10:55:07 2002
++++ script/greencard.inst	Sun Jun 10 00:01:57 2007
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+ #	simple redirection script to find the correct executable
+ #	for this machine architecture
+-MACHINE=${MACHINE-"`ScriptDir/harch`"}
++MACHINE=OpenBSD
+ exec ExecutableDir/$MACHINE/`basename $0` "$@"

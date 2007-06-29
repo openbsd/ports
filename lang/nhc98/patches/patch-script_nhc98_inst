@@ -1,0 +1,15 @@
+$OpenBSD: patch-script_nhc98_inst,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+We don't have to care about different archs installed at the same place.
+
+--- script/nhc98.inst.orig	Tue Feb  1 19:09:26 2005
++++ script/nhc98.inst	Sat Jun  9 19:33:47 2007
+@@ -13,7 +13,7 @@
+ NHC98BINDIR=${NHC98BINDIR-ScriptDir}
+ NHC98LIBDIR=${NHC98LIBDIR-ExecutableDir}
+ NHC98INCDIR=${NHC98INCDIR-IncludeDir}
+-MACHINE=${MACHINE-"`$NHC98BINDIR/harch`"}
++MACHINE=OpenBSD
+ 
+ if [ ! -d $NHC98LIBDIR/$MACHINE ]
+ then

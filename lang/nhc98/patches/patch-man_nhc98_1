@@ -1,0 +1,52 @@
+$OpenBSD: patch-man_nhc98_1,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+No harch, no MACHINE (well, it's just hardcoded).
+
+--- man/nhc98.1.orig	Fri Mar 15 17:27:41 2002
++++ man/nhc98.1	Sat Jun  9 19:23:08 2007
+@@ -50,7 +50,7 @@ Prepend
+ to the list of paths used to locate interface files.  The 
+ .I path
+ should be a directory. Nhc98 will try to link with
+-.I path/$MACHINE/lib.a, 
++.I path/lib.a, 
+ or if it does not exist with
+ .I path/lib.a
+ (
+@@ -177,30 +177,27 @@ There may be more flags (they multiply).
+ .SH ENVIRONMENT
+ The environment variables NHC98LIBDIR and NHC98INCDIR are used to find the
+ various files used by the compiler.  The default values are
+-/usr/local/lib/nhc98 and /usr/local/include/nhc98.  The variable $MACHINE
+-is used to select the correct executables and libraries for your architecture.
+-It is determined using the script
+-.I harch
++/usr/local/lib/nhc98 and /usr/local/include/nhc98.
+ .SH FILES
+ .TP 25
+-.B $NHC98LIBDIR/$MACHINE/nhc98comp
++.B $NHC98LIBDIR/nhc98comp
+ the compiler.
+ .TP
+ .B $NHC98INCDIR/*.hi
+ interface files.
+ .TP
+-.B $NHC98LIBDIR/$MACHINE/Runtime[ptT]?.o
++.B $NHC98LIBDIR/Runtime[ptT]?.o
+ part of the runtime system.
+ .TP
+-.B $NHC98LIBDIR/$MACHINE/Runtime[ptT]?.a
++.B $NHC98LIBDIR/Runtime[ptT]?.a
+ the rest of the runtime system.
+ .TP
+-.B $NHC98LIBDIR/$MACHINE/Prelude[ptT]?.a
++.B $NHC98LIBDIR/Prelude[ptT]?.a
+ the standard prelude and libraries.
+ .SH DIAGNOSTICS
+ Could be better, could be worse.
+ .SH "SEE ALSO"
+-hmake(1), hp2graph(1), harch(1)
++hmake(1), hp2graph(1)
+ .SH BUGS
+ Probably.
+ .br

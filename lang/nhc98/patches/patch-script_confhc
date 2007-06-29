@@ -1,0 +1,16 @@
+$OpenBSD: patch-script_confhc,v 1.1 2007/06/29 11:06:25 kili Exp $
+
+GHC version output has changed, so an installed GHC would break
+configure without this.
+
+--- script/confhc.orig	Thu Mar 10 17:36:08 2005
++++ script/confhc	Tue Jun 19 17:11:53 2007
+@@ -78,7 +78,7 @@ fi
+ ghcsym () {
+   echo __GLASGOW_HASKELL__ >ghcsym.hs;
+   $1 -E -cpp -optP-P ghcsym.hs -o ghcsym.out;
+-  grep -v '^#' ghcsym.out > $2;
++  grep -v '#' ghcsym.out > $2;
+   rm -f ghcsym.hs ghcsym.out;
+ }
+ echo -n "  Looking for ghc...   "
