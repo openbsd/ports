@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.7 2007/06/29 19:23:34 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.8 2007/06/29 19:28:06 jasper Exp $
 # Module for GNOME related ports
 
 CATEGORIES+=		x11/gnome
@@ -7,7 +7,6 @@ DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 
 USE_LIBTOOL?=		Yes
-USE_X11=		Yes
 
 MODGNOME_RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
