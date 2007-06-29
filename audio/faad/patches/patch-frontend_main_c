@@ -1,7 +1,52 @@
-$OpenBSD: patch-frontend_main_c,v 1.4 2004/04/28 01:30:00 jolan Exp $
---- frontend/main.c.orig	2004-01-06 05:59:47.000000000 -0600
-+++ frontend/main.c	2004-04-27 19:19:15.000000000 -0500
-@@ -1080,7 +1080,7 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-frontend_main_c,v 1.5 2007/06/29 06:01:42 jakemsr Exp $
+--- frontend/main.c.orig	Tue Jan  6 03:59:47 2004
++++ frontend/main.c	Thu May 31 18:00:02 2007
+@@ -37,6 +37,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <getopt.h>
++#include <string.h>
+ 
+ #include <faad.h>
+ #include <mp4ff.h>
+@@ -52,10 +53,10 @@
+ 
+ /* FAAD file buffering routines */
+ typedef struct {
+-    long bytes_into_buffer;
+-    long bytes_consumed;
+-    long file_offset;
+-    unsigned char *buffer;
++    uint32_t bytes_into_buffer;
++    uint32_t bytes_consumed;
++    uint32_t file_offset;
++    uint8_t *buffer;
+     int at_eof;
+     FILE *infile;
+ } aac_buffer;
+@@ -377,8 +378,8 @@ int decodeAACfile(char *aacfile, char *sndfile, char *
+                   float *song_length)
+ {
+     int tagsize;
+-    unsigned long samplerate;
+-    unsigned char channels;
++    uint32_t samplerate;
++    uint8_t channels;
+     void *sample_buffer;
+ 
+     audio_file *aufile;
+@@ -687,8 +688,8 @@ int decodeMP4file(char *mp4file, char *sndfile, char *
+                   int infoOnly, int adts_out, float *song_length)
+ {
+     int track;
+-    unsigned long samplerate;
+-    unsigned char channels;
++    uint32_t samplerate;
++    uint8_t channels;
+     void *sample_buffer;
+ 
+     mp4ff_t *infile;
+@@ -1080,7 +1081,7 @@ int main(int argc, char *argv[])
              if (optarg)
              {
                  char dr[10];
@@ -10,7 +55,7 @@ $OpenBSD: patch-frontend_main_c,v 1.4 2004/04/28 01:30:00 jolan Exp $
                      def_srate = 0;
                  } else {
                      def_srate = atoi(dr);
-@@ -1091,7 +1091,7 @@ int main(int argc, char *argv[])
+@@ -1091,7 +1092,7 @@ int main(int argc, char *argv[])
              if (optarg)
              {
                  char dr[10];
@@ -19,7 +64,7 @@ $OpenBSD: patch-frontend_main_c,v 1.4 2004/04/28 01:30:00 jolan Exp $
                  {
                      format = 1;
                  } else {
-@@ -1105,7 +1105,7 @@ int main(int argc, char *argv[])
+@@ -1105,7 +1106,7 @@ int main(int argc, char *argv[])
              if (optarg)
              {
                  char dr[10];
@@ -28,7 +73,7 @@ $OpenBSD: patch-frontend_main_c,v 1.4 2004/04/28 01:30:00 jolan Exp $
                  {
                      outputFormat = FAAD_FMT_16BIT; /* just use default */
                  } else {
-@@ -1119,7 +1119,7 @@ int main(int argc, char *argv[])
+@@ -1119,7 +1120,7 @@ int main(int argc, char *argv[])
              if (optarg)
              {
                  char dr[10];

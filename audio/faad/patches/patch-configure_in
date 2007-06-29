@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.3 2005/01/05 11:40:04 alek Exp $
---- configure.in.orig	Fri Feb  6 17:04:39 2004
-+++ configure.in	Wed Jan  5 12:38:10 2005
-@@ -67,10 +67,7 @@ MY_CHECK_TYPEDEF_FROM_INCLUDE([fpos_t fo
+$OpenBSD: patch-configure_in,v 1.4 2007/06/29 06:01:42 jakemsr Exp $
+--- configure.in.orig	Fri Feb  6 08:04:39 2004
++++ configure.in	Thu May 31 14:07:32 2007
+@@ -67,10 +67,7 @@ MY_CHECK_TYPEDEF_FROM_INCLUDE([fpos_t foo; foo.__pos =
          [HAVE_FPOS_T_POS])
  
  
