@@ -1,4 +1,4 @@
-# $OpenBSD: apache-module.port.mk,v 1.6 2007/06/22 19:07:33 simon Exp $
+# $OpenBSD: apache-module.port.mk,v 1.7 2007/06/30 15:27:29 simon Exp $
 # simplify installation of apache modules
 # written by Marc Espie 2007, public domain
 #
@@ -31,7 +31,7 @@ SHARED_ONLY ?= Yes
 
 MODAPACHE_ENABLE ?= mod_${MODAPACHE_NAME}-enable
 MODAPACHE_MODULE ?= mod_${MODAPACHE_NAME}.so
-MODAPACHE_FINAL = /usr/lib/apache/${MODAPACHE_MODULE}
+MODAPACHE_FINAL = /usr/lib/apache/modules/${MODAPACHE_MODULE}
 MODAPACHE_LOCATION ?= ${WRKBUILD}
 MODAPACHE_FILE ?= ${MODAPACHE_LOCATION}/${MODAPACHE_MODULE}
 
