@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.12 2007/06/30 11:39:46 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.13 2007/06/30 12:14:14 jasper Exp $
 # Module for GNOME related ports
 
 CATEGORIES+=		x11/gnome
@@ -6,7 +6,7 @@ CATEGORIES+=		x11/gnome
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 
-.if !defined(NO_BUILD)
+.if ${NO_BUILD:L} == "no"
 USE_LIBTOOL?=		Yes
 BUILD_DEPENDS+=	 	:intltool-*:textproc/intltool \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
