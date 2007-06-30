@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.908 2007/06/30 14:43:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.909 2007/06/30 14:48:04 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2338,7 +2338,8 @@ fetch-makefile:
 mirror-maker-fetch:
 	@mk=`mktemp ${TMPDIR}/mk.XXXXXXXX`; ${MAKE} fetch-makefile >$$mk; \
 	echo "Check and remove $$mk"; \
-	${MAKE} -f $$mk all FETCH=${PORTSDIR}/infrastructure/fetch/fetch-all
+	cd ${DISTDIR} && \
+		${MAKE} -f $$mk all FETCH=${PORTSDIR}/infrastructure/fetch/fetch-all
 
 _fetch-makefile:
 .if !defined(COMES_WITH)
