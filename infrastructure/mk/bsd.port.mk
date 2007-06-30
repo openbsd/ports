@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.907 2007/06/29 10:24:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.908 2007/06/30 14:43:49 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2335,6 +2335,11 @@ _internal-clean:
 fetch-makefile:
 	@exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes _fetch-makefile
 
+mirror-maker-fetch:
+	@mk=`mktemp ${TMPDIR}/mk.XXXXXXXX`; ${MAKE} fetch-makefile >$$mk; \
+	echo "Check and remove $$mk"; \
+	${MAKE} -f $$mk all FETCH=${PORTSDIR}/infrastructure/fetch/fetch-all
+
 _fetch-makefile:
 .if !defined(COMES_WITH)
 	@echo -n "all"
@@ -2945,7 +2950,7 @@ _all_phony = ${_recursive_depends_targets} ${_recursive_describe_targets} \
 	pre-fetch pre-install pre-package pre-patch pre-regress \
 	print-build-depends print-run-depends readme readmes rebuild \
 	regress-depends repackage run-depends run-depends-list show-required-by \
-	subpackage uninstall update-patches update-plist
+	subpackage uninstall update-patches update-plist mirror-maker-fetch
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
