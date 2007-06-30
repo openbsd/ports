@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.86 2007/06/03 22:25:01 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.87 2007/06/30 14:31:00 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -70,11 +70,12 @@ _FULLSUBDIR := ${SUBDIR}
 _FULLSUBDIR := ${SUBDIR:S@^@${PKGPATH}/@g}
 .endif
 
-_SKIPPED =
+_SKIP_STUFF = case "$${subdir}" in
 .for i in ${SKIPDIR}
-_SKIPPED :+= ${_FULLSUBDIR:M$i}
-_FULLSUBDIR := ${_FULLSUBDIR:N$i}
+_SKIP_STUFF += $i) eval $${echo_msg} "===\> $i skipped"; continue;; 
 .endfor
+_SKIP_STUFF += *) ;; esac
+
 .if defined(STARTDIR) && !empty(STARTDIR)
 _STARTDIR_SEEN ?= false
 .else
@@ -107,6 +108,7 @@ _subdir_fragment = \
 				continue;; \
 			esac; \
 		fi; \
+		${_SKIP_STUFF}; \
 		${_flavor_fragment}; \
 		eval $${echo_msg} "===\> $$subdir"; \
 		if ! (eval $$toset exec ${MAKE} $$target); then \
