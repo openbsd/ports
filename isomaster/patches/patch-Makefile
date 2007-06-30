@@ -1,0 +1,60 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/06/30 21:34:53 kili Exp $
+--- Makefile.orig	Mon May 28 02:50:20 2007
++++ Makefile	Fri Jun 22 22:25:37 2007
+@@ -1,5 +1,5 @@
+ # Other paths are relative to this.
+-PREFIX ?= /usr/local
++PREFIX ?= ${PREFIX}
+ 
+ # Where to install the executable.
+ BINPATH ?= $(PREFIX)/bin
+@@ -14,7 +14,7 @@ export ICONPATH ?= $(PREFIX)/share/isomaster/icons
+ export LOCALEDIR ?= $(PREFIX)/share/locale
+ 
+ # Where to install the man page.
+-MYMANPATH ?= $(PREFIX)/share/man/man1
++MYMANPATH ?= $(PREFIX)/man/man1
+ 
+ # Where to install the .desktop file
+ DESKTOPPATH ?= $(PREFIX)/share/applications
+@@ -50,7 +50,7 @@ OBJECTS = isomaster.o window.o browser.o fsbrowser.o i
+ all: isomaster translations isomaster.desktop
+ 
+ isomaster: $(OBJECTS) lib iniparser
+-	$(CC) $(OBJECTS) bk/bk.a iniparser-2.15/libiniparser.a $(CFLAGS) $(CPPFLAGS) `pkg-config --libs gtk+-2.0`-o isomaster
++	$(CC) $(OBJECTS) bk/bk.a iniparser-2.15/libiniparser.a $(CFLAGS) $(CPPFLAGS) `pkg-config --libs gtk+-2.0` -o isomaster
+ 
+ # static pattern rule
+ $(OBJECTS): %.o: %.c bk/bk.h Makefile
+@@ -82,22 +82,22 @@ endif
+ # for info about DESTDIR see http://www.gnu.org/prep/standards/html_node/DESTDIR.html
+ 
+ install: all
+-	$(INSTALL) -d $(DESTDIR)$(BINPATH)
+-	$(INSTALL) isomaster $(DESTDIR)$(BINPATH)
++	$(INSTALL) -d $(BINPATH)
++	$(INSTALL) isomaster $(BINPATH)
+ 	cd icons && $(MAKE) install
+ ifndef WITHOUT_NLS
+ 	cd po && $(MAKE) install
+ endif
+-	$(INSTALL) -d $(DESTDIR)$(MYMANPATH)
+-	$(INSTALL) -m 644 isomaster.1 $(DESTDIR)$(MYMANPATH)
+-	$(INSTALL) -d $(DESTDIR)$(DESKTOPPATH)
+-	$(INSTALL) -m 644 isomaster.desktop $(DESTDIR)$(DESKTOPPATH)
++	$(INSTALL) -d $(MYMANPATH)
++	$(INSTALL) -m 644 isomaster.1 $(MYMANPATH)
++	$(INSTALL) -d $(DESKTOPPATH)
++	$(INSTALL) -m 644 isomaster.desktop $(DESKTOPPATH)
+ 
+ uninstall: 
+-	$(RM) $(DESTDIR)$(BINPATH)/isomaster
++	$(RM) $(BINPATH)/isomaster
+ 	cd icons && $(MAKE) uninstall
+ ifndef WITHOUT_NLS
+ 	cd po && $(MAKE) uninstall
+ endif
+-	$(RM) $(DESTDIR)$(MYMANPATH)/isomaster.1
+-	$(RM) $(DESTDIR)$(DESKTOPPATH)/isomaster.desktop
++	$(RM) $(MYMANPATH)/isomaster.1
++	$(RM) $(DESKTOPPATH)/isomaster.desktop
