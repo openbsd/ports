@@ -1,0 +1,19 @@
+$OpenBSD: patch-icons_Makefile,v 1.1.1.1 2007/06/30 21:52:02 kili Exp $
+--- icons/Makefile.orig	Thu Jan 18 20:45:09 2007
++++ icons/Makefile	Fri Jun 22 22:04:31 2007
+@@ -3,12 +3,12 @@
+ ICONS = isomaster.png go-back-kearone.png folder-new-kearone.png add2-kearone.png extract2-kearone.png delete-kearone.png
+ 
+ install: 
+-	$(INSTALL) -d $(DESTDIR)$(ICONPATH)
++	$(INSTALL) -d $(ICONPATH)
+ 	for NAME in $(ICONS); do \
+-	  $(INSTALL) -v -m 644 $$NAME $(DESTDIR)$(ICONPATH); \
++	  $(INSTALL) -m 644 $$NAME $(ICONPATH); \
+ 	done
+ 
+ uninstall:
+ 	for NAME in $(ICONS); do \
+-	  $(RM) -v $(DESTDIR)$(ICONPATH)/$$NAME; \
++	  $(RM) -v $(ICONPATH)/$$NAME; \
+ 	done
