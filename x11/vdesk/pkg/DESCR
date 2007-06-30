@@ -1,0 +1,4 @@
+vdesk is a virtual desktop manager, intended for use with window
+managers that don't provide virtual desktops themselves. It works
+by mapping and unmapping (i.e. showing and hiding) windows itself
+when you invoke it to change desktops.

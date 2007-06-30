@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/30 14:17:53 mbalmer Exp $
+bin/vdesk
+share/doc/vdesk/
+share/doc/vdesk/AUTHORS
+share/doc/vdesk/COPYING
+share/doc/vdesk/README
+@comment share/nls/pl_PL.ISO_8859-2/
