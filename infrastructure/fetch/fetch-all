@@ -2,7 +2,7 @@
 
 # Sample script to use with fetch-makefile: fetch all distfiles
 
-# $OpenBSD: fetch-all,v 1.6 2007/04/03 15:37:38 espie Exp $
+# $OpenBSD: fetch-all,v 1.7 2007/06/30 14:48:20 espie Exp $
 #
 # Copyright (c) 2000 Marc Espie.
 # 
@@ -32,6 +32,8 @@ then
 	exit 0
 fi
 
+: ${FTP_KEEPALIVE:=0}
+
 file=`echo $1|sed -e "s,^${DIST_SUBDIR:-.}/,,"`
 dir=`dirname $1`
 check=`basename $1`
@@ -40,7 +42,7 @@ oldd=$PWD
 cd $dir
 for site in ${SITES}
 do
-	if ftp ${site}$file
+	if ftp -k ${FTP_KEEPALIVE} ${site}$file
 	then
 		echo -n "$site: "
 		cd $oldd
