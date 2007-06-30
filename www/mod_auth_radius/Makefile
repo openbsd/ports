@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2007/06/26 19:19:46 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2007/06/30 15:32:30 simon Exp $
 
 DISTNAME=	mod_auth_radius-1.5.7
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	www
 MODULES+=	apache-module
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/06/21 20:25:40 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/06/30 15:32:30 simon Exp $
 
 COMMENT=	"Apache LDAP authentication module"
 
 VERSION=	1.6.0
 DISTNAME=	auth_ldap-${VERSION}
-PKGNAME=	mod_auth_ldap-${VERSION}p4
+PKGNAME=	mod_auth_ldap-${VERSION}p5
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.rudedog.org/auth_ldap/

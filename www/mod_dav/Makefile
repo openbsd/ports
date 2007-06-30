@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/06/21 19:34:12 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2007/06/30 15:32:30 simon Exp $
 
 COMMENT=	"class 1 and 2 DAV server for the Apache webserver"
 
 DISTNAME=	mod_dav-1.0.3-1.3.6
-PKGNAME=	mod_dav-1.0.3p3
+PKGNAME=	mod_dav-1.0.3p4
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.webdav.org/mod_dav/

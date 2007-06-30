@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/06/26 19:19:46 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2007/06/30 15:32:30 simon Exp $
 
 COMMENT=	"transparently compress Apache output"
 
 V=		1.3.26.1a
 DISTNAME=	mod_gzip-${V}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mod-gzip/}

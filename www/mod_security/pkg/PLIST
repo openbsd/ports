@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/06/26 19:19:46 simon Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/06/30 15:32:30 simon Exp $
 lib/${MODAPACHE_MODULE}
 @exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
 sbin/${MODAPACHE_ENABLE}
@@ -10,5 +10,4 @@ share/doc/mod_security/README
 share/doc/mod_security/modsecurity-manual.pdf
 share/examples/mod_security/
 share/examples/mod_security/httpd.conf.example-minimal
-%%SHARED%%
 @unexec-delete rm -f ${MODAPACHE_FINAL}

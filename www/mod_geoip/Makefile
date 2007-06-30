@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/06/26 19:19:46 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/06/30 15:32:30 simon Exp $
 
 COMMENT=	"Apache module for finding the country of web requests"
 
 DISTNAME=	mod_geoip_1.2.6
-PKGNAME=	mod_geoip-1.2.6p1
+PKGNAME=	mod_geoip-1.2.6p2
 CATEGORIES=	www geo
 
 HOMEPAGE=	http://www.maxmind.com/app/mod_geoip
