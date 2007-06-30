@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.293 2007/06/25 08:20:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.294 2007/06/30 14:24:26 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -189,6 +189,7 @@
      SUBDIR += tvtwm
      SUBDIR += type1inst
      SUBDIR += unclutter
+     SUBDIR += vdesk
      SUBDIR += viewfax
      SUBDIR += vlc
      SUBDIR += waimea
