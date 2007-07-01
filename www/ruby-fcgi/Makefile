@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/01 16:29:35 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/01 20:12:23 steven Exp $
 
 COMMENT=	"ruby FastCGI library"
 
 DISTNAME=	fcgi-0.8.7
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	www 
 
 # ruby license
@@ -16,9 +16,10 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=fcgi/}
 
 MODULES=	lang/ruby
 
-WANTLIB=	c fcgi m
+WANTLIB=	c m
 
-LIB_DEPENDS=	fcgi:fcgi->=2.4.0:www/fcgi
+LIB_DEPENDS=	fcgi:fcgi->=2.4.0:www/fcgi \
+		ruby.>=1::lang/ruby
 
 CONFIGURE_STYLE=ruby gem
 CONFIGURE_ARGS=	--with-fcgi-include=${LOCALBASE}/include \
