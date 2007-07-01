@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/12 06:47:56 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/01 20:07:09 steven Exp $
 
 COMMENT=	"little and fast Web crawler"
 
 DISTNAME=	larbin-2.6.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://larbin.sourceforge.net/index-eng.html
@@ -18,8 +19,7 @@ WANTLIB=	c m pthread stdc++
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=larbin/}
 
-RUN_DEPENDS=		::net/adns
-BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS=		adns.>=1::net/adns
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		CC="${CC}" MAKE=${MAKE_PROGRAM}
