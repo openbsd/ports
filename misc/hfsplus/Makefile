@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/04/01 16:44:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2007/07/01 20:56:41 aanriot Exp $
 
 COMMENT=	"hfsplus filesystem access tool"
 
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS= powerpc
 
 VERSION=	1.0.4
 DISTNAME=	hfsplus_${VERSION}
-PKGNAME=	hfsplus-${VERSION}p0
+PKGNAME=	hfsplus-${VERSION}p1
 WRKDIST=	${WRKDIR}/hfsplus-${VERSION}
 CATEGORIES=	misc 
 EXTRACT_SUFX=	.src.tar.bz2
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
+WANTLIB=		c
 
 AUTOCONF_VERSION=	2.59
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION}
@@ -25,8 +26,7 @@ LIB_DEPENDS=	utf8::misc/libutf8
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-HOMEPAGE=	http://ftp.penguinppc.org/projects/hfsplus/
-MASTER_SITES=	http://ftp.penguinppc.org/projects/hfsplus/
+MASTER_SITES=	http://penguinppc.org/historical/hfsplus/
 
 # actually uses automake/autoheader, but that is done in pre-configure now
 CONFIGURE_STYLE=automake
@@ -40,5 +40,14 @@ pre-configure:
 	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		${MAKE_PROGRAM} -f Makefile.cvs all
+
+DOC=bugs.html hfsp.html libhfsp.html
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hfsplus/
+
+.for h in ${DOC}
+	${INSTALL_DATA} ${WRKSRC}/doc/${h} ${PREFIX}/share/doc/hfsplus/
+.endfor
 
 .include <bsd.port.mk>
