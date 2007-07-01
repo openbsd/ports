@@ -1,7 +1,7 @@
-$OpenBSD: patch-plug-ins_common_compressor_c,v 1.1 2005/07/08 07:50:56 fgsch Exp $
---- plug-ins/common/compressor.c.orig	Fri Jun 24 12:21:14 2005
-+++ plug-ins/common/compressor.c	Fri Jun 24 12:21:30 2005
-@@ -414,7 +414,7 @@ save_image (const Compressor *compressor
+$OpenBSD: patch-plug-ins_common_compressor_c,v 1.2 2007/07/01 15:42:17 steven Exp $
+--- plug-ins/common/compressor.c.orig	Tue Apr 17 23:11:23 2007
++++ plug-ins/common/compressor.c	Wed Jun 27 08:39:03 2007
+@@ -414,7 +414,7 @@ save_image (const Compressor *compressor,
          /* and compress into it */
          execlp (compressor->save_program,
                  compressor->save_program,
@@ -10,7 +10,7 @@ $OpenBSD: patch-plug-ins_common_compressor_c,v 1.1 2005/07/08 07:50:56 fgsch Exp
  
          g_message ("execlp(\"%s %s\") failed: %s",
                     compressor->save_program,
-@@ -548,7 +548,7 @@ load_image (const Compressor  *compresso
+@@ -566,7 +566,7 @@ load_image (const Compressor  *compressor,
          /* and uncompress into it */
          execlp (compressor->load_program,
                  compressor->load_program,

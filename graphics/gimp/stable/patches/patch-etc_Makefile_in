@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.4 2006/07/07 12:24:05 bernd Exp $
---- etc/Makefile.in.orig	Thu Jun 22 12:52:52 2006
-+++ etc/Makefile.in	Fri Jul  7 11:08:30 2006
-@@ -366,7 +366,7 @@ exec_prefix = @exec_prefix@
+$OpenBSD: patch-etc_Makefile_in,v 1.5 2007/07/01 15:42:17 steven Exp $
+--- etc/Makefile.in.orig	Sat May 26 16:12:31 2007
++++ etc/Makefile.in	Wed Jun 27 08:39:08 2007
+@@ -367,7 +367,7 @@ exec_prefix = @exec_prefix@
  gimpdatadir = @gimpdatadir@
  gimpdir = @gimpdir@
  gimpplugindir = @gimpplugindir@
