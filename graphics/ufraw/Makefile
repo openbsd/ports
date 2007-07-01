@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/04/21 07:45:50 aanriot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/01 20:13:36 steven Exp $
 
 COMMENT=		"read and manipulate raw images from digital cameras"
 
 DISTNAME=		ufraw-0.11
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ufraw/}
@@ -18,18 +18,14 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		atk-1.0 c cairo expat fontconfig freetype \
-			gdk_pixbuf-2.0 gdk-x11-2.0 gimpbase-2.0 \
-			gimpcolor-2.0 gimpmath-2.0 gimpui-2.0 \
-			gimpwidgets-2.0 glib-2.0 glitz gmodule-2.0 \
-			gobject-2.0 gtk-x11-2.0 m pango-1.0 \
+			gdk_pixbuf-2.0 gdk-x11-2.0 glib-2.0 glitz \
+			gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 png stdc++ X11 Xau \
-			Xdmcp Xrender z 
+			Xcursor Xext Xfixes Xi Xinerama Xrandr \
+			Xdmcp Xrender z jpeg tiff exif
 
-LIB_DEPENDS=		gimp-2.0:gimp-2.*:graphics/gimp/stable \
-			tiff.>=37::graphics/tiff \
-			jpeg.>=62::graphics/jpeg \
-			lcms.>=1.15::graphics/lcms \
-			exif.>=12.1::graphics/libexif
+LIB_DEPENDS=		gimp-2.0,gimpbase-2.0,gimpcolor-2.0,gimpmath-2.0,gimpui-2.0,gimpwidgets-2.0,gimpmodule-2.0:gimp-2.*:graphics/gimp/stable \
+			lcms.>=1.15::graphics/lcms
 
 MODULES=		devel/gettext
 
