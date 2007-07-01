@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.295 2007/06/30 21:35:59 kili Exp $
+# $OpenBSD: Makefile,v 1.296 2007/07/01 08:41:43 kili Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -35,8 +35,8 @@
      SUBDIR += dclock
      SUBDIR += devilspie
      SUBDIR += dmenu
-     SUBDIR += dwm
      SUBDIR += driftnet
+     SUBDIR += dwm
      SUBDIR += e16keyedit
      SUBDIR += emiclock
      SUBDIR += enlightenment
@@ -87,8 +87,8 @@
      SUBDIR += icon-naming-utils
      SUBDIR += idesk
      SUBDIR += ion
-     SUBDIR += itk
      SUBDIR += isomaster
+     SUBDIR += itk
      SUBDIR += iwidgets
      SUBDIR += jmk-fonts
      SUBDIR += jwm
