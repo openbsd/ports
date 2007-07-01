@@ -1,7 +1,24 @@
-$OpenBSD: patch-ltmain_sh,v 1.4 2003/05/23 20:08:33 avsm Exp $
---- ltmain.sh.orig	Mon Feb 10 17:12:17 2003
-+++ ltmain.sh	Thu May 22 16:20:29 2003
-@@ -4524,40 +4524,6 @@ relink_command=\"$relink_command\""
+$OpenBSD: patch-ltmain_sh,v 1.5 2007/07/01 20:40:50 kurt Exp $
+--- ltmain.sh.orig	Tue Feb 15 03:52:33 2005
++++ ltmain.sh	Fri Jun 29 10:57:55 2007
+@@ -1529,6 +1529,16 @@ compiler."
+ 	  alldeplibs=yes
+ 	  continue
+ 	  ;;
++	-pthread)
++	  if test "$linkmode,$pass" = "prog,link"; then
++	    compile_deplibs="$deplib $compile_deplibs"
++	    finalize_deplibs="$deplib $finalize_deplibs"
++	  else
++	    deplibs="$deplib $deplibs"
++	    test $linkmode = lib && newdependency_libs="$deplib $newdependency_libs"
++	  fi
++	  continue
++	  ;;
+ 	esac # case $deplib
+ 	if test $found = yes || test -f "$lib"; then :
+ 	else
+@@ -4580,40 +4590,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
