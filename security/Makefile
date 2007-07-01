@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2007/05/28 12:35:15 steven Exp $
+# $OpenBSD: Makefile,v 1.185 2007/07/01 20:36:10 reyk Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -175,6 +175,7 @@
      SUBDIR += vomit
      SUBDIR += vpnc
      SUBDIR += whisker
+     SUBDIR += wpa_supplicant
      SUBDIR += xmlsec
      SUBDIR += zebedee
 
