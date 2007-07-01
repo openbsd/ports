@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2007/06/28 03:20:20 ian Exp $
+# $OpenBSD: Makefile,v 1.40 2007/07/01 20:34:02 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,8 @@ COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0.11
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}
-PKGNAME-jre=		jre-${V}
+PKGNAME-main=		jdk-${V}p0
+PKGNAME-jre=		jre-${V}p0
 
 CATEGORIES=		devel/jdk java
 
@@ -95,7 +95,7 @@ DISTFILES+=		jdk-1_5_0_11-solaris-i586.tar.Z \
 			xalan-j_2_7_0-bin.tar.gz
 FETCH_MANUALLY+=	"Get 'JDK 5.0 Update 11' for 'Solaris x86 packages' file:"
 FETCH_MANUALLY+=	"    jdk-1_5_0_11-solaris-i586.tar.Z"
-FETCH_MANUALLY+=	"from http://java.sun.com/javase/downloads/index_jdk5.jsp"
+FETCH_MANUALLY+=	"from http://java.sun.com/products/archive/j2se/5.0_11/index.html"
 FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
 FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
 FETCH_MANUALLY+=	"from http://www.apache.org/dist/xml/xalan-j/"

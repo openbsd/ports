@@ -1,0 +1,16 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.5 2007/07/01 20:34:02 kurt Exp $
+--- hotspot/build/bsd/makefiles/vm.make.orig	Wed Jun 20 11:02:14 2007
++++ hotspot/build/bsd/makefiles/vm.make	Wed Jun 20 11:03:02 2007
+@@ -197,6 +197,12 @@ $(AOUT): $(AOUT.o) $(LIBJVM)
+ 	${LINK} -o $@ ${AOUT_FLAGS} $(AOUT.o) -L `pwd` -L ${JAVA_HOME}/jre/lib/$(Platform_gnu_dis_arch) -L ${JAVA_HOME}/lib/$(Platform_gnu_dis_arch) -l$(JVM) $(LIBS) ; \
+ 	${LINK} -o $@ ${AOUT_FLAGS} $(AOUT.o) -L `pwd` -L ${JAVA_HOME}/jre/lib/$(Platform_gnu_dis_arch) -L ${JAVA_HOME}/lib/$(Platform_gnu_dis_arch) -l$(JVM) $(LIBS)
+ 
++ifndef LDNOMAP
++  ifdef MAPFILE
++    LFLAGS_VM += -Xlinker --version-script=$(MAPFILE)
++  endif
++endif
++
+ # Set soname, see 5009832
+ LFLAGS_VM += -Xlinker -soname=$(LIBJVM)
+ 
