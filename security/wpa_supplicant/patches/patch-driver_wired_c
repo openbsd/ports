@@ -1,0 +1,20 @@
+--- original/driver_wired.c	Sun Dec 31 04:28:05 2006
++++ driver_wired.c	Fri May 18 02:06:07 2007
+@@ -18,7 +18,7 @@
+ #ifdef __linux__
+ #include <netpacket/packet.h>
+ #endif /* __linux__ */
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <net/if_dl.h>
+ #endif /* __FreeBSD__ */
+ 
+@@ -125,7 +125,7 @@ static int wpa_driver_wired_multi(const char *ifname, 
+ 	ifr.ifr_hwaddr.sa_family = AF_UNSPEC;
+ 	os_memcpy(ifr.ifr_hwaddr.sa_data, addr, ETH_ALEN);
+ #endif /* __linux__ */
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	{
+ 		struct sockaddr_dl *dlp;
+ 		dlp = (struct sockaddr_dl *) &ifr.ifr_addr;

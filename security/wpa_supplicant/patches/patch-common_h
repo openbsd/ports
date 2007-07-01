@@ -1,0 +1,51 @@
+--- original/common.h	Sun Dec 31 22:41:44 2006
++++ common.h	Fri May 18 01:48:18 2007
+@@ -80,8 +80,29 @@ static inline unsigned int wpa_swap_32(unsigned int v)
+ #define be_to_host32(n) wpa_swap_32(n)
+ #define host_to_be32(n) wpa_swap_32(n)
+ 
+-#else /* __CYGWIN__ */
++#elif defined(__OpenBSD__)
+ 
++#define le_to_host16(n) letoh16(n)
++#define host_to_le16(n) htole16(n)
++#define be_to_host16(n) betoh16(n)
++#define host_to_be16(n) htobe16(n)
++
++#define le_to_host32(n) letoh32(n)
++#define host_to_le32(n) htole32(n)
++#define be_to_host32(n) betoh32(n)
++#define host_to_be32(n) htobe32(n)
++
++#define le_to_host64(n) letoh64(n)
++#define host_to_le64(n) htole64(n)
++#define be_to_host64(n) betoh64(n)
++#define host_to_be64(n) htobe64(n)
++
++#if _BYTE_ORDER == _BIG_ENDIAN
++#define WORDS_BIGENDIAN
++#endif
++
++#else /* __CYGWIN__ / __OpenBSD__ */
++
+ #ifndef __BYTE_ORDER
+ #ifndef __LITTLE_ENDIAN
+ #ifndef __BIG_ENDIAN
+@@ -95,17 +116,6 @@ static inline unsigned int wpa_swap_32(unsigned int v)
+ #endif /* __BYTE_ORDER */
+ 
+ #if __BYTE_ORDER == __LITTLE_ENDIAN
+-#define le_to_host16(n) (n)
+-#define host_to_le16(n) (n)
+-#define be_to_host16(n) bswap_16(n)
+-#define host_to_be16(n) bswap_16(n)
+-#define le_to_host32(n) (n)
+-#define be_to_host32(n) bswap_32(n)
+-#define host_to_be32(n) bswap_32(n)
+-#define le_to_host64(n) (n)
+-#define host_to_le64(n) (n)
+-#define be_to_host64(n) bswap_64(n)
+-#define host_to_be64(n) bswap_64(n)
+ #elif __BYTE_ORDER == __BIG_ENDIAN
+ #define le_to_host16(n) bswap_16(n)
+ #define host_to_le16(n) bswap_16(n)

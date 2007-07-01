@@ -1,0 +1,11 @@
+--- original/os_unix.c	Sun Dec 31 22:41:44 2006
++++ os_unix.c	Fri May 18 01:48:53 2007
+@@ -171,7 +171,7 @@ int os_setenv(const char *name, const char *value, int
+ 
+ int os_unsetenv(const char *name)
+ {
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ 	unsetenv(name);
+ 	return 0;
+ #else
