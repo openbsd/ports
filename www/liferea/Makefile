@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/28 16:20:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/01 20:18:39 steven Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
 DISTNAME=		liferea-1.2.17
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www x11
 
-HOMEPAGE=		http://liferea.sourcefoge.net/
+HOMEPAGE=		http://liferea.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
