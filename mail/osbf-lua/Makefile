@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/17 21:37:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/02 13:43:26 jolan Exp $
 
 COMMENT=	"lua text classification module and anti-spam solution"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SHARED_ONLY=	Yes
 NO_REGRESS=	Yes
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:lua->=5.1:lang/lua
 
 do-build:
