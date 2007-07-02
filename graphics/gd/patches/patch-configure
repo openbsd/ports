@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2007/02/17 16:30:11 bernd Exp $
---- configure.orig	Wed Feb  7 10:59:57 2007
-+++ configure	Wed Feb  7 11:01:33 2007
-@@ -23162,7 +23162,7 @@ if test `eval echo '${'$as_ac_Header'}'`
+$OpenBSD: patch-configure,v 1.4 2007/07/02 10:46:04 steven Exp $
+--- configure.orig	Mon Apr 23 16:57:52 2007
++++ configure	Tue Jun 26 08:11:35 2007
+@@ -22322,7 +22322,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
@@ -10,25 +10,25 @@ $OpenBSD: patch-configure,v 1.3 2007/02/17 16:30:11 bernd Exp $
  else
    CPPFLAGS="$_cppflags"
  fi
-@@ -24254,7 +24254,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
+@@ -23262,7 +23262,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+ 	 test ! -s conftest.err
+        } && test -s conftest$ac_exeext &&
+        $as_test_x conftest$ac_exeext; then
 -  acx_pthread_ok=yes
 +  acx_pthread_ok=no
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
-@@ -24452,7 +24452,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_ec
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
+@@ -23444,7 +23444,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+ 	 test ! -s conftest.err
+        } && test -s conftest$ac_exeext &&
+        $as_test_x conftest$ac_exeext; then
 -  acx_pthread_ok=yes
 +  acx_pthread_ok=no
  else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
-@@ -25472,7 +25472,7 @@ FFLAGS!$FFLAGS$ac_delim
+@@ -24461,7 +24461,7 @@ FFLAGS!$FFLAGS$ac_delim
  ac_ct_F77!$ac_ct_F77$ac_delim
  LIBTOOL!$LIBTOOL$ac_delim
  XMKMF!$XMKMF$ac_delim
