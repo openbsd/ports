@@ -1,5 +1,4 @@
-The Event module provides a central facility to watch for 
-various types of events and invoke a callback when these 
-events occur. The idea is to delay the handling of events 
-so that they may be dispatched in priority order when it 
-is safe for callbacks to execute.
+The Event module provides a central facility to watch for various types
+of events and invoke a callback when these events occur. The idea is to
+delay the handling of events so that they may be dispatched in priority
+order when it is safe for callbacks to execute.
