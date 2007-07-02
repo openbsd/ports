@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/14 19:35:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2007/07/02 21:52:27 jasper Exp $
 
-COMMENT=		"minimalistic console-based audio player"
+COMMENT=		minimalistic console-based audio player
 
-DISTNAME=		herrie-1.5.1
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		herrie-1.8
 CATEGORIES=		audio
 
-HOMEPAGE=		http://g-rave.nl/projects/herrie/
+HOMEPAGE=		http://herrie.info/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,8 +17,10 @@ WANTLIB= 		c crypto idn ncurses ogg ossaudio pthread ssl z
 
 MODULES=		devel/gettext
 
-MASTER_SITES=		http://www.stack.nl/~ed/projects/herrie/distfiles/ \
+MASTER_SITES=		${HOMEPAGE}/distfiles/ \
+			http://www.stack.nl/~ed/projects/herrie/distfiles/ \
 			http://www.il.fontys.nl/~ed/projects/herrie/distfiles/
+EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		mad.>=2::audio/libmad \
 			id3tag.>=3::audio/libid3tag \
@@ -30,11 +31,15 @@ LIB_DEPENDS=		mad.>=2::audio/libmad \
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV+= 	PREFIX=${PREFIX}
-CONFIGURE_ARGS= 	no_modplug
+CONFIGURE_ARGS= 	ncurses \
+			no_modplug \
+			no_strip \
+			no_xspf \
+			verbose
 
 NO_REGRESS=		Yes
 
-LANGS=			nl tr
+LANGS=			de ga nl pl sv tr
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/herrie ${PREFIX}/bin
