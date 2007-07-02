@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2007/05/28 20:03:01 mbalmer Exp $
---- Makefile.in.orig	Wed Apr 25 11:39:00 2007
-+++ Makefile.in	Thu May 17 10:17:30 2007
+$OpenBSD: patch-Makefile_in,v 1.9 2007/07/02 21:56:57 mbalmer Exp $
+--- Makefile.in.orig	Tue Jun 19 19:11:39 2007
++++ Makefile.in	Sun Jul  1 11:22:09 2007
 @@ -109,11 +109,13 @@ LOCKDIR = @lockdir@
  # the directory where pid files go
  PIDDIR = @piddir@
@@ -44,7 +44,7 @@ $OpenBSD: patch-Makefile_in,v 1.8 2007/05/28 20:03:01 mbalmer Exp $
  
  bin/libmsrpc.a: proto_exists $(CAC_OBJ)
  	@echo Linking libmsrpc non-shared library $@
-@@ -1618,14 +1618,14 @@ installswat: installdirs installmsg
+@@ -1623,14 +1623,14 @@ installswat: installdirs installmsg
  
  installclientlib: installdirs libsmbclient
  	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS) $(DESTDIR) $(LIBDIR)

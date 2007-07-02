@@ -1,5 +1,5 @@
---- ../docs/manpages/swat.8.orig	Fri May 11 04:02:07 2007
-+++ ../docs/manpages/swat.8	Thu May 17 10:21:36 2007
+--- ../docs/manpages/swat.8.orig	Tue Jun 19 10:03:04 2007
++++ ../docs/manpages/swat.8	Sun Jul  1 11:37:49 2007
 @@ -111,24 +111,6 @@
  .RS 3n
  Print a summary of command line options.
@@ -9,18 +9,18 @@
 -Swat is included as binary package with most distributions. The package manager in this case takes care of the installation and configuration. This section is only for those who have compiled swat from scratch.
 -.PP
 -After you compile SWAT you need to run
--\fBmake install \fR
+-make install
 -to install the
--\fBswat\fR
+-swat
 -binary and the various help files and images. A default install would put these in:
 -.TP 3n
--&#8226;
+-\(bu
 -/usr/local/samba/sbin/swat
 -.TP 3n
--&#8226;
+-\(bu
 -/usr/local/samba/swat/images/*
 -.TP 3n
--&#8226;
+-\(bu
 -/usr/local/samba/swat/help/*
  .SS "Inetd Installation"
  .PP
@@ -29,8 +29,8 @@
  \fI/etc/inetd.conf\fR
  you should add a line like this:
  .PP
--\fBswat stream tcp nowait.400 root /usr/local/samba/sbin/swat swat\fR
-+\fBswat stream tcp nowait.400 root !!LOCALBASE!!/libexec/swat swat\fR
+-swat stream tcp nowait.400 root /usr/local/samba/sbin/swat swat
++swat stream tcp nowait.400 root !!LOCALBASE!!/libexec/swat swat
  .PP
  Once you have edited
  \fI/etc/services\fR
