@@ -1,0 +1,12 @@
+$OpenBSD: patch-kdesktop_init_Templates_Makefile_in,v 1.1 2007/07/02 06:07:03 ajacoutot Exp $
+--- kdesktop/init/Templates/Makefile.in.orig	Mon Jun 11 12:28:23 2007
++++ kdesktop/init/Templates/Makefile.in	Mon Jun 11 12:38:32 2007
+@@ -57,7 +57,7 @@ am__vpath_adj = case $$p in \
+   esac;
+ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
+ am__installdirs = "$(DESTDIR)$(sourcesdir)" "$(DESTDIR)$(templdir)"
+-sourcesDATA_INSTALL = $(INSTALL_DATA)
++sourcesDATA_INSTALL = $(install_sh_DATA)
+ templDATA_INSTALL = $(INSTALL_DATA)
+ DATA = $(sources_DATA) $(templ_DATA)
+ #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
