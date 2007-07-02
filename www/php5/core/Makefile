@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/05/11 15:05:15 robert Exp $
+# $OpenBSD: Makefile,v 1.25 2007/07/02 08:53:17 robert Exp $
 
 COMMENT-main=	"server-side HTML-embedded scripting language"
 COMMENT-fastcgi="stand-alone FastCGI version of PHP"
@@ -66,7 +66,7 @@ post-install:
 		${PREFIX}/${APACHE_MODULE_SUBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php5
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php ${PREFIX}/bin/php-fastcgi
+	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-fastcgi
 	
 .for i in dist recommended
 	@sed -e 's,MODULES_DIR,${MODULES_DIR},' \

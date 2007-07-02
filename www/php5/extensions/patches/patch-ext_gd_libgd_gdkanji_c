@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_gd_libgd_gdkanji_c,v 1.1.1.1 2004/10/02 11:32:35 robert Exp $
---- ext/gd/libgd/gdkanji.c.orig	Tue Jul 27 01:02:49 2004
-+++ ext/gd/libgd/gdkanji.c	Tue Jul 27 01:03:21 2004
-@@ -362,7 +362,7 @@
+$OpenBSD: patch-ext_gd_libgd_gdkanji_c,v 1.2 2007/07/02 08:53:17 robert Exp $
+--- ext/gd/libgd/gdkanji.c.orig	Sun Dec 28 21:11:08 2003
++++ ext/gd/libgd/gdkanji.c	Mon Jul  2 10:38:20 2007
+@@ -362,7 +362,7 @@ do_convert (unsigned char *to, unsigned char *from, co
    from_len = strlen ((const char *) from) + 1;
    to_len = BUFSIZ;
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_xmlrpc_libxmlrpc_encodings_c,v 1.1.1.1 2004/10/02 11:32:35 robert Exp $
---- ext/xmlrpc/libxmlrpc/encodings.c.orig	Tue Jul 27 01:05:53 2004
-+++ ext/xmlrpc/libxmlrpc/encodings.c	Tue Jul 27 01:06:08 2004
-@@ -70,7 +70,7 @@
+$OpenBSD: patch-ext_xmlrpc_libxmlrpc_encodings_c,v 1.2 2007/07/02 08:53:17 robert Exp $
+--- ext/xmlrpc/libxmlrpc/encodings.c.orig	Tue Mar  9 00:04:33 2004
++++ ext/xmlrpc/libxmlrpc/encodings.c	Mon Jul  2 10:38:20 2007
+@@ -70,7 +70,7 @@ static char* convert(const char* src, int src_len, int
           if(outbuf) {
              out_ptr = (char*)outbuf;
              while(inlenleft) {
