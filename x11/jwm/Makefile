@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/24 22:48:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/02 15:24:32 jasper Exp $
 
 COMMENT=		"Joe's Window Manager"
 
-DISTNAME=		jwm-1.8
+DISTNAME=		jwm-2.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.joewing.net/programs/jwm/
@@ -13,13 +13,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xft Xinerama Xpm Xrender \
-			c fontconfig freetype m z
+			c fontconfig freetype m z Xau Xdmcp expat jpeg
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${HOMEPAGE}/releases/
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		fribidi::devel/fribidi \
-			png.>=2::graphics/png
+			png.>=2::graphics/png \
+			jpeg::graphics/jpeg
 
 NO_REGRESS=		Yes
 
