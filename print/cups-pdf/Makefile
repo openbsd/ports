@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/26 22:13:03 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/03 23:37:25 jakemsr Exp $
 
 COMMENT=		"PDF backend for CUPS"
 
 DISTNAME=		cups-pdf-2.4.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		print
 
 HOMEPAGE=		http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
@@ -18,20 +18,24 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-RUN_DEPENDS=		::print/cups
+RUN_DEPENDS=		::print/cups \
+			::print/ghostscript/gnu
+
+NO_REGRESS=		Yes
 
 do-build:
-	@cc -O2 -o ${WRKDIR}/bin/cups-pdf ${WRKDIR}/${DISTNAME}/src/cups-pdf.c
+	${CC} ${CFLAGS} -o ${WRKDIR}/bin/cups-pdf ${WRKDIR}/${DISTNAME}/src/cups-pdf.c
 
 do-install:
-	mkdir -p ${PREFIX}/libexec/cups/backend
-	mkdir -p ${PREFIX}/share/cups/model
-	mkdir -p ${PREFIX}/share/examples/cups
-	cp ${WRKDIR}/bin/cups-pdf \
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/libexec/cups/backend
+	${INSTALL_DATA_DIR} ${PREFIX}/share/cups/model
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/cups-pdf \
 		${PREFIX}/libexec/cups/backend/cups-pdf
-	cp ${WRKDIR}/${DISTNAME}/extra/PostscriptColor.ppd \
+	chmod 0700 ${PREFIX}/libexec/cups/backend/cups-pdf
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/extra/PostscriptColor.ppd \
 		${PREFIX}/share/cups/model/PostscriptColor.ppd
-	cp ${WRKDIR}/${DISTNAME}/extra/cups-pdf.conf \
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/extra/cups-pdf.conf \
 		${PREFIX}/share/examples/cups/
 
 .include <bsd.port.mk>

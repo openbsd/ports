@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/03 14:21:42 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/03 23:37:25 jakemsr Exp $
+@mode 0700
 libexec/cups/backend/cups-pdf
+@mode
 share/cups/model/PostscriptColor.ppd
 share/examples/cups/cups-pdf.conf
 @sample ${SYSCONFDIR}/cups/cups-pdf.conf
