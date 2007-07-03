@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/19 21:45:04 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/03 01:44:56 mcbride Exp $
 
 COMMENT=		"industrial-grade ticketing system"
 
 DISTNAME=		rt-3.6.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.bestpractical.com/rt/
@@ -26,6 +26,7 @@ RUN_DEPENDS=		::converters/p5-Calendar-Simple \
 			::devel/p5-Test-WWW-Mechanize \
 			::devel/p5-Tree-Simple \
 			::devel/p5-Time-modules \
+			::devel/p5-Time-TimeDate \
 			::devel/p5-Universal-require \
 			::graphics/p5-GD-Graph \
 			::mail/p5-MIME-tools \
