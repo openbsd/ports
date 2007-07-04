@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tuxpaint-import_sh,v 1.1.1.1 2007/01/15 16:39:40 ajacoutot Exp $
---- src/tuxpaint-import.sh.orig	Sun Aug 13 12:04:46 2006
-+++ src/tuxpaint-import.sh	Fri Jan 12 16:23:34 2007
+$OpenBSD: patch-src_tuxpaint-import_sh,v 1.2 2007/07/04 17:39:08 ajacoutot Exp $
+--- src/tuxpaint-import.sh.orig	Sun Aug 13 03:14:35 2006
++++ src/tuxpaint-import.sh	Wed Jul  4 10:01:04 2007
 @@ -52,21 +52,17 @@ fi
  
  # Determine preferred savedir
@@ -27,7 +27,7 @@ $OpenBSD: patch-src_tuxpaint-import_sh,v 1.1.1.1 2007/01/15 16:39:40 ajacoutot E
    SAVEDIR=`echo $x | cut -d = -f 2-99`
  fi
  
-@@ -77,19 +73,19 @@ echo "Using save directory: $SAVEDIR/sav
+@@ -77,19 +73,19 @@ echo "Using save directory: $SAVEDIR/saved"
  # Make sure savedir exists!
  if [ ! -d $SAVEDIR ]; then
    echo "Creating $SAVEDIR"

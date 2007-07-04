@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/15 16:39:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/04 17:39:08 ajacoutot Exp $
 bin/tuxpaint
 bin/tuxpaint-import
 @man man/man1/tuxpaint-import.1
@@ -89,6 +89,7 @@ share/locale/ku/LC_MESSAGES/tuxpaint.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/tuxpaint.mo
+share/locale/lv/LC_MESSAGES/tuxpaint.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/tuxpaint.mo
@@ -121,6 +122,9 @@ share/locale/sw/LC_MESSAGES/tuxpaint.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/tuxpaint.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/tuxpaint.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/tuxpaint.mo
@@ -131,6 +135,9 @@ share/locale/tlh/
 share/locale/tlh/LC_MESSAGES/
 share/locale/tlh/LC_MESSAGES/tuxpaint.mo
 share/locale/tr/LC_MESSAGES/tuxpaint.mo
+share/locale/twi/
+share/locale/twi/LC_MESSAGES/
+share/locale/twi/LC_MESSAGES/tuxpaint.mo
 share/locale/uk/LC_MESSAGES/tuxpaint.mo
 share/locale/ve/
 share/locale/ve/LC_MESSAGES/
@@ -158,16 +165,38 @@ share/tuxpaint/brushes/aa_round_fuzz.png
 share/tuxpaint/brushes/aa_round_seethru.png
 share/tuxpaint/brushes/aa_round_seethru_05.png
 share/tuxpaint/brushes/aa_round_seethru_10.png
+share/tuxpaint/brushes/arrow_compass_points.dat
+share/tuxpaint/brushes/arrow_compass_points.png
+share/tuxpaint/brushes/arrow_triangles.dat
+share/tuxpaint/brushes/arrow_triangles.png
+share/tuxpaint/brushes/blob.png
+share/tuxpaint/brushes/chisle.png
+share/tuxpaint/brushes/cutout_square_diamond.png
+share/tuxpaint/brushes/cutout_star_circle.png
+share/tuxpaint/brushes/diamond.png
+share/tuxpaint/brushes/flower_5.png
+share/tuxpaint/brushes/flower_5_small.png
+share/tuxpaint/brushes/flower_6.png
+share/tuxpaint/brushes/flower_6_small.png
+share/tuxpaint/brushes/heart.png
+share/tuxpaint/brushes/hexagon.png
 share/tuxpaint/brushes/kuroneko.dat
 share/tuxpaint/brushes/kuroneko.png
 share/tuxpaint/brushes/lines-angled.dat
 share/tuxpaint/brushes/lines-angled.png
+share/tuxpaint/brushes/lozenge.png
+share/tuxpaint/brushes/oval.png
+share/tuxpaint/brushes/pentagon.png
 share/tuxpaint/brushes/slash_10_lt.png
 share/tuxpaint/brushes/slash_10_rt.png
 share/tuxpaint/brushes/slash_16_lt.png
 share/tuxpaint/brushes/slash_16_rt.png
 share/tuxpaint/brushes/slash_20_lt.png
 share/tuxpaint/brushes/slash_20_rt.png
+share/tuxpaint/brushes/sphere.png
+share/tuxpaint/brushes/spiral.dat
+share/tuxpaint/brushes/spiral.png
+share/tuxpaint/brushes/splat.png
 share/tuxpaint/brushes/spray.dat
 share/tuxpaint/brushes/spray.png
 share/tuxpaint/brushes/square_06.png
@@ -178,7 +207,10 @@ share/tuxpaint/brushes/square_fuzz.png
 share/tuxpaint/brushes/square_seethru.png
 share/tuxpaint/brushes/squirrel.dat
 share/tuxpaint/brushes/squirrel.png
+share/tuxpaint/brushes/star.png
 share/tuxpaint/brushes/tiny.png
+share/tuxpaint/brushes/triangle_down.png
+share/tuxpaint/brushes/triangle_up.png
 share/tuxpaint/brushes/vine.dat
 share/tuxpaint/brushes/vine.png
 share/tuxpaint/brushes/x.png
@@ -233,6 +265,10 @@ share/tuxpaint/fonts/locale/ta.ttf
 share/tuxpaint/fonts/locale/ta_docs/
 share/tuxpaint/fonts/locale/ta_docs/COPYING.txt
 share/tuxpaint/fonts/locale/ta_docs/README.txt
+share/tuxpaint/fonts/locale/te.ttf
+share/tuxpaint/fonts/locale/te_docs/
+share/tuxpaint/fonts/locale/te_docs/COPYING.txt
+share/tuxpaint/fonts/locale/te_docs/README.txt
 share/tuxpaint/fonts/locale/th.ttf
 share/tuxpaint/fonts/locale/th_docs/
 share/tuxpaint/fonts/locale/th_docs/COPYING.txt
@@ -247,6 +283,9 @@ share/tuxpaint/fonts/locale/zh_tw_docs/COPYING.txt
 share/tuxpaint/fonts/locale/zh_tw_docs/README.txt
 share/tuxpaint/fonts/locale/zh_tw_docs/maketuxfont.py
 share/tuxpaint/fonts/locale/zh_tw_docs/tuxpaintsubset.pe
+share/tuxpaint/im/
+share/tuxpaint/im/ja.im
+share/tuxpaint/im/ko.im
 share/tuxpaint/images/
 share/tuxpaint/images/icon-win32.ico
 share/tuxpaint/images/icon.png
@@ -309,7 +348,9 @@ share/tuxpaint/images/tools/print.png
 share/tuxpaint/images/tools/quit.png
 share/tuxpaint/images/tools/redo.png
 share/tuxpaint/images/tools/save.png
+share/tuxpaint/images/tools/sfx.png
 share/tuxpaint/images/tools/shapes.png
+share/tuxpaint/images/tools/speak.png
 share/tuxpaint/images/tools/stamp.png
 share/tuxpaint/images/tools/text.png
 share/tuxpaint/images/tools/undo.png
@@ -331,6 +372,8 @@ share/tuxpaint/images/ui/bold.png
 share/tuxpaint/images/ui/btn_down.png
 share/tuxpaint/images/ui/btn_off.png
 share/tuxpaint/images/ui/btn_up.png
+share/tuxpaint/images/ui/btnsm_off.png
+share/tuxpaint/images/ui/btnsm_up.png
 share/tuxpaint/images/ui/color_btn_down.png
 share/tuxpaint/images/ui/color_btn_up.png
 share/tuxpaint/images/ui/cursor_down.png
@@ -346,6 +389,7 @@ share/tuxpaint/images/ui/grow.png
 share/tuxpaint/images/ui/italic.png
 share/tuxpaint/images/ui/mouse.png
 share/tuxpaint/images/ui/mouse_click.png
+share/tuxpaint/images/ui/next.png
 share/tuxpaint/images/ui/no.png
 share/tuxpaint/images/ui/no_title.png
 share/tuxpaint/images/ui/no_title_large.png
@@ -354,6 +398,7 @@ share/tuxpaint/images/ui/paintcan.png
 share/tuxpaint/images/ui/paintwell.png
 share/tuxpaint/images/ui/play.png
 share/tuxpaint/images/ui/popup_arrow.png
+share/tuxpaint/images/ui/prev.png
 share/tuxpaint/images/ui/printer.png
 share/tuxpaint/images/ui/printer_wait.png
 share/tuxpaint/images/ui/progress.png
@@ -434,9 +479,12 @@ share/tuxpaint/stamps/cartoon/tux/tux-yes1.png
 share/tuxpaint/stamps/cartoon/tux/tux-yes2.dat
 share/tuxpaint/stamps/cartoon/tux/tux-yes2.png
 share/tuxpaint/starters/
+share/tuxpaint/starters/carcassone.png
 share/tuxpaint/starters/chessboard-back.png
 share/tuxpaint/starters/chessboard.png
 share/tuxpaint/starters/chicken.png
+share/tuxpaint/starters/grid_10x10.png
+share/tuxpaint/starters/grid_20x20.png
 share/tuxpaint/starters/jetplane.png
 share/tuxpaint/starters/nagasaki.png
 share/tuxpaint/starters/nagasaki.svg
@@ -450,3 +498,15 @@ share/tuxpaint/starters/skyline-sf-dusk.png
 share/tuxpaint/starters/skyline-sf-dusk.txt
 share/tuxpaint/starters/street.png
 share/tuxpaint/starters/tux_farmer.png
+share/tuxpaint/starters/worldmap.png
+share/tuxpaint/starters/worldmap_africa.png
+share/tuxpaint/starters/worldmap_america_north.png
+share/tuxpaint/starters/worldmap_america_north_usa-back.png
+share/tuxpaint/starters/worldmap_america_north_usa.png
+share/tuxpaint/starters/worldmap_america_south.png
+share/tuxpaint/starters/worldmap_asia_north.png
+share/tuxpaint/starters/worldmap_asia_south.png
+share/tuxpaint/starters/worldmap_australasia.png
+share/tuxpaint/starters/worldmap_europe.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
