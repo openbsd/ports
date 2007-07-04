@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2007/06/28 16:22:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.285 2007/07/04 11:55:17 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -255,6 +255,7 @@
      SUBDIR += turba
      SUBDIR += twiki
      SUBDIR += visitors
+     SUBDIR += vtigercrm
      SUBDIR += w3m
      SUBDIR += w3m,image
      SUBDIR += w3m,japanese
