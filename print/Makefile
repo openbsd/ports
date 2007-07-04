@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.60 2007/05/03 07:37:49 aanriot Exp $
+#	$OpenBSD: Makefile,v 1.61 2007/07/04 17:33:37 ajacoutot Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -27,6 +27,7 @@
     SUBDIR += jadetex
     SUBDIR += l2a
     SUBDIR += latex-mk
+    SUBDIR += libpaper
     SUBDIR += lilypond
     SUBDIR += lout
     SUBDIR += lyx
