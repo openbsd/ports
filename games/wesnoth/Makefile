@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/03/17 16:59:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2007/07/04 11:12:31 jasper Exp $
 
-COMMENT=	"fantasy turn-based strategy game"
+COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.2.3
+DISTNAME=	wesnoth-1.2.5
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.wesnoth.org/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xext c freetype m stdc++ pthread usbhid
+WANTLIB=	X11 Xext c freetype m stdc++ pthread usbhid z
 
 USE_LIBTOOL=	Yes
 LIB_DEPENDS=	SDL::devel/sdl \

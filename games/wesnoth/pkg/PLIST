@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/03/17 16:59:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/07/04 11:12:31 jasper Exp $
 bin/campaignd
 bin/wesnoth
 bin/wesnoth_editor
 bin/wesnothd
-bin/wmlxgettext
 man/cs/
 man/cs/man6/
 @man man/cs/man6/wesnoth.6
@@ -48,6 +47,11 @@ man/pt_BR/man6/
 @man man/pt_BR/man6/wesnoth.6
 @man man/pt_BR/man6/wesnoth_editor.6
 @man man/pt_BR/man6/wesnothd.6
+man/ru/
+man/ru/man6/
+@man man/ru/man6/wesnoth.6
+@man man/ru/man6/wesnoth_editor.6
+@man man/ru/man6/wesnothd.6
 man/sk/
 man/sk/man6/
 @man man/sk/man6/wesnoth.6
@@ -64,6 +68,8 @@ share/wesnoth/data/COPYING.txt
 share/wesnoth/data/abilities.cfg
 share/wesnoth/data/about.cfg
 share/wesnoth/data/ais/
+share/wesnoth/data/ais/parse.py
+share/wesnoth/data/ais/safe.py
 share/wesnoth/data/ais/sample.py
 share/wesnoth/data/amla.cfg
 share/wesnoth/data/animation-utils.cfg
@@ -187,13 +193,11 @@ share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/cockatrice-attack13
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/cockatrice-defend.png
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/cockatrice.png
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-defend.png
-share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee-1.png
-share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee-2.png
-share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee-3.png
-share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee-4.png
-share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee-5.png
-share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee-6.png
-share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-ranged.png
+share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee1.png
+share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-melee2.png
+share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-ranged1.png
+share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-ranged2.png
+share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage-ranged3.png
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elder-mage.png
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elvish-high-lord-attack-sword-1.png
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/units/elvish-high-lord-attack-sword-2.png
@@ -793,6 +797,17 @@ share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/misc/time/7dawn2.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/misc/time/8morning2.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/misc/time/9midday2.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-guardian.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-defend-both.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-defend-melee.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-moving-1.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-moving-2.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-moving-3.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-ranged-1.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-ranged-2.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-ranged-3.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-ranged-4.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-ranged-5.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter-ranged-6.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-hunter.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-sentinel.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/naga-warden.png
@@ -1442,17 +1457,18 @@ share/wesnoth/data/tutorial/images/portraits/konrad.png
 share/wesnoth/data/tutorial/images/portraits/lisar.png
 share/wesnoth/data/tutorial/images/units/
 share/wesnoth/data/tutorial/images/units/elder-mage-defend.png
-share/wesnoth/data/tutorial/images/units/elder-mage-melee-1.png
-share/wesnoth/data/tutorial/images/units/elder-mage-melee-2.png
-share/wesnoth/data/tutorial/images/units/elder-mage-melee-3.png
-share/wesnoth/data/tutorial/images/units/elder-mage-melee-4.png
-share/wesnoth/data/tutorial/images/units/elder-mage-melee-5.png
-share/wesnoth/data/tutorial/images/units/elder-mage-melee-6.png
-share/wesnoth/data/tutorial/images/units/elder-mage-ranged.png
+share/wesnoth/data/tutorial/images/units/elder-mage-melee1.png
+share/wesnoth/data/tutorial/images/units/elder-mage-melee2.png
+share/wesnoth/data/tutorial/images/units/elder-mage-ranged1.png
+share/wesnoth/data/tutorial/images/units/elder-mage-ranged2.png
+share/wesnoth/data/tutorial/images/units/elder-mage-ranged3.png
 share/wesnoth/data/tutorial/images/units/elder-mage.png
-share/wesnoth/data/tutorial/images/units/human-junior-princess-attack.png
-share/wesnoth/data/tutorial/images/units/human-junior-princess-defend.png
-share/wesnoth/data/tutorial/images/units/human-junior-princess.png
+share/wesnoth/data/tutorial/images/units/human-princess-attack-1.png
+share/wesnoth/data/tutorial/images/units/human-princess-attack-2.png
+share/wesnoth/data/tutorial/images/units/human-princess-attack-3.png
+share/wesnoth/data/tutorial/images/units/human-princess-attack-4.png
+share/wesnoth/data/tutorial/images/units/human-princess-defend.png
+share/wesnoth/data/tutorial/images/units/human-princess.png
 share/wesnoth/data/tutorial/images/units/konrad-fighter-attack-1.png
 share/wesnoth/data/tutorial/images/units/konrad-fighter-attack-2.png
 share/wesnoth/data/tutorial/images/units/konrad-fighter-defend.png
@@ -4225,6 +4241,7 @@ share/wesnoth/images/units/human-loyalists/fencer.png
 share/wesnoth/images/units/human-loyalists/general-attack-crossbow.png
 share/wesnoth/images/units/human-loyalists/general-attack-sword1.png
 share/wesnoth/images/units/human-loyalists/general-attack-sword2.png
+share/wesnoth/images/units/human-loyalists/general-defend-crossbow.png
 share/wesnoth/images/units/human-loyalists/general-defend.png
 share/wesnoth/images/units/human-loyalists/general-leading.png
 share/wesnoth/images/units/human-loyalists/general.png
@@ -4486,16 +4503,20 @@ share/wesnoth/images/units/human-magi/silver-mage-teleport7.png
 share/wesnoth/images/units/human-magi/silver-mage-teleport8.png
 share/wesnoth/images/units/human-magi/silver-mage-teleport9.png
 share/wesnoth/images/units/human-magi/silver-mage.png
-share/wesnoth/images/units/human-magi/white-cleric+female-attack-melee1.png
-share/wesnoth/images/units/human-magi/white-cleric+female-attack-melee2.png
 share/wesnoth/images/units/human-magi/white-cleric+female-defend.png
+share/wesnoth/images/units/human-magi/white-cleric+female-mace-1.png
+share/wesnoth/images/units/human-magi/white-cleric+female-mace-2.png
+share/wesnoth/images/units/human-magi/white-cleric+female-mace-3.png
+share/wesnoth/images/units/human-magi/white-cleric+female-mace-4.png
 share/wesnoth/images/units/human-magi/white-cleric+female-magic-1.png
 share/wesnoth/images/units/human-magi/white-cleric+female-magic-2.png
 share/wesnoth/images/units/human-magi/white-cleric+female-magic-3.png
 share/wesnoth/images/units/human-magi/white-cleric+female.png
-share/wesnoth/images/units/human-magi/white-cleric-attack-melee1.png
-share/wesnoth/images/units/human-magi/white-cleric-attack-melee2.png
 share/wesnoth/images/units/human-magi/white-cleric-defend.png
+share/wesnoth/images/units/human-magi/white-cleric-mace-1.png
+share/wesnoth/images/units/human-magi/white-cleric-mace-2.png
+share/wesnoth/images/units/human-magi/white-cleric-mace-3.png
+share/wesnoth/images/units/human-magi/white-cleric-mace-4.png
 share/wesnoth/images/units/human-magi/white-cleric-magic-1.png
 share/wesnoth/images/units/human-magi/white-cleric-magic-2.png
 share/wesnoth/images/units/human-magi/white-cleric-magic-3.png
@@ -5148,14 +5169,11 @@ share/wesnoth/images/units/undead-skeletal/deathknight-leading.png
 share/wesnoth/images/units/undead-skeletal/deathknight.png
 share/wesnoth/images/units/undead-skeletal/draug-attack1.png
 share/wesnoth/images/units/undead-skeletal/draug-attack2.png
-share/wesnoth/images/units/undead-skeletal/draug-defend.png
-share/wesnoth/images/units/undead-skeletal/draug-die-1.png
-share/wesnoth/images/units/undead-skeletal/draug-die-2.png
+share/wesnoth/images/units/undead-skeletal/draug-defend-1.png
+share/wesnoth/images/units/undead-skeletal/draug-defend-2.png
 share/wesnoth/images/units/undead-skeletal/draug.png
 share/wesnoth/images/units/undead-skeletal/revenant-attack.png
 share/wesnoth/images/units/undead-skeletal/revenant-defend.png
-share/wesnoth/images/units/undead-skeletal/revenant-dying-2.png
-share/wesnoth/images/units/undead-skeletal/revenant-dying.png
 share/wesnoth/images/units/undead-skeletal/revenant.png
 share/wesnoth/images/units/undead-skeletal/skeleton-attack.png
 share/wesnoth/images/units/undead-skeletal/skeleton-attackb.png
