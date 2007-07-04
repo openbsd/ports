@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/28 16:20:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/04 22:41:40 jasper Exp $
 bin/liferea
 bin/liferea-add-feed
 bin/liferea-bin
@@ -92,6 +92,7 @@ share/liferea/opml/feedlist_eu.opml
 share/liferea/opml/feedlist_fr.opml
 share/liferea/opml/feedlist_nl.opml
 share/liferea/opml/feedlist_pl.opml
+share/liferea/opml/feedlist_pt_BR.opml
 share/liferea/opml/feedlist_sk.opml
 share/liferea/opml/feedlist_sv.opml
 share/liferea/pixmaps/
