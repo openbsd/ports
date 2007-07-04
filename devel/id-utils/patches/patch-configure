@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2005/02/21 20:49:26 alek Exp $
---- configure.orig	Mon Feb 21 21:29:38 2005
-+++ configure	Mon Feb 21 21:30:02 2005
-@@ -3545,7 +3545,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var
+$OpenBSD: patch-configure,v 1.2 2007/07/04 16:39:41 sturm Exp $
+--- configure.orig	Sun Apr  4 11:52:55 1999
++++ configure	Wed Jul  4 18:32:54 2007
+@@ -3545,7 +3545,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1 2005/02/21 20:49:26 alek Exp $
  cat > conftest.$ac_ext <<EOF
  #line 3551 "configure"
  #include "confdefs.h"
-@@ -3585,7 +3585,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var
+@@ -3585,7 +3585,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"

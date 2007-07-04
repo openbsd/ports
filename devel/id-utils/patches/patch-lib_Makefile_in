@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/02/21 20:49:26 alek Exp $
---- lib/Makefile.in.orig	Mon Feb 21 21:38:37 2005
-+++ lib/Makefile.in	Mon Feb 21 21:38:41 2005
-@@ -105,7 +105,7 @@ libsys_a_SOURCES = xgetcwd.c xmalloc.c g
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2007/07/04 16:39:41 sturm Exp $
+--- lib/Makefile.in.orig	Tue Apr  6 10:28:36 1999
++++ lib/Makefile.in	Wed Jul  4 18:32:54 2007
+@@ -105,7 +105,7 @@ libsys_a_SOURCES = xgetcwd.c xmalloc.c getopt.c getopt
  noinst_HEADERS = ansidecl.h error.h fnmatch.h getopt.h obstack.h 	pathmax.h regex.h xalloca.h xdirent.h xfnmatch.h 	xmalloc.h xobstack.h xstddef.h xstdlib.h xstring.h xsysstat.h 	xunistd.h
  
  

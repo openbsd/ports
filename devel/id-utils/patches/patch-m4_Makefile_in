@@ -1,7 +1,7 @@
-$OpenBSD: patch-m4_Makefile_in,v 1.1 2004/07/19 16:12:36 espie Exp $
---- m4/Makefile.in.orig	Mon Jul 19 18:02:05 2004
-+++ m4/Makefile.in	Mon Jul 19 18:02:28 2004
-@@ -194,14 +194,14 @@ distclean-generic clean-generic maintain
+$OpenBSD: patch-m4_Makefile_in,v 1.2 2007/07/04 16:39:41 sturm Exp $
+--- m4/Makefile.in.orig	Tue Apr  6 10:28:40 1999
++++ m4/Makefile.in	Wed Jul  4 18:32:54 2007
+@@ -194,14 +194,14 @@ distclean-generic clean-generic maintainer-clean-gener
  mostlyclean distclean maintainer-clean
  
  
