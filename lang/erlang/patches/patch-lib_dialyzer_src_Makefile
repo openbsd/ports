@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_dialyzer_src_Makefile,v 1.4 2007/03/29 17:18:57 steven Exp $
+$OpenBSD: patch-lib_dialyzer_src_Makefile,v 1.5 2007/07/04 05:38:58 steven Exp $
 $FreeBSD: ports/lang/erlang/files/patch-lib_dialyzer_src_Makefile,v 1.1 2006/05/28 14:20:46 olgeni Exp $
 
---- lib/dialyzer/src/Makefile.orig	Tue Mar 27 15:31:46 2007
-+++ lib/dialyzer/src/Makefile	Thu Mar 29 17:56:01 2007
-@@ -67,7 +67,7 @@ MODULES =  \
+--- lib/dialyzer/src/Makefile.orig	Mon Jun 11 14:57:45 2007
++++ lib/dialyzer/src/Makefile	Mon Jul  2 15:38:35 2007
+@@ -68,7 +68,7 @@ MODULES =  \
  	dialyzer_typesig \
  	dialyzer_utils
  

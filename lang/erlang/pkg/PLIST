@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/03/29 17:18:57 steven Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/07/04 05:38:58 steven Exp $
 %%SHARED%%
 bin/dialyzer
 bin/epmd
@@ -301,6 +301,7 @@ lib/erlang/${ERTS}/doc/html/erlc.html
 lib/erlang/${ERTS}/doc/html/erlsrv.html
 lib/erlang/${ERTS}/doc/html/erts_alloc.html
 lib/erlang/${ERTS}/doc/html/escript.html
+lib/erlang/${ERTS}/doc/html/fascicules.sgml
 lib/erlang/${ERTS}/doc/html/index.html
 lib/erlang/${ERTS}/doc/html/inet_cfg.html
 lib/erlang/${ERTS}/doc/html/match_spec.html
@@ -386,6 +387,7 @@ lib/erlang/lib/${APPMON}/doc/html/application_index.html
 lib/erlang/lib/${APPMON}/doc/html/application_term.html
 lib/erlang/lib/${APPMON}/doc/html/appmon.html
 lib/erlang/lib/${APPMON}/doc/html/appmon_chapter.html
+lib/erlang/lib/${APPMON}/doc/html/fascicules.sgml
 lib/erlang/lib/${APPMON}/doc/html/index.html
 lib/erlang/lib/${APPMON}/doc/html/listbox_win.gif
 lib/erlang/lib/${APPMON}/doc/html/main_win.gif
@@ -454,6 +456,7 @@ lib/erlang/lib/${ASN1}/doc/html/asn1_ug.html
 lib/erlang/lib/${ASN1}/doc/html/asn1ct.html
 lib/erlang/lib/${ASN1}/doc/html/asn1rt.html
 lib/erlang/lib/${ASN1}/doc/html/exclusive_Win_But.gif
+lib/erlang/lib/${ASN1}/doc/html/fascicules.sgml
 lib/erlang/lib/${ASN1}/doc/html/index.html
 lib/erlang/lib/${ASN1}/doc/html/min_head.gif
 lib/erlang/lib/${ASN1}/doc/html/note.gif
@@ -498,7 +501,6 @@ lib/erlang/lib/${ASN1}/ebin/asn1rt_check.beam
 lib/erlang/lib/${ASN1}/ebin/asn1rt_driver_handler.beam
 lib/erlang/lib/${ASN1}/ebin/asn1rt_per_bin.beam
 lib/erlang/lib/${ASN1}/ebin/asn1rt_per_bin_rt2ct.beam
-lib/erlang/lib/${ASN1}/ebin/asn1rt_per_v1.beam
 lib/erlang/lib/${ASN1}/examples/
 lib/erlang/lib/${ASN1}/examples/P-Record.asn
 lib/erlang/lib/${ASN1}/info
@@ -531,7 +533,6 @@ lib/erlang/lib/${ASN1}/src/asn1rt_check.erl
 lib/erlang/lib/${ASN1}/src/asn1rt_driver_handler.erl
 lib/erlang/lib/${ASN1}/src/asn1rt_per_bin.erl
 lib/erlang/lib/${ASN1}/src/asn1rt_per_bin_rt2ct.erl
-lib/erlang/lib/${ASN1}/src/asn1rt_per_v1.erl
 lib/erlang/lib/${COMPILER}/
 lib/erlang/lib/${COMPILER}/doc/
 lib/erlang/lib/${COMPILER}/doc/html/
@@ -543,6 +544,7 @@ lib/erlang/lib/${COMPILER}/doc/html/application_frame.html
 lib/erlang/lib/${COMPILER}/doc/html/application_index.html
 lib/erlang/lib/${COMPILER}/doc/html/application_term.html
 lib/erlang/lib/${COMPILER}/doc/html/compile.html
+lib/erlang/lib/${COMPILER}/doc/html/fascicules.sgml
 lib/erlang/lib/${COMPILER}/doc/html/index.html
 lib/erlang/lib/${COMPILER}/doc/html/min_head.gif
 lib/erlang/lib/${COMPILER}/doc/html/notes.html
@@ -664,6 +666,7 @@ lib/erlang/lib/${COSEVENT}/doc/html/ch_introduction.html
 lib/erlang/lib/${COSEVENT}/doc/html/cosEventApp.html
 lib/erlang/lib/${COSEVENT}/doc/html/e_s_components.gif
 lib/erlang/lib/${COSEVENT}/doc/html/e_s_models.gif
+lib/erlang/lib/${COSEVENT}/doc/html/fascicules.sgml
 lib/erlang/lib/${COSEVENT}/doc/html/index.html
 lib/erlang/lib/${COSEVENT}/doc/html/min_head.gif
 lib/erlang/lib/${COSEVENT}/doc/html/notes.gif
@@ -792,6 +795,7 @@ lib/erlang/lib/${COSEVENTDOMAIN}/doc/html/ch_contents.html
 lib/erlang/lib/${COSEVENTDOMAIN}/doc/html/ch_event_domain_service.html
 lib/erlang/lib/${COSEVENTDOMAIN}/doc/html/ch_introduction.html
 lib/erlang/lib/${COSEVENTDOMAIN}/doc/html/cosEventDomainApp.html
+lib/erlang/lib/${COSEVENTDOMAIN}/doc/html/fascicules.sgml
 lib/erlang/lib/${COSEVENTDOMAIN}/doc/html/index.html
 lib/erlang/lib/${COSEVENTDOMAIN}/doc/html/min_head.gif
 lib/erlang/lib/${COSEVENTDOMAIN}/doc/html/notes.gif
@@ -883,6 +887,7 @@ lib/erlang/lib/${COSFILETRANSFER}/doc/html/ch_install.html
 lib/erlang/lib/${COSFILETRANSFER}/doc/html/ch_introduction.html
 lib/erlang/lib/${COSFILETRANSFER}/doc/html/ch_system.html
 lib/erlang/lib/${COSFILETRANSFER}/doc/html/cosFileTransferApp.html
+lib/erlang/lib/${COSFILETRANSFER}/doc/html/fascicules.sgml
 lib/erlang/lib/${COSFILETRANSFER}/doc/html/index.html
 lib/erlang/lib/${COSFILETRANSFER}/doc/html/min_head.gif
 lib/erlang/lib/${COSFILETRANSFER}/doc/html/notes.gif
@@ -1026,6 +1031,7 @@ lib/erlang/lib/${COSNOTIFICATION}/doc/html/ch_introduction.html
 lib/erlang/lib/${COSNOTIFICATION}/doc/html/ch_system.html
 lib/erlang/lib/${COSNOTIFICATION}/doc/html/cosNotificationApp.html
 lib/erlang/lib/${COSNOTIFICATION}/doc/html/eventstructure.gif
+lib/erlang/lib/${COSNOTIFICATION}/doc/html/fascicules.sgml
 lib/erlang/lib/${COSNOTIFICATION}/doc/html/index.html
 lib/erlang/lib/${COSNOTIFICATION}/doc/html/min_head.gif
 lib/erlang/lib/${COSNOTIFICATION}/doc/html/note.gif
@@ -1396,6 +1402,7 @@ lib/erlang/lib/${COSPROPERTY}/doc/html/ch_example.html
 lib/erlang/lib/${COSPROPERTY}/doc/html/ch_install.html
 lib/erlang/lib/${COSPROPERTY}/doc/html/ch_introduction.html
 lib/erlang/lib/${COSPROPERTY}/doc/html/cosProperty.html
+lib/erlang/lib/${COSPROPERTY}/doc/html/fascicules.sgml
 lib/erlang/lib/${COSPROPERTY}/doc/html/index.html
 lib/erlang/lib/${COSPROPERTY}/doc/html/min_head.gif
 lib/erlang/lib/${COSPROPERTY}/doc/html/notes.gif
@@ -1525,6 +1532,7 @@ lib/erlang/lib/${COSTIME}/doc/html/ch_example.html
 lib/erlang/lib/${COSTIME}/doc/html/ch_install.html
 lib/erlang/lib/${COSTIME}/doc/html/ch_introduction.html
 lib/erlang/lib/${COSTIME}/doc/html/cosTime.html
+lib/erlang/lib/${COSTIME}/doc/html/fascicules.sgml
 lib/erlang/lib/${COSTIME}/doc/html/index.html
 lib/erlang/lib/${COSTIME}/doc/html/min_head.gif
 lib/erlang/lib/${COSTIME}/doc/html/note.gif
@@ -1636,6 +1644,7 @@ lib/erlang/lib/${COSTRANSACTIONS}/doc/html/ch_install.html
 lib/erlang/lib/${COSTRANSACTIONS}/doc/html/ch_introduction.html
 lib/erlang/lib/${COSTRANSACTIONS}/doc/html/ch_skeletons.html
 lib/erlang/lib/${COSTRANSACTIONS}/doc/html/cosTransactions.html
+lib/erlang/lib/${COSTRANSACTIONS}/doc/html/fascicules.sgml
 lib/erlang/lib/${COSTRANSACTIONS}/doc/html/index.html
 lib/erlang/lib/${COSTRANSACTIONS}/doc/html/min_head.gif
 lib/erlang/lib/${COSTRANSACTIONS}/doc/html/note.gif
@@ -1742,6 +1751,7 @@ lib/erlang/lib/${CRYPTO}/doc/
 lib/erlang/lib/${CRYPTO}/doc/html/
 lib/erlang/lib/${CRYPTO}/doc/html/crypto.html
 lib/erlang/lib/${CRYPTO}/doc/html/crypto_app.html
+lib/erlang/lib/${CRYPTO}/doc/html/fascicules.sgml
 lib/erlang/lib/${CRYPTO}/doc/html/index.html
 lib/erlang/lib/${CRYPTO}/doc/html/licenses.html
 lib/erlang/lib/${CRYPTO}/doc/html/min_head.gif
@@ -1793,6 +1803,7 @@ lib/erlang/lib/${DEBUGGER}/doc/html/application_index.html
 lib/erlang/lib/${DEBUGGER}/doc/html/application_term.html
 lib/erlang/lib/${DEBUGGER}/doc/html/debugger.html
 lib/erlang/lib/${DEBUGGER}/doc/html/debugger_chapter.html
+lib/erlang/lib/${DEBUGGER}/doc/html/fascicules.sgml
 lib/erlang/lib/${DEBUGGER}/doc/html/i.html
 lib/erlang/lib/${DEBUGGER}/doc/html/images/
 lib/erlang/lib/${DEBUGGER}/doc/html/images/attach.gif
@@ -1885,6 +1896,7 @@ lib/erlang/lib/${DIALYZER}/doc/html/application_index.html
 lib/erlang/lib/${DIALYZER}/doc/html/application_term.html
 lib/erlang/lib/${DIALYZER}/doc/html/dialyzer.html
 lib/erlang/lib/${DIALYZER}/doc/html/dialyzer_chapter.html
+lib/erlang/lib/${DIALYZER}/doc/html/fascicules.sgml
 lib/erlang/lib/${DIALYZER}/doc/html/index.html
 lib/erlang/lib/${DIALYZER}/doc/html/min_head.gif
 lib/erlang/lib/${DIALYZER}/doc/html/note.gif
@@ -1912,6 +1924,7 @@ lib/erlang/lib/${DIALYZER}/ebin/dialyzer_callgraph.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_cl.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_cl_parse.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_codeserver.beam
+lib/erlang/lib/${DIALYZER}/ebin/dialyzer_contracts.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_dataflow.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_dep.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_gui.beam
@@ -1931,6 +1944,7 @@ lib/erlang/lib/${DIALYZER}/src/dialyzer_callgraph.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_cl.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_cl_parse.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_codeserver.erl
+lib/erlang/lib/${DIALYZER}/src/dialyzer_contracts.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_dataflow.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_dep.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_gui.erl
@@ -1940,6 +1954,132 @@ lib/erlang/lib/${DIALYZER}/src/dialyzer_plt.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_succ_typings.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_typesig.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_utils.erl
+lib/erlang/lib/${DOCBUILDER}/
+lib/erlang/lib/${DOCBUILDER}/doc/
+lib/erlang/lib/${DOCBUILDER}/doc/html/
+lib/erlang/lib/${DOCBUILDER}/doc/html/application.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/application.kwc
+lib/erlang/lib/${DOCBUILDER}/doc/html/application_cite.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/application_first.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/application_frame.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/application_index.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/application_term.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/block_tags.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/character_entities.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/docb_gen.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/docb_transform.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/docb_xml_check.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/docbuilder_app.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/fasc_dtds.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/fascicules.xml
+lib/erlang/lib/${DOCBUILDER}/doc/html/header_tags.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/index.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/inline_tags.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/man.gif
+lib/erlang/lib/${DOCBUILDER}/doc/html/min_head.gif
+lib/erlang/lib/${DOCBUILDER}/doc/html/note.gif
+lib/erlang/lib/${DOCBUILDER}/doc/html/notes.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/overview.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part_cite.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part_first.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part_frame.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part_notes.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part_notes_cite.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part_notes_first.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part_notes_frame.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part_notes_term.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/part_term.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/refman_dtds.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/user_guide_dtds.html
+lib/erlang/lib/${DOCBUILDER}/doc/html/warning.gif
+lib/erlang/lib/${DOCBUILDER}/dtd/
+lib/erlang/lib/${DOCBUILDER}/dtd/application.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/appref.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/book.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/bookinsidecover.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/chapter.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/cites.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/common.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/common.entities.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/common.header.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/common.image.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/common.refs.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/common.table.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/comref.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/cref.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/erlref.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/fascicules.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/fileref.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/part.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/report.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/terms.dtd
+lib/erlang/lib/${DOCBUILDER}/dtd/xhtml-lat1.ent
+lib/erlang/lib/${DOCBUILDER}/ebin/
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_edoc_xml_cb.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_gen.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_html_layout.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_html_ref.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_html_util.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_html_util_iso.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_main.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_pretty_format.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_application2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_appref2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_chapter2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_cite2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_comref2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_cref2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_erlref2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_fileref2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_first2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_index2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_part2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_refs2kwic.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_report2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_tr_term2html.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_transform.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_util.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_xmerl_tree_cb.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_xmerl_xml_cb.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docb_xml_check.beam
+lib/erlang/lib/${DOCBUILDER}/ebin/docbuilder.app
+lib/erlang/lib/${DOCBUILDER}/ebin/docbuilder.appup
+lib/erlang/lib/${DOCBUILDER}/etc/
+lib/erlang/lib/${DOCBUILDER}/etc/note.gif
+lib/erlang/lib/${DOCBUILDER}/etc/warning.gif
+lib/erlang/lib/${DOCBUILDER}/info
+lib/erlang/lib/${DOCBUILDER}/src/
+lib/erlang/lib/${DOCBUILDER}/src/docb_edoc_xml_cb.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_gen.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_html_layout.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_html_ref.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_html_util.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_html_util_iso.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_main.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_pretty_format.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_application2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_appref2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_chapter2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_cite2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_comref2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_cref2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_erlref2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_fileref2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_first2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_index2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_part2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_refs2kwic.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_report2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_tr_term2html.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_transform.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_util.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_util.hrl
+lib/erlang/lib/${DOCBUILDER}/src/docb_xmerl_tree_cb.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_xmerl_xml_cb.erl
+lib/erlang/lib/${DOCBUILDER}/src/docb_xml_check.erl
 lib/erlang/lib/${EDOC}/
 lib/erlang/lib/${EDOC}/doc/
 lib/erlang/lib/${EDOC}/doc/html/
@@ -1957,6 +2097,7 @@ lib/erlang/lib/${EDOC}/doc/html/edoc_extract.html
 lib/erlang/lib/${EDOC}/doc/html/edoc_layout.html
 lib/erlang/lib/${EDOC}/doc/html/edoc_lib.html
 lib/erlang/lib/${EDOC}/doc/html/edoc_run.html
+lib/erlang/lib/${EDOC}/doc/html/fascicules.sgml
 lib/erlang/lib/${EDOC}/doc/html/index.html
 lib/erlang/lib/${EDOC}/doc/html/min_head.gif
 lib/erlang/lib/${EDOC}/doc/html/notes.html
@@ -2054,6 +2195,7 @@ lib/erlang/lib/${EI}/doc/html/erl_global.html
 lib/erlang/lib/${EI}/doc/html/erl_interface.html
 lib/erlang/lib/${EI}/doc/html/erl_malloc.html
 lib/erlang/lib/${EI}/doc/html/erl_marshal.html
+lib/erlang/lib/${EI}/doc/html/fascicules.sgml
 lib/erlang/lib/${EI}/doc/html/index.html
 lib/erlang/lib/${EI}/doc/html/min_head.gif
 lib/erlang/lib/${EI}/doc/html/note.gif
@@ -2271,6 +2413,7 @@ lib/erlang/lib/${ET}/doc/html/et_examples.html
 lib/erlang/lib/${ET}/doc/html/et_intro.html
 lib/erlang/lib/${ET}/doc/html/et_selector.html
 lib/erlang/lib/${ET}/doc/html/et_viewer.html
+lib/erlang/lib/${ET}/doc/html/fascicules.sgml
 lib/erlang/lib/${ET}/doc/html/index.html
 lib/erlang/lib/${ET}/doc/html/live_trans.gif
 lib/erlang/lib/${ET}/doc/html/megaco_collector.gif
@@ -2403,6 +2546,7 @@ lib/erlang/lib/${GS}/doc/html/application_first.html
 lib/erlang/lib/${GS}/doc/html/application_frame.html
 lib/erlang/lib/${GS}/doc/html/application_index.html
 lib/erlang/lib/${GS}/doc/html/application_term.html
+lib/erlang/lib/${GS}/doc/html/fascicules.sgml
 lib/erlang/lib/${GS}/doc/html/gs.html
 lib/erlang/lib/${GS}/doc/html/gs_chapter1.html
 lib/erlang/lib/${GS}/doc/html/gs_chapter2.html
@@ -2494,7 +2638,6 @@ lib/erlang/lib/${GS}/ebin/gstk_widgets.beam
 lib/erlang/lib/${GS}/ebin/gstk_window.beam
 lib/erlang/lib/${GS}/ebin/tcl2erl.beam
 lib/erlang/lib/${GS}/ebin/tool_file_dialog.beam
-lib/erlang/lib/${GS}/ebin/tool_genfd.beam
 lib/erlang/lib/${GS}/ebin/tool_utils.beam
 lib/erlang/lib/${GS}/examples/
 lib/erlang/lib/${GS}/examples/ebin/
@@ -2533,6 +2676,8 @@ lib/erlang/lib/${GS}/examples/src/menu_demo.erl
 lib/erlang/lib/${GS}/examples/src/rubber.erl
 lib/erlang/lib/${GS}/info
 lib/erlang/lib/${GS}/priv/
+lib/erlang/lib/${GS}/priv/bitmap/
+lib/erlang/lib/${GS}/priv/bitmap/fup.bm
 lib/erlang/lib/${GS}/priv/gs-xdefaults
 lib/erlang/lib/${GS}/priv/gstk.tcl
 lib/erlang/lib/${GS}/src/
@@ -2578,7 +2723,6 @@ lib/erlang/lib/${GS}/src/gstk_widgets.erl
 lib/erlang/lib/${GS}/src/gstk_window.erl
 lib/erlang/lib/${GS}/src/tcl2erl.erl
 lib/erlang/lib/${GS}/src/tool_file_dialog.erl
-lib/erlang/lib/${GS}/src/tool_genfd.erl
 lib/erlang/lib/${GS}/src/tool_utils.erl
 lib/erlang/lib/${HIPE}/
 lib/erlang/lib/${HIPE}/cerl/
@@ -2623,20 +2767,24 @@ lib/erlang/lib/${HIPE}/ebin/hipe_icode.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_bincomp.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_callgraph.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_cfg.beam
+lib/erlang/lib/${HIPE}/ebin/hipe_icode_coordinator.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_ebb.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_exceptions.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_fp.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_heap_test.beam
+lib/erlang/lib/${HIPE}/ebin/hipe_icode_inline_bifs.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_instruction_counter.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_liveness.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_mulret.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_pp.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_primops.beam
+lib/erlang/lib/${HIPE}/ebin/hipe_icode_range.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_range_an.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_split_arith.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_ssa.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_ssa_const_prop.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_ssa_copy_prop.beam
+lib/erlang/lib/${HIPE}/ebin/hipe_icode_ssa_struct_reuse.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_icode_type.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_main.beam
 lib/erlang/lib/${HIPE}/ebin/hipe_rtl_arch.beam
@@ -2656,21 +2804,25 @@ lib/erlang/lib/${HIPE}/icode/hipe_icode.hrl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_bincomp.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_callgraph.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_cfg.erl
+lib/erlang/lib/${HIPE}/icode/hipe_icode_coordinator.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_ebb.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_exceptions.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_fp.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_heap_test.erl
+lib/erlang/lib/${HIPE}/icode/hipe_icode_inline_bifs.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_instruction_counter.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_liveness.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_mulret.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_pp.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_primops.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_primops.hrl
+lib/erlang/lib/${HIPE}/icode/hipe_icode_range.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_range_an.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_split_arith.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_ssa.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_ssa_const_prop.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_ssa_copy_prop.erl
+lib/erlang/lib/${HIPE}/icode/hipe_icode_ssa_struct_reuse.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_type.erl
 lib/erlang/lib/${HIPE}/icode/hipe_icode_type.hrl
 lib/erlang/lib/${HIPE}/main/
@@ -2714,6 +2866,7 @@ lib/erlang/lib/${IC}/doc/html/ch_erl_plain.html
 lib/erlang/lib/${IC}/doc/html/ch_ic_protocol.html
 lib/erlang/lib/${IC}/doc/html/ch_introduction.html
 lib/erlang/lib/${IC}/doc/html/ch_java.html
+lib/erlang/lib/${IC}/doc/html/fascicules.sgml
 lib/erlang/lib/${IC}/doc/html/ic.html
 lib/erlang/lib/${IC}/doc/html/ic_c_protocol.html
 lib/erlang/lib/${IC}/doc/html/ic_clib.html
@@ -2931,10 +3084,10 @@ lib/erlang/lib/${INETS}/doc/html/application_frame.html
 lib/erlang/lib/${INETS}/doc/html/application_index.html
 lib/erlang/lib/${INETS}/doc/html/application_term.html
 lib/erlang/lib/${INETS}/doc/html/book.gif
+lib/erlang/lib/${INETS}/doc/html/fascicules.sgml
 lib/erlang/lib/${INETS}/doc/html/ftp.html
 lib/erlang/lib/${INETS}/doc/html/ftp_client.html
 lib/erlang/lib/${INETS}/doc/html/http.html
-lib/erlang/lib/${INETS}/doc/html/http_base_64.html
 lib/erlang/lib/${INETS}/doc/html/http_client.html
 lib/erlang/lib/${INETS}/doc/html/http_server.html
 lib/erlang/lib/${INETS}/doc/html/httpd.html
@@ -3263,6 +3416,7 @@ lib/erlang/lib/${INVISO}/doc/html/application_first.html
 lib/erlang/lib/${INVISO}/doc/html/application_frame.html
 lib/erlang/lib/${INVISO}/doc/html/application_index.html
 lib/erlang/lib/${INVISO}/doc/html/application_term.html
+lib/erlang/lib/${INVISO}/doc/html/fascicules.sgml
 lib/erlang/lib/${INVISO}/doc/html/index.html
 lib/erlang/lib/${INVISO}/doc/html/inviso.html
 lib/erlang/lib/${INVISO}/doc/html/inviso_as_lib.html
@@ -3323,6 +3477,7 @@ lib/erlang/lib/${KERNEL}/doc/html/erl_prim_loader.html
 lib/erlang/lib/${KERNEL}/doc/html/erlang.html
 lib/erlang/lib/${KERNEL}/doc/html/error_handler.html
 lib/erlang/lib/${KERNEL}/doc/html/error_logger.html
+lib/erlang/lib/${KERNEL}/doc/html/fascicules.sgml
 lib/erlang/lib/${KERNEL}/doc/html/file.html
 lib/erlang/lib/${KERNEL}/doc/html/gen_sctp.html
 lib/erlang/lib/${KERNEL}/doc/html/gen_tcp.html
@@ -3551,12 +3706,14 @@ lib/erlang/lib/${MEGACO}/doc/html/call_flow_cont.gif
 lib/erlang/lib/${MEGACO}/doc/html/decode_time.gif
 lib/erlang/lib/${MEGACO}/doc/html/distr_node_config.gif
 lib/erlang/lib/${MEGACO}/doc/html/encode_time.gif
+lib/erlang/lib/${MEGACO}/doc/html/fascicules.sgml
 lib/erlang/lib/${MEGACO}/doc/html/index.html
 lib/erlang/lib/${MEGACO}/doc/html/megaco.html
 lib/erlang/lib/${MEGACO}/doc/html/megaco_architecture.html
 lib/erlang/lib/${MEGACO}/doc/html/megaco_codec_meas.html
 lib/erlang/lib/${MEGACO}/doc/html/megaco_codec_transform.html
 lib/erlang/lib/${MEGACO}/doc/html/megaco_debug.html
+lib/erlang/lib/${MEGACO}/doc/html/megaco_edist_compress.html
 lib/erlang/lib/${MEGACO}/doc/html/megaco_encode.html
 lib/erlang/lib/${MEGACO}/doc/html/megaco_encoder.html
 lib/erlang/lib/${MEGACO}/doc/html/megaco_examples.html
@@ -3643,8 +3800,10 @@ lib/erlang/lib/${MEGACO}/ebin/megaco_compact_text_encoder_v1.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_compact_text_encoder_v2.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_config.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_digit_map.beam
+lib/erlang/lib/${MEGACO}/ebin/megaco_edist_compress.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_encoder.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_erl_dist_encoder.beam
+lib/erlang/lib/${MEGACO}/ebin/megaco_erl_dist_encoder_mc.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_filter.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_flex_scanner.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_flex_scanner_handler.beam
@@ -3692,6 +3851,7 @@ lib/erlang/lib/${MEGACO}/ebin/megaco_text_parser_prev3c.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_text_parser_v1.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_text_parser_v2.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_text_scanner.beam
+lib/erlang/lib/${MEGACO}/ebin/megaco_timer.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_trans_sender.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_trans_sup.beam
 lib/erlang/lib/${MEGACO}/ebin/megaco_transport.beam
@@ -3711,7 +3871,9 @@ lib/erlang/lib/${MEGACO}/examples/meas/megaco_codec_mstone_lib.beam
 lib/erlang/lib/${MEGACO}/examples/meas/megaco_codec_mstone_lib.erl
 lib/erlang/lib/${MEGACO}/examples/meas/megaco_codec_transform.beam
 lib/erlang/lib/${MEGACO}/examples/meas/megaco_codec_transform.erl
+lib/erlang/lib/${MEGACO}/examples/meas/mstone1.sh.skel
 lib/erlang/lib/${MEGACO}/examples/meas/time_test.tgz
+lib/erlang/lib/${MEGACO}/examples/meas/trans.sh.skel
 lib/erlang/lib/${MEGACO}/examples/simple/
 lib/erlang/lib/${MEGACO}/examples/simple/megaco_simple_mg.beam
 lib/erlang/lib/${MEGACO}/examples/simple/megaco_simple_mg.erl
@@ -3817,8 +3979,10 @@ lib/erlang/lib/${MEGACO}/src/binary/megaco_per_media_gateway_control_v2.hrl
 lib/erlang/lib/${MEGACO}/src/engine/
 lib/erlang/lib/${MEGACO}/src/engine/megaco_config.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_digit_map.erl
+lib/erlang/lib/${MEGACO}/src/engine/megaco_edist_compress.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_encoder.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_erl_dist_encoder.erl
+lib/erlang/lib/${MEGACO}/src/engine/megaco_erl_dist_encoder_mc.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_filter.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_message_internal.hrl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_messenger.erl
@@ -3828,6 +3992,7 @@ lib/erlang/lib/${MEGACO}/src/engine/megaco_monitor.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_sdp.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_stats.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_sup.erl
+lib/erlang/lib/${MEGACO}/src/engine/megaco_timer.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_trans_sender.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_trans_sup.erl
 lib/erlang/lib/${MEGACO}/src/engine/megaco_transport.erl
@@ -3901,6 +4066,7 @@ lib/erlang/lib/${MNEMOSYNE}/doc/html/application_frame.html
 lib/erlang/lib/${MNEMOSYNE}/doc/html/application_index.html
 lib/erlang/lib/${MNEMOSYNE}/doc/html/application_term.html
 lib/erlang/lib/${MNEMOSYNE}/doc/html/book.gif
+lib/erlang/lib/${MNEMOSYNE}/doc/html/fascicules.sgml
 lib/erlang/lib/${MNEMOSYNE}/doc/html/index.html
 lib/erlang/lib/${MNEMOSYNE}/doc/html/min_head.gif
 lib/erlang/lib/${MNEMOSYNE}/doc/html/mnemosyne.gif
@@ -3988,6 +4154,7 @@ lib/erlang/lib/${MNESIA}/doc/html/application_index.html
 lib/erlang/lib/${MNESIA}/doc/html/application_term.html
 lib/erlang/lib/${MNESIA}/doc/html/book.gif
 lib/erlang/lib/${MNESIA}/doc/html/company.gif
+lib/erlang/lib/${MNESIA}/doc/html/fascicules.sgml
 lib/erlang/lib/${MNESIA}/doc/html/index.html
 lib/erlang/lib/${MNESIA}/doc/html/min_head.gif
 lib/erlang/lib/${MNESIA}/doc/html/mnesia.gif
@@ -4125,6 +4292,7 @@ lib/erlang/lib/${MNESIA_SESSION}/doc/html/application_frame.html
 lib/erlang/lib/${MNESIA_SESSION}/doc/html/application_index.html
 lib/erlang/lib/${MNESIA_SESSION}/doc/html/application_term.html
 lib/erlang/lib/${MNESIA_SESSION}/doc/html/book.gif
+lib/erlang/lib/${MNESIA_SESSION}/doc/html/fascicules.sgml
 lib/erlang/lib/${MNESIA_SESSION}/doc/html/index.html
 lib/erlang/lib/${MNESIA_SESSION}/doc/html/min_head.gif
 lib/erlang/lib/${MNESIA_SESSION}/doc/html/mnesia_session.gif
@@ -4216,6 +4384,7 @@ lib/erlang/lib/${OBSERVER}/doc/html/etop_lines.gif
 lib/erlang/lib/${OBSERVER}/doc/html/etop_main.gif
 lib/erlang/lib/${OBSERVER}/doc/html/etop_opt.gif
 lib/erlang/lib/${OBSERVER}/doc/html/etop_ug.html
+lib/erlang/lib/${OBSERVER}/doc/html/fascicules.sgml
 lib/erlang/lib/${OBSERVER}/doc/html/index.html
 lib/erlang/lib/${OBSERVER}/doc/html/min_head.gif
 lib/erlang/lib/${OBSERVER}/doc/html/note.gif
@@ -4351,6 +4520,7 @@ lib/erlang/lib/${ORBER}/doc/html/dataframe6.gif
 lib/erlang/lib/${ORBER}/doc/html/dataframe7.gif
 lib/erlang/lib/${ORBER}/doc/html/dataframe8.gif
 lib/erlang/lib/${ORBER}/doc/html/dependent.gif
+lib/erlang/lib/${ORBER}/doc/html/fascicules.sgml
 lib/erlang/lib/${ORBER}/doc/html/firewall_nat.gif
 lib/erlang/lib/${ORBER}/doc/html/fixed.html
 lib/erlang/lib/${ORBER}/doc/html/iiop.gif
@@ -4393,19 +4563,6 @@ lib/erlang/lib/${ORBER}/doc/html/theORB.gif
 lib/erlang/lib/${ORBER}/doc/html/user_guide.gif
 lib/erlang/lib/${ORBER}/doc/html/warning.gif
 lib/erlang/lib/${ORBER}/doc/index.html
-lib/erlang/lib/${ORBER}/doc/javadoc/
-lib/erlang/lib/${ORBER}/doc/javadoc/Orber/
-lib/erlang/lib/${ORBER}/doc/javadoc/Orber/InitialReference.html
-lib/erlang/lib/${ORBER}/doc/javadoc/Orber/package-frame.html
-lib/erlang/lib/${ORBER}/doc/javadoc/Orber/package-summary.html
-lib/erlang/lib/${ORBER}/doc/javadoc/allclasses-frame.html
-lib/erlang/lib/${ORBER}/doc/javadoc/deprecated-list.html
-lib/erlang/lib/${ORBER}/doc/javadoc/help-doc.html
-lib/erlang/lib/${ORBER}/doc/javadoc/index-all.html
-lib/erlang/lib/${ORBER}/doc/javadoc/index.html
-lib/erlang/lib/${ORBER}/doc/javadoc/packages.html
-lib/erlang/lib/${ORBER}/doc/javadoc/serialized-form.html
-lib/erlang/lib/${ORBER}/doc/javadoc/stylesheet.css
 lib/erlang/lib/${ORBER}/ebin/
 lib/erlang/lib/${ORBER}/ebin/CosNaming_Binding.beam
 lib/erlang/lib/${ORBER}/ebin/CosNaming_BindingIterator.beam
@@ -4619,6 +4776,7 @@ lib/erlang/lib/${OS_MON}/doc/html/application_index.html
 lib/erlang/lib/${OS_MON}/doc/html/application_term.html
 lib/erlang/lib/${OS_MON}/doc/html/cpu_sup.html
 lib/erlang/lib/${OS_MON}/doc/html/disksup.html
+lib/erlang/lib/${OS_MON}/doc/html/fascicules.sgml
 lib/erlang/lib/${OS_MON}/doc/html/index.html
 lib/erlang/lib/${OS_MON}/doc/html/memsup.html
 lib/erlang/lib/${OS_MON}/doc/html/min_head.gif
@@ -4679,6 +4837,7 @@ lib/erlang/lib/${OTP_MIBS}/doc/html/application_first.html
 lib/erlang/lib/${OTP_MIBS}/doc/html/application_frame.html
 lib/erlang/lib/${OTP_MIBS}/doc/html/application_index.html
 lib/erlang/lib/${OTP_MIBS}/doc/html/application_term.html
+lib/erlang/lib/${OTP_MIBS}/doc/html/fascicules.sgml
 lib/erlang/lib/${OTP_MIBS}/doc/html/index.html
 lib/erlang/lib/${OTP_MIBS}/doc/html/introduction.html
 lib/erlang/lib/${OTP_MIBS}/doc/html/mibs.html
@@ -4731,6 +4890,7 @@ lib/erlang/lib/${PARSETOOLS}/doc/html/application_first.html
 lib/erlang/lib/${PARSETOOLS}/doc/html/application_frame.html
 lib/erlang/lib/${PARSETOOLS}/doc/html/application_index.html
 lib/erlang/lib/${PARSETOOLS}/doc/html/application_term.html
+lib/erlang/lib/${PARSETOOLS}/doc/html/fascicules.sgml
 lib/erlang/lib/${PARSETOOLS}/doc/html/index.html
 lib/erlang/lib/${PARSETOOLS}/doc/html/min_head.gif
 lib/erlang/lib/${PARSETOOLS}/doc/html/note.gif
@@ -4765,6 +4925,7 @@ lib/erlang/lib/${PMAN}/doc/html/application_first.html
 lib/erlang/lib/${PMAN}/doc/html/application_frame.html
 lib/erlang/lib/${PMAN}/doc/html/application_index.html
 lib/erlang/lib/${PMAN}/doc/html/application_term.html
+lib/erlang/lib/${PMAN}/doc/html/fascicules.sgml
 lib/erlang/lib/${PMAN}/doc/html/index.html
 lib/erlang/lib/${PMAN}/doc/html/main_window.gif
 lib/erlang/lib/${PMAN}/doc/html/min_head.gif
@@ -4795,8 +4956,6 @@ lib/erlang/lib/${PMAN}/ebin/pman_buf_utils.beam
 lib/erlang/lib/${PMAN}/ebin/pman_main.beam
 lib/erlang/lib/${PMAN}/ebin/pman_module_info.beam
 lib/erlang/lib/${PMAN}/ebin/pman_options.beam
-lib/erlang/lib/${PMAN}/ebin/pman_osdepend.beam
-lib/erlang/lib/${PMAN}/ebin/pman_primitive.beam
 lib/erlang/lib/${PMAN}/ebin/pman_process.beam
 lib/erlang/lib/${PMAN}/ebin/pman_relay.beam
 lib/erlang/lib/${PMAN}/ebin/pman_relay_server.beam
@@ -4810,7 +4969,6 @@ lib/erlang/lib/${PMAN}/priv/pman.tool
 lib/erlang/lib/${PMAN}/src/
 lib/erlang/lib/${PMAN}/src/assert.hrl
 lib/erlang/lib/${PMAN}/src/pman.erl
-lib/erlang/lib/${PMAN}/src/pman.hrl
 lib/erlang/lib/${PMAN}/src/pman_buf.erl
 lib/erlang/lib/${PMAN}/src/pman_buf.hrl
 lib/erlang/lib/${PMAN}/src/pman_buf_buffer.erl
@@ -4821,8 +4979,6 @@ lib/erlang/lib/${PMAN}/src/pman_main.erl
 lib/erlang/lib/${PMAN}/src/pman_module_info.erl
 lib/erlang/lib/${PMAN}/src/pman_options.erl
 lib/erlang/lib/${PMAN}/src/pman_options.hrl
-lib/erlang/lib/${PMAN}/src/pman_osdepend.erl
-lib/erlang/lib/${PMAN}/src/pman_primitive.erl
 lib/erlang/lib/${PMAN}/src/pman_process.erl
 lib/erlang/lib/${PMAN}/src/pman_relay.erl
 lib/erlang/lib/${PMAN}/src/pman_relay_server.erl
@@ -4834,6 +4990,8 @@ lib/erlang/lib/${RUNTIME_TOOLS}/
 lib/erlang/lib/${RUNTIME_TOOLS}/doc/
 lib/erlang/lib/${RUNTIME_TOOLS}/doc/html/
 lib/erlang/lib/${RUNTIME_TOOLS}/doc/html/dbg.html
+lib/erlang/lib/${RUNTIME_TOOLS}/doc/html/erts_alloc_config.html
+lib/erlang/lib/${RUNTIME_TOOLS}/doc/html/fascicules.sgml
 lib/erlang/lib/${RUNTIME_TOOLS}/doc/html/index.html
 lib/erlang/lib/${RUNTIME_TOOLS}/doc/html/min_head.gif
 lib/erlang/lib/${RUNTIME_TOOLS}/doc/html/note.gif
@@ -4860,6 +5018,7 @@ lib/erlang/lib/${RUNTIME_TOOLS}/doc/html/runtime_tools_app.html
 lib/erlang/lib/${RUNTIME_TOOLS}/doc/html/warning.gif
 lib/erlang/lib/${RUNTIME_TOOLS}/ebin/
 lib/erlang/lib/${RUNTIME_TOOLS}/ebin/dbg.beam
+lib/erlang/lib/${RUNTIME_TOOLS}/ebin/erts_alloc_config.beam
 lib/erlang/lib/${RUNTIME_TOOLS}/ebin/inviso_as_lib.beam
 lib/erlang/lib/${RUNTIME_TOOLS}/ebin/inviso_autostart.beam
 lib/erlang/lib/${RUNTIME_TOOLS}/ebin/inviso_autostart_server.beam
@@ -4878,6 +5037,7 @@ lib/erlang/lib/${RUNTIME_TOOLS}/priv/
 lib/erlang/lib/${RUNTIME_TOOLS}/priv/lib/
 lib/erlang/lib/${RUNTIME_TOOLS}/src/
 lib/erlang/lib/${RUNTIME_TOOLS}/src/dbg.erl
+lib/erlang/lib/${RUNTIME_TOOLS}/src/erts_alloc_config.erl
 lib/erlang/lib/${RUNTIME_TOOLS}/src/inviso_as_lib.erl
 lib/erlang/lib/${RUNTIME_TOOLS}/src/inviso_autostart.erl
 lib/erlang/lib/${RUNTIME_TOOLS}/src/inviso_autostart_server.erl
@@ -4900,6 +5060,7 @@ lib/erlang/lib/${SASL}/doc/html/application_index.html
 lib/erlang/lib/${SASL}/doc/html/application_term.html
 lib/erlang/lib/${SASL}/doc/html/appup.html
 lib/erlang/lib/${SASL}/doc/html/error_logging.html
+lib/erlang/lib/${SASL}/doc/html/fascicules.sgml
 lib/erlang/lib/${SASL}/doc/html/index.html
 lib/erlang/lib/${SASL}/doc/html/min_head.gif
 lib/erlang/lib/${SASL}/doc/html/note.gif
@@ -4988,6 +5149,7 @@ lib/erlang/lib/${SNMP}/doc/html/application_frame.html
 lib/erlang/lib/${SNMP}/doc/html/application_index.html
 lib/erlang/lib/${SNMP}/doc/html/application_term.html
 lib/erlang/lib/${SNMP}/doc/html/book.gif
+lib/erlang/lib/${SNMP}/doc/html/fascicules.sgml
 lib/erlang/lib/${SNMP}/doc/html/getnext1.gif
 lib/erlang/lib/${SNMP}/doc/html/getnext2.gif
 lib/erlang/lib/${SNMP}/doc/html/getnext3.gif
@@ -5335,6 +5497,7 @@ lib/erlang/lib/${SSH}/doc/html/application_first.html
 lib/erlang/lib/${SSH}/doc/html/application_frame.html
 lib/erlang/lib/${SSH}/doc/html/application_index.html
 lib/erlang/lib/${SSH}/doc/html/application_term.html
+lib/erlang/lib/${SSH}/doc/html/fascicules.sgml
 lib/erlang/lib/${SSH}/doc/html/index.html
 lib/erlang/lib/${SSH}/doc/html/min_head.gif
 lib/erlang/lib/${SSH}/doc/html/note.gif
@@ -5412,6 +5575,7 @@ lib/erlang/lib/${SSL}/
 lib/erlang/lib/${SSL}/doc/
 lib/erlang/lib/${SSL}/doc/html/
 lib/erlang/lib/${SSL}/doc/html/create_certs.html
+lib/erlang/lib/${SSL}/doc/html/fascicules.sgml
 lib/erlang/lib/${SSL}/doc/html/index.html
 lib/erlang/lib/${SSL}/doc/html/licenses.html
 lib/erlang/lib/${SSL}/doc/html/min_head.gif
@@ -5604,6 +5768,7 @@ lib/erlang/lib/${STDLIB}/doc/html/erl_pp.html
 lib/erlang/lib/${STDLIB}/doc/html/erl_scan.html
 lib/erlang/lib/${STDLIB}/doc/html/erl_tar.html
 lib/erlang/lib/${STDLIB}/doc/html/ets.html
+lib/erlang/lib/${STDLIB}/doc/html/fascicules.sgml
 lib/erlang/lib/${STDLIB}/doc/html/file_sorter.html
 lib/erlang/lib/${STDLIB}/doc/html/filelib.html
 lib/erlang/lib/${STDLIB}/doc/html/filename.html
@@ -5841,6 +6006,7 @@ lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/erl_recomment.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/erl_syntax.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/erl_syntax_lib.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/erl_tidy.html
+lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/fascicules.sgml
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/igor.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/index.html
 lib/erlang/lib/${SYNTAX_TOOLS}/doc/html/min_head.gif
@@ -5893,6 +6059,7 @@ lib/erlang/lib/${TOOLBAR}/doc/html/application_index.html
 lib/erlang/lib/${TOOLBAR}/doc/html/application_term.html
 lib/erlang/lib/${TOOLBAR}/doc/html/bar.gif
 lib/erlang/lib/${TOOLBAR}/doc/html/create_tool.gif
+lib/erlang/lib/${TOOLBAR}/doc/html/fascicules.sgml
 lib/erlang/lib/${TOOLBAR}/doc/html/index.html
 lib/erlang/lib/${TOOLBAR}/doc/html/min_head.gif
 lib/erlang/lib/${TOOLBAR}/doc/html/note.gif
@@ -5948,6 +6115,7 @@ lib/erlang/lib/${TOOLS}/doc/html/cprof_chapter.html
 lib/erlang/lib/${TOOLS}/doc/html/eprof.html
 lib/erlang/lib/${TOOLS}/doc/html/erlang_mode.html
 lib/erlang/lib/${TOOLS}/doc/html/erlang_mode_chapter.html
+lib/erlang/lib/${TOOLS}/doc/html/fascicules.sgml
 lib/erlang/lib/${TOOLS}/doc/html/fprof.html
 lib/erlang/lib/${TOOLS}/doc/html/fprof_chapter.html
 lib/erlang/lib/${TOOLS}/doc/html/index.html
@@ -6033,6 +6201,7 @@ lib/erlang/lib/${TV}/doc/html/application_first.html
 lib/erlang/lib/${TV}/doc/html/application_frame.html
 lib/erlang/lib/${TV}/doc/html/application_index.html
 lib/erlang/lib/${TV}/doc/html/application_term.html
+lib/erlang/lib/${TV}/doc/html/fascicules.sgml
 lib/erlang/lib/${TV}/doc/html/index.html
 lib/erlang/lib/${TV}/doc/html/info_window.gif
 lib/erlang/lib/${TV}/doc/html/min_head.gif
@@ -6193,6 +6362,7 @@ lib/erlang/lib/${WEBTOOL}/doc/html/application_first.html
 lib/erlang/lib/${WEBTOOL}/doc/html/application_frame.html
 lib/erlang/lib/${WEBTOOL}/doc/html/application_index.html
 lib/erlang/lib/${WEBTOOL}/doc/html/application_term.html
+lib/erlang/lib/${WEBTOOL}/doc/html/fascicules.sgml
 lib/erlang/lib/${WEBTOOL}/doc/html/index.html
 lib/erlang/lib/${WEBTOOL}/doc/html/min_head.gif
 lib/erlang/lib/${WEBTOOL}/doc/html/notes.html
@@ -6245,6 +6415,7 @@ lib/erlang/lib/${XMERL}/doc/html/application_first.html
 lib/erlang/lib/${XMERL}/doc/html/application_frame.html
 lib/erlang/lib/${XMERL}/doc/html/application_index.html
 lib/erlang/lib/${XMERL}/doc/html/application_term.html
+lib/erlang/lib/${XMERL}/doc/html/fascicules.sgml
 lib/erlang/lib/${XMERL}/doc/html/index.html
 lib/erlang/lib/${XMERL}/doc/html/min_head.gif
 lib/erlang/lib/${XMERL}/doc/html/motorcycles.txt
@@ -6455,6 +6626,9 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/digraph_utils.3
 @man lib/erlang/man/man3/disk_log.3
 @man lib/erlang/man/man3/disksup.3
+@man lib/erlang/man/man3/docb_gen.3
+@man lib/erlang/man/man3/docb_transform.3
+@man lib/erlang/man/man3/docb_xml_check.3
 @man lib/erlang/man/man3/driver_entry.3
 @man lib/erlang/man/man3/edoc.3
 @man lib/erlang/man/man3/edoc_doclet.3
@@ -6499,6 +6673,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/error_handler.3
 @man lib/erlang/man/man3/error_logger.3
 @man lib/erlang/man/man3/erts_alloc.3
+@man lib/erlang/man/man3/erts_alloc_config.3
 @man lib/erlang/man/man3/et.3
 @man lib/erlang/man/man3/et_collector.3
 @man lib/erlang/man/man3/et_selector.3
@@ -6525,7 +6700,6 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/gs.3
 @man lib/erlang/man/man3/heart.3
 @man lib/erlang/man/man3/http.3
-@man lib/erlang/man/man3/http_base_64.3
 @man lib/erlang/man/man3/httpd.3
 @man lib/erlang/man/man3/httpd_conf.3
 @man lib/erlang/man/man3/httpd_socket.3
@@ -6558,6 +6732,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/megaco.3
 @man lib/erlang/man/man3/megaco_codec_meas.3
 @man lib/erlang/man/man3/megaco_codec_transform.3
+@man lib/erlang/man/man3/megaco_edist_compress.3
 @man lib/erlang/man/man3/megaco_encoder.3
 @man lib/erlang/man/man3/megaco_flex_scanner.3
 @man lib/erlang/man/man3/megaco_tcp.3
@@ -6686,6 +6861,7 @@ lib/erlang/man/man4/
 @man lib/erlang/man/man4/script.4
 lib/erlang/man/man6/
 @man lib/erlang/man/man6/crypto.6
+@man lib/erlang/man/man6/docbuilder.6
 @man lib/erlang/man/man6/kernel.6
 @man lib/erlang/man/man6/observer.6
 @man lib/erlang/man/man6/runtime_tools.6
