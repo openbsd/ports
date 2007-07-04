@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/02 00:48:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/04 17:36:00 ajacoutot Exp $
 
-COMMENT=	"graphical tool to change Tux Paint's settings"
+COMMENT=	graphical tool to change Tux Paint's settings
 
-DISTNAME=	tuxpaint-config-0.0.7
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	tuxpaint-config-0.0.8
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -21,7 +20,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 WANTLIB=	X11 Xext c m stdc++ Xau Xdmcp
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	fltk.>=6::x11/fltk
+LIB_DEPENDS=	fltk.>=6::x11/fltk \
+		paper::print/libpaper
 
 USE_X11=	Yes
 
@@ -29,8 +29,10 @@ MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR}
 
 NO_REGRESS=	Yes
 
-pre-build:
-	perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
+pre-configure:
+	@rm -rf ${WRKSRC}/obj
+	@perl -pi -e 's,@\$$\(CXX\),\$$\(CXX\),g' ${WRKSRC}/Makefile
+	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
 		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/src/tuxpaint-config.1
 

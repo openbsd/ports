@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/20 14:18:10 ajacoutot Exp $
---- Makefile.orig	Thu Oct 19 09:42:09 2006
-+++ Makefile	Fri Jan 19 23:13:38 2007
-@@ -19,7 +19,6 @@ VER_DATE=`date +"%Y-%m-%d"`
+$OpenBSD: patch-Makefile,v 1.2 2007/07/04 17:36:00 ajacoutot Exp $
+--- Makefile.orig	Sun Jul  1 17:06:18 2007
++++ Makefile	Wed Jul  4 12:37:25 2007
+@@ -20,7 +20,6 @@ VER_DATE=`date +"%Y-%m-%d"`
  
  # Where to install things:
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/20 14:18:10 ajacoutot Exp $
  
  
  # Program:
-@@ -36,16 +35,12 @@ DATA_PREFIX=$(PREFIX)/share/tuxpaint-con
+@@ -37,16 +36,12 @@ DATA_PREFIX=$(PREFIX)/share/tuxpaint-config/
  # Docs and man page:
  
  DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-config/
@@ -28,20 +28,15 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/20 14:18:10 ajacoutot Exp $
  
  
  # Icons and launchers:
-@@ -71,10 +66,10 @@ NOSOUNDFLAG=__SOUND
- # Libraries, paths, and flags:
- 
- FLTK_CFLAGS=`fltk-config --cxxflags`
--FLTK_LIBS=`fltk-config --ldstaticflags`
-+FLTK_LIBS=`fltk-config --ldflags`
+@@ -77,7 +72,6 @@ FLTK_LIBS=`fltk-config --ldflags`
+ PAPER_LIB=-lpaper
  
  # Default CFLAGS:
 -CFLAGS=-O2 -Wall
-+#CFLAGS=-O2 -Wall
  
  # The entire set of CFLAGS:
  ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
-@@ -86,11 +81,6 @@ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDA
+@@ -89,11 +83,6 @@ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(
  # "make" with no arguments builds the program and man page from sources:
  
  all:	tuxpaint-config translations
@@ -53,7 +48,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/20 14:18:10 ajacoutot Exp $
  
  releaseclean:
  	@echo
-@@ -142,16 +132,9 @@ install-win32:
+@@ -146,16 +135,9 @@ install-win32:
  # (depending on the *PREFIX variables at the top, you probably need
  # to do this as superuser ("root"))
  
@@ -72,18 +67,18 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/20 14:18:10 ajacoutot Exp $
  
  
  # "make clean" deletes the program, the compiled objects and the
-@@ -228,23 +211,15 @@ install-kde-icons:
+@@ -233,23 +215,15 @@ install-kde-icons:
  # and the 24-color 32x32 XPM (for other Window managers):
  
  install-icon:
 -	@echo
 -	@echo "...Installing launcher icon graphics..."
--	install -d $(ICON_PREFIX)
--	cp data/images/icon.png $(ICON_PREFIX)tuxpaint-config.png
--	chmod 644 $(ICON_PREFIX)tuxpaint-config.png
--	install -d $(X11_ICON_PREFIX)
--	cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)tuxpaint-config.xpm
--	chmod 644 $(X11_ICON_PREFIX)tuxpaint-config.xpm
+-	@install -d $(ICON_PREFIX)
+-	@cp data/images/icon.png $(ICON_PREFIX)tuxpaint-config.png
+-	@chmod 644 $(ICON_PREFIX)tuxpaint-config.png
+-	@install -d $(X11_ICON_PREFIX)
+-	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)tuxpaint-config.xpm
+-	@chmod 644 $(X11_ICON_PREFIX)tuxpaint-config.xpm
 +	${BSD_INSTALL_DATA_DIR} $(ICON_PREFIX)
 +	${BSD_INSTALL_DATA} ../data/images/icon.png $(ICON_PREFIX)tuxpaint-config.png
 +	${BSD_INSTALL_DATA} ../data/images/icon32x32.xpm $(ICON_PREFIX)tuxpaint-config.xpm
@@ -94,13 +89,13 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/20 14:18:10 ajacoutot Exp $
  install-bin:
 -	@echo
 -	@echo "...Installing program itself..."
--	cp tuxpaint-config $(BIN_PREFIX)
--	chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint-config$(EXE_EXT)
+-	@cp tuxpaint-config $(BIN_PREFIX)
+-	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint-config$(EXE_EXT)
 +	${BSD_INSTALL_PROGRAM} ../tuxpaint-config $(BIN_PREFIX)
  
  
  # Install the data (sound, graphics, fonts):
-@@ -260,44 +235,28 @@ install-data:
+@@ -265,39 +239,21 @@ install-data:
  # Install the translated text:
  
  install-gettext:
@@ -115,14 +110,16 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/20 14:18:10 ajacoutot Exp $
 -	@echo
 -	@echo "...Installing documentation..."
 -	@echo "(English)"
--	install -d $(DOC_PREFIX)
--	cp docs/AUTHORS.txt $(DOC_PREFIX)
--	cp docs/CHANGES.txt $(DOC_PREFIX)
--	cp docs/COPYING.txt $(DOC_PREFIX)
--	cp docs/README.txt $(DOC_PREFIX)
--	cp docs/TODO.txt $(DOC_PREFIX)
+-	@install -d $(DOC_PREFIX)
+-	@install -d $(DOC_PREFIX)/html
+-	@cp docs/AUTHORS.txt $(DOC_PREFIX)
+-	@cp docs/CHANGES.txt $(DOC_PREFIX)
+-	@cp docs/COPYING.txt $(DOC_PREFIX)
+-	@cp docs/README.txt $(DOC_PREFIX)
+-	@cp docs/html/README.html $(DOC_PREFIX)/html
+-	@cp docs/TODO.txt $(DOC_PREFIX)
 -	@echo "(...Setting permissions)"
--	chmod a+rx,g-w,o-w $(DOC_PREFIX)
+-	@chmod -R a+rx,g-w,o-w $(DOC_PREFIX)
 +	${BSD_INSTALL_DATA_DIR} $(DOC_PREFIX)
 +	${BSD_INSTALL_DATA} ../docs/README.txt $(DOC_PREFIX)
  
@@ -132,21 +129,40 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/20 14:18:10 ajacoutot Exp $
  install-man:
 -	@echo "...Installing man pages..."
 -	# man1 directory...
--	install -d $(MAN_PREFIX)/man1/
+-	@install -d $(MAN_PREFIX)/man1/
 -	# tuxpaint-config.1
--	cp src/tuxpaint-config.1 $(MAN_PREFIX)/man1/
--	gzip -9f $(MAN_PREFIX)/man1/tuxpaint-config.1
--	chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-config.1.gz
+-	@cp src/tuxpaint-config.1 $(MAN_PREFIX)/man1/
+-	@gzip -9f $(MAN_PREFIX)/man1/tuxpaint-config.1
+-	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-config.1.gz
 +	${BSD_INSTALL_MAN_DIR} $(MAN_PREFIX)/man1/
 +	${BSD_INSTALL_MAN} ../src/tuxpaint-config.1 $(MAN_PREFIX)/man1/
  
  
  # Build the program!
- 
+@@ -305,22 +261,22 @@ install-man:
  tuxpaint-config:	obj/tuxpaint-config.o obj/tuxpaint-config2.o	\
  			obj/defaults.o $(ARCH_LIBS)
--	$(CXX) $(ALL_CFLAGS) -o tuxpaint-config obj/tuxpaint-config.o 	\
-+	$(CXX) $(ALL_CFLAGS) -liconv -lintl -o tuxpaint-config obj/tuxpaint-config.o 	\
+ 	@echo Linking
+-	@$(CXX) $(ALL_CFLAGS) -o tuxpaint-config obj/tuxpaint-config.o 	\
++	@$(CXX) $(ALL_CFLAGS) -liconv -lintl -o tuxpaint-config obj/tuxpaint-config.o 	\
  			obj/tuxpaint-config2.o obj/defaults.o $(ARCH_LIBS) \
- 			$(FLTK_LIBS) $(ARCH_LINKS)
+ 			$(FLTK_LIBS) $(ARCH_LINKS) $(PAPER_LIB)
+ 
+ 
+ # Build the object for the program!
+ 
+-obj/tuxpaint-config.o:	src/tuxpaint-config.cxx src/version.h src/about.h
++obj/tuxpaint-config.o:	src/tuxpaint-config.cxx obj src/version.h src/about.h
+ 	@echo Compiling tuxpaint-config.cxx
+ 	@$(CXX) $(ALL_CFLAGS) -c src/tuxpaint-config.cxx -o obj/tuxpaint-config.o
+ 
+-obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx src/version.h src/about.h
++obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx obj src/version.h src/about.h
+ 	@echo Compiling tuxpaint-config2.cxx
+ 	@$(CXX) $(ALL_CFLAGS) -c src/tuxpaint-config2.cxx -o obj/tuxpaint-config2.o
+ 
+-obj/defaults.o:	src/defaults.cxx
++obj/defaults.o:	src/defaults.cxx obj
+ 	@echo Compiling defaults.cxx
+ 	@$(CXX) $(ALL_CFLAGS) -c src/defaults.cxx -o obj/defaults.o
  
