@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/04 17:32:41 ajacoutot Exp $
+%%SHARED%%
+bin/paperconf
+include/paper.h
+lib/libpaper.a
+lib/libpaper.la
+@man man/man1/paperconf.1
+@man man/man3/defaultpapername.3
+@man man/man3/defaultpapersizefile.3
+@man man/man3/paperdone.3
+@man man/man3/paperfirst.3
+@man man/man3/paperinfo.3
+@man man/man3/paperinit.3
+@man man/man3/paperlast.3
+@man man/man3/papernext.3
+@man man/man3/paperprev.3
+@man man/man3/paperpsheight.3
+@man man/man3/paperpsname.3
+@man man/man3/paperpswidth.3
+@man man/man3/paperwithsize.3
+@man man/man3/systempapername.3
+@man man/man3/systempapersizefile.3
+@man man/man5/papersize.5
+@man man/man8/paperconfig.8
+sbin/paperconfig

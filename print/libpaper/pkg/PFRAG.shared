@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/07/04 17:32:41 ajacoutot Exp $
+@lib lib/libpaper.so.${LIBpaper_VERSION}
