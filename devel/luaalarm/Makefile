@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/04 19:39:59 pedro Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/04 19:18:46 jasper Exp $
 
 COMMENT=	"alarm library for the lua language"
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 DISTNAME=	lalarm
 DATE=		20061011

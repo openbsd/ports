@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2003/12/31 02:42:39 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2007/07/04 19:18:46 jasper Exp $
 
 COMMENT=		"connect() and bind() wrapper to evade packet filtering"
 
 # uses LD_PRELOAD
-NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
+SHARED_ONLY=		Yes
 
 DISTNAME=		ADMfzap
 PKGNAME=        	ADMfzap-0.1

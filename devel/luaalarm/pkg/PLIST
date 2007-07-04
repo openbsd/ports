@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/07/30 04:36:01 pedro Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2007/07/04 19:18:46 jasper Exp $
+lib/lua/5.1/alarm.so

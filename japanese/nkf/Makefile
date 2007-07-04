@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2005/10/27 10:14:40 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/07/04 19:18:46 jasper Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Network Kanji code conversion Filter"
 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/15 15:09:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2007/07/04 19:18:46 jasper Exp $
 
 COMMENT=		"Tcl bindings for Curl"
-NOT_FOR_ARCHS= 		${NO_SHARED_ARCHS}
+SHARED_ONLY=		Yes
 
 DISTNAME=		TclCurl-0.10.5
 PKGNAME=		${DISTNAME}p3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2007/06/07 20:39:51 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.110 2007/07/04 19:18:46 jasper Exp $
 
 COMMENT-main=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
@@ -40,7 +40,7 @@ MULTI_PACKAGES=	-docs -main -server -contrib
 # but the server requires loadable library support. Until we figure
 # out the correct incantation to not build the server on those systems,
 # simply don't build for them, yet.
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 MAKE_FILE=	GNUmakefile
 

@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/09/20 14:08:47 pedro Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2007/07/04 19:18:46 jasper Exp $
+lib/lua/5.1/crypto/
+lib/lua/5.1/crypto/core.so
+lib/lua/5.1/crypto/evp/
+lib/lua/5.1/crypto/evp/core.so
+lib/lua/5.1/crypto/hmac/
+lib/lua/5.1/crypto/hmac/core.so
 share/lua/5.1/crypto/
 share/lua/5.1/crypto.lua
 share/lua/5.1/crypto/evp.lua

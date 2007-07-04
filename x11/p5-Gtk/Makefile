@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2007/07/04 19:18:46 jasper Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"set of modules to use Gtk+ libraries from Perl"
 

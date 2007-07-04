@@ -1,8 +1,35 @@
-@comment $OpenBSD: PLIST-contrib,v 1.1 2007/03/22 19:29:17 simon Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-contrib,v 1.2 2007/07/04 19:18:46 jasper Exp $
 bin/oid2name
 bin/pgbench
 bin/vacuumlo
+lib/postgresql/_int.so
+lib/postgresql/adminpack.so
+lib/postgresql/autoinc.so
+lib/postgresql/btree_gist.so
+lib/postgresql/chkpass.so
+lib/postgresql/cube.so
+lib/postgresql/dblink.so
+lib/postgresql/earthdistance.so
+lib/postgresql/fuzzystrmatch.so
+lib/postgresql/hstore.so
+lib/postgresql/insert_username.so
+lib/postgresql/int_aggregate.so
+lib/postgresql/isn.so
+lib/postgresql/lo.so
+lib/postgresql/ltree.so
+lib/postgresql/moddatetime.so
+lib/postgresql/pg_buffercache.so
+lib/postgresql/pg_freespacemap.so
+lib/postgresql/pg_trgm.so
+lib/postgresql/pgcrypto.so
+lib/postgresql/pgrowlocks.so
+lib/postgresql/pgstattuple.so
+lib/postgresql/refint.so
+lib/postgresql/seg.so
+lib/postgresql/sslinfo.so
+lib/postgresql/tablefunc.so
+lib/postgresql/timetravel.so
+lib/postgresql/tsearch2.so
 share/postgresql/contrib/
 share/postgresql/contrib/_int.sql
 share/postgresql/contrib/adminpack.sql

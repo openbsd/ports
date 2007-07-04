@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/01 18:38:22 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2007/07/04 19:18:45 jasper Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python unicode codecs for Chinese, Japanese and Korean"
 

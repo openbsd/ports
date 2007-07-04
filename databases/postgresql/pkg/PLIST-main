@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/04/23 15:25:17 mbalmer Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2007/07/04 19:18:46 jasper Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -55,15 +55,19 @@ include/postgresql/sqlca.h
 lib/libecpg.a
 @comment lib/libecpg.so
 @comment lib/libecpg.so.6
+@lib lib/libecpg.so.${LIBecpg_VERSION}
 lib/libecpg_compat.a
 @comment lib/libecpg_compat.so
 @comment lib/libecpg_compat.so.3
+@lib lib/libecpg_compat.so.${LIBecpg_compat_VERSION}
 lib/libpgport.a
 lib/libpgtypes.a
 @comment lib/libpgtypes.so
 @comment lib/libpgtypes.so.3
+@lib lib/libpgtypes.so.${LIBpgtypes_VERSION}
 lib/libpq.a
 @comment lib/libpq.so
+@lib lib/libpq.so.${LIBpq_VERSION}
 lib/postgresql/
 lib/postgresql/pgxs/
 lib/postgresql/pgxs/config/
@@ -808,4 +812,3 @@ share/postgresql/timezonesets/Europe.txt
 share/postgresql/timezonesets/India
 share/postgresql/timezonesets/Indian.txt
 share/postgresql/timezonesets/Pacific.txt
-%%SHARED%%

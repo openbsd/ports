@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/28 16:09:38 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/04 19:18:46 jasper Exp $
 
 COMMENT=	"Lua binding for the OpenSSL crypto libraries"
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 DISTNAME=	luacrypto-0.1.1
 PKGNAME=	${DISTNAME}p0

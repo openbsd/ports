@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/09/18 09:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/04 19:18:45 jasper Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python interface to XMMS"
 

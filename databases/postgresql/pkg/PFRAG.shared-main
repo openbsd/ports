@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/23 21:21:54 kili Exp $
-@lib lib/libecpg.so.${LIBecpg_VERSION}
-@lib lib/libecpg_compat.so.${LIBecpg_compat_VERSION}
-@lib lib/libpgtypes.so.${LIBpgtypes_VERSION}
-@lib lib/libpq.so.${LIBpq_VERSION}

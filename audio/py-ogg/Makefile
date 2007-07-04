@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/09/20 08:57:29 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2007/07/04 19:18:45 jasper Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python wrapper for the Ogg libraries"
 

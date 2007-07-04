@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/04 19:18:46 jasper Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"XMMS visualization plugin, to display Kjofol skins"
 

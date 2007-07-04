@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/11/30 07:16:46 kevlo Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2007/07/04 19:18:46 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/cjkcodecs/
 lib/python${MODPY_VERSION}/site-packages/cjkcodecs.pth
 lib/python${MODPY_VERSION}/site-packages/cjkcodecs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cjkcodecs/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_cn.so
+lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_hk.so
+lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_iso2022.so
+lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_jp.so
+lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_kr.so
+lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_tw.so
+lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_unicode.so
+lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_multibytecodec.so
 lib/python${MODPY_VERSION}/site-packages/cjkcodecs/aliases.py
 lib/python${MODPY_VERSION}/site-packages/cjkcodecs/aliases.pyc
 lib/python${MODPY_VERSION}/site-packages/cjkcodecs/big5.py

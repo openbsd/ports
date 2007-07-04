@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/16 09:57:25 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/07/04 19:18:46 jasper Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"generate and manipulate images"
 

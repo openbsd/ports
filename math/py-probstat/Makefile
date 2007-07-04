@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:38:37 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/04 19:18:46 jasper Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"probability and statistics utilities for Python"
 

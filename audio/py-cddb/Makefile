@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/04 19:18:45 jasper Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"CDDB audio CD track info access in Python"
 

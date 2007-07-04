@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2004/11/30 07:16:46 kevlo Exp $
-lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_cn.so
-lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_hk.so
-lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_iso2022.so
-lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_jp.so
-lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_kr.so
-lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_tw.so
-lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_codecs_unicode.so
-lib/python${MODPY_VERSION}/site-packages/cjkcodecs/_multibytecodec.so
