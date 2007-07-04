@@ -1,0 +1,11 @@
+The vtiger CRM has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+   # ln -s ../vtigercrm /var/www/htdocs/vtigercrm
+(make sure you use a relative symlink since Apache is chrooted)
+
+*** For initial installation only, skip this section when updating! ***
+To complete the installation, you must create an empty MySQL database
+and grant a corresponding user all privileges to it.
+Then point your web browser to:
+http://<localhost>/vtigercrm/install.php
