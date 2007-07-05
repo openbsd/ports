@@ -1,7 +1,7 @@
-$OpenBSD: patch-libxslt_Makefile_in,v 1.1 2006/05/22 11:33:49 steven Exp $
---- libxslt/Makefile.in.orig	Sat May 13 09:51:35 2006
-+++ libxslt/Makefile.in	Sat May 13 09:51:48 2006
-@@ -612,7 +612,7 @@ install-data-am: install-man install-xsl
+$OpenBSD: patch-libxslt_Makefile_in,v 1.2 2007/07/05 16:05:56 steven Exp $
+--- libxslt/Makefile.in.orig	Tue Jun 12 18:53:58 2007
++++ libxslt/Makefile.in	Mon Jul  2 15:23:38 2007
+@@ -613,7 +613,7 @@ install-data-am: install-man install-xsltincHEADERS
  
  install-exec-am: install-libLTLIBRARIES
  	@$(NORMAL_INSTALL)
