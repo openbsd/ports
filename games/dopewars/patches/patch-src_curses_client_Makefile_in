@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_curses_client_Makefile_in,v 1.1 2005/02/13 18:31:15 alek Exp $
---- src/curses_client/Makefile.in.orig	Sun Feb 13 19:22:58 2005
-+++ src/curses_client/Makefile.in	Sun Feb 13 19:23:04 2005
-@@ -124,7 +124,7 @@ plugindir = @plugindir@
- 
+$OpenBSD: patch-src_curses_client_Makefile_in,v 1.2 2007/07/05 17:28:18 jasper Exp $
+--- src/curses_client/Makefile.in.orig	Fri Dec 30 22:29:34 2005
++++ src/curses_client/Makefile.in	Sun Nov 26 00:07:05 2006
+@@ -239,6 +239,7 @@ target_vendor = @target_vendor@
  noinst_LIBRARIES = libcursesclient.a
  libcursesclient_a_SOURCES = curses_client.c curses_client.h
--INCLUDES = -I../../intl -I${srcdir} -I${srcdir}/.. -I../.. @GLIB_CFLAGS@
+ INCLUDES = -I../../intl -I${srcdir} -I${srcdir}/.. -I../.. @GLIB_CFLAGS@
 +INCLUDES = -I${srcdir} -I${srcdir}/.. -I../.. @GLIB_CFLAGS@
- DEFS = @DEFS@
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../../config.h
+ all: all-am
+ 
+ .SUFFIXES:

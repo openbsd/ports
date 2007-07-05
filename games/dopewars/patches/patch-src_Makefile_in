@@ -1,23 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2006/11/07 15:14:31 naddy Exp $
---- src/Makefile.in.orig	Tue Jun 25 19:08:23 2002
-+++ src/Makefile.in	Tue Nov  7 16:00:56 2006
-@@ -133,7 +133,7 @@ plugindir = @plugindir@
- @CURSESPORT_TRUE@CURSESPORTSUBDIR = @CURSESPORT_TRUE@cursesport
- 
- SUBDIRS = $(GUISUBDIR) $(CURSESSUBDIR) $(GTKPORTSUBDIR) $(CURSESPORTSUBDIR) plugins
--dopewars_LDADD = @GUILIB@ @CURSESLIB@ @GTKPORTLIB@ @CURSESPORTLIB@ @GTK_LIBS@ @INTLLIBS@ @WNDRES@ @PLUGOBJS@ @PLUGLIBS@
-+dopewars_LDADD = @GUILIB@ @CURSESLIB@ @GTKPORTLIB@ @CURSESPORTLIB@ @GLIB_LIBS@ @GTK_LIBS@ @INTLLIBS@ @WNDRES@ @PLUGOBJS@ @PLUGLIBS@
- dopewars_DEPENDENCIES = @GUILIB@ @CURSESLIB@ @GTKPORTLIB@ @CURSESPORTLIB@ @INTLLIBS@ @WNDRES@ @PLUGOBJS@
- 
- bin_PROGRAMS = dopewars
-@@ -144,8 +144,8 @@ dopewars_SOURCES = admin.c admin.h AIPla
+$OpenBSD: patch-src_Makefile_in,v 1.5 2007/07/05 17:28:18 jasper Exp $
+--- src/Makefile.in.orig	Fri Dec 30 22:29:34 2005
++++ src/Makefile.in	Thu Jul  5 17:39:19 2007
+@@ -265,7 +265,7 @@ dopewars_SOURCES = admin.c admin.h AIPlayer.c AIPlayer
                     serverside.c serverside.h sound.c sound.h \
                     tstring.c tstring.h winmain.c winmain.h
  
--INCLUDES = -I../intl -I${srcdir} -I.. @GTK_CFLAGS@
--DEFS = @DEFS@
+-INCLUDES = -I../intl -I${srcdir} -I.. @GLIB_CFLAGS@ @GTK_CFLAGS@
 +INCLUDES = -I${srcdir} -I.. @GLIB_CFLAGS@ @GTK_CFLAGS@
-+DEFS = @DEFS@ -DSCOREDIR="\"/var/games\""
  PIXDIR = ${DESTDIR}${datadir}/pixmaps
  DOPEDIR = ${DESTDIR}${bindir}
  DOPEBIN = ${DOPEDIR}/dopewars

@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc-help-Makefile_in,v 1.1 2007/07/05 17:28:18 jasper Exp $
+--- doc/help/Makefile.in.orig	Fri Dec 30 22:29:33 2005
++++ doc/help/Makefile.in	Sun Nov 26 00:07:05 2006
+@@ -214,7 +214,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-DOCPATH = ${DESTDIR}${datadir}/doc/${PACKAGE}-${VERSION}/help
++DOCPATH = ${DESTDIR}${datadir}/doc/${PACKAGE}/help
+ DOCS = cops.html general.html locations.html sounds.html \
+              drugs.html guns.html server.html
+ 

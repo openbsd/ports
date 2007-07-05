@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_cursesport_Makefile_in,v 1.1 2005/02/13 18:31:15 alek Exp $
---- src/cursesport/Makefile.in.orig	Sun Feb 13 19:23:31 2005
-+++ src/cursesport/Makefile.in	Sun Feb 13 19:23:37 2005
-@@ -124,7 +124,7 @@ plugindir = @plugindir@
- 
+$OpenBSD: patch-src_cursesport_Makefile_in,v 1.2 2007/07/05 17:28:18 jasper Exp $
+--- src/cursesport/Makefile.in.orig	Fri Dec 30 22:29:34 2005
++++ src/cursesport/Makefile.in	Sun Nov 26 00:07:05 2006
+@@ -238,7 +238,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
  noinst_LIBRARIES = libcursesport.a
  libcursesport_a_SOURCES = cursesport.c cursesport.h
 -INCLUDES = -I../../intl -I${srcdir} -I${srcdir}/.. -I../..
 +INCLUDES = -I${srcdir} -I${srcdir}/.. -I../..
- DEFS = @DEFS@
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../../config.h
+ all: all-am
+ 
+ .SUFFIXES:

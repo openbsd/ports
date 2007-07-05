@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_gtkport_Makefile_in,v 1.1 2005/02/13 18:31:15 alek Exp $
---- src/gtkport/Makefile.in.orig	Sun Feb 13 19:23:12 2005
-+++ src/gtkport/Makefile.in	Sun Feb 13 19:23:19 2005
-@@ -124,7 +124,7 @@ plugindir = @plugindir@
+$OpenBSD: patch-src_gtkport_Makefile_in,v 1.2 2007/07/05 17:28:18 jasper Exp $
+--- src/gtkport/Makefile.in.orig	Fri Dec 30 22:29:34 2005
++++ src/gtkport/Makefile.in	Thu Jul  5 17:39:19 2007
+@@ -242,6 +242,7 @@ libgtkport_a_SOURCES = gtkport.c gtkport.h clist.c cli
+                        unicodewrap.c unicodewrap.h
  
- noinst_LIBRARIES = libgtkport.a
- libgtkport_a_SOURCES = gtkport.c gtkport.h clist.c clist.h
--INCLUDES = -I../../intl -I${srcdir} -I${srcdir}/.. -I../.. @GTK_CFLAGS@
-+INCLUDES = -I${srcdir} -I${srcdir}/.. -I../.. @GTK_CFLAGS@
- DEFS = @DEFS@
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../../config.h
+ INCLUDES = -I../../intl -I${srcdir} -I${srcdir}/.. -I../.. @GTK_CFLAGS@ @GLIB_CFLAGS@
++INCLUDES = -I${srcdir} -I${srcdir}/.. -I../.. @GTK_CFLAGS@ @GLIB_CFLAGS@
+ all: all-am
+ 
+ .SUFFIXES:
