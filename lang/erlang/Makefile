@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2007/07/04 05:38:58 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2007/07/05 12:50:58 steven Exp $
 
 COMMENT=	"real-time, concurrent and distributed functional language"
 
 V=		R11B-5
 DISTNAME=	otp_src_${V}
-PKGNAME=	erlang-11b.5
+PKGNAME=	erlang-11b.5p0
 CATEGORIES=	lang
 
 MAINTAINER=	Jon Olsson <jon@abc.se>
@@ -118,6 +118,8 @@ COSTRANSACTIONS=cosTransactions-${COSTRANSACTIONS_VSN}
 
 post-configure:
 	@touch ${WRKSRC}/lib/odbc/SKIP
+	# Make sure stdlib/shell.erl gets rebuilt
+	rm -f ${WRKSRC}/lib/stdlib/ebin/shell.beam
 
 post-install:
 	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}

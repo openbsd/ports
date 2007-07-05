@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_stdlib_src_shell_erl,v 1.1 2007/07/05 12:50:58 steven Exp $
+
+Fixes a bug with parameterized modules as noted here:
+http://thread.gmane.org/gmane.comp.lang.erlang.general/22464
+--- lib/stdlib/src/shell.erl.orig	Mon Jun 11 14:52:44 2007
++++ lib/stdlib/src/shell.erl	Wed Jul  4 14:58:04 2007
+@@ -709,6 +709,8 @@ apply_fun({erlang,garbage_collect}, [], Shell) ->
+     erlang:garbage_collect(Shell),
+     catch erlang:garbage_collect(whereis(user)),
+     erlang:garbage_collect();
++apply_fun({M,F}, As, _Shell) ->                                                                                                  
++    apply(M, F, As);   
+ apply_fun(MForFun, As, _Shell) ->
+     apply(MForFun, As).
+ 
