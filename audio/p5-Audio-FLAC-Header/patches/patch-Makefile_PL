@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2007/07/05 10:49:08 ajacoutot Exp $
---- Makefile.PL.orig	Thu Jan 25 14:46:49 2007
-+++ Makefile.PL	Thu Jan 25 14:48:04 2007
+$OpenBSD: patch-Makefile_PL,v 1.3 2007/07/05 12:40:24 steven Exp $
+--- Makefile.PL.orig	Thu Jul  5 14:26:57 2007
++++ Makefile.PL	Thu Jul  5 14:27:03 2007
 @@ -10,6 +10,8 @@ all_from('Header.pm');
  if ($^O =~ /win32/i) {
  	cc_lib_links('FLAC_static');
  } else {
-+	cc_inc_paths("$ENV{CPPFLAGS}");
-+	cc_lib_paths("$ENV{LDFLAGS}");
++	cc_inc_paths($ENV{'INCPATH'});
++	cc_lib_paths($ENV{'LIBPATH'});
  	cc_lib_links('FLAC');
  	cc_optimize_flags('-Wall');
  }
