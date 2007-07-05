@@ -1,0 +1,22 @@
+$OpenBSD: patch-man_highlight_1,v 1.1.1.1 2007/07/05 09:58:32 jasper Exp $
+--- man/highlight.1.orig	Tue Jul  3 23:44:06 2007
++++ man/highlight.1	Wed Jul  4 00:35:42 2007
+@@ -154,15 +154,15 @@ RTF output will ignore background colour information.
+ The wrapping options will cause faulty highlighting of long single line comments and directives.
+ .SH FILES
+ The parsing information of the programming languages is stored in
+-.I /usr/share/highlight/langDefs/.
++.I !!PREFIX!!/share/highlight/langDefs/.
+ You may enhance
+ .B highlight's
+ parsing capabilities by adding more *.lang - files to this directory.
+ You can also define other directories with -D, or add search paths with -E.
+ Documentation files are stored in
+-.I /usr/share/doc/highlight/
++.I !!PREFIX!!/share/doc/highlight/
+ , configuration files in
+-.I /etc/highlight/.
++.I !!SYSCONFDIR!!/highlight/.
+ 
+ .SH Examples
+ Single file conversion:
