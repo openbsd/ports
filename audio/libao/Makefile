@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2007/03/15 19:12:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2007/07/05 14:59:55 naddy Exp $
 
 COMMENT-main=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}src/
+MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 
 PSEUDO_FLAVORS=	no_arts no_esd
 FLAVOR?=	no_arts
