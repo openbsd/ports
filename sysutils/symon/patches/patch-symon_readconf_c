@@ -1,0 +1,12 @@
+$OpenBSD: patch-symon_readconf_c,v 1.1 2007/07/05 08:55:38 henning Exp $
+--- symon/readconf.c.orig	Sat Jun 23 17:00:42 2007
++++ symon/readconf.c	Sat Jun 23 17:01:11 2007
+@@ -206,7 +206,7 @@ read_monitor(struct muxlist * mul, struct lex * l)
+                 l->filename, l->cline, l->token);
+             return 0;
+         }
+-        mux->localaddr = xstrdup((const char *) &res_host);
++        mux->localaddr = xstrdup(l->token);
+         lex_nexttoken(l);
+     }
+ 
