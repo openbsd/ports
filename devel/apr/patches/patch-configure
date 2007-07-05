@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2007/04/01 20:03:07 kurt Exp $
---- configure.orig	Sun Apr  9 16:32:36 2006
-+++ configure	Wed Mar 28 09:57:24 2007
-@@ -4317,6 +4317,11 @@ if test "x$apr_preload_done" != "xyes" ; then
+$OpenBSD: patch-configure,v 1.6 2007/07/05 16:01:28 steven Exp $
+--- configure.orig	Tue Jun  5 00:05:31 2007
++++ configure	Tue Jun 26 08:30:40 2007
+@@ -4326,6 +4326,11 @@ if test "x$apr_preload_done" != "xyes" ; then
          ;;
      *-openbsd*)
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure,v 1.5 2007/04/01 20:03:07 kurt Exp $
    if test "x$CPPFLAGS" = "x"; then
      test "x$silent" != "xyes" && echo "  setting CPPFLAGS to \"-D_POSIX_THREADS\""
      CPPFLAGS="-D_POSIX_THREADS"
-@@ -26147,7 +26152,7 @@ if test "${apr_cv_pthreads_lib+set}" = set; then
+@@ -26156,7 +26161,7 @@ if test "${apr_cv_pthreads_lib+set}" = set; then
  else
  
    apr_ptc_libs=$LIBS
@@ -22,7 +22,7 @@ $OpenBSD: patch-configure,v 1.5 2007/04/01 20:03:07 kurt Exp $
      LIBS="$apr_ptc_libs $lib"
  
  if test "$cross_compiling" = yes; then
-@@ -26705,7 +26710,7 @@ if test "${apr_cv_pthreads_lib+set}" = set; then
+@@ -26714,7 +26719,7 @@ if test "${apr_cv_pthreads_lib+set}" = set; then
  else
  
    apr_ptc_libs=$LIBS
@@ -31,7 +31,7 @@ $OpenBSD: patch-configure,v 1.5 2007/04/01 20:03:07 kurt Exp $
      LIBS="$apr_ptc_libs $lib"
  
  if test "$cross_compiling" = yes; then
-@@ -39523,7 +39528,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
+@@ -39542,7 +39547,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
  done
  if test ".$ac_rc" = .yes; then
      :
@@ -40,7 +40,7 @@ $OpenBSD: patch-configure,v 1.5 2007/04/01 20:03:07 kurt Exp $
  else
      :
      hassysvser="0"
-@@ -43558,7 +43563,7 @@ esac
+@@ -43577,7 +43582,7 @@ esac
  
  
  
