@@ -1,0 +1,16 @@
+$OpenBSD: patch-plug-ins_common_psd_c,v 1.1 2007/07/05 18:23:51 rui Exp $
+--- plug-ins/common/psd.c.orig	Thu Jul  5 14:52:01 2007
++++ plug-ins/common/psd.c	Thu Jul  5 14:53:32 2007
+@@ -1202,6 +1202,12 @@ seek_to_and_unpack_pixeldata(FILE* fd, gint layeri, gi
+   width = channel->width;
+   height = channel->height;
+ 
++  if (width > G_MAXINT16 || height > G_MAXINT16)
++  {
++    g_message ("Error: Invalid channel dimensions");
++    gimp_quit ();
++  }
++
+   IFDBG
+     {
+       printf("\t\t\tLayer (%d) Channel (%d:%d) Compression: %d (%s)\n",
