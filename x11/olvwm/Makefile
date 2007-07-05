@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2007/07/05 00:48:59 ian Exp $
 
 COMMENT=	"OpenLook Virtual Window manager"
 
 DISTNAME=	olvwm4
-PKGNAME=	olvwm-4.2
+PKGNAME=	olvwm-4.2p0
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 DISTFILES=	olvwm4.tar.Z
-
-MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
