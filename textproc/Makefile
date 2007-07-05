@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2007/07/02 06:22:43 djm Exp $
+# $OpenBSD: Makefile,v 1.200 2007/07/05 10:00:36 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -29,6 +29,7 @@
      SUBDIR += gtkspell
      SUBDIR += hevea
      SUBDIR += hgrep
+     SUBDIR += highlight
      SUBDIR += html
      SUBDIR += hyperestraier
      SUBDIR += idiff
@@ -214,6 +215,7 @@
      SUBDIR += xmlto
      SUBDIR += xpdf
      SUBDIR += xxdiff
+     SUBDIR += yould
      SUBDIR += zoem
 
 .include <bsd.port.subdir.mk>
