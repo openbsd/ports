@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.14 2006/06/11 18:24:11 steven Exp $
---- doc/Makefile.in.orig	Sun May 21 10:40:09 2006
-+++ doc/Makefile.in	Sun May 21 10:40:16 2006
-@@ -271,7 +271,7 @@ sbindir = @sbindir@
+$OpenBSD: patch-doc_Makefile_in,v 1.15 2007/07/05 16:05:09 steven Exp $
+--- doc/Makefile.in.orig	Tue Jun 12 18:20:21 2007
++++ doc/Makefile.in	Mon Jul  2 12:50:32 2007
+@@ -274,7 +274,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
