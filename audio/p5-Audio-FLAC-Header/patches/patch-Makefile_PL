@@ -1,12 +1,12 @@
---- Makefile.PL.orig	Sun Feb 20 00:36:32 2005
-+++ Makefile.PL	Fri Dec  8 07:53:52 2006
-@@ -16,7 +16,8 @@ if ($^O =~ /win32/i) {
- WriteMakefile(
- 	'NAME'		=> 'Audio::FLAC::Header',
- 	'VERSION_FROM'	=> 'Header.pm',
--	'LIBS'		=> [$LIBS],
-+	'INC'		=> "$ENV{CPPFLAGS}",
-+	'LIBS'		=> [ "$ENV{LDFLAGS} $LIBS" ],
- 	'DEFINE'	=> '-O',
- 	'CCFLAGS'	=> $CCFLAGS,
- 	'LDDLFLAGS'	=> "$Config{'lddlflags'} $LDDLFLAGS",
+$OpenBSD: patch-Makefile_PL,v 1.2 2007/07/05 10:49:08 ajacoutot Exp $
+--- Makefile.PL.orig	Thu Jan 25 14:46:49 2007
++++ Makefile.PL	Thu Jan 25 14:48:04 2007
+@@ -10,6 +10,8 @@ all_from('Header.pm');
+ if ($^O =~ /win32/i) {
+ 	cc_lib_links('FLAC_static');
+ } else {
++	cc_inc_paths("$ENV{CPPFLAGS}");
++	cc_lib_paths("$ENV{LDFLAGS}");
+ 	cc_lib_links('FLAC');
+ 	cc_optimize_flags('-Wall');
+ }
