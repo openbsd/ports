@@ -1,0 +1,21 @@
+$OpenBSD: patch-game_cpp,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
+--- game.cpp.orig	Sat Jun  9 22:36:53 2007
++++ game.cpp	Thu Jul  5 15:17:08 2007
+@@ -29,7 +29,7 @@ extern SDL_Surface *Screen;     // global objects
+ extern ResourceManager *Data;
+ //-----------------------------------------------------------------------------
+ Game::Game(int difficulty):
+-    fontM("data/font-white.bmp", 8, 14), mapM(13, 7, 10, 110)
++    fontM(DATADIR "/data/font-white.bmp", 8, 14), mapM(13, 7, 10, 110)
+ {
+     difficultyM = difficulty;
+     SetupGame();
+@@ -176,7 +176,7 @@ void Game::RenderScene(bool flip)
+         mapM.RenderNextShape(*(queueM.begin()));
+ 
+     SDL_Rect r;
+-    SDL_Surface *next = Data->getGfx("next", "data/next.png");
++    SDL_Surface *next = Data->getGfx("next", DATADIR "/data/next.png");
+     NjamSetRect(r, 363, 533);
+     SDL_BlitSurface(next, 0, Screen, &r);
+ 

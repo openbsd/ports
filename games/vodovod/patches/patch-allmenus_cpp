@@ -1,0 +1,21 @@
+$OpenBSD: patch-allmenus_cpp,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
+--- allmenus.cpp.orig	Thu Jul  5 15:20:07 2007
++++ allmenus.cpp	Thu Jul  5 15:20:24 2007
+@@ -36,7 +36,7 @@ extern ResourceManager *Data;
+ //-----------------------------------------------------------------------------
+ MainMenu::MainMenu(NjamFont *font_ptr, int x, int y):
+     Menu(font_ptr, x, y),
+-    whiteFontM("data/font-white.bmp", 8, 14)
++    whiteFontM(DATADIR "/data/font-white.bmp", 8, 14)
+ {
+     options.push_back("START NEW GAME");
+     options.push_back("OPTIONS");
+@@ -68,7 +68,7 @@ void DrawHelp()
+ {
+     RenderBackground(300);
+ 
+-    NjamFont font("data/font-white.bmp", 8, 14);
++    NjamFont font(DATADIR "/data/font-white.bmp", 8, 14);
+     int row = 10;
+     const int col = 16;
+     font.WriteTextColRow(Screen, col, row++, "GOAL OF THE GAME IS TO USE PIPES TO CONNECT THE HOUSE AT THE TOP");

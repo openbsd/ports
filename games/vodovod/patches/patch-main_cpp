@@ -1,0 +1,65 @@
+$OpenBSD: patch-main_cpp,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
+--- main.cpp.orig	Sun Jun 10 16:15:27 2007
++++ main.cpp	Thu Jul  5 15:17:36 2007
+@@ -101,38 +101,38 @@ int main(int /* argc */, char ** /* argv */)
+         InitVideo(Fullscreen);
+         audio = InitAudio();
+ 
+-        SDL_Surface *vodovod = Data->getGfx("vodovod", "data/vodovod.png");
+-        Data->getGfx("dirt", "data/slate.png");
+-        Data->getGfx("queue", "data/queue.png");
+-        Data->getGfx("blocks", "data/block.png");
++        SDL_Surface *vodovod = Data->getGfx("vodovod", DATADIR "/data/vodovod.png");
++        Data->getGfx("dirt", DATADIR "/data/slate.png");
++        Data->getGfx("queue", DATADIR "/data/queue.png");
++        Data->getGfx("blocks", DATADIR "/data/block.png");
+ 
+         // house
+-        SDL_Surface *house = Data->getGfx("house", "data/house.png");
++        SDL_Surface *house = Data->getGfx("house", DATADIR "/data/house.png");
+         Uint32 green = SDL_MapRGB(house->format, 0, 255, 0);
+         SDL_SetColorKey(house, SDL_SRCCOLORKEY, green);
+ 
+         // tree
+-        SDL_Surface *tree = Data->getGfx("tree1", "data/tree1.png");
++        SDL_Surface *tree = Data->getGfx("tree1", DATADIR "/data/tree1.png");
+         Uint32 red = SDL_MapRGB(tree->format, 255, 0, 0);
+         SDL_SetColorKey(tree, SDL_SRCCOLORKEY, red);
+ 
+         // human walking
+-        SDL_Surface *human = Data->getGfx("human", "data/walk.png");
++        SDL_Surface *human = Data->getGfx("human", DATADIR "/data/walk.png");
+         Uint32 back = SDL_MapRGB(human->format, 223, 232, 255);
+         SDL_SetColorKey(human, SDL_SRCCOLORKEY, back);
+ 
+         // preload music
+ 		if (audio)
+ 		{
+-			Data->getMusic("walk", "data/walk.xm");
+-			Data->getMusic("flow", "data/flow.xm");
+-			Data->getMusic("tune", "data/vodovod.xm");
++			Data->getMusic("walk", DATADIR "/data/walk.xm");
++			Data->getMusic("flow", DATADIR "/data/flow.xm");
++			Data->getMusic("tune", DATADIR "/data/vodovod.xm");
+ 
+ 			// preload sounds
+-			Data->getSfx("drop", "data/drop.wav");
+-			Data->getSfx("levelend", "data/mapend.wav");
+-			Data->getSfx("bubbles", "data/bubbles.wav");
+-			Data->getSfx("metal", "data/metal.wav");
++			Data->getSfx("drop", DATADIR "/data/drop.wav");
++			Data->getSfx("levelend", DATADIR "/data/mapend.wav");
++			Data->getSfx("bubbles", DATADIR "/data/bubbles.wav");
++			Data->getSfx("metal", DATADIR "/data/metal.wav");
+ 		}
+ 
+         // render some background picture for menu
+@@ -143,7 +143,7 @@ int main(int /* argc */, char ** /* argv */)
+         SDL_BlitSurface(vodovod, 0, Screen, &r);
+         SDL_Flip(Screen);
+ 
+-        NjamFont font("data/font-yellow.bmp", 11, 22);
++        NjamFont font(DATADIR "/data/font-yellow.bmp", 11, 22);
+         MainMenu m(&font, 95, 280);
+         m.start();
+     }

@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
+bin/vodovod
+share/vodovod/
+share/vodovod/data/
+share/vodovod/data/abicon.bmp
+share/vodovod/data/block.png
+share/vodovod/data/bubbles.wav
+share/vodovod/data/drop.wav
+share/vodovod/data/flow.xm
+share/vodovod/data/font-white.bmp
+share/vodovod/data/font-yellow.bmp
+share/vodovod/data/house.png
+share/vodovod/data/mapend.wav
+share/vodovod/data/metal.wav
+share/vodovod/data/next.png
+share/vodovod/data/queue.png
+share/vodovod/data/replace.wav
+share/vodovod/data/slate.png
+share/vodovod/data/tank.png
+share/vodovod/data/tree1.png
+share/vodovod/data/vodovod.png
+share/vodovod/data/vodovod.xm
+share/vodovod/data/walk.png
+share/vodovod/data/walk.xm
+share/vodovod/vodovod.conf

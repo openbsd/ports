@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_h,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
+--- config.h.orig	Sun Jun  3 13:09:24 2007
++++ config.h	Thu Jul  5 15:16:26 2007
+@@ -27,6 +27,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
+ #include <map>
+ #include <vector>
+ #include <string>
++
++#ifndef	DATADIR
++#define	DATADIR	"."
++#endif
++
+ //---------------------------------------------------------------------------------------
+ enum taAction { taLeft, taRight, taDown, taUp, taDrop, taFlood };
+ //---------------------------------------------------------------------------------------

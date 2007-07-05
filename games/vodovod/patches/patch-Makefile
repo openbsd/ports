@@ -1,0 +1,28 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
+--- Makefile.orig	Sun Jun 10 16:16:22 2007
++++ Makefile	Thu Jul  5 16:09:05 2007
+@@ -18,20 +18,16 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ #
+ 
+-# directory where the games are installed (/usr, /usr/local, ... or something)
+-ifndef PREFIX
+-PREFIX=/usr
+-endif
+-
+ PROGRAM = vodovod
+ OBJECTS = game.o map.o resource.o main.o allmenus.o njamfont.o sutils.o menu.o hiscore.o effects.o config.o keys.o
+-CC = g++
+ 
+ # If you hate warnings under Cygwin use these flags instead
+ # MY_CFLAGS = -I/usr/local/include/SDL -Dmain=SDL_main -DWIN32 -Uunix -mno-cygwin
+-MY_CFLAGS = `sdl-config --cflags`
++MY_CFLAGS = `sdl-config --cflags` -DDATADIR=\"${DATADIR}\"
+ 
+-%.o:	%.cpp
++.SUFFIXES: .o .cpp
++
++.cpp.o:
+ 	$(CC) -c $(MY_CFLAGS) $< -o $@
+ 
+ all:	$(PROGRAM)
