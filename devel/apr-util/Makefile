@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/04/28 14:02:26 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2007/07/05 16:02:03 steven Exp $
 
 COMMENT=	"companion library to APR"
 
-DISTNAME=	apr-util-1.2.7
-PKGNAME=	${DISTNAME}p2
-FULLPKGNAME=	apr-util${MT}-1.2.7p2
-SHARED_LIBS +=	aprutil-1${MT}          2.7      # .2.7
+DISTNAME=	apr-util-1.2.8
+FULLPKGNAME=	apr-util${MT}-1.2.8
+SHARED_LIBS +=	aprutil-1${MT}          2.9      # .2.9
 
 CATEGORIES=	devel
 
@@ -41,13 +40,13 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 MT?=
 .if ${FLAVOR:L:Mmt}
 MT=-mt
-LIB_DEPENDS+=	apr-1-mt.=2:apr-mt-1.2.7:devel/apr,mt
+LIB_DEPENDS+=	apr-1-mt.=2:apr-mt-1.2.9:devel/apr,mt
 
 post-install:
 	sed 's/{APRUTIL_LIBNAME}/{APRUTIL_LIBNAME}-mt/g' ${WRKSRC}/apu-config.out > ${PREFIX}/bin/apu-1-mt-config
 
 .else
-LIB_DEPENDS+=	apr-1.=2:apr-1.2.7:devel/apr
+LIB_DEPENDS+=	apr-1.=2:apr-1.2.9:devel/apr
 .endif
 
 SUBST_VARS+=	MT
