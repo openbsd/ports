@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.4 2007/07/05 22:48:08 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2007/07/05 23:36:16 martynas Exp $
 
 DIST_SUBDIR=		gnome
 
 HOMEPAGE?=		http://www.gnome.org/
 
-.if ${NO_BUILD:L} == "no"
 CONFIGURE_STYLE?=	gnu
-.endif
