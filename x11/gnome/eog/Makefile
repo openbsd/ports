@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2007/06/26 20:29:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.18 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"Eye of GNOME: an image viewing and cataloging program"
+COMMENT=		Eye of GNOME: an image viewing and cataloging program
 
-DISTNAME=		eog-2.18.2
-CATEGORIES=		graphics x11/gnome
+GNOME_PROJECT=		eog
+GNOME_VERSION=		2.18.2
+CATEGORIES=		graphics
 
 MAINTAINER=		Thomas Delaet <thomas@delaet.org>
 
@@ -21,26 +22,21 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
 		pthread startup-notification-1 xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/eog/2.18/}
-EXTRACT_SUFX=		.tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
-
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
+BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 			:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 LIB_DEPENDS=		gnome-desktop-2.>=5::x11/gnome/desktop \
 			exif::graphics/libexif \
 			lcms.>=1::graphics/lcms
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
-			:desktop-file-utils-*:devel/desktop-file-utils \
 			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
-			
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+DESKTOP_FILES=		Yes
+USE_LIBTOOL=		No
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 

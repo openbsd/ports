@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/12 20:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"lightweight GNOME text editor"
-DISTNAME=		gedit-2.18.1
+COMMENT=		lightweight GNOME text editor
+
+GNOME_PROJECT=		gedit
+GNOME_VERSION=		2.18.1
 PKGNAME=		${DISTNAME}p0
-CATEGORIES=		editors x11/gnome
+CATEGORIES=		editors
 
 HOMEPAGE=		http://www.gnome.org/projects/gedit/
 
@@ -24,13 +26,10 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
 		pthread ssl stdc++ util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gedit/2.18/}
-EXTRACT_SUFX=		.tar.bz2
-
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
 BUILD_DEPENDS=		:iso-codes-*:devel/iso-codes \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=		enchant::textproc/enchant \
@@ -38,16 +37,13 @@ LIB_DEPENDS=		enchant::textproc/enchant \
 			gnomeui-2::x11/gnome/libgnomeui \
 			gtksourceview-1.0::x11/gtksourceview
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
-			::devel/desktop-file-utils \
 			:gnome-doc-utils-*:x11/gnome/doc-utils \
 			:yelp-*:x11/gnome/yelp
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
+DESKTOP_FILES=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gedit \
 			--disable-schemas-install \

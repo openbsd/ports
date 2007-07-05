@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/11 23:00:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/05 22:50:11 jasper Exp $
 
 COMMENT=		GNOME media utilities
 
-DISTNAME=		gnome-media-2.18.0
+GNOME_PROJECT=		gnome-media
+GNOME_VERSION=		2.18.0
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 SHARED_LIBS +=	cddb-slave2          0.0      # .0.0
-CATEGORIES=		x11 x11/gnome
+CATEGORIES=		x11
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,13 +21,10 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		gnome-2 gnome-keyring gnomecanvas-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 jpeg m png popt pthread ssl util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-media/2.18/}
-EXTRACT_SUFX=		.tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
-
-BUILD_DEPENDS=		::textproc/p5-XML-Parser \
-			::textproc/scrollkeeper \
+BUILD_DEPENDS=		::textproc/scrollkeeper \
 			::multimedia/gstreamer-0.10/plugins-good,-gconf
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			bonoboui-2::x11/gnome/libbonoboui \
@@ -35,13 +33,10 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
 			gstinterfaces-0.10,gstaudio-0.10::multimedia/gstreamer-0.10/plugins-base \
 			pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::textproc/scrollkeeper
+RUN_DEPENDS=		::textproc/scrollkeeper
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
+DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-media \
 			--disable-schemas-install
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \

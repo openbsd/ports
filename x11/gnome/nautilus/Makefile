@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/12 16:15:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2007/07/05 22:50:11 jasper Exp $
 
-COMMENT=		"GNOME shell and file manager"
+COMMENT=		GNOME shell and file manager
 
-DISTNAME=		nautilus-2.18.1
+GNOME_PROJECT=		nautilus
+GNOME_VERSION=		2.18.1
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
-CATEGORIES=		x11 x11/gnome
+CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org/projects/nautilus/
 
@@ -24,24 +25,18 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
 		pthread rpcsvc ssl startup-notification-1 stdc++ util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/nautilus/2.18/}
-EXTRACT_SUFX=           .tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
-
-BUILD_DEPENDS= 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:shared-mime-info->=0.21:misc/shared-mime-info
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			:shared-mime-info->=0.21:misc/shared-mime-info \
+BUILD_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info
+RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			:gnome-icon-theme-*:x11/gnome/icon-theme
 LIB_DEPENDS=		eel-2.>=20.0::x11/gnome/eel \
 			gnome-desktop-2::x11/gnome/desktop \
 			rsvg-2.>=18.0::x11/gnome/librsvg
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
+DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-tracker \
 			--disable-beagle \

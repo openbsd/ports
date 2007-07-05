@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2007/07/05 22:50:11 jasper Exp $
 
-COMMENT=		"lightweight HTML rendering/printing/editing engine"
+COMMENT=		lightweight HTML rendering/printing/editing engine
 
-DISTNAME=		libgtkhtml-2.11.0
+GNOME_PROJECT=		libgtkhtml
+GNOME_VERSION=		2.11.0
 PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		gtkhtml-2	1.0
-CATEGORIES=		x11/gnome
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,17 +18,12 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 atk-1.0 fontconfig \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		xml2 z cairo glitz png
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtkhtml/2.11/}
-EXTRACT_SUFX=		.tar.bz2
-
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
 LIB_DEPENDS=		gailutil.>=17::x11/gnome/gail
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

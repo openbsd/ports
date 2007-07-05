@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2007/07/05 22:50:11 jasper Exp $
 
-COMMENT=		"Object Activation Framework for GNOME"
+COMMENT=		Object Activation Framework for GNOME
 
-DISTNAME=		oaf-0.6.10
+GNOME_PROJECT=		oaf
+GNOME_VERSION=		0.6.10
 PKGNAME=		${DISTNAME}p1
 SHARED_LIBS=		oaf 1.0
-CATEGORIES=		devel x11/gnome
+CATEGORIES=		devel
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/oaf/0.6/}
-EXTRACT_SUFX=           .tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
 LIB_DEPENDS=		ORBit.>=5,IIOP,ORBitCosNaming,ORBitutil::devel/ORBit \
 			xml.>=9::textproc/libxml1 \
 			popt::devel/popt
@@ -23,8 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c glib gmodule m wrap z
 
 USE_X11=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-orbittest # XXX problems with warnings
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \

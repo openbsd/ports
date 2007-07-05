@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"Eazel Extensions Library"
+COMMENT=		Eazel Extensions Library
 
-DISTNAME=		eel-2.18.0.1
+GNOME_PROJECT=		eel
+GNOME_VERSION=		2.18.0.1
 SHARED_LIBS=		eel-2		20.0
 PKGNAME=		${DISTNAME}p0
-CATEGORIES=		devel x11/gnome
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/eel/2.18/}
-EXTRACT_SUFX=           .tar.bz2
+CATEGORIES=		devel
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,9 +23,12 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt rpcsvc \
 		ssl stdc++ util xml2 z
 
-MODULES=		devel/gettext
+# XXX: To be fixed
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:R:R}/}
 
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
+MODULES=		devel/gettext \
+			x11/gnome
+
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gailutil.>=17::x11/gnome/gail \
 			gnome-desktop-2.>=4::x11/gnome/desktop \
@@ -35,9 +36,6 @@ LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			startup-notification-1::devel/startup-notification
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

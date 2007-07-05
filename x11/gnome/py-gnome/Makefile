@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/01 18:06:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/05 22:50:11 jasper Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Gnome2 Python bindings"
+COMMENT=	Gnome2 Python bindings
 
-V=		2.18.2
-DISTNAME=	gnome-python-${V}
-PKGNAME=	py-gnome-${V}
-CATEGORIES=	x11/gnome
+GNOME_PROJECT=	gnome-python	
+GNOME_VERSION=	2.18.2
+PKGNAME=	py-gnome-${VERSION}
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -16,8 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gnome-python/${V:R}/}
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 \
@@ -29,7 +26,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		gtk-x11-2.0 iconv intl jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png popt ssl util xml2 z
 
-MODULES=	lang/python
+MODULES=	lang/python \
+		x11/gnome
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION} \
 		gnomeui-2.>=1800::x11/gnome/libgnomeui
@@ -37,10 +35,8 @@ RUN_DEPENDS=	:py-gtk2->=2.10.3:x11/py-gtk2 \
 		::devel/py-orbit
 
 USE_X11=	Yes
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
-CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PYTHON=${MODPY_BIN}

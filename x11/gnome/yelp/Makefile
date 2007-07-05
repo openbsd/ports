@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2007/07/05 22:50:11 jasper Exp $
 
-COMMENT=		"GNOME help browser"
+COMMENT=		GNOME help browser
 
-DISTNAME=		yelp-2.18.1
+GNOME_PROJECT=		yelp
+GNOME_VERSION=		2.18.1
 PKGNAME=		${DISTNAME}p1
-CATEGORIES=		x11/gnome
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,14 +21,10 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		plc4 plds4 png popt pthread ssl stdc++ util xml2 z
 
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/yelp/2.18/}
-EXTRACT_SUFX=		.tar.bz2
-
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
 BUILD_DEPENDS=		::devel/xulrunner,-devel \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:gnome-doc-utils-*:x11/gnome/doc-utils
 RUN_DEPENDS=		:scrollkeeper->=0.3.14:textproc/scrollkeeper \
 			:docbook-dsssl-*:textproc/docbook-dsssl \
@@ -39,10 +35,7 @@ LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
 			gnomeui-2::x11/gnome/libgnomeui \
 			exslt,xslt::textproc/libxslt
 
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_X11=		Yes
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--with-gecko=xulrunner \
 			--disable-schemas-install \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/yelp/

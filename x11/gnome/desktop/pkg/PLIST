@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/06/26 22:25:12 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.17 2007/07/05 22:50:10 jasper Exp $
 bin/gnome-about
 include/gnome-desktop-2.0/
 include/gnome-desktop-2.0/libgnome/
@@ -397,3 +397,5 @@ share/pixmaps/vnterm.xpm
 %%SHARED%%
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

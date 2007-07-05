@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/17 14:55:26 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"archive manager for GNOME"
+COMMENT=		archive manager for GNOME
 
-DISTNAME=		file-roller-2.18.3
+GNOME_PROJECT=		file-roller
+GNOME_VERSION=		2.18.3
 
-CATEGORIES=		archivers x11 x11/gnome
+CATEGORIES=		archivers
 
 MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
@@ -23,19 +24,15 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png \
 		popt pthread ssl util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/file-roller/2.18/}
-EXTRACT_SUFX=		.tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
-			:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2.>=1800::x11/gnome/libgnomeui \
 			nautilus-extension.>=1::x11/gnome/nautilus
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
+DESKTOP_FILES=		Yes
 CONFIGURE_ARGS=		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/file-roller \
 			--disable-schemas-install \
 			--disable-scrollkeeper

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2007/07/05 22:50:11 jasper Exp $
 
-COMMENT=		"user interface components for GNOME"
+COMMENT=		user interface components for GNOME
 
-DISTNAME=		libgnomeui-2.18.1
+GNOME_PROJECT=		libgnomeui
+GNOME_VERSION=		2.18.1
 PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	gnomeui-2      1800.1         # .1800.1
-CATEGORIES=		x11/gnome
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,21 +21,15 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
 		pthread ssl util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeui/2.18/}
-EXTRACT_SUFX=		.tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
-
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gnome-keyring.>=1::x11/gnome/keyring \
 			gnome-2.>=1800::x11/gnome/libgnome \
 			gnomecanvas-2.>=1400::x11/gnome/libgnomecanvas \
 			bonoboui-2.>=1::x11/gnome/libbonoboui
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

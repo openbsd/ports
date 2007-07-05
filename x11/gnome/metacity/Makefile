@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2007/06/29 21:38:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.26 2007/07/05 22:50:11 jasper Exp $
 
-COMMENT=		"lightweight window manager"
+COMMENT=		lightweight window manager
 
-DISTNAME=		metacity-2.18.5
+GNOME_PROJECT=		metacity
+GNOME_VERSION=		2.18.5
 PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		metacity-private 0.0
-CATEGORIES=		x11 x11/gnome
+CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org/softwaremap/projects/Metacity
 
@@ -19,21 +20,15 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/metacity/2.18/}
-EXTRACT_SUFX=		.tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
-
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			startup-notification-1::devel/startup-notification \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/metacity
 CONFIGURE_ARGS+=	--disable-schemas-install
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

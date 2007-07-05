@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"GTK2 desktop calculator"
+COMMENT=		GTK2 desktop calculator
 
-DISTNAME=		gcalctool-5.9.14
-CATEGORIES=		x11/gnome
+GNOME_PROJECT=		gcalctool
+GNOME_VERSION=		5.9.14
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,23 +19,19 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png popt pthread ssl util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gcalctool/5.9/}
-EXTRACT_SUFX=		.tar.bz2
-
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
 BUILD_DEPENDS=		::devel/bison \
 			::devel/gconf2 \
-			::textproc/p5-XML-Parser \
 			::textproc/scrollkeeper \
 			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=		::x11/gnome/yelp \
-			::devel/desktop-file-utils
+RUN_DEPENDS=		::x11/gnome/yelp
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+DESKTOP_FILES=		Yes
+USE_LIBTOOL=		No
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gcalctool/ \

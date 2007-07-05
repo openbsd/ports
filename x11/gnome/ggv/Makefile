@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"GNOME frontend for GhostScript"
-DISTNAME=		ggv-2.8.3
+COMMENT=		GNOME frontend for GhostScript
+GNOME_PROJECT=		ggv
+GNOME_VERSION=		2.8.3
 PKGNAME=		${DISTNAME}p3
-CATEGORIES=		print x11/gnome
+CATEGORIES=		print
 
 MAINTAINER=		Thomas Delaet <thomas@delaet.org>	
 
@@ -21,22 +22,16 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext \
 		gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 popt pthread ssl xml2 z cairo glitz png
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ggv/2.8/}	
-EXTRACT_SUFX=		.tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
-
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:ghostscript-*:print/ghostscript/gnu
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:ghostscript-*:print/ghostscript/gnu
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 

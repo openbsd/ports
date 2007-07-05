@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"GNOME Accessibility Implementation Library"
+COMMENT=		GNOME Accessibility Implementation Library
 
-DISTNAME=		gail-1.18.0
+GNOME_PROJECT=		gail
+GNOME_VERSION=		1.18.0
 SHARED_LIBS +=	gailutil         18.1         # .18.1
 PKGNAME=		${DISTNAME}p0
-CATEGORIES=		devel x11/gnome
+CATEGORIES=		devel
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,16 +19,12 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gail/1.18/}
-EXTRACT_SUFX=           .tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
 LIB_DEPENDS=		gnomecanvas-2.>=1400::x11/gnome/libgnomecanvas
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

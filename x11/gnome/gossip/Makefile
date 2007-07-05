@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/27 19:38:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"Jabber client for the GNOME desktop"
+COMMENT=		Jabber client for the GNOME desktop
 
-DISTNAME=		gossip-0.24
+GNOME_PROJECT=		gossip
+GNOME_VERSION=		0.24
 CATEGORIES=		net
 
 HOMEPAGE=		http://developer.imendio.com/projects/gossip/
@@ -22,26 +23,24 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
 		pthread ssl util xml2 z
 
+# XXX: To be fixed
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gossip/0.24/}
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
-BUILD_DEPENDS=		::textproc/p5-XML-Parser \
-			::x11/gnome/doc-utils
+BUILD_DEPENDS=		::x11/gnome/doc-utils
 LIB_DEPENDS=		idn.>=16::devel/libidn \
 			notify::devel/libnotify \
 			loudmouth-1::net/loudmouth \
 			panel-applet-2::x11/gnome/panel
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::devel/iso-codes \
+RUN_DEPENDS=		::devel/iso-codes \
 			::textproc/scrollkeeper \
 			::x11/gnome/yelp \
 			::x11/hicolor-icon-theme
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
+DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gossip \
 			--disable-schemas-install \

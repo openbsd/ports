@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2007/06/11 13:12:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.24 2007/07/05 22:50:11 jasper Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"GNOME Virtual File System"
+COMMENT=		GNOME Virtual File System
 
-VERSION=		2.18.1
-DISTNAME=		gnome-vfs-${VERSION}
+GNOME_PROJECT=		gnome-vfs
+GNOME_VERSION=		2.18.1
 PKGNAME=		gnome-vfs2-${VERSION}p0
 SHARED_LIBS +=	gnomevfs-2       1800.1       # .1800.1
-CATEGORIES=		x11/gnome
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,12 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c crypto dbus-1 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m pthread rpcsvc ssl stdc++ util z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.18/}
-EXTRACT_SUFX=		.tar.bz2
-
-MODULES=		devel/gettext
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:gnome-mime-data->=2.0.0:x11/gnome/mime-data
+MODULES=		devel/gettext \
+			x11/gnome
+BUILD_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 LIB_DEPENDS=		dbus-glib-1.>=3::x11/dbus-glib \
 			fam::sysutils/fam \
 			xml2.>=9::textproc/libxml \
@@ -34,9 +30,6 @@ LIB_DEPENDS=		dbus-glib-1.>=3::x11/dbus-glib \
 RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-vfs2 \
 			--disable-schemas-install \

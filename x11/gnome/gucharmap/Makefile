@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/30 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"Unicode character map for the GNOME project"
+COMMENT=		Unicode character map for the GNOME project
 
-DISTNAME=		gucharmap-1.10.0
+GNOME_PROJECT=		gucharmap
+GNOME_VERSION=		1.10.0
 PKGNAME=		${DISTNAME}p0
-CATEGORIES=		x11/gnome
 SHARED_LIBS +=	gucharmap            0.0      # .6.1
 
 # GPL
@@ -21,21 +21,15 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png popt pthread ssl util xml2 z
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gucharmap/1.10/}
-EXTRACT_SUFX=	.tar.bz2
-
-BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
-		:gnome-doc-utils-*:x11/gnome/doc-utils
+BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=	:yelp-*:x11/gnome/yelp \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	:yelp-*:x11/gnome/yelp
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
+DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \
 			--enable-gnome

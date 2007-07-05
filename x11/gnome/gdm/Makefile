@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/06/26 21:08:29 martynas Exp $
+# $OpenBSD: Makefile,v 1.18 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"GNOME display manager"
+COMMENT=		GNOME display manager
 
-DISTNAME=		gdm-2.18.2
-CATEGORIES=		x11/gnome
+GNOME_PROJECT=		gdm
+GNOME_VERSION=		2.18.2
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -20,21 +20,16 @@ WANTLIB=	ORBit-2 X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		gsf-1 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png popt pthread ssl util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gdm/2.18/}
-EXTRACT_SUFX=		.tar.bz2
-
-BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
-			:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme
 LIB_DEPENDS=		rsvg-2.>=18.1::x11/gnome/librsvg
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
+DESKTOP_FILES=		Yes
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--sysconfdir="${SYSCONFDIR}/X11" \

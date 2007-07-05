@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2007/06/26 22:26:32 martynas Exp $
+# $OpenBSD: Makefile,v 1.25 2007/07/05 22:50:11 jasper Exp $
 
-COMMENT=		"GNOME session"
+COMMENT=		GNOME session
 
-DISTNAME=		gnome-session-2.18.2
-CATEGORIES=		x11 x11/gnome
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-session/2.18/}
-EXTRACT_SUFX=           .tar.bz2
+GNOME_PROJECT=		gnome-session
+GNOME_VERSION=		2.18.2
+PKGNAME=		${DISTNAME}p0
+CATEGORIES=		x11
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,10 +22,10 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		pangoft2-1.0 png popt pthread ssl startup-notification-1 \
 		util wrap xml2 z
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		x11/gnome
 
-BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
-		:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
 		:control-center2-*:x11/gnome/controlcenter2
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
 		gnome-desktop-2::x11/gnome/desktop
@@ -45,9 +44,8 @@ RUN_DEPENDS+=		::x11/gnome/panel \
 #			::x11/gnome/bug-buddy
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
+DESKTOP_FILES=		Yes
+
 CONFIGURE_ARGS+= 	--disable-rebuilds \
 			--enable-esd \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-session

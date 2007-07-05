@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2007/06/01 17:17:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2007/07/05 22:50:11 jasper Exp $
 
-COMMENT=		"libraries for the GNOME project"
+COMMENT=		libraries for the GNOME project
 
-DISTNAME=		gnome-libs-1.4.2
+GNOME_PROJECT=		gnome-libs
+GNOME_VERSION=		1.4.2
 PKGNAME=		${DISTNAME}p4
 SHARED_LIBS=		art_lgpl	4.0	\
 			gnome		36.3	\
@@ -13,9 +14,7 @@ SHARED_LIBS=		art_lgpl	4.0	\
 			gtkxmhtml	1.1	\
 			zvt		6.0
 
-CATEGORIES=		x11 x11/gnome
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-libs/1.4/}
+CATEGORIES=		x11
 
 LIB_DEPENDS=		gdk_imlib.>=19::graphics/imlib \
 			esd.>=2::audio/esound \
@@ -30,9 +29,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xi Xpm audiofile c glib gmodule gtk \
 			iconv intl jpeg m png tiff ungif util wrap z
 
-USE_LIBTOOL=		Yes
+MODULES=		x11/gnome
+
 USE_X11=		Yes
-USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE= 	autoconf
 

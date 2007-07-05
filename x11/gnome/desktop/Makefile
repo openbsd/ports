@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2007/06/26 22:25:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.24 2007/07/05 22:50:10 jasper Exp $
 
-COMMENT=		"components for the GNOME desktop"
+COMMENT=		components for the GNOME desktop
 
-DISTNAME=		gnome-desktop-2.18.2
+GNOME_PROJECT=		gnome-desktop
+GNOME_VERSION=		2.18.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  gnome-desktop-2      5.5      # .5.5
-CATEGORIES=		x11 x11/gnome
+CATEGORIES=		x11
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,20 +22,16 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png popt pthread ssl util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-desktop/2.18/}
-EXTRACT_SUFX=		.tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
+BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			startup-notification-1::devel/startup-notification
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
+DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
 			--disable-scrollkeeper
