@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/07/01 20:34:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.41 2007/07/06 01:35:57 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,8 @@ COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0.11
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p0
-PKGNAME-jre=		jre-${V}p0
+PKGNAME-main=		jdk-${V}p1
+PKGNAME-jre=		jre-${V}p1
 
 CATEGORIES=		devel/jdk java
 
@@ -178,9 +178,7 @@ post-patch:
 .endif
 
 post-build:
-	@rm -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources \
-		${JDKIMAGEDIR}/demo/plugin/jfc/SwingSet2/resources \
-		${JDKIMAGEDIR}/man/ja \
+	@rm -rf ${JDKIMAGEDIR}/man/ja \
 		${JDKIMAGEDIR}/man/ja_JP.eucJP \
 		${JREIMAGEDIR}/man/ja \
 		${JREIMAGEDIR}/man/ja_JP.eucJP
