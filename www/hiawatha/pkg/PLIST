@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/04/25 13:55:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/07/06 12:09:12 ajacoutot Exp $
 @newgroup _hiawatha:579
 @newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
 @man man/man1/cgi-wrapper.1
@@ -25,6 +25,4 @@ share/examples/hiawatha/index.html
 share/examples/hiawatha/mimetype.conf
 @sample ${SYSCONFDIR}/hiawatha/mimetype.conf
 share/examples/hiawatha/php-fcgi.conf
-share/examples/hiawatha/throttle.conf
-@sample ${SYSCONFDIR}/hiawatha/throttle.conf
 @sample /var/log/hiawatha/

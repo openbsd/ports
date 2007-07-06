@@ -1,6 +1,6 @@
-$OpenBSD: patch-serverconfig_c,v 1.4 2007/06/18 07:51:50 ajacoutot Exp $
---- serverconfig.c.orig	Sat Jun 16 09:31:44 2007
-+++ serverconfig.c	Mon Jun 18 09:42:06 2007
+$OpenBSD: patch-serverconfig_c,v 1.5 2007/07/06 12:09:12 ajacoutot Exp $
+--- serverconfig.c.orig	Thu Jul  5 15:52:37 2007
++++ serverconfig.c	Fri Jul  6 13:46:45 2007
 @@ -16,7 +16,7 @@
  #include "libstr.h"
  #include "libfs.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-serverconfig_c,v 1.4 2007/06/18 07:51:50 ajacoutot Exp $
  #define MAX_LENGTH_CONFIGLINE   512
  #define MAX_CACHE_SIZE           50
  
-@@ -187,8 +187,8 @@ t_config *default_config(void) {
+@@ -190,8 +190,8 @@ t_config *default_config(void) {
  #endif
  
  		config->server_root        = NULL;
