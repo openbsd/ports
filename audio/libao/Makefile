@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.37 2007/07/05 14:59:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2007/07/06 14:21:05 naddy Exp $
 
 COMMENT-main=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
 COMMENT-esd=	"ESounD module for portable audio output library"
 
-VERSION=	0.8.5
+VERSION=	0.8.6
 DISTNAME=	libao-${VERSION}
-PKGNAME-main=	libao-${VERSION}p4
-PKGNAME-arts=	libao-arts-${VERSION}p2
-PKGNAME-esd=	libao-esd-${VERSION}p3
+PKGNAME-main=	libao-${VERSION}
+PKGNAME-arts=	libao-arts-${VERSION}
+PKGNAME-esd=	libao-esd-${VERSION}
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/ao/
-SHARED_LIBS +=	ao                   3.2      # .3.2
+SHARED_LIBS +=	ao                   3.3      # .3.3
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -39,12 +39,13 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 .if ${FLAVOR:L:Mno_arts}
-CONFIGURE_ARGS+= --disable-arts
+CONFIGURE_ARGS+=--disable-arts
 .endif
 .if ${FLAVOR:L:Mno_esd}
-CONFIGURE_ARGS+= --disable-esd
+CONFIGURE_ARGS+=--disable-esd
 .endif
-CONFIGURE_ARGS+= --disable-nas
+CONFIGURE_ARGS+=--disable-nas \
+		--disable-polyp
 
 .if ${MULTI_PACKAGES:M-arts}
 MODULES=		devel/gettext

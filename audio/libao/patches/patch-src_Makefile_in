@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2004/10/22 16:37:08 naddy Exp $
---- src/Makefile.in.orig	Fri Mar 19 16:49:36 2004
-+++ src/Makefile.in	Fri Oct 22 15:13:20 2004
-@@ -117,7 +117,7 @@ INCLUDES = -I$(top_builddir)/include/ao 
+$OpenBSD: patch-src_Makefile_in,v 1.6 2007/07/06 14:21:05 naddy Exp $
+--- src/Makefile.in.orig	Thu Jul  5 18:26:37 2007
++++ src/Makefile.in	Thu Jul  5 18:26:56 2007
+@@ -233,7 +233,7 @@ SUBDIRS = plugins
+ INCLUDES = -I$(top_builddir)/include/ao -I$(top_srcdir)/include -DAO_PLUGIN_PATH=\"@plugindir@\"
  lib_LTLIBRARIES = libao.la
- 
  libao_la_SOURCES = audio_out.c config.c ao_null.c ao_wav.c ao_au.c ao_raw.c ao_aixs.c ao_private.h
 -libao_la_LDFLAGS = -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@ -ldl
 +libao_la_LDFLAGS = -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
- subdir = src
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_CLEAN_FILES =
+ all: all-recursive
+ 
+ .SUFFIXES:
