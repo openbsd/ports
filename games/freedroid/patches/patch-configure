@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/06/01 10:36:38 jolan Exp $
---- configure.orig	Sun Apr 27 13:20:06 2003
-+++ configure	Wed May 14 04:32:36 2003
-@@ -2537,7 +2537,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2007/07/06 18:48:15 ajacoutot Exp $
+--- configure.orig	Fri Jul  6 10:24:49 2007
++++ configure	Fri Jul  6 10:25:04 2007
+@@ -5404,7 +5404,7 @@ done
  
- # we don't want optimisation for the moment, as that makes
- # debugging a bit more confusing
--CFLAGS="-g -Wall"
-+#CFLAGS="-g -Wall"
  
- # Checks for libraries.
- 
+ for ac_header in fcntl.h stdlib.h string.h sys/ioctl.h sys/time.h time.h \
+-			  unistd.h dirent.h sys/soundcard.h
++			  unistd.h dirent.h soundcard.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then

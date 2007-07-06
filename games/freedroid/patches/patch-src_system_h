@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_system_h,v 1.1.1.1 2003/06/01 10:36:38 jolan Exp $
---- src/system.h.orig	Thu Apr 24 04:12:28 2003
-+++ src/system.h	Wed May 14 15:41:38 2003
-@@ -54,7 +54,7 @@
- 
- #include <getopt.h>
- 
--#ifndef MACOSX 
-+#ifdef __linux__
- #include <sys/soundcard.h>
+$OpenBSD: patch-src_system_h,v 1.2 2007/07/06 18:48:15 ajacoutot Exp $
+--- src/system.h.orig	Fri Jul  6 10:24:27 2007
++++ src/system.h	Fri Jul  6 10:24:34 2007
+@@ -65,7 +65,7 @@
  #endif
  
+ #ifdef HAVE_SYS_SOUNDCARD_H
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #endif
+ #ifdef HAVE_SYS_IOCTL_H
+ #include <sys/ioctl.h>
