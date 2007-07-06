@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/02/14 16:55:28 steven Exp $
-
-.if ${MACHINE_ARCH} == "hppa"
-BROKEN=			"hangs indefinitely until machine panics/hangs"
-.endif
+# $OpenBSD: Makefile,v 1.36 2007/07/06 16:59:32 kettenis Exp $
 
 COMMENT-main=		"GNU editor: extensible, customizable, self documenting"
 COMMENT-el=		"elisp sources for those who want to read/modify them"
@@ -10,7 +6,7 @@ COMMENT-leim=		"Library of Emacs Input Methods"
 
 VERSION=		21.4
 DISTNAME=		emacs-${VERSION}
-PKGNAME-main=		${DISTNAME}p3
+PKGNAME-main=		${DISTNAME}p4
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 
