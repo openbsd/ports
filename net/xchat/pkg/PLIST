@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2007/06/10 19:15:22 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2007/07/07 12:51:10 couderc Exp $
 bin/xchat
 share/applications/
 share/applications/xchat.desktop
@@ -18,6 +18,9 @@ share/locale/ko/LC_MESSAGES/xchat.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xchat.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
+share/locale/mk/LC_MESSAGES/xchat.mo
 share/locale/nl/LC_MESSAGES/xchat.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
