@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
+$OpenBSD: patch-Makefile,v 1.2 2007/07/07 10:40:48 simon Exp $
 --- Makefile.orig	Sun Jun 10 16:16:22 2007
-+++ Makefile	Thu Jul  5 16:09:05 2007
-@@ -18,20 +18,16 @@
++++ Makefile	Thu Jul  5 22:13:26 2007
+@@ -18,20 +18,18 @@
  # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  #
  
@@ -17,7 +17,9 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
  # If you hate warnings under Cygwin use these flags instead
  # MY_CFLAGS = -I/usr/local/include/SDL -Dmain=SDL_main -DWIN32 -Uunix -mno-cygwin
 -MY_CFLAGS = `sdl-config --cflags`
-+MY_CFLAGS = `sdl-config --cflags` -DDATADIR=\"${DATADIR}\"
++MY_CFLAGS = `sdl-config --cflags` ${CCFLAGS} \
++		-DDATADIR=\"${DATADIR}\" \
++		-DHIGHSCOREDIR=\"${HIGHSCOREDIR}\"
  
 -%.o:	%.cpp
 +.SUFFIXES: .o .cpp

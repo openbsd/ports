@@ -1,0 +1,21 @@
+$OpenBSD: patch-hiscore_cpp,v 1.1 2007/07/07 10:40:48 simon Exp $
+--- hiscore.cpp.orig	Tue Jun  5 00:13:40 2007
++++ hiscore.cpp	Fri Jul  6 00:31:29 2007
+@@ -47,7 +47,7 @@ bool HiScores::canEnter(int score)
+ HiScores::HiScores()
+ {
+     // on Linux use /usr/share/abandoned/hiscore.dat  ?
+-    FILE *fp = fopen("hiscore.dat", "r");
++    FILE *fp = fopen(HIGHSCOREDIR "/vodovod.sco", "r");
+     if (!fp)
+     {
+         std::string defaultNames[] = {      // create default hiscore
+@@ -104,7 +104,7 @@ HiScores::~HiScores()
+ {
+     // save to file
+     // format: NAME#POINTS#SWAPS#
+-    FILE *fp = fopen("hiscore.dat", "w+");
++    FILE *fp = fopen(HIGHSCOREDIR "/vodovod.sco", "w+");
+     if (fp)
+     {
+         for (iterator it = begin(); it != end(); ++it)

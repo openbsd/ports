@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/07 10:40:48 simon Exp $
 
 COMMENT=	combine pipes to lead water from the house to the tank
 
 DISTNAME=	vodovod-1.10-src
-PKGNAME=	vodovod-1.10
+PKGNAME=	vodovod-1.10p0
 CATEGORIES=	games
 
 HOMEPAGE=	http://home.gna.org/vodovod/
@@ -26,11 +26,14 @@ LIB_DEPENDS=	SDL::devel/sdl \
 USE_X11=	Yes
 NO_REGRESS=	Yes
 
-MAKE_ENV+=	DATADIR="${LOCALBASE}/share/vodovod" CC="${CXX}"
+MAKE_ENV+=	CC="${CXX}" CCFLAGS="${CXXFLAGS}" \
+		DATADIR="${PREFIX}/share/vodovod" \
+		HIGHSCOREDIR="/var/games"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vodovod ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vodovod
+	@touch ${PREFIX}/share/vodovod/vodovod.sco
 	${INSTALL_DATA} ${WRKSRC}/vodovod.rc \
 		${PREFIX}/share/vodovod/vodovod.conf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vodovod/data

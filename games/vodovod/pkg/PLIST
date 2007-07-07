@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/07 10:40:48 simon Exp $
+@mode g+s
+@group games
 bin/vodovod
+@mode
+@group
 share/vodovod/
 share/vodovod/data/
 share/vodovod/data/abicon.bmp
@@ -23,3 +27,7 @@ share/vodovod/data/vodovod.xm
 share/vodovod/data/walk.png
 share/vodovod/data/walk.xm
 share/vodovod/vodovod.conf
+share/vodovod/vodovod.sco
+@mode g+w
+@group games
+@sample /var/games/vodovod.sco
