@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.40 2007/06/18 12:31:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2007/07/07 15:03:35 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.22
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
 		digestmd5	2.22 \
 		gssapiv2	2.22 \
 		login		2.22 \
+		ntlm		2.22 \
 		otp		2.22 \
 		plain		2.22 \
 		sasl2		2.22 \
@@ -41,6 +43,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
 		--enable-login \
 		--enable-static \
+		--enable-ntlm \
 		--disable-sample
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config

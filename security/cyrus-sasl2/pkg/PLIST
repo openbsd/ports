@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/06/18 12:31:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/07/07 15:03:35 ajacoutot Exp $
 @conflict cyrus-sasl-*
 include/sasl/
 include/sasl/hmac-md5.h
@@ -21,6 +21,8 @@ lib/sasl2/libgssapiv2.a
 lib/sasl2/libgssapiv2.la
 lib/sasl2/liblogin.a
 lib/sasl2/liblogin.la
+lib/sasl2/libntlm.a
+lib/sasl2/libntlm.la
 lib/sasl2/libotp.a
 lib/sasl2/libotp.la
 lib/sasl2/libplain.a
