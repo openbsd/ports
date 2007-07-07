@@ -1,0 +1,15 @@
+$OpenBSD: patch-exportxhtmldialog_ui_h,v 1.1.1.1 2007/07/07 17:59:05 ajacoutot Exp $
+--- exportxhtmldialog.ui.h.orig	Fri Jul  6 23:18:30 2007
++++ exportxhtmldialog.ui.h	Fri Jul  6 23:19:17 2007
+@@ -71,9 +71,9 @@ void ExportXHTMLDialog::readSettings()
+ 	} else
+ 	{
+ 		xsl=settings.readLocalEntry 
+-			(filepath,"/vym/export/xhtml/xsl","/usr/share/vym/styles/vym2xhtml.xsl");
++			(filepath,"/vym/export/xhtml/xsl","!!PREFIX!!/share/vym/styles/vym2xhtml.xsl");
+ 		css=settings.readLocalEntry 
+-			(filepath,"/vym/export/xhtml/css","/usr/share/vym/styles/vym.css");	
++			(filepath,"/vym/export/xhtml/css","!!PREFIX!!/share/vym/styles/vym.css");	
+ 	}
+ 	lineEditXSL->setText(xsl);
+ 	lineEditCSS->setText(css);

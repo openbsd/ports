@@ -1,0 +1,12 @@
+$OpenBSD: patch-mainwindow_cpp,v 1.1.1.1 2007/07/07 17:59:05 ajacoutot Exp $
+--- mainwindow.cpp.orig	Fri Jul  6 12:33:26 2007
++++ mainwindow.cpp	Fri Jul  6 12:34:19 2007
+@@ -2764,7 +2764,7 @@ void Main::helpDoc()
+ 		docpath="./vym.app/Contents/vym.pdf";
+ 	#else
+ 		// default path in SUSE LINUX
+-		docpath="/usr/share/doc/packages/vym/doc/vym.pdf";
++		docpath="!!PREFIX!!/share/doc/vym/vym.pdf";
+ 	#endif
+ 
+ 	if (!QFile (docpath).exists() )
