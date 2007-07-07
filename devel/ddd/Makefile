@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.44 2007/07/07 21:38:36 aanriot Exp $
 
-COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
+COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.11
 PKGNAME=	${DISTNAME}p1
@@ -31,8 +31,6 @@ CONFIGURE_STYLE=gnu autoconf no-autoheader
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 AUTOCONF_VERSION=2.59
 SEPARATE_BUILD=	simple
-
-SUBST_VARS+=	DISTNAME
 
 CONFIGURE_ARGS=	--with-readline-libraries=/usr/lib
 
