@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/07/08 04:16:18 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/07/07 01:39:47 jsg Exp $
+bin/compress_agos
 bin/compress_kyra
 bin/compress_queen
 bin/compress_saga
 bin/compress_scumm_bun
 bin/compress_scumm_san
 bin/compress_scumm_sou
-bin/compress_simon
 bin/compress_sword1
 bin/compress_sword2
+bin/compress_touche
 bin/dekyra
 bin/descumm
 bin/desword2
+bin/extract_mm_nes
+bin/extract_scumm_mac
+bin/extract_zak_c64
 share/doc/scummvm-tools/
 share/doc/scummvm-tools/README

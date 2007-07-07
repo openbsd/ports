@@ -1,14 +1,14 @@
-$OpenBSD: patch-common_hashmap_h,v 1.1 2006/07/08 04:14:30 jsg Exp $
---- common/hashmap.h.orig	Sat Jul  8 11:26:46 2006
-+++ common/hashmap.h	Sat Jul  8 11:27:50 2006
-@@ -121,10 +121,7 @@ uint nextTableSize(uint x);
- template <class Key, class Val, class HashFunc = Hash<Key>, class EqualFunc = EqualTo<Key>, class BaseNodeFunc = BaseNode<Key, Val> >
+$OpenBSD: patch-common_hashmap_h,v 1.2 2007/07/07 01:37:53 jsg Exp $
+--- common/hashmap.h.orig	Tue Jun 26 21:57:02 2007
++++ common/hashmap.h	Tue Jun 26 21:57:37 2007
+@@ -88,10 +88,7 @@ template <class Key, class Val, class HashFunc = Hash<
  class HashMap {
+ 	friend class const_iterator;
  private:
--#if defined (_WIN32_WCE) || defined (_MSC_VER) || defined (__SYMBIAN32__) || defined (PALMOS_MODE)
--//FIXME evc4, msvc6,msvc7 & GCC 2.9x doesn't like it as private member
+-#if defined (PALMOS_MODE)
  public:
 -#endif
- 	BaseNodeFunc **_arr;	// hashtable of size arrsize.
- 	uint _arrsize, _nele;
- 	
+-
+ 	typedef HashMap<Key, Val, HashFunc, EqualFunc> HM_t;
+ 
+ 	struct Node {

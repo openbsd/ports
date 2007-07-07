@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/02 07:48:59 jsg Exp $
+# $OpenBSD: Makefile,v 1.24 2007/07/07 01:37:53 jsg Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"gcc bug"
 .endif
 
 COMMENT=	"graphical adventure game interpreter"
-DISTNAME=	scummvm-0.9.1
+DISTNAME=	scummvm-0.10.0
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -61,10 +61,19 @@ CXXFLAGS+=	-O1
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/{NEWS,AUTHORS,README} ${PREFIX}/share/doc/scummvm
-	${INSTALL_DATA} ${WRKSRC}/icons/scummvm.xpm ${PREFIX}/share/pixmaps
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons
+	${INSTALL_DATA_DIR} ${PREFIX}/share/scummvm
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/{NEWS,AUTHORS,README} \
+	    ${PREFIX}/share/doc/scummvm
+	${INSTALL_DATA} ${WRKSRC}/icons/scummvm.{svg,xpm} ${PREFIX}/share/icons
 	${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${PREFIX}/man/man6
+	${INSTALL_DATA} ${WRKSRC}/gui/themes/classic080.ini \
+	    ${PREFIX}/share/scummvm
+	${INSTALL_DATA} ${WRKSRC}/gui/themes/{modern.ini,modern.zip} \
+	    ${PREFIX}/share/scummvm
+	${INSTALL_DATA} ${WRKSRC}/dists/scummvm.desktop \
+	    ${PREFIX}/share/applications
 	${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
 
 .include <bsd.port.mk>
