@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/12/26 14:01:37 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/07/07 15:24:40 grange Exp $
 share/texmf-local/doc/
 share/texmf-local/doc/fonts/
 share/texmf-local/doc/fonts/pscyr/
 share/texmf-local/doc/fonts/pscyr/LICENSE
 share/texmf-local/doc/fonts/pscyr/PROBLEMS
 share/texmf-local/doc/fonts/pscyr/README.koi
-share/texmf-local/dvips/
-share/texmf-local/dvips/base/
-share/texmf-local/dvips/base/t2a.enc
-share/texmf-local/dvips/config/
-share/texmf-local/dvips/config/pscyr.map
 share/texmf-local/fonts/
 share/texmf-local/fonts/afm/
 share/texmf-local/fonts/afm/public/
@@ -310,6 +305,17 @@ share/texmf-local/fonts/vf/public/pscyr/ftxr7t.vf
 share/texmf-local/fonts/vf/public/pscyr/ftxrc6a.vf
 share/texmf-local/fonts/vf/public/pscyr/ftxri7t.vf
 share/texmf-local/fonts/vf/public/pscyr/ftxro7t.vf
+share/texmf-local/fonts/map/
+share/texmf-local/fonts/map/dvips/
+share/texmf-local/fonts/map/dvips/pscyr/
+share/texmf-local/fonts/map/dvips/pscyr/pscyr.map
+share/texmf-local/fonts/map/dvipdfm/
+share/texmf-local/fonts/map/dvipdfm/pscyr/
+share/texmf-local/fonts/map/dvipdfm/pscyr/pscyr2.map
+share/texmf-local/fonts/enc/
+share/texmf-local/fonts/enc/dvips/
+share/texmf-local/fonts/enc/dvips/pscyr/
+share/texmf-local/fonts/enc/dvips/pscyr/t2a.enc
 share/texmf-local/tex/
 share/texmf-local/tex/latex/
 share/texmf-local/tex/latex/pscyr/
@@ -343,8 +349,8 @@ share/texmf-local/tex/latex/pscyr/t2afma.fd
 share/texmf-local/tex/latex/pscyr/t2aftm.fd
 share/texmf-local/tex/latex/pscyr/t2aftx.fd
 @exec %D/bin/mktexlsr
-@exec echo "Map pscyr.map" >> %D/share/texmf/web2c/updmap.cfg
-@exec %D/bin/updmap
+@exec %D/bin/updmap-sys --quiet --nomkmap --enable Map=pscyr.map
+@exec %D/bin/updmap-sys --quiet --enable Map=pscyr2.map
 @unexec %D/bin/mktexlsr
-@unexec perl -i -pe 's/^Map pscyr\.map\n//' %D/share/texmf/web2c/updmap.cfg
-@unexec %D/bin/updmap
+@unexec %D/bin/updmap-sys --quiet --nomkmap --disable pscyr.map
+@unexec %D/bin/updmap-sys --quiet --disable pscyr2.map

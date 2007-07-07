@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/26 14:01:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/07 15:24:40 grange Exp $
 
 COMMENT=		"cyrillic PostScript Type1 fonts to use with TeX"
 
 DISTNAME=		pscyr-0.4c_patch2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		russian print
 
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
@@ -18,7 +18,7 @@ MASTER_SITES=		ftp://ftp.vsu.ru/pub/tex/font-packs/pscyr/
 DISTFILES=		PSCyr-0.4c-patch2-tex.tar.gz \
 			PSCyr-0.4c-patch2-type1.tar.gz
 
-RUN_DEPENDS=		:teTeX_base->=2.0:print/teTeX/base
+RUN_DEPENDS=		:teTeX_base->=3.0:print/teTeX/base
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
@@ -27,17 +27,21 @@ PKG_ARCH=		*
 TEXMF_DIR=		${PREFIX}/share/texmf-local
 
 do-install:
-	${INSTALL_DATA_DIR} ${TEXMF_DIR}/dvips/base
-	${INSTALL_DATA_DIR} ${TEXMF_DIR}/dvips/config
+	${INSTALL_DATA_DIR} ${TEXMF_DIR}/fonts/map/dvips/pscyr
+	${INSTALL_DATA_DIR} ${TEXMF_DIR}/fonts/map/dvipdfm/pscyr
+	${INSTALL_DATA_DIR} ${TEXMF_DIR}/fonts/enc/dvips/pscyr
 	${INSTALL_DATA_DIR} ${TEXMF_DIR}/tex/latex/pscyr
 	${INSTALL_DATA_DIR} ${TEXMF_DIR}/fonts/tfm/public/pscyr
 	${INSTALL_DATA_DIR} ${TEXMF_DIR}/fonts/vf/public/pscyr
 	${INSTALL_DATA_DIR} ${TEXMF_DIR}/fonts/type1/public/pscyr
 	${INSTALL_DATA_DIR} ${TEXMF_DIR}/fonts/afm/public/pscyr
 	${INSTALL_DATA_DIR} ${TEXMF_DIR}/doc/fonts/pscyr
-	${INSTALL_DATA} ${WRKDIR}/dvips/base/* ${TEXMF_DIR}/dvips/base
-	${INSTALL_DATA} ${WRKDIR}/dvips/config/* \
-	    ${TEXMF_DIR}/dvips/config
+	${INSTALL_DATA} ${WRKDIR}/dvips/base/t2a.enc \
+	    ${TEXMF_DIR}/fonts/enc/dvips/pscyr
+	${INSTALL_DATA} ${WRKDIR}/dvips/config/pscyr.map \
+	    ${TEXMF_DIR}/fonts/map/dvips/pscyr
+	${INSTALL_DATA} ${WRKDIR}/dvipdfm/base/pscyr2.map \
+	    ${TEXMF_DIR}/fonts/map/dvipdfm/pscyr
 	${INSTALL_DATA} ${WRKDIR}/tex/latex/pscyr/* \
 	    ${TEXMF_DIR}/tex/latex/pscyr
 	${INSTALL_DATA} ${WRKDIR}/fonts/tfm/public/pscyr/* \
