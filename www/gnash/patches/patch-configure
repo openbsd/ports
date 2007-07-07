@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1 2007/07/07 10:47:04 deanna Exp $
+--- configure.orig	Fri Jul  6 09:24:13 2007
++++ configure	Fri Jul  6 09:25:30 2007
+@@ -5271,7 +5271,7 @@ _ACEOF
+ 
+ 
+ 
+-    INTLLIBS="$LIBINTL"
++    INTLLIBS="$LTLIBINTL"
+ 
+ 
+ 
+@@ -50341,10 +50341,10 @@ s,@am__fastdepCC_TRUE@,$am__fastdepCC_TRUE,;t t
+ s,@am__fastdepCC_FALSE@,$am__fastdepCC_FALSE,;t t
+ s,@EGREP@,$EGREP,;t t
+ s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@HAS_GETTEXT_TRUE@,$HAS_GETTEXT_TRUE,;t t

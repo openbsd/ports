@@ -1,0 +1,15 @@
+$OpenBSD: patch-po_Makefile_in,v 1.1 2007/07/07 10:47:04 deanna Exp $
+--- po/Makefile.in.orig	Fri Jul  6 09:30:11 2007
++++ po/Makefile.in	Fri Jul  6 09:30:31 2007
+@@ -636,9 +636,9 @@ force:
+ # install-hook: rename the es.gmo files to gnash.mo at installtion time
+ install-data-hook: $(gmofiles)
+ 	@for i in $(translations); do \
+-	  $(mkinstalldirs) "$(DESTDIR)$(datadir)/locale/$$i"; \
++	  $(mkinstalldirs) "$(DESTDIR)$(datadir)/locale/$$i/LC_MESSAGES"; \
+ 	  if test -f $$i.gmo; then \
+-	    $(INSTALL_DATA) $$i.gmo $(DESTDIR)$(datadir)/locale/$$i/gnash.mo; \
++	    $(INSTALL_DATA) $$i.gmo $(DESTDIR)$(datadir)/locale/$$i/LC_MESSAGES/gnash.mo; \
+ 	  fi; \
+ 	done
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

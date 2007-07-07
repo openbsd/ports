@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/20 04:06:41 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/07/07 10:47:04 deanna Exp $
 bin/gnash
 bin/gparser
 bin/gprocessor
@@ -12,10 +12,16 @@ lib/libgnashgeo.la
 @lib lib/libgnashgeo.so.${LIBgnashgeo_VERSION}
 lib/libgnashgui.la
 @lib lib/libgnashgui.so.${LIBgnashgui_VERSION}
+lib/libgnashplayer.la
+@lib lib/libgnashplayer.so.${LIBgnashplayer_VERSION}
 lib/libgnashserver.la
 @lib lib/libgnashserver.so.${LIBgnashserver_VERSION}
 lib/mozilla-plugins/
 lib/mozilla-plugins/libgnashplugin.so
 @man man/man1/gnash.1
 share/gnash/
+share/gnash/GnashG.png
 share/gnash/gnash_128_96.ico
+share/locale/de/LC_MESSAGES/gnash.mo
+share/locale/es/LC_MESSAGES/gnash.mo
+share/locale/fr/LC_MESSAGES/gnash.mo

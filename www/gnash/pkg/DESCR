@@ -1,4 +1,3 @@
-Gnash is a Free Flash movie player, which works either standalone, or
-as a Firefox/Mozilla plugin.  This alpha release supports all Flash
-versions up to, but not including, v9.  Flash video is not yet
-supported.
+Gnash is the GNU Flash movie player, which can be run standalone on
+the desktop or an embedded device, as well as as a plugin for several
+browsers.
