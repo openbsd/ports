@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/06/04 09:51:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2007/07/07 18:00:28 ajacoutot Exp $
 
      SUBDIR += bruce
      SUBDIR += devtodo
@@ -9,6 +9,7 @@
      SUBDIR += siag
      SUBDIR += taskjuggler
      SUBDIR += tdl
+     SUBDIR += vym
      SUBDIR += wyrd
      SUBDIR += xinvest
      SUBDIR += xquote
