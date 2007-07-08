@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/04/08 10:10:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/07/08 17:50:48 ajacoutot Exp $
 %%SHARED%%
 bin/babel
 bin/obchiral
@@ -10,6 +10,8 @@ bin/obprop
 bin/obrotamer
 bin/obrotate
 bin/roundtrip
+include/inchi/
+include/inchi/inchi_api.h
 include/openbabel-2.0/
 include/openbabel-2.0/openbabel/
 include/openbabel-2.0/openbabel/atom.h
@@ -29,7 +31,6 @@ include/openbabel-2.0/openbabel/forcefield.h
 include/openbabel-2.0/openbabel/generic.h
 include/openbabel-2.0/openbabel/grid.h
 include/openbabel-2.0/openbabel/groupcontrib.h
-include/openbabel-2.0/openbabel/inchi_api.h
 include/openbabel-2.0/openbabel/internalcoord.h
 include/openbabel-2.0/openbabel/kinetics.h
 include/openbabel-2.0/openbabel/lineend.h

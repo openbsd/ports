@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/08 10:10:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/08 17:50:48 ajacoutot Exp $
 
-COMMENT=	"chemistry file translation program"
+COMMENT=	chemistry file translation program
 
-V=		2.1.0
+V=		2.1.1
 DISTNAME=	openbabel-${V}
 CATEGORIES=	misc
 
 SHARED_LIBS+=	inchi		0.1	# .0.1
-SHARED_LIBS+=	openbabel	3.0	# .3.0
+SHARED_LIBS+=	openbabel	3.1	# .3.1
 
 HOMEPAGE=	http://openbabel.sourceforge.net/
 
@@ -32,7 +32,8 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_path_DOXYGEN=""
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
