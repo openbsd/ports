@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.87 2007/06/30 14:31:00 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.88 2007/07/08 17:57:56 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -58,6 +58,7 @@ STRIP ?= -s
 .if !defined(OPSYS)	# XXX !!
 OPSYS = OpenBSD
 .endif
+ARCH ?!= uname -m
 
 .include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
