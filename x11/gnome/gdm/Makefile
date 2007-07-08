@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/07/05 22:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/07/08 09:25:18 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
@@ -20,7 +20,8 @@ WANTLIB=	ORBit-2 X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		gsf-1 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png popt pthread ssl util xml2 z
 
-BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme
 LIB_DEPENDS=		rsvg-2.>=18.1::x11/gnome/librsvg
