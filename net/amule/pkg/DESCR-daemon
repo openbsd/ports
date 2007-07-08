@@ -1,0 +1,4 @@
+aMule is a peer to peer file sharing software.
+
+This package contains the stand-alone server (amuled) and the
+command-line interface (amulecmd).

@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_StatTree_h,v 1.1 2007/07/08 18:09:58 espie Exp $
+--- src/StatTree.h.orig	Tue Jun 26 12:52:37 2007
++++ src/StatTree.h	Tue Jun 26 12:53:48 2007
+@@ -38,22 +38,7 @@
+ 
+ #ifndef EC_REMOTE	// CLIENT_GUI
+ 
+-// Try to determine sizeof(int)
+-#if defined(__INT_MAX__) && defined(__LONG_MAX__)
+-	#if __INT_MAX__ != __LONG_MAX__
+-		#define USE_64BIT_ARCH
+-	#endif
+-#else
+-	// #include <bits/wordsize.h> would be enough, but we shouldn't depend on
+-	// non-standard includes. However, we still do it :)
+-	#include <stdint.h>
+-	#ifdef __WORDSIZE
+-		#if __WORDSIZE == 64
+-			#define USE_64BIT_ARCH
+-		#endif
+-	#endif
+-#endif
+-// If we cannot determine wordsize, assume that we use 32bit arch.
++#define USE_64BIT_ARCH
+ 
+ #define VIRTUAL virtual
+ 

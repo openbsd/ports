@@ -1,0 +1,13 @@
+aMule is a peer to peer file sharing client, based on the well known
+eMule.
+
+If you get `Bad file descriptor' errors, be sure to raise the file
+descriptor limits.
+
+This package includes amulegui, an experimental front-end which can connect
+to a distant amuled, and mldonkey_importer, to import your old mldonkey
+temporary files.
+
+Subpackages:
+* amuled: daemon version without graphical interface and command-line client.
+* amuleweb: web server control interface.

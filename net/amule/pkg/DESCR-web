@@ -1,0 +1,6 @@
+aMule is a peer to peer file sharing software.
+
+This package contains the webserver control interface, which can be started
+up from either amuled or amule itself.
+
+This program contains a small, self-standing PHP interpreter.

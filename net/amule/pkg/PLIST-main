@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/12 14:18:53 alek Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2007/07/08 18:09:58 espie Exp $
+@pkgpath net/amule
 bin/amule
+bin/amulegui
 bin/ed2k
 @comment lib/xchat/
 @comment lib/xchat/plugins/
@@ -7,20 +9,32 @@ bin/ed2k
 @comment man/de/
 @comment man/de/man1/
 @comment @man man/de/man1/amule.1
+@comment @man man/de/man1/amulecmd.1
+@comment @man man/de/man1/amuled.1
+@comment @man man/de/man1/amuleweb.1
 @comment @man man/de/man1/ed2k.1
 @comment @man man/de/man1/xas.1
 @comment man/es/
 @comment man/es/man1/
 @comment @man man/es/man1/amule.1
+@comment @man man/es/man1/amulecmd.1
+@comment @man man/es/man1/amuled.1
+@comment @man man/es/man1/amuleweb.1
 @comment @man man/es/man1/ed2k.1
 @comment @man man/es/man1/xas.1
 @comment man/fr/
 @comment man/fr/man1/
 @comment @man man/fr/man1/amule.1
+@comment @man man/fr/man1/amulecmd.1
+@comment @man man/fr/man1/amuled.1
+@comment @man man/fr/man1/amuleweb.1
 @comment @man man/fr/man1/ed2k.1
 @comment man/hu/
 @comment man/hu/man1/
 @comment @man man/hu/man1/amule.1
+@comment @man man/hu/man1/amulecmd.1
+@comment @man man/hu/man1/amuled.1
+@comment @man man/hu/man1/amuleweb.1
 @comment @man man/hu/man1/ed2k.1
 @comment @man man/hu/man1/xas.1
 @man man/man1/amule.1

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-daemon,v 1.1 2007/07/08 18:09:58 espie Exp $
+bin/amulecmd
+bin/amuled
+@man man/man1/amulecmd.1
+@man man/man1/amuled.1
