@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/09 20:08:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/09 22:27:34 jasper Exp $
 
 ONLY_FOR_ARCHS= 	alpha amd64 arm i386 m68k mips64 powerpc sparc64 sparc
 
 COMMENT=		library for handling page faults in user mode
 
 DISTNAME=		libsigsegv-2.4
-
+SHARED_LIBS=		sigsegv 0.0
 CATEGORIES=		devel
 HOMEPAGE=		http://libsigsegv.sourceforge.net/
 
