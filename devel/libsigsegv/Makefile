@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/09 20:05:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/09 20:08:53 jasper Exp $
 
-ONLY_FOR_ARCHS= 	alpha amd64 arm m68k mips64 powerpc sparc64 sparc
+ONLY_FOR_ARCHS= 	alpha amd64 arm i386 m68k mips64 powerpc sparc64 sparc
 
 COMMENT=		library for handling page faults in user mode
 
