@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2007/05/26 14:05:44 aanriot Exp $
+# $OpenBSD: Makefile,v 1.28 2007/07/09 19:56:26 jasper Exp $
 
-COMMENT=	"checkbook balancing tool"
+COMMENT=	checkbook balancing tool
 
 DISTNAME=	cbb-0.73
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	misc
-HOMEPAGE=	http://cbb.sourceforge.net/
+HOMEPAGE=	http://www.fifi.org/doc/cbb/html/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
