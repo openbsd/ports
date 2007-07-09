@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/09 13:33:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/09 14:44:22 ajacoutot Exp $
 
-ONLY_FOR_ARCHS=		i386 amd64 macppc
+ONLY_FOR_ARCHS=		i386 amd64 powerpc
 
 COMMENT=		agile development and test support library
 
