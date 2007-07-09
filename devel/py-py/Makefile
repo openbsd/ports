@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 10:29:40 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/09 13:33:21 ajacoutot Exp $
 
-COMMENT=		"agile development and test support library"
+ONLY_FOR_ARCHS=		i386 amd64 macppc
+
+COMMENT=		agile development and test support library
 
 V=			0.9.0
 DISTNAME=		py-${V}
@@ -29,5 +31,6 @@ MODPY_DISTUTILS_INSTALL=	install --prefix=${LOCALBASE} \
 
 post-install:
 	rm -fr ${DESTDIR}${MODPY_SITEPKG}/py/c-extension/greenlet/build
+	rm -f ${DESTDIR}${MODPY_SITEPKG}/py/c-extension/greenlet/slp_platformselect.h.orig
 
 .include <bsd.port.mk>

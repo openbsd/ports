@@ -1,0 +1,12 @@
+$OpenBSD: patch-py_c-extension_greenlet_slp_platformselect_h,v 1.1 2007/07/09 13:33:21 ajacoutot Exp $
+--- py/c-extension/greenlet/slp_platformselect.h.orig	Mon Jul  9 12:46:28 2007
++++ py/c-extension/greenlet/slp_platformselect.h	Mon Jul  9 12:47:04 2007
+@@ -8,7 +8,7 @@
+ #include "switch_amd64_unix.h" /* gcc on amd64 */
+ #elif defined(__GNUC__) && defined(__i386__)
+ #include "switch_x86_unix.h" /* gcc on X86 */
+-#elif defined(__GNUC__) && defined(__PPC__) && defined(__linux__)
++#elif defined(__GNUC__) && defined(__PPC__) && (defined(__linux__) || defined(__OpenBSD__))
+ #include "switch_ppc_unix.h" /* gcc on PowerPC */
+ #elif defined(__GNUC__) && defined(__ppc__) && defined(__APPLE__)
+ #include "switch_ppc_macosx.h" /* Apple MacOS X on PowerPC */
