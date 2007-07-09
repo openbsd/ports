@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/07/09 07:39:01 ajacoutot Exp $
+--- Makefile.in.orig	Mon Aug 11 12:40:47 2003
++++ Makefile.in	Fri Jul  6 11:04:22 2007
+@@ -87,7 +87,7 @@ SUBDIRS = src 
+ 
+ man_MANS = freedroid.6
+ 
+-EXTRA_DIST = $(man_MANS) mac-osx map graphics sound
++EXTRA_DIST = map graphics sound
+ 
+ win_txts = COPYING AUTHORS README Releasetext freedroid-man
+ win_dir = freedroid-$(VERSION)-win32
+@@ -489,8 +489,8 @@ install-data-local:
+ 	echo "Now copying the the data-directories..."
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
+ 	cp -r $(srcdir)/$(EXTRA_DIST) $(DESTDIR)$(pkgdatadir)
+-	echo "... and cleaning from CVS dirs.."
+ 	rm -rf `find $(DESTDIR)$(pkgdatadir) -name CVS`
++	rm -rf `find $(DESTDIR)$(pkgdatadir) -name Makefile\*`
+ 	echo "..done."
+ dist-win32: src/freedroid.exe
+ 	mkdir -p $(win_dir)
