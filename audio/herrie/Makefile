@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2007/07/02 21:52:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/07/09 22:53:36 jasper Exp $
 
 COMMENT=		minimalistic console-based audio player
 
-DISTNAME=		herrie-1.8
+DISTNAME=		herrie-1.8.1
 CATEGORIES=		audio
 
 HOMEPAGE=		http://herrie.info/
@@ -39,7 +39,7 @@ CONFIGURE_ARGS= 	ncurses \
 
 NO_REGRESS=		Yes
 
-LANGS=			de ga nl pl sv tr
+LANGS=			de ga nl pl ru sv tr
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/herrie ${PREFIX}/bin
