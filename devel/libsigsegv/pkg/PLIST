@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/09 20:05:29 jasper Exp $
+%%SHARED%%
+include/sigsegv.h
+lib/libsigsegv.a
+lib/libsigsegv.la

@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/07/09 20:05:29 jasper Exp $
+--- configure.orig	Mon Jul  9 18:24:03 2007
++++ configure	Mon Jul  9 18:26:10 2007
+@@ -22605,8 +22605,8 @@ if test -z "$CFG_FAULT" && test "$sv_cv_fault_posix" =
+   case "$host_os" in
+     openbsd*)
+       case "$host_cpu" in
+-        i?86 | x86_64) CFG_FAULT=fault-openbsd-i386.h ;;
+-        *) CFG_FAULT=fault-openbsd.h ;;
++        x86_64) CFG_FAULT=fault-openbsd-amd64.h ;;
++        *) CFG_FAULT=fault-openbsd-$host_cpu.h ;;
+       esac
+       FAULT_CONTEXT='struct sigcontext'
+       ;;
