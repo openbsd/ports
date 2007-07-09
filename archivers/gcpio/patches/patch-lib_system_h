@@ -1,12 +1,0 @@
-$OpenBSD: patch-lib_system_h,v 1.2 2007/04/17 19:46:42 naddy Exp $
---- lib/system.h.orig	Sat Apr 14 18:08:21 2007
-+++ lib/system.h	Sat Apr 14 18:08:43 2007
-@@ -425,7 +425,7 @@ char *getenv ();
- 
- #include <intprops.h>
- 
--#define UINTMAX_STRSIZE_BOUND INT_BUFSIZE_BOUND (uintmax_t)
-+#define UINTMAX_STRSIZE_BOUND INT_BUFSIZE_BOUND (uint64_t)
- 
- /* Prototypes for external functions.  */
- 

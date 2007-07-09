@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_cpio_1,v 1.1 2005/10/20 21:45:18 naddy Exp $
---- doc/cpio.1.orig	Thu Oct 20 22:08:15 2005
-+++ doc/cpio.1	Thu Oct 20 22:08:49 2005
+$OpenBSD: patch-doc_cpio_1,v 1.2 2007/07/09 17:38:42 naddy Exp $
+--- doc/cpio.1.orig	Thu Jun 28 10:59:17 2007
++++ doc/cpio.1	Fri Jul  6 18:06:24 2007
 @@ -1,8 +1,8 @@
  .TH CPIO 1L \" -*- nroff -*-
  .SH NAME
@@ -22,8 +22,8 @@ $OpenBSD: patch-doc_cpio_1,v 1.1 2005/10/20 21:45:18 naddy Exp $
  [\-M message] [\-R [user][:.][group]] [\-I [[user@]host:]archive]
  [\-F [[user@]host:]archive] [\-\-file=[[user@]host:]archive]
 @@ -24,7 +24,7 @@ cpio \- copy files to and from archives
- [\-\-only\-verify\-crc] [\-\-quiet] [\-\-rsh-command=command] [\-\-help]
- [\-\-version] [pattern...] [< archive]
+ [\-\-only\-verify\-crc] [\-\-to\-stdout] [\-\-quiet] [\-\-rsh-command=command]
+ [\-\-help] [\-\-version] [pattern...] [< archive]
  
 -.B cpio
 +.B gcpio

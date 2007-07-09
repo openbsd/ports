@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/04/17 19:46:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/07/09 17:38:42 naddy Exp $
 bin/gcpio
 @info info/cpio.info
 @man man/man1/gcpio.1
+@comment @man man/man1/gmt.1
 share/locale/da/LC_MESSAGES/cpio.mo
 share/locale/de/LC_MESSAGES/cpio.mo
 share/locale/es/LC_MESSAGES/cpio.mo
 share/locale/fr/LC_MESSAGES/cpio.mo
 share/locale/ga/LC_MESSAGES/cpio.mo
 share/locale/gl/LC_MESSAGES/cpio.mo
+share/locale/hu/LC_MESSAGES/cpio.mo
 share/locale/ko/LC_MESSAGES/cpio.mo
 share/locale/nl/LC_MESSAGES/cpio.mo
 share/locale/pl/LC_MESSAGES/cpio.mo
