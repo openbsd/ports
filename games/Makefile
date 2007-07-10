@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2007/07/05 16:13:34 simon Exp $
+# $OpenBSD: Makefile,v 1.148 2007/07/10 08:38:32 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -44,6 +44,7 @@
      SUBDIR += fotaq
      SUBDIR += freeciv
      SUBDIR += freedroid
+     SUBDIR += freedroidrpg
      SUBDIR += frotz
      SUBDIR += gcompris
      SUBDIR += gemdropx
