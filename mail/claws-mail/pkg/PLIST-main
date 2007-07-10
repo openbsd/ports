@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/05/04 12:13:14 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/07/10 06:14:43 pyr Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 bin/claws-mail
@@ -101,6 +101,7 @@ include/claws-mail/gtk/gtkshruler.h
 include/claws-mail/gtk/gtksourceprintjob.h
 include/claws-mail/gtk/gtkutils.h
 include/claws-mail/gtk/gtkvscrollbutton.h
+include/claws-mail/gtk/headers.h
 include/claws-mail/gtk/icon_legend.h
 include/claws-mail/gtk/inputdialog.h
 include/claws-mail/gtk/logwindow.h
@@ -126,6 +127,7 @@ include/claws-mail/ldapctrl.h
 include/claws-mail/ldaplocate.h
 include/claws-mail/ldapquery.h
 include/claws-mail/ldapserver.h
+include/claws-mail/ldapupdate.h
 include/claws-mail/ldaputil.h
 include/claws-mail/ldif.h
 include/claws-mail/localfolder.h
@@ -186,6 +188,7 @@ include/claws-mail/prefs_send.h
 include/claws-mail/prefs_spelling.h
 include/claws-mail/prefs_summaries.h
 include/claws-mail/prefs_summary_column.h
+include/claws-mail/prefs_summary_open.h
 include/claws-mail/prefs_template.h
 include/claws-mail/prefs_themes.h
 include/claws-mail/prefs_toolbar.h

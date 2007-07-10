@@ -1,0 +1,12 @@
+$OpenBSD: patch-m4_aspell_m4,v 1.1 2007/07/10 06:14:43 pyr Exp $
+--- m4/aspell.m4.orig	Sun Jul  1 18:36:54 2007
++++ m4/aspell.m4	Sun Jul  1 18:38:05 2007
+@@ -70,7 +70,7 @@ dnl
+         ifelse([$3], , :, [$3])
+      else
+         ASPELL_CFLAGS="-I$aspell_includes"
+-        ASPELL_LIBS="-L$aspell_libs -laspell"
++        ASPELL_LIBS="-L$aspell_libs -laspell -lstdc++ -lm"
+         aspell_version=`$ASPELL version|sed -e "s/\(@(#) International Ispell Version 3.1.20 (but really Aspell \)\(.*\))/\2/"`
+         rm -f conf.aspelltest
+         AC_TRY_RUN([

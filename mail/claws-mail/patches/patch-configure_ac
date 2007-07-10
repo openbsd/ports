@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure_ac,v 1.1 2007/07/10 06:14:43 pyr Exp $
+--- configure.ac.orig	Tue May  8 04:03:10 2007
++++ configure.ac	Sun Jul  1 19:04:48 2007
+@@ -548,6 +548,7 @@ else
+ 	AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
+ 	AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
+ 	AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
++	AC_CHECK_LIB(sasl2, sasl_version, LDAP_LIBS="$LDAP_LIBS -lsasl2")
+ 	AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
+ 		     $LDAP_LIBS)
+ 
+@@ -563,7 +564,8 @@ else
+ 
+ 		AC_CHECK_LIB(ldap, ldap_start_tls_s,
+ 	     		     [ ac_cv_have_tls=yes ],
+-	     		     [ ac_cv_have_tls=no ])
++	     		     [ ac_cv_have_tls=no ],
++			     $LDAP_LIBS)
+ 
+ 	fi
+ 
+@@ -600,7 +602,7 @@ if test "$ac_cv_enable_jpilot" = yes; then
+ 				   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
+ 	fi
+ 
+-	AC_CHECK_LIB(pisock, unpack_Address, [JPILOT_LIBS="-lpisock"], [JPILOT_LIBS="" ac_cv_enable_jpilot="no"])
++	AC_CHECK_LIB(pisock, unpack_Address, [JPILOT_LIBS="-lpisock -pthread"], [JPILOT_LIBS="" ac_cv_enable_jpilot="no"], -pthread)
+ 	if test x"$ac_cv_enable_jpilot" = xyes; then
+ 		AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.)
+ 	else

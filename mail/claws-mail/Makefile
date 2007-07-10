@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/14 22:24:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/10 06:14:43 pyr Exp $
 
 COMMENT-main=		"mail and news client"
 COMMENT-docs=		"documentation"
@@ -7,14 +7,14 @@ COMMENT-clamav=		"clamav plugin"
 COMMENT-dillo=		"dillo plugin"
 COMMENT-spamassassin=	"spamassassin plugin"
 
-V=			2.9.2
+V=			2.10.0
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}p0
-FULLPKGNAME-docs=		claws-mail-docs-${V}p0
-FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p0
-FULLPKGNAME-clamav=		claws-mail-clamav-${V}p0
-FULLPKGNAME-dillo=		claws-mail-dillo-${V}p0
-FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}p0
+PKGNAME-main=			${DISTNAME}
+FULLPKGNAME-docs=		claws-mail-docs-${V}
+FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
+FULLPKGNAME-clamav=		claws-mail-clamav-${V}
+FULLPKGNAME-dillo=		claws-mail-dillo-${V}
+FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 
 CATEGORIES=		mail news
 
@@ -35,7 +35,7 @@ DIST_SUBDIR=		claws
 
 MULTI_PACKAGES=		-main -docs -bogofilter -clamav -dillo \
 			-spamassassin
-FLAVORS=		jpilot gnomeprint compface ldap
+FLAVORS=		jpilot gnomeprint compface ldap debug
 FLAVOR?=
 
 FLAVOR_STRING=		${FLAVOR_EXT:S/-/,/g}
@@ -87,22 +87,13 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-aspell \
-			--enable-bogofilter-plugin \
-			--enable-clamav-plugin \
-			--enable-dillo-viewer-plugin \
-			--enable-pgpcore-plugin \
-			--enable-pgpmime-plugin \
-			--enable-pgpinline-plugin \
-			--enable-spamassassin-plugin
-
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I/usr/include/openssl" \
 			OPENSSL_LIBS="-lssl -lcrypto" \
 			CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
 .if ${FLAVOR:L:Mjpilot}
-CONFIGURE_ARGS+=	--enable-jpilot
 LIB_DEPENDS-main+=	pisock::comms/pilot-link 
 RUN_DEPENDS-main+=	::comms/jpilot
 .else
@@ -110,7 +101,6 @@ CONFIGURE_ARGS+=	--disable-jpilot
 .endif
 
 .if ${FLAVOR:L:Mgnomeprint}
-CONFIGURE_ARGS+=	--enable-gnomeprint
 WANTLIB-main+=		art_lgpl_2 xml2
 LIB_DEPENDS-main+=	gnomecanvas-2::x11/gnome/libgnomecanvas \
 			gnomeprint-2-2::x11/gnome/libgnomeprint \
@@ -122,18 +112,21 @@ CONFIGURE_ARGS+=	--disable-gnomeprint
 .if ${FLAVOR:L:Mcompface}
 PERMIT_PACKAGE_CDROM=   "No Fee"
 PERMIT_DISTFILES_CDROM= "No Fee"
-CONFIGURE_ARGS+=       --enable-compface
 LIB_DEPENDS-main+=     compface.>=1::mail/faces
 .else
 CONFIGURE_ARGS+=       --disable-compface
 .endif
 
 .if ${FLAVOR:L:Mldap}
-CONFIGURE_ARGS+=	--enable-ldap
 WANTLIB-main+=		asn1 com_err gssapi krb5
 LIB_DEPENDS-main+=	lber,ldap:openldap-client-*:databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
+.endif
+
+.if ${FLAVOR:L:Mdebug}
+CFLAGS+=	-O0 -g
+INSTALL_STRIP=
 .endif
 
 TOOLS=		OOo2claws-mail.pl \
