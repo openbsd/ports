@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/10 23:32:27 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/10 20:53:59 kili Exp $
 
 CATEGORIES=		lang
 V=			5.6.27
 XV=			6.6.27
-FULLARCH=		${MACHINE_ARCH}-openbsd${OSREV}
+FULLARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS=		V XV FULLARCH
 DISTNAME=		pl-$V
-PKGNAME=		swi-prolog-$Vp0
+PKGNAME=		swi-prolog-$Vp1
 MASTER_SITES=		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
 COMMENT=		'prolog for the real world'
 HOMEPAGE=		http://www.swi-prolog.org/
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
-AUTOCONF_DIR=		${WRKSRC}/src
+AUTOCONF_DIR=		${WRKSRC}/src ${WRKSRC}/packages/semweb
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/src \
 				${WRKSRC}/packages/jpl \
 				${WRKSRC}/packages/xpce/src

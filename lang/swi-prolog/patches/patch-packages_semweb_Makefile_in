@@ -1,0 +1,15 @@
+$OpenBSD: patch-packages_semweb_Makefile_in,v 1.1 2007/07/10 20:53:59 kili Exp $
+
+Honor CFLAGS.
+
+--- packages/semweb/Makefile.in.orig	Tue Jun 26 13:02:46 2007
++++ packages/semweb/Makefile.in	Tue Jun 26 13:17:25 2007
+@@ -29,7 +29,7 @@ COFLAGS=@COFLAGS@
+ CWFLAGS=@CWFLAGS@
+ CMFLAGS=@CMFLAGS@
+ CIFLAGS=-I.
+-CFLAGS=$(COFLAGS) $(CWFLAGS) $(CMFLAGS) $(CIFLAGS) @DEFS@
++CFLAGS=@CFLAGS@ $(COFLAGS) $(CWFLAGS) $(CMFLAGS) $(CIFLAGS) @DEFS@
+ LIBS=@LIBS@
+ NETLIBS=@NETLIBS@
+ 
