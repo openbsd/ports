@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_menu_c,v 1.1.1.1 2007/07/10 08:37:24 ajacoutot Exp $
+--- src/menu.c.orig	Sun Jul  8 13:05:47 2007
++++ src/menu.c	Sun Jul  8 13:07:58 2007
+@@ -2237,31 +2237,31 @@ Droid_Talk_Options_Menu (void)
+ 	  can_continue=!can_continue;
+ 	  break;
+ 	case INFLU_REFRESH_TEXT:
+-	  while (EnterPressed() || SpacePressed() );
++	  while (EnterPressed() || SpacePressed() || MouseLeftPressed() );
+ 	  GameConfig.Influencer_Refresh_Text=!GameConfig.Influencer_Refresh_Text;
+ 	  break;
+ 	case INFLU_BLAST_TEXT:
+-	  while (EnterPressed() || SpacePressed() );
++	  while (EnterPressed() || SpacePressed() || MouseLeftPressed() );
+ 	  GameConfig.Influencer_Blast_Text=!GameConfig.Influencer_Blast_Text;
+ 	  break;
+ 	case ENEMY_HIT_TEXT:
+-	  while (EnterPressed() || SpacePressed() );
++	  while (EnterPressed() || SpacePressed() || MouseLeftPressed() );
+ 	  GameConfig.Enemy_Hit_Text=!GameConfig.Enemy_Hit_Text;
+ 	  break;
+ 	case ENEMY_BUMP_TEXT:
+-	  while (EnterPressed() || SpacePressed() );
++	  while (EnterPressed() || SpacePressed() || MouseLeftPressed() );
+ 	  GameConfig.Enemy_Bump_Text=!GameConfig.Enemy_Bump_Text;
+ 	  break;
+ 	case ENEMY_AIM_TEXT:
+-	  while (EnterPressed() || SpacePressed() );
++	  while (EnterPressed() || SpacePressed() || MouseLeftPressed() );
+ 	  GameConfig.Enemy_Aim_Text=!GameConfig.Enemy_Aim_Text;
+ 	  break;
+ 	case ALL_TEXTS:
+-	  while (EnterPressed() || SpacePressed() );
++	  while (EnterPressed() || SpacePressed() || MouseLeftPressed() );
+ 	  GameConfig.All_Texts_Switch=!GameConfig.All_Texts_Switch;
+ 	  break;
+ 	case LEAVE_DROID_TALK_OPTIONS_MENU:
+-	  while (EnterPressed() || SpacePressed() );
++	  while (EnterPressed() || SpacePressed() || MouseLeftPressed() );
+ 	  can_continue=TRUE;
+ 	  break;
+ 	default: 

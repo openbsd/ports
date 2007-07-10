@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_system_h,v 1.1.1.1 2007/07/10 08:37:24 ajacoutot Exp $
+--- src/system.h.orig	Sat Mar  3 17:34:05 2007
++++ src/system.h	Tue Jul 10 09:06:57 2007
+@@ -69,7 +69,11 @@
+ #include <signal.h>
+ 
+ #ifdef HAVE_SYS_SOUNDCARD_H
++#ifdef __OpenBSD__
++#include <soundcard.h>
++#else
+ #include <sys/soundcard.h>
++#endif
+ #endif
+ #ifdef HAVE_SYS_IOCTL_H
+ #include <sys/ioctl.h>

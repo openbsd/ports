@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_init_c,v 1.1.1.1 2007/07/10 08:37:24 ajacoutot Exp $
+--- src/init.c.orig	Fri Jun 29 20:35:21 2007
++++ src/init.c	Tue Jul 10 09:07:54 2007
+@@ -36,7 +36,12 @@
+ #include "global.h"
+ #include "proto.h"
+ #include "ship.h"
++
++#ifdef __OpenBSD__
++#include "ieeefp.h"
++#else
+ #include "fenv.h"
++#endif
+ 
+ #include "getopt.h"
+ 
+@@ -1752,10 +1757,7 @@ PrepareStartOfNewCharacter ( void )
+     Me [ 0 ] . aux2_item    . currently_held_in_hand = FALSE;
+     Item_Held_In_Hand = ( -1 );
+     
+-    FillInItemProperties ( & ( Me [ 0 ] . weapon_item ) , TRUE , 0 );
+-    FillInItemProperties ( & ( Me [ 0 ] . drive_item ) , TRUE , 0 );
+     
+-    
+     DebugPrintf ( 1 , "\n%s():  Shuffling droids on all %d levels!" , __FUNCTION__ , curShip.num_levels );
+     for ( i = 0 ; i < curShip.num_levels ; i ++ )
+     {
+@@ -2131,9 +2133,6 @@ I will not be able to load or save games or configurat
+     InitPictures ( ) ;
+  
+     ShowStartupPercentage ( 100 ) ; 
+-
+-    if(GameConfig . screen_width == 640)
+-	 GiveMouseAlertWindow ( "\nYou are playing in 640x480.\n\nWhile this resolution works correctly and will\ngive you a great gaming experience, its support is\nin the process of being dropped, therefore you will\nwant to consider using 800x600 or 1024x768.\n\nThank you.\n");
+ 
+     
+ }; // void InitFreedroid ( void ) 

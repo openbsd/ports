@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_enemy_c,v 1.1.1.1 2007/07/10 08:37:24 ajacoutot Exp $
+--- src/enemy.c.orig	Fri Jul  6 19:42:06 2007
++++ src/enemy.c	Fri Jul  6 19:43:43 2007
+@@ -3564,6 +3564,7 @@ AnimateEnemys (void)
+     {
+       
+ 	our_enemy = & ( AllEnemys [ i ] ) ;
++	if ( our_enemy -> type == -1 ) return ;
+ 	
+ 	/* ignore enemys that are dead or on other levels or dummys */
+ 	// if (AllEnemys[i].type == DEBUG_ENEMY) continue;

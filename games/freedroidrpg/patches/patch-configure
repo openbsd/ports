@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/07/10 08:37:24 ajacoutot Exp $
+--- configure.orig	Tue Jul  3 18:58:10 2007
++++ configure	Tue Jul 10 09:11:41 2007
+@@ -7604,7 +7604,7 @@ fi
+ 
+ 
+ for ac_header in fcntl.h stdlib.h string.h sys/ioctl.h sys/time.h time.h \
+-			  unistd.h dirent.h sys/soundcard.h execinfo.h signal.h locale.h
++			  unistd.h dirent.h sys/soundcard.h soundcard.h execinfo.h signal.h locale.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
