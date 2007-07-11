@@ -1,10 +1,10 @@
-$OpenBSD: patch-iris_xmpp-core_jid_cpp,v 1.1 2006/03/29 09:16:03 bernd Exp $
---- iris/xmpp-core/jid.cpp.orig	Wed Mar 22 11:25:09 2006
-+++ iris/xmpp-core/jid.cpp	Wed Mar 22 11:25:09 2006
-@@ -20,7 +20,7 @@
- 
+$OpenBSD: patch-iris_xmpp-core_jid_cpp,v 1.2 2007/07/11 22:50:49 jasper Exp $
+--- iris/xmpp-core/jid.cpp.orig	Thu Mar 22 23:26:30 2007
++++ iris/xmpp-core/jid.cpp	Thu Mar 22 23:25:26 2007
+@@ -21,7 +21,7 @@
  #include"xmpp.h"
  
+ #include<qdict.h>
 -#include<stringprep.h>
 +#include"../libidn/stringprep.h"
  
