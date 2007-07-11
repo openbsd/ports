@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2007/04/03 14:52:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2007/07/11 11:05:38 aanriot Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	::net/p5-SNMP_Session \
 		::textproc/p5-Pod-Simple
 
 MODULES=	converters/libiconv
+USE_X11=	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
