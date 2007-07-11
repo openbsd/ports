@@ -7,14 +7,3 @@ able to properly render PostScript documents in a display or a printer.
 GGv serves as a layer that isolates the user from the cumbersome options
 and interface of GhostScript, and, at the same time, gives extra
 features such as panning and persistent user settings.
-
-The main features that make me personally like ggv are its antialiasing
-(use the preferences dialog to turn it on and reload the document --
-your eyes will pop out of their sockets so be careful) and nice user
-interface, allowing e.g.  dragging of postscript files into GGv, moving
-the postscript display by dragging the mouse in the pager window or the
-main window.  GGv can display more than one document at the same time.
-Also, the transparent support for compressed postscript and pdf are
-handy.
-
-This is the version of GGv for GNOME 2.
