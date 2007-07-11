@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/04/28 09:20:14 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2007/07/11 11:11:53 aanriot Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -13,6 +13,7 @@ HOMEPAGE=	http://www.gingerall.cz/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 MODULES=	converters/libiconv
+USE_X11=	Yes
 LIB_DEPENDS=	sablot.>=100::textproc/sablotron
 
 # GPL/Mozilla
