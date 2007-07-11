@@ -1,0 +1,21 @@
+$OpenBSD: patch-camel_providers_imap_camel-imap-folder_c,v 1.1 2007/07/11 22:13:05 martynas Exp $
+--- camel/providers/imap/camel-imap-folder.c.orig	Mon Apr  9 15:42:39 2007
++++ camel/providers/imap/camel-imap-folder.c	Fri Jun 29 19:02:53 2007
+@@ -655,7 +655,7 @@ imap_rescan (CamelFolder *folder, int exists, CamelExc
+ 		uid = g_datalist_get_data (&data, "UID");
+ 		flags = GPOINTER_TO_UINT (g_datalist_get_data (&data, "FLAGS"));
+ 		
+-		if (!uid || !seq || seq > summary_len) {
++		if (!uid || !seq || seq > summary_len || seq < 0) {
+ 			g_datalist_clear (&data);
+ 			continue;
+ 		}
+@@ -2789,7 +2789,7 @@ parse_fetch_response (CamelImapFolder *imap_folder, ch
+ 		
+ 		if (*response != '*' || *(response + 1) != ' ')
+ 			return NULL;
+-		seq = strtol (response + 2, &response, 10);
++		seq = strtoul (response + 2, &response, 10);
+ 		if (seq == 0)
+ 			return NULL;
+ 		if (g_ascii_strncasecmp (response, " FETCH (", 8) != 0)

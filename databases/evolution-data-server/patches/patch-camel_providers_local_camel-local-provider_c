@@ -1,0 +1,87 @@
+$OpenBSD: patch-camel_providers_local_camel-local-provider_c,v 1.1 2007/07/11 22:13:05 martynas Exp $
+--- camel/providers/local/camel-local-provider.c.orig	Mon Apr  9 15:42:41 2007
++++ camel/providers/local/camel-local-provider.c	Fri Jun 29 19:03:12 2007
+@@ -55,7 +55,7 @@ static CamelProvider mh_provider = {
+ 	N_("For storing local mail in MH-like mail directories."),
+ 	"mail",
+ 	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE | CAMEL_PROVIDER_IS_LOCAL,
+-	CAMEL_URL_NEED_PATH | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
++	CAMEL_URL_NEED_PATH | CAMEL_URL_NEED_PATH_DIR | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
+ 	mh_conf_entries,
+ 	/* ... */
+ };
+@@ -73,7 +73,7 @@ static CamelProvider mbox_provider = {
+ 	N_("For retrieving (moving) local mail from standard mbox-formatted spools into folders managed by Evolution."),
+ 	"mail",
+ 	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE | CAMEL_PROVIDER_IS_LOCAL,
+-	CAMEL_URL_NEED_PATH | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
++	CAMEL_URL_NEED_PATH | CAMEL_URL_NEED_PATH_DIR |CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
+ 	mbox_conf_entries,
+ 	/* ... */
+ };
+@@ -95,7 +95,7 @@ static CamelProvider maildir_provider = {
+ 	N_("For storing local mail in maildir directories."),
+ 	"mail",
+ 	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE | CAMEL_PROVIDER_IS_LOCAL,
+-	CAMEL_URL_NEED_PATH | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
++	CAMEL_URL_NEED_PATH | CAMEL_URL_NEED_PATH_DIR | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
+ 	maildir_conf_entries,
+ 	/* ... */
+ };
+@@ -109,9 +109,9 @@ static CamelProviderConfEntry spool_conf_entries[] = {
+ 	{ CAMEL_PROVIDER_CONF_END }
+ };
+ 
+-static CamelProvider spool_provider = {
++static CamelProvider spool_file_provider = {
+ 	"spool",
+-	N_("Standard Unix mbox spool or directory"),
++	N_("Standard Unix mbox spool file"),
+ 	N_("For reading and storing local mail in external standard mbox spool files.\nMay also be used to read a tree of Elm, Pine, or Mutt style folders."),
+ 	"mail",
+ 	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE,
+@@ -120,6 +120,17 @@ static CamelProvider spool_provider = {
+ 	/* ... */
+ };
+ 
++static CamelProvider spool_directory_provider = {
++	"spooldir",
++	N_("Standard Unix mbox spool directory"),
++	N_("For reading and storing local mail in external standard mbox spool files.\nMay also be used to read a tree of Elm, Pine, or Mutt style folders."),
++	"mail",
++	CAMEL_PROVIDER_IS_SOURCE | CAMEL_PROVIDER_IS_STORAGE,
++	CAMEL_URL_NEED_PATH | CAMEL_URL_NEED_PATH_DIR | CAMEL_URL_PATH_IS_ABSOLUTE | CAMEL_URL_FRAGMENT_IS_PATH,
++	spool_conf_entries,
++	/* ... */
++};
++
+ #endif
+ 
+ /* build a canonical 'path' */
+@@ -233,13 +244,19 @@ void camel_provider_module_init(void)
+ 	camel_provider_register(&mbox_provider);
+ 
+ #ifndef G_OS_WIN32
+-	spool_conf_entries[0].value = path;  /* default path - same as mbox */
+-	spool_provider.object_types[CAMEL_PROVIDER_STORE] = camel_spool_store_get_type ();
+-	spool_provider.url_hash = local_url_hash;
+-	spool_provider.url_equal = local_url_equal;
+-	spool_provider.translation_domain = GETTEXT_PACKAGE;
+-	camel_provider_register(&spool_provider);
+-	
++	spool_conf_entries[0].value = path;  /* default path - same as mbox; it's for both file and directory */
++	spool_file_provider.object_types[CAMEL_PROVIDER_STORE] = camel_spool_store_get_type ();
++	spool_file_provider.url_hash = local_url_hash;
++	spool_file_provider.url_equal = local_url_equal;
++	spool_file_provider.translation_domain = GETTEXT_PACKAGE;
++	camel_provider_register(&spool_file_provider);
++
++	spool_directory_provider.object_types[CAMEL_PROVIDER_STORE] = camel_spool_store_get_type ();
++	spool_directory_provider.url_hash = local_url_hash;
++	spool_directory_provider.url_equal = local_url_equal;
++	spool_directory_provider.translation_domain = GETTEXT_PACKAGE;
++	camel_provider_register(&spool_directory_provider);
++
+ 	path = getenv("MAILDIR");
+ 	maildir_conf_entries[0].value = path ? path : "";  /* default path */
+ 	maildir_provider.object_types[CAMEL_PROVIDER_STORE] = camel_maildir_store_get_type ();
