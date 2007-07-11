@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/17 16:02:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/07/11 09:31:20 ajacoutot Exp $
 
-COMMENT=	"read / write PHP session files"
+COMMENT=	read / write PHP session files
 
 MODULES=	cpan
 DISTNAME=	PHP-Session-0.26
-PKGNAME=        p5-${DISTNAME}p0
+PKGNAME=        p5-${DISTNAME}p1
 CATEGORIES=     www
 
 # GPL/Artistic
@@ -14,6 +14,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Universal-exports
+RUN_DEPENDS=	::devel/p5-Universal-require
 
 .include <bsd.port.mk>
