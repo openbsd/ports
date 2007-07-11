@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/26 21:08:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/11 14:25:34 aanriot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,6 +34,7 @@ LIB_DEPENDS=		xml2.>=9::textproc/libxml \
 			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_LIBTOOL=		Yes
+USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 

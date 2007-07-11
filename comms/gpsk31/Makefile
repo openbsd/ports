@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/30 21:54:17 jason Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/11 14:25:54 aanriot Exp $
 
 COMMENT=	"gtk PSK31 send and receive"
 
@@ -24,6 +24,8 @@ WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 			pangoft2-1.0 png z ossaudio pthread stdc++
 
 MASTER_SITES=		http://www.qsl.net/pg4i/download/
+
+USE_X11=		Yes
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf no-autoheader

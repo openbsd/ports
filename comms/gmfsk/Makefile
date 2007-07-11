@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/28 18:47:06 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/11 14:25:54 aanriot Exp $
 
 COMMENT=	"Gnome multimode HF terminal"
 
@@ -32,5 +32,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-hamlib --disable-schemas-install
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+USE_X11=		Yes
 
 .include <bsd.port.mk>

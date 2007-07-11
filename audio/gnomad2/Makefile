@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/07/09 23:15:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/11 14:25:34 aanriot Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
@@ -20,6 +20,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gnomad2/}
 
 MODULES=		devel/gettext
+USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \

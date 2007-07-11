@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/28 17:15:10 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/11 14:25:54 aanriot Exp $
 
 COMMENT=	"X DX cluster watcher"
 
@@ -25,5 +25,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr	\
 		iconv intl						\
 		gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
 LIB_DEPENDS=	gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
+
+USE_X11=	Yes
 
 .include <bsd.port.mk>

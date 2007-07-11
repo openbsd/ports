@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/30 21:56:38 jason Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/11 14:25:55 aanriot Exp $
 
 COMMENT=	"X radio logging program"
 
@@ -27,6 +27,7 @@ WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 
 MASTER_SITES=		http://www.qsl.net/pg4i/download/
 
+USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-hamlib

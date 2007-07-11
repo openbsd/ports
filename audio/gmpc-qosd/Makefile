@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/26 21:08:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/11 14:25:34 aanriot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,6 +29,7 @@ MODULES=		devel/gettext
 RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc
 BUILD_DEPENDS=		${RUN_DEPENDS}
 USE_LIBTOOL=		Yes
+USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 
