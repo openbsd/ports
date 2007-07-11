@@ -1,0 +1,94 @@
+$OpenBSD: patch-libgnomecups_gnome-cups-printer_c,v 1.1 2007/07/11 23:00:47 jasper Exp $
+--- libgnomecups/gnome-cups-printer.c.orig	Thu Jul 12 00:31:35 2007
++++ libgnomecups/gnome-cups-printer.c	Thu Jul 12 00:47:46 2007
+@@ -976,8 +976,11 @@ gnome_cups_printer_get_is_local (GnomeCupsPrinter *pri
+ {
+ 	g_return_val_if_fail (GNOME_CUPS_IS_PRINTER (printer), FALSE);
+ 
+-	return (printer->details->device_uri != NULL) && 
+-		(strcmp (printer->details->device_uri, "") != 0);
++	return printer->details->device_uri != NULL && 
++		strncmp(printer->details->device_uri, "smb:", 4) != 0 &&
++		strncmp(printer->details->device_uri, "http:", 5) != 0 &&
++		strncmp(printer->details->device_uri, "https:", 5) != 0 &&
++		strncmp(printer->details->device_uri, "ipp:", 4)  != 0;
+ }
+ 
+ void
+@@ -1098,7 +1101,7 @@ gnome_cups_printer_get_ppd (GnomeCupsPrinter *printer)
+ 		return NULL;
+ 	}
+ 
+-	host = _gnome_cups_printer_get_host (printer);
++	host = _gnome_cups_printer_get_ppd_host (printer);
+ 	ppdpath = get_ppd_uri_path (printer);
+ 
+ 	gnome_cups_request_file (host, ppdpath, fd, &error);
+@@ -1234,7 +1237,11 @@ gnome_cups_printer_get_description (GnomeCupsPrinter *
+ 	g_return_val_if_fail (printer->details->description, "");
+ 
+ 	return printer->details->description;
+-	
++
++/* Define the CUPS-Add-Modify-Printer,
++ * see http://www.cups.org/documentation.php/spec-ipp.html#CUPS_ADD_MODIFY_PRINTER
++ */
++#define CUPS_ADD_MODIFY_PRINTER 0x4003
+ }
+ 
+ void
+@@ -1252,7 +1259,11 @@ gnome_cups_printer_set_description (GnomeCupsPrinter *
+ 		return;
+ 	}
+ 
+-	request = gnome_cups_request_new_for_printer (IPP_SET_PRINTER_ATTRIBUTES,
++	/*
++	 * As read in http://lists.samba.org/archive/samba-technical/2003-February/027044.html 
++	 * CUPS does not currently support IPP_SET_PRINTER_ATTRIBUTES, so a is used
++	 */
++	request = gnome_cups_request_new_for_printer (CUPS_ADD_MODIFY_PRINTER,
+ 						      printer);
+ 	ippAddString (request, IPP_TAG_PRINTER, IPP_TAG_TEXT,
+ 		      "printer-info", NULL, description);
+@@ -1284,8 +1295,12 @@ gnome_cups_printer_set_location (GnomeCupsPrinter *pri
+ 		return;
+ 	}
+ 
++	/*
++	 * Same as above (IPP_SET_PRINTER_ATTRIBUTES replaced by
++	 * CUPS-Add-Modify-Printer )
++	 */
+ 	request = gnome_cups_request_new_for_printer (
+-		IPP_SET_PRINTER_ATTRIBUTES, printer);
++		CUPS_ADD_MODIFY_PRINTER, printer);
+ 	ippAddString (request, IPP_TAG_PRINTER, IPP_TAG_TEXT,
+ 		"printer-location", NULL, location);
+ 	response = gnome_cups_request_execute (request, NULL, "/admin/", error);
+@@ -1963,4 +1978,27 @@ _gnome_cups_printer_get_host (GnomeCupsPrinter *printe
+ 	}
+ 	
+ 	return host;
++}
++
++gchar *
++_gnome_cups_printer_get_ppd_host (GnomeCupsPrinter *printer)
++{
++       gchar *host = NULL;
++
++       if (printer->details->printer_uri) {
++	       gchar *x, *y;
++
++	       x = strstr (printer->details->printer_uri, "://");
++
++	       if (x) {
++		       x += 3;
++		       y = strpbrk (x, ":/");
++		       if (y)
++			       host = g_strndup (x, y - x);
++		       else 
++			       host = g_strdup (x);
++	       }
++       }
++       
++       return host;
+ }
