@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/02 13:00:53 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2007/07/12 09:37:05 aanriot Exp $
 
 COMMENT=	"modular log analyzer"
 
@@ -27,6 +27,7 @@ LIB_DEPENDS=	gd.>=18::graphics/gd \
 		bz2.>=10::archivers/bzip2
 
 USE_LIBTOOL=	Yes
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir=${PREFIX}/lib/modlogan
 CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" \
