@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.9 2007/06/14 21:44:49 bernd Exp $
---- Makefile.orig	Sun Jun  3 01:21:54 2007
-+++ Makefile	Thu Jun 14 23:30:38 2007
-@@ -135,13 +135,13 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
+$OpenBSD: patch-Makefile,v 1.10 2007/07/12 18:26:04 bernd Exp $
+--- Makefile.orig	Sat Jun 16 17:31:24 2007
++++ Makefile	Sun Jun 17 19:42:08 2007
+@@ -137,13 +137,13 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-Makefile,v 1.9 2007/06/14 21:44:49 bernd Exp $
  bindir = $(prefix)/bin
  gitexecdir = $(bindir)
  sharedir = $(prefix)/share/
-@@ -151,7 +151,7 @@ sysconfdir = /etc
+@@ -153,7 +153,7 @@ sysconfdir = /etc
  else
  sysconfdir = $(prefix)/etc
  endif
@@ -26,7 +26,7 @@ $OpenBSD: patch-Makefile,v 1.9 2007/06/14 21:44:49 bernd Exp $
  # DESTDIR=
  
  # default configuration for gitweb
-@@ -172,13 +172,13 @@ GITWEB_SITE_FOOTER =
+@@ -174,13 +174,13 @@ GITWEB_SITE_FOOTER =
  
  export prefix bindir gitexecdir sharedir template_dir sysconfdir
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-Makefile,v 1.9 2007/06/14 21:44:49 bernd Exp $
  
  export TCL_PATH TCLTK_PATH
  
-@@ -448,10 +448,9 @@ ifeq ($(uname_S),FreeBSD)
+@@ -451,10 +451,9 @@ ifeq ($(uname_S),FreeBSD)
  	BASIC_LDFLAGS += -L/usr/local/lib
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -55,7 +55,7 @@ $OpenBSD: patch-Makefile,v 1.9 2007/06/14 21:44:49 bernd Exp $
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -528,7 +527,7 @@ ifndef NO_CURL
+@@ -531,7 +530,7 @@ ifndef NO_CURL
  endif
  
  ifndef NO_OPENSSL
@@ -64,7 +64,7 @@ $OpenBSD: patch-Makefile,v 1.9 2007/06/14 21:44:49 bernd Exp $
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/lib $(CC_LD_DYNPATH)$(OPENSSLDIR)/lib
-@@ -951,7 +950,7 @@ all:: $(TEST_PROGRAMS)
+@@ -962,7 +961,7 @@ all:: $(TEST_PROGRAMS)
  
  export NO_SVN_TESTS
  

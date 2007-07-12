@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/06/14 21:44:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2007/07/12 18:26:04 bernd Exp $
 
 COMMENT-main=		"GIT - Tree History Storage Tool"
 COMMENT-svn=		"GIT - subversion interoperability tools"
 
-V=			1.5.2.1
+V=			1.5.2.3
 DISTNAME=		git-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
@@ -62,6 +62,7 @@ post-extract:
 	@rm -f ${WRKDIR}/man1/git-p4import.1
 
 post-install:
+	${INSTALL_DATA} ${WRKBUILD}/libgit.a ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKBUILD}/contrib/emacs/*.el \
 		${PREFIX}/share/emacs/site-lisp
