@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2007/07/11 22:13:05 martynas Exp $
+# $OpenBSD: Makefile,v 1.19 2007/07/12 10:27:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"data backends for the Evolution mail/PIM suite"
+COMMENT=		data backends for the Evolution mail/PIM suite
 
 R=			1.10
 DISTNAME=		evolution-data-server-${R}.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		databases
 SHARED_LIBS +=	edataserver-1.2      9.0      # .9.0
 SHARED_LIBS +=	egroupwise-1.2       13.0     # .13.0
@@ -59,7 +60,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-openldap=${LOCALBASE} \
 			--enable-gnome-keyring=no \
 			--enable-nss=yes \
-			--enable-smime=yes
+			--enable-smime=yes \
+			--with-krb5 \
+			--with-krb5-libs=/usr/lib \
+			--with-krb5-includes=/usr/include/kerberosV
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
