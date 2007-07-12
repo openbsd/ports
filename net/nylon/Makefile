@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/16 23:23:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/12 22:30:50 rui Exp $
 
-COMMENT=	"lightweight SOCKS 4 and SOCKS 5 proxy"
-DISTNAME=	nylon-1.2
-PKGNAME=	${DISTNAME}p0
+COMMENT=	lightweight SOCKS 4 and SOCKS 5 proxy
+DISTNAME=	nylon-1.21
 CATEGORIES=	net
 
 HOMEPAGE=	http://monkey.org/~marius/nylon/
