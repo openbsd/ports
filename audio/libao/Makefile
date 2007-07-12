@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2007/07/06 14:21:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2007/07/12 21:10:15 naddy Exp $
 
 COMMENT-main=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
 COMMENT-esd=	"ESounD module for portable audio output library"
 
-VERSION=	0.8.6
+VERSION=	0.8.8
 DISTNAME=	libao-${VERSION}
 PKGNAME-main=	libao-${VERSION}
 PKGNAME-arts=	libao-arts-${VERSION}
@@ -45,10 +45,10 @@ CONFIGURE_ARGS+=--disable-arts
 CONFIGURE_ARGS+=--disable-esd
 .endif
 CONFIGURE_ARGS+=--disable-nas \
-		--disable-polyp
+		--disable-pulse
 
 .if ${MULTI_PACKAGES:M-arts}
-MODULES=		devel/gettext
+MODULES=	devel/gettext
 .endif
 
 LIB_DEPENDS-main=

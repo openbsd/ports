@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2007/07/06 14:21:05 naddy Exp $
---- configure.orig	Tue Jan 11 23:08:26 2005
-+++ configure	Thu Jul  5 18:27:12 2007
-@@ -19103,7 +19103,7 @@ if test -z "$GCC"; then
+$OpenBSD: patch-configure,v 1.9 2007/07/12 21:10:15 naddy Exp $
+--- configure.orig	Thu May 24 12:51:52 2007
++++ configure	Wed Jul 11 21:58:16 2007
+@@ -20076,7 +20076,7 @@ if test -z "$GCC"; then
          *)
                  PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
                  DEBUG="-g"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.8 2007/07/06 14:21:05 naddy Exp $
                  PROFILE="-g -p" ;;
          esac
  else
-@@ -19126,9 +19126,9 @@ else
+@@ -20099,9 +20099,9 @@ else
                  PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char -Ddlsym=dlsym_auto_underscore" ;;
          *)
                  PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
