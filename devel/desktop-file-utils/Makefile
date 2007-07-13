@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2007/04/01 21:13:53 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/07/13 08:05:18 ajacoutot Exp $
 
-COMMENT=	"utilities for 'desktop' entries"
+COMMENT=	utilities for 'desktop' entries
 
 DISTNAME=	desktop-file-utils-0.12
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
-HOMEPAGE=	http://freedesktop.org/wiki/Software_2fdesktop_2dfile_2dutils
+HOMEPAGE=	http://freedesktop.org/wiki/Software/desktop-file-utils
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
