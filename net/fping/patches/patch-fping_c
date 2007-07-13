@@ -1,6 +1,6 @@
-$OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
---- fping.c.orig	Mon Jan 21 02:06:30 2002
-+++ fping.c	Mon Jun 19 22:22:42 2006
+$OpenBSD: patch-fping_c,v 1.7 2007/07/13 08:13:22 djm Exp $
+--- fping.c.orig	Thu Jul 12 12:36:46 2007
++++ fping.c	Thu Jul 12 12:36:50 2007
 @@ -42,7 +42,6 @@
   * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
   * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
@@ -72,7 +72,32 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
       int                  total_time_i;       /* sum of response times */
       int                  *resp_times;        /* individual response times */
  #if defined( DEBUG ) || defined( _DEBUG )
-@@ -482,7 +490,11 @@ int main( int argc, char **argv )
+@@ -283,6 +291,12 @@ u_int ping_pkt_size;
+ u_int count = 1;
+ u_int trials;
+ u_int report_interval = 0;
++int src_addr_present = 0;
++#ifndef IPV6
++struct in_addr src_addr;
++#else
++struct in6_addr src_addr;
++#endif
+ 
+ /* global stats */
+ long max_reply = 0;
+@@ -408,6 +422,11 @@ int main( int argc, char **argv )
+ 	struct protoent *proto;
+ 	char *buf;
+ 	uid_t uid;
++#ifndef IPV6
++	struct sockaddr_in sa;
++#else
++	struct sockaddr_in6 sa;
++#endif
+ 	/* check if we are root */
+ 
+ 	if( geteuid() )
+@@ -482,7 +501,11 @@ int main( int argc, char **argv )
  
  	}/* IF */
  
@@ -85,7 +110,16 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  	ident = getpid() & 0xFFFF;
  
  	verbose_flag = 1;
-@@ -502,9 +514,9 @@ int main( int argc, char **argv )
+@@ -491,7 +514,7 @@ int main( int argc, char **argv )
+ 
+ 	/* get command line options */
+ 
+-	while( ( c = getopt( argc, argv, "gedhlmnqusaAvz:t:i:p:f:r:c:b:C:Q:B:" ) ) != EOF )
++	while( ( c = getopt( argc, argv, "gedhlmnqusaAvz:t:i:p:f:r:c:b:C:Q:B:S:" ) ) != EOF )
+ 	{
+ 		switch( c )
+ 		{
+@@ -502,9 +525,9 @@ int main( int argc, char **argv )
  			break;
  		
  		case 'r':
@@ -97,7 +131,24 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  			break;
  		
  		case 'i':
-@@ -808,8 +820,13 @@ int main( int argc, char **argv )
+@@ -639,6 +662,16 @@ int main( int argc, char **argv )
+ 			generate_flag = 1;
+ 			break;
+ 
++		case 'S':
++#ifndef IPV6
++			if( ! inet_pton( AF_INET, optarg, &src_addr ) )
++#else
++			if( ! inet_pton( AF_INET6, optarg, &src_addr ) )
++#endif
++				usage();
++			src_addr_present = 1;
++			break;
++
+ 		default:
+ 			usage();
+ 			break;
+@@ -808,8 +841,13 @@ int main( int argc, char **argv )
  	else if( filename )
  	{
  		FILE *ping_file;
@@ -111,7 +162,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  		char *p;
  		
  		if( strcmp( filename, "-" ) == 0 )
-@@ -823,6 +840,7 @@ int main( int argc, char **argv )
+@@ -823,6 +861,7 @@ int main( int argc, char **argv )
  
  		while( fgets( line, 132, ping_file ) )
  		{
@@ -119,7 +170,30 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  			if( sscanf( line, "%s", host ) != 1 )
  				continue;
  			
-@@ -1503,7 +1521,6 @@ void send_ping( int s, HOST_ENTRY *h )
+@@ -962,6 +1001,22 @@ int main( int argc, char **argv )
+ 	if( !num_hosts )
+ 		exit( 2 );
+ 
++	/* set the source address */
++
++	if( src_addr_present )
++	{
++		memset( &sa, 0, sizeof( sa ) );
++#ifndef IPV6
++		sa.sin_family = AF_INET;
++		sa.sin_addr = src_addr;
++#else
++		sa.sin6_family = AF_INET6;
++		sa.sin6_addr = src_addr;
++#endif
++		if ( bind( s, (struct sockaddr *)&sa, sizeof( sa ) ) < 0 )
++			errno_crash_and_burn( "cannot bind source address" );
++	}
++
+ 	/* allocate array to hold outstanding ping requests */
+ 
+ 	table = ( HOST_ENTRY** )malloc( sizeof( HOST_ENTRY* ) * num_hosts );
+@@ -1503,7 +1558,6 @@ void send_ping( int s, HOST_ENTRY *h )
  	memset( buffer, 0, ping_pkt_size * sizeof( char ) );
  	icp = ( FPING_ICMPHDR* )buffer;
  
@@ -127,7 +201,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  #ifndef IPV6
  	icp->icmp_type = ICMP_ECHO;
  	icp->icmp_code = 0;
-@@ -1512,6 +1529,8 @@ void send_ping( int s, HOST_ENTRY *h )
+@@ -1512,6 +1566,8 @@ void send_ping( int s, HOST_ENTRY *h )
  	icp->icmp_id = ident;
  
  	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
@@ -136,7 +210,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  	pdp->ping_ts = h->last_send_time;
  	pdp->ping_count = h->num_sent;
  
-@@ -1523,6 +1542,8 @@ void send_ping( int s, HOST_ENTRY *h )
+@@ -1523,6 +1579,8 @@ void send_ping( int s, HOST_ENTRY *h )
  	icp->icmp6_id = ident;
  
  	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
@@ -145,7 +219,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  	pdp->ping_ts = h->last_send_time;
  	pdp->ping_count = h->num_sent;
  
-@@ -1611,6 +1632,9 @@ int wait_for_reply( void )
+@@ -1611,6 +1669,9 @@ int wait_for_reply( void )
  
  	result = recvfrom_wto( s, buffer, sizeof(buffer), &response_addr, select_time );
  
@@ -155,7 +229,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  	if( result < 0 )
  		return 0;	/* timeout */
    
-@@ -1625,7 +1649,7 @@ int wait_for_reply( void )
+@@ -1625,7 +1686,7 @@ int wait_for_reply( void )
  
  	ip = ( struct ip* )buffer;
  #ifndef IPV6
@@ -164,7 +238,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  	/* The alpha headers are decidedly broken.
  	 * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
  	 * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
-@@ -1633,7 +1657,7 @@ int wait_for_reply( void )
+@@ -1633,7 +1694,7 @@ int wait_for_reply( void )
  	hlen = ( ip->ip_vhl & 0x0F ) << 2;
  #else
  	hlen = ip->ip_hl << 2;
@@ -173,7 +247,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  	if( result < hlen + ICMP_MINLEN )
  #else
  	if( result < sizeof(FPING_ICMPHDR) )
-@@ -1690,7 +1714,6 @@ int wait_for_reply( void )
+@@ -1690,7 +1751,6 @@ int wait_for_reply( void )
  	h = table[n];
  
  	/* received ping is cool, so process it */
@@ -181,7 +255,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  	h->waiting = 0;
  	h->timeout = timeout;
  	h->num_recv++;
-@@ -2570,7 +2593,7 @@ char * sprint_tm( int t )
+@@ -2570,7 +2630,7 @@ char * sprint_tm( int t )
  	/* <= 0.99 ms */
  	if( t < 100 )
  	{
@@ -190,7 +264,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  		return( buf );
  
  	}/* IF */
-@@ -2578,7 +2601,7 @@ char * sprint_tm( int t )
+@@ -2578,7 +2638,7 @@ char * sprint_tm( int t )
  	/* 1.00 - 9.99 ms */
  	if( t < 1000 )
  	{
@@ -199,7 +273,7 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  		return( buf );
  
  	}/* IF */
-@@ -2586,13 +2609,13 @@ char * sprint_tm( int t )
+@@ -2586,13 +2646,13 @@ char * sprint_tm( int t )
  	/* 10.0 - 99.9 ms */
  	if( t < 10000 )
  	{
@@ -215,3 +289,11 @@ $OpenBSD: patch-fping_c,v 1.6 2007/02/20 20:33:23 naddy Exp $
  	return( buf );
  
  } /* sprint_tm() */
+@@ -2732,6 +2792,7 @@ void usage( void )
+ 	fprintf( stderr, "   -Q n       same as -q, but show summary every n seconds\n" );
+ 	fprintf( stderr, "   -r n       number of retries (default %d)\n", retry );
+ 	fprintf( stderr, "   -s         print final stats\n" );
++	fprintf( stderr, "   -S addr    set source address\n" );
+ 	fprintf( stderr, "   -t n       individual target initial timeout (in millisec) (default %d)\n", timeout / 100 );
+ 	fprintf( stderr, "   -u         show targets that are unreachable\n" );
+ 	fprintf( stderr, "   -v         show version\n" );
