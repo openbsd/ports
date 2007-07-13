@@ -1,0 +1,3 @@
+POE::Component::Client::MPD is a perl module for developing MPD (Music
+Player Daemon) clients (or any other scripts that control the MPD
+server) based on the POE framework.
