@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2007/06/22 14:48:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.175 2007/07/13 11:42:08 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -107,6 +107,7 @@
      SUBDIR += p5-MP3-Tag
      SUBDIR += p5-MP4-Info
      SUBDIR += p5-Ogg-Vorbis-Header
+     SUBDIR += p5-POE-Component-Client-MPD
      SUBDIR += p5-cddb
      SUBDIR += p5-libvorbis
      SUBDIR += pacpl
