@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/07/13 08:16:16 rui Exp $
 @man man/man1/tcpslice.1
 sbin/tcpslice
 share/doc/tcpslice/
-share/doc/tcpslice/CHANGES
+@comment share/doc/tcpslice/CHANGES
 share/doc/tcpslice/README

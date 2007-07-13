@@ -1,3 +1,3 @@
-Tcpslice is a program for extracting portions of packettrace 
-files generated using tcpdump's -w flag.  It can also be used 
-to glue together several such files.  
+tcpslice is a program for extracting portions of packettrace
+files generated using tcpdump's -w flag. It can also be used
+to glue together several such files.

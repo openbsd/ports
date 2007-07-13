@@ -1,22 +1,23 @@
-$OpenBSD: patch-tcpslice_h,v 1.1 2001/10/18 15:12:40 naddy Exp $
---- tcpslice.h.orig	Fri Oct 12 18:23:11 2001
-+++ tcpslice.h	Fri Oct 12 18:24:17 2001
-@@ -22,12 +22,12 @@
+$OpenBSD: patch-tcpslice_h,v 1.2 2007/07/13 08:16:16 rui Exp $
+--- tcpslice.h.orig	Thu May 31 19:20:29 2007
++++ tcpslice.h	Thu May 31 19:20:54 2007
+@@ -25,13 +25,13 @@
  
- time_t	gwtm2secs( struct tm *tm );
+ time_t			gwtm2secs( struct tm *tm );
  
--int	sf_find_end( struct pcap *p, struct timeval *first_timestamp,
--			struct timeval *last_timestamp );
--int	sf_timestamp_less_than( struct timeval *t1, struct timeval *t2 );
-+int	sf_find_end( struct pcap *p, struct bpf_timeval *first_timestamp,
-+			struct bpf_timeval *last_timestamp );
-+int	sf_timestamp_less_than( struct bpf_timeval *t1, struct bpf_timeval *t2 );
- int	sf_find_packet( struct pcap *p,
--		struct timeval *min_time, off_t min_pos,
--		struct timeval *max_time, off_t max_pos,
--		struct timeval *desired_time );
-+		struct bpf_timeval *min_time, off_t min_pos,
-+		struct bpf_timeval *max_time, off_t max_pos,
-+		struct bpf_timeval *desired_time );
+-int			sf_find_end( struct pcap *p, struct timeval *first_timestamp,
+-					struct timeval *last_timestamp );
+-int			sf_timestamp_less_than( struct timeval *t1, struct timeval *t2 );
++int			sf_find_end( struct pcap *p, struct bpf_timeval *first_timestamp,
++					struct bpf_timeval *last_timestamp );
++int			sf_timestamp_less_than( struct bpf_timeval *t1, struct bpf_timeval *t2 );
+ int			sf_find_packet( struct pcap *p,
+-				struct timeval *min_time, off_t min_pos,
+-				struct timeval *max_time, off_t max_pos,
+-				struct timeval *desired_time );
++				struct bpf_timeval *min_time, off_t min_pos,
++				struct bpf_timeval *max_time, off_t max_pos,
++				struct bpf_timeval *desired_time );
  
- void	error(const char *fmt, ...);
+ void			error(const char *fmt, ...);
+ 

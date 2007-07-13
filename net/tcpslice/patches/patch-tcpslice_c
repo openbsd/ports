@@ -1,32 +1,30 @@
-$OpenBSD: patch-tcpslice_c,v 1.2 2006/04/02 14:45:10 sturm Exp $
---- tcpslice.c.orig	Tue Oct 25 00:06:26 2005
-+++ tcpslice.c	Sun Apr  2 13:24:33 2006
-@@ -84,7 +84,7 @@ static const char rcsid[] =
+$OpenBSD: patch-tcpslice_c,v 1.3 2007/07/13 08:16:16 rui Exp $
+--- tcpslice.c.orig	Thu May 31 19:18:59 2007
++++ tcpslice.c	Thu May 31 19:20:16 2007
+@@ -101,7 +101,7 @@ extern size_t strlcpy(char *, const char *, size_t);
  struct state {
  	off_t	start_pos,	/* seek position corresponding to start time */
  		stop_pos;	/* seek position corresponding to stop time */
 -	struct timeval
 +	struct bpf_timeval
  		file_start_time,	/* time of first pkt in file */
- 		file_stop_time;		/* time of last pkt in file */
- 	pcap_t	*p;
-@@ -107,19 +107,19 @@ enum stamp_styles timestamp_style = TIME
+ 		file_stop_time,		/* time of last pkt in file */
+ 		last_pkt_time;		/* time of most recently read pkt */
+@@ -125,18 +125,18 @@ enum stamp_styles timestamp_style = TIMESTAMP_RAW;
  
  
  int is_timestamp( char *str );
 -struct timeval parse_time(char *time_string, struct timeval base_time);
 +struct bpf_timeval parse_time(char *time_string, struct bpf_timeval base_time);
  void fill_tm(char *time_string, int is_delta, struct tm *t, time_t *usecs_addr);
- void get_file_range( char filename[], pcap_t **p,
--			struct timeval *first_time, struct timeval *last_time );
--struct timeval first_packet_time(char filename[], pcap_t **p_addr);
 -struct timeval lowest_start_time(struct state *states, int numfiles);
-+			struct bpf_timeval *first_time, struct bpf_timeval *last_time );
-+struct bpf_timeval first_packet_time(char filename[], pcap_t **p_addr);
+-struct timeval latest_end_time(struct state *states, int numfiles);
 +struct bpf_timeval lowest_start_time(struct state *states, int numfiles);
++struct bpf_timeval latest_end_time(struct state *states, int numfiles);
  void get_next_packet(struct state *s);
  struct state *open_files(char *filenames[], int numfiles);
- void extract_slice(struct state *states, int numfiles, char *write_file_name,
+ static void extract_slice(struct state *states, int numfiles,
+ 			const char *write_file_name,
 -			struct timeval *start_time, struct timeval *stop_time,
 +			struct bpf_timeval *start_time, struct bpf_timeval *stop_time,
  			int keep_dups, int relative_time_merge,
@@ -34,19 +32,19 @@ $OpenBSD: patch-tcpslice_c,v 1.2 2006/04/02 14:45:10 sturm Exp $
 -char *timestamp_to_string(struct timeval *timestamp);
 +			struct bpf_timeval *base_time);
 +char *timestamp_to_string(struct bpf_timeval *timestamp);
- void dump_times(pcap_t **p, char filename[]);
+ void dump_times(struct state *states, int numfiles);
  __dead void usage(void)__attribute__((volatile));
  
-@@ -144,7 +144,7 @@ main(int argc, char **argv)
+@@ -161,7 +161,7 @@ main(int argc, char **argv)
  	char *start_time_string = 0;
  	char *stop_time_string = 0;
- 	char *write_file_name = "-";	/* default is stdout */
+ 	const char *write_file_name = "-";	/* default is stdout */
 -	struct timeval first_time, start_time, stop_time;
 +	struct bpf_timeval first_time, start_time, stop_time;
- 	pcap_t *pcap;
  	char ebuf[PCAP_ERRBUF_SIZE];
  	struct state *states;
-@@ -280,15 +280,19 @@ int is_timestamp( char *str )
+ 
+@@ -306,12 +306,12 @@ int is_timestamp( char *str )
   * containing the specified time.
   */
  
@@ -59,35 +57,10 @@ $OpenBSD: patch-tcpslice_c,v 1.2 2006/04/02 14:45:10 sturm Exp $
  	struct tm t;
 -	struct timeval result;
 +	struct bpf_timeval result;
-+	time_t secs;
  	time_t usecs = 0;
  	int is_delta = (time_string[0] == '+');
  
-+	secs = base_time.tv_sec;
-+	bt = localtime(&secs);
-+
- 	if ( is_delta )
- 		++time_string;	/* skip over '+' sign */
- 
-@@ -472,7 +476,7 @@ fill_tm(char *time_string, int is_delta,
-  */
- void
- get_file_range( char filename[], pcap_t **p,
--		struct timeval *first_time, struct timeval *last_time )
-+		struct bpf_timeval *first_time, struct bpf_timeval *last_time )
- {
- 	*first_time = first_packet_time( filename, p );
- 
-@@ -485,7 +489,7 @@ get_file_range( char filename[], pcap_t 
-  * reading.
-  */
- 
--struct timeval
-+struct bpf_timeval
- first_packet_time(char filename[], pcap_t **p_addr)
- {
- 	struct pcap_pkthdr hdr;
-@@ -504,10 +508,10 @@ first_packet_time(char filename[], pcap_
+@@ -485,10 +485,10 @@ fill_tm(char *time_string, int is_delta, struct tm *t,
  
  
  /* Of all the files, what is the lowest start time. */
@@ -100,10 +73,23 @@ $OpenBSD: patch-tcpslice_c,v 1.2 2006/04/02 14:45:10 sturm Exp $
  
  	while (numfiles--) {
  		if (sf_timestamp_less_than(&states->file_start_time, &min_time)) {
-@@ -590,13 +594,13 @@ open_files(char *filenames[], int numfil
+@@ -500,10 +500,10 @@ lowest_start_time(struct state *states, int numfiles)
+ }
+ 
+ /* Of all the files, what is the latest end time. */
+-struct timeval
++struct bpf_timeval
+ latest_end_time(struct state *states, int numfiles)
+ {
+-	struct timeval max_time = states->file_start_time;
++	struct bpf_timeval max_time = states->file_start_time;
+ 
+ 	while (numfiles--) {
+ 		if (sf_timestamp_less_than(&max_time, &states->file_stop_time)) {
+@@ -599,12 +599,12 @@ open_files(char *filenames[], int numfiles)
  
  void
- extract_slice(struct state *states, int numfiles, char *write_file_name,
+ extract_slice(struct state *states, int numfiles, const char *write_file_name,
 -		struct timeval *start_time, struct timeval *stop_time,
 +		struct bpf_timeval *start_time, struct bpf_timeval *stop_time,
  		int keep_dups, int relative_time_merge,
@@ -111,13 +97,12 @@ $OpenBSD: patch-tcpslice_c,v 1.2 2006/04/02 14:45:10 sturm Exp $
 +		struct bpf_timeval *base_time)
  {
  	struct state *s, *min_state;
- 	pcap_dumper_t *dumper;
 -	struct timeval temp1, temp2, relative_start, relative_stop;
 +	struct bpf_timeval temp1, temp2, relative_start, relative_stop;
  	int i;
  
  	struct state *last_state;	/* remember the last packet */
-@@ -747,7 +751,7 @@ extract_slice(struct state *states, int 
+@@ -774,7 +774,7 @@ extract_slice(struct state *states, int numfiles, cons
   */
  
  char *
@@ -126,12 +111,3 @@ $OpenBSD: patch-tcpslice_c,v 1.2 2006/04/02 14:45:10 sturm Exp $
  {
  	struct tm *t;
  #define NUM_BUFFERS 2
-@@ -793,7 +797,7 @@ timestamp_to_string(struct timeval *time
- void
- dump_times(pcap_t **p, char filename[])
- {
--	struct timeval first_time, last_time;
-+	struct bpf_timeval first_time, last_time;
- 
- 	get_file_range( filename, p, &first_time, &last_time );
- 

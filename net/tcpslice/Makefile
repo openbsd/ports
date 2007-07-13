@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2006/04/02 14:45:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/13 08:16:16 rui Exp $
 
-COMMENT=	"tool for extracting and gluing pcap (tcpdump) files"
+COMMENT=	tool for extracting and gluing pcap (tcpdump) files
 
-DISTNAME=	tcpslice-1.2a3
+DISTNAME=	tcpslice-2007.07.09
+PKGNAME=        ${DISTNAME:S/.//g}
 CATEGORIES=	net
 
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/
+MASTER_SITES=	http://www.tcpdump.org/weekly/
 
 MAINTAINER=	Rui Reis <rui@rui.cx>
 
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 
 NO_REGRESS=	Yes
 
