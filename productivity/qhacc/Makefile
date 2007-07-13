@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/02 21:13:44 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/07/13 08:53:47 aanriot Exp $
 
 COMMENT=	"qt home accounting program"
 
@@ -11,6 +11,7 @@ MASTER_SITES=	${HOMEPAGE} \
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MODULES=	x11/qt2
+USE_X11=	Yes
 
 MAKE_ENV=	QTDIR=${MODQT_LIBDIR} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_FLAGS=	QTLIBDIR=${MODQT_LIBDIR} QTINCDIR=${MODQT_INCDIR}

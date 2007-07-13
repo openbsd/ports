@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/04 09:56:34 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/13 08:53:47 aanriot Exp $
 
 COMMENT-main=		"GPS waypoint, track, and route conversion tool"
 COMMENT-gui=		"Tk front-end to gpsbabel"
@@ -31,6 +31,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			WEB=${WRKSRC} 
 
 USE_GMAKE=		Yes
+USE_X11=		Yes
 NO_REGRESS=		Yes # expects FP conversion to be exact and invertible
 MULTI_PACKAGES=		-main -gui
 
