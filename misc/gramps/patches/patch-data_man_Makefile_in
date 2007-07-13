@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_man_Makefile_in,v 1.1.1.1 2007/07/13 20:03:38 ajacoutot Exp $
+--- data/man/Makefile.in.orig	Thu Jul 12 13:20:22 2007
++++ data/man/Makefile.in	Thu Jul 12 13:20:31 2007
+@@ -226,7 +226,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = fr
++SUBDIRS =
+ man_IN_FILES = gramps.1.in
+ man_MANS = $(man_IN_FILES:.1.in=.1)
+ EXTRA_DIST = $(man_MANS) $(man_IN_FILES)

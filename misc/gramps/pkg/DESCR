@@ -1,0 +1,7 @@
+GRAMPS is the Genealogical Research and Analysis Management Program
+System. In other words, it is a personal genealogy program letting you
+store, edit, and research genealogical data using the powers of your
+computer.
+GRAMPS makes every effort to maintain compatibility with GEDCOM, the
+general standard of recording genealogical information. We have import
+and export filters that enable GRAMPS to read and write GEDCOM files.

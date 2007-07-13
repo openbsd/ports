@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/07/13 20:03:38 ajacoutot Exp $
+--- Makefile.in.orig	Thu Jul 12 14:27:34 2007
++++ Makefile.in	Thu Jul 12 14:27:44 2007
+@@ -259,7 +259,7 @@ EXTRA_DIST = \
+ 	config.sub config.guess gnome-doc-utils.make
+ 
+ bin_SCRIPTS = gramps
+-dist_pkgdata_DATA = COPYING
++dist_pkgdata_DATA =
+ distuninstallcheck_listfiles = find . -type -f -print | grep -E -v '/(globs|magic|XMLnamespaces)'
+ DISTCLEANFILES = intltool-extract intltool-merge intltool-update \
+ 	gnome-doc-utils.make

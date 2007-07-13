@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2007/07/13 20:03:38 ajacoutot Exp $
+--- data/Makefile.in.orig	Thu Jul 12 13:18:29 2007
++++ data/Makefile.in	Thu Jul 12 13:19:10 2007
+@@ -320,7 +320,7 @@ CLEANFILES = \
+ # or disable both in a packager mode
+ GCONF_SCHEMAS_INSTALLATION = $(am__append_1)
+ GCONF_SCHEMAS_UNINSTALLATION = $(am__append_2)
+-SHARED_MIME_INSTALLATION = $(am__append_3)
++SHARED_MIME_INSTALLATION =
+ SHARED_MIME_UNINSTALLATION = $(am__append_4)
+ all: all-recursive
+ 
