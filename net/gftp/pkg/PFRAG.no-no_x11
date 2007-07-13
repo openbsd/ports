@@ -1,2 +1,6 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1.1.1 2005/11/02 20:19:29 alek Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2007/07/13 08:09:44 ajacoutot Exp $
 bin/gftp-gtk
+share/applications/
+share/applications/gftp.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
