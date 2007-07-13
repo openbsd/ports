@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_share_vm_gc_implementation_includeDB_gc_parNew,v 1.1 2007/07/13 22:52:35 kurt Exp $
+--- hotspot/src/share/vm/gc_implementation/includeDB_gc_parNew.orig	Thu Jul  5 12:45:57 2007
++++ hotspot/src/share/vm/gc_implementation/includeDB_gc_parNew	Thu Jul  5 12:46:06 2007
+@@ -39,7 +39,7 @@ parCardTableModRefBS.cpp                cardTableRS.hp
+ parCardTableModRefBS.cpp                java.hpp
+ parCardTableModRefBS.cpp                mutexLocker.hpp
+ parCardTableModRefBS.cpp                sharedHeap.hpp
+-parCardTableModRefBS.cpp                space.hpp
++parCardTableModRefBS.cpp                space.inline.hpp
+ parCardTableModRefBS.cpp                universe.hpp
+ parCardTableModRefBS.cpp                virtualspace.hpp
+ 

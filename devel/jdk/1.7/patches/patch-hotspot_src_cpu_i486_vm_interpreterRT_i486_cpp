@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_cpu_i486_vm_interpreterRT_i486_cpp,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/src/cpu/i486/vm/interpreterRT_i486.cpp.orig	Tue Apr 10 04:01:26 2007
-+++ hotspot/src/cpu/i486/vm/interpreterRT_i486.cpp	Mon Apr 16 08:42:38 2007
-@@ -100,7 +100,7 @@ class SlowSignatureHandler: public NativeSignatureIter
+$OpenBSD: patch-hotspot_src_cpu_i486_vm_interpreterRT_i486_cpp,v 1.2 2007/07/13 22:52:35 kurt Exp $
+--- hotspot/src/cpu/i486/vm/interpreterRT_i486.cpp.orig	Thu Jul  5 04:55:07 2007
++++ hotspot/src/cpu/i486/vm/interpreterRT_i486.cpp	Fri Jul  6 08:51:59 2007
+@@ -101,7 +101,7 @@ class SlowSignatureHandler: public NativeSignatureIter
    virtual void pass_object() { 
      // pass address of from
      intptr_t from_addr = (intptr_t)(_from + Interpreter::local_offset_in_bytes(0));

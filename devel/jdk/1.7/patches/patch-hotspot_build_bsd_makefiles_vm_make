@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/build/bsd/makefiles/vm.make.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/build/bsd/makefiles/vm.make	Mon Apr 16 08:42:38 2007
+$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.2 2007/07/13 22:52:35 kurt Exp $
+--- hotspot/build/bsd/makefiles/vm.make.orig	Fri Jul  6 08:51:57 2007
++++ hotspot/build/bsd/makefiles/vm.make	Fri Jul  6 08:59:35 2007
 @@ -100,6 +100,10 @@ CPPFLAGS =           \
    ${RELEASE_VERSION} \
    ${VM_DISTRO}
@@ -21,23 +21,12 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.1.1.1 2007/05/08 17:06:1
  
  # By default, link the *.o into the library, not the executable.
  LINK_INTO$(LINK_INTO) = LIBJVM
-@@ -152,10 +156,17 @@ else
-   # get around library dependency and compatibility issues. Must use gcc not
-   # g++ to link.
-   LFLAGS_VM                += $(STATIC_LIBGCC)
--  LIBS_VM                  += $(STATIC_STDCXX) $(LIBS)
-+ifeq ($(BUILDARCH), i486)
-+  LIBS_VM                  += $(STATIC_STDCXX)
- endif
-+  LIBS_VM                  += $(LIBS)
-+endif
+@@ -138,7 +142,7 @@ mapfile_reorder : mapfile $(REORDERFILE)
+ 	rm -f $@
+ 	cat $^ > $@
  
--LINK_VM = $(LINK_LIB.c)
-+ifeq ($(BUILDARCH), i486)
-+  LINK_VM = $(LINK_LIB.c)
-+else
-+  LINK_VM = $(LINK_LIB.CC)
-+endif
+-STATIC_CXX = true
++STATIC_CXX = false
  
- # rule for building precompiled header
- $(PRECOMPILED_HEADER): $(Precompiled_Files)
+ ifeq ($(LINK_INTO),AOUT)
+   LIBJVM.o                 =

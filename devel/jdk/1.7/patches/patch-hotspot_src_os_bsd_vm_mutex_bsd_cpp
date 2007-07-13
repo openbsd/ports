@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_mutex_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/src/os/bsd/vm/mutex_bsd.cpp.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/src/os/bsd/vm/mutex_bsd.cpp	Mon Apr 16 08:42:39 2007
+$OpenBSD: patch-hotspot_src_os_bsd_vm_mutex_bsd_cpp,v 1.2 2007/07/13 22:52:35 kurt Exp $
+--- hotspot/src/os/bsd/vm/mutex_bsd.cpp.orig	Thu Jul  5 09:51:29 2007
++++ hotspot/src/os/bsd/vm/mutex_bsd.cpp	Thu Jul  5 09:51:31 2007
 @@ -252,7 +252,7 @@ bool Monitor::wait(bool no_safepoint_check, long timeo
      }
      
@@ -19,7 +19,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_mutex_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:1
  }
  
  
-@@ -343,7 +343,7 @@ bool Monitor::notify_all() {
+@@ -344,7 +344,7 @@ bool Monitor::notify_all() {
   * of "now + 100,000,000". This places a limit on the timeout of about 3.17
   * years from "now".
   */
@@ -28,7 +28,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_mutex_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:1
    assert (time > 0, "convertTime");
  
    struct timeval now;
-@@ -402,7 +402,7 @@ void Parker::park(bool isAbsolute, jlong time) {
+@@ -403,7 +403,7 @@ void Parker::park(bool isAbsolute, jlong time) {
    }
  
    // Next, demultiplex/decode time arguments
@@ -37,7 +37,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_mutex_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:1
    if (time < 0) { // don't wait at all
      return; 
    }
-@@ -455,8 +455,7 @@ void Parker::park(bool isAbsolute, jlong time) {
+@@ -456,8 +456,7 @@ void Parker::park(bool isAbsolute, jlong time) {
      }
    }
    assert_status(status == 0 || status == EINTR || 

@@ -1,21 +1,21 @@
-$OpenBSD: patch-hotspot_src_cpu_amd64_vm_assembler_amd64_cpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/cpu/amd64/vm/assembler_amd64.cpp.orig	Tue Apr 10 04:01:22 2007
-+++ hotspot/src/cpu/amd64/vm/assembler_amd64.cpp	Mon Apr 16 08:42:38 2007
-@@ -1240,7 +1240,7 @@ void Assembler::movl(Address dst, Register src)
+$OpenBSD: patch-hotspot_src_cpu_amd64_vm_assembler_amd64_cpp,v 1.2 2007/07/13 22:52:35 kurt Exp $
+--- hotspot/src/cpu/amd64/vm/assembler_amd64.cpp.orig	Fri Jul  6 10:49:14 2007
++++ hotspot/src/cpu/amd64/vm/assembler_amd64.cpp	Fri Jul  6 10:48:32 2007
+@@ -1282,7 +1282,7 @@ void Assembler::movl(Address dst, Register src) {
    emit_operand(src, dst);
  }
  
--void Assembler::movq(Register dst, int64_t imm64)
-+void Assembler::movq(Register dst, intptr_t imm64)
- {
+-void Assembler::mov64(Register dst, int64_t imm64) {
++void Assembler::mov64(Register dst, intptr_t imm64) {
    InstructionMark im(this);
-   int dstenc = dst->encoding();
-@@ -1379,7 +1379,7 @@ void Assembler::movq(Register dst, Address src)
-   }
+   int encode = prefixq_and_encode(dst->encoding());
+   emit_byte(0xB8 | encode);
+@@ -1309,7 +1309,7 @@ void Assembler::movq(Register dst, Address src) {
+   emit_operand(dst, src);
  }
  
--void Assembler::movq(Address dst, int64_t imm32)
-+void Assembler::movq(Address dst, intptr_t imm32)
- {
+-void Assembler::mov64(Address dst, int64_t imm32) {
++void Assembler::mov64(Address dst, intptr_t imm32) {
    assert(is_simm32(imm32), "lost bits");
    InstructionMark im(this);
+   prefixq(dst);

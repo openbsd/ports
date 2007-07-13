@@ -1,0 +1,15 @@
+$OpenBSD: patch-hotspot_src_share_vm_runtime_os_cpp,v 1.1 2007/07/13 22:52:35 kurt Exp $
+--- hotspot/src/share/vm/runtime/os.cpp.orig	Thu Jul  5 12:24:04 2007
++++ hotspot/src/share/vm/runtime/os.cpp	Thu Jul  5 13:06:15 2007
+@@ -153,7 +153,11 @@ char* os::iso8601_time(char* buffer, size_t buffer_len
+   }
+   // Save the results of localtime
+   const struct tm time_struct = *time_struct_temp;
++#if defined(_ALLBSD_SOURCE)
++  const time_t zone = (time_t) time_struct_temp->tm_gmtoff;
++#else
+   const time_t zone = timezone;
++#endif
+   
+   // If daylight savings time is in effect, 
+   // we are 1 hour East of our time zone
