@@ -1,0 +1,12 @@
+$OpenBSD: patch-client_audio_c,v 1.1 2007/07/13 22:48:44 rui Exp $
+--- client/audio.c.orig	Thu Jul 12 22:55:40 2007
++++ client/audio.c	Thu Jul 12 22:57:30 2007
+@@ -239,7 +239,7 @@ void audio_real_init(const char *const spec_name,
+     freelog(LOG_ERROR, _("Cannot find sound spec-file \"%s\"."), spec_name);
+     freelog(LOG_ERROR, _("To get sound you need to download a sound set!"));
+     freelog(LOG_ERROR, _("Get sound sets from <%s>."),
+-	    "ftp://ftp.freeciv.org/freeciv/contrib/sounds/sets");
++	    "ftp://ftp.freeciv.org/freeciv/contrib/audio/soundsets");
+     freelog(LOG_ERROR, _("Will continue with disabled sounds."));
+     tagfile = NULL;
+     return;
