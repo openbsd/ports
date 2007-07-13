@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2007/05/07 14:11:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2007/07/13 08:54:26 ajacoutot Exp $
 
-COMMENT=	"desktop organizer software for the palm pilot"
+COMMENT=	desktop organizer software for the palm pilot
 
 DISTNAME=	jpilot-0.99.9
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	comms palm
 
 MASTER_SITES=	${HOMEPAGE}
@@ -25,6 +25,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 
 LIB_DEPENDS=	pisock.>=9::comms/pilot-link \
 		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 MODULES=	devel/gettext
 

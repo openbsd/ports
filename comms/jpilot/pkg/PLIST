@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/10/20 11:49:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/07/13 08:54:26 ajacoutot Exp $
 %%SHARED%%
 bin/jpilot
 bin/jpilot-dump
@@ -84,3 +84,5 @@ share/locale/uk/LC_MESSAGES/jpilot.mo
 share/locale/vi/LC_MESSAGES/jpilot.mo
 share/locale/zh_CN/LC_MESSAGES/jpilot.mo
 share/locale/zh_TW/LC_MESSAGES/jpilot.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

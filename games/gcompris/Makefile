@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/03 17:42:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/13 08:54:26 ajacoutot Exp $
 
-COMMENT=	"educational game for children"
+COMMENT=	educational game for children
 
 DISTNAME=	gcompris-8.3.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -39,7 +40,8 @@ RUN_DEPENDS=	::games/gnuchess \
 		::databases/py-sqlite2 \
 		::x11/py-gtk2 \
 		::games/tuxpaint \
-		::cad/gnucap
+		::cad/gnucap \
+		:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
