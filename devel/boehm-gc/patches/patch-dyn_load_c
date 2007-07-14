@@ -1,15 +1,15 @@
-$OpenBSD: patch-dyn_load_c,v 1.4 2003/10/16 04:11:15 todd Exp $
---- dyn_load.c.orig	2003-05-30 19:54:50.000000000 -0500
-+++ dyn_load.c	2003-10-16 02:31:35.000000000 -0500
-@@ -57,6 +57,7 @@
+$OpenBSD: patch-dyn_load_c,v 1.5 2007/07/14 22:16:17 kili Exp $
+--- dyn_load.c.orig	Thu Jun 28 23:36:03 2007
++++ dyn_load.c	Fri Jul  6 22:13:16 2007
+@@ -63,6 +63,7 @@ static int (*GC_has_static_roots)(const char *, void *
      !defined(HPUX) && !(defined(LINUX) && defined(__ELF__)) && \
-     !defined(RS6000) && !defined(SCO_ELF) && !defined(DGUX) && \
+     !defined(AIX) && !defined(SCO_ELF) && !defined(DGUX) && \
      !(defined(FREEBSD) && defined(__ELF__)) && \
 +    !(defined(OPENBSD) && (defined(__ELF__) || defined(M68K))) && \
      !(defined(NETBSD) && defined(__ELF__)) && !defined(HURD) && \
-     !defined(DARWIN)
+     !defined(DARWIN) && !defined(CYGWIN32)
   --> We only know how to find data segments of dynamic libraries for the
-@@ -82,9 +83,9 @@
+@@ -84,9 +85,9 @@ static int (*GC_has_static_roots)(const char *, void *
  
  #if defined(LINUX) && defined(__ELF__) || defined(SCO_ELF) || \
      (defined(FREEBSD) && defined(__ELF__)) || defined(DGUX) || \
@@ -20,7 +20,7 @@ $OpenBSD: patch-dyn_load_c,v 1.4 2003/10/16 04:11:15 todd Exp $
  #   include <link.h>
  #endif
  
-@@ -266,6 +267,7 @@ void GC_register_dynamic_libraries()
+@@ -216,6 +217,7 @@ void GC_register_dynamic_libraries()
  
  #if defined(LINUX) && defined(__ELF__) || defined(SCO_ELF) || \
      (defined(FREEBSD) && defined(__ELF__)) || defined(DGUX) || \
@@ -28,12 +28,12 @@ $OpenBSD: patch-dyn_load_c,v 1.4 2003/10/16 04:11:15 todd Exp $
      (defined(NETBSD) && defined(__ELF__)) || defined(HURD)
  
  
-@@ -444,7 +446,7 @@ GC_bool GC_register_main_static_data()
+@@ -414,7 +416,7 @@ GC_bool GC_register_main_static_data()
  /* This doesn't necessarily work in all cases, e.g. with preloaded
   * dynamic libraries.						*/
  
 -#if defined(NETBSD)
 +#if defined(NETBSD) || defined(OPENBSD)
  #  include <sys/exec_elf.h>
- #else
- #  include <elf.h>
+ /* for compatibility with 1.4.x */
+ #  ifndef DT_DEBUG

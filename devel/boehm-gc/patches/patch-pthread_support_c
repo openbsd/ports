@@ -1,0 +1,16 @@
+$OpenBSD: patch-pthread_support_c,v 1.1 2007/07/14 22:16:17 kili Exp $
+--- pthread_support.c.orig	Thu Jul 12 11:12:40 2007
++++ pthread_support.c	Thu Jul 12 11:13:47 2007
+@@ -1103,6 +1103,12 @@ void * GC_start_routine(void * arg)
+         GC_enable();
+ #     endif
+       return GC_inner_start_routine(&sb, arg);
++#   elif defined(GC_OPENBSD_THREADS)
++      /* On OpenBSD GC_get_stack_base() doesn't cause any allocations */
++      struct GC_stack_base sb;
++      if (GC_get_stack_base(&sb) != GC_SUCCESS)
++	ABORT("Failed to get thread stack base.");
++      return GC_inner_start_routine(&sb, arg);
+ #   else
+       return GC_call_with_stack_base(GC_inner_start_routine, arg);
+ #   endif

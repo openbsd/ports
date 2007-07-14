@@ -1,19 +1,14 @@
-$OpenBSD: patch-misc_c,v 1.5 2003/10/16 04:11:15 todd Exp $
---- misc.c.orig	2003-05-29 10:50:10.000000000 -0500
-+++ misc.c	2003-10-16 02:31:36.000000000 -0500
-@@ -635,7 +635,14 @@ void GC_init_inner()
+--- misc.c.orig	Thu Jun 28 20:14:55 2007
++++ misc.c	Fri Jul  6 22:13:16 2007
+@@ -629,7 +629,10 @@ void GC_init_inner()
  #   if defined(SEARCH_FOR_DATA_START)
  	GC_init_linux_data_start();
  #   endif
 -#   if (defined(NETBSD) || defined(OPENBSD)) && defined(__ELF__)
-+#   if defined(OPENBSD)
-+#     if defined(__ELF__)
-+	GC_init_openbsd_elf();
-+#     else
-+	GC_init_openbsd_aout();
-+#     endif
-+#   endif
++#if defined(OPENBSD)
++	GC_init_openbsd();
++#endif
 +#   if defined(NETBSD) && defined(__ELF__)
  	GC_init_netbsd_elf();
  #   endif
- #   if defined(GC_PTHREADS) || defined(GC_SOLARIS_THREADS)
+ #   if !defined(THREADS) || defined(GC_PTHREADS) || defined(GC_WIN32_THREADS) \

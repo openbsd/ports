@@ -1,41 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/09/05 11:41:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/07/14 22:16:17 kili Exp $
 %%SHARED%%
 include/gc/
-include/gc.h
 include/gc/gc.h
-include/gc/gc_alloc.h
 include/gc/gc_allocator.h
 include/gc/gc_amiga_redirects.h
 include/gc/gc_backptr.h
 include/gc/gc_config_macros.h
 include/gc/gc_cpp.h
 include/gc/gc_gcj.h
-include/gc/gc_inl.h
 include/gc/gc_inline.h
-include/gc/gc_local_alloc.h
 include/gc/gc_mark.h
 include/gc/gc_pthread_redirects.h
+include/gc/gc_tiny_fl.h
 include/gc/gc_typed.h
 include/gc/leak_detector.h
 include/gc/new_gc_alloc.h
 include/gc/weakpointer.h
-include/gc_backptr.h
-include/gc_config_macros.h
-include/gc_cpp.h
-include/gc_gcj.h
-include/gc_local_alloc.h
-include/gc_mark.h
-include/gc_pthread_redirects.h
-include/gc_typed.h
-include/leak_detector.h
-include/private/
-include/private/gc_hdrs.h
-include/private/gc_locks.h
-include/private/gc_pmark.h
-include/private/gc_priv.h
-include/private/gcconfig.h
+lib/libcord.a
+lib/libcord.la
 lib/libgc.a
 lib/libgc.la
+lib/pkgconfig/
+lib/pkgconfig/bdw-gc.pc
 @man man/man3/GC_enable_incremental.3
 @man man/man3/GC_free.3
 @man man/man3/GC_malloc.3
@@ -70,11 +56,15 @@ share/gc/README.sgi
 share/gc/README.solaris2
 share/gc/README.uts
 share/gc/README.win32
+share/gc/README.win64
 share/gc/barrett_diagram
 share/gc/debugging.html
 @comment share/gc/gc.man
 share/gc/gcdescr.html
 share/gc/gcinterface.html
 share/gc/leak.html
+share/gc/overview.html
+share/gc/porting.html
 share/gc/scale.html
+share/gc/simple_example.html
 share/gc/tree.html

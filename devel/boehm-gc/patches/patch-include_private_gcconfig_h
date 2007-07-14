@@ -1,8 +1,27 @@
-$OpenBSD: patch-include_private_gcconfig_h,v 1.12 2004/03/15 02:47:24 pvalchev Exp $
---- include/private/gcconfig.h.orig	2003-06-16 20:01:23.000000000 -0600
-+++ include/private/gcconfig.h	2004-03-14 14:19:44.000000000 -0700
-@@ -97,7 +97,7 @@
+--- include/private/gcconfig.h.orig	Fri Jun 29 01:00:09 2007
++++ include/private/gcconfig.h	Fri Jul 13 20:11:10 2007
+@@ -64,7 +64,7 @@
+ /* Determine the machine type: */
+ # if defined(__arm__) || defined(__thumb__)
  #    define ARM32
+-#    if !defined(LINUX) && !defined(NETBSD)
++#    if !defined(LINUX) && !defined(NETBSD) && !defined(OPENBSD)
+ #      define NOSYS
+ #      define mach_type_known
+ #    endif
+@@ -83,6 +83,10 @@
+ #    define SPARC
+ #    define mach_type_known
+ # endif
++# if defined(OPENBSD) && defined(__arm__)
++#    define ARM32
++#    define mach_type_known
++# endif
+ # if defined(NETBSD) && (defined(m68k) || defined(__m68k__))
+ #    define M68K
+ #    define mach_type_known
+@@ -99,7 +103,7 @@
+ #    define SH
  #    define mach_type_known
  # endif
 -# if defined(vax)
@@ -10,7 +29,7 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.12 2004/03/15 02:47:24 pvalchev E
  #    define VAX
  #    ifdef ultrix
  #	define ULTRIX
-@@ -216,6 +216,10 @@
+@@ -219,6 +223,10 @@
  #    define I386
  #    define mach_type_known
  # endif
@@ -21,9 +40,9 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.12 2004/03/15 02:47:24 pvalchev E
  # if defined(LINUX) && defined(__x86_64__)
  #    define X86_64
  #    define mach_type_known
-@@ -278,6 +282,16 @@
- #    define POWERPC
- #    define mach_type_known
+@@ -290,6 +298,16 @@
+ #   define MACOS
+ #   define mach_type_known
  # endif
 +# if defined(__OpenBSD__) && (defined(__powerpc__))
 +#   define POWERPC
@@ -35,10 +54,10 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.12 2004/03/15 02:47:24 pvalchev E
 +#   define OPENBSD
 +#   define mach_type_known
 +# endif
- # if defined(__APPLE__) && defined(__MACH__) && defined(__i386__)
- #    define DARWIN
- #    define I386
-@@ -326,6 +340,10 @@
+ # if defined(macosx) || (defined(__APPLE__) && defined(__MACH__))
+ #   define DARWIN
+ #   if defined(__ppc__)  || defined(__ppc64__)
+@@ -358,6 +376,10 @@
      /* DGUX defined */
  #   define mach_type_known
  # endif
@@ -49,56 +68,111 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.12 2004/03/15 02:47:24 pvalchev E
  # if defined(_WIN32_WCE)
      /* SH3, SH4, MIPS already defined for corresponding architectures */
  #   if defined(SH3) || defined(SH4)
-@@ -595,8 +613,8 @@
+@@ -647,14 +669,22 @@
+ #   define ALIGNMENT 2
  #   ifdef OPENBSD
  #	define OS_TYPE "OPENBSD"
- #	define HEURISTIC2
--	extern char etext[];
--#	define DATASTART ((ptr_t)(etext))
-+#	define DATASTART GC_data_start
-+#	define USE_GENERIC_PUSH_REGS
+-#	define HEURISTIC2
+-#	ifdef __ELF__
+-#	  define DATASTART GC_data_start
+-#	  define DYNAMIC_LOADING
+-#	else
+-	  extern char etext[];
+-#	  define DATASTART ((ptr_t)(etext))
+-#       endif
++#       define HAVE_PUSH_REGS
++#    ifdef GC_OPENBSD_THREADS
++#       define SIG_SUSPEND SIGUSR1
++#       define SIG_THR_RESTART SIGUSR2
++#    else
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#    endif
++        extern char *__progname[];
++#       define DATASTART ((ptr_t)&__progname)
++#       define DATAEND GC_data_end1
++#	define DATASTART2 GC_data_start2
++        extern char _end[];
++#	define DATAEND2 ((ptr_t)(&_end))
++#       define DYNAMIC_LOADING
  #   endif
  #   ifdef NETBSD
  #	define OS_TYPE "NETBSD"
-@@ -761,6 +779,14 @@
- #     define DATASTART GC_data_start
- #     define DYNAMIC_LOADING
+@@ -788,6 +818,25 @@
+ 	 should be looked into some more */
+ #     define NO_PTHREAD_TRYLOCK
  #   endif
 +#   ifdef OPENBSD
-+#     define ALIGNMENT 4
 +#     define OS_TYPE "OPENBSD"
-+#     define HEURISTIC2
-+      extern char etext;
-+#     define DATASTART GC_data_start
++#     define ALIGNMENT 4
++#     ifdef GC_OPENBSD_THREADS
++#       define SIG_SUSPEND SIGUSR1
++#       define SIG_THR_RESTART SIGUSR2
++#     else
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#     endif
++      extern char *__progname[];
++#     define DATASTART ((ptr_t)&__progname)
++#     define DATAEND GC_data_end1
++#     define DATASTART2 GC_data_start2
++      extern char _end[];
++#     define DATAEND2 ((ptr_t)(&_end))
 +#     define DYNAMIC_LOADING
 +#   endif
- #   ifdef NOSYS
- #     define ALIGNMENT 4
- #     define OS_TYPE "NOSYS"
-@@ -897,9 +923,9 @@
+ #   ifdef FREEBSD
+ #       define ALIGNMENT 4
+ #       define OS_TYPE "FREEBSD"
+@@ -955,9 +1004,21 @@
  #   endif
  #   ifdef OPENBSD
  #     define OS_TYPE "OPENBSD"
 -#     define STACKBOTTOM ((ptr_t) 0xf8000000)
 -      extern int etext[];
 -#     define DATASTART ((ptr_t)(etext))
-+#     define HEURISTIC2
-+#     define DATASTART GC_data_start
++#     ifdef GC_OPENBSD_THREADS
++#       define SIG_SUSPEND SIGUSR1
++#       define SIG_THR_RESTART SIGUSR2
++#     else
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#     endif
++      extern char *__progname[];
++#     define DATASTART ((ptr_t)&__progname)
++#     define DATAEND GC_data_end1
++#     define DATASTART2 GC_data_start2
++      extern char _end[];
++#     define DATAEND2 ((ptr_t)(&_end))
 +#     define DYNAMIC_LOADING
  #   endif
  #   ifdef NETBSD
  #     define OS_TYPE "NETBSD"
-@@ -1145,6 +1171,9 @@
+@@ -1203,6 +1264,21 @@
  #   endif
  #   ifdef OPENBSD
  #	define OS_TYPE "OPENBSD"
-+#	define HEURISTIC2
-+#       define DATASTART GC_data_start
++#    ifdef GC_OPENBSD_THREADS
++#       define SIG_SUSPEND SIGUSR1
++#       define SIG_THR_RESTART SIGUSR2
++#    else
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#    endif
++        extern char *__progname[];
++#       define DATASTART ((ptr_t)&__progname)
++#       define DATAEND GC_data_end1
++#	define DATASTART2 GC_data_start2
++        extern char _end[];
++#	define DATAEND2 ((ptr_t)(&_end))
 +#       define DYNAMIC_LOADING
  #   endif
  #   ifdef FREEBSD
  #	define OS_TYPE "FREEBSD"
-@@ -1173,7 +1202,7 @@
+@@ -1238,7 +1314,7 @@
  #   ifdef BSDI
  #	define OS_TYPE "BSDI"
  #   endif
@@ -107,69 +181,117 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.12 2004/03/15 02:47:24 pvalchev E
          || defined(THREE86BSD) || defined(BSDI)
  #	define HEURISTIC2
  	extern char etext[];
-@@ -1435,7 +1464,7 @@
- #   define MACH_TYPE "ALPHA"
- #   define ALIGNMENT 8
- #   define CPP_WORDSZ 64
--#   ifndef LINUX
-+#   if !defined(LINUX)
- #     define USE_GENERIC_PUSH_REGS
-       /* Gcc and probably the DEC/Compaq compiler spill pointers to preserved */
-       /* fp registers in some cases when the target is a 21264.  The assembly */
-@@ -1449,6 +1478,7 @@
- #	define ELFCLASS32 32
- #	define ELFCLASS64 64
- #	define ELF_CLASS ELFCLASS64
-+#   	define CPP_WORDSZ 64
- #       define DYNAMIC_LOADING
+@@ -1489,15 +1565,22 @@
  #   endif
  #   ifdef OPENBSD
-@@ -1456,9 +1486,8 @@
- #	define HEURISTIC2
- #   	ifdef __ELF__	/* since OpenBSD/Alpha 2.9 */
- #	   define DATASTART GC_data_start
+ #	define OS_TYPE "OPENBSD"
+-#	define HEURISTIC2
+-#   	ifdef __ELF__	/* since OpenBSD/Alpha 2.9 */
+-#	   define DATASTART GC_data_start
 -#   	   define ELFCLASS32 32
 -#   	   define ELFCLASS64 64
- #   	   define ELF_CLASS ELFCLASS64
-+#	   define DYNAMIC_LOADING
- #       else		/* ECOFF, until OpenBSD/Alpha 2.7 */
- #   	   define DATASTART ((ptr_t) 0x140000000)
- #   	endif
-@@ -1614,16 +1643,22 @@
+-#   	   define ELF_CLASS ELFCLASS64
+-#       else		/* ECOFF, until OpenBSD/Alpha 2.7 */
+-#   	   define DATASTART ((ptr_t) 0x140000000)
+-#   	endif
++#	define ELF_CLASS ELFCLASS64
++#    ifdef GC_OPENBSD_THREADS
++#       define SIG_SUSPEND SIGUSR1
++#       define SIG_THR_RESTART SIGUSR2
++#    else
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#    endif
++        extern char *__progname[];
++#       define DATASTART ((ptr_t)&__progname)
++#       define DATAEND GC_data_end1
++#	define DATASTART2 GC_data_start2
++        extern char _end[];
++#	define DATAEND2 ((ptr_t)(&_end))
++#       define DYNAMIC_LOADING
+ #   endif
+ #   ifdef FREEBSD
+ #	define OS_TYPE "FREEBSD"
+@@ -1662,9 +1745,28 @@
+ #   define MACH_TYPE "M88K"
  #   define ALIGNMENT 4
- #   define ALIGN_DOUBLE
      extern int etext[];
 +#   ifdef OPENBSD
 +#	define OS_TYPE "OPENBSD"
-+#	define HEURISTIC2
-+#       define DATASTART GC_data_start
++#    ifdef GC_OPENBSD_THREADS
++#       define SIG_SUSPEND SIGUSR1
++#       define SIG_THR_RESTART SIGUSR2
++#    else
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#    endif
++        extern char *__progname[];
++#       define DATASTART ((ptr_t)&__progname)
++#       define DATAEND GC_data_end1
++#	define DATASTART2 GC_data_start2
++        extern char _end[];
++#	define DATAEND2 ((ptr_t)(&_end))
++#       define DYNAMIC_LOADING
 +#   endif
  #   ifdef CX_UX
  #	define OS_TYPE "CX_UX"
- #       define DATASTART ((((word)etext + 0x3fffff) & ~0x3fffff) + 0x10000)
+-#       define DATASTART ((((word)etext + 0x3fffff) & ~0x3fffff) + 0x10000)
++//#       define DATASTART ((((word)etext + 0x3fffff) & ~0x3fffff) + 0x10000)
 +#       define STACKBOTTOM ((char*)0xf0000000) /* determined empirically */
  #   endif
  #   ifdef  DGUX
  #	define OS_TYPE "DGUX"
- 	extern ptr_t GC_SysVGetDataStart();
- #       define DATASTART GC_SysVGetDataStart(0x10000, etext)
-+#       define STACKBOTTOM ((char*)0xf0000000) /* determined empirically */
+@@ -1764,6 +1866,25 @@
+ #     define OS_TYPE "MSWINCE"
+ #     define DATAEND /* not needed */
  #   endif
--#   define STACKBOTTOM ((char*)0xf0000000) /* determined empirically */
- # endif
- 
- # ifdef S370
-@@ -1765,6 +1800,13 @@
- #   endif
- #   define CACHE_LINE_SIZE 64
- #   define USE_GENERIC_PUSH_REGS
 +#   ifdef OPENBSD
-+#       define OS_TYPE "OPENBSD"
-+#       define DATASTART GC_data_start
-+#       define HEURISTIC2
-+#       define ELF_CLASS ELFCLASS64
++#     define ALIGNMENT 4
++#     define OS_TYPE "OPENBSD"
++#    ifdef GC_OPENBSD_THREADS
++#       define SIG_SUSPEND SIGUSR1
++#       define SIG_THR_RESTART SIGUSR2
++#    else
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#    endif
++        extern char *__progname[];
++#       define DATASTART ((ptr_t)&__progname)
++#       define DATAEND GC_data_end1
++#	define DATASTART2 GC_data_start2
++        extern char _end[];
++#	define DATAEND2 ((ptr_t)(&_end))
 +#       define DYNAMIC_LOADING
 +#   endif
+ #   ifdef NOSYS
+       /* __data_start is usually defined in the target linker script.  */
+       extern int __data_start[];
+@@ -1838,6 +1959,25 @@
+ #   define CPP_WORDSZ 64
+ #   ifndef HBLKSIZE
+ #     define HBLKSIZE 4096
++#   endif
++#   ifdef OPENBSD
++#       define OS_TYPE "OPENBSD"
++#       define ELF_CLASS ELFCLASS64
++#    ifdef GC_OPENBSD_THREADS
++#       define SIG_SUSPEND SIGUSR1
++#       define SIG_THR_RESTART SIGUSR2
++#    else
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#    endif
++        extern char *__progname[];
++#       define DATASTART ((ptr_t)&__progname)
++#       define DATAEND GC_data_end1
++#	define DATASTART2 GC_data_start2
++        extern char _end[];
++#	define DATAEND2 ((ptr_t)(&_end))
++#       define DYNAMIC_LOADING
+ #   endif
+ #   define CACHE_LINE_SIZE 64
  #   ifdef LINUX
- #	define OS_TYPE "LINUX"
- #       define LINUX_STACKBOTTOM

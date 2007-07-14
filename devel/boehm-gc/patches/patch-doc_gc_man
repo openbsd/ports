@@ -1,13 +1,13 @@
-$OpenBSD: patch-doc_gc_man,v 1.3 2005/09/05 11:41:56 espie Exp $
---- doc/gc.man.orig	Wed Sep 22 01:55:00 1999
-+++ doc/gc.man	Mon Sep  5 13:31:16 2005
+$OpenBSD: patch-doc_gc_man,v 1.4 2007/07/14 22:16:17 kili Exp $
+--- doc/gc.man.orig	Mon Oct 10 18:33:34 2005
++++ doc/gc.man	Tue Jul 10 22:53:44 2007
 @@ -1,4 +1,4 @@
--.TH GC_MALLOC 1L "12 February 1996"
-+.TH GC_MALLOC 3 "12 February 1996"
+-.TH GC_MALLOC 1L "2 October 2003"
++.TH GC_MALLOC 3 "2 October 2003"
  .SH NAME
  GC_malloc, GC_malloc_atomic, GC_free, GC_realloc, GC_enable_incremental, GC_register_finalizer, GC_malloc_ignore_off_page, GC_malloc_atomic_ignore_off_page, GC_set_warn_proc \- Garbage collecting malloc replacement
  .SH SYNOPSIS
-@@ -67,6 +67,48 @@ GC_enable_incremental.
+@@ -81,6 +81,48 @@ GC_enable_incremental.
  This may temporarily write protect pages in the heap.  See the README file for more information on how this interacts with system calls that write to the heap.
  .LP
  Other facilities not discussed here include limited facilities to support incremental collection on machines without appropriate VM support, provisions for providing more explicit object layout information to the garbage collector, more direct support for ``weak'' pointers, support for ``abortable'' garbage collections during idle time, etc.

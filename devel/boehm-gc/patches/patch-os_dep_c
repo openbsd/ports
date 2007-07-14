@@ -1,34 +1,163 @@
-$OpenBSD: patch-os_dep_c,v 1.5 2003/10/16 04:11:15 todd Exp $
---- os_dep.c.orig	2003-06-13 14:11:00.000000000 -0500
-+++ os_dep.c	2003-10-16 02:31:36.000000000 -0500
-@@ -391,6 +391,30 @@ static void *tiny_sbrk(ptrdiff_t increme
+--- os_dep.c.orig	Fri Jun 29 15:17:44 2007
++++ os_dep.c	Thu Jul 12 22:25:04 2007
+@@ -486,7 +486,7 @@ static void *tiny_sbrk(ptrdiff_t increment)
+ #define sbrk tiny_sbrk
+ # endif /* ECOS */
+ 
+-#if (defined(NETBSD) || defined(OPENBSD)) && defined(__ELF__)
++#if defined(NETBSD) && defined(__ELF__)
+   ptr_t GC_data_start;
+ 
+   void GC_init_netbsd_elf(void)
+@@ -499,6 +499,106 @@ static void *tiny_sbrk(ptrdiff_t increment)
    }
  #endif
  
 +#if defined(OPENBSD)
-+  #if defined(__ELF__)
-+  ptr_t GC_data_start;
++  ptr_t GC_data_end1, GC_data_start2;
++  sigjmp_buf GC_jmp_buf_openbsd;
 +
-+  void GC_init_openbsd_elf()
-+  {
-+    extern ptr_t GC_find_limit();
-+	/* This may need to be environ, without the underscore, for	*/
-+	/* some versions.						*/
-+    GC_data_start = GC_find_limit((ptr_t)&end, FALSE);
-+  }
-+  #else
-+  ptr_t GC_data_start;
++# if defined(GC_OPENBSD_THREADS)
++#   include <sys/syscall.h>
++    sigset_t __syscall(quad_t, ...);
++# endif
 +
-+  void GC_init_openbsd_aout()
++  /*
++   * Dont use GC_find_limit() because siglongjmp out of the
++   * signal handler by-passes our userland pthreads lib, leaving
++   * SIGSEGV and SIGPROF masked. Instead use this custom one
++   * that works-around the issues.
++   */
++
++    /*ARGSUSED*/
++    void GC_fault_handler_openbsd(int sig)
++    {
++        siglongjmp(GC_jmp_buf_openbsd, 1);
++    }
++
++    /* Return the first nonaddressible location > p (up) or 	*/
++    /* the smallest location q s.t. [q,p) is addressable (!up).	*/
++    /* We assume that p (up) or p-1 (!up) is addressable.	*/
++    /* Requires allocation lock.				*/
++    ptr_t GC_find_limit_openbsd(ptr_t p, GC_bool up, ptr_t bound)
++    {
++        static volatile ptr_t result;
++    		/* Safer if static, since otherwise it may not be	*/
++    		/* preserved across the longjmp.  Can safely be 	*/
++    		/* static since it's only called with the		*/
++    		/* allocation lock held.				*/
++        struct sigaction act;
++	size_t pgsz = (size_t)sysconf(_SC_PAGESIZE);
++
++	GC_ASSERT(I_HOLD_LOCK());
++
++        act.sa_handler = GC_fault_handler_openbsd;
++        sigemptyset(&act.sa_mask);
++        act.sa_flags = SA_NODEFER | SA_RESETHAND | SA_RESTART;
++        sigaction(SIGSEGV, &act, NULL);
++
++	if (sigsetjmp(GC_jmp_buf_openbsd, 1) == 0) {
++	    result = (ptr_t)(((word)(p))
++			      & ~(pgsz-1));
++	    for (;;) {
++ 	        if (up) {
++		    result += pgsz;
++		    if (result >= bound) {
++		        result = bound;
++			break;
++		    }
++ 	        } else {
++		    result -= pgsz;
++		    if (result <= bound) {
++		        result = bound;
++			break;
++		    }
++ 	        }
++		GC_noop1((word)(*result));
++	    }
++	}
++# if defined(GC_OPENBSD_THREADS)
++	/* due to the siglongjump we need to manually unmask SIGPROF */
++	 __syscall(SYS_sigprocmask, SIG_UNBLOCK, sigmask(SIGPROF));
++# endif
++ 	if (!up && result != bound) {
++	    result += pgsz;
++ 	}
++	return(result);
++    }
++
++  /*
++   * Depending on arch alignment there can be two holes in
++   * .data - end of .bss. Fortunately no pointers can be stored
++   * between the two holes. A better way of doing this would
++   * be to do something similar to how libraries are handled
++   * (section by section).
++   */
++  void GC_init_openbsd()
 +  {
-+    extern ptr_t GC_find_limit();
-+	/* This may need to be environ, without the underscore, for	*/
-+	/* some versions.						*/
-+    GC_data_start = GC_find_limit((ptr_t)&end, FALSE);
++    extern char _edata[];
++    ptr_t GC_find_limit(ptr_t, GC_bool);
++    GC_data_end1 = GC_find_limit_openbsd(DATASTART, TRUE, DATAEND2);
++    if (GC_data_end1 >= DATAEND2) {
++	/* no holes */
++        GC_data_end1 = (ptr_t)(&_edata);
++        GC_data_start2 = GC_data_end1;
++    } else {
++        /* search back to find second hole */
++        GC_data_start2 = GC_find_limit_openbsd(DATAEND2, FALSE, DATASTART);
++	/* not needed but for sanity */
++	if (GC_data_start2 < GC_data_end1)
++		GC_data_start2 = GC_data_end1;
++    }
 +  }
-+  #endif
 +#endif
++
 +
  # ifdef OS2
  
  # include <stddef.h>
+@@ -1097,7 +1197,7 @@ ptr_t GC_get_main_stack_base(void)
+ 
+ #if !defined(BEOS) && !defined(AMIGA) && !defined(MSWIN32) \
+     && !defined(MSWINCE) && !defined(OS2) && !defined(NOSYS) && !defined(ECOS) \
+-    && !defined(CYGWIN32)
++    && !defined(CYGWIN32) && !defined(GC_OPENBSD_THREADS)
+ 
+ ptr_t GC_get_main_stack_base(void)
+ {
+@@ -1205,6 +1305,35 @@ int GC_get_stack_base(struct GC_stack_base *b)
+ #define HAVE_GET_STACK_BASE
+ 
+ #endif /* GC_LINUX_THREADS */
++
++#if defined(GC_OPENBSD_THREADS)
++
++/* Find the stack using pthread_stackseg_np() */
++
++# include <sys/signal.h>
++# include <pthread.h>
++# include <pthread_np.h>
++        
++#define HAVE_GET_STACK_BASE
++
++int GC_get_stack_base(struct GC_stack_base *sb)
++{
++    stack_t stack;
++    pthread_stackseg_np(pthread_self(), &stack);
++    sb->mem_base = stack.ss_sp;
++    return GC_SUCCESS;
++}
++
++/* This is always called from the main thread.	*/
++ptr_t GC_get_main_stack_base(void)
++{
++    struct GC_stack_base sb;
++
++    GC_get_stack_base(&sb);
++    return (ptr_t)sb.mem_base;
++}
++
++#endif /* GC_OPENBSD_THREADS */
+ 
+ #ifndef HAVE_GET_STACK_BASE
+ /* Retrieve stack base.						*/

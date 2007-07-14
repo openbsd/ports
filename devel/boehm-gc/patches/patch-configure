@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure,v 1.1 2007/07/14 22:16:17 kili Exp $
+--- configure.orig	Sat Jun 30 11:40:25 2007
++++ configure	Thu Jul 12 07:35:46 2007
+@@ -4761,6 +4761,14 @@ _ACEOF
+ 	{ echo "$as_me:$LINENO: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&5
+ echo "$as_me: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&2;}
+ 	;;
++     *-*-openbsd*)
++	cat >>confdefs.h <<\_ACEOF
++#define GC_OPENBSD_THREADS 1
++_ACEOF
++
++	THREADDLLIBS=-pthread
++	INCLUDES="$INCLUDES -pthread"
++      	;;
+      *-*-freebsd*)
+ 	{ echo "$as_me:$LINENO: WARNING: \"FreeBSD does not yet fully support threads with Boehm GC.\"" >&5
+ echo "$as_me: WARNING: \"FreeBSD does not yet fully support threads with Boehm GC.\"" >&2;}
+@@ -6142,6 +6150,9 @@ _ACEOF
+                 ;;
+  sparc-*-netbsd*)
+     machdep="mach_dep.lo sparc_netbsd_mach_dep.lo"
++    ;;
++ sparc*-*-openbsd*)
++    machdep="mach_dep.lo sparc_mach_dep.lo"
+     ;;
+  sparc-sun-solaris2.3)
+     machdep="mach_dep.lo sparc_mach_dep.lo"
