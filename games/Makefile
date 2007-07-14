@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2007/07/10 08:38:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2007/07/14 20:35:15 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += blobwars
      SUBDIR += bomberclone
      SUBDIR += bombermaze
+     SUBDIR += boswars
      SUBDIR += burgerspace
      SUBDIR += bzflag
      SUBDIR += castle-combat
