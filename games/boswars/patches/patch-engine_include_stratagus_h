@@ -1,0 +1,12 @@
+$OpenBSD: patch-engine_include_stratagus_h,v 1.1.1.1 2007/07/14 20:33:55 ajacoutot Exp $
+--- engine/include/stratagus.h.orig	Sun Mar  4 14:14:23 2007
++++ engine/include/stratagus.h	Sat Jul 14 14:47:23 2007
+@@ -188,7 +188,7 @@ inline char *new_strdup(const char *str)
+ extern char NameLine[];
+ 
+ #ifndef STRATAGUS_LIB_PATH
+-#define STRATAGUS_LIB_PATH  "."      /// Where to find the data files
++#define STRATAGUS_LIB_PATH  "!!PREFIX!!/share/boswars"      /// Where to find the data files
+ #endif
+ 
+ #ifndef STRATAGUS_HOME_PATH
