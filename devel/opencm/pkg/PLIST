@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:43:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/07/14 22:17:22 kili Exp $
 bin/cm
 @info info/opencm.info
 share/opencm/
@@ -41,6 +41,7 @@ share/opencm/help/set-user.help
 share/opencm/help/set-userkey.help
 share/opencm/help/set-ws-repos.help
 share/opencm/help/set-ws-user.help
+share/opencm/help/show-ws-mutable.help
 share/opencm/help/show-ws-repos.help
 share/opencm/help/show-ws-user.help
 share/opencm/help/status.help

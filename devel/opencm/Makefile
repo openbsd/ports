@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2007/07/14 22:17:22 kili Exp $
 
 COMMENT=		"OpenCM change management system"
 
@@ -6,6 +6,7 @@ V=			0.1.2alpha8
 sV=			-2
 DISTFILES=		opencm-${V}${sV}-src.tgz
 DISTNAME=		opencm-${V}
+PKGNAME=		opencm-${V}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.opencm.org/
@@ -22,14 +23,15 @@ WANTLIB=		c crypto ncurses readline ssl z
 MASTER_SITES=		${HOMEPAGE}releases/
 
 USE_GMAKE=		Yes
-AUTOCONF_VERSION=	2.13
+AUTOCONF_VERSION=	2.57
 CONFIGURE_STYLE=	autoconf
 
 LDFLAGS+= -L${LOCALBASE}/lib -lgc
 
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}" \
 			CPPFLAGS="${CPPFLAGS} \
-			-I${LOCALBASE}/include -DUSE_SYSTEM_ZLIB" \
+			-I${LOCALBASE}/include -I${LOCALBASE}/include/gc \
+			-DUSE_SYSTEM_ZLIB" \
 			vl_cv_lib_kerberos=1
 
 MAKE_ENV= LDFLAGS="${LDFLAGS}"

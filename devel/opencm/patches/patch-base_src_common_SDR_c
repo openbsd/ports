@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_src_common_SDR_c,v 1.5 2007/07/14 22:17:22 kili Exp $
+--- base/src/common/SDR.c.orig	Thu Jun 19 04:23:37 2003
++++ base/src/common/SDR.c	Mon Jul  9 22:34:25 2007
+@@ -100,7 +100,7 @@ static ocmoff_t file_stream_gets(SDR_stream *s, void *
+ static Buffer *file_stream_asBuffer(SDR_stream *s);
+ static void file_stream_reread(SDR_stream *s);
+ static void file_stream_close(SDR_stream *s);
+-static void file_stream_finalizer(GC_PTR obj, GC_PTR data);
++static void file_stream_finalizer(void *obj, void *data);
+ 
+ static SDR_stream*
+ stream_openfile(const char *fileName, uint32_t mode, uint32_t format)
+@@ -319,7 +319,7 @@ file_stream_close(SDR_stream *s)
+ }
+ 
+ static void
+-file_stream_finalizer(GC_PTR obj, GC_PTR data)
++file_stream_finalizer(void *obj, void *data)
+ {
+   SDR_stream *strm = (SDR_stream *) obj;
+   
