@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/07 22:20:20 deanna Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/14 14:13:48 deanna Exp $
 
 COMMENT-main=	"free peer-reviewed portable C++ source libraries (headers)"
 COMMENT-libs=	"free peer-reviewed portable C++ source libraries (libraries)"
 
-PKGNAME-main=	boost-headers-${VERSION}p2
-PKGNAME-libs=	boost-libs-${VERSION}p2
+PKGNAME-main=	boost-headers-${VERSION}p3
+PKGNAME-libs=	boost-libs-${VERSION}p3
 
 VERSION=	1.33.1
 DISTNAME=	boost_${VERSION:S/./_/g}

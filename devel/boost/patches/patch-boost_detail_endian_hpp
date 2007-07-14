@@ -1,0 +1,12 @@
+$OpenBSD: patch-boost_detail_endian_hpp,v 1.1 2007/07/14 14:13:48 deanna Exp $
+--- boost/detail/endian.hpp.orig	Wed Jul  4 12:09:03 2007
++++ boost/detail/endian.hpp	Wed Jul  4 12:09:17 2007
+@@ -47,7 +47,7 @@
+ #elif defined(__i386__) || defined(__alpha__) \
+    || defined(__ia64) || defined(__ia64__) \
+    || defined(_M_IX86) || defined(_M_IA64) \
+-   || defined(_M_ALPHA)
++   || defined(_M_ALPHA) || defined(__x86_64__)
+ # define BOOST_LITTLE_ENDIAN
+ # define BOOST_BYTE_ORDER 1234
+ #else
