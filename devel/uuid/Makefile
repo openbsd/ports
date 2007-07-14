@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2007/06/19 16:09:12 simon Exp $
+# $OpenBSD: Makefile,v 1.28 2007/07/14 06:20:55 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,7 +38,7 @@ CATEGORIES-pgsql=	devel databases
 WANTLIB-pgsql=		c
 LIB_DEPENDS-pgsql=	uuid.>=12::devel/uuid
 RUN_DEPENDS-pgsql=	:postgresql-server-*:databases/postgresql,-server
-BUILD_DEPENDS-pgsql=	${RUN_DEPENDS-pgsql}
+BUILD_DEPENDS+=		${RUN_DEPENDS-pgsql}
 
 USE_LIBTOOL=		Yes
 
