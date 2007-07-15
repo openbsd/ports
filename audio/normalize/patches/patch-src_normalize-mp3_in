@@ -1,18 +1,21 @@
-$OpenBSD: patch-src_normalize-mp3_in,v 1.1.1.1 2002/04/28 09:11:37 jasoni Exp $
---- src/normalize-mp3.in.orig	Sat Feb 23 12:49:57 2002
-+++ src/normalize-mp3.in	Wed Apr 24 11:59:06 2002
-@@ -27,10 +27,10 @@
+--- src/normalize-mp3.in.orig	Mon Sep 12 09:31:15 2005
++++ src/normalize-mp3.in	Sat Jul  7 22:44:02 2007
+@@ -26,12 +26,12 @@
  # %b becomes bitrate of re-encoded file, as specified by the -b option
  # Example: $OGGENCODE="oggenc -Q -b %b -o %m %w"
  
--$MP3DECODE = "@MP3DECODE@";
--$MP3ENCODE = "@MP3ENCODE@";
--$OGGDECODE = "@OGGDECODE@";
--$OGGENCODE = "@OGGENCODE@";
+-$MP3DECODE  = "@MP3DECODE@";
+-$MP3ENCODE  = "@MP3ENCODE@";
+-$OGGDECODE  = "@OGGDECODE@";
+-$OGGENCODE  = "@OGGENCODE@";
+-$FLACDECODE = "@FLACDECODE@";
+-$FLACENCODE = "@FLACENCODE@";
 +$MP3DECODE = "mpg321 -q -w %w %m";
 +$MP3ENCODE = "lame --quiet -h -b %b %w %m";
 +$OGGDECODE = "ogg123 -q -d wav -f %w %m";
 +$OGGENCODE = "oggenc -Q -b %b -o %m %w";
++$FLACDECODE = "flac -d -o %w";
++$FLACENCODE = "flac -o %m %w";
  
- $VORBISCOMMENT = "@VORBISCOMMENT@";
- 
+ # The %w etc. substitutions should *not* be used in the following, as
+ # this script knows about their options already.

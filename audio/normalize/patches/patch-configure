@@ -1,41 +1,20 @@
-$OpenBSD: patch-configure,v 1.2 2006/02/12 16:46:08 alek Exp $
---- configure.orig	Sun Apr 28 21:23:03 2002
-+++ configure	Sun Feb 12 12:13:21 2006
-@@ -13288,7 +13288,6 @@ else
- #include "confdefs.h"
+--- configure.orig	Wed Sep 14 11:23:56 2005
++++ configure	Mon Jul  9 01:06:08 2007
+@@ -25894,12 +25894,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
 -extern int *_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -13304,7 +13303,7 @@ int
+ int
  main ()
  {
  bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
+-return * gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
++return * gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
    ;
    return 0;
  }
-@@ -13335,7 +13334,6 @@ rm -f conftest.$ac_objext conftest$ac_ex
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -13351,7 +13349,7 @@ int
- main ()
- {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
-   ;
-   return 0;
- }
-@@ -14162,7 +14160,7 @@ s,@USE_NLS@,$USE_NLS,;t t
+@@ -27511,7 +27510,7 @@ s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
  s,@LIBICONV@,$LIBICONV,;t t
  s,@LTLIBICONV@,$LTLIBICONV,;t t
  s,@INTLLIBS@,$INTLLIBS,;t t
@@ -43,4 +22,4 @@ $OpenBSD: patch-configure,v 1.2 2006/02/12 16:46:08 alek Exp $
 +s,@LIBINTL@,$LTLIBINTL,;t t
  s,@LTLIBINTL@,$LTLIBINTL,;t t
  s,@POSUB@,$POSUB,;t t
- CEOF
+ s,@LIBOBJS@,$LIBOBJS,;t t

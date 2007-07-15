@@ -1,6 +1,6 @@
-$OpenBSD: patch-test_test8bit_sh,v 1.1.1.1 2002/04/28 09:11:37 jasoni Exp $
---- test/test8bit.sh.orig	Sun Apr 21 22:08:08 2002
-+++ test/test8bit.sh	Sun Apr 21 22:09:40 2002
+$OpenBSD: patch-test_test8bit_sh,v 1.2 2007/07/15 19:37:04 kili Exp $
+--- test/test8bit.sh.orig	Mon Apr  8 05:20:23 2002
++++ test/test8bit.sh	Sun Jul  8 00:11:14 2007
 @@ -19,12 +19,12 @@ echo "Testing 8-bit wavs..." >&3
  ../src/mktestwav -a 0.5 -b 1 -c 2 stereo.wav
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-test_test8bit_sh,v 1.1.1.1 2002/04/28 09:11:37 jasoni Exp $
  case "$CHKSUM" in
      $STEREO_BEFORE*) ;;
      *) echo "FAIL: created stereo.wav has bad checksum!" >&3; exit 1 ;;
-@@ -53,12 +53,12 @@ echo "mono.wav and stereo.wav measured s
+@@ -53,12 +53,12 @@ echo "mono.wav and stereo.wav measured successfully...
  # Check that normalize correctly normalizes the volume of the files
  ../src/normalize -q mono.wav
  ../src/normalize -q stereo.wav

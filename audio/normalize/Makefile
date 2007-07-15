@@ -1,28 +1,25 @@
-# $OpenBSD: Makefile,v 1.13 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/07/15 19:37:04 kili Exp $
 
 COMMENT=	"audio file volume normalizer"
 
-DISTNAME=	normalize-0.7.4
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	normalize-0.7.7
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cs.columbia.edu/~cvaill/normalize/
+
+MASTER_SITES=	http://savannah.nongnu.org/download/normalize/
 
 HOMEPAGE=	http://normalize.nongnu.org/
 
-MAINTAINER=	Jason Ish <ish@openbsd.org>
+MAINTAINER=	Vlad Glagolev <stelzy@gmail.com>
 
 # GPL license
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
-
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* gcc-*
-.endif
 
 MODULES=	devel/gettext
+
+WANTLIB=	c m
 
 CONFIGURE_STYLE=gnu
 
@@ -30,8 +27,10 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-xmms \
 		--with-mad \
 		--with-audiofile
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 LIB_DEPENDS=	mad.>=2::audio/libmad \

@@ -1,5 +1,5 @@
-Before the normalize-mp3 and normalize-ogg scripts can be
-used, you first need to install mpg321 and lame for normalize-mp3,
+Before the normalize-mp3 and normalize-ogg scripts can be used,
+you first need to install mpg321 and lame for normalize-mp3,
 add vorbis-tools for normalize-ogg.
 
 These extra packages are not required for normal operation of
