@@ -1,0 +1,12 @@
+$OpenBSD: patch-timidity_resample_c,v 1.1 2007/07/15 01:05:52 jolan Exp $
+--- timidity/resample.c.orig	Wed Dec 15 23:20:15 2004
++++ timidity/resample.c	Sat Jul 14 20:00:18 2007
+@@ -720,7 +720,7 @@ void pre_resample(Sample * sp)
+   while (--count)
+     {
+       vptr = src + (ofs >> FRACTION_BITS);
+-      v1 = *(vptr - 1);
++      v1 = (vptr == src) ? *vptr : *(vptr - 1);
+       v2 = *vptr;
+       v3 = *(vptr + 1);
+       v4 = *(vptr + 2);
