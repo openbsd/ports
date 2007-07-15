@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/07/08 18:09:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/07/15 20:44:41 naddy Exp $
 
 COMMENT-main =	another eMule p2p client
 COMMENT-web =	webserver interface to amuled
@@ -45,7 +45,8 @@ CONFIGURE_ARGS =	--disable-debug \
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 post-install:
-	${INSTALL_SCRIPT} ${WKRDIST}/src/util/scripts/mldonkey_importer.pl ${PREFIX}/bin/mldonkey_importer
+	${INSTALL_SCRIPT} ${WRKDIST}/src/utils/scripts/mldonkey_importer.pl \
+		${PREFIX}/bin/mldonkey_importer
 
 NO_REGRESS =		Yes
 
