@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/07/16 10:15:41 jasper Exp $
+@lib lib/libgnomeuimm-2.6.so.${LIBgnomeuimm-2.6_VERSION}
