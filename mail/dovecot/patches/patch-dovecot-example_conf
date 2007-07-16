@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.37 2007/06/19 19:18:49 jakob Exp $
---- dovecot-example.conf.orig	Wed Jun 13 02:47:39 2007
-+++ dovecot-example.conf	Tue Jun 19 21:03:10 2007
+$OpenBSD: patch-dovecot-example_conf,v 1.38 2007/07/16 07:09:59 jakob Exp $
+--- dovecot-example.conf.orig	Thu Jun 28 16:18:07 2007
++++ dovecot-example.conf	Sun Jul 15 09:47:59 2007
 @@ -10,13 +10,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -97,6 +97,15 @@ $OpenBSD: patch-dovecot-example_conf,v 1.37 2007/06/19 19:18:49 jakob Exp $
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
+@@ -520,7 +519,7 @@ protocol imap {
+   # Support for dynamically loadable plugins. mail_plugins is a space separated
+   # list of plugins to load.
+   #mail_plugins = 
+-  #mail_plugin_dir = /usr/lib/dovecot/imap
++  #mail_plugin_dir = _PREFIX_/lib/dovecot/imap
+ 
+   # Send IMAP capabilities in greeting message. This makes it unnecessary for
+   # clients to request it with CAPABILITY command, so it saves one round-trip.
 @@ -554,7 +553,7 @@ protocol imap {
    #     but not both. Thunderbird separates these two by forcing server to
    #     accept '/' suffix in mailbox names in subscriptions list.
@@ -129,6 +138,15 @@ $OpenBSD: patch-dovecot-example_conf,v 1.37 2007/06/19 19:18:49 jakob Exp $
  
    # POP3 logout format string:
    #  %t - number of TOP commands
+@@ -627,7 +626,7 @@ protocol pop3 {
+   # Support for dynamically loadable plugins. mail_plugins is a space separated
+   # list of plugins to load.
+   #mail_plugins = 
+-  #mail_plugin_dir = /usr/lib/dovecot/pop3
++  #mail_plugin_dir = _PREFIX_/lib/dovecot/pop3
+ 
+   # Workarounds for various client bugs:
+   #   outlook-no-nuls:
 @@ -637,7 +636,7 @@ protocol pop3 {
    #     Outlook Express and Netscape Mail breaks if end of headers-line is
    #     missing. This option simply sends it if it's missing.
@@ -138,6 +156,19 @@ $OpenBSD: patch-dovecot-example_conf,v 1.37 2007/06/19 19:18:49 jakob Exp $
  }
  
  ##
+@@ -655,10 +654,10 @@ protocol lda {
+   # Support for dynamically loadable plugins. mail_plugins is a space separated
+   # list of plugins to load.
+   #mail_plugins = 
+-  #mail_plugin_dir = /usr/lib/dovecot/lda
++  #mail_plugin_dir = _PREFIX_/lib/dovecot/lda
+ 
+   # Binary to use for sending mails.
+-  #sendmail_path = /usr/lib/sendmail
++  #sendmail_path = /usr/sbin/sendmail
+ 
+   # UNIX socket path to master authentication server to find users.
+   #auth_socket_path = /var/run/dovecot/auth-master
 @@ -669,7 +668,7 @@ protocol lda {
  ##
  
