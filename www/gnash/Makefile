@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/07/07 10:47:04 deanna Exp $
+# $OpenBSD: Makefile,v 1.13 2007/07/16 04:02:38 deanna Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"flash player with firefox browser plugin"
 DISTNAME=	gnash-0.8.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	gnashbase 2.0
 SHARED_LIBS +=	gnashgeo 2.0
 SHARED_LIBS +=	gnashamf 2.0
@@ -53,8 +54,13 @@ WANTLIB=	Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat \
 
 CONFIGURE_STYLE=gnu
 
+.for dir in libamf backend libbase libgeometry gui server
+ LINKDIRS+=-L${WRKSRC}/${dir}/.libs
+.endfor
+
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="${LINKDIRS} \
+		-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS+=--enable-media=ffmpeg \
 		--with-plugindir=${LOCALBASE}/lib/mozilla-plugins \
