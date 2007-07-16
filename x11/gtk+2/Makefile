@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.52 2007/05/26 02:44:55 kili Exp $
+# $OpenBSD: Makefile,v 1.53 2007/07/16 07:55:46 jasper Exp $
 
 SHARED_ONLY=			Yes
 
-COMMENT-main=			"multi-platform graphical toolkit"
-COMMENT-docs=           	"gtk+-2 documentation"
+COMMENT-main=			multi-platform graphical toolkit
+COMMENT-docs=           	gtk+-2 documentation
 
-VERSION=			2.10.12
+VERSION=			2.10.13
 DISTNAME=			gtk+-${VERSION}
-PKGNAME-main=			gtk+2-${VERSION}p1
+PKGNAME-main=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-SHARED_LIBS +=	gdk_pixbuf-2.0       1000.12  # .1000.12
-SHARED_LIBS +=	gdk-x11-2.0          1000.12  # .1000.12
-SHARED_LIBS +=	gtk-x11-2.0          1000.12  # .1000.12
-SHARED_LIBS +=	gdk_pixbuf_xlib-2.0  1000.12  # .1000.12
+SHARED_LIBS +=	gdk_pixbuf-2.0       1000.13  # .1000.13
+SHARED_LIBS +=	gdk-x11-2.0          1000.13  # .1000.13
+SHARED_LIBS +=	gtk-x11-2.0          1000.13  # .1000.13
+SHARED_LIBS +=	gdk_pixbuf_xlib-2.0  1000.13  # .1000.13
 CATEGORIES=			x11 devel
 
 HOMEPAGE=			http://www.gtk.org
