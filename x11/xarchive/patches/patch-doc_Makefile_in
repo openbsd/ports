@@ -1,0 +1,26 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2007/07/16 21:35:42 ajacoutot Exp $
+--- doc/Makefile.in.orig	Mon Feb 27 18:29:16 2006
++++ doc/Makefile.in	Mon Jul 16 23:27:19 2007
+@@ -79,7 +79,7 @@ am__quote = @am__quote@
+ install_sh = @install_sh@
+ docdir = $(prefix)/share/doc/@PACKAGE@
+ 
+-doc_DATA = xarchive.1.html xarchive.1.txt
++doc_DATA = xarchive.1.txt
+ man_MANS = xarchive.1
+ subdir = doc
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+@@ -268,13 +268,11 @@ uninstall-man: uninstall-man1
+ 
+ 
+ xarchive.1: xarchive.1.xml
+-	docbook2x-man xarchive.1.xml
+ 
+ xarchive.1.html: xarchive.1.txt
+ 	asciidoc -b html -d manpage xarchive.1.txt
+ 
+ xarchive.1.xml: xarchive.1.txt
+-	asciidoc -b docbook -d manpage xarchive.1.txt
+ 
+ xarchive.1.txt: xarchive.1.txt.src 
+ 	cat xarchive.1.txt.src | sed -e "s/VNUM/@PACKAGE_VERSION@/" -e "s/ANAME/@PACKAGE_BUGREPORT@/" -e "s/MDATE/$(shell date +"%e %B %Y")/" > xarchive.1.txt

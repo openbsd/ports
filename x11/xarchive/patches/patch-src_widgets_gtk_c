@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_widgets_gtk_c,v 1.1.1.1 2007/07/16 21:35:42 ajacoutot Exp $
+--- src/widgets_gtk.c.orig	Sat Jul 14 00:13:56 2007
++++ src/widgets_gtk.c	Sat Jul 14 00:14:15 2007
+@@ -787,7 +787,7 @@ askfor_new_archive(gchar *name)
+ 		GTK_MESSAGE_ERROR, 
+                 "Sorry, archive type not supported.\n\n"
+                 "Please use an archive name with an\n"
+-                "extenstion that you have a wrapper for.\n\n"
++                "extension that you have a wrapper for.\n\n"
+                 "For example:\n"
+                 "If you have tar-wrap.sh:\n"
+                 "\tsomename.tar.gz\n"

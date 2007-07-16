@@ -1,0 +1,27 @@
+$OpenBSD: patch-doc_xarchive_1_txt_src,v 1.1.1.1 2007/07/16 21:35:42 ajacoutot Exp $
+--- doc/xarchive.1.txt.src.orig	Mon Jul 16 23:24:26 2007
++++ doc/xarchive.1.txt.src	Mon Jul 16 23:25:12 2007
+@@ -278,12 +278,10 @@ it's wrappers:
+ 
+ - ~/.xarchive/wrappers/
+ 
+-- /usr/local/lib/xarchive/wrappers/
++- !!PREFIX!!/lib/xarchive/wrappers/
+ 
+-- (or, depending on installation /usr/lib/xarchive/wrappers/)
+-
+ The first wrappers found are the first ones used.  Thus, if you copy a wrapper
+-from the system wide directory (/usr/local/lib/xarchive/wrappers/) to your own
++from the system wide directory (!!PREFIX!!/lib/xarchive/wrappers/) to your own
+ private wrapper directory (~/.xarchive/wrappers/) and modify it, your modified
+ version will be used.
+ 
+@@ -343,7 +341,7 @@ Wrapper Exit Codes
+ 
+ - Anything else for wrapper failure
+ 
+-See the wrappers included in /usr/local/lib/xarchive/wrappers (or /usr/lib/xarchive/wrappers) for examples.
++See the wrappers included in !!PREFIX!!/lib/xarchive/wrappers for examples.
+ 
+ BUGS 
+ ---- 

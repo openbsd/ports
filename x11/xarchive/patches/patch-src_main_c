@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main_c,v 1.1.1.1 2007/07/16 21:35:42 ajacoutot Exp $
+--- src/main.c.orig	Sun Jul 15 11:20:52 2007
++++ src/main.c	Sun Jul 15 11:21:09 2007
+@@ -63,7 +63,7 @@ setup_exts(WrapperEntry *wrapent)
+   GPtrArray *ext_array = NULL;
+ 
+   /* read extentions into dataline from wrapper */
+-  cmd = g_strdup_printf("%s -i", wrapent->path);
++  cmd = g_strdup_printf("%s -i test", wrapent->path);
+   fdata = popen(cmd, "r");
+   if (getline(&dataline, &maxline, fdata) > 0) 
+   {

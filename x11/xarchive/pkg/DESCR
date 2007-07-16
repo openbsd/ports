@@ -1,0 +1,4 @@
+XArchive is a GTK+2 front-end for various command line archiving
+programs.
+The idea is to have a generic front end for archives that uses external
+wrappers around the command line archiving tools.
