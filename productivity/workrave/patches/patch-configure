@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/07/16 14:24:57 jasper Exp $
+--- configure.orig	Mon Jul 16 12:05:37 2007
++++ configure	Mon Jul 16 12:08:33 2007
+@@ -2955,9 +2955,9 @@ if test "x$config_debug" = "xyes"; then
+    CXXFLAGS="${CXXFLAGS} -g -Wall -DGLIBCXX_FORCE_NEW -DGLIBCPP_FORCE_NEW"
+    LDFLAGS="${LDFLAGS} -g"
+ else
+-   CFLAGS="${CFLAGS} -Os -g -DNDEBUG"
+-   CXXFLAGS="${CXXFLAGS} -Os -g -DNDEBUG"
+-   LDFLAGS="${LDFLAGS} -g"
++   CFLAGS="${CFLAGS}"
++   CXXFLAGS="${CXXFLAGS}"
++   LDFLAGS="${LDFLAGS}"
+ fi
+ 
+ { echo "$as_me:$LINENO: checking whether to enable maintainer-specific portions of Makefiles" >&5

@@ -1,0 +1,27 @@
+$OpenBSD: patch-frontend_common_share_sounds_Makefile_in,v 1.1.1.1 2007/07/16 14:24:57 jasper Exp $
+--- frontend/common/share/sounds/Makefile.in.orig	Mon Jul 16 14:48:06 2007
++++ frontend/common/share/sounds/Makefile.in	Mon Jul 16 14:50:06 2007
+@@ -556,14 +556,6 @@ uninstall-soundsDATA:
+ 	  rm -f "$(DESTDIR)$(soundsdir)/$$f"; \
+ 	done
+ install-utilsDATA: $(utils_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(utilsdir)" || $(mkdir_p) "$(DESTDIR)$(utilsdir)"
+-	@list='$(utils_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(utilsDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(utilsdir)/$$f'"; \
+-	  $(utilsDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(utilsdir)/$$f"; \
+-	done
+ 
+ uninstall-utilsDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -610,7 +602,7 @@ check-am: all-am
+ check: check-am
+ all-am: Makefile $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(kdesoundsdir)" "$(DESTDIR)$(rcdir)" "$(DESTDIR)$(soundsdir)" "$(DESTDIR)$(utilsdir)"; do \
++	for dir in "$(DESTDIR)$(kdesoundsdir)" "$(DESTDIR)$(rcdir)" "$(DESTDIR)$(soundsdir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: install-am
