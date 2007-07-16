@@ -12,6 +12,3 @@ Celestia is expandable. It comes with a large catalog of stars,
 galaxies, planets, moons, asteroids, comets, and spacecraft. If that's
 not enough, you can download dozens of easy to install add-ons with more
 objects.
-
-Available flavors:
-	lua - add Lua scripting engine (extension language support)

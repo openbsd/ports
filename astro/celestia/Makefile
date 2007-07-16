@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/16 17:39:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/16 18:26:04 ajacoutot Exp $
 
 COMMENT=	free space simulator and planetatium
 
 DISTNAME=	celestia-1.4.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	astro x11
 
 HOMEPAGE=	http://www.shatters.net/celestia/
@@ -25,7 +26,8 @@ WANTLIB=	GL GLU ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi \
 		png stdc++ z
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gdkglext-x11-1.0,gtkglext-x11-1.0::x11/gtkglext
+LIB_DEPENDS=	gdkglext-x11-1.0,gtkglext-x11-1.0::x11/gtkglext \
+		lua.>=5::lang/lua
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
@@ -37,17 +39,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-gtk
-
-FLAVORS=	lua
-FLAVOR?=
-
-.if ${FLAVOR:L:Mlua}
-LIB_DEPENDS+=	lua.>=5::lang/lua
-CONFIGURE_ARGS+=--with-lua
-.else
-CONFIGURE_ARGS+=--without-lua
-.endif
+		--with-gtk \
+		--with-lua
 
 pre-configure:
 	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
