@@ -1,0 +1,50 @@
+$OpenBSD: patch-src_celutil_unixdirectory_cpp,v 1.1.1.1 2007/07/16 17:39:21 ajacoutot Exp $
+$NetBSD: patch-am,v 1.1 2006/12/12 19:31:37 joerg Exp $
+--- src/celutil/unixdirectory.cpp.orig	Wed Jul 11 16:30:51 2007
++++ src/celutil/unixdirectory.cpp	Wed Jul 11 16:33:05 2007
+@@ -7,11 +7,19 @@
+ // as published by the Free Software Foundation; either version 2
+ // of the License, or (at your option) any later version.
+ 
++#if defined(__OpenBSD__)
++#define NO_WORDEXP
++#endif
++
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <dirent.h>
++#ifdef NO_WORDEXP
++#include <glob.h>
++#else
+ #include <wordexp.h>
++#endif
+ #include "directory.h"
+ 
+ using namespace std;
+@@ -98,6 +106,19 @@ bool IsDirectory(const std::string& filename)
+ }
+ 
+ std::string WordExp(const std::string& filename) {
++#ifdef NO_WORDEXP
++    glob_t g;
++    std::string expanded;
++    glob(filename.c_str(), GLOB_NOSORT | GLOB_TILDE, NULL, &g);
++    if (g.gl_matchc != 1) {
++        globfree(&g);
++        return filename;
++    } else {
++        expanded = g.gl_pathv[0];
++        globfree(&g);
++        return expanded;
++    }
++#else
+     wordexp_t result;
+     std::string expanded;
+ 
+@@ -121,4 +142,5 @@ std::string WordExp(const std::string& filename) {
+     wordfree(&result);
+ 
+     return expanded;
++#endif
+ }

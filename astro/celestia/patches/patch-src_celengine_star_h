@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_celengine_star_h,v 1.1.1.1 2007/07/16 17:39:21 ajacoutot Exp $
+--- src/celengine/star.h.orig	Thu Jul 12 09:33:28 2007
++++ src/celengine/star.h	Thu Jul 12 09:33:48 2007
+@@ -30,7 +30,7 @@ class StarDetails
+     // orbits and StarDetails objects.  Currently, it's assumed that they
+     // have lifetimes that continue until program termination.
+  public:
+-    StarDetails::StarDetails();
++    StarDetails();
+ 
+     inline float getRadius() const;
+     inline float getTemperature() const;

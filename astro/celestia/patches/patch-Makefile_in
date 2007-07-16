@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/07/16 17:39:21 ajacoutot Exp $
+--- Makefile.in.orig	Wed Jul 11 17:10:46 2007
++++ Makefile.in	Wed Jul 11 17:11:04 2007
+@@ -309,7 +309,6 @@ noinst_DATA = \
+ pkgdata_DATA = \
+ 	celestia.cfg \
+ 	controls.txt \
+-	COPYING \
+ 	$(wildcard *.cel)
+ 
+ 

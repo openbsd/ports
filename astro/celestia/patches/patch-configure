@@ -1,0 +1,132 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/07/16 17:39:21 ajacoutot Exp $
+--- configure.orig	Wed Feb 15 22:53:09 2006
++++ configure	Thu Jul 12 12:13:21 2007
+@@ -3227,13 +3227,13 @@ if test "$ac_test_CFLAGS" = set; then
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g"
+   else
+     CFLAGS="-g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -5605,13 +5605,13 @@ if test "$ac_test_CFLAGS" = set; then
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g"
+   else
+     CFLAGS="-g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -6213,13 +6213,13 @@ if test "$ac_test_CXXFLAGS" = set; then
+   CXXFLAGS=$ac_save_CXXFLAGS
+ elif test $ac_cv_prog_cxx_g = yes; then
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
++    CXXFLAGS="-g"
+   else
+     CXXFLAGS="-g"
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS=""
+   else
+     CXXFLAGS=
+   fi
+@@ -21716,8 +21716,6 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtool --silent'
+ 
+ 
+ CELESTIA_CPPFLAGS=""
+-CELESTIA_CFLAGS="-O2 -Wall -ffast-math -fexpensive-optimizations"
+-CELESTIA_CXXFLAGS="-O2 -Wall -ffast-math -fexpensive-optimizations"
+ 
+ echo "$as_me:$LINENO: checking whether to include debugging code" >&5
+ echo $ECHO_N "checking whether to include debugging code... $ECHO_C" >&6
+@@ -22383,13 +22381,13 @@ if test "$ac_test_CFLAGS" = set; then
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g"
+   else
+     CFLAGS="-g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -22997,10 +22995,10 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+       if test $kde_use_debug_code = "full"; then
+         CFLAGS="-g3 -fno-inline $CFLAGS"
+       else
+-        CFLAGS="-g -O2 $CFLAGS"
++        CFLAGS="-g $CFLAGS"
+       fi
+     else
+-      CFLAGS="-O2 $CFLAGS"
++      CFLAGS="$CFLAGS"
+     fi
+   fi
+ 
+@@ -23250,13 +23248,13 @@ if test "$ac_test_CXXFLAGS" = set; then
+   CXXFLAGS=$ac_save_CXXFLAGS
+ elif test $ac_cv_prog_cxx_g = yes; then
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
++    CXXFLAGS="-g"
+   else
+     CXXFLAGS="-g"
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS=""
+   else
+     CXXFLAGS=
+   fi
+@@ -23482,7 +23480,7 @@ fi
+         if test "$kde_use_debug_code" = "full"; then
+           CXXFLAGS="-g3 -fno-inline $CXXFLAGS"
+         else
+-          CXXFLAGS="-g -O2 $CXXFLAGS"
++          CXXFLAGS="-g $CXXFLAGS"
+         fi
+       fi
+ 
+@@ -23667,7 +23665,7 @@ fi
+       if test "$CXX" = "KCC"; then
+         CXXFLAGS="+K3 $CXXFLAGS"
+       else
+-        CXXFLAGS="-O2 $CXXFLAGS"
++        CXXFLAGS="$CXXFLAGS"
+       fi
+     fi
+   fi
+@@ -39509,7 +39507,7 @@ echo "$as_me:$LINENO: checking whether to enable Celes
+ echo $ECHO_N "checking whether to enable Celestia Extension Language... $ECHO_C" >&6
+ if (test "$enable_lua" != "no"); then
+ 	CXXFLAGS="$CXXFLAGS -DCELX"
+-	LDFLAGS="$LDFLAGS -llualib -llua"
++	LDFLAGS="$LDFLAGS -llua"
+ 
+ 	if (test "$lua_includes" != "no"); then
+ 		CXXFLAGS="$CXXFLAGS -I$lua_includes"

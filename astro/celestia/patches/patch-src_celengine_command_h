@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_celengine_command_h,v 1.1.1.1 2007/07/16 17:39:21 ajacoutot Exp $
+--- src/celengine/command.h.orig	Thu Jul 12 09:34:00 2007
++++ src/celengine/command.h	Thu Jul 12 09:34:24 2007
+@@ -94,7 +94,7 @@ class CommandGoto : public InstantaneousCommand
+ class CommandGotoLongLat : public InstantaneousCommand
+ {
+  public:
+-    CommandGotoLongLat::CommandGotoLongLat(double t,
++    CommandGotoLongLat(double t,
+                                            double dist,
+                                            float _longitude, float _latitude,
+                                            Vec3f _up);

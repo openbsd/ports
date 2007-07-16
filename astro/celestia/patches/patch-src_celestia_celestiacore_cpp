@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_celestia_celestiacore_cpp,v 1.1.1.1 2007/07/16 17:39:21 ajacoutot Exp $
+--- src/celestia/celestiacore.cpp.orig	Thu Jul 12 09:43:25 2007
++++ src/celestia/celestiacore.cpp	Thu Jul 12 09:43:58 2007
+@@ -3547,7 +3547,7 @@ bool CelestiaCore::initSimulation(const string* config
+     }
+     else
+     {
+-        config = ReadCelestiaConfig("celestia.cfg");
++        config = ReadCelestiaConfig("!!SYSCONFDIR!!/celestia.cfg");
+ 
+         string localConfigFile = WordExp("~/.celestia.cfg");
+         if (localConfigFile != "")
