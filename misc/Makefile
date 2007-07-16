@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2007/07/13 20:04:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2007/07/16 15:17:38 todd Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -38,6 +38,7 @@
      SUBDIR += jive
      SUBDIR += ktimeclock
      SUBDIR += libutf8
+     SUBDIR += lifelines
      SUBDIR += logjam
      SUBDIR += magicpoint
      SUBDIR += mc
