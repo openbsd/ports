@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/16 15:16:37 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/16 15:40:02 jasper Exp $
 bin/btedit
 bin/dbverify
 bin/llexec
@@ -277,8 +277,7 @@ share/locale/fr/LC_MESSAGES/lifelines.mo
 share/locale/it/LC_MESSAGES/lifelines.mo
 share/locale/nl/LC_MESSAGES/lifelines.mo
 share/locale/pl/LC_MESSAGES/lifelines.mo
-@comment share/locale/rw/
-@comment share/locale/rw/LC_MESSAGES/
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/lifelines.mo
 share/locale/sv/LC_MESSAGES/lifelines.mo
-share/nls/pl_PL.ISO_8859-2/

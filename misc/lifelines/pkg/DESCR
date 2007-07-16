@@ -1,18 +1,17 @@
-LifeLines is a free and open source genealogy program to help with
-your family history research. It has native versions for Unix-like,
-Mac, and Windows operating systems.
+LifeLines is a free and open source genealogy program to help with your
+family history research. It has native versions for Unix-like, Mac, and
+Windows operating systems.
 
-The format of the data as presented to the user for viewing, data
-entry, and updating follows the GEDCOM format.
+The format of the data as presented to the user for viewing, data entry,
+and updating follows the GEDCOM format.
 
-The real power of LifeLines is its scripting ability. There are a
-number of LifeLines reports (aka scripts) that generate all manner
-of output -- ahnentafels, ancestor/descendent reports, formatted
-ancestor reports, beautiful books of all ancestors, fan charts of
-ancestors, vital records of all individuals in a format suitable
-for importing to palm pilot databases (specifically DB which is
-also hosted here on SourceForge). All the reports are included in
-the kit.
+The real power of LifeLines is its scripting ability. There are a number
+of LifeLines reports (aka scripts) that generate all manner of output --
+ahnentafels, ancestor/descendent reports, formatted ancestor reports,
+beautiful books of all ancestors, fan charts of ancestors, vital records
+of all individuals in a format suitable for importing to palm pilot
+databases (specifically DB which is also hosted here on SourceForge).
+All the reports are included in the kit.
 
-Several reports can do error and sanity checking of data; such as
-deaths before births, extreme May-December marriages, etc.
+Several reports can do error and sanity checking of data; such as deaths
+before births, extreme May-December marriages, etc.

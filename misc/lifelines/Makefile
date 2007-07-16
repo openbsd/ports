@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/16 15:16:37 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/16 15:40:02 jasper Exp $
 
-COMMENT=		"genealogical database and programming system"
+COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.60
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lifelines/}
 
@@ -22,7 +23,7 @@ CONFIGURE_ENV+=		YACC="bison -y" \
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 BUILD_DEPENDS=		::devel/bison
 MODULES=		devel/gettext
-WANTLIB=		c ncurses iconv
+WANTLIB=		c m ncurses iconv
 USE_GMAKE=		Yes
 
 pre-fake:
