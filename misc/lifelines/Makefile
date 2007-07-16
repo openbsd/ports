@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/16 15:40:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/16 15:41:35 jasper Exp $
 
 COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.60
@@ -26,10 +26,8 @@ MODULES=		devel/gettext
 WANTLIB=		c m ncurses iconv
 USE_GMAKE=		Yes
 
-pre-fake:
-	mkdir ${PREFIX}/share/examples/lifelines
-
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lifelines
 	${INSTALL_DATA} ${FILESDIR}/linesrc ${PREFIX}/share/examples/lifelines
 
 .include <bsd.port.mk>
