@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/14 20:33:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/16 06:13:07 ajacoutot Exp $
 
 COMMENT=	real-time strategy game
 
 V=		2.3
 DISTNAME=	boswars-${V}-src
-PKGNAME=	boswars-${V}
+PKGNAME=	boswars-${V}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.boswars.org/
