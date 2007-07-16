@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/07/07 18:00:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2007/07/16 14:25:43 jasper Exp $
 
      SUBDIR += bruce
      SUBDIR += devtodo
@@ -10,6 +10,7 @@
      SUBDIR += taskjuggler
      SUBDIR += tdl
      SUBDIR += vym
+     SUBDIR += workrave
      SUBDIR += wyrd
      SUBDIR += xinvest
      SUBDIR += xquote
