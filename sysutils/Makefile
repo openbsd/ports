@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2007/05/22 15:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2007/07/17 23:45:54 simon Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -36,6 +36,7 @@
      SUBDIR += ipmitool
      SUBDIR += knutclient
      SUBDIR += libretto-config
+     SUBDIR += libstatgrab
      SUBDIR += login_ldap
      SUBDIR += logpp
      SUBDIR += lsof
@@ -57,6 +58,7 @@
      SUBDIR += p5-Proc-Queue
      SUBDIR += p5-Quota
      SUBDIR += p5-UPS-Nut
+     SUBDIR += p5-Unix-Statgrab
      SUBDIR += p5-Unix-Syslog
      SUBDIR += pciutils
      SUBDIR += perfd
