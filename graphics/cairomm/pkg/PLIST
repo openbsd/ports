@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/25 10:23:26 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/17 08:14:35 jasper Exp $
 %%SHARED%%
 include/cairomm-1.0/
 include/cairomm-1.0/cairomm/
@@ -10,6 +10,7 @@ include/cairomm-1.0/cairomm/fontface.h
 include/cairomm-1.0/cairomm/fontoptions.h
 include/cairomm-1.0/cairomm/path.h
 include/cairomm-1.0/cairomm/pattern.h
+include/cairomm-1.0/cairomm/quartz_surface.h
 include/cairomm-1.0/cairomm/refptr.h
 include/cairomm-1.0/cairomm/scaledfont.h
 include/cairomm-1.0/cairomm/surface.h
