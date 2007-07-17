@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/07/17 21:53:25 jasper Exp $
+@lib lib/libkpathsea.so.${LIBkpathsea_VERSION}

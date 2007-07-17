@@ -1,0 +1,26 @@
+$OpenBSD: patch-utils_dialog_Makefile_in,v 1.1.1.1 2007/07/17 21:53:31 jasper Exp $
+--- utils/dialog/Makefile.in.orig	Tue Jan 17 21:16:42 2006
++++ utils/dialog/Makefile.in	Fri May  4 20:28:41 2007
+@@ -109,18 +109,18 @@ install: install-exec $(man1dir)/tcdialog.$(manext)
+ install-exec: installdirs $(bindir)/tcdialog
+ 
+ installdirs:
+-	$(SHELL) ${srcdir}/mkinstalldirs $(bindir) $(man1dir)
++	$(SHELL) ${srcdir}/mkinstalldirs ${DESTDIR}$(bindir) ${DESTDIR}$(man1dir)
+ 
+ $(bindir)/tcdialog: dialog
+-	$(INSTALL_PROGRAM) dialog $@
++	$(INSTALL_PROGRAM) dialog ${DESTDIR}$@
+ 
+ $(man1dir)/tcdialog.$(manext): dialog.man
+-	$(INSTALL_DATA) $(srcdir)/dialog.man $@
++	$(INSTALL_DATA) $(srcdir)/dialog.man ${DESTDIR}$@
+ 
+ 
+ check:
+ uninstall:
+-	-rm -f $(bindir)/tcdialog $(man1dir)/tcdialog.$(manext)
++	-rm -f ${DESTDIR}$(bindir)/tcdialog ${DESTDIR}$(man1dir)/tcdialog.$(manext)
+ 
+ 
+ .PHONY: clean realclean distclean mostlyclean

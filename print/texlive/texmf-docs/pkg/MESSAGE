@@ -1,0 +1,2 @@
+You may wish to alter you shell environment so that texdoc uses your
+preferred PDF/DVI/HTML/Text viewer. See texdoc(1) for more information.
