@@ -1,7 +1,7 @@
-$OpenBSD: patch-glade_Makefile_in,v 1.1 2006/01/03 14:55:19 bernd Exp $
---- glade/Makefile.in.orig	Tue Jan  3 15:38:26 2006
-+++ glade/Makefile.in	Tue Jan  3 15:38:48 2006
-@@ -260,7 +260,7 @@ libglade_2_0_la_SOURCES = \
+$OpenBSD: patch-glade_Makefile_in,v 1.2 2007/07/17 16:50:34 jasper Exp $
+--- glade/Makefile.in.orig	Tue Jun 19 10:16:41 2007
++++ glade/Makefile.in	Mon Jul 16 12:51:01 2007
+@@ -262,7 +262,7 @@ libglade_2_0_la_SOURCES = \
    glade-private.h
  
  libglade_2_0_la_LIBADD = $(LIBGLADE_LIBS)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-glade_glade-xml_c,v 1.2 2005/05/25 23:26:40 marcm Exp $
---- glade/glade-xml.c.orig	Mon Nov 29 03:04:00 2004
-+++ glade/glade-xml.c	Mon Apr  4 23:58:51 2005
-@@ -964,7 +964,7 @@ default_custom_handler(GladeXML *xml, gc
+$OpenBSD: patch-glade_glade-xml_c,v 1.3 2007/07/17 16:50:34 jasper Exp $
+--- glade/glade-xml.c.orig	Mon Apr 16 10:55:14 2007
++++ glade/glade-xml.c	Mon Jul 16 12:51:01 2007
+@@ -1000,7 +1000,7 @@ default_custom_handler(GladeXML *xml, gchar *func_name
      allsymbols = g_module_open(NULL, 0);
      if (g_module_symbol(allsymbols, func_name, (gpointer)&func))
  	return (* func)(name, string1, string2, int1, int2);
