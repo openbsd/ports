@@ -1,0 +1,24 @@
+$OpenBSD: patch-doc_xzgv_texi,v 1.1 2007/07/17 12:45:49 ajacoutot Exp $
+--- doc/xzgv.texi.orig	Tue Jul 17 14:40:55 2007
++++ doc/xzgv.texi	Tue Jul 17 14:41:37 2007
+@@ -2723,9 +2723,9 @@ configuration file.
+ 
+ A configuration file lets you alter aspects of xzgv's behaviour. xzgv
+ supports two possible config files --- a system-wide one,
+-@file{/etc/xzgv.conf}; and one for each user in their home directory,
++@file{!!SYSCONFDIR!!/xzgv.conf}; and one for each user in their home directory,
+ @file{$HOME/.xzgvrc}. Both are optional. If @file{$HOME/.xzgvrc} exists,
+-it is used @emph{instead of} @file{/etc/xzgv.conf}.
++it is used @emph{instead of} @file{!!SYSCONFDIR!!/xzgv.conf}.
+ 
+ Before describing the format of config files, it may help to give an
+ example file:
+@@ -3171,7 +3171,7 @@ The versions of GTK+ and Imlib you are using. @code{xz
+ reports the GTK+ version being used by xzgv, but Imlib is a little more
+ tricky --- @code{imlib-config --version} should work if you have a full
+ Imlib installation, but failing that, try @code{ls -l
+-/usr/lib/libImlib*} or @code{ls -l /usr/X11R6/lib/libImlib*}.
++!!LOCALBASE!!/lib/libImlib*}.
+ 
+ @item
+ The bitdepth your X server is running in (common depths are 8-bit (256

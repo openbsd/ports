@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_c,v 1.2 2005/11/14 17:09:22 pvalchev Exp $
+$OpenBSD: patch-src_main_c,v 1.3 2007/07/17 12:45:49 ajacoutot Exp $
 --- src/main.c.orig	Tue Sep 16 15:49:01 2003
-+++ src/main.c	Thu May 12 15:36:47 2005
++++ src/main.c	Tue Jul 17 14:26:29 2007
 @@ -3007,25 +3007,25 @@ if(l<=4) return(0);
   * natively, and uses ImageMagick's `convert' for others.
   * But we have our own GIF/PNG/mrf readers.
@@ -91,7 +91,7 @@ $OpenBSD: patch-src_main_c,v 1.2 2005/11/14 17:09:22 pvalchev Exp $
  
  /* remove the row in the clist. We need to stop/restart thumbnail read
   * if it's running, as unexpectedly losing a row midway through could
-@@ -3634,6 +3636,7 @@ static char *prefix="Really delete `",*s
+@@ -3634,6 +3636,7 @@ static char *prefix="Really delete `",*suffix="'?";
  struct clist_data_tag *datptr;
  char *ptr,*msg;
  int row;
@@ -117,7 +117,7 @@ $OpenBSD: patch-src_main_c,v 1.2 2005/11/14 17:09:22 pvalchev Exp $
  
  /* ok, check if they're sure. If so, the above callback routine
   * will be called.
-@@ -3667,6 +3671,7 @@ void reinit_dir(int do_pastpos,int try_t
+@@ -3667,6 +3671,7 @@ void reinit_dir(int do_pastpos,int try_to_save_cursor_
  {
  int row;
  char *ptr,*oldname=NULL;

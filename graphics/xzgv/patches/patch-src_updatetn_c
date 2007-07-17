@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_updatetn_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
+$OpenBSD: patch-src_updatetn_c,v 1.2 2007/07/17 12:45:49 ajacoutot Exp $
 --- src/updatetn.c.orig	Tue Apr 10 05:47:00 2001
-+++ src/updatetn.c	Thu May 12 15:33:55 2005
-@@ -168,8 +168,8 @@ datptr=gtk_clist_get_row_data(GTK_CLIST(
++++ src/updatetn.c	Tue Jul 17 14:26:29 2007
+@@ -168,8 +168,8 @@ datptr=gtk_clist_get_row_data(GTK_CLIST(clist),row);
  if(datptr->isdir || stat(ptr,&realpic)==-1 || *ptr=='.')
    return(1);
  

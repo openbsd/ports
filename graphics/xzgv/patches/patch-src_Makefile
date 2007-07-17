@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
---- src/Makefile.orig	Tue Jan  1 06:37:45 2002
-+++ src/Makefile	Thu May 12 15:53:36 2005
+$OpenBSD: patch-src_Makefile,v 1.2 2007/07/17 12:45:49 ajacoutot Exp $
+--- src/Makefile.orig	Tue Jul 17 14:26:28 2007
++++ src/Makefile	Tue Jul 17 14:26:29 2007
 @@ -30,7 +30,7 @@ BACKEND_LIBS=`case "$(BACKEND)" in \
  # compile when you do `make install'. :-)
  # (It would also be weird to have it made by the `doc' Makefile, IMHO.)
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
  
  OBJS=	main.o \
  	filedetails.o gotodir.o updatetn.o confirm.o help.o \
-@@ -57,9 +57,8 @@ install-info: install-info.c getopt.o ge
+@@ -57,9 +57,8 @@ install-info: install-info.c getopt.o getopt1.o
  installdirs:
  	/bin/sh ../mkinstalldirs $(BINDIR)
  

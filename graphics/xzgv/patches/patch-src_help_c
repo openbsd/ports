@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_help_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
+$OpenBSD: patch-src_help_c,v 1.2 2007/07/17 12:45:49 ajacoutot Exp $
 --- src/help.c.orig	Tue Sep 16 16:07:44 2003
-+++ src/help.c	Thu May 12 15:38:33 2005
++++ src/help.c	Tue Jul 17 14:26:29 2007
 @@ -84,8 +84,9 @@ void help_run(char *node)
  char *cmd_start="xterm -e info '(xzgv)";
  char *cmd_end="' &";
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_help_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
    {
    /* if we're *that* low on memory, then error_dialog() will fail too,
     * so just return.
-@@ -93,9 +94,9 @@ if((buf=malloc(strlen(cmd_start)+strlen(
+@@ -93,9 +94,9 @@ if((buf=malloc(strlen(cmd_start)+strlen(node)+strlen(c
    return;
    }
  

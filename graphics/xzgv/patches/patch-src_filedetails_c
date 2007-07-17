@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_filedetails_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
+$OpenBSD: patch-src_filedetails_c,v 1.2 2007/07/17 12:45:49 ajacoutot Exp $
 --- src/filedetails.c.orig	Sat Nov 18 18:58:39 2000
-+++ src/filedetails.c	Thu May 12 15:32:46 2005
++++ src/filedetails.c	Tue Jul 17 14:26:29 2007
 @@ -26,7 +26,7 @@ static char buf[10];
  int f,shift,submode;
  char *execptr;
@@ -44,7 +44,7 @@ $OpenBSD: patch-src_filedetails_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
  DO_TBL_RIGHT(os_tbl,tbl_row,buf);
  tbl_row++;
  
-@@ -186,9 +186,9 @@ DO_TBL_LEFT(os_tbl,tbl_row,"Last modifie
+@@ -186,9 +186,9 @@ DO_TBL_LEFT(os_tbl,tbl_row,"Last modified:");
  if(got_stat_info)
    {
    if((ctime=localtime(&sbuf.st_mtime))==NULL)	/* can't happen? */

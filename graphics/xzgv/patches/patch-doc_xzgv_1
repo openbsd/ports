@@ -1,0 +1,24 @@
+$OpenBSD: patch-doc_xzgv_1,v 1.1 2007/07/17 12:45:49 ajacoutot Exp $
+--- doc/xzgv.1.orig	Tue Sep 16 15:19:44 2003
++++ doc/xzgv.1	Tue Jul 17 14:32:29 2007
+@@ -2120,9 +2120,9 @@ configuration file.
+ .SH "CONFIG FILES"
+ A configuration file lets you alter aspects of xzgv's behaviour. xzgv
+ supports two possible config files --- a system-wide one,
+-\fI/etc/xzgv.conf\fR; and one for each user in their home directory,
++\fI!!SYSCONFDIR!!/xzgv.conf\fR; and one for each user in their home directory,
+ \fI$HOME/.xzgvrc\fR. Both are optional. If \fI$HOME/.xzgvrc\fR exists,
+-it is used \fIinstead of\fR \fI/etc/xzgv.conf\fR.
++it is used \fIinstead of\fR \fI!!SYSCONFDIR!!/xzgv.conf\fR.
+ .PP
+ Before describing the format of config files, it may help to give an
+ example file:
+@@ -2453,7 +2453,7 @@ The versions of GTK+ and Imlib you are using. `\fBxzgv
+ reports the GTK+ version being used by xzgv, but Imlib is a little more
+ tricky --- `\fBimlib-config --version\fR' should work if you have a full
+ Imlib installation, but failing that, try `\fBls -l
+-/usr/lib/libImlib*\fR' or `\fBls -l /usr/X11R6/lib/libImlib*\fR'.
++!!LOCALBASE!!/lib/libImlib*\fR'.
+ .PP
+ \fBo\fR 
+ The bitdepth your X server is running in (common depths are 8-bit (256
