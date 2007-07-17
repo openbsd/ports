@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2007/07/13 13:47:25 jasper Exp $
---- configure.orig	Fri Aug 18 18:29:39 2006
-+++ configure	Fri Jul 13 15:40:11 2007
-@@ -18725,7 +18725,7 @@ fi
+$OpenBSD: patch-configure,v 1.3 2007/07/17 16:49:02 jasper Exp $
+--- configure.orig	Mon Jul 16 12:28:37 2007
++++ configure	Mon Jul 16 12:29:22 2007
+@@ -19979,7 +19979,7 @@ fi
  # Make these available to both PKG_CHECK_MODULES and the .pc.in file:
  GLIBMM_VERSION_NEEDED=2.6.4
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-configure,v 1.2 2007/07/13 13:47:25 jasper Exp $
  
  GCONF_VERSION_NEEDED=2.4.0
  
-@@ -18951,47 +18951,6 @@ fi
+@@ -20220,47 +20220,6 @@ fi
  
  
  pkg_failed=no
--echo "$as_me:$LINENO: checking for GCONFMM_EXAMPLES" >&5
--echo $ECHO_N "checking for GCONFMM_EXAMPLES... $ECHO_C" >&6
+-{ echo "$as_me:$LINENO: checking for GCONFMM_EXAMPLES" >&5
+-echo $ECHO_N "checking for GCONFMM_EXAMPLES... $ECHO_C" >&6; }
 -
 -if test -n "$PKG_CONFIG"; then
 -    if test -n "$GCONFMM_EXAMPLES_CFLAGS"; then
