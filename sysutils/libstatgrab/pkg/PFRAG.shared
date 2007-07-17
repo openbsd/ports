@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/07/17 23:45:43 simon Exp $
+@lib lib/libstatgrab.so.${LIBstatgrab_VERSION}
