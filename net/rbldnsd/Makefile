@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/05/23 05:53:07 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/17 14:12:50 jasper Exp $
 
-COMMENT=	"small daemon for DNSBLs"
+COMMENT=	small daemon for DNSBLs
 
-DISTNAME=	rbldnsd_0.996
+DISTNAME=	rbldnsd_0.996a
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	net
 
