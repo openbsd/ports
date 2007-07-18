@@ -1,0 +1,22 @@
+The SMS Server Tools 3 is a SMS Gateway software which can send and
+receive short messages through GSM modems and mobile phones.
+
+You can send short messages by simply storing text files into a
+special spool directory. The program monitors this directory and
+sends new files automatically. It also stores received short messages
+into another directory as text files. Binary messages (including
+Unicode text) are also supported, for example ring tone messages.
+It's also possible to send a WAP Push message to the WAP / MMS
+capable mobile phone.
+
+The program can run other external programs or scripts after events
+like reception of a new message, successful sending and also when
+the program detects a problem. These programs can inspect the related
+text files and perform automatic actions, for example storing
+information into a database, sending an automatic reply, forwarding
+messages via eMail (SMS to eMail gateway), ... and whatever you like.
+
+This software needs a GSM modem (or mobile phone) with SMS command
+set according to the european specifications GSM 07.05 (=ETSI TS
+300 585) and GSM 03.38 (=ETSI TS 100 900). AT command set is
+supported.

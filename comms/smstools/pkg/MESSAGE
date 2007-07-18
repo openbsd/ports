@@ -1,0 +1,10 @@
+To have smsd start at boot time, you have to adapt
+${SYSCONFDIR}/smsd.conf and insert the following into /etc/rc.local.
+
+if [ -x ${PREFIX}/bin/smsd ]; then
+	install -d -o _smsd /var/run/smsd
+	echo -n ' smsd';	${PREFIX}/bin/smsd
+fi
+
+smsd needs access to the serial port; this can be done by adding
+the _smsd user to 'dialer' in ${SYSCONFDIR}/group.

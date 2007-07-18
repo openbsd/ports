@@ -1,0 +1,32 @@
+# $OpenBSD: smsd.conf.openbsd,v 1.1.1.1 2007/07/18 11:03:34 jasper Exp $
+
+devices = GSM1
+#devices = GSM1, GSM2
+loglevel = 7
+
+# setuid() to this user:
+user = _smsd
+# it's possible to setgid too, but default is the set of
+# groups from /etc/groups
+
+pidfile = /var/run/smsd/smsd.pid
+infofile = /var/run/smsd/smsd.info
+
+#logfile = syslog
+logfile = /var/log/smsd/smsd.log
+
+[GSM1]
+# A sample USB device with typical broken rtscts, so use
+# a send delay to reduce the risk of overruns. Some PC cards
+# also break rts/cts. For this one I have set incoming=no
+# so it doesn't pull the existing messages off the phone.
+device = /dev/cuaU0
+incoming = no
+rtscts = no
+send_delay = 20
+
+[GSM2]
+device = /dev/cua00
+incoming = yes
+#pin = 1111
+# pin is normally used only with data cards, not phones
