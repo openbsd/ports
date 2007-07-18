@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2007/05/30 05:56:15 jason Exp $
+# $OpenBSD: Makefile,v 1.42 2007/07/18 11:04:25 jasper Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -31,6 +31,7 @@
      SUBDIR += qpage
      SUBDIR += scmxx
      SUBDIR += seyon
+     SUBDIR += smstools
      SUBDIR += sredird
      SUBDIR += tkhylafax
      SUBDIR += tlf
