@@ -1,3 +1,4 @@
+$OpenBSD: patch-hacks_deco_c,v 1.4 2007/07/18 11:26:30 jasper Exp $
 --- hacks/deco.c.orig	Mon Feb 13 00:01:40 2006
 +++ hacks/deco.c	Mon May 14 20:34:43 2007
 @@ -134,7 +134,6 @@ deco_free (Display *dpy, Window window, void *closure)

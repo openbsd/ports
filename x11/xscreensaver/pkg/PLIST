@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2007/01/16 10:11:53 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.22 2007/07/18 11:26:30 jasper Exp $
 @conflict circuit-*
 @mode 4755
 bin/xscreensaver
@@ -51,6 +51,7 @@ libexec/xscreensaver/crystal
 libexec/xscreensaver/cube21
 libexec/xscreensaver/cubenetic
 libexec/xscreensaver/cubestorm
+libexec/xscreensaver/cwaves
 libexec/xscreensaver/cynosure
 libexec/xscreensaver/dangerball
 libexec/xscreensaver/decayscreen
@@ -84,6 +85,7 @@ libexec/xscreensaver/galaxy
 libexec/xscreensaver/gears
 libexec/xscreensaver/gflux
 libexec/xscreensaver/glblur
+libexec/xscreensaver/glcells
 libexec/xscreensaver/gleidescope
 libexec/xscreensaver/glforestfire
 libexec/xscreensaver/glhanoi
@@ -126,6 +128,7 @@ libexec/xscreensaver/lissie
 libexec/xscreensaver/ljlatest
 libexec/xscreensaver/lmorph
 libexec/xscreensaver/loop
+libexec/xscreensaver/m6502
 libexec/xscreensaver/maze
 libexec/xscreensaver/memscroller
 libexec/xscreensaver/menger
@@ -201,6 +204,7 @@ libexec/xscreensaver/twang
 libexec/xscreensaver/vermiculate
 libexec/xscreensaver/vidwhacker
 libexec/xscreensaver/vines
+libexec/xscreensaver/voronoi
 libexec/xscreensaver/wander
 libexec/xscreensaver/webcollage
 libexec/xscreensaver/webcollage-helper
@@ -264,6 +268,7 @@ libexec/xscreensaver/zoom
 @man man/man6/cube21.6
 @man man/man6/cubenetic.6
 @man man/man6/cubestorm.6
+@man man/man6/cwaves.6
 @man man/man6/cynosure.6
 @man man/man6/dangerball.6
 @man man/man6/decayscreen.6
@@ -297,6 +302,7 @@ libexec/xscreensaver/zoom
 @man man/man6/gears.6
 @man man/man6/gflux.6
 @man man/man6/glblur.6
+@man man/man6/glcells.6
 @man man/man6/gleidescope.6
 @man man/man6/glforestfire.6
 @man man/man6/glhanoi.6
@@ -413,6 +419,7 @@ libexec/xscreensaver/zoom
 @man man/man6/vermiculate.6
 @man man/man6/vidwhacker.6
 @man man/man6/vines.6
+@man man/man6/voronoi.6
 @man man/man6/wander.6
 @man man/man6/webcollage.6
 @man man/man6/whirlwindwarp.6
@@ -503,6 +510,7 @@ share/xscreensaver/config/crystal.xml
 share/xscreensaver/config/cube21.xml
 share/xscreensaver/config/cubenetic.xml
 share/xscreensaver/config/cubestorm.xml
+share/xscreensaver/config/cwaves.xml
 share/xscreensaver/config/cynosure.xml
 share/xscreensaver/config/dangerball.xml
 share/xscreensaver/config/decayscreen.xml
@@ -538,6 +546,7 @@ share/xscreensaver/config/galaxy.xml
 share/xscreensaver/config/gears.xml
 share/xscreensaver/config/gflux.xml
 share/xscreensaver/config/glblur.xml
+share/xscreensaver/config/glcells.xml
 share/xscreensaver/config/gleidescope.xml
 share/xscreensaver/config/glforestfire.xml
 share/xscreensaver/config/glhanoi.xml
@@ -580,6 +589,7 @@ share/xscreensaver/config/lisa.xml
 share/xscreensaver/config/lissie.xml
 share/xscreensaver/config/lmorph.xml
 share/xscreensaver/config/loop.xml
+share/xscreensaver/config/m6502.xml
 share/xscreensaver/config/maze.xml
 share/xscreensaver/config/memscroller.xml
 share/xscreensaver/config/menger.xml
@@ -656,6 +666,7 @@ share/xscreensaver/config/twang.xml
 share/xscreensaver/config/vermiculate.xml
 share/xscreensaver/config/vidwhacker.xml
 share/xscreensaver/config/vines.xml
+share/xscreensaver/config/voronoi.xml
 share/xscreensaver/config/wander.xml
 share/xscreensaver/config/webcollage.xml
 share/xscreensaver/config/whirlwindwarp.xml

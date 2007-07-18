@@ -1,3 +1,4 @@
+$OpenBSD: patch-configure,v 1.5 2007/07/18 11:26:30 jasper Exp $
 --- configure.orig	Sat Apr 21 06:33:15 2007
 +++ configure	Mon May 14 20:34:42 2007
 @@ -10306,7 +10306,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
