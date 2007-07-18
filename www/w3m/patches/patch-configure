@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.13 2005/02/22 10:23:39 alek Exp $
---- configure.orig	Tue Feb 22 00:00:40 2005
-+++ configure	Tue Feb 22 00:00:49 2005
-@@ -10850,7 +10850,7 @@ s,@MSGMERGE@,$MSGMERGE,;t t
- s,@LIBICONV@,$LIBICONV,;t t
- s,@LTLIBICONV@,$LTLIBICONV,;t t
- s,@INTLLIBS@,$INTLLIBS,;t t
--s,@LIBINTL@,$LIBINTL,;t t
-+s,@LIBINTL@,$LTLIBINTL,;t t
- s,@LTLIBINTL@,$LTLIBINTL,;t t
- s,@POSUB@,$POSUB,;t t
- s,@INTLTARGET@,$INTLTARGET,;t t
+$OpenBSD: patch-configure,v 1.14 2007/07/18 17:29:46 naddy Exp $
+--- configure.orig	Thu Jul 12 22:55:10 2007
++++ configure	Thu Jul 12 22:55:30 2007
+@@ -11565,7 +11565,7 @@ MSGMERGE!$MSGMERGE$ac_delim
+ LIBICONV!$LIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+ INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ INTLTARGET!$INTLTARGET$ac_delim

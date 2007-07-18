@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/06/26 04:57:36 naddy Exp $
---- Makefile.in.orig	2004-05-01 20:34:09.000000000 +0200
-+++ Makefile.in	2004-05-01 20:34:35.000000000 +0200
-@@ -208,11 +208,11 @@ install-core: $(TARGETS)
+$OpenBSD: patch-Makefile_in,v 1.2 2007/07/18 17:29:46 naddy Exp $
+--- Makefile.in.orig	Tue May 29 14:01:04 2007
++++ Makefile.in	Thu Jul 12 22:57:28 2007
+@@ -213,11 +213,11 @@ install-core: $(TARGETS)
  	-$(MKDIR) $(DESTDIR)$(CGIBIN_DIR)
  	-$(MKDIR) $(DESTDIR)$(HELP_DIR)
  	-$(MKDIR) $(DESTDIR)$(mandir)/man1
