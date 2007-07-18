@@ -1,7 +1,7 @@
-$OpenBSD: patch-j2sdk1_3_1_src_share_javavm_runtime_jni_c,v 1.1 2005/06/03 17:27:54 kurt Exp $
+$OpenBSD: patch-j2sdk1_3_1_src_share_javavm_runtime_jni_c,v 1.2 2007/07/18 14:19:27 kurt Exp $
 --- j2sdk1.3.1/src/share/javavm/runtime/jni.c.orig	Sun May  6 08:18:43 2001
-+++ j2sdk1.3.1/src/share/javavm/runtime/jni.c	Mon May 23 23:50:35 2005
-@@ -570,20 +570,17 @@ jni_FindMethodBlock(JNIEnv *env, jclass 
++++ j2sdk1.3.1/src/share/javavm/runtime/jni.c	Wed Jul 18 09:36:14 2007
+@@ -570,20 +570,17 @@ jni_FindMethodBlock(JNIEnv *env, jclass cls, const cha
  
  typedef char*
  (*JNI_PushArguments_t)(JNIEnv *env, char *terse_signature,
@@ -25,7 +25,7 @@ $OpenBSD: patch-j2sdk1_3_1_src_share_javavm_runtime_jni_c,v 1.1 2005/06/03 17:27
  
      while (1) {
          switch (*p++) {
-@@ -592,7 +589,7 @@ jni_PushArgumentsVararg(JNIEnv *env, cha
+@@ -592,7 +589,7 @@ jni_PushArgumentsVararg(JNIEnv *env, char *terse_signa
  	case TERSE_SIG_BYTE:
  	case TERSE_SIG_CHAR:
  	case TERSE_SIG_INT:
@@ -34,7 +34,7 @@ $OpenBSD: patch-j2sdk1_3_1_src_share_javavm_runtime_jni_c,v 1.1 2005/06/03 17:27
              continue;
  	case TERSE_SIG_FLOAT:
  	    (current_frame->optop++)->f = (float)va_arg(args, double);
-@@ -621,49 +618,45 @@ jni_PushArgumentsVararg(JNIEnv *env, cha
+@@ -621,49 +618,45 @@ jni_PushArgumentsVararg(JNIEnv *env, char *terse_signa
  
  static char*
  jni_PushArgumentsArray(JNIEnv *env, char *terse_signature,

@@ -1,6 +1,6 @@
-$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_src_memory_md_c,v 1.2 2005/06/03 17:27:54 kurt Exp $
---- j2sdk1.3.1/src/solaris/hpi/src/memory_md.c.orig	Wed Apr 20 13:23:19 2005
-+++ j2sdk1.3.1/src/solaris/hpi/src/memory_md.c	Wed Apr 20 13:25:51 2005
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_src_memory_md_c,v 1.3 2007/07/18 14:19:27 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/src/memory_md.c.orig	Wed Jul 18 09:36:12 2007
++++ j2sdk1.3.1/src/solaris/hpi/src/memory_md.c	Wed Jul 18 09:36:14 2007
 @@ -110,7 +110,9 @@ InitializeMem(void)
  #endif
      }
@@ -41,7 +41,7 @@ $OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_src_memory_md_c,v 1.2 2005/06/03 17:2
                          devZeroFD, (off_t) 0);
  #endif
      return (ret == MAP_FAILED ? 0 : ret);
-@@ -204,7 +210,7 @@ mapChunkNoreserve(char *addr, long lengt
+@@ -204,7 +210,7 @@ mapChunkNoreserve(char *addr, long length)
                           -1, (off_t) 0);
  #else
      ret = (char *) mmap(addr, length, PROT_ALL,

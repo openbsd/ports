@@ -1,7 +1,7 @@
-$OpenBSD: patch-j2sdk1_3_1_src_share_hpi_include_hpi_impl_h,v 1.1 2006/01/18 15:12:55 kurt Exp $
---- j2sdk1.3.1/src/share/hpi/include/hpi_impl.h.orig	Tue Jan 17 21:31:02 2006
-+++ j2sdk1.3.1/src/share/hpi/include/hpi_impl.h	Tue Jan 17 21:37:27 2006
-@@ -123,10 +123,10 @@ int sysConnect(int fd, struct sockaddr *
+$OpenBSD: patch-j2sdk1_3_1_src_share_hpi_include_hpi_impl_h,v 1.2 2007/07/18 14:19:27 kurt Exp $
+--- j2sdk1.3.1/src/share/hpi/include/hpi_impl.h.orig	Sun May  6 08:18:04 2001
++++ j2sdk1.3.1/src/share/hpi/include/hpi_impl.h	Wed Jul 18 09:36:14 2007
+@@ -123,10 +123,10 @@ int sysConnect(int fd, struct sockaddr *him, int len);
  int sysBind(int fd, struct sockaddr *him, int len);
  int sysAccept(int fd, struct sockaddr *him, int *len);
  int sysGetSockName(int fd, struct sockaddr *him, int *len);

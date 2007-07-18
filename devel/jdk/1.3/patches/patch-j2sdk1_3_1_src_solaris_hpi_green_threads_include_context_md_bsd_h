@@ -1,6 +1,6 @@
-$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_h,v 1.3 2006/03/20 14:40:25 kurt Exp $
---- j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h.orig	Thu Mar 16 16:42:43 2006
-+++ j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h	Fri Mar 17 12:39:53 2006
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_h,v 1.4 2007/07/18 14:19:27 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h.orig	Wed Jul 18 09:36:12 2007
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h	Wed Jul 18 09:36:14 2007
 @@ -26,6 +26,9 @@ typedef struct lj_ucontext {
  	context_jmpbuf_t	jmpbuf;
  #if defined(i386)
@@ -48,7 +48,7 @@ $OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_
      void *current_sp;
  #endif
      inner_ucontext_t lj_ucontext;
-@@ -200,6 +217,21 @@ extern int netbsd_siglongjmp(sigjmp_buf 
+@@ -200,6 +217,21 @@ extern int netbsd_siglongjmp(sigjmp_buf env, int val);
          (contextp)->unix_errno = errno;					\
          reschedule();							\
      }									\
