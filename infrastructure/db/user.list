@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.75 2007/06/07 13:10:34 jasper Exp $
+$OpenBSD: user.list,v 1.76 2007/07/18 11:00:05 jasper Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -98,3 +98,4 @@ id  user		group		port options
 587 _darkstat		_darkstat	net/darkstat
 588 _dansguardian	_dansguardian	www/dansguardian
 589 _sdpd		_sdpd		net/bluetooth-tools
+590 _smsd		_smsd		comms/smstools
