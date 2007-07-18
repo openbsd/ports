@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.526 2007/07/09 20:08:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.527 2007/07/18 11:43:20 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -616,5 +616,6 @@
      SUBDIR += vte
      SUBDIR += xmake
      SUBDIR += xulrunner
+     SUBDIR += yasm
 
 .include <bsd.port.subdir.mk>
