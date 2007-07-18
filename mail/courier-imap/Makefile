@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.53 2007/06/22 07:34:45 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.54 2007/07/18 11:49:14 aanriot Exp $
 
-COMMENT-main=		"imap server for maildir format mailboxes"
-COMMENT-pop3=		"pop3 server for maildir format mailboxes"
+COMMENT-main=		imap server for maildir format mailboxes
+COMMENT-pop3=		pop3 server for maildir format mailboxes
 
 V=			4.1.1
 DISTNAME=		courier-imap-${V}
-PKGNAME-main=		${DISTNAME}p1
-FULLPKGNAME-pop3=	courier-pop3-${V}
+PKGNAME-main=		${DISTNAME}p2
+FULLPKGNAME-pop3=	courier-pop3-${V}p0
 
 CATEGORIES=		mail
 
