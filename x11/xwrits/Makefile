@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/17 15:03:19 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/18 09:58:22 jasper Exp $
 
-COMMENT=	"typing break alarm and timer"
+COMMENT=	typing break alarm and timer
 
-DISTNAME=	xwrits-2.21
+DISTNAME=	xwrits-2.24
 CATEGORIES=	x11
 HOMEPAGE=	http://www.lcdf.org/~eddietwo/xwrits/
+
+MAINTAINER=	Scott Vokes <scott@silentbicycle.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
@@ -19,8 +21,4 @@ USE_X11=	Yes
 SEPARATE_BUILD= concurrent
 CONFIGURE_STYLE= gnu
 
-NO_REGRESS= Yes
-
 .include <bsd.port.mk>
-
-
