@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2007/06/28 12:32:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2007/07/18 21:43:54 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		"X11/Motif GUI text editor"
@@ -30,9 +30,7 @@ NO_REGRESS=		Yes
 
 FLAVOR?=
 
-.if ${FLAVOR:L:Mlesstif}
 CFLAGS+=	-DBUILD_UNTESTED_NEDIT
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/nedit ${PREFIX}/bin
