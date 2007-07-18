@@ -1,7 +1,7 @@
-$OpenBSD: patch-j2se_src_share_lib_security_java_security,v 1.1.1.1 2004/12/21 04:01:05 kurt Exp $
---- j2se/src/share/lib/security/java.security.orig	Wed Oct 13 17:06:16 2004
-+++ j2se/src/share/lib/security/java.security	Wed Oct 13 17:09:45 2004
-@@ -59,11 +59,11 @@ security.provider.5=sun.security.jgss.Su
+$OpenBSD: patch-j2se_src_share_lib_security_java_security,v 1.2 2007/07/18 15:09:52 kurt Exp $
+--- j2se/src/share/lib/security/java.security.orig	Wed Sep 10 21:53:26 2003
++++ j2se/src/share/lib/security/java.security	Wed Jul 18 10:56:32 2007
+@@ -59,11 +59,11 @@ security.provider.5=sun.security.jgss.SunProvider
  # On Windows systems, the URL file:/dev/random enables use of the
  # Microsoft CryptoAPI seed functionality.
  #

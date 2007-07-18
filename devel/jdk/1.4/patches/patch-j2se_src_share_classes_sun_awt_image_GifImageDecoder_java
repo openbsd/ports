@@ -1,7 +1,7 @@
-$OpenBSD: patch-j2se_src_share_classes_sun_awt_image_GifImageDecoder_java,v 1.1 2007/01/28 04:45:04 kurt Exp $
---- j2se/src/share/classes/sun/awt/image/GifImageDecoder.java.orig	Sat Jan 27 17:10:00 2007
-+++ j2se/src/share/classes/sun/awt/image/GifImageDecoder.java	Sat Jan 27 17:11:11 2007
-@@ -497,6 +497,14 @@ public class GifImageDecoder extends Ima
+$OpenBSD: patch-j2se_src_share_classes_sun_awt_image_GifImageDecoder_java,v 1.2 2007/07/18 15:09:52 kurt Exp $
+--- j2se/src/share/classes/sun/awt/image/GifImageDecoder.java.orig	Wed Sep 10 21:51:02 2003
++++ j2se/src/share/classes/sun/awt/image/GifImageDecoder.java	Wed Jul 18 10:56:32 2007
+@@ -497,6 +497,14 @@ public class GifImageDecoder extends ImageDecoder {
  	int y = ExtractWord(block, 2);
  	int width = ExtractWord(block, 4);
  	int height = ExtractWord(block, 6);

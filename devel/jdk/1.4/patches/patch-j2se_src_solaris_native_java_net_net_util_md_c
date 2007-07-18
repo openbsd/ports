@@ -1,6 +1,6 @@
-$OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2006/10/31 19:48:12 kurt Exp $
---- j2se/src/solaris/native/java/net/net_util_md.c.orig	Thu Oct 19 22:52:04 2006
-+++ j2se/src/solaris/native/java/net/net_util_md.c	Thu Oct 19 22:53:32 2006
+$OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.2 2007/07/18 15:09:52 kurt Exp $
+--- j2se/src/solaris/native/java/net/net_util_md.c.orig	Wed Jul 18 10:56:32 2007
++++ j2se/src/solaris/native/java/net/net_util_md.c	Wed Jul 18 10:56:32 2007
 @@ -33,6 +33,10 @@
  #include <sys/sysctl.h>
  #endif
@@ -12,7 +12,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2006/10/31 
  #ifdef __linux__
  #include <arpa/inet.h>
  #include <net/route.h>
-@@ -886,9 +890,12 @@ NET_SetSockOpt(int fd, int level, int  o
+@@ -886,9 +890,12 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
  #define IPTOS_PREC_MASK 0xe0
  #endif
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2006/10/31 
      int *bufsize;
  
      static int maxsockbuf = -1;
-@@ -980,7 +987,7 @@ NET_SetSockOpt(int fd, int level, int  o
+@@ -980,7 +987,7 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
      }
  #endif
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2006/10/31 
      /*
       * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On FreeBSD need to
       * ensure that value is <= kern.ipc.maxsockbuf as otherwise we get
-@@ -988,6 +995,7 @@ NET_SetSockOpt(int fd, int level, int  o
+@@ -988,6 +995,7 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
       */
      if (level == SOL_SOCKET) {
          if (opt == SO_SNDBUF || opt == SO_RCVBUF) {
@@ -43,7 +43,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2006/10/31 
              if (maxsockbuf == -1) {
  	        mib[0] = CTL_KERN;
  	        mib[1] = KERN_IPC;
-@@ -1003,6 +1011,11 @@ NET_SetSockOpt(int fd, int level, int  o
+@@ -1003,6 +1011,11 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
  		maxsockbuf = (maxsockbuf/5)*4;
  #endif
  	    }
@@ -55,7 +55,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2006/10/31 
  
  	    bufsize = (int *)arg;
  	    if ((*bufsize > maxsockbuf) && (bufsize != 0)) {
-@@ -1012,11 +1025,23 @@ NET_SetSockOpt(int fd, int level, int  o
+@@ -1012,11 +1025,23 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
      }
  
      /*
