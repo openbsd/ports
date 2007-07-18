@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/18 08:47:06 jasper Exp $
 
-COMMENT=	"SDL clone of the popular Game of Life"
+COMMENT=	SDL clone of the popular Game of Life
 
 DISTNAME=	life-1.0
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games
-MASTER_SITES=	${HOMEPAGE}
-
-HOMEPAGE=	http://w1.879.telia.com/~u87907755/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
