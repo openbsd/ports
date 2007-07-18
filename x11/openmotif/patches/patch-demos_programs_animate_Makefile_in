@@ -1,0 +1,24 @@
+$OpenBSD: patch-demos_programs_animate_Makefile_in,v 1.1 2007/07/18 21:41:05 mbalmer Exp $
+--- demos/programs/animate/Makefile.in.orig	Sat Jun 30 13:25:27 2007
++++ demos/programs/animate/Makefile.in	Sat Jun 30 13:25:57 2007
+@@ -542,16 +542,16 @@ uninstall-am: uninstall-binPROGRAMS uninstall-dataDATA
+ all: dog.uid plane.uid superman.uid xmanimate.uid
+ 
+ dog.uid: dog.uil
+-	../../../clients/uil/uil -o $@ $< -I$(srcdir)/../../../clients/uil -I../../../clients/uil
++	../../../clients/uil/uil -o $@ dog.uil -I$(srcdir)/../../../clients/uil -I../../../clients/uil
+ 
+ plane.uid: plane.uil
+-	../../../clients/uil/uil -o $@ $< -I$(srcdir)/../../../clients/uil -I../../../clients/uil
++	../../../clients/uil/uil -o $@ plane.uil -I$(srcdir)/../../../clients/uil -I../../../clients/uil
+ 
+ superman.uid: superman.uil
+-	../../../clients/uil/uil -o $@ $< -I$(srcdir)/../../../clients/uil -I../../../clients/uil
++	../../../clients/uil/uil -o $@ superman.uil -I$(srcdir)/../../../clients/uil -I../../../clients/uil
+ 
+ xmanimate.uid: xmanimate.uil
+-	../../../clients/uil/uil -o $@ $< -I$(srcdir)/../../../clients/uil -I../../../clients/uil
++	../../../clients/uil/uil -o $@ xmanimate.uil -I$(srcdir)/../../../clients/uil -I../../../clients/uil
+ 
+ clean-local:
+ 	$(RM) periodic.uid

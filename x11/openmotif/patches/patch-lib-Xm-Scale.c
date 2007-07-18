@@ -1,6 +1,6 @@
---- lib/Xm/Scale.c.orig	Mon Nov 20 13:42:57 2000
-+++ lib/Xm/Scale.c	Mon Nov 20 17:39:29 2000
-@@ -2751,7 +2751,11 @@
+--- lib/Xm/Scale.c.orig	Sat May  7 09:11:14 2005
++++ lib/Xm/Scale.c	Sat Jun 30 10:30:20 2007
+@@ -2808,7 +2808,11 @@ GetValueString(
  {
      register int i;
      int  diff, dec_point_size;
@@ -12,7 +12,7 @@
  	
      if (sw->scale.decimal_points > 0) {
        /* Add one to decimal points to get leading zero, since
-@@ -2759,15 +2763,23 @@
+@@ -2816,15 +2820,23 @@ GetValueString(
        sprintf (buffer,"%.*d", sw->scale.decimal_points+1, value);
  
        diff = strlen(buffer) - sw->scale.decimal_points;

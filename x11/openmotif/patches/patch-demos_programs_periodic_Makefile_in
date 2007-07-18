@@ -1,0 +1,12 @@
+$OpenBSD: patch-demos_programs_periodic_Makefile_in,v 1.1 2007/07/18 21:41:05 mbalmer Exp $
+--- demos/programs/periodic/Makefile.in.orig	Sat Jun 30 13:26:54 2007
++++ demos/programs/periodic/Makefile.in	Sat Jun 30 13:27:09 2007
+@@ -531,7 +531,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-dataDATA
+ all: periodic.uid
+ 
+ periodic.uid: periodic.uil
+-	../../../clients/uil/uil -o $@ $< -I$(srcdir)/../../../clients/uil -I../../../clients/uil
++	../../../clients/uil/uil -o $@ periodic.uil -I$(srcdir)/../../../clients/uil -I../../../clients/uil
+ 
+ clean-local:
+ 	$(RM) periodic.uid

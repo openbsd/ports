@@ -1,19 +1,19 @@
---- config/cf/Motif.rules.orig	Tue May  2 11:53:43 2000
-+++ config/cf/Motif.rules	Wed Aug  9 19:29:43 2000
-@@ -50,9 +50,10 @@
+--- config/cf/Motif.rules.orig	Sat Jun 30 10:10:29 2007
++++ config/cf/Motif.rules	Sat Jun 30 10:17:42 2007
+@@ -50,10 +50,10 @@ XCOMM $TOG: Motif.rules /main/8 1999/03/22 15:12:48 mg
  # define MotifIsTopLevelProject	NO
  #endif
  
 -/* Include the X11 project rules file. */
 +#ifndef X11IsTopLevelProject
-+/* If we have not included X11.rules yet, do it now. */
  #include <X11.rules>
--
 +#endif
  
+-
  /* Use the in-tree Motif by default. */
  #ifndef UseInstalledMotif
-@@ -655,7 +656,7 @@
+ # define UseInstalledMotif	NO
+@@ -698,7 +698,7 @@ clean::									@@\
  #define Real_MessageCatalogRule(prefix)					@@\
  prefix.cat Concat(prefix,MsgCatI.h):					@@\
  	$(RM) Concat(prefix,MsgCatI.h) prefix.cat $(MLOCSRC)/C/msg/prefix.msg	@@\

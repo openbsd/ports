@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_imake-pure,v 1.1 2007/07/18 21:41:05 mbalmer Exp $
+--- Makefile.imake-pure.orig	Sat Jun 30 09:55:02 2007
++++ Makefile.imake-pure	Sat Jun 30 09:55:55 2007
+@@ -115,7 +115,12 @@ World:
+ # This is just a sequence of bootstrapping steps we have to do.
+ # The steps are listed as separate targets so clearmake can wink in
+ # the Makefile.proto files.
+-Makefile.boot: imake.proto $(DEPENDSRC)/Makefile.proto depend.bootstrap $(IMAKESRC)/Makefile.proto imake.bootstrap
++#Makefile.boot: imake.proto $(DEPENDSRC)/Makefile.proto depend.bootstrap $(IMAKESRC)/Makefile.proto imake.bootstrap
++Makefile.boot:
++	-@if [ -f xmakefile ]; then set -x; \
++	$(RM) xmakefile.bak; $(MV) xmakefile xmakefile.bak; \
++	else exit 0; fi
++	$(MAKE) $(MFLAGS) xmakefile
+ 
+ imake.proto:
+ 	cd $(IMAKESRC) && $(MAKE) $(FLAGS)

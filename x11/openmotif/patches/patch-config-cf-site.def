@@ -1,6 +1,6 @@
---- config/cf/site.def.orig	Mon Nov 20 13:43:35 2000
-+++ config/cf/site.def	Mon Nov 20 21:07:04 2000
-@@ -67,6 +67,10 @@
+--- config/cf/site.def.orig	Sat Jan  5 16:20:53 2002
++++ config/cf/site.def	Sat Jun 30 10:24:41 2007
+@@ -67,6 +67,10 @@ XCOMM site:  $XFree86: xc/config/cf/site.def,v 3.17.2.
  #endif
  */
  

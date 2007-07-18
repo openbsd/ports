@@ -1,31 +1,32 @@
---- config/cf/Imakefile.orig	Thu Apr  5 22:22:54 2001
-+++ config/cf/Imakefile	Thu Apr  5 22:23:44 2001
-@@ -121,15 +121,15 @@
+--- config/cf/Imakefile.orig	Sat Jun 30 10:07:23 2007
++++ config/cf/Imakefile	Sat Jun 30 10:09:58 2007
+@@ -121,16 +121,16 @@ x386.cf \
  QNX.cf \
  xfree86.cf
  
 -INSTFILES = $(RULEFILES) $(TMPLFILES) $(DEFFILES) $(CFFILES) $(LOCALFILES)
-+/* We only need to install Motif.tmpl, and Motif.rules. */
++/* we only need to install Motif.tmpl and Motif.rules */
 +INSTFILES = Motif.tmpl Motif.rules
  
  all::
  
  InstallMultipleDestFlags(install,$(INSTFILES),$(CONFIGDIR),$(INSTDATFLAGS))
-+#if defined(XFree86Version) && XFree86Version < 4000
++#if defined(XFree86Version) && Xfree86Version < 4000
  InstallLinkKitMultipleDestFlags($(INSTFILES),$(LINKKITDIR)/config/cf,$(INSTDATFLAGS))
--
--InstallNamedNonExec(Motif.rules,Motif.rules.openmotif,$(CONFIGDIR))
--InstallNamedNonExec(Motif.tmpl,Motif.tmpl.openmotif,$(CONFIGDIR))
 +#endif
  
+-InstallNamedNonExec(Motif.rules,Motif.rules.openmotif,$(CONFIGDIR))
+-InstallNamedNonExec(Motif.tmpl,Motif.tmpl.openmotif,$(CONFIGDIR))
+-
  #ifdef InstallEmptyHostDef
  install::
-@@ -140,7 +140,7 @@
+ 	@(TMP=/tmp/tmp.$$$$; \
+@@ -140,7 +140,7 @@ install::
  		$(DESTDIR)$(CONFIGDIR)/host.def; \
  	RemoveFile($${TMP}))
  
 -#ifdef XFree86Version
-+#if defined(XFree86Version) && XFree86Version < 4000
++#if definded(XFree86Version) && XFreeVersion < 4000
  install.linkkit::
  	@(TMP=/tmp/tmp.$$$$; \
  	RemoveFile($${TMP}); \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-demos_unsupported_motifshell_motifshell_c,v 1.1 2002/12/29 09:34:48 pvalchev Exp $
---- demos/unsupported/motifshell/motifshell.c.orig	Sun Dec 29 00:47:05 2002
-+++ demos/unsupported/motifshell/motifshell.c	Sun Dec 29 00:47:27 2002
-@@ -598,7 +598,7 @@ void SysCall (Widget widget, char *syste
+$OpenBSD: patch-demos_unsupported_motifshell_motifshell_c,v 1.2 2007/07/18 21:41:05 mbalmer Exp $
+--- demos/unsupported/motifshell/motifshell.c.orig	Tue Jan 29 17:16:39 2002
++++ demos/unsupported/motifshell/motifshell.c	Sat Jun 30 10:27:21 2007
+@@ -598,7 +598,7 @@ void SysCall (Widget widget, char *systemCommand, Bool
    if ((p = fork()) == 0)
      {
        /* note - execlp uses PATH */
@@ -10,7 +10,7 @@ $OpenBSD: patch-demos_unsupported_motifshell_motifshell_c,v 1.1 2002/12/29 09:34
  
        /* if we fail to find the systemCommand, use 'find' to look for it. */
        fprintf(stderr, "can't find %s\n", systemCommand);
-@@ -629,7 +629,7 @@ void SysCall (Widget widget, char *syste
+@@ -629,7 +629,7 @@ void SysCall (Widget widget, char *systemCommand, Bool
  	      setenv("UIDPATH", uidpath, 1);
  #endif
  	    }

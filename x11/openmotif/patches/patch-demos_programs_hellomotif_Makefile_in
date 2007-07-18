@@ -1,0 +1,12 @@
+$OpenBSD: patch-demos_programs_hellomotif_Makefile_in,v 1.1 2007/07/18 21:41:05 mbalmer Exp $
+--- demos/programs/hellomotif/Makefile.in.orig	Sat Jun 30 13:26:32 2007
++++ demos/programs/hellomotif/Makefile.in	Sat Jun 30 13:26:46 2007
+@@ -531,7 +531,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-dataDATA
+ all: hellomotif.uid
+ 
+ hellomotif.uid: hellomotif.uil
+-	../../../clients/uil/uil -o $@ $< -I$(srcdir)/../../../clients/uil -I../../../clients/uil
++	../../../clients/uil/uil -o $@ hellomotif.uil -I$(srcdir)/../../../clients/uil -I../../../clients/uil
+ 
+ clean-local:
+ 	$(RM) hellomotif.uid

@@ -1,157 +1,24 @@
-$OpenBSD: patch-lib_Xm_Xpmparse_c,v 1.1 2004/09/01 22:57:36 pvalchev Exp $
---- lib/Xm/Xpmparse.c.orig	Fri Apr 28 09:05:21 2000
-+++ lib/Xm/Xpmparse.c	Wed Sep  1 01:38:34 2004
+$OpenBSD: patch-lib_Xm_Xpmparse_c,v 1.2 2007/07/18 21:41:06 mbalmer Exp $
+--- lib/Xm/Xpmparse.c.orig	Mon Dec  5 17:31:46 2005
++++ lib/Xm/Xpmparse.c	Sat Jun 30 10:50:09 2007
 @@ -1,4 +1,5 @@
  /* $XConsortium: Xpmparse.c /main/6 1996/09/20 08:15:49 pascale $ */
 +/* $XdotOrg: pre-CVS proposed fix for CESA-2004-003 alanc 7/25/2004 $ */
  /*
   * Copyright (C) 1989-95 GROUPE BULL
   *
-@@ -42,6 +43,24 @@
+@@ -49,7 +50,7 @@
  #include "XpmI.h"
  #include <ctype.h>
- 
-+#ifdef HAS_STRLCAT
-+# define STRLCAT(dst, src, dstsize) { \
-+  	if (strlcat(dst, src, dstsize) >= (dstsize)) \
-+	    return (XpmFileInvalid); }
-+# define STRLCPY(dst, src, dstsize) { \
-+  	if (strlcpy(dst, src, dstsize) >= (dstsize)) \
-+	    return (XpmFileInvalid); }
-+#else
-+# define STRLCAT(dst, src, dstsize) { \
-+	if ((strlen(dst) + strlen(src)) < (dstsize)) \
-+ 	    strcat(dst, src); \
-+	else return (XpmFileInvalid); }
-+# define STRLCPY(dst, src, dstsize) { \
-+	if (strlen(src) < (dstsize)) \
-+ 	    strcpy(dst, src); \
-+	else return (XpmFileInvalid); }
-+#endif
+ #include <string.h>
+- 
 +
- LFUNC(ParsePixels, int, (xpmData *data, unsigned int width,
- 			 unsigned int height, unsigned int ncolors,
- 			 unsigned int cpp, XpmColor *colorTable,
-@@ -318,7 +337,7 @@ xpmParseColors(data, ncolors, cpp, color
-     XpmColor **colorTablePtr;
-     xpmHashTable *hashtable;
- {
--    unsigned int key, l, a, b;
-+    unsigned int key, l, a, b, len;
-     unsigned int curkey;		/* current color key */
-     unsigned int lastwaskey;		/* key read */
-     char buf[BUFSIZ];
-@@ -329,6 +348,8 @@ xpmParseColors(data, ncolors, cpp, color
-     char **defaults;
-     int ErrorStatus;
- 
-+    if (ncolors >= SIZE_MAX / sizeof(XpmColor))
-+	return (XpmNoMemory);
-     colorTable = (XpmColor *) XpmCalloc(ncolors, sizeof(XpmColor));
-     if (!colorTable)
- 	return (XpmNoMemory);
-@@ -340,6 +361,10 @@ xpmParseColors(data, ncolors, cpp, color
- 	    /*
- 	     * read pixel value
- 	     */
-+	    if (cpp >= SIZE_MAX - 1) {
-+		xpmFreeColorTable(colorTable, ncolors);
-+		return (XpmNoMemory);
-+	    }
- 	    color->string = (char *) XpmMalloc(cpp + 1);
- 	    if (!color->string) {
- 		xpmFreeColorTable(colorTable, ncolors);
-@@ -377,13 +402,14 @@ xpmParseColors(data, ncolors, cpp, color
- 		}
- 		if (!lastwaskey && key < NKEYS) {	/* open new key */
- 		    if (curkey) {	/* flush string */
--			s = (char *) XpmMalloc(strlen(curbuf) + 1);
-+			len = strlen(curbuf) + 1;
-+			s = (char *) XpmMalloc(len);
- 			if (!s) {
- 			    xpmFreeColorTable(colorTable, ncolors);
- 			    return (XpmNoMemory);
- 			}
- 			defaults[curkey] = s;
--			strcpy(s, curbuf);
-+			memcpy(s, curbuf, len);
- 		    }
- 		    curkey = key + 1;	/* set new key  */
- 		    *curbuf = '\0';	/* reset curbuf */
-@@ -394,9 +420,9 @@ xpmParseColors(data, ncolors, cpp, color
- 			return (XpmFileInvalid);
- 		    }
- 		    if (!lastwaskey)
--			strcat(curbuf, " ");	/* append space */
-+			STRLCAT(curbuf, " ", sizeof(curbuf)); /* append space */
- 		    buf[l] = '\0';
--		    strcat(curbuf, buf);/* append buf */
-+		    STRLCAT(curbuf, buf, sizeof(curbuf));/* append buf */
- 		    lastwaskey = 0;
- 		}
+ #ifdef HAS_STRLCAT
+ # define STRLCAT(dst, src, dstsize) do { \
+        if (strlcat(dst, src, dstsize) >= (dstsize)) \
+@@ -555,6 +556,9 @@ ParsePixels(data, width, height, ncolors, cpp, colorTa
+ 	        return (XpmFileInvalid);
  	    }
-@@ -404,12 +430,13 @@ xpmParseColors(data, ncolors, cpp, color
- 		xpmFreeColorTable(colorTable, ncolors);
- 		return (XpmFileInvalid);
- 	    }
--	    s = defaults[curkey] = (char *) XpmMalloc(strlen(curbuf) + 1);
-+	    len = strlen(curbuf) + 1;
-+	    s = defaults[curkey] = (char *) XpmMalloc(len);
- 	    if (!s) {
- 		xpmFreeColorTable(colorTable, ncolors);
- 		return (XpmNoMemory);
- 	    }
--	    strcpy(s, curbuf);
-+	    memcpy(s, curbuf, len);
- 	}
-     } else {				/* XPM 1 */
- 	/* get to the beginning of the first string */
-@@ -422,6 +449,10 @@ xpmParseColors(data, ncolors, cpp, color
- 	    /*
- 	     * read pixel value
- 	     */
-+	    if (cpp >= SIZE_MAX - 1) {
-+		xpmFreeColorTable(colorTable, ncolors);
-+		return (XpmNoMemory);
-+	    }
- 	    color->string = (char *) XpmMalloc(cpp + 1);
- 	    if (!color->string) {
- 		xpmFreeColorTable(colorTable, ncolors);
-@@ -450,16 +481,17 @@ xpmParseColors(data, ncolors, cpp, color
- 	    *curbuf = '\0';		/* init curbuf */
- 	    while (l = xpmNextWord(data, buf, BUFSIZ)) {
- 		if (*curbuf != '\0')
--		    strcat(curbuf, " ");/* append space */
-+		    STRLCAT(curbuf, " ", sizeof(curbuf));/* append space */
- 		buf[l] = '\0';
--		strcat(curbuf, buf);	/* append buf */
-+		STRLCAT(curbuf, buf, sizeof(curbuf));	/* append buf */
- 	    }
--	    s = (char *) XpmMalloc(strlen(curbuf) + 1);
-+	    len = strlen(curbuf) + 1;
-+	    s = (char *) XpmMalloc(len);
- 	    if (!s) {
- 		xpmFreeColorTable(colorTable, ncolors);
- 		return (XpmNoMemory);
- 	    }
--	    strcpy(s, curbuf);
-+	    memcpy(s, curbuf, len);
- 	    color->c_color = s;
- 	    *curbuf = '\0';		/* reset curbuf */
- 	    if (a < ncolors - 1)
-@@ -484,6 +516,9 @@ ParsePixels(data, width, height, ncolors
-     unsigned int *iptr, *iptr2;
-     unsigned int a, x, y;
- 
-+    if ((height > 0 && width >= SIZE_MAX / height) ||
-+	width * height >= SIZE_MAX / sizeof(unsigned int)) 
-+	return XpmNoMemory;
- #ifndef FOR_MSW
-     iptr2 = (unsigned int *) XpmMalloc(sizeof(unsigned int) * width * height);
- #else
-@@ -507,6 +542,9 @@ ParsePixels(data, width, height, ncolors
- 	{
- 	    unsigned short colidx[256];
  
 +	    if (ncolors > 256)
 +		return (XpmFileInvalid);
@@ -159,7 +26,7 @@ $OpenBSD: patch-lib_Xm_Xpmparse_c,v 1.1 2004/09/01 22:57:36 pvalchev Exp $
  	    bzero((char *)colidx, 256 * sizeof(short));
  	    for (a = 0; a < ncolors; a++)
  		colidx[(unsigned char)colorTable[a].string[0]] = a + 1;
-@@ -583,6 +621,9 @@ if (cidx[f]) XpmFree(cidx[f]);}
+@@ -635,6 +639,9 @@ do \
  	{
  	    char *s;
  	    char buf[BUFSIZ];
@@ -167,5 +34,5 @@ $OpenBSD: patch-lib_Xm_Xpmparse_c,v 1.1 2004/09/01 22:57:36 pvalchev Exp $
 +	    if (cpp >= sizeof(buf))
 +		return (XpmFileInvalid);
  
- 	    buf[cpp] = '\0';
- 	    if (USE_HASHTABLE) {
+ 	    if (cpp >= sizeof(buf)) {
+  		XpmFree(iptr2); /* found by Egbert Eich */

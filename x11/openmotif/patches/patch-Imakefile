@@ -1,6 +1,6 @@
---- Imakefile.orig	Mon Nov 20 13:42:49 2000
-+++ Imakefile	Mon Nov 20 20:35:18 2000
-@@ -90,7 +90,7 @@
+--- Imakefile.orig	Sat Jun 30 09:54:52 2007
++++ Imakefile	Sat Jun 30 09:55:15 2007
+@@ -90,7 +90,7 @@ XCOMM 
  #ifdef UseInstalled
  TESTS_IMAKE = $(IMAKE) -DUseInstalled
  #else

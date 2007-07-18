@@ -1,24 +1,22 @@
---- config/cf/host.def.orig	Mon Nov 20 21:11:53 2000
-+++ config/cf/host.def	Mon Nov 20 20:53:56 2000
-@@ -1,17 +1,129 @@
- #ifdef BeforeVendorCF
- 
+--- config/cf/host.def.orig	Mon Jan  7 19:10:03 2002
++++ config/cf/host.def	Sat Jun 30 11:57:54 2007
+@@ -1,13 +1,128 @@
  #define TopLevelProject         Motif
 -#define ProjectRoot             /usr/X11R6
-+#define ProjectRoot             %%PREFIX%%
++#define ProjectRoot             /usr/local
  #define X11ProjectRoot          /usr/X11R6
--#define VirtualBindingsPath     $(LIBDIR)/bindings
-+#define VirtualBindingsPath     %%PREFIX%%/lib/X11/bindings
+-#define VirtualBindingsPath     /usr/X11R6/lib/X11/bindings
++#define VirtualBindingsPath     /usr/local/lib/X11/bindings
  #define ImportX11               YES
 -#define USE_BYACC               YES
  #define NoMessageCatalog        YES
  #define ForceNormalLib          YES
--#define HasVarDirectory         NO
- #define DebugLibXm              YES
- #define DebugLibMrm             YES
- #define DebugLibUil             YES
+ #define DebugLibXm              NO
+ #define DebugLibMrm             NO
+ #define DebugLibUil             NO
 -#define LexLib                  -lfl
- 
+ #define ExtraWidgets            YES
++ 
 +#define DependCmd /usr/X11R6/bin/makedepend
 +#define ExtraLoadOptions -L$(BUILDLIBDIR)
 +
@@ -40,7 +38,7 @@
 +	fi								@@\
 +									@@\
 +clean::									@@\
-+	RemoveFile(file.section.new)
+++	RemoveFile(file.section.new)
 +
 +/*
 + * install unformated man page
@@ -114,7 +112,7 @@
 +			exit 1; \					@@\
 +		fi; \							@@\
 +	done
- #endif /* BeforeVendorCF */
++#endif /* BeforeVendorCF */
 +
 +#ifdef AfterVendorCF
 +#ifndef ImakeCmd
@@ -132,6 +130,6 @@
 +#define ManSourcePath $(MANPATH)/man
 +
 +#undef ConfigDir
-+#define ConfigDir %%PREFIX%%/lib/X11/config
++#define ConfigDir /usr/local/lib/X11/config
 +
 +#endif /* AfterVendorCF */

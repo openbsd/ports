@@ -1,0 +1,27 @@
+$OpenBSD: patch-tools_wml_Makefile_in,v 1.1 2007/07/18 21:41:06 mbalmer Exp $
+--- tools/wml/Makefile.in.orig	Sat Jun 30 12:10:22 2007
++++ tools/wml/Makefile.in	Sat Jun 30 12:11:09 2007
+@@ -15,7 +15,7 @@
+ @SET_MAKE@
+ 
+ 
+-
++RM=rm
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+@@ -631,11 +631,11 @@ UilLexPars.c: Uil.c
+ 	$(LN_S) Uil.c UilLexPars.c
+ 
+ $(WMLTARGETS): wmluiltok wml UilLexPars.c $(TABLE)
+-	$(RM) $(WMLTARGETS) wml.report wml-uil.mm
++	-$(RM) $(WMLTARGETS) wml.report wml-uil.mm
+ 	./wmluiltok <$(srcdir)/Uil.y >tokens.dat
+-	$(RM) wml-uil.mm
++	-$(RM) wml-uil.mm
+ 	./wml $(srcdir)/$(TABLE)
+-	$(RM) tokens.dat
++	-$(RM) tokens.dat
+ 
+ all: motif.wmd
+ 

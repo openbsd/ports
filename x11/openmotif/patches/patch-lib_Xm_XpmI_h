@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Xm_XpmI_h,v 1.1 2004/09/01 22:57:36 pvalchev Exp $
---- lib/Xm/XpmI.h.orig	Wed Sep  1 01:25:27 2004
-+++ lib/Xm/XpmI.h	Wed Sep  1 01:31:33 2004
-@@ -179,6 +179,18 @@ extern FILE *popen();
+$OpenBSD: patch-lib_Xm_XpmI_h,v 1.2 2007/07/18 21:41:05 mbalmer Exp $
+--- lib/Xm/XpmI.h.orig	Mon Dec  5 17:31:46 2005
++++ lib/Xm/XpmI.h	Sat Jun 30 10:35:25 2007
+@@ -182,6 +182,18 @@ extern FILE *popen();
  		boundCheckingCalloc((long)(nelem),(long) (elsize))
  #endif
  
@@ -20,16 +20,3 @@ $OpenBSD: patch-lib_Xm_XpmI_h,v 1.1 2004/09/01 22:57:36 pvalchev Exp $
  #define XPMMAXCMTLEN BUFSIZ
  typedef struct {
      unsigned int type;
-@@ -276,9 +288,9 @@ typedef struct _xpmHashAtom {
- }      *xpmHashAtom;
- 
- typedef struct {
--    int size;
--    int limit;
--    int used;
-+    unsigned int size;
-+    unsigned int limit;
-+    unsigned int used;
-     xpmHashAtom *atomTable;
- }      xpmHashTable;
- 

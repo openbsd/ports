@@ -1,11 +1,10 @@
---- demos/programs/Imakefile.orig	Wed Mar  5 18:14:13 2003
-+++ demos/programs/Imakefile	Wed Mar  5 18:14:39 2003
-@@ -42,7 +42,7 @@
- 
- SUBDIRS = Exm airport animate drag_and_drop draw earth filemanager fileview \
- 	getsubres hellomotif hellomotifi18n i18ninput periodic \
--	piano popups sampler2_0 setdate todo
-+	piano popups sampler2_0 setdate
- 
- MakeSubdirs($(SUBDIRS))
- DependSubdirs($(SUBDIRS))
+--- demos/programs/Imakefile.orig	Tue Jan 29 18:22:33 2002
++++ demos/programs/Imakefile	Sat Jun 30 10:26:55 2007
+@@ -57,7 +57,6 @@ SUBDIRS = airport \
+          sampler2_0 \
+          setdate \
+          Exm \
+-         todo \
+          workspace \
+          hellomotifi18n \
+          tooltips \

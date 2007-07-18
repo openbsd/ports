@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_Xm_Makefile_in,v 1.1 2007/07/18 21:41:05 mbalmer Exp $
+--- lib/Xm/Makefile.in.orig	Sat Jun 30 12:07:31 2007
++++ lib/Xm/Makefile.in	Sat Jun 30 12:08:52 2007
+@@ -161,7 +161,8 @@ am_libXm_la_OBJECTS = $(am__objects_1) $(am__objects_2
+ 	$(am__objects_6) $(am__objects_7) $(am__objects_8) \
+ 	$(am__objects_9) $(am__objects_10) $(am__objects_11)
+ libXm_la_OBJECTS = $(am_libXm_la_OBJECTS)
+-DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/include -I.
++DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/include -I. \
++	-I/usr/local/include
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+@@ -248,7 +249,7 @@ LEXLIB = @LEXLIB@
+ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
+ LIBDIR = @LIBDIR@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -L/usr/local/lib -liconv
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@

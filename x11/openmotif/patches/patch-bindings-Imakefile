@@ -1,6 +1,6 @@
---- bindings/Imakefile.orig	Tue Nov 21 01:12:42 2000
-+++ bindings/Imakefile	Tue Nov 21 01:13:20 2000
-@@ -41,6 +41,7 @@
+--- bindings/Imakefile.orig	Sat Jun 30 09:56:21 2007
++++ bindings/Imakefile	Sat Jun 30 09:56:48 2007
+@@ -41,6 +41,7 @@ INSTALLFLAGS = $(INSTINCFLAGS)
  
  FILES = \
  	xmbind.alias \

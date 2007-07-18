@@ -1,16 +1,2 @@
-Here is what you might ask.  (excerpted from The Open Group FAQ)
-
-  Q:  What is Open Motif? How does it differ from standard Motif?
-
-  A:  Aside from some different copyright and license statements, both
-  Motif and Open Motif share the same functionality and source code.
-  The primary difference is the software license for each of the
-  software products. Open Motif source code and binaries can be
-  distributed royalty free under The Open Group Public License as
-  long as the operating system upon which Open Motif is running meets
-  the OSI's Open Source Definition. Motif is made available under
-  the standard Open Group software licenses and requires the payment
-  of source code and royalty fees.
-
 This package add executable binaries that demonstrate the capability
 of Motif toolkit.

@@ -1,0 +1,20 @@
+$OpenBSD: patch-demos_programs_fileview_Makefile_in,v 1.1 2007/07/18 21:41:05 mbalmer Exp $
+--- demos/programs/fileview/Makefile.in.orig	Sat Jun 30 13:26:06 2007
++++ demos/programs/fileview/Makefile.in	Sat Jun 30 13:26:24 2007
+@@ -536,13 +536,13 @@ uninstall-am: uninstall-binPROGRAMS uninstall-dataDATA
+ all: French.uid German.uid English.uid
+ 
+ French.uid: French.uil
+-	../../../clients/uil/uil -o $@ $< -I$(srcdir)/../../../clients/uil -I../../../clients/uil
++	../../../clients/uil/uil -o $@ French.uil -I$(srcdir)/../../../clients/uil -I../../../clients/uil
+ 
+ German.uid: German.uil
+-	../../../clients/uil/uil -o $@ $< -I$(srcdir)/../../../clients/uil -I../../../clients/uil
++	../../../clients/uil/uil -o $@ German.uil -I$(srcdir)/../../../clients/uil -I../../../clients/uil
+ 
+ English.uid: English.uil
+-	../../../clients/uil/uil -o $@ $< -I$(srcdir)/../../../clients/uil -I../../../clients/uil
++	../../../clients/uil/uil -o $@ English.uil -I$(srcdir)/../../../clients/uil -I../../../clients/uil
+ 
+ clean-local:
+ 	$(RM) French.uid German.uid English.uid

@@ -1,7 +1,7 @@
-$OpenBSD: patch-clients_mwm_WmFunction_c,v 1.1 2002/12/29 09:34:48 pvalchev Exp $
---- clients/mwm/WmFunction.c.orig	Sun Dec 29 00:45:44 2002
-+++ clients/mwm/WmFunction.c	Sun Dec 29 00:46:39 2002
-@@ -1119,12 +1119,12 @@ Boolean F_Exec (String args, ClientData 
+$OpenBSD: patch-clients_mwm_WmFunction_c,v 1.2 2007/07/18 21:41:05 mbalmer Exp $
+--- clients/mwm/WmFunction.c.orig	Sat Jun 30 10:04:45 2007
++++ clients/mwm/WmFunction.c	Sat Jun 30 10:05:44 2007
+@@ -1126,12 +1126,12 @@ Boolean F_Exec (String args, ClientData *pCD, XEvent *
  		directory, then we must call execlp and not execl
  		*/
  		shellname = shell;
@@ -16,7 +16,7 @@ $OpenBSD: patch-clients_mwm_WmFunction_c,v 1.1 2002/12/29 09:34:48 pvalchev Exp 
  	    }
  	}
  
-@@ -1133,9 +1133,9 @@ Boolean F_Exec (String args, ClientData 
+@@ -1140,9 +1140,9 @@ Boolean F_Exec (String args, ClientData *pCD, XEvent *
  	 * Try /bin/sh .
  	 */
  #ifdef SVR4

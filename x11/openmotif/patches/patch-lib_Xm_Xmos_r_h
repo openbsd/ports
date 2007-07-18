@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Xm_Xmos_r_h,v 1.1 2007/07/18 21:41:05 mbalmer Exp $
+--- lib/Xm/Xmos_r.h.orig	Sat Jun 30 11:59:19 2007
++++ lib/Xm/Xmos_r.h	Sat Jun 30 12:01:19 2007
+@@ -215,6 +215,10 @@ extern void XtProcessUnlock(
+  * struct passwd* _XGetpwuid(uid_t uid, _Xgetpwparams);
+  */
+ 
++#if defined (__OpenBSD__)
++#define XNO_MTSAFE_PWDAPI
++#endif
++
+ #if defined(X_INCLUDE_PWD_H) && !defined(_XOS_INCLUDED_PWD_H)
+ # include <pwd.h>
+ # if defined(XUSE_MTSAFE_API) || defined(XUSE_MTSAFE_PWDAPI)

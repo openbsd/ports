@@ -1,6 +1,6 @@
---- config/cf/Motif.tmpl.orig	Sun May  8 20:17:11 2005
-+++ config/cf/Motif.tmpl	Sun May  8 20:27:04 2005
-@@ -179,7 +179,7 @@ XCOMM $TOG: Motif.tmpl /main/6 1999/05/1
+--- config/cf/Motif.tmpl.orig	Sat Jan  5 16:20:50 2002
++++ config/cf/Motif.tmpl	Sat Jun 30 11:57:54 2007
+@@ -179,7 +179,7 @@ XCOMM $TOG: Motif.tmpl /main/6 1999/05/19 17:00:05 mgr
  # define YaccFlags /**/
  #endif
  
@@ -9,12 +9,12 @@
  
  #ifndef BuildMotifConfig
  # define BuildMotifConfig	YES
-@@ -396,7 +396,7 @@ XCOMM $TOG: Motif.tmpl /main/6 1999/05/1
+@@ -396,7 +396,7 @@ XCOMM $TOG: Motif.tmpl /main/6 1999/05/19 17:00:05 mgr
  /* hardcoded default path.  Contrary to the original duplicate of USRLIBDIR
     in the Imakefiles. */
  #ifndef VirtualBindingsPath
 -# define VirtualBindingsPath $(USRLIBDIR)/Xm/bindings
-+# define VirtualBindingsPath %%PREFIX%%/lib/X11/bindings
++# define VirtualBindingsPath /usr/local/lib/X11/bindings
  #endif
  
                MTOP = MTop

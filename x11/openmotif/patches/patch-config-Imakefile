@@ -1,12 +1,12 @@
---- config/Imakefile.orig	Fri Apr 28 08:04:08 2000
-+++ config/Imakefile	Mon Nov 20 20:45:12 2000
-@@ -5,7 +5,8 @@
+--- config/Imakefile.orig	Sat Jun 30 10:06:11 2007
++++ config/Imakefile	Sat Jun 30 10:07:04 2007
+@@ -5,7 +5,8 @@ XCOMM $XConsortium: Imakefile /main/6 1996/09/28 16:04
  #undef BootstrapCleanSubdirs
  #define BootstrapCleanSubdirs BOOTSTRAPSUBDIRS="$(BOOTSTRAPSUBDIRS)"
  
 -BOOTSTRAPSUBDIRS = imake makedepend
 +/* we don't need to build imake and makedepend */
 +/* BOOTSTRAPSUBDIRS = imake makedepend */
- SUBDIRS = cf $(BOOTSTRAPSUBDIRS) util
+ SUBDIRS =  $(BOOTSTRAPSUBDIRS) util
  
  MakeSubdirs($(SUBDIRS))
