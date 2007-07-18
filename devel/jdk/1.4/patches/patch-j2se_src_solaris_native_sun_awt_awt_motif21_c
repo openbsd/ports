@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_motif21_c,v 1.1 2007/07/18 17:53:29 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_motif21.c.orig	Wed Jul 18 11:02:41 2007
++++ j2se/src/solaris/native/sun/awt/awt_motif21.c	Wed Jul 18 11:03:04 2007
+@@ -15,7 +15,7 @@
+ #include "awt_p.h"
+ #include "awt_Component.h"
+ 
+-#if (XmVersion == 2001)
++#if (XmVersion >= 2001)
+ #include <Xm/XmIm.h>
+ #else
+ #define XmPER_SHELL 0

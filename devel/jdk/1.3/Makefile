@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2007/01/28 04:46:48 kurt Exp $
+# $OpenBSD: Makefile,v 1.24 2007/07/18 17:53:07 kurt Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 ONLY_FOR_ARCHS= 	arm i386 powerpc sparc
@@ -7,9 +7,9 @@ COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.3.1
 DISTNAME=		j2sdk-1_3_1-src
-PKGNAME=		jdk-${V}p10
-PKGNAME-main=		jdk-${V}p10
-PKGNAME-jre=		jre-${V}p10
+PKGNAME=		jdk-${V}
+PKGNAME-main=		jdk-${V}p11
+PKGNAME-jre=		jre-${V}p11
 
 CATEGORIES=		devel/jdk java
 
