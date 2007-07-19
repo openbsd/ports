@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2007/03/26 07:20:58 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2007/07/19 13:06:40 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 
-COMMENT=	"laptop battery status display for X11"
+# we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
+COMMENT=	laptop battery status display for X11
 
 DISTNAME=	xbatt-1.2.1
 CATEGORIES=	sysutils x11

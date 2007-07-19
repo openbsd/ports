@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/27 15:09:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/19 13:06:40 ajacoutot Exp $
 
 IGNORE=		"- similar functionality is included in apmd as of ${OPSYS} 3.9"
 
+# we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
 ONLY_FOR_ARCHS=	i386 macppc sparc zaurus
 
-COMMENT=	"utility to adjust cpu performance relative to usage"
+COMMENT=	utility to adjust cpu performance relative to usage
 CATEGORIES=	sysutils
 
 DISTNAME=	perfd-0.2

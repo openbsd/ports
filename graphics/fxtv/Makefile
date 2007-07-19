@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2007/03/22 23:39:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2007/07/19 13:06:40 ajacoutot Exp $
 
+# we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
-COMMENT=	"capture utility for Brooktree-based cards"
+COMMENT=	capture utility for Brooktree-based cards
 DISTNAME=	fxtv-1.03
 PKGNAME=	${DISTNAME}p2
 

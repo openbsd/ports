@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/03/26 07:20:58 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2007/07/19 13:06:40 ajacoutot Exp $
 
+# we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
 ONLY_FOR_ARCHS=		arm i386 macppc
 
-COMMENT=		'wm-dockapp; APM/battery monitor'
+COMMENT=		wm-dockapp; APM/battery monitor
 
 DISTNAME=		wmapm-3.1
 CATEGORIES=		sysutils x11 x11/windowmaker
