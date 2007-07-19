@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/29 06:08:12 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/19 08:06:24 jasper Exp $
 
-COMMENT=		"Music Player Daemon"
+COMMENT=		Music Player Daemon
 DISTNAME=		mpd-0.13.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio
 HOMEPAGE=		http://www.musicpd.org/
 MAINTAINER=		Tobias Ulmer <tobiasu@tmux.org>
@@ -40,7 +40,8 @@ CONFIGURE_ARGS+=        --enable-ao \
 			--enable-mod \
 			--bindir=${PREFIX}/sbin
 # OggFLAC and tremor tests
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
 
 .if ${FLAVOR:L:Mtremor}
 CONFIGURE_ARGS+=	--with-tremor \
