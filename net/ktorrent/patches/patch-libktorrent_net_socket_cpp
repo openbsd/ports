@@ -1,0 +1,21 @@
+$OpenBSD: patch-libktorrent_net_socket_cpp,v 1.1.1.1 2007/07/19 02:59:44 deanna Exp $
+--- libktorrent/net/socket.cpp.orig	Sun Apr 22 07:25:46 2007
++++ libktorrent/net/socket.cpp	Mon May  7 17:45:09 2007
+@@ -38,7 +38,7 @@
+ #include <sys/filio.h>
+ #endif
+ 
+-#if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || (defined(Q_OS_FREEBSD) && __FreeBSD_version < 600020) || defined (Q_OS_SOLARIS) || defined(Q_OS_NETBSD) 
++#if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || (defined(Q_OS_FREEBSD) && __FreeBSD_version < 600020) || defined (Q_OS_SOLARIS) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ #define MSG_NOSIGNAL 0
+ #endif
+ 
+@@ -258,7 +258,7 @@ namespace net
+ 	
+ 	bool Socket::setTOS(char type_of_service)
+ 	{
+-#if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || (defined(Q_OS_FREEBSD) && __FreeBSD_version < 600020) || defined(Q_OS_NETBSD) || defined(Q_OS_BSD4)
++#if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || (defined(Q_OS_FREEBSD) && __FreeBSD_version < 600020) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD) || defined(Q_OS_BSD4)
+ 		int c = type_of_service;
+ #else
+ 		char c = type_of_service;
