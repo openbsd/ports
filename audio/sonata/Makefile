@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/17 21:27:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/19 16:21:44 jasper Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"elegant music player for MPD"
+COMMENT=	elegant music player for MPD
 
-DISTNAME=	sonata-1.1
+DISTNAME=	sonata-1.2.1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://sonata.berlios.de/
@@ -26,7 +26,9 @@ MODULES=	devel/gettext \
 		lang/python
 
 BUILD_DEPENDS=	::x11/py-gtk2
-RUN_DEPENDS=	::devel/py-SOAPpy \
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::devel/py-SOAPpy \
+		::textproc/py-ElementTree \
 		::x11/py-gtk2
 
 USE_X11=	Yes

@@ -1,13 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2007/05/17 21:27:37 jasper Exp $
---- setup.py.orig	Tue May  8 06:22:02 2007
-+++ setup.py	Thu May 17 22:41:41 2007
-@@ -32,8 +32,7 @@ setup(name='Sonata',
+$OpenBSD: patch-setup_py,v 1.2 2007/07/19 16:21:44 jasper Exp $
+--- setup.py.orig	Tue Jul 17 05:07:01 2007
++++ setup.py	Tue Jul 17 12:20:19 2007
+@@ -65,8 +65,7 @@ setup(name='Sonata',
          extra_link_args=capture("pkg-config --libs gtk+-2.0 pygtk-2.0").split()
           ),],
          scripts = ['sonata'],
 -        data_files=[('share/sonata', ['README', 'CHANGELOG', 'TODO', 'TRANSLATORS']),
 -                    ('share/applications', ['sonata.desktop']),
 +        data_files=[('share/applications', ['sonata.desktop']),
-                     ('share/pixmaps', ['pixmaps/sonata.png', 'pixmaps/sonata_large.png', 'pixmaps/sonatacd.png', 'pixmaps/sonatacd_large.png', 'pixmaps/sonata-artist.png', 'pixmaps/sonata-album.png', 'pixmaps/sonata-stock_volume-mute.png', 'pixmaps/sonata-stock_volume-min.png', 'pixmaps/sonata-stock_volume-med.png', 'pixmaps/sonata-stock_volume-max.png']),
-                     ('share/locale/de/LC_MESSAGES', ['locale/de/LC_MESSAGES/sonata.mo']),
-                     ('share/locale/pl/LC_MESSAGES', ['locale/pl/LC_MESSAGES/sonata.mo']),
+                     ('share/pixmaps', ['pixmaps/sonata.png', 'pixmaps/sonata_large.png', 'pixmaps/sonatacd.png', 'pixmaps/sonatacd_large.png', 'pixmaps/sonata-artist.png', 'pixmaps/sonata-album.png', 'pixmaps/sonata-stock_volume-mute.png', 'pixmaps/sonata-stock_volume-min.png', 'pixmaps/sonata-stock_volume-med.png', 'pixmaps/sonata-stock_volume-max.png', 'pixmaps/sonata_pause.png', 'pixmaps/sonata_play.png', 'pixmaps/sonata_disconnect.png']),
+                     ('share/locale/de/LC_MESSAGES', ['mo/de/sonata.mo']),
+                     ('share/locale/pl/LC_MESSAGES', ['mo/pl/sonata.mo']),
