@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/07/19 16:24:37 jasper Exp $
+--- configure.orig	Sat Jul 14 11:22:11 2007
++++ configure	Sat Jul 14 11:22:20 2007
+@@ -1978,7 +1978,7 @@ fi
+ 
+ 
+ # Checks for programs.
+-CXXFLAGS="$CXXFLAGS -O3 -Wall -pedantic -Wno-long-long"
++CXXFLAGS="$CXXFLAGS -Wall -pedantic -Wno-long-long"
+ ac_ext=cc
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'

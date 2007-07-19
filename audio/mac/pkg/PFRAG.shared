@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/07/19 16:24:37 jasper Exp $
+@lib lib/libmac.so.${LIBmac_VERSION}

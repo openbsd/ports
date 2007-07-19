@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_MACLib_APEDecompress_cpp,v 1.1.1.1 2007/07/19 16:24:37 jasper Exp $
+--- src/MACLib/APEDecompress.cpp.orig	Thu Jun  1 13:00:58 2006
++++ src/MACLib/APEDecompress.cpp	Sat Jul 14 10:16:11 2007
+@@ -369,7 +369,7 @@ Get information from the decompressor
+ *****************************************************************************************/
+ intptr_t CAPEDecompress::GetInfo(APE_DECOMPRESS_FIELDS Field, intptr_t nParam1, intptr_t nParam2)
+ {
+-    int nRetVal = 0;
++    intptr_t nRetVal = 0;
+     BOOL bHandled = TRUE;
+ 
+     switch (Field)
