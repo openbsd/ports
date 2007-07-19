@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/19 10:24:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/19 10:32:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
 DISTNAME=	fbpanel-4.11
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 EXTRACT_SUFX=	.tgz
 

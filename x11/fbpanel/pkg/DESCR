@@ -1,4 +1,4 @@
 fbpanel is a lightweight X11 desktop panel.
-It works with any ICCCM / NETWM compliant window manager (eg sawfish,
+It works with any ICCCM / NETWM compliant window manager (e.g. sawfish,
 metacity, xfwm4, kwin, *box). It features several plugins such as
-tasklist, pager, launchbar, clock, menu, sytray...
+tasklist, pager, launchbar, clock, menu, systray...
