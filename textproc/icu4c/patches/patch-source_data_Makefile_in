@@ -1,0 +1,21 @@
+Needed to be able to retrieve all the encoded data.
+
+--- source/data/Makefile.in.orig	Sat Aug 12 00:22:24 2006
++++ source/data/Makefile.in	Thu Jun 14 14:56:39 2007
+@@ -344,7 +344,7 @@ $(OUTTMPDIR)/icudata.lst: $(SRCLISTDEPS) $(ICUDATA_SOU
+ ifneq ($(ICUDATA_SOURCE_IS_NATIVE_TARGET),YES)
+ 	@echo "Unpacking $(ICUDATA_SOURCE_ARCHIVE) and generating $@ (list of data files)"
+ 	@-$(RMV) $@
+-	$(INVOKE) $(BINDIR)/icupkg -d $(BUILDDIR) --list -x \* $(ICUDATA_SOURCE_ARCHIVE) > $@
++	$(INVOKE) $(BINDIR)/icupkg -d $(BUILDDIR) --list -x \* $(subst 0,36,$(ICUDATA_SOURCE_ARCHIVE)) > $@
+ else
+ 	@echo "$@" > $@
+ endif
+@@ -354,6 +354,7 @@ endif
+ build-dir: $(BUILD_DIRS)
+ $(BUILD_DIRS):
+ 	-$(MKINSTALLDIRS) $(BUILD_DIRS)
++	ln -sf ./icudt0l ./out/build/icudt36l
+ 
+ 
+ # Now, sections for building each kind of data.

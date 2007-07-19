@@ -1,0 +1,187 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/19 21:52:09 simon Exp $
+bin/derb
+bin/genbrk
+bin/gencnval
+bin/genctd
+bin/genrb
+bin/icu-config
+bin/makeconv
+bin/pkgdata
+bin/uconv
+include/layout/
+include/layout/LEFontInstance.h
+include/layout/LEGlyphFilter.h
+include/layout/LEGlyphStorage.h
+include/layout/LEInsertionList.h
+include/layout/LELanguages.h
+include/layout/LEScripts.h
+include/layout/LESwaps.h
+include/layout/LETypes.h
+include/layout/LayoutEngine.h
+include/layout/ParagraphLayout.h
+include/layout/RunArrays.h
+include/unicode/
+include/unicode/brkiter.h
+include/unicode/calendar.h
+include/unicode/caniter.h
+include/unicode/chariter.h
+include/unicode/choicfmt.h
+include/unicode/coleitr.h
+include/unicode/coll.h
+include/unicode/curramt.h
+include/unicode/currunit.h
+include/unicode/datefmt.h
+include/unicode/dbbi.h
+include/unicode/dcfmtsym.h
+include/unicode/decimfmt.h
+include/unicode/docmain.h
+include/unicode/dtfmtsym.h
+include/unicode/fieldpos.h
+include/unicode/fmtable.h
+include/unicode/format.h
+include/unicode/gregocal.h
+include/unicode/locid.h
+include/unicode/measfmt.h
+include/unicode/measunit.h
+include/unicode/measure.h
+include/unicode/msgfmt.h
+include/unicode/normlzr.h
+include/unicode/numfmt.h
+include/unicode/parseerr.h
+include/unicode/parsepos.h
+include/unicode/platform.h
+include/unicode/ppalmos.h
+include/unicode/putil.h
+include/unicode/pwin32.h
+include/unicode/rbbi.h
+include/unicode/rbnf.h
+include/unicode/regex.h
+include/unicode/rep.h
+include/unicode/resbund.h
+include/unicode/schriter.h
+include/unicode/search.h
+include/unicode/simpletz.h
+include/unicode/smpdtfmt.h
+include/unicode/sortkey.h
+include/unicode/strenum.h
+include/unicode/stsearch.h
+include/unicode/symtable.h
+include/unicode/tblcoll.h
+include/unicode/timezone.h
+include/unicode/translit.h
+include/unicode/ubidi.h
+include/unicode/ubrk.h
+include/unicode/ucal.h
+include/unicode/ucasemap.h
+include/unicode/ucat.h
+include/unicode/uchar.h
+include/unicode/uchriter.h
+include/unicode/uclean.h
+include/unicode/ucnv.h
+include/unicode/ucnv_cb.h
+include/unicode/ucnv_err.h
+include/unicode/ucol.h
+include/unicode/ucoleitr.h
+include/unicode/uconfig.h
+include/unicode/ucsdet.h
+include/unicode/ucurr.h
+include/unicode/udat.h
+include/unicode/udata.h
+include/unicode/udeprctd.h
+include/unicode/udraft.h
+include/unicode/uenum.h
+include/unicode/uidna.h
+include/unicode/uintrnal.h
+include/unicode/uiter.h
+include/unicode/uloc.h
+include/unicode/ulocdata.h
+include/unicode/umachine.h
+include/unicode/umisc.h
+include/unicode/umsg.h
+include/unicode/unifilt.h
+include/unicode/unifunct.h
+include/unicode/unimatch.h
+include/unicode/unirepl.h
+include/unicode/uniset.h
+include/unicode/unistr.h
+include/unicode/unorm.h
+include/unicode/unum.h
+include/unicode/uobject.h
+include/unicode/uobslete.h
+include/unicode/uregex.h
+include/unicode/urename.h
+include/unicode/urep.h
+include/unicode/ures.h
+include/unicode/uscript.h
+include/unicode/usearch.h
+include/unicode/uset.h
+include/unicode/usetiter.h
+include/unicode/ushape.h
+include/unicode/usprep.h
+include/unicode/ustdio.h
+include/unicode/ustream.h
+include/unicode/ustring.h
+include/unicode/usystem.h
+include/unicode/utext.h
+include/unicode/utf.h
+include/unicode/utf16.h
+include/unicode/utf32.h
+include/unicode/utf8.h
+include/unicode/utf_old.h
+include/unicode/utmscale.h
+include/unicode/utrace.h
+include/unicode/utrans.h
+include/unicode/utypes.h
+include/unicode/uversion.h
+lib/icu/
+lib/icu/3.6/
+lib/icu/3.6/Makefile.inc
+lib/icu/Makefile.inc
+lib/icu/current
+lib/libicudata.so
+lib/libicudata.so.0
+@lib lib/libicudata.so.${LIBicudata_VERSION}
+lib/libicui18n.so
+lib/libicui18n.so.0
+@lib lib/libicui18n.so.${LIBicui18n_VERSION}
+lib/libicuio.so
+lib/libicuio.so.0
+@lib lib/libicuio.so.${LIBicuio_VERSION}
+lib/libicule.so
+lib/libicule.so.0
+@lib lib/libicule.so.${LIBicule_VERSION}
+lib/libiculx.so
+lib/libiculx.so.0
+@lib lib/libiculx.so.${LIBiculx_VERSION}
+lib/libicutu.so
+lib/libicutu.so.0
+@lib lib/libicutu.so.${LIBicutu_VERSION}
+lib/libicuuc.so
+lib/libicuuc.so.0
+@lib lib/libicuuc.so.${LIBicuuc_VERSION}
+@man man/man1/derb.1
+@man man/man1/genbrk.1
+@man man/man1/gencnval.1
+@man man/man1/genctd.1
+@man man/man1/genrb.1
+@man man/man1/icu-config.1
+@man man/man1/makeconv.1
+@man man/man1/pkgdata.1
+@man man/man1/uconv.1
+@man man/man8/genccode.8
+@man man/man8/gencmn.8
+@man man/man8/gensprep.8
+@man man/man8/genuca.8
+@man man/man8/icupkg.8
+sbin/genccode
+sbin/gencmn
+sbin/gensprep
+sbin/genuca
+sbin/icupkg
+sbin/icuswap
+share/icu/
+share/icu/3.6/
+share/icu/3.6/config/
+share/icu/3.6/config/mh-bsd-gcc
+share/icu/3.6/license.html
+@comment share/icu/3.6/mkinstalldirs

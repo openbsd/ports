@@ -1,0 +1,14 @@
+$OpenBSD: patch-source_Makefile_in,v 1.1.1.1 2007/07/19 21:52:09 simon Exp $
+--- source/Makefile.in.orig	Thu Mar 30 02:33:20 2006
++++ source/Makefile.in	Thu Jul 19 22:38:13 2007
+@@ -174,8 +174,8 @@ $(top_builddir)/config/Makefile.inc: $(srcdir)/config/
+ 
+ $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
+ 	-$(RMV) $@
+-	$(INSTALL_SCRIPT) $(top_srcdir)/config/icu-config-top $@
+-	chmod u+w $@
++	cp $(top_srcdir)/config/icu-config-top $@
++	chmod 755 $@
+ 	@echo "# Following from @platform_make_fragment@" >> $@
+ 	sed -f $(top_srcdir)/config/make2sh.sed < $(top_builddir)/config/Makefile.inc | grep -v '#M#' | uniq >> $@
+ 	sed -f $(top_srcdir)/config/make2sh.sed < @platform_make_fragment@ | grep -v '#M#' | uniq >> $@
