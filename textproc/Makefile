@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2007/07/05 10:00:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.201 2007/07/19 21:52:19 simon Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -32,6 +32,7 @@
      SUBDIR += highlight
      SUBDIR += html
      SUBDIR += hyperestraier
+     SUBDIR += icu4c
      SUBDIR += idiff
      SUBDIR += info2html
      SUBDIR += intltool
