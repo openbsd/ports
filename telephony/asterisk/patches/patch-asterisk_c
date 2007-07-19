@@ -1,6 +1,6 @@
-$OpenBSD: patch-asterisk_c,v 1.9 2007/05/02 17:29:25 jolan Exp $
---- asterisk.c.orig	Mon Apr  9 03:49:06 2007
-+++ asterisk.c	Wed Apr 25 09:17:17 2007
+$OpenBSD: patch-asterisk_c,v 1.10 2007/07/19 01:31:28 ian Exp $
+--- asterisk.c.orig	Thu Jun 28 00:22:13 2007
++++ asterisk.c	Wed Jul 18 00:40:27 2007
 @@ -454,7 +454,7 @@ int ast_safe_system(const char *s)
  		/* Close file descriptors and launch system command */
  		for (x = STDERR_FILENO + 1; x < 4096; x++)
@@ -10,7 +10,7 @@ $OpenBSD: patch-asterisk_c,v 1.9 2007/05/02 17:29:25 jolan Exp $
  		_exit(1);
  	} else if (pid > 0) {
  		for(;;) {
-@@ -2043,7 +2043,7 @@ int main(int argc, char *argv[])
+@@ -2046,7 +2046,7 @@ int main(int argc, char *argv[])
  	int num;
  	int is_child_of_nonroot=0;
  	char *buf;
@@ -19,7 +19,7 @@ $OpenBSD: patch-asterisk_c,v 1.9 2007/05/02 17:29:25 jolan Exp $
  
  	/* Remember original args for restart */
  	if (argc > sizeof(_argv) / sizeof(_argv[0]) - 1) {
-@@ -2171,6 +2171,8 @@ int main(int argc, char *argv[])
+@@ -2174,6 +2174,8 @@ int main(int argc, char *argv[])
  			argv[x] = argv[0] + 10;
  		}
  	}
