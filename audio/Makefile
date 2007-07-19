@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2007/07/13 11:42:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.176 2007/07/19 16:25:37 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -66,6 +66,7 @@
      SUBDIR += libvorbis
      SUBDIR += libworkman
      SUBDIR += lopster
+     SUBDIR += mac
      SUBDIR += madplay
      SUBDIR += midish
      SUBDIR += mixer.app
