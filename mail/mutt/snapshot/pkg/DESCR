@@ -16,6 +16,7 @@ Other features include:
 - Maildir/IMAP/POP3 header caching support
 
 Flavors:
+	sasl	   - build with SASL authentication support
 	slang	   - build using the S-Lang library for screen handling
 	compressed - build with compressed folder support
 		     (see: http://www.spinnaker.de/mutt/compressed/)
