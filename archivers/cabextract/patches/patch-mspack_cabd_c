@@ -1,0 +1,21 @@
+$OpenBSD: patch-mspack_cabd_c,v 1.1 2007/07/19 09:49:59 jasper Exp $
+--- mspack/cabd.c.orig	Thu Sep 21 01:13:14 2006
++++ mspack/cabd.c	Thu Jul 19 11:37:31 2007
+@@ -703,7 +703,7 @@ static int cabd_find(struct mscab_decompressor_p *this
+ 	/* if off_t is only 32-bits signed, there will be overflow problems
+ 	 * with cabinets reaching past the 2GB barrier (or just claiming to)
+ 	 */
+-#if _FILE_OFFSET_BITS < 64
++	if (sizeof(off_t) <= sizeof(uint32_t)) {
+ 	if (cablen_u32 & ~0x7FFFFFFF) {
+ 	  sys->message(fh, largefile_msg);
+ 	  cablen_u32 = 0x7FFFFFFF;
+@@ -712,7 +712,7 @@ static int cabd_find(struct mscab_decompressor_p *this
+ 	  sys->message(fh, largefile_msg);
+ 	  foffset_u32 = 0x7FFFFFFF;
+ 	}
+-#endif
++        }
+ 	/* copy the unsigned 32-bit offsets to signed off_t variables */
+ 	foffset = (off_t) foffset_u32;
+ 	cablen  = (off_t) cablen_u32;
