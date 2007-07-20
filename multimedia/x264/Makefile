@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/23 10:20:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/20 20:11:48 ajacoutot Exp $
 
-COMMENT=	"free h264/avc encoder"
+COMMENT=	free h264/avc encoder
 
 V=		20070325
 DISTNAME=	x264-snapshot-${V}-2245
-PKGNAME=	x264-${V}p0
+PKGNAME=	x264-${V}p1
 SHARED_LIBS=	x264	0.0	# 5.0
 CATEGORIES=	multimedia
 
@@ -30,10 +30,15 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple
 CONFIGURE_ENV=	API=${LIBx264_VERSION}
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--enable-pthread
+		--enable-pthread \
+		--enable-pic
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/nasm
+.endif
+
+.if ${MACHINE_ARCH} == "amd64"
+BUILD_DEPENDS+=	::devel/yasm
 .endif
 
 pre-configure:

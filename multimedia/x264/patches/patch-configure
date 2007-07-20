@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2007/04/23 10:20:48 ajacoutot Exp $
---- configure.orig	Sun Mar 25 13:45:02 2007
-+++ configure	Fri Apr 20 13:54:14 2007
+$OpenBSD: patch-configure,v 1.3 2007/07/20 20:11:48 ajacoutot Exp $
+--- configure.orig	Sun Mar 25 22:45:02 2007
++++ configure	Fri Jul 20 13:02:53 2007
 @@ -46,7 +46,7 @@ as_check() {
  
  rm -f config.h config.mak x264.pc
@@ -10,6 +10,15 @@ $OpenBSD: patch-configure,v 1.2 2007/04/23 10:20:48 ajacoutot Exp $
  exec_prefix='${prefix}'
  bindir='${exec_prefix}/bin'
  libdir='${exec_prefix}/lib'
+@@ -160,7 +160,7 @@ case "${MACHINE%%-*}" in
+       ASFLAGS="$ASFLAGS -f elf"
+     fi
+     ;;
+-  x86_64)
++  x86_64 | amd64)
+     ARCH="X86_64"
+     CFLAGS="$CFLAGS -DHAVE_MMX"
+     AS="yasm"
 @@ -334,6 +334,9 @@ if test "$pthread" = "auto" ; then
                  CFLAGS="$CFLAGS -DPTW32_STATIC_LIB"
              fi
@@ -20,7 +29,13 @@ $OpenBSD: patch-configure,v 1.2 2007/04/23 10:20:48 ajacoutot Exp $
          *)
              cc_check pthread.h -lpthread && pthread="yes" && libpthread="-lpthread"
              ;;
-@@ -375,14 +378,14 @@ if [ "$pic" = "yes" ] ; then
+@@ -370,19 +373,19 @@ if [ "$avis_input" = "yes" ] ; then
+ fi
+ 
+ if [ "$pic" = "yes" ] ; then
+-    CFLAGS="$CFLAGS -fPIC"
++    CFLAGS="$CFLAGS"
+     ASFLAGS="$ASFLAGS -D__PIC__"
  fi
  
  if [ "$debug" != "yes" -a "$gprof" != "yes" ]; then
