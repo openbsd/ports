@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.7 2006/10/19 00:26:34 pvalchev Exp $
---- src/video/x11/SDL_x11modes.c.orig	Mon Dec 13 18:54:37 2004
-+++ src/video/x11/SDL_x11modes.c	Fri Dec 17 16:36:39 2004
+$OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.8 2007/07/20 05:23:41 jakemsr Exp $
+--- src/video/x11/SDL_x11modes.c.orig	Fri Nov 12 13:25:42 2004
++++ src/video/x11/SDL_x11modes.c	Sat Jul  7 18:07:10 2007
 @@ -44,6 +44,8 @@ static char rcsid =
  #endif 
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.7 2006/10/19 00:26:34 pvalchev 
  
  #ifdef XFREE86_VM
  Bool SDL_NAME(XF86VidModeGetModeInfo)(Display *dpy, int scr, SDL_NAME(XF86VidModeModeInfo) *info)
-@@ -92,6 +94,82 @@ static int cmpmodes(const void *va, cons
+@@ -92,6 +94,82 @@ static int cmpmodes(const void *va, const void *vb)
  }
  #endif
  
@@ -93,7 +93,7 @@ $OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.7 2006/10/19 00:26:34 pvalchev 
  static void get_real_resolution(_THIS, int* w, int* h);
  
  static void set_best_resolution(_THIS, int width, int height)
-@@ -103,9 +181,11 @@ static void set_best_resolution(_THIS, i
+@@ -103,9 +181,11 @@ static void set_best_resolution(_THIS, int width, int 
          int i;
          int best_width = 0, best_height = 0;
          int nmodes;
@@ -106,7 +106,7 @@ $OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.7 2006/10/19 00:26:34 pvalchev 
  #ifdef XFREE86_DEBUG
              printf("Available modes (unsorted):\n");
              for ( i = 0; i < nmodes; ++i ) {
-@@ -117,14 +197,16 @@ static void set_best_resolution(_THIS, i
+@@ -117,14 +197,16 @@ static void set_best_resolution(_THIS, int width, int 
  #endif
              for ( i = 0; i < nmodes ; i++ ) {
                  if ( (modes[i]->hdisplay == width) &&
@@ -125,7 +125,7 @@ $OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.7 2006/10/19 00:26:34 pvalchev 
                          best_width = modes[i]->hdisplay;
                          best_height = modes[i]->vdisplay;
                      }
-@@ -142,6 +224,7 @@ static void set_best_resolution(_THIS, i
+@@ -142,6 +224,7 @@ static void set_best_resolution(_THIS, int width, int 
                  SDL_NAME(XF86VidModeSwitchToMode)(SDL_Display, SDL_Screen, modes[i]);
              }
              XFree(modes);

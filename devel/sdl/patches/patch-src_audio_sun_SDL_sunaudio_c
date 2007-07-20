@@ -1,0 +1,118 @@
+$OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.1 2007/07/20 05:23:41 jakemsr Exp $
+--- src/audio/sun/SDL_sunaudio.c.orig	Sun Jan  4 08:49:15 2004
++++ src/audio/sun/SDL_sunaudio.c	Sat Jul 14 15:54:19 2007
+@@ -32,7 +32,7 @@ static char rcsid =
+ #include <fcntl.h>
+ #include <errno.h>
+ #include <string.h>
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <sys/ioctl.h>
+ #include <sys/audioio.h>
+ #endif
+@@ -141,12 +141,18 @@ void CheckUnderflow(_THIS)
+ void DSP_WaitAudio(_THIS)
+ {
+ #ifdef AUDIO_GETINFO
+-#define SLEEP_FUDGE	10		/* 10 ms scheduling fudge factor */
++#define SLEEP_FUDGE	100		/* 100 ms scheduling fudge factor */
+ 	audio_info_t info;
+ 	Sint32 left;
+ 
++#ifdef AUDIO_WSEEK
++	ioctl(audio_fd, AUDIO_WSEEK, &left);
++	left = left / (this->spec.channels * (this->spec.format & 0xff) / 8);
++#else
++	/* OpenBSD and NetBSD return bytes, not samples in info.play.samples */
+ 	ioctl(audio_fd, AUDIO_GETINFO, &info);
+ 	left = (written - info.play.samples);
++#endif
+ 	if ( left > fragsize ) {
+ 		Sint32 sleepy;
+ 
+@@ -221,9 +227,22 @@ void DSP_PlayAudio(_THIS)
+ #ifdef DEBUG_AUDIO
+ 		CheckUnderflow(this);
+ #endif
+-		if ( write(audio_fd, mixbuf, this->spec.size) < 0 ) {
++		while ( write(audio_fd, mixbuf, this->spec.size) < 0 ) {
++#ifdef DEBUG_AUDIO
++			fprintf(stderr, "audio write error: %s\n", strerror(errno));
++#endif
++#ifndef AUDIO_GETINFO
+ 			/* Assume fatal error, for now */
+ 			this->enabled = 0;
++			break;
++#else
++			/* no guarantee against EAGAIN doing our own timing */
++			if (!((errno == EAGAIN) && (OPEN_FLAGS & O_NONBLOCK))) {
++				/* Assume fatal error, for now */
++				this->enabled = 0;
++				break;
++			}
++#endif
+ 		}
+ 		written += fragsize;
+ 	}
+@@ -266,16 +285,28 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+ 		case 8: { /* Unsigned 8 bit audio data */
+ 			spec->format = AUDIO_U8;
+ #ifdef AUDIO_SETINFO
++#ifdef __OpenBSD__
++			enc = AUDIO_ENCODING_ULINEAR;
++#else
+ 			enc = AUDIO_ENCODING_LINEAR8;
+ #endif
++#endif
+ 		}
+ 		break;
+ 
+ 		case 16: { /* Signed 16 bit audio data */
+ 		        spec->format = AUDIO_S16SYS;
+ #ifdef AUDIO_SETINFO
++#ifdef __OpenBSD__
++#if BYTE_ORDER == LITTLE_ENDIAN
++			enc = AUDIO_ENCODING_SLINEAR_LE;
++#else
++			enc = AUDIO_ENCODING_SLINEAR_BE;
++#endif
++#else
+ 			enc = AUDIO_ENCODING_LINEAR;
+ #endif
++#endif
+ 		}
+ 		break;
+ 
+@@ -324,13 +355,22 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+ 	    }
+ 
+ 	    switch(enc) {
++#ifdef __OpenBSD__
++	    case AUDIO_ENCODING_ULINEAR:
++#else
+ 	    case AUDIO_ENCODING_LINEAR8:
++#endif
+ 		/* unsigned 8bit apparently not supported here */
+ 		enc = AUDIO_ENCODING_LINEAR;
+ 		spec->format = AUDIO_S16SYS;
+ 		break;	/* try again */
+ 
++#ifdef __OpenBSD__
++	    case AUDIO_ENCODING_SLINEAR_LE:
++	    case AUDIO_ENCODING_SLINEAR_BE:
++#else
+ 	    case AUDIO_ENCODING_LINEAR:
++#endif
+ 		/* linear 16bit didn't work either, resort to µ-law */
+ 		enc = AUDIO_ENCODING_ULAW;
+ 		spec->channels = 1;
+@@ -348,6 +388,9 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+ 	}
+ #endif /* AUDIO_SETINFO */
+ 	written = 0;
++
++	/* reset counters */
++	ioctl(audio_fd, AUDIO_FLUSH, NULL);
+ 
+ 	/* We can actually convert on-the-fly to U-Law */
+ 	if ( ulaw_only ) {

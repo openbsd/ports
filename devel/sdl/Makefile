@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2007/04/08 15:31:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.52 2007/07/20 05:23:41 jakemsr Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
 VERSION=	1.2.9
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p4
+PKGNAME=	${DISTNAME:L}p5
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -60,9 +60,9 @@ CONFIGURE_ARGS+= --disable-nasm
 .endif
 
 .if ${FLAVOR:L:Msun}
-CONFIGURE_ARGS+= --enable-openbsdaudio
+CONFIGURE_ARGS+= --enable-sunaudio
 .else
-CONFIGURE_ARGS+= --disable-openbsdaudio
+CONFIGURE_ARGS+= --disable-sunaudio
 .endif
 
 .if ${FLAVOR:L:Mesd}

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.27 2006/10/19 00:26:34 pvalchev Exp $
---- configure.in.orig	Sun Aug 28 00:31:18 2005
-+++ configure.in	Sat Sep 10 20:34:34 2005
+$OpenBSD: patch-configure_in,v 1.28 2007/07/20 05:23:41 jakemsr Exp $
+--- configure.in.orig	Sat Aug 27 23:31:18 2005
++++ configure.in	Sun Jul  8 01:07:57 2007
 @@ -535,9 +535,6 @@ CheckNASM()
                win32)
                    NASMFLAGS="-f win32"
@@ -50,6 +50,19 @@ $OpenBSD: patch-configure_in,v 1.27 2006/10/19 00:26:34 pvalchev Exp $
              CFLAGS="$CFLAGS -DUSE_DLOPEN"
              AC_CHECK_LIB(c, dlopen, SYSTEM_LIBS="$SYSTEM_LIBS",
                 AC_CHECK_LIB(dl, dlopen, SYSTEM_LIBS="$SYSTEM_LIBS -ldl",
+@@ -2115,9 +2109,9 @@ case "$target" in
+         CheckRPATH
+         # Set up files for the audio library
+         if test x$enable_audio = xyes; then
+-            CFLAGS="$CFLAGS -DOPENBSD_AUDIO_SUPPORT"
+-            AUDIO_SUBDIRS="$AUDIO_SUBDIRS openbsd"
+-            AUDIO_DRIVERS="$AUDIO_DRIVERS openbsd/libaudio_openbsd.la"
++            CFLAGS="$CFLAGS -DSUNAUDIO_SUPPORT"
++            AUDIO_SUBDIRS="$AUDIO_SUBDIRS sun"
++            AUDIO_DRIVERS="$AUDIO_DRIVERS sun/libaudio_sun.la"
+         fi
+         # OpenBSD needs linking with ossaudio emulation library
+         if test x$have_oss = xyes; then
 @@ -2764,6 +2758,9 @@ if test "x$enable_rpath" = "xyes"; then
  else
    SDL_RLD_FLAGS=""
