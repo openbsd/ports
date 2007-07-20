@@ -1,0 +1,16 @@
+$OpenBSD: patch-scripts_bacula_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
+--- scripts/bacula.in.orig	Thu Jul 12 11:20:52 2007
++++ scripts/bacula.in	Thu Jul 12 11:21:23 2007
+@@ -13,9 +13,9 @@
+ #  easier to "steal" this code for the development 
+ #  environment where they are different.
+ #  
+-BACFDCFG=@sysconfdir@
+-BACSDCFG=@sysconfdir@
+-BACDIRCFG=@sysconfdir@
++BACFDCFG=@scriptdir@
++BACSDCFG=@scriptdir@
++BACDIRCFG=@scriptdir@
+ 
+ case "$1" in
+    start)

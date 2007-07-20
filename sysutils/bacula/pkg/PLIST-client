@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST-client,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
+@conflict bacula-*
+libexec/bacula/
+libexec/bacula/bacula-ctl-fd
+@man man/man8/bacula-fd.8
+sbin/bacula-fd
+@owner root
+@group wheel
+@mode 755
+share/examples/bacula/
+@mode 750
+@sample ${BACULACONF}/
+@mode 644
+share/examples/bacula/bacula-fd.conf
+@mode 640
+@sample ${BACULACONF}/bacula-fd.conf

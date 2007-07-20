@@ -1,0 +1,93 @@
+@comment $OpenBSD: PLIST-server,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
+@conflict bacula-*
+@newgroup _bacula:591
+@newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
+libexec/bacula/
+libexec/bacula/bacula
+libexec/bacula/bacula-ctl-dir
+libexec/bacula/bacula-ctl-sd
+libexec/bacula/bconsole
+libexec/bacula/btraceback.dbx
+libexec/bacula/btraceback.gdb
+libexec/bacula/create_bacula_database
+libexec/bacula/create_${BACKEND}_database
+libexec/bacula/delete_catalog_backup
+libexec/bacula/disk-changer
+libexec/bacula/drop_bacula_database
+libexec/bacula/drop_bacula_tables
+libexec/bacula/drop_${BACKEND}_database
+libexec/bacula/drop_${BACKEND}_tables
+libexec/bacula/dvd-handler
+@comment libexec/bacula/gconsole
+libexec/bacula/grant_bacula_privileges
+libexec/bacula/grant_${BACKEND}_privileges
+libexec/bacula/make_bacula_tables
+libexec/bacula/make_catalog_backup
+libexec/bacula/make_${BACKEND}_tables
+libexec/bacula/mtx-changer
+libexec/bacula/query.sql
+libexec/bacula/startmysql
+libexec/bacula/stopmysql
+libexec/bacula/update_bacula_tables
+libexec/bacula/update_${BACKEND}_tables
+@comment @man man/man1/bacula-console-gnome.1
+@comment @man man/man1/bacula-tray-monitor.1
+@comment @man man/man1/bacula-wxconsole.1
+@man man/man1/bsmtp.1
+@man man/man8/bacula-dir.8
+@man man/man8/bacula-sd.8
+@man man/man8/bacula.8
+@man man/man8/bconsole.8
+@man man/man8/bcopy.8
+@man man/man8/bextract.8
+@man man/man8/bls.8
+@man man/man8/bscan.8
+@man man/man8/btape.8
+@man man/man8/btraceback.8
+@man man/man8/dbcheck.8
+sbin/bacula-dir
+sbin/bacula-sd
+sbin/bconsole
+sbin/bcopy
+sbin/bextract
+sbin/bls
+sbin/bregex
+sbin/bscan
+sbin/bsmtp
+sbin/btape
+sbin/btraceback
+sbin/bwild
+sbin/dbcheck
+@mode 755
+@owner root
+@group wheel
+share/examples/bacula/
+@mode 750
+@owner _bacula
+@group _bacula
+@sample ${BACULACONF}/
+@sample ${BACULASTATE}/
+@mode 644
+@owner root
+@group wheel
+share/examples/bacula/bacula-dir.conf
+@mode 640
+@owner _bacula
+@group _bacula
+@sample ${BACULACONF}/bacula-dir.conf
+@mode 644
+@owner root
+@group wheel
+share/examples/bacula/bacula-sd.conf
+@mode 640
+@owner _bacula
+@group _bacula
+@sample ${BACULACONF}/bacula-sd.conf
+@mode 644
+@owner root
+@group wheel
+share/examples/bacula/bconsole.conf
+@mode 640
+@owner _bacula
+@group _bacula
+@sample ${BACULACONF}/bconsole.conf

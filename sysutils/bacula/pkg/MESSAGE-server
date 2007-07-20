@@ -1,0 +1,19 @@
+To take advantage of bacula's DVD/CD writing, install cdrtools and
+dvd+rw-tools packages.
+
+Example config files for Bacula have been installed in
+${PREFIX}/share/examples/bacula and copied also to
+${BACULACONF}, edit them to your site's needs.
+
+Backend database creation/update scripts are located in
+${PREFIX}/libexec/bacula
+
+To start, add the following to /etc/rc.local:
+if [ -x ${PREFIX}/libexec/bacula/bacula-ctl-sd ]; then
+  ${PREFIX}/libexec/bacula/bacula-ctl-sd start
+  echo -n ' bacula-sd'
+fi
+if [ -x ${PREFIX}/libexec/bacula/bacula-ctl-dir ]; then
+  ${PREFIX}/libexec/bacula/bacula-ctl-dir start
+  echo -n ' bacula-dir'
+fi

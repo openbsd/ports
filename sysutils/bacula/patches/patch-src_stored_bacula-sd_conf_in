@@ -1,0 +1,101 @@
+$OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
+--- src/stored/bacula-sd.conf.in.orig	Mon Mar  5 07:33:59 2007
++++ src/stored/bacula-sd.conf.in	Thu Jul 12 11:26:01 2007
+@@ -11,7 +11,7 @@
+ #
+ 
+ Storage {                             # definition of myself
+-  Name = @hostname@-sd
++  Name = bacula-sd
+   SDPort = @sd_port@                  # Director's port      
+   WorkingDirectory = "@working_dir@"
+   Pid Directory = "@piddir@"
+@@ -22,7 +22,7 @@ Storage {                             # definition of 
+ # List Directors who are permitted to contact Storage daemon
+ #
+ Director {
+-  Name = @hostname@-dir
++  Name = bacula-dir
+   Password = "@sd_password@"
+ }
+ 
+@@ -31,7 +31,7 @@ Director {
+ #   status of the storage daemon
+ #
+ Director {
+-  Name = @hostname@-mon
++  Name = bacula-mon
+   Password = "@mon_sd_password@"
+   Monitor = yes
+ }
+@@ -60,15 +60,15 @@ Device {
+ #  Name = Autochanger
+ #  Device = Drive-1
+ #  Device = Drive-2
+-#  Changer Command = "/home/kern/bacula/bin/mtx-changer %c %o %S %a %d"
+-#  Changer Device = /dev/sg0
++#  Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
++#  Changer Device = /dev/ch0
+ #}
+ 
+ #Device {
+ #  Name = Drive-1                      #
+ #  Drive Index = 0
+ #  Media Type = DLT-8000
+-#  Archive Device = /dev/nst0
++#  Archive Device = @TAPEDRIVE@
+ #  AutomaticMount = yes;               # when device opened, read it
+ #  AlwaysOpen = yes;
+ #  RemovableMedia = yes;
+@@ -84,7 +84,7 @@ Device {
+ #  Name = Drive-2                      #
+ #  Drive Index = 1
+ #  Media Type = DLT-8000
+-#  Archive Device = /dev/nst1
++#  Archive Device = @TAPEDRIVE@
+ #  AutomaticMount = yes;               # when device opened, read it
+ #  AlwaysOpen = yes;
+ #  RemovableMedia = yes;
+@@ -108,7 +108,7 @@ Device {
+ #  RemovableMedia = yes;
+ #  RandomAccess = no;
+ ## Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
+-## Changer Device = /dev/sg0
++## Changer Device = /dev/ch0
+ ## AutoChanger = yes
+ #  # Enable the Alert command only if you have the mtx package loaded
+ ## Alert Command = "sh -c 'tapeinfo -f %c |grep TapeAlert|cat'"
+@@ -123,7 +123,7 @@ Device {
+ #  Name = DDS-4 
+ #  Description = "DDS-4 for FreeBSD"
+ #  Media Type = DDS-4
+-#  Archive Device = /dev/nsa1
++#  Archive Device = @TAPEDRIVE@
+ #  AutomaticMount = yes;               # when device opened, read it
+ #  AlwaysOpen = yes
+ #  Offline On Unmount = no
+@@ -162,7 +162,7 @@ Device {
+ #Device {
+ #  Name = "DVD-Writer"
+ #  Media Type = DVD
+-#  Archive Device = /dev/hdc
++#  Archive Device = /dev/cd0
+ #  LabelMedia = yes;                   # lets Bacula label unlabeled media
+ #  Random Access = Yes;
+ #  AutomaticMount = yes;               # when device opened, read it
+@@ -184,7 +184,7 @@ Device {
+ #Device {
+ #  Name = DDS-3
+ #  Media Type = DDS-3
+-#  Archive Device = /dev/nrst0
++#  Archive Device = @TAPEDRIVE@
+ #  Use MTIOCGET= no
+ #  BSF at EOM = yes
+ #  TWO EOF = no
+@@ -218,5 +218,5 @@ Device {
+ #
+ Messages {
+   Name = Standard
+-  director = @hostname@-dir = all
++  director = bacula-dir = all
+ }

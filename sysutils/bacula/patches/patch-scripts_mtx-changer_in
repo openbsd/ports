@@ -1,0 +1,89 @@
+$OpenBSD: patch-scripts_mtx-changer_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
+--- scripts/mtx-changer.in.orig	Wed Oct 11 17:34:24 2006
++++ scripts/mtx-changer.in	Sat May 26 15:33:25 2007
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ #
+-# Bacula interface to mtx autoloader
++# Bacula interface to chio autoloader
+ #
+ #  $Id: patch-scripts_mtx-changer_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
+ #
+@@ -27,10 +27,10 @@
+ #    e.g.   mt -f $4 offline
+ #
+ #  Many changers need an offline after the unload. Also many
+-#   changers need a sleep 60 after the mtx load.
++#   changers need a sleep 60 after the chio load.
+ #
+ #  N.B. If you change the script, take care to return either 
+-#   the mtx exit code or a 0. If the script exits with a non-zero
++#   the chio exit code or a 0. If the script exits with a non-zero
+ #   exit code, Bacula will assume the request failed.
+ #
+ 
+@@ -149,17 +149,17 @@ debug "Parms: $ctl $cmd $slot $device $drive"
+ 
+ case $cmd in 
+    unload)
+-      debug "Doing mtx -f $ctl unload $slot $drive"
++      debug "Doing chio -f $ctl move drive $drive slot $slot"
+ #
+ # enable the following line if you need to eject the cartridge
+ #     mt -f $device offline
+ #     sleep 10
+-      ${MTX} -f $ctl unload $slot $drive
++      ${MTX} -f $ctl move drive $drive slot $slot
+       ;;
+ 
+    load)
+-      debug "Doing mtx -f $ctl load $slot $drive"
+-      ${MTX} -f $ctl load $slot $drive
++      debug "Doing chio -f $ctl move slot $slot drive $drive"
++      ${MTX} -f $ctl move slot $slot drive $drive
+       rtn=$?
+ #
+ # Increase the sleep time if you have a slow device
+@@ -170,14 +170,14 @@ case $cmd in 
+       ;;
+ 
+    list) 
+-      debug "Doing mtx -f $ctl -- to list volumes"
++      debug "Doing chio -f $ctl status -- to list volumes"
+       make_temp_file
+ # Enable the following if you are using barcodes and need an inventory
+ #     ${MTX} -f $ctl inventory
+       ${MTX} -f $ctl status >${TMPFILE}
+       rtn=$?
+-      cat ${TMPFILE} | grep " *Storage Element [0-9]*:.*Full" | awk "{print \$3 \$4}" | sed "s/Full *\(:VolumeTag=\)*//"
+-      cat ${TMPFILE} | grep "^Data Transfer Element [0-9]*:Full (Storage Element [0-9]" | awk '{printf "%s:%s\n",$7,$10}'
++      cat ${TMPFILE} | grep " *slot [0-9]*: <ACCESS,.*FULL.*>" | awk "{print \$2 \$4 \$5 \$6 \$7 \$8}"
++      cat ${TMPFILE} | grep " *drive [0-9]*: <.*FULL.*>" | awk "{print \$2 \$4 \$5 \$6 \$7 \$8}" | sed "s/^/D/"
+       rm -f ${TMPFILE} >/dev/null 2>&1
+ #
+ # If you have a VXA PacketLoader and the above does not work, try
+@@ -187,18 +187,19 @@ case $cmd in 
+       ;;
+ 
+    loaded)
+-      debug "Doing mtx -f $ctl $drive -- to find what is loaded"
++      debug "Doing chio -f $ctl status -- to find what is loaded"
+       make_temp_file
+       ${MTX} -f $ctl status >${TMPFILE}
+       rtn=$?
+-      cat ${TMPFILE} | grep "^Data Transfer Element $drive:Full" | awk "{print \$7}"
+-      cat ${TMPFILE} | grep "^Data Transfer Element $drive:Empty" | awk "{print 0}"
++      cat ${TMPFILE} | grep " *drive $drive: <.*FULL.*>" | awk "{print \$4}" | sed "s/^\[//" | sed "s/=\]$//"
++      cat ${TMPFILE} | grep " *drive $drive: <.*FULL.*>" > /dev/null 2>&1
++      if [ $? != 0 ]; then echo 0; fi
+       rm -f ${TMPFILE} >/dev/null 2>&1
+       exit $rtn
+       ;;
+ 
+    slots)
+-      debug "Doing mtx -f $ctl -- to get count of slots"
+-      ${MTX} -f $ctl status | grep " *Storage Changer" | awk "{print \$5}"
++      debug "Doing chio -f $ctl status -- to get count of slots"
++      ${MTX} -f $ctl status | grep -c "slot [0-9]*"
+       ;;
+ esac
