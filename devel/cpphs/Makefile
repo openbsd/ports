@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/29 10:59:07 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/21 13:59:16 kili Exp $
 
-COMMENT=	"liberalised reimplementation of cpp in Haskell"
+COMMENT=	liberalised reimplementation of cpp in Haskell
 
 V=		1.4
 DISTNAME=	cpphs-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 HOMEPAGE=	http://haskell.org/cpphs/
@@ -19,8 +20,9 @@ WANTLIB+=	c m
 
 # Pure Haskell 98. Could also interpret via Hugs
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-WANTLIB+=	gmp
 MODULES=	ghc
+MODGHC_RUNTIME=	No
+LIB_DEPENDS=	gmp::devel/gmp
 HC=		ghc
 HC_OPTS=	-O -o cpphs --make
 .else
