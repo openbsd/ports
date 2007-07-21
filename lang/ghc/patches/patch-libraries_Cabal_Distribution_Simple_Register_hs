@@ -1,0 +1,37 @@
+$OpenBSD: patch-libraries_Cabal_Distribution_Simple_Register_hs,v 1.1 2007/07/21 17:14:58 kili Exp $
+
+Be more quiet, I don't want to see all that blurb from ghc-pkg.
+Instead of a huge echo, just use a here-document.
+
+--- libraries/Cabal/Distribution/Simple/Register.hs.orig	Wed Apr 25 19:23:22 2007
++++ libraries/Cabal/Distribution/Simple/Register.hs	Sun Jul 15 14:53:40 2007
+@@ -342,7 +342,7 @@ rawSystemEmit scriptName True verbosity path args = do
+ #if mingw32_HOST_OS || mingw32_TARGET_OS
+   writeFile scriptName ("@" ++ path ++ concatMap (' ':) args)
+ #else
+-  writeFile scriptName ("#!/bin/sh\n\n"
++  writeFile scriptName ("#!/bin/sh\nexec > /dev/null\n"
+                         ++ (path ++ concatMap (' ':) args)
+                         ++ "\n")
+   p <- getPermissions scriptName
+@@ -360,17 +360,12 @@ rawSystemPipe scriptName verbose pipeFrom path args = 
+ #if mingw32_HOST_OS || mingw32_TARGET_OS
+   writeFile scriptName ("@" ++ path ++ concatMap (' ':) args)
+ #else
+-  writeFile scriptName ("#!/bin/sh\n\n"
+-                        ++ "echo '" ++ escapeForShell pipeFrom
+-                        ++ "' | " 
+-                        ++ (path ++ concatMap (' ':) args)
+-                        ++ "\n")
++  writeFile scriptName ("#!/bin/sh\nexec > /dev/null\n"
++                        ++ (path ++ concatMap (' ':) args) ++ " << 'EOF'\n"
++			++ pipeFrom ++ "\nEOF\n")
+   p <- getPermissions scriptName
+   setPermissions scriptName p{executable=True}
+ #endif
+-  where escapeForShell [] = []
+-        escapeForShell (c@'\'':cs) = c : c : escapeForShell cs
+-        escapeForShell (c     :cs) = c     : escapeForShell cs
+ 
+ -- ------------------------------------------------------------
+ -- * Testing

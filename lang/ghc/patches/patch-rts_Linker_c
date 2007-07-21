@@ -1,0 +1,23 @@
+$OpenBSD: patch-rts_Linker_c,v 1.1 2007/07/21 17:14:58 kili Exp $
+
+We don't have MAP_ANONYMOUS (which is the same as MAP_ANON on Linux,
+but the latter has been deprecated). We also don't have that MAP_32BIT
+Linux provides for amd64, so just zap that flag to 0. Note that
+this isn't enough to make ghci work on amd64. The definite solution
+would be real dynamic libraries created and used by GHC, so we could
+drop most of that home-brewn linking code at all.
+
+--- rts/Linker.c.orig	Wed Apr 25 19:10:41 2007
++++ rts/Linker.c	Wed May 23 13:59:08 2007
+@@ -73,6 +73,11 @@
+ 
+ #endif
+ 
++#ifdef openbsd_HOST_OS
++#  define MAP_ANONYMOUS MAP_ANON
++#  define MAP_32BIT 0
++#endif
++
+ #if defined(linux_HOST_OS) || defined(solaris2_HOST_OS) || defined(freebsd_HOST_OS) || defined(netbsd_HOST_OS) || defined(openbsd_HOST_OS)
+ #  define OBJFORMAT_ELF
+ #elif defined(cygwin32_HOST_OS) || defined (mingw32_HOST_OS)

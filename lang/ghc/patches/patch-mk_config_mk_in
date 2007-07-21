@@ -1,0 +1,19 @@
+$OpenBSD: patch-mk_config_mk_in,v 1.1 2007/07/21 17:14:58 kili Exp $
+--- mk/config.mk.in.orig	Wed Apr 25 19:10:41 2007
++++ mk/config.mk.in	Wed Jun 20 18:48:41 2007
+@@ -513,11 +513,11 @@ libdir		= $(prefix)
+ else
+ 
+ #
+-# Unix: override libdir and datadir to put ghc-specific stuff in
+-# a subdirectory with the version number included.
++# Unix: put everything into a ghc subdirectory, but don't fiddle with
++# version numbers, please. Datadir is only used for haddock defaults.
+ #
+-libdir     = $(libdir0)/ghc-$(ProjectVersion)
+-datadir    = $(datadir0)/ghc-$(ProjectVersion)
++libdir     = $(libdir0)/ghc
++datadir    = $(datadir0)/doc/ghc
+ 
+ endif # Windows
+ 

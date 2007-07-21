@@ -1,20 +1,26 @@
-$OpenBSD: patch-mk_package_mk,v 1.4 2005/02/14 01:26:56 dons Exp $
-Substitute in the path to localbase in the runtime package file,
-so it can find libgmp.
+$OpenBSD: patch-mk_package_mk,v 1.5 2007/07/21 17:14:58 kili Exp $
 
---- mk/package.mk.orig	Mon Jan 31 14:46:41 2005
-+++ mk/package.mk	Mon Jan 31 14:47:09 2005
-@@ -23,11 +23,13 @@ PKGCONF_CPP_EXTRA_OPTS =
- endif
+No html subdirectories so we don't confuse haddock for ports depending
+on this. See also patch-mk_config_mk_in, which changes datadir (and
+this influences PKG_DATADIR).
+
+--- mk/package.mk.orig	Wed Apr 25 19:10:41 2007
++++ mk/package.mk	Wed Jun 20 18:59:27 2007
+@@ -45,7 +45,7 @@ DATA_DIR_INSTALLED   = $(PKG_DATADIR)
+ DATA_DIR_INPLACE     = $(FPTOOLS_TOP_ABS)/libraries/$(PACKAGE)
  
- package.conf.inplace   : package.conf.in
-+	perl -pi.bak -e 's,LOCALBASE,'$(LOCALBASE)',' $<
- 	$(CPP) $(RAWCPP_FLAGS) -P $(PKGCONF_CPP_EXTRA_OPTS) -x c $(PACKAGE_CPP_OPTS) $< | \
- 	grep -v '^#pragma GCC' | \
- 	sed -e 's/""//g' -e 's/\[ *,/[ /g' >$@
+ HTML_DIR_INPLACE     = $(FPTOOLS_TOP_ABS)/libraries/$(PACKAGE)/html
+-HTML_DIR_INSTALLED   = $(PKG_DATADIR)/html/libraries/$(PACKAGE)
++HTML_DIR_INSTALLED   = $(PKG_DATADIR)/libraries/$(PACKAGE)
  
- package.conf.installed : package.conf.in
-+	perl -pi.bak -e 's,LOCALBASE,'$(LOCALBASE)',' $<
- 	$(CPP) $(RAWCPP_FLAGS) -P $(PKGCONF_CPP_EXTRA_OPTS) -DINSTALLING -x c $(PACKAGE_CPP_OPTS) $< | \
- 	grep -v '^#pragma GCC' | \
- 	sed -e 's/""//g' -e 's/\[ *,/[ /g' >$@
+ HADDOCK_IFACE_INPLACE   = $(HTML_DIR_INPLACE)/$(PACKAGE).haddock
+ HADDOCK_IFACE_INSTALLED = $(HTML_DIR_INSTALLED)/$(PACKAGE).haddock
+@@ -371,7 +371,7 @@ CLEAN_FILES += $(PACKAGE).haddock
+ %.raw-hs : %.hs
+ 	$(HC) $(HC_OPTS) -D__HADDOCK__ -E $< -o $@
+ 
+-HTML_INSTALL_DIR = $(datadir)/html/libraries/$(PACKAGE)
++HTML_INSTALL_DIR = $(datadir)/libraries/$(PACKAGE)
+ #  NOT the same as HTML_DIR_INSTALLED when BIN_DIST is on
+ 
+ install-docs :: $(HTML_DOC)

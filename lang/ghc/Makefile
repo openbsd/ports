@@ -1,108 +1,163 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/26 11:38:07 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2007/07/21 17:14:57 kili Exp $
 # 
-# Based on Simon Marlow's port script for FreeBSD:
+# Ancient versions based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 # And on NetBSD's 5.04.3 .hc boot script
 
-ONLY_FOR_ARCHS= i386 amd64
-#                   sparc
- 
-# The general solution for other architectures will be to boot
-# via unregisterised .hc files generated on openbsd-*-i386. See:
-#
-#  http://haskell.org/ghc/docs/latest/html/building/sec-porting-ghc.html
-#
-# The best bets are powerpc and alpha. sparc64, mips64 and amd64
-# should work. hppa and mips have recently worked. m68k hasn't worked
-# for a long time now, and on mac68k at least _ld_ dies with a malloc
-# error when linking the ghc binary.
- 
-# The build process: we build a full GHC from C source. The C source
-# needs to be generated once for each arch, for each version of GHC.
+COMMENT-main=		compiler for the functional language Haskell
+COMMENT-doc=		documentation for GHC
 
-COMMENT-main=	"compiler for the functional language Haskell"
-COMMENT-doc=	"documentation for the functional language Haskell"
+DISTNAME=		ghc-${MODGHC_VER}
+PKGNAME-main=		ghc-${MODGHC_VER}
+PKGNAME-doc=		ghc-doc-${MODGHC_VER}
+CATEGORIES=		lang
+HOMEPAGE=		http://www.haskell.org/ghc/
+MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
-V=		6.2.2
+# Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
+# in ghc.port.mk. lang/python needed for regress.
+MODULES=		lang/ghc lang/python
 
-DISTNAME=	ghc-${V}
-PKGNAME-main=	ghc-${V}p0
-PKGNAME-doc=	ghc-doc-${V}p0
-CATEGORIES=	lang
-HOMEPAGE=	http://www.haskell.org/ghc/
-MAINTAINER=	Don Stewart <dons@openbsd.org>
+MULTI_PACKAGES=		-doc -main
 
-MULTI_PACKAGES=	-doc -main
-
-PKG_ARCH-doc=	*
-LIB_DEPENDS-main=	gmp::devel/gmp
-WANTLIB-main=	c m ncurses readline
-
-HASKELL=	http://www.haskell.org
-MASTER_SITES=	${HASKELL}/ghc/dist/${V}/
-MASTER_SITES0=	${HASKELL}/ghc/docs/${V}/
-MASTER_SITES1=	${HASKELL}/definition/
-MASTER_SITES2=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/ghc/${V}/
-
-DIST_SUBDIR=	ghc-${V}
-DOC_FILES=	users_guide hslibs building libraries
-DOC_FILES1=	haskell98-report
-DOC_DIR=	${PREFIX}/share/doc/ghc
-
-DISTFILES=	ghc-${V}-src.tar.bz2 \
-		${DOC_FILES:C/(.+)/\1.html.tar.gz:0/g} \
-		${DOC_FILES1:C/(.+)/\1-html.tar.gz:1/g} \
-		ghc-${V}-${ARCH}-unknown-openbsd-hc.tar.bz2:2 \
-		ghc-regress-${V}.tar.bz2:2
-
-# this tarball is the first step in porting to a new architecture
-SUPDISTFILES=	ghc-${V}-i386-unknown-openbsd-hc.tar.bz2:2 \
- 		ghc-${V}-amd64-unknown-openbsd-hc.tar.bz2:2
-#		ghc-${V}-sparc-unknown-openbsd-hc.tar.bz2:2
-
-# datasize around 130M on amd64
-VMEM_WARNING=	Yes
-
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
-
-# global register variable bug in gcc 3.3.2 screws up amd64. need gcc 3.4
-# we bypass it by ignoring all platform dependent tweaks. 2x slowdown.
-.if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ARGS+=--enable-hc-boot-unregisterised
-.endif
-
-# distrib/hc-build is a wrapper around configure and the
-# bootstrap make, with magic flags, vars and control flow
-do-configure:
-	: nothing here
-
-do-build:
-	@(cd ${WRKSRC} ;\
-	 ${CONFIGURE_ENV} distrib/hc-build ${CONFIGURE_ARGS})
-
-# note: ghci not in PLIST since it doesnt work yet
-
-FAKE_FLAGS+="stage=2"
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOC_DIR}
-.for i in ${DOC_FILES:C/(.+)/\1.html.tar.gz/g} \
-	  ${DOC_FILES1:C/(.+)/\1-html.tar.gz/g}
-	@tar zxf ${FULLDISTDIR}/${i} -C ${DOC_DIR}
-.endfor
-
-REGRESS_DEPENDS=::lang/python/2.3
-REGRESS_RESULT=	${WRKSRC}/actual.result
-REGRESS_FLAGS=	TEST_HC="${WRKSRC}/ghc/compiler/stage2/ghc-inplace"
-REGRESS_FLAGS+= EXTRA_RUNTEST_OPTS="--output-summary=${REGRESS_RESULT}" \
-		PYTHON="${LOCALBASE}/bin/python2.3"
+PSEUDO_FLAVORS=		native_bootstrap
+FLAVOR?=
 
 # BSD w/o advertising clause
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
+PKG_ARCH-doc=		*
+LIB_DEPENDS-main=	gmp::devel/gmp
+RUN_DEPENDS-doc=
+RUN_DEPENDS-main=
+WANTLIB-main=		c m ncurses pthread readline
+
+MASTER_SITES=		${HOMEPAGE}dist/${MODGHC_VER}/
+MASTER_SITES0=		${HOMEPAGE}docs/${MODGHC_VER}/
+MASTER_SITES1=		http://openbsd.dead-parrot.de/distfiles/
+
+DIST_SUBDIR=		ghc-${MODGHC_VER}
+DOC_FILES=		Cabal users_guide libraries
+DOC_DIR=		${PREFIX}/share/doc/ghc
+
+.if ${FLAVOR:L:Mnative_bootstrap}
+# In theory, even older versions should work, but the only version
+# tested with is 6.2.2.
+BUILD_DEPENDS+=		:ghc->=6.2.2:lang/ghc
+.else
+HCFILES=		ghc-${MODGHC_VER}-${ARCH}-unknown-openbsd-hc.tar.bz2:1
+CONFIGURE_ARGS=		--enable-hc-boot
+.endif
+
+DISTFILES=		ghc-${MODGHC_VER}-src.tar.bz2 \
+			ghc-${MODGHC_VER}-src-extralibs.tar.bz2 \
+			ghc-testsuite-6.6.1.tar.gz \
+			${DOC_FILES:C/(.+)/\1.html.tar.gz:0/g} \
+			${HCFILES}
+
+# HC file bundles for non-native bootstrapping. To build a registerised
+# bundle, run make with ALL_TARGET="stage1 hc-file-bundle" and the
+# following configuration settings for GHC (in ${WRKSRC}/mk/build.mk;
+# variable settings MAKE_FLAGS may work, too):
+#
+#	GhcBootLibs=YES
+#	GhcLibHcOpts=-O
+#	GhcWithInterpreter=NO
+#	SRC_HC_OPTS=-O -H32 -fasm -keep-hc-files
+#	SplitObjs=NO
+#
+# The version and configuration of GHC used to build the bundle must
+# match those of the GHC you want to bootstrap from the bundle. Don't
+# even try to create a bundle from ghc-6.2.2 and then build ghc-6.6.1
+# with it. (same for registerised vs. unregisterised builds).
+#
+# The general solution for porting this to other architectures will
+# be to boot via unregisterised .hc files generated on an architecture
+# already running GHC. For more information, see:
+# http://hackage.haskell.org/trac/ghc/wiki/Building/Porting
+
+SUPDISTFILES=		ghc-${MODGHC_VER}-i386-unknown-openbsd-hc.tar.bz2:1 \
+			ghc-${MODGHC_VER}-amd64-unknown-openbsd-hc.tar.bz2:1
+
+SUBST_VARS=		MODGHC_VER
+
+USE_GMAKE=		Yes
+
+CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ARGS+=	--with-gmp-includes=${LOCALBASE}/include \
+			--with-gmp-libraries=${LOCALBASE}/lib
+
+FAKE_FLAGS+=		"stage=2"
+
+post-extract:
+	@mv ${WRKDIR}/testsuite ${WRKSRC}
+
+.if !${FLAVOR:L:Mnative_bootstrap}
+# Bootstrap stage 1 from HC files, then wipe out all .o and .a files and
+# resume a "normal" 2-stage build using the compiler just bootstrapped.
+# No idea yet what's going wrong with GhcPatchLevel during configure
+# (seeo mk/config.mk.in), so explicitely pass UseStage1=YES, to fix the
+# build of compat/cbit/unicode.c
+MAKE_FLAGS+=		BootingFromHc=NO \
+			UseStage1=YES \
+			SplitObjs=NO \
+			GHC=${WRKBUILD}/compiler/ghc-inplace \
+			HC=${WRKBUILD}/compiler/ghc-inplace \
+			HAPPY=${WRKSRC}/distrib/fake-happy
+BOOT_FLAGS=		GhcBootLibs=YES GhcWithInterpreter=NO \
+			SplitObjs=NO
+BOOT_DIRS=		utils/mkdependC utils/unlit utils/mkdirhier \
+			driver/mangler driver/split includes rts libraries \
+			compat utils compiler
+
+# Override to get profiling libraries and several additional
+# utilities installed.
+FAKE_FLAGS+=		BootingFromHc=NO
+
+do-build:
+	# Bootstrap an initial ghc from HC files.
+.for dir in ${BOOT_DIRS}
+	cd ${WRKBUILD}/${dir} && \
+	env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${BOOT_FLAGS} boot all
+.endfor
+	# Cleanup objects and libraries
+	find ${WRKBUILD} -name '*.[ao]' | xargs rm -f
+	# Rebuild includes, RTS, and a minimal subset of libraries.
+.for dir in includes rts libraries
+	cd ${WRKBUILD}/${dir} && \
+	env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} boot all \
+		GhcBootLibs=YES
+.endfor
+	# Rebuild compat and utils. Build the mini-drivers for ghc
+	# and ghci right now, else they'll be built during the fake
+	# stage, which will put the wrong paths into them.
+.for dir in compat utils driver/ghc driver/ghci
+	cd ${WRKBUILD}/${dir} && \
+	env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} clean boot all
+.endfor
+	cd ${WRKBUILD}/libraries && \
+	env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} boot all
+	cd ${WRKBUILD} && \
+	env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} stage2
+.endif
+
+# Create scripts for the Cabal package registry that will be used for
+# @exec and @unexec.
+post-build:
+	cd ${WRKBUILD} && sh ${FILESDIR}/mkregunreg.sh ${PREFIX}
+
+post-install:
+	rm ${PREFIX}/lib/ghc/package.conf
+	${INSTALL_SCRIPT} ${WRKBUILD}/{un,}register.sh ${PREFIX}/lib/ghc
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+	cd ${WRKDIR} && umask 022 && pax -rw ${DOC_FILES} ${DOC_DIR}
+
+do-regress:
+	cd ${WRKSRC}/testsuite/tests/ghc-regress && \
+	${MAKE_ENV} ${MAKE_PROGRAM} stage=2 ${MAKE_FLAGS} \
+		PYTHON="${MODPY_BIN}"
 
 .include <bsd.port.mk>

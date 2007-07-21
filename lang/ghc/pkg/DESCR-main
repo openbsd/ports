@@ -15,3 +15,10 @@ interactive environment for the functional language Haskell. Highlights:
    * Profiling is supported, both by time/allocation and various kinds of
      heap profiling.                                                         
    * GHC comes with a wide range of libraries.
+
+The following flavors are available:
+
+- native_bootstrap (PSEUDO_FLAVOR):
+        Use an already installed ghc for bootstrapping (default is
+        to boot from .hc files). If there's no preinstalled GHC, this
+	may lead to GHC being built twice!

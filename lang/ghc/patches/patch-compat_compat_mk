@@ -1,0 +1,17 @@
+$OpenBSD: patch-compat_compat_mk,v 1.1 2007/07/21 17:14:57 kili Exp $
+
+When bootstrapping from HC-files, libghccompat needs some symbols
+from libHSbase, which is pulled in during linkage anyway, but
+unfortunately before libghccompat.
+
+--- compat/compat.mk.orig	Wed Apr 25 19:10:39 2007
++++ compat/compat.mk	Sun May  6 12:50:19 2007
+@@ -21,7 +21,7 @@ endif
+ 
+ # And similarly for when booting from .hc files:
+ HC_BOOT_LD_OPTS += -L$(GHC_COMPAT_DIR)
+-HC_BOOT_LIBS += -lghccompat
++HC_BOOT_LIBS += -lghccompat -lHSbase
+ 
+ ifeq "$(Windows)" "YES"
+ # not very nice, but required for -lghccompat on Windows

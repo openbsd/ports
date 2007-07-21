@@ -1,5 +1,6 @@
 The Glasgow Haskell Compiler is a robust, fully-featured, optimising
 compiler for the functional programming language Haskell 98.
 
-This package contains the language definition, users guide, build
-instructions, and library specifications.
+This package contains the users guide and documentation of GHC
+extensions to the standard libraries. For documentation about Haskell
+itself, install the haskell-report package.

@@ -1,0 +1,18 @@
+$OpenBSD: patch-rts_Makefile,v 1.1 2007/07/21 17:14:58 kili Exp $
+--- rts/Makefile.orig	Wed Apr 25 19:10:41 2007
++++ rts/Makefile	Thu May  3 14:10:53 2007
+@@ -192,10 +192,11 @@ SRC_MKDEPENDC_OPTS += -DPROFILING -DTHREADED_RTS -DDEB
+ # -----------------------------------------------------------------------------
+ # The auto-generated apply code
+ 
+-# We want a slightly different version for the unregisterised way, so we make
+-# AutoApply on a per-way basis (eg. AutoApply_p.cmm).
++# The original AutoApply$(_way).cmm trick breaks hc bundle generation.
++# For the OpenBSD port, we won't do both ways (registered and
++# unregistered) in one shot, so just keep this simple and unbreak the build.
+ 
+-AUTO_APPLY_CMM = AutoApply$(_way).cmm
++AUTO_APPLY_CMM = AutoApply.cmm
+ 
+ ifneq "$(BootingFromHc)" "YES"
+ $(AUTO_APPLY_CMM): $(GHC_GENAPPLY)

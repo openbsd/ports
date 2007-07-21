@@ -1,0 +1,24 @@
+$OpenBSD: patch-compiler_Makefile,v 1.1 2007/07/21 17:14:57 kili Exp $
+
+When bootstrapping from HC-files, don't try to build with interpreter.
+Don't set DESTDIR.
+
+--- compiler/Makefile.orig	Wed Apr 25 19:10:41 2007
++++ compiler/Makefile	Tue May  8 14:08:32 2007
+@@ -408,7 +408,7 @@ endif
+ # enabled when we are bootstrapping with the same version of GHC, and
+ # the interpreter is supported on this platform.
+ 
+-ifeq "$(GhcWithInterpreter) $(bootstrapped)" "YES YES"
++ifeq "$(GhcWithInterpreter) $(bootstrapped) $(BootingFromHc)" "YES YES NO"
+ 
+ # Yes, include the interepreter, readline, and Template Haskell extensions
+ SRC_HC_OPTS += -DGHCI -DBREAKPOINT -package template-haskell
+@@ -774,7 +774,6 @@ CLEAN_FILES += $(odir)/ghc-inplace
+ # but put it together with the libraries.
+ # Also don't want any interface files installed
+ 
+-DESTDIR = $(INSTALL_LIBRARY_DIR_GHC)
+ 
+ ifneq "$(HOSTPLATFORM)" "i386-unknown-mingw32"
+ INSTALL_LIBEXECS += $(GHC_PROG)
