@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2006/12/18 10:34:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2007/07/21 08:08:51 ajacoutot Exp $
 
-COMMENT=	"library for communicating with an icecast server"
+COMMENT=	library for communicating with an icecast server
 
 DISTNAME=	libshout-2.2.2
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	shout	5.0
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
 
-MAINTAINER=	Moritz Grimm <gtgbr@gmx.net>
+MAINTAINER=	Moritz Grimm <mdgrimm@gmx.net>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.34 2007/05/15 15:09:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2007/07/21 08:08:51 ajacoutot Exp $
 
-COMMENT=	"server for streaming various media formats"
+COMMENT=	server for streaming various media formats
 
 DISTNAME=	icecast-2.3.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
 
-MAINTAINER=	Moritz Grimm <gtgbr@gmx.net>
+MAINTAINER=	Moritz Grimm <mdgrimm@gmx.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
