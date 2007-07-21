@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2007/07/21 11:56:26 simon Exp $
+--- Makefile.PL.orig	Tue Jun 26 17:00:45 2007
++++ Makefile.PL	Tue Jun 26 17:00:50 2007
+@@ -12,7 +12,7 @@ requires 'Test::WWW::Mechanize::Catalyst' => '0.37';
+ requires 'Tie::IxHash'                    => '1.21';
+ requires 'Class::Data::Inheritable'       => '0.04';
+ requires 'Class::Inspector'               => '1.13';
+-requires 'Scalar::Util'                   => '1.19';
++#requires 'Scalar::Util'                   => '1.19';
+ recommends 'Catalyst::View::TT'           => '0.23';
+ 
+ auto_install;
