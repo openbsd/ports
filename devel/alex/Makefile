@@ -1,45 +1,62 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/04 09:56:02 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/21 17:19:49 kili Exp $
 
-COMMENT=	"lexical analyser generator for Haskell"
+COMMENT=	lexical analyser generator for Haskell
 
-V=		2.0
+V=		2.1.0
 DISTNAME=	alex-${V}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/alex/
-MAINTAINER=	Don Stewart <dons@openbsd.org>
-
-MODULES=	lang/ghc
-
-MASTER_SITES=	http://www.haskell.org/alex/dist/
-MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/alex/
-DISTFILES=	${DISTNAME}-src.tar.gz alex-regress-${V}.tgz:0
-
-BUILD_DEPENDS+=	::textproc/docbook	::textproc/docbook-dsssl \
-		::textproc/sgmlformat	::textproc/openjade      \
-		::textproc/iso8879	::textproc/linuxdoc      \
-		::textproc/html		::print/jadetex
-
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/catalog
-MAKE_ENV=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/catalog
-
-DOC_DIR=	${PREFIX}/share/doc/alex
-
-post-build:
-	@cd ${WRKSRC}/alex/doc ; ${MAKE_ENV} ${GMAKE} html
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOC_DIR}
-	@cp -R ${WRKSRC}/alex/doc/alex/* ${DOC_DIR}
 
 # BSD style w/o advertising clause
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c gmp m
+
+MAINTAINER=	Matthias Kilian <kili@openbsd.org>
+
+WANTLIB=	c m
+
+MODULES=	lang/ghc
+MODGHC_RUNTIME=	No
+
+MASTER_SITES=	${HOMEPAGE}dist/${V}/
+
+BUILD_DEPENDS+=	::textproc/docbook \
+		::textproc/docbook-xsl \
+		::textproc/libxslt
+LIB_DEPENDS=	gmp::devel/gmp
+
+SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX}
+SETUP_CONF_ENV=		HOME=${PORTHOME} ${CONFIGURE_ENV}
+SUBST_VARS=		V
+
+NO_REGRESS=		Yes
+
+# Required for building the documentation:
+USE_GMAKE=		Yes
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.61
+AUTOCONF_DIR=		${WRKSRC}/doc
+WRKCONF=		${AUTOCONF_DIR}
+
+post-configure:
+	@cd ${WRKSRC} && exec ${SETENV} ${SETUP_CONF_ENV} \
+		runhaskell Setup.lhs ${SETUP_CONF_ARGS}
+
+do-build:
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+		runhaskell Setup.lhs build
+	@cd ${WRKSRC}/doc && exec ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} html
+
+do-install:
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+		runhaskell Setup.lhs copy --destdir=${DESTDIR}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
+	cd ${WRKSRC}/doc && umask 022 && pax -rw alex ${PREFIX}/share/doc
 
 .include <bsd.port.mk>
