@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/06/29 11:23:41 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2007/07/21 14:03:45 kili Exp $
 
-COMMENT=	"compilation manager for Haskell programs"
+COMMENT=	compilation manager for Haskell programs
  
 V=		3.13
 DISTNAME=	hmake-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/hmake/
@@ -28,8 +28,10 @@ WANTLIB+=		c m
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 MODULES=	lang/ghc
+MODGHC_RUNTIME=	No
 CONFIGURE_ARGS=	--buildwith=ghc
-WANTLIB+=	gmp ncurses readline
+WANTLIB+=	ncurses readline
+LIB_DEPENDS=	gmp::devel/gmp
 .else
 BUILD_DEPENDS+=	::lang/nhc98
 CONFIGURE_ARGS=	--buildwith=nhc98
