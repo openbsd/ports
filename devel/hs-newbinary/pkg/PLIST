@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/21 17:17:00 kili Exp $
+lib/NewBinary-${V}/
+lib/NewBinary-${V}/ghc-6.6.1/
+lib/NewBinary-${V}/ghc-6.6.1/HSNewBinary-${V}.o
+lib/NewBinary-${V}/ghc-6.6.1/NewBinary/
+lib/NewBinary-${V}/ghc-6.6.1/NewBinary/Binary.hi
+lib/NewBinary-${V}/ghc-6.6.1/NewBinary/FastMutInt.hi
+lib/NewBinary-${V}/ghc-6.6.1/include/
+lib/NewBinary-${V}/ghc-6.6.1/libHSNewBinary-${V}.a
+lib/NewBinary-${V}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/NewBinary-${V}/register.sh
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/NewBinary-${V}/unregister.sh
+lib/NewBinary-${V}/unregister.sh

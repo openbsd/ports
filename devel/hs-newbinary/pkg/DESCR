@@ -1,0 +1,3 @@
+The NewBinary package is an older binary serialization library for
+Haskell used by a number of projects. Consider it legacy code, i.e.
+don't use it for new projects.
