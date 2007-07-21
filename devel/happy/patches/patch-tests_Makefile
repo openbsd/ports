@@ -1,0 +1,26 @@
+$OpenBSD: patch-tests_Makefile,v 1.1 2007/07/21 17:20:57 kili Exp $
+
+AttrGrammer stuff doesn't exist.
+The lang package is dead.
+
+--- tests/Makefile.orig	Mon Jan  8 13:06:03 2007
++++ tests/Makefile	Tue Jun 19 20:44:36 2007
+@@ -3,8 +3,7 @@ HC=ghc
+ 
+ TESTS = Test.ly TestMulti.ly TestPrecedence.ly bug001.ly \
+ 	monad001.y monad002.ly precedence001.ly precedence002.y \
+-	bogus-token.y bug002.y Partial.ly \
+-	AttrGrammar001.y AttrGrammar002.y
++	bogus-token.y bug002.y Partial.ly
+ 
+ TEST_HAPPY_OPTS = --strict 
+ 
+@@ -59,7 +58,7 @@ ALL_TEST_HS = $(shell echo $(TESTS) | sed -e 's/\([^\.
+ 
+ ALL_TESTS = $(patsubst %.hs, %.run, $(ALL_TEST_HS))
+ 
+-HC_OPTS += -fglasgow-exts -package lang
++HC_OPTS += -fglasgow-exts
+ 
+ .PRECIOUS: *.hs *.o *.bin *.exe
+ 

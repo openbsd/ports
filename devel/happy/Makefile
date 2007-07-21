@@ -1,47 +1,64 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/04 09:56:02 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2007/07/21 17:20:57 kili Exp $
 
-COMMENT=	"parser generator for the functional language Haskell"
+COMMENT=		parser generator for the functional language Haskell
 
-V=		1.14
-DISTNAME=	happy-${V}
-PKGNAME=	${DISTNAME}p0
-CATEGORIES=	devel
+V=			1.16
+DISTNAME=		happy-${V}
+CATEGORIES=		devel
 
-HOMEPAGE=	http://www.haskell.org/ghc/
-MAINTAINER=	Don Stewart <dons@openbsd.org>
-
-MODULES=	lang/ghc
-
-MASTER_SITES=	http://www.haskell.org/happy/dist/${V}/
-MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/happy/
-
-DISTFILES=	happy-${V}-src.tar.gz     \
-		happy-regress-${V}.tar.bz2:0
-
-BUILD_DEPENDS+=	::textproc/docbook      ::textproc/docbook-dsssl\
-		::textproc/sgmlformat   ::textproc/openjade     \
-		::textproc/iso8879      ::textproc/linuxdoc     \
-		::textproc/html         ::print/jadetex
-
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/catalog
-MAKE_ENV=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/catalog
-
-DOC_DIR=	${PREFIX}/share/doc/happy
-
-post-build:
-	@cd ${WRKSRC}/happy/doc ; ${MAKE_ENV} ${GMAKE} html
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOC_DIR}
-	@cp -R ${WRKSRC}/happy/doc/happy/* ${DOC_DIR}
+HOMEPAGE=		http://www.haskell.org/ghc/
+MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # BSD style w/o advertising clause
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c gmp m
+
+WANTLIB=		c m
+
+MODULES=		lang/ghc
+MODGHC_RUNTIME=		No
+
+MASTER_SITES=		${HOMEPAGE}/dist/${V}/
+
+BUILD_DEPENDS+=		::textproc/docbook \
+			::textproc/docbook-xsl \
+			::textproc/libxslt
+LIB_DEPENDS=		gmp::devel/gmp
+
+SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX}
+SETUP_CONF_ENV=		HOME=${PORTHOME} ${CONFIGURE_ENV}
+SUBST_VARS=		V
+
+# Required for building the documentation and for the regression tests:
+USE_GMAKE=		Yes
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.61
+AUTOCONF_DIR=		${WRKSRC}/doc
+WRKCONF=		${AUTOCONF_DIR}
+
+post-configure:
+	@cd ${WRKSRC} && exec ${SETENV} ${SETUP_CONF_ENV} \
+		runhaskell Setup.lhs ${SETUP_CONF_ARGS}
+
+do-build:
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+		runhaskell Setup.lhs build
+	@cd ${WRKSRC}/doc && exec ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} html
+
+do-install:
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+		runhaskell Setup.lhs copy --destdir=${DESTDIR}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
+	cd ${WRKSRC}/doc && umask 022 && pax -rw happy ${PREFIX}/share/doc
+
+do-regress:
+	@cd ${WRKSRC}/tests && exec ${SETENV} ${MAKE_ENV} \
+		gmake HAPPY=${WRKBUILD}/dist/build/happy/happy \
+		TEST_HAPPY_OPTS="-t ${WRKBUILD}/templates --strict"
 
 .include <bsd.port.mk>
