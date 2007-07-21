@@ -1,5 +1,0 @@
-To link against the library, add:
-
-  -package crypto
-
-to the GHC command line
