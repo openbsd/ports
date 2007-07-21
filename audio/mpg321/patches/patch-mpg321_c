@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpg321_c,v 1.4 2005/09/10 16:42:01 naddy Exp $
+$OpenBSD: patch-mpg321_c,v 1.5 2007/07/21 15:33:22 naddy Exp $
 --- mpg321.c.orig	Sun Mar 24 06:49:20 2002
-+++ mpg321.c	Mon Aug 15 17:25:32 2005
-@@ -188,7 +188,7 @@ static int show_id3(struct id3_tag const
++++ mpg321.c	Sat Jul 21 16:36:41 2007
+@@ -188,7 +188,7 @@ static int show_id3(struct id3_tag const *tag)
              
              else
              {
@@ -10,7 +10,7 @@ $OpenBSD: patch-mpg321_c,v 1.4 2005/09/10 16:42:01 naddy Exp $
                  free(names[i]);
              }
          }
-@@ -203,7 +203,7 @@ static int show_id3(struct id3_tag const
+@@ -203,7 +203,7 @@ static int show_id3(struct id3_tag const *tag)
              if (!names[i])  {
                  fprintf (stderr, emptystring);
              }   else    {
@@ -19,7 +19,16 @@ $OpenBSD: patch-mpg321_c,v 1.4 2005/09/10 16:42:01 naddy Exp $
                  free (names[i]);
              }
              if (i%2) fprintf (stderr, "\n");
-@@ -410,12 +410,14 @@ int main(int argc, char *argv[])
+@@ -285,6 +285,8 @@ int main(int argc, char *argv[])
+         signal(SIGINT, SIG_DFL);
+         
+         playbuf.buf = NULL;
++        playbuf.frames = NULL;
++        playbuf.times = NULL;
+         playbuf.fd = -1;
+         playbuf.length = 0;
+         playbuf.done = 0;
+@@ -410,12 +412,14 @@ int main(int argc, char *argv[])
              
              if(fstat(fd, &stat) == -1)
              {
@@ -34,7 +43,7 @@ $OpenBSD: patch-mpg321_c,v 1.4 2005/09/10 16:42:01 naddy Exp $
                  continue;
              }
              
-@@ -432,6 +434,7 @@ int main(int argc, char *argv[])
+@@ -432,6 +436,7 @@ int main(int argc, char *argv[])
              if((playbuf.buf = mmap(0, playbuf.length, PROT_READ, MAP_SHARED, fd, 0))
                                  == MAP_FAILED)
              {
@@ -42,7 +51,7 @@ $OpenBSD: patch-mpg321_c,v 1.4 2005/09/10 16:42:01 naddy Exp $
                  mpg321_error(currentfile);
                  continue;
              }
-@@ -509,9 +512,6 @@ int main(int argc, char *argv[])
+@@ -509,9 +514,6 @@ int main(int argc, char *argv[])
  
          mad_decoder_finish(&decoder);
  
@@ -52,7 +61,7 @@ $OpenBSD: patch-mpg321_c,v 1.4 2005/09/10 16:42:01 naddy Exp $
          if (playbuf.frames)
               free(playbuf.frames);
  
-@@ -521,6 +521,7 @@ int main(int argc, char *argv[])
+@@ -521,6 +523,7 @@ int main(int argc, char *argv[])
          if (playbuf.fd == -1)
          {
              munmap(playbuf.buf, playbuf.length);
@@ -60,7 +69,7 @@ $OpenBSD: patch-mpg321_c,v 1.4 2005/09/10 16:42:01 naddy Exp $
          }
  
          else
-@@ -535,10 +536,6 @@ int main(int argc, char *argv[])
+@@ -535,10 +538,6 @@ int main(int argc, char *argv[])
          ao_close(playdevice);
  
      ao_shutdown();

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2007/07/04 19:18:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/07/21 15:33:22 naddy Exp $
 
 # not very useful with static libao
 SHARED_ONLY=	Yes
 
-COMMENT=	"free clone of mpg123, a command-line mp3 player"
+COMMENT=	free clone of mpg123, a command-line mp3 player
 
 DISTNAME=	mpg321-0.2.10
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 HOMEPAGE=	http://mpg321.sourceforge.net/
 
