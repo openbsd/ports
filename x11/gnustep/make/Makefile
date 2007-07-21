@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/22 14:47:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/07/21 17:30:10 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -6,7 +6,7 @@ COMMENT=	"GNUstep makefile package"
 
 DISTNAME=	gnustep-make-2.0.1
 PKGNAME=	${DISTNAME}p3
-CATEGORIES=	devel
+CATEGORIES=	devel x11/gnustep
 
 HOMEPAGE=	http://www.gnustep.org/
 
@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 RUN_DEPENDS=	::archivers/gtar
 
 USE_GMAKE=	Yes
+MAKE_FILE=	GNUmakefile
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ENV=	ac_cv_prog_LATEX2HTML="" \

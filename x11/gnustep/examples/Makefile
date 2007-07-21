@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/04 11:09:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/21 17:30:10 ajacoutot Exp $
 
-COMMENT=	"GNUstep example applications"
+COMMENT=	GNUstep example applications
 
 DISTNAME=	gnustep-examples-1.2.0
 PKGNAME=	${DISTNAME}p0
@@ -12,6 +12,7 @@ WANTLIB=	GL GLU c m objc pthread
 
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
+USE_X11=	Yes
 MODULES=	x11/gnustep
 LIB_DEPENDS=	gnustep-base.>=1::x11/gnustep/base \
 		gnustep-gui::x11/gnustep/gui

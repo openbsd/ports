@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/21 10:46:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/21 17:30:10 ajacoutot Exp $
 
-COMMENT=	"GNUstep gui backend"
+COMMENT=	GNUstep gui backend
 
 DISTNAME=	gnustep-back-0.12.0
 PKGNAME=	${DISTNAME}p0
@@ -13,6 +13,7 @@ WANTLIB=	GL X11 Xau Xdmcp Xext Xft Xmu Xrender c expat \
 
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
+USE_X11=	Yes
 MODULES=	x11/gnustep
 LIB_DEPENDS=	gnustep-base.>=1::x11/gnustep/base \
 		gnustep-gui::x11/gnustep/gui

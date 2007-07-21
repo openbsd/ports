@@ -1,9 +1,14 @@
-# $OpenBSD: gnustep.port.mk,v 1.2 2007/06/01 00:27:19 ajacoutot Exp $
+# $OpenBSD: gnustep.port.mk,v 1.3 2007/07/21 17:30:10 ajacoutot Exp $
+
+# until tested on others
+ONLY_FOR_ARCHS=	i386
 
 SHARED_ONLY=	Yes
 
-USE_X11=	Yes
-USE_GMAKE=	Yes
+CATEGORIES+=	x11/gnustep
+
+USE_GMAKE?=	Yes
+MAKE_FILE?=	GNUmakefile
 
 BUILD_DEPENDS+=	:gnustep-make-*:x11/gnustep/make
 RUN_DEPENDS+=	:gnustep-make-*:x11/gnustep/make
