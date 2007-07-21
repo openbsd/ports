@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/29 10:57:29 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/21 14:05:10 kili Exp $
 
-COMMENT=		"minimalist documentation tool for Haskell"
+COMMENT=		minimalist documentation tool for Haskell
 
 V=			0.2.6
 DISTNAME=		idoc-${V}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		devel
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 HOMEPAGE=		http://www.cse.unsw.edu.au/~chak/haskell/idoc/
@@ -21,7 +21,8 @@ WANTLIB=		c m
 # pure Haskell 98
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 MODULES=		lang/ghc
-WANTLIB+=		gmp
+MODGHC_RUNTIME=		No
+LIB_DEPENDS=		gmp::devel/gmp
 .else
 BUILD_DEPENDS+=		::lang/nhc98
 MAKE_FLAGS=		HC=nhc98
