@@ -1,5 +1,0 @@
-To link against the library, add:
-
-  -package ports
-
-to the GHC command line
