@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/19 13:13:04 ian Exp $
+# $OpenBSD: Makefile,v 1.11 2007/07/21 17:09:45 kili Exp $
 
      SUBDIR += AsteriskTFOT
      SUBDIR += JLS
@@ -7,6 +7,7 @@
      SUBDIR += diveintopython
      SUBDIR += docbook-guide
      SUBDIR += grokking-the-gimp
+     SUBDIR += haskell-report
      SUBDIR += mason-book
      SUBDIR += vol3ol
      SUBDIR += vol6a
