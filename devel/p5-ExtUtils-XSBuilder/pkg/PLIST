@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 15:58:36 simon Exp $
+${P5SITE}/ExtUtils/
+${P5SITE}/ExtUtils/XSBuilder/
+${P5SITE}/ExtUtils/XSBuilder.pm
+${P5SITE}/ExtUtils/XSBuilder.pod
+${P5SITE}/ExtUtils/XSBuilder/C/
+${P5SITE}/ExtUtils/XSBuilder/C/grammar.pm
+${P5SITE}/ExtUtils/XSBuilder/CallbackMap.pm
+${P5SITE}/ExtUtils/XSBuilder/FunctionMap.pm
+${P5SITE}/ExtUtils/XSBuilder/MapUtil.pm
+${P5SITE}/ExtUtils/XSBuilder/PODTemplate.pm
+${P5SITE}/ExtUtils/XSBuilder/ParseSource.pm
+${P5SITE}/ExtUtils/XSBuilder/StructureMap.pm
+${P5SITE}/ExtUtils/XSBuilder/TypeMap.pm
+${P5SITE}/ExtUtils/XSBuilder/WrapXS.pm
+${P5SITE}/ExtUtils/xsbuilder.osc2002.pod
+@man man/man3p/ExtUtils::XSBuilder.3p
+@man man/man3p/ExtUtils::XSBuilder::PODTemplate.3p
+@man man/man3p/ExtUtils::XSBuilder::ParseSource.3p
+@man man/man3p/ExtUtils::XSBuilder::WrapXS.3p
+@man man/man3p/ExtUtils::xsbuilder.osc2002.3p
