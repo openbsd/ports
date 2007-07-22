@@ -1,0 +1,17 @@
+$OpenBSD: patch-libraries_Cabal_Distribution_PreProcess_hs,v 1.1 2007/07/22 22:37:25 kili Exp $
+
+Pass more complete LDFLAGS to the hsc2hs preprocessor. Inspired by
+development revision of Cabal, but much less intrusive, and I think
+their approach is wrong, because it passes -R options via --lflags
+to hsc2hs, which in turn passes it to ghc and then bails out.
+
+--- libraries/Cabal/Distribution/PreProcess.hs.orig	Wed Apr 25 19:23:22 2007
++++ libraries/Cabal/Distribution/PreProcess.hs	Sun Jul 22 19:59:12 2007
+@@ -237,6 +237,7 @@ ppHsc2hs bi lbi
+                          ++ [opt | opt@('-':c:_) <- ccOptions bi, c == 'D' || c == 'I']
+                          ++ ["--cflag=" ++ opt | opt@('-':'U':_) <- ccOptions bi]
+                          ++ ["--lflag=-L" ++ dir | dir <- extraLibDirs bi]
++			 ++ ["--lflag=" ++ opt | opt@('-':'L':_) <- ldOptions bi]
+                          ++ ["--lflag=-l" ++ lib | lib <- extraLibs bi])
+ 
+ ppC2hs :: BuildInfo -> LocalBuildInfo -> PreProcessor
