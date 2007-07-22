@@ -1,0 +1,8 @@
+This module attempts to extract the maximum amount of content from
+available documents, and is less concerned with XML compliance than
+alternatives.  Rather than rely on XML::Parser, it uses heuristics and
+good old-fashioned Perl regular expressions.  It stores the data in a
+simple hash structure, and "aliases" certain tags so that when done,
+you can count on having the minimal data necessary for re-constructing
+a valid RSS file.  This means you get the basic title, description,
+and link for a channel and its items.
