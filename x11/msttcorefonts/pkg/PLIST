@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/11 10:08:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/07/22 08:03:08 ajacoutot Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/mscorefonts/
 lib/X11/fonts/mscorefonts/andalemo.ttf
@@ -14,8 +14,6 @@ lib/X11/fonts/mscorefonts/courbd.ttf
 lib/X11/fonts/mscorefonts/courbi.ttf
 lib/X11/fonts/mscorefonts/couri.ttf
 lib/X11/fonts/mscorefonts/eula.txt
-lib/X11/fonts/mscorefonts/fonts.dir
-lib/X11/fonts/mscorefonts/fonts.scale
 lib/X11/fonts/mscorefonts/georgia.ttf
 lib/X11/fonts/mscorefonts/georgiab.ttf
 lib/X11/fonts/mscorefonts/georgiai.ttf

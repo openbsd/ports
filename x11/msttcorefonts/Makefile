@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/06/04 10:44:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/07/22 08:03:07 ajacoutot Exp $
 
-COMMENT=		"Microsoft TrueType core fonts"
+COMMENT=		Microsoft TrueType core fonts
 
 DISTNAME=		msttcorefonts-1.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://corefonts.sourceforge.net/
@@ -19,8 +20,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=corefonts/}
 DIST_SUBDIR=		${DISTNAME}
 
 BUILD_DEPENDS=		:cabextract-*:archivers/cabextract
-
-USE_X11=		Yes
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
@@ -46,8 +45,6 @@ EXTRACT_CASES=		*.exe) cabextract --lowercase --quiet \
 do-install:
 	${INSTALL_DATA_DIR} ${INST_DIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${INST_DIR}
-	${X11BASE}/bin/mkfontscale ${INST_DIR}
-	${X11BASE}/bin/mkfontdir ${INST_DIR}
 	tr -d \\015 < ${WRKDIST}/licen.txt > ${INST_DIR}/eula.txt
 
 .include <bsd.port.mk>
