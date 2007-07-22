@@ -1,1 +1,3 @@
-A simple sudoku puzzle solver.
+A sudoku puzzle solver with a command line interface (sudoku-solver), a
+web-interface using Neotonic ClearSilver and FastCGI (sudoku-handler), and
+a X11 user interface using the Motif toolkit (xsudoku).

@@ -1,3 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/25 10:33:58 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/22 16:43:30 mbalmer Exp $
 bin/sudoku-solver
+bin/xsudoku
+libexec/sudoku-handler
+@man man/cat1/xsudoku.0
 @man man/cat6/sudoku-solver.0
+share/sudoku/
+share/sudoku/input.cs
+share/sudoku/output.cs
+share/sudoku/table.cs
