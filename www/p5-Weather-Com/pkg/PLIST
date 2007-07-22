@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 16:21:34 simon Exp $
+${P5SITE}/Weather/
+${P5SITE}/Weather/Com/
+${P5SITE}/Weather/Com.pod
+${P5SITE}/Weather/Com/AirPressure.pm
+${P5SITE}/Weather/Com/Base.pm
+${P5SITE}/Weather/Com/Cached.pm
+${P5SITE}/Weather/Com/CurrentConditions.pm
+${P5SITE}/Weather/Com/DateTime.pm
+${P5SITE}/Weather/Com/DayForecast.pm
+${P5SITE}/Weather/Com/DayPart.pm
+${P5SITE}/Weather/Com/Finder.pm
+${P5SITE}/Weather/Com/Forecast.pm
+${P5SITE}/Weather/Com/L10N/
+${P5SITE}/Weather/Com/L10N.pm
+${P5SITE}/Weather/Com/L10N/de.pm
+${P5SITE}/Weather/Com/L10N/en_us.pm
+${P5SITE}/Weather/Com/L10N/fr.pm
+${P5SITE}/Weather/Com/Location.pm
+${P5SITE}/Weather/Com/Moon.pm
+${P5SITE}/Weather/Com/Object.pm
+${P5SITE}/Weather/Com/Simple.pm
+${P5SITE}/Weather/Com/UVIndex.pm
+${P5SITE}/Weather/Com/Units.pm
+${P5SITE}/Weather/Com/Wind.pm
+@man man/man3p/Weather::Com.3p
+@man man/man3p/Weather::Com::AirPressure.3p
+@man man/man3p/Weather::Com::Base.3p
+@man man/man3p/Weather::Com::Cached.3p
+@man man/man3p/Weather::Com::CurrentConditions.3p
+@man man/man3p/Weather::Com::DateTime.3p
+@man man/man3p/Weather::Com::DayForecast.3p
+@man man/man3p/Weather::Com::DayPart.3p
+@man man/man3p/Weather::Com::Finder.3p
+@man man/man3p/Weather::Com::Forecast.3p
+@man man/man3p/Weather::Com::L10N::fr.3p
+@man man/man3p/Weather::Com::Location.3p
+@man man/man3p/Weather::Com::Moon.3p
+@man man/man3p/Weather::Com::Simple.3p
+@man man/man3p/Weather::Com::UVIndex.3p
+@man man/man3p/Weather::Com::Units.3p
+@man man/man3p/Weather::Com::Wind.3p

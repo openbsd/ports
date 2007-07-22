@@ -1,0 +1,3 @@
+Weather::Com is meant to be a module suite enabling the perl programmer
+to access weather information as provided by weather.com's XOAP
+interface.
