@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.528 2007/07/21 17:18:56 kili Exp $
+# $OpenBSD: Makefile,v 1.529 2007/07/22 15:59:46 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -264,6 +264,7 @@
      SUBDIR += p5-Data-OptList
      SUBDIR += p5-Data-Random
      SUBDIR += p5-Data-ShowTable
+     SUBDIR += p5-Data-Structure-Util
      SUBDIR += p5-Data-UUID
      SUBDIR += p5-Data-Visitor
      SUBDIR += p5-Date-Calc
@@ -305,6 +306,7 @@
      SUBDIR += p5-ExtUtils-Depends
      SUBDIR += p5-ExtUtils-ParseXS
      SUBDIR += p5-ExtUtils-PkgConfig
+     SUBDIR += p5-ExtUtils-XSBuilder
      SUBDIR += p5-File-BaseDir
      SUBDIR += p5-File-Copy-Recursive
      SUBDIR += p5-File-DesktopEntry
@@ -360,6 +362,7 @@
      SUBDIR += p5-Locale-Maketext-Lexicon
      SUBDIR += p5-Locale-Maketext-Simple
      SUBDIR += p5-Locale-PGettext
+     SUBDIR += p5-Locale-US
      SUBDIR += p5-Locale-gettext
      SUBDIR += p5-Log-Agent
      SUBDIR += p5-Log-Dispatch
@@ -385,11 +388,13 @@
      SUBDIR += p5-Object-Signature
      SUBDIR += p5-PAR-Dist
      SUBDIR += p5-POE
+     SUBDIR += p5-POE-Component-IKC
      SUBDIR += p5-PadWalker
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Params-CallbackRequest
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
+     SUBDIR += p5-Parse-PlainConfig
      SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-Path-Class
      SUBDIR += p5-Perl-Critic
