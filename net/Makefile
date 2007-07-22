@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.471 2007/07/19 03:01:22 deanna Exp $
+# $OpenBSD: Makefile,v 1.472 2007/07/22 16:10:45 simon Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -222,6 +222,7 @@
      SUBDIR += p5-Net-SNPP
      SUBDIR += p5-Net-SSH-Perl
      SUBDIR += p5-Net-Snort-Parser
+     SUBDIR += p5-Net-Subnets
      SUBDIR += p5-Net-TFTP
      SUBDIR += p5-Net-Telnet
      SUBDIR += p5-Net-Telnet-Cisco
@@ -235,6 +236,8 @@
      SUBDIR += p5-Nmap-Parser
      SUBDIR += p5-Nmap-Scanner
      SUBDIR += p5-POE-Component-Client-DNS
+     SUBDIR += p5-POE-Component-Client-HTTP
+     SUBDIR += p5-POE-Component-Client-Keepalive
      SUBDIR += p5-POE-Component-IRC
      SUBDIR += p5-POE-Component-Jabber
      SUBDIR += p5-POE-Component-Pcap
