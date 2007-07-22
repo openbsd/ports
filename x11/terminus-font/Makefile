@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2006/07/17 08:46:13 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2007/07/22 08:02:45 ajacoutot Exp $
 
-COMMENT=		"fixed width fonts especially for long hacking sessions"
+COMMENT=		fixed width fonts especially for long hacking sessions
 
 DISTNAME=		terminus-font-4.20
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.is-vn.bg/hamster/jimmy-en.html
@@ -28,9 +29,11 @@ FONTDIR=		${PREFIX}/lib/X11/fonts/terminus
 
 do-install:
 	${GZIP_CMD} ${WRKSRC}/*.pcf
+	${X11BASE}/bin/mkfontdir ${WRKSRC}
+	egrep '\.pcf\.gz' ${WRKSRC}/fonts.dir | \
+		sed 's/\.pcf\.gz//g' > ${WRKSRC}/fonts.alias
 	${INSTALL_DATA_DIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${FONTDIR}
-	cd ${FONTDIR} && ${X11BASE}/bin/mkfontdir ;\
-	sed -e 's/.pcf.gz//' fonts.dir|grep terminus > fonts.alias-terminus
+	${INSTALL_DATA} ${WRKBUILD}/fonts.alias ${FONTDIR}/fonts.alias-terminus
 
 .include <bsd.port.mk>

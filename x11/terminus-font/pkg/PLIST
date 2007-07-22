@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/11/10 22:07:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/07/22 08:02:45 ajacoutot Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/terminus/
 lib/X11/fonts/terminus/fonts.alias-terminus
-@comment lib/X11/fonts/terminus/fonts.dir
 lib/X11/fonts/terminus/ter-112n.pcf.gz
 lib/X11/fonts/terminus/ter-114b.pcf.gz
 lib/X11/fonts/terminus/ter-114n.pcf.gz
