@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 14:57:52 simon Exp $
+bin/warzone2100
+share/applications/
+share/applications/warzone2100.desktop
+share/doc/warzone2100/
+share/doc/warzone2100/README
+share/icons/
+share/icons/warzone2100.png
+share/warzone2100/
+share/warzone2100/mp.wz
+share/warzone2100/warzone.wz
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

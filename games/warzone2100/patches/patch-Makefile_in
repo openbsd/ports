@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/07/22 14:57:52 simon Exp $
+--- Makefile.in.orig	Sun Jul 22 00:02:49 2007
++++ Makefile.in	Sun Jul 22 00:03:05 2007
+@@ -199,7 +199,7 @@ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = win32 lib src data icons nsis
+-dist_doc_DATA = AUTHORS ChangeLog README COPYING COPYING.README
++dist_doc_DATA = README
+ ACLOCAL_AMFLAGS = -I m4
+ EXTRA_DIST = \
+ 	autogen.sh \
