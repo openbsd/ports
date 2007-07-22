@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 16:10:18 simon Exp $
+${P5SITE}/POE/Component/Client/Keepalive.pm
+${P5SITE}/POE/Component/Connection/
+${P5SITE}/POE/Component/Connection/Keepalive.pm
+@man man/man3p/POE::Component::Client::Client-Keepalive.3p
+@man man/man3p/POE::Component::Client::Conn-Keepalive.3p
