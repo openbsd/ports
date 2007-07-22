@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2007/06/29 22:12:39 espie Exp $
+# $OpenBSD: Makefile,v 1.190 2007/07/22 16:05:26 simon Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -103,6 +103,7 @@
      SUBDIR += openjpeg
      SUBDIR += p5-Cairo
      SUBDIR += p5-Chart
+     SUBDIR += p5-Color-Calc
      SUBDIR += p5-GD
      SUBDIR += p5-GD-Barcode
      SUBDIR += p5-GD-Graph
@@ -110,6 +111,7 @@
      SUBDIR += p5-GD-SVG
      SUBDIR += p5-GD-TextUtil
      SUBDIR += p5-Graphics-ColorNames
+     SUBDIR += p5-Graphics-ColorNames-WWW
      SUBDIR += p5-Image-BioChrome
      SUBDIR += p5-Image-EXIF
      SUBDIR += p5-Image-ExifTool
