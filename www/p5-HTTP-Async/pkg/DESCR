@@ -1,0 +1,4 @@
+Although using the conventional LWP::UserAgent is fast and easy it does
+have some drawbacks - the code execution blocks until the request has
+been completed and it is only possible to process one request at a time.
+HTTP::Async attempts to address these limitations.
