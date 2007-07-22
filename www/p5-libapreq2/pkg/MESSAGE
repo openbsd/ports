@@ -1,0 +1,8 @@
+Before you can use p5-libapreq2, you need to enable it on your
+Apache2 configuration.
+
+Edit ${SYSCONFDIR}/apache2/httpd2.conf and add the following line:
+
+        LoadModule apreq_module ${PREFIX}/lib/apache2/mod_apreq2.so
+
+Restart your httpd2 for changes to make effect.

@@ -1,0 +1,5 @@
+libapreq is a safe, standards-compliant, high-performance library used
+for parsing HTTP cookies, query-strings and POST data.  The original
+version (libapreq-1.X) was designed by Lincoln Stein and Doug
+MacEachern.  The perl APIs Apache::Request and Apache::Cookie are the
+lightweight mod_perl analogs of the CGI and CGI::Cookie perl modules.
