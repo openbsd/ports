@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 16:10:37 simon Exp $
+${P5SITE}/POE/Component/Client/HTTP/
+${P5SITE}/POE/Component/Client/HTTP.pm
+${P5SITE}/POE/Component/Client/HTTP/Request.pm
+${P5SITE}/POE/Component/Client/HTTP/RequestFactory.pm
+${P5SITE}/POE/Filter/HTTPChunk.pm
+${P5SITE}/POE/Filter/HTTPHead.pm
+@man man/man3p/POE::Component::Client::HTTP.3p
+@man man/man3p/POE::Component::Client::HTTP::Request.3p
+@man man/man3p/POE::Component::Client::HTTP::RequestFactory.3p
+@man man/man3p/POE::Filter::HTTPChunk.3p
+@man man/man3p/POE::Filter::HTTPHead.3p
