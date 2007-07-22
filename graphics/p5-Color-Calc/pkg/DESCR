@@ -1,0 +1,2 @@
+The Color::Calc module implements simple calculations with RGB colors.
+This can be used to create a full color scheme from a few colors.
