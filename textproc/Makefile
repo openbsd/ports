@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2007/07/19 21:52:19 simon Exp $
+# $OpenBSD: Makefile,v 1.202 2007/07/22 16:15:06 simon Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -113,6 +113,7 @@
      SUBDIR += p5-Template-Provider-Encoding
      SUBDIR += p5-Template-Timer
      SUBDIR += p5-Text-Aligner
+     SUBDIR += p5-Text-Aspell
      SUBDIR += p5-Text-Autoformat
      SUBDIR += p5-Text-CSV_XS
      SUBDIR += p5-Text-Diff
@@ -152,6 +153,7 @@
      SUBDIR += p5-XML-RSS-Parser
      SUBDIR += p5-XML-RSS-Timing
      SUBDIR += p5-XML-RSS-TimingBot
+     SUBDIR += p5-XML-RSSLite
      SUBDIR += p5-XML-RegExp
      SUBDIR += p5-XML-SAX
      SUBDIR += p5-XML-SAX-Expat
