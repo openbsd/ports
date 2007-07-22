@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 15:59:19 simon Exp $
+${P5SITE}/POE/Component/IKC/
+${P5SITE}/POE/Component/IKC.pm
+${P5SITE}/POE/Component/IKC.pod
+${P5SITE}/POE/Component/IKC/Channel.pm
+${P5SITE}/POE/Component/IKC/Client.pm
+${P5SITE}/POE/Component/IKC/ClientLite.pm
+${P5SITE}/POE/Component/IKC/Freezer.pm
+${P5SITE}/POE/Component/IKC/LocalKernel.pm
+${P5SITE}/POE/Component/IKC/Proxy.pm
+${P5SITE}/POE/Component/IKC/Responder.pm
+${P5SITE}/POE/Component/IKC/Server.pm
+${P5SITE}/POE/Component/IKC/Specifier.pm
+@man man/man3p/POE::Component::IKC.3p
+@man man/man3p/POE::Component::IKC::Channel.3p
+@man man/man3p/POE::Component::IKC::Client.3p
+@man man/man3p/POE::Component::IKC::ClientLite.3p
+@man man/man3p/POE::Component::IKC::Freezer.3p
+@man man/man3p/POE::Component::IKC::Proxy.3p
+@man man/man3p/POE::Component::IKC::Responder.3p
+@man man/man3p/POE::Component::IKC::Server.3p
+@man man/man3p/POE::Component::IKC::Specifier.3p

@@ -1,0 +1,2 @@
+This is Inter-Kernel Communication for POE.  It is used to get events
+from one POE kernel to another.
