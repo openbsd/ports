@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/22 21:20:08 robert Exp $
 
 COMMENT-main=		network backup solution
 COMMENT-client=		network backup solution (client)
@@ -35,6 +35,7 @@ SUBST_VARS=		BACULACONF BACULASTATE
 
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
+NO_REGRESS=		yes
 
 FLAVORS=		pgsql mysql sqlite3 sqlite
 FLAVOR?=		sqlite3
