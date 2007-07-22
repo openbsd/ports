@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/07/21 17:20:57 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2007/07/22 12:24:46 kili Exp $
 
 COMMENT=		parser generator for the functional language Haskell
 
@@ -6,7 +6,7 @@ V=			1.16
 DISTNAME=		happy-${V}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.haskell.org/ghc/
+HOMEPAGE=		http://www.haskell.org/happy/
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # BSD style w/o advertising clause
@@ -20,7 +20,7 @@ WANTLIB=		c m
 MODULES=		lang/ghc
 MODGHC_RUNTIME=		No
 
-MASTER_SITES=		${HOMEPAGE}/dist/${V}/
+MASTER_SITES=		${HOMEPAGE}dist/${V}/
 
 BUILD_DEPENDS+=		::textproc/docbook \
 			::textproc/docbook-xsl \
