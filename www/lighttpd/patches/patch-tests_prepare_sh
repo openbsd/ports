@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_prepare_sh,v 1.1 2007/07/22 19:44:17 rui Exp $
+--- tests/prepare.sh.orig	Thu Feb  8 16:34:48 2007
++++ tests/prepare.sh	Sat Jul 21 11:25:56 2007
+@@ -25,6 +25,7 @@ mkdir -p $tmpdir/cache/compress/
+ # copy everything into the right places
+ cp $srcdir/docroot/www/*.html \
+    $srcdir/docroot/www/*.php \
++   $srcdir/docroot/www/*.html~ \
+    $srcdir/docroot/www/*.pl \
+    $srcdir/docroot/www/*.fcgi \
+    $srcdir/docroot/www/*.shtml \

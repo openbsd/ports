@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_mod_webdav_c,v 1.1 2007/07/22 19:44:17 rui Exp $
+--- src/mod_webdav.c.orig	Fri Apr 13 16:26:31 2007
++++ src/mod_webdav.c	Sat Jul 21 11:32:15 2007
+@@ -1035,7 +1035,7 @@ static int webdav_parse_chunkqueue(server *srv, connec
+ 			}
+ 
+ 			if (XML_ERR_OK != (err = xmlParseChunk(ctxt, c->file.mmap.start + c->offset, weHave, 0))) {
+-				log_error_write(srv, __FILE__, __LINE__, "sddd", "xmlParseChunk failed at:", cq->bytes_out, weHave, err);
++				log_error_write(srv, __FILE__, __LINE__, "sodd", "xmlParseChunk failed at:", cq->bytes_out, weHave, err);
+ 			}
+ 
+ 			c->offset += weHave;
+@@ -1053,7 +1053,7 @@ static int webdav_parse_chunkqueue(server *srv, connec
+ 			}
+ 
+ 			if (XML_ERR_OK != (err = xmlParseChunk(ctxt, c->mem->ptr + c->offset, weHave, 0))) {
+-				log_error_write(srv, __FILE__, __LINE__, "sddd", "xmlParseChunk failed at:", cq->bytes_out, weHave, err);
++				log_error_write(srv, __FILE__, __LINE__, "sodd", "xmlParseChunk failed at:", cq->bytes_out, weHave, err);
+ 			}
+ 
+ 			c->offset += weHave;

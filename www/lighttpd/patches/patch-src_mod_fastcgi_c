@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mod_fastcgi_c,v 1.3 2007/07/22 19:44:17 rui Exp $
+--- src/mod_fastcgi.c.orig	Sat Jul 21 11:34:09 2007
++++ src/mod_fastcgi.c	Sat Jul 21 11:35:05 2007
+@@ -2964,7 +2964,7 @@ static handler_t fcgi_write_request(server *srv, handl
+ 				 *
+ 				 */
+ 
+-				log_error_write(srv, __FILE__, __LINE__, "ssdsd",
++				log_error_write(srv, __FILE__, __LINE__, "ssosd",
+ 						"[REPORT ME] connection was dropped after accept(). reconnect() denied:",
+ 						"write-offset:", hctx->wb->bytes_out,
+ 						"reconnect attempts:", hctx->reconnects);
