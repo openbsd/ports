@@ -1,0 +1,3 @@
+Data::Structure::Util is a toolbox to manipulate the data inside a
+data structure.  It can process an entire tree and perform the
+operation requested on each appropriate element.
