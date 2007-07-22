@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2007/07/14 20:35:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.150 2007/07/22 14:58:02 simon Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -121,6 +121,7 @@
      SUBDIR += vectoroids
      SUBDIR += vodovod
      SUBDIR += wanderer
+     SUBDIR += warzone2100
      SUBDIR += wesnoth
      SUBDIR += wesnoth,lite
      SUBDIR += wesnoth,tinygui
