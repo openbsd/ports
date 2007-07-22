@@ -1,0 +1,2 @@
+Parse::PerlConfig provides OO objects which can parse and generate
+human-readable configuration files.
