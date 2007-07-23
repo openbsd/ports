@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/22 08:02:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/23 16:53:00 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	substitute for MS TTF core fonts
 
-DISTNAME=	liberation-fonts-ttf-3
-PKGNAME=	liberation-fonts-0.2p0
+V=		0.2
+BASENAME=	liberation-fonts
+DISTNAME=	${BASENAME}-ttf-3
+PKGNAME=	${BASENAME}-${V}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.redhat.com/promo/fonts/
@@ -23,7 +25,7 @@ MASTER_SITES=	https://www.redhat.com/f/fonts/
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${BASENAME}-${V}
 INST_DIR=	${PREFIX}/lib/X11/fonts/Liberation
 
 do-install:
