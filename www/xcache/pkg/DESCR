@@ -1,0 +1,5 @@
+XCache is a fast, stable PHP opcode cacher that has been tested and is
+now running on production servers under high load.
+
+Flavors:
+    coverager - Support for code coverage dumper

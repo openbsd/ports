@@ -1,0 +1,11 @@
+@comment $OpenBSD: PFRAG.coverager,v 1.1.1.1 2007/07/23 18:57:07 robert Exp $
+xcache/coverager/
+xcache/coverager/common-en.lang.php
+xcache/coverager/common-zh-simplified-gb2312.lang.php
+xcache/coverager/common-zh-simplified-utf-8.lang.php
+xcache/coverager/common.php
+xcache/coverager/config.php.example
+xcache/coverager/coverager.css
+xcache/coverager/coverager.php
+xcache/coverager/coverager.tpl.php
+xcache/coverager/index.php

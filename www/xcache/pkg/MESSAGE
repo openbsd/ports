@@ -1,0 +1,12 @@
+To finish the install of XCache, you need to enable
+the module by using the following command
+
+    # ${LOCALBASE}/sbin/phpxs -a xcache
+
+If you already have Apache running on your machine,
+you should not use "apachectl restart" - instead,
+you should fully stop and then restart the server.
+
+You'll also need to configure XCache using various 
+settings in php.ini.  See ${PREFIX}/xcache/INSTALL
+for details.
