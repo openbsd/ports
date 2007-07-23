@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2007/07/22 16:44:31 simon Exp $
+# $OpenBSD: Makefile,v 1.288 2007/07/23 18:57:40 robert Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -274,6 +274,7 @@
      SUBDIR += www6to4
      SUBDIR += wwwcount
      SUBDIR += wwwoffle
+     SUBDIR += xcache
      SUBDIR += xmhtml
      SUBDIR += xoops
      SUBDIR += yui
