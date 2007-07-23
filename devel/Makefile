@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.529 2007/07/22 15:59:46 simon Exp $
+# $OpenBSD: Makefile,v 1.530 2007/07/23 19:22:18 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -559,6 +559,7 @@
      SUBDIR += pylint
      SUBDIR += pyrex
      SUBDIR += pyusb
+     SUBDIR += qgit
      SUBDIR += qt4-eventsview
      SUBDIR += rapidsvn
      SUBDIR += rats
