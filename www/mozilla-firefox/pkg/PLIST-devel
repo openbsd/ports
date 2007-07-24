@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.2 2007/06/01 08:03:42 martynas Exp $
+@comment $OpenBSD: PLIST-devel,v 1.3 2007/07/24 19:32:13 naddy Exp $
 bin/firefox-config
 lib/pkgconfig/firefox-gtkmozembed.pc
 lib/pkgconfig/firefox-js.pc
@@ -161,6 +161,7 @@ mozilla-firefox/idl/nsICommandHandler.idl
 mozilla-firefox/idl/nsICommandLine.idl
 mozilla-firefox/idl/nsICommandLineHandler.idl
 mozilla-firefox/idl/nsICommandLineRunner.idl
+mozilla-firefox/idl/nsICommandLineValidator.idl
 mozilla-firefox/idl/nsICommandManager.idl
 mozilla-firefox/idl/nsICommandParams.idl
 mozilla-firefox/idl/nsIComponentLoader.idl
@@ -548,6 +549,7 @@ mozilla-firefox/idl/nsIEnvironment.idl
 mozilla-firefox/idl/nsIErrorService.idl
 mozilla-firefox/idl/nsIEventHandler.idl
 mozilla-firefox/idl/nsIEventQueue.idl
+mozilla-firefox/idl/nsIEventQueueListener.idl
 mozilla-firefox/idl/nsIEventQueueService.idl
 mozilla-firefox/idl/nsIEventTarget.idl
 mozilla-firefox/idl/nsIException.idl
@@ -2548,6 +2550,7 @@ mozilla-firefox/include/toolkitcomps/
 mozilla-firefox/include/toolkitcomps/nsICommandLine.h
 mozilla-firefox/include/toolkitcomps/nsICommandLineHandler.h
 mozilla-firefox/include/toolkitcomps/nsICommandLineRunner.h
+mozilla-firefox/include/toolkitcomps/nsICommandLineValidator.h
 mozilla-firefox/include/toolkitcomps/nsIRemoteService.h
 mozilla-firefox/include/toolkitcomps/nsToolkitCompsCID.h
 mozilla-firefox/include/transformiix/
@@ -2852,6 +2855,7 @@ mozilla-firefox/include/xpcom/nsIEnumerator.h
 mozilla-firefox/include/xpcom/nsIEnvironment.h
 mozilla-firefox/include/xpcom/nsIErrorService.h
 mozilla-firefox/include/xpcom/nsIEventQueue.h
+mozilla-firefox/include/xpcom/nsIEventQueueListener.h
 mozilla-firefox/include/xpcom/nsIEventQueueService.h
 mozilla-firefox/include/xpcom/nsIEventTarget.h
 mozilla-firefox/include/xpcom/nsIException.h
