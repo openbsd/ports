@@ -1,7 +1,7 @@
-$OpenBSD: patch-sim_ether_c,v 1.8 2007/05/10 21:01:15 matthieu Exp $
---- sim_ether.c.orig	Sun Oct 15 14:58:04 2006
-+++ sim_ether.c	Tue May  8 21:33:31 2007
-@@ -729,7 +729,7 @@ t_stat eth_open(ETH_DEV* dev, char* name, DEVICE* dptr
+$OpenBSD: patch-sim_ether_c,v 1.9 2007/07/24 20:45:41 kili Exp $
+--- sim_ether.c.orig	Thu May 17 12:08:20 2007
++++ sim_ether.c	Sun Jul 22 19:37:59 2007
+@@ -919,7 +919,7 @@ t_stat eth_open(ETH_DEV* dev, char* name, DEVICE* dptr
        /* probably is not ethX and has no description */
        savname = eth_getname_byname(name, temp);
        if (savname == 0) /* didn't translate */

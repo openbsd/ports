@@ -1,36 +1,28 @@
-$OpenBSD: patch-makefile,v 1.10 2007/05/10 21:01:15 matthieu Exp $
---- makefile.orig	Fri Feb  2 07:12:20 2007
-+++ makefile	Tue May  8 21:43:20 2007
-@@ -3,28 +3,28 @@
+$OpenBSD: patch-makefile,v 1.11 2007/07/24 20:45:41 kili Exp $
+--- makefile.orig	Tue Feb  6 19:24:54 2007
++++ makefile	Sun Jul 22 20:02:53 2007
+@@ -3,32 +3,9 @@
  # Note: -O2 is sometimes broken in GCC when setjump/longjump is being
  # used. Try -O2 only with released simulators.
  #
 -ifeq ($(WIN32),)
-+#ifeq ($(WIN32),)
- #Unix Environments
+-#Unix Environments
 -ifeq ($(OSTYPE),solaris)
 -OS_CCDEFS = -lsocket -lnsl -lpthread -D_GNU_SOURCE
 -else
 -OS_CCDEFS = -D_GNU_SOURCE
 -endif
+-ifeq ($(OSTYPE),macos)
 -CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm -lrt $(OS_CCDEFS) -I .
+-else
+-CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm $(OS_CCDEFS) -I .
+-endif
 -ifeq ($(USE_NETWORK),)
 -else
 -NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include /usr/local/lib/libpcap.a
 -endif
 -else
-+#ifeq ($(OSTYPE),solaris)
-+#OS_CCDEFS = -lsocket -lnsl -lpthread -D_GNU_SOURCE
-+#else
-+OS_CCDEFS = -D_GNU_SOURCE $(CFLAGS)
-+#endif
-+CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm  $(OS_CCDEFS) -I .
-+#ifeq ($(USE_NETWORK),)
-+#else
-+NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include -lpcap
-+#endif
-+#else
- #Win32 Environments
+-#Win32 Environments
 -LDFLAGS = -lm -lwsock32 -lwinmm
 -CC = gcc -std=c99 -U__STRICT_ANSI__ -O0 -I.
 -EXE = .exe
@@ -39,18 +31,13 @@ $OpenBSD: patch-makefile,v 1.10 2007/05/10 21:01:15 matthieu Exp $
 -NETWORK_OPT = -DUSE_NETWORK -lwpcap -lpacket
 -endif
 -endif
-+#LDFLAGS = -lm -lwsock32 -lwinmm
-+#CC = gcc -std=c99 -U__STRICT_ANSI__ -O0 -I.
-+#EXE = .exe
-+#ifeq ($(USE_NETWORK),)
-+#else
-+#NETWORK_OPT = -DUSE_NETWORK -lwpcap -lpacket
-+#endif
-+#endif
++OS_CCDEFS = -D_GNU_SOURCE $(CFLAGS)
++CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm  $(OS_CCDEFS) -I .
++NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include -lpcap
  
  #
  # Common Libraries
-@@ -244,11 +244,7 @@ ALL = pdp1 pdp4 pdp7 pdp8 pdp9 pdp15 pdp11 pdp10 \
+@@ -248,11 +225,7 @@ ALL = pdp1 pdp4 pdp7 pdp8 pdp9 pdp15 pdp11 pdp10 \
  all : ${ALL}
  
  clean :
