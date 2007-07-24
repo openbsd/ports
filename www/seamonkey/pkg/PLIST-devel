@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.6 2007/06/08 11:49:47 martynas Exp $
+@comment $OpenBSD: PLIST-devel,v 1.7 2007/07/24 19:33:15 naddy Exp $
 @conflict seamonkey-<1.0.7p1
 bin/seamonkey-config
 lib/pkgconfig/seamonkey-gtkmozembed.pc
@@ -582,6 +582,7 @@ seamonkey/idl/nsIEnvironment.idl
 seamonkey/idl/nsIErrorService.idl
 seamonkey/idl/nsIEventHandler.idl
 seamonkey/idl/nsIEventQueue.idl
+seamonkey/idl/nsIEventQueueListener.idl
 seamonkey/idl/nsIEventQueueService.idl
 seamonkey/idl/nsIEventTarget.idl
 seamonkey/idl/nsIException.idl
@@ -3407,6 +3408,7 @@ seamonkey/include/xpcom/nsIEnumerator.h
 seamonkey/include/xpcom/nsIEnvironment.h
 seamonkey/include/xpcom/nsIErrorService.h
 seamonkey/include/xpcom/nsIEventQueue.h
+seamonkey/include/xpcom/nsIEventQueueListener.h
 seamonkey/include/xpcom/nsIEventQueueService.h
 seamonkey/include/xpcom/nsIEventTarget.h
 seamonkey/include/xpcom/nsIException.h

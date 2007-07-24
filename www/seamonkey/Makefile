@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/06/13 12:09:19 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2007/07/24 19:33:15 naddy Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -6,11 +6,11 @@ ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 COMMENT-main=	"integrated mozilla application suite"
 COMMENT-devel=  "devel files for Gecko"
 
-VER=		1.1.2
+VER=		1.1.3
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
-PKGNAME-main=	seamonkey-${VER}p0
-PKGNAME-devel=	seamonkey-devel-${VER}p0
+PKGNAME-main=	seamonkey-${VER}
+PKGNAME-devel=	seamonkey-devel-${VER}
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -48,8 +48,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
 MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/contrib-localized/
 
-LANGUAGES=	cs-CZ de-AT el-GR es-ES it-IT pl-PL pt-BR
-BINLANGS=	el-GR pl-PL pt-BR
+LANGUAGES=	cs-CZ de-AT pl-PL
+BINLANGS=	pl-PL
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
