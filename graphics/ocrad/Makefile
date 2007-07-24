@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/24 18:06:19 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/24 18:30:59 steven Exp $
 
 COMMENT=	"OCR program for pnm files"
 
@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 
-# GPLv2
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
