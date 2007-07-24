@@ -1,9 +1,9 @@
-$OpenBSD: patch-git-cvsimport_perl,v 1.1 2007/07/12 18:26:04 bernd Exp $
+$OpenBSD: patch-git-cvsimport_perl,v 1.2 2007/07/24 05:16:04 bernd Exp $
 
 Backport commit 7051c3b1294a110a862a7b48e983490fba32389f from the git
 repository to fix a problem with git-cvsimport.
 
-Fixed in git > 1.5.2.3.
+Fixed in git 1.5.3.x.
 
 --- git-cvsimport.perl.orig	Thu Jul 12 19:24:26 2007
 +++ git-cvsimport.perl	Thu Jul 12 19:24:54 2007

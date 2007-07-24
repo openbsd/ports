@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/07/12 18:26:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2007/07/24 05:16:04 bernd Exp $
 
-COMMENT-main=		"GIT - Tree History Storage Tool"
-COMMENT-svn=		"GIT - subversion interoperability tools"
+COMMENT-main=		GIT - Tree History Storage Tool
+COMMENT-svn=		GIT - subversion interoperability tools
 
-V=			1.5.2.3
+V=			1.5.2.4
 DISTNAME=		git-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
