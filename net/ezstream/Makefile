@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/17 18:34:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/07/24 17:39:18 ajacoutot Exp $
 
 COMMENT=	streaming source client that uses external en-/decoders
 
-DISTNAME=	ezstream-0.4.2
+DISTNAME=	ezstream-0.4.3
 CATEGORIES=	net multimedia
 
 HOMEPAGE=	http://www.icecast.org/ezstream.php
