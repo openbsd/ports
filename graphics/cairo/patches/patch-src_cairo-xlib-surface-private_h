@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cairo-xlib-surface-private_h,v 1.1 2007/05/21 12:35:33 steven Exp $
---- src/cairo-xlib-surface-private.h.orig	Sat May  5 16:10:26 2007
-+++ src/cairo-xlib-surface-private.h	Sat May  5 16:10:51 2007
+$OpenBSD: patch-src_cairo-xlib-surface-private_h,v 1.2 2007/07/24 17:47:07 steven Exp $
+--- src/cairo-xlib-surface-private.h.orig	Wed May  9 15:37:39 2007
++++ src/cairo-xlib-surface-private.h	Sun Jul  8 12:20:08 2007
 @@ -39,6 +39,8 @@
  
  typedef struct _cairo_xlib_surface cairo_xlib_surface_t;
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_cairo-xlib-surface-private_h,v 1.1 2007/05/21 12:35:33 steve
  struct _cairo_xlib_surface {
      cairo_surface_t base;
  
-@@ -88,6 +90,9 @@ struct _cairo_xlib_surface {
+@@ -89,6 +91,9 @@ struct _cairo_xlib_surface {
      cairo_filter_t filter;
      int repeat;
      XTransform xtransform;
@@ -19,4 +19,4 @@ $OpenBSD: patch-src_cairo-xlib-surface-private_h,v 1.1 2007/05/21 12:35:33 steve
 +    int workaround;
  };
  
- #endif /* CAIRO_XLIB_SURFACE_PRIVATE_H */
+ enum {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2007/05/21 12:35:33 steven Exp $
---- configure.orig	Tue May  1 22:25:17 2007
-+++ configure	Sat May  5 16:09:43 2007
-@@ -25884,7 +25884,7 @@ else
+$OpenBSD: patch-configure,v 1.6 2007/07/24 17:47:07 steven Exp $
+--- configure.orig	Wed Jun 27 23:06:23 2007
++++ configure	Sun Jul  8 12:20:08 2007
+@@ -25885,7 +25885,7 @@ else
  
    if test "x$png_REQUIRES" = x; then
      # libpng13 is GnuWin32's libpng-1.2.8 :-(
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.5 2007/05/21 12:35:33 steven Exp $
        if $PKG_CONFIG --exists $l ; then
          png_REQUIRES=$l
          use_png=yes
-@@ -29667,7 +29667,7 @@ fi
+@@ -29738,7 +29738,7 @@ fi
  
  case `$PKG_CONFIG --version` in
  0.?|0.?.?|0.1[0-7]|0.1[0-7].?) PKGCONFIG_REQUIRES="Requires"; ;;
