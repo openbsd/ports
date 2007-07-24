@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/03 16:59:35 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/24 18:06:19 steven Exp $
 
 COMMENT=	"OCR program for pnm files"
 
-DISTNAME=	ocrad-0.16
+DISTNAME=	ocrad-0.17
 CATEGORIES=	graphics
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
