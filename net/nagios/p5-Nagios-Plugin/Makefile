@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/20 12:26:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/25 20:45:04 simon Exp $
 
-COMMENT=		"helper routines for writing Nagios plugins"
+COMMENT=		helper routines for writing Nagios plugins
 
-DISTNAME=		Nagios-Plugin-0.12
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		net perl5
+DISTNAME=		Nagios-Plugin-0.17
+CATEGORIES=		net
+MODULES=		cpan
 
 MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
@@ -14,9 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=../by-authors/id/T/TO/TONVOON/}
+CPAN_AUTHOR=		GAVINC
 
-CONFIGURE_STYLE=	perl
-PKG_ARCH=		*
+RUN_DEPENDS=		::math/p5-Math-Calc-Units
 
 .include <bsd.port.mk>
