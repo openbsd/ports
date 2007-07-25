@@ -1,12 +1,14 @@
-$OpenBSD: patch-openbsd__netstat_c,v 1.1 2005/06/09 00:49:26 pvalchev Exp $
---- openbsd/_netstat.c.orig	Wed Jun  8 18:12:12 2005
-+++ openbsd/_netstat.c	Wed Jun  8 18:12:19 2005
-@@ -54,8 +54,6 @@
+$OpenBSD: patch-openbsd__netstat_c,v 1.2 2007/07/25 16:43:45 ajacoutot Exp $
+--- openbsd/_netstat.c.orig	Tue Dec 21 07:32:04 2004
++++ openbsd/_netstat.c	Mon Jul 23 18:59:18 2007
+@@ -54,10 +54,6 @@
  #include <netinet/ip_esp.h>
  #include <netinet/ip_ipip.h>
  #include <netinet/ip_ipcomp.h>
 -#include <netns/ns.h>
 -#include <netns/ns_if.h>
- #include <netipx/ipx.h>
- #include <netipx/ipx_if.h>
+-#include <netipx/ipx.h>
+-#include <netipx/ipx_if.h>
  #include <kvm.h>
+ #include <Python.h>
+ 
