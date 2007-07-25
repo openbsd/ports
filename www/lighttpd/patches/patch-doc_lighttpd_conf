@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_lighttpd_conf,v 1.1 2007/04/24 05:09:41 ckuethe Exp $
---- doc/lighttpd.conf.orig	Wed Oct  4 15:29:19 2006
-+++ doc/lighttpd.conf	Sun Apr 15 10:56:19 2007
+$OpenBSD: patch-doc_lighttpd_conf,v 1.2 2007/07/25 21:31:46 rui Exp $
+--- doc/lighttpd.conf.orig	Wed Oct  4 14:26:23 2006
++++ doc/lighttpd.conf	Wed Jul 25 12:06:33 2007
 @@ -183,10 +183,10 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
  #server.chroot              = "/"
  
