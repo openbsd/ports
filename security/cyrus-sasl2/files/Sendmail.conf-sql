@@ -1,0 +1,12 @@
+# $OpenBSD: Sendmail.conf-sql,v 1.1 2007/07/25 16:25:57 ajacoutot Exp $
+
+pwcheck_method: auxprop
+auxprop_plugin: sql
+sql_engine: mysql # or pgsql, sqlite
+mech_list: plain login cram-md5 digest-md5
+sql_hostnames: localhost
+sql_user: sql_user
+sql_passwd: sql_pass
+sql_database: sql_db
+sql_verbose: yes
+sql_select: SELECT passwd FROM users WHERE login='%u@%r'

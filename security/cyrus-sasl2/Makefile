@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2007/07/07 15:03:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2007/07/25 16:25:57 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.22
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
 		digestmd5	2.22 \
@@ -123,5 +123,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl2
 	${INSTALL_DATA} ${WRKSRC}/doc/{*.html,*.txt} ${PREFIX}/share/doc/sasl2
 	${INSTALL_PROGRAM} ${WRKBUILD}/saslauthd/testsaslauthd ${PREFIX}/sbin
+.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sasl2
+	${INSTALL_DATA} ${FILESDIR}/Sendmail.conf-sql \
+		${PREFIX}/share/examples/sasl2
+.endif
 
 .include <bsd.port.mk>
