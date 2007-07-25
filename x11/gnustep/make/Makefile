@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/07/21 17:30:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/25 06:10:40 ajacoutot Exp $
 
 PKG_ARCH=	*
 
-COMMENT=	"GNUstep makefile package"
+COMMENT=	GNUstep makefile package
 
 DISTNAME=	gnustep-make-2.0.1
 PKGNAME=	${DISTNAME}p3
@@ -17,7 +17,7 @@ RUN_DEPENDS=	::archivers/gtar
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
 
-CONFIGURE_STYLE=simple
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_prog_LATEX2HTML="" \
 		INSTALL="install -c" \
 		INSTALL_PROGRAM="install -c -s -m 555" \

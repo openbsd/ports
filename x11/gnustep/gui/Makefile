@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/21 17:30:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/25 06:10:40 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	aspell.>=16::textproc/aspell/core \
 		png.>=5::graphics/png \
 		ungif.>=5::graphics/libungif
 
-CONFIGURE_STYLE=simple
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm"
 CONFIGURE_ARGS=	--disable-gsnd --with-x

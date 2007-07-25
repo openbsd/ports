@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/07/21 17:30:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/25 06:10:40 ajacoutot Exp $
 
 COMMENT=	GNUstep base library
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	avcall.>=1,callback.>=1::devel/ffcall \
 		gmp.>=7::devel/gmp \
 		xslt.>=3::textproc/libxslt
 
-CONFIGURE_STYLE=simple
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-procfs
 
 pre-configure:

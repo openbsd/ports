@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/21 17:30:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/25 06:10:40 ajacoutot Exp $
 
 COMMENT=	GNUstep gui backend
 
@@ -18,7 +18,7 @@ MODULES=	x11/gnustep
 LIB_DEPENDS=	gnustep-base.>=1::x11/gnustep/base \
 		gnustep-gui::x11/gnustep/gui
 
-CONFIGURE_STYLE=simple
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lm"
 CONFIGURE_ARGS=	--with-x \
 		--enable-graphics=xlib \
