@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/25 20:40:56 simon Exp $
+bin/ucalc
+${P5SITE}/Math/
+${P5SITE}/Math/Calc/
+${P5SITE}/Math/Calc/Units/
+${P5SITE}/Math/Calc/Units.pm
+${P5SITE}/Math/Calc/Units/Compute.pm
+${P5SITE}/Math/Calc/Units/Convert/
+${P5SITE}/Math/Calc/Units/Convert.pm
+${P5SITE}/Math/Calc/Units/Convert/Base.pm
+${P5SITE}/Math/Calc/Units/Convert/Base2Metric.pm
+${P5SITE}/Math/Calc/Units/Convert/Byte.pm
+${P5SITE}/Math/Calc/Units/Convert/Combo.pm
+${P5SITE}/Math/Calc/Units/Convert/Date.pm
+${P5SITE}/Math/Calc/Units/Convert/Distance.pm
+${P5SITE}/Math/Calc/Units/Convert/Metric.pm
+${P5SITE}/Math/Calc/Units/Convert/Multi.pm
+${P5SITE}/Math/Calc/Units/Convert/Time.pm
+${P5SITE}/Math/Calc/Units/Grammar.pm
+${P5SITE}/Math/Calc/Units/Grammar.y
+${P5SITE}/Math/Calc/Units/Rank.pm
+@man man/man3p/Math::Calc::Units.3p
