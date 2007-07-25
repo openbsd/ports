@@ -1,0 +1,5 @@
+Ruby-GetText-Package is a Localization(L10n) Library and Tools which is
+modeled after GNU gettext package. The library converts the messages to
+localized messages properly using client-side locale information, and
+the tools for developers support to create, use, and modify localized
+message files(message catalogs) easily.
