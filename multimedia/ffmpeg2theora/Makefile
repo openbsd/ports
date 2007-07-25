@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/25 16:00:13 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/25 14:26:24 steven Exp $
 
-COMMENT=	"reencode many media file formats to Ogg Theora"
+COMMENT=	reencode many media file formats to Ogg Theora
 
-DISTNAME=	ffmpeg2theora-0.17
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	ffmpeg2theora-0.19
 CATEGORIES=	multimedia
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.v2v.cc/~j/ffmpeg2theora/
 
-MAINTAINER=	Moritz Grimm <gtgbr@gmx.net>
+MAINTAINER=	Moritz Grimm <mdgrimm@gmx.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	"patents in ffmpeg"
