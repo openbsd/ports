@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/04 21:49:38 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/07/25 20:33:52 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to the uulib library"
+COMMENT=	interface to the uulib library
 
-DISTNAME=	Convert-UUlib-1.051
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Convert-UUlib-1.09
 CATEGORIES=	converters
 MODULES=	cpan
 
