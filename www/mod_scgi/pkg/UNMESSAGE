@@ -1,0 +1,10 @@
+To completely deinstall the mod_scgi package you should edit
+
+/var/www/conf/httpd.conf
+
+and remove the line that starts with:
+
+LoadModule scgi_module
+
+Do not do this if you plan on re-installing the mod_scgi
+package at some future time.

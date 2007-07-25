@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/25 20:05:04 simon Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
+share/doc/mod_scgi/
+share/doc/mod_scgi/README.txt
+@unexec-delete rm -f ${MODAPACHE_FINAL}
