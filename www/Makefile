@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.288 2007/07/23 18:57:40 robert Exp $
+# $OpenBSD: Makefile,v 1.289 2007/07/25 20:05:20 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -75,6 +75,7 @@
      SUBDIR += mod_perl
      SUBDIR += mod_random
      SUBDIR += mod_ruby
+     SUBDIR += mod_scgi
      SUBDIR += mod_security
      SUBDIR += mod_text2html
      SUBDIR += moinmoin
@@ -188,6 +189,7 @@
      SUBDIR += p5-Rose-HTMLx-Form-Field-Autocomplete
      SUBDIR += p5-Rose-URI
      SUBDIR += p5-PodToHTML
+     SUBDIR += p5-SCGI
      SUBDIR += p5-SOAP-Lite
      SUBDIR += p5-Test-HTTP-Server-Simple
      SUBDIR += p5-URI
