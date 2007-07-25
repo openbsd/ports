@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/25 20:16:17 simon Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"perl interface to the BSD kqueue system call"
+COMMENT=		perl interface to the BSD kqueue system call
 
 MODULES=		cpan
-DISTNAME=		IO-KQueue-0.31
+DISTNAME=		IO-KQueue-0.32
 CATEGORIES=		devel
 
 MAINTAINER=		Srebrenko Sehic <haver@insecure.dk>
