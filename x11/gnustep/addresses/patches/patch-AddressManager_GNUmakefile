@@ -1,0 +1,14 @@
+$OpenBSD: patch-AddressManager_GNUmakefile,v 1.1.1.1 2007/07/25 06:18:27 ajacoutot Exp $
+--- AddressManager/GNUmakefile.orig	Sat Jul 21 15:07:25 2007
++++ AddressManager/GNUmakefile	Sat Jul 21 15:07:49 2007
+@@ -23,8 +23,8 @@ AddressManager_LOCALIZED_RESOURCE_FILES=\
+ AddressManager_LANGUAGES=Dutch English French German Spanish
+ AddressManager_OBJCFLAGS=-I../Frameworks -Wall
+ AddressManager_LDFLAGS=\
+-	-L../Frameworks/AddressView/AddressView.framework/$(GNUSTEP_TARGET_LDIR) \
+-	-L../Frameworks/Addresses/Addresses.framework/$(GNUSTEP_TARGET_LDIR)     \
++	-L../Frameworks/AddressView/AddressView.framework/Versions/!!LIBAddressView_VERSION!! \
++	-L../Frameworks/Addresses/Addresses.framework/Versions/!!LIBAddressView_VERSION!!     \
+ 	-lAddressView -lAddresses
+ 
+ -include GNUmakefile.preamble

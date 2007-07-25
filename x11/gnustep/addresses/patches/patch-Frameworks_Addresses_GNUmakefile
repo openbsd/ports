@@ -1,0 +1,10 @@
+$OpenBSD: patch-Frameworks_Addresses_GNUmakefile,v 1.1.1.1 2007/07/25 06:18:27 ajacoutot Exp $
+--- Frameworks/Addresses/GNUmakefile.orig	Sat Jul 21 15:07:58 2007
++++ Frameworks/Addresses/GNUmakefile	Sat Jul 21 15:08:06 2007
+@@ -48,6 +48,4 @@ include $(GNUSTEP_MAKEFILES)/framework.make
+ -include GNUmakefile.postamble
+ 
+ after-Addresses-install::
+-	ln -sf $(GNUSTEP_HEADERS)/Addresses \
+-	       $(GNUSTEP_HEADERS)/AddressBook
+ 
