@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/25 20:05:14 simon Exp $
+${P5SITE}/SCGI/
+${P5SITE}/SCGI.pm
+${P5SITE}/SCGI/Request.pm
+@man man/man3p/SCGI.3p
+@man man/man3p/SCGI::Request.3p
