@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.530 2007/07/23 19:22:18 espie Exp $
+# $OpenBSD: Makefile,v 1.531 2007/07/25 09:00:26 dlg Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -572,12 +572,14 @@
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gem_plugin
      SUBDIR += ruby-gems
+     SUBDIR += ruby-gettext
      SUBDIR += ruby-hoe
      SUBDIR += ruby-ncurses
      SUBDIR += ruby-needle
      SUBDIR += ruby-rake
      SUBDIR += ruby-rubyforge
      SUBDIR += ruby-transaction-simple
+     SUBDIR += ruby-tzinfo
      SUBDIR += scons
      SUBDIR += sdcc
      SUBDIR += sdl

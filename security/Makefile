@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2007/07/01 20:36:10 reyk Exp $
+# $OpenBSD: Makefile,v 1.186 2007/07/25 09:00:26 dlg Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -151,6 +151,7 @@
      SUBDIR += qca-tls
      SUBDIR += radiusniff
      SUBDIR += rdp
+     SUBDIR += ruby-ezcrypto
      SUBDIR += scanlogd
      SUBDIR += scanssh
      SUBDIR += seal
