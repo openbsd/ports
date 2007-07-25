@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/23 07:43:33 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/25 18:42:56 simon Exp $
 ${P5SITE}/Proc/
 ${P5SITE}/Proc/Queue.pm
-${P5SITE}/Proc/example.pl
 @man man/man3p/Proc::Queue.3p
