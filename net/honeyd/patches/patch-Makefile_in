@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2007/04/03 15:19:52 aanriot Exp $
---- Makefile.in.orig	Sat Aug 19 09:15:55 2006
-+++ Makefile.in	Mon Apr  2 11:31:04 2007
-@@ -162,7 +162,7 @@ AUTOMAKE = @AUTOMAKE@
+$OpenBSD: patch-Makefile_in,v 1.5 2007/07/25 22:27:01 rui Exp $
+--- Makefile.in.orig	Mon May 28 07:15:43 2007
++++ Makefile.in	Wed Jul 18 11:55:08 2007
+@@ -182,7 +182,7 @@ AUTOMAKE = @AUTOMAKE@
  AWK = @AWK@
  CC = @CC@
  CCDEPMODE = @CCDEPMODE@
@@ -10,16 +10,16 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/03 15:19:52 aanriot Exp $
  	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" \
  	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" \
  	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" \
-@@ -358,7 +358,7 @@ honeydstats_LDADD = @LIBOBJS@ @DNETLIB@ @EVENTLIB@ @ZL
+@@ -387,7 +387,7 @@ honeydstats_LDADD = @LIBOBJS@ @DNETLIB@ @EVENTLIB@ @ZL
  honeydstats_CPPFLAGS = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat \
- 	@EVENTINC@ @DNETINC@ @ZINC@ @DNSRESINC@
+ 	@EVENTINC@ @DNETINC@ @ZINC@
  
 -honeydstats_CFLAGS = -O0 -Wall
 +honeydstats_CFLAGS =
  
  #
- # Honeyd control application
-@@ -366,7 +366,7 @@ honeydstats_CFLAGS = -O0 -Wall
+ # Honeyd stats sniffer
+@@ -408,7 +408,7 @@ hsniff_CFLAGS = -O2 -Wall -DPATH_HONEYDDATA="\"$(honey
  honeydctl_SOURCES = honeydctl.c
  honeydctl_LDADD = @LIBOBJS@ @EDITLIB@ @LIBCURSES@
  honeydctl_CPPFLAGS = @EDITINC@
@@ -28,18 +28,18 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/03 15:19:52 aanriot Exp $
  INCLUDES = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat \
  	@PYTHONINC@ @EVENTINC@ @PCAPINC@ @DNETINC@ @ZINC@
  
-@@ -381,7 +381,7 @@ smtp_LDADD = @LIBOBJS@ @EVENTLIB@ @DNETLIB@ @PCAPLIB@ 
+@@ -423,7 +423,7 @@ smtp_LDADD = @LIBOBJS@ @EVENTLIB@ @DNETLIB@ @PCAPLIB@ 
  smtp_CPPFLAGS = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat \
- 	@EVENTINC@ @DNETINC@ @DNSRESINC@ @PCREINC@
+ 	@EVENTINC@ @DNETINC@ @PCREINC@
  
 -smtp_CFLAGS = -O2 -Wall
 +smtp_CFLAGS =
  proxy_SOURCES = subsystems/proxy.c subsystems/proxy.h subsystems/proxy_main.c \
  	subsystems/proxy_messages.h subsystems/smtp.c subsystems/smtp.h \
  	subsystems/smtp_messages.h atomicio.c \
-@@ -391,7 +391,7 @@ proxy_LDADD = @LIBOBJS@ @EVENTLIB@ @DNETLIB@ @PCAPLIB@
+@@ -433,7 +433,7 @@ proxy_LDADD = @LIBOBJS@ @EVENTLIB@ @DNETLIB@ @PCAPLIB@
  proxy_CPPFLAGS = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat \
- 	@EVENTINC@ @DNETINC@ @DNSRESINC@ @PCREINC@
+ 	@EVENTINC@ @DNETINC@ @PCREINC@
  
 -proxy_CFLAGS = -O2 -Wall
 +proxy_CFLAGS =

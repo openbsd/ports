@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/04/03 15:19:52 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/07/25 22:27:01 rui Exp $
 @newgroup _honeyd:!546
 @newuser _honeyd:!546:!_honeyd:daemon:honeyd user:/nonexistent:/sbin/nologin
 bin/honeyd
 bin/honeydctl
 bin/honeydstats
+bin/hsniff
 include/honeyd/
 include/honeyd/debug.h
 include/honeyd/hooks.h

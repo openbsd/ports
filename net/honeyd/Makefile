@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2007/04/03 15:19:52 aanriot Exp $
+# $OpenBSD: Makefile,v 1.18 2007/07/25 22:27:01 rui Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"utility to create virtual hosts on a network"
-DISTNAME=	honeyd-1.5b
+COMMENT=	utility to create virtual hosts on a network
+DISTNAME=	honeyd-1.5c
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
 
 HOMEPAGE=	http://www.honeyd.org/
+
+MAINTAINER=     Rui Reis <rui@rui.cx>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,13 +19,16 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c edit event m ncurses pcap pthread util z
 
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* align-*
+.endif
+
 USE_LIBTOOL=	Yes
 
 PYTHON_VER=	2.4
 LIB_DEPENDS=	dnet.>=1::net/libdnet \
 		python${PYTHON_VER}:python-${PYTHON_VER}.*:lang/python/${PYTHON_VER} \
-		pcre.>=1::devel/pcre \
-		dnsres.>=0::net/libdnsres
+		pcre.>=1::devel/pcre
 RUN_DEPENDS=	::net/rrdtool
 
 CONFIGURE_STYLE=gnu

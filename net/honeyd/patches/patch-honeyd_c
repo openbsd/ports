@@ -1,7 +1,7 @@
-$OpenBSD: patch-honeyd_c,v 1.3 2007/04/03 15:19:52 aanriot Exp $
---- honeyd.c.orig	Sat Aug 19 09:14:36 2006
-+++ honeyd.c	Mon Apr  2 00:12:08 2007
-@@ -161,8 +161,8 @@ int                      honeyd_show_data_dir;
+$OpenBSD: patch-honeyd_c,v 1.4 2007/07/25 22:27:01 rui Exp $
+--- honeyd.c.orig	Mon May 28 07:12:52 2007
++++ honeyd.c	Wed Jul 18 11:55:08 2007
+@@ -163,8 +163,8 @@ int                      honeyd_show_data_dir;
  int                      honeyd_show_version;
  int                      honeyd_show_usage;
  int			 honeyd_debug;
@@ -12,7 +12,7 @@ $OpenBSD: patch-honeyd_c,v 1.3 2007/04/03 15:19:52 aanriot Exp $
  int			 honeyd_needsroot;	/* Need different IDs */
  int			 honeyd_disable_webserver = 0;
  int			 honeyd_disable_update = 0;
-@@ -432,12 +432,6 @@ honeyd_init(void)
+@@ -434,12 +434,6 @@ honeyd_init(void)
  	/* Record our start time */
  	gettimeofday(&honeyd_uptime, NULL);
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-honeyd_c,v 1.3 2007/04/03 15:19:52 aanriot Exp $
  	/* Initalize ongoing connection state */
  	SPLAY_INIT(&tcpcons);
  	TAILQ_INIT(&tcplru);
-@@ -3250,6 +3244,13 @@ main(int argc, char *argv[])
+@@ -3256,6 +3250,13 @@ main(int argc, char *argv[])
  	/* We need reproduceable random numbers for regression testing */
  	if (setrand)
  		rand_set(honeyd_rand, &setrand, sizeof(setrand));
@@ -37,5 +37,5 @@ $OpenBSD: patch-honeyd_c,v 1.3 2007/04/03 15:19:52 aanriot Exp $
 +	if (setenv("EVENT_NOKQUEUE", "Yes", 1))
 +		printf("EVENT_NOKQUEUE set");
  
- 	/* Initalize libevent */
- 	event_init();
+ 
+ 	/* disables event methods that don't work for bpf */

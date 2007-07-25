@@ -1,6 +1,6 @@
-$OpenBSD: patch-pool_c,v 1.2 2007/04/03 15:19:52 aanriot Exp $
---- pool.c.orig	Sat Aug 19 09:10:40 2006
-+++ pool.c	Mon Apr  2 00:12:08 2007
+$OpenBSD: align-pool_c,v 1.1 2007/07/25 22:27:01 rui Exp $
+--- pool.c.orig	Mon May 28 07:12:52 2007
++++ pool.c	Wed Jul 18 11:55:09 2007
 @@ -92,7 +92,7 @@ pool_alloc_size(struct pool *pool, size_t size)
  			/* We want to use the last one as return */
  			if (i < max - 1) {
