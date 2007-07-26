@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozpluggerrc,v 1.1.1.1 2007/01/26 15:33:13 jasper Exp $
---- mozpluggerrc.orig	Wed Jan 17 18:16:13 2007
-+++ mozpluggerrc	Fri Jan 26 13:49:23 2007
+$OpenBSD: patch-mozpluggerrc,v 1.2 2007/07/26 09:12:53 steven Exp $
+--- mozpluggerrc.orig	Sat Apr  7 21:04:56 2007
++++ mozpluggerrc	Thu Jul 26 11:08:37 2007
 @@ -36,7 +36,7 @@ ifdef([ENABLE_HELPERS],[
  
  ### MPlayer
@@ -10,7 +10,7 @@ $OpenBSD: patch-mozpluggerrc,v 1.1.1.1 2007/01/26 15:33:13 jasper Exp $
  
  define(MP_EMBED,[embed noisy ignore_errors: MP_CMD(-xy $width -wid $window $1)])
  
-@@ -83,7 +83,7 @@ ifelse(esyscmd([acroread -helpall | grep
+@@ -83,7 +83,7 @@ ifelse(esyscmd([acroread -helpall | grep openInNewWind
  ### GV
  define(GV_OPTS,[--safer --quiet --antialias -geometry +9000+9000])
  define(GV_FLAGS,[repeat noisy swallow(gv) fill])
@@ -78,7 +78,7 @@ $OpenBSD: patch-mozpluggerrc,v 1.1.1.1 2007/01/26 15:33:13 jasper Exp $
  video/x-theora:ogg:OGG stream with video
  video/theora:ogg:OGG stream with video
  video/ogg:ogg:OGG stream with video
-@@ -148,138 +153,137 @@ video/x-anim:iff,anim5,anim3,anim7:IFF a
+@@ -148,138 +153,137 @@ video/x-anim:iff,anim5,anim3,anim7:IFF animation
  ### Audio      ###
  ##################
  

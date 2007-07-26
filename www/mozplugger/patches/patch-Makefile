@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/26 15:33:11 jasper Exp $
---- Makefile.orig	Wed Jan 17 18:17:35 2007
-+++ Makefile	Fri Jan 26 13:49:23 2007
+$OpenBSD: patch-Makefile,v 1.2 2007/07/26 09:12:53 steven Exp $
+--- Makefile.orig	Sat Apr  7 21:05:12 2007
++++ Makefile	Thu Jul 26 11:08:37 2007
 @@ -1,5 +1,5 @@
  # Where is your Xwindows located?
 -X11=/usr/X11R6
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/01/26 15:33:11 jasper Exp $
  
  auto:
  	@case "x`uname`" in \
-@@ -93,7 +93,8 @@ BIN_FILES=mozplugger.so mozplugger-helpe
+@@ -93,7 +93,8 @@ BIN_FILES=mozplugger.so mozplugger-helper
  
  DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\" #-Wall -DDEBUG #-D__amd64__
  RPM_OPT_FLAGS=-O2
