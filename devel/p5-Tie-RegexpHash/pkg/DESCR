@@ -1,0 +1,2 @@
+This module allows one to use regular expressions for hash keys, so
+that values can be associated with anything that matches the key.
