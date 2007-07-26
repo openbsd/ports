@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2007/07/19 00:19:28 todd Exp $ 
+# $OpenBSD: Makefile,v 1.55 2007/07/26 14:38:24 todd Exp $ 
 
      SUBDIR += stable
      SUBDIR += stable,compressed
      SUBDIR += snapshot
-     SUBDIR += snapshot,compressed
      SUBDIR += snapshot,sasl
-     SUBDIR += snapshot,sidebar
+     SUBDIR += snapshot,compressed,sidebar
+     SUBDIR += snapshot,compressed,sidebar,sasl
 
 .include <bsd.port.subdir.mk>
