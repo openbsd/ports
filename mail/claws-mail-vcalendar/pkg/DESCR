@@ -1,0 +1,12 @@
+This plugin enables vCalendar message handling like the ones produced by
+Evolution or Outlook, and handles webCal subscriptions. It provides a
+personal calendar and public calendar import and export as well as
+groupware features for Claws Mail, namely:
+ * receiving meeting invitations (displaying, answering, planning)
+ * sending meeting invitations
+ * publishing your calendar(s) and/or your free/busy status, in order to
+   help others plan meetings
+ * subscribing to public calendars
+ * retrieving the free/busy status of people, to help in planning
+   meetings
+ * reminding you of events in advance

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libical_libical_Makefile_in,v 1.1.1.1 2007/07/26 13:59:28 ajacoutot Exp $
+--- libical/libical/Makefile.in.orig	Thu Jul 26 15:06:21 2007
++++ libical/libical/Makefile.in	Thu Jul 26 15:06:52 2007
+@@ -324,7 +324,7 @@ libical_la_SOURCES = \
+ 	vsnprintf.c		\
+ 	icallangbind.h		
+ 
+-libicalincludedir = $(includedir)
++libicalincludedir = $(includedir)/claws-mail
+ libicalinclude_HEADERS = ical.h 
+ 
+ # ORDERING OF HEADERS IS SIGNIFICANT. Don't change this ordering. It
