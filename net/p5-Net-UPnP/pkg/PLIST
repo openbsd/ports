@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/26 14:21:08 steven Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/UPnP/
+${P5SITE}/Net/UPnP.pm
+${P5SITE}/Net/UPnP/AV/
+${P5SITE}/Net/UPnP/AV/Container.pm
+${P5SITE}/Net/UPnP/AV/Content.pm
+${P5SITE}/Net/UPnP/AV/Item.pm
+${P5SITE}/Net/UPnP/AV/MediaServer.pm
+${P5SITE}/Net/UPnP/ActionResponse.pm
+${P5SITE}/Net/UPnP/ControlPoint.pm
+${P5SITE}/Net/UPnP/Device.pm
+${P5SITE}/Net/UPnP/GW/
+${P5SITE}/Net/UPnP/GW/Gateway.pm
+${P5SITE}/Net/UPnP/HTTP.pm
+${P5SITE}/Net/UPnP/HTTPResponse.pm
+${P5SITE}/Net/UPnP/QueryResponse.pm
+${P5SITE}/Net/UPnP/Service.pm
+@man man/man3p/Net::UPnP.3p
+@man man/man3p/Net::UPnP::AV::Container.3p
+@man man/man3p/Net::UPnP::AV::Content.3p
+@man man/man3p/Net::UPnP::AV::Item.3p
+@man man/man3p/Net::UPnP::AV::MediaServer.3p
+@man man/man3p/Net::UPnP::ActionResponse.3p
+@man man/man3p/Net::UPnP::ControlPoint.3p
+@man man/man3p/Net::UPnP::Device.3p
+@man man/man3p/Net::UPnP::GW::Gateway.3p
+@man man/man3p/Net::UPnP::HTTP.3p
+@man man/man3p/Net::UPnP::HTTPResponse.3p
+@man man/man3p/Net::UPnP::QueryResponse.3p
+@man man/man3p/Net::UPnP::Service.3p

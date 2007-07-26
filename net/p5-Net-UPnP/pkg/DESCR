@@ -1,0 +1,2 @@
+This package provides some functions to control UPnP devices.
+Currently, the package provides only functions for the control point.
