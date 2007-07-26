@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2007/07/25 21:31:46 rui Exp $
+# $OpenBSD: Makefile,v 1.44 2007/07/26 03:54:06 todd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+= --with-mysql
 LIB_DEPENDS+=	mysqlclient.>=10::databases/mysql
 .endif
 
-pre-build::
+pre-build:
 	@perl -pi -e "s,/usr/bin/rrdtool,${LOCALBASE}/bin/rrdtool,g" \
 	    ${WRKSRC}/doc/lighttpd.conf
 	@perl -pi -e "s,/etc/lighttpd,${SYSCONFDIR},g" \
