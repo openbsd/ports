@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/01 19:57:17 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/07/26 19:29:53 simon Exp $
 
-COMMENT=	"read and write gzip and zip files/buffers"
+COMMENT=	read and write gzip and zip files/buffers
 
 MODULES=	cpan
 
-DISTNAME=	IO-Compress-Zlib-2.004
+DISTNAME=	IO-Compress-Zlib-2.005
 CATEGORIES=	archivers
 
 MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::archivers/p5-Compress-Raw-Zlib \
-		::archivers/p5-IO-Compress-Base
+RUN_DEPENDS=	:p5-Compress-Raw-Zlib->=2.005:archivers/p5-Compress-Raw-Zlib \
+		:p5-IO-Compress-Base->=2.005:archivers/p5-IO-Compress-Base
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-IO-Compress-Zlib
