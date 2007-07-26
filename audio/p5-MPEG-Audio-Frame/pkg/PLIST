@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/26 03:33:07 steven Exp $
+${P5SITE}/MPEG/
+${P5SITE}/MPEG/Audio/
+${P5SITE}/MPEG/Audio/Frame.pm
+@man man/man3p/MPEG::Audio::Frame.3p

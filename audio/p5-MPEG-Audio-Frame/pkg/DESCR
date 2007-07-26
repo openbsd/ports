@@ -1,0 +1,6 @@
+A very simple, pure Perl module which allows parsing out data from MP3 files
+or streams and chunking them up into different frames. You can use this to
+accurately determine the length of an MP3, filter non-audio data, or chunk up
+the file for streaming via datagram. Virtually anything is possible.
+
+This module supports MPEG-1, MPEG-2 Multichannel, MPEG-2 LSF and MPEG-2.5.
