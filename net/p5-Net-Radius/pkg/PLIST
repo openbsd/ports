@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/14 12:15:38 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/26 18:30:31 simon Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/Radius/
 ${P5SITE}/Net/Radius/Dictionary.pm
@@ -9,6 +9,9 @@ share/doc/p5-Net-Radius/
 share/doc/p5-Net-Radius/README
 share/doc/p5-Net-Radius/README.3COM
 share/doc/p5-Net-Radius/README.VSA
+share/doc/p5-Net-Radius/README.broken
+share/doc/p5-Net-Radius/README.packets
+share/doc/p5-Net-Radius/README.server
 share/examples/p5-Net-Radius/
 share/examples/p5-Net-Radius/example-client.pl
 share/examples/p5-Net-Radius/example-menu.pl
