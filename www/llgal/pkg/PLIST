@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/27 19:16:27 steven Exp $
+bin/llgal
+libdata/perl5/site_perl/Llgal/
+libdata/perl5/site_perl/Llgal/Config.pm
+libdata/perl5/site_perl/Llgal/Messages.pm
+libdata/perl5/site_perl/Llgal/Templates.pm
+libdata/perl5/site_perl/Llgal/Utils.pm
+@man man/man1/llgal.1
+@man man/man5/llgalrc.5
+share/llgal/
+share/llgal/captions.header
+share/llgal/index.png
+share/llgal/indextemplate.html
+share/llgal/llgal.css
+share/llgal/next.png
+share/llgal/prev.png
+share/llgal/slidetemplate.html
+share/llgal/tile.png
+share/locale/en/LC_MESSAGES/llgal.mo
+share/locale/fr/LC_MESSAGES/llgal.mo

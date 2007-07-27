@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/07/27 19:16:27 steven Exp $
+--- Makefile.orig	Sun Jul  8 18:06:45 2007
++++ Makefile	Thu Jul 26 06:35:26 2007
+@@ -15,7 +15,7 @@ PREFIX	=	/usr/local
+ EXEC_PREFIX	=	$(PREFIX)
+ BINDIR	=	$(EXEC_PREFIX)/bin
+ DATADIR	=	$(PREFIX)/share
+-SYSCONFDIR	=	$(PREFIX)/etc
++#SYSCONFDIR	=	$(PREFIX)/etc
+ MANDIR	=	$(PREFIX)/man
+ LOCALEDIR	=	$(DATADIR)/locale
+ DOCDIR	=	$(DATADIR)/doc
+@@ -38,7 +38,7 @@ clean:: clean-lib clean-po
+ 	rm -f llgal
+ 
+ install:: install-lib install-po
+-	install -d -m 0755 $(DESTDIR)$(BINDIR)/ $(DESTDIR)$(DATADIR)/llgal/ $(DESTDIR)$(SYSCONFDIR)/llgal/
++	install -d -m 0755 $(DESTDIR)$(BINDIR)/ $(DESTDIR)$(DATADIR)/llgal/
+ 	install -m 0755 llgal $(DESTDIR)$(BINDIR)/llgal
+ 	install -m 0644 $(DATA_SUBDIR)/* $(DESTDIR)$(DATADIR)/llgal/
+ 
