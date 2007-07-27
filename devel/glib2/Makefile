@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2007/06/25 15:28:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2007/07/27 08:29:46 martin Exp $
 
 COMMENT-main=		"general-purpose utility library"
 COMMENT-docs=		"glib2 documentation"
@@ -50,7 +50,7 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
 # Port has "/usr/local" hardcoded, we prefer ${LOCALBASE}
 pre-build:
