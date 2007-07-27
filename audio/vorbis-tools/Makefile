@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/05/14 19:35:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2007/07/27 16:04:37 naddy Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
 
@@ -41,6 +41,8 @@ SEPARATE_BUILD=	simple
 AUTOMAKE_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} 
 post-patch:
+	@cp ${LOCALBASE}/share/gettext/po/Makefile.in.in \
+		${WRKDIST}/po/Makefile.in.in
 	@echo "Running aclocal-${AUTOMAKE_VERSION} in ${AUTOCONF_DIR}
 	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOMAKE_ENV} aclocal
 	@echo "Running automake-${AUTOMAKE_VERSION} in ${AUTOCONF_DIR}
