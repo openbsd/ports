@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/10 11:56:25 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/27 20:28:02 simon Exp $
 
-COMMENT=	"simple database abstraction"
+COMMENT=	simple database abstraction
 
 MODULES=	cpan
-V=		3.0.14
+V=		3.0.16
 DISTNAME=	Class-DBI-v${V}
 PKGNAME=	p5-Class-DBI-${V}
 CATEGORIES=	databases
-
-MAINTAINER=	Sam Smith <S@msmith.net>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
