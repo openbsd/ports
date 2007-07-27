@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/09/22 13:33:00 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/07/27 21:43:21 simon Exp $
 ${P5SITE}/Net/Amazon/
 ${P5SITE}/Net/Amazon.pm
 ${P5SITE}/Net/Amazon/Attribute/
@@ -7,70 +7,428 @@ ${P5SITE}/Net/Amazon/Attribute/ReviewSet.pm
 ${P5SITE}/Net/Amazon/Property/
 ${P5SITE}/Net/Amazon/Property.pm
 ${P5SITE}/Net/Amazon/Property/Book.pm
+${P5SITE}/Net/Amazon/Property/CE.pm
 ${P5SITE}/Net/Amazon/Property/DVD.pm
 ${P5SITE}/Net/Amazon/Property/Music.pm
+${P5SITE}/Net/Amazon/Property/Software.pm
+${P5SITE}/Net/Amazon/Property/VideoGames.pm
 ${P5SITE}/Net/Amazon/Request/
 ${P5SITE}/Net/Amazon/Request.pm
 ${P5SITE}/Net/Amazon/Request/ASIN.pm
+${P5SITE}/Net/Amazon/Request/Actor.pm
 ${P5SITE}/Net/Amazon/Request/Artist.pm
+${P5SITE}/Net/Amazon/Request/Author.pm
 ${P5SITE}/Net/Amazon/Request/Blended.pm
 ${P5SITE}/Net/Amazon/Request/BrowseNode.pm
+${P5SITE}/Net/Amazon/Request/Director.pm
+${P5SITE}/Net/Amazon/Request/EAN.pm
 ${P5SITE}/Net/Amazon/Request/Exchange.pm
+${P5SITE}/Net/Amazon/Request/ISBN.pm
 ${P5SITE}/Net/Amazon/Request/Keyword.pm
 ${P5SITE}/Net/Amazon/Request/Manufacturer.pm
+${P5SITE}/Net/Amazon/Request/MusicLabel.pm
 ${P5SITE}/Net/Amazon/Request/Power.pm
+${P5SITE}/Net/Amazon/Request/Publisher.pm
 ${P5SITE}/Net/Amazon/Request/Seller.pm
 ${P5SITE}/Net/Amazon/Request/Similar.pm
 ${P5SITE}/Net/Amazon/Request/Sort.pm
 @comment ${P5SITE}/Net/Amazon/Request/Sort.pm.orig
 ${P5SITE}/Net/Amazon/Request/TextStream.pm
+${P5SITE}/Net/Amazon/Request/Title.pm
 ${P5SITE}/Net/Amazon/Request/UPC.pm
 ${P5SITE}/Net/Amazon/Request/Wishlist.pm
 ${P5SITE}/Net/Amazon/Response/
 ${P5SITE}/Net/Amazon/Response.pm
 ${P5SITE}/Net/Amazon/Response/ASIN.pm
+${P5SITE}/Net/Amazon/Response/Actor.pm
 ${P5SITE}/Net/Amazon/Response/Artist.pm
+${P5SITE}/Net/Amazon/Response/Author.pm
 ${P5SITE}/Net/Amazon/Response/Blended.pm
 ${P5SITE}/Net/Amazon/Response/BrowseNode.pm
+${P5SITE}/Net/Amazon/Response/Director.pm
+${P5SITE}/Net/Amazon/Response/EAN.pm
 ${P5SITE}/Net/Amazon/Response/Exchange.pm
+${P5SITE}/Net/Amazon/Response/ISBN.pm
 ${P5SITE}/Net/Amazon/Response/Keyword.pm
 ${P5SITE}/Net/Amazon/Response/Manufacturer.pm
+${P5SITE}/Net/Amazon/Response/MusicLabel.pm
 ${P5SITE}/Net/Amazon/Response/Power.pm
+${P5SITE}/Net/Amazon/Response/Publisher.pm
 ${P5SITE}/Net/Amazon/Response/Seller.pm
 ${P5SITE}/Net/Amazon/Response/Similar.pm
 ${P5SITE}/Net/Amazon/Response/TextStream.pm
+${P5SITE}/Net/Amazon/Response/Title.pm
 ${P5SITE}/Net/Amazon/Response/UPC.pm
 ${P5SITE}/Net/Amazon/Response/Wishlist.pm
 ${P5SITE}/Net/Amazon/Result/
 ${P5SITE}/Net/Amazon/Result/Seller/
 ${P5SITE}/Net/Amazon/Result/Seller.pm
 ${P5SITE}/Net/Amazon/Result/Seller/Listing.pm
+${P5SITE}/Net/Amazon/Validate/
+${P5SITE}/Net/Amazon/Validate/ItemSearch/
+${P5SITE}/Net/Amazon/Validate/ItemSearch.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Actor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Artist.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/AudienceRating.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Author.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Brand.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/BrowseNode.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Composer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Condition.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Conductor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Count.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/DeliveryMethod.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Director.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/EAN.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/ItemPage.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Keywords.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Manufacturer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/MaximumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/MerchantId.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/MinimumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/MusicLabel.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Power.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Publisher.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Sort.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/ca/Title.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Actor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Artist.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Author.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/BrowseNode.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Composer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Condition.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Conductor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Count.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/DeliveryMethod.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Director.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/EAN.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/ItemPage.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Keywords.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/MPAARating.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Manufacturer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/MaximumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/MerchantId.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/MinimumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/MusicLabel.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Power.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Publisher.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Sort.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Title.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Actor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Artist.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/AudienceRating.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Author.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Brand.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/BrowseNode.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Composer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Condition.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Conductor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Count.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/DeliveryMethod.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Director.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/EAN.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/ItemPage.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Keywords.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Manufacturer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/MaximumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/MerchantId.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/MinimumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/MusicLabel.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Power.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Publisher.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Sort.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Title.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Actor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Artist.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Author.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Brand.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/BrowseNode.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Composer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Condition.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Conductor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Director.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/EAN.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/ItemPage.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Keywords.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Manufacturer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/MaximumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/MerchantId.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/MinimumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/MusicLabel.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Orchestra.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Power.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Publisher.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Sort.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Title.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Actor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Artist.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Author.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Brand.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/BrowseNode.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Composer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Condition.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Conductor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Director.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/EAN.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/ItemPage.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Keywords.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/MPAARating.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Manufacturer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/MaximumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/MerchantId.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/MinimumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/MusicLabel.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Orchestra.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Power.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Publisher.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Sort.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/uk/Title.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Actor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Artist.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/AudienceRating.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Author.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Brand.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/BrowseNode.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/City.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Composer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Condition.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Conductor.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Count.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Cuisine.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/DeliveryMethod.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Director.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/ISPUPostalCode.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/ItemPage.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Keywords.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/MPAARating.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Manufacturer.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/MaximumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/MerchantId.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/MinimumPrice.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/MusicLabel.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Neighborhood.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Orchestra.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Power.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Publisher.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Sort.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/State.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/TextStream.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Title.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/UPC.pm
+${P5SITE}/Net/Amazon/Validate/Type/
+${P5SITE}/Net/Amazon/Validate/Type.pm
+${P5SITE}/Net/Amazon/Validate/Type/BrowseNodeLookup.pm
+${P5SITE}/Net/Amazon/Validate/Type/CartAdd.pm
+${P5SITE}/Net/Amazon/Validate/Type/CartClear.pm
+${P5SITE}/Net/Amazon/Validate/Type/CartCreate.pm
+${P5SITE}/Net/Amazon/Validate/Type/CartGet.pm
+${P5SITE}/Net/Amazon/Validate/Type/CartModify.pm
+${P5SITE}/Net/Amazon/Validate/Type/CustomerContentLookup.pm
+${P5SITE}/Net/Amazon/Validate/Type/CustomerContentSearch.pm
+${P5SITE}/Net/Amazon/Validate/Type/Help.pm
+${P5SITE}/Net/Amazon/Validate/Type/ItemLookup.pm
+${P5SITE}/Net/Amazon/Validate/Type/ItemSearch.pm
+${P5SITE}/Net/Amazon/Validate/Type/ListLookup.pm
+${P5SITE}/Net/Amazon/Validate/Type/ListSearch.pm
+${P5SITE}/Net/Amazon/Validate/Type/SellerListingLookup.pm
+${P5SITE}/Net/Amazon/Validate/Type/SellerListingSearch.pm
+${P5SITE}/Net/Amazon/Validate/Type/SellerLookup.pm
+${P5SITE}/Net/Amazon/Validate/Type/SimilarityLookup.pm
+${P5SITE}/Net/Amazon/Validate/Type/TransactionLookup.pm
 @man man/man3p/Net::Amazon.3p
 @man man/man3p/Net::Amazon::Attribute::Review.3p
 @man man/man3p/Net::Amazon::Attribute::ReviewSet.3p
 @man man/man3p/Net::Amazon::Property.3p
 @man man/man3p/Net::Amazon::Property::Book.3p
+@man man/man3p/Net::Amazon::Property::CE.3p
 @man man/man3p/Net::Amazon::Property::DVD.3p
 @man man/man3p/Net::Amazon::Property::Music.3p
+@man man/man3p/Net::Amazon::Property::Software.3p
+@man man/man3p/Net::Amazon::Property::VideoGames.3p
 @man man/man3p/Net::Amazon::Request.3p
 @man man/man3p/Net::Amazon::Request::ASIN.3p
+@man man/man3p/Net::Amazon::Request::Actor.3p
 @man man/man3p/Net::Amazon::Request::Artist.3p
+@man man/man3p/Net::Amazon::Request::Author.3p
 @man man/man3p/Net::Amazon::Request::Blended.3p
 @man man/man3p/Net::Amazon::Request::BrowseNode.3p
+@man man/man3p/Net::Amazon::Request::Director.3p
+@man man/man3p/Net::Amazon::Request::EAN.3p
 @man man/man3p/Net::Amazon::Request::Exchange.3p
+@man man/man3p/Net::Amazon::Request::ISBN.3p
 @man man/man3p/Net::Amazon::Request::Keyword.3p
 @man man/man3p/Net::Amazon::Request::Manufacturer.3p
+@man man/man3p/Net::Amazon::Request::MusicLabel.3p
 @man man/man3p/Net::Amazon::Request::Power.3p
+@man man/man3p/Net::Amazon::Request::Publisher.3p
 @man man/man3p/Net::Amazon::Request::Seller.3p
 @man man/man3p/Net::Amazon::Request::Similar.3p
 @man man/man3p/Net::Amazon::Request::Sort.3p
 @man man/man3p/Net::Amazon::Request::TextStream.3p
+@man man/man3p/Net::Amazon::Request::Title.3p
 @man man/man3p/Net::Amazon::Request::UPC.3p
 @man man/man3p/Net::Amazon::Request::Wishlist.3p
 @man man/man3p/Net::Amazon::Response.3p
 @man man/man3p/Net::Amazon::Result::Seller.3p
 @man man/man3p/Net::Amazon::Result::Seller::Listing.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Actor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Artist.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::AudienceRating.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Author.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Brand.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::BrowseNode.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Composer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Condition.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Conductor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Count.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::DeliveryMethod.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Director.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::EAN.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::ItemPage.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Keywords.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Manufacturer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::MaximumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::MerchantId.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::MinimumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::MusicLabel.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Power.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Publisher.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Sort.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::ca::Title.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Actor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Artist.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Author.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::BrowseNode.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Composer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Condition.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Conductor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Count.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::DeliveryMethod.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Director.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::EAN.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::ItemPage.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Keywords.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::MPAARating.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Manufacturer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::MaximumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::MerchantId.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::MinimumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::MusicLabel.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Power.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Publisher.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Sort.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::de::Title.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Actor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Artist.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::AudienceRating.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Author.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Brand.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::BrowseNode.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Composer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Condition.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Conductor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Count.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::DeliveryMethod.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Director.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::EAN.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::ItemPage.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Keywords.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Manufacturer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::MaximumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::MerchantId.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::MinimumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::MusicLabel.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Power.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Publisher.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Sort.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Title.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Actor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Artist.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Author.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Brand.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::BrowseNode.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Composer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Condition.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Conductor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Director.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::EAN.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::ItemPage.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Keywords.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Manufacturer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::MaximumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::MerchantId.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::MinimumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::MusicLabel.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Orchestra.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Power.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Publisher.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Sort.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Title.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Actor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Artist.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Author.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Brand.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::BrowseNode.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Composer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Condition.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Conductor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Director.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::EAN.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::ItemPage.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Keywords.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::MPAARating.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Manufacturer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::MaximumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::MerchantId.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::MinimumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::MusicLabel.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Orchestra.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Power.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Publisher.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Sort.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::uk::Title.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Actor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Artist.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::AudienceRating.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Author.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Brand.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::BrowseNode.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::City.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Composer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Condition.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Conductor.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Count.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Cuisine.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::DeliveryMethod.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Director.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::ISPUPostalCode.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::ItemPage.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Keywords.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::MPAARating.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Manufacturer.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::MaximumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::MerchantId.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::MinimumPrice.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::MusicLabel.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Neighborhood.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Orchestra.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Power.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Publisher.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Sort.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::State.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::TextStream.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Title.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::UPC.3p
+@man man/man3p/Net::Amazon::Validate::Type.3p
 share/examples/p5-Net-Amazon/
+share/examples/p5-Net-Amazon/actor
 share/examples/p5-Net-Amazon/artist
 share/examples/p5-Net-Amazon/asin
 share/examples/p5-Net-Amazon/asin-de
@@ -80,17 +438,23 @@ share/examples/p5-Net-Amazon/asin_fetch
 share/examples/p5-Net-Amazon/asin_img
 share/examples/p5-Net-Amazon/asin_mult
 share/examples/p5-Net-Amazon/asin_offerall
+share/examples/p5-Net-Amazon/author
 share/examples/p5-Net-Amazon/blended.pl
 share/examples/p5-Net-Amazon/browse
 share/examples/p5-Net-Amazon/cd_fetch
 share/examples/p5-Net-Amazon/cheapo
 share/examples/p5-Net-Amazon/dejazz
+share/examples/p5-Net-Amazon/director
+share/examples/p5-Net-Amazon/ean
 share/examples/p5-Net-Amazon/exchange
 share/examples/p5-Net-Amazon/heavy
+share/examples/p5-Net-Amazon/isbn
 share/examples/p5-Net-Amazon/keyword
 share/examples/p5-Net-Amazon/manufacturer
 share/examples/p5-Net-Amazon/maxauthors
+share/examples/p5-Net-Amazon/musiclabel
 share/examples/p5-Net-Amazon/power
+share/examples/p5-Net-Amazon/publisher
 share/examples/p5-Net-Amazon/rate_limit
 share/examples/p5-Net-Amazon/reviews
 share/examples/p5-Net-Amazon/seller
@@ -98,5 +462,6 @@ share/examples/p5-Net-Amazon/sim
 share/examples/p5-Net-Amazon/similar
 share/examples/p5-Net-Amazon/similar2
 share/examples/p5-Net-Amazon/textstream
+share/examples/p5-Net-Amazon/title
 share/examples/p5-Net-Amazon/upc
 share/examples/p5-Net-Amazon/wishlist
