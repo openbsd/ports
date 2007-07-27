@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/07/18 11:47:12 aanriot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/27 09:49:17 steven Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -8,10 +8,10 @@ COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=		courier-authlib-0.58
 PKGNAME-main=		${DISTNAME}p3
-PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}p2
-PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}p0
-PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}p0
-PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}p1
+PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}p3
+PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}p1
+PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}p1
+PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}p2
 
 SHARED_LIBS +=  courierauth          0.0      # .0.0
 SHARED_LIBS +=  courierauthsasl      0.0      # .0.0
@@ -66,8 +66,8 @@ CONFIGURE_ARGS+=	--enable-static \
 			--enable-ltdl-install=no \
 			--cache-file=${WRKDIR}/courier-authlib.cache
 
-RUN_DEPENDS=		:expect-*:lang/expect,no_tk
-BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS-main=	:expect-*:lang/expect,no_tk
+BUILD_DEPENDS=		${RUN_DEPENDS-main}
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
 
