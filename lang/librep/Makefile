@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/02/14 11:51:07 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2007/07/27 22:01:38 naddy Exp $
 
 COMMENT=	"Emacs Lisp-like runtime library"
 
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 
 VERSION=	0.16.2
 DISTNAME=	librep-${VERSION}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 SHARED_LIBS=	rep 12.0
 CATEGORIES=	lang
 
