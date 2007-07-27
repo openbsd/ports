@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.289 2007/07/25 20:05:20 simon Exp $
+# $OpenBSD: Makefile,v 1.290 2007/07/27 19:17:07 steven Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -49,6 +49,7 @@
      SUBDIR += links
      SUBDIR += links+
      SUBDIR += links+,no_x11
+     SUBDIR += llgal
      SUBDIR += man2web
      SUBDIR += mantis
      SUBDIR += mediawiki
