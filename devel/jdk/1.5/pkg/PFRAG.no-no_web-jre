@@ -1,13 +1,13 @@
-@comment $OpenBSD: PFRAG.no-no_web-jre,v 1.4 2007/06/27 21:51:09 kurt Exp $
+@comment $OpenBSD: PFRAG.no-no_web-jre,v 1.5 2007/07/27 19:29:52 kurt Exp $
 ${JREHOME}/bin/ControlPanel
 ${JREHOME}/bin/java_vm
 ${JREHOME}/bin/javaws
 ${JREHOME}/javaws/
 ${JREHOME}/javaws/javaws
+${JREHOME}/lib/deploy.jar
 ${JREHOME}/lib/${MACHINE_ARCH}/libdeploy.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjavaplugin_jni.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjavaplugin_nscp.so
-${JREHOME}/lib/deploy.jar
 ${JREHOME}/lib/images/icons/
 ${JREHOME}/lib/images/icons/sun-java.png
 ${JREHOME}/lib/images/icons/sun-java_HighContrast.png
@@ -72,9 +72,9 @@ ${JREHOME}/lib/plugin.jar
 ${JREHOME}/lib/security/javaws.policy
 @man ${JREHOME}/man/man1/javaws.1
 ${JREHOME}/plugin/
-${JREHOME}/plugin/${MACHINE_ARCH}/
-${JREHOME}/plugin/${MACHINE_ARCH}/ns7/
-${JREHOME}/plugin/${MACHINE_ARCH}/ns7/libjavaplugin_oji.so
 ${JREHOME}/plugin/desktop/
 ${JREHOME}/plugin/desktop/sun_java.desktop
 ${JREHOME}/plugin/desktop/sun_java.png
+${JREHOME}/plugin/${MACHINE_ARCH}/
+${JREHOME}/plugin/${MACHINE_ARCH}/ns7/
+${JREHOME}/plugin/${MACHINE_ARCH}/ns7/libjavaplugin_oji.so

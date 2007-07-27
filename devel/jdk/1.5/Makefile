@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.41 2007/07/06 01:35:57 kurt Exp $
+# $OpenBSD: Makefile,v 1.42 2007/07/27 19:29:51 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
 
 COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
-V=			1.5.0.11
+V=			1.5.0.12
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p1
-PKGNAME-jre=		jre-${V}p1
+PKGNAME-main=		jdk-${V}
+PKGNAME-jre=		jre-${V}
 
 CATEGORIES=		devel/jdk java
 
@@ -18,15 +18,15 @@ HOMEPAGE=		https://tiger.dev.java.net/
 
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
-JRLSRC=			jdk-1_5_0_11-fcs-src-b03-jrl-15_dec_2006.jar
-JRLBIN=			jdk-1_5_0_11-fcs-bin-b03-jrl-15_dec_2006.jar
-PATCHSET=		bsd-jdk15-patches-5.tar.bz2
+JRLSRC=			jdk-1_5_0_12-fcs-src-b04-jrl-02_may_2007.jar
+JRLBIN=			jdk-1_5_0_12-fcs-bin-b04-jrl-02_may_2007.jar
+PATCHSET=		bsd-jdk15-patches-6.tar.bz2
 
 DISTFILES=		${JRLSRC} \
 			${JRLBIN} \
 			${PATCHSET}
 
-MASTER_SITES=		http://www.java.net/download/tiger/tiger_u11/
+MASTER_SITES=		http://www.java.net/download/tiger/tiger_u12/
 
 # Java Research License
 # http://www.java.net/jrl.csp
@@ -67,11 +67,11 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 # Error message for distfile.
 FETCH_MANUALLY=		"You must manually fetch the distribution files, place"
 FETCH_MANUALLY+=	"them in ${FULLDISTDIR} and then run make again."
-FETCH_MANUALLY+=	"Get the 'Update 11 Source under the JRL license' file:"
+FETCH_MANUALLY+=	"Get the 'Update 12 Source under the JRL license' file:"
 FETCH_MANUALLY+=	"    ${JRLSRC} and"
 FETCH_MANUALLY+=	"    the 'Source Binaries needed for Source Build' file:"
 FETCH_MANUALLY+=	"    ${JRLBIN}"
-FETCH_MANUALLY+=	"from http://download.java.net/tiger/tiger_u11/"
+FETCH_MANUALLY+=	"from http://download.java.net/tiger/tiger_u12/"
 FETCH_MANUALLY+=	"Get the BSD patchset file:"
 FETCH_MANUALLY+=	"   ${PATCHSET}"
 FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk15.html"
@@ -91,11 +91,12 @@ EXTRACT_CASES+=		*.jar) true ;;
 BUILD_DEPENDS+=		:jdk-1.5*:devel/jdk/1.5
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
-DISTFILES+=		jdk-1_5_0_11-solaris-i586.tar.Z \
+DISTFILES+=		jdk-1_5_0_12-solaris-i586.tar.Z \
 			xalan-j_2_7_0-bin.tar.gz
-FETCH_MANUALLY+=	"Get 'JDK 5.0 Update 11' for 'Solaris x86 packages' file:"
-FETCH_MANUALLY+=	"    jdk-1_5_0_11-solaris-i586.tar.Z"
-FETCH_MANUALLY+=	"from http://java.sun.com/products/archive/j2se/5.0_11/index.html"
+FETCH_MANUALLY+=	"Get 'JDK 5.0 Update 12' for 'Solaris x86 packages' file:"
+FETCH_MANUALLY+=	"    jdk-1_5_0_12-solaris-i586.tar.Z"
+FETCH_MANUALLY+=	"from http://java.sun.com/javase/downloads/index_jdk5.jsp or"
+FETCH_MANUALLY+=	"http://java.sun.com/products/archive/j2se/5.0_12/index.html"
 FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
 FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
 FETCH_MANUALLY+=	"from http://www.apache.org/dist/xml/xalan-j/"

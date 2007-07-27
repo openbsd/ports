@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2007/06/27 21:51:09 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2007/07/27 19:29:52 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.5,<1.6
 @pkgpath devel/jdk/1.5,native_bootstrap
@@ -1031,6 +1031,37 @@ ${JDKHOME}/jre/bin/tnameserv_g
 ${JDKHOME}/jre/bin/unpack200
 ${JDKHOME}/jre/bin/unpack200_g
 ${JDKHOME}/jre/lib/
+${JDKHOME}/jre/lib/applet/
+${JDKHOME}/jre/lib/audio/
+${JDKHOME}/jre/lib/audio/soundbank.gm
+${JDKHOME}/jre/lib/charsets.jar
+${JDKHOME}/jre/lib/classlist
+${JDKHOME}/jre/lib/cmm/
+${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
+${JDKHOME}/jre/lib/cmm/GRAY.pf
+${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
+${JDKHOME}/jre/lib/cmm/PYCC.pf
+${JDKHOME}/jre/lib/cmm/sRGB.pf
+${JDKHOME}/jre/lib/content-types.properties
+${JDKHOME}/jre/lib/deploy/
+${JDKHOME}/jre/lib/deploy/ffjcext.zip
+${JDKHOME}/jre/lib/ext/
+${JDKHOME}/jre/lib/ext/dnsns.jar
+${JDKHOME}/jre/lib/ext/localedata.jar
+${JDKHOME}/jre/lib/ext/sunjce_provider.jar
+${JDKHOME}/jre/lib/flavormap.properties
+${JDKHOME}/jre/lib/fontconfig.bfc
+${JDKHOME}/jre/lib/fontconfig.properties.src
+${JDKHOME}/jre/lib/fonts/
+${JDKHOME}/jre/lib/fonts/LucidaBrightDemiBold.ttf
+${JDKHOME}/jre/lib/fonts/LucidaBrightDemiItalic.ttf
+${JDKHOME}/jre/lib/fonts/LucidaBrightItalic.ttf
+${JDKHOME}/jre/lib/fonts/LucidaBrightRegular.ttf
+${JDKHOME}/jre/lib/fonts/LucidaSansDemiBold.ttf
+${JDKHOME}/jre/lib/fonts/LucidaSansRegular.ttf
+${JDKHOME}/jre/lib/fonts/LucidaTypewriterBold.ttf
+${JDKHOME}/jre/lib/fonts/LucidaTypewriterRegular.ttf
+${JDKHOME}/jre/lib/fonts/fonts.dir
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot_g
@@ -1106,35 +1137,6 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm_g.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt_g.so
-${JDKHOME}/jre/lib/applet/
-${JDKHOME}/jre/lib/audio/
-${JDKHOME}/jre/lib/audio/soundbank.gm
-${JDKHOME}/jre/lib/charsets.jar
-${JDKHOME}/jre/lib/classlist
-${JDKHOME}/jre/lib/cmm/
-${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
-${JDKHOME}/jre/lib/cmm/GRAY.pf
-${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
-${JDKHOME}/jre/lib/cmm/PYCC.pf
-${JDKHOME}/jre/lib/cmm/sRGB.pf
-${JDKHOME}/jre/lib/content-types.properties
-${JDKHOME}/jre/lib/ext/
-${JDKHOME}/jre/lib/ext/dnsns.jar
-${JDKHOME}/jre/lib/ext/localedata.jar
-${JDKHOME}/jre/lib/ext/sunjce_provider.jar
-${JDKHOME}/jre/lib/flavormap.properties
-${JDKHOME}/jre/lib/fontconfig.bfc
-${JDKHOME}/jre/lib/fontconfig.properties.src
-${JDKHOME}/jre/lib/fonts/
-${JDKHOME}/jre/lib/fonts/LucidaBrightDemiBold.ttf
-${JDKHOME}/jre/lib/fonts/LucidaBrightDemiItalic.ttf
-${JDKHOME}/jre/lib/fonts/LucidaBrightItalic.ttf
-${JDKHOME}/jre/lib/fonts/LucidaBrightRegular.ttf
-${JDKHOME}/jre/lib/fonts/LucidaSansDemiBold.ttf
-${JDKHOME}/jre/lib/fonts/LucidaSansRegular.ttf
-${JDKHOME}/jre/lib/fonts/LucidaTypewriterBold.ttf
-${JDKHOME}/jre/lib/fonts/LucidaTypewriterRegular.ttf
-${JDKHOME}/jre/lib/fonts/fonts.dir
 ${JDKHOME}/jre/lib/im/
 ${JDKHOME}/jre/lib/im/indicim.jar
 ${JDKHOME}/jre/lib/im/thaiim.jar
@@ -1180,7 +1182,7 @@ ${JDKHOME}/jre/lib/zi/Africa/Abidjan
 ${JDKHOME}/jre/lib/zi/Africa/Accra
 ${JDKHOME}/jre/lib/zi/Africa/Addis_Ababa
 ${JDKHOME}/jre/lib/zi/Africa/Algiers
-${JDKHOME}/jre/lib/zi/Africa/Asmera
+${JDKHOME}/jre/lib/zi/Africa/Asmara
 ${JDKHOME}/jre/lib/zi/Africa/Bamako
 ${JDKHOME}/jre/lib/zi/Africa/Bangui
 ${JDKHOME}/jre/lib/zi/Africa/Banjul
@@ -1295,6 +1297,7 @@ ${JDKHOME}/jre/lib/zi/America/Indiana/Marengo
 ${JDKHOME}/jre/lib/zi/America/Indiana/Petersburg
 ${JDKHOME}/jre/lib/zi/America/Indiana/Vevay
 ${JDKHOME}/jre/lib/zi/America/Indiana/Vincennes
+${JDKHOME}/jre/lib/zi/America/Indiana/Winamac
 ${JDKHOME}/jre/lib/zi/America/Inuvik
 ${JDKHOME}/jre/lib/zi/America/Iqaluit
 ${JDKHOME}/jre/lib/zi/America/Jamaica
@@ -1339,6 +1342,7 @@ ${JDKHOME}/jre/lib/zi/America/Rainy_River
 ${JDKHOME}/jre/lib/zi/America/Rankin_Inlet
 ${JDKHOME}/jre/lib/zi/America/Recife
 ${JDKHOME}/jre/lib/zi/America/Regina
+${JDKHOME}/jre/lib/zi/America/Resolute
 ${JDKHOME}/jre/lib/zi/America/Rio_Branco
 ${JDKHOME}/jre/lib/zi/America/Santiago
 ${JDKHOME}/jre/lib/zi/America/Santo_Domingo
@@ -1455,7 +1459,7 @@ ${JDKHOME}/jre/lib/zi/Atlantic/Azores
 ${JDKHOME}/jre/lib/zi/Atlantic/Bermuda
 ${JDKHOME}/jre/lib/zi/Atlantic/Canary
 ${JDKHOME}/jre/lib/zi/Atlantic/Cape_Verde
-${JDKHOME}/jre/lib/zi/Atlantic/Faeroe
+${JDKHOME}/jre/lib/zi/Atlantic/Faroe
 ${JDKHOME}/jre/lib/zi/Atlantic/Madeira
 ${JDKHOME}/jre/lib/zi/Atlantic/Reykjavik
 ${JDKHOME}/jre/lib/zi/Atlantic/South_Georgia
@@ -1467,6 +1471,7 @@ ${JDKHOME}/jre/lib/zi/Australia/Brisbane
 ${JDKHOME}/jre/lib/zi/Australia/Broken_Hill
 ${JDKHOME}/jre/lib/zi/Australia/Currie
 ${JDKHOME}/jre/lib/zi/Australia/Darwin
+${JDKHOME}/jre/lib/zi/Australia/Eucla
 ${JDKHOME}/jre/lib/zi/Australia/Hobart
 ${JDKHOME}/jre/lib/zi/Australia/Lindeman
 ${JDKHOME}/jre/lib/zi/Australia/Lord_Howe
