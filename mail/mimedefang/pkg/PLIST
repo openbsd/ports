@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/19 01:06:22 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/27 21:57:30 steven Exp $
 @newgroup _mdefang:570
 @newuser _mdefang:570:_mdefang:daemon:MIMEDefang:/nonexistent:/sbin/nologin
 bin/md-mx-ctrl
@@ -6,6 +6,7 @@ bin/mimedefang
 bin/mimedefang-multiplexor
 bin/mimedefang.pl
 bin/watch-mimedefang
+bin/watch-multiple-mimedefangs.tcl
 @man man/man5/mimedefang-filter.5
 @man man/man7/mimedefang-notify.7
 @man man/man7/mimedefang-protocol.7
@@ -14,6 +15,7 @@ bin/watch-mimedefang
 @man man/man8/mimedefang.8
 @man man/man8/mimedefang.pl.8
 @man man/man8/watch-mimedefang.8
+@man man/man8/watch-multiple-mimedefangs.8
 share/examples/mimedefang/
 @sample ${SYSCONFDIR}/mail/
 share/examples/mimedefang/mimedefang-filter
