@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2006/12/15 09:56:14 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2007/07/27 21:20:29 aanriot Exp $
 # Original from: Jorge A. Cortes Montiel <jcortes@bsdcoders.org>
 
-COMMENT=	"easy-to-use, robust, and highly configurable VPN"
+COMMENT=	easy-to-use, robust, and highly configurable VPN
 
-VERSION=	2.0.6
+VERSION=	2.0.9
 DISTNAME=	openvpn-${VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://openvpn.net/
@@ -27,6 +26,7 @@ SEPARATE_BUILD=	concurrent
 
 FAKE=		lib
 CONFIGURE_STYLE=gnu
+
 # pthread support is supposed to be unstable on OpenBSD
 CONFIGURE_ARGS+=--disable-pthread \
 		--with-lzo-headers=${DEPBASE}/include \
