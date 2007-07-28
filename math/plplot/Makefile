@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/04/01 19:43:56 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/07/28 14:08:08 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ SHARED_LIBS=	csirocsa	0.1	\
 PKGNAME-main=	${DISTNAME}p1
 PKGNAME-c++ =	plplot-c++-${VERSION}p1
 PKGNAME-f77=	plplot-f77-${VERSION}p1
-PKGNAME-octave=	plplot-octave-${VERSION}p3
+PKGNAME-octave=	plplot-octave-${VERSION}p4
 PKGNAME-tcl=	plplot-tcl-${VERSION}p2
 
 CATEGORIES=	math graphics
