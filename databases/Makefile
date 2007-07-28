@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2007/06/08 17:19:39 simon Exp $
+# $OpenBSD: Makefile,v 1.121 2007/07/28 21:38:44 jasper Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -112,6 +112,7 @@
      SUBDIR += sqliteman
      SUBDIR += sqlports
      SUBDIR += sqsh
+     SUBDIR += tdb
      SUBDIR += xmysql
      SUBDIR += xmysqladmin
 
