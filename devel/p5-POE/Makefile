@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/29 23:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/07/28 14:35:42 simon Exp $
 
-COMMENT=	"portable multitasking and networking framework for perl"
+COMMENT=	portable multitasking and networking framework for perl
 
 MODULES=	cpan
-DISTNAME=	POE-0.9989
+DISTNAME=	POE-0.9999
 CATEGORIES=	devel
 
 HOMEPAGE=	http://poe.perl.org/
