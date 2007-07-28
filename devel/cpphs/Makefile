@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/07/21 13:59:16 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2007/07/28 18:52:58 kili Exp $
 
 COMMENT=	liberalised reimplementation of cpp in Haskell
 
-V=		1.4
+V=		1.5
 DISTNAME=	cpphs-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}
 CATEGORIES=	devel
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 HOMEPAGE=	http://haskell.org/cpphs/
