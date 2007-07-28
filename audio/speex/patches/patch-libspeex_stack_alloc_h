@@ -1,0 +1,24 @@
+$OpenBSD: patch-libspeex_stack_alloc_h,v 1.3 2007/07/28 17:06:20 naddy Exp $
+--- libspeex/stack_alloc.h.orig	Wed Mar 14 15:31:22 2007
++++ libspeex/stack_alloc.h	Thu Jul 26 02:38:18 2007
+@@ -36,11 +36,15 @@
+ #define STACK_ALLOC_H
+ 
+ #ifdef USE_ALLOCA
+-#ifdef WIN32
+-#include <malloc.h>
+-#else
+-#include <alloca.h>
+-#endif
++# ifdef WIN32
++#  include <malloc.h>
++# else
++#  ifdef HAVE_ALLOCA_H
++#   include <alloca.h>
++#  else
++#   include <stdlib.h>
++#  endif
++# endif
+ #endif
+ 
+ /**
