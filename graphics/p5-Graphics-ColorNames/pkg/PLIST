@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/12/10 18:50:48 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/07/28 14:43:51 simon Exp $
 ${P5SITE}/Graphics/
 ${P5SITE}/Graphics/ColorNames/
 ${P5SITE}/Graphics/ColorNames.pm
@@ -7,16 +7,6 @@ ${P5SITE}/Graphics/ColorNames/Netscape.pm
 ${P5SITE}/Graphics/ColorNames/Windows.pm
 ${P5SITE}/Graphics/ColorNames/X.pm
 ${P5SITE}/Graphics/ColourNames.pm
-${P5SITE}/auto/
-${P5SITE}/auto/Graphics/
-${P5SITE}/auto/Graphics/ColorNames/
-${P5SITE}/auto/Graphics/ColorNames/_find_schemes.al
-${P5SITE}/auto/Graphics/ColorNames/_load_scheme_from_file.al
-${P5SITE}/auto/Graphics/ColorNames/all_schemes.al
-${P5SITE}/auto/Graphics/ColorNames/autosplit.ix
-${P5SITE}/auto/Graphics/ColorNames/hex.al
-${P5SITE}/auto/Graphics/ColorNames/load_scheme.al
-${P5SITE}/auto/Graphics/ColorNames/rgb.al
 @man man/man3p/Graphics::ColorNames.3p
 @man man/man3p/Graphics::ColorNames::HTML.3p
 @man man/man3p/Graphics::ColorNames::Netscape.3p
