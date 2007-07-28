@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/28 21:37:26 jasper Exp $
+%%SHARED%%
+include/tdb.h
+lib/libtdb.a
+lib/libtdb.la
+@man man/man3/tdb.3
+@man man/man3/tdb_chainlock.3
+@man man/man3/tdb_close.3
+@man man/man3/tdb_delete.3
+@man man/man3/tdb_error.3
+@man man/man3/tdb_exists.3
+@man man/man3/tdb_fetch.3
+@man man/man3/tdb_firstkey.3
+@man man/man3/tdb_open.3
+@man man/man3/tdb_store.3
+@man man/man3/tdb_traverse.3

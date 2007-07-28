@@ -1,0 +1,34 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/07/28 21:37:26 jasper Exp $
+--- Makefile.in.orig	Tue Dec 11 04:08:49 2001
++++ Makefile.in	Thu Jun 28 12:15:24 2007
+@@ -80,8 +80,8 @@ LDADD = libtdb.la
+ @BUILD_TDBTORTURE_TRUE@TDBTORTURE = tdbtorture
+ @BUILD_TDBTORTURE_FALSE@TDBTORTURE = 
+ 
+-noinst_PROGRAMS = tdbspeed tdbiterate $(TDBTEST) $(TDBTORTURE)
+-bin_PROGRAMS = tdbtool tdbdump
++noinst_PROGRAMS = tdbtool tdbdump tdbspeed tdbiterate $(TDBTEST) $(TDBTORTURE)
++bin_PROGRAMS = 
+ 
+ lib_LTLIBRARIES = libtdb.la
+ 
+@@ -115,7 +115,7 @@ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ libtdb_la_LIBADD = 
+ libtdb_la_OBJECTS =  tdb.lo spinlock.lo
+-PROGRAMS =  $(bin_PROGRAMS) $(noinst_PROGRAMS)
++PROGRAMS = 
+ 
+ tdbtool_OBJECTS =  tdbtool.o
+ tdbtool_LDADD = $(LDADD)
+@@ -159,8 +159,8 @@ DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEX
+ 
+ TAR = tar
+ GZIP_ENV = --best
+-SOURCES = $(libtdb_la_SOURCES) $(tdbtool_SOURCES) $(tdbdump_SOURCES) $(tdbspeed_SOURCES) $(tdbiterate_SOURCES) $(tdbtest_SOURCES) $(tdbtorture_SOURCES)
+-OBJECTS = $(libtdb_la_OBJECTS) $(tdbtool_OBJECTS) $(tdbdump_OBJECTS) $(tdbspeed_OBJECTS) $(tdbiterate_OBJECTS) $(tdbtest_OBJECTS) $(tdbtorture_OBJECTS)
++SOURCES = $(libtdb_la_SOURCES)
++OBJECTS = $(libtdb_la_OBJECTS)
+ 
+ all: all-redirect
+ .SUFFIXES:
