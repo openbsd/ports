@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/07/28 14:58:59 simon Exp $
 
-COMMENT=	"perform and manipulate nmap scans using Perl"
+COMMENT=	perform and manipulate nmap scans using Perl
 
 MODULES=	cpan
-DISTNAME=	Nmap-Scanner-0.9
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Nmap-Scanner-1.0
 CATEGORIES=	net
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -16,6 +15,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=	::textproc/p5-XML-SAX \
+		::devel/p5-Class-Generate \
 		::www/p5-HTML-Parser \
 		::net/nmap
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/09 11:33:47 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/07/28 14:58:59 simon Exp $
 ${P5SITE}/Nmap/
 ${P5SITE}/Nmap/Scanner/
 ${P5SITE}/Nmap/Scanner.pm
@@ -8,6 +8,7 @@ ${P5SITE}/Nmap/Scanner/Backend.pm
 ${P5SITE}/Nmap/Scanner/Backend/Processor.pm
 ${P5SITE}/Nmap/Scanner/Backend/Results.pm
 ${P5SITE}/Nmap/Scanner/Backend/XML.pm
+${P5SITE}/Nmap/Scanner/Distance.pm
 ${P5SITE}/Nmap/Scanner/ExtraPorts.pm
 ${P5SITE}/Nmap/Scanner/Host.pm
 ${P5SITE}/Nmap/Scanner/HostList.pm
@@ -17,6 +18,7 @@ ${P5SITE}/Nmap/Scanner/NmapRun.pm
 ${P5SITE}/Nmap/Scanner/OS/
 ${P5SITE}/Nmap/Scanner/OS.pm
 ${P5SITE}/Nmap/Scanner/OS/Class.pm
+${P5SITE}/Nmap/Scanner/OS/Fingerprint.pm
 ${P5SITE}/Nmap/Scanner/OS/IPIdSequence.pm
 ${P5SITE}/Nmap/Scanner/OS/Match.pm
 ${P5SITE}/Nmap/Scanner/OS/PortUsed.pm
@@ -31,6 +33,8 @@ ${P5SITE}/Nmap/Scanner/RunStats/Finished.pm
 ${P5SITE}/Nmap/Scanner/ScanInfo.pm
 ${P5SITE}/Nmap/Scanner/Scanner.pm
 ${P5SITE}/Nmap/Scanner/Service.pm
+${P5SITE}/Nmap/Scanner/Task.pm
+${P5SITE}/Nmap/Scanner/TaskProgress.pm
 ${P5SITE}/Nmap/Scanner/Util/
 ${P5SITE}/Nmap/Scanner/Util.pm
 ${P5SITE}/Nmap/Scanner/Util/BannerScanner.pm
@@ -38,6 +42,7 @@ ${P5SITE}/Nmap/Scanner/Util/BannerScanner.pm
 @man man/man3p/Nmap::Scanner::Address.3p
 @man man/man3p/Nmap::Scanner::Backend::Processor.3p
 @man man/man3p/Nmap::Scanner::Backend::Results.3p
+@man man/man3p/Nmap::Scanner::Distance.3p
 @man man/man3p/Nmap::Scanner::ExtraPorts.3p
 @man man/man3p/Nmap::Scanner::Host.3p
 @man man/man3p/Nmap::Scanner::Hostname.3p
@@ -45,6 +50,7 @@ ${P5SITE}/Nmap/Scanner/Util/BannerScanner.pm
 @man man/man3p/Nmap::Scanner::NmapRun.3p
 @man man/man3p/Nmap::Scanner::OS.3p
 @man man/man3p/Nmap::Scanner::OS::Class.3p
+@man man/man3p/Nmap::Scanner::OS::Fingerprint.3p
 @man man/man3p/Nmap::Scanner::OS::IPIdSequence.3p
 @man man/man3p/Nmap::Scanner::OS::Match.3p
 @man man/man3p/Nmap::Scanner::OS::PortUsed.3p
@@ -57,3 +63,5 @@ ${P5SITE}/Nmap/Scanner/Util/BannerScanner.pm
 @man man/man3p/Nmap::Scanner::ScanInfo.3p
 @man man/man3p/Nmap::Scanner::Scanner.3p
 @man man/man3p/Nmap::Scanner::Service.3p
+@man man/man3p/Nmap::Scanner::Task.3p
+@man man/man3p/Nmap::Scanner::TaskProgress.3p
