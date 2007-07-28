@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/28 14:51:32 simon Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/Generate.pm
+${P5SITE}/Class/Generate.pod
+@man man/man3p/Class::Generate.3p

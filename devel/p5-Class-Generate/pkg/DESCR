@@ -1,0 +1,5 @@
+The Class::Generate package exports functions that take as arguments a
+class specification and create from these specifications a Perl 5 class.
+The specification language allows many object-oriented constructs: typed
+members, inheritance, private members, required members, default values,
+object methods, class methods, class variables, and more.
