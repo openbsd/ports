@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/07/28 15:07:58 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"perl interface to the GSSAPIv2 library"
+COMMENT=	perl interface to the GSSAPIv2 library
 
 MODULES=	cpan
-DISTNAME=	GSSAPI-0.23
+DISTNAME=	GSSAPI-0.24
 CATEGORIES=	security
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
