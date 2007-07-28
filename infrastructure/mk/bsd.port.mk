@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.911 2007/07/09 13:32:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.912 2007/07/28 12:58:34 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -69,6 +69,7 @@ CLEANDEPENDS ?= No
 USE_SYSTRACE ?= No
 BULK ?= No
 RECURSIVE_FETCH_LIST ?= Yes
+_FETCH_MAKEFILE ?= /dev/stdout
 WRKOBJDIR ?=
 FAKEOBJDIR ?=
 BULK_TARGETS ?=
@@ -2333,7 +2334,13 @@ _internal-clean:
 
 # mirroring utilities
 fetch-makefile:
-	@exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes _fetch-makefile
+	@mk=`mktemp ${TMPDIR}/mk.XXXXXXX`; \
+	if ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes _fetch-makefile >$$mk; then \
+		cat $$mk >>${_FETCH_MAKEFILE}; \
+	else \
+		echo >&2 "Problem in ${PKGPATH}"; \
+	fi; \
+	rm -f $$mk
 
 mirror-maker-fetch:
 	@mk=`mktemp ${TMPDIR}/mk.XXXXXXXX`; ${MAKE} fetch-makefile >$$mk; \

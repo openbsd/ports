@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2006/11/27 15:38:01 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2007/07/28 12:58:34 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -115,7 +115,7 @@ mirror-maker:
 	trap "rm -f $${_DONE_FILES}" 0 1 2 3 13 15; \
 	${MAKE} fetch-makefile \
 		ECHO_MSG='echo >&2' \
-		>>${MIRROR_MK}
+		_FETCH_MAKEFILE=${MIRROR_MK}
 
 homepages.html:
 	@echo '<html><ul>' >$@
