@@ -1,7 +1,7 @@
-$OpenBSD: patch-liboctave_Makefile_in,v 1.4 2007/06/20 08:51:42 steven Exp $
---- liboctave/Makefile.in.orig	Tue Mar 27 18:05:15 2007
-+++ liboctave/Makefile.in	Sat May 26 22:34:11 2007
-@@ -210,6 +210,9 @@ stamp-prereq: $(OPTS_INC) $(VX_OP_INC) $(VX_OP_SRC) \
+$OpenBSD: patch-liboctave_Makefile_in,v 1.5 2007/07/28 07:09:19 steven Exp $
+--- liboctave/Makefile.in.orig	Wed Jul 25 17:45:05 2007
++++ liboctave/Makefile.in	Thu Jul 26 11:19:49 2007
+@@ -221,6 +221,9 @@ stamp-prereq: $(OPTS_INC) $(VX_OP_INC) $(VX_OP_SRC) \
  	$(SPARSE_MX_OP_INC) $(SPARSE_MX_OP_SRC)
  	touch stamp-prereq
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-liboctave_Makefile_in,v 1.4 2007/06/20 08:51:42 steven Exp $
  ifeq ($(SHARED_LIBS), true)
    ifeq ($(STATIC_LIBS), true)
      libraries: \
-@@ -236,12 +239,8 @@ $(LIBPRE)octave.$(LIBEXT): $(LIBOCTAVE_OBJECTS)
+@@ -247,12 +250,8 @@ $(LIBPRE)octave.$(LIBEXT): $(LIBOCTAVE_OBJECTS)
  	$(TEMPLATE_AR) $(TEMPLATE_ARFLAGS) $@ $(LIBOCTAVE_OBJECTS)
  	$(RANLIB) $@
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-liboctave_Makefile_in,v 1.4 2007/06/20 08:51:42 steven Exp $
  	$(SH_LD) $(SH_LDFLAGS) $(SONAME_FLAGS) -o $@ \
  	$(LIBOCTAVE_PICOBJ) $(LINK_DEPS)
  
-@@ -268,9 +267,7 @@ install-lib:
+@@ -279,9 +278,7 @@ install-lib:
  	if $(SHARED_LIBS); then \
  	  rm -f $(DESTDIR)$(octlibdir)/$(LIBPRE)octave.$(SHLLIB_VER); \
  	  $(INSTALL) \

@@ -1,21 +1,12 @@
-$OpenBSD: patch-doc_interpreter_Makefile_in,v 1.3 2007/06/20 08:51:42 steven Exp $
---- doc/interpreter/Makefile.in.orig	Tue May 22 18:33:06 2007
-+++ doc/interpreter/Makefile.in	Mon May 28 19:41:51 2007
-@@ -109,7 +109,7 @@ SPELL = $(patsubst %.texi, %.spell, $(TEXINFO))
+$OpenBSD: patch-doc_interpreter_Makefile_in,v 1.4 2007/07/28 07:09:19 steven Exp $
+--- doc/interpreter/Makefile.in.orig	Wed Jul 25 21:23:26 2007
++++ doc/interpreter/Makefile.in	Thu Jul 26 11:20:24 2007
+@@ -119,7 +119,7 @@ SPELL = $(patsubst %.texi, %.spell, $(TEXINFO))
  	$(SED) -e 's/@@/ at /g' -e 's/@[a-zA-Z]*//g' $< | spell > $@.tmp
  	mv $@.tmp $@
  
--all: octave.info octave.dvi octave.ps octave.pdf HTML/index.html
+-all: octave.info octave.pdf octave-a4.pdf HTML/index.html
 +all: octave.info HTML/index.html
  .PHONY: all
  
  $(TEXINFO): src-DOCSTRINGS scripts-DOCSTRINGS munge-texi$(BUILD_EXEEXT)
-@@ -174,7 +174,7 @@ $(HTML_IMAGES_PNG): HTML/%.png : %.png
- 	  echo "creating HTML directory"; \
- 	  mkdir HTML; \
- 	fi
--	$(INSTALL_DATA) $(filter-out html-dir, $<) HTML
-+	cp $(filter-out html-dir, $<) HTML
- 
- ## Unset DISPLAY here to avoid problems with the -title option for
- ## gnuplot (it doesn't work if we are calling pgnuplot).  Sleep for
