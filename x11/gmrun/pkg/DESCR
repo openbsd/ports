@@ -1,0 +1,13 @@
+This tool is a simple "run-program" window, something like "xrun"
+or "gnome-run". However, those other tools don't have some nice and
+important features: the very useful feature that allows one to use
+it with keyboard only, and to be fast enough.
+
+If you saw KDE, it's window manager (KWM) provides a key combination
+(ALT-F2) that opens such a window. The features there are pretty
+nice, such as it supports URLs, completion from history, TAB
+completion for files on the local filesystem, etc.
+
+Because Gnome didn't had such thing, here it is: gmrun, that provides
+pretty much the same behavior as the KDE's ALT-F2, only it's more
+configurable.

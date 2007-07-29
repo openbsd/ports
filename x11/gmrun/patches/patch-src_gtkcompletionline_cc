@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtkcompletionline_cc,v 1.1.1.1 2007/07/29 18:47:29 kili Exp $
+--- src/gtkcompletionline.cc.orig	Sun Jun 22 01:14:34 2003
++++ src/gtkcompletionline.cc	Sun Jul 29 18:29:24 2007
+@@ -348,7 +348,7 @@ generate_path()
+ }
+ 
+ static int
+-select_executables_only(const struct dirent* dent)
++select_executables_only(struct dirent* dent)
+ {
+   int len = strlen(dent->d_name);
+   int lenp = prefix.length();

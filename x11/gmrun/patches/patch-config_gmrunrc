@@ -1,0 +1,36 @@
+$OpenBSD: patch-config_gmrunrc,v 1.1.1.1 2007/07/29 18:47:29 kili Exp $
+--- config/gmrunrc.orig	Fri Jun 20 09:18:58 2003
++++ config/gmrunrc	Sun Jul 29 20:13:06 2007
+@@ -3,7 +3,7 @@
+ # GPL v2.0 applies
+ 
+ # Set terminal
+-Terminal = gnome-terminal --start-factory-server --use-factory
++Terminal = xterm
+ TermExec = ${Terminal} -e
+ AlwaysInTerm = ssh telnet ftp lynx mc vi vim pine centericq perldoc man
+ 
+@@ -32,18 +32,17 @@ TabTimeout = 0
+ #   - %u gets replaced with the whole URL ("http://www.google.com")
+ #   - %s gets replaced with "//www.google.com".  This is useful for URL-s
+ #     like "man:printf" --> %s will get replaced with "printf"
+-URL_http = mozilla -remote "openURL(%u, new-window)"
+-URL_mailto = mozilla -remote "mailto(%s)"
++URL_http = ${TermExec} lynx "%u"
++URL_mailto = ${TermExec} mail "%s"
+ URL_man = ${TermExec} 'man %s'
+ URL_info = ${TermExec} 'info %s'
+ URL_pd = ${TermExec} 'perldoc %s'
+-URL_file = nautilus %s
+-URL_readme = ${TermExec} 'less /usr/doc/%s/README'
+-URL_info = ${TermExec} 'info %s'
++URL_file = ${TermExec} lynx "%u"
++URL_readme = ${TermExec} 'less /usr/local/share/doc/%s/README'
+ URL_sh = sh -c '%s'
+ 
+ # extension handlers
+ EXT:doc,rtf = AbiWord %s
+-EXT:txt,cc,cpp,h,java,html,htm,epl,tex,latex,js,css,xml,xsl,am = emacs %s
++EXT:txt,cc,cpp,h,java,html,htm,epl,tex,latex,js,css,xml,xsl,am = ${TermExec} vi %s
+ EXT:ps = gv %s
+ EXT:pdf = xpdf %s
