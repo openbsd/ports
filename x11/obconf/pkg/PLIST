@@ -1,7 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/07/13 08:54:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/07/29 13:04:19 ajacoutot Exp $
 bin/obconf
 share/applications/
 share/applications/obconf.desktop
+share/locale/cs/LC_MESSAGES/obconf.mo
+share/locale/en@boldquot/LC_MESSAGES/obconf.mo
+share/locale/en@quot/LC_MESSAGES/obconf.mo
+share/locale/es/LC_MESSAGES/obconf.mo
+share/locale/fr/LC_MESSAGES/obconf.mo
+share/locale/it/LC_MESSAGES/obconf.mo
+share/locale/sv/LC_MESSAGES/obconf.mo
+share/locale/zh_TW/LC_MESSAGES/obconf.mo
 share/mime/
 share/mime/packages/
 share/mime/packages/obconf.xml
@@ -10,5 +18,6 @@ share/mimelnk/application/
 share/mimelnk/application/x-openbox-theme.desktop
 share/obconf/
 share/obconf/obconf.glade
+share/obconf/video-display.png
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
