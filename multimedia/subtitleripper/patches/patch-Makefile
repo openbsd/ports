@@ -1,0 +1,79 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/07/29 17:07:49 ajacoutot Exp $
+--- Makefile.orig	Mon Dec  8 10:28:02 2003
++++ Makefile	Sun Jul 29 19:04:51 2007
+@@ -4,12 +4,12 @@
+ 
+ # use always:
+ DEFINES :=  
+-LIBS    := -lm 
+-INCLUDES :=
++LIBS    := -lm -L!!LOCALBASE!!/lib
++INCLUDES := -I!!LOCALBASE!!/include -I!!LOCALBASE!!/include/libpng
+ 
+ ### enable ppm support ###
+ DEFINES  += -D_HAVE_LIB_PPM_
+-LIBS     += -lppm
++LIBS     += -lnetpbm
+ 
+ ### enable PNG support ###
+ DEFINES += -D_HAVE_PNG_
+@@ -19,11 +19,10 @@ LIBS    += -lpng
+ DEFINES += -D_HAVE_ZLIB_
+ LIBS    += -lz
+ 
+-CC = gcc
+ WARN     = -Wall -Wstrict-prototypes 
+-COPT     = -g -O2  
++COPT     = -g -O2
+ 
+-CFLAGS = $(COPT) $(WARN) $(DEFINES) $(INCLUDES) 
++CFLAGS += $(WARN) $(DEFINES) $(INCLUDES) 
+ 
+ # list of all files that are part of the package
+ PACKAGE_FILES = Makefile \
+@@ -50,14 +49,20 @@ RELEASE=4
+ # Main targets
+ 
+ TARGETS = subtitle2pgm srttool subtitle2vobsub vobsub2pgm
++DOCS = README* gocrfilter_* pgm2txt
+ 
+ all:  $(TARGETS) 
+ 
++install: all
++	$(BSD_INSTALL_PROGRAM) $(TARGETS) $(PREFIX)/bin
++	$(BSD_INSTALL_DATA_DIR) $(PREFIX)/share/doc/$(PACKAGE)
++	$(BSD_INSTALL_DATA) $(DOCS) $(PREFIX)/share/doc/$(PACKAGE)
++
+ # Generic Rules
+ 
+ %.o:%.c
+ 	@echo Compiling $<
+-	@$(CC) -c $(CFLAGS) $<
++	$(CC) -c $(CFLAGS) $<
+ 
+ # Dependencies
+ subtitle2pgm.o: subtitle2pgm.c spudec.h subtitle2pgm.h
+@@ -70,19 +75,19 @@ vobsub2pgm.o: vobsub2pgm.c vobsub.h spudec.h
+ # Target
+ subtitle2pgm: subtitle2pgm.o spudec.o
+ 	@echo "Linking $@"
+-	@$(CC) $(LIBS) $^ -o $@  
++	$(CC) $(LIBS) $^ -o $@  
+ 
+ subtitle2vobsub: subtitle2vobsub.o vobsub.o 
+ 	@echo "Linking $@"
+-	@$(CC) $(LIBS) $^ -o $@  
++	$(CC) $(LIBS) $^ -o $@  
+ 
+ srttool: srttool.o
+ 	@echo "Linking $@"
+-	@$(CC) $(LIBS) -g $^ -o $@  
++	$(CC) $(LIBS) -g $^ -o $@  
+ 
+ vobsub2pgm: vobsub2pgm.o vobsub.o spudec.o
+ 	@echo "Linking $@"
+-	@$(CC) $(LIBS) -g $^ -o $@  
++	$(CC) $(LIBS) -g $^ -o $@  
+ 
+ .PHONY: clean dist rpm
+ clean:

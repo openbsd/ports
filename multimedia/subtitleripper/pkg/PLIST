@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/29 17:07:49 ajacoutot Exp $
+@conflict subrip-*
+bin/srttool
+bin/subtitle2pgm
+bin/subtitle2vobsub
+bin/vobsub2pgm
+share/doc/subtitleripper/
+share/doc/subtitleripper/README
+share/doc/subtitleripper/README.gocr
+share/doc/subtitleripper/README.srttool
+share/doc/subtitleripper/README.subtitle2pgm
+share/doc/subtitleripper/README.vobsub
+share/doc/subtitleripper/gocrfilter_en.sed
+share/doc/subtitleripper/gocrfilter_fr.sed
+share/doc/subtitleripper/gocrfilter_nl.sed
+share/doc/subtitleripper/gocrfilter_none.sed
+share/doc/subtitleripper/pgm2txt
