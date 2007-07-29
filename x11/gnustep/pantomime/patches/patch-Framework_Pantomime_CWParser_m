@@ -1,0 +1,12 @@
+$OpenBSD: patch-Framework_Pantomime_CWParser_m,v 1.1.1.1 2007/07/29 14:15:31 ajacoutot Exp $
+--- Framework/Pantomime/CWParser.m.orig	Mon May 21 16:27:17 2007
++++ Framework/Pantomime/CWParser.m	Mon May 21 16:27:25 2007
+@@ -40,7 +40,7 @@
+ //
+ static char *month_name[12] = {"jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"};
+ 
+-static struct timezone {
++static struct ptimezone {
+   char *name;          /* time zone name */
+   int offset;         /* offset, in minutes, EAST of GMT */
+ } timezone_info[] = {

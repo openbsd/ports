@@ -1,0 +1,16 @@
+Pantomime provides a set of Objective-C classes that model a mail
+system. Pantomime can be seen as a JavaMail 1.2 clone written in
+Objective-C. The C language is only used where performance is critical.
+Pantomime uses a little bit of ELM code.
+
+Pantomime provides the following features (and more):
+ * a full MIME encoder and decoder
+ * a "folder view" to local mailboxes (Berkeley Format), POP3 accounts
+   or IMAP mailboxes
+ * a powerful API to work on all aspects of Message objects
+ * a local mailer and a SMTP conduit for sending messages
+ * APOP and SMTP AUTH support
+ * IMAP and POP3 URL Scheme support
+ * iconv and Core Foundation support
+ * UNIX mbox and maildir support
+ * SSL/TLS support for IMAP, POP3 and SMTP
