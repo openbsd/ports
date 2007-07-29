@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/04/19 23:04:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/07/29 22:13:15 rui Exp $
 bin/mlbt
 bin/mlbt+gui
 bin/mldc
@@ -25,8 +25,7 @@ share/mldonkey/distrib/Install.txt
 share/mldonkey/distrib/Todo.txt
 share/mldonkey/distrib/ed2k_links.txt
 share/mldonkey/distrib/ed2k_mozilla/
-share/mldonkey/distrib/ed2k_mozilla/README
-share/mldonkey/distrib/ed2k_mozilla/mldonkey_protocol_handler-2.0.xpi
+share/mldonkey/distrib/ed2k_mozilla/mldonkey_protocol_handler-2.1.xpi
 share/mldonkey/distrib/ed2k_submit/
 share/mldonkey/distrib/ed2k_submit/README.MLdonkeySubmit
 share/mldonkey/distrib/ed2k_submit/ed2k.protocol
@@ -69,6 +68,7 @@ share/mldonkey/distrib/i18n/mlnet_strings.dutch
 share/mldonkey/distrib/i18n/mlnet_strings.fr
 share/mldonkey/distrib/i18n/mlnet_strings.fr.noaccents
 share/mldonkey/distrib/i18n/mlnet_strings.ga
+share/mldonkey/distrib/i18n/mlnet_strings.it_IT.UTF-8
 share/mldonkey/distrib/i18n/mlnet_strings.pt_BR
 share/mldonkey/distrib/i18n/mlnet_strings.sp
 share/mldonkey/distrib/i18n/mlnet_strings.sv
@@ -77,3 +77,4 @@ share/mldonkey/distrib/make_buginfo
 share/mldonkey/distrib/mldonkey_command
 share/mldonkey/distrib/mldonkey_gui_started_for_macosx
 share/mldonkey/distrib/mldonkey_previewer
+share/mldonkey/distrib/multiuser.txt
