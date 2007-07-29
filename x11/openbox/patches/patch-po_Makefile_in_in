@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_Makefile_in_in,v 1.1 2007/07/29 13:02:32 ajacoutot Exp $
+--- po/Makefile.in.in.orig	Sun Jul 29 14:29:01 2007
++++ po/Makefile.in.in	Sun Jul 29 14:29:29 2007
+@@ -31,7 +31,7 @@ gettextsrcdir = $(datadir)/gettext/po
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+ mkinstalldirs = $(SHELL) @install_sh@ -d
+-mkdir_p = @mkdir_p@
++mkdir_p = $(mkinstalldirs)
+ 
+ GMSGFMT_ = @GMSGFMT@
+ GMSGFMT_no = @GMSGFMT@

@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2007/07/29 13:02:32 ajacoutot Exp $
+--- configure.orig	Sun Jul 29 14:15:01 2007
++++ configure	Sun Jul 29 14:15:17 2007
+@@ -20744,12 +20744,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
+ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return * gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
++return * gettext ("") + _nl_msg_cat_cntr
+   ;
+   return 0;
+ }

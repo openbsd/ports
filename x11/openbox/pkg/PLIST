@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/06/25 10:54:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/07/29 13:02:32 ajacoutot Exp $
 %%SHARED%%
 bin/gnome-panel-control
 bin/openbox
@@ -78,6 +78,9 @@ share/locale/pt_BR/LC_MESSAGES/openbox.mo
 share/locale/ru/LC_MESSAGES/openbox.mo
 share/locale/sk/LC_MESSAGES/openbox.mo
 share/locale/sv/LC_MESSAGES/openbox.mo
+share/locale/ua/
+share/locale/ua/LC_MESSAGES/
+share/locale/ua/LC_MESSAGES/openbox.mo
 share/locale/vi/LC_MESSAGES/openbox.mo
 share/locale/zh_CN/LC_MESSAGES/openbox.mo
 share/locale/zh_TW/LC_MESSAGES/openbox.mo
