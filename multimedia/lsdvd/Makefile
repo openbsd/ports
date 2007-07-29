@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 23:15:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/07/29 16:32:15 ajacoutot Exp $
 
-COMMENT=	"print information about the content and structure of a DVD"
+COMMENT=	print information about the content and structure of a DVD
 
-DISTNAME=	lsdvd-0.10
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	lsdvd-0.16
 CATEGORIES=	multimedia
 
-HOMEPAGE=	http://untrepid.com/acidrip/lsdvd.html
+HOMEPAGE=	http://untrepid.com/lsdvd.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,9 +14,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=acidrip/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lsdvd/}
 
-LIB_DEPENDS=	dvdread.>=3.0::devel/libdvdread
+LIB_DEPENDS=	dvdread.>=3::devel/libdvdread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

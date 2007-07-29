@@ -1,95 +1,20 @@
-$OpenBSD: patch-lsdvd_c,v 1.2 2006/02/19 17:42:36 espie Exp $
---- lsdvd.c.orig	Mon Sep 29 23:01:00 2003
-+++ lsdvd.c	Sun Feb 19 18:38:20 2006
+$OpenBSD: patch-lsdvd_c,v 1.3 2007/07/29 16:32:15 ajacoutot Exp $
+--- lsdvd.c.orig	Thu Mar  2 14:48:11 2006
++++ lsdvd.c	Sun Jul 29 18:24:55 2007
 @@ -13,6 +13,7 @@
   *  2003-04-19  Cleanups get_title_name, added dvdtime2msec, added helper macros,
-  *              output info structures in form of a Perl module, by Henk Vergonet.
+  *			  output info structures in form of a Perl module, by Henk Vergonet.
   */
 +#include <stdint.h>
  #include <dvdread/ifo_read.h>
  #include <string.h>
  #include <sys/stat.h>
-@@ -133,21 +134,21 @@ int get_title_name(const char* dvd_devic
- 
-   if (! (filehandle = fopen(dvd_device, "r"))) {
-     fprintf(stderr, "Couldn't open %s for title\n", dvd_device);
--    strcpy(title, "unknown");
-+    strlcpy(title, "unknown", sizeof(title));
-     return -1;
-   }
- 
-   if ( fseek(filehandle, 32808, SEEK_SET )) {
-     fclose(filehandle);
-     fprintf(stderr, "Couldn't seek in %s for title\n", dvd_device);
--    strcpy(title, "unknown");
-+    strlcpy(title, "unknown", sizeof(title));
-     return -1;
-   }
- 
-   if ( 32 != (i = fread(title, 1, 32, filehandle)) ) {
-     fclose(filehandle);
-     fprintf(stderr, "Couldn't read enough bytes for title.\n");
--    strcpy(title, "unknown");
-+    strlcpy(title, "unknown", sizeof(strlcpy));
-     return -1;
-   }
- 
-@@ -194,7 +195,7 @@ int main(int argc, char *argv[])
+@@ -235,7 +236,7 @@ int main(int argc, char *argv[])
  	pgc_t *pgc;
  	int i, j, c, titles, cell, vts_ttn, title_set_nr;
-  	char lang_code[2];
+  	char lang_code[3];
 -	char *dvd_device = "/dev/dvd";
 +	char *dvd_device = "/dev/rcd0c";
  	int has_title = 0, ret = 0;
-         int max_length = 0, max_track = 0;
+ 	int max_length = 0, max_track = 0;
  	struct stat dvd_stat;
-@@ -349,7 +350,7 @@ int main(int argc, char *argv[])
- 			for (i=0; i<vtsi_mat->nr_of_vts_audio_streams; i++)
- 			{
- 				audio_attr = &vtsi_mat->vts_audio_attr[i];
--				sprintf(lang_code, "%c%c", audio_attr->lang_code>>8, audio_attr->lang_code & 0xff);
-+				snprintf(lang_code, sizeof(lang_code), "%c%c", audio_attr->lang_code>>8, audio_attr->lang_code & 0xff);
- 				if (!lang_code[0]) { lang_code[0] = 'x'; lang_code[1] = 'x'; }
- 				HASH(0);
- 				DEF("ix", "%d", i+1);
-@@ -368,7 +369,7 @@ int main(int argc, char *argv[])
- 			for (i=0; i<vtsi_mat->nr_of_vts_audio_streams; i++)
-                 	{
-                         	audio_attr = &vtsi_mat->vts_audio_attr[i];
--                        	sprintf(lang_code, "%c%c", audio_attr->lang_code>>8, audio_attr->lang_code & 0xff);
-+                        	snprintf(lang_code, sizeof(lang_code), "%c%c", audio_attr->lang_code>>8, audio_attr->lang_code & 0xff);
- 	                        if (!lang_code[0]) { lang_code[0] = 'x'; lang_code[1] = 'x'; }
- 		                printf("\tAudio: %d, Language: %s - %s, ", i +1 , lang_code, lang_name(lang_code));
-        	                	printf("Format: %s, ", audio_format[audio_attr->audio_format]);
-@@ -412,11 +413,11 @@ int main(int argc, char *argv[])
- 	                        if (i == pgc->nr_of_programs - 1) next = pgc->nr_of_cells + 1;
- 	                        while (cell < next - 1)
- 	                        {
--	                                sprintf(hex, "%02x", pgc->cell_playback[cell].playback_time.second);
-+	                                snprintf(hex, sizeof(hex), "%02x", pgc->cell_playback[cell].playback_time.second);
- 	                                tmp = second + atoi(hex);
- 	                                minute = minute + (tmp / 60);
- 	                                second = tmp % 60;
--	                                sprintf(hex, "%02x", pgc->cell_playback[cell].playback_time.minute);
-+	                                snprintf(hex, sizeof(hex), "%02x", pgc->cell_playback[cell].playback_time.minute);
- 	                                tmp = minute + atoi(hex);
-         	                        hour = hour + (tmp / 60);
- 	                                minute = tmp % 60;
-@@ -455,7 +456,7 @@ int main(int argc, char *argv[])
- 			for (i=0; i<vtsi_mat->nr_of_vts_subp_streams; i++)
- 			{
- 				subp_attr = &vtsi_mat->vts_subp_attr[i];
--				sprintf(lang_code, "%c%c", subp_attr->lang_code>>8, subp_attr->lang_code & 0xff);
-+				snprintf(lang_code, sizeof(lang_code), "%c%c", subp_attr->lang_code>>8, subp_attr->lang_code & 0xff);
- 				if (!lang_code[0]) { lang_code[0] = 'x'; lang_code[1] = 'x'; }
- 	
- 				HASH(0);
-@@ -470,7 +471,7 @@ int main(int argc, char *argv[])
- 			for (i=0; i<vtsi_mat->nr_of_vts_subp_streams; i++)
- 	                {
- 	                        subp_attr = &vtsi_mat->vts_subp_attr[i];
--	                        sprintf(lang_code, "%c%c", subp_attr->lang_code>>8, subp_attr->lang_code & 0xff);
-+	                        snprintf(lang_code, sizeof(lang_code), "%c%c", subp_attr->lang_code>>8, subp_attr->lang_code & 0xff);
- 	                        if (!lang_code[0]) { lang_code[0] = 'x'; lang_code[1] = 'x'; }
- 	                        printf("\tSubtitle: %02d, Language: %s - %s, ", i+1, lang_code, lang_name(lang_code));
- 	                        printf("Content: %s", subp_type[subp_attr->lang_extension]);
