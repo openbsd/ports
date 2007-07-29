@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/29 22:46:57 simon Exp $
 
-COMMENT=	"functional and object-oriented callback architecture"
+COMMENT=	functional and object-oriented callback architecture
 
 MODULES=	cpan
-DISTNAME=	Params-CallbackRequest-1.13
+DISTNAME=	Params-CallbackRequest-1.17
 CATEGORIES=	devel
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
