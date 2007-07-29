@@ -1,0 +1,36 @@
+$OpenBSD: patch-Framework_GNUMail_MailWindowController_m,v 1.1.1.1 2007/07/29 14:36:36 ajacoutot Exp $
+--- Framework/GNUMail/MailWindowController.m.orig	Mon Feb  5 19:41:59 2007
++++ Framework/GNUMail/MailWindowController.m	Mon May 28 15:21:13 2007
+@@ -2373,13 +2373,7 @@
+   // We set any vertical mouse motion has being dragging
+   [dataView setVerticalMotionCanBeginDrag: NO];
+    
+-  // FIXME: Should we really make that work under OS X and MingW?
+-  //        Find the right * y ratio
+-#if !defined(MACOSX) && !defined(__MINGW32__)
+-  // We set the table row height, depending on the current font
+-  aSize = [[NSFont seenMessageFont] maximumAdvancement];
+-  [dataView setRowHeight: aSize.height];
+-#endif
++  [dataView setRowHeight: [[NSFont seenMessageFont] defaultLineHeightForFont]];
+ 
+   // We load the right set of columns
+   [self _reloadTableColumns: self];
+@@ -2854,16 +2848,7 @@
+ //
+ - (void) _fontValuesHaveChanged
+ {
+-  // FIXME: Should we really make that work under OS X?
+-  //        Find the right * y ratio
+-#ifndef MACOSX
+-  NSSize aSize;
+-  
+-  // We set the table row height, depending on the current font
+-  aSize = [[NSFont seenMessageFont] maximumAdvancement];
+-  [dataView setRowHeight: aSize.height];
+-#endif
+-
++  [dataView setRowHeight: [[NSFont seenMessageFont] defaultLineHeightForFont]];
+   [self _showMessage: self];
+ }
+ 

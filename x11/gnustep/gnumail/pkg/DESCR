@@ -1,0 +1,5 @@
+GNUMail is a fully featured mail application.
+It uses the GNUstep development framework or Apple Cocoa, which is based
+on the OpenStep specification provided by NeXT, Inc.
+GNUMail was written from scratch. It uses Pantomime as its mail handling
+framework.

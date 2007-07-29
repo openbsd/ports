@@ -1,0 +1,15 @@
+$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2007/07/29 14:36:36 ajacoutot Exp $
+--- GNUmakefile.orig	Tue May 15 18:39:09 2007
++++ GNUmakefile	Tue May 15 18:39:27 2007
+@@ -33,7 +33,10 @@ SUBPROJECTS = \
+ 	Bundles/MIME \
+ 	Bundles/Receiving \
+ 	Bundles/Sending \
+-	Bundles/Viewing
++	Bundles/Viewing \
++	Bundles/Emoticon \
++	Bundles/Face \
++	Bundles/PGP
+ 
+ APP_NAME = GNUMail
+ GNUMail_OBJC_FILES = GNUMail_main.m 

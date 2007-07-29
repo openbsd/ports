@@ -1,0 +1,43 @@
+$OpenBSD: patch-Framework_GNUMail_GNUMail_m,v 1.1.1.1 2007/07/29 14:36:36 ajacoutot Exp $
+--- Framework/GNUMail/GNUMail.m.orig	Sat Feb  3 15:49:24 2007
++++ Framework/GNUMail/GNUMail.m	Tue Jun 19 17:06:09 2007
+@@ -843,21 +843,26 @@ static BOOL doneInit = NO;
+   aString = [[[NSBundle mainBundle] builtInPlugInsPath] 
+ 	      stringByAppendingPathComponent: @"Import.bundle"];
+ #else
+-  aString = [[[NSBundle mainBundle] resourcePath] stringByDeletingLastPathComponent];
+-  aString = [aString stringByDeletingPathExtension];
++  NSArray *allPaths;
++  BOOL b;
++  int i;
+ 
+-  // We verify if we must load the bundles in the GNUstep's Local, Network or System dir.
+-  // We must also be careful in case poeple are using GNUstep with --enable-flattened
+-  if ([aString hasSuffix: @"/Applications/GNUMail"])
++  allPaths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
++						 NSLocalDomainMask|
++						 NSNetworkDomainMask|
++						 NSSystemDomainMask|
++						 NSUserDomainMask,
++						 YES);
++  aString = nil;
++
++  for (i = 0; i < [allPaths count]; i++)
+     {
+-      aString = [NSString stringWithFormat: @"%@/Library/GNUMail/Import.bundle",
+-			  [[aString stringByDeletingLastPathComponent] 
+-			    stringByDeletingLastPathComponent]];
+-    }
+-  else
+-    {
+-      aString = [NSString stringWithFormat: @"%@/Bundles/Import/Import.bundle",
+-			  [aString stringByDeletingLastPathComponent]];
++      aString = [NSString stringWithFormat: @"%@/GNUMail/Import.bundle", [allPaths objectAtIndex: i]];
++      
++      if ([[NSFileManager defaultManager] fileExistsAtPath: aString  isDirectory: &b] && b)
++	{
++	  break;
++	}
+     }
+ #endif
+ 	
