@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/07/29 14:40:58 ajacoutot Exp $
+--- Makefile.in.orig	Mon Jul 23 20:47:40 2007
++++ Makefile.in	Mon Jul 23 20:47:54 2007
+@@ -598,8 +598,6 @@ install-data-local:
+ 	    fi \
+ 	  done \
+ 	fi
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+-	$(GCONFTOOL) --makefile-install-rule $(top_builddir)/gmfsk.schemas
+ 
+ dist-hook:
+ 	if test -d pixmaps; then \
