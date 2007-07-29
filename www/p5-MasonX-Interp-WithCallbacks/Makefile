@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/16 17:52:07 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/07/29 22:32:37 simon Exp $
 
 COMMENT=	"Mason callback support via Params::CallbackRequest"
 
 MODULES=	cpan
 DISTNAME=	MasonX-Interp-WithCallbacks-1.13
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,5 +18,6 @@ RUN_DEPENDS=	::devel/p5-Params-CallbackRequest \
 		::www/p5-HTML-Mason
 
 CONFIGURE_STYLE=modbuild
+MAKE_ENV+=	APACHE_TEST_APXS=/usr/sbin/apxs
 
 .include <bsd.port.mk>
