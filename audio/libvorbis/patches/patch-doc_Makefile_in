@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.6 2005/07/02 19:38:45 naddy Exp $
---- doc/Makefile.in.orig	Mon Jun 27 11:02:43 2005
-+++ doc/Makefile.in	Sat Jul  2 21:31:35 2005
-@@ -194,7 +194,7 @@ target_cpu = @target_cpu@
- target_os = @target_os@
- target_vendor = @target_vendor@
- SUBDIRS = vorbisfile vorbisenc
+$OpenBSD: patch-doc_Makefile_in,v 1.7 2007/07/30 15:29:36 naddy Exp $
+--- doc/Makefile.in.orig	Sun Jul 29 17:14:45 2007
++++ doc/Makefile.in	Sun Jul 29 17:15:06 2007
+@@ -162,7 +162,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- 
- ### all of the static docs, commited to SVN and included as is
- static_docs = \
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

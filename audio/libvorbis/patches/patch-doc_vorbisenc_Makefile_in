@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_vorbisenc_Makefile_in,v 1.5 2005/07/02 19:38:45 naddy Exp $
---- doc/vorbisenc/Makefile.in.orig	Mon Jun 27 11:02:44 2005
-+++ doc/vorbisenc/Makefile.in	Sat Jul  2 21:31:35 2005
-@@ -184,7 +184,7 @@ target_alias = @target_alias@
- target_cpu = @target_cpu@
- target_os = @target_os@
- target_vendor = @target_vendor@
+$OpenBSD: patch-doc_vorbisenc_Makefile_in,v 1.6 2007/07/30 15:29:36 naddy Exp $
+--- doc/vorbisenc/Makefile.in.orig	Sun Jul 29 17:15:16 2007
++++ doc/vorbisenc/Makefile.in	Sun Jul 29 17:15:26 2007
+@@ -150,7 +150,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/vorbisenc
 +docdir = $(datadir)/doc/$(PACKAGE)/vorbisenc
- doc_DATA = index.html overview.html reference.html style.css\
- 	 vorbis_encode_ctl.html vorbis_encode_init.html vorbis_info.html\
- 	vorbis_encode_init_vbr.html
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/30 19:39:57 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/07/30 15:29:36 naddy Exp $
 include/vorbis/
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
@@ -17,7 +17,8 @@ share/aclocal/
 share/aclocal/vorbis.m4
 share/doc/libvorbis/
 share/doc/libvorbis/components.png
-share/doc/libvorbis/draft-kerr-avt-vorbis-rtp-03.txt
+share/doc/libvorbis/draft-ietf-avt-rtp-vorbis-06.txt
+share/doc/libvorbis/draft-ietf-avt-rtp-vorbis-06.xml
 share/doc/libvorbis/eightphase.png
 share/doc/libvorbis/evenlsp.png
 share/doc/libvorbis/floor1-1.png

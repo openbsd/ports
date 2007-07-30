@@ -1,20 +1,23 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.5 2005/12/03 21:15:51 naddy Exp $
---- lib/Makefile.in.orig	Mon Nov 28 06:43:43 2005
-+++ lib/Makefile.in	Fri Dec  2 18:13:43 2005
-@@ -65,10 +65,10 @@ am_libvorbis_la_OBJECTS = mdct.lo smallf
- 	info.lo floor1.lo floor0.lo res0.lo mapping0.lo registry.lo \
- 	codebook.lo sharedbook.lo lookup.lo bitrate.lo
- libvorbis_la_OBJECTS = $(am_libvorbis_la_OBJECTS)
+$OpenBSD: patch-lib_Makefile_in,v 1.6 2007/07/30 15:29:36 naddy Exp $
+--- lib/Makefile.in.orig	Sun Jul 29 17:16:42 2007
++++ lib/Makefile.in	Sun Jul 29 17:19:08 2007
+@@ -62,13 +62,13 @@ libvorbis_la_OBJECTS = $(am_libvorbis_la_OBJECTS)
+ libvorbis_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libvorbis_la_LDFLAGS) $(LDFLAGS) -o $@
 -libvorbisenc_la_DEPENDENCIES = libvorbis.la
 +libvorbisenc_la_DEPENDENCIES = 
  am_libvorbisenc_la_OBJECTS = vorbisenc.lo
  libvorbisenc_la_OBJECTS = $(am_libvorbisenc_la_OBJECTS)
+ libvorbisenc_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libvorbisenc_la_LDFLAGS) $(LDFLAGS) -o $@
 -libvorbisfile_la_DEPENDENCIES = libvorbis.la
 +libvorbisfile_la_DEPENDENCIES = 
  am_libvorbisfile_la_OBJECTS = vorbisfile.lo
  libvorbisfile_la_OBJECTS = $(am_libvorbisfile_la_OBJECTS)
- am_barkmel_OBJECTS = barkmel.$(OBJEXT)
-@@ -147,7 +147,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ libvorbisfile_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -155,7 +155,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
@@ -23,7 +26,7 @@ $OpenBSD: patch-lib_Makefile_in,v 1.5 2005/12/03 21:15:51 naddy Exp $
  LIBTOOL = @LIBTOOL@
  LN_S = @LN_S@
  LTLIBOBJS = @LTLIBOBJS@
-@@ -245,14 +245,12 @@ libvorbis_la_SOURCES = mdct.c smallft.c 
+@@ -260,14 +260,14 @@ libvorbis_la_SOURCES = mdct.c smallft.c block.c envelo
  			registry.h scales.h window.h lookup.h lookup_data.h\
  			codec_internal.h backends.h bitrate.h 
  
@@ -35,10 +38,12 @@ $OpenBSD: patch-lib_Makefile_in,v 1.5 2005/12/03 21:15:51 naddy Exp $
 -libvorbisfile_la_LDFLAGS = -no-undefined -version-info @VF_LIB_CURRENT@:@VF_LIB_REVISION@:@VF_LIB_AGE@
 -libvorbisfile_la_LIBADD = libvorbis.la
 +libvorbisfile_la_LDFLAGS = -version-info @VF_LIB_CURRENT@:@VF_LIB_REVISION@:@VF_LIB_AGE@
++libvorbisfile_la_LIBADD = 
  libvorbisenc_la_SOURCES = vorbisenc.c 
 -libvorbisenc_la_LDFLAGS = -no-undefined -version-info @VE_LIB_CURRENT@:@VE_LIB_REVISION@:@VE_LIB_AGE@
 -libvorbisenc_la_LIBADD = libvorbis.la
 +libvorbisenc_la_LDFLAGS = -version-info @VE_LIB_CURRENT@:@VE_LIB_REVISION@:@VE_LIB_AGE@
++libvorbisenc_la_LIBADD = 
  CLEANFILES = $(EXTRA_PROGRAMS)
  barkmel_SOURCES = barkmel.c
  tone_SOURCES = tone.c

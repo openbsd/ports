@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_vorbisfile_Makefile_in,v 1.5 2005/07/02 19:38:45 naddy Exp $
---- doc/vorbisfile/Makefile.in.orig	Mon Jun 27 11:02:45 2005
-+++ doc/vorbisfile/Makefile.in	Sat Jul  2 21:31:35 2005
-@@ -184,7 +184,7 @@ target_alias = @target_alias@
- target_cpu = @target_cpu@
- target_os = @target_os@
- target_vendor = @target_vendor@
+$OpenBSD: patch-doc_vorbisfile_Makefile_in,v 1.6 2007/07/30 15:29:36 naddy Exp $
+--- doc/vorbisfile/Makefile.in.orig	Sun Jul 29 17:15:44 2007
++++ doc/vorbisfile/Makefile.in	Sun Jul 29 17:15:57 2007
+@@ -150,7 +150,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/vorbisfile
 +docdir = $(datadir)/doc/$(PACKAGE)/vorbisfile
- doc_DATA = OggVorbis_File.html callbacks.html chaining_example_c.html\
- 	chainingexample.html crosslap.html datastructures.html decoding.html\
- 	example.html exampleindex.html fileinfo.html index.html\
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
