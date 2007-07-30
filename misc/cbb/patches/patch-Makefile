@@ -1,6 +1,6 @@
-$OpenBSD: patch-01,v 1.4 2003/08/29 15:07:24 naddy Exp $
---- Makefile.orig	1997-06-12 23:57:50.000000000 +0200
-+++ Makefile	2003-08-29 17:03:28.000000000 +0200
+$OpenBSD: patch-Makefile,v 1.1 2007/07/30 15:30:27 steven Exp $
+--- Makefile.orig	Thu Jun 12 23:57:50 1997
++++ Makefile	Sat Jul 28 12:55:51 2007
 @@ -26,14 +26,16 @@
  
  CBB_ROOT = cbb-0.73
@@ -16,7 +16,7 @@ $OpenBSD: patch-01,v 1.4 2003/08/29 15:07:24 naddy Exp $
 -	$(PERL) install.pl
 +	$(PERL) install.pl --prefix ${TRUEPREFIX} --libdir ${TRUEPREFIX}/share/cbb  \
 +		--destdir ${PREFIX} --perlpath /usr/bin/perl \
-+		--wishpath ${LOCALBASE}/bin/wish8.0
++		--wishpath ${LOCALBASE}/bin/wish8.4
  
  docs/cbb-man.dvi: docs/cbb-man.tex
  	(cd docs; \
