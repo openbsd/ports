@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2007/05/07 13:05:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2007/07/30 17:02:11 ajacoutot Exp $
 
-COMMENT=	"technical diagrams drawing tool"
+COMMENT=	technical diagrams drawing tool
 
 DISTNAME=	dia-0.96.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/Dia/
@@ -26,6 +26,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		art_lgpl_2.>=5::graphics/libart \
 		popt::devel/popt \
 		xslt.>=1::textproc/libxslt
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 MODULES=	devel/gettext
 
@@ -38,6 +39,10 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
 			-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LOCALBASE=${LOCALBASE}
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--without-cairo \
+			--without-gnomeprint \
+			--without-python
 
 FLAVORS=		gnome
 FLAVOR?=
