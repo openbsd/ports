@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/07/30 18:11:06 simon Exp $
 
 
-COMMENT=		"SNPP, TAP, email notification application"
+COMMENT=		SNPP, TAP, email notification application
 
-V=0.9.14
+V=1.000002
 DISTNAME=		sendpage-${V}
-PKGNAME=		p5-SendPage-${V}p1
+PKGNAME=		p5-SendPage-${V}
 CATEGORIES=		comms
 
 HOMEPAGE=		http://sendpage.org/

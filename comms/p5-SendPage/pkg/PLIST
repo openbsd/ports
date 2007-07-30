@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/03/16 15:43:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/07/30 18:11:06 simon Exp $
 @conflict hylafax-*
 bin/email2page
 bin/sendmail2snpp
 bin/sendpage
+bin/sendpage-db
 bin/snpp
 ${P5SITE}/Sendpage/
+${P5SITE}/Sendpage/Db.pm
 ${P5SITE}/Sendpage/KeesConf.pm
 ${P5SITE}/Sendpage/KeesLog.pm
 ${P5SITE}/Sendpage/Modem.pm
@@ -17,6 +19,7 @@ ${P5SITE}/Sendpage/SNPPServer.pm
 @man man/man1/email2page.1
 @man man/man1/sendpage.1
 @man man/man1/snpp.1
+@man man/man3p/Sendpage::Db.3p
 @man man/man3p/Sendpage::KeesConf.3p
 @man man/man3p/Sendpage::KeesLog.3p
 @man man/man3p/Sendpage::Modem.3p
