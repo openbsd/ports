@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2007/07/31 15:46:14 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"module to manipulate raw ip packets"
+COMMENT=	module to manipulate raw ip packets
 
 MODULES=	cpan
-DISTNAME=	Net-RawIP-0.2
+DISTNAME=	Net-RawIP-0.21
 CATEGORIES=	net
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
