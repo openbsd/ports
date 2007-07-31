@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2007/07/04 19:18:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/07/31 15:40:56 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"generate and manipulate images"
+COMMENT=	generate and manipulate images
 
-DISTNAME=	Imager-0.39
-PKGNAME=	p5-${DISTNAME}p0
-CATEGORIES=	graphics perl5
+DISTNAME=	Imager-0.59
+CATEGORIES=	graphics
+MODULES=	cpan
 
 HOMEPAGE=	http://imager.perl.org/
 
@@ -19,28 +19,23 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/A/AD/ADDI/} \
-		http://www.eecs.umich.edu/~addi/perl/Imager/
-
 FLAVORS=	libs
 FLAVOR?=
 
 .if ${FLAVOR:L} == "libs"
-LIB_DEPENDS=	t1.3::devel/t1lib \
-		png.2::graphics/png \
-		jpeg.62::graphics/jpeg \
-		tiff.35::graphics/tiff
-CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib:${X11BASE}/lib" \
-		IM_INCPATH="${LOCALBASE}/include:${X11BASE}/include"
-PATCH_LIST=	patch-libs
+LIB_DEPENDS=	t1.>=3::devel/t1lib \
+		png.>=2::graphics/png \
+		jpeg.>=62::graphics/jpeg \
+		tiff.>=35::graphics/tiff
+CONFIGURE_ARGS=	--enable jpeg,tiff,png,ungif,T1-fonts,freetype2 \
+		--incpath="${LOCALBASE}/include:${X11BASE}/include" \
+		--libpath="${LOCALBASE}/lib:${X11BASE}/lib"
 USE_X11=	Yes
 .else
 # Don't use the libs although they might be installed.
-PATCH_LIST=	patch-no_libs
+CONFIGURE_ARGS=	--disable jpeg,tiff,png,gif,ungif,T1-fonts,TT-fonts,freetype2,w32
 .endif
 
 USE_GMAKE=	Yes
-
-CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

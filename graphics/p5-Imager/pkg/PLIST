@@ -1,44 +1,134 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:50:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/07/31 15:40:56 simon Exp $
 ${P5ARCH}/
 ${P5ARCH}/Imager/
 ${P5ARCH}/Imager.pm
+${P5ARCH}/Imager/API.pod
+${P5ARCH}/Imager/APIRef.pod
 @comment ${P5ARCH}/Imager/Color/
 ${P5ARCH}/Imager/Color.pm
 @comment ${P5ARCH}/Imager/Color/Float.pm
+${P5ARCH}/Imager/Color/Table.pm
+${P5ARCH}/Imager/Cookbook.pod
+${P5ARCH}/Imager/CountColor.pm
+${P5ARCH}/Imager/Draw.pod
+${P5ARCH}/Imager/Engines.pod
 ${P5ARCH}/Imager/Expr/
 ${P5ARCH}/Imager/Expr.pm
 ${P5ARCH}/Imager/Expr/Assem.pm
+${P5ARCH}/Imager/ExtUtils.pm
+${P5ARCH}/Imager/File/
+${P5ARCH}/Imager/File/CUR.pm
+${P5ARCH}/Imager/File/ICO.pm
+${P5ARCH}/Imager/Files.pod
 @comment ${P5ARCH}/Imager/Fill.pm
+${P5ARCH}/Imager/Filter/
+${P5ARCH}/Imager/Filter/DynTest.pm
+${P5ARCH}/Imager/Filter/Flines.pm
+${P5ARCH}/Imager/Filter/Mandelbrot.pm
+${P5ARCH}/Imager/Filters.pod
 @comment ${P5ARCH}/Imager/Font/
 ${P5ARCH}/Imager/Font.pm
+${P5ARCH}/Imager/Font/BBox.pm
 @comment ${P5ARCH}/Imager/Font/FreeType2.pm
+${P5ARCH}/Imager/Font/Image.pm
 @comment ${P5ARCH}/Imager/Font/Truetype.pm
 @comment ${P5ARCH}/Imager/Font/Type1.pm
 @comment ${P5ARCH}/Imager/Font/Win32.pm
+${P5ARCH}/Imager/Font/Wrap.pm
 @comment ${P5ARCH}/Imager/Fountain.pm
+${P5ARCH}/Imager/Handy.pod
+${P5ARCH}/Imager/ImageTypes.pod
+${P5ARCH}/Imager/Inline.pod
 @comment ${P5ARCH}/Imager/Matrix2d.pm
 ${P5ARCH}/Imager/Regops.pm
+${P5ARCH}/Imager/Test.pm
 ${P5ARCH}/Imager/Transform.pm
+${P5ARCH}/Imager/Transformations.pod
+${P5ARCH}/Imager/Tutorial.pod
+${P5ARCH}/Imager/include/
+${P5ARCH}/Imager/include/draw.h
+${P5ARCH}/Imager/include/dynaload.h
+${P5ARCH}/Imager/include/ext.h
+${P5ARCH}/Imager/include/feat.h
+${P5ARCH}/Imager/include/imager.h
+${P5ARCH}/Imager/include/imageri.h
+${P5ARCH}/Imager/include/imconfig.h
+${P5ARCH}/Imager/include/imdatatypes.h
+${P5ARCH}/Imager/include/imerror.h
+${P5ARCH}/Imager/include/imexif.h
+${P5ARCH}/Imager/include/imext.h
+${P5ARCH}/Imager/include/imextdef.h
+${P5ARCH}/Imager/include/imexttypes.h
+${P5ARCH}/Imager/include/imio.h
+${P5ARCH}/Imager/include/imperl.h
+${P5ARCH}/Imager/include/imrender.h
+${P5ARCH}/Imager/include/iolayer.h
+${P5ARCH}/Imager/include/iolayert.h
+${P5ARCH}/Imager/include/log.h
+${P5ARCH}/Imager/include/plug.h
+${P5ARCH}/Imager/include/ppport.h
+${P5ARCH}/Imager/include/regmach.h
+${P5ARCH}/Imager/include/rendert.h
+${P5ARCH}/Imager/include/stackmach.h
 ${P5ARCH}/Imager/interface.pod
 ${P5ARCH}/Imager/regmach.pod
+${P5ARCH}/Imager/typemap
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Imager/
+${P5ARCH}/auto/Imager/CountColor/
+${P5ARCH}/auto/Imager/CountColor/CountColor.bs
+${P5ARCH}/auto/Imager/CountColor/CountColor.so
+${P5ARCH}/auto/Imager/File/
+${P5ARCH}/auto/Imager/File/ICO/
+${P5ARCH}/auto/Imager/File/ICO/ICO.bs
+${P5ARCH}/auto/Imager/File/ICO/ICO.so
+${P5ARCH}/auto/Imager/Filter/
+${P5ARCH}/auto/Imager/Filter/DynTest/
+${P5ARCH}/auto/Imager/Filter/DynTest/DynTest.bs
+${P5ARCH}/auto/Imager/Filter/DynTest/DynTest.so
+${P5ARCH}/auto/Imager/Filter/Flines/
+${P5ARCH}/auto/Imager/Filter/Flines/Flines.bs
+${P5ARCH}/auto/Imager/Filter/Flines/Flines.so
+${P5ARCH}/auto/Imager/Filter/Mandelbrot/
+${P5ARCH}/auto/Imager/Filter/Mandelbrot/Mandelbrot.bs
+${P5ARCH}/auto/Imager/Filter/Mandelbrot/Mandelbrot.so
 ${P5ARCH}/auto/Imager/Imager.bs
 ${P5ARCH}/auto/Imager/Imager.so
 @man man/man3p/Imager.3p
+@man man/man3p/Imager::API.3p
+@man man/man3p/Imager::APIRef.3p
 @man man/man3p/Imager::Color.3p
 @man man/man3p/Imager::Color::Float.3p
+@man man/man3p/Imager::Color::Table.3p
+@man man/man3p/Imager::Cookbook.3p
+@man man/man3p/Imager::CountColor.3p
+@man man/man3p/Imager::Draw.3p
+@man man/man3p/Imager::Engines.3p
 @man man/man3p/Imager::Expr.3p
 @man man/man3p/Imager::Expr::Assem.3p
+@man man/man3p/Imager::ExtUtils.3p
+@man man/man3p/Imager::File::ICO.3p
+@man man/man3p/Imager::Files.3p
 @man man/man3p/Imager::Fill.3p
+@man man/man3p/Imager::Filter::Flines.3p
+@man man/man3p/Imager::Filter::Mandelbrot.3p
+@man man/man3p/Imager::Filters.3p
 @man man/man3p/Imager::Font.3p
+@man man/man3p/Imager::Font::BBox.3p
 @man man/man3p/Imager::Font::FreeType2.3p
 @man man/man3p/Imager::Font::Truetype.3p
 @man man/man3p/Imager::Font::Type1.3p
 @man man/man3p/Imager::Font::Win32.3p
+@man man/man3p/Imager::Font::Wrap.3p
 @man man/man3p/Imager::Fountain.3p
+@man man/man3p/Imager::Handy.3p
+@man man/man3p/Imager::ImageTypes.3p
+@man man/man3p/Imager::Inline.3p
 @man man/man3p/Imager::Matrix2d.3p
 @man man/man3p/Imager::Regops.3p
+@man man/man3p/Imager::Test.3p
 @man man/man3p/Imager::Transform.3p
+@man man/man3p/Imager::Transformations.3p
+@man man/man3p/Imager::Tutorial.3p
 @man man/man3p/Imager::interface.3p
 @man man/man3p/Imager::regmach.3p
