@@ -1,0 +1,34 @@
+$OpenBSD: patch-poppler_Stream_cc,v 1.1 2007/07/31 22:22:01 kili Exp $
+
+Fix for CVE-2007-3387.
+
+--- poppler/Stream.cc.orig	Fri Jul 28 20:07:41 2006
++++ poppler/Stream.cc	Tue Jul 31 21:39:35 2007
+@@ -422,21 +422,13 @@ StreamPredictor::StreamPredictor(Stream *strA, int pre
+   ok = gFalse;
+ 
+   nVals = width * nComps;
+-  if (width <= 0 || nComps <= 0 || nBits <= 0 ||
+-      nComps >= INT_MAX/nBits ||
+-      width >= INT_MAX/nComps/nBits ||
+-      nVals * nBits + 7 < 0) {
+-    return;
+-  }
+-  totalBits = nVals * nBits;
+-  if (totalBits == 0 ||
+-      (totalBits / nBits) / nComps != width ||
+-      totalBits + 7 < 0) {
+-    return;
+-  }
+   pixBytes = (nComps * nBits + 7) >> 3;
+-  rowBytes = ((totalBits + 7) >> 3) + pixBytes;
+-  if (rowBytes < 0) {
++  rowBytes = ((nVals * nBits + 7) >> 3) + pixBytes;
++  if (width <= 0 || nComps <= 0 || nBits <= 0 ||
++      nComps > gfxColorMaxComps ||
++      nBits > 16 ||
++      width >= INT_MAX / nComps ||      // check for overflow in nVals
++      nVals >= (INT_MAX - 7) / nBits) { // check for overflow in rowBytes
+     return;
+   }
+   predLine = (Guchar *)gmalloc(rowBytes);

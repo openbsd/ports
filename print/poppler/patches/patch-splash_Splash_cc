@@ -1,0 +1,43 @@
+$OpenBSD: patch-splash_Splash_cc,v 1.1 2007/07/31 22:22:01 kili Exp $
+
+Fix CVE-2006-0301. From poppler mailinglist archives (also in the
+POPPLER_0_4_X branch, but not merged into 0.5 until the xpdf 3.02
+merge in the "unstable" 0.5.9 release).
+
+--- splash/Splash.cc.orig	Mon Jul 24 21:04:51 2006
++++ splash/Splash.cc	Wed Jul 25 22:48:11 2007
+@@ -950,6 +950,10 @@ void Splash::drawPixel(int x, int y, SplashColorPtr co
+   int alpha2, ialpha2;
+   Guchar t;
+ 
++  if ( (unsigned) x >= (unsigned) bitmap->getWidth() ||
++       (unsigned) y >= (unsigned) bitmap->getHeight())
++    return;
++
+   if (noClip || state->clip->test(x, y)) {
+     if (alpha != 1 || softMask || state->blendFunc) {
+       blendFunc = state->blendFunc ? state->blendFunc : &blendNormal;
+@@ -1243,6 +1247,11 @@ void Splash::drawSpan(int x0, int x1, int y, SplashPat
+     updateModY(y);
+   }
+ 
++  if ((unsigned) x0 >= (unsigned) bitmap->getWidth() ||
++      (unsigned) x1 >= (unsigned) bitmap->getWidth() ||
++      (unsigned) y >= (unsigned) bitmap->getHeight())
++    return;
++
+   if (alpha != 1 || softMask || state->blendFunc) {
+     blendFunc = state->blendFunc ? state->blendFunc : &blendNormal;
+     if (softMask) {
+@@ -1950,6 +1959,11 @@ void Splash::xorSpan(int x0, int x1, int y, SplashPatt
+     updateModX(x1);
+     updateModY(y);
+   }
++
++  if ((unsigned) x0 >= (unsigned) bitmap->getWidth() ||
++      (unsigned) x1 >= (unsigned) bitmap->getWidth() ||
++      (unsigned) y >= (unsigned) bitmap->getHeight())
++    return;
+ 
+   switch (bitmap->mode) {
+   case splashModeMono1:

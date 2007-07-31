@@ -1,7 +1,7 @@
-$OpenBSD: patch-qt4_Makefile_in,v 1.1 2007/03/24 13:21:26 espie Exp $
---- qt4/Makefile.in.orig	Fri Mar 23 16:27:09 2007
-+++ qt4/Makefile.in	Fri Mar 23 16:27:22 2007
-@@ -215,7 +215,7 @@ sbindir = @sbindir@
+$OpenBSD: patch-qt4_Makefile_in,v 1.2 2007/07/31 22:22:01 kili Exp $
+--- qt4/Makefile.in.orig	Fri Sep 22 02:54:24 2006
++++ qt4/Makefile.in	Wed Jul 25 20:59:03 2007
+@@ -216,7 +216,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@

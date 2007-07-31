@@ -1,0 +1,15 @@
+$OpenBSD: patch-poppler_Catalog_h,v 1.1 2007/07/31 22:22:01 kili Exp $
+
+Fix CVE-2007-0104. From poppler CVS.
+
+--- poppler/Catalog.h.orig	Mon Jan 23 15:43:36 2006
++++ poppler/Catalog.h	Wed Jul 25 21:00:04 2007
+@@ -193,7 +193,7 @@ class Catalog { (private)
+   PageMode pageMode;		// page mode
+   PageLayout pageLayout;	// page layout
+ 
+-  int readPageTree(Dict *pages, PageAttrs *attrs, int start);
++  int readPageTree(Dict *pages, PageAttrs *attrs, int start, int callDepth);
+   Object *findDestInTree(Object *tree, GooString *name, Object *obj);
+ };
+ 
