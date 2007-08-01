@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/22 13:37:58 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2007/08/01 21:16:10 kurt Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		"libraries to support development of security-enabled apps"
 
-VERSION=		3.11.5
+VERSION=		3.11.7
 DISTNAME=		nss-${VERSION}
-PKGNAME=		${DISTNAME}p0
-SO_VERSION=		19.0
+SO_VERSION=		20.0
 .for _lib in freebl3 nss3 nssckbi smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -33,9 +32,9 @@ MAKE_ENV=		BUILD_OPT=1 \
 			LOCALBASE="${LOCALBASE}" \
 			NSS_ENABLE_ECC=1 \
 			SO_VERSION="${SO_VERSION}" \
-			XCFLAGS="${CFLAGS}"
-
-CFLAGS+=		-I${LOCALBASE}/include/nspr
+			XCFLAGS="${CFLAGS}" \
+			NSPR_INCLUDE_DIR=${LOCALBASE}/include/nspr \
+			NSPR_LIB_DIR=${LOCALBASE}/lib
 
 USE_GMAKE=		Yes
 
