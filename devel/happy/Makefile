@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/07/22 12:24:46 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2007/08/01 22:00:53 kili Exp $
 
 COMMENT=		parser generator for the functional language Haskell
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		gmp::devel/gmp
 
 SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX}
 SETUP_CONF_ENV=		HOME=${PORTHOME} ${CONFIGURE_ENV}
+SETUP_PROG=		${WRKSRC}/Setup
 SUBST_VARS=		V
 
 # Required for building the documentation and for the regression tests:
@@ -39,25 +40,26 @@ AUTOCONF_DIR=		${WRKSRC}/doc
 WRKCONF=		${AUTOCONF_DIR}
 
 post-configure:
-	@cd ${WRKSRC} && exec ${SETENV} ${SETUP_CONF_ENV} \
-		runhaskell Setup.lhs ${SETUP_CONF_ARGS}
+	@cd ${WRKSRC} && ghc --make -o ${SETUP_PROG} Setup.lhs
+	@cd ${WRKBUILD} && exec ${SETENV} ${SETUP_CONF_ENV} \
+		${SETUP_PROG} ${SETUP_CONF_ARGS}
 
 do-build:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.lhs build
-	@cd ${WRKSRC}/doc && exec ${SETENV} ${MAKE_ENV} \
+		${SETUP_PROG} build
+	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} html
 
 do-install:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.lhs copy --destdir=${DESTDIR}
+		${SETUP_PROG} copy --destdir=${DESTDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
-	cd ${WRKSRC}/doc && umask 022 && pax -rw happy ${PREFIX}/share/doc
+	cd ${WRKBUILD}/doc && umask 022 && pax -rw happy ${PREFIX}/share/doc
 
 do-regress:
-	@cd ${WRKSRC}/tests && exec ${SETENV} ${MAKE_ENV} \
+	@cd ${WRKBUILD}/tests && exec ${SETENV} ${MAKE_ENV} \
 		gmake HAPPY=${WRKBUILD}/dist/build/happy/happy \
 		TEST_HAPPY_OPTS="-t ${WRKBUILD}/templates --strict"
 

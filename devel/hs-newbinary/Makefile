@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/21 17:17:00 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2007/08/01 22:01:32 kili Exp $
 
 COMMENT=	binary serialization library for Haskell
 
@@ -26,6 +26,7 @@ MASTER_SITES=	${HACKAGE}packages/archive/NewBinary/$V/
 
 CONFIGURE_ARGS=	configure -g --prefix=${PREFIX}
 CONFIGURE_ENV=	HOME=${PORTHOME}
+SETUP_PROG=	${WRKSRC}/Setup
 SUBST_VARS=	V
 
 NO_REGRESS=	Yes
@@ -36,19 +37,20 @@ post-install:
 .endfor
 
 do-configure:
-	@cd ${WRKSRC} && exec ${SETENV} ${CONFIGURE_ENV} \
-		runhaskell Setup.lhs ${CONFIGURE_ARGS}
+	@cd ${WRKSRC} && ghc --make -o ${SETUP_PROG} Setup.lhs
+	@cd ${WRKBUILD} && exec ${SETENV} ${CONFIGURE_ENV} \
+		${SETUP_PROG} ${CONFIGURE_ARGS}
 
 do-build:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.lhs build
+		${SETUP_PROG} build
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.lhs register --gen-script
+		${SETUP_PROG} register --gen-script
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.lhs unregister --gen-script
+		${SETUP_PROG} unregister --gen-script
 
 do-install:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.lhs copy --destdir=${DESTDIR}
+		${SETUP_PROG} copy --destdir=${DESTDIR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/07/21 17:20:20 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2007/08/01 21:59:55 kili Exp $
 
 COMMENT=	documentation tool for the functional language Haskell
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=	gmp::devel/gmp
 
 SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX}
 SETUP_CONF_ENV=		HOME=${PORTHOME} ${CONFIGURE_ENV}
+SETUP_PROG=		${WRKSRC}/Setup
 SUBST_VARS=		V
 
 NO_REGRESS=		Yes
@@ -43,21 +44,20 @@ AUTOCONF_DIR=		${WRKSRC}/doc
 WRKCONF=		${AUTOCONF_DIR}
 
 post-configure:
-	@cd ${WRKSRC} && exec ${SETENV} ${SETUP_CONF_ENV} \
-		runhaskell Setup.lhs ${SETUP_CONF_ARGS}
+	@cd ${WRKSRC} && ghc --make -o ${SETUP_PROG} Setup.lhs
+	@cd ${WRKBUILD} && exec ${SETENV} ${SETUP_CONF_ENV} \
+		${SETUP_PROG} ${SETUP_CONF_ARGS}
 
 do-build:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.lhs build
-	@cd ${WRKSRC}/doc && exec ${SETENV} ${MAKE_ENV} \
-		${MAKE_PROGRAM} html
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${SETUP_PROG} build
+	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
 do-install:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.lhs copy --destdir=${DESTDIR}
+		${SETUP_PROG} copy --destdir=${DESTDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
-	cd ${WRKSRC}/doc && umask 022 && pax -rw haddock ${PREFIX}/share/doc
+	cd ${WRKBUILD}/doc && umask 022 && pax -rw haddock ${PREFIX}/share/doc
 
 .include <bsd.port.mk>

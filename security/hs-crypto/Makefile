@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/21 17:21:33 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/08/01 22:02:18 kili Exp $
 
 COMMENT=	Haskell cryptographic library
 CATEGORIES=	security
@@ -23,29 +23,30 @@ BUILD_DEPENDS+=		::devel/haddock
 LIB_DEPENDS+=		::devel/hs-newbinary
 
 SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX} 
-SETUP_CONF_ENV=		HOME=${PORTHOME} \
-			PATH=${PATH}
+SETUP_CONF_ENV=		HOME=${PORTHOME} PATH=${PATH}
+SETUP_PROG=		${WRKSRC}/Setup
 SUBST_VARS=		V
 
 do-configure:
-	@cd ${WRKSRC} && exec ${SETENV} ${SETUP_CONF_ENV} \
-		runhaskell Setup.hs ${SETUP_CONF_ARGS}
+	@cd ${WRKSRC} && ghc --make -o ${SETUP_PROG} Setup.hs
+	@cd ${WRKBUILD} && exec ${SETENV} ${SETUP_CONF_ENV} \
+		${SETUP_PROG} ${SETUP_CONF_ARGS}
 
 do-build:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.hs build
+		${SETUP_PROG} build
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.hs haddock
+		${SETUP_PROG} haddock
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.hs register --gen-script
+		${SETUP_PROG} register --gen-script
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.hs unregister --gen-script
+		${SETUP_PROG} unregister --gen-script
 	perl -pi -e 's!/share/${DISTNAME}/doc/html!/share/doc/${DISTNAME}!' \
 		${WRKBUILD}/register.sh
 
 do-install:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		runhaskell Setup.hs copy --destdir=${DESTDIR}
+		${SETUP_PROG} copy --destdir=${DESTDIR}
 
 post-install:
 	mv ${PREFIX}/share/${DISTNAME}/doc/html ${PREFIX}/share/doc/${DISTNAME}
@@ -56,7 +57,7 @@ post-install:
 
 do-regress:
 	cd ${WRKBUILD} && exec ${SETENV} HOME=${WRKDIR} PATH=${PATH} \
-		runhaskell Setup.hs register --inplace --user
+		${SETUP_PROG} register --inplace --user
 .for t in BERTest RSATest SymmetricTest
 	cd ${WRKBUILD} && ${SETENV} HOME=${WRKDIR} \
 		ghc -o $t $t.hs -package Crypto && ./$t
