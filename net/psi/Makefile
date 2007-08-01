@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2007/07/11 22:50:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/08/01 05:50:43 steven Exp $
 
-COMMENT=	multiplatform Jabber client
+COMMENT=	"multiplatform Jabber client"
 
-DISTNAME=	psi-0.10
+DISTNAME=	psi-0.9.3
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
-HOMEPAGE=	http://psi-im.org/
+HOMEPAGE=	http://psi.affinix.com/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psi/}
-EXTRACT_SUFX=	.tar.bz2
+MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,33 +17,26 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xss m c z Xext pthread stdc++
 
-MODULES=		x11/qt3
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=psi/}
+EXTRACT_SUFX=		.tar.bz2
 
+MODULES=		x11/qt3
 MODQT_OVERRIDE_UIC=	No
 MODQT_MT=		Yes
 
+LIB_DEPENDS=		qca.>=1::security/qca
+
 USE_X11=		Yes
 USE_GMAKE=		Yes
-
-LIB_DEPENDS=		qca.>=1::security/qca
-RUN_DEPENDS=		::security/qca-tls
-
 CONFIGURE_STYLE=	simple
-
 CONFIGURE_ARGS+=	--qtdir=${MODQT_QTDIR} \
 			--with-qca-inc=${LOCALBASE}/include \
 			--with-qca-lib=${LOCALBASE}/lib \
-			--disable-growl \
 			--disable-dnotify \
 			--disable-ghbnr
 
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE} \
 			KDEDIR=${LOCALBASE}
-
-# For QSettings to write its setup
-PORTHOME=              ${WRKDIST}
-
-NO_REGRESS=		Yes
 
 pre-configure:
 	@perl -pi -e "s@%%X11BASE%%@${X11BASE}@" ${WRKSRC}/configure

@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_src_pro,v 1.3 2007/08/01 05:50:43 steven Exp $
+--- src/src.pro.orig	Thu Jun  2 15:24:37 2005
++++ src/src.pro	Thu Jun  2 15:25:11 2005
+@@ -17,12 +17,6 @@ MOC_DIR        = .moc
+ OBJECTS_DIR    = .obj
+ UI_DIR         = .ui
+ 
+-# qconf
+-unix: {
+-	include(../conf.pri)
+-	include(../extra.pri)
+-}
+-
+ # qxml
+ !isEmpty(QXML_STATIC) {
+ 	unix: {
+@@ -42,6 +36,12 @@ exists(../cutestuff) {
+ 	PSICS_CPP = ../cutestuff
+ }
+ include(../psics.pri)
++
++# qconf
++unix: {
++	include(../conf.pri)
++	include(../extra.pri)
++}
+ 
+ # qca
+ #DEFINES += QCA_STATIC
