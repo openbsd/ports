@@ -1,9 +1,9 @@
-$OpenBSD: patch-plug-ins_common_psd_c,v 1.1 2007/07/05 18:23:51 rui Exp $
---- plug-ins/common/psd.c.orig	Thu Jul  5 14:52:01 2007
-+++ plug-ins/common/psd.c	Thu Jul  5 14:53:32 2007
-@@ -1202,6 +1202,12 @@ seek_to_and_unpack_pixeldata(FILE* fd, gint layeri, gi
-   width = channel->width;
-   height = channel->height;
+$OpenBSD: patch-plug-ins_common_psd_c,v 1.2 2007/08/01 06:25:10 steven Exp $
+--- plug-ins/common/psd.c.orig	Fri Jul 13 12:22:08 2007
++++ plug-ins/common/psd.c	Wed Aug  1 07:22:14 2007
+@@ -1237,6 +1237,12 @@ seek_to_and_unpack_pixeldata(FILE* fd, gint layeri, gi
+       gimp_quit ();
+     }
  
 +  if (width > G_MAXINT16 || height > G_MAXINT16)
 +  {

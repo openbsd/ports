@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2007/07/05 18:23:51 rui Exp $
+# $OpenBSD: Makefile,v 1.26 2007/08/01 06:25:10 steven Exp $
 
-COMMENT=	"GNU Image Manipulation Program"
+COMMENT=	GNU Image Manipulation Program
 
-DISTNAME=	gimp-2.2.15
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gimp-2.0	200.15	\
-		gimpbase-2.0	200.15	\
-		gimpcolor-2.0	200.15	\
-		gimpmath-2.0	200.15	\
-		gimpmodule-2.0	200.15	\
-		gimpthumb-2.0	200.15	\
-		gimpui-2.0	200.15	\
-		gimpwidgets-2.0	200.15
+DISTNAME=	gimp-2.2.17
+SHARED_LIBS=	gimp-2.0	200.17	\
+		gimpbase-2.0	200.17	\
+		gimpcolor-2.0	200.17	\
+		gimpmath-2.0	200.17	\
+		gimpmodule-2.0	200.17	\
+		gimpthumb-2.0	200.17	\
+		gimpui-2.0	200.17	\
+		gimpwidgets-2.0	200.17
 
 CATEGORIES=	graphics
 DIR=		gimp/v2.2
