@@ -1,23 +1,23 @@
-$OpenBSD: patch-src_KeyWords_cxx,v 1.1 2007/01/18 10:56:27 steven Exp $
---- src/KeyWords.cxx.orig	Wed Sep 13 19:53:23 2006
-+++ src/KeyWords.cxx	Wed Sep 13 19:54:46 2006
-@@ -73,7 +73,8 @@ int LexerModule::GetStyleBitsNeeded() co
+$OpenBSD: patch-src_KeyWords_cxx,v 1.2 2007/08/01 09:21:07 steven Exp $
+--- src/KeyWords.cxx.orig	Tue Jun 19 16:12:16 2007
++++ src/KeyWords.cxx	Tue Jun 19 16:14:30 2007
+@@ -77,7 +77,8 @@ int LexerModule::GetStyleBitsNeeded() const {
  
  const LexerModule *LexerModule::Find(int language) {
  	const LexerModule *lm = base;
 -	while (lm) {
 +	int i;
-+	for(i=0; lm && i < 79; i++) {
++	for(i=0; lm && i < 83; i++) {
  		if (lm->language == language) {
  			return lm;
  		}
-@@ -85,7 +86,8 @@ const LexerModule *LexerModule::Find(int
+@@ -89,7 +90,8 @@ const LexerModule *LexerModule::Find(int language) {
  const LexerModule *LexerModule::Find(const char *languageName) {
  	if (languageName) {
  		const LexerModule *lm = base;
 -		while (lm) {
 +		int i;
-+		for(i=0; lm && i < 79; i++) {
++		for(i=0; lm && i < 83; i++) {
  			if (lm->languageName && 0 == strcmp(lm->languageName, languageName)) {
  				return lm;
  			}

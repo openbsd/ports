@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/18 10:56:27 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/08/01 09:21:06 steven Exp $
 
 COMMENT=	"source code editing component for GTK+"
 
-VERSION=	1.72
+VERSION=	1.74
 DISTNAME=	scintilla${VERSION:S/.//}
 PKGNAME=	scintilla-${VERSION}
 CATEGORIES=	editors x11
 
-SHARED_LIBS=	scintilla		4.0 \
-		scintilla_lexers	4.0
+SHARED_LIBS=	scintilla		5.0 \
+		scintilla_lexers	5.0
 
 HOMEPAGE=	http://www.scintilla.org/
 
-MAINTAINER=	Jeremy Evans <jeremyevans0@gmail.com>
+MAINTAINER=	Jeremy Evans <openbsd@jeremyevans.net>
 
 # old Python license
 PERMIT_PACKAGE_CDROM=	"may not sell"

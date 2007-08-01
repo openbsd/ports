@@ -1,16 +1,16 @@
-$OpenBSD: patch-gtk_makefile,v 1.2 2007/01/18 10:56:27 steven Exp $
---- gtk/makefile.orig	Mon Feb 13 08:27:08 2006
-+++ gtk/makefile	Thu Jan 18 09:11:07 2007
+$OpenBSD: patch-gtk_makefile,v 1.3 2007/08/01 09:21:07 steven Exp $
+--- gtk/makefile.orig	Thu Jun 14 17:37:56 2007
++++ gtk/makefile	Wed Jun 20 11:14:35 2007
 @@ -26,26 +26,26 @@ ifdef GTK2
- CONFIGFLAGS=pkg-config --cflags gtk+-2.0
- CONFIGLIB=pkg-config --libs gtk+-2.0 gthread-2.0
+ CONFIGFLAGS=$(shell pkg-config --cflags gtk+-2.0)
+ CONFIGLIB=$(shell pkg-config --libs gtk+-2.0 gthread-2.0)
  CONFIGTHREADS=
 -gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
 +#gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
  else
- CONFIGFLAGS=gtk-config --cflags
- CONFIGLIB=gtk-config --libs
- CONFIGTHREADS=glib-config --libs gthread
+ CONFIGFLAGS=$(shell gtk-config --cflags)
+ CONFIGLIB=$(shell gtk-config --libs)
+ CONFIGTHREADS=$(shell glib-config --libs gthread)
 -gnomeprefix:=$(shell gnome-config --prefix 2>/dev/null)
  endif
  ifndef prefix
@@ -28,7 +28,7 @@ $OpenBSD: patch-gtk_makefile,v 1.2 2007/01/18 10:56:27 steven Exp $
 +DOC_PATH=$(prefix)/share/doc/scite
  
 -INSTALL=install -o root -g root
-+INSTALL=install -o root -g bin
++INSTALL=install -o root -g bin 
  
  PROG	= ../bin/SciTE
  
@@ -55,17 +55,17 @@ $OpenBSD: patch-gtk_makefile,v 1.2 2007/01/18 10:56:27 steven Exp $
 +ifdef LUA
  LUA_CORE_OBJS = lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
  		lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o \
- 		ltable.o ltests.o ltm.o lundump.o lvm.o lzio.o
-@@ -74,14 +76,14 @@ LUA_LIB_OBJS =	lauxlib.o lbaselib.o ldbl
+ 		ltable.o ltm.o lundump.o lvm.o lzio.o
+@@ -74,14 +76,14 @@ LUA_LIB_OBJS =	lauxlib.o lbaselib.o ldblib.o liolib.o 
  
  LUA_OBJS = LuaExtension.o IFaceTable.o $(LUA_CORE_OBJS) $(LUA_LIB_OBJS)
  
 -INCLUDEDIRS=-I ../../scintilla/include -I ../src -I../lua/include
 +INCLUDEDIRS+=-I../lua/include
  $(LUA_CORE_OBJS): ../lua/src/*.c
- 	gcc $(INCLUDEDIRS) $(CXXTFLAGS) -c ../lua/src/*.c
+ 	gcc $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/*.c
  $(LUA_LIB_OBJS): ../lua/src/lib/*.c
- 	gcc $(INCLUDEDIRS) $(CXXTFLAGS) -c ../lua/src/lib/*.c
+ 	gcc $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/lib/*.c
 -CXXFLAGS=$(CXXTFLAGS)
 +CXXFLAGS+=$(CXXTFLAGS)
  else
@@ -78,15 +78,15 @@ $OpenBSD: patch-gtk_makefile,v 1.2 2007/01/18 10:56:27 steven Exp $
  endif
  
  .cxx.o:
--	$(CC) `$(CONFIGFLAGS)` $(CXXFLAGS) -c $< -o $@
-+	$(CXX) `$(CONFIGFLAGS)` $(CXXFLAGS) -c $< -o $@
+-	$(CC) $(CONFIGFLAGS) $(CXXFLAGS) -c $< -o $@
++	$(CXX) $(CONFIGFLAGS) $(CXXFLAGS) -c $< -o $@
  
  clean:
  	rm -f *.o $(PROG)
  
  deps:
--	$(CC) -MM `$(CONFIGFLAGS)` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
-+	$(CXX) -MM `$(CONFIGFLAGS)` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
+-	$(CC) -MM $(CONFIGFLAGS) $(CXXFLAGS) *.cxx ../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
++	$(CXX) -MM $(CONFIGFLAGS) $(CXXFLAGS) *.cxx ../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
  
 -# make should be run in ../../scintilla/gtk to compile all the lexers.
 -COMPLIB=../../scintilla/bin/scintilla.a
@@ -94,8 +94,8 @@ $OpenBSD: patch-gtk_makefile,v 1.2 2007/01/18 10:56:27 steven Exp $
  $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
  MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
  	$(COMPLIB) $(LUA_OBJS)
--	$(CC) `$(CONFIGTHREADS)` -DGTK $^ -o $@ `$(CONFIGLIB)`
-+	$(CXX) $^ $(LIBS) `$(CONFIGTHREADS)` -DGTK -o $@ `$(CONFIGLIB)`
+-	$(CC) `$(CONFIGTHREADS)` -DGTK $^ -o $@ $(CONFIGLIB)
++	$(CXX) $(CONFIGTHREADS) $(LIBS) -DGTK $^ -o $@ $(CONFIGLIB)
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak

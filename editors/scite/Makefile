@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/18 10:56:27 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/08/01 09:21:07 steven Exp $
 
 COMMENT=		"flexible and small GTK+ editor"
 
-VERSION=		1.72
+VERSION=		1.74
 DISTNAME=		scite${VERSION:S/.//}
 PKGNAME=		scite-${VERSION}
 CATEGORIES=		editors x11
 
 HOMEPAGE=		http://www.scintilla.org/SciTE.html
 
-MAINTAINER=		Jeremy Evans <jeremyevans0@gmail.com>
+MAINTAINER=		Jeremy Evans <openbsd@jeremyevans.net>
 
 # old Python license
 PERMIT_PACKAGE_CDROM=	"may not sell"
@@ -17,8 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xext Xrender c m z pthread stdc++ fontconfig \
-			freetype \
+WANTLIB=		X11 Xrender c m z pthread stdc++ fontconfig \
+			freetype Xau Xdmcp expat Xcursor Xext Xfixes \
+			Xi Xinerama Xrandr \
 			glib-2.0 gobject-2.0 gthread-2.0 gmodule-2.0 \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 			cairo atk-1.0 glitz png
@@ -29,7 +30,7 @@ EXTRACT_SUFX=		.tgz
 MODULES=	        devel/gettext
 
 LIB_DEPENDS=		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
-			scintilla.>=4,scintilla_lexers.>=4::editors/scintilla
+			scintilla.>=5,scintilla_lexers.>=5::editors/scintilla
 
 USE_GMAKE=		Yes
 USE_X11=		Yes

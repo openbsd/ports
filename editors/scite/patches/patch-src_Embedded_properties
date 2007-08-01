@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Embedded_properties,v 1.1 2007/01/18 10:56:27 steven Exp $
---- src/Embedded.properties.orig	Mon Jan 15 07:21:24 2007
-+++ src/Embedded.properties	Thu Jan 18 09:11:22 2007
-@@ -78,7 +78,7 @@ if PLAT_WIN
+$OpenBSD: patch-src_Embedded_properties,v 1.2 2007/08/01 09:21:07 steven Exp $
+--- src/Embedded.properties.orig	Fri Jun  8 16:42:52 2007
++++ src/Embedded.properties	Wed Jun 20 08:23:23 2007
+@@ -79,7 +79,7 @@ if PLAT_WIN
  	command.scite.help.subsystem=2
  if PLAT_GTK
  	command.print.*=a2ps "$(FileNameExt)"
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Embedded_properties,v 1.1 2007/01/18 10:56:27 steven Exp $
  
  code.page=0
  
-@@ -2952,7 +2952,7 @@ if PLAT_WIN
+@@ -3209,7 +3209,7 @@ if PLAT_WIN
  	command.go.$(file.patterns.web)="file://$(FilePath)"
  	command.go.subsystem.$(file.patterns.web)=2
  if PLAT_GTK
