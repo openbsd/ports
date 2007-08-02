@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/03/23 10:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/08/02 15:50:26 simon Exp $
 
-COMMENT=		"Dynamic DNS service update client"
+COMMENT=		Dynamic DNS service update client
 
-DISTNAME=		ddclient-3.7.1
+DISTNAME=		ddclient-3.7.2
 CATEGORIES=		net
 
 HOMEPAGE=		http://ddclient.sourceforge.net/
