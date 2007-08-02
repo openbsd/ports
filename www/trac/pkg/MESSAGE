@@ -5,6 +5,10 @@ and follow the prompts:
 Here, "</path/to/projectenv>" is the location on your disk where you
 want to place the project environment.
 
+"</path/to/projectenv/conf/trac.ini>" is the configuration file of your
+project environment which allows to setup the name of the project, the
+location of the enscript binary, etc.
+
 To get started with Trac, you can use the built-in webserver, by running:
    tracd -p 8085 </path/to/projectenv>
 
