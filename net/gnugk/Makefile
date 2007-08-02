@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/20 14:40:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/08/02 14:39:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,7 +37,6 @@ CONFIGURE_ARGS=	--enable-radius \
 
 MAKE_ENV+=	CC=${CC} CPLUS=${CXX} \
 		STDCCFLAGS="${STDCCFLAGS} -I${LOCALBASE}/include/openh323" \
-		OH323_LIBDIR=${LOCALBASE}/lib \
 		SYSLIBDIR=`ptlib-config --libdir` \
 		PTLIB_FILE=libpt.`ptlib-config --sharedlibext`.`ptlib-config --version`
 
