@@ -2,23 +2,13 @@ MozPlugger by itself isn't very useful. You might want to install some
 of the following packages:
 
 For pdf:
- * kdegraphics (kpdf)
- * epdfview
- * evince
- * xpdf
- * gv
- * acroread
-
+* kdegraphics (kpdf), epdfview, evince, xpdf, gv, acroread
 
 For ps:
- * kdegraphics (kpdf)
- * evince
- * gv
+ * kdegraphics (kpdf), evince, gv
 
 For dvi:
- * kdegraphics (kdvi)
- * teTeX_base (xdvi)
+ * kdegraphics (kdvi), teTeX_base (xdvi)
 
 For wmv, asf, mp4, mov, mpeg, avi (blobs..):
- * mplayer + win32-codecs
- * xanim
+ * mplayer + win32-codecs, xanim

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/26 09:12:53 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/08/02 21:58:10 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
-COMMENT=		"load programs inside browser to view movies, pdfs, etc"
+COMMENT=		load programs inside browser to view movies, pdfs, etc
 DISTNAME=		mozplugger-1.8.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 
 HOMEPAGE=		http://mozplugger.mozdev.org
