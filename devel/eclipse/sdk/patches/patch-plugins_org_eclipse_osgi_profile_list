@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_org_eclipse_osgi_profile_list,v 1.1 2007/08/02 16:15:07 kurt Exp $
+--- plugins/org.eclipse.osgi/profile.list.orig	Thu Aug  2 11:05:41 2007
++++ plugins/org.eclipse.osgi/profile.list	Thu Aug  2 11:05:51 2007
+@@ -9,6 +9,7 @@
+ #     IBM Corporation - initial API and implementation
+ ###############################################################################
+ java.profiles = \
++ JavaSE-1.7.profile,\
+  JavaSE-1.6.profile,\
+  J2SE-1.5.profile,\
+  J2SE-1.4.profile,\
