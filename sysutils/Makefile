@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.129 2007/07/20 11:04:56 robert Exp $
+# $OpenBSD: Makefile,v 1.130 2007/08/02 03:35:22 david Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
      SUBDIR += anacron
      SUBDIR += apc-upsd
      SUBDIR += autossh
-     SUBDIR += bacula,sqlite3
-     SUBDIR += bacula,pgsql
      SUBDIR += bacula,mysql
+     SUBDIR += bacula,pgsql
+     SUBDIR += bacula,sqlite3
      SUBDIR += bchunk
      SUBDIR += bubblemon
      SUBDIR += bubblemon-dockapp

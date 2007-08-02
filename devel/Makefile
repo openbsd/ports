@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.533 2007/07/28 14:51:46 simon Exp $
+# $OpenBSD: Makefile,v 1.534 2007/08/02 03:35:22 david Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -411,7 +411,6 @@
      SUBDIR += p5-Regexp-Copy
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-Return-Value
-     SUBDIR += p5-Sort-Key
      SUBDIR += p5-SVN-Mirror
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
@@ -422,6 +421,7 @@
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Shell-Command
      SUBDIR += p5-Smart-Comments
+     SUBDIR += p5-Sort-Key
      SUBDIR += p5-Spiffy
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Format
