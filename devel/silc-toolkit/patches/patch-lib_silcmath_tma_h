@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_silcmath_tma_h,v 1.1 2005/07/26 04:55:01 fgsch Exp $
---- lib/silcmath/tma.h.orig	Tue May 10 12:02:57 2005
-+++ lib/silcmath/tma.h	Tue Jul 26 01:13:52 2005
-@@ -48,7 +48,7 @@ extern "C" {
+$OpenBSD: patch-lib_silcmath_tma_h,v 1.2 2007/08/02 06:04:20 steven Exp $
+--- lib/silcmath/tma.h.orig	Thu May 31 02:47:04 2007
++++ lib/silcmath/tma.h	Fri Jun 15 14:12:27 2007
+@@ -51,7 +51,7 @@ extern "C" {
  
  
  /* detect 64-bit mode if possible */
