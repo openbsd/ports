@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/27 13:36:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/08/02 14:39:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"H.323 IP telephony endpoint"
+COMMENT=	H.323 IP telephony endpoint
 
 DISTNAME=	ohphone-v1_14_4
 PKGNAME=	ohphone-1.14.4
@@ -36,7 +36,6 @@ NO_REGRESS=	Yes
 
 MAKE_ENV+=	CC=${CC} CPLUS=${CXX} \
 		OPENH323DIR=${LOCALBASE}/share/openh323/ \
-		OH323_LIBDIR=${LOCALBASE}/lib \
 		PWLIBDIR=${LOCALBASE}/share/pwlib/ \
 		SYSLIBDIR=`ptlib-config --libdir` \
 		PTLIB_FILE=libpt.`ptlib-config --sharedlibext`.`ptlib-config --version` \
