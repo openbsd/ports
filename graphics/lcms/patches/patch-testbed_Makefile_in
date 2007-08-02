@@ -1,7 +1,7 @@
-$OpenBSD: patch-testbed_Makefile_in,v 1.2 2006/03/16 11:03:07 espie Exp $
---- testbed/Makefile.in.orig	Tue Nov  1 01:13:40 2005
-+++ testbed/Makefile.in	Tue Mar  7 22:43:47 2006
-@@ -222,7 +222,7 @@ target_vendor = @target_vendor@
+$OpenBSD: patch-testbed_Makefile_in,v 1.3 2007/08/02 19:22:12 mbalmer Exp $
+--- testbed/Makefile.in.orig	Fri Jul 27 12:10:45 2007
++++ testbed/Makefile.in	Tue Jul 31 14:40:05 2007
+@@ -220,7 +220,7 @@ top_srcdir = @top_srcdir@
  # Don't require all the GNU mandated files
  AUTOMAKE_OPTIONS = 1.7 foreign
  INCLUDES = -I$(top_builddir)/include -I$(top_srcdir)/include
