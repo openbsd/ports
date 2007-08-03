@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2007/05/25 09:49:54 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2007/08/03 00:46:29 kili Exp $
 
-COMMENT-main=		"K Desktop Environment, graphic applications"
-COMMENT-kamera=		"KDE interface to digital cameras"
-COMMENT-kpov=		"KDE modeller for povray"
-COMMENT-sane=		"KDE interface to scanners"
+COMMENT-main=		K Desktop Environment, graphic applications
+COMMENT-kamera=		KDE interface to digital cameras
+COMMENT-kpov=		KDE modeller for povray
+COMMENT-sane=		KDE interface to scanners
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.7
 DISTNAME=		kdegraphics-${VERSION}
@@ -14,10 +14,13 @@ SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-kamera=	kamera-${VERSION}
 PKGNAME-kpov=	kpovmodeller-${VERSION}
 PKGNAME-sane=	ksane-${VERSION}
+
+MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
+PATCHFILES=		post-3.5.7-kdegraphics-CVE-2007-3387.diff:0
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -40,6 +43,7 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			ungif::graphics/libungif \
 			Iex,Half,Imath,IlmImf::graphics/openexr \
 			fribidi::devel/fribidi \
+			paper::print/libpaper \
 			poppler::print/poppler \
 			poppler-qt::print/poppler,-qt
 WANTLIB-main=		${WANTLIB} \
