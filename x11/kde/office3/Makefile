@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.46 2007/06/09 23:10:45 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2007/08/03 00:37:55 kili Exp $
 
-COMMENT=		"office suite for KDE"
+COMMENT=		office suite for KDE
 
 VERSION=		1.6.3
 CATEGORIES=		x11 x11/kde productivity
@@ -8,7 +8,10 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
+
+MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
+PATCHFILES=		koffice-xpdf-CVE-2007-3387.diff:0
 
 SHARED_LIBS +=	kstore               3.0      # .3.0
 SHARED_LIBS +=	kwmf                 3.0      # .3.0
@@ -81,6 +84,7 @@ LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kpart
 		mysqlclient::databases/mysql \
 		ruby::lang/ruby \
 		exif.>=12::graphics/libexif \
+		paper::print/libpaper \
 		poppler-qt::print/poppler,-qt \
 		GraphicsMagick::graphics/GraphicsMagick \
 		wpd::textproc/libwpd
