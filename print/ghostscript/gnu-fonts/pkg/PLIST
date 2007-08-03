@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/10/20 15:36:20 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/08/03 15:15:20 kili Exp $
 lib/X11/fonts/
 lib/X11/fonts/ghostscript
 share/ghostscript/
@@ -38,7 +38,6 @@ share/ghostscript/fonts/c059036l.pfb
 share/ghostscript/fonts/d050000l.afm
 share/ghostscript/fonts/d050000l.pfb
 share/ghostscript/fonts/fonts.alias-gs
-share/ghostscript/fonts/fonts.scale
 share/ghostscript/fonts/n019003l.afm
 share/ghostscript/fonts/n019003l.pfb
 share/ghostscript/fonts/n019003l.pfm
