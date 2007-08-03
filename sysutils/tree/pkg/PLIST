@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 18:09:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/08/03 17:42:45 bernd Exp $
+@conflict openmotif-demos-*
 bin/tree
 man/man1/tree.0

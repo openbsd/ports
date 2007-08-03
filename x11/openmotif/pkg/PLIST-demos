@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-demos,v 1.4 2007/07/18 21:41:06 mbalmer Exp $
+@comment $OpenBSD: PLIST-demos,v 1.5 2007/08/03 17:42:45 bernd Exp $
+@conflict devtodo-*
+@conflict tree-*
 bin/DNDDemo
 bin/airport
 bin/autopopups
