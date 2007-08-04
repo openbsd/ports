@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.36 2006/02/19 17:32:59 alek Exp $
+# $OpenBSD: Makefile,v 1.37 2007/08/04 22:04:11 kili Exp $
 
-COMMENT=	"format ascii files for printing on PostScript printers"
+COMMENT=	format ascii files for printing on PostScript printers
 
 DISTNAME=	a2ps-4.13b
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
 SHARED_LIBS=	a2ps	2.0
 MODGNU_SHARED_LIBS=a2ps	''
+
+HOMEPAGE=	http://www.gnu.org/software/a2ps/
 
 # License info.  There is some questionable Sun and
 # Adobe Copyrighted things in this source tree.  It
@@ -18,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
+MASTER_SITES=	${MASTER_SITE_GNU:=a2ps/}
 
 MODULES=	devel/gettext
 
@@ -46,6 +48,7 @@ CONFIGURE_ARGS=	--with-medium=${PAPERSIZE} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_EMACS=no \
+		ac_cv_lib_paper_systempapername=no \
 		lispdir=${PREFIX}/share/a2ps/emacs
 .for p in bzip2 gv ghostview dvips pdf2ps acroread convert tex latex ps2pdf \
 	psselect psnup bzip
