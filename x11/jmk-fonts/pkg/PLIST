@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/11 10:03:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/08/04 20:43:38 ajacoutot Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/jmk/
 lib/X11/fonts/jmk/fonts.alias-jmk
 @comment lib/X11/fonts/jmk/fonts.dir
-lib/X11/fonts/jmk/fonts.scale
+@comment lib/X11/fonts/jmk/fonts.scale
 lib/X11/fonts/jmk/modd-iso8859-1-06x11-bold.pcf.gz
 lib/X11/fonts/jmk/modd-iso8859-1-06x11.pcf.gz
 lib/X11/fonts/jmk/modd-iso8859-1-06x13-bold.pcf.gz

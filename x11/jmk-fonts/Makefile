@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/11 10:03:21 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/08/04 20:43:38 ajacoutot Exp $
 
-COMMENT=		"nice fixed width fonts, easy on the eye"
+COMMENT=		nice fixed width fonts, easy on the eye
 
-DISTNAME=		jmk-x11-fonts-3.0
-PKGNAME=		${DISTNAME:S/-x11//}
+V=			3.0
+DISTNAME=		jmk-x11-fonts-${V}
+PKGNAME=		jmk-fonts-${V}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.jmknoble.net/fonts/
