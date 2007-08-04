@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2007/08/04 12:11:46 kurt Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
-COMMENT=	"kaffe.org's Java JDK1.4 compiler, runtime and libs"
+COMMENT-main=	"kaffe.org's Java JDK1.4 compiler, runtime and libs"
 
 DISTNAME=	kaffe-1.1.7
-PKGNAME=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 
 CATEGORIES=	lang
 
@@ -35,7 +35,8 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		audiofile::devel/libaudiofile \
 		esd.>=2::audio/esound \
 		ltdl::devel/libtool,-ltdl
-RUN_DEPENDS=	::archivers/zip
+RUN_DEPENDS=	::archivers/zip \
+		:jikes->=1.22p0:lang/jikes
 
 WANTLIB=	ICE SM X11 Xext Xrender Xtst atk-1.0 c z \
 		fontconfig freetype glib-2.0 gmodule-2.0 \
@@ -45,7 +46,9 @@ WANTLIB=	ICE SM X11 Xext Xrender Xtst atk-1.0 c z \
 
 SEPARATE_BUILD=	concurrent
 
+MULTI_PACKAGES=	-main
 PREFIX=		${LOCALBASE}/kaffe
+PREFIX-main=	${LOCALBASE}
 
 CONFIGURE_STYLE=gnu
 GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}
@@ -62,5 +65,8 @@ CONFIGURE_ARGS+= \
 		--with-iconv-prefix=${LOCALBASE} \
 		--disable-boehm-gc-configuration \
 		--with-engine=intrp
+
+post-install:
+	@cd ${PREFIX}/jre/lib && ln -s glibj.zip rt.jar
 
 .include <bsd.port.mk>

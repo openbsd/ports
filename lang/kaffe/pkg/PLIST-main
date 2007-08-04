@@ -1,0 +1,107 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2007/08/04 12:11:46 kurt Exp $
+%%SHARED%%
+kaffe/
+kaffe/bin/
+kaffe/bin/appletviewer
+kaffe/bin/fastjar
+kaffe/bin/install-jar
+kaffe/bin/jar
+kaffe/bin/java
+kaffe/bin/javac
+kaffe/bin/javah
+kaffe/bin/javap
+kaffe/bin/jdb
+kaffe/bin/kaffe
+kaffe/bin/kaffeh
+kaffe/bin/native2ascii
+kaffe/bin/rmic
+kaffe/bin/rmiregistry
+kaffe/bin/serialver
+kaffe/include/
+kaffe/include/config-int.h
+kaffe/include/jawt.h
+kaffe/include/jawt_md.h
+kaffe/include/jni.h
+kaffe/include/jni_cpp.h
+kaffe/include/jni_md.h
+kaffe/include/jvmpi.h
+kaffe/include/kaffe/
+kaffe/include/kaffe/java_lang_Object.h
+kaffe/include/kaffe/java_lang_StackTraceElement.h
+kaffe/include/kaffe/java_lang_String.h
+kaffe/include/kaffe/java_lang_Thread.h
+kaffe/include/kaffe/java_lang_ThreadGroup.h
+kaffe/include/kaffe/java_lang_Throwable.h
+kaffe/include/kaffe/java_lang_VMThrowable.h
+kaffe/include/kaffe/jmalloc.h
+kaffe/include/kaffe/trampoline.h
+kaffe/include/kaffe_jni.h
+@comment kaffe/info/
+@comment @info kaffe/info/fastjar.info
+@comment @info kaffe/info/hacking.info
+@comment @info kaffe/info/vmintegration.info
+kaffe/jre/
+kaffe/jre/bin/
+kaffe/jre/bin/java
+kaffe/jre/bin/kaffe
+kaffe/jre/bin/kaffe-bin
+kaffe/jre/bin/rmiregistry
+kaffe/jre/lib/
+kaffe/jre/lib/glibj.zip
+kaffe/jre/lib/gmpjavamath.jar
+kaffe/jre/lib/${GNU_ARCH}/
+kaffe/jre/lib/${GNU_ARCH}/libgtkpeer.a
+kaffe/jre/lib/${GNU_ARCH}/libgtkpeer.la
+kaffe/jre/lib/${GNU_ARCH}/libjavaio.a
+kaffe/jre/lib/${GNU_ARCH}/libjavaio.la
+kaffe/jre/lib/${GNU_ARCH}/libjavalang.a
+kaffe/jre/lib/${GNU_ARCH}/libjavalang.la
+kaffe/jre/lib/${GNU_ARCH}/libjavanet.a
+kaffe/jre/lib/${GNU_ARCH}/libjavanet.la
+kaffe/jre/lib/${GNU_ARCH}/libjavanio.a
+kaffe/jre/lib/${GNU_ARCH}/libjavanio.la
+kaffe/jre/lib/${GNU_ARCH}/libjawtgnu.a
+kaffe/jre/lib/${GNU_ARCH}/libjawtgnu.la
+kaffe/jre/lib/${GNU_ARCH}/libkaffevm.a
+kaffe/jre/lib/${GNU_ARCH}/libkaffevm.la
+kaffe/jre/lib/${GNU_ARCH}/libmanagement.a
+kaffe/jre/lib/${GNU_ARCH}/libmanagement.la
+kaffe/jre/lib/${GNU_ARCH}/libmath.a
+kaffe/jre/lib/${GNU_ARCH}/libmath.la
+kaffe/jre/lib/${GNU_ARCH}/libsecurity.a
+kaffe/jre/lib/${GNU_ARCH}/libsecurity.la
+kaffe/jre/lib/${GNU_ARCH}/libtritonusesd.a
+kaffe/jre/lib/${GNU_ARCH}/libtritonusesd.la
+kaffe/jre/lib/${GNU_ARCH}/libzip.a
+kaffe/jre/lib/${GNU_ARCH}/libzip.la
+kaffe/jre/lib/logging.properties
+kaffe/jre/lib/rt.jar
+@symlink kaffe/jre/lib/rt.jar
+kaffe/jre/lib/security/
+kaffe/jre/lib/security/Kaffe.security
+kaffe/lib/
+kaffe/lib/logging.properties
+kaffe/lib/security/
+kaffe/lib/security/classpath.security
+kaffe/lib/tools.jar
+@mandir kaffe/man/
+kaffe/man/man1/
+@man kaffe/man/man1/fastjar.1
+@man kaffe/man/man1/kaffe.1
+kaffe/share/
+kaffe/share/classpath/
+kaffe/share/classpath/README
+kaffe/share/classpath/tools.zip
+kaffe/share/locale/
+kaffe/share/locale/de/
+kaffe/share/locale/de/LC_MESSAGES/
+kaffe/share/locale/de/LC_MESSAGES/kaffe.mo
+kaffe/share/locale/fr/
+kaffe/share/locale/fr/LC_MESSAGES/
+kaffe/share/locale/fr/LC_MESSAGES/kaffe.mo
+kaffe/share/locale/zh_CN/
+kaffe/share/locale/zh_CN/LC_MESSAGES/
+kaffe/share/locale/zh_CN/LC_MESSAGES/kaffe.mo
+kaffe/share/locale/zh_TW/
+kaffe/share/locale/zh_TW/LC_MESSAGES/
+kaffe/share/locale/zh_TW/LC_MESSAGES/kaffe.mo
