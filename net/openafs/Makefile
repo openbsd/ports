@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/02/19 21:09:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2007/08/05 15:38:09 naddy Exp $
 
+BROKEN=			does not build
 ONLY_FOR_ARCHS= 	i386
 
 COMMENT=		"Distributed filesystem OpenAFS"
