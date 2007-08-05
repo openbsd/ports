@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/20 05:32:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2007/08/05 12:34:33 mbalmer Exp $
 
 COMMENT=	"lua binding of posix and pcre regex libraries"
 SHARED_ONLY=	Yes
 
 V=		2.1.0
 DISTNAME=	lrexlib-${V}
-PKGNAME=	luarexlib-${V}
+PKGNAME=	luarexlib-${V}p0
 CATEGORIES=	devel
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/2141/
 HOMEPAGE=	http://lrexlib.luaforge.net/
 EXTRACT_SUFX=	.zip
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

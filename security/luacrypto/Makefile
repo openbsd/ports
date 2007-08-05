@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/09 19:31:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/08/05 12:34:33 mbalmer Exp $
 
 COMMENT=	"Lua binding for the OpenSSL crypto libraries"
 SHARED_ONLY=	Yes
 
 DISTNAME=	luacrypto-0.1.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	security
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/1395/
 HOMEPAGE=	http://luacrypto.luaforge.net/
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

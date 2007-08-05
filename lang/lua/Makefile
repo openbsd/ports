@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2007/04/03 07:05:06 pedro Exp $
+# $OpenBSD: Makefile,v 1.30 2007/08/05 12:34:33 mbalmer Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
 DISTNAME=	lua-5.1.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang
 
 MASTER_SITES=	http://www.lua.org/ftp/ \
@@ -13,8 +14,6 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 		http://ftp.chg.ru/pub/lang/lua/
 
 HOMEPAGE=	http://www.lua.org/
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

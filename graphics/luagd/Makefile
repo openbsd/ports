@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/17 11:56:56 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2007/08/05 12:34:33 mbalmer Exp $
 
 COMMENT=	"gd binding for the lua language"
 
 V=		2.0.33r2
-PKGNAME=	luagd-$(V)p0
+PKGNAME=	luagd-$(V)p1
 DISTNAME=	lua-gd-$(V)
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://lua-gd.luaforge.net/
 MASTER_SITES=	http://luaforge.net/frs/download.php/1592/
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/21 01:21:19 pedro Exp $
+# $OpenBSD: Makefile,v 1.6 2007/08/05 12:34:33 mbalmer Exp $
 
 COMMENT=	"coroutine oriented portable asynchronous services for lua"
 V=		1.1.0
 DISTNAME=	copas-${V}
-PKGNAME=	luacopas-${V}
+PKGNAME=	luacopas-${V}p0
 CATEGORIES=	devel
 MASTER_SITES=	http://luaforge.net/frs/download.php/1768/
 
 HOMEPAGE=	http://www.keplerproject.org/copas/
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/02 01:52:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2007/08/05 12:34:33 mbalmer Exp $
 
 COMMENT=	"berkeley's implementation of the logo programming language"
 DISTNAME=	ucblogo-5.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang
 
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 HOMEPAGE=	http://www.cs.berkeley.edu/~bh/logo.html
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

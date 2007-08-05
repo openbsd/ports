@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2007/07/10 05:15:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2007/08/05 12:34:33 mbalmer Exp $
 
 COMMENT=	"alarm library for the lua language"
 SHARED_ONLY=	Yes
 
 DISTNAME=	lalarm
 DATE=		20061011
-PKGNAME=	luaalarm-${DATE}p0
+PKGNAME=	luaalarm-${DATE}p1
 # don't use PKGNAME
 DIST_SUBDIR=	luaalarm-${DATE}
 WRKDIST=	${WRKDIR}/alarm
@@ -13,8 +13,6 @@ CATEGORIES=	devel
 
 MASTER_SITES=	${HOMEPAGE}5.0/
 HOMEPAGE=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # PD
 PERMIT_PACKAGE_CDROM=	Yes

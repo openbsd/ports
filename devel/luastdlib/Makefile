@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/12 09:39:40 pedro Exp $
+# $OpenBSD: Makefile,v 1.2 2007/08/05 12:34:33 mbalmer Exp $
 
 COMMENT=	"lua library of common programming tasks"
 
 DISTNAME=	stdlib
 V=		4
-PKGNAME=	luastdlib-${V}
+PKGNAME=	luastdlib-${V}p0
 DIST_SUBDIR=	${DISTNAME}
 CATEGORIES=	devel
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/2367/
 HOMEPAGE=	http://luaforge.net/projects/stdlib/
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

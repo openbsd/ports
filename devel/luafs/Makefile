@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/10 20:23:29 pedro Exp $
+# $OpenBSD: Makefile,v 1.8 2007/08/05 12:34:33 mbalmer Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"file system library for the lua language"
 DISTNAME=	luafilesystem-1.2.1
-PKGNAME=	luafs-1.2.1
+PKGNAME=	luafs-1.2.1p0
 CATEGORIES=	devel
 MASTER_SITES=	http://luaforge.net/frs/download.php/2381/
 
 HOMEPAGE=	http://www.keplerproject.org/luafilesystem/
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

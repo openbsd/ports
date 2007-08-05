@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/23 05:16:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/08/05 12:34:33 mbalmer Exp $
 
 COMMENT=	"customizable script to fetch youtube videos"
 
-PKGNAME=	yt-5
+PKGNAME=	yt-6
 CATEGORIES=	net
 DISTFILES=
-
-MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # Public domain
 PERMIT_PACKAGE_CDROM=	Yes
