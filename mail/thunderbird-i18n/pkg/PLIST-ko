@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-ko,v 1.1 2007/08/05 15:43:48 martynas Exp $
+mozilla-thunderbird/extensions/langpack-ko@thunderbird.mozilla.org/
+mozilla-thunderbird/extensions/langpack-ko@thunderbird.mozilla.org/chrome/
+mozilla-thunderbird/extensions/langpack-ko@thunderbird.mozilla.org/chrome.manifest
+mozilla-thunderbird/extensions/langpack-ko@thunderbird.mozilla.org/chrome/chromelist.txt
+mozilla-thunderbird/extensions/langpack-ko@thunderbird.mozilla.org/chrome/ko.jar
+mozilla-thunderbird/extensions/langpack-ko@thunderbird.mozilla.org/install.rdf
