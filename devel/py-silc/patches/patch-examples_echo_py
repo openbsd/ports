@@ -1,0 +1,24 @@
+$OpenBSD: patch-examples_echo_py,v 1.1 2007/08/05 17:50:03 martynas Exp $
+--- examples/echo.py.orig	Mon Jul 10 03:09:26 2006
++++ examples/echo.py	Sun Jul  1 22:52:11 2007
+@@ -11,6 +11,10 @@ class EchoClient(silc.SilcClient):
+           print message
+           self.send_private_message(sender, message)
+ 
++      def running(self):
++          print "* Running"
++          client.connect_to_server("silc.example.com")
++
+       def connected(self):
+           print "* Connected"
+           self.command_call("JOIN #cam")
+@@ -37,8 +41,7 @@ class EchoClient(silc.SilcClient):
+ if __name__ == "__main__":
+    keys = silc.create_key_pair("silc.pub", "silc.prv", passphrase = "")
+    client = EchoClient(keys, "echobot", "echobot", "Echo Bot")
+-   client.connect_to_server("silc.example.com")
+-   
++
+    while True:
+        try:
+            client.run_one()
