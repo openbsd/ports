@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/16 18:54:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/08/05 14:22:30 martynas Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
 DISTNAME=		liferea-1.2.20
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
@@ -32,7 +33,8 @@ LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunn
 			notify.>=2::devel/libnotify \
 			lua.>=5::lang/lua \
 			xslt.>=3.3::textproc/libxslt \
-			dbus-glib-1::x11/dbus-glib
+			dbus-glib-1::x11/dbus-glib \
+			gnutls.>=12::security/gnutls
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::x11/hicolor-icon-theme
 
@@ -57,7 +59,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtkhtml2 \
 			--enable-xulrunner \
 			--enable-gnutls \
-			--with-gnutls-libs=${PREFIX}/lib \
+			--with-gnutls-libs=${LOCALBASE}/lib \
 			--enable-libnotify \
 			--enable-lua
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
