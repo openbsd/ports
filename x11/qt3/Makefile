@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2007/05/14 08:22:00 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2007/08/05 12:31:20 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		"C++ X11 GUI toolkit"
@@ -106,7 +106,6 @@ CONFIGURE_ARGS+=	-plugindir ${QT_PLUGINSDIR}
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" 
 
 LIB_DEPENDS=
-BUILD_DEPENDS=::graphics/jpeg
 BUILD_DEPENDS=::print/cups
 
 .if !empty(FLAVOR:L:Mno_mysql)
