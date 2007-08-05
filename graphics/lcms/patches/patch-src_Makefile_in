@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2007/08/02 19:22:12 mbalmer Exp $
---- src/Makefile.in.orig	Fri Jul 27 12:10:45 2007
-+++ src/Makefile.in	Tue Jul 31 14:40:05 2007
-@@ -240,7 +240,7 @@ INCLUDES = -I$(top_builddir)/include -I$(top_srcdir)/i
+$OpenBSD: patch-src_Makefile_in,v 1.5 2007/08/05 19:04:52 espie Exp $
+--- src/Makefile.in.orig	Tue Nov  1 01:13:40 2005
++++ src/Makefile.in	Tue Mar  7 22:43:15 2006
+@@ -242,7 +242,7 @@ INCLUDES = -I$(top_builddir)/include -I$
  liblcms_la_LDFLAGS = -no-undefined \
    -version-info $(LIBRARY_CURRENT):$(LIBRARY_REVISION):$(LIBRARY_AGE)
  
