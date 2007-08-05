@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/07/28 07:09:19 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2007/08/05 22:27:53 naddy Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -30,6 +30,7 @@ MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://neacm.fe.up.pt/pub/octave/bleeding-edge/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
 
+BUILD_DEPENDS=	::devel/desktop-file-utils
 LIB_DEPENDS=	fftw3.>=3::math/fftw3 \
 		lapack.>=3::math/lapack \
 		blas.>=1::math/blas \
