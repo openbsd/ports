@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2007/07/30 18:11:06 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/08/05 22:25:09 steven Exp $
 
 
 COMMENT=		SNPP, TAP, email notification application
 
 V=1.000002
 DISTNAME=		sendpage-${V}
-PKGNAME=		p5-SendPage-${V}
+PKGNAME=		p5-SendPage-${V}p0
 CATEGORIES=		comms
 
 HOMEPAGE=		http://sendpage.org/
@@ -22,7 +22,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sendpage/}
 
 RUN_DEPENDS=	::comms/p5-Device-SerialPort \
 		::mail/p5-Mail-Tools \
-		::net/p5-Net-SNPP
+		::net/p5-Net-SNPP \
+		::databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	perl
