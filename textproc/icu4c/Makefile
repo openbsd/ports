@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/19 21:52:09 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/08/06 21:17:43 steven Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		International Components for Unicode
 
 DISTNAME=		icu4c-3_6-src
-PKGNAME=		icu4c-3.6
+PKGNAME=		icu4c-3.6p0
 SO_VERSION=		0.0
 .for _lib in icudata icui18n icuio icule iculx icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
@@ -38,10 +38,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 WRKDIST=		${WRKDIR}/icu
 WRKSRC=			${WRKDIST}/source
 
-REGRESS_TARGET=		check
-
-pre-configure:
-	ln -sf ./icudt36l.dat ${WRKSRC}/data/in/icudt0l.dat
-	perl -pi -e 's,!!SO_VERSION!!,${SO_VERSION},' ${WRKSRC}/configure
+MAKE_FLAGS=		SO_TARGET_VERSION=${SO_VERSION}
+FAKE_FLAGS=		SO_TARGET_VERSION=${SO_VERSION} \
+			${DESTDIRNAME}=${WRKINST}
 
 .include <bsd.port.mk>

@@ -1,0 +1,27 @@
+$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.1 2007/08/06 21:17:43 steven Exp $
+--- source/config/mh-bsd-gcc.orig	Thu Mar 23 19:51:52 2006
++++ source/config/mh-bsd-gcc	Mon Aug  6 17:46:30 2007
+@@ -21,7 +21,7 @@ LD_RPATH=	
+ LD_RPATH_PRE=	-Wl,-rpath,
+ 
+ ## Compiler switch to embed a library name
+-LD_SONAME = -Wl,-soname -Wl,$(notdir $(MIDDLE_SO_TARGET))
++LD_SONAME =
+ 
+ ## Shared object suffix
+ SO = so
+@@ -55,10 +55,10 @@ STATIC_O = ao
+ 
+ ## Versioned libraries rules
+ 
+-%.$(SO).$(SO_TARGET_VERSION_MAJOR): %.$(SO).$(SO_TARGET_VERSION)
+-	$(RM) $@ && ln -s ${<F} $@
+-%.$(SO): %.$(SO).$(SO_TARGET_VERSION_MAJOR)
+-	$(RM) $@ && ln -s ${*F}.$(SO).$(SO_TARGET_VERSION) $@
++%.$(SO).$(SO_TARGET_VERSION_MAJOR):
++	
++%.$(SO):
++	
+ 
+ ## End FreeBSD-specific setup
+ 

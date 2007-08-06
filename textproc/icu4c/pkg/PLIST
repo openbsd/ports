@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/19 21:52:09 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/08/06 21:17:43 steven Exp $
 bin/derb
 bin/genbrk
 bin/gencnval
@@ -138,26 +138,12 @@ lib/icu/3.6/
 lib/icu/3.6/Makefile.inc
 lib/icu/Makefile.inc
 lib/icu/current
-lib/libicudata.so
-lib/libicudata.so.0
 @lib lib/libicudata.so.${LIBicudata_VERSION}
-lib/libicui18n.so
-lib/libicui18n.so.0
 @lib lib/libicui18n.so.${LIBicui18n_VERSION}
-lib/libicuio.so
-lib/libicuio.so.0
 @lib lib/libicuio.so.${LIBicuio_VERSION}
-lib/libicule.so
-lib/libicule.so.0
 @lib lib/libicule.so.${LIBicule_VERSION}
-lib/libiculx.so
-lib/libiculx.so.0
 @lib lib/libiculx.so.${LIBiculx_VERSION}
-lib/libicutu.so
-lib/libicutu.so.0
 @lib lib/libicutu.so.${LIBicutu_VERSION}
-lib/libicuuc.so
-lib/libicuuc.so.0
 @lib lib/libicuuc.so.${LIBicuuc_VERSION}
 @man man/man1/derb.1
 @man man/man1/genbrk.1

@@ -1,0 +1,16 @@
+$OpenBSD: patch-source_layout_Makefile_in,v 1.1 2007/08/06 21:17:43 steven Exp $
+--- source/layout/Makefile.in.orig	Mon Aug  6 19:08:27 2007
++++ source/layout/Makefile.in	Mon Aug  6 19:08:34 2007
+@@ -168,12 +168,6 @@ ifneq ($(ENABLE_STATIC),)
+ endif
+ ifneq ($(ENABLE_SHARED),)
+ 	$(INSTALL-L) $(FINAL_SO_TARGET) $(DESTDIR)$(libdir)
+-ifneq ($(FINAL_SO_TARGET),$(SO_TARGET))
+-	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(SO_TARGET)) && ln -s $(notdir $(FINAL_SO_TARGET)) $(notdir $(SO_TARGET))
+-ifneq ($(FINAL_SO_TARGET),$(MIDDLE_SO_TARGET))
+-	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(MIDDLE_SO_TARGET)) && ln -s $(notdir $(FINAL_SO_TARGET)) $(notdir $(MIDDLE_SO_TARGET))
+-endif
+-endif
+ endif
+ ifneq ($(IMPORT_LIB_EXT),)
+ 	$(INSTALL-L) $(FINAL_IMPORT_LIB) $(DESTDIR)$(libdir)

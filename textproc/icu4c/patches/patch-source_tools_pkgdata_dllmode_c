@@ -1,0 +1,27 @@
+$OpenBSD: patch-source_tools_pkgdata_dllmode_c,v 1.1 2007/08/06 21:17:43 steven Exp $
+--- source/tools/pkgdata/dllmode.c.orig	Fri Feb 24 20:47:48 2006
++++ source/tools/pkgdata/dllmode.c	Mon Aug  6 19:11:42 2007
+@@ -120,9 +120,6 @@ void pkg_mode_dll(UPKGOptions *o, FileStream *makefile
+ #endif
+ 
+     uprv_strcpy(tmp, "all: $(TARGETDIR)/$(FINAL_SO_TARGET) $(BATCH_TARGET)");
+-    if (o->version) {
+-        uprv_strcat(tmp, " $(TARGETDIR)/$(MIDDLE_SO_TARGET) $(TARGETDIR)/$(SO_TARGET)");
+-    }
+     uprv_strcat(tmp, "\n\n");
+     T_FileStream_writeLine(makefile, tmp);
+     
+@@ -260,13 +257,6 @@ void pkg_mode_dll(UPKGOptions *o, FileStream *makefile
+     T_FileStream_writeLine(makefile, "\t$(INSTALL-L) $(TARGETDIR)/$(basename $(FINAL_SO_TARGET))$(IMPORT_LIB_EXT) $(INSTALLTO)/$(basename( $(FINAL_SO_TARGET))$(IMPORT_LIB_EXT)\n");
+     T_FileStream_writeLine(makefile, "endif\n");
+     if (o->version) {
+-        T_FileStream_writeLine(makefile, "ifneq ($(FINAL_SO_TARGET),$(SO_TARGET))\n");
+-        T_FileStream_writeLine(makefile, "\tcd $(INSTALLTO) && $(RM) $(SO_TARGET) && ln -s $(FINAL_SO_TARGET) $(SO_TARGET)\n");
+-        T_FileStream_writeLine(makefile, "ifneq ($(FINAL_SO_TARGET),$(MIDDLE_SO_TARGET))\n");
+-        T_FileStream_writeLine(makefile, "\tcd $(INSTALLTO) && $(RM) $(MIDDLE_SO_TARGET) && ln -s $(FINAL_SO_TARGET) $(MIDDLE_SO_TARGET)\n");
+-        T_FileStream_writeLine(makefile, "endif\n");
+-        T_FileStream_writeLine(makefile, "endif\n");
+-
+ #ifdef OS390
+         T_FileStream_writeLine(makefile, "ifneq ($(IMPORT_LIB_EXT),)\n");
+         T_FileStream_writeLine(makefile, "\tcd $(INSTALLTO) && $(RM) $(basename $(MIDDLE_SO_TARGET))$(IMPORT_LIB_EXT) && ln -s $(basename $(FINAL_SO_TARGET))$(IMPORT_LIB_EXT) $(basename $(MIDDLE_SO_TARGET))$(IMPORT_LIB_EXT)\n");

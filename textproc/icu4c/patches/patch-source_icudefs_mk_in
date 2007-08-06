@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_icudefs_mk_in,v 1.1.1.1 2007/07/19 21:52:09 simon Exp $
---- source/icudefs.mk.in.orig	Mon Jun 25 21:13:39 2007
-+++ source/icudefs.mk.in	Mon Jun 25 21:23:00 2007
+$OpenBSD: patch-source_icudefs_mk_in,v 1.2 2007/08/06 21:17:43 steven Exp $
+--- source/icudefs.mk.in.orig	Tue Sep 20 22:32:08 2005
++++ source/icudefs.mk.in	Mon Aug  6 18:58:08 2007
 @@ -42,7 +42,7 @@ SO_TARGET_VERSION_MAJOR = @LIB_VERSION_MAJOR@
  
  ICUDATA_DIR = @pkgicudatadir@/$(PACKAGE)$(ICULIBSUFFIX)/$(VERSION)
