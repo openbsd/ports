@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.1 2007/07/20 05:23:41 jakemsr Exp $
+$OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.2 2007/08/07 14:22:02 pvalchev Exp $
 --- src/audio/sun/SDL_sunaudio.c.orig	Sun Jan  4 08:49:15 2004
-+++ src/audio/sun/SDL_sunaudio.c	Sat Jul 14 15:54:19 2007
++++ src/audio/sun/SDL_sunaudio.c	Mon Aug  6 17:12:50 2007
 @@ -32,7 +32,7 @@ static char rcsid =
  #include <fcntl.h>
  #include <errno.h>
@@ -83,7 +83,18 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.1 2007/07/20 05:23:41 jakemsr E
  		}
  		break;
  
-@@ -324,13 +355,22 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -306,6 +337,10 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+ 	    info.play.precision = (enc == AUDIO_ENCODING_ULAW)
+ 		                  ? 8 : spec->format & 0xff;
+ 	    info.play.encoding = enc;
++	    if( ioctl(audio_fd, AUDIO_SETINFO, &info) == -1 ) {
++		 /* some devices only play at 48000 Hz */
++	         info.play.sample_rate = 48000;
++	    }
+ 	    if( ioctl(audio_fd, AUDIO_SETINFO, &info) == 0 ) {
+ 
+ 		/* Check to be sure we got what we wanted */
+@@ -324,13 +359,22 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  	    }
  
  	    switch(enc) {
@@ -106,7 +117,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.1 2007/07/20 05:23:41 jakemsr E
  		/* linear 16bit didn't work either, resort to µ-law */
  		enc = AUDIO_ENCODING_ULAW;
  		spec->channels = 1;
-@@ -348,6 +388,9 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -348,6 +392,9 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  	}
  #endif /* AUDIO_SETINFO */
  	written = 0;
