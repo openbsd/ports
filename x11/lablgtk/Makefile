@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/02/18 07:15:06 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2007/08/07 17:02:59 kurt Exp $
 
 COMMENT=	"OCaml interface to GTK+"
 
 DISTNAME=	lablgtk-1.2.7
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
@@ -21,7 +21,8 @@ LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 RUN_DEPENDS=	::lang/ocaml
 
 FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \
-		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk
+		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk \
+		DLLDIR=${WRKINST}${PREFIX}/lib/ocaml/stublibs
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
