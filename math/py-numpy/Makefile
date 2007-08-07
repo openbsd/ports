@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/25 10:47:02 djm Exp $
+# $OpenBSD: Makefile,v 1.3 2007/08/07 05:25:58 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"fast array and numeric programming library for Python"
 
 DISTNAME=	numpy-1.0.1
-PKGNAME=	${DISTNAME:S/^/py-/}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	math devel
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
@@ -21,6 +21,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=numpy/}
 HOMEPAGE=	http://numeric.scipy.org/
 
 MODULES=	lang/python
+
+pre-build:
+	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
 
 do-regress: fake
 	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
