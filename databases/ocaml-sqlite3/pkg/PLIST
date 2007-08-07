@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/01 01:20:25 avsm Exp $
-@comment bin/sqlite3top
+@comment $OpenBSD: PLIST,v 1.2 2007/08/07 18:58:17 kurt Exp $
 lib/ocaml/
-lib/ocaml/site-lib/
 lib/ocaml/site-lib/sqlite3/
 lib/ocaml/site-lib/sqlite3/META
 lib/ocaml/site-lib/sqlite3/sqlite3.cma
