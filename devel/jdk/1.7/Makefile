@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/13 22:52:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2007/08/07 16:07:22 kurt Exp $
+
+BROKEN= "Incomplete port, 1.7 JVM + 1.5 classes"
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	i386 amd64
