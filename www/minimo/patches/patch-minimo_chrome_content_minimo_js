@@ -1,6 +1,6 @@
-$OpenBSD: patch-minimo_chrome_content_minimo_js,v 1.5 2007/04/01 13:19:58 martynas Exp $
---- minimo/chrome/content/minimo.js.orig	Fri Feb 16 02:27:09 2007
-+++ minimo/chrome/content/minimo.js	Sun Apr  1 13:48:18 2007
+$OpenBSD: patch-minimo_chrome_content_minimo_js,v 1.6 2007/08/08 17:34:41 martynas Exp $
+--- minimo/chrome/content/minimo.js.orig	Fri May 25 00:23:25 2007
++++ minimo/chrome/content/minimo.js	Sun Aug  5 15:56:18 2007
 @@ -400,10 +400,6 @@ function MiniNavStartup()
        gPref = Components.classes["@mozilla.org/preferences-service;1"]
          .getService(nsIPrefBranch);
@@ -21,7 +21,7 @@ $OpenBSD: patch-minimo_chrome_content_minimo_js,v 1.5 2007/04/01 13:19:58 martyn
        if ( page.split("|").length > 1 ) {
             homepages = page.split("|");
        } else {
-@@ -1629,7 +1623,8 @@ function FullScreenToggle()
+@@ -1685,7 +1679,8 @@ function FullScreenToggle()
  
  function DoFullScreen(fullscreen)
  {
@@ -31,7 +31,7 @@ $OpenBSD: patch-minimo_chrome_content_minimo_js,v 1.5 2007/04/01 13:19:58 martyn
  
    // Show a Quit in the context menu
    document.getElementById("context_menu_quit").hidden = !fullscreen;
-@@ -2275,7 +2270,7 @@ function BrowserFileOpen() {
+@@ -2331,7 +2326,7 @@ function BrowserFileOpen() {
    fp.init(window, null, nsIFilePicker.modeOpenMultiple);
  
    var fileCustomDirFile= refLocalFile.QueryInterface(nsILocalFile);
