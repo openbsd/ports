@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/08/08 14:59:47 aanriot Exp $
+--- Makefile.in.orig	Mon Aug  6 14:24:56 2007
++++ Makefile.in	Mon Aug  6 14:26:11 2007
+@@ -782,19 +782,19 @@ uninstall-am: uninstall-binPROGRAMS uninstall-info-am
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+ 	if test -d $(srcdir)/image; then \
+-	  $(mkinstalldirs)     $(game_datadir); \
+-	  $(mkinstalldirs) $(game_datadir)/image; \
+-	  cp -r $(srcdir)/image/* $(game_datadir)/image;\
++	  $(mkinstalldirs) $(DESTDIR)/$(game_datadir); \
++	  $(mkinstalldirs) $(DESTDIR)/$(game_datadir)/image; \
++	  cp -r $(srcdir)/image/* $(DESTDIR)/$(game_datadir)/image;\
+ 	fi; \
+ 	if test -d $(srcdir)/level; then \
+-	  $(mkinstalldirs) $(game_datadir)/ ; \
+-	  $(mkinstalldirs) $(game_datadir)//level; \
+-	  cp -r $(srcdir)/level/* $(game_datadir)//level;\
++	  $(mkinstalldirs) $(DESTDIR)/$(game_datadir)/ ; \
++	  $(mkinstalldirs) $(DESTDIR)/$(game_datadir)/level; \
++	  cp -r $(srcdir)/level/* $(DESTDIR)/$(game_datadir)/level;\
+ 	fi; \
+ 	if test -d $(srcdir)/sounds; then \
+-	  $(mkinstalldirs) $(game_datadir)/ ; \
+-	  $(mkinstalldirs) $(game_datadir)//sounds; \
+-	  cp -r $(srcdir)/sounds/* $(game_datadir)//sounds;\
++	  $(mkinstalldirs) $(DESTDIR)/$(game_datadir)/ ; \
++	  $(mkinstalldirs) $(DESTDIR)/$(game_datadir)/sounds; \
++	  cp -r $(srcdir)/sounds/* $(DESTDIR)/$(game_datadir)/sounds;\
+ 	fi;
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
