@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/04/01 10:49:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/08/08 22:49:33 steven Exp $
 bin/embedjs
 bin/jsaccess
 bin/kjscmd
@@ -70,11 +70,11 @@ lib/ruby/site_ruby/1.8/Qt/
 lib/ruby/site_ruby/1.8/Qt.rb
 lib/ruby/site_ruby/1.8/Qt/qtruby.rb
 lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/korundum.la
-lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/korundum.so.0.0
+lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/korundum.so
 lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/qtruby.la
-lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/qtruby.so.0.0
+lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/qtruby.so
 lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/qui.la
-lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/qui.so.0.0
+lib/ruby/site_ruby/1.8/${GNU_ARCH}-openbsd${OSREV}/qui.so
 @man man/man1/kjscmd.1
 share/applications/kde/kjscmd.desktop
 share/applnk/

@@ -1,0 +1,12 @@
+$OpenBSD: patch-korundum_rubylib_korundum_Makefile_in,v 1.1 2007/08/08 22:49:33 steven Exp $
+--- korundum/rubylib/korundum/Makefile.in.orig	Wed Aug  8 16:25:03 2007
++++ korundum/rubylib/korundum/Makefile.in	Wed Aug  8 16:25:12 2007
+@@ -433,7 +433,7 @@ xparts_SUBDIR_included_TRUE = @xparts_SUBDIR_included_
+ INCLUDES = -I$(top_srcdir)/smoke -I$(top_srcdir)/qtruby/rubylib/qtruby $(all_includes) -I$(RUBY_ARCHDIR)
+ rubylibdir = $(RUBY_SITEARCHDIR)
+ rubylib_LTLIBRARIES = korundum.la
+-korundum_la_LDFLAGS = -module $(all_libraries) -version-info 0:0:0
++korundum_la_LDFLAGS = -module $(all_libraries) -avoid-version
+ #>- korundum_la_METASOURCES = AUTO
+ korundum_la_SOURCES = Korundum.cpp kdehandlers.cpp
+ korundum_la_LIBADD = $(LIB_KDE) $(top_builddir)/smoke/kde/libsmokekde.la $(top_builddir)/qtruby/rubylib/qtruby/libqtrubyinternal.la

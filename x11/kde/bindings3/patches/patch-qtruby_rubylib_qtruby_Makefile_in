@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtruby_rubylib_qtruby_Makefile_in,v 1.1 2007/08/08 22:49:33 steven Exp $
+--- qtruby/rubylib/qtruby/Makefile.in.orig	Wed Aug  8 16:26:48 2007
++++ qtruby/rubylib/qtruby/Makefile.in	Wed Aug  8 16:26:54 2007
+@@ -455,7 +455,7 @@ libqtrubyinternal_la_SOURCES = Qt.cpp handlers.cpp 
+ rubylibdir = $(RUBY_SITEARCHDIR)
+ rubylib_LTLIBRARIES = qtruby.la
+ qtruby_la_SOURCES = 
+-qtruby_la_LDFLAGS = -module $(all_libraries) -version-info 0:0:0
++qtruby_la_LDFLAGS = -module $(all_libraries) -avoid-version
+ qtruby_la_LIBADD = libqtrubyinternal.la $(LIB_QT) $(top_builddir)/smoke/qt/libsmokeqt.la
+ SUBDIRS = lib 
+ #>- all: all-recursive
