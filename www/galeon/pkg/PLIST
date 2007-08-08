@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/05/15 14:47:36 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/08/08 17:24:58 martynas Exp $
 bin/galeon
 bin/galeon-config-tool
 lib/bonobo/
@@ -240,6 +240,7 @@ share/omf/galeon/galeon-C.omf
 share/omf/galeon/galeon-es.omf
 share/pixmaps/
 share/pixmaps/galeon.png
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/galeon/*.schemas > /dev/null
 share/schemas/galeon/
 share/schemas/galeon/galeon.schemas
 share/sounds/

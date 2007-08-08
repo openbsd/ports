@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2007/05/17 17:47:38 martynas Exp $
+# $OpenBSD: Makefile,v 1.36 2007/08/08 17:24:58 martynas Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
 V=		2.0.3
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -57,6 +57,9 @@ CONFIGURE_ARGS=	--with-mozilla=firefox \
 		--disable-gtkhtml
 
 WRKDIST=	${WRKDIR}/galeon-${V}/
+
+post-patch:
+	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/galeon/sound/events
