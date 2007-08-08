@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.3 2007/06/28 19:50:05 martynas Exp $
+@comment $OpenBSD: PLIST-devel,v 1.4 2007/08/08 17:11:48 martynas Exp $
 @conflict xulrunner-<1.8.0.4p0
 lib/pkgconfig/
 lib/pkgconfig/xulrunner-gtkmozembed.pc
@@ -151,6 +151,7 @@ xulrunner/idl/nsICommandHandler.idl
 xulrunner/idl/nsICommandLine.idl
 xulrunner/idl/nsICommandLineHandler.idl
 xulrunner/idl/nsICommandLineRunner.idl
+xulrunner/idl/nsICommandLineValidator.idl
 xulrunner/idl/nsICommandManager.idl
 xulrunner/idl/nsICommandParams.idl
 xulrunner/idl/nsIComponentLoader.idl
@@ -535,6 +536,7 @@ xulrunner/idl/nsIEnvironment.idl
 xulrunner/idl/nsIErrorService.idl
 xulrunner/idl/nsIEventHandler.idl
 xulrunner/idl/nsIEventQueue.idl
+xulrunner/idl/nsIEventQueueListener.idl
 xulrunner/idl/nsIEventQueueService.idl
 xulrunner/idl/nsIEventTarget.idl
 xulrunner/idl/nsIException.idl
@@ -2492,6 +2494,7 @@ xulrunner/include/toolkitcomps/
 xulrunner/include/toolkitcomps/nsICommandLine.h
 xulrunner/include/toolkitcomps/nsICommandLineHandler.h
 xulrunner/include/toolkitcomps/nsICommandLineRunner.h
+xulrunner/include/toolkitcomps/nsICommandLineValidator.h
 xulrunner/include/toolkitcomps/nsIRemoteService.h
 xulrunner/include/toolkitcomps/nsToolkitCompsCID.h
 xulrunner/include/transformiix/
@@ -2790,6 +2793,7 @@ xulrunner/include/xpcom/nsIEnumerator.h
 xulrunner/include/xpcom/nsIEnvironment.h
 xulrunner/include/xpcom/nsIErrorService.h
 xulrunner/include/xpcom/nsIEventQueue.h
+xulrunner/include/xpcom/nsIEventQueueListener.h
 xulrunner/include/xpcom/nsIEventQueueService.h
 xulrunner/include/xpcom/nsIEventTarget.h
 xulrunner/include/xpcom/nsIException.h
