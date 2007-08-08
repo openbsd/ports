@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.27 2007/06/07 20:35:35 ckuethe Exp $
+@comment $OpenBSD: PLIST-server,v 1.28 2007/08/08 21:33:51 robert Exp $
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
 bin/comp_err
@@ -74,6 +74,8 @@ libexec/mysqlmanager
 @man man/man1/safe_mysqld.1
 @man man/man8/mysqld.8
 @man man/man8/mysqlmanager.8
+share/doc/mysql/
+share/doc/mysql/README.OpenBSD
 share/mysql/
 share/mysql/binary-configure
 share/mysql/charsets/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/06/07 20:35:35 ckuethe Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/08/08 21:33:51 robert Exp $
 @pkgpath databases/mysql
 bin/mysql
 bin/mysql_client_test
@@ -21,6 +21,7 @@ include/mysql/keycache.h
 include/mysql/m_ctype.h
 include/mysql/m_string.h
 include/mysql/my_alloc.h
+include/mysql/my_attribute.h
 include/mysql/my_config.h
 include/mysql/my_dbug.h
 include/mysql/my_dir.h
@@ -46,6 +47,7 @@ include/mysql/sslopt-case.h
 include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
 include/mysql/typelib.h
+@info info/mysql.info
 lib/mysql/
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la

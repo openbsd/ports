@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.7 2007/06/07 20:35:35 ckuethe Exp $
---- scripts/mysql_install_db.sh.orig	Wed May  2 16:39:59 2007
-+++ scripts/mysql_install_db.sh	Sun May 13 03:41:46 2007
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.8 2007/08/08 21:33:51 robert Exp $
+--- scripts/mysql_install_db.sh.orig	Wed Jul  4 09:06:09 2007
++++ scripts/mysql_install_db.sh	Sat Jul 14 16:19:38 2007
 @@ -21,7 +21,8 @@
  in_rpm=0
  windows=0
@@ -19,7 +19,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.7 2007/06/07 20:35:35 ckuethe Ex
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ;; # Obsolete
        --rpm) in_rpm=1 ;;
-@@ -248,20 +250,18 @@ fi
+@@ -252,20 +254,18 @@ fi
  
  # Create database directories mysql & test
  if test ! -d $ldata; then
@@ -44,7 +44,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.7 2007/06/07 20:35:35 ckuethe Ex
  
  if test -n "$user"; then
    args="$args --user=$user"
-@@ -296,11 +296,6 @@ then
+@@ -300,11 +300,6 @@ then
      fi
    fi
  
@@ -56,7 +56,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.7 2007/06/07 20:35:35 ckuethe Ex
    if test "$windows" -eq 0
    then
      # A root password should of course also be set on Windows!
-@@ -315,15 +310,6 @@ then
+@@ -319,15 +314,6 @@ then
      echo "$bindir/mysqladmin -u root -h $hostname password 'new-password'"
      echo "See the manual for more instructions."
  

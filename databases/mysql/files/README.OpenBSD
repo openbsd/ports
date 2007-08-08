@@ -1,0 +1,54 @@
+Using MySQL in an OpenBSD environment
+
+If you are installing MySQL for the first time, you have to create
+a default database first. In order to create the database, please run
+@PREFIX@/bin/mysql_install_db
+
+The default limit in the GENERIC kernel for number of open
+files is not large enough for a database with more than a handful
+of tables, or a large number of connections. A server running
+such a database should have at least the following in
+/etc/sysctl.conf:
+
+        kern.maxfiles=4096
+
+This number should be tuned depending on system use. You will also
+need to tune the values in the my.cnf file (examples available in
+@PREFIX@/share/mysql).
+
+By default, the _mysql user, and so the mysqld processes run in
+the login(1) class of "daemon". On a busy server, it may be advisable
+to put the _mysql user and processes in their own login(1) class
+with tuned resources, such as more open file descriptors etc.
+
+For example, add this to the login.conf(5) file:
+
+        mysql:\
+                :openfiles-cur=1024:\
+                :openfiles-max=2048:\
+                :tc=daemon:
+
+Rebuild the login.conf.db file if necessary:
+
+	# cap_mkdb /etc/login.conf
+
+And start the server like this:
+
+	if [ -x @PREFIX@/bin/mysqld_safe ] ; then
+		su -c mysql root -c '@PREFIX@/bin/mysqld_safe >/dev/null 2>&1 &' 
+		echo -n ' mysql'
+	fi
+
+mysqld_safe(1) is the recommended way to start a mysqld server,
+it creates the directory for the socket and adds some safety
+features such as restarting the server when an error occurs
+and logging runtime information to an error log file. Options
+may be passed in the [mysqld_safe] section of my.cnf.
+
+Note that the classes in login.conf(5) are used by login(1);
+they do not apply to normal process startup, hence the use of su(1).
+
+For larger servers and dedicated database servers, these numbers
+and memory limits (e.g. datasize and stacksize) may also need to be
+increased. Please report any changes and experiences to the package
+maintainers so that we can update this file for future versions.

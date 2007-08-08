@@ -1,2 +1,2 @@
-The mysql-server package doesn't initialize a default database.
-Please run ${PREFIX}/bin/mysql_install_db to create one.
+You can find detailed instructions on how to install a database
+in ${PREFIX}/share/doc/mysql/README.OpenBSD. 

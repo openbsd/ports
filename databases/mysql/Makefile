@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.131 2007/06/07 20:35:35 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.132 2007/08/08 21:33:51 robert Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
 BROKEN=		"gen_lex_hash hangs"
 .endif
 
-COMMENT-main=	"multithreaded SQL database (client)"
-COMMENT-server=	"multithreaded SQL database (server)"
-COMMENT-tests=	"multithreaded SQL database (regression test suite)"
+COMMENT-main=	multithreaded SQL database (client)
+COMMENT-server=	multithreaded SQL database (server)
+COMMENT-tests=	multithreaded SQL database (regression test suite)
 
-VERSION=	5.0.41
+VERSION=	5.0.45
 DISTNAME=	mysql-${VERSION}
 PKGNAME-main=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
@@ -96,12 +96,16 @@ WANTLIB-main=		${WANTLIB} ncurses readline
 PKG_ARCH-tests=	*
 WANTLIB-tests=
 
-DOCS=	manual.html manual.ps manual_toc.html manual.txt
-
 post-install:
 	cd ${PREFIX}/lib && \
 		ln -sf mysql/libmysqlclient.so.${LIBmysqlclient_VERSION} . && \
 		ln -sf mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION} .
+	sed -e s,@PREFIX@,${TRUEPREFIX},g ${FILESDIR}/README.OpenBSD > \
+		${WRKBUILD}/README.OpenBSD
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/mysql
+	${INSTALL_DATA_DIR} ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
 
 do-regress:
 	@cd ${WRKSRC}/mysql-test && ./mysql-test-run-shell --force
