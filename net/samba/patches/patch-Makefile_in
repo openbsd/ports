@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2007/07/02 21:56:57 mbalmer Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2007/08/08 14:18:00 mbalmer Exp $
 --- Makefile.in.orig	Tue Jun 19 19:11:39 2007
-+++ Makefile.in	Sun Jul  1 11:22:09 2007
++++ Makefile.in	Mon Aug  6 11:33:35 2007
 @@ -109,11 +109,13 @@ LOCKDIR = @lockdir@
  # the directory where pid files go
  PIDDIR = @piddir@
@@ -17,6 +17,21 @@ $OpenBSD: patch-Makefile_in,v 1.9 2007/07/02 21:56:57 mbalmer Exp $
  LIBMSRPC_MAJOR=0
  LIBMSRPC_MINOR=1
  
+@@ -125,12 +127,12 @@ LIBADDNS=bin/libaddns.a @LIBADDNS_SHARED@
+ LIBADDNS_MAJOR=0
+ LIBADDNS_MINOR=1
+ 
+-FLAGS1 = $(CFLAGS) @FLAGS1@ @SAMBA_CPPFLAGS@ $(CPPFLAGS)
++FLAGS1 = @SAMBA_CPPFLAGS@ $(CFLAGS) @FLAGS1@
+ FLAGS2 =
+ FLAGS3 =
+ FLAGS4 =
+ FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4)
+-FLAGS  = $(ISA) $(FLAGS5) -I$(srcdir)/lib -D_SAMBA_BUILD_=3
++FLAGS  = $(ISA) $(FLAGS5) -I$(srcdir)/lib -D_SAMBA_BUILD_=3 $(CPPFLAGS)
+ 
+ PASSWD_FLAGS = -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\" -DPRIVATE_DIR=\"$(PRIVATE_DIR)\"
+ PATH_FLAGS1 = -DCONFIGFILE=\"$(CONFIGFILE)\"  -DSBINDIR=\"$(SBINDIR)\"
 @@ -1152,11 +1154,10 @@ bin/libaddns.a: proto_exists $(LIBADDNS_OBJ)
  	@echo Linking libaddns non-shared library $@
  	@-$(AR) -rc $@ $(LIBADDNS_OBJ)
