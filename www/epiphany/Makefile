@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/06/04 18:35:36 martynas Exp $
+# $OpenBSD: Makefile,v 1.16 2007/08/08 17:30:10 martynas Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	"extremely lightweight and simple web browser for gnome"
@@ -53,7 +53,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-gecko=firefox \
 		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \
 		--disable-python \
-		--disable-schemas-install
+		--disable-schemas-install \
+		--disable-scrollkeeper
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nss -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lfreebl3 -lnss3 -lnssckbi -lsmime3 -lsoftokn3 -lssl3 -pthread -L${LOCALBASE}/mozilla-firefox" \
 		HOME=/tmp
