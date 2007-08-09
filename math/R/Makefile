@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2007/04/26 20:26:12 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.20 2007/08/09 22:22:17 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"clone of S, a powerful math/statistics/graphics language"
 DISTNAME=	R-2.5.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	Rlapack 25.0 \
 		Rblas	25.0
 
@@ -25,7 +26,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://cran.dk.r-project.org/src/base/R-2/
 
 USE_X11=	Yes
-#MODULES=	devel/gettext
+MODULES=	devel/gettext
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		tk84.>=1:tk-8.4.*:x11/tk/8.4
 
