@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/07/16 04:02:38 deanna Exp $
+# $OpenBSD: Makefile,v 1.14 2007/08/09 22:08:19 deanna Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"flash player with firefox browser plugin"
 DISTNAME=	gnash-0.8.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	gnashbase 2.0
 SHARED_LIBS +=	gnashgeo 2.0
 SHARED_LIBS +=	gnashamf 2.0
@@ -21,7 +21,7 @@ MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
 
 # patented codecs
 PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
@@ -41,7 +41,7 @@ LIB_DEPENDS+=	curl.>=5::net/curl \
 		agg.>=2::graphics/agg \
 		gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
 		boost_thread-mt,boost_date_time::devel/boost,-libs \
-		gsm::audio/gsm ltdl::devel/libtool,-ltdl \
+		ltdl::devel/libtool,-ltdl \
 		SDL.>=7::devel/sdl \
 		vorbis,vorbisenc::audio/libvorbis \
 		avcodec.>=9,avutil.>=2,avformat.>=9::graphics/ffmpeg

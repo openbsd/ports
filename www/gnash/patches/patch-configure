@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2007/07/07 10:47:04 deanna Exp $
---- configure.orig	Fri Jul  6 09:24:13 2007
-+++ configure	Fri Jul  6 09:25:30 2007
+$OpenBSD: patch-configure,v 1.2 2007/08/09 22:08:19 deanna Exp $
+--- configure.orig	Fri Jun  8 21:41:56 2007
++++ configure	Thu Aug  9 14:33:08 2007
 @@ -5271,7 +5271,7 @@ _ACEOF
  
  
@@ -10,7 +10,32 @@ $OpenBSD: patch-configure,v 1.1 2007/07/07 10:47:04 deanna Exp $
  
  
  
-@@ -50341,10 +50341,10 @@ s,@am__fastdepCC_TRUE@,$am__fastdepCC_TRUE,;t t
+@@ -25566,14 +25566,9 @@ echo "${ECHO_T}${libtheora}" >&6
+ 
+         echo "$as_me:$LINENO: checking for libgsm library" >&5
+ echo $ECHO_N "checking for libgsm library... $ECHO_C" >&6
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists gsm && libgsm=`$PKG_CONFIG --libs gsm`
+-    else
+       libgsm=""
+-    fi
+     if test x"${libgsm}" = x; then
+       if test -f ${topdir}/libgsm.a -o -f ${topdir}/libgsm.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"
+         echo "$as_me:$LINENO: result: ${topdir}/libgsm" >&5
+ echo "${ECHO_T}${topdir}/libgsm" >&6
+       else
+@@ -25644,9 +25639,6 @@ LIBS=$ac_check_lib_save_LIBS
+ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_gsm_gsm_destroy" >&5
+ echo "${ECHO_T}$ac_cv_lib_gsm_gsm_destroy" >&6
+-if test $ac_cv_lib_gsm_gsm_destroy = yes; then
+-  ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"
+-fi
+ 
+         fi
+       fi
+@@ -50341,10 +50333,10 @@ s,@am__fastdepCC_TRUE@,$am__fastdepCC_TRUE,;t t
  s,@am__fastdepCC_FALSE@,$am__fastdepCC_FALSE,;t t
  s,@EGREP@,$EGREP,;t t
  s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
