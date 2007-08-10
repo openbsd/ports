@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/05/19 09:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2007/08/10 17:43:44 jasper Exp $
 
 COMMENT-main=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
@@ -28,7 +28,8 @@ MODULES=		devel/gettext \
 			lang/python
 
 BUILD_DEPENDS=  	:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:py-gtk2->=2.10:x11/py-gtk2
+			:py-gtk2->=2.10:x11/py-gtk2 \
+			:popt-*:devel/popt
 LIB_DEPENDS=		bz2.>=10.2::archivers/bzip2 \
 			glib-2.0.>=0.12,gobject-2.0.>=0.12::devel/glib2 \
 			xml2.>=8.4::textproc/libxml
