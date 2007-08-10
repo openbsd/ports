@@ -1,6 +1,6 @@
-$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.9 2007/05/25 09:49:56 espie Exp $
---- klaptopdaemon/portable.cpp.orig	Mon May 14 09:40:45 2007
-+++ klaptopdaemon/portable.cpp	Thu May 24 02:31:07 2007
+$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.10 2007/08/10 16:07:28 kurt Exp $
+--- klaptopdaemon/portable.cpp.orig	Mon May 14 03:40:45 2007
++++ klaptopdaemon/portable.cpp	Wed Aug  8 16:20:57 2007
 @@ -40,6 +40,7 @@
  //	Linux 		(#if __linux__)
  //	FreeBSD		(#elif __FreeBSD__)
@@ -9,34 +9,10 @@ $OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.9 2007/05/25 09:49:56 espie Exp $
  //	generic nothing	(#else)
  //
  //
-@@ -2768,6 +2769,323 @@ laptop_portable::get_button(LaptopButton)	// true if a
- 	return(0);
+@@ -2792,6 +2793,390 @@ laptop_portable::get_battery_status(int &num_batteries
+ 	values.append(s);
  }
  
-+void
-+laptop_portable::get_battery_status(int &num_batteries, QStringList &names, QStringList &state, QStringList &values) // get multiple battery status
-+{
-+	struct power_result r;
-+
-+	if (!has_power_management()) {
-+		num_batteries = 0;
-+		names.clear();
-+		state.clear();
-+		values.clear();
-+		return;
-+	}
-+
-+	// INSERT HERE
-+	
-+	num_batteries = 1;
-+	r = poll_battery_state();
-+	names.append("BAT1");
-+	state.append("yes");
-+	QString s;
-+	s.setNum(r.percentage);
-+	values.append(s);
-+}
-+
 + 
 +#elif	(__OpenBSD__ && (__i386__ || __powerpc__))
 +	/* This tries to get OpenBSD i386 and MacPPC, but will 
@@ -66,6 +42,12 @@ $OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.9 2007/05/25 09:49:56 espie Exp $
 +#define _PATH_APM_CTLDEV        "/dev/apmctl"
 +
 +static struct apm_power_info bsdAPM;
++
++void
++laptop_portable::power_management_restart()
++{
++	// INSERT HERE
++}
 +
 +//
 +//	returns 1 if we support power management
@@ -232,6 +214,42 @@ $OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.9 2007/05/25 09:49:56 espie Exp $
 +	// ???
 +}
 +
++//
++//ACPI specific - chances are you don't need to implement this one
++//
++void
++laptop_portable::acpi_set_mask(bool, bool, bool, bool, bool )
++{
++	// INSERT HERE
++}
++
++int laptop_portable::has_acpi(int)
++{
++	// INSERT HERE
++	return (0);
++}
++
++void
++laptop_portable::apm_set_mask(bool, bool)
++{
++	// INSERT HERE
++}
++
++int laptop_portable::has_apm(int)
++{
++	// INSERT HERE
++	return (0);
++}
++
++
++//
++//	adds extra widgets to the battery panel
++//
++void
++laptop_portable::extra_config(QWidget *parent, KConfig *config, QVBoxLayout *layout)
++{
++	// INSERT HERE
++}
 +
 +//	return current battery state
 +//
@@ -257,59 +275,116 @@ $OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.9 2007/05/25 09:49:56 espie Exp $
 +	return p;
 +}
 +
-+//
-+//	adds extra widgets to the battery panel
-+//
-+void
-+laptop_portable::extra_config(QWidget *parent, KConfig *config, QVBoxLayout *layout)
-+{
-+}
 + 
-+ 
-+void
-+laptop_portable::apm_set_mask(bool, bool)
++//
++//	return the system load 
++//	
++
++bool laptop_portable::has_lav() { return 0; }
++
++float laptop_portable::get_load_average()
 +{
++	// INSERT HERE
++	return(-1);
 +}
 +
-+void
-+laptop_portable::software_suspend_set_mask(bool)
-+{
++int laptop_portable::has_cpufreq() {
++	// INSERT HERE
++	return 0;
 +}
 +
-+bool
-+laptop_portable::get_system_performance(bool, int&current, QStringList&s, bool*&)
-+{
-+	current = 0;
-+	s.clear();
-+	return(0);	// if no profiles are available
++QString laptop_portable::cpu_frequency() {
++	// INSERT HERE
++	return "";
 +}
 +
 +int
 +laptop_portable::has_brightness()
 +{
-+	return(0);
++	// INSERT HERE
++	return 0;
++}
++
++void 
++laptop_portable::set_brightness(bool blank, int val)	// val = 0-255 255 brightest, 0 means dimmest (if !blank it must be still visible), 
++{
++	// INSERT HERE
++}
++
++int 
++laptop_portable::get_brightness()
++{
++	// INSERT HERE
++	return(-1);	// means can't extract it
 +}
 +
 +bool
-+laptop_portable::has_button(laptop_portable::LaptopButton)
-+{
-+	return(0);
++laptop_portable::get_system_performance(bool, int &current, QStringList &s, bool *&)	 // do something to help get system profiles from places like ACPI
++{	
++	// INSERT HERE
++	current = 0;
++	s.clear();
++	return(0);	// if no profiles are available
 +}
 +
 +bool
 +laptop_portable::get_system_throttling(bool, int&current, QStringList&s, bool*&)
 +{
++	// INSERT HERE
 +	current = 0;
 +	s.clear();
 +	return(0);
 +}
 +
 +void
-+laptop_portable::acpi_set_mask(bool, bool, bool, bool, bool)
++laptop_portable::set_system_performance(QString)
 +{
++	// INSERT HERE
 +}
 +
-+bool laptop_portable::has_lav() { return 0; }
++void
++laptop_portable::set_system_throttling(QString)
++{
++	// INSERT HERE
++}
++
++bool
++laptop_portable::has_button(LaptopButton)	// true if we have support for a particular button
++{
++	// INSERT HERE
++	return(0);
++}
++
++bool
++laptop_portable::get_button(LaptopButton)	// true if a button is pressed
++{
++	// INSERT HERE
++	return(0);
++}
++
++void
++laptop_portable::get_battery_status(int &num_batteries, QStringList &names, QStringList &state, QStringList &values) // get multiple battery status
++{
++	struct power_result r;
++
++	if (!has_power_management()) {
++		num_batteries = 0;
++		names.clear();
++		state.clear();
++		values.clear();
++		return;
++	}
++
++	// INSERT HERE
++	
++	num_batteries = 1;
++	r = poll_battery_state();
++	names.append("BAT1");
++	state.append("yes");
++	QString s;
++	s.setNum(r.percentage);
++	values.append(s);
++}
 +
 +bool
 +laptop_portable::has_software_suspend(int type)
@@ -317,19 +392,11 @@ $OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.9 2007/05/25 09:49:56 espie Exp $
 +	return false; // (::has_software_suspend(type));
 +}
 +
-+int laptop_portable::has_apm(int)
++void
++laptop_portable::software_suspend_set_mask(bool hibernate)
 +{
-+	// INSERT HERE
-+	return (0);
++	// software_suspend_is_preferred = hibernate;
 +}
-+
-+int laptop_portable::has_acpi(int)
-+{
-+	// INSERT HERE
-+	return (0);
-+}
-+
-+ 
- void
- laptop_portable::get_battery_status(int &num_batteries, QStringList &names, QStringList &state, QStringList &values) // get multiple battery status
- {
+ #else
+ 
+ /*

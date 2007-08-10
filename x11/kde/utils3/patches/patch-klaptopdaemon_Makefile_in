@@ -1,0 +1,12 @@
+$OpenBSD: patch-klaptopdaemon_Makefile_in,v 1.1 2007/08/10 16:07:28 kurt Exp $
+--- klaptopdaemon/Makefile.in.orig	Wed Aug  8 16:54:49 2007
++++ klaptopdaemon/Makefile.in	Wed Aug  8 16:55:15 2007
+@@ -488,7 +488,7 @@ MESSAGE_SOURCES = laptop_daemon.cpp kpcmcia.cpp xautol
+ #>- kded_klaptopdaemon_la_SOURCES = $(MESSAGE_SOURCES) laptop_daemon.skel  
+ #>+ 1
+ kded_klaptopdaemon_la_SOURCES=$(MESSAGE_SOURCES)    laptop_daemon_skel.cc
+-kded_klaptopdaemon_la_LDFLAGS = $(all_libraries) -module -avoid-version  -lXtst
++kded_klaptopdaemon_la_LDFLAGS = $(all_libraries) -module -avoid-version  -lXtst -lXss
+ kded_klaptopdaemon_la_LIBADD = $(LIB_KDEUI) libkcmlaptop.la
+ klaptop_acpi_helper_SOURCES = acpi_helper.cpp
+ klaptop_check_SOURCES = laptop_check.cpp 
