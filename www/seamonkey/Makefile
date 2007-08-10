@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/07/24 19:33:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2007/08/10 23:22:11 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 COMMENT-main=	"integrated mozilla application suite"
 COMMENT-devel=  "devel files for Gecko"
 
-VER=		1.1.3
+VER=		1.1.4
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
 PKGNAME-main=	seamonkey-${VER}
@@ -46,19 +46,34 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/contrib-localized/
+.for i in 1.1.4 1.1.3 1.1.2
+MASTER_SITES${i:E}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/$i/contrib-localized/
+.endfor
 
-LANGUAGES=	cs-CZ de-AT pl-PL
-BINLANGS=	pl-PL
+LANGUAGES=	be-BY 1.1.2 \
+		ca-AD 1.1.4 \
+		cs-CZ 1.1.3 \
+		de-AT 1.1.4 \
+		el-GR 1.1.2 \
+		es-ES 1.1.4 \
+		fr-FR 1.1.4 \
+		he-IL 1.1.2 \
+		it-IT 1.1.2 \
+		nl-NL 1.1.3 \
+		pl-PL 1.1.4 \
+		pt-BR 1.1.4 \
+		ru-RU 1.1.4 \
+		sv-SE 1.1.4
+BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-.for i in ${LANGUAGES}
-DISTFILES+=	seamonkey-${VER}.$i.langpack.xpi:0
+.for l v in ${LANGUAGES}
+DISTFILES+=	seamonkey-$v.$l.langpack.xpi:${v:E}
 .endfor
 
 EXTRACT_CASES += *.xpi) \
-	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR}/`basename $$archive .langpack.xpi | sed "s/.*-${VER}\.//"`;;
+	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR}/`basename $$archive .langpack.xpi | sed "s/seamonkey-.*\.//"`;;
 
 DIST_SUBDIR=	seamonkey-${VER}
 
@@ -143,8 +158,8 @@ post-extract:
 	@mv -f ${WRKDIR}/$i/bin/* ${WRKDIR}/$i/
 	@rmdir ${WRKDIR}/$i/bin
 .endfor
-.for i in ${LANGUAGES}
-	@rm -f ${WRKDIR}/$i/chrome/*-{mac,win}.jar
+.for l v in ${LANGUAGES}
+	@rm -f ${WRKDIR}/$l/chrome/*-{mac,win}.jar
 .endfor
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
@@ -181,9 +196,9 @@ do-install:
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 	${INSTALL_MAN} ${WRKSRC}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
-.for i in ${LANGUAGES}
-	${INSTALL_DATA} ${WRKDIR}/$i/chrome/*.jar ${MOZ}/chrome/
-	sh ${FILESDIR}/genchrome ${WRKDIR}/$i/install.js $i \
+.for l v in ${LANGUAGES}
+	${INSTALL_DATA} ${WRKDIR}/$l/chrome/*.jar ${MOZ}/chrome/
+	sh ${FILESDIR}/genchrome ${WRKDIR}/$l/install.js $l \
 		>> ${MOZ}/chrome/installed-chrome.txt
 .endfor
 
