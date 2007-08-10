@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/02/27 11:15:25 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/08/10 12:48:07 ajacoutot Exp $
 
-COMMENT=	'gui for ogle'
+COMMENT=	gui for ogle
 CATEGORIES=	x11
 
 DISTNAME=	goggles-0.9.1
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	http://www.fifthplanet.net/files/
 HOMEPAGE=	http://www.fifthplanet.net/goggles.html
@@ -25,11 +25,12 @@ USE_X11=	Yes
 
 CONFIGURE_ENV=LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} LP64_ARCHS="${LP64_ARCHS}"
 
-LIB_DEPENDS=	FOX-1.6:fox->=1.6:devel/fox \
+LIB_DEPENDS=	FOX-1.6.>=1::devel/fox \
 		dvdcontrol,msgevents::x11/ogle
 	
 WANTLIB=	GL GLU X11 Xext Xcursor Xrandr bz2 c jpeg \
-		m png pthread stdc++ tiff z
+		m png pthread stdc++ tiff z Xau Xdmcp Xft \
+		Xrender expat fontconfig freetype
 
 MAKE_FLAGS=	-f ${WRKCONF}/conf.mk 
 
