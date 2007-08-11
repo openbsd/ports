@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2005/02/13 16:40:59 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2007/08/11 10:44:24 jasper Exp $
 
 COMMENT=	"documentation system for C, C++, IDL and Java"
 
 DISTNAME=	doc++-3.4.10
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docpp.sourceforge.net/
@@ -31,5 +31,8 @@ MODULES=	devel/gettext
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/doc++
 	${INSTALL_DATA} ${WRKSRC}/doc/manual/html/* ${PREFIX}/share/doc/doc++
+	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/tex/latex/doc++
+	${INSTALL_DATA} ${WRKSRC}/doc/*.sty \
+		${PREFIX}/share/texmf/tex/latex/doc++
 
 .include <bsd.port.mk>
