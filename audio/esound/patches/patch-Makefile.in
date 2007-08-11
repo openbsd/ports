@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Mar 16 07:26:18 2004
++++ Makefile.in	Thu Jun 24 20:07:12 2004
+@@ -180,7 +180,7 @@ esd_LDADD = $(WRAP_LIB) $(LDADD)
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = esd.m4
+ 
+-esdconfdir = $(sysconfdir)
++esdconfdir = $(datadir)/examples/esound
+ esdconf_DATA = esd.conf
+ 
+ pkgconfigdir = $(libdir)/pkgconfig

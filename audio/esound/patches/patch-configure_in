@@ -1,24 +1,34 @@
-$OpenBSD: patch-configure_ac,v 1.1 2007/06/26 17:10:29 martynas Exp $
---- configure.ac.orig	Thu May  3 23:47:30 2007
-+++ configure.ac	Sun Jun  3 00:20:33 2007
-@@ -306,16 +306,11 @@ if test "x$enable_local_sound" = "xyes"; then
-      fi
+--- configure.in.orig	Tue Mar 16 16:20:39 2004
++++ configure.in	Thu Aug  9 17:02:45 2007
+@@ -205,6 +205,16 @@ if test "x$enable_local_sound" = "xyes"; then
+       esac
     fi
  
--   if test "$found_sound" = "no"; then
--      AC_MSG_ERROR([Could not find a support sound driver])
--   fi
--
-    dnl Check for additional audio libs needed
- 
++   if test "${ac_cv_header_sys_audioio_h}" = "yes"; then
++      case ${host_os} in
++      openbsd* | netbsd*)
++         found_sound=yes
++         DRIVER_SUN=1
++         AC_DEFINE(DRIVER_SUN)
++         ;;
++      esac
++   fi
++
+    case ${host_os} in
+    os2*)
+       found_sound=yes
+@@ -263,7 +273,9 @@ if test "x$enable_local_sound" = "xyes"; then
     echo "---------------------------------------------------------------------"
     echo "--- Checking to see which audio libraries are required for linking.";
     echo "--- Most of these checks should also fail. Do not be alarmed.";
 -   AC_CHECK_FUNC(_oss_ioctl,,[AC_CHECK_LIB(ossaudio,_oss_ioctl)])
++   if test ! "$DRIVER_SUN"; then
++     AC_CHECK_FUNC(_oss_ioctl,,[AC_CHECK_LIB(ossaudio,_oss_ioctl)])
++   fi
     AC_CHECK_FUNC(ALnewconfig,,[AC_CHECK_LIB(audio,ALnewconfig)])
     if test "x$enable_alsa" = "xyes"; then
        AC_CHECK_FUNC(snd_cards,,[AC_CHECK_LIB(sound,snd_cards)])
-@@ -393,7 +388,8 @@ if test "x$with_libwrap" = "xyes"; then
+@@ -382,7 +394,8 @@ if test "x$with_libwrap" = "xyes"; then
  
     wrap_ok=no
     AC_TRY_LINK(
@@ -28,7 +38,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2007/06/26 17:10:29 martynas Exp $
  #include <syslog.h>
  int allow_severity = LOG_INFO;
  int deny_severity = LOG_WARNING;],
-@@ -403,7 +399,8 @@ int deny_severity = LOG_WARNING;],
+@@ -392,7 +405,8 @@ int deny_severity = LOG_WARNING;],
         wrap_ok=yes],
        [LIBS="$LIBS -lnsl"
         AC_TRY_LINK(

@@ -1,18 +1,16 @@
-$OpenBSD: patch-test-script,v 1.3 2007/06/26 17:10:29 martynas Exp $
---- test-script.orig	Thu Apr 19 17:43:59 2007
-+++ test-script	Sat Jun  2 23:18:12 2007
+--- test-script.orig	Wed Jul 15 04:26:14 1998
++++ test-script	Tue Mar  5 09:21:40 2002
 @@ -1,4 +1,4 @@
 -#!/bin/tcsh
-+#!_LOCALBASE_/bin/tcsh
++#!/usr/local/bin/tcsh
  echo welcome to the test.
  
  echo ""
-@@ -40,7 +40,7 @@ echo $< >& /dev/null
+@@ -40,7 +40,6 @@ echo $< >& /dev/null
  esdmon > sample.raw &
  esdcat -b -m -r 11025 test.wav
  sleep 3
 -killall esdmon
-+pkill esdmon
  
  echo press enter to continue...
  echo $< >& /dev/null
