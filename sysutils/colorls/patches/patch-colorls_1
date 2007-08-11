@@ -1,10 +1,10 @@
-$OpenBSD: patch-colorls_1,v 1.8 2006/05/27 04:35:21 naddy Exp $
---- colorls.1.orig	Sat May 27 06:10:29 2006
-+++ colorls.1	Sat May 27 06:30:47 2006
+$OpenBSD: patch-colorls_1,v 1.9 2007/08/11 17:52:11 naddy Exp $
+--- colorls.1.orig	Sat Aug 11 19:28:46 2007
++++ colorls.1	Sat Aug 11 19:34:55 2007
 @@ -34,14 +34,14 @@
  .\"     @(#)ls.1	8.7 (Berkeley) 7/29/94
  .\"
- .Dd July 29, 1994
+ .Dd $Mdocdate: August 11 2007 $
 -.Dt LS 1
 +.Dt COLORLS 1
  .Os
@@ -20,7 +20,7 @@ $OpenBSD: patch-colorls_1,v 1.8 2006/05/27 04:35:21 naddy Exp $
  .Op Ar file ...
  .Sh DESCRIPTION
  For each operand that names a
-@@ -110,9 +110,15 @@ and a vertical bar
+@@ -112,6 +112,12 @@ and a vertical bar
  after each that is a FIFO.
  .It Fl f
  Output is not sorted.
@@ -31,13 +31,9 @@ $OpenBSD: patch-colorls_1,v 1.8 2006/05/27 04:35:21 naddy Exp $
 +in the environment.
 +(See below.)
  .It Fl g
- Does nothing; kept for compatibility with older versions of
--.Nm ls .
-+.Nm ls
- .It Fl h
- When used with a long format
- option, use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte,
-@@ -394,7 +400,7 @@ The
+ The same as
+ .Fl l ,
+@@ -414,7 +420,7 @@ The
  .Nm
  utility exits 0 on success or \*(Gt0 if an error occurred.
  .Sh ENVIRONMENT
@@ -46,7 +42,7 @@ $OpenBSD: patch-colorls_1,v 1.8 2006/05/27 04:35:21 naddy Exp $
  .It Ev BLOCKSIZE
  If the environment variable
  .Ev BLOCKSIZE
-@@ -404,6 +410,44 @@ option is not specified, the block count
+@@ -424,6 +430,44 @@ option is not specified, the block counts
  (see
  .Fl s )
  will be displayed in units of that size block.
@@ -91,7 +87,7 @@ $OpenBSD: patch-colorls_1,v 1.8 2006/05/27 04:35:21 naddy Exp $
  .It COLUMNS
  If this variable contains a string representing a
  decimal integer, it is used as the
-@@ -416,6 +460,99 @@ many pathname text columns to display
+@@ -436,6 +480,99 @@ many pathname text columns to display
  based on the width provided
  (see
  .Fl C ) .
@@ -191,7 +187,7 @@ $OpenBSD: patch-colorls_1,v 1.8 2006/05/27 04:35:21 naddy Exp $
  .It Ev TZ
  The time zone to use when displaying dates.
  See
-@@ -425,24 +562,25 @@ for more information.
+@@ -445,24 +582,25 @@ for more information.
  .Sh EXAMPLES
  List the contents of the current working directory in long format:
  .Pp
@@ -220,8 +216,8 @@ $OpenBSD: patch-colorls_1,v 1.8 2006/05/27 04:35:21 naddy Exp $
  .Xr symlink 7 ,
  .Xr sticky 8
  .Sh STANDARDS
-@@ -458,6 +596,6 @@ utility is expected to be a superset of 
- specification.
+@@ -492,6 +630,6 @@ flag differs between this implementation and
+ .St -p1003.1-2004 .
  .Sh HISTORY
  An
 -.Nm

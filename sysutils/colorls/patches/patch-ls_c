@@ -1,7 +1,7 @@
-$OpenBSD: patch-ls_c,v 1.8 2006/05/27 04:35:21 naddy Exp $
---- ls.c.orig	Sat May 27 04:58:46 2006
-+++ ls.c	Sat May 27 05:55:02 2006
-@@ -62,6 +62,10 @@ static char rcsid[] = "$OpenBSD: ls.c,v 
+$OpenBSD: patch-ls_c,v 1.9 2007/08/11 17:52:11 naddy Exp $
+--- ls.c.orig	Mon May  7 20:39:28 2007
++++ ls.c	Sat Aug 11 19:28:48 2007
+@@ -62,6 +62,10 @@ static char rcsid[] = "$OpenBSD: ls.c,v 1.29 2007/05/0
  #include <string.h>
  #include <unistd.h>
  #include <util.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-ls_c,v 1.8 2006/05/27 04:35:21 naddy Exp $
  
  #include "ls.h"
  #include "extern.h"
-@@ -103,6 +107,15 @@ int f_statustime;		/* use time of last m
+@@ -104,6 +108,15 @@ int f_statustime;		/* use time of last mode change */
  int f_stream;			/* stream format */
  int f_type;			/* add type character for non-regular files */
  int f_typedir;			/* add type character for directories */
@@ -28,7 +28,7 @@ $OpenBSD: patch-ls_c,v 1.8 2006/05/27 04:35:21 naddy Exp $
  
  int rval;
  
-@@ -114,6 +127,11 @@ ls_main(int argc, char *argv[])
+@@ -115,6 +128,11 @@ ls_main(int argc, char *argv[])
  	int ch, fts_options, notused;
  	int kflag = 0;
  	char *p;
@@ -40,7 +40,7 @@ $OpenBSD: patch-ls_c,v 1.8 2006/05/27 04:35:21 naddy Exp $
  
  	/* Terminal defaults to -Cq, non-terminal defaults to -1. */
  	if (isatty(STDOUT_FILENO)) {
-@@ -131,7 +149,7 @@ ls_main(int argc, char *argv[])
+@@ -132,7 +150,7 @@ ls_main(int argc, char *argv[])
  		f_listdot = 1;
  
  	fts_options = FTS_PHYSICAL;
@@ -49,7 +49,7 @@ $OpenBSD: patch-ls_c,v 1.8 2006/05/27 04:35:21 naddy Exp $
  		switch (ch) {
  		/*
  		 * The -1, -C and -l, -m and -x options all override each
-@@ -176,6 +194,9 @@ ls_main(int argc, char *argv[])
+@@ -185,6 +203,9 @@ ls_main(int argc, char *argv[])
  		case 'F':
  			f_type = 1;
  			break;
@@ -59,9 +59,9 @@ $OpenBSD: patch-ls_c,v 1.8 2006/05/27 04:35:21 naddy Exp $
  		case 'L':
  			fts_options &= ~FTS_PHYSICAL;
  			fts_options |= FTS_LOGICAL;
-@@ -240,11 +261,46 @@ ls_main(int argc, char *argv[])
- 	argc -= optind;
- 	argv += optind;
+@@ -254,11 +275,46 @@ ls_main(int argc, char *argv[])
+ 	if (f_grouponly == -1)
+ 		f_grouponly = 0;
  
 +	/* Enabling of colours is conditional on the environment. */
 +	if (getenv("CLICOLOR") &&

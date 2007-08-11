@@ -1,7 +1,7 @@
-$OpenBSD: patch-print_c,v 1.6 2005/06/21 18:26:21 naddy Exp $
---- print.c.orig	Tue Jun 21 20:05:48 2005
-+++ print.c	Tue Jun 21 20:12:00 2005
-@@ -56,6 +56,11 @@ static char rcsid[] = "$OpenBSD: print.c
+$OpenBSD: patch-print_c,v 1.7 2007/08/11 17:52:11 naddy Exp $
+--- print.c.orig	Mon May  7 20:39:28 2007
++++ print.c	Sat Aug 11 19:28:48 2007
+@@ -56,6 +56,11 @@ static char rcsid[] = "$OpenBSD: print.c,v 1.25 2007/0
  #include <tzfile.h>
  #include <unistd.h>
  #include <util.h>
@@ -63,7 +63,7 @@ $OpenBSD: patch-print_c,v 1.6 2005/06/21 18:26:21 naddy Exp $
  
  	if (dp->list->fts_level != FTS_ROOTLEVEL && (f_longform || f_size))
  		(void)printf("total %lu\n", howmany(dp->btotal, blocksize));
-@@ -123,7 +161,15 @@ printlong(DISPLAY *dp)
+@@ -124,7 +162,15 @@ printlong(DISPLAY *dp)
  			printtime(sp->st_ctime);
  		else
  			printtime(sp->st_mtime);
@@ -79,7 +79,7 @@ $OpenBSD: patch-print_c,v 1.6 2005/06/21 18:26:21 naddy Exp $
  		if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  			(void)printtype(sp->st_mode);
  		if (S_ISLNK(sp->st_mode))
-@@ -223,6 +269,9 @@ printaname(FTSENT *p, u_long inodefield,
+@@ -224,6 +270,9 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
  {
  	struct stat *sp;
  	int chcnt;
@@ -89,7 +89,7 @@ $OpenBSD: patch-print_c,v 1.6 2005/06/21 18:26:21 naddy Exp $
  
  	sp = p->fts_statp;
  	chcnt = 0;
-@@ -231,7 +280,15 @@ printaname(FTSENT *p, u_long inodefield,
+@@ -232,7 +281,15 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
  	if (f_size)
  		chcnt += printf("%*qd ",
  		    (int)sizefield, howmany(sp->st_blocks, blocksize));
@@ -105,7 +105,7 @@ $OpenBSD: patch-print_c,v 1.6 2005/06/21 18:26:21 naddy Exp $
  	if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  		chcnt += printtype(sp->st_mode);
  	return (chcnt);
-@@ -345,6 +402,151 @@ printtype(u_int mode)
+@@ -346,6 +403,151 @@ printtype(u_int mode)
  	}
  	return (0);
  }
