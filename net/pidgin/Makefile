@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2007/08/02 08:31:34 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/08/11 22:15:46 ckuethe Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"multi-protocol instant messaging client"
 
-DISTNAME=	pidgin-2.1.0
+DISTNAME=	pidgin-2.0.1
 PKGNAME=	${DISTNAME}p0
-SHARED_LIBS += jabber               0.0      # .0.0
-SHARED_LIBS += oscar                0.0      # .0.0
-SHARED_LIBS += purple               1.0      # .1.0
-SHARED_LIBS += purple-client        1.0      # .1.0
-SHARED_LIBS += gnt                  1.0      # .0.0
+SHARED_LIBS +=	jabber               0.0      # .0.0
+SHARED_LIBS +=	oscar                0.0      # .0.0
+SHARED_LIBS +=	purple               0.0      # .0.0
+SHARED_LIBS +=	purple-client        0.0      # .0.0
+SHARED_LIBS +=	gnt                  0.0      # .0.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://pidgin.im/
@@ -38,7 +38,7 @@ RUN_DEPENDS+=	:dbus-python-*:x11/dbus-python \
 		:py-gtk2-*:x11/py-gtk2
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		startup-notification-1::devel/startup-notification \
-		silc.>=7,silcclient.>=5::devel/silc-toolkit \
+		silc,silcclient::devel/silc-toolkit \
 		meanwhile::net/meanwhile \
 		gadu::net/libgadu \
 		xml2::textproc/libxml \
@@ -50,7 +50,7 @@ LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= --disable-gevolution \
 		 --disable-gnutls \
 		 --disable-nss \

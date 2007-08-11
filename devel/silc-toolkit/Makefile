@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.11 2007/08/02 06:04:20 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/08/11 22:14:27 ckuethe Exp $
 
 COMMENT=	"toolkit for the development of SILC applications"
 
-DISTNAME=	silc-toolkit-1.1.2
-SHARED_LIBS=	silc		7.0 \
-		silcclient	5.0
+DISTNAME=	silc-toolkit-1.0.2
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	silc		6.1	\
+		silc-1.0	6.1	\
+		silcclient	4.2	\
+		silcclient-1.0	4.2
 
 CATEGORIES=	devel
 MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/
 
 HOMEPAGE=	http://www.silcnet.org/software/developers/toolkit/
-		
+
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
@@ -21,7 +24,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-ipv6 \
-		--docdir=${PREFIX}/share/doc/silc \
+		--with-docdir=${PREFIX}/share/doc/silc \
 		--includedir=${PREFIX}/include/silc \
 		--without-libtoolfix
 
