@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/08/11 17:33:13 martynas Exp $
+--- configure.orig	Wed Nov 15 19:03:52 2006
++++ configure	Sat Aug 11 19:46:36 2007
+@@ -6456,7 +6456,7 @@ fi
+ LIBGTK_REQUIRED=2.6.0
+ LIBGNOME_REQUIRED=2.0.0
+ LIBGNOMEUI_REQUIRED=2.0.0
+-LIBESD_REQUIRED=0.2.36
++LIBESD_REQUIRED=0.2.34
+ 
+ 
+ 

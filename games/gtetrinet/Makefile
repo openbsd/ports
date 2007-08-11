@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/28 15:38:16 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/08/11 17:33:13 martynas Exp $
 
 MULTI_PACKAGES=	-main -themes
 
 COMMENT-main=	tetrinet client
 COMMENT-themes=	collection of gtetrinet themes
 DISTNAME=	gtetrinet-0.7.11
-PKGNAME-main=	${DISTNAME}
-PKGNAME-themes=	gtetrinet-themes-20070623
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-themes=	gtetrinet-themes-20070623p0
 CATEGORIES=	x11 games
 
 HOMEPAGE=	http://gtetrinet.sourceforge.net/
@@ -36,7 +36,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS-main=	gnome-2::x11/gnome/libgnome \
 			gnomeui-2::x11/gnome/libgnomeui \
-			esd:esound->=0.2.36:audio/esound
+			esd:esound->=0.2.34:audio/esound
 LIB_DEPENDS-themes=
 RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils
 RUN_DEPENDS-themes=	::games/gtetrinet
