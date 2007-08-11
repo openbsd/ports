@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/08/11 17:52:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2007/08/11 18:41:28 naddy Exp $
 
 COMMENT=	ls that can use color to display file attributes
 
@@ -19,7 +19,8 @@ MASTER_SITES=	http://sites.inka.de/~mips/unix/distfiles/
 WRKDIST=	${WRKDIR}/ls
 NO_REGRESS=	Yes
 
+# copy file and substitute a string near a CVS keyword
 pre-patch:
-	cp ${WRKSRC}/ls.1 ${WRKSRC}/colorls.1
+	sed 's/^\.Dt LS/.Dt COLORLS/' ${WRKSRC}/ls.1 >${WRKSRC}/colorls.1
 
 .include <bsd.port.mk>
