@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.2 2007/08/07 14:22:02 pvalchev Exp $
+$OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp $
 --- src/audio/sun/SDL_sunaudio.c.orig	Sun Jan  4 08:49:15 2004
-+++ src/audio/sun/SDL_sunaudio.c	Mon Aug  6 17:12:50 2007
++++ src/audio/sun/SDL_sunaudio.c	Sun Aug 12 02:43:22 2007
 @@ -32,7 +32,7 @@ static char rcsid =
  #include <fcntl.h>
  #include <errno.h>
@@ -10,19 +10,21 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.2 2007/08/07 14:22:02 pvalchev 
  #include <sys/ioctl.h>
  #include <sys/audioio.h>
  #endif
-@@ -141,12 +141,18 @@ void CheckUnderflow(_THIS)
+@@ -141,12 +141,19 @@ void CheckUnderflow(_THIS)
  void DSP_WaitAudio(_THIS)
  {
  #ifdef AUDIO_GETINFO
 -#define SLEEP_FUDGE	10		/* 10 ms scheduling fudge factor */
 +#define SLEEP_FUDGE	100		/* 100 ms scheduling fudge factor */
- 	audio_info_t info;
- 	Sint32 left;
- 
++	u_long left;
++
 +#ifdef AUDIO_WSEEK
 +	ioctl(audio_fd, AUDIO_WSEEK, &left);
 +	left = left / (this->spec.channels * (this->spec.format & 0xff) / 8);
 +#else
+ 	audio_info_t info;
+-	Sint32 left;
+ 
 +	/* OpenBSD and NetBSD return bytes, not samples in info.play.samples */
  	ioctl(audio_fd, AUDIO_GETINFO, &info);
  	left = (written - info.play.samples);
@@ -30,7 +32,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.2 2007/08/07 14:22:02 pvalchev 
  	if ( left > fragsize ) {
  		Sint32 sleepy;
  
-@@ -221,9 +227,22 @@ void DSP_PlayAudio(_THIS)
+@@ -221,9 +228,22 @@ void DSP_PlayAudio(_THIS)
  #ifdef DEBUG_AUDIO
  		CheckUnderflow(this);
  #endif
@@ -54,12 +56,27 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.2 2007/08/07 14:22:02 pvalchev 
  		}
  		written += fragsize;
  	}
-@@ -266,16 +285,28 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -251,7 +271,10 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+ {
+ 	char audiodev[1024];
+ #ifdef AUDIO_SETINFO
++	audio_info_t info, ginfo;
++	audio_encoding_t audio_enc;
+ 	int enc;
++	int encodings, i;
+ #endif
+ 	int desired_freq = spec->freq;
+ 
+@@ -266,16 +289,34 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  		case 8: { /* Unsigned 8 bit audio data */
  			spec->format = AUDIO_U8;
  #ifdef AUDIO_SETINFO
 +#ifdef __OpenBSD__
-+			enc = AUDIO_ENCODING_ULINEAR;
++#if BYTE_ORDER == LITTLE_ENDIAN
++			enc = AUDIO_ENCODING_ULINEAR_LE;
++#else
++			enc = AUDIO_ENCODING_ULINEAR_BE;
++#endif
 +#else
  			enc = AUDIO_ENCODING_LINEAR8;
  #endif
@@ -68,44 +85,206 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.2 2007/08/07 14:22:02 pvalchev 
  		break;
  
  		case 16: { /* Signed 16 bit audio data */
- 		        spec->format = AUDIO_S16SYS;
+-		        spec->format = AUDIO_S16SYS;
  #ifdef AUDIO_SETINFO
 +#ifdef __OpenBSD__
-+#if BYTE_ORDER == LITTLE_ENDIAN
-+			enc = AUDIO_ENCODING_SLINEAR_LE;
++			if (spec->format & 0x1000) {
++			        spec->format = AUDIO_S16MSB;
++				enc = AUDIO_ENCODING_SLINEAR_BE;
++			} else {
++			        spec->format = AUDIO_S16LSB;
++				enc = AUDIO_ENCODING_SLINEAR_LE;
++			}
 +#else
-+			enc = AUDIO_ENCODING_SLINEAR_BE;
-+#endif
-+#else
++		        spec->format = AUDIO_S16SYS;
  			enc = AUDIO_ENCODING_LINEAR;
  #endif
 +#endif
  		}
  		break;
  
-@@ -306,6 +337,10 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -294,10 +335,128 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+ 		return(-1);
+ 	}
+ 
++	/* find native encodings */
++	/* all drivers support one of ulinear:8, slinear_le:16, slinear_be:16 */
++	/* except audioce on sparc, which is ulaw only */
++	/* and SDL doesn't do ulaw */
++
++	encodings = 0;
++	for (i = 0; ; i++) {
++		audio_enc.index = i;
++		if (ioctl(audio_fd, AUDIO_GETENC, &audio_enc) < 0)
++			break;
++
++		if ((audio_enc.encoding == AUDIO_ENCODING_SLINEAR_LE) &&
++		    (audio_enc.precision == 16) &&
++		    !(audio_enc.flags & AUDIO_ENCODINGFLAG_EMULATED))
++			encodings |= 0x1;
++
++		if ((audio_enc.encoding == AUDIO_ENCODING_SLINEAR_BE) &&
++		    (audio_enc.precision == 16) &&
++		    !(audio_enc.flags & AUDIO_ENCODINGFLAG_EMULATED))
++			encodings |= 0x2;
++
++		if ((audio_enc.encoding == AUDIO_ENCODING_ULINEAR) &&
++		    (audio_enc.precision == 8) &&
++		    !(audio_enc.flags & AUDIO_ENCODINGFLAG_EMULATED))
++			encodings |= 0x4;
++
++		/* there's really no endianness with 1 byte formats */
++		/* and some drivers don't add the generic form above */
++
++		if ((audio_enc.encoding == AUDIO_ENCODING_ULINEAR_LE) &&
++		    (audio_enc.precision == 8) &&
++		    !(audio_enc.flags & AUDIO_ENCODINGFLAG_EMULATED))
++			encodings |= 0x4;
++
++		if ((audio_enc.encoding == AUDIO_ENCODING_ULINEAR_BE) &&
++		    (audio_enc.precision == 8) &&
++		    !(audio_enc.flags & AUDIO_ENCODINGFLAG_EMULATED))
++			encodings |= 0x4;
++	}
++
++	if (encodings == 0) {
++		SDL_SetError("No native audio encodings found for %s",
++		    audiodev);
++		return(-1);
++	}
++	if (encodings & 0x1) {
++		if (enc == AUDIO_ENCODING_SLINEAR_BE && !(encodings & 0x2)) {
++			enc = AUDIO_ENCODING_SLINEAR_LE;
++		        spec->format = AUDIO_S16LSB;
++		}
++		if (enc == AUDIO_ENCODING_ULINEAR_LE && !(encodings & 0x4)) {
++			enc = AUDIO_ENCODING_SLINEAR_LE;
++		        spec->format = AUDIO_S16LSB;
++		}
++	}
++	if (encodings & 0x2) {
++		if (enc == AUDIO_ENCODING_SLINEAR_LE && !(encodings & 0x1)) {
++			enc = AUDIO_ENCODING_SLINEAR_BE;
++		        spec->format = AUDIO_S16MSB;
++		}
++		if (enc == AUDIO_ENCODING_ULINEAR_BE && !(encodings & 0x4)) {
++			enc = AUDIO_ENCODING_SLINEAR_BE;
++		        spec->format = AUDIO_S16MSB;
++		}
++	}
++	if (encodings & 0x4) {
++		if (enc == AUDIO_ENCODING_SLINEAR_LE && !(encodings & 0x1)) {
++			enc = AUDIO_ENCODING_ULINEAR_LE;
++		        spec->format = AUDIO_U8;
++		}
++		if (enc == AUDIO_ENCODING_SLINEAR_BE && !(encodings & 0x2)) {
++			enc = AUDIO_ENCODING_ULINEAR_BE;
++		        spec->format = AUDIO_U8;
++		}
++	}
++
++	AUDIO_INITINFO(&info);
++	info.play.precision = spec->format & 0xff;
++	info.play.encoding = enc;
++	/* this should always pass, based on AUDIO_GETENC work above */
++	if (ioctl(audio_fd, AUDIO_SETINFO, &info) == -1 ) {
++		SDL_SetError("Setting encoding %d failed", enc);
++		return(-1);
++	}
++	if (ioctl(audio_fd, AUDIO_GETINFO, &ginfo) != -1 ) {
++		if (ginfo.play.encoding != enc) {
++			SDL_SetError("error setting encoding, "
++			    "tried %d, returned %d",
++			    enc, ginfo.play.encoding);
++			return(-1);
++		}
++		if (ginfo.play.precision != (spec->format & 0xff)) {
++			SDL_SetError("error setting precision, "
++			    "tried %d, returned %d",
++			    spec->format & 0xff, ginfo.play.precision);
++			return(-1);
++		}
++	}
++
++	/* now check the number of channels */
++	info.play.channels = spec->channels;
++	if (ioctl(audio_fd, AUDIO_SETINFO, &info) == -1 ) {
++		if (spec->channels == 2)
++			spec->channels = 1;
++		else
++			spec->channels = 2;
++
++		info.play.channels = spec->channels;
++		(void)ioctl(audio_fd, AUDIO_SETINFO, &info);
++	}
++	if (ioctl(audio_fd, AUDIO_GETINFO, &ginfo) != -1 ) {
++		if (ginfo.play.channels != spec->channels) {
++			SDL_SetError("error setting channels, "
++				"tried %d, returned %d",
++				spec->channels, ginfo.play.channels);
++			return(-1);
++		}
++	}
++
+ 	ulaw_only = 0;		/* modern Suns do support linear audio */
+ #ifdef AUDIO_SETINFO
+ 	for(;;) {
+-	    audio_info_t info;
+ 	    AUDIO_INITINFO(&info); /* init all fields to "no change" */
+ 
+ 	    /* Try to set the requested settings */
+@@ -306,8 +465,25 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  	    info.play.precision = (enc == AUDIO_ENCODING_ULAW)
  		                  ? 8 : spec->format & 0xff;
  	    info.play.encoding = enc;
-+	    if( ioctl(audio_fd, AUDIO_SETINFO, &info) == -1 ) {
-+		 /* some devices only play at 48000 Hz */
-+	         info.play.sample_rate = 48000;
-+	    }
- 	    if( ioctl(audio_fd, AUDIO_SETINFO, &info) == 0 ) {
+-	    if( ioctl(audio_fd, AUDIO_SETINFO, &info) == 0 ) {
  
++	    if (ioctl(audio_fd, AUDIO_SETINFO, &info) == -1 ) {
++
++		 /* some devices only play at certain frequencies */
++		 /* try the current frequency */
++		 (void)ioctl(audio_fd, AUDIO_GETINFO, &ginfo);
++	         info.play.sample_rate = ginfo.play.sample_rate;
++		 if (ioctl(audio_fd, AUDIO_SETINFO, &info) == -1 ) {
++
++		 	/* some may play only @ 48000 Hz */
++		 	info.play.sample_rate = 48000;
++		        if( ioctl(audio_fd, AUDIO_SETINFO, &info) == -1 ) {
++
++		            /* some may play only @ 44100 Hz */
++	                    info.play.sample_rate = 44100;
++			}
++		 }
++	    }
++	    if( ioctl(audio_fd, AUDIO_SETINFO, &info) == 0 ) {
  		/* Check to be sure we got what we wanted */
-@@ -324,13 +359,22 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+ 		if(ioctl(audio_fd, AUDIO_GETINFO, &info) < 0) {
+ 		    SDL_SetError("Error getting audio parameters: %s",
+@@ -324,13 +500,34 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  	    }
  
  	    switch(enc) {
 +#ifdef __OpenBSD__
 +	    case AUDIO_ENCODING_ULINEAR:
++	    case AUDIO_ENCODING_ULINEAR_LE:
++	    case AUDIO_ENCODING_ULINEAR_BE:
 +#else
  	    case AUDIO_ENCODING_LINEAR8:
 +#endif
  		/* unsigned 8bit apparently not supported here */
- 		enc = AUDIO_ENCODING_LINEAR;
+-		enc = AUDIO_ENCODING_LINEAR;
  		spec->format = AUDIO_S16SYS;
++#ifdef AUDIO_SETINFO
++#ifdef __OpenBSD__
++#if BYTE_ORDER == LITTLE_ENDIAN
++		enc = AUDIO_ENCODING_SLINEAR_LE;
++#else
++		enc = AUDIO_ENCODING_SLINEAR_BE;
++#endif
++#else
++		enc = AUDIO_ENCODING_LINEAR;
++#endif
++#endif
  		break;	/* try again */
  
 +#ifdef __OpenBSD__
@@ -117,13 +296,30 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.2 2007/08/07 14:22:02 pvalchev 
  		/* linear 16bit didn't work either, resort to µ-law */
  		enc = AUDIO_ENCODING_ULAW;
  		spec->channels = 1;
-@@ -348,6 +392,9 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
- 	}
+@@ -349,6 +546,9 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  #endif /* AUDIO_SETINFO */
  	written = 0;
-+
+ 
 +	/* reset counters */
 +	ioctl(audio_fd, AUDIO_FLUSH, NULL);
- 
++
  	/* We can actually convert on-the-fly to U-Law */
  	if ( ulaw_only ) {
+ 	        spec->freq = desired_freq;
+@@ -361,8 +561,14 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+ 		}
+ 		spec->channels = 1;
+ 	} else {
+-		fragsize = spec->samples;
+-		frequency = spec->freq/1000;
++		if (ioctl(audio_fd, AUDIO_GETINFO, &ginfo) != -1) {
++			int sampsize = ginfo.play.precision / 8 * ginfo.play.channels;
++			fragsize = spec->samples = ginfo.blocksize / sampsize;
++			frequency = ginfo.play.sample_rate / 1000;
++		} else {
++			fragsize = spec->samples;
++			frequency = spec->freq/1000;
++		}
+ 	}
+ #ifdef DEBUG_AUDIO
+ 	fprintf(stderr, "Audio device %s U-Law only\n", 

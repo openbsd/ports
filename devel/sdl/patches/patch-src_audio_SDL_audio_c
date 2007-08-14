@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_audio_SDL_audio_c,v 1.11 2007/08/14 15:51:07 naddy Exp $
+--- src/audio/SDL_audio.c.orig	Fri Sep 17 15:20:10 2004
++++ src/audio/SDL_audio.c	Tue Aug 14 16:41:43 2007
+@@ -467,8 +467,9 @@ int SDL_OpenAudio(SDL_AudioSpec *desired, SDL_AudioSpe
+ 
+ 	/* See if we need to do any conversion */
+ 	if ( obtained != NULL ) {
+-		memcpy(obtained, &audio->spec, sizeof(audio->spec));
+-	} else if ( desired->freq != audio->spec.freq ||
++		memcpy(obtained, desired, sizeof(audio->spec));
++	}
++	if ( desired->freq != audio->spec.freq ||
+                     desired->format != audio->spec.format ||
+ 	            desired->channels != audio->spec.channels ) {
+ 		/* Build an audio conversion block */
+@@ -481,7 +482,8 @@ int SDL_OpenAudio(SDL_AudioSpec *desired, SDL_AudioSpe
+ 			return(-1);
+ 		}
+ 		if ( audio->convert.needed ) {
+-			audio->convert.len = desired->size;
++			audio->convert.len = (int) ( ((double) audio->spec.size) /
++                                          audio->convert.len_ratio );
+ 			audio->convert.buf =(Uint8 *)SDL_AllocAudioMem(
+ 			   audio->convert.len*audio->convert.len_mult);
+ 			if ( audio->convert.buf == NULL ) {
