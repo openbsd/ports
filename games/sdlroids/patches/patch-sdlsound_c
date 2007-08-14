@@ -1,0 +1,35 @@
+$OpenBSD: patch-sdlsound_c,v 1.1 2007/08/14 15:50:05 naddy Exp $
+--- sdlsound.c.orig	Wed Mar 28 01:03:07 2001
++++ sdlsound.c	Mon Aug 13 22:04:43 2007
+@@ -204,11 +204,15 @@ static Mix_Chunk *samples[NUM_SAMPLES];
+ /* Load the specified sample */
+ int load_sample(int num) {
+   
+-  if((samples[num] = Mix_LoadWAV(samplename[num])) ||
+-     Mix_LoadWAV(datafilename(NULL, samplename[num])) || 
+-     Mix_LoadWAV(datafilename(DATADIR, samplename[num])) || 
+-     Mix_LoadWAV(datafilename(bindir, samplename[num])))
+-    return 1;
++  if (samples[num] = Mix_LoadWAV(samplename[num]))
++     return 1;
++  if (samples[num] = Mix_LoadWAV(datafilename(NULL, samplename[num])))
++     return 1;
++  if (samples[num] = Mix_LoadWAV(datafilename(DATADIR, samplename[num])))
++     return 1;
++  if (samples[num] = Mix_LoadWAV(datafilename(bindir, samplename[num])))
++     return 1;
++
+   return 0;
+ }
+ 
+@@ -220,8 +224,8 @@ void init_sound(void)
+ 
+   /* Set the audio format */
+   audio_rate = 8000;
+-  audio_format = AUDIO_S16;
+-  audio_channels = 2;    /* 1 = mono, 2 = stereo */
++  audio_format = AUDIO_U8;
++  audio_channels = 1;    /* 1 = mono, 2 = stereo */
+ 
+   if (Mix_OpenAudio(audio_rate, audio_format, audio_channels, 256) < 0) {
+     fprintf(stderr, "Warning: %s\n", SDL_GetError());
