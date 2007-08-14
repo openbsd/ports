@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/08/03 17:42:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.31 2007/08/14 14:19:11 mbalmer Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -13,7 +13,8 @@ SHARED_LIBS=		Mrm	4.0	\
 			Xm	4.0
 
 CATEGORIES=		x11
-MASTER_SITES=		http://ftp.ics.com/openmotif/2.3/${VERSION}/
+#MASTER_SITES=		http://ftp.ics.com/openmotif/2.3/${VERSION}/
+MASTER_SITES=		ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/openmotif/
 DIST_SUBDIR=		openmotif
 
 MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
