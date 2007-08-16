@@ -1,4 +1,4 @@
-# $OpenBSD: powerpc,v 1.25 2007/08/06 20:34:46 pvalchev Exp $
+# $OpenBSD: powerpc,v 1.26 2007/08/16 16:14:20 pvalchev Exp $
 # This is the master list of subdirs used to choose powerpc packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -7,37 +7,23 @@ net/cvsync
 sysutils/mergemaster
 editors/vim,no_x11
 editors/emacs21
-#archivers/unzip
-#archivers/bzip2
-#net/nmap,no_x11
-#net/pptp
-#sysutils/cdrtools
-#mail/procmail
-#mail/fetchmail
-misc/screen
-#graphics/gif2png
-#shells/zsh
 shells/bash
-#shells/tcsh
-mail/mutt/stable
 #audio/libao,-esd
-#audio/mpg321
-#net/curl
-#net/wget
-#print/ghostscript/gnu
-#print/gv
-#audio/cdparanoia
-#net/ircII
+audio/mpg321
+net/curl
+net/wget
+print/ghostscript/gnu
+print/gv
+audio/cdparanoia
+net/ircII
 #www/mozilla-firefox
-#devel/id-utils
+devel/id-utils
 #x11/openmotif
 #x11/kde/base3
-#www/tidy
-#x11/rxvt
-#x11/xpostit
-#x11/xdaliclock
-#x11/xkeycaps
+www/tidy
+x11/rxvt
+x11/xpostit
+x11/xdaliclock
+x11/xkeycaps
 #audio/mp3cddb
 #x11/xloadimage
-textproc/antiword
-textproc/xpdf
