@@ -1,7 +1,7 @@
-$OpenBSD: patch-clamdscan_client_c,v 1.6 2007/03/25 11:24:02 mbalmer Exp $
---- clamdscan/client.c.orig	Wed Feb 28 00:44:45 2007
-+++ clamdscan/client.c	Tue Mar 13 09:33:36 2007
-@@ -27,6 +27,7 @@
+$OpenBSD: patch-clamdscan_client_c,v 1.7 2007/08/25 10:08:28 mbalmer Exp $
+--- clamdscan/client.c.orig	Sat Mar 31 20:59:16 2007
++++ clamdscan/client.c	Sat Aug 25 09:35:06 2007
+@@ -26,6 +26,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <sys/socket.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-clamdscan_client_c,v 1.6 2007/03/25 11:24:02 mbalmer Exp $
  #include <sys/un.h>
  #include <netinet/in.h>
  #include <arpa/inet.h>
-@@ -287,18 +288,18 @@ static int dsstream(int sockd, const str
+@@ -286,18 +287,18 @@ static int dsstream(int sockd, const struct optstruct 
  static char *abpath(const char *filename)
  {
  	struct stat foo;

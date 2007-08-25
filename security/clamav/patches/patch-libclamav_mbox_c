@@ -1,6 +1,6 @@
---- libclamav/mbox.c.orig	Tue Feb 13 14:06:57 2007
-+++ libclamav/mbox.c	Wed Feb 14 08:26:32 2007
-@@ -30,11 +30,6 @@ static	char	const	rcsid[] = "$Id: mbox.c
+--- libclamav/mbox.c.orig	Mon Jul 16 22:13:19 2007
++++ libclamav/mbox.c	Sat Aug 25 09:35:06 2007
+@@ -30,11 +30,6 @@ static	char	const	rcsid[] = "$Id: mbox.c,v 1.381 2007/
  #define	NDEBUG	/* map CLAMAV debug onto standard */
  #endif
  
