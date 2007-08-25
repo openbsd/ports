@@ -1,6 +1,6 @@
-$OpenBSD: patch-WPrefs_app_Menu_c,v 1.3 2005/11/01 17:28:34 wilfried Exp $
+$OpenBSD: patch-WPrefs_app_Menu_c,v 1.4 2007/08/25 09:27:12 mglocker Exp $
 --- WPrefs.app/Menu.c.orig	Tue Oct 26 04:23:39 2004
-+++ WPrefs.app/Menu.c	Mon Oct 31 18:55:49 2005
++++ WPrefs.app/Menu.c	Fri Aug 17 20:58:09 2007
 @@ -577,7 +577,7 @@ createPanel(_Panel *p)
          data->param.exec.command = "xv";
  
@@ -19,3 +19,11 @@ $OpenBSD: patch-WPrefs_app_Menu_c,v 1.3 2005/11/01 17:28:34 wilfried Exp $
          data->param.directory.stripExt = 1;
  
          data = putNewItem(panel, pad, DirectoryInfo, _("Bg Images (scale)"));
+@@ -1068,7 +1068,6 @@ parseCommand(WMPropList *item)
+ 
+                 for (i = 0, j = 0; i < tokn; i++) {
+                     if (strcmp(tokens[i], "-noext") == 0) {
+-                        wfree(tokens[i]);
+                         data->param.directory.stripExt = 1;
+                     } else {
+                         ctokens[j++] = tokens[i];
