@@ -1,0 +1,12 @@
+$OpenBSD: patch-gqview_desktop,v 1.1 2007/08/25 03:11:30 pvalchev Exp $
+--- gqview.desktop.orig	Thu Aug 23 14:06:57 2007
++++ gqview.desktop	Thu Aug 23 14:07:01 2007
+@@ -9,7 +9,7 @@ GenericName[es]=Visor de imágenes
+ Comment=View and manage images
+ Comment[hu]=Képek megjelenítése és rendszerezése
+ Comment[es]=Visualiza y administra imágenes
+-Exec=gqview -r %F
++Exec=gqview %F
+ Icon=gqview.png
+ Type=Application
+ Terminal=false
