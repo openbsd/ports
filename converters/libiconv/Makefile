@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2007/08/25 13:51:08 naddy Exp $
 
-COMMENT=	"character set conversion library"
+COMMENT=	character set conversion library
 
 DISTNAME=	libiconv-1.9.2
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
 SHARED_LIBS +=	charset              1.0      # .1.0
@@ -11,7 +11,7 @@ SHARED_LIBS +=	iconv                4.0      # .4.0
 
 HOMEPAGE=	http://www.gnu.org/software/libiconv/
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

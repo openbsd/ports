@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_relocatable_c,v 1.1 2007/08/25 13:51:08 naddy Exp $
+--- lib/relocatable.c.orig	Fri Aug  1 18:24:10 2003
++++ lib/relocatable.c	Wed Aug  1 19:31:16 2007
+@@ -429,15 +429,19 @@ relocate (const char *pathname)
+ 	{
+ 	  /* pathname starts with orig_prefix.  */
+ 	  const char *pathname_tail = &pathname[orig_prefix_len];
+-	  char *result =
+-	    (char *) xmalloc (curr_prefix_len + strlen (pathname_tail) + 1);
++	  size_t len;
++	  char *result;
++	  
++	  len = curr_prefix_len + strlen (pathname_tail) + 1;
++	  result = (char *) xmalloc (len);
+ 
+ #ifdef NO_XMALLOC
+ 	  if (result != NULL)
+ #endif
+ 	    {
+ 	      memcpy (result, curr_prefix, curr_prefix_len);
+-	      strcpy (result + curr_prefix_len, pathname_tail);
++	      result[curr_prefix_len] = '\0';
++	      strlcat (result, pathname_tail, len);
+ 	      return result;
+ 	    }
+ 	}

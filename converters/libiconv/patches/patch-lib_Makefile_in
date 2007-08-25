@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.9 2005/12/24 16:11:52 espie Exp $
+$OpenBSD: patch-lib_Makefile_in,v 1.10 2007/08/25 13:51:08 naddy Exp $
 --- lib/Makefile.in.orig	Sun May 18 16:19:16 2003
-+++ lib/Makefile.in	Sat Dec 24 17:04:04 2005
-@@ -26,7 +26,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=comp
++++ lib/Makefile.in	Wed Aug  1 18:35:06 2007
+@@ -26,7 +26,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=compile
  LIBTOOL_LINK = $(LIBTOOL) --mode=link
  LIBTOOL_INSTALL = $(LIBTOOL) --mode=install
  LIBTOOL_UNINSTALL = $(LIBTOOL) --mode=uninstall
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_Makefile_in,v 1.9 2005/12/24 16:11:52 espie Exp $
  MV = mv
  LN = @LN@
  LN_S = @LN_S@
-@@ -55,8 +55,10 @@ OBJECTS = iconv.lo localcharset.lo reloc
+@@ -55,8 +55,10 @@ OBJECTS = iconv.lo localcharset.lo relocatable.lo
  
  all : @PLUGLIB@ libiconv.la
  

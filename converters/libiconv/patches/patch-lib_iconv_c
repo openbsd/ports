@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_iconv_c,v 1.1 2005/04/16 21:10:22 espie Exp $
---- lib/iconv.c.orig	Mon Apr 11 12:05:11 2005
-+++ lib/iconv.c	Mon Apr 11 12:05:30 2005
-@@ -406,7 +406,7 @@ iconv_t iconv_open (const char* tocode, 
+$OpenBSD: patch-lib_iconv_c,v 1.2 2007/08/25 13:51:08 naddy Exp $
+--- lib/iconv.c.orig	Thu May 22 21:17:40 2003
++++ lib/iconv.c	Wed Aug  1 18:35:03 2007
+@@ -406,7 +406,7 @@ iconv_t iconv_open (const char* tocode, const char* fr
    /* Initialize additional fields. */
    if (from_wchar != to_wchar) {
      struct wchar_conv_struct * wcd = (struct wchar_conv_struct *) cd;
