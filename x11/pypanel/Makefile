@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/28 22:36:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/08/25 11:14:40 jasper Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"lightweight panel written in Python and C for X11"
+COMMENT=	lightweight panel written in Python and C for X11
 
 DISTNAME=	PyPanel-2.4
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pypanel.sourceforge.net/
@@ -21,7 +21,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pypanel/}
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	::x11/py-Xlib
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::x11/py-Xlib
 LIB_DEPENDS=	Imlib2.>=2::graphics/imlib2
 
 USE_X11=	Yes
