@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/07 12:24:25 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/08/25 19:03:40 simon Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/TimeZone/
 ${P5SITE}/DateTime/TimeZone.pm
@@ -7,7 +7,7 @@ ${P5SITE}/DateTime/TimeZone/Africa/Abidjan.pm
 ${P5SITE}/DateTime/TimeZone/Africa/Accra.pm
 ${P5SITE}/DateTime/TimeZone/Africa/Addis_Ababa.pm
 ${P5SITE}/DateTime/TimeZone/Africa/Algiers.pm
-${P5SITE}/DateTime/TimeZone/Africa/Asmera.pm
+${P5SITE}/DateTime/TimeZone/Africa/Asmara.pm
 ${P5SITE}/DateTime/TimeZone/Africa/Bamako.pm
 ${P5SITE}/DateTime/TimeZone/Africa/Bangui.pm
 ${P5SITE}/DateTime/TimeZone/Africa/Banjul.pm
@@ -122,6 +122,7 @@ ${P5SITE}/DateTime/TimeZone/America/Indiana/Marengo.pm
 ${P5SITE}/DateTime/TimeZone/America/Indiana/Petersburg.pm
 ${P5SITE}/DateTime/TimeZone/America/Indiana/Vevay.pm
 ${P5SITE}/DateTime/TimeZone/America/Indiana/Vincennes.pm
+${P5SITE}/DateTime/TimeZone/America/Indiana/Winamac.pm
 ${P5SITE}/DateTime/TimeZone/America/Inuvik.pm
 ${P5SITE}/DateTime/TimeZone/America/Iqaluit.pm
 ${P5SITE}/DateTime/TimeZone/America/Jamaica.pm
@@ -166,6 +167,7 @@ ${P5SITE}/DateTime/TimeZone/America/Rainy_River.pm
 ${P5SITE}/DateTime/TimeZone/America/Rankin_Inlet.pm
 ${P5SITE}/DateTime/TimeZone/America/Recife.pm
 ${P5SITE}/DateTime/TimeZone/America/Regina.pm
+${P5SITE}/DateTime/TimeZone/America/Resolute.pm
 ${P5SITE}/DateTime/TimeZone/America/Rio_Branco.pm
 ${P5SITE}/DateTime/TimeZone/America/Santiago.pm
 ${P5SITE}/DateTime/TimeZone/America/Santo_Domingo.pm
@@ -279,7 +281,7 @@ ${P5SITE}/DateTime/TimeZone/Atlantic/Azores.pm
 ${P5SITE}/DateTime/TimeZone/Atlantic/Bermuda.pm
 ${P5SITE}/DateTime/TimeZone/Atlantic/Canary.pm
 ${P5SITE}/DateTime/TimeZone/Atlantic/Cape_Verde.pm
-${P5SITE}/DateTime/TimeZone/Atlantic/Faeroe.pm
+${P5SITE}/DateTime/TimeZone/Atlantic/Faroe.pm
 ${P5SITE}/DateTime/TimeZone/Atlantic/Madeira.pm
 ${P5SITE}/DateTime/TimeZone/Atlantic/Reykjavik.pm
 ${P5SITE}/DateTime/TimeZone/Atlantic/South_Georgia.pm
@@ -291,6 +293,7 @@ ${P5SITE}/DateTime/TimeZone/Australia/Brisbane.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Broken_Hill.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Currie.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Darwin.pm
+${P5SITE}/DateTime/TimeZone/Australia/Eucla.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Hobart.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Lindeman.pm
 ${P5SITE}/DateTime/TimeZone/Australia/Lord_Howe.pm
@@ -358,7 +361,11 @@ ${P5SITE}/DateTime/TimeZone/Indian/Maldives.pm
 ${P5SITE}/DateTime/TimeZone/Indian/Mauritius.pm
 ${P5SITE}/DateTime/TimeZone/Indian/Mayotte.pm
 ${P5SITE}/DateTime/TimeZone/Indian/Reunion.pm
+${P5SITE}/DateTime/TimeZone/Local/
 ${P5SITE}/DateTime/TimeZone/Local.pm
+${P5SITE}/DateTime/TimeZone/Local/Unix.pm
+${P5SITE}/DateTime/TimeZone/Local/VMS.pm
+${P5SITE}/DateTime/TimeZone/Local/Win32.pm
 ${P5SITE}/DateTime/TimeZone/MST.pm
 ${P5SITE}/DateTime/TimeZone/MST7MDT.pm
 ${P5SITE}/DateTime/TimeZone/OffsetOnly.pm
@@ -408,6 +415,9 @@ ${P5SITE}/DateTime/TimeZoneCatalog.pm
 @man man/man3p/DateTime::TimeZone.3p
 @man man/man3p/DateTime::TimeZone::Floating.3p
 @man man/man3p/DateTime::TimeZone::Local.3p
+@man man/man3p/DateTime::TimeZone::Local::Unix.3p
+@man man/man3p/DateTime::TimeZone::Local::VMS.3p
+@man man/man3p/DateTime::TimeZone::Local::Win32.3p
 @man man/man3p/DateTime::TimeZone::OffsetOnly.3p
 @man man/man3p/DateTime::TimeZone::OlsonDB.3p
 @man man/man3p/DateTime::TimeZone::UTC.3p
