@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/06/29 10:22:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/08/25 08:53:28 espie Exp $
 bin/amarok
 bin/amarok_daapserver.rb
 bin/amarok_proxy.rb
@@ -1074,6 +1074,7 @@ share/locale/nb/LC_MESSAGES/amarok.mo
 share/locale/nds/
 share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/amarok.mo
+share/locale/ne/LC_MESSAGES/amarok.mo
 share/locale/nl/LC_MESSAGES/amarok.mo
 share/locale/nn/LC_MESSAGES/amarok.mo
 share/locale/pa/LC_MESSAGES/amarok.mo
