@@ -1,0 +1,12 @@
+$OpenBSD: patch-ROX-Filer_AppRun,v 1.11 2007/08/25 11:17:40 jasper Exp $
+--- ROX-Filer/AppRun.orig	Fri Aug 17 10:44:13 2007
++++ ROX-Filer/AppRun	Fri Aug 17 10:44:26 2007
+@@ -41,8 +41,6 @@ case $1 in
+ 		cd "$BUILDDIR" && "$APP_DIR/src/configure" "$@" \
+ 			&& $MAKE clean && $MAKE && echo Done >&2 && exit 0
+ 		echo Compile failed >&2
+-		echo Press Return... >&2
+-		read WAIT
+ 		exit 1
+ esac
+ 
