@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portslogger,v 1.13 2005/01/08 00:05:16 espie Exp $
+# $OpenBSD: portslogger,v 1.14 2007/08/25 07:56:04 espie Exp $
 # Copyright (c) 2001 Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -121,6 +121,11 @@ while (<>) {
 		if ($ncontext ne $context) {
 			$context = $ncontext;
 			$logfile = new Logger $context;
+		}
+	} elsif (m/^\=\=\=\> Exiting\s+(.*)\s+with an error$/) {
+		$ncontext = $1;
+		if ($ncontext eq $context) {
+			undef $context;
 		}
 	}
 	unless (defined $context) {
