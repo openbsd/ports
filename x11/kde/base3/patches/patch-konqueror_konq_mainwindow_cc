@@ -1,0 +1,27 @@
+$OpenBSD: patch-konqueror_konq_mainwindow_cc,v 1.5 2007/08/25 08:03:02 espie Exp $
+--- konqueror/konq_mainwindow.cc.orig	Mon May 14 09:55:47 2007
++++ konqueror/konq_mainwindow.cc	Wed Aug 15 13:55:38 2007
+@@ -611,12 +611,11 @@ void KonqMainWindow::openURL( KonqView *_view, const K
+   }
+   else // no known serviceType, use KonqRun
+   {
+-      if ( ( view && view == m_currentView ) ||
+-              ( !view && !req.newTab ) ) // startup with argument
++      if ( ( !view || view->url().isEmpty() ) && !req.newTab ) // startup with argument
+       {
+           // Show it for now in the location bar, but we'll need to store it in the view
+           // later on (can't do it yet since either view == 0 or updateHistoryEntry will be called).
+-          kdDebug(1202) << "setLocationBarURL : url = " << url << endl;
++          kdDebug(1202) << "setLocationBarURL (startup) : url = " << url << endl;
+           setLocationBarURL( url );
+       }
+ 
+@@ -819,8 +818,6 @@ bool KonqMainWindow::openView( QString serviceType, co
+         if ( childView )
+         {
+             enableAllActions( true );
+-
+-            m_pViewManager->setActivePart( childView->part() );
+             m_currentView = childView;
+         }
+       }

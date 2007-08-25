@@ -1,0 +1,13 @@
+$OpenBSD: patch-konqueror_konq_combo_cc,v 1.1 2007/08/25 08:03:02 espie Exp $
+--- konqueror/konq_combo.cc.orig	Sun Oct  1 19:32:03 2006
++++ konqueror/konq_combo.cc	Wed Aug 15 13:55:38 2007
+@@ -158,6 +158,9 @@ void KonqCombo::setURL( const QString& url )
+         kapp->dcopClient()->send( "konqueror*", "KonquerorIface",
+                                   "addToCombo(QString,QCString)", data);
+     }
++    // important security consideration: always display the beginning
++    // of the url rather than its end to prevent spoofing attempts.
++    lineEdit()->setCursorPosition( 0 );
+ }
+ 
+ void KonqCombo::setTemporary( const QString& text )

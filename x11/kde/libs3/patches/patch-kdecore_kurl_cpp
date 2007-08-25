@@ -1,0 +1,21 @@
+$OpenBSD: patch-kdecore_kurl_cpp,v 1.2 2007/08/25 08:03:02 espie Exp $
+--- kdecore/kurl.cpp.orig	Sat Nov 19 10:09:18 2005
++++ kdecore/kurl.cpp	Wed Aug 15 13:51:42 2007
+@@ -183,7 +183,7 @@ static QString lazy_encode( const QString& segment, bo
+         (character == '?') || // Start of query delimiter
+         ((character == '@') && encodeAt) || // Username delimiter
+         (character == '#') || // Start of reference delimiter
+-        ((character == 32) && (i+1 == old_length))) // A trailing space
++        ((character == 32) && (i+1 == old_length || segment[i+1] == ' '))) // A trailing space
+     {
+       new_segment[ new_length++ ] = '%';
+ 
+@@ -1540,7 +1540,7 @@ QString KURL::prettyURL( int _trailing ) const
+     u += "//";
+     if ( hasUser() )
+     {
+-      u += lazy_encode(m_strUser);
++      u += encode(m_strUser, 0, 0);
+       // Don't show password!
+       u += "@";
+     }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-konqueror_konq_viewmgr_cc,v 1.1 2007/08/25 08:03:02 espie Exp $
+--- konqueror/konq_viewmgr.cc.orig	Mon Jan 15 12:32:12 2007
++++ konqueror/konq_viewmgr.cc	Wed Aug 15 13:55:38 2007
+@@ -1395,6 +1395,8 @@ void KonqViewManager::slotActivePartChanged ( KParts::
+ 
+ void KonqViewManager::emitActivePartChanged()
+ {
++    // prevent unnecessary multiple calls to slotPartActivated:
++    m_activePartChangedTimer->stop();
+     m_pMainWindow->slotPartActivated( activePart() );
+ }
+ 
