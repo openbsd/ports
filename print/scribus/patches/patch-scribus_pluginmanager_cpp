@@ -1,0 +1,12 @@
+$OpenBSD: patch-scribus_pluginmanager_cpp,v 1.1 2007/08/25 20:16:32 mbalmer Exp $
+--- scribus/pluginmanager.cpp.orig	Sun Feb 11 16:59:26 2007
++++ scribus/pluginmanager.cpp	Thu Aug 23 23:45:43 2007
+@@ -179,7 +179,7 @@ void PluginManager::initPlugs()
+ 	psimp before barcode.You know, security by obscurity ;) PV */
+ 	QDir dirList(ScPaths::instance().pluginDir(),
+ 				 libPattern, QDir::Name | QDir::Reversed,
+-				 QDir::Files | QDir::Executable | QDir::NoSymLinks);
++				 QDir::Files | QDir::Readable | QDir::NoSymLinks);
+ 
+ 	if ((!dirList.exists()) || (dirList.count() == 0))
+ 		return;
