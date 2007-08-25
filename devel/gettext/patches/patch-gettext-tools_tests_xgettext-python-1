@@ -1,7 +1,7 @@
-$OpenBSD: patch-gettext-tools_tests_xgettext-python-1,v 1.1 2005/11/05 23:47:58 naddy Exp $
---- gettext-tools/tests/xgettext-python-1.orig	Tue Nov  1 23:14:58 2005
-+++ gettext-tools/tests/xgettext-python-1	Tue Nov  1 23:15:10 2005
-@@ -28,7 +28,7 @@ tmpfiles="$tmpfiles xg-py-1.err xg-py-1.
+$OpenBSD: patch-gettext-tools_tests_xgettext-python-1,v 1.2 2007/08/25 13:48:24 naddy Exp $
+--- gettext-tools/tests/xgettext-python-1.orig	Mon Nov 27 18:02:11 2006
++++ gettext-tools/tests/xgettext-python-1	Tue May 29 06:53:47 2007
+@@ -28,7 +28,7 @@ tmpfiles="$tmpfiles xg-py-1.err xg-py-1.tmp xg-py-1.po
  : ${XGETTEXT=xgettext}
  ${XGETTEXT} --add-comments --no-location -o xg-py-1.tmp xg-py-1.py 2>xg-py-1.err
  test $? = 0 || { cat xg-py-1.err; rm -fr $tmpfiles; exit 1; }

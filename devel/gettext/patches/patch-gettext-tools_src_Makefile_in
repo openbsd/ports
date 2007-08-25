@@ -1,32 +1,23 @@
-$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.1 2005/11/05 23:47:58 naddy Exp $
---- gettext-tools/src/Makefile.in.orig	Mon May 23 13:24:29 2005
-+++ gettext-tools/src/Makefile.in	Wed Nov  2 21:57:32 2005
-@@ -591,8 +591,7 @@ urlget_SOURCES = urlget.c
+$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.2 2007/08/25 13:48:24 naddy Exp $
+--- gettext-tools/src/Makefile.in.orig	Mon Nov 27 18:34:56 2006
++++ gettext-tools/src/Makefile.in	Tue May 29 07:32:41 2007
+@@ -858,8 +858,7 @@ urlget_SOURCES = urlget.c
+ # Need @LTLIBINTL@ because many source files use gettext().
  # Need @LTLIBICONV@ because po-charset.c, po-lex.c, msgl-iconv.c, write-po.c
  # use iconv().
- libgettextsrc_la_LDFLAGS = \
--  -release @VERSION@ \
--  ../lib/libgettextlib.la @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined
-+  ../lib/libgettextlib.la -no-undefined
+-libgettextsrc_la_LDFLAGS = -release @VERSION@ \
+-	../gnulib-lib/libgettextlib.la @LTLIBINTL@ @LTLIBICONV@ -lc \
++libgettextsrc_la_LDFLAGS = \
+ 	@LTNOUNDEF@ $(am__append_2)
  
- 
- # How to build libgettextpo.la.
-@@ -601,7 +600,7 @@ libgettextsrc_la_LDFLAGS = \
- libgettextpo_la_LDFLAGS = \
-   -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
-   -rpath $(libdir) \
--  libgettextsrc.la ../lib/libgettextlib.la @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined
-+  libgettextsrc.la ../lib/libgettextlib.la -no-undefined
- 
- # Build order. Only needed for "make -j[N]".
- libgettextpo_la_DEPENDENCIES = libgettextsrc.la
-@@ -610,23 +609,23 @@ libgettextpo_la_DEPENDENCIES = libgettex
+ # Compile-time flags for particular source files.
+@@ -870,24 +869,24 @@ msgmerge_CXXFLAGS = $(AM_CXXFLAGS) $(OPENMP_CFLAGS)
  # INTL_MACOSX_LIBS is needed because the programs depend on libintl.la
  # but libtool doesn't put -Wl,-framework options into .la files.
  # For msginit, it is also needed because of localename.c.
 -msgcmp_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
 -msgfmt_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msgmerge_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgmerge_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ @MSGMERGE_LIBM@ $(OPENMP_CFLAGS)
 -msgunfmt_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
 -xgettext_LDADD = $(LIBUNINAME) libgettextsrc.la @INTL_MACOSX_LIBS@ @LTLIBEXPAT@
 -msgattrib_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
@@ -37,25 +28,27 @@ $OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.1 2005/11/05 23:47:58 naddy Ex
 -msgexec_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
 -msgfilter_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
 -msggrep_LDADD = $(LIBGREP) libgettextsrc.la @INTL_MACOSX_LIBS@
-+msgcmp_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgfmt_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgmerge_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgunfmt_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+xgettext_LDADD = $(LIBUNINAME) libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@ @LTLIBEXPAT@
-+msgattrib_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgcat_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgcomm_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgconv_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgen_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgexec_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgfilter_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msggrep_LDADD = $(LIBGREP) libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgcmp_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgfmt_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgmerge_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@ @MSGMERGE_LIBM@ $(OPENMP_CFLAGS)
++msgunfmt_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++xgettext_LDADD = $(LIBUNINAME) libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@ @LTLIBEXPAT@
++msgattrib_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgcat_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgcomm_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgconv_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgen_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgexec_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgfilter_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msggrep_LDADD = $(LIBGREP) libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
  msginit_LDADD = ../intl/localename.@INTL_LIBTOOL_SUFFIX_PREFIX@o \
 -                libgettextsrc.la @INTL_MACOSX_LIBS@
-+                libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++                libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
  
 -msguniq_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
-+msguniq_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
+-recode_sr_latin_LDADD = ../gnulib-lib/libgettextlib.la @INTL_MACOSX_LIBS@
++msguniq_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++recode_sr_latin_LDADD = ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
  
  # Specify installation directory, for --enable-relocatable.
- msgcmp_CFLAGS = -DINSTALLDIR=\"$(bindir)\"
+ msgcmp_CPPFLAGS = $(AM_CPPFLAGS) -DINSTALLDIR=\"$(bindir)\"

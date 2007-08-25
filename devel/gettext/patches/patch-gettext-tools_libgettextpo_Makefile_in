@@ -1,0 +1,21 @@
+$OpenBSD: patch-gettext-tools_libgettextpo_Makefile_in,v 1.1 2007/08/25 13:48:24 naddy Exp $
+--- gettext-tools/libgettextpo/Makefile.in.orig	Mon Nov 27 18:48:21 2006
++++ gettext-tools/libgettextpo/Makefile.in	Tue May 29 02:50:09 2007
+@@ -50,7 +50,7 @@ host_triplet = @host@
+ @WOE32DLL_TRUE@am__append_2 = -Wl,--export-all-symbols
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.gnulib \
+ 	$(srcdir)/Makefile.in $(srcdir)/exported.sh.in ChangeLog
+-@GL_COND_LIBTOOL_TRUE@am__append_3 = $(LTLIBICONV)
++#am__append_3 = $(LTLIBICONV)
+ subdir = libgettextpo
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps =  \
+@@ -599,7 +599,7 @@ LTV_AGE = 3
+ libgettextpo_la_LIBADD = libgnu.la
+ libgettextpo_la_LDFLAGS = -version-info \
+ 	$(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) -rpath $(libdir) \
+-	@LTLIBINTL@ @LTLIBICONV@ -lc @LTNOUNDEF@ $(am__append_2)
++	@LTNOUNDEF@ $(am__append_2)
+ libgnu_la_SOURCES = allocsa.h allocsa.c basename.h basename.c \
+ 	c-ctype.h c-ctype.c c-strcase.h c-strcasecmp.c c-strncasecmp.c \
+ 	c-strstr.h c-strstr.c error-progname.h error-progname.c exit.h \

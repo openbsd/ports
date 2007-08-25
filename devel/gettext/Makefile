@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.45 2007/04/27 18:40:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.46 2007/08/25 13:48:23 naddy Exp $
 
-COMMENT=	"GNU gettext"
+COMMENT=	GNU gettext
 
-DISTNAME=	gettext-0.14.6
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS +=	intl                 3.0      # .7.3
-SHARED_LIBS +=	asprintf             1.0      # .0.0
-SHARED_LIBS +=	gettextlib           0.0      # .0.0
-SHARED_LIBS +=	gettextsrc           0.0      # .0.0
-SHARED_LIBS +=	gettextpo            1.0      # .1.0
+DISTNAME=	gettext-0.16.1
+SHARED_LIBS +=  intl                 4.0      # .8.1
+SHARED_LIBS +=  asprintf             1.0      # .0.0
+SHARED_LIBS +=  gettextlib           1.0      # .0.0
+SHARED_LIBS +=  gettextsrc           1.0      # .0.0
+SHARED_LIBS +=  gettextpo            2.0      # .3.0
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gettext/}
@@ -24,19 +23,18 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	converters/libiconv
-WANTLIB=	c expat
+WANTLIB=	c expat m
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-included-gettext \
 		--with-libiconv-prefix="${LOCALBASE}" \
-		--with-libexpat-prefix="${X11BASE}" \
-		--mandir="${PREFIX}/man"
+		--with-libexpat-prefix="${X11BASE}"
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
-EXTRA_LOCALES=	bg en eo he hu hr lv nb
+EXTRA_LOCALES=	bg en he hu hr lv nb
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp

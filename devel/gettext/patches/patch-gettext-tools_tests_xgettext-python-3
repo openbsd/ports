@@ -1,0 +1,39 @@
+$OpenBSD: patch-gettext-tools_tests_xgettext-python-3,v 1.1 2007/08/25 13:48:24 naddy Exp $
+--- gettext-tools/tests/xgettext-python-3.orig	Tue May 29 07:01:35 2007
++++ gettext-tools/tests/xgettext-python-3	Tue May 29 07:03:13 2007
+@@ -54,7 +54,7 @@ test $? = 1 || { rm -fr $tmpfiles; exit 1; }
+ ${XGETTEXT} --add-comments=TRANSLATORS: --no-location --from-code=euc-jp \
+   -o xg-py-3a.tmp xg-py-3a.py
+ test $? = 0 || { rm -fr $tmpfiles; exit 1; }
+-grep -v 'POT-Creation-Date' < xg-py-3a.tmp > xg-py-3a.pot
++grep -av 'POT-Creation-Date' < xg-py-3a.tmp > xg-py-3a.pot
+ 
+ : ${DIFF=diff}
+ ${DIFF} xg-py-3.ok xg-py-3a.pot
+@@ -66,7 +66,7 @@ tmpfiles="$tmpfiles xg-py-3b.tmp xg-py-3b.pot"
+ ${XGETTEXT} --add-comments=TRANSLATORS: --no-location \
+   -o xg-py-3b.tmp xg-py-3b.py
+ test $? = 0 || { rm -fr $tmpfiles; exit 1; }
+-grep -v 'POT-Creation-Date' < xg-py-3b.tmp > xg-py-3b.pot
++grep -av 'POT-Creation-Date' < xg-py-3b.tmp > xg-py-3b.pot
+ 
+ ${DIFF} xg-py-3.ok xg-py-3b.pot
+ test $? = 0 || { rm -fr $tmpfiles; exit 1; }
+@@ -78,7 +78,7 @@ tmpfiles="$tmpfiles xg-py-3c.tmp xg-py-3c.pot"
+ ${XGETTEXT} --add-comments=TRANSLATORS: --no-location --from-code=iso-8859-1 \
+   -o xg-py-3c.tmp xg-py-3b.py
+ test $? = 0 || { rm -fr $tmpfiles; exit 1; }
+-grep -v 'POT-Creation-Date' < xg-py-3c.tmp > xg-py-3c.pot
++grep -av 'POT-Creation-Date' < xg-py-3c.tmp > xg-py-3c.pot
+ 
+ ${DIFF} xg-py-3.ok xg-py-3c.pot
+ test $? = 0 || { rm -fr $tmpfiles; exit 1; }
+@@ -98,7 +98,7 @@ tmpfiles="$tmpfiles xg-py-3d.tmp xg-py-3d.pot"
+ ${XGETTEXT} --add-comments=TRANSLATORS: \
+   -o xg-py-3d.tmp xg-py-3d.py
+ test $? = 0 || { rm -fr $tmpfiles; exit 1; }
+-grep -v 'POT-Creation-Date' < xg-py-3d.tmp > xg-py-3d.pot
++grep -av 'POT-Creation-Date' < xg-py-3d.tmp > xg-py-3d.pot
+ 
+ tmpfiles="$tmpfiles xg-py-3d.ok"
+ cat <<\EOF > xg-py-3d.ok

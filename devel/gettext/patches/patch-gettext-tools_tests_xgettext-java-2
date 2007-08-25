@@ -1,7 +1,7 @@
-$OpenBSD: patch-gettext-tools_tests_xgettext-java-2,v 1.1 2005/11/05 23:47:58 naddy Exp $
---- gettext-tools/tests/xgettext-java-2.orig	Tue Nov  1 23:15:23 2005
-+++ gettext-tools/tests/xgettext-java-2	Tue Nov  1 23:15:31 2005
-@@ -62,7 +62,7 @@ tmpfiles="$tmpfiles xg-j-2.tmp xg-j-2.po
+$OpenBSD: patch-gettext-tools_tests_xgettext-java-2,v 1.2 2007/08/25 13:48:24 naddy Exp $
+--- gettext-tools/tests/xgettext-java-2.orig	Mon Nov 27 18:02:11 2006
++++ gettext-tools/tests/xgettext-java-2	Tue May 29 06:53:47 2007
+@@ -62,7 +62,7 @@ tmpfiles="$tmpfiles xg-j-2.tmp xg-j-2.pot"
  : ${XGETTEXT=xgettext}
  ${XGETTEXT} --from-code=ISO-8859-1 -c -o xg-j-2.tmp xg-j-2.java 2>/dev/null
  test $? = 0 || { rm -fr $tmpfiles; exit 1; }

@@ -1,0 +1,23 @@
+$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.1 2007/08/25 13:48:23 naddy Exp $
+--- gettext-tools/gnulib-lib/Makefile.in.orig	Mon Nov 27 18:34:53 2006
++++ gettext-tools/gnulib-lib/Makefile.in	Tue May 29 02:39:16 2007
+@@ -48,7 +48,7 @@ host_triplet = @host@
+ # Tell the mingw or Cygwin linker which symbols to export.
+ @WOE32DLL_TRUE@am__append_1 = ../woe32dll/gettextlib-exports.c
+ @WOE32DLL_TRUE@am__append_2 = -Wl,--export-all-symbols
+-@GL_COND_LIBTOOL_TRUE@am__append_3 = $(LTLIBICONV)
++#am__append_3 = $(LTLIBICONV)
+ subdir = gnulib-lib
+ DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in
+@@ -549,8 +549,8 @@ libgettextlib_la_DEPENDENCIES = $(gl_LTLIBOBJS)
+ 
+ # Need @LTLIBINTL@ because many source files use gettext().
+ # Need @LTLIBICONV@ because linebreak.c and striconv.c use iconv().
+-libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -release @VERSION@ \
+-	@LTLIBINTL@ @LTLIBICONV@ -lc @LTNOUNDEF@ $(am__append_2) \
++libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) \
++	@LTNOUNDEF@ $(am__append_2) \
+ 	$(am__append_3)
+ noinst_HEADERS = 
+ pkgdata_DATA = javaversion.class

@@ -1,0 +1,15 @@
+$OpenBSD: patch-gettext-runtime_intl_localcharset_c,v 1.1 2007/08/25 13:48:23 naddy Exp $
+--- gettext-runtime/intl/localcharset.c.orig	Wed Aug  1 17:05:27 2007
++++ gettext-runtime/intl/localcharset.c	Wed Aug  1 17:15:26 2007
+@@ -194,8 +194,9 @@ get_charset_aliases (void)
+ 		    free (old_res_ptr);
+ 		  break;
+ 		}
+-	      strcpy (res_ptr + res_size - (l2 + 1) - (l1 + 1), buf1);
+-	      strcpy (res_ptr + res_size - (l2 + 1), buf2);
++	      strlcpy (res_ptr + res_size - (l2 + 1) - (l1 + 1), buf1,
++		l1 + 1 + l2 + 1 + 1);
++	      strlcpy (res_ptr + res_size - (l2 + 1), buf2, l2 + 1 + 1);
+ 	    }
+ 	  fclose (fp);
+ 	  if (res_size == 0)

@@ -1,6 +1,6 @@
-# $OpenBSD: gettext.port.mk,v 1.6 2006/11/25 12:58:18 steven Exp $
+# $OpenBSD: gettext.port.mk,v 1.7 2007/08/25 13:48:23 naddy Exp $
 
-MODGETTEXT_LIB_DEPENDS=	intl.>=3:gettext->=0.10.38:devel/gettext \
+MODGETTEXT_LIB_DEPENDS=	intl.>=4:gettext->=0.10.38:devel/gettext \
 			iconv.>=4::converters/libiconv
 
 MODGETTEXT_RUN_DEPENDS=	:gettext->=0.10.38:devel/gettext
@@ -9,5 +9,5 @@ MODGETTEXT_RUN_DEPENDS=	:gettext->=0.10.38:devel/gettext
 # necessary so that we have locale.alias installed on static archs.
 # Typically installed in PREFIX/share/locale.
 LIB_DEPENDS+=	${MODGETTEXT_LIB_DEPENDS}
-BUILD_DEPENDS+=	:gettext->=0.14.6:devel/gettext
+BUILD_DEPENDS+=	:gettext->=0.16.1:devel/gettext
 RUN_DEPENDS+=	${MODGETTEXT_RUN_DEPENDS}

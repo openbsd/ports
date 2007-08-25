@@ -1,7 +1,7 @@
-$OpenBSD: patch-gettext-runtime_intl_relocatable_c,v 1.1 2005/11/05 23:47:58 naddy Exp $
---- gettext-runtime/intl/relocatable.c.orig	Wed Nov  2 21:45:39 2005
-+++ gettext-runtime/intl/relocatable.c	Wed Nov  2 21:48:14 2005
-@@ -429,15 +429,19 @@ relocate (const char *pathname)
+$OpenBSD: patch-gettext-runtime_intl_relocatable_c,v 1.2 2007/08/25 13:48:23 naddy Exp $
+--- gettext-runtime/intl/relocatable.c.orig	Mon Nov 27 18:02:00 2006
++++ gettext-runtime/intl/relocatable.c	Wed Aug  1 17:17:41 2007
+@@ -448,15 +448,19 @@ relocate (const char *pathname)
  	{
  	  /* pathname starts with orig_prefix.  */
  	  const char *pathname_tail = &pathname[orig_prefix_len];
