@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmFileCommand_cxx,v 1.1 2007/03/26 21:27:44 espie Exp $
---- Source/cmFileCommand.cxx.orig	Mon Mar 26 00:39:17 2007
-+++ Source/cmFileCommand.cxx	Mon Mar 26 02:13:02 2007
-@@ -1207,10 +1207,44 @@ bool cmFileCommand::HandleInstallCommand(
+$OpenBSD: patch-Source_cmFileCommand_cxx,v 1.2 2007/08/25 08:35:20 espie Exp $
+--- Source/cmFileCommand.cxx.orig	Mon Jul 16 23:12:30 2007
++++ Source/cmFileCommand.cxx	Mon Aug 13 02:50:05 2007
+@@ -1279,10 +1279,44 @@ bool cmFileCommand::HandleInstallCommand(
            std::string libname = toFile;
            std::string soname = toFile;
            std::string soname_nopath = fromName;
@@ -33,15 +33,15 @@ $OpenBSD: patch-Source_cmFileCommand_cxx,v 1.1 2007/03/26 21:27:44 espie Exp $
 +				myversion = tweaked;
 +		}
 +	  }
-+          this->ComputeVersionedName(soname, myversion.c_str());
-+          this->ComputeVersionedName(soname_nopath, myversion.c_str());
-+          this->ComputeVersionedName(fromName, myversion.c_str());
-+          this->ComputeVersionedName(toFile, myversion.c_str());
++          this->ComputeVersionedLibName(soname, myversion.c_str());
++          this->ComputeVersionedLibName(soname_nopath, myversion.c_str());
++          this->ComputeVersionedLibName(fromName, myversion.c_str());
++          this->ComputeVersionedLibName(toFile, myversion.c_str());
 +#else
-           this->ComputeVersionedName(soname, lib_soversion);
-           this->ComputeVersionedName(soname_nopath, lib_soversion);
-           this->ComputeVersionedName(fromName, lib_version);
-           this->ComputeVersionedName(toFile, lib_version);
+           this->ComputeVersionedLibName(soname, lib_soversion);
+           this->ComputeVersionedLibName(soname_nopath, lib_soversion);
+           this->ComputeVersionedLibName(fromName, lib_version);
+           this->ComputeVersionedLibName(toFile, lib_version);
 +#endif
  
            cmSystemTools::RemoveFile(soname.c_str());

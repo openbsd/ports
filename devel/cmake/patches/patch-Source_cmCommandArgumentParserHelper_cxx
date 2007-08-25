@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_cmCommandArgumentParserHelper_cxx,v 1.3 2007/03/20 11:23:10 espie Exp $
---- Source/cmCommandArgumentParserHelper.cxx.orig	Wed Jan 10 18:59:12 2007
-+++ Source/cmCommandArgumentParserHelper.cxx	Sun Mar 18 13:52:02 2007
+$OpenBSD: patch-Source_cmCommandArgumentParserHelper_cxx,v 1.4 2007/08/25 08:35:20 espie Exp $
+--- Source/cmCommandArgumentParserHelper.cxx.orig	Mon Jul 16 23:12:30 2007
++++ Source/cmCommandArgumentParserHelper.cxx	Sun Aug 12 16:02:01 2007
 @@ -29,12 +29,12 @@ cmCommandArgumentParserHelper::cmCommandArgumentParser
    this->FileName = 0;
- 
+   this->RemoveEmpty = true;
    this->EmptyVariable[0] = 0;
 -  strcpy(this->DCURLYVariable, "${");
 -  strcpy(this->RCURLYVariable, "}");
@@ -30,7 +30,7 @@ $OpenBSD: patch-Source_cmCommandArgumentParserHelper_cxx,v 1.3 2007/03/20 11:23:
    this->Variables.push_back(stVal);
    return stVal;
  }
-@@ -143,8 +142,8 @@ char* cmCommandArgumentParserHelper::CombineUnions(cha
+@@ -160,8 +159,8 @@ char* cmCommandArgumentParserHelper::CombineUnions(cha
      }
    size_t len = strlen(in1) + strlen(in2) + 1;
    char* out = new char [ len ];

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmake_cxx,v 1.4 2007/03/20 11:23:10 espie Exp $
---- Source/cmake.cxx.orig	Wed Jan 10 18:59:12 2007
-+++ Source/cmake.cxx	Sun Mar 18 13:52:03 2007
-@@ -1487,7 +1487,7 @@ int cmake::Configure()
+$OpenBSD: patch-Source_cmake_cxx,v 1.5 2007/08/25 08:35:20 espie Exp $
+--- Source/cmake.cxx.orig	Mon Jul 16 23:12:30 2007
++++ Source/cmake.cxx	Sun Aug 12 16:02:02 2007
+@@ -1499,7 +1499,7 @@ int cmake::Configure()
    if(!this->CacheManager->GetCacheValue("CMAKE_BACKWARDS_COMPATIBILITY"))
      {
      char ver[256];
@@ -10,7 +10,7 @@ $OpenBSD: patch-Source_cmake_cxx,v 1.4 2007/03/20 11:23:10 espie Exp $
              cmMakefile::GetMinorVersion());
      this->CacheManager->AddCacheEntry
        ("CMAKE_BACKWARDS_COMPATIBILITY",ver, 
-@@ -1852,7 +1852,7 @@ int cmake::DumpDocumentationToFile(std::ostream& f)
+@@ -1864,7 +1864,7 @@ int cmake::DumpDocumentationToFile(std::ostream& f)
    const char *terse;
    const char *full;
    char tmp[1024];
@@ -19,7 +19,7 @@ $OpenBSD: patch-Source_cmake_cxx,v 1.4 2007/03/20 11:23:10 espie Exp $
            cmake::GetMinorVersion(), cmVersion::GetReleaseVersion().c_str());
    f << "<html>\n";
    f << "<h1>Documentation for commands of CMake " << tmp << "</h1>\n";
-@@ -1959,7 +1959,7 @@ int cmake::LoadCache()
+@@ -1971,7 +1971,7 @@ int cmake::LoadCache()
    if(!this->CacheManager->GetCacheValue("CMAKE_BACKWARDS_COMPATIBILITY"))
      {
      char ver[256];

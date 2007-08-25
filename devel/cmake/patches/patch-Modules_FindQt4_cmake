@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.3 2007/06/09 09:09:44 espie Exp $
---- Modules/FindQt4.cmake.orig	Wed Jan 10 18:59:12 2007
-+++ Modules/FindQt4.cmake	Sat Jun  9 11:07:53 2007
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.4 2007/08/25 08:35:20 espie Exp $
+--- Modules/FindQt4.cmake.orig	Mon Jul 16 23:12:30 2007
++++ Modules/FindQt4.cmake	Sun Aug 12 16:02:01 2007
 @@ -174,7 +174,7 @@ SET(QT_USE_FILE ${CMAKE_ROOT}/Modules/UseQt4.cmake)
  SET( QT_DEFINITIONS "")
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.3 2007/06/09 09:09:44 espie Exp $
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
    $ENV{QTDIR}/bin
-@@ -882,7 +882,8 @@ IF (QT4_QMAKE_FOUND)
+@@ -884,7 +884,8 @@ IF (QT4_QMAKE_FOUND)
    ###############################################
  
    SET(QT_GUI_LIB_DEPENDENCIES "")
@@ -20,7 +20,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.3 2007/06/09 09:09:44 espie Exp $
    
    # shared build needs -DQT_SHARED
    IF(NOT QT_CONFIG MATCHES "static")
-@@ -897,7 +898,37 @@ IF (QT4_QMAKE_FOUND)
+@@ -899,7 +900,37 @@ IF (QT4_QMAKE_FOUND)
      FIND_LIBRARY(QT_PNG_LIBRARY NAMES png)
      SET(QT_GUI_LIB_DEPENDENCIES ${QT_GUI_LIB_DEPENDENCIES} ${QT_PNG_LIBRARY})
      MARK_AS_ADVANCED(QT_PNG_LIBRARY)
