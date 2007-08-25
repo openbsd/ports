@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2004/05/23 15:41:07 sturm Exp $
---- src/Makefile.in.orig	2004-05-23 12:39:59.000000000 +0200
-+++ src/Makefile.in	2004-05-23 12:40:14.000000000 +0200
-@@ -1156,7 +1156,6 @@ up: 
+$OpenBSD: patch-src_Makefile_in,v 1.2 2007/08/25 08:03:43 espie Exp $
+--- src/Makefile.in.orig	Fri Jul 13 23:42:42 2007
++++ src/Makefile.in	Tue Aug 14 20:01:44 2007
+@@ -1159,7 +1159,6 @@ up: 
  	$(MAKE) clean
  
  .c.o:
