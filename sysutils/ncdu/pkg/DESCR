@@ -1,0 +1,4 @@
+ncdu is an ncurses version of the famous old 'du' unix command. It
+provides a fast and easy interface to your harddrive. Where is your disk
+space going? Why is your home directory that large? ncdu can answer
+those questions for you in just a matter of seconds.
