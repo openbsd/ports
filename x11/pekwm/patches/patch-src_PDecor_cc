@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_PDecor_cc,v 1.1 2007/08/26 19:21:07 mbalmer Exp $
+--- src/PDecor.cc.orig	Fri Aug 24 18:35:19 2007
++++ src/PDecor.cc	Fri Aug 24 18:35:47 2007
+@@ -253,8 +253,10 @@ PDecor::~PDecor(void)
+         }
+     }
+ 
+-    // make things look smoother, buttons will be noticed as deleted otherwise
+-    unmapWindow();
++    // Make things look smoother, buttons will be noticed as deleted
++    // otherwise. Using X call directly to avoid re-drawing and other
++    // special features not required when removing the window.
++    XUnmapWindow(_dpy, _window);
+ 
+     // free buttons
+     unloadDecor();
