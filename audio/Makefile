@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2007/07/26 03:33:59 steven Exp $
+# $OpenBSD: Makefile,v 1.178 2007/08/26 18:59:57 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -27,10 +27,12 @@
      SUBDIR += flite
      SUBDIR += freealut
      SUBDIR += gmpc
+     SUBDIR += gmpc-autoplaylist
      SUBDIR += gmpc-lyrics
      SUBDIR += gmpc-magnatune
      SUBDIR += gmpc-qosd
      SUBDIR += gmpc-serverstats
+     SUBDIR += gmpc-shout
      SUBDIR += gmpc-stopbutton
      SUBDIR += gmpccaa
      SUBDIR += gnomad2
