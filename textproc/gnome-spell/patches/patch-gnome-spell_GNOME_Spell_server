@@ -1,10 +1,10 @@
-$OpenBSD: patch-gnome-spell_GNOME_Spell_server,v 1.1.1.1 2004/12/11 06:19:52 marcm Exp $
---- gnome-spell/GNOME_Spell.server.orig	2003-08-07 21:22:42.000000000 -0700
-+++ gnome-spell/GNOME_Spell.server	2003-08-07 21:24:51.000000000 -0700
+$OpenBSD: patch-gnome-spell_GNOME_Spell_server,v 1.2 2007/08/26 18:34:05 jasper Exp $
+--- gnome-spell/GNOME_Spell.server.orig	Tue Aug 14 14:47:24 2007
++++ gnome-spell/GNOME_Spell.server	Tue Aug 14 14:49:47 2007
 @@ -1,6 +1,6 @@
  <oaf_info>
  
--<oaf_server iid="OAFIID:GNOME_Spell_DictionaryFactory:0.3" type="shlib" location="/gnome/head/INSTALL/lib/gnome-spell/libgnome-spell-component-0.3.so">
+-<oaf_server iid="OAFIID:GNOME_Spell_DictionaryFactory:0.3" type="shlib" location="/opt/gnome//lib/gnome-spell/libgnome-spell-component-0.3.so">
 +<oaf_server iid="OAFIID:GNOME_Spell_DictionaryFactory:0.3" type="shlib" location="@LOCALBASE@/lib/gnome-spell/libgnome-spell-component-0.3.so">
  <oaf_attribute name="repo_ids" type="stringv">
  <item value="IDL:GNOME/ObjectFactory:1.0"/>
@@ -13,7 +13,7 @@ $OpenBSD: patch-gnome-spell_GNOME_Spell_server,v 1.1.1.1 2004/12/11 06:19:52 mar
  <oaf_attribute name="description" type="string" value="GNOME Spell dictionary component"/>
  </oaf_server>
  
--<oaf_server iid="OAFIID:GNOME_Spell_ControlFactory:0.3" type="shlib" location="/gnome/head/INSTALL/lib/gnome-spell/libgnome-spell-component-0.3.so">
+-<oaf_server iid="OAFIID:GNOME_Spell_ControlFactory:0.3" type="shlib" location="/opt/gnome//lib/gnome-spell/libgnome-spell-component-0.3.so">
 +<oaf_server iid="OAFIID:GNOME_Spell_ControlFactory:0.3" type="shlib" location="@LOCALBASE@/lib/gnome-spell/libgnome-spell-component-0.3.so">
  <oaf_attribute name="repo_ids" type="stringv">
  <item value="IDL:GNOME/ObjectFactory:1.0"/>

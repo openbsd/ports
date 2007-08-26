@@ -1,6 +1,7 @@
---- configure.orig	Mon Jan 24 10:23:47 2005
-+++ configure	Thu Apr  7 07:40:54 2005
-@@ -21788,7 +21788,7 @@ if test "x$with_aspell_prefix" != "x"; t
+$OpenBSD: patch-configure,v 1.4 2007/08/26 18:34:05 jasper Exp $
+--- configure.orig	Fri Feb 10 12:49:08 2006
++++ configure	Tue Aug 14 14:35:23 2007
+@@ -21837,7 +21837,7 @@ if test "x$with_aspell_prefix" != "x"; then
  else
     LDFLAGS="-L`aspell config prefix`/lib "$LDFLAGS
     ASPELL_INC="-I`aspell config prefix`/include"
@@ -9,7 +10,7 @@
     ASPELL_DICT="`aspell config dict-dir`"
  fi
  
-@@ -21798,7 +21798,7 @@ if test "${ac_cv_lib_aspell_new_aspell_c
+@@ -21847,7 +21847,7 @@ if test "${ac_cv_lib_aspell_new_aspell_config+set}" = 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +19,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -21861,7 +21861,7 @@ if test $ac_cv_lib_aspell_new_aspell_con
+@@ -21910,7 +21910,7 @@ if test $ac_cv_lib_aspell_new_aspell_config = yes; the
  #define HAVE_LIBASPELL 1
  _ACEOF
  
