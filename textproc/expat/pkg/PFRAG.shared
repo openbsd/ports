@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/25 16:08:25 steven Exp $
-@lib lib/libexpat.so.${LIBexpat_VERSION}
