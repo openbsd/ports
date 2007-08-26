@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/08/26 18:46:19 jasper Exp $
+share/gmpc/plugins/
+share/gmpc/plugins/apl/
+share/gmpc/plugins/apl/apl.glade
+share/gmpc/plugins/libautoplaylist.so
