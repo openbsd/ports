@@ -1,7 +1,0 @@
-c(alm)wm is a window manager for X11 initially inspired by evilwm.  It
-developed out of modifications to evilwm, but eventually the code base
-of evilwm did not accommodate well for the new features added.  So calmwm
-was written from scratch.
-
-cwm has several novel features, including the ability to search for
-windows.  It features a very simple and attractive aesthetic.

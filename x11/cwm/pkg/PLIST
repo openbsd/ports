@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/07 06:19:20 jolan Exp $
-bin/cwm
-@man man/man1/cwm.1
