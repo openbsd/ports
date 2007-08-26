@@ -1,7 +1,7 @@
-# $OpenBSD: gnustep.port.mk,v 1.3 2007/07/21 17:30:10 ajacoutot Exp $
+# $OpenBSD: gnustep.port.mk,v 1.4 2007/08/26 21:49:07 ajacoutot Exp $
 
 # until tested on others
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 SHARED_ONLY=	Yes
 
