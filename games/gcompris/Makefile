@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/13 08:54:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/08/27 15:23:12 ajacoutot Exp $
 
 COMMENT=	educational game for children
 
-DISTNAME=	gcompris-8.3.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	gcompris-8.3.3
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -49,7 +48,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
@@ -59,6 +58,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-py-build-only \
 		--disable-cairo \
 		--disable-rpath \
+		--disable-nsbundle \
 		--with-x \
 		--with-python=${MODPY_BIN}
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_boards_erase_c,v 1.1 2007/05/03 17:42:55 ajacoutot Exp $
---- src/boards/erase.c.orig	Thu May  3 17:03:28 2007
-+++ src/boards/erase.c	Thu May  3 16:58:32 2007
-@@ -517,14 +517,6 @@ canvas_event(GnomeCanvas *canvas, GdkEvent *event)
+$OpenBSD: patch-src_boards_erase_c,v 1.2 2007/08/27 15:23:12 ajacoutot Exp $
+--- src/boards/erase.c.orig	Sun Jun 17 23:10:01 2007
++++ src/boards/erase.c	Mon Aug 27 15:43:46 2007
+@@ -520,14 +520,6 @@ canvas_event(GnomeCanvas *canvas, GdkEvent *event)
    switch (event->type)
      {
      case GDK_BUTTON_PRESS:
