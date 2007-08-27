@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/26 01:13:06 aanriot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/08/27 17:45:39 aanriot Exp $
 
 COMMENT=	"Prelude framework library"
 
-DISTNAME=	libprelude-0.9.14
+DISTNAME=	libprelude-0.9.15
 PKGNAME=	prelude-${DISTNAME}
 
-SHARED_LIBS=	prelude	9.5	# .12.0
+SHARED_LIBS=	prelude	13.0	# .13.0
 
 MODULES=	devel/gettext \
 		lang/python

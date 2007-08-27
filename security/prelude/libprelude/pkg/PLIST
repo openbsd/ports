@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/05/26 01:13:06 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/08/27 17:45:39 aanriot Exp $
 @newgroup _prelude:564
 @newuser _prelude:564:564:daemon:Prelude IDS:/var/empty:/sbin/nologin
 %%SHARED%%
 bin/libprelude-config
 bin/prelude-adduser
+bin/prelude-admin
 include/libprelude/
 include/libprelude/common.h
 include/libprelude/daemonize.h
@@ -60,6 +61,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Prelude.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Prelude/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Prelude/Prelude.bs
+@man man/man1/prelude-admin.1
 share/aclocal/libprelude.m4
 share/doc/libprelude/
 share/doc/libprelude/ch01.html
