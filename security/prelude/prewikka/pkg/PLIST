@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/05/26 01:16:13 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/08/27 17:52:23 aanriot Exp $
 bin/prewikka-httpd
 lib/python${MODPY_VERSION}/site-packages/prewikka/
 lib/python${MODPY_VERSION}/site-packages/prewikka/Auth.py
@@ -158,6 +158,8 @@ share/prewikka/htdocs/images/favicon.ico
 share/prewikka/htdocs/images/led_N.gif
 share/prewikka/htdocs/images/led_Y.gif
 share/prewikka/htdocs/images/n.gif
+share/prewikka/htdocs/images/pause.png
+share/prewikka/htdocs/images/play.png
 share/prewikka/htdocs/images/prelude-logo.gif
 share/prewikka/htdocs/images/prelude-logo.png
 share/prewikka/htdocs/images/search.png

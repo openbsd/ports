@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/26 01:16:13 aanriot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/08/27 17:52:23 aanriot Exp $
 
 COMMENT=	"Prelude Management Console"
 
-DISTNAME=	prewikka-0.9.11
+DISTNAME=	prewikka-0.9.12.1
 PKGNAME=	prelude-${DISTNAME}
 
 MODULES=	lang/python
@@ -21,6 +21,7 @@ pre-install:
 		${WRKSRC}/prewikka/siteconfig.py
 	@perl -pi -e "s,%%VERSION%%,${DISTNAME:S/prewikka-//},"	\
 		${WRKSRC}/prewikka/siteconfig.py
+	@perl -pi -e 's#${WRKINST}##' ${WRKSRC}/prewikka/siteconfig.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prewikka/
