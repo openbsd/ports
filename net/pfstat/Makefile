@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/24 21:46:18 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/08/27 08:06:55 dhartmei Exp $
 
 COMMENT-main=	"packet filter statistics visualization"
 COMMENT-daemon=	"pfstat daemon"
 
-DISTNAME=	pfstat-2.2
+DISTNAME=	pfstat-2.3
 
 PKGNAME-main=	${DISTNAME}p0
 PKGNAME-daemon=	${DISTNAME:S/-/d-/}
