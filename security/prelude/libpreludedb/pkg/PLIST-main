@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 19:54:16 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/08/27 17:46:47 aanriot Exp $
 @pkgpath security/prelude/libpreludedb
 bin/libpreludedb-config
 bin/preludedb-admin
@@ -28,6 +28,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PreludeDB.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PreludeDB/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PreludeDB/PreludeDB.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PreludeDB/PreludeDB.so
+@man man/man1/preludedb-admin.1
 share/aclocal/libpreludedb.m4
 share/doc/libpreludedb/
 share/doc/libpreludedb/README.OpenBSD
@@ -56,6 +57,7 @@ share/libpreludedb/classic/mysql-update-14-2.sql
 share/libpreludedb/classic/mysql-update-14-3.sql
 share/libpreludedb/classic/mysql-update-14-4.sql
 share/libpreludedb/classic/mysql-update-14-5.sql
+share/libpreludedb/classic/mysql-update-14-6.sql
 share/libpreludedb/classic/mysql.sql
 share/libpreludedb/classic/mysql2pgsql.sh
 share/libpreludedb/classic/mysql2sqlite.sh
@@ -64,7 +66,9 @@ share/libpreludedb/classic/pgsql-update-14-2.sql
 share/libpreludedb/classic/pgsql-update-14-3.sql
 share/libpreludedb/classic/pgsql-update-14-4.sql
 share/libpreludedb/classic/pgsql-update-14-5.sql
+share/libpreludedb/classic/pgsql-update-14-6.sql
 share/libpreludedb/classic/pgsql.sql
 share/libpreludedb/classic/sqlite-update-14-4.sql
 share/libpreludedb/classic/sqlite-update-14-5.sql
+share/libpreludedb/classic/sqlite-update-14-6.sql
 share/libpreludedb/classic/sqlite.sql
