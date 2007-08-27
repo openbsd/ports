@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_hiawatha_1,v 1.5 2007/07/06 12:09:12 ajacoutot Exp $
---- doc/hiawatha.1.orig	Thu Jul  5 15:51:58 2007
-+++ doc/hiawatha.1	Fri Jul  6 13:49:17 2007
+$OpenBSD: patch-doc_hiawatha_1,v 1.6 2007/08/27 10:24:37 ajacoutot Exp $
+--- doc/hiawatha.1.orig	Sun Aug 26 16:20:21 2007
++++ doc/hiawatha.1	Mon Aug 27 12:21:13 2007
 @@ -23,7 +23,7 @@ hiawatha \- Advanced and secure webserver
  Hiawatha is a secure webserver for Unix. It has been written with 'being secure' as its main goal. Hiawatha has lots of features that no other webserver has. This and the fact that Hiawatha's source code is free of security-bugs, makes Hiawatha the most secure webserver available.
  .br
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_hiawatha_1,v 1.5 2007/07/06 12:09:12 ajacoutot Exp $
  .TP
  .B ServerKey = <SSL certificate file>
  The file containing the SSL private key and certificate. These will be used for all SSL bindings that don't have their own certificate file (see ServerKey and UseSSL in BINDING CONFIGURATION).
-@@ -652,7 +652,7 @@ and
+@@ -751,7 +751,7 @@ and
  .B UseGZfile
  
  .SH MIMETYPES
@@ -46,7 +46,7 @@ $OpenBSD: patch-doc_hiawatha_1,v 1.5 2007/07/06 12:09:12 ajacoutot Exp $
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -676,15 +676,15 @@ Will unban all clients.
+@@ -775,15 +775,15 @@ Will unban all clients.
  Will disconnect all clients.
  
  .SH FILES

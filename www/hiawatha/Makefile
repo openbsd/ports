@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2007/07/06 12:09:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/08/27 10:24:37 ajacoutot Exp $
 
 COMMENT=	secure webserver
 
-DISTNAME=	hiawatha-5.10
+DISTNAME=	hiawatha-5.12
 CATEGORIES=	www net
 
 HOMEPAGE=	http://hiawatha.leisink.org
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	webrootdir=${WEBROOTDIR}
 CONFIGURE_ARGS=	--localstatedir=/var
 
 pre-configure:
-	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
+	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
 		-e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
 		${WRKSRC}/etc/hiawatha/httpd.conf.in \
 		${WRKSRC}/etc/hiawatha/cgi-wrapper.conf \
