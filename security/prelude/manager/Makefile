@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/26 01:13:53 aanriot Exp $
+# $OpenBSD: Makefile,v 1.14 2007/08/27 17:49:59 aanriot Exp $
 
 COMMENT=	"Prelude manager"
 
-DISTNAME=	prelude-manager-0.9.8
+DISTNAME=	prelude-manager-0.9.9
 
 WANTLIB=	c gcrypt gnutls gpg-error m prelude preludedb pthread z
 MODULES=	devel/gettext

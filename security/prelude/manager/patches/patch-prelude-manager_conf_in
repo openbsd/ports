@@ -1,6 +1,6 @@
-$OpenBSD: patch-prelude-manager_conf_in,v 1.5 2006/11/11 19:29:29 aanriot Exp $
---- prelude-manager.conf.in.orig	Tue Dec 13 13:39:58 2005
-+++ prelude-manager.conf.in	Sun Nov  5 15:20:55 2006
+$OpenBSD: patch-prelude-manager_conf_in,v 1.6 2007/08/27 17:49:59 aanriot Exp $
+--- prelude-manager.conf.in.orig	Mon Jun 18 09:34:13 2007
++++ prelude-manager.conf.in	Fri Aug 24 19:07:38 2007
 @@ -28,8 +28,8 @@ listen = 127.0.0.1
  # Sets the user/group ID as which prelude-manager will run.
  # In order to use this option, prelude-manager must be run initially as root
@@ -11,22 +11,4 @@ $OpenBSD: patch-prelude-manager_conf_in,v 1.5 2006/11/11 19:29:29 aanriot Exp $
 +group = _prelude
  
  
- # Number of bits of the prime used in the Diffie Hellman key exchange. 
-@@ -115,7 +115,7 @@ listen = 127.0.0.1
- # [TextMod]
- #
- # logfile = stderr
--# logfile = @prefix@/var/log/prelude.log
-+# logfile = /var/log/prelude.log
- 
- 
- 
-@@ -141,7 +141,7 @@ listen = 127.0.0.1
- # format
- #
- # logfile = stderr
--# logfile = @prefix@/var/log/prelude-xml.log
-+# logfile = /var/log/prelude-xml.log
- 
- 
- 
+ # Number of bits of the prime used in the Diffie Hellman key exchange.
