@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/08 17:50:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/08/27 16:53:48 espie Exp $
 
 COMMENT=	chemistry file translation program
 
@@ -34,6 +34,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_DOXYGEN=""
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-inchi
 
 .include <bsd.port.mk>
