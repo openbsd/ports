@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2004/08/11 09:58:12 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/08/27 10:39:21 ajacoutot Exp $
 
-COMMENT=	"collection of ATM fonts from the CICA archives"
+COMMENT=	collection of ATM fonts from the CICA archives
 
 DISTNAME=	freefonts-0.10
 CATEGORIES=	x11
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	"no license"
 
 WRKDIST=	${WRKDIR}
-USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
@@ -25,7 +24,6 @@ FREEFONTDIR=	${PREFIX}/lib/X11/fonts
 
 do-install:
 	${INSTALL_DATA_DIR} ${FREEFONTDIR}
-	cd ${WRKDIST} && tar cf - freefont | (cd ${FREEFONTDIR} && tar -xf -)
-	cd ${FREEFONTDIR}/freefont && mv fonts.dir fonts.dir.dist
+	cd ${WRKDIST} && tar -cf - -s '/^.*fonts.dir//' freefont | (cd ${FREEFONTDIR} && tar -xf -)
 
 .include <bsd.port.mk>

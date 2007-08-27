@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/11 09:58:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/08/27 10:39:21 ajacoutot Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/freefont/
 lib/X11/fonts/freefont/Fontmap
@@ -50,8 +50,6 @@ lib/X11/fonts/freefont/eraselt.pfb
 lib/X11/fonts/freefont/erasltra.pfb
 lib/X11/fonts/freefont/erasmed.pfb
 lib/X11/fonts/freefont/florence.pfb
-lib/X11/fonts/freefont/fonts.dir.dist
-@comment lib/X11/fonts/freefont/fonts.dir.orig
 lib/X11/fonts/freefont/frquad.pfb
 lib/X11/fonts/freefont/frquadb.pfb
 lib/X11/fonts/freefont/ftpstrps.pfb

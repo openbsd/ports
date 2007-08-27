@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/17 16:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/08/27 10:39:21 ajacoutot Exp $
 
-COMMENT=		"boustrophedon text reader"
+COMMENT=		boustrophedon text reader
 DISTNAME=		boust-0.161
 PKGNAME=		${DISTNAME}p0
 CATEGORIES=		textproc
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}bin/
 
 RUN_DEPENDS=		::x11/tk/8.4
-USE_X11=		Yes
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
@@ -33,7 +32,6 @@ do-install:
 .for font in ${FONTS}
 	${INSTALL_DATA} ${WRKSRC}/${font} ${FONTDIR}
 .endfor
-	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTDIR}
 	cd ${WRKSRC} && gunzip boust.1.gz && \
 		${INSTALL_MAN} boust.1 ${PREFIX}/man/man1
 

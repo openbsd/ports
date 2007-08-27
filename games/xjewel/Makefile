@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/08/27 10:39:21 ajacoutot Exp $
 
-COMMENT=	"dropping jewels game for X11"
+COMMENT=	dropping jewels game for X11
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
@@ -28,7 +28,7 @@ NO_REGRESS=	Yes
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xjewel.font
-	@(cd ${WRKSRC}/bitmaps; ${INSTALL_DATA} seven_seg.pcf.gz fonts.dir \
+	@(cd ${WRKSRC}/bitmaps; ${INSTALL_DATA} seven_seg.pcf.gz \
 		${PREFIX}/lib/xjewel.font)
 
 post-install:
