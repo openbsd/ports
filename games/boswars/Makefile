@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/16 06:13:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/08/27 13:19:33 ajacoutot Exp $
 
 COMMENT=	real-time strategy game
 
-V=		2.3
+V=		2.4
 DISTNAME=	boswars-${V}-src
-PKGNAME=	boswars-${V}p0
+PKGNAME=	boswars-${V}
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.boswars.org/
@@ -41,6 +41,7 @@ do-build:
 	@${SETENV} ${MAKE_ENV} scons -C ${WRKSRC} \
 		CC=${CC} CXX=${CXX} CCFLAGS="${CFLAGS}" \
 		CPPPATH="${X11BASE}/include ${LOCALBASE}/include/libpng" \
+		LIBPATH="${X11BASE}/lib ${LOCALBASE}/lib" LIBS="-lm" \
 		opengl=0
 
 do-install:
