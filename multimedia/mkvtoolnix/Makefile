@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/30 10:49:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/08/27 11:36:21 ajacoutot Exp $
 
-COMMENT=	"set of tools to create, alter and inspect Matroska files"
+COMMENT=	set of tools to create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-2.0.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	mkvtoolnix-2.1.0
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -44,6 +43,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS=	--enable-lzo \
 		--enable-bz2 \
+		--disable-qt \
 		--with-flac
 
 FLAVORS=	no_x11
@@ -54,7 +54,8 @@ CONFIGURE_ARGS+=--disable-gui
 .else
 WANTLIB+=	pthread
 LIB_DEPENDS+=	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
-CONFIGURE_ARGS+=--enable-gui
+CONFIGURE_ARGS+=--enable-gui \
+		--enable-wxwidgets
 .endif
 
 .include <bsd.port.mk>
