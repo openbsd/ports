@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2007/07/29 13:02:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2007/08/27 11:49:23 ajacoutot Exp $
 
 COMMENT=	small, fast & usable window manager
 
-DISTNAME=	openbox-3.4.3
-SHARED_LIBS+=	obparser	6.0 # .16.0
-SHARED_LIBS+=	obrender	6.0 # .16.0
+DISTNAME=	openbox-3.4.4
+SHARED_LIBS+=	obparser	6.0 # .16.1
+SHARED_LIBS+=	obrender	6.0 # .16.1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/
