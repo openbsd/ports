@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2007/08/26 22:32:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2007/08/28 18:51:04 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -103,6 +103,7 @@
      SUBDIR += wdsetup
      SUBDIR += whowatch
      SUBDIR += wmapm
+     SUBDIR += wmcb
      SUBDIR += wmcube
      SUBDIR += wmcube-gdk
      SUBDIR += wmmon
