@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/22 21:20:08 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2007/08/28 17:51:08 espie Exp $
 
 COMMENT-main=		network backup solution
 COMMENT-client=		network backup solution (client)
@@ -7,8 +7,8 @@ COMMENT-server=		network backup solution (server)
 VERSION=		2.0.3
 DISTNAME=		bacula-${VERSION}
 PKGNAME-main=		${DISTNAME}
-FULLPKGNAME-client=	${DISTNAME:S/-/-client-/}
-PKGNAME-server=		${DISTNAME:S/-/-server-/}
+FULLPKGNAME-client=	bacula-client-${VERSION}p0
+PKGNAME-server=		bacula-server-${VERSION}p0
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
@@ -19,6 +19,7 @@ MAINTAINER=		Michael Erdely <mike@erdelynet.com>
 
 WANTLIB=		c pthread crypto ssl z m stdc++
 WANTLIB-server=		${WANTLIB} readline termcap
+WANTLIB-main=		${WANTLIB} readline termcap
 
 MULTI_PACKAGES=		-main -client -server
 
@@ -137,6 +138,8 @@ SUBST_VARS+=		BACKEND
 .if empty(BACKEND)
 ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite or sqlite3"
 .endif
+
+LIB_DEPENDS-client=
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bacula
