@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/08/28 18:49:40 jasper Exp $
+bin/wmcb
+share/wmcb/
+share/wmcb/README

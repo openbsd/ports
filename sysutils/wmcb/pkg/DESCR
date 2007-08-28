@@ -1,0 +1,3 @@
+Wmcb is a WindowMaker dockapp that displays the current content of the
+cut buffers built into every Xserver. It allows the buffers to be
+manipulated with the mouse in a point and click manner.

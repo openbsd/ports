@@ -1,0 +1,36 @@
+$OpenBSD: patch-wmcb-Makefile,v 1.1.1.1 2007/08/28 18:49:40 jasper Exp $
+--- wmcb/Makefile.orig	Sun Jan 17 11:21:10 1999
++++ wmcb/Makefile	Thu Aug 16 16:34:13 2007
+@@ -1,23 +1,13 @@
+-INCDIR	=	-I/usr/X11R6/include
+-LIBDIR	=	-L/usr/X11R6/lib
+-LIBS	=	-lXpm -lXext -lX11
+-OBJS	=	wmcb.o ../wmgeneral/wmgeneral.o 
+-CFLAGS  = 	-D$(shell echo `uname -s`) #-DDEBUG
++LIBDIR		= -L${X11BASE}/lib
++LIBS		= -lXpm -lXext -lX11
++OBJS		=	wmcb.o \
++			../wmgeneral/wmgeneral.o
++PROG	= wmcb
+ 
+ .c.o:
+-	cc -c -O2 -Wall $(CFLAGS) $< -o $*.o $(INCDIR)
++	${CC} -c $(CFLAGS) $< -o $@
+ 
+-all: wmcb
++$(PROG): $(OBJS)
++	${CC} -o $@ $> $(LIBDIR) $(LIBS)
+ 
+-wmcb: $(OBJS)
+-	cc -o wmcb $^ $(LIBDIR) $(LIBS)
+-
+-clean:
+-	for i in $(OBJS) ; do \
+-		rm -f $$i; \
+-	done
+-	rm -f wmcb *~
+-
+-install:
+-	strip wmcb
+-	mv wmcb /usr/local/bin
++all:: $(PROG)
