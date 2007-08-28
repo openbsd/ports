@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2007/07/04 19:20:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2007/08/28 18:45:34 jasper Exp $
 
-COMMENT=		"SMTP plugin for MUAs"
+COMMENT=		SMTP plugin for MUAs
 
-DISTNAME=		msmtp-1.4.12
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		msmtp-1.4.13
+PKGNAME=		${DISTNAME}
 CATEGORIES=		mail
 
 HOMEPAGE=		http://msmtp.sourceforge.net/
 
 MAINTAINER=		Simon Kuhnle <simon@blarzwurst.de>
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -32,9 +32,16 @@ CONFIGURE_ARGS=		--with-libgsasl=no \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/msmtp
+	${INSTALL_DATA_DIR} ${PREFIX}/share/msmtp/msmtpqueue
 	${INSTALL_DATA} ${WRKSRC}/doc/*.example ${PREFIX}/share/examples/msmtp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/msmtp
 	${INSTALL_DATA} ${WRKSRC}/doc/Mutt+msmtp.txt ${PREFIX}/share/doc/msmtp
 	${INSTALL_DATA} ${WRKSRC}/doc/msmtp.html ${PREFIX}/share/doc/msmtp
+	${INSTALL_DATA} ${WRKSRC}/scripts/msmtpqueue/{README,ChangeLog} \
+			${PREFIX}/share/msmtp/msmtpqueue
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/set_sendmail.sh \
+		${PREFIX}/share/examples/msmtp
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpqueue/*.sh \
+		${PREFIX}/share/examples/msmtp
 
 .include <bsd.port.mk>

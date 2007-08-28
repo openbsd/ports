@@ -1,0 +1,10 @@
+--- scripts/msmtpqueue/msmtp-listqueue.sh.orig	Thu Aug  2 15:45:06 2007
++++ scripts/msmtpqueue/msmtp-listqueue.sh	Thu Aug  2 15:45:00 2007
+@@ -3,6 +3,6 @@
+ QUEUEDIR=$HOME/.msmtpqueue
+ 
+ for i in $QUEUEDIR/*.mail; do
+-	egrep -s --colour -h '(^From:|^To:|^Subject:)' "$i" || echo "No mail in queue";
++	egrep -s -h '(^From:|^To:|^Subject:)' "$i" || echo "No mail in queue";
+ 	echo " "
+ done

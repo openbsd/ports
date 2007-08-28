@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2007/04/13 15:06:51 jasper Exp $
---- configure.orig	Wed Apr 11 00:00:52 2007
-+++ configure	Wed Apr 11 00:02:38 2007
-@@ -878,14 +878,14 @@ localstatedir='${prefix}/var'
+$OpenBSD: patch-configure,v 1.6 2007/08/28 18:45:34 jasper Exp $
+--- configure.orig	Wed Aug  1 11:00:47 2007
++++ configure	Tue Aug 28 20:26:32 2007
+@@ -903,14 +903,14 @@ localstatedir='${prefix}/var'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
  docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
@@ -18,16 +18,16 @@ $OpenBSD: patch-configure,v 1.5 2007/04/13 15:06:51 jasper Exp $
  
  ac_prev=
  ac_dashdash=
-@@ -19899,7 +19899,7 @@ EGREP!$EGREP$ac_delim
- ALLOCA!$ALLOCA$ac_delim
- ALLOCA_H!$ALLOCA_H$ac_delim
+@@ -20470,7 +20470,7 @@ REPLACE_FTELLO!$REPLACE_FTELLO$ac_delim
+ REPLACE_FTELL!$REPLACE_FTELL$ac_delim
+ REPLACE_FFLUSH!$REPLACE_FFLUSH$ac_delim
  GETOPT_H!$GETOPT_H$ac_delim
 -LIBINTL!$LIBINTL$ac_delim
 +LIBINTL!$LTLIBINTL$ac_delim
- _ACEOF
- 
-   if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 97; then
-@@ -20026,7 +20026,7 @@ XGETTEXT!$XGETTEXT$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ GNULIB_CHOWN!$GNULIB_CHOWN$ac_delim
+ GNULIB_DUP2!$GNULIB_DUP2$ac_delim
+@@ -20586,7 +20586,7 @@ XGETTEXT!$XGETTEXT$ac_delim
  XGETTEXT_015!$XGETTEXT_015$ac_delim
  MSGMERGE!$MSGMERGE$ac_delim
  INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
