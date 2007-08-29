@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_nc_man,v 1.6 2007/06/26 19:54:53 jasper Exp $
+$OpenBSD: patch-doc_nc_man,v 1.7 2007/08/29 10:06:52 mbalmer Exp $
 --- doc/nc.man.orig	Thu Sep 30 23:03:59 2004
-+++ doc/nc.man	Fri Jun 22 17:30:03 2007
-@@ -128,13 +128,13 @@
++++ doc/nc.man	Mon Aug 27 12:03:21 2007
+@@ -128,30 +128,30 @@
  .rm #[ #] #H #V #F C
  .\" ========================================================================
  .\"
@@ -15,12 +15,21 @@ $OpenBSD: patch-doc_nc_man,v 1.6 2007/06/26 19:54:53 jasper Exp $
  .SH "SYNOPSYS"
  .IX Header "SYNOPSYS"
 -nc [\fB\-read\fR] [\fB\-create\fR] [\fB\-line\fR \fIn\fR | \fB+\fR\fIn\fR] [\fB\-do\fR \fIcommand\fR] 
+-   [\fB\-ask\fR] [\fB\-noask\fR] [\fB\-svrname\fR \fIname\fR] [\fB\-svrcmd\fR \fIcommand\fR] 
+-   [\fB\-lm\fR \fIlanguagemode\fR] 
+-   [\fB\-geometry\fR \fIgeometry\fR | \fB\-g\fR \fIgeometry\fR] [\fB\-icon\fR | \fB\-iconic\fR] 
+-   [\fB\-display\fR \fI[host]:server[.screen]\fR] 
+-   [\fB\-timeout\fR \fIseconds\fR] [\fB\-wait\fR] [\fB\-xrm\fR \fIresourcestring\fR] 
+-   [\fB\-tabbed\fR] [\fB\-untabbed\fR] [\fB\-group\fR] 
+-   [\fB\-V\fR | \fB\-version\fR] [\fB\-\-\fR] [file...]
 +ncl [\fB\-read\fR] [\fB\-create\fR] [\fB\-line\fR \fIn\fR | \fB+\fR\fIn\fR] [\fB\-do\fR \fIcommand\fR] 
-    [\fB\-ask\fR] [\fB\-noask\fR] [\fB\-svrname\fR \fIname\fR] [\fB\-svrcmd\fR \fIcommand\fR] 
-    [\fB\-lm\fR \fIlanguagemode\fR] 
-    [\fB\-geometry\fR \fIgeometry\fR | \fB\-g\fR \fIgeometry\fR] [\fB\-icon\fR | \fB\-iconic\fR] 
-@@ -144,14 +144,14 @@ nc [\fB\-read\fR] [\fB\-create\fR] [\fB\-line\fR \fIn\
-    [\fB\-V\fR | \fB\-version\fR] [\fB\-\-\fR] [file...]
++    [\fB\-ask\fR] [\fB\-noask\fR] [\fB\-svrname\fR \fIname\fR] [\fB\-svrcmd\fR \fIcommand\fR] 
++    [\fB\-lm\fR \fIlanguagemode\fR] 
++    [\fB\-geometry\fR \fIgeometry\fR | \fB\-g\fR \fIgeometry\fR] [\fB\-icon\fR | \fB\-iconic\fR] 
++    [\fB\-display\fR \fI[host]:server[.screen]\fR] 
++    [\fB\-timeout\fR \fIseconds\fR] [\fB\-wait\fR] [\fB\-xrm\fR \fIresourcestring\fR] 
++    [\fB\-tabbed\fR] [\fB\-untabbed\fR] [\fB\-group\fR] 
++    [\fB\-V\fR | \fB\-version\fR] [\fB\-\-\fR] [file...]
  .SH "DESCRIPTION"
  .IX Header "DESCRIPTION"
 -\&\fBnc\fR is the client interface to the NEdit text editor. A server can be started

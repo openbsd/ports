@@ -1,0 +1,28 @@
+$OpenBSD: patch-source_nc_c,v 1.1 2007/08/29 10:06:52 mbalmer Exp $
+--- source/nc.c.orig	Mon Aug 27 12:02:09 2007
++++ source/nc.c	Mon Aug 27 12:02:31 2007
+@@ -113,15 +113,15 @@ static const char cmdLineHelp[] =
+ #ifdef VMS
+ "";
+ #else
+-"Usage:  nc [-read] [-create]\n"
+-"           [-line n | +n] [-do command] [-lm languagemode]\n"
+-"           [-svrname name] [-svrcmd command]\n"
+-"           [-ask] [-noask] [-timeout seconds]\n"
+-"           [-geometry geometry | -g geometry] [-icon | -iconic]\n"
+-"           [-tabbed] [-untabbed] [-group] [-wait]\n"
+-"           [-V | -version]\n"
+-"           [-xrm resourcestring] [-display [host]:server[.screen]]\n"
+-"           [--] [file...]\n";
++"Usage:  ncl [-read] [-create]\n"
++"            [-line n | +n] [-do command] [-lm languagemode]\n"
++"            [-svrname name] [-svrcmd command]\n"
++"            [-ask] [-noask] [-timeout seconds]\n"
++"            [-geometry geometry | -g geometry] [-icon | -iconic]\n"
++"            [-tabbed] [-untabbed] [-group] [-wait]\n"
++"            [-V | -version]\n"
++"            [-xrm resourcestring] [-display [host]:server[.screen]]\n"
++"            [--] [file...]\n";
+ #endif /*VMS*/
+ 
+ /* Structure to hold X Resource values */
