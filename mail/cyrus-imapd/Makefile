@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2007/08/28 13:24:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2007/08/29 20:08:17 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
 
-V=		2.3.8
+V=		2.3.9
 DISTNAME=	cyrus-imapd-${V}
-PKGNAME-main=	${DISTNAME}p0
-FULLPKGNAME-perl=cyrus-imapd-perl-${V}p0
+PKGNAME-main=	${DISTNAME}
+FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
 CATEGORIES=	mail
 HOMEPAGE=	http://cyrusimap.web.cmu.edu
@@ -88,11 +88,13 @@ SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
 		tools/masssievec tools/rehash tools/translatesieve \
 		tools/upgradesieve doc/text/install-upgrade
 
-pre-build:
+pre-configure:
 .for i in ${MAN8}
-	perl -pi -e "s,${i}\(8\),cyrus-${i}\(8\),g" ${WRKSRC}/man/*.[0-9]
+	@perl -pi -e "s,${i}\(8\),cyrus-${i}\(8\),g" ${WRKSRC}/man/*.[0-9]
 .endfor
-	cd ${WRKSRC} && perl -pi -e "s,/usr/sieve,/var/sieve,g" ${SIEVEREF}
+.for i in ${SIEVEREF}
+	@perl -pi -e "s,/usr/sieve,/var/sieve,g" ${WRKSRC}/${i}
+.endfor
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cyrus-imapd
