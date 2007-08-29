@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/10/01 17:12:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/08/29 13:21:05 jasper Exp $
 
 COMMENT=	"provide ldap authentication type"
 
 DISTNAME=	login_ldap-3.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	sysutils	
 
 HOMEPAGE=	http://www.ifost.org.au/~peterw/	

@@ -1,0 +1,9 @@
+$OpenBSD: patch-login_ldap_conf,v 1.1 2007/08/29 13:21:05 jasper Exp $
+--- login_ldap.conf.orig	Wed Aug 29 15:19:18 2007
++++ login_ldap.conf	Wed Aug 29 15:19:43 2007
+@@ -12,4 +12,4 @@ ldap:\
+ 	:x-ldap-filter=(&(objectclass=posixAccount)(uid=%u)):\
+ 	:x-ldap-gscope=base:\
+ 	:x-ldap-groupdn=cn=accessgroup,ou=Groups,dc=example,dc=com:\
+-	:x-ldap-groupfilter=(|(&(objectClass=posixGroup)(memberUid=%u))(&(objeclass=groupOfUniqueNames)(uniqueMember=%d))):
++	:x-ldap-groupfilter=(|(&(objectClass=posixGroup)(memberUid=%u))(&(objectClass=groupOfUniqueNames)(uniqueMember=%d))):
