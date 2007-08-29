@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.11 2007/06/02 08:27:36 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.12 2007/08/29 12:30:58 espie Exp $
 share/doc/qt4/
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
@@ -324,6 +324,7 @@ share/doc/qt4/html/editions.html
 share/doc/qt4/html/environment.html
 share/doc/qt4/html/events.html
 share/doc/qt4/html/eventsandfilters.html
+share/doc/qt4/html/examples-overview.html
 share/doc/qt4/html/examples.html
 share/doc/qt4/html/exportedfunctions.html
 share/doc/qt4/html/focus.html
@@ -418,6 +419,7 @@ share/doc/qt4/html/images/application.png
 share/doc/qt4/html/images/arthurplugin-demo.png
 share/doc/qt4/html/images/assistant-assistant.png
 share/doc/qt4/html/images/assistant-docwindow.png
+share/doc/qt4/html/images/assistant-examples.png
 share/doc/qt4/html/images/assistant-search.png
 share/doc/qt4/html/images/assistant-sidebar.png
 share/doc/qt4/html/images/assistant-toolbar1.png
@@ -513,6 +515,10 @@ share/doc/qt4/html/images/cleanlooks-treeview.png
 share/doc/qt4/html/images/codecs-example.png
 share/doc/qt4/html/images/collidingmice-example.png
 share/doc/qt4/html/images/coloreditorfactoryimage.png
+share/doc/qt4/html/images/completer-example-country.png
+share/doc/qt4/html/images/completer-example-dirmodel.png
+share/doc/qt4/html/images/completer-example-qdirmodel.png
+share/doc/qt4/html/images/completer-example-word.png
 share/doc/qt4/html/images/completer-example.png
 share/doc/qt4/html/images/composition-demo.png
 share/doc/qt4/html/images/concentriccircles-example.png
@@ -547,6 +553,7 @@ share/doc/qt4/html/images/cursor-vsplit.png
 share/doc/qt4/html/images/cursor-wait.png
 share/doc/qt4/html/images/cursor-whatsthis.png
 share/doc/qt4/html/images/customcompleter-example.png
+share/doc/qt4/html/images/customcompleter-insertcompletion.png
 share/doc/qt4/html/images/customsortfiltermodel-example.png
 share/doc/qt4/html/images/customwidgetplugin-example.png
 share/doc/qt4/html/images/datetimewidgets.png
@@ -595,6 +602,7 @@ share/doc/qt4/html/images/designer-dialog-preview.png
 share/doc/qt4/html/images/designer-dragging-onto-form.png
 share/doc/qt4/html/images/designer-edit-resource.png
 share/doc/qt4/html/images/designer-editing-mode.png
+share/doc/qt4/html/images/designer-examples.png
 share/doc/qt4/html/images/designer-form-layoutfunction.png
 share/doc/qt4/html/images/designer-form-settings.png
 share/doc/qt4/html/images/designer-getting-started.png
@@ -616,14 +624,19 @@ share/doc/qt4/html/images/designer-selecting-widget.png
 share/doc/qt4/html/images/designer-splitter-layout.png
 share/doc/qt4/html/images/designer-tab-order-mode.png
 share/doc/qt4/html/images/designer-tab-order-tool.png
+share/doc/qt4/html/images/designer-validator-highlighter.png
 share/doc/qt4/html/images/designer-widget-box.png
 share/doc/qt4/html/images/designer-widget-tool.png
+share/doc/qt4/html/images/desktop-examples.png
 share/doc/qt4/html/images/diagonalGradient.png
 share/doc/qt4/html/images/diagramscene.png
+share/doc/qt4/html/images/dialog-examples.png
 share/doc/qt4/html/images/digitalclock-example.png
+share/doc/qt4/html/images/directapproach-calculatorform.png
 share/doc/qt4/html/images/dirview-example.png
 share/doc/qt4/html/images/dockwidgets-example.png
 share/doc/qt4/html/images/dombookmarks-example.png
+share/doc/qt4/html/images/draganddrop-examples.png
 share/doc/qt4/html/images/draganddroppuzzle-example.png
 share/doc/qt4/html/images/dragdroprobot-example.png
 share/doc/qt4/html/images/draggableicons-example.png
@@ -652,6 +665,7 @@ share/doc/qt4/html/images/gradientText.png
 share/doc/qt4/html/images/gradients-demo.png
 share/doc/qt4/html/images/graphicsview-ellipseitem-pie.png
 share/doc/qt4/html/images/graphicsview-ellipseitem.png
+share/doc/qt4/html/images/graphicsview-examples.png
 share/doc/qt4/html/images/graphicsview-items.png
 share/doc/qt4/html/images/graphicsview-lineitem.png
 share/doc/qt4/html/images/graphicsview-parentchild.png
@@ -697,9 +711,11 @@ share/doc/qt4/html/images/inputdialogs.png
 share/doc/qt4/html/images/insertrowinmodelview.png
 share/doc/qt4/html/images/interview-demo.png
 share/doc/qt4/html/images/interview-shareddirmodel.png
+share/doc/qt4/html/images/itemview-examples.png
 share/doc/qt4/html/images/itemviewspuzzle-example.png
 share/doc/qt4/html/images/javaiterators1.png
 share/doc/qt4/html/images/javaiterators2.png
+share/doc/qt4/html/images/layout-examples.png
 share/doc/qt4/html/images/layout1.png
 share/doc/qt4/html/images/layout2.png
 share/doc/qt4/html/images/licensewizard-example.png
@@ -715,6 +731,7 @@ share/doc/qt4/html/images/linguist-editfind.png
 share/doc/qt4/html/images/linguist-editpaste.png
 share/doc/qt4/html/images/linguist-editredo.png
 share/doc/qt4/html/images/linguist-editundo.png
+share/doc/qt4/html/images/linguist-examples.png
 share/doc/qt4/html/images/linguist-fileopen.png
 share/doc/qt4/html/images/linguist-fileprint.png
 share/doc/qt4/html/images/linguist-filesave.png
@@ -754,6 +771,7 @@ share/doc/qt4/html/images/macintosh-label.png
 share/doc/qt4/html/images/macintosh-lcdnumber.png
 share/doc/qt4/html/images/macintosh-lineedit.png
 share/doc/qt4/html/images/macintosh-listview.png
+share/doc/qt4/html/images/macintosh-menu.png
 share/doc/qt4/html/images/macintosh-progressbar.png
 share/doc/qt4/html/images/macintosh-pushbutton.png
 share/doc/qt4/html/images/macintosh-radiobutton.png
@@ -771,6 +789,7 @@ share/doc/qt4/html/images/mainwindow-custom-dock.png
 share/doc/qt4/html/images/mainwindow-demo.png
 share/doc/qt4/html/images/mainwindow-docks-example.png
 share/doc/qt4/html/images/mainwindow-docks.png
+share/doc/qt4/html/images/mainwindow-examples.png
 share/doc/qt4/html/images/mainwindow-vertical-dock.png
 share/doc/qt4/html/images/mainwindow-vertical-tabs.png
 share/doc/qt4/html/images/mainwindowlayout.png
@@ -825,10 +844,15 @@ share/doc/qt4/html/images/motif-toolbox.png
 share/doc/qt4/html/images/motif-toolbutton.png
 share/doc/qt4/html/images/motif-treeview.png
 share/doc/qt4/html/images/movie-example.png
+share/doc/qt4/html/images/multipleinheritance-example.png
+share/doc/qt4/html/images/network-examples.png
 share/doc/qt4/html/images/noforeignkeys.png
+share/doc/qt4/html/images/opengl-examples.png
+share/doc/qt4/html/images/orderform-example-detailsdialog.png
 share/doc/qt4/html/images/orderform-example.png
 share/doc/qt4/html/images/overpainting-example.png
 share/doc/qt4/html/images/painterpaths-example.png
+share/doc/qt4/html/images/painting-examples.png
 share/doc/qt4/html/images/paintsystem-antialiasing.png
 share/doc/qt4/html/images/paintsystem-core.png
 share/doc/qt4/html/images/paintsystem-devices.png
@@ -865,6 +889,7 @@ share/doc/qt4/html/images/plastique-label.png
 share/doc/qt4/html/images/plastique-lcdnumber.png
 share/doc/qt4/html/images/plastique-lineedit.png
 share/doc/qt4/html/images/plastique-listview.png
+share/doc/qt4/html/images/plastique-menu.png
 share/doc/qt4/html/images/plastique-menubar.png
 share/doc/qt4/html/images/plastique-printdialog-properties.png
 share/doc/qt4/html/images/plastique-printdialog.png
@@ -891,6 +916,8 @@ share/doc/qt4/html/images/plugandpaint.png
 share/doc/qt4/html/images/portedasteroids-example.png
 share/doc/qt4/html/images/portedcanvas-example.png
 share/doc/qt4/html/images/printer-rects.png
+share/doc/qt4/html/images/progressBar-stylesheet.png
+share/doc/qt4/html/images/progressBar2-stylesheet.png
 share/doc/qt4/html/images/propagation-custom.png
 share/doc/qt4/html/images/propagation-standard.png
 share/doc/qt4/html/images/q3painter_rationale.png
@@ -1033,6 +1060,8 @@ share/doc/qt4/html/images/qt-logo.png
 share/doc/qt4/html/images/qtableitems.png
 share/doc/qt4/html/images/qtabletevent-tilt.png
 share/doc/qt4/html/images/qtconfig-appearance.png
+share/doc/qt4/html/images/qtdemo-small.png
+share/doc/qt4/html/images/qtdemo.png
 share/doc/qt4/html/images/qtdesignerextensions.png
 share/doc/qt4/html/images/qtdesignerscreenshot.png
 share/doc/qt4/html/images/qtextblock-sequence.png
@@ -1050,6 +1079,7 @@ share/doc/qt4/html/images/qtopiacore-client.png
 share/doc/qt4/html/images/qtopiacore-clientrendering.png
 share/doc/qt4/html/images/qtopiacore-clientservercommunication.png
 share/doc/qt4/html/images/qtopiacore-drawingonscreen.png
+share/doc/qt4/html/images/qtopiacore-examples.png
 share/doc/qt4/html/images/qtopiacore-fontfeatures.png
 share/doc/qt4/html/images/qtopiacore-opengl.png
 share/doc/qt4/html/images/qtopiacore-pda.png
@@ -1063,8 +1093,13 @@ share/doc/qt4/html/images/qtopiacore-runningapplication.png
 share/doc/qt4/html/images/qtopiacore-setwindowattribute.png
 share/doc/qt4/html/images/qtopiacore-vanilla.png
 share/doc/qt4/html/images/qtopiacore-virtualframebuffer.png
+share/doc/qt4/html/images/qtransform-combinedtransformation.png
+share/doc/qt4/html/images/qtransform-combinedtransformation2.png
+share/doc/qt4/html/images/qtransform-simpletransformation.png
+share/doc/qt4/html/images/qtscript-calculator-example.png
 share/doc/qt4/html/images/qtscript-calculator.png
 share/doc/qt4/html/images/qtscript-context2d.png
+share/doc/qt4/html/images/qtscript-examples.png
 share/doc/qt4/html/images/qtwizard-aero1.png
 share/doc/qt4/html/images/qtwizard-aero2.png
 share/doc/qt4/html/images/qtwizard-classic1.png
@@ -1097,6 +1132,7 @@ share/doc/qt4/html/images/relationaltable.png
 share/doc/qt4/html/images/relationaltablemodel-example.png
 share/doc/qt4/html/images/resources.png
 share/doc/qt4/html/images/richtext-document.png
+share/doc/qt4/html/images/richtext-examples.png
 share/doc/qt4/html/images/rintersect.png
 share/doc/qt4/html/images/rsslistingexample.png
 share/doc/qt4/html/images/rsubtract.png
@@ -1107,6 +1143,8 @@ share/doc/qt4/html/images/saxbookmarks-example.png
 share/doc/qt4/html/images/screenshot-example.png
 share/doc/qt4/html/images/scribble-example.png
 share/doc/qt4/html/images/sdi-example.png
+share/doc/qt4/html/images/securesocketclient.png
+share/doc/qt4/html/images/securesocketclient2.png
 share/doc/qt4/html/images/selected-items1.png
 share/doc/qt4/html/images/selected-items2.png
 share/doc/qt4/html/images/selected-items3.png
@@ -1130,6 +1168,7 @@ share/doc/qt4/html/images/sliders-example.png
 share/doc/qt4/html/images/spinboxdelegate-example.png
 share/doc/qt4/html/images/spinboxes-example.png
 share/doc/qt4/html/images/spreadsheet-demo.png
+share/doc/qt4/html/images/sql-examples.png
 share/doc/qt4/html/images/sqlbrowser-demo.png
 share/doc/qt4/html/images/standard-views.png
 share/doc/qt4/html/images/standarddialogs-example.png
@@ -1143,11 +1182,20 @@ share/doc/qt4/html/images/styles-disabledwood.png
 share/doc/qt4/html/images/styles-enabledwood.png
 share/doc/qt4/html/images/styles-woodbuttons.png
 share/doc/qt4/html/images/stylesheet-boxmodel.png
+share/doc/qt4/html/images/stylesheet-branch-closed.png
+share/doc/qt4/html/images/stylesheet-branch-end.png
+share/doc/qt4/html/images/stylesheet-branch-more.png
+share/doc/qt4/html/images/stylesheet-branch-open.png
 share/doc/qt4/html/images/stylesheet-coffee-xp.png
+share/doc/qt4/html/images/stylesheet-designer-options.png
 share/doc/qt4/html/images/stylesheet-pagefold.png
 share/doc/qt4/html/images/stylesheet-redbutton1.png
 share/doc/qt4/html/images/stylesheet-redbutton2.png
 share/doc/qt4/html/images/stylesheet-redbutton3.png
+share/doc/qt4/html/images/stylesheet-scrollbar1.png
+share/doc/qt4/html/images/stylesheet-scrollbar2.png
+share/doc/qt4/html/images/stylesheet-treeview.png
+share/doc/qt4/html/images/stylesheet-vline.png
 share/doc/qt4/html/images/svg-image.png
 share/doc/qt4/html/images/svgviewer-example.png
 share/doc/qt4/html/images/syntaxhighlighter-example.png
@@ -1170,7 +1218,11 @@ share/doc/qt4/html/images/t8.png
 share/doc/qt4/html/images/t9.png
 share/doc/qt4/html/images/t9_1.png
 share/doc/qt4/html/images/t9_2.png
+share/doc/qt4/html/images/tabWidget-stylesheet1.png
+share/doc/qt4/html/images/tabWidget-stylesheet2.png
+share/doc/qt4/html/images/tabWidget-stylesheet3.png
 share/doc/qt4/html/images/tabdialog-example.png
+share/doc/qt4/html/images/tableWidget-stylesheet.png
 share/doc/qt4/html/images/tablemodel-example.png
 share/doc/qt4/html/images/tabletexample.png
 share/doc/qt4/html/images/taskmenuextension-dialog.png
@@ -1179,9 +1231,14 @@ share/doc/qt4/html/images/taskmenuextension-menu.png
 share/doc/qt4/html/images/tcpstream.png
 share/doc/qt4/html/images/tetrix-example.png
 share/doc/qt4/html/images/textedit-demo.png
+share/doc/qt4/html/images/textfinder-example-find.png
+share/doc/qt4/html/images/textfinder-example-find2.png
+share/doc/qt4/html/images/textfinder-example-userinterface.png
 share/doc/qt4/html/images/textures-example.png
+share/doc/qt4/html/images/thread-examples.png
 share/doc/qt4/html/images/threadedfortuneserver-example.png
 share/doc/qt4/html/images/threadsandobjects.png
+share/doc/qt4/html/images/tool-examples.png
 share/doc/qt4/html/images/tooltips-example.png
 share/doc/qt4/html/images/torrent-example.png
 share/doc/qt4/html/images/transformations-example.png
@@ -1195,10 +1252,12 @@ share/doc/qt4/html/images/trolltech-logo.png
 share/doc/qt4/html/images/tutorial8-layout.png
 share/doc/qt4/html/images/tutorial8-reallayout.png
 share/doc/qt4/html/images/udppackets.png
+share/doc/qt4/html/images/uitools-examples.png
 share/doc/qt4/html/images/undodemo.png
 share/doc/qt4/html/images/undoframeworkexample.png
 share/doc/qt4/html/images/wVista-Cert-border-small.png
 share/doc/qt4/html/images/whatsthis.png
+share/doc/qt4/html/images/widget-examples.png
 share/doc/qt4/html/images/wiggly-example.png
 share/doc/qt4/html/images/windowflags-example.png
 share/doc/qt4/html/images/windowflags_controllerwindow.png
@@ -1272,6 +1331,7 @@ share/doc/qt4/html/images/windowsxp-label.png
 share/doc/qt4/html/images/windowsxp-lcdnumber.png
 share/doc/qt4/html/images/windowsxp-lineedit.png
 share/doc/qt4/html/images/windowsxp-listview.png
+share/doc/qt4/html/images/windowsxp-menu.png
 share/doc/qt4/html/images/windowsxp-progressbar.png
 share/doc/qt4/html/images/windowsxp-pushbutton.png
 share/doc/qt4/html/images/windowsxp-radiobutton.png
@@ -1290,6 +1350,10 @@ share/doc/qt4/html/images/worldtimeclock-connection.png
 share/doc/qt4/html/images/worldtimeclock-signalandslot.png
 share/doc/qt4/html/images/worldtimeclockbuilder-example.png
 share/doc/qt4/html/images/worldtimeclockplugin-example.png
+share/doc/qt4/html/images/xml-examples.png
+share/doc/qt4/html/images/xmlstreamexample-filemenu.png
+share/doc/qt4/html/images/xmlstreamexample-helpmenu.png
+share/doc/qt4/html/images/xmlstreamexample-screenshot.png
 share/doc/qt4/html/index.html
 share/doc/qt4/html/install-mac.html
 share/doc/qt4/html/install-win.html
@@ -1512,6 +1576,13 @@ share/doc/qt4/html/network-loopback-dialog-cpp.html
 share/doc/qt4/html/network-loopback-dialog-h.html
 share/doc/qt4/html/network-loopback-main-cpp.html
 share/doc/qt4/html/network-loopback.html
+share/doc/qt4/html/network-securesocketclient-certificateinfo-cpp.html
+share/doc/qt4/html/network-securesocketclient-certificateinfo-h.html
+share/doc/qt4/html/network-securesocketclient-main-cpp.html
+share/doc/qt4/html/network-securesocketclient-securesocketclient-qrc.html
+share/doc/qt4/html/network-securesocketclient-sslclient-cpp.html
+share/doc/qt4/html/network-securesocketclient-sslclient-h.html
+share/doc/qt4/html/network-securesocketclient.html
 share/doc/qt4/html/network-threadedfortuneserver-dialog-cpp.html
 share/doc/qt4/html/network-threadedfortuneserver-dialog-h.html
 share/doc/qt4/html/network-threadedfortuneserver-fortuneserver-cpp.html
@@ -1661,6 +1732,7 @@ share/doc/qt4/html/painting-transformations.html
 share/doc/qt4/html/paintsystem.html
 share/doc/qt4/html/pdf-licensing.html
 share/doc/qt4/html/platform-notes-mac.html
+share/doc/qt4/html/platform-notes-platforms.html
 share/doc/qt4/html/platform-notes-windows.html
 share/doc/qt4/html/platform-notes-x11.html
 share/doc/qt4/html/platform-notes.html
@@ -3213,6 +3285,7 @@ share/doc/qt4/html/qtcpserver.html
 share/doc/qt4/html/qtcpsocket-members.html
 share/doc/qt4/html/qtcpsocket.html
 share/doc/qt4/html/qtdbus.html
+share/doc/qt4/html/qtdemo.html
 share/doc/qt4/html/qtdesigner.html
 share/doc/qt4/html/qtemporaryfile-members.html
 share/doc/qt4/html/qtemporaryfile.html
@@ -3450,8 +3523,6 @@ share/doc/qt4/html/qvector-members.html
 share/doc/qt4/html/qvector.html
 share/doc/qt4/html/qvectoriterator-members.html
 share/doc/qt4/html/qvectoriterator.html
-share/doc/qt4/html/qvncscreen-members.html
-share/doc/qt4/html/qvncscreen.html
 share/doc/qt4/html/qwaitcondition-members.html
 share/doc/qt4/html/qwaitcondition.html
 share/doc/qt4/html/qwhatsthis-members.html
@@ -3680,6 +3751,11 @@ share/doc/qt4/html/sql-relationaltablemodel-relationaltablemodel-cpp.html
 share/doc/qt4/html/sql-relationaltablemodel.html
 share/doc/qt4/html/sql-tablemodel-tablemodel-cpp.html
 share/doc/qt4/html/sql-tablemodel.html
+share/doc/qt4/html/stylesheet-customizing.html
+share/doc/qt4/html/stylesheet-designer.html
+share/doc/qt4/html/stylesheet-examples.html
+share/doc/qt4/html/stylesheet-reference.html
+share/doc/qt4/html/stylesheet-syntax.html
 share/doc/qt4/html/stylesheet.html
 share/doc/qt4/html/supported-platforms.html
 share/doc/qt4/html/templates.html
@@ -3856,6 +3932,15 @@ share/doc/qt4/html/tutorial-t9-main-cpp.html
 share/doc/qt4/html/tutorial-t9.html
 share/doc/qt4/html/tutorial.html
 share/doc/qt4/html/uic.html
+share/doc/qt4/html/uitools-multipleinheritance-calculatorform-cpp.html
+share/doc/qt4/html/uitools-multipleinheritance-calculatorform-h.html
+share/doc/qt4/html/uitools-multipleinheritance-main-cpp.html
+share/doc/qt4/html/uitools-multipleinheritance.html
+share/doc/qt4/html/uitools-textfinder-main-cpp.html
+share/doc/qt4/html/uitools-textfinder-textfinder-cpp.html
+share/doc/qt4/html/uitools-textfinder-textfinder-h.html
+share/doc/qt4/html/uitools-textfinder-textfinder-qrc.html
+share/doc/qt4/html/uitools-textfinder.html
 share/doc/qt4/html/unicode.html
 share/doc/qt4/html/usingadaptors.html
 share/doc/qt4/html/widgets-analogclock-analogclock-cpp.html

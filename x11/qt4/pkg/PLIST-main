@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2007/06/09 23:13:09 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2007/08/29 12:30:58 espie Exp $
 @pkgpath x11/qt4
 %%SHARED%%
 bin/assistant4
@@ -2181,6 +2181,9 @@ lib/qt4/mkspecs/linux-g++-64/qplatformdefs.h
 lib/qt4/mkspecs/linux-g++/qmake.conf
 lib/qt4/mkspecs/linux-g++/qplatformdefs.h
 lib/qt4/mkspecs/linux-icc/
+lib/qt4/mkspecs/linux-icc-32/
+lib/qt4/mkspecs/linux-icc-32/qmake.conf
+lib/qt4/mkspecs/linux-icc-32/qplatformdefs.h
 lib/qt4/mkspecs/linux-icc-64/
 lib/qt4/mkspecs/linux-icc-64/qmake.conf
 lib/qt4/mkspecs/linux-icc-64/qplatformdefs.h
@@ -2311,6 +2314,7 @@ lib/qt4/phrasebooks/german.qph
 lib/qt4/phrasebooks/italian.qph
 lib/qt4/phrasebooks/japanese.qph
 lib/qt4/phrasebooks/norwegian.qph
+lib/qt4/phrasebooks/polish.qph
 lib/qt4/phrasebooks/russian.qph
 lib/qt4/phrasebooks/spanish.qph
 lib/qt4/phrasebooks/swedish.qph

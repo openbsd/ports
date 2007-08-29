@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.13 2007/06/09 23:13:09 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.14 2007/08/29 12:30:58 espie Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 bin/pixeltool
@@ -310,6 +310,7 @@ lib/qt4/demos/undo/undo.qrc
 lib/qt4/examples/
 lib/qt4/examples/README
 lib/qt4/examples/assistant/
+lib/qt4/examples/assistant/README
 lib/qt4/examples/assistant/assistant.pro
 lib/qt4/examples/assistant/simpletextviewer/
 lib/qt4/examples/assistant/simpletextviewer/documentation/
@@ -598,7 +599,6 @@ lib/qt4/examples/graphicsview/portedasteroids/sounds/
 lib/qt4/examples/graphicsview/portedasteroids/sounds/Explosion.wav
 lib/qt4/examples/graphicsview/portedasteroids/sprites/
 lib/qt4/examples/graphicsview/portedasteroids/sprites.h
-lib/qt4/examples/graphicsview/portedasteroids/sprites/.pbm
 lib/qt4/examples/graphicsview/portedasteroids/sprites/bits/
 lib/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits.ini
 lib/qt4/examples/graphicsview/portedasteroids/sprites/bits/bits.pov
@@ -1097,6 +1097,18 @@ lib/qt4/examples/network/loopback/loopback
 lib/qt4/examples/network/loopback/loopback.pro
 lib/qt4/examples/network/loopback/main.cpp
 lib/qt4/examples/network/network.pro
+lib/qt4/examples/network/securesocketclient/
+lib/qt4/examples/network/securesocketclient/certificateinfo.cpp
+lib/qt4/examples/network/securesocketclient/certificateinfo.h
+lib/qt4/examples/network/securesocketclient/certificateinfo.ui
+lib/qt4/examples/network/securesocketclient/main.cpp
+lib/qt4/examples/network/securesocketclient/securesocketclient
+lib/qt4/examples/network/securesocketclient/securesocketclient.pro
+lib/qt4/examples/network/securesocketclient/securesocketclient.qrc
+lib/qt4/examples/network/securesocketclient/sslclient.cpp
+lib/qt4/examples/network/securesocketclient/sslclient.h
+lib/qt4/examples/network/securesocketclient/sslclient.ui
+lib/qt4/examples/network/securesocketclient/sslerrors.ui
 lib/qt4/examples/network/threadedfortuneserver/
 lib/qt4/examples/network/threadedfortuneserver/dialog.cpp
 lib/qt4/examples/network/threadedfortuneserver/dialog.h
@@ -1599,10 +1611,10 @@ lib/qt4/examples/tools/customcompleter/resources/wordlist.txt
 lib/qt4/examples/tools/customcompleter/textedit.cpp
 lib/qt4/examples/tools/customcompleter/textedit.h
 lib/qt4/examples/tools/echoplugin/
+lib/qt4/examples/tools/echoplugin/echoplugin
 lib/qt4/examples/tools/echoplugin/echoplugin.pro
 lib/qt4/examples/tools/echoplugin/echowindow/
 lib/qt4/examples/tools/echoplugin/echowindow/echointerface.h
-lib/qt4/examples/tools/echoplugin/echowindow/echoplugin
 lib/qt4/examples/tools/echoplugin/echowindow/echowindow.cpp
 lib/qt4/examples/tools/echoplugin/echowindow/echowindow.h
 lib/qt4/examples/tools/echoplugin/echowindow/echowindow.pro
@@ -1700,11 +1712,11 @@ lib/qt4/examples/tools/styleplugin/plugin/simplestyle.cpp
 lib/qt4/examples/tools/styleplugin/plugin/simplestyle.h
 lib/qt4/examples/tools/styleplugin/plugin/simplestyleplugin.cpp
 lib/qt4/examples/tools/styleplugin/plugin/simplestyleplugin.h
+lib/qt4/examples/tools/styleplugin/styleplugin
 lib/qt4/examples/tools/styleplugin/styleplugin.pro
+lib/qt4/examples/tools/styleplugin/styles/
 lib/qt4/examples/tools/styleplugin/stylewindow/
 lib/qt4/examples/tools/styleplugin/stylewindow/main.cpp
-lib/qt4/examples/tools/styleplugin/stylewindow/styleplugin
-lib/qt4/examples/tools/styleplugin/stylewindow/styles/
 lib/qt4/examples/tools/styleplugin/stylewindow/stylewindow.cpp
 lib/qt4/examples/tools/styleplugin/stylewindow/stylewindow.h
 lib/qt4/examples/tools/styleplugin/stylewindow/stylewindow.pro
@@ -1826,6 +1838,8 @@ lib/qt4/examples/tutorial/t9/main.cpp
 lib/qt4/examples/tutorial/t9/t9
 lib/qt4/examples/tutorial/t9/t9.pro
 lib/qt4/examples/tutorial/tutorial.pro
+lib/qt4/examples/uitools/
+lib/qt4/examples/uitools/uitools.pro
 lib/qt4/examples/widgets/
 lib/qt4/examples/widgets/README
 lib/qt4/examples/widgets/analogclock/
@@ -1842,6 +1856,12 @@ lib/qt4/examples/widgets/calculator/calculator.cpp
 lib/qt4/examples/widgets/calculator/calculator.h
 lib/qt4/examples/widgets/calculator/calculator.pro
 lib/qt4/examples/widgets/calculator/main.cpp
+lib/qt4/examples/widgets/calendarwidget/
+lib/qt4/examples/widgets/calendarwidget/calendarwidget
+lib/qt4/examples/widgets/calendarwidget/calendarwidget.pro
+lib/qt4/examples/widgets/calendarwidget/main.cpp
+lib/qt4/examples/widgets/calendarwidget/window.cpp
+lib/qt4/examples/widgets/calendarwidget/window.h
 lib/qt4/examples/widgets/charactermap/
 lib/qt4/examples/widgets/charactermap/charactermap
 lib/qt4/examples/widgets/charactermap/charactermap.pro
