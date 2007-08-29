@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2007/08/26 18:53:57 aanriot Exp $
+# $OpenBSD: Makefile,v 1.207 2007/08/29 08:07:45 pyr Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -56,6 +56,7 @@
      SUBDIR += ocaml-xml-light
      SUBDIR += openjade
      SUBDIR += ots
+     SUBDIR += p5-ack
      SUBDIR += p5-Blatte
      SUBDIR += p5-Catalyst-Plugin-Textile
      SUBDIR += p5-Catalyst-Plugin-Unicode
