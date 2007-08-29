@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.534 2007/08/02 03:35:22 david Exp $
+# $OpenBSD: Makefile,v 1.535 2007/08/29 08:10:14 pyr Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -319,6 +319,7 @@
      SUBDIR += p5-File-MimeInfo
      SUBDIR += p5-File-Modified
      SUBDIR += p5-File-NCopy
+     SUBDIR += p5-File-Next
      SUBDIR += p5-File-Path-Expand
      SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-Remove
