@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/07 00:59:02 todd Exp $
-include/dbus-1.0/
-include/dbus-1.0/dbus/
+@comment $OpenBSD: PLIST,v 1.2 2007/08/29 16:31:00 jasper Exp $
 include/dbus-1.0/dbus/dbus-python.h
-lib/pkgconfig/
 lib/pkgconfig/dbus-python.pc
 @comment lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.a
 @comment lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.la
@@ -23,6 +20,12 @@ lib/python${MODPY_VERSION}/site-packages/dbus/_expat_introspect_parser.pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/_version.py
 lib/python${MODPY_VERSION}/site-packages/dbus/_version.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/_version.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/bus.py
+lib/python${MODPY_VERSION}/site-packages/dbus/bus.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/bus.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/connection.py
+lib/python${MODPY_VERSION}/site-packages/dbus/connection.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/connection.pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/dbus_bindings.py
 lib/python${MODPY_VERSION}/site-packages/dbus/dbus_bindings.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/dbus_bindings.pyo
@@ -35,6 +38,9 @@ lib/python${MODPY_VERSION}/site-packages/dbus/exceptions.pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/glib.py
 lib/python${MODPY_VERSION}/site-packages/dbus/glib.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/glib.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/gobject_service.py
+lib/python${MODPY_VERSION}/site-packages/dbus/gobject_service.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/gobject_service.pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/lowlevel.py
 lib/python${MODPY_VERSION}/site-packages/dbus/lowlevel.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/lowlevel.pyo
