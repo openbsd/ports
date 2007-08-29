@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.535 2007/08/29 08:10:14 pyr Exp $
+# $OpenBSD: Makefile,v 1.536 2007/08/29 13:27:43 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -206,6 +206,7 @@
      SUBDIR += p5-Benchmark-Timer
      SUBDIR += p5-Bit-Vector-Minimal
      SUBDIR += p5-C-Scan
+     SUBDIR += p5-CLASS
      SUBDIR += p5-Cache-Cache
      SUBDIR += p5-Cache-FastMmap
      SUBDIR += p5-Cache-Memcached
