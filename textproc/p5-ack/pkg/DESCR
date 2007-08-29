@@ -1,0 +1,4 @@
+App::Ack - A container for functions for the ack program.  ack is a tool
+like grep, aimed at programmers with large trees of heterogeneous source
+code.  ack is written purely in Perl, and takes advantage of the power
+of Perl's regular expressions.

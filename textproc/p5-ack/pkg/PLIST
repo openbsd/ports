@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/08/29 08:05:10 pyr Exp $
+bin/ack
+${P5SITE}/App/
+${P5SITE}/App/Ack.pm
+@man man/man1/ack.1
+@man man/man3p/Ack.3p
