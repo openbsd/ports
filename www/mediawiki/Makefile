@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/25 10:43:05 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.13 2007/08/29 18:23:46 mbalmer Exp $
 
 COMMENT=	"web-based collaborative editing environment"
 
-DISTNAME=	mediawiki-1.9.1
+DISTNAME=	mediawiki-1.10.1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.mediawiki.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wikipedia/}
+MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.10/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
