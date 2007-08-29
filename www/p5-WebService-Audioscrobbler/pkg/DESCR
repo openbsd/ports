@@ -1,0 +1,5 @@
+This module aims to be a full implementation of a an object-oriented
+interface to the Audioscrobbler WebService API (as available on
+http://www.audioscrobbler.net/data/webservices/). The module fully
+supports data caching and, thus, complies to the service's recommended
+usage guides.

@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/08/29 13:24:33 jasper Exp $
+${P5SITE}/WebService/
+${P5SITE}/WebService/Audioscrobbler/
+${P5SITE}/WebService/Audioscrobbler.pm
+${P5SITE}/WebService/Audioscrobbler/Artist.pm
+${P5SITE}/WebService/Audioscrobbler/Base.pm
+${P5SITE}/WebService/Audioscrobbler/DataFetcher.pm
+${P5SITE}/WebService/Audioscrobbler/SimilarArtist.pm
+${P5SITE}/WebService/Audioscrobbler/SimilarUser.pm
+${P5SITE}/WebService/Audioscrobbler/Tag.pm
+${P5SITE}/WebService/Audioscrobbler/Track.pm
+${P5SITE}/WebService/Audioscrobbler/User.pm
+@man man/man3p/WebService::Audioscrobbler.3p
+@man man/man3p/WebService::Audioscrobbler::Artist.3p
+@man man/man3p/WebService::Audioscrobbler::Base.3p
+@man man/man3p/WebService::Audioscrobbler::DataFetcher.3p
+@man man/man3p/WebService::Audioscrobbler::SimilarArtist.3p
+@man man/man3p/WebService::Audioscrobbler::SimilarUser.3p
+@man man/man3p/WebService::Audioscrobbler::Tag.3p
+@man man/man3p/WebService::Audioscrobbler::Track.3p
+@man man/man3p/WebService::Audioscrobbler::User.3p
