@@ -1,7 +1,7 @@
-$OpenBSD: patch-xfiler_Fw_c,v 1.1 2003/03/02 21:22:22 pvalchev Exp $
---- xfiler/Fw.c.orig	Sun Mar  2 12:50:28 2003
-+++ xfiler/Fw.c	Sun Mar  2 12:50:44 2003
-@@ -858,9 +858,9 @@ static int devAction(int d, char *action
+$OpenBSD: patch-xfiler_Fw_c,v 1.2 2007/08/30 07:48:26 jasper Exp $
+--- xfiler/Fw.c.orig	Thu Jan 16 00:57:08 2003
++++ xfiler/Fw.c	Wed Aug 29 16:11:54 2007
+@@ -858,9 +858,9 @@ static int devAction(int d, char *action)
        fprintf(stderr, "%s\n", action);
      freopen("/dev/null", "r", stdin);
      if (user.arg0flag)

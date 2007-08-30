@@ -1,7 +1,7 @@
-$OpenBSD: patch-xfiler_Main_c,v 1.1 2003/03/02 21:22:22 pvalchev Exp $
---- xfiler/Main.c.orig	Sun Mar  2 12:51:11 2003
-+++ xfiler/Main.c	Sun Mar  2 12:51:24 2003
-@@ -316,7 +316,7 @@ int shell_test(UserInfo *ui)
+$OpenBSD: patch-xfiler_Main_c,v 1.2 2007/08/30 07:48:26 jasper Exp $
+--- xfiler/Main.c.orig	Mon Mar 10 00:20:42 2003
++++ xfiler/Main.c	Wed Aug 29 16:11:54 2007
+@@ -317,7 +317,7 @@ int shell_test(UserInfo *ui)
        perror("(child) Can't close pipe");
        exit(1);
      }
