@@ -1,10 +1,10 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2003/02/03 03:30:12 margarida Exp $
---- doc/Makefile.in.orig	Wed Jan 29 07:47:40 2003
-+++ doc/Makefile.in	Wed Jan 29 07:48:06 2003
-@@ -121,7 +121,7 @@ sbindir = @sbindir@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2007/08/30 07:41:33 jasper Exp $
+--- doc/Makefile.in.orig	Wed Aug 29 16:00:43 2007
++++ doc/Makefile.in	Wed Aug 29 16:00:53 2007
+@@ -84,7 +84,7 @@ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
 -docdir = $(prefix)/doc/Mowitz
 +docdir = $(prefix)/share/doc/Mowitz
  

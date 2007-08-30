@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/08/30 07:41:33 jasper Exp $
 bin/mowitz-config
 include/Mowitz/
 include/Mowitz/Mowitz.h
 include/Mowitz/MwAnimator.h
 include/Mowitz/MwAnimatorP.h
 include/Mowitz/MwAnimatorTypes.h
+include/Mowitz/MwApplicationShell.h
+include/Mowitz/MwApplicationShellP.h
 include/Mowitz/MwBase.h
 include/Mowitz/MwBaseComp.h
 include/Mowitz/MwBaseCompP.h
