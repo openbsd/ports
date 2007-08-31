@@ -1,0 +1,12 @@
+$OpenBSD: patch-sink_c,v 1.1 2007/08/31 14:20:46 rui Exp $
+--- sink.c.orig	Fri Aug 31 14:24:34 2007
++++ sink.c	Fri Aug 31 14:25:15 2007
+@@ -262,7 +262,7 @@ static int send_bouncemail(struct query *ctl, struct m
+     const char *md1 = "MAILER-DAEMON", *md2 = "MAILER-DAEMON@";
+ 
+     /* don't bounce in reply to undeliverable bounces */
+-    if (!msg->return_path[0] ||
++    if (!msg || !msg->return_path[0] || 
+ 	strcmp(msg->return_path, "<>") == 0 ||
+ 	strcasecmp(msg->return_path, md1) == 0 ||
+ 	strncasecmp(msg->return_path, md2, strlen(md2)) == 0)
