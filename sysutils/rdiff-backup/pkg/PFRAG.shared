@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/08/31 10:23:51 jsg Exp $
+lib/python${MODPY_VERSION}/site-packages/rdiff_backup/C.so
+lib/python${MODPY_VERSION}/site-packages/rdiff_backup/_librsync.so
