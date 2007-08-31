@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2007/08/28 18:51:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.133 2007/08/31 10:25:09 jsg Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -71,6 +71,7 @@
      SUBDIR += pstree
      SUBDIR += radiusreport
      SUBDIR += radmind
+     SUBDIR += rdiff-backup
      SUBDIR += rtty
      SUBDIR += ruby-facter
      SUBDIR += ruby-puppet
