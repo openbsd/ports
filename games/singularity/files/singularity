@@ -1,0 +1,2 @@
+#!##MODPY_BIN##
+import singularity.singularity

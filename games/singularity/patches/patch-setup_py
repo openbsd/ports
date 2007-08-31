@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2007/08/31 06:23:37 ajacoutot Exp $
+--- setup.py.orig	Mon Aug 13 05:32:27 2007
++++ setup.py	Thu Aug 30 13:00:00 2007
+@@ -1,8 +1,7 @@
+ # setup.py
+ from distutils.core import setup
+-import py2exe
+ 
+-setup(console=["singularity.py"],
++setup(packages=["singularity"],
+       name="Endgame Singularity",
+ 	version="0.26a",
+ 	description="A simulation of a true AI",
