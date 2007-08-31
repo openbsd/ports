@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/08/31 09:04:02 jasper Exp $
+bin/fet
+share/doc/fet/
+share/doc/fet/algorithm.txt
+share/examples/fet/
+share/examples/fet/sample_Brazil.fet
+share/examples/fet/sample_Brazil_more_difficult_max_2_gaps_for_teachers.fet
+share/examples/fet/sample_Hopwood.fet
+share/examples/fet/sample_faculty_of_computers_craiova_romania.fet
+share/examples/fet/sample_german_secondary_school_complete_very_difficult.fet
+share/examples/fet/sample_morten_piil.fet
+share/examples/fet/sample_pedagogic_high_school_Tg.Mures_Romania.fet
+share/examples/fet/sample_sacred_heart_college.fet
+share/examples/fet/sample_sacred_heart_college_more_difficult_max_6_gaps_per_teacher.fet
