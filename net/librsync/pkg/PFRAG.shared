@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/08/31 09:56:58 jsg Exp $
+@lib lib/librsync.so.${LIBrsync_VERSION}
