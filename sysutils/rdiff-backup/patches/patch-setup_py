@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2007/08/31 10:23:51 jsg Exp $
+$OpenBSD: patch-setup_py,v 1.2 2007/08/31 13:14:39 jsg Exp $
 --- setup.py.orig	Sun Nov 12 18:32:01 2006
-+++ setup.py	Sat Aug 11 21:31:44 2007
++++ setup.py	Fri Aug 31 22:59:39 2007
 @@ -41,6 +41,10 @@ if os.name == 'posix':
  		if '-lrsync' in LIBS:
  			libname = []
@@ -26,7 +26,8 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2007/08/31 10:23:51 jsg Exp $
  	  scripts = ['rdiff-backup'],
 -	  data_files = [('share/man/man1', ['rdiff-backup.1']),
 -					('share/doc/rdiff-backup-%s' % (version_string,),
+-					 ['CHANGELOG', 'COPYING', 'README', 'FAQ.html'])])
 +	  data_files = [('man/man1', ['rdiff-backup.1']),
 +					('share/doc/rdiff-backup',
- 					 ['CHANGELOG', 'COPYING', 'README', 'FAQ.html'])])
++					 ['CHANGELOG', 'FAQ.html'])])
  
