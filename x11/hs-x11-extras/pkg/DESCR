@@ -1,0 +1,2 @@
+The X11 extra bindings for GHC expose more of X11 to the Haskell
+world than the X11 libraries shipped with GHC.

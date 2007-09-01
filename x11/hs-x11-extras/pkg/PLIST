@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/01 22:13:42 kili Exp $
+lib/X11-extras-${V}/
+lib/X11-extras-${V}/ghc-6.6.1/
+lib/X11-extras-${V}/ghc-6.6.1/Graphics/
+lib/X11-extras-${V}/ghc-6.6.1/Graphics/X11/
+lib/X11-extras-${V}/ghc-6.6.1/Graphics/X11/Xinerama.hi
+lib/X11-extras-${V}/ghc-6.6.1/Graphics/X11/Xlib/
+lib/X11-extras-${V}/ghc-6.6.1/Graphics/X11/Xlib/Extras.hi
+lib/X11-extras-${V}/ghc-6.6.1/HSX11-extras-${V}.o
+lib/X11-extras-${V}/ghc-6.6.1/include/
+lib/X11-extras-${V}/ghc-6.6.1/include/XlibExtras.h
+lib/X11-extras-${V}/ghc-6.6.1/libHSX11-extras-${V}.a
+lib/X11-extras-${V}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/X11-extras-${V}/register.sh
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/X11-extras-${V}/unregister.sh
+lib/X11-extras-${V}/unregister.sh
+share/doc/X11-extras-${V}/
+share/doc/X11-extras-${V}/Graphics-X11-Xinerama.html
+share/doc/X11-extras-${V}/Graphics-X11-Xlib-Extras.html
+share/doc/X11-extras-${V}/X11-extras.haddock
+share/doc/X11-extras-${V}/doc-index-A.html
+share/doc/X11-extras-${V}/doc-index-B.html
+share/doc/X11-extras-${V}/doc-index-C.html
+share/doc/X11-extras-${V}/doc-index-D.html
+share/doc/X11-extras-${V}/doc-index-E.html
+share/doc/X11-extras-${V}/doc-index-F.html
+share/doc/X11-extras-${V}/doc-index-G.html
+share/doc/X11-extras-${V}/doc-index-K.html
+share/doc/X11-extras-${V}/doc-index-M.html
+share/doc/X11-extras-${V}/doc-index-N.html
+share/doc/X11-extras-${V}/doc-index-P.html
+share/doc/X11-extras-${V}/doc-index-Q.html
+share/doc/X11-extras-${V}/doc-index-R.html
+share/doc/X11-extras-${V}/doc-index-S.html
+share/doc/X11-extras-${V}/doc-index-U.html
+share/doc/X11-extras-${V}/doc-index-W.html
+share/doc/X11-extras-${V}/doc-index-X.html
+share/doc/X11-extras-${V}/doc-index.html
+share/doc/X11-extras-${V}/haddock.css
+share/doc/X11-extras-${V}/haddock.js
+share/doc/X11-extras-${V}/haskell_icon.gif
+share/doc/X11-extras-${V}/index.html
+share/doc/X11-extras-${V}/minus.gif
+share/doc/X11-extras-${V}/plus.gif
