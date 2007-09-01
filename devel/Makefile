@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.536 2007/08/29 13:27:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.537 2007/09/01 07:00:50 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -394,6 +394,7 @@
      SUBDIR += p5-POE-Component-IKC
      SUBDIR += p5-PadWalker
      SUBDIR += p5-Parallel-ForkManager
+     SUBDIR += p5-Parallel-Forker
      SUBDIR += p5-Params-CallbackRequest
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
