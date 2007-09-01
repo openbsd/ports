@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.33 2007/06/04 11:40:56 martynas Exp $
+# $OpenBSD: Makefile,v 1.34 2007/09/01 20:11:21 kili Exp $
 
-COMMENT=	"Secure Internet Live Conferencing (SILC) server"
+COMMENT=	Secure Internet Live Conferencing (SILC) server
 
 DISTNAME=	silc-server-1.0.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.66 2007/07/09 16:05:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2007/09/01 20:11:21 kili Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
-COMMENT-main=	"generic shared library support script"
-COMMENT-ltdl=	"GNU libtool system independent dlopen wrapper"
+COMMENT-main=	generic shared library support script
+COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
 
 VERSION=	1.5.22
 DISTNAME=	libtool-${VERSION}
-PKGNAME-main=	${DISTNAME}p13
-PKGNAME-ltdl=	libltdl-${VERSION}p2
+PKGNAME-main=	${DISTNAME}p14
+PKGNAME-ltdl=	libltdl-${VERSION}p3
 SHARED_LIBS=		ltdl 4.3
 MODGNU_SHARED_LIBS=	ltdl '-no-undefined'
 
@@ -19,7 +19,7 @@ HOMEPAGE=	http://www.gnu.org/software/libtool/
 AUTOCONF_VERSION= 2.59
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

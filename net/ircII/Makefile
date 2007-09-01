@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2005/01/21 16:03:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/01 20:11:21 kili Exp $
 
-COMMENT=	"Internet Relay Chat client"
+COMMENT=	Internet Relay Chat client
 
 VERSION=	20040820
 DISTNAME=	ircii-${VERSION}
-PKGNAME=	ircII-${VERSION}
+PKGNAME=	ircII-${VERSION}p0
 CATEGORIES=	net
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 HOMEPAGE=	http://www.eterna.com.au/ircii/
 

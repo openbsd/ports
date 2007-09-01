@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2007/08/11 22:15:46 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/01 20:11:21 kili Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"multi-protocol instant messaging client"
+COMMENT=	multi-protocol instant messaging client
 
 DISTNAME=	pidgin-2.0.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	jabber               0.0      # .0.0
 SHARED_LIBS +=	oscar                0.0      # .0.0
 SHARED_LIBS +=	purple               0.0      # .0.0
@@ -15,7 +15,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://pidgin.im/
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
