@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/08/28 17:51:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/01 19:19:41 merdely Exp $
 
 COMMENT-main=		network backup solution
 COMMENT-client=		network backup solution (client)
@@ -6,16 +6,16 @@ COMMENT-server=		network backup solution (server)
 
 VERSION=		2.0.3
 DISTNAME=		bacula-${VERSION}
-PKGNAME-main=		${DISTNAME}
-FULLPKGNAME-client=	bacula-client-${VERSION}p0
-PKGNAME-server=		bacula-server-${VERSION}p0
+PKGNAME-main=		${DISTNAME}p0
+FULLPKGNAME-client=	bacula-client-${VERSION}p1
+PKGNAME-server=		bacula-server-${VERSION}p1
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 
 HOMEPAGE=		http://www.bacula.org/
 
-MAINTAINER=		Michael Erdely <mike@erdelynet.com>
+MAINTAINER=		Michael Erdely <merdely@openbsd.org>
 
 WANTLIB=		c pthread crypto ssl z m stdc++
 WANTLIB-server=		${WANTLIB} readline termcap

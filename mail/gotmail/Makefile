@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/08 20:06:48 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/01 19:19:41 merdely Exp $
 
 COMMENT=	"automatically fetch hotmail.com email"
 
 DISTNAME=	gotmail-0.8.9
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	mail perl5
 
-MAINTAINER=	Michael Erdely <mike@erdelynet.com>
+MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
