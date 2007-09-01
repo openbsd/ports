@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.6 2007/05/05 20:23:39 simon Exp $
+# $OpenBSD: OpenBSD,v 1.7 2007/09/01 19:18:20 merdely Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -16,6 +16,7 @@
 36.134		-86.70		"david"		# David Krause
 37.515049	-122.339528	"marc"		# Marco S. Hyman
 38.9693		-77.3863	"jason"		# Jason L. Wright
+39.179910	-77.058420	"merdely"	# Michael Erdely
 39.5565		-77.0300	"jdixon"	# Jason Dixon
 40.033779	-105.250051	"millert"	# Todd C. Miller
 40.115		-88.02		"drahn"		# Dale Rahn
