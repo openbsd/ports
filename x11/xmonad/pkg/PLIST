@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/01 22:18:41 kili Exp $
+bin/xmonad
+@man man/man1/xmonad.1

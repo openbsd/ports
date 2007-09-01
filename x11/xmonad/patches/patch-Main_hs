@@ -1,0 +1,12 @@
+$OpenBSD: patch-Main_hs,v 1.1.1.1 2007/09/01 22:18:41 kili Exp $
+--- Main.hs.orig	Thu May 31 03:04:51 2007
++++ Main.hs	Sat Aug 25 19:07:00 2007
+@@ -61,7 +61,7 @@ main = do
+         st = XState
+             { windowset     = winset
+             , layouts       = M.fromList [(w, safeLayouts) | w <- [0 .. W workspaces - 1]]
+-            , statusGaps    = take (length xinesc) $ defaultGaps ++ repeat (0,0,0,0)
++            , statusGaps    = take (length xinesc) $ repeat (0,0,0,0)
+             , xineScreens   = xinesc
+             , dimensions    = (fromIntegral (displayWidth  dpy dflt),
+                                fromIntegral (displayHeight dpy dflt)) }

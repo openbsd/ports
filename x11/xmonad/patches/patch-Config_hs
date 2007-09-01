@@ -1,0 +1,12 @@
+$OpenBSD: patch-Config_hs,v 1.1.1.1 2007/09/01 22:18:41 kili Exp $
+--- Config.hs.orig	Thu May 31 03:04:51 2007
++++ Config.hs	Sat Aug 25 23:41:46 2007
+@@ -56,7 +56,7 @@ defaultWindowsInMaster = 1
+ -- Fields are: top, bottom, left, right.
+ --
+ defaultGaps :: [(Int,Int,Int,Int)]
+-defaultGaps = [(0,0,0,0)] -- 15 for default dzen
++defaultGaps = repeat (15,0,0,0) -- 15 for default dzen
+ 
+ -- numlock handling:
+ --
