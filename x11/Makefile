@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.303 2007/08/26 18:59:34 aanriot Exp $
+# $OpenBSD: Makefile,v 1.304 2007/09/01 22:14:15 kili Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -86,6 +86,7 @@
      SUBDIR += gtksourceview
      SUBDIR += gxmessage
      SUBDIR += hicolor-icon-theme
+     SUBDIR += hs-x11-extras
      SUBDIR += icewm
      SUBDIR += icon-naming-utils
      SUBDIR += idesk
