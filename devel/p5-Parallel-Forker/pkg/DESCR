@@ -1,0 +1,5 @@
+Parallel::Forker manages parallel processes that are either subroutines
+or system commands. Forker supports most of the features in all the other
+little packages out there, with the addition of being able to specify
+complicated expressions to determine which processes run after others, or
+run when others fail.

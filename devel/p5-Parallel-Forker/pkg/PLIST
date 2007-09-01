@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/01 06:59:19 sturm Exp $
+${P5SITE}/Parallel/
+${P5SITE}/Parallel/Forker/
+${P5SITE}/Parallel/Forker.pm
+${P5SITE}/Parallel/Forker/Process.pm
+@man man/man3p/Parallel::Forker.3p
+@man man/man3p/Parallel::Forker::Process.3p
