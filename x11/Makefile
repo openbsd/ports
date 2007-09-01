@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2007/09/01 22:14:15 kili Exp $
+# $OpenBSD: Makefile,v 1.305 2007/09/01 22:19:42 kili Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -265,6 +265,7 @@
      SUBDIR += xmascot
      SUBDIR += xmbdfed
      SUBDIR += xmold
+     SUBDIR += xmonad
      SUBDIR += xosd
      SUBDIR += xpad
      SUBDIR += xplanet
