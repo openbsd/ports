@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/07/19 16:21:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/09/02 15:18:04 jasper Exp $
 bin/sonata
 lib/python${MODPY_VERSION}/site-packages/audioscrobbler.py
 lib/python${MODPY_VERSION}/site-packages/audioscrobbler.pyc
@@ -9,10 +9,15 @@ lib/python${MODPY_VERSION}/site-packages/sonata.py
 lib/python${MODPY_VERSION}/site-packages/sonata.pyc
 share/applications/
 share/applications/sonata.desktop
+share/locale/cz/
+share/locale/cz/LC_MESSAGES/
+share/locale/cz/LC_MESSAGES/sonata.mo
 share/locale/de/LC_MESSAGES/sonata.mo
 share/locale/es/LC_MESSAGES/sonata.mo
 share/locale/fi/LC_MESSAGES/sonata.mo
 share/locale/fr/LC_MESSAGES/sonata.mo
+share/locale/it/LC_MESSAGES/sonata.mo
+share/locale/nl/LC_MESSAGES/sonata.mo
 share/locale/pl/LC_MESSAGES/sonata.mo
 share/locale/ru/LC_MESSAGES/sonata.mo
 share/locale/sv/LC_MESSAGES/sonata.mo
