@@ -1,0 +1,9 @@
+IMAPFilter is a mail filtering utility.  It connects to remote mail
+servers using the Internet Message Access Protocol (IMAP), sends
+searching queries to the server and processes mailboxes based on the
+results.  It can be used to delete, copy, move, flag, etc. messages
+residing in mailboxes at the same or different mail servers.  The 4rev1
+and 4 versions of the IMAP protocol are supported.
+
+IMAPFilter uses the Lua programming language as a configuration and
+extension language.

@@ -1,0 +1,30 @@
+$OpenBSD: patch-imapfilter_config_5,v 1.1.1.1 2007/09/02 18:35:22 simon Exp $
+--- imapfilter_config.5.orig	Fri Aug 31 15:56:54 2007
++++ imapfilter_config.5	Fri Aug 31 15:56:59 2007
+@@ -67,7 +67,7 @@ options.namespace = false
+ .Ed
+ .Pp
+ Available options are:
+-.Bl -tag
++.Bl -tag -width Ds
+ .It Va create
+ According to the IMAP specification, when trying to write a message to a
+ non-existent mailbox, the server must send a hint to the client, whether it
+@@ -147,7 +147,7 @@ myaccount = IMAP {
+ An account
+ .Vt table
+ must have the following elements:
+-.Bl -tag
++.Bl -tag -width Ds
+ .It Va server
+ The hostname of the IMAP server to connect to.  It takes a
+ .Vt string
+@@ -161,7 +161,7 @@ as a value.
+ An account
+ .Vt table
+ can also have the following optional elements:
+-.Bl -tag
++.Bl -tag -width Ds
+ .It Va password
+ User's secret keyword.  If a password wasn't supplied the user will be asked to
+ enter one interactively the first time it will be needed.  It takes a

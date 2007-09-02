@@ -1,0 +1,170 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/09/02 18:35:22 simon Exp $
+--- configure.orig	Sat Jun 30 22:38:47 2007
++++ configure	Fri Aug 31 14:47:10 2007
+@@ -2,10 +2,11 @@
+ 
+ # Default values
+ 
+-destdir="/usr/local"
+-bindir="$destdir/bin"
+-sharedir="$destdir/share/imapfilter"
+-mandir="$destdir/man"
++destdir=""
++prefix="/usr/local"
++bindir="$prefix/bin"
++sharedir="$prefix/share/imapfilter"
++mandir="$prefix/man"
+ 
+ ssltls="yes"
+ crammd5="yes"
+@@ -13,7 +14,7 @@ crammd5="yes"
+ incdirs="-I/usr/local/include"
+ libdirs="-L/usr/local/lib"
+ 
+-mycflags="-Wall -O"
++mycflags="${CFLAGS}"
+ myldflags=""
+ 
+ libs="-lm -llua -lpcre"
+@@ -27,15 +28,18 @@ bin="imapfilter"
+ 
+ # Get options and arguments
+ 
+-while getopts "d:b:s:m:o:h" opt
++while getopts "d:p:b:s:m:o:h" opt
+ do
+   case $opt in
+   d)
+     destdir=$OPTARG
+-    bindir=$destdir/bin
+-    sharedir=$destdir/share/imapfilter
+-    mandir=$destdir/man
+     ;;
++  p)
++    prefix=$OPTARG
++    bindir=$prefix/bin
++    sharedir=$prefix/share/imapfilter
++    mandir=$prefix/man
++    ;;
+   b)
+     bindir=$OPTARG
+     ;;
+@@ -63,12 +67,13 @@ do
+   h | *)
+     cat << EOF
+ Usage:
+-  configure [-h] [-d destdir] [-b bindir] [-s sharedir] [-m mandir]
++  configure [-h] [-d destdir] [-p prefix] [-b bindir] [-s sharedir] [-m mandir]
+             [-o option=argument]
+ 
+ Description:
+   -h			This brief usage and description message.
+-  -d destdir		Installation path for program's files [$destdir]
++  -d destdir		Installation base for all files [$destdir]
++  -p prefix		Installation path for program's files [$prefix]
+   -b bindir		Installation path for binaries [$bindir]
+   -s sharedir		Installation path for libraries [$sharedir]
+   -m mandir		Installation path for manual pages [$mandir]
+@@ -89,6 +94,7 @@ done
+ 
+ cat << EOF
+ Destination directory:					$destdir
++Base directory:						$prefix
+ Binaries directory:					$bindir
+ Architecture independent libraries:			$sharedir
+ Manual pages directory:					$mandir
+@@ -141,6 +147,7 @@ mv -f Makefile Makefile~
+ 
+ cat > Makefile << EOF
+ DESTDIR = $destdir
++PREFIX = $prefix
+ BINDIR = $bindir
+ SHAREDIR = $sharedir
+ MANDIR = $mandir
+@@ -191,47 +198,47 @@ auth.o cert.o imap.o imapfilter.o log.o request.o resp
+ imapfilter.o: version.h
+ 
+ install: \$(BIN)
+-	if test ! -d \$(BINDIR); then mkdir -p \$(BINDIR); fi
+-	cp -f \$(BIN) \$(BINDIR) && chmod 0755 \$(BINDIR)/\$(BIN)
+-	if test ! -d \$(SHAREDIR); then mkdir -p \$(SHAREDIR); fi
+-	cp -f \$(COMMON_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(COMMON_LUA)
+-	cp -f \$(SET_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(SET_LUA)
+-	cp -f \$(REGEX_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(REGEX_LUA)
+-	cp -f \$(ACCOUNT_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(ACCOUNT_LUA)
+-	cp -f \$(MAILBOX_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(MAILBOX_LUA)
+-	cp -f \$(MESSAGE_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(MESSAGE_LUA)
+-	cp -f \$(OPTIONS_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(OPTIONS_LUA)
+-	cp -f \$(AUXILIARY_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(AUXILIARY_LUA)
+-	cp -f \$(DEPRECATED_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(DEPRECATED_LUA)
+-	if test ! -d \$(MANDIR)/man1; then mkdir -p \$(MANDIR)/man1; fi
+-	cp -f \$(MAN_BIN) \$(MANDIR)/man1 && \\
+-		chmod 0644 \$(MANDIR)/man1/\$(MAN_BIN)
+-	if test ! -d \$(MANDIR)/man5; then mkdir -p \$(MANDIR)/man5; fi
+-	cp -f \$(MAN_CONFIG) \$(MANDIR)/man5 && \\
+-		chmod 0644 \$(MANDIR)/man5/\$(MAN_CONFIG)
++	if test ! -d \$(DESTDIR)\$(BINDIR); then mkdir -p \$(DESTDIR)\$(BINDIR); fi
++	cp -f \$(BIN) \$(DESTDIR)\$(BINDIR) && chmod 0755 \$(DESTDIR)\$(BINDIR)/\$(BIN)
++	if test ! -d \$(DESTDIR)\$(SHAREDIR); then mkdir -p \$(DESTDIR)\$(SHAREDIR); fi
++	cp -f \$(COMMON_LUA) \$(DESTDIR)\$(SHAREDIR) && \\
++		chmod 0644 \$(DESTDIR)\$(SHAREDIR)/\$(COMMON_LUA)
++	cp -f \$(SET_LUA) \$(DESTDIR)\$(SHAREDIR) && \\
++		chmod 0644 \$(DESTDIR)\$(SHAREDIR)/\$(SET_LUA)
++	cp -f \$(REGEX_LUA) \$(DESTDIR)\$(SHAREDIR) && \\
++		chmod 0644 \$(DESTDIR)\$(SHAREDIR)/\$(REGEX_LUA)
++	cp -f \$(ACCOUNT_LUA) \$(DESTDIR)\$(SHAREDIR) && \\
++		chmod 0644 \$(DESTDIR)\$(SHAREDIR)/\$(ACCOUNT_LUA)
++	cp -f \$(MAILBOX_LUA) \$(DESTDIR)\$(SHAREDIR) && \\
++		chmod 0644 \$(DESTDIR)\$(SHAREDIR)/\$(MAILBOX_LUA)
++	cp -f \$(MESSAGE_LUA) \$(DESTDIR)\$(SHAREDIR) && \\
++		chmod 0644 \$(DESTDIR)\$(SHAREDIR)/\$(MESSAGE_LUA)
++	cp -f \$(OPTIONS_LUA) \$(DESTDIR)\$(SHAREDIR) && \\
++		chmod 0644 \$(DESTDIR)\$(SHAREDIR)/\$(OPTIONS_LUA)
++	cp -f \$(AUXILIARY_LUA) \$(DESTDIR)\$(SHAREDIR) && \\
++		chmod 0644 \$(DESTDIR)\$(SHAREDIR)/\$(AUXILIARY_LUA)
++	cp -f \$(DEPRECATED_LUA) \$(DESTDIR)\$(SHAREDIR) && \\
++		chmod 0644 \$(DESTDIR)\$(SHAREDIR)/\$(DEPRECATED_LUA)
++	if test ! -d \$(DESTDIR)\$(MANDIR)/man1; then mkdir -p \$(DESTDIR)\$(MANDIR)/man1; fi
++	cp -f \$(MAN_BIN) \$(DESTDIR)\$(MANDIR)/man1 && \\
++		chmod 0644 \$(DESTDIR)\$(MANDIR)/man1/\$(MAN_BIN)
++	if test ! -d \$(DESTDIR)\$(MANDIR)/man5; then mkdir -p \$(DESTDIR)\$(MANDIR)/man5; fi
++	cp -f \$(MAN_CONFIG) \$(DESTDIR)\$(MANDIR)/man5 && \\
++		chmod 0644 \$(DESTDIR)\$(MANDIR)/man5/\$(MAN_CONFIG)
+ 
+ deinstall:
+-	rm -f \$(BINDIR)/\$(BIN) \\
+-		\$(SHAREDIR)/\$(COMMON_LUA) \\
+-		\$(SHAREDIR)/\$(SET_LUA) \\
+-		\$(SHAREDIR)/\$(REGEX_LUA) \\
+-		\$(SHAREDIR)/\$(ACCOUNT_LUA) \\
+-		\$(SHAREDIR)/\$(MAILBOX_LUA) \\
+-		\$(SHAREDIR)/\$(MESSAGE_LUA) \\
+-		\$(SHAREDIR)/\$(OPTIONS_LUA) \\
+-		\$(SHAREDIR)/\$(AUXILIARY_LUA) \\
+-		\$(SHAREDIR)/\$(DEPRECATED_LUA) \\
+-		\$(MANDIR)/man1/\$(MAN_BIN) \\
+-		\$(MANDIR)/man5/\$(MAN_CONFIG)
++	rm -f \$(DESTDIR)\$(BINDIR)/\$(BIN) \\
++		\$(DESTDIR)\$(SHAREDIR)/\$(COMMON_LUA) \\
++		\$(DESTDIR)\$(SHAREDIR)/\$(SET_LUA) \\
++		\$(DESTDIR)\$(SHAREDIR)/\$(REGEX_LUA) \\
++		\$(DESTDIR)\$(SHAREDIR)/\$(ACCOUNT_LUA) \\
++		\$(DESTDIR)\$(SHAREDIR)/\$(MAILBOX_LUA) \\
++		\$(DESTDIR)\$(SHAREDIR)/\$(MESSAGE_LUA) \\
++		\$(DESTDIR)\$(SHAREDIR)/\$(OPTIONS_LUA) \\
++		\$(DESTDIR)\$(SHAREDIR)/\$(AUXILIARY_LUA) \\
++		\$(DESTDIR)\$(SHAREDIR)/\$(DEPRECATED_LUA) \\
++		\$(DESTDIR)\$(MANDIR)/man1/\$(MAN_BIN) \\
++		\$(DESTDIR)\$(MANDIR)/man5/\$(MAN_CONFIG)
+ 
+ uninstall: deinstall
+ 
