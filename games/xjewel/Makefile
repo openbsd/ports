@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/08/27 10:39:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/02 20:23:53 sturm Exp $
 
 COMMENT=	dropping jewels game for X11
 
 DISTNAME=	xjewel-1.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
