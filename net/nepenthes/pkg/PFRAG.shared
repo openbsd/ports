@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2007/03/17 21:50:11 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2007/09/02 22:42:55 rui Exp $
 lib/nepenthes/dnsresolveadns.so
 lib/nepenthes/downloadcreceive.so
 lib/nepenthes/downloadcsend.so
@@ -9,6 +9,7 @@ lib/nepenthes/downloadlink.so
 lib/nepenthes/downloadrcp.so
 lib/nepenthes/downloadtftp.so
 lib/nepenthes/logdownload.so
+lib/nepenthes/loghexdump.so
 lib/nepenthes/logirc.so
 lib/nepenthes/logprelude.so
 lib/nepenthes/logsurfnet.so
@@ -22,6 +23,8 @@ lib/nepenthes/shellemuwinnt.so
 lib/nepenthes/sqlhandlerpostgres.so
 lib/nepenthes/submitfile.so
 lib/nepenthes/submitgotek.so
+lib/nepenthes/submithttp.so
+lib/nepenthes/submitmwserv.so
 lib/nepenthes/submitnorman.so
 lib/nepenthes/submitpostgres.so
 lib/nepenthes/vulnasn1.so
@@ -42,6 +45,7 @@ lib/nepenthes/vulnoptix.so
 lib/nepenthes/vulnpnp.so
 lib/nepenthes/vulnrealvnc.so
 lib/nepenthes/vulnsasserftpd.so
+lib/nepenthes/vulnsav.so
 lib/nepenthes/vulnssh.so
 lib/nepenthes/vulnsub7.so
 lib/nepenthes/vulnupnp.so

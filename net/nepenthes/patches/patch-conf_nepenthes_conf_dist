@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_nepenthes_conf_dist,v 1.2 2007/04/15 11:58:25 aanriot Exp $
---- conf/nepenthes.conf.dist.orig	Mon Nov 13 19:40:03 2006
-+++ conf/nepenthes.conf.dist	Sat Apr  7 22:14:09 2007
+$OpenBSD: patch-conf_nepenthes_conf_dist,v 1.3 2007/09/02 22:42:55 rui Exp $
+--- conf/nepenthes.conf.dist.orig	Sat May 26 01:50:10 2007
++++ conf/nepenthes.conf.dist	Sat May 26 01:53:31 2007
 @@ -3,8 +3,8 @@
  
  nepenthes
@@ -12,7 +12,7 @@ $OpenBSD: patch-conf_nepenthes_conf_dist,v 1.2 2007/04/15 11:58:25 aanriot Exp $
  
      modules(
  //  module name (in moduledir)      config file (in moduleconfigdir)
-@@ -30,17 +30,20 @@ nepenthes
+@@ -30,6 +30,8 @@ nepenthes
      "downloadtftp.so",              "download-tftp.conf",           ""
      "downloadrcp.so",	            ""			            ""
  
@@ -21,40 +21,27 @@ $OpenBSD: patch-conf_nepenthes_conf_dist,v 1.2 2007/04/15 11:58:25 aanriot Exp $
  // submission handler
      "submitfile.so",                "submit-file.conf",             ""  // save to disk
  //  "submitnorman.so",              "submit-norman.conf",           ""
- //  "submitnepenthes.so",           "submit-nepenthes.conf",        ""  // send to download-nepenthes in other nepenthes instances
- //  "submitxmlrpc.so",        	    "submit-xmlrpc.conf",           ""  // submit files to a xmlrpc server
-+//  "submitpostgres.so",  "submit-postgres.conf",	""	// submit to postgresql server
- 
- // logging
-     "logdownload.so",               "log-download.conf",            ""
- //  "logirc.so",                    "log-irc.conf",                 ""  // needs configuration
-+//  "logprelude.so",                "log-prelude.conf",             ""  // enables prelude logging
- 
--
- // dumping and logging
-     "moduleportwatch.so",           "module-portwatch.conf",        ""
- 
-@@ -88,8 +91,8 @@ nepenthes
+@@ -90,8 +92,8 @@ nepenthes
  
      logmanager
      {
 -	ring_logging_file		"var/log/nepenthes.%d.log";
 -	file_logging_file		"var/log/nepenthes.log";
-+	ring_logging_file		"/var/nepenthes/log/nepenthes.%d.log";
-+	file_logging_file		"/var/nepenthes/log/nepenthes.log";
++	ring_logging_file               "/var/nepenthes/log/nepenthes.%d.log";
++	file_logging_file               "/var/nepenthes/log/nepenthes.log";
      };
  
      modulemanager
-@@ -101,7 +104,7 @@ nepenthes
+@@ -103,7 +105,7 @@ nepenthes
      {
          strictfiletype              "1";
          // where does submit-file write to? set this to the same dir
 -        filesdir                    "var/binaries/"; 
-+        filesdir                    "/var/nepenthes/binaries/"; 
++	filesdir                    "/var/nepenthes/binaries/";
      };
  
      downloadmanager
-@@ -120,11 +123,11 @@ nepenthes
+@@ -122,11 +124,11 @@ nepenthes
      
      utilities
      {

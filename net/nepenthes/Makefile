@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/27 20:49:26 aanriot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/02 22:42:54 rui Exp $
 SHARED_ONLY=	Yes
 
-COMMENT=	"determine the malware activity on a network"
+COMMENT=	determine the malware activity on a network
 
-DISTNAME= 	nepenthes-0.2.0
-PKGNAME=	${DISTNAME}p2
+DISTNAME= 	nepenthes-20070830
 CATEGORIES=	net
 
 HOMEPAGE=	http://nepenthes.mwcollect.org/
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=nepenthes/}
+MASTER_SITES=	http://www.obsd.fr/OpenBSD/distfiles/
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
@@ -46,8 +45,6 @@ FLAVORS=        prelude
 FLAVOR?=
 
 .if ${FLAVOR:L:Mprelude}
-BROKEN=		"phreading issues"
-
 LIB_DEPENDS+=   prelude.>=8::security/prelude/libprelude
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include  \
                 -I${LOCALBASE}/include/libprelude/" \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/04/15 11:58:25 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/09/02 22:42:55 rui Exp $
 @newgroup _nepenthes:584
 @newuser _nepenthes:584:584:daemon:nepenthes user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -14,6 +14,7 @@ lib/nepenthes/downloadlink.la
 lib/nepenthes/downloadrcp.la
 lib/nepenthes/downloadtftp.la
 lib/nepenthes/logdownload.la
+lib/nepenthes/loghexdump.la
 lib/nepenthes/logirc.la
 lib/nepenthes/logprelude.la
 lib/nepenthes/logsurfnet.la
@@ -27,6 +28,8 @@ lib/nepenthes/shellemuwinnt.la
 lib/nepenthes/sqlhandlerpostgres.la
 lib/nepenthes/submitfile.la
 lib/nepenthes/submitgotek.la
+lib/nepenthes/submithttp.la
+lib/nepenthes/submitmwserv.la
 lib/nepenthes/submitnorman.la
 lib/nepenthes/submitpostgres.la
 lib/nepenthes/vulnasn1.la
@@ -47,6 +50,7 @@ lib/nepenthes/vulnoptix.la
 lib/nepenthes/vulnpnp.la
 lib/nepenthes/vulnrealvnc.la
 lib/nepenthes/vulnsasserftpd.la
+lib/nepenthes/vulnsav.la
 lib/nepenthes/vulnssh.la
 lib/nepenthes/vulnsub7.la
 lib/nepenthes/vulnupnp.la
@@ -83,8 +87,12 @@ share/examples/nepenthes/log-prelude.conf
 @sample ${SYSCONFDIR}/nepenthes/log-prelude.conf
 share/examples/nepenthes/log-surfnet.conf
 @sample ${SYSCONFDIR}/nepenthes/log-surfnet.conf
+share/examples/nepenthes/module-bridge.conf
+@sample ${SYSCONFDIR}/nepenthes/module-bridge.conf
 share/examples/nepenthes/module-honeytrap.conf
 @sample ${SYSCONFDIR}/nepenthes/module-honeytrap.conf
+share/examples/nepenthes/module-peiros.conf
+@sample ${SYSCONFDIR}/nepenthes/module-peiros.conf
 share/examples/nepenthes/module-portwatch.conf
 @sample ${SYSCONFDIR}/nepenthes/module-portwatch.conf
 share/examples/nepenthes/nepenthes.conf
@@ -114,8 +122,14 @@ share/examples/nepenthes/submit-file.conf
 @sample ${SYSCONFDIR}/nepenthes/submit-file.conf
 share/examples/nepenthes/submit-gotek.conf
 @sample ${SYSCONFDIR}/nepenthes/submit-gotek.conf
+share/examples/nepenthes/submit-http.conf
+@sample ${SYSCONFDIR}/nepenthes/submit-http.conf
+share/examples/nepenthes/submit-mwserv.conf
+@sample ${SYSCONFDIR}/nepenthes/submit-mwserv.conf
 share/examples/nepenthes/submit-norman.conf
 @sample ${SYSCONFDIR}/nepenthes/submit-norman.conf
+share/examples/nepenthes/submit-postgres.conf
+@sample ${SYSCONFDIR}/nepenthes/submit-postgres.conf
 share/examples/nepenthes/vuln-asn1.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-asn1.conf
 share/examples/nepenthes/vuln-bagle.conf
