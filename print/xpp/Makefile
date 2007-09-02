@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/02 17:42:36 jasper Exp $
 
-COMMENT=		"X Printing Panel"
+COMMENT=		X Printing Panel
 
 DISTNAME=		xpp-1.5
 CATEGORIES=		print sysutils
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE stdc++ Xext GL X11 SM c m z
 
-MASTER_SITES=		http://download.sourceforge.net/cups/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cups/}
 
 LIB_DEPENDS=		cups::print/cups \
 			jpeg.>=62::graphics/jpeg \
