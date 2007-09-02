@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/01/07 18:25:43 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2007/09/02 17:02:10 jasper Exp $
 bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
 share/applications/
@@ -11,7 +11,6 @@ share/gtk-gnutella/en/
 share/gtk-gnutella/en/FAQ
 share/gtk-gnutella/favicon.png
 share/gtk-gnutella/geo-ip.txt
-share/gtk-gnutella/gwcache.boot
 share/gtk-gnutella/hostiles.txt
 share/gtk-gnutella/ja/
 share/gtk-gnutella/ja/FAQ
@@ -21,6 +20,7 @@ share/gtk-gnutella/pixmaps/arrow_up.xpm
 share/gtk-gnutella/pixmaps/booklib.xpm
 share/gtk-gnutella/pixmaps/booksha.xpm
 share/gtk-gnutella/pixmaps/bookshav.xpm
+share/gtk-gnutella/pixmaps/booktth.xpm
 share/gtk-gnutella/pixmaps/chip.xpm
 share/gtk-gnutella/pixmaps/clanbomber_red.xpm
 share/gtk-gnutella/pixmaps/clanbomber_yellow.xpm
@@ -33,6 +33,8 @@ share/gtk-gnutella/pixmaps/firewall_tcp.xpm
 share/gtk-gnutella/pixmaps/firewall_udp.xpm
 share/gtk-gnutella/pixmaps/firewall_udp_punchable.xpm
 share/gtk-gnutella/pixmaps/freeze.xpm
+share/gtk-gnutella/pixmaps/icon.16x16.xpm
+share/gtk-gnutella/pixmaps/icon.32x32.xpm
 share/gtk-gnutella/pixmaps/icon.xpm
 share/gtk-gnutella/pixmaps/leaf.xpm
 share/gtk-gnutella/pixmaps/legacy.xpm
@@ -50,6 +52,8 @@ share/gtk-gnutella/pixmaps/ultra.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
 share/gtk-gnutella/pixmaps/warning.xpm
 share/gtk-gnutella/robots.txt
+share/gtk-gnutella/spam.txt
+share/gtk-gnutella/spam_sha1.txt
 share/locale/de/LC_MESSAGES/gtk-gnutella.mo
 share/locale/el/LC_MESSAGES/gtk-gnutella.mo
 share/locale/es/LC_MESSAGES/gtk-gnutella.mo
@@ -65,3 +69,5 @@ share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
 share/pixmaps/
 share/pixmaps/gtk-gnutella.png
 share/pixmaps/gtk-gnutella.svg
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

@@ -1,16 +1,16 @@
-$OpenBSD: patch-Configure,v 1.11 2007/01/09 20:52:13 sturm Exp $
---- Configure.orig	Fri Nov 10 00:01:15 2006
-+++ Configure	Tue Jan  9 21:12:59 2007
-@@ -331,7 +331,7 @@ d_msghdr_msg_flags=''
+$OpenBSD: patch-Configure,v 1.12 2007/09/02 17:02:10 jasper Exp $
+--- Configure.orig	Fri Aug 31 13:47:15 2007
++++ Configure	Fri Aug 31 13:51:16 2007
+@@ -317,7 +317,7 @@ d_msghdr_msg_flags=''
  d_nls=''
  d_open3=''
  d_poll=''
 -d_portable=''
 +d_portable='define'
+ d_posix_fadvise=''
  d_posix_memalign=''
  d_pread=''
- d_preadv=''
-@@ -1126,7 +1126,7 @@ for file in $*; do
+@@ -3603,7 +3603,7 @@ for file in $*; do
  			dir=`expr X$file : 'X\(.*\)/'`
  			file=`expr X$file : 'X.*/\(.*\)'`
  			./mkdirp $dir
@@ -19,35 +19,16 @@ $OpenBSD: patch-Configure,v 1.11 2007/01/09 20:52:13 sturm Exp $
  			;;
  		*)
  			sh <"$SRC/$file"
-@@ -4867,7 +4867,7 @@ echo "(I'll use '$dbusconfig' to gather 
- dbuscflags=""
- dbusldflags=""
- d_dbus="$undef"
--version=`$dbusconfig $modver`
-+version=""
- case "$version" in
- '') ;;
- *)
-@@ -5933,8 +5933,7 @@ eval $setvar
- echo " "
- case "$d_sqlite" in
- "$undef") sqlite="$undef";;
--*) sqlite="$define";;
--esac
-+*) sqlite="$define"
- echo "Checking how we can gather information about SQLite..." >&4
- if pkg-config sqlite3 --cflags >/dev/null 2>&1; then
- 	sqliteconfig="pkg-config sqlite3"
-@@ -5948,6 +5947,8 @@ else
- 	modver=''
- fi
- echo "(I'll use '$sqliteconfig' to gather that information.)"
-+;;
-+esac
+@@ -4303,7 +4303,7 @@ case "$d_dbus" in
+ 		echo "(I'll use '$dbusconfig' to gather that information.)"
  
- sqlitecflags=""
- sqliteldflags=""
-@@ -8664,15 +8665,6 @@ If you'd like to make any changes to the
+ 		?X: Make sure we have a good enough version
+-		version=`$dbusconfig $modver`
++		version=``
+ 		case "$version" in
+ 		'') ;;
+ 		*)
+@@ -9199,15 +9199,6 @@ If you'd like to make any changes to the config.sh fil
  to configure things, do it as a shell escape now (e.g. !vi config.sh).
  
  EOM
