@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/07/04 11:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/02 08:50:53 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.2.5
+DISTNAME=	wesnoth-1.2.6
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.wesnoth.org/
@@ -26,10 +26,9 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_net::devel/sdl-net \
 		SDL_mixer::devel/sdl-mixer \
 		fribidi::devel/fribidi
-
-# The detection of kde-config/gnome-config will only lead to some
-# desktop file installation...
 # png is only required for the tools, which we don't build yet.
+
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 MODULES=	devel/gettext
 
@@ -56,6 +55,8 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 CONFIGURE_ARGS+=--enable-server \
 		--enable-campaign-server \
 		--enable-editor \
+		--with-gnome \
+		--with-kde \
 		--with-fifodir=/var/run
 
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
