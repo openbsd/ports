@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.7 2007/09/01 19:18:20 merdely Exp $
+# $OpenBSD: OpenBSD,v 1.8 2007/09/02 12:06:36 jakob Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -77,7 +77,7 @@
 55.16		23.88		"martynas"	# Martynas Venckus
 55.593		12.987		"wilfried"	# Peter Stromberg
 55.599		-2.4324		"jmc"		# Jason McIntyre
-57.42		11.58		"jakob"		# Jakob Schlyter
+57.698		11.967		"jakob"		" Jakob Schlyter
 57.717		11.967		"niklas"	# Niklas Hallqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
