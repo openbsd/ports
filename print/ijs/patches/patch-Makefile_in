@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/09/03 09:20:54 ajacoutot Exp $
+--- Makefile.in.orig	Wed Feb 11 12:51:54 2004
++++ Makefile.in	Mon Sep  3 10:52:19 2007
+@@ -129,7 +129,7 @@ pkginclude_HEADERS = \
+ 
+ noinst_HEADERS = unistd_.h
+ 
+-bin_PROGRAMS = ijs_client_example ijs_server_example
++bin_PROGRAMS =
+ 
+ bin_SCRIPTS = ijs-config
+ 
+@@ -143,12 +143,12 @@ EXTRA_libijs_la_SOURCES = ijs_exec_unix.c ijs_exec_win
+ @SYSDEPS_WINDOWS_TRUE@libijs_la_LIBADD = ijs_exec_win.lo $(IJS_DEPLIBS)
+ @SYSDEPS_WINDOWS_FALSE@libijs_la_LIBADD = ijs_exec_unix.lo $(IJS_DEPLIBS)
+ # Uncommment to build an unversioned library (version in soname)
+-libijs_la_LDFLAGS = -release $(IJS_VERSION) -rpath $(libdir)
++#libijs_la_LDFLAGS = -release $(IJS_VERSION) -rpath $(libdir)
+ 
+ # Uncomment to build a versioned library
+-#libijs_la_LDFLAGS = \
+-# -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-# -rpath $(libdir)
++libijs_la_LDFLAGS = \
++ -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
++ -rpath $(libdir)
+ ijs_client_example_SOURCES = ijs_client_example.c
+ ijs_client_example_LDADD = libijs.la
+ 
+@@ -194,7 +194,7 @@ LTLIBRARIES = $(lib_LTLIBRARIES)
+ @SYSDEPS_WINDOWS_FALSE@libijs_la_DEPENDENCIES = ijs_exec_unix.lo
+ am_libijs_la_OBJECTS = ijs.lo ijs_client.lo ijs_server.lo
+ libijs_la_OBJECTS = $(am_libijs_la_OBJECTS)
+-bin_PROGRAMS = ijs_client_example$(EXEEXT) ijs_server_example$(EXEEXT)
++bin_PROGRAMS =
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+ am_ijs_client_example_OBJECTS = ijs_client_example.$(OBJEXT)

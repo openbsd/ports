@@ -1,0 +1,7 @@
+IJS is, first and foremost, a protocol for transmission of raster page
+images. This snapshot provides a reference implementation of the
+protocol, the design of which is still in flux. When the protocol
+specification is published, it will be authoritative. Applications
+should feel free to link against the library provided in this package,
+adapt that code for their own needs, or roll a completely new
+implementation.

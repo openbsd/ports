@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/09/03 09:20:54 ajacoutot Exp $
+@lib lib/libijs.so.${LIBijs_VERSION}

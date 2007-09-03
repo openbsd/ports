@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/03 09:20:54 ajacoutot Exp $
+bin/ijs-config
+include/ijs/
+include/ijs/ijs.h
+include/ijs/ijs_client.h
+include/ijs/ijs_server.h
+lib/libijs.a
+lib/libijs.la
+lib/pkgconfig/
+lib/pkgconfig/ijs.pc
+@man man/man1/ijs-config.1
+share/doc/ijs/
+share/doc/ijs/ijs_spec.pdf
+share/examples/ijs/
+share/examples/ijs/ijs_client_example.c
+share/examples/ijs/ijs_server_example.c
+%%SHARED%%
