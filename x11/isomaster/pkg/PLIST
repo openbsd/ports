@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/30 21:52:02 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/03 15:07:35 kili Exp $
 bin/isomaster
 @man man/man1/isomaster.1
 share/applications/
@@ -69,6 +69,9 @@ share/locale/sk/LC_MESSAGES/isomaster.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/isomaster.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
+share/locale/sr/LC_MESSAGES/isomaster.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/isomaster.mo
@@ -78,6 +81,9 @@ share/locale/sr@latin/LC_MESSAGES/isomaster.mo
 share/locale/sv/
 share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/isomaster.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
+share/locale/tr/LC_MESSAGES/isomaster.mo
 share/locale/uk/
 share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/isomaster.mo
