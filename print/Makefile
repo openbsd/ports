@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.61 2007/07/04 17:33:37 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.62 2007/09/03 09:21:44 ajacoutot Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -24,6 +24,7 @@
     SUBDIR += hpijs
     SUBDIR += htmldoc
     SUBDIR += htmldoc,no_x11
+    SUBDIR += ijs
     SUBDIR += jadetex
     SUBDIR += l2a
     SUBDIR += latex-mk
