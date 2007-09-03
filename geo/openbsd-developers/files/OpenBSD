@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.9 2007/09/02 20:07:46 jakob Exp $
+# $OpenBSD: OpenBSD,v 1.10 2007/09/03 19:43:23 winiger Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -37,6 +37,7 @@
 47.29		19.3		"robert"	# Robert Nagy
 47.3154		7.3526		"mglocker"	# Marcus Glocker
 47.50		7.60		"dhartmei"	# Daniel Hartmeier
+47.532		7.648		"winiger"	# Marc Winiger
 47.581		7.589		"mbalmer"	# Marc Balmer
 48.0718		11.9582		"grunk"		# Alexander von Gernler
 48.08		11.31		"sturm"		# Nikolay Sturm
