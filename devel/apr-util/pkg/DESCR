@@ -1,1 +1,5 @@
 The APR-util provides a number of helpful abstractions on top of APR.
+
+Flavors:
+	mt	- Enable threading support
+	ldap	- Enable LDAP support

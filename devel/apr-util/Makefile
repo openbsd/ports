@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/07/05 16:02:03 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/04 21:42:55 merdely Exp $
 
-COMMENT=	"companion library to APR"
+COMMENT=	companion library to APR
 
 DISTNAME=	apr-util-1.2.8
-FULLPKGNAME=	apr-util${MT}-1.2.8
+PKGNAME=	${DISTNAME}
 SHARED_LIBS +=	aprutil-1${MT}          2.9      # .2.9
 
 CATEGORIES=	devel
@@ -12,7 +12,7 @@ MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 HOMEPAGE=	http://apr.apache.org/
 
-FLAVORS=	mt
+FLAVORS=	mt ldap
 FLAVOR?=
 
 # Apache License 2.0
@@ -36,6 +36,14 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-iconv=${LOCALBASE} \
 		--includedir=${LOCALBASE}/include/apr-1${MT}/ \
 		--with-apr=${LOCALBASE}/bin/apr-1${MT}-config
+
+.if ${FLAVOR:L:Mldap}
+CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
+			--with-ldap-lib=${LOCALBASE}/lib \
+			--with-ldap
+LIB_DEPENDS+=		lber,ldap::databases/openldap
+WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl
+.endif
 
 MT?=
 .if ${FLAVOR:L:Mmt}
