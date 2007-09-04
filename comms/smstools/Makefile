@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2007/08/03 17:42:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/04 10:33:19 sthen Exp $
 
 COMMENT=		gateway to send and receive SMS through GSM mobile phones
 
 V=			3.0.9
 DISTNAME=		smstools3-${V}
-PKGNAME=		smstools-${V}p0
+PKGNAME=		smstools-${V}p1
 
 CATEGORIES=		comms
 
 HOMEPAGE=		http://smstools3.kekekasvi.com/
 
-MAINTAINER=		Stuart Henderson <stu@spacehopper.org>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 #GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
