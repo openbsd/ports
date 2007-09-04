@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_iksemel,v 1.1.1.1 2007/09/04 15:05:27 sthen Exp $
+--- doc/iksemel.orig	Thu Aug  5 14:31:16 2004
++++ doc/iksemel	Tue Sep  4 15:24:12 2007
+@@ -1,5 +1,10 @@
+ This is iksemel, produced by makeinfo version 4.6 from iksemel.texi.
+ 
++INFO-DIR-SECTION Libraries
++START-INFO-DIR-ENTRY
++* iksemel: (iksemel).		A library of jabber/XML functions
++END-INFO-DIR-ENTRY
++
+ 
+ File: iksemel,  Node: Top,  Up: (dir)
+ 

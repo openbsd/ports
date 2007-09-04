@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/04 15:05:27 sthen Exp $
+%%SHARED%%
+bin/ikslint
+bin/iksperf
+bin/iksroster
+include/iksemel.h
+@info info/iksemel
+lib/libiksemel.a
+lib/libiksemel.la
+lib/pkgconfig/
+lib/pkgconfig/iksemel.pc
