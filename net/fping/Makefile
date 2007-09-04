@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2007/07/13 08:13:22 djm Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/04 10:32:58 sthen Exp $
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
 
-COMMENT=		"quickly ping N hosts w/o flooding the network"
+COMMENT=		quickly ping N hosts w/o flooding the network
 
 VERSION=		2.4b2
 DISTNAME=		fping-${VERSION}_to-ipv6
-PKGNAME=		fping-${VERSION}p2
+PKGNAME=		fping-${VERSION}p3
 CATEGORIES=		net
 MASTER_SITES=		http://fping.sourceforge.net/download/
 HOMEPAGE=		http://www.fping.com/
-MAINTAINER=		Stuart Henderson <stu@spacehopper.org>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

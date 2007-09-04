@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/01 10:24:30 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/04 10:32:58 sthen Exp $
 
-COMMENT=	"imap4 webmail client"
+COMMENT=	imap4 webmail client
 
 DISTNAME=	roundcubemail-0.1-rc1
-PKGNAME=	roundcubemail-0.1rc1p0
+PKGNAME=	roundcubemail-0.1rc1p1
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.roundcube.net/
 
-MAINTAINER=	Stuart Henderson <stu@spacehopper.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

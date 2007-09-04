@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2007/06/29 17:49:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/04 10:32:58 sthen Exp $
 
-COMMENT=	"latency logging and graphing system"
+COMMENT=	latency logging and graphing system
 
 VERSION=	2.1.1
 DISTNAME=	smokeping-${VERSION}
-PKGNAME=	smokeping-${VERSION}p1
+PKGNAME=	smokeping-${VERSION}p2
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
 
 HOMEPAGE=	http://oss.oetiker.ch/smokeping/
 
-MAINTAINER=	Stuart Henderson <stu@spacehopper.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
