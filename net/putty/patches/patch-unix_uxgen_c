@@ -1,0 +1,25 @@
+$OpenBSD: patch-unix_uxgen_c,v 1.1.1.1 2007/09/04 09:14:00 djm Exp $
+--- unix/uxgen.c.orig	Tue Sep  4 17:31:05 2007
++++ unix/uxgen.c	Tue Sep  4 17:31:16 2007
+@@ -14,10 +14,10 @@ char *get_random_data(int len)
+     int fd;
+     int ngot, ret;
+ 
+-    fd = open("/dev/random", O_RDONLY);
++    fd = open("/dev/arandom", O_RDONLY);
+     if (fd < 0) {
+ 	sfree(buf);
+-	perror("puttygen: unable to open /dev/random");
++	perror("puttygen: unable to open /dev/arandom");
+ 	return NULL;
+     }
+ 
+@@ -26,7 +26,7 @@ char *get_random_data(int len)
+ 	ret = read(fd, buf+ngot, len-ngot);
+ 	if (ret < 0) {
+ 	    close(fd);
+-	    perror("puttygen: unable to read /dev/random");
++	    perror("puttygen: unable to read /dev/arandom");
+ 	    return NULL;
+ 	}
+ 	ngot += ret;

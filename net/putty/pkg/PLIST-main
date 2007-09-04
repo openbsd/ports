@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/09/04 09:14:00 djm Exp $
+bin/plink
+bin/pscp
+bin/psftp
+bin/puttygen
+@man man/man1/plink.1
+@man man/man1/pscp.1
+@man man/man1/psftp.1
+@man man/man1/puttygen.1

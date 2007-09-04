@@ -1,0 +1,90 @@
+$OpenBSD: patch-unix_uxnoise_c,v 1.1.1.1 2007/09/04 09:14:00 djm Exp $
+--- unix/uxnoise.c.orig	Wed Nov 17 02:27:00 2004
++++ unix/uxnoise.c	Tue Sep  4 17:47:44 2007
+@@ -4,6 +4,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <sys/time.h>
+@@ -18,7 +19,7 @@ static int read_dev_urandom(char *buf, int len)
+     int fd;
+     int ngot, ret;
+ 
+-    fd = open("/dev/urandom", O_RDONLY);
++    fd = open("/dev/arandom", O_RDONLY);
+     if (fd < 0)
+ 	return 0;
+ 
+@@ -39,28 +40,16 @@ static int read_dev_urandom(char *buf, int len)
+  * This function is called once, at PuTTY startup. It will do some
+  * slightly silly things such as fetching an entire process listing
+  * and scanning /tmp, load the saved random seed from disk, and
+- * also read 32 bytes out of /dev/urandom.
++ * also read 32 bytes out of /dev/arandom.
+  */
+ 
+ void noise_get_heavy(void (*func) (void *, int))
+ {
+-    char buf[512];
+-    FILE *fp;
+-    int ret;
++    char buf[32];
+ 
+-    if (read_dev_urandom(buf, 32))
+-	func(buf, 32);
++    if (read_dev_urandom(buf, sizeof(buf)))
++	func(buf, sizeof(buf));
+ 
+-    fp = popen("ps -axu 2>/dev/null", "r");
+-    while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
+-	func(buf, ret);
+-    pclose(fp);
+-
+-    fp = popen("ls -al /tmp 2>/dev/null", "r");
+-    while ( (ret = fread(buf, 1, sizeof(buf), fp)) > 0)
+-	func(buf, ret);
+-    pclose(fp);
+-
+     read_random_seed(func);
+     random_save_seed();
+ }
+@@ -94,21 +83,13 @@ void noise_get_light(void (*func) (void *, int))
+  */
+ void noise_regular(void)
+ {
+-    int fd;
+-    int ret;
+-    char buf[512];
++    u_int32_t buf[8], i;
+     struct rusage rusage;
+ 
+-    if ((fd = open("/proc/meminfo", O_RDONLY)) >= 0) {
+-	while ( (ret = read(fd, buf, sizeof(buf))) > 0)
+-	    random_add_noise(buf, ret);
+-	close(fd);
+-    }
+-    if ((fd = open("/proc/stat", O_RDONLY)) >= 0) {
+-	while ( (ret = read(fd, buf, sizeof(buf))) > 0)
+-	    random_add_noise(buf, ret);
+-	close(fd);
+-    }
++    for (i = 0; i < 8; i++)
++        buf[i] = arc4random();
++    random_add_noise(buf, sizeof(buf));
++
+     getrusage(RUSAGE_SELF, &rusage);
+     random_add_noise(&rusage, sizeof(rusage));
+ }
+@@ -121,6 +102,9 @@ void noise_regular(void)
+ void noise_ultralight(unsigned long data)
+ {
+     struct timeval tv;
++    u_int32_t r;
++    r = arc4random();
++    random_add_noise(&r, sizeof(r));
+     gettimeofday(&tv, NULL);
+     random_add_noise(&tv, sizeof(tv));
+     random_add_noise(&data, sizeof(data));

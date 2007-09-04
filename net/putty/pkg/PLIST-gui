@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-gui,v 1.1.1.1 2007/09/04 09:14:00 djm Exp $
+bin/pterm
+bin/putty
+bin/puttytel
+@man man/man1/pterm.1
+@man man/man1/putty.1
+@man man/man1/puttytel.1
