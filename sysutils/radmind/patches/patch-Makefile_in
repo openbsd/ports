@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2007/04/01 07:08:39 steven Exp $
---- Makefile.in.orig	Mon Jan 24 20:24:11 2005
-+++ Makefile.in	Sun Apr  1 08:18:32 2007
+$OpenBSD: patch-Makefile_in,v 1.5 2007/09/04 20:52:13 jasper Exp $
+--- Makefile.in.orig	Mon Jun 18 17:02:05 2007
++++ Makefile.in	Wed Jul 18 09:43:02 2007
 @@ -11,6 +11,7 @@ exec_prefix=@exec_prefix@
  MANDIR=@mandir@
  BINDIR=@bindir@
@@ -9,36 +9,36 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/01 07:08:39 steven Exp $
  
  # For server
  RADMINDDIR=@radminddir@
-@@ -82,7 +83,7 @@ TWHICH_OBJ=     version.o twhich.o argcargv.o transcri
-                 hardlink.o cksum.o base64.o pathcmp.o radstat.o applefile.o \
- 		list.o
+@@ -89,7 +90,7 @@ TWHICH_OBJ=     version.o twhich.o argcargv.o transcri
+ 
+ LSORT_OBJ=     version.o lsort.o pathcmp.o code.o argcargv.o
  
 -all : ${TARGETS}
 +all : ${TARGETS} rash
  
  version.o : version.c
  	${CC} ${CFLAGS} \
-@@ -223,6 +224,7 @@ rash : FRC
- 	    -e 's@_RADMIND_DIR@${RADMINDDIR}@g' \
- 	    -e 's@_RADMIND_MAIL_DOMAIN@${RADMIND_MAIL_DOMAIN}@g' \
- 	    -e 's@_RADMIND_VERSION@${VERSION}@g' \
+@@ -254,6 +255,7 @@ rash : FRC
+ 	    -e 's@_RADMIND_COMMANDFILE@${COMMANDFILE}@g' \
+ 	    -e 's@_RADMIND_VERSION@$(shell cat VERSION)@g' \
+ 	    -e 's@_RADMIND_ECHO_PATH@${ECHO}@g' \
 +	    -e 's@SYSCONFDIR@${SYSCONFDIR}@g' \
  	    ${srcdir}/ra.sh > tmp/ra.sh; 
  
  man : FRC
-@@ -240,7 +242,7 @@ man : FRC
+@@ -271,7 +273,7 @@ man : FRC
  		${srcdir}/man/$$i > tmp/man/$$i; \
  	done
  
 -install	: all man rash
 +install	: ${TARGETS} man
- 	-mkdir -p ${exec_prefix}
- 	-mkdir -p ${SBINDIR}
- 	${INSTALL} -m 0755 -c radmind ${SBINDIR}/
-@@ -267,6 +269,7 @@ install	: all man rash
- 	-mkdir -p ${PREAPPLYDIR}
- 	-mkdir -p ${POSTAPPLYDIR}
- 	-mkdir -p ${CERTDIR}
+ 	-mkdir -p ${DESTDIR}/${exec_prefix}
+ 	-mkdir -p ${DESTDIR}/${SBINDIR}
+ 	${INSTALL} -m 0755 -c radmind ${DESTDIR}/${SBINDIR}/
+@@ -298,6 +300,7 @@ install	: all man rash
+ 	-mkdir -p ${DESTDIR}/${PREAPPLYDIR}
+ 	-mkdir -p ${DESTDIR}/${POSTAPPLYDIR}
+ 	-mkdir -p ${DESTDIR}/${CERTDIR}
 +	rm -rf tmp/
  
  PKGNAME=RadmindTools-${VERSION}

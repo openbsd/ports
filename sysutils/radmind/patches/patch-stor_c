@@ -1,7 +1,7 @@
-$OpenBSD: patch-stor_c,v 1.3 2007/04/01 07:08:39 steven Exp $
---- stor.c.orig	Fri Oct  1 17:20:05 2004
-+++ stor.c	Sun Apr  1 08:18:32 2007
-@@ -464,11 +464,13 @@ n_stor_applefile( SNET *sn, char *pathdesc, char *path
+$OpenBSD: patch-stor_c,v 1.4 2007/09/04 20:52:13 jasper Exp $
+--- stor.c.orig	Sat May  6 18:07:45 2006
++++ stor.c	Wed Jul 18 09:41:17 2007
+@@ -482,11 +482,13 @@ n_stor_applefile( SNET *sn, char *pathdesc, char *path
      struct timeval      	tv;
      struct applefileinfo	afinfo;
      off_t			size;
@@ -10,9 +10,9 @@ $OpenBSD: patch-stor_c,v 1.3 2007/04/01 07:08:39 steven Exp $
      /* Setup fake apple file info */
      /* Finder Info */
      memset( &afinfo, 0, sizeof( afinfo ));
--    sprintf( afinfo.ai.ai_data + FI_CREATOR_OFFSET, "%s", "RDMD" );
+-    sprintf( (char *)(afinfo.ai.ai_data + FI_CREATOR_OFFSET), "%s", "RDMD" );
 +    len = sizeof( afinfo.ai.ai_data );
-+    (void)snprintf( afinfo.ai.ai_data + FI_CREATOR_OFFSET, len - FI_CREATOR_OFFSET, "%s", "RDMD" );
++    (void)snprintf( (char *)(afinfo.ai.ai_data + FI_CREATOR_OFFSET), len - FI_CREATOR_OFFSET, "%s", "RDMD" );
      afinfo.as_ents[AS_FIE].ae_id = ASEID_FINFO;
      afinfo.as_ents[AS_FIE].ae_offset = AS_HEADERLEN +
  	( 3 * sizeof( struct as_entry ));               /* 62 */

@@ -1,7 +1,7 @@
-$OpenBSD: patch-transcript_c,v 1.3 2007/04/01 07:08:39 steven Exp $
---- transcript.c.orig	Thu Jan 20 23:44:35 2005
-+++ transcript.c	Sun Apr  1 08:18:32 2007
-@@ -105,7 +105,7 @@ transcript_parse( struct transcript *tran ) 
+$OpenBSD: patch-transcript_c,v 1.4 2007/09/04 20:52:13 jasper Exp $
+--- transcript.c.orig	Thu May 31 17:26:47 2007
++++ transcript.c	Wed Jul 18 09:41:17 2007
+@@ -108,7 +108,7 @@ transcript_parse( struct transcript *tran ) 
  	exit( 2 );
      }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-transcript_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  
      /* reading and parsing the line */
      switch( *argv[ 0 ] ) {
-@@ -175,7 +175,7 @@ transcript_parse( struct transcript *tran ) 
+@@ -178,7 +178,7 @@ transcript_parse( struct transcript *tran ) 
  		tran->t_fullname, tran->t_linenum );
  	    exit( 2 );
  	}
@@ -19,7 +19,7 @@ $OpenBSD: patch-transcript_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  	break;
  
      case 'a':				    /* hfs applefile */
-@@ -197,7 +197,7 @@ transcript_parse( struct transcript *tran ) 
+@@ -200,7 +200,7 @@ transcript_parse( struct transcript *tran ) 
  		exit( 2 );
  	    }
  	}
@@ -28,14 +28,16 @@ $OpenBSD: patch-transcript_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  	break;
  
      default:
-@@ -615,17 +615,17 @@ transcript( char *path )
- 	    }
- 	}
- 
+@@ -631,7 +631,7 @@ transcript( char *path, struct stat *st, char *type, s
+      * exhausted, to consume any remaining transcripts.
+      */
+     if ( path != NULL ) {
 -	strcpy( pi.pi_name, path );
 +	(void)strlcpy( pi.pi_name, path, sizeof( pi.pi_name ) );
- 
- 	/* if it's multiply referenced, check if it's a hardlink */
+ 	pi.pi_stat = *st;
+ 	pi.pi_type = *type;
+ 	pi.pi_afinfo = *afinfo;
+@@ -640,11 +640,11 @@ transcript( char *path, struct stat *st, char *type, s
  	if ( !S_ISDIR( pi.pi_stat.st_mode ) && ( pi.pi_stat.st_nlink > 1 ) &&
  		(( linkpath = hardlink( &pi )) != NULL )) {
  	    pi.pi_type = 'h';
@@ -49,7 +51,7 @@ $OpenBSD: patch-transcript_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  	}
  
  	/* By default, go into directories */
-@@ -636,7 +636,7 @@ transcript( char *path )
+@@ -655,7 +655,7 @@ transcript( char *path, struct stat *st, char *type, s
  	}
  
  	/* initialize cksum field. */
@@ -58,8 +60,8 @@ $OpenBSD: patch-transcript_c,v 1.3 2007/04/01 07:08:39 steven Exp $
      }
  
      for (;;) {
-@@ -685,9 +685,9 @@ t_new( int type, char *fullname, char *shortname, char
-     } else {
+@@ -708,9 +708,9 @@ t_new( int type, char *fullname, char *shortname, char
+     case T_SPECIAL :
  	new->t_eof = 0; 
  	new->t_linenum = 0;
 -	strcpy( new->t_shortname, shortname );
@@ -71,7 +73,7 @@ $OpenBSD: patch-transcript_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  	if (( new->t_in = fopen( fullname, "r" )) == NULL ) {
  	    perror( fullname );
  	    exit( 2 );
-@@ -752,7 +752,7 @@ transcript_init( char *kfile, int location )
+@@ -844,7 +844,7 @@ transcript_init( char *kfile, int location )
  		    "special path too long: %s%s\n", kdir, special );
  	    exit( 2 );
  	}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libsnet_snet_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
---- libsnet/snet.c.orig	2004-06-16 15:43:18.000000000 -0400
-+++ libsnet/snet.c	2004-06-16 15:54:07.000000000 -0400
-@@ -217,8 +217,11 @@ modifier:
+$OpenBSD: patch-libsnet_snet_c,v 1.2 2007/09/04 20:52:13 jasper Exp $
+--- libsnet/snet.c.orig	Mon Feb 19 16:10:13 2007
++++ libsnet/snet.c	Sun Mar 18 12:15:14 2007
+@@ -274,8 +274,11 @@ modifier:
  		p = va_arg( vl, char * );
  		len = strlen( p );
  		SNET_WBUFGROW( len );

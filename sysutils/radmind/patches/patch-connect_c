@@ -1,0 +1,12 @@
+$OpenBSD: patch-connect_c,v 1.1 2007/09/04 20:52:13 jasper Exp $
+--- connect.c.orig	Wed Jul 18 09:50:13 2007
++++ connect.c	Wed Jul 18 09:50:40 2007
+@@ -177,7 +177,7 @@ get_capabilities( SNET *sn )
+ 	    return( NULL );
+ 	}
+ 	if ( verbose ) printf( "<<< %s\n", line );
+-	strcpy( temp, line+4 );
++	(void)strlcpy( temp, line+4, sizeof( temp ) );
+ 	if (( ac = argcargv( temp, &av )) != 0 ) {
+ 	    if ( strncasecmp( "CAPAbilities", av[0], MIN( 12, strlen( av[0] ))) == 0 ) {
+ 		capa = malloc( sizeof(char *)*ac );

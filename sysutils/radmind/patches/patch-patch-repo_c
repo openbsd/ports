@@ -1,0 +1,27 @@
+$OpenBSD: patch-patch-repo_c,v 1.1 2007/09/04 20:52:13 jasper Exp $
+--- patch-repo_c.orig	Wed Jul 18 09:47:51 2007
++++ patch-repo_c	Wed Jul 18 09:47:51 2007
+@@ -0,0 +1,23 @@
++$OpenBSD: patch-patch-repo_c,v 1.1 2007/09/04 20:52:13 jasper Exp $
++--- repo.c.orig	Fri Jul 13 21:04:06 2007
+++++ repo.c	Fri Jul 13 21:04:08 2007
++@@ -169,7 +169,7 @@ main( int argc, char *argv[] )
++ 	    fprintf( stderr, "%s: too long\n", argv[ optind ] );
++ 	    exit( 2 );
++ 	}
++-	strcpy( repodata, argv[ optind ] );
+++	(void)strlcpy( repodata, argv[ optind ], sizeof( repodata ) );
++ 
++ 	/* Skip first token in message */
++ 	i = 1;
++@@ -179,8 +179,8 @@ main( int argc, char *argv[] )
++ 		fprintf( stderr, "%s %s: too long\n", repodata, argv[ i ] );
++ 		exit( 2 );
++ 	    }
++-	    strcat( repodata, " " );
++-	    strcat( repodata, argv[ i ] );
+++	    (void)strlcat( repodata, " ", sizeof( repodata ) );
+++	    (void)strlcat( repodata, argv[ i ], sizeof( repodata ) );
++ 	}
++     }
++ 

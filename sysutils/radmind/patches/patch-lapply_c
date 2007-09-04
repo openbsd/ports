@@ -1,7 +1,7 @@
-$OpenBSD: patch-lapply_c,v 1.3 2007/04/01 07:08:39 steven Exp $
---- lapply.c.orig	Thu Dec 16 22:51:34 2004
-+++ lapply.c	Sun Apr  1 08:18:32 2007
-@@ -75,7 +75,7 @@ create_node( char *path, char *tline )
+$OpenBSD: patch-lapply_c,v 1.4 2007/09/04 20:52:13 jasper Exp $
+--- lapply.c.orig	Mon Jun 18 15:25:46 2007
++++ lapply.c	Wed Jul 18 09:41:16 2007
+@@ -84,7 +84,7 @@ create_node( char *path, char *tline )
      new_node = (struct node *) malloc( sizeof( struct node ));
      new_node->path = strdup( path );
      if ( tline != NULL ) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-lapply_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  	new_node->doline = 1;
      } else {
  	new_node->doline = 0;
-@@ -126,7 +126,7 @@ do_line( char *tline, int present, struct stat *st, SN
+@@ -128,7 +128,7 @@ do_line( char *tline, int present, struct stat *st, SN
  	fprintf( stderr, "line %d: too long\n", linenum );
  	return( 1 );
      } 
@@ -19,7 +19,7 @@ $OpenBSD: patch-lapply_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  
      /* DOWNLOAD */
      if ( *command == '+' ) {
-@@ -135,7 +135,7 @@ do_line( char *tline, int present, struct stat *st, SN
+@@ -137,7 +137,7 @@ do_line( char *tline, int present, struct stat *st, SN
  		    linenum, *targv[ 0 ] );
  	    return( 1 );
  	}
@@ -28,7 +28,7 @@ $OpenBSD: patch-lapply_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  
  	if ( special ) {
  	    if ( snprintf( pathdesc, MAXPATHLEN * 2, "SPECIAL %s",
-@@ -415,7 +415,7 @@ main( int argc, char **argv )
+@@ -463,7 +463,7 @@ main( int argc, char **argv )
  	    fprintf( stderr, "line %d: too long\n", linenum );
  	    goto error2;
  	}
@@ -37,7 +37,7 @@ $OpenBSD: patch-lapply_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  
  	tac = acav_parse( acav, targvline, &targv );
  
-@@ -425,7 +425,7 @@ main( int argc, char **argv )
+@@ -473,7 +473,7 @@ main( int argc, char **argv )
          }
  
  	if ( tac == 1 ) {
@@ -46,7 +46,7 @@ $OpenBSD: patch-lapply_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  	    len = strlen( transcript );
  	    if ( transcript[ len - 1 ] != ':' ) { 
  		fprintf( stderr, "%s: line %d: invalid transcript name\n",
-@@ -467,7 +467,7 @@ main( int argc, char **argv )
+@@ -515,7 +515,7 @@ main( int argc, char **argv )
  	    fprintf( stderr, "line %d: too long\n", linenum );
  	    return( 1 );
  	} 
@@ -55,7 +55,7 @@ $OpenBSD: patch-lapply_c,v 1.3 2007/04/01 07:08:39 steven Exp $
  
  	/* Check transcript order */
  	if ( prepath != 0 ) {
-@@ -482,7 +482,7 @@ main( int argc, char **argv )
+@@ -530,7 +530,7 @@ main( int argc, char **argv )
  		    transcript, linenum );
  	    goto error2;
  	}

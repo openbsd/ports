@@ -1,7 +1,7 @@
-$OpenBSD: patch-lmerge_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
---- lmerge.c.orig	Thu Jan 20 13:05:15 2005
-+++ lmerge.c	Thu Jan 20 13:07:16 2005
-@@ -47,7 +47,7 @@ create_node( char *path )
+$OpenBSD: patch-lmerge_c,v 1.2 2007/09/04 20:52:13 jasper Exp $
+--- lmerge.c.orig	Tue Feb  7 12:22:17 2006
++++ lmerge.c	Sun Mar 18 12:15:14 2007
+@@ -48,7 +48,7 @@ create_node( char *path )
  	fprintf( stderr, "%s: path too long\n", path );
  	return( NULL );
      }
@@ -10,7 +10,7 @@ $OpenBSD: patch-lmerge_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
  
      return( new_node );
  }
-@@ -143,7 +143,7 @@ getline:
+@@ -144,7 +144,7 @@ getline:
  		tran->t_tran_name, tran->t_linenum, d_path );
  	return( 1 );
      }
@@ -19,7 +19,7 @@ $OpenBSD: patch-lmerge_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
  
      /* Check transcript order */
      if ( tran->t_prepath != 0 ) {
-@@ -158,7 +158,7 @@ getline:
+@@ -161,7 +161,7 @@ getline:
  		tran->t_tran_name, tran->t_linenum, tran->t_filepath );
  	return( 1 );
      }
@@ -28,7 +28,7 @@ $OpenBSD: patch-lmerge_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
  
  
      return( 0 );
-@@ -310,17 +310,17 @@ main( int argc, char **argv )
+@@ -316,17 +316,17 @@ main( int argc, char **argv )
  	    fprintf( stderr, "%s: path too long\n", trans[ 1 ]->t_file_root );
  	    exit( 2 );
  	}
@@ -49,7 +49,7 @@ $OpenBSD: patch-lmerge_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
      } else {
  	/* Create tran if missing */
  	if (( ofd = open( argv[ argc - 1 ], O_WRONLY | O_CREAT, 0666 ) ) < 0 ) {
-@@ -338,7 +338,7 @@ main( int argc, char **argv )
+@@ -344,7 +344,7 @@ main( int argc, char **argv )
  		fprintf( stderr, "%s: path too long\n", argv[ argc - 1 ] );
  		exit( 2 );
  	    }
@@ -58,7 +58,7 @@ $OpenBSD: patch-lmerge_c,v 1.1 2005/01/26 00:33:30 pvalchev Exp $
  	} else {
  	    if ( snprintf( temp, MAXPATHLEN, "%s/%s", cwd, argv[ argc - 1 ] )
  		    > MAXPATHLEN - 1 ) {
-@@ -346,7 +346,7 @@ main( int argc, char **argv )
+@@ -352,7 +352,7 @@ main( int argc, char **argv )
  		    argv[ argc - 1 ] );
  		exit( 2 );
  	    }
