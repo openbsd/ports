@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/02/15 18:37:07 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/04 21:06:07 jolan Exp $
 
 COMMENT-main=		"service daemon that monitors one or more GPSes"
 COMMENT-motif=		"motif-based test apps using gpsd"
@@ -51,7 +51,8 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 .endif
 
 .if ${FLAVOR:L:Mno_python}
-CONFIGURE_ARGS+=	--without-python
+CONFIGURE_ARGS+=	--disable-python
+PATCH_LIST=		nopython-* patch-*
 .else
 MULTI_PACKAGES+=	-python
 MODULES=		lang/python
@@ -60,6 +61,7 @@ WANTLIB-python=		c m pthread
 RUN_DEPENDS-main=
 RUN_DEPENDS-motif=
 CONFIGURE_ENV+=		PYTHON="${MODPY_BIN}"
+PATCH_LIST=		python-* patch-*
 .endif
 
 WANTLIB-main=		m ncurses c pthread

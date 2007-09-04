@@ -1,0 +1,14 @@
+$OpenBSD: nopython-Makefile_in,v 1.1 2007/09/04 21:06:07 jolan Exp $
+--- Makefile.in.orig	Thu Dec 14 16:13:13 2006
++++ Makefile.in	Thu Aug 30 21:11:18 2007
+@@ -1428,8 +1428,8 @@ uninstall-man: uninstall-man1 uninstall-man3 uninstall
+ packet_names.h: packet_states.h
+ 	sed -e '/^ *\([A-Z][A-Z0-9_]*\),/s//   "\1",/' -e '/_states/s//_names/' <packet_states.h >packet_names.h
+ 
+-gpspacket.so: gpspacket.c libgps.la
+-	python setup.py build_ext --inplace
++#gpspacket.so: gpspacket.c libgps.la
++#	$(PYTHON) setup.py build_ext --inplace
+ 
+ @HAVE_XSLT_PROCESSOR_TRUE@.xml.1:
+ @HAVE_XSLT_PROCESSOR_TRUE@	$(MANGENERATOR) $(MANFLAGS) $(MANTARGET) $<
