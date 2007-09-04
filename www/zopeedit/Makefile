@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/31 16:46:46 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/04 08:42:53 winiger Exp $
 
-COMMENT=	"client application for zope-externaleditor"
+COMMENT=	client application for zope-externaleditor
 
-VERSION=	0.8
+VERSION=	0.9.3
 DISTNAME=	zopeedit-${VERSION}-src
 PKGNAME=	zopeedit-${VERSION}
 CATEGORIES=	www
 
-HOMEPAGE=	http://www.zope.org/Members/Caseman/ExternalEditor
+HOMEPAGE=	http://plope.com/software/ExternalEditor
 
-MAINTAINER=	Marc Winiger <marc.winiger@msys.ch>
+MAINTAINER=	Marc Winiger <winiger@openbsd.org>
 
 # Zope Public License
 PERMIT_PACKAGE_FTP= 	Yes
@@ -17,15 +17,15 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_DISTFILES_FTP=   Yes
 PERMIT_DISTFILES_CDROM= Yes
 
-MASTER_SITES=	${HOMEPAGE}/${VERSION}/
+MASTER_SITES=	${HOMEPAGE}/
 EXTRACT_SUFX=	.tgz
 
-PYTHON_VER=	2.3
+PYTHON_VER=	2.4
 
-WRKSRC=		${WRKDIR}/zopeedit-${VERSION}-src
+WRKDIST=	${WRKDIR}/zopeedit-${VERSION}
 
-NO_BUILD=	yes
-
+NO_BUILD=      yes
+ 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zopeedit.py ${PREFIX}/bin/zopeedit
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zopeedit
