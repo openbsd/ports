@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.10 2007/09/03 19:43:23 winiger Exp $
+# $OpenBSD: OpenBSD,v 1.11 2007/09/04 10:29:37 sthen Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -52,6 +52,7 @@
 49.22		-123.10		"hugh"		# Hugh Graham
 49.313446	-123.063975	"mjc"		# Michael Coulter
 49.48		8.42		"naddy"		# Christian Weisgerber
+50.752		-3.276		"sthen"		# Stuart Henderson
 50.858		4.3897		"xsa"		# Xavier Santolaria
 50.883		4.70		"steven"	# Steven Mestdagh
 51.0333		-114.0500	"pvalchev"	# Peter Valchev
