@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2007/07/14 08:53:43 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/04 00:44:26 jakemsr Exp $
 
 COMMENT=		"multimedia decoding library"
 
 V=			1.1.7
 DISTNAME=		xine-lib-${V}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
 SHARED_LIBS=		xine	18.1
@@ -34,6 +34,7 @@ LIB_DEPENDS=		FLAC.>=5::audio/flac \
 			a52::audio/liba52 \
 			avcodec.>=7,postproc.>=7::graphics/ffmpeg \
 			dvdnav.>=5::multimedia/libdvdnav \
+			faad.>=1::audio/faad \
 			mad.>=2::audio/libmad \
 			mng.>=3::graphics/libmng \
 			ogg.>=5::audio/libogg \

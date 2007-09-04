@@ -1,0 +1,147 @@
+$OpenBSD: patch-src_libfaad_Makefile_in,v 1.1 2007/09/04 00:44:26 jakemsr Exp $
+--- src/libfaad/Makefile.in.orig	Fri Aug 31 22:17:16 2007
++++ src/libfaad/Makefile.in	Fri Aug 31 22:21:26 2007
+@@ -71,43 +71,7 @@ xineplugLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(xineplug_LTLIBRARIES)
+ am__DEPENDENCIES_1 = $(top_builddir)/src/xine-engine/libxine.la
+ xineplug_decode_faad_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-am_xineplug_decode_faad_la_OBJECTS = xineplug_decode_faad_la-bits.lo \
+-	xineplug_decode_faad_la-cfft.lo \
+-	xineplug_decode_faad_la-common.lo \
+-	xineplug_decode_faad_la-decoder.lo \
+-	xineplug_decode_faad_la-drc.lo \
+-	xineplug_decode_faad_la-drm_dec.lo \
+-	xineplug_decode_faad_la-error.lo \
+-	xineplug_decode_faad_la-filtbank.lo \
+-	xineplug_decode_faad_la-hcr.lo \
+-	xineplug_decode_faad_la-huffman.lo \
+-	xineplug_decode_faad_la-ic_predict.lo \
+-	xineplug_decode_faad_la-is.lo \
+-	xineplug_decode_faad_la-lt_predict.lo \
+-	xineplug_decode_faad_la-mdct.lo xineplug_decode_faad_la-mp4.lo \
+-	xineplug_decode_faad_la-ms.lo \
+-	xineplug_decode_faad_la-output.lo \
+-	xineplug_decode_faad_la-pns.lo \
+-	xineplug_decode_faad_la-ps_dec.lo \
+-	xineplug_decode_faad_la-ps_syntax.lo \
+-	xineplug_decode_faad_la-pulse.lo \
+-	xineplug_decode_faad_la-rvlc.lo \
+-	xineplug_decode_faad_la-sbr_dct.lo \
+-	xineplug_decode_faad_la-sbr_dec.lo \
+-	xineplug_decode_faad_la-sbr_e_nf.lo \
+-	xineplug_decode_faad_la-sbr_fbt.lo \
+-	xineplug_decode_faad_la-sbr_hfadj.lo \
+-	xineplug_decode_faad_la-sbr_hfgen.lo \
+-	xineplug_decode_faad_la-sbr_huff.lo \
+-	xineplug_decode_faad_la-sbr_qmf.lo \
+-	xineplug_decode_faad_la-sbr_syntax.lo \
+-	xineplug_decode_faad_la-sbr_tf_grid.lo \
+-	xineplug_decode_faad_la-specrec.lo \
+-	xineplug_decode_faad_la-ssr.lo \
+-	xineplug_decode_faad_la-ssr_fb.lo \
+-	xineplug_decode_faad_la-ssr_ipqf.lo \
+-	xineplug_decode_faad_la-syntax.lo \
+-	xineplug_decode_faad_la-tns.lo \
++am_xineplug_decode_faad_la_OBJECTS = \
+ 	xineplug_decode_faad_la-xine_faad_decoder.lo
+ xineplug_decode_faad_la_OBJECTS =  \
+ 	$(am_xineplug_decode_faad_la_OBJECTS)
+@@ -592,97 +556,11 @@ SUBDIRS = codebook
+ xineplug_LTLIBRARIES = $(faad_module)
+ xineplug_decode_faad_la_CFLAGS = $(VISIBILITY_FLAG) $(AM_CFLAGS) -fno-strict-aliasing
+ xineplug_decode_faad_la_SOURCES = \
+-	bits.c \
+-	cfft.c \
+-	common.c \
+-	decoder.c \
+-	drc.c \
+-	drm_dec.c \
+-	error.c \
+-	filtbank.c \
+-	hcr.c \
+-	huffman.c \
+-	ic_predict.c \
+-	is.c \
+-	lt_predict.c \
+-	mdct.c \
+-	mp4.c \
+-	ms.c \
+-	output.c \
+-	pns.c \
+-	ps_dec.c \
+-	ps_syntax.c \
+-	pulse.c \
+-	rvlc.c \
+-	sbr_dct.c \
+-	sbr_dec.c \
+-	sbr_e_nf.c \
+-	sbr_fbt.c \
+-	sbr_hfadj.c \
+-	sbr_hfgen.c \
+-	sbr_huff.c \
+-	sbr_qmf.c \
+-	sbr_syntax.c \
+-	sbr_tf_grid.c \
+-	specrec.c \
+-	ssr.c \
+-	ssr_fb.c \
+-	ssr_ipqf.c \
+-	syntax.c \
+-	tns.c \
+ 	xine_faad_decoder.c
+ 
+ xineplug_decode_faad_la_LDFLAGS = $(xineplug_ldflags)
+-xineplug_decode_faad_la_LIBADD = -lm $(XINE_LIB)
++xineplug_decode_faad_la_LIBADD = -lm $(XINE_LIB) -lfaad
+ noinst_HEADERS = \
+-	analysis.h \
+-	bits.h \
+-	cfft.h \
+-	cfft_tab.h \
+-	common.h \
+-	decoder.h \
+-	drc.h \
+-	drm_dec.h \
+-	error.h \
+-	filtbank.h \
+-	fixed.h \
+-	huffman.h \
+-	ic_predict.h \
+-	is.h \
+-	iq_table.h \
+-	kbd_win.h \
+-	lt_predict.h \
+-	mdct.h \
+-	mdct_tab.h \
+-	mp4.h \
+-	ms.h \
+-	output.h \
+-	pns.h \
+-	ps_dec.h \
+-	ps_tables.h \
+-	pulse.h \
+-	rvlc.h \
+-	sbr_dct.h \
+-	sbr_dec.h \
+-	sbr_e_nf.h \
+-	sbr_fbt.h \
+-	sbr_hfadj.h \
+-	sbr_hfgen.h \
+-	sbr_huff.h \
+-	sbr_noise.h \
+-	sbr_qmf.h \
+-	sbr_qmf_c.h \
+-	sbr_syntax.h \
+-	sbr_tf_grid.h \
+-	sine_win.h \
+-	specrec.h \
+-	ssr.h \
+-	ssr_fb.h \
+-	ssr_ipqf.h \
+-	ssr_win.h \
+-	structs.h \
+-	syntax.h \
+-	tns.h 
+ 
+ all: all-recursive
+ 
