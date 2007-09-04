@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2007/08/29 13:29:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.293 2007/09/04 21:59:08 merdely Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -87,6 +87,7 @@
      SUBDIR += mozplugger
      SUBDIR += mycalendar
      SUBDIR += nag
+     SUBDIR += nginx
      SUBDIR += nostromo
      SUBDIR += nscache
      SUBDIR += opera
