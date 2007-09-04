@@ -1,0 +1,19 @@
+nginx [engine x] is a HTTP server and IMAP/POP3 proxy server.
+
+The basic HTTP features:
+  * Handling of the static files, index files, and autoindexing
+  * Accelerated reverse proxying without caching, simple load 
+    balancing and fault tolerance
+  * Accelerated support without caching of the remote FastCGI
+    servers, simple load balancing and fault tolerance
+  * Modular architecture, filters including gzipping, byte
+    ranges, chunked responses, and SSI-filter; Several subrequests
+    in one page handling in SSI-filter via FastCGI or proxy
+    running in parallel
+  * the SSL support
+
+The IMAP/POP3 proxy server features:
+  * User redirection to IMAP/POP3 backend using an external HTTP
+    authentication server
+  * Plain text authentication (LOGIN, USER/PASS)
+  * SSL and STARTTLS support

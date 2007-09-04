@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/04 21:58:26 merdely Exp $
+@newgroup _nginx:593
+@newuser _nginx:593:_nginx:daemon:nginx user:/nonexistant:/sbin/nologin
+sbin/nginx
+@mode 755
+@sample ${NGINX_DIR}/
+@sample /var/log/nginx/
+@mode 700
+@sample ${NGINX_DIR}/tmp/
+@mode
+share/nginx/
+@sample ${SYSCONFDIR}/nginx/
+share/nginx/fastcgi_params
+@sample ${SYSCONFDIR}/nginx/fastcgi_params
+share/nginx/html/
+@sample ${NGINX_DIR}/html/
+share/nginx/html/50x.html
+@sample ${NGINX_DIR}/html/50x.html
+share/nginx/html/index.html
+@sample ${NGINX_DIR}/html/index.html
+share/nginx/koi-utf
+@sample ${SYSCONFDIR}/nginx/koi-utf
+share/nginx/koi-win
+@sample ${SYSCONFDIR}/nginx/koi-win
+share/nginx/mime.types
+@sample ${SYSCONFDIR}/nginx/mime.types
+share/nginx/nginx.conf
+@sample ${SYSCONFDIR}/nginx/nginx.conf
+share/nginx/win-utf
+@sample ${SYSCONFDIR}/nginx/win-utf
