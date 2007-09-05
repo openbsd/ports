@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/03/24 14:06:54 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/05 15:33:35 steven Exp $
 
 COMMENT=	"library of Fortran 77 linear algebra subroutines"
 
 DISTNAME=	lapack-3.1.1
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS=	lapack 5.0
 
@@ -39,14 +40,14 @@ WRKSRC=		${WRKDIST}/SRC
 # avoid 'unknown manpage type' errors and move manpages to section 3
 pre-configure:
 	cd ${WRKDIST}/manpages/man/manl && \
-		perl -pi -e 's/(\.TH\s+\w+)\s+1(.*)/\1 3\2/' *.l && \
+		perl -pi -e 's/(\.TH\s+\w+)\s+1(.*)/\1 3f\2/' *.l && \
 	        for m in *.l ; do if ! egrep '^\.TH' $$m >/dev/null ; then \
-                perl -pi -e "s/(.SH NAME)/.TH \U$${m%\.l} 3\n\1/" $$m ; fi ; \
-		mv $$m $${m%\.l}.3 ; done
+                perl -pi -e "s/(.SH NAME)/.TH \U$${m%\.l} 3f\n\1/" $$m ; fi ; \
+		mv $$m $${m%\.l}.3f ; done
 	cp ${WRKDIST}/make.inc.example ${WRKDIST}/make.inc
 
 post-install:
-	${INSTALL_MAN} ${WRKDIST}/manpages/man/manl/*.3 ${PREFIX}/man/man3/
+	${INSTALL_MAN} ${WRKDIST}/manpages/man/manl/*.3f ${PREFIX}/man/man3f/
 
 do-regress:
 	cd ${WRKDIST}/TESTING/MATGEN && ${MAKE} ${REGRESS_FLAGS}

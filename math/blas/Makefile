@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/03 08:29:00 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/05 15:32:19 steven Exp $
 
 COMMENT=	"Basic Linear Algebra Subprograms"
 
 VERSION=	1.0
 DISTNAME=	blas
-PKGNAME=	${DISTNAME}-${VERSION}p0
+PKGNAME=	${DISTNAME}-${VERSION}p1
 SHARED_LIBS=	blas	1.0
 
 CATEGORIES=	math
@@ -37,10 +37,10 @@ MANSRC=		${WRKDIR}/${DISTNAME}/man/manl
 
 post-build:
 	@rm -f ${MANSRC}/{lsame,xerbla}.l
-	@perl -pi -e 's/(\.TH\s+\w+)\s+l(.*)/\1 3\2/' ${MANSRC}/*.l
-	@cd ${MANSRC} && for m in *.l; do mv $$m $${m%\.l}.3; done
+	@perl -pi -e 's/(\.TH\s+\w+)\s+l(.*)/\1 3f\2/' ${MANSRC}/*.l
+	@cd ${MANSRC} && for m in *.l; do mv $$m $${m%\.l}.3f; done
 
 post-install:
-	${INSTALL_MAN} ${MANSRC}/*.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${MANSRC}/*.3f ${PREFIX}/man/man3f
 
 .include <bsd.port.mk>
