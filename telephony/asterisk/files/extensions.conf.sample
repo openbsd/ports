@@ -1,6 +1,9 @@
-; $OpenBSD: extensions.conf.sample,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+; $OpenBSD: extensions.conf.sample,v 1.2 2007/09/05 22:42:52 sthen Exp $
+; Longer example available in %%LOCALBASE%%/share/examples/asterisk/default
+
 [default]
-exten => *99,1,Voicemailmain(${CALLERIDNUM})
+exten => *99,1,VoiceMailMain(${CALLERIDNUM})
+
 exten => _XXX,1,Dial(SIP/${EXTEN},12,tr)
-exten => _XXX,2,Voicemail(u${EXTEN})
-exten => _XXX,3,Hangup
+exten => _XXX,n,Voicemail(${EXTEN})
+exten => _XXX,n,Hangup

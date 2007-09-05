@@ -1,0 +1,4 @@
+Jabber support for Asterisk, providing:
+
+	res_jabber.so: AJI - Asterisk Jabber Interface
+	chan_gtalk.so: Gtalk Channel Driver

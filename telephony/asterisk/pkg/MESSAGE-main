@@ -1,0 +1,23 @@
+Upgrading users, please note that some incompatible changes have occurred
+since 1.2 (mainly removal of deprecated commands, but some defaults have
+changed, and DTMF has been heavily overhauled); the following files have
+more information:
+
+${PREFIX}/share/doc/asterisk/CHANGES
+${PREFIX}/share/doc/asterisk/UPGRADE.txt
+
+Simplified sample configuration is provided in ${SYSCONFDIR}/asterisk;
+the full set is available in ${PREFIX}/share/examples/asterisk/default.
+
+To have Asterisk start at boot time, you may insert the following
+into ${SYSCONFDIR}/rc.local:
+
+if [ -x ${PREFIX}/sbin/safe_asterisk ]; then
+        echo -n ' asterisk';   ${PREFIX}/sbin/safe_asterisk
+fi
+
+This uses safe_asterisk which monitors for abnormal termination
+and restarts the daemon, and also creates the directory for the
+control socket (astrundir in ${SYSCONFDIR}/asterisk/asterisk.conf).
+If you prefer not to use safe_asterisk, you will need to do this
+yourself.

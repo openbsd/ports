@@ -1,0 +1,2 @@
+Allows a dialplan to requests an URL and optionally post data.
+Mainly used for signalling external applications of an event.  

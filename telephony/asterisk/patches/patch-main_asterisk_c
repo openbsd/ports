@@ -1,0 +1,41 @@
+$OpenBSD: patch-main_asterisk_c,v 1.1 2007/09/05 22:42:52 sthen Exp $
+--- main/asterisk.c.orig	Thu Jun 28 00:29:14 2007
++++ main/asterisk.c	Mon Jul  2 15:45:09 2007
+@@ -2394,6 +2394,7 @@ static void ast_readconfig(void) 
+ 			snprintf(ast_config_AST_MONITOR_DIR, sizeof(ast_config_AST_MONITOR_DIR) - 1, "%s/monitor", v->value);
+ 		} else if (!strcasecmp(v->name, "astvarlibdir")) {
+ 			ast_copy_string(ast_config_AST_VAR_DIR, v->value, sizeof(ast_config_AST_VAR_DIR));
++		} else if (!strcasecmp(v->name, "astdbdir")) {
+ 			snprintf(ast_config_AST_DB, sizeof(ast_config_AST_DB), "%s/astdb", v->value);
+ 		} else if (!strcasecmp(v->name, "astdatadir")) {
+ 			ast_copy_string(ast_config_AST_DATA_DIR, v->value, sizeof(ast_config_AST_DATA_DIR));
+@@ -2692,12 +2693,20 @@ int main(int argc, char *argv[])
+ 		rungroup = ast_config_AST_RUN_GROUP;
+ 	if ((!runuser) && !ast_strlen_zero(ast_config_AST_RUN_USER))
+ 		runuser = ast_config_AST_RUN_USER;
++	chdir("/tmp");
+ 
+ #ifndef __CYGWIN__
+ 
+ 	if (!is_child_of_nonroot) 
+ 		ast_set_priority(ast_opt_high_priority);
+ 
++	/*
++	 * don't try to setuid()/setgid() when only running as 'asterisk -r'
++	 * otherwise users must be root to reconnect to an existing instance,
++	 * even if they already have filesystem permissions on asterisk.ctl
++	 * (see asterisk.conf).
++	 */
++	if(!ast_opt_remote) {
+ 	if (!is_child_of_nonroot && rungroup) {
+ 		struct group *gr;
+ 		gr = getgrnam(rungroup);
+@@ -2742,7 +2751,7 @@ int main(int argc, char *argv[])
+ 		if (option_verbose)
+ 			ast_verbose("Running as user '%s'\n", runuser);
+ 	}
+-
++	}
+ #endif /* __CYGWIN__ */
+ 
+ #ifdef linux

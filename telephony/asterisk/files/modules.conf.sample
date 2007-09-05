@@ -1,8 +1,3 @@
-; $OpenBSD: modules.conf.sample,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+; $OpenBSD: modules.conf.sample,v 1.2 2007/09/05 22:42:52 sthen Exp $
 [modules]
-autoload = yes
-noload => app_intercom.so
-noload => chan_modem_aopen.so
-noload => chan_modem_bestdata.so
-noload => chan_modem_i4l.so
-noload => chan_modem.so
+autoload=yes

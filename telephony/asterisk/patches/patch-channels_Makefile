@@ -1,15 +1,14 @@
-$OpenBSD: patch-channels_Makefile,v 1.5 2007/05/02 17:29:25 jolan Exp $
---- channels/Makefile.orig	Mon Mar 26 11:21:56 2007
-+++ channels/Makefile	Wed Apr 25 09:17:17 2007
-@@ -44,9 +44,11 @@ CYGSOLIB=-L.. -L. -L../res -lasterisk.dll -lres_featur
- CYG_CHAN_AGENT=-lres_monitor.so
+$OpenBSD: patch-channels_Makefile,v 1.6 2007/09/05 22:42:52 sthen Exp $
+--- channels/Makefile.orig	Wed Aug  1 18:03:23 2007
++++ channels/Makefile	Wed Aug  1 18:03:42 2007
+@@ -15,8 +15,8 @@ C_MODS:=$(filter-out $(MENUSELECT_CHANNELS),$(patsubst
+ CC_MODS:=$(filter-out $(MENUSELECT_CHANNELS),$(patsubst %.cc,%,$(wildcard chan_*.cc)))
+ 
+ ifeq ($(OSARCH),OpenBSD)
+-  PTLIB=-lpt_OpenBSD_x86_r
+-  H323LIB=-lh323_OpenBSD_x86_r
++  PTLIB=-lpt
++  H323LIB=-lh323
  endif
  
-+ifneq (${OSARCH},OpenBSD)
- ifeq ($(PROC),sparc64)
-   PROC=ultrasparc
-   CFLAGS += -mtune=$(PROC) -pipe -fomit-frame-pointer -mcpu=v8
-+endif
- endif
- 
- ifeq (${OSARCH},FreeBSD)
+ ifeq ($(OSARCH),linux-gnu)

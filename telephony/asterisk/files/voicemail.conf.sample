@@ -1,4 +1,6 @@
-; $OpenBSD: voicemail.conf.sample,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+; $OpenBSD: voicemail.conf.sample,v 1.2 2007/09/05 22:42:52 sthen Exp $
+; Longer example available in %%LOCALBASE%%/share/examples/asterisk/default
+
 [default]
 100 => 1234,Phone #1
 101 => 1234,Phone #2

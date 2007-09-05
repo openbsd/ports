@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-ogg,v 1.1 2007/09/05 22:42:52 sthen Exp $
+lib/asterisk/modules/format_ogg_vorbis.so

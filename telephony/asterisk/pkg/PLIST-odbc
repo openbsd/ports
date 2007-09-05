@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST-odbc,v 1.1 2007/09/05 22:42:52 sthen Exp $
+include/asterisk/res_odbc.h
+lib/asterisk/modules/cdr_odbc.so
+lib/asterisk/modules/func_odbc.so
+lib/asterisk/modules/res_config_odbc.so
+lib/asterisk/modules/res_odbc.so
+share/doc/asterisk/odbcstorage.txt
+share/doc/asterisk/voicemail_odbc_postgresql.txt
+share/examples/asterisk/default/cdr_odbc.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/cdr_odbc.conf
+@mode
+@owner
+@group
+share/examples/asterisk/default/func_odbc.conf
+@sample ${SYSCONFDIR}/asterisk/func_odbc.conf
+share/examples/asterisk/default/res_odbc.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/res_odbc.conf

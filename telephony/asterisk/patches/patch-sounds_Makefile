@@ -1,0 +1,12 @@
+$OpenBSD: patch-sounds_Makefile,v 1.1 2007/09/05 22:42:52 sthen Exp $
+--- sounds/Makefile.orig	Tue Jan 23 15:12:44 2007
++++ sounds/Makefile	Tue Jan 23 15:13:08 2007
+@@ -60,6 +60,8 @@ endif
+ all: $(CORE_SOUNDS) $(EXTRA_SOUNDS) $(MOH)
+ 
+ have_download:
++
++no_download_in_portbuild:
+ 	@if test "$(DOWNLOAD)" = ":" ; then \
+ 		echo "**************************************************"; \
+ 		echo "***                                            ***"; \

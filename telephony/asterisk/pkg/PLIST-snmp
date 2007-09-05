@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-snmp,v 1.1 2007/09/05 22:42:52 sthen Exp $
+lib/asterisk/modules/res_snmp.so
+share/doc/asterisk/snmp.txt
+share/examples/asterisk/default/res_snmp.conf
+@sample ${SYSCONFDIR}/asterisk/res_snmp.conf

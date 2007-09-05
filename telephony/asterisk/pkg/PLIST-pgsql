@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1 2007/09/05 22:42:52 sthen Exp $
+lib/asterisk/modules/cdr_pgsql.so
+lib/asterisk/modules/res_config_pgsql.so
+share/examples/asterisk/default/cdr_pgsql.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/cdr_pgsql.conf
+@mode
+@owner
+@group
+share/examples/asterisk/default/res_pgsql.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/res_pgsql.conf

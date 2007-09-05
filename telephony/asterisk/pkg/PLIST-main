@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/05/02 17:29:25 jolan Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2007/09/05 22:42:52 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
+@conflict app_conference-<=20070710
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
 include/asterisk/
+include/asterisk.h
+include/asterisk/abstract_jb.h
 include/asterisk/acl.h
 include/asterisk/adsi.h
+include/asterisk/ael_structs.h
 include/asterisk/aes.h
 include/asterisk/agi.h
 include/asterisk/alaw.h
@@ -14,7 +18,9 @@ include/asterisk/astdb.h
 include/asterisk/astmm.h
 include/asterisk/astobj.h
 include/asterisk/astosp.h
+include/asterisk/autoconfig.h
 include/asterisk/build.h
+include/asterisk/buildopts.h
 include/asterisk/callerid.h
 include/asterisk/causes.h
 include/asterisk/cdr.h
@@ -27,6 +33,7 @@ include/asterisk/compiler.h
 include/asterisk/config.h
 include/asterisk/crypto.h
 include/asterisk/devicestate.h
+include/asterisk/dial.h
 include/asterisk/dlfcn-compat.h
 include/asterisk/dns.h
 include/asterisk/dnsmgr.h
@@ -39,6 +46,7 @@ include/asterisk/features.h
 include/asterisk/file.h
 include/asterisk/frame.h
 include/asterisk/fskmodem.h
+include/asterisk/http.h
 include/asterisk/image.h
 include/asterisk/indications.h
 include/asterisk/inline_api.h
@@ -54,55 +62,203 @@ include/asterisk/monitor.h
 include/asterisk/musiconhold.h
 include/asterisk/netsock.h
 include/asterisk/options.h
+include/asterisk/paths.h
 include/asterisk/pbx.h
 include/asterisk/plc.h
 include/asterisk/poll-compat.h
 include/asterisk/privacy.h
-include/asterisk/res_odbc.h
 include/asterisk/rtp.h
 include/asterisk/say.h
 include/asterisk/sched.h
+include/asterisk/sha1.h
 include/asterisk/slinfactory.h
+include/asterisk/smdi.h
+include/asterisk/speech.h
 include/asterisk/srv.h
+include/asterisk/stringfields.h
 include/asterisk/strings.h
 include/asterisk/tdd.h
 include/asterisk/term.h
+include/asterisk/threadstorage.h
 include/asterisk/time.h
 include/asterisk/transcap.h
 include/asterisk/translate.h
+include/asterisk/udptl.h
 include/asterisk/ulaw.h
 include/asterisk/unaligned.h
 include/asterisk/utils.h
 include/asterisk/version.h
-include/asterisk/vmodem.h
 lib/asterisk/
 lib/asterisk/modules/
+lib/asterisk/modules/app_adsiprog.so
+lib/asterisk/modules/app_alarmreceiver.so
+lib/asterisk/modules/app_amd.so
+lib/asterisk/modules/app_authenticate.so
+lib/asterisk/modules/app_cdr.so
+lib/asterisk/modules/app_chanisavail.so
+lib/asterisk/modules/app_channelredirect.so
+lib/asterisk/modules/app_chanspy.so
+lib/asterisk/modules/app_controlplayback.so
+lib/asterisk/modules/app_db.so
+lib/asterisk/modules/app_dial.so
+lib/asterisk/modules/app_dictate.so
+lib/asterisk/modules/app_directed_pickup.so
+lib/asterisk/modules/app_directory.so
+lib/asterisk/modules/app_disa.so
+lib/asterisk/modules/app_dumpchan.so
+lib/asterisk/modules/app_echo.so
+lib/asterisk/modules/app_exec.so
+lib/asterisk/modules/app_externalivr.so
+lib/asterisk/modules/app_festival.so
+lib/asterisk/modules/app_followme.so
+lib/asterisk/modules/app_forkcdr.so
+lib/asterisk/modules/app_getcpeid.so
+lib/asterisk/modules/app_hasnewvoicemail.so
+lib/asterisk/modules/app_ices.so
+lib/asterisk/modules/app_image.so
+lib/asterisk/modules/app_lookupblacklist.so
+lib/asterisk/modules/app_lookupcidname.so
+lib/asterisk/modules/app_macro.so
+lib/asterisk/modules/app_milliwatt.so
+lib/asterisk/modules/app_mixmonitor.so
+lib/asterisk/modules/app_morsecode.so
+lib/asterisk/modules/app_mp3.so
+lib/asterisk/modules/app_nbscat.so
+lib/asterisk/modules/app_parkandannounce.so
+lib/asterisk/modules/app_playback.so
+lib/asterisk/modules/app_privacy.so
+lib/asterisk/modules/app_queue.so
+lib/asterisk/modules/app_random.so
+lib/asterisk/modules/app_read.so
+lib/asterisk/modules/app_readfile.so
+lib/asterisk/modules/app_realtime.so
+lib/asterisk/modules/app_record.so
+lib/asterisk/modules/app_sayunixtime.so
+lib/asterisk/modules/app_senddtmf.so
+lib/asterisk/modules/app_sendtext.so
+lib/asterisk/modules/app_setcallerid.so
+lib/asterisk/modules/app_setcdruserfield.so
+lib/asterisk/modules/app_settransfercapability.so
+lib/asterisk/modules/app_sms.so
+lib/asterisk/modules/app_softhangup.so
+lib/asterisk/modules/app_speech_utils.so
+lib/asterisk/modules/app_stack.so
+lib/asterisk/modules/app_system.so
+lib/asterisk/modules/app_talkdetect.so
+lib/asterisk/modules/app_test.so
+lib/asterisk/modules/app_transfer.so
+lib/asterisk/modules/app_url.so
+lib/asterisk/modules/app_userevent.so
+lib/asterisk/modules/app_verbose.so
+lib/asterisk/modules/app_voicemail.so
+lib/asterisk/modules/app_waitforring.so
+lib/asterisk/modules/app_waitforsilence.so
+lib/asterisk/modules/app_while.so
+lib/asterisk/modules/app_zapateller.so
+lib/asterisk/modules/cdr_csv.so
+lib/asterisk/modules/cdr_custom.so
+lib/asterisk/modules/cdr_manager.so
+lib/asterisk/modules/chan_agent.so
+lib/asterisk/modules/chan_iax2.so
+lib/asterisk/modules/chan_local.so
+lib/asterisk/modules/chan_mgcp.so
+lib/asterisk/modules/chan_sip.so
+lib/asterisk/modules/chan_skinny.so
+lib/asterisk/modules/codec_a_mu.so
+lib/asterisk/modules/codec_adpcm.so
+lib/asterisk/modules/codec_alaw.so
+lib/asterisk/modules/codec_g726.so
+lib/asterisk/modules/codec_gsm.so
+lib/asterisk/modules/codec_ilbc.so
+lib/asterisk/modules/codec_lpc10.so
+lib/asterisk/modules/codec_ulaw.so
+lib/asterisk/modules/format_g723.so
+lib/asterisk/modules/format_g726.so
+lib/asterisk/modules/format_g729.so
+lib/asterisk/modules/format_gsm.so
+lib/asterisk/modules/format_h263.so
+lib/asterisk/modules/format_h264.so
+lib/asterisk/modules/format_ilbc.so
+lib/asterisk/modules/format_jpeg.so
+lib/asterisk/modules/format_pcm.so
+lib/asterisk/modules/format_sln.so
+lib/asterisk/modules/format_vox.so
+lib/asterisk/modules/format_wav.so
+lib/asterisk/modules/format_wav_gsm.so
+lib/asterisk/modules/func_base64.so
+lib/asterisk/modules/func_callerid.so
+lib/asterisk/modules/func_cdr.so
+lib/asterisk/modules/func_channel.so
+lib/asterisk/modules/func_cut.so
+lib/asterisk/modules/func_db.so
+lib/asterisk/modules/func_enum.so
+lib/asterisk/modules/func_env.so
+lib/asterisk/modules/func_global.so
+lib/asterisk/modules/func_groupcount.so
+lib/asterisk/modules/func_language.so
+lib/asterisk/modules/func_logic.so
+lib/asterisk/modules/func_math.so
+lib/asterisk/modules/func_md5.so
+lib/asterisk/modules/func_moh.so
+lib/asterisk/modules/func_rand.so
+lib/asterisk/modules/func_realtime.so
+lib/asterisk/modules/func_sha1.so
+lib/asterisk/modules/func_strings.so
+lib/asterisk/modules/func_timeout.so
+lib/asterisk/modules/func_uri.so
+lib/asterisk/modules/pbx_ael.so
+lib/asterisk/modules/pbx_config.so
+lib/asterisk/modules/pbx_dundi.so
+lib/asterisk/modules/pbx_loopback.so
+lib/asterisk/modules/pbx_realtime.so
+lib/asterisk/modules/pbx_spool.so
+lib/asterisk/modules/res_adsi.so
+lib/asterisk/modules/res_agi.so
+lib/asterisk/modules/res_clioriginate.so
+lib/asterisk/modules/res_convert.so
+lib/asterisk/modules/res_crypto.so
+lib/asterisk/modules/res_features.so
+lib/asterisk/modules/res_indications.so
+lib/asterisk/modules/res_monitor.so
+lib/asterisk/modules/res_musiconhold.so
+lib/asterisk/modules/res_smdi.so
+lib/asterisk/modules/res_speech.so
 @man man/man8/asterisk.8
 @man man/man8/astgenkey.8
 @man man/man8/autosupport.8
 @man man/man8/safe_asterisk.8
+sbin/aelparse
 sbin/asterisk
 sbin/astgenkey
 sbin/autosupport
 sbin/rasterisk
 sbin/safe_asterisk
-@comment no checksum
+sbin/smsq
 sbin/stereorize
 sbin/streamplayer
 share/asterisk/
+share/asterisk/agi-bin/
+share/asterisk/agi-bin/agi-test.agi
+share/asterisk/agi-bin/eagi-sphinx-test
+share/asterisk/agi-bin/eagi-test
+share/asterisk/agi-bin/jukebox.agi
 share/asterisk/firmware/
 share/asterisk/firmware/iax/
 share/asterisk/firmware/iax/iaxy.bin
-@comment share/asterisk/images/
-@comment share/asterisk/images/asterisk-intro.jpg
+share/asterisk/images/
+share/asterisk/images/asterisk-intro.jpg
 share/asterisk/keys/
-@sample /var/asterisk/keys/
 share/asterisk/keys/freeworlddialup.pub
-@sample /var/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
-@sample /var/asterisk/keys/iaxtel.pub
-@comment share/asterisk/mohmp3/
+share/asterisk/moh/
+share/asterisk/moh/.asterisk-moh-freeplay-wav
+share/asterisk/moh/LICENSE-asterisk-moh-freeplay-wav
+share/asterisk/moh/fpm-calm-river.wav
+share/asterisk/moh/fpm-sunshine.wav
+share/asterisk/moh/fpm-world-mix.wav
 share/asterisk/sounds/
+share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.7
+share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.7
 share/asterisk/sounds/agent-alreadyon.gsm
 share/asterisk/sounds/agent-incorrect.gsm
 share/asterisk/sounds/agent-loggedoff.gsm
@@ -141,6 +297,7 @@ share/asterisk/sounds/conf-usermenu.gsm
 share/asterisk/sounds/conf-userswilljoin.gsm
 share/asterisk/sounds/conf-userwilljoin.gsm
 share/asterisk/sounds/conf-waitforleader.gsm
+share/asterisk/sounds/core-sounds-en.txt
 share/asterisk/sounds/demo-abouttotry.gsm
 share/asterisk/sounds/demo-congrats.gsm
 share/asterisk/sounds/demo-echodone.gsm
@@ -253,6 +410,15 @@ share/asterisk/sounds/dir-intro-fn.gsm
 share/asterisk/sounds/dir-intro.gsm
 share/asterisk/sounds/dir-nomatch.gsm
 share/asterisk/sounds/dir-nomore.gsm
+share/asterisk/sounds/es/
+share/asterisk/sounds/followme/
+share/asterisk/sounds/followme/call-from.gsm
+share/asterisk/sounds/followme/no-recording.gsm
+share/asterisk/sounds/followme/options.gsm
+share/asterisk/sounds/followme/pls-hold-while-try.gsm
+share/asterisk/sounds/followme/sorry.gsm
+share/asterisk/sounds/followme/status.gsm
+share/asterisk/sounds/fr/
 share/asterisk/sounds/hello-world.gsm
 share/asterisk/sounds/hours.gsm
 share/asterisk/sounds/invalid.gsm
@@ -326,7 +492,6 @@ share/asterisk/sounds/phonetic/x_p.gsm
 share/asterisk/sounds/phonetic/y_p.gsm
 share/asterisk/sounds/phonetic/z_p.gsm
 share/asterisk/sounds/priv-callee-options.gsm
-share/asterisk/sounds/priv-callerintros/
 share/asterisk/sounds/priv-callpending.gsm
 share/asterisk/sounds/priv-introsaved.gsm
 share/asterisk/sounds/priv-recordintro.gsm
@@ -449,6 +614,7 @@ share/asterisk/sounds/vm-saveoper.gsm
 share/asterisk/sounds/vm-sorry.gsm
 share/asterisk/sounds/vm-star-cancel.gsm
 share/asterisk/sounds/vm-starmain.gsm
+share/asterisk/sounds/vm-tempgreetactive.gsm
 share/asterisk/sounds/vm-tempgreeting.gsm
 share/asterisk/sounds/vm-tempgreeting2.gsm
 share/asterisk/sounds/vm-tempremoved.gsm
@@ -470,107 +636,155 @@ share/asterisk/sounds/vm-undeleted.gsm
 share/asterisk/sounds/vm-unknown-caller.gsm
 share/asterisk/sounds/vm-whichbox.gsm
 share/asterisk/sounds/vm-youhave.gsm
-%%SHARED%%
+share/asterisk/static-http/
+share/asterisk/static-http/ajamdemo.html
+share/asterisk/static-http/astman.css
+share/asterisk/static-http/astman.js
+share/asterisk/static-http/prototype.js
 share/doc/asterisk/
+share/doc/asterisk/00README.1st
 share/doc/asterisk/BUGS
-share/doc/asterisk/README.ael
-share/doc/asterisk/README.asterisk.conf
-share/doc/asterisk/README.backtrace
-share/doc/asterisk/README.cdr
-share/doc/asterisk/README.cliprompt
-share/doc/asterisk/README.configuration
-share/doc/asterisk/README.cygwin
-share/doc/asterisk/README.dundi
-share/doc/asterisk/README.enum
-share/doc/asterisk/README.extconfig
-share/doc/asterisk/README.externalivr
-share/doc/asterisk/README.h323
-share/doc/asterisk/README.iax
-share/doc/asterisk/README.ices
-share/doc/asterisk/README.jitterbuffer
-share/doc/asterisk/README.math
-share/doc/asterisk/README.misdn
-share/doc/asterisk/README.mp3
-share/doc/asterisk/README.mysql
-share/doc/asterisk/README.odbcstorage
-share/doc/asterisk/README.privacy
-share/doc/asterisk/README.realtime
-share/doc/asterisk/README.sms
-share/doc/asterisk/README.tds
-share/doc/asterisk/README.variables
-share/doc/asterisk/SECURITY
+share/doc/asterisk/CHANGES
+share/doc/asterisk/CODING-GUIDELINES
+share/doc/asterisk/COPYING
+share/doc/asterisk/CREDITS
+share/doc/asterisk/ChangeLog
+share/doc/asterisk/LICENSE
+share/doc/asterisk/PEERING
+share/doc/asterisk/README
+share/doc/asterisk/UPGRADE.txt
+share/doc/asterisk/ael.txt
+share/doc/asterisk/ajam.txt
+share/doc/asterisk/app-sms.txt
 share/doc/asterisk/apps.txt
-share/doc/asterisk/cdr.txt
-share/doc/asterisk/channel.txt
+share/doc/asterisk/asterisk-conf.txt
+share/doc/asterisk/asterisk-mib.txt
+share/doc/asterisk/asterisk.8
+share/doc/asterisk/asterisk.sgml
+share/doc/asterisk/backtrace.txt
+share/doc/asterisk/billing.txt
+share/doc/asterisk/callfiles.txt
+share/doc/asterisk/callingpres.txt
+share/doc/asterisk/cdrdriver.txt
+share/doc/asterisk/chaniax.txt
+share/doc/asterisk/channels.txt
+share/doc/asterisk/channelvariables.txt
+share/doc/asterisk/cliprompt.txt
+share/doc/asterisk/configuration.txt
+share/doc/asterisk/cygwin.txt
+share/doc/asterisk/datastores.txt
+share/doc/asterisk/digium-mib.txt
+share/doc/asterisk/dundi.txt
+share/doc/asterisk/enum.txt
+@owner _asterisk
+share/doc/asterisk/extconfig.txt
+@owner
 share/doc/asterisk/extensions.txt
+share/doc/asterisk/externalivr.txt
+share/doc/asterisk/freetds.txt
+share/doc/asterisk/h323.txt
+share/doc/asterisk/hardware.txt
 share/doc/asterisk/iax.txt
+share/doc/asterisk/ices.txt
+share/doc/asterisk/imapstorage.txt
+share/doc/asterisk/ip-tos.txt
+share/doc/asterisk/jitterbuffer.txt
+share/doc/asterisk/linkedlists.txt
 share/doc/asterisk/localchannel.txt
+share/doc/asterisk/macroexclusive.txt
 share/doc/asterisk/manager.txt
+share/doc/asterisk/math.txt
+share/doc/asterisk/misdn.txt
 share/doc/asterisk/model.txt
 share/doc/asterisk/modules.txt
+share/doc/asterisk/mp3.txt
+share/doc/asterisk/musiconhold-fpm.txt
+share/doc/asterisk/mysql.txt
+share/doc/asterisk/osp.txt
+share/doc/asterisk/privacy.txt
 share/doc/asterisk/queuelog.txt
-@comment share/doc/asterisk/voicemail_odbc_postgresql.txt
+share/doc/asterisk/queues-with-callback-members.txt
+share/doc/asterisk/radius.txt
+share/doc/asterisk/realtime.txt
+share/doc/asterisk/rtp-packetization.txt
+share/doc/asterisk/security.txt
+share/doc/asterisk/sla.pdf
+share/doc/asterisk/sla.tex
+share/doc/asterisk/smdi.txt
+share/doc/asterisk/sms.txt
+share/doc/asterisk/speechrec.txt
+share/doc/asterisk/video.txt
 share/examples/asterisk/
-@sample /var/asterisk/
-share/examples/asterisk/agi/
-@sample /var/asterisk/agi-bin/
-share/examples/asterisk/agi/agi-test.agi
-@sample /var/asterisk/agi-bin/agi-test.agi
-share/examples/asterisk/agi/eagi-sphinx-test
-share/examples/asterisk/agi/eagi-test
-share/examples/asterisk/default/
 @sample ${SYSCONFDIR}/asterisk/
-share/examples/asterisk/default/adsi.conf.sample
-share/examples/asterisk/default/adtranvofr.conf.sample
-share/examples/asterisk/default/agents.conf.sample
-share/examples/asterisk/default/alarmreceiver.conf.sample
-share/examples/asterisk/default/alsa.conf.sample
+share/examples/asterisk/default/
+share/examples/asterisk/default/adsi.conf
+@comment share/examples/asterisk/default/adtranvofr.conf
+share/examples/asterisk/default/agents.conf
+share/examples/asterisk/default/alarmreceiver.conf
+@comment share/examples/asterisk/default/alsa.conf
+share/examples/asterisk/default/amd.conf
 share/examples/asterisk/default/asterisk.adsi
-share/examples/asterisk/default/cdr.conf.sample
-share/examples/asterisk/default/cdr_custom.conf.sample
-share/examples/asterisk/default/cdr_manager.conf.sample
-share/examples/asterisk/default/cdr_odbc.conf.sample
-share/examples/asterisk/default/cdr_pgsql.conf.sample
-share/examples/asterisk/default/cdr_tds.conf.sample
-share/examples/asterisk/default/codecs.conf.sample
-share/examples/asterisk/default/dnsmgr.conf.sample
-share/examples/asterisk/default/dundi.conf.sample
-share/examples/asterisk/default/enum.conf.sample
-share/examples/asterisk/default/extconfig.conf.sample
-share/examples/asterisk/default/extensions.ael.sample
-share/examples/asterisk/default/extensions.conf.sample
-share/examples/asterisk/default/features.conf.sample
-share/examples/asterisk/default/festival.conf.sample
-share/examples/asterisk/default/iax.conf.sample
-share/examples/asterisk/default/iaxprov.conf.sample
-share/examples/asterisk/default/indications.conf.sample
+share/examples/asterisk/default/asterisk.conf
+@sample ${SYSCONFDIR}/asterisk/asterisk.conf
+share/examples/asterisk/default/cdr.conf
+@sample ${SYSCONFDIR}/asterisk/cdr.conf
+share/examples/asterisk/default/cdr_custom.conf
+share/examples/asterisk/default/cdr_manager.conf
+@comment share/examples/asterisk/default/cdr_tds.conf
+share/examples/asterisk/default/codecs.conf
+share/examples/asterisk/default/dnsmgr.conf
+share/examples/asterisk/default/dundi.conf
+share/examples/asterisk/default/enum.conf
+share/examples/asterisk/default/extconfig.conf
+@sample ${SYSCONFDIR}/asterisk/extconfig.conf
+share/examples/asterisk/default/extensions.ael
+share/examples/asterisk/default/extensions.conf
+@comment share/examples/asterisk/default/features.conf
+share/examples/asterisk/default/festival.conf
+share/examples/asterisk/default/followme.conf
+@comment share/examples/asterisk/default/h323.conf
+share/examples/asterisk/default/http.conf
+share/examples/asterisk/default/iax.conf
+share/examples/asterisk/default/iaxprov.conf
+share/examples/asterisk/default/indications.conf
 @sample ${SYSCONFDIR}/asterisk/indications.conf
-share/examples/asterisk/default/logger.conf.sample
-share/examples/asterisk/default/manager.conf.sample
-share/examples/asterisk/default/meetme.conf.sample
-share/examples/asterisk/default/mgcp.conf.sample
-share/examples/asterisk/default/misdn.conf.sample
-share/examples/asterisk/default/modem.conf.sample
-share/examples/asterisk/default/modules.conf.sample
-share/examples/asterisk/default/musiconhold.conf.sample
-share/examples/asterisk/default/osp.conf.sample
-share/examples/asterisk/default/oss.conf.sample
-share/examples/asterisk/default/phone.conf.sample
-share/examples/asterisk/default/privacy.conf.sample
-share/examples/asterisk/default/queues.conf.sample
-share/examples/asterisk/default/res_odbc.conf.sample
-share/examples/asterisk/default/rpt.conf.sample
-share/examples/asterisk/default/rtp.conf.sample
-share/examples/asterisk/default/sip.conf.sample
-share/examples/asterisk/default/sip_notify.conf.sample
-share/examples/asterisk/default/skinny.conf.sample
+share/examples/asterisk/default/logger.conf
+share/examples/asterisk/default/manager.conf
+@comment share/examples/asterisk/default/meetme.conf
+share/examples/asterisk/default/mgcp.conf
+@comment share/examples/asterisk/default/misdn.conf
+@comment share/examples/asterisk/default/modem.conf
+share/examples/asterisk/default/modules.conf
+share/examples/asterisk/default/musiconhold.conf
+share/examples/asterisk/default/muted.conf
+share/examples/asterisk/default/osp.conf
+@comment share/examples/asterisk/default/oss.conf
+share/examples/asterisk/default/phone.conf
+share/examples/asterisk/default/privacy.conf
+share/examples/asterisk/default/queues.conf
+@comment share/examples/asterisk/default/rpt.conf
+share/examples/asterisk/default/rtp.conf
+share/examples/asterisk/default/say.conf
+share/examples/asterisk/default/sip.conf
+share/examples/asterisk/default/sip_notify.conf
+share/examples/asterisk/default/skinny.conf
+share/examples/asterisk/default/sla.conf
+share/examples/asterisk/default/smdi.conf
 share/examples/asterisk/default/telcordia-1.adsi
-share/examples/asterisk/default/voicemail.conf.sample
-share/examples/asterisk/default/vpb.conf.sample
-share/examples/asterisk/default/zapata.conf.sample
+share/examples/asterisk/default/udptl.conf
+share/examples/asterisk/default/users.conf
+share/examples/asterisk/default/voicemail.conf
+@comment share/examples/asterisk/default/vpb.conf
+@comment share/examples/asterisk/default/zapata.conf
 share/examples/asterisk/openbsd/
 share/examples/asterisk/openbsd/extensions.conf.sample
+@mode 640
+@owner root
+@group _asterisk
 @sample ${SYSCONFDIR}/asterisk/extensions.conf
+@mode
+@owner
+@group
 share/examples/asterisk/openbsd/logger.conf.sample
 @sample ${SYSCONFDIR}/asterisk/logger.conf
 share/examples/asterisk/openbsd/modules.conf.sample
@@ -578,15 +792,52 @@ share/examples/asterisk/openbsd/modules.conf.sample
 share/examples/asterisk/openbsd/musiconhold.conf.sample
 @sample ${SYSCONFDIR}/asterisk/musiconhold.conf
 share/examples/asterisk/openbsd/sip.conf.sample
-@sample ${SYSCONFDIR}/asterisk/sip.conf
-share/examples/asterisk/openbsd/voicemail.conf.sample
-@sample ${SYSCONFDIR}/asterisk/voicemail.conf
-@owner _asterisk
+@mode 640
+@owner root
 @group _asterisk
-@sample /var/asterisk/astdb/
+@sample ${SYSCONFDIR}/asterisk/sip.conf
+@mode
+@owner
+@group
+share/examples/asterisk/openbsd/voicemail.conf.sample
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/voicemail.conf
+@mode 750
+@owner _asterisk
+@sample /var/spool/asterisk/
+@sample /var/spool/asterisk/dictate/
+@sample /var/spool/asterisk/meetme/
+@sample /var/spool/asterisk/monitor/
+@sample /var/spool/asterisk/outgoing/
+@sample /var/spool/asterisk/system/
+@sample /var/spool/asterisk/tmp/
+@mode
+@owner
+@group
+share/examples/asterisk/voicemail/
+share/examples/asterisk/voicemail/default/
+share/examples/asterisk/voicemail/default/1234/
+share/examples/asterisk/voicemail/default/1234/INBOX/
+@mode 770
+@owner root
+@group _asterisk
 @sample /var/db/asterisk/
 @sample /var/log/asterisk/
 @sample /var/log/asterisk/cdr-csv/
-@sample /var/spool/asterisk/
+@sample /var/log/asterisk/cdr-custom/
 @sample /var/spool/asterisk/voicemail/
 @sample /var/spool/asterisk/voicemail/default/
+@sample /var/spool/asterisk/voicemail/default/1234/
+@mode
+@owner
+@group
+share/examples/asterisk/voicemail/default/1234/busy.gsm
+@owner _asterisk
+@sample /var/spool/asterisk/voicemail/default/1234/busy.gsm
+@owner
+share/examples/asterisk/voicemail/default/1234/unavail.gsm
+@owner _asterisk
+@sample /var/spool/asterisk/voicemail/default/1234/unavail.gsm
+@extraunexec rm -rf /var/run/asterisk

@@ -1,37 +1,197 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/04 10:33:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/05 22:42:52 sthen Exp $
 
-COMMENT=	open source multi-protocol PBX and telephony toolkit
-DISTNAME=	asterisk-1.2.22
-PKGNAME=	${DISTNAME}p0
-CATEGORIES=	telephony
-MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
+SHARED_ONLY=		Yes
+COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-HOMEPAGE=	http://www.asterisk.org/
+V=			1.4.11
+DISTNAME=		asterisk-${V}
+FULLPKGNAME-main=	${DISTNAME}
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+CATEGORIES=		telephony
 
-# GPL except iaxy.bin (freely redistributable, see LICENSE)
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+HOMEPAGE=		http://www.asterisk.org/
+
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+
+# GPLv2 except iaxy.bin (freely redistributable, see LICENSE)
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		c crypto m ncurses pthread ssl z
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=		CC="${CC} ${CFLAGS}"
+MULTI_PACKAGES=		-main
 
-NO_REGRESS=	Yes
-USE_GMAKE=	Yes
+WANTLIB-main=		c crypto m pthread ssl stdc++ termcap z
 
-MAKE_ENV+=	SYSCONFDIR='${SYSCONFDIR}' MAKEFLAGS+=-DWITHOUT_ZAPTEL
+LIB_DEPENDS-main=	popt::devel/popt
+
+MASTER_SITES=		http://downloads.digium.com/pub/telephony/asterisk/
+
+USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
+
+CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+
+CONFIGURE_ARGS+=	--with-asterisk-user=_asterisk \
+			--with-asterisk-group=_asterisk \
+			--localstatedir=/var \
+			--sharedstatedir=${PREFIX}/share/asterisk \
+			--with-asound=no \
+			--with-gsm=internal \
+			--with-isdnnet=no \
+			--with-kde=no \
+			--with-misdn=no \
+			--with-nbs=no \
+			--with-newt=no \
+			--with-popt=${LOCALBASE} \
+			--with-pri=no \
+			--with-qt=no \
+			--with-suppserv=no \
+			--with-tinfo=no \
+			--with-tonezone=no \
+			--with-vpb=no \
+			--with-zaptel=no
+
+CONFIGURE_ARGS+=	--with-osptk=no \
+			--with-oss=no \
+			--with-radius=no \
+			--with-sqlite=no \
+			--with-tds=no \
+			--with-imap=no \
+			--with-pwlib=no \
+			--with-h323=no
+
+# Some build options (including a useful malloc debug) are available
+# via menuselect. They may be enabled by running 'make configure', cd
+# to WRKSRC, 'gmake menuselect', then cd back to the port directory
+# and 'make'.
+
+FLAVOR?=
+
+# odbc
+PSEUDO_FLAVORS+=        no_odbc
+.if ${FLAVOR:L:Mno_odbc}
+CONFIGURE_ARGS+=        --with-odbc=no \
+			--with-ltdl=no
+.else
+MULTI_PACKAGES+=        -odbc
+COMMENT-odbc=		ODBC support for Asterisk
+LIB_DEPENDS-odbc=	iodbc.>=3::databases/iodbc
+CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE} \
+			--with-ltdl=${LOCALBASE}
+.endif
+
+# snmp
+PSEUDO_FLAVORS+=        no_snmp
+.if ${FLAVOR:L:Mno_snmp}
+CONFIGURE_ARGS+=        --with-snmp=no
+.else
+MULTI_PACKAGES+=        -snmp
+COMMENT-snmp=		Net-SNMP support for Asterisk
+WANTLIB-snmp=		c crypto kvm m perl util wrap
+LIB_DEPENDS-snmp=	netsnmp.>=7::net/net-snmp \
+			netsnmpagent.>=7::net/net-snmp \
+			netsnmphelpers.>=7::net/net-snmp \
+			netsnmpmibs.>=7::net/net-snmp
+CONFIGURE_ARGS+=	--with-netsnmp=${LOCALBASE}
+.endif
+
+# speex
+PSEUDO_FLAVORS+=        no_speex
+.if ${FLAVOR:L:Mno_speex}
+CONFIGURE_ARGS+=        --with-speex=no
+.else
+MULTI_PACKAGES+=        -speex
+COMMENT-speex=		Speex codec for Asterisk
+WANTLIB-speex=		m
+LIB_DEPENDS-speex=	speex.>=6::audio/speex
+CONFIGURE_ARGS+=        --with-speex=${LOCALBASE}
+.endif
+
+# ogg
+PSEUDO_FLAVORS+=        no_ogg
+.if ${FLAVOR:L:Mno_ogg}
+CONFIGURE_ARGS+=        --with-ogg=no \
+			--with-vorbis=no
+.else
+MULTI_PACKAGES+=        -ogg
+COMMENT-ogg=		Ogg Vorbis format translator for Asterisk
+WANTLIB-ogg=		m
+LIB_DEPENDS-ogg=	ogg.>=5::audio/libogg \
+			vorbis.>=5::audio/libvorbis \
+			vorbisenc.>=2::audio/libvorbis
+CONFIGURE_ARGS+=        --with-ogg=${LOCALBASE} \
+			--with-vorbis=${LOCALBASE}
+.endif
+
+# curl
+PSEUDO_FLAVORS+=        no_curl
+.if ${FLAVOR:L:Mno_curl}
+CONFIGURE_ARGS+=        --with-curl=no
+.else
+MULTI_PACKAGES+=        -curl
+COMMENT-curl=		libCURL support for Asterisk
+WANTLIB-curl=		crypto idn ssl z
+LIB_DEPENDS-curl=	curl.>=6::net/curl
+CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
+.endif
+
+# postgresql
+PSEUDO_FLAVORS+=        no_pgsql
+.if ${FLAVOR:L:Mno_pgsql}
+CONFIGURE_ARGS+=        --with-postgres=no
+.else
+MULTI_PACKAGES+=        -pgsql
+COMMENT-pgsql=		PostgreSQL support for Asterisk
+WANTLIB-pgsql=		z
+LIB_DEPENDS-pgsql=	pq.>=5::databases/postgresql
+CONFIGURE_ARGS+=	--with-postgres=${LOCALBASE}
+.endif
+
+# jabber
+PSEUDO_FLAVORS+=        no_jabber
+.if ${FLAVOR:L:Mno_jabber}
+CONFIGURE_ARGS+=        --with-gnutls=no \
+			--with-iksemel=no
+.else
+MULTI_PACKAGES+=        -jabber
+COMMENT-jabber=		Jabber support for Asterisk
+WANTLIB-jabber=		gcrypt gnutls gpg-error z
+LIB_DEPENDS-jabber=	iksemel::textproc/iksemel
+CONFIGURE_ARGS+=        --with-gnutls=${LOCALBASE} \
+			--with-iksemel=${LOCALBASE}
+.endif
+
+.for i in ${MULTI_PACKAGES:S/-main//}
+FULLPKGNAME${i}=	asterisk${i}-${V}
+RUN_DEPENDS${i}=	:asterisk-${V}:telephony/asterisk
+.endfor
+
+MAKE_ENV=		ASTCFLAGS="${CFLAGS}" \
+			ASTLDFLAGS="${LDFLAGS}" \
+			DEBUG=""
+
+NO_REGRESS=		Yes
+
+INSTALL_TARGET=		install samples
+
+EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asterisk/default
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asterisk/openbsd
-	${INSTALL_DATA} ${WRKSRC}/{BUGS,SECURITY} ${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA} ${WRKSRC}/doc/README.* ${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA} ${WRKSRC}/configs/* ${PREFIX}/share/examples/asterisk/default
-	${INSTALL_DATA} ${FILESDIR}/*.sample ${PREFIX}/share/examples/asterisk/openbsd
+	${INSTALL_DATA} ${WRKSRC}/{BUGS,CHANGES,COPYING,CREDITS} \
+		${WRKSRC}/{ChangeLog,LICENSE,README,UPGRADE.txt} \
+		${PREFIX}/share/doc/asterisk
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/asterisk
+	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
+	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
+	${INSTALL_DATA} ${FILESDIR}/*.sample ${EXAMPLEDIR}/openbsd
+	@perl -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \
+		${EXAMPLEDIR}/openbsd/*
+	@mv ${WRKINST}/${SYSCONFDIR}/asterisk ${EXAMPLEDIR}/default
+	@mv ${WRKINST}/var/spool/asterisk/voicemail ${EXAMPLEDIR}/voicemail
+	@rm -rf ${WRKINST}/{etc,var/{log,run,spool}}/asterisk
 
 .include <bsd.port.mk>

@@ -1,137 +1,101 @@
-$OpenBSD: patch-Makefile,v 1.10 2007/05/02 17:29:25 jolan Exp $
---- Makefile.orig	Wed Jan 10 02:16:45 2007
-+++ Makefile	Wed Apr 25 09:51:58 2007
-@@ -19,8 +19,8 @@ OPTIONS=
- # CROSS_COMPILE=/opt/montavista/pro/devkit/arm/xscale_be/bin/xscale_be-
- # CROSS_COMPILE_BIN=/opt/montavista/pro/devkit/arm/xscale_be/bin/
- # CROSS_COMPILE_TARGET=/opt/montavista/pro/devkit/arm/xscale_be/target
--CC=$(CROSS_COMPILE)gcc
--HOST_CC=gcc
-+CC?=$(CROSS_COMPILE)gcc
-+HOST_CC=$(CC)
- # CROSS_ARCH=Linux
- # CROSS_PROC=arm
- # SUB_PROC=xscale # or maverick
-@@ -47,8 +47,12 @@ ifneq ($(findstring dont-optimize,$(MAKECMDGOALS)),don
- #K6OPT  = -DK6OPT
- 
- #Tell gcc to optimize the code
-+ifeq (${OSARCH},OpenBSD)
-+OPTIMIZE+=-O2
-+else
- OPTIMIZE+=-O6
+$OpenBSD: patch-Makefile,v 1.11 2007/09/05 22:42:52 sthen Exp $
+--- Makefile.orig	Fri Aug 10 00:10:46 2007
++++ Makefile	Wed Aug 15 22:17:33 2007
+@@ -35,6 +35,7 @@ export ASTVARRUNDIR
+ export MODULES_DIR
+ export ASTSPOOLDIR
+ export ASTVARLIBDIR
++export ASTDBDIR
+ export ASTDATADIR
+ export ASTLOGDIR
+ export ASTLIBDIR
+@@ -74,7 +75,7 @@ ifneq ($(wildcard makeopts),)
  endif
-+endif
  
- #Overwite config files on "make samples"
+ #Uncomment this to see all build commands instead of 'quiet' output
+-#NOISY_BUILD=yes
++NOISY_BUILD=yes
+ 
+ # Create OPTIONS variable
+ OPTIONS=
+@@ -85,7 +86,7 @@ ASTTOPDIR:=$(shell pwd)
  OVERWRITE=y
-@@ -88,7 +92,11 @@ INSTALL=install
  
- # Where to install asterisk after compiling
- # Default -> leave empty
-+ifeq (${OSARCH},OpenBSD)
-+INSTALL_PREFIX= ${TRUEPREFIX}
-+else
- INSTALL_PREFIX?=
-+endif
+ # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
+-DEBUG=-g3
++DEBUG?=-g3
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -110,7 +118,7 @@ BUSYDETECT+= #-DBUSYDETECT_TONEONLY
- # Don't use together with -DBUSYDETECT_TONEONLY
- BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
- 
--ifneq ($(OSARCH),SunOS)
-+ifeq ($(OSARCH),Linux)
-   ASTLIBDIR=$(INSTALL_PREFIX)/usr/lib/asterisk
-   ASTVARLIBDIR=$(INSTALL_PREFIX)/var/lib/asterisk
-   ASTETCDIR=$(INSTALL_PREFIX)/etc/asterisk
-@@ -124,7 +132,25 @@ ifneq ($(OSARCH),SunOS)
-   ASTMANDIR=$(INSTALL_PREFIX)/usr/share/man
-   MODULES_DIR=$(ASTLIBDIR)/modules
-   AGI_DIR=$(ASTVARLIBDIR)/agi-bin
--else
-+endif
-+# OpenBSD has its own packaging mechanism
-+ifeq ($(OSARCH),OpenBSD)
-+  ASTLIBDIR=$(INSTALL_PREFIX)/lib/asterisk
-+  ASTVARLIBDIR=$(INSTALL_PREFIX)/share/asterisk
-+  ASTETCDIR=${SYSCONFDIR}/asterisk
-+  ASTSPOOLDIR=/var/spool/asterisk
-+  ASTLOGDIR=/var/log/asterisk
-+  ASTHEADERDIR=$(INSTALL_PREFIX)/include/asterisk
-+  ASTCONFPATH=$(ASTETCDIR)/asterisk.conf
-+  ASTBINDIR=$(INSTALL_PREFIX)/bin
-+  ASTSBINDIR=$(INSTALL_PREFIX)/sbin
-+  ASTVARRUNDIR=/var/db/asterisk
-+  ASTMANDIR=$(INSTALL_PREFIX)/man
-+  
-+  MODULES_DIR=$(ASTLIBDIR)/modules
-+  AGI_DIR=$(INSTALL_PREFIX)/share/examples/asterisk/agi
-+endif
-+ifeq ($(OSARCH),SunOS)
-   ASTLIBDIR=$(INSTALL_PREFIX)/opt/asterisk/lib
-   ASTVARLIBDIR=$(INSTALL_PREFIX)/var/opt/asterisk/lib
-   ASTETCDIR=$(INSTALL_PREFIX)/etc/opt/asterisk
-@@ -165,6 +191,8 @@ HTTP_CGIDIR=/var/www/cgi-bin
- # The file, /etc/asterisk.makeopts will also be included, but can be overridden
+@@ -120,6 +121,7 @@ else
+ ifneq ($(findstring BSD,$(OSARCH)),)
+   ASTVARLIBDIR=$(prefix)/share/asterisk
+   ASTVARRUNDIR=$(localstatedir)/run/asterisk
++  ASTDBDIR=$(localstatedir)/db/asterisk
+ else
+   ASTVARLIBDIR=$(localstatedir)/lib/asterisk
+ endif
+@@ -148,8 +150,10 @@ HTTP_CGIDIR=/var/www/cgi-bin
+ # The file /etc/asterisk.makeopts will also be included but can be overridden
  # by the file in your home directory.
  
-+# OpenBSD wants repeatable builds
 +ifneq ($(OSARCH),OpenBSD)
- ifneq ($(wildcard /etc/asterisk.makeopts),)
-   include /etc/asterisk.makeopts
- endif
-@@ -172,6 +200,7 @@ endif
- ifneq ($(wildcard ~/.asterisk.makeopts),)
-   include ~/.asterisk.makeopts
- endif
+ GLOBAL_MAKEOPTS=$(wildcard /etc/asterisk.makeopts)
+ USER_MAKEOPTS=$(wildcard ~/.asterisk.makeopts)
 +endif
  
- ifeq ($(OSARCH),Linux)
-   ifeq ($(CROSS_COMPILE),)
-@@ -235,8 +264,10 @@ ifeq ($(findstring BSD,$(OSARCH)),BSD)
-   ASTCFLAGS+=-I$(CROSS_COMPILE_TARGET)/usr/local/include -L$(CROSS_COMPILE_TARGET)/usr/local/lib
+ MOD_SUBDIR_CFLAGS=-I$(ASTTOPDIR)/include
+ OTHER_SUBDIR_CFLAGS=-I$(ASTTOPDIR)/include
+@@ -187,7 +191,7 @@ ifeq ($(OSARCH),linux-gnu)
+   endif
  endif
  
--ifneq ($(PROC),ultrasparc)
--  ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
-+ifneq (${OSARCH},OpenBSD)
-+  ifneq ($(PROC),ultrasparc)
-+    ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
-+  endif
+-ASTCFLAGS+=-pipe -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG)
++ASTCFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG)
+ 
+ ASTCFLAGS+=-include $(ASTTOPDIR)/include/asterisk/autoconfig.h
+ 
+@@ -200,9 +204,11 @@ ifneq ($(findstring BSD,$(OSARCH)),)
+   ASTLDFLAGS+=-L/usr/local/lib
  endif
+ 
++ifneq ($(OSARCH),OpenBSD)
+ ifneq ($(PROC),ultrasparc)
+   ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+ endif
++endif
  
  ifeq ($(PROC),ppc)
-@@ -423,6 +454,7 @@ endif
- LIBS+=-lssl
- 
- _all: all
-+ifneq (${OSARCH},OpenBSD)
- 	@echo " +--------- Asterisk Build Complete ---------+"  
- 	@echo " + Asterisk has successfully been built, but +"  
- 	@echo " + cannot be run before being installed by   +"  
-@@ -430,6 +462,7 @@ _all: all
- 	@echo " +                                           +"
- 	@echo " +               $(MAKE) install                +"  
- 	@echo " +-------------------------------------------+"  
-+endif
- 
- all: cleantest depend asterisk subdirs 
- 
-@@ -714,6 +747,7 @@ install: all datafiles bininstall install-subdirs
- 	@if [ -x /usr/sbin/asterisk-post-install ]; then \
- 		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
- 	fi
-+ifneq (${OSARCH},OpenBSD)
- 	@echo " +---- Asterisk Installation Complete -------+"  
- 	@echo " +                                           +"
- 	@echo " +    YOU MUST READ THE SECURITY DOCUMENT    +"
-@@ -735,6 +769,7 @@ install: all datafiles bininstall install-subdirs
- 	@echo " + **Note** This requires that you have      +"
- 	@echo " + doxygen installed on your local system    +"
- 	@echo " +-------------------------------------------+"
-+endif
- 	@$(MAKE) -s oldmodcheck
- 
- upgrade: all bininstall
+   ASTCFLAGS+=-fsigned-char
+@@ -541,21 +547,25 @@ samples: adsi
+ 		echo "astetcdir => $(ASTETCDIR)" ; \
+ 		echo "astmoddir => $(MODULES_DIR)" ; \
+ 		echo "astvarlibdir => $(ASTVARLIBDIR)" ; \
++		echo "astdbdir => $(ASTDBDIR)" ; \
+ 		echo "astdatadir => $(ASTDATADIR)" ; \
+ 		echo "astagidir => $(AGI_DIR)" ; \
+ 		echo "astspooldir => $(ASTSPOOLDIR)" ; \
+ 		echo "astrundir => $(ASTVARRUNDIR)" ; \
+ 		echo "astlogdir => $(ASTLOGDIR)" ; \
+ 		echo "" ; \
+-		echo ";[options]" ; \
++		echo "[options]" ; \
+ 		echo ";internal_timing = yes" ; \
+ 		echo ";systemname = my_system_name ; prefix uniqueid with a system name for global uniqueness issues" ; \
+ 		echo "; Changing the following lines may compromise your security." ; \
+-		echo ";[files]" ; \
+-		echo ";astctlpermissions = 0660" ; \
+-		echo ";astctlowner = root" ; \
+-		echo ";astctlgroup = apache" ; \
+-		echo ";astctl = asterisk.ctl" ; \
++		echo "runuser => _asterisk" ; \
++		echo "rungroup => _asterisk" ; \
++		echo "" ; \
++		echo "[files]" ; \
++		echo "astctlpermissions = 0660" ; \
++		echo "astctlowner = _asterisk" ; \
++		echo "astctlgroup = wheel" ; \
++		echo "astctl = asterisk.ctl" ; \
+ 		) > $(DESTDIR)$(ASTCONFPATH) ; \
+ 	else \
+ 		echo "Skipping asterisk.conf creation"; \

@@ -1,32 +1,41 @@
-; $OpenBSD: musiconhold.conf.sample,v 1.1 2006/06/12 19:04:10 naddy Exp $
+; $OpenBSD: musiconhold.conf.sample,v 1.2 2007/09/05 22:42:52 sthen Exp $
 ; Music on Hold -- Sample Configuration
+
+; There are various ways to handle musiconhold. The lightweight method
+; is to use Asterisk's internal transcoding to play files from a directory.
+; The drawback here is that playback starts from the start of the file,
+; so regular callers might hear them often.
+;
+; This supports any of the usual codecs used on calls (e.g. alaw, gsm);
+; they can be pre-converted to save transcoding during calls. 8KHz mono
+; RIFF .wav files are also supported (convert with sox).
 
 [default]
 mode=files
-directory=/usr/local/share/asterisk/moh-native
+directory=/usr/local/share/asterisk/moh
+random=yes
 
-;[native-random]
-;mode=files
-;directory=/usr/local/share/asterisk/moh-native
-;random=yes 	; Play the files in a random order
+; The method used in earlier versions is to have one external process
+; running all the time, which feeds MOH for all calls. Using mp3 files,
+; here's an example, take your pick of application.
 
+;[mp3]
+;mode=custom
+;format=SLIN
+;application=/usr/local/bin/mpg123 -q -r 8000 -f 8192 -s --mono
+; -or-
+;application=/usr/local/bin/madplay -Q -z -o raw:- --mono -R 8000 -a -12 -
+;directory=/usr/local/share/asterisk/moh-mp3
+
+; Streaming from the network (or another source) is possible too,
+; it shouldn't be necessary but it seems helpful to create a directory
+; containing an empty file e.g.
 ;
-; This plays files directly from the specified directory, no external
-; processes are required. Files are played in normal sorting order
-; (same as a sorted directory listing), and no volume or other
-; sound adjustments are available. If the file is available in
-; the same format as the channel's codec, then it will be played
-; without transcoding (same as Playback would do in the dialplan).
-; Files can be present in as many formats as you wish, and the
-; 'best' format will be chosen at playback time.
-;
-; NOTE:
-; If you are not using "autoload" in modules.conf, then you
-; must ensure that the format modules for any formats you wish
-; to use are loaded _before_ res_musiconhold. If you do not do
-; this, res_musiconhold will skip the files it is not able to
-; understand when it loads.
-;
-; format_mp3 is in the asterisk-addons package;
-; format_wav supports 8KHz mono RIFF .wav files.
-;
+; # cd /usr/local/share/asterisk && mkdir moh-empty && touch moh-empty/0.mp3
+
+;[mp3stream]
+;mode=custom
+;format=SLIN
+;directory=/usr/local/share/asterisk/moh-empty
+;application=/usr/local/bin/mpg123 -q -r 8000 -f 8192 -s --mono http://example:8014/
+
