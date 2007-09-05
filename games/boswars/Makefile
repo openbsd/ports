@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/08/27 13:19:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/05 16:48:02 ajacoutot Exp $
 
 COMMENT=	real-time strategy game
 
-V=		2.4
+V=		2.4.1
 DISTNAME=	boswars-${V}-src
 PKGNAME=	boswars-${V}
 CATEGORIES=	games x11
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 
-WANTLIB=	X11 Xext c m ogg pthread stdc++ usbhid z
+WANTLIB=	X11 Xext c m ogg pthread stdc++ usbhid z GL
 
 BUILD_DEPENDS=	:scons-*:devel/scons
 LIB_DEPENDS=	SDL.>=7::devel/sdl \
@@ -36,13 +36,15 @@ DATA_DIR=	campaigns graphics languages maps scripts sounds units video
 pre-configure:
 	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' \
 		${WRKSRC}/engine/include/stratagus.h
+	@perl -pi -e 's,!!X11BASE!!,${X11BASE},g' \
+		${WRKSRC}/SConstruct
 
 do-build:
 	@${SETENV} ${MAKE_ENV} scons -C ${WRKSRC} \
 		CC=${CC} CXX=${CXX} CCFLAGS="${CFLAGS}" \
 		CPPPATH="${X11BASE}/include ${LOCALBASE}/include/libpng" \
 		LIBPATH="${X11BASE}/lib ${LOCALBASE}/lib" LIBS="-lm" \
-		opengl=0
+		opengl=1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/boswars ${PREFIX}/bin

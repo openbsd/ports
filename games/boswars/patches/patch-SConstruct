@@ -1,6 +1,6 @@
-$OpenBSD: patch-SConstruct,v 1.2 2007/08/27 13:19:33 ajacoutot Exp $
---- SConstruct.orig	Wed Aug  8 20:24:15 2007
-+++ SConstruct	Mon Aug 27 14:20:11 2007
+$OpenBSD: patch-SConstruct,v 1.3 2007/09/05 16:48:02 ajacoutot Exp $
+--- SConstruct.orig	Sun Sep  2 21:44:44 2007
++++ SConstruct	Wed Sep  5 18:24:18 2007
 @@ -33,12 +33,12 @@ SConsignFile()
  
  def DefineOptions(filename, args):
@@ -17,7 +17,7 @@ $OpenBSD: patch-SConstruct,v 1.2 2007/08/27 13:19:33 ajacoutot Exp $
     opts.Add('LINKFLAGS', 'Linker Compiler flags')
     opts.Add('CC', 'C Compiler')
     opts.Add('CXX', 'C++ Compiler')
-@@ -50,6 +50,9 @@ def DefineOptions(filename, args):
+@@ -49,6 +49,9 @@ def DefineOptions(filename, args):
  opts = DefineOptions("build_options.py", ARGUMENTS)
  env = Environment(ENV = {'PATH':os.environ['PATH']}) # for an unknown reason Environment(options=opts) doesnt work well
  opts.Update(env) # Needed as Environment(options=opts) doesnt seem to work
@@ -27,7 +27,27 @@ $OpenBSD: patch-SConstruct,v 1.2 2007/08/27 13:19:33 ajacoutot Exp $
  Help(opts.GenerateHelpText(env))
  mingw = env.Copy()
  optionsChanged = True
-@@ -161,8 +164,8 @@ def CheckOpenGL(env, conf):
+@@ -142,6 +145,10 @@ def CheckOpenGL(env, conf):
+       'LIBS': ['GL'], 
+       'LIBPATH': ['/usr/lib', '/usr/X11R6/lib'],
+       'CPPPATH': ['/usr/include']}
++  opengl['openbsd'] = { 
++      'LIBS': ['GL'], 
++      'LIBPATH': ['!!X11BASE!!/lib'],
++      'CPPPATH': ['!!X11BASE!!/include']}
+   opengl['cygwin'] = {
+       'LIBS': ['opengl3']}
+   opengl['darwin'] = {
+@@ -150,6 +157,8 @@ def CheckOpenGL(env, conf):
+   platform = sys.platform
+   if sys.platform[:5] == 'linux':
+      platform = 'linux'
++  if sys.platform[:7] == 'openbsd':
++     platform = 'openbsd'
+   glconfig = opengl.get(platform, {})
+   for key in glconfig:
+       if key != 'LIBS':
+@@ -164,8 +173,8 @@ def CheckOpenGL(env, conf):
  
  def CheckLuaLib(env, conf):
    if not 'USE_WIN32' in env['CPPDEFINES']:
@@ -38,7 +58,7 @@ $OpenBSD: patch-SConstruct,v 1.2 2007/08/27 13:19:33 ajacoutot Exp $
       elif env.WhereIs('pkg-config'):
          for packagename in ['lua5.1', 'lua51', 'lua']:
             exitcode, _ = ParseConfig(env, 'pkg-config --cflags --libs ' + packagename)
-@@ -185,7 +188,7 @@ def CheckLuaLib(env, conf):
+@@ -188,7 +197,7 @@ def CheckLuaLib(env, conf):
    lualibfound = 0
    if conf.CheckFunc('luaopen_base'):
       return 1
@@ -47,7 +67,7 @@ $OpenBSD: patch-SConstruct,v 1.2 2007/08/27 13:19:33 ajacoutot Exp $
       lualibfound = 1
    elif conf.CheckLibWithHeader('lualib50', 'lualib.h', 'c'):
       lualibfound = 1
-@@ -200,13 +203,13 @@ def AutoConfigure(env):
+@@ -203,13 +212,13 @@ def AutoConfigure(env):
    conf = Configure(env)
  
    ## check for required libs ##
@@ -65,7 +85,7 @@ $OpenBSD: patch-SConstruct,v 1.2 2007/08/27 13:19:33 ajacoutot Exp $
       if not conf.CheckLib('dl'):
          print 'Did not find dl library or header which is needed on some systems for lua. Exiting!'
          Exit(1)
-@@ -215,12 +218,12 @@ def AutoConfigure(env):
+@@ -221,12 +230,12 @@ def AutoConfigure(env):
       Exit(1)
  
    # Check for optional libraries #
@@ -77,10 +97,10 @@ $OpenBSD: patch-SConstruct,v 1.2 2007/08/27 13:19:33 ajacoutot Exp $
       env.Append(CPPDEFINES = 'USE_THEORA')
 -  if conf.CheckLib('ogg'):
 -     env.Append(CPPDEFINES = 'USE_OGG')
-   if int(env['opengl']) == 1:
-      CheckOpenGL(env, conf)
-   
-@@ -274,7 +277,7 @@ addBosWarsPaths(env)
+ 
+   # check for optional functions
+   if conf.CheckFunc('strcasestr'):
+@@ -279,7 +288,7 @@ addBosWarsPaths(env)
  
  # define the different build environments (variants)
  release = env.Copy()
