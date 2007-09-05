@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/03 01:02:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/05 16:10:26 jasper Exp $
 ${P5SITE}/Graph/
 ${P5SITE}/Graph.pm
 ${P5SITE}/Graph.pod
@@ -23,6 +23,14 @@ ${P5SITE}/Graph/Traversal/BFS.pm
 ${P5SITE}/Graph/Traversal/DFS.pm
 ${P5SITE}/Graph/Undirected.pm
 ${P5SITE}/Graph/UnionFind.pm
+${P5SITE}/Heap071/
+${P5SITE}/Heap071/Elem.pm
+${P5SITE}/Heap071/Fibonacci.pm
+${P5SITE}/auto/Heap071/
+${P5SITE}/auto/Heap071/Elem/
+${P5SITE}/auto/Heap071/Elem/autosplit.ix
+${P5SITE}/auto/Heap071/Fibonacci/
+${P5SITE}/auto/Heap071/Fibonacci/autosplit.ix
 @man man/man3p/Graph.3p
 @man man/man3p/Graph::AdjacencyMap.3p
 @man man/man3p/Graph::AdjacencyMap::Vertex.3p
@@ -37,3 +45,5 @@ ${P5SITE}/Graph/UnionFind.pm
 @man man/man3p/Graph::Traversal::DFS.3p
 @man man/man3p/Graph::Undirected.3p
 @man man/man3p/Graph::UnionFind.3p
+@man man/man3p/Heap071::Elem.3p
+@man man/man3p/Heap071::Fibonacci.3p
