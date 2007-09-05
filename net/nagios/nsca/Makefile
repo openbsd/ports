@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/26 01:06:53 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/05 20:28:44 sturm Exp $
 
-COMMENT-main=	"nagios service check acceptor"
-COMMENT-client=	"nagios service check acceptor - client"
+COMMENT-main=	nagios service check acceptor
+COMMENT-client=	nagios service check acceptor - client
 
-VERSION=	2.5
+VERSION=	2.7.2
 DISTNAME=	nsca-${VERSION}
-PKGNAME-main=	nsca-${VERSION}p0
+PKGNAME-main=	nsca-${VERSION}
 PKGNAME-client=	nsca-client-${VERSION}
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.nagios.org/
-
-MAINTAINER=	Bernd Ahlers <bernd@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,15 +27,18 @@ CONFIGURE_ARGS=		--with-nsca-user=_nagios \
 			--with-nsca-grp=_nagios \
 			--localstatedir=/var/nagios
 
-NO_REGRESS=		Yes
-
 MULTI_PACKAGES=		-main -client
 
+REGRESS_DEPENDS=	::devel/p5-Clone \
+			::devel/p5-Parallel-Forker
 RUN_DEPENDS-main=	:nagios-*:net/nagios/nagios
 
 pre-build:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/src/nsca.c \
 		${WRKSRC}/src/send_nsca.c
+
+do-regress:
+	@cd ${WRKSRC}/nsca_tests && ./runtests
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/nagios

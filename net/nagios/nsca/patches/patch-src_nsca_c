@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_nsca_c,v 1.1.1.1 2006/03/13 18:18:22 bernd Exp $
---- src/nsca.c.orig	Fri Feb  3 13:08:39 2006
-+++ src/nsca.c	Fri Feb  3 13:08:55 2006
-@@ -25,7 +25,7 @@ static int server_port=DEFAULT_SERVER_PO
+$OpenBSD: patch-src_nsca_c,v 1.2 2007/09/05 20:28:44 sturm Exp $
+--- src/nsca.c.orig	Tue Jul  3 21:57:28 2007
++++ src/nsca.c	Sat Sep  1 08:29:23 2007
+@@ -26,7 +26,7 @@ static int server_port=DEFAULT_SERVER_PORT;
  static char server_address[16]="0.0.0.0";
  static int socket_timeout=DEFAULT_SOCKET_TIMEOUT;
  
