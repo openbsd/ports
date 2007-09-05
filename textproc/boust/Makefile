@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/08/27 10:39:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/05 05:38:20 sturm Exp $
 
 COMMENT=		boustrophedon text reader
 DISTNAME=		boust-0.161
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://traevoli.com/boust/
