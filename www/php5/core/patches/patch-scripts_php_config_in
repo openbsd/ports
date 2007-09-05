@@ -1,16 +1,17 @@
-$OpenBSD: patch-scripts_php_config_in,v 1.3 2007/03/22 22:43:20 robert Exp $
---- scripts/php-config.in.orig	Thu Jul 27 10:53:16 2006
-+++ scripts/php-config.in	Wed Feb 21 23:27:24 2007
-@@ -1,10 +1,10 @@
+$OpenBSD: patch-scripts_php_config_in,v 1.4 2007/09/05 09:11:34 robert Exp $
+--- scripts/php-config.in.orig	Fri Aug 24 13:44:10 2007
++++ scripts/php-config.in	Fri Aug 31 09:29:40 2007
+@@ -1,11 +1,11 @@
  #! /bin/sh
  
+ SED="@SED@"
 -prefix="@prefix@"
 +prefix=OPENBSD_PEAR_ROOT
  exec_prefix="@exec_prefix@"
  version="@PHP_VERSION@"
- version_id="@PHP_VERSION_ID@"
--includedir="@includedir@/php"
+ vernum="@PHP_VERSION_ID@"
+-include_dir="@includedir@/php"
 +includedir="@PEAR_INSTALLDIR@/include"
- includes="-I$includedir -I$includedir/main -I$includedir/TSRM -I$includedir/Zend -I$includedir/ext -I$includedir/ext/date/lib"
+ includes="-I$include_dir -I$include_dir/main -I$include_dir/TSRM -I$include_dir/Zend -I$include_dir/ext -I$include_dir/ext/date/lib"
  ldflags="@PHP_LDFLAGS@"
  libs="@EXTRA_LIBS@"

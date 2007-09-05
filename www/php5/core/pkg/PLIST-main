@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/08/27 09:44:43 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/09/05 09:11:34 robert Exp $
 @conflict php4-core-*
 @pkgpath www/php5/core
 @pkgpath www/php5/core,hardened
@@ -130,15 +130,13 @@ share/php5/include/ext/libxml/
 share/php5/include/ext/libxml/php_libxml.h
 share/php5/include/ext/pcre/
 share/php5/include/ext/pcre/pcrelib/
+share/php5/include/ext/pcre/pcrelib/config.h
 share/php5/include/ext/pcre/pcrelib/pcre.h
 share/php5/include/ext/pcre/pcrelib/pcre_internal.h
-share/php5/include/ext/pcre/pcrelib/pcre_scanner.h
-share/php5/include/ext/pcre/pcrelib/pcre_stringpiece.h
-share/php5/include/ext/pcre/pcrelib/pcrecpp.h
-share/php5/include/ext/pcre/pcrelib/pcrecpparg.h
 share/php5/include/ext/pcre/pcrelib/pcreposix.h
 share/php5/include/ext/pcre/pcrelib/ucp.h
 share/php5/include/ext/pcre/pcrelib/ucpinternal.h
+share/php5/include/ext/pcre/pcrelib/ucptable.h
 share/php5/include/ext/pcre/php_pcre.h
 share/php5/include/ext/pdo/
 share/php5/include/ext/pdo/php_pdo.h

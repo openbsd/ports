@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-dist,v 1.10 2007/07/02 08:53:17 robert Exp $
---- php.ini-dist.orig	Sun May 27 20:04:10 2007
-+++ php.ini-dist	Mon Jul  2 10:34:20 2007
-@@ -456,10 +456,7 @@ default_mimetype = "text/html"
+$OpenBSD: patch-php_ini-dist,v 1.11 2007/09/05 09:11:34 robert Exp $
+--- php.ini-dist.orig	Wed Aug 22 01:24:18 2007
++++ php.ini-dist	Wed Sep  5 10:38:43 2007
+@@ -466,10 +466,7 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -13,7 +13,7 @@ $OpenBSD: patch-php_ini-dist,v 1.10 2007/07/02 08:53:17 robert Exp $
  
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
-@@ -473,7 +470,7 @@ doc_root =
+@@ -483,7 +480,7 @@ doc_root =
  user_dir =
  
  ; Directory in which the loadable extensions (modules) reside.
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-dist,v 1.10 2007/07/02 08:53:17 robert Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -542,7 +539,7 @@ upload_max_filesize = 2M
+@@ -552,7 +549,7 @@ upload_max_filesize = 2M
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-dist,v 1.10 2007/07/02 08:53:17 robert Exp $
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  allow_url_include = Off
-@@ -563,81 +560,6 @@ default_socket_timeout = 60
+@@ -573,81 +570,6 @@ default_socket_timeout = 60
  ; fgets() and file() will work regardless of the source of the file.
  ; auto_detect_line_endings = Off
  
@@ -113,7 +113,7 @@ $OpenBSD: patch-php_ini-dist,v 1.10 2007/07/02 08:53:17 robert Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -685,13 +607,6 @@ default_socket_timeout = 60
+@@ -695,13 +617,6 @@ default_socket_timeout = 60
  define_syslog_variables  = Off
  
  [mail function]
@@ -127,7 +127,7 @@ $OpenBSD: patch-php_ini-dist,v 1.10 2007/07/02 08:53:17 robert Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1267,6 +1182,53 @@ soap.wsdl_cache_dir="/tmp"
+@@ -1277,6 +1192,53 @@ soap.wsdl_cache_dir="/tmp"
  ; instead of original one.
  soap.wsdl_cache_ttl=86400
  

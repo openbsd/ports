@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2007/09/03 19:22:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/05 09:11:34 robert Exp $
 
 COMMENT-main=	"server-side HTML-embedded scripting language"
 COMMENT-fastcgi="stand-alone FastCGI version of PHP"
 
 PKGNAME=	php5-core-${V}
-PKGNAME-main=	php5-core-${V}p0
+PKGNAME-main=	php5-core-${V}
 PKGNAME-fastcgi=php5-fastcgi-${V}
 
 DISTFILES=	php-${V}.tar.gz
@@ -18,19 +18,15 @@ CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--enable-cli \
 		--with-iconv=${LOCALBASE} \
 		--with-gettext=${LOCALBASE} \
-		--enable-dio \
 		--enable-bcmath \
 		--enable-session \
-		--enable-trans-sid \
 		--enable-calendar \
 		--enable-ctype \
 		--enable-ftp \
 		--with-pcre-regex \
-		--with-posix \
 		--enable-sockets \
 		--enable-sysvsem \
 		--enable-sysvshm \
-		--enable-yp \
 		--enable-exif \
 		--without-sqlite \
 		--without-pdo-sqlite \

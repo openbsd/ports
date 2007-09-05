@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.8 2007/05/11 15:05:15 robert Exp $
---- aclocal.m4.orig	Wed Feb  7 01:47:35 2007
-+++ aclocal.m4	Sun Apr  1 14:04:45 2007
+$OpenBSD: patch-aclocal_m4,v 1.9 2007/09/05 09:11:34 robert Exp $
+--- aclocal.m4.orig	Thu Aug 30 01:39:17 2007
++++ aclocal.m4	Wed Sep  5 10:39:20 2007
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
  dnl
  dnl which array to append to?
@@ -10,7 +10,7 @@ $OpenBSD: patch-aclocal_m4,v 1.8 2007/05/11 15:05:15 robert Exp $
  ])
  
  dnl
-@@ -966,12 +966,7 @@ dnl ---------------------------------------------- Sha
+@@ -962,12 +962,7 @@ dnl ---------------------------------------------- Sha
    if test "$3" != "shared" && test "$3" != "yes" && test "$4" = "cli"; then
  dnl ---------------------------------------------- CLI static module
      [PHP_]translit($1,a-z_-,A-Z__)[_SHARED]=no
@@ -24,7 +24,7 @@ $OpenBSD: patch-aclocal_m4,v 1.8 2007/05/11 15:05:15 robert Exp $
      EXT_CLI_STATIC="$EXT_CLI_STATIC $1"
    fi
    PHP_ADD_BUILD_DIR($ext_builddir)
-@@ -1021,17 +1016,12 @@ You either need to build $1 shared or build $2 statica
+@@ -1017,17 +1012,12 @@ You either need to build $1 shared or build $2 statica
  build to be successful.
  ])
    fi
@@ -42,8 +42,8 @@ $OpenBSD: patch-aclocal_m4,v 1.8 2007/05/11 15:05:15 robert Exp $
 +B
  dnl -------------------------------------------------------------------------
  
- dnl
-@@ -2129,10 +2119,9 @@ AC_DEFUN([PHP_SETUP_KERBEROS],[
+ dnl Internal helper macros
+@@ -2265,10 +2255,9 @@ AC_DEFUN([PHP_SETUP_KERBEROS],[
      if test "$PHP_KERBEROS_DIR"; then
        found_kerberos=yes
        PHP_ADD_LIBPATH($PHP_KERBEROS_DIR/$PHP_LIBDIR, $1)
@@ -56,7 +56,7 @@ $OpenBSD: patch-aclocal_m4,v 1.8 2007/05/11 15:05:15 robert Exp $
        PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
      fi
    fi
-@@ -4320,7 +4309,7 @@ openbsd*)
+@@ -4490,7 +4479,7 @@ openbsd*)
      *)                         need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

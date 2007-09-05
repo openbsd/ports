@@ -1,12 +1,12 @@
-$OpenBSD: patch-main_php_open_temporary_file_c,v 1.3 2007/04/01 21:37:27 robert Exp $
---- main/php_open_temporary_file.c.orig	Mon Jan  1 10:36:11 2007
-+++ main/php_open_temporary_file.c	Sun Apr  1 13:42:42 2007
-@@ -120,7 +120,7 @@ static int php_do_open_temporary_file(const char *path
+$OpenBSD: patch-main_php_open_temporary_file_c,v 1.4 2007/09/05 09:11:34 robert Exp $
+--- main/php_open_temporary_file.c.orig	Fri Aug 10 12:13:15 2007
++++ main/php_open_temporary_file.c	Fri Aug 31 09:26:46 2007
+@@ -131,7 +131,7 @@ static int php_do_open_temporary_file(const char *path
  		trailing_slash = "/";
  	}
  
--	if (spprintf(&opened_path, 0, "%s%s%sXXXXXX", path, trailing_slash, pfx) >= MAXPATHLEN) {
-+	if (spprintf(&opened_path, 0, "%s%s%sXXXXXXXXXX", path, trailing_slash, pfx) >= MAXPATHLEN) {
+-	if (spprintf(&opened_path, 0, "%s%s%sXXXXXX", new_state.cwd, trailing_slash, pfx) >= MAXPATHLEN) {
++	if (spprintf(&opened_path, 0, "%s%s%sXXXXXXXXXX", new_state.cwd, trailing_slash, pfx) >= MAXPATHLEN) {
  		efree(opened_path);
+ 		free(new_state.cwd);
  		return -1;
- 	}
