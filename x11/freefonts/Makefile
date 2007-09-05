@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/08/27 10:39:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/05 05:40:03 sturm Exp $
 
 COMMENT=	collection of ATM fonts from the CICA archives
 
 DISTNAME=	freefonts-0.10
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/ \
