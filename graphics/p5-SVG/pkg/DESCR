@@ -1,8 +1,9 @@
-p5-SVG allows the creation of full-fledged SVG images from perl.
-All SVG tags are supported, and any new arbitrary element tag can be
-added by simply declaring it.
+p5-SVG allows the creation of full-fledged SVG images from perl.  All
+SVG tags are supported, and any new arbitrary element tag can be added
+by simply declaring it.
 
-SVG is 100% Perl code that can generate a nested data structure containing the
-DOM representation of an SVG (Scalable Vector Graphics) image. Using SVG, you
-can generate SVG objects, embed other SVG instances into it, access the DOM
-object, create and access javascript, and generate SMIL animation content.
+SVG is 100% Perl code that can generate a nested data structure
+containing the DOM representation of an SVG (Scalable Vector Graphics)
+image. Using SVG, you can generate SVG objects, embed other SVG
+instances into it, access the DOM object, create and access javascript,
+and generate SMIL animation content.
