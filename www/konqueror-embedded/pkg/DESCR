@@ -11,3 +11,4 @@ See ${PREFIX}/bin/konq-e for cache/proxy support.
 
 Flavors:
 	kiosk - Build with the "Kiosk" GUI
+	debug - Build with options suitable for debugging

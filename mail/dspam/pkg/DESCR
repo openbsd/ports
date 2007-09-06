@@ -23,3 +23,6 @@ default.
 - mysql: use a mysql server as a storage engine.
 
 - hash: use the CRM Sparse Spectra (CSS) storage engine.
+
+- preferences : store user preferences in the database instead of flat files.
+Has any effect only on mysql and pgsql flavors.

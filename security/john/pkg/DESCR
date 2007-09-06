@@ -20,6 +20,3 @@ a crypt(3)-style routine: they require a more powerful interface (bitslice
 DES is an example). Additionally, there're assembly routines for several
 processors and architectures (special Intel Pentium version, x86 with MMX,
 generic x86, Alpha EV4, SPARC V8).
-
-Flavors:
-	* no_mmx: disable MMX support

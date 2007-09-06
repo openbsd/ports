@@ -18,3 +18,7 @@ There are a few FLAVORS that add functionality to transcode:
     quicktime: adds the ability to import and export using
         the libquicktime API, thus it adds the ability to
         import and export QuickTime-compatible .mov files.
+    altivec: uses altivec vector unit for a huge speed-up.
+        Only works on powerpc platform with altivec hardware support.
+        Altivec is present on all PowerPC G4 processors.
+        Altivec is not present on G3 or earlier (60x) processors.
