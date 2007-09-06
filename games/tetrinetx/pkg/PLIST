@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
+bin/tetrinetx
+share/doc/tetrinetx/
+share/doc/tetrinetx/README
+share/doc/tetrinetx/README.qirc.spectators
+share/examples/tetrinetx/
+@sample ${SYSCONFDIR}/tetrinetx/
+share/examples/tetrinetx/game.allow.example
+@mode o=
+@group games
+@sample ${SYSCONFDIR}/tetrinetx/game.allow
+@mode
+@group
+share/examples/tetrinetx/game.ban.compromise.example
+@sample ${SYSCONFDIR}/tetrinetx/game.ban.compromise
+share/examples/tetrinetx/game.ban.example
+@sample ${SYSCONFDIR}/tetrinetx/game.ban
+share/examples/tetrinetx/game.conf
+@sample ${SYSCONFDIR}/tetrinetx/game.conf
+share/examples/tetrinetx/game.motd
+@sample ${SYSCONFDIR}/tetrinetx/game.motd
+share/examples/tetrinetx/game.pmotd
+@sample ${SYSCONFDIR}/tetrinetx/game.pmotd
+share/examples/tetrinetx/game.secure
+@mode o=
+@group games
+@sample ${SYSCONFDIR}/tetrinetx/game.secure
+@mode g+w
+@sample /var/games/tetrinetx/
+@sample /var/log/tetrinetx/
+@sample /var/run/tetrinetx/

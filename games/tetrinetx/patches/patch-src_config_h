@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_config_h,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
+--- src/config.h.orig	Tue Apr 24 04:31:29 2001
++++ src/config.h	Thu Sep  6 15:47:57 2007
+@@ -6,17 +6,31 @@
+   
+ */
+ 
++#ifndef	CONFDIR
++#define	CONFDIR "."
++#endif
++
+ /* Location of the various external files */
+-#define FILE_MOTD    "game.motd"	/* Message of the Day File */
+-#define FILE_PMOTD    "game.pmotd"	/* Playback motd */
+-#define FILE_CONF    "game.conf"	/* Game configuration File */
+-#define FILE_WINLIST "game.winlist"	/* Winlist storage file */
+-#define FILE_WINLIST2 "game.winlist2"	/* Winlist storage file */
+-#define FILE_WINLIST3 "game.winlist3"	/* Winlist storage file */
++/* Message of the Day File */
++#define FILE_MOTD               CONFDIR "/game.motd"
++/* Playback motd */
++#define FILE_PMOTD              CONFDIR "/game.pmotd"
++/* Game configuration File */
++#define FILE_CONF               CONFDIR "/game.conf"
++/* List of Banned IP's */
++#define FILE_BAN                CONFDIR "/game.ban"
++/* List of Banned IP's */
++#define FILE_BAN_COMPROMISE     CONFDIR "/game.ban.compromise"
++/* List of allow IP's */
++#define FILE_ALLOW              CONFDIR "/game.allow"
++/* Security file */
++#define FILE_SECURE             CONFDIR "/game.secure"
+ 
+-#define FILE_BAN     "game.ban"		/* List of Banned IP's */
+-#define FILE_BAN_COMPROMISE     "game.ban.compromise"	/* List of Banned IP's */
+-#define FILE_ALLOW   "game.allow"	/* List of allow IP's */
+-#define FILE_LOG     "game.log"		/* Logfile */
+-#define FILE_PID     "game.pid"		/* Default PID */
+-#define FILE_SECURE  "game.secure"	/* Security file */
++/* Winlist storage files */
++#define FILE_WINLIST            "/var/games/tetrinetx/game.winlist"
++#define FILE_WINLIST2           "/var/games/tetrinetx/game.winlist2"
++#define FILE_WINLIST3           "/var/games/tetrinetx/game.winlist3"
++
++/* Logfile & PID file */
++#define FILE_LOG                "/var/log/tetrinetx/game.log"
++#define FILE_PID                "/var/run/tetrinetx/game.pid"

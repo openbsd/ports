@@ -1,0 +1,16 @@
+$OpenBSD: patch-bin_game_conf,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
+--- bin/game.conf.orig	Mon Sep  6 14:14:38 1999
++++ bin/game.conf	Thu Sep  6 09:41:35 2007
+@@ -8,10 +8,10 @@
+ # Any text after a # is ignored, and can be used as comments.
+ 
+ # pidfile [game.pid] - Where should the Process ID be written
+-pidfile=game.pid
++pidfile=/var/run/tetrinetx/game.pid
+ 
+ # bindip [0.0.0.0] - What IP should server be bound to (0.0.0.0 means all)
+-bindip=0.0.0.0
++#bindip=0.0.0.0
+ 
+ # maxchannels [1] - How many channels should be available on server
+ maxchannels=8

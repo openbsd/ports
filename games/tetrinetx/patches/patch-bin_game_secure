@@ -1,0 +1,23 @@
+$OpenBSD: patch-bin_game_secure,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
+--- bin/game.secure.orig	Sat Sep 11 04:10:52 1999
++++ bin/game.secure	Thu Sep  6 09:41:35 2007
+@@ -8,15 +8,15 @@
+ # Any text after a # is ignored, and can be used as comments.
+ 
+ # op_password [] - Typing /op <thispassword> will give player op status
+-op_password=pass4word
++#op_password=pass4word
+ 
+ # query_password [] - For query irc client
+-query_password=pass4word
++#query_password=pass4word
+ 
+ # spec_password [] - Use this as team name for gameplay watch
+-spec_password=pass4word
++#spec_password=pass4word
+ 
+ # spec_op_password [] - Use this as team name for gameplay watch with extended capability (unused in this release)
+-spec_op_password=pass4word
++#spec_op_password=pass4word
+ 
+ # End of File

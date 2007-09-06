@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_main_h,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
+--- src/main.h.orig	Sun Apr 29 21:00:28 2001
++++ src/main.h	Thu Sep  6 09:41:35 2007
+@@ -47,7 +47,11 @@
+ 
+ /* Defines */
+ #define TETVERSION "1.13"		/* What Tetrinet version we are for */
+-#define SERVERBUILD "16+qirc-1.40b"	/* What build we are at */
++#ifdef USE_IPV6
++#define SERVERBUILD "16+qirc-1.40c-IPv6"	/* What build we are at */
++#else
++#define SERVERBUILD "16+qirc-1.40c"	/* What build we are at */
++#endif
+ #define NICKLEN 30			/* Maximum length of Nickname */
+ #define VERLEN 10			/* Maximum length of Tetrinet version */
+ #define UHOSTLEN 121			/* Maximum length of Hostname */
+@@ -240,7 +244,11 @@ struct game_t {
+ 
+ struct net_t {
+   int sock; 				/* Socket this player is on */
++#ifdef USE_IPV6
++  struct in6_addr addr;
++#else
+   IP addr; 				/* IP address of player */
++#endif
+   unsigned int port; 			/* Port number they connected to */
+   char nick[NICKLEN+1];			/* Nickname of player */
+   char team[TEAMLEN+1]; 		/* Teamname of player */

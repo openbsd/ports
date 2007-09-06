@@ -1,0 +1,55 @@
+$OpenBSD: patch-src_net_h,v 1.1.1.1 2007/09/06 17:58:56 simon Exp $
+--- src/net.h.orig	Tue Apr 24 04:31:29 2001
++++ src/net.h	Thu Sep  6 10:08:07 2007
+@@ -37,6 +37,9 @@
+ #define SOCK_NONSOCK    0x10    /* used for file i/o on debug */
+ #define SOCK_STRONGCONN 0x20    /* don't report success until sure */   
+ 
++/* some hard-coded values are better with #define :) */
++#define MYMAXHOSTNAMELEN	80
++
+ /* this is used by the net module to keep track of sockets and what's
+    queued on them */
+ struct sock_list {
+@@ -51,15 +54,10 @@ struct sock_list {
+ /*#define MAXSOCKS MAXNET*2*/
+ struct sock_list *socklist;  /* enough to be safe */   
+ 
+-/* i read somewhere that memcpy() is broken on some machines */
+-/* it's easy to replace, so i'm not gonna take any chances, because it's
+-*/
+-/* pretty important that it work correctly here */
++/* XXX: deleted, see .c for explanations.
+ void my_memcpy(char *dest,char *src,int len);
+-
+-
+-/* bzero() is bsd-only, so here's one for non-bsd systems */
+ void my_bzero(char *dest,int len);
++*/
+ 
+ 
+ /* initialize the socklist */
+@@ -75,7 +73,11 @@ void getmyhostname(char *s);
+ 
+ 
+ /* get my ip number */
++#ifdef USE_IPV6
++void getmyip(struct in6_addr *ip);
++#else
+ IP getmyip(void);
++#endif
+ 
+ 
+ void neterror(char *s);
+@@ -106,7 +108,11 @@ char *hostnamefromip(unsigned long ip);
+ */
+ /* by open_listen ... returns hostname of the caller & the new socket */
+ /* does NOT dispose of old "public" socket! */
++#ifdef USE_IPV6
++int answer(int sock,struct in6_addr *ip,int binary);
++#else
+ int answer(int sock,unsigned long *ip,int binary);
++#endif
+ 
+ 
+ /* attempts to read from all the sockets in socklist */

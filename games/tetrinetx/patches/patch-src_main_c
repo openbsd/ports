@@ -1,0 +1,256 @@
+$OpenBSD: patch-src_main_c,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
+--- src/main.c.orig	Tue Jul  9 05:53:49 2002
++++ src/main.c	Thu Sep  6 09:41:35 2007
+@@ -200,15 +200,23 @@ int is_valid_channelname(char *p)
+ 
+ char is_explicit_banned(struct net_t *n)
+   { /* I should use regex, but I've not used it before, and it was late. Easier to write a quick one of my own */
++#ifdef USE_IPV6
++    char ip_str[INET6_ADDRSTRLEN], host[INET6_ADDRSTRLEN];
++#else
+     char ip_str[UHOSTLEN+1], host[UHOSTLEN+1];
+     char n1[4], n2[4], n3[4], n4[4];
++#endif
+     int i, j; int found;
+    
++#ifdef USE_IPV6
++    inet_ntop(AF_INET6, &n->addr, (char *)ip_str, INET6_ADDRSTRLEN);
++#else
+     sprintf(n1,"%lu", (unsigned long)(n->addr&0xff000000)/(unsigned long)0x1000000);
+     sprintf(n2,"%lu", (unsigned long)(n->addr&0x00ff0000)/(unsigned long)0x10000);
+     sprintf(n3,"%lu", (unsigned long)(n->addr&0x0000ff00)/(unsigned long)0x100);
+     sprintf(n4,"%lu", (unsigned long)n->addr&0x000000ff);
+     sprintf(ip_str, "%s.%s.%s.%s", n1, n2, n3, n4);
++#endif
+ 
+     found = 0;
+     i = 0;
+@@ -228,8 +236,12 @@ char is_explicit_banned(struct net_t *n)
+ 
+ int is_banned(struct net_t *n)
+   { /* I should use regex, but I've not used it before, and it was late. Easier to write a quick one of my own */
++#ifdef USE_IPV6
++    char ip_str[INET6_ADDRSTRLEN], host[INET6_ADDRSTRLEN];
++#else
+     char ip_str[UHOSTLEN+1], host[UHOSTLEN+1];
+     char n1[4], n2[4], n3[4], n4[4];
++#endif
+     int i, j; int found, allow;
+    
+     allow = 0;
+@@ -247,11 +259,15 @@ int is_banned(struct net_t *n)
+ 	return(0);
+ 		
+ 	
++#ifdef USE_IPV6
++    inet_ntop(AF_INET6, &n->addr, (char *)ip_str, INET6_ADDRSTRLEN);
++#else
+     sprintf(n1,"%lu", (unsigned long)(n->addr&0xff000000)/(unsigned long)0x1000000);
+     sprintf(n2,"%lu", (unsigned long)(n->addr&0x00ff0000)/(unsigned long)0x10000);
+     sprintf(n3,"%lu", (unsigned long)(n->addr&0x0000ff00)/(unsigned long)0x100);
+     sprintf(n4,"%lu", (unsigned long)n->addr&0x000000ff);
+     sprintf(ip_str, "%s.%s.%s.%s", n1, n2, n3, n4);
++#endif
+ 
+     found = 0;
+     i = 0;
+@@ -404,7 +420,11 @@ void init_telnet_port()
+     gnet=malloc(sizeof(struct net_t));
+     gnet->next=NULL;
+     n=gnet;
++#ifdef USE_IPV6
++    getmyip(&n->addr);
++#else
+     n->addr=getmyip();
++#endif
+     n->type=NET_TELNET;
+     n->channel = malloc(sizeof(struct channel_t));
+     n->channel->name[0] = '\0';
+@@ -452,7 +472,11 @@ void init_query_port()
+   /* no existing entry */
+   n->next = malloc(sizeof(struct net_t));
+   n = n->next;
++#ifdef USE_IPV6
++  getmyip(&n->addr);
++#else
+   n->addr=getmyip();
++#endif
+   n->type=NET_QUERY;
+   n->next=NULL;
+   n->channel = malloc(sizeof(struct channel_t));
+@@ -496,7 +520,11 @@ void init_playback_port()
+   /* no existing entry */
+   n->next = malloc(sizeof(struct net_t));
+   n = n->next;
++#ifdef USE_IPV6
++  getmyip(&n->addr);
++#else
+   n->addr=getmyip();
++#endif
+   n->type=NET_PLAYBACK;
+   n->next=NULL;
+   n->channel = malloc(sizeof(struct channel_t));
+@@ -2317,8 +2345,21 @@ int net_query_playerquery(struct net_t *n, char *buf)
+         return 1;
+ }
+ 
++#ifdef USE_IPV6
+ int net_query_IPconvert(struct net_t *n, char *host)
+ {
++	char ip_str[INET6_ADDRSTRLEN];
++
++	inet_ntop(AF_INET6, &n->addr, (char *)ip_str, INET6_ADDRSTRLEN);
++	if (n->host[0] == 0 || strlen(n->host) >= UHOSTLEN)
++		sprintf(host, "%s",ip_str);
++	else
++		strcpy(host, n->host);
++	return 1;
++}
++#else
++int net_query_IPconvert(struct net_t *n, char *host)
++{
+ 	unsigned char x1, x2, x3, x4;
+ 	IP ip;
+ 	ip = n->addr;
+@@ -2333,6 +2374,7 @@ int net_query_IPconvert(struct net_t *n, char *host)
+ 		strcpy(host, n->host);
+ 	return 1;
+ }
++#endif
+ 
+ /* Trim weird useless chars at the end */
+ int net_query_TrimStr(char *p)
+@@ -3468,8 +3510,12 @@ void net_query_init(struct net_t *n, char *buf)
+ /* Someone has just connected. So lets answer them */
+ void net_query(struct net_t *n, char *buf)
+ {
++#ifdef USE_IPV6
++	struct in6_addr ip;
++#else
+ 	IP ip;
+ 	/* unsigned char x1, x2, x3, x4; */
++#endif
+ 	struct net_t *net;
+ 
+ 	net=malloc(sizeof(struct net_t));
+@@ -3481,7 +3527,11 @@ void net_query(struct net_t *n, char *buf)
+ 	net->sock=answer(n->sock,&ip,0);
+ 	setopt(net->sock, 0);
+ 
++#ifdef USE_IPV6
++	memcpy(&net->addr, &ip, sizeof(ip));
++#else
+ 	net->addr=ip;
++#endif
+ 	net->port=n->port;
+ 	net->securitylevel=LEVEL_NORMAL;
+ 	net->status=STAT_NOTPLAYING;
+@@ -3490,6 +3540,9 @@ void net_query(struct net_t *n, char *buf)
+ 	strcpy(net->nick, "(telnet)");
+ 	do_async_dns(net);
+ 	net->type = NET_WAITINGFORDNS;
++#ifdef USE_IPV6
++net_donedns(net);
++#endif
+ }
+ 
+ void net_query_donedns (struct net_t *net) {
+@@ -3646,8 +3699,12 @@ int net_playback_isvalidnick(char *p)
+ /* Someone has just connected. So lets answer them */
+ void net_playback(struct net_t *n, char *buf)
+ {
++#ifdef USE_IPV6
++	struct in6_addr ip;
++#else
+         IP ip;
+         /* unsigned char x1, x2, x3, x4; */
++#endif
+         struct net_t *net;
+ 
+         net=malloc(sizeof(struct net_t));
+@@ -3659,7 +3716,11 @@ void net_playback(struct net_t *n, char *buf)
+         net->sock=answer(n->sock,&ip,0);
+ 		setopt(net->sock, 0);
+ 
++#ifdef USE_IPV6
++	memcpy(&net->addr, &ip, sizeof(ip));
++#else
+         net->addr=ip;
++#endif
+         net->port=n->port;
+         net->securitylevel=LEVEL_NORMAL;
+         net->status=STAT_NOTPLAYING;
+@@ -3669,6 +3730,9 @@ void net_playback(struct net_t *n, char *buf)
+         strcpy(net->nick, "(telnet)");
+ 		do_async_dns(net);
+ 		net->type = NET_WAITINGFORDNS;
++#ifdef USE_IPV6
++net_donedns(net);
++#endif
+ }
+ 
+ void net_playback_donedns(struct net_t *net) {
+@@ -4348,7 +4412,11 @@ void net_telnet_init(struct net_t *n, char *buf)
+ /* Someone has just connected. So lets answer them */
+ void net_telnet(struct net_t *n, char *buf)
+   {
++#ifdef USE_IPV6
++    static struct in6_addr ip;
++#else
+     unsigned long ip;
++#endif
+     struct net_t *net;
+ 
+ 
+@@ -4361,7 +4429,11 @@ void net_telnet(struct net_t *n, char *buf)
+       net->sock=answer(n->sock,&ip,0);
+ 	setopt(net->sock, 0);
+     /* Save the port stuff */
++#ifdef USE_IPV6
++    memcpy(&net->addr, &ip, sizeof(ip));
++#else
+     net->addr=ip;
++#endif
+     net->port=n->port;
+     net->securitylevel=LEVEL_NORMAL;
+     net->status=STAT_NOTPLAYING;
+@@ -4373,12 +4445,24 @@ void net_telnet(struct net_t *n, char *buf)
+     net->timeout_ingame = 30;
+ 	do_async_dns(net);
+     net->type = NET_WAITINGFORDNS;
++#ifdef USE_IPV6
++net_donedns(net);
++#endif
+ 	/* net has not been added to socket list */
+ 	/* EOF on this will be EOF on unknown socket */
+ 	
+ }
+ 
++#ifdef USE_IPV6
+ void do_async_dns (struct net_t *n) {
++	char ip_str[INET6_ADDRSTRLEN];
++
++	inet_ntop(AF_INET6, &n->addr, (char *)ip_str, INET6_ADDRSTRLEN);
++	sprintf(n->host, "%s", ip_str);
++	sprintf(n->ip, "%s", ip_str);
++}
++#else
++void do_async_dns (struct net_t *n) {
+ 	char n1[4], n2[4], n3[4], n4[4];
+ 	char buf[1024];
+     int res_id;
+@@ -4393,11 +4477,14 @@ void do_async_dns (struct net_t *n) {
+ 	res_id = query_do(buf);
+ 	add_rnet(n, res_id);
+ }
++#endif
+ 
+ void net_donedns(struct net_t *net) {
+ 
+ 	if (net->type != NET_WAITINGFORDNS) return;
++#ifndef USE_IPV6
+ 	rem_rnet(net);
++#endif
+     switch(net->port) {
+     	case TELNET_PORT: { net_telnet_donedns (net); break; }
+     	case QUERY_PORT:  { net_query_donedns (net); break; }

@@ -1,0 +1,206 @@
+$OpenBSD: patch-src_net_c,v 1.1.1.1 2007/09/06 17:58:56 simon Exp $
+--- src/net.c.orig	Tue Apr 24 04:31:29 2001
++++ src/net.c	Thu Sep  6 10:14:52 2007
+@@ -6,21 +6,25 @@
+ 
+ 
+ /* i read somewhere that memcpy() is broken on some machines */
+-/* it's easy to replace, so i'm not gonna take any chances, because it's
+-*/
++/* it's easy to replace, so i'm not gonna take any chances, because it's */
+ /* pretty important that it work correctly here */
+-void my_memcpy(dest,src,len)
++/* XXX until the contrary is proved, I'll use ISO C functions instead of
++ * my_*. */
++/* void my_memcpy(dest,src,len)
+ char *dest,*src; int len;
+ {
+   while (len--) *dest++=*src++;
+ }
++*/
+ 
+ /* bzero() is bsd-only, so here's one for non-bsd systems */
++/* XXX but memset is ISO C, replaced.
+ void my_bzero(dest,len)
+ char *dest; int len;
+ {
+   while (len--) *dest++=0;
+ }
++*/
+ 
+ /* initialize the socklist */
+ void init_net()
+@@ -52,14 +56,39 @@ int expmem_net()
+ void getmyhostname(s)
+ char *s;
+ {
+-  struct hostent *hp; char *p;
++  /* struct hostent *hp; */
++  char *p;
+  
+-  p=getenv("HOSTNAME"); if (p!=NULL) {
+-    strncpy(s,p, UHOSTLEN);
+-    s[UHOSTLEN] = 0;
+-    if (strchr(s,'.')!=NULL) return;
++  if ( (p=getenv("HOSTNAME")) != NULL )
++  {
++    strncpy(s, p, UHOSTLEN);
++    s[UHOSTLEN] = '\0';
++    if (strchr(s,'.') == NULL)
++    {
++	    strncat(s,".localnet", UHOSTLEN - strlen(s));
++	    setenv("HOSTNAME",(const char*)s, 1);
++    }
++    return;
+   }
+-  gethostname(s,80);
++  else if (gethostname(s,MYMAXHOSTNAMELEN) == 0)
++  {
++		s[UHOSTLEN] = '\0';
++    if (strchr(s,'.') == NULL)
++    {
++	    strncat(s,".localnet", UHOSTLEN - strlen(s));
++	    setenv("HOSTNAME",(const char*)s, 1);
++    }
++    return;
++  }
++  else
++  {
++	memset(s,'\0',UHOSTLEN);
++	strncpy(s, "localhost.localnet", UHOSTLEN);
++	s[UHOSTLEN] = '\0';
++	setenv("HOSTNAME",(const char*)s,1);
++	return;
++  }
++/*  gethostname(s,MYMAXHOSTNAMELEN);
+   if (strchr(s,'.')!=NULL) return;
+   hp=gethostbyname(s);
+   if (hp==NULL)
+@@ -73,9 +102,27 @@ char *s;
+   s[UHOSTLEN] = 0;
+   if (strchr(s,'.')==NULL)
+     fatal("Can't determine your hostname!",0);   
++*/
+ }
+ 
+ /* get my ip number */
++#ifdef USE_IPV6
++void getmyip(struct in6_addr *ip)
++{
++  struct addrinfo hints, *res;
++  char s[121];
++
++  gethostname(s,120);
++  memset(&hints, 0, sizeof(hints));
++  hints.ai_family = AF_UNSPEC;
++  hints.ai_socktype = SOCK_STREAM;
++  if (getaddrinfo(s, NULL, &hints, &res)) {
++    fatal("Hostname self-lookup failed.",0);
++  }
++  memcpy(ip, res->ai_addr, res->ai_addrlen);
++  freeaddrinfo(res);
++}
++#else
+ IP getmyip()
+ {
+   struct hostent *hp; char s[121]; IP ip; struct in_addr *in;
+@@ -88,6 +135,7 @@ IP getmyip()
+   ip=(IP)(in->s_addr);
+   return ip;
+ }
++#endif
+ 
+ void neterror(s)
+ char *s;
+@@ -185,7 +233,13 @@ int parm, x;
+ int getsock(options)
+ int options;
+ {
+-  int sock=socket(AF_INET,SOCK_STREAM,0);
++  int sock;
++#ifdef USE_IPV6
++  if ( (sock = socket(AF_INET6,SOCK_STREAM,0)) <0 )
++	  sock=socket(AF_INET,SOCK_STREAM,0);
++#else
++  sock=socket(AF_INET,SOCK_STREAM,0);
++#endif
+   if (sock<0) fatal("Can't open a socket at all!",0);
+   setsock(sock,options); return sock;
+ }
+@@ -228,10 +282,28 @@ int sock;
+ int open_listen_socket(port,bindip)
+ int *port; char *bindip;
+ {
++#ifdef USE_IPV6
++  int sock,addrlen; struct sockaddr_in6 name;
++
++  sock=getsock(SOCK_LISTEN);
++  memset((char *)&name,'\0',sizeof(struct sockaddr_in6));
++  name.sin6_family=AF_INET6;
++  name.sin6_port=htons(*port);   /* 0 = just assign us a port */
++  if (bind(sock,(struct sockaddr *)&name,sizeof(name))<0) {
++printf("ERROR\n");
++    killsock(sock); return -1;
++  }
++  /* what port are we on? */
++  addrlen=sizeof(name);
++  if (getsockname(sock,(struct sockaddr *)&name,&addrlen)<0) {
++    killsock(sock); return -1;
++  }
++  *port=ntohs(name.sin6_port);
++#else
+   int sock,addrlen; struct sockaddr_in name;
+ 
+   sock=getsock(SOCK_LISTEN);
+-  my_bzero((char *)&name,sizeof(struct sockaddr_in));
++  memset((char *)&name,'\0',sizeof(struct sockaddr_in));
+   name.sin_family=AF_INET;
+   name.sin_port=htons(*port);   /* 0 = just assign us a port */
+   name.sin_addr.s_addr=getip(bindip);
+@@ -246,6 +318,7 @@ printf("ERROR\n");
+     killsock(sock); return -1;
+   }
+   *port=ntohs(name.sin_port);
++#endif
+   if (listen(sock,5)<0) { printf("Erk\n"); killsock(sock); return -1; }
+   return sock;
+ }
+@@ -280,7 +353,21 @@ unsigned long ip;
+ 
+ /* short routine to answer a connect received on a socket made previously
+ */
++#ifdef USE_IPV6
+ int answer(sock,ip,binary)
++int sock; struct in6_addr *ip; int binary;
++{
++  int new_sock,addrlen; struct sockaddr_in6 from;
++  addrlen=sizeof(struct sockaddr_in6);
++  new_sock=accept(sock,(struct sockaddr *)&from,&addrlen);
++  if (new_sock<0) return -1;
++  memcpy(ip, &from.sin6_addr, sizeof(struct in6_addr));
++  /* set up all the normal socket crap */
++  // setsock(new_sock,(binary ? SOCK_BINARY : 0));
++  return new_sock;
++}
++#else
++int answer(sock,ip,binary)
+ int sock; unsigned long *ip; int binary;
+ {
+   int new_sock,addrlen; struct sockaddr_in from;
+@@ -293,6 +380,7 @@ int sock; unsigned long *ip; int binary;
+   // setsock(new_sock,(binary ? SOCK_BINARY : 0));
+   return new_sock;
+ }
++#endif
+ 
+ /* attempts to read from all the sockets in socklist */
+ /* fills s with up to 1023 bytes if available, and returns 0 */
+@@ -437,7 +525,7 @@ char *s; int *len;
+     s[0]=0; return slist->sock;
+   }
+   if (slist->flags & SOCK_BINARY) {
+-    my_memcpy(s,xx,*len);
++    memcpy(s,xx,*len);
+     return slist->sock;      
+   }
+   if (slist->flags & SOCK_LISTEN) return slist->sock;

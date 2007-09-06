@@ -1,0 +1,23 @@
+$OpenBSD: patch-bin_game_ban_example,v 1.1.1.1 2007/09/06 17:58:56 simon Exp $
+--- bin/game.ban.example.orig	Thu Sep  6 16:02:20 2007
++++ bin/game.ban.example	Thu Sep  6 16:02:44 2007
+@@ -5,15 +5,15 @@
+ # All lines beginning with "#" are treated as a comment
+ 
+ #Cheating from host 1cust007.tnt2.billgates.da.uu.net
+-*.tnt*.billgates.da.uu.net
++#*.tnt*.billgates.da.uu.net
+ 
+ #Flooding from 192.168.33.200. Ban all C class IP block
+ #Date: 08/28/1999
+-192.168.33.*
++#192.168.33.*
+ 
+ #Ban all hostname contain the word foobar
+-*foobar*
++#*foobar*
+ 
+ #Ban IP block from 192.168.10.0 to 192.168.19.255
+-192.168.1?.*
++#192.168.1?.*
+ 
