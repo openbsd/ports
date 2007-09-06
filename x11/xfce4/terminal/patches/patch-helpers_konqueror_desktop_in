@@ -1,0 +1,11 @@
+$OpenBSD: patch-helpers_konqueror_desktop_in,v 1.1 2007/09/06 18:44:52 steven Exp $
+--- helpers/konqueror.desktop.in.orig	Wed Sep  5 18:28:32 2007
++++ helpers/konqueror.desktop.in	Wed Sep  5 18:28:40 2007
+@@ -5,6 +5,6 @@ _Name=Konqueror
+ Type=Application
+ X-Terminal-Binaries=konqueror;
+ X-Terminal-Category=WebBrowser
+-X-Terminal-Command=%B "%u"
++X-Terminal-Command=%B %u
+ 
+ 

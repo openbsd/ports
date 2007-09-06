@@ -1,0 +1,44 @@
+$OpenBSD: patch-terminal_terminal-helper_c,v 1.1 2007/09/06 18:44:52 steven Exp $
+--- terminal/terminal-helper.c.orig	Wed Sep  5 18:32:23 2007
++++ terminal/terminal-helper.c	Wed Sep  5 18:34:30 2007
+@@ -349,6 +349,8 @@ terminal_helper_execute (TerminalHelper *helper,
+   gchar       *argv[4];
+   gchar       *command;
+   gchar       *t;
++  gchar       *escaped;
++  gchar       **parts;
+   guint        n;
+ 
+   g_return_if_fail (TERMINAL_IS_HELPER (helper));
+@@ -359,6 +361,10 @@ terminal_helper_execute (TerminalHelper *helper,
+     if (s[0] == '%' && g_ascii_tolower (s[1]) == 'u')
+       ++n;
+ 
++  parts = g_strsplit (uri, "$", 0);
++  escaped = g_shell_quote (g_strjoinv("\$", parts));
++  g_strfreev (parts);
++
+   if (n > 0)
+     {
+       command = g_new (gchar, strlen (helper->command) + n * strlen (uri) + 1);
+@@ -366,7 +372,7 @@ terminal_helper_execute (TerminalHelper *helper,
+         {
+           if (s[0] == '%' && g_ascii_tolower (s[1]) == 'u')
+             {
+-              for (u = uri; *u != '\0'; )
++              for (u = escaped; *u != '\0'; )
+                 *t++ = *u++;
+               s += 2;
+             }
+@@ -379,8 +385,10 @@ terminal_helper_execute (TerminalHelper *helper,
+     }
+   else
+     {
+-      command = g_strconcat (helper->command, " ", uri, NULL);
++      command = g_strconcat (helper->command, " ", escaped, NULL);
+     }
++
++  g_free (escaped);
+ 
+   argv[0] = "/bin/sh";
+   argv[1] = "-c";

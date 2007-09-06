@@ -1,0 +1,9 @@
+$OpenBSD: patch-helpers_exo-open-mailer_desktop_in,v 1.1 2007/09/06 18:44:52 steven Exp $
+--- helpers/exo-open-mailer.desktop.in.orig	Wed Sep  5 18:27:06 2007
++++ helpers/exo-open-mailer.desktop.in	Wed Sep  5 18:27:16 2007
+@@ -5,4 +5,4 @@ _Name=Default Mail Reader (Xfce)
+ Type=Application
+ X-Terminal-Binaries=exo-open
+ X-Terminal-Category=MailReader
+-X-Terminal-Command=%B --launch MailReader "%u"
++X-Terminal-Command=%B --launch MailReader %u

@@ -1,0 +1,9 @@
+$OpenBSD: patch-helpers_mutt_desktop_in,v 1.1 2007/09/06 18:44:52 steven Exp $
+--- helpers/mutt.desktop.in.orig	Wed Sep  5 18:30:02 2007
++++ helpers/mutt.desktop.in	Wed Sep  5 18:30:09 2007
+@@ -5,4 +5,4 @@ _Name=Mutt
+ Type=Application
+ X-Terminal-Binaries=mutt;
+ X-Terminal-Category=MailReader
+-X-Terminal-Command=Terminal -x %B "%u"
++X-Terminal-Command=Terminal -x %B %u

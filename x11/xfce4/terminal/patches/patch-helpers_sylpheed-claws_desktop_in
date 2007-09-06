@@ -1,0 +1,9 @@
+$OpenBSD: patch-helpers_sylpheed-claws_desktop_in,v 1.1 2007/09/06 18:44:52 steven Exp $
+--- helpers/sylpheed-claws.desktop.in.orig	Wed Sep  5 18:31:31 2007
++++ helpers/sylpheed-claws.desktop.in	Wed Sep  5 18:31:39 2007
+@@ -7,4 +7,4 @@ Type=Application
+ StartupNotify=true
+ X-Terminal-Binaries=sylpheed-claws;
+ X-Terminal-Category=MailReader
+-X-Terminal-Command=%B --compose "%u"
++X-Terminal-Command=%B --compose %u

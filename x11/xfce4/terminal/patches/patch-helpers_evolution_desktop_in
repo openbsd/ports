@@ -1,0 +1,9 @@
+$OpenBSD: patch-helpers_evolution_desktop_in,v 1.1 2007/09/06 18:44:52 steven Exp $
+--- helpers/evolution.desktop.in.orig	Thu Sep  6 19:25:45 2007
++++ helpers/evolution.desktop.in	Thu Sep  6 19:25:50 2007
+@@ -5,4 +5,4 @@ _Name=Novell Evolution
+ Type=Application
+ X-Terminal-Binaries=evolution-2.2;evolution-2.0;evolution-1.6;evolution-1.5;evolution-1.4;evolution;
+ X-Terminal-Category=MailReader
+-X-Terminal-Command=%B "mailto:%u"
++X-Terminal-Command=%B mailto:%u
