@@ -1,0 +1,16 @@
+$OpenBSD: patch-app_conference_c,v 1.1 2007/09/06 12:31:31 sthen Exp $
+--- app_conference.c.orig	Tue Jul 10 01:25:01 2007
++++ app_conference.c	Tue Jul 10 01:25:52 2007
+@@ -20,10 +20,10 @@
+  *
+  */
+ 
+-#include "asterisk/autoconfig.h"
++#include <asterisk/autoconfig.h>
+ #include "app_conference.h"
+ #include "common.h"
+-#include "asterisk/module.h"
++#include <asterisk/module.h>
+ 
+ /*
+ 

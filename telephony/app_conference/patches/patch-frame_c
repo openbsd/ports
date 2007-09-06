@@ -1,0 +1,12 @@
+$OpenBSD: patch-frame_c,v 1.1 2007/09/06 12:31:31 sthen Exp $
+--- frame.c.orig	Tue Jul 10 01:25:17 2007
++++ frame.c	Tue Jul 10 01:26:10 2007
+@@ -20,7 +20,7 @@
+  *
+  */
+ 
+-#include "asterisk/autoconfig.h"
++#include <asterisk/autoconfig.h>
+ #include "frame.h"
+ 
+ conf_frame* mix_frames( conf_frame* frames_in, int speaker_count, int listener_count )

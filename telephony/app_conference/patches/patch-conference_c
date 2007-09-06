@@ -1,20 +1,15 @@
-$OpenBSD: patch-conference_c,v 1.1.1.1 2005/11/10 21:13:11 jolan Exp $
---- conference.c.orig	Thu Nov 10 13:22:21 2005
-+++ conference.c	Thu Nov 10 13:50:48 2005
-@@ -17,6 +17,7 @@
+$OpenBSD: patch-conference_c,v 1.2 2007/09/06 12:31:31 sthen Exp $
+--- conference.c.orig	Tue Jul 10 00:58:58 2007
++++ conference.c	Tue Jul 10 01:26:05 2007
+@@ -20,9 +20,9 @@
+  *
   */
  
+-#include "asterisk/autoconfig.h"
++#include <asterisk/autoconfig.h>
  #include "conference.h"
+-#include "asterisk/utils.h"
 +#include <asterisk/utils.h>
  
  //
  // static variables
-@@ -618,7 +619,7 @@ struct ast_conference* create_conf( char
- 	// acquire conference mutexes
- 	ast_mutex_lock( &conf->lock ) ;
- 	
--	if ( pthread_create( &conf->conference_thread, NULL, (void*)conference_exec, conf ) == 0 ) 
-+	if ( ast_pthread_create( &conf->conference_thread, NULL, (void*)conference_exec, conf ) == 0 ) 
- 	{
- 		// detach the thread so it doesn't leak
- 		pthread_detach( conf->conference_thread ) ;
