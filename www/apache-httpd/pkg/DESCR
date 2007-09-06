@@ -8,4 +8,5 @@ This package provides an unaudited version of apache.  For security
 reasons, users are STRONGLY encouraged to use the system httpd(8)
 instead, if at all possible.
 
-
+Flavors:
+	ldap	- Enable LDAP authentication and caching support

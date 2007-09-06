@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.ldap,v 1.1 2007/09/06 07:33:53 merdely Exp $
+lib/apache2/mod_authnz_ldap.so
+lib/apache2/mod_ldap.so
+share/doc/ap2-mod_auth_ldap/
+share/doc/ap2-mod_auth_ldap/mod_authnz_ldap.html
+share/doc/ap2-mod_auth_ldap/mod_authnz_ldap.html.en
+share/doc/ap2-mod_auth_ldap/mod_ldap.html
+share/doc/ap2-mod_auth_ldap/mod_ldap.html.en

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/03/25 17:40:55 deanna Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/06 07:33:53 merdely Exp $
 
-COMMENT=	"apache HTTP server"
+COMMENT=	apache HTTP server
 
 V=		2.2.4
-PKGNAME=	apache-httpd-${V}
+PKGNAME=	apache-httpd-${V}p0
 DISTNAME=	httpd-${V}
 
 CATEGORIES=	www net
@@ -21,7 +21,17 @@ NO_REGRESS=		Yes
 
 WANTLIB=		c crypto m ssl expat apr-1 db.>=4 z
 
+FLAVORS=		ldap
+FLAVOR?=
+
+.if ${FLAVOR:L:Mldap}
+CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
+WANTLIB+=		asn1 com_err gssapi krb5 sasl2
+LIB_DEPENDS+=		ldap,lber::databases/openldap
+LIB_DEPENDS+=		aprutil-1.>=2:apr-util-*-ldap:devel/apr-util,ldap
+.else
 LIB_DEPENDS=		aprutil-1.>=2::devel/apr-util
+.endif
 
 MODULES=		converters/libiconv
 
@@ -85,5 +95,14 @@ post-install:
 .for i in ${A2SBIN}
 	mv ${PREFIX}/sbin/${i} ${PREFIX}/sbin/${i}2
 .endfor
+
+.if ${FLAVOR:L:Mldap}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ap2-mod_auth_ldap
+.for i in mod_ldap.html mod_authnz_ldap.html.en \
+	mod_authnz_ldap.html mod_ldap.html.en
+	${INSTALL_DATA} ${WRKSRC}/docs/manual/mod/${i} \
+		${PREFIX}/share/doc/ap2-mod_auth_ldap/
+.endfor
+.endif
 
 .include <bsd.port.mk>

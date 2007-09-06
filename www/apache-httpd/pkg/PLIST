@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/01/09 11:18:13 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/09/06 07:33:53 merdely Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -1441,3 +1441,4 @@ share/examples/apache2/icons/world2.png
 @sample /var/apache2/icons/world2.png
 share/examples/apache2/logs/
 @sample /var/apache2/logs/
+%%ldap%%
