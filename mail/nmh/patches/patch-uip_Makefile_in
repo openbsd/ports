@@ -1,16 +1,16 @@
-$OpenBSD: patch-uip_Makefile_in,v 1.1 2002/09/30 00:48:42 pvalchev Exp $
---- uip/Makefile.in.orig	Thu Jan  6 14:30:07 2000
-+++ uip/Makefile.in	Mon Sep 30 18:38:02 2002
-@@ -273,11 +273,7 @@ install-misc:
+$OpenBSD: patch-uip_Makefile_in,v 1.2 2007/09/06 18:57:34 naddy Exp $
+--- uip/Makefile.in.orig	Sun Nov 13 14:38:32 2005
++++ uip/Makefile.in	Sun Aug  6 17:55:30 2006
+@@ -281,11 +281,7 @@ install-misc:
  
  # install commands with special installation needs (thus no $(SCMDS) use here)
  install-scmds:
 -	if test x$(SETGID_MAIL) != x; then \
--	  $(INSTALL_PROGRAM) -g $(MAIL_SPOOL_GRP) -m 2755 inc $(bindir)/$$cmd; \
+-	  $(INSTALL_PROGRAM) -g $(MAIL_SPOOL_GRP) -m 2755 inc $(DESTDIR)$(bindir)/$$cmd; \
 -	else \
--	  $(INSTALL_PROGRAM)                 inc $(bindir)/$$cmd; \
+-	  $(INSTALL_PROGRAM)                 inc $(DESTDIR)$(bindir)/$$cmd; \
 -	fi
-+	$(INSTALL_PROGRAM)                 inc $(bindir)/$$cmd; \
++	$(INSTALL_PROGRAM)                 inc $(DESTDIR)$(bindir)/$$cmd; \
  
  uninstall:
  	for cmd in $(CMDS); do \
