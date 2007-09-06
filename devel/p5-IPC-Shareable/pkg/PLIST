@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/06 18:10:48 simon Exp $
+${P5SITE}/IPC/
+${P5SITE}/IPC/Shareable/
+${P5SITE}/IPC/Shareable.pm
+${P5SITE}/IPC/Shareable/SharedMem.pm
+@man man/man3p/IPC::Shareable.3p
+@man man/man3p/IPC::Shareable::SharedMem.3p
