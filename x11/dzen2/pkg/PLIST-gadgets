@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST-gadgets,v 1.1.1.1 2007/09/06 19:46:01 merdely Exp $
+bin/dbar
+bin/gcpubar
+bin/gdbar
+bin/kittscanner.sh
+bin/noisyalert.sh
+bin/textwidth
+share/doc/dzen2/README.dbar
+share/doc/dzen2/README.gcpubar
+share/doc/dzen2/README.gdbar
+share/doc/dzen2/README.kittscanner
+share/doc/dzen2/README.textwidth
+share/pixmaps/
+share/pixmaps/alert.xbm
+share/pixmaps/ball.xbm
+share/pixmaps/battery.xbm
+share/pixmaps/envelope.xbm
+share/pixmaps/music.xbm
+share/pixmaps/pause.xbm
+share/pixmaps/play.xbm
+share/pixmaps/volume.xbm
