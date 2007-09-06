@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.305 2007/09/01 22:19:42 kili Exp $
+# $OpenBSD: Makefile,v 1.306 2007/09/06 19:46:35 merdely Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -36,6 +36,7 @@
      SUBDIR += dmenu
      SUBDIR += driftnet
      SUBDIR += dwm
+     SUBDIR += dzen2
      SUBDIR += e16keyedit
      SUBDIR += ecoliercourt-fonts
      SUBDIR += emiclock
