@@ -1,0 +1,18 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_extutil_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/extutil.h.orig	Thu Jul  5 05:03:40 2007
++++ j2se/src/solaris/native/sun/awt/extutil.h	Fri Jul 27 18:25:14 2007
+@@ -58,7 +58,7 @@ in this Software without prior written authorization f
+  */
+ /* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ 
+ #ifndef _EXTUTIL_H_
+ #define _EXTUTIL_H_
+@@ -248,4 +248,4 @@ char *proc (Display *dpy, int code, XExtCodes *codes, 
+ 	char *proc(Display *dpy, int code, XExtCodes *codes, char *buf, int n)
+ #endif
+ 
+-#endif /* __linux__ */
++#endif /* __linux__ || _ALLBSD_SOURCE */

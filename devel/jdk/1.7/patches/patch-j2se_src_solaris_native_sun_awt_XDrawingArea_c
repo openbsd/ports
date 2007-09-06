@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_XDrawingArea_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/XDrawingArea.c.orig	Thu Jul  5 05:03:38 2007
++++ j2se/src/solaris/native/sun/awt/XDrawingArea.c	Fri Jul 27 18:25:14 2007
+@@ -32,7 +32,11 @@
+ #include <Xm/XmP.h>
+ 
+ #include <stdio.h>
++#if defined(_ALLBSD_SOURCE)
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ 
+ #ifdef DEBUG
+ #include <jvm.h>  /* To get jio_fprintf() */

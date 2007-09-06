@@ -1,0 +1,19 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_java2d_j2d_md_h,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/java2d/j2d_md.h.orig	Thu Jul  5 05:03:44 2007
++++ j2se/src/solaris/native/sun/java2d/j2d_md.h	Fri Jul 27 18:25:14 2007
+@@ -29,10 +29,13 @@
+ 
+ /*
+  * Linux version of <sys/types.h> does not define intptr_t
++ * NetBSD's doesn't either, so let's do it for everyone.
+  */
+-#ifdef __linux__
++#if defined(__OpenBSD__)
++#include <inttypes.h>
++#elif defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <stdint.h>
+-#endif /* __linux__ */
++#endif /* __linux__ || _ALLBSD_SOURCE */
+ 
+ typedef unsigned char	jubyte;
+ typedef unsigned short	jushort;

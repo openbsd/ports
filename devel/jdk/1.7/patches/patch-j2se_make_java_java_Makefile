@@ -1,0 +1,29 @@
+$OpenBSD: patch-j2se_make_java_java_Makefile,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/java/java/Makefile.orig	Fri Jul 13 23:18:23 2007
++++ j2se/make/java/java/Makefile	Fri Jul 13 23:19:52 2007
+@@ -167,8 +167,10 @@ OTHER_INCLUDES += -I$(PLATFORM_SRC)/native/java/util
+ # Is the altzone extern documented in ctime(3C) available?
+ #
+ ifneq ($(PLATFORM), windows)
++ifneq ($(PLATFORM), bsd)
+ HAVE_ALTZONE=true
+ endif
++endif
+ 
+ ifeq ($(HAVE_ALTZONE),true)
+ OTHER_CPPFLAGS += -DHAVE_ALTZONE
+@@ -205,9 +207,14 @@ ifeq ($(PLATFORM),windows)
+ OTHER_LDLIBS += $(JVMLIB) -libpath:$(OBJDIR)/../../../fdlibm/$(OBJDIRNAME) fdlibm.lib \
+ 		       -libpath:$(OBJDIR)/../../../verify/$(OBJDIRNAME) verify.lib
+ else
++ifeq ($(PLATFORM), bsd)
++OTHER_LDLIBS += $(JVMLIB) -lverify -L$(OBJDIR)/../../../fdlibm/$(OBJDIRNAME) \
++               -lfdlibm.$(ARCH)
++else
+ LIBSOCKET = -lsocket
+ OTHER_LDLIBS += $(JVMLIB) -lverify $(LIBSOCKET) -lnsl -ldl \
+ 		-L$(OBJDIR)/../../../fdlibm/$(OBJDIRNAME) -lfdlibm.$(ARCH)
++endif
+ endif
+ 
+ #

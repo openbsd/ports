@@ -1,0 +1,13 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_robot_common_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/robot_common.c.orig	Thu Jul  5 05:03:43 2007
++++ j2se/src/solaris/native/sun/awt/robot_common.c	Fri Jul 27 18:25:14 2007
+@@ -27,6 +27,9 @@
+     #error This file should not be included in headless library
+ #endif
+ 
++#ifdef _ALLBSD_SOURCE
++#include <stdlib.h>
++#endif
+ #include "robot_common.h"
+ 
+ /*

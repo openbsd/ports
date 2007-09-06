@@ -1,0 +1,34 @@
+$OpenBSD: patch-j2se_src_closed_share_native_sun_java2d_cmm_kcms_thread_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/sun/java2d/cmm/kcms/thread.c.orig	Thu Jul  5 03:44:32 2007
++++ j2se/src/closed/share/native/sun/java2d/cmm/kcms/thread.c	Sun Jul 29 22:48:37 2007
+@@ -30,6 +30,11 @@
+ #include <signal.h>
+ #include <asm/errno.h>
+ #endif
++#if defined (KPBSD)
++#include <pthread.h>
++#include <signal.h>
++#include <errno.h>
++#endif
+ 
+ /***************************************************************************
+  * Windows (32 bit) Thread Creation, Termination and Manipulation functions
+@@ -652,7 +657,7 @@ KpGetCurrentThread (void)
+ /*******************************************************************
+  * LINUX Thread Creation, Termination and Manipulation functions
+  *******************************************************************/
+-#if defined (KPLINUX)
++#if defined (KPLINUX) || defined (KPBSD)
+ 
+ /******************************************************************
+  * KpThreadCreate (LINUX Version)
+@@ -690,8 +695,7 @@ int				retVal;
+ 
+ 	if (NULL == flags) { }
+ 
+-	pthread_attr_init(&attr);
+-	retVal = pthread_create (&thread, &attr,
++	retVal = pthread_create (&thread, NULL,
+ 				startFunc, arg);
+ 	if (0 != retVal) {
+ 		return (0);

@@ -1,0 +1,39 @@
+$OpenBSD: patch-j2se_src_solaris_hpi_include_largefile_bsd_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/hpi/include/largefile_bsd.h.orig	Mon Jul 30 08:41:19 2007
++++ j2se/src/solaris/hpi/include/largefile_bsd.h	Mon Jul 30 08:42:05 2007
+@@ -23,14 +23,28 @@
+  *
+  */
+ 
+-#ifndef _JAVASOFT_LINUX_LARGEFILE_SUPPORT_H_
+-#define _JAVASOFT_LINUX_LARGEFILE_SUPPORT_H_
++#ifndef _JAVASOFT_BSD_LARGEFILE_SUPPORT_H_
++#define _JAVASOFT_BSD_LARGEFILE_SUPPORT_H_
+ 
+-/*
+- * For building on glibc-2.0 we need to define stat64 here.
+- */
+-
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ 
+-#endif /* _JAVASOFT_LINUX_LARGEFILE_SUPPORT_H_ */
++/* define compatibility macros */
++#define                off64_t         off_t
++#define                stat64          stat
++
++#define                F_SETLK64       F_SETLK
++#define                F_SETLKW64      F_SETLKW
++
++#define                lseek64         lseek
++#define                ftruncate64     ftruncate
++#define                open64          open
++#define                fstat64         fstat
++#define                flock64         flock
++#define                mmap64          mmap
++#define                fdatasync       fsync
++
++#define                pread64         pread
++#define                pwrite64        pwrite
++
++#endif /* _JAVASOFT_BSD_LARGEFILE_SUPPORT_H_ */

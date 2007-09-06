@@ -1,7 +1,21 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/build/bsd/makefiles/gcc.make.orig	Mon Apr 30 19:56:06 2007
-+++ hotspot/build/bsd/makefiles/gcc.make	Mon Apr 30 21:42:08 2007
-@@ -50,19 +50,12 @@ PICFLAG = -fPIC
+$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.2 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/build/bsd/makefiles/gcc.make.orig	Thu Aug  2 09:35:19 2007
++++ hotspot/build/bsd/makefiles/gcc.make	Thu Aug  2 09:37:28 2007
+@@ -25,9 +25,10 @@
+ #------------------------------------------------------------------------
+ # CC, CPP & AS
+ 
+-CPP = g++
+-CC  = gcc
+-AS  = $(CC) -c
++CXX ?= g++
++CPP  = $(CXX)
++CC  ?= gcc
++AS   = $(CC) -c
+ 
+ # -dumpversion in gcc-2.91 shows "egcs-2.91.66". In later version, it only
+ # prints the numbers (e.g. "2.95", "3.2.1")
+@@ -50,19 +51,12 @@ PICFLAG = -fPIC
  
  VM_PICFLAG/LIBJVM = $(PICFLAG)
  VM_PICFLAG/AOUT   =
@@ -22,7 +36,7 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.1.1.1 2007/05/08 17:06:
  CFLAGS += -fcheck-new
  
  ARCHFLAG = $(ARCHFLAG/$(BUILDARCH))
-@@ -129,6 +122,11 @@ endif
+@@ -129,6 +123,11 @@ endif
  # Enable linker optimization
  LFLAGS += -Xlinker -O1
  
@@ -34,7 +48,7 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.1.1.1 2007/05/08 17:06:
  # Use $(MAPFLAG:FILENAME=real_file_name) to specify a map file.
  MAPFLAG = -Xlinker --version-script=FILENAME
  
-@@ -136,7 +134,7 @@ MAPFLAG = -Xlinker --version-script=FILENAME
+@@ -136,7 +135,7 @@ MAPFLAG = -Xlinker --version-script=FILENAME
  SONAMEFLAG = -Xlinker -soname=SONAME
  
  # Build shared library

@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_net_PlainSocketImpl_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/java/net/PlainSocketImpl.c.orig	Thu Jul  5 05:03:38 2007
++++ j2se/src/solaris/native/java/net/PlainSocketImpl.c	Fri Jul 27 18:25:14 2007
+@@ -527,9 +527,11 @@ Java_java_net_PlainSocketImpl_socketConnect(JNIEnv *en
+ 	if (connect_rv == JVM_IO_INTR) {
+ 	    JNU_ThrowByName(env, JNU_JAVAIOPKG "InterruptedIOException",
+ 			    "operation interrupted");
++#if defined(EPROTO)
+ 	} else if (errno == EPROTO) {
+ 	    NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "ProtocolException",
+                            "Protocol error");
++#endif
+ 	} else if (errno == ECONNREFUSED) {
+ 	    NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "ConnectException",
+                            "Connection refused");

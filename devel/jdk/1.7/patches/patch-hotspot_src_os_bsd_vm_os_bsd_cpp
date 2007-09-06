@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Wed Jun 13 16:37:27 2007
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Wed Jun 13 16:37:30 2007
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.4 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Fri Aug  3 18:02:38 2007
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Fri Aug  3 18:35:06 2007
 @@ -50,13 +50,26 @@
  # include <semaphore.h>
  # include <fcntl.h>
@@ -637,7 +637,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  // TODO-FIXME: reconcile Solaris' os::sleep with the bsd variation.
  // Solaris uses poll(), bsd uses park().  
  // Poll() is likely a better choice, assuming that Thread.interrupt()
-@@ -2676,9 +2947,28 @@ void os::loop_breaker(int attempts) {
+@@ -2691,9 +2962,28 @@ void os::loop_breaker(int attempts) {
  // this reason, the code should not be used as default (ThreadPriorityPolicy=0).
  // It is only used when ThreadPriorityPolicy=1 and requires root privilege.
  
@@ -666,7 +666,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
     4,              // 1 MinPriority
     3,              // 2
     2,              // 3
-@@ -2693,6 +2983,7 @@ int os::java_to_os_priority[MaxPriority + 1] = {
+@@ -2708,6 +2998,7 @@ int os::java_to_os_priority[MaxPriority + 1] = {
  
    -5               // 10 MaxPriority
  };
@@ -674,7 +674,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  
  static int prio_init() {
    if (ThreadPriorityPolicy == 1) {
-@@ -2712,8 +3003,17 @@ static int prio_init() {
+@@ -2727,8 +3018,17 @@ static int prio_init() {
  OSReturn os::set_native_priority(Thread* thread, int newpri) {
    if ( !UseThreadPriorities || ThreadPriorityPolicy == 0 ) return OS_OK;
  
@@ -692,7 +692,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -2723,7 +3023,11 @@ OSReturn os::get_native_priority(const Thread* const t
+@@ -2738,7 +3038,11 @@ OSReturn os::get_native_priority(const Thread* const t
    }
  
    errno = 0;
@@ -704,7 +704,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
    return (*priority_ptr != -1 || errno == 0 ? OS_OK : OS_ERR);
  }
  
-@@ -2833,7 +3137,7 @@ static int SR_initialize() {
+@@ -2848,7 +3152,7 @@ static int SR_initialize() {
    /* Get signal number to use for suspend/resume */
    if ((s = ::getenv("_JAVA_SR_SIGNUM")) != 0) {
      int sig = ::strtol(s, 0, 10);
@@ -713,7 +713,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  	SR_signum = sig;
      }
    }
-@@ -3197,6 +3501,7 @@ void os::Bsd::install_signal_handlers() {
+@@ -3211,6 +3515,7 @@ void os::Bsd::install_signal_handlers() {
    }
  }
  
@@ -721,7 +721,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  // This is the fastest way to get thread cpu time on Bsd.
  // Returns cpu time (user+sys) for any thread, not only for current.
  // POSIX compliant clocks are implemented in the kernels 2.6.16+.
-@@ -3211,6 +3516,7 @@ jlong os::Bsd::fast_thread_cpu_time(clockid_t clockid)
+@@ -3225,6 +3530,7 @@ jlong os::Bsd::fast_thread_cpu_time(clockid_t clockid)
  
    return (tp.tv_sec * SEC_IN_NANOSECS) + tp.tv_nsec;
  }
@@ -729,7 +729,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  
  /////
  // glibc on Bsd platform uses non-documented flag
-@@ -3432,16 +3738,16 @@ void os::init(void) {
+@@ -3446,16 +3752,16 @@ void os::init(void) {
  
    _initial_pid = (java_launcher_pid > 0) ? java_launcher_pid : getpid();
  
@@ -749,7 +749,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
    }
  
    Bsd::initialize_system_info();
-@@ -3463,7 +3769,9 @@ extern "C" {
+@@ -3477,7 +3783,9 @@ extern "C" {
  // this is called _after_ the global arguments have been parsed
  jint os::init_2(void)
  {
@@ -759,7 +759,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  
    // Allocate a single page and mark it as readable for safepoint polling
    address polling_page = (address) ::mmap(NULL, Bsd::page_size(), PROT_READ, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
-@@ -3512,6 +3820,7 @@ jint os::init_2(void)
+@@ -3526,6 +3834,7 @@ jint os::init_2(void)
    JavaThread::set_stack_size_at_create(round_to(threadStackSizeInBytes,
          vm_page_size()));
  
@@ -767,7 +767,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
    Bsd::capture_initial_stack(JavaThread::stack_size_at_create());
  
    Bsd::libpthread_init();
-@@ -3520,6 +3829,7 @@ jint os::init_2(void)
+@@ -3534,6 +3843,7 @@ jint os::init_2(void)
            Bsd::glibc_version(), Bsd::libpthread_version(), 
            Bsd::is_floating_stack() ? "floating stack" : "fixed stack");
    }
@@ -775,7 +775,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  
    if (MaxFDLimit) {
      // set the number of file descriptors to max. print out error
-@@ -3539,8 +3849,10 @@ jint os::init_2(void)
+@@ -3553,8 +3863,10 @@ jint os::init_2(void)
      }
    }
  
@@ -786,7 +786,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  
    // Initialize HPI.
    jint hpi_result = hpi::initialize();
-@@ -3587,11 +3899,15 @@ void os::make_polling_page_readable(void) {
+@@ -3601,11 +3913,15 @@ void os::make_polling_page_readable(void) {
  };
  
  int os::active_processor_count() {
@@ -802,7 +802,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  }
  
  bool os::distribute_processes(uint length, uint* distribution) {
-@@ -3633,6 +3949,9 @@ ExtendedPC os::get_thread_pc(Thread* thread) {
+@@ -3647,6 +3963,9 @@ ExtendedPC os::get_thread_pc(Thread* thread) {
  
  int os::Bsd::safe_cond_timedwait(pthread_cond_t *_cond, pthread_mutex_t *_mutex, const struct timespec *_abstime)
  {
@@ -812,7 +812,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
     if (is_NPTL()) {
        return pthread_cond_timedwait(_cond, _mutex, _abstime);
     } else {
-@@ -3648,6 +3967,7 @@ int os::Bsd::safe_cond_timedwait(pthread_cond_t *_cond
+@@ -3662,6 +3981,7 @@ int os::Bsd::safe_cond_timedwait(pthread_cond_t *_cond
  #endif // IA64
        return status;
     }
@@ -820,7 +820,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  }
  
  ////////////////////////////////////////////////////////////////////////////////
-@@ -3783,17 +4103,17 @@ int os::create_binary_file(const char* path, bool rewr
+@@ -3797,17 +4117,17 @@ int os::create_binary_file(const char* path, bool rewr
    if (!rewrite_existing) {
      oflags |= O_EXCL;
    }
@@ -841,7 +841,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  }
  
  // Map a block of memory.
-@@ -3843,6 +4163,7 @@ bool os::unmap_memory(char* addr, size_t bytes) {
+@@ -3857,6 +4177,7 @@ bool os::unmap_memory(char* addr, size_t bytes) {
    return munmap(addr, bytes) == 0;
  }
  
@@ -849,7 +849,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  static jlong slow_thread_cpu_time(Thread *thread, bool user_sys_cpu_time);
  
  static clockid_t thread_cpu_clockid(Thread* thread) {
-@@ -3854,6 +4175,7 @@ static clockid_t thread_cpu_clockid(Thread* thread) {
+@@ -3868,6 +4189,7 @@ static clockid_t thread_cpu_clockid(Thread* thread) {
    assert(rc == 0, "pthread_getcpuclockid is expected to return 0 code");
    return clockid;
  }
@@ -857,7 +857,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  
  // current_thread_cpu_time(bool) and thread_cpu_time(Thread*, bool) 
  // are used by JVM M&M and JVMTI to get user+sys or user CPU time
-@@ -3863,39 +4185,48 @@ static clockid_t thread_cpu_clockid(Thread* thread) {
+@@ -3877,39 +4199,48 @@ static clockid_t thread_cpu_clockid(Thread* thread) {
  // the fast estimate available on the platform.
  
  jlong os::current_thread_cpu_time() {
@@ -906,7 +906,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  //
  //  -1 on error.
  // 
-@@ -3984,6 +4315,7 @@ static jlong slow_thread_cpu_time(Thread *thread, bool
+@@ -3998,6 +4329,7 @@ static jlong slow_thread_cpu_time(Thread *thread, bool
      return (jlong)user_time * (1000000000 / clock_tics_per_sec);
    }
  }
@@ -914,7 +914,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  
  void os::current_thread_cpu_time_info(jvmtiTimerInfo *info_ptr) {
    info_ptr->max_value = ALL_64_BITS;       // will not wrap in less than 64 bits
-@@ -4000,7 +4332,11 @@ void os::thread_cpu_time_info(jvmtiTimerInfo *info_ptr
+@@ -4014,7 +4346,11 @@ void os::thread_cpu_time_info(jvmtiTimerInfo *info_ptr
  }
  
  bool os::is_thread_cpu_time_supported() {
@@ -926,7 +926,16 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
  }
  
  // System loadavg support.  Returns -1 if load average cannot be obtained.
-@@ -4169,7 +4505,7 @@ void os::PlatformEvent::park() {       // AKA "down()"
+@@ -4147,7 +4483,7 @@ jdk_pthread_sigmask(int how , const sigset_t* newmask,
+ // abstime will be the absolute timeout time
+ // TODO: replace compute_abstime() with unpackTime()
+ 
+-static struct timespec* compute_abstime(timespec* abstime, jlong millis) {
++static struct timespec* compute_abstime(struct timespec* abstime, jlong millis) {
+   if (millis < 0)  millis = 0;
+   struct timeval now;
+   int status = gettimeofday(&now, NULL);
+@@ -4199,7 +4535,7 @@ void os::PlatformEvent::park() {       // AKA "down()"
          status = pthread_cond_wait(_cond, _mutex);
          // for some reason, under 2.7 lwp_cond_wait() may return ETIME ...
          // Treat this the same as if the wait was interrupted
@@ -935,7 +944,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
          assert_status(status == 0 || status == EINTR, status, "cond_wait");
       }
       -- _nParked ; 
-@@ -4227,10 +4563,10 @@ int os::PlatformEvent::park(jlong millis) {
+@@ -4257,10 +4593,10 @@ int os::PlatformEvent::park(jlong millis) {
        pthread_cond_init (_cond, NULL) ;
      }
      assert_status(status == 0 || status == EINTR || 
@@ -948,3 +957,65 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.3 2007/07/13 22:52:35 kurt 
      // We consume and ignore EINTR and spurious wakeups.   
    }
    --_nParked ;
+@@ -4352,7 +4688,7 @@ void os::PlatformEvent::unpark() {
+  * years from "now".
+  */
+ 
+-static void unpackTime(timespec* absTime, bool isAbsolute, jlong time) {
++static void unpackTime(struct timespec* absTime, bool isAbsolute, jlong time) {
+   assert (time > 0, "convertTime");
+ 
+   struct timeval now;
+@@ -4411,7 +4747,7 @@ void Parker::park(bool isAbsolute, jlong time) {
+   }
+ 
+   // Next, demultiplex/decode time arguments
+-  timespec absTime;
++  struct timespec absTime;
+   if (time < 0) { // don't wait at all
+     return; 
+   }
+@@ -4464,7 +4800,7 @@ void Parker::park(bool isAbsolute, jlong time) {
+     }
+   }
+   assert_status(status == 0 || status == EINTR || 
+-                status == ETIME || status == ETIMEDOUT, 
++                status == ETIMEDOUT, 
+                 status, "cond_timedwait");
+ 
+ #ifdef ASSERT
+@@ -4508,14 +4844,6 @@ void Parker::unpark() {
+ 
+ extern char** environ;
+ 
+-#ifndef __NR_fork
+-#define __NR_fork IA32_ONLY(2) IA64_ONLY(not defined) AMD64_ONLY(57)
+-#endif
+-
+-#ifndef __NR_execve
+-#define __NR_execve IA32_ONLY(11) IA64_ONLY(1033) AMD64_ONLY(59)
+-#endif
+-
+ // Run the specified command in a separate process. Return its exit value,
+ // or -1 on failure (e.g. can't fork a new process).
+ // Unlike system(), this function can be called from signal handler. It
+@@ -4532,8 +4860,7 @@ int os::fork_and_exec(char* cmd) {
+   // separate process to execve. Make a direct syscall to fork process.
+   // On IA64 there's no fork syscall, we have to use fork() and hope for
+   // the best...
+-  pid_t pid = NOT_IA64(syscall(__NR_fork);) 
+-              IA64_ONLY(fork();)
++  pid_t pid = fork();
+ 
+   if (pid < 0) {
+     // fork failed
+@@ -4549,8 +4876,7 @@ int os::fork_and_exec(char* cmd) {
+     // in the new process, so make a system call directly.
+     // IA64 should use normal execve() from glibc to match the glibc fork() 
+     // above.
+-    NOT_IA64(syscall(__NR_execve, "/bin/sh", argv, environ);)
+-    IA64_ONLY(execve("/bin/sh", argv, environ);)
++    execve("/bin/sh", argv, environ);
+ 
+     // execve failed
+     _exit(-1);

@@ -1,0 +1,77 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_nio_ch_Net_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/nio/ch/Net.c.orig	Thu Jul  5 05:03:45 2007
++++ j2se/src/solaris/native/sun/nio/ch/Net.c	Fri Jul 27 18:25:15 2007
+@@ -140,8 +140,30 @@ Java_sun_nio_ch_Net_localPort(JNIEnv *env, jclass claz
+     SOCKADDR sa;
+     int sa_len = SOCKADDR_LEN;
+     if (getsockname(fdval(env, fdo), (struct sockaddr *)&sa, &sa_len) < 0) {
++#ifdef _ALLBSD_SOURCE
++	/*
++	 * XXXBSD:
++	 * ECONNRESET is specific to the BSDs. We can not return an error,
++	 * as the calling Java code with raise a java.lang.Error given the expectation
++	 * that getsockname() will never fail. According to the Single UNIX Specification,
++	 * it shouldn't fail. As such, we just fill in generic Linux-compatible values.
++	 */
++	if (errno == ECONNRESET) {
++	    struct sockaddr_in *sin;
++	    sin = (struct sockaddr_in *) &sa;
++	    bzero(sin, sizeof(*sin));
++	    sin->sin_len  = sizeof(struct sockaddr_in);
++	    sin->sin_family = AF_INET;
++	    sin->sin_port = htonl(0);
++	    sin->sin_addr.s_addr = INADDR_ANY;
++	} else {
++	    handleSocketError(env, errno);
++	    return -1;
++	}
++#else /* _ALLBSD_SOURCE */
+ 	handleSocketError(env, errno);
+ 	return -1;
++#endif /* _ALLBSD_SOURCE */
+     }
+     return NET_GetPortFromSockaddr((struct sockaddr *)&sa);
+ }
+@@ -153,8 +175,30 @@ Java_sun_nio_ch_Net_localInetAddress(JNIEnv *env, jcla
+     int sa_len = SOCKADDR_LEN;
+     int port;
+     if (getsockname(fdval(env, fdo), (struct sockaddr *)&sa, &sa_len) < 0) {
++#ifdef _ALLBSD_SOURCE
++	/*
++	 * XXXBSD:
++	 * ECONNRESET is specific to the BSDs. We can not return an error,
++	 * as the calling Java code with raise a java.lang.Error with the expectation
++	 * that getsockname() will never fail. According to the Single UNIX Specification,
++	 * it shouldn't fail. As such, we just fill in generic Linux-compatible values.
++	 */
++	if (errno == ECONNRESET) {
++	    struct sockaddr_in *sin;
++	    sin = (struct sockaddr_in *) &sa;
++	    bzero(sin, sizeof(*sin));
++	    sin->sin_len  = sizeof(struct sockaddr_in);
++	    sin->sin_family = AF_INET;
++	    sin->sin_port = htonl(0);
++	    sin->sin_addr.s_addr = INADDR_ANY;
++	} else {
++	    handleSocketError(env, errno);
++	    return NULL;
++	}
++#else /* _ALLBSD_SOURCE */
+ 	handleSocketError(env, errno);
+ 	return NULL;
++#endif /* _ALLBSD_SOURCE */
+     }
+     return NET_SockaddrToInetAddress(env, (struct sockaddr *)&sa, &port);
+ }
+@@ -304,9 +348,11 @@ handleSocketError(JNIEnv *env, jint errorValue)
+     switch (errorValue) {
+ 	case EINPROGRESS:	/* Non-blocking connect */
+ 	    return 0;
++#ifdef EPROTO
+ 	case EPROTO:
+ 	    xn = JNU_JAVANETPKG "ProtocolException";
+ 	    break;
++#endif
+ 	case ECONNREFUSED:
+ 	    xn = JNU_JAVANETPKG "ConnectException";
+ 	    break;

@@ -1,0 +1,48 @@
+$OpenBSD: patch-j2se_src_closed_share_native_sun_java2d_cmm_kcms_sync_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/sun/java2d/cmm/kcms/sync.c.orig	Thu Jul  5 03:44:31 2007
++++ j2se/src/closed/share/native/sun/java2d/cmm/kcms/sync.c	Sun Jul 29 22:48:37 2007
+@@ -341,7 +341,7 @@ KpInt32_t KpGetCurrentThreadId (void)
+ KpInt32_t KpGetCurrentThreadId (void)
+ {
+ 
+-#if defined (KPSOLARIS) || defined (KPLINUX)
++#if defined (KPSOLARIS) || defined (KPLINUX) || defined (KPBSD)
+ #if defined (KP_POSIX_THREADS)
+ 	return ((KpInt32_t) pthread_self());
+ #else
+@@ -517,7 +517,7 @@ void KpDeleteCriticalSection (KpCriticalFlag_t FAR *Cr
+ /* Process/Thread Synchronization functions (Solaris) */
+ /******************************************************/
+ 
+-#elif defined (KPSOLARIS) || defined (KPLINUX)
++#elif defined (KPSOLARIS) || defined (KPLINUX) || defined (KPBSD)
+ 
+ /*--------------------------------------------------------------------
+  * DESCRIPTION (Solaris Version)
+@@ -796,7 +796,7 @@ KpInt32_t KpInterlockedExchange (KpInt32_p address, Kp
+ /* Atomic Read Modify Write functions (Solaris Version) */
+ /***************************************************************/
+ 
+-#elif defined (KPSOLARIS) || defined (KPLINUX)
++#elif defined (KPSOLARIS) || defined (KPLINUX) || defined (KPBSD)
+ 
+ 								/*	This mutex is used to ensure that
+ 									the exchange in the Solaris
+@@ -814,7 +814,7 @@ KpInt32_t KpInterlockedExchange (KpInt32_p address, Kp
+ 									is only initialized once per process.	*/
+ 									
+ #if defined (KP_POSIX_THREADS)
+-static pthread_mutex_t		exchangeMutex;
++static pthread_mutex_t		exchangeMutex = PTHREAD_MUTEX_INITIALIZER;
+ #else
+ static mutex_t		exchangeMutex;
+ #endif
+@@ -885,7 +885,7 @@ KpInt32_t		data;
+ /* Semaphore functions (Solaris Versions) */
+ /*******************************************************/
+ 
+-#if defined (KPSOLARIS) || defined (KPLINUX)
++#if defined (KPSOLARIS) || defined (KPLINUX) || defined (KPBSD)
+ 
+ /*--------------------------------------------------------------------
+  * FUNCTION

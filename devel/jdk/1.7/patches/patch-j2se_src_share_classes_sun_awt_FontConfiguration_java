@@ -1,0 +1,21 @@
+$OpenBSD: patch-j2se_src_share_classes_sun_awt_FontConfiguration_java,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/classes/sun/awt/FontConfiguration.java.orig	Thu Jul  5 05:01:54 2007
++++ j2se/src/share/classes/sun/awt/FontConfiguration.java	Fri Jul 27 18:24:24 2007
+@@ -1073,7 +1073,7 @@ public abstract class FontConfiguration {
+      */
+     HashMap<String, Boolean> existsMap;
+     public boolean needToSearchForFile(String fileName) {
+-	if (!environment.isLinux) {
++	if (!environment.isLinuxOrBSD) {
+ 	    return false;
+ 	} else if (existsMap == null) {
+ 	   existsMap = new HashMap<String, Boolean>(); 
+@@ -1309,7 +1309,7 @@ public abstract class FontConfiguration {
+ 				   + "<filename." 
+ 				   + getString(table_componentFontNameIDs[ii])
+                                    + "> entry is missing!!!");
+-                if (!osName.contains("Linux")) {                
++                if (!osName.contains("Linux") && !osName.contains("BSD")) {
+ 		    errors++;
+ 		}
+             }

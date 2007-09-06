@@ -1,0 +1,37 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_security_pkcs11_j2secmod_md_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/security/pkcs11/j2secmod_md.c.orig	Thu Jul  5 05:03:45 2007
++++ j2se/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Fri Jul 27 18:25:15 2007
+@@ -34,6 +34,11 @@
+  
+ #include "j2secmod.h"
+ 
++#ifndef RTLD_NOLOAD
++/* A gross hack that will work if the NSS library is only opened once */
++static void *nssLibHandle = NULL;
++#endif
++
+ void *findFunction(JNIEnv *env, jlong jHandle, const char *functionName) {
+     void *hModule = (void*)jHandle;
+     void *fAddress = dlsym(hModule, functionName);
+@@ -51,7 +56,11 @@ JNIEXPORT jlong JNICALL Java_sun_security_pkcs11_Secmo
+ {
+     const char *libName = (*env)->GetStringUTFChars(env, jLibName, NULL);
+     // look up existing handle only, do not load
++#ifdef RTLD_NOLOAD
+     void *hModule = dlopen(libName, RTLD_NOLOAD);
++#else
++    void *hModule = nssLibHandle;
++#endif
+     dprintf2("-handle for %s: %u\n", libName, hModule);
+     (*env)->ReleaseStringUTFChars(env, jLibName, libName);
+     return (jlong)hModule;
+@@ -65,6 +74,9 @@ JNIEXPORT jlong JNICALL Java_sun_security_pkcs11_Secmo
+ 
+     dprintf1("-lib %s\n", libName);
+     hModule = dlopen(libName, RTLD_LAZY);
++#ifndef RTLD_NOLOAD
++    nssLibHandle = hModule;
++#endif
+     (*env)->ReleaseStringUTFChars(env, jLibName, libName);
+     dprintf2("-handle: %u (0X%X)\n", hModule, hModule);
+ 

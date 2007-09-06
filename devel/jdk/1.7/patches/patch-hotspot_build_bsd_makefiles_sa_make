@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_sa_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/build/bsd/makefiles/sa.make.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/build/bsd/makefiles/sa.make	Mon Apr 16 08:42:38 2007
+$OpenBSD: patch-hotspot_build_bsd_makefiles_sa_make,v 1.2 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/build/bsd/makefiles/sa.make.orig	Sun Sep  2 14:06:00 2007
++++ hotspot/build/bsd/makefiles/sa.make	Sun Sep  2 14:06:01 2007
 @@ -31,6 +31,7 @@
  include $(GAMMADIR)/build/bsd/makefiles/rules.make
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_sa_make,v 1.1.1.1 2007/05/08 17:06:1
  
  SA_CLASSDIR = $(GENERATED)/saclasses
  
-@@ -54,11 +55,11 @@ SA_VERSION = $(HS_MAJOR_VER).$(HS_MINOR_VER).$(HS_MICR
+@@ -54,11 +55,11 @@ SA_VERSION = $(HS_MAJOR_VER)
  SA_VERSION_PROP = "sun.jvm.hotspot.runtime.VM.supportedVersion=$(SA_VERSION)"
  SA_PROPERTIES = $(SA_CLASSDIR)/sa.properties
  

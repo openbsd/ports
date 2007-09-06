@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_font_X11TextRenderer_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/font/X11TextRenderer.c.orig	Thu Jul  5 05:03:43 2007
++++ j2se/src/solaris/native/sun/font/X11TextRenderer.c	Fri Jul 27 18:25:14 2007
+@@ -39,7 +39,11 @@
+ #include "GraphicsPrimitiveMgr.h"
+ #include "glyphblitting.h"
+ #include "sunfontids.h"
++#if defined(_ALLBSD_SOURCE)
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ 
+ 
+ JNIEXPORT void JNICALL AWTDrawGlyphList

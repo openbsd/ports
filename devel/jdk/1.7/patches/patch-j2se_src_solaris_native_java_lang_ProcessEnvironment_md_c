@@ -1,0 +1,21 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_lang_ProcessEnvironment_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/java/lang/ProcessEnvironment_md.c.orig	Thu Jul  5 05:03:38 2007
++++ j2se/src/solaris/native/java/lang/ProcessEnvironment_md.c	Fri Jul 27 18:25:14 2007
+@@ -46,7 +46,7 @@ Java_java_lang_ProcessEnvironment_environ(JNIEnv *env,
+ 
+     for (i = 0; environ[i]; i++) {
+ 	/* Ignore corrupted environment variables */
+-	if (strchr(environ[i], '=') != NULL)
++	if (strchr(environ[i], '=') != NULL && *environ[i] != '=')
+ 	    count++;
+     }
+ 
+@@ -56,7 +56,7 @@ Java_java_lang_ProcessEnvironment_environ(JNIEnv *env,
+     for (i = 0, j = 0; environ[i]; i++) {
+ 	const char * varEnd = strchr(environ[i], '=');
+ 	/* Ignore corrupted environment variables */
+-	if (varEnd != NULL) {
++	if (varEnd != NULL && varEnd != environ[i]) {
+ 	    jbyteArray var, val;
+ 	    const char * valBeg = varEnd + 1;
+ 	    jsize varLength = varEnd - environ[i];

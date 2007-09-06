@@ -1,0 +1,13 @@
+$OpenBSD: patch-j2se_src_share_native_sun_java2d_opengl_OGLFuncs_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/java2d/opengl/OGLFuncs.h.orig	Thu Jul  5 05:03:18 2007
++++ j2se/src/share/native/sun/java2d/opengl/OGLFuncs.h	Fri Jul 27 18:25:14 2007
+@@ -26,6 +26,9 @@
+ #ifndef OGLFuncs_h_Included
+ #define OGLFuncs_h_Included
+ 
++#ifdef _ALLBSD_SOURCE
++#include <dlfcn.h>
++#endif
+ #include "jni.h"
+ #include "J2D_GL/gl.h"
+ #include "J2D_GL/glext.h"

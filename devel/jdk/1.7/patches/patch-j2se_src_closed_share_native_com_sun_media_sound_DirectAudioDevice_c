@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_src_closed_share_native_com_sun_media_sound_DirectAudioDevice_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/com/sun/media/sound/DirectAudioDevice.c.orig	Thu Jul  5 03:44:22 2007
++++ j2se/src/closed/share/native/com/sun/media/sound/DirectAudioDevice.c	Wed Aug  1 11:23:46 2007
+@@ -18,7 +18,11 @@
+ #include <jni.h>
+ 
+ // for malloc
++#ifdef _ALLBSD_SOURCE
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ 
+ // for type definitions
+ #include "engine/X_API.h"

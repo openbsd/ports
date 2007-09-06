@@ -1,0 +1,198 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_lang_java_props_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/java/lang/java_props_md.c.orig	Thu Jul  5 05:03:38 2007
++++ j2se/src/solaris/native/java/lang/java_props_md.c	Fri Jul 27 18:25:14 2007
+@@ -23,7 +23,7 @@
+  *
+  */
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <stdio.h>
+ #include <ctype.h>
+ #endif
+@@ -32,8 +32,11 @@
+ #ifndef ARCHPROPNAME
+ #error "The macro ARCHPROPNAME has not been defined"
+ #endif
+-#include <sys/utsname.h>	/* For os_name and os_version */
++#ifndef __OpenBSD__
++#define HAVE_NL_LANGINFO
+ #include <langinfo.h>           /* For nl_langinfo */
++#endif
++#include <sys/utsname.h>	/* For os_name and os_version */
+ #include <stdlib.h>
+ #include <string.h>
+ #include <sys/types.h>
+@@ -42,9 +45,17 @@
+ #include <time.h>
+ #include <errno.h>
+ 
++#if defined(_ALLBSD_SOURCE)
++#if !defined(P_tmpdir)
++#include <paths.h>
++#define P_tmpdir _PATH_VARTMP
++#endif
++#endif
++
+ #include "locale_str.h"
+ #include "java_props.h"
+ 
++#if !defined(_ALLBSD_SOURCE)
+ #ifdef __linux__
+ #define CODESET _NL_CTYPE_CODESET_NAME
+ #else
+@@ -52,6 +63,7 @@
+ #define CODESET ALT_CODESET_KEY
+ #endif
+ #endif
++#endif /* !_ALLBSD_SOURCE */
+ 
+ /* Take an array of string pairs (map of key->value) and a string (key).
+  * Examine each pair in the map to see if the first string (key) matches the
+@@ -121,7 +133,7 @@ setPathEnvironment(char *envstring)
+ java_props_t *
+ GetJavaProperties(JNIEnv *env)
+ {
+-    static java_props_t sprops = {0};
++    static java_props_t sprops = { 0 };
+     char *v; /* tmp var */
+ 
+     if (sprops.user_dir) {
+@@ -188,7 +200,12 @@ GetJavaProperties(JNIEnv *env)
+     {
+         char *lc;
+         lc = setlocale(LC_CTYPE, "");
+-#ifndef __linux__
++#if defined(_ALLBSD_SOURCE) && defined(HAVE_NL_LANGINFO)
++	if (lc == NULL) {
++	    lc = "C";
++	}
++	{
++#elif !defined(__linux__)
+         if (lc == NULL) {
+             /*
+              * 'lc == null' means system doesn't support user's environment
+@@ -219,7 +236,7 @@ GetJavaProperties(JNIEnv *env)
+             char *p, encoding_variant[64];
+             int i, found;
+ 
+-#ifndef __linux__
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
+             /*
+              * Workaround for Solaris bug 4201684: Xlib doesn't like @euro
+              * locales. Since we don't depend on the libc @euro behavior,
+@@ -236,6 +253,13 @@ GetJavaProperties(JNIEnv *env)
+ 		*p = '\0';
+             setlocale(LC_ALL, temp);
+ #endif
++	    if (lc == NULL) {
++		strncpy(temp, "C", sizeof(temp)-1);
++		temp[sizeof(temp)-1] = '\0';
++	    } else {
++		strncpy(temp, lc, sizeof(temp)-1);
++		temp[sizeof(temp)-1] = '\0';
++	    }
+ 
+             strcpy(temp, lc);
+ 
+@@ -308,7 +332,36 @@ GetJavaProperties(JNIEnv *env)
+              * (e.g., the C or POSIX locales); we use the default ISO 8859-1
+              * converter for such locales.
+ 	     */
+-
++#if defined(_ALLBSD_SOURCE)
++#  if defined(HAVE_NL_LANGINFO)
++	    p = nl_langinfo(CODESET);
++	    if (p == NULL || *p == '\0' ||
++			!strcmp(p, "C") || !strcmp(p, "US-ASCII")) {
++		p = ""; // use default
++	    } else {
++		p = strdup(p);
++		if (p == NULL)
++		    p = "";	/* strdup failed */
++	    }
++#  else
++	    if (encoding) {
++		std_encoding = encoding;
++		if (!strcmp(encoding, "EUC") && std_country) {
++		    snprintf(encoding_variant, sizeof(encoding_variant) - 1,
++			     "%s_%s", encoding, std_country);
++		    encoding_variant[sizeof(encoding_variant) - 1] = '\0';
++		    std_encoding = encoding_variant;
++		}
++		p = strdup(std_encoding);
++		if (p == NULL) {
++		    /* strdup failed */
++		    p = "";
++		}
++	    } else {
++		p = "";
++	    }
++#  endif /* HAVE_NL_LANGINFO */
++#else
+ 	    /* OK, not so reliable - nl_langinfo() gives wrong answers on
+ 	     * Euro locales, in particular. */
+ 	    if (strcmp(p, "ISO8859-15") == 0)
+@@ -320,11 +373,13 @@ GetJavaProperties(JNIEnv *env)
+ 	    if (strcmp(p, "646") == 0)
+ 		p = "ISO646-US";
+ 
++#endif /* _ALLBSD_SOURCE */
++
+ 	    /* return same result nl_langinfo would return for en_UK,
+ 	     * in order to use optimizations. */
+             std_encoding = (*p != '\0') ? p : "ISO8859-1";
+ 
+-
++#if !defined(_ALLBSD_SOURCE)
+ #ifdef __linux__
+ 	    /* 
+ 	     * Remap the encoding string to a different value for japanese
+@@ -355,20 +410,30 @@ GetJavaProperties(JNIEnv *env)
+ 		    std_encoding = "Big5_Solaris";
+ 	    }
+ #endif
++#endif /* !_ALLBSD_SOURCE */
++
+ 	    sprops.encoding = std_encoding;
+             sprops.sun_jnu_encoding = sprops.encoding;
+         }
+     }
+     
+-#ifdef __linux__ 
+-#if __BYTE_ORDER == __LITTLE_ENDIAN
++#ifdef _ALLBSD_SOURCE
++#if BYTE_ORDER == _LITTLE_ENDIAN
+     sprops.unicode_encoding = "UnicodeLittle";
+ #else
+     sprops.unicode_encoding = "UnicodeBig";
+ #endif
++#else /* !_ALLBSD_SOURCE */
++#ifdef __linux__ 
++#if __BYTE_ORDER == _LITTLE_ENDIAN
++    sprops.unicode_encoding = "UnicodeLittle";
+ #else
+     sprops.unicode_encoding = "UnicodeBig";
++#endif /* __linux__ */
++#else
++    sprops.unicode_encoding = "UnicodeBig";
+ #endif
++#endif /* _ALLBSD_SOURCE */
+ 
+     /* user properties */
+     {
+@@ -405,12 +470,14 @@ GetJavaProperties(JNIEnv *env)
+     sprops.path_separator = ":";
+     sprops.line_separator = "\n";
+ 
++#if !defined(_ALLBSD_SOURCE)
+     /* Append CDE message and resource search path to NLSPATH and
+      * XFILESEARCHPATH, in order to pick localized message for 
+      * FileSelectionDialog window (Bug 4173641).
+      */
+     setPathEnvironment("NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat");
+     setPathEnvironment("XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt");
++#endif
+ 
+     return &sprops;
+ }

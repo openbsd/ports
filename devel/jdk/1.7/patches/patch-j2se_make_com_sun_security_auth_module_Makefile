@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_make_com_sun_security_auth_module_Makefile,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/com/sun/security/auth/module/Makefile.orig	Fri Jul 13 20:53:14 2007
++++ j2se/make/com/sun/security/auth/module/Makefile	Fri Jul 13 22:26:15 2007
+@@ -70,7 +70,7 @@ ifeq ($(PLATFORM), solaris)
+   include FILES_c_solaris.gmk
+ endif # solaris
+ 
+-ifeq ($(PLATFORM), linux)
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+   LIBRARY = jaas_unix
+   include FILES_export_unix.gmk
+   include FILES_c_unix.gmk

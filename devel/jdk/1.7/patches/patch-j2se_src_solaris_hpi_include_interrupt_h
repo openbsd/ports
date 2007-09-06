@@ -1,0 +1,23 @@
+$OpenBSD: patch-j2se_src_solaris_hpi_include_interrupt_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/hpi/include/interrupt.h.orig	Thu Jul  5 05:03:37 2007
++++ j2se/src/solaris/hpi/include/interrupt.h	Fri Jul 27 18:25:14 2007
+@@ -75,7 +75,7 @@ void intrDispatch(int interrupt, void *siginfo, void *
+  *	N_INTERRUPTS  -	The number of interrupt channels.  These
+  *			are numbered from 0 to (N_INTERRUPTS - 1).
+  */
+-#ifdef __linux__
++#if defined(__linux__) || defined(__FreeBSD__)
+ #define       N_INTERRUPTS    NSIG    /* 0 to NSIG - 1*/
+ #else
+ #define	N_INTERRUPTS	32	/* 0 to 31 */
+@@ -108,6 +108,10 @@ void intrUnlock(void);
+ void intrInitMD(void);
+ 
+ #if defined(__solaris__) && !defined(SA_SIGINFO)
++#error signal.h has not been included?
++#endif
++
++#if defined(__FreeBSD__) && !defined(SA_SIGINFO)
+ #error signal.h has not been included?
+ #endif
+ 

@@ -1,0 +1,17 @@
+$OpenBSD: patch-j2se_make_java_npt_Makefile,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/java/npt/Makefile.orig	Thu Aug  2 03:45:46 2007
++++ j2se/make/java/npt/Makefile	Fri Aug 10 17:04:49 2007
+@@ -70,6 +70,13 @@ ifeq ($(PLATFORM), windows)
+   OTHER_LCF += -export:nptInitialize -export:nptTerminate
+ endif
+ 
++# Add location of iconv headers
++ifeq ($(PLATFORM), bsd)
++  ICONV_DIR = /usr/local
++  CPPFLAGS += -I$(ICONV_DIR)/include
++  OTHER_LDLIBS += -L$(ICONV_DIR)/lib -liconv
++endif
++
+ #
+ # Add to ambient vpath so we pick up the library files
+ #

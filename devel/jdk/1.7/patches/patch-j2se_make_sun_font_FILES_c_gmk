@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_make_sun_font_FILES_c_gmk,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/make/sun/font/FILES_c.gmk.orig	Fri Aug 10 16:10:45 2007
++++ j2se/make/sun/font/FILES_c.gmk	Fri Aug 10 16:11:04 2007
+@@ -31,7 +31,7 @@ FILES_c_shared = \
+         DrawGlyphList.c \
+         sunFont.c
+ 
+-ifdef OPENJDK
++ifdef USE_FREETYPE
+ FILES_c_shared += $(TARGDIR)freetypeScaler.c 
+ endif
+ 

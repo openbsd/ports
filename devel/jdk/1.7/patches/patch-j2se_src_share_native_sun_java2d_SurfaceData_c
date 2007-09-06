@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_src_share_native_sun_java2d_SurfaceData_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/java2d/SurfaceData.c.orig	Thu Jul  5 05:03:17 2007
++++ j2se/src/share/native/sun/java2d/SurfaceData.c	Fri Jul 27 18:25:14 2007
+@@ -28,7 +28,11 @@
+ #include "jni_util.h"
+ #include "Disposer.h"
+ 
++#ifdef _ALLBSD_SOURCE
++#include <stdlib.h>
++#else
+ #include "malloc.h"
++#endif
+ #include "string.h"
+ 
+ /**

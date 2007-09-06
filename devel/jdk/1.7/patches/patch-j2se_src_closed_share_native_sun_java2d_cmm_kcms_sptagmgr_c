@@ -1,0 +1,25 @@
+$OpenBSD: patch-j2se_src_closed_share_native_sun_java2d_cmm_kcms_sptagmgr_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/sun/java2d/cmm/kcms/sptagmgr.c.orig	Thu Jul  5 03:44:31 2007
++++ j2se/src/closed/share/native/sun/java2d/cmm/kcms/sptagmgr.c	Sun Jul 29 22:48:36 2007
+@@ -22,9 +22,9 @@
+ 	Windows Revision Level:
+ 		$Workfile: sptagmgr.c $
+ 		$Logfile: /DLL/KodakCMS/sprof_lib/sptagmgr.c $
+-		$Revision: 1.1 $
+-		$Date: 2007/09/06 15:46:19 $
+-		$Author: kurt $
++		$Revision: 1.1 $
++		$Date: 2007/09/06 15:46:19 $
++		$Author: kurt $
+ 
+ 	SCCS Revision:
+ 		@(#)sptagmgr.c	1.41	1/8/99
+@@ -902,7 +902,7 @@ SpStatus_t KSPAPI SpProfileCreateEx (
+     ProfileData->Header.Platform = SpSigMake ('A', 'P', 'P', 'L');
+ #elif defined (KPSGI) || defined(KPSGIALL)
+     ProfileData->Header.Platform = SpSigMake ('S', 'G', 'I', ' ');
+-#elif defined (KPSUN)
++#elif defined (KPSUN) || defined(KPBSD)
+     ProfileData->Header.Platform = SpSigMake ('S', 'U', 'N', 'W');
+ #else
+     ProfileData->Header.Platform = SpSigMake ('M', 'S', 'F', 'T');

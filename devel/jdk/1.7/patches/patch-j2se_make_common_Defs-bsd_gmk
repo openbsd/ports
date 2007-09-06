@@ -1,0 +1,103 @@
+$OpenBSD: patch-j2se_make_common_Defs-bsd_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/common/Defs-bsd.gmk.orig	Thu Aug 23 11:22:35 2007
++++ j2se/make/common/Defs-bsd.gmk	Thu Aug 23 12:07:31 2007
+@@ -48,12 +48,6 @@ ifndef COMPILE_APPROACH
+   COMPILE_APPROACH = parallel
+ endif
+ 
+-# Part of INCREMENTAL_BUILD mechanism.
+-#   Compiler emits things like:  path/file.o: file.h
+-#   We want something like: relative_path/file.o relative_path/file.d: file.h
+-CC_DEPEND	 = -MM
+-CC_DEPEND_FILTER = $(SED) -e 's!$*\.$(OBJECT_SUFFIX)!$(dir $@)& $(dir $@)$*.$(DEPEND_SUFFIX)!g'
+-
+ ifndef PLATFORM_SRC
+   PLATFORM_SRC = $(J2SE_TOPDIR)/src/solaris
+ endif # PLATFORM_SRC
+@@ -66,7 +60,7 @@ ifndef OPENJDK
+ endif
+ 
+ # platform specific include files
+-PLATFORM_INCLUDE_NAME = $(PLATFORM)
++PLATFORM_INCLUDE_NAME = $(OS_NAME)
+ PLATFORM_INCLUDE      = $(INCLUDEDIR)/$(PLATFORM_INCLUDE_NAME)
+ 
+ # suffix used for make dependencies files.
+@@ -187,7 +181,7 @@ ifeq ($(FASTDEBUG), true)
+   CXXFLAGS_DBG	+= $(CC_LOWER_OPT)
+ endif
+ 
+-CPPFLAGS_COMMON = -D$(ARCH) -DARCH='"$(ARCH)"' -DLINUX $(VERSION_DEFINES) \
++CPPFLAGS_COMMON = -D$(ARCH) -DARCH='"$(ARCH)"' -D_ALLBSD_SOURCE $(VERSION_DEFINES) \
+ 		  -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -D_REENTRANT
+ 
+ ifeq ($(ARCH_DATA_MODEL), 64)
+@@ -197,27 +191,6 @@ endif
+ CPPFLAGS_OPT    = 
+ CPPFLAGS_DBG    = -DDEBUG
+ 
+-ifdef LIBRARY
+-  # Libraries need to locate other libraries at runtime, and you can tell
+-  #   a library where to look by way of the dynamic runpaths (RPATH or RUNPATH)
+-  #   buried inside the .so. The $ORIGIN says to look relative to where
+-  #   the library itself is and it can be followed with relative paths from
+-  #   that. By default we always look in $ORIGIN, optionally we add relative
+-  #   paths if the Makefile sets LD_RUNPATH_EXTRAS to those relative paths.
+-  #   On Bsd we add a flag -z origin, not sure if this is necessary, but 
+-  #   doesn't seem to hurt.
+-  #   The environment variable LD_LIBRARY_PATH will over-ride these runpaths.
+-  #   Try: 'readelf -d lib*.so' to see these settings in a library.
+-  #
+-  LDFLAGS_COMMON += -Xlinker -z -Xlinker origin -Xlinker -rpath -Xlinker \$$ORIGIN
+-  LDFLAGS_COMMON += $(LD_RUNPATH_EXTRAS:%=-Xlinker -z -Xlinker origin -Xlinker -rpath -Xlinker \$$ORIGIN/%)
+-endif
+-
+-EXTRA_LIBS += -lc
+-
+-LDFLAGS_DEFS_OPTION  = -z defs
+-LDFLAGS_COMMON  += $(LDFLAGS_DEFS_OPTION)
+-
+ #
+ # -L paths for finding and -ljava
+ #
+@@ -255,15 +228,6 @@ endif
+ LD_MAPFILE_FLAG = -Xlinker --version-script -Xlinker
+ 
+ #
+-# Support for Quantify.
+-#
+-ifdef QUANTIFY
+-QUANTIFY_CMD = quantify
+-QUANTIFY_OPTIONS = -cache-dir=/tmp/quantify -always-use-cache-dir=yes
+-LINK_PRE_CMD = $(QUANTIFY_CMD) $(QUANTIFY_OPTIONS)
+-endif
+-
+-#
+ # Path and option to link against the VM, if you have to.  Note that
+ # there are libraries that link against only -ljava, but they do get
+ # -L to the -ljvm, this is because -ljava depends on -ljvm, whereas
+@@ -289,7 +253,9 @@ override HAVE_ALTZONE            = false
+ override HAVE_FILIOH             = false
+ override HAVE_GETHRTIME          = false
+ override HAVE_GETHRVTIME         = false
++ifeq ($(OS_VENDOR),NetBSD)
+ override HAVE_SIGIGNORE          = true
++endif
+ override LEX_LIBRARY             = -lfl
+ ifeq ($(STATIC_CXX),true)
+ override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
+@@ -300,13 +266,9 @@ override LIBPOSIX4               =
+ override LIBSOCKET               =
+ override LIBTHREAD               =
+ override MOOT_PRIORITIES         = true
+-override NO_INTERRUPTIBLE_IO     = true
++override NO_INTERRUPTIBLE_IO     = false
+ override OPENWIN_HOME            = /usr/X11R6
+-ifeq ($(ARCH), amd64)
+-override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
+-else
+ override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
+-endif
+ override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
+ override SUN_CMM_SUBDIR          =
+ override THREADS_FLAG            = native

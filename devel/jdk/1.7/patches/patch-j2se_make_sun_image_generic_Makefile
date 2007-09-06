@@ -1,0 +1,16 @@
+$OpenBSD: patch-j2se_make_sun_image_generic_Makefile,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/make/sun/image/generic/Makefile.orig	Sun Jul 15 22:57:34 2007
++++ j2se/make/sun/image/generic/Makefile	Sun Jul 15 22:57:58 2007
+@@ -69,7 +69,11 @@ CPPFLAGS += \
+             -I$(PLATFORM_SRC)/native/$(PKGDIR)/medialib 
+ 
+ OTHER_CFLAGS += -D__USE_J2D_NAMES -D__MEDIALIB_OLD_NAMES
+-OTHER_LDLIBS = $(LIBM) -ldl
++OTHER_LDLIBS = $(LIBM)
++ifneq ($(PLATFORM), bsd)
++OTHER_LDLIBS += -ldl
++endif
++
+ 
+ #
+ # Has been converted to the JNI: generate JNI-style header files

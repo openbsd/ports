@@ -1,0 +1,86 @@
+$OpenBSD: patch-j2se_src_solaris_hpi_native_threads_src_threads_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/hpi/native_threads/src/threads_md.c.orig	Thu Jul  5 05:03:37 2007
++++ j2se/src/solaris/hpi/native_threads/src/threads_md.c	Fri Jul 27 18:25:14 2007
+@@ -54,6 +54,10 @@ extern int InitializeIO(rlim_t limit);
+ #error That can NOT possibly be right.
+ #endif
+ 
++#if defined(_ALLBSD_SOURCE) && !defined(SA_SIGINFO)
++#error That can NOT possibly be right.
++#endif
++
+ #ifdef SA_SIGINFO
+ static void sigusr1Handler(int sig, siginfo_t *info, void *uc);
+ #else
+@@ -97,9 +101,14 @@ static thread_key_t tid_key = (thread_key_t) -1;
+ #ifdef __linux__
+ thread_key_t intrJmpbufkey;
+ static sigset_t squm = {{sigmask(SIGUSR1), 0, 0, 0}};
++#elif defined(__OpenBSD__)
++thread_key_t sigusr1Jmpbufkey;
++sigset_t sigusr1Mask = sigmask(SIGUSR1);
++static sigset_t squm = sigmask(SIGUSR1);
+ #else
+ thread_key_t sigusr1Jmpbufkey;
+ sigset_t sigusr1Mask = {{sigmask(SIGUSR1), 0, 0, 0}};
++static sigset_t squm = {{sigmask(SIGUSR1), 0, 0, 0}};
+ #endif
+ 
+ /*
+@@ -170,9 +179,6 @@ sysThreadCheckStack() 
+     }
+ }
+ 
+-#ifndef __linux__
+-static sigset_t squm = {{sigmask(SIGUSR1), 0, 0, 0}};
+-#endif
+ 
+ 
+ /* 
+@@ -187,7 +193,7 @@ sysThreadAlloc(sys_thread_t **tidP)
+     if (tid == NULL) {
+         return SYS_NOMEM;
+     }
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     memset((char *)tid, 0, sizeof(sys_thread_t));
+ #endif
+ 
+@@ -474,7 +480,7 @@ sysThreadCreate(sys_thread_t **tidP, long ss, void (*s
+     }
+     *tidP = tid;
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     memset((char *)tid, 0, sizeof(sys_thread_t));
+ #endif
+     /* Install the backpointer to the Thread object */
+@@ -517,6 +523,7 @@ sysThreadCreate(sys_thread_t **tidP, long ss, void (*s
+     }
+     /* Create the thread. The thread will block waiting to be suspended */
+     err = pthread_create(&tid->sys_thread, &attr, _start, (void *)tid);
++    pthread_attr_destroy(&attr);
+     sysAssert(err == 0);
+     if (err == 0) {
+         err = sem_wait(&tid->sem_suspended);
+@@ -1049,7 +1056,20 @@ sysGetSysInfo()
+ 	 * we want the number of processors configured not the number online
+ 	 * since processors may be turned on and off dynamically.
+ 	 */
++#if defined(_SC_NPROCESSORS_CONF)
+         int cpus = (int) sysconf(_SC_NPROCESSORS_CONF);
++#elif defined(CTL_HW) && defined(HW_NCPU)
++        int     cpus = 1;
++        int     mib[2];
++        size_t  len;
++
++        mib[0] = CTL_HW;
++        mib[1] = HW_NCPU;
++        len = sizeof(cpus);
++        (void)sysctl(mib, 2, &cpus, &len, NULL, 0);
++#else
++        int cpus = 1;
++#endif
+ 
+ 	info.isMP = (cpus < 0) ? 1 : (cpus > 1);
+ 	info.name = "native threads";

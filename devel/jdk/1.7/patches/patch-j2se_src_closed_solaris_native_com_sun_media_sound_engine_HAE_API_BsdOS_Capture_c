@@ -1,0 +1,114 @@
+$OpenBSD: patch-j2se_src_closed_solaris_native_com_sun_media_sound_engine_HAE_API_BsdOS_Capture_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/solaris/native/com/sun/media/sound/engine/HAE_API_BsdOS_Capture.c.orig	Sun Jul 29 23:11:09 2007
++++ j2se/src/closed/solaris/native/com/sun/media/sound/engine/HAE_API_BsdOS_Capture.c	Sun Jul 29 23:19:53 2007
+@@ -37,11 +37,13 @@
+ #include <sys/ioctl.h>
+ #include <sys/wait.h>
+ #include <errno.h>
+-#include <bsd/soundcard.h>
+-#include <malloc.h>
+ 
+-// for I_FLUSH
+-#include <stropts.h>
++#ifdef __FreeBSD__
++#include <sys/soundcard.h>
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++#include <soundcard.h>
++#endif
+ 
+ #include <string.h>
+ 
+@@ -55,15 +57,15 @@
+ #endif
+ 
+ 
+-#define HAE_LINUX_NUM_CAPTURE_BUFFERS	1	// number of capture buffers
++#define HAE_BSD_NUM_CAPTURE_BUFFERS	1	// number of capture buffers
+ 
+-#define HAE_LINUX_FRAMES_PER_BUFFER	4096	// how many frames do we read (capture) at a time?
++#define HAE_BSD_FRAMES_PER_BUFFER	4096	// how many frames do we read (capture) at a time?
+ 
+-#define HAE_LINUX_SOUND_CAPTURE_PERIOD	10	// sleep time in milliseconds, between position checks
++#define HAE_BSD_SOUND_CAPTURE_PERIOD	10	// sleep time in milliseconds, between position checks
+ // $$kk: 10.13.98: need to implement position checks!
+ 
+-#define HAE_LINUX_DEFAULT_BUFFERSIZE_IN_MS	150		// default size of buffer in ms
+-#define HAE_LINUX_MIN_BUFFERSIZE_IN_MS		50		// minimum size of buffer in ms (can't go beneath
++#define HAE_BSD_DEFAULT_BUFFERSIZE_IN_MS	150		// default size of buffer in ms
++#define HAE_BSD_MIN_BUFFERSIZE_IN_MS		50		// minimum size of buffer in ms (can't go beneath
+ // hardware buffersize, however)
+ 
+ 
+@@ -83,9 +85,9 @@ static short int g_soundDeviceIndex = 0; // if non zer
+ 
+ static UINT32	g_encoding; // audio encoding
+ 
+-// number of frames to read; right now this is fixed as HAE_LINUX_FRAMES_PER_BUFFER
++// number of frames to read; right now this is fixed as HAE_BSD_FRAMES_PER_BUFFER
+ // $$kk: 10.13.98: need to figure out how to configure this
+-static INT32 g_audioFramesToRead = HAE_LINUX_FRAMES_PER_BUFFER;
++static INT32 g_audioFramesToRead = HAE_BSD_FRAMES_PER_BUFFER;
+ 
+ static HAE_CaptureDone	g_captureDoneProc; // capture callback
+ 
+@@ -202,11 +204,11 @@ void PV_AudioWaveInFrameThread(void* context) {
+ 		    if (g_flushMode == FLUSHMODE_FLUSHED) {
+ 			break;
+ 		    }
+-		    HAE_SleepFrameThread(context, HAE_LINUX_SOUND_CAPTURE_PERIOD);
++		    HAE_SleepFrameThread(context, HAE_BSD_SOUND_CAPTURE_PERIOD);
+ 		}
+ 	    } else if (!g_captureShutdown) {
+ 		/* what to do here ? */
+-		HAE_SleepFrameThread(context, HAE_LINUX_SOUND_CAPTURE_PERIOD);
++		HAE_SleepFrameThread(context, HAE_BSD_SOUND_CAPTURE_PERIOD);
+ 	    }
+ 	}
+ 	if (g_flushMode == FLUSHMODE_FLUSHED) {
+@@ -269,9 +271,9 @@ int HAE_AquireAudioCapture(void *context, UINT32 encod
+ 
+     // $$jb: 05.19.99: Setting the buffer size
+     // $$kk: 08.06.99: i got rid of the fixed minimum value for buffersize
+-    // minFramesPerBuffer = sampleRate * HAE_LINUX_MIN_BUFFERSIZE_IN_MS / 1000;
++    // minFramesPerBuffer = sampleRate * HAE_BSD_MIN_BUFFERSIZE_IN_MS / 1000;
+     if ( audioFramesPerBuffer == 0 ) {
+-	audioFramesPerBuffer = sampleRate * HAE_LINUX_DEFAULT_BUFFERSIZE_IN_MS / 1000;
++	audioFramesPerBuffer = sampleRate * HAE_BSD_DEFAULT_BUFFERSIZE_IN_MS / 1000;
+     }
+ 
+ 
+@@ -383,7 +385,7 @@ int HAE_StartAudioCapture(HAE_CaptureDone done, void *
+ 
+ 	// allocate the capture buffer
+ 	// $$jb: 05.19.99:  This is set in HAE_AquireAudioCapture
+-	//g_audioFramesToRead = HAE_LINUX_FRAMES_PER_BUFFER;	// our read buffer will hold this many frames of sampled audio data
++	//g_audioFramesToRead = HAE_BSD_FRAMES_PER_BUFFER;	// our read buffer will hold this many frames of sampled audio data
+ 
+ 	// we're going to build this many buffers at a time
+ 	if (g_bitSize == 8) {
+@@ -555,7 +557,14 @@ void HAE_GetCaptureDeviceName(INT32 deviceID, char *cN
+ {
+     char		*data;
+     static char *names[] =
+-    {	"Bsd,dev/dsp,multi threaded",
++    {
++#ifdef __FreeBSD__
++               "FreeBSD,dev/dsp,multi threaded",
++#elif __NetBSD__
++               "NetBSD,dev/dsp,multi threaded",
++#elif __OpenBSD__
++               "OpenBSD,dev/dsp,multi threaded",
++#endif
+     };
+     if (cName && cNameLength)
+ 	{
+@@ -587,7 +596,7 @@ UINT32 HAE_GetCaptureBufferSizeInFrames()
+ // return the number of buffers used.
+ int HAE_GetCaptureBufferCount()
+ {
+-    return HAE_LINUX_NUM_CAPTURE_BUFFERS;
++    return HAE_BSD_NUM_CAPTURE_BUFFERS;
+ }
+ 
+ // return the number of samples captured at the device

@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_hpi_native_threads_src_monitor_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/hpi/native_threads/src/monitor_md.c.orig	Thu Jul  5 05:03:37 2007
++++ j2se/src/solaris/hpi/native_threads/src/monitor_md.c	Fri Jul 27 18:25:14 2007
+@@ -147,7 +147,7 @@ sysMonitorEnter(sys_thread_t *self, sys_mon_t *mid)
+ 	mid->monitor_owner = self;
+ 	mid->entry_count = 1;
+ 	return SYS_OK;
+-    } else if (err == EBUSY) { /* it's already locked */
++    } else if (err == EBUSY || err == EDEADLK) { /* it's already locked */
+ 	if (mid->monitor_owner == self) {
+ 	    mid->entry_count++;
+ 	    return SYS_OK;

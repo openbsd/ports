@@ -1,0 +1,40 @@
+$OpenBSD: patch-j2se_make_sun_font_Makefile,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/make/sun/font/Makefile.orig	Thu Aug  2 03:45:49 2007
++++ j2se/make/sun/font/Makefile	Fri Aug 10 15:09:37 2007
+@@ -97,7 +97,7 @@ else # PLATFORM unix
+ endif # PLATFORM
+ 
+ #In the non-OpenJDK mode we need to build T2K
+-ifndef OPENJDK
++ifndef USE_FREETYPE
+ t2k:
+ 	$(ECHO) "lib=" $(ACTUAL_LIBRARY)
+ 	$(MAKE) -C t2k
+@@ -161,7 +161,7 @@ vpath %.cpp   $(SHARE_SRC)/native/$(PKGDIR)
+ CFLAGS       += -DHEADLESS
+ CXXFLAGS     += -DHEADLESS
+ 
+-ifndef OPENJDK
++ifndef USE_FREETYPE
+   CPPFLAGS += -I$(CLOSED_SRC)/share/native/$(PKGDIR)/t2k
+ else
+   CPPFLAGS += -I$(FREETYPE_HEADERS_PATH) -I$(FREETYPE_HEADERS_PATH)/freetype2
+@@ -177,6 +177,10 @@ else # PLATFORM
+ # Libraries to link, and other C flags.
+ #
+ 
++ifeq ($(PLATFORM), bsd)
++OTHER_INCLUDES += -I/usr/X11R6/include
++OTHER_LDLIBS  += -lawt $(LIBM) $(LIBCXX)
++else
+ ifeq ($(PLATFORM), solaris)
+   # Note that on Solaris, fontmanager is built against the headless library.
+   LDFLAGS      += -L$(LIBDIR)/$(LIBARCH)/headless
+@@ -186,6 +190,7 @@ else # PLATFORM is linux
+   ifeq ("$(CC_VER_MAJOR)", "3")
+     OTHER_LDLIBS  += -Wl,-Bstatic -lgcc_eh -Wl,-Bdynamic
+   endif                           
++endif
+ endif
+ 
+ endif # PLATFORM

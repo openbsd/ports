@@ -1,0 +1,53 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_nio_ch_DatagramChannelImpl_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/nio/ch/DatagramChannelImpl.c.orig	Thu Jul  5 05:03:45 2007
++++ j2se/src/solaris/native/sun/nio/ch/DatagramChannelImpl.c	Fri Jul 27 18:25:15 2007
+@@ -35,7 +35,7 @@
+ #include <string.h>
+ #include <errno.h>
+ 
+-#if __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <netinet/in.h>
+ #endif
+ 
+@@ -86,7 +86,7 @@ Java_sun_nio_ch_DatagramChannelImpl_disconnect0(JNIEnv
+     rv = connect(fd, 0, 0);
+ #endif
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     {
+ 	int len;
+ 	SOCKADDR sa;
+@@ -96,17 +96,31 @@ Java_sun_nio_ch_DatagramChannelImpl_disconnect0(JNIEnv
+ #ifdef AF_INET6
+         if (ipv6_available()) {
+ 	    struct sockaddr_in6 *him6 = (struct sockaddr_in6 *)&sa;
++#if defined(_ALLBSD_SOURCE)
++	    him6->sin6_family = AF_INET6;
++#else
+ 	    him6->sin6_family = AF_UNSPEC;
++#endif
+ 	    len = sizeof(struct sockaddr_in6);
+  	} else  
+ #endif
+         {
+ 	    struct sockaddr_in *him4 = (struct sockaddr_in*)&sa;
++#if defined(_ALLBSD_SOURCE)
++	    him4->sin_family = AF_INET;
++#else
+ 	    him4->sin_family = AF_UNSPEC;
++#endif
+ 	    len = sizeof(struct sockaddr_in);
+         }
+ 
+         rv = connect(fd, (struct sockaddr *)&sa, len);
++
++#if defined(_ALLBSD_SOURCE)
++	if (rv < 0 && errno == EADDRNOTAVAIL)
++		rv = errno = 0;
++#endif
++
+     }
+ #endif
+ 

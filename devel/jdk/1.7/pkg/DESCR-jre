@@ -1,0 +1,19 @@
+Java (TM) 2 Runtime Environment, Standard Edition
+Version 1.7.0
+
+The Java(TM) 2 Runtime Environment contains the Java virtual machine,
+runtime class libraries, and Java application launcher that are
+necessary to run programs written in the Java programming language.
+It is not a development environment and does not contain development
+tools such as compilers and debuggers.  For development tools, use
+the Java 2 SDK, Standard Edition. 
+
+Flavors:
+  with_ipv6
+    Build the jdk/jre with ipv6 support. When the jdk/jre is built
+    with this flavor, java will create only ipv6 sockets by default.
+    Since ipv4 to ipv6 address mapping is disabled on OpenBSD,
+    using ipv4 addresses will fail. Consequently, you may only
+    use ipv6 addresses or you can start java with
+    -Djava.net.preferIPv4Stack=true and can only use ipv4
+    addresses.

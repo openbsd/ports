@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_make_java_java_localegen_sh,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/java/java/localegen.sh.orig	Thu Jul  5 04:56:09 2007
++++ j2se/make/java/java/localegen.sh	Mon Jul 30 18:15:44 2007
+@@ -55,9 +55,9 @@ sed_script="$SED -e \"s@^#warn .*@// -- This file was 
+ for FILE in $RESOURCE_NAMES 
+ do
+     getlocalelist $FILE $EURO_FILES_LIST
+-    sed_script=$sed_script"-e \"s/#"$FILE"_EuroLocales#/$localelist/g\" "
++    sed_script=$sed_script"-e \"s@#"$FILE"_EuroLocales#@$localelist@g\" "
+     getlocalelist $FILE $NONEURO_FILES_LIST
+-    sed_script=$sed_script"-e \"s/#"$FILE"_NonEuroLocales#/$localelist/g\" "
++    sed_script=$sed_script"-e \"s@#"$FILE"_NonEuroLocales#@$localelist@g\" "
+ done
+ 
+ sed_script=$sed_script"$INPUT_FILE > $OUTPUT_FILE"

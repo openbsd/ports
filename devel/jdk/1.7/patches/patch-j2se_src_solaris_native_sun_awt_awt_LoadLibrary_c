@@ -1,0 +1,40 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_LoadLibrary_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_LoadLibrary.c.orig	Thu Jul  5 05:03:39 2007
++++ j2se/src/solaris/native/sun/awt/awt_LoadLibrary.c	Fri Jul 27 18:25:14 2007
+@@ -180,6 +180,8 @@ AWT_OnLoad(JavaVM *vm, void *reserved)
+                     xt_before_xm = 1;
+                 }
+ 
++/* checking major version is not valid for *BSD */
++#ifndef _ALLBSD_SOURCE
+                 if (strstr(dlinfo.dli_fname, "libXm.so.3") != NULL) {
+ #ifdef VERBOSE_AWT_DEBUG
+                     fprintf(stderr, "Motif 1.2 detected, using that.\n");
+@@ -192,6 +194,7 @@ AWT_OnLoad(JavaVM *vm, void *reserved)
+ #endif
+                     motifVersion = 2;
+                 }
++#endif
+             }
+ 
+             /* Determine desired Motif Version, and set appropriate properties
+@@ -199,7 +202,10 @@ AWT_OnLoad(JavaVM *vm, void *reserved)
+              */  
+             else {  
+                 uname(&name); 
+-    
++/* checking major version is not valid for *BSD */
++#ifdef _ALLBSD_SOURCE
++		motifVersion = 2;
++#else
+                 if ((strcmp(name.release, "5.5.1") == 0) ||
+                     (strcmp(name.release, "5.6") == 0)) {
+ #ifdef VERBOSE_AWT_DEBUG
+@@ -223,6 +229,7 @@ AWT_OnLoad(JavaVM *vm, void *reserved)
+ #endif
+                     motifVersion = 2;
+                 }
++#endif
+             }
+         }
+     

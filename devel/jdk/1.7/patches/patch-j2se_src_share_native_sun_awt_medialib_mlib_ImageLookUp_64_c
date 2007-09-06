@@ -1,0 +1,283 @@
+$OpenBSD: patch-j2se_src_share_native_sun_awt_medialib_mlib_ImageLookUp_64_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c.orig	Thu Jul  5 05:03:11 2007
++++ j2se/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Fri Jul 27 18:25:10 2007
+@@ -172,7 +172,7 @@
+ }
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+ 
+ #define READ_U8_D64(table0, table1, table2, table3)             \
+   t0 = *(mlib_d64*)((mlib_u8*)table0 + ((s0 << 3) & 0x7F8));    \
+@@ -188,7 +188,7 @@
+   t2 = *(mlib_d64*)((mlib_u8*)table2 + ((s0 >> 5)  & 0x7F8));   \
+   t3 = *(mlib_d64*)((mlib_u8*)table3 + ((s0 << 3)  & 0x7F8))
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ void mlib_ImageLookUp_U8_D64(const mlib_u8  *src,
+@@ -616,7 +616,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+       for (i = 0; i < size - 7; i += 4, dp += 8, sa++) {
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 5) & 0x7F8));
+@@ -626,12 +626,12 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+         dp[0] = t0;
+         dp[1] = t1;
+         dp[2] = t2;
+         dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 21) & 0x7F8));
+@@ -641,7 +641,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+         s0 = sa[0];
+         dp[4] = t0;
+         dp[5] = t1;
+@@ -649,7 +649,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         dp[7] = t3;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 5) & 0x7F8));
+@@ -659,12 +659,12 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       dp[0] = t0;
+       dp[1] = t1;
+       dp[2] = t2;
+       dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 21) & 0x7F8));
+@@ -674,7 +674,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       dp[4] = t0;
+       dp[5] = t1;
+       dp[6] = t2;
+@@ -722,7 +722,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+       for (i = 0; i < size - 7; i += 4, dp += 12, sa++) {
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+@@ -736,14 +736,14 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t4 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t5 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+         dp[0] = t0;
+         dp[1] = t1;
+         dp[2] = t2;
+         dp[3] = t3;
+         dp[4] = t4;
+         dp[5] = t5;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+@@ -757,7 +757,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t4 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t5 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+         s0 = sa[0];
+         dp[6] = t0;
+         dp[7] = t1;
+@@ -767,7 +767,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         dp[11] = t5;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+@@ -781,14 +781,14 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t4 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t5 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       dp[0] = t0;
+       dp[1] = t1;
+       dp[2] = t2;
+       dp[3] = t3;
+       dp[4] = t4;
+       dp[5] = t5;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+@@ -802,7 +802,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t4 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t5 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       dp[6] = t0;
+       dp[7] = t1;
+       dp[8] = t2;
+@@ -855,7 +855,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+       for (i = 0; i < size - 7; i += 4, dp += 16, sa++) {
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+@@ -865,12 +865,12 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 21) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 21) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+         dp[0] = t0;
+         dp[1] = t1;
+         dp[2] = t2;
+         dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 5) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 5) & 0x7F8));
+@@ -880,12 +880,12 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+         dp[4] = t0;
+         dp[5] = t1;
+         dp[6] = t2;
+         dp[7] = t3;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+@@ -895,12 +895,12 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 5) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 5) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+         dp[8] = t0;
+         dp[9] = t1;
+         dp[10] = t2;
+         dp[11] = t3;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+         t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 21) & 0x7F8));
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 21) & 0x7F8));
+@@ -910,7 +910,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+         t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+         t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+         s0 = sa[0];
+         dp[12] = t0;
+         dp[13] = t1;
+@@ -918,7 +918,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+         dp[15] = t3;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 << 3) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+@@ -928,12 +928,12 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 21) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 21) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       dp[0] = t0;
+       dp[1] = t1;
+       dp[2] = t2;
+       dp[3] = t3;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 5) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 5) & 0x7F8));
+@@ -943,12 +943,12 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 13) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       dp[4] = t0;
+       dp[5] = t1;
+       dp[6] = t2;
+       dp[7] = t3;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 13) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 13) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 13) & 0x7F8));
+@@ -958,12 +958,12 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 5) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 5) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 >> 5) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       dp[8] = t0;
+       dp[9] = t1;
+       dp[10] = t2;
+       dp[11] = t3;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       t0 = *(mlib_d64 *) ((mlib_u8 *) tab0 + ((s0 >> 21) & 0x7F8));
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 >> 21) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 >> 21) & 0x7F8));
+@@ -973,7 +973,7 @@ void mlib_ImageLookUpSI_U8_D64(const mlib_u8  *src,
+       t1 = *(mlib_d64 *) ((mlib_u8 *) tab1 + ((s0 << 3) & 0x7F8));
+       t2 = *(mlib_d64 *) ((mlib_u8 *) tab2 + ((s0 << 3) & 0x7F8));
+       t3 = *(mlib_d64 *) ((mlib_u8 *) tab3 + ((s0 << 3) & 0x7F8));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       dp[12] = t0;
+       dp[13] = t1;
+       dp[14] = t2;

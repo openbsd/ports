@@ -1,0 +1,33 @@
+$OpenBSD: patch-j2se_make_common_shared_Compiler-gcc_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/common/shared/Compiler-gcc.gmk.orig	Thu Jul  5 04:56:08 2007
++++ j2se/make/common/shared/Compiler-gcc.gmk	Thu Aug  2 09:52:58 2007
+@@ -55,20 +55,24 @@ ifeq ($(PLATFORM), windows)
+ 
+ endif
+ 
+-ifeq ($(PLATFORM), linux)
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+ 
++ifeq ($(PLATFORM), linux)
+   # Settings specific to Linux
+-  CC             = $(COMPILER_PATH)gcc
+-  CPP            = $(COMPILER_PATH)gcc -E
++  CC            ?= $(COMPILER_PATH)gcc
++  CPP            = $(CC) -E
+   # statically link libstdc++ before C++ ABI is stablized on Linux
+   STATIC_CXX     = true
++else
++  STATIC_CXX     = false
++endif
+   ifeq ($(STATIC_CXX),true)
+     # g++ always dynamically links libstdc++, even we use "-Wl,-Bstatic -lstdc++"
+     # We need to use gcc to statically link the C++ runtime. gcc and g++ use
+     # the same subprocess to compile C++ files, so it is OK to build using gcc.
+-    CXX            = $(COMPILER_PATH)gcc
++    CXX            = $(CC)
+   else
+-    CXX            = $(COMPILER_PATH)g++
++    CXX           ?= $(COMPILER_PATH)g++
+   endif
+   ifneq ("$(findstring sparc,$(ARCH))", "")
+     # sparc or sparcv9

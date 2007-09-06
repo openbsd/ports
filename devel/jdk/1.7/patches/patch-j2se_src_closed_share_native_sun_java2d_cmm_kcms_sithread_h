@@ -1,0 +1,30 @@
+$OpenBSD: patch-j2se_src_closed_share_native_sun_java2d_cmm_kcms_sithread_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/sun/java2d/cmm/kcms/sithread.h.orig	Thu Jul  5 03:44:31 2007
++++ j2se/src/closed/share/native/sun/java2d/cmm/kcms/sithread.h	Sun Jul 29 22:48:36 2007
+@@ -25,7 +25,7 @@
+ #include <signal.h>
+ #endif /* KPSOLARIS */
+ 
+-#if defined (KPLINUX)
++#if defined (KPLINUX) || defined (KPBSD)
+ #include <pthread.h>
+ #endif
+ 
+@@ -75,7 +75,7 @@ typedef struct KpThreadFlags_s {
+ /******************************
+  * Linux definitons
+  ******************************/ 
+-#if defined (KPLINUX)
++#if defined (KPLINUX) || defined (KPBSD)
+ 
+ typedef pthread_t KpThread_t, *KpThread_p;
+ 
+@@ -83,7 +83,7 @@ typedef struct KpThreadFlags_s {
+ 		KpInt32_t				CreationFlags;
+ } KpThreadFlags_t, FAR * KpThreadFlags_p, FAR * FAR * KpThreadFlags_h;
+ 
+-#endif /* KPLINUX */
++#endif /* KPLINUX || KPBSD */
+ 
+ /***********************
+  * Function Prototypes 

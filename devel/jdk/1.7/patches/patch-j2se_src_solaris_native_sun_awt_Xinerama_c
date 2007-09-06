@@ -1,0 +1,29 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_Xinerama_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/Xinerama.c.orig	Thu Jul  5 05:03:39 2007
++++ j2se/src/solaris/native/sun/awt/Xinerama.c	Fri Jul 27 18:25:14 2007
+@@ -54,18 +54,20 @@ Equipment Corporation.
+ ******************************************************************/
+ /* $XFree86: xc/lib/Xinerama/Xinerama.c,v 1.4 2004/04/03 22:38:52 tsi Exp $ */
+ 
+-#ifndef __linux__
+-    #error This file should only be built under Linux
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
++    #error This file should only be built under Linux/BSD
+ #endif
+ 
++#include <sys/types.h>
++
+ #define NEED_EVENTS
+ #define NEED_REPLIES
+ #include <X11/Xlibint.h>
+ #include <X11/Xutil.h>
+-#include "Xext.h"			/* in ../include */
+-#include "extutil.h"			/* in ../include */
++#include "Xext.h"
++#include "extutil.h"
+ #include "panoramiXext.h"
+-#include "panoramiXproto.h"		/* in ../include */
++#include "panoramiXproto.h"
+ #include "Xinerama.h"
+ 
+ 

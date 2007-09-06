@@ -1,0 +1,16 @@
+Java (TM) 2 SDK, Standard Edition
+Version 1.7.0
+
+The Java 2 SDK software includes tools useful for developing and
+testing programs written in the Java programming language and
+running on the Java platform.
+
+Flavors:
+  with_ipv6
+    Build the jdk/jre with ipv6 support. When the jdk/jre is built
+    with this flavor, java will create only ipv6 sockets by default.
+    Since ipv4 to ipv6 address mapping is disabled on OpenBSD,
+    using ipv4 addresses will fail. Consequently, you may only
+    use ipv6 addresses or you can start java with
+    -Djava.net.preferIPv4Stack=true and can only use ipv4
+    addresses.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-control_make_sanity-rules_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- control/make/sanity-rules.gmk.orig	Thu Aug  2 03:44:47 2007
++++ control/make/sanity-rules.gmk	Fri Aug  3 18:02:51 2007
+@@ -241,7 +241,7 @@ ifneq ($(SKIP_COMPARE_IMAGES), true)
+ 	@if [ ! -f $(PREVIOUS_JDK_BUNDLE) ]; then \
+ 	  $(ECHO) "ERROR: You do not have access to the previous java release sdk bundles. \n" \
+ 	    "      Please check your access to \n" \
+-	    "          $(PREVIOUS_sdk_BUNDLE) \n" \
++	    "          $(PREVIOUS_JDK_BUNDLE) \n" \
+ 	    "      and/or check your value of ALT_PREVIOUS_RELEASE_PATH or ALT_PREVIOUS_JDK_FILE. \n" \
+ 	    "      This will affect you if you build the images target. \n" \
+ 	    "" >> $(ERROR_FILE) ; \

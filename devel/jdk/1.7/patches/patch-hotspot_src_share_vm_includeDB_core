@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.3 2007/07/13 22:52:35 kurt Exp $
---- hotspot/src/share/vm/includeDB_core.orig	Thu Jun 21 04:18:24 2007
-+++ hotspot/src/share/vm/includeDB_core	Thu Jul  5 12:14:20 2007
-@@ -466,7 +466,7 @@ cardTableModRefBS.cpp                   cardTableRS.hp
+$OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.4 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/src/share/vm/includeDB_core.orig	Thu Aug 16 03:49:58 2007
++++ hotspot/src/share/vm/includeDB_core	Thu Aug 23 11:12:54 2007
+@@ -450,7 +450,7 @@ cardTableModRefBS.cpp                   cardTableRS.hp
  cardTableModRefBS.cpp                   java.hpp
  cardTableModRefBS.cpp                   mutexLocker.hpp
  cardTableModRefBS.cpp                   sharedHeap.hpp
@@ -10,7 +10,7 @@ $OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.3 2007/07/13 22:52:35 ku
  cardTableModRefBS.cpp                   universe.hpp
  cardTableModRefBS.cpp                   virtualspace.hpp
  
-@@ -1029,15 +1029,14 @@ compactPermGen.hpp                      permGen.hpp
+@@ -1013,15 +1013,14 @@ compactPermGen.hpp                      permGen.hpp
  compactingPermGenGen.cpp                compactingPermGenGen.hpp
  compactingPermGenGen.cpp                filemap.hpp
  compactingPermGenGen.cpp                genOopClosures.inline.hpp
@@ -27,7 +27,7 @@ $OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.3 2007/07/13 22:52:35 ku
  
  compilationPolicy.cpp                   compilationPolicy.hpp
  compilationPolicy.cpp                   compiledIC.hpp
-@@ -1785,7 +1784,7 @@ generation.hpp                          watermark.hpp
+@@ -1726,7 +1725,7 @@ generation.hpp                          watermark.hpp
  
  generation.inline.hpp                   genCollectedHeap.hpp
  generation.inline.hpp                   generation.hpp
@@ -36,7 +36,7 @@ $OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.3 2007/07/13 22:52:35 ku
  
  generationSpec.cpp                      compactPermGen.hpp
  generationSpec.cpp                      defNewGeneration.hpp
-@@ -2811,6 +2810,7 @@ klass.hpp                               specialized_oo
+@@ -2435,6 +2434,7 @@ klass.hpp                               specialized_oo
  
  klass.inline.hpp                        klass.hpp
  klass.inline.hpp                        markOop.hpp
@@ -44,7 +44,7 @@ $OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.3 2007/07/13 22:52:35 ku
  
  klassKlass.cpp                          collectedHeap.hpp
  klassKlass.cpp                          collectedHeap.inline.hpp
-@@ -4024,6 +4024,7 @@ space.hpp                               blockOffsetTab
+@@ -3636,6 +3636,7 @@ space.hpp                               blockOffsetTab
  space.hpp                               cardTableModRefBS.hpp
  space.hpp                               iterator.hpp
  space.hpp                               markOop.hpp
@@ -52,7 +52,7 @@ $OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.3 2007/07/13 22:52:35 ku
  space.hpp                               memRegion.hpp
  space.hpp                               mutexLocker.hpp
  space.hpp                               os_<os_family>.inline.hpp
-@@ -4222,6 +4223,7 @@ synchronizer.cpp                        vmSymbols.hpp
+@@ -3837,6 +3838,7 @@ synchronizer.cpp                        vmSymbols.hpp
  
  synchronizer.hpp                        handles.hpp
  synchronizer.hpp                        markOop.hpp

@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/java/net/net_util_md.h.orig	Thu Aug  2 03:52:40 2007
++++ j2se/src/solaris/native/java/net/net_util_md.h	Fri Aug  3 18:03:01 2007
+@@ -37,7 +37,7 @@
+ #endif
+ 
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__FreeBSD__)
+ extern int NET_Timeout(int s, long timeout);
+ extern int NET_Read(int s, void* buf, size_t len);
+ extern int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,

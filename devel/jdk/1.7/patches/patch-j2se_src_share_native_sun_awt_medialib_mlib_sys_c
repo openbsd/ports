@@ -1,0 +1,33 @@
+$OpenBSD: patch-j2se_src_share_native_sun_awt_medialib_mlib_sys_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/awt/medialib/mlib_sys.c.orig	Thu Jul  5 05:03:11 2007
++++ j2se/src/share/native/sun/awt/medialib/mlib_sys.c	Fri Jul 27 18:25:10 2007
+@@ -30,9 +30,15 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#ifdef _ALLBSD_SOURCE
++#include <unistd.h>
++#endif
+ #include <mlib_types.h>
+ #include <mlib_sys_proto.h>
+ #include "mlib_SysMath.h"
++#if defined(_ALLBSD_SOURCE)
++#include <sys/param.h>
++#endif
+ 
+ /***************************************************************/
+ 
+@@ -90,7 +96,12 @@ void *__mlib_malloc(mlib_u32 size)
+    * alignment. -- from stdlib.h of MS VC++5.0.
+    */
+   return (void *) malloc(size);
+-#else /* _MSC_VER */
++#elif defined(__FreeBSD__) && (__FreeBSD_version >= 700013)
++  void *ret;
++  return posix_memalign(&ret, 8, size) ? NULL : ret;
++#elif defined(_ALLBSD_SOURCE)
++  return valloc(size);
++#else
+   return (void *) memalign(8, size);
+ #endif /* _MSC_VER */
+ }

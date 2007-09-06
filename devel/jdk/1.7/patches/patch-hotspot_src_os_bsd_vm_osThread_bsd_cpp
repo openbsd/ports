@@ -1,8 +1,8 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_osThread_bsd_cpp,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/src/os/bsd/vm/osThread_bsd.cpp.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/src/os/bsd/vm/osThread_bsd.cpp	Mon Apr 16 08:42:39 2007
-@@ -42,8 +42,8 @@ static pthread_mutex_t EventFreeLock = PTHREAD_MUTEX_I
-  
+$OpenBSD: patch-hotspot_src_os_bsd_vm_osThread_bsd_cpp,v 1.2 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/src/os/bsd/vm/osThread_bsd.cpp.orig	Fri Aug  3 18:02:38 2007
++++ hotspot/src/os/bsd/vm/osThread_bsd.cpp	Fri Aug  3 18:02:52 2007
+@@ -31,8 +31,8 @@
+ 
  void OSThread::pd_initialize() {
    assert(this != NULL, "check");
 -  _thread_id        = 0;

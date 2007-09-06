@@ -1,0 +1,24 @@
+$OpenBSD: patch-j2se_src_closed_share_native_sun_java2d_cmm_kcms_ukcpmgr_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/sun/java2d/cmm/kcms/ukcpmgr.c.orig	Thu Jul  5 03:44:32 2007
++++ j2se/src/closed/share/native/sun/java2d/cmm/kcms/ukcpmgr.c	Sun Jul 29 22:48:37 2007
+@@ -77,7 +77,9 @@ KpInt32_t	nProcessors;
+ 	if (theIGPtr) {}
+ 
+ 	/* setup directory for CPxx files */
+-#if defined (KPSGI) || defined(KPSGIALL)
++#if defined (KPBSD)
++	strcpy (iGP->KCPDataDir, "/tmp/");
++#elif defined (KPSGI) || defined(KPSGIALL)
+ 	strcpy (iGP->KCPDataDir, "/var/cms/cmscp/");
+ #elif defined (KPSUN) && defined (SOLARIS_CMM)
+ 	strcpy (iGP->KCPDataDir, "/tmp/");
+@@ -116,6 +118,9 @@ KpInt32_t	nProcessors;
+ 	if (thr_main() == -1) {
+ 		nProcessors = 1;		/* no Java threading, can't use extra processors */
+ 	}
++#endif
++#if defined(KPBSD)
++	nProcessors = 1;		/* XXXBSD: sysctl(hw.ncpu)? */
+ #endif
+ 	iGP->numProcessorsAvailable = iGP->numProcessors = nProcessors;
+ }

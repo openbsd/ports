@@ -1,0 +1,180 @@
+$OpenBSD: patch-j2se_src_closed_share_native_com_sun_media_sound_engine_X_API_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/com/sun/media/sound/engine/X_API.c.orig	Thu Jul  5 03:44:25 2007
++++ j2se/src/closed/share/native/com/sun/media/sound/engine/X_API.c	Sun Jul 29 22:42:45 2007
+@@ -300,7 +300,7 @@
+ #include <fcntl.h>
+ #endif
+ 
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ #include <stdio.h>
+ #include <memory.h>
+ #include <stdlib.h>
+@@ -587,7 +587,7 @@ XPTR XNewPtr(INT32 size)
+ 	    XSetMemory(data, size, 0);
+ 	}
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+     // $$kk: 10.14.97
+     // changed this line as per Liang He's performance recommendations
+     //	data = (char *)malloc((size_t)size);
+@@ -661,7 +661,7 @@ void XDisposePtr(XPTR data)
+ #if X_PLATFORM == X_BE
+ 	    free(osAllocatedData);
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 	    free(osAllocatedData);
+ #endif
+ #if X_PLATFORM == X_NAVIO
+@@ -711,7 +711,7 @@ INT32 XGetPtrSize(XPTR data)
+ #if X_PLATFORM == X_BE
+ 		    size = 0;
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 		    size = 0;
+ #endif
+ #if X_PLATFORM == X_NAVIO
+@@ -744,7 +744,7 @@ void XBlockMove(XPTR source, XPTR dest, INT32 size)
+ #if X_PLATFORM == X_BE
+ 	    memcpy(dest, source, size);
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 	    memcpy(dest, source, (size_t)size);
+ #endif
+ #if X_PLATFORM == X_NAVIO
+@@ -872,6 +872,7 @@ XBOOL XIsStereoSupported(void)
+ 		  (X_PLATFORM == X_BE)				||	\
+ 		  (X_PLATFORM == X_SOLARIS)			||	\
+ 		  (X_PLATFORM == X_LINUX)			||	\
++		  (X_PLATFORM == X_BSD)				||	\
+ 		  (X_PLATFORM == X_NAVIO) )
+     return TRUE;
+ #endif
+@@ -988,7 +989,7 @@ UINT32 XMicroseconds(void)
+ 	}
+     return (hardwareTicks - starttick);
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+     static hrtime_t solaristick = 0;
+ 
+     if (solaristick == 0)
+@@ -1030,6 +1031,7 @@ XBOOL XIs16BitSupported(void)
+ 		  (X_PLATFORM == X_BE)				||	\
+ 		  (X_PLATFORM == X_SOLARIS)			||	\
+ 		  (X_PLATFORM == X_LINUX)			||	\
++		  (X_PLATFORM == X_BSD)				||	\
+ 		  (X_PLATFORM == X_WEBTV)			||	\
+ 		  (X_PLATFORM == X_NAVIO) )
+     return TRUE;
+@@ -1271,6 +1273,7 @@ void XConvertNativeFileToXFILENAME(void *file, XFILENA
+ 		  (X_PLATFORM == X_BE)				||	\
+ 		  (X_PLATFORM == X_SOLARIS)			||	\
+ 		  (X_PLATFORM == X_LINUX)			||	\
++		  (X_PLATFORM == X_BSD)				||	\
+ 		  (X_PLATFORM == X_NAVIO) )
+ 	    XStrCpy((char *)xfile->theFile, (char *)file);
+ #endif
+@@ -1600,7 +1603,7 @@ XFILE XFileOpenResource(XFILENAME *file, XBOOL readOnl
+ 		}
+ #endif
+ 
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM ==X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 	    if (readOnly)
+ 		{
+ 		    pReference->fileReference = open(pReference->theFile, O_RDONLY);	// O_BINARY
+@@ -1781,7 +1784,7 @@ XFILE XFileOpenForRead(XFILENAME *file)
+ 		    pReference = NULL;
+ 		}
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 	    pReference->fileReference = open(pReference->theFile, O_RDONLY);	// O_BINARY
+ 	    if (pReference->fileReference == -1)
+ 		{
+@@ -1871,7 +1874,7 @@ XFILE XFileOpenForWrite(XFILENAME *file, XBOOL create)
+ 		    pReference = NULL;
+ 		}
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 	    if (create)
+ 		{
+ 		    pReference->fileReference = open(pReference->theFile, O_WRONLY | O_CREAT | O_TRUNC);
+@@ -1918,7 +1921,7 @@ XERR XFileDelete(XFILENAME *file)
+ #if X_PLATFORM == X_BE
+     return unlink(file->theFile);
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+     return unlink(file->theFile);
+ #endif
+ #if X_PLATFORM == X_NAVIO
+@@ -1958,7 +1961,7 @@ void XFileClose(XFILE fileRef)
+ #if X_PLATFORM == X_BE
+ 		    close(pReference->fileReference);
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 		    close(pReference->fileReference);
+ #endif
+ #if X_PLATFORM == X_NAVIO
+@@ -2008,7 +2011,7 @@ XERR XFileRead(XFILE fileRef, void * buffer, INT32 buf
+ #if X_PLATFORM == X_BE
+ 		    return (read(pReference->fileReference, buffer, bufferLength) == bufferLength) ? 0 : -1;
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 		    return (read(pReference->fileReference, buffer, (size_t)bufferLength) == bufferLength) ? 0 : -1;
+ #endif
+ #if X_PLATFORM == X_NAVIO
+@@ -2045,7 +2048,7 @@ XERR XFileWrite(XFILE fileRef, void *buffer, INT32 buf
+ #if X_PLATFORM == X_BE
+ 		    return (write(pReference->fileReference, buffer, bufferLength) == bufferLength) ? 0 : -1;
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 		    return (write(pReference->fileReference, buffer, (size_t)bufferLength) == bufferLength) ? 0 : -1;
+ #endif
+ #if X_PLATFORM == X_NAVIO
+@@ -2088,7 +2091,7 @@ XERR XFileSetPosition(XFILE fileRef, INT32 filePositio
+ #if X_PLATFORM == X_BE
+ 		    err = (lseek(pReference->fileReference, filePosition, SEEK_SET) == -1) ? -1 : 0;
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 		    err = (lseek(pReference->fileReference, (off_t)filePosition, SEEK_SET) == -1) ? -1 : 0;
+ #endif
+ #if X_PLATFORM == X_NAVIO
+@@ -2156,7 +2159,7 @@ INT32 XFileGetPosition(XFILE fileRef)
+ #if X_PLATFORM == X_BE
+ 		    pos = lseek(pReference->fileReference, 0, SEEK_CUR);
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 		    pos = lseek(pReference->fileReference, 0, SEEK_CUR);
+ #endif
+ #if X_PLATFORM == X_NAVIO
+@@ -2194,7 +2197,7 @@ INT32 XFileSetLength(XFILE fileRef, INT32 newSize)
+ 		    // deleting of resources will fail until this function is fixed
+ 		    //			chsize(pReference->fileReference, newSize);
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 		    error = -1;
+ 		    // deleting of resources will fail until this function is fixed
+ 		    //			chsize(pReference->fileReference, newSize);
+@@ -2238,7 +2241,7 @@ INT32 XFileGetLength(XFILE fileRef)
+ 		    pos = lseek(pReference->fileReference, 0, SEEK_END);
+ 		    lseek(pReference->fileReference, 0, SEEK_SET);
+ #endif
+-#if (X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX)
++#if (X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD)
+ 		    pos = lseek(pReference->fileReference, 0, SEEK_END);
+ 		    lseek(pReference->fileReference, 0, SEEK_SET);
+ #endif

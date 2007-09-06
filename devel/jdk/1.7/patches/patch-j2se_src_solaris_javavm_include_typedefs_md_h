@@ -1,0 +1,22 @@
+$OpenBSD: patch-j2se_src_solaris_javavm_include_typedefs_md_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/javavm/include/typedefs_md.h.orig	Thu Jul  5 05:03:37 2007
++++ j2se/src/solaris/javavm/include/typedefs_md.h	Fri Jul 27 18:25:14 2007
+@@ -37,9 +37,18 @@
+ #include <stdint.h>
+ #define HAVE_INTPTR_T
+ #define _UINT64_T
++#elif defined(_ALLBSD_SOURCE)
++#ifdef __OpenBSD__
++#include <inttypes.h>
+ #endif
++#define HAVE_INTPTR_T
++#define _UINT64_T
++#define _INT64_T
++#endif
+ 
++#if !defined(_ALLBSD_SOURCE)
+ #define int8_t char
++#endif
+ 
+ /* Fix for varargs differences on PowerPC */
+ #if defined(__powerpc__)

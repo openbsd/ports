@@ -1,0 +1,55 @@
+$OpenBSD: patch-j2se_src_closed_share_native_com_sun_media_sound_engine_X_API_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/com/sun/media/sound/engine/X_API.h.orig	Thu Jul  5 03:44:25 2007
++++ j2se/src/closed/share/native/com/sun/media/sound/engine/X_API.h	Sun Jul 29 22:42:45 2007
+@@ -205,6 +205,7 @@
+ #define X_NAVIO         7		// NaviOS
+ #define X_WIN_HARDWARE  8		// Windows 95 only direct to Sound Blaster hardware
+ #define X_LINUX         9		// Linux
++#define X_BSD          10 		// BSD
+ 
+ // **********************************
+ // Make sure you set the X_PLATFORM define correctly. Everything depends upon this
+@@ -245,7 +246,7 @@
+ //#define HAE_EDITOR		1
+ 
+ // following is needed for _LP64
+-#if ((X_PLATFORM == X_SOLARIS) || (X_PLATFORM == X_LINUX))
++#if ((X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD))
+ #include <sys/types.h>
+ #endif
+ 
+@@ -291,7 +292,7 @@
+ 
+ 
+ /* ************** ENDIANNESS selection ************** */
+-#if ( (CPU_TYPE == k80X86) || (CPU_TYPE == kIA64) || (CPU_TYPE == kAMD64) || defined(_LITTLE_ENDIAN) )
++#if ( (CPU_TYPE == k80X86) || (CPU_TYPE == kIA64) || (CPU_TYPE == kAMD64) )
+ /* little endian */
+ #define X_WORD_ORDER   TRUE
+ #else
+@@ -889,7 +890,7 @@ extern "C" {
+ /* $$fb 2002-03-11: added X_LINUX type */
+ // **********************************
+ // Linux via dev/dsp thread
+-#if X_PLATFORM == X_LINUX
++#if ((X_PLATFORM == X_LINUX)||(X_PLATFORM == X_BSD))
+ #ifndef DEBUG_STR
+ #ifdef  USE_DEBUG
+ #include <stdio.h>
+@@ -1099,7 +1100,7 @@ extern "C" {
+ #define FILE_NAME_LENGTH	63
+ #endif
+ 
+-#if ((X_PLATFORM == X_SOLARIS || X_PLATFORM == X_LINUX))
++#if ((X_PLATFORM == X_SOLARIS)||(X_PLATFORM == X_LINUX)||(X_PLATFORM==X_BSD))
+     // $$kk: 08.12.98: what is the real value?  is 1024 correct??
+ #define FILE_NAME_LENGTH	1024
+ #endif
+@@ -1130,6 +1131,7 @@ extern "C" {
+ 	  (X_PLATFORM == X_BE)				||	\
+ 	  (X_PLATFORM == X_SOLARIS)			||	\
+ 	  (X_PLATFORM == X_LINUX)			||	\
++	  (X_PLATFORM == X_BSD)				||	\
+ 	  (X_PLATFORM == X_NAVIO) )
+ 	/* $$fb 2002-02-14: itanium port */
+ 	XFILE_HANDLE				fileReference;

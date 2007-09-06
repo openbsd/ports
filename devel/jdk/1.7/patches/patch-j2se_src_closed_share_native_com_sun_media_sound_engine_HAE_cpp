@@ -1,0 +1,11 @@
+$OpenBSD: patch-j2se_src_closed_share_native_com_sun_media_sound_engine_HAE_cpp,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/com/sun/media/sound/engine/HAE.cpp.orig	Sun Jul 29 22:40:44 2007
++++ j2se/src/closed/share/native/com/sun/media/sound/engine/HAE.cpp	Sun Jul 29 22:41:09 2007
+@@ -3216,6 +3216,7 @@ HAEErr HAEMidiFile::GetInfo(HAEInfoTypes infoType, cha
+ #if ( (X_PLATFORM == X_WINDOWS) 			||	\
+ 	  (X_PLATFORM == X_WIN_HARDWARE)	||	\
+ 	  (X_PLATFORM == X_SOLARIS)	|| \
++	  (X_PLATFORM == X_BSD)         || \
+ 	  (X_PLATFORM == X_LINUX)	)
+ 	    while (*cInfo)
+ 		{

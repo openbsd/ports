@@ -1,0 +1,93 @@
+$OpenBSD: patch-j2se_src_solaris_hpi_src_memory_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/hpi/src/memory_md.c.orig	Thu Jul  5 05:03:37 2007
++++ j2se/src/solaris/hpi/src/memory_md.c	Fri Jul 27 18:25:14 2007
+@@ -50,12 +50,24 @@
+ #include <stdlib.h>
+ #include <stdio.h>	/* For perror() */
+ #include <string.h>
++#if defined(_ALLBSD_SOURCE)
++#include <sys/param.h>
++#else
+ #include <malloc.h>
++#endif
+ 
+ #include "hpi_impl.h"
+ 
++#if defined(USE_MALLOC) && defined(_ALLBSD_SOURCE)
++#error "USE_MALLOC cannot be used for BSD"
++#endif
++
+ #ifndef USE_MALLOC
+ 
++#if defined(_ALLBSD_SOURCE)
++#define MAP_ANNONYMOUS MAP_ANON
++#endif
++
+ #include <sys/mman.h>
+ #include <fcntl.h>
+ #ifdef __linux__
+@@ -73,7 +85,19 @@ static int devZeroFD;
+ #define MAP_FAILED ((caddr_t)-1)
+ #endif
+ static size_t memGrainSize;	/* A page for Linux */
++#elif defined(_ALLBSD_SOURCE)
++static size_t memGrainSize;	/* A page for FreeBSD */
++#if defined(__FreeBSD__) && (__FreeBSD_version >= 700013)
++static inline void *
++memalign(size_t alignment, size_t size)
++{
++    void *ret;
++    return posix_memalign(&ret, alignment, size) ? NULL : ret;
++}
+ #else
++#define memalign(a, b)	valloc(b)
++#endif
++#else
+ static unsigned int memGrainSize;	/* A page for Solaris */
+ #endif
+ 
+@@ -154,7 +178,7 @@ mapChunk(long length)
+ {
+     char *ret;
+ 
+-#if defined(__linux__) && defined(MAP_ANONYMOUS)
++#if (defined(__linux__) || defined(_ALLBSD_SOURCE)) && defined(MAP_ANONYMOUS)
+      ret = (char *) mmap(0, length, PROT_ALL,
+                          MAP_NORESERVE | MAP_PRIVATE | MAP_ANONYMOUS,
+                          -1, (off_t) 0);
+@@ -176,7 +200,7 @@ static char *
+ mapChunkReserve(char *addr, long length)
+ {
+     char *ret;
+-#if defined(__linux__) && defined(MAP_ANONYMOUS)
++#if (defined(__linux__) || defined(_ALLBSD_SOURCE)) && defined(MAP_ANONYMOUS)
+      ret = (char *) mmap(addr, length, PROT_ALL,
+                          MAP_FIXED | MAP_PRIVATE | MAP_ANONYMOUS,
+                          -1, (off_t) 0);
+@@ -199,7 +223,7 @@ mapChunkNoreserve(char *addr, long length)
+ {
+     char *ret;
+ 
+-#if defined(__linux__) && defined(MAP_ANONYMOUS)
++#if (defined(__linux__) || defined(_ALLBSD_SOURCE)) && defined(MAP_ANONYMOUS)
+      ret = (char *) mmap(addr, length, PROT_ALL,
+                        MAP_FIXED | MAP_PRIVATE |
+                          MAP_NORESERVE | MAP_ANONYMOUS,
+@@ -242,7 +266,7 @@ sysMapMem(size_t requestedSize, size_t *mappedSize)
+     *mappedSize = roundUpToGrain(requestedSize);
+ #ifdef USE_MALLOC
+     mappedAddr = (void *) sysMalloc(*mappedSize); /* Returns 0 on failure */
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+      if (mappedAddr) {
+        memset(mappedAddr, 0, *mappedSize);
+        mappedAddr = (void *) roundUpToGrain(mappedAddr);
+@@ -331,7 +355,7 @@ sysCommitMem(void *requestedAddr, size_t requestedSize
+     *committedSize = roundUpToGrain(requestedSize);
+     committedAddr = (void *) roundDownToGrain((long) requestedAddr);
+ #ifdef USE_MALLOC
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     ret = committedAddr;
+ #else
+     ret = requestedAddr;

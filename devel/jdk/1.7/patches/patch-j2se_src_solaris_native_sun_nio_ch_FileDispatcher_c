@@ -1,0 +1,16 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_nio_ch_FileDispatcher_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/nio/ch/FileDispatcher.c.orig	Thu Jul  5 05:03:45 2007
++++ j2se/src/solaris/native/sun/nio/ch/FileDispatcher.c	Fri Jul 27 18:25:15 2007
+@@ -32,8 +32,12 @@
+ #include <sys/socket.h>
+ #include <fcntl.h>
+ #include <sys/uio.h>
++#include <unistd.h>
+ #include "nio_util.h"
+ 
++#if defined(_ALLBSD_SOURCE)
++#include "largefile_bsd.h"
++#endif
+ 
+ static int preCloseFD = -1;	/* File descriptor to which we dup other fd's
+ 				   before closing them for real */

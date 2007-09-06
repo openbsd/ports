@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_make_sun_security_pkcs11_Makefile,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/make/sun/security/pkcs11/Makefile.orig	Sun Jul 15 23:03:34 2007
++++ j2se/make/sun/security/pkcs11/Makefile	Sun Jul 15 23:03:54 2007
+@@ -80,7 +80,7 @@ include $(BUILDDIR)/common/Library.gmk
+ #
+ # Libraries to link
+ #
+-ifeq ($(PLATFORM), windows)
++ifneq (,$(findstring $(PLATFORM), windows bsd))
+   OTHER_LDLIBS = $(JVMLIB)
+ else
+   OTHER_LDLIBS = -ldl $(JVMLIB)

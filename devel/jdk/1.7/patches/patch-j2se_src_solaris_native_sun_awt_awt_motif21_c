@@ -1,0 +1,30 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_motif21_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_motif21.c.orig	Thu Jul  5 05:03:40 2007
++++ j2se/src/solaris/native/sun/awt/awt_motif21.c	Fri Jul 27 18:25:14 2007
+@@ -33,9 +33,13 @@
+ #include "awt_p.h"
+ #include "awt_Component.h"
+ 
++#if (XmVersion >= 2001)
++#include <Xm/XmIm.h>
++#else
+ #define XmPER_SHELL 0
+ extern int32_t _XmImGetGeo(
+                         Widget vw) ;
++#endif
+ 
+ #define MAXARGS 10
+ static Arg xic_vlist[MAXARGS];
+@@ -102,9 +106,12 @@ awt_motif_getIMStatusHeight(Widget w, jobject tc)
+ 	}    
+     }
+ 
++/* XXXBSD: resolve missing symbol? */
++#if !defined(_ALLBSD_SOURCE)
+     if (im_height == 0) {
+ 	im_height = _XmImGetGeo(w);
+     }
++#endif
+ 
+ #if defined(DEBUG)
+     jio_fprintf(stderr,"awt_motif_getIMStatusHeight: Height = %d",im_height);

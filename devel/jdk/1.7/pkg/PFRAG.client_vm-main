@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.client_vm-main,v 1.1 2007/09/06 15:46:20 kurt Exp $
+${JDKHOME}/bin/java-rmi.cgi
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/Xusage.txt
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/libjsig.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/client/libjvm.so

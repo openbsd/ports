@@ -1,0 +1,48 @@
+$OpenBSD: patch-j2se_src_solaris_demo_jvmti_hprof_hprof_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/demo/jvmti/hprof/hprof_md.c.orig	Thu Jul  5 03:53:14 2007
++++ j2se/src/solaris/demo/jvmti/hprof/hprof_md.c	Fri Jul 27 18:25:14 2007
+@@ -33,7 +33,7 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ 
+-#ifndef LINUX
++#if !defined(LINUX) && !defined(_ALLBSD_SOURCE)
+ #include <procfs.h>
+ #endif
+ 
+@@ -76,7 +76,7 @@ md_sleep(unsigned seconds)
+ void
+ md_init(void)
+ {
+-#ifdef LINUX
++#if defined(LINUX) || defined(_ALLBSD_SOURCE)
+     /* No Hi-Res timer option? */
+ #else
+     if ( gdata->micro_state_accounting ) {
+@@ -238,7 +238,7 @@ md_timeofday(void)
+ jlong 
+ md_get_microsecs(void)
+ {
+-#ifdef LINUX
++#if defined(LINUX) || defined(_ALLBSD_SOURCE)
+     return (jlong)(md_timeofday() * (jlong)1000); /* Milli to micro */
+ #else
+     return (jlong)(gethrtime()/(hrtime_t)1000); /* Nano seconds to micro seconds */
+@@ -256,7 +256,7 @@ md_get_timemillis(void)
+ jlong
+ md_get_thread_cpu_timemillis(void)
+ {
+-#ifdef LINUX
++#if defined(LINUX) || defined(_ALLBSD_SOURCE)
+     return md_timeofday();
+ #else
+     return (jlong)(gethrvtime()/1000); /* Nano seconds to milli seconds */
+@@ -271,7 +271,7 @@ md_get_prelude_path(char *path, int path_len, char *fi
+     Dl_info dlinfo;
+ 
+     libdir[0] = 0;
+-#ifdef LINUX
++#if defined(LINUX) || defined(_ALLBSD_SOURCE)
+     addr = (void*)&Agent_OnLoad;
+ #else
+     /* Just using &Agent_OnLoad will get the first external symbol with

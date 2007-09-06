@@ -1,0 +1,19 @@
+$OpenBSD: patch-j2se_src_share_native_sun_awt_medialib_mlib_types_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/awt/medialib/mlib_types.h.orig	Thu Jul  5 05:03:11 2007
++++ j2se/src/share/native/sun/awt/medialib/mlib_types.h	Fri Jul 27 18:25:10 2007
+@@ -63,7 +63,14 @@ typedef double             mlib_d64;
+ 
+ #if defined(__SUNPRO_C) || defined(__SUNPRO_CC) || defined(__GNUC__)
+ 
+-#if defined(__linux__)
++#if defined(_ALLBSD_SOURCE)
++#include <stddef.h>                     /* for ptrdiff_t */
++#if defined(__OpenBSD__)
++#include <inttypes.h>                   /* for uintptr_t */
++#else
++#include <stdint.h>                     /* for uintptr_t */
++#endif
++#elif defined(__linux__)
+ #include <stdint.h>                     /* for uintptr_t */
+ #include <malloc.h>                     /* for ptrdiff_t */
+ #else

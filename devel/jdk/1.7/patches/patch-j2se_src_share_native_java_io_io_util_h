@@ -1,0 +1,20 @@
+$OpenBSD: patch-j2se_src_share_native_java_io_io_util_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/java/io/io_util.h.orig	Thu Jul  5 05:03:00 2007
++++ j2se/src/share/native/java/io/io_util.h	Fri Jul 27 18:24:52 2007
+@@ -29,7 +29,15 @@
+ extern jfieldID IO_fd_fdID;
+ extern jfieldID IO_handle_fdID;
+ 
+-#if !defined(O_DSYNC) || !defined(O_SYNC)
++#ifdef _ALLBSD_SOURCE
++#include <fcntl.h>
++#ifndef O_SYNC
++#define O_SYNC  O_FSYNC
++#endif
++#ifndef O_DSYNC
++#define O_DSYNC O_FSYNC
++#endif
++#elif !defined(O_DSYNC) || !defined(O_SYNC)
+ #define O_SYNC  (0x0800)
+ #define O_DSYNC (0x2000)
+ #endif

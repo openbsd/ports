@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_make_java_management_Makefile,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/java/management/Makefile.orig	Sun Jul 15 22:14:48 2007
++++ j2se/make/java/management/Makefile	Sun Jul 15 22:16:48 2007
+@@ -88,6 +88,11 @@ JAVAHFLAGS += -jni      # Generate JNI-style header fi
+ OTHER_INCLUDES += \
+   -I$(SHARE_SRC)/native/sun/management 
+ 
++ifeq ($(PLATFORM),bsd)
++OTHER_INCLUDES += \
++  -I$(PLATFORM_SRC)/hpi/include
++endif
++
+ ifeq ($(PLATFORM),windows)
+   OTHER_LDLIBS += $(JVMLIB)
+ endif

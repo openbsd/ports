@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_cpu_amd64_vm_assembler_amd64_cpp,v 1.2 2007/07/13 22:52:35 kurt Exp $
---- hotspot/src/cpu/amd64/vm/assembler_amd64.cpp.orig	Fri Jul  6 10:49:14 2007
-+++ hotspot/src/cpu/amd64/vm/assembler_amd64.cpp	Fri Jul  6 10:48:32 2007
-@@ -1282,7 +1282,7 @@ void Assembler::movl(Address dst, Register src) {
+$OpenBSD: patch-hotspot_src_cpu_amd64_vm_assembler_amd64_cpp,v 1.3 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/src/cpu/amd64/vm/assembler_amd64.cpp.orig	Thu Aug 16 03:49:42 2007
++++ hotspot/src/cpu/amd64/vm/assembler_amd64.cpp	Thu Aug 23 11:12:54 2007
+@@ -1307,7 +1307,7 @@ void Assembler::movl(Address dst, Register src) {
    emit_operand(src, dst);
  }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-hotspot_src_cpu_amd64_vm_assembler_amd64_cpp,v 1.2 2007/07/13 22
    InstructionMark im(this);
    int encode = prefixq_and_encode(dst->encoding());
    emit_byte(0xB8 | encode);
-@@ -1309,7 +1309,7 @@ void Assembler::movq(Register dst, Address src) {
+@@ -1334,7 +1334,7 @@ void Assembler::movq(Register dst, Address src) {
    emit_operand(dst, src);
  }
  

@@ -1,0 +1,21 @@
+$OpenBSD: patch-j2se_src_closed_share_native_com_sun_media_sound_Platform_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/com/sun/media/sound/Platform.c.orig	Sun Jul 29 22:39:30 2007
++++ j2se/src/closed/share/native/com/sun/media/sound/Platform.c	Sun Jul 29 22:40:26 2007
+@@ -81,5 +81,17 @@ JNIEXPORT jint JNICALL Java_com_sun_media_sound_Platfo
+ 	return com_sun_media_sound_Platform_LIB_ALSA;
+     }
+ #endif
++#if (X_PLATFORM == X_BSD)
++    switch (feature) {
++    case com_sun_media_sound_Platform_FEATURE_MIDIIO:
++       return com_sun_media_sound_Platform_LIB_MAIN;
++    case com_sun_media_sound_Platform_FEATURE_PORTS:
++       return com_sun_media_sound_Platform_LIB_MAIN;
++    case com_sun_media_sound_Platform_FEATURE_DIRECT_AUDIO:
++       // XXXBSD: When native Direct Audio support is ported change
++       // this back to returning com_sun_media_sound_Platform_LIB_MAIN
++       return 0;
++    }
++#endif
+     return 0;
+ }

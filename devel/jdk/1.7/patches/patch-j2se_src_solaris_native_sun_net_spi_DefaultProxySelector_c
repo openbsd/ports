@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_net_spi_DefaultProxySelector_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/net/spi/DefaultProxySelector.c.orig	Thu Jul  5 05:03:45 2007
++++ j2se/src/solaris/native/sun/net/spi/DefaultProxySelector.c	Fri Jul 27 18:25:15 2007
+@@ -30,7 +30,7 @@
+ #include "sun_net_spi_DefaultProxySelector.h"
+ #include <dlfcn.h>
+ #include <stdio.h>
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <string.h>
+ #else
+ #include <strings.h>

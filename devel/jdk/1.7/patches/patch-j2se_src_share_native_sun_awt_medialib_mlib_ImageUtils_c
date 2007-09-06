@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_share_native_sun_awt_medialib_mlib_ImageUtils_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/awt/medialib/mlib_ImageUtils.c.orig	Thu Jul  5 05:03:11 2007
++++ j2se/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Fri Jul 27 18:25:10 2007
+@@ -34,7 +34,7 @@
+ typedef union {
+   mlib_d64 db;
+   struct {
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+     mlib_s32 int1, int0;
+ #else
+     mlib_s32 int0, int1;

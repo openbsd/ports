@@ -1,0 +1,203 @@
+$OpenBSD: patch-j2se_src_closed_solaris_native_com_sun_media_sound_engine_HAE_API_BsdOS_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/solaris/native/com/sun/media/sound/engine/HAE_API_BsdOS.c.orig	Sun Jul 29 23:03:54 2007
++++ j2se/src/closed/solaris/native/com/sun/media/sound/engine/HAE_API_BsdOS.c	Sun Jul 29 23:09:59 2007
+@@ -37,9 +37,15 @@
+ #include <sys/ioctl.h>
+ #include <sys/wait.h>
+ #include <errno.h>
+-#include <bsd/soundcard.h>
+-#include <malloc.h>
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#include <sys/soundcard.h>
++#endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++#include <soundcard.h>
++#endif
++
+ // $$kk: 08.12.98 merge 
+ // $$kk: 04.28.98: we *need* to use string.h, NOT strings.h; 
+ // the latter is not available on earlier versions of solaris
+@@ -59,9 +65,20 @@
+ #define FALSE		0
+ #endif
+ 
++#if defined(__FreeBSD__) && (__FreeBSD_version >= 700013)
++static inline void *
++memalign(size_t alignment, size_t size)
++{
++    void *ret;
++    return posix_memalign(&ret, alignment, size) ? NULL : ret;
++}
++#else
++#define memalign(a, b) valloc(b)
++#endif
++
+ // How many audio frames to generate at one time 
+-#define HAE_LINUX_FRAMES_PER_BLOCK		8
+-#define HAE_LINUX_SOUND_PERIOD			10	// sleep time in milliseconds, between position checks
++#define HAE_BSD_FRAMES_PER_BLOCK		8
++#define HAE_BSD_SOUND_PERIOD			10	// sleep time in milliseconds, between position checks
+ 
+ static void					*g_audioBufferBlock;
+ static long					g_audioByteBufferSize;			// size of audio buffers in bytes
+@@ -76,9 +93,9 @@ static long					g_audioByteBufferSize;			// size of au
+ 
+ /* $$fb 2002-03-13: facilitate porting by defining the 16-bit format here */
+ #if X_WORD_ORDER == TRUE
+-#define LINUX_FORMAT16	AFMT_S16_LE
++#define BSD_FORMAT16	AFMT_S16_LE
+ #else
+-#define LINUX_FORMAT16	AFMT_S16_BE
++#define BSD_FORMAT16	AFMT_S16_BE
+ #endif
+ 
+ 
+@@ -151,7 +168,7 @@ int HAE_Setup(void)
+ 	AFMT_MU_LAW,
+ 	AFMT_A_LAW,
+ 	AFMT_S8,
+-	LINUX_FORMAT16,
++	BSD_FORMAT16,
+     };
+     // In the same order of Formats[] array.
+     int JSEncodings[] = { ULAW, ALAW, PCM, PCM };
+@@ -177,7 +194,7 @@ int HAE_Setup(void)
+ 
+     //$$fb we do not support unsigned 16 bit
+     //g_supports16 = (formats & (AFMT_U16_LE | AFMT_S16_LE)) != 0;
+-    g_supports16 = (formats & LINUX_FORMAT16) != 0;
++    g_supports16 = (formats & BSD_FORMAT16) != 0;
+     g_convertUnsigned = (formats & AFMT_S8) != 0;
+ 
+     /* Read channels. */
+@@ -570,7 +587,7 @@ void PV_AudioWaveOutFrameThread(void* context)
+     }
+ 
+     // $$ay - sample count is in bytes for bsd and not in samples
+-    lastPos = audio_info.bytes - ((g_audioByteBufferSize * HAE_LINUX_FRAMES_PER_BLOCK * 2));
++    lastPos = audio_info.bytes - ((g_audioByteBufferSize * HAE_BSD_FRAMES_PER_BLOCK * 2));
+ 
+     if (g_audioBufferBlock) {
+ 	while ((g_activeDoubleBuffer) && (g_shutDownDoubleBuffer == FALSE)) {
+@@ -580,9 +597,9 @@ void PV_AudioWaveOutFrameThread(void* context)
+ 	    g_checkpointMicros = XMicroseconds();
+ 	    g_checkpointSyncCount = GM_GetSyncTimeStamp();
+ 
+-	    // Generate HAE_LINUX_FRAMES_PER_BLOCK frames of audio
++	    // Generate HAE_BSD_FRAMES_PER_BLOCK frames of audio
+ 	    pFillBuffer = (char *)g_audioBufferBlock;	
+-	    for (count = 0; count < HAE_LINUX_FRAMES_PER_BLOCK; count++) {
++	    for (count = 0; count < HAE_BSD_FRAMES_PER_BLOCK; count++) {
+ 		// Generate one frame audio
+ 		HAE_BuildMixerSlice(context, pFillBuffer,
+ 				    g_audioByteBufferSize,
+@@ -597,7 +614,7 @@ void PV_AudioWaveOutFrameThread(void* context)
+ 	    // for some solaris drivers, we must supply unsigned data when rendering 8 bit data
+ 	    if (g_convertUnsigned && (g_bitSize == 8)) {
+ 		pFillBuffer = (char *)g_audioBufferBlock;	
+-		for (i = 0; i < (g_audioByteBufferSize * HAE_LINUX_FRAMES_PER_BLOCK); i++) {
++		for (i = 0; i < (g_audioByteBufferSize * HAE_BSD_FRAMES_PER_BLOCK); i++) {
+ 		    *pFillBuffer = (*pFillBuffer >= 0) ? (0x80 | *pFillBuffer) : (0x7F & *pFillBuffer);
+ 		    pFillBuffer++;
+ 		}
+@@ -606,7 +623,7 @@ void PV_AudioWaveOutFrameThread(void* context)
+ 	    // $$jb: Changing the write() loop to handle cases when the 
+ 	    // device is unavailable, or we can't write our entire buffer
+ 	    bytesWritten = 0;
+-	    bytesToWrite = (g_audioByteBufferSize * HAE_LINUX_FRAMES_PER_BLOCK);
++	    bytesToWrite = (g_audioByteBufferSize * HAE_BSD_FRAMES_PER_BLOCK);
+ 
+ 	    while ( bytesToWrite > 0 ) {
+ #ifdef TODO		
+@@ -641,7 +658,7 @@ void PV_AudioWaveOutFrameThread(void* context)
+ 		    // be written to.  Make sure we're not shutting down and 
+ 		    // sleep a bit so that we don't completely hog the CPU
+ 		    if( g_shutDownDoubleBuffer == FALSE ) {
+-			HAE_SleepFrameThread(context, HAE_LINUX_SOUND_PERIOD);
++			HAE_SleepFrameThread(context, HAE_BSD_SOUND_PERIOD);
+ 		    } else {
+ 			break;
+ 		    }
+@@ -667,7 +684,7 @@ void PV_AudioWaveOutFrameThread(void* context)
+ #endif
+ 	    
+ 	    while ((currentPos < lastPos) && (g_shutDownDoubleBuffer == FALSE))	{
+-		HAE_SleepFrameThread(context, HAE_LINUX_SOUND_PERIOD);		// in ms
++		HAE_SleepFrameThread(context, HAE_BSD_SOUND_PERIOD);		// in ms
+ 		
+ 		ioctl(g_waveDevice, SNDCTL_DSP_GETOPTR, &audio_info);
+ 		currentPos = audio_info.bytes;
+@@ -676,7 +693,7 @@ void PV_AudioWaveOutFrameThread(void* context)
+ 		// of this timing loop on sunAudioHeader.play.error != 0.
+ 	    }
+ 	    
+-	    lastPos += (g_audioByteBufferSize * HAE_LINUX_FRAMES_PER_BLOCK);
++	    lastPos += (g_audioByteBufferSize * HAE_BSD_FRAMES_PER_BLOCK);
+ 	    // ... and reschedule ourselves.	
+ 	}
+ 	TRACE0("g_activeDoubleBuffer = FALSE;\n");
+@@ -791,8 +808,8 @@ int HAE_AquireAudioCard(void *context, UINT32 sampleRa
+ #endif
+ 
+     /* we're going to build this many buffers at a time */
+-    g_synthFramesPerBlock = HAE_LINUX_FRAMES_PER_BLOCK;
+-    g_audioPeriodSleepTime = HAE_LINUX_SOUND_PERIOD;
++    g_synthFramesPerBlock = HAE_BSD_FRAMES_PER_BLOCK;
++    g_audioPeriodSleepTime = HAE_BSD_SOUND_PERIOD;
+     g_bitSize = bits;
+     g_channels = channels;
+     if (bits == 8) {
+@@ -804,7 +821,7 @@ int HAE_AquireAudioCard(void *context, UINT32 sampleRa
+ 
+     flag = 1;
+     /* allocate buffer blocks */
+-    g_audioBufferBlock = HAE_Allocate(g_audioByteBufferSize * HAE_LINUX_FRAMES_PER_BLOCK);
++    g_audioBufferBlock = HAE_Allocate(g_audioByteBufferSize * HAE_BSD_FRAMES_PER_BLOCK);
+ 
+     if (g_audioBufferBlock) {
+ 
+@@ -827,7 +844,7 @@ int HAE_AquireAudioCard(void *context, UINT32 sampleRa
+ 		break;
+ 
+ 	    case 16:
+-		format = LINUX_FORMAT16;
++		format = BSD_FORMAT16;
+ 		break;
+ 
+ 	    //default:
+@@ -882,7 +899,7 @@ int HAE_AquireAudioCard(void *context, UINT32 sampleRa
+ 
+ 		    /* [sbb] I don't think this should be any value other than zero,
+ 		     * since we just opened the device... */
+-		    /* lastPos = sunAudioHeader.play.samples - ((g_audioByteBufferSize * HAE_LINUX_FRAMES_PER_BLOCK * 2) / sampleFrameSize); */
++		    /* lastPos = sunAudioHeader.play.samples - ((g_audioByteBufferSize * HAE_BSD_FRAMES_PER_BLOCK * 2) / sampleFrameSize); */
+ 		    lastPos = 0;
+ #endif 
+ 		}
+@@ -924,7 +941,7 @@ int HAE_ReleaseAudioCard(void *context)
+ 	TRACE1("Waiting %d...\r", ctr);
+ 	// the following call MUST allow the FrameThread to continue 
+ 	// (i.e. to exit the PV_AudioWaveOutFrameThread function)
+-	HAE_SleepFrameThread(context, HAE_LINUX_SOUND_PERIOD);
++	HAE_SleepFrameThread(context, HAE_BSD_SOUND_PERIOD);
+     }
+     if (!ctr) {
+     	ERROR0("Timed out waiting for frame thread to die!\n");
+@@ -1009,7 +1026,14 @@ void HAE_GetDeviceName(INT32 deviceID, char *cName, UI
+ {
+     char		*data;
+     static char *names[] =
+-    {	"Bsd,/dev/dsp",
++    {
++#ifdef __FreeBSD__
++               "FreeBSD,dev/dsp,multi threaded",
++#elif __NetBSD__
++               "NetBSD,dev/dsp,multi threaded",
++#elif __OpenBSD__
++               "OpenBSD,dev/dsp,multi threaded",
++#endif
+     };
+     if (cName && cNameLength)
+ 	{

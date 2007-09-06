@@ -1,0 +1,18 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_panoramiXproto_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/panoramiXproto.h.orig	Thu Jul  5 05:03:41 2007
++++ j2se/src/solaris/native/sun/awt/panoramiXproto.h	Fri Jul 27 18:25:14 2007
+@@ -54,7 +54,7 @@ Equipment Corporation.
+ ******************************************************************/
+ /* $XFree86: xc/include/extensions/panoramiXproto.h,v 3.6 2001/01/17 17:53:22 dawes Exp $ */
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ 
+ /* THIS IS NOT AN X PROJECT TEAM SPECIFICATION */
+ 
+@@ -222,4 +222,4 @@ typedef struct {
+ 
+ #endif 
+ 
+-#endif /* __linux__ */
++#endif /* __linux__ || _ALLBSD_SOURCE */

@@ -1,0 +1,115 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/nio/ch/FileChannelImpl.c.orig	Thu Jul  5 05:03:45 2007
++++ j2se/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Fri Jul 27 18:39:26 2007
+@@ -29,12 +29,17 @@
+ #include "jlong.h"
+ #include <sys/mman.h>
+ #include <sys/stat.h>
++#include <fcntl.h>
+ #include "sun_nio_ch_FileChannelImpl.h"
+ #include "java_lang_Integer.h"
+ #include "nio.h"
+ #include "nio_util.h"
+ #include <dlfcn.h>
+ 
++#if defined(_ALLBSD_SOURCE)
++#include "largefile_bsd.h"
++#endif
++
+ static jfieldID chan_fd;	/* jobject 'fd' in sun.io.FileChannelImpl */
+ 
+ #ifdef __solaris__
+@@ -59,6 +64,10 @@ sendfile_func* my_sendfile_func = NULL;
+ typedef ssize_t sendfile64_func(int out_fd, int in_fd, off64_t *offset, size_t count);
+ 
+ sendfile64_func* my_sendfile64_func = NULL;
++#elif defined(_ALLBSD_SOURCE)
++#include <sys/socket.h>
++#include <errno.h>
++#include <stdlib.h>
+ #endif
+ 
+ JNIEXPORT jlong JNICALL 
+@@ -278,6 +287,58 @@ Java_sun_nio_ch_FileChannelImpl_transferTo0(JNIEnv *en
+         return result;
+     }
+ #endif
++
++#ifdef _ALLBSD_SOURCE
++    /*
++     * XXXBSD: make sure that we're returning what java class may understand
++     *
++     * XXXBSD: I'd prefer to have it implemented with sendfile(), but since
++     *         FreeBSD's sendfile() is only supposed to be used in file->socket
++     *         schema we need to provide some kind of fall-back operation, if
++     *         sendfile() failed with ENOTSOCK error only.
++     */
++    void *buf;
++    off_t offset = (off_t)position;
++    int r, w = 0;
++
++    buf = malloc(4096);
++    if (buf == NULL) {
++        JNU_ThrowOutOfMemoryError(env, "heap allocation failed");
++        return IOS_THROWN;
++    }
++
++    while ((r = pread(srcFD, buf, 4096, offset)) > 0) {
++        w = write(dstFD, buf, r);
++        if (w == -1)
++	    break;
++        offset += w;
++    }
++    free(buf);
++
++    /*
++     * Similar to solaris if we've transferred any data return
++     * the number of bytes and ignore any error
++    */
++    if (offset - (off_t)position > 0)
++	return (offset - (off_t)position);
++
++    /*
++     * Deal with NBIO EAGAIN & EINTR the same as solaris. 
++     */
++    if (r == -1 || w == -1) {
++        switch (errno) {
++	    case EAGAIN:
++	        return IOS_UNAVAILABLE;
++	    case EINTR:
++	        return IOS_INTERRUPTED;
++	    default:
++		JNU_ThrowIOExceptionWithLastError(env, "Transfer failed");
++		return IOS_THROWN;
++        }
++    }
++
++    return (0);
++#endif
+ }
+ 
+ JNIEXPORT jint JNICALL
+@@ -329,6 +390,23 @@ Java_sun_nio_ch_FileChannelImpl_release0(JNIEnv *env, 
+     fl.l_start = (off64_t)pos;
+     fl.l_type = F_UNLCK;
+     lockResult = fcntl(fd, cmd, &fl);
++#if defined(__FreeBSD__)
++    /* XXXFREEBSD:  While doing of preClose0() we're closing actual fd which
++       was locked, so here we'll get an error which need to be ignored to
++       satisfy TCK FileLock test */
++    /* XXXFREEBSD: backport to 1.4.2 */
++    if (lockResult < 0 && errno == EBADF)
++	lockResult = errno = 0;
++#endif
++#if defined(__NetBSD__)
++    /* XXXNETBSD: The dup2 in preClose0 is being done onto 1 end of a
++       socketpair which isn't a valid target for F_UNLCK. No good way to see
++       this vs. a bad lock setup so just return errno = 0 there
++       to pass JCK (lock will get removed once all fd's close anyways) */
++    /* XXXNETBSD: backport to 1.4.2 */
++    if (lockResult < 0 && errno == EINVAL)
++	lockResult = errno = 0;
++#endif
+     if (lockResult < 0) {
+         JNU_ThrowIOExceptionWithLastError(env, "Release failed");
+     }

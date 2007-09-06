@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_share_native_java_lang_fdlibm_include_jfdlibm_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/java/lang/fdlibm/include/jfdlibm.h.orig	Thu Jul  5 05:03:00 2007
++++ j2se/src/share/native/java/lang/fdlibm/include/jfdlibm.h	Fri Jul 27 18:24:52 2007
+@@ -61,7 +61,7 @@
+ #define log1p   jlog1p
+ #define expm1   jexpm1
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #define __ieee754_sqrt          __j__ieee754_sqrt
+ #define __ieee754_acos          __j__ieee754_acos
+ #define __ieee754_acosh         __j__ieee754_acosh

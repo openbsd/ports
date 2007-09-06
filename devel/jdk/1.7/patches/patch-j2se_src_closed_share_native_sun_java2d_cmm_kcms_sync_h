@@ -1,0 +1,32 @@
+$OpenBSD: patch-j2se_src_closed_share_native_sun_java2d_cmm_kcms_sync_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/sun/java2d/cmm/kcms/sync.h.orig	Thu Jul  5 03:44:31 2007
++++ j2se/src/closed/share/native/sun/java2d/cmm/kcms/sync.h	Sun Jul 29 22:48:37 2007
+@@ -57,7 +57,7 @@
+ 	/* Solaris Includes */
+ 	/********************/
+ 
+-	#if defined (KPSOLARIS) || defined (KPLINUX)
++	#if defined (KPSOLARIS) || defined (KPLINUX) || defined (KPBSD)
+ 	#if defined (KP_POSIX_THREADS)
+ 		#include <pthread.h>
+ 	#else
+@@ -121,7 +121,7 @@
+ 		 * files although the documentation says it should be.
+ 		 */
+ 
+-		#if defined (KPSOLARIS) || defined (KPLINUX)
++		#if defined (KPSOLARIS) || defined (KPLINUX) || defined(__NetBSD__)
+ 
+ 			typedef union semun_u {
+ 				int val;
+@@ -129,6 +129,10 @@
+ 				ushort *array;
+ 			} semun_t;
+ 		
++		#endif
++
++		#if defined(KPBSD) && !defined(__NetBSD__)
++			typedef union semun semun_t;
+ 		#endif
+ 
+ 	#endif

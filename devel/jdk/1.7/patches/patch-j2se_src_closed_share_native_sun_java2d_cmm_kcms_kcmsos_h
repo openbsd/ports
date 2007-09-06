@@ -1,0 +1,68 @@
+$OpenBSD: patch-j2se_src_closed_share_native_sun_java2d_cmm_kcms_kcmsos_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/sun/java2d/cmm/kcms/kcmsos.h.orig	Thu Jul  5 03:44:30 2007
++++ j2se/src/closed/share/native/sun/java2d/cmm/kcms/kcmsos.h	Sun Jul 29 22:48:36 2007
+@@ -249,6 +249,27 @@ extern "C" {
+ 	#define KP_USE_VERSIONSTRING
+ #endif
+ 
++#if defined (_ALLBSD_SOURCE)
++	#define KPGCC		1
++	#define KPBSD		1
++	#define KPUNIX		1
++	#define KPUNIX_BSD	1
++	#define KP_POSIX_THREADS 1
++
++	#define KPINT32		1
++
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#endif
++#include <machine/endian.h>
++#if (BYTE_ORDER == LITTLE_ENDIAN)
++	#define KPLSBFIRST	1
++#else
++	#define KPMSBFIRST	1
++#endif
++	#define KP_USE_VERSIONSTRING
++#endif
++
+ #if defined(__sgi) && defined (__mips)  /* SGI C Compiler */
+ #if defined(SGIALL)
+ 	#define KPSGIALL	1
+@@ -399,6 +420,9 @@ extern "C" {
+ #elif defined(KPDU)
+ 	#define KP_ALIGN 0x3
+ 	#define KcpFileDirSep   "/"
++#elif defined(KPBSD)
++	#define KP_ALIGN 0x3
++	#define KcpFileDirSep   "/"
+ #endif
+ 
+ #if defined(KPMAC) || defined (KPMSMAC)
+@@ -618,7 +642,7 @@ typedef struct tagOFSTRUCT  KpFileProps_t;
+ 
+ 
+ 
+-#elif defined(KPSUN) || defined(KPDU)
++#elif defined(KPSUN) || defined(KPDU) || defined(KPBSD)
+ /*
+  *     *** Sun Microsystems Section ***
+  */
+@@ -1045,7 +1069,7 @@ typedef struct {
+ struct KpThreadMemHdl_tag { char dontuse; };
+ typedef struct KpThreadMemHdl_tag FAR* KpThreadMemHdl_t; 
+ 
+-#if defined (KPSOLARIS) || defined (KPLINUX)
++#if defined (KPSOLARIS) || defined (KPLINUX) || defined (KPBSD)
+ #if defined (KP_POSIX_THREADS)
+ #include "pthread.h"
+ #else
+@@ -1058,7 +1082,7 @@ typedef struct {
+ 	KpInt32_t	SyncFlag;
+ #if defined (KPWIN32)
+ 	CRITICAL_SECTION CriticalFlag;
+-#elif defined (KPSOLARIS) || defined (KPLINUX)
++#elif defined (KPSOLARIS) || defined (KPLINUX) || defined (KPBSD)
+ 	KpInt32_t	ThreadId;
+ 	KpUInt32_t	Count;
+ #if defined (KP_POSIX_THREADS)

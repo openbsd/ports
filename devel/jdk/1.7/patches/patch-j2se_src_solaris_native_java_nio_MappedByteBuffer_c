@@ -1,0 +1,27 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_nio_MappedByteBuffer_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/java/nio/MappedByteBuffer.c.orig	Thu Jul  5 05:03:38 2007
++++ j2se/src/solaris/native/java/nio/MappedByteBuffer.c	Fri Jul 27 18:25:14 2007
+@@ -38,7 +38,11 @@ Java_java_nio_MappedByteBuffer_isLoaded0(JNIEnv *env, 
+                                         jlong address, jlong len)
+ {
+     jboolean loaded = JNI_TRUE;
++#if defined(_ALLBSD_SOURCE)
++    jint pageSize = getpagesize();
++#else
+     jint pageSize = sysconf(_SC_PAGESIZE);
++#endif
+     jint numPages = (len + pageSize - 1) / pageSize;
+     int result = 0;
+     int i = 0;
+@@ -92,7 +96,11 @@ JNIEXPORT void JNICALL
+ Java_java_nio_MappedByteBuffer_force0(JNIEnv *env, jobject obj, jlong address,
+                                       jlong len)
+ {
++#if defined(_ALLBSD_SOURCE)
++    jlong pageSize = getpagesize();
++#else
+     jlong pageSize = sysconf(_SC_PAGESIZE);
++#endif
+     unsigned long lAddress = address;
+ 
+     jlong offset = lAddress % pageSize;

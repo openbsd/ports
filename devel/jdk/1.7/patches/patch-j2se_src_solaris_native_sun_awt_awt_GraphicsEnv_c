@@ -1,0 +1,57 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_GraphicsEnv.c.orig	Thu Jul  5 05:03:39 2007
++++ j2se/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Fri Jul 27 18:25:14 2007
+@@ -56,7 +56,7 @@ extern int awt_init_xt;
+ #endif
+ 
+ #ifndef HEADLESS
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <X11/XKBlib.h>
+ #include "Xinerama.h"
+ #endif
+@@ -125,7 +125,7 @@ static char *x11GraphicsConfigClassName = "sun/awt/X11
+  */
+ 
+ #define MAXFRAMEBUFFERS 16
+-#ifndef __linux__ /* SOLARIS */
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE) /* SOLARIS */
+ typedef Status XineramaGetInfoFunc(Display* display, int screen_number,
+          XRectangle* framebuffer_rects, unsigned char* framebuffer_hints,
+          int* num_framebuffers);
+@@ -630,7 +630,7 @@ void checkNewXineramaScreen(JNIEnv* env, jobject peer,
+  */
+ #ifndef HEADLESS
+ void xineramaInit(void) {
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     char* XinExtName = "XINERAMA";
+     int32_t major_opcode, first_event, first_error;
+     Bool gotXinExt = False;
+@@ -720,7 +720,7 @@ void xineramaInit(void) {
+     } else {
+         DTRACE_PRINTLN("Xinerama not available");
+     }
+-#endif /* __linux__ */
++#endif /* __linux__ || _ALLBSD_SOURCE */
+ }
+ #endif /* HEADLESS */
+ 
+@@ -1576,7 +1576,7 @@ Java_sun_awt_X11GraphicsEnvironment_getXineramaCenterP
+ {
+     jobject point = NULL;
+ #ifndef HEADLESS    /* return NULL in HEADLESS, Linux */
+-#ifndef __linux__
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
+     int x,y;
+ 
+     AWT_LOCK();
+@@ -1589,7 +1589,7 @@ Java_sun_awt_X11GraphicsEnvironment_getXineramaCenterP
+         DTRACE_PRINTLN("unable to call XineramaSolarisCenterFunc: symbol is null");
+     }
+     AWT_FLUSH_UNLOCK();
+-#endif /* __linux __ */
++#endif /* __linux __ || _ALLBSD_SOURCE */
+ #endif /* HEADLESS */
+     return point;
+ }

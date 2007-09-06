@@ -1,0 +1,37 @@
+$OpenBSD: patch-j2se_make_java_jli_Makefile,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/java/jli/Makefile.orig	Thu Jul  5 04:56:09 2007
++++ j2se/make/java/jli/Makefile	Mon Jul 30 19:27:41 2007
+@@ -68,7 +68,7 @@ FILES_c = \
+ 
+ OTHER_CPPFLAGS += -DEXPAND_CLASSPATH_WILDCARDS
+ 
+-ifneq (,$(findstring $(PLATFORM), linux solaris))	# UNIX systems
++ifneq (,$(findstring $(PLATFORM), linux solaris bsd))	# UNIX systems
+ 	LIB_LOCATION = $(LIBDIR)/$(LIBARCH)/jli
+ 	# Guarantee very limited dependencies
+ 	LDLIBS = -lc
+@@ -135,6 +135,24 @@ $(STATIC_LIBRARY): $(STATIC_LIBRARY_DIR)
+ library:: $(STATIC_LIBRARY)
+ 
+ endif	# PLATFORM
++
++ifeq ($(PLATFORM), bsd)
++
++STATIC_LIBRARY_DIR = $(OBJDIR)/static
++STATIC_LIBRARY_NAME = lib$(LIBRARY).a
++STATIC_LIBRARY = $(STATIC_LIBRARY_DIR)/$(STATIC_LIBRARY_NAME)
++
++$(STATIC_LIBRARY_DIR): $(OBJDIR)
++	@$(prep-target)
++	@$(MKDIR) $(STATIC_LIBRARY_DIR)
++
++$(STATIC_LIBRARY): $(STATIC_LIBRARY_DIR)
++	@$(prep-target)
++	$(AR) -r $@ $(FILES_o)
++
++library:: $(STATIC_LIBRARY)
++
++endif  # PLATFORM
+ 
+ #
+ # Add to ambient vpath so we pick up the library files

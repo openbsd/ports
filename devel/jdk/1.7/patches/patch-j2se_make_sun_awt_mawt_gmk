@@ -1,0 +1,94 @@
+$OpenBSD: patch-j2se_make_sun_awt_mawt_gmk,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/make/sun/awt/mawt.gmk.orig	Thu Aug 30 04:58:15 2007
++++ j2se/make/sun/awt/mawt.gmk	Sun Sep  2 14:06:04 2007
+@@ -57,7 +57,7 @@ else
+   ifeq ($(MOTIF_VERSION), 2)
+     FILES_c += awt_motif21.c
+     FILES_c += awt_Choice21.c
+-    ifeq  ($(PLATFORM), linux)
++    ifneq (,$(findstring $(PLATFORM), linux bsd))
+         FILES_c += Xinerama.c
+     endif
+   endif
+@@ -142,7 +142,7 @@ CFLAGS += -DMOTIF_VERSION=$(MOTIF_VERSION)
+ 
+ ifeq ($(STATIC_MOTIF),true)
+     LIBXM = $(MOTIF_LIB)/libXm.a -lXp -lXmu
+-    ifeq ($(PLATFORM), linux)
++    ifneq (,$(findstring $(PLATFORM), linux bsd))
+ 	ifeq ($(ARCH_DATA_MODEL), 64)
+             LIBXT = -lXt
+         else
+@@ -157,7 +157,7 @@ ifeq ($(STATIC_MOTIF),true)
+     endif
+ else
+     LIBXM = -L$(MOTIF_LIB) -lXm -lXp
+-    ifeq ($(PLATFORM), linux)
++    ifneq (,$(findstring $(PLATFORM), linux bsd))
+ 	LIBXT = -lXt
+ 	LIBSM = 
+ 	LIBICE = 
+@@ -175,7 +175,7 @@ ifeq ($(PLATFORM), solaris)
+ OTHER_LDLIBS = $(LIBXM) -lXt -lXext $(LIBXTST) $(LIBXMU) -lX11 -lXi
+ endif
+ 
+-ifeq ($(PLATFORM), linux)
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+ OTHER_CFLAGS += -DMLIB_NO_LIBSUNMATH
+ OTHER_CFLAGS += -DMOTIF_VERSION=2
+ OTHER_CFLAGS += -DXMSTRINGDEFINES=1
+@@ -186,8 +186,12 @@ endif
+ # !HEADLESS
+ 
+ OTHER_LDLIBS += $(JVMLIB) $(LIBCXX) \
+-                -lawt $(LIBM) -ldl
++                -lawt $(LIBM)
+ 
++ifneq ($(PLATFORM), bsd)
++OTHER_LDLIBS += -ldl
++endif
++
+ #
+ # Sun CC with -Xa misdefines __STDC__ to 0 (zero).
+ # The following will force checking of X11 prototypes.
+@@ -199,15 +203,6 @@ endif
+ #
+ # Other extra flags needed for compiling.
+ #
+-CPPFLAGS += -I$(CUPS_HEADERS_PATH)
+-
+-ifndef HEADLESS
+-CPPFLAGS += -I$(MOTIF_DIR)/include \
+-            -I$(OPENWIN_HOME)/include 
+-LDFLAGS  += -L$(MOTIF_LIB) -L$(OPENWIN_LIB)
+-
+-endif # !HEADLESS
+-
+ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
+             -I$(SHARE_SRC)/native/$(PKGDIR)/../font \
+             -I$(PLATFORM_SRC)/native/$(PKGDIR)/../font \
+@@ -230,10 +225,24 @@ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
+         -I$(PLATFORM_SRC)/native/$(PKGDIR) \
+         $(EVENT_MODEL)
+ 
++CPPFLAGS += -I$(CUPS_HEADERS_PATH)
++
++ifndef HEADLESS
++CPPFLAGS += -I$(MOTIF_DIR)/include \
++            -I$(OPENWIN_HOME)/include 
++LDFLAGS  += -L$(MOTIF_LIB) -L$(OPENWIN_LIB)
++
++endif # !HEADLESS
++
+ ifeq ($(PLATFORM), linux)
+ # Checking for the X11/extensions headers at the additional location
+   CPPFLAGS += -I/X11R6/include/X11/extensions \
+               -I/usr/include/X11/extensions
++endif
++
++ifeq ($(PLATFORM), bsd)
++  CPPFLAGS += -I$(OPENWIN_HOME)/include/X11/extensions \
++              -I$(OPENWIN_HOME)/include 
+ endif
+ 
+ ifeq ($(PLATFORM), solaris)

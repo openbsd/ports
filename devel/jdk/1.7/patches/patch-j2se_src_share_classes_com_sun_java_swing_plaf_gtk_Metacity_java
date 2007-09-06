@@ -1,0 +1,14 @@
+$OpenBSD: patch-j2se_src_share_classes_com_sun_java_swing_plaf_gtk_Metacity_java,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java.orig	Thu Jul  5 04:56:37 2007
++++ j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java	Fri Jul 27 18:24:17 2007
+@@ -478,6 +478,10 @@ class Metacity implements SynthConstants {
+ 		String[] dirs = new String[] {
+ 		    userHome + sep + ".themes",
+ 		    System.getProperty("swing.metacitythemedir"),
++		    "/usr/X11R6/share/themes",
++		    "/usr/X11R6/share/gnome/themes",
++		    "/usr/local/share/themes",
++		    "/usr/local/share/gnome/themes",
+ 		    "/usr/share/themes",
+ 		    "/usr/gnome/share/themes",  // Debian/Redhat/Solaris
+                     "/opt/gnome2/share/themes"  // SuSE

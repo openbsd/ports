@@ -1,0 +1,27 @@
+$OpenBSD: patch-j2se_make_java_instrument_Makefile,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/java/instrument/Makefile.orig	Thu Aug  2 03:45:45 2007
++++ j2se/make/java/instrument/Makefile	Fri Aug 10 17:03:38 2007
+@@ -102,6 +102,15 @@ ifeq ($(PLATFORM), windows)
+   # equivalent of strcasecmp is stricmp on Windows
+   CPPFLAGS_COMMON += -Dstrcasecmp=stricmp
+ else
++ifeq ($(PLATFORM), bsd)
++  LDFLAGS += -Wl,--whole-archive
++  LDFLAGS += $(OUTPUTDIR)/tmp/java/jli/$(OBJDIRNAME)/static/libjli.a
++  LDFLAGS += -Wl,--no-whole-archive
++  ICONV_DIR = /usr/local
++# Use CPPFLAGS instead of OTHER_INCLUDES to force this last
++  CPPFLAGS += -I$(ICONV_DIR)/include
++  OTHER_LDLIBS += -L$(ICONV_DIR)/lib -liconv
++else
+   LDFLAGS += -L $(LIBDIR)/$(LIBARCH)/jli
+   OTHER_LDLIBS += -ljli
+   OTHER_LDLIBS += -ldl 
+@@ -113,6 +122,7 @@ else
+     LDFLAGS += -Wl,--allow-shlib-undefined
+     LDFLAGS += -Wl,-rpath -Wl,\$$ORIGIN/jli
+   endif
++endif
+ endif
+ 
+ #

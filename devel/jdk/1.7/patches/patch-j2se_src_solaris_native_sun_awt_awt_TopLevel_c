@@ -1,0 +1,137 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_TopLevel_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_TopLevel.c.orig	Thu Jul  5 05:03:40 2007
++++ j2se/src/solaris/native/sun/awt/awt_TopLevel.c	Fri Jul 27 18:25:14 2007
+@@ -86,7 +86,7 @@
+ #include "awt_xembed.h"
+ 
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ void adjustStatusWindow(Widget shell);
+ #endif
+ /* For the moment only InputMethodWindow is taking advantage of
+@@ -336,12 +336,36 @@ awt_Frame_guessInsets(struct FrameData *wdata)
+ 
+         case MOTIF_WM:
+         case OPENLOOK_WM:
++#if !defined(_ALLBSD_SOURCE)
+         default:
++#endif
+             globalTopGuess    = 25;
+             globalLeftGuess   =  5;
+             globalBottomGuess =  5;
+             globalRightGuess  =  5;
+             break;
++
++/* XXXBSD: double check values (previous & current defaults are different !? */
++#if defined(_ALLBSD_SOURCE)
++	case AFTERSTEP_WM:
++	    globalTopGuess=21;
++	    globalLeftGuess=1;
++	    globalBottomGuess=7;
++	    globalRightGuess=1;
++	    break;
++	case WINDOWMAKER_WM:
++	    globalTopGuess=23;
++	    globalLeftGuess=1;
++	    globalBottomGuess=7;
++	    globalRightGuess=1;
++	    break;
++	default:
++	    globalTopGuess = 24;
++	    globalLeftGuess = 4;
++	    globalBottomGuess = 4;
++	    globalRightGuess = 4;
++	    break;
++#endif
+         }
+ 
+         if ((insets_env = getenv("AWT_INSETS")) != NULL) {
+@@ -779,7 +803,7 @@ awtJNI_setMbAndWwHeightAndOffsets(JNIEnv * env,
+                child menu and borders, margins, and the menu bar borders*/
+             actualHeight = menuHeight + (2 * menuBorderSize) +
+                            (2 * marginHeight) + (2 * menuBarBorderSize);
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #ifdef _pauly_debug
+             fprintf(stdout,"  actual height: %d mb height %d\n", actualHeight, menuBarHeight);
+             fflush(stdout);
+@@ -1622,7 +1646,7 @@ shellEH(Widget w, XtPointer data, XEvent *event, Boole
+             break;
+         }
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+         if (!wdata->fixInsets) {
+             DTRACE_PRINTLN("TL:   insets already fixed");
+             break;
+@@ -1801,6 +1825,42 @@ shellEH(Widget w, XtPointer data, XEvent *event, Boole
+                 break;
+             }
+ 
++#if defined(_ALLBSD_SOURCE)
++            case AFTERSTEP_WM:
++            case WINDOWMAKER_WM: {
++                Display *disp = XtDisplay(wdata->winData.shell);
++                int borderWidth, innerHeight, titleHeight, totalHeight;
++                syncTopLevelPos(disp,
++                                event->xreparent.parent,
++                                &winAttr);
++                XGetWindowAttributes(disp, event->xreparent.window, &actualAttr);
++                if (runningWM == AFTERSTEP_WM)
++                    titleHeight = winAttr.y;
++                else                /* WINDOWMAKER_WM */
++                    titleHeight = actualAttr.y;
++                innerHeight = actualAttr.height;
++                XQueryTree(disp, event->xreparent.window,
++                           &ignore_Window, &containerWindow,
++                           &ignore_WindowPtr, &ignore_uint);
++                XGetWindowAttributes(disp, containerWindow, &actualAttr);
++                borderWidth = actualAttr.border_width;
++                if (runningWM == AFTERSTEP_WM) {
++                    XQueryTree(disp, containerWindow,
++                               &ignore_Window, &containerWindow,
++                               &ignore_WindowPtr, &ignore_uint);
++                    XGetWindowAttributes(disp, containerWindow, &actualAttr);
++                    totalHeight = actualAttr.height;
++                } else      /* WINDOWMAKER_WM */
++                    totalHeight = actualAttr.height;
++
++                correctWMLeft = borderWidth;
++                correctWMTop = titleHeight;
++                correctWMRight = borderWidth;
++                correctWMBottom = (totalHeight - (titleHeight + borderWidth + innerHeight));
++                break;
++            }
++#endif
++
+             case ICE_WM:
+             case KDE2_WM: /* should've been done in awt_wm_getInsetsFromProp */
+             case CDE_WM:
+@@ -2168,7 +2228,7 @@ shellEH(Widget w, XtPointer data, XEvent *event, Boole
+ 
+         (*env)->DeleteLocalRef(env, target);
+         raiseInputMethodWindow(wdata);
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+         adjustStatusWindow(wdata->winData.shell);
+ #endif
+         break;
+@@ -2562,7 +2622,7 @@ Java_sun_awt_motif_MWindowPeer_pCreate(JNIEnv *env, jo
+     wdata->menuBarReset = False;
+     wdata->need_reshape = False;
+     wdata->focusProxy = NULL;
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     wdata->fixInsets = True;
+ #endif
+     wdata->state = state;
+@@ -4042,7 +4102,7 @@ Java_sun_awt_motif_MWindowPeer_setResizable(JNIEnv *en
+         targetHeight = (*env)->GetIntField(env, target, componentIDs.height);
+         width  = targetWidth  - (wdata->left + wdata->right);
+         height = targetHeight - (wdata->top + wdata->bottom) + verticalAdjust;
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+         width  = (width  > 0) ? width  : 1;
+         height = (height > 0) ? height : 1;
+ #endif

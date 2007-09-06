@@ -1,0 +1,19 @@
+$OpenBSD: patch-j2se_src_solaris_bin_java_md_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/bin/java_md.h.orig	Thu Jul  5 05:03:20 2007
++++ j2se/src/solaris/bin/java_md.h	Fri Jul 27 18:25:14 2007
+@@ -58,10 +58,14 @@
+ #include <sys/time.h>
+ #define CounterGet()           	  (gethrtime()/1000)
+ #define Counter2Micros(counts) 	  (counts)
++#elif defined(_ALLBSD_SOURCE)
++/* CounterGet() is implemented in java_md.c */
++int64_t CounterGet(void);
++#define Counter2Micros(counts)    (counts)
+ #else
+ #define CounterGet()		  (0)
+ #define Counter2Micros(counts)	  (1)
+-#endif /* HAVE_GETHRTIME */
++#endif /* HAVE_GETHRTIME || _ALLBSD_SOURCE */
+ 
+ /*
+  * Function prototypes.

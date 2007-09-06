@@ -1,0 +1,26 @@
+$OpenBSD: patch-j2se_src_share_classes_sun_io_CharacterEncoding_java,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/classes/sun/io/CharacterEncoding.java.orig	Thu Jul  5 05:02:04 2007
++++ j2se/src/share/classes/sun/io/CharacterEncoding.java	Fri Jul 27 18:24:24 2007
+@@ -92,6 +92,7 @@ public class CharacterEncoding {
+         aliasTable.put("gb18030",               "GB18030");
+         aliasTable.put("gbk",                   "GBK");
+         aliasTable.put("koi8-r",                "KOI8_R");
++        aliasTable.put("koi8-u",                "KOI8_U");
+         aliasTable.put("tis620.2533",           "TIS620");
+         
+         // Windows encodings
+@@ -785,8 +786,13 @@ public class CharacterEncoding {
+ 
+             // Russian KOI8-R
+             aliasTable.put("koi8-r",                "KOI8_R");
+-            aliasTable.put("koi8",                  "KOI8_R");
+             aliasTable.put("cskoi8r",               "KOI8_R");
++
++            // Ukrainian and Bielorussian KOI8-U (includes KOI8-R)
++            aliasTable.put("koi8-u",                "KOI8_U");
++            aliasTable.put("koi8",                  "KOI8_U");
++            aliasTable.put("koi8u",                 "KOI8_U");
++            aliasTable.put("cskoi8u",               "KOI8_U");
+ 
+             // Simplified Chinese
+             aliasTable.put("gb2312",        	    "EUC_CN");

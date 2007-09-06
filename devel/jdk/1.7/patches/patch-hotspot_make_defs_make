@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_make_defs_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/make/defs.make.orig	Tue Apr 10 04:00:13 2007
-+++ hotspot/make/defs.make	Mon Apr 16 08:42:38 2007
-@@ -93,13 +93,20 @@ endif
+$OpenBSD: patch-hotspot_make_defs_make,v 1.2 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/make/defs.make.orig	Thu Aug 30 04:57:10 2007
++++ hotspot/make/defs.make	Sun Sep  2 14:06:01 2007
+@@ -118,13 +118,20 @@ endif
  # Windows should have OS predefined
  ifeq ($(OS),)
    OS   := $(shell uname -s)

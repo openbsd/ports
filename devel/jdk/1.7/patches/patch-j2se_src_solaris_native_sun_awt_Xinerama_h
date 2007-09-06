@@ -1,0 +1,19 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_Xinerama_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/Xinerama.h.orig	Thu Jul  5 05:03:39 2007
++++ j2se/src/solaris/native/sun/awt/Xinerama.h	Fri Jul 27 18:25:14 2007
+@@ -58,7 +58,7 @@ the copyright holder.
+ 
+ /* $XFree86: xc/include/extensions/Xinerama.h,v 3.2 2000/03/01 01:04:20 dawes Exp $ */
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ 
+ #ifndef _Xinerama_h
+ #define _Xinerama_h
+@@ -102,5 +102,5 @@ XineramaQueryScreens(
+ 
+ #endif /* _Xinerama_h */
+ 
+-#endif /* __linux__ */
++#endif /* __linux__ || _ALLBSD_SOURCE */
+ 

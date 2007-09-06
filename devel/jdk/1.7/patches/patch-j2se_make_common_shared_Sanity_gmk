@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_make_common_shared_Sanity_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/common/shared/Sanity.gmk.orig	Fri Jul 13 23:09:20 2007
++++ j2se/make/common/shared/Sanity.gmk	Fri Jul 13 23:10:00 2007
+@@ -94,6 +94,11 @@ ifeq ($(PLATFORM), windows)
+     $(EGREP) "\#define" | $(NAWK) '{print $$3}')
+ endif
+ 
++ifeq ($(PLATFORM), bsd)
++  FREE_SPACE := $(shell BLOCKSIZE=512 $(DF) $(OUTPUTDIR) | $(TAIL) -1 | $(NAWK) '{print $$2;}')
++  TEMP_FREE_SPACE := $(shell BLOCKSIZE=512 $(DF) $(TEMP_DISK) | $(TAIL) -1 | $(NAWK) '{print $$2;}')
++endif
++
+ # Get the version numbers of what we are using
+ _MAKE_VER  :=$(shell $(MAKE) --version 2>&1 | $(HEAD) -n 1)
+ _ZIP_VER   :=$(shell $(ZIPEXE) -help 2>&1 | $(HEAD) -n 4 | $(EGREP) '^Zip')

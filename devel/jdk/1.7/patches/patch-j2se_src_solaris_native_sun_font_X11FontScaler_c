@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_font_X11FontScaler_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/font/X11FontScaler.c.orig	Thu Jul  5 05:03:43 2007
++++ j2se/src/solaris/native/sun/font/X11FontScaler.c	Fri Jul 27 18:25:14 2007
+@@ -32,7 +32,11 @@
+  * into X11FontScaler_md.c, which is compiled into another library.
+  */
+ #include <stdio.h>
++#if defined(_ALLBSD_SOURCE)
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #include <ctype.h>
+ #include <sys/utsname.h>
+ 

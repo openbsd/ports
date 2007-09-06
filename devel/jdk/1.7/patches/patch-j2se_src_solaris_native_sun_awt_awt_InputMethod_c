@@ -1,0 +1,189 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_InputMethod_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_InputMethod.c.orig	Thu Jul  5 05:03:39 2007
++++ j2se/src/solaris/native/sun/awt/awt_InputMethod.c	Fri Jul 27 18:25:14 2007
+@@ -69,7 +69,7 @@ static void PreeditDrawCallback(XIC, XPointer,
+ 				XIMPreeditDrawCallbackStruct *);
+ static void PreeditCaretCallback(XIC, XPointer,
+ 				 XIMPreeditCaretCallbackStruct *);
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ static void StatusStartCallback(XIC, XPointer, XPointer);
+ static void StatusDoneCallback(XIC, XPointer, XPointer);
+ static void StatusDrawCallback(XIC, XPointer,
+@@ -83,7 +83,7 @@ static void StatusDrawCallback(XIC, XPointer,
+ #define PreeditDoneIndex	1
+ #define PreeditDrawIndex	2
+ #define PreeditCaretIndex	3
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #define StatusStartIndex	4
+ #define StatusDoneIndex	        5
+ #define StatusDrawIndex	        6
+@@ -101,14 +101,14 @@ static XIMProc callback_funcs[NCALLBACKS] = {
+     (XIMProc)PreeditDoneCallback,
+     (XIMProc)PreeditDrawCallback,
+     (XIMProc)PreeditCaretCallback,
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     (XIMProc)StatusStartCallback,
+     (XIMProc)StatusDoneCallback,
+     (XIMProc)StatusDrawCallback,
+ #endif
+ };
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #define MAX_STATUS_LEN  100
+ typedef struct {
+     Window   w;                /*status window id        */
+@@ -148,7 +148,7 @@ typedef struct _X11InputMethodData {
+ #endif /* XAWT */
+     jobject	x11inputmethod;	/* global ref to X11InputMethod instance */
+ 				/* associated with the XIC */
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     StatusWindow *statusWindow; /* our own status window  */
+ #else
+ #ifndef XAWT
+@@ -427,7 +427,7 @@ destroyX11InputMethodData(JNIEnv *env, X11InputMethodD
+ static void
+ freeX11InputMethodData(JNIEnv *env, X11InputMethodData *pX11IMData)
+ {
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     if (pX11IMData->statusWindow != NULL){
+         StatusWindow *sw = pX11IMData->statusWindow;
+         XFreeGC(awt_display, sw->lightGC);
+@@ -533,7 +533,7 @@ awt_x11inputmethod_lookupString(XKeyPressedEvent *even
+     pX11IMData = getX11InputMethodData(env, currentX11InputMethodInstance);
+ 
+     if (pX11IMData == NULL) {
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+         return False;
+ #else
+         return result;
+@@ -541,7 +541,7 @@ awt_x11inputmethod_lookupString(XKeyPressedEvent *even
+     }
+ 
+     if ((ic = pX11IMData->current_ic) == (XIC)0){
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+         return False;
+ #else
+         return result;
+@@ -650,7 +650,7 @@ awt_x11inputmethod_lookupString(XKeyPressedEvent *even
+     return result;
+ }
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ static StatusWindow *createStatusWindow(
+ #ifdef XAWT
+ 				Window parent) {
+@@ -994,7 +994,7 @@ void adjustStatusWindow(Widget shell){
+ 	} 
+     }
+ }
+-#endif  /*__linux__*/
++#endif  /*__linux__||_ALLBSD_SOURCE*/
+ /*
+  * Creates two XICs, one for active clients and the other for passive
+  * clients. All information on those XICs are stored in the
+@@ -1051,7 +1051,7 @@ createXIC(Widget w, X11InputMethodData *pX11IMData,
+         return FALSE ;
+     }
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     on_the_spot_styles |= XIMStatusNothing;
+ 
+     /*kinput does not support XIMPreeditCallbacks and XIMStatusArea
+@@ -1135,7 +1135,7 @@ createXIC(Widget w, X11InputMethodData *pX11IMData,
+ 			NULL);
+ 	if (preedit == (XVaNestedList)NULL)
+ 	    goto err;
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+         /*always try XIMStatusCallbacks for active client...*/
+ 	{
+             status = (XVaNestedList)XVaCreateNestedList(0,
+@@ -1344,7 +1344,7 @@ PreeditCaretCallback(XIC ic, XPointer client_data,
+ 
+ }
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ static void
+ StatusStartCallback(XIC ic, XPointer client_data, XPointer call_data)
+ {
+@@ -1522,14 +1522,14 @@ Java_sun_awt_motif_MInputMethod_openXIMNative(JNIEnv *
+ /* Use IMInstantiate call back only on Linux, as there is a bug in Solaris
+    (4768335)
+ */
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     registered = XRegisterIMInstantiateCallback(dpy, NULL, NULL, 
+                      NULL, (XIMProc)OpenXIMCallback, NULL);
+     if (!registered) {
+ 	/* directly call openXIM callback */
+ #endif
+ 	OpenXIMCallback(dpy, NULL, NULL);
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     }
+ #endif
+ 	
+@@ -1593,7 +1593,7 @@ Java_sun_awt_motif_MInputMethod_createXICNative(JNIEnv
+ #endif /* XAWT */
+     globalRef = (*env)->NewGlobalRef(env, this);
+     pX11IMData->x11inputmethod = globalRef;
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     pX11IMData->statusWindow = NULL;
+ #else /* __linux__ */
+ #ifndef XAWT
+@@ -1746,14 +1746,14 @@ Java_sun_awt_X11_XInputMethod_setXICFocusNative(JNIEnv
+         setXICFocus(pX11IMData->current_ic, req);
+         currentX11InputMethodInstance = pX11IMData->x11inputmethod;
+         currentFocusWindow =  XtWindow(w);
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ 	if (active && pX11IMData->statusWindow && pX11IMData->statusWindow->on)
+   	    onoffStatusWindow(pX11IMData, w, True);
+ #endif
+     } else {
+ 	currentX11InputMethodInstance = NULL;
+         currentFocusWindow = 0;
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+         onoffStatusWindow(pX11IMData, 0, False);
+         if (pX11IMData->current_ic != NULL)
+ #endif
+@@ -1770,7 +1770,7 @@ JNIEXPORT void JNICALL
+ Java_sun_awt_X11InputMethod_turnoffStatusWindow(JNIEnv *env,
+ 						jobject this)
+ {
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     X11InputMethodData *pX11IMData;
+     StatusWindow *statusWindow;
+ 
+@@ -1867,7 +1867,7 @@ Java_sun_awt_motif_MInputMethod_configureStatusAreaNat
+     X11InputMethodData *pX11IMData;
+     XVaNestedList status;
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+       /*do nothing for linux? */
+ #else
+     AWT_LOCK();
+@@ -1973,7 +1973,7 @@ JNIEXPORT jboolean JNICALL Java_sun_awt_X11InputMethod
+ JNIEXPORT void JNICALL Java_sun_awt_X11_XInputMethod_adjustStatusWindow
+   (JNIEnv *env, jobject this, jlong window)
+ {
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     AWT_LOCK();
+     adjustStatusWindow(window);
+     AWT_UNLOCK();

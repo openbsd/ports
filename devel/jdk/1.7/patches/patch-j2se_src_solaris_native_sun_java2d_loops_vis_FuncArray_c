@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_java2d_loops_vis_FuncArray_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/java2d/loops/vis_FuncArray.c.orig	Fri Aug  3 18:38:36 2007
++++ j2se/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Fri Aug  3 18:39:21 2007
+@@ -794,7 +794,7 @@ static AnyFunc* hash_table_vis[HASH_SIZE];
+ static int initialized;
+ static int usevis = JNI_TRUE;
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #   define ULTRA_CHIP   "sparc64"
+ #else
+ #   define ULTRA_CHIP   "sun4u"

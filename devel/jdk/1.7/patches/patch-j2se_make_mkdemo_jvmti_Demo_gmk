@@ -1,0 +1,28 @@
+$OpenBSD: patch-j2se_make_mkdemo_jvmti_Demo_gmk,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/make/mkdemo/jvmti/Demo.gmk.orig	Thu Jul  5 04:56:12 2007
++++ j2se/make/mkdemo/jvmti/Demo.gmk	Thu Aug  2 21:45:58 2007
+@@ -145,10 +145,12 @@ ifdef USES_CRW
+       OTHER_LDLIBS += -R\$$ORIGIN/$(REL_TO_SDK_LIBARCH_DIR)
+       OTHER_LDLIBS += -R\$$ORIGIN/$(REL_TO_JRE_LIBARCH_DIR)
+     else
+-      # Add runpath options so that this library can find java_crw_demo
+-      OTHER_LDLIBS += -Xlinker -z -Xlinker origin
+-      OTHER_LDLIBS += -Xlinker -rpath -Xlinker \$$ORIGIN/$(REL_TO_SDK_LIBARCH_DIR)
+-      OTHER_LDLIBS += -Xlinker -rpath -Xlinker \$$ORIGIN/$(REL_TO_JRE_LIBARCH_DIR)
++      ifneq ($(PLATFORM), bsd)
++        # Add runpath options so that this library can find java_crw_demo
++        OTHER_LDLIBS += -Xlinker -z -Xlinker origin
++        OTHER_LDLIBS += -Xlinker -rpath -Xlinker \$$ORIGIN/$(REL_TO_SDK_LIBARCH_DIR)
++        OTHER_LDLIBS += -Xlinker -rpath -Xlinker \$$ORIGIN/$(REL_TO_JRE_LIBARCH_DIR)
++      endif
+     endif
+     # Add dependence on java_crw_demo
+     OTHER_LDLIBS += -ljava_crw_demo
+@@ -244,6 +246,7 @@ demo_src_dir_layout:
+ 	    $(RM) -r $(ABS_DEMODESTDIR)/src/$(PLATFORM); \
+ 	    $(MKDIR) -p $(ABS_DEMODESTDIR)/src/$(PLATFORM); \
+ 	    $(CP) $(PSRCDIR)/*.* $(ABS_DEMODESTDIR)/src/$(PLATFORM); \
++	    $(RM) $(ABS_DEMODESTDIR)/src/$(PLATFORM)/*.orig; \
+ 	fi
+ 	@if [ "$(DEMO_NAME)" = hprof ] ; then \
+ 	    $(CP) $(SHARE_SRC)/classes/com/sun/demo/jvmti/hprof/*.java \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_net_dns_ResolverConfigurationImpl_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/net/dns/ResolverConfigurationImpl.c.orig	Thu Jul  5 05:03:45 2007
++++ j2se/src/solaris/native/sun/net/dns/ResolverConfigurationImpl.c	Fri Jul 27 18:25:15 2007
+@@ -33,7 +33,7 @@
+ #include <strings.h>
+ #endif
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <string.h>
+ #endif
+ 

@@ -1,0 +1,156 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_io_UnixFileSystem_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/java/io/UnixFileSystem_md.c.orig	Thu Jul  5 05:03:38 2007
++++ j2se/src/solaris/native/java/io/UnixFileSystem_md.c	Fri Jul 27 18:25:14 2007
+@@ -27,7 +27,8 @@
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/stat.h>
+-#include <sys/statvfs.h>
++#include <sys/param.h>
++#include <sys/mount.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <dlfcn.h>
+@@ -41,6 +42,11 @@
+ #include "java_io_FileSystem.h"
+ #include "java_io_UnixFileSystem.h"
+ 
++#if defined(_ALLBSD_SOURCE)
++#define HAVE_LARGEFILE
++#define dirent64 dirent
++#define readdir64 readdir
++#endif
+ 
+ /* -- Field IDs -- */
+ 
+@@ -61,6 +67,8 @@ Java_java_io_UnixFileSystem_initIDs(JNIEnv *env, jclas
+ 
+ /* -- Large-file support -- */
+ 
++#ifndef HAVE_LARGEFILE
++
+ /* LINUX_FIXME: ifdef __solaris__ here is wrong.  We need to move the
+  * definition of stat64 into a solaris_largefile.h and create a
+  * linux_largefile.h with a good stat64 structure to compile on
+@@ -121,6 +129,7 @@ static void init64IO(void) {
+     dlclose(handle);
+ }
+ 
++#endif /* HAVE_LARGEFILE */
+ 
+ /* -- Path operations -- */
+ 
+@@ -151,6 +160,7 @@ Java_java_io_UnixFileSystem_canonicalize0(JNIEnv *env,
+ static jboolean
+ statMode(const char *path, int *mode)
+ {
++#ifndef HAVE_LARGEFILE
+     if (stat64_ptr) {
+ 	struct stat64 sb;
+ 	if (((*stat64_ptr)(path, &sb)) == 0) {
+@@ -158,12 +168,15 @@ statMode(const char *path, int *mode)
+ 	    return JNI_TRUE;
+ 	}
+     } else {
++#endif
+ 	struct stat sb;
+ 	if (stat(path, &sb) == 0) {
+ 	    *mode = sb.st_mode;
+ 	    return JNI_TRUE;
+ 	}
++#ifndef HAVE_LARGEFILE
+     }
++#endif
+     return JNI_FALSE;
+ }
+ 
+@@ -266,17 +279,21 @@ Java_java_io_UnixFileSystem_getLastModifiedTime(JNIEnv
+     jlong rv = 0;
+ 
+     WITH_FIELD_PLATFORM_STRING(env, file, ids.path, path) {
++#ifndef HAVE_LARGEFILE
+         if (stat64_ptr) {
+             struct stat64 sb;
+             if (((*stat64_ptr)(path, &sb)) == 0) {
+                 rv = 1000 * (jlong)sb.st_mtime;
+             }
+         } else {
++#endif
+             struct stat sb;
+             if (stat(path, &sb) == 0) {
+                 rv = 1000 * (jlong)sb.st_mtime;
+             }
++#ifndef HAVE_LARGEFILE
+         }
++#endif
+     } END_PLATFORM_STRING(env, path);
+     return rv;
+ }
+@@ -289,17 +306,21 @@ Java_java_io_UnixFileSystem_getLength(JNIEnv *env, job
+     jlong rv = 0;
+ 
+     WITH_FIELD_PLATFORM_STRING(env, file, ids.path, path) {
++#ifndef HAVE_LARGEFILE
+ 	if (stat64_ptr) {
+ 	    struct stat64 sb;
+ 	    if (((*stat64_ptr)(path, &sb)) == 0) {
+ 		rv = sb.st_size;
+ 	    }
+ 	} else {
++#endif
+ 	    struct stat sb;
+ 	    if (stat(path, &sb) == 0) {
+ 		rv = sb.st_size;
+ 	    }
++#ifndef HAVE_LARGEFILE
+ 	}
++#endif
+     } END_PLATFORM_STRING(env, path);
+     return rv;
+ }
+@@ -378,6 +399,9 @@ Java_java_io_UnixFileSystem_list(JNIEnv *env, jobject 
+     if (rv == NULL) goto error;
+ 
+     /* Scan the directory */
++#ifdef _ALLBSD_SOURCE
++#define readdir64_r readdir_r
++#endif
+     while ((readdir64_r(dir, ptr, &result) == 0)  && (result != NULL)) {
+ 	jstring name;
+   	if (!strcmp(ptr->d_name, ".") || !strcmp(ptr->d_name, ".."))
+@@ -483,7 +507,7 @@ Java_java_io_UnixFileSystem_setLastModifiedTime(JNIEnv
+ #endif
+ 
+ 	/* Preserve access time */
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+         struct stat sb;
+ 
+         if (stat(path, &sb) == 0) {
+@@ -534,20 +558,20 @@ Java_java_io_UnixFileSystem_getSpace(JNIEnv *env, jobj
+     jlong rv = 0L;
+     
+     WITH_FIELD_PLATFORM_STRING(env, file, ids.path, path) {
+-        struct statvfs fsstat;
+-        memset(&fsstat, 0, sizeof(struct statvfs));
+-	if (statvfs(path, &fsstat) == 0) {
++        struct statfs fsstat;
++        memset(&fsstat, 0, sizeof(struct statfs));
++	if (statfs(path, &fsstat) == 0) {
+ 	    switch(t) {
+ 	    case java_io_FileSystem_SPACE_TOTAL:
+-		rv = jlong_mul(long_to_jlong(fsstat.f_frsize),
++		rv = jlong_mul(long_to_jlong(fsstat.f_bsize),
+ 			       long_to_jlong(fsstat.f_blocks));
+ 		break;
+ 	    case java_io_FileSystem_SPACE_FREE:
+-		rv = jlong_mul(long_to_jlong(fsstat.f_frsize),
++		rv = jlong_mul(long_to_jlong(fsstat.f_bsize),
+ 			       long_to_jlong(fsstat.f_bfree));
+ 		break;
+ 	    case java_io_FileSystem_SPACE_USABLE:
+-		rv = jlong_mul(long_to_jlong(fsstat.f_frsize),
++		rv = jlong_mul(long_to_jlong(fsstat.f_bsize),
+ 			       long_to_jlong(fsstat.f_bavail));
+ 		break;
+ 	    default:

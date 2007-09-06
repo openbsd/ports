@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_defs_make,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/build/bsd/makefiles/defs.make.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/build/bsd/makefiles/defs.make	Mon Apr 16 08:42:38 2007
+$OpenBSD: patch-hotspot_build_bsd_makefiles_defs_make,v 1.2 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/build/bsd/makefiles/defs.make.orig	Sun Sep  2 14:06:00 2007
++++ hotspot/build/bsd/makefiles/defs.make	Sun Sep  2 14:06:01 2007
 @@ -61,32 +61,31 @@ ifeq ($(ARCH), sparc64)
    HS_ARCH            = sparc
  endif
@@ -44,7 +44,7 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_defs_make,v 1.1.1.1 2007/05/08 17:06
 +endif
 +
  JDK_INCLUDE_SUBDIR=bsd
- MAKE_ARGS += HOTSPOT_BUILD_VERSION=$(FULL_VERSION)
+ 
  # FIXUP: The subdirectory for a debug build is NOT the same on all platforms
 @@ -102,12 +101,4 @@ ifeq ($(ARCH_DATA_MODEL), 32)
    EXPORT_LIST += $(EXPORT_CLIENT_DIR)/Xusage.txt

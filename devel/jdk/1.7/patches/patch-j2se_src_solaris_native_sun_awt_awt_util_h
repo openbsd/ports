@@ -1,0 +1,25 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_util_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_util.h.orig	Thu Jul  5 05:03:40 2007
++++ j2se/src/solaris/native/sun/awt/awt_util.h	Fri Jul 27 18:25:14 2007
+@@ -187,15 +187,20 @@ JNU_GetCharField(JNIEnv *env, jobject self, const char
+ #ifdef __solaris__
+ extern Widget awt_util_getXICStatusAreaWindow(Widget w);
+ #else
++#if defined(_ALLBSD_SOURCE)
+ int32_t awt_util_getIMStatusHeight(Widget vw);
++Widget awt_util_getXICStatusAreaWindow(Widget w);
++#else
++int32_t awt_util_getIMStatusHeight(Widget vw);
+ XVaNestedList awt_util_getXICStatusAreaList(Widget w);
+ Widget awt_util_getXICStatusAreaWindow(Widget w);
+ #endif
++#endif
+ 
+ 
+ 
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ typedef struct _XmImRefRec {
+   Cardinal      num_refs;       /* Number of referencing widgets. */
+   Cardinal      max_refs;       /* Maximum length of refs array. */

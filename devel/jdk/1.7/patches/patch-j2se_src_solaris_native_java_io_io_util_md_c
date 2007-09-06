@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_io_io_util_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/java/io/io_util_md.c.orig	Thu Jul  5 05:03:38 2007
++++ j2se/src/solaris/native/java/io/io_util_md.c	Fri Jul 27 18:25:14 2007
+@@ -36,7 +36,7 @@ fileOpen(JNIEnv *env, jobject this, jstring path, jfie
+     WITH_PLATFORM_STRING(env, path, ps) {
+         FD fd;
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+         /* Remove trailing slashes, since the kernel won't */
+         char *p = (char *)ps + strlen(ps) - 1;
+         while ((p > ps) && (*p == '/'))

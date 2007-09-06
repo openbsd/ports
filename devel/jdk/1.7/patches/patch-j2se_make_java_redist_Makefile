@@ -1,0 +1,33 @@
+$OpenBSD: patch-j2se_make_java_redist_Makefile,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/java/redist/Makefile.orig	Thu Aug  2 03:45:46 2007
++++ j2se/make/java/redist/Makefile	Fri Aug  3 18:09:11 2007
+@@ -95,6 +95,11 @@ ifeq ($(SA_EXISTS), false)
+   INCLUDE_SA := false
+ endif
+ 
++# FIXME: Remove when the build of libsaproc is fixed.
++ifeq ($(PLATFORM), bsd)
++  INCLUDE_SA := false
++endif
++
+ ifeq ($(INCLUDE_SA), true)
+   IMPORT_LIST += $(LIBDIR)/sa-jdi.jar \
+                  $(LIB_LOCATION)/$(SALIB_NAME)
+@@ -319,7 +324,7 @@ $(LIBDIR)/fonts/%.ttf: $(CLOSED_SRC)/share/lib/fonts/%
+ $(FONTSDIRFILE): $(PLATFORM_SRC)/classes/sun/awt/motif/java.fonts.dir
+ 	$(install-file)
+ 
+-ifeq ($(PLATFORM), linux)
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+ 
+ # The oblique fonts are only needed/wanted on Linux.
+ 
+@@ -333,7 +338,7 @@ $(LIBDIR)/oblique-fonts/%.ttf: $(CLOSED_SRC)/share/lib
+ $(OBLFONTSDIRFILE): $(PLATFORM_SRC)/classes/sun/awt/motif/java.oblique-fonts.dir
+ 	$(install-file)
+ 
+-endif # linux
++endif # linux || bsd
+ endif # !OPENJDK
+ 
+ PARTIAL_SECURITY_CLASSFILE_LIST = \

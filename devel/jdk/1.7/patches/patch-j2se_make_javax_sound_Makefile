@@ -1,0 +1,23 @@
+$OpenBSD: patch-j2se_make_javax_sound_Makefile,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/javax/sound/Makefile.orig	Thu Aug  2 03:45:46 2007
++++ j2se/make/javax/sound/Makefile	Fri Aug  3 18:02:55 2007
+@@ -114,6 +114,19 @@ ifeq ($(PLATFORM), linux)
+   endif
+ endif # PLATFORM linux
+ 
++# XXXBSD: ???
++ifeq ($(PLATFORM), bsd)
++    # build with empty MIDI i/o
++    INCLUDE_MIDI = TRUE
++    # build with empty ports
++    INCLUDE_PORTS = TRUE
++    # build with empty direct audio
++    INCLUDE_DAUDIO = TRUE
++    ifeq ($(OS_VENDOR), OpenBSD)
++      LDFLAGS += -lossaudio
++    endif
++endif # PLATFORM bsd
++
+ ifeq ($(PLATFORM), solaris)
+   ifneq ($(ARCH), amd64)
+     # build with ports and direct audio

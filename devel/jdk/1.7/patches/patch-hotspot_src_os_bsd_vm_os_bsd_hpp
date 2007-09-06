@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.hpp.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/src/os/bsd/vm/os_bsd.hpp	Mon Apr 16 08:42:39 2007
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.2 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.hpp.orig	Fri Aug  3 18:02:38 2007
++++ hotspot/src/os/bsd/vm/os_bsd.hpp	Fri Aug  3 18:02:52 2007
 @@ -50,6 +50,7 @@ class Bsd {
    static int sigflags[MAXSIGNUM];
  
@@ -142,50 +142,3 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:18 k
  
    // Stack repair handling
  
-@@ -250,7 +295,7 @@ class Bsd {
-       int status = pthread_mutex_unlock(_mutex);
-       assert_status(status == 0, status, "mutex_unlock");
-     }
--    int timedwait(timespec* abstime) {
-+    int timedwait(struct timespec* abstime) {
-       verify();
-       ++_nParked ; 
-       int status = safe_cond_timedwait(_cond, _mutex, abstime);
-@@ -264,12 +309,11 @@ class Bsd {
-          pthread_cond_init (_cond, NULL) ; 
-       }
-       assert_status(status == 0 || status == EINTR || 
--		    status == ETIME || status == ETIMEDOUT, 
--		    status, "cond_timedwait");
-+		    status == ETIMEDOUT, status, "cond_timedwait");
-       return status;
-     }
-     int timedwait(jlong millis) {
--      timespec abst;
-+      struct timespec abst;
-       Event::compute_abstime(&abst, millis);
-       return timedwait(&abst);
-     }
-@@ -278,11 +322,6 @@ class Bsd {
-       ++_nParked ; 
-       int status = pthread_cond_wait(_cond, _mutex);
-       --_nParked ; 
--      // for some reason, under 2.7 lwp_cond_wait() may return ETIME ...
--      // Treat this the same as if the wait was interrupted
--      if(status == ETIME) {
--	status = EINTR;
--      }
-       assert_status(status == 0 || status == EINTR, status, "cond_wait");
-       return status;
-     }
-@@ -352,8 +391,9 @@ class Bsd {
-      _count = 0;
-     }
- 
-+// XXXBSD TODO: sync with 1.5 version
-     // utility to compute the abstime argument to timedwait:
--    static struct timespec* compute_abstime(timespec* abstime, jlong millis) {
-+    static struct timespec* compute_abstime(struct timespec* abstime, jlong millis) {
-       // millis is the relative timeout time
-       // abstime will be the absolute timeout time
-       if (millis < 0)  millis = 0;

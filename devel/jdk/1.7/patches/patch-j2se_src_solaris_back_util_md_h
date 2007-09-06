@@ -1,0 +1,20 @@
+$OpenBSD: patch-j2se_src_solaris_back_util_md_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/back/util_md.h.orig	Thu Jul  5 05:03:20 2007
++++ j2se/src/solaris/back/util_md.h	Fri Jul 27 18:25:14 2007
+@@ -28,6 +28,7 @@
+ 
+ #include <limits.h>
+ #include <sys/types.h>
++#include <machine/endian.h>
+ 
+ #ifdef _LP64
+ typedef unsigned long UNSIGNED_JLONG;
+@@ -43,7 +44,7 @@ typedef unsigned long UNSIGNED_JINT;
+ 
+ /* On little endian machines, convert java big endian numbers. */
+ 
+-#if defined(_LITTLE_ENDIAN)
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+ 
+ #define HOST_TO_JAVA_CHAR(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
+ #define HOST_TO_JAVA_SHORT(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))

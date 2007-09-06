@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_osThread_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/os/bsd/vm/osThread_bsd.hpp.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/src/os/bsd/vm/osThread_bsd.hpp	Mon Apr 16 08:42:39 2007
+$OpenBSD: patch-hotspot_src_os_bsd_vm_osThread_bsd_hpp,v 1.2 2007/09/06 15:46:18 kurt Exp $
+--- hotspot/src/os/bsd/vm/osThread_bsd.hpp.orig	Fri Aug  3 18:02:38 2007
++++ hotspot/src/os/bsd/vm/osThread_bsd.hpp	Fri Aug  3 18:02:52 2007
 @@ -39,6 +39,12 @@
  
   private:
@@ -58,9 +58,9 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_osThread_bsd_hpp,v 1.1.1.1 2007/05/08 17:0
    pthread_t pthread_id() const {
      return _pthread_id;
    }
-@@ -130,6 +149,9 @@
+@@ -123,12 +142,20 @@
  
-   os::Bsd::Event* _interrupt_event;
+ private:
    Monitor* _startThread_lock;     // sync parent and child in thread creation
 +#ifdef _ALLBSD_SOURCE
 +  JavaThreadState      _saved_interrupt_thread_state;       // the thread state before a system call -- restored afterward
@@ -68,7 +68,6 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_osThread_bsd_hpp,v 1.1.1.1 2007/05/08 17:0
  
  public:
  
-@@ -143,6 +165,11 @@
    Monitor* startThread_lock() const {
      return _startThread_lock;
    }

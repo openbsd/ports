@@ -1,0 +1,21 @@
+$OpenBSD: patch-j2se_src_solaris_classes_sun_awt_X11GraphicsEnvironment_java,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java.orig	Thu Aug 30 05:05:45 2007
++++ j2se/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java	Sun Sep  2 14:06:06 2007
+@@ -404,7 +404,7 @@ public class X11GraphicsEnvironment
+         if (fontID != null) {
+             fileName = (String)fontNameMap.get(fontID);
+ 	    /* On Linux check for the Lucida Oblique fonts */
+-            if (fileName == null && isLinux && !isOpenJDK()) {
++            if (fileName == null && isLinuxOrBSD && !isOpenJDK()) {
+ 		if (oblmap == null) {
+ 		    initObliqueLucidaFontMap();
+ 		}
+@@ -640,7 +640,7 @@ public class X11GraphicsEnvironment
+         if (fontConfigDirs == null) {
+             return;
+         }
+-	if (isLinux) {
++	if (isLinuxOrBSD) {
+ 	    fontConfigDirs.add(jreLibDirName+File.separator+"oblique-fonts");
+ 	}
+ 	fontdirs = (String[])fontConfigDirs.toArray(new String[0]);

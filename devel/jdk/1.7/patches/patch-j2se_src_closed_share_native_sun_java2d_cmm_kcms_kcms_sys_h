@@ -1,0 +1,30 @@
+$OpenBSD: patch-j2se_src_closed_share_native_sun_java2d_cmm_kcms_kcms_sys_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/sun/java2d/cmm/kcms/kcms_sys.h.orig	Thu Jul  5 03:44:30 2007
++++ j2se/src/closed/share/native/sun/java2d/cmm/kcms/kcms_sys.h	Sun Jul 29 22:48:36 2007
+@@ -47,7 +47,7 @@
+ #define KCMS_SYS_H
+ 
+ #include "kcmsos.h"
+-#if defined (KPLINUX)
++#if defined (KPLINUX) || defined (KPBSD)
+ #include <sys/sem.h>
+ #endif
+ 
+@@ -221,7 +221,7 @@ KpInt32_t KpInterlockedExchange (KpInt32_t FAR *addres
+ 										a semaphore by when releasing
+ 										the semaphore					*/
+ 
+-#if defined (KPSOLARIS) || defined (KPLINUX)
++#if defined (KPSOLARIS) || defined (KPLINUX) || defined (KPBSD)
+ #define KCMS_SYS_SEM_SET	"Kp_kcms_sys.sem"
+ #define KCMS_SYS_NUM_SEMS	1
+ #define KCMS_SYS_SEMAPHORE	1
+@@ -260,7 +260,7 @@ KpUInt32_t	FAR KpSemaphoreRelease (
+ 			KpUInt32_t	FAR *SemList,
+ 			KpUInt32_t	Increment);
+ 
+-#if defined (KPSOLARIS) || defined (KPLINUX)
++#if defined (KPSOLARIS) || defined (KPLINUX) || defined (KPBSD)
+ KpUInt32_t	getKeyFromName (char *name, key_t *key);
+ KpSemSet_t	acquireKcmsSysLock (void);
+ KpUInt32_t	releaseKcmsSysLock (KpSemSet_t *SemSet);		

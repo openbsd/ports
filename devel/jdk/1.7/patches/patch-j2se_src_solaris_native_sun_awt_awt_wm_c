@@ -1,0 +1,102 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_wm_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_wm.c.orig	Thu Jul  5 05:03:40 2007
++++ j2se/src/solaris/native/sun/awt/awt_wm.c	Fri Jul 27 18:25:14 2007
+@@ -121,12 +121,19 @@ static Atom XA_KWM_WIN_ICONIFIED;
+ static Atom XA_KWM_WIN_MAXIMIZED;
+ 
+ /* OpenLook */
++static Atom _XA_OL_DECOR_ADD;
+ static Atom _XA_OL_DECOR_DEL;
+ static Atom _XA_OL_DECOR_HEADER;
+ static Atom _XA_OL_DECOR_RESIZE;
+ static Atom _XA_OL_DECOR_PIN;
+ static Atom _XA_OL_DECOR_CLOSE;
+ 
++/* AfterStep */
++static Atom _XA_AS_STYLE;
++
++/* WindowMaker */
++static Atom _XA_WINDOWMAKER_STATE;
++
+ /* For _NET_WM_STATE ClientMessage requests */
+ #define _NET_WM_STATE_REMOVE	0 /* remove/unset property */
+ #define _NET_WM_STATE_ADD	1 /* add/set property      */
+@@ -193,7 +200,12 @@ awt_wm_initAtoms(void)
+ 	{ &_XA_OL_DECOR_HEADER,		     "_OL_DECOR_HEADER"		     },
+ 	{ &_XA_OL_DECOR_RESIZE,		     "_OL_DECOR_RESIZE"		     },
+ 	{ &_XA_OL_DECOR_PIN,		     "_OL_DECOR_PIN"		     },
+-	{ &_XA_OL_DECOR_CLOSE,		     "_OL_DECOR_CLOSE"		     }
++	{ &_XA_OL_DECOR_CLOSE,		     "_OL_DECOR_CLOSE"		     },
++	{ &_XA_OL_DECOR_ADD,		     "_OL_DECOR_ADD"		     },
++
++	{ &_XA_AS_STYLE,		     "_XA_AS_STYLE"		     },
++
++	{ &_XA_WINDOWMAKER_STATE,	     "_XA_WINDOWMAKER_STATE"	     }
+     };
+ #define ATOM_LIST_LENGTH (sizeof(atom_list)/sizeof(atom_list[0]))
+ 
+@@ -942,8 +954,41 @@ awt_wm_isMotif(void)
+     return True;
+ }
+ 
++/*
++ * Window Maker.
++ */
++static Boolean
++awt_wm_isWindowmaker()
++{
++    if (awt_wm_atomInterned(&_XA_WINDOWMAKER_STATE, "_WINDOWMAKER_STATE"))
++        return True;
++    return False;
++}
+ 
++/*
++ * Afterstep.
++ */
+ static Boolean
++awt_wm_isAfterstep()
++{
++    if (awt_wm_atomInterned(&_XA_AS_STYLE, "_AS_STYLE"))
++        return True;
++    return False;
++}
++
++/*
++ * FVWM 2.
++ */
++static Boolean
++awt_wm_isFvwm2()
++{
++    if (awt_wm_atomInterned(&_XA_OL_DECOR_ADD, "_OL_DECOR_ADD")
++        && !awt_wm_atomInterned(&_XA_OL_DECOR_PIN, "_OL_DECOR_PIN"))
++        return True;
++    return False;
++}
++
++static Boolean
+ awt_wm_isNetWMName(char *name)
+ {
+     Window anchor;
+@@ -1280,6 +1325,12 @@ awt_wm_getRunningWM(void)
+     else if (awt_wm_isKDE2()) {
+ 	awt_wmgr = KDE2_WM;
+     }
++    else if (awt_wm_isWindowmaker()) {
++	awt_wmgr = WINDOWMAKER_WM;
++    }
++    else if (awt_wm_isAfterstep()) {
++	awt_wmgr = AFTERSTEP_WM;
++    }
+     /*
+      * We don't check for legacy WM when we already know that WM
+      * supports WIN or _NET wm spec.
+@@ -1302,6 +1353,9 @@ awt_wm_getRunningWM(void)
+ 	awt_wmgr = MOTIF_WM;
+     }
+     else if (awt_wm_isOpenLook()) {
++	awt_wmgr = OPENLOOK_WM;
++    }
++    else if (awt_wm_isFvwm2()) {
+ 	awt_wmgr = OPENLOOK_WM;
+     }
+     else {

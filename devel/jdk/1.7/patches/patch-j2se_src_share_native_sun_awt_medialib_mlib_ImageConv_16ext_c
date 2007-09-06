@@ -1,0 +1,42 @@
+$OpenBSD: patch-j2se_src_share_native_sun_awt_medialib_mlib_ImageConv_16ext_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c.orig	Thu Jul  5 05:03:10 2007
++++ j2se/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Fri Jul 27 18:25:10 2007
+@@ -130,7 +130,7 @@
+ #define D2I(x) CLAMP_S32((x) SAT_OFF)
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+ 
+ #define STORE2(res0, res1)                                      \
+   dp[0    ] = res1;                                             \
+@@ -142,7 +142,7 @@
+   dp[0    ] = res0;                                             \
+   dp[chan1] = res1
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ #ifdef _NO_LONGLONG
+@@ -153,17 +153,17 @@
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[chan1]) << 32) | S64TOS32((mlib_s64)sp[0])
+ 
+-#else /* _LITTLE_ENDIAN */
++#else
+ 
+ #define LOAD_BUFF(buff)                                         \
+   *(mlib_s64*)(buff + i) = (((mlib_s64)sp[0]) << 32) | S64TOS32((mlib_s64)sp[chan1])
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+ #endif /* _NO_LONGLONG */
+ 
+ /***************************************************************/

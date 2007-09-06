@@ -1,0 +1,14 @@
+$OpenBSD: patch-j2se_make_java_net_FILES_c_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/java/net/FILES_c.gmk.orig	Thu Aug  2 03:45:45 2007
++++ j2se/make/java/net/FILES_c.gmk	Fri Aug  3 18:02:55 2007
+@@ -43,6 +43,10 @@ ifeq ($(PLATFORM), linux)
+     FILES_c += linux_close.c
+ endif
+ 
++ifeq ($(OS_VENDOR), FreeBSD)
++    FILES_c += $(CTARGDIR)bsd_close.c
++endif
++
+ ifeq ($(PLATFORM), windows)
+     FILES_c += TwoStacksPlainSocketImpl.c
+     FILES_c += DualStackPlainSocketImpl.c

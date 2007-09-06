@@ -1,0 +1,58 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_fontpath_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/fontpath.c.orig	Thu Jul  5 05:03:40 2007
++++ j2se/src/solaris/native/sun/awt/fontpath.c	Fri Jul 27 18:25:14 2007
+@@ -23,7 +23,7 @@
+  *
+  */
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <string.h>
+ #endif /* __linux__ */
+ #include <stdio.h>
+@@ -61,7 +61,7 @@ extern Display *awt_display;
+ 
+ #define MAXFDIRS 512    /* Max number of directories that contain fonts */
+ 
+-#ifndef __linux__
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
+ /* 
+  * This can be set in the makefile to "/usr/X11" if so desired.
+  */
+@@ -351,7 +351,7 @@ static char **getX11FontPath ()
+ 
+ #endif /* !HEADLESS */
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ /* from awt_LoadLibrary.c */
+ JNIEXPORT jboolean JNICALL AWTIsHeadless();
+ #endif
+@@ -476,7 +476,7 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
+      */
+     fcdirs = getFontConfigLocations();
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     knowndirs = fullLinuxFontPath;
+ #else /* IF SOLARIS */
+     knowndirs = fullSolarisFontPath;
+@@ -488,7 +488,8 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
+      * be initialised.
+      */
+ #ifndef HEADLESS
+-#ifdef __linux__        /* There's no headless build on linux ... */
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
++    /* There's no headless build on linux ... */
+     if (!AWTIsHeadless()) { /* .. so need to call a function to check */
+ #endif
+     AWT_LOCK();
+@@ -496,7 +497,7 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
+ 	x11dirs = getX11FontPath();
+     }
+     AWT_UNLOCK();
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     }
+ #endif
+ #endif /* !HEADLESS */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_back_exec_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/back/exec_md.c.orig	Thu Jul  5 05:03:20 2007
++++ j2se/src/solaris/back/exec_md.c	Wed Aug  1 14:07:43 2007
+@@ -30,7 +30,7 @@
+ #include "sys.h"
+ #include "util.h"
+ 
+-#ifdef LINUX
++#if defined(LINUX) || defined(_ALLBSD_SOURCE)
+   /* Linux */
+   #define FORK() fork()
+ #else

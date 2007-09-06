@@ -1,0 +1,13 @@
+$OpenBSD: patch-j2se_src_share_native_sun_awt_debug_debug_util_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/awt/debug/debug_util.h.orig	Thu Jul  5 05:03:04 2007
++++ j2se/src/share/native/sun/awt/debug/debug_util.h	Fri Jul 27 18:25:10 2007
+@@ -50,7 +50,9 @@ typedef void * dmutex_t;
+ #include <stdio.h>
+ #include <string.h>
+ #include <assert.h>
++#if !defined(_ALLBSD_SOURCE)
+ #include <malloc.h>
++#endif
+ #include <limits.h>
+ 
+ /* keep these after the other headers */

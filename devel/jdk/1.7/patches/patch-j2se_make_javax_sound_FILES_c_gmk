@@ -1,0 +1,14 @@
+$OpenBSD: patch-j2se_make_javax_sound_FILES_c_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/javax/sound/FILES_c.gmk.orig	Thu Aug  2 03:45:46 2007
++++ j2se/make/javax/sound/FILES_c.gmk	Fri Aug  3 18:02:55 2007
+@@ -75,6 +75,10 @@ FILES_linux = \
+ 	HAE_API_LinuxOS.c \
+ 	HAE_API_LinuxOS_Capture.c
+ 
++FILES_bsd = \
++       $(CTARGDIR)HAE_API_BsdOS.c \
++       $(CTARGDIR)HAE_API_BsdOS_Capture.c
++
+ FILES_windows = \
+ 	HAE_API_WinOS.c \
+ 	HAE_API_WinOS_Capture.c \

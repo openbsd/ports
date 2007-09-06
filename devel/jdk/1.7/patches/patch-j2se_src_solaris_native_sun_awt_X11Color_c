@@ -1,0 +1,13 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_X11Color_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/X11Color.c.orig	Thu Jul  5 05:03:38 2007
++++ j2se/src/solaris/native/sun/awt/X11Color.c	Fri Jul 27 18:25:14 2007
+@@ -33,7 +33,9 @@
+ #include <math.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
++#if !defined(_ALLBSD_SOURCE)
+ #include <alloca.h>
++#endif
+ #ifndef HEADLESS
+ #include <X11/Xlib.h>
+ #include <X11/Xatom.h>

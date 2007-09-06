@@ -1,0 +1,38 @@
+$OpenBSD: patch-j2se_src_share_classes_sun_java2d_SunGraphicsEnvironment_java,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/classes/sun/java2d/SunGraphicsEnvironment.java.orig	Thu Jul  5 05:02:05 2007
++++ j2se/src/share/classes/sun/java2d/SunGraphicsEnvironment.java	Fri Jul 27 18:31:36 2007
+@@ -77,7 +77,7 @@ import sun.font.NativeFont;
+ public abstract class SunGraphicsEnvironment extends GraphicsEnvironment
+     implements FontSupport, DisplayChangedListener {
+ 
+-    public static boolean isLinux;
++    public static boolean isLinuxOrBSD;
+     public static boolean isSolaris;
+     public static boolean isWindows;
+     public static boolean noType1Font;
+@@ -165,7 +165,13 @@ public abstract class SunGraphicsEnvironment extends G
+             public Object run() {
+                 String osName = System.getProperty("os.name");
+                 if ("Linux".equals(osName)) {
+-                    isLinux = true;
++                    isLinuxOrBSD = true;
++                } else if ("FreeBSD".equals(osName)) {
++                    isLinuxOrBSD = true;
++                } else if ("NetBSD".equals(osName)) {
++                    isLinuxOrBSD = true;
++                } else if ("OpenBSD".equals(osName)) {
++                    isLinuxOrBSD = true;
+                 } else if ("SunOS".equals(osName)) {
+                     isSolaris = true;
+                 } else if ("Windows".equals(osName)) {
+@@ -228,8 +234,8 @@ public abstract class SunGraphicsEnvironment extends G
+ 		 * Pass "true" to registerFonts method as on-screen these
+ 		 * JRE fonts always go through the T2K rasteriser.
+ 		 */
+-		if (isLinux) {
+-		    /* Linux font configuration uses these fonts */
++		if (isLinuxOrBSD) {
++		    /* Linux/BSD font configuration uses these fonts */
+ 		    registerFontDir(jreFontDirName);
+ 		}
+ 		registerFontsInDir(jreFontDirName, true, Font2D.JRE_RANK,

@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_classes_sun_font_XMap_java,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/classes/sun/font/XMap.java.orig	Thu Jul  5 05:03:26 2007
++++ j2se/src/solaris/classes/sun/font/XMap.java	Fri Jul 27 18:25:14 2007
+@@ -102,6 +102,8 @@ class XMap {
+ 	    jclass = "ISO8859_5";
+ 	} else if (encoding.equals("koi8-r")) {
+ 	    jclass = "KOI8_R";
++	} else if (encoding.equals("koi8-u")) {
++	    jclass = "KOI8_U";
+ 	} else if (encoding.equals("ansi-1251")) {
+ 	    jclass = "windows-1251";
+ 	} else if (encoding.equals("iso8859-6")) {

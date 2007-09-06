@@ -1,0 +1,13 @@
+$OpenBSD: patch-j2se_src_closed_share_classes_sun_jdbc_odbc_JdbcOdbc_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/classes/sun/jdbc/odbc/JdbcOdbc.c.orig	Sun Jul 29 22:35:46 2007
++++ j2se/src/closed/share/classes/sun/jdbc/odbc/JdbcOdbc.c	Sun Jul 29 22:36:41 2007
+@@ -86,6 +86,9 @@
+ #include "stdio.h"
+ #include "sun_jdbc_odbc_JdbcOdbc.h"
+ 
++#ifdef _ALLBSD_SOURCE
++#include <string.h>
++#endif
+ 
+ static double buf = 0;
+ //SDWORD	lenValue = SQL_NULL_DATA;

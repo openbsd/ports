@@ -1,0 +1,108 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_java2d_loops_mlib_ImageZoom_NN_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
+--- j2se/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c.orig	Thu Jul  5 05:03:43 2007
++++ j2se/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Fri Jul 27 18:25:14 2007
+@@ -67,6 +67,10 @@
+  *    MLIB_EDGE_SRC_PADDED
+  */
+ 
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#endif
++#include <machine/endian.h>
+ #include <mlib_image.h>
+ #include <mlib_ImageZoom.h>
+ 
+@@ -103,7 +107,7 @@ typedef union {
+ 
+ /***************************************************************/
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+ 
+ static const mlib_u32 mlib_bit_mask4[16] = {
+   0x00000000u, 0xFF000000u, 0x00FF0000u, 0xFFFF0000u,
+@@ -112,7 +116,7 @@ static const mlib_u32 mlib_bit_mask4[16] = {
+   0x0000FFFFu, 0xFF00FFFFu, 0x00FFFFFFu, 0xFFFFFFFFu
+ };
+ 
+-#else /* _LITTLE_ENDIAN */
++#else /* BIG_ENDIAN */
+ 
+ static const mlib_u32 mlib_bit_mask4[16] = {
+   0x00000000u, 0x000000FFu, 0x0000FF00u, 0x0000FFFFu,
+@@ -121,7 +125,7 @@ static const mlib_u32 mlib_bit_mask4[16] = {
+   0xFFFF0000u, 0xFFFF00FFu, 0xFFFFFF00u, 0xFFFFFFFFu
+ };
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ 
+@@ -345,11 +349,11 @@ mlib_status mlib_ImageZoom_BIT_1_Nearest(mlib_work_ima
+ #ifdef _NO_LONGLONG
+ 
+ typedef struct {
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+   mlib_u32 uint1, uint0;
+-#else /* _LITTLE_ENDIAN */
++#else /* BIG_ENDIAN */
+   mlib_u32 uint0, uint1;
+-#endif /* _LITTLE_ENDIAN */
++#endif /* LITTLE_ENDIAN */
+ } two_uint;
+ 
+ /***************************************************************/
+@@ -512,11 +516,11 @@ mlib_status mlib_ImageZoom_BitToGray_1_Nearest(mlib_wo
+         DTYPE mask;
+         MASK(mask);
+         off *= 8;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+         LSHIFT(dd_old, da[0], 64 - off);
+-#else /* _LITTLE_ENDIAN */
++#else /* BIG_ENDIAN */
+         RSHIFT(dd_old, da[0], 64 - off);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* LITTLE_ENDIAN */
+ 
+ #ifdef __SUNPRO_C
+ #pragma pipeloop(0)
+@@ -541,30 +545,30 @@ mlib_status mlib_ImageZoom_BitToGray_1_Nearest(mlib_wo
+ 
+           res = (res & 0xff) | (res >> 8);
+           dd = gray_mask[res];
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+ /* *da++ = (dd_old >> (64 - off)) | (dd << off);*/
+           RSHIFT(dd_old, dd_old, 64 - off);
+           LSHIFT(dtmp, dd, off);
+-#else /* _LITTLE_ENDIAN */
++#else /* BIG_ENDIAN */
+ /* *da++ = (dd_old << (64 - off)) | (dd >> off);*/
+           LSHIFT(dd_old, dd_old, 64 - off);
+           RSHIFT(dtmp, dd, off);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* LITTLE_ENDIAN */
+           LOGIC(*da++, dd_old, dtmp, |);
+           dd_old = dd;
+         }
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+ /* da[0] = (dd_old >> (64 - off)) | (da[0] & ((mlib_u64)((mlib_s64) -1) << off));*/
+         LSHIFT(dtmp, mask, off);
+         LOGIC(dtmp, da[0], dtmp, &);
+         RSHIFT(dtmp1, dd_old, 64 - off);
+-#else /* _LITTLE_ENDIAN */
++#else /* BIG_ENDIAN */
+ /* da[0] = (dd_old << (64 - off)) | (da[0] & ((mlib_u64)((mlib_s64) -1) >> off));*/
+         RSHIFT(dtmp, mask, off);
+         LOGIC(dtmp, da[0], dtmp, &);
+         LSHIFT(dtmp1, dd_old, 64 - off);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* LITTLE_ENDIAN */
+         LOGIC(da[0], dtmp, dtmp1, |);
+       }
+       else {                                               /* aligned */

@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_wm_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_wm.h.orig	Thu Jul  5 05:03:40 2007
++++ j2se/src/solaris/native/sun/awt/awt_wm.h	Fri Jul 27 18:25:14 2007
+@@ -45,7 +45,10 @@ enum wmgr_t {
+     KDE2_WM,
+     SAWFISH_WM,
+     ICE_WM,
+-    METACITY_WM
++    METACITY_WM,
++    AFTERSTEP_WM,
++    WINDOWMAKER_WM,
++    FVWM2_WM
+ };
+ 
+ extern void awt_wm_init(void);

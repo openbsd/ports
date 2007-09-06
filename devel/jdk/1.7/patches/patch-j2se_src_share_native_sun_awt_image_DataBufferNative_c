@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2se_src_share_native_sun_awt_image_DataBufferNative_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/awt/image/DataBufferNative.c.orig	Thu Jul  5 05:03:04 2007
++++ j2se/src/share/native/sun/awt/image/DataBufferNative.c	Fri Jul 27 18:25:10 2007
+@@ -23,7 +23,11 @@
+  *
+  */
+ 
++#ifdef _ALLBSD_SOURCE
++#include <stdlib.h>
++#else
+ #include "malloc.h"
++#endif
+ 
+ #include "SurfaceData.h"
+ #include "sun_awt_image_DataBufferNative.h"

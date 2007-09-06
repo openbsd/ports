@@ -1,0 +1,32 @@
+$OpenBSD: patch-j2se_make_sun_jawt_Makefile,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/make/sun/jawt/Makefile.orig	Thu Aug  2 03:45:50 2007
++++ j2se/make/sun/jawt/Makefile	Fri Aug 10 17:18:13 2007
+@@ -98,9 +98,7 @@ else # PLATFORM
+ #
+ # Other extra flags needed for compiling.
+ #
+-CPPFLAGS += -I$(OPENWIN_HOME)/include \
+-	    -I$(MOTIF_DIR)/include \
+-	    -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
++CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
+             -I$(SHARE_SRC)/native/$(PKGDIR)/image \
+ 	    -I$(SHARE_SRC)/native/$(PKGDIR)/image/cvutils \
+ 	    -I$(SHARE_SRC)/native/$(PKGDIR)/alphacomposite \
+@@ -114,6 +112,8 @@ CPPFLAGS += -I$(OPENWIN_HOME)/include \
+ 	    -I$(SHARE_SRC)/native/$(PKGDIR)/../dc/doe \
+ 	    -I$(SHARE_SRC)/native/$(PKGDIR)/../dc/path \
+             -I$(PLATFORM_SRC)/native/$(PKGDIR)/../jdga \
++	    -I$(OPENWIN_HOME)/include \
++	    -I$(MOTIF_DIR)/include \
+ 	    $(EVENT_MODEL)
+ #
+ # Libraries to link in.
+@@ -122,7 +122,7 @@ ifeq ($(PLATFORM), solaris)
+ OTHER_LDLIBS = -L$(LIBDIR)/$(LIBARCH) -L$(OPENWIN_LIB) -L$(LIBDIR)/$(LIBARCH)/xawt -lmawt
+ endif # PLATFORM
+ 
+-ifeq ($(PLATFORM), linux)
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+ OTHER_LDLIBS = -L$(LIBDIR)/$(LIBARCH) -lawt -L$(LIBDIR)/$(LIBARCH)/xawt -lmawt
+ endif # PLATFORM
+ 

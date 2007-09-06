@@ -1,0 +1,309 @@
+$OpenBSD: patch-j2se_src_solaris_bin_java_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/bin/java_md.c.orig	Thu Jul  5 05:03:20 2007
++++ j2se/src/solaris/bin/java_md.c	Fri Jul 27 18:25:14 2007
+@@ -34,10 +34,15 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <sys/types.h>
++#if defined(_ALLBSD_SOURCE)
++#include <sys/time.h>
++#include <sys/sysctl.h>
++#endif
++
+ #include "manifest_info.h"
+ #include "version_comp.h"
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <pthread.h>
+ #else
+ #include <thread.h>
+@@ -81,7 +86,13 @@ extern char **environ;
+  *      A collection of useful strings. One should think of these as #define
+  *      entries, but actual strings can be more efficient (with many compilers).
+  */
+-#ifdef __linux__
++#if defined(__FreeBSD__)
++static const char *system_dir	= "/usr/local/jdk1.6.0";
++static const char *user_dir	= "/java";
++#elif defined(__OpenBSD__)
++static const char *system_dir	= "/usr/local/jdk-1.6.0";
++static const char *user_dir	= "/java";
++#elif defined(__linux__)
+ static const char *system_dir	= "/usr/java";
+ static const char *user_dir	= "/java";
+ #else /* Solaris */
+@@ -407,7 +418,7 @@ CreateExecutionEnvironment(int *_argcp,
+       runpath = getenv("LD_LIBRARY_PATH");
+ #endif /* __sun */
+ 
+-#ifdef __linux
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+       /*
+        * On linux, if a binary is running as sgid or suid, glibc sets
+        * LD_LIBRARY_PATH to the empty string for security purposes.  (In
+@@ -460,7 +471,6 @@ CreateExecutionEnvironment(int *_argcp,
+ #endif
+ 		);
+ 
+-
+ 	/* 
+ 	 * Check to make sure that the prefix of the current path is the 
+ 	 * desired environment variable setting.
+@@ -721,7 +731,8 @@ error:
+ jboolean
+ GetApplicationHome(char *buf, jint bufsize)
+ {
+-#ifdef __linux__
++/* XXXBSD: maybe use Solaris's way? */
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     char *execname = GetExecname();
+     if (execname) {
+ 	strncpy(buf, execname, bufsize-1);
+@@ -864,7 +875,7 @@ SetExecname(char **argv)
+ 
+     if (execname != NULL)	/* Already determined */
+ 	return (execname);
+-   
++
+ #if defined(__sun)
+     {
+         Dl_info dlinfo;
+@@ -888,12 +899,47 @@ SetExecname(char **argv)
+ 	    exec_path = JLI_StringDup(buf);
+ 	}
+     }
++#elif defined(__FreeBSD__)
++    /* Try /proc/curproc/file if exec_path hasn't been found */
++
++    if (exec_path == NULL) {
++	const char* self = "/proc/curproc/file";
++        char buf[PATH_MAX+1];
++        int len = readlink(self, buf, PATH_MAX);
++        if (len >= 0) {
++	    buf[len] = '\0';		/* readlink doesn't nul terminate */
++	    exec_path = strdup(buf);
++	}
++    }
++
++    /*
++     * Try the dladdr(3) method FreeBSD if exec_path hasn't been found.
++     * Requires a recent version of FreeBSD.
++     */
++
++    /*
++    if (exec_path == NULL) {
++        Dl_info dlinfo;
++        if (dladdr((void*)&SetExecname, &dlinfo)) {
++	    char *resolved = (char*)MemAlloc(PATH_MAX+1);
++	    if (resolved != NULL) {
++		exec_path = realpath(dlinfo.dli_fname, resolved);
++		if (exec_path == NULL) {
++		    free(resolved);
++		}
++	    }
++        }
++    }
++    */
++
+ #else /* !__sun && !__linux */
+     {
+         /* Not implemented */
+     }
+ #endif 
+ 
++    /* Fall back to examining argv[0] and our path */
++
+     if (exec_path == NULL) {
+         exec_path = FindExecName(argv[0]);
+     }
+@@ -977,6 +1023,27 @@ jboolean RemovableMachineDependentOption(char * option
+ /* Compute physical memory by asking the OS */
+ uint64_t
+ physical_memory(void) {
++
++#if defined(_ALLBSD_SOURCE)
++
++  unsigned long result;
++  int mib[2];
++  size_t rlen;
++
++  /* fetch sysctl(hw.physmem) value */
++  mib[0] = CTL_HW;
++  mib[1] = HW_PHYSMEM;
++  rlen = sizeof(result);
++  if (sysctl(mib, 2, &result, &rlen, NULL, 0) == -1)
++	result = 256 * MB;
++
++  if (_launcher_debug) {
++    printf( "  physical memory: %ju (%.3fGB)\n",
++           (uintmax_t) result, result / (double) GB);
++  }
++
++#else /* !_ALLBSD_SOURCE */
++
+   const uint64_t pages     = (uint64_t) sysconf(_SC_PHYS_PAGES);
+   const uint64_t page_size = (uint64_t) sysconf(_SC_PAGESIZE);
+   const uint64_t result    = pages * page_size;
+@@ -988,6 +1055,8 @@ physical_memory(void) {
+            "  physical memory: " UINT64_FORMAT " (%.3fGB)\n",
+            pages, page_size, result, result / (double) GB);
+   }
++#endif /* _ALLBSD_SOURCE */
++
+   return result;
+ }
+ 
+@@ -1083,7 +1152,7 @@ get_cpuid(uint32_t arg,
+ 
+ #endif /* __sun && i586 */
+ 
+-#if defined(__linux__) && defined(i586)
++#if (defined(__linux__) || defined(_ALLBSD_SOURCE)) && defined(i586)
+ 
+ /*
+  * A utility method for asking the CPU about itself.
+@@ -1148,7 +1217,7 @@ get_cpuid(uint32_t arg,
+ #endif
+ }
+ 
+-#endif /* __linux__ && i586 */
++#endif /* (__linux__ || _ALLBSD_SOURCE) && i586 */
+ 
+ #ifdef i586
+ /* 
+@@ -1274,12 +1343,38 @@ logical_processors_per_package(void) {
+ /* Compute the number of physical processors, not logical processors */
+ unsigned long 
+ physical_processors(void) {
++
++#if defined(_ALLBSD_SOURCE)
++
++  unsigned long sys_processors;
++  int mib[2], result;
++  size_t rlen;
++
++  /* fetch sysctl(hw.ncpu) value */
++  mib[0] = CTL_HW;
++  mib[1] = HW_NCPU;
++  rlen = sizeof(result);
++
++  if (sysctl(mib, 2, &result, &rlen, NULL, 0) == -1)
++	result = 1;
++
++  if (_launcher_debug) {
++    printf("sysctl(hw.ncpu): %d\n", result);
++  }
++
++  sys_processors = result;
++
++#else /* !_ALLBSD_SOURCE */
++
+   const long sys_processors = sysconf(_SC_NPROCESSORS_CONF);
+   unsigned long result      = sys_processors;
+ 
+   if (_launcher_debug) {
+     printf("sysconf(_SC_NPROCESSORS_CONF): %lu\n", sys_processors);
+   }
++
++#endif /* _ALLBSD_SOURCE */
++
+   if (sys_processors > 1) {
+     unsigned int logical_processors = logical_processors_per_package();
+     if (logical_processors > 1) {
+@@ -1289,6 +1384,7 @@ physical_processors(void) {
+   if (_launcher_debug) {
+     printf("physical processors: %lu\n", result);
+   }
++
+   return result;
+ }
+ 
+@@ -1360,6 +1456,39 @@ linux_i586_ServerClassMachine(void) {
+ 
+ #endif /* __linux__ && i586 */
+ 
++#if defined(_ALLBSD_SOURCE) && defined(i586)
++
++/* The definition of a server-class machine for [free]bsd-i586 */
++jboolean
++bsd_i586_ServerClassMachine(void) {
++  jboolean            result            = JNI_FALSE;
++  /* How big is a server class machine? */
++  const unsigned long server_processors = 2UL;
++  const uint64_t      server_memory     = 2UL * GB;
++  /*
++   * We seem not to get our full complement of memory.
++   *     We allow some part (1/8?) of the memory to be "missing",
++   *     based on the sizes of DIMMs, and maybe graphics cards.
++   */
++  const uint64_t      missing_memory    = 256UL * MB;
++  const uint64_t      actual_memory     = physical_memory();
++
++  /* Is this a server class machine? */
++  if (actual_memory >= (server_memory - missing_memory)) {
++    const unsigned long actual_processors = physical_processors();
++    if (actual_processors >= server_processors) {
++      result = JNI_TRUE;
++    }
++  }
++  if (_launcher_debug) {
++    printf("bsd_i586_ServerClassMachine: %s\n",
++           (result == JNI_TRUE ? "true" : "false"));
++  }
++  return result;
++}
++
++#endif /* _ALLBSD_SOURCE && i586 */
++
+ /* Dispatch to the platform-specific definition of "server-class" */
+ jboolean
+ ServerClassMachine(void) {
+@@ -1374,6 +1503,8 @@ ServerClassMachine(void) {
+   result = solaris_i586_ServerClassMachine();
+ #elif defined(__linux__) && defined(i586)
+   result = linux_i586_ServerClassMachine();
++#elif defined(_ALLBSD_SOURCE) && defined(i586)
++  result = bsd_i586_ServerClassMachine();
+ #else
+   if (_launcher_debug) {
+     printf("ServerClassMachine: returns default value of %s\n",
+@@ -1514,7 +1645,7 @@ LocateJRE(manifest_info* info)
+     while (dp != NULL) {
+ 	cp = strchr(dp, (int)':');
+ 	if (cp != NULL)
+-	    *cp = (char)NULL;
++	    *cp = '\0';
+ 	if ((target = ProcessDir(info, dp)) != NULL)
+ 	    break;
+ 	dp = cp;
+@@ -1692,6 +1823,20 @@ UnsetEnv(char *name)
+     return(borrowed_unsetenv(name));
+ }
+ 
++#if defined(_ALLBSD_SOURCE)
++/*
++ * BSD's implementation of CounterGet()
++ */
++int64_t
++CounterGet()
++{
++	struct timeval tv;
++	gettimeofday(&tv, NULL);
++	return (tv.tv_sec * 1000) + tv.tv_usec;
++}
++#endif
++
++
+ /* --- Splash Screen shared library support --- */
+ 
+ static const char* SPLASHSCREEN_SO = "libsplashscreen.so";
+@@ -1728,7 +1873,7 @@ jlong_format_specifier() {
+ int
+ ContinueInNewThread(int (JNICALL *continuation)(void *), jlong stack_size, void * args, int ret) {
+     int rslt;
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     pthread_t tid;
+     pthread_attr_t attr;
+     pthread_attr_init(&attr);

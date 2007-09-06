@@ -1,0 +1,44 @@
+$OpenBSD: patch-j2se_make_common_shared_Defs-bsd_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/common/shared/Defs-bsd.gmk.orig	Sun Sep  2 14:06:00 2007
++++ j2se/make/common/shared/Defs-bsd.gmk	Sun Sep  2 14:47:53 2007
+@@ -38,7 +38,7 @@ $(shell if [ "$1" != "" -a -d "$1" ]; then (cd $1 && p
+ endef
+ 
+ # Location on system where jdk installs might be
+-USRJDKINSTANCES_PATH =/opt/java
++USRJDKINSTANCES_PATH =/usr/local
+ 
+ # UNIXCOMMAND_PATH: path to where the most common Unix commands are.
+ #  NOTE: Must end with / so that it could be empty, allowing PATH usage.
+@@ -117,28 +117,16 @@ else
+ endif
+ 
+ # Motif settings, always build headless on Bsd
+-STATIC_MOTIF=true
++STATIC_MOTIF=false
+ LIBM=-lm
+ ifdef MOTIF_REQUIRED
+   BUILD_MOTIF21 = true
+ endif
+ BUILD_HEADLESS = true
+-ifeq ($(ARCH_DATA_MODEL), 32)
+-  MOTIF_LIB = $(MOTIF_DIR)/lib
+-else
+-  MOTIF_LIB = $(MOTIF_DIR)/lib64
+-endif
++MOTIF_LIB = $(MOTIF_DIR)/lib
+ MOTIF_INCLUDE = $(MOTIF_DIR)/include
+ 
+-# GCC29_COMPILER_PATH: is the path to where the gcc 2.9 compiler is installed
+-#  NOTE: Must end with / so that it could be empty, allowing PATH usage.
+-ifneq "$(origin ALT_GCC29_COMPILER_PATH)" "undefined"
+-  GCC29_COMPILER_PATH :=$(call PrefixPath,$(ALT_GCC29_COMPILER_PATH))
+-else
+-  GCC29_COMPILER_PATH = $(JDK_DEVTOOLS_DIR)/$(PLATFORM)/gcc29/usr/
+-endif
+-
+-_CUPS_HEADERS_PATH=/usr/include
++_CUPS_HEADERS_PATH=/usr/local/include
+ 
+ # BUILD_JDK_IMPORT_PATH: location of all previously built JDKs (this version).
+ ifdef ALT_BUILD_JDK_IMPORT_PATH

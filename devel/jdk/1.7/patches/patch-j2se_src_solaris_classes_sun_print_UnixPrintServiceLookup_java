@@ -1,0 +1,42 @@
+$OpenBSD: patch-j2se_src_solaris_classes_sun_print_UnixPrintServiceLookup_java,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/classes/sun/print/UnixPrintServiceLookup.java.orig	Thu Jul  5 05:03:28 2007
++++ j2se/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Fri Jul 27 18:36:54 2007
+@@ -120,7 +120,10 @@ public class UnixPrintServiceLookup extends PrintServi
+     }
+   
+     static boolean isBSD() {
+-	return osname.equals("Linux");		
++	return (osname.equals("Linux") ||
++		osname.equals("FreeBSD") ||
++		osname.equals("NetBSD") ||
++		osname.equals("OpenBSD"));
+     } 
+ 
+     static final int UNINITIALIZED = -1;
+@@ -130,13 +133,13 @@ public class UnixPrintServiceLookup extends PrintServi
+     static int cmdIndex = UNINITIALIZED;
+ 
+     String[] lpcFirstCom = {
+-	"/usr/sbin/lpc status | grep : | sed -ne '1,1 s/://p'",
+-	"/usr/sbin/lpc status | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}'"
++	"/usr/sbin/lpc status all | grep : | sed -ne '1,1 s/://p'",
++	"/usr/sbin/lpc status all | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}'"
+     };    
+ 
+     String[] lpcAllCom = {
+-	"/usr/sbin/lpc status | grep : | sed -e 's/://'",
+-        "/usr/sbin/lpc -a status | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}' | sort"
++	"/usr/sbin/lpc status all | grep : | sed -e 's/://'",
++        "/usr/sbin/lpc status all | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}' | sort"
+     };
+ 
+     String[] lpcNameCom = {
+@@ -146,7 +149,7 @@ public class UnixPrintServiceLookup extends PrintServi
+ 
+ 
+     static int getBSDCommandIndex() {
+-	String command  = "/usr/sbin/lpc status";
++	String command  = "/usr/sbin/lpc status all";
+ 	String[] names = execCmd(command);
+ 
+ 	if ((names == null) || (names.length == 0)) {

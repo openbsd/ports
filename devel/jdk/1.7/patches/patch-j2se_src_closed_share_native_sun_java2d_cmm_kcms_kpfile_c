@@ -1,0 +1,48 @@
+$OpenBSD: patch-j2se_src_closed_share_native_sun_java2d_cmm_kcms_kpfile_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/closed/share/native/sun/java2d/cmm/kcms/kpfile.c.orig	Thu Jul  5 03:44:30 2007
++++ j2se/src/closed/share/native/sun/java2d/cmm/kcms/kpfile.c	Sun Jul 29 22:48:36 2007
+@@ -104,7 +104,7 @@
+ #include <fcntl.h>
+ #include <dirent.h>
+ 
+-#if !defined (KPLINUX)
++#if !defined (KPLINUX) && !defined(KPBSD)
+ #include <sys/dirent.h> 
+ #endif
+ 
+@@ -597,7 +597,7 @@ void KpFileStripPath (KpChar_p filePlusPath, KpChar_p 
+ 	theFile[0] = '\0';
+ 
+ 	/* find the last occurrence of the slash */
+-#if defined (KPLINUX)
++#if defined (KPLINUX) || defined (KPBSD)
+ 	fPtr = strrchr (filePlusPath, '/');
+ #else
+ 	fPtr = strrchr (filePlusPath, '//');
+@@ -654,7 +654,7 @@ void KpFileStripPath (KpChar_p filePlusPath, KpChar_p 
+    char         PathName[256];
+    KpInt32_t    Result;
+    KpBool_t     fileFound = KPFALSE;
+-#if defined (KPLINUX)
++#if defined (KPLINUX) || defined (KPBSD)
+    struct dirent *dpb;
+ #else
+    dirent_t    *dpb;
+@@ -689,7 +689,7 @@ void KpFileStripPath (KpChar_p filePlusPath, KpChar_p 
+       	
+       while ( fileFound == KPTRUE)
+       {
+-#if defined (KPLINUX)
++#if defined (KPLINUX) || defined (KPBSD)
+ 		  if ((dpb = readdir(FD)) == (struct direct *)NULL)
+ #else
+ 		  if ((dpb = readdir(FD)) == (dirent_t *)NULL)
+@@ -770,7 +770,7 @@ dirStatus FAR KpFileDirCount (
+          KpInt32_t      FAR *numFiles)
+ {
+ DIR         *FD;
+-#if defined (KPLINUX)
++#if defined (KPLINUX) || defined (KPBSD)
+ struct dirent *dpb;
+ #else
+ dirent_t    *dpb;

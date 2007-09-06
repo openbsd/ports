@@ -1,0 +1,40 @@
+$OpenBSD: patch-j2se_make_common_Defs_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/common/Defs.gmk.orig	Thu Aug 30 04:58:10 2007
++++ j2se/make/common/Defs.gmk	Sun Sep  2 14:06:03 2007
+@@ -208,7 +208,7 @@ include $(J2SE_TOPDIR)/make/common/Defs-$(PLATFORM).gm
+ #
+ # Freetype logic is applicable to OpenJDK only
+ #
+-ifdef OPENJDK
++ifdef USE_FREETYPE
+ 
+ #if we use system lib we do not need to copy it to build tree
+ USING_SYSTEM_FT_LIB=false
+@@ -230,6 +230,7 @@ DEVTOOLS_FT_DIR_EXISTS = $(shell \
+ 
+   ifdef ALT_FREETYPE_LIB_PATH
+     FREETYPE_LIB_PATH = $(ALT_FREETYPE_LIB_PATH)
++    USING_SYSTEM_FT_LIB=true
+   else
+     ifeq ($(DEVTOOLS_FT_DIR_EXISTS), true)
+       FREETYPE_LIB_PATH = $(DEVTOOLS_FT_DIR)/lib
+@@ -294,6 +295,10 @@ ifdef PROGRAM
+     LDLIBS_COMMON = -ldl
+   endif
+ 
++  ifeq ($(PLATFORM), bsd)
++    LDLIBS_COMMON = -pthread
++  endif
++
+ endif # PROGRAM
+ 
+ LDLIBS_COMMON += $(EXTRA_LIBS)
+@@ -493,7 +498,7 @@ ifeq ($(ARCH), ia64)
+   #   Suspect this may not be needed anymore.
+   JAVA_MEM_FLAGS   += -Xms$(MAX_VM_MEMORY)m -XX:-Inline
+ else
+-  JAVA_MEM_FLAGS   += -Xms$(MIN_VM_MEMORY)m -XX:PermSize=32m -XX:MaxPermSize=160m
++  JAVA_MEM_FLAGS   += -Xms$(MIN_VM_MEMORY)m -XX:PermSize=32m -XX:MaxPermSize=96m
+ endif
+ JAVA_MEM_JFLAGS   = $(JAVA_MEM_FLAGS:%=-J%)
+ 

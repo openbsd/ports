@@ -1,0 +1,154 @@
+$OpenBSD: patch-j2se_src_share_native_sun_awt_medialib_mlib_ImageLookUp_Bit_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c.orig	Thu Jul  5 05:03:10 2007
++++ j2se/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Fri Jul 27 18:25:10 2007
+@@ -92,7 +92,7 @@ typedef union {
+ } d64_2_f32;
+ 
+ /***************************************************************/
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+ 
+ static const mlib_u32 mlib_bit_mask[16] = {
+   0x00000000u, 0xFF000000u, 0x00FF0000u, 0xFFFF0000u,
+@@ -130,7 +130,7 @@ static const mlib_u32 mlib_bit_mask_3[3*4] = {
+   0x00000000u, 0x00FFFFFFu, 0xFF000000u, 0xFFFFFFFFu
+ };
+ 
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+ 
+ /***************************************************************/
+ mlib_status mlib_ImageLookUp_Bit_U8_1(const mlib_u8 *src,
+@@ -232,13 +232,13 @@ mlib_status mlib_ImageLookUp_Bit_U8_1(const mlib_u8 *s
+ #endif /* __SUNPRO_C */
+     for (; i <= (size - 16); i += 16) {
+       s0 = *(mlib_u16*)sa;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       *da++ = dd_array[s0 & 0xFF];
+       *da++ = dd_array[s0 >> 8];
+ #else
+       *da++ = dd_array[s0 >> 8];
+       *da++ = dd_array[s0 & 0xFF];
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       sa += 2;
+     }
+ 
+@@ -262,20 +262,20 @@ mlib_status mlib_ImageLookUp_Bit_U8_1(const mlib_u8 *s
+         val1 = p_dd[2*val0+1];
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       emask = (mlib_u32)((mlib_s32)(-1)) >> ((4 - (size - i)) * 8);
+ #else
+       emask = (mlib_s32)(-1) << ((4 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       ((mlib_u32*)da)[0] = (val1 & emask) | (((mlib_u32*)da)[0] &~ emask);
+ 
+ #else /* _NO_LONGLONG */
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       mlib_u64 emask = (mlib_u64)((mlib_s64)(-1)) >> ((8 - (size - i)) * 8);
+ #else
+       mlib_u64 emask = (mlib_s64)(-1) << ((8 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+ 
+       ((mlib_u64*)da)[0] = (((mlib_u64*)dd_array)[sa[0]] & emask) | (((mlib_u64*)da)[0] &~ emask);
+ 
+@@ -327,13 +327,13 @@ mlib_status mlib_ImageLookUp_Bit_U8_2(const mlib_u8 *s
+ 
+   val0 = table[0][0];
+   val1 = table[0][1];
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+   val0 = val0 | (table[1][0] << 8);
+   val1 = val1 | (table[1][1] << 8);
+ #else
+   val0 = (val0 << 8) | table[1][0];
+   val1 = (val1 << 8) | table[1][1];
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+   val0 |= (val0 << 16);
+   val1 |= (val1 << 16);
+ 
+@@ -398,11 +398,11 @@ mlib_status mlib_ImageLookUp_Bit_U8_2(const mlib_u8 *s
+         dd1 = dd2;
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       emask = (mlib_u32)((mlib_s32)(-1)) >> ((4 - (size - i)) * 8);
+ #else
+       emask = (mlib_s32)(-1) << ((4 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       ((mlib_u32*)da)[0] = (dd1 & emask) | (((mlib_u32*)da)[0] &~ emask);
+ 
+ #else /* _NO_LONGLONG */
+@@ -416,11 +416,11 @@ mlib_status mlib_ImageLookUp_Bit_U8_2(const mlib_u8 *s
+         dd = ((mlib_u64*)dd_array)[s0 & 0xf];
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       emask = (mlib_u64)((mlib_s64)(-1)) >> ((8 - (size - i)) * 8);
+ #else
+       emask = (mlib_s64)(-1) << ((8 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       ((mlib_u64*)da)[0] = (dd & emask) | (((mlib_u64*)da)[0] &~ emask);
+ 
+ #endif /* _NO_LONGLONG */
+@@ -466,7 +466,7 @@ mlib_status mlib_ImageLookUp_Bit_U8_3(const mlib_u8 *s
+ 
+   buffs = buff + size;
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+   l0 = (table[0][0] << 24) | (table[2][0] << 16) | (table[1][0] << 8) | (table[0][0]);
+   h0 = (table[0][1] << 24) | (table[2][1] << 16) | (table[1][1] << 8) | (table[0][1]);
+   l1 = (l0 >> 8); l1 |= (l1 << 24);
+@@ -480,7 +480,7 @@ mlib_status mlib_ImageLookUp_Bit_U8_3(const mlib_u8 *s
+   h1 = (h0 << 8); h1 |= (h1 >> 24);
+   l2 = (l1 << 8); l2 |= (l2 >> 24);
+   h2 = (h1 << 8); h2 |= (h2 >> 24);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+ 
+   /* calculate lookup table */
+ #ifdef __SUNPRO_C
+@@ -568,11 +568,11 @@ mlib_status mlib_ImageLookUp_Bit_U8_3(const mlib_u8 *s
+         dd = ((mlib_u32*)(d_array12 + (s0 & 0xF)))[1];
+       }
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       emask = (mlib_u32)((mlib_s32)(-1)) >> ((4 - (size - i)) * 8);
+ #else
+       emask = (mlib_s32)(-1) << ((4 - (size - i)) * 8);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       da[0] = (dd & emask) | (da[0] &~ emask);
+     }
+ 
+@@ -615,13 +615,13 @@ mlib_status mlib_ImageLookUp_Bit_U8_4(const mlib_u8 *s
+ 
+   buffs = buff + size;
+ 
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+   l = (table[3][0] << 24) | (table[2][0] << 16) | (table[1][0] << 8) | (table[0][0]);
+   h = (table[3][1] << 24) | (table[2][1] << 16) | (table[1][1] << 8) | (table[0][1]);
+ #else
+   l = (table[0][0] << 24) | (table[1][0] << 16) | (table[2][0] << 8) | (table[3][0]);
+   h = (table[0][1] << 24) | (table[1][1] << 16) | (table[2][1] << 8) | (table[3][1]);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+ 
+   ((mlib_u32*)lh)[0] = l;  ((mlib_u32*)lh)[1] = l;
+   ((mlib_u32*)lh)[2] = l;  ((mlib_u32*)lh)[3] = h;

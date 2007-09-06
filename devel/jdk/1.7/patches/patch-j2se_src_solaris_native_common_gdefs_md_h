@@ -1,0 +1,13 @@
+$OpenBSD: patch-j2se_src_solaris_native_common_gdefs_md_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/native/common/gdefs_md.h.orig	Thu Jul  5 05:03:37 2007
++++ j2se/src/solaris/native/common/gdefs_md.h	Fri Jul 27 18:25:14 2007
+@@ -36,4 +36,8 @@
+ #include <stdint.h>
+ #include <malloc.h>
+ #endif /* __linux__ */
+-
++#if defined(__OpenBSD__)
++#include <inttypes.h>
++#elif _ALLBSD_SOURCE
++#include <stdint.h>
++#endif /* _ALLBSD_SOURCE */

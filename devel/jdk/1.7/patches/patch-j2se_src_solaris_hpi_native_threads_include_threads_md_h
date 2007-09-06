@@ -1,0 +1,48 @@
+$OpenBSD: patch-j2se_src_solaris_hpi_native_threads_include_threads_md_h,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/hpi/native_threads/include/threads_md.h.orig	Thu Jul  5 05:03:37 2007
++++ j2se/src/solaris/hpi/native_threads/include/threads_md.h	Fri Jul 27 18:25:14 2007
+@@ -36,6 +36,8 @@
+ #define N_TRACED_REGS 12
+ #elif i386
+ #define N_TRACED_REGS 7
++#elif i586			/* BSDNOTE: just in case */
++#define N_TRACED_REGS 7
+ #elif amd64
+ #define N_TRACED_REGS 15
+ #elif ppc
+@@ -51,10 +53,12 @@
+ #define N_TRACED_REGS 32
+ #endif
+ 
++#if !defined(_ALLBSD_SOURCE)
+ /* Turn on if we want all java threads to be bound tolwps */
+ /* #define BOUND_THREADS */
+ /* Use /proc soln to stop lwps in place of siglwp soln */
+ #define PROCLWP
++#endif
+ 
+ /*
+  * Thread C stack overflow check
+@@ -132,7 +136,7 @@ struct sys_thread {
+     lwpid_t lwpid;
+ #endif
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     void *sp;
+ #else
+     unsigned long  sp;	 /* sp at time of last (native) thread switch */
+@@ -186,11 +190,13 @@ struct sys_thread {
+ 
+ #define SYS_THREAD_NULL        	((sys_thread_t *) 0)
+ 
++#if !defined(_ALLBSD_SOURCE)
+ /*
+  * following macro copied from sys/signal.h since inside #ifdef _KERNEL there.
+  */
+ #ifndef sigmask
+ #define sigmask(n)      ((unsigned int)1 << (((n) - 1) & (32 - 1)))
++#endif
+ #endif
+ 
+ #ifdef __linux__

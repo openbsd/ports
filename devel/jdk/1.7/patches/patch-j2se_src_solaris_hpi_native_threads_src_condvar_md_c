@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_hpi_native_threads_src_condvar_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/solaris/hpi/native_threads/src/condvar_md.c.orig	Thu Jul  5 05:03:37 2007
++++ j2se/src/solaris/hpi/native_threads/src/condvar_md.c	Fri Jul 27 18:25:14 2007
+@@ -58,7 +58,7 @@ condvarDestroy(condvar_t *condvar)
+ {
+     int err;
+ 
+-#ifdef __linux__
++#ifdef USE_PTHREADS
+     err = pthread_cond_destroy((cond_t *) &condvar->cond);
+ #else
+     err = cond_destroy((cond_t *) condvar);

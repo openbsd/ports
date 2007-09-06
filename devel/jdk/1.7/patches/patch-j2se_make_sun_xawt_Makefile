@@ -1,0 +1,59 @@
+$OpenBSD: patch-j2se_make_sun_xawt_Makefile,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/make/sun/xawt/Makefile.orig	Thu Aug 30 04:58:19 2007
++++ j2se/make/sun/xawt/Makefile	Sun Sep  2 14:06:04 2007
+@@ -54,6 +54,12 @@ LDFLAGS += -lpthread
+ dummy := $(shell $(MKDIR) -p $(LIB_LOCATION))
+ endif
+ 
++ifeq ($(PLATFORM), bsd)
++FILES_c += Xinerama.c
++LDFLAGS += -pthread
++dummy := $(shell $(MKDIR) -p $(LIB_LOCATION))
++endif
++
+ # Since this library will be living in a subdirectory below the other libraries
+ #   we need to add an extra runpath so that libraries in the upper directory
+ #   are found at runtime.
+@@ -87,7 +93,12 @@ vpath %.c   $(SHARE_SRC)/native/sun/java2d/opengl
+ vpath %.c   $(PLATFORM_SRC)/native/sun/java2d/opengl
+ vpath %.c   $(PLATFORM_SRC)/native/sun/java2d/x11
+ 
+-OTHER_LDLIBS = $(LIBM) -lawt -lXext -lX11 -ldl \
++ifeq ($(PLATFORM), bsd)
++LIBDL=
++else
++LIBDL=-ldl
++endif
++OTHER_LDLIBS = $(LIBM) -lawt -lXext -lX11 $(LIBDL) \
+                    $(LDFLAGS_COMMON) $(AWT_RUNPATH) $(OTHER_LDFLAGS) -lXtst -lXi
+ 
+ ifeq  ($(PLATFORM), solaris)
+@@ -95,8 +106,6 @@ CPPFLAGS += -DFUNCPROTO=15
+ dummy := $(shell $(MKDIR) -p $(LIB_LOCATION))
+ endif
+ 
+-CPPFLAGS += -I$(CUPS_HEADERS_PATH)
+-
+ CPPFLAGS += -DXAWT -DXAWT_HACK \
+         -I$(TEMPDIR)/../../sun.awt/awt/CClassHeaders \
+         -I$(PLATFORM_SRC)/native/sun/awt \
+@@ -123,6 +132,8 @@ CPPFLAGS += -DXAWT -DXAWT_HACK \
+         -I$(SHARE_SRC)/native/sun/awt \
+         -I$(PLATFORM_SRC)/native/sun/awt 
+ 
++CPPFLAGS += -I$(CUPS_HEADERS_PATH)
++
+ ifeq ($(PLATFORM), linux)
+ # Allows for builds on Debian GNU Linux, X11 is in a different place 
+   CPPFLAGS += -I/usr/X11R6/include/X11/extensions \
+@@ -133,6 +144,10 @@ endif
+ 
+ ifeq ($(PLATFORM), solaris)
+   CPPFLAGS += -I$(OPENWIN_HOME)/include/X11/extensions -I$(MOTIF_DIR)/include 
++endif
++
++ifeq ($(PLATFORM), bsd)
++  CPPFLAGS += -I$(OPENWIN_HOME)/include/X11/extensions -I$(MOTIF_DIR)/include -I$(OPENWIN_HOME)/include
+ endif
+ 
+ ifeq ($(MILESTONE), internal)

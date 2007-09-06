@@ -1,0 +1,14 @@
+$OpenBSD: patch-j2se_src_share_back_commonRef_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
+--- j2se/src/share/back/commonRef.c.orig	Wed Aug  1 13:32:05 2007
++++ j2se/src/share/back/commonRef.c	Wed Aug  1 13:36:00 2007
+@@ -23,6 +23,10 @@
+  *
+  */
+ 
++#if defined(_ALLBSD_SOURCE)
++#include <stdint.h>			/* for uintptr_t */
++#endif
++
+ #include "util.h"
+ #include "commonRef.h"
+ 

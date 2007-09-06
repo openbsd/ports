@@ -1,23 +1,29 @@
-# $OpenBSD: Makefile,v 1.4 2007/08/07 16:07:22 kurt Exp $
-
-BROKEN= "Incomplete port, 1.7 JVM + 1.5 classes"
+# $OpenBSD: Makefile,v 1.5 2007/09/06 15:46:18 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	i386 amd64
 
-COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
+COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
+COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.7.0
-B=			b15
-D=			05_jul_2007
+B=			b19
+D=			30_aug_2007
 DISTFILES=		jdk-7-ea-src-${B}-jrl-${D}.jar \
-			jdk-7-ea-bin-${B}-jrl-${D}.jar \
-			jdk-7-ea-mozilla_headers-${B}-unix-${D}.jar
+			jdk-7-ea-bin-${B}-jrl-${D}.jar
 PKGNAME=		jdk-${V}.${B}
+PKGNAME-main=		jdk-${V}.${B}
+PKGNAME-jre=		jre-${V}.${B}
 
 CATEGORIES=		devel/jdk java
 
+MULTI_PACKAGES= 	-main -jre
+
+FLAVORS=		with_ipv6
+FLAVOR?=
+
 HOMEPAGE=		https://jdk7.dev.java.net/
-MASTER_SITES=		http://www.java.net/download/jdk7/
+MASTER_SITES=		http://www.java.net/download/jdk7/ \
+			http://www.intricatesoftware.com/distfiles/
 
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
@@ -30,38 +36,51 @@ PERMIT_DISTFILES_FTP=	"JRL"
 
 NO_REGRESS=		Yes
 
-BUILD_DEPENDS=		:jdk->=1.5.0.11:devel/jdk/1.5 \
+BUILD_DEPENDS=		:jdk-1.5.0*:devel/jdk/1.5 \
 			::archivers/zip \
-			::archivers/unzip
+			::archivers/unzip \
+			::print/cups
 USE_MOTIF=		openmotif
 MODULES=		converters/libiconv
-WANTLIB=		X11 Xext Xi Xp Xt Xtst c m ossaudio pthread \
-			stdc++ z
+WANTLIB=		X11 Xext Xi Xp Xt Xtst c freetype m ossaudio \
+			pthread stdc++
 
 USE_GMAKE=		Yes
 
 ALT_BOOTDIR=		${LOCALBASE}/jdk-1.5.0
 
 MAKE_ENV=		ALT_BOOTDIR=${ALT_BOOTDIR} \
-			ALT_JDK_IMPORT_PATH=${ALT_BOOTDIR} \
+			ALT_MOTIF_DIR=${LOCALBASE} \
+			ALT_FREETYPE_HEADERS_PATH=${X11BASE}/include \
+			ALT_FREETYPE_LIB_PATH=${X11BASE}/lib \
+			SKIP_COMPARE_IMAGES=true \
+			BUILD_INSTALL=false \
+			NO_DOCS=true \
+			CC="${CC}" \
+			CXX="${CXX}" \
 			DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 			USERNAME=${USER} \
-			HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu`
+			HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu` \
+			SKIP_FASTDEBUG_BUILD=true \
+			BUILD_DEPLOY=false \
+			USE_FREETYPE=true
 
-JDKHOME=		jdk-${V}
+.if !${FLAVOR:L:Mwith_ipv6}
+MAKE_ENV+=		DONT_ENABLE_IPV6="YES"
+.endif
 
-SUBST_VARS=		JDKHOME
+JDKHOME=		jdk-1.7.0
+JREHOME=		jre-1.7.0
+
+SUBST_VARS=		JDKHOME JREHOME
 
 WRKDIST=		${WRKDIR}
-WRKBUILD=		${WRKDIST}/hotspot/make
-JVMARCH=		${MACHINE_ARCH:S/i386/i486/}
-OUTPUTDIR1=		${WRKDIST}/hotspot/build/bsd/bsd_${JVMARCH}_compiler1
-OUTPUTDIR2=		${WRKDIST}/hotspot/build/bsd/bsd_${JVMARCH}_compiler2
-JNIMDH=			${WRKDIST}/hotspot/src/cpu/${JVMARCH}/vm/jni_${JVMARCH}.h
+WRKBUILD=		${WRKDIST}/control/make
+JVMARCH=		${MACHINE_ARCH:S/i386/i586/}
+JDKIMAGEDIR=		${WRKDIST}/control/build/bsd-${JVMARCH}/j2sdk-image
+JREIMAGEDIR=		${WRKDIST}/control/build/bsd-${JVMARCH}/j2re-image
  
-ALL_TARGET=		product
 .if ${MACHINE_ARCH} == "i386"
-ALL_TARGET+=		product1
 PKG_ARGS+=		-Dclient_vm=1
 .else
 PKG_ARGS+=		-Dclient_vm=0
@@ -74,14 +93,10 @@ COPYDIRS=	hotspot/src/os/linux/launcher \
 		hotspot/build/linux \
 		hotspot/build/linux/makefiles \
 		install/make/installer/binaries/linux \
-		j2se/src/linux
+		j2se/src/linux/doc/man
 
 COPYFILES=	control/make/common/Defs-linux.gmk \
-		deploy/make/common/Defs-linux.gmk \
-		deploy/make/common/Rules-linux.gmk \
-		deploy/make/plugin/common/Defs-linux.gmk \
 		install/make/common/Defs-linux.gmk \
-		j2se/make/com/sun/tools/attach/mapfile-linux \
 		j2se/make/common/Defs-linux.gmk \
 		j2se/make/common/shared/Defs-linux.gmk \
 		j2se/make/java/nio/mapfile-linux \
@@ -94,11 +109,21 @@ COPYFILES=	control/make/common/Defs-linux.gmk \
 		j2se/src/solaris/classes/java/lang/UNIXProcess.java.linux \
 		j2se/src/solaris/classes/sun/awt/fontconfigs/linux.fontconfig.properties \
 		j2se/src/solaris/classes/sun/tools/attach/LinuxAttachProvider.java \
-		j2se/src/solaris/hpi/include/largefile_linux.h \
-		j2se/src/solaris/native/sun/tools/attach/LinuxVirtualMachine.c
+		j2se/src/solaris/hpi/include/largefile_linux.h
+
+.include <bsd.own.mk>
+
+ACCEPT_JRL_LICENSE ?= No
+
+.if ${ACCEPT_JRL_LICENSE:L} != "yes"
+IS_INTERACTIVE=	Yes
+pre-extract:
+	@${SH} ${FILESDIR}/license.sh
+	@echo continuing....
+.endif
 
 do-extract:
-	@mkdir ${WRKDIR}/tmp && \
+	@rm -rf ${WRKDIR}/tmp && mkdir ${WRKDIR}/tmp && \
 		${CC} ${CFLAGS} -o ${WRKDIR}/tmp/x_x2zip ${FILESDIR}/x_x2zip.c
 .for jar in ${DISTFILES}
 	@cd ${WRKDIR}/tmp && \
@@ -111,7 +136,6 @@ do-extract:
 
 # create initial bsd src from linux src (except for threads_solaris.c)
 pre-patch:
-	@chmod -R +w ${WRKDIST}/hotspot
 	@for d in ${COPYDIRS}; do \
 		mkdir -p `echo ${WRKDIST}/$$d | sed 's/linux/bsd/g;'`; \
 		cd ${WRKDIST}/$$d; \
@@ -130,22 +154,17 @@ pre-patch:
 		< ${WRKDIST}/j2se/src/solaris/hpi/native_threads/src/threads_solaris.c \
 		> ${WRKDIST}/j2se/src/solaris/hpi/native_threads/src/threads_bsd.c
 
+post-build:
+	@rm -rf ${JDKIMAGEDIR}/man/ja \
+		${JDKIMAGEDIR}/man/ja_JP.eucJP \
+		${JREIMAGEDIR}/man/ja \
+		${JREIMAGEDIR}/man/ja_JP.eucJP
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${JDKHOME}
-	cd ${ALT_BOOTDIR} && tar -cf - * | tar -C ${PREFIX}/${JDKHOME} -xf -
-	@find ${PREFIX}/${JDKHOME} -name \*_g -or -name \*_g.so -or -name \*_g.jar | \
-		xargs rm
-	${INSTALL_DATA} ${WRKDIST}/hotspot/src/share/vm/services/jmm.h \
-		${PREFIX}/${JDKHOME}/include
-	${INSTALL_DATA} ${OUTPUTDIR2}/generated/jvmtifiles/jvmti.h \
-		${PREFIX}/${JDKHOME}/include
-	${INSTALL_DATA_DIR} ${PREFIX}/${JDKHOME}/include/bsd
-	${INSTALL_DATA} ${JNIMDH} ${PREFIX}/${JDKHOME}/include/bsd/jni_md.h
-	${INSTALL_DATA} ${OUTPUTDIR2}/product/lib{jvm,jsig}.so \
-		${PREFIX}/${JDKHOME}/jre/lib/${MACHINE_ARCH}/server
-.if ${MACHINE_ARCH} == "i386"
-	${INSTALL_DATA} ${OUTPUTDIR1}/product/lib{jvm,jsig}.so \
-		${PREFIX}/${JDKHOME}/jre/lib/${MACHINE_ARCH}/client
-.endif
+	cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JDKHOME} -xf - 
+	${INSTALL_DATA_DIR} ${PREFIX}/${JREHOME}
+	cd ${JREIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JREHOME} -xf -
+
 
 .include <bsd.port.mk>

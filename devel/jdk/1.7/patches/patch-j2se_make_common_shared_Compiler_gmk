@@ -1,0 +1,14 @@
+$OpenBSD: patch-j2se_make_common_shared_Compiler_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/common/shared/Compiler.gmk.orig	Fri Jul 13 22:47:15 2007
++++ j2se/make/common/shared/Compiler.gmk	Fri Jul 13 22:49:18 2007
+@@ -37,8 +37,8 @@ ifeq ($(PLATFORM), solaris)
+   override CC_VERSION = sun
+ endif
+ 
+-# Linux uses GNU compilers by default
+-ifeq ($(PLATFORM), linux)
++# Linux  & BSD uses GNU compilers by default
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+   override CC_VERSION = gcc
+ endif
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-j2se_make_java_hpi_hpi_common_gmk,v 1.1 2007/09/06 15:46:18 kurt Exp $
+--- j2se/make/java/hpi/hpi_common.gmk.orig	Fri Jul 13 23:12:15 2007
++++ j2se/make/java/hpi/hpi_common.gmk	Fri Jul 13 23:13:01 2007
+@@ -86,6 +86,10 @@ endif
+ # Things that must be linked in.
+ #
+ ifneq ($(PLATFORM), windows)
++ifeq ($(PLATFORM), bsd)
++OTHER_LDLIBS += $(LIBM)
++else
+ LIBSOCKET = -lsocket
+ OTHER_LDLIBS += $(LIBSOCKET) -lnsl $(LIBM) -ldl
++endif
+ endif
