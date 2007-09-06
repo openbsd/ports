@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/17 18:18:36 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/06 21:31:56 jasper Exp $
 
-COMMENT=	"top clone for MySQL"
+COMMENT=	top clone for MySQL
 
-DISTNAME=	mytop-1.4
+DISTNAME=	mytop-1.6
 CATEGORIES=	databases perl5
 
 HOMEPAGE=	http://jeremy.zawodny.com/mysql/mytop/
