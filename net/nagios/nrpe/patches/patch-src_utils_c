@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_utils_c,v 1.1.1.1 2006/02/04 13:16:08 david Exp $
---- src/utils.c.orig	Wed Oct 15 18:14:27 2003
-+++ src/utils.c	Thu Feb  2 00:42:42 2006
-@@ -90,8 +90,8 @@ void randomize_buffer(char *buffer,int b
+$OpenBSD: patch-src_utils_c,v 1.2 2007/09/06 19:09:11 sturm Exp $
+--- src/utils.c.orig	Tue Dec 12 03:04:01 2006
++++ src/utils.c	Sat Sep  1 09:04:39 2007
+@@ -90,8 +90,8 @@ void randomize_buffer(char *buffer,int buffer_size){
  	   ends and the rest of the buffer (padded randomly) starts.
  	***************************************************************/
  
