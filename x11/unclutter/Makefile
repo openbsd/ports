@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/19 17:27:02 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/06 18:27:37 naddy Exp $
 
-COMMENT=	"hides idle X11 cursor"
+COMMENT=	hides idle X11 cursor
 
 DISTNAME=	unclutter-8
 CATEGORIES=	x11
@@ -17,7 +17,7 @@ WANTLIB=		X11 Xext c
 
 USE_X11=	Yes
 
-WRKSRC=		${WRKDIR}/unclutter
+WRKDIST=	${WRKDIR}/unclutter
 CONFIGURE_STYLE=imake
 
 NO_REGRESS=	Yes
