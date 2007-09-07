@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2007/05/31 13:34:28 martynas Exp $
---- src/Makefile.in.orig	Tue May 29 01:07:04 2007
-+++ src/Makefile.in	Tue May 29 18:47:04 2007
-@@ -341,7 +341,7 @@ INTLTOOL_XAM_RULE = @INTLTOOL_XAM_RULE@
+$OpenBSD: patch-src_Makefile_in,v 1.5 2007/09/07 12:47:35 jasper Exp $
+--- src/Makefile.in.orig	Mon Jul 30 19:26:49 2007
++++ src/Makefile.in	Thu Sep  6 21:09:25 2007
+@@ -378,7 +378,7 @@ INTLTOOL_XAM_RULE = @INTLTOOL_XAM_RULE@
  INTLTOOL_XGETTEXT = @INTLTOOL_XGETTEXT@
  INTLTOOL_XML_NOMERGE_RULE = @INTLTOOL_XML_NOMERGE_RULE@
  INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.4 2007/05/31 13:34:28 martynas Exp $
  LIBOBJS = @LIBOBJS@
  LIBS = @LIBS@
  LIBTOOL = @LIBTOOL@
-@@ -492,7 +492,7 @@ AM_CPPFLAGS = -DDATADIR='"$(datadir)"' \
+@@ -533,7 +533,7 @@ AM_CPPFLAGS = -DDATADIR='"$(datadir)"' \
  	      -DLIBEXECDIR='"$(libexecdir)"' \
  	      -DLOCALEDIR='"$(localedir)"'
  

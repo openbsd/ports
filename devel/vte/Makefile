@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2007/06/26 17:21:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/07 12:47:35 jasper Exp $
 
-COMMENT=		"terminal emulation library"
+COMMENT=		terminal emulation library
 
-DISTNAME=		vte-0.16.6
-PKGNAME=		${DISTNAME}
+GNOME_PROJECT=		vte
+GNOME_VERSION=		0.16.8
 CATEGORIES=		devel
-SHARED_LIBS +=  vte                  11.9    # .11.10
+SHARED_LIBS +=  vte                  11.10    # .11.12
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -20,16 +20,11 @@ WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi Xinerama \
 		pangocairo-1.0 pangoft2-1.0 pangox-1.0 pangoxft-1.0 \
 		png util z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/vte/0.16/}
-EXTRACT_SUFX=		.tar.bz2
-
-MODULES=		devel/gettext
-BUILD_DEPENDS=		::textproc/p5-XML-Parser
+MODULES=		devel/gettext \
+			x11/gnome
 LIB_DEPENDS=		gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-python
