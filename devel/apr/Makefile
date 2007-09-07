@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/04 21:46:25 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/07 20:12:55 steven Exp $
 
 COMMENT=	"Apache Portable Runtime"
 
 DISTNAME=	apr-1.2.9
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	apr-1${MT}             2.9     # .2.9
 
 CATEGORIES=	devel
