@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/17 21:53:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/07 15:26:18 steven Exp $
 
 COMMENT=		base TeXLive LaTeX distribution
 
@@ -8,21 +8,9 @@ DISTNAME=		texlive_base-${V}-src
 WRKDIST=		${WRKDIR}/${PKGNAME}
 SHARED_LIBS=		kpathsea	0.0
 
-CATEGORIES=		print
-
-HOMEPAGE=		http://tug.org/texlive/	
-
-MAINTAINER=		Edd Barrett <vext01@gmail.com>
-
-# http://tug.org/texlive/LICENSE.TL
-PERMIT_PACKAGE_CDROM=  Yes
-PERMIT_PACKAGE_FTP=    Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=  Yes
 WANTLIB=		m X11 ICE freetype Xt pthread c Xext fontconfig \
 			Xp Xpm SM Xmu z ncurses Xaw Xau Xdmcp stdc++ expat
 
-MASTER_SITES=		http://students.dec.bournemouth.ac.uk/ebarrett/texlive/distfiles/
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:texlive_texmf-minimal-${V}:print/texlive/texmf-minimal
