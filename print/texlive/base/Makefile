@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/07 15:26:18 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/07 21:59:53 steven Exp $
 
 COMMENT=		base TeXLive LaTeX distribution
 
 V=			2007
-PKGNAME=		texlive_base-${V}
 DISTNAME=		texlive_base-${V}-src
-WRKDIST=		${WRKDIR}/${PKGNAME}
+PKGNAME=		texlive_base-${V}
+WRKDIST=		${WRKDIR}/texlive_base-${V}
 SHARED_LIBS=		kpathsea	0.0
 
 WANTLIB=		m X11 ICE freetype Xt pthread c Xext fontconfig \
