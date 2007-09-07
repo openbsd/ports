@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/07 16:18:28 ajacoutot Exp $
+bin/vmpsd
+@man man/man1/vmpsd.1
+share/examples/openvmps/
+share/examples/openvmps/vlan.db
+@sample ${SYSCONFDIR}/vmps.db
