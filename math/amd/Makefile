@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/24 12:44:19 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/07 11:09:10 steven Exp $
 
 COMMENT=	"order a sparse matrix prior to Cholesky factorization"
 
-VERSION=	2.0.4
+VERSION=	2.2.0
 DISTNAME=	AMD-${VERSION}
 PKGNAME=	amd-${VERSION}
 SHARED_LIBS=	amd	0.0 \
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/
 MASTER_SITES0=	${HOMEPAGE}../UFconfig/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} UFconfig-2.4.0.tar.gz:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} UFconfig-3.0.0.tar.gz:0
 WRKDIST=	${WRKDIR}/AMD
 WRKSRC=		${WRKDIST}/Source
 
