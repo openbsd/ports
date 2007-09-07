@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:09:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/09/07 08:13:20 aanriot Exp $
 bin/bmf
 bin/bmfconv
 @man man/man1/bmf.1
 @man man/man1/bmfconv.1
 share/doc/bmf/
-share/doc/bmf/OpenBSD-bmf-mini-howto.html
 share/doc/bmf/README

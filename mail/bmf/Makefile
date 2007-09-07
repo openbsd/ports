@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2005/10/07 00:21:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/07 08:13:20 aanriot Exp $
 
-COMMENT=		"easy to use Bayesian spam filter"
+COMMENT=		easy to use Bayesian spam filter
 DISTNAME=		bmf-0.9.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		mail
 HOMEPAGE=		http://sourceforge.net/projects/bmf
 
@@ -35,9 +35,6 @@ INSTALL_TARGET=		MANDIR=${PREFIX}/man \
 			BINDIR=${PREFIX}/bin \
 			install
 
-
-DOCS=			README ${FILESDIR}/OpenBSD-bmf-mini-howto.html
-
 NO_REGRESS=		Yes
 
 post-install:
@@ -45,7 +42,7 @@ post-install:
 	    strip ${PREFIX}/bin/$$f; \
 	done
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bmf
-	${INSTALL_DATA} ${WRKSRC}/${DOCS} ${PREFIX}/share/doc/bmf
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/bmf
 
 .include <bsd.port.mk>
 
