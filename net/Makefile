@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.476 2007/09/04 09:14:44 djm Exp $
+# $OpenBSD: Makefile,v 1.477 2007/09/07 16:19:29 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -183,6 +183,7 @@
      SUBDIR += olsrd
      SUBDIR += openafs
      SUBDIR += openh323
+     SUBDIR += openvmps
      SUBDIR += openvpn
      SUBDIR += osrtspproxy
      SUBDIR += p5-Chatbot-Eliza
