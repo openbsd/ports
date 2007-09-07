@@ -1,7 +1,7 @@
-$OpenBSD: patch-ROX-Filer_src_pixmaps_c,v 1.6 2006/07/07 16:43:10 steven Exp $
---- ROX-Filer/src/pixmaps.c.orig	Thu Dec 29 11:14:34 2005
-+++ ROX-Filer/src/pixmaps.c	Fri Jun 30 10:47:12 2006
-@@ -383,7 +383,7 @@ void pixmap_background_thumb(const gchar
+$OpenBSD: patch-ROX-Filer_src_pixmaps_c,v 1.7 2007/09/07 13:29:35 jasper Exp $
+--- ROX-Filer/src/pixmaps.c.orig	Sun Jun 10 15:37:12 2007
++++ ROX-Filer/src/pixmaps.c	Fri Sep  7 15:26:15 2007
+@@ -391,7 +391,7 @@ void pixmap_background_thumb(const gchar *path, GFunc 
  			execl(thumb_prog, thumb_prog, path,
  			      thumbnail_path(path),
  			      g_strdup_printf("%d", PIXMAP_THUMB_SIZE),
