@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/27 19:38:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/07 13:18:08 jasper Exp $
 bin/gossip
 lib/bonobo/
 lib/bonobo/servers/
@@ -35,6 +35,16 @@ share/gnome/help/gossip/es/figures/gossip-offline.png
 share/gnome/help/gossip/es/figures/gossip-personal-details.png
 share/gnome/help/gossip/es/figures/gossip-roster.png
 share/gnome/help/gossip/es/gossip.xml
+share/gnome/help/gossip/fr/
+share/gnome/help/gossip/fr/figures/
+share/gnome/help/gossip/fr/figures/gossip-available.png
+share/gnome/help/gossip/fr/figures/gossip-away.png
+share/gnome/help/gossip/fr/figures/gossip-busy.png
+share/gnome/help/gossip/fr/figures/gossip-extended-away.png
+share/gnome/help/gossip/fr/figures/gossip-offline.png
+share/gnome/help/gossip/fr/figures/gossip-personal-details.png
+share/gnome/help/gossip/fr/figures/gossip-roster.png
+share/gnome/help/gossip/fr/gossip.xml
 share/gnome/help/gossip/sv/
 share/gnome/help/gossip/sv/figures/
 share/gnome/help/gossip/sv/figures/gossip-available.png
@@ -124,6 +134,7 @@ share/locale/zh_TW/LC_MESSAGES/gossip.mo
 share/omf/gossip/
 share/omf/gossip/gossip-C.omf
 share/omf/gossip/gossip-es.omf
+share/omf/gossip/gossip-fr.omf
 share/omf/gossip/gossip-sv.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gossip/*.schemas > /dev/null
 share/schemas/gossip/
