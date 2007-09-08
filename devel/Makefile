@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.539 2007/09/06 18:12:12 simon Exp $
+# $OpenBSD: Makefile,v 1.540 2007/09/08 02:59:52 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -240,6 +240,8 @@
      SUBDIR += p5-Class-Inspector
      SUBDIR += p5-Class-Loader
      SUBDIR += p5-Class-MakeMethods
+     SUBDIR += p5-Class-Meta
+     SUBDIR += p5-Class-Meta-Express
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Class-MethodMapper
      SUBDIR += p5-Class-ReturnValue
@@ -269,6 +271,7 @@
      SUBDIR += p5-Data-Random
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-Structure-Util
+     SUBDIR += p5-Data-Types
      SUBDIR += p5-Data-UUID
      SUBDIR += p5-Data-Visitor
      SUBDIR += p5-Date-Calc
