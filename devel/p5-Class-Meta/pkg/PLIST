@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/08 01:27:42 msf Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/Meta/
+${P5SITE}/Class/Meta.pm
+${P5SITE}/Class/Meta/AccessorBuilder/
+${P5SITE}/Class/Meta/AccessorBuilder.pm
+${P5SITE}/Class/Meta/AccessorBuilder/Affordance.pm
+${P5SITE}/Class/Meta/AccessorBuilder/SemiAffordance.pm
+${P5SITE}/Class/Meta/Attribute.pm
+${P5SITE}/Class/Meta/Class.pm
+${P5SITE}/Class/Meta/Constructor.pm
+${P5SITE}/Class/Meta/Method.pm
+${P5SITE}/Class/Meta/Type.pm
+${P5SITE}/Class/Meta/Types/
+${P5SITE}/Class/Meta/Types/Boolean.pm
+${P5SITE}/Class/Meta/Types/Numeric.pm
+${P5SITE}/Class/Meta/Types/Perl.pm
+${P5SITE}/Class/Meta/Types/String.pm
+@man man/man3p/Class::Meta.3p
+@man man/man3p/Class::Meta::AccessorBuilder.3p
+@man man/man3p/Class::Meta::AccessorBuilder::Affordance.3p
+@man man/man3p/Class::Meta::AccessorBuilder::SemiAffordance.3p
+@man man/man3p/Class::Meta::Attribute.3p
+@man man/man3p/Class::Meta::Class.3p
+@man man/man3p/Class::Meta::Constructor.3p
+@man man/man3p/Class::Meta::Method.3p
+@man man/man3p/Class::Meta::Type.3p
+@man man/man3p/Class::Meta::Types::Boolean.3p
+@man man/man3p/Class::Meta::Types::Numeric.3p
+@man man/man3p/Class::Meta::Types::Perl.3p
+@man man/man3p/Class::Meta::Types::String.3p

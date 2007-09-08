@@ -1,0 +1,4 @@
+Class::Meta provides an interface for automating the creation of Perl
+classes with attribute data type validation. It differs from other such
+modules in that it includes an introspection API that can be used as a
+unified interface for all Class::Meta-generated classes.
