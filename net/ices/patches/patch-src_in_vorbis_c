@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_in_vorbis_c,v 1.3 2006/03/14 20:00:20 sturm Exp $
+$OpenBSD: patch-src_in_vorbis_c,v 1.4 2007/09/08 16:25:06 mgrimm Exp $
 --- src/in_vorbis.c.orig	Mon Mar 22 04:13:13 2004
-+++ src/in_vorbis.c	Sat Jan 28 13:23:02 2006
++++ src/in_vorbis.c	Fri Sep  7 19:18:46 2007
 @@ -44,7 +44,7 @@ typedef struct {
  } ices_vorbis_in_t;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_in_vorbis_c,v 1.3 2006/03/14 20:00:20 sturm Exp $
  				int16_t* left, int16_t* right);
  static int ices_vorbis_close (input_stream_t* self);
  static void in_vorbis_parse (input_stream_t* self);
-@@ -133,13 +133,13 @@ ices_vorbis_open (input_stream_t* self, 
+@@ -133,13 +133,13 @@ ices_vorbis_open (input_stream_t* self, char* buf, siz
    return 0;
  }
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_in_vorbis_c,v 1.3 2006/03/14 20:00:20 sturm Exp $
    int i;
  
    /* refill buffer if necessary */
-@@ -150,6 +150,9 @@ ices_vorbis_readpcm (input_stream_t* sel
+@@ -150,6 +150,9 @@ ices_vorbis_readpcm (input_stream_t* self, size_t olen
  			  sizeof (vorbis_data->buf), ICES_OV_BE, SAMPLESIZE, 1, &link)) <= 0) {
  	if (len == OV_HOLE) {
  	  ices_log_error ("Skipping bad vorbis data");
