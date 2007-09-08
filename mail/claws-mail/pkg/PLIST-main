@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/07/10 06:14:43 pyr Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2007/09/08 15:22:40 pyr Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 bin/claws-mail
@@ -46,6 +46,7 @@ include/claws-mail/common/ssl.h
 include/claws-mail/common/ssl_certificate.h
 include/claws-mail/common/string_match.h
 include/claws-mail/common/stringtable.h
+include/claws-mail/common/tags.h
 include/claws-mail/common/template.h
 include/claws-mail/common/timing.h
 include/claws-mail/common/utils.h
@@ -60,11 +61,13 @@ include/claws-mail/crash.h
 include/claws-mail/customheader.h
 include/claws-mail/displayheader.h
 include/claws-mail/editaddress.h
+include/claws-mail/editaddress_other_attributes_ldap.h
 include/claws-mail/editbook.h
 include/claws-mail/editgroup.h
 include/claws-mail/editjpilot.h
 include/claws-mail/editldap.h
 include/claws-mail/editldap_basedn.h
+include/claws-mail/edittags.h
 include/claws-mail/editvcard.h
 include/claws-mail/enriched.h
 include/claws-mail/etpan/
