@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/07/24 05:16:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/08 11:29:40 bernd Exp $
 
 COMMENT-main=		GIT - Tree History Storage Tool
 COMMENT-svn=		GIT - subversion interoperability tools
 
-V=			1.5.2.4
+V=			1.5.2.5
 DISTNAME=		git-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
@@ -19,9 +19,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			git-manpages-${V}${EXTRACT_SUFX} \
+DOC_DISTFILES=		git-manpages-${V}${EXTRACT_SUFX} \
 			git-htmldocs-${V}${EXTRACT_SUFX}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILES}
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES=		http://www.kernel.org/pub/software/scm/git/
 
@@ -59,17 +60,21 @@ USE_GMAKE=		Yes
 REGRESS_DEPENDS=	:zip-*:archivers/zip
 
 post-extract:
-	@rm -f ${WRKDIR}/man1/git-p4import.1
+	@mkdir -p ${WRKSRC}/doc
+.for distfile in ${DOC_DISTFILES}
+	@${TAR} -C ${WRKSRC}/doc -xzf ${FULLDISTDIR}/${distfile}${EXTRACT_SUFX}
+.endfor
+	@rm -f ${WRKSRC}/doc/man1/git-p4import.1
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/libgit.a ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKBUILD}/contrib/emacs/*.el \
 		${PREFIX}/share/emacs/site-lisp
-	cd ${WRKDIR} && \
+	cd ${WRKBUILD}/doc && \
 		pax -rw -s,man7/git.7,man1/git.1, man* ${PREFIX}/man
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/git
-	cd ${WRKDIR} && \
+	cd ${WRKBUILD}/doc && \
 		pax -rw *.html howto/*.html *.txt howto/*.txt \
 		${PREFIX}/share/doc/git
 
