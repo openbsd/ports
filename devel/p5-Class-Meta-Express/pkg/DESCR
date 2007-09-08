@@ -1,0 +1,4 @@
+This module provides an interface to concisely yet expressively create
+classes Class::Meta. The intent is to provide a simpler, more meaningful
+interface for creating Class::Meta classes while preserving the power
+and flesbility of Class::Meta.
