@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/06/01 07:37:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/08 18:41:27 ajacoutot Exp $
 
-COMMENT=	"API for accessing scanners, frontends"
+COMMENT=	API for accessing scanners, frontends
 
 DISTNAME=	sane-frontends-1.0.14
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/
@@ -30,6 +30,8 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		sane.>=1::graphics/sane-backends
+
+SUBST_VARS=	LOCALBASE
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

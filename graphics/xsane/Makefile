@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/01 06:37:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/08 18:41:51 ajacoutot Exp $
 
-COMMENT=	"scanner frontend for SANE"
+COMMENT=	scanner frontend for SANE
 
 DISTNAME=	xsane-0.994
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/xsane/ \
@@ -33,6 +33,8 @@ MODULES=	gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		lcms.>=1::graphics/lcms \
 		sane.>=1::graphics/sane-backends
+
+SUBST_VARS=	LOCALBASE
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
