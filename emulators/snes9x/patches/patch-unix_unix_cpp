@@ -1,0 +1,101 @@
+$OpenBSD: patch-unix_unix_cpp,v 1.1 2007/09/09 15:17:06 fgsch Exp $
+--- unix/unix.cpp.orig	Sun Apr 29 01:51:08 2007
++++ unix/unix.cpp	Thu Sep  6 14:59:46 2007
+@@ -210,6 +210,10 @@ pthread_mutex_t mutex;
+ #endif
+ #endif
+ 
++#if !defined(NOSOUND) && defined(__OpenBSD__)
++#include <sys/audioio.h>
++#endif
++
+ //Breaks sol9 and probably others.
+ //#if defined(__sun) && defined(__GNUC__)
+ //typedef void (*SIG_PF)();
+@@ -264,7 +268,7 @@ void ReadJoysticks ();
+ #define CONFIGURABLE_SOUND_DEVICE
+     char *sound_device = "/dev/dsp";
+ #endif
+-#if !defined(NOSOUND) && defined (__sun)
++#if !defined(NOSOUND) && (defined(__sun) || defined(__OpenBSD__))
+ #define CONFIGURABLE_SOUND_DEVICE
+     char *sound_device = "/dev/audio";
+ #endif
+@@ -285,7 +289,7 @@ const char *rom_dir="." SLASH_STR "roms";
+ const char *inc_format="%03d";
+ 
+ //FIXME: I see no reason not to configureenable this for all Unixen
+-#if defined(DEBUGGER) && (defined(__linux) || defined(__sun))
++#if defined(DEBUGGER) && (defined(__linux) || defined(__sun) || defined(__OpenBSD__))
+ static void sigbrkhandler(int)
+ {
+     CPU.Flags |= DEBUG_MODE_FLAG;
+@@ -1653,10 +1657,14 @@ void S9xUnixProcessSound (void)
+ }
+ #endif
+ 
+-#if !defined(NOSOUND) && defined(__sun)
++#if !defined(NOSOUND) && (defined(__sun) || defined(__OpenBSD__))
+ static int Rates[8] =
+ {
++#if defined(__sun)
+     0, 8000, 11025, 16000, 22050, 32000, 37800, 44100
++#else
++    0, 8000, 11025, 16000, 22050, 32000, 44100, 48000
++#endif
+ };
+ 
+ static int BufferSizes [8] =
+@@ -1712,6 +1720,7 @@ bool8 S9xOpenSoundDevice (int mode, bool8 stereo, int 
+ 	    so.playback_rate, so.buffer_size, so.sixteen_bit ? "yes" : "no",
+ 	    so.stereo ? "yes" : "no", so.encoded ? "yes" : "no");
+ 
++    S9xSetPlaybackRate (so.playback_rate);
+     return (TRUE);
+ }
+ #endif
+@@ -1847,7 +1856,7 @@ bool8 S9xOpenSoundDevice (int mode, bool8 stereo, int 
+ #endif
+ 
+ 
+-#if !defined(NOSOUND) && (defined (__linux) || defined (__sun))
++#if !defined(NOSOUND) && (defined (__linux) || defined (__sun) || defined(__OpenBSD__))
+ void S9xUnixProcessSound (void)
+ {
+ }
+@@ -1890,7 +1899,7 @@ void *S9xProcessSound (void *)
+ }
+ #endif
+ 
+-#if !defined(NOSOUND) && (defined (__linux) || defined (__sun))
++#if !defined(NOSOUND) && (defined (__linux) || defined (__sun) || defined(__OpenBSD__))
+ void S9xGenerateSound ()
+ {
+     /* Linux and Sun versions */
+@@ -2009,7 +2018,7 @@ void *S9xProcessSound (void *)
+ #endif
+ 
+ #endif
+-#ifdef __sun
++#if defined(__sun) || defined(__OpenBSD__)
+     audio_info_t audio;
+     if (!Settings.ThreadSound)
+     {
+@@ -2121,7 +2130,7 @@ void *S9xProcessSound (void *)
+     } while (Settings.ThreadSound);
+ #endif
+ 
+-#ifdef __sun
++#if defined(__sun) || defined(__OpenBSD__)
+     if (!Settings.ThreadSound)
+ 	write (so.sound_fd, NULL, 0);
+ #endif
+@@ -2130,7 +2139,7 @@ void *S9xProcessSound (void *)
+ }
+ #endif
+ 
+-#if !defined(NOSOUND) && defined(__sun)
++#if !defined(NOSOUND) && (defined(__sun) || defined(__OpenBSD__))
+ uint8 int2ulaw(int ch)
+ {
+     int mask;

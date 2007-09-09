@@ -1,0 +1,12 @@
+$OpenBSD: patch-soundux_h,v 1.1 2007/09/09 15:17:06 fgsch Exp $
+--- soundux.h.orig	Thu Sep  6 13:10:15 2007
++++ soundux.h	Thu Sep  6 13:10:30 2007
+@@ -220,7 +220,7 @@ typedef struct {
+ 	int				stereo;					// stereo or mono
+ 	bool8			sixteen_bit;			// 16bit or 8bit sample
+ 	bool8			encoded;				// ** port specific
+-#ifdef __sun
++#if defined(__sun) || defined(__OpenBSD__)
+ 	int				last_eof;				// ** port specific
+ #endif
+ #ifdef __sgi

@@ -1,0 +1,60 @@
+$OpenBSD: patch-configure_in,v 1.1 2007/09/09 15:17:06 fgsch Exp $
+--- configure.in.orig	Wed Aug  2 16:04:02 2006
++++ configure.in	Thu Sep  6 12:48:19 2007
+@@ -230,30 +230,30 @@ else
+   unset snes9x_cv_option_custom_march
+ fi
+ 
+-if test no = "$with_march" ; then
+-  AC_SYS_COMPILER_FLAG(-O2, o2, OPTIMIZE, [
+-    AC_SYS_COMPILER_FLAG(-O1, o1, OPTIMIZE)
+-  ])
+-else
+-  AC_SYS_COMPILER_FLAG(-O6, o6, OPTIMIZE, [
+-    AC_SYS_COMPILER_FLAG(-O4, o4, OPTIMIZE, [
+-	  AC_SYS_COMPILER_FLAG(-O3, o3, OPTIMIZE, [
+-        AC_SYS_COMPILER_FLAG(-O2, o2, OPTIMIZE, [
+-          AC_SYS_COMPILER_FLAG(-O1, o1, OPTIMIZE)
+-		])
+-      ])
+-    ])
+-  ])
+-fi
++dnl if test no = "$with_march" ; then
++dnl   AC_SYS_COMPILER_FLAG(-O2, o2, OPTIMIZE, [
++dnl     AC_SYS_COMPILER_FLAG(-O1, o1, OPTIMIZE)
++dnl   ])
++dnl else
++dnl   AC_SYS_COMPILER_FLAG(-O6, o6, OPTIMIZE, [
++dnl     AC_SYS_COMPILER_FLAG(-O4, o4, OPTIMIZE, [
++dnl 	  AC_SYS_COMPILER_FLAG(-O3, o3, OPTIMIZE, [
++dnl         AC_SYS_COMPILER_FLAG(-O2, o2, OPTIMIZE, [
++dnl           AC_SYS_COMPILER_FLAG(-O1, o1, OPTIMIZE)
++dnl 		])
++dnl       ])
++dnl     ])
++dnl   ])
++dnl fi
+ 
+ AC_SYS_COMPILER_FLAG(-fomit-frame-pointer, omit_frame_pointer, OPTIMIZE)
+ AC_SYS_COMPILER_FLAG(-fno-exceptions, no_exceptions, OPTIMIZE)
+ AC_SYS_COMPILER_FLAG(-Wall, Wall, OPTIMIZE)
+ AC_SYS_COMPILER_FLAG(-W, W, OPTIMIZE)
+-AC_SYS_COMPILER_FLAG(-pedantic, pedantic, OPTIMIZE)
++dnl AC_SYS_COMPILER_FLAG(-pedantic, pedantic, OPTIMIZE)
+ dnl FIXME: Most of these should be fixed, but several are part of the API.
+ AC_SYS_COMPILER_FLAG(-Wno-unused-parameter, Wno_unused_parameter, OPTIMIZE)
+-AC_SYS_COMPILER_FLAG(-pipe, pipe, OPTIMIZE)
++dnl AC_SYS_COMPILER_FLAG(-pipe, pipe, OPTIMIZE)
+ AC_SYS_COMPILER_FLAG(-fno-rtti, no_rtti, RTTIFLAG)
+ 
+ dnl AC_ARG_WITH(extra_opt,[  --with(out)-extra-opt     Use extra optimization flags (default: none)],[],[with_extra_opt=no])
+@@ -859,7 +859,7 @@ if test yes = "$with_sound" ; then
+   AC_MSG_CHECKING(if sound is supported on this platform)
+   AC_CACHE_VAL(snes9x_cv_sound, [
+   AC_TRY_COMPILE([
+-#if defined(__linux) || defined(__sun) || defined(__sgi)
++#if defined(__linux) || defined(__sun) || defined(__sgi) || defined(__OpenBSD__)
+ /* */
+ #else
+ #error No sound for this platform
