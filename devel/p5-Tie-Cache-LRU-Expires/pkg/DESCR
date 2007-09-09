@@ -1,0 +1,3 @@
+This is an expiring LRU cache, using Tie::Cache::LRU. Each entry
+in this cache expires after 'EXPIRES' seconds (default 3600).
+The cache is in RAM (see Tie::Cache::LRU).
