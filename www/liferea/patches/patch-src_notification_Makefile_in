@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_notification_Makefile_in,v 1.1.1.1 2007/06/28 16:20:42 jasper Exp $
---- src/notification/Makefile.in.orig	Thu May 17 14:53:21 2007
-+++ src/notification/Makefile.in	Sat Jun  2 00:47:36 2007
-@@ -291,7 +291,7 @@ am__liblinotiflibnotify_la_SOURCES_DIST = notif_libnot
+$OpenBSD: patch-src_notification_Makefile_in,v 1.2 2007/09/09 20:21:33 jasper Exp $
+--- src/notification/Makefile.in.orig	Fri Aug 31 23:26:23 2007
++++ src/notification/Makefile.in	Sun Sep  9 22:02:22 2007
+@@ -289,7 +289,7 @@ am__liblinotiflibnotify_la_SOURCES_DIST = notif_libnot
  @WITH_LIBNOTIFY_TRUE@am_liblinotiflibnotify_la_OBJECTS = \
  @WITH_LIBNOTIFY_TRUE@	liblinotiflibnotify_la-notif_libnotify.lo
  liblinotiflibnotify_la_OBJECTS = $(am_liblinotiflibnotify_la_OBJECTS)
