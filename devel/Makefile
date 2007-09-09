@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.542 2007/09/09 23:06:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.543 2007/09/09 23:30:22 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -250,6 +250,7 @@
      SUBDIR += p5-Class-Std-Utils
      SUBDIR += p5-Class-Throwable
      SUBDIR += p5-Class-Trigger
+     SUBDIR += p5-Class-Virtual
      SUBDIR += p5-Class-WhiteHole
      SUBDIR += p5-Class-XPath
      SUBDIR += p5-Clone
@@ -481,6 +482,8 @@
      SUBDIR += p5-Text-FixEOL
      SUBDIR += p5-Tie-Array-Sorted
      SUBDIR += p5-Tie-CPHash
+     SUBDIR += p5-Tie-Cache-LRU
+     SUBDIR += p5-Tie-Cache-LRU-Expires
      SUBDIR += p5-Tie-IxHash
      SUBDIR += p5-Tie-LLHash
      SUBDIR += p5-Tie-RegexpHash
