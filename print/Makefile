@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.62 2007/09/03 09:21:44 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.63 2007/09/09 14:43:04 ajacoutot Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -17,6 +17,9 @@
     SUBDIR += epdfview
     SUBDIR += foiltex
     SUBDIR += fontforge
+    SUBDIR += foomatic-db
+    SUBDIR += foomatic-db-engine
+    SUBDIR += foomatic-filters
     SUBDIR += freetype
     SUBDIR += ghostscript
     SUBDIR += ghostview
