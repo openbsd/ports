@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/29 05:52:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/09 22:23:35 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"Mozilla's C implementation of JavaScript"
 
 V=		1.60
 DISTNAME=	js-${V}
-PKGNAME=	spidermonkey-${V}p1
+PKGNAME=	spidermonkey-${V}p2
 SHARED_LIBS=	js 2.0
 CATEGORIES=     lang
 
@@ -32,6 +32,7 @@ WRKSRC=		${WRKDIST}/src
 MAKE_FILE=	Makefile.ref
 MAKE_FLAGS=	SO_SUFFIX=so.${LIBjs_VERSION} \
 		JS_THREADSAFE=YES \
+		JS_NO_THIN_LOCKS=YES \
 		XLDFLAGS="-L${LOCALBASE}/lib -pthread" \
 		XCFLAGS="-I${LOCALBASE}/include/nspr" \
 		CC=${CC} \
