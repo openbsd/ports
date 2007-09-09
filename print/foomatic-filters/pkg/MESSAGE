@@ -1,0 +1,12 @@
+To use foomatic-rip(1) as the input filter for lpd(8), create a
+printcap(5) entry similar to the folowing:
+
+C64|Epson Stylus C64:\
+	:lp=/dev/ulpt0:\
+	:af=${SYSCONFDIR}/foomatic/C64.ppd:\
+	:if=${PREFIX}/bin/foomatic-rip:\
+	:sd=/var/spool/output:\
+	:lf=/var/log/lpd-errs:
+
+There are PPD files in the foomatic-db package.  foomatic-ppdfile(1)
+from the foomatic-db-engine package can be used to generate PPD files.

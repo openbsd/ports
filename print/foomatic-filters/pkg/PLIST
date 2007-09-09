@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/09 14:40:29 ajacoutot Exp $
+bin/foomatic-gswrapper
+bin/foomatic-rip
+@comment lib/ppr/
+@comment lib/ppr/interfaces/
+@comment lib/ppr/interfaces/foomatic-rip
+@comment lib/ppr/lib/
+@comment lib/ppr/lib/foomatic-rip
+@comment libexec/cups/
+@comment libexec/cups/filter/
+@comment libexec/cups/filter/foomatic-rip
+@man man/man1/foomatic-gswrapper.1
+@man man/man1/foomatic-rip.1
+share/examples/foomatic/
+@sample ${SYSCONFDIR}/foomatic/
+@comment share/examples/foomatic/direct/
+share/examples/foomatic/filter.conf
+@sample ${SYSCONFDIR}/foomatic/filter.conf
+@comment share/examples/foomatic/filter.conf.sample
