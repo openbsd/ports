@@ -1,0 +1,9 @@
+This is an implementation of a least-recently used (LRU) cache
+keeping the cache in RAM.
+
+A LRU cache is similar to the kind of cache used by a web browser.
+New items are placed into the top of the cache. When the cache grows
+past its size limit, it throws away items off the bottom. The trick
+is that whenever an item is -accessed-, it is pulled back to the
+top. The end result of all this is that items which are frequently
+accessed tend to stay in the cache.
