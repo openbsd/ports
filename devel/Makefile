@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.541 2007/09/09 22:58:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.542 2007/09/09 23:06:08 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -504,6 +504,7 @@
      SUBDIR += p5-YAML
      SUBDIR += p5-YAML-Syck
      SUBDIR += p5-capitalization
+     SUBDIR += p5-enum
      SUBDIR += p5-libintl
      SUBDIR += p5-prefork
      SUBDIR += p5-version
