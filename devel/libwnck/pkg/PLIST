@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/04/23 16:33:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/09/09 20:28:54 jasper Exp $
 include/libwnck-1.0/
 include/libwnck-1.0/libwnck/
 include/libwnck-1.0/libwnck/application.h
@@ -203,8 +203,6 @@ share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/libwnck.mo
 share/locale/zh_CN/LC_MESSAGES/libwnck.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/libwnck.mo
 share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 %%SHARED%%
