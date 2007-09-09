@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.540 2007/09/08 02:59:52 msf Exp $
+# $OpenBSD: Makefile,v 1.541 2007/09/09 22:58:45 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -482,6 +482,7 @@
      SUBDIR += p5-Tie-Array-Sorted
      SUBDIR += p5-Tie-CPHash
      SUBDIR += p5-Tie-IxHash
+     SUBDIR += p5-Tie-LLHash
      SUBDIR += p5-Tie-RegexpHash
      SUBDIR += p5-Time-Clock
      SUBDIR += p5-Time-Format
