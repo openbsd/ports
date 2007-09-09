@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2007/09/04 20:52:13 jasper Exp $
---- Makefile.in.orig	Mon Jun 18 17:02:05 2007
-+++ Makefile.in	Wed Jul 18 09:43:02 2007
+$OpenBSD: patch-Makefile_in,v 1.6 2007/09/09 20:02:09 jasper Exp $
+--- Makefile.in.orig	Tue Jul 31 16:08:16 2007
++++ Makefile.in	Sun Sep  9 21:59:52 2007
 @@ -11,6 +11,7 @@ exec_prefix=@exec_prefix@
  MANDIR=@mandir@
  BINDIR=@bindir@
@@ -18,7 +18,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/09/04 20:52:13 jasper Exp $
  
  version.o : version.c
  	${CC} ${CFLAGS} \
-@@ -254,6 +255,7 @@ rash : FRC
+@@ -255,6 +256,7 @@ rash : FRC
  	    -e 's@_RADMIND_COMMANDFILE@${COMMANDFILE}@g' \
  	    -e 's@_RADMIND_VERSION@$(shell cat VERSION)@g' \
  	    -e 's@_RADMIND_ECHO_PATH@${ECHO}@g' \
@@ -26,7 +26,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/09/04 20:52:13 jasper Exp $
  	    ${srcdir}/ra.sh > tmp/ra.sh; 
  
  man : FRC
-@@ -271,7 +273,7 @@ man : FRC
+@@ -272,7 +274,7 @@ man : FRC
  		${srcdir}/man/$$i > tmp/man/$$i; \
  	done
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/09/04 20:52:13 jasper Exp $
  	-mkdir -p ${DESTDIR}/${exec_prefix}
  	-mkdir -p ${DESTDIR}/${SBINDIR}
  	${INSTALL} -m 0755 -c radmind ${DESTDIR}/${SBINDIR}/
-@@ -298,6 +300,7 @@ install	: all man rash
+@@ -299,6 +301,7 @@ install	: all man rash
  	-mkdir -p ${DESTDIR}/${PREAPPLYDIR}
  	-mkdir -p ${DESTDIR}/${POSTAPPLYDIR}
  	-mkdir -p ${DESTDIR}/${CERTDIR}
