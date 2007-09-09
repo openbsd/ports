@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:32:14 espie Exp $
-bin/foomatic-rip
+@comment $OpenBSD: PLIST,v 1.4 2007/09/09 14:47:33 ajacoutot Exp $
 bin/hpijs
 share/doc/hpijs/
 share/doc/hpijs/gs_hpijs.png

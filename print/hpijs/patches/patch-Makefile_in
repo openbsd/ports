@@ -1,6 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2007/04/29 00:15:02 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2007/09/09 14:47:33 ajacoutot Exp $
 --- Makefile.in.orig	Wed Oct  1 22:10:04 2003
-+++ Makefile.in	Sun Apr 29 02:15:51 2007
++++ Makefile.in	Sat Sep  8 19:49:58 2007
+@@ -87,7 +87,7 @@ ppddir = $(datadir)/ppd/HP
+ @FOOMATIC_INSTALL_FALSE@foomatichook = 
+ @FOOMATIC_INSTALL_TRUE@unfoomatichook = uninstall-foomatic
+ @FOOMATIC_INSTALL_FALSE@unfoomatichook = 
+-@FOOMATIC_INSTALL_TRUE@rip = foomatic-rip
++@FOOMATIC_INSTALL_TRUE@rip = 
+ @FOOMATIC_INSTALL_FALSE@rip = 
+ @CUPS_INSTALL_FALSE@@FOOMATIC_INSTALL_TRUE@cupshook = 
+ @CUPS_INSTALL_TRUE@@FOOMATIC_INSTALL_TRUE@cupshook = install-cups
 @@ -635,7 +635,7 @@ uninstall-hook: $(unfoomatichook) $(uncupshook)
  install-foomatic:
  	mkdir -p $(DESTDIR)/$(ppddir)
