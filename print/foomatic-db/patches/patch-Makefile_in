@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/09/09 14:41:26 ajacoutot Exp $
+--- Makefile.in.orig	Tue Mar 27 01:57:13 2007
++++ Makefile.in	Tue Apr 24 01:00:15 2007
+@@ -72,8 +72,10 @@ install-db:
+ 	    cp $$d $(DESTDIR)$(LIBDIR)/db/source/driver; \
+ 	  done )
+ 	cp db/source/opt/*.xml $(DESTDIR)$(LIBDIR)/db/source/opt
+-	( cd db/source && tar cf - --exclude=.svn PPD ) | \
+-	  ( cd $(DESTDIR)$(LIBDIR)/db/source && tar xf -)
++	# ( cd db/source && tar cf - --exclude=.svn PPD ) | \
++	#  ( cd $(DESTDIR)$(LIBDIR)/db/source && tar xf -)
++	( find db/source/PPD \! -path \*'.svn'\* ) | \
++	  ( pax -r -w -d $(DESTDIR)$(LIBDIR) )
+ 	if test $(GZIP) != GZIP_NOT_FOUND -a $(GZIP_PPDS) != no ; then \
+ 	  GZIP='' find $(DESTDIR)$(LIBDIR)/db/source/PPD -name "*.ppd" -exec $(GZIP) "{}" \; ; \
+ 	fi
