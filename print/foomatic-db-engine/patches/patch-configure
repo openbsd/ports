@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/09/09 14:42:02 ajacoutot Exp $
+--- configure.orig	Tue Sep 14 23:27:41 2004
++++ configure	Thu Apr 26 18:00:11 2007
+@@ -1828,13 +1828,13 @@ else
+   PREFIX=$prefix
+ fi
+ echo -n Checking whether Perl will find libraries installed under $PREFIX...
+-if ( $PERL -V | egrep "^ *$PREFIX/lib(/perl[0-9]?|)(/site_perl|)/[0-9]" > /dev/null); then
++if ( $PERL -V | egrep "^ *$PREFIX/libdata(/perl[0-9]?|'')(/site_perl|'')" > /dev/null); then
+   PERLPREFIX=$PREFIX
+   echo " yes"
+ else
+   echo " no"
+   echo -n Checking whether Perl will find libraries installed under /usr/local...
+-  if ( $PERL -V | egrep "^ */usr/local/lib(/perl[0-9]?|)(/site_perl|)/[0-9]" > /dev/null); then
++  if ( $PERL -V | egrep "^ */usr/local/libdata(/perl[0-9]?|)(/site_perl|)/[0-9]" > /dev/null); then
+     PERLPREFIX=/usr/local
+     echo " yes"
+     echo Installing the Perl libraries with prefix /usr/local.
+@@ -3124,7 +3124,7 @@ test -n "$CUPS_LPINFO" && break
+ done
+ test -n "$CUPS_LPINFO" || CUPS_LPINFO="/usr/sbin/lpinfo"
+ 
+-
++if [ x"$with_pdq" = x"yes" ]; then
+ for ac_dir in pdq
+ do
+ # Extract the first word of "$ac_dir", so it can be a program name with args.
+@@ -3247,8 +3247,9 @@ fi
+ test -n "$PDQ_PRINT" && break
+ done
+ test -n "$PDQ_PRINT" || PDQ_PRINT="/usr/bin/pdq"
++fi  # with_pdq = yes
+ 
+-
++if [ x"$with_ppr" = x"yes" ]; then
+ for ac_prog in ppr/bin/pprd
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+@@ -3535,7 +3536,7 @@ fi
+ test -n "$PPR_PPOP" && break
+ done
+ test -n "$PPR_PPOP" || PPR_PPOP="/usr/bin/ppop"
+-
++fi  # with_ppr = yes
+ 
+ 
+ for ac_prog in nc netcat

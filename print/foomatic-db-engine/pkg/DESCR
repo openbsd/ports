@@ -1,0 +1,3 @@
+Foomatic's database engine generates PPD files from the data in
+Foomatic's XML database. It also contains scripts to directly generate
+print queues and handle jobs.

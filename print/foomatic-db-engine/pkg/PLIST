@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/09 14:42:02 ajacoutot Exp $
+bin/foomatic-combo-xml
+bin/foomatic-compiledb
+bin/foomatic-configure
+bin/foomatic-datafile
+bin/foomatic-perl-data
+bin/foomatic-ppd-options
+bin/foomatic-ppdfile
+bin/foomatic-printjob
+libdata/perl5/site_perl/Foomatic/
+libdata/perl5/site_perl/Foomatic/DB.pm
+libdata/perl5/site_perl/Foomatic/Defaults.pm
+libdata/perl5/site_perl/Foomatic/PPD.pm
+libdata/perl5/site_perl/Foomatic/UIElem.pm
+@man man/man1/foomatic-combo-xml.1
+@man man/man1/foomatic-compiledb.1
+@man man/man1/foomatic-configure.1
+@man man/man1/foomatic-perl-data.1
+@man man/man1/foomatic-ppd-options.1
+@man man/man1/foomatic-ppdfile.1
+@man man/man1/foomatic-printjob.1
+@man man/man8/foomatic-addpjloptions.8
+@man man/man8/foomatic-getpjloptions.8
+@man man/man8/foomatic-kitload.8
+@man man/man8/foomatic-preferred-driver.8
+sbin/foomatic-addpjloptions
+sbin/foomatic-fix-xml
+sbin/foomatic-getpjloptions
+sbin/foomatic-kitload
+sbin/foomatic-nonumericalids
+sbin/foomatic-preferred-driver
+sbin/foomatic-printermap-to-gimp-print-xml
+sbin/foomatic-replaceoldprinterids
+share/foomatic/templates/
+share/foomatic/templates/pjl_enum_choice.xml
+share/foomatic/templates/pjl_enum_option.xml
+share/foomatic/templates/pjl_num_option.xml

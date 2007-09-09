@@ -1,0 +1,12 @@
+$OpenBSD: patch-foomatic-kitload_in,v 1.1.1.1 2007/09/09 14:42:02 ajacoutot Exp $
+--- foomatic-kitload.in.orig	Thu Oct 10 18:16:12 2002
++++ foomatic-kitload.in	Mon Jun 21 23:55:22 2004
+@@ -54,7 +54,7 @@ $ENV{'LC_ALL'} = "C";
+ $ENV{'LANG'} = "C";
+ 
+ # Copy the files
+-my $retval = system("( cd $dir ; tar cf - --exclude CVS . ) | tar xv${dontoverwrite}Cf $destdir$libdir/db/source - 2> $destdir$libdir/kitload2.log | tee $destdir$libdir/kitload.log");
++my $retval = system("( cd $dir ; find . \! -path \*CVS\* | pax -rwdv$dontoverwrite $destdir$libdir/db/source ) 2>&1 | tee $destdir$libdir/kitload.log 2> $destdir$libdir/kitload2.log");
+ #$retval = $retval / 256;
+ #if ($retval) {
+ #    die "Error copying files to $destdir$libdir/db/source: $?";
