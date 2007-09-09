@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2007/08/03 20:51:42 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/09 14:53:05 ajacoutot Exp $
 
-COMMENT=		"Common Unix Printing System"
+COMMENT=		Common Unix Printing System
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}p4
+PKGNAME=		${DISTNAME:S/-source//}p5
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		3.0 \
 			cupsimage	2.3
@@ -31,6 +31,7 @@ EXTRACT_SUFX=		.tar.bz2
 LIB_DEPENDS=		png.>=3::graphics/png \
 			jpeg.>=62::graphics/jpeg \
 			tiff.>=35::graphics/tiff
+RUN_DEPENDS=		::print/foomatic-filters
 
 FAKE_FLAGS=		BINMODE=${BINMODE} \
 			SHAREMODE=${SHAREMODE}
@@ -60,6 +61,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 
 CFLAGS+=		"-I${LOCALBASE}/include" \
 			"-I${LOCALBASE}/include/libpng"
+
+SUBST_VARS=		LOCALBASE
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
 USE_GMAKE=		Yes
@@ -94,7 +97,5 @@ post-install:
 	@sed s,y0y0y0,${LOCALBASE}, < ${FILESDIR}/${file} > \
 		${PREFIX}/sbin/${file}
 .endfor
-	@${INSTALL_DATA} ${FILESDIR}/foomatic-rip \
-		${PREFIX}/libexec/cups/filter/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/11/17 19:15:36 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/09/09 14:53:05 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
@@ -54,9 +54,6 @@ libexec/cups/daemon/cups-lpd
 libexec/cups/daemon/cups-polld
 libexec/cups/driver/
 libexec/cups/filter/
-@mode 0755
-libexec/cups/filter/foomatic-rip
-@mode
 libexec/cups/filter/gziptoany
 libexec/cups/filter/hpgltops
 libexec/cups/filter/imagetops
@@ -1267,12 +1264,20 @@ share/examples/cups/ppd/
 @sample ${SYSCONFDIR}/cups/ppd/
 share/examples/cups/ssl/
 @sample ${SYSCONFDIR}/cups/ssl/
+share/locale/
+share/locale/de/
 share/locale/de/cups_de.po
+share/locale/es/
 share/locale/es/cups_es.po
+share/locale/et/
 share/locale/et/cups_et.po
+share/locale/it/
 share/locale/it/cups_it.po
+share/locale/ja/
 share/locale/ja/cups_ja.po
+share/locale/pl/
 share/locale/pl/cups_pl.po
+share/locale/sv/
 share/locale/sv/cups_sv.po
 @owner _cups
 @group _cups
@@ -1280,3 +1285,5 @@ share/locale/sv/cups_sv.po
 @sample /var/spool/cups/
 @sample /var/spool/cups/tmp/
 @sample /var/cache/cups/
+@exec ln -sf ${LOCALBASE}/bin/foomatic-rip ${PREFIX}/libexec/cups/filter/
+@unexec rm -f ${PREFIX}/libexec/cups/filter/foomatic-rip
