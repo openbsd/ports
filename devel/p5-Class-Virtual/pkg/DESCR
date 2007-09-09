@@ -1,0 +1,20 @@
+This is a base class for implementing virtual base classes (what
+some people call an abstract class). Kinda kooky. It allows you to
+explicitly declare what methods are virtual and that must be
+implemented by subclasses. This might seem silly, since your program
+will halt and catch fire when an unimplemented virtual method is
+hit anyway, but there's some benefits.
+
+The error message is more informative. Instead of the usual "Can't
+locate object method" error, you'll get one explaining that a virtual
+method was left unimplemented.
+
+Subclass authors can explicitly check to make sure they've implemented
+all the necessary virtual methods. When used as part of a regression
+test, it will shield against the virtual method requirements changing
+out from under the subclass.
+
+Finally, subclass authors can get an explicit list of everything
+they're expected to implement.
+
+Doesn't hurt and it doesn't slow you down.

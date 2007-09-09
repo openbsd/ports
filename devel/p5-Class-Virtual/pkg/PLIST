@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/09 23:24:25 sthen Exp $
+${P5SITE}/Class/Virtual.pm
+${P5SITE}/Class/Virtually/
+${P5SITE}/Class/Virtually/Abstract.pm
+@man man/man3p/Class::Virtual.3p
+@man man/man3p/Class::Virtually::Abstract.3p
