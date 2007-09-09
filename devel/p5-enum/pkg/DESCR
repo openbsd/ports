@@ -1,0 +1,11 @@
+Defines a set of symbolic constants with ordered numeric values ala
+C enum types. What are they good for? Typical uses would be for giving
+mnemonic names to indexes of arrays.
+
+This not only reads easier, but can also be typo-checked at compile
+time when run under use strict. That is, if you misspell Days_Fri
+as Days_Fry, you'll generate a compile error.
+
+Also capable of creating ordered bitmask constants, allowing the
+easy creation of bitmask constants, allowing you to efficiently store
+many true/false options within a single integer.
