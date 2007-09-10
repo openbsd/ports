@@ -1,8 +1,8 @@
-$OpenBSD: patch-helpers_basic_auth_MSNT_Makefile_in,v 1.3 2006/11/13 02:11:39 brad Exp $
---- helpers/basic_auth/MSNT/Makefile.in.orig	Sun Oct 29 21:21:17 2006
-+++ helpers/basic_auth/MSNT/Makefile.in	Sat Nov  4 15:50:31 2006
-@@ -263,7 +263,7 @@ prefix = @prefix@
- program_transform_name = @program_transform_name@
+$OpenBSD: patch-helpers_basic_auth_MSNT_Makefile_in,v 1.4 2007/09/10 17:49:23 merdely Exp $
+--- helpers/basic_auth/MSNT/Makefile.in.orig	Sun Aug 12 08:40:48 2007
++++ helpers/basic_auth/MSNT/Makefile.in	Sun Sep  2 20:17:49 2007
+@@ -271,7 +271,7 @@ program_transform_name = @program_transform_name@
+ psdir = @psdir@
  sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
 -sysconfdir = @sysconfdir@

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2006/10/03 05:00:49 brad Exp $
+@comment $OpenBSD: PLIST,v 1.26 2007/09/10 17:49:23 merdely Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 bin/RunCache
@@ -20,6 +20,37 @@ share/examples/squid/
 @sample ${SYSCONFDIR}/squid/
 share/examples/squid/errors/
 @sample share/squid/errors/
+share/examples/squid/errors/Armenian/
+share/examples/squid/errors/Armenian/ERR_ACCESS_DENIED
+share/examples/squid/errors/Armenian/ERR_CACHE_ACCESS_DENIED
+share/examples/squid/errors/Armenian/ERR_CACHE_MGR_ACCESS_DENIED
+share/examples/squid/errors/Armenian/ERR_CANNOT_FORWARD
+share/examples/squid/errors/Armenian/ERR_CONNECT_FAIL
+share/examples/squid/errors/Armenian/ERR_DNS_FAIL
+share/examples/squid/errors/Armenian/ERR_FORWARDING_DENIED
+share/examples/squid/errors/Armenian/ERR_FTP_DISABLED
+share/examples/squid/errors/Armenian/ERR_FTP_FAILURE
+share/examples/squid/errors/Armenian/ERR_FTP_FORBIDDEN
+share/examples/squid/errors/Armenian/ERR_FTP_NOT_FOUND
+share/examples/squid/errors/Armenian/ERR_FTP_PUT_CREATED
+share/examples/squid/errors/Armenian/ERR_FTP_PUT_ERROR
+share/examples/squid/errors/Armenian/ERR_FTP_PUT_MODIFIED
+share/examples/squid/errors/Armenian/ERR_FTP_UNAVAILABLE
+share/examples/squid/errors/Armenian/ERR_INVALID_REQ
+share/examples/squid/errors/Armenian/ERR_INVALID_RESP
+share/examples/squid/errors/Armenian/ERR_INVALID_URL
+share/examples/squid/errors/Armenian/ERR_LIFETIME_EXP
+share/examples/squid/errors/Armenian/ERR_NO_RELAY
+share/examples/squid/errors/Armenian/ERR_ONLY_IF_CACHED_MISS
+share/examples/squid/errors/Armenian/ERR_READ_ERROR
+share/examples/squid/errors/Armenian/ERR_READ_TIMEOUT
+share/examples/squid/errors/Armenian/ERR_SHUTTING_DOWN
+share/examples/squid/errors/Armenian/ERR_SOCKET_FAILURE
+share/examples/squid/errors/Armenian/ERR_TOO_BIG
+share/examples/squid/errors/Armenian/ERR_UNSUP_REQ
+share/examples/squid/errors/Armenian/ERR_URN_RESOLVE
+share/examples/squid/errors/Armenian/ERR_WRITE_ERROR
+share/examples/squid/errors/Armenian/ERR_ZERO_SIZE_OBJECT
 share/examples/squid/errors/Azerbaijani/
 share/examples/squid/errors/Azerbaijani/ERR_ACCESS_DENIED
 share/examples/squid/errors/Azerbaijani/ERR_CACHE_ACCESS_DENIED

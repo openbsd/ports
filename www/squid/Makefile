@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.88 2007/09/01 20:11:21 kili Exp $
+# $OpenBSD: Makefile,v 1.89 2007/09/10 17:49:23 merdely Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
-DISTNAME=	squid-2.6.STABLE13
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	squid-2.6.STABLE16
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}Versions/v2/2.6/
 DIST_SUBDIR=	squid
@@ -35,7 +34,7 @@ PATCH_LIST=     patch-* gcc-*
 .endif
 
 SEPARATE_BUILD=	concurrent
-AUTOCONF_VERSION= 2.59
+AUTOCONF_VERSION= 2.61
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
 CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
