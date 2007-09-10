@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/01 21:35:57 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/10 18:19:47 jasper Exp $
 
-COMMENT-main=		"C++ interface for gtk2+"
-COMMENT-docs=		"C++ interface for gtk2+ documentation"
+COMMENT-main=		C++ interface for gtk2+
+COMMENT-docs=		C++ interface for gtk2+ documentation
 
-VERSION=		2.10.9
-DISTNAME=		gtkmm-${VERSION}
-PKGNAME-main=		gtk2mm-${VERSION}p0
+GNOME_PROJECT=		gtkmm
+GNOME_VERSION=		2.10.11
+PKGNAME-main=		gtk2mm-${VERSION}
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
-SHARED_LIBS=		atkmm-1.6	5.0 \
-			gdkmm-2.4	5.0 \
-			gtkmm-2.4	5.0 \
-			pangomm-1.4	5.0
+SHARED_LIBS=		atkmm-1.6	5.2 \
+			gdkmm-2.4	5.2 \
+			gtkmm-2.4	5.2 \
+			pangomm-1.4	5.2
 
 HOMEPAGE=		http://www.gtkmm.org/
 
@@ -24,15 +24,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkmm/2.10/}
-
 MULTI_PACKAGES=		-main -docs
 
 WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 			Xrender atk-1.0 cairo expat fontconfig freetype \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 png sigc-2.0 z
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 LIB_DEPENDS=		glibmm-2.4:glib2mm->=2.12:devel/glib2mm \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0:gtk+2->=2.8:x11/gtk+2 \
 			cairomm-1.0::graphics/cairomm
@@ -43,12 +42,10 @@ RUN_DEPENDS-docs=
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--enable-static
-CONFIGURE_ARGS+=	--disable-dependency-tracking
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--enable-static \
+			--disable-dependency-tracking
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 
