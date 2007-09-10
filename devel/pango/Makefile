@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2007/05/12 20:22:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/10 19:14:19 jasper Exp $
 
-COMMENT=		"library for layout and rendering of text"
+COMMENT=		library for layout and rendering of text
 
-DISTNAME=		pango-1.16.4
-SHARED_LIBS += pango-1.0	   1300.1    # .1600.4
-SHARED_LIBS += pangox-1.0	   1300.1    # .1600.4
-SHARED_LIBS += pangoft2-1.0	   1300.1    # .1600.4
-SHARED_LIBS += pangoxft-1.0	   1300.1    # .1600.4
-SHARED_LIBS += pangocairo-1.0	   1300.1    # .1600.4
+DISTNAME=		pango-1.16.5
+SHARED_LIBS += pango-1.0	   1300.2    # .1600.5
+SHARED_LIBS += pangox-1.0	   1300.2    # .1600.5
+SHARED_LIBS += pangoft2-1.0	   1300.2    # .1600.5
+SHARED_LIBS += pangoxft-1.0	   1300.2    # .1600.5
+SHARED_LIBS += pangocairo-1.0	   1300.2    # .1600.5
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org
@@ -37,11 +37,11 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pango; \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pango; \
 	cp -Rp ${WRKINST}/${SYSCONFDIR}/pango/* ${PREFIX}/share/examples/pango/
 
 do-regress:
-	@cd ${WRKSRC}/tests && ${MAKE} check
+	cd ${WRKSRC}/tests && ${MAKE} check
 
 .include <bsd.port.mk>
 
