@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/04/28 10:08:01 rui Exp $
+@comment $OpenBSD: PLIST,v 1.17 2007/09/10 20:41:59 rui Exp $
 @newgroup _lighttpd:585
 @newuser _lighttpd:585:_lighttpd:daemon:lighttpd Account:/nonexistent:/sbin/nologin
 bin/spawn-fcgi
@@ -69,6 +69,7 @@ lib/lighttpd/mod_webdav.so
 @man man/man1/lighttpd.1
 @man man/man1/spawn-fcgi.1
 sbin/lighttpd
+sbin/lighttpd-angel
 share/examples/lighttpd/
 share/examples/lighttpd/lighttpd.conf
 @sample ${SYSCONFDIR}/lighttpd.conf
