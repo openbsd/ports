@@ -1,22 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2007/06/18 23:24:06 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/10 23:22:29 jakemsr Exp $
 
 CATEGORIES=	multimedia x11 x11/kde
-COMMENT=	'video player for KDE'
+COMMENT=	video player for KDE
 
 HOMEPAGE=	http://kaffeine.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kaffeine/}
-DISTNAME=	kaffeine-0.8.4
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	kaffeine-0.8.5
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_ONLY=	Yes
 SHARED_LIBS +=	kaffeinepart         0.0      # .0.1
 SHARED_LIBS +=	kaffeineaudioencoder 0.0      # .0.1
 
 MODULES=	x11/kde
-USE_LIBTOOL=		Yes
-LIBTOOL_FLAGS=		--tag=disable-static
-MODKDE_VERSION=		3.5.3
+MODKDE_VERSION=		3.5.7
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.60
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
@@ -25,12 +21,10 @@ CONFIGURE_ARGS+=	--disable-libsuffix \
 			--without-arts \
 			--without-lame
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
-MAKE_FLAGS+=		LIBRESOLV=
 SEPARATE_BUILD=		simple
 
 LIB_DEPENDS=		kdecore.>=7,DCOP,kdesu,kio,kdefx,kparts,kutils,kdeprint,kdeui,kwalletclient,khtml,kjs::x11/kde/libs3 \
