@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/07 15:26:18 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/10 13:47:05 steven Exp $
 
 COMMENT=		documentation texmf tree for TeXLive
 
@@ -10,14 +10,13 @@ NO_REGRESS=		Yes
 PKG_ARCH=		*
 
 pre-install:
-	@# Blast away man/info pages, -base installed these already 
+# man/info pages are installed with the base package
 	rm -Rf ${WRKDIST}/texmf/doc/man
 	rm -Rf ${WRKDIST}/texmf/doc/info
 
 do-install:
-	@# Simple copy for install
-	umask 022 && \
-		cp -r ${WRKDIST}/texmf ${PREFIX}/share && \
-		cp -r ${WRKDIST}/texmf-dist ${PREFIX}/share
+	mv ${WRKDIST}/texmf ${PREFIX}/share
+	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/*
 
 .include <bsd.port.mk>
