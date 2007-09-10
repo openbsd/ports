@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.63 2007/09/09 14:43:04 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.64 2007/09/10 09:07:15 steven Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -53,6 +53,7 @@
     SUBDIR += scribus
     SUBDIR += t1utils
     SUBDIR += teTeX
+    SUBDIR += texlive
     SUBDIR += transfig
     SUBDIR += xpp
 
