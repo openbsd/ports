@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/04/17 14:57:11 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/09/10 21:02:25 simon Exp $
 bin/scons
 bin/scons-${VERSION}
+bin/scons-time
+bin/scons-time-${VERSION}
 bin/sconsign
 bin/sconsign-${VERSION}
 lib/scons-${VERSION}/
@@ -56,6 +58,8 @@ lib/scons-${VERSION}/SCons/Options/PathOption.py
 lib/scons-${VERSION}/SCons/Options/PathOption.pyc
 lib/scons-${VERSION}/SCons/Options/__init__.py
 lib/scons-${VERSION}/SCons/Options/__init__.pyc
+lib/scons-${VERSION}/SCons/PathList.py
+lib/scons-${VERSION}/SCons/PathList.pyc
 lib/scons-${VERSION}/SCons/Platform/
 lib/scons-${VERSION}/SCons/Platform/__init__.py
 lib/scons-${VERSION}/SCons/Platform/__init__.pyc
@@ -291,9 +295,25 @@ lib/scons-${VERSION}/SCons/Warnings.py
 lib/scons-${VERSION}/SCons/Warnings.pyc
 lib/scons-${VERSION}/SCons/__init__.py
 lib/scons-${VERSION}/SCons/__init__.pyc
+lib/scons-${VERSION}/SCons/compat/
+lib/scons-${VERSION}/SCons/compat/__init__.py
+lib/scons-${VERSION}/SCons/compat/__init__.pyc
+lib/scons-${VERSION}/SCons/compat/_scons_UserString.py
+lib/scons-${VERSION}/SCons/compat/_scons_UserString.pyc
+lib/scons-${VERSION}/SCons/compat/_scons_sets.py
+lib/scons-${VERSION}/SCons/compat/_scons_sets.pyc
+lib/scons-${VERSION}/SCons/compat/_scons_sets15.py
+lib/scons-${VERSION}/SCons/compat/_scons_sets15.pyc
+lib/scons-${VERSION}/SCons/compat/_scons_subprocess.py
+lib/scons-${VERSION}/SCons/compat/_scons_subprocess.pyc
+lib/scons-${VERSION}/SCons/compat/builtins.py
+lib/scons-${VERSION}/SCons/compat/builtins.pyc
+lib/scons-${VERSION}/SCons/cpp.py
+lib/scons-${VERSION}/SCons/cpp.pyc
 lib/scons-${VERSION}/SCons/dblite.py
 lib/scons-${VERSION}/SCons/dblite.pyc
 lib/scons-${VERSION}/SCons/exitfuncs.py
 lib/scons-${VERSION}/SCons/exitfuncs.pyc
+@man man/man1/scons-time.1
 @man man/man1/scons.1
 @man man/man1/sconsign.1
