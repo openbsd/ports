@@ -1,36 +1,36 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/07 15:26:18 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/10 14:50:50 steven Exp $
 
 COMMENT=		minimal texmf tree for TeXLive
 
 V=			2007
-DISTNAME=		texlive_texmf-minimal-${V}
+# distfile generation number (distfiles can change for same TeXLive version)
+G=			g0
+DISTNAME=		texlive_texmf-minimal-$V$G
+PKGNAME=		texlive_texmf-minimal-$Vp0
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
 
 pre-install:
-	@# Blast away man pages. -base will do these 
 	rm -Rf ${WRKDIST}/texmf/doc/man
+	rm -Rf ${WRKDIST}/texmf-dist/source
+# fix for broken bbold font
+	rm -f ${WRKDIST}/texmf-dist/tex/latex/jknapltx/ubbold.fd
+	cd ${WRKDIST}/texmf-dist/tex/latex/bbold/ && mv -f Ubbold.fd ubbold.fd
 
 do-install:
-	@# Simple copy for install
-	umask 022 && \
-		cp -r ${WRKDIST}/texmf ${PREFIX}/share && \
-		cp -r ${WRKDIST}/texmf-dist ${PREFIX}/share
+	mv ${WRKDIST}/texmf ${PREFIX}/share
+	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/*
 
 post-install:
-	@# Tweak fmtutil.cnf as there is no
-	@# XeTeX in this minimal texmf
+# tweak fmtutil.cnf (e.g. there's no XeTeX support in this minimal texmf)
 	cp ${PREFIX}/share/texmf/web2c/fmtutil.cnf \
 		${PREFIX}/share/texmf/web2c/fmtutil.cnf-dist
 	mv ${PREFIX}/share/texmf/web2c/fmtutil.cnf \
 		${PREFIX}/share/texmf/web2c/fmtutil.cnf-full
 	sed -e 's/.*xetex.*//g' ${PREFIX}/share/texmf/web2c/fmtutil.cnf-full \
 		> ${PREFIX}/share/texmf/web2c/fmtutil.cnf-minimal
-
-	@# updmap.cnf will change when updmap-sys is run
-	mv ${PREFIX}/share/texmf/web2c/updmap.cfg \
-		${PREFIX}/share/texmf/web2c/updmap.cfg-dist
 
 .include <bsd.port.mk>
