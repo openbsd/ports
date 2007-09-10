@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/17 21:53:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/10 13:37:26 steven Exp $
 @conflict teTeX_base-*
 %%SHARED%%
 bin/a2ping
@@ -473,7 +473,6 @@ share/texmf/web2c/omega.pool
 share/texmf/web2c/pdftex.pool
 share/texmf/web2c/tex.pool
 share/texmf/web2c/texmf.cnf
-share/texmf/web2c/texmf.cnf-dist
 share/texmf/web2c/xetex.pool
 share/texmf/xdvi/
 share/texmf/xdvi/XDvi
@@ -483,5 +482,5 @@ share/texmf/xdvi/pixmaps/toolbar2.xpm
 share/texmf/xdvi/xdvi.cfg
 @exec mktexlsr > /dev/null 2>&1
 @exec fmtutil-sys --all > /dev/null 2>&1
-@exec updmap-sys --syncwithtrees > /dev/null 2>&1
+@exec updmap-sys > /dev/null 2>&1
 @exec texlinks

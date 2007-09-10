@@ -1,4 +1,4 @@
-If you require anything other than a very minimal texmf tree then you
+If you require anything other than the minimal texmf tree then you
 should also install texlive_texmf-full (for ConTeXt, XeTeX etc.).  If
 you require documentation you should also install texlive_texmf-docs.
 This will enable you to use 'texdoc'.

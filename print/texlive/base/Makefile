@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/07 21:59:53 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/10 13:37:26 steven Exp $
 
 COMMENT=		base TeXLive LaTeX distribution
 
 V=			2007
 DISTNAME=		texlive_base-${V}-src
-PKGNAME=		texlive_base-${V}
-WRKDIST=		${WRKDIR}/texlive_base-${V}
+PKGNAME=		texlive_base-${V}p0
 SHARED_LIBS=		kpathsea	0.0
 
 WANTLIB=		m X11 ICE freetype Xt pthread c Xext fontconfig \
@@ -13,8 +12,8 @@ WANTLIB=		m X11 ICE freetype Xt pthread c Xext fontconfig \
 
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:texlive_texmf-minimal-${V}:print/texlive/texmf-minimal
-RUN_DEPENDS=		:texlive_texmf-minimal-${V}:print/texlive/texmf-minimal \
+BUILD_DEPENDS=		:texlive_texmf-minimal-${V}*:print/texlive/texmf-minimal
+RUN_DEPENDS=		:texlive_texmf-minimal-${V}*:print/texlive/texmf-minimal \
 			:ruby-*:lang/ruby \
 			:ghostscript-*:print/ghostscript/gnu \
 			:detex-*:print/detex \
@@ -24,6 +23,8 @@ RUN_DEPENDS=		:texlive_texmf-minimal-${V}:print/texlive/texmf-minimal \
 			:t1utils-*:print/t1utils
 LIB_DEPENDS=		t1.>=4::devel/t1lib \
 			png.>=3::graphics/png
+
+WRKDIST=		${WRKDIR}/texlive_base-${V}
 
 SEPARATE_BUILD=	simple
 USE_X11=	Yes
@@ -55,12 +56,10 @@ CONFIGURE_ARGS+=	--with-fontconfig=${X11BASE} \
 			--without-ps2eps \
 			--without-psutils \
 			--without-t1utils
-post-install:
-	@# Set SYSCONFDIR properly so that updmap-sys works
-	mv ${PREFIX}/share/texmf/web2c/texmf.cnf \
-                ${PREFIX}/share/texmf/web2c/texmf.cnf-dist
-	sed -e 's/^TEXMFSYSCONFIG = .*/TEXMFSYSCONFIG = $$TEXMFMAIN/g' \
-		${PREFIX}/share/texmf/web2c/texmf.cnf-dist > \
-		${PREFIX}/share/texmf/web2c/texmf.cnf
+
+post-build:
+	@# Fix for broken metapost
+	mv ${WRKBUILD}/texk/web2c/mpware/.libs/makempx \
+		${WRKBUILD}/texk/web2c/mpware/makempx
 
 .include <bsd.port.mk>
