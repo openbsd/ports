@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/05 07:57:33 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/11 20:26:45 merdely Exp $
 
 COMMENT-main=		network backup solution
 COMMENT-client=		network backup solution (client)
@@ -6,9 +6,9 @@ COMMENT-server=		network backup solution (server)
 
 VERSION=		2.0.3
 DISTNAME=		bacula-${VERSION}
-PKGNAME-main=		${DISTNAME}p0
-FULLPKGNAME-client=	bacula-client-${VERSION}p2
-PKGNAME-server=		bacula-server-${VERSION}p1
+PKGNAME-main=		${DISTNAME}p1
+FULLPKGNAME-client=	bacula-client-${VERSION}p3
+PKGNAME-server=		bacula-server-${VERSION}p2
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
@@ -55,6 +55,7 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--with-dir-group=_bacula \
 			--with-sd-user=root \
 			--with-sd-group=wheel \
+			--with-sbin-perm=755 \
 			--without-x \
 			--without-tcp-wrappers \
 			--without-smtp-host \
