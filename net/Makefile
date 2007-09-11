@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.477 2007/09/07 16:19:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.478 2007/09/11 08:36:13 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -119,6 +119,7 @@
      SUBDIR += kissd
      SUBDIR += ktorrent
      SUBDIR += ldistfp
+     SUBDIR += ldns
      SUBDIR += lftp
      SUBDIR += libbind
      SUBDIR += libdnet
