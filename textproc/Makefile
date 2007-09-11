@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2007/09/04 15:08:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.209 2007/09/11 21:20:37 merdely Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -98,6 +98,7 @@
      SUBDIR += p5-Pod-Tests
      SUBDIR += p5-Regexp-Common
      SUBDIR += p5-Regexp-DefaultFlags
+     SUBDIR += p5-SWISH-API
      SUBDIR += p5-Sort-Versions
      SUBDIR += p5-String-Approx
      SUBDIR += p5-String-Koremutake
@@ -203,6 +204,7 @@
      SUBDIR += source-highlight
      SUBDIR += sp
      SUBDIR += spiff
+     SUBDIR += swish-e
      SUBDIR += texi2html
      SUBDIR += textutils
      SUBDIR += tre
