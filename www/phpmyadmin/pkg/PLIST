@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2007/06/07 19:24:46 rui Exp $
+@comment $OpenBSD: PLIST,v 1.19 2007/09/11 05:01:14 jasper Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -8,7 +8,9 @@ phpMyAdmin/Documentation.txt
 phpMyAdmin/INSTALL
 phpMyAdmin/LICENSE
 phpMyAdmin/README
-phpMyAdmin/RELEASE-DATE-2.10.1
+@group
+phpMyAdmin/RELEASE-DATE-2.11.0
+@group daemon
 phpMyAdmin/TODO
 phpMyAdmin/browse_foreigners.php
 phpMyAdmin/calendar.php
@@ -22,9 +24,6 @@ phpMyAdmin/contrib/packaging/
 phpMyAdmin/contrib/packaging/Fedora/
 phpMyAdmin/contrib/packaging/Fedora/phpMyAdmin-http.conf
 phpMyAdmin/contrib/packaging/Fedora/phpMyAdmin.spec
-phpMyAdmin/css/
-phpMyAdmin/css/phpmyadmin.css.php
-phpMyAdmin/css/print.css
 phpMyAdmin/db_create.php
 phpMyAdmin/db_datadict.php
 phpMyAdmin/db_export.php
@@ -131,6 +130,10 @@ phpMyAdmin/lang/latvian-utf-8.inc.php
 phpMyAdmin/lang/latvian-windows-1257.inc.php
 phpMyAdmin/lang/lithuanian-utf-8.inc.php
 phpMyAdmin/lang/lithuanian-windows-1257.inc.php
+@group
+phpMyAdmin/lang/macedonian_cyrillic-utf-8.inc.php
+phpMyAdmin/lang/macedonian_cyrillic-windows-1251.inc.php
+@group daemon
 phpMyAdmin/lang/malay-iso-8859-1.inc.php
 phpMyAdmin/lang/malay-utf-8.inc.php
 phpMyAdmin/lang/mongolian-utf-8.inc.php
@@ -155,6 +158,9 @@ phpMyAdmin/lang/serbian_cyrillic-utf-8.inc.php
 phpMyAdmin/lang/serbian_cyrillic-windows-1251.inc.php
 phpMyAdmin/lang/serbian_latin-utf-8.inc.php
 phpMyAdmin/lang/serbian_latin-windows-1250.inc.php
+@group
+phpMyAdmin/lang/sinhala-utf-8.inc.php
+@group daemon
 phpMyAdmin/lang/slovak-iso-8859-2.inc.php
 phpMyAdmin/lang/slovak-utf-8.inc.php
 phpMyAdmin/lang/slovak-windows-1250.inc.php
@@ -180,8 +186,13 @@ phpMyAdmin/lang/ukrainian-windows-1251.inc.php
 phpMyAdmin/libraries/
 phpMyAdmin/libraries/.htaccess
 phpMyAdmin/libraries/Config.class.php
-phpMyAdmin/libraries/PMA_List.class.php
-phpMyAdmin/libraries/PMA_List_Database.class.php
+@group
+phpMyAdmin/libraries/File.class.php
+phpMyAdmin/libraries/List.class.php
+phpMyAdmin/libraries/List_Database.class.php
+phpMyAdmin/libraries/Sql.class.php
+phpMyAdmin/libraries/StorageEngine.class.php
+@group daemon
 phpMyAdmin/libraries/Table.class.php
 phpMyAdmin/libraries/Theme.class.php
 phpMyAdmin/libraries/Theme_Manager.class.php
@@ -195,19 +206,30 @@ phpMyAdmin/libraries/bookmark.lib.php
 phpMyAdmin/libraries/charset_conversion.lib.php
 phpMyAdmin/libraries/check_user_privileges.lib.php
 phpMyAdmin/libraries/cleanup.lib.php
+@group
+phpMyAdmin/libraries/common.inc.php
+@group daemon
 phpMyAdmin/libraries/common.lib.php
-phpMyAdmin/libraries/compat/
 phpMyAdmin/libraries/config.default.php
+@group
+phpMyAdmin/libraries/core.lib.php
+@group daemon
 phpMyAdmin/libraries/database_interface.lib.php
 phpMyAdmin/libraries/db_common.inc.php
 phpMyAdmin/libraries/db_info.inc.php
 phpMyAdmin/libraries/db_links.inc.php
+@group
+phpMyAdmin/libraries/db_routines.inc.php
+@group daemon
 phpMyAdmin/libraries/db_table_exists.lib.php
 phpMyAdmin/libraries/dbg/
 phpMyAdmin/libraries/dbg/setup.php
 phpMyAdmin/libraries/dbi/
 phpMyAdmin/libraries/dbi/mysql.dbi.lib.php
 phpMyAdmin/libraries/dbi/mysqli.dbi.lib.php
+@group
+phpMyAdmin/libraries/display_change_password.lib.php
+@group daemon
 phpMyAdmin/libraries/display_create_database.lib.php
 phpMyAdmin/libraries/display_create_table.lib.php
 phpMyAdmin/libraries/display_export.lib.php
@@ -238,6 +260,9 @@ phpMyAdmin/libraries/export/pdf.php
 phpMyAdmin/libraries/export/sql.php
 phpMyAdmin/libraries/export/xls.php
 phpMyAdmin/libraries/export/xml.php
+@group
+phpMyAdmin/libraries/export/yaml.php
+@group daemon
 phpMyAdmin/libraries/file_listing.php
 phpMyAdmin/libraries/footer.inc.php
 phpMyAdmin/libraries/get_foreign.lib.php
@@ -280,14 +305,22 @@ phpMyAdmin/libraries/sqlparser.data.php
 phpMyAdmin/libraries/sqlparser.lib.php
 phpMyAdmin/libraries/sqlvalidator.class.php
 phpMyAdmin/libraries/sqlvalidator.lib.php
-phpMyAdmin/libraries/storage_engines.lib.php
 phpMyAdmin/libraries/string.lib.php
+@group
+phpMyAdmin/libraries/string_mb.lib.php
+phpMyAdmin/libraries/string_native.lib.php
+phpMyAdmin/libraries/string_type_ctype.lib.php
+phpMyAdmin/libraries/string_type_native.lib.php
+@group daemon
 phpMyAdmin/libraries/tbl_common.php
 phpMyAdmin/libraries/tbl_indexes.lib.php
 phpMyAdmin/libraries/tbl_info.inc.php
 phpMyAdmin/libraries/tbl_links.inc.php
 phpMyAdmin/libraries/tbl_properties.inc.php
 phpMyAdmin/libraries/tbl_replace_fields.inc.php
+@group
+phpMyAdmin/libraries/tbl_triggers.lib.php
+@group daemon
 phpMyAdmin/libraries/tcpdf/
 phpMyAdmin/libraries/tcpdf/CHANGELOG
 phpMyAdmin/libraries/tcpdf/LICENSE
@@ -339,6 +372,9 @@ phpMyAdmin/navigation.php
 phpMyAdmin/pdf_pages.php
 phpMyAdmin/pdf_schema.php
 phpMyAdmin/phpinfo.php
+@group
+phpMyAdmin/phpmyadmin.css.php
+@group daemon
 phpMyAdmin/pmd/
 phpMyAdmin/pmd/images/
 phpMyAdmin/pmd/images/2leftarrow.png
@@ -403,6 +439,9 @@ phpMyAdmin/pmd_pdf.php
 phpMyAdmin/pmd_relation_new.php
 phpMyAdmin/pmd_relation_upd.php
 phpMyAdmin/pmd_save_pos.php
+@group
+phpMyAdmin/print.css
+@group daemon
 phpMyAdmin/querywindow.php
 phpMyAdmin/readme.php
 phpMyAdmin/scripts/
@@ -449,8 +488,18 @@ phpMyAdmin/tbl_select.php
 phpMyAdmin/tbl_sql.php
 phpMyAdmin/tbl_structure.php
 phpMyAdmin/test/
-phpMyAdmin/test/core.lib.php
-phpMyAdmin/test/escape_js_string.php
+@group
+phpMyAdmin/test/AllTests.php
+phpMyAdmin/test/Environment_test.php
+phpMyAdmin/test/FailTest.php
+phpMyAdmin/test/PMA_STR_sub_test.php
+phpMyAdmin/test/PMA_escapeJsString_test.php
+phpMyAdmin/test/PMA_get_real_size_test.php
+phpMyAdmin/test/PMA_isValid_test.php
+phpMyAdmin/test/PMA_pow_test.php
+phpMyAdmin/test/PMA_sanitize_test.php
+phpMyAdmin/test/PMA_transformation_getOptions_test.php
+@group daemon
 phpMyAdmin/test/theme.php
 phpMyAdmin/themes/
 phpMyAdmin/themes.php
@@ -701,3 +750,5 @@ phpMyAdmin/transformation_overview.php
 phpMyAdmin/transformation_wrapper.php
 phpMyAdmin/translators.html
 phpMyAdmin/user_password.php
+@group
+phpMyAdmin/view_create.php
