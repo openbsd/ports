@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.13 2007/09/06 19:21:55 pyr Exp $
+# $OpenBSD: OpenBSD,v 1.14 2007/09/11 11:02:23 chl Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -53,6 +53,7 @@
 48.87		2.33		"espie"		# Marc Espie
 49.22		-123.10		"hugh"		# Hugh Graham
 49.313446	-123.063975	"mjc"		# Michael Coulter
+49.41185	2.81784		"chl"		# Charles Longeau
 49.48		8.42		"naddy"		# Christian Weisgerber
 50.752		-3.276		"sthen"		# Stuart Henderson
 50.858		4.3897		"xsa"		# Xavier Santolaria
