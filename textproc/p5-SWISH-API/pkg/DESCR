@@ -1,0 +1,3 @@
+SWISH::API is an Object Oriented Perl interface to the swish-e C
+library.  This can be used to embed the swish-e search code into your
+perl program avoiding the need to run the swish-e binary for searching.
