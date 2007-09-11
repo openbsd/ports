@@ -1,0 +1,182 @@
+$OpenBSD: patch-route_c,v 1.1 2007/09/11 15:09:14 claudio Exp $
+--- route.c.orig	Wed Apr  5 08:13:55 2006
++++ route.c	Thu Sep  6 09:35:31 2007
+@@ -1622,7 +1622,7 @@ get_default_gateway (in_addr_t *ret)
+     }
+ }
+ 
+-#elif defined(TARGET_OPENBSD) || defined(TARGET_NETBSD)
++#elif defined(TARGET_NETBSD)
+ 
+ #include <sys/types.h>
+ #include <sys/socket.h>
+@@ -1671,6 +1671,169 @@ struct rt_msghdr {
+ 	int	rtm_errno;	/* why failed */
+ 	int	rtm_use;	/* from rtentry */
+ 	u_long	rtm_inits;	/* which metrics we are initializing */
++	struct	rt_metrics rtm_rmx; /* metrics themselves */
++};
++
++struct {
++  struct rt_msghdr m_rtm;
++  char       m_space[512];
++} m_rtmsg;
++
++#define ROUNDUP(a) \
++        ((a) > 0 ? (1 + (((a) - 1) | (sizeof(long) - 1))) : sizeof(long))
++
++static bool
++get_default_gateway (in_addr_t *ret)
++{
++  struct gc_arena gc = gc_new ();
++  int s, seq, l, rtm_addrs, i;
++  pid_t pid;
++  struct sockaddr so_dst, so_mask;
++  char *cp = m_rtmsg.m_space; 
++  struct sockaddr *gate = NULL, *sa;
++  struct  rt_msghdr *rtm_aux;
++
++#define NEXTADDR(w, u) \
++        if (rtm_addrs & (w)) {\
++            l = ROUNDUP(u.sa_len); memmove(cp, &(u), l); cp += l;\
++        }
++
++#define ADVANCE(x, n) (x += ROUNDUP((n)->sa_len))
++
++#define rtm m_rtmsg.m_rtm
++
++  pid = getpid();
++  seq = 0;
++  rtm_addrs = RTA_DST | RTA_NETMASK;
++
++  bzero(&so_dst, sizeof(so_dst));
++  bzero(&so_mask, sizeof(so_mask));
++  bzero(&rtm, sizeof(struct rt_msghdr));
++
++  rtm.rtm_type = RTM_GET;
++  rtm.rtm_flags = RTF_UP | RTF_GATEWAY;
++  rtm.rtm_version = RTM_VERSION;
++  rtm.rtm_seq = ++seq;
++  rtm.rtm_addrs = rtm_addrs; 
++
++  so_dst.sa_family = AF_INET;
++  so_dst.sa_len = sizeof(struct sockaddr_in);
++  so_mask.sa_family = AF_INET;
++  so_mask.sa_len = sizeof(struct sockaddr_in);
++
++  NEXTADDR(RTA_DST, so_dst);
++  NEXTADDR(RTA_NETMASK, so_mask);
++
++  rtm.rtm_msglen = l = cp - (char *)&m_rtmsg;
++
++  s = socket(PF_ROUTE, SOCK_RAW, 0);
++
++  if (write(s, (char *)&m_rtmsg, l) < 0)
++    {
++      warn("writing to routing socket");
++      gc_free (&gc);
++      close(s);
++      return false;
++    }
++
++  do {
++    l = read(s, (char *)&m_rtmsg, sizeof(m_rtmsg));
++  } while (l > 0 && (rtm.rtm_seq != seq || rtm.rtm_pid != pid));
++                        
++  close(s);
++
++  rtm_aux = &rtm;
++
++  cp = ((char *)(rtm_aux + 1));
++  if (rtm_aux->rtm_addrs) {
++    for (i = 1; i; i <<= 1)
++      if (i & rtm_aux->rtm_addrs) {
++	sa = (struct sockaddr *)cp;
++	if (i == RTA_GATEWAY )
++	  gate = sa;
++	ADVANCE(cp, sa);
++      }
++  }
++  else
++    {
++      gc_free (&gc);
++      return false;
++    }
++
++
++  if (gate != NULL )
++    {
++      *ret = ntohl(((struct sockaddr_in *)gate)->sin_addr.s_addr);
++#if 1
++      msg (M_INFO, "gw %s",
++	   print_in_addr_t ((in_addr_t) *ret, 0, &gc));
++#endif
++
++      gc_free (&gc);
++      return true;
++    }
++  else
++    {
++      gc_free (&gc);
++      return false;
++    }
++}
++
++#elif defined(TARGET_OPENBSD)
++
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++
++/* all of this is taken from <net/route.h> in OpenBSD 3.6 */
++#define RTA_DST		0x1	/* destination sockaddr present */
++#define RTA_GATEWAY	0x2	/* gateway sockaddr present */
++#define RTA_NETMASK	0x4	/* netmask sockaddr present */
++
++#define RTM_GET		0x4	/* Report Metrics */
++
++#define RTM_VERSION	4	/* Up the ante and ignore older versions */
++
++#define	RTF_UP		0x1		/* route usable */
++#define	RTF_GATEWAY	0x2		/* destination is a gateway */
++
++/*
++ * Huge version for userland compatibility.
++ */
++struct rt_metrics {
++	u_int64_t	rmx_pksent;	/* packets sent using this route */
++	u_int		rmx_locks;	/* Kernel must leave these values */
++	u_int		rmx_mtu;	/* MTU for this path */
++	u_int		rmx_expire;	/* lifetime for route, e.g. redirect */
++	u_int		rmx_refcnt;	/* # references hold */
++	/* some apps may still need these no longer used metrics */
++	u_int		rmx_hopcount;	/* max hops expected */
++	u_int		rmx_recvpipe;	/* inbound delay-bandwidth product */
++	u_int		rmx_sendpipe;	/* outbound delay-bandwidth product */
++	u_int		rmx_ssthresh;	/* outbound gateway buffer limit */
++	u_int		rmx_rtt;	/* estimated round trip time */
++	u_int		rmx_rttvar;	/* estimated rtt variance */
++};
++
++/*
++ * Structures for routing messages.
++ */
++struct rt_msghdr {
++	u_short	rtm_msglen;	/* to skip over non-understood messages */
++	u_char	rtm_version;	/* future binary compatibility */
++	u_char	rtm_type;	/* message type */
++	u_short	rtm_hdrlen;	/* sizeof(rt_msghdr) to skip over the header */
++	u_short	rtm_index;	/* index for associated ifp */
++	u_short rtm_tableid;	/* routing table id */
++	u_char	rtm_prio;	/* routing priority */
++	u_char	rtm_pad;
++	int	rtm_addrs;	/* bitmask identifying sockaddrs in msg */
++	int	rtm_flags;	/* flags, incl. kern & message, e.g. DONE */
++	int	rtm_fmask;	/* bitmask used in RTM_CHANGE message */
++	pid_t	rtm_pid;	/* identify sender */
++	int	rtm_seq;	/* for sender to identify action */
++	int	rtm_errno;	/* why failed */
++	u_int	rtm_inits;	/* which metrics we are initializing */
+ 	struct	rt_metrics rtm_rmx; /* metrics themselves */
+ };
+ 
