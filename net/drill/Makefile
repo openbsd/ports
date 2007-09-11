@@ -1,27 +1,32 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/02 07:20:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/11 08:25:26 jakob Exp $
 
-COMMENT=	"dns debugger"
+COMMENT=	"DNS debugger"
 
-VERSION=	0.9.2
-DISTNAME=	drill-${VERSION}
+VERSION=	1.2.0
+DISTNAME=	ldns-${VERSION}
+PKGNAME=	drill-${VERSION}
 CATEGORIES=	net
 
-MASTER_SITES=	http://www.nlnetlabs.nl/downloads/drill/
-HOMEPAGE=	http://www.nlnetlabs.nl/dnssec/drill.html
+MASTER_SITES+=	http://www.nlnetlabs.nl/downloads/
+
+HOMEPAGE=	http://www.nlnetlabs.nl/ldns/
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
-EXTRACT_SUFX=	.tar.bz2
-
-# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto
+WANTLIB=		c ssl crypto
+LIB_DEPENDS+=		ldns::net/ldns
 
+SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-WRKDIST=		${WRKDIR}/drill
+CONFIGURE_ARGS+=	--with-ldns=${LOCALBASE}
+USE_LIBTOOL=		Yes
+USE_GMAKE=		Yes
+
+WRKSRC=			${WRKDIST}/drill
 
 .include <bsd.port.mk>

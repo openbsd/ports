@@ -1,2 +1,2 @@
-drill is a tool ala dig, but is supposed to be more powerful and has been 
-designed with DNSSEC in mind.
+drill is a tool ala dig from BIND. It was designed with DNSSEC in mind and 
+should be a useful debugging/query tool for DNSSEC.
