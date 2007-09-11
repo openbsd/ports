@@ -1,0 +1,12 @@
+$OpenBSD: patch-prog-bin_Makefile_in,v 1.1.1.1 2007/09/11 20:52:49 merdely Exp $
+--- prog-bin/Makefile.in.orig	Sat Apr 14 19:29:29 2007
++++ prog-bin/Makefile.in	Sat Apr 14 19:29:47 2007
+@@ -191,7 +191,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ perlmoduledir = $(libexecdir)/perl
+-exampledir = $(datadir)/doc/$(PACKAGE)/examples/prog-bin
++exampledir = $(datadir)/examples/$(PACKAGE)/prog-bin
+ libexec_SCRIPTS = spider.pl DirTree.pl
+ 
+ # These are really out dated

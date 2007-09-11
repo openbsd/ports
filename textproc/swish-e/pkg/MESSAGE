@@ -1,0 +1,8 @@
+See ${PREFIX}/share/doc/swish-e/INSTALL for more setup information.
+
+Additional indexing functionality:
+* For PDF Documents, install xpdf package.
+* For MS Word Documents, install catdoc package.
+* For MP3 ID3 Tags, install p5-MP3-Tag package.
+* For MS Excel Files, install p5-Spreadsheet-ParseExcel package.
+

@@ -1,0 +1,12 @@
+$OpenBSD: patch-filters_Makefile_in,v 1.1.1.1 2007/09/11 20:52:49 merdely Exp $
+--- filters/Makefile.in.orig	Sat Apr 14 19:28:59 2007
++++ filters/Makefile.in	Sat Apr 14 19:29:13 2007
+@@ -198,7 +198,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = SWISH
+-exampledir = $(datadir)/doc/$(PACKAGE)/examples/filters
++exampledir = $(datadir)/examples/$(PACKAGE)/filters
+ bin_SCRIPTS = swish-filter-test
+ example_DATA = README
+ CLEANFILES = swish-filter-test

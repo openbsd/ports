@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/09/11 20:52:49 merdely Exp $
+@lib lib/libswish-e.so.${LIBswish-e_VERSION}

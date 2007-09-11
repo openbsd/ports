@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_Makefile_in,v 1.1.1.1 2007/09/11 20:52:49 merdely Exp $
+--- conf/Makefile.in.orig	Sat Apr 14 19:26:45 2007
++++ conf/Makefile.in	Sat Apr 14 19:27:09 2007
+@@ -185,7 +185,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-exampledir = $(datadir)/doc/$(PACKAGE)/examples/conf
++exampledir = $(datadir)/examples/$(PACKAGE)/conf
+ conf_dir = \
+     stopwords/dutch.txt \
+     stopwords/english.txt \
