@@ -1,0 +1,5 @@
+SNMP::Info gives an object oriented interface to information obtained
+through SNMP. This module is geared towards network devices.  Subclasses
+exist for a number of network devices and common MIBs. The idea behind
+this module is to give a common interface to data from network devices,
+leaving the device-specific hacks behind the scenes in subclasses.
