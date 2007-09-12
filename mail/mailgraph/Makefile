@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/22 17:23:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/12 15:16:33 sthen Exp $
 
-COMMENT=	"RRDtool frontend for Postfix statistics"
+COMMENT=	RRDtool frontend for Postfix statistics
 
-VERSION=	1.12
+VERSION=	1.13
 DISTNAME=	mailgraph-${VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}/pub/ \
 		${HOMEPAGE}/pub/old/
 
-HOMEPAGE=	http://people.ee.ethz.ch/~dws/software/mailgraph/
+HOMEPAGE=	http://mailgraph.schweikert.ch
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=     Stuart Henderson <sthen@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::net/rrdtool \
+RUN_DEPENDS=	:p5-RRD-*:net/rrdtool,-perl \
 		::devel/p5-File-Tail
 
 NO_REGRESS=	Yes
