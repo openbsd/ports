@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/08/10 12:50:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/09/12 16:23:26 ajacoutot Exp $
 bin/xfe
 bin/xfi
 bin/xfp
@@ -1199,7 +1199,6 @@ share/xfe/icons/gnomeblue-theme/zoomin.png
 share/xfe/icons/gnomeblue-theme/zoomout.png
 share/xfe/icons/gnomeblue-theme/zoomwin.png
 share/xfe/icons/windows-theme/
-share/xfe/icons/windows-theme/Capture.png
 share/xfe/icons/windows-theme/a_16x16.png
 share/xfe/icons/windows-theme/a_32x32.png
 share/xfe/icons/windows-theme/archadd.png
@@ -1578,7 +1577,6 @@ share/xfe/icons/xfce-theme/find_again.png
 share/xfe/icons/xfce-theme/fliplr.png
 share/xfe/icons/xfce-theme/flipud.png
 share/xfe/icons/xfce-theme/floppy.png
-share/xfe/icons/xfce-theme/folder.png
 share/xfe/icons/xfce-theme/fonts.png
 share/xfe/icons/xfce-theme/gif_16x16.png
 share/xfe/icons/xfce-theme/gif_32x32.png
@@ -1839,7 +1837,6 @@ share/xfe/icons/xfe-theme/deb_16x16.png
 share/xfe/icons/xfe-theme/deb_32x32.png
 share/xfe/icons/xfe-theme/delete_big.png
 share/xfe/icons/xfe-theme/delete_big_perm.png
-share/xfe/icons/xfe-theme/delimit.png
 share/xfe/icons/xfe-theme/desel.png
 share/xfe/icons/xfe-theme/details.png
 share/xfe/icons/xfe-theme/dia_16x16.png
