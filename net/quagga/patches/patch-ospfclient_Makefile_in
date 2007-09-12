@@ -1,7 +1,7 @@
-$OpenBSD: patch-ospfclient_Makefile_in,v 1.2 2007/06/20 18:05:36 rui Exp $
---- ospfclient/Makefile.in.orig	Fri Jun 15 17:11:45 2007
-+++ ospfclient/Makefile.in	Fri Jun 15 17:11:32 2007
-@@ -109,7 +109,8 @@ CXXCPP = @CXXCPP@
+$OpenBSD: patch-ospfclient_Makefile_in,v 1.3 2007/09/12 20:31:18 rui Exp $
+--- ospfclient/Makefile.in.orig	Fri Sep  7 17:54:57 2007
++++ ospfclient/Makefile.in	Tue Sep 11 16:52:21 2007
+@@ -107,7 +107,8 @@ CXXCPP = @CXXCPP@
  CXXDEPMODE = @CXXDEPMODE@
  CXXFLAGS = @CXXFLAGS@
  CYGPATH_W = @CYGPATH_W@

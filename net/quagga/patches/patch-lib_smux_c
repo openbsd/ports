@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_smux_c,v 1.2 2007/06/20 18:05:36 rui Exp $
---- lib/smux.c.orig	Sat Jun 16 20:32:10 2007
-+++ lib/smux.c	Sat Jun 16 20:32:42 2007
+$OpenBSD: patch-lib_smux_c,v 1.3 2007/09/12 20:31:18 rui Exp $
+--- lib/smux.c.orig	Wed May  9 21:59:34 2007
++++ lib/smux.c	Tue Sep 11 16:52:21 2007
 @@ -22,12 +22,8 @@
  #include <zebra.h>
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/06/20 18:05:36 rui Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/09/12 20:31:18 rui Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
@@ -54,7 +54,6 @@ include/quagga/quagga/workqueue.h
 include/quagga/quagga/zassert.h
 include/quagga/quagga/zclient.h
 include/quagga/quagga/zebra.h
-info/quagga.info
 lib/libospf.a
 lib/libospf.la
 lib/libzebra.a

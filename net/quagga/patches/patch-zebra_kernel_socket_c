@@ -1,6 +1,6 @@
-$OpenBSD: patch-zebra_kernel_socket_c,v 1.2 2007/06/20 18:05:36 rui Exp $
---- zebra/kernel_socket.c.orig	Fri Jun 15 17:15:18 2007
-+++ zebra/kernel_socket.c	Fri Jun 15 17:14:52 2007
+$OpenBSD: patch-zebra_kernel_socket_c,v 1.3 2007/09/12 20:31:18 rui Exp $
+--- zebra/kernel_socket.c.orig	Wed Aug 22 17:22:57 2007
++++ zebra/kernel_socket.c	Tue Sep 11 16:52:21 2007
 @@ -136,7 +136,7 @@ struct message rtm_type_str[] =
    {RTM_REDIRECT, "RTM_REDIRECT"},
    {RTM_MISS,     "RTM_MISS"},
