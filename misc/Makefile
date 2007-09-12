@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2007/07/16 15:17:38 todd Exp $
+# $OpenBSD: Makefile,v 1.101 2007/09/12 00:33:42 sthen Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -80,6 +80,7 @@
      SUBDIR += vttest
      SUBDIR += wmmand
      SUBDIR += wmtimer
+     SUBDIR += wordnet
      SUBDIR += xcdroast
      SUBDIR += xd
      SUBDIR += xdelta
