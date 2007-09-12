@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.478 2007/09/11 08:36:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.479 2007/09/12 07:18:23 msf Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -250,6 +250,7 @@
      SUBDIR += p5-PlRPC
      SUBDIR += p5-RPC-XML
      SUBDIR += p5-SNMP-BridgeQuery
+     SUBDIR += p5-SNMP-Info
      SUBDIR += p5-SNMP_Session
      SUBDIR += p5-Socket6
      SUBDIR += p5-Sys-Hostname-Long
