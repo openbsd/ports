@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2007/09/12 00:32:01 sthen Exp $
+--- doc/Makefile.in.orig	Tue Sep 11 10:51:44 2007
++++ doc/Makefile.in	Tue Sep 11 10:51:59 2007
+@@ -135,7 +135,8 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = html man pdf ps
++#SUBDIRS = html man pdf ps
++SUBDIRS = man
+ all: all-recursive
+ 
+ .SUFFIXES:

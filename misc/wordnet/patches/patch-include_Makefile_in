@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_Makefile_in,v 1.1.1.1 2007/09/12 00:32:01 sthen Exp $
+--- include/Makefile.in.orig	Tue Sep 11 11:34:29 2007
++++ include/Makefile.in	Tue Sep 11 11:34:39 2007
+@@ -147,7 +147,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ include_HEADERS = wn.h
+-SUBDIRS = tk
++#SUBDIRS = tk
+ all: all-recursive
+ 
+ .SUFFIXES:

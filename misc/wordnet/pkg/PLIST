@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/12 00:32:01 sthen Exp $
+bin/wishwn
+bin/wn
+bin/wnb
+include/wn.h
+lib/libWN.a
+@man man/man1/grind.1
+@man man/man1/wn.1
+@man man/man1/wnb.1
+@man man/man1/wnintro.1
+@man man/man3/binsrch.3
+@man man/man3/morph.3
+@man man/man3/wnintro.3
+@man man/man3/wnsearch.3
+@man man/man3/wnutil.3
+@man man/man5/cntlist.5
+@man man/man5/lexnames.5
+@man man/man5/senseidx.5
+@man man/man5/wndb.5
+@man man/man5/wninput.5
+@man man/man5/wnintro.5
+@man man/man7/morphy.7
+@man man/man7/uniqbeg.7
+@man man/man7/wngloss.7
+@man man/man7/wngroups.7
+@man man/man7/wnintro.7
+@man man/man7/wnlicens.7
+@man man/man7/wnpkgs.7
+@man man/man7/wnstats.7
+share/wordnet/
+share/wordnet/dict/
+share/wordnet/dict/adj.exc
+share/wordnet/dict/adv.exc
+share/wordnet/dict/cntlist
+share/wordnet/dict/cntlist.rev
+share/wordnet/dict/data.adj
+share/wordnet/dict/data.adv
+share/wordnet/dict/data.noun
+share/wordnet/dict/data.verb
+share/wordnet/dict/frames.vrb
+share/wordnet/dict/index.adj
+share/wordnet/dict/index.adv
+share/wordnet/dict/index.noun
+share/wordnet/dict/index.sense
+share/wordnet/dict/index.verb
+share/wordnet/dict/lexnames
+share/wordnet/dict/log.grind.3.0
+share/wordnet/dict/noun.exc
+share/wordnet/dict/sentidx.vrb
+share/wordnet/dict/sents.vrb
+share/wordnet/dict/verb.Framestext
+share/wordnet/dict/verb.exc
+share/wordnet/lib/
+share/wordnet/lib/wnres/
+share/wordnet/lib/wnres/license.txt
+share/wordnet/lib/wnres/wn.xbm
+share/wordnet/lib/wnres/wnb.man
+share/wordnet/lib/wnres/wngloss.man

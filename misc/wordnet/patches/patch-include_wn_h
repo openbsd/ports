@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_wn_h,v 1.1.1.1 2007/09/12 00:32:01 sthen Exp $
+--- include/wn.h.orig	Tue Sep 11 11:38:01 2007
++++ include/wn.h	Tue Sep 11 11:39:37 2007
+@@ -29,7 +29,7 @@
+ #else
+ #define DICTDIR         "/dict"
+ #ifndef DEFAULTPATH
+-#define DEFAULTPATH	"/usr/local/WordNet-3.0/dict"
++#define DEFAULTPATH	"%LOCALBASE%/share/wordnet/dict"
+ #endif
+ #define DATAFILE	"%s/data.%s"
+ #define INDEXFILE	"%s/index.%s"
