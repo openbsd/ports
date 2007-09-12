@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.tcl-shared,v 1.1 2004/09/15 21:37:10 espie Exp $
-lib/tclrrd.${RRDVERSION}/
-lib/tclrrd.${RRDVERSION}.so
-lib/tclrrd.${RRDVERSION}/pkgIndex.tcl

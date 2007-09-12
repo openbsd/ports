@@ -1,15 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.5 2004/02/09 17:39:09 sturm Exp $
---- doc/Makefile.in.orig	2004-01-04 13:40:52.000000000 +0100
-+++ doc/Makefile.in	2004-02-04 20:04:21.000000000 +0100
-@@ -187,9 +187,9 @@ PDF = $(MAN:.1=.pdf)
- EXTRA_DIST = $(POD) $(HTML) $(TXT)
- 
- # some install rules
--idocdir = $(prefix)/doc
-+idocdir = $(prefix)/share/doc/rrdtool
- idoc_DATA = $(POD) $(TXT)
--ihtmldir = $(prefix)/html
-+ihtmldir = $(prefix)/share/doc/rrdtool/html
- ihtml_DATA = $(HTML)
- imandir = $(prefix)/man/man1
- iman_DATA = $(MAN)
+$OpenBSD: patch-doc_Makefile_in,v 1.6 2007/09/12 14:34:36 msf Exp $
+--- doc/Makefile.in.orig	Thu May  3 03:06:59 2007
++++ doc/Makefile.in	Wed Jun 20 08:48:25 2007
+@@ -147,7 +147,7 @@ PYTHON_PLATFORM = @PYTHON_PLATFORM@
+ PYTHON_PREFIX = @PYTHON_PREFIX@
+ PYTHON_VERSION = @PYTHON_VERSION@
+ RANLIB = @RANLIB@
+-RRDDOCDIR = @RRDDOCDIR@
++RRDDOCDIR = $(datadir)/doc/rrdtool
+ RRDGRAPH_YLEGEND_ANGLE = @RRDGRAPH_YLEGEND_ANGLE@
+ RRD_DEFAULT_FONT = @RRD_DEFAULT_FONT@
+ RUBY = @RUBY@

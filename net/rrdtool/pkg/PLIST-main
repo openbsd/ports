@@ -1,0 +1,124 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2007/09/12 14:34:37 msf Exp $
+bin/rrdcgi
+bin/rrdtool
+bin/rrdupdate
+include/rrd.h
+lib/librrd.a
+lib/librrd.la
+@lib lib/librrd.so.${LIBrrd_VERSION}
+lib/librrd_th.a
+lib/librrd_th.la
+@lib lib/librrd_th.so.${LIBrrd_th_VERSION}
+@man man/man1/bin_dec_hex.1
+@man man/man1/cdeftutorial.1
+@man man/man1/rpntutorial.1
+@man man/man1/rrd-beginners.1
+@man man/man1/rrdbuild.1
+@man man/man1/rrdcgi.1
+@man man/man1/rrdcreate.1
+@man man/man1/rrddump.1
+@man man/man1/rrdfetch.1
+@man man/man1/rrdfirst.1
+@man man/man1/rrdgraph.1
+@man man/man1/rrdgraph_data.1
+@man man/man1/rrdgraph_examples.1
+@man man/man1/rrdgraph_graph.1
+@man man/man1/rrdgraph_rpn.1
+@man man/man1/rrdinfo.1
+@man man/man1/rrdlast.1
+@man man/man1/rrdlastupdate.1
+@man man/man1/rrdresize.1
+@man man/man1/rrdrestore.1
+@man man/man1/rrdthreads.1
+@man man/man1/rrdtool.1
+@man man/man1/rrdtune.1
+@man man/man1/rrdtutorial.1
+@man man/man1/rrdupdate.1
+@man man/man1/rrdxport.1
+share/doc/rrdtool/
+share/doc/rrdtool/html/
+share/doc/rrdtool/html/bin_dec_hex.html
+share/doc/rrdtool/html/cdeftutorial.html
+share/doc/rrdtool/html/index.html
+share/doc/rrdtool/html/rpntutorial.html
+share/doc/rrdtool/html/rrd-beginners.html
+share/doc/rrdtool/html/rrdbuild.html
+share/doc/rrdtool/html/rrdcgi.html
+share/doc/rrdtool/html/rrdcreate.html
+share/doc/rrdtool/html/rrddump.html
+share/doc/rrdtool/html/rrdfetch.html
+share/doc/rrdtool/html/rrdfirst.html
+share/doc/rrdtool/html/rrdgraph.html
+share/doc/rrdtool/html/rrdgraph_data.html
+share/doc/rrdtool/html/rrdgraph_examples.html
+share/doc/rrdtool/html/rrdgraph_graph.html
+share/doc/rrdtool/html/rrdgraph_rpn.html
+share/doc/rrdtool/html/rrdinfo.html
+share/doc/rrdtool/html/rrdlast.html
+share/doc/rrdtool/html/rrdlastupdate.html
+share/doc/rrdtool/html/rrdresize.html
+share/doc/rrdtool/html/rrdrestore.html
+share/doc/rrdtool/html/rrdthreads.html
+share/doc/rrdtool/html/rrdtool.html
+share/doc/rrdtool/html/rrdtune.html
+share/doc/rrdtool/html/rrdtutorial.html
+share/doc/rrdtool/html/rrdupdate.html
+share/doc/rrdtool/html/rrdxport.html
+share/doc/rrdtool/txt/
+share/doc/rrdtool/txt/bin_dec_hex.pod
+share/doc/rrdtool/txt/bin_dec_hex.txt
+share/doc/rrdtool/txt/cdeftutorial.pod
+share/doc/rrdtool/txt/cdeftutorial.txt
+share/doc/rrdtool/txt/rpntutorial.pod
+share/doc/rrdtool/txt/rpntutorial.txt
+share/doc/rrdtool/txt/rrd-beginners.pod
+share/doc/rrdtool/txt/rrd-beginners.txt
+share/doc/rrdtool/txt/rrdbuild.pod
+share/doc/rrdtool/txt/rrdbuild.txt
+share/doc/rrdtool/txt/rrdcgi.pod
+share/doc/rrdtool/txt/rrdcgi.txt
+share/doc/rrdtool/txt/rrdcreate.pod
+share/doc/rrdtool/txt/rrdcreate.txt
+share/doc/rrdtool/txt/rrddump.pod
+share/doc/rrdtool/txt/rrddump.txt
+share/doc/rrdtool/txt/rrdfetch.pod
+share/doc/rrdtool/txt/rrdfetch.txt
+share/doc/rrdtool/txt/rrdfirst.pod
+share/doc/rrdtool/txt/rrdfirst.txt
+share/doc/rrdtool/txt/rrdgraph.pod
+share/doc/rrdtool/txt/rrdgraph.txt
+share/doc/rrdtool/txt/rrdgraph_data.pod
+share/doc/rrdtool/txt/rrdgraph_data.txt
+share/doc/rrdtool/txt/rrdgraph_examples.pod
+share/doc/rrdtool/txt/rrdgraph_examples.txt
+share/doc/rrdtool/txt/rrdgraph_graph.pod
+share/doc/rrdtool/txt/rrdgraph_graph.txt
+share/doc/rrdtool/txt/rrdgraph_rpn.pod
+share/doc/rrdtool/txt/rrdgraph_rpn.txt
+share/doc/rrdtool/txt/rrdinfo.pod
+share/doc/rrdtool/txt/rrdinfo.txt
+share/doc/rrdtool/txt/rrdlast.pod
+share/doc/rrdtool/txt/rrdlast.txt
+share/doc/rrdtool/txt/rrdlastupdate.pod
+share/doc/rrdtool/txt/rrdlastupdate.txt
+share/doc/rrdtool/txt/rrdresize.pod
+share/doc/rrdtool/txt/rrdresize.txt
+share/doc/rrdtool/txt/rrdrestore.pod
+share/doc/rrdtool/txt/rrdrestore.txt
+share/doc/rrdtool/txt/rrdthreads.pod
+share/doc/rrdtool/txt/rrdthreads.txt
+share/doc/rrdtool/txt/rrdtool.pod
+share/doc/rrdtool/txt/rrdtool.txt
+share/doc/rrdtool/txt/rrdtune.pod
+share/doc/rrdtool/txt/rrdtune.txt
+share/doc/rrdtool/txt/rrdtutorial.pod
+share/doc/rrdtool/txt/rrdtutorial.txt
+share/doc/rrdtool/txt/rrdupdate.pod
+share/doc/rrdtool/txt/rrdupdate.txt
+share/doc/rrdtool/txt/rrdxport.pod
+share/doc/rrdtool/txt/rrdxport.txt
+share/examples/rrdtool/
+share/examples/rrdtool/cgi-demo.cgi
+share/rrdtool/
+share/rrdtool/fonts/
+share/rrdtool/fonts/DejaVuSansMono-Roman.ttf

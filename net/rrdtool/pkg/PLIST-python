@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-python,v 1.1 2007/09/12 14:34:37 msf Exp $
+lib/python${MODPY_VERSION}/site-packages/rrdtoolmodule.so

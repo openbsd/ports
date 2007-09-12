@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST-perl,v 1.1 2007/09/12 14:34:37 msf Exp $
+libdata/perl5/site_perl/RRDp.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/RRDs.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/ntmake.pl
+@man man/man3p/RRDp.3p
+@man man/man3p/RRDs.3p
+share/doc/rrdtool/html/RRDp.html
+share/doc/rrdtool/html/RRDs.html
+share/examples/rrdtool/4charts.pl
+share/examples/rrdtool/bigtops.pl
+share/examples/rrdtool/minmax.pl
+share/examples/rrdtool/perftest.pl
+share/examples/rrdtool/piped-demo.pl
+share/examples/rrdtool/shared-demo.pl
+share/examples/rrdtool/stripes.pl

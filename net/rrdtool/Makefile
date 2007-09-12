@@ -1,20 +1,24 @@
-# $OpenBSD: Makefile,v 1.37 2007/04/03 14:54:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2007/09/12 14:34:36 msf Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes 
 
-COMMENT=	"system to store and display time-series data"
+COMMENT-main=	system to store and display time-series data
+COMMENT-perl=	perl interface to librrd
+COMMENT-python= python interface to librrd
 
-RRDVERSION=	1.0.49
-DISTNAME=	rrdtool-${RRDVERSION}
-PKGNAME=	${DISTNAME}p4
-SHARED_LIBS=	rrd	0.0
+VERSION=	1.2.23
+DISTNAME=	rrdtool-${VERSION}
+PKGNAME-main=	${DISTNAME}
+PKGNAME-perl=	p5-RRD-${VERSION}
+PKGNAME-python= py-rrd-${VERSION}
+
+SHARED_LIBS+=	rrd 2.10
+SHARED_LIBS+=	rrd_th 2.8
+
 CATEGORIES=	net
-MASTER_SITES=	${HOMEPAGE}pub/rrdtool-1.0.x/ \
-		http://ftp.sunet.se/pub/network/monitoring/rrdtool/rrdtool-1.0.x/
 
+MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 HOMEPAGE=	http://oss.oetiker.ch/rrdtool/
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
@@ -22,36 +26,39 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-WANTLIB=		c freetype fontconfig jpeg m png z 
+MASTER_SITES=	${HOMEPAGE}pub/
 
-MODULES=	converters/libiconv
-
-SUBST_VARS=	RRDVERSION
-
-FLAVORS=	tcl
-FLAVOR?=
-
-LIB_DEPENDS=	gd.>=18::graphics/gd
-
+USE_GMAKE=	Yes
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+
+MULTI_PACKAGES=	-main -perl -python
+
+MODULES=	lang/python
+
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static \
-		--enable-local-libpng \
-		--enable-local-zlib
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/contrib/php4
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		--enable-perl-site-install \
+		--enable-python \
+		--disable-ruby \
+		--disable-tcl
+CPPFLAGS+=	-I${LOCALBASE}/include/libart-2.0 \
+		-I${LOCALBASE}/include/libpng \
+		-I${X11BASE}/include/ \
+		-I${X11BASE}/include/freetype2
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.if ${FLAVOR:L:Mtcl}
-LIB_DEPENDS+=	tcl84:tcl-8.4.*:lang/tcl/8.4
-USE_GMAKE=	Yes
-CONFIGURE_ARGS+= --with-tcllib="${LOCALBASE}/lib/tcl8.4"
-CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
-INSTALL_TARGET=	install site-tcl-install
-FAKE_FLAGS+=	MACHINE_ARCH="${MACHINE_ARCH}"
-.else
-CONFIGURE_ARGS+= --without-tcllib
-.endif
+WANTLIB-main=		c m z freetype
+LIB_DEPENDS-main=	png::graphics/png \
+			art_lgpl_2::graphics/libart
+RUN_DEPENDS-main=	
 
-CFLAGS+=	-I${LOCALBASE}/include/libpng
+WANTLIB-perl=		m
+LIB_DEPENDS-perl=	rrd::net/rrdtool
+RUN_DEPENDS-perl=	
+
+LIB_DEPENDS-python=	rrd::net/rrdtool
+RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 
 .include <bsd.port.mk>
