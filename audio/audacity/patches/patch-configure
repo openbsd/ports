@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2007/06/06 09:35:18 ajacoutot Exp $
---- configure.orig	Fri May 18 06:56:02 2007
-+++ configure	Tue Jun  5 10:43:27 2007
+$OpenBSD: patch-configure,v 1.6 2007/09/12 21:41:23 merdely Exp $
+--- configure.orig	Fri May 18 00:56:02 2007
++++ configure	Wed Sep 12 15:29:36 2007
 @@ -8516,7 +8516,7 @@ echo "$as_me: WARNING: no configuration information is
        { echo "$as_me:$LINENO: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&5
  echo "$as_me: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&6;}
@@ -10,3 +10,12 @@ $OpenBSD: patch-configure,v 1.5 2007/06/06 09:35:18 ajacoutot Exp $
  	   --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir ||
  	{ { echo "$as_me:$LINENO: error: $ac_sub_configure failed for $ac_dir" >&5
  echo "$as_me: error: $ac_sub_configure failed for $ac_dir" >&2;}
+@@ -8532,7 +8532,7 @@ pa_libs=
+ if [ "$use_portaudio" = "v19" ] ; then
+    pa_libs=`grep 'Libs:' lib-src/portaudio-v19/portaudio-2.0.pc | sed -e 's/Libs://;s/-L${libdir}//;s/-lportaudio//'`
+ fi
+-sed -i -e "s/@PA_LIBS@/$pa_libs/" src/Makefile
++perl -pi -e "s/\@PA_LIBS\@/$pa_libs/" src/Makefile
+ 
+ echo ""
+ echo "Finished configure:"
