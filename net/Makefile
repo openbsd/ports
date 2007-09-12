@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.479 2007/09/12 07:18:23 msf Exp $
+# $OpenBSD: Makefile,v 1.480 2007/09/12 14:35:42 msf Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -309,7 +309,6 @@
      SUBDIR += radiusd-lucent
      SUBDIR += rbldnsd
      SUBDIR += rrdtool
-     SUBDIR += rrdtool,tcl
      SUBDIR += rsnapshot
      SUBDIR += rsync
      SUBDIR += rtorrent
