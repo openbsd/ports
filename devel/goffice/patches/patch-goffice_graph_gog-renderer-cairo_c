@@ -1,0 +1,183 @@
+$OpenBSD: patch-goffice_graph_gog-renderer-cairo_c,v 1.1.1.1 2007/09/13 21:23:02 martynas Exp $
+--- goffice/graph/gog-renderer-cairo.c.orig	Tue Aug 30 03:50:11 2005
++++ goffice/graph/gog-renderer-cairo.c	Fri Jul  6 19:09:35 2007
+@@ -101,31 +101,6 @@ gog_renderer_cairo_finalize (GObject *obj)
+ 	(*parent_klass->finalize) (obj);
+ }
+ 
+-static void
+-gog_renderer_cairo_clip_push (GogRenderer *rend, GogRendererClip *clip)
+-{
+-	GogRendererCairo *crend = GOG_RENDERER_CAIRO (rend);
+-	double x, y;
+-
+-	/* Rounding clipping area trigger cairo fast clip */
+-	x = floor (clip->area.x + 0.5);
+-	y = floor (clip->area.y + 0.5);
+-
+-	cairo_save (crend->cairo);
+-	cairo_rectangle (crend->cairo, x, y,
+-			 floor (clip->area.x + clip->area.w + 0.5) - x,
+-			 floor (clip->area.y + clip->area.h + 0.5) - y);
+-	cairo_clip (crend->cairo);
+-}
+-
+-static void
+-gog_renderer_cairo_clip_pop (GogRenderer *rend, GogRendererClip *clip)
+-{
+-	GogRendererCairo *crend = GOG_RENDERER_CAIRO (rend);
+-
+-	cairo_restore (crend->cairo);
+-}
+-
+ static double
+ grc_line_size (GogRenderer const *rend, double width)
+ {
+@@ -139,37 +114,7 @@ grc_line_size (GogRenderer const *rend, double width)
+ 	return floor (width);
+ }
+ 
+-static double
+-gog_renderer_cairo_line_size (GogRenderer const *rend, double width)
+-{
+-	double size = grc_line_size (rend, width);
+-
+-	if (size < 1.0)
+-		return ceil (size);
+-
+-	return size;
+-}
+-
+ static void
+-gog_renderer_cairo_sharp_path (GogRenderer *rend, ArtVpath *path, double line_width) 
+-{
+-	ArtVpath *iter = path;
+-
+-	if (((int) (rint (line_width)) % 2 == 0) && line_width > 1.0) 
+-		while (iter->code != ART_END) {
+-			iter->x = floor (iter->x + .5);
+-			iter->y = floor (iter->y + .5);
+-			iter++;
+-		}
+-	else
+-		while (iter->code != ART_END) {
+-			iter->x = floor (iter->x) + .5;
+-			iter->y = floor (iter->y) + .5;
+-			iter++;
+-		}
+-}
+-
+-static void
+ grc_path (cairo_t *cr, ArtVpath *vpath, ArtBpath *bpath)
+ {
+ 	if (vpath) 
+@@ -250,6 +195,78 @@ grc_draw_path (GogRenderer *rend, ArtVpath const *vpat
+ }
+ 
+ static void
++gog_renderer_cairo_push_clip (GogRenderer *rend, GogRendererClip *clip)
++{
++	GogRendererCairo *crend = GOG_RENDERER_CAIRO (rend);
++	ArtVpath *path = clip->path;
++	int i;
++	gboolean is_rectangle;
++
++	for (i = 0; i < 6; i++)
++		if (path[i].code == ART_END)
++			break;
++	
++	is_rectangle = i == 5 &&
++		path[5].code == ART_END &&
++		path[0].x == path[3].x &&
++		path[0].x == path[4].x &&
++		path[1].x == path[2].x &&
++		path[0].y == path[1].y &&
++	       	path[0].y == path[4].y &&
++		path[2].y == path[3].y;
++
++	cairo_save (crend->cairo);
++	if (is_rectangle) {
++		double x = floor (path[0].x + 0.5);
++		double y = floor (path[0].y + 0.5);
++		cairo_rectangle (crend->cairo, x, y,
++				 floor (path[1].x + 0.5) - x,
++				 floor (path[2].y + 0.5) - y);
++	} else {
++		grc_path (crend->cairo, path, NULL);
++	}
++	cairo_clip (crend->cairo);
++}
++
++static void
++gog_renderer_cairo_pop_clip (GogRenderer *rend, GogRendererClip *clip)
++{
++	GogRendererCairo *crend = GOG_RENDERER_CAIRO (rend);
++
++	cairo_restore (crend->cairo);
++}
++
++static double
++gog_renderer_cairo_line_size (GogRenderer const *rend, double width)
++{
++	double size = grc_line_size (rend, width);
++
++	if (size < 1.0)
++		return ceil (size);
++
++	return size;
++}
++
++static void
++gog_renderer_cairo_sharp_path (GogRenderer *rend, ArtVpath *path, double line_width) 
++{
++	ArtVpath *iter = path;
++
++	if (((int) (rint (line_width)) % 2 == 0) && line_width > 1.0) 
++		while (iter->code != ART_END) {
++			iter->x = floor (iter->x + .5);
++			iter->y = floor (iter->y + .5);
++			iter++;
++		}
++	else
++		while (iter->code != ART_END) {
++			iter->x = floor (iter->x) + .5;
++			iter->y = floor (iter->y) + .5;
++			iter++;
++		}
++}
++
++static void
+ gog_renderer_cairo_draw_path (GogRenderer *rend, ArtVpath const *path)
+ {
+ 	grc_draw_path (rend, path, NULL);
+@@ -443,9 +460,8 @@ gog_renderer_cairo_draw_text (GogRenderer *rend, char 
+ 		case (PANGO_STYLE_OBLIQUE): slant = CAIRO_FONT_SLANT_OBLIQUE; break;
+ 		case (PANGO_STYLE_ITALIC):  slant = CAIRO_FONT_SLANT_ITALIC; break;
+ 	}
+-/*	g_message ("family: %s, size: %g", family, size);*/
+ 	/* FIXME: calculate dpi */
+-	size *= 96.0 * rend->scale * rend->zoom / 72.0;
++	size *= rend->scale * rend->zoom;
+ 	cairo_select_font_face (cr, family, slant, 
+ 		weight > PANGO_WEIGHT_SEMIBOLD ?  CAIRO_FONT_WEIGHT_BOLD : CAIRO_FONT_WEIGHT_NORMAL);
+ 	cairo_set_font_size (cr, size);
+@@ -516,7 +532,7 @@ gog_renderer_cairo_get_text_OBR (GogRenderer *rend,
+ 	
+ 	family = pango_font_description_get_family (fd);
+ 	/* FIXME: calculate dpi */
+-	size = pango_font_description_get_size (fd) / PANGO_SCALE / 72.0 * 96.0 * rend->scale * rend->zoom;
++	size = pango_font_description_get_size (fd) / PANGO_SCALE * rend->scale * rend->zoom;
+ 	weight = pango_font_description_get_weight (fd);
+ 	switch (pango_font_description_get_style (fd)) {
+ 		case (PANGO_STYLE_NORMAL):  slant = CAIRO_FONT_SLANT_NORMAL; break;
+@@ -610,8 +626,8 @@ gog_renderer_cairo_class_init (GogRendererClass *rend_
+ 	gobject_klass->finalize		= gog_renderer_cairo_finalize;
+ 	rend_klass->push_style		= gog_renderer_cairo_push_style;
+ 	rend_klass->pop_style		= gog_renderer_cairo_pop_style;
+-	rend_klass->clip_push  		= gog_renderer_cairo_clip_push;
+-	rend_klass->clip_pop     	= gog_renderer_cairo_clip_pop;
++	rend_klass->push_clip  		= gog_renderer_cairo_push_clip;
++	rend_klass->pop_clip     	= gog_renderer_cairo_pop_clip;
+ 	rend_klass->sharp_path		= gog_renderer_cairo_sharp_path;
+ 	rend_klass->draw_path	  	= gog_renderer_cairo_draw_path;
+ 	rend_klass->draw_polygon  	= gog_renderer_cairo_draw_polygon;
