@@ -1,0 +1,8 @@
+The cutils collection is composed by:
+
+    * cdecl and cundecl - decode and encode C type declarations
+    * cobfusc - make a C source file unreadable but compilable
+    * chilight - highlight C source files
+    * cunloop - unloop C loops
+    * yyextract - extract grammar rules from yacc grammar
+    * yyref - yacc grammar reference program 

@@ -1,0 +1,13 @@
+--- doc/cutils.info.orig	Sun Jul 15 18:03:24 2001
++++ doc/cutils.info	Wed Sep 12 11:00:56 2007
+@@ -1,5 +1,10 @@
+ This is cutils.info, produced by makeinfo version 4.0 from cutils.texi.
+ 
++INFO-DIR-SECTION Development
++START-INFO-DIR-ENTRY
++* cutils: (cutils).   The cutils collection	
++END-INFO-DIR-ENTRY
++
+ 
+ File: cutils.info,  Node: Top,  Next: Overview,  Prev: (dir),  Up: (dir)
+ 
