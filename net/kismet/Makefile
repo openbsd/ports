@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2007/06/28 12:43:32 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/13 08:35:02 sthen Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
-COMMENT-main=	"802.11 layer2 wireless network detector, sniffer, and IDS"
-COMMENT-gpsmap=	"reads GPS and Network XML datafiles and plots networks"
+COMMENT-main=	802.11 layer2 wireless network detector, sniffer, and IDS
+COMMENT-gpsmap=	reads GPS and Network XML datafiles and plots networks
 
 # No wireless capabilities
 NOT_FOR_ARCHS=m68k m88k vax
 
 V=		2007-01-R1b
 DISTNAME=	kismet-${V}
-PKGNAME-main=	kismet-${V:S,-,,g}
+PKGNAME-main=	kismet-${V:S,-,,g}p0
 PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}p1
 CATEGORIES=	net security
 
@@ -69,10 +69,10 @@ post-configure:
 
 post-build:
 	@perl -pi -e \
-		"s,/usr/local/etc(/kismet.conf),${CONFDIR}$1," \
+		's,/usr/local/etc(/kismet.conf),${CONFDIR}$$1,' \
 		${WRKSRC}/man/kismet.conf.5
 	@perl -pi -e \
-		"s,/usr/local/etc(/kismet.conf),${CONFDIR}$1," \
+		's,/usr/local/etc(/kismet.conf),${CONFDIR}$$1,' \
 		${WRKSRC}/man/kismet_drone.conf.5
 
 post-install:
