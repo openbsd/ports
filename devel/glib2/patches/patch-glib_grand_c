@@ -1,0 +1,12 @@
+$OpenBSD: patch-glib_grand_c,v 1.1 2007/09/13 10:51:14 djm Exp $
+--- glib/grand.c.orig	Thu Sep 13 09:01:56 2007
++++ glib/grand.c	Thu Sep 13 09:02:35 2007
+@@ -173,7 +173,7 @@ g_rand_new (void)
+       do
+         {
+ 	  errno = 0;
+-	  dev_urandom = fopen("/dev/urandom", "rb");
++	  dev_urandom = fopen("/dev/arandom", "rb");
+ 	}
+       while G_UNLIKELY (errno == EINTR);
+ 
