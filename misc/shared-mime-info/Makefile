@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/04/22 21:01:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/13 17:56:23 jasper Exp $
 
-COMMENT=		"shared mime database for desktops"
+COMMENT=		shared mime database for desktops
 
-DISTNAME=		shared-mime-info-0.21
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		shared-mime-info-0.22
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
@@ -24,6 +23,14 @@ BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		glib-2.0::devel/glib2 \
 			xml2::textproc/libxml
 
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	@perl -pi -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/update-mime-database.c \
+		${WRKSRC}/shared-mime-info-spec.xml
 
 .include <bsd.port.mk>
