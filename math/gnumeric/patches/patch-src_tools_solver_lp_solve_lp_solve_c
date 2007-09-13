@@ -1,0 +1,67 @@
+$OpenBSD: patch-src_tools_solver_lp_solve_lp_solve_c,v 1.1 2007/09/13 21:58:58 martynas Exp $
+--- src/tools/solver/lp_solve/lp_solve.c.orig	Thu Aug 25 17:23:43 2005
++++ src/tools/solver/lp_solve/lp_solve.c	Sun Jun  3 22:56:19 2007
+@@ -9142,7 +9142,7 @@ static void LU1FAD(LUSOLrec *LUSOL,
+          MELIM, NELIM, JMAX, IMAX, LL1, LSAVE, LFREE, LIMIT, MINFRE, LPIVR, LPIVR1, LPIVR2,
+          L, LPIVC, LPIVC1, LPIVC2, KBEST, LU, LR, LENJ, LC1, LAST, LL, LS,
+          LENI, LR1, LFIRST, NFILL, NZCHNG, K, MRANK, NSING;
+-  gnm_float   LIJ, LTOL, SMALL, USPACE, DENS1, DENS2, AIJMAX, AIJTOL, AMAX, ABEST, DIAG, V;
++  gnm_float   LIJ, LTOL, SMALL, U_SPACE, DENS1, DENS2, AIJMAX, AIJTOL, AMAX, ABEST, DIAG, V;
+ #ifdef ClassicHamaxR
+   int    LDIAGU;
+ #else
+@@ -9207,7 +9207,7 @@ static void LU1FAD(LUSOLrec *LUSOL,
+ 
+   LTOL = LUSOL->parmlu[LUSOL_RP_FACTORMAX_Lij];
+   SMALL = LUSOL->parmlu[LUSOL_RP_ZEROTOLERANCE];
+-  USPACE = LUSOL->parmlu[LUSOL_RP_COMPSPACE_U];
++  U_SPACE = LUSOL->parmlu[LUSOL_RP_COMPSPACE_U];
+   DENS1 = LUSOL->parmlu[LUSOL_RP_MARKOWITZ_CONLY];
+   DENS2 = LUSOL->parmlu[LUSOL_RP_MARKOWITZ_DENSE];
+   UTRI = TRUE;
+@@ -9596,7 +9596,7 @@ x300:
+       AMAXR += L;
+ #endif
+     }
+-    LIMIT = (int) (USPACE*LFILE)+LUSOL->m+LUSOL->n+1000;
++    LIMIT = (int) (U_SPACE*LFILE)+LUSOL->m+LUSOL->n+1000;
+ 
+ /*         Make sure the column file has room.
+            Also force a compression if its length exceeds a certain limit. */
+@@ -10901,11 +10901,11 @@ static void LU7FOR(LUSOLrec *LUSOL, int KFIRST, int KL
+   gboolean SWAPPD;
+   int    KBEGIN, IW, LENW, LW1, LW2, JFIRST, MINFRE, NFREE, L, J, KSTART, KSTOP, K,
+          LFIRST, IV, LENV, LV1, JLAST, LV2, LV3, LV, JV, LW, LDIAG, LIMIT;
+-  gnm_float   AMULT, LTOL, USPACE, SMALL, VJ, WJ;
++  gnm_float   AMULT, LTOL, U_SPACE, SMALL, VJ, WJ;
+ 
+   LTOL   = LUSOL->parmlu[LUSOL_RP_UPDATEMAX_Lij];
+   SMALL  = LUSOL->parmlu[LUSOL_RP_ZEROTOLERANCE];
+-  USPACE = LUSOL->parmlu[LUSOL_RP_COMPSPACE_U];
++  U_SPACE = LUSOL->parmlu[LUSOL_RP_COMPSPACE_U];
+   KBEGIN = KFIRST;
+   SWAPPD = FALSE;
+ 
+@@ -11175,7 +11175,7 @@ x910:
+         This should prevent memory fragmentation when there is far more
+         memory than necessary  (i.e. when  lena  is huge). */
+ x950:
+-  LIMIT = (int) (USPACE*(*LENU))+LUSOL->m+LUSOL->n+1000;
++  LIMIT = (int) (U_SPACE*(*LENU))+LUSOL->m+LUSOL->n+1000;
+   if(*LROW>LIMIT)
+     LU1REC(LUSOL, LUSOL->m,TRUE,LROW,LUSOL->indr,LUSOL->lenr,LUSOL->locr);
+   goto x990;
+@@ -15891,10 +15891,9 @@ static double timeNow(void)
+ #elif defined CLOCKTIME
+   return((double)clock()/CLOCKS_PER_SEC /* CLK_TCK */);
+ #else
+-  struct timeb buf;
+-
+-  ftime(&buf);
+-  return((double)buf.time+((double) buf.millitm)/1000.0);
++  GTimeVal tim;
++  g_get_current_time (&tim);
++  return tim.tv_sec + tim.tv_usec / 1e6;
+ #endif
+ }
+ 
