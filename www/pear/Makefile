@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/31 10:32:08 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/13 14:30:23 sthen Exp $
 
-COMMENT-main=	"base classes for common PHP tasks"
-COMMENT-utils=	"utilities for managing pear extensions"
+COMMENT-main=	base classes for common PHP tasks
+COMMENT-utils=	utilities for managing pear extensions
 
 VERSION=	1.5.0
 DISTNAME=	pear-${VERSION}
@@ -37,7 +37,7 @@ NO_REGRESS=	Yes
 
 do-install:
 	@perl -pi -e "s,%%PREFIX%%,${WRKINST}${PREFIX-main},g" ${WRKSRC}/go-pear
-	@${LOCALBASE}/bin/php -q ${WRKSRC}/go-pear
+	@${LOCALBASE}/bin/php -nq ${WRKSRC}/go-pear
 
 	@mv ${WRKINST}${PREFIX-main}/bin ${WRKINST}${PREFIX-utils}/
 	@mv ${WRKINST}${PREFIX-main}/share/doc/pear ${WRKINST}${PREFIX-utils}/share/doc/
