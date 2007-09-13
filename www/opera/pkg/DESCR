@@ -1,7 +1,2 @@
 Opera is a fast and customizable WWW browser, with support for Netscape
 compatible plug-ins.
-
-Issues:
-- some plug-ins might need the redhat_motif package
-- opera 8 might segfault with your old opera 7 configuration, in that
-  case remove ~/.opera and start over
