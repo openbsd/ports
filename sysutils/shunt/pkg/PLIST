@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/14 18:54:20 steven Exp $
+bin/exactly
+bin/flyisofs
+bin/shunt
+share/doc/shunt/
+share/doc/shunt/README.TXT

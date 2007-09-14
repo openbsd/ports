@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_Macros_mk,v 1.1.1.1 2007/09/14 18:54:20 steven Exp $
+--- src/Macros.mk.orig	Fri Sep 14 18:17:05 2007
++++ src/Macros.mk	Fri Sep 14 18:17:25 2007
+@@ -4,12 +4,12 @@
+ 
+ LIBRARY = ../../lib/libshunt.a
+ 
+-CC = gcc
++#CC = gcc
+ 
+ ifdef DEBUG
+     DCFLAGS += -g
+ else
+-    DCFLAGS += -O2 -DNDEBUG
++    DCFLAGS += -DNDEBUG
+ endif
+ 
+ ifdef PROFILE
+@@ -17,7 +17,7 @@ ifdef PROFILE
+ endif
+ 
+ CPPFLAGS += -MMD
+-CFLAGS = $(DCFLAGS) -Wall $(PROFILE_FLAGS)
++CFLAGS += $(DCFLAGS) -Wall $(PROFILE_FLAGS)
+ 
+ #STATIC += -static
+ LDFLAGS += $(STATIC) $(PROFILE_FLAGS)
