@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/11 20:26:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/14 14:58:58 merdely Exp $
 
 COMMENT-main=		network backup solution
 COMMENT-client=		network backup solution (client)
@@ -6,10 +6,13 @@ COMMENT-server=		network backup solution (server)
 
 VERSION=		2.0.3
 DISTNAME=		bacula-${VERSION}
-PKGNAME-main=		${DISTNAME}p1
+PKGNAME-main=		${DISTNAME}p2
 FULLPKGNAME-client=	bacula-client-${VERSION}p3
-PKGNAME-server=		bacula-server-${VERSION}p2
+PKGNAME-server=		bacula-server-${VERSION}p3
 CATEGORIES=		sysutils
+DIST_SUBDIR=		bacula
+PATCHFILES=		${VERSION}-restore.patch
+PATCH_DIST_ARGS=	-d ${WRKSRC}/src/stored --quiet
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 
