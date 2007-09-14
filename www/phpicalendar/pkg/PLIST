@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/10/11 05:53:47 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/09/14 07:10:22 sthen Exp $
+@group daemon
 phpicalendar/
 phpicalendar/AUTHORS
 phpicalendar/COPYING

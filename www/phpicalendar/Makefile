@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2005/10/30 10:57:40 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/14 07:10:22 sthen Exp $
 
-COMMENT=	"web-based iCal file parser"
+COMMENT=	web-based iCal file parser
 
 V=		2.1
 DISTNAME=	phpicalendar-${V}
+PKGNAME=	phpicalendar-${V}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://phpicalendar.net/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
