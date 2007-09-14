@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/09/14 21:16:14 steven Exp $
+@lib lib/libmowgli.so.${LIBmowgli_VERSION}
