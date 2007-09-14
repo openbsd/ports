@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.306 2007/09/06 19:46:35 merdely Exp $
+# $OpenBSD: Makefile,v 1.307 2007/09/14 01:20:51 merdely Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -168,6 +168,7 @@
      SUBDIR += qvwm,esound
      SUBDIR += qvwm,esound,imlib
      SUBDIR += qvwm,imlib
+     SUBDIR += qwt
      SUBDIR += ratmen
      SUBDIR += ratpoison
      SUBDIR += rdesktop
