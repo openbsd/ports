@@ -1,0 +1,20 @@
+# $OpenBSD: Makefile.examples,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
+
+EXAMPLES=	!!EXAMPLES!!
+
+all:
+	@for I in ${EXAMPLES}; \
+	  do (cd $$I; echo "==> Building for $$I"; \
+	    qmake4 $$I.pro && gmake; \
+            echo "";); \
+	done
+
+clean:
+	@for I in ${EXAMPLES}; \
+	  do (cd $$I; echo "==> Cleaning for $$I"; \
+	    gmake distclean; \
+	    rm -Rf obj; \
+	    rm -Rf moc; \
+	    echo "";); \
+	done
+

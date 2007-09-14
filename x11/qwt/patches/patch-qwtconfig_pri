@@ -1,0 +1,21 @@
+$OpenBSD: patch-qwtconfig_pri,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
+--- qwtconfig.pri.orig	Mon Jun 11 01:41:29 2007
++++ qwtconfig.pri	Tue Sep 11 10:59:39 2007
+@@ -3,7 +3,7 @@
+ ######################################################################
+ 
+ unix {
+-    INSTALLBASE    = /usr/local/qwt-5.0.2
++    INSTALLBASE    = !!PREFIX!!
+ }
+ 
+ win32 {
+@@ -12,7 +12,7 @@ win32 {
+ 
+ target.path    = $$INSTALLBASE/lib
+ headers.path   = $$INSTALLBASE/include
+-doc.path       = $$INSTALLBASE/doc
++doc.path       = $$INSTALLBASE/share/doc/qwt
+ 
+ ######################################################################
+ # qmake internal options

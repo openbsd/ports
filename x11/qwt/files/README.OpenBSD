@@ -1,0 +1,9 @@
+Building QWT Examples on OpenBSD
+
+To build the qwt examples:
+  cd !!PREFIX!!/share/examples/qwt
+  make
+
+A qwt example binary will be built in each subdirectory of
+!!PREFIX!!/share/examples/qwt.
+

@@ -1,0 +1,20 @@
+$OpenBSD: patch-examples_examples_pri,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
+--- examples/examples.pri.orig	Tue Sep 11 21:11:54 2007
++++ examples/examples.pri	Tue Sep 11 21:13:42 2007
+@@ -7,14 +7,12 @@
+ # modify it under the terms of the Qwt License, Version 1.0
+ ###################################################################
+ 
+-include( ../../qwtconfig.pri )
+-
+ TEMPLATE     = app
+ 
+ MOC_DIR      = moc
+ OBJECTS_DIR  = obj
+-INCLUDEPATH += ../../src
+-DEPENDPATH  += ../../src
++INCLUDEPATH += !!PREFIX!!/include
++DEPENDPATH  += !!PREFIX!!/lib
+ 
+ unix:LIBS        += -L../../lib -lqwt
+ 

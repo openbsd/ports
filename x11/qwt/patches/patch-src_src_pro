@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_src_pro,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
+--- src/src.pro.orig	Wed Sep  5 02:00:12 2007
++++ src/src.pro	Wed Sep  5 02:00:17 2007
+@@ -190,7 +190,7 @@ contains(CONFIG, QwtWidgets) {
+ headers.files  = $$HEADERS
+ doc.files      = ../doc/html
+ unix {
+-    doc.files      += ../doc/man
++#    doc.files      += ../doc/man
+ }
+ 
+ INSTALLS       = target headers doc
