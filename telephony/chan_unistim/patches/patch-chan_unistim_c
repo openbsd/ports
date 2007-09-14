@@ -1,0 +1,21 @@
+$OpenBSD: patch-chan_unistim_c,v 1.1.1.1 2007/09/14 13:24:42 ian Exp $
+--- chan_unistim.c.orig	Sun May 13 14:52:20 2007
++++ chan_unistim.c	Tue Jul  3 14:07:28 2007
+@@ -31,6 +31,8 @@
+ #include <unistd.h>
+ #include <sys/socket.h>
+ #include <sys/ioctl.h>
++#include <sys/stat.h>
++#include <sys/uio.h>
+ #include <net/if.h>
+ #include <errno.h>
+ #include <stdlib.h>
+@@ -74,7 +76,7 @@
+ 
+ /* IP_PKTINFO is not portable. It's used to retrieve our IP.
+    Comment the next line if your running *BSD */
+-#define HAVE_PKTINFO 1
++/* #define HAVE_PKTINFO 1 */
+ 
+ /* Beware, G729 and G723 are not supported by asterisk, except with the proper licence */
+ #define CAPABILITY AST_FORMAT_ALAW | AST_FORMAT_ULAW    /* | AST_FORMAT_G729A | AST_FORMAT_G723_1 */

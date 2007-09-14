@@ -1,0 +1,47 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/14 13:24:42 ian Exp $
+--- Makefile.orig	Sun Aug 27 00:22:39 2006
++++ Makefile	Mon Jan  8 20:54:33 2007
+@@ -5,29 +5,22 @@
+ .EXPORT_ALL_VARIABLES:
+ 
+ INSTALL_PREFIX=
+-ASTERISK_HEADER_DIR=$(INSTALL_PREFIX)/usr/include
++ASTERISK_HEADER_DIR=${PREFIX}/include
+ 
+-MODULES_DIR=$(INSTALL_PREFIX)/usr/lib/asterisk/modules
++MODULES_DIR=${PREFIX}/lib/asterisk/modules
+ 
+-PROC=$(shell uname -m)
+-
+ DEBUG=-g #-DDEBUG_THREADS -DDO_CRASH -DDETECT_DEADLOCKS #-pg
+ INCLUDE=-I$(ASTERISK_HEADER_DIR)
+-CFLAGS=-pipe -Wall -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
+-CFLAGS+=-O6
++CFLAGS+=$(DEBUG) $(INCLUDE)
++PROC=$(shell uname -m)
+ CFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+ CFLAGS+=$(shell if uname -m | grep -q ppc; then echo "-fsigned-char"; fi)
+ 
+ LIBS=-ldl -lpthread -lm
+-CC=gcc
+ INSTALL=install
+ 
+ SHAREDOS=chan_unistim.so
+ 
+-CFLAGS+=-Wno-missing-prototypes -Wno-missing-declarations
+-
+-CFLAGS+=-DCRYPTO
+-
+ all: $(SHAREDOS)
+ 
+ clean:
+@@ -40,8 +33,5 @@ chan_unistim.so: chan_unistim.o
+ 	$(CC) -shared -Xlinker -x -o $@ chan_unistim.o
+ 
+ install: all
++	mkdir -p $(MODULES_DIR)
+ 	for x in $(SHAREDOS); do $(INSTALL) -m 755 $$x $(MODULES_DIR) ; done
+-
+-config: all
+-	cp unistim.conf $(INSTALL_PREFIX)/etc/asterisk/
+-

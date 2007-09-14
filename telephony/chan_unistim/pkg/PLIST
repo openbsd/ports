@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/14 13:24:42 ian Exp $
+lib/asterisk/modules/chan_unistim.so
+share/examples/asterisk/chan_unistim/
+share/examples/asterisk/chan_unistim/README
+share/examples/asterisk/chan_unistim/unistim.conf
+@sample ${SYSCONFDIR}/asterisk/unistim.conf
