@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.544 2007/09/13 21:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.545 2007/09/14 06:27:13 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -442,6 +442,7 @@
      SUBDIR += p5-Sub-Name
      SUBDIR += p5-Sub-Override
      SUBDIR += p5-Sub-Uplevel
+     SUBDIR += p5-TAP-Parser
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
      SUBDIR += p5-Term-Prompt
