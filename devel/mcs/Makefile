@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/09 07:36:35 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/14 21:04:13 steven Exp $
 
-COMMENT=	"abstract the storage of configuration settings"
+COMMENT=	abstract the storage of configuration settings
 
-DISTNAME=	mcs-0.4.1
+V=		0.5.0
+DISTNAME=	libmcs-$V
+PKGNAME=	mcs-$V
 
-SHARED_LIBS=	mcs	0.0 \
-		keyfile	0.0
+SHARED_LIBS=	mcs	0.1 \
+		keyfile	0.1
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://sacredspiral.co.uk/~nenolod/mcs/
+HOMEPAGE=	http://www.atheme.org/projects/mcs.shtml
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
 
 CONFIGURE_STYLE=gnu
