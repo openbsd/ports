@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_geom_Makefile_in,v 1.1.1.1 2007/09/14 22:47:06 eric Exp $
+--- source/geom/Makefile.in.orig	Sat Jul 22 13:25:11 2006
++++ source/geom/Makefile.in	Sat Jul 22 13:24:59 2006
+@@ -57,7 +57,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.
+ am__installdirs = "$(DESTDIR)$(libdir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+-libgeos_la_LIBADD =
++libgeos_la_LIBADD = -lm -lstdc++
+ am__objects_1 = Coordinate.lo CoordinateSequence.lo \
+ 	CoordinateSequenceFactory.lo DefaultCoordinateSequence.lo \
+ 	DefaultCoordinateSequenceFactory.lo \
