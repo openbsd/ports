@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=	"X11 front-end for ghostscript"
+COMMENT=	X11 front-end for ghostscript
 
 DISTNAME=	ghostview-1.5
 CATEGORIES=	print

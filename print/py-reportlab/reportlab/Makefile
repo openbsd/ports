@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:41:20 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT=	"PDF-generating toolkit for Python"
+COMMENT=	PDF-generating toolkit for Python
 
 VERSION=	1.19
 DISTNAME=	ReportLab_${VERSION:S/./_/}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/19 10:44:40 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=		"filter to print a wide range of file formats"
+COMMENT=		filter to print a wide range of file formats
 
 DISTNAME=		apsfilter-7.2.8
 PKGNAME=		${DISTNAME}p0

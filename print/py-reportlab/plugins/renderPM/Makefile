@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:36:45 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"pixmap rendering for reportlab"
+COMMENT=	pixmap rendering for reportlab
 
 VERSION=	0.9
 DISTNAME=	renderPM-${VERSION:S/./-/}

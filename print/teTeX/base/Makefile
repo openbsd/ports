@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.46 2007/04/08 16:33:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.47 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT-main=	"TeX distribution, executables"
-COMMENT-fmt=	"format files"
+COMMENT-main=	TeX distribution, executables
+COMMENT-fmt=	format files
 
 VERSION=	3.0
 DISTNAME=	tetex-base-${VERSION}

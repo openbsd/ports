@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2006/04/17 14:19:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=		"macros for the OpenJade DSSSL TeX backend"
+COMMENT=		macros for the OpenJade DSSSL TeX backend
 
 DISTNAME=		jadetex-3.13
 CATEGORIES=     	print

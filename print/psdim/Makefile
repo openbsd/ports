@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/17 20:13:33 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT=		"intelligent n-up printing"
+COMMENT=		intelligent n-up printing
 
 DISTNAME=		psdim-1.4
 PKGNAME=		${DISTNAME}p0

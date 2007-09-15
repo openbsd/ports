@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2007/04/06 06:33:03 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
+COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-1.4.3
 PKGNAME=	${DISTNAME}p0
@@ -51,7 +51,7 @@ LIB_DEPENDS+=	forms.1::x11/xforms
 WANTLIB+=	Xpm flimage jpeg
 CONFIGURE_ARGS=	--with-frontend=xforms
 .else
-ERRORS+= "Fatal: Conflicting flavor: ${FLAVOR}"
+ERRORS+= Fatal: Conflicting flavor: ${FLAVOR}
 .endif
 
 CONFIGURE_STYLE=		gnu

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/13 16:50:42 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=		"converts .dvi files to plain text"
+COMMENT=		converts .dvi files to plain text
 
 DISTNAME=		dvi2tty-5.3.1
 CATEGORIES=     	print

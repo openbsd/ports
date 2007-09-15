@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2006/02/05 10:15:22 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=		"convert ASCII files to PostScript"
+COMMENT=		convert ASCII files to PostScript
 
 DISTNAME=		enscript-1.6.3
 PKGNAME=		${DISTNAME}p1

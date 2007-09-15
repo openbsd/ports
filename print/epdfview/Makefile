@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/04 18:50:59 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=	"lightweight PDF document viewer"
+COMMENT=	lightweight PDF document viewer
 
 DISTNAME=	epdfview-0.1.6
 PKGNAME=	${DISTNAME}p0

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2006/11/21 10:07:26 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2007/09/15 21:36:44 merdely Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
-COMMENT-main=	"free and portable TrueType font rendering engine"
-COMMENT-doc=	"documentation for FreeType"
+COMMENT-main=	free and portable TrueType font rendering engine
+COMMENT-doc=	documentation for FreeType
 
 VERSION=	1.3.1
 DISTNAME=	freetype-${VERSION}

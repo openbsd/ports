@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/08/03 15:15:20 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=		"35 standard PostScript fonts with Adobe name aliases"
+COMMENT=		35 standard PostScript fonts with Adobe name aliases
 
 DISTNAME=		ghostscript-fonts-std-8.11
 PKGNAME=		${DISTNAME:S,-std-,-,}p0

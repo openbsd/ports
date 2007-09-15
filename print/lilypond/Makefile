@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2007/06/06 20:36:23 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:36:44 merdely Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
 
 SHARED_ONLY=		Yes
 
-COMMENT-main=		"text based music notation system"
-COMMENT-docs=		"lilypond documentation"
+COMMENT-main=		text based music notation system
+COMMENT-docs=		lilypond documentation
 
 VERSION=		2.10.25
 DISTNAME=		lilypond-${VERSION}

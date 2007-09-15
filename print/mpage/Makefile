@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2006/02/05 10:21:27 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=	"print multiple pages per sheet on PostScript printer"
+COMMENT=	print multiple pages per sheet on PostScript printer
 
 DISTNAME=	mpage-2.5.3
 CATEGORIES=	print
 
 MAINTAINER=	Ian McWilliam <ian@dodo.com.au>
 
-PERMIT_PACKAGE_CDROM=	"incomplete license"
-PERMIT_PACKAGE_FTP=	"incomplete license"
+PERMIT_PACKAGE_CDROM=	incomplete license
+PERMIT_PACKAGE_FTP=	incomplete license
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
@@ -30,7 +30,7 @@ MAKE_FLAGS+=	PAGESIZE=Legal
 .elif ${FLAVOR:L} == "a4"
 MAKE_FLAGS+=	PAGESIZE=A4
 .else
-ERRORS+=	"Fatal: You must set exactly ONE flavor: ${FLAVORS}"
+ERRORS+=	Fatal: You must set exactly ONE flavor: ${FLAVORS}
 .endif
 
 NO_REGRESS=	Yes

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/16 02:48:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT=	"PDF presentation post processor"
+COMMENT=	PDF presentation post processor
 
 DISTNAME=	ppower4-0.9.4
 PKGNAME=	${DISTNAME}p5

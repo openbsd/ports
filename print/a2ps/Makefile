@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2007/08/04 22:04:11 kili Exp $
+# $OpenBSD: Makefile,v 1.38 2007/09/15 21:36:44 merdely Exp $
 
 COMMENT=	format ascii files for printing on PostScript printers
 
@@ -14,8 +14,8 @@ HOMEPAGE=	http://www.gnu.org/software/a2ps/
 # License info.  There is some questionable Sun and
 # Adobe Copyrighted things in this source tree.  It
 # looks fine for FTP, but likely not for the CDROM.
-PERMIT_PACKAGE_CDROM=	"No fee redistribution."
-PERMIT_DISTFILES_CDROM=	"No fee redistribution."
+PERMIT_PACKAGE_CDROM=	No fee redistribution.
+PERMIT_DISTFILES_CDROM=	No fee redistribution.
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m

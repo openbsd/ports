@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2007/01/18 20:46:21 jolan Exp $
+# $OpenBSD: Makefile,v 1.33 2007/09/15 21:36:44 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
 
-COMMENT-main=	"view, distribute and print PDF documents"
-COMMENT-plugins="further plugins for acrobat reader"
+COMMENT-main=	view, distribute and print PDF documents
+COMMENT-plugins=further plugins for acrobat reader
 
 V=		7.0.9
 DISTNAME=	AdobeReader_enu-${V}-1.i386
@@ -23,10 +23,10 @@ SHARED_LIBS=	ACE	2.07 \
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"commercial software"
-PERMIT_PACKAGE_FTP=	"commercial software"
-PERMIT_DISTFILES_CDROM=	"commercial software"
-PERMIT_DISTFILES_FTP=	"Adobe are control freaks"
+PERMIT_PACKAGE_CDROM=	commercial software
+PERMIT_PACKAGE_FTP=	commercial software
+PERMIT_DISTFILES_CDROM=	commercial software
+PERMIT_DISTFILES_FTP=	Adobe are control freaks
 
 MULTI_PACKAGES=	-main -plugins
 

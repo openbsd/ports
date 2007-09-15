@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/04/17 07:21:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=		"asian font pack for acroread"
+COMMENT=		asian font pack for acroread
 
 PKGNAME=		acrofonts-7.0
 CATEGORIES=		print
@@ -9,10 +9,10 @@ HOMEPAGE=		http://www.adobe.com/products/acrobat/readstep.html
 
 MAINTAINER=		Yozo TODA <yozo@v007.vaio.ne.jp>
 
-PERMIT_PACKAGE_CDROM=	"commercial software"
-PERMIT_PACKAGE_FTP=	"commercial software"
-PERMIT_DISTFILES_CDROM= "commercial software"
-PERMIT_DISTFILES_FTP=	"Adobe are control freaks"
+PERMIT_PACKAGE_CDROM=	commercial software
+PERMIT_PACKAGE_FTP=	commercial software
+PERMIT_DISTFILES_CDROM= commercial software
+PERMIT_DISTFILES_FTP=	Adobe are control freaks
 
 MASTER_SITES=		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
 			http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/

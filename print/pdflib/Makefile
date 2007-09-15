@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT=		"C library to produce PDF files"
+COMMENT=		C library to produce PDF files
 
 DISTNAME=		pdflib-4.0.3
 PKGNAME=		${DISTNAME}p2

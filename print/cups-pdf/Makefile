@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/07/05 15:57:26 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=		"PDF backend for CUPS"
+COMMENT=		PDF backend for CUPS
 
 DISTNAME=		cups-pdf-2.4.2
 PKGNAME=		${DISTNAME}p1

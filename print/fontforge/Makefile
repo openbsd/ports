@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/11 14:09:04 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:36:44 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"vector font editor/converter"
+COMMENT=		vector font editor/converter
 
 DISTNAME=		fontforge_full-20060822
 PKGNAME=		${DISTNAME:S,_full,,}

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/24 22:20:29 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT-main= 	"object oriented type setting language"
-COMMENT-doc=	"Lout user and expert documentation"
+COMMENT-main= 	object oriented type setting language
+COMMENT-doc=	Lout user and expert documentation
 
 DISTNAME=       lout-3.30
 PKGNAME-main=	${DISTNAME}p1

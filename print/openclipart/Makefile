@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/04/05 09:49:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:36:45 merdely Exp $
 
 V=0.18
 
-COMMENT=	'desktop publishing clip-art'
+COMMENT=	desktop publishing clip-art
 CATEGORIES=	print graphics
 DISTNAME=	openclipart-$V
 PKGNAME=	${DISTNAME}p2

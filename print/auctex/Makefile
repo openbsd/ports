@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/25 09:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=	"extensible emacs interface for TeX"
+COMMENT=	extensible emacs interface for TeX
 
 DISTNAME=	auctex-11.14
 PKGNAME=	${DISTNAME}p0

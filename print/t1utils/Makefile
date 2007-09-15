@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/10 23:14:01 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT=	"utilities for PostScript Type 1 fonts"
+COMMENT=	utilities for PostScript Type 1 fonts
 DISTNAME=	t1utils-1.32
 CATEGORIES=	print
 

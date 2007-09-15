@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT= 	"PostScript and PDF previewer"
+COMMENT= 	PostScript and PDF previewer
 
 DISTNAME=	gv-3.5.8
 PKGNAME=	${DISTNAME}p4

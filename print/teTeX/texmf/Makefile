@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/23 19:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT-main=	"TeX distribution, common support files"
-COMMENT-doc=	"TeX distribution, documentation"
+COMMENT-main=	TeX distribution, common support files
+COMMENT-doc=	TeX distribution, documentation
 
 V=		3.0
 DISTNAME=	tetex-texmf-${V}
@@ -18,7 +18,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 
-PERMIT_PACKAGE_FTP-doc=	"Removed for space constraints"
+PERMIT_PACKAGE_FTP-doc=	Removed for space constraints
 
 do-install:
 	@${INSTALL_DATA_DIR} ${TEXMF_DIR}

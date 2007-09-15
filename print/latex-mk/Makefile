@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/31 22:38:03 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=	"set of Makefile fragments to manage LaTeX documents"
+COMMENT=	set of Makefile fragments to manage LaTeX documents
 
 DISTNAME=	latex-mk-1.8
 CATEGORIES=	print

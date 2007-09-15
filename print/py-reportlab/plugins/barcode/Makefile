@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:41:19 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT=	"barcode generator for reportlab"
+COMMENT=	barcode generator for reportlab
 
 VERSION=	0.9.2
 DISTNAME=	rlbarcode-${VERSION}

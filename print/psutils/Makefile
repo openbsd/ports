@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2006/07/13 17:39:19 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT=	"manipulating PostScript documents"
+COMMENT=	manipulating PostScript documents
 
 DISTNAME=	psutils-p17
 PKGNAME=	psutils-0.17p0
@@ -31,7 +31,7 @@ OK=Yes
 .endfor
 OK?=No
 .if ${OK} == "No"
-ERRORS+="Fatal: Invalid flavor ${FLAVOR}"
+ERRORS+=Fatal: Invalid flavor ${FLAVOR}
 .endif
 
 MAKE_FLAGS=	\

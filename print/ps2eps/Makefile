@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/29 06:15:35 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:36:45 merdely Exp $
 
-COMMENT=	"convert Postscript to Encapsulated Postscript"
+COMMENT=	convert Postscript to Encapsulated Postscript
 
 DISTNAME=	ps2eps-1.64
 CATEGORIES=	print

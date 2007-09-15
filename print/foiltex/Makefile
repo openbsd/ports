@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2006/03/04 15:10:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:36:44 merdely Exp $
 
-COMMENT=	"LaTeX2e class for overhead transparencies"
+COMMENT=	LaTeX2e class for overhead transparencies
 
 DISTNAME=	foiltex-2.1.4a
 PKGNAME=	${DISTNAME}p4
 CATEGORIES=	print
 
-PERMIT_PACKAGE_CDROM=	"not-for-profit redistribution only"
+PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"not-for-profit redistribution only"
+PERMIT_DISTFILES_CDROM=	not-for-profit redistribution only
 PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
