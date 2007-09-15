@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/13 19:11:19 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"document viewer for multiple document formats"
+COMMENT=	document viewer for multiple document formats
 
 DISTNAME=	evince-0.8.1
 PKGNAME=	${DISTNAME}

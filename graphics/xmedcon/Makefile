@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=	"medical image conversion"
+COMMENT=	medical image conversion
 
 DISTNAME=	xmedcon-0.5.2
 PKGNAME=	${DISTNAME}p0

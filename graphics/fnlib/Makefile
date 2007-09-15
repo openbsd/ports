@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/13 11:20:24 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"color font rendering library for X"
+COMMENT=	color font rendering library for X
 
 DISTNAME=	fnlib-0.5
 PKGNAME=	${DISTNAME}p0

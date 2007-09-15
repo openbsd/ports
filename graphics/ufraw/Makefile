@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/08/06 22:52:09 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=		"read and manipulate raw images from digital cameras"
+COMMENT=		read and manipulate raw images from digital cameras
 
 DISTNAME=		ufraw-0.12
 PKGNAME=		${DISTNAME}p0

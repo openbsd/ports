@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/30 01:06:34 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"open source standalone flash(tm) player"
+COMMENT=	open source standalone flash(tm) player
 
 DISTNAME=	flash-0.4.10
 CATEGORIES=	graphics	

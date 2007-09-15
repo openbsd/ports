@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/20 19:44:47 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:09:42 simon Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"object-oriented Perl interface to ImageMagick"
+COMMENT=		object-oriented Perl interface to ImageMagick
 
 VER=			6.3.4
 DASHVER=		1

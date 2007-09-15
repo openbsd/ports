@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=		"fractal program with GTK interface"
+COMMENT=		fractal program with GTK interface
 DISTNAME=		gfract-0.33
 PKGNAME=		${DISTNAME}p1
 DISTFILES=		${DISTNAME}.tar.gz \

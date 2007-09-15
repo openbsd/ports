@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=		"draw maps and charts"
+COMMENT=		draw maps and charts
 
 V=			4.1.3
 DISTNAME=		GMT${V}

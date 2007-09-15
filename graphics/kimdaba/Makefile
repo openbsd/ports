@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/09 11:33:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=		"kde image database"
+COMMENT=		kde image database
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kphotoalbum-3.0
 PKGNAME=		${DISTNAME}p0

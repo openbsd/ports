@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/17 22:03:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:41 simon Exp $
 
-COMMENT-main=	"OCR software"
-COMMENT-gui=	"gocr tcl/tk frontend"
+COMMENT-main=	OCR software
+COMMENT-gui=	gocr tcl/tk frontend
 
 V=		0.44
 DISTNAME=	gocr-$V

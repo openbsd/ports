@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/31 06:52:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:42 simon Exp $
 
 PKG_ARCH=	*
 
-COMMENT=	"image viewer and organizer"
+COMMENT=	image viewer and organizer
 
 DISTNAME=	mapivi091
 PKGNAME=	mapivi-0.91p1

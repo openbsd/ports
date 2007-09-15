@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/12/06 17:21:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"module to determine the size of images in several formats"
+COMMENT=	module to determine the size of images in several formats
 
 DISTNAME=	Image-Size-3.01
 CATEGORIES=	graphics 

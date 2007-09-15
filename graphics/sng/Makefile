@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/01 14:46:42 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=		"PNG to ASCII compiler and decompiler"
+COMMENT=		PNG to ASCII compiler and decompiler
 
 DISTNAME=		sng-1.0.1
 PKGNAME=		${DISTNAME}p1

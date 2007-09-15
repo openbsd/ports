@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"Multiple-image Network Graphics (MNG) reference library"
+COMMENT=	Multiple-image Network Graphics (MNG) reference library
 
 DISTNAME=	lm1009
 PKGNAME=	libmng-1.0.9p1

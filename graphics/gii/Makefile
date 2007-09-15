@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2006/01/08 01:38:36 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 20:09:41 simon Exp $
 # Uses pthreads
 
-COMMENT=	"General Input Library (used by libggi)"
+COMMENT=	General Input Library (used by libggi)
 DISTNAME=	libgii-0.9.0
 PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gg	0.9	\

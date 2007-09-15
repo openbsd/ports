@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/30 15:11:17 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:09:42 simon Exp $
 
-COMMENT= 	"recolor gif images on the fly"
+COMMENT= 	recolor gif images on the fly
 
 MODULES=	cpan 
 

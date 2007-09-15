@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/21 14:24:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=		"tool for producing computational artwork"
+COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
 CATEGORIES=		graphics
 

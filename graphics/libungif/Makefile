@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/03/29 13:39:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"tools and library routines for working with GIF images"
+COMMENT=	tools and library routines for working with GIF images
 
 DISTNAME=	libungif-4.1.4
 PKGNAME=	${DISTNAME}p1

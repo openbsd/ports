@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	'digital camera command-line interface'
+COMMENT=	digital camera command-line interface
 CATEGORIES=	graphics
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>, Arnaud Launay <asl@launay.org>

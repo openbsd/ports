@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/18 21:22:19 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=	"(S)VCD authoring software"
+COMMENT=	(S)VCD authoring software
 
 VERSION=	0.6.2
 DISTNAME=	vcdimager-${VERSION}

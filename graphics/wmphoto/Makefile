@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2005/09/10 18:33:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=		'wm-dockapp; shows photos and execute commands on that photo'
+COMMENT=		wm-dockapp; shows photos and execute commands on that photo
 
 DISTNAME=		wmphoto-0.3a
 PKGNAME=		${DISTNAME}p0

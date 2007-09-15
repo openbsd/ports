@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2007/05/04 17:42:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=		"high-performance 2D graphics library"
+COMMENT=		high-performance 2D graphics library
 
 VERSION=		2.3.19
 DISTNAME=		libart_lgpl-${VERSION}

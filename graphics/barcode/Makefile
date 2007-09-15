@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/23 07:23:09 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"conver text strings to printed bars"
+COMMENT=	conver text strings to printed bars
 
 DISTNAME=	barcode-0.98
 CATEGORIES=	graphics

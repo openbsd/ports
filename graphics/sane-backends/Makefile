@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/01/29 08:27:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=	"API for accessing scanners, backends"
+COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.18
 PKGNAME=	${DISTNAME}p2

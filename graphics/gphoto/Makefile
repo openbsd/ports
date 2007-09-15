@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/05/16 09:56:38 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"universal digital camera picture control tool"
+COMMENT=	universal digital camera picture control tool
 
 DISTNAME=	gphoto-0.4.3
 PKGNAME=	${DISTNAME}p2

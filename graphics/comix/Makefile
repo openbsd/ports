@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/06 22:35:55 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"gtk2 comic book viewer"
+COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-3.6.2
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/19 10:49:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"digital camera RAW format conversion tool"
+COMMENT=	digital camera RAW format conversion tool
 
 DISTNAME=	dcraw-8.19
 PKGNAME=	${DISTNAME}p0

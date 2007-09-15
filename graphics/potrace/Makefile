@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/03 13:11:52 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=		"transforming bitmaps into vector graphics"
+COMMENT=		transforming bitmaps into vector graphics
 
 DISTNAME=		potrace-1.7
 CATEGORIES=		graphics

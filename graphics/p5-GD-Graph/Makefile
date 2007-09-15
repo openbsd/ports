@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/12/06 17:55:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"module for graph plotting"
+COMMENT=	module for graph plotting
 
 VERSION=        1.43 
 DISTNAME=       GDGraph-${VERSION}

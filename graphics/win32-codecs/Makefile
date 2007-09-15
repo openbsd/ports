@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2006/12/04 20:26:05 robert Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 20:09:43 simon Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"Huge compilation of Win32 binary codecs"
+COMMENT=	Huge compilation of Win32 binary codecs
 DATE=		20061022
 DATE2=		20050115
 
@@ -12,10 +12,10 @@ CATEGORIES=	graphics
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=   "Unsure of codec's license"
-PERMIT_PACKAGE_FTP=     "Unsure of codec's license"
-PERMIT_DISTFILES_CDROM= "Unsure of codec's license"
-PERMIT_DISTFILES_FTP=   "Unsure of codec's license"
+PERMIT_PACKAGE_CDROM=   Unsure of codec's license
+PERMIT_PACKAGE_FTP=     Unsure of codec's license
+PERMIT_DISTFILES_CDROM= Unsure of codec's license
+PERMIT_DISTFILES_FTP=   Unsure of codec's license
 
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/codecs/ \

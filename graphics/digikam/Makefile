@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/06/28 15:10:34 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=		"digital image kde application"
+COMMENT=		digital image kde application
 CATEGORIES=		graphics x11 x11/kde
 V=			0.9.2
 DISTNAME=		digikam-$V

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/03 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"image viewer for X"
+COMMENT=	image viewer for X
 
 VERSION=	1.4
 DISTNAME=	iview-${VERSION}

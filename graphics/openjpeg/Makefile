@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/17 15:55:08 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=		"open-source JPEG 2000 codec library"
+COMMENT=		open-source JPEG 2000 codec library
 
 DISTNAME=		openjpeg_v1_1
 PKGNAME=		openjpeg-1.1p1

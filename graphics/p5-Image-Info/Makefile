@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/12/02 18:45:54 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"perl module for getting image information"
+COMMENT=	perl module for getting image information
 
 MODULES=	cpan
 VERSION=	1.23

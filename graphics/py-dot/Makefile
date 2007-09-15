@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/30 10:47:28 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"Python interface to Graphiz's Dot"
+COMMENT=	Python interface to Graphiz's Dot
 
 DISTNAME=	pydot-0.9.10
 PKGNAME=	${DISTNAME:S/py/py-/}

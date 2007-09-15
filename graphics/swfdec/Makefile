@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/25 16:23:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=	"flash rendering library"
+COMMENT=	flash rendering library
 DISTNAME=	swfdec-0.2.2
 PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	swfdec	0.0

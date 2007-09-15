@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:43 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python wrapper for the GD library"
+COMMENT=	Python wrapper for the GD library
 
 DISTNAME=	gdmodule-0.56
 PKGNAME=	py-${DISTNAME:L:S/module//}p0

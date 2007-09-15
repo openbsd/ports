@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/04/02 19:57:48 martynas Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"OpenGL Utility Toolkit"
+COMMENT=	OpenGL Utility Toolkit
 
 DISTNAME=	glut-3.7
 PKGNAME=	${DISTNAME}p2
@@ -12,10 +12,10 @@ MASTER_SITES=	${HOMEPAGE}
 	
 HOMEPAGE=	http://www.opengl.org/resources/libraries/glut/
 
-PERMIT_PACKAGE_CDROM=	"incomplete license"
-PERMIT_PACKAGE_FTP=	"incomplete license"
-PERMIT_DISTFILES_CDROM=	"incomplete license"
-PERMIT_DISTFILES_FTP=	"incomplete license"
+PERMIT_PACKAGE_CDROM=	incomplete license
+PERMIT_PACKAGE_FTP=	incomplete license
+PERMIT_DISTFILES_CDROM=	incomplete license
+PERMIT_DISTFILES_FTP=	incomplete license
 
 CONFIGURE_STYLE= 	imake
 USE_X11= 		Yes

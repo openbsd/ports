@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.96 2007/05/20 19:44:47 steven Exp $
+# $OpenBSD: Makefile,v 1.97 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=		"image processing tools"
+COMMENT=		image processing tools
 
 VER=			6.3.4
 DASHVER=		1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:09:40 simon Exp $
 
 DISTNAME=	cadubi-1.3
 PKGNAME=	${DISTNAME}p0
@@ -10,7 +10,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-COMMENT=	"ASCII drawing utility"
+COMMENT=	ASCII drawing utility
 HOMEPAGE=	http://langworth.com/cadubi.html
 MASTER_SITES=	http://langworth.com/downloads/
 

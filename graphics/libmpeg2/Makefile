@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"free MPEG-2 video stream decoder"
+COMMENT=	free MPEG-2 video stream decoder
 DISTNAME=	mpeg2dec-0.4.0b
 PKGNAME=	${DISTNAME:S/mpeg2dec/libmpeg2/}p0
 SHARED_LIBS=	mpeg2		0.0 \

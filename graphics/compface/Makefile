@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/07/14 06:52:57 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"programs and library for the 'X-face' mail and news header"
+COMMENT=	programs and library for the 'X-face' mail and news header
 
 DISTNAME=	compface-1.5.2
 PKGNAME=	${DISTNAME}p0
@@ -8,9 +8,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/aux/
 HOMEPAGE=	http://freshmeat.net/projects/compface/
 
-PERMIT_PACKAGE_CDROM=	"No fee"
+PERMIT_PACKAGE_CDROM=	No fee
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	"No fee"
+PERMIT_DISTFILES_CDROM=	No fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 

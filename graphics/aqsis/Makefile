@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/03/28 17:14:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:09:40 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"photorealistic 3D rendering solution"
+COMMENT=	photorealistic 3D rendering solution
 
 V=		1.2.0
 DISTNAME=	aqsis-${V}

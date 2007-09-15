@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/23 08:51:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"morphing engine"
+COMMENT=	morphing engine
 
 DISTNAME=	animorph-0.2
 PKGNAME=	${DISTNAME}p0

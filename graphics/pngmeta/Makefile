@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"tool for extracting metadata from PNG files"
+COMMENT=	tool for extracting metadata from PNG files
 
 V=		1.11
 DISTNAME=	pngmeta-${V}	

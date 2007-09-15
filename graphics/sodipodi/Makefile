@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/15 09:24:09 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=		"SVG vector drawing application"
+COMMENT=		SVG vector drawing application
 
 DISTNAME=		sodipodi-0.34
 PKGNAME=		${DISTNAME}p7

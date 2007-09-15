@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2007/06/29 06:15:52 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"audio/video converter and streamer with bktr(4) support"
+COMMENT=	audio/video converter and streamer with bktr(4) support
 
 DISTNAME=		ffmpeg-svn-20070501
 PKGNAME=		${DISTNAME:S/-svn//}p0
@@ -15,7 +15,7 @@ HOMEPAGE=		http://ffmpeg.mplayerhq.hu/
 MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	"patents"
+PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes

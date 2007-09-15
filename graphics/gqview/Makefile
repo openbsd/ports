@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.48 2007/08/25 03:11:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.49 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"Gtk-based graphic file viewer"
+COMMENT=	Gtk-based graphic file viewer
 
 DISTNAME=	gqview-2.0.4
 PKGNAME=	${DISTNAME}p0

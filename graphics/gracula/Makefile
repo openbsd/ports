@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/30 01:06:36 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"graphic counter language compiler/interpreter"
+COMMENT=	graphic counter language compiler/interpreter
 
 DISTNAME=	gracula-3.0
 CATEGORIES=	graphics

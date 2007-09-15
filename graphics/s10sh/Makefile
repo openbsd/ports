@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2005/07/18 09:12:06 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=	"S10sh - a Canon PowerShot digital camera driver"
+COMMENT=	S10sh - a Canon PowerShot digital camera driver
 
 DISTNAME=	s10sh-0.2.0
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2006/04/08 20:28:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.32 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"IJG's JPEG compression utilities"
+COMMENT=	IJG's JPEG compression utilities
 
 DISTNAME=	jpegsrc.v6b
 PKGNAME=	jpeg-6bp3

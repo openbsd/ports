@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/19 14:24:01 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:09:42 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"perl interface to the cairo library"
+COMMENT=	perl interface to the cairo library
 
 MODULES=	cpan
 DISTNAME=	Cairo-1.040

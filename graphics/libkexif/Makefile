@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/09 11:33:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=		"kde interface to exif"
+COMMENT=		kde interface to exif
 CATEGORIES=		graphics devel x11 x11/kde
 DISTNAME=		libkexif-0.2.4
 PKGNAME=		${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=	"converts TIFF images to PNG format"
+COMMENT=	converts TIFF images to PNG format
 
 DISTNAME=	tiff2png-0.81c
 CATEGORIES=	graphics

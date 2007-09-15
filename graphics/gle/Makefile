@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/01/08 01:06:21 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=		"OpenGL Extrusion library"
+COMMENT=		OpenGL Extrusion library
 
 VERSION=		3.0.4
 DISTNAME=		gle-${VERSION}
@@ -11,8 +11,8 @@ CATEGORIES=     	graphics devel
 HOMEPAGE=		http://www.linas.org/gle/
 
 # Artistic/custom
-PERMIT_PACKAGE_CDROM=	"unclear"
-PERMIT_PACKAGE_FTP=	"unclear"
+PERMIT_PACKAGE_CDROM=	unclear
+PERMIT_PACKAGE_FTP=	unclear
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		Xi m

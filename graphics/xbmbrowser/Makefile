@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:09:43 simon Exp $
 # $FreeBSD: Makefile,v 1.3 1997/08/26 07:12:20 tg Exp $
 
-COMMENT=	"view complete directories of X bitmaps and X pixmaps"
+COMMENT=	view complete directories of X bitmaps and X pixmaps
 
 DISTNAME=	xbmbrowser5.1
 PKGNAME=	xbmbrowser-5.1

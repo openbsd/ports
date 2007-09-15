@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/02 20:00:57 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"GUI widget library used in MakeHuman"
+COMMENT=	GUI widget library used in MakeHuman
 
 DISTNAME=	mhgui-0.1
 PKGNAME=	${DISTNAME}p1

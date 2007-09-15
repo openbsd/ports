@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/09 11:33:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"image viewer for KDE, translations"
+COMMENT=	image viewer for KDE, translations
 
 DISTNAME=	gwenview-i18n-1.4.1
 PKGNAME=	${DISTNAME}p0

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/22 21:08:17 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:09:42 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"cairo bindings for Python"
+COMMENT=	cairo bindings for Python
 
 V=		1.4.0
 DISTNAME=	pycairo-${V}

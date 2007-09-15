@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/07/27 19:17:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:09:43 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Ruby binding to Gdk-pixbuf"
+COMMENT=	Ruby binding to Gdk-pixbuf
 
 VERSION=	0.34
 DISTNAME=	ruby-gnome-all-${VERSION}

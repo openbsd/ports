@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2007/07/31 13:06:49 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"ascii art library"
+COMMENT=	ascii art library
 
 DISTNAME=	aalib-1.2
 PKGNAME=	${DISTNAME}p2

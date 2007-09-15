@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.39 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.40 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=		"simple paint program"
+COMMENT=		simple paint program
 
 DISTNAME=		xpaint-2.7.8.1
 CATEGORIES=		graphics x11

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/30 01:06:35 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"handle GIF89a transparent option and interlace mode"
+COMMENT=	handle GIF89a transparent option and interlace mode
 
 DISTNAME=	giftrans
 PKGNAME=        giftrans-1.12

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/09 11:33:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=		"kde image plugins api"
+COMMENT=		kde image plugins api
 CATEGORIES=		graphics devel x11 x11/kde
 V=			0.1.5
 DISTNAME=		libkipi-$V

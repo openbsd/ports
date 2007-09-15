@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/15 08:04:22 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:40 simon Exp $
 
 HOMEPAGE=	http://www.exiv2.org/
-COMMENT=	'manipulate image meta-data such as exif and ipct'
+COMMENT=	manipulate image meta-data such as exif and ipct
 CATEGORIES=	graphics devel
 MASTER_SITES=	${HOMEPAGE}
 DISTNAME=	exiv2-0.13

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/27 21:30:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:09:42 simon Exp $
 
-COMMENT-main=	'high dynamic range image format'
-COMMENT-tools=	'image viewing tools for OpenEXR'
-COMMENT-doc=	'developer documentation for OpenEXR'
+COMMENT-main=	high dynamic range image format
+COMMENT-tools=	image viewing tools for OpenEXR
+COMMENT-doc=	developer documentation for OpenEXR
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.openexr.com/index.html

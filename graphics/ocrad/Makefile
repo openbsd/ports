@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/24 18:30:59 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"OCR program for pnm files"
+COMMENT=	OCR program for pnm files
 
 DISTNAME=	ocrad-0.17
 CATEGORIES=	graphics

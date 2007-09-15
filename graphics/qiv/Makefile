@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=		"very small and pretty fast gdk/Imlib image viewer"
+COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
 DISTNAME=		qiv-2.0
 CATEGORIES=		graphics

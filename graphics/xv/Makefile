@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2007/05/29 21:16:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=	"X11 image display and modification tool"
+COMMENT=	X11 image display and modification tool
 
 DISTNAME=	xv-3.10a
 PKGNAME=	${DISTNAME}p6
@@ -16,9 +16,9 @@ DIST_SUBDIR=	xv
 
 HOMEPAGE=	http://www.trilon.com/xv/index.html
 
-PERMIT_PACKAGE_CDROM=	"Must buy license"
+PERMIT_PACKAGE_CDROM=	Must buy license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"Must buy license"
+PERMIT_DISTFILES_CDROM=	Must buy license
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	jpeg.>=62.::graphics/jpeg \

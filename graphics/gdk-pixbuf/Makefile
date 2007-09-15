@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2007/06/05 14:48:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"GdkPixbuf graphics library"
+COMMENT=	GdkPixbuf graphics library
 
 DISTNAME=	gdk-pixbuf-0.22.0
 PKGNAME=	${DISTNAME}p6

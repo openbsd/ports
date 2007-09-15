@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/06 07:17:42 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"view, decode and encode DjVu files"
+COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.18
 SHARED_LIBS=	djvulibre 18.0

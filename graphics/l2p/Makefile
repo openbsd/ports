@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/11 11:52:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=		"create PNG images from LaTeX expressions"
+COMMENT=		create PNG images from LaTeX expressions
 
 DISTNAME=		l2p-1.1
 CATEGORIES=		graphics print

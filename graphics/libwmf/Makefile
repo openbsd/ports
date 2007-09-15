@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/04/08 16:33:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"WMF handling and conversion library"
+COMMENT=	WMF handling and conversion library
 
 DISTNAME=	libwmf-0.2.8.3
 PKGNAME=	${DISTNAME}p3

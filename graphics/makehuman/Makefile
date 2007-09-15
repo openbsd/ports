@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/02 00:48:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"parametrical modeling of 3D humanoid characters"
+COMMENT=	parametrical modeling of 3D humanoid characters
 
 DISTNAME=	makehuman-0.9
 PKGNAME=	${DISTNAME}p2

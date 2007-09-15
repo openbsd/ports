@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/06 05:30:50 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=	"MPEG and VCD video playback in XMMS"
+COMMENT=	MPEG and VCD video playback in XMMS
 SHARED_ONLY=	Yes
 
 VERSION=	0.3.5

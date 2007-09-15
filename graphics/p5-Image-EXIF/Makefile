@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/23 22:30:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"interface to read EXIF tags in JPEG images"
+COMMENT=	interface to read EXIF tags in JPEG images
 
 SHARED_ONLY=	Yes
 

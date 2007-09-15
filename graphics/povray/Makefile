@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/04/06 22:21:30 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=			"3D image rendering package"
+COMMENT=			3D image rendering package
 
 DISTNAME=			povray-3.1g
 PKGNAME=			${DISTNAME}p0

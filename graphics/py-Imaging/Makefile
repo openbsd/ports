@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2006/11/13 16:31:07 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 20:09:42 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python imaging library"
+COMMENT=	Python imaging library
 
 DISTNAME=	Imaging-1.1.5
 PKGNAME=	py-${DISTNAME}p0

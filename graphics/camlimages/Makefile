@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/26 22:39:31 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"image manipulation functions for Objective Caml"
+COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
 
 DISTNAME=	camlimages-2.2.0

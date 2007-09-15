@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2007/07/19 13:06:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2007/09/15 20:09:40 simon Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
@@ -28,7 +28,7 @@ RUN_DEPENDS=	:sox->=12.12:audio/sox \
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD license
-PERMIT_PACKAGE_CDROM=	"Runtime dependencies have patents"
+PERMIT_PACKAGE_CDROM=	Runtime dependencies have patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes

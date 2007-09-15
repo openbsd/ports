@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"anti-grain geometry graphics library"
+COMMENT=	anti-grain geometry graphics library
 
 DISTNAME=	agg-2.4
 SHARED_LIBS=	agg		2.4 \

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"digital camera frontend"
+COMMENT=	digital camera frontend
 
 VERSION=	0.1.10
 DISTNAME=	gtkam-${VERSION}

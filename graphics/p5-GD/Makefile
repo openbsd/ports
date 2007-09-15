@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/15 20:09:42 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"module to interface with the GD graphics library"
+COMMENT=	module to interface with the GD graphics library
 
 DISTNAME=	GD-2.30
 PKGNAME=	p5-${DISTNAME}p2

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/07/04 19:18:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:09:43 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"XMMS visualization plugin, to display Kjofol skins"
+COMMENT=	XMMS visualization plugin, to display Kjofol skins
 
 VERSION=	0.95
 DISTNAME=	kint_xmms-${VERSION}

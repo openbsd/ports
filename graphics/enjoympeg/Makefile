@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"mpeg-1 video player"
+COMMENT=	mpeg-1 video player
 
 VERSION=	0.4.1
 DISTNAME=	enjoympeg-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/28 15:08:59 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	'kde wrapper around exiv2'
+COMMENT=	kde wrapper around exiv2
 CATEGORIES=	graphics
 DISTNAME=	libkexiv2-0.1.5
 PKGNAME=	${DISTNAME}

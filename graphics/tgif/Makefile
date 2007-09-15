@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2007/05/19 09:01:15 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=	"two-dimensional drawing tool and hyper-object browser"
+COMMENT=	two-dimensional drawing tool and hyper-object browser
 
 VERSION=	4.1.45
 DISTNAME=       tgif-QPL-${VERSION}

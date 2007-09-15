@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2007/05/09 11:33:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.36 2007/09/15 20:09:41 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"image viewer for KDE"
+COMMENT=	image viewer for KDE
 
 DISTNAME=	gwenview-1.4.1
 PKGNAME=	${DISTNAME}p0

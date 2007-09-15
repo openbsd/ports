@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/08 00:29:37 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"library for decoding/generating MPEG TS/DVB PSI tables"
+COMMENT=	library for decoding/generating MPEG TS/DVB PSI tables
 VER=		0.1.4
 DISTNAME=	libdvbpsi3-${VER}
 PKGNAME=	libdvbpsi-${VER}p1

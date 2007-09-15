@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/10/20 01:08:04 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"generate index pages for displaying images"
+COMMENT=	generate index pages for displaying images
 
 DISTNAME=	indexpage-1.0.3
 CATEGORIES=	graphics

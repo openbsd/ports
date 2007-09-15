@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"dump frames from mpeg-1 movies"
+COMMENT=	dump frames from mpeg-1 movies
 
 VERSION=	0.6
 DISTNAME=	dumpmpeg-${VERSION}

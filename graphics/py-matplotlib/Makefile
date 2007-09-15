@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:09:43 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python charting and plotting API"
+COMMENT=	Python charting and plotting API
 
 DISTNAME=	matplotlib-0.83.2
 PKGNAME=	py-${DISTNAME}p5

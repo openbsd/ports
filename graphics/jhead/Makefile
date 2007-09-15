@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/05/29 17:40:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"Exif Jpeg camera setting parser and thumbnail remover"
+COMMENT=	Exif Jpeg camera setting parser and thumbnail remover
 
 DISTNAME=	jhead-2.6
 CATEGORIES=	graphics

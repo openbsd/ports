@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/23 06:28:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"load PNG graphics files and bind them to an OpenGL texture"
+COMMENT=	load PNG graphics files and bind them to an OpenGL texture
 
 VERSION=	1.45
 DISTNAME=	glpng

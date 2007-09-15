@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/08/05 12:34:33 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"gd binding for the lua language"
+COMMENT=	gd binding for the lua language
 
 V=		2.0.33r2
 PKGNAME=	luagd-$(V)p1

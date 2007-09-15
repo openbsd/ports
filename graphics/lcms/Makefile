@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/08/05 19:04:52 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"color management library"
+COMMENT=	color management library
 
 DISTNAME=	lcms-1.15
 PKGNAME=	${DISTNAME}

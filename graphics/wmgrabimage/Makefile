@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2005/09/10 18:33:12 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=		'wm-dockapp; WWW image monitor'
+COMMENT=		wm-dockapp; WWW image monitor
 
 DISTNAME=		wmGrabImage-0.72
 PKGNAME=		${DISTNAME:L}p0

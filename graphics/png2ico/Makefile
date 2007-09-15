@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"Convert PNG images to Windows .ico files"
+COMMENT=	Convert PNG images to Windows .ico files
 
 VERSION=	2002-12-08
 PKGNAME=	png2ico-${VERSION:S/-//g}

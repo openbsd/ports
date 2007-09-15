@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/06/28 16:03:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=		"documentation for digikam"
+COMMENT=		documentation for digikam
 CATEGORIES=		graphics x11 x11/kde
 V=			0.9.2-beta2
 DISTNAME=		digikam-doc-$V

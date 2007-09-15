@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.54 2007/06/01 18:57:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2007/09/15 20:09:41 simon Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
-COMMENT=	"image manipulation library for X11"
+COMMENT=	image manipulation library for X11
 
 V=		1.9.14
 DISTNAME=	imlib-${V}

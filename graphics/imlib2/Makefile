@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/04/08 16:33:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=	"image manipulation library"
+COMMENT=	image manipulation library
 
 DISTNAME=	imlib2-1.3.0
 PKGNAME=	${DISTNAME}p0

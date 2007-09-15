@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/03/31 12:32:35 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:09:42 simon Exp $
 
-COMMENT=	"image viewer/manager"
+COMMENT=	image viewer/manager
 DISTNAME=	pornview-0.2.0pre1
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics

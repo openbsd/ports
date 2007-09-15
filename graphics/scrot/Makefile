@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/03 12:53:18 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:09:43 simon Exp $
 
-COMMENT=		"commandline screen capture util"
+COMMENT=		commandline screen capture util
 
 DISTNAME=		scrot-0.8
 CATEGORIES=		graphics

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/06 12:38:17 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:09:41 simon Exp $
 
-COMMENT=		"color ascii art library"
+COMMENT=		color ascii art library
 DISTNAME=		libcaca-0.9
 PKGNAME=		${DISTNAME}p2
 CATEGORIES=		graphics
