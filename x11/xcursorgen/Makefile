@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 08:07:15 matthieu Exp $
 
-COMMENT=	"X11 Cursors themes generator"
-DISTNAME=	xcursorgen-X11R7.1-1.0.1
-PKGNAME=	xcursorgen-7.1
+COMMENT=	X11 Cursors themes generator
+DIST_VERS=	1.0.2
+XORG_VERS=	7.3
+DISTNAME=	xcursorgen-${DIST_VERS}
+PKGNAME=	xcursorgen-${XORG_VERS}
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wiki.X.Org/
@@ -17,16 +19,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.x.org/pub/X11R7.1/src/app/ \
-		ftp://x.mirrors.skynet.be/pub/x.org/pub/X11R7.1/src/app/
+MASTER_SITES=	ftp://ftp.x.org/pub/X11R${XORG_VERS}/src/app/ \
+		ftp://x.mirrors.skynet.be/pub/ftp.x.org/pub/X11R${XORG_VERS}/src/app/
 
-WANTLIB=		X11 Xcursor c m z
+WANTLIB=		Xrender Xcursor X11 Xfixes Xdmcp Xau c m z
 
 SEPARATE_BUILD= 	concurrent
 USE_X11=		Yes
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		XCURSORGEN_CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng" \
-			XCURSORGEN_LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11 -lXcursor -lpng -lz -lm"
+AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	autoconf no-autoheader
+CONFIGURE_ENV= 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+			ACLOCAL="aclocal -I ${X11BASE}/share/aclocal" \
+MAKE_FLAGS+= 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 NO_REGRESS=		Yes
 
