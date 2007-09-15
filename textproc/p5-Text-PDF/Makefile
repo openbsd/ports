@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2007/01/21 21:46:21 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 20:59:40 merdely Exp $
 
-COMMENT=	"perl modules for creating and manipulating PDF"
+COMMENT=	perl modules for creating and manipulating PDF
 
 MODULES=	cpan
 DISTNAME=	Text-PDF-0.25

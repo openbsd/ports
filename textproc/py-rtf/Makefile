@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:49:24 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"Rich Text Format document generation in Python"
+COMMENT=	Rich Text Format document generation in Python
 
 DISTNAME=	PyRTF-0.45
 PKGNAME=	${DISTNAME:L:S/^py/py-/}p0

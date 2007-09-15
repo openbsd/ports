@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2004/02/01 20:25:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"SGML DTDs from The Electronic Publishing SIG"
+COMMENT=	SGML DTDs from The Electronic Publishing SIG
 
 DISTNAME=	iso12083-1993
 CATEGORIES=	textproc

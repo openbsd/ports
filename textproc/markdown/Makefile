@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/14 12:04:11 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"text-to-HTML conversion tool"
+COMMENT=	text-to-HTML conversion tool
 
 DISTNAME=	markdown-1.6a
 CATEGORIES=	textproc

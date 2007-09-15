@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/16 14:44:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=		"parse, analyze and manipulate LaTeX documents"
+COMMENT=		parse, analyze and manipulate LaTeX documents
 
 DISTNAME=		LaTeX-TOM-0.5
 CATEGORIES=		textproc

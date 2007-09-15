@@ -4,10 +4,10 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
-# $OpenBSD: Makefile,v 1.15 2004/12/07 00:23:23 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:59:42 merdely Exp $
 #
 
-COMMENT=	"generate groff/HTML from linuxdoc/docbook SGML documents"
+COMMENT=	generate groff/HTML from linuxdoc/docbook SGML documents
 
 DISTNAME=	sgmlformat-1.7
 CATEGORIES=	textproc print

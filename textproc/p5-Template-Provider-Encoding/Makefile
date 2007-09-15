@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/21 20:18:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:40 merdely Exp $
 
-COMMENT= 	"explicit encoding for Template Toolkit"
+COMMENT= 	explicit encoding for Template Toolkit
 
 MODULES=	cpan
 DISTNAME=	Template-Provider-Encoding-0.09

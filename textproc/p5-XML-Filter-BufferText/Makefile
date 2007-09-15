@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/14 19:08:18 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:40 merdely Exp $
 
-COMMENT=	"collate XML character events in one chunk"
+COMMENT=	collate XML character events in one chunk
 
 MODULES=	cpan
 DISTNAME=	XML-Filter-BufferText-1.01

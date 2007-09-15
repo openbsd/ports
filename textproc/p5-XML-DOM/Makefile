@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:59:40 merdely Exp $
 
-COMMENT=	"perl module to build DOM Level 1 structures"
+COMMENT=	perl module to build DOM Level 1 structures
 
 MODULES=	cpan
 DISTNAME=	XML-DOM-1.44

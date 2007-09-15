@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/04/04 17:50:01 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"interpretive macro/programming language"
+COMMENT=	interpretive macro/programming language
 
 V=		06-080
 DISTNAME=	zoem-${V}

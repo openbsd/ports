@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/04/14 22:20:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs"
+COMMENT=	collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs
 
 DISTNAME=	wdg-sgml-lib-1.1.4
 PKGNAME=	${DISTNAME}p0

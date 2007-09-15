@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/07 00:23:20 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:59:37 merdely Exp $
 
-COMMENT=		"C-language sources to HTML converter"
+COMMENT=		C-language sources to HTML converter
 
 DISTNAME=		c2html-0.9.2
 CATEGORIES=		textproc www

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:40 merdely Exp $
 
-COMMENT=	"simple eyecandy ASCII Tables"
+COMMENT=	simple eyecandy ASCII Tables
 
 DISTNAME=	Text-SimpleTable-0.03
 PKGNAME=	p5-${DISTNAME}p1

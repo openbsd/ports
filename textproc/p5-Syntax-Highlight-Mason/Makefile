@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/21 21:46:21 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:40 merdely Exp $
 
-COMMENT=	"syntax highlight for Mason"
+COMMENT=	syntax highlight for Mason
 
 MODULES=	cpan
 DISTNAME=	Syntax-Highlight-Mason-1.21

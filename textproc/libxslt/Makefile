@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.54 2007/09/10 17:21:38 steven Exp $
+# $OpenBSD: Makefile,v 1.55 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=		"XSLT C Library for GNOME"
+COMMENT=		XSLT C Library for GNOME
 
 DISTNAME=		libxslt-1.1.22
 SHARED_LIBS=		exslt	9.5 \

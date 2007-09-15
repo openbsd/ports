@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/01/21 21:46:22 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"trivial perl API for reading/writing XML"
+COMMENT=	trivial perl API for reading/writing XML
 
 MODULES=	cpan
 DISTNAME=	XML-Simple-2.14

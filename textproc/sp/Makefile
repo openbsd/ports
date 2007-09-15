@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2006/04/14 21:09:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"OO toolkit for SGML parsing and entity management"
+COMMENT=	OO toolkit for SGML parsing and entity management
 
 DISTNAME=	sp-1.3.4
 PKGNAME=	${DISTNAME}p2

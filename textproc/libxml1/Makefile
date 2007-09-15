@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2006/02/08 23:08:35 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"XML parsing library for GNOME"
+COMMENT=	XML parsing library for GNOME
 
 VERSION=	1.8.17
 DISTNAME=	libxml-${VERSION}

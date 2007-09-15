@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"open source tool for summarizing texts"
+COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.4.2
 PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	ots-1	4.2

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/07 09:25:21 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"set default flags on regular expressions"
+COMMENT=	set default flags on regular expressions
 
 MODULES=	cpan
 

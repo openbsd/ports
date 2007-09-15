@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 16:29:53 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT= 	"memorable random strings"
+COMMENT= 	memorable random strings
 
 MODULES=	cpan
 

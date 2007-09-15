@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:59:37 merdely Exp $
 
-COMMENT=	"command line parser generator"
+COMMENT=	command line parser generator
 
 DISTNAME=	clo++-0.3.0
 CATEGORIES=	textproc

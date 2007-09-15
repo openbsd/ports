@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2004/02/01 20:25:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:59:36 merdely Exp $
 
-COMMENT=	"pure-Tcl implementation of XML parser"
+COMMENT=	pure-Tcl implementation of XML parser
 
 DISTNAME=	TclXML-1.2.1
 CATEGORIES=	textproc

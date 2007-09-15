@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2006/08/01 06:34:15 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:59:37 merdely Exp $
 
 PKG_ARCH=	*
 
-COMMENT=	"technical documentation XML/SGML definitions"
+COMMENT=	technical documentation XML/SGML definitions
 
 DISTNAME=	docbook-4.4
 DIST_SUBDIR=	docbook

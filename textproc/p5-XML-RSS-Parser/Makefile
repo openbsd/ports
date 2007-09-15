@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=		"liberal object-oriented parser for RSS feeds"
+COMMENT=		liberal object-oriented parser for RSS feeds
 
 MODULES=		cpan
 DISTNAME=		XML-RSS-Parser-4.0

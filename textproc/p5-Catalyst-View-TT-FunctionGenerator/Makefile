@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/21 21:46:20 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT= 	"use shorter names in catalyst tt views"
+COMMENT= 	use shorter names in catalyst tt views
 
 MODULES=	cpan
 DISTNAME=	Catalyst-View-TT-FunctionGenerator-0.01

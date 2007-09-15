@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/24 11:16:44 dassow Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT= 	"XSLT Views for catalyst"
+COMMENT= 	XSLT Views for catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-View-XSLT-0.03

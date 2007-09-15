@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/07 00:23:24 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"word differences between text files"
+COMMENT=	word differences between text files
 
 DISTNAME=	wdiff-0.5
 CATEGORIES=	textproc

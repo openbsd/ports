@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/21 21:46:22 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"perl interface to the SAX2 XML Parser"
+COMMENT=	perl interface to the SAX2 XML Parser
 
 MODULES=	cpan
 DISTNAME=	XML-SAX-0.14

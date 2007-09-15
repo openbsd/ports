@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/10/29 18:18:47 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"GTK C code documentation system"
+COMMENT=	GTK C code documentation system
 
 VERSION=	1.7
 DISTNAME=	gtk-doc-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT= 	"Template Toolkit views for Catalyst"
+COMMENT= 	Template Toolkit views for Catalyst
 
 DISTNAME=	Catalyst-View-TT-0.25
 PKGNAME=	p5-${DISTNAME}p0

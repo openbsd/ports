@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/31 08:13:32 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"Perl/Tk graphical user interface to GNU ispell"
+COMMENT=	Perl/Tk graphical user interface to GNU ispell
 
 DISTNAME=	tkispell-0.18
 PKGNAME=	p5-${DISTNAME}p0

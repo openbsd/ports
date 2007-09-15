@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/22 15:42:37 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:59:41 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"C implementation of the ElementTree API"
+COMMENT=	C implementation of the ElementTree API
 
 DISTNAME=	cElementTree-1.0.5-20051216
 PKGNAME=	py-cElementTree-1.0.5p1

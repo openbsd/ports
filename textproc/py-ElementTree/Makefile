@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/22 15:40:19 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"pure-Python implementation of the ElementTree API"
+COMMENT=	pure-Python implementation of the ElementTree API
 
 DISTNAME=	elementtree-1.2.6-20050316
 PKGNAME=	py-ElementTree-1.2.6p1

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2004/02/01 20:25:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:59:38 merdely Exp $
 # $FreeBSD: Makefile,v 1.4 1998/01/17 17:25:46 jfieber Exp $
 
-COMMENT=	"Linuxdoc SGML DTD"
+COMMENT=	Linuxdoc SGML DTD
 
 DISTNAME=	linuxdoc-1.1
 CATEGORIES=	textproc
@@ -12,10 +12,10 @@ RUN_DEPENDS=	::textproc/iso8879
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
 
 NO_BUILD=       Yes
 NO_REGRESS=	Yes

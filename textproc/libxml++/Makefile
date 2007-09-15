@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/22 08:08:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"C++ wrapper for the libxml XML parser library"
+COMMENT=	C++ wrapper for the libxml XML parser library
 
 DISTNAME=	libxml++-2.17.1
 SHARED_LIBS+=	xml++-2.6	0.0 # .2.7

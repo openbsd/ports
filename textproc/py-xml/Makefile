@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2007/07/11 11:11:53 aanriot Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 20:59:41 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python module for writing basic XML applications"
+COMMENT=	Python module for writing basic XML applications
 
 VERSION=	0.8.4
 DISTNAME=	PyXML-${VERSION}

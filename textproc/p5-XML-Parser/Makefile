@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/07/11 11:11:53 aanriot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:59:40 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"perl module for parsing XML documents"
+COMMENT=	perl module for parsing XML documents
 
 MODULES=	cpan
 DISTNAME=	XML-Parser-2.34

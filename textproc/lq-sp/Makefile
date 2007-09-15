@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/04/14 22:20:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"SGML parser and entity manager"
+COMMENT=	SGML parser and entity manager
 
 DISTNAME=	lq-sp-1.3.4.12
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2007/01/21 21:46:20 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"perl module for TrueType font hacking"
+COMMENT=	perl module for TrueType font hacking
 
 MODULES=	cpan
 DISTNAME=	Font-TTF-0.40

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/30 02:36:27 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"front-end to an XSL toolchain"
+COMMENT=	front-end to an XSL toolchain
 
 DISTNAME=	xmlto-0.0.18
 PKGNAME=	${DISTNAME}p0

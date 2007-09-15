@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/28 23:21:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"generic spell checking library/wrapper"
+COMMENT=	generic spell checking library/wrapper
 
 DISTNAME=	enchant-1.3.0
 PKGNAME=	${DISTNAME}p0

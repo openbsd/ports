@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/21 21:46:21 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"sorting of revision-like numbers"
+COMMENT=	sorting of revision-like numbers
 
 MODULES=	cpan
 DISTNAME=	Sort-Versions-1.5

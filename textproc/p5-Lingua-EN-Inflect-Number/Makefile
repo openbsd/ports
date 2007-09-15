@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/21 21:46:21 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"force number of words to singular or plural"
+COMMENT=	force number of words to singular or plural
 
 MODULES=	cpan
 DISTNAME=	Lingua-EN-Inflect-Number-1.1

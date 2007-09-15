@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:59:41 merdely Exp $
 
 
-COMMENT=	"Python library for creating postscript or PDF charts"
+COMMENT=	Python library for creating postscript or PDF charts
 
 VERSION=	1.35
 DISTNAME=	PyChart-${VERSION}

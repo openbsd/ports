@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/21 21:46:22 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"Provide regular expressions for some XML tokens"
+COMMENT=	Provide regular expressions for some XML tokens
 
 MODULES=	cpan
 DISTNAME=	XML-RegExp-0.03

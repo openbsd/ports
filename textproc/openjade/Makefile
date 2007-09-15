@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2006/01/14 15:56:32 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"object-oriented SGML/XML parser toolkit and DSSSL engine"
+COMMENT=	object-oriented SGML/XML parser toolkit and DSSSL engine
 
 DISTNAME=	openjade-1.3
 PKGNAME=	${DISTNAME}p1

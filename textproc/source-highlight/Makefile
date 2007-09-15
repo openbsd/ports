@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/07 00:23:23 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"C/C++,Prolog,Perl,PHP3 and Java sources to HTML converter"
+COMMENT=	C/C++,Prolog,Perl,PHP3 and Java sources to HTML converter
 
 DISTNAME=	source-highlight-1.9
 CATEGORIES=	textproc

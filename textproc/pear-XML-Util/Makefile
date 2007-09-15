@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/22 22:48:04 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"XML utility class for PHP"
+COMMENT=	XML utility class for PHP
 
 DISTNAME=	XML_Util-1.1.1
 PKGNAME=	pear-${DISTNAME:S/_/-/}p1

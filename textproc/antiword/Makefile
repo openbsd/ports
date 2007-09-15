@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 20:59:37 merdely Exp $
 
-COMMENT=	"converts MSWord Documents to ASCII Text and PostScript"
+COMMENT=	converts MSWord Documents to ASCII Text and PostScript
 
 DISTNAME=	antiword-0.37
 CATEGORIES=	textproc

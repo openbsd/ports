@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/12/26 22:39:31 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"LaTeX to html translator"
+COMMENT=	LaTeX to html translator
 
 CATEGORIES=	textproc print
 

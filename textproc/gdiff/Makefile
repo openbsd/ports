@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2005/02/21 14:29:47 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"GNU versions of the diff utilities"
+COMMENT=	GNU versions of the diff utilities
 
 VERSION=	2.8.1
 DISTNAME=	diffutils-${VERSION}

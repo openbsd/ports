@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"translate GNU info files into HTML pages"
+COMMENT=	translate GNU info files into HTML pages
 
 DISTNAME=	info2html-1.1
 CATEGORIES=	textproc

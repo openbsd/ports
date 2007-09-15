@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/22 17:23:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"formatter for spellchecking pod"
+COMMENT=	formatter for spellchecking pod
 
 MODULES=	cpan
 

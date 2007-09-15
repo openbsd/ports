@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/07/27 19:17:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:41 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"Ruby interface to hyperestraier"
+COMMENT=		Ruby interface to hyperestraier
 
 DISTNAME=		hyperestraier-1.4.10
 PKGNAME=		ruby-hyperestraier-1.0.0p3

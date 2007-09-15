@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2007/01/29 20:19:57 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:59:36 merdely Exp $
 
-COMMENT=	"approximate grep (fast approximate pattern-matching tool)"
+COMMENT=	approximate grep (fast approximate pattern-matching tool)
 
 DISTNAME=	agrep-2.04
 PKGNAME=	${DISTNAME}p0
@@ -10,10 +10,10 @@ MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z
 
 # custom
-PERMIT_PACKAGE_FTP=	"may not modify"
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	may not modify
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"

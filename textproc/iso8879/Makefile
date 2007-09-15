@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2004/02/01 20:25:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 20:59:38 merdely Exp $
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
 
-COMMENT=	"character entity sets from ISO 8879:1986 (SGML)"
+COMMENT=	character entity sets from ISO 8879:1986 (SGML)
 
 DISTNAME=	isoENTS
 PKGNAME=	iso8879-1986

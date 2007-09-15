@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/29 20:14:29 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"lightweight regexp matching library with additional features"
+COMMENT=	lightweight regexp matching library with additional features
 
 DISTNAME=		tre-0.7.5
 EXTRACT_SUFX=		.tar.bz2

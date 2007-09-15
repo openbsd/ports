@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2007/01/16 02:48:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"xml parser for Java"
+COMMENT=	xml parser for Java
 
 DISTNAME=	Xerces-J-bin.2.4.0
 PKGNAME=	xerces-2.4.0p3

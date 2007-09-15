@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/21 21:46:21 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:40 merdely Exp $
 
-COMMENT=	"generic classes for simplistic handling of XML data"
+COMMENT=	generic classes for simplistic handling of XML data
 
 MODULES=	cpan
 DISTNAME=	XML-Elemental-2.0

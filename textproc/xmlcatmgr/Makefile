@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"small utility used to manipulate SGML and XML catalogs"
+COMMENT=	small utility used to manipulate SGML and XML catalogs
 
 DISTNAME=	xmlcatmgr-2.2
 PKGNAME=	${DISTNAME}p1

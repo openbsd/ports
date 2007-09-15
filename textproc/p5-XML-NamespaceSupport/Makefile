@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:59:40 merdely Exp $
 
-COMMENT=	"perl module to the SAX2 NamespaceSupport class"
+COMMENT=	perl module to the SAX2 NamespaceSupport class
 
 MODULES=	cpan
 DISTNAME=	XML-NamespaceSupport-1.09

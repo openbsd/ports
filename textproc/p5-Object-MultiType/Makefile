@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/22 16:44:25 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"Perl Objects as Hash, Array and Scalar at the same time"
+COMMENT=	Perl Objects as Hash, Array and Scalar at the same time
 
 MODULES=	cpan
 DISTNAME=	Object-MultiType-0.05

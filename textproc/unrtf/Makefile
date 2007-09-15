@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2005/05/15 18:09:40 db Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"RTF document converter"
+COMMENT=	RTF document converter
 
 VERSION=	0.19.3
 DISTNAME=	unrtf-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/17 09:56:44 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"process plaintext documentation into other formats"
+COMMENT=	process plaintext documentation into other formats
 
 DISTNAME=	docutils-0.4
 PKGNAME=	py-${DISTNAME}p1

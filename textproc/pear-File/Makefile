@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/22 22:48:04 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"common file and directory routines for PHP"
+COMMENT=	common file and directory routines for PHP
 
 DISTNAME=	File-1.2.2
 PKGNAME=	pear-${DISTNAME}p0

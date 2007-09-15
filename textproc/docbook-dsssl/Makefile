@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/01 20:25:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"modular DSSSL stylesheets for the DocBook DTD"
+COMMENT=	modular DSSSL stylesheets for the DocBook DTD
 
 V=		1.72
 DISTNAME=	docbook-dsssl-${V}

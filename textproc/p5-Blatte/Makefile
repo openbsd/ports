@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/21 21:46:20 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"text macro/markup/template language"
+COMMENT=	text macro/markup/template language
 
 MODULES=	cpan
 DISTNAME=	Blatte-0.9.4

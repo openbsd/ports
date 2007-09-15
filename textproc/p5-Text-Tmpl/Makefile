@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/21 21:46:21 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:59:40 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"very fast Perl templating library"
+COMMENT=	very fast Perl templating library
 
 MODULES=	cpan
 DISTNAME=	Text-Tmpl-0.29

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2006/10/27 20:41:47 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 20:59:37 merdely Exp $
 
-COMMENT=	"MS Word, Excel, Powerpoint ==> ASCII or TeX"
+COMMENT=	MS Word, Excel, Powerpoint ==> ASCII or TeX
 
 DISTNAME=	catdoc-0.94.2
 CATEGORIES=	textproc

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/07 14:52:55 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT= 		"POE Filter for parsing XML"
+COMMENT= 		POE Filter for parsing XML
 
 DISTNAME=		POE-Filter-XML-0.32
 PKGNAME=		p5-${DISTNAME}p0

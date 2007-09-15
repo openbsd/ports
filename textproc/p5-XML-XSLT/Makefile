@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/01/21 21:46:22 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"perl module to perform XSLT transformations"
+COMMENT=	perl module to perform XSLT transformations
 
 MODULES=	cpan
 DISTNAME=	XML-XSLT-0.32

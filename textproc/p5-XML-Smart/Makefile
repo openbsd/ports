@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/22 16:44:25 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"access/create XML files/datas easily"
+COMMENT=	access/create XML files/datas easily
 
 MODULES=	cpan
 DISTNAME=	XML-Smart-1.6.9

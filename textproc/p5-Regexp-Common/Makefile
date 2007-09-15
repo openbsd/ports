@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/21 21:46:21 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=		"Use other catalog formats in Locale::Maketext"
+COMMENT=		Use other catalog formats in Locale::Maketext
 
 MODULES=		cpan
 DISTNAME=		Regexp-Common-2.120

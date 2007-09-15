@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2002/12/23 18:56:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"texinfo to HTML converter"
+COMMENT=	texinfo to HTML converter
 
 DISTNAME=	texi2html-1.64
 CATEGORIES=	textproc

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/21 21:46:22 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"simple document format"
+COMMENT=	simple document format
 
 MODULES=	cpan
 DISTNAME=	sdf-2.001

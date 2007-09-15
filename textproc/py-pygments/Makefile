@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/02 06:21:59 djm Exp $
-COMMENT=	"Python syntax highlighter"
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:41 merdely Exp $
+COMMENT=	Python syntax highlighter
 
 DISTNAME=	Pygments-0.8
 PKGNAME=	${DISTNAME:L:S/^/py-/}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/17 21:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"unicode-aware catalyst"
+COMMENT=	unicode-aware catalyst
 
 DISTNAME=	Catalyst-Plugin-Unicode-0.2
 CATEGORIES=	textproc

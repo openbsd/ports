@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2007/01/29 20:19:57 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"text search engine"
+COMMENT=	text search engine
 
 DISTNAME=	glimpse-4.1
 PKGNAME=	${DISTNAME}p0
@@ -8,9 +8,9 @@ CATEGORIES=	textproc databases
 
 MAINTAINER=	The OpenBSD ports mailing-list <ports@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 

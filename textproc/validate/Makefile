@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/04/14 22:20:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=		"HTML, XHTML validator"
+COMMENT=		HTML, XHTML validator
 
 DISTNAME=		validate-1.2.2
 PKGNAME=		${DISTNAME}p0

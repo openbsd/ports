@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/08/08 13:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"docbook XSL modular stylesheet"
+COMMENT=	docbook XSL modular stylesheet
 
 DISTNAME=	docbook-xsl-1.68.1
 PKGNAME=	${DISTNAME}p1

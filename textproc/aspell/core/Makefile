@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2006/10/05 18:05:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:59:37 merdely Exp $
 
-COMMENT=	"spell checker designed to eventually replace Ispell"
+COMMENT=	spell checker designed to eventually replace Ispell
 DISTNAME=	aspell-0.50.5
 PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	aspell	16.0 \

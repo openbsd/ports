@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2005/09/05 13:25:04 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"very flexible diff-like program"
+COMMENT=	very flexible diff-like program
 
 DISTNAME=	spiff-1.0
 PKGNAME=	${DISTNAME}p0
@@ -11,9 +11,9 @@ MASTER_SITES=	http://www.darwinsys.com/freeware/
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # custom
-PERMIT_PACKAGE_CDROM=	"no fee"
-PERMIT_PACKAGE_FTP=	"may not modify"
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
+PERMIT_PACKAGE_FTP=	may not modify
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m 
 

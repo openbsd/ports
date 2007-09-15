@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/19 03:13:20 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"create PDF documents with perl"
+COMMENT=	create PDF documents with perl
 
 MODULES=	cpan
 

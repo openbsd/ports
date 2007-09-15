@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/04 10:14:00 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"extracts embedded tests and code examples from pod"
+COMMENT=	extracts embedded tests and code examples from pod
 
 MODULES=	cpan
 

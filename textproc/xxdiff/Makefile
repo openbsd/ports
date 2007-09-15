@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"graphical file comparator and merge tool"
+COMMENT=	graphical file comparator and merge tool
 
 DISTNAME=	xxdiff-3.1
 CATEGORIES=	textproc x11

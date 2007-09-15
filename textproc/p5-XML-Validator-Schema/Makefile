@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/14 19:09:46 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"validate XML schema using SAX"
+COMMENT=	validate XML schema using SAX
 
 MODULES=	cpan
 DISTNAME=	XML-Validator-Schema-1.08

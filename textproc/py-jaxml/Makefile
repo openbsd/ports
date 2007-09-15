@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:49:24 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"Python module to easily generate XML/XHTML/HTML documents"
+COMMENT=	Python module to easily generate XML/XHTML/HTML documents
 
 DISTNAME=	jaxml-3.01
 PKGNAME=	py-${DISTNAME}p0

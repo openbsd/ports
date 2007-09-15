@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/21 21:46:21 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:40 merdely Exp $
 
-COMMENT=		"perl module to formating plaintext"
+COMMENT=		perl module to formating plaintext
 
 MODULES=		cpan
 DISTNAME=		Text-Reform-1.11

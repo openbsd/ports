@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"Perl extension for formatting numbers"
+COMMENT=	Perl extension for formatting numbers
 
 MODULES=	cpan
 DISTNAME=	Number-Format-1.45

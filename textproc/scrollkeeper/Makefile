@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/05/19 09:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
+COMMENT=		Scrollkeeper Open Documentation Cataloging System
 
 VERSION=		0.3.14
 DISTNAME=		scrollkeeper-${VERSION}

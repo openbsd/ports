@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/29 14:46:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"curses-based URL ripper"
+COMMENT=	curses-based URL ripper
 
 DISTNAME=	urlview-0.9
 PKGNAME=	${DISTNAME}p0

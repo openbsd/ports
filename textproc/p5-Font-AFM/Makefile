@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/21 21:46:20 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=	"perl interface to Adobe Font Metrics files"
+COMMENT=	perl interface to Adobe Font Metrics files
 
 MODULES=	cpan
 DISTNAME=	Font-AFM-1.19

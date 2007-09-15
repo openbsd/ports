@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/04 20:56:43 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"Extensible Binary Meta Language library"
+COMMENT=	Extensible Binary Meta Language library
 DISTNAME=	libebml-0.7.7
 SHARED_LIBS=	ebml 0.0
 EXTRACT_SUFX=	.tar.bz2

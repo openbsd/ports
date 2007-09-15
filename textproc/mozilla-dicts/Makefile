@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/09 17:59:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:59:38 merdely Exp $
 
 PKG_ARCH=	*
 
-COMMENT-main=	"${MAINLANG} dictionary for Mozilla"
+COMMENT-main=	${MAINLANG} dictionary for Mozilla
 V=		1.0
 NAME=		mozilla-dicts
 PKGNAME=	${NAME}-${MAINLANG}-${V}

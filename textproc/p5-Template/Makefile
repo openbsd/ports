@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/03/25 10:56:53 djm Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:40 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		'template processing system'
+COMMENT=		template processing system
 
 MODULES=		cpan
 VERSION=		2.15

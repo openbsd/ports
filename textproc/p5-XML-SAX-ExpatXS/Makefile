@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/11 11:11:53 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"SAX2 driver directly based on expat"
+COMMENT=	SAX2 driver directly based on expat
 
 SHARED_ONLY=	Yes
 MODULES=	cpan

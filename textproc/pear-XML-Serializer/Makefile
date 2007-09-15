@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/22 22:48:04 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"Swiss-army knife for reading and writing XML files"
+COMMENT=	Swiss-army knife for reading and writing XML files
 
 DISTNAME=	XML_Serializer-0.18.0
 PKGNAME=	pear-${DISTNAME:S/_/-/}p0

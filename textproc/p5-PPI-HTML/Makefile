@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/21 22:02:42 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=		"parse, analyze and manipulate Perl"
+COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan
 DISTNAME=		PPI-HTML-1.07

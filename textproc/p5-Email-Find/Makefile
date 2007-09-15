@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/21 21:46:20 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=		"Find RFC 822 email addresses in plain text"
+COMMENT=		Find RFC 822 email addresses in plain text
 
 MODULES=		cpan
 DISTNAME=		Email-Find-0.09

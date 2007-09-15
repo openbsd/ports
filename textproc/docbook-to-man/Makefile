@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/15 21:40:01 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	'convert docbook to man'
+COMMENT=	convert docbook to man
 CATEGORIES=	textproc converters
 
 VERSION=	0.0

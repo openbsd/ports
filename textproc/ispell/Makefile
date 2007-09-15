@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.46 2006/12/27 13:43:55 jakob Exp $
+# $OpenBSD: Makefile,v 1.47 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT-main=		"interactive spelling checker"
-COMMENT-dutch=		"ispell dictionary for Dutch"
-COMMENT-french=		"ispell dictionary for French"
-COMMENT-german=		"ispell dictionary for German"
-COMMENT-russian=	"ispell dictionary for Russian"
-COMMENT-portuguese=	"ispell dictionary for Portuguese"
-COMMENT-slovak=		"ispell dictionary for Slovak"
-COMMENT-spanish=	"ispell dictionary for Spanish"
-COMMENT-swedish=	"ispell dictionary for Swedish"
+COMMENT-main=		interactive spelling checker
+COMMENT-dutch=		ispell dictionary for Dutch
+COMMENT-french=		ispell dictionary for French
+COMMENT-german=		ispell dictionary for German
+COMMENT-russian=	ispell dictionary for Russian
+COMMENT-portuguese=	ispell dictionary for Portuguese
+COMMENT-slovak=		ispell dictionary for Slovak
+COMMENT-spanish=	ispell dictionary for Spanish
+COMMENT-swedish=	ispell dictionary for Swedish
 
 PATCHLEVEL=	p3
 
@@ -75,8 +75,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB-main=		c termcap 
 
-PERMIT_PACKAGE_CDROM-german=	"no license"
-PERMIT_PACKAGE_FTP-german=	"no license"
+PERMIT_PACKAGE_CDROM-german=	no license
+PERMIT_PACKAGE_FTP-german=	no license
  
 RUN_DEPENDS=	::textproc/ispell
 RUN_DEPENDS-main=

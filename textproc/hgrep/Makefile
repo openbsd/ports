@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/05/19 07:27:38 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=		"grep wrapper with search highlighting"
+COMMENT=		grep wrapper with search highlighting
 
 DISTNAME=		hgrep-19991004
 PKGNAME=		${DISTNAME}p0

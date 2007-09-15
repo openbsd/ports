@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/27 14:06:06 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:41 merdely Exp $
 
-COMMENT=	"RSS and Atom feeds parser written in Python"
+COMMENT=	RSS and Atom feeds parser written in Python
 
 V=		4.1
 DISTNAME=	feedparser-${V}

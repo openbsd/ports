@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/21 21:46:20 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:59:39 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"perl interface for several perl XML modules"
+COMMENT=	perl interface for several perl XML modules
 
 MODULES=	cpan
 DISTNAME=	XML-LibXML-Common-0.13

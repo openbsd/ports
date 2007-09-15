@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/26 22:39:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:38 merdely Exp $
 
-COMMENT=	"simple Objective Caml bindings for XML"
+COMMENT=	simple Objective Caml bindings for XML
 CATEGORIES=	textproc
 
 V=		2.2

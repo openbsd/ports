@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2007/07/11 11:11:53 aanriot Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/15 20:59:42 merdely Exp $
 
-COMMENT=	"fast, compact and portable XSL/XSLT processor"
+COMMENT=	fast, compact and portable XSL/XSLT processor
 
 V=		1.0.1
 DISTNAME=	Sablot-${V}

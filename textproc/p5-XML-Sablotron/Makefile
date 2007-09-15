@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2007/07/11 11:11:53 aanriot Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:59:41 merdely Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-COMMENT=	"perl interface to the Sablotron XSLT engine"
+COMMENT=	perl interface to the Sablotron XSLT engine
 
 DISTNAME=	XML-Sablotron-1.0
 PKGNAME=	p5-${DISTNAME}p1

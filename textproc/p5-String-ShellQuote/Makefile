@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:39 merdely Exp $
 
-COMMENT=		"Quote strings for passing through the shell"
+COMMENT=		Quote strings for passing through the shell
 
 MODULES=		cpan
 DISTNAME=		String-ShellQuote-1.03
