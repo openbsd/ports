@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/03/15 18:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:14:03 merdely Exp $
 
-COMMENT=	"interactive utility that displays info about online users"
+COMMENT=	interactive utility that displays info about online users
 
 DISTNAME=	whowatch-1.4
 PKGNAME=	${DISTNAME}p0

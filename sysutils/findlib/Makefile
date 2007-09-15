@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/26 23:09:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"Objective Caml package manager"
+COMMENT=	Objective Caml package manager
 CATEGORIES=	sysutils
 DISTNAME=	findlib-1.1.2pl1
 PKGNAME=	${DISTNAME}p1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.49 2006/02/08 17:27:49 steven Exp $
+# $OpenBSD: Makefile,v 1.50 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"read/write/list/format DOS disks under Unix"
+COMMENT=	read/write/list/format DOS disks under Unix
 
 DATE=		20050317
 DISTNAME=	mtools-3.9.10

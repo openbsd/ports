@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/11 09:26:44 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"flashes gpio led whenever pf logs to pflog0"
+COMMENT=		flashes gpio led whenever pf logs to pflog0
 
 DISTNAME=		gpioflicker-0.2
 PKGNAME=		${DISTNAME}p0

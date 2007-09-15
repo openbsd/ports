@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/23 15:49:36 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:14:03 merdely Exp $
 
-COMMENT=	"WindowMaker dock app similar to xload"
+COMMENT=	WindowMaker dock app similar to xload
 
 DISTNAME=	wmmon-1.0b2
 PKGNAME=	${DISTNAME}p0

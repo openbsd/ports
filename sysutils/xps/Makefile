@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/29 21:40:14 rui Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:14:03 merdely Exp $
 
 DISTNAME=       xps-4.2
 CATEGORIES=     sysutils x11
@@ -11,7 +11,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm
 
-COMMENT=	"graphically display and update dynamically the process tree"
+COMMENT=	graphically display and update dynamically the process tree
 
 HOMEPAGE=       http://www.netwinder.org/~rocky/xps-home/
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/28 13:51:55 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"simple event correlator"
+COMMENT=	simple event correlator
 
 DISTNAME=	sec-2.4.1
 CATEGORIES=	sysutils

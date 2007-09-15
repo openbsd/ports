@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"GkrellM2 plugin that shows Interet Time"
+COMMENT=	GkrellM2 plugin that shows Interet Time
 
 VERSION=	1.0.1
 DISTNAME=	gkrellmitime-${VERSION}

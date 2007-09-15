@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/26 15:04:54 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=		"daemontools alike replacement for init"
+COMMENT=		daemontools alike replacement for init
 
 DISTNAME=		runit-1.7.2
 CATEGORIES=		sysutils

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/14 05:17:18 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=		"list processes as a tree"
+COMMENT=		list processes as a tree
 DISTNAME=		pstree-2.27
 CATEGORIES=     	sysutils
 

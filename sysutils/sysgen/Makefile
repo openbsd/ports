@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/07/05 07:24:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:14:03 merdely Exp $
 
-COMMENT=		"calculates QBUS CSR and Vector assignments"
+COMMENT=		calculates QBUS CSR and Vector assignments
 
 DISTNAME=		sysgen
 PKGNAME=		sysgen-0.0

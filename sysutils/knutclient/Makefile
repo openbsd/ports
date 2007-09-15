@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/15 21:40:01 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"KDE UPS Monitoring tool"
+COMMENT=		KDE UPS Monitoring tool
 
 RELEASE=		0.6.0
 DISTNAME=		knutclient-${RELEASE}

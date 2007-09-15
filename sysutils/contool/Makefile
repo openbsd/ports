@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2007/04/17 23:55:21 ian Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"console tool for openlook"
+COMMENT=	console tool for openlook
 
 DISTNAME=	contool-3.3a
 PKGNAME=	${DISTNAME}p0

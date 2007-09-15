@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/08/03 17:42:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:03 merdely Exp $
 
-COMMENT=	"print ascii formatted tree of a directory structure"
+COMMENT=	print ascii formatted tree of a directory structure
 
 DISTNAME=	tree-0.61
 PKGNAME=	${DISTNAME}p0

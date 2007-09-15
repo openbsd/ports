@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2005/10/27 21:47:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"GNU system administration tool for networks"
+COMMENT=	GNU system administration tool for networks
 
 V=		2.1.16
 DISTNAME=      	cfengine-${V}

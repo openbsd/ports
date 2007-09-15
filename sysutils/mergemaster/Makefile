@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/10/21 09:42:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"aids with merging configuration files during an upgrade"
+COMMENT=	aids with merging configuration files during an upgrade
 
 DISTNAME=	mergemaster-1.46
 PKGNAME=	${DISTNAME}p2

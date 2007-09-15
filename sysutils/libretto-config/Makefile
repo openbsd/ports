@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"Libretto BIOS Setting Program"
+COMMENT=	Libretto BIOS Setting Program
 
 DISTNAME=	libapm-linux-1.0beta5
 PKGNAME=	libretto-config-1.0b5

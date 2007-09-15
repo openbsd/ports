@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/03 23:55:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		'wm-dockapp; display CPU and memory load'
+COMMENT=		wm-dockapp; display CPU and memory load
 
 DISTNAME=		bubblemon-dockapp-1.4
 PKGNAME=		${DISTNAME}p0

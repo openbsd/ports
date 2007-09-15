@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2005/10/06 20:00:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:14:00 merdely Exp $
 
-COMMENT=	"periodic command scheduler"
+COMMENT=	periodic command scheduler
 
 DISTNAME=	anacron-2.3
 PKGNAME=	${DISTNAME}p1

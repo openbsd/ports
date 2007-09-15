@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/06 19:31:12 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"perl module to provide a framework for a virtual filesystem"
+COMMENT=	perl module to provide a framework for a virtual filesystem
 DISTNAME=	Filesys-Virtual-0.05
 PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	sysutils

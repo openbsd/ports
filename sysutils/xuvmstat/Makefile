@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:14:03 merdely Exp $
 
-COMMENT=	"graphical display for the current uvm status"
+COMMENT=	graphical display for the current uvm status
 
 PKGNAME=	xuvmstat-20050909
 DISTNAME=	xuvmstat20050909

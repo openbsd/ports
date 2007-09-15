@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"Stock Ticker for GkrellM2"
+COMMENT=	Stock Ticker for GkrellM2
 
 VERSION=	0.5.1
 DISTNAME=	gkrellstock-${VERSION}

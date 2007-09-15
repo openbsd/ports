@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"XMMS plugin for Gkrellm2"
+COMMENT=	XMMS plugin for Gkrellm2
 
 DISTNAME=	gkrellmms-2.1.21
 PKGNAME=	${DISTNAME}p4

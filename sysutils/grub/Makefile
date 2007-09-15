@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/05 18:25:22 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"GRand Unified Bootloader"
+COMMENT=	GRand Unified Bootloader
 
 DISTNAME=	grub-0.97
 PKGNAME=	${DISTNAME}p0

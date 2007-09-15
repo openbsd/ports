@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/02/01 14:37:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:14:02 merdely Exp $
 
 NOT_FOR_ARCHS=		sparc m68k m88k vax
 
-COMMENT=		"PCI bus configuration register access tools"
+COMMENT=		PCI bus configuration register access tools
 
 DISTNAME=		pciutils-2.2.4
 PKGNAME=		${DISTNAME}p0

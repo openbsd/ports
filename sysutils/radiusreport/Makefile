@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2004/02/01 20:34:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"RADIUS log file analysis tool"
+COMMENT=	RADIUS log file analysis tool
 
 DISTNAME=	radiusreport-0.3b6
 CATEGORIES=	sysutils

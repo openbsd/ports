@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/10 22:34:14 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 21:14:03 merdely Exp $
 
-COMMENT=	"list tcp connections to/from the local machine"
+COMMENT=	list tcp connections to/from the local machine
 
 DISTNAME=	tcplist-2.2
 PKGNAME=	${DISTNAME}p0

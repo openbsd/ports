@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2005/03/16 15:43:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=		"forensic toolkit based on TCT"
+COMMENT=		forensic toolkit based on TCT
 
 VERSION=		1.73
 DISTNAME=		sleuthkit-${VERSION}
@@ -13,9 +13,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sleuthkit/} \
 			${MASTER_SITE_PACKETSTORM:=UNIX/utilities/}
 
 # IBM & GPL
-PERMIT_PACKAGE_CDROM=	"commercial contributor must indemnify all others"
+PERMIT_PACKAGE_CDROM=	commercial contributor must indemnify all others
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"commercial contributor must indemnify all others"
+PERMIT_DISTFILES_CDROM=	commercial contributor must indemnify all others
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 

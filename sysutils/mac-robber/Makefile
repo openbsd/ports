@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=		"forensic tool that collects MAC times from files"
+COMMENT=		forensic tool that collects MAC times from files
 
 VERSION=		1.00
 DISTNAME=		mac-robber-${VERSION}

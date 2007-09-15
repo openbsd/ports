@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2007/07/12 09:37:05 aanriot Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"modular log analyzer"
+COMMENT=	modular log analyzer
 
 DISTNAME=	modlogan-0.8.13
 PKGNAME=	${DISTNAME}p4

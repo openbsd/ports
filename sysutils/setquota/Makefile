@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2005/09/05 13:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 21:14:02 merdely Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
-COMMENT=	"command line quota tools"
+COMMENT=	command line quota tools
 
 DISTNAME=	setquota-0.1
 PKGNAME=	${DISTNAME}p0

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2004/08/14 20:22:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2007/09/15 21:14:03 merdely Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
-BROKEN=		"kernel internals have changed"
+BROKEN=		kernel internals have changed
 
-COMMENT=	"graphical performance meter"
+COMMENT=	graphical performance meter
 
 DISTNAME=	xosview-1.8.0
 PKGNAME=	${DISTNAME}p1

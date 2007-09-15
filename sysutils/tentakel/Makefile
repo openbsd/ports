@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:45:42 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:14:03 merdely Exp $
 
-COMMENT=	"distributed command execution"
+COMMENT=	distributed command execution
 
 DISTNAME=	tentakel-2.1.2
 PKGNAME=	${DISTNAME}p0

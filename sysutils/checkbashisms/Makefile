@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/17 18:15:51 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"check shell scripts for bash-specific constructs"
+COMMENT=		check shell scripts for bash-specific constructs
 
 DISTNAME=		checkbashisms-0.1
 PKGNAME=		${DISTNAME}p0

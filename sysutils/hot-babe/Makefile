@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/06/29 21:38:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"small utility which displays system activity"
+COMMENT=	small utility which displays system activity
 
 DISTNAME=	hot-babe-0.2.2
 PKGNAME=	${DISTNAME}p4

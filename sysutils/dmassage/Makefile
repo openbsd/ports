@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"dmesg parser"
+COMMENT=		dmesg parser
 DISTNAME=		dmassage-0.6
 PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils

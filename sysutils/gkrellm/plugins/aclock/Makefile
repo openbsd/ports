@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"Analog clock for GkrellM2"
+COMMENT=	Analog clock for GkrellM2
 
 VERSION=	0.3.3
 DISTNAME=	gkrellaclock-${VERSION}

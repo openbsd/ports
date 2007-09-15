@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"Soundscope for GkrellM2 using ESD"
+COMMENT=	Soundscope for GkrellM2 using ESD
 
 DISTNAME=	gkrellmss-2.6
 PKGNAME=	${DISTNAME}p5

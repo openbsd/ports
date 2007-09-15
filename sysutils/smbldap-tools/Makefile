@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/02/02 03:13:19 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"tools for managing samba ldap" 
+COMMENT=	tools for managing samba ldap 
 
 DISTNAME=	smbldap-tools-0.9.2a
 PKGNAME=	${DISTNAME}p1

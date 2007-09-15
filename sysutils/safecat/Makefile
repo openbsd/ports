@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2005/03/08 04:20:07 danh Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"copy stdin to a qmail-style maildir"
+COMMENT=	copy stdin to a qmail-style maildir
 
 DISTNAME=	safecat-1.12
 CATEGORIES=	sysutils

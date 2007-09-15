@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/07 12:08:20 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:02 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Ruby library for retrieving facts from operating systems"
+COMMENT=	Ruby library for retrieving facts from operating systems
 
 VERSION=	1.3.7
 DISTNAME=	facter-${VERSION}

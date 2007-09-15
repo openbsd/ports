@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/08/02 17:23:29 jcs Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:14:03 merdely Exp $
 
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	amd64 i386
 
-COMMENT=	"utility to use ibm thinkpad(tm) special keys"
+COMMENT=	utility to use ibm thinkpad(tm) special keys
 
 DISTNAME=	tpb-0.6.4
 PKGNAME=	${DISTNAME}p2

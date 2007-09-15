@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"Volume dial for Gkrellm2"
+COMMENT=	Volume dial for Gkrellm2
 
 DISTNAME=	gkrellm-volume-2.1.13
 PKGNAME=	${DISTNAME}p4

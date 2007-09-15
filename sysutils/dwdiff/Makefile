@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/28 17:44:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"word-based diff program"
+COMMENT=		word-based diff program
 
 DISTNAME=		dwdiff-1.2.1
 CATEGORIES=		sysutils textproc

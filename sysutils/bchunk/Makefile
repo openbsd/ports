@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/18 20:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:01 merdely Exp $
 # $NetBSD: Makefile,v 1.4 2001/11/04 03:28:45 tv Exp $
 
-COMMENT=	".bin/.cue to .iso CD image converter"
+COMMENT=	.bin/.cue to .iso CD image converter
 
 DISTNAME=	bchunk-1.2.0
 CATEGORIES=	sysutils

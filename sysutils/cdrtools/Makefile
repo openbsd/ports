@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"ISO 9660 filesystem and CD creation tools"
+COMMENT=		ISO 9660 filesystem and CD creation tools
 
 DISTNAME=		cdrtools-2.01
 PKGNAME=		${DISTNAME}p0

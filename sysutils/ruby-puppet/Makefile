@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/07 12:07:20 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"centralised configuration management for networks"
+COMMENT=	centralised configuration management for networks
 
 VERSION=	0.22.4
 DISTNAME=	puppet-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/06 12:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=		"filesystem information display"
+COMMENT=		filesystem information display
 
 DISTNAME=		Filesys-DiskSpace-0.05
 PKGNAME=		p5-${DISTNAME}p1

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 21:14:01 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	"single process stack of system monitors for GTK+2 (server)"
-COMMENT-client=	"single process stack of system monitors for GTK+2"
+COMMENT-main=	single process stack of system monitors for GTK+2 (server)
+COMMENT-client=	single process stack of system monitors for GTK+2
 
 V=		2.2.4
 DISTNAME=	gkrellm-${V}

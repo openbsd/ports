@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/06 12:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=		"module for interfacing with Mon"
+COMMENT=		module for interfacing with Mon
 
 DISTNAME=		Mon-0.11
 PKGNAME=		p5-${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/04 23:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"manages software package installations with symlinks"
+COMMENT=	manages software package installations with symlinks
 
 DISTNAME=	stow-1.3.3
 PKGNAME=	${DISTNAME}p0

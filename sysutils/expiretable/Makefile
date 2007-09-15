@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/29 11:20:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"removes entries from pf tables based on their age"
+COMMENT=		removes entries from pf tables based on their age
 
 DISTNAME=		expiretable-0.6
 CATEGORIES=		sysutils

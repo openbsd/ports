@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/18 22:27:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"manage and configure devices that supports IPMI"
+COMMENT=		manage and configure devices that supports IPMI
 
 DISTNAME=		ipmitool-1.8.8
 CATEGORIES=		sysutils

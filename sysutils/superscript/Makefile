@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/29 09:45:49 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"extended script command"
+COMMENT=	extended script command
 
 DISTNAME=	superscript-0.0
 CATEGORIES=	sysutils

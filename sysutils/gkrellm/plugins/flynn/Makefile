@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/15 19:25:55 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"GkrellM2 load meter with a familiar face"
+COMMENT=	GkrellM2 load meter with a familiar face
 
 DISTNAME=	gkrellflynn-0.8
 PKGNAME=	${DISTNAME}p1

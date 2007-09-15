@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/02/14 10:26:28 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:14:02 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to the UNIX system logger"
+COMMENT=	interface to the UNIX system logger
 
 DISTNAME=	Unix-Syslog-0.100
 PKGNAME=	p5-${DISTNAME}p1

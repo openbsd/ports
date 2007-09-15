@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/15 19:25:55 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"Web cam plugin for GkrellM2"
+COMMENT=	Web cam plugin for GkrellM2
 
 VERSION=	2.0.0
 DISTNAME=	gkrellkam-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2006/10/09 09:15:22 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2007/09/15 21:14:00 merdely Exp $
 
-COMMENT=	"enhanced printer spooler"
+COMMENT=	enhanced printer spooler
 
 DISTNAME=	LPRng-3.8.21
 PKGNAME=	${DISTNAME}p2

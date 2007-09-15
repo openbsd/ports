@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/10 19:56:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"File Alteration Monitor"
+COMMENT=	File Alteration Monitor
 
 DISTNAME=	fam-2.7.0
 PKGNAME=	${DISTNAME}p2

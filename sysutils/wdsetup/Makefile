@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:14:03 merdely Exp $
 
-COMMENT=	"Western Digital and SMC ethernet card configuration program"
+COMMENT=	Western Digital and SMC ethernet card configuration program
 
 DISTNAME=	wdsetup-0.6b
 PKGNAME=	wdsetup-0.6b

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/22 15:29:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:14:01 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"concentric segmented-rings disk usage visualisation"
+COMMENT=	concentric segmented-rings disk usage visualisation
 
 DISTNAME=	filelight-1.0
 CATEGORIES=	sysutils x11/kde

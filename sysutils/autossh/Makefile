@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2005/09/15 16:03:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"SSH monitoring"
+COMMENT=		SSH monitoring
 
 VERSION=		1.3
 DISTNAME=		autossh-${VERSION}

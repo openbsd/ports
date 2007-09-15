@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/23 09:04:41 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=	"log file preprocessor"
+COMMENT=	log file preprocessor
 
 DISTNAME=	logpp-0.13
 CATEGORIES=	sysutils

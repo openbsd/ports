@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/30 19:51:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:14:02 merdely Exp $
 
-COMMENT=		"small and secure replacement for syslogd"
+COMMENT=		small and secure replacement for syslogd
 
 DISTNAME=		socklog-2.1.0
 CATEGORIES=		sysutils

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"GKrellM2 will remind you to do important events"
+COMMENT=	GKrellM2 will remind you to do important events
 
 DISTNAME=	gkrellm-reminder-2.0.0
 PKGNAME=	${DISTNAME}p6

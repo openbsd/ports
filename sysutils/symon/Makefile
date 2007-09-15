@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2007/07/10 15:48:07 henning Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 21:14:03 merdely Exp $
 
-COMMENT-main=		"active monitoring tool"
+COMMENT-main=		active monitoring tool
 V=			2.76
 DISTNAME=		symon-${V}
 PKGNAME-main=		${DISTNAME}
@@ -24,11 +24,11 @@ WANTLIB-main=		${WANTLIB} fontconfig
 
 # client only package
 FULLPKGNAME-mon=	symon-mon-${V}
-COMMENT-mon=		"active host monitor"
+COMMENT-mon=		active host monitor
 LIB_DEPENDS-mon=
 # gatherer only package
 FULLPKGNAME-mux=        symon-mux-${V}
-COMMENT-mux=		"symon data gatherer"
+COMMENT-mux=		symon data gatherer
 LIB_DEPENDS-mux=	rrd:rrdtool-*:net/rrdtool
 WANTLIB-mux=		${WANTLIB} fontconfig
 

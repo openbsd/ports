@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/16 08:29:34 jolan Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=	"log out idle users and those hogging resources"
+COMMENT=	log out idle users and those hogging resources
 
 DISTNAME=	idled-1.16
 PKGNAME=	${DISTNAME}p0
@@ -10,9 +10,9 @@ HOMEPAGE=	http://www.darkwing.com/idled/
 
 FAKE_FLAGS=	PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 

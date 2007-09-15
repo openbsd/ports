@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:01 merdely Exp $
 
-COMMENT=		"mastering tools for DVD+RW/+R/-R/-RW"
+COMMENT=		mastering tools for DVD+RW/+R/-R/-RW
 
 DISTNAME=		dvd+rw-tools-5.21.4.10.8
 PKGNAME=		${DISTNAME}p0
