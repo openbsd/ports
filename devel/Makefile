@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.547 2007/09/14 21:17:28 steven Exp $
+# $OpenBSD: Makefile,v 1.548 2007/09/15 09:49:18 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -169,6 +169,7 @@
      SUBDIR += luapack
      SUBDIR += luaposix
      SUBDIR += luarexlib
+     SUBDIR += luarings
      SUBDIR += luastdlib
      SUBDIR += m4
      SUBDIR += maven
