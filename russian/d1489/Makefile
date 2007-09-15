@@ -1,7 +1,7 @@
 # $FreeBSD: ports/russian/d1489/Makefile,v 1.12 1999/08/31 06:49:57 mharo Exp $
-# $OpenBSD: Makefile,v 1.9 2004/12/02 21:14:45 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:23:42 merdely Exp $
 
-COMMENT=	"cp866<>koi8-r & cp1251<>koi8-r decoders and font converter"
+COMMENT=	cp866<>koi8-r & cp1251<>koi8-r decoders and font converter
 
 DISTNAME=	d1489-1.4
 CATEGORIES=	russian
