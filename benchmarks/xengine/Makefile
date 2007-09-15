@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 21:30:27 simon Exp $
 
-COMMENT=	"reciprocating engine for X11"
+COMMENT=	reciprocating engine for X11
 PKGNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
@@ -8,9 +8,9 @@ DISTFILES=	part01.z patch1.z
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c m
 

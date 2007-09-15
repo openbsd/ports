@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2007/06/01 22:36:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 21:30:26 simon Exp $
 
-COMMENT=	"Network performance benchmark"
+COMMENT=	Network performance benchmark
 
 DISTNAME=	netperf-2.3
 PKGNAME=	${DISTNAME}p1

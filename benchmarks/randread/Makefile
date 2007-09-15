@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/21 18:01:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:30:27 simon Exp $
 
-COMMENT=	"help benchmark random read performance"
+COMMENT=	help benchmark random read performance
 
 DISTNAME=	randread-0.2
 CATEGORIES=	benchmarks

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/10 11:17:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:30:26 simon Exp $
 
-COMMENT=	"filesystem benchmark"
+COMMENT=	filesystem benchmark
 
 DISTNAME=	blogbench-1.0
 CATEGORIES=	benchmarks

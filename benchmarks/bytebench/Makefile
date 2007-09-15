@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2004/01/05 19:54:59 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 21:30:26 simon Exp $
 
-COMMENT=	"BYTE magazine benchmark suite"
+COMMENT=	BYTE magazine benchmark suite
 DISTNAME=       bytebench-3.1
 CATEGORIES=	benchmarks
 
 # License: NONE
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
 
 MASTER_SITES=   ftp://ftp.inria.fr/archives/system/benchmark/
 EXTRACT_SUFX=	.tar.Z

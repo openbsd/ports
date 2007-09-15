@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/30 22:08:54 martin Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:30:26 simon Exp $
 
-COMMENT=	"enhanced performance test of filesystem I/O"
+COMMENT=	enhanced performance test of filesystem I/O
 
 DISTNAME=	bonnie++-1.03a
 CATEGORIES=	benchmarks
