@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2005/12/13 19:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 22:16:55 merdely Exp $
 
-COMMENT=	"extensible shell, derived from plan9's rc"
+COMMENT=	extensible shell, derived from plan9's rc
 
 DISTNAME=	es-0.9-beta1
 PKGNAME=	es-0.9b1p0

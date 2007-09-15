@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/06 12:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 22:16:55 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to the system's process table"
+COMMENT=	interface to the system's process table
 
 DISTNAME=	Proc-ProcessTable-0.41
 PKGNAME=	p5-${DISTNAME}p1

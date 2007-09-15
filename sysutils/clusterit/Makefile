@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/08 16:16:56 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:16:55 merdely Exp $
 
-COMMENT=		"suite of clustering tools based on IBM's PSSP"
+COMMENT=		suite of clustering tools based on IBM's PSSP
 
 DISTNAME=		clusterit-2.4
 PKGNAME=		${DISTNAME}p0
