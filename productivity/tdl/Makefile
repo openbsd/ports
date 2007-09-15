@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/05 13:27:40 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:28:22 merdely Exp $
 
-COMMENT=	"to-do list manager"
+COMMENT=	to-do list manager
 
 DISTNAME=	tdl-1.5.2
 PKGNAME=	${DISTNAME}p1

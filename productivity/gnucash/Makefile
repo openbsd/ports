@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/31 15:52:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 21:28:22 merdely Exp $
 
-BROKEN= 	"needs an update"
+BROKEN= 	needs an update
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
-COMMENT=	"Quicken-like money and finance manager"
+COMMENT=	Quicken-like money and finance manager
 DISTNAME=	gnucash-1.8.12
 PKGNAME=	${DISTNAME}p2
 DOCVER=		1.8.5

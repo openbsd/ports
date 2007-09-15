@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/08/03 17:42:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:28:22 merdely Exp $
 
-COMMENT=		"reminder/task program aimed at developers"
+COMMENT=		reminder/task program aimed at developers
 
 DISTNAME=		devtodo-0.1.17
 PKGNAME=		${DISTNAME}p2

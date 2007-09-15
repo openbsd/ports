@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/02 21:40:52 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:28:22 merdely Exp $
 
-COMMENT=		"Python-based presentation tool"
+COMMENT=		Python-based presentation tool
 
 DISTNAME=		bruce-1.2
 

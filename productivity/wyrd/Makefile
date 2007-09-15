@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/02 19:27:43 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:28:22 merdely Exp $
 
-COMMENT=		"curses calendar front-end to remind"
+COMMENT=		curses calendar front-end to remind
 
 DISTNAME=		wyrd-1.4.1
 CATEGORIES=		productivity

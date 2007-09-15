@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/20 14:07:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:28:22 merdely Exp $
 
-COMMENT= 		"WWW quote retrieval tool"
+COMMENT= 		WWW quote retrieval tool
 
 DISTNAME=		xquote-2.6.10
 PKGNAME=		${DISTNAME}p1

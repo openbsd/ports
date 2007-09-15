@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/19 11:10:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:28:22 merdely Exp $
 
-COMMENT=	"personal accounting application"
+COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-0.5.9
 CATEGORIES=	productivity x11
