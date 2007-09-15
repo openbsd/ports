@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/06 19:09:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"Nagios Remote Plugin Executor"
+COMMENT=	Nagios Remote Plugin Executor
 
 DISTNAME=	nrpe-2.7.1
 CATEGORIES=	net

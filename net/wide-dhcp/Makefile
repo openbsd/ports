@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/16 00:31:27 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"client and servers for the WIDE DHCP protocol"
+COMMENT=	client and servers for the WIDE DHCP protocol
 
 DISTNAME=       dhcp-1.4.0p3
 PKGNAME=        wide-dhcp-1.4.0.3

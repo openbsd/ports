@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/02/11 14:43:24 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:54 merdely Exp $
 
-COMMENT=		"simple, secure TCP proxy daemon"
+COMMENT=		simple, secure TCP proxy daemon
 
 DISTNAME=		ipfreely-20050327
 PKGNAME=		${DISTNAME}p0

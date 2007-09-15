@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=		"graphical network monitor"
+COMMENT=		graphical network monitor
 
 DISTNAME=		etherape-0.9.0
 PKGNAME=		${DISTNAME}p2

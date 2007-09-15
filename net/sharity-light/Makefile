@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2006/02/05 00:23:13 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 22:36:59 merdely Exp $
 # $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
 
-COMMENT=	"userland smbfs --- SMB to NFS protocols converter"
+COMMENT=	userland smbfs --- SMB to NFS protocols converter
 
 VERSION=	1.2
 DISTNAME=	Sharity-Light.${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:54 merdely Exp $
 
-COMMENT=	"TCP/IP traffic logging tool"
+COMMENT=	TCP/IP traffic logging tool
 
 DISTNAME=	iplog-2.2.3
 CATEGORIES=	net security

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/08/05 12:34:33 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:55 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"network support for the lua language"
+COMMENT=	network support for the lua language
 DISTNAME=	luasocket-2.0.1
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net

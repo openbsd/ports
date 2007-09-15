@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/01 15:50:01 rui Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=		"simple tcp re-engineering tool"
+COMMENT=		simple tcp re-engineering tool
 
 DISTNAME=		tcpreen-1.4.3
 CATEGORIES=		net

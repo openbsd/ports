@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/05 00:08:05 mjc Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"libnetdude plugin for tcp connection tracking"
+COMMENT=	libnetdude plugin for tcp connection tracking
 
 DISTNAME=	libnetdude-conntrack-plugin-0.5
 PKGNAME=	${DISTNAME}p0

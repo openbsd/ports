@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/11 09:26:44 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=		"tool to monitor interface bandwidth usage"
+COMMENT=		tool to monitor interface bandwidth usage
 
 DISTNAME=		ifstat-1.1
 PKGNAME=		${DISTNAME}p0

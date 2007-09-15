@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.67 2007/07/11 11:05:38 aanriot Exp $
+# $OpenBSD: Makefile,v 1.68 2007/09/15 22:36:54 merdely Exp $
 
-COMMENT=	"shell-like command line ftp and sftp client"
+COMMENT=	shell-like command line ftp and sftp client
 
 DISTNAME=	lftp-3.5.4
 PKGNAME=	${DISTNAME}p1

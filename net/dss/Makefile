@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/28 11:57:05 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:53 merdely Exp $
 
-BROKEN=			"security issues"
+BROKEN=			security issues
 
-COMMENT-server=		"Darwin Streaming Server"
-COMMENT-admin=		"Darwin Streaming Server, Admin Interface"
-COMMENT-examples=	"Darwin Streaming Server, Example Movies"
-COMMENT-proxy=		"Darwin Streaming Proxy"
+COMMENT-server=		Darwin Streaming Server
+COMMENT-admin=		Darwin Streaming Server, Admin Interface
+COMMENT-examples=	Darwin Streaming Server, Example Movies
+COMMENT-proxy=		Darwin Streaming Proxy
 
 VERSION=	4.1.3
 DISTNAME=	DSS-4_1_3.src

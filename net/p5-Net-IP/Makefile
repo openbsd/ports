@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=	"perl module for IPv4/IPv6 address parsing"
+COMMENT=	perl module for IPv4/IPv6 address parsing
 
 MODULES=	cpan
 DISTNAME=	Net-IP-1.25

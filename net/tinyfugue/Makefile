@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 22:36:59 merdely Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 
-COMMENT=	"programmable MUD client, with macro support and more"
+COMMENT=	programmable MUD client, with macro support and more
 
 PKGNAME=	tinyfugue-4.0s1p2
 DISTNAME=	tf-40s1

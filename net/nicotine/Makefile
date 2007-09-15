@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:43:03 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"gtk soulseek client written in Python"
+COMMENT=	gtk soulseek client written in Python
 
 DISTNAME=	nicotine-1.0.8
 PKGNAME=	${DISTNAME}p0

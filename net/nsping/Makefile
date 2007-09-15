@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2007/05/29 00:56:54 aanriot Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"DNS ping"
+COMMENT=	DNS ping
 
 DISTNAME=	nsping-0.8
 DISTFILES=	nsping.tar.gz

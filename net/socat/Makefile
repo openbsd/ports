@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/17 22:00:15 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"socat is a relay for bidirectional data transfer" 
+COMMENT=	socat is a relay for bidirectional data transfer 
 
 DISTNAME=	socat-1.6.0.0
 CATEGORIES=	net

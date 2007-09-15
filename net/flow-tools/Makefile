@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/12/08 08:23:42 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"cisco NetFlow utilities"
+COMMENT=	cisco NetFlow utilities
 
 DISTNAME=	flow-tools-0.68
 PKGNAME=	${DISTNAME}

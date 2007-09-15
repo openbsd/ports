@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/12 20:31:17 rui Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"multi-threaded routing daemon"
+COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-0.99.9
 SHARED_LIBS=    ospf	0.0     \

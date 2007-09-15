@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/19 16:07:22 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:37:00 merdely Exp $
 
 PKGNAME=	wmwave-0.4p2
 DISTNAME=	wmwave-0-4
@@ -10,7 +10,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xpm c m 
 
-COMMENT=	"Window Maker dockapp to display wavelan statistics"
+COMMENT=	Window Maker dockapp to display wavelan statistics
 HOMEPAGE=	http://wmwave.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wmwave/}
 EXTRACT_SUFX=	.tgz

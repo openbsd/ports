@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/16 00:31:20 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"ftp client for X window system"
+COMMENT=	ftp client for X window system
 
 DISTNAME=	axyftp-0.5.1
 PKGNAME=	${DISTNAME}p1
@@ -11,9 +11,9 @@ HOMEPAGE=	http://www.wxftp.seul.org/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c 
 

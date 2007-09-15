@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/08 10:23:02 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"library for navigating to arbitrary packets in a trace file"
+COMMENT=	library for navigating to arbitrary packets in a trace file
 
 DISTNAME=	libpcapnav-0.6
 PKGNAME=	${DISTNAME}p0

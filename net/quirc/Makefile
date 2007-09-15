@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/10/16 23:33:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"irc client that uses Tcl/Tk"
+COMMENT=	irc client that uses Tcl/Tk
 
 DISTNAME=	quirc-0.9.84
 PKGNAME=	${DISTNAME}p1

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/15 15:09:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 22:36:58 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python interface to cURL library"
+COMMENT=	Python interface to cURL library
 
 VERSION=	7.15.5.1
 DISTNAME=	pycurl-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/13 23:14:28 deanna Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"distributed document delivery client"
+COMMENT=	distributed document delivery client
 
 V=		3.0.11
 DISTNAME=	gopher_${V}

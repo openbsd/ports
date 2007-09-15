@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.71 2007/06/19 18:10:26 rui Exp $
+# $OpenBSD: Makefile,v 1.72 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"scan ports and fingerprint stack of network hosts"
+COMMENT=	scan ports and fingerprint stack of network hosts
 
 DISTNAME=	nmap-4.20
 CATEGORIES=	net security

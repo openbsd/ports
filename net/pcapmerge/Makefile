@@ -1,6 +1,6 @@
-#   $OpenBSD: Makefile,v 1.8 2004/06/26 07:35:08 xsa Exp $
+#   $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"merge and extract portions of binary pcap files"
+COMMENT=	merge and extract portions of binary pcap files
 
 DISTNAME=	pcapmerge-1.0
 CATEGORIES=	net perl5

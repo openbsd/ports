@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/09 10:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=		"mouse and keyboard sharing utility"
+COMMENT=		mouse and keyboard sharing utility
 
 DISTNAME=		synergy-1.3.1
 PKGNAME=		${DISTNAME}p0

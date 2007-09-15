@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/15 21:40:01 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"powerful interactive packet manipulation in python"
+COMMENT=	powerful interactive packet manipulation in python
 
 DISTNAME=	scapy-1.1.1
 PKGNAME=	${DISTNAME}p0

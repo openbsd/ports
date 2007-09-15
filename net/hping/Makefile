@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2007/04/03 13:55:22 aanriot Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"TCP/UDP ping/traceroute tool"
+COMMENT=	TCP/UDP ping/traceroute tool
 
 DISTNAME=	hping2.0.0-rc3
 PKGNAME=	hping-2.0.0rc3p1

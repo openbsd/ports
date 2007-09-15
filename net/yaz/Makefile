@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/08 19:36:02 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=		"Z39.50/SR client and API library"
+COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-2.1.54
 CATEGORIES=		net
 

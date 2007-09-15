@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/20 12:41:46 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"Internet Relay Chat (IRC) protocol client library for Python"
+COMMENT=	Internet Relay Chat (IRC) protocol client library for Python
 
 DISTNAME=	python-irclib-0.4.6
 PKGNAME=	${DISTNAME:S/python/py/g}

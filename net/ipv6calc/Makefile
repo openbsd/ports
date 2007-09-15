@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/06/30 21:08:20 rui Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:54 merdely Exp $
 
-COMMENT=	"tool for manipulating IPv6 addresses"
+COMMENT=	tool for manipulating IPv6 addresses
 
 DISTNAME=	ipv6calc-0.71.0
 CATEGORIES=	net

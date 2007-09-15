@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/07/11 11:05:38 aanriot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"SIP Express Router"
+COMMENT=	SIP Express Router
 
 ONLY_FOR_ARCHS= i386 sparc
 

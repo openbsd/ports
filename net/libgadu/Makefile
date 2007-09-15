@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/15 20:49:25 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"implementation of Gadu-Gadu IM protocol"
+COMMENT=	implementation of Gadu-Gadu IM protocol
 
 DISTNAME=	libgadu-20060411
 SHARED_LIBS=	gadu 3.5

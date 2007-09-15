@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"clone of the classic Eliza program"
+COMMENT=	clone of the classic Eliza program
 
 MODULES=	cpan
 DISTNAME=	Chatbot-Eliza-1.04

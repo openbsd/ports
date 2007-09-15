@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.51 2006/12/30 19:43:02 matthieu Exp $
+# $OpenBSD: Makefile,v 1.52 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"mirroring/synchronization over low bandwidth links"
+COMMENT=	mirroring/synchronization over low bandwidth links
 
 DISTNAME=	rsync-2.6.9
 CATEGORIES=	net

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/13 12:51:14 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=		"GUI for dctc (Direct Connect Text Clone)"
+COMMENT=		GUI for dctc (Direct Connect Text Clone)
 
 DISTNAME=		dc_gui-0.42
 PKGNAME=		${DISTNAME}p0

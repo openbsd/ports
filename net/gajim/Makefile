@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/06 19:09:24 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 22:36:53 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"jabber client written in pygtk"
+COMMENT=	jabber client written in pygtk
 DISTNAME=	gajim-0.11.1
 PKGNAME=	${DISTNAME}p2
 EXTRACT_SUFX=	.tar.bz2

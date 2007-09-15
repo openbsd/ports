@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/06/02 14:09:25 jakob Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"monitor arp & rarp requests"
+COMMENT=	monitor arp & rarp requests
 
 VERSION=	2.1a15
 PKGNAME=	arpwatch-$(VERSION)p0

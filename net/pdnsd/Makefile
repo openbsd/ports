@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2006/10/31 14:58:46 aanriot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:58 merdely Exp $
 # Uses pthreads
 
-COMMENT=		"threaded DNS daemon, optimized for caching"
+COMMENT=		threaded DNS daemon, optimized for caching
 
 # archs that have pthreads library in
 # good enough shape to run this app.

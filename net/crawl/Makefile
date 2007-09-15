@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2005/11/01 16:24:15 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=		"small and efficient HTTP crawler"
+COMMENT=		small and efficient HTTP crawler
 
 DISTNAME=		crawl-0.4
 PKGNAME=		${DISTNAME}p1

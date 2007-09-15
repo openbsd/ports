@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/14 20:49:06 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=	"Perl module for encoding/decoding network traffic"
+COMMENT=	Perl module for encoding/decoding network traffic
 
 MODULES=	cpan
 DISTNAME=	NetPacket-0.04

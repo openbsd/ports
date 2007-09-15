@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.42 2006/02/10 21:10:03 aanriot Exp $
+# $OpenBSD: Makefile,v 1.43 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"retrieve files from the web via HTTP, HTTPS and FTP"
+COMMENT=	retrieve files from the web via HTTP, HTTPS and FTP
 
 DISTNAME=	wget-1.10.2
 PKGNAME=	${DISTNAME}p0

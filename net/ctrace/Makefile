@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2004/06/26 07:35:08 xsa Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"multiprotocol traceroute tool"
+COMMENT=	multiprotocol traceroute tool
 
 DISTNAME=	ctrace-0.9
 CATEGORIES=	net

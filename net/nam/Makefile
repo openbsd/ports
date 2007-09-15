@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/20 23:17:12 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 22:36:55 merdely Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
-COMMENT=	"UCB/LBNL Network Animator"
+COMMENT=	UCB/LBNL Network Animator
 
 DISTNAME=	nam-src-1.9
 PKGNAME=	nam-1.9p0

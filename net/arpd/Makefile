@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:52 merdely Exp $
 			
-COMMENT=		"ARP reply daemon"
+COMMENT=		ARP reply daemon
 
 DISTNAME=		arpd-0.2
 PKGNAME=		${DISTNAME}p1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/14 20:18:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=	"perl implementation of the SSH1 and SSH2 protocols"
+COMMENT=	perl implementation of the SSH1 and SSH2 protocols
 
 MODULES=	cpan
 DISTNAME=	Net-SSH-Perl-1.30

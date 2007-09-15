@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/04 23:06:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:52 merdely Exp $
 PKG_ARCH=	*
 
-COMMENT=	"utility for monitoring and archiving AOL Instant Messenger"
+COMMENT=	utility for monitoring and archiving AOL Instant Messenger
 DISTNAME=	aimsniff-0.9d
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aimsniff/}

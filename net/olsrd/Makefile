@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/01/21 11:34:04 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"OLSR routing daemon"
+COMMENT=	OLSR routing daemon
 
 DISTNAME=	olsrd-0.4.10
 CATEGORIES=     net

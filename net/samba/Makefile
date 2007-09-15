@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.85 2007/07/02 21:56:57 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.86 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT-main=	"SMB and CIFS client and server for UNIX"
-COMMENT-docs=	"documentation and examples for samba"
+COMMENT-main=	SMB and CIFS client and server for UNIX
+COMMENT-docs=	documentation and examples for samba
 
 DISTNAME=		samba-3.0.25b
 PKGNAME-main=		${DISTNAME}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/04 11:40:56 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:54 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"irssi module allowing you to connect to SILC network"
+COMMENT=	irssi module allowing you to connect to SILC network
 
 IRSSI_VERSION=	0.8.10
 SILC_VERSION=	1.0.4.1

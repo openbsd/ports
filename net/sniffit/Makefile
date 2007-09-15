@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2006/02/05 00:31:32 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 22:36:59 merdely Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/04/04 04:58:25 obrien Exp $
 
 .if ${MACHINE_ARCH} == "alpha"
-BROKEN=		"alignment issues"
+BROKEN=		alignment issues
 .endif
 
-COMMENT=	"packet sniffer program; for educational use"
+COMMENT=	packet sniffer program; for educational use
 
 DISTNAME=	sniffit.0.3.7.beta
 PKGNAME=	sniffit-0.3.7b
@@ -19,9 +19,9 @@ PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://reptile.rug.ac.be/~coder/sniffit/sniffit.html
 
-PERMIT_PACKAGE_CDROM=	"no obvious license"
+PERMIT_PACKAGE_CDROM=	no obvious license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no obvious license"
+PERMIT_DISTFILES_CDROM=	no obvious license
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses pcap 
 

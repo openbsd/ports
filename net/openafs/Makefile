@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/08/05 15:38:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:56 merdely Exp $
 
 BROKEN=			does not build
 ONLY_FOR_ARCHS= 	i386
 
-COMMENT=		"Distributed filesystem OpenAFS"
+COMMENT=		Distributed filesystem OpenAFS
 
 DISTNAME=		openafs-1.4.0-src
 PKGNAME=		openafs-1.4.0p5

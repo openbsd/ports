@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/12 21:26:22 rui Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=		"realtime bandwidth monitoring of interfaces"
+COMMENT=		realtime bandwidth monitoring of interfaces
 
 DISTNAME=		bwm-ng-0.6
 CATEGORIES=		net

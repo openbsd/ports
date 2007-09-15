@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/04/16 17:00:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"rewrite of the CVSup file updating client in C"
+COMMENT=	rewrite of the CVSup file updating client in C
 
 VERSION=	20060318
 DISTNAME=	csup-snap-${VERSION}

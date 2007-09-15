@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.50 2006/11/25 05:33:28 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.51 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"highly flexible sniffer/NIDS"
+COMMENT=	highly flexible sniffer/NIDS
 
 DISTNAME=	snort-2.6.0.2
 PKGNAME=	${DISTNAME}p1

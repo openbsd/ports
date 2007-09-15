@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"look at the icmp messages received by the host"
+COMMENT=	look at the icmp messages received by the host
 
 DISTNAME=	icmpinfo-1.11
 CATEGORIES=	net sysutils

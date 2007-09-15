@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/09 00:41:19 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"wireless access point configuration tools"
+COMMENT=	wireless access point configuration tools
 
 DISTNAME=	ap-utils-1.3.2
 PKGNAME=	${DISTNAME}p0

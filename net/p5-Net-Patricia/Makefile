@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:57 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Patricia Trie perl module for fast IP address lookups"
+COMMENT=	Patricia Trie perl module for fast IP address lookups
 
 MODULES=	cpan
 DISTNAME=	Net-Patricia-1.014

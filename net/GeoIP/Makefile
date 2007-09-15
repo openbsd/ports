@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/05 06:21:55 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 22:36:51 merdely Exp $
 
-COMMENT=	"find the country where IP address/hostname originates from"
+COMMENT=	find the country where IP address/hostname originates from
 
 DISTNAME=	GeoIP-1.4.3
 SHARED_LIBS +=  GeoIP		5.3	# .5.3

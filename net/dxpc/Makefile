@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2005/04/17 19:33:02 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"X11 over a low bandwidth link"
+COMMENT=	X11 over a low bandwidth link
 VERSION=	3.8.2
 DISTNAME=	dxpc-${VERSION}
 PKGNAME=	${DISTNAME}p0

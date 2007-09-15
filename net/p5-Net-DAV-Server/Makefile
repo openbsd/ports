@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"perl module to provide a DAV server"
+COMMENT=	perl module to provide a DAV server
 
 MODULES=	cpan
 DISTNAME=	Net-DAV-Server-1.29

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT= 	"Perl modules for parsing Snort configuration files"
+COMMENT= 	Perl modules for parsing Snort configuration files
 
 MODULES=	cpan
 DISTNAME=	Net-Snort-Parser-1.21

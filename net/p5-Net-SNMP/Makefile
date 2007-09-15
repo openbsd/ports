@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=	"Perl modules to access SNMP"
+COMMENT=	Perl modules to access SNMP
 
 MODULES=	cpan
 DISTNAME=	Net-SNMP-5.2.0

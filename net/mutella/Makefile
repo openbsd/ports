@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=		"gnutella client with an easy to use interface"
+COMMENT=		gnutella client with an easy to use interface
 
 DISTNAME=		mutella-0.4.3
 CATEGORIES=		net

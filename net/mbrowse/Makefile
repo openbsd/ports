@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/13 12:51:14 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"graphical MIB browser"
+COMMENT=	graphical MIB browser
 
 DISTNAME=	mbrowse-0.3.1
 CATEGORIES=	net

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/16 00:31:24 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=		"PPTP Server"
+COMMENT=		PPTP Server
 
 PKGNAME=		poptop-1.1.4.b4p1
 DISTNAME=		pptpd-1.1.4-b4

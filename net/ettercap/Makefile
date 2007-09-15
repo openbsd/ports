@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2007/09/15 22:36:53 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"multi-purpose sniffer/interceptor/logger"
+COMMENT=	multi-purpose sniffer/interceptor/logger
 
 VER=		0.6.b
 DISTNAME=	ettercap-${VER}

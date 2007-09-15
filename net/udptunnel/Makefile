@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"UDP tunnel utility"
+COMMENT=	UDP tunnel utility
 
 VERSION=	1.1
 DISTNAME=	udptunnel-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/16 00:31:26 alek Exp $ 
+# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:59 merdely Exp $ 
 
-COMMENT=	"client program to help playing muds"
+COMMENT=	client program to help playing muds
 
 DISTNAME=       tintin++v1.5pl6
 PKGNAME=	tintin-1.5.6

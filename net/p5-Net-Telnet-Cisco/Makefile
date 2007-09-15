@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=		"module to interact with a Cisco router"
+COMMENT=		module to interact with a Cisco router
 
 MODULES=		cpan
 DISTNAME=		Net-Telnet-Cisco-1.10

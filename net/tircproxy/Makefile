@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"transparent IRC proxy"
+COMMENT=	transparent IRC proxy
 
 DISTNAME=	tircproxy-0.4.5
 CATEGORIES=     net

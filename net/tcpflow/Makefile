@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2006/01/15 12:42:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"tool for capturing data from TCP connections"
+COMMENT=	tool for capturing data from TCP connections
 
 DISTNAME=	tcpflow-0.21
 PKGNAME=	${DISTNAME}p0

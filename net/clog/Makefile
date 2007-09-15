@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2007/05/18 19:19:11 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 22:36:52 merdely Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1997/11/05 11:39:40 obrien Exp $
 
-COMMENT=	"tcp connection logger daemon"
+COMMENT=	tcp connection logger daemon
 
 DISTNAME=	clog-1.6
 CATEGORIES=	net security

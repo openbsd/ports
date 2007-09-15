@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/13 20:30:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:51 merdely Exp $
 
-COMMENT=	"SixXS automatic IPv6 connectivity client utility"
+COMMENT=	SixXS automatic IPv6 connectivity client utility
 
 VERSION=	20070115
 DISTNAME=	aiccu_${VERSION}

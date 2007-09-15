@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/14 20:49:06 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT= 	"perl implementation of XML-RPC"
+COMMENT= 	perl implementation of XML-RPC
 
 MODULES=	cpan
 DISTNAME=	RPC-XML-0.59

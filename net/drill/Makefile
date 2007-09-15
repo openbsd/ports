@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/11 08:25:26 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"DNS debugger"
+COMMENT=	DNS debugger
 
 VERSION=	1.2.0
 DISTNAME=	ldns-${VERSION}

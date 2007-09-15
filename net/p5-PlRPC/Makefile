@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/05 09:59:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=	"module for writing rpc servers and clients"
+COMMENT=	module for writing rpc servers and clients
 
 MODULES=	cpan
 DISTNAME=	PlRPC-0.2018

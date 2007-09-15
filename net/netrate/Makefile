@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/30 04:12:29 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=		"FreeBSD's tcp/udp traffic generator"
+COMMENT=		FreeBSD's tcp/udp traffic generator
 
 DISTNAME=		netrate-20070208
 CATEGORIES=		benchmarks net

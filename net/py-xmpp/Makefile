@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/14 05:57:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"Python XMPP and Jabber implementation"
+COMMENT=	Python XMPP and Jabber implementation
 
 DISTNAME=	pyxmpp-1.0.0
 PKGNAME=	${DISTNAME:S/^py/py-/}

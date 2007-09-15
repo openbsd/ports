@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=	"extension for portable daemons"
+COMMENT=	extension for portable daemons
 
 MODULES=	cpan
 DISTNAME=	Net-Daemon-0.39

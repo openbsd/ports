@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"send ICMP nasty garbage"
+COMMENT=	send ICMP nasty garbage
 
 DISTNAME=	SING-1.1
 PKGNAME=	${DISTNAME:L}p1

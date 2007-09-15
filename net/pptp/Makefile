@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/12 10:10:09 grunk Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 22:36:58 merdely Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/04/10 01:14:01 jtk Exp $
 
-COMMENT=	'PPTP client package for Microsoft VPN servers'
+COMMENT=	PPTP client package for Microsoft VPN servers
 
 DISTNAME=	pptp-1.7.1
 CATEGORIES=	net

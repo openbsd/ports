@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"shell utilities to connect programs to sockets"
+COMMENT=	shell utilities to connect programs to sockets
 
 DISTNAME=	netpipes-4.2-export
 CATEGORIES=	net

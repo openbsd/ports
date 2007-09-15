@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2005/11/01 14:43:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"UUCP suite"
+COMMENT=	UUCP suite
 
 DISTNAME=	uucp-1.07
 PKGNAME=	${DISTNAME}p1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/13 13:16:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=		"ICQ console client with encryption support"
+COMMENT=		ICQ console client with encryption support
 
 DISTNAME=		ysmv7_2_9_9
 PKGNAME=		${DISTNAME:S/_/-/:S/_/./g}

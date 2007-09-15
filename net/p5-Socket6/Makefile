@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/14 20:49:06 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:57 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Perl defines relating to AF_INET6 sockets"
+COMMENT=	Perl defines relating to AF_INET6 sockets
 
 MODULES=	cpan
 DISTNAME=	Socket6-0.19

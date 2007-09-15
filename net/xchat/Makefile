@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.62 2007/07/07 12:51:10 couderc Exp $
+# $OpenBSD: Makefile,v 1.63 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"GTK+2 IRC client"
+COMMENT=	GTK+2 IRC client
 
 MAJOR=		2.8
 VERSION=	${MAJOR}.4

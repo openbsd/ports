@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/05 00:08:09 mjc Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"netdude plugin providing traffic analysis"
+COMMENT=	netdude plugin providing traffic analysis
 
 DISTNAME=	netdude-traffic-analyzer-plugin-0.3
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2005/10/02 08:29:57 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"powerful console ftp client with many features"
+COMMENT=	powerful console ftp client with many features
 
 DISTNAME=	yafc-1.1
 PKGNAME=	${DISTNAME}p0

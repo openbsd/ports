@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2007/03/31 09:38:42 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"network grep"
+COMMENT=	network grep
 
 DISTNAME=	ngrep-1.45
 PKGNAME=	${DISTNAME}p0

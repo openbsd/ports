@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/01/08 10:23:03 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"5250 telnet protocol and terminal"
+COMMENT=	5250 telnet protocol and terminal
 
 DISTNAME=	tn5250-0.17.3
 SHARED_LIBS=	5250	0.0

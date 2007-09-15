@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"determine remote OS using simple tcp packets"
+COMMENT=	determine remote OS using simple tcp packets
 
 DISTNAME=	queso-980922
 CATEGORIES=	net

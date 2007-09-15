@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.60 2007/05/27 20:47:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
+COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 VERSION=	2.6
 HELP_DATE=	20050315

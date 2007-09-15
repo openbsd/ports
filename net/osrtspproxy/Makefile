@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/10 10:37:07 grunk Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=		"RTSP proxy reference implementation"
+COMMENT=		RTSP proxy reference implementation
 
 DISTNAME=		osrtspproxy_2_0
 PKGNAME=		osrtspproxy-2.0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/16 00:31:20 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"userland arp-proxy daemon"
+COMMENT=	userland arp-proxy daemon
 
 DISTNAME=	arpcatch
 PKGNAME=	${DISTNAME}-19970824

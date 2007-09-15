@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/29 20:21:26 rui Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:53 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT-main=		"RADIUS server implementation"
-COMMENT-iodbc=		"freeradius iodbc rlm addon"
-COMMENT-mysql=		"freeradius mysql rlm addon"
-COMMENT-pgsql=		"freeradius pgsql rlm addon"
-COMMENT-ldap=		"freeradius ldap rlm addon"
+COMMENT-main=		RADIUS server implementation
+COMMENT-iodbc=		freeradius iodbc rlm addon
+COMMENT-mysql=		freeradius mysql rlm addon
+COMMENT-pgsql=		freeradius pgsql rlm addon
+COMMENT-ldap=		freeradius ldap rlm addon
 
 V=			1.1.6
 DISTNAME=		freeradius-$V

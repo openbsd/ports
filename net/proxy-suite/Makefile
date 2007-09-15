@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/07/19 16:07:22 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"set of programs to enhance firewall security"
+COMMENT=	set of programs to enhance firewall security
 
 DISTNAME=	proxy-suite-1.9
 PKGNAME=	${DISTNAME}p0

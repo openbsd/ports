@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.33 2006/11/24 21:23:19 steven Exp $
+# $OpenBSD: Makefile,v 1.34 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT-main=	"network time protocol implementation"
-COMMENT-doc=	"network time protocol documentation"
+COMMENT-main=	network time protocol implementation
+COMMENT-doc=	network time protocol documentation
 
 NTP_VERSION=	4.2.0a
 DISTNAME=	ntp-stable-${NTP_VERSION}-20050303

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/19 02:59:44 deanna Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:54 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"BitTorrent client for KDE"
+COMMENT=	BitTorrent client for KDE
 
 VERSION=	2.1.4
 DISTNAME=	ktorrent-${VERSION}

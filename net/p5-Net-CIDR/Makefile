@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/15 09:10:26 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"manipulate IPv4/IPv6 netblocks in CIDR notation"
+COMMENT=	manipulate IPv4/IPv6 netblocks in CIDR notation
 
 MODULES=	cpan
 DISTNAME=	Net-CIDR-0.11

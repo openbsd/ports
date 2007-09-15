@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/19 01:52:26 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=		"noninteractive ftp client"
+COMMENT=		noninteractive ftp client
 DISTNAME=		weex-2.6.1.5
 PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net	

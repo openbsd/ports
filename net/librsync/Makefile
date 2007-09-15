@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/08/31 09:56:58 jsg Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"Library for delta compression of streams"
+COMMENT=	Library for delta compression of streams
 DISTNAME=	librsync-0.9.7
 SHARED_LIBS=	rsync 0.0
 CATEGORIES=	net

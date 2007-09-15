@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 22:36:54 merdely Exp $
 
-COMMENT=	"FTP proxy"
+COMMENT=	FTP proxy
 
 DISTNAME=	jftpgw-0.13.5
 CATEGORIES=	net

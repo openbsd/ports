@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=		"Gnome2 MUD/Moo Client"
+COMMENT=		Gnome2 MUD/Moo Client
 
 DISTNAME=		gmudix-0.10
 PKGNAME=		${DISTNAME}p3

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/01 14:08:32 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"network traffic visualization and editing tool"
+COMMENT=	network traffic visualization and editing tool
 
 DISTNAME=	netdude-0.4.6
 PKGNAME=	${DISTNAME}p0

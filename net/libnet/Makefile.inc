@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1 2005/05/23 23:50:39 msf Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"raw IP packet construction library"
+COMMENT=	raw IP packet construction library
 
 DISTNAME=	libnet-${VERSION}
 CATEGORIES=	net

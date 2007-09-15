@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/28 18:21:44 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"Gadu-Gadu IM protocol client"
+COMMENT=	Gadu-Gadu IM protocol client
 
 DISTNAME=	ekg-1.6
 CATEGORIES=	net

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/01/05 05:34:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=		"ssh through https proxy tunnel"
+COMMENT=		ssh through https proxy tunnel
 
 DISTNAME=		gotthard-1.3
 CATEGORIES=		net

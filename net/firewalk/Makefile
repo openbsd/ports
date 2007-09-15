@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2005/05/24 00:00:11 mjc Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"gateway acl scanner (via static-source port traceroute)"
+COMMENT=	gateway acl scanner (via static-source port traceroute)
 
 DISTNAME=	firewalk-0.8
 PKGNAME=	${DISTNAME}p0

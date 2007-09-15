@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.41 2007/05/11 11:25:17 bernd Exp $
+# $OpenBSD: Makefile,v 1.42 2007/09/15 22:36:55 merdely Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
-COMMENT=	"text-based ICQ implementation"
+COMMENT=	text-based ICQ implementation
 
 DISTNAME=	micq-0.5.3
 CATEGORIES=	net

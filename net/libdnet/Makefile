@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/22 08:29:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT-main=	"portable low-level networking library"
-COMMENT-python= "python interface to libdnet"
+COMMENT-main=	portable low-level networking library
+COMMENT-python= python interface to libdnet
 
 DISTNAME=	libdnet-1.10
 PKGNAME-main=	${DISTNAME}p2

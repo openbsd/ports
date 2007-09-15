@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/16 00:31:20 alek Exp $
-COMMENT=		"aggregation-based network traffic profiler"
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:51 merdely Exp $
+COMMENT=		aggregation-based network traffic profiler
 
 DISTNAME=		aguri-0.7
 PKGNAME=		${DISTNAME}p0

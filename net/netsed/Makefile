@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=		"network sed"
+COMMENT=		network sed
 
 DISTNAME=		netsed
 PKGNAME=		${DISTNAME}-0.01c

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/03/30 16:41:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=		"network pipe meter"
+COMMENT=		network pipe meter
 
 DISTNAME=		nepim-0.39
 CATEGORIES=		net sysutils

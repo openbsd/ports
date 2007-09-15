@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/30 15:45:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"automagic packet filter configurator for FTP"
+COMMENT=	automagic packet filter configurator for FTP
 
 DISTNAME=	ftpsesame-0.95
 CATEGORIES=	net

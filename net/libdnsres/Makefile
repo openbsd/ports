@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/03 15:10:17 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"non-blocking thread-safe API for resolving DNS names"
+COMMENT=	non-blocking thread-safe API for resolving DNS names
 
 DISTNAME= 	libdnsres-0.1a
 SHARED_LIBS=	dnsres	0.1	# .0.1

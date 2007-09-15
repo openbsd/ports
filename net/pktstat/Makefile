@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/04 13:50:19 aanriot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=		"network traffic viewer"
+COMMENT=		network traffic viewer
 DISTNAME=		pktstat-1.8.3
 CATEGORIES=		net
 

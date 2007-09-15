@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/20 07:39:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"LIVE555 streaming media library"
+COMMENT=	LIVE555 streaming media library
 
 DISTNAME=	live.2007.02.20
 PKGNAME=	liveMedia-20070220p1

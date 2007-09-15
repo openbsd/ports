@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/20 19:58:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT-main=	"Dictionary Server Protocol client"
-COMMENT-server=	"Dictionary Server Protocol server"
+COMMENT-main=	Dictionary Server Protocol client
+COMMENT-server=	Dictionary Server Protocol server
 
 V=		1.9.15
 DISTNAME=	dictd-$V

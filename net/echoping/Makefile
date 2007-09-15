@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"test performance of a remote TCP service"
+COMMENT=	test performance of a remote TCP service
 
 VERSION=	5.2.0
 DISTNAME=	echoping-${VERSION}

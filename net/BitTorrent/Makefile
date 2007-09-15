@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/28 19:13:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/15 22:36:51 merdely Exp $
 
-COMMENT-main=	"cooperative file distribution system implemented in Python"
-COMMENT-gui=	"graphical interface components for BitTorrent"
+COMMENT-main=	cooperative file distribution system implemented in Python
+COMMENT-gui=	graphical interface components for BitTorrent
 
 VERSION=	4.4.0
 DISTNAME=	BitTorrent-${VERSION}
@@ -12,9 +12,9 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.bittorrent.com/
 
 # Custom
-PERMIT_DISTFILES_CDROM=	"may not sell without modification"
+PERMIT_DISTFILES_CDROM=	may not sell without modification
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	"may not sell without modification"
+PERMIT_PACKAGE_CDROM=	may not sell without modification
 PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	http://download.bittorrent.com/dl/

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/26 23:13:25 aanriot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"local network discovery tool"
+COMMENT=	local network discovery tool
 
 DISTNAME=	thcrut-0.1
 PKGNAME=	${DISTNAME}p0

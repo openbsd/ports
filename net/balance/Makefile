@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/29 18:56:24 rui Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=		"tcp proxy with load balancing and failover mechanisms"
+COMMENT=		tcp proxy with load balancing and failover mechanisms
 
 DISTNAME=		balance-3.35
 CATEGORIES=    		net

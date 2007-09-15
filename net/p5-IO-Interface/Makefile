@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:56 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"module for access to network card configuration information"
+COMMENT=	module for access to network card configuration information
 
 MODULES=	cpan
 DISTNAME=	IO-Interface-1.02

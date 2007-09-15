@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"benchmarking tool for analysing TCP and UDP performance"
+COMMENT=	benchmarking tool for analysing TCP and UDP performance
 
 PKGNAME=	ttcp-1.12
 CATEGORIES=	net

@@ -1,4 +1,5 @@
-COMMENT=	"perl5 interface to network devices and MIBs through SNMP"
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:57 merdely Exp $
+COMMENT=	perl5 interface to network devices and MIBs through SNMP
 
 MODULES=	cpan
 

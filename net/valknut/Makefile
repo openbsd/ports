@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"Graphical Direct-Connect client"
+COMMENT=	Graphical Direct-Connect client
 
 VERSION=	0.3.7
 DISTNAME=	valknut-${VERSION}

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/15 22:36:56 merdely Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
 
-COMMENT=	"network usage, interface similar to top(1)"
+COMMENT=	network usage, interface similar to top(1)
 
 DISTNAME=	ntop-1.1
 DISTFILES=	${DISTNAME}-src.tar.gz

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 22:37:00 merdely Exp $
 # $FreeBSD: Makefile,v 1.12 1996/12/01 01:23:22 obrien Exp $
 
-COMMENT=	"X11 front-end program for the archie network search service"
+COMMENT=	X11 front-end program for the archie network search service
 
 DISTNAME=	xarchie-2.0.10
 CATEGORIES=	net

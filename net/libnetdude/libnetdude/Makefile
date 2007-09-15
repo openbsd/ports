@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/07 14:55:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"packet manipulation backend of Netdude framework"
+COMMENT=	packet manipulation backend of Netdude framework
 
 DISTNAME=	libnetdude-0.7
 PKGNAME=	${DISTNAME}p2

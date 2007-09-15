@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/27 09:13:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 22:36:52 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
-COMMENT-main=	"network file distribution system"
-COMMENT-server=	"network file distribution server"
+COMMENT-main=	network file distribution system
+COMMENT-server=	network file distribution server
 
 VERSION=	16.1h
 DISTNAME=	cvsup-snap-${VERSION}

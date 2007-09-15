@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2006/07/12 07:46:21 steven Exp $
+# $OpenBSD: Makefile,v 1.32 2007/09/15 22:36:52 merdely Exp $
 
-BROKEN=		"requires update but new version has issues"
+BROKEN=		requires update but new version has issues
 
-COMMENT=	"curses-based icq client implementation"
+COMMENT=	curses-based icq client implementation
 
 DISTNAME=	centericq-4.9.11
 PKGNAME=	${DISTNAME}p0

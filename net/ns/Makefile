@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/20 23:17:12 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 22:36:56 merdely Exp $
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
 
-COMMENT=	"UCB/LBNL Network Simulator Version 2"
+COMMENT=	UCB/LBNL Network Simulator Version 2
 
 DISTNAME=	ns-2.26
 PKGNAME=	${DISTNAME}p0

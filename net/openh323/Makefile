@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/08/02 14:37:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:56 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"H.323 video conferencing library"
+COMMENT=	H.323 video conferencing library
 
 DISTNAME=	openh323-v1_18_0
 PKGNAME=	openh323-1.18.0p2

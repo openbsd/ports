@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.42 2004/12/16 00:31:20 alek Exp $
+# $OpenBSD: Makefile,v 1.43 2007/09/15 22:36:52 merdely Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
-COMMENT=	"alternative ircII color client"
+COMMENT=	alternative ircII color client
 
 VERSION=	1.0c18
 DISTNAME=	ircii-pana-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/15 15:09:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"XML-RPC C/C++ client-server implementation"
+COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
 
 DISTNAME=	xmlrpc-c-1.06.08

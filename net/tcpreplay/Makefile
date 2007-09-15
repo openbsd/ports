@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2006/02/05 00:40:42 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"resend network traffic saved by tcpdump"
+COMMENT=	resend network traffic saved by tcpdump
 
 DISTNAME=	tcpreplay-1.0.1
 CATEGORIES=	net

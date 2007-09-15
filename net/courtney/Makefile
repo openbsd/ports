@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/27 14:17:02 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"simple port scan detector"
+COMMENT=	simple port scan detector
 
 DISTNAME=	courtney-1.3
 CATEGORIES=	net security

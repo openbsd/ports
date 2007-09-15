@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/19 05:18:34 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"object interface for AF_INET and AF_INET6 domain sockets"
+COMMENT=	object interface for AF_INET and AF_INET6 domain sockets
 
 MODULES=	cpan
 DISTNAME=	INET6-2.01

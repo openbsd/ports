@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"SLIP/CSLIP emulator for users with shell accounts"
+COMMENT=	SLIP/CSLIP emulator for users with shell accounts
 
 V=		1.0c
 DISTNAME=	slirp-${V}

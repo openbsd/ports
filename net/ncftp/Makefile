@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2006/09/19 14:27:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"ftp replacement with advanced user interface"
+COMMENT=	ftp replacement with advanced user interface
 
 DISTNAME=	ncftp-3.2.0
 CATEGORIES=	net

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/26 14:07:16 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"Ruby XMPP/Jabber library"
+COMMENT=	Ruby XMPP/Jabber library
 
 DISTNAME=	xmpp4r-0.3.1
 PKGNAME=	ruby-${DISTNAME}

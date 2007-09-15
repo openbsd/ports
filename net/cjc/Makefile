@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/11 04:28:17 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"Jabber client for text terminals"
+COMMENT=	Jabber client for text terminals
 
 DISTNAME=	cjc-1.0.0
 CATEGORIES=	net

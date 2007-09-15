@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/06/03 09:43:03 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 22:36:54 merdely Exp $
 
-COMMENT=		"fully compliant DynDNS.org client"
+COMMENT=		fully compliant DynDNS.org client
 
 MV=			0
 V=			207

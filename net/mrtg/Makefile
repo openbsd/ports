@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.54 2007/07/11 11:05:38 aanriot Exp $
+# $OpenBSD: Makefile,v 1.55 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"multi-router traffic grapher"
+COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.12.2
 PKGNAME=	${DISTNAME}p4

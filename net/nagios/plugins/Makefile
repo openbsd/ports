@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2007/07/04 16:23:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT-main=	"nagios base plugins"
-COMMENT-fping=	"fping plugin"
-COMMENT-game=	"gameserver plugin"
-COMMENT-ldap=	"ldap plugin"
-COMMENT-mysql=	"mysql plugin"
-COMMENT-ntp=	"ntp plugin"
-COMMENT-pgsql=	"postgresql plugin"
-COMMENT-samba=	"samba plugin"
-COMMENT-snmp=	"plugins using snmp"
+COMMENT-main=	nagios base plugins
+COMMENT-fping=	fping plugin
+COMMENT-game=	gameserver plugin
+COMMENT-ldap=	ldap plugin
+COMMENT-mysql=	mysql plugin
+COMMENT-ntp=	ntp plugin
+COMMENT-pgsql=	postgresql plugin
+COMMENT-samba=	samba plugin
+COMMENT-snmp=	plugins using snmp
 
 V=		1.4.9
 DISTNAME=	nagios-plugins-${V}

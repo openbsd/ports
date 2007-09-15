@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/16 11:24:12 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:54 merdely Exp $
 
-COMMENT=		"set of internet protocol service daemons for Unix"
+COMMENT=		set of internet protocol service daemons for Unix
 
 DISTNAME=		ipsvd-0.12.1
 CATEGORIES=		net

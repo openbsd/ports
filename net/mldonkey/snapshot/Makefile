@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:55 merdely Exp $
 
-BROKEN= "requires update due to ocaml 3.08"
+BROKEN= requires update due to ocaml 3.08
 
-COMMENT='e-donkey client'
+COMMENT=e-donkey client
 CATEGORIES=net
 
 MAINTAINER=Marc Espie <espie@openbsd.org>

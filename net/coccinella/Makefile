@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/20 13:07:20 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=		"Jabber client with whiteboard communication" 
+COMMENT=		Jabber client with whiteboard communication 
 
 DISTNAME=		Coccinella-0.95.4Src
 PKGNAME=		${DISTNAME:S/Src$//:L}

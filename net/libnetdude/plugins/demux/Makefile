@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/05 00:08:06 mjc Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"libnetdude plugin for separating traces into multiple files"
+COMMENT=	libnetdude plugin for separating traces into multiple files
 
 DISTNAME=	libnetdude-demux-plugin-0.2
 PKGNAME=	${DISTNAME}p0

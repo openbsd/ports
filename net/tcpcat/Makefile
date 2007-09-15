@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/07 19:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=		"utility for sending/receiving data over TCP stream"
+COMMENT=		utility for sending/receiving data over TCP stream
 
 VERSION=		1.2.0
 DISTNAME=		tcpcat-${VERSION}

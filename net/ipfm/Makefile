@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 22:36:54 merdely Exp $
 
-COMMENT=	"IP bandwidth analysis tool"
+COMMENT=	IP bandwidth analysis tool
 
 DISTNAME=	ipfm-0.11.4
 CATEGORIES=     net

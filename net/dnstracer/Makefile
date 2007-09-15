@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/03/30 17:01:25 jcs Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:53 merdely Exp $
 
 DISTNAME=	dnstracer-1.8
 CATEGORIES=	net
@@ -11,7 +11,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-COMMENT=	"domain name system resolution tracer"
+COMMENT=	domain name system resolution tracer
 HOMEPAGE=	http://www.mavetju.org/unix/dnstracer.php
 MASTER_SITES=	http://www.mavetju.org/download/
 

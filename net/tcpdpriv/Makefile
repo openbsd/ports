@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"removes sensitive information from a tcpdump -w file"
+COMMENT=	removes sensitive information from a tcpdump -w file
 
 DISTNAME=	tcpdpriv-1.1.10
 PKGNAME=	${DISTNAME}p0

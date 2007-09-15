@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=	"perl implementation of RIPE whois"
+COMMENT=	perl implementation of RIPE whois
 
 MODULES=	cpan
 DISTNAME=	Net-Whois-RIPE-1.23

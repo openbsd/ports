@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/16 14:28:20 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"NetBIOS name network scanner"
+COMMENT=	NetBIOS name network scanner
 
 DISTNAME=	nbtscan-1.5
 PKGNAME=	${DISTNAME}p0

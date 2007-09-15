@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/11 08:20:50 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:54 merdely Exp $
 
-COMMENT=	"DNS library modelled after Net::DNS"
+COMMENT=	DNS library modelled after Net::DNS
 
 VERSION=	1.2.0
 DISTNAME=	ldns-${VERSION}

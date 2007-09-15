@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2007/05/30 11:53:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 22:36:53 merdely Exp $
 # $NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp $
 
-COMMENT=	"Internet CB - mostly-defunct chat client"
+COMMENT=	Internet CB - mostly-defunct chat client
 
 DISTNAME=	icb-5.0.9
 PKGNAME=	${DISTNAME}p3

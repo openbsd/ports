@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/22 17:28:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"implementation of the IMAP protocol for PHP"
+COMMENT=	implementation of the IMAP protocol for PHP
 
 DISTNAME=	Net_IMAP-1.0.3
 PKGNAME=	pear-${DISTNAME:S/_/-/}p2

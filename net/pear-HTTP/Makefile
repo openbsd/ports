@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/22 22:48:03 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"miscellaneous HTTP utilities for PHP"
+COMMENT=	miscellaneous HTTP utilities for PHP
 
 DISTNAME=	HTTP-1.3.6
 PKGNAME=	pear-${DISTNAME}p0

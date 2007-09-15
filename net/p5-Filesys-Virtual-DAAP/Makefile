@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/14 20:49:05 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:56 merdely Exp $
 
-COMMENT=	"presents a DAAP share as a VFS"
+COMMENT=	presents a DAAP share as a VFS
 
 MODULES=	cpan
 DISTNAME=	Filesys-Virtual-DAAP-0.04

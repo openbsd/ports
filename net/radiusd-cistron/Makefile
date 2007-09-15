@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2006/04/16 14:42:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"Cistron RADIUS server"
+COMMENT=	Cistron RADIUS server
 
 VERSION=	1.6.7
 DISTNAME=	radiusd-cistron-${VERSION}

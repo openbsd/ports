@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/09 10:24:51 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"full screen FTP client"
+COMMENT=	full screen FTP client
 
 DISTNAME=	cftp-0.12
 PKGNAME=	${DISTNAME}p0

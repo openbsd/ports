@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/14 20:49:06 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=	"provides rudimentary access to remote SNMP agents"
+COMMENT=	provides rudimentary access to remote SNMP agents
 
 MODULES=	cpan
 DISTNAME=	SNMP_Session-1.07

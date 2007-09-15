@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/24 19:02:46 grange Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=		"IPv4/IPv6 traffic collector"
+COMMENT=		IPv4/IPv6 traffic collector
 
 DISTNAME=		cnupm-3.11
 PKGNAME=		${DISTNAME}p0

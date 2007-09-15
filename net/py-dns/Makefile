@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/03 09:43:03 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"Python DNS library"
+COMMENT=	Python DNS library
 
 VERSION=	2.3.0
 DISTNAME=	pydns-${VERSION}

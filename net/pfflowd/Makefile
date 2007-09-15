@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/07/07 09:05:36 djm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"PF to NetFlow converter"
+COMMENT=	PF to NetFlow converter
 
 DISTNAME=	pfflowd-0.7
 CATEGORIES=	net

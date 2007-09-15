@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/17 12:19:40 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"mirror files and directories from a remote FTP server"
+COMMENT=	mirror files and directories from a remote FTP server
 
 DISTNAME=       fmirror-0.8.4
 CATEGORIES=	net

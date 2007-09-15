@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/22 17:28:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 22:36:58 merdely Exp $
 
-COMMENT=	"easy way to perform HTTP requests for PHP"
+COMMENT=	easy way to perform HTTP requests for PHP
 
 DISTNAME=	HTTP_Request-1.4.0
 PKGNAME=	pear-${DISTNAME:S/_/-/}p1

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2006/08/03 23:15:58 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 22:37:00 merdely Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
-COMMENT=	"multi-threaded routing daemon"
+COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	zebra-0.93a
 PKGNAME=	${DISTNAME}p3

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2005/12/03 17:13:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/15 22:36:54 merdely Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
-COMMENT=	"internet relay chat (irc) server"
+COMMENT=	internet relay chat (irc) server
 
 DISTNAME=       irc2.10.3p1
 PKGNAME=        irc-2.10.3.1p2

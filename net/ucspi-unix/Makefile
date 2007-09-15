@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"tools for building unix domain socket client/servers"
+COMMENT=	tools for building unix domain socket client/servers
 
 DISTNAME=		ucspi-unix-0.34
 CATEGORIES=     	net

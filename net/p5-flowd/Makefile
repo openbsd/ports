@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/20 20:00:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:57 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"Perl API to flowd binary logfiles"
+COMMENT=		Perl API to flowd binary logfiles
 
 DISTNAME=		flowd-0.9
 PKGNAME=		${DISTNAME:S/^/p5-/}

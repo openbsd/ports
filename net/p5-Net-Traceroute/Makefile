@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=		"traceroute(1) functionality in perl"
+COMMENT=		traceroute(1) functionality in perl
 
 MODULES=		cpan
 DISTNAME=		Net-Traceroute-1.09

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2005/05/24 00:02:56 mjc Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 22:36:55 merdely Exp $
 
-COMMENT=	"command line arbitrary packet builder"
+COMMENT=	command line arbitrary packet builder
 
 DISTNAME=	nemesis-1.4
 PKGNAME=	${DISTNAME}p0

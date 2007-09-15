@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/27 06:50:35 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"flow-based network traffic analyser"
+COMMENT=	flow-based network traffic analyser
 
 DISTNAME=	softflowd-0.9.8
 CATEGORIES=	net

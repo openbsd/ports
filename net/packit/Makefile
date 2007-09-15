@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/27 05:31:24 mjc Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=		"packet generation tool"
+COMMENT=		packet generation tool
 DISTNAME=		packit-1.0
 CATEGORIES=		net
 HOMEPAGE=		http://packit.sf.net/

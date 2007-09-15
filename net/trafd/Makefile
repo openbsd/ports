@@ -1,7 +1,7 @@
 # $FreeBSD: ports/net/trafd/Makefile,v 1.4 2000/07/07 19:22:10 steve Exp $
-# $OpenBSD: Makefile,v 1.8 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"BPF traffic collector"
+COMMENT=	BPF traffic collector
 
 DISTNAME=	trafd-3.0.1
 CATEGORIES=	net

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/15 15:09:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=		"BitTorrent Protocol Daemon"
+COMMENT=		BitTorrent Protocol Daemon
 
 DISTNAME=		btpd-0.12
 PKGNAME=		${DISTNAME}p0

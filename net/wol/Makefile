@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/11 09:23:54 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=		"Wake On Lan client"
+COMMENT=		Wake On Lan client
 
 DISTNAME=		wol-0.7.1
 PKGNAME=		${DISTNAME}p1

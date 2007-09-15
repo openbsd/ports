@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/10 12:06:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"simple network library"
+COMMENT=	simple network library
 DISTNAME=	gnet-2.0.7
 SHARED_LIBS=	gnet-2.0	0.5
 CATEGORIES=	net

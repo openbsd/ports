@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/07/04 19:18:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=		"Tcl bindings for Curl"
+COMMENT=		Tcl bindings for Curl
 SHARED_ONLY=		Yes
 
 DISTNAME=		TclCurl-0.10.5

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/03/29 11:44:06 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:53 merdely Exp $
 
-COMMENT=	"NetFlow collector"
+COMMENT=	NetFlow collector
 
 DISTNAME=	flowd-0.9
 CATEGORIES=	net

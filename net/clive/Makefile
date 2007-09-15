@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/19 16:07:22 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:52 merdely Exp $
 
-COMMENT=	"command-line LiveJournal client"
+COMMENT=	command-line LiveJournal client
 DISTNAME=	clive-0.4.0
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net

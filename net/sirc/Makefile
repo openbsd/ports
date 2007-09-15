@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/02/08 04:54:50 david Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"programmable small perl irc client"
+COMMENT=	programmable small perl irc client
 
 DISTNAME=	sirc-2.211
 CATEGORIES=	net

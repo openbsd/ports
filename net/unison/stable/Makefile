@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/17 19:14:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:37:00 merdely Exp $
 
-COMMENT=	"multi-platform file synchronization tool"
+COMMENT=	multi-platform file synchronization tool
 
 VERSION=	2.13.16
 

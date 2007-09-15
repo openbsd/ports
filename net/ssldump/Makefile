@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/05/03 06:07:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 22:36:59 merdely Exp $
 
-COMMENT=	"SSLv3/TLS network protocol analyzer"
+COMMENT=	SSLv3/TLS network protocol analyzer
 
 VERSION=	0.9b3
 DISTNAME=	ssldump-${VERSION}

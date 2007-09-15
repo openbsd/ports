@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2005/12/30 22:43:56 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:55 merdely Exp $
 
 # see md.h, add others
 ONLY_FOR_ARCHS=		alpha i386 sparc
 
-COMMENT=		"threaded library for writing Internet applications"
+COMMENT=		threaded library for writing Internet applications
 
 DISTNAME=		st-1.4
 PKGNAME=		lib${DISTNAME}p0

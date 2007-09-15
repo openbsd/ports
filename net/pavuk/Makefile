@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/13 12:51:14 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 22:36:57 merdely Exp $
 
-COMMENT=	"tool to mirror contents of HTTP and FTP servers"
+COMMENT=	tool to mirror contents of HTTP and FTP servers
 
 DISTNAME=	pavuk-0.9pl28
 PKGNAME=	${DISTNAME}p1
