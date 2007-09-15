@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/02/05 09:36:22 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 21:41:50 merdely Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
-COMMENT=		"retrieve usenet posts via script"
+COMMENT=		retrieve usenet posts via script
 
 DISTNAME=		linleech_2.2.1.orig
 

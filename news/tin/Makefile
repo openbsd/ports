@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2007/03/21 17:28:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2007/09/15 21:41:50 merdely Exp $
 
-COMMENT=	'threaded NNTP and spool based UseNet newsreader'
+COMMENT=	threaded NNTP and spool based UseNet newsreader
 
 DISTNAME=	tin-${VERSION}.${PATCHLEVEL}
 PKGNAME=	${DISTNAME}
@@ -23,9 +23,9 @@ MODULES=	devel/gettext
 # This software cannot be redistributed freely due to a few files having
 # licenses that prohibit making money from redistribution - see src/nntplib.c,
 # vms/vms.c
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 

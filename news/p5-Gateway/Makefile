@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/01/13 12:15:21 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:41:50 merdely Exp $
 
-COMMENT=	"perl module to gateway between news and mail"
+COMMENT=	perl module to gateway between news and mail
 
 MODULES=	cpan
 DISTNAME=	Gateway-0.42

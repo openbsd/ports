@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 21:41:50 merdely Exp $
 
-COMMENT=	"powerful Gtk+2 newsreader"
+COMMENT=	powerful Gtk+2 newsreader
 
 VER=		0.14.2
 DISTNAME=	pan-${VER}

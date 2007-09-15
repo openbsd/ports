@@ -3,10 +3,10 @@
 # Date created:		28 April 1998
 # Whom:			Ejovi Nuwere <ejovi@ejovi.net>
 #
-# $OpenBSD: Makefile,v 1.19 2006/10/12 13:13:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 21:41:50 merdely Exp $
 #
 
-COMMENT=	"download news articles from NNTP server"
+COMMENT=	download news articles from NNTP server
 
 DISTNAME=	newsfetch-1.21
 CATEGORIES=	news

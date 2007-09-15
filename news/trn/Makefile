@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/10/09 09:54:01 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:41:50 merdely Exp $
 
-COMMENT=	"threaded newsreader"
+COMMENT=	threaded newsreader
 
 CATEGORIES=	news
 MAINTAINER= 	Marc Espie <espie@openbsd.org>

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/02 19:19:59 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 21:41:50 merdely Exp $
 
-COMMENT=	"alpha-release readers for reading SOUP and QWK packets"
+COMMENT=	alpha-release readers for reading SOUP and QWK packets
 
 DISTNAME=	plor-0.3.2
 CATEGORIES=	news

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.42 2007/05/25 00:50:50 aanriot Exp $
+# $OpenBSD: Makefile,v 1.43 2007/09/15 21:41:50 merdely Exp $
 
-COMMENT=		"SLang-based newsreader"
+COMMENT=		SLang-based newsreader
 
 VERSION=		0.9.8.1
 DISTNAME=		slrn-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:41:50 merdely Exp $
 
-COMMENT=	"perl module for accessing NNTP articles"
+COMMENT=	perl module for accessing NNTP articles
 
 MODULES=	cpan
 DISTNAME=	News-Article-1.27

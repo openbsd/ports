@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/02 17:35:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:41:50 merdely Exp $
 
-COMMENT=	"download and decode binaries posted to Usenet"
+COMMENT=	download and decode binaries posted to Usenet
 
 DISTNAME=	ubh-2.5
 CATEGORIES=	news
