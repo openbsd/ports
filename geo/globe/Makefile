@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/10 22:47:45 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:02:37 simon Exp $
 
-COMMENT=	"display the currently lighted face of Earth in ASCII"
+COMMENT=	display the currently lighted face of Earth in ASCII
 
 DISTNAME=	globe_26mar1994
 PKGNAME=	globe-19940326

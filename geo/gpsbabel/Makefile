@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2007/07/13 08:53:47 aanriot Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:02:37 simon Exp $
 
-COMMENT-main=		"GPS waypoint, track, and route conversion tool"
-COMMENT-gui=		"Tk front-end to gpsbabel"
+COMMENT-main=		GPS waypoint, track, and route conversion tool
+COMMENT-gui=		Tk front-end to gpsbabel
 
 VERSION=		1.3.2
 DISTNAME=		gpsbabel-${VERSION}
