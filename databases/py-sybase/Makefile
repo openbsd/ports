@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/01 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:34:02 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python interface to the Sybase relational database system"
+COMMENT=	Python interface to the Sybase relational database system
 
 DISTNAME=	sybase-0.36
 PKGNAME=	py-${DISTNAME}p1

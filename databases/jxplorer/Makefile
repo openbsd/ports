@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/31 18:13:15 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:00 simon Exp $
 
-COMMENT=	"standards compliant LDAP browser"
+COMMENT=	standards compliant LDAP browser
 
 V=		3.2
 DISTNAME=	JXv${V}deploy

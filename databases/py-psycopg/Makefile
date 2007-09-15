@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2006/11/26 10:24:36 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/15 20:34:02 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	"PostgreSQL database adapter for Python"
-COMMENT-zope=	"database adapter for Zope"
+COMMENT-main=	PostgreSQL database adapter for Python
+COMMENT-zope=	database adapter for Zope
 
 VERSION=	1.1.21
 DISTNAME=	psycopg-${VERSION}

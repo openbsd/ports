@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:34:03 simon Exp $
 # $FreeBSD: ports/databases/xmysqladmin/Makefile,v 1.25 1999/11/23 02:59:09 billf Exp $
 
-BROKEN=		"uses old MySQL API"
+BROKEN=		uses old MySQL API
 
-COMMENT=	"X11 front end to the mysqladmin command"
+COMMENT=	X11 front end to the mysqladmin command
 
 DISTNAME=	xmysqladmin-1.0
 CATEGORIES=	databases

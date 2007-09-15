@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/03 16:18:14 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:34:01 simon Exp $
 
-COMMENT= 	"model class for catalyst"
+COMMENT= 	model class for catalyst
 
 DISTNAME=	Catalyst-Model-DBIC-Schema-0.20
 CATEGORIES=	databases

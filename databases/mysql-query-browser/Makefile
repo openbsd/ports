@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/08 08:09:06 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:34:00 simon Exp $
 
-COMMENT=	"visual query tool for MySQL"
+COMMENT=	visual query tool for MySQL
 
 DISTNAME=	mysql-gui-tools-5.0r11
 PKGNAME=	mysql-query-browser-1.2.11p0

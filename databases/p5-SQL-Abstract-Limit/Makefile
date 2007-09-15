@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/14 19:09:40 dassow Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:02 simon Exp $
 
-COMMENT=	"portability layer for LIMIT emulation"
+COMMENT=	portability layer for LIMIT emulation
 
 DISTNAME=	SQL-Abstract-Limit-0.12
 CATEGORIES=	databases

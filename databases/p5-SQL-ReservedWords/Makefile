@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/10 12:58:10 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:02 simon Exp $
 
-COMMENT=	"reserved words in SQL and specific databases"
+COMMENT=	reserved words in SQL and specific databases
 
 MODULES=	cpan
 DISTNAME=	SQL-ReservedWords-0.7

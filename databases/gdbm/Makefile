@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/15 20:34:00 simon Exp $
 
-COMMENT=		"GNU dbm"
+COMMENT=		GNU dbm
 
 VERSION=		1.8.3
 DISTNAME=		gdbm-${VERSION}

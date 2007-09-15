@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/17 17:12:22 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:01 simon Exp $
 
-COMMENT= 	"unique identifiers as columns in DBIx::Class"
+COMMENT= 	unique identifiers as columns in DBIx::Class
 
 MODULES=	cpan
 DISTNAME=	DBIx-Class-UUIDColumns-0.01000

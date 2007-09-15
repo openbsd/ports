@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/11 19:36:20 ian Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:34:00 simon Exp $
 
 PKG_ARCH=		*
 
-COMMENT=		"database exploration/builder written in Java"
+COMMENT=		database exploration/builder written in Java
 
 V=			1.0.0
 DISTNAME=		Architect-generic-${V}
@@ -16,9 +16,9 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # Custom non-open-source license "...free for individual use" and 
 # "You may redistribute unmodified copies..." See $HOMEPAGE.
-PERMIT_PACKAGE_CDROM=	"not allowed to charge a fee"
+PERMIT_PACKAGE_CDROM=	not allowed to charge a fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"not allowed to charge a fee"
+PERMIT_DISTFILES_CDROM=	not allowed to charge a fee
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.sqlpower.ca/architect/${V}/ \

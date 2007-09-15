@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/12/14 17:41:27 dassow Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"tie class for a simple ASCII database"
+COMMENT=	tie class for a simple ASCII database
 DISTNAME=	AsciiDB-TagFile-1.06
 PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	databases

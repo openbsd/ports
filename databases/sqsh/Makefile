@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/12 23:28:42 jcs Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:34:03 simon Exp $
 
 DISTNAME=	sqsh-2.1
 PKGNAME=	${DISTNAME}p1
@@ -10,7 +10,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses m readline
 
-COMMENT=	"SQL shell"
+COMMENT=	SQL shell
 HOMEPAGE=	http://www.sqsh.org/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqsh/} ${HOMEPAGE}
 EXTRACT_SUFX=	-src.tar.gz

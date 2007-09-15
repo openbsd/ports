@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/14 19:09:40 dassow Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:34:02 simon Exp $
 
-COMMENT=	"sql parsing and processing"
+COMMENT=	sql parsing and processing
 
 MODULES=	cpan
 DISTNAME=	SQL-Statement-1.09

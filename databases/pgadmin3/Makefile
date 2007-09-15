@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/21 15:49:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:34:02 simon Exp $
 
-COMMENT=	"administration and development platform for PostgreSQL"
+COMMENT=	administration and development platform for PostgreSQL
 
 VERSION=	1.4.3
 DISTNAME=	pgadmin3-${VERSION}

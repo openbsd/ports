@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/06/24 21:53:27 martynas Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:34:01 simon Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
-BROKEN=		"ocamldoc hangs build"
+BROKEN=		ocamldoc hangs build
 .endif
 
-COMMENT=	"Objective Caml bindings for PostgreSQL"
+COMMENT=	Objective Caml bindings for PostgreSQL
 CATEGORIES=	databases
 
 V=		1.4.6

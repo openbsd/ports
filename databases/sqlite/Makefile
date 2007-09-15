@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:34:03 simon Exp $
 
-COMMENT=	"Embedded SQL implementation"
+COMMENT=	Embedded SQL implementation
 DISTNAME=	sqlite-2.8.17
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	databases

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/10 18:00:20 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"datetime helper functions for Rose"
+COMMENT=	datetime helper functions for Rose
 
 MODULES=	cpan
 

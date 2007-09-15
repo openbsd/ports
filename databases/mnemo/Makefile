@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/10 14:54:50 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:34:00 simon Exp $ 
 
-COMMENT=	"memo application"
+COMMENT=	memo application
 
 HORDE_MODULE=	mnemo
 HORDE_NAME=	Mnemo

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/27 19:17:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:34:03 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Ruby interface to some common LDAP libraries"
+COMMENT=	Ruby interface to some common LDAP libraries
 
 DISTNAME=	ruby-ldap-0.9.7
 PKGNAME=	${DISTNAME}p1

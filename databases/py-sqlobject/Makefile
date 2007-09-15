@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/27 15:11:09 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:02 simon Exp $
 
-COMMENT=		"Object Relational Manager"
+COMMENT=		Object Relational Manager
 
 V=			0.9.0
 DISTNAME=		SQLObject-${V}

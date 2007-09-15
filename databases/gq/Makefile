@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2007/04/13 20:40:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 20:34:00 simon Exp $
 
-COMMENT=	"GTK-based LDAP client"
+COMMENT=	GTK-based LDAP client
 
 DISTNAME=	gq-1.0beta1
 PKGNAME=	${DISTNAME}p6

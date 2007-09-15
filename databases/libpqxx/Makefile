@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:34:00 simon Exp $
 
-COMMENT=	"C++ client API for PostgreSQL"
+COMMENT=	C++ client API for PostgreSQL
 
 DISTNAME=	libpqxx-2.5.3
 PKGNAME=	$(DISTNAME)p0

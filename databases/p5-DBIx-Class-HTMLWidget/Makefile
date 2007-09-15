@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/14 19:01:40 dassow Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:01 simon Exp $
 
-COMMENT= 	"publish DBIx::Class on the web"
+COMMENT= 	publish DBIx::Class on the web
 
 DISTNAME=	DBIx-Class-HTMLWidget-0.07
 CATEGORIES=	databases www

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/08 17:17:21 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:01 simon Exp $
 
-COMMENT= 	"DBI model class for Catalyst"
+COMMENT= 	DBI model class for Catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Model-DBI-0.19

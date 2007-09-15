@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/16 21:14:38 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"pager utility"
+COMMENT=	pager utility
 
 DISTNAME=	Data-Pageset-1.03
 CATEGORIES=	databases

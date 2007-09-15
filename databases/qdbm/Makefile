@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/04/13 13:10:37 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:34:02 simon Exp $
 
-COMMENT=		"high performance embedded database library"
+COMMENT=		high performance embedded database library
 
 DISTNAME=		qdbm-1.8.75
 CATEGORIES=		databases

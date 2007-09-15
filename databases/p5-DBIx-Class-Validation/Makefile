@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/17 16:22:21 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:01 simon Exp $
 
-COMMENT= 	"data validation for DBIx::Class"
+COMMENT= 	data validation for DBIx::Class
 
 MODULES=	cpan
 DISTNAME=	DBIx-Class-Validation-0.01001

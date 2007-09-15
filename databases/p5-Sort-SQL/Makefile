@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/16 19:39:24 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:02 simon Exp $
 
-COMMENT=	"manipulate SQL sort strings"
+COMMENT=	manipulate SQL sort strings
 
 MODULES=	cpan
 DISTNAME=	Sort-SQL-0.02

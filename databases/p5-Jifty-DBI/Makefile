@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/16 19:30:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:34:01 simon Exp $
 
-COMMENT= 	"database OO schema for Jifty"
+COMMENT= 	database OO schema for Jifty
 
 MODULES=	cpan
 

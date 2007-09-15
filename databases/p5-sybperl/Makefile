@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/12 23:28:42 jcs Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:34:02 simon Exp $
 
 DISTNAME=	sybperl-2.18
 CATEGORIES=	databases perl5
@@ -12,7 +12,7 @@ WANTLIB=		m
 
 SHARED_ONLY=		Yes
 
-COMMENT=	"Sybase database access in Perl"
+COMMENT=	Sybase database access in Perl
 HOMEPAGE=	http://www.peppler.org/freeware/sybperl.html
 MASTER_SITES=	http://www.peppler.org/downloads/
 

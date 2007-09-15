@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/27 14:03:53 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"database-independent schema objects"
+COMMENT=	database-independent schema objects
 
 DISTNAME=	DBIx-DBSchema-0.32
 CATEGORIES=	databases

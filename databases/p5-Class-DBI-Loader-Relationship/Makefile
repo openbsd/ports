@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/14 18:30:36 dassow Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"easier relationship specification in CDBI::L"
+COMMENT=	easier relationship specification in CDBI::L
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-Loader-Relationship-1.2

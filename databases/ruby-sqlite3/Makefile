@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/06/01 11:00:14 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:34:03 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"access a SQLite3 database from ruby"
+COMMENT=	access a SQLite3 database from ruby
 
 VERSION=	1.2.1
 DISTNAME=	sqlite3-ruby-${VERSION}

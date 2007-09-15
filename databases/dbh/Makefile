@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:34:00 simon Exp $
 
-COMMENT=	"library to create disk based hashtables"
+COMMENT=	library to create disk based hashtables
 DISTNAME=	dbh-1.0.24
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases

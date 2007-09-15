@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2006/08/01 22:19:46 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 20:34:03 simon Exp $
 
-COMMENT=	"X11 front end to the MySQL database engine"
+COMMENT=	X11 front end to the MySQL database engine
 
 DISTNAME=	xmysql-1.10
 CATEGORIES=	databases

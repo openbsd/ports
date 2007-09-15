@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 14:57:55 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"DBI driver for LDAP databases"
+COMMENT=	DBI driver for LDAP databases
 
 MODULES=	cpan
 

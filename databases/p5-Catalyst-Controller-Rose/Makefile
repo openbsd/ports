@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/16 21:20:39 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:01 simon Exp $
 
-COMMENT= 	"RDBO and RHTMLO base classes for Catalyst"
+COMMENT= 	RDBO and RHTMLO base classes for Catalyst
 DISTNAME=	Catalyst-Controller-Rose-0.02
 CATEGORIES=	databases www
 MODULES=	cpan

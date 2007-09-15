@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/08/07 18:58:17 kurt Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"Objective Caml bindings for SQLite3"
+COMMENT=	Objective Caml bindings for SQLite3
 CATEGORIES=	databases
 
 V=		0.2.0

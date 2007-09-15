@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2007/06/25 17:12:29 martynas Exp $
+# $OpenBSD: Makefile,v 1.30 2007/09/15 20:34:02 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python interface to MySQL"
+COMMENT=	Python interface to MySQL
 
 VERSION=	1.2.2
 DISTNAME=	MySQL-python-${VERSION}

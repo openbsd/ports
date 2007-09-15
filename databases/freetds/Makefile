@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/11/12 23:28:42 jcs Exp $
+# $OpenBSD: Makefile,v 1.30 2007/09/15 20:34:00 simon Exp $
 
 V=		0.63
 DISTNAME=	freetds-$V
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c ncurses readline
 
-COMMENT=	"project to document and implement the TDS protocol"
+COMMENT=	project to document and implement the TDS protocol
 HOMEPAGE=	http://www.freetds.org/
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 

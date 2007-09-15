@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/14 18:30:36 dassow Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"more complex retrieve_all() for Class::DBI"
+COMMENT=	more complex retrieve_all() for Class::DBI
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-Plugin-RetrieveAll-1.04

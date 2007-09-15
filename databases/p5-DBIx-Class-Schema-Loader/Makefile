@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/06/03 16:15:57 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:34:01 simon Exp $
 
-COMMENT= 	"dynamic definition of a DBIx::Class::Schema"
+COMMENT= 	dynamic definition of a DBIx::Class::Schema
 
 MODULES=	cpan
 DISTNAME=	DBIx-Class-Schema-Loader-0.03012

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/17 23:33:21 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:01 simon Exp $
 
 SHARED_ONLY=	Yes
-COMMENT=	"perl interface to gdbm"
+COMMENT=	perl interface to gdbm
 
 DISTNAME=	perl-5.8.8
 EXTRACT_SUFX=	.tar.bz2

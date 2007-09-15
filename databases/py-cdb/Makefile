@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/03 09:29:42 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:02 simon Exp $
 
-COMMENT=	"Python extension module for accessing cdb databases"
+COMMENT=	Python extension module for accessing cdb databases
 
 DISTNAME=	python-cdb-0.32
 PKGNAME=	${DISTNAME:S/python/py/}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/14 18:24:45 dassow Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"dynamic definition of Class::DBI sub classes"
+COMMENT=	dynamic definition of Class::DBI sub classes
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-Loader-0.32

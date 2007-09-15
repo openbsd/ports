@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/06 12:05:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:34:02 simon Exp $
 
-COMMENT= 	"database schema manipulation"
+COMMENT= 	database schema manipulation
 
 DISTNAME=	SQL-Translator-0.08
 CATEGORIES=	databases devel

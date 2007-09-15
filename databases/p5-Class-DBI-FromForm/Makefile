@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/14 18:14:19 dassow Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:01 simon Exp $
 
-COMMENT=	"update Class:DBI data from html forms"
+COMMENT=	update Class:DBI data from html forms
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-FromForm-0.04

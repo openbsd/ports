@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/10 23:48:59 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:02 simon Exp $
 
-COMMENT=	"object-oriented DBMS"
+COMMENT=	object-oriented DBMS
 
 MODULES=	cpan
 
