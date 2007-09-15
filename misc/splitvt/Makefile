@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2005/10/31 20:27:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"run two shells in a split window/terminal"
+COMMENT=	run two shells in a split window/terminal
 
 DISTNAME=	splitvt-1.6.5
 CATEGORIES=	misc

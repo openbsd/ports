@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2007/02/02 13:56:53 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 23:54:16 merdely Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
-COMMENT=	"bible reader"
+COMMENT=	bible reader
 
 DISTNAME=	brs.4.00.l1
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/19 07:12:10 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=	"format the display of a shell script"
+COMMENT=	format the display of a shell script
 
 DISTNAME= 	dialog-0.6z
 PKGNAME=	${DISTNAME}p0

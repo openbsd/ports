@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2006/11/21 22:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT-main=	"network-capable tape backup (client and tape server)"
-COMMENT-client=	"network-capable tape backup (client only)"
-COMMENT-doc=	"network-capable tape backup (documentation)"
+COMMENT-main=	network-capable tape backup (client and tape server)
+COMMENT-client=	network-capable tape backup (client only)
+COMMENT-doc=	network-capable tape backup (documentation)
 
 DISTVERSION=	2.4.5p1
 

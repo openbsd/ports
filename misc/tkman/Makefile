@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/30 14:58:58 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"Tcl/Tk-based manual browser"
+COMMENT=	Tcl/Tk-based manual browser
 
 DISTNAME=	tkman-2.1
 PKGNAME=	${DISTNAME}p0
@@ -8,9 +8,9 @@ CATEGORIES=	misc
 
 HOMEPAGE=	http://tkman.sourceforge.net/
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkman/}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"Unix menuing shell"
+COMMENT=	Unix menuing shell
 
 DISTNAME=	mshell
 PKGNAME=	mshell-1.0
@@ -11,10 +11,10 @@ DISTFILES=	7432.Z
 WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=	
 
-PERMIT_PACKAGE_CDROM=	"no explict license"
-PERMIT_PACKAGE_FTP=	"no explict license"
-PERMIT_DISTFILES_CDROM=	"no explict license"
-PERMIT_DISTFILES_FTP=	"no explict license"
+PERMIT_PACKAGE_CDROM=	no explict license
+PERMIT_PACKAGE_FTP=	no explict license
+PERMIT_DISTFILES_CDROM=	no explict license
+PERMIT_DISTFILES_FTP=	no explict license
 WANTLIB=		c curses termlib
 
 post-extract:

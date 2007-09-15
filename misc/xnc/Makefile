@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/08/03 20:04:52 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 23:54:18 merdely Exp $
 
-COMMENT=	"filemanager for X Window"
+COMMENT=	filemanager for X Window
 
 DISTNAME=	xnc-4.4.7
 PKGNAME=	$(DISTNAME)p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/09/17 20:16:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=		"GNU watch command"
+COMMENT=		GNU watch command
 
 DISTNAME=		procps-3.2.7
 PKGNAME=		${DISTNAME:S/procps/gnuwatch/}

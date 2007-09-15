@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/22 11:50:30 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"Set IBM Thinkpad BIOS bit to disable Wireless NIC ID check"
+COMMENT=	Set IBM Thinkpad BIOS bit to disable Wireless NIC ID check
 
 PKGNAME=	tpwireless-0.1
 CATEGORIES=	misc

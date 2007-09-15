@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/07/01 20:56:41 aanriot Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"hfsplus filesystem access tool"
+COMMENT=	hfsplus filesystem access tool
 
 # this only makes sense on macintosh (powerpc) systems.
 ONLY_FOR_ARCHS= powerpc

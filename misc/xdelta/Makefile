@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/03 20:04:52 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 23:54:17 merdely Exp $
 # $FreeBSD: Makefile,v 1.10 1998/09/03 00:05:11 jmacd Exp $
 
-COMMENT=	"binary delta generator and prototype RCS replacement"
+COMMENT=	binary delta generator and prototype RCS replacement
 
 DISTNAME=	xdelta-1.1.1
 PKGNAME=	${DISTNAME}p1

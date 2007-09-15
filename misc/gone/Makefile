@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=	"terminal locking utility"
+COMMENT=	terminal locking utility
 
 DISTNAME=	gone-1.3.5
 CATEGORIES=	misc 

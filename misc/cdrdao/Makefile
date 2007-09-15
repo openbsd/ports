@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2006/12/18 11:50:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
+COMMENT=	write audio/data CD-Rs in disk-at-once mode
 
 DISTNAME= 	cdrdao-1.2.0
 CATEGORIES=	audio misc

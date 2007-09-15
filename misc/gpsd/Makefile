@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/04 21:06:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT-main=		"service daemon that monitors one or more GPSes"
-COMMENT-motif=		"motif-based test apps using gpsd"
-COMMENT-php=		"web-based gpsd monitor in php"
-COMMENT-python=		"python bindings for gpsd"
+COMMENT-main=		service daemon that monitors one or more GPSes
+COMMENT-motif=		motif-based test apps using gpsd
+COMMENT-php=		web-based gpsd monitor in php
+COMMENT-python=		python bindings for gpsd
 
 VERSION=		2.34
 DISTNAME=		gpsd-${VERSION}

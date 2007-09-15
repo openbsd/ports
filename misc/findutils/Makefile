@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2005/02/19 13:04:44 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=		"finds and then operates on files"
+COMMENT=		finds and then operates on files
 
 DISTNAME=		findutils-4.1
 PKGNAME=		${DISTNAME}p0

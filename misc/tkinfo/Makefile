@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/30 08:03:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"Tk script to read GNU info files and display them"
+COMMENT=	Tk script to read GNU info files and display them
 
 DISTNAME=	tkinfo-2.8
 CATEGORIES=	misc 

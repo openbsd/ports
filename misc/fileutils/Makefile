@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/24 20:00:06 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT-main= 		"GNU versions of common file management utilities"
-COMMENT-ls=		"colorized GNU 'ls'"
+COMMENT-main= 		GNU versions of common file management utilities
+COMMENT-ls=		colorized GNU 'ls'
 
 V=			4.1
 DISTNAME=		fileutils-$V

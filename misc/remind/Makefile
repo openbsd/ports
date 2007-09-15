@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/02 19:24:48 martynas Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"scripting language for reminders, with a Tk front end"
+COMMENT=	scripting language for reminders, with a Tk front end
 
 DISTNAME=	remind-03.00.24
 PKGNAME=        remind-3.0.24

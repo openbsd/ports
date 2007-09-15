@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/05 17:05:36 niallo Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=		"tiny program emulating the detach feature of screen"
+COMMENT=		tiny program emulating the detach feature of screen
 DISTNAME=		dtach-0.7
 CATEGORIES=		misc
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2006/02/04 23:19:37 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"yet another dump utility"
+COMMENT=	yet another dump utility
 
 DISTNAME=	xd-8087
 PKGNAME=	${DISTNAME}p0

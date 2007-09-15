@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=		"gtk-based frontend to cdrtools"
+COMMENT=		gtk-based frontend to cdrtools
 DISTNAME=		xcdroast-0.98alpha15
 PKGNAME=		${DISTNAME:L:S/alpha/a/}p5
 CATEGORIES=		misc x11

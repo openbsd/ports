@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/03 20:04:52 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=		'wm-dockapp; alarm clock'
+COMMENT=		wm-dockapp; alarm clock
 
 DISTNAME=		wmtimer-2.9
 CATEGORIES=		misc x11 x11/windowmaker

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2006/08/03 20:04:52 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"redhat package manager"
+COMMENT=	redhat package manager
 
 PKGNAME=	${DISTNAME}p4
 DISTNAME=	rpm-3.0.6

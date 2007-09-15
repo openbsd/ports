@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"move/copy/append/link multiple files with wildcards"
+COMMENT=	move/copy/append/link multiple files with wildcards
 
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
@@ -12,9 +12,9 @@ DISTFILES=	part01.Z part02.Z
 MASTER_SITES0=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume22/
 PATCHFILES=	mmv.pch.Z:0
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 

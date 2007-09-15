@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/05/14 22:24:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"gtk livejournal client"
+COMMENT=	gtk livejournal client
 
 VERSION=	4.0.1
 DISTNAME=	logjam-${VERSION}

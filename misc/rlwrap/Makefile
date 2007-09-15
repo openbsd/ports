@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/13 22:15:39 deanna Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=		"generic readline wrapper for various programs"
+COMMENT=		generic readline wrapper for various programs
 
 DISTNAME=		rlwrap-0.28
 CATEGORIES=		misc

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 18:17:53 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"usb missile launcher control script"
+COMMENT=	usb missile launcher control script
 DISTNAME=	pymissile-20061111
 DISTFILES=	${DISTNAME}.py
 CATEGORIES=	misc

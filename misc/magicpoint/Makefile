@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2006/08/03 20:04:52 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"X11-based presentation tool"
+COMMENT=	X11-based presentation tool
 
 DISTNAME=	magicpoint-1.09a
 # hack

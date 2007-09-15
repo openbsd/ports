@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"free Norton Commander clone with many useful features"
+COMMENT=	free Norton Commander clone with many useful features
 
 DISTNAME=	mc-4.6.1
 PKGNAME=	${DISTNAME}p1

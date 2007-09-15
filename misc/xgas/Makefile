@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"animated simulation of an ideal gas"
+COMMENT=	animated simulation of an ideal gas
 
 DISTNAME=	xgas
 PKGNAME=        xgas-1.0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2006/12/10 17:37:35 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"X11/Motif schedule planner with calendar"
+COMMENT=	X11/Motif schedule planner with calendar
 
 DISTNAME=	plan-1.9
 PKGNAME=	${DISTNAME}p1

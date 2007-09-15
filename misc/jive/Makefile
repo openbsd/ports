@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"convert English text to Jive"
+COMMENT=	convert English text to Jive
 
 DISTNAME=	jive-1.1
 CATEGORIES=	misc
@@ -8,10 +8,10 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # License: NONE
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/jive

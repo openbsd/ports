@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/05 14:17:05 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=	"GNU getopt(1) utility"
+COMMENT=	GNU getopt(1) utility
 
 DISTNAME=	getopt-1.1.4
 PKGNAME=	gnu${DISTNAME}

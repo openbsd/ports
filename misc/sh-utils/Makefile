@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2005/11/19 01:23:42 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=		"GNU command line utilities"
+COMMENT=		GNU command line utilities
 
 DISTNAME=		sh-utils-2.0
 PKGNAME=		${DISTNAME}p0

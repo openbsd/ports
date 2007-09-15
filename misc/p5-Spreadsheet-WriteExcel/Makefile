@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/25 09:32:07 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"write a cross-platform Excel binary file"
+COMMENT=	write a cross-platform Excel binary file
 
 MODULES=	cpan
 DISTNAME=	Spreadsheet-WriteExcel-2.18

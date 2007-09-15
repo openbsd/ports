@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2007/04/03 18:05:47 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:54:18 merdely Exp $
 # $FreeBSD: ports/misc/ytree/Makefile,v 1.10 2000/04/30 20:15:23 steve Exp $
 
-COMMENT=	"DOS-XTREE(tm) look-a-like file manager"
+COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
 DISTNAME=	ytree-1.89
 CATEGORIES=	misc

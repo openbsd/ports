@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/16 22:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"distributed memory object caching system"
+COMMENT=	distributed memory object caching system
 
 DISTNAME=	memcached-1.1.12
 PKGNAME=	${DISTNAME}p0

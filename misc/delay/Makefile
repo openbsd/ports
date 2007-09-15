@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2007/04/02 18:47:36 martynas Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 23:54:16 merdely Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/03/05 17:07:28 nectar Exp $
 
-COMMENT=	"delay program with feedback to the user"
+COMMENT=	delay program with feedback to the user
 
 DISTNAME=	delay-1.6
 CATEGORIES=	misc

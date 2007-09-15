@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/21 07:37:42 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=	"get information from Excel spreadsheets"
+COMMENT=	get information from Excel spreadsheets
 
 MODULES=	cpan
 DISTNAME=	Spreadsheet-ParseExcel-0.30

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/08/03 20:04:52 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=	"nice X11-based calendar/scheduling tool (using XView)"
+COMMENT=	nice X11-based calendar/scheduling tool (using XView)
 
 DISTNAME=	calentool-2.3
 PKGNAME=	${DISTNAME}p0

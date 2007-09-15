@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/04/06 01:19:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:54:16 merdely Exp $
 
 ONLY_FOR_ARCHS=		i386 m68k sparc
 
-COMMENT=		"official distributed.net client"
+COMMENT=		official distributed.net client
 
 A-i386=			x86-elf
 V-i386=			2.9008
@@ -44,10 +44,10 @@ HOMEPAGE=		http://www.distributed.net/
 
 MAINTAINER=		Sico Bruins <openbsd@msh.xs4all.nl>
 
-PERMIT_PACKAGE_CDROM=	"no redistribution"
-PERMIT_PACKAGE_FTP=	"no redistribution"
-PERMIT_DISTFILES_CDROM=	"no redistribution"
-PERMIT_DISTFILES_FTP=	"no redistribution"
+PERMIT_PACKAGE_CDROM=	no redistribution
+PERMIT_PACKAGE_FTP=	no redistribution
+PERMIT_DISTFILES_CDROM=	no redistribution
+PERMIT_DISTFILES_FTP=	no redistribution
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

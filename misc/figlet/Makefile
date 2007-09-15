@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/02/08 04:54:49 david Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=	"generates ASCII banner art"
+COMMENT=	generates ASCII banner art
 
 PKGNAME=	figlet-2.2.1p0
 DISTNAME=	figlet221

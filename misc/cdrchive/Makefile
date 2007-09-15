@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=		"Qt-based CD creation tool"
+COMMENT=		Qt-based CD creation tool
 
 PKGNAME=		${DISTNAME:S/-OpenBSD//}p1
 DISTNAME=		cdrchive-1.0.1-OpenBSD

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/29 18:35:26 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:54:17 merdely Exp $
 
-COMMENT=		"guess file type"
+COMMENT=		guess file type
 
 DISTNAME=		File-MMagic-1.27
 CATEGORIES=		misc

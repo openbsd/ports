@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/03/31 10:45:01 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 23:54:16 merdely Exp $
 
-COMMENT=	"personal accounts manager"
+COMMENT=	personal accounts manager
 
 VERSION=	0.7.5
 DISTNAME=	gacc_${VERSION}.orig
