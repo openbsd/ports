@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2006/10/18 15:41:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"SOund eXchange - universal sound sample translator"
+COMMENT=	SOund eXchange - universal sound sample translator
 
 DISTNAME=	sox-12.18.2
 CATEGORIES=	audio
@@ -9,9 +9,9 @@ HOMEPAGE=	http://sox.sourceforge.net/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # gsm library has bad license
-PERMIT_PACKAGE_CDROM=	"no redistribution"
+PERMIT_PACKAGE_CDROM=	no redistribution
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no redistribution"
+PERMIT_DISTFILES_CDROM=	no redistribution
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 

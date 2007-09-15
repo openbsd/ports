@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2005/12/23 16:57:17 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=		'multi-platform CD-Player library'
+COMMENT=		multi-platform CD-Player library
 
 DISTNAME=		libworkman-1999-06-20
 PKGNAME=		libworkman-1.4

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/02 15:21:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"managing meta-data of audio formats"
+COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.4
 PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio devel

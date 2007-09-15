@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/03/19 09:55:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"premier dockable radio tuner"
+COMMENT=	premier dockable radio tuner
 
 DISTNAME=	wmtune-1.1c
 PKGNAME=	${DISTNAME}p2

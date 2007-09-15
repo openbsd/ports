@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/03 07:32:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=		"audio CD to audio file encoder"
+COMMENT=		audio CD to audio file encoder
 DISTNAME=		vlorb-1.2
 CATEGORIES=		audio
 

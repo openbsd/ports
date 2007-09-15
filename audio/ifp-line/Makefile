@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/01 11:17:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"command line interface to iRiver music players"
+COMMENT=	command line interface to iRiver music players
 
 DISTNAME=	ifp-line-0.2.4.6
 CATEGORIES=	audio

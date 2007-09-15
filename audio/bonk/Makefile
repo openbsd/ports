@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/21 17:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 21:26:00 simon Exp $
 
-COMMENT=	"lossy/lossless audio coder"
+COMMENT=	lossy/lossless audio coder
 
 DISTNAME=	bonk-0.6
 CATEGORIES=	audio

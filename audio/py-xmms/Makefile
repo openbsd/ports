@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/07/04 19:18:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:26:02 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python interface to XMMS"
+COMMENT=	Python interface to XMMS
 
 DISTNAME=	pyxmms-1.06
 PKGNAME=	${DISTNAME:S/py/py-/}p0

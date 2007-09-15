@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"library to handle various audio file formats"
+COMMENT=	library to handle various audio file formats
 
 DISTNAME=	libsndfile-1.0.11
 PKGNAME=	${DISTNAME}p0

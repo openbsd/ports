@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/20 13:02:16 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=		"library for manipulating ID3v1 and ID3v2 tags"
+COMMENT=		library for manipulating ID3v1 and ID3v2 tags
 
 VERSION=		3.8
 DISTNAME=		id3lib-${VERSION}.3

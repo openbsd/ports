@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/03/04 09:16:03 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"audio file volume normalizer"
+COMMENT=	audio file volume normalizer
 
 DISTNAME=	mp3gain-1_4_6-src
 PKGNAME=	mp3gain-1.4.6

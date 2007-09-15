@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:21:21 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:26:00 simon Exp $
 
-COMMENT=		"curses front-end for various audio players"
+COMMENT=		curses front-end for various audio players
 
 DISTNAME=		cplay-1.49
 PKGNAME=		${DISTNAME}p1

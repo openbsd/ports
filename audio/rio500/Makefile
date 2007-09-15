@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"Diamond Rio 500 utilities"
+COMMENT=	Diamond Rio 500 utilities
 DISTNAME=	rio500-0.7
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio

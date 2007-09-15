@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/06/29 06:05:46 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:26:00 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	"input and output plugins for audacious"
-COMMENT-arts=	"arts helper and plugin for audacious"
+COMMENT-main=	input and output plugins for audacious
+COMMENT-arts=	arts helper and plugin for audacious
 
 V=		1.3.5
 DISTNAME=	audacious-plugins-$V

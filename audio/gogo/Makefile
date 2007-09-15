@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/21 17:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"686 class CPU optimized mp3 encoder"
+COMMENT=	686 class CPU optimized mp3 encoder
 DISTNAME=	gogo226a	
 PKGNAME=	gogo-2.26a
 CATEGORIES=	audio

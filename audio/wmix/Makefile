@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/21 17:51:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=		'wm-dockapp; audio mixer'
+COMMENT=		wm-dockapp; audio mixer
 
 DISTNAME=		wmix-3.0
 CATEGORIES=		audio x11 x11/windowmaker

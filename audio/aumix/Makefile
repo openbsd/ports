@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/12 20:24:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 21:26:00 simon Exp $
 
-COMMENT=	"full-screen ncurses or GTK-based audio mixer"
+COMMENT=	full-screen ncurses or GTK-based audio mixer
 
 DISTNAME=	aumix-2.8
 PKGNAME=	${DISTNAME}p5

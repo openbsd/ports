@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"creates cover for audio cds using cddb and latex"
+COMMENT=	creates cover for audio cds using cddb and latex
 
 DISTNAME=	disc-cover-1.5.2
 PKGNAME=	${DISTNAME}p1

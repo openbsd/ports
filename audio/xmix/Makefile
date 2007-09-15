@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"X11-based audio mixer"
+COMMENT=	X11-based audio mixer
 DISTNAME=	xmix-2.1
 CATEGORIES=	audio
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"Ogg bitstream library"
+COMMENT=	Ogg bitstream library
 
 DISTNAME=	libogg-1.1.3
 CATEGORIES=    	audio

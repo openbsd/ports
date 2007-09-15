@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/07/11 14:25:34 aanriot Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:26:01 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Amazon cover art provider for gmpc"
+COMMENT=	Amazon cover art provider for gmpc
 
 VERSION=	0.15.0
 DISTNAME=	gmpc-coveramazon-${VERSION}

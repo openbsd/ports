@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/30 20:34:18 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:02 simon Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"Perl extension for Ogg Vorbis streams"
+COMMENT=		Perl extension for Ogg Vorbis streams
 
 V=			0.05
 DISTNAME=		libvorbis-perl-${V}

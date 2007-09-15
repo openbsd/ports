@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2007/05/14 19:35:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
+COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=	grip-3.2.0
 PKGNAME=	${DISTNAME}p6

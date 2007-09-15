@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/11/21 17:51:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=		'wm-dockapp; front end for an mp3 player'
+COMMENT=		wm-dockapp; front end for an mp3 player
 
 DISTNAME=		wmmp3-0.12
 CATEGORIES=		audio x11 x11/windowmaker

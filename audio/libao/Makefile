@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2007/07/12 21:10:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2007/09/15 21:26:01 simon Exp $
 
-COMMENT-main=	"portable audio output library"
-COMMENT-arts=	"aRts module for portable audio output library"
-COMMENT-esd=	"ESounD module for portable audio output library"
+COMMENT-main=	portable audio output library
+COMMENT-arts=	aRts module for portable audio output library
+COMMENT-esd=	ESounD module for portable audio output library
 
 VERSION=	0.8.8
 DISTNAME=	libao-${VERSION}

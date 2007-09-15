@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2007/04/12 20:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"generic playlist manager for UNIX"
+COMMENT=	generic playlist manager for UNIX
 
 DISTNAME=	xhippo-3.3
 PKGNAME=	${DISTNAME}p6

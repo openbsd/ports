@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/30 20:34:18 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 21:26:02 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to libcdaudio"
+COMMENT=	interface to libcdaudio
 DISTNAME=	Audio-CD-0.04
 CATEGORIES=	audio
 

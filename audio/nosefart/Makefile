@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/08 14:36:26 niallo Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"nsf (Nintendo sound) file player"
+COMMENT=	nsf (Nintendo sound) file player
 
 DISTNAME=	nosefart-2.3-mls
 PKGNAME=	nosefart-2.3

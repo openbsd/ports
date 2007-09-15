@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2005/01/02 20:42:47 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:26:03 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"XMMS input plugin to play bonk files"
+COMMENT=	XMMS input plugin to play bonk files
 
 VERSION=	0.12
 DISTNAME=	bonk-xmms-${VERSION}

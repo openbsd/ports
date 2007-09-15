@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/20 13:22:42 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"Python ID3 tag reader/writer module"
+COMMENT=	Python ID3 tag reader/writer module
 
 DISTNAME=	pytagger-0.5
 PKGNAME=	${DISTNAME:S/^py/py-/}

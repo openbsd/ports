@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2006/04/07 16:56:02 alek Exp $
+# $OpenBSD: Makefile,v 1.33 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"u-law to gsm encoding audio converter and library"
+COMMENT=	u-law to gsm encoding audio converter and library
 
 DISTNAME=	gsm-1.0.10
 PKGNAME=	${DISTNAME}p0
@@ -10,10 +10,10 @@ MASTER_SITES=	ftp://ftp.digium.com/pub/gnophone/ \
 SHARED_LIBS=	gsm	1.0
 
 # Missing redistribution terms in license
-PERMIT_PACKAGE_CDROM=	"no redistribution"
-PERMIT_PACKAGE_FTP=	"no redistribution"
-PERMIT_DISTFILES_CDROM=	"no redistribution"
-PERMIT_DISTFILES_FTP=	"no redistribution"
+PERMIT_PACKAGE_CDROM=	no redistribution
+PERMIT_PACKAGE_FTP=	no redistribution
+PERMIT_DISTFILES_CDROM=	no redistribution
+PERMIT_DISTFILES_FTP=	no redistribution
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" DEBUG="${CFLAGS}" LDINC='-L$$(LIB)' \

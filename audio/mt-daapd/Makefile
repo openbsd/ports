@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/10 08:00:03 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"multi-threaded DAAP server"
+COMMENT=	multi-threaded DAAP server
 
 DISTNAME=	mt-daapd-0.2.4
 PKGNAME=	${DISTNAME}p1

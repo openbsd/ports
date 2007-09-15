@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2006/01/11 19:42:15 jolan Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"Tcl/Tk CD player"
+COMMENT=	Tcl/Tk CD player
 DISTNAME=	xcd-1.7
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio

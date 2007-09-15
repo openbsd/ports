@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"Commodore 64 music player and SID chip emulator"
+COMMENT=	Commodore 64 music player and SID chip emulator
 
 DISTNAME=	sidplay-base-1.0.9
 PKGNAME=	${DISTNAME:S/-base//}

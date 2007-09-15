@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:26:03 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"FM radio input plug-in for XMMS"
+COMMENT=	FM radio input plug-in for XMMS
 
 DISTNAME=	xmms-FMRadio-1.5
 PKGNAME=	${DISTNAME:L}

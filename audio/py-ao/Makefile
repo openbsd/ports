@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/07/04 19:18:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:26:02 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python wrapper module for the ao library"
+COMMENT=	Python wrapper module for the ao library
 
 DISTNAME=	pyao-0.82
 PKGNAME=	${DISTNAME:S/py/py-/}p1

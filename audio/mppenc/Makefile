@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/19 19:15:25 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"musepack StreamVersion7 encoder"
+COMMENT=	musepack StreamVersion7 encoder
 
 DISTNAME=	mppenc-1.16
 CATEGORIES=	audio

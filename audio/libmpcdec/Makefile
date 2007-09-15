@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/24 22:45:35 steven Exp $
-COMMENT=	"musepack decoder library"
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:26:01 simon Exp $
+COMMENT=	musepack decoder library
 
 DISTNAME=	libmpcdec-1.2.4
 SHARED_LIBS +=	mpcdec               2.0      # .5.1

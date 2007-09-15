@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/07 19:34:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=		"communicate with some Creative and Dell audio players"
+COMMENT=		communicate with some Creative and Dell audio players
 
 DISTNAME=		libnjb-2.2.5
 SHARED_LIBS=		njb	0.0	# .6.0

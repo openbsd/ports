@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2005/09/13 07:42:54 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=		"interactive console id3 tag editor"
+COMMENT=		interactive console id3 tag editor
 
 DISTNAME=		id3ed-1.10.4
 CATEGORIES=     	audio

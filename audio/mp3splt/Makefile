@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"split mp3/ogg files without decoding"
+COMMENT=	split mp3/ogg files without decoding
 DISTNAME=	mp3splt-2.1c-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	audio

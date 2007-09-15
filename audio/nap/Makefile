@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2006/12/04 17:00:53 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"gnu curses-based napster client"
+COMMENT=	gnu curses-based napster client
 
 VERSION=	1.5.3
 DISTNAME=	nap-${VERSION}

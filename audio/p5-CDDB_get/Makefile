@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/29 20:21:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=		"perl interface to query for cddb-information"
+COMMENT=		perl interface to query for cddb-information
 
 DISTNAME=		CDDB_get-2.27
 CATEGORIES=		audio

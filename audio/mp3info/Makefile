@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/12 20:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"MP3 technical info viewer and ID3 1.x tag editor"
+COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
 DISTNAME=	mp3info-0.8.5a
 PKGNAME=	${DISTNAME}p0

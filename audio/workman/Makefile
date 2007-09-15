@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"OpenLook-based CD player"
+COMMENT=	OpenLook-based CD player
 DISTNAME=	WorkMan-1.3a
 PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	audio

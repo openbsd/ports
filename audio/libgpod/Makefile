@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/17 21:54:15 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"library to access the contents of an iPod"
+COMMENT=	library to access the contents of an iPod
 DISTNAME=	libgpod-0.4.2
 SHARED_LIBS=	gpod	402.0
 CATEGORIES=	audio

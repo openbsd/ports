@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/04 16:53:19 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"edit id3v1 tags from an audio mpeg layer 3"
+COMMENT=	edit id3v1 tags from an audio mpeg layer 3
 DISTNAME=	MP3-ID3v1Tag-1.11
 PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	audio

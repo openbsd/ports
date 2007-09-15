@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2007/04/12 20:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"lame ain't an MP3 encoder"
+COMMENT=	lame ain't an MP3 encoder
 
 VERSION=	3.96.1
 

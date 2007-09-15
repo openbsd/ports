@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/12 20:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=		"wm-dockapp to control MPD"
+COMMENT=		wm-dockapp to control MPD
 DISTNAME=		WMmp-0.10.0
 PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio x11 x11/windowmaker

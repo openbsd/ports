@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"curses-based mp3 player"
+COMMENT=	curses-based mp3 player
 
 DISTNAME=	ksmp3play-0.5.1
 PKGNAME=	${DISTNAME}p1

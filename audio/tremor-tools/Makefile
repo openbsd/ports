@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/14 19:35:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"integer-only ogg vorbis command-line player"
+COMMENT=	integer-only ogg vorbis command-line player
 DISTNAME=	vorbis-tools-1.0
 PKGNAME=	${DISTNAME:S/vorbis/tremor/}p2
 CATEGORIES=    	audio

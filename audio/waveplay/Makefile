@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2005/09/13 05:38:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 21:26:03 simon Exp $
 # assumes unaligned access, no struct padding, little endian
 ONLY_FOR_ARCHS=	amd64 arm i386
 
-COMMENT=	"simple wav audio player"
+COMMENT=	simple wav audio player
 DISTNAME=	waveplay-20010924
 CATEGORIES=	audio
 

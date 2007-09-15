@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 09:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"command-line MPEG audio decoder and player"
+COMMENT=	command-line MPEG audio decoder and player
 
 DISTNAME=	madplay-0.15.2b
 CATEGORIES=	audio

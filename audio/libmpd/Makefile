@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/26 15:09:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=		"mpd client library"
+COMMENT=		mpd client library
 
 DISTNAME=		libmpd-0.14.0
 SHARED_LIBS=		mpd	1.0

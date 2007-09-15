@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/06/06 18:27:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:26:00 simon Exp $
 
-COMMENT=	"free audio editor"
+COMMENT=	free audio editor
 
 V=		1.3.3
 DISTNAME=	audacity-src-${V}

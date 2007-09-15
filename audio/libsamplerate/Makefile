@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:32 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"audio sample rate conversion library"
+COMMENT=	audio sample rate conversion library
 
 DISTNAME=	libsamplerate-0.1.2
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/24 21:17:06 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"read WMA/ASF metadata"
+COMMENT=	read WMA/ASF metadata
 
 MODULES=	cpan
 DISTNAME=	Audio-WMA-1.1

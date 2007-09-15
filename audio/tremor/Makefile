@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/03/27 12:18:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"integer-only, fully Ogg Vorbis compliant decoder library"
+COMMENT=	integer-only, fully Ogg Vorbis compliant decoder library
 DISTNAME=	tremor-20050411
 PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	vorbisidec           1.2      # .1.2

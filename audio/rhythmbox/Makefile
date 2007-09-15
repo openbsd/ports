@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/06/28 16:30:09 martynas Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=		"Music Management Application"
+COMMENT=		Music Management Application
 
 DISTNAME=		rhythmbox-0.8.8
 PKGNAME=		${DISTNAME}p5

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:26:03 simon Exp $
 # $FreeBSD: ports/audio/toolame/Makefile,v 1.9 2004/02/08 01:13:48 lioux Exp $
 #
 
-COMMENT=		"optimized mpeg 1/2 layer 2 audio encoder"
+COMMENT=		optimized mpeg 1/2 layer 2 audio encoder
 
 DISTNAME=		toolame-02l
 PKGNAME=		toolame-0.2lp1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2004/11/21 17:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"MPEG layer I, II and III audio file encoder"
+COMMENT=	MPEG layer I, II and III audio file encoder
 DISTNAME=	dist10
 PKGNAME=	mp3encode-1.10p1
 CATEGORIES=	audio

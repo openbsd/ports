@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/29 10:27:33 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=		"MP3 ID3 tags editor"
+COMMENT=		MP3 ID3 tags editor
 
 DISTNAME=		easytag-2.1
 CATEGORIES=		audio x11

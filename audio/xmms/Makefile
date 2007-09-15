@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2007/04/12 20:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.51 2007/09/15 21:26:03 simon Exp $
 
-COMMENT-main=		"Multimedia player for the X Window System"
-COMMENT-esd=		"Esound output plugin for XMMS"
-COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
-COMMENT-mikmod=		"Mikmod input plugin for XMMS"
-COMMENT-mp3=		"MP3 input plugin for XMMS"
+COMMENT-main=		Multimedia player for the X Window System
+COMMENT-esd=		Esound output plugin for XMMS
+COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
+COMMENT-mikmod=		Mikmod input plugin for XMMS
+COMMENT-mp3=		MP3 input plugin for XMMS
 
 VERSION=		1.2.10
 DISTNAME=		xmms-${VERSION}
@@ -85,8 +85,8 @@ WANTLIB-vorbis=		${WANTLIB} ogg
 LIB_DEPENDS-mikmod=	${LIB_DEPENDS} mikmod::audio/libmikmod
 RUN_DEPENDS-mikmod=	::audio/xmms
 
-PERMIT_PACKAGE_CDROM-mp3=	"patent issues"
-PERMIT_DISTFILES_CDROM-mp3= 	"patent issues"
+PERMIT_PACKAGE_CDROM-mp3=	patent issues
+PERMIT_DISTFILES_CDROM-mp3= 	patent issues
 LIB_DEPENDS-mp3=	${LIB_DEPENDS} xmms.>=4:xmms-${VERSION}*:${BUILD_PKGPATH}
 WANTLIB-mp3=		${WANTLIB} z
 

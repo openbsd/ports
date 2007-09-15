@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2006/12/17 09:01:47 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"MIDI to WAV renderer and player"
+COMMENT=	MIDI to WAV renderer and player
 DISTNAME=	TiMidity++-2.13.2
 PKGNAME=	${DISTNAME:L:S/++//}p0
 CATEGORIES=	audio
@@ -13,10 +13,10 @@ DISTFILES=	${TIINS}:0 ${DISTNAME}.tar.gz
 HOMEPAGE=	http://timidity.sourceforge.net/
 
 # GPL, copyrighted patches in goemon patchset
-PERMIT_PACKAGE_CDROM=   "copyrighted patches"
-PERMIT_PACKAGE_FTP=     "copyrighted patches"
-PERMIT_DISTFILES_CDROM= "copyrighted patches"
-PERMIT_DISTFILES_FTP=   "copyrighted patches"
+PERMIT_PACKAGE_CDROM=   copyrighted patches
+PERMIT_PACKAGE_FTP=     copyrighted patches
+PERMIT_DISTFILES_CDROM= copyrighted patches
+PERMIT_DISTFILES_FTP=   copyrighted patches
 WANTLIB=		c m ncurses 
 
 CONFIGURE_STYLE=gnu

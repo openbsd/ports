@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/28 11:47:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"text to speech utility"
+COMMENT=	text to speech utility
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "mips64"
-BROKEN=		"gcc hang compiling cmu_us_kal_diphone.c"
+BROKEN=		gcc hang compiling cmu_us_kal_diphone.c
 .endif
 
 VERSION=	1.2

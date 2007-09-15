@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/29 22:57:41 naddy Exp $
-COMMENT=	"Decoding Library for KDE Multimedia"
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:26:00 simon Exp $
+COMMENT=	Decoding Library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
 PKGNAME=	${DISTNAME}

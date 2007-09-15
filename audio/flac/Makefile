@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2007/03/28 18:06:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"free lossless audio codec"
+COMMENT=	free lossless audio codec
 
 DISTNAME=	flac-1.1.2
 PKGNAME=	${DISTNAME}p1

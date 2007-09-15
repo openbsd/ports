@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2005/12/23 15:03:05 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 21:26:00 simon Exp $
 
-COMMENT=	"CDDA reading utility with extra data verification features"
+COMMENT=	CDDA reading utility with extra data verification features
 
 DISTNAME=	cdparanoia-III-alpha9.8
 PKGNAME=	cdparanoia-3.a9.8p0

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/12 20:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 21:26:03 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"XMMS input plugin for playing shorten files"
+COMMENT=	XMMS input plugin for playing shorten files
 
 DISTNAME=	xmms-shn-2.4.1
 PKGNAME=	${DISTNAME}p0

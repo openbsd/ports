@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/08/26 06:34:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"rip shoutcast streams to local mp3s"
+COMMENT=	rip shoutcast streams to local mp3s
 
 DISTNAME=	streamripper-1.61.11
 PKGNAME=	${DISTNAME}p3

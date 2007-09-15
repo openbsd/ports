@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/04 23:34:39 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	'linux audio developer simple plugin API'
+COMMENT=	linux audio developer simple plugin API
 HOMEPAGE=	http://www.ladspa.org/
 CATEGORIES=	audio devel
 

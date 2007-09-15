@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/16 13:20:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"fetch info from MPEG-4 files"
+COMMENT=	fetch info from MPEG-4 files
 
 MODULES=	cpan
 DISTNAME=	MP4-Info-1.12

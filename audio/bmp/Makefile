@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2007/04/12 20:24:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 21:26:00 simon Exp $
 
-COMMENT-main=	"gtk+2 media player based on XMMS"
-COMMENT-mp3=	"MP3 input plugin for bmp"
-COMMENT-vorbis=	"Ogg Vorbis input plugin for bmp"
+COMMENT-main=	gtk+2 media player based on XMMS
+COMMENT-mp3=	MP3 input plugin for bmp
+COMMENT-vorbis=	Ogg Vorbis input plugin for bmp
 V=		0.9.7
 DISTNAME=	bmp-$V
 PKGNAME-main=	bmp-$Vp10
@@ -61,8 +61,8 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 LIB_DEPENDS-vorbis=${LIB_DEPENDS} \
 		vorbisfile.>=4.0,vorbis::audio/libvorbis
 
-PERMIT_DISTFILES_CDROM-mp3=	"patent issues"
-PERMIT_DISTFILES_FTP-mp3=	"patent issues"
+PERMIT_DISTFILES_CDROM-mp3=	patent issues
+PERMIT_DISTFILES_FTP-mp3=	patent issues
 
 LIB_DEPENDS-mp3=${LIB_DEPENDS} \
 		beep::${BUILD_PKGPATH}

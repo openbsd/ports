@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.33 2007/06/29 06:01:42 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.34 2007/09/15 21:26:01 simon Exp $
 
-COMMENT-main=	"MPEG2 and MPEG-4 AAC decoder"
-COMMENT-xmms=	"XMMS input plugin for AAC files"
+COMMENT-main=	MPEG2 and MPEG-4 AAC decoder
+COMMENT-xmms=	XMMS input plugin for AAC files
 DISTNAME=	faad2-2.0
 PKGNAME-main=	faad-2.0p6
 PKGNAME-xmms=	faad-xmms-2.0p5
@@ -14,9 +14,9 @@ SHARED_LIBS +=	mp4ff                0.0      # .0.0
 HOMEPAGE=	http://www.audiocoding.com/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	"Patents"
+PERMIT_PACKAGE_CDROM=	Patents
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"Patents"
+PERMIT_DISTFILES_CDROM=	Patents
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m stdc++
 

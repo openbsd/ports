@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/24 21:18:59 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"read tags of MP3 audio files"
+COMMENT=	read tags of MP3 audio files
 
 MODULES=	cpan
 DISTNAME=	MP3-Tag-0.9709

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/03 07:13:55 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=	"object-oriented interface to Musepack/APE file information"
+COMMENT=	object-oriented interface to Musepack/APE file information
 
 MODULES=	cpan
 DISTNAME=	Audio-Musepack-0.7

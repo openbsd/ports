@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/12 20:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 21:26:03 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"XMMS input plugin for playing SID files"
+COMMENT=	XMMS input plugin for playing SID files
 
 DISTNAME=	xmms-sid-0.7.4
 PKGNAME=	${DISTNAME}p2

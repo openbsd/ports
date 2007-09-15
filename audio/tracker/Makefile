@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2005/12/23 15:08:37 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"MOD player"
+COMMENT=	MOD player
 DISTNAME=	tracker-5.3
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio

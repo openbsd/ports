@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=		"utility for Rio mp3 players"
+COMMENT=		utility for Rio mp3 players
 
 DISTNAME=		rioutil-1.4.4
 PKGNAME=		${DISTNAME}p0

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.41 2007/08/11 17:29:36 martynas Exp $
+# $OpenBSD: Makefile,v 1.42 2007/09/15 21:26:01 simon Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
-COMMENT=	"sound library for Enlightenment"
+COMMENT=	sound library for Enlightenment
 
 DISTNAME=	esound-0.2.34
 PKGNAME=	${DISTNAME}p0v0

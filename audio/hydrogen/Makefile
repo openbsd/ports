@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/02 17:51:16 grange Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=		"software drum machine"
+COMMENT=		software drum machine
 DISTNAME=		hydrogen-0.9.3
 PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio

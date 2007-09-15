@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2006/08/01 12:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2007/09/15 21:26:02 simon Exp $
 
 # mpg123 is unusable without FPU
 NOT_FOR_ARCHS=	arm
 
-COMMENT=	"mpeg audio 1/2 layer 1, 2 and 3 player"
+COMMENT=	mpeg audio 1/2 layer 1, 2 and 3 player
 
 DISTNAME=	mpg123-0.59r
 PKGNAME=	${DISTNAME}p4

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/02/10 13:37:02 biorn Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=		"Streams audio to Apple AirPort Express device"
+COMMENT=		Streams audio to Apple AirPort Express device
 
 DISTNAME=		rtunes-0.6
 PKGNAME=		${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/28 10:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"high-quality MPEG audio decoder"
+COMMENT=	high-quality MPEG audio decoder
 
 DISTNAME=	libmad-0.15.1b
 PKGNAME=	${DISTNAME}p1

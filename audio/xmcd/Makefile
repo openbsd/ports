@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2007/06/29 12:15:00 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"Motif CD player"
+COMMENT=	Motif CD player
 
 DISTNAME=	xmcd-2.6
 PKGNAME=	${DISTNAME}p5

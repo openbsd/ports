@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 21:26:03 simon Exp $
 
-COMMENT=	"Motif-based audio mixer"
+COMMENT=	Motif-based audio mixer
 VERSION=	1.2.2
 DISTNAME=	xmmix-${VERSION}
 CATEGORIES=	audio

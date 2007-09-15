@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/25 17:27:11 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=		"submit tracks to last.fm/audioscrobbler"
+COMMENT=		submit tracks to last.fm/audioscrobbler
 
 DISTNAME=		Audio-Scrobbler-0.01
 PKGNAME=		p5-${DISTNAME}p0

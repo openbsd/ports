@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/30 23:37:24 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:26:01 simon Exp $
 
-COMMENT=	"OpenAL Utility Toolkit"
+COMMENT=	OpenAL Utility Toolkit
 
 DISTNAME=	freealut-1.1.0
 SHARED_LIBS +=  alut                 1.0      # .1.0

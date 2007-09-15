@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/04/12 20:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 21:26:03 simon Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"XMMS input plugin for playing FLAC files"
+COMMENT=	XMMS input plugin for playing FLAC file
 
 VERSION=	1.1.2
 PKGNAME=	xmms-flac-${VERSION}p1

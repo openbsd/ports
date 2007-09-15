@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/08/04 23:54:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:00 simon Exp $
 
-COMMENT=	'computer music toolkit'
+COMMENT=	computer music toolkit
 HOMEPAGE=	http://www.ladspa.org/
 CATEGORIES=	audio devel
 

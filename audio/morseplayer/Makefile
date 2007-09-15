@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/13 16:30:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 21:26:02 simon Exp $
 
-COMMENT=		"morse player"
+COMMENT=		morse player
 
 DISTNAME=		morseplayer-1.4
 CATEGORIES=		audio

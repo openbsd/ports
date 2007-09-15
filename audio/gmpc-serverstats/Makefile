@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/26 21:08:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:26:01 simon Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"display mpd-server statistics, for gmpc"
+COMMENT=		display mpd-server statistics, for gmpc
 
 VERSION=		0.15.0
 DISTNAME=		gmpc-serverstats-${VERSION}

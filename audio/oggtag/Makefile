@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.3 2006/08/01 12:13:28 espie Exp $
-COMMENT=	"command-line editor for tags in Ogg Vorbis files"
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:26:02 simon Exp $
+COMMENT=	command-line editor for tags in Ogg Vorbis files
 
 DISTNAME=	oggtag_1.0
 PKGNAME=	${DISTNAME:S/_/-/}
