@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/19 13:10:32 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:34:35 simon Exp $
 
 PKG_ARCH=		*
 
-COMMENT=		"Asterisk: The Future of Telephony"
+COMMENT=		Asterisk: The Future of Telephony
 
 DISTNAME=		AsteriskTFOT
 PKGNAME=		AsteriskTFOT-1.0

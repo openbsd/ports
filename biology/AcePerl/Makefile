@@ -1,6 +1,6 @@
-#	$OpenBSD: Makefile,v 1.2 2005/03/11 17:01:28 alek Exp $
+#	$OpenBSD: Makefile,v 1.3 2007/09/15 21:32:05 simon Exp $
 
-COMMENT=	"perl interface to the ACEDB database"
+COMMENT=	perl interface to the ACEDB database
 
 DISTNAME=	AcePerl-1.87
 PKGNAME=	${DISTNAME}

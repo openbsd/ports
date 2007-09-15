@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2004/10/20 19:55:39 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:34:35 simon Exp $
 
-COMMENT=	"the definitive guide to CVS"
+COMMENT=	the definitive guide to CVS
 
 V=		1.21
 DISTNAME=	cvsbook-${V}-all

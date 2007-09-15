@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/06 15:35:56 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:34:36 simon Exp $
 
-COMMENT=        "O'Reilly Volume 3: Users Guide, Open Look"
+COMMENT=        O'Reilly Volume 3: Users Guide, Open Look
 
 VERSION=	1.0	# one could argue for 0.9 since it was never published
 PKGNAME=	vol3ol-${VERSION}

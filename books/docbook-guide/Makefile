@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/01 20:07:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:34:35 simon Exp $
 
-COMMENT=	"the definite guide to DocBook"
+COMMENT=	the definite guide to DocBook
 
 V=		2.0.8
 DISTNAME=	tdg-en-html-${V}

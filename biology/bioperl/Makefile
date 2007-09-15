@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/26 21:18:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:32:05 simon Exp $
 
 CATEGORIES=	biology perl5
 
-COMMENT=	'perl tools for bioinformatics'
+COMMENT=	perl tools for bioinformatics
 HOMEPAGE=	http://bioperl.org/
 MASTER_SITES=	${HOMEPAGE}DIST/
 DISTNAME=	bioperl-1.5.0

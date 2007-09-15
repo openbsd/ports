@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/21 17:09:23 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:34:36 simon Exp $
 
-COMMENT=		"language and library specification for Haskell"
+COMMENT=		language and library specification for Haskell
 
 # Strictly speaking, there's no version at all, just the report of the
 # programming language "Haskell 98". I don't care for now that there may

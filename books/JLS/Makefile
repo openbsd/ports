@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/28 22:29:28 ian Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:34:35 simon Exp $
 
-COMMENT=        "Sun's official Java Language Specification"
+COMMENT=        Sun's official Java Language Specification
 
 VERSION=	2.0
 PKGNAME=	JLS-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/04 22:15:26 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:34:35 simon Exp $
 
-COMMENT=	"book about Python for experienced programmers"
+COMMENT=	book about Python for experienced programmers
 
 VERSION=	5.4
 PKGNAME=	diveintopython-${VERSION}
