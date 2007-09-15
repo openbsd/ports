@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2007/07/22 16:05:26 simon Exp $
+# $OpenBSD: Makefile,v 1.191 2007/09/15 16:40:59 simon Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -109,6 +109,7 @@
      SUBDIR += p5-GD-Graph
      SUBDIR += p5-GD-Graph3d
      SUBDIR += p5-GD-SVG
+     SUBDIR += p5-GD-SecurityImage
      SUBDIR += p5-GD-TextUtil
      SUBDIR += p5-Graphics-ColorNames
      SUBDIR += p5-Graphics-ColorNames-WWW
