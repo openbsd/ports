@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/28 10:15:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"library for handling microsoft compression formats"
+COMMENT=	library for handling microsoft compression formats
 DISTNAME=	libmspack-0.0.20040308alpha
 SHARED_LIBS +=	mspack               1.0      # .1.0
 PKGNAME=	libmspack-20040308a

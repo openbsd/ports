@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/30 00:47:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"command line implementation of the PAR v1.0 specification"
+COMMENT=	command line implementation of the PAR v1.0 specification
 DISTNAME=	par-v1.1
 PKGNAME=	par1cmdline-1.1p0
 CATEGORIES=	archivers

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/10/28 10:15:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"portable lossless data compression library"
+COMMENT=	portable lossless data compression library
 
 DISTNAME=	ucl-1.03
 PKGNAME=	${DISTNAME}p0

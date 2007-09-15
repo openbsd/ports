@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/04 18:49:49 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 10:14:33 espie Exp $
 
-COMMENT= 	"PerlIO layer to gzip/gunzip"
+COMMENT= 	PerlIO layer to gzip/gunzip
 
 MODULES=	cpan
 

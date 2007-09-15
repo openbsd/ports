@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/17 15:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"perl interface to tar archives"
+COMMENT=	perl interface to tar archives
 
 MODULES=	cpan
 

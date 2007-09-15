@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2004/11/21 12:50:32 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 10:14:32 espie Exp $
 
-COMMENT=	"packing and unpacking of shell archives"
+COMMENT=	packing and unpacking of shell archives
 
 DISTNAME=	sharutils-4.2.1
 CATEGORIES=	archivers

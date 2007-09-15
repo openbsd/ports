@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/15 05:59:41 david Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=		"several programs to handle macintosh files and archives"
+COMMENT=		several programs to handle macintosh files and archives
 DISTNAME=		macutil2.0b3
 PKGNAME=		macutil-2.0b3p0
 CATEGORIES=		archivers

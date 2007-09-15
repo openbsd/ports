@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2006/06/21 12:20:40 alek Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/15 10:14:32 espie Exp $
 
-COMMENT=	"create & extract files from DOS .ARC files"
+COMMENT=	create & extract files from DOS .ARC files
 
 DISTNAME=	arc-5.21o
 PKGNAME=	${DISTNAME}p0

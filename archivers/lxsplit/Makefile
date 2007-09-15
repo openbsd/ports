@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/02/18 19:31:06 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"file joiner/splitter"
+COMMENT=	file joiner/splitter
 DISTNAME=	lxsplit-1.0-pre
 PKGNAME=	lxsplit-1.0pre
 CATEGORIES=	archivers

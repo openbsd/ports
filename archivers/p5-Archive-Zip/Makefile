@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/21 19:07:10 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"perl interface to ZIP files"
+COMMENT=	perl interface to ZIP files
 
 MODULES=	cpan
 

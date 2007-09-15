@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/28 10:15:10 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 10:14:34 espie Exp $
 
-COMMENT=	"java-like zip interface"
+COMMENT=	java-like zip interface
 DISTNAME=	zipios++-0.1.5.9+cvs.2004.02.07
 PKGNAME=	zipios++-0.1.5.9p0
 CATEGORIES=	devel archivers

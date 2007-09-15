@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2005/04/23 15:15:13 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 10:14:32 espie Exp $
 
-COMMENT=	"archive files using the HSC compression method"
+COMMENT=	archive files using the HSC compression method
 
 DISTNAME=	ha0999
 PKGNAME=	ha-0.999b

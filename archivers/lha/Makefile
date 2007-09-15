@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2007/01/04 23:05:07 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"archive files using LZW compression (.lzh files)"
+COMMENT=	archive files using LZW compression (.lzh files)
 
 DISTNAME=	lha-1.14i-ac20050924p1
 PKGNAME=	lha-1.14i.ac20050924.1

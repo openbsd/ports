@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2006/03/11 15:20:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 10:14:33 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
-COMMENT=	"unique standard tape archiver with many enhancements"
+COMMENT=	unique standard tape archiver with many enhancements
 
 DISTNAME=	star-1.4.3
 PKGNAME=	${DISTNAME}p0

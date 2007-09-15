@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2006/03/15 19:59:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2007/09/15 10:14:33 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386 sparc
 IGNORE=		"requires Solaris shared libraries"
 .endif
 
-COMMENT=	"RAR archiver (binary port)"
+COMMENT=	RAR archiver (binary port)
 
 DISTNAME=rar-2.0x
 
@@ -34,9 +34,9 @@ EXTRACT_CASES=	*.sfx) ${SUDO} chmod a+x ${FULLDISTDIR}/$$archive && \
 HOMEPAGE=	http://www.rarsoft.com/
 
 # Restrictive
-PERMIT_PACKAGE_CDROM=	"Shareware.  Requires registration."
-PERMIT_PACKAGE_FTP=	"Shareware.  Requires registration."
-PERMIT_DISTFILES_CDROM=	"Shareware.  Requires registration."
+PERMIT_PACKAGE_CDROM=	Shareware.  Requires registration.
+PERMIT_PACKAGE_FTP=	Shareware.  Requires registration.
+PERMIT_DISTFILES_CDROM=	Shareware.  Requires registration.
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes

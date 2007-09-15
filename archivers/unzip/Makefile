@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2006/07/11 06:55:28 steven Exp $
+# $OpenBSD: Makefile,v 1.39 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"extract, list & test files in a ZIP archive"
+COMMENT=	extract, list & test files in a ZIP archive
 
 VERSION=	5.52
 DISTNAME=	unzip${VERSION:S/.//}

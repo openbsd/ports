@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/01 11:17:55 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 10:14:33 espie Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to lzo compression library"
+COMMENT=	interface to lzo compression library
 
 DISTNAME=	perl-lzo-1.08
 PKGNAME=	p5-Compress-LZO-1.08p0

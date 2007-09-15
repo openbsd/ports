@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2006/12/03 08:51:34 matthieu Exp $
+# $OpenBSD: Makefile,v 1.36 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
+COMMENT=	create/update ZIP files compatible with PKZip(tm)
 
 DISTNAME=	zip-2.32
 CATEGORIES=	archivers

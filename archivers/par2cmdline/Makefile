@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/21 12:50:32 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"command line implementation of the PAR v2.0 specification"
+COMMENT=	command line implementation of the PAR v2.0 specification
 DISTNAME=	par2cmdline-0.4
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=parchive/}

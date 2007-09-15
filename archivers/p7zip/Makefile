@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/10 10:52:40 eric Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 10:14:33 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,10 +17,10 @@ HOMEPAGE=	http://www.7-zip.org/
 MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
 
 # LGPL, except unRar plugin which is licensed as Freeware
-PERMIT_PACKAGE_CDROM-rar=	"no fee"
+PERMIT_PACKAGE_CDROM-rar=	no fee
 PERMIT_PACKAGE_CDROM=		Yes
 PERMIT_PACKAGE_FTP=		Yes 
-PERMIT_DISTFILES_CDROM=		"no fee"
+PERMIT_DISTFILES_CDROM=		no fee
 PERMIT_DISTFILES_FTP=		Yes 
 
 WANTLIB-main=	c m pthread stdc++

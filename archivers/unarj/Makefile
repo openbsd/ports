@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/21 12:50:33 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 10:14:33 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1999/02/17 22:25:36 ache Exp $
 
-COMMENT=	"extract files from ARJ archives"
+COMMENT=	extract files from ARJ archives
 
 DISTNAME=	unarj-2.43
 CATEGORIES=	archivers

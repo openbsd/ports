@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.36 2007/06/26 19:47:59 rui Exp $
+# $OpenBSD: Makefile,v 1.37 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"extract, list, and test RAR archives"
+COMMENT=	extract, list, and test RAR archives
 
 DISTNAME=	unrarsrc-3.7.6
 PKGNAME=	unrar-3.76
@@ -11,9 +11,9 @@ HOMEPAGE=	http://www.rarlab.com/
 MAINTAINER=	Rui Reis <rui@rui.cx>
 
 # Restrictive
-PERMIT_PACKAGE_CDROM=	"no fee"
-PERMIT_PACKAGE_FTP=	"may not modify"
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
+PERMIT_PACKAGE_FTP=	may not modify
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 

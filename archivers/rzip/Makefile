@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/04 23:38:23 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"file compressor with a high compression ratio"
+COMMENT=	file compressor with a high compression ratio
 
 DISTNAME=	rzip-2.1
 PKGNAME=	${DISTNAME}

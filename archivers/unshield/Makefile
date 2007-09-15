@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/10/28 10:15:10 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=		"extract files from InstallShield CAB archives"
+COMMENT=		extract files from InstallShield CAB archives
 
 DISTNAME=		unshield-0.5
 PKGNAME=		${DISTNAME}p1

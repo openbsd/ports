@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2007/05/12 12:26:36 steven Exp $
+# $OpenBSD: Makefile,v 1.46 2007/09/15 10:14:33 espie Exp $
 
-COMMENT=	"perl interface to the zlib compression library"
+COMMENT=	perl interface to the zlib compression library
 
 MODULES=	cpan
 
