@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/15 22:36:54 merdely Exp $
+# $OpenBSD: Makefile,v 1.33 2007/09/15 23:36:43 merdely Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
@@ -78,7 +78,7 @@ storage_flag=1
 .  endif
 .endfor
 .if !defined(storage_flag)
-ERRORS+=		Fatal: You need to select at least one storage driver
+ERRORS+=		"Fatal: You need to select at least one storage driver"
 .endif
 
 do-install:

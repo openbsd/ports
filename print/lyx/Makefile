@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.43 2007/09/15 23:36:43 merdely Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -51,7 +51,7 @@ LIB_DEPENDS+=	forms.1::x11/xforms
 WANTLIB+=	Xpm flimage jpeg
 CONFIGURE_ARGS=	--with-frontend=xforms
 .else
-ERRORS+= Fatal: Conflicting flavor: ${FLAVOR}
+ERRORS+= "Fatal: Conflicting flavor: ${FLAVOR}"
 .endif
 
 CONFIGURE_STYLE=		gnu

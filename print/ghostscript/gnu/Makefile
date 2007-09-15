@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.51 2007/09/15 23:36:43 merdely Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -117,7 +117,7 @@ CFLAGS+=	-DA4
 .endif
 
 .if ${FLAVOR:L:Mgtk} && ${FLAVOR:L:Mno_x11}
-ERRORS+= Fatal: Conflicting flavors: ${FLAVOR}
+ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
 .elif ${FLAVOR:L:Mgtk}
 MODULES=	devel/gettext
 LIB_DEPENDS+=	gtk.>=1,gdk::x11/gtk+

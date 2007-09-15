@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 23:36:43 merdely Exp $
 
 COMMENT=	print multiple pages per sheet on PostScript printer
 
@@ -30,7 +30,7 @@ MAKE_FLAGS+=	PAGESIZE=Legal
 .elif ${FLAVOR:L} == "a4"
 MAKE_FLAGS+=	PAGESIZE=A4
 .else
-ERRORS+=	Fatal: You must set exactly ONE flavor: ${FLAVORS}
+ERRORS+=	"Fatal: You must set exactly ONE flavor: ${FLAVORS}"
 .endif
 
 NO_REGRESS=	Yes

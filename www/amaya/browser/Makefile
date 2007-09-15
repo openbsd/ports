@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 20:38:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:36:43 merdely Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--without-gtk \
 			--with-motif-libraries=${LOCALBASE}/lib
 
 .else
-ERRORS+=		Fatal: Conflicting or missing flavor: '${FLAVOR}'
+ERRORS+=		"Fatal: Conflicting or missing flavor: '${FLAVOR}'"
 .endif
 
 WRKSRC=			${WRKDIR}/Amaya

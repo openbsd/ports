@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 21:36:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 23:36:43 merdely Exp $
 
 COMMENT=	manipulating PostScript documents
 
@@ -31,7 +31,7 @@ OK=Yes
 .endfor
 OK?=No
 .if ${OK} == "No"
-ERRORS+=Fatal: Invalid flavor ${FLAVOR}
+ERRORS+="Fatal: Invalid flavor ${FLAVOR}"
 .endif
 
 MAKE_FLAGS=	\
