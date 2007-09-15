@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lparser_c,v 1.1 2007/09/15 09:42:57 jolan Exp $
+--- src/lparser.c.orig	Tue Jul 31 02:55:45 2007
++++ src/lparser.c	Tue Jul 31 02:57:35 2007
+@@ -938,6 +938,8 @@ static void assignment (LexState *ls, struct LHS_assig
+     primaryexp(ls, &nv.v);
+     if (nv.v.k == VLOCAL)
+       check_conflict(ls, lh, &nv.v);
++    luaY_checklimit(ls->fs, ls->L->nCcalls + nvars, LUAI_MAXCCALLS,
++                    "variable names");
+     assignment(ls, &nv, nvars+1);
+   }
+   else {  /* assignment -> `=' explist1 */
