@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:39 simon Exp $
 
-COMMENT=	"American English lexicon compiled from Moby and CMU lexicons"
+COMMENT=	American English lexicon compiled from Moby and CMU lexicons
 DISTNAME=	OGIlexicon-2.1
 
 RUN_DEPENDS=	::audio/festival/core,ogi

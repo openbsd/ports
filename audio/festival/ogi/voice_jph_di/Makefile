@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:39 simon Exp $
 
 LANG=	english
 VO=	jph
 
-COMMENT=	"american male voice (JPH)"
+COMMENT=	american male voice (JPH)
 DISTNAME=	voice_${VO}_di-2.0
 
 RUN_DEPENDS=	${OGI_US_DEPS}

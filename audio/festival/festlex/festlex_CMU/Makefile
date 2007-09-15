@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/06 03:36:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 22:27:38 simon Exp $
 
-COMMENT=	"CMU dictionary in festival form"
+COMMENT=	CMU dictionary in festival form
 DISTNAME=	festlex_CMU
 
 do-install:

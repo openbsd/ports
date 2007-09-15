@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:39 simon Exp $
 
 LANG=	english
 VO=	mwm
 
-COMMENT=	"american male voice (MWM)"
+COMMENT=	american male voice (MWM)
 DISTNAME=	voice_${VO}_di-2.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} voice_convert_di-2.0${EXTRACT_SUFX}
 

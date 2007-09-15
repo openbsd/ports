@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/08/06 03:33:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:38 simon Exp $
 
-COMMENT=	"Canadian English male speaker (JMK)"
+COMMENT=	Canadian English male speaker (JMK)
 DISTNAME=	festvox_cmu_us_jmk_arctic_hts
 
 RUN_DEPENDS=	${ARCTIC_US_DEPS}

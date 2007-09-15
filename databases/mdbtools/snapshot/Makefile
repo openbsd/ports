@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2007/06/03 09:51:57 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 22:27:39 simon Exp $
 
-COMMENT-main=	"read microsoft Access MDB"
-COMMENT-gmdb=	"graphical interface to MDB tools"
+COMMENT-main=	read microsoft Access MDB
+COMMENT-gmdb=	graphical interface to MDB tools
 DATE=		20070603
 DISTNAME=	mdbtools-${DATE}
 PKGNAME-main=	mdbtools-${DATE}

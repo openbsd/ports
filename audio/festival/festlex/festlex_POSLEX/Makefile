@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:38 simon Exp $
 
-COMMENT=	"part of speech lexicons and ngram from English"
+COMMENT=	part of speech lexicons and ngram from English
 DISTNAME=	festlex_POSLEX
 
 do-install:

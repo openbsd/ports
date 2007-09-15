@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:39 simon Exp $
 
-COMMENT=	"American English male speaker (KAL) at 16KHz sampling"
+COMMENT=	American English male speaker (KAL) at 16KHz sampling
 DISTNAME=	festvox_kallpc16k
 
 RUN_DEPENDS=	${VOX_US_DEPS}

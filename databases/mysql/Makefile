@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.133 2007/09/01 20:11:21 kili Exp $
+# $OpenBSD: Makefile,v 1.134 2007/09/15 22:27:39 simon Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
-BROKEN=		"gen_lex_hash hangs"
+BROKEN=		gen_lex_hash hangs
 .endif
 
 COMMENT-main=	multithreaded SQL database (client)

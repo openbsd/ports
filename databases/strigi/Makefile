@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:39 simon Exp $
 
 SHARED_ONLY=	Yes
-COMMENT=	'document indexer'
+COMMENT=	document indexer
 CATEGORIES=	databases devel textproc sysutils
 
 HOMEPAGE=	http://www.vandenoever.info/software/strigi/

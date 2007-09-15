@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/01 11:32:27 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:27:39 simon Exp $
 
 SHARED_ONLY=	Yes
-COMMENT=	'qt3 sqlite3 plugin'
+COMMENT=	qt3 sqlite3 plugin
 CATEGORIES=	databases devel x11
 
 HOMEPAGE=	http://kde-apps.org/content/show.php?content=23011

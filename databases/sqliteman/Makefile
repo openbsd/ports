@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/18 00:12:49 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 22:27:39 simon Exp $
 
-COMMENT=	'gui for sqlite'
+COMMENT=	gui for sqlite
 CATEGORIES=	databases x11
 
 DISTNAME=	sqliteman-0.99-20070509

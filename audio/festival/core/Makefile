@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/06/05 15:18:37 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 22:27:38 simon Exp $
 
-COMMENT=	"general multi-lingual speech synthesis system"
+COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
 DISTNAME=	festival-${V}-beta
 PKGNAME=	${DISTNAME:S/-beta/beta/}p2
@@ -42,8 +42,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mogi}
 DISTFILES+=	OGIresLPC-2.0.9.tar.gz:0
 PATCH_LIST=	ogi-* patch-*
-PERMIT_DISTFILES_CDROM=	"no fee"
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
+PERMIT_PACKAGE_CDROM=	no fee
 .endif
 
 # BSD-like

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2007/01/16 02:48:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.30 2007/09/15 22:27:39 simon Exp $
 
-COMMENT-java=	"Java bindings for Berkeley DB, revision ${REVISION}"
+COMMENT-java=	Java bindings for Berkeley DB, revision ${REVISION}
 
 REVISION=	4
 VERSION=	${REVISION}.2.52
