@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2007/08/25 19:46:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2007/09/15 21:17:24 merdely Exp $
 
-COMMENT=	"GNU Bourne Again Shell"
+COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-3.2
 PKGNAME=	${DISTNAME}.25

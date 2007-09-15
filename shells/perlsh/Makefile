@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:17:24 merdely Exp $
 
-COMMENT=		"Perl shell"
+COMMENT=		Perl shell
 
 DISTNAME=		psh-1.8
 PKGNAME=		${DISTNAME:S/p/perl/}p1

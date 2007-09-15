@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/08 22:48:15 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:17:25 merdely Exp $
 
-COMMENT=	'perl shell'
+COMMENT=	perl shell
 CATEGORIES=	shells
 
 V=		0.96

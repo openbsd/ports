@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2007/02/04 15:54:19 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 21:17:25 merdely Exp $
 
 NOT_FOR_ARCHS=		${LP64_ARCHS}
 
-COMMENT=		"Unix shell embedded in Scheme"
+COMMENT=		Unix shell embedded in Scheme
 
 DISTNAME=		scsh-0.6.7
 CATEGORIES=		lang shells
