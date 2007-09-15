@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2006/05/12 01:31:43 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:03:00 merdely Exp $
 
-COMMENT=	"creative voip blaster driver/software"
+COMMENT=	creative voip blaster driver/software
 DISTNAME=	fobbit-0.61
 CATEGORIES=	telephony
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fobbit/}

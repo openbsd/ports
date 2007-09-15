@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/22 22:12:37 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:03:00 merdely Exp $
 
-COMMENT=	"extra sound files for Asterisk open source PBX"
+COMMENT=	extra sound files for Asterisk open source PBX
 DISTNAME=	asterisk-sounds-1.2.1
 PKGNAME=	${DISTNAME}p3
 CATEGORIES=	telephony

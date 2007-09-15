@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/31 15:51:23 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:03:00 merdely Exp $
 
-COMMENT=	"proxy/masquerading daemon for the SIP protocol"
+COMMENT=	proxy/masquerading daemon for the SIP protocol
 
 DISTNAME=	siproxd-0.5.13
 PKGNAME=	${DISTNAME}p0

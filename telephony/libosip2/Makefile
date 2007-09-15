@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/20 13:26:58 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:03:00 merdely Exp $
 
-COMMENT=	"GNU oSIP library"
+COMMENT=	GNU oSIP library
 
 DISTNAME=	libosip2-2.2.0
 PKGNAME=	${DISTNAME}p1

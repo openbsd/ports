@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/28 16:16:55 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 21:03:00 merdely Exp $
 
-COMMENT=	"collection of perl modules to be used with asterisk"
+COMMENT=	collection of perl modules to be used with asterisk
 
 DISTNAME=	asterisk-perl-0.09
 PKGNAME=	p5-asterisk-0.09

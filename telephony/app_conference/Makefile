@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/06 12:31:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:03:00 merdely Exp $
 SHARED_ONLY=	Yes
 
-COMMENT=	"conferencing application for asterisk"
+COMMENT=	conferencing application for asterisk
 DISTNAME=	app_conference-20070809
 CATEGORIES=	telephony
 MASTER_SITES=	http://spacehopper.org/

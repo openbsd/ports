@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/17 08:23:29 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:03:00 merdely Exp $
 
 PKG_ARCH=	*
 
 CATEGORIES=	telephony
-COMMENT=	"'native' (better) sound files for Asterisk open source PBX"
+COMMENT=	'native' (better) sound files for Asterisk open source PBX
 # Note: Do not confuse "sounds" with "native-sounds: the former goes
 # beyond what comes with the Asterisk port, while the latter (this port)
 # duplicates what comes with Asterisk but in different formats for performance.
