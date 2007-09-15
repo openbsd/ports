@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 19:00:55 steven Exp $
 
-COMMENT=	"hacked 9wm, with support for virtual screens"
+COMMENT=	hacked 9wm, with support for virtual screens
 
 DISTNAME=	w9wm-0.4.2
 CATEGORIES=	plan9

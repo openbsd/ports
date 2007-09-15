@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/02 19:05:47 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 19:00:55 steven Exp $
 
-COMMENT=	"disassembler and other tools for palmos binaries"
+COMMENT=	disassembler and other tools for palmos binaries
 
 VERSION=	1.0.2
 DISTNAME=	palmpower-${VERSION}

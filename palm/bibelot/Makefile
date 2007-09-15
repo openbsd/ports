@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/02 17:35:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 19:00:54 steven Exp $
 
-COMMENT=	"format/convert text documents into compressed .pdb files"
+COMMENT=	format/convert text documents into compressed .pdb files
 
 VERSION=	0.9.4
 PROG=		bibelot

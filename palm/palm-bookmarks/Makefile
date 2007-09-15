@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/02/05 09:54:47 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 19:00:55 steven Exp $
 
-COMMENT=	"bookmarks on your palm"
+COMMENT=	bookmarks on your palm
 
 DISTNAME=	palm-bookmarks-0.2
 PKGNAME=	${DISTNAME}p0

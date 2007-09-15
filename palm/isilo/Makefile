@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 19:00:54 steven Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"converts documents from text/html to isilo format"
+COMMENT=	converts documents from text/html to isilo format
 
 VER=		2.58
 DISTNAME=	iSiloBSD

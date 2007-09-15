@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/20 13:45:21 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 19:00:55 steven Exp $
 
-COMMENT=	"simple menu patterned after plan9"
+COMMENT=	simple menu patterned after plan9
 
 DISTNAME=	9menu-1.7
 CATEGORIES=	plan9

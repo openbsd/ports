@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/20 13:45:22 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 19:00:55 steven Exp $
 
-COMMENT=	"X11 version of Rob Pike's editor, sam"
+COMMENT=	X11 version of Rob Pike's editor, sam
 
 DISTNAME=	sam
 PKGNAME=	sam-4.3.19980506

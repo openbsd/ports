@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/01 17:50:25 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 19:00:55 steven Exp $
 
 ONLY_FOR_ARCHS=		i386
-COMMENT=		"Palm OS Emulator"
+COMMENT=		Palm OS Emulator
 
 VERSION=		3.5
 DISTNAME=		Emulator_Src_${VERSION}

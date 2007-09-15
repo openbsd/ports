@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/03 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 19:00:55 steven Exp $
 
-COMMENT=	"generate resources for PalmOS applications from text descr"
+COMMENT=	generate resources for PalmOS applications from text descr
 
 DISTNAME=	pilrc-2.8p5
 PKGNAME=	${DISTNAME:S/p5/.5/}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/14 20:35:36 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 19:00:54 steven Exp $
 
-COMMENT=	"interface to palm pdb databases"
+COMMENT=	interface to palm pdb databases
 
 MODULES=	cpan
 DISTNAME=	p5-Palm-1.3.0

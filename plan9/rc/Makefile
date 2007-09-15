@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/20 13:45:22 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 19:00:55 steven Exp $
 
-COMMENT=	"shell (clone of plan9 shell)"
+COMMENT=	shell (clone of plan9 shell)
 
 DISTNAME=	rc-1.6
 CATEGORIES=	plan9 shells

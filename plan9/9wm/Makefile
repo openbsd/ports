@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 19:00:55 steven Exp $
 
-COMMENT=	"8 1/2-like Window Manager for X11"
+COMMENT=	8 1/2-like Window Manager for X11
 
 PKGNAME=	9wm-1.2pre
 DISTNAME=	pre-9wm-1.2

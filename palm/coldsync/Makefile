@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/23 21:21:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 19:00:54 steven Exp $
 
-COMMENT=		"tool for synchronizing PalmOS devices"
+COMMENT=		tool for synchronizing PalmOS devices
 
 DISTNAME=		coldsync-3.0-pre4
 PKGNAME=		coldsync-3.0pre4p2
