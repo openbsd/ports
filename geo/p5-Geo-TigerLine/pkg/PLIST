@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 14:01:15 jolan Exp $
+${P5SITE}/Geo/
+${P5SITE}/Geo/TigerLine/
+${P5SITE}/Geo/TigerLine.pm
+${P5SITE}/Geo/TigerLine/Record/
+${P5SITE}/Geo/TigerLine/Record.pm
+${P5SITE}/Geo/TigerLine/Record/1.pm
+${P5SITE}/Geo/TigerLine/Record/2.pm
+${P5SITE}/Geo/TigerLine/Record/4.pm
+${P5SITE}/Geo/TigerLine/Record/5.pm
+${P5SITE}/Geo/TigerLine/Record/6.pm
+${P5SITE}/Geo/TigerLine/Record/7.pm
+${P5SITE}/Geo/TigerLine/Record/8.pm
+${P5SITE}/Geo/TigerLine/Record/A.pm
+${P5SITE}/Geo/TigerLine/Record/Accessor.pm
+${P5SITE}/Geo/TigerLine/Record/B.pm
+${P5SITE}/Geo/TigerLine/Record/C.pm
+${P5SITE}/Geo/TigerLine/Record/E.pm
+${P5SITE}/Geo/TigerLine/Record/H.pm
+${P5SITE}/Geo/TigerLine/Record/I.pm
+${P5SITE}/Geo/TigerLine/Record/P.pm
+${P5SITE}/Geo/TigerLine/Record/Parser.pm
+${P5SITE}/Geo/TigerLine/Record/R.pm
+${P5SITE}/Geo/TigerLine/Record/S.pm
+${P5SITE}/Geo/TigerLine/Record/T.pm
+${P5SITE}/Geo/TigerLine/Record/U.pm
+${P5SITE}/Geo/TigerLine/Record/Z.pm
+@man man/man3p/Geo::TigerLine.3p
+@man man/man3p/Geo::TigerLine::Record.3p
+@man man/man3p/Geo::TigerLine::Record::1.3p
+@man man/man3p/Geo::TigerLine::Record::2.3p
+@man man/man3p/Geo::TigerLine::Record::4.3p
+@man man/man3p/Geo::TigerLine::Record::5.3p
+@man man/man3p/Geo::TigerLine::Record::6.3p
+@man man/man3p/Geo::TigerLine::Record::7.3p
+@man man/man3p/Geo::TigerLine::Record::8.3p
+@man man/man3p/Geo::TigerLine::Record::A.3p
+@man man/man3p/Geo::TigerLine::Record::Accessor.3p
+@man man/man3p/Geo::TigerLine::Record::B.3p
+@man man/man3p/Geo::TigerLine::Record::C.3p
+@man man/man3p/Geo::TigerLine::Record::E.3p
+@man man/man3p/Geo::TigerLine::Record::H.3p
+@man man/man3p/Geo::TigerLine::Record::I.3p
+@man man/man3p/Geo::TigerLine::Record::P.3p
+@man man/man3p/Geo::TigerLine::Record::Parser.3p
+@man man/man3p/Geo::TigerLine::Record::R.3p
+@man man/man3p/Geo::TigerLine::Record::S.3p
+@man man/man3p/Geo::TigerLine::Record::T.3p
+@man man/man3p/Geo::TigerLine::Record::U.3p
+@man man/man3p/Geo::TigerLine::Record::Z.3p
