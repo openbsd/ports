@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 22:50:19 merdely Exp $
 
-COMMENT=	"tools to convert Xfig's .fig files"
+COMMENT=	tools to convert Xfig's .fig files
 
 VERSION=	3.2.4
 DISTNAME=	transfig.${VERSION}
