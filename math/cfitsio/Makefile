@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/29 08:26:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"library for handling FITS data"
+COMMENT=	library for handling FITS data
 CATEGORIES=	math graphics devel
 
 HOMEPAGE= 	http://heasarc.gsfc.nasa.gov/fitsio/fitsio.html

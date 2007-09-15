@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2007/03/28 16:50:58 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"command-driven interactive function plotting program"
+COMMENT=	command-driven interactive function plotting program
 
 V=		4.2
 PATCHLEVEL=	0

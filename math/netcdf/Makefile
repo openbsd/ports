@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/11 11:30:06 steven Exp $ 
+# $OpenBSD: Makefile,v 1.11 2007/09/15 18:44:36 steven Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
-#
 
-COMMENT=	"library for machine-independent, array-oriented data access"
+COMMENT=	library for machine-independent, array-oriented data access
 
 DISTNAME=	netcdf-3.5.0
 PKGNAME=	${DISTNAME}p1

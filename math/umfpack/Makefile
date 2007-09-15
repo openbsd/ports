@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/07 11:10:03 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 18:44:37 steven Exp $
 
-COMMENT=	"unsymmetric multifrontal sparse LU factorization package"
+COMMENT=	unsymmetric multifrontal sparse LU factorization package
 
 VERSION=	5.1.0
 DISTNAME=	UMFPACK-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/30 11:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"symbolics math system"
+COMMENT=	symbolics math system
 
 CATEGORIES=	math
 

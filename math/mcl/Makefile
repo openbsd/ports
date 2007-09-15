@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/04/05 08:58:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"clustering algorithm for graphs"
+COMMENT=	clustering algorithm for graphs
 
 V=		06-058
 DISTNAME=	mcl-${V}

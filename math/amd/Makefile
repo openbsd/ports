@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/07 11:09:10 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"order a sparse matrix prior to Cholesky factorization"
+COMMENT=	order a sparse matrix prior to Cholesky factorization
 
 VERSION=	2.2.0
 DISTNAME=	AMD-${VERSION}

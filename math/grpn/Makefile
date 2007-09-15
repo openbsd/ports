@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/13 12:53:08 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"graphical reverse polish notation calculator"
+COMMENT=	graphical reverse polish notation calculator
 
 DISTNAME=	grpn-1.1.2
 CATEGORIES=	math x11

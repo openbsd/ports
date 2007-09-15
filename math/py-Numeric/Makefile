@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 18:44:37 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"fast array facility to the Python language"
+COMMENT=	fast array facility to the Python language
 
 VERSION=	23.1
 DISTNAME=	Numeric-${VERSION}

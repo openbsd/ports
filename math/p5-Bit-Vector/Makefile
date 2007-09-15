@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/24 19:50:51 dassow Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 18:44:37 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"library of advanced math functions"
+COMMENT=	library of advanced math functions
 
 MODULES=	cpan
 DISTNAME=	Bit-Vector-6.4

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2006/10/19 00:19:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 18:44:37 steven Exp $
 #
 
-COMMENT=	"commercial spreadsheet"
+COMMENT=	commercial spreadsheet
 
 ONLY_FOR_ARCHS=	i386
 DISTNAME=	Wingz-142
@@ -11,9 +11,9 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/financial/spreadsheet/}
 EXTRACT_SUFX=	.tgz
 
-PERMIT_PACKAGE_CDROM=	"shareware"
-PERMIT_PACKAGE_FTP=	"shareware"
-PERMIT_DISTFILES_CDROM=	"shareware"
+PERMIT_PACKAGE_CDROM=	shareware
+PERMIT_PACKAGE_FTP=	shareware
+PERMIT_DISTFILES_CDROM=	shareware
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes

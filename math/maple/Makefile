@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2006/10/19 09:56:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 18:44:36 steven Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
 .include <bsd.own.mk>
 
-COMMENT=	"algebraic and symbolic computations; commercial"
+COMMENT=	algebraic and symbolic computations; commercial
 
 # Directory where the maple CDROM was mounted
 .if !defined(MAPLE_CDROM)

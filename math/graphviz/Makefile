@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/29 11:22:30 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 18:44:36 steven Exp $
 
-COMMENT-main=	"graph drawing software"
+COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.12
 PKGNAME-main=	${DISTNAME}p1

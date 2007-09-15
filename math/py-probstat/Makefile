@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/04 19:18:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 18:44:37 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"probability and statistics utilities for Python"
+COMMENT=	probability and statistics utilities for Python
 
 DISTNAME=	probstat_0.912
 PKGNAME=	py-${DISTNAME:S/_/-/}p0

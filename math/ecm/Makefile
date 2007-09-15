@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/27 04:59:07 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"elliptic curve method (ECM) factorization library"
+COMMENT=	elliptic curve method (ECM) factorization library
 
 DISTNAME=	ecm-6.1.2
 CATEGORIES=	math

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/25 14:31:50 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=		"GPL computer algebra system based on DOE Macsyma"
+COMMENT=		GPL computer algebra system based on DOE Macsyma
 
 VERSION=		5.9.0
 DISTNAME=		maxima-${VERSION}

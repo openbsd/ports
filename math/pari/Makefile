@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/23 19:59:08 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 18:44:37 steven Exp $
 
-COMMENT=	"number theory-oriented computer algebra system"
+COMMENT=	number theory-oriented computer algebra system
 
 DISTNAME=	pari-2.1.6
 EXTRACT_SUFX=	.tgz

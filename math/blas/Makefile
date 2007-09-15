@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/05 15:32:19 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"Basic Linear Algebra Subprograms"
+COMMENT=	Basic Linear Algebra Subprograms
 
 VERSION=	1.0
 DISTNAME=	blas

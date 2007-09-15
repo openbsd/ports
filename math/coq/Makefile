@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2005/08/09 22:50:15 aanriot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 18:44:36 steven Exp $
 
-BROKEN=	"requires update due to ocaml 3.08"
+BROKEN=			requires update due to ocaml 3.08
 
-COMMENT=		"proof assistant based on a typed lambda calculus"
+COMMENT=		proof assistant based on a typed lambda calculus
 
 DISTNAME=		coq-7.3.1
 PKGNAME=		${DISTNAME}p0

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/24 19:50:52 dassow Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 18:44:37 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Perl interface to libPARI and GP"
+COMMENT=	Perl interface to libPARI and GP
 
 MODULES=	cpan
 DISTNAME=	Math-Pari-2.010603

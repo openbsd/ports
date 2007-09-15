@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/05/28 21:21:51 weingart Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:44:37 steven Exp $
 
-COMMENT=	"curses spreadsheet-calculator program"
+COMMENT=	curses spreadsheet-calculator program
 
 DISTNAME=	sc-7.16
 CATEGORIES=	math

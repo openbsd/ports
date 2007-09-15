@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 19:43:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 18:44:36 steven Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
 .include <bsd.own.mk>
 
-COMMENT=	"libraries for maple V 5; commercial"
+COMMENT=	libraries for maple V 5; commercial
 
 # Directory where the maple CDROM was mounted
 .if !defined(MAPLE_CDROM)

@@ -1,6 +1,6 @@
-#	$OpenBSD: Makefile,v 1.4 2007/01/12 03:13:52 ray Exp $
+#	$OpenBSD: Makefile,v 1.5 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=		"Marco's Object Oriented calculator"
+COMMENT=		Marco's Object Oriented calculator
 
 DISTNAME=		moo-1.3
 CATEGORIES=		math

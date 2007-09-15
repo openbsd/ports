@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/06/03 09:38:37 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 18:44:37 steven Exp $
 
-COMMENT=	"Python interface to the gnuplot plotting program"
+COMMENT=	Python interface to the gnuplot plotting program
 
 DISTNAME=	gnuplot-py-1.7
 PKGNAME=	py-${DISTNAME:S/py-//}p0

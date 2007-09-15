@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2006/08/03 20:04:51 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 18:44:36 steven Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
-COMMENT=	"GRaphing, Advanced Computation and Exploration of data"
+COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
 PKGNAME=	${DISTNAME}p0

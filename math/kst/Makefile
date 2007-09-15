@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/09 11:38:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 18:44:36 steven Exp $
 
 CATEGORIES=	math x11/kde
-COMMENT=	'data viewing/plotting tool'
+COMMENT=	data viewing/plotting tool
 
 DISTNAME=	kst-1.2.1
 PKGNAME=	${DISTNAME}p0

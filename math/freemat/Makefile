@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/07 15:55:25 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"environment for rapid engineering and scientific processing"
+COMMENT=	environment for rapid engineering and scientific processing
 
 V=		3.4
 DISTNAME=	FreeMat-${V}

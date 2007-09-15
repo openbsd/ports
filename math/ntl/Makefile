@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/18 23:26:43 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"Victor Shoup's Number Theory Library"
+COMMENT=	Victor Shoup's Number Theory Library
 
 DISTNAME=	ntl-5.3.1
 PKGNAME=	${DISTNAME}p0

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/03/17 15:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 18:44:37 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"high speed arbitrary-size integer math"
+COMMENT=	high speed arbitrary-size integer math
 
 MODULES=	cpan
 DISTNAME=	Math-GMP-2.03

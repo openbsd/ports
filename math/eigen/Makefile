@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/20 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 18:44:36 steven Exp $
 
 PKG_ARCH=	*
-COMMENT=	'lightweight C++ template library for linear algebra'
+COMMENT=	lightweight C++ template library for linear algebra
 CATEGORIES=	math devel
 HOMEPAGE=	http://eigen.tuxfamily.org/
 MASTER_SITES=	http://download.tuxfamily.org/eigen/

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/24 19:50:51 dassow Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 18:44:37 steven Exp $
 
-COMMENT=	"implement a back-propagation feed-forward neural network"
+COMMENT=	implement a back-propagation feed-forward neural network
 
 MODULES=	cpan
 DISTNAME=	AI-NeuralNet-BackProp-0.89

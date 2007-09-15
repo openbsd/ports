@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/06/27 20:36:40 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=		"ASCII art mathematics"
+COMMENT=		ASCII art mathematics
 
 DISTNAME=		aamath-0.3
 CATEGORIES=		math

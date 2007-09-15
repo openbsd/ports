@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/03 08:29:00 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"C interface to the BLAS library"
+COMMENT=	C interface to the BLAS library
 
 VERSION=	1.0
 DISTNAME=	cblas

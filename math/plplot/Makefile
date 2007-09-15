@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2007/07/28 14:08:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 18:44:37 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	"advanced 2D and 3D scientific plotting library"
-COMMENT-c++ =	"C++ interface to plplot"
-COMMENT-f77=	"Fortran 77 interface to plplot"
-COMMENT-octave=	"Octave bindings for plplot"
-COMMENT-tcl=	"Tcl bindings for plplot"
+COMMENT-main=	advanced 2D and 3D scientific plotting library
+COMMENT-c++ =	C++ interface to plplot
+COMMENT-f77=	Fortran 77 interface to plplot
+COMMENT-octave=	Octave bindings for plplot
+COMMENT-tcl=	Tcl bindings for plplot
 
 VERSION=	5.6.1
 DISTNAME=	plplot-${VERSION}

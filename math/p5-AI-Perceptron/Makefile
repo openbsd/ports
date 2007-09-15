@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/24 19:50:51 dassow Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 18:44:37 steven Exp $
 
-COMMENT=	"module to internal operations of neural networks"
+COMMENT=	module to internal operations of neural networks
 
 MODULES=	cpan
 DISTNAME=	AI-Perceptron-0.01

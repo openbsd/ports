@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 18:44:36 steven Exp $
 
-COMMENT=	"GTK2-based scientific calculator"
+COMMENT=	GTK2-based scientific calculator
 
 DISTNAME=	galculator-1.2.5.2
 PKGNAME=	${DISTNAME}p2

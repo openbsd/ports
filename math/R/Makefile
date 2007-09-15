@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2007/08/09 22:22:17 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 18:44:36 steven Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"clone of S, a powerful math/statistics/graphics language"
+COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.5.0
 PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	Rlapack 25.0 \

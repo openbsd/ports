@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/27 07:41:44 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 18:44:37 steven Exp $
 
-COMMENT=	"interpreted language for scientific computing"
+COMMENT=	interpreted language for scientific computing
 
 VERSION=	1.5
 DISTNAME=	yorick-${VERSION}.08
