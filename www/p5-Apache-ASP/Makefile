@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"Apache ASP support"
+COMMENT=	Apache ASP support
 
 MODULES=	cpan
 DISTNAME=	Apache-ASP-2.59

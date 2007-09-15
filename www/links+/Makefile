@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2007/08/08 14:42:26 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"graphics and text browser with javascript support"
+COMMENT=	graphics and text browser with javascript support
 
 VER=		2.1pre28
 DISTNAME=	links-${VER}

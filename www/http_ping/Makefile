@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2005/07/23 21:33:31 aanriot Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"HTTP latency performance testing client"
+COMMENT=	HTTP latency performance testing client
 
 DISTNAME=	http_ping_29jun2005
 PKGNAME=	http_ping-20050629

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/16 17:52:07 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"generate HTML from files containing POD documentation"
+COMMENT=	generate HTML from files containing POD documentation
 
 MODULES=	cpan
 DISTNAME=	PodToHTML-0.05

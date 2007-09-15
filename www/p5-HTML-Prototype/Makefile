@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/21 22:39:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	'AJAX framework for perl'
+COMMENT=	AJAX framework for perl
 
 MODULES=	cpan
 CATEGORIES=	www

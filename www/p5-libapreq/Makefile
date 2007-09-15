@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/16 17:52:07 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:25 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Generic Apache Request Library"
+COMMENT=	Generic Apache Request Library
 
 MODULES=	cpan
 DISTNAME=	libapreq-1.3

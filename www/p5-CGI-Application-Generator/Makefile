@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 15:20:45 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT= 	"skeleton for application based on CGI::Application"
+COMMENT= 	skeleton for application based on CGI::Application
 
 MODULES=	cpan
 

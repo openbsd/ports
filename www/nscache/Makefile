@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/13 12:53:08 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"Netscape cache browser"
+COMMENT=	Netscape cache browser
 
 DISTNAME=	nscache-0.6
 CATEGORIES=	www

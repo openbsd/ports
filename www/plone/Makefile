@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2006/10/03 10:02:47 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=	"content management system built on top of Zope"
+COMMENT=	content management system built on top of Zope
 
 DISTNAME=	Plone-2.1.4
 PKGNAME=	${DISTNAME:L}

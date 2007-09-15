@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2006/07/17 19:55:31 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"C library to parse CGI Forms"
+COMMENT=	C library to parse CGI Forms
 
 DISTNAME=	cgiparse-0.9b
 PKGNAME=	${DISTNAME}p0

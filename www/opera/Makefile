@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2007/09/13 11:28:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.45 2007/09/15 20:38:22 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"fast and customizable WWW browser"
+COMMENT=	fast and customizable WWW browser
 
 DISTNAME=	opera-9.23-20070809.1-static-qt.i386-en
 PKGNAME=	opera-9.23
@@ -12,10 +12,10 @@ HOMEPAGE=	http://www.opera.com/
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"Commercial software"
-PERMIT_PACKAGE_FTP=	"Commercial software"
-PERMIT_DISTFILES_CDROM=	"Commercial software"
-PERMIT_DISTFILES_FTP=	"Commercial software"
+PERMIT_PACKAGE_CDROM=	Commercial software
+PERMIT_PACKAGE_FTP=	Commercial software
+PERMIT_DISTFILES_CDROM=	Commercial software
+PERMIT_DISTFILES_FTP=	Commercial software
 
 MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
 			ftp://gd.tuwien.ac.at/infosys/browsers/opera/ \

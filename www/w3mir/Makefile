@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/06/26 07:35:11 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=		"utility to mirror web pages"
+COMMENT=		utility to mirror web pages
 
 DISTNAME=		w3mir-1.0.10
 CATEGORIES=     	www

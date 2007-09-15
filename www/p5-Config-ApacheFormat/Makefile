@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 15:21:04 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=	"parse apache-like config files"
+COMMENT=	parse apache-like config files
 
 MODULES=	cpan
 

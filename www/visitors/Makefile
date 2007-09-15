@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/24 09:04:19 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"very fast web log analyzer"
+COMMENT=	very fast web log analyzer
 
 DISTNAME=	visitors-0.7
 CATEGORIES=	www sysutils

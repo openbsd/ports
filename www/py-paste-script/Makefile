@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 22:00:23 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=		"pluggable command-line frontend"
+COMMENT=		pluggable command-line frontend
 
 V=			1.3.4
 DISTNAME=		PasteScript-${V}

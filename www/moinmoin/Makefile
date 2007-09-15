@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/31 18:50:37 rui Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"Python clone of WikiWiki"
+COMMENT=	Python clone of WikiWiki
 
 DISTNAME=	moin-1.5.8
 PKGNAME=	moin${DISTNAME}

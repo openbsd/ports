@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/25 18:37:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"weblog system for Zope"
+COMMENT=	weblog system for Zope
 
 V=		1.2
 DISTNAME=	COREBlog${V:S/.//}

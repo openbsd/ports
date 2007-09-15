@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/03/22 22:48:04 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=	"package provides methods for HTML forms"
+COMMENT=	package provides methods for HTML forms
 
 DISTNAME=	HTML_QuickForm-3.2.5
 PKGNAME=	pear-${DISTNAME:S/_/-/}p0

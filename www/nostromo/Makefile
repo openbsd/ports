@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2007/02/12 17:58:46 mglocker Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=		"Nostromo webserver"
+COMMENT=		Nostromo webserver
 
 DISTNAME=		nostromo-1.8.4
 CATEGORIES=		www

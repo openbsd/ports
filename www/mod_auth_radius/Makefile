@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:38:22 merdely Exp $
 
 DISTNAME=	mod_auth_radius-1.5.7
 PKGNAME=	${DISTNAME}p4
@@ -15,7 +15,7 @@ MODAPACHE_NAME=		radius_auth
 MODAPACHE_ENABLE=	mod_auth_radius-enable
 MODAPACHE_MODULE=	mod_auth_radius.so
 
-COMMENT=	"Apache RADIUS authentication module"
+COMMENT=	Apache RADIUS authentication module
 HOMEPAGE=	http://www.freeradius.org/mod_auth_radius/
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/
 EXTRACT_SUFX=	.tar

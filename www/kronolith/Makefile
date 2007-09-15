@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/05 13:59:52 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:38:21 merdely Exp $ 
 
-COMMENT=	"web based calendar application using the horde framework"
+COMMENT=	web based calendar application using the horde framework
 
 HORDE_MODULE=	kronolith
 HORDE_NAME=	Kronolith

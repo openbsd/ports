@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.36 2007/08/08 17:24:58 martynas Exp $
+# $OpenBSD: Makefile,v 1.37 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"GNOME web browser based on gecko"
+COMMENT=	GNOME web browser based on gecko
 
 V=		2.0.3
 DISTNAME=	galeon-${V}

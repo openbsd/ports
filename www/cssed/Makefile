@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/04/27 10:51:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"CSS editor"
+COMMENT=	CSS editor
 
 DISTNAME=	cssed-0.4.0
 PKGNAME=	${DISTNAME}p4

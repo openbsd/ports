@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2007/08/08 17:34:41 martynas Exp $
+# $OpenBSD: Makefile,v 1.40 2007/09/15 20:38:22 merdely Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
-COMMENT=	"small, simple, and powerful web browser for mobile devices"
+COMMENT=	small, simple, and powerful web browser for mobile devices
 DISTNAME=	minimo-20070804
 
 CATEGORIES=	www

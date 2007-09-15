@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/26 14:18:52 aanriot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"make pretty graphs from Analog logfiles"
+COMMENT=	make pretty graphs from Analog logfiles
 
 VERSION=	2.21
 DISTNAME=	rmagic-${VERSION}

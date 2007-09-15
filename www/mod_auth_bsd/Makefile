@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"provides HTTP Basic authentication via bsd auth"
+COMMENT=	provides HTTP Basic authentication via bsd auth
 
 VERSION=	0.8.2
 DISTNAME=	bsdauth-${VERSION}

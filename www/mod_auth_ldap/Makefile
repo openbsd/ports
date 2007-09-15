@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"Apache LDAP authentication module"
+COMMENT=	Apache LDAP authentication module
 
 VERSION=	1.6.0
 DISTNAME=	auth_ldap-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/05/23 19:54:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"proxy that can transliterate japanese"
+COMMENT=	proxy that can transliterate japanese
 
 DISTNAME=	japana-2.0.5
 PKGNAME=	${DISTNAME}p0

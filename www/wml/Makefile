@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/14 16:12:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=		"Website META Language"
+COMMENT=		Website META Language
 
 DISTNAME=		wml-2.0.9
 CATEGORIES=		www

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2007/08/08 17:30:10 martynas Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:38:21 merdely Exp $
 
 SHARED_ONLY=	Yes
-COMMENT=	"extremely lightweight and simple web browser for gnome"
+COMMENT=	extremely lightweight and simple web browser for gnome
 
 M=		2.18
 V=		2.18.2

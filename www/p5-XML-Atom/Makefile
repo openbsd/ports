@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/18 00:13:34 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT= 	"Atom RSS protocol for perl"
+COMMENT= 	Atom RSS protocol for perl
 
 MODULES=	cpan
 

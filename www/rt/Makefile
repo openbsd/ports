@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/03 01:44:56 mcbride Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=		"industrial-grade ticketing system"
+COMMENT=		industrial-grade ticketing system
 
 DISTNAME=		rt-3.6.3
 PKGNAME=		${DISTNAME}p1

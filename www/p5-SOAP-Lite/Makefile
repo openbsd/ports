@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/20 12:49:51 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"client and server-side SOAP implementation"
+COMMENT=	client and server-side SOAP implementation
 
 MODULES=	cpan
 DISTNAME=	SOAP-Lite-0.69

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/15 17:01:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:25 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"perl binding for curl"
+COMMENT=	perl binding for curl
 
 MODULES=	cpan
 DISTNAME=	p5-WWW-Curl-20040519

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=		"Apache-Tomcat AJP Connector"
+COMMENT=		Apache-Tomcat AJP Connector
 
 V=			1.2.23
 DISTNAME=		tomcat-connectors-${V}-src

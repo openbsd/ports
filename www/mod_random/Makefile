@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"Apache module that provides randomized services"
+COMMENT=	Apache module that provides randomized services
 
 DISTNAME=	mod_random-1.4
 PKGNAME=	${DISTNAME}p2

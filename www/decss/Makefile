@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2004/02/01 20:22:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"strip cascading style sheets from webpages"
+COMMENT=	strip cascading style sheets from webpages
 
 DISTNAME=	decss
 PKGNAME=	decss-0.0.6

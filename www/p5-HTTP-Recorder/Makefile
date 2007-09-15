@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/16 17:52:07 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"record interaction with websites"
+COMMENT=	record interaction with websites
 
 MODULES=	cpan
 DISTNAME=	HTTP-Recorder-0.05

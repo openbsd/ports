@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/07/17 19:57:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=	"HTTP caching proxy"
+COMMENT=	HTTP caching proxy
 
 DISTNAME=	polipo-0.9.9
 PKGNAME=	${DISTNAME}p0

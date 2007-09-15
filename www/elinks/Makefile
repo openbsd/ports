@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/07 21:43:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=		"full-featured text WWW browser"
+COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.2
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		www

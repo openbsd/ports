@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 15:21:28 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"popup tree widget"
+COMMENT=	popup tree widget
 
 MODULES=	cpan
 

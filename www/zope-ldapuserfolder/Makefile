@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/05 10:23:24 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:27 merdely Exp $
 
-COMMENT=	"Zope LDAPUserFolder product"
+COMMENT=	Zope LDAPUserFolder product
 
 VERSION=	2_7
 DISTNAME=	LDAPUserFolder-${VERSION}

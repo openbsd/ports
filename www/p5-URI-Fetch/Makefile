@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/17 23:59:31 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=		"smart URI fetching/caching"
+COMMENT=		smart URI fetching/caching
 
 MODULES=		cpan
 DISTNAME=		URI-Fetch-0.08

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/06 10:44:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=		"FastCGI Development Kit"
+COMMENT=		FastCGI Development Kit
 
 DISTNAME=		fcgi-2.4.0
 PKGNAME=		${DISTNAME}p2

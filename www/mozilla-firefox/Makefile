@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2007/08/02 13:09:41 martynas Exp $
+# $OpenBSD: Makefile,v 1.78 2007/09/15 20:38:22 merdely Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT-main=	"redesign of Mozilla's browser component"
-COMMENT-devel=	"devel files for Gecko"
+COMMENT-devel=	devel files for Gecko
 
 VER=		2.0.0.6
 DISTNAME=	mozilla

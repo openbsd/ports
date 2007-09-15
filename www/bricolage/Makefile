@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/04 09:57:52 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"content management system"
+COMMENT=	content management system
 
 DISTNAME=	bricolage-1.10.2
 PKGNAME=	${DISTNAME}p0

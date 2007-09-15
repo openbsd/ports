@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/12/17 12:11:13 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:38:27 merdely Exp $
 
-COMMENT=	"translation service based on potfiles for Zope"
+COMMENT=	translation service based on potfiles for Zope
 
 DISTNAME=	PlacelessTranslationService-1.2-rc1
 PKGNAME=	zope-${DISTNAME:L:S/-rc/rc/}

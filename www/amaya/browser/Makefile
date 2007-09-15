@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/04/28 19:45:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:38:20 merdely Exp $
 #
 # Many variables moved to ../Makefile.inc
 
-COMMENT=		"test-bed browser/authoring tool of the W3C"
+COMMENT=		test-bed browser/authoring tool of the W3C
 
 AMAYA_VERSION=		5.1
 DISTNAME=		amaya-src-${AMAYA_VERSION}
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--without-gtk \
 			--with-motif-libraries=${LOCALBASE}/lib
 
 .else
-ERRORS+=		"Fatal: Conflicting or missing flavor: '${FLAVOR}'"
+ERRORS+=		Fatal: Conflicting or missing flavor: '${FLAVOR}'
 .endif
 
 WRKSRC=			${WRKDIR}/Amaya

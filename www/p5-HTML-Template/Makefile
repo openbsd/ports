@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/18 17:06:16 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"use HTML Templates from CGI scripts"
+COMMENT=	use HTML Templates from CGI scripts
 
 MODULES=	cpan
 DISTNAME=	HTML-Template-2.9

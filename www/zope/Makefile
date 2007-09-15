@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2007/04/28 18:43:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.36 2007/09/15 20:38:26 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"object-oriented web application server"
+COMMENT=	object-oriented web application server
 
 VERSION=	2.10.3
 DISTNAME=	Zope-${VERSION}-final

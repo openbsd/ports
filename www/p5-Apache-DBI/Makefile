@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"DBI persistent connection, authentication and authorization"
+COMMENT=	DBI persistent connection, authentication and authorization
 
 MODULES=	cpan
 DISTNAME=	Apache-DBI-0.94

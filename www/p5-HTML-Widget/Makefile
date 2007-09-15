@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/02 15:32:00 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"HTML widget and validation framework"
+COMMENT=	HTML widget and validation framework
 
 DISTNAME=	HTML-Widget-1.11
 CATEGORIES=	www

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/23 18:57:07 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:26 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"fast and stable PHP opcode cache"
+COMMENT=	fast and stable PHP opcode cache
 
 VERSION=	1.2.1
 DISTNAME=	xcache-${VERSION}

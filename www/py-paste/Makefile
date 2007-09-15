@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 19:17:14 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=		"tools for using web server gateway interface stack"
+COMMENT=		tools for using web server gateway interface stack
 
 V=			1.3
 DISTNAME=		Paste-${V}

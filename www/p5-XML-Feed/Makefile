@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/18 00:16:58 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT= 	"interface to RSS and Atom feeds"
+COMMENT= 	interface to RSS and Atom feeds
 
 MODULES=	cpan
 

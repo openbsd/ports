@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=	"easily generate and process stateful forms"
+COMMENT=	easily generate and process stateful forms
 
 MODULES=	cpan
 DISTNAME=	CGI-FormBuilder-3.0501

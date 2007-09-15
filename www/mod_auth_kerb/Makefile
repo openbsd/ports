@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"Apache Kerberos authentication module"
+COMMENT=	Apache Kerberos authentication module
 
 DISTNAME=	mod_auth_kerb-5.3
 PKGNAME=	${DISTNAME}p1

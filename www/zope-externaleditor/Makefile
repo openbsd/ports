@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/30 12:54:29 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"Zope product to use an external editor to edit Zope objects"
+COMMENT=	Zope product to use an external editor to edit Zope objects
 
 VERSION=	0.9.3
 DISTNAME=	ExternalEditor-${VERSION}-src

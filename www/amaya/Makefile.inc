@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2005/10/09 13:13:25 mbalmer Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2007/09/15 20:38:20 merdely Exp $
 
 DIST_SUBDIR?=			amaya
 CATEGORIES?=			www
@@ -7,10 +7,10 @@ EXTRACT_SUFX?=			.tgz
 
 # BSD-like, but missing distribution grant
 # dictionaries are covered by amaya license
-PERMIT_PACKAGE_CDROM?=		"may not distribute"
-PERMIT_PACKAGE_FTP?=		"may not distribute"
-PERMIT_DISTFILES_CDROM?=	"may not distribute"
-PERMIT_DISTFILES_FTP?=		"may not distribute"
+PERMIT_PACKAGE_CDROM?=		may not distribute
+PERMIT_PACKAGE_FTP?=		may not distribute
+PERMIT_DISTFILES_CDROM?=	may not distribute
+PERMIT_DISTFILES_FTP?=		may not distribute
 
 MASTER_SITES?=			http://www.w3.org/Amaya/Distribution/ \
 				ftp://ftp.w3.org/pub/amaya/ \

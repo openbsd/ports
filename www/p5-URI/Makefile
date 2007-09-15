@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=	"library to parse Uniform Resource Identifiers"
+COMMENT=	library to parse Uniform Resource Identifiers
 
 MODULES=	cpan
 DISTNAME=	URI-1.35

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2006/10/18 18:22:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"validate, correct, and pretty-print HTML files"
+COMMENT=	validate, correct, and pretty-print HTML files
 
 TIDYDATE=	051026
 DISTNAME=	tidy_src_${TIDYDATE}

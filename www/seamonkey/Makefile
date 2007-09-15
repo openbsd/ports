@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/08/10 23:22:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:38:26 merdely Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
-COMMENT-main=	"integrated mozilla application suite"
-COMMENT-devel=  "devel files for Gecko"
+COMMENT-main=	integrated mozilla application suite
+COMMENT-devel=  devel files for Gecko
 
 VER=		1.1.4
 DISTNAME=	seamonkey-${VER}.source

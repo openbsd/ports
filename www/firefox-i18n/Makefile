@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/08/02 13:11:20 martynas Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:38:21 merdely Exp $
 
 PKG_ARCH=	*
 
-COMMENT-main=	"${MAINLANG} language pack for Firefox"
+COMMENT-main=	${MAINLANG} language pack for Firefox
 V=		2.0.0.6
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${MAINLANG}-${V}

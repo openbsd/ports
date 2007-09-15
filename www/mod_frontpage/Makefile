@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"Microsoft FrontPage Server extensions for Apache"
+COMMENT=	Microsoft FrontPage Server extensions for Apache
 
 ONLY_FOR_ARCHS=	i386
 

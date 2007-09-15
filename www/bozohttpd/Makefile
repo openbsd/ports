@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/23 16:49:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:20 merdely Exp $
 
-COMMENT=	"bozotic HTTP server"
+COMMENT=	bozotic HTTP server
 
 DISTNAME=	bozohttpd-20050410
 CATEGORIES=	www

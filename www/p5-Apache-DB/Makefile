@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=		"interactive debugger for modperl"
+COMMENT=		interactive debugger for modperl
 
 MODULES=		cpan
 DISTNAME=		Apache-DB-0.13

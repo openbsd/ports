@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.30 2007/09/15 20:38:24 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"modules to parse and extract information from HTML"
+COMMENT=	modules to parse and extract information from HTML
  
 MODULES=	cpan
 DISTNAME=	HTML-Parser-3.54

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/09/20 14:44:13 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=	"Python weblog system"
+COMMENT=	Python weblog system
 
 DISTNAME=	pyblosxom-1.3.2
 CATEGORIES=	www

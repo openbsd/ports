@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/14 10:22:11 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=		"Log::Log4perl logging for Catalyst"
+COMMENT=		Log::Log4perl logging for Catalyst
 
 MODULES=		cpan
 DISTNAME=		Catalyst-Log-Log4perl-0.4

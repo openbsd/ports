@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2007/08/09 22:08:19 deanna Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:38:21 merdely Exp $
 SHARED_ONLY=	Yes
 
-COMMENT=	"flash player with firefox browser plugin"
+COMMENT=	flash player with firefox browser plugin
 DISTNAME=	gnash-0.8.0
 PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	gnashbase 2.0
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIBTOOL_FLAGS+=	--tag=disable-static
 MODULES=	gettext
-NO_REGRESS=	"testsuite available at http://www.gnashdev.org/testcases/"
+NO_REGRESS=	testsuite available at http://www.gnashdev.org/testcases/
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes

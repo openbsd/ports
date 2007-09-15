@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"Apache module designed to replace text/plain handler"
+COMMENT=	Apache module designed to replace text/plain handler
 
 DISTNAME=	mod_text2html-1.0
 PKGNAME=	${DISTNAME}p2

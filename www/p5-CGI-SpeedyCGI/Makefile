@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:23 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"speed up perl scripts by running them persistently"
+COMMENT=	speed up perl scripts by running them persistently
 
 MODULES=	cpan
 DISTNAME=	CGI-SpeedyCGI-2.22

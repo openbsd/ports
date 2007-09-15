@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/08/02 22:36:47 aanriot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"wiki and bug tracking system for software projects"
+COMMENT=	wiki and bug tracking system for software projects
 
 DISTNAME=	trac-0.10.4
 PKGNAME=	${DISTNAME}p0

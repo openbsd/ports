@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"persistence framework for Apache session data"
+COMMENT=	persistence framework for Apache session data
 
 MODULES=	cpan
 DISTNAME=	Apache-Session-1.6

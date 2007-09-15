@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/16 14:47:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=		"configurable web traversal engine"
+COMMENT=		configurable web traversal engine
 
 DISTNAME=		WWW-Robot-0.025
 CATEGORIES=		www

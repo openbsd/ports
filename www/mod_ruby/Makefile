@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=		"module that embeds Ruby into Apache"
+COMMENT=		module that embeds Ruby into Apache
 
 DISTNAME=		mod_ruby-1.2.6
 PKGNAME=		${DISTNAME}p0

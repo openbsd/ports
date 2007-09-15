@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"HTML text formating class"
+COMMENT=	HTML text formating class
 
 MODULES=	cpan
 DISTNAME=	HTML-Format-2.04

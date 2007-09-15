@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 16:30:48 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT= 	"test framework for HTTP::Server::Simple"
+COMMENT= 	test framework for HTTP::Server::Simple
 
 MODULES=	cpan
 

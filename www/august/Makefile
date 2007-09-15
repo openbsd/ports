@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2004/04/23 10:08:22 xsa Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:38:20 merdely Exp $
 
-COMMENT=	"html editor designed for the experienced web designer"
+COMMENT=	html editor designed for the experienced web designer
 
 DISTNAME=	august0.63b.src
 PKGNAME=	august-0.63b

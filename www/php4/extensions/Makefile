@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.55 2007/05/15 17:01:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2007/09/15 20:38:25 merdely Exp $
 
 FULLPKGNAME-main=	php4-extensions-${V}p1
-COMMENT-main=	"informational package about PHP4 extensions"
+COMMENT-main=	informational package about PHP4 extensions
 
 MULTI_PACKAGES=-main
 
@@ -32,7 +32,7 @@ PSEUDO_FLAVORS+=	no_bz2
 CONFIGURE_ARGS+=	--without-bz2
 .else
 MULTI_PACKAGES+=	-bz2
-COMMENT-bz2=		"bzip2 compression extensions for php4"
+COMMENT-bz2=		bzip2 compression extensions for php4
 CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
 LIB_DEPENDS-bz2=	bz2.>=10::archivers/bzip2
 .endif
@@ -43,7 +43,7 @@ PSEUDO_FLAVORS+=	no_curl
 CONFIGURE_ARGS+=	--without-curl
 .else
 MULTI_PACKAGES+=	-curl
-COMMENT-curl=		"curl URL library extensions for php4"
+COMMENT-curl=		curl URL library extensions for php4
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	curl.>=2::net/curl
 WANTLIB-curl=		${WANTLIB} crypto idn ssl z
@@ -56,7 +56,7 @@ PSEUDO_FLAVORS+=	no_dba
 CONFIGURE_ARGS+=	--disable-dba
 .else
 MULTI_PACKAGES+=	-dba
-COMMENT-dba=		"dba GDBM access extensions for php4"
+COMMENT-dba=		dba GDBM access extensions for php4
 CONFIGURE_ARGS+=	--enable-dba=shared --with-gdbm=${LOCALBASE}
 LIB_DEPENDS-dba=	gdbm.>=2::databases/gdbm
 .endif
@@ -67,7 +67,7 @@ PSEUDO_FLAVORS+=	no_dbase
 CONFIGURE_ARGS+=	--disable-dbase
 .else
 MULTI_PACKAGES+=	-dbase
-COMMENT-dbase=		"dBase database access extensions for php4"
+COMMENT-dbase=		dBase database access extensions for php4
 CONFIGURE_ARGS+=	--enable-dbase=shared
 LIB_DEPENDS-dbase=
 .endif
@@ -78,7 +78,7 @@ PSEUDO_FLAVORS+=	no_dbx
 CONFIGURE_ARGS+=	--disable-dbx
 .else
 MULTI_PACKAGES+=	-dbx
-COMMENT-dbx=		"dbx database abstraction interface for php4"
+COMMENT-dbx=		dbx database abstraction interface for php4
 CONFIGURE_ARGS+=	--enable-dbx=shared
 LIB_DEPENDS-dbx=
 .endif
@@ -89,7 +89,7 @@ PSEUDO_FLAVORS+=	no_domxml
 CONFIGURE_ARGS+=	--disable-dom
 .else
 MULTI_PACKAGES+=	-domxml
-COMMENT-domxml=		"manipulate XML via the DOM API in php4"
+COMMENT-domxml=		manipulate XML via the DOM API in php4
 CONFIGURE_ARGS+=	--with-dom=shared,${LOCALBASE}
 LIB_DEPENDS-domxml=	xml2.>=6::textproc/libxml
 WANTLIB-domxml=		${WANTLIB} z iconv
@@ -101,7 +101,7 @@ PSEUDO_FLAVORS+=	no_filepro
 CONFIGURE_ARGS+=	--disable-filepro
 .else
 MULTI_PACKAGES+=	-filepro
-COMMENT-filepro=	"filepro database access extensions for php4"
+COMMENT-filepro=	filepro database access extensions for php4
 CONFIGURE_ARGS+=	--enable-filepro=shared
 LIB_DEPENDS-filepro=
 .endif
@@ -113,7 +113,7 @@ CONFIGURE_ARGS+=	--without-gd --without-xpm-dir --without-ttf \
 			--without-freetype-dir
 .else
 MULTI_PACKAGES+=	-gd
-COMMENT-gd=		"image manipulation extensions for php4"
+COMMENT-gd=		image manipulation extensions for php4
 LIB_DEPENDS-gd=		ttf.>=1::print/freetype ${GRAPHIC_DEPENDS} \
 			t1.>=5::devel/t1lib
 WANTLIB-gd=		${WANTLIB} z
@@ -137,7 +137,7 @@ PSEUDO_FLAVORS+=	no_gmp
 CONFIGURE_ARGS+=	--without-gmp
 .else
 MULTI_PACKAGES+=	-gmp
-COMMENT-gmp=		"gmp math library support for php4"
+COMMENT-gmp=		gmp math library support for php4
 CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
 LIB_DEPENDS-gmp=	gmp.>=4::devel/gmp
 .endif
@@ -148,7 +148,7 @@ PSEUDO_FLAVORS+=	no_imap
 CONFIGURE_ARGS+=	--without-imap --without-kerberos
 .else
 MULTI_PACKAGES+=	-imap
-COMMENT-imap=		"imap, pop3 and nntp extensions for php4"
+COMMENT-imap=		imap, pop3 and nntp extensions for php4
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 LIB_DEPENDS-imap=	c-client.>=3::mail/c-client
@@ -161,7 +161,7 @@ PSEUDO_FLAVORS+=	no_ldap
 CONFIGURE_ARGS+=	--without-ldap
 .else
 MULTI_PACKAGES+=	-ldap
-COMMENT-ldap=		"ldap protocol extensions for php4"
+COMMENT-ldap=		ldap protocol extensions for php4
 CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
 LIB_DEPENDS-ldap=	ldap.>=2,lber::databases/openldap
 .endif
@@ -172,7 +172,7 @@ PSEUDO_FLAVORS+=	no_mcrypt
 CONFIGURE_ARGS+=	--without-mcrypt
 .else
 MULTI_PACKAGES+=	-mcrypt
-COMMENT-mcrypt=		"mcrypt encryption/decryption extensions for php4"
+COMMENT-mcrypt=		mcrypt encryption/decryption extensions for php4
 CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
 LIB_DEPENDS-mcrypt=	mcrypt::security/libmcrypt ltdl.>=1::devel/libtool,-ltdl
 .endif
@@ -183,7 +183,7 @@ PSEUDO_FLAVORS+=	no_mhash
 CONFIGURE_ARGS+=	--without-mhash
 .else
 MULTI_PACKAGES+=	-mhash
-COMMENT-mhash=		"mhash extensions for php4"
+COMMENT-mhash=		mhash extensions for php4
 CONFIGURE_ARGS+=	--with-mhash=shared,${LOCALBASE}
 LIB_DEPENDS-mhash=	mhash.>=2::security/mhash
 .endif
@@ -194,7 +194,7 @@ PSEUDO_FLAVORS+=	no_mysql
 CONFIGURE_ARGS+=	--without-mysql
 .else
 MULTI_PACKAGES+=	-mysql
-COMMENT-mysql=		"mysql database access extensions for php4"
+COMMENT-mysql=		mysql database access extensions for php4
 CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
 LIB_DEPENDS-mysql=	lib/mysql/mysqlclient.>=10::databases/mysql
 .endif
@@ -205,7 +205,7 @@ PSEUDO_FLAVORS+=	no_ncurses
 CONFIGURE_ARGS+=	--without-ncurses
 .else
 MULTI_PACKAGES+=	-ncurses
-COMMENT-ncurses=	"ncurses extensions for php4"
+COMMENT-ncurses=	ncurses extensions for php4
 CONFIGURE_ARGS+=	--with-ncurses=shared,${LOCALBASE}
 LIB_DEPENDS-ncurses=
 WANTLIB-ncurses=	${WANTLIB} ncurses panel
@@ -217,7 +217,7 @@ PSEUDO_FLAVORS+=	no_odbc
 CONFIGURE_ARGS+=	--without-odbc
 .else
 MULTI_PACKAGES+=	-odbc
-COMMENT-odbc=		"odbc database access extensions for php4"
+COMMENT-odbc=		odbc database access extensions for php4
 CONFIGURE_ARGS+=        --with-iodbc=shared
 LIB_DEPENDS-odbc=	iodbc.>=2::databases/iodbc
 .endif
@@ -228,7 +228,7 @@ PSEUDO_FLAVORS+=	no_pdf
 CONFIGURE_ARGS+=	--without-pdflib
 .else
 MULTI_PACKAGES+=	-pdf
-COMMENT-pdf=		"pdf viewing and creation extensions for php4"
+COMMENT-pdf=		pdf viewing and creation extensions for php4
 CONFIGURE_ARGS+=	--with-pdflib=shared,${LOCALBASE} ${GRAPHIC_CONFIG} \
 			--with-tiff-dir=${LOCALBASE}
 LIB_DEPENDS-pdf=	pdf.>=2::print/pdflib ${GRAPHIC_DEPENDS} \
@@ -242,7 +242,7 @@ PSEUDO_FLAVORS+=	no_pgsql
 CONFIGURE_ARGS+=	--without-pgsql
 .else
 MULTI_PACKAGES+=	-pgsql
-COMMENT-pgsql=		"pgsql database access extensions for php4"
+COMMENT-pgsql=		pgsql database access extensions for php4
 CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
 .endif
@@ -253,7 +253,7 @@ PSEUDO_FLAVORS+=	no_shmop
 CONFIGURE_ARGS+=	--disable-shmop
 .else
 MULTI_PACKAGES+=	-shmop
-COMMENT-shmop=		"shared memory extensions for php4"
+COMMENT-shmop=		shared memory extensions for php4
 CONFIGURE_ARGS+=	--enable-shmop=shared
 LIB_DEPENDS-shmop=
 .endif
@@ -264,7 +264,7 @@ PSEUDO_FLAVORS+=	no_snmp
 CONFIGURE_ARGS+=	--without-snmp
 .else
 MULTI_PACKAGES+=	-snmp
-COMMENT-snmp=		"snmp protocol extensions for php4"
+COMMENT-snmp=		snmp protocol extensions for php4
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS-snmp=	netsnmp.>=6.2::net/net-snmp
 WANTLIB-snmp=		${WANTLIB} crypto
@@ -276,7 +276,7 @@ PSEUDO_FLAVORS+=	no_sybase_ct
 CONFIGURE_ARGS+=	--without-sybase-ct
 .else
 MULTI_PACKAGES+=	-sybase_ct
-COMMENT-sybase_ct=	"sybase database access extensions for php4"
+COMMENT-sybase_ct=	sybase database access extensions for php4
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
 LIB_DEPENDS-sybase_ct=	ct::databases/freetds
 .endif
@@ -287,7 +287,7 @@ PSEUDO_FLAVORS+=	no_xmlrpc
 CONFIGURE_ARGS+=	--without-xmlrpc
 .else
 MULTI_PACKAGES+=	-xmlrpc
-COMMENT-xmlrpc=		"XML RPC functions for php4"
+COMMENT-xmlrpc=		XML RPC functions for php4
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 WANTLIB-xmlrpc=		${WANTLIB} expat iconv
 LIB_DEPENDS-xmlrpc=
@@ -300,7 +300,7 @@ PSEUDO_FLAVORS+=	no_xslt
 CONFIGURE_ARGS+=	--disable-xslt
 .else
 MULTI_PACKAGES+=	-xslt
-COMMENT-xslt=		"xslt transformation extensions for php4"
+COMMENT-xslt=		xslt transformation extensions for php4
 CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared,${LOCALBASE} \
 			--with-expat-dir=${X11BASE}
 LIB_DEPENDS-xslt=	sablot.>=96::textproc/sablotron

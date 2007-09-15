@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/10 15:28:25 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"learning management system"
+COMMENT=	learning management system
 
 DISTNAME=	moodle-1.6.3
 PKGNAME=	${DISTNAME}p0

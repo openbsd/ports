@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/16 17:52:07 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"use HTML Templates which allows expressions"
+COMMENT=	use HTML Templates which allows expressions
 
 MODULES=	cpan
 DISTNAME=	HTML-Template-Expr-0.07

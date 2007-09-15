@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/17 10:14:52 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:27 merdely Exp $
 
-COMMENT=	"synchronize and compare Zope objects"
+COMMENT=	synchronize and compare Zope objects
 
 DISTNAME=	ZSyncer-0.7.1
 PKGNAME=	zope-${DISTNAME:L}

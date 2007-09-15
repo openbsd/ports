@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/17 23:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT= 	"perl interface to google sitemap protocol"
+COMMENT= 	perl interface to google sitemap protocol
 
 MODULES=	cpan
 

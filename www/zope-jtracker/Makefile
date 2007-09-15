@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2005/10/25 18:37:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:27 merdely Exp $
 
-COMMENT=	"Zope-based issues tracker"
+COMMENT=	Zope-based issues tracker
 
 V=		1_11
 DISTNAME=	JTracker-${V}

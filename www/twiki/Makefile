@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/01 22:07:39 aanriot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"web-based collaboration platform"
+COMMENT=	web-based collaboration platform
 
 DISTNAME=	TWiki-4.1.1
 EXTRACT_SUFX=	.tgz

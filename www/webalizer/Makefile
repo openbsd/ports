@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"web server log file analysis program"
+COMMENT=	web server log file analysis program
 
 DISTNAME=	webalizer-2.01-10-src
 PKGNAME=	webalizer-2.01.10p3

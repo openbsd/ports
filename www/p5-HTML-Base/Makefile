@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=	"base HTML library"
+COMMENT=	base HTML library
 
 MODULES=	cpan
 DISTNAME=	HTML-0.6

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/21 01:18:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"web-based java SSH client"
+COMMENT=	web-based java SSH client
 
 VERSION=	2.1
 DISTNAME=	mindterm_${VERSION}-bin
@@ -12,9 +12,9 @@ EXTRACT_SUFX=	.zip
 HOMEPAGE=	http://www.appgate.com/products/5_MindTerm/
 
 # custom
-PERMIT_PACKAGE_CDROM=	"may not sell"
-PERMIT_PACKAGE_FTP=	"may not distribute as part of a commercial product"
-PERMIT_DISTFILES_CDROM=	"may not sell"
+PERMIT_PACKAGE_CDROM=	may not sell
+PERMIT_PACKAGE_FTP=	may not distribute as part of a commercial product
+PERMIT_DISTFILES_CDROM=	ay not sell"
 PERMIT_DISTFILES_FTP=	Yes
 
 PREFIX?=	/var/www/htdocs

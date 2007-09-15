@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"convert man pages to HTML"
+COMMENT=	convert man pages to HTML
 
 DISTNAME=	man2web-0.88
 CATEGORIES=	www

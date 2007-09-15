@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/19 20:50:10 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT= 	"catalyst session IDs with cookies"
+COMMENT= 	catalyst session IDs with cookies
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-Session-State-Cookie-0.07

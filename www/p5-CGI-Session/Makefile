@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/01 22:00:35 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=	"persistent session data in CGI applications"
+COMMENT=	persistent session data in CGI applications
 
 MODULES=	cpan
 DISTNAME=	CGI-Session-4.20

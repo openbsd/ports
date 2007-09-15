@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2007/05/07 13:46:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.37 2007/09/15 20:38:25 merdely Exp $
 
 MULTI_PACKAGES=	-main -pear
 
-COMMENT-main=	"server-side HTML-embedded scripting language"
-COMMENT-pear=	"base classes for common PHP tasks"
+COMMENT-main=	server-side HTML-embedded scripting language
+COMMENT-pear=	base classes for common PHP tasks
 PKGNAME-main=	php4-core-${V}p3
 FULLPKGNAME-pear= php4-pear-${V}p2
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/05 15:34:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"online Image GALlery generator"
+COMMENT=	online Image GALlery generator
 
 DISTNAME=	igal-1.4
 PKGNAME=	${DISTNAME}p0

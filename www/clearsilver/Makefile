@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/18 09:13:59 fkr Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:38:21 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"fast, powerful, and language-neutral HTML template system"
+COMMENT=	fast, powerful, and language-neutral HTML template system
 
 DISTNAME=	clearsilver-0.10.4
 CATEGORIES=	www net

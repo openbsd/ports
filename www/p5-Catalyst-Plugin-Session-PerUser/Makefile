@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/14 10:22:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT= 	"per-user session for catalyst"
+COMMENT= 	per-user session for catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-Session-PerUser-0.03

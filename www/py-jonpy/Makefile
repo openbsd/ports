@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/26 14:34:20 pyr Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=	"Python cgi/fastcgi/mod_python framework"
+COMMENT=	Python cgi/fastcgi/mod_python framework
 
 DISTNAME=	jonpy-0.06
 PKGNAME=	py-${DISTNAME}p1

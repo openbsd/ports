@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/14 10:22:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT= 	"Catalyst views using Mason components"
+COMMENT= 	Catalyst views using Mason components
 
 MODULES=	cpan
 DISTNAME=	Catalyst-View-Mason-0.08

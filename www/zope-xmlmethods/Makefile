@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/10 17:40:50 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:27 merdely Exp $
 
-COMMENT=	"methods to apply to Zope objects for XML/XSLT processing"
+COMMENT=	methods to apply to Zope objects for XML/XSLT processing
 
 VERSION=	1.0.0
 DISTNAME=	zopexmlmethods-${VERSION:S/./-/g}

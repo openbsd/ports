@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/01 20:07:09 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"little and fast Web crawler"
+COMMENT=	little and fast Web crawler
 
 DISTNAME=	larbin-2.6.3
 PKGNAME=	${DISTNAME}p0

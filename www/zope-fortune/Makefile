@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/08 08:39:01 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"insert randomly-selected fortunes in your documents"
+COMMENT=	insert randomly-selected fortunes in your documents
 
 VERSION=	0.5.2
 DISTNAME=	Fortune-${VERSION}

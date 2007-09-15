@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/17 05:04:33 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"facility for (de)activation of CMF compliant products"
+COMMENT=	facility for (de)activation of CMF compliant products
 
 V=		1.5.2
 DISTNAME=	CMFQuickInstallerTool-${V}

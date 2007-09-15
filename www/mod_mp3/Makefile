@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"turns Apache into an MP3 or Ogg streaming server"
+COMMENT=	turns Apache into an MP3 or Ogg streaming server
 
 DISTNAME=	mod_mp3-0.39
 PKGNAME=	${DISTNAME}p3
@@ -34,7 +34,7 @@ EXAMPLESRC=	${WRKSRC}/support
 CONF=		${EXAMPLESRC}/mp3.conf
 
 .if ${FLAVOR:L:Mmysql} && ${FLAVOR:L:Mpostgresql}
-ERRORS+= "Fatal: mutually exclusive flavors: ${FLAVORS}"
+ERRORS+= Fatal: mutually exclusive flavors: ${FLAVORS}
 .endif
 
 .if ${FLAVOR:L:Mmysql}

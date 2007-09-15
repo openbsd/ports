@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/22 22:48:04 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=	"base package for HTML handling in PHP5"
+COMMENT=	base package for HTML handling in PHP5
 
 DISTNAME=	HTML_Page2-0.5.0beta
 PKGNAME=	pear-${DISTNAME:S/_/-/}p0

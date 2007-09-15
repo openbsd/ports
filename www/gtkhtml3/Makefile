@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/06/26 22:04:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=		"lightweight HTML rendering/printing/editing engine"
+COMMENT=		lightweight HTML rendering/printing/editing engine
 
 VERSION=		3.14.2
 API_VERSION=		3.14

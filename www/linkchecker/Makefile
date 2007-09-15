@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2006/10/02 17:47:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 20:38:21 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"checks HTML documents for broken links"
+COMMENT=	checks HTML documents for broken links
 
 DISTNAME=	linkchecker-4.5
 CATEGORIES=    	www

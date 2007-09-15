@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2005/02/05 16:54:56 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=		"WWW OFFLine Explorer"
+COMMENT=		WWW OFFLine Explorer
 
 DISTNAME=		wwwoffle-2.5e
 PKGNAME=		${DISTNAME}p0

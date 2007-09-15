@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=		"Apache LDAP based virtual hosts module"
+COMMENT=		Apache LDAP based virtual hosts module
 
 DISTNAME=		mod_ldapvhost-1.0.2
 PKGNAME=		${DISTNAME}p3

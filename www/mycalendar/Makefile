@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/04/11 05:49:38 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"lightweight and easy to use web calendar"
+COMMENT=	lightweight and easy to use web calendar
 
 V=		2.7
 DISTNAME=	calendar-$V

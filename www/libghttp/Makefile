@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2005/12/31 14:35:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"GNOME http client library"
+COMMENT=	GNOME http client library
 
 DISTNAME=	libghttp-1.0.9
 PKGNAME=	${DISTNAME}p1

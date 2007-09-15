@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/04/10 13:12:43 martynas Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=	"text mode rss newsreader"
+COMMENT=	text mode rss newsreader
 DISTNAME=	snownews-1.5.7
 PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/20 15:46:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:26 merdely Exp $
 
-BROKEN=		"this port needs to be cleaned up by someone who cares"
+BROKEN=		this port needs to be cleaned up by someone who cares
 
-COMMENT=	"dynamic object oriented portal script written in PHP"
+COMMENT=	dynamic object oriented portal script written in PHP
 
 V=		2.0.15
 DISTNAME=	xoops-${V}

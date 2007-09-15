@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/22 12:48:25 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=		"Squid Analysis Report Generator"
+COMMENT=		Squid Analysis Report Generator
 
 DISTNAME=		sarg-2.2.3.1
 PKGNAME=		${DISTNAME}p0

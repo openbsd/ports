@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/29 16:31:58 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=	"Test wrapper with helpers for testing Apache"
+COMMENT=	Test wrapper with helpers for testing Apache
 
 MODULES=	cpan
 DISTNAME=	Apache-Test-1.29

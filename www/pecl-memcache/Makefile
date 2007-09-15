@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/03/22 22:48:04 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:25 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"PHP interface to memcached"
+COMMENT=	PHP interface to memcached
 
 DISTNAME=	memcache-1.5
 PKGNAME=	pecl-${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/26 23:23:40 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=		"Python web development megaframework"
+COMMENT=		Python web development megaframework
 
 V=			1.0.2.2
 DISTNAME=		TurboGears-${V}

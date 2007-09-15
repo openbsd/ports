@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/24 10:37:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=		"HTML form validation, generation, and conversion"
+COMMENT=		HTML form validation, generation, and conversion
 
 V=			0.7.1
 DISTNAME=		FormEncode-${V}

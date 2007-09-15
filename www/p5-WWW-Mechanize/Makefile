@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/05 06:27:53 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT= 	"handy web browsing in a Perl object"
+COMMENT= 	handy web browsing in a Perl object
 
 MODULES=	cpan
 

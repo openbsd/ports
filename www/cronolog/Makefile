@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"web log rotation program"
+COMMENT=	web log rotation program
 
 DISTNAME=	cronolog-1.6.2
 CATEGORIES=	www

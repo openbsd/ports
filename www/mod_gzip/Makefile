@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/06/30 15:32:30 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:38:22 merdely Exp $
 
-COMMENT=	"transparently compress Apache output"
+COMMENT=	transparently compress Apache output
 
 V=		1.3.26.1a
 DISTNAME=	mod_gzip-${V}

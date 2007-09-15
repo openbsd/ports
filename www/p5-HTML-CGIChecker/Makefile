@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=	"perl module to detect dangerous HTML code"
+COMMENT=	perl module to detect dangerous HTML code
 
 MODULES=	cpan
 DISTNAME=	HTML-CGIChecker-0.90

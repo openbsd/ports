@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2007/05/27 10:00:42 simon Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"perl parser that builds an HTML tree"
+COMMENT=	perl parser that builds an HTML tree
 
 MODULES=	cpan
 DISTNAME=	HTML-Tree-3.23

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:38:22 merdely Exp $
 
 
-COMMENT=		"mod_perl Apache gallery handler"
+COMMENT=		mod_perl Apache gallery handler
 
 MODULES=		cpan
 DISTNAME=		Apache-Gallery-0.9.1

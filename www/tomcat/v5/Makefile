@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/10 19:10:54 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT-main=	"Java servlet 2.4 and Java server pages 2.0 server"
-COMMENT-admin=	"administration web application"
-COMMENT-examples="example applications and documentation"
+COMMENT-main=	Java servlet 2.4 and Java server pages 2.0 server
+COMMENT-admin=	administration web application
+COMMENT-examples=example applications and documentation
 
 V=		5.5.23
 DISTNAME=	apache-tomcat-${V}
@@ -86,4 +86,4 @@ do-install:
 		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
 		< ${FILESDIR}/tomcat.rc > ${SAMPLEDIR}/tomcat.rc
 
-.include "bsd.port.mk"
+.include <bsd.port.mk>

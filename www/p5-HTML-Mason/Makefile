@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"high-performance dynamic web authoring system"
+COMMENT=	high-performance dynamic web authoring system
 
 MODULES=	cpan
 DISTNAME=	HTML-Mason-1.35

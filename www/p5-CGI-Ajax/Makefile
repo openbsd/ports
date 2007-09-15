@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/16 17:52:06 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=	'AJAX framework for perl'
+COMMENT=	AJAX framework for perl
 
 MODULES=	cpan
 DISTNAME=	CGI-Ajax-0.697

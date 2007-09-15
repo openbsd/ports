@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/14 10:22:11 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=		"catalyst helper for CRUD scaffolding"
+COMMENT=		catalyst helper for CRUD scaffolding
 
 MODULES=		cpan
 DISTNAME=		Catalyst-Helper-Controller-Scaffold-0.04

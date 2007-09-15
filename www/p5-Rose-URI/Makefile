@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/16 20:31:28 espie Exp $
-COMMENT=	'URI objects for Rose'
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:24 merdely Exp $
+COMMENT=	URI objects for Rose
 
 MODULES=	cpan
 DISTNAME=	Rose-URI-0.021

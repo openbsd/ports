@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/07 08:33:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT-main=	'yahoo ui library toolkit'
-COMMENT-docs=	'yahoo ui library examples'
+COMMENT-main=	yahoo ui library toolkit
+COMMENT-docs=	yahoo ui library examples
 CATEGORIES=	www devel
 
 # BSD

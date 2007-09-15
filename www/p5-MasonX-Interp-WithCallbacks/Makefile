@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/29 22:32:37 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:24 merdely Exp $
 
-COMMENT=	"Mason callback support via Params::CallbackRequest"
+COMMENT=	Mason callback support via Params::CallbackRequest
 
 MODULES=	cpan
 DISTNAME=	MasonX-Interp-WithCallbacks-1.13

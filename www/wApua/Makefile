@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/21 16:06:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:26 merdely Exp $
 
-COMMENT=		"browser for wap/wml"
+COMMENT=		browser for wap/wml
 
 DISTNAME=		wApua-0.06
 CATEGORIES=		www

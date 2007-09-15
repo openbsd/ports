@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/14 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:38:21 merdely Exp $
 
-COMMENT=	"c++ compliant CGI applications libraries"
+COMMENT=	c++ compliant CGI applications libraries
 
 DISTNAME=	cgicc-3.2.1
 PKGNAME=	${DISTNAME}p2

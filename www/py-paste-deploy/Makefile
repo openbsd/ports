@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 19:19:15 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
 
-COMMENT=		"load, configure, and compose WSGI applications and servers"
+COMMENT=		load, configure, and compose WSGI applications and servers
 
 V=			1.3
 DISTNAME=		PasteDeploy-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/18 00:06:49 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:23 merdely Exp $
 
-COMMENT=		"autodiscover syndication feeds"
+COMMENT=		autodiscover syndication feeds
 
 MODULES=		cpan
 CPAN_AUTHOR=		BTROTT

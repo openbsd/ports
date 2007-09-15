@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2005/10/25 18:37:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:27 merdely Exp $
 
-COMMENT=	"logging product for Zope"
+COMMENT=	logging product for Zope
 
 VERSION=	1.0.3
 DISTNAME=	Logger-${VERSION:S/./-/g}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.49 2007/05/30 22:33:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2007/09/15 20:38:20 merdely Exp $
 
-COMMENT=	"extremely fast program for analysing WWW logfiles"
+COMMENT=	extremely fast program for analysing WWW logfiles
 
 DISTNAME=	analog-6.0
 PKGNAME=	${DISTNAME}p1
