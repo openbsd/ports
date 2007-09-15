@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.41 2006/10/14 10:01:09 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2007/09/15 18:01:02 simon Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
-COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
+COMMENT=	dungeon explorin', hackin', game.  Piece of cake
 V=3.4.3
 DISTNAME=	nethack-$V
 PKGNAME=	${DISTNAME}p1

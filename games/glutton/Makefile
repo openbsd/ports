@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 18:01:01 simon Exp $
 
-COMMENT= 	"Pac-Man clone"
+COMMENT= 	Pac-Man clone
 
 DISTNAME=	glutton-0.0.5
 CATEGORIES= 	games	

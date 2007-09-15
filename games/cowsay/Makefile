@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/02 18:02:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=		"speaking ascii cow"
+COMMENT=		speaking ascii cow
 DISTNAME=		cowsay-3.03
 CATEGORIES=		games
 

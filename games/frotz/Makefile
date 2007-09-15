@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2005/10/15 00:20:53 jsg Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:01 simon Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/15 18:46:28 jlam Exp $
 # Original from: Stefan Jokisch
 
-COMMENT=	"Curses-based interpreter for Infocom-compatible games"
+COMMENT=	Curses-based interpreter for Infocom-compatible games
 
 DISTNAME=		frotz-2.43
 CATEGORIES=     	games

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2004/11/28 22:41:17 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"Classic Gnu Chess"
+COMMENT=	Classic Gnu Chess
 
 DISTNAME=	gnuchess-5.07
 DISTFILES=	${DISTNAME}.tar.gz book_1.01.pgn.gz

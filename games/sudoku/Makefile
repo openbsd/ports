@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=		"console based sudoku"
+COMMENT=		console based sudoku
 
 DISTNAME=		sudoku-1.0.1
 PKGNAME=		${DISTNAME}p0

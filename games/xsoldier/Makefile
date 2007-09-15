@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2007/01/24 09:51:09 jsg Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 18:01:04 simon Exp $
 
-COMMENT=	"space-based shoot'em up game for X11"
+COMMENT=	space-based shoot'em up game for X11
 
 DISTNAME=	xsoldier-1.4
 CATEGORIES=	games x11

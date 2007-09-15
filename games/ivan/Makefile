@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/23 06:28:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 18:01:01 simon Exp $
 
 .if ${MACHINE_ARCH} == "sparc64"
-BROKEN=	"SIGBUS on sparc64 when starting"
+BROKEN=	SIGBUS on sparc64 when starting
 .endif
 
-COMMENT=	"graphical roguelike game"
+COMMENT=	graphical roguelike game
 
 DISTNAME=	ivan-0.50
 PKGNAME=	${DISTNAME}p0

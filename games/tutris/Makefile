@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/27 11:34:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"graphical tetris clone"
+COMMENT=	graphical tetris clone
 DISTNAME=	Tutris-1.0.1
 PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	games x11

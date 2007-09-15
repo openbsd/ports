@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/02/05 08:21:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"maze game resembling boulderdash"
+COMMENT=	maze game resembling boulderdash
 DISTNAME=	rocksndiamonds-3.1.2
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11

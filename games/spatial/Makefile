@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:03 simon Exp $
 #
 
-COMMENT=	"3d tetris"
+COMMENT=	3d tetris
 
 DISTNAME=	threedee
 PKGNAME=	spatial-1.0.1p0

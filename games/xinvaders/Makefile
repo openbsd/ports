@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:03 simon Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
-COMMENT=	"shoot them nasty little bugs"
+COMMENT=	shoot them nasty little bugs
 
 DISTNAME=       xinvaders
 DIST_SUBDIR=	xinvaders
@@ -11,9 +11,9 @@ CATEGORIES=	games
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xt c
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/23 06:28:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"total conversion of the Space Hulk board game"
+COMMENT=	total conversion of the Space Hulk board game
 
 DISTNAME=	spacehulk-1.5-beta1
 PKGNAME=	spacehulk-1.5beta1p2

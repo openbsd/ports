@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2007/01/04 20:19:53 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"gtk+ clone of the lines ball logic game"
+COMMENT=	gtk+ clone of the lines ball logic game
 
 DISTNAME=	gtkballs-3.1.5
 PKGNAME=	${DISTNAME}p3

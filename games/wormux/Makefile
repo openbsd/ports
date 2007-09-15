@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/22 20:49:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=		"free software clone of Worms(R) game concept"
+COMMENT=		free software clone of Worms(R) game concept
 
 DISTNAME=		wormux-0.7.9
 PKGNAME=		${DISTNAME}p0

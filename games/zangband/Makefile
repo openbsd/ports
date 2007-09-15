@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/07/11 11:30:06 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 18:01:04 simon Exp $
 
-COMMENT=	"Zangband (Zelazny Angband) with color, X11 support"
+COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 VERSION=	2.6.2
 DISTNAME=	zangband-${VERSION}
@@ -10,9 +10,9 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/ \
 		ftp://ftp.planetmirror.com/pub/angband/Variant/ZAngband/ \
 		ftp://clockwork.dementia.org/angband/Variant/ZAngband/
 
-PERMIT_PACKAGE_CDROM=	"not-for-profit redistribution only"
+PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"not-for-profit redistribution only"
+PERMIT_DISTFILES_CDROM=	not-for-profit redistribution only
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 

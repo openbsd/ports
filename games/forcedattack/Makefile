@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/06/03 09:33:12 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"connect four of stones in a straight line"
+COMMENT=	connect four of stones in a straight line
 
 V=		2.1.4
 DISTNAME=	4stAttack-${V}

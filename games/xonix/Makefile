@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/13 10:08:13 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 18:01:04 simon Exp $
 
-COMMENT=	"win land without colliding with 'flyers' and 'eaters'"
+COMMENT=	win land without colliding with 'flyers' and 'eaters'
 
 DISTNAME=	xonix-1.4
 PKGNAME=	${DISTNAME}p1

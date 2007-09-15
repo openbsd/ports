@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/02/02 18:02:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"eboard extra piece sets and sounds"
+COMMENT=	eboard extra piece sets and sounds
 
 PKGNAME=	${DISTNAME}-0.1
 DISTNAME=	eboard-extras

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/28 22:41:17 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"NetHack derivative"
+COMMENT=	NetHack derivative
 
 VERSION=	1.9.3
 DISTNAME=	nethack_source_331_jtp_${VERSION:S/.//g}

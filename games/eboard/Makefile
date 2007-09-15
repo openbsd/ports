@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2005/02/13 18:02:52 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"gtk+ chess board interface"
+COMMENT=	gtk+ chess board interface
 
 DISTNAME=	eboard-0.9.0
 PKGNAME=	${DISTNAME}

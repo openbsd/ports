@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"x bust a move clone" 
+COMMENT=	x bust a move clone
 
 VERSION=	0.2
 DISTNAME=	xbubble-${VERSION}

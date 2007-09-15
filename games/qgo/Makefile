@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/31 12:45:40 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"go client and fully featured sgf editor"
+COMMENT=	go client and fully featured sgf editor
 
 DISTNAME=	qgo-1.5.2
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/03 14:58:17 niallo Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"complex rogue-style game of dungeon exploration"
+COMMENT=	complex rogue-style game of dungeon exploration
 
 VERSION=	0.90.4
 DISTFILES=	omega-${VERSION}-src.tar.gz

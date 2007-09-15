@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/01 07:39:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"additional games modules for childsplay"
+COMMENT=	additional games modules for childsplay
 
 V=		0.85.2
 DISTNAME=	childsplay_plugins-${V}

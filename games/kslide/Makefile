@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"puzzle game for KDE"
+COMMENT=	puzzle game for KDE
 
 DISTNAME=	kslide-0.90
 PKGNAME=	${DISTNAME}p0

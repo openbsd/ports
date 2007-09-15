@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2007/07/07 01:39:47 jsg Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 18:01:02 simon Exp $
 # XXX hardcoded endian list
 
-COMMENT=	"collection of various tools for scummvm"
+COMMENT=	collection of various tools for scummvm
 DISTNAME=	scummvm-tools-0.10.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}

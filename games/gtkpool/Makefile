@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/03/31 11:51:32 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"simple gtk+ pool simulation game"
+COMMENT=	simple gtk+ pool simulation game
 
 DISTNAME=	gtkpool-0.5.0
 PKGNAME=	${DISTNAME}p0

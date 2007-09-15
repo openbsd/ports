@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2004/11/28 22:41:16 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"curses version of the classic game"
+COMMENT=	curses version of the classic game
 
 DISTNAME=	connect4
 PKGNAME=	connect4-3.2
 CATEGORIES=	games
 
 # License: NONE
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c curses termcap
 
 MASTER_SITES= 	ftp://ftp.uu.net/usenet/comp.sources.games/volume6/

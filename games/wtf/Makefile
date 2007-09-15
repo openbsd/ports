@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"translate common internet acronyms"
+COMMENT=	translate common internet acronyms
 
 DISTNAME=	wtf-20051104
 PKGNAME=	${DISTNAME}p0

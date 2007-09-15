@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2005/09/05 13:56:39 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 18:01:04 simon Exp $
 
-COMMENT=	"multiplayer 2d space battles game"
+COMMENT=	multiplayer 2d space battles game
 
 DISTNAME=	xpilot-4.5.4
 PKGNAME=	${DISTNAME}p0

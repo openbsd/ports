@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2004/11/28 22:41:18 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 18:01:01 simon Exp $
 #
 
-COMMENT=	"GNU version of Shogi"
+COMMENT=	GNU version of Shogi
 
 DISTNAME=	gnushogi-1.2p03
 PKGNAME=	gnushogi-1.2.3

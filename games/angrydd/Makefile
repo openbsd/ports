@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/11 19:09:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 18:01:00 simon Exp $
 
-COMMENT=	"falling blocks puzzle game"
+COMMENT=	falling blocks puzzle game
 
 DISTNAME=	angrydd-1.0.1
 PKGNAME=	${DISTNAME}p0

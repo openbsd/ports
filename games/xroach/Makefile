@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/28 22:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 18:01:04 simon Exp $
 
-COMMENT=	"cockroaches hide under your windows"
+COMMENT=	cockroaches hide under your windows
 
 # The source code for xroach is the same under both directories
 # (4.4BSD-Lite and 4.4BSD-Lite2) on the dist site.

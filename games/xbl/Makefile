@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/07/12 07:46:21 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"3D block-dropping game"
+COMMENT=	3D block-dropping game
 
 DISTNAME=	xbl-1.1.2
 CATEGORIES=	games

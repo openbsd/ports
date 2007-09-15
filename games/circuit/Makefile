@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/16 10:11:53 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"finish-the-cycle logic puzzle"
+COMMENT=	finish-the-cycle logic puzzle
 CATEGORIES=	games
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>

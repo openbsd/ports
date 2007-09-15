@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"astrosmash clone for X"
+COMMENT=	astrosmash clone for X
 
 DISTNAME=	cosmosmash-1.3
 CATEGORIES=	games

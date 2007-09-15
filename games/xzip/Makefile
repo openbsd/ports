@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 18:01:04 simon Exp $
 # $NetBSD: Makefile,v 1.4 1999/01/30 23:18:49 agc Exp $
 # Original from: Andrew Plotkin, Mark Howell
 
-COMMENT=	"z-code interpreter for X11 (Infocom game format)"
+COMMENT=	z-code interpreter for X11 (Infocom game format)
 
 DISTNAME=	xzip182
 PKGNAME=	xzip-1.8.2

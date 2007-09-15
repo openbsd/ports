@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"voxel-style landscape rendering fly-by"
+COMMENT=	voxel-style landscape rendering fly-by
 
 DISTNAME=	newvox-1.0
 CATEGORIES=	games

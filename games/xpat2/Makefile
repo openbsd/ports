@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2004/11/28 22:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:04 simon Exp $
 
-COMMENT=	"X11 solitaire with 14 variations"
+COMMENT=	X11 solitaire with 14 variations
 
 DISTNAME=	xpat2-1.04
 PKGNAME=	${DISTNAME}p1

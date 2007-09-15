@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2007/04/06 22:21:30 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/15 18:01:00 simon Exp $
 
-COMMENT=	"full color 320x200 arcade quality platform shooter"
+COMMENT=	full color 320x200 arcade quality platform shooter
 
 DISTNAME=	abuse-2.0
 PKGNAME=	${DISTNAME}p1
@@ -12,18 +12,18 @@ DISTFILES=	${DISTNAME}.tar.gz abuse_data.tar.gz:0
 
 HOMEPAGE=	http://www.crack.com/games/abuse/
 
-PERMIT_PACKAGE_CDROM=	"unclear"
-PERMIT_PACKAGE_FTP=	"unclear"
-PERMIT_DISTFILES_CDROM=	"unclear"
-PERMIT_DISTFILES_FTP=	"unclear"
+PERMIT_PACKAGE_CDROM=	unclear
+PERMIT_PACKAGE_FTP=	unclear
+PERMIT_DISTFILES_CDROM=	unclear
+PERMIT_DISTFILES_FTP=	unclear
 WANTLIB=		X11 Xext c m stdc++
 
 .if ${MACHINE_ARCH} == "sparc"
-BROKEN=		"Does not work on SPARC"
+BROKEN=		Does not work on SPARC
 .endif
 
 .if ${MACHINE_ARCH} == "vax"
-BROKEN=		"gmake loops forever"
+BROKEN=		gmake loops forever
 .endif
 
 USE_X11=	Yes

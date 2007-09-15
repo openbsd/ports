@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/25 19:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 18:01:02 simon Exp $
 
-COMMENT-main=		"Quake/Quake-world client"
-COMMENT-server=		"Quake world server"
+COMMENT-main=		Quake/Quake-world client
+COMMENT-server=		Quake world server
 CATEGORIES=		games
 
 FULLPKGNAME-server=	quakeworld-server-20000101p1

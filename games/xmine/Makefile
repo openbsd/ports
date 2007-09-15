@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/13 10:08:13 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 18:01:04 simon Exp $
 
-COMMENT=	"Athena port of xminesweeper"
+COMMENT=	Athena port of xminesweeper
 
 DISTNAME=	xmine-1.0.3-Xaw
 PKGNAME=	xmine-1.0.3

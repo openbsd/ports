@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/11 10:56:28 mk Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"open source clone of the game Transport Tycoon Deluxe"
+COMMENT=	open source clone of the game Transport Tycoon Deluxe
 DISTNAME=	openttd-0.5.2-source
 PKGNAME=	${DISTNAME:S/-source//}
 EXTRACT_SUFX=	.tar.bz2

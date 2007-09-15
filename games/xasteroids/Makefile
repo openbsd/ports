@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"X11-based asteroids-style arcade"
+COMMENT=	X11-based asteroids-style arcade
 
 DISTNAME=	xasteroids
 PKGNAME=	xasteroids-5.0

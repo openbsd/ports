@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2005/09/25 09:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 18:01:00 simon Exp $
 
-COMMENT=	"jump'n run game with unique video effects"
+COMMENT=	jump'n run game with unique video effects
 
 VERSION=	0.8.10
 DVERSION=	0.8.6

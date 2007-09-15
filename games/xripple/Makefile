@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/13 10:08:13 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 18:01:04 simon Exp $
 
-COMMENT=	"screen bottom ripples like a pool of water"
+COMMENT=	screen bottom ripples like a pool of water
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
@@ -10,9 +10,9 @@ MASTER_SITES=	ftp://ftp.devolution.com/pub/enlightenment/
 
 MAINTAINER=	Michael Shalayeff <mickey@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no license available"
-PERMIT_PACKAGE_FTP=	"no license available"
-PERMIT_DISTFILES_CDROM=	"no license available"
+PERMIT_PACKAGE_CDROM=	no license available
+PERMIT_PACKAGE_FTP=	no license available
+PERMIT_DISTFILES_CDROM=	no license available
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m
 

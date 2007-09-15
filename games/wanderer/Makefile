@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/10 23:10:15 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"Rogue like adventure game"
+COMMENT=	Rogue like adventure game
 
 DISTNAME=	wanderer-3.2
 PKGNAME=	${DISTNAME}p1

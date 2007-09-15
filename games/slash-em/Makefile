@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2005/12/12 14:07:02 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"dungeon explorin', hackin', game.  Hard"
+COMMENT=	dungeon explorin', hackin', game.  Hard
 DISTNAME=	se007e7f1
 CATEGORIES=	games
 

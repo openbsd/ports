@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/26 18:23:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=		"curses-based Lines game"
+COMMENT=		curses-based Lines game
 
 DISTNAME=		clines-1.0.4
 CATEGORIES=		games

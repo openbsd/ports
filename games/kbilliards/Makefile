@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/09 11:39:19 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:02 simon Exp $
 
-COMMENT= 		"billiard game"
+COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
 MODULES=		x11/kde
 DISTNAME=		kbilliards-0.7

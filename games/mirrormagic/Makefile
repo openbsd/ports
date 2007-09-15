@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/01/27 01:32:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"game like Deflektor (C64) / Mindbender (Amiga)"
+COMMENT=	game like Deflektor (C64) / Mindbender (Amiga)
 DISTNAME=	mirrormagic-2.0.2
 CATEGORIES=	games x11
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/

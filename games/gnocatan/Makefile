@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"Settlers of Catan for GNOME/Gtk"
+COMMENT=	Settlers of Catan for GNOME/Gtk
 
 VERSION=	0.6.1
 DISTNAME=	gnocatan-${VERSION}

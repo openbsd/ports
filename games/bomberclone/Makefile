@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"bomberman clone with multiplayer mode"
+COMMENT=	bomberman clone with multiplayer mode
 
 DISTNAME=	bomberclone-0.11.7
 PKGNAME=	${DISTNAME}p0

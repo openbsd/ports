@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"multi-way scrolling shoot'em up for X11, addictive"
+COMMENT=	multi-way scrolling shoot'em up for X11, addictive
 
 DISTNAME=	xkobo-1.11
 PKGNAME=	${DISTNAME}p0

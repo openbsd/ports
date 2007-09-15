@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=		"Bomberman clone for GNOME"
+COMMENT=		Bomberman clone for GNOME
 
 VERSION=		0.6.6
 DISTNAME=		bombermaze-${VERSION}

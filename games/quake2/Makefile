@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/07/26 08:27:20 claudio Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 18:01:02 simon Exp $
 
 ONLY_FOR_ARCHS= 	i386
 SHARED_ONLY=		Yes
 
-COMMENT=		"first person shooter"
+COMMENT=		first person shooter
 
 DISTNAME=		quake2-0.3
 PKGNAME=		${DISTNAME}p3

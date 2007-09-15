@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/08/14 15:50:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=		"essentially an Asteroids clone"
+COMMENT=		essentially an Asteroids clone
 
 DISTNAME=		sdlroids-1.3.4
 PKGNAME=		${DISTNAME}p0

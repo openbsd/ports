@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 18:01:00 simon Exp $
 # Original from: Robert Ruehlmann
 
-COMMENT=		"rogue-like game with X11 support"
-COMMENT-no_x11=		"rogue-like game"
+COMMENT=		rogue-like game with X11 support
+COMMENT-no_x11=		rogue-like game
 
 DISTNAME=		angband-3.0.6
 PKGNAME=		${DISTNAME}p0
@@ -12,9 +12,9 @@ HOMEPAGE=		http://www.thangorodrim.net/angband.html
 
 MAINTAINER=		Niall O Higgins <niallo@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"unclear license"
+PERMIT_PACKAGE_CDROM=	unclear license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= "unclear license"
+PERMIT_DISTFILES_CDROM= unclear license
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 

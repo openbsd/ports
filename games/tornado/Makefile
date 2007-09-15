@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/28 22:41:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"Ouranos (Weather War) clone; multiplayer"
+COMMENT=	Ouranos (Weather War) clone; multiplayer
 DISTNAME=	tornado-1.3
 CATEGORIES=	games
 MASTER_SITES=	${HOMEPAGE}download/

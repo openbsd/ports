@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/27 11:47:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"sdl shoot 'em up; stop evil army from getting your oil"
+COMMENT=	sdl shoot 'em up; stop evil army from getting your oil
 
 DISTNAME=	OilWar-1.2.1
 PKGNAME=	${DISTNAME:L}p1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/03 21:52:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"zombies clone"
+COMMENT=	zombies clone
 
 VERSION=	1.0.0
 DISTNAME=	sdlzombies-${VERSION}

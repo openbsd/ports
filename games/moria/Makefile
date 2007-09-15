@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/03 14:45:09 niallo Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"The Dungeons of Moria"
+COMMENT=	The Dungeons of Moria
 
 V=		5.5.2
 DISTNAME=	um$V
@@ -12,9 +12,9 @@ EXTRACT_SUFX=	.tar.Z
 
 HOMEPAGE=	http://www-math.bgsu.edu/~grabine/moria.html
 
-PERMIT_PACKAGE_CDROM=	"not-for-profit redistribution only"
+PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"not-for-profit redistribution only"
+PERMIT_DISTFILES_CDROM=	not-for-profit redistribution only
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses termcap
 

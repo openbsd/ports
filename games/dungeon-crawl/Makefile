@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	'dungeon crawl'
+COMMENT=	dungeon crawl
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.dungeoncrawl.org/
@@ -28,8 +28,8 @@ WANTLIB=	c m stdc++ ncurses
 
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_FTP=Yes
-PERMIT_DISTFILES_CDROM="No gain"
-PERMIT_PACKAGE_CDROM="No gain"
+PERMIT_DISTFILES_CDROM=No gain
+PERMIT_PACKAGE_CDROM=No gain
 DOCDIR=${PREFIX}/share/doc/dungeon-crawl-$V
 
 

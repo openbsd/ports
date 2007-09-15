@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/23 23:30:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=		"colorful game where you blow other people/robots up"
+COMMENT=		colorful game where you blow other people/robots up
 
 VERSION=		0.8
 DISTNAME=		xbomber.${VERSION}

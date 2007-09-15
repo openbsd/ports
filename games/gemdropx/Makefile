@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"one-player puzzle game for x11"
+COMMENT=	one-player puzzle game for x11
 
 VERSION=	0.7
 DISTNAME=	gemdropx-${VERSION}

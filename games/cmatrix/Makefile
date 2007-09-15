@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/21 17:27:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=		"scrolling 'Matrix'-like screen"
+COMMENT=		scrolling 'Matrix'-like screen
 DISTNAME=		cmatrix-1.2a
 CATEGORIES=		games misc
 

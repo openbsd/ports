@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"X11 Go Toolset"
+COMMENT=	X11 Go Toolset
 
 DISTNAME=	cgoban-1.9.12
 CATEGORIES=	games x11

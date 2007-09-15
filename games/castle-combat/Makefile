@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"Rampart arcade game clone for X11" 
+COMMENT=	Rampart arcade game clone for X11
 
 VERSION=	0.7.2
 DISTNAME=	castle-combat-${VERSION}

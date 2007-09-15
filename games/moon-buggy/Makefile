@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/16 22:53:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"drive some car across the moon"
+COMMENT=	drive some car across the moon
 
 DISTNAME=	moon-buggy-0.5.1
 PKGNAME=	${DISTNAME}p2

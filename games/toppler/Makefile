@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/10 22:51:34 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"Nebulous rewrite of Tower Toppler"
+COMMENT=	Nebulous rewrite of Tower Toppler
 
 VERSION=	0.96
 DISTNAME=	toppler-${VERSION}

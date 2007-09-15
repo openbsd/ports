@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2007/06/01 02:11:23 jolan Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 18:01:03 simon Exp $
 
-COMMENT-main=		"ur-quan masters: sdl port of star control 2; multiplayer"
-COMMENT-content=	"ur-quan masters: game content"
-COMMENT-remix1=		"ur-quan masters: remix pack number one"
-COMMENT-remix2=		"ur-quan masters: remix pack number two"
-COMMENT-remix3=		"ur-quan masters: remix pack number three"
-COMMENT-threedomusic=	"ur-quan masters: 3DO music content"
-COMMENT-voice=		"ur-quan masters: speech content"
+COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
+COMMENT-content=	ur-quan masters: game content
+COMMENT-remix1=		ur-quan masters: remix pack number one
+COMMENT-remix2=		ur-quan masters: remix pack number two
+COMMENT-remix3=		ur-quan masters: remix pack number three
+COMMENT-threedomusic=	ur-quan masters: 3DO music content
+COMMENT-voice=		ur-quan masters: speech content
 
 VER=			0.6.0
 DISTNAME=		uqm-0.6.2

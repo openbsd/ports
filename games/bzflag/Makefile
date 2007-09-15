@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/14 20:40:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"graphical multiplayer 3-d tank war game"
+COMMENT=	graphical multiplayer 3-d tank war game
 DISTNAME=	bzflag-2.0.8
 PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games x11

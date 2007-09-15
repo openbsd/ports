@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2006/10/19 00:18:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:00 simon Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
-COMMENT=	"Ancient Domains of Mystery - roguelike"
+COMMENT=	Ancient Domains of Mystery - roguelike
 
 DISTNAME=	adom-1.1.1
 PKGNAME=	${DISTNAME}p3
@@ -17,9 +17,9 @@ NO_REGRESS=	Yes
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no modify"
-PERMIT_PACKAGE_FTP=	"no modify"
-PERMIT_DISTFILES_CDROM=	"no modify"
+PERMIT_PACKAGE_CDROM=	no modify
+PERMIT_PACKAGE_FTP=	no modify
+PERMIT_DISTFILES_CDROM=	no modify
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/adom

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/19 10:30:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"drive a toy wood engine"
+COMMENT=	drive a toy wood engine
 
 DISTNAME=	Ri-li-2.0.0
 CATEGORIES=	games

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2004/11/28 22:41:21 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"classic space-age stock trading game"
+COMMENT=	classic space-age stock trading game
 
 DISTNAME=	starlanes-1.2.2
 CATEGORIES=	games

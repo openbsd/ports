@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/09/18 11:50:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"silly little game based on Spacetaxi for the C64"
+COMMENT=	silly little game based on Spacetaxi for the C64
 
 DISTNAME=	taxipilot-0.7.2
 PKGNAME=	${DISTNAME}p0

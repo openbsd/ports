@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2004/08/11 10:15:07 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"common data for the nethack/slash ports"
+COMMENT=	common data for the nethack/slash ports
 V=3.4.3
 DISTNAME=	nethack-$V
 PKGNAME=	hackdata-$V

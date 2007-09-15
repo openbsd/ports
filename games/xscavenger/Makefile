@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/09 01:25:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:04 simon Exp $
 
 DISTNAME=	xscavenger-1.4.4
 EXTRACT_SUFX=	.tgz
@@ -10,7 +10,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c ossaudio
 
-COMMENT=	"Lode Runner clone"
+COMMENT=	Lode Runner clone
 HOMEPAGE=	http://www.xdr.com/dash/scavenger.html
 MASTER_SITES=	http://www.xdr.com/dash/
 

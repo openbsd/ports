@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/05/18 21:44:30 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:03 simon Exp $
 
-COMMENT=	"John Horton Conway's Game of Life"
+COMMENT=	John Horton Conway's Game of Life
 
 DISTNAME=	xlife-5.3
 PKGNAME=	${DISTNAME}p1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2004/11/28 22:41:21 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"dungeon explorin', hackin' game, but harder than nethack"
+COMMENT=	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME=	slash-e8
 PKGNAME=	slash-3.2.2-e8

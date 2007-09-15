@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/02/04 15:47:50 aaron Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=		"interpreter for old Sierra AGI games"
+COMMENT=		interpreter for old Sierra AGI games
 
 DISTNAME=		sarien-0.7.0
 PKGNAME=		${DISTNAME}p0

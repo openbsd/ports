@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/27 15:34:55 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"2D arcade game"
+COMMENT=	2D arcade game
 
 DISTNAME=	blobwars-1.07
 DISTFILES=	${DISTNAME}-1.tar.gz

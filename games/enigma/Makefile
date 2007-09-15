@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"Oxyd/Rock'n'Roll clone"
+COMMENT=	Oxyd/Rock'n'Roll clone
 
 DISTNAME=	enigma-0.81
 PKGNAME=	${DISTNAME}p0

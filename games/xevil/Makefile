@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2004/11/28 22:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 18:01:03 simon Exp $
 #
 
-COMMENT=	"side-view, fast-action, kill everything type of game"
+COMMENT=	side-view, fast-action, kill everything type of game
 
 DISTNAME=	xevil1.5
 PKGNAME=	xevil-1.5

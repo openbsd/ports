@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 18:01:03 simon Exp $
 #
 
-COMMENT=	"cube puzzle for X11"
+COMMENT=	cube puzzle for X11
 
 DISTNAME=	xcubes-5.5.2
 CATEGORIES=	games

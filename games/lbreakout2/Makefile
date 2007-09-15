@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 18:01:02 simon Exp $
 
-COMMENT=	"breakout game with many levels, powerups, good graphics" 
+COMMENT=	breakout game with many levels, powerups, good graphics
 
 DISTNAME=	lbreakout2-2.2.2
 PKGNAME=	${DISTNAME}p0

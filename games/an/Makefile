@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/11/28 22:41:15 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 18:01:00 simon Exp $
 
-COMMENT=	"fast anagram generator"
+COMMENT=	fast anagram generator
 
 DISTNAME=	an-0.93
 CATEGORIES=	games

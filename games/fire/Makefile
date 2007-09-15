@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/26 06:10:01 ray Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"organic fireworks demo"
+COMMENT=	organic fireworks demo
 
 DISTNAME=	fire-1.0
 PKGNAME=	${DISTNAME}p0

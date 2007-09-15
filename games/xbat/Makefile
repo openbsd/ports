@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 18:01:03 simon Exp $
 #
 
-COMMENT=	"XEVIOUS-like shooting game"
+COMMENT=	XEVIOUS-like shooting game
 
 DISTNAME=	xev111
 PKGNAME=	xbat-1.11p0
@@ -9,9 +9,9 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/index_e.html
 
-PERMIT_PACKAGE_CDROM=	"possible copyright infringement"
-PERMIT_PACKAGE_FTP=	"possible copyright infringement"
-PERMIT_DISTFILES_CDROM=	"possible copyright infringement"
+PERMIT_PACKAGE_CDROM=	possible copyright infringement
+PERMIT_PACKAGE_FTP=	possible copyright infringement
+PERMIT_DISTFILES_CDROM=	possible copyright infringement
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m
 

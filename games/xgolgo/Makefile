@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 18:01:03 simon Exp $
 #
 
-COMMENT=	"watch what you are doing -- are you hostile"
+COMMENT=	watch what you are doing -- are you hostile
 
 DISTNAME=	xeyes-g
 PKGNAME=	xgolgo-1.0

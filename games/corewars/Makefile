@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/26 10:16:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 18:01:01 simon Exp $
 
-COMMENT=	"computer simulation game"
+COMMENT=	computer simulation game
 
 DISTNAME=	corewars-0.9.13
 
