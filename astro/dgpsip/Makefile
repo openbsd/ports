@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2005/01/08 06:59:25 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 10:37:21 ajacoutot Exp $
 
-COMMENT=	"Differential GPS over IP communication device"
+COMMENT=	Differential GPS over IP communication device
 
 DISTNAME=	dgpsip-1.35
 CATEGORIES=	astro

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/15 22:10:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 10:37:22 ajacoutot Exp $
 
-COMMENT=		'wm-dockapp; shows sunrise/sunset times'
+COMMENT=		wm-dockapp; shows sunrise/sunset times
 
 DISTNAME=		wmSun-1.03
 PKGNAME=		${DISTNAME:L}p0

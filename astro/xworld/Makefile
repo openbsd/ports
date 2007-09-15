@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/08/01 19:36:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 10:37:22 ajacoutot Exp $
 
-COMMENT=	"earth as seen from the direction of the sun"
+COMMENT=	earth as seen from the direction of the sun
 
 DISTNAME=	xworld-2.0
 CATEGORIES=	astro x11

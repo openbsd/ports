@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.29 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.30 2007/09/15 10:37:22 ajacoutot Exp $
 
-COMMENT=	"interactive astronomical ephemeris"
+COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
 CATEGORIES=	astro
 MASTER_SITES=	http://humppa.nl/distfiles/
 
 HOMEPAGE=	http://www.clearskyinstitute.com/xephem/
 
-PERMIT_PACKAGE_CDROM=   "no modifications, no fee"
-PERMIT_PACKAGE_FTP=     "no modifications"
-PERMIT_DISTFILES_CDROM= "no fee"
+PERMIT_PACKAGE_CDROM=   no modifications, no fee
+PERMIT_PACKAGE_FTP=     no modifications
+PERMIT_DISTFILES_CDROM= no fee
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		ICE SM X11 Xext Xp Xt c m
 

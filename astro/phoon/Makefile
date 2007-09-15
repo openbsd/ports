@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/07/02 11:05:42 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 10:37:21 ajacoutot Exp $
 
-COMMENT=		"displays the phase of the moon in ascii"
+COMMENT=		displays the phase of the moon in ascii
 
 DISTNAME=		phoon_29jun2005
 PKGNAME=		phoon-20050629

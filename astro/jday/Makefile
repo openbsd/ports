@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/02 21:30:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 10:37:21 ajacoutot Exp $
 
-COMMENT=	"astronomical julian date calculator"
+COMMENT=	astronomical julian date calculator
 
 DISTNAME=	jday-2.4
 SHARED_LIBS +=  jday                 0.0      # .2.4

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/10/15 22:10:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 10:37:22 ajacoutot Exp $
 
-COMMENT=		'wm-dockapp; space weather monitor'
+COMMENT=		wm-dockapp; space weather monitor
 
 DISTNAME=		wmSpaceWeather-1.04
 PKGNAME=		${DISTNAME:L}p0

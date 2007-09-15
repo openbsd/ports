@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/21 12:50:33 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 10:37:21 ajacoutot Exp $
 
-COMMENT=	"display the moon's phase"
+COMMENT=	display the moon's phase
 
 DISTNAME=	luna19s
 PKGNAME=	luna-1.9
@@ -11,10 +11,10 @@ EXTRACT_CASES=	*.lzh) lha xw=${WRKDIR}/${DISTNAME} ${FULLDISTDIR}/$$archive ;;
 
 MAINTAINER=	Nick Nauwelaerts <nick@nauwelaerts.net>
 
-PERMIT_PACKAGE_CDROM=	"copyrighted"
-PERMIT_PACKAGE_FTP=	"copyrighted"
-PERMIT_DISTFILES_CDROM=	"copyrighted"
-PERMIT_DISTFILES_FTP=	"copyrighted"
+PERMIT_PACKAGE_CDROM=	copyrighted
+PERMIT_PACKAGE_FTP=	copyrighted
+PERMIT_DISTFILES_CDROM=	copyrighted
+PERMIT_DISTFILES_FTP=	copyrighted
 WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/edu/science/space/
