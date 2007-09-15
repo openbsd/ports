@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/26 14:51:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT=		"gtk+-2 theme switcher"
+COMMENT=		gtk+-2 theme switcher
 
 DISTNAME=		gtk-chtheme-0.3.1
 PKGNAME=		${DISTNAME}p0

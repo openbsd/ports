@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		'wm-dockapp; shows the date, time, and Internet time'
+COMMENT=		wm-dockapp; shows the date, time, and Internet time
 
 DISTNAME=		wmitime-0.3
 PKGNAME=		${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
+COMMENT=	Window manager, continuation of the Bowman NeXTSTEP clone
 
 DISTNAME=	AfterStep-1.8.9
 PKGNAME=	${DISTNAME:L}

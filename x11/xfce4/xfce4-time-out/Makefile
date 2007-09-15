@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/29 07:41:04 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"locks your screen and forces you to take a break"
+COMMENT=	locks your screen and forces you to take a break
 
 V=		0.1.0
 DISTNAME=	xfce4-time-out-plugin-${V}

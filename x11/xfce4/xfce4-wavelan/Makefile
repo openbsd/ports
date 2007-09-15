@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/16 14:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:04:27 merdely Exp $
 
-BROKEN=		"No release available that works with xfce 4.4."
+BROKEN=		No release available that works with xfce 4.4.
 
-COMMENT=	"displays stats from a WLAN interface"
+COMMENT=	displays stats from a WLAN interface
 DISTNAME=	xfce4-wavelan-plugin-0.4.1
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	${DISTNAME:S/-plugin//}p4

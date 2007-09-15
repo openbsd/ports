@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/17 05:10:13 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=	"color terminal emulator with unicode support"
+COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-2.9.0
 PKGNAME=	${DISTNAME}p6
 SHARED_LIBS=	kik	10.0 \

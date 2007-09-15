@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"blow holes through windows"
+COMMENT=	blow holes through windows
 
 DISTNAME=	blast-1.0
 CATEGORIES=	x11

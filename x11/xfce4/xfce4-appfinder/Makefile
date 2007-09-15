@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/28 19:53:07 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"xfce4 application finder"
+COMMENT=	xfce4 application finder
 
 V=		4.4.1
 DISTNAME=	xfce4-appfinder-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=		"dockable program launcher"
+COMMENT=		dockable program launcher
 
 DISTNAME=		mterm-0.4.2b
 CATEGORIES=		x11

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/09 11:35:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:23 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"QNX Photon inspired theme for KDE"
+COMMENT=	QNX Photon inspired theme for KDE
 
 DISTNAME=	qinx-1.0
 PKGNAME=	${DISTNAME}p1

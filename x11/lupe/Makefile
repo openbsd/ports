@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=	"real-time magnifying glass for X11"
+COMMENT=	real-time magnifying glass for X11
 
 DISTNAME=	lupe008c
 PKGNAME=	lupe-0.08

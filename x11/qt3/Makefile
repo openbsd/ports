@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.79 2007/08/05 12:31:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2007/09/15 20:04:23 merdely Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-COMMENT-main=		"C++ X11 GUI toolkit"
-COMMENT-examples=	"examples and tutorial for qt3"
-COMMENT-html=		"off-line html documentation for qt3"
-COMMENT-postgresql=	"PostgresSQL plugin for qt3"
-COMMENT-mysql=		"MySQL plugin for qt3"
-COMMENT-sqlite2=	"sqlite2 plugin for qt3"
+COMMENT-main=		C++ X11 GUI toolkit
+COMMENT-examples=	examples and tutorial for qt3
+COMMENT-html=		off-line html documentation for qt3
+COMMENT-postgresql=	PostgresSQL plugin for qt3
+COMMENT-mysql=		MySQL plugin for qt3
+COMMENT-sqlite2=	sqlite2 plugin for qt3
 
 PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}p1

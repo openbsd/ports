@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2007/05/09 15:48:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.43 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT-main=	"multiple virtual desktop window manager, with icons"
-COMMENT-fvicons="multiple virtual desktop window manager icons"
-COMMENT-fvwm2=	"multiple virtual desktop window manager, without icons"
+COMMENT-main=	multiple virtual desktop window manager, with icons
+COMMENT-fvicons=multiple virtual desktop window manager icons
+COMMENT-fvwm2=	multiple virtual desktop window manager, without icons
 
 VERSION=	2.4.19
 DISTNAME=	fvwm-${VERSION}

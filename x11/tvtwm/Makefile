@@ -1,7 +1,7 @@
 # $FreeBSD: ports/x11-wm/tvtwm/Makefile,v 1.17 1999/08/31 06:53:15 mharo Exp $
-# $OpenBSD: Makefile,v 1.18 2004/12/19 17:27:02 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=	"twm with a virtual desktop"
+COMMENT=	twm with a virtual desktop
 
 DISTNAME=	tvtwm.pl11
 PKGNAME=	tvtwm-0pl11

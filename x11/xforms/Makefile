@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2006/09/18 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"GUI toolkit for X11"
+COMMENT=	GUI toolkit for X11
 
 DISTNAME=	xforms-1.0
 SHARED_LIBS=	flimage	1.0 \

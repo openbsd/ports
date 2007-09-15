@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2006/04/05 04:37:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=		'color vt102 terminal emulator with transparency support'
+COMMENT=		color vt102 terminal emulator with transparency support
 
 DISTNAME=		wterm-6.2.9
 PKGNAME=		${DISTNAME}p0

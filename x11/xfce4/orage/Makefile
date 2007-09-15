@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/28 19:53:06 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"advanced calendar for xfce4"
+COMMENT=	advanced calendar for xfce4
 
 V=		4.5.9.3
 DISTNAME=	orage-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/28 19:53:06 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"extension library for xfce4"
+COMMENT=	extension library for xfce4
 
 V=		0.3.2
 DISTNAME=	exo-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"Gtk bindings for Python"
+COMMENT=	Gtk bindings for Python
 
 # Version numbers between py-gtk and py-gnome are different, but py-gnome
 # overlaps py-gtk. Because of this version number inconsistency, we use

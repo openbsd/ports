@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		'wm-dockapp; displays scrolling text'
+COMMENT=		wm-dockapp; displays scrolling text
 
 DISTNAME=		wminfo-1.51
 PKGNAME=		${DISTNAME}p0

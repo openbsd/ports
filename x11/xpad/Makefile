@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/04 20:19:55 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=	"virtual sticky pad system"
+COMMENT=	virtual sticky pad system
 
 DISTNAME=	xpad-2.12
 PKGNAME=	${DISTNAME}p0

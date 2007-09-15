@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/28 19:53:06 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"widget library for xfce4"
+COMMENT=	widget library for xfce4
 V=		4.4.1
 DISTNAME=	libxfcegui4-${V}
 PKGNAME=	${DISTNAME}p1

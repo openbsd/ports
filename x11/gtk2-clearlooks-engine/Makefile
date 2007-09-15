@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/07 08:45:22 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT=	"GTK+ 2.x engine based on Bluecurve"
+COMMENT=	GTK+ 2.x engine based on Bluecurve
 
 VERSION=	0.6.2
 DISTNAME=	clearlooks-${VERSION}

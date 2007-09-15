@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/02/08 23:39:19 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"interactive X11 proxy with selective X request replacement"
+COMMENT=	interactive X11 proxy with selective X request replacement
 
 DISTNAME=	mxconns-3.1.4
 PKGNAME=	${DISTNAME}p0

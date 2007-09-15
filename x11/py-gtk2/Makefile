@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/09 21:35:52 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 20:04:23 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"GTK+2 Python bindings"
+COMMENT=	GTK+2 Python bindings
 
 V=		2.10.4
 DISTNAME=	pygtk-${V}

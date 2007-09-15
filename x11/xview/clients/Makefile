@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2006/09/18 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:04:29 merdely Exp $
 
-COMMENT=	"OpenLook applications and man pages"
+COMMENT=	OpenLook applications and man pages
 
 PKGNAME=	xview-clients-${XVIEW_VERSION}
 CATEGORIES=	x11

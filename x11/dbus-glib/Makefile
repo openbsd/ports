@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/28 14:58:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"glib bindings for dbus message system"
+COMMENT=	glib bindings for dbus message system
 
 DISTNAME=	dbus-glib-0.73
 PKGNAME=	${DISTNAME}p0

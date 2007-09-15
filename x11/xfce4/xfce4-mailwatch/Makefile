@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/30 10:01:10 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"monitor various types of mailboxes"
+COMMENT=	monitor various types of mailboxes
 
 V=		1.0.1
 DISTNAME=	xfce4-mailwatch-plugin-${V}

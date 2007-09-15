@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/18 16:37:12 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:23 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python bindings for wxWidgets C++ class library"
+COMMENT=	Python bindings for wxWidgets C++ class library
 
 DISTNAME=	wxPython-src-2.6.3.2
 PKGNAME=	${DISTNAME:S/^/py-/:S/-src//}p0

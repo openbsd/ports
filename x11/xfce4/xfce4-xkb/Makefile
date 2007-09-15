@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/17 08:45:02 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"xkb layout switcher panel plugin for xfce4"
+COMMENT=	xkb layout switcher panel plugin for xfce4
 
 V=		0.4.3
 DISTNAME=	xfce4-xkb-plugin-${V}

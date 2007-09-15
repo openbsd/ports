@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.82 2007/08/25 08:03:02 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT-main=		"K Desktop Environment, libraries"
-COMMENT-cups=		"K Desktop Environment, cups support"
+COMMENT-main=		K Desktop Environment, libraries
+COMMENT-cups=		K Desktop Environment, cups support
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.7
 DISTNAME=		kdelibs-${VERSION}

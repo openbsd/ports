@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/19 17:27:05 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"minimal window manager"
+COMMENT=	minimal window manager
 
 DISTNAME=	wmx-6
 CATEGORIES=	x11
@@ -10,10 +10,10 @@ MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		X11 Xext Xpm c m stdc++
 
 USE_X11=	Yes

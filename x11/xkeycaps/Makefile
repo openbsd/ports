@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/17 04:37:30 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"keymap editor for the X window system"
+COMMENT=	keymap editor for the X window system
 
 DISTNAME=	xkeycaps-2.46
 PKGNAME=	${DISTNAME}p0

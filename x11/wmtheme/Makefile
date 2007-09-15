@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/13 13:01:38 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"window manager theme utility"
+COMMENT=		window manager theme utility
 
 DISTNAME=		wmtheme-1.3.2
 CATEGORIES=		x11 

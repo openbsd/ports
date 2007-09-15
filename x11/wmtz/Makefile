@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		'wm-dockapp; displays the time in different time zones'
+COMMENT=		wm-dockapp; displays the time in different time zones
 
 DISTNAME=		wmtz-0.7
 PKGNAME=		${DISTNAME}p0

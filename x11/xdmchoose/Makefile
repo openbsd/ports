@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/10 23:03:53 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"alternative xdm-invoked chooser"
+COMMENT=	alternative xdm-invoked chooser
 
 DISTNAME=	xdmchoose-1.2.1
 PKGNAME=	${DISTNAME}p0

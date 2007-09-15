@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/24 20:12:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=		"minimalist window manager for the X Window System"
+COMMENT=		minimalist window manager for the X Window System
 
 DISTNAME=		evilwm-0.99.25
 CATEGORIES=		x11

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:24 merdely Exp $
 
-COMMENT=	"Windows 95/98/NT like window manager"
+COMMENT=	Windows 95/98/NT like window manager
 
 DISTNAME=	qvwm-1.1.8
 CATEGORIES=     x11

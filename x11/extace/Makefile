@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/05 08:00:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"audio visualization plugin for the X-Window System"
+COMMENT=	audio visualization plugin for the X-Window System
 
 DISTNAME=	extace-1.9.6
 PKGNAME=	${DISTNAME}p1

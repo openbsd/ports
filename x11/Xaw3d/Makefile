@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2005/12/31 17:29:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 20:04:18 merdely Exp $
 
-COMMENT=	"3D Athena Widget set that looks like Motif"
+COMMENT=	3D Athena Widget set that looks like Motif
 
 DISTNAME=	Xaw3d-1.5
 PKGNAME=	${DISTNAME}p0

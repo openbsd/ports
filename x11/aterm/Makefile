@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2006/11/20 20:49:34 bernd Exp $
+# $OpenBSD: Makefile,v 1.41 2007/09/15 20:04:19 merdely Exp $
 
 DISTNAME=	aterm-0.4.2
 PKGNAME=	${DISTNAME}p1
@@ -11,7 +11,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 c util
 
-COMMENT=	"color vt102 terminal emulator with transparency support"
+COMMENT=	color vt102 terminal emulator with transparency support
 HOMEPAGE=	http://aterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aterm/}
 

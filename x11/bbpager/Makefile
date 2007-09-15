@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/06/24 21:53:27 martynas Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"pager for the Blackbox window manager"
+COMMENT=	pager for the Blackbox window manager
 
 DISTNAME=	bbpager-0.3.1
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/24 12:44:53 pyr Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:24 merdely Exp $
 
-COMMENT=	"simple digital clock"
+COMMENT=	simple digital clock
 
 DISTNAME=	sclock-0.6
 CATEGORIES=	x11

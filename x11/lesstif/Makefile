@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.54 2007/05/31 03:06:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2007/09/15 20:04:22 merdely Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
-COMMENT=	"API-compatible clone of the Motif toolkit"
+COMMENT=	API-compatible clone of the Motif toolkit
 
 DISTNAME=	lesstif-0.92.6
 PKGNAME=	${DISTNAME}p0

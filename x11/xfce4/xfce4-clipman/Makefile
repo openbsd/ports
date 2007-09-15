@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/16 14:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"clipboard history plugin for the xfce4 panel"
+COMMENT=	clipboard history plugin for the xfce4 panel
 
 V=		0.8.0
 DISTNAME=	xfce4-clipman-plugin-${V}

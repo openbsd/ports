@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/17 20:13:33 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"widget that looks just like a Mac OS 9 progress bar"
+COMMENT=	widget that looks just like a Mac OS 9 progress bar
 
 DISTNAME=	Tk-ProgressBar-Mac-1.2
 PKGNAME=	p5-${DISTNAME}

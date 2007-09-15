@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/01/08 20:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=	"tk extension"
+COMMENT=	tk extension
 
 DISTNAME=	Tktable2.9
 PKGNAME=	Tktable-2.9

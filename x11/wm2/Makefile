@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/04/27 18:42:18 matthieu Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"stylish window manager"
+COMMENT=		stylish window manager
 
 DISTNAME=		wm2-4
 CATEGORIES=		x11

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/08 16:33:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=	"displays text on your screen"
+COMMENT=	displays text on your screen
 
 DISTNAME=	xosd-2.2.12
 PKGNAME=	${DISTNAME}p2

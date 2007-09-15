@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/03 22:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=		"K Desktop Environment, development"
+COMMENT=		K Desktop Environment, development
 DISTNAME=		kdevelop-${VERSION}
 
 SHARED_LIBS +=	kdevcmakecommon      0.0      # .1.0

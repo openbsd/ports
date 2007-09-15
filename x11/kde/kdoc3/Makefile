@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT= 		"embedded documentation in C++"
+COMMENT= 		embedded documentation in C++
 CATEGORIES=		x11 x11/kde devel
 VERSION=		2.0a54
 DISTNAME=		kdoc-${VERSION}

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:22 merdely Exp $
 # XXX hardcoded apm list
 
-COMMENT=	"window bar for holding application launchers"
+COMMENT=	window bar for holding application launchers
 DISTNAME=	matchbox-panel-0.9.3
 CATEGORIES=	x11
 MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-panel/0.9/

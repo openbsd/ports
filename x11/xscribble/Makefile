@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/22 17:23:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=	"stylus character recognition tool for X11"
+COMMENT=	stylus character recognition tool for X11
 
 DISTNAME=	xscribble
 PKGNAME=	xscribble-20000616p1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/04/26 20:45:30 matthieu Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"Virtual desktop manager for X11"
+COMMENT=		Virtual desktop manager for X11
 
 VERSION=		0.4.0
 DISTNAME=		waimea-${VERSION}

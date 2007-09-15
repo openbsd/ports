@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/02 08:39:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"two-dimensional molecule drawing program"
+COMMENT=	two-dimensional molecule drawing program
 
 DISTNAME=	xdrawchem-1.9.9
 CATEGORIES=	x11 biology

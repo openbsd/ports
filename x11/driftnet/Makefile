@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/30 13:38:50 claudio Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"network sniffer that grabs and displays images"
+COMMENT=	network sniffer that grabs and displays images
 
 DISTNAME=	driftnet-0.1.6
 CATEGORIES=	x11

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/19 17:15:17 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"display X11 color names and colors"
+COMMENT=	display X11 color names and colors
 
 DISTNAME=	xco
 PKGNAME=	xco-1.3

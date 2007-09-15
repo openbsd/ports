@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/03 19:44:04 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=		"K Desktop Environment, pim"
+COMMENT=		K Desktop Environment, pim
 DISTNAME=		kdepim-${VERSION}
 PKGNAME=		${DISTNAME}
 HOMEPAGE=		http://pim.kde.org/

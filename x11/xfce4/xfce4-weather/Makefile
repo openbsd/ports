@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/05/28 19:53:07 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"see temperature/weather conditions on the xfce4 panel"
+COMMENT=	see temperature/weather conditions on the xfce4 panel
 
 V=		0.6.0
 DISTNAME=	xfce4-weather-plugin-${V}

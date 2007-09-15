@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/05/28 19:53:07 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"xfce4 desktop manager"
+COMMENT=	xfce4 desktop manager
 
 V=		4.4.1
 DISTNAME=	xfdesktop-${V}

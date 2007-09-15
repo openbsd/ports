@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2007/07/27 19:17:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/15 20:04:24 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"Ruby extension library for GTK Toolkit"
+COMMENT=		Ruby extension library for GTK Toolkit
 
 VERSION=		0.34
 DISTNAME=		ruby-gtk-${VERSION}

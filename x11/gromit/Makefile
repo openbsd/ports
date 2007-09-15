@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT=		"small tool to make annotations on the screen"
+COMMENT=		small tool to make annotations on the screen
 
 DISTNAME=		gromit-20041213
 PKGNAME=		${DISTNAME}p4

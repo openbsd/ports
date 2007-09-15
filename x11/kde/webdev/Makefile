@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/25 09:49:56 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT= 		"web development tool"
+COMMENT= 		web development tool
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.7
 DISTNAME=		kdewebdev-${VERSION}

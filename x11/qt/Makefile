@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2007/05/22 11:16:00 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2007/09/15 20:04:23 merdely Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-COMMENT-main=	"C++ X11 GUI toolkit"
-COMMENT-examples="examples and tutorial for qt"
-COMMENT-html=	"off-line html documentation for qt"
+COMMENT-main=	C++ X11 GUI toolkit
+COMMENT-examples=examples and tutorial for qt
+COMMENT-html=	off-line html documentation for qt
 
 VERSION=	1.45
 DISTNAME=	qt-${VERSION}
@@ -21,9 +21,9 @@ HOMEPAGE=	http://www.trolltech.com/products/qt/
 BUILD_DEPENDS=	::graphics/jpeg \
 		::graphics/png
 
-PERMIT_PACKAGE_CDROM=	"Restrictive license"
+PERMIT_PACKAGE_CDROM=	Restrictive license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"Restrictive license"
+PERMIT_DISTFILES_CDROM=	Restrictive license
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	QT_VER_MAJ=${LIBqt_VERSION:R} QT_VER_MIN=${LIBqt_VERSION:E} \

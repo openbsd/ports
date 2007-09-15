@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/31 12:28:13 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"simple client plugin for Music Player Daemon"
+COMMENT=	simple client plugin for Music Player Daemon
 
 V=		0.3.2
 DISTNAME=	xfce4-mpc-plugin-${V}

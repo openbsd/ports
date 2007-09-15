@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/14 19:20:10 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=	"collection of additional GTK widgets"
+COMMENT=	collection of additional GTK widgets
 
 DISTNAME=	libsexy-0.1.11
 SHARED_LIBS +=  sexy                 0.0      # .2.4

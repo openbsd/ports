@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"xosd based clock"
+COMMENT=	xosd based clock
 DISTNAME=	osd_clock-0.5
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11

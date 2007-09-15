@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/22 08:58:46 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=		"slit pager for fluxbox window manager"
+COMMENT=		slit pager for fluxbox window manager
 
 DISTNAME=		fluxter-0.1.0
 CATEGORIES=		x11

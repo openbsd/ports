@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.37 2007/04/01 05:37:28 steven Exp $
+# $OpenBSD: Makefile,v 1.38 2007/09/15 20:04:24 merdely Exp $
 
-COMMENT-main=	"color, low memory usage, xterm replacement"
-COMMENT-clock=	"analog clock for X11 w/appoint. reminder and mail notif"
+COMMENT-main=	color, low memory usage, xterm replacement
+COMMENT-clock=	analog clock for X11 w/appoint. reminder and mail notif
 
 VER=		2.7.10
 DISTNAME=	rxvt-${VER}

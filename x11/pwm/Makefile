@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/10/20 15:31:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=		"lightweight window manager with emphasis on usability"
+COMMENT=		lightweight window manager with emphasis on usability
 
 DISTNAME=		pwm-20060517
 PKGNAME=		${DISTNAME}p1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2006/09/18 10:21:48 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT=		"sample theme engines for GTK+ provided with GNOME"
+COMMENT=		sample theme engines for GTK+ provided with GNOME
 
 DISTNAME=		gtk-engines-0.12
 PKGNAME=		${DISTNAME}p2

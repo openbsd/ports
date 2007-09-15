@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2006/11/23 17:29:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.44 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"themed window manager"
+COMMENT=	themed window manager
 
 DISTNAME=	enlightenment-0.16.7.2
 PKGNAME=	${DISTNAME}p2

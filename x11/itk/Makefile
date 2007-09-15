@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/28 17:52:18 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT=	"build mega-widgets using the Itcl object system"
+COMMENT=	build mega-widgets using the Itcl object system
 
 VERSION=	3.3
 DISTNAME=	itk${VERSION}

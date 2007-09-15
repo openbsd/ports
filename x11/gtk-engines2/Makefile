@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/19 09:15:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 20:04:20 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"collection of theme engines for GTK+2"
+COMMENT=		collection of theme engines for GTK+2
 
 V=			2.10.1
 DISTNAME=		gtk-engines-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/17 09:25:13 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"generic monitor for the xfce4 panel"
+COMMENT=	generic monitor for the xfce4 panel
 
 V=		3.1
 DISTNAME=	xfce4-genmon-plugin-${V}

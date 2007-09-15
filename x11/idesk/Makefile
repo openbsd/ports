@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT=		"put clickable icons on the desktop"
+COMMENT=		put clickable icons on the desktop
 
 MAINTAINER=		D. Adam Karim <adam@akarsoft.com>
 

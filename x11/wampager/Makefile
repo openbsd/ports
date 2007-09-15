@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"waimea mini pager"
+COMMENT=		waimea mini pager
 
 VERSION=		0.9.1
 DISTNAME=		wampager-${VERSION}

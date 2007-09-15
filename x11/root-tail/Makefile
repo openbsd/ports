@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/07 21:52:31 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:24 merdely Exp $
 
-COMMENT=	"tails a given file anywhere on your X11 root window"
+COMMENT=	tails a given file anywhere on your X11 root window
 
 DISTNAME=	root-tail-1.2
 CATEGORIES=	x11

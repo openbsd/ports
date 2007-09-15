@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/17 15:18:31 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"afterstep clock with some language extensions"
+COMMENT=	afterstep clock with some language extensions
 
 DISTNAME=	asclock-2.0.12
 CATEGORIES=	x11

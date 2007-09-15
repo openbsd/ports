@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/20 15:37:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"ant hill simulation on X11 root window"
+COMMENT=	ant hill simulation on X11 root window
 
 DISTNAME=	xantfarm
 PKGNAME=        xantfarm-1.16p0

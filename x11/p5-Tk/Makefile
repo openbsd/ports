@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2007/06/02 14:54:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/15 20:04:23 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	"Tk 8.4 bindings for Perl"
-COMMENT-demo=	"demonstrate the features of ptk"
+COMMENT-main=	Tk 8.4 bindings for Perl
+COMMENT-demo=	demonstrate the features of ptk
 
 MODULES=	cpan
 VERSION=	804.027

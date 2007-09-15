@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		'wm-dockapp; clock application with clock, date and fish'
+COMMENT=		wm-dockapp; clock application with clock, date and fish
 
 DISTNAME=		wmfishtime-1.23
 CATEGORIES=     	x11 x11/windowmaker

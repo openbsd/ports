@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 20:04:19 merdely Exp $
 
 DISTNAME=	aewm-1.3.0
 PKGNAME=	${DISTNAME}p5
@@ -14,7 +14,7 @@ WANTLIB=		X11 Xaw Xext Xt Xrender c z glitz png \
 			gmodule-2.0 gobject-2.0 pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 cairo
 
-COMMENT=	"minimalistic window manager for X11"
+COMMENT=	minimalistic window manager for X11
 HOMEPAGE=	http://www.red-bean.com/~decklin/aewm/
 MASTER_SITES=	${HOMEPAGE}
 

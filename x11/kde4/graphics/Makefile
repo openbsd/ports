@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/02 20:27:52 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=		"K Desktop Environment, graphics"
+COMMENT=		K Desktop Environment, graphics
 DISTNAME=		kdegraphics-${VERSION}
 PKGNAME=		${DISTNAME}p1
 

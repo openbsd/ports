@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/25 05:28:12 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"framework which makes building complex GUIs easy"
+COMMENT=	framework which makes building complex GUIs easy
 
 MODULES=	cpan
 DISTNAME=	Gtk2-Ex-FormFactory-0.65

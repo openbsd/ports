@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/09 19:10:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"drop-down terminal emulator"
+COMMENT=		drop-down terminal emulator
 
 DISTNAME=		tilda-0.9.4
 CATEGORIES=		x11

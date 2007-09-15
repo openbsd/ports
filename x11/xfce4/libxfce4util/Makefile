@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/16 14:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"basic utility library for xfce4"
+COMMENT=	basic utility library for xfce4
 V=		4.4.1
 DISTNAME=	libxfce4util-${V}
 SHARED_LIBS +=  xfce4util            1.10     # .4.2

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2006/11/24 17:28:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT=	"OpenGL widget for GTK+ GUI toolkit"
+COMMENT=	OpenGL widget for GTK+ GUI toolkit
 
 DISTNAME=	gtkglarea-1.2.2
 PKGNAME=	${DISTNAME}p3

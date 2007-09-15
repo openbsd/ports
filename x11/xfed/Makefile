@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/17 15:03:17 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"X11 fonts (.bdf files) editor"
+COMMENT=	X11 fonts (.bdf files) editor
 
 DISTNAME=	xfed
 PKGNAME=	xfed-1.0

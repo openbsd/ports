@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/02 21:21:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"VNC server for real X displays"
+COMMENT=	VNC server for real X displays
 
 VERSION=	0.6.2
 DISTNAME=	x11vnc-${VERSION}

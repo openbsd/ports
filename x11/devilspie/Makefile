@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"window manipulation tool"
+COMMENT=	window manipulation tool
 
 DISTNAME=	devilspie-0.19
 PKGNAME=	${DISTNAME}p0

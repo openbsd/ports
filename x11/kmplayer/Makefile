@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/11 18:38:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:22 merdely Exp $
 
 
-BROKEN="Need to resolve various issues"
-COMMENT='front-end/embeddable kpart for mplayer'
+BROKEN=		Need to resolve various issues
+COMMENT=	front-end/embeddable kpart for mplayer
 CATEGORIES=	x11	x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2

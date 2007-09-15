@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/15 07:25:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"lightweight GTK2-based systray"
+COMMENT=		lightweight GTK2-based systray
 
 DISTNAME=		trayer-1.0
 CATEGORIES=		x11

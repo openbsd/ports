@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/03 20:56:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:24 merdely Exp $
 
-COMMENT=	"X Render extension test suite"
+COMMENT=	X Render extension test suite
 
 DISTNAME=	rendercheck-1.2
 PKGNAME=	${DISTNAME}p0

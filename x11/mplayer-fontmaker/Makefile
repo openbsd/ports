@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/04/01 17:16:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:04:23 merdely Exp $
 
 # sync with mplayer archs due to dependency
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64 arm
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64 arm
 DISTNAME=mplayer-fontmaker-0.90
 PKGNAME=${DISTNAME}p0
 CATEGORIES=x11
-COMMENT='subtitle fonts generator for mplayer'
+COMMENT=subtitle fonts generator for mplayer
 
 MODULES=	converters/libiconv
 BUILD_DEPENDS=	::x11/mplayer:configure
@@ -43,7 +43,7 @@ do-install:
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"Patented stuff"
+PERMIT_DISTFILES_CDROM=	Patented stuff
 WANTLIB=		c freetype m z
 
 .include <bsd.port.mk>

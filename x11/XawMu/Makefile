@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/01/12 01:05:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=		"modern look Athena widgets"
+COMMENT=		modern look Athena widgets
 
 VERSION=		1.5
 DISTNAME=		XawM-${VERSION}u

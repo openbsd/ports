@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/16 14:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:04:27 merdely Exp $
 PKG_ARCH=	*
 
-COMMENT=	"window decoration themes for xfwm4"
+COMMENT=	window decoration themes for xfwm4
 V=		4.4.1
 DISTNAME=	xfwm4-themes-${V}
 

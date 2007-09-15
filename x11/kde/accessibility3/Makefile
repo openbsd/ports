@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2007/05/25 09:49:53 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT= 		"X11 toolkit, accessibility aids"
+COMMENT= 		X11 toolkit, accessibility aids
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.7
 DISTNAME=		kdeaccessibility-${VERSION}

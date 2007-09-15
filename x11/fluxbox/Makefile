@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2007/04/01 06:08:25 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=		"window manager based on the original Blackbox code"
+COMMENT=		window manager based on the original Blackbox code
 
 VERSION=		0.9.15.1
 DISTNAME=		fluxbox-${VERSION}

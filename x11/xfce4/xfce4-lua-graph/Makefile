@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.8 2007/05/16 14:22:40 steven Exp $
+#	$OpenBSD: Makefile,v 1.9 2007/09/15 20:04:27 merdely Exp $
 
-BROKEN=		"No release available that works with xfce 4.4."
+BROKEN=		No release available that works with xfce 4.4.
 
-COMMENT=	"lua driven plugin for the xfce4 panel"
+COMMENT=	lua driven plugin for the xfce4 panel
 DISTNAME=	xfce4-lua-graph-plugin-0.1
 PKGNAME=	${DISTNAME:S/-plugin//}p1
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=xfce-goodies/}

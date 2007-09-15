@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/08/05 13:43:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"X keygrabber for blackbox"
+COMMENT=	X keygrabber for blackbox
 
 DISTNAME=	bbkeys-0.9.0
 PKGNAME=	${DISTNAME}p1

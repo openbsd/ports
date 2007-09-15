@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/09 11:35:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:24 merdely Exp $
 
-COMMENT=	"terminal application that embeds Konsole for KDE"
+COMMENT=	terminal application that embeds Konsole for KDE
 
 DISTNAME=	quadkonsole-2.0
 PKGNAME=	${DISTNAME}p2

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/08/07 17:02:59 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=	"OCaml interface to GTK+"
+COMMENT=	OCaml interface to GTK+
 
 DISTNAME=	lablgtk-1.2.7
 PKGNAME=	${DISTNAME}p4

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/17 15:03:18 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 20:04:27 merdely Exp $
 # ATTENTION: It does not work in > 256 color modes, please fix
 # it if you can.
 
-COMMENT=	".bdf, .xbm, .xpm mouse cursor editor"
+COMMENT=	.bdf, .xbm, .xpm mouse cursor editor
 
 DISTNAME=       xfedor-5.0.1
 CATEGORIES=	x11

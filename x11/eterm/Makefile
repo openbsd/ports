@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2006/08/04 00:10:42 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"color X11 terminal emulator with transparency support"
-COMMENT-kanji=	"color japanese terminal emulator with transparency support"
+COMMENT=	color X11 terminal emulator with transparency support
+COMMENT-kanji=	color japanese terminal emulator with transparency support
 PKGNAME=	eterm-0.8.10p0
 FULLPKGNAME-kanji=	ja-eterm-0.8.10p0
 DISTNAME=	Eterm-0.8.10
@@ -16,9 +16,9 @@ HOMEPAGE=	http://eterm.sourceforge.net/
 LIB_DEPENDS=	Imlib.>=19::graphics/imlib
 
 # GPL with some custom licenses
-PERMIT_PACKAGE_CDROM=	"may not sell"
+PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"may not sell"
+PERMIT_DISTFILES_CDROM=	may not sell
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext c jpeg m png tiff ungif util z
 

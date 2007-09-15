@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/09/18 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"X11 File Manager"
+COMMENT=	X11 File Manager
 
 DISTNAME=	xfm-1.4.3
 PKGNAME=	${DISTNAME}p0

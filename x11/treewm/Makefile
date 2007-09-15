@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/19 17:27:02 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"tree window manager"
+COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
 CATEGORIES=		x11
 

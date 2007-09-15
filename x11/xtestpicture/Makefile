@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/17 15:03:18 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=	"full-screen image to adjust your monitor"
+COMMENT=	full-screen image to adjust your monitor
 
 DISTNAME=	xtestpicture-1.2
 CATEGORIES=	x11

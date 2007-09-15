@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/28 07:04:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=	"on-screen virtual keyboard"
+COMMENT=	on-screen virtual keyboard
 DISTNAME=	matchbox-keyboard-0.1
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/06/05 08:08:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"multi-tabbed terminal emulator"
+COMMENT=	multi-tabbed terminal emulator
 
 DISTNAME=	mrxvt-0.5.2 
 PKGNAME=	${DISTNAME}p2

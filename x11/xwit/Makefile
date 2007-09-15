@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/17 15:03:19 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:04:29 merdely Exp $
 
-COMMENT=	"X11 window interface tool"
+COMMENT=	X11 window interface tool
 
 DISTNAME=	xwit-3.4
 CATEGORIES=	x11

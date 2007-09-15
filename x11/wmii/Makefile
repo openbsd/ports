@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/17 09:06:03 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=	"dynamic window manager"
+COMMENT=	dynamic window manager
 
 DISTNAME=	wmii-3.1
 PKGNAME=	${DISTNAME}p2

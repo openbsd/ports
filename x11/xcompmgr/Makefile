@@ -1,6 +1,6 @@
-#	$OpenBSD: Makefile,v 1.5 2007/05/06 07:17:51 matthieu Exp $
+#	$OpenBSD: Makefile,v 1.6 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"Sample X Compositing Manager"
+COMMENT=	Sample X Compositing Manager
 
 DISTNAME=	xcompmgr-1.1.1
 PKGNAME=	${DISTNAME}p2

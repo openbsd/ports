@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/24 21:53:27 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT=	"GTK2 based xmessage clone"
+COMMENT=	GTK2 based xmessage clone
 
 DISTNAME=	gxmessage-2.6.2
 PKGNAME=	${DISTNAME}p1

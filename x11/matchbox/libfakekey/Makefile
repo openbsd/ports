@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=	"library for converting characters to X key-presses"
+COMMENT=	library for converting characters to X key-presses
 DISTNAME=	libfakekey-0.1
 PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	fakekey 0.1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/04/27 18:46:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=		"message system"
+COMMENT=		message system
 
 DISTNAME=		dbus-1.0.2
 PKGNAME=		${DISTNAME}p1

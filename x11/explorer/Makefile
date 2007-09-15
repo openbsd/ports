@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2006/10/20 15:32:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"file manager with same look and feel as Windows95(tm)"
+COMMENT=	file manager with same look and feel as Windows95(tm)
 
 DISTNAME=	explorer-0.72
 CATEGORIES=	x11

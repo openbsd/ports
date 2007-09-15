@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/01/14 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"cross-platform high-level application framework"
+COMMENT=	cross-platform high-level application framework
 
 DISTNAME=	paragui-0.7.2
 PKGNAME=	${DISTNAME}p1

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2004/07/24 12:47:15 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:21 merdely Exp $
 
-BROKEN=			"evaluate whether this still makes sense"
-COMMENT=		"X11 toolkit, libraries documentation"
+BROKEN=			evaluate whether this still makes sense
+COMMENT=		X11 toolkit, libraries documentation
 CATEGORIES=		x11 x11/kde devel
 VERSION=		3.2.3
 PKGNAME=		kdelibs-doc-${VERSION}

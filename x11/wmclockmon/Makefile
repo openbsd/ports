@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"Window Maker dock.app clock"
+COMMENT=		Window Maker dock.app clock
 
 DISTNAME=		wmclockmon-0.8.0
 CATEGORIES=		x11 x11/windowmaker

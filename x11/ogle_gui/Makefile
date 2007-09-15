@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/01 19:59:40 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 20:04:23 merdely Exp $
 
 CATEGORIES=	x11
 
-COMMENT=	"GUI for ogle"
+COMMENT=	GUI for ogle
 DISTNAME=	ogle_gui-0.9.2
 PKGNAME=	${DISTNAME}p4
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/

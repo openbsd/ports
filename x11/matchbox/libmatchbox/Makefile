@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:36 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=	"matchbox base library"
+COMMENT=	matchbox base library
 DISTNAME=	libmatchbox-1.8
 SHARED_LIBS=	mb 1.7
 MODGNU_SHARED_LIBS=	mb ''

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/17 15:03:18 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=	"simple logout button"
+COMMENT=	simple logout button
 
 DISTNAME=	xlogout-1.1
 CATEGORIES=	x11

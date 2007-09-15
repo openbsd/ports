@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/01 20:03:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT=	"3D earth viewer with GPS support"
+COMMENT=	3D earth viewer with GPS support
 
 DISTNAME=	gaia-0.1.2
 PKGNAME=	${DISTNAME}p1

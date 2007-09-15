@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/28 16:15:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:24 merdely Exp $
 
-COMMENT=	'organizer for book/dvd/music collections'
+COMMENT=	organizer for book/dvd/music collections
 CATEGORIES=	databases x11
 
 HOMEPAGE=	http://www.periapsis.org/tellico/

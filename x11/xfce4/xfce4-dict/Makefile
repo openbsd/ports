@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/17 10:50:13 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"query a dictionary server from the xfce4 panel"
+COMMENT=	query a dictionary server from the xfce4 panel
 
 V=		0.2.1
 DISTNAME=	xfce4-dict-plugin-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/09/18 10:21:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT=		"switch GTK+ themes quickly"
+COMMENT=		switch GTK+ themes quickly
 
 DISTNAME=		gtk-theme-switch-1.0.1
 CATEGORIES=		x11 graphics

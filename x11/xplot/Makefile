@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/01 08:01:39 markus Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=	"fast tool to graph and visualize lots of data"
+COMMENT=	fast tool to graph and visualize lots of data
 
 DISTNAME=	xplot-0.90.7.1
 CATEGORIES=	net x11

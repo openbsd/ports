@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/19 09:13:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT=		"high-color icon theme shell for GNOME and KDE"
+COMMENT=		high-color icon theme shell for GNOME and KDE
 
 DISTNAME=		hicolor-icon-theme-0.10
 PKGNAME=		${DISTNAME}p0

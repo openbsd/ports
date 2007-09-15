@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.72 2007/08/25 09:27:12 mglocker Exp $
+# $OpenBSD: Makefile,v 1.73 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT-main=		'window manager that emulates NEXTSTEP(tm)'
-COMMENT-lang=		"language subpackage for Window Maker"
+COMMENT-main=		window manager that emulates NEXTSTEP(tm)
+COMMENT-lang=		language subpackage for Window Maker
 
 V=			0.92.0
 DISTNAME=		WindowMaker-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/19 20:18:55 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"qt-based window manager"
+COMMENT=	qt-based window manager
 
 DISTNAME=	qlwm-1.7
 CATEGORIES=	x11

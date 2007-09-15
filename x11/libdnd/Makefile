@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/01/14 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=		'drag and drop library'
+COMMENT=		drag and drop library
 
 DISTNAME=		dnd.1.1
 PKGNAME=		libdnd-1.1p1

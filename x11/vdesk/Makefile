@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/01 19:20:23 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"Virtual desktop manager"
+COMMENT=		Virtual desktop manager
 DISTNAME=		vdesk-1.2
 PKGNAME=		${DISTNAME}p0
 

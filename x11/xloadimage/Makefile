@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2006/09/18 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=	"graphics file viewer for X11"
+COMMENT=	graphics file viewer for X11
 
 VERSION=	4.1
 REVISION=	16	# Debian

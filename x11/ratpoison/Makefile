@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/05/22 17:12:00 martynas Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 20:04:24 merdely Exp $
 
-COMMENT=	"minimal wm based on GNU screen"
+COMMENT=	minimal wm based on GNU screen
 
 DISTNAME=	ratpoison-1.4.1
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/01 22:18:41 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=		"tiling window manager"
+COMMENT=		tiling window manager
 
 DISTNAME=		xmonad-0.2
 CATEGORIES=		x11

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2006/02/10 10:21:14 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=	"X11 trippy color-cycling toy"
+COMMENT=	X11 trippy color-cycling toy
 
 DISTNAME=	xtacy114
 PKGNAME=	xtacy-1.14p0

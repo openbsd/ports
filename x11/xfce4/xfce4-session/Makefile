@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/05/28 19:53:07 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"xfce4 session manager"
+COMMENT=	xfce4 session manager
 
 V=		4.4.1
 DISTNAME=	xfce4-session-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT=	"GTK Extra Widget Set"
+COMMENT=	GTK Extra Widget Set
 
 DISTNAME=	gtk+extra-0.99.17
 PKGNAME=	${DISTNAME}p2

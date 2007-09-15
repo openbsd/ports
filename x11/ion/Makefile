@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.48 2007/04/30 16:09:48 pedro Exp $
+# $OpenBSD: Makefile,v 1.49 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT=	"light, keyboard friendly window manager"
+COMMENT=	light, keyboard friendly window manager
 
 V=		20070318
 DISTNAME=	ion-3ds-${V}

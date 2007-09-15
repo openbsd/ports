@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/16 12:22:35 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"X11 counterpart of curses-based misc/dialog"
+COMMENT=	X11 counterpart of curses-based misc/dialog
 
 DISTNAME=	Xdialog-2.3.1
 CATEGORIES=	x11 misc

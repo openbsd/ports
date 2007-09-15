@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/17 15:03:18 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:04:28 merdely Exp $
 
-COMMENT=	"dynamically change some settings of an xterm"
+COMMENT=	dynamically change some settings of an xterm
 
 DISTNAME=	xtermset-0.5.2
 PKGNAME=	${DISTNAME}p0

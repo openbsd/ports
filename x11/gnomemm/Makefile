@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2006/11/26 10:53:32 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT-main=		"C++ interface for the GNOME libraries"
-COMMENT-docs=		"C++ interface for the GNOME libraries documentation"
+COMMENT-main=		C++ interface for the GNOME libraries
+COMMENT-docs=		C++ interface for the GNOME libraries documentation
 
 VERSION=		1.2.4
 DISTNAME=		gnomemm-${VERSION}

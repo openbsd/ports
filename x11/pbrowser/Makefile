@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/01/04 20:19:55 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=		"graphical ports system frontend"
+COMMENT=		graphical ports system frontend
 
 DISTNAME=	 	pb-browser-0.4	
 PKGNAME=	 	${DISTNAME}p3

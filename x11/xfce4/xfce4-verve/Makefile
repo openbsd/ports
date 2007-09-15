@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/16 14:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT=	"command line plugin for the xfce4 panel"
+COMMENT=	command line plugin for the xfce4 panel
 
 V=		0.3.5
 DISTNAME=	verve-plugin-${V}

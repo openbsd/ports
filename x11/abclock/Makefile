@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/13 13:01:37 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"analogue bitmap clock"
+COMMENT=	analogue bitmap clock
 
 DISTNAME=	abclock-1.0d
 CATEGORIES=	x11

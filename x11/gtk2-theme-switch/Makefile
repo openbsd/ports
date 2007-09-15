@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT=		"switch GTK+2 themes quickly"
+COMMENT=		switch GTK+2 themes quickly
 
 DISTNAME=		gtk-theme-switch-2.0.0rc2
 PKGNAME=		${DISTNAME:S/gtk/gtk2/}p3

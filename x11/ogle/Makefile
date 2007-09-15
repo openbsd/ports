@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2006/09/18 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2007/09/15 20:04:23 merdely Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
 
 CATEGORIES=	x11
 
-COMMENT=	"DVD player"
+COMMENT=	DVD player
 DISTNAME=	ogle-0.9.2
 PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	dvdcontrol	11.0 \

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/27 11:11:40 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=		"K Desktop Environment, pimlibs"
+COMMENT=		K Desktop Environment, pimlibs
 DISTNAME=		kdepimlibs-${VERSION}
 PKGNAME=		${DISTNAME}p0
 

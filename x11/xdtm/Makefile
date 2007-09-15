@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/19 17:15:18 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=		"Desktop Manager: a graphical shell for X11"
+COMMENT=		Desktop Manager: a graphical shell for X11
 
 DISTNAME=		xdtm-2.5.8
 CATEGORIES=		x11

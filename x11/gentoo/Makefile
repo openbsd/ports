@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT=		"GTK+ Graphical filemanager"
+COMMENT=		GTK+ Graphical filemanager
 
 DISTNAME=		gentoo-0.11.56
 PKGNAME=		${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/27 18:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=		"K Desktop Environment, games"
+COMMENT=		K Desktop Environment, games
 DISTNAME=		kdegames-${VERSION}
 PKGNAME=		${DISTNAME}p0
 

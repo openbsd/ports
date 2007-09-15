@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/10/19 07:35:02 wilfried Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		'wm-dockapp; application launching program'
+COMMENT=		wm-dockapp; application launching program
 
 DISTNAME=		wmbutton-0.6.1
 CATEGORIES=		x11 x11/windowmaker

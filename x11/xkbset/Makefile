@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/24 21:53:27 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:27 merdely Exp $
 
-COMMENT-main=	"X11 keyboard accessibility tool"
-COMMENT-gui=	"GUI for xkbset"
+COMMENT-main=	X11 keyboard accessibility tool
+COMMENT-gui=	GUI for xkbset
 
 DISTNAME=	xkbset-0.5
 PKGNAME-main=	xkbset-0.5p1

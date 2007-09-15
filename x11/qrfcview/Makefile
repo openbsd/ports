@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/05 14:43:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"viewer for IETF RFCs"
+COMMENT=	viewer for IETF RFCs
 
 DISTNAME=	qrfcview-0.62
 PKGNAME=	${DISTNAME}p2

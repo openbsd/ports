@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.64 2007/04/08 15:31:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.65 2007/09/15 20:04:20 merdely Exp $
 
-COMMENT=	"General Toolkit for X11 GUI"
+COMMENT=	General Toolkit for X11 GUI
 
 DISTNAME=	gtk+-1.2.10
 PKGNAME=	${DISTNAME}p6

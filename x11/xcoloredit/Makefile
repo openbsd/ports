@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/19 17:15:17 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"find color values by graphical color mixing"
+COMMENT=	find color values by graphical color mixing
 
 DISTNAME=	xcoloredit
 PKGNAME=	xcoloredit-1.2

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/04/01 21:32:42 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT= 		"kde front end for ogle"
+COMMENT= 		kde front end for ogle
 CATEGORIES=		x11 x11/kde 
 VERSION=		3.0
 DISTNAME=		okle-0.3

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:29 merdely Exp $
 
-COMMENT=	"configurable analog clock for X11"
+COMMENT=	configurable analog clock for X11
 DISTNAME=	xtu-1.3
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 sysutils

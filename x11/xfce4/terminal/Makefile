@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/06 18:44:52 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"lightweight vte-based terminal for xfce4"
+COMMENT=	lightweight vte-based terminal for xfce4
 
 V=		0.2.6
 DISTNAME=	Terminal-${V}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2007/08/08 22:49:33 steven Exp $
+# $OpenBSD: Makefile,v 1.46 2007/09/15 20:04:21 merdely Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
-BROKEN=			"gcc spins on x_20.cpp"
+BROKEN=			gcc spins on x_20.cpp
 .endif
 
-COMMENT= 		"K Desktop Environment, extra language support"
+COMMENT= 		K Desktop Environment, extra language support
 CATEGORIES=		x11 x11/kde devel
 VERSION=		3.5.7
 DISTNAME=		kdebindings-${VERSION}

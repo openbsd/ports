@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/01 20:17:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=		"Type1 font installation helper"
+COMMENT=		Type1 font installation helper
 DISTNAME=		type1inst-0.6.1
 CATEGORIES=		x11 print
 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2005/10/05 09:51:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 20:04:25 merdely Exp $
 # $FreeBSD: Makefile,v 1.9 1998/03/07 23:26:23 jmz Exp $
 
-COMMENT=	"display files containing g3 and/or g4 coded fax pages"
+COMMENT=	display files containing g3 and/or g4 coded fax pages
 
 DISTNAME=	viewfax-2.6
 CATEGORIES=	x11

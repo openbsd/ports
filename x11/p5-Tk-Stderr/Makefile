@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/23 18:50:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"capture standard error output, display in separate window"
+COMMENT=	capture standard error output, display in separate window
 
 DISTNAME=	Tk-Stderr-1.2
 PKGNAME=	p5-${DISTNAME}

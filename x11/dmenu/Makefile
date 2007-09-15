@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/03 16:44:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=		"dynamic menu for X11"
+COMMENT=		dynamic menu for X11
 DISTNAME=		dmenu-3.2
 
 CATEGORIES=		x11

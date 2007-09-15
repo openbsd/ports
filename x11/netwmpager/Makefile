@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/26 03:31:59 pyr Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"small EWMH compliant pager"
+COMMENT=	small EWMH compliant pager
 
 DISTNAME=	netwmpager-1.11
 CATEGORIES=	x11

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/19 17:15:17 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 20:04:26 merdely Exp $
 
-COMMENT=	"tool for managing X11 cut-buffers"
+COMMENT=	tool for managing X11 cut-buffers
 
 DISTNAME=	xcb-2.4
 CATEGORIES=	x11

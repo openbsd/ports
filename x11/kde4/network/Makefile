@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/02 22:07:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=		"K Desktop Environment, network"
+COMMENT=		K Desktop Environment, network
 DISTNAME=		kdenetwork-${VERSION}
 PKGNAME=		${DISTNAME}p1
 

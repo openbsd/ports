@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/03 23:07:24 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=		"K Desktop Environment, web development"
+COMMENT=		K Desktop Environment, web development
 DISTNAME=		kdewebdev-${VERSION}
 
 LIB_DEPENDS+=	kdecore.>=8,kde3support,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,ktexteditor,kutils,kwalletclient,phononcore::x11/kde4/libs

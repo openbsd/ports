@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/02 13:18:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=		"K Desktop Environment, edu"
+COMMENT=		K Desktop Environment, edu
 DISTNAME=		kdeedu-${VERSION}
 PKGNAME=		${DISTNAME}p1
 

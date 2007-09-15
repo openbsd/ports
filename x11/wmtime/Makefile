@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/07/20 04:43:28 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:25 merdely Exp $
 
-COMMENT=	"time/date applet for WindowMaker"
+COMMENT=	time/date applet for WindowMaker
 
 DISTNAME=	wmtime-1.0b2
 PKGNAME=	${DISTNAME}p0

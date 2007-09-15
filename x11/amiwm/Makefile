@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/14 00:35:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"Amiga Workbench lookalike window manager"
+COMMENT=	Amiga Workbench lookalike window manager
 
 VERSION=	0.20pl48
 DISTNAME=	amiwm${VERSION}

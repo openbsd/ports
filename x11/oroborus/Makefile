@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/17 15:18:34 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:23 merdely Exp $
 
-COMMENT=	"minimalistic X11 window manager"
+COMMENT=	minimalistic X11 window manager
 
 CATEGORIES=	x11
 DISTNAME=	oroborus-2.0.12

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/05/09 11:35:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 20:04:22 merdely Exp $
 
-COMMENT=	"graphical disk usage utility for KDE"
+COMMENT=	graphical disk usage utility for KDE
 
 DISTNAME=	kdirstat-2.4.0
 PKGNAME=	${DISTNAME}p1

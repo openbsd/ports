@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/17 15:18:31 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=		'wm-dockapp; Time/Date applet'
+COMMENT=		wm-dockapp; Time/Date applet
 
 DISTNAME=		astime-2.8
 CATEGORIES=		x11 x11/windowmaker

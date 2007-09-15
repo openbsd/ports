@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.50 2007/08/10 16:07:28 kurt Exp $
+# $OpenBSD: Makefile,v 1.51 2007/09/15 20:04:21 merdely Exp $
 
-COMMENT= 		"K Desktop Environment, utilities"
+COMMENT= 		K Desktop Environment, utilities
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.7
 DISTNAME=		kdeutils-${VERSION}

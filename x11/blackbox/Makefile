@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2007/04/08 16:33:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.44 2007/09/15 20:04:19 merdely Exp $
 
-COMMENT=	"small & pretty window manager for 8 and more bits displays"
+COMMENT=	small & pretty window manager for 8 and more bits displays
 
 DISTNAME=		blackbox-0.70.1
 PKGNAME=		${DISTNAME}p1
