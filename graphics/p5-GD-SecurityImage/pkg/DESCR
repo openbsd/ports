@@ -1,0 +1,9 @@
+The (so called) "Security Images" are so popular.  Most internet
+software use these in their registration screens to block robot programs
+(which may register tons of fake member accounts).  Security images are
+basicaly, graphical CAPTCHAs (Completely Automated Public Turing Test to
+Tell Computers and Humans Apart).  This module gives you a basic
+interface to create such an image.  The final output is the actual
+graphic data, the mime type of the graphic and the created random
+string.  The module also has some "styles" that are used to create the
+background (or foreground) of the image.

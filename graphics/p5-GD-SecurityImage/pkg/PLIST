@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 16:40:52 simon Exp $
+${P5SITE}/GD/
+${P5SITE}/GD/SecurityImage/
+${P5SITE}/GD/SecurityImage.pm
+${P5SITE}/GD/SecurityImage/GD.pm
+${P5SITE}/GD/SecurityImage/Magick.pm
+${P5SITE}/GD/SecurityImage/Styles.pm
+@man man/man3p/GD::SecurityImage.3p
+@man man/man3p/GD::SecurityImage::GD.3p
+@man man/man3p/GD::SecurityImage::Magick.3p
+@man man/man3p/GD::SecurityImage::Styles.3p
+share/examples/p5-GD-SecurityImage/
+share/examples/p5-GD-SecurityImage/demo.pl
