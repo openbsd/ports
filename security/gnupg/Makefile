@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.67 2007/05/15 15:09:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.68 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"GNU privacy guard - a free PGP replacement"
+COMMENT=	GNU privacy guard - a free PGP replacement
 
 DISTNAME=	gnupg-1.4.7
 PKGNAME=	${DISTNAME}p0
@@ -48,8 +48,8 @@ FLAVORS=	idea card ldap
 FLAVOR?=
 
 .if ${FLAVOR:L:Midea}
-PERMIT_PACKAGE_CDROM=	"a patented algorithm"
-PERMIT_DISTFILES_CDROM=	"a patented algorithm"
+PERMIT_PACKAGE_CDROM=	a patented algorithm
+PERMIT_DISTFILES_CDROM=	a patented algorithm
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} idea.c.gz:0
 
 post-extract:

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:29:59 merdely Exp $
 
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
-COMMENT=	"implements DSA using OpenSSL"
+COMMENT=	implements DSA using OpenSSL
 DISTNAME=	Crypt-OpenSSL-DSA-0.13
 PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	security

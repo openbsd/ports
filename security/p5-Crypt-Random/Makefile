@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"cryptographically secure random number generator"
+COMMENT=	cryptographically secure random number generator
 
 MODULES=	cpan
 DISTNAME=	Crypt-Random-1.25

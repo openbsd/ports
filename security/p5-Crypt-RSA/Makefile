@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"RSA public-key cryptosystem"
+COMMENT=	RSA public-key cryptosystem
 
 MODULES=	cpan
 DISTNAME=	Crypt-RSA-1.57

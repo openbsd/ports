@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2004/02/01 20:37:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"stealthy webserver vulnerability scanner"
+COMMENT=	stealthy webserver vulnerability scanner
 
 DISTNAME=	whisker-2.1
 CATEGORIES=	security

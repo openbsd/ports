@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/08/05 12:34:33 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"Lua binding for the OpenSSL crypto libraries"
+COMMENT=	Lua binding for the OpenSSL crypto libraries
 SHARED_ONLY=	Yes
 
 DISTNAME=	luacrypto-0.1.1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/04/03 13:55:59 aanriot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"libraries for Nessus"
+COMMENT=	libraries for Nessus
 DISTNAME=	nessus-libraries-${V}
 PKGNAME=	${DISTNAME}p0
 

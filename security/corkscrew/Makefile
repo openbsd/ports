@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=		"HTTP tunneling utility for SSH"
+COMMENT=		HTTP tunneling utility for SSH
 
 DISTNAME=		corkscrew-2.0
 CATEGORIES=    		security net

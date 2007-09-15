@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"steganography detection tool"
+COMMENT=	steganography detection tool
 DISTNAME=	stegdetect-0.5
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security graphics

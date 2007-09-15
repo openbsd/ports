@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2005/05/24 04:48:59 mjc Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"portable, encrypted, compressed tunnel"
+COMMENT=	portable, encrypted, compressed tunnel
 
 VERSION=	2.4.1
 DISTNAME=	zebedee-${VERSION}

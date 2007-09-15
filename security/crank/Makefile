@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/19 12:30:56 aanriot Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"classical cipher cryptanalysis toolkit"
+COMMENT=	classical cipher cryptanalysis toolkit
 
 DISTNAME=		crank-0.2.1
 PKGNAME=		${DISTNAME}p1

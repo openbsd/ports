@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2006/06/03 09:45:27 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"Python module for GnuPG interface"
+COMMENT=	Python module for GnuPG interface
 
 VERSION=	0.3.2
 DISTNAME=	GnuPGInterface-${VERSION}

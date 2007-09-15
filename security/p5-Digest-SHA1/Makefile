@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 23:30:00 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"module to calculate SHA1 digests"
+COMMENT=	module to calculate SHA1 digests
 
 MODULES=	cpan
 DISTNAME=	Digest-SHA1-2.11

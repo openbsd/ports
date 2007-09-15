@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2005/09/05 12:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"system secureness checker"
+COMMENT=	system secureness checker
 
 DISTNAME=	cops.1.04
 PKGNAME=	cops-1.04p0

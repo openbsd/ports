@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"drivers for several smart card readers"
+COMMENT=	drivers for several smart card readers
 
 DISTNAME=	openct-0.6.6
 PKGNAME=	${DISTNAME}p3

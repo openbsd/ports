@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"module to bubble-babble fingerprints"
+COMMENT=	module to bubble-babble fingerprints
 
 MODULES=	cpan
 DISTNAME=	Digest-BubbleBabble-0.01

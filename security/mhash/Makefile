@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2005/12/25 11:15:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"strong hash library"
+COMMENT=	strong hash library
 
 DISTNAME=	mhash-0.9.1
 PKGNAME=	${DISTNAME}p1

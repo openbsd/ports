@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/16 23:23:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=		"voice over misconfigured internet telephones"
+COMMENT=		voice over misconfigured internet telephones
 
 DISTNAME=		vomit-0.2
 PKGNAME=		${DISTNAME}p1

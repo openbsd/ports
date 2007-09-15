@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/02/15 06:34:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"processes logfiles and perform certain actions"
+COMMENT=	processes logfiles and perform certain actions
 
 DISTNAME=	logsurfer-1.5b
 PKGNAME=	${DISTNAME}p0

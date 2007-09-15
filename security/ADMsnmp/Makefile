@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 23:29:57 merdely Exp $
 
-COMMENT=		"SNMP audit scanner"
+COMMENT=		SNMP audit scanner
 
 DISTNAME=       	ADMsnmp.0.1
 PKGNAME=        	ADMsnmp-0.1
@@ -9,10 +9,10 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=   "no license"
-PERMIT_PACKAGE_FTP=     "no license"
-PERMIT_DISTFILES_CDROM= "no license"
-PERMIT_DISTFILES_FTP=   "no license"
+PERMIT_PACKAGE_CDROM=   no license
+PERMIT_PACKAGE_FTP=     no license
+PERMIT_DISTFILES_CDROM= no license
+PERMIT_DISTFILES_FTP=   no license
 WANTLIB=		c
 
 MASTER_SITES=		ftp://adm.freelsd.net/pub/ADM/ \

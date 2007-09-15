@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/29 11:56:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT='firewall gui'
+COMMENT=firewall gui
 CATEGORIES=net security
 
 # GPL

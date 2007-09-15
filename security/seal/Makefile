@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/28 20:11:44 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"use vnd encrypted filesystems on hotplug devices"
+COMMENT=	use vnd encrypted filesystems on hotplug devices
 
 DISTNAME=	seal-1.1
 

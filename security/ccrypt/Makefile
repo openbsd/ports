@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/02/08 07:52:56 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"encrypt and decrypt AES files and streams"
+COMMENT=	encrypt and decrypt AES files and streams
 
 DISTNAME=	ccrypt-1.7
 PKGNAME=	${DISTNAME}p1

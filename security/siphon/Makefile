@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 23:30:01 merdely Exp $
 			
-COMMENT=		"passive network mapping tool"
+COMMENT=		passive network mapping tool
 
 DISTNAME=		siphon-v.666
 PKGNAME=		siphon-0.666

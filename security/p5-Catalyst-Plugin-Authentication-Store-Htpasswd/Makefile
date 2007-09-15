@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT= 	"catalyst authentication via .htpasswd"
+COMMENT= 	catalyst authentication via .htpasswd
 
 DISTNAME=	Catalyst-Plugin-Authentication-Store-Htpasswd-0.02
 PKGNAME=	p5-${DISTNAME}p1

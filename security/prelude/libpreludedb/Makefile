@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/08/27 17:46:47 aanriot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT-main=	"Prelude framework database-access library"
-COMMENT-pgsql=	"PostgreSQL module for libpreludedb"
-COMMENT-mysql=	"MySQL module for libpreludedb"
-COMMENT-sqlite=	"SQLite3 module for libpreludedb"
+COMMENT-main=	Prelude framework database-access library
+COMMENT-pgsql=	PostgreSQL module for libpreludedb
+COMMENT-mysql=	MySQL module for libpreludedb
+COMMENT-sqlite=	SQLite3 module for libpreludedb
 
 VERSION=	0.9.13
 DISTNAME=	libpreludedb-${VERSION}

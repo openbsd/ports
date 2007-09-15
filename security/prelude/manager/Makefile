@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/08/27 17:49:59 aanriot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"Prelude manager"
+COMMENT=	Prelude manager
 
 DISTNAME=	prelude-manager-0.9.9
 

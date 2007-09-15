@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.30 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT-main=	"parallelized login hacker"
-COMMENT-gui=	"GTK frontend for hydra"
+COMMENT-main=	parallelized login hacker
+COMMENT-gui=	GTK frontend for hydra
 
 VERSION=	4.6
 DISTNAME=	hydra-4.6-src

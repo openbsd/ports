@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/22 22:48:04 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"abstraction of various SASL mechanism responses"
+COMMENT=	abstraction of various SASL mechanism responses
 
 V=		1.0.1
 DISTNAME=	Auth_SASL-${V}

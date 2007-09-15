@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2005/02/07 19:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"PGP packet visualizer"
+COMMENT=	PGP packet visualizer
 
 DISTNAME=	pgpdump-0.20
 CATEGORIES=    	security

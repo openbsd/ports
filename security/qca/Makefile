@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/04/14 22:20:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"Qt Cryptographic Architecture"
+COMMENT=	Qt Cryptographic Architecture
 
 DISTNAME=	qca-1.0
 PKGNAME=	${DISTNAME}p1

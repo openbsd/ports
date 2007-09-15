@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/08/31 19:26:01 aanriot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"Prelude framework library"
+COMMENT=	Prelude framework library
 
 DISTNAME=	libprelude-0.9.15.1
 PKGNAME=	prelude-${DISTNAME}

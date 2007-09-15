@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.22 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"scan C/C++ source code for security problems"
+COMMENT=	scan C/C++ source code for security problems
 
 DISTNAME=	its4-1.1.1
 CATEGORIES=	security
 MASTER_SITES=	#see-do-fetch-target
 EXTRACT_SUFX=	.tgz
 
-PERMIT_PACKAGE_CDROM=	"commercial. licensing restrictions."
-PERMIT_PACKAGE_FTP=	"commercial. licensing restrictions."
-PERMIT_DISTFILES_CDROM=	"commercial. licensing restrictions."
-PERMIT_DISTFILES_FTP=	"commercial. licensing restrictions."
+PERMIT_PACKAGE_CDROM=	commercial. licensing restrictions.
+PERMIT_PACKAGE_FTP=	commercial. licensing restrictions.
+PERMIT_DISTFILES_CDROM=	commercial. licensing restrictions.
+PERMIT_DISTFILES_FTP=	commercial. licensing restrictions.
 WANTLIB=		c m stdc++
 
 CONFIGURE_STYLE= gnu dest old

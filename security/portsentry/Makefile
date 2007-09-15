@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/27 09:49:27 aanriot Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"port scan detection and active defense"
+COMMENT=	port scan detection and active defense
 
 DISTNAME=	portsentry-1.2
 CATEGORIES=	security
@@ -8,9 +8,9 @@ CATEGORIES=	security
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Common Public License
-PERMIT_PACKAGE_CDROM=  	"commercial distribution defend and indemnify clauses"
+PERMIT_PACKAGE_CDROM=  	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=    	Yes
-PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP= 	Yes
 WANTLIB=		c
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"OTP and S/Key calculator for X"
+COMMENT=	OTP and S/Key calculator for X
 
 DISTNAME=	otpCalc-0.97
 PKGNAME=	${DISTNAME}p0

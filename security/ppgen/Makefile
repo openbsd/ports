@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"secure passphrase generator"
+COMMENT=	secure passphrase generator
 
 DISTNAME=	ppgen-1.0
 CATEGORIES=	security

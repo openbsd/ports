@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/03 09:45:27 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:30:00 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python interface to the OpenSSL library"
+COMMENT=	Python interface to the OpenSSL library
 
 VERSION=	0.5.1
 DISTNAME=	pyOpenSSL-${VERSION}

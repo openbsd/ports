@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"hashes with encrypting fields"
+COMMENT=	hashes with encrypting fields
 
 MODULES=	cpan
 DISTNAME=	Tie-EncryptedHash-1.21

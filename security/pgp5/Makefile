@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2005/05/05 08:39:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.36 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"Pretty Good Privacy 5.0i (world wide use)"
+COMMENT=	Pretty Good Privacy 5.0i (world wide use)
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -15,9 +15,9 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 
 HOMEPAGE=	http://www.pgpi.com
 
-PERMIT_PACKAGE_CDROM=	"no commercial use"
+PERMIT_PACKAGE_CDROM=	no commercial use
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no commercial use"
+PERMIT_DISTFILES_CDROM=	no commercial use
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 

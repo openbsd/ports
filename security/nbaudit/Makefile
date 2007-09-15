@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 23:29:59 merdely Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/02/14 04:10:30 obrien Exp $
 
-COMMENT=	"NetBIOS Auditing Tool / Security Kit"
+COMMENT=	NetBIOS Auditing Tool / Security Kit
 
 DISTNAME=	nat10
 PKGNAME=	nbaudit-1.0

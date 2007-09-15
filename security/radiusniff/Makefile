@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2005/12/19 12:53:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=		"radius sniffer"
+COMMENT=		radius sniffer
 
 DISTNAME=		radiusniff-0.2
 CATEGORIES=     	security
 
-PERMIT_PACKAGE_CDROM=	"not specified, vague license"
+PERMIT_PACKAGE_CDROM=	not specified, vague license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"not specified, vague license"
+PERMIT_DISTFILES_CDROM=	not specified, vague license
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 

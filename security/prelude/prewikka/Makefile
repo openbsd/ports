@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/08/27 17:52:23 aanriot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"Prelude Management Console"
+COMMENT=	Prelude Management Console
 
 DISTNAME=	prewikka-0.9.12.1
 PKGNAME=	prelude-${DISTNAME}

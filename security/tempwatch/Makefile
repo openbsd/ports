@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2005/06/21 18:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=		"temporary file auditing tool"
+COMMENT=		temporary file auditing tool
 
 PKGNAME=		tempwatch-1.0
 CATEGORIES=		security

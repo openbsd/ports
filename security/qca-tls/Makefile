@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/01 15:54:25 naddy Exp $ 
+# $OpenBSD: Makefile,v 1.8 2007/09/15 23:30:01 merdely Exp $ 
 
-COMMENT=                "Qt Cryptographic Architecture, TLS plugin"
+COMMENT=                Qt Cryptographic Architecture, TLS plugin
 
 DISTNAME=               qca-tls-1.0
 PKGNAME=		${DISTNAME}p4

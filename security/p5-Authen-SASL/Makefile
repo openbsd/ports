@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/04/12 18:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"perl interface to the SASL auth framework"
+COMMENT=	perl interface to the SASL auth framework
 
 MODULES=	cpan
 DISTNAME=	Authen-SASL-2.10

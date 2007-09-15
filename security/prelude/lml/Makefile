@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/06/01 05:02:23 aanriot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"Prelude log analyzer"
+COMMENT=	Prelude log analyzer
 
 DISTNAME=	prelude-lml-0.9.10
 

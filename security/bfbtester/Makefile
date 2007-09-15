@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 23:29:57 merdely Exp $
 
-COMMENT=	"brute force binary tester"
+COMMENT=	brute force binary tester
 
 DISTNAME=	bfbtester-2.0.1
 CATEGORIES=	security

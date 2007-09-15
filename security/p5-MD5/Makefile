@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 23:30:00 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to md5 message-digest algorithm"
+COMMENT=	interface to md5 message-digest algorithm
 
 MODULES=	cpan
 DISTNAME=	MD5-1.7

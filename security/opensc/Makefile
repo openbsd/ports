@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"set of libraries and utilities to access smart cards"
+COMMENT=	set of libraries and utilities to access smart cards
 
 DISTNAME=	opensc-0.9.6
 PKGNAME=	${DISTNAME}p1

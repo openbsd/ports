@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2007/06/01 05:50:36 aanriot Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"network security scanner"
+COMMENT=	network security scanner
 DISTNAME=	nessus-core-${V}
 PKGNAME=	${DISTNAME}p2
 

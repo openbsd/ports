@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/04/03 13:55:59 aanriot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"Nessus Attack Scripting Language"
+COMMENT=	Nessus Attack Scripting Language
 DISTNAME=	libnasl-${V}
 PKGNAME=	${DISTNAME}p0
 

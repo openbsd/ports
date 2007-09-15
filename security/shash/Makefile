@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"generates or checks digests or mac"
+COMMENT=	generates or checks digests or mac
 
 DISTNAME=	shash-0.2.6
 CATEGORIES=     security

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2005/12/24 22:32:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=		"GnuPG Made Easy"
+COMMENT=		GnuPG Made Easy
 
 DISTNAME=		gpgme-1.1.0
 PKGNAME=		${DISTNAME}p0

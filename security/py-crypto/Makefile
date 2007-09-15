@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 23:30:00 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"cryptographic tools for Python"
+COMMENT=	cryptographic tools for Python
 
 VERSION=	2.0.1
 DISTNAME=	pycrypto-${VERSION}

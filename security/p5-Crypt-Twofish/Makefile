@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:30:00 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"module to implement the Twofish cipher"
+COMMENT=	module to implement the Twofish cipher
 
 MODULES=	cpan
 DISTNAME=	Crypt-Twofish-2.12

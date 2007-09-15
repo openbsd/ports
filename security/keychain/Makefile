@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2005/10/27 18:30:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=		"front-end to ssh-agent"
+COMMENT=		front-end to ssh-agent
 
 DISTNAME=		keychain-2.6.1
 CATEGORIES=		security

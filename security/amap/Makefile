@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/05/19 11:19:50 aanriot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 23:29:57 merdely Exp $
 
-COMMENT=	"next generation scanning tool"
+COMMENT=	next generation scanning tool
 
 DISTNAME=	amap-5.2
 PKGNAME=	${DISTNAME}p2

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2007/03/25 13:01:35 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"simple log monitoring program"
+COMMENT=	simple log monitoring program
 
 DISTNAME=	swatch-3.2.1
 CATEGORIES=	security sysutils

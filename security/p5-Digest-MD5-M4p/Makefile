@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 23:30:00 merdely Exp $
 SHARED_ONLY=	Yes
 
-COMMENT=	"perl interface to a variant of the MD5 algorithm"
+COMMENT=	perl interface to a variant of the MD5 algorithm
 
 MODULES=	cpan
 DISTNAME=	Digest-MD5-M4p-0.01

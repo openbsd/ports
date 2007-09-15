@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/15 14:12:19 aanriot Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"logs smurf attacks"
+COMMENT=	logs smurf attacks
 DISTNAME=	smurflog-2.1
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security

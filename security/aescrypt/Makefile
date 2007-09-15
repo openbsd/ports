@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2005/11/03 18:28:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 23:29:57 merdely Exp $
 
-COMMENT=		"encrypt/decrypt using Rijndael encryption algorithm"
+COMMENT=		encrypt/decrypt using Rijndael encryption algorithm
 
 V=			0.7
 DISTNAME=		aescrypt-${V}

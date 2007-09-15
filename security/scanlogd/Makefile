@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/05/26 01:12:02 aanriot Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/15 23:30:01 merdely Exp $
 
 DISTNAME=	scanlogd-2.2.6
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
-COMMENT=	"TCP port scan detection tool"
+COMMENT=	TCP port scan detection tool
 
 HOMEPAGE=	http://www.openwall.com/scanlogd/
 

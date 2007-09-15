@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"Back Orifice Unix client by the cDc"
+COMMENT=	Back Orifice Unix client by the cDc
 
 PKGNAME=	bounix-1.21
 DISTNAME=	bo121unix

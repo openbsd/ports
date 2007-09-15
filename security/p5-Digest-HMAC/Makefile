@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"interface to HMAC Message-Digest Algorithms"
+COMMENT=	interface to HMAC Message-Digest Algorithms
 
 MODULES=	cpan
 DISTNAME=	Digest-HMAC-1.01

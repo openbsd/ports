@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2005/12/25 11:15:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:30:00 merdely Exp $
 # Uses pthreads
 
-COMMENT=	"resource manager for PCSC"
+COMMENT=	resource manager for PCSC
 
 DISTNAME=	pcsc-lite-1.0.1
 PKGNAME=	${DISTNAME}p0

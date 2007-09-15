@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2005/05/24 00:17:50 mjc Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"ICMP router discovery protocol spoofer"
+COMMENT=	ICMP router discovery protocol spoofer
 
 DISTNAME=	rdp
 PKGNAME=	rdp-1.0
@@ -9,9 +9,9 @@ MASTER_SITES=	http://www.atstake.com/research/tools/
 
 LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
-PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 

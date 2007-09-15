@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:30:00 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"module to calculate Nilsimsa digests"
+COMMENT=	module to calculate Nilsimsa digests
 
 MODULES=	cpan
 DISTNAME=	Digest-Nilsimsa-0.06

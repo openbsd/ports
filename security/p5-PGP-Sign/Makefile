@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"perl module to create/verify PGP signatures"
+COMMENT=	perl module to create/verify PGP signatures
 
 MODULES=	cpan
 DISTNAME=	PGP-Sign-0.19

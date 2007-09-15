@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT= 	"role based authorization for Catalyst"
+COMMENT= 	role based authorization for Catalyst
 
 DISTNAME=	Catalyst-Plugin-Authorization-Roles-0.05
 PKGNAME=	p5-${DISTNAME}p1

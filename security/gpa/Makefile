@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"graphical interface for GnuPG"
+COMMENT=	graphical interface for GnuPG
 
 VERSION=	0.4.3
 DISTNAME=	gpa-${VERSION}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 23:29:59 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to the Blowfish encryption algorithm"
+COMMENT=	interface to the Blowfish encryption algorithm
 
 MODULES=	cpan
 DISTNAME=	Crypt-Blowfish-2.10

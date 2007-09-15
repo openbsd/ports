@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"small service wedge to do ident lookup on connecting party"
+COMMENT=	small service wedge to do ident lookup on connecting party
 
 DISTNAME=		klaxon
 PKGNAME=		klaxon-1.5

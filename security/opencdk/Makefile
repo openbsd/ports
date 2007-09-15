@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=		"Open Crypto Development Kit"
+COMMENT=		Open Crypto Development Kit
 
 VERSION=		0.5.5
 DISTNAME=		opencdk-${VERSION}

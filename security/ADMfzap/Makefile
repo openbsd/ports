@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/07/04 19:18:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 23:29:57 merdely Exp $
 
-COMMENT=		"connect() and bind() wrapper to evade packet filtering"
+COMMENT=		connect() and bind() wrapper to evade packet filtering
 
 # uses LD_PRELOAD
 SHARED_ONLY=		Yes
@@ -11,10 +11,10 @@ CATEGORIES=		security
 
 MAINTAINER=     	Jason Peel <jsyn@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
 
 MASTER_SITES=   	ftp://adm.freelsd.net/pub/ADM/ \
                 	http://adm.freelsd.net/ADM/

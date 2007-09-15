@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2005/04/03 19:32:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 23:29:57 merdely Exp $
 
-COMMENT=	"promiscuous mode interface detector"
+COMMENT=	promiscuous mode interface detector
 
 PKGNAME=	antisniff-1.1.2
 CATEGORIES=	security
 
 DISTNAME=	anti_sniff_researchv1-1-2
 
-PERMIT_PACKAGE_CDROM=	"commercial software"
-PERMIT_PACKAGE_FTP=	"commercial software"
-PERMIT_DISTFILES_CDROM=	"commercial software"
+PERMIT_PACKAGE_CDROM=	commercial software
+PERMIT_PACKAGE_FTP=	commercial software
+PERMIT_DISTFILES_CDROM=	commercial software
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c kvm pcap
 

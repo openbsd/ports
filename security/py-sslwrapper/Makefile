@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/07/04 19:18:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 23:30:00 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"OpenSSL Wrappers for Python"
+COMMENT=	OpenSSL Wrappers for Python
 
 VERSION=	0.6.1
 DISTNAME=	POW-${VERSION}

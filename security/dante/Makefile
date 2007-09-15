@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2006/01/21 11:14:44 jakob Exp $
+# $OpenBSD: Makefile,v 1.34 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"SOCKS client and server"
+COMMENT=	SOCKS client and server
 
 DISTNAME=	dante-1.1.19
 PKGNAME=	${DISTNAME}

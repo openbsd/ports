@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"NFS auditing tool"
+COMMENT=	NFS auditing tool
 
 PKGNAME=	nfsshell-1.0
 DISTNAME=	nfsshell
@@ -10,9 +10,9 @@ WRKDIST=	${WRKDIR}/nfs
 
 MASTER_SITES=	ftp://ftp.cs.vu.nl/pub/leendert/
 
-PERMIT_PACKAGE_CDROM=	"no obvious license"
+PERMIT_PACKAGE_CDROM=	no obvious license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no obvious license"
+PERMIT_DISTFILES_CDROM=	no obvious license
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c readline termcap
 

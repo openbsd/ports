@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/30 02:34:43 aanriot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"GUI to manage a certification authority"
+COMMENT=	GUI to manage a certification authority
 
 DISTNAME=	tinyca2-0.7.5
 PKGNAME=	${DISTNAME}p0

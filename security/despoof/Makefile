@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/07/13 17:22:23 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"command-line anti-spoofing detection utility"
+COMMENT=	command-line anti-spoofing detection utility
 
 DISTNAME=	despoof-0.9
 PKGNAME=	${DISTNAME}p1

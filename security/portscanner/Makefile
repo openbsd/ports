@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2006/07/11 15:28:24 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 23:30:00 merdely Exp $
 # $FreeBSD: Makefile,v 1.5 1999/01/26 22:19:07 billf Exp $
 
-COMMENT=	"simple and easy to use TCP port scanner"
+COMMENT=	simple and easy to use TCP port scanner
 
 DISTNAME=	PortScanner-1.2
 PKGNAME=	${DISTNAME:L}

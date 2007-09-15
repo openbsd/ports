@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/03 09:45:27 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"application for managing passwords"
+COMMENT=	application for managing passwords
 
 DISTNAME=	kedpm-0.4.0
 PKGNAME=	${DISTNAME}p0

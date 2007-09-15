@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/15 17:40:09 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=		"Perl module to authenticate against a Kerberos server"
+COMMENT=		Perl module to authenticate against a Kerberos server
 SHARED_ONLY=		Yes
 
 MODULES=		cpan

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=		"Abstract Syntax Notation One structure parser library"
+COMMENT=		Abstract Syntax Notation One structure parser library
 
 VERSION=		0.1.2
 DISTNAME=		libtasn1-${VERSION}

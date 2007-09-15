@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/31 19:54:22 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 23:29:58 merdely Exp $
 # $FreeBSD: Makefile,v 1.2 2005/04/21 14:22:54 pav Exp $
 
-COMMENT=	"The portable OTR Messaging Library and toolkit"
+COMMENT=	The portable OTR Messaging Library and toolkit
 
 DISTNAME=	libotr-3.0.0
 PKGNAME=	${DISTNAME}p0

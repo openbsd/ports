@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/05/08 07:27:04 aanriot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 23:29:57 merdely Exp $
 
-COMMENT=		"automated password generator"
+COMMENT=		automated password generator
 
 DISTNAME=		apg-2.2.3
 PKGNAME=		${DISTNAME}p0

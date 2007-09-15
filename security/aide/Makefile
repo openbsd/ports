@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2005/08/17 16:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 23:29:57 merdely Exp $
 
-COMMENT=		"Advanced Intrusion Detection Environment"
+COMMENT=		Advanced Intrusion Detection Environment
 
 V=			0.10
 DISTNAME=		aide-${V}

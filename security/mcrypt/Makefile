@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"extendable encryption program that supports many ciphers"
+COMMENT=	extendable encryption program that supports many ciphers
 
 DISTNAME=		mcrypt-2.6.4
 PKGNAME=		${DISTNAME}p0

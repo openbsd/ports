@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/07/18 09:41:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 23:29:59 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"RSA encoding and decoding using OpenSSL"
+COMMENT=	RSA encoding and decoding using OpenSSL
 
 MODULES=	cpan
 

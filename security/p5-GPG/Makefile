@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"perl5 interface to GnuPG using scalars"
+COMMENT=	perl5 interface to GnuPG using scalars
 
 MODULES=	cpan
 DISTNAME=	GPG-0.06
@@ -11,9 +11,9 @@ CPAN_AUTHOR=	MILES
 RUN_DEPENDS=	:gnupg-*:security/gnupg
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
 
 .include <bsd.port.mk>	

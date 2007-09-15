@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT= 	"read and modify Apache .htpasswd files"
+COMMENT= 	read and modify Apache .htpasswd files
 
 DISTNAME=	Authen-Htpasswd-0.15
 PKGNAME=	p5-${DISTNAME}p0

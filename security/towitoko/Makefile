@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2005/12/25 15:52:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=		"library and utilities for towitoko card readers"
+COMMENT=		library and utilities for towitoko card readers
 
 DISTNAME=		towitoko-2.0.7
 PKGNAME=		${DISTNAME}p0

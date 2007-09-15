@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"DSA Signatures and Key Generation"
+COMMENT=	DSA Signatures and Key Generation
 
 MODULES=	cpan
 DISTNAME=	Crypt-DSA-0.13

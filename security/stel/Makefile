@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/27 13:28:36 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT=	"Secure Telnet, encrypted version of the telnet daemon"
+COMMENT=	Secure Telnet, encrypted version of the telnet daemon
 
 DISTNAME=	stel
 PKGNAME=	${DISTNAME}-19960505

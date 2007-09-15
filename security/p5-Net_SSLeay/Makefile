@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/15 23:30:00 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"perl module for using OpenSSL"
+COMMENT=	perl module for using OpenSSL
 
 MODULES=	cpan
 VERSION=	1.30

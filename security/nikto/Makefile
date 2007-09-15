@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/01 15:55:55 rui Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"Web and CGI vulnerability scanner with SSL support"
+COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 DISTNAME=	nikto-1.36
 CATEGORIES=	security www

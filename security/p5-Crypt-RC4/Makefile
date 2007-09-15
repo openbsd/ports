@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"implementation of the RC4 encryption algorithm"
+COMMENT=	implementation of the RC4 encryption algorithm
 
 MODULES=	cpan
 DISTNAME=	Crypt-RC4-2.02

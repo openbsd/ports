@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=		"GNU Transport Layer Security library"
+COMMENT=		GNU Transport Layer Security library
 
 DISTNAME=		gnutls-1.0.25
 PKGNAME=		${DISTNAME}p1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2006/08/03 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"interface to access block/stream encryption algorithms"
+COMMENT=	interface to access block/stream encryption algorithms
 
 DISTNAME=	libmcrypt-2.5.7
 PKGNAME=	${DISTNAME}p1

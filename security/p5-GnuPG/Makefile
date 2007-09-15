@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/15 17:40:10 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"perl5 interface to GnuPG"
+COMMENT=	perl5 interface to GnuPG
 
 MODULES=	cpan
 DISTNAME=	GnuPG-0.09

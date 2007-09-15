@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/26 22:39:31 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"cryptographic framework for the Objective-ML language"
+COMMENT=	cryptographic framework for the Objective-ML language
 CATEGORIES=	security
 
 DISTNAME=	cryptokit-1.3

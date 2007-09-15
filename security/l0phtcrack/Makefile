@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 23:29:58 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"Microsoft LANMAN & NT password sniffer/cracker"
+COMMENT=	Microsoft LANMAN & NT password sniffer/cracker
 
 PKGNAME=	l0phtcrack-2.52
 CATEGORIES=	security

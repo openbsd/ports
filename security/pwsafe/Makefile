@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/13 12:51:15 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=		"program that manages encrypted password databases"
+COMMENT=		program that manages encrypted password databases
 DISTNAME=		pwsafe-0.2.0
 CATEGORIES=		security
 

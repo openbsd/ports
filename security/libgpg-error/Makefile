@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=	"error codes for GnuPG related software"
+COMMENT=	error codes for GnuPG related software
 
 DISTNAME=	libgpg-error-1.1
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/26 14:47:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 23:29:57 merdely Exp $
 
-COMMENT=	"monitor the security of installed softwares"
+COMMENT=	monitor the security of installed softwares
 
 DISTNAME=	advchk-2.00
 CATEGORIES=	security

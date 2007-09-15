@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 23:30:01 merdely Exp $
 
-COMMENT-main=	"XML security library"
-COMMENT-docs=	"XML security library documentation"
+COMMENT-main=	XML security library
+COMMENT-docs=	XML security library documentation
 
 VERSION=	1.2.5
 DISTNAME=	xmlsec1-${VERSION}

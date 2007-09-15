@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/24 16:46:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 23:29:59 merdely Exp $
 
-COMMENT=	"Diffie-Hellman key exchange system"
+COMMENT=	Diffie-Hellman key exchange system
 
 DISTNAME=	Crypt-DH-0.06
 PKGNAME=	p5-${DISTNAME}
@@ -24,7 +24,7 @@ CONFIGURE_STYLE=perl
 PKG_ARCH=	*
 
 # use a fast computer, tests will finish eventually
-#NO_REGRESS=	"tests take ages to complete"
+#NO_REGRESS=	tests take ages to complete
 
 pre-build:
 	@perl -pi -e "s/urandom/arandom/g" ${WRKSRC}/lib/Crypt/DH.pm

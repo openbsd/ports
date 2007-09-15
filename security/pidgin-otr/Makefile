@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/28 07:26:33 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 23:30:00 merdely Exp $
 
-COMMENT=	"allows deniable private conversations using Pidgin"
+COMMENT=	allows deniable private conversations using Pidgin
 
 DISTNAME=	pidgin-otr-20070506
 CATEGORIES=	security net

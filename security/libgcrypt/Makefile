@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/03/04 15:10:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/15 23:29:58 merdely Exp $
 
-COMMENT=		"crypto library based on code used in GnuPG"
+COMMENT=		crypto library based on code used in GnuPG
 
 VERSION=		1.2.0
 DISTNAME=		libgcrypt-${VERSION}
