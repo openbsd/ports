@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2004/11/21 21:41:23 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/15 21:36:57 simon Exp $
 
-COMMENT=	"Simulation Program for Integrated Circuit Electronics"
+COMMENT=	Simulation Program for Integrated Circuit Electronics
 
 DISTNAME=		sp3f4.kit
 PKGNAME=		spice-3f5p1
 CATEGORIES=     	cad
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xaw Xext Xmu Xt c m termlib
 

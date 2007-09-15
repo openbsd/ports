@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/30 00:17:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/15 21:36:57 simon Exp $
 
-COMMENT=	"electronic CAD system"
+COMMENT=	electronic CAD system
 
 PKGNAME=	chipmunk-1.57p0
 DISTNAME=	psys-1.57

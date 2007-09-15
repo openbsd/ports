@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/23 14:12:23 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/15 21:36:57 simon Exp $
 
-COMMENT=	"NEC2++ antenna simulator"
+COMMENT=	NEC2++ antenna simulator
 
 DISTNAME=	necpp-1.2.3
 PKGNAME=	${DISTNAME}p0

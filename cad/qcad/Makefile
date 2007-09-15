@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/01/09 16:30:37 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/15 21:36:57 simon Exp $
 
-COMMENT=	"Qt-based 2D CAD system"
+COMMENT=	Qt-based 2D CAD system
 
 V=		2.0.5.0
 DISTNAME=	qcad-${V}-1-community.src

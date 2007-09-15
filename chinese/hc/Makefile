@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/21 21:51:36 espie Exp $	
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:40:00 simon Exp $	
 
-COMMENT=	"convert between GB and BIG-5 codes"
+COMMENT=	convert between GB and BIG-5 codes
 
 DISTNAME=	zh-hc-3.0
 CATEGORIES=	chinese

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2006/04/08 20:28:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/15 21:40:00 simon Exp $
 
-COMMENT=	"Chinese(Big5) VT100 terminal emulator for X"
+COMMENT=	Chinese(Big5) VT100 terminal emulator for X
 
 DISTNAME=       crxvt-2.10-2
 PKGNAME=        zh-crxvt-2.10.2
@@ -10,10 +10,10 @@ MASTER_SITES=   ftp://ftp.linux.org.tw/pub/xcin/old/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=   "no license"
-PERMIT_PACKAGE_FTP=     "no license"
-PERMIT_DISTFILES_CDROM= "no license"
-PERMIT_DISTFILES_FTP=   "no license"
+PERMIT_PACKAGE_CDROM=   no license
+PERMIT_PACKAGE_FTP=     no license
+PERMIT_DISTFILES_CDROM= no license
+PERMIT_DISTFILES_FTP=   no license
 WANTLIB=		c X11
 
 RUN_DEPENDS=	::chinese/taipeifonts

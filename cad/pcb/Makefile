@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/13 14:29:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:36:57 simon Exp $
 
-COMMENT=	"printed circuit board layout tool"
+COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20060822
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	cad

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2007/04/13 14:29:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/15 21:36:57 simon Exp $
 
 SHARED_ONLY=	Yes
-COMMENT= 	"logic circuit simulator for KDE"
+COMMENT= 	logic circuit simulator for KDE
 
 DISTNAME=	klogic-1.6
 PKGNAME=	${DISTNAME}p1

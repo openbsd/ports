@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/15 21:40:00 simon Exp $
 
-COMMENT=	"library for Chinese language processing"
+COMMENT=	library for Chinese language processing
 
 DISTNAME=	libtabe-0.2.6
 PKGNAME=	zh-${DISTNAME}p0

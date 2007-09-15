@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/21 21:51:36 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 21:40:00 simon Exp $
 
-COMMENT=	"convert solar calendar to lunar calendar"
+COMMENT=	convert solar calendar to lunar calendar
 
 DISTNAME=	lunar-2.1
 PKGNAME=	zh-lunar-2.1
@@ -10,9 +10,9 @@ MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"non-commercial use only"
+PERMIT_PACKAGE_CDROM=	non-commercial use only
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"non-commercial use only"
+PERMIT_DISTFILES_CDROM=	non-commercial use only
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/16 14:13:14 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/15 21:36:57 simon Exp $
 
-COMMENT-main=	"circuit drawing and schematic capture"
-COMMENT-docs=	"documentation for the kicad library of components"
+COMMENT-main=	circuit drawing and schematic capture
+COMMENT-docs=	documentation for the kicad library of components
 
 V=		2007-01-15
 DISTNAME=	kicad-sources-${V}

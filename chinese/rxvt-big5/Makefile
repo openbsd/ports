@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/10/19 00:14:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:40:01 simon Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"color terminal emulator Linux binary"
+COMMENT=	color terminal emulator Linux binary
 
 PKGNAME=	zh-rxvt-big5-2.7.8p2
 CATEGORIES=	chinese

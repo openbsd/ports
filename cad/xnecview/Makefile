@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/28 20:06:24 jason Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/15 21:36:57 simon Exp $
 
-COMMENT=	"NEC2 antenna simulator visualizer"
+COMMENT=	NEC2 antenna simulator visualizer
 
 VERSION=	1.35
 DISTNAME=	xnecview-${VERSION}

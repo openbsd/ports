@@ -3,10 +3,10 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.14 2006/07/13 13:39:30 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/15 21:40:00 simon Exp $
 #
 
-COMMENT=	"pager utility that speaks Chinese"
+COMMENT=	pager utility that speaks Chinese
 
 DISTNAME=       cless-290
 PKGNAME=        zh-${DISTNAME}

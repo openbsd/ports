@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2006/07/19 13:41:02 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/15 21:40:01 simon Exp $
 
-COMMENT=	"chinese input utility for X"
+COMMENT=	chinese input utility for X
 
 DISTNAME=	xcin-2.3.04-3
 PKGNAME=	zh-xcin-2.3.04p0

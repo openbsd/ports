@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/06/14 18:37:10 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/15 21:36:57 simon Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"circuit drawing and schematic capture"
+COMMENT=		circuit drawing and schematic capture
 
 BASEVER=		3.4
 DISTNAME=		xcircuit-${BASEVER}.26

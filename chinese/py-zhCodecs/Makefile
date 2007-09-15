@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/06/03 09:24:31 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/15 21:40:01 simon Exp $
 
-COMMENT=	"Python Unicode codecs for Chinese charsets"
+COMMENT=	Python Unicode codecs for Chinese charsets
 
 VERSION=	1.2.0
 DISTNAME=	ChineseCodecs${VERSION}
