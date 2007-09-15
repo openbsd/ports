@@ -1,0 +1,2 @@
+Net::GPSD provides an object client interface to the gpsd server
+daemon.
