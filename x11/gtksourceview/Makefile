@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2007/05/07 09:13:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/15 22:11:38 merdely Exp $
 
-COMMENT=		"text widget that extends GTK2's GtkTextView widget"
+COMMENT=		text widget that extends GTK2's GtkTextView widget
 DISTNAME=		gtksourceview-1.8.5
 SHARED_LIBS +=	gtksourceview-1.0    1.1      # .0.0
 CATEGORIES=		x11

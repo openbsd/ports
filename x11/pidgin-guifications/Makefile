@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/22 07:55:26 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/15 22:11:38 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"MSN style 'toaster' popups plugin for Pidgin"
+COMMENT=	MSN style 'toaster' popups plugin for Pidgin
 
 DISTNAME=	pidgin-guifications-2.14
 CATEGORIES=	x11
