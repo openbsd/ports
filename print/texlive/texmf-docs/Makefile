@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/10 13:47:05 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 08:09:57 steven Exp $
 
 COMMENT=		documentation texmf tree for TeXLive
 
 V=			2007
 DISTNAME=		texlive_texmf-docs-${V}
+PKGNAME=		${DISTNAME}p0
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
