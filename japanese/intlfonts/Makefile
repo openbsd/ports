@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2003/03/31 13:44:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 00:33:57 merdely Exp $
 
-COMMENT=	"extra japanese fonts"
+COMMENT=	extra japanese fonts
 
 CATEGORIES=	japanese x11
 DISTNAME=	intlfonts-1.2

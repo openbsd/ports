@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2006/06/19 09:46:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 00:33:57 merdely Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
-COMMENT=	"Kanji -> kana converter"
+COMMENT=	Kanji -> kana converter
 
 DISTNAME=	kakasi-2.3.4
 SHARED_LIBS=	kakasi	3.0

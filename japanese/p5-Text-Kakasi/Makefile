@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/27 21:02:16 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 00:33:57 merdely Exp $
 
-COMMENT=	"Kanji -> kana converter, perl interface"
+COMMENT=	Kanji -> kana converter, perl interface
 
 SHARED_ONLY=	Yes
 DISTNAME=	Text-Kakasi-2.04

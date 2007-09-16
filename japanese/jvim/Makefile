@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/16 00:33:57 merdely Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
-COMMENT=	"Japanized Vim"
-COMMENT-canna=	"Japanized Vim, canna input method"
-COMMENT-wnn=	"Japanized Vim, wnn input method"
-COMMENT-wnn-canna="Japanized Vim, canna or wnn input method"
+COMMENT=	Japanized Vim
+COMMENT-canna=	Japanized Vim, canna input method
+COMMENT-wnn=	Japanized Vim, wnn input method
+COMMENT-wnn-canna=Japanized Vim, canna or wnn input method
 DISTNAME=	jvim2.0r+onew2.2.10
 PKGNAME=	ja-jvim-2.0rp0
 CATEGORIES=	japanese editors
@@ -40,7 +40,7 @@ CHOICE=wnn4,canna
 INPUT_METHOD=	canna
 CHOICE=canna
 .endif
-PERMIT_PACKAGE_CDROM=	"Canna prevents it"
+PERMIT_PACKAGE_CDROM=	Canna prevents it
 LIB_DEPENDS+= canna.>=1::japanese/canna
 JPLIB+=			-lcanna
 .endif

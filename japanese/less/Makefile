@@ -5,10 +5,10 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
-# $OpenBSD: Makefile,v 1.19 2007/05/15 09:24:09 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 00:33:57 merdely Exp $
 #
 
-COMMENT=	"less + zcat + ISO-2022 - a pager similar to more and pg"
+COMMENT=	less + zcat + ISO-2022 - a pager similar to more and pg
 
 DISTNAME=	less-332
 PKGNAME=	ja-less-3.32pl2.48p0

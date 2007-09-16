@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/16 00:33:57 merdely Exp $
 
-COMMENT=	"Japanese-capable xterm"
+COMMENT=	Japanese-capable xterm
 
 VERSION=	6.2.0
 DISTNAME=	kterm-${VERSION}

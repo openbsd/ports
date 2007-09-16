@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 00:33:57 merdely Exp $
 
-COMMENT='japanese handwriting recognition'
+COMMENT=japanese handwriting recognition
 CATEGORIES=japanese
 HOMEPAGE=http://www.gtk.org/~otaylor/kanjipad/
 
