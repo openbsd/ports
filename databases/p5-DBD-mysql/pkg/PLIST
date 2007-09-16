@@ -1,13 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:31:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/09/16 11:37:29 simon Exp $
 @comment ${P5ARCH}/Bundle/DBD/
 @comment ${P5ARCH}/Bundle/DBD/mysql.pm
 ${P5ARCH}/DBD/mysql/
 ${P5ARCH}/DBD/mysql.pm
 ${P5ARCH}/DBD/mysql/GetInfo.pm
 @comment ${P5ARCH}/DBD/mysql/INSTALL.pod
-${P5ARCH}/Mysql/
-${P5ARCH}/Mysql.pm
-${P5ARCH}/Mysql/Statement.pm
 ${P5ARCH}/auto/DBD/
 ${P5ARCH}/auto/DBD/mysql/
 ${P5ARCH}/auto/DBD/mysql/mysql.bs
@@ -15,4 +12,3 @@ ${P5ARCH}/auto/DBD/mysql/mysql.so
 @man man/man3p/Bundle::DBD::mysql.3p
 @man man/man3p/DBD::mysql.3p
 @man man/man3p/DBD::mysql::INSTALL.3p
-@man man/man3p/Mysql.3p
