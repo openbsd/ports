@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2007/04/06 22:21:30 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"filtering local mail delivery agent"
+COMMENT=	filtering local mail delivery agent
 
 DISTNAME=	procmail-3.22
 CATEGORIES=	mail

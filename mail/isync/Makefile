@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2005/01/02 10:53:41 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT= 	"synchronize IMAP4 and maildir mailboxes"
+COMMENT= 	synchronize IMAP4 and maildir mailboxes
 
 DISTNAME=	isync-0.9.2
 CATEGORIES=	mail

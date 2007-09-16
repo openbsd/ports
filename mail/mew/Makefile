@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/31 18:06:54 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"emacs-based mail client"
+COMMENT=	emacs-based mail client
 
 DISTNAME=	mew-5.2
 CATEGORIES=	mail

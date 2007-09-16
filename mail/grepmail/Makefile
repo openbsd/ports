@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/03/24 09:44:15 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"search mailboxes for a particular email"
+COMMENT=	search mailboxes for a particular email
 
 DISTNAME=	grepmail-5.3033
 CATEGORIES=	mail perl5

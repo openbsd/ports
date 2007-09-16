@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/08 08:46:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"DKIM milter"
+COMMENT=	DKIM milter
 
 DISTNAME=	dkim-milter-2.2.1
 PKGNAME=	${DISTNAME}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2006/07/12 14:24:49 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"addressbook program with mutt support"
+COMMENT=	addressbook program with mutt support
 
 DISTNAME=	abook-0.5.5
 CATEGORIES=	mail

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/06 17:30:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"pop password changing daemon using KerberosV"
+COMMENT=	pop password changing daemon using KerberosV
 
 DISTNAME=	kpoppassd-0.5
 PKGNAME=	${DISTNAME}p1

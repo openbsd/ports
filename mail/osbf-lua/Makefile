@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/08/05 12:34:33 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"lua text classification module and anti-spam solution"
+COMMENT=	lua text classification module and anti-spam solution
 
 DISTNAME=	osbf-lua-2.0.4
 PKGNAME=	${DISTNAME}p0

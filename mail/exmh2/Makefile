@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2007/05/27 14:17:02 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=		"Tcl/Tk interface to the MH mail system"
+COMMENT=		Tcl/Tk interface to the MH mail system
 
 DISTNAME=		exmh-2.7.2
 CATEGORIES=     	mail

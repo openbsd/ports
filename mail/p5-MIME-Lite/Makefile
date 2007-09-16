@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/28 11:09:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=		"low-calorie MIME generator"
+COMMENT=		low-calorie MIME generator
 
 DISTNAME=		MIME-Lite-3.01
 PKGNAME=		p5-${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/03/30 20:58:55 martynas Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"MIME implementation"
+COMMENT=	MIME implementation
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7p0

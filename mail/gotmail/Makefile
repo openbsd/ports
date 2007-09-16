@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/01 19:19:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"automatically fetch hotmail.com email"
+COMMENT=	automatically fetch hotmail.com email
 
 DISTNAME=	gotmail-0.8.9
 PKGNAME=	${DISTNAME}p2

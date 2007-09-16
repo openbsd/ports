@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/03 17:01:10 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"once-popular mail user agent"
+COMMENT=	once-popular mail user agent
 
 DISTNAME=	elm-2.4ME+66
 CATEGORIES=	mail

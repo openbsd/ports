@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/04 23:33:05 deanna Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"mail purpose library"
+COMMENT=	mail purpose library
 
 DISTNAME=	libetpan-0.49
 PKGNAME=	${DISTNAME}p1

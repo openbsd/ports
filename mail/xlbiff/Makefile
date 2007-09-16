@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 00:17:07 merdely Exp $
 
-COMMENT=	"display from/subject from incoming mails using X11"
+COMMENT=	display from/subject from incoming mails using X11
 
 DISTNAME=	xlbiff-3.0
 CATEGORIES=	mail x11

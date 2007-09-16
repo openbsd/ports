@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/17 20:34:07 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"small and secure POP3 daemon"
+COMMENT=	small and secure POP3 daemon
 
 DISTNAME=	akpop3d-0.7.7
 PKGNAME=	${DISTNAME}p1

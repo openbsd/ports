@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2006/12/17 20:13:33 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/16 00:17:07 merdely Exp $
 
-COMMENT=	"mail user agent for X in C with a Tcl/Tk frontend"
+COMMENT=	mail user agent for X in C with a Tcl/Tk frontend
 
 DISTNAME=	tkrat-2.1.2
 PKGNAME=	${DISTNAME}p1

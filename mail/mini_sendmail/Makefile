@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/26 09:37:38 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT-main=	"accept email on behalf of real sendmail"
-COMMENT-chroot=	"static mini_sendmail for chrooted apache"
+COMMENT-main=	accept email on behalf of real sendmail
+COMMENT-chroot=	static mini_sendmail for chrooted apache
 
 V=		1.3.6
 DISTNAME=	mini_sendmail-${V}

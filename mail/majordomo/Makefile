@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"mailing list manager"
+COMMENT=	mailing list manager
 
 DISTNAME=	majordomo-1.94.5
 PKGNAME=	${DISTNAME}p2

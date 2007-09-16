@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2004/02/02 17:45:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"complain about SPAM"
+COMMENT=	complain about SPAM
 
 DISTNAME=	adcomplain-3.52
 CATEGORIES=	mail news

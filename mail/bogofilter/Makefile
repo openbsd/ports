@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/24 09:46:55 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"bayesian spam filter"
+COMMENT=	bayesian spam filter
 
 DISTNAME=	bogofilter-1.0.3
 CATEGORIES=	mail

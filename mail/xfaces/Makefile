@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/16 00:17:07 merdely Exp $
 
-COMMENT=	"mail image display for X11"
+COMMENT=	mail image display for X11
 
 DISTNAME=	xfaces-3.3
 PKGNAME=	${DISTNAME}p0

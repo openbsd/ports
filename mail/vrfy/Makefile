@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2007/04/06 22:21:30 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/16 00:17:07 merdely Exp $
 
-COMMENT=		"verify email addresses and mailing lists"
+COMMENT=		verify email addresses and mailing lists
 
 DISTNAME=		vrfy_990522
 PKGNAME=		vrfy-99.05.22p0

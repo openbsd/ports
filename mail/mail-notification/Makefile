@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/20 13:24:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=		"mail notification for freedesktop.org-compliant system trays"
+COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-4.0
 CATEGORIES=		mail	
 

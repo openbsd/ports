@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/03 13:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:07 merdely Exp $
 
-COMMENT=		'wm-dockapp; mail notifier'
+COMMENT=		wm-dockapp; mail notifier
 
 DISTNAME=		WMMail.app-0.64
 PKGNAME=		wmmail-0.64

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/10 17:36:01 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"Python interface to sendmail milter API"
+COMMENT=	Python interface to sendmail milter API
 
 DISTNAME=	milter-0.7.2
 PKGNAME=	py-${DISTNAME}p3

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2006/11/28 11:09:52 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=		"perl module to manage mail folders"
+COMMENT=		perl module to manage mail folders
 
 DISTNAME=		Mail-Box-2.018
 PKGNAME=		p5-${DISTNAME}p0

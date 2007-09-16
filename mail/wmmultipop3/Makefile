@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/30 19:04:22 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:07 merdely Exp $
 
-COMMENT=		"wm-dockapp; multiple pop3 mailbox checker"
+COMMENT=		wm-dockapp; multiple pop3 mailbox checker
 
 DISTNAME=		wmMultiPop3-0.9
 PKGNAME=		${DISTNAME:L}

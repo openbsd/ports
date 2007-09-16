@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2005/09/05 12:49:04 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"move your mail box to another location"
+COMMENT=	move your mail box to another location
 
 DISTNAME=	movemail-1.0
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/12 15:25:37 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT= 	"unified interface to mail representations"
+COMMENT= 	unified interface to mail representations
 
 MODULES=	cpan
 DISTNAME=	Email-Abstract-2.132

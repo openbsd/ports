@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2005/06/30 13:22:23 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"Postfix log entry summarizer"
+COMMENT=	Postfix log entry summarizer
 
 DISTNAME=	pflogsumm-1.1.0
 PKGNAME=	${DISTNAME}p0

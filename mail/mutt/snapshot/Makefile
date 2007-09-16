@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2007/07/19 00:18:12 todd Exp $
+# $OpenBSD: Makefile,v 1.44 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"tty-based e-mail client, development version"
+COMMENT=	tty-based e-mail client, development version
 
 VERSION=	1.5.16
 DISTNAME=	mutt-${VERSION}

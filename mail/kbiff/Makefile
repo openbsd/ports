@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2007/05/09 11:38:52 bernd Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=		"new mail notification utility for KDE"
+COMMENT=		new mail notification utility for KDE
 
 DISTNAME=		kbiff-3.8
 PKGNAME=		${DISTNAME}p1

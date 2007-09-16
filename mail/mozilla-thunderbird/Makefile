@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2007/09/05 14:58:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.61 2007/09/16 00:17:05 merdely Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
-COMMENT=	"redesign of Mozilla's mail component"
+COMMENT=	redesign of Mozilla's mail component
 
 VER=		2.0.0.6
 DISTNAME=	mozilla

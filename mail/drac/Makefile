@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/27 12:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"dynamic relay authorization control daemon"
+COMMENT=	dynamic relay authorization control daemon
 
 DISTNAME=	drac
 PKGNAME=	${DISTNAME}-1.12p0

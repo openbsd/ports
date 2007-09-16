@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"SMTP virus filter"
+COMMENT=	SMTP virus filter
 
 DISTNAME=	clamsmtp-1.8
 PKGNAME=	${DISTNAME}p1

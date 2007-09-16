@@ -1,6 +1,6 @@
-#   $OpenBSD: Makefile,v 1.2 2006/11/28 11:09:52 espie Exp $
+#   $OpenBSD: Makefile,v 1.3 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"implements a complete, RFC compliant SMTP server"
+COMMENT=	implements a complete, RFC compliant SMTP server
 
 DISTNAME=	SMTP-Server-1.1
 PKGNAME=	p5-${DISTNAME}p0

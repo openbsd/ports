@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/05 14:02:13 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.4 2007/09/16 00:17:04 merdely Exp $ 
 
-COMMENT=	"mail filter rules for imp"
+COMMENT=	mail filter rules for imp
 
 HORDE_MODULE=	ingo
 HORDE_NAME=	Ingo

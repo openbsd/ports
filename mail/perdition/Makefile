@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 11:00:38 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT-main=	"fully featured POP3 and IMAP4 proxy server"
-COMMENT-ldap=	"LDAP backend for perdition mail proxy"
-COMMENT-mysql=  "MySQL backend for perdition mail proxy"
-COMMENT-pgsql=	"PostgreSQL backend for perdition mail proxy"
+COMMENT-main=	fully featured POP3 and IMAP4 proxy server
+COMMENT-ldap=	LDAP backend for perdition mail proxy
+COMMENT-mysql=  MySQL backend for perdition mail proxy
+COMMENT-pgsql=	PostgreSQL backend for perdition mail proxy
 
 DISTVER=	1.17
 DISTNAME=	perdition-${DISTVER}

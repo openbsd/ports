@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"simple mail counter"
+COMMENT=	simple mail counter
 
 DISTNAME=	cmail-3.1
 PKGNAME=	${DISTNAME}p0

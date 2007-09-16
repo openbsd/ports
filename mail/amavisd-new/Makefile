@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/31 20:41:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=		"interface between mailer MTA and content checkers"
+COMMENT=		interface between mailer MTA and content checkers
 
 VERSION=		2.3.2
 PKGNAME=		${DISTNAME}p0

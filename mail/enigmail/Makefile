@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2007/08/05 15:46:37 martynas Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 00:17:04 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"GnuPG extension for Thunderbird"
+COMMENT=	GnuPG extension for Thunderbird
 
 VER=		0.95.3
 DISTNAME=	enigmail-${VER}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/22 22:26:31 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"greylist milter"
+COMMENT=	greylist milter
 
 DISTNAME=	milter-greylist-3.0
 PKGNAME=	${DISTNAME}

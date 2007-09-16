@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/08 15:22:40 pyr Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT-main=		"mail and news client"
-COMMENT-docs=		"documentation"
-COMMENT-bogofilter=	"bogofilter plugin"
-COMMENT-clamav=		"clamav plugin"
-COMMENT-dillo=		"dillo plugin"
-COMMENT-spamassassin=	"spamassassin plugin"
+COMMENT-main=		mail and news client
+COMMENT-docs=		documentation
+COMMENT-bogofilter=	bogofilter plugin
+COMMENT-clamav=		clamav plugin
+COMMENT-dillo=		dillo plugin
+COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.0.0
 DISTNAME=		claws-mail-${V}
@@ -110,8 +110,8 @@ CONFIGURE_ARGS+=	--disable-gnomeprint
 .endif
 
 .if ${FLAVOR:L:Mcompface}
-PERMIT_PACKAGE_CDROM=   "No Fee"
-PERMIT_DISTFILES_CDROM= "No Fee"
+PERMIT_PACKAGE_CDROM=   No Fee
+PERMIT_DISTFILES_CDROM= No Fee
 LIB_DEPENDS-main+=     compface.>=1::mail/faces
 .else
 CONFIGURE_ARGS+=       --disable-compface

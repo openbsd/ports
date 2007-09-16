@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/02/20 08:51:53 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"sendmail milter plugin for SpamAssassin spamd"
+COMMENT=	sendmail milter plugin for SpamAssassin spamd
 
 DISTNAME=	milter-spamd-0.5
 CATEGORIES=	mail

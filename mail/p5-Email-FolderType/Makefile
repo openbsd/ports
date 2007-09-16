@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 00:11:23 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT= 	"determine email folder type"
+COMMENT= 	determine email folder type
 
 MODULES=	cpan
 

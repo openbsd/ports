@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/02/11 11:25:51 fkr Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"powerful IMAP/Maildir synchronization and reader support"
+COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
 V=             4.0.16                                                                                                
 DISTNAME=      offlineimap_${V} 

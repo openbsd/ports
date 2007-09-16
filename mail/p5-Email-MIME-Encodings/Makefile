@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/24 12:41:02 dassow Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"unified interface to MIME encoding and decoding "
+COMMENT=	unified interface to MIME encoding and decoding
 
 MODULES=	cpan
 DISTNAME=	Email-MIME-Encodings-1.3

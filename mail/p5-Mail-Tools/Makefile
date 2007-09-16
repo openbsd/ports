@@ -1,6 +1,6 @@
-#   $OpenBSD: Makefile,v 1.14 2006/11/17 15:08:16 espie Exp $
+#   $OpenBSD: Makefile,v 1.15 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"modules for handling mail with perl"
+COMMENT=	modules for handling mail with perl
 
 MODULES=	cpan
 DISTNAME=	MailTools-1.74

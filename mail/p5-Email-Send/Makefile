@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT= 	"simply sending Email"
+COMMENT= 	simply sending Email
 
 MODULES=	cpan
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/29 14:53:10 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"DomainKeys milter"
+COMMENT=	DomainKeys milter
 
 DISTNAME=	dk-milter-0.5.0
 PKGNAME=	${DISTNAME}

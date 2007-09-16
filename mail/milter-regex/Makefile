@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/08/27 08:22:20 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"sendmail milter plugin for regular expression filtering"
+COMMENT=	sendmail milter plugin for regular expression filtering
 
 DISTNAME=	milter-regex-1.7
 PKGNAME=	${DISTNAME}

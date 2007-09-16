@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=		"simple SMTP client"
+COMMENT=		simple SMTP client
 
 DISTNAME=		smtpclient-1.0.0
 PKGNAME=		${DISTNAME}p1

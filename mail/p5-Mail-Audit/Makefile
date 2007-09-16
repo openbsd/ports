@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/28 11:09:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"library for creating easy mail filters"
+COMMENT=	library for creating easy mail filters
 
 DISTNAME=	Mail-Audit-2.1
 PKGNAME=	p5-${DISTNAME}p1

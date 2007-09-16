@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/07/04 19:18:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/16 00:17:06 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"agent for Razor spam filtering networks"
+COMMENT=		agent for Razor spam filtering networks
 
 DISTNAME=		razor-agents-2.82
 CATEGORIES=		mail

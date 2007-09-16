@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/16 23:08:45 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=	"allows non RFC822 addresses common in japan"
+COMMENT=	allows non RFC822 addresses common in japan
 
 MODULES=	cpan
 DISTNAME=	Email-Valid-Loose-0.05

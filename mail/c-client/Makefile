@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2007/01/12 10:51:21 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.36 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"University of Washington's c-client mail access routines"
+COMMENT=	University of Washington's c-client mail access routines
 NO_REGRESS=	Yes
 
 VERSION=	4.64

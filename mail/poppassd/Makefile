@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2005/12/24 16:42:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"server: allow users to change password from within Eudora"
+COMMENT=	server: allow users to change password from within Eudora
 
 DISTNAME=	poppassd-4.0
 PKGNAME=	${DISTNAME}p0
@@ -10,10 +10,10 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/password/
 
 # License: NONE
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c
 
 EXTRACT_CASES= pwserve-4) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;

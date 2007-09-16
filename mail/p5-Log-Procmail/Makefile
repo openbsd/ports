@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/26 23:56:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=		"perl module for reading procmail logs"
+COMMENT=		perl module for reading procmail logs
 
 DISTNAME=		Log-Procmail-0.11
 CATEGORIES=		mail textproc

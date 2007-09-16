@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2005/01/02 01:07:49 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"client for pop2, pop3, apop, rpop"
+COMMENT=	client for pop2, pop3, apop, rpop
 
 DISTNAME=	popclient-3.0b6
 PKGNAME=	${DISTNAME}p0

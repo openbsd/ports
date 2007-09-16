@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/25 01:08:34 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:05 merdely Exp $
 
-COMMENT=		"program for indexing & searching email"
+COMMENT=		program for indexing & searching email
 
 DISTNAME=		mairix-0.20
 CATEGORIES=		mail

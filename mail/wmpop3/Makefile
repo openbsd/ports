@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 00:17:07 merdely Exp $
 
-COMMENT=		'wm-dockapp; POP3 mail check'
+COMMENT=		wm-dockapp; POP3 mail check
 
 DISTNAME=		WMPop3-0.5.6a
 PKGNAME=		${DISTNAME:L}

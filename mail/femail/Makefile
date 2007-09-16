@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/05/11 14:45:42 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=	"simple SMTP client"
+COMMENT=	simple SMTP client
 
 DISTNAME=	femail-0.97
 CATEGORIES=	mail

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2007/01/05 18:34:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT-main=	"program for Internet E-mail and News"
-COMMENT-pico=	"small text editor"
-COMMENT-pilot=	"file system browser"
+COMMENT-main=	program for Internet E-mail and News
+COMMENT-pico=	small text editor
+COMMENT-pilot=	file system browser
 
 CATEGORIES=		mail news
 CATEGORIES-pico=	editors

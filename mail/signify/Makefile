@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/18 16:23:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"dynamic .signature generator"
+COMMENT=	dynamic .signature generator
 
 DISTNAME=	signify-1.11
 CATEGORIES=	mail

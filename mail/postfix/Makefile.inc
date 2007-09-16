@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.64 2007/05/31 10:19:00 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.65 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"fast, secure sendmail replacement"
+COMMENT=	fast, secure sendmail replacement
 
 DISTNAME?=	postfix-${VERSION}
 .if defined(PATCHLEVEL)
@@ -24,9 +24,9 @@ HOMEPAGE=	http://www.postfix.org/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"cannot be sold, see section 4 of license"
+PERMIT_PACKAGE_CDROM=	cannot be sold, see section 4 of license
 PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	"cannot be sold, see section 4 of license"
+PERMIT_DISTFILES_CDROM=	cannot be sold, see section 4 of license
 PERMIT_DISTFILES_FTP=	yes
 
 MAKE_DEBUG?=

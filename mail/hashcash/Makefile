@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/03 17:34:09 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=		"hashcash anti-spam / denial of service counter-measure tool"
+COMMENT=		hashcash anti-spam / denial of service counter-measure tool
 
 DISTNAME=		hashcash-1.22
 CATEGORIES=     	mail

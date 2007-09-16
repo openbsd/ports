@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2003/06/10 07:41:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=	"client to perform simple tasks with a POP3/IMAP server"
+COMMENT=	client to perform simple tasks with a POP3/IMAP server
 
 DISTNAME=	poppy-4.01
 CATEGORIES=	mail

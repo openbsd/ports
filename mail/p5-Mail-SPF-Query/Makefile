@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/28 11:09:52 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:06 merdely Exp $
 
-COMMENT=		"perl module to query Sender Policy Framework"
+COMMENT=		perl module to query Sender Policy Framework
 
 DISTNAME=		Mail-SPF-Query-1.999.1
 CATEGORIES=		mail

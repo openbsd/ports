@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/24 13:38:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 00:17:04 merdely Exp $
 
-COMMENT=		"library for the creation and parsing of MIME messages"
+COMMENT=		library for the creation and parsing of MIME messages
 
 DISTNAME=		gmime-2.2.8
 SHARED_LIBS +=	gmime-2.0            0.0      # .4.8
