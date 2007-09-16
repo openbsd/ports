@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/05 12:40:24 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 15:19:44 naddy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to FLAC header metadata
 
 MODULES=	cpan
-DISTNAME=	Audio-FLAC-Header-1.7
+DISTNAME=	Audio-FLAC-Header-1.8
 CATEGORIES=	audio
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
