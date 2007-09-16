@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2005/03/08 09:22:50 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 03:05:29 merdely Exp $
 
-COMMENT= 		"reimplementation of Dan Bernstein's daemontools"
+COMMENT= 		reimplementation of Dan Bernstein's daemontools
 
 DISTNAME=		freedt-0.21
 CATEGORIES=		sysutils

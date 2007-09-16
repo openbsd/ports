@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 03:05:29 merdely Exp $
 
 BROKEN=			No release available that works with xfce 4.4.
 
-COMMENT=		"editor for XFCE's backdrop list"
+COMMENT=		editor for XFCE's backdrop list
 DISTNAME=		xfce4-bglist-editor-4.2.0
 PKGNAME=		${DISTNAME}p0
 
