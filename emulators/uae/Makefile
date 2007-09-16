@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/08/02 09:36:20 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 00:45:13 merdely Exp $
 
-COMMENT=	"UAE amiga emulator"
+COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.21
 CATEGORIES=	emulators x11
 

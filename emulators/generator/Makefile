@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/11 21:04:28 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 00:45:13 merdely Exp $
 # XXX hardcoded endian list
 
-COMMENT=	"sega genesis emulator"
+COMMENT=	sega genesis emulator
 DISTNAME=	generator-0.35-cbiere-r2
 PKGNAME=	generator-0.35r2
 EXTRACT_SUFX=	.tar.bz2
@@ -11,9 +11,9 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://www.ghostwhitecrab.de/generator/
 
 # GPL + custom licenses for CPU emulators
-PERMIT_DISTFILES_CDROM=	"can't sell"
+PERMIT_DISTFILES_CDROM=	can't sell
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	"can't sell"
+PERMIT_PACKAGE_CDROM=	can't sell
 PERMIT_PACKAGE_FTP=	Yes
 
 LIB_DEPENDS+=	bz2.>=10::archivers/bzip2 \

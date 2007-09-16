@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/09/24 19:02:46 grange Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:45:13 merdely Exp $
 
-COMMENT=		"ZX Spectrum 48k emulator"
+COMMENT=		ZX Spectrum 48k emulator
 
 DISTNAME=		spectemu-0.94
 PKGNAME=		${DISTNAME}p0

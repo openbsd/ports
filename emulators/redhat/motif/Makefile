@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2005/11/25 23:04:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/16 00:45:13 merdely Exp $
 
-COMMENT=	"Motif toolkit Linux libraries"
+COMMENT=	Motif toolkit Linux libraries
 
 PKGNAME=	redhat_motif-2.1.30p3
 

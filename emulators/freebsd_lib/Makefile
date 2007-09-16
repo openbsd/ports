@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2007/05/30 15:29:43 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2007/09/16 00:45:13 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"libraries necessary for FreeBSD compatibility"
+COMMENT=	libraries necessary for FreeBSD compatibility
 
 DISTNAME=	freebsd_lib-4.11
 PKGNAME=	${DISTNAME}p0

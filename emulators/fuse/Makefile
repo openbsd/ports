@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/12/17 09:14:36 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 00:45:13 merdely Exp $
 
-COMMENT=		"Free Unix Spectrum Emulator"
+COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.7.0
 PKGNAME=		${DISTNAME}p0
 CATEGORIES=		emulators

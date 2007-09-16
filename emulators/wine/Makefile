@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2005/05/14 12:10:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2007/09/16 00:45:14 merdely Exp $
 
-COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
+COMMENT=	MS-Windows 3.1/95/NT emulator for Unix (Alpha release)
 
 DATE= 		990225
 DISTNAME= 	Wine-${DATE}

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.58 2007/07/24 20:45:41 kili Exp $
+# $OpenBSD: Makefile,v 1.59 2007/09/16 00:45:13 merdely Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
-COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
+COMMENT=		PDP, IBM 1401, Nova and other CPUs simulator
 
 DISTNAME=		simh-3.7.2
 PKGNAME=		${DISTNAME}

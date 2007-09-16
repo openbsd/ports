@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2007/05/13 12:11:25 aanriot Exp $
+# $OpenBSD: Makefile,v 1.30 2007/09/16 00:45:14 merdely Exp $
 
-COMMENT-main=	"emulates arcade machines and old home computers"
-COMMENT-mame=	"emulates a massive variety of arcade machines"
-COMMENT-mess=	"emulates game consoles and old home computers"
+COMMENT-main=	emulates arcade machines and old home computers
+COMMENT-mame=	emulates a massive variety of arcade machines
+COMMENT-mess=	emulates game consoles and old home computers
 
 VERSION=	0.104
 DISTNAME=	xmame-${VERSION}
@@ -22,10 +22,10 @@ HOMEPAGE=	http://x.mame.net
 ONLY_FOR_ARCHS=	amd64 alpha hppa i386 m68k sparc
 
 # xmame license, see http://x.mame.net/license.html
-PERMIT_PACKAGE_CDROM=	"may not sell"
-PERMIT_PACKAGE_FTP=	"Yes"
-PERMIT_DISTFILES_CDROM=	"may not sell"
-PERMIT_DISTFILES_FTP=	"Yes"
+PERMIT_PACKAGE_CDROM=	may not sell
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	may not sell
+PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xv Xxf86dga Xxf86vm expat c m usbhid z
 
 EXTRACT_SUFX=	.tar.bz2

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/04/01 16:44:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 00:45:14 merdely Exp $
 
 ONLY_FOR_ARCHS=		i386
 
-COMMENT=		"Super Nintendo emulator for x86"
+COMMENT=		Super Nintendo emulator for x86
 VERSION=		1.42
 DISTNAME=		zsnes_${VERSION:S/./_/}
 PKGNAME=		zsnes-${VERSION}

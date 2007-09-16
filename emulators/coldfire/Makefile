@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/07 11:46:07 martin Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 00:45:13 merdely Exp $
 
-COMMENT=	"Motorola Coldfire emulator"
+COMMENT=	Motorola Coldfire emulator
 
 DISTNAME=	coldfire-0.3.1
 CATEGORIES=	emulators

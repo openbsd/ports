@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/03/30 14:27:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:45:13 merdely Exp $
 
-COMMENT=	"Linux compatibility package based on Fedora Core 4"
+COMMENT=	Linux compatibility package based on Fedora Core 4
 
 PKGNAME=	fedora_base-4.0p3
 # clean up after make plist:

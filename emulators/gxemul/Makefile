@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/06/17 08:36:27 grange Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 00:45:13 merdely Exp $
 
-COMMENT=		"ARM/MIPS/PowerPC/SuperH machines emulator"
+COMMENT=		ARM/MIPS/PowerPC/SuperH machines emulator
 
 DISTNAME=		gxemul-0.4.6
 CATEGORIES=		emulators

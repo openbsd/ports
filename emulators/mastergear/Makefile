@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/19 00:15:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:45:13 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"emulates the Sega GameGear and MasterSystem"
+COMMENT=	emulates the Sega GameGear and MasterSystem
 
 PKGNAME=	mastergear-1.4p0
 DISTNAME=	MG14-Linux-80x86-bin

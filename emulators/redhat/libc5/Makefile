@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/19 00:17:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 00:45:13 merdely Exp $
 
-COMMENT=	"Linux libc5"
+COMMENT=	Linux libc5
 
 PKGNAME=	redhat_libc5-6.2p1
 
