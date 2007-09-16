@@ -1,14 +1,13 @@
-$OpenBSD: patch-rts_Linker_c,v 1.1 2007/07/21 17:14:58 kili Exp $
+$OpenBSD: patch-rts_Linker_c,v 1.2 2007/09/16 20:05:12 kili Exp $
 
 We don't have MAP_ANONYMOUS (which is the same as MAP_ANON on Linux,
 but the latter has been deprecated). We also don't have that MAP_32BIT
-Linux provides for amd64, so just zap that flag to 0. Note that
-this isn't enough to make ghci work on amd64. The definite solution
-would be real dynamic libraries created and used by GHC, so we could
-drop most of that home-brewn linking code at all.
+Linux provides for amd64, so just zap that flag to 0. In addition
+EM_X86_64 is called EM_AMD64 on OpenBSD, so just replace it to
+reenable GHCi (noted by dons).
 
 --- rts/Linker.c.orig	Wed Apr 25 19:10:41 2007
-+++ rts/Linker.c	Wed May 23 13:59:08 2007
++++ rts/Linker.c	Sun Sep 16 12:27:02 2007
 @@ -73,6 +73,11 @@
  
  #endif
@@ -21,3 +20,14 @@ drop most of that home-brewn linking code at all.
  #if defined(linux_HOST_OS) || defined(solaris2_HOST_OS) || defined(freebsd_HOST_OS) || defined(netbsd_HOST_OS) || defined(openbsd_HOST_OS)
  #  define OBJFORMAT_ELF
  #elif defined(cygwin32_HOST_OS) || defined (mingw32_HOST_OS)
+@@ -2923,8 +2928,8 @@ ocVerifyImage_ELF ( ObjectCode* oc )
+       case EM_IA_64: IF_DEBUG(linker,debugBelch( "ia64" )); break;
+ #endif
+       case EM_PPC:   IF_DEBUG(linker,debugBelch( "powerpc32" )); break;
+-#ifdef EM_X86_64
+-      case EM_X86_64: IF_DEBUG(linker,debugBelch( "x86_64" )); break;
++#ifdef EM_AMD64
++      case EM_AMD64: IF_DEBUG(linker,debugBelch( "x86_64" )); break;
+ #endif
+       default:       IF_DEBUG(linker,debugBelch( "unknown" ));
+                      errorBelch("%s: unknown architecture", oc->fileName);

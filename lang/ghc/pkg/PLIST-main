@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/07/21 17:14:58 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/09/16 20:05:12 kili Exp $
 @pkgpath lang/ghc
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/unregister.sh
 bin/ghc
@@ -1600,4 +1600,5 @@ lib/ghc/register.sh
 lib/ghc/template-hsc.h
 lib/ghc/unlit
 lib/ghc/unregister.sh
+@man man/man1/ghc.1
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/register.sh

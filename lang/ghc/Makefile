@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/07/22 22:37:25 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/16 20:05:12 kili Exp $
 # 
 # Ancient versions based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
@@ -8,7 +8,7 @@ COMMENT-main=		compiler for the functional language Haskell
 COMMENT-doc=		documentation for GHC
 
 DISTNAME=		ghc-${MODGHC_VER}
-PKGNAME-main=		ghc-${MODGHC_VER}p0
+PKGNAME-main=		ghc-${MODGHC_VER}p1
 PKGNAME-doc=		ghc-doc-${MODGHC_VER}
 CATEGORIES=		lang
 HOMEPAGE=		http://www.haskell.org/ghc/
@@ -30,6 +30,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 PKG_ARCH-doc=		*
+BUILD_DEPENDS=		::textproc/libxslt
 LIB_DEPENDS-main=	gmp::devel/gmp
 RUN_DEPENDS-doc=
 RUN_DEPENDS-main=
@@ -90,7 +91,7 @@ CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib
 
-FAKE_FLAGS+=		"stage=2"
+FAKE_FLAGS+=		stage=2
 
 post-extract:
 	@mv ${WRKDIR}/testsuite ${WRKSRC}
@@ -145,15 +146,19 @@ do-build:
 .endif
 
 # Create scripts for the Cabal package registry that will be used for
-# @exec and @unexec.
+# @exec and @unexec. And generate a man page.
 post-build:
 	cd ${WRKBUILD} && sh ${FILESDIR}/mkregunreg.sh ${PREFIX}
+	cd ${WRKBUILD}/docs/man && \
+	env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ghc.1
 
 post-install:
 	rm ${PREFIX}/lib/ghc/package.conf
 	${INSTALL_SCRIPT} ${WRKBUILD}/{un,}register.sh ${PREFIX}/lib/ghc
 	${INSTALL_DATA_DIR} ${DOC_DIR}
 	cd ${WRKDIR} && umask 022 && pax -rw ${DOC_FILES} ${DOC_DIR}
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKBUILD}/docs/man/ghc.1 ${PREFIX}/man/man1
 
 do-regress:
 	cd ${WRKSRC}/testsuite/tests/ghc-regress && \
