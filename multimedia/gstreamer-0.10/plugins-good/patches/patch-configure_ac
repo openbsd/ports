@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2007/01/08 17:37:27 espie Exp $
---- configure.ac.orig	Mon Jan  8 16:38:39 2007
-+++ configure.ac	Mon Jan  8 16:39:18 2007
-@@ -632,7 +632,7 @@ GST_CHECK_FEATURE(LIBDV, [libdv DV demux
+$OpenBSD: patch-configure_ac,v 1.2 2007/09/16 18:15:23 naddy Exp $
+--- configure.ac.orig	Thu Dec 21 15:20:44 2006
++++ configure.ac	Sun Sep 16 20:09:47 2007
+@@ -632,7 +632,7 @@ GST_CHECK_FEATURE(LIBDV, [libdv DV demuxer/decoder], d
  dnl *** libpng ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_LIBPNG, true)
  GST_CHECK_FEATURE(LIBPNG, [Portable Network Graphics library], png, [
