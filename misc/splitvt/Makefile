@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/16 20:58:19 jasper Exp $
 
 COMMENT=	run two shells in a split window/terminal
 
-DISTNAME=	splitvt-1.6.5
+DISTNAME=	splitvt-1.6.6
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.devolution.com/~slouken/projects/splitvt/
@@ -20,9 +20,6 @@ CONFIGURE_STYLE=simple
 ALL_TARGET=
 
 NO_REGRESS=	Yes
-
-pre-configure:
-	@rm ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/splitvt ${PREFIX}/bin
