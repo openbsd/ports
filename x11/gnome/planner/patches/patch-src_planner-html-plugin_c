@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_planner-html-plugin_c,v 1.1.1.1 2007/09/16 19:51:52 jasper Exp $
+--- src/planner-html-plugin.c.orig	Sun Sep  9 23:49:29 2007
++++ src/planner-html-plugin.c	Sun Sep  9 23:50:03 2007
+@@ -198,7 +198,6 @@ html_plugin_export (GtkAction *action,
+ 
+ 		break;
+ 	case GTK_RESPONSE_CANCEL:
+-		g_free (filename);
+ 		gtk_widget_destroy (filechooser);
+ 		break;
+ 	}
