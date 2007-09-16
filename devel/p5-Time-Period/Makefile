@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=		"module for dealing with time periods"
+COMMENT=		module for dealing with time periods
 
 MODULES=		cpan
 DISTNAME=		Period-1.20

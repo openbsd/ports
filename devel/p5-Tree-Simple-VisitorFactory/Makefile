@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"factory for Tree::Simple visitor objects"
+COMMENT=	factory for Tree::Simple visitor objects
 
 MODULES=	cpan
 DISTNAME=	Tree-Simple-VisitorFactory-0.10

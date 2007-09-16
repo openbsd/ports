@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/15 18:34:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"USB access library"
+COMMENT=	USB access library
 
 DISTNAME=	libusb-0.1.12
 SHARED_LIBS=		usb	9.0 \

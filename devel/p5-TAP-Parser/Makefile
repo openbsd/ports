@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/14 05:53:04 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT=	"parse TAP output"
+COMMENT=	parse TAP output
 
 MODULES=	cpan
 DISTNAME=	TAP-Parser-0.54

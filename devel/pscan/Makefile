@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"limited problem scanner for C source files"
+COMMENT=	limited problem scanner for C source files
 
 V=		1.6
 DISTNAME=	pscan

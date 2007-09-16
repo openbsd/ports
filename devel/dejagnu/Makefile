@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2005/06/18 14:34:56 kettenis Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=	"framework to test programs"
+COMMENT=	framework to test programs
 
 DISTNAME=	dejagnu-1.4.3
 PKGNAME=	${DISTNAME}p4

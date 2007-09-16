@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/05 06:14:17 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT= 	"find memory cycles in objects"
+COMMENT= 	find memory cycles in objects
 
 MODULES=	cpan
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/06/12 21:53:50 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:52:58 merdely Exp $ 
 
-COMMENT=	"web-based CVS viewer module for Horde"
+COMMENT=	web-based CVS viewer module for Horde
 
 V=		1.2.2
 HORDE_MODULE=	chora

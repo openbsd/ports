@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/04 09:41:27 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"remove files and directories with perl"
+COMMENT=	remove files and directories with perl
 
 MODULES=	cpan
 

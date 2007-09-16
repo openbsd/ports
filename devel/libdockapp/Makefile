@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/04/08 16:33:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		'dockapp-making standard library for Window Maker'
+COMMENT=		dockapp-making standard library for Window Maker
 
 DISTNAME=		libdockapp-0.4.0
 PKGNAME=		${DISTNAME}p1

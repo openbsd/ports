@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/04 01:07:15 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"dispatches messages to one or more outputs"
+COMMENT=	dispatches messages to one or more outputs
 
 MODULES=	cpan
 DISTNAME=	Log-Dispatch-2.13

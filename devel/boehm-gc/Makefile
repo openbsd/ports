@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.34 2007/07/14 22:16:16 kili Exp $
+# $OpenBSD: Makefile,v 1.35 2007/09/16 02:52:57 merdely Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
-COMMENT=	"garbage collection and memory leak detection for C and C++"
+COMMENT=	garbage collection and memory leak detection for C and C++
 
 VERSION=	7.0
 DISTNAME=	gc-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/08 01:29:48 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=		"concise expressive creations of Class::Meta classes"
+COMMENT=		concise expressive creations of Class::Meta classes
 
 MODULES=		cpan
 DISTNAME=		Class-Meta-Express-0.04

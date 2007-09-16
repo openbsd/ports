@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"interface to compute differences between two objects"
+COMMENT=	interface to compute differences between two objects
 
 MODULES=	cpan
 DISTNAME=	Algorithm-Diff-1.1902

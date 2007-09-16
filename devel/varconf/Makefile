@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/08/01 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"configuration system for the STAGE server"
+COMMENT=	configuration system for the STAGE server
 
 DISTNAME=	varconf-0.5.4
 PKGNAME=	${DISTNAME}p2

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"impromptu dumping of data structures for debugging purposes"
+COMMENT=	impromptu dumping of data structures for debugging purposes
 
 MODULES=	cpan
 DISTNAME=	BFD-0.31

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/17 11:56:56 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"represent a series of changes in annotate form"
+COMMENT=	represent a series of changes in annotate form
 
 MODULES=	cpan
 DISTNAME=	Algorithm-Annotate-0.10

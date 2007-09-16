@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/06 10:57:38 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"provides a generic logging layer"
+COMMENT=	provides a generic logging layer
 
 VERSION=	0.0.7
 DISTNAME=	vanessa_logger-${VERSION}

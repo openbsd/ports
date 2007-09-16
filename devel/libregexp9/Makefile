@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/17 11:49:12 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=	"Simple regular expression library from Plan 9"
+COMMENT=	Simple regular expression library from Plan 9
 
 VERSION=	2.0
 DISTNAME=	libregexp9-${VERSION}

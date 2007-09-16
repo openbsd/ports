@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2007/07/14 06:20:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/16 02:53:14 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	"ISO-C API and CLI for generating UUIDs"
-COMMENT-perl=	"UUID modules for Perl"
-COMMENT-pgsql=	"UUID extension for PostgreSQL"
+COMMENT-main=	ISO-C API and CLI for generating UUIDs
+COMMENT-perl=	UUID modules for Perl
+COMMENT-pgsql=	UUID extension for PostgreSQL
 
 VERSION=		1.6.0
 DISTNAME=		uuid-${VERSION}

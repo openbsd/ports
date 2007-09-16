@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/17 11:56:56 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"tool for copying resources between repositories"
+COMMENT=	tool for copying resources between repositories
 
 MODULES=	cpan
 DISTNAME=	VCP-autrijus-snapshot-0.9-20050110

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"use familiar style on method naming"
+COMMENT=	use familiar style on method naming
 
 MODULES=	cpan
 DISTNAME=	capitalization-0.03

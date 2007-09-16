@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2007/07/27 19:29:51 kurt Exp $
+# $OpenBSD: Makefile,v 1.43 2007/09/16 02:52:59 merdely Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
 
-COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
-COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
+COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
+COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.5.0.12
 PKGNAME=		jdk-${V}
 PKGNAME-main=		jdk-${V}
@@ -30,10 +30,10 @@ MASTER_SITES=		http://www.java.net/download/tiger/tiger_u12/
 
 # Java Research License
 # http://www.java.net/jrl.csp
-PERMIT_PACKAGE_CDROM=	"JRL"
-PERMIT_PACKAGE_FTP=	"JRL"
-PERMIT_DISTFILES_CDROM= "JRL"
-PERMIT_DISTFILES_FTP=	"JRL"
+PERMIT_PACKAGE_CDROM=	JRL
+PERMIT_PACKAGE_FTP=	JRL
+PERMIT_DISTFILES_CDROM= JRL
+PERMIT_DISTFILES_FTP=	JRL
 
 NO_REGRESS=		Yes
 

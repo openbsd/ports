@@ -1,6 +1,6 @@
-#	$OpenBSD: Makefile,v 1.4 2007/04/12 18:59:35 jasper Exp $
+#	$OpenBSD: Makefile,v 1.5 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=	"auto getters/setters for perl"
+COMMENT=	auto getters/setters for perl
 
 MODULES=	cpan
 DISTNAME=	Class-AutoClass-0.093

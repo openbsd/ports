@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2007/09/16 02:52:56 merdely Exp $
 
-COMMENT=	"high-performance CORBA ORB with support for the C language"
+COMMENT=	high-performance CORBA ORB with support for the C language
 
 DISTNAME=	ORBit-0.5.13
 PKGNAME=	${DISTNAME}p2

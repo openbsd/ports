@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/07 03:49:39 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=		"build utility like make"
+COMMENT=		build utility like make
 
 DISTNAME=	 	jam-2.5
 PKGNAME=	 	${DISTNAME}p0

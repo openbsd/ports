@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/29 14:42:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"Ruby Development Tools for Eclipse IDE"
+COMMENT=		Ruby Development Tools for Eclipse IDE
 
 V=			0.8.0
 DISTNAME=		org.rubypeople.rdt-0.8.0.604272100PRD
@@ -14,9 +14,9 @@ MAINTAINER=		Carlos Valiente <yo@virutass.net>
 EXTRACT_SUFX=		.zip
 
 # Common Public License Version 1.0 (http://www.eclipse.org/legal/cpl-v10.html)
-PERMIT_PACKAGE_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rubyeclipse/}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/07 09:42:11 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT=	"perform tests on all modules of a distribution"
+COMMENT=	perform tests on all modules of a distribution
 
 MODULES=	cpan
 

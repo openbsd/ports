@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.54 2007/08/14 15:51:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2007/09/16 02:53:13 merdely Exp $
 # Uses pthreads
 
-COMMENT=	"cross-platform multimedia library"
+COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.9
 DISTNAME=	SDL-${VERSION}

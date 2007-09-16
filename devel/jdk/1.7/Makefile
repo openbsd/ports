@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/06 15:46:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:00 merdely Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	i386 amd64
 
-COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
-COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
+COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
+COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.7.0
 B=			b19
 D=			30_aug_2007
@@ -29,10 +29,10 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
 # Java Research License
 # http://www.java.net/jrl.csp
-PERMIT_PACKAGE_CDROM=	"JRL"
-PERMIT_PACKAGE_FTP=	"JRL"
-PERMIT_DISTFILES_CDROM= "JRL"
-PERMIT_DISTFILES_FTP=	"JRL"
+PERMIT_PACKAGE_CDROM=	JRL
+PERMIT_PACKAGE_FTP=	JRL
+PERMIT_DISTFILES_CDROM= JRL
+PERMIT_DISTFILES_FTP=	JRL
 
 NO_REGRESS=		Yes
 

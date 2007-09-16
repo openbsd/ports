@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"extensible framework for Perl server engines"
+COMMENT=	extensible framework for Perl server engines
 
 MODULES=	cpan
 DISTNAME=	Net-Server-0.90

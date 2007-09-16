@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/23 21:43:16 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=		"rule-based dispatching and generic functions"
+COMMENT=		rule-based dispatching and generic functions
 
 VERSION=		0.5
 REVISION=		2306

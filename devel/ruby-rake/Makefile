@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/01 16:21:32 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"ruby make"
+COMMENT=	ruby make
 
 DISTNAME=	rake-0.7.3
 PKGNAME=	ruby-${DISTNAME}

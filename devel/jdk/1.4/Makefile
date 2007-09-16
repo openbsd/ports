@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2007/07/18 17:53:29 kurt Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/16 02:52:59 merdely Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
 
-COMMENT-main=		"Java2(TM) Standard Edition Dev Kit v${V}"
-COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
+COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
+COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.4.2
 DISTNAME=		j2sdk-1_4_2
 PKGNAME=		jdk-${V}
@@ -26,10 +26,10 @@ DISTFILES=		${DISTNAME}-src-scsl.zip \
 
 # Sun Community Source License
 # http://www.sun.com/software/communitysource/j2se/java2/license.html
-PERMIT_PACKAGE_CDROM=	"SCSL"
-PERMIT_PACKAGE_FTP=	"SCSL"
-PERMIT_DISTFILES_CDROM= "SCSL"
-PERMIT_DISTFILES_FTP=	"SCSL"
+PERMIT_PACKAGE_CDROM=	SCSL
+PERMIT_PACKAGE_FTP=	SCSL
+PERMIT_DISTFILES_CDROM= SCSL
+PERMIT_DISTFILES_FTP=	SCSL
 
 # TCK (Technology Compatibility Kit) covered by yet another license...
 NO_REGRESS=		yes

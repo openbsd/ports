@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=	"handle data in a hierarchical structure"
+COMMENT=	handle data in a hierarchical structure
 
 MODULES=	cpan
 DISTNAME=	Data-Hierarchy-0.31

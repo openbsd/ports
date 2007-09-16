@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"read/write data according to a standard Fortran 77 FORMAT"
+COMMENT=	read/write data according to a standard Fortran 77 FORMAT
 
 MODULES=	cpan
 DISTNAME=	Fortran-Format-0.90

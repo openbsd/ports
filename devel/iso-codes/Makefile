@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/23 12:31:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"lists of the country, language and currency iso names"
+COMMENT=	lists of the country, language and currency iso names
 
 DISTNAME=	iso-codes-1.0
 

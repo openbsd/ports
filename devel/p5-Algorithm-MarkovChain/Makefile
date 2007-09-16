@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"module to create Markov chains and output based on them"
+COMMENT=	module to create Markov chains and output based on them
 
 MODULES=	cpan
 DISTNAME=	Algorithm-MarkovChain-0.06

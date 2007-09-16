@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/25 01:12:50 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"Perl module for use in de-obfuscating source code"
+COMMENT=	Perl module for use in de-obfuscating source code
 
 MODULES=	cpan
 

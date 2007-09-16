@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/30 21:28:40 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"GIS TIFF interchange library"
+COMMENT=	GIS TIFF interchange library
 
 DISTNAME=	libgeotiff-1.2.3
 PKGNAME=	${DISTNAME}p1

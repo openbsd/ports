@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2006/07/11 09:20:23 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=		"getopt(3)-like library with a number of enhancements"
+COMMENT=		getopt(3)-like library with a number of enhancements
 
 DISTNAME=		popt-1.7
 PKGNAME=		${DISTNAME}p0

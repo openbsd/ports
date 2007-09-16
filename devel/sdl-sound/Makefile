@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"library that handles the decoding of sound file formats"
+COMMENT=	library that handles the decoding of sound file formats
 DISTNAME=	SDL_sound-1.0.1
 PKGNAME=	${DISTNAME:L:S/_/-/}p4
 SHARED_LIBS=	SDL_sound 2.0

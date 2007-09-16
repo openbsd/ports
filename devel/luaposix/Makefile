@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/08/05 12:34:33 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"posix library for the lua language"
+COMMENT=	posix library for the lua language
 
 DISTNAME=	luaposix-20060408
 PKGNAME=	${DISTNAME}p0

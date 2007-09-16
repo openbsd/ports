@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/15 08:27:27 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT-main=	"source code documentation generator tool"
-COMMENT-gui=	"GUI front-end for doxygen"
+COMMENT-main=	source code documentation generator tool
+COMMENT-gui=	GUI front-end for doxygen
 
 VERSION=	1.4.7
 DISTNAME=	doxygen-${VERSION}.src

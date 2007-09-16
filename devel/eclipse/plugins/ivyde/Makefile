@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/15 19:30:42 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"IVY plug-in for Eclipse IDE"
+COMMENT=		IVY plug-in for Eclipse IDE
 
 VERSION=		1.2.0
 DISTNAME=		org.jayasoft.ivyde.eclipse_${VERSION}

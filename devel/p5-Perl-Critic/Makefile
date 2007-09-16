@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/24 01:41:41 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"sprintf-like string formatting"
+COMMENT=	sprintf-like string formatting
 
 MODULES=	cpan
 DISTNAME=	Perl-Critic-1.051

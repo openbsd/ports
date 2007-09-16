@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2007/07/14 22:17:22 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=		"OpenCM change management system"
+COMMENT=		OpenCM change management system
 
 V=			0.1.2alpha8
 sV=			-2

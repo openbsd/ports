@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/12 18:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT=	"Emulates the sscanf() of the C stdio library"
+COMMENT=	Emulates the sscanf() of the C stdio library
 
 MODULES=	cpan
 VERSION=	2.1

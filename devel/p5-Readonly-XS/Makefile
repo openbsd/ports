@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/17 15:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT= 	"create readonly variables faster"
+COMMENT= 	create readonly variables faster
 
 MODULES=	cpan
 SHARED_ONLY=	Yes

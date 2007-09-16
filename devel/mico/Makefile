@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/01/13 23:40:23 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"free and complete CORBA-compliant implementation"
+COMMENT=	free and complete CORBA-compliant implementation
 
 DISTNAME=	mico-2.3.6
 PKGNAME=	$(DISTNAME)p1

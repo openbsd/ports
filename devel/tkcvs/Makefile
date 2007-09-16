@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2007/01/10 18:02:27 bernd Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"graphical frontend to CVS"
+COMMENT=	graphical frontend to CVS
 DISTNAME=	tkcvs-6.0
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel

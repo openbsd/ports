@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/02/09 13:06:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"simple wrapper around Getopt::Long"
+COMMENT=	simple wrapper around Getopt::Long
 
 DISTNAME=	Getopt-Simple-1.48
 CATEGORIES=     devel

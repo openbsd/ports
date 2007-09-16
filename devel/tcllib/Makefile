@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/02 18:59:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=		"useful routines for Tcl"
+COMMENT=		useful routines for Tcl
 
 DISTNAME=		tcllib-1.8
 CATEGORIES=		devel lang/tcl

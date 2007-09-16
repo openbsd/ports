@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2006/10/28 11:19:21 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=	"SGI audiofile library clone"
+COMMENT=	SGI audiofile library clone
 
 DISTNAME=	audiofile-0.2.6
 PKGNAME=	lib${DISTNAME}p0

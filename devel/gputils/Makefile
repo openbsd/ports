@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/23 11:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=		"GNU PIC assembler and utilities"
+COMMENT=		GNU PIC assembler and utilities
 
 VERSION=		0.12.0
 DISTNAME=		gputils-${VERSION}

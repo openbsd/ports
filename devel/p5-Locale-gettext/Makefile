@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/23 06:28:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:07 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to gettext() internationalization function"
+COMMENT=	interface to gettext() internationalization function
 
 MODULES=	cpan
 DISTNAME=	gettext-1.05

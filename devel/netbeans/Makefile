@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/13 14:04:08 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=		"NetBeans Java IDE"
+COMMENT=		NetBeans Java IDE
 
 DISTNAME=		netbeans-5_5-ide_sources
 PKGNAME=		netbeans-5.5p0
@@ -11,9 +11,9 @@ HOMEPAGE=		http://www.netbeans.org/
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # CDDL
-PERMIT_PACKAGE_CDROM=	"CDDL"
+PERMIT_PACKAGE_CDROM=	CDDL
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"CDDL"
+PERMIT_DISTFILES_CDROM=	CDDL
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://us2-mirror.netbeans.info/download/5_5/mlfcs/200612070100/

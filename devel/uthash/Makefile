@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/11 17:42:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=		"C macros to add, find and delete items from a hash"
+COMMENT=		C macros to add, find and delete items from a hash
 
 DISTNAME=		uthash-1.2
 CATEGORIES=		devel

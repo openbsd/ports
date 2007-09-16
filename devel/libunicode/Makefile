@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/02/09 07:32:45 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"library for manipulating Unicode characters and strings"
+COMMENT=	library for manipulating Unicode characters and strings
 
 DISTNAME=	libunicode-0.4
 PKGNAME=	${DISTNAME}p1

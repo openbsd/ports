@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/15 02:16:19 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"fast, incremental CVS to Mercurial conversion"
+COMMENT=		fast, incremental CVS to Mercurial conversion
 
 # we just make up a version since changesets are SHA1 hashes
 CHANGESET=		075ee8bd5b35

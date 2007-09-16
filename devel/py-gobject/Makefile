@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/09 21:43:48 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:11 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python bindings for glib2 gobject"
+COMMENT=	Python bindings for glib2 gobject
 
 V=		2.13.1
 DISTNAME=	pygobject-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/08/25 10:37:01 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"lua binding of libevent"
+COMMENT=	lua binding of libevent
 SHARED_ONLY=	Yes
 
 DISTNAME=	luaevent-0.1.1

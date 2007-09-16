@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"SDL image library"
+COMMENT=	SDL image library
 DISTNAME=	SDL_image-1.2.4
 PKGNAME=	${DISTNAME:L:S/_/-/}p2
 SHARED_LIBS=	SDL_image 2.0

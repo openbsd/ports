@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2007/05/19 09:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=		"tool for managing library compile/link flags"
+COMMENT=		tool for managing library compile/link flags
 
-IGNORE=			"Replaced with BSD clone in OpenBSD 4.1"
+IGNORE=			Replaced with BSD clone in OpenBSD 4.1
 VERSION=		0.19
 DISTNAME=		pkg-config-${VERSION}
 PKGNAME=		pkgconfig-${VERSION}p2

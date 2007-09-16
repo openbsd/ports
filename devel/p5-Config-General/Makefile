@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/21 20:16:30 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=        "generic configuration parser, inspired by apache"
+COMMENT=        generic configuration parser, inspired by apache
 
 MODULES=	cpan
 DISTNAME=	Config-General-2.33

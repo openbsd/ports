@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2006/01/13 23:40:23 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/16 02:53:00 merdely Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
-BROKEN=		"signal-related bug? any program linked with this hangs"
+BROKEN=		signal-related bug? any program linked with this hangs
 .endif
 
-COMMENT=	"callback framework for C++"
+COMMENT=	callback framework for C++
 
 DISTNAME=	libsigc++-1.0.4
 PKGNAME=	${DISTNAME}p2

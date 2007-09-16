@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2006/06/03 09:37:09 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/16 02:53:12 merdely Exp $
 
 
-COMMENT=		"unit testing framework for Python"
+COMMENT=		unit testing framework for Python
 
 VERSION=		1.4.1
 DISTNAME=		pyunit-${VERSION}

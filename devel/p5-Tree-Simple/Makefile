@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/22 17:23:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"simple tree object"
+COMMENT=	simple tree object
 
 MODULES=	cpan
 DISTNAME=	Tree-Simple-1.17

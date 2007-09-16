@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/08 22:42:00 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=		'env prompter for zoid shell'
+COMMENT=		env prompter for zoid shell
 
 MODULES=		cpan
 DISTNAME=		Env-PS1-0.05

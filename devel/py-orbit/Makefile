@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/25 16:56:55 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"ORBit2 Python bindings"
+COMMENT=	ORBit2 Python bindings
 
 V=		2.14.2
 DISTNAME=	pyorbit-${V}

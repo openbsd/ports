@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/22 13:21:05 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=	"generate patchsets from CVS repositories"
+COMMENT=	generate patchsets from CVS repositories
 
 V=		2.1
 DISTNAME=	cvsps-${V}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/06/08 14:27:16 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"pure Python Expect-like module"
+COMMENT=	pure Python Expect-like module
 
 DISTNAME=	pexpect-2.1
 PKGNAME=	py-${DISTNAME}

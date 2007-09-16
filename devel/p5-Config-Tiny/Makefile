@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=	"simple methods to Read/Write .ini style files"
+COMMENT=	simple methods to Read/Write .ini style files
 
 MODULES=	cpan
 DISTNAME=	Config-Tiny-2.10

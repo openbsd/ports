@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/15 19:33:08 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=	"analyze C source files and print a call graph"
+COMMENT=	analyze C source files and print a call graph
 
 DISTNAME=	cflow-1.1
 CATEGORIES=	devel

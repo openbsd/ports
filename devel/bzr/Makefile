@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/18 20:05:28 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:58 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"distributed version control system by Canonical"
+COMMENT=	distributed version control system by Canonical
 
 DISTNAME=	bzr-0.14
 CATEGORIES=	devel

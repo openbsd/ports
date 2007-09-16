@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/17 22:41:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT=		"interact with a t/test_manifest file"
+COMMENT=		interact with a t/test_manifest file
 
 MODULES=		cpan
 DISTNAME=		Test-Manifest-1.17

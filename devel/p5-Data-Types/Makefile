@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/08 01:26:44 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=		"validate and convert data types"
+COMMENT=		validate and convert data types
 
 MODULES=		cpan
 DISTNAME=		Data-Types-0.06

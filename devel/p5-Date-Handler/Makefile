@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=	"perl module for calculates time differences"
+COMMENT=	perl module for calculates time differences
 
 MODULES=	cpan
 VERSION=	1.2

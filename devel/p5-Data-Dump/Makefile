@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:50 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=        "pretty printing of data structures"
+COMMENT=        pretty printing of data structures
 
 MODULES=	cpan
 DISTNAME=	Data-Dump-1.08

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/06 13:24:32 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:11 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"portable Windows library"
+COMMENT=	portable Windows library
 
 DISTNAME=	pwlib-v1_10_3
 PKGNAME=	pwlib-1.10.3p1
@@ -52,7 +52,7 @@ CFLAGS+=	-fPIC
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc"
-BROKEN=		"Compiles on powerpc but it does not work"
+BROKEN=		Compiles on powerpc but it does not work
 .endif
 
 FLAVORS=	ldap sasl sdl

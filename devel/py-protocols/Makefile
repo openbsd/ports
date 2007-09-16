@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/23 21:41:54 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=		"protocol definition, declaration and adaptation"
+COMMENT=		protocol definition, declaration and adaptation
 
 VERSION=		1.0
 REVISION=		2306

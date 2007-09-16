@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/12/05 16:36:31 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"slib guile adapter"
+COMMENT=	slib guile adapter
 
 CATEGORIES=	devel
 

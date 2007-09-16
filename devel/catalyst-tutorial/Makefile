@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/29 08:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=	"catalyst packages for the tutorial"
+COMMENT=	catalyst packages for the tutorial
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MODULES=	cpan

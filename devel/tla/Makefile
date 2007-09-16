@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/01/15 14:44:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"original Arch source control management CLI written in C"
+COMMENT=	original Arch source control management CLI written in C
 
 DISTNAME=	tla-1.2
 PKGNAME=	${DISTNAME}p0

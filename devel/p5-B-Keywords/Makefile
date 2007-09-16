@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/23 13:29:49 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"lists of Perl keywords for use in backend modules" 
+COMMENT=	lists of Perl keywords for use in backend modules 
 
 MODULES=	cpan
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/03 09:37:09 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:12 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Radix tree implementation for Python"
+COMMENT=	Radix tree implementation for Python
 
 DISTNAME=	py-radix-0.4
 PKGNAME=	${DISTNAME}p0

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/16 01:09:38 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python-alike language for writing Python extension modules"
+COMMENT=	Python-alike language for writing Python extension modules
 
 DISTNAME=	Pyrex-0.9.4.1
 PKGNAME=	${DISTNAME:L}

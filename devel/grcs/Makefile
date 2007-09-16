@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/09/25 23:23:10 ray Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"GNU versions of the rcs utilities"
+COMMENT=	GNU versions of the rcs utilities
 DISTNAME=	rcs-5.7
 PKGNAME=	g${DISTNAME}p0
 EXTRACT_SUFX=	.tar.Z

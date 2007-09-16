@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2007/08/02 16:15:07 kurt Exp $
+# $OpenBSD: Makefile,v 1.35 2007/09/16 02:52:58 merdely Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
 
-COMMENT-main=		"general-purpose, extensible IDE for Java & other langs"
-COMMENT-swt=		"widget toolkit for Java"
-COMMENT-gnome=		"gnome integration library for swt/eclipse"
-COMMENT-browser=	"HTML Browser Widget library for swt/eclipse"
+COMMENT-main=		general-purpose, extensible IDE for Java & other langs
+COMMENT-swt=		widget toolkit for Java
+COMMENT-gnome=		gnome integration library for swt/eclipse
+COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
@@ -36,9 +36,9 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 # Metro Link Public License 1.00 (http://www.opengroup.org/openmotif/supporters/metrolink/license.html)
 # Mozilla Public License Version 1.1 (http://www.mozilla.org/MPL/MPL-1.1.html)
 # LGPL 2.1 
-PERMIT_PACKAGE_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITE_ECLIPSE+=	\

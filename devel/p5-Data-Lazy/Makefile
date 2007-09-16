@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/10 23:26:32 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT= 	"lazy variables"
+COMMENT= 	lazy variables
 
 MODULES=	cpan
 DISTNAME=	Data-Lazy-0.6

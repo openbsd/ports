@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/26 00:40:28 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/16 02:53:02 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT-main=		"C++ API for MySQL"
-COMMENT-docs=		"C++ API for MySQL documentation"
+COMMENT-main=		C++ API for MySQL
+COMMENT-docs=		C++ API for MySQL documentation
 
 VERSION=		2.0.6
 DISTNAME=		mysql++-${VERSION}

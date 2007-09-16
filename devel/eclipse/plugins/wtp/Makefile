@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/18 02:32:12 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"Web Tools Platform for Eclipse"
+COMMENT=		Web Tools Platform for Eclipse
 
 V=			1.5.4
 DISTNAME=		wtp-sdk-R-${V}-200705021353
@@ -14,9 +14,9 @@ HOMEPAGE=		http://www.eclipse.org/webtools/
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
-PERMIT_PACKAGE_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/webtools/downloads/drops/R1.5/R-${V}-200705021353/

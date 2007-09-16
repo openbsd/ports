@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/21 01:02:58 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"peek at lexical variables"
+COMMENT=	peek at lexical variables
 
 SHARED_ONLY=	Yes
 MODULES=	cpan

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=        "run tests built with Test::Builder"
+COMMENT=        run tests built with Test::Builder
 
 MODULES=	cpan
 DISTNAME=	Test-Tester-0.104

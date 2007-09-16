@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 16:31:20 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT= 	"automates the Factory design pattern"
+COMMENT= 	automates the Factory design pattern
 
 
 MODULES=	cpan

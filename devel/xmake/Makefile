@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2004/11/24 00:11:04 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"powerful make utility"
+COMMENT=	powerful make utility
 
 DISTNAME=	xmake-1.05
 CATEGORIES=	devel

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/03 20:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"library for multiple-precision floating-point computations"
+COMMENT=	library for multiple-precision floating-point computations
 
 DISTNAME=	mpfr-2.2.0
 PKGNAME=	${DISTNAME}p0

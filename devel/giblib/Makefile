@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=		"utility library including a imlib2 wrapper"
+COMMENT=		utility library including a imlib2 wrapper
 
 DISTNAME=		giblib-1.2.4
 PKGNAME=		${DISTNAME}p3

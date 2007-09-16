@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/18 09:06:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"optimized module loading"
+COMMENT=	optimized module loading
 
 MODULES=	cpan
 DISTNAME=	prefork-1.01

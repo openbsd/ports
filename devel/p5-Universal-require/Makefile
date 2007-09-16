@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"extends require to work on variables"
+COMMENT=	extends require to work on variables
 
 MODULES=	cpan
 DISTNAME=	UNIVERSAL-require-0.10

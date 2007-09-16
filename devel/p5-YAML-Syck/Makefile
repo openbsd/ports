@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/16 21:08:35 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"YAML and JSON for perl, optimized C"
+COMMENT=	YAML and JSON for perl, optimized C
 
 SHARED_ONLY=	Yes
 MODULES=	cpan

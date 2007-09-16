@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:09 merdely Exp $
 # Original from: Neil Watkiss <nwatkiss@ttul.org>
 
-COMMENT=	"simple command-line shell framework"
+COMMENT=	simple command-line shell framework
 
 MODULES=	cpan
 DISTNAME=	Term-Shell-0.01

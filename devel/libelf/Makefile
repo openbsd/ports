@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/12 08:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=	'read, modify, create ELF files on any arch'
+COMMENT=	read, modify, create ELF files on any arch
 CATEGORIES=	devel
 
 

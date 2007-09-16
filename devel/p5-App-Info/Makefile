@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"interface for providing metadata about installed packages"
+COMMENT=	interface for providing metadata about installed packages
 
 MODULES=	cpan
 DISTNAME=	App-Info-0.49

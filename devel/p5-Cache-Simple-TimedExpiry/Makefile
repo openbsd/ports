@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/22 17:23:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=	"lightweight cache with timed expiration"
+COMMENT=	lightweight cache with timed expiration
 
 MODULES=	cpan
 DISTNAME=	Cache-Simple-TimedExpiry-0.27

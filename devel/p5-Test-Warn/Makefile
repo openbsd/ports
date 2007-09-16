@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/25 01:02:22 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT= 	"Perl extension to test methods for warnings"
+COMMENT= 	Perl extension to test methods for warnings
 
 MODULES=	cpan
 DISTNAME=	Test-Warn-0.09

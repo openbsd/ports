@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"module for converting structures to strings and back"
+COMMENT=	module for converting structures to strings and back
 
 MODULES=	cpan
 DISTNAME=	FreezeThaw-0.43

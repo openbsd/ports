@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/28 14:20:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"small and lightweight IDE"
+COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.11
 CATEGORIES=	devel

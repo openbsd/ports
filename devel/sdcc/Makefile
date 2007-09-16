@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/06 17:23:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"Small Device C Compiler"
+COMMENT=	Small Device C Compiler
 
 DISTNAME=	sdcc-src-2.7.0
 EXTRACT_SUFX=	.tar.bz2

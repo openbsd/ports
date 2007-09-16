@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT=	"C++ reference implementation of the Atlas protocol"
+COMMENT=	C++ reference implementation of the Atlas protocol
 
 VERSION=	0.4.3.1
 DISTNAME=	Atlas-C++-${VERSION}

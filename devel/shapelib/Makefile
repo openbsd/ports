@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/08 22:01:06 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"shapefile manipulation library"
+COMMENT=	shapefile manipulation library
 
 DISTNAME=	shapelib-1.2.10
 SHARED_LIBS=	shp 1.2

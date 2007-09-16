@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/08 22:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=	'alternative to the standard perl exporter'
+COMMENT=	alternative to the standard perl exporter
 CATEGORIES=	devel
 
 DISTNAME=	Exporter-Tidy-0.06

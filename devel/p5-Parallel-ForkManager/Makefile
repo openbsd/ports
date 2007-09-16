@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"simple parallel processing fork manager"
+COMMENT=	simple parallel processing fork manager
 
 MODULES=	cpan
 DISTNAME=	Parallel-ForkManager-0.7.5

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/05/13 18:04:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=		"editor for the GConf configuration system"
+COMMENT=		editor for the GConf configuration system
 
 DISTNAME=		gconf-editor-2.18.0
 CATEGORIES=		devel x11/gnome

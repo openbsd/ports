@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/04 09:40:31 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"copy files and directories with perl"
+COMMENT=	copy files and directories with perl
 
 MODULES=	cpan
 

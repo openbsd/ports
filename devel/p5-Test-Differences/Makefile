@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT= 	"Test differences in data structures"
+COMMENT= 	Test differences in data structures
 
 MODULES=	cpan
 DISTNAME=	Test-Differences-0.47

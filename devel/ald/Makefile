@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/02/05 13:53:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:56 merdely Exp $
 
 ONLY_FOR_ARCHS=		i386
 
-COMMENT=		"assembly language debugger"
+COMMENT=		assembly language debugger
 
 DISTNAME=		ald-0.1.7
 CATEGORIES=		devel

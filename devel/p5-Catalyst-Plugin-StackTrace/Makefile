@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:50 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=	"stack trace for catalyst"
+COMMENT=	stack trace for catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-StackTrace-0.06

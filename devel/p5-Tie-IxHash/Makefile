@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"ordered associative arrays for Perl"
+COMMENT=	ordered associative arrays for Perl
 
 MODULES=	cpan
 DISTNAME=	Tie-IxHash-1.21

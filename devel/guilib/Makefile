@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"SDL C++ GUI widget library"
+COMMENT=	SDL C++ GUI widget library
 
 DISTNAME=	GUIlib-1.1.1
 PKGNAME=	${DISTNAME:L}p4

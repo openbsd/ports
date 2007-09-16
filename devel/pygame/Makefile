@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/11 21:04:27 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 02:53:12 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"set of Python modules designed for writing games"
+COMMENT=	set of Python modules designed for writing games
 
 DISTNAME=	pygame-1.7.1release
 PKGNAME=	${DISTNAME:S/release//}p0

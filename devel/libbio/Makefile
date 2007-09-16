@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/20 18:33:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=	"Simple buffered I/O library from Plan 9"
+COMMENT=	Simple buffered I/O library from Plan 9
 
 VERSION=	2.0
 DISTNAME=	libbio-${VERSION}

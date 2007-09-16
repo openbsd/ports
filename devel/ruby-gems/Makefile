@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/04 15:22:03 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"package management framework for the Ruby language"
+COMMENT=	package management framework for the Ruby language
 
 V=		0.9.4
 DISTNAME=	rubygems-$V

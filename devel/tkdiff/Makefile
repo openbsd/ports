@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/10 18:02:27 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"graphical front-end to the diff program"
+COMMENT=	graphical front-end to the diff program
 
 V=		4.1.3
 DISTNAME=	tkdiff-${V}-unix

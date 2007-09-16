@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/04 14:35:12 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=	"convenience wrappers around Carp::Assert"
+COMMENT=	convenience wrappers around Carp::Assert
 
 MODULES=	cpan
 

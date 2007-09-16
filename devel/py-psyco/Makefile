@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/21 14:41:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=	"extension module to speed up the execution of Python code"
+COMMENT=	extension module to speed up the execution of Python code
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 

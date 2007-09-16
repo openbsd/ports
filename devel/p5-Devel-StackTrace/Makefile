@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=	"stack trace and stack trace frame objects"
+COMMENT=	stack trace and stack trace frame objects
 
 MODULES=	cpan
 DISTNAME=	Devel-StackTrace-1.12

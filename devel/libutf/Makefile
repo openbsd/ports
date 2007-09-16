@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2003/03/02 18:26:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"UTF8 support library from Plan 9"
+COMMENT=	UTF8 support library from Plan 9
 
 VERSION=	2.0
 DISTNAME=	libutf-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=	"module to declare real exception classes in perl"
+COMMENT=	module to declare real exception classes in perl
 
 MODULES=	cpan
 DISTNAME=	Exception-Class-1.22

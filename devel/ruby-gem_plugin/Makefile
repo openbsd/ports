@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/20 18:15:00 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"install Ruby gems as plugins"
+COMMENT=	install Ruby gems as plugins
 
 DISTNAME=	gem_plugin-0.2.1
 PKGNAME=	ruby-${DISTNAME}

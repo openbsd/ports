@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/04/16 19:30:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT= 	"declarative object constructor"
+COMMENT= 	declarative object constructor
 
 MODULES=	cpan
 DISTNAME=	Object-Declare-0.22

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=        "Test-WWW-Mechanize extension for catalyst"
+COMMENT=        Test-WWW-Mechanize extension for catalyst
 
 MODULES=	cpan
 DISTNAME=	Test-WWW-Mechanize-Catalyst-0.37

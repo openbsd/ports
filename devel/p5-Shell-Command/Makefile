@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 16:29:19 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT= 	"simple Unix commands in perl"
+COMMENT= 	simple Unix commands in perl
 
 MODULES=	cpan
 

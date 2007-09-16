@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/16 08:24:41 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT=		"debugging aid based on comments"
+COMMENT=		debugging aid based on comments
 
 MODULES=		cpan
 DISTNAME=		Smart-Comments-v1.0.2

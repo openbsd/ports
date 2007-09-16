@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 02:53:09 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		'change terminal modes, and perform non-blocking reads'
+COMMENT=		change terminal modes, and perform non-blocking reads
 
 MODULES=		cpan
 V=			2.30

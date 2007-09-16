@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT= 	"locate install data per-module"
+COMMENT= 	locate install data per-module
 
 MODULES=	cpan
 DISTNAME=	File-ShareDir-0.05

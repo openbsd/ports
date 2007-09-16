@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/17 11:56:56 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=		"make chained accessors"
+COMMENT=		make chained accessors
 
 MODULES=		cpan
 DISTNAME=		Class-Accessor-Chained-0.01

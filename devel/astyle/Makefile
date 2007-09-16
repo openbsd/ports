@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/23 11:22:00 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT=		"indenter and formatter of C/C++/Java source files"
+COMMENT=		indenter and formatter of C/C++/Java source files
 
 DISTNAME=		astyle_1.15.3
 PKGNAME=		${DISTNAME:S/_/-/}

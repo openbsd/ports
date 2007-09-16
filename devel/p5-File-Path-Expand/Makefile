@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT= 	"expands user directories in paths"
+COMMENT= 	expands user directories in paths
 
 MODULES=	cpan 
 DISTNAME=	File-Path-Expand-1.02

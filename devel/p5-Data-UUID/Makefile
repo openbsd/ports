@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2007/06/13 06:57:45 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:04 merdely Exp $
 
 SHARED_ONLY=	Yes
-COMMENT=	"extension for generating GUIDs/UUIDs"
+COMMENT=	extension for generating GUIDs/UUIDs
 
 MODULES=	cpan
 DISTNAME=	Data-UUID-0.145

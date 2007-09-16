@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2007/07/14 14:13:48 deanna Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT-main=	"free peer-reviewed portable C++ source libraries (headers)"
-COMMENT-libs=	"free peer-reviewed portable C++ source libraries (libraries)"
+COMMENT-main=	free peer-reviewed portable C++ source libraries (headers)
+COMMENT-libs=	free peer-reviewed portable C++ source libraries (libraries)
 
 PKGNAME-main=	boost-headers-${VERSION}p3
 PKGNAME-libs=	boost-libs-${VERSION}p3

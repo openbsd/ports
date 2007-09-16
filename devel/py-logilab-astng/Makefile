@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/04 17:32:33 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=		"Python Abstract Syntax Tree New Generation"
+COMMENT=		Python Abstract Syntax Tree New Generation
 
 DISTNAME=		logilab-astng-0.17.0
 PKGNAME=		py-${DISTNAME}

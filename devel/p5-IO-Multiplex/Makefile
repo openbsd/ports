@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=		"handle multiple file handles"
+COMMENT=		handle multiple file handles
 
 MODULES=		cpan
 DISTNAME=		IO-Multiplex-1.08

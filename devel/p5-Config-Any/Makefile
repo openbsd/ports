@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/14 20:50:44 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=        "load various configuration file formats"
+COMMENT=        load various configuration file formats
 
 MODULES=	cpan
 DISTNAME=	Config-Any-0.07

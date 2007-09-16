@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"module to scan C language files"
+COMMENT=	module to scan C language files
 
 MODULES=	cpan
 DISTNAME=	C-Scan-0.74

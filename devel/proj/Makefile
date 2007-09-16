@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/27 19:07:09 jason Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"cartographic projection utilities"
+COMMENT=	cartographic projection utilities
 
 DISTNAME=	proj-4.4.9
 CATEGORIES=    	devel geo

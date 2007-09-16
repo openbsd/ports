@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"low-level event loop management library"
+COMMENT=		low-level event loop management library
 
 DISTNAME=		liboop-1.0
 SHARED_LIBS=		oop		4.1

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/08/08 17:11:48 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:14 merdely Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
-COMMENT-main=	"standalone XUL/XPCOM runtime environment"
-COMMENT-devel=	"devel files for Gecko"
+COMMENT-main=	standalone XUL/XPCOM runtime environment
+COMMENT-devel=	devel files for Gecko
 
 VER=		1.8.1.6
 DISTNAME=	mozilla

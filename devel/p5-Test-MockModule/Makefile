@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT= 	"override subroutines in a module for unit testing"
+COMMENT= 	override subroutines in a module for unit testing
 
 MODULES=	cpan
 DISTNAME=	Test-MockModule-0.05

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2007/06/21 15:13:45 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=	"advanced revision control system written in Haskell"
+COMMENT=	advanced revision control system written in Haskell
 
 DISTNAME=	darcs-1.0.9
 PKGNAME=	${DISTNAME}p0

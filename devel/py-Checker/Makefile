@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2006/06/03 09:37:09 alek Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"Python codes checker"
+COMMENT=	Python codes checker
 
 VERSION=	0.8.13
 DISTNAME=	pychecker-${VERSION}

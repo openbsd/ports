@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2006/08/09 09:46:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/16 02:53:14 merdely Exp $
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
 
-COMMENT=	"Tcl/C++ interface used by ns and nam"
+COMMENT=	Tcl/C++ interface used by ns and nam
 
 V=1.0b13
 DISTFILES=	tclcl-src-$V.tar.gz

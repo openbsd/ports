@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/18 19:57:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=		"handle .desktop files"
+COMMENT=		handle .desktop files
 
 DISTNAME=		File-DesktopEntry-0.02
 CATEGORIES=		devel

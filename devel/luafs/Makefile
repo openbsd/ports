@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2007/08/05 12:34:33 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:01 merdely Exp $
 SHARED_ONLY=	Yes
 
-COMMENT=	"file system library for the lua language"
+COMMENT=	file system library for the lua language
 DISTNAME=	luafilesystem-1.2.1
 PKGNAME=	luafs-1.2.1p0
 CATEGORIES=	devel

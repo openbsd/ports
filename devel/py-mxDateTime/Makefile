@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2006/06/03 09:37:09 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 02:53:11 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Date and Time types for Python"
+COMMENT=	Date and Time types for Python
 
 VERSION=	2.0.5
 DISTNAME=	egenix-mx-base-${VERSION}

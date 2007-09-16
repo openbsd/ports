@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/05 06:37:55 msf Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT=	"subversion activity notification"
+COMMENT=	subversion activity notification
 
 MODULES=	cpan
 

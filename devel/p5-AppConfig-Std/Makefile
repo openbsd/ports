@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"subclass of AppConfig that provides standard options"
+COMMENT=	subclass of AppConfig that provides standard options
 
 MODULES=	cpan
 DISTNAME=	AppConfig-Std-1.07

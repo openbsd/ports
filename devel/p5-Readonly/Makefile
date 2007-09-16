@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/17 15:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT= 	"create readonly variables"
+COMMENT= 	create readonly variables
 
 MODULES=	cpan
 DISTNAME=	Readonly-1.03

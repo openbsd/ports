@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/02 15:35:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:56 merdely Exp $
 
-COMMENT=	"binutils for arm-elf cross-development"
+COMMENT=	binutils for arm-elf cross-development
 
 V=		2.16
 DISTNAME=	binutils-${V}

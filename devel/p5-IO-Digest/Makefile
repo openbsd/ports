@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/17 11:56:56 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"module for computing digests while reading or writing"
+COMMENT=	module for computing digests while reading or writing
 
 MODULES=	cpan
 DISTNAME=	IO-Digest-0.10

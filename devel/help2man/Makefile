@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"GNU help2man"
+COMMENT=	GNU help2man
 
 DISTNAME=	help2man-1.29
 PKGNAME=	${DISTNAME}p0

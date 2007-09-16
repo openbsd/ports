@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"parses long function arguments"
+COMMENT=	parses long function arguments
 
 MODULES=	cpan
 DISTNAME=	Getargs-Long-1.1001

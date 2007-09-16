@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/15 19:29:49 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=		"dependency manager for Java"
+COMMENT=		dependency manager for Java
 
 VERSION=		1.4.1
 DISTNAME=		ivy-${VERSION}-bin

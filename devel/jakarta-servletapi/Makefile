@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/01/16 02:48:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"implementation of the JSP and Java Servlet APIs"
+COMMENT=	implementation of the JSP and Java Servlet APIs
 
 V=		3.2.4
 DISTNAME=	jakarta-servletapi-${V}

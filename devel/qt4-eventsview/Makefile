@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/03 10:29:11 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=	'event viewer for qt4'
+COMMENT=	event viewer for qt4
 CATEGORIES=	devel x11
 
 # GPL

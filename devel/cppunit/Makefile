@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=	"c++ unit testing framework"
+COMMENT=	c++ unit testing framework
 DISTNAME=	cppunit-1.10.2
 SHARED_LIBS +=	cppunit              2.0      # .2.0
 CATEGORIES=	devel

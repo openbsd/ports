@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/08 01:27:42 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=		"class automation, introspection and validation"
+COMMENT=		class automation, introspection and validation
 
 MODULES=		cpan
 DISTNAME=		Class-Meta-0.53

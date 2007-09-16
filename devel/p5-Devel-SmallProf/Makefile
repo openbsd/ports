@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/06/23 13:40:59 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=		"per-line Perl profiler"
+COMMENT=		per-line Perl profiler
 
 MODULES=		cpan
 DISTNAME=		Devel-SmallProf-2.02

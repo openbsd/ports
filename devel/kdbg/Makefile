@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/16 02:53:00 merdely Exp $
 
 SHARED_ONLY=	Yes
-COMMENT=	"graphical debugger for KDE"
+COMMENT=	graphical debugger for KDE
 
 DISTNAME=	kdbg-1.2.5
 PKGNAME=	${DISTNAME}p1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT= 	"framework for generating methods"
+COMMENT= 	framework for generating methods
 
 MODULES=	cpan
 DISTNAME=	Class-MakeMethods-1.01

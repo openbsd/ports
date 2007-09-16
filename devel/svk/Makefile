@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/12/17 11:56:56 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"decentralized version control system"
+COMMENT=	decentralized version control system
 
 V=		1.08
 DISTNAME=	SVK-${V}

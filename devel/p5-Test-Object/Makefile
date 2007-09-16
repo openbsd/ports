@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/05 06:19:42 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT=	"thoroughly testing objects via registered handlers"
+COMMENT=	thoroughly testing objects via registered handlers
 
 MODULES=	cpan
 

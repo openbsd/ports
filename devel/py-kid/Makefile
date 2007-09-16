@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 22:02:32 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=		"template language for XML based vocabularies"
+COMMENT=		template language for XML based vocabularies
 
 V=			0.9.5
 DISTNAME=		kid-${V}

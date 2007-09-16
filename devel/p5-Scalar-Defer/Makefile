@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/16 19:30:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT= 	"deferred and lazy evaluation"
+COMMENT= 	deferred and lazy evaluation
 
 MODULES=	cpan
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/03/19 02:06:38 djm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"Python API for advanced date calculations"
+COMMENT=	Python API for advanced date calculations
 
 VERSION=	1.1
 ZINFO=		2005q

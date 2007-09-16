@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2007/05/05 13:41:12 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.26 2007/09/16 02:52:59 merdely Exp $ 
 
-COMMENT=	"modular framework for web-based applications"
+COMMENT=	modular framework for web-based applications
 
 DISTNAME=	horde-3.1.4
 CATEGORIES=	devel www

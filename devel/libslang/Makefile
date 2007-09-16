@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2006/01/07 14:19:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.45 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"stack-based interpreter for terminal applications"
+COMMENT=	stack-based interpreter for terminal applications
 
 VERSION=	1.4.9
 DISTNAME=	slang-${VERSION}

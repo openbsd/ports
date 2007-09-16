@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/28 10:51:29 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"library for the floppy controller emulation"
+COMMENT=		library for the floppy controller emulation
 
 DISTNAME=		lib765-0.3.1.1
 PKGNAME=		${DISTNAME}p1

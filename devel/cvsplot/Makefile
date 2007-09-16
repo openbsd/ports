@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/15 11:30:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"CVS-managed project analyzer"
+COMMENT=		CVS-managed project analyzer
 
 DISTNAME=		cvsplot-1.6.5
 PKGNAME=		${DISTNAME}p0

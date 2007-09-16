@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"primitives drawing/other support functions for SDL"
+COMMENT=	primitives drawing/other support functions for SDL
 DISTNAME=	SDL_gfx-2.0.13
 PKGNAME=	${DISTNAME:L:S/_/-/}p0
 SHARED_LIBS=	SDL_gfx 13.0

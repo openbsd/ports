@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=	"curses(3) based terminal widgets"
+COMMENT=	curses(3) based terminal widgets
 
 MODULES=	cpan
 VERSION=	1.997

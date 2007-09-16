@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 21:58:12 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=		"template plugin for TurboGears that supports json"
+COMMENT=		template plugin for TurboGears that supports json
 
 V=			1.0
 DISTNAME=		TurboJson-${V}

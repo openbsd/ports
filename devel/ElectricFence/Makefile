@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2003/07/16 17:37:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 02:52:56 merdely Exp $
 
-COMMENT=	"library providing malloc debugging via VM protection"
+COMMENT=	library providing malloc debugging via VM protection
 
 DISTNAME=	ElectricFence-2.0.5
 PKGNAME=	${DISTNAME:L}

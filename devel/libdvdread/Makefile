@@ -1,7 +1,7 @@
-#$OpenBSD: Makefile,v 1.16 2007/02/03 17:07:07 espie Exp $
+#$OpenBSD: Makefile,v 1.17 2007/09/16 02:53:00 merdely Exp $
 CATEGORIES=		devel
 
-COMMENT=		"accessing DVD files"
+COMMENT=		accessing DVD files
 DISTNAME=		libdvdread-0.9.7
 PKGNAME=		${DISTNAME}p0
 HOMEPAGE=		http://www.dtek.chalmers.se/groups/dvd/

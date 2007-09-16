@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"simple class for OLE document interface"
+COMMENT=	simple class for OLE document interface
 
 MODULES=	cpan
 DISTNAME=       OLE-Storage_Lite-0.14

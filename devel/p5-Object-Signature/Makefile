@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:50 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=        "cryptographic signatures for objects"
+COMMENT=        cryptographic signatures for objects
 
 MODULES=	cpan
 DISTNAME=	Object-Signature-1.05

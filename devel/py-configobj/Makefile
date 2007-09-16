@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 21:56:36 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=		"config file reader and writer"
+COMMENT=		config file reader and writer
 
 DISTNAME=		configobj-4.4.0
 PKGNAME=		py-${DISTNAME}

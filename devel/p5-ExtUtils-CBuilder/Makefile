@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=	"compile and link C code for Perl modules" 
+COMMENT=	compile and link C code for Perl modules 
 
 MODULES=	cpan
 DISTNAME=	ExtUtils-CBuilder-0.18

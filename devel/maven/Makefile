@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/01/16 02:48:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"software project management and comprehension tool"
+COMMENT=	software project management and comprehension tool
 
 DISTNAME=	maven-2.0
 PKGNAME=	${DISTNAME}p2

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/31 08:38:28 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"check for spelling errors in POD files"
+COMMENT=	check for spelling errors in POD files
 
 MODULES=	cpan
 

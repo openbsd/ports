@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/20 18:33:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"Streamlined replacement for make"
+COMMENT=	Streamlined replacement for make
 
 VERSION=	2.0
 DISTNAME=	mk-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/15 14:02:54 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT=	"automatically configure source code on many Un*x platforms"
+COMMENT=	automatically configure source code on many Un*x platforms
 
 VERSION=	2.13
 DISTNAME=	autoconf-${VERSION}

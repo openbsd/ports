@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/15 08:27:28 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:08 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT= 	"check if the documentation of a module is comprehensive"
+COMMENT= 	check if the documentation of a module is comprehensive
 
 MODULES=	cpan
 DISTNAME=	Pod-Coverage-0.18

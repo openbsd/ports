@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/06/03 09:37:09 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"Python API for SOAP HTTP/RPC"
+COMMENT=	Python API for SOAP HTTP/RPC
 
 DISTNAME=	SOAPpy-0.11.6
 PKGNAME=	${DISTNAME:S/^/py-/}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"calling UNIVERSAL::can as a function"
+COMMENT=	calling UNIVERSAL::can as a function
 
 MODULES=	cpan
 DISTNAME=	UNIVERSAL-can-1.12

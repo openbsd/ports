@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/27 10:16:39 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=		"GNU make debugger"
+COMMENT=		GNU make debugger
 
 PKGNAME=		remake-0.61
 DISTNAME=		remake-3.80+dbg-0.61

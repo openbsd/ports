@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/03/17 15:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:06 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"simple interface to access shared memory"
+COMMENT=	simple interface to access shared memory
 
 MODULES=	cpan
 DISTNAME=	IPC-ShareLite-0.09

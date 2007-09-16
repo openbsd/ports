@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2007/01/31 18:14:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.34 2007/09/16 02:52:59 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
+COMMENT=	Java Development Kit for Java 2 Standard Edition 1.3
 VERSION=	1.3.1_19
 
 DISTNAME=	jdk${VERSION}
@@ -20,10 +20,10 @@ EXTRACT_CASES+=	*.bin) \
 		    chmod u+x ${WRKDIR}/$$archive && \
 		    ${WRKDIR}/$$archive -q ;; \
 
-PERMIT_PACKAGE_CDROM=	"Redistribution not permitted"
-PERMIT_PACKAGE_FTP=	"Redistribution not permitted"
-PERMIT_DISTFILES_CDROM=	"Redistribution not permitted"
-PERMIT_DISTFILES_FTP=	"Redistribution not permitted"
+PERMIT_PACKAGE_CDROM=	Redistribution not permitted
+PERMIT_PACKAGE_FTP=	Redistribution not permitted
+PERMIT_DISTFILES_CDROM=	Redistribution not permitted
+PERMIT_DISTFILES_FTP=	Redistribution not permitted
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

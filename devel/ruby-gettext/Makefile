@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/25 08:45:48 dlg Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:13 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"Ruby interface to gettext"
+COMMENT=		Ruby interface to gettext
 
 VERSION=		1.10.0
 DISTNAME=		gettext-${VERSION}

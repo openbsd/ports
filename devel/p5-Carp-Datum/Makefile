@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=	"debugging and tracing ultimate module"
+COMMENT=	debugging and tracing ultimate module
 
 MODULES=	cpan
 DISTNAME=	Carp-Datum-0.1.3

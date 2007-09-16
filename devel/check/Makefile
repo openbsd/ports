@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/19 00:10:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=	"unit test framework for C programs"
+COMMENT=	unit test framework for C programs
 
 DISTNAME=	check-0.8.4
 CATEGORIES=	devel

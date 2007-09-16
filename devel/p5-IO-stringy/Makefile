@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/04/12 18:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=		"in-core objects like strings and arrays for I/O"
+COMMENT=		in-core objects like strings and arrays for I/O
 
 MODULES=		cpan
 VERSION=		2.110

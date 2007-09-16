@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/16 02:53:04 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"terminal screen handling and optimisation"
+COMMENT=	terminal screen handling and optimisation
 
 MODULES=	cpan
 DISTNAME=	Curses-1.06

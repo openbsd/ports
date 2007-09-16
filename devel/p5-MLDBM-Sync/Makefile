@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"safe concurrent access to MLDBM databases"
+COMMENT=	safe concurrent access to MLDBM databases
 
 MODULES=	cpan
 VERSION=	0.30

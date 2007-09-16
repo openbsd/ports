@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/04/02 07:12:27 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 02:53:00 merdely Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.9
@@ -8,7 +8,7 @@ SHARED_LIBS +=  pmpi		0.0	# .0.0
 SHARED_LIBS +=  lam		0.0	# .0.0
 SHARED_LIBS +=  mpi		0.0	# .0.0
 CATEGORIES=     	devel math net comms
-COMMENT=		"great implementation of the message passing interface"
+COMMENT=		great implementation of the message passing interface
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/11 19:16:47 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 02:52:56 merdely Exp $
 
-COMMENT=	"Apache Portable Runtime"
+COMMENT=	Apache Portable Runtime
 
 DISTNAME=	apr-1.2.9
 FULLPKGNAME=	apr${MT}-1.2.9p0

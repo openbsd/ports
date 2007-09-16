@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2006/08/01 05:09:25 aanriot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"GNU portable threads"
+COMMENT=	GNU portable threads
 
 DISTNAME=	pth-2.0.7
 SHARED_LIBS=	pth 20.25

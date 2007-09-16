@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 15:18:40 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT= 	"set of integers"
+COMMENT= 	set of integers
 
 MODULES=	cpan
 

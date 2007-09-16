@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/11 11:18:54 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/16 02:52:58 merdely Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
-COMMENT=	"generate GNU-style ChangeLogs from CVS repositories"
+COMMENT=	generate GNU-style ChangeLogs from CVS repositories
 
 V=		2.62
 DISTNAME=	cvs2cl.pl-${V}

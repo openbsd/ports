@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.42 2007/01/30 14:49:16 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT-main=	"simplified wrapper and interface generator"
+COMMENT-main=	simplified wrapper and interface generator
 
 SUBST_VARS=	VERSION
 VERSION=	1.3.24

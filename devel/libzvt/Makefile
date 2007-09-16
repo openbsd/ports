@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=		"library for handling pseudo terminals"
+COMMENT=		library for handling pseudo terminals
 
 DISTNAME=		libzvt-2.0.1
 PKGNAME=		${DISTNAME}p5

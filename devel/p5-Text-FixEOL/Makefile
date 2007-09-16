@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/17 23:14:57 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT= 	"canonical EOL/EOF"
+COMMENT= 	canonical EOL/EOF
 
 MODULES=	cpan 
 

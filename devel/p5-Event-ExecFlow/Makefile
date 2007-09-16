@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/19 10:10:24 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=	"high level API for event-based execution flow control"
+COMMENT=	high level API for event-based execution flow control
 
 MODULES=	cpan
 DISTNAME=	Event-ExecFlow-0.63

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/02 15:35:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:56 merdely Exp $
 
-COMMENT=	"gcc for arm-elf cross-development"
+COMMENT=	gcc for arm-elf cross-development
 
 VERSION=	3.4.5
 FULL_VERSION=	3.4-20050913

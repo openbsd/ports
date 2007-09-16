@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/16 07:30:56 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=	"chat and instant messaging module for Twisted"
+COMMENT=	chat and instant messaging module for Twisted
 
 DISTNAME=	TwistedWords-0.4.0
 PKGNAME=	py-twisted-words-0.4.0

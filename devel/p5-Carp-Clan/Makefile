@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/18 10:00:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=	"Carp for clan of modules"
+COMMENT=	Carp for clan of modules
 
 MODULES=	cpan
 DISTNAME=	Carp-Clan-5.3

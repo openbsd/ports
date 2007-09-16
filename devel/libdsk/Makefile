@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/10/28 11:19:21 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"library for accessing disks and disk image files"
+COMMENT=		library for accessing disks and disk image files
 
 DISTNAME=		libdsk-1.0.0
 PKGNAME=		${DISTNAME}p1

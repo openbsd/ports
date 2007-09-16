@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT-main=	"C++ wrapper for the Simple DirectMedia Layer"
-COMMENT-docs=	"SDLmm documentation"
+COMMENT-main=	C++ wrapper for the Simple DirectMedia Layer
+COMMENT-docs=	SDLmm documentation
 
 VERSION=	0.1.8
 DISTNAME=	SDLmm-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2006/02/18 20:17:14 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=	"compiler cache"
+COMMENT=	compiler cache
 
 DISTNAME=	ccache-2.4
 PKGNAME=	${DISTNAME}p0

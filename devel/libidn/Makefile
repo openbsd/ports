@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/01/27 16:41:06 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"internationalized string handling"
+COMMENT=		internationalized string handling
 
 DISTNAME=		libidn-0.6.1
 SHARED_LIBS=		idn 16.15

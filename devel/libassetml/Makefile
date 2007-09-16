@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/23 06:28:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=	"library to share image and audio files between projects"
+COMMENT=	library to share image and audio files between projects
 
 DISTNAME=	libassetml-1.2.1
 PKGNAME=	${DISTNAME}p0

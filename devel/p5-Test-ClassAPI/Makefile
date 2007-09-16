@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/04 09:54:10 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT=	"basic first-pass API testing for large class trees"
+COMMENT=	basic first-pass API testing for large class trees
 
 MODULES=	cpan
 

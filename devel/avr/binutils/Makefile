@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/07 19:44:53 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' GNU binutils"
+COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU binutils
 
 VER=		2.15
 DISTNAME=	binutils-${VER}

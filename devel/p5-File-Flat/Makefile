@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/04 09:59:45 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=	"implements a flat filesystem"
+COMMENT=	implements a flat filesystem
 
 MODULES=	cpan
 

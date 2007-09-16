@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/02/18 20:37:54 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"scheme r5 library"
+COMMENT=	scheme r5 library
 
 CATEGORIES=	devel
 

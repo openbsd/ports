@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/07/07 21:25:59 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=		"simple object oriented framework for Tcl"
+COMMENT=		simple object oriented framework for Tcl
 
 VERSION=		0.7
 PKGNAME=		snit-${VERSION}p0

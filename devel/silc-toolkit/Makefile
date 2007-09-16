@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2007/08/11 22:14:27 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"toolkit for the development of SILC applications"
+COMMENT=	toolkit for the development of SILC applications
 
 DISTNAME=	silc-toolkit-1.0.2
 PKGNAME=	${DISTNAME}p1

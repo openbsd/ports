@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/04 12:07:21 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"efficient reading/writing of complete files"
+COMMENT=	efficient reading/writing of complete files
 
 MODULES=	cpan
 DISTNAME=	File-Slurp-9999.12

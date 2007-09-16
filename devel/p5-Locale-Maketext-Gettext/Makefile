@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/08 13:19:10 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"joins the gettext and maketext frameworks"
+COMMENT=	joins the gettext and maketext frameworks
 
 MODULES=	cpan
 

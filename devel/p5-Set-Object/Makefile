@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT=        "set of objects and strings"
+COMMENT=        set of objects and strings
 SHARED_ONLY=	Yes
 
 MODULES=	cpan

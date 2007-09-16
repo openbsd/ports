@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/05 06:15:57 msf Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT= 	"perl extension for emulating troublesome interfaces"
+COMMENT= 	perl extension for emulating troublesome interfaces
 
 MODULES=	cpan
 

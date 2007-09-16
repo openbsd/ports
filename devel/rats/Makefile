@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/04/27 18:40:40 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=		"source code auditing tool"
+COMMENT=		source code auditing tool
 
 DISTNAME=		rats-2.1
 PKGNAME=		${DISTNAME}p0

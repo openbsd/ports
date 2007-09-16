@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"catalyst development bundle"
+COMMENT=		catalyst development bundle
 
 MODULES=		cpan
 DISTNAME=		Task-Catalyst-1.90
@@ -46,6 +46,6 @@ RUN_DEPENDS=	::www/p5-Catalyst-Devel \
 		::www/p5-Catalyst-Action-RenderView \
 		::databases/p5-DBD-SQLite 
 
-NO_REGRESS=	"no need to"
+NO_REGRESS=	no need to
 
 .include <bsd.port.mk>

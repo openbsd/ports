@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/25 14:25:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"SDL wrapper around the Pango library"
+COMMENT=	SDL wrapper around the Pango library
 
 V=		0.1.2
 DISTNAME=	SDL_Pango-${V}

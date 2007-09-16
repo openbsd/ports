@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/04/01 16:44:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' XGCC"
+COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
 V=3.4.5
 FULL_VERSION=3.4-20050913

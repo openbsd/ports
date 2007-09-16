@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 02:53:09 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		'GNU Readline Library Wrapper Module'
+COMMENT=		GNU Readline Library Wrapper Module
 
 MODULES=		cpan
 DISTNAME=		Term-ReadLine-Gnu-1.16

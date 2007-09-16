@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/19 10:50:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=	"opensource implementation of the OFX specification"
+COMMENT=	opensource implementation of the OFX specification
 
 DISTNAME=	libofx-0.8.3
 CATEGORIES=	devel

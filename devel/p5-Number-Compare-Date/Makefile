@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"Compare Dates"
+COMMENT=	Compare Dates
 
 MODULES=	cpan
 DISTNAME=	Number-Compare-Date-0.02

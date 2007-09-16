@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/03 09:42:29 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT=	"RCS equivalent of CVS's annotate command"
+COMMENT=	RCS equivalent of CVS's annotate command
 
 DISTNAME=	blame-1.1
 CATEGORIES=	devel

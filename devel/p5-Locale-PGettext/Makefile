@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=		"perl i18n routines"
+COMMENT=		perl i18n routines
 
 MODULES=		cpan
 DISTNAME=		Locale-PGetText-0.16

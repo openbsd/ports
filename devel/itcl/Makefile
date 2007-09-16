@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/10/28 17:52:18 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"object-oriented extensions to Tcl"
+COMMENT=	object-oriented extensions to Tcl
 
 VERSION=	3.3
 DISTNAME=	itcl${VERSION}

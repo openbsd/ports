@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2007/05/19 09:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=		"GNOME Application Libs"
+COMMENT=		GNOME Application Libs
 
 VERSION=		2.5.3
 API_VERSION=		2.6

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/23 04:17:20 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=		"fast, lightweight source control management"
+COMMENT=		fast, lightweight source control management
 
 DISTNAME=		mercurial-0.9.3
 CATEGORIES=     	devel

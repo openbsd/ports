@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"Perl module for aliasing class names"
+COMMENT=	Perl module for aliasing class names
 
 MODULES=	cpan
 DISTNAME=	UNIVERSAL-moniker-0.08

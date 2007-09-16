@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/02/16 07:30:56 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=	"experimental HTTP/1.1 server framework"
+COMMENT=	experimental HTTP/1.1 server framework
 
 CATEGORIES=	www
 

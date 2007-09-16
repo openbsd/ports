@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/14 20:40:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=	"C reimplementation of the BitTorrent core protocols"
+COMMENT=	C reimplementation of the BitTorrent core protocols
 DISTNAME=	libbt-1.03
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel net

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/08/01 23:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=		"wrapper class around the pcre library"
+COMMENT=		wrapper class around the pcre library
 
 DISTNAME=		pcre++-0.9.5
 PKGNAME=		${DISTNAME}p1

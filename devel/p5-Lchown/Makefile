@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:06 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Perl interface to the lchown(2) system call"
+COMMENT=	Perl interface to the lchown(2) system call
 
 MODULES=	cpan
 DISTNAME=	Lchown-1.00

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2003/06/05 19:17:06 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.32 2007/09/16 02:53:11 merdely Exp $
 
-BROKEN=		"attempts to install during build"
+BROKEN=		attempts to install during build
 ONLY_FOR_ARCHS=	i386
 FAKE=No
-COMMENT=	"PalmPilot(tm) development environment"
+COMMENT=	PalmPilot(tm) development environment
 
 VERSION=	0.5.0
 DISTNAME=       prc-tools.${VERSION}

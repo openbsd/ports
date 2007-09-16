@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/18 19:54:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=		"use the freedesktop Base Directory Specification"
+COMMENT=		use the freedesktop Base Directory Specification
 
 DISTNAME=		File-BaseDir-0.02
 CATEGORIES=		devel

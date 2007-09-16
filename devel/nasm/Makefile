@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2005/05/19 13:04:17 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"general-purpose multi-platform x86 assembler"
+COMMENT=	general-purpose multi-platform x86 assembler
 
 ONLY_FOR_ARCHS=	i386
 

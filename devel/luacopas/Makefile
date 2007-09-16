@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/08/05 12:34:33 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"coroutine oriented portable asynchronous services for lua"
+COMMENT=	coroutine oriented portable asynchronous services for lua
 V=		1.1.0
 DISTNAME=	copas-${V}
 PKGNAME=	luacopas-${V}p0

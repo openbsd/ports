@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:10 merdely Exp $
 
 SHARED_ONLY=	Yes
-COMMENT=	"object oriented time interface"
+COMMENT=	object oriented time interface
 
 MODULES=	cpan
 DISTNAME=	Time-Piece-1.11

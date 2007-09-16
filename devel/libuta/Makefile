@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"graphical user interface library for C++"
+COMMENT=	graphical user interface library for C++
 
 DISTNAME=	libuta-0.4.4
 PKGNAME=	${DISTNAME}p4

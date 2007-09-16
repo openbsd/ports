@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/16 08:15:37 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=		"inside-out object scaffolding"
+COMMENT=		inside-out object scaffolding
 
 MODULES=		cpan
 DISTNAME=		Class-Std-v0.0.8

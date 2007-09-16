@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:06 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"perl interface to the sync() system functions"
+COMMENT=	perl interface to the sync() system functions
 
 MODULES=	cpan
 V=		0.09

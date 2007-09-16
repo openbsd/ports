@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/17 11:56:56 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"library for packing and unpacking binary data"
+COMMENT=	library for packing and unpacking binary data
 DISTNAME=	luapack-20061124
 CATEGORIES=	devel
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/

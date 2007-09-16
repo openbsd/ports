@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/06/01 00:32:41 aanriot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=	"perl debugger built with a PerlTk GUI"
+COMMENT=	perl debugger built with a PerlTk GUI
 
 MODULES=	cpan
 DISTNAME=	Devel-ptkdb-1.1092

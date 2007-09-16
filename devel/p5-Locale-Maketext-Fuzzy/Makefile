@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=		"Maketext from already interpolated strings"
+COMMENT=		Maketext from already interpolated strings
 
 MODULES=		cpan
 DISTNAME=		Locale-Maketext-Fuzzy-0.02

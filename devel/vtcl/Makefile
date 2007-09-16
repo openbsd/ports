@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/12 19:04:27 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=		"Visual Tcl development environment"
+COMMENT=		Visual Tcl development environment
 
 DISTNAME=		vtcl-1.6.0
 PKGNAME=		${DISTNAME}p0

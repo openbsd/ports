@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/18 02:27:51 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"SubVersion (CVS replacement) plug-in for Eclipse IDE"
+COMMENT=		SubVersion (CVS replacement) plug-in for Eclipse IDE
 
 V=			1.2.1
 DISTNAME=		site-${V}
@@ -12,9 +12,9 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # SubClipse itself is CPL 1.0, but
 # JavaSVN, which it uses, has a bizarro hybrid: BSD but "no redist w/o source code"
-PERMIT_PACKAGE_CDROM=	"Stupid license"
+PERMIT_PACKAGE_CDROM=	Stupid license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"Stupid license"
+PERMIT_DISTFILES_CDROM=	Stupid license
 PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://subclipse.tigris.org/

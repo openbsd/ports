@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2007/06/01 15:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"library for loading GLADE interface files at runtime"
+COMMENT=		library for loading GLADE interface files at runtime
 
 DISTNAME=		libglade-0.17
 PKGNAME=		${DISTNAME}p3

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2007/04/20 15:08:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"portable library for obtaining system information"
+COMMENT=		portable library for obtaining system information
 
 V=			2.14.6
 DISTNAME=		libgtop-${V}

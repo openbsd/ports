@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/05/27 14:29:42 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=		"Python-powered template engine and code generator"
+COMMENT=		Python-powered template engine and code generator
 
 V=			2.0rc8
 DISTNAME=		Cheetah-${V}

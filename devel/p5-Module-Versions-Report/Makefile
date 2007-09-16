@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"report versions of all perl modules in memory"
+COMMENT=	report versions of all perl modules in memory
 
 MODULES=	cpan
 DISTNAME=	Module-Versions-Report-1.02

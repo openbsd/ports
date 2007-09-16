@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/21 19:18:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT=	"GNU Standards-compliant Makefile generator"
+COMMENT=	GNU Standards-compliant Makefile generator
 
 VERSION=	1.4
 DISTNAME=	automake-${VERSION}-p6

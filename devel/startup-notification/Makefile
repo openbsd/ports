@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/24 12:48:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=		"library for tracking application startup"
+COMMENT=		library for tracking application startup
 
 DISTNAME=		startup-notification-0.9
 CATEGORIES=		devel x11 x11/gnome

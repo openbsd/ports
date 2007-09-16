@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/05/05 09:28:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=		"module for merging hierarchies using the C3 algorithm"
+COMMENT=		module for merging hierarchies using the C3 algorithm
 
 MODULES=		cpan
 DISTNAME=		Algorithm-C3-0.06

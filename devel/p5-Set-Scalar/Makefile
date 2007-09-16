@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT=	"module for containing a set of scalars"
+COMMENT=	module for containing a set of scalars
 
 MODULES=	cpan
 DISTNAME=	Set-Scalar-1.20

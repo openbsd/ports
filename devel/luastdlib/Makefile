@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/08/05 12:34:33 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"lua library of common programming tasks"
+COMMENT=	lua library of common programming tasks
 
 DISTNAME=	stdlib
 V=		4

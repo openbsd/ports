@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT=	"subversion repository web frontend"
+COMMENT=	subversion repository web frontend
 
 MODULES=	cpan
 DISTNAME=	SVN-Web-0.48

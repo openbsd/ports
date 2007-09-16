@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/18 02:32:12 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"UML diagram framework for Eclipse"
+COMMENT=		UML diagram framework for Eclipse
 
 V=			2.0.3
 DISTNAME=		uml2-SDK-${V}
@@ -14,9 +14,9 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 EXTRACT_SUFX=           .zip
 
 # Common Public License Version 1.0 (http://www.eclipse.org/legal/cpl-v10.html)
-PERMIT_PACKAGE_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/modeling/mdt/uml2/downloads/drops/${V}/R200702141227/

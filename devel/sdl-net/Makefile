@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"SDL cross-platform networking library"
+COMMENT=	SDL cross-platform networking library
 
 DISTNAME=	SDL_net-1.2.5
 PKGNAME=	${DISTNAME:L:S/_/-/}p4

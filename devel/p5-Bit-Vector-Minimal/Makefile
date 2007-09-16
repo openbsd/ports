@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"object-oriented wrapper around vec()"
+COMMENT=	object-oriented wrapper around vec()
 
 MODULES=	cpan
 DISTNAME=	Bit-Vector-Minimal-1.3

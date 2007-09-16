@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/16 21:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=	"finding memory leaks in perl XS"
+COMMENT=	finding memory leaks in perl XS
 SHARED_ONLY=	Yes
 
 MODULES=	cpan

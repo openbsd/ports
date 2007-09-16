@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2003/09/25 06:25:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=	"abstraction for general data transport"
+COMMENT=	abstraction for general data transport
 
 DISTNAME=	libio-0.1
 CATEGORIES=	devel

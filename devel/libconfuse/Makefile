@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/16 12:47:40 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"configuration file parser library"
+COMMENT=		configuration file parser library
 DISTNAME=		confuse-2.5
 PKGNAME=		lib${DISTNAME}p0
 SHARED_LIBS=		confuse 0.0	# .0.0

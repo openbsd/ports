@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/15 02:14:24 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=		"RCS parsing library for Python"
+COMMENT=		RCS parsing library for Python
 
 CHANGESET=		40d822c6febd
 # we just make up a version since changesets are SHA1 hashes

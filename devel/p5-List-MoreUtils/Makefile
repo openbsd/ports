@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:36 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=		"perl5 extra list utilities"
+COMMENT=		perl5 extra list utilities
 
 MODULES=		cpan
 DISTNAME=		List-MoreUtils-0.19

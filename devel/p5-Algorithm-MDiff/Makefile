@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/25 16:32:33 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:02 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to calculate m-difference between two objects"
+COMMENT=	interface to calculate m-difference between two objects
 
 MODULES=	cpan
 DISTNAME=	Algorithm-MDiff-0.94

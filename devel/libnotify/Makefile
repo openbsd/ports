@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/23 17:27:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"send desktop notifications to a notification daemon"
+COMMENT=		send desktop notifications to a notification daemon
 
 DISTNAME=		libnotify-0.4.4
 CATEGORIES=		devel

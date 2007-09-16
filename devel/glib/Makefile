@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.57 2006/10/28 11:19:21 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2007/09/16 02:52:59 merdely Exp $
 # Uses pthreads
 
-COMMENT=	"useful routines for C programming"
+COMMENT=	useful routines for C programming
 
 DISTNAME=	glib-1.2.10
 PKGNAME=	${DISTNAME}p1

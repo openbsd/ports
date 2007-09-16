@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=	"smart return-value object"
+COMMENT=	smart return-value object
 
 MODULES=	cpan
 DISTNAME=	Class-ReturnValue-0.53

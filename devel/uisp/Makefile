@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/12 22:50:39 martin Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"AVR microcontroller hardware in-system programmer"
+COMMENT=	AVR microcontroller hardware in-system programmer
 
 DISTNAME=	uisp-20050207
 CATEGORIES=	devel

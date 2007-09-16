@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/01 16:28:31 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"ruby library to provide colorspace support"
+COMMENT=	ruby library to provide colorspace support
 
 DISTNAME=	color-tools-1.3.0
 PKGNAME=	ruby-${DISTNAME}

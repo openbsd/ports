@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/06 16:00:20 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=	"graphical subversion client"
+COMMENT=	graphical subversion client
 
 VERSION=	0.9.4
 DISTNAME=	rapidsvn-${VERSION}

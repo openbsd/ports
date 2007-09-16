@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/06/13 15:07:34 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"enhanced interactive Python shell"
+COMMENT=	enhanced interactive Python shell
 
 DISTNAME=	ipython-0.8.1
 CATEGORIES=	devel

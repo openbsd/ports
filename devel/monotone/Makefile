@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/27 10:43:48 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"distributed version control system"
+COMMENT=	distributed version control system
 
 VERSION=	0.35
 DISTNAME=	monotone-${VERSION}

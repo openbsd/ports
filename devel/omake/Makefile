@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"build system designed for scalability and portability"
+COMMENT=	build system designed for scalability and portability
 CATEGORIES=	devel
 
 V=		0.9.6.9-1

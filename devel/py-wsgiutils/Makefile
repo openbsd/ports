@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 21:54:42 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=		"libraries for WSGI development"
+COMMENT=		libraries for WSGI development
 
 V=			0.7
 DISTNAME=		WSGIUtils-${V}

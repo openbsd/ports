@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/06 05:42:26 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"XML internationalization tool"
+COMMENT=	XML internationalization tool
 
 DISTNAME=	getxml-1.0.4
 PKGNAME=	${DISTNAME}p1

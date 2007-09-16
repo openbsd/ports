@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:51 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT=        "forbids warnings while testing"
+COMMENT=        forbids warnings while testing
 
 MODULES=	cpan
 DISTNAME=	Test-NoWarnings-0.083

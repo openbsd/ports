@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/17 21:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=        "wrapper around File::Find"
+COMMENT=        wrapper around File::Find
 
 MODULES=	cpan
 DISTNAME=	File-Finder-0.53

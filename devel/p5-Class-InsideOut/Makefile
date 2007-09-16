@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/13 10:43:11 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT= 	"alternative object layout in perl"
+COMMENT= 	alternative object layout in perl
 
 
 MODULES=	cpan

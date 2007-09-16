@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/04 14:24:33 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"object oriented time interface"
+COMMENT=	object oriented time interface
 
 MODULES=	cpan
 DISTNAME=	Time-modules-2006.0814

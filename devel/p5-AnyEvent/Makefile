@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/19 10:08:18 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"provide framework for multiple event loops"
+COMMENT=	provide framework for multiple event loops
 
 MODULES=	cpan
 DISTNAME=	AnyEvent-2.52

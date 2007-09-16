@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=		'print arrays of data in a nicely formatted listing'
+COMMENT=		print arrays of data in a nicely formatted listing
 
 MODULES=		cpan
 DISTNAME=		Data-ShowTable-3.3

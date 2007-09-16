@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/05 06:29:50 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT= 	"test suite using WWW::Mechanize"
+COMMENT= 	test suite using WWW::Mechanize
 
 MODULES=	cpan
 

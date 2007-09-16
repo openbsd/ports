@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:04 merdely Exp $
 
-COMMENT=	"parse and format strp and strf time patterns"
+COMMENT=	parse and format strp and strf time patterns
 
 MODULES=	cpan
 DISTNAME=	DateTime-Format-Strptime-1.0700

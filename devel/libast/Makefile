@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"library of assorted spiffy things"
+COMMENT=		library of assorted spiffy things
 
 DISTNAME=		libast-0.7
 PKGNAME=		${DISTNAME}p3

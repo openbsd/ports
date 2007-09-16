@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/11/29 08:23:31 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT= 	"check for pod coverage in your distribution"
+COMMENT= 	check for pod coverage in your distribution
 
 MODULES=	cpan
 DISTNAME=	Test-Pod-Coverage-1.08

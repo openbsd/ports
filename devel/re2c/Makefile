@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/16 14:10:57 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=		"C-based regular expression scanner generator"
+COMMENT=		C-based regular expression scanner generator
 
 DISTNAME=		re2c-0.12.0
 CATEGORIES=		devel

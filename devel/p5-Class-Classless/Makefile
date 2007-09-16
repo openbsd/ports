@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/24 17:46:21 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=		"perl object without classes"
+COMMENT=		perl object without classes
 
 MODULES=		cpan
 DISTNAME=		Class-Classless-1.35

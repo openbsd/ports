@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/16 08:21:01 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=		"utilities functions to build inside-out objects"
+COMMENT=		utilities functions to build inside-out objects
 
 MODULES=		cpan
 DISTNAME=		Class-Std-Utils-0.0.2

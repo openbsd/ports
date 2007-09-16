@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2007/04/24 12:53:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"configuration database system for GNOME"
+COMMENT=	configuration database system for GNOME
 
 VERSION=	2.18.0.1
 DISTNAME=	GConf-${VERSION}

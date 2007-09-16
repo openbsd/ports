@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2006/12/16 12:22:33 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=		"ZX Spectrum emulator file format library"
+COMMENT=		ZX Spectrum emulator file format library
 DISTNAME=		libspectrum-0.2.2
 SHARED_LIBS=		spectrum 4.0
 CATEGORIES=		devel

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/04 12:37:35 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT= 	"Perl library for manipulating frame stack"
+COMMENT= 	Perl library for manipulating frame stack
 
 MODULES=	cpan
 DISTNAME=	Sub-Uplevel-0.14

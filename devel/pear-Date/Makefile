@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/22 22:48:03 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"date and timezone classes for PHP"
+COMMENT=	date and timezone classes for PHP
 
 DISTNAME=	Date-1.4.6
 PKGNAME=	pear-${DISTNAME}p0

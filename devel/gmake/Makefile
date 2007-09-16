@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2005/04/23 15:13:54 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"GNU make"
+COMMENT=	GNU make
 
 DISTNAME=	make-3.80
 PKGNAME=	g${DISTNAME}p1

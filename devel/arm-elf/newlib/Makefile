@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT=	"newlib for arm-elf cross-development"
+COMMENT=	newlib for arm-elf cross-development
 
 DISTNAME=	newlib-1.14.0
 

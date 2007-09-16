@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 22:03:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=		"template plugin that supports Kid templates"
+COMMENT=		template plugin that supports Kid templates
 
 V=			1.0.1
 DISTNAME=		TurboKid-${V}

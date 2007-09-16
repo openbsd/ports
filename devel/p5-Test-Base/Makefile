@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/13 15:19:32 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT= 	"data driven test framework"
+COMMENT= 	data driven test framework
 
 MODULES=	cpan 
 

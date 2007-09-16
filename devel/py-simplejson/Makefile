@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 21:51:30 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=		"JSON encoder/decoder"
+COMMENT=		JSON encoder/decoder
 
 DISTNAME=		simplejson-1.7.1
 PKGNAME=		py-${DISTNAME}

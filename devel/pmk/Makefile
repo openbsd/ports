@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/08/15 11:09:37 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=		"dependency configuration tool"
+COMMENT=		dependency configuration tool
 
 VERSION=		0.9.3
 DISTNAME=		pmk-${VERSION}

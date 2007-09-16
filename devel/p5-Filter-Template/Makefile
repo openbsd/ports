@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/02 21:42:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=		"source filter for inline code templates (macros)"
+COMMENT=		source filter for inline code templates (macros)
 DISTNAME=		Filter-Template-1.02
 CATEGORIES=		devel
 

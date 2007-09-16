@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/04/12 18:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"perl module to implementing delay loading of object-data"
+COMMENT=	perl module to implementing delay loading of object-data
 
 MODULES=	cpan
 VERSION=	0.15

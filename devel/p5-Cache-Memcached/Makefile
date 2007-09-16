@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/12 16:31:06 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT= 	"pure perl client interface to memcached"
+COMMENT= 	pure perl client interface to memcached
 
 MODULES=	cpan
 

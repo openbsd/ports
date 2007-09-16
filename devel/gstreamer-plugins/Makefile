@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2007/06/29 21:38:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.34 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT-main=		"GStreamer Streaming-media framework plug-ins"
+COMMENT-main=		GStreamer Streaming-media framework plug-ins
 
 VERSION=		0.8.11
 DISTNAME=		gst-plugins-${VERSION}
@@ -18,7 +18,7 @@ HOMEPAGE=		http://www.gstreamer.net/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"patent issues"
+PERMIT_DISTFILES_CDROM=	patent issues
 PERMIT_DISTFILES_FTP=	Yes
 			
 
@@ -89,14 +89,14 @@ BASENAME-${PLUGIN}=	gstreamer-${PLUGIN}
 SUBST_VARS+=	BASENAME
 
 # a52dec
-COMMENT-a52=		"GStreamer plugin for decoding A/52 audio streams"
+COMMENT-a52=		GStreamer plugin for decoding A/52 audio streams
 WANTLIB-a52=		${myWANTLIB}
 LIB_DEPENDS-a52=	a52::audio/liba52 \
 			${myLIB_DEPENDS}
 OPTIONS-a52=		a52dec
 
 # arts
-COMMENT-arts=		"GStreamer plugin for interfacing with KDE arts"
+COMMENT-arts=		GStreamer plugin for interfacing with KDE arts
 WANTLIB-arts=		vorbis vorbisenc pthread audiofile ossaudio mad ogg \
 			esd vorbisfile stdc++ ${myWANTLIB}
 LIB_DEPENDS-arts=	artsflow,mcop,artsflow_idl,artsc::x11/kde/arts3 \
@@ -104,57 +104,57 @@ LIB_DEPENDS-arts=	artsflow,mcop,artsflow_idl,artsc::x11/kde/arts3 \
 OPTIONS-arts=		arts artsc
 
 # audiofile
-COMMENT-audiofile=	"GStreamer plugin for using the Audiofile library"
+COMMENT-audiofile=	GStreamer plugin for using the Audiofile library
 WANTLIB-audiofile=	${myWANTLIB}
 LIB_DEPENDS-audiofile=	audiofile::devel/libaudiofile \
 			${myLIB_DEPENDS}
 
 # cdaudio
-COMMENT-cdaudio=	"GStreamer plugin for using the CD audio library"
+COMMENT-cdaudio=	GStreamer plugin for using the CD audio library
 WANTLIB-cdaudio=	${myWANTLIB}
 LIB_DEPENDS-cdaudio=	cdaudio::audio/libcdaudio \
 			${myLIB_DEPENDS}
 
 # cdparanoia (cdda)
-COMMENT-cdda=		"GStreamer plugin for reading audio from CDs"
+COMMENT-cdda=		GStreamer plugin for reading audio from CDs
 WANTLIB-cdda=		${myWANTLIB}
 LIB_DEPENDS-cdda=	cdda_interface,cdda_paranoia::audio/cdparanoia \
 			${myLIB_DEPENDS}
 OPTIONS-cdda=		cdparanoia
 
 # dvdnavsrc
-COMMENT-dvdnav=		"GStreamer plugin for DVD playback with menus"
+COMMENT-dvdnav=		GStreamer plugin for DVD playback with menus
 WANTLIB-dvdnav=		${myWANTLIB}
 LIB_DEPENDS-dvdnav=	dvdnav::multimedia/libdvdnav \
 			dvdread::devel/libdvdread \
 			${myLIB_DEPENDS}
 
 # dvdreadsrc
-COMMENT-dvdread=	"GStreamer plugin for DVD playback"
+COMMENT-dvdread=	GStreamer plugin for DVD playback
 WANTLIB-dvdread=	${myWANTLIB}
 LIB_DEPENDS-dvdread=	dvdread::devel/libdvdread \
 			${myLIB_DEPENDS}
 
 # esd
-COMMENT-esd=		"GStreamer plugin for outputting to esd"
+COMMENT-esd=		GStreamer plugin for outputting to esd
 WANTLIB-esd=		audiofile ${myWANTLIB}
 LIB_DEPENDS-esd=	esd.>=2::audio/esound \
 			${myLIB_DEPENDS}
 
 # faad
-COMMENT-faad=		"GStreamer plugin for decoding AAC files"
+COMMENT-faad=		GStreamer plugin for decoding AAC files
 WANTLIB-faad=		${myWANTLIB}
 LIB_DEPENDS-faad=	faad.>=1::audio/faad \
 			${myLIB_DEPENDS}
 
 # flac
-COMMENT-flac=		"GStreamer plugin for encoding/decoding FLAC files"
+COMMENT-flac=		GStreamer plugin for encoding/decoding FLAC files
 WANTLIB-flac=		${myWANTLIB}
 LIB_DEPENDS-flac=	FLAC::audio/flac \
 			${myLIB_DEPENDS}
 
 # gnomevfs
-COMMENT-gnome=		"GStreamer plugin supporting GNOME VFS"
+COMMENT-gnome=		GStreamer plugin supporting GNOME VFS
 WANTLIB-gnome=		ORBit-2 crypto ssl gconf-2 \
 			dbus-1 dbus-glib-1 util \
 			${myWANTLIB}
@@ -163,96 +163,96 @@ LIB_DEPENDS-gnome=	gnomevfs-2.>=1800:gnome-vfs2->=2.18:x11/gnome/vfs2 \
 OPTIONS-gnome=		gnome_vfs
 
 # gsm
-COMMENT-gsm=		"GStreamer plugin for using gsm"
+COMMENT-gsm=		GStreamer plugin for using gsm
 WANTLIB-gsm=		${myWANTLIB}
 LIB_DEPENDS-gsm=	gsm::audio/gsm \
 			${myLIB_DEPENDS}
 
 # jpeg
-COMMENT-jpeg=		"GStreamer plugin for handling JPEG files"
+COMMENT-jpeg=		GStreamer plugin for handling JPEG files
 WANTLIB-jpeg=		${myWANTLIB}
 LIB_DEPENDS-jpeg=	jpeg::graphics/jpeg \
 			${myLIB_DEPENDS}
 
 # lame
-COMMENT-lame=		"GStreamer plugin for encoding mp3 files using LAME"
-PERMIT_PACKAGE_CDROM-lame=	"patent issues"
+COMMENT-lame=		GStreamer plugin for encoding mp3 files using LAME
+PERMIT_PACKAGE_CDROM-lame=	patent issues
 WANTLIB-lame=		${myWANTLIB}
 LIB_DEPENDS-lame=	mp3lame:lame-*:audio/lame,no_x11 \
 			${myLIB_DEPENDS}
 
 # mad
-COMMENT-mad=		"GStreamer plugin for decoding mp3 files using MAD"
+COMMENT-mad=		GStreamer plugin for decoding mp3 files using MAD
 WANTLIB-mad=		${myWANTLIB}
 LIB_DEPENDS-mad=	id3tag::audio/libid3tag \
 			mad::audio/libmad \
 			${myLIB_DEPENDS}
 
 # mikmod
-COMMENT-mikmod=		"GStreamer plugin for using the Mikmod library"
+COMMENT-mikmod=		GStreamer plugin for using the Mikmod library
 WANTLIB-mikmod=		${myWANTLIB}
 LIB_DEPENDS-mikmod=	mikmod::audio/libmikmod \
 			${myLIB_DEPENDS}
 
 # mpeg2dec
-COMMENT-mpeg2=		"GStreamer plugin for playing and encoding MPEG video files"
+COMMENT-mpeg2=		GStreamer plugin for playing and encoding MPEG video files
 WANTLIB-mpeg2=		X11 Xau Xdmcp Xext Xv ${myWANTLIB}
 LIB_DEPENDS-mpeg2=	mpeg2::graphics/libmpeg2 \
 			${myLIB_DEPENDS}
 OPTIONS-mpeg2=		mpeg2dec
 
 # musepack
-COMMENT-musepack=	"GStreamer plugin for playing musepack sound files"
+COMMENT-musepack=	GStreamer plugin for playing musepack sound files
 WANTLIB-musepack=	${myWANTLIB}
 LIB_DEPENDS-musepack=	mpcdec::audio/libmpcdec \
 			${myLIB_DEPENDS}
 
 # ogg
-COMMENT-ogg=		"GStreamer plugin for demuxing Ogg streams"
+COMMENT-ogg=		GStreamer plugin for demuxing Ogg streams
 WANTLIB-ogg=		${myWANTLIB}
 LIB_DEPENDS-ogg=	ogg::audio/libogg \
 			${myLIB_DEPENDS}
 
 # sdlvideosink
-COMMENT-sdl=		"GStreamer plugin for using SDL to diplay video"
+COMMENT-sdl=		GStreamer plugin for using SDL to diplay video
 WANTLIB-sdl=		X11 Xau Xdmcp Xext usbhid ${myWANTLIB}
 LIB_DEPENDS-sdl=	SDL::devel/sdl \
 			gstinterfaces-0.8.>=1.0::devel/gstreamer-plugins \
 			${myLIB_DEPENDS}
 
 # sidplay
-COMMENT-sidplay=	"GStreamer plugin for playing SID files"
+COMMENT-sidplay=	GStreamer plugin for playing SID files
 WANTLIB-sidplay=	stdc++ ${myWANTLIB}
 LIB_DEPENDS-sidplay=	sidplay::audio/libsidplay \
 			${myLIB_DEPENDS}
 
 # sndfile
-COMMENT-sndfile=	"GStreamer plugin for using sndfile"
+COMMENT-sndfile=	GStreamer plugin for using sndfile
 WANTLIB-sndfile=	${myWANTLIB}
 LIB_DEPENDS-sndfile=	sndfile::audio/libsndfile \
 			${myLIB_DEPENDS}
 
 # speex
-COMMENT-speex=		"GStreamer plugin for speex"
+COMMENT-speex=		GStreamer plugin for speex
 WANTLIB-speex=		${myWANTLIB}
 LIB_DEPENDS-speex=	speex.>=4:speex->=1.0.5:audio/speex \
 			${myLIB_DEPENDS}
 
 # theora
-COMMENT-theora=		"GStreamer plugin for theora"
+COMMENT-theora=		GStreamer plugin for theora
 WANTLIB-theora=		${myWANTLIB}
 LIB_DEPENDS-theora=	theora::multimedia/libtheora \
 			ogg::audio/libogg \
 			${myLIB_DEPENDS}
 
 # tremor
-COMMENT-tremor=		"GStreamer plugin for Vorbis audio files, integer"
+COMMENT-tremor=		GStreamer plugin for Vorbis audio files, integer
 WANTLIB-tremor=		${myWANTLIB}
 LIB_DEPENDS-tremor=	vorbisidec::audio/tremor \
 			${myLIB_DEPENDS}
 
 # vorbis
-COMMENT-vorbis=		"GStreamer plugin for Vorbis audio files"
+COMMENT-vorbis=		GStreamer plugin for Vorbis audio files
 WANTLIB-vorbis=		ogg ${myWANTLIB}
 LIB_DEPENDS-vorbis=	vorbis,vorbisenc::audio/libvorbis \
 			${myLIB_DEPENDS}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/04/24 01:43:21 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT= 	"test framework to run Perl::Critic"
+COMMENT= 	test framework to run Perl::Critic
 
 MODULES=	cpan
 DISTNAME=	Test-Perl-Critic-1.01

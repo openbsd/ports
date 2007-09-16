@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2007/04/12 18:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"library for reading from continuously updated files"
+COMMENT=	library for reading from continuously updated files
 
 MODULES=	cpan
 DISTNAME=	File-Tail-0.99.3

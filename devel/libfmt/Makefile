@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/12/17 11:49:12 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=	"Extensible formatted print C library"
+COMMENT=	Extensible formatted print C library
 
 VERSION=	2.0
 DISTNAME=	libfmt-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/12/04 14:18:13 msf Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT= 	"tests strings for equality"
+COMMENT= 	tests strings for equality
 
 MODULES=	cpan
 

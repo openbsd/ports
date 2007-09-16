@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/02/16 07:30:56 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"YAML ain't a markup language"
+COMMENT=	YAML ain't a markup language
 
 MODULES=	cpan
 

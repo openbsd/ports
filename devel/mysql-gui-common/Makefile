@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/04/25 10:48:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"common libraries and data for the MySQL GUI Suites"
+COMMENT=	common libraries and data for the MySQL GUI Suites
 
 DISTNAME=	mysql-gui-tools-5.0r11
 PKGNAME=	mysql-gui-common-5.0.6.1r11

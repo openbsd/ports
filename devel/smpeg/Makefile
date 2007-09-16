@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2007/09/16 02:53:14 merdely Exp $
 
-COMMENT=	"mpeg video player library with sound support"
+COMMENT=	mpeg video player library with sound support
 
 DISTNAME=	smpeg-0.4.4
 PKGNAME=	${DISTNAME}p4

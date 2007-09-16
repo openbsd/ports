@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/22 22:48:03 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:11 merdely Exp $
 
-COMMENT=	"Framework for caching of arbitrary data for PHP"
+COMMENT=	Framework for caching of arbitrary data for PHP
 
 DISTNAME=	Cache-1.5.4
 PKGNAME=	pear-${DISTNAME}p1

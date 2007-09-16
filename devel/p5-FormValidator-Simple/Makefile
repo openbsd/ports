@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/25 16:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=        "validate user input through a chain of constraints"
+COMMENT=        validate user input through a chain of constraints
 
 MODULES=	cpan
 DISTNAME=	FormValidator-Simple-0.19

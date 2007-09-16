@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/25 16:32:34 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=	"inheritable, overridable class data"
+COMMENT=	inheritable, overridable class data
 
 MODULES=	cpan
 DISTNAME=	Class-Data-Inheritable-0.06

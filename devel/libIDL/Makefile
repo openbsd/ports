@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2007/03/19 00:20:49 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/16 02:53:00 merdely Exp $
 
-COMMENT=		"IDL parsing library"
+COMMENT=		IDL parsing library
 
 DISTNAME=		libIDL-0.8.8
 SHARED_LIBS +=	IDL-2                0.1      # .0.0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/18 02:32:12 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"Eclipse Modeling Framework (EMF)"
+COMMENT=		Eclipse Modeling Framework (EMF)
 
 V=			2.2.3
 DISTNAME=		emf-sdo-xsd-SDK-${V}
@@ -14,9 +14,9 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 EXTRACT_SUFX=           .zip
 
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
-PERMIT_PACKAGE_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
+PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/modeling/emf/emf/downloads/drops/${V}/R200705141058/

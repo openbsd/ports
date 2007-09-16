@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/08 23:01:17 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"write Perl subroutines in other programming languages"
+COMMENT=	write Perl subroutines in other programming languages
 
 MODULES=	cpan
 DISTNAME=	Inline-0.44

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/02/14 17:59:33 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 02:52:58 merdely Exp $
 
-COMMENT=		"code browsing program"
+COMMENT=		code browsing program
 
 DISTNAME=		cscope-15.6
 CATEGORIES=     	devel

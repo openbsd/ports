@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 09:48:31 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"multiple states library for the lua language"
+COMMENT=	multiple states library for the lua language
 SHARED_ONLY=	Yes
 
 DISTNAME=	rings-1.1

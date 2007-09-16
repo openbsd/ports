@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2007/04/14 21:20:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=	"graphical CVS front-end using QT2"
+COMMENT=	graphical CVS front-end using QT2
 
 # pthread
 NOT_FOR_ARCHS=	sparc

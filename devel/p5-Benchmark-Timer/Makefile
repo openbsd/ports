@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/03/24 09:12:02 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:02 merdely Exp $
 
-COMMENT=	"benchmarking with statistical confidence"
+COMMENT=	benchmarking with statistical confidence
 
 MODULES=	cpan
 DISTNAME=	Benchmark-Timer-0.7100

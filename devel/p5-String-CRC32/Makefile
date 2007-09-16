@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:08 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface for cyclic redundancy check generation"
+COMMENT=	interface for cyclic redundancy check generation
 
 MODULES=	cpan
 DISTNAME=	String-CRC32-1.3

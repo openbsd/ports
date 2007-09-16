@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT=		"ask passwords from perl"
+COMMENT=		ask passwords from perl
 
 MODULES=		cpan
 DISTNAME=		Term-ReadPassword-0.07

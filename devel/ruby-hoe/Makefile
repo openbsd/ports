@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/04 18:00:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:13 merdely Exp $
 
-COMMENT=	"simple rake/rubygems helper for project Rakefiles"
+COMMENT=	simple rake/rubygems helper for project Rakefiles
 
 DISTNAME=	hoe-1.2.1
 PKGNAME=	ruby-${DISTNAME}p0

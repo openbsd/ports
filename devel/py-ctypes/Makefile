@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 2007/03/25 10:34:12 djm Exp $
-COMMENT=	"Python foreign function interface library"
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:11 merdely Exp $
+COMMENT=	Python foreign function interface library
 
 DISTNAME=	ctypes-1.0.1
 PKGNAME=	py-${DISTNAME:L}p0

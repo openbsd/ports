@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/07/27 19:17:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 02:53:13 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"Ruby interface to ncurses"
+COMMENT=		Ruby interface to ncurses
 
 VERSION=		0.8
 DISTNAME=		ncurses-ruby-${VERSION}

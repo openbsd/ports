@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/05 17:44:50 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:06 merdely Exp $
 
-COMMENT=	"checks intelligently if files have changed"
+COMMENT=	checks intelligently if files have changed
 
 MODULES=	cpan
 DISTNAME=	File-Modified-0.07

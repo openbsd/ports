@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/03/19 21:59:02 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:08 merdely Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		"copy perl Regexp objects"
+COMMENT=		copy perl Regexp objects
 
 DISTNAME=		Regexp-Copy-0.06
 CATEGORIES=		devel

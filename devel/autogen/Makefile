@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/09 19:00:49 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:52:57 merdely Exp $
 
-COMMENT='automatic text creation from templates'
+COMMENT=automatic text creation from templates
 CATEGORIES=devel
 
 DISTNAME=	autogen-5.8.7

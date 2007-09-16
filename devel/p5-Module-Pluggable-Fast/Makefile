@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/05/05 17:44:50 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"instantiate plugins as they're found"
+COMMENT=	instantiate plugins as they're found
 
 MODULES=	cpan
 DISTNAME=	Module-Pluggable-Fast-0.18

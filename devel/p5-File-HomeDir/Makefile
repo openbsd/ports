@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/09 17:15:20 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:05 merdely Exp $
 
-COMMENT=		"retrieve home directory location"
+COMMENT=		retrieve home directory location
 
 MODULES=		cpan
 DISTNAME=		File-HomeDir-0.65

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/06/24 22:01:47 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
 
-COMMENT=		"plugin to support use of Cheetah templates"
+COMMENT=		plugin to support use of Cheetah templates
 
 V=			0.9.5
 DISTNAME=		TurboCheetah-${V}

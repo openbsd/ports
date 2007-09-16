@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/19 09:13:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/16 02:53:01 merdely Exp $
 
-COMMENT=		"SOAP implementation in C"
+COMMENT=		SOAP implementation in C
 
 DISTNAME=		libsoup-2.2.100
 PKGNAME=		${DISTNAME}p0

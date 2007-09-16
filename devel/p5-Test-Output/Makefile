@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/12/10 12:29:56 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:09 merdely Exp $
 
-COMMENT= 	"test output of other modules"
+COMMENT= 	test output of other modules
 
 MODULES=	cpan
 DISTNAME=	Test-Output-0.10

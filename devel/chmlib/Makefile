@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/31 21:42:03 jasper Exp $
-COMMENT=	"handling CHM files"
+# $OpenBSD: Makefile,v 1.8 2007/09/16 02:52:58 merdely Exp $
+COMMENT=	handling CHM files
 CATEGORIES=	devel textproc
 
 HOMEPAGE=	http://www.jedrea.com/chmlib/

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/04/12 18:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:03 merdely Exp $
 
-COMMENT=	"validate method/function parameters"
+COMMENT=	validate method/function parameters
 
 MODULES=	cpan
 DISTNAME=	Class-Container-0.12

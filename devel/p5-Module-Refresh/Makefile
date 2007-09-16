@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:07 merdely Exp $
 
-COMMENT=	"refresh perl %INC files when updated on disk"
+COMMENT=	refresh perl %INC files when updated on disk
 
 MODULES=	cpan
 DISTNAME=	Module-Refresh-0.09

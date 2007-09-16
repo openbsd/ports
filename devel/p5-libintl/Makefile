@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/06/27 21:09:48 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
 
-COMMENT=	"internationalization library written in Perl"
+COMMENT=	internationalization library written in Perl
 
 V=		1.16
 DISTNAME=	libintl-perl-${V}

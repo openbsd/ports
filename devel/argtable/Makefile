@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/12 18:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:56 merdely Exp $
 
-COMMENT=		"ANSI C command line parser"
+COMMENT=		ANSI C command line parser
 
 DISTNAME=		argtable2-6
 PKGNAME=		argtable-2.6p1

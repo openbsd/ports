@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/29 08:23:30 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 02:53:08 merdely Exp $
 
-COMMENT=	"subversion repository mirroring tool"
+COMMENT=	subversion repository mirroring tool
 
 MODULES=	cpan
 DISTNAME=	SVN-Mirror-0.70

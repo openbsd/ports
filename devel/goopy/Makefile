@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/08 22:29:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:59 merdely Exp $
 
-COMMENT=	"Google utilities written in Python"
+COMMENT=	Google utilities written in Python
 
 DISTNAME=	goopy-0.1
 PKGNAME=	${DISTNAME}p1
