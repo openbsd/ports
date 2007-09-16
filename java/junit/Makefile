@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/06/18 15:50:16 ian Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 00:29:15 merdely Exp $
 
-COMMENT=	"regression testing utility for use with the Java language"
+COMMENT=	regression testing utility for use with the Java language
 
 VERSION=	3.8.2
 DISTNAME=	junit${VERSION}

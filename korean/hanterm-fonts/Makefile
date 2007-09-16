@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/04 20:36:35 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:28:19 merdely Exp $
 
-COMMENT=	"extra Korean fonts"
+COMMENT=	extra Korean fonts
 
 PKGNAME=	hanterm-fonts-3.1
 DISTNAME=	hanterm-font-3.1

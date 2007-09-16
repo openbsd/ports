@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/11/04 19:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 00:29:15 merdely Exp $
 
-COMMENT=	"Java program analyzer and checker"
+COMMENT=	Java program analyzer and checker
 
 DISTNAME=	jlint-3.0
 CATEGORIES=	java

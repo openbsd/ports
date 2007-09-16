@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2003/03/31 13:57:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 00:28:19 merdely Exp $
 
-COMMENT= 	"extra Korean fonts"
+COMMENT= 	extra Korean fonts
 
 PKGNAME=	baekmuk-fonts-2.0
 DISTNAME=	baekmuk-2.0
