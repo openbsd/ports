@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/16 09:13:27 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 03:07:06 merdely Exp $
 
-COMMENT=	"interactive geometry program, documentation"
+COMMENT=	interactive geometry program, documentation
 
 DISTNAME=	drgeo-doc-1.6
 PKGNAME=	${DISTNAME}p0

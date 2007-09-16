@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/03/30 23:51:10 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 03:07:06 merdely Exp $
 
 PKG_ARCH=	*
 
-COMMENT=	"commandline interface to online dictionaries"
+COMMENT=	commandline interface to online dictionaries
 
 DISTNAME=	edict-2.2
 CATEGORIES=	education

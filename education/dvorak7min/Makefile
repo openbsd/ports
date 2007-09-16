@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/12 18:34:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 03:07:06 merdely Exp $
 
-COMMENT=	"typing tutor for dvorak keyboards"
+COMMENT=	typing tutor for dvorak keyboards
 
 DISTNAME=	dvorak7min-1.6.1
 CATEGORIES=	education

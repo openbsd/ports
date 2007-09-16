@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/02/10 04:50:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 03:07:06 merdely Exp $
 
-COMMENT=	"interactive tutorial for algorithms and data structures"
+COMMENT=	interactive tutorial for algorithms and data structures
 
 DISTNAME=	algotutor-0.8.5
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2005/01/31 20:02:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 03:07:06 merdely Exp $
 
-COMMENT=	"interactive typing tutor"
+COMMENT=	interactive typing tutor
 
 DISTNAME=	gtypist-2.7
 PKGNAME=	${DISTNAME}p0
