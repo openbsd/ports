@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2007/02/15 08:07:39 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT-main=		"multimedia framework - plugins ugly"
-COMMENT-sidplay=	"multimedia framework - sidplay plugin"
-COMMENT-a52=		"multimedia framework - a52 plugin"
-COMMENT-mad=		"multimedia framework - mad plugin"
-COMMENT-lame=		"multimedia framework - lame plugin"
-COMMENT-mpeg2=		"multimedia framework - mpeg2 plugin"
-COMMENT-dvdread=	"multimedia framework - dvdread plugin"
+COMMENT-main=		multimedia framework - plugins ugly
+COMMENT-sidplay=	multimedia framework - sidplay plugin
+COMMENT-a52=		multimedia framework - a52 plugin
+COMMENT-mad=		multimedia framework - mad plugin
+COMMENT-lame=		multimedia framework - lame plugin
+COMMENT-mpeg2=		multimedia framework - mpeg2 plugin
+COMMENT-dvdread=	multimedia framework - dvdread plugin
 
 V=			0.10.5
 DISTNAME=		gst-plugins-ugly-$V
@@ -19,8 +19,8 @@ PKGNAME-mpeg2=		gstreamer-mpeg2-$V
 PKGNAME-dvdread=	gstreamer-dvdread-$V
 MULTI_PACKAGES=		-main -sidplay -lame -mad -a52 -mpeg2 -dvdread
 
-PERMIT_PACKAGE_CDROM=	"Patent issues"
-PERMIT_DISTFILES_CDROM=	"Patent issues"
+PERMIT_PACKAGE_CDROM=	Patent issues
+PERMIT_DISTFILES_CDROM=	Patent issues
 SHARED_LIBS=
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-ugly/}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=	"open video codec"
+COMMENT=	open video codec
 DISTNAME=	libtheora-1.0alpha7
 CATEGORIES=	multimedia
 SHARED_LIBS=	theora	2.0

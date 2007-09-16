@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2006/12/02 20:24:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=		"DVD ripper"
+COMMENT=		DVD ripper
 
 DISTNAME=		dvdbackup-0.1.1
 PKGNAME=		${DISTNAME}p2

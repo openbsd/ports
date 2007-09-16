@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/01/16 11:15:36 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=		"ogg mux/demuxer"
+COMMENT=		ogg mux/demuxer
 DISTNAME=		ogmtools-1.5
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia

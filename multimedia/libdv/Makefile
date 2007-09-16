@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/16 12:22:34 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=		"Quasar DV codec"
+COMMENT=		Quasar DV codec
 
 DISTNAME=		libdv-0.104
 PKGNAME=		${DISTNAME}p1

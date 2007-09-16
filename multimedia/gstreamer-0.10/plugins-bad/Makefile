@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2007/01/13 11:23:38 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT-main=		"multimedia framework - plugins bad"
-COMMENT-tremor=		"multimedia framework - tremor plugin"
-COMMENT-musepack=	"multimedia framework - musepack plugin"
-COMMENT-faac=		"multimedia framework - faac plugin"
-COMMENT-faad=		"multimedia framework - faad plugin"
-COMMENT-xvid=		"multimedia framework - xvid plugin"
-COMMENT-sdl=		"multimedia framework - sdl plugin"
-COMMENT-bz2=		"multimedia framework - bz2 plugin"
-COMMENT-gsm=		"multimedia framework - gsm plugin"
-COMMENT-ladspa=		"multimedia framework - ladspa plugin"
-COMMENT-neon=		"multimedia framework - neon plugin"
-COMMENT-swf=		"multimedia framework - flash plugin"
+COMMENT-main=		multimedia framework - plugins bad
+COMMENT-tremor=		multimedia framework - tremor plugin
+COMMENT-musepack=	multimedia framework - musepack plugin
+COMMENT-faac=		multimedia framework - faac plugin
+COMMENT-faad=		multimedia framework - faad plugin
+COMMENT-xvid=		multimedia framework - xvid plugin
+COMMENT-sdl=		multimedia framework - sdl plugin
+COMMENT-bz2=		multimedia framework - bz2 plugin
+COMMENT-gsm=		multimedia framework - gsm plugin
+COMMENT-ladspa=		multimedia framework - ladspa plugin
+COMMENT-neon=		multimedia framework - neon plugin
+COMMENT-swf=		multimedia framework - flash plugin
 
 V=			0.10.4
 DISTNAME=		gst-plugins-bad-$V

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/18 21:44:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT-main=		"multimedia framework - plugins base"
-COMMENT-gnome=		"multimedia framework - gnome vfs plugin"
-COMMENT-cdda=		"multimedia framework - cd paranoia plugin"
-COMMENT-ogg=		"multimedia framework - ogg plugin"
-COMMENT-vorbis=		"multimedia framework - vorbis plugin"
-COMMENT-theora=		"multimedia framework - theora plugin"
-COMMENT-pango=		"multimedia framework - pango renderer"
+COMMENT-main=		multimedia framework - plugins base
+COMMENT-gnome=		multimedia framework - gnome vfs plugin
+COMMENT-cdda=		multimedia framework - cd paranoia plugin
+COMMENT-ogg=		multimedia framework - ogg plugin
+COMMENT-vorbis=		multimedia framework - vorbis plugin
+COMMENT-theora=		multimedia framework - theora plugin
+COMMENT-pango=		multimedia framework - pango renderer
 
 V=			0.10.12
 DISTNAME=		gst-plugins-base-$V

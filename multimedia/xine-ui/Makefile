@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/05/22 08:11:08 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=		"multimedia player"
+COMMENT=		multimedia player
 
 DISTNAME=		xine-ui-0.99.5
 CATEGORIES=		multimedia

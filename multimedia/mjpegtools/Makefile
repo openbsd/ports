@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/02/11 00:56:57 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=		"tools to edit/modify/encode video streams"
+COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-1.8.0
 PKGNAME=		${DISTNAME}p3

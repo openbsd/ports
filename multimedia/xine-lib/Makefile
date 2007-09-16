@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/04 00:44:26 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=		"multimedia decoding library"
+COMMENT=		multimedia decoding library
 
 V=			1.1.7
 DISTNAME=		xine-lib-${V}

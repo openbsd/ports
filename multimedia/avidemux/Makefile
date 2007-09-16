@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2007/06/29 06:19:46 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=	"free video editor"
+COMMENT=	free video editor
 
 V=		2.3.0
 DISTNAME=	avidemux_${V}

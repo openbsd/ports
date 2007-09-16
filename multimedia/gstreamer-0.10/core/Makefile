@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2007/03/17 21:35:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT-main=		"streaming media framework - core"
-COMMENT-frontend=	"streaming media framework - frontend commands"
+COMMENT-main=		streaming media framework - core
+COMMENT-frontend=	streaming media framework - frontend commands
 
 V=			0.10.12
 

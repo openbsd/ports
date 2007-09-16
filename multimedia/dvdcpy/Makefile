@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/22 17:39:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=	"copy selected info from dvd"
+COMMENT=	copy selected info from dvd
 DISTNAME=	ogmrip-0.10.0
 PKGNAME=	dvdcpy-0.10.0p0
 CATEGORIES=	multimedia

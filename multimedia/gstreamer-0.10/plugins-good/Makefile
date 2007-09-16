@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/14 05:51:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT-main=		"multimedia framework - good plugins"
-COMMENT-aalib=		"multimedia framework - aalib plugin"
-COMMENT-cairo=		"multimedia framework - cairo plugin"
-COMMENT-gconf=		"multimedia framework - conf elements"
-COMMENT-esd=		"multimedia framework - esound plugin"
-COMMENT-flac=		"multimedia framework - flac plugin"
-COMMENT-speex=		"multimedia framework - speex plugin"
-COMMENT-taglib=		"multimedia framework - taglib plugin"
-COMMENT-dv=		"multimedia framework - dv plugin"
-COMMENT-jpeg=		"multimedia framework - jpeg plugin"
-COMMENT-png=		"multimedia framework - png plugin"
-COMMENT-gdk=		"multimedia framework - gdk pixbuf plugin"
-COMMENT-caca=		"multimedia framework - libcaca plugin"
-COMMENT-shout=		"multimedia framework - shoutcast plugin"
+COMMENT-main=		multimedia framework - good plugins
+COMMENT-aalib=		multimedia framework - aalib plugin
+COMMENT-cairo=		multimedia framework - cairo plugin
+COMMENT-gconf=		multimedia framework - conf elements
+COMMENT-esd=		multimedia framework - esound plugin
+COMMENT-flac=		multimedia framework - flac plugin
+COMMENT-speex=		multimedia framework - speex plugin
+COMMENT-taglib=		multimedia framework - taglib plugin
+COMMENT-dv=		multimedia framework - dv plugin
+COMMENT-jpeg=		multimedia framework - jpeg plugin
+COMMENT-png=		multimedia framework - png plugin
+COMMENT-gdk=		multimedia framework - gdk pixbuf plugin
+COMMENT-caca=		multimedia framework - libcaca plugin
+COMMENT-shout=		multimedia framework - shoutcast plugin
 
 V=			0.10.5
 DISTNAME=		gst-plugins-good-$V

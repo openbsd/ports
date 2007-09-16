@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/01/08 22:12:38 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 03:24:28 merdely Exp $
 
-COMMENT=		"ISO MPEG-4 compliant video codec"
+COMMENT=		ISO MPEG-4 compliant video codec
 
 DISTNAME=		xvidcore-1.0.3
 PKGNAME=		${DISTNAME}p0
