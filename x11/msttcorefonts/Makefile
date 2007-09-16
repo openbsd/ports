@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/07/22 08:03:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 11:14:46 simon Exp $
 
 COMMENT=		Microsoft TrueType core fonts
 
@@ -11,9 +11,9 @@ HOMEPAGE=		http://corefonts.sourceforge.net/
 MAINTAINER=		Steve Shockley <steve.shockley@shockley.net>
 
 # Font source files have a restrictive license
-PERMIT_PACKAGE_CDROM=	"Restrictive license, can't distribute modified files"
-PERMIT_PACKAGE_FTP=	"Restrictive license, can't distribute modified files"
-PERMIT_DISTFILES_CDROM=	"may not sell"
+PERMIT_PACKAGE_CDROM=	Restrictive license, can't distribute modified files
+PERMIT_PACKAGE_FTP=	Restrictive license, can't distribute modified files
+PERMIT_DISTFILES_CDROM=	may not sell
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=corefonts/}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/04/08 14:58:04 espie Exp $
-COMMENT-main=	'japanese input method'
-COMMENT-emacs=	'emacs files for anthy'
+# $OpenBSD: Makefile,v 1.6 2007/09/16 11:14:46 simon Exp $
+COMMENT-main=	japanese input method
+COMMENT-emacs=	emacs files for anthy
 
 CATEGORIES=	japanese inputmethods
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 10:14:32 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/16 11:14:46 simon Exp $
 
 COMMENT=	block-sorting file compressor, encumbered
 
@@ -7,9 +7,9 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # GPL + patents
-PERMIT_PACKAGE_CDROM=	"patents"
+PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"patents"
+PERMIT_DISTFILES_CDROM=	patents
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c
 

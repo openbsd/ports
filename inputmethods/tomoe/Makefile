@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/10/19 00:29:47 espie Exp $
-COMMENT=	'japanese handwriting recognition library'
+# $OpenBSD: Makefile,v 1.2 2007/09/16 11:14:46 simon Exp $
+COMMENT=	japanese handwriting recognition library
 
 DISTNAME=	tomoe-0.2.1
 

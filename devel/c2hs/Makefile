@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/07/21 17:11:46 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 11:14:46 simon Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
 
 # Don't panic, this will be fixed soon.
-BROKEN=			"Doesn't build with ghc-6.6.1"
+BROKEN=			Doesn't build with ghc-6.6.1
 
 V=			0.13.6
 DISTNAME=		c2hs-${V}

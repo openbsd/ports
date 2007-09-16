@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.5 2007/02/11 00:56:57 steven Exp $
-COMMENT=	'japanese handwriting input widget'
+# $OpenBSD: Makefile,v 1.6 2007/09/16 11:14:46 simon Exp $
+COMMENT=	japanese handwriting input widget
 
 DISTNAME=	libtomoe-gtk-0.1.0
 PKGNAME=	${DISTNAME}p0

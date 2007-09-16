@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/14 13:20:12 msf Exp $
-COMMENT-main=	'multilingual input method library'
-COMMENT-gtk=	'uim for gtk'
-COMMENT-qt=	'uim for qt'
-COMMENT-kde=	'uim for kde'
-COMMENT-gnome=	'uim for gnome'
+# $OpenBSD: Makefile,v 1.7 2007/09/16 11:14:46 simon Exp $
+COMMENT-main=	multilingual input method library
+COMMENT-gtk=	uim for gtk
+COMMENT-qt=	uim for qt
+COMMENT-kde=	uim for kde
+COMMENT-gnome=	uim for gnome
 
 SHARED_ONLY=	Yes
 CATEGORIES=	inputmethods japanese chinese

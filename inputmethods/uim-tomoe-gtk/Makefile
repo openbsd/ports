@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/13 11:20:25 steven Exp $
-COMMENT=	'japanese handwriting'
+# $OpenBSD: Makefile,v 1.3 2007/09/16 11:14:46 simon Exp $
+COMMENT=	japanese handwriting
 
 DISTNAME=	uim-tomoe-gtk-0.2.0
 

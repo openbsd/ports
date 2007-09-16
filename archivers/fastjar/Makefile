@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 10:14:32 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/16 11:14:46 simon Exp $
 # $FreeBSD: ports/archivers/fastjar/Makefile,v 1.4 2000/04/24 15:51:08 knu Exp $
 
-COMMENT=	Sun JDK's jar command written entirely in C #'
+COMMENT=	Sun JDK's jar command written entirely in C #
 
 DISTNAME=	fastjar-0.93
 CATEGORIES=     archivers
