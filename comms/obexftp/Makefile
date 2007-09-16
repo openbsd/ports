@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=		"file copying over the OBEX protocol"
+COMMENT=		file copying over the OBEX protocol
 DISTNAME=		obexftp-0.10.4
 PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	bfb                  0.4      # .0.4

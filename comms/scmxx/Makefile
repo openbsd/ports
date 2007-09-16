@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2005/07/26 17:00:51 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 01:37:10 merdely Exp $
 # $NetBSD: Makefile,v 1.18 2002/10/22 15:33:10 kleink Exp $
 
-COMMENT=		"data exchange utility for Siemens mobile phones"
+COMMENT=		data exchange utility for Siemens mobile phones
 
 DISTNAME=		scmxx-0.8.0
 CATEGORIES=		comms

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/21 22:29:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=	"x10 firecracker utility"
+COMMENT=	x10 firecracker utility
 
 DISTNAME=	flipit-0.3.5
 CATEGORIES=	comms

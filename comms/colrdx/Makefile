@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/28 17:16:33 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=	"curses DX cluster watcher"
+COMMENT=	curses DX cluster watcher
 
 DISTNAME=	colrdx-1.02
 CATEGORIES=    	comms hamradio

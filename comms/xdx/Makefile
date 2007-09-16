@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/11 14:25:54 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 01:37:10 merdely Exp $
 
-COMMENT=	"X DX cluster watcher"
+COMMENT=	X DX cluster watcher
 
 VERSION=	2.2
 DISTNAME=	xdx-${VERSION}

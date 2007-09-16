@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/01/20 22:50:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=	"MAL convenience library"
+COMMENT=	MAL convenience library
 
 DISTNAME=	libmal-0.44
 SHARED_LIBS +=	mal 1.0				# .1.0

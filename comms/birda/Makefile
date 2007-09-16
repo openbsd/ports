@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2006/09/24 19:02:46 grange Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 01:37:09 merdely Exp $
 # $RuOBSD: Makefile,v 1.7 2003/08/18 18:40:14 grange Exp $
 
-COMMENT=		"Bohlin's IrDA utilities"
+COMMENT=		Bohlin's IrDA utilities
 
 DISTNAME=		birda-1.1
 PKGNAME=		${DISTNAME}p0

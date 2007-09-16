@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.37 2007/06/15 11:30:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=	"handle external logins, send and receive faxes"
+COMMENT=	handle external logins, send and receive faxes
 
 VERSION=	1.1.36
 RELEASE=	Jun15

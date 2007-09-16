@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/08/03 17:42:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=	"tools to talk to GSM cellular phones"	
+COMMENT=	tools to talk to GSM cellular phones
 
 VERSION=	0.6.14
 DISTNAME=	gnokii-${VERSION}

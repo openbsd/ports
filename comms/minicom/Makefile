@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.47 2007/05/23 16:40:55 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.48 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=		"MS-DOS Telix-like serial communication program"
+COMMENT=		MS-DOS Telix-like serial communication program
 
 DISTNAME=		minicom-2.2
 CATEGORIES=		comms

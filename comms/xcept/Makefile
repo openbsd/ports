@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2006/02/18 20:03:41 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/16 01:37:10 merdely Exp $
 
-COMMENT=	"decoder for the CEPT (Btx) protocol"
+COMMENT=	decoder for the CEPT (Btx) protocol
 
 DISTNAME=	xcept-2.1.2
 PKGNAME=	${DISTNAME}p2

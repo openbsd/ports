@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2006/07/14 19:18:34 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 01:37:10 merdely Exp $
 
-COMMENT=	"receive/send files via ZMODEM protocol (unrestricted)"
+COMMENT=	receive/send files via ZMODEM protocol (unrestricted)
 
 DISTNAME=	zmtx-zmrx-1.02
 CATEGORIES=	comms
 
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 

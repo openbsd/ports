@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/21 22:29:51 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 01:37:10 merdely Exp $
 
-COMMENT=	"curses-based emulator for the Wyse 60 terminal"
+COMMENT=	curses-based emulator for the Wyse 60 terminal
 
 DISTNAME=	wy60-2.0.8
 CATEGORIES=	comms

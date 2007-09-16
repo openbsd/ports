@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/05/07 14:11:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=	"MAL plugin for J-Pilot"
+COMMENT=	MAL plugin for J-Pilot
 
 DISTNAME=	jpilot-syncmal-0.80
 PKGNAME=	${DISTNAME}p2

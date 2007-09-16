@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.26 2004/11/21 22:29:50 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=	"serial and network communications package"
+COMMENT=	serial and network communications package
 
 PKGNAME=	kermit-8.0.211
 DISTNAME=	cku211
 CATEGORIES=	comms
 HOMEPAGE=	http://www.kermit-project.org/
 
-PERMIT_PACKAGE_CDROM=	"discriminatory license"
+PERMIT_PACKAGE_CDROM=	discriminatory license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"discriminatory license"
+PERMIT_DISTFILES_CDROM=	discriminatory license
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses m util
 

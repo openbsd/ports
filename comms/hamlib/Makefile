@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/05/28 20:32:34 jason Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT-main=	"radio/rotator control library"
-COMMENT-python=	"python bindings for hamlib"
-COMMENT-tcl=	"tcl bindings for hamlib"
+COMMENT-main=	radio/rotator control library
+COMMENT-python=	python bindings for hamlib
+COMMENT-tcl=	tcl bindings for hamlib
 
 VERSION=	1.2.6
 DISTNAME=	hamlib-${VERSION}

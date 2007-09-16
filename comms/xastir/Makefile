@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/11 14:25:54 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 01:37:10 merdely Exp $
 
-COMMENT=	"X amateur station tracking and info reporting"
+COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-1.8.2
 PKGNAME=	${DISTNAME}p0

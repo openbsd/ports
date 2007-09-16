@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/11 14:25:54 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 01:37:09 merdely Exp $
 
-COMMENT=	"gtk PSK31 send and receive"
+COMMENT=	gtk PSK31 send and receive
 
 DISTNAME=	gpsk31-0.3
 PKGNAME=	$(DISTNAME)p0

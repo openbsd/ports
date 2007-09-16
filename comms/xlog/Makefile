@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/11 14:25:55 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 01:37:10 merdely Exp $
 
-COMMENT=	"X radio logging program"
+COMMENT=	X radio logging program
 
 DISTNAME=	xlog-1.5
 PKGNAME=	$(DISTNAME)p0
