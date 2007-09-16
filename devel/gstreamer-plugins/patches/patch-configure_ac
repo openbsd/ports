@@ -1,0 +1,34 @@
+$OpenBSD: patch-configure_ac,v 1.1 2007/09/16 16:45:59 naddy Exp $
+--- configure.ac.orig	Sun Sep 16 17:33:20 2007
++++ configure.ac	Sun Sep 16 17:38:43 2007
+@@ -106,7 +106,7 @@ DEFAULT_AUDIOSRC="osssrc"
+ DEFAULT_VIDEOSRC="v4lsrc"
+ DEFAULT_VISUALIZER="goom"
+ case "$host" in 
+-  *-sun-* | *pc-solaris* )
++  *-sun-* | *pc-solaris* | *-*-openbsd* )
+     DEFAULT_AUDIOSINK="sunaudiosink"
+     DEFAULT_VIDEOSINK="ximagesink"
+     DEFAULT_AUDIOSRC="sunaudiosrc"
+@@ -671,9 +671,9 @@ translit(dnm, m, l) AM_CONDITIONAL(USE_XVIDEO, true)
+ GST_CHECK_FEATURE(XVIDEO, [X11 XVideo extensions],
+                   [xvimagesink], [
+   if test x$HAVE_X = xyes; then
+-    AC_CHECK_LIB(Xv_pic, XvQueryExtension,
+-		 HAVE_XVIDEO="yes", HAVE_XVIDEO="no",
+-		 $X_LIBS -lXext)
++dnl    AC_CHECK_LIB(Xv_pic, XvQueryExtension,
++dnl		 HAVE_XVIDEO="yes", HAVE_XVIDEO="no",
++dnl		 $X_LIBS -lXext)
+ 
+     if test x$HAVE_XVIDEO = xyes; then
+       XVIDEO_LIBS="-lXv_pic -lXext"
+@@ -840,7 +840,7 @@ fi
+ 
+ translit(dnm, m, l) AM_CONDITIONAL(USE_ARTS, true)
+ GST_CHECK_FEATURE(ARTS, [arts plug-ins], arts, [
+-  AM_PATH_ARTS(, HAVE_ARTS=yes, HAVE_ARTS=no)
++  AM_PATH_ARTS(, ARTS_LIBS="-lstdc++" HAVE_ARTS=yes, HAVE_ARTS=no)
+ ])
+ 
+ dnl *** artsc ***

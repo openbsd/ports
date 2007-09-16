@@ -1,0 +1,12 @@
+$OpenBSD: patch-m4_gst-sid_m4,v 1.1 2007/09/16 16:45:59 naddy Exp $
+--- m4/gst-sid.m4.orig	Sun Sep 16 17:49:30 2007
++++ m4/gst-sid.m4	Sun Sep 16 17:49:43 2007
+@@ -31,7 +31,7 @@ if test $HAVE_SIDPLAY = "yes"; then
+ fi
+ 
+ SIDPLAY_CFLAGS=
+-SIDPLAY_LIBS="-lsidplay"
++SIDPLAY_LIBS="-lsidplay -lstdc++"
+ AC_SUBST(SIDPLAY_CFLAGS)
+ AC_SUBST(SIDPLAY_LIBS)
+ 

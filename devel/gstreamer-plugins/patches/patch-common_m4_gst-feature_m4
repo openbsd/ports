@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_m4_gst-feature_m4,v 1.1 2007/09/16 16:45:59 naddy Exp $
+--- common/m4/gst-feature.m4.orig	Sun Sep 16 17:46:12 2007
++++ common/m4/gst-feature.m4	Sun Sep 16 17:46:49 2007
+@@ -133,7 +133,7 @@ AC_DEFUN([GST_CHECK_CONFIGPROG],
+     [$1]_CFLAGS=
+     HAVE_[$1]=no
+   else
+-    if [$2] --plugin-libs [$3] &> /dev/null; then
++    if [$2] --plugin-libs [$3] > /dev/null 2>&1; then
+       [$1]_LIBS=`[$2] --plugin-libs [$3]`
+     else
+       [$1]_LIBS=`[$2] --libs [$3]`

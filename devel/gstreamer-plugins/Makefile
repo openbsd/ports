@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.35 2007/09/16 16:45:59 naddy Exp $
 
 COMMENT-main=		GStreamer Streaming-media framework plug-ins
 
@@ -32,7 +32,7 @@ SHARED_ONLY=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 AUTOCONF_VERSION=	2.59
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gst-plugins
 
 # Disable plugins might try to build that we shouldn't
