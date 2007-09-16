@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/16 02:59:32 merdely Exp $
 
 COMMENT=	C library to parse CGI Forms
 
@@ -20,7 +20,7 @@ MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
 CONFIGURE_STYLE=	gnu
 
 .if $(MACHINE_ARCH) == "alpha"
-BROKEN=		"Alpha architecture not yet supported"
+BROKEN=		Alpha architecture not yet supported
 .endif
 
 NO_REGRESS=	Yes
