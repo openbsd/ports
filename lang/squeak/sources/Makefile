@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/02 13:16:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 00:27:06 merdely Exp $
 
 
-COMMENT=	"smalltalk system, sources"
+COMMENT=	smalltalk system, sources
 
 DISTFILES=Squeak-${MAJOR}.sources.tar.gz
 EXTRACT_ONLY=

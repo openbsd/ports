@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2006/11/02 11:22:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 00:27:06 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"New Jersey Standard ML"
+COMMENT=	New Jersey Standard ML
 PKGNAME=	smlnj-110.0.7
 CATEGORIES=	lang
 

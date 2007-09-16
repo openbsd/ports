@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2007/07/27 22:01:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/16 00:27:06 merdely Exp $
 
-COMMENT=	"Emacs Lisp-like runtime library"
+COMMENT=	Emacs Lisp-like runtime library
 
 SHARED_ONLY=	Yes
 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/02 18:02:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 00:27:05 merdely Exp $
 
 CATEGORIES=	books lang
-COMMENT=	'Icon language implemention reference book'
+COMMENT=	Icon language implemention reference book
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MASTER_SITES=	http://www.cs.arizona.edu/icon/ftp/doc/

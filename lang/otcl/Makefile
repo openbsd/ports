@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2006/11/16 07:29:59 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/09/16 00:27:06 merdely Exp $
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
 
-COMMENT=	"MIT Object Tcl"
+COMMENT=	MIT Object Tcl
 
 DISTNAME=	otcl-1.0a8
 SHARED_LIBS=	otcl 1.0

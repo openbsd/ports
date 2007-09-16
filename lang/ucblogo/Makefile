@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/08/05 12:34:33 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 00:27:06 merdely Exp $
 
-COMMENT=	"berkeley's implementation of the logo programming language"
+COMMENT=	berkeley's implementation of the logo programming language
 DISTNAME=	ucblogo-5.5
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/04/24 17:07:19 martynas Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=	"practical and portable Scheme system"
+COMMENT=	practical and portable Scheme system
 
 DISTNAME=	chicken-2.6
 

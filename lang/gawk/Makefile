@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2005/10/07 14:08:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=		"GNU awk"
+COMMENT=		GNU awk
 
 DISTNAME=		gawk-3.1.5
 CATEGORIES=		lang

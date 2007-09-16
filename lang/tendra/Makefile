@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2006/02/08 20:01:52 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 00:27:06 merdely Exp $
 
-BROKEN=		"unknown pseudo-op: .lv"
+BROKEN=		unknown pseudo-op: .lv
 
-COMMENT=	"TenDRA: advanced BSD-licensed C compiler"
+COMMENT=	TenDRA: advanced BSD-licensed C compiler
 
 V=		20030803
 DISTNAME=	tendra-${V}

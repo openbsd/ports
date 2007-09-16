@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2007/07/05 12:50:58 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=	"real-time, concurrent and distributed functional language"
+COMMENT=	real-time, concurrent and distributed functional language
 
 V=		R11B-5
 DISTNAME=	otp_src_${V}

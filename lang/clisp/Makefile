@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2006/02/27 17:22:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/16 00:27:05 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"ANSI Common Lisp compiler"
+COMMENT=	ANSI Common Lisp compiler
 
 DISTNAME=	clisp-2.33.2
 PKGNAME=	${DISTNAME}p1

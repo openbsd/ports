@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2007/02/08 14:32:57 avsm Exp $
+# $OpenBSD: Makefile,v 1.39 2007/09/16 00:27:06 merdely Exp $
 
 NOT_FOR_ARCHS=	hppa
 
-COMMENT=	"ML language based on complete class-based objective system"
+COMMENT=	ML language based on complete class-based objective system
 
 BASENAME=	ocaml-3.09
 DISTNAME=	${BASENAME}.3

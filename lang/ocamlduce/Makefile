@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/26 23:10:28 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 00:27:06 merdely Exp $
 
-COMMENT=	"XML extension types for Objective Caml"
+COMMENT=	XML extension types for Objective Caml
 CATEGORIES=	lang textproc
 
 V=		3.09.2pl1

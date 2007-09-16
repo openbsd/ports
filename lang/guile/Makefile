@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2007/04/06 22:21:30 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=	"GNU's Ubiquitous Intelligent Language for Extension"
+COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
 DISTNAME=	guile-1.6.7
 PKGNAME=	$(DISTNAME)p3

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=	"Haskell 98 interpreter"
+COMMENT=	Haskell 98 interpreter
 
 V=		Mar2005
 DISTNAME=	hugs98-${V}

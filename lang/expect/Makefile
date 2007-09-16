@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.47 2006/02/10 21:02:25 aanriot Exp $
+# $OpenBSD: Makefile,v 1.48 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=	"sophisticated scripter based on Tcl/Tk"
+COMMENT=	sophisticated scripter based on Tcl/Tk
 
 DISTNAME=	expect-5.43.0
 PKGNAME=	${DISTNAME}p0

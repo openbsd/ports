@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2007/03/31 11:36:13 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=	"Libedit interface to Tcl/Tk interpreters"
+COMMENT=	Libedit interface to Tcl/Tk interpreters
 
 DISTNAME=	eltclsh-1.6
 PKGNAME=	${DISTNAME}p0

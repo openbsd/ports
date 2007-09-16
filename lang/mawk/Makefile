@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2007/04/16 00:04:32 ian Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/16 00:27:06 merdely Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/01/18 04:50:26 steve Exp $
 
-COMMENT=	"fast POSIX-compliant awk"
+COMMENT=	fast POSIX-compliant awk
 
 DISTNAME=	mawk-1.3.3
 PKGNAME=	${DISTNAME}p0

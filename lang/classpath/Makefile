@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2006/12/17 18:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 00:27:05 merdely Exp $
 
 # max data size too small to build. needs at least 256M
 NOT_FOR_ARCHS=	m68k sparc vax
 
-COMMENT=	"essential libraries for java"
+COMMENT=	essential libraries for java
 
 DISTNAME=	classpath-0.91
 

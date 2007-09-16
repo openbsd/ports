@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/22 17:23:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=	"free, standards-compilant jvm with a small footprint"
+COMMENT=	free, standards-compilant jvm with a small footprint
 
 ONLY_FOR_ARCHS=	i386 powerpc arm
 

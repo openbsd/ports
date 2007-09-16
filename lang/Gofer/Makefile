@@ -3,10 +3,10 @@
 # Date created:		31 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.16 2005/02/21 16:22:08 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 00:27:05 merdely Exp $
 #
 
-COMMENT=	"lazy functional language"
+COMMENT=	lazy functional language
 
 DISTNAME=	gofer230a
 PKGNAME=	gofer-2.30a

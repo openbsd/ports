@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.26 2007/04/01 16:44:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.27 2007/09/16 00:27:05 merdely Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
-BROKEN='adjust for types changes'
+BROKEN=adjust for types changes
 
 V=4.0.3
 FULL_VERSION=4.0-20060105

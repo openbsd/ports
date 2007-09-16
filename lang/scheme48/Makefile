@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/08/01 14:34:33 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 00:27:06 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"R5RS Scheme byte-code interpreter"
+COMMENT=	R5RS Scheme byte-code interpreter
 
 DISTNAME=	scheme48-1.3
 CATEGORIES=	lang

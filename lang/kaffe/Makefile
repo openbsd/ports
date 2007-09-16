@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2007/08/04 12:11:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.35 2007/09/16 00:27:05 merdely Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
-COMMENT-main=	"kaffe.org's Java JDK1.4 compiler, runtime and libs"
+COMMENT-main=	kaffe.org's Java JDK1.4 compiler, runtime and libs
 
 DISTNAME=	kaffe-1.1.7
 PKGNAME-main=	${DISTNAME}p3

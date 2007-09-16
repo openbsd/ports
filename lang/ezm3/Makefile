@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/05/27 09:13:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 00:27:05 merdely Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	"Modula-3 distribution for building CVSup"
+COMMENT=	Modula-3 distribution for building CVSup
 DISTNAME=	ezm3-1.0
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang

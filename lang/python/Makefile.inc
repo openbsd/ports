@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.47 2007/05/07 15:43:33 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.48 2007/09/16 00:27:06 merdely Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -7,17 +7,17 @@
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	"interpreted object-oriented programming language"
-COMMENT-expat=	"expat module for Python"
-COMMENT-bsddb=	"Berkeley db module for Python"
-COMMENT-gdbm=	"GNU dbm module for Python"
-COMMENT-idle=	"IDE for Python"
-COMMENT-mpz=	"GNU arbitrary magnitude integer module for Python"
-COMMENT-tests=	"Python test suite"
-COMMENT-tkinter="tk GUI module for Python"
-COMMENT-tools=	"extra tools for Python"
-COMMENT-sqlite=	"sqlite database module for Python"
-COMMENT-bz2=	"bz2 module for Python"
+COMMENT-main=	interpreted object-oriented programming language
+COMMENT-expat=	expat module for Python
+COMMENT-bsddb=	Berkeley db module for Python
+COMMENT-gdbm=	GNU dbm module for Python
+COMMENT-idle=	IDE for Python
+COMMENT-mpz=	GNU arbitrary magnitude integer module for Python
+COMMENT-tests=	Python test suite
+COMMENT-tkinter=tk GUI module for Python
+COMMENT-tools=	extra tools for Python
+COMMENT-sqlite=	sqlite database module for Python
+COMMENT-bz2=	bz2 module for Python
 
 PKGNAME-main=	python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/09 22:23:35 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 00:27:06 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Mozilla's C implementation of JavaScript"
+COMMENT=	Mozilla's C implementation of JavaScript
 
 V=		1.60
 DISTNAME=	js-${V}

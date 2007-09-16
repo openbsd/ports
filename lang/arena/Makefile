@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/01/11 17:38:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=	"lightweight scripting language with C-like syntax"
+COMMENT=	lightweight scripting language with C-like syntax
 
 DISTNAME=	arena-0.9.10
 CATEGORIES=	lang

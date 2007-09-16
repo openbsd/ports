@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT=	"convert Intel assembly language (nasm) to AT&T syntax (gas)"
+COMMENT=	convert Intel assembly language (nasm) to AT&T syntax (gas)
 
 VERSION=	1.3.3
 DISTNAME=	intel2gas-${VERSION}

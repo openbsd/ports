@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/13 11:20:25 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/16 00:27:06 merdely Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
     ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc" || \
     ${MACHINE_ARCH} == "sparc64"
-BROKEN=		"segfaults in longjump return while testing continuations"
+BROKEN=		segfaults in longjump return while testing continuations
 .endif
 
-COMMENT=	"scheme r5 interpreter"
+COMMENT=	scheme r5 interpreter
 
 CATEGORIES=	lang
 

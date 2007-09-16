@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2007/01/31 15:12:08 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/16 00:27:06 merdely Exp $
 # Uses pthreads (can but does not at the moment)
 
-COMMENT=	"Tool Command Language"
+COMMENT=	Tool Command Language
 
 VERSION=	8.4.7
 

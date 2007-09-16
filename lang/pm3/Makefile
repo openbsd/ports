@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2006/10/21 09:42:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 00:27:06 merdely Exp $
 
 CATEGORIES=	lang
 ONLY_FOR_ARCHS=	i386
-BROKEN=		"stat() API change"
+BROKEN=		stat() API change
 
-COMMENT="Polytechnique Montreal Modula-3"
+COMMENT=Polytechnique Montreal Modula-3
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes

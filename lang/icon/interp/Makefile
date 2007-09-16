@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2006/11/20 12:21:04 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 00:27:05 merdely Exp $
 
-COMMENT-main=		"programming language with generators, X11 and more"
-COMMENT-main-no_x11=	"programming language with generators"
-COMMENT-compiler=	"icon compiler"
+COMMENT-main=		programming language with generators, X11 and more
+COMMENT-main-no_x11=	programming language with generators
+COMMENT-compiler=	icon compiler
 
 VERSION=	9.4.3
 DISTNAME=	icon.v943src

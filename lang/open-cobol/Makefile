@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/11/04 12:52:06 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 00:27:06 merdely Exp $
 
-COMMENT=	"open source COBOL compiler"
+COMMENT=	open source COBOL compiler
 
 DISTNAME=	open-cobol-0.32
 SHARED_LIBS +=	cob                  2.0      # .1.0

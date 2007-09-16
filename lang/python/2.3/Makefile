@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2007/06/26 16:50:18 martynas Exp $
+# $OpenBSD: Makefile,v 1.28 2007/09/16 00:27:06 merdely Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
-BROKEN=			"compiler hangs on py-Checker for example"
+BROKEN=			compiler hangs on py-Checker for example
 .endif
 
 VERSION=		2.3

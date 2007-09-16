@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/05/26 04:03:08 aanriot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:27:06 merdely Exp $
 
-COMMENT=	"Portable Forth Environment"
+COMMENT=	Portable Forth Environment
 
 DISTNAME=	pfe-0.32.94
 PKGNAME=	${DISTNAME}p3

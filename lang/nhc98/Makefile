@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2007/06/29 11:06:25 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:27:06 merdely Exp $
 # $NetBSD: Makefile,v 1.29 2004/03/26 21:19:53 wiz Exp $
 
-COMMENT=	"portable Haskell compiler"
+COMMENT=	portable Haskell compiler
 
 # not for 64 bits, broken on ppc
 NOT_FOR_ARCHS=	${LP64_ARCHS} powerpc
