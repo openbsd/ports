@@ -1,0 +1,13 @@
+Test::Group allows for grouping together related tests in a standard
+Test::More-style script.  It provides a bunch of maintainability and
+scalability advantages to large test suites:
+
+ * related tests can be grouped and given a name.  The intent of the
+   test author is therefore made explicit with much less effort than
+   would be needed to name all the individual tests;
+ * the test output is much shorter and more readable: only failed
+   subtests show a diagnostic, while test groups with no problems inside
+   produce a single friendly ok line;
+ * no more tedious test counting: running an arbitrarily large or
+   variable number of tests (e.g. in loops) is now hassle-free and
+   doesn't clutter the test output.

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/16 09:24:46 simon Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Group.pm
+@man man/man3p/Test::Group.3p
