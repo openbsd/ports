@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/05/28 22:49:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=	"GTK+2 tool to edit subtitles"
+COMMENT=	GTK+2 tool to edit subtitles
 
 DISTNAME=	subtitleeditor-0.13.6
 CATEGORIES=	graphics editors

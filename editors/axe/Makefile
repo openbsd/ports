@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/11/13 10:08:12 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=		"simple to use text editor for X11"
+COMMENT=		simple to use text editor for X11
 
 PKGNAME=		${DISTNAME:L}
 DISTNAME=		aXe-6.1.2

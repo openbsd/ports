@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2006/11/18 08:24:30 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=	"powerful programming editor"
+COMMENT=	powerful programming editor
 
 DISTNAME=	xwpe-1.5.22a
 PKGNAME=	${DISTNAME}p0

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/07/19 15:11:53 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=	"clone of the ex/vi text editor"
+COMMENT=	clone of the ex/vi text editor
 
 DISTNAME=	elvis-2.1_4
 PKGNAME=	${DISTNAME:S/_/./}p2

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2006/11/11 18:20:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/16 00:44:00 merdely Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
-COMMENT=	"multilingual clone of vi/ex"
+COMMENT=	multilingual clone of vi/ex
 
 DISTNAME=	nvi-1.79
 PKGNAME=	nvi-m17n-1.79.19991117p2

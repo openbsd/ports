@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=	"hierarchical notebook"
+COMMENT=	hierarchical notebook
 
 DISTNAME=	hnb-1.9.17
 CATEGORIES=	editors

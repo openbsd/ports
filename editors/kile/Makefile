@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2006/12/09 19:49:50 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=	"integrated LaTeX environment for KDE"
+COMMENT=	integrated LaTeX environment for KDE
 DISTNAME=	kile-1.9.3
 CATEGORIES=	editors x11/kde
 

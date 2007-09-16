@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2006/01/27 22:45:52 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=		"easy to use text editor"
+COMMENT=		easy to use text editor
 
 VERSION=		1.4.6
 DISTNAME=		ee-${VERSION}

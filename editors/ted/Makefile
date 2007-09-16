@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2007/07/04 19:18:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 00:44:00 merdely Exp $
 
 
-COMMENT=	"X11 based RTF editor"
+COMMENT=	X11 based RTF editor
 V=		2.17
 DISTNAME=	ted-$V
 CATEGORIES=	editors textproc print

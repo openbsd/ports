@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 00:44:00 merdely Exp $
 # $FreeBSD: ports/editors/texmaker/Makefile,v 1.2 2004/01/09 09:16:33 krion Exp $
 
-COMMENT=		"LaTeX development environment"
+COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-1.11	
 CATEGORIES=		editors	
 

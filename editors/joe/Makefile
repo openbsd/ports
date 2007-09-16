@@ -1,7 +1,7 @@
 # $RuOBSD: Makefile,v 1.3 2002/04/10 05:14:52 form Exp $
-# $OpenBSD: Makefile,v 1.34 2007/03/17 22:13:08 martynas Exp $
+# $OpenBSD: Makefile,v 1.35 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=		"Joe's Own Editor"
+COMMENT=		Joe's Own Editor
 
 DISTNAME=		joe-3.5
 CATEGORIES=		editors

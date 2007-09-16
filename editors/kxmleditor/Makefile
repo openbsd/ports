@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2007/05/09 11:39:37 bernd Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/16 00:44:00 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"XML editor for KDE"
+COMMENT=	XML editor for KDE
 
 DISTNAME=	kxmleditor-1.1.3
 PKGNAME=	${DISTNAME}p3

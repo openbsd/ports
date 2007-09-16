@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2006/04/09 11:10:08 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/16 00:44:00 merdely Exp $
 #
 
-COMMENT=	"Jonathan's Own Version of Emacs"
+COMMENT=	Jonathan's Own Version of Emacs
 
 DISTNAME=	jove-4.16
 PKGNAME=	${DISTNAME}p1

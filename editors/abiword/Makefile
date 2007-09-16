@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.62 2007/01/04 20:19:53 steven Exp $
+# $OpenBSD: Makefile,v 1.63 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=	"free cross-platform WYSIWYG word processor"
+COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	2.4.6
 MAJORVER=	${VERSION:C/..$//}

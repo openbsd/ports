@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2007/07/02 07:35:29 robert Exp $
+# $OpenBSD: Makefile,v 1.59 2007/09/16 00:44:00 merdely Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
-COMMENT-main=	"multi-platform productivity suite"
-COMMENT-kde=	"optional integration of OpenOffice to the KDE environment"
-COMMENT-java=	"optional integration of OpenOffice java features"
+COMMENT-main=	multi-platform productivity suite
+COMMENT-kde=	optional integration of OpenOffice to the KDE environment
+COMMENT-java=	optional integration of OpenOffice java features
 
 VERSION=	2.2.1
 DISTNAME=	OOo_${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/08/01 09:21:07 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=		"flexible and small GTK+ editor"
+COMMENT=		flexible and small GTK+ editor
 
 VERSION=		1.74
 DISTNAME=		scite${VERSION:S/.//}
@@ -12,9 +12,9 @@ HOMEPAGE=		http://www.scintilla.org/SciTE.html
 MAINTAINER=		Jeremy Evans <openbsd@jeremyevans.net>
 
 # old Python license
-PERMIT_PACKAGE_CDROM=	"may not sell"
+PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"may not sell"
+PERMIT_DISTFILES_CDROM=	may not sell
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xrender c m z pthread stdc++ fontconfig \

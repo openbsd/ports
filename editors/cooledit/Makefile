@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2006/09/18 11:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=	"easy to use, graphical editor"
+COMMENT=	easy to use, graphical editor
 
 CATEGORIES=	editors
 MASTER_SITES=	${HOMEPAGE}

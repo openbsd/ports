@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2005/10/11 17:02:25 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=	"user-friendly ncurses-based hexeditor with many features"
+COMMENT=	user-friendly ncurses-based hexeditor with many features
 
 DISTNAME=	hexcurse-1.55
 CATEGORIES=	editors

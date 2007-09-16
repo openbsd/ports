@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/01/22 15:15:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=		"file editor/viewer/analyzer for executables"
+COMMENT=		file editor/viewer/analyzer for executables
 
 DISTNAME=		ht-0.7.4
 PKGNAME=		${DISTNAME}p0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/05/18 16:19:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 00:44:00 merdely Exp $
 
 VERSION=		2006-05-10
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}p0
@@ -10,7 +10,7 @@ CATEGORIES=     	editors
 
 HOMEPAGE=		http://www.xemacs.org/
 
-COMMENT=		"complete set of supported XEmacs packages"
+COMMENT=		complete set of supported XEmacs packages
 
 # GNU GPL
 PERMIT_PACKAGE_CDROM=	Yes

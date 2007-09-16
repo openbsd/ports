@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2006/02/04 09:11:21 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 00:44:00 merdely Exp $
 
-COMMENT=	"full screen simple editor"
+COMMENT=	full screen simple editor
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-4.0
@@ -8,9 +8,9 @@ CATEGORIES=	editors
 
 HOMEPAGE=	http://uemacs.tripod.com/
 
-PERMIT_PACKAGE_CDROM=	"weird no fee license"
+PERMIT_PACKAGE_CDROM=	weird no fee license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"weird no fee license"
+PERMIT_DISTFILES_CDROM=	weird no fee license
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termcap
 

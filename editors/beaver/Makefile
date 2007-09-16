@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.9 2006/11/11 21:04:27 steven Exp $
-COMMENT=	"lightweight Gtk text editor with syntax highlighting"
+# $OpenBSD: Makefile,v 1.10 2007/09/16 00:44:00 merdely Exp $
+COMMENT=	lightweight Gtk text editor with syntax highlighting
 
 DISTNAME=	beaver-0.2.7
 PKGNAME=	${DISTNAME}p0
