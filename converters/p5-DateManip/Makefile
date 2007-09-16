@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2006/12/04 21:49:38 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"manipulate dates in perl"
+COMMENT=	manipulate dates in perl
 DISTNAME=	DateManip-5.44
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters

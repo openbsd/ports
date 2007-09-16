@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/04 22:13:51 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 01:40:28 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"conversions to and from arbitrary character sets"
+COMMENT=	conversions to and from arbitrary character sets
 
 DISTNAME=	Unicode-Map-0.112
 CATEGORIES=	converters

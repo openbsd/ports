@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2006/12/04 22:13:51 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/09/16 01:40:28 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"modules to handle various Unicode issues"
+COMMENT=	modules to handle various Unicode issues
 
 DISTNAME=	Unicode-String-2.09
 CATEGORIES=	converters

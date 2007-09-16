@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/11/14 07:53:26 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"encodes Unicode strings in Punycode"
+COMMENT=	encodes Unicode strings in Punycode
 
 MODULES=	cpan
 

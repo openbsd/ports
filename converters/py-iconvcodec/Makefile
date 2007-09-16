@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2006/08/01 18:38:23 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/16 01:40:28 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"universal unicode codec using iconv for Python"
+COMMENT=	universal unicode codec using iconv for Python
 
 DISTNAME=	iconvcodec-1.1.2
 PKGNAME=	py-${DISTNAME}p0

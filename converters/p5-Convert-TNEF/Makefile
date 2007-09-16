@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2007/01/23 22:30:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"module to read TNEF files"
+COMMENT=	module to read TNEF files
 
 DISTNAME=	Convert-TNEF-0.17
 PKGNAME=	p5-${DISTNAME}p0

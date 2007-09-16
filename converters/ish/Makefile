@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/21 22:53:58 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"binary-to-text file converter"
+COMMENT=	binary-to-text file converter
 
 DISTNAME=	ish-1.11
 CATEGORIES=	converters
 
-PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	"no license"
-PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	"no license"
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c
 
 MASTER_SITES=	\

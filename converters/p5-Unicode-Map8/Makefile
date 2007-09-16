@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2006/12/04 22:13:51 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/16 01:40:28 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"module to implement efficient mapping tables"
+COMMENT=	module to implement efficient mapping tables
 
 DISTNAME=	Unicode-Map8-0.12
 CATEGORIES=	converters

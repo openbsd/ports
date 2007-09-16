@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2007/06/27 19:15:50 rui Exp $
+# $OpenBSD: Makefile,v 1.22 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"converter to/from base64 encoding"
+COMMENT=	converter to/from base64 encoding
 
 DISTNAME=	base64-1.5
 CATEGORIES=	converters

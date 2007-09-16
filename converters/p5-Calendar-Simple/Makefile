@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/04 21:49:38 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT= 	"simple calendar month"
+COMMENT= 	simple calendar month
 
 DISTNAME=	Calendar-Simple-1.17
 CATEGORIES=	converters

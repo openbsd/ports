@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/05/30 02:39:15 aanriot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 01:40:28 merdely Exp $
 
-COMMENT=	"convert various Microsoft formats into HTML/PNG"
+COMMENT=	convert various Microsoft formats into HTML/PNG
 
 DISTNAME=	wv-0.7.2
 PKGNAME=	${DISTNAME}p0

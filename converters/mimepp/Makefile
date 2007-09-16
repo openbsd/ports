@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"C++ class library for MIME messages"
+COMMENT=	C++ class library for MIME messages
 
 DISTNAME=		mimepp-1.0
 CATEGORIES=		converters
 
-PERMIT_PACKAGE_CDROM=	"restrictive non-commercial license"
-PERMIT_PACKAGE_FTP=	"restrictive non-commercial license"
-PERMIT_DISTFILES_CDROM=	"restrictive non-commercial license"
+PERMIT_PACKAGE_CDROM=	restrictive non-commercial license
+PERMIT_PACKAGE_FTP=	restrictive non-commercial license
+PERMIT_DISTFILES_CDROM=	restrictive non-commercial license
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=devel/lang/c++/}

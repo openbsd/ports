@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/02/03 17:02:52 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"descramble scrambled DVDs"
+COMMENT=	descramble scrambled DVDs
 
 VER=		1.2.9
 DISTNAME=	libdvdcss-${VER}
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.videolan.org/libdvdcss/
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	"Free speech issue"
+PERMIT_PACKAGE_CDROM=	Free speech issue
 PERMIT_PACKAGE_FTP=	Yes
 
 USE_LIBTOOL=Yes

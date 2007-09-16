@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/04 21:49:38 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 01:40:28 merdely Exp $
 
-COMMENT=	"Perl IDN nameprep tools"
+COMMENT=	Perl IDN nameprep tools
 
 DISTNAME=	Net-IDN-Nameprep-0.02
 CATEGORIES=	net

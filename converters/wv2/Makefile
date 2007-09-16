@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2007/05/17 13:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/16 01:40:28 merdely Exp $
 
-COMMENT=	"library functions to access Microsoft Word/Excel files"
+COMMENT=	library functions to access Microsoft Word/Excel files
 
 DISTNAME=	wv2-0.2.3
 PKGNAME=	${DISTNAME}p0

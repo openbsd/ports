@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/08 21:58:45 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/16 01:40:28 merdely Exp $
 
-COMMENT=	'MARC (machine readable cataloging format)'
+COMMENT=	MARC (machine readable cataloging format)
 CATEGORIES=	converters
 
 DISTNAME=	MARC-Record-1.38

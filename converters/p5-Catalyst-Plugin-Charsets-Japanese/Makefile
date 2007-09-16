@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2006/12/04 21:49:38 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"jcode interface for catalyst"
+COMMENT=	jcode interface for catalyst
 
 DISTNAME=	Catalyst-Plugin-Charsets-Japanese-0.06
 CATEGORIES=	converters www

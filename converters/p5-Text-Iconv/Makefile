@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2007/01/23 22:30:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/16 01:40:28 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"interface to iconv() codeset conversion function"
+COMMENT=	interface to iconv() codeset conversion function
 
 DISTNAME=	Text-Iconv-1.4
 CATEGORIES=	converters

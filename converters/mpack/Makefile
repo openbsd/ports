@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2005/10/06 21:09:21 aanriot Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"external MIME packer/unpacker"
+COMMENT=	external MIME packer/unpacker
 
 V=		1.5
 DISTNAME=	mpack-${V}-src

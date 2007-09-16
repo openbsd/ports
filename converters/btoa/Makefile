@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2006/07/14 21:26:15 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/16 01:40:27 merdely Exp $
 
-COMMENT=	"encode/decode binary to printable ASCII"
+COMMENT=	encode/decode binary to printable ASCII
 
 DISTNAME=	btoa-5.2
 PKGNAME=	btoa-5.2.1
 CATEGORIES=	converters
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 

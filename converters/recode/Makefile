@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2006/10/28 11:19:20 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2007/09/16 01:40:28 merdely Exp $
 
-COMMENT=	"convert files between character sets and usages"
+COMMENT=	convert files between character sets and usages
 
 DISTNAME=	recode-3.6
 PKGNAME=	${DISTNAME}p3

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2007/07/09 19:31:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/16 01:40:28 merdely Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	"Python unicode codecs for Chinese, Japanese and Korean"
+COMMENT=	Python unicode codecs for Chinese, Japanese and Korean
 
 DISTNAME=	cjkcodecs-1.1.1
 PKGNAME=	py-${DISTNAME}p1

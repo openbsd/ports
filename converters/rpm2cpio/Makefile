@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/03 07:28:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/16 01:40:28 merdely Exp $
 
-COMMENT=	"rpm2cpio, simple perl converter"
+COMMENT=	rpm2cpio, simple perl converter
 
 DISTNAME=	rpm2cpio-1.2
 CATEGORIES=	converters archivers

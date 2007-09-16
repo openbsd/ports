@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2007/07/11 13:01:32 aanriot Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/16 01:40:28 merdely Exp $
 
-COMMENT=		"parse pf logs to XML"
+COMMENT=		parse pf logs to XML
 
 DISTNAME=		pflogx_086
 PKGNAME=		pflogx-0.86p1

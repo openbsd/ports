@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/21 22:53:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 01:40:28 merdely Exp $
 
-COMMENT=	"converter to/from quoted-printable encoding"
+COMMENT=	converter to/from quoted-printable encoding
 
 DISTNAME=	qprint-1.0
 CATEGORIES=	converters

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/12/04 21:49:38 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/16 01:40:28 merdely Exp $
 
-COMMENT=	"handles various Japanese charsets"
+COMMENT=	handles various Japanese charsets
 
 DISTNAME=	Jcode-2.06
 PKGNAME=	p5-${DISTNAME}
