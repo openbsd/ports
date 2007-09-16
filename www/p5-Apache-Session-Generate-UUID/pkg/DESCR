@@ -1,0 +1,3 @@
+Apache::Session::Generate::UUID extends Apache::Session to allow you to
+create UUID based session ids.  This module fits well with long-term
+sessions, so better using RDBMS like MySQL for its storage.
