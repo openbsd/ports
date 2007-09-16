@@ -1,10 +1,10 @@
-$OpenBSD: patch-example_Makefile_in,v 1.1.1.1 2007/01/05 16:52:21 steven Exp $
---- example/Makefile.in.orig	Thu Jan  4 11:18:29 2007
-+++ example/Makefile.in	Thu Jan  4 11:18:34 2007
-@@ -204,7 +204,7 @@ sbindir = @sbindir@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
+$OpenBSD: patch-example_Makefile_in,v 1.2 2007/09/16 12:54:38 steven Exp $
+--- example/Makefile.in.orig	Thu Sep 13 03:09:44 2007
++++ example/Makefile.in	Sat Sep 15 11:14:19 2007
+@@ -204,7 +204,7 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -examplesdir = $(pkgdatadir)/examples
 +examplesdir = $(datadir)/examples/pcb
  examples_DATA = ${EXAMPLES}

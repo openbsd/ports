@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/01/05 16:52:21 steven Exp $
---- configure.orig	Wed Aug 23 03:47:59 2006
-+++ configure	Thu Jan  4 11:14:57 2007
-@@ -4436,7 +4436,7 @@ echo "$as_me: error: Did not find a m4 e
-    { (exit 1); exit 1; }; }
+$OpenBSD: patch-configure,v 1.2 2007/09/16 12:54:38 steven Exp $
+--- configure.orig	Thu Sep 13 01:46:17 2007
++++ configure	Sat Sep 15 11:13:51 2007
+@@ -5810,7 +5810,7 @@ echo "${ECHO_T}no" >&6; }
  fi
+ 
  
 -for ac_prog in wish wish83 wish8.3 wish80 wish8.0 cygwish83 cygwish80
 +for ac_prog in wish wish84 wish8.4 wish80 wish8.0 cygwish83 cygwish80
