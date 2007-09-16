@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.912 2007/07/28 12:58:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.913 2007/09/16 21:38:34 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2492,7 +2492,7 @@ readmes:
 .for _S in ${MULTI_PACKAGES}
 ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${_S}}.html:
 	@mkdir -p ${@D}
-	@echo ${_COMMENT${_S}} | ${HTMLIFY} >${TMPDIR}/comment${_S}
+	@echo ${_COMMENT${_S}:Q} | ${HTMLIFY} >${TMPDIR}/comment${_S}
 	@echo ${FULLPKGNAME${_S}} | ${HTMLIFY} > ${TMPDIR}/pkgname${_S}
 .  if defined(HOMEPAGE)
 	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >${TMPDIR}/home${_S}
