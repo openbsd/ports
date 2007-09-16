@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2007/09/16 09:38:01 simon Exp $
+@comment $OpenBSD: PLIST,v 1.29 2007/09/16 10:01:03 simon Exp $
 bin/dbilogstrip
 bin/dbiprof
 bin/dbiproxy
@@ -76,7 +76,6 @@ ${P5ARCH}/auto/DBI/dbipport.h
 ${P5ARCH}/auto/DBI/dbivport.h
 ${P5ARCH}/auto/DBI/dbixs_rev.h
 ${P5ARCH}/dbixs_rev.pl
-${P5ARCH}/goferperf.pl
 @man man/man1/dbilogstrip.1
 @man man/man1/dbiprof.1
 @man man/man1/dbiproxy.1
