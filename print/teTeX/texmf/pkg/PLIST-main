@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/23 19:31:35 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/09/16 08:15:53 steven Exp $
+@conflict texlive_texmf-minimal-*
 @pkgpath print/teTeX/texmf
 share/texmf/
 share/texmf-dist/

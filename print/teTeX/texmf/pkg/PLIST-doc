@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-doc,v 1.2 2005/03/11 17:31:33 sturm Exp $
+@comment $OpenBSD: PLIST-doc,v 1.3 2007/09/16 08:15:53 steven Exp $
 @conflict teTeX_texmf-<3
+@conflict texlive_texmf-docs-*
 share/texmf-dist/doc/
 share/texmf-dist/doc/Makefile
 share/texmf-dist/doc/README

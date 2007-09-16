@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 21:36:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2007/09/16 08:15:53 steven Exp $
 
 COMMENT-main=	TeX distribution, common support files
 COMMENT-doc=	TeX distribution, documentation
 
 V=		3.0
 DISTNAME=	tetex-texmf-${V}
-PKGNAME-main=	teTeX_texmf-${V}p1
-PKGNAME-doc=	teTeX_texmf-doc-${V}p1
+PKGNAME-main=	teTeX_texmf-${V}p2
+PKGNAME-doc=	teTeX_texmf-doc-${V}p2
 CATEGORIES=	print
 
 WRKDIST=	${WRKDIR}
