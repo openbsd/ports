@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.27 2007/01/07 00:43:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2007/09/16 09:38:01 simon Exp $
+bin/dbilogstrip
 bin/dbiprof
 bin/dbiproxy
 ${P5ARCH}/
@@ -8,6 +9,18 @@ ${P5ARCH}/DBD/
 ${P5ARCH}/DBD/DBM.pm
 ${P5ARCH}/DBD/ExampleP.pm
 ${P5ARCH}/DBD/File.pm
+${P5ARCH}/DBD/Gofer/
+${P5ARCH}/DBD/Gofer.pm
+${P5ARCH}/DBD/Gofer/Policy/
+${P5ARCH}/DBD/Gofer/Policy/Base.pm
+${P5ARCH}/DBD/Gofer/Policy/classic.pm
+${P5ARCH}/DBD/Gofer/Policy/pedantic.pm
+${P5ARCH}/DBD/Gofer/Policy/rush.pm
+${P5ARCH}/DBD/Gofer/Transport/
+${P5ARCH}/DBD/Gofer/Transport/Base.pm
+${P5ARCH}/DBD/Gofer/Transport/null.pm
+${P5ARCH}/DBD/Gofer/Transport/pipeone.pm
+${P5ARCH}/DBD/Gofer/Transport/stream.pm
 ${P5ARCH}/DBD/NullP.pm
 ${P5ARCH}/DBD/Proxy.pm
 ${P5ARCH}/DBD/Sponge.pm
@@ -24,6 +37,14 @@ ${P5ARCH}/DBI/DBD/
 ${P5ARCH}/DBI/DBD.pm
 ${P5ARCH}/DBI/DBD/Metadata.pm
 ${P5ARCH}/DBI/FAQ.pm
+${P5ARCH}/DBI/Gofer/
+${P5ARCH}/DBI/Gofer/Execute.pm
+${P5ARCH}/DBI/Gofer/Request.pm
+${P5ARCH}/DBI/Gofer/Response.pm
+${P5ARCH}/DBI/Gofer/Transport/
+${P5ARCH}/DBI/Gofer/Transport/Base.pm
+${P5ARCH}/DBI/Gofer/Transport/pipeone.pm
+${P5ARCH}/DBI/Gofer/Transport/stream.pm
 ${P5ARCH}/DBI/Profile.pm
 ${P5ARCH}/DBI/ProfileData.pm
 ${P5ARCH}/DBI/ProfileDumper/
@@ -35,6 +56,8 @@ ${P5ARCH}/DBI/PurePerl.pm
 ${P5ARCH}/DBI/Roadmap.pm
 ${P5ARCH}/DBI/SQL/
 ${P5ARCH}/DBI/SQL/Nano.pm
+${P5ARCH}/DBI/Util/
+${P5ARCH}/DBI/Util/_accessor.pm
 ${P5ARCH}/DBI/W32ODBC.pm
 @comment ${P5ARCH}/Roadmap.pod
 @comment ${P5ARCH}/TASKS.pod
@@ -51,11 +74,24 @@ ${P5ARCH}/auto/DBI/dbd_xsh.h
 ${P5ARCH}/auto/DBI/dbi_sql.h
 ${P5ARCH}/auto/DBI/dbipport.h
 ${P5ARCH}/auto/DBI/dbivport.h
+${P5ARCH}/auto/DBI/dbixs_rev.h
+${P5ARCH}/dbixs_rev.pl
+${P5ARCH}/goferperf.pl
+@man man/man1/dbilogstrip.1
 @man man/man1/dbiprof.1
 @man man/man1/dbiproxy.1
 @man man/man3p/Bundle::DBI.3p
 @man man/man3p/DBD::DBM.3p
 @man man/man3p/DBD::File.3p
+@man man/man3p/DBD::Gofer.3p
+@man man/man3p/DBD::Gofer::Policy::Base.3p
+@man man/man3p/DBD::Gofer::Policy::classic.3p
+@man man/man3p/DBD::Gofer::Policy::pedantic.3p
+@man man/man3p/DBD::Gofer::Policy::rush.3p
+@man man/man3p/DBD::Gofer::Transport::Base.3p
+@man man/man3p/DBD::Gofer::Transport::null.3p
+@man man/man3p/DBD::Gofer::Transport::pipeone.3p
+@man man/man3p/DBD::Gofer::Transport::stream.3p
 @man man/man3p/DBD::Proxy.3p
 @man man/man3p/DBD::Sponge.3p
 @man man/man3p/DBI.3p
@@ -66,6 +102,12 @@ ${P5ARCH}/auto/DBI/dbivport.h
 @man man/man3p/DBI::DBD.3p
 @man man/man3p/DBI::DBD::Metadata.3p
 @man man/man3p/DBI::FAQ.3p
+@man man/man3p/DBI::Gofer::Execute.3p
+@man man/man3p/DBI::Gofer::Request.3p
+@man man/man3p/DBI::Gofer::Response.3p
+@man man/man3p/DBI::Gofer::Transport::Base.3p
+@man man/man3p/DBI::Gofer::Transport::pipeone.3p
+@man man/man3p/DBI::Gofer::Transport::stream.3p
 @man man/man3p/DBI::Profile.3p
 @man man/man3p/DBI::ProfileData.3p
 @man man/man3p/DBI::ProfileDumper.3p

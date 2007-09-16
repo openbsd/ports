@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.45 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.46 2007/09/16 09:38:01 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	unified perl interface for database access
 
 MODULES=	cpan
-DISTNAME=	DBI-1.53
-PKGNAME=	p5-${DISTNAME}
+DISTNAME=	DBI-1.59
 CATEGORIES=	databases
 
-HOMEPAGE=	http://dbi.perl.org/index.html
-MAINTAINER=	Michael Coulter <mjc@openbsd.org>
+HOMEPAGE=	http://dbi.perl.org/
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
