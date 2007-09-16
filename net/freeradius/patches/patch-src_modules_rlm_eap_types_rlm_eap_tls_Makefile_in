@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_modules_rlm_eap_types_rlm_eap_tls_Makefile_in,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
---- src/modules/rlm_eap/types/rlm_eap_tls/Makefile.in.orig	Tue Mar 21 22:31:55 2006
-+++ src/modules/rlm_eap/types/rlm_eap_tls/Makefile.in	Tue Mar 21 22:32:12 2006
+$OpenBSD: patch-src_modules_rlm_eap_types_rlm_eap_tls_Makefile_in,v 1.2 2007/09/16 22:11:31 rui Exp $
+--- src/modules/rlm_eap/types/rlm_eap_tls/Makefile.in.orig	Fri Feb 10 19:47:13 2006
++++ src/modules/rlm_eap/types/rlm_eap_tls/Makefile.in	Sat Sep 15 09:46:18 2007
 @@ -5,8 +5,8 @@
  TARGET      = @targetname@
  SRCS        = rlm_eap_tls.c

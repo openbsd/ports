@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/16 22:11:31 rui Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,15 +8,15 @@ COMMENT-mysql=		freeradius mysql rlm addon
 COMMENT-pgsql=		freeradius pgsql rlm addon
 COMMENT-ldap=		freeradius ldap rlm addon
 
-V=			1.1.6
+V=			1.1.7
 DISTNAME=		freeradius-$V
 PKGNAME-main=		${DISTNAME}
 PKGNAME-iodbc=		freeradius-iodbc-$V
 PKGNAME-mysql=		freeradius-mysql-$V
 PKGNAME-pgsql=		freeradius-pgsql-$V
-PKGNAME-ldap=		freeradius-ldap-${V}
-SHARED_LIBS=		eap	2.0 \
-			radius	2.0
+PKGNAME-ldap=		freeradius-ldap-$V
+SHARED_LIBS=		eap	3.0 \
+			radius	3.0
 
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \

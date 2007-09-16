@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_modules_rlm_krb5_rlm_krb5_c,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
---- src/modules/rlm_krb5/rlm_krb5.c.orig	Tue Mar 21 22:39:22 2006
-+++ src/modules/rlm_krb5/rlm_krb5.c	Tue Mar 21 22:38:51 2006
+$OpenBSD: patch-src_modules_rlm_krb5_rlm_krb5_c,v 1.2 2007/09/16 22:11:31 rui Exp $
+--- src/modules/rlm_krb5/rlm_krb5.c.orig	Mon Dec 19 22:21:37 2005
++++ src/modules/rlm_krb5/rlm_krb5.c	Sat Sep 15 09:46:18 2007
 @@ -53,6 +53,7 @@ static CONF_PARSER module_config[] = {
  	{ NULL, -1, 0, NULL, NULL }
  };

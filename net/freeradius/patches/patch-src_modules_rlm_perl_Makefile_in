@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_modules_rlm_perl_Makefile_in,v 1.1 2007/05/29 20:21:26 rui Exp $
---- src/modules/rlm_perl/Makefile.in.orig	Sat May 26 22:03:27 2007
-+++ src/modules/rlm_perl/Makefile.in	Sat May 26 22:03:46 2007
+$OpenBSD: patch-src_modules_rlm_perl_Makefile_in,v 1.2 2007/09/16 22:11:31 rui Exp $
+--- src/modules/rlm_perl/Makefile.in.orig	Fri Feb 10 19:47:17 2006
++++ src/modules/rlm_perl/Makefile.in	Sat Sep 15 09:46:18 2007
 @@ -7,7 +7,7 @@ SRCS        = rlm_perl.c
  HEADERS     =
  RLM_CFLAGS  = @perl_cflags@
