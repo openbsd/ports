@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.52 2007/06/27 07:15:32 steven Exp $
+# $OpenBSD: Makefile.template,v 1.53 2007/09/17 09:44:42 ajacoutot Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -11,7 +11,7 @@
 #NOT_FOR_ARCHS=		???
 #SHARED_ONLY=		???
 #COMES_WITH=		???
-#BROKEN=		"reason"
+#BROKEN=		reason
 
 #
 # Very short description of the package, 60 chars max
@@ -53,10 +53,11 @@ CATEGORIES=		???
 # Put a comment there to state what's going on.
 # Can be as brief as `BSD' or `GPL', but it'd better be easy to check,
 # if someone wants to double-check licensing.
-#PERMIT_PACKAGE_CDROM=	Yes | "Reason if No"
-#PERMIT_PACKAGE_FTP=	Yes | "Reason if No"
-#PERMIT_DISTFILES_CDROM=Yes | "Reason if No"
-#PERMIT_DISTFILES_FTP=	Yes | "Reason if No"
+#PERMIT_PACKAGE_CDROM=	Yes | Reason if No
+#PERMIT_PACKAGE_FTP=	Yes | Reason if No
+#PERMIT_DISTFILES_CDROM=Yes | Reason if No
+#PERMIT_DISTFILES_FTP=	Yes | Reason if No
+
 #WANTLIB=		???
 
 # where the source files and patches can be fetched
