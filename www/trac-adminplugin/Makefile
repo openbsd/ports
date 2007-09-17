@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/15 03:07:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/17 19:45:46 merdely Exp $
 
 COMMENT=		web admin plugin for trac
 
@@ -12,7 +12,8 @@ MAINTAINER=		Michael Erdely <merdely@openbsd.org>
 HOMEPAGE=		http://trac.edgewall.org/wiki/WebAdmin
 
 MASTER_SITES=		http://meta-planets.net/~openbsd/ \
-			http://www.phxbsd.com/OpenBSD/
+			http://www.phxbsd.com/OpenBSD/ \
+			http://spacehopper.org/m/
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
