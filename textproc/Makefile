@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2007/09/11 21:20:37 merdely Exp $
+# $OpenBSD: Makefile,v 1.210 2007/09/17 08:40:31 sturm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -23,6 +23,7 @@
      SUBDIR += gnome-spell
      SUBDIR += gnuvd
      SUBDIR += gonzui
+     SUBDIR += gsed
      SUBDIR += gtk-doc
      SUBDIR += gtkspell
      SUBDIR += hevea
