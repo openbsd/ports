@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/17 14:14:25 merdely Exp $
 
-COMMENT=	sniffer for LanManager environment (m$/samba workstations)
+COMMENT=	sniffer for LanManager environment (ms/samba workstations)
 DISTNAME=	smbsniff-0.0.1b
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security net
 
 MASTER_SITES=	${HOMEPAGE}/download/
