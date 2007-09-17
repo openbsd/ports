@@ -1,0 +1,31 @@
+#!/bin/sh
+PREFIX="!!LOCALBASE!!"
+EJLIBDIR="${PREFIX}/lib/ejabberd"
+EJDBDIR="!!EJDBDIR!!"
+EJLOGDIR="!!EJLOGDIR!!"
+
+CONFDIR="!!SYSCONFDIR!!/ejabberd"
+configfile="${CONFDIR}/ejabberd.cfg"
+detached="-detached"
+
+while getopts fc: opt
+do
+	case "$opt" in
+	c)	configfile="$OPTARG";;
+	f)	detached="";;
+	\?)	# unknown flag
+		echo >&2 \
+		"usage: $0 [-c configfile] [-f]"
+		exit 1;;
+	esac
+done
+shift `expr $OPTIND - 1`
+
+exec su -l !!JABBERDUSER!! ${PREFIX}/bin/erl \
+	-kernel inetrc \"${CONFDIR}/ejabberd.inetrc\" \
+	-noinput -pa ${EJLIBDIR}/ebin \
+	-sname ejabberd -s ejabberd \
+	-ejabberd config \"${configfile}\" \
+	log_path \"${EJLOGDIR}/ejabberd.log\" \
+	-sasl sasl_error_logger \{file,\"${EJLOGDIR}/sasl.log\"\} \
+	-mnesia dir \"$EJDBDIR\" ${detached}

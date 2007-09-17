@@ -1,0 +1,27 @@
+#!/bin/sh
+PREFIX="!!LOCALBASE!!"
+EJLIBDIR="${PREFIX}/lib/ejabberd"
+ID=`id -g`
+EJID=`id -g !!JABBERDUSER!!`
+export HOME="!!EJDBDIR!!"
+
+if [ "$ID" -ne 0 -a "$ID" -ne "$EJID" ]; then
+	echo "this command can only be run by root and the _ejabberd user" >&2
+	exit 1
+fi
+if [ X"$1" == "X" ]; then
+	echo "not enough arguments" >&2
+	exit 2
+fi
+echo "$1" | grep -q "@"
+if [ $? -ne 0 ]; then
+	nodename="ejabberd@`hostname -s`"
+else
+	nodename=""
+fi
+
+if [ $ID -eq 0 ]; then
+	exec su -l !!JABBERDUSER!! ${PREFIX}/bin/erl -noinput -pa ${EJLIBDIR}/ebin -sname ejabberdctl -s ejabberd_ctl -extra $nodename $@
+else
+	exec ${PREFIX}/bin/erl -noinput -pa ${EJLIBDIR}/ebin -sname ejabberdctl -s ejabberd_ctl -extra $nodename $@
+fi
