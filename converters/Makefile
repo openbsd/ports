@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2007/05/21 16:13:41 aanriot Exp $
+# $OpenBSD: Makefile,v 1.39 2007/09/17 19:23:31 jasper Exp $
 #
 
     SUBDIR += base64
     SUBDIR += btoa
+    SUBDIR += html2text
     SUBDIR += html2wml
     SUBDIR += ish
     SUBDIR += libdvd
