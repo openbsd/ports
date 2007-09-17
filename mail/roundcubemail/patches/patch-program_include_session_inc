@@ -1,0 +1,11 @@
+$OpenBSD: patch-program_include_session_inc,v 1.1 2007/09/17 11:45:26 ajacoutot Exp $
+--- program/include/session.inc.orig	Mon Sep 17 11:59:31 2007
++++ program/include/session.inc	Mon Sep 17 12:04:21 2007
+@@ -182,4 +182,7 @@ function sess_regenerate_id()
+ // set custom functions for PHP session management
+ session_set_save_handler('sess_open', 'sess_close', 'sess_read', 'sess_write', 'sess_destroy', 'sess_gc');
+ 
++// needed for downloading attachments over HTTPS
++session_cache_limiter('private');
++
+ ?>

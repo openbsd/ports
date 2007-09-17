@@ -1,0 +1,12 @@
+$OpenBSD: patch-program_include_main_inc,v 1.1 2007/09/17 11:45:26 ajacoutot Exp $
+--- program/include/main.inc.orig	Mon Sep 17 11:58:44 2007
++++ program/include/main.inc	Mon Sep 17 11:59:14 2007
+@@ -1313,7 +1313,7 @@ function format_date($date, $format=NULL)
+    
+   // get user's timezone
+   $tz = $CONFIG['timezone'];
+-  if ($CONFIG['dst_active'])
++  if ($CONFIG['dst_active'] && (date("I", $ts) == "1"))
+     $tz++;
+ 
+   // convert time to user's timezone
