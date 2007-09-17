@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_Makefile_in,v 1.9 2007/07/29 22:13:15 rui Exp $
+$OpenBSD: patch-config_Makefile_in,v 1.10 2007/09/17 20:51:22 rui Exp $
 --- config/Makefile.in.orig	Fri Jun  1 20:31:08 2007
-+++ config/Makefile.in	Sat Jul 28 23:25:00 2007
++++ config/Makefile.in	Fri Sep 14 17:47:31 2007
 @@ -749,6 +749,8 @@ uninstall::
  	rm -f $(BINDIR)/mlnet
  	rm -f $(BINDIR)/mlgui
