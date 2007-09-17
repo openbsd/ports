@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/13 14:58:42 alek Exp $
-lib/
-lib/php/
-lib/php/modules/
+@comment $OpenBSD: PLIST,v 1.2 2007/09/17 15:12:32 sthen Exp $
+@comment lib/
+@comment lib/php/
+@comment lib/php/modules/
+@owner root
+@group bin
 lib/php/modules/apc.so
+@owner
+@group daemon
 pecl-APC/
 pecl-APC/INSTALL
 pecl-APC/apc.php
