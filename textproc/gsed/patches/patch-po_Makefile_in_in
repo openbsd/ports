@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2007/09/17 08:39:53 sturm Exp $
+--- po/Makefile.in.in.orig	Tue Nov  9 19:04:18 2004
++++ po/Makefile.in.in	Sun Feb 12 23:05:16 2006
+@@ -26,7 +26,7 @@ gettextsrcdir = $(datadir)/gettext/po
+ 
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+-MKINSTALLDIRS = @MKINSTALLDIRS@
++MKINSTALLDIRS = /usr/bin/install -d
+ mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) echo "$(MKINSTALLDIRS)" ;; *) echo "$(top_builddir)/$(MKINSTALLDIRS)" ;; esac`
+ 
+ GMSGFMT = @GMSGFMT@
