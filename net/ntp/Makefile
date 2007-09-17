@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.35 2007/09/17 17:20:44 ajacoutot Exp $
 
 COMMENT-main=	network time protocol implementation
 COMMENT-doc=	network time protocol documentation
 
 NTP_VERSION=	4.2.0a
 DISTNAME=	ntp-stable-${NTP_VERSION}-20050303
-PKGNAME-main=	ntp-${NTP_VERSION}p3
+PKGNAME-main=	ntp-${NTP_VERSION}p4
 PKGNAME-doc=	ntp-doc-${NTP_VERSION}p1
 CATEGORIES=	net
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/snapshots/ntp-stable/2005/03/ \
@@ -18,7 +18,6 @@ MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 # modified ISC license.  However, some files include different
 # copyrights.
-#
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No

@@ -45,7 +45,7 @@ Several steps need to be taken to properly configure the NTP daemon.
        xntpd=YES			# change to NO to disable
        xntpdate_flags="pool.ntp.org"	# set to list of NTP servers
 
-   (refer to rc.conf(8) for more information regarding it's use)
+   (refer to rc.conf(8) for more information regarding its use)
 
 3) Finally, restart your system.  The system restart is necessary as
    tickadj is run from /etc/rc.securelevel before the system securelevel
