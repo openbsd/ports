@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2001/02/22 00:28:59 avsm Exp $
---- Makefile.PL.orig	Fri Mar 10 15:55:54 2000
-+++ Makefile.PL	Thu Feb 22 00:15:04 2001
-@@ -8,8 +8,6 @@ WriteMakefile(
+$OpenBSD: patch-Makefile_PL,v 1.2 2007/09/18 23:40:57 sthen Exp $
+--- Makefile.PL.orig	Sun Oct  5 15:00:36 2003
++++ Makefile.PL	Tue Sep 18 23:17:12 2007
+@@ -45,8 +45,6 @@ Data::Dumper, and Carp.
  
- );
+ =cut
  
 -&set_test_data;
 -

@@ -1,0 +1,11 @@
+$OpenBSD: patch-Thread_Makefile_PL,v 1.1 2007/09/18 23:40:57 sthen Exp $
+--- Thread/Makefile.PL.orig	Tue Jun 24 20:02:45 2003
++++ Thread/Makefile.PL	Wed Sep 19 00:12:54 2007
+@@ -36,6 +36,7 @@ sub MY::postamble {
+ WriteMakefile(
+     'NAME'		=> 'Mail::IMAPClient::Thread',
+     'VERSION_FROM'	=> '../IMAPClient.pm', 		
++    'MAN3PODS'		=> {'Thread.pod' => '../blib/man3/Mail::IMAPClient::Thread.3p'},
+     'PREREQ_PM'		=> {"Parse::RecDescent" => 0 }, 
+     'PM'		=> {
+ 		'Thread.pm' => 

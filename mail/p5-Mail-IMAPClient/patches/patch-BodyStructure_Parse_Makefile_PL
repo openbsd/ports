@@ -1,0 +1,11 @@
+$OpenBSD: patch-BodyStructure_Parse_Makefile_PL,v 1.1 2007/09/18 23:40:57 sthen Exp $
+--- BodyStructure/Parse/Makefile.PL.orig	Wed Sep 19 00:14:20 2007
++++ BodyStructure/Parse/Makefile.PL	Wed Sep 19 00:15:28 2007
+@@ -37,6 +37,7 @@ sub MY::postamble {
+ WriteMakefile(
+     'NAME'		=> 'Mail::IMAPClient::Parse',
+     'VERSION_FROM'	=> '../../IMAPClient.pm', 		
++    'MAN3PODS'		=> {'Parse.pod' => '../../blib/man3/Mail::IMAPClient::Parse.3p'},
+     'PREREQ_PM'		=> {"Parse::RecDescent" => 0 }, 
+     'PM'		=> {
+ 		'Parse.pm' => 
