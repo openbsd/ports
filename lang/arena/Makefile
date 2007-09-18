@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/18 18:39:07 steven Exp $
 
 COMMENT=	lightweight scripting language with C-like syntax
 
-DISTNAME=	arena-0.9.10
+DISTNAME=	arena-0.9.13
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.minimalinux.org/arena/
