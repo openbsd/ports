@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.52 2007/09/18 18:36:52 mgrimm Exp $
 
 COMMENT= 		K Desktop Environment, multimedia applications
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.7
 DISTNAME=		kdemultimedia-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.7
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
 SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0
@@ -36,10 +36,10 @@ SHARED_LIBS +=	arts_mpeglib-0.3.0   1.0      # .0.3
 
 FLAVORS=		debug
 LIB_DEPENDS= DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kmediaplayer,kjs,kutils,kwalletclient,kdeprint::x11/kde/libs3 \
-	artsc,artskde::x11/kde/arts3 \
+	artsc,artsflow,artsflow_idl,artskde,kmedia2_idl,mcop,qtmcop,soundserver_idl::x11/kde/arts3 \
 	ogg::audio/libogg \
-	FLAC::audio/flac \
-	vorbis,vorbisenc::audio/libvorbis \
+	FLAC.>=8::audio/flac \
+	vorbis,vorbisenc,vorbisfile::audio/libvorbis \
 	cdda_paranoia,cdda_interface::audio/cdparanoia \
 	tag::audio/taglib \
 	gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core \
@@ -57,12 +57,10 @@ SEPARATE_BUILD=flavored
 CONFIGURE_ARGS+=--without-lame
 CONFIGURE_ENV+=aktion_has_xanim=yes
 
-WANTLIB=	ICE SM X11 Xext Xrender Xv Xxf86dga Xxf86vm art_lgpl_2 \
-		artsflow artsflow_idl audiofile c esd glib-2.0 \
-		gmodule-2.0 gthread-2.0 iconv intl jpeg kmedia2_idl m \
-		mad mcop ossaudio png pthread qtmcop soundserver_idl stdc++ \
-		util vorbisfile z gobject-2.0 pcreposix xml2 pcre freetype \
-		idn Xau Xdmcp fam rpcsvc
-
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm \
+		art_lgpl_2 audiofile c esd expat fam fontconfig freetype \
+		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv idn intl \
+		jpeg m mad ossaudio pcre pcreposix png pthread rpcsvc stdc++ \
+		util xml2 z
 
 .include <bsd.port.mk>

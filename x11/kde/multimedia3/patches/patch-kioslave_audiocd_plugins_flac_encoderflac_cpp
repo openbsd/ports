@@ -1,0 +1,31 @@
+$OpenBSD: patch-kioslave_audiocd_plugins_flac_encoderflac_cpp,v 1.1 2007/09/18 18:36:53 mgrimm Exp $
+--- kioslave/audiocd/plugins/flac/encoderflac.cpp.orig	Sun Sep 16 21:51:43 2007
++++ kioslave/audiocd/plugins/flac/encoderflac.cpp	Sun Sep 16 22:00:43 2007
+@@ -47,7 +47,7 @@ class EncoderFLAC::Private { (public)
+     unsigned long data;
+ };
+ 
+-static FLAC__StreamEncoderWriteStatus WriteCallback(const FLAC__StreamEncoder *encoder, const FLAC__byte buffer[], unsigned bytes, unsigned samples, unsigned current_frame, void *client_data)
++static FLAC__StreamEncoderWriteStatus WriteCallback(const FLAC__StreamEncoder *encoder, const FLAC__byte buffer[], size_t bytes, unsigned samples, unsigned current_frame, void *client_data)
+ {
+     EncoderFLAC::Private *d = (EncoderFLAC::Private*)client_data;
+ 
+@@ -109,9 +109,6 @@ unsigned long EncoderFLAC::size(long time_secs) const 
+ long EncoderFLAC::readInit(long size) {
+     kdDebug(7117) << "EncoderFLAC::readInit() called"<< endl;
+     d->data = 0;
+-    FLAC__stream_encoder_set_write_callback(d->encoder, WriteCallback);
+-    FLAC__stream_encoder_set_metadata_callback(d->encoder, MetadataCallback);
+-    FLAC__stream_encoder_set_client_data(d->encoder, d);
+ 
+     // The options match approximely those of flac compression-level-3
+     FLAC__stream_encoder_set_do_mid_side_stereo(d->encoder, true);
+@@ -124,7 +121,7 @@ long EncoderFLAC::readInit(long size) {
+     if (size > 0)
+         FLAC__stream_encoder_set_total_samples_estimate(d->encoder, size/4);
+ 
+-    FLAC__stream_encoder_init(d->encoder);
++    FLAC__stream_encoder_init_stream(d->encoder, WriteCallback, NULL, NULL, MetadataCallback, d);
+     return d->data;
+ }
+ 
