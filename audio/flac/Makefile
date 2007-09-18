@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.32 2007/09/18 18:22:32 naddy Exp $
 
 COMMENT=	free lossless audio codec
 
-DISTNAME=	flac-1.1.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	flac-1.2.0
 CATEGORIES=	audio archivers
 HOMEPAGE=	http://flac.sourceforge.net/
-SHARED_LIBS +=	FLAC                 7.0      # .7.0
-SHARED_LIBS +=	FLAC++               6.0      # .5.0
-SHARED_LIBS +=	OggFLAC              3.0      # .3.0
-SHARED_LIBS +=	OggFLAC++            3.0      # .2.0
+SHARED_LIBS +=  FLAC                 8.0      # .9.0
+SHARED_LIBS +=  FLAC++               7.0      # .7.0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -33,13 +30,16 @@ BUILD_DEPENDS+=	::devel/nasm
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-sse \
 		--with-libiconv-prefix="${LOCALBASE}" \
-		--with-ogg="${LOCALBASE}"
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include" \
-		ac_cv_path_XMMS_CONFIG=no
+		--with-ogg="${LOCALBASE}" \
+		--disable-thorough-tests \
+		--disable-xmms-plugin
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include"
 MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
 
 post-install:
-	@cd ${PREFIX}/share/doc && mv ${DISTNAME} flac
+	cd ${PREFIX}/share/doc && mv ${DISTNAME} flac
+	perl -i -pe 's:%%PREFIX%%:${TRUEPREFIX}:' ${PREFIX}/man/man1/flac.1
 
 .include <bsd.port.mk>

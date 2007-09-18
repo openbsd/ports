@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_libFLAC++_Makefile_in,v 1.1 2005/03/09 00:15:14 naddy Exp $
---- src/libFLAC++/Makefile.in.orig	Tue Mar  8 00:04:40 2005
-+++ src/libFLAC++/Makefile.in	Tue Mar  8 00:05:08 2005
-@@ -280,7 +280,7 @@ EXTRA_DIST = \
+$OpenBSD: patch-src_libFLAC++_Makefile_in,v 1.2 2007/09/18 18:22:32 naddy Exp $
+--- src/libFLAC++/Makefile.in.orig	Wed Aug 29 21:18:55 2007
++++ src/libFLAC++/Makefile.in	Wed Aug 29 21:19:21 2007
+@@ -249,7 +249,7 @@ EXTRA_DIST = \
  
- # see 'http://www.gnu.org/software/libtool/manual.html#SEC35' for numbering convention
- libFLAC___la_LDFLAGS = -version-info 5:0:0
+ # see 'http://www.gnu.org/software/libtool/manual.html#Libtool-versioning' for numbering convention
+ libFLAC___la_LDFLAGS = -version-info 7:0:1
 -libFLAC___la_LIBADD = ../libFLAC/libFLAC.la
 +libFLAC___la_LIBADD = 
+ 
  libFLAC___la_SOURCES = \
- 	file_decoder.cpp \
- 	file_encoder.cpp \
+ 	metadata.cpp \

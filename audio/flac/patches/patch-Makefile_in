@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2005/03/09 00:15:14 naddy Exp $
---- Makefile.in.orig	Thu Feb  3 16:37:07 2005
-+++ Makefile.in	Thu Feb  3 16:37:17 2005
-@@ -258,7 +258,7 @@ sbindir = @sbindir@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
--SUBDIRS = doc include man src test build flac.pbproj obj
-+SUBDIRS = doc include man src test build flac.pbproj
+$OpenBSD: patch-Makefile_in,v 1.4 2007/09/18 18:22:32 naddy Exp $
+--- Makefile.in.orig	Wed Aug 29 21:18:22 2007
++++ Makefile.in	Wed Aug 29 21:18:31 2007
+@@ -231,7 +231,7 @@ target_alias = @target_alias@
+ 
+ AUTOMAKE_OPTIONS = foreign 1.7
+ 
+-SUBDIRS = doc include m4 man src test build obj
++SUBDIRS = doc include m4 man src test build
+ 
  DISTCLEANFILES = libtool-disable-static
- EXTRA_DIST = \
- 	COPYING.FDL \
+ 
