@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/10/13 19:24:41 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/09/18 15:46:36 steven Exp $
 bin/mathomatic
 @man man/man1/mathomatic.1
 share/doc/mathomatic/
@@ -7,3 +7,4 @@ share/doc/mathomatic/changes.txt
 share/doc/mathomatic/index.html
 share/doc/mathomatic/manpage.html
 share/doc/mathomatic/manual.html
+share/doc/mathomatic/notes.html
