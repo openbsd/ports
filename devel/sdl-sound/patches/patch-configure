@@ -1,6 +1,33 @@
-$OpenBSD: patch-configure,v 1.2 2007/05/02 19:01:07 naddy Exp $
+$OpenBSD: patch-configure,v 1.3 2007/09/18 18:29:14 naddy Exp $
 --- configure.orig	Sun Oct 12 20:54:57 2003
-+++ configure	Wed May  2 19:01:01 2007
++++ configure	Sat Sep 15 20:53:00 2007
+@@ -7089,7 +7089,7 @@ EOF
+ 
+ fi
+ 
+-x="C__seekable_stream_decoder_process_single"
++x="C__stream_decoder_process_single"
+ flcsym="FLA$x"
+ # Check whether --enable-flac or --disable-flac was given.
+ if test "${enable_flac+set}" = set; then
+@@ -7147,7 +7147,7 @@ if eval "test \"\${$as_ac_Lib+set}\" = set"; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lFLAC  $LIBS"
++LIBS="-lFLAC -logg $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 7152 "configure"
+ #include "confdefs.h"
+@@ -7195,7 +7195,7 @@ if test `eval echo '${'$as_ac_Lib'}'` = yes; then
+ fi
+ 
+   if test x$have_flac_hdr = xyes -a x$have_flac_lib = xyes; then
+-    LIBS="$LIBS -lFLAC"
++    LIBS="$LIBS -lFLAC -logg"
+     cat >>confdefs.h <<\EOF
+ #define SOUND_SUPPORTS_FLAC 1
+ EOF
 @@ -7363,16 +7363,11 @@ int main (int argc, char *argv[])
      }
    else
