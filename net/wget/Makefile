@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.43 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.44 2007/09/18 18:51:15 aanriot Exp $
 
 COMMENT=	retrieve files from the web via HTTP, HTTPS and FTP
 
 DISTNAME=	wget-1.10.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU:=wget/}
 
 HOMEPAGE=	http://www.gnu.org/software/wget/
 
 MODULES=	devel/gettext
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
