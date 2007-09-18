@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/09/25 18:56:00 grange Exp $
---- configure.orig	Thu Jan 19 01:03:01 2006
-+++ configure	Mon Sep 25 00:06:45 2006
+$OpenBSD: patch-configure,v 1.2 2007/09/18 18:30:35 mgrimm Exp $
+--- configure.orig	Wed Jan 18 23:03:01 2006
++++ configure	Sun Sep  9 19:10:26 2007
+@@ -4583,7 +4583,7 @@ cat >>confdefs.h <<\_ACEOF
+ #define FLAC_SUPPORT 1
+ _ACEOF
+ 
+-		ac_libraries="${ac_libraries} -lFLAC++ -lFLAC"
++		ac_libraries="${ac_libraries} -lFLAC++ -lFLAC -logg"
+ 		features_list="${features_list} (FLAC)"
+ 	fi
+ else
 @@ -4971,6 +4971,7 @@ cat >>confdefs.h <<\_ACEOF
  _ACEOF
  
