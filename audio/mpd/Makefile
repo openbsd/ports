@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/07/19 08:06:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/18 18:26:52 naddy Exp $
 
 COMMENT=		Music Player Daemon
 DISTNAME=		mpd-0.13.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		audio
 HOMEPAGE=		http://www.musicpd.org/
 MAINTAINER=		Tobias Ulmer <tobiasu@tmux.org>
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m pthread z
+WANTLIB=		c m pthread ogg z
 
 MASTER_SITES=		${HOMEPAGE}uploads/files/
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=		audiofile::devel/libaudiofile \
 			ao::audio/libao \
 			samplerate::audio/libsamplerate \
 			faad.>=1::audio/faad \
+			FLAC::audio/flac \
 			id3tag::audio/libid3tag \
 			mad::audio/libmad \
 			mikmod::audio/libmikmod \
@@ -47,14 +48,11 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ARGS+=	--with-tremor \
 			--disable-oggflac \
 			--disable-shout
-LIB_DEPENDS+=		vorbisidec::audio/tremor \
-			FLAC::audio/flac
+LIB_DEPENDS+=		vorbisidec::audio/tremor
 .else
 
 WANTLIB+=		theora
 LIB_DEPENDS+=		vorbis,vorbisfile,vorbisenc::audio/libvorbis \
-			ogg::audio/libogg \
-			OggFLAC,FLAC::audio/flac \
 			speex::audio/speex \
 			shout::net/libshout
 .endif

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.33 2007/09/18 18:26:52 naddy Exp $
 
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
 DISTNAME=	vorbis-tools-1.1.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/vorbis/
 
@@ -22,9 +22,9 @@ PATCH_DIST_STRIP=-p1
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	ao.>=3::audio/libao \
-		curl.>=3::net/curl \
-		FLAC.>=7,OggFLAC.>=3::audio/flac \
-		speex.>=4::audio/speex \
+		curl.>=6::net/curl \
+		FLAC.>=8::audio/flac \
+		speex.>=6::audio/speex \
 		vorbis.>=4,vorbisenc.>=2,vorbisfile.>=4::audio/libvorbis
 WANTLIB=	c crypto idn m ogg pthread ssl z
 

@@ -1,11 +1,11 @@
 --- configure.orig	Mon May 28 15:20:18 2007
-+++ configure	Fri Jun 22 13:31:06 2007
-@@ -28646,7 +28646,7 @@ fi
-     LIBOGGFLAC_LIBS="-L$libdir"
++++ configure	Mon Sep  3 21:10:03 2007
+@@ -28231,7 +28231,7 @@ fi
+     LIBFLAC_LIBS="-L$libdir"
    fi
  
--  LIBOGGFLAC_LIBS="$LIBOGGFLAC_LIBS -lOggFLAC -lFLAC -lm"
-+  LIBOGGFLAC_LIBS="$LIBOGGFLAC_LIBS -lOggFLAC -lFLAC -logg -lm"
+-  LIBFLAC_LIBS="$LIBFLAC_LIBS -lFLAC -lm"
++  LIBFLAC_LIBS="$LIBFLAC_LIBS -lFLAC -logg -lm"
  
-   if test "x$libOggFLAC_includes" != "x" ; then
-     LIBOGGFLAC_CFLAGS="-I$libOggFLAC_includes"
+   if test "x$libFLAC_includes" != "x" ; then
+     LIBFLAC_CFLAGS="-I$libFLAC_includes"

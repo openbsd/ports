@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.8 2007/06/13 10:58:29 jakemsr Exp $
---- configure.orig	Wed Jun  6 06:41:05 2007
-+++ configure	Fri Jun  8 17:27:46 2007
+$OpenBSD: patch-configure,v 1.9 2007/09/18 18:26:52 naddy Exp $
+--- configure.orig	Wed Jun  6 15:41:05 2007
++++ configure	Tue Sep 11 21:22:31 2007
 @@ -24480,6 +24480,9 @@ _ACEOF
  fi
  done
@@ -27,6 +27,15 @@ $OpenBSD: patch-configure,v 1.8 2007/06/13 10:58:29 jakemsr Exp $
  
  cat >>confdefs.h <<_ACEOF
  #define LIBXV_SO "${x_lib_location:-libXv.so}"
+@@ -37430,7 +37433,7 @@ fi
+     LIBFLAC_LIBS="-L$prefix/$XINE_LIBNAME"
+   fi
+ 
+-  LIBFLAC_LIBS="$LIBFLAC_LIBS -lFLAC -lm"
++  LIBFLAC_LIBS="$LIBFLAC_LIBS -lFLAC -logg -lm"
+ 
+   if test "x$libFLAC_includes" != "x" ; then
+     LIBFLAC_CFLAGS="-I$libFLAC_includes"
 @@ -37681,7 +37684,7 @@ elif test "x$external_a52dec" = "xyes"; then
    have_a52="yes"
  

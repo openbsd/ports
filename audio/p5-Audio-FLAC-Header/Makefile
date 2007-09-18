@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 15:19:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/18 18:26:52 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	interface to FLAC header metadata
 
 MODULES=	cpan
 DISTNAME=	Audio-FLAC-Header-1.8
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	audio
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
@@ -18,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_ENV=	INCPATH="${LOCALBASE}/include" LIBPATH="${LOCALBASE}/lib"
 
-LIB_DEPENDS=	FLAC.>=7::audio/flac
+WANTLIB=	ogg
+LIB_DEPENDS=	FLAC.>=8::audio/flac
 
 MAKE_ENV=	TEST_POD=Yes
 
