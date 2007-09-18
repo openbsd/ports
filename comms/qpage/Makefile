@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/16 01:37:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/18 09:22:31 sthen Exp $
 
 COMMENT=	SNPP client/server (alphanum pager software)
 
 DISTNAME=	qpage-3.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	comms
 
-PERMIT_PACKAGE_CDROM=	license only grants use
-PERMIT_PACKAGE_FTP=	license only grants use
-PERMIT_DISTFILES_CDROM=	license only grants use
+# custom; see LICENSE
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
@@ -28,5 +29,8 @@ do-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qpage
 		${INSTALL_DATA} ${WRKSRC}/example.cf \
 			${PREFIX}/share/examples/qpage/qpage.cf
+		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qpage
+		${INSTALL_DATA} ${WRKSRC}/{[C-LRT]*,*txt} \
+			${PREFIX}/share/doc/qpage
 
 .include <bsd.port.mk>

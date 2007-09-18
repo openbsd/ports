@@ -1,6 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/11/11 20:56:39 alek Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/09/18 09:22:31 sthen Exp $
 bin/qpage
 @man man/man1/qpage.1
+share/doc/qpage/
+share/doc/qpage/CHANGES
+share/doc/qpage/CREDITS
+share/doc/qpage/DO-NOT-READ
+share/doc/qpage/HISTORY
+share/doc/qpage/INSTALL
+share/doc/qpage/LICENSE
+share/doc/qpage/README
+share/doc/qpage/TODO
+share/doc/qpage/TROUBLESHOOT
+share/doc/qpage/ixo-tap.txt
+share/doc/qpage/rfc1861.txt
 share/examples/qpage/
 share/examples/qpage/qpage.cf
 @sample ${SYSCONFDIR}/qpage.cf
