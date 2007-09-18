@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/18 18:33:25 naddy Exp $
 
 COMMENT-main=		multimedia framework - good plugins
 COMMENT-aalib=		multimedia framework - aalib plugin
@@ -22,7 +22,7 @@ PKGNAME-aalib=		gstreamer-aalib-$V
 PKGNAME-cairo=		gstreamer-cairo-$Vp0
 PKGNAME-gconf=		gstreamer-confelements-$Vp0
 PKGNAME-esd=		gstreamer-esd-$V
-PKGNAME-flac=		gstreamer-flac-$V
+PKGNAME-flac=		gstreamer-flac-$Vp0
 PKGNAME-speex=		gstreamer-speex-$V
 PKGNAME-taglib=		gstreamer-taglib-$V
 PKGNAME-dv=		gstreamer-dv-$V
@@ -79,7 +79,7 @@ LIB_DEPENDS-esd=	${LIB_DEPENDS} \
 			gstaudio-0.10,gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base
 
 WANTLIB-flac=		${WANTLIB} \
-			gstbase-0.10
+			ogg gstbase-0.10
 
 LIB_DEPENDS-flac=	${LIB_DEPENDS} \
 			FLAC::audio/flac \

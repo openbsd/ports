@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1 2007/09/16 16:45:59 naddy Exp $
---- configure.ac.orig	Sun Sep 16 17:33:20 2007
-+++ configure.ac	Sun Sep 16 17:38:43 2007
+$OpenBSD: patch-configure_ac,v 1.2 2007/09/18 18:33:25 naddy Exp $
+--- configure.ac.orig	Sun Sep  4 14:14:17 2005
++++ configure.ac	Sun Sep 16 22:49:40 2007
 @@ -106,7 +106,7 @@ DEFAULT_AUDIOSRC="osssrc"
  DEFAULT_VIDEOSRC="v4lsrc"
  DEFAULT_VISUALIZER="goom"
@@ -32,3 +32,19 @@ $OpenBSD: patch-configure_ac,v 1.1 2007/09/16 16:45:59 naddy Exp $
  ])
  
  dnl *** artsc ***
+@@ -1125,14 +1125,7 @@ dnl])
+ dnl *** FLAC ***
+ translit(dnm, m, l) AM_CONDITIONAL(USE_FLAC, true)
+ GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flacenc flacdec, [
+-  GST_CHECK_LIBHEADER(FLAC, FLAC, FLAC__seekable_stream_encoder_new, -lm, FLAC/all.h, FLAC_LIBS="-lFLAC")
+-  dnl API change in FLAC 1.1.1, so require that...
+-  if test x$HAVE_FLAC = xyes; then
+-    AC_CHECK_DECL(FLAC__SEEKABLE_STREAM_ENCODER_TELL_ERROR,
+-                  HAVE_FLAC="yes", HAVE_FLAC="no", [
+-#include <FLAC/seekable_stream_encoder.h>
+-                  ])
+-  fi
++  GST_CHECK_LIBHEADER(FLAC, FLAC, FLAC__stream_encoder_new, -logg -lm, FLAC/all.h, FLAC_LIBS="-lFLAC -logg")
+   AC_SUBST(FLAC_LIBS)
+ ])
+ 

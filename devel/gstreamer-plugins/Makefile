@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/09/16 16:45:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2007/09/18 18:33:25 naddy Exp $
 
 COMMENT-main=		GStreamer Streaming-media framework plug-ins
 
@@ -82,6 +82,7 @@ PLUGINS+=		a52
 PSEUDO_FLAVORS+=	no_${PLUGIN}
 .  if !${FLAVOR:L:Mno_${PLUGIN}} && !${FLAVOR:L:Mminimal}
 MULTI_PACKAGES+=	-${PLUGIN}
+# also check for individual overrides below
 PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}p15
 BASENAME-${PLUGIN}=	gstreamer-${PLUGIN}
 .  endif
@@ -149,7 +150,8 @@ LIB_DEPENDS-faad=	faad.>=1::audio/faad \
 
 # flac
 COMMENT-flac=		GStreamer plugin for encoding/decoding FLAC files
-WANTLIB-flac=		${myWANTLIB}
+PKGNAME-flac=		gstreamer-flac-${VERSION}p16
+WANTLIB-flac=		ogg ${myWANTLIB}
 LIB_DEPENDS-flac=	FLAC::audio/flac \
 			${myLIB_DEPENDS}
 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_flac_gstflacdec_h,v 1.1 2007/09/18 18:33:25 naddy Exp $
+--- ext/flac/gstflacdec.h.orig	Mon Sep 17 19:57:31 2007
++++ ext/flac/gstflacdec.h	Mon Sep 17 19:57:46 2007
+@@ -41,7 +41,7 @@ typedef struct _GstFlacDecClass GstFlacDecClass;
+ struct _GstFlacDec {
+   GstElement     element;
+ 
+-  FLAC__SeekableStreamDecoder *seekable_decoder; /* for pull-based operation  */
++  FLAC__StreamDecoder *seekable_decoder; /* for pull-based operation  */
+ 
+   FLAC__StreamDecoder         *stream_decoder;   /* for chain-based operation */
+   GstAdapter                  *adapter;

@@ -1,0 +1,265 @@
+$OpenBSD: patch-ext_flac_gstflacdec_c,v 1.1 2007/09/18 18:33:25 naddy Exp $
+--- ext/flac/gstflacdec.c.orig	Mon Sep 17 16:49:23 2007
++++ ext/flac/gstflacdec.c	Mon Sep 17 17:44:21 2007
+@@ -69,27 +69,27 @@ static gboolean gst_flacdec_src_query (GstPad * pad, G
+ static const GstEventMask *gst_flacdec_get_src_event_masks (GstPad * pad);
+ static gboolean gst_flacdec_src_event (GstPad * pad, GstEvent * event);
+ 
+-static FLAC__SeekableStreamDecoderReadStatus
+-gst_flacdec_read (const FLAC__SeekableStreamDecoder * decoder,
+-    FLAC__byte buffer[], unsigned *bytes, void *client_data);
+-static FLAC__SeekableStreamDecoderSeekStatus
+-gst_flacdec_seek (const FLAC__SeekableStreamDecoder * decoder,
++static FLAC__StreamDecoderReadStatus
++gst_flacdec_read (const FLAC__StreamDecoder * decoder,
++    FLAC__byte buffer[], size_t *bytes, void *client_data);
++static FLAC__StreamDecoderSeekStatus
++gst_flacdec_seek (const FLAC__StreamDecoder * decoder,
+     FLAC__uint64 position, void *client_data);
+-static FLAC__SeekableStreamDecoderTellStatus
+-gst_flacdec_tell (const FLAC__SeekableStreamDecoder * decoder,
++static FLAC__StreamDecoderTellStatus
++gst_flacdec_tell (const FLAC__StreamDecoder * decoder,
+     FLAC__uint64 * position, void *client_data);
+-static FLAC__SeekableStreamDecoderLengthStatus
+-gst_flacdec_length (const FLAC__SeekableStreamDecoder * decoder,
++static FLAC__StreamDecoderLengthStatus
++gst_flacdec_length (const FLAC__StreamDecoder * decoder,
+     FLAC__uint64 * length, void *client_data);
+-static FLAC__bool gst_flacdec_eof (const FLAC__SeekableStreamDecoder * decoder,
++static FLAC__bool gst_flacdec_eof (const FLAC__StreamDecoder * decoder,
+     void *client_data);
+ static FLAC__StreamDecoderWriteStatus
+-gst_flacdec_write (const FLAC__SeekableStreamDecoder * decoder,
++gst_flacdec_write (const FLAC__StreamDecoder * decoder,
+     const FLAC__Frame * frame,
+     const FLAC__int32 * const buffer[], void *client_data);
+-static void gst_flacdec_metadata_callback (const FLAC__SeekableStreamDecoder *
++static void gst_flacdec_metadata_callback (const FLAC__StreamDecoder *
+     decoder, const FLAC__StreamMetadata * metadata, void *client_data);
+-static void gst_flacdec_error_callback (const FLAC__SeekableStreamDecoder *
++static void gst_flacdec_error_callback (const FLAC__StreamDecoder *
+     decoder, FLAC__StreamDecoderErrorStatus status, void *client_data);
+ 
+ static GstElementClass *parent_class = NULL;
+@@ -194,40 +194,14 @@ gst_flacdec_init (FlacDec * flacdec)
+   gst_pad_set_event_function (flacdec->srcpad, gst_flacdec_src_event);
+   gst_pad_use_explicit_caps (flacdec->srcpad);
+ 
+-  flacdec->decoder = FLAC__seekable_stream_decoder_new ();
++  flacdec->decoder = FLAC__stream_decoder_new ();
+   flacdec->total_samples = 0;
+   flacdec->init = TRUE;
+   flacdec->eos = FALSE;
+   flacdec->seek_pending = FALSE;
+ 
+-  FLAC__seekable_stream_decoder_set_read_callback (flacdec->decoder,
+-      gst_flacdec_read);
+-  FLAC__seekable_stream_decoder_set_seek_callback (flacdec->decoder,
+-      gst_flacdec_seek);
+-  FLAC__seekable_stream_decoder_set_tell_callback (flacdec->decoder,
+-      gst_flacdec_tell);
+-  FLAC__seekable_stream_decoder_set_length_callback (flacdec->decoder,
+-      gst_flacdec_length);
+-  FLAC__seekable_stream_decoder_set_eof_callback (flacdec->decoder,
+-      gst_flacdec_eof);
+-#if FLAC_VERSION >= 0x010003
+-  FLAC__seekable_stream_decoder_set_write_callback (flacdec->decoder,
+-      gst_flacdec_write);
+-#else
+-  FLAC__seekable_stream_decoder_set_write_callback (flacdec->decoder,
+-      (FLAC__StreamDecoderWriteStatus (*)
+-          (const FLAC__SeekableStreamDecoder * decoder,
+-              const FLAC__Frame * frame,
+-              const FLAC__int32 * buffer[], void *client_data))
+-      (gst_flacdec_write));
+-#endif
+-  FLAC__seekable_stream_decoder_set_metadata_respond (flacdec->decoder,
++  FLAC__stream_decoder_set_metadata_respond (flacdec->decoder,
+       FLAC__METADATA_TYPE_VORBIS_COMMENT);
+-  FLAC__seekable_stream_decoder_set_metadata_callback (flacdec->decoder,
+-      gst_flacdec_metadata_callback);
+-  FLAC__seekable_stream_decoder_set_error_callback (flacdec->decoder,
+-      gst_flacdec_error_callback);
+-  FLAC__seekable_stream_decoder_set_client_data (flacdec->decoder, flacdec);
+ }
+ 
+ static void
+@@ -238,7 +212,7 @@ gst_flacdec_finalize (GObject * object)
+   flacdec = GST_FLACDEC (object);
+ 
+   if (flacdec->decoder)
+-    FLAC__seekable_stream_decoder_delete (flacdec->decoder);
++    FLAC__stream_decoder_delete (flacdec->decoder);
+   flacdec->decoder = NULL;
+ 
+   G_OBJECT_CLASS (parent_class)->finalize (object);
+@@ -287,7 +261,7 @@ gst_flacdec_update_metadata (FlacDec * flacdec,
+ 
+ 
+ static void
+-gst_flacdec_metadata_callback (const FLAC__SeekableStreamDecoder * decoder,
++gst_flacdec_metadata_callback (const FLAC__StreamDecoder * decoder,
+     const FLAC__StreamMetadata * metadata, void *client_data)
+ {
+   FlacDec *flacdec;
+@@ -307,7 +281,7 @@ gst_flacdec_metadata_callback (const FLAC__SeekableStr
+ }
+ 
+ static void
+-gst_flacdec_error_callback (const FLAC__SeekableStreamDecoder * decoder,
++gst_flacdec_error_callback (const FLAC__StreamDecoder * decoder,
+     FLAC__StreamDecoderErrorStatus status, void *client_data)
+ {
+   FlacDec *flacdec;
+@@ -333,8 +307,8 @@ gst_flacdec_error_callback (const FLAC__SeekableStream
+   GST_ELEMENT_ERROR (flacdec, STREAM, DECODE, (NULL), (error));
+ }
+ 
+-static FLAC__SeekableStreamDecoderSeekStatus
+-gst_flacdec_seek (const FLAC__SeekableStreamDecoder * decoder,
++static FLAC__StreamDecoderSeekStatus
++gst_flacdec_seek (const FLAC__StreamDecoder * decoder,
+     FLAC__uint64 position, void *client_data)
+ {
+   FlacDec *flacdec;
+@@ -343,13 +317,13 @@ gst_flacdec_seek (const FLAC__SeekableStreamDecoder * 
+ 
+   GST_DEBUG ("seek %" G_GINT64_FORMAT, position);
+   if (!gst_bytestream_seek (flacdec->bs, position, GST_SEEK_METHOD_SET)) {
+-    return FLAC__SEEKABLE_STREAM_DECODER_SEEK_STATUS_ERROR;
++    return FLAC__STREAM_DECODER_SEEK_STATUS_ERROR;
+   }
+-  return FLAC__SEEKABLE_STREAM_DECODER_SEEK_STATUS_OK;
++  return FLAC__STREAM_DECODER_SEEK_STATUS_OK;
+ }
+ 
+-static FLAC__SeekableStreamDecoderTellStatus
+-gst_flacdec_tell (const FLAC__SeekableStreamDecoder * decoder,
++static FLAC__StreamDecoderTellStatus
++gst_flacdec_tell (const FLAC__StreamDecoder * decoder,
+     FLAC__uint64 * position, void *client_data)
+ {
+   FlacDec *flacdec;
+@@ -358,15 +332,15 @@ gst_flacdec_tell (const FLAC__SeekableStreamDecoder * 
+ 
+   *position = gst_bytestream_tell (flacdec->bs);
+   if (*position == -1)
+-    return FLAC__SEEKABLE_STREAM_DECODER_TELL_STATUS_ERROR;
++    return FLAC__STREAM_DECODER_TELL_STATUS_ERROR;
+ 
+   GST_DEBUG ("tell %" G_GINT64_FORMAT, *position);
+ 
+-  return FLAC__SEEKABLE_STREAM_DECODER_TELL_STATUS_OK;
++  return FLAC__STREAM_DECODER_TELL_STATUS_OK;
+ }
+ 
+-static FLAC__SeekableStreamDecoderLengthStatus
+-gst_flacdec_length (const FLAC__SeekableStreamDecoder * decoder,
++static FLAC__StreamDecoderLengthStatus
++gst_flacdec_length (const FLAC__StreamDecoder * decoder,
+     FLAC__uint64 * length, void *client_data)
+ {
+   FlacDec *flacdec;
+@@ -375,15 +349,15 @@ gst_flacdec_length (const FLAC__SeekableStreamDecoder 
+ 
+   *length = gst_bytestream_length (flacdec->bs);
+   if (*length == -1)
+-    return FLAC__SEEKABLE_STREAM_DECODER_TELL_STATUS_ERROR;
++    return FLAC__STREAM_DECODER_TELL_STATUS_ERROR;
+ 
+   GST_DEBUG ("length %" G_GINT64_FORMAT, *length);
+ 
+-  return FLAC__SEEKABLE_STREAM_DECODER_LENGTH_STATUS_OK;
++  return FLAC__STREAM_DECODER_LENGTH_STATUS_OK;
+ }
+ 
+ static FLAC__bool
+-gst_flacdec_eof (const FLAC__SeekableStreamDecoder * decoder, void *client_data)
++gst_flacdec_eof (const FLAC__StreamDecoder * decoder, void *client_data)
+ {
+   FlacDec *flacdec;
+ 
+@@ -393,9 +367,9 @@ gst_flacdec_eof (const FLAC__SeekableStreamDecoder * d
+   return flacdec->eos;
+ }
+ 
+-static FLAC__SeekableStreamDecoderReadStatus
+-gst_flacdec_read (const FLAC__SeekableStreamDecoder * decoder,
+-    FLAC__byte buffer[], unsigned *bytes, void *client_data)
++static FLAC__StreamDecoderReadStatus
++gst_flacdec_read (const FLAC__StreamDecoder * decoder,
++    FLAC__byte buffer[], size_t *bytes, void *client_data)
+ {
+   FlacDec *flacdec;
+   gint insize = 0;
+@@ -444,11 +418,11 @@ gst_flacdec_read (const FLAC__SeekableStreamDecoder * 
+   *bytes = insize;
+   gst_bytestream_flush_fast (flacdec->bs, insize);
+ 
+-  return FLAC__SEEKABLE_STREAM_DECODER_READ_STATUS_OK;
++  return FLAC__STREAM_DECODER_READ_STATUS_CONTINUE;
+ }
+ 
+ static FLAC__StreamDecoderWriteStatus
+-gst_flacdec_write (const FLAC__SeekableStreamDecoder * decoder,
++gst_flacdec_write (const FLAC__StreamDecoder * decoder,
+     const FLAC__Frame * frame,
+     const FLAC__int32 * const buffer[], void *client_data)
+ {
+@@ -563,20 +537,22 @@ gst_flacdec_loop (GstElement * element)
+     FLAC__StreamDecoderState res;
+ 
+     GST_DEBUG ("flacdec: initializing decoder");
+-    res = FLAC__seekable_stream_decoder_init (flacdec->decoder);
+-    if (res != FLAC__SEEKABLE_STREAM_DECODER_OK) {
++    res = FLAC__stream_decoder_init_stream (flacdec->decoder,
++        gst_flacdec_read, gst_flacdec_seek, gst_flacdec_tell,
++        gst_flacdec_length, gst_flacdec_eof, gst_flacdec_write,
++        gst_flacdec_metadata_callback, gst_flacdec_error_callback, flacdec);
++    if (res != FLAC__STREAM_DECODER_INIT_STATUS_OK) {
+       GST_ELEMENT_ERROR (flacdec, LIBRARY, INIT, (NULL),
+-          (FLAC__SeekableStreamDecoderStateString[res]));
++          (FLAC__StreamDecoderInitStatusString[res]));
+       return;
+     }
+-    /*    FLAC__seekable_stream_decoder_process_metadata (flacdec->decoder); */
+     flacdec->init = FALSE;
+   }
+ 
+   if (flacdec->seek_pending) {
+     GST_DEBUG ("perform seek to sample %" G_GINT64_FORMAT, flacdec->seek_value);
+ 
+-    if (FLAC__seekable_stream_decoder_seek_absolute (flacdec->decoder,
++    if (FLAC__stream_decoder_seek_absolute (flacdec->decoder,
+             flacdec->seek_value)) {
+       flacdec->total_samples = flacdec->seek_value;
+       GST_DEBUG ("seek done");
+@@ -587,14 +563,14 @@ gst_flacdec_loop (GstElement * element)
+   }
+ 
+   GST_DEBUG ("flacdec: processing single");
+-  res = FLAC__seekable_stream_decoder_process_single (flacdec->decoder);
++  res = FLAC__stream_decoder_process_single (flacdec->decoder);
+   GST_DEBUG ("flacdec: checking for EOS");
+-  if (FLAC__seekable_stream_decoder_get_state (flacdec->decoder) ==
+-      FLAC__SEEKABLE_STREAM_DECODER_END_OF_STREAM) {
++  if (FLAC__stream_decoder_get_state (flacdec->decoder) ==
++      FLAC__STREAM_DECODER_END_OF_STREAM) {
+     GstEvent *event;
+ 
+     GST_DEBUG ("flacdec: sending EOS event");
+-    FLAC__seekable_stream_decoder_reset (flacdec->decoder);
++    FLAC__stream_decoder_reset (flacdec->decoder);
+ 
+     if (GST_PAD_IS_USABLE (flacdec->srcpad)) {
+       event = gst_event_new (GST_EVENT_EOS);
+@@ -777,7 +753,7 @@ gst_flacdec_change_state (GstElement * element)
+       flacdec->total_samples = 0;
+       flacdec->eos = FALSE;
+       if (flacdec->init == FALSE) {
+-        FLAC__seekable_stream_decoder_reset (flacdec->decoder);
++        FLAC__stream_decoder_reset (flacdec->decoder);
+       }
+       break;
+     case GST_STATE_PAUSED_TO_PLAYING:

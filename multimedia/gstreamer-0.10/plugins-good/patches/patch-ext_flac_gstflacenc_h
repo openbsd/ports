@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_flac_gstflacenc_h,v 1.1 2007/09/18 18:33:25 naddy Exp $
+--- ext/flac/gstflacenc.h.orig	Mon Sep 17 19:57:02 2007
++++ ext/flac/gstflacenc.h	Mon Sep 17 19:57:18 2007
+@@ -54,7 +54,7 @@ struct _GstFlacEnc {
+   gboolean       stopped;
+   FLAC__int32   *data;
+ 
+-  FLAC__SeekableStreamEncoder *encoder;
++  FLAC__StreamEncoder *encoder;
+   FLAC__StreamMetadata **meta;
+ 
+   GstTagList *     tags;

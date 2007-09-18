@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_flac_gstflacdec_h,v 1.1 2007/09/18 18:33:25 naddy Exp $
+--- ext/flac/gstflacdec.h.orig	Sun Sep 16 23:11:04 2007
++++ ext/flac/gstflacdec.h	Sun Sep 16 23:11:16 2007
+@@ -47,7 +47,7 @@ struct _FlacDec {
+   GstPad 	*sinkpad,*srcpad;
+   GstByteStream *bs;
+ 
+-  FLAC__SeekableStreamDecoder *decoder;
++  FLAC__StreamDecoder *decoder;
+   gint		 channels;
+   gint		 depth;
+   gint		 width;
