@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_shellcode-signatures_sch_namespace_cpp,v 1.1 2007/09/18 18:30:19 rui Exp $
+--- modules/shellcode-signatures/sch_namespace.cpp.orig	Fri Sep  7 21:58:58 2007
++++ modules/shellcode-signatures/sch_namespace.cpp	Fri Sep  7 22:00:11 2007
+@@ -107,7 +107,7 @@ bool NamespaceShellcodeHandler::Init()
+ 	if ( (m_Pcre = pcre_compile(m_Pattern.c_str(), PCRE_DOTALL, &pcreEerror, (int *)&pcreErrorPos, 0)) == NULL )
+ 	{
+ 		logCrit("%s could not compile pattern \n\t\"%s\"\n\t Error:\"%s\" at Position %u", 
+-				m_ShellcodeHandlerName.c_str(), pcreEerror, pcreErrorPos);
++				m_ShellcodeHandlerName.c_str(), m_Pattern.c_str(), pcreEerror, pcreErrorPos);
+ 		return false;
+ 	} else
+ 	{
