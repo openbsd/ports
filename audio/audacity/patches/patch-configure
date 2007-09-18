@@ -1,6 +1,73 @@
-$OpenBSD: patch-configure,v 1.6 2007/09/12 21:41:23 merdely Exp $
---- configure.orig	Fri May 18 00:56:02 2007
-+++ configure	Wed Sep 12 15:29:36 2007
+$OpenBSD: patch-configure,v 1.7 2007/09/18 18:27:00 mgrimm Exp $
+--- configure.orig	Fri May 18 06:56:02 2007
++++ configure	Sun Sep 16 10:52:20 2007
+@@ -4316,13 +4316,13 @@ else
+ fi;
+ 
+ 
+-   echo "$as_me:$LINENO: checking for FLAC__file_decoder_new in -lFLAC" >&5
+-echo $ECHO_N "checking for FLAC__file_decoder_new in -lFLAC... $ECHO_C" >&6
+-if test "${ac_cv_lib_FLAC_FLAC__file_decoder_new+set}" = set; then
++   echo "$as_me:$LINENO: checking for FLAC__stream_decoder_new in -lFLAC" >&5
++echo $ECHO_N "checking for FLAC__stream_decoder_new in -lFLAC... $ECHO_C" >&6
++if test "${ac_cv_lib_FLAC_FLAC__stream_decoder_new+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lFLAC -lFLAC++ -lFLAC $LIBS"
++LIBS="-lFLAC -lFLAC++ -lFLAC -logg $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -4336,11 +4336,11 @@ extern "C"
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char FLAC__file_decoder_new ();
++char FLAC__stream_decoder_new ();
+ int
+ main ()
+ {
+-FLAC__file_decoder_new ();
++FLAC__stream_decoder_new ();
+   ;
+   return 0;
+ }
+@@ -4367,20 +4367,20 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_lib_FLAC_FLAC__file_decoder_new=yes
++  ac_cv_lib_FLAC_FLAC__stream_decoder_new=yes
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-ac_cv_lib_FLAC_FLAC__file_decoder_new=no
++ac_cv_lib_FLAC_FLAC__stream_decoder_new=no
+ fi
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-echo "$as_me:$LINENO: result: $ac_cv_lib_FLAC_FLAC__file_decoder_new" >&5
+-echo "${ECHO_T}$ac_cv_lib_FLAC_FLAC__file_decoder_new" >&6
+-if test $ac_cv_lib_FLAC_FLAC__file_decoder_new = yes; then
++echo "$as_me:$LINENO: result: $ac_cv_lib_FLAC_FLAC__stream_decoder_new" >&5
++echo "${ECHO_T}$ac_cv_lib_FLAC_FLAC__stream_decoder_new" >&6
++if test $ac_cv_lib_FLAC_FLAC__stream_decoder_new = yes; then
+   lib_found="yes"
+ else
+   lib_found="no"
+@@ -4534,7 +4534,7 @@ fi
+ 
+    if test "x$lib_found" = "xyes" && test "x$header_found" = "xyes" ; then
+       LIBFLAC_SYSTEM_AVAILABLE="yes"
+-      LIBFLAC_SYSTEM_LIBS="-lFLAC++ -lFLAC"
++      LIBFLAC_SYSTEM_LIBS="-lFLAC++ -lFLAC -logg"
+       LIBFLAC_SYSTEM_CPPSYMBOLS="USE_LIBFLAC"
+       { echo "$as_me:$LINENO: FLAC libraries are available as system libraries" >&5
+ echo "$as_me: FLAC libraries are available as system libraries" >&6;}
 @@ -8516,7 +8516,7 @@ echo "$as_me: WARNING: no configuration information is
        { echo "$as_me:$LINENO: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&5
  echo "$as_me: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&6;}
