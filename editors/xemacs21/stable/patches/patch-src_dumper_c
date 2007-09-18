@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_dumper_c,v 1.1 2003/04/24 18:15:39 lebel Exp $
+$OpenBSD: patch-src_dumper_c,v 1.1 2007/09/18 18:56:03 aanriot Exp $
 --- src/dumper.c.orig	Fri Jan  3 10:59:44 2003
 +++ src/dumper.c	Mon Feb 24 10:52:09 2003
 @@ -1050,7 +1050,7 @@ pdump (void)

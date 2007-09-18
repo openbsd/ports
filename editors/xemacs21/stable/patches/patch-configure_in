@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.4 2005/11/03 15:51:05 aanriot Exp $
---- configure.in.orig	Mon Jan 31 03:54:47 2005
-+++ configure.in	Mon Oct 10 21:36:20 2005
-@@ -3768,6 +3768,7 @@ if test "$with_mule" = "yes" ; then
+$OpenBSD: patch-configure_in,v 1.1 2007/09/18 18:56:03 aanriot Exp $
+--- configure.in.orig	Fri Dec  8 04:31:16 2006
++++ configure.in	Thu Aug 30 23:15:13 2007
+@@ -3847,6 +3847,7 @@ if test "$with_mule" = "yes" ; then
    XE_ADD_OBJS(mule.o mule-ccl.o mule-charset.o file-coding.o)
  
    dnl Use -lintl to get internationalized strerror for Mule

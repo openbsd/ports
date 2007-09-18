@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_editfns_c,v 1.2 2003/04/24 18:15:39 lebel Exp $
---- src/editfns.c.orig	Mon Mar 25 22:38:26 2002
-+++ src/editfns.c	Mon Mar 25 22:41:42 2002
-@@ -873,6 +873,7 @@ get_home_directory (void)
+$OpenBSD: patch-src_editfns_c,v 1.1 2007/09/18 18:56:03 aanriot Exp $
+--- src/editfns.c.orig	Sat Jul  1 07:19:57 2006
++++ src/editfns.c	Thu Aug 30 23:15:09 2007
+@@ -876,6 +876,7 @@ get_home_directory (void)
       between XEmacs and the outside world, the very moment we first get
       the data.  --ben */
    int output_home_warning = 0;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_editfns_c,v 1.2 2003/04/24 18:15:39 lebel Exp $
  
    if (cached_home_directory == NULL)
      {
-@@ -919,6 +920,13 @@ get_home_directory (void)
+@@ -922,6 +923,13 @@ get_home_directory (void)
  # endif
  	    }
  #else	/* !WIN32_NATIVE */
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_editfns_c,v 1.2 2003/04/24 18:15:39 lebel Exp $
  	  /*
  	   * Unix, typically.
  	   * Using "/" isn't quite right, but what should we do?
-@@ -927,6 +935,7 @@ get_home_directory (void)
+@@ -930,6 +938,7 @@ get_home_directory (void)
  	   */
  	  cached_home_directory = (Extbyte *) "/";
  	  output_home_warning = 1;

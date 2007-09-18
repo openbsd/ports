@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in_in,v 1.2 2003/04/24 18:15:39 lebel Exp $
+$OpenBSD: patch-src_Makefile_in_in,v 1.1 2007/09/18 18:56:03 aanriot Exp $
 --- src/Makefile.in.in.orig	Wed Jan 15 13:18:00 2003
 +++ src/Makefile.in.in	Mon Feb 24 10:39:21 2003
 @@ -28,8 +28,10 @@ PROGNAME=@PROGNAME@
