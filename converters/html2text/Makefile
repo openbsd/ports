@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/17 19:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/18 09:00:33 steven Exp $
 
 COMMENT=		advanced HTML-to-text converter
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
-MASTER_SITES=		http://www.mbayer.de/html2text/downloads/ \
-			ftp://ftp.ibiblio.org/pub/linux/apps/www/converters/html2text-1.3.2.tar.gz
+MASTER_SITES= 		http://www.mbayer.de/html2text/downloads/ \
+			ftp://ftp.ibiblio.org/pub/linux/apps/www/converters/
 
 CONFIGURE_STYLE=	simple
 
