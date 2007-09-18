@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/03 00:10:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/18 23:36:54 sthen Exp $
 bin/ace.pl
-${P5ARCH}/
 ${P5ACE}/Ace/
 ${P5ACE}/Ace.pm
 ${P5ACE}/Ace/Browser/
@@ -117,7 +116,7 @@ ${P5ACE}/auto/Ace/timestamps.al
 ${P5ACE}/auto/Ace/title.al
 ${P5ACE}/auto/Ace/version.al
 %%opt%%
-@man man/man1/ace.pl.1
+@comment @man man/man1/ace.pl.1
 @man man/man3p/Ace.3p
 @man man/man3p/Ace::Browser::AceSubs.3p
 @man man/man3p/Ace::Browser::SearchSubs.3p
