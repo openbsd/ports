@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_xdgmime_xdgmime_c,v 1.1 2007/09/18 06:23:28 ajacoutot Exp $
+--- src/xdgmime/xdgmime.c.orig	Fri Oct 27 19:51:44 2006
++++ src/xdgmime/xdgmime.c	Tue Sep 18 08:10:53 2007
+@@ -219,7 +219,11 @@ void xdg_run_command_on_dirs ( XdgDirectoryFunc func,
+ 
+     xdg_data_dirs = getenv ( "XDG_DATA_DIRS" );
+     if ( xdg_data_dirs == NULL )
++#ifdef __OpenBSD__
++        xdg_data_dirs = "!!LOCALBASE!!/share";
++#else
+         xdg_data_dirs = "/usr/local/share:/usr/share";
++#endif
+ 
+     ptr = xdg_data_dirs;
+ 

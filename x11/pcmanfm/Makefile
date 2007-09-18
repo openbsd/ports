@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/10 06:16:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/18 06:23:28 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
 DISTNAME=	pcmanfm-0.3.2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pcmanfm.sourceforge.net/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -38,5 +38,9 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lm"
 CONFIGURE_ARGS=	--disable-hal
+
+pre-configure:
+	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+		${WRKSRC}/src/xdgmime/xdgmime.c
 
 .include <bsd.port.mk>
