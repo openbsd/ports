@@ -1,0 +1,12 @@
+$OpenBSD: patch-akode_plugins_xiph_decoder_flac113_decoder_cpp,v 1.1 2007/09/18 18:24:09 mgrimm Exp $
+--- akode/plugins/xiph_decoder/flac113_decoder.cpp.orig	Sun Sep  9 16:03:54 2007
++++ akode/plugins/xiph_decoder/flac113_decoder.cpp	Sun Sep  9 16:05:48 2007
+@@ -108,7 +108,7 @@ struct FLACDecoder::private_data {
+ static FLAC__StreamDecoderReadStatus flac_read_callback(
+         const FLAC__StreamDecoder *,
+         FLAC__byte buffer[],
+-        unsigned *bytes,
++        size_t *bytes,
+         void *client_data)
+ {
+     FLACDecoder::private_data *data = (FLACDecoder::private_data*)client_data;

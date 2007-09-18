@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 21:26:00 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/18 18:24:09 mgrimm Exp $
 COMMENT=	Decoding Library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	akode                2.1      # .2.0
 
 CATEGORIES=	audio multimedia x11/kde
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	OggFLAC,FLAC::audio/flac \
+LIB_DEPENDS=	FLAC.>=8::audio/flac \
 		mad::audio/libmad \
 		speex::audio/speex \
 		vorbis,vorbisfile::audio/libvorbis \
