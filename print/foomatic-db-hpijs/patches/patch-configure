@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/09/18 16:15:09 ajacoutot Exp $
+--- configure.orig	Sat Sep 15 14:44:27 2007
++++ configure	Sat Sep 15 14:45:28 2007
+@@ -251,7 +251,7 @@ exec 6>&1
+ #
+ # Initializations.
+ #
+-ac_default_prefix=/usr/local
++ac_default_prefix=!!PREFIX!!
+ ac_config_libobj_dir=.
+ cross_compiling=no
+ subdirs=
+@@ -1365,8 +1365,8 @@ echo "${ECHO_T}no" >&6
+ fi
+ 
+ 
+-BINSEARCHPATH=/usr/bin:/bin:/usr/local/bin
+-DATASEARCHPATH=/usr/share:/usr/local/share:/usr/lib:/usr/local/lib:/opt
++BINSEARCHPATH=/usr/bin:/bin:!!LOCALBASE!!/bin
++DATASEARCHPATH=/usr/share:!!LOCALBASE!!/share:/usr/lib:!!LOCALBASE!!/lib:/opt
+ 
+ uname=`uname`
+ uversion=`uname -r | sed -e '1,$s/[^0-9]//g'`

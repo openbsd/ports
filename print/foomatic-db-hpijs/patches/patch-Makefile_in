@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/09/18 16:15:09 ajacoutot Exp $
+--- Makefile.in.orig	Mon Aug 20 18:53:25 2007
++++ Makefile.in	Sat Sep 15 15:14:27 2007
+@@ -62,7 +62,7 @@ install: install-db
+ 
+ install-db:
+ 	install -d $(DESTDIR)$(LIBDIR)
+-	tar cf - --exclude=CVS db | ( cd $(DESTDIR)$(LIBDIR) && tar xf -)
++	tar -cf - -s '/^.*CVS.*$$//' db | ( cd $(DESTDIR)$(LIBDIR) && tar xf -)
+ 
+ build: data-generators
+ 

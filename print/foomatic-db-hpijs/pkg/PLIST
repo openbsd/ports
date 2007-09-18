@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/18 16:15:09 ajacoutot Exp $
+share/foomatic/db/source/driver/hpijs.xml
+share/foomatic/db/source/opt/hpijs-Duplex.xml
+share/foomatic/db/source/opt/hpijs-InputSlot.xml
+share/foomatic/db/source/opt/hpijs-Model.xml
+share/foomatic/db/source/opt/hpijs-PageSize.xml
+share/foomatic/db/source/opt/hpijs-PrintoutMode.xml
+share/foomatic/db/source/opt/hpijs-Quality.xml
