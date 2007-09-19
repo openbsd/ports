@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_support_c,v 1.1 2007/01/11 17:36:40 jasper Exp $
---- src/support.c.orig	Sun Jan 23 18:37:41 2005
-+++ src/support.c	Tue Jan  2 16:16:16 2007
-@@ -149,6 +149,7 @@
+$OpenBSD: patch-src_support_c,v 1.2 2007/09/19 19:15:13 jasper Exp $
+--- src/support.c.orig	Wed Sep 19 19:27:39 2007
++++ src/support.c	Wed Sep 19 19:37:42 2007
+@@ -168,6 +168,7 @@ utf8_to_locale(char *utf8str)
    gchar *str;
    gsize rb, wb;
    GError *error;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_support_c,v 1.1 2007/01/11 17:36:40 jasper Exp $
  
    if( noconvert )
      return g_strdup(utf8str);
-@@ -156,15 +157,11 @@
+@@ -175,15 +176,11 @@ utf8_to_locale(char *utf8str)
    rb = 0; /* bytes read */
    wb = 0; /* bytes written */
    error = NULL;

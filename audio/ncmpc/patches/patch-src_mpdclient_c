@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_mpdclient_c,v 1.1 2007/01/11 17:36:40 jasper Exp $
---- src/mpdclient.c.orig	Sun Jan 23 18:37:42 2005
-+++ src/mpdclient.c	Tue Jan  2 16:21:06 2007
-@@ -846,10 +846,9 @@
+$OpenBSD: patch-src_mpdclient_c,v 1.2 2007/09/19 19:15:13 jasper Exp $
+--- src/mpdclient.c.orig	Wed Sep 19 19:27:39 2007
++++ src/mpdclient.c	Wed Sep 19 19:37:41 2007
+@@ -848,10 +848,9 @@ mpdclient_filelist_get(mpdclient_t *c, gchar *path)
  {
    mpdclient_filelist_t *filelist;
    mpd_InfoEntity *entity;
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_mpdclient_c,v 1.1 2007/01/11 17:36:40 jasper Exp $
    filelist = g_malloc0(sizeof(mpdclient_filelist_t));
    if( path && path[0] && strcmp(path, "/") )
      {
-@@ -871,11 +870,9 @@
+@@ -873,11 +872,9 @@ mpdclient_filelist_get(mpdclient_t *c, gchar *path)
    
    if( mpdclient_finish_command(c) )
      {

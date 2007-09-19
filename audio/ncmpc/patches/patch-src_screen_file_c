@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_screen_file_c,v 1.1 2007/01/11 17:36:40 jasper Exp $
---- src/screen_file.c.orig	Sun Jan 23 18:37:42 2005
-+++ src/screen_file.c	Tue Jan  2 16:19:47 2007
-@@ -255,7 +255,7 @@
+$OpenBSD: patch-src_screen_file_c,v 1.2 2007/09/19 19:15:13 jasper Exp $
+--- src/screen_file.c.orig	Wed Sep 19 19:27:39 2007
++++ src/screen_file.c	Wed Sep 19 19:37:41 2007
+@@ -230,7 +230,7 @@ change_directory(screen_t *screen, mpdclient_t *c, fil
        {
  	/* enter sub */
  	mpd_Directory *dir = entity->info.directory;
 -	path = utf8_to_locale(dir->path);      
 +      	path = g_strdup(dir->path);
  	/* save current list window state */
- 	push_lw_state(); 
- 	list_window_reset(lw);
-@@ -566,7 +566,7 @@
+ 	list_window_push_state(lw_state,lw); 
+       }
+@@ -549,7 +549,7 @@ browse_close(void)
  static char *
  browse_title(char *str, size_t size)
  {
