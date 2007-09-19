@@ -1,0 +1,9 @@
+Complete documentation on Django may be found in:
+${PREFIX}/share/doc/${LNAME}/
+
+or online:
+http://www.djangoproject.com/documentation/${V}/
+
+If you want a database for Django you should install the Python
+database adapter(s) of your choice ('pkg_add py-psycopg',
+'pkg_add py-mysql', etc).
