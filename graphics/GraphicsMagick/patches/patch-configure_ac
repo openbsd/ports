@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2006/10/29 10:53:40 espie Exp $
---- configure.ac.orig	Sat Oct 28 17:30:31 2006
-+++ configure.ac	Sat Oct 28 17:31:00 2006
-@@ -2065,7 +2065,7 @@ AC_SUBST(PERLMAINCC)
+$OpenBSD: patch-configure_ac,v 1.2 2007/09/19 05:58:14 steven Exp $
+--- configure.ac.orig	Wed Sep  5 22:08:48 2007
++++ configure.ac	Tue Sep 18 16:05:43 2007
+@@ -2070,7 +2070,7 @@ AC_SUBST(PERLMAINCC)
  #
  
  # Subdirectory under lib to place GraphicsMagick lib files
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2006/10/29 10:53:40 espie Exp $
  AC_DEFINE_UNQUOTED(MagickLibSubdir,"$MagickLibSubdir",Subdirectory of lib where GraphicsMagick architecture dependent files are installed)
  
  # Path to GraphicsMagick bin directory
-@@ -2128,7 +2128,7 @@ AC_SUBST(MagickFilterModulesPath)
+@@ -2133,7 +2133,7 @@ AC_SUBST(MagickFilterModulesPath)
  
  #
  # Path to GraphicsMagick share files

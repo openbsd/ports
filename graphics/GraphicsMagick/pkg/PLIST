@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/29 10:53:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/19 05:58:14 steven Exp $
 %%SHARED%%
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -125,9 +125,7 @@ share/GraphicsMagick/www/Changelog.html
 share/GraphicsMagick/www/Copyright.html
 share/GraphicsMagick/www/FAQ.html
 share/GraphicsMagick/www/GraphicsMagick.html
-share/GraphicsMagick/www/INSTALL-mac.html
 share/GraphicsMagick/www/INSTALL-unix.html
-share/GraphicsMagick/www/INSTALL-vms.html
 share/GraphicsMagick/www/INSTALL-windows.html
 share/GraphicsMagick/www/ImageMagickObject.html
 share/GraphicsMagick/www/Magick++/
