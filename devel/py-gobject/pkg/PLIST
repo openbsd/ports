@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/09 21:43:48 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/19 13:19:50 martynas Exp $
 @conflict py-gtk2-2.8.6*
 include/pygtk-2.0/
 include/pygtk-2.0/pygobject.h
-lib/pkgconfig/
 lib/pkgconfig/pygobject-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/dsextras.py
