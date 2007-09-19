@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/09/06 07:33:53 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/09/19 05:47:36 steven Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -203,24 +203,8 @@ share/doc/apache2/env.html.en
 share/doc/apache2/env.html.ja.euc-jp
 share/doc/apache2/env.html.ko.euc-kr
 share/doc/apache2/faq/
-share/doc/apache2/faq/all_in_one.html
-share/doc/apache2/faq/all_in_one.html.en
-share/doc/apache2/faq/all_in_one.html.ja.euc-jp
-share/doc/apache2/faq/all_in_one.html.ko.euc-kr
-share/doc/apache2/faq/background.html
-share/doc/apache2/faq/background.html.en
-share/doc/apache2/faq/error.html
-share/doc/apache2/faq/error.html.en
-share/doc/apache2/faq/error.html.ja.euc-jp
-share/doc/apache2/faq/error.html.ko.euc-kr
 share/doc/apache2/faq/index.html
 share/doc/apache2/faq/index.html.en
-share/doc/apache2/faq/index.html.ja.euc-jp
-share/doc/apache2/faq/index.html.ko.euc-kr
-share/doc/apache2/faq/support.html
-share/doc/apache2/faq/support.html.en
-share/doc/apache2/faq/support.html.ja.euc-jp
-share/doc/apache2/faq/support.html.ko.euc-kr
 share/doc/apache2/filter.html
 share/doc/apache2/filter.html.en
 share/doc/apache2/filter.html.es
@@ -235,6 +219,7 @@ share/doc/apache2/glossary.html.ko.euc-kr
 share/doc/apache2/handler.html
 share/doc/apache2/handler.html.en
 share/doc/apache2/handler.html.es
+share/doc/apache2/handler.html.fr
 share/doc/apache2/handler.html.ja.euc-jp
 share/doc/apache2/handler.html.ko.euc-kr
 share/doc/apache2/handler.html.ru.koi8-r
@@ -315,6 +300,7 @@ share/doc/apache2/invoking.html
 share/doc/apache2/invoking.html.de
 share/doc/apache2/invoking.html.en
 share/doc/apache2/invoking.html.es
+share/doc/apache2/invoking.html.fr
 share/doc/apache2/invoking.html.ja.euc-jp
 share/doc/apache2/invoking.html.ko.euc-kr
 share/doc/apache2/invoking.html.ru.koi8-r
@@ -645,6 +631,7 @@ share/doc/apache2/mpm.html
 share/doc/apache2/mpm.html.de
 share/doc/apache2/mpm.html.en
 share/doc/apache2/mpm.html.es
+share/doc/apache2/mpm.html.fr
 share/doc/apache2/mpm.html.ja.euc-jp
 share/doc/apache2/mpm.html.ko.euc-kr
 share/doc/apache2/new_features_2_0.html
@@ -657,6 +644,7 @@ share/doc/apache2/new_features_2_0.html.pt-br
 share/doc/apache2/new_features_2_0.html.ru.koi8-r
 share/doc/apache2/new_features_2_2.html
 share/doc/apache2/new_features_2_2.html.en
+share/doc/apache2/new_features_2_2.html.fr
 share/doc/apache2/new_features_2_2.html.ko.euc-kr
 share/doc/apache2/new_features_2_2.html.pt-br
 share/doc/apache2/platform/
@@ -769,6 +757,7 @@ share/doc/apache2/stopping.html
 share/doc/apache2/stopping.html.de
 share/doc/apache2/stopping.html.en
 share/doc/apache2/stopping.html.es
+share/doc/apache2/stopping.html.fr
 share/doc/apache2/stopping.html.ja.euc-jp
 share/doc/apache2/stopping.html.ko.euc-kr
 share/doc/apache2/style/
@@ -997,6 +986,8 @@ share/examples/apache2/icons/
 @sample /var/apache2/icons/
 share/examples/apache2/icons/README
 @sample /var/apache2/icons/README
+share/examples/apache2/icons/README.html
+@sample /var/apache2/icons/README.html
 share/examples/apache2/icons/a.gif
 @sample /var/apache2/icons/a.gif
 share/examples/apache2/icons/a.png
@@ -1253,8 +1244,6 @@ share/examples/apache2/icons/script.png
 @sample /var/apache2/icons/script.png
 share/examples/apache2/icons/small/
 @sample /var/apache2/icons/small/
-share/examples/apache2/icons/small/README.txt
-@sample /var/apache2/icons/small/README.txt
 share/examples/apache2/icons/small/back.gif
 @sample /var/apache2/icons/small/back.gif
 share/examples/apache2/icons/small/back.png
