@@ -1,0 +1,4 @@
+RubyRRDtool provides ruby bindings for RRDtool functions (via librrd), with
+functionality comparable to the native RRDtool perl bindings. This extension
+is intended for developers who want to access their RRDtool databases from
+within ruby.

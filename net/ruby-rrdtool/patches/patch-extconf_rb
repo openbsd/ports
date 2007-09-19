@@ -1,0 +1,12 @@
+$OpenBSD: patch-extconf_rb,v 1.1.1.1 2007/09/19 19:38:36 sturm Exp $
+--- extconf.rb.orig	Tue Sep 18 16:20:21 2007
++++ extconf.rb	Tue Sep 18 16:20:49 2007
+@@ -5,7 +5,7 @@ require 'mkmf'
+ 
+ # Be sure to say where you rrdtool lives:
+ # ruby ./extconf.rb --with-rrd-dir=/usr/local/rrdtool-1.2.12
+-libpaths=%w(/lib /usr/lib /usr/local/lib)
++libpaths=%w(/usr/lib %%X11BASE%%/lib %%LOCALBASE%%/lib)
+ %w(art_lgpl_2 freetype png z).sort.reverse.each do |lib|
+ 	find_library(lib, nil, *libpaths)
+ end
