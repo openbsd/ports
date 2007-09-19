@@ -1,7 +1,7 @@
-$OpenBSD: patch-coders_png_c,v 1.4 2007/05/20 19:44:47 steven Exp $
---- coders/png.c.orig	Sat May  5 02:42:11 2007
-+++ coders/png.c	Wed May 16 17:41:56 2007
-@@ -1768,7 +1768,7 @@ static Image *ReadOnePNGImage(MngInfo *mng_info,
+$OpenBSD: patch-coders_png_c,v 1.5 2007/09/19 18:46:55 sthen Exp $
+--- coders/png.c.orig	Mon Sep 17 22:18:06 2007
++++ coders/png.c	Mon Sep 17 22:18:35 2007
+@@ -1763,7 +1763,7 @@ static Image *ReadOnePNGImage(MngInfo *mng_info,
    png_set_read_user_chunk_fn(ping, image, read_vpag_chunk_callback);
  #endif
  

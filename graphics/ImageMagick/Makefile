@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.97 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.98 2007/09/19 18:46:55 sthen Exp $
 
 COMMENT=		image processing tools
 
-VER=			6.3.4
-DASHVER=		1
+VER=			6.3.5
+DASHVER=		9
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 SHARED_LIBS=		Magick++	12.0	\
