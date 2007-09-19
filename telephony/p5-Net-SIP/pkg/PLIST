@@ -1,0 +1,75 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/19 22:47:02 bluhm Exp $
+${P5SITE}/Net/SIP/
+${P5SITE}/Net/SIP.pm
+${P5SITE}/Net/SIP.pod
+${P5SITE}/Net/SIP/Authorize.pm
+${P5SITE}/Net/SIP/Authorize.pod
+${P5SITE}/Net/SIP/Debug.pm
+${P5SITE}/Net/SIP/Debug.pod
+${P5SITE}/Net/SIP/Dispatcher/
+${P5SITE}/Net/SIP/Dispatcher.pm
+${P5SITE}/Net/SIP/Dispatcher.pod
+${P5SITE}/Net/SIP/Dispatcher/Eventloop.pm
+${P5SITE}/Net/SIP/Dispatcher/Eventloop.pod
+${P5SITE}/Net/SIP/Endpoint/
+${P5SITE}/Net/SIP/Endpoint.pm
+${P5SITE}/Net/SIP/Endpoint.pod
+${P5SITE}/Net/SIP/Endpoint/Context.pm
+${P5SITE}/Net/SIP/Endpoint/Context.pod
+${P5SITE}/Net/SIP/Leg.pm
+${P5SITE}/Net/SIP/Leg.pod
+${P5SITE}/Net/SIP/NATHelper/
+${P5SITE}/Net/SIP/NATHelper/Base.pm
+${P5SITE}/Net/SIP/NATHelper/Base.pod
+${P5SITE}/Net/SIP/NATHelper/Client.pm
+${P5SITE}/Net/SIP/NATHelper/Client.pod
+${P5SITE}/Net/SIP/NATHelper/Local.pm
+${P5SITE}/Net/SIP/NATHelper/Local.pod
+${P5SITE}/Net/SIP/NATHelper/Server.pm
+${P5SITE}/Net/SIP/NATHelper/Server.pod
+${P5SITE}/Net/SIP/Packet.pm
+${P5SITE}/Net/SIP/Packet.pod
+${P5SITE}/Net/SIP/ReceiveChain.pm
+${P5SITE}/Net/SIP/ReceiveChain.pod
+${P5SITE}/Net/SIP/Registrar.pm
+${P5SITE}/Net/SIP/Registrar.pod
+${P5SITE}/Net/SIP/Request.pm
+${P5SITE}/Net/SIP/Request.pod
+${P5SITE}/Net/SIP/Response.pm
+${P5SITE}/Net/SIP/Response.pod
+${P5SITE}/Net/SIP/SDP.pm
+${P5SITE}/Net/SIP/SDP.pod
+${P5SITE}/Net/SIP/Simple/
+${P5SITE}/Net/SIP/Simple.pm
+${P5SITE}/Net/SIP/Simple.pod
+${P5SITE}/Net/SIP/Simple/Call.pm
+${P5SITE}/Net/SIP/Simple/Call.pod
+${P5SITE}/Net/SIP/Simple/RTP.pm
+${P5SITE}/Net/SIP/Simple/RTP.pod
+${P5SITE}/Net/SIP/StatelessProxy.pm
+${P5SITE}/Net/SIP/StatelessProxy.pod
+${P5SITE}/Net/SIP/Util.pm
+${P5SITE}/Net/SIP/Util.pod
+@man man/man3p/Net::SIP.3p
+@man man/man3p/Net::SIP::Authorize.3p
+@man man/man3p/Net::SIP::Debug.3p
+@man man/man3p/Net::SIP::Dispatcher.3p
+@man man/man3p/Net::SIP::Dispatcher::Eventloop.3p
+@man man/man3p/Net::SIP::Endpoint.3p
+@man man/man3p/Net::SIP::Endpoint::Context.3p
+@man man/man3p/Net::SIP::Leg.3p
+@man man/man3p/Net::SIP::NATHelper::Base.3p
+@man man/man3p/Net::SIP::NATHelper::Client.3p
+@man man/man3p/Net::SIP::NATHelper::Local.3p
+@man man/man3p/Net::SIP::NATHelper::Server.3p
+@man man/man3p/Net::SIP::Packet.3p
+@man man/man3p/Net::SIP::ReceiveChain.3p
+@man man/man3p/Net::SIP::Registrar.3p
+@man man/man3p/Net::SIP::Request.3p
+@man man/man3p/Net::SIP::Response.3p
+@man man/man3p/Net::SIP::SDP.3p
+@man man/man3p/Net::SIP::Simple.3p
+@man man/man3p/Net::SIP::Simple::Call.3p
+@man man/man3p/Net::SIP::Simple::RTP.3p
+@man man/man3p/Net::SIP::StatelessProxy.3p
+@man man/man3p/Net::SIP::Util.3p
