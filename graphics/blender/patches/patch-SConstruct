@@ -1,12 +1,12 @@
-$OpenBSD: patch-SConstruct,v 1.4 2007/05/25 12:19:14 steven Exp $
---- SConstruct.orig	Mon May  7 18:09:40 2007
-+++ SConstruct	Sun May 20 14:53:08 2007
-@@ -607,7 +607,7 @@ if env['WITH_BF_PLAYER']:
+$OpenBSD: patch-SConstruct,v 1.5 2007/09/20 19:58:49 steven Exp $
+--- SConstruct.orig	Tue Sep 18 06:59:24 2007
++++ SConstruct	Tue Sep 18 19:14:05 2007
+@@ -424,7 +424,7 @@ if env['WITH_BF_PLAYER']:
  
  if not env['WITH_BF_GAMEENGINE']:
      blendernogame = env.Alias('blendernogame', B.program_list)
 -    Depends(blendernogame,installtarget)
 +#    Depends(blendernogame,installtarget)
  
- Default(B.program_list)
- Default(installtarget)
+ Depends(nsiscmd, allinstall)
+ 

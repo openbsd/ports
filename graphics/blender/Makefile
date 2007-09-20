@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/20 19:58:49 steven Exp $
 
 COMMENT=	3D creation software
 
-DISTNAME=	blender-2.44
+DISTNAME=	blender-2.45
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.blender.org/
@@ -73,5 +73,8 @@ do-install:
 		${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/release/text/copy* \
 		${PREFIX}/share/doc/blender
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/release/freedesktop/icons/32x32/blender.png \
+		${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

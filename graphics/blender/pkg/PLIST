@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/05/25 12:19:14 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/09/20 19:58:49 steven Exp $
 bin/blender
 share/blender/
 share/blender/scripts/
@@ -35,7 +35,6 @@ share/blender/scripts/bpymodules/BPyWindow.py
 share/blender/scripts/bpymodules/ai2obj.py
 share/blender/scripts/bpymodules/defaultdoodads.py
 share/blender/scripts/bpymodules/dxfColorMap.py
-share/blender/scripts/bpymodules/dxfImportObjects.py
 share/blender/scripts/bpymodules/dxfReader.py
 share/blender/scripts/bpymodules/eps2obj.py
 share/blender/scripts/bpymodules/gimp2obj.py
@@ -67,7 +66,6 @@ share/blender/scripts/help_bpy_api.py
 share/blender/scripts/help_browser.py
 share/blender/scripts/help_getting_started.py
 share/blender/scripts/help_manual.py
-share/blender/scripts/help_py_reference.py
 share/blender/scripts/help_release_notes.py
 share/blender/scripts/help_tutorials.py
 share/blender/scripts/help_web_blender.py
@@ -147,3 +145,5 @@ share/doc/blender/GPL-license.txt
 share/doc/blender/Python-license.txt
 share/doc/blender/blender.html
 share/doc/blender/copyright.txt
+share/pixmaps/
+share/pixmaps/blender.png
