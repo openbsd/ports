@@ -1,10 +1,4 @@
-# New ports collection makefile for:    upsd
-# Version required:     2.0.1.6
-# Date created:         22 Nov 1999
-# Whom:                 Kevin Lo <kevlo@openbsd.org>
-#
-# $OpenBSD: Makefile,v 1.17 2007/09/15 21:14:03 merdely Exp $
-#
+# $OpenBSD: Makefile,v 1.18 2007/09/20 10:25:36 ajacoutot Exp $
 
 COMMENT=	APC Smart UPS Monitoring Daemon
 
