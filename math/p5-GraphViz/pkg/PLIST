@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/20 05:06:22 msf Exp $
+${P5SITE}/Devel/
+${P5SITE}/Devel/GraphVizProf.pm
+${P5SITE}/GraphViz/
+${P5SITE}/GraphViz.pm
+${P5SITE}/GraphViz/Data/
+${P5SITE}/GraphViz/Data/Grapher.pm
+${P5SITE}/GraphViz/No.pm
+${P5SITE}/GraphViz/Parse/
+${P5SITE}/GraphViz/Parse/RecDescent.pm
+${P5SITE}/GraphViz/Parse/Yacc.pm
+${P5SITE}/GraphViz/Parse/Yapp.pm
+${P5SITE}/GraphViz/Regex.pm
+${P5SITE}/GraphViz/Small.pm
+${P5SITE}/GraphViz/XML.pm
+@man man/man3p/Devel::GraphVizProf.3p
+@man man/man3p/GraphViz.3p
+@man man/man3p/GraphViz::Data::Grapher.3p
+@man man/man3p/GraphViz::No.3p
+@man man/man3p/GraphViz::Parse::RecDescent.3p
+@man man/man3p/GraphViz::Parse::Yacc.3p
+@man man/man3p/GraphViz::Parse::Yapp.3p
+@man man/man3p/GraphViz::Regex.3p
+@man man/man3p/GraphViz::Small.3p
+@man man/man3p/GraphViz::XML.3p

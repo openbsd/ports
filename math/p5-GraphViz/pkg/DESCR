@@ -1,0 +1,4 @@
+This module provides an interface to layout and image generation of
+directed and undirected graphs in a variety of formats (PostScript, PNG,
+etc.) using the "dot", "neato" and "twopi" programs from the GraphViz
+project
