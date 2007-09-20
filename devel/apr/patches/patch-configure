@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2007/07/05 16:01:28 steven Exp $
---- configure.orig	Tue Jun  5 00:05:31 2007
-+++ configure	Tue Jun 26 08:30:40 2007
+$OpenBSD: patch-configure,v 1.7 2007/09/20 10:17:21 steven Exp $
+--- configure.orig	Tue Sep  4 03:42:02 2007
++++ configure	Sat Sep 15 21:15:35 2007
 @@ -4326,6 +4326,11 @@ if test "x$apr_preload_done" != "xyes" ; then
          ;;
      *-openbsd*)
@@ -31,7 +31,7 @@ $OpenBSD: patch-configure,v 1.6 2007/07/05 16:01:28 steven Exp $
      LIBS="$apr_ptc_libs $lib"
  
  if test "$cross_compiling" = yes; then
-@@ -39542,7 +39547,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
+@@ -39676,7 +39681,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
  done
  if test ".$ac_rc" = .yes; then
      :
@@ -40,7 +40,7 @@ $OpenBSD: patch-configure,v 1.6 2007/07/05 16:01:28 steven Exp $
  else
      :
      hassysvser="0"
-@@ -43577,7 +43582,7 @@ esac
+@@ -43711,7 +43716,7 @@ esac
  
  
  
