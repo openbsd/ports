@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/20 15:14:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/20 15:20:01 sturm Exp $
 
 COMMENT=	unified interface to MIME encoding and decoding
 
 MODULES=	cpan
 DISTNAME=	Email-MIME-Encodings-1.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	mail
 
 MAINTAINER=	Sam Smith <s@msmith.net>
