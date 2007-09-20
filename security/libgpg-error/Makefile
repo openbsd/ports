@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2007/09/20 10:37:26 steven Exp $
 
 COMMENT=	error codes for GnuPG related software
 
-DISTNAME=	libgpg-error-1.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	libgpg-error-1.5
 CATEGORIES=	security devel
-SHARED_LIBS=	gpg-error	1.4
-MODGNU_SHARED_LIBS=gpg-error	''
-LIBgpg-error_ALIAS=gpg_error
+SHARED_LIBS=	gpg-error	2.0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +17,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/libgpg-error/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/libgpg-error/ \
 		http://sunsite.dk/pub/security/gcrypt/libgpg-error/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/libgpg-error/
+EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
 

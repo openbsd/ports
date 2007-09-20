@@ -1,12 +1,12 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.2 2005/12/04 17:21:09 sturm Exp $
---- tests/Makefile.in.orig	Mon Jun 20 20:35:10 2005
-+++ tests/Makefile.in	Mon Oct 31 09:17:44 2005
-@@ -76,7 +76,7 @@ am__EXEEXT_1 = t-strerror$(EXEEXT)
+$OpenBSD: patch-tests_Makefile_in,v 1.3 2007/09/20 10:37:26 steven Exp $
+--- tests/Makefile.in.orig	Thu Nov 30 16:00:11 2006
++++ tests/Makefile.in	Fri Sep 14 21:05:31 2007
+@@ -74,7 +74,7 @@ am__EXEEXT_1 = t-strerror$(EXEEXT) t-syserror$(EXEEXT)
  PROGRAMS = $(noinst_PROGRAMS)
  t_strerror_SOURCES = t-strerror.c
  t_strerror_OBJECTS = t-strerror.$(OBJEXT)
 -t_strerror_LDADD = $(LDADD)
 +t_strerror_LDADD = $(LDADD) @LTLIBINTL@
  t_strerror_DEPENDENCIES = ../src/libgpg-error.la
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/depcomp
+ t_syserror_SOURCES = t-syserror.c
+ t_syserror_OBJECTS = t-syserror.$(OBJEXT)
