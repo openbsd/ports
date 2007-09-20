@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/20 22:07:50 sthen Exp $
 
 COMMENT=	multi-platform cd player development library
-DISTNAME=	libcdaudio-0.99.6
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS +=	cdaudio              1.0      # .1.0
+DISTNAME=	libcdaudio-0.99.12
+SHARED_LIBS +=	cdaudio              1.1      # .1.0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://libcdaudio.sourceforge.net/

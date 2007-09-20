@@ -1,12 +1,12 @@
---- source/Makefile.in.orig	Sun Mar 24 18:01:45 2002
-+++ source/Makefile.in	Sun Mar 24 18:03:35 2002
-@@ -149,6 +149,9 @@ distclean-libLTLIBRARIES:
- 
- maintainer-clean-libLTLIBRARIES:
+--- src/Makefile.in.orig	Sat Oct  2 18:53:33 2004
++++ src/Makefile.in	Thu Sep 20 22:44:36 2007
+@@ -272,6 +272,9 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/data.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/extra_objs.Plo@am__quote@
  
 +cddb.lo:
 +	$(LIBTOOL) --mode=compile $(COMPILE) -O1 -c $<
 +
  .c.o:
- 	$(COMPILE) -c $<
- 
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+ @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
