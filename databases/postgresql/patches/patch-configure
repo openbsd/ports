@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2006/01/07 11:11:17 mbalmer Exp $
---- configure.orig	Sat Nov  5 05:01:38 2005
-+++ configure	Wed Dec 28 12:38:13 2005
-@@ -6760,7 +6760,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2007/09/20 19:20:48 mbalmer Exp $
+--- configure.orig	Fri Sep 14 22:18:26 2007
++++ configure	Mon Sep 17 09:12:54 2007
+@@ -6535,7 +6535,7 @@ fi
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_com_err" = no; then
