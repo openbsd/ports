@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/09/20 12:33:32 msf Exp $
 
 COMMENT=	package management framework for the Ruby language
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/20989/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=rubygems/}
 EXTRACT_SUFX=	.tgz
 
 MODULES= 	lang/ruby
