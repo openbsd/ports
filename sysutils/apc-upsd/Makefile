@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/20 10:04:07 ajacoutot Exp $
 
 COMMENT=	UPS software for APC UPS models
 
 DISTNAME=	apc-upsd
-PKGNAME=	${DISTNAME}-19991128
+PKGNAME=	${DISTNAME}-19991128p0
 CATEGORIES=	sysutils
 
 MASTER_SITES=	http://www.knienieder.com/software/
