@@ -8,8 +8,6 @@ if [ -x ${PREFIX}/sbin/cupsd ]; then
         echo -n ' cupsd';       ${PREFIX}/sbin/cupsd
 fi
 
-
-
 Starting cupsd will overwrite /etc/printcap. A backup copy of this file
 is saved as /etc/printcap.pre-cups by '${PREFIX}/sbin/cups-enable'
 and will be restored when you run '${PREFIX}/sbin/cups-disable'.
