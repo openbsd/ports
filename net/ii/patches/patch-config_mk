@@ -1,0 +1,21 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2007/09/20 19:15:00 jasper Exp $
+--- config.mk.orig	Sat Jul 14 20:39:41 2007
++++ config.mk	Thu Sep 20 21:01:03 2007
+@@ -15,13 +15,13 @@ LIBDIR      = ${PREFIX}/lib
+ VERSION     = 1.3
+ 
+ # includes and libs
+-INCLUDES    = -I. -I${INCDIR} -I/usr/include
+-LIBS        = -L${LIBDIR} -L/usr/lib -lc
++INCLUDES    += -I${INCDIR}
++LIBS        = -L${LIBDIR}
+ # uncomment and comment other variables for compiling on Solaris
+ #LIBS = -L${LIBDIR} -L/usr/lib -lc -lsocket -lnsl
+ #CFLAGS      = -g ${INCLUDES} -DVERSION=\"${VERSION}\"
+ 
+ # compiler
+ CC          = cc
+-CFLAGS      = -g -O0 -W -Wall ${INCLUDES} -DVERSION=\"${VERSION}\"
+-LDFLAGS     = ${LIBS}
++CFLAGS      += ${INCLUDES} -DVERSION=\"${VERSION}\"
++LDFLAGS     += ${LIBS}
