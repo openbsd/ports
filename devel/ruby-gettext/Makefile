@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/20 12:48:05 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=		http://rubyforge.org/frs/download.php/22477/
+MASTER_SITES=		${MASTER_SITE_RUBYFORGE:=gettext/}
 
 MODULES=		lang/ruby
 

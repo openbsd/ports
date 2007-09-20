@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/09/20 12:50:48 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://rubyforge.org/frs/download.php/13088/
+MASTER_SITES=		${MASTER_SITE_RUBYFORGE:=ezcrypto/}
 
 MODULES=		lang/ruby
 
