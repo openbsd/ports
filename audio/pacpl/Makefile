@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/20 09:14:18 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -7,10 +7,11 @@ COMMENT-konqueror=	PAC Konqueror service menu & mime types
 COMMENT-amarok=		PAC Amarok plugin
 
 V=			3.2.5
-DISTNAME=		pacpl-${V}
-PKGNAME-main=		pacpl-${V}
-PKGNAME-konqueror=	pacpl-konqueror-${V}
-PKGNAME-amarok=		pacpl-amarok-${V}
+DISTNAME=		pacpl-$V
+PKGNAME=		pacpl-$Vp0
+PKGNAME-main=		${PKGNAME}
+PKGNAME-konqueror=	pacpl-konqueror-$V
+PKGNAME-amarok=		pacpl-amarok-$V
 CATEGORIES=		audio converters perl5
 
 HOMEPAGE=		http://pacpl.sourceforge.net/
