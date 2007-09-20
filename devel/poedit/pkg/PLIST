@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2007/03/25 13:02:29 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/20 12:41:06 steven Exp $
 bin/poedit
 @man man/man1/poedit.1
 share/applications/
@@ -195,6 +195,9 @@ share/locale/tt/LC_MESSAGES/poedit.mo
 share/locale/uk/
 share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/poedit.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/poedit.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/poedit.mo
@@ -267,7 +270,6 @@ share/poedit/icons/edit-delete.png
 share/poedit/icons/help-browser.png
 share/poedit/icons/poedit-comment.png
 share/poedit/icons/poedit-fuzzy.png
-share/poedit/icons/poedit-quotes.png
 share/poedit/icons/poedit-status-automatic.png
 share/poedit/icons/poedit-status-cat-mid.png
 share/poedit/icons/poedit-status-cat-no.png
