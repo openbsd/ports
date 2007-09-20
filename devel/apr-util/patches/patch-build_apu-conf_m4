@@ -1,0 +1,11 @@
+$OpenBSD: patch-build_apu-conf_m4,v 1.1 2007/09/20 10:18:37 steven Exp $
+--- build/apu-conf.m4.orig	Tue Sep 18 14:47:31 2007
++++ build/apu-conf.m4	Tue Sep 18 14:47:57 2007
+@@ -144,6 +144,7 @@ AC_ARG_WITH([expat],
+       APR_ADDTO(LDFLAGS, [-L$withval/lib])
+       APR_ADDTO(CPPFLAGS, [-I$withval/include])
+       APR_ADDTO(APRUTIL_INCLUDES, [-I$withval/include])
++      APR_ADDTO(APRUTIL_LDFLAGS, [-L$withval/lib])
+     fi
+     # ...and refuse to fall back on the builtin expat.
+     apu_try_builtin_expat=0

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/11 20:20:51 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/09/20 10:18:37 steven Exp $
 
 COMMENT=	companion library to APR
 
-DISTNAME=	apr-util-1.2.8
-FULLPKGNAME=	apr-util${MT}-1.2.8p0${FLAVOR_EXT:S/-mt//}
-SHARED_LIBS +=	aprutil-1${MT}          2.9      # .2.9
+V=		1.2.10
+DISTNAME=	apr-util-$V
+FULLPKGNAME=	apr-util${MT}-$V${FLAVOR_EXT:S/-mt//}
+SHARED_LIBS +=	aprutil-1${MT}          2.11     # .2.11
 
 CATEGORIES=	devel
 
@@ -28,7 +29,8 @@ LIB_DEPENDS=	lib/db4/db.=4:db-4.*:databases/db/v4
 
 MODULES=	converters/libiconv		
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=gnu autoconf
+AUTOCONF_VERSION=2.59
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-dbm=db4 \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib/db4 \
@@ -48,13 +50,13 @@ WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl
 MT?=
 .if ${FLAVOR:L:Mmt}
 MT=-mt
-LIB_DEPENDS+=	apr-1-mt.=2:apr-mt-1.2.9:devel/apr,mt
+LIB_DEPENDS+=	apr-1-mt.=2:apr-mt-1.2.11:devel/apr,mt
 
 post-install:
 	sed 's/{APRUTIL_LIBNAME}/{APRUTIL_LIBNAME}-mt/g' ${WRKSRC}/apu-config.out > ${PREFIX}/bin/apu-1-mt-config
 
 .else
-LIB_DEPENDS+=	apr-1.=2:apr-1.2.9:devel/apr
+LIB_DEPENDS+=	apr-1.=2:apr-1.2.11:devel/apr
 .endif
 
 SUBST_VARS+=	MT
