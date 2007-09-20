@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.60 2007/09/20 10:05:19 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -58,7 +58,7 @@ FLAVORS=	debug
 FLAVOR?=
 
 .if !${FLAVOR:L:Mno_lang}
-LANGS=			bg br-pt ca de es fi fr hu it ja ko \
+LANGS=			bg br-pt ca de es fa fi fr hu it ja ko \
 			lt lv nl pl ru sl sv
 
 .for l in ${LANGS}
