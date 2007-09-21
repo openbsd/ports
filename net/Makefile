@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.484 2007/09/20 19:16:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.485 2007/09/21 17:48:33 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -27,6 +27,7 @@
      SUBDIR += btpd
      SUBDIR += bwm-ng
      SUBDIR += cadaver
+     SUBDIR += castget
      SUBDIR += centericq
      SUBDIR += cftp
      SUBDIR += charm
