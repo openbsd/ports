@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/09/21 06:00:11 steven Exp $
 bin/libgcrypt-config
 include/gcrypt-module.h
 include/gcrypt.h
 @info info/gcrypt.info
 lib/libgcrypt.a
 lib/libgcrypt.la
-share/aclocal/
 share/aclocal/libgcrypt.m4
 %%SHARED%%

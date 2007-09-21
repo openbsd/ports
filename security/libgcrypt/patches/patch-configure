@@ -1,43 +1,14 @@
-$OpenBSD: patch-configure,v 1.3 2004/05/08 06:41:47 sturm Exp $
---- configure.orig	2004-04-15 11:08:35.000000000 +0200
-+++ configure	2004-04-17 16:44:56.000000000 +0200
-@@ -2213,8 +2213,12 @@ esac
- 
- 
+$OpenBSD: patch-configure,v 1.4 2007/09/21 06:00:11 steven Exp $
+--- configure.orig	Fri Sep 14 21:16:01 2007
++++ configure	Fri Sep 14 21:16:46 2007
+@@ -20966,8 +20966,8 @@ esac
  case "${target}" in
--    *-openbsd* | *-netbsd*)
--        # FIXME: Are these the best flags for OpenBSD?
-+    *-openbsd*)
+     *-openbsd*)
+         # FIXME: Are these the best flags for OpenBSD?
+-        NAME_OF_DEV_RANDOM="/dev/srandom"
+-        NAME_OF_DEV_URANDOM="/dev/urandom"
 +        NAME_OF_DEV_RANDOM="/dev/arandom"
 +        NAME_OF_DEV_URANDOM="/dev/arandom"
-+#       DYNLINK_MOD_CFLAGS="-shared -rdynamic $CFLAGS_PIC -Wl,-Bshareable -Wl,-x"
-+        ;;
-+    *-netbsd*)
-         NAME_OF_DEV_RANDOM="/dev/srandom"
-         NAME_OF_DEV_URANDOM="/dev/urandom"
  #       DYNLINK_MOD_CFLAGS="-shared -rdynamic $CFLAGS_PIC -Wl,-Bshareable -Wl,-x"
-@@ -25679,24 +25683,6 @@ fi
+         ;;
  
- 
- 
--    if ${MAKE-make} --version 2>/dev/null | grep '^GNU ' >/dev/null 2>&1; then
--        :
--    else
--        { echo "$as_me:$LINENO: WARNING:
--***
--*** It seems that you are not using GNU make.  Some make tools have serious
--*** flaws and you may not be able to build this software at all. Before you
--*** complain, please try GNU make:  GNU make is easy to build and available
--*** at all GNU archives.  It is always available from ftp.gnu.org:/gnu/make.
--***" >&5
--echo "$as_me: WARNING:
--***
--*** It seems that you are not using GNU make.  Some make tools have serious
--*** flaws and you may not be able to build this software at all. Before you
--*** complain, please try GNU make:  GNU make is easy to build and available
--*** at all GNU archives.  It is always available from ftp.gnu.org:/gnu/make.
--***" >&2;}
--    fi
- 
- 
- # Check whether --enable-gcc-warnings or --disable-gcc-warnings was given.

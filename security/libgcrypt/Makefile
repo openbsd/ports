@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2007/09/21 06:00:11 steven Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
-VERSION=		1.2.0
+VERSION=		1.2.4
 DISTNAME=		libgcrypt-${VERSION}
-PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security
-SHARED_LIBS=		gcrypt	12.1
-MODGNU_SHARED_LIBS=	gcrypt	''
+SHARED_LIBS=		gcrypt	13.0
 
 HOMEPAGE=		http://www.gnu.org/directory/security/libgcrypt.html
 
@@ -23,6 +21,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/libgcrypt/ \
 		http://sunsite.dk/pub/security/gcrypt/libgcrypt/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/libgcrypt/
 
+MODULES=		devel/gettext
 LIB_DEPENDS=		gpg-error::security/libgpg-error
 
 USE_LIBTOOL=		Yes
