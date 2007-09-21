@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.913 2007/09/16 21:38:34 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.914 2007/09/21 06:58:21 steven Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1102,7 +1102,7 @@ IGNORE = "requires shared libraries"
 
 .if !defined(NO_IGNORE)
 .  if defined(BROKEN)
-IGNORE = "is marked as broken: ${BROKEN}"
+IGNORE = "is marked as broken: ${BROKEN:Q}"
 .  elif defined(COMES_WITH)
 IGNORE = "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
 .  endif
