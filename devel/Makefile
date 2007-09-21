@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.549 2007/09/16 09:25:09 simon Exp $
+# $OpenBSD: Makefile,v 1.550 2007/09/21 05:55:37 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -312,6 +312,7 @@
      SUBDIR += p5-Event-Lib
      SUBDIR += p5-Exception-Class
      SUBDIR += p5-Expect
+     SUBDIR += p5-Expect-Simple
      SUBDIR += p5-Exporter-Lite
      SUBDIR += p5-Exporter-Tidy
      SUBDIR += p5-ExtUtils-CBuilder
@@ -463,6 +464,7 @@
      SUBDIR += p5-Test-Differences
      SUBDIR += p5-Test-Distribution
      SUBDIR += p5-Test-Exception
+     SUBDIR += p5-Test-Expect
      SUBDIR += p5-Test-File-Contents
      SUBDIR += p5-Test-Group
      SUBDIR += p5-Test-Inline
