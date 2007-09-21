@@ -1,0 +1,3 @@
+Gimmix is a graphical music player daemon (MPD) client written in C
+using GTK+2. It's very simple and easy to use, yet offers many features
+to make your audio experience a pleasant one.
