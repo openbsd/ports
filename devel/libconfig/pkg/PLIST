@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/21 20:19:05 merdely Exp $
+%%SHARED%%
+include/libconfig.h
+include/libconfig.h++
+@info info/libconfig.info
+lib/libconfig++.a
+lib/libconfig++.la
+lib/libconfig.a
+lib/libconfig.la
+lib/pkgconfig/
+lib/pkgconfig/libconfig++.pc
+lib/pkgconfig/libconfig.pc
