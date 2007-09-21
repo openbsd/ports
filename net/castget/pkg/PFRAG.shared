@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/09/21 17:45:43 jasper Exp $
+@lib lib/libcastget.so.${LIBcastget_VERSION}
