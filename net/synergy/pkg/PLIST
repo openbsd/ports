@@ -1,11 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/04/05 20:59:54 dim Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/09/21 05:46:26 bernd Exp $
 bin/synergyc
 bin/synergys
 share/doc/synergy/
-@comment share/doc/synergy/Makefile
-@comment share/doc/synergy/Makefile.am
-@comment share/doc/synergy/Makefile.in
-@comment share/doc/synergy/PORTING
 share/doc/synergy/about.html
 share/doc/synergy/authors.html
 share/doc/synergy/autostart.html
@@ -15,14 +11,12 @@ share/doc/synergy/compiling.html
 share/doc/synergy/configuration.html
 share/doc/synergy/contact.html
 share/doc/synergy/developer.html
-@comment share/doc/synergy/doxygen.cfg
-@comment share/doc/synergy/doxygen.cfg.in
 share/doc/synergy/faq.html
 share/doc/synergy/history.html
 share/doc/synergy/home.html
 share/doc/synergy/images/
-share/doc/synergy/images/warp.gif
 share/doc/synergy/images/logo.gif
+share/doc/synergy/images/warp.gif
 share/doc/synergy/index.html
 share/doc/synergy/license.html
 share/doc/synergy/news.html
@@ -33,3 +27,5 @@ share/doc/synergy/synergy.css
 share/doc/synergy/tips.html
 share/doc/synergy/toc.html
 share/doc/synergy/trouble.html
+share/examples/synergy/
+share/examples/synergy/synergy.conf
