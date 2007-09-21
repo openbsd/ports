@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/03 00:03:03 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/21 01:59:50 merdely Exp $
 bin/qgo
+man/cat3f/
+man/man3f/
 share/applnk/
 share/applnk/Games/
 share/applnk/Games/qgo.desktop
@@ -38,6 +40,9 @@ share/qGo/translations/qgo_de.qm
 share/qGo/translations/qgo_dk.qm
 share/qGo/translations/qgo_fr.qm
 share/qGo/translations/qgo_it.qm
+share/qGo/translations/qgo_la.qm
 share/qGo/translations/qgo_nl.qm
 share/qGo/translations/qgo_pt.qm
+share/qGo/translations/qgo_ru.qm
 share/qGo/translations/qgo_zh.qm
+share/qGo/translations/qgo_zh_cn.qm
