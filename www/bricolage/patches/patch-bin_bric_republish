@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_bric_republish,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
---- bin/bric_republish.orig	Sun Oct 22 10:35:12 2006
-+++ bin/bric_republish	Sun Oct 22 10:36:05 2006
-@@ -62,7 +62,7 @@ crontab like this to republish all stori
+$OpenBSD: patch-bin_bric_republish,v 1.2 2007/09/21 21:17:56 sturm Exp $
+--- bin/bric_republish.orig	Sun May 21 06:24:13 2006
++++ bin/bric_republish	Fri Sep 21 08:08:26 2007
+@@ -62,7 +62,7 @@ crontab like this to republish all stories hourly:
  
      BRICOLAGE_USERNAME=admin
      BRICOLAGE_PASSWORD=admin_pass
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_bric_republish,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
      MAILTO=your-email@your-domain.com
      0 * * * * bric_republish
  
-@@ -70,7 +70,7 @@ Or to republish Covers hourly and everyt
+@@ -70,7 +70,7 @@ Or to republish Covers hourly and everything else once
  
      BRICOLAGE_USERNAME=admin
      BRICOLAGE_PASSWORD=admin_pass
@@ -19,7 +19,7 @@ $OpenBSD: patch-bin_bric_republish,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
      MAILTO=your-email@your-domain.com
      0  *  * * * bric_republish --element Cover
      30 11 * * * bric_republish
-@@ -79,7 +79,7 @@ Or to republish all stories every other 
+@@ -79,7 +79,7 @@ Or to republish all stories every other hour but never
  
      BRICOLAGE_USERNAME=admin
      BRICOLAGE_PASSWORD=admin_pass

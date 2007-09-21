@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/21 21:17:56 sturm Exp $
 
 COMMENT=	content management system
 
-DISTNAME=	bricolage-1.10.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	bricolage-1.10.3
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://www.bricolage.cc/
@@ -24,13 +23,13 @@ RUN_DEPENDS=	::databases/p5-DBD-Pg \
 		::devel/p5-Cache-Mmap \
 		::devel/p5-Data-UUID \
 		::devel/p5-DateTime \
-		::devel/p5-Devel-Symdump \
 		::devel/p5-List-MoreUtils \
 		::devel/p5-MLDBM \
 		::devel/p5-Term-ReadPassword \
 		::devel/p5-Test-Class \
 		::devel/p5-Test-File-Contents \
 		::devel/p5-Test-MockModule \
+		::editors/xinha \
 		::net/p5-Net-SFTP \
 		::graphics/p5-Image-Info \
 		::sysutils/p5-Unix-Syslog \
@@ -57,7 +56,8 @@ do-configure:
 	@sed -e "s,%%PREFIX%%,${PREFIX}," -e "s,%%X11BASE%%,${X11BASE}," \
 		${FILESDIR}/openbsd > ${WRKSRC}/inst/defaults/standard
 	@perl -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/inst/config.pl \
-		${WRKSRC}/INSTALL ${WRKSRC}/bin/bric_*
+		${WRKSRC}/INSTALL ${WRKSRC}/bin/bric_* \
+		${WRKSRC}/inst/upgrade/lib/bric_upgrade.pm
 	@cd ${WRKSRC} && make all
 
 # bulk creation of man pages fails for these, perl bug?
@@ -74,5 +74,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/inst/Pg.sql ${PREFIX}/share/bricolage/sql/Pg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bricolage
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/bricolage
+	ln -s /var/www/xinha ${PREFIX}/share/bricolage/comp/media/wysiwyg/xinha
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bricolage/upgrade
+	${INSTALL_DATA} ${WRKSRC}/inst/versions.txt \
+		${PREFIX}/share/bricolage/upgrade
+	cp -R ${WRKSRC}/inst/upgrade/* ${PREFIX}/share/bricolage/upgrade
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/bricolage/upgrade
 
 .include <bsd.port.mk>

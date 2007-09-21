@@ -1,7 +1,7 @@
-$OpenBSD: patch-inst_apache_pl,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
---- inst/apache.pl.orig	Fri Oct 20 17:14:27 2006
-+++ inst/apache.pl	Fri Oct 20 17:18:48 2006
-@@ -240,12 +240,10 @@ sub check_modules {
+$OpenBSD: patch-inst_apache_pl,v 1.2 2007/09/21 21:17:56 sturm Exp $
+--- inst/apache.pl.orig	Thu Aug  3 00:48:16 2006
++++ inst/apache.pl	Fri Sep 21 08:08:26 2007
+@@ -239,12 +239,10 @@ sub check_modules {
  
                  # perl uses libfoo.so format filenames
                  if ($mod eq 'perl') {

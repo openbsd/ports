@@ -1,6 +1,6 @@
-$OpenBSD: patch-INSTALL,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
---- INSTALL.orig	Fri Nov 10 17:09:58 2006
-+++ INSTALL	Fri Nov 10 17:25:23 2006
+$OpenBSD: patch-INSTALL,v 1.2 2007/09/21 21:17:56 sturm Exp $
+--- INSTALL.orig	Thu Aug  9 11:28:07 2007
++++ INSTALL	Fri Sep 21 23:01:46 2007
 @@ -660,10 +660,7 @@ INSTALLATION
    Bricolage (Manual Installation)
      Here's how to install Bricolage manually.
@@ -42,3 +42,77 @@ $OpenBSD: patch-INSTALL,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
  
      *   Try to hit the web server. If you're prompted for a login, you're
          in! If not, check the Apache error log to figure out what might have
+@@ -769,55 +766,32 @@ INSTALLATION
+     <http://aspell.net/>.
+ 
+ UPGRADING
+-    If you're upgrading an installation of Bricolage that was previously
+-    installed via "make install", then simply upgrade using "make upgrade".
+-    If, however, you're upgrading an older installation of Bricolage that
+-    didn't have a build system, or it was simply used as-is from Subversion,
+-    you'll need to follow the directions below.
++    To upgrade a manual installation of Bricolage, first stop the server:
+ 
+-    To upgrade a manual installation of Bricolage, first set the
+-    BRICOLAGE_ROOT environment variable to the root of your Bricolage
+-    installation if it's something other than the default
+-    (/usr/local/bricolage), e.g.:
++      %%PREFIX%%/bin/bric_apachectl stop
+ 
+-      export BRICOLAGE_ROOT=/opt/bricolage
+-
+-    Next, stop the server:
+-
+-      $BRICOLAGE_ROOT/bin/bric_apachectl stop
+-
+     Save copies of your bricolage.conf and httpd.conf files, so that you
+     don't overwrite them:
+ 
+       cp $BRICOLAGE_ROOT/conf/bricolage.conf $BRICOLAGE_ROOT/conf/bricolage.conf.old
+       cp $BRICOLAGE_ROOT/conf/httpd.conf $BRICOLAGE_ROOT/conf/httpd.conf.old
+ 
+-    Install the latest Bundle::Bricolage from CPAN to make sure that you
+-    have all the needed modules (or read through the list of required
+-    modules above and do it yourself).
++    Update the bricolage package.
+ 
+     Delete all existing Mason object files and temporary files:
+ 
+-      rm -rf $BRICOLAGE_ROOT/data/obj/bric_ui/*
+-      rm -rf /tmp/bricolage/*
++      rm -rf $BRICOLAGE_ROOT/data/obj/*
++      rm -rf /var/tmp/bricolage/*
+ 
+     Run the upgrade scripts needed for upgrading to the new version. The
+-    upgrade scripts are in the inst/upgrade/ directory. Run each script in
++    upgrade scripts are in the upgrade/ directory. Run each script in
+     all of the version number directories in the order given in
+-    inst/versions.txt. For example, to upgrade from 1.6.13 to 1.8.1, run
++    ugrade/versions.txt. For example, to upgrade from 1.6.13 to 1.8.1, run
+     each of the scripts in 1.6.13/, 1.7.5/, 1.6.14/, 1.8.0/, and 1.8.1/ --
+     in that order. Furthermore, the scripts within each directory are run in
+-    alphabetical order.
++    alphabetical order. Each script should be invoked with '-p pass', with
++    pass being the password of the postgres admin user.
+ 
+-    Next, copy in the new sources from the distribution into your Bricolage
+-    directory. Be sure not to copy example templates, as they may overwrite
+-    your own templates. You're best off moving the contents of data/ out of
+-    the way.
+-
+-      mv data /tmp/bric_data_tmp
+-      cp -r /path/to/new/bricolage/* $BRICOLAGE_ROOT/
+-      mv /tmp/bric_data_tmp data
+-
+     Now edit the new bricolage.conf file to match your old settings using
+     the bricolage.conf.old settings you saved as a guide. Do the same thing
+     with httpd.conf. Don't just copy the old settings back into place --
+@@ -826,7 +800,7 @@ UPGRADING
+ 
+     Now, start up Bricolage and enjoy the new features!
+ 
+-      $BRICOLAGE_ROOT/bin/bric_apachectl start
++      %%PREFIX%%/bin/bric_apachectl start
+ 
+ CONFIGURATION
+     Configuration of Bricolage is handled via two interfaces. The first is

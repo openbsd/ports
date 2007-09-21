@@ -1,3 +1,6 @@
+Before you start setting up bricolage, be sure to set up your postgresql
+server and enable mod_perl.
+
 For instructions on how to complete the installation or upgrade from an
 older version of bricolage, see ${PREFIX}/share/doc/bricolage/INSTALL.
 

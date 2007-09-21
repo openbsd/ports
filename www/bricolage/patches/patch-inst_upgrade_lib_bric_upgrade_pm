@@ -1,0 +1,14 @@
+$OpenBSD: patch-inst_upgrade_lib_bric_upgrade_pm,v 1.1 2007/09/21 21:17:56 sturm Exp $
+--- inst/upgrade/lib/bric_upgrade.pm.orig	Fri Sep 21 22:52:34 2007
++++ inst/upgrade/lib/bric_upgrade.pm	Fri Sep 21 22:53:07 2007
+@@ -122,8 +122,8 @@ BEGIN{
+ 
+ # Make sure we can load the Bricolage libraries.
+ BEGIN {
+-    # $BRICOLAGE_ROOT defaults to /usr/local/bricolage
+-    $ENV{BRICOLAGE_ROOT} ||= "/usr/local/bricolage";
++    # $BRICOLAGE_ROOT defaults to %%PREFIX%%/share/bricolage
++    $ENV{BRICOLAGE_ROOT} ||= "%%PREFIX%%/share/bricolage";
+ 
+     # Always use the Bric::Config and Bric::Util::DBI from the sources.
+     unshift @INC, catdir $FindBin::Bin, updir, updir, updir, 'lib';

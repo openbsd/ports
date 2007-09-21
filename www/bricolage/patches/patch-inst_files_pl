@@ -1,9 +1,9 @@
-$OpenBSD: patch-inst_files_pl,v 1.1.1.1 2006/11/10 17:04:37 sturm Exp $
---- inst/files.pl.orig	Tue Jun 28 05:21:52 2005
-+++ inst/files.pl	Sat Oct 21 16:02:03 2006
-@@ -55,6 +55,13 @@ do "./apache.db" or die "Failed to read 
- our $UPGRADE;
- $UPGRADE = 1 if $ARGV[0] and $ARGV[0] eq 'UPGRADE';
+$OpenBSD: patch-inst_files_pl,v 1.2 2007/09/21 21:17:56 sturm Exp $
+--- inst/files.pl.orig	Thu Dec 14 23:34:20 2006
++++ inst/files.pl	Fri Sep 21 08:08:26 2007
+@@ -58,6 +58,13 @@ $UPGRADE = 1 if $ARGV[0] and $ARGV[0] eq 'UPGRADE';
+ our $HOT_COPY;
+ $HOT_COPY = 1 if $ARGV[1] and $ARGV[1] eq 'HOT_COPY';
  
 +# fix pathes
 +our $DESTDIR = $ENV{DESTDIR} || '';
