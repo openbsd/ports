@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2007/09/14 18:55:00 steven Exp $
+# $OpenBSD: Makefile,v 1.135 2007/09/21 05:55:27 bernd Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -53,6 +53,7 @@
      SUBDIR += multitail
      SUBDIR += ncdu
      SUBDIR += nut
+     SUBDIR += openpoppassd
      SUBDIR += p5-File-Which
      SUBDIR += p5-Filesys-DiskSpace
      SUBDIR += p5-Filesys-Virtual
