@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/21 20:09:21 merdely Exp $
+lib/apache2/mod_fastcgi.so
+share/doc/apache2/mod/mod_fastcgi/
+share/doc/apache2/mod/mod_fastcgi/LICENSE.TERMS
+share/doc/apache2/mod/mod_fastcgi/mod_fastcgi.html
+@comment share/doc/apache2/mod/mod_fastcgi/mod_fastcgi.html.orig
