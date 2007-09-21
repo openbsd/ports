@@ -1,0 +1,3 @@
+Expect::Simple is a wrapper around the Expect module which should
+suffice for simple applications. It hides most of the Expect machinery;
+the Expect object is available for tweaking if need be.
