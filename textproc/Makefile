@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2007/09/17 08:40:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.211 2007/09/22 11:04:47 simon Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -169,6 +169,7 @@
      SUBDIR += p5-XML-Validator-Schema
      SUBDIR += p5-XML-Writer
      SUBDIR += p5-XML-XPath
+     SUBDIR += p5-XML-XPathEngine
      SUBDIR += p5-XML-XSLT
      SUBDIR += p5-XML-XSPF
      SUBDIR += p5-sdf
