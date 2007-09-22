@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/22 22:08:16 merdely Exp $
 
 COMMENT=	image manipulation library
 
-DISTNAME=	imlib2-1.3.0
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	Imlib2	4.0	# .4.0
+DISTNAME=	imlib2-1.4.0
+SHARED_LIBS=	Imlib2	5.0	# .5.0
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://enlightenment.org/Libraries/Imlib2/
+HOMEPAGE=	http://www.enlightenment.org/p.php?p=about/libs/imlib2&l=en
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
