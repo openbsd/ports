@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/22 11:04:40 simon Exp $
+${P5SITE}/XML/
+${P5SITE}/XML/XPathEngine/
+${P5SITE}/XML/XPathEngine.pm
+${P5SITE}/XML/XPathEngine/Boolean.pm
+${P5SITE}/XML/XPathEngine/Expr.pm
+${P5SITE}/XML/XPathEngine/Function.pm
+${P5SITE}/XML/XPathEngine/Literal.pm
+${P5SITE}/XML/XPathEngine/LocationPath.pm
+${P5SITE}/XML/XPathEngine/NodeSet.pm
+${P5SITE}/XML/XPathEngine/Number.pm
+${P5SITE}/XML/XPathEngine/Root.pm
+${P5SITE}/XML/XPathEngine/Step.pm
+${P5SITE}/XML/XPathEngine/Variable.pm
+@man man/man3p/XML::XPathEngine.3p
+@man man/man3p/XML::XPathEngine::Boolean.3p
+@man man/man3p/XML::XPathEngine::Literal.3p
+@man man/man3p/XML::XPathEngine::NodeSet.3p
+@man man/man3p/XML::XPathEngine::Number.3p
