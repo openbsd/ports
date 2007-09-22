@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/22 07:52:07 sturm Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -8,14 +8,14 @@ DATE=20070307
 FULL_VERSION=4.2-${DATE}
 FULL_PKGVERSION=4.2.${DATE}
 
-PKGNAME-main=  gcc-${FULL_PKGVERSION}p2
-PKGNAME-c++ =  g++-${FULL_PKGVERSION}p2
-PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}p1
-PKGNAME-g77=   g77-${FULL_PKGVERSION}p1
-PKGNAME-f95=   g95-${FULL_PKGVERSION}p2
-PKGNAME-java=  gcj-${FULL_PKGVERSION}p1
-PKGNAME-objc=  gobjc-${FULL_PKGVERSION}p2
-PKGNAME-ada=   gnat-${FULL_PKGVERSION}p1
+PKGNAME-main=  gcc-${FULL_PKGVERSION}p3
+PKGNAME-c++ =  g++-${FULL_PKGVERSION}p3
+PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}p2
+PKGNAME-g77=   g77-${FULL_PKGVERSION}p2
+PKGNAME-f95=   g95-${FULL_PKGVERSION}p3
+PKGNAME-java=  gcj-${FULL_PKGVERSION}p2
+PKGNAME-objc=  gobjc-${FULL_PKGVERSION}p3
+PKGNAME-ada=   gnat-${FULL_PKGVERSION}p2
 SHARED_LIBS=	estdc++		7.0 \
 		gfortran	2.0 \
 		-org-w3c-dom	1.0 \
