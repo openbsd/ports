@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure,v 1.15 2007/09/22 01:12:38 pvalchev Exp $
+--- configure.orig	Sat Sep  8 22:38:20 2007
++++ configure	Sat Sep  8 22:39:50 2007
+@@ -25672,9 +25672,6 @@ echo "${ECHO_T}$CompileNASM_ret" >&6
+               win32)
+                   NASMFLAGS="-f win32"
+                   ;;
+-              openbsd)
+-                  NASMFLAGS="-f aoutb"
+-                  ;;
+               macosx)
+                   NASMFLAGS="-f macho"
+                   ;;
+@@ -33307,10 +33304,10 @@ _ACEOF
+             ;;
+             netbsd|openbsd)
+                 cat >>confdefs.h <<\_ACEOF
+-#define SDL_AUDIO_DRIVER_BSD 1
++#define SDL_AUDIO_DRIVER_SUNAUDIO 1
+ _ACEOF
+ 
+-                SOURCES="$SOURCES $srcdir/src/audio/bsd/*.c"
++                SOURCES="$SOURCES $srcdir/src/audio/sun/*.c"
+                 have_audio=yes
+             ;;
+             aix)

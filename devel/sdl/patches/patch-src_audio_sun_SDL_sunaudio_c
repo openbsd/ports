@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp $
---- src/audio/sun/SDL_sunaudio.c.orig	Sun Jan  4 08:49:15 2004
-+++ src/audio/sun/SDL_sunaudio.c	Sun Aug 12 02:43:22 2007
-@@ -32,7 +32,7 @@ static char rcsid =
+$OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.4 2007/09/22 01:12:38 pvalchev Exp $
+--- src/audio/sun/SDL_sunaudio.c.orig	Fri Jul 20 01:52:10 2007
++++ src/audio/sun/SDL_sunaudio.c	Sat Sep  8 22:23:18 2007
+@@ -25,7 +25,7 @@
+ 
  #include <fcntl.h>
  #include <errno.h>
- #include <string.h>
--#ifdef __NetBSD__
-+#if defined(__NetBSD__) || defined(__OpenBSD__)
+-#ifdef __NETBSD__
++#if defined(__NETBSD__) || defined(__OpenBSD__)
  #include <sys/ioctl.h>
  #include <sys/audioio.h>
  #endif
-@@ -141,12 +141,19 @@ void CheckUnderflow(_THIS)
+@@ -135,12 +135,19 @@ void CheckUnderflow(_THIS)
  void DSP_WaitAudio(_THIS)
  {
  #ifdef AUDIO_GETINFO
@@ -32,7 +32,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp
  	if ( left > fragsize ) {
  		Sint32 sleepy;
  
-@@ -221,9 +228,22 @@ void DSP_PlayAudio(_THIS)
+@@ -214,9 +221,22 @@ void DSP_PlayAudio(_THIS)
  #ifdef DEBUG_AUDIO
  		CheckUnderflow(this);
  #endif
@@ -56,7 +56,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp
  		}
  		written += fragsize;
  	}
-@@ -251,7 +271,10 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -244,7 +264,10 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  {
  	char audiodev[1024];
  #ifdef AUDIO_SETINFO
@@ -67,7 +67,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp
  #endif
  	int desired_freq = spec->freq;
  
-@@ -266,16 +289,34 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -259,16 +282,34 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  		case 8: { /* Unsigned 8 bit audio data */
  			spec->format = AUDIO_U8;
  #ifdef AUDIO_SETINFO
@@ -103,7 +103,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp
  		}
  		break;
  
-@@ -294,10 +335,128 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -287,10 +328,128 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  		return(-1);
  	}
  
@@ -233,7 +233,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp
  	    AUDIO_INITINFO(&info); /* init all fields to "no change" */
  
  	    /* Try to set the requested settings */
-@@ -306,8 +465,25 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -299,8 +458,25 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  	    info.play.precision = (enc == AUDIO_ENCODING_ULAW)
  		                  ? 8 : spec->format & 0xff;
  	    info.play.encoding = enc;
@@ -260,7 +260,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp
  		/* Check to be sure we got what we wanted */
  		if(ioctl(audio_fd, AUDIO_GETINFO, &info) < 0) {
  		    SDL_SetError("Error getting audio parameters: %s",
-@@ -324,13 +500,34 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -317,13 +493,34 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  	    }
  
  	    switch(enc) {
@@ -296,7 +296,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp
  		/* linear 16bit didn't work either, resort to µ-law */
  		enc = AUDIO_ENCODING_ULAW;
  		spec->channels = 1;
-@@ -349,6 +546,9 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -342,6 +539,9 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  #endif /* AUDIO_SETINFO */
  	written = 0;
  
@@ -306,7 +306,7 @@ $OpenBSD: patch-src_audio_sun_SDL_sunaudio_c,v 1.3 2007/08/14 15:51:07 naddy Exp
  	/* We can actually convert on-the-fly to U-Law */
  	if ( ulaw_only ) {
  	        spec->freq = desired_freq;
-@@ -361,8 +561,14 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
+@@ -354,8 +554,14 @@ int DSP_OpenAudio(_THIS, SDL_AudioSpec *spec)
  		}
  		spec->channels = 1;
  	} else {

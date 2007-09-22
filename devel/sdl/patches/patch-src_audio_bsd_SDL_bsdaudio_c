@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_audio_bsd_SDL_bsdaudio_c,v 1.1 2007/09/22 01:12:38 pvalchev Exp $
+--- src/audio/bsd/SDL_bsdaudio.c.orig	Sat Sep  8 22:34:02 2007
++++ src/audio/bsd/SDL_bsdaudio.c	Sat Sep  8 22:34:34 2007
+@@ -292,7 +292,7 @@ OBSD_Status(_THIS)
+     info.blocksize,
+     info.hiwat, info.lowat,
+     (info.mode == AUMODE_PLAY) ? "PLAY"
+-    : (info.mode = AUMODE_RECORD) ? "RECORD"
++    : (info.mode == AUMODE_RECORD) ? "RECORD"
+     : (info.mode == AUMODE_PLAY_ALL ? "PLAY_ALL"
+     : "?"));
+ }

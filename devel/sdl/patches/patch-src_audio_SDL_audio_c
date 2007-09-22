@@ -1,25 +1,24 @@
-$OpenBSD: patch-src_audio_SDL_audio_c,v 1.11 2007/08/14 15:51:07 naddy Exp $
---- src/audio/SDL_audio.c.orig	Fri Sep 17 15:20:10 2004
-+++ src/audio/SDL_audio.c	Tue Aug 14 16:41:43 2007
-@@ -467,8 +467,9 @@ int SDL_OpenAudio(SDL_AudioSpec *desired, SDL_AudioSpe
+$OpenBSD: patch-src_audio_SDL_audio_c,v 1.12 2007/09/22 01:12:38 pvalchev Exp $
+--- src/audio/SDL_audio.c.orig	Fri Jul 20 01:52:10 2007
++++ src/audio/SDL_audio.c	Sat Sep  8 21:39:59 2007
+@@ -518,8 +518,9 @@ int SDL_OpenAudio(SDL_AudioSpec *desired, SDL_AudioSpe
  
  	/* See if we need to do any conversion */
  	if ( obtained != NULL ) {
--		memcpy(obtained, &audio->spec, sizeof(audio->spec));
+-		SDL_memcpy(obtained, &audio->spec, sizeof(audio->spec));
 -	} else if ( desired->freq != audio->spec.freq ||
-+		memcpy(obtained, desired, sizeof(audio->spec));
++		SDL_memcpy(obtained, desired, sizeof(audio->spec));
 +	}
 +	if ( desired->freq != audio->spec.freq ||
                      desired->format != audio->spec.format ||
  	            desired->channels != audio->spec.channels ) {
  		/* Build an audio conversion block */
-@@ -481,7 +482,8 @@ int SDL_OpenAudio(SDL_AudioSpec *desired, SDL_AudioSpe
+@@ -532,7 +533,7 @@ int SDL_OpenAudio(SDL_AudioSpec *desired, SDL_AudioSpe
  			return(-1);
  		}
  		if ( audio->convert.needed ) {
--			audio->convert.len = desired->size;
+-			audio->convert.len = (int) ( ((double) desired->size) /
 +			audio->convert.len = (int) ( ((double) audio->spec.size) /
-+                                          audio->convert.len_ratio );
+                                           audio->convert.len_ratio );
  			audio->convert.buf =(Uint8 *)SDL_AllocAudioMem(
  			   audio->convert.len*audio->convert.len_mult);
- 			if ( audio->convert.buf == NULL ) {
