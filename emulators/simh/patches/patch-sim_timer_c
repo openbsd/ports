@@ -1,0 +1,12 @@
+$OpenBSD: patch-sim_timer_c,v 1.1 2007/09/23 02:27:39 fgsch Exp $
+--- sim_timer.c.orig	Tue Sep 18 13:36:15 2007
++++ sim_timer.c	Tue Sep 18 13:36:45 2007
+@@ -294,7 +294,7 @@ return;
+ 
+ uint32 sim_os_ms_sleep_init (void)
+ {
+-#if defined (_POSIX_SOURCE)                              /* POSIX-compliant */
++#if defined (_POSIX_SOURCE) || defined(__OpenBSD__)      /* POSIX-compliant */
+ 
+ struct timespec treq;
+ uint32 msec;
