@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1 2007/09/23 09:31:27 steven Exp $
+--- configure.orig	Tue Feb 14 10:12:59 2006
++++ configure	Sun Sep 23 13:21:58 2007
+@@ -27055,7 +27055,7 @@ unset DB_LIB
+ 
+ rm -f db.h
+ 
+-for vers in 4.4 4.3 4.2 4.1; do
++for vers in 4.6 4.5 4.4 4.3 4.2 4.1; do
+     DB_DIR=`cd $srcdir && echo db-$vers.*/dist/`
+     if test -d "$srcdir/$DB_DIR"; then
+         DB_DIR=`echo $DB_DIR | sed -e 's!/$!!'`
+@@ -27076,7 +27076,7 @@ if test "$DB_DIR" -a "$with_db" = yes; then
+ echo "${ECHO_T}using distribution in $DB_DIR subdirectory" >&6
+ elif test x"$with_db" != xno; then
+     if test "$with_db" = yes; then
+-	for vers in 4.4 4.3 4.2 4.1; do
++	for vers in 4.6 4.5 4.4 4.3 4.2 4.1; do
+ 	    for dir in "$prefix/BerkeleyDB.$vers" \
+ 			"/usr/BerkeleyDB.$vers" \
+ 			"/usr/local/BerkeleyDB.$vers" \
+@@ -27165,7 +27165,7 @@ fi
+ 	    done
+ 	done
+     else
+-	for vers in 4.4 4.3 4.2 4.1; do
++	for vers in 4.6 4.5 4.4 4.3 4.2 4.1; do
+ 	    vers=$vers
+ dir=$with_db
+ majvers=`echo $vers | sed -e 's/\..*//'`
