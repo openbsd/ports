@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/07/17 16:37:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/23 22:06:46 merdely Exp $
 
 COMMENT=		client for MPD to submit tracks to Last.fm
 CATEGORIES=		audio
 DISTNAME=		scmpc-0.2.2
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 HOMEPAGE=		http://scmpc.berlios.de/
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto pthread ssl z
+WANTLIB=		c pthread
 
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=scmpc/}
 EXTRACT_SUFX=		.tar.bz2
