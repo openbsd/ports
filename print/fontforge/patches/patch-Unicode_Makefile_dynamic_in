@@ -1,7 +1,7 @@
-$OpenBSD: patch-Unicode_Makefile_dynamic_in,v 1.1.1.1 2006/06/18 13:33:25 steven Exp $
---- Unicode/Makefile.dynamic.in.orig	Fri Sep 30 15:10:58 2005
-+++ Unicode/Makefile.dynamic.in	Mon Jun 12 20:56:00 2006
-@@ -16,7 +16,7 @@ libgunicode_OBJECTS =  ArabicForms.lo al
+$OpenBSD: patch-Unicode_Makefile_dynamic_in,v 1.2 2007/09/23 18:45:45 kili Exp $
+--- Unicode/Makefile.dynamic.in.orig	Mon May 28 16:20:55 2007
++++ Unicode/Makefile.dynamic.in	Sat Aug 25 14:59:42 2007
+@@ -18,7 +18,7 @@ libgunicode_OBJECTS =  ArabicForms.lo alphabet.lo back
   cjk.lo memory.lo ucharmap.lo unialt.lo ustring.lo utype.lo \
   usprintf.lo gwwiconv.lo
  
