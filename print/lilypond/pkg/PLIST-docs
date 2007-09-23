@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.2 2007/06/06 20:36:23 kili Exp $
+@comment $OpenBSD: PLIST-docs,v 1.3 2007/09/23 19:28:15 kili Exp $
 share/doc/lilypond/
 share/doc/lilypond/${VERSION}/
 share/doc/lilypond/${VERSION}/Documentation/
@@ -7349,6 +7349,9 @@ share/doc/lilypond/${VERSION}/input/regression/lily-12afa17041.txt
 share/doc/lilypond/${VERSION}/input/regression/lily-12b6fb73d1.ly
 share/doc/lilypond/${VERSION}/input/regression/lily-12b6fb73d1.png
 share/doc/lilypond/${VERSION}/input/regression/lily-12b6fb73d1.txt
+share/doc/lilypond/${VERSION}/input/regression/lily-13252eb492.ly
+share/doc/lilypond/${VERSION}/input/regression/lily-13252eb492.png
+share/doc/lilypond/${VERSION}/input/regression/lily-13252eb492.txt
 share/doc/lilypond/${VERSION}/input/regression/lily-139bd0238d.ly
 share/doc/lilypond/${VERSION}/input/regression/lily-139bd0238d.png
 share/doc/lilypond/${VERSION}/input/regression/lily-139bd0238d.txt
@@ -7739,6 +7742,9 @@ share/doc/lilypond/${VERSION}/input/regression/lily-64f10fb17a.txt
 share/doc/lilypond/${VERSION}/input/regression/lily-659e1eee54.ly
 share/doc/lilypond/${VERSION}/input/regression/lily-659e1eee54.png
 share/doc/lilypond/${VERSION}/input/regression/lily-659e1eee54.txt
+share/doc/lilypond/${VERSION}/input/regression/lily-65db0ad98b.ly
+share/doc/lilypond/${VERSION}/input/regression/lily-65db0ad98b.png
+share/doc/lilypond/${VERSION}/input/regression/lily-65db0ad98b.txt
 share/doc/lilypond/${VERSION}/input/regression/lily-6646dddadf.ly
 share/doc/lilypond/${VERSION}/input/regression/lily-6646dddadf.png
 share/doc/lilypond/${VERSION}/input/regression/lily-6646dddadf.txt
@@ -8105,6 +8111,9 @@ share/doc/lilypond/${VERSION}/input/regression/lily-a75871bb26.txt
 share/doc/lilypond/${VERSION}/input/regression/lily-ab4be6c9e8.ly
 share/doc/lilypond/${VERSION}/input/regression/lily-ab4be6c9e8.png
 share/doc/lilypond/${VERSION}/input/regression/lily-ab4be6c9e8.txt
+share/doc/lilypond/${VERSION}/input/regression/lily-ac427e6e50.ly
+share/doc/lilypond/${VERSION}/input/regression/lily-ac427e6e50.png
+share/doc/lilypond/${VERSION}/input/regression/lily-ac427e6e50.txt
 share/doc/lilypond/${VERSION}/input/regression/lily-ac82e5d858.ly
 share/doc/lilypond/${VERSION}/input/regression/lily-ac82e5d858.png
 share/doc/lilypond/${VERSION}/input/regression/lily-ac82e5d858.txt
@@ -8180,6 +8189,9 @@ share/doc/lilypond/${VERSION}/input/regression/lily-ba478f11dd.txt
 share/doc/lilypond/${VERSION}/input/regression/lily-bb5c6ddcad.ly
 share/doc/lilypond/${VERSION}/input/regression/lily-bb5c6ddcad.png
 share/doc/lilypond/${VERSION}/input/regression/lily-bb5c6ddcad.txt
+share/doc/lilypond/${VERSION}/input/regression/lily-bc10bb9f3a.ly
+share/doc/lilypond/${VERSION}/input/regression/lily-bc10bb9f3a.png
+share/doc/lilypond/${VERSION}/input/regression/lily-bc10bb9f3a.txt
 share/doc/lilypond/${VERSION}/input/regression/lily-bc49596f6b.ly
 share/doc/lilypond/${VERSION}/input/regression/lily-bc49596f6b.png
 share/doc/lilypond/${VERSION}/input/regression/lily-bc49596f6b.txt
