@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/20 19:58:49 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/09/23 09:11:20 steven Exp $
 
 COMMENT=	3D creation software
 
@@ -51,6 +51,7 @@ do-build:
 		BF_PYTHON=${LOCALBASE} BF_PYTHON_VERSION=${PYTHON_VER} \
 		BF_JPEG=${LOCALBASE} \
 		BF_PNG=${LOCALBASE} \
+		BF_SDL_INC="${LOCALBASE}/include/SDL ${LOCALBASE}/include" \
 		BF_TIFF=${LOCALBASE} \
 		BF_OPENGL=${X11BASE} \
 		BF_ZLIB=/usr \
