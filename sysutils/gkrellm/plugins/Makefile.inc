@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2007/01/04 20:19:54 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2007/09/23 12:57:08 sturm Exp $
 
 MAINTAINER?=		Peter Hessler <spambox@theapt.org>
 
@@ -7,7 +7,8 @@ PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
-WANTLIB?=		X11 Xext Xrender atk-1.0 fontconfig z \
+WANTLIB?=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+			Xrender atk-1.0 expat fontconfig z \
 			freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 			glib-2.0 gmodule-2.0 gobject-2.0 glitz png \
 			gthread-2.0 gtk-x11-2.0 iconv intl m \

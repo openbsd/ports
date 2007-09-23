@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/23 12:57:08 sturm Exp $
 
 COMMENT=	GkrellM2 plugin to monitor wireless strength
 
 VERSION=	2.0.3
 DISTNAME=	gkrellmwireless-${VERSION}
-PKGNAME=	gkrellm-wireless-${VERSION}p5
+PKGNAME=	gkrellm-wireless-${VERSION}p6
 CATEGORIES=	net sysutils/gkrellm
 
 HOMEPAGE=	http://gkrellm.luon.net/gkrellmwireless.phtml
