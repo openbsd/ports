@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/04/01 20:55:29 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/09/23 18:50:24 jasper Exp $
 bin/gajim
 bin/gajim-remote
 lib/gajim/
@@ -840,6 +840,7 @@ share/gajim/src/systray.py
 share/gajim/src/tooltips.py
 share/gajim/src/vcard.py
 share/locale/be/LC_MESSAGES/gajim.mo
+share/locale/be@latin/LC_MESSAGES/gajim.mo
 share/locale/bg/LC_MESSAGES/gajim.mo
 share/locale/br/LC_MESSAGES/gajim.mo
 share/locale/cs/LC_MESSAGES/gajim.mo
@@ -850,8 +851,10 @@ share/locale/eo/LC_MESSAGES/gajim.mo
 share/locale/es/LC_MESSAGES/gajim.mo
 share/locale/eu/LC_MESSAGES/gajim.mo
 share/locale/fr/LC_MESSAGES/gajim.mo
+share/locale/gl/LC_MESSAGES/gajim.mo
 share/locale/hr/LC_MESSAGES/gajim.mo
 share/locale/it/LC_MESSAGES/gajim.mo
+share/locale/lt/LC_MESSAGES/gajim.mo
 share/locale/nb/LC_MESSAGES/gajim.mo
 share/locale/nl/LC_MESSAGES/gajim.mo
 share/locale/no/LC_MESSAGES/gajim.mo
@@ -861,8 +864,11 @@ share/locale/pt_BR/LC_MESSAGES/gajim.mo
 share/locale/ru/LC_MESSAGES/gajim.mo
 share/locale/sk/LC_MESSAGES/gajim.mo
 share/locale/sr/LC_MESSAGES/gajim.mo
+share/locale/sr@Latn/LC_MESSAGES/gajim.mo
 share/locale/sv/LC_MESSAGES/gajim.mo
 share/locale/zh_CN/LC_MESSAGES/gajim.mo
 share/pixmaps/
 share/pixmaps/gajim.png
 share/pixmaps/gajim_about.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
