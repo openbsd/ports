@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/07/28 07:09:19 steven Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/09/23 08:06:59 steven Exp $
 %%SHARED%%
 bin/mkoctfile
 bin/octave
@@ -615,20 +615,25 @@ libexec/octave/${VERSION}/oct/
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/PKG_ADD
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/__contourc__.oct
+libexec/octave/${VERSION}/oct/${GNU_ARCH}/__delaunayn__.oct
+libexec/octave/${VERSION}/oct/${GNU_ARCH}/__dsearchn__.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/__glpk__.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/__gnuplot_raw__.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/__lin_interpn__.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/__pchip_deriv__.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/__qp__.oct
+libexec/octave/${VERSION}/oct/${GNU_ARCH}/__voronoi__.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/balance.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/besselj.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/betainc.oct
+libexec/octave/${VERSION}/oct/${GNU_ARCH}/bsxfun.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/ccolamd.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/cellfun.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/chol.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/colamd.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/colloc.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/conv2.oct
+libexec/octave/${VERSION}/oct/${GNU_ARCH}/convhulln.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/daspk.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/dasrt.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/dassl.oct
@@ -680,6 +685,8 @@ libexec/octave/${VERSION}/oct/${GNU_ARCH}/svd.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/syl.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/symrcm.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/time.oct
+libexec/octave/${VERSION}/oct/${GNU_ARCH}/tsearch.oct
+libexec/octave/${VERSION}/oct/${GNU_ARCH}/typecast.oct
 libexec/octave/${VERSION}/oct/${GNU_ARCH}/urlwrite.oct
 libexec/octave/${VERSION}/site/
 libexec/octave/${VERSION}/site/exec/
@@ -703,6 +710,7 @@ share/doc/octave/interpreter/Accessing-Global-Variables-in-Oct_002dFiles.html
 share/doc/octave/interpreter/Acknowledgements.html
 share/doc/octave/interpreter/Actual-Bugs.html
 share/doc/octave/interpreter/Administrating-Packages.html
+share/doc/octave/interpreter/Advanced-Plotting.html
 share/doc/octave/interpreter/Allocating-Local-Memory-in-Oct_002dFiles.html
 share/doc/octave/interpreter/Anonymous-Functions.html
 share/doc/octave/interpreter/Applying-a-Function-to-an-Array.html
@@ -711,6 +719,7 @@ share/doc/octave/interpreter/Arithmetic.html
 share/doc/octave/interpreter/Array-and-Sparse-Differences.html
 share/doc/octave/interpreter/Assignment-Ops.html
 share/doc/octave/interpreter/Audio-Processing.html
+share/doc/octave/interpreter/Axes-Properties.html
 share/doc/octave/interpreter/Basic-Input-and-Output.html
 share/doc/octave/interpreter/Basic-Matrix-Functions.html
 share/doc/octave/interpreter/Basic-Statistical-Functions.html
@@ -741,6 +750,8 @@ share/doc/octave/interpreter/Character-Strings-in-Mex_002dFiles.html
 share/doc/octave/interpreter/Character-Strings-in-Oct_002dFiles.html
 share/doc/octave/interpreter/Coding-Tips.html
 share/doc/octave/interpreter/Color-Conversion.html
+share/doc/octave/interpreter/Colors.html
+share/doc/octave/interpreter/Comma-Separated-Lists.html
 share/doc/octave/interpreter/Command-Line-Editing.html
 share/doc/octave/interpreter/Command-Line-Options.html
 share/doc/octave/interpreter/Commands-For-Completion.html
@@ -757,17 +768,20 @@ share/doc/octave/interpreter/Continuation-Lines.html
 share/doc/octave/interpreter/Control-Theory.html
 share/doc/octave/interpreter/Controlling-Subprocesses.html
 share/doc/octave/interpreter/Conventions.html
+share/doc/octave/interpreter/Convex-Hull.html
 share/doc/octave/interpreter/Coordinate-Transformations.html
 share/doc/octave/interpreter/Copying.html
 share/doc/octave/interpreter/Creating-Cell-Arrays.html
 share/doc/octave/interpreter/Creating-Packages.html
 share/doc/octave/interpreter/Creating-Sparse-Matrices-in-Oct_002dFiles.html
 share/doc/octave/interpreter/Creating-Strings.html
+share/doc/octave/interpreter/Creating-Structures.html
 share/doc/octave/interpreter/Creation.html
 share/doc/octave/interpreter/Current-Working-Directory.html
 share/doc/octave/interpreter/Cursor-Motion.html
 share/doc/octave/interpreter/Customizing-readline.html
 share/doc/octave/interpreter/Customizing-the-Prompt.html
+share/doc/octave/interpreter/Data-Containers.html
 share/doc/octave/interpreter/Data-Structure-Objects.html
 share/doc/octave/interpreter/Data-Structures.html
 share/doc/octave/interpreter/Data-Types.html
@@ -776,7 +790,9 @@ share/doc/octave/interpreter/Debugging.html
 share/doc/octave/interpreter/Default-Arguments.html
 share/doc/octave/interpreter/Defaults-from-the-Environment.html
 share/doc/octave/interpreter/Defining-Functions.html
+share/doc/octave/interpreter/Delaunay-Triangulation.html
 share/doc/octave/interpreter/Demonstration-Functions.html
+share/doc/octave/interpreter/Derivatives-and-Integrals.html
 share/doc/octave/interpreter/Descriptive-Statistics.html
 share/doc/octave/interpreter/Diary-and-Echo-Commands.html
 share/doc/octave/interpreter/Differential-Equations.html
@@ -797,6 +813,7 @@ share/doc/octave/interpreter/Environment-Variables.html
 share/doc/octave/interpreter/Error-Messages.html
 share/doc/octave/interpreter/Errors-and-Warnings.html
 share/doc/octave/interpreter/Errors.html
+share/doc/octave/interpreter/Evaluating-Polynomials.html
 share/doc/octave/interpreter/Evaluation-Notation.html
 share/doc/octave/interpreter/Evaluation-in-a-Different-Context.html
 share/doc/octave/interpreter/Evaluation.html
@@ -804,11 +821,13 @@ share/doc/octave/interpreter/Exception-and-Error-Handling-in-Oct_002dFiles.html
 share/doc/octave/interpreter/Executable-Octave-Programs.html
 share/doc/octave/interpreter/Expressions.html
 share/doc/octave/interpreter/Famous-Matrices.html
+share/doc/octave/interpreter/Figure-Properties.html
 share/doc/octave/interpreter/File-Archiving-Utilities.html
 share/doc/octave/interpreter/File-Positioning.html
 share/doc/octave/interpreter/Filesystem-Utilities.html
 share/doc/octave/interpreter/Financial-Functions.html
 share/doc/octave/interpreter/Finding-Elements-and-Checking-Conditions.html
+share/doc/octave/interpreter/Finding-Roots.html
 share/doc/octave/interpreter/Floating_002dPoint-Conversions.html
 share/doc/octave/interpreter/Fonts.html
 share/doc/octave/interpreter/Format-of-Descriptions.html
@@ -831,12 +850,16 @@ share/doc/octave/interpreter/Getting-Started-with-Mex_002dFiles.html
 share/doc/octave/interpreter/Getting-Started-with-Oct_002dFiles.html
 share/doc/octave/interpreter/Getting-Started.html
 share/doc/octave/interpreter/Global-Variables.html
+share/doc/octave/interpreter/Graphics-Object-Properties.html
+share/doc/octave/interpreter/Graphics-Objects.html
 share/doc/octave/interpreter/Group-Database-Functions.html
 share/doc/octave/interpreter/Handling-Errors.html
 share/doc/octave/interpreter/Handling-Warnings.html
 share/doc/octave/interpreter/Hashing-Functions.html
 share/doc/octave/interpreter/How-You-Can-Contribute-to-Octave.html
+share/doc/octave/interpreter/Identifying-points-in-Triangulation.html
 share/doc/octave/interpreter/Image-Processing.html
+share/doc/octave/interpreter/Image-Properties.html
 share/doc/octave/interpreter/Increment-Ops.html
 share/doc/octave/interpreter/Index-Expressions.html
 share/doc/octave/interpreter/Indexing-Cell-Arrays.html
@@ -853,12 +876,15 @@ share/doc/octave/interpreter/Integer-Arithmetic.html
 share/doc/octave/interpreter/Integer-Conversions.html
 share/doc/octave/interpreter/Integer-Data-Types.html
 share/doc/octave/interpreter/Interaction-with-gnuplot.html
+share/doc/octave/interpreter/Interpolation-on-Scattered-Data.html
 share/doc/octave/interpreter/Interpolation.html
 share/doc/octave/interpreter/Introduction.html
 share/doc/octave/interpreter/Invoking-Octave-from-the-Command-Line.html
 share/doc/octave/interpreter/Issuing-Warnings.html
 share/doc/octave/interpreter/Iterative-Techniques.html
 share/doc/octave/interpreter/Killing-and-Yanking.html
+share/doc/octave/interpreter/Line-Properties.html
+share/doc/octave/interpreter/Line-Styles.html
 share/doc/octave/interpreter/Line_002dOriented-Input.html
 share/doc/octave/interpreter/Linear-Algebra.html
 share/doc/octave/interpreter/Linear-Least-Squares.html
@@ -866,9 +892,11 @@ share/doc/octave/interpreter/Linear-Programming.html
 share/doc/octave/interpreter/Loading-and-Saving-Images.html
 share/doc/octave/interpreter/Logical-Values.html
 share/doc/octave/interpreter/Looping-Over-Structure-Elements.html
-share/doc/octave/interpreter/Manipulating-Existing-Plots.html
+share/doc/octave/interpreter/Managing-Default-Properties.html
 share/doc/octave/interpreter/Manipulating-Strings.html
+share/doc/octave/interpreter/Manipulating-Structures.html
 share/doc/octave/interpreter/Manipulating-the-load-path.html
+share/doc/octave/interpreter/Marker-Styles.html
 share/doc/octave/interpreter/MathConsiderations.html
 share/doc/octave/interpreter/Mathematical-Constants.html
 share/doc/octave/interpreter/Matrices-and-Arrays-in-Oct_002dFiles.html
@@ -876,6 +904,7 @@ share/doc/octave/interpreter/Matrices.html
 share/doc/octave/interpreter/Matrix-Factorizations.html
 share/doc/octave/interpreter/Matrix-Manipulation.html
 share/doc/octave/interpreter/Mex_002dFiles.html
+share/doc/octave/interpreter/Miscellaneous-Functions.html
 share/doc/octave/interpreter/Missing-Data.html
 share/doc/octave/interpreter/Models.html
 share/doc/octave/interpreter/Multi_002ddimensional-Interpolation.html
@@ -909,10 +938,14 @@ share/doc/octave/interpreter/PKG_005fADD-and-PKG_005fDEL-directives.html
 share/doc/octave/interpreter/Packages.html
 share/doc/octave/interpreter/Paging-Screen-Output.html
 share/doc/octave/interpreter/Password-Database-Functions.html
+share/doc/octave/interpreter/Patch-Properties.html
 share/doc/octave/interpreter/Persistent-Variables.html
 share/doc/octave/interpreter/Plot-Annotations.html
+share/doc/octave/interpreter/Plotting-Basics.html
 share/doc/octave/interpreter/Plotting-on-top-of-Images.html
+share/doc/octave/interpreter/Plotting-the-Triangulation.html
 share/doc/octave/interpreter/Plotting.html
+share/doc/octave/interpreter/Polynomial-Interpolation.html
 share/doc/octave/interpreter/Polynomial-Manipulations.html
 share/doc/octave/interpreter/Predicates-for-Numeric-Objects.html
 share/doc/octave/interpreter/Preface.html
@@ -920,6 +953,8 @@ share/doc/octave/interpreter/Printing-Notation.html
 share/doc/octave/interpreter/Printing-Plots.html
 share/doc/octave/interpreter/Process-ID-Information.html
 share/doc/octave/interpreter/Processing-Data-in-Cell-Arrays.html
+share/doc/octave/interpreter/Processing-Data-in-Structures.html
+share/doc/octave/interpreter/Products-of-Polynomials.html
 share/doc/octave/interpreter/Quadratic-Programming.html
 share/doc/octave/interpreter/Quaternions.html
 share/doc/octave/interpreter/Quitting-Octave.html
@@ -934,6 +969,7 @@ share/doc/octave/interpreter/Reporting-Bugs.html
 share/doc/octave/interpreter/Representing-Images.html
 share/doc/octave/interpreter/ReturnType.html
 share/doc/octave/interpreter/Returning-From-a-Function.html
+share/doc/octave/interpreter/Root-Figure-Properties.html
 share/doc/octave/interpreter/Running-Octave-From-Within-Emacs.html
 share/doc/octave/interpreter/Running-Octave.html
 share/doc/octave/interpreter/Saving-Data-on-Unexpected-Exits.html
@@ -953,7 +989,6 @@ share/doc/octave/interpreter/Sparse-Matrices-with-Mex_002dFiles.html
 share/doc/octave/interpreter/Sparse-Matrices.html
 share/doc/octave/interpreter/Special-Functions.html
 share/doc/octave/interpreter/Special-Utility-Matrices.html
-share/doc/octave/interpreter/Specialized-Two_002dDimensional-Plots.html
 share/doc/octave/interpreter/Standalone-Programs.html
 share/doc/octave/interpreter/Startup-Files.html
 share/doc/octave/interpreter/Statements.html
@@ -965,12 +1000,14 @@ share/doc/octave/interpreter/String-Conversions.html
 share/doc/octave/interpreter/String-Input-Conversions.html
 share/doc/octave/interpreter/String-Objects.html
 share/doc/octave/interpreter/Strings.html
+share/doc/octave/interpreter/Structure-Arrays.html
 share/doc/octave/interpreter/Structures-in-Oct_002dFiles.html
 share/doc/octave/interpreter/Structures-with-Mex_002dFiles.html
 share/doc/octave/interpreter/Style-Tips.html
 share/doc/octave/interpreter/Subfunctions.html
 share/doc/octave/interpreter/Summary-of-Built_002din-Variables.html
 share/doc/octave/interpreter/Sums-and-Products.html
+share/doc/octave/interpreter/Surface-Properties.html
 share/doc/octave/interpreter/System-Information.html
 share/doc/octave/interpreter/System-Utilities.html
 share/doc/octave/interpreter/Table-of-Input-Conversions.html
@@ -983,6 +1020,7 @@ share/doc/octave/interpreter/Test-Functions.html
 share/doc/octave/interpreter/Test-Plotting-Functions.html
 share/doc/octave/interpreter/Test-and-Demo-Functions.html
 share/doc/octave/interpreter/Tests.html
+share/doc/octave/interpreter/Text-Properties.html
 share/doc/octave/interpreter/The-DESCRIPTION-File.html
 share/doc/octave/interpreter/The-INDEX-file.html
 share/doc/octave/interpreter/The-break-Statement.html
@@ -999,7 +1037,7 @@ share/doc/octave/interpreter/Timing-Utilities.html
 share/doc/octave/interpreter/Tips.html
 share/doc/octave/interpreter/Trigonometry.html
 share/doc/octave/interpreter/Trouble.html
-share/doc/octave/interpreter/Two_002dDimensional-Plotting.html
+share/doc/octave/interpreter/Two_002dDimensional-Plots.html
 share/doc/octave/interpreter/User_002ddefined-Data-Types.html
 share/doc/octave/interpreter/Using-Octave-Mode.html
 share/doc/octave/interpreter/Using-Packages.html
@@ -1010,6 +1048,7 @@ share/doc/octave/interpreter/Variable-Index.html
 share/doc/octave/interpreter/Variable_002dlength-Argument-Lists.html
 share/doc/octave/interpreter/Variable_002dlength-Return-Lists.html
 share/doc/octave/interpreter/Variables.html
+share/doc/octave/interpreter/Voronoi-Diagrams.html
 share/doc/octave/interpreter/Working-with-Matrices-and-Arrays-in-Mex_002dFiles.html
 share/doc/octave/interpreter/blockdiag.html
 share/doc/octave/interpreter/cacsd.html
@@ -1047,6 +1086,7 @@ share/doc/octave/interpreter/doc_002daddpath.html
 share/doc/octave/interpreter/doc_002dairy.html
 share/doc/octave/interpreter/doc_002dall.html
 share/doc/octave/interpreter/doc_002danaldemo.html
+share/doc/octave/interpreter/doc_002dancestor.html
 share/doc/octave/interpreter/doc_002danova.html
 share/doc/octave/interpreter/doc_002dans.html
 share/doc/octave/interpreter/doc_002dany.html
@@ -1083,6 +1123,7 @@ share/doc/octave/interpreter/doc_002daxis.html
 share/doc/octave/interpreter/doc_002daxis2dlim.html
 share/doc/octave/interpreter/doc_002dbalance.html
 share/doc/octave/interpreter/doc_002dbar.html
+share/doc/octave/interpreter/doc_002dbarh.html
 share/doc/octave/interpreter/doc_002dbartlett.html
 share/doc/octave/interpreter/doc_002dbartlett_005ftest.html
 share/doc/octave/interpreter/doc_002dbase2dec.html
@@ -1119,6 +1160,7 @@ share/doc/octave/interpreter/doc_002dbode.html
 share/doc/octave/interpreter/doc_002dbode_005fbounds.html
 share/doc/octave/interpreter/doc_002dbone.html
 share/doc/octave/interpreter/doc_002dbox.html
+share/doc/octave/interpreter/doc_002dbsxfun.html
 share/doc/octave/interpreter/doc_002dbug_005freport.html
 share/doc/octave/interpreter/doc_002dbuildssic.html
 share/doc/octave/interpreter/doc_002dbuiltin.html
@@ -1140,6 +1182,7 @@ share/doc/octave/interpreter/doc_002dceil.html
 share/doc/octave/interpreter/doc_002dcell.html
 share/doc/octave/interpreter/doc_002dcell2mat.html
 share/doc/octave/interpreter/doc_002dcell2struct.html
+share/doc/octave/interpreter/doc_002dcelldisp.html
 share/doc/octave/interpreter/doc_002dcellfun.html
 share/doc/octave/interpreter/doc_002dcellidx.html
 share/doc/octave/interpreter/doc_002dcellstr.html
@@ -1183,6 +1226,8 @@ share/doc/octave/interpreter/doc_002dcontour.html
 share/doc/octave/interpreter/doc_002dcontourc.html
 share/doc/octave/interpreter/doc_002dconv.html
 share/doc/octave/interpreter/doc_002dconv2.html
+share/doc/octave/interpreter/doc_002dconvhull.html
+share/doc/octave/interpreter/doc_002dconvhulln.html
 share/doc/octave/interpreter/doc_002dcool.html
 share/doc/octave/interpreter/doc_002dcopper.html
 share/doc/octave/interpreter/doc_002dcopyfile.html
@@ -1238,6 +1283,9 @@ share/doc/octave/interpreter/doc_002ddec2hex.html
 share/doc/octave/interpreter/doc_002ddeconv.html
 share/doc/octave/interpreter/doc_002ddefault_005fsave_005foptions.html
 share/doc/octave/interpreter/doc_002ddel2.html
+share/doc/octave/interpreter/doc_002ddelaunay.html
+share/doc/octave/interpreter/doc_002ddelaunay3.html
+share/doc/octave/interpreter/doc_002ddelaunayn.html
 share/doc/octave/interpreter/doc_002ddelete.html
 share/doc/octave/interpreter/doc_002ddemo.html
 share/doc/octave/interpreter/doc_002ddet.html
@@ -1270,6 +1318,8 @@ share/doc/octave/interpreter/doc_002ddot.html
 share/doc/octave/interpreter/doc_002ddouble.html
 share/doc/octave/interpreter/doc_002ddrawnow.html
 share/doc/octave/interpreter/doc_002ddre.html
+share/doc/octave/interpreter/doc_002ddsearch.html
+share/doc/octave/interpreter/doc_002ddsearchn.html
 share/doc/octave/interpreter/doc_002ddup2.html
 share/doc/octave/interpreter/doc_002dduplication_005fmatrix.html
 share/doc/octave/interpreter/doc_002ddurbinlevinson.html
@@ -1425,7 +1475,11 @@ share/doc/octave/interpreter/doc_002dgram.html
 share/doc/octave/interpreter/doc_002dgray.html
 share/doc/octave/interpreter/doc_002dgray2ind.html
 share/doc/octave/interpreter/doc_002dgrid.html
+share/doc/octave/interpreter/doc_002dgriddata.html
+share/doc/octave/interpreter/doc_002dgriddata3.html
+share/doc/octave/interpreter/doc_002dgriddatan.html
 share/doc/octave/interpreter/doc_002dgunzip.html
+share/doc/octave/interpreter/doc_002dgzip.html
 share/doc/octave/interpreter/doc_002dh2norm.html
 share/doc/octave/interpreter/doc_002dh2syn.html
 share/doc/octave/interpreter/doc_002dhadamard.html
@@ -1478,6 +1532,7 @@ share/doc/octave/interpreter/doc_002dindex.html
 share/doc/octave/interpreter/doc_002dinfo_005ffile.html
 share/doc/octave/interpreter/doc_002dinfo_005fprogram.html
 share/doc/octave/interpreter/doc_002dinline.html
+share/doc/octave/interpreter/doc_002dinpolygon.html
 share/doc/octave/interpreter/doc_002dinput.html
 share/doc/octave/interpreter/doc_002dinputname.html
 share/doc/octave/interpreter/doc_002dint16.html
@@ -1531,6 +1586,7 @@ share/doc/octave/interpreter/doc_002disfield.html
 share/doc/octave/interpreter/doc_002disfigure.html
 share/doc/octave/interpreter/doc_002disglobal.html
 share/doc/octave/interpreter/doc_002disgraph.html
+share/doc/octave/interpreter/doc_002dishandle.html
 share/doc/octave/interpreter/doc_002dishold.html
 share/doc/octave/interpreter/doc_002disieee.html
 share/doc/octave/interpreter/doc_002disinf.html
@@ -1661,6 +1717,7 @@ share/doc/octave/interpreter/doc_002dmktime.html
 share/doc/octave/interpreter/doc_002dmlock.html
 share/doc/octave/interpreter/doc_002dmod.html
 share/doc/octave/interpreter/doc_002dmoddemo.html
+share/doc/octave/interpreter/doc_002dmode.html
 share/doc/octave/interpreter/doc_002dmoment.html
 share/doc/octave/interpreter/doc_002dmore.html
 share/doc/octave/interpreter/doc_002dmovefile.html
@@ -1719,6 +1776,7 @@ share/doc/octave/interpreter/doc_002dpage_005fscreen_005foutput.html
 share/doc/octave/interpreter/doc_002dparallel.html
 share/doc/octave/interpreter/doc_002dparseparams.html
 share/doc/octave/interpreter/doc_002dpascal.html
+share/doc/octave/interpreter/doc_002dpatch.html
 share/doc/octave/interpreter/doc_002dpath.html
 share/doc/octave/interpreter/doc_002dpathdef.html
 share/doc/octave/interpreter/doc_002dpathsep.html
@@ -1752,7 +1810,7 @@ share/doc/octave/interpreter/doc_002dpolyder.html
 share/doc/octave/interpreter/doc_002dpolyderiv.html
 share/doc/octave/interpreter/doc_002dpolyfit.html
 share/doc/octave/interpreter/doc_002dpolygcd.html
-share/doc/octave/interpreter/doc_002dpolyinteg.html
+share/doc/octave/interpreter/doc_002dpolyint.html
 share/doc/octave/interpreter/doc_002dpolyout.html
 share/doc/octave/interpreter/doc_002dpolyreduce.html
 share/doc/octave/interpreter/doc_002dpolyval.html
@@ -1850,6 +1908,7 @@ share/doc/octave/interpreter/doc_002drotdim.html
 share/doc/octave/interpreter/doc_002dround.html
 share/doc/octave/interpreter/doc_002drows.html
 share/doc/octave/interpreter/doc_002drref.html
+share/doc/octave/interpreter/doc_002drun.html
 share/doc/octave/interpreter/doc_002drun_005fcount.html
 share/doc/octave/interpreter/doc_002drun_005fhistory.html
 share/doc/octave/interpreter/doc_002drun_005ftest.html
@@ -1895,6 +1954,7 @@ share/doc/octave/interpreter/doc_002dsize_005fequal.html
 share/doc/octave/interpreter/doc_002dsizeof.html
 share/doc/octave/interpreter/doc_002dskewness.html
 share/doc/octave/interpreter/doc_002dsleep.html
+share/doc/octave/interpreter/doc_002dsombrero.html
 share/doc/octave/interpreter/doc_002dsort.html
 share/doc/octave/interpreter/doc_002dsortcom.html
 share/doc/octave/interpreter/doc_002dsortrows.html
@@ -1984,6 +2044,7 @@ share/doc/octave/interpreter/doc_002dstrtrunc.html
 share/doc/octave/interpreter/doc_002dstruct.html
 share/doc/octave/interpreter/doc_002dstruct2cell.html
 share/doc/octave/interpreter/doc_002dstruct_005flevels_005fto_005fprint.html
+share/doc/octave/interpreter/doc_002dstructfun.html
 share/doc/octave/interpreter/doc_002dstrvcat.html
 share/doc/octave/interpreter/doc_002dstudentize.html
 share/doc/octave/interpreter/doc_002dsub2ind.html
@@ -1998,6 +2059,7 @@ share/doc/octave/interpreter/doc_002dsumsq.html
 share/doc/octave/interpreter/doc_002dsuppress_005fverbose_005fhelp_005fmessage.html
 share/doc/octave/interpreter/doc_002dsvd.html
 share/doc/octave/interpreter/doc_002dswap.html
+share/doc/octave/interpreter/doc_002dswapbytes.html
 share/doc/octave/interpreter/doc_002dswapcols.html
 share/doc/octave/interpreter/doc_002dswaprows.html
 share/doc/octave/interpreter/doc_002dsyl.html
@@ -2071,9 +2133,14 @@ share/doc/octave/interpreter/doc_002dtreeplot.html
 share/doc/octave/interpreter/doc_002dtriangle_005flw.html
 share/doc/octave/interpreter/doc_002dtriangle_005fsw.html
 share/doc/octave/interpreter/doc_002dtril.html
+share/doc/octave/interpreter/doc_002dtrimesh.html
+share/doc/octave/interpreter/doc_002dtriplot.html
 share/doc/octave/interpreter/doc_002dtrnd.html
 share/doc/octave/interpreter/doc_002dtrue.html
+share/doc/octave/interpreter/doc_002dtsearch.html
+share/doc/octave/interpreter/doc_002dtsearchn.html
 share/doc/octave/interpreter/doc_002dtype.html
+share/doc/octave/interpreter/doc_002dtypecast.html
 share/doc/octave/interpreter/doc_002dtypeinfo.html
 share/doc/octave/interpreter/doc_002dtzero.html
 share/doc/octave/interpreter/doc_002dtzero2.html
@@ -2121,6 +2188,8 @@ share/doc/octave/interpreter/doc_002dversion.html
 share/doc/octave/interpreter/doc_002dvertcat.html
 share/doc/octave/interpreter/doc_002dview.html
 share/doc/octave/interpreter/doc_002dvol.html
+share/doc/octave/interpreter/doc_002dvoronoi.html
+share/doc/octave/interpreter/doc_002dvoronoin.html
 share/doc/octave/interpreter/doc_002dwaitpid.html
 share/doc/octave/interpreter/doc_002dwarning.html
 share/doc/octave/interpreter/doc_002dwarning_005fids.html
@@ -2162,7 +2231,13 @@ share/doc/octave/interpreter/doc_002dzp2ss.html
 share/doc/octave/interpreter/doc_002dzp2sys.html
 share/doc/octave/interpreter/doc_002dzp2tf.html
 share/doc/octave/interpreter/doc_002dzpout.html
+share/doc/octave/interpreter/fig_003aerrorbar.html
 share/doc/octave/interpreter/fig_003agplot.html
+share/doc/octave/interpreter/fig_003ahist.html
+share/doc/octave/interpreter/fig_003amesh.html
+share/doc/octave/interpreter/fig_003aplot.html
+share/doc/octave/interpreter/fig_003aplot3.html
+share/doc/octave/interpreter/fig_003apolar.html
 share/doc/octave/interpreter/fig_003asimplematrix.html
 share/doc/octave/interpreter/fig_003aspmatrix.html
 share/doc/octave/interpreter/fir2sys.html
@@ -2216,6 +2291,7 @@ share/octave/
 share/octave/${VERSION}/
 share/octave/${VERSION}/NEWS
 share/octave/${VERSION}/imagelib/
+share/octave/${VERSION}/imagelib/default.img
 share/octave/${VERSION}/imagelib/octave-sombrero.png
 share/octave/${VERSION}/m/
 share/octave/${VERSION}/m/audio/
@@ -2454,6 +2530,7 @@ share/octave/${VERSION}/m/deprecated/poisson_cdf.m
 share/octave/${VERSION}/m/deprecated/poisson_inv.m
 share/octave/${VERSION}/m/deprecated/poisson_pdf.m
 share/octave/${VERSION}/m/deprecated/poisson_rnd.m
+share/octave/${VERSION}/m/deprecated/polyinteg.m
 share/octave/${VERSION}/m/deprecated/setstr.m
 share/octave/${VERSION}/m/deprecated/struct_contains.m
 share/octave/${VERSION}/m/deprecated/struct_elements.m
@@ -2524,6 +2601,7 @@ share/octave/${VERSION}/m/general/blkdiag.m
 share/octave/${VERSION}/m/general/cart2pol.m
 share/octave/${VERSION}/m/general/cart2sph.m
 share/octave/${VERSION}/m/general/cell2mat.m
+share/octave/${VERSION}/m/general/celldisp.m
 share/octave/${VERSION}/m/general/circshift.m
 share/octave/${VERSION}/m/general/common_size.m
 share/octave/${VERSION}/m/general/cplxpair.m
@@ -2577,10 +2655,27 @@ share/octave/${VERSION}/m/general/shiftdim.m
 share/octave/${VERSION}/m/general/sortrows.m
 share/octave/${VERSION}/m/general/sph2cart.m
 share/octave/${VERSION}/m/general/strerror.m
+share/octave/${VERSION}/m/general/structfun.m
 share/octave/${VERSION}/m/general/sub2ind.m
 share/octave/${VERSION}/m/general/trapz.m
 share/octave/${VERSION}/m/general/tril.m
 share/octave/${VERSION}/m/general/triu.m
+share/octave/${VERSION}/m/geometry/
+share/octave/${VERSION}/m/geometry/convhull.m
+share/octave/${VERSION}/m/geometry/delaunay.m
+share/octave/${VERSION}/m/geometry/delaunay3.m
+share/octave/${VERSION}/m/geometry/delaunayn.m
+share/octave/${VERSION}/m/geometry/dsearch.m
+share/octave/${VERSION}/m/geometry/dsearchn.m
+share/octave/${VERSION}/m/geometry/griddata.m
+share/octave/${VERSION}/m/geometry/griddata3.m
+share/octave/${VERSION}/m/geometry/griddatan.m
+share/octave/${VERSION}/m/geometry/inpolygon.m
+share/octave/${VERSION}/m/geometry/trimesh.m
+share/octave/${VERSION}/m/geometry/triplot.m
+share/octave/${VERSION}/m/geometry/tsearchn.m
+share/octave/${VERSION}/m/geometry/voronoi.m
+share/octave/${VERSION}/m/geometry/voronoin.m
 share/octave/${VERSION}/m/image/
 share/octave/${VERSION}/m/image/PKG_ADD
 share/octave/${VERSION}/m/image/__img__.m
@@ -2663,6 +2758,7 @@ share/octave/${VERSION}/m/miscellaneous/flops.m
 share/octave/${VERSION}/m/miscellaneous/fullfile.m
 share/octave/${VERSION}/m/miscellaneous/getfield.m
 share/octave/${VERSION}/m/miscellaneous/gunzip.m
+share/octave/${VERSION}/m/miscellaneous/gzip.m
 share/octave/${VERSION}/m/miscellaneous/inputname.m
 share/octave/${VERSION}/m/miscellaneous/ispc.m
 share/octave/${VERSION}/m/miscellaneous/isunix.m
@@ -2680,10 +2776,12 @@ share/octave/${VERSION}/m/miscellaneous/orderfields.m
 share/octave/${VERSION}/m/miscellaneous/pack.m
 share/octave/${VERSION}/m/miscellaneous/paren.m
 share/octave/${VERSION}/m/miscellaneous/parseparams.m
+share/octave/${VERSION}/m/miscellaneous/run.m
 share/octave/${VERSION}/m/miscellaneous/semicolon.m
 share/octave/${VERSION}/m/miscellaneous/setfield.m
 share/octave/${VERSION}/m/miscellaneous/single.m
 share/octave/${VERSION}/m/miscellaneous/substruct.m
+share/octave/${VERSION}/m/miscellaneous/swapbytes.m
 share/octave/${VERSION}/m/miscellaneous/tar.m
 share/octave/${VERSION}/m/miscellaneous/tempdir.m
 share/octave/${VERSION}/m/miscellaneous/tempname.m
@@ -2713,7 +2811,6 @@ share/octave/${VERSION}/m/plot/
 share/octave/${VERSION}/m/plot/PKG_ADD
 share/octave/${VERSION}/m/plot/__axis_label__.m
 share/octave/${VERSION}/m/plot/__bar__.m
-share/octave/${VERSION}/m/plot/__default_colormap__.m
 share/octave/${VERSION}/m/plot/__default_plot_options__.m
 share/octave/${VERSION}/m/plot/__errcomm__.m
 share/octave/${VERSION}/m/plot/__errplot__.m
@@ -2723,6 +2820,7 @@ share/octave/${VERSION}/m/plot/__go_draw_axes__.m
 share/octave/${VERSION}/m/plot/__go_draw_figure__.m
 share/octave/${VERSION}/m/plot/__line__.m
 share/octave/${VERSION}/m/plot/__next_line_color__.m
+share/octave/${VERSION}/m/plot/__patch__.m
 share/octave/${VERSION}/m/plot/__plr1__.m
 share/octave/${VERSION}/m/plot/__plr2__.m
 share/octave/${VERSION}/m/plot/__plt1__.m
@@ -2736,6 +2834,7 @@ share/octave/${VERSION}/m/plot/__plt__.m
 share/octave/${VERSION}/m/plot/__plt_get_axis_arg__.m
 share/octave/${VERSION}/m/plot/__pltopt1__.m
 share/octave/${VERSION}/m/plot/__pltopt__.m
+share/octave/${VERSION}/m/plot/ancestor.m
 share/octave/${VERSION}/m/plot/axes.m
 share/octave/${VERSION}/m/plot/axis.m
 share/octave/${VERSION}/m/plot/bar.m
@@ -2767,6 +2866,7 @@ share/octave/${VERSION}/m/plot/meshgrid.m
 share/octave/${VERSION}/m/plot/ndgrid.m
 share/octave/${VERSION}/m/plot/newplot.m
 share/octave/${VERSION}/m/plot/orient.m
+share/octave/${VERSION}/m/plot/patch.m
 share/octave/${VERSION}/m/plot/peaks.m
 share/octave/${VERSION}/m/plot/plot.m
 share/octave/${VERSION}/m/plot/plot3.m
@@ -2799,7 +2899,7 @@ share/octave/${VERSION}/m/polynomial/polyder.m
 share/octave/${VERSION}/m/polynomial/polyderiv.m
 share/octave/${VERSION}/m/polynomial/polyfit.m
 share/octave/${VERSION}/m/polynomial/polygcd.m
-share/octave/${VERSION}/m/polynomial/polyinteg.m
+share/octave/${VERSION}/m/polynomial/polyint.m
 share/octave/${VERSION}/m/polynomial/polyout.m
 share/octave/${VERSION}/m/polynomial/polyreduce.m
 share/octave/${VERSION}/m/polynomial/polyval.m
@@ -2939,6 +3039,7 @@ share/octave/${VERSION}/m/statistics/base/mahalanobis.m
 share/octave/${VERSION}/m/statistics/base/mean.m
 share/octave/${VERSION}/m/statistics/base/meansq.m
 share/octave/${VERSION}/m/statistics/base/median.m
+share/octave/${VERSION}/m/statistics/base/mode.m
 share/octave/${VERSION}/m/statistics/base/moment.m
 share/octave/${VERSION}/m/statistics/base/ols.m
 share/octave/${VERSION}/m/statistics/base/ppplot.m
