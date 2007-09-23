@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2007/07/28 12:58:34 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2007/09/23 18:14:51 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -81,7 +81,7 @@ index:
 
 ${.CURDIR}/INDEX:
 	@echo "Generating INDEX..."
-	@${MAKE} describe ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
+	@${MAKE} describe MACHINE_ARCH=i386 ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
 	@echo "Done."
 
 print-index:	${.CURDIR}/INDEX
