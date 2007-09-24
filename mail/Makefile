@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2007/09/02 18:35:54 simon Exp $
+# $OpenBSD: Makefile,v 1.188 2007/09/24 20:05:07 jasper Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -138,6 +138,7 @@
      SUBDIR += p5-Mail-Sender
      SUBDIR += p5-Mail-SpamAssassin
      SUBDIR += p5-Mail-Tools
+     SUBDIR += p5-Mail-Webmail-Gmail
      SUBDIR += p5-SMTP-Server
      SUBDIR += pear-Mail
      SUBDIR += pear-Mail-Mime
