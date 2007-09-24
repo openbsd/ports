@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.15 2007/05/25 15:54:14 jakemsr Exp $
---- configure.orig	Tue May  1 13:26:05 2007
-+++ configure	Wed May  2 23:46:49 2007
-@@ -2126,11 +2126,11 @@ EOF
+$OpenBSD: patch-configure,v 1.16 2007/09/24 07:51:24 jakemsr Exp $
+--- configure.orig	Mon Sep 10 19:18:12 2007
++++ configure	Mon Sep 10 19:52:11 2007
+@@ -2079,11 +2079,11 @@ EOF
  pkgconfig_generate libavutil "FFmpeg utility library" "$lavu_version" -lavutil "" ffmpeg
  pkgconfig_generate_uninstalled libavutil "FFmpeg utility library" "$lavu_version"
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.15 2007/05/25 15:54:14 jakemsr Exp $
  
  if enabled pp; then
    pkgconfig_generate libpostproc "FFmpeg post processing library" "$pp_version" -lpostproc "" postproc
-@@ -2138,11 +2138,11 @@ if enabled pp; then
+@@ -2091,11 +2091,11 @@ if enabled pp; then
  fi
  
  if enabled swscaler; then

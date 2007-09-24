@@ -1,6 +1,6 @@
-$OpenBSD: patch-libavcodec_faad_c,v 1.1 2007/06/29 06:15:52 jakemsr Exp $
---- libavcodec/faad.c.orig	Thu May 31 16:09:10 2007
-+++ libavcodec/faad.c	Thu May 31 16:22:30 2007
+$OpenBSD: patch-libavcodec_libfaad_c,v 1.1 2007/09/24 07:51:24 jakemsr Exp $
+--- libavcodec/libfaad.c.orig	Tue Jul 17 23:14:10 2007
++++ libavcodec/libfaad.c	Mon Sep 10 20:03:04 2007
 @@ -73,21 +73,21 @@ typedef struct {
                                  short *sample_buffer,
                                  unsigned long *samples);

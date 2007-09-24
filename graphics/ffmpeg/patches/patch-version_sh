@@ -1,14 +1,17 @@
-$OpenBSD: patch-version_sh,v 1.1 2007/05/25 15:54:14 jakemsr Exp $
---- version.sh.orig	Wed Apr  4 21:25:05 2007
-+++ version.sh	Thu Apr 19 05:39:26 2007
-@@ -1,9 +1,9 @@
+$OpenBSD: patch-version_sh,v 1.2 2007/09/24 07:51:24 jakemsr Exp $
+--- version.sh.orig	Tue Jul 17 23:14:51 2007
++++ version.sh	Mon Sep 10 19:59:57 2007
+@@ -1,9 +1,12 @@
  #!/bin/sh
  
 -svn_revision=`cd "$1" && LC_ALL=C svn info 2> /dev/null | grep Revision | cut -d' ' -f2`
--test $svn_revision || svn_revision=`cd "$1" && grep revision .svn/entries | \
--                                    cut -d '"' -f2 2> /dev/null`
+-test $svn_revision || svn_revision=`cd "$1" && grep revision .svn/entries 2>/dev/null | cut -d '"' -f2`
+-test $svn_revision || svn_revision=`cd "$1" && sed -n -e '/^dir$/{n;p;q}' .svn/entries 2>/dev/null`
 -test $svn_revision || svn_revision=UNKNOWN
 +#svn_revision=`cd "$1" && LC_ALL=C svn info 2> /dev/null | grep Revision | cut -d' ' -f2`
++#test $svn_revision || svn_revision=`cd "$1" && grep revision .svn/entries 2>/dev/null | cut -d '"' -f2`
++#test $svn_revision || svn_revision=`cd "$1" && sed -n -e '/^dir$/{n;p;q}' .svn/entries 2>/dev/null`
++#test $svn_revision || svn_revision=UNKNOWN
 +svn_revision=`cd "$1" && grep Revision svn-info | \
 +                                    cut -d' ' -f2 2> /dev/null`
 +test -n "$svn_revision" || svn_revision=UNKNOWN

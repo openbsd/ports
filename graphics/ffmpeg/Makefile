@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.30 2007/09/24 07:51:24 jakemsr Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
-DISTNAME=		ffmpeg-svn-20070501
-PKGNAME=		${DISTNAME:S/-svn//}p0
-SHARED_LIBS=		avutil		3.0 \
-			avcodec		9.0 \
-			avformat	9.0 \
-			postproc	9.0
+DISTNAME=		ffmpeg-svn-20070910
+PKGNAME=		${DISTNAME:S/-svn//}
+SHARED_LIBS=		avutil		4.0 \
+			avcodec		10.0 \
+			avformat	10.0 \
+			postproc	10.0
 
 CATEGORIES=		graphics multimedia
 
@@ -31,9 +31,10 @@ LIB_DEPENDS=		SDL.>=4::devel/sdl \
 			vorbis.>=4.0,vorbisenc.>=2.0::audio/libvorbis \
 			a52::audio/liba52 \
 			x264::multimedia/x264 \
-			theora::multimedia/libtheora
+			theora::multimedia/libtheora \
+			Imlib2::graphics/imlib2
 
-WANTLIB=		X11 Xext c freetype m pthread ogg ossaudio usbhid z
+WANTLIB=		X11 Xext c freetype m pthread ogg ossaudio z
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -56,26 +57,27 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--cc=${CC} \
 			--disable-opts \
-			--enable-liba52 \
 			--enable-pp \
 			--enable-gpl \
 			--enable-pthreads \
 			--disable-debug \
+			--enable-liba52 \
 			--enable-libfaac \
 			--enable-libfaad \
 			--enable-libmp3lame \
 			--enable-libogg \
-			--enable-libvorbis \
 			--enable-libtheora \
-			--enable-x264 \
-			--extra-libs="-L${LOCALBASE}/lib" \
-			--extra-cflags="-I${LOCALBASE}/include"
+			--enable-libvorbis \
+			--enable-libx264 \
+			--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 CONFIGURE_ENV+=		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 			LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 			LIBavformat_EXTRALIBS="${LIBavformat_EXTRALIBS}" \
 			LIBpostproc_EXTRALIBS="${LIBpostproc_EXTRALIBS}" \
-			TMPDIR=${WRKTMP}
+			TMPDIR=${WRKTMP} \
+			CPPFLAGS="-I${X11BASE}/include"
 
 MAKE_FLAGS=		LIBavutil_VERSION=$(LIBavutil_VERSION) \
 			LIBavcodec_VERSION=$(LIBavcodec_VERSION) \
