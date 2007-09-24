@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_bozo_bosserver_c,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
---- src/bozo/bosserver.c.orig	Tue Dec 27 01:48:57 2005
-+++ src/bozo/bosserver.c	Tue Dec 27 02:07:01 2005
-@@ -1056,6 +1056,8 @@ bozo_Log(char *a, char *b, char *c, char
+$OpenBSD: patch-src_bozo_bosserver_c,v 1.2 2007/09/24 19:36:49 todd Exp $
+--- src/bozo/bosserver.c.orig	Mon Jul 11 14:08:36 2005
++++ src/bozo/bosserver.c	Mon Sep 24 14:03:54 2007
+@@ -1056,6 +1056,8 @@ bozo_Log(char *a, char *b, char *c, char *d, char *e, 
  	}
  
  	/* close so rm BosLog works */

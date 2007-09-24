@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/24 19:36:49 todd Exp $
 
-BROKEN=			does not build
 ONLY_FOR_ARCHS= 	i386
 
 COMMENT=		Distributed filesystem OpenAFS
 
 DISTNAME=		openafs-1.4.0-src
-PKGNAME=		openafs-1.4.0p5
+PKGNAME=		openafs-1.4.0p6
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.openafs.org
@@ -30,22 +29,14 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-namei-fileserver \
 			--enable-largefile-fileserver \
 			--enable-supergroups \
-			--with-afs-sysname=${ARCH}_obsd${OSrev} 
+			--with-afs-sysname=${ARCH}_obsd${OSrev} \
+			--disable-kernel-module
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-src$//}
 
 post-patch:
-	@cp ${FILESDIR}/param.i386_obsd40.h \
-		${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
-
-pre-configure:
-	@if [ ! -d /usr/src/sys ]; then \
-		echo ""; \
-		echo "*** Error: Building this package requires the"; \
-		echo "*** kernel sources to be available under /usr/src/sys"; \
-		echo ""; \
-		exit 1; \
-	fi
+	@sed 's/%OSrev%/'${OSrev}'/g' ${FILESDIR}/param.i386_obsd.h \
+		> ${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/

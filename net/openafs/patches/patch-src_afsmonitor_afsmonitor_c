@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_afsmonitor_afsmonitor_c,v 1.1.1.1 2006/01/31 02:49:24 marco Exp $
---- src/afsmonitor/afsmonitor.c.orig	Thu Aug 11 23:34:05 2005
-+++ src/afsmonitor/afsmonitor.c	Thu Aug 11 23:34:33 2005
-@@ -272,7 +272,7 @@ extern char *cm_categories[];	/* cache m
+$OpenBSD: patch-src_afsmonitor_afsmonitor_c,v 1.2 2007/09/24 19:36:49 todd Exp $
+--- src/afsmonitor/afsmonitor.c.orig	Sun Apr  3 13:15:42 2005
++++ src/afsmonitor/afsmonitor.c	Mon Sep 24 14:03:54 2007
+@@ -272,7 +272,7 @@ extern char *cm_categories[];	/* cache manager data ca
  
  
  
