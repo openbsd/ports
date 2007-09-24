@@ -1,0 +1,13 @@
+$OpenBSD: patch-export_export_ffmpeg_c,v 1.1 2007/09/24 07:57:01 jakemsr Exp $
+--- export/export_ffmpeg.c.orig	Sat Sep 15 23:00:30 2007
++++ export/export_ffmpeg.c	Sat Sep 15 23:07:23 2007
+@@ -126,8 +126,7 @@ struct ffmpeg_codec ffmpeg_codecs[] = {
+     {"mpeg2video", "mpg2", "MPEG2 compliant video", 1},
+     {"h263",       "h263", "H263", 0},
+     {"h263p",      "h263", "H263 plus", 1},
+-    {"h264",       "h264", "H264 (avc)", 1},
+-    {"avc",        "h264", "H264 (avc)", 1},
++    {"libx264",    "h264", "H264 (libx264)", 1},
+     {"wmv1",       "WMV1", "Windows Media Video v1", 1},
+     {"wmv2",       "WMV2", "Windows Media Video v2", 1},
+     {"rv10",       "RV10", "old RealVideo codec", 1},

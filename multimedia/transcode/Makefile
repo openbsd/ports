@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/06 19:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2007/09/24 07:57:01 jakemsr Exp $
 
 COMMENT=		video stream processing tools
 
 DISTNAME=		transcode-1.0.3rc2
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/

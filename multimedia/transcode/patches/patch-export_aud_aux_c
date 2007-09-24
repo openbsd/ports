@@ -1,0 +1,13 @@
+$OpenBSD: patch-export_aud_aux_c,v 1.1 2007/09/24 07:57:01 jakemsr Exp $
+--- export/aud_aux.c.orig	Sat Sep 15 21:56:28 2007
++++ export/aud_aux.c	Sat Sep 15 21:56:52 2007
+@@ -361,8 +361,7 @@ static int audio_init_ffmpeg(vob_t *vob, int o_codec)
+ 
+     pthread_mutex_lock(&init_avcodec_lock);
+     avcodec_init();
+-    register_avcodec(&ac3_encoder);
+-    register_avcodec(&mp2_encoder);
++    avcodec_register_all();
+     pthread_mutex_unlock(&init_avcodec_lock);
+ 
+     switch (o_codec) {
