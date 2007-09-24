@@ -1,0 +1,13 @@
+$OpenBSD: patch-libbase_embedVideoDecoderFfmpeg_cpp,v 1.1 2007/09/24 07:46:38 jakemsr Exp $
+--- libbase/embedVideoDecoderFfmpeg.cpp.orig	Mon Sep 10 23:41:46 2007
++++ libbase/embedVideoDecoderFfmpeg.cpp	Mon Sep 10 23:42:14 2007
+@@ -26,7 +26,9 @@
+ #include "embedVideoDecoderFfmpeg.h"
+ 
+ #ifdef HAVE_SWSCALE_H
++extern "C" {
+ #include <ffmpeg/swscale.h>
++}
+ #endif
+ 
+ #include <boost/scoped_array.hpp>

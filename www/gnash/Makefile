@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/09/24 07:46:38 jakemsr Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	flash player with firefox browser plugin
 DISTNAME=	gnash-0.8.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS +=	gnashbase 2.0
 SHARED_LIBS +=	gnashgeo 2.0
 SHARED_LIBS +=	gnashamf 2.0

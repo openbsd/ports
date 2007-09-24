@@ -1,0 +1,13 @@
+$OpenBSD: patch-server_asobj_SoundFfmpeg_h,v 1.1 2007/09/24 07:46:38 jakemsr Exp $
+--- server/asobj/SoundFfmpeg.h.orig	Mon Sep 10 23:42:46 2007
++++ server/asobj/SoundFfmpeg.h	Mon Sep 10 23:43:05 2007
+@@ -32,7 +32,9 @@
+ #include <boost/bind.hpp> 
+ #include <boost/thread/mutex.hpp>
+ 
++extern "C" {
+ #include <ffmpeg/avformat.h>
++}
+ 
+ namespace gnash {
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-server_asobj_NetStreamFfmpeg_h,v 1.1 2007/09/24 07:46:38 jakemsr Exp $
+--- server/asobj/NetStreamFfmpeg.h.orig	Mon Sep 10 23:43:35 2007
++++ server/asobj/NetStreamFfmpeg.h	Mon Sep 10 23:43:58 2007
+@@ -39,7 +39,9 @@
+ #include "impl.h"
+ #include "video_stream_instance.h"
+ 
++extern "C" {
+ #include <ffmpeg/avformat.h>
++}
+ 
+ #include "image.h"
+ #include "StreamProvider.h"	

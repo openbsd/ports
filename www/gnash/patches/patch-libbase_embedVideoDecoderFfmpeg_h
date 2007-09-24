@@ -1,0 +1,13 @@
+$OpenBSD: patch-libbase_embedVideoDecoderFfmpeg_h,v 1.1 2007/09/24 07:46:38 jakemsr Exp $
+--- libbase/embedVideoDecoderFfmpeg.h.orig	Mon Sep 10 23:41:09 2007
++++ libbase/embedVideoDecoderFfmpeg.h	Mon Sep 10 23:41:29 2007
+@@ -28,7 +28,9 @@
+ 
+ #include <vector>
+ #include "embedVideoDecoder.h"
++extern "C" {
+ #include <ffmpeg/avcodec.h>
++}
+ #include "image.h"
+ 
+ namespace gnash {
