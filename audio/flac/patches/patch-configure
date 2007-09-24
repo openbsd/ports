@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.11 2007/09/18 18:22:32 naddy Exp $
---- configure.orig	Tue Jul 24 05:04:12 2007
-+++ configure	Wed Aug 29 21:20:54 2007
-@@ -23454,7 +23454,7 @@ if test "x$debug" = xtrue; then
- else
- 	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -DNDEBUG"
+$OpenBSD: patch-configure,v 1.12 2007/09/24 17:23:55 naddy Exp $
+--- configure.orig	Tue Sep 18 22:24:27 2007
++++ configure	Tue Sep 18 22:25:47 2007
+@@ -23490,7 +23490,7 @@ else
+ 	CPPFLAGS="-DNDEBUG $CPPFLAGS"
  	if test "x$GCC" = xyes; then
--		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
-+		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -Wall -W -DFLaC__INLINE=__inline__"
+ 		CPPFLAGS="-DFLaC__INLINE=__inline__ $CPPFLAGS"
+-		CFLAGS="-O3 -funroll-loops -finline-functions -Wall -W -Winline $CFLAGS"
++		CFLAGS="-Wall -W $CFLAGS"
  	fi
  fi
- CFLAGS="$OUR_CFLAGS_HEAD $CFLAGS"
-@@ -24459,7 +24459,7 @@ s,@OGG_CFLAGS@,$OGG_CFLAGS,;t t
+ 
+@@ -24514,7 +24514,7 @@ s,@OGG_CFLAGS@,$OGG_CFLAGS,;t t
  s,@OGG_LIBS@,$OGG_LIBS,;t t
  s,@FLaC__HAS_OGG_TRUE@,$FLaC__HAS_OGG_TRUE,;t t
  s,@FLaC__HAS_OGG_FALSE@,$FLaC__HAS_OGG_FALSE,;t t

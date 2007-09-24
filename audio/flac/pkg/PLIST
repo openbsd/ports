@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/09/18 18:22:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2007/09/24 17:23:55 naddy Exp $
 bin/flac
 bin/metaflac
 include/FLAC/
@@ -220,9 +220,29 @@ share/doc/flac/html/api/structFLAC____Subframe__Verbatim-members.html
 share/doc/flac/html/api/structFLAC____Subframe__Verbatim.html
 share/doc/flac/html/changelog.html
 share/doc/flac/html/comparison.html
+share/doc/flac/html/comparison__chopin_prelude_24.html
+share/doc/flac/html/comparison__dream_theater_600.html
+share/doc/flac/html/comparison__eddie_warner_titus.html
+share/doc/flac/html/comparison__fanfare_de_l_eventail_de_jeanne.html
+share/doc/flac/html/comparison__gloria_estefan_conga.html
+share/doc/flac/html/comparison__hand_in_my_pocket.html
+share/doc/flac/html/comparison__l_sub_raga_sivapriya.html
+share/doc/flac/html/comparison__laetatus_sum.html
+share/doc/flac/html/comparison__mummified_in_barbed_wire.html
+share/doc/flac/html/comparison__prokofiev_pcon3_3.html
+share/doc/flac/html/comparison__ravel_sq4_4.html
+share/doc/flac/html/comparison__scarlatti_k42.html
+share/doc/flac/html/comparison__tool_forty_six_and_2.html
+share/doc/flac/html/comparison__white_room.html
+share/doc/flac/html/comparison_all_cpudectime.html
+share/doc/flac/html/comparison_all_cpuenctime.html
+share/doc/flac/html/comparison_all_procdectime.html
+share/doc/flac/html/comparison_all_procenctime.html
+share/doc/flac/html/comparison_all_ratio.html
 share/doc/flac/html/developers.html
 share/doc/flac/html/documentation.html
 share/doc/flac/html/documentation_bugs.html
+share/doc/flac/html/documentation_example_code.html
 share/doc/flac/html/documentation_format_overview.html
 share/doc/flac/html/documentation_tasks.html
 share/doc/flac/html/documentation_tools.html
@@ -266,6 +286,7 @@ share/doc/flac/html/images/hw/rio_karma_279x254.jpg
 share/doc/flac/html/images/hw/sonos_family_RGB_325x200.jpg
 share/doc/flac/html/images/hw/teclast-tl29_325x244.jpg
 share/doc/flac/html/images/hw/transporter_hero_grey_325x208.jpg
+share/doc/flac/html/images/hw/tvix-4000_325x204.jpg
 share/doc/flac/html/images/hw/vibez_nofm_combi_black_b_325x220.jpg
 share/doc/flac/html/images/logo100.gif
 share/doc/flac/html/images/logo130.gif

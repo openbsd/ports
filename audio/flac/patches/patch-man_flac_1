@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_flac_1,v 1.1 2007/09/18 18:22:32 naddy Exp $
---- man/flac.1.orig	Wed Feb 14 02:28:01 2007
-+++ man/flac.1	Wed Aug 29 21:20:54 2007
-@@ -319,7 +319,7 @@ These flags can be used to invert the sense of the cor
+$OpenBSD: patch-man_flac_1,v 1.2 2007/09/24 17:23:55 naddy Exp $
+--- man/flac.1.orig	Fri Sep 14 17:08:05 2007
++++ man/flac.1	Tue Sep 18 22:26:09 2007
+@@ -325,7 +325,7 @@ These flags can be used to invert the sense of the cor
  .PP
  metaflac(1).
  .PP

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/18 18:22:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2007/09/24 17:23:55 naddy Exp $
 
 COMMENT=	free lossless audio codec
 
-DISTNAME=	flac-1.2.0
+DISTNAME=	flac-1.2.1
 CATEGORIES=	audio archivers
 HOMEPAGE=	http://flac.sourceforge.net/
-SHARED_LIBS +=  FLAC                 8.0      # .9.0
-SHARED_LIBS +=  FLAC++               7.0      # .7.0
+SHARED_LIBS +=  FLAC                 9.0      # .10.0
+SHARED_LIBS +=  FLAC++               8.0      # .8.0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

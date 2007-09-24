@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2007/09/18 18:22:32 naddy Exp $
---- Makefile.in.orig	Wed Aug 29 21:18:22 2007
-+++ Makefile.in	Wed Aug 29 21:18:31 2007
-@@ -231,7 +231,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-Makefile_in,v 1.5 2007/09/24 17:23:55 naddy Exp $
+--- Makefile.in.orig	Sun Sep 16 22:04:57 2007
++++ Makefile.in	Tue Sep 18 22:46:42 2007
+@@ -234,7 +234,7 @@ target_alias = @target_alias@
  
  AUTOMAKE_OPTIONS = foreign 1.7
  
--SUBDIRS = doc include m4 man src test build obj
+-SUBDIRS = doc include m4 man src examples test build obj
 +SUBDIRS = doc include m4 man src test build
  
  DISTCLEANFILES = libtool-disable-static
