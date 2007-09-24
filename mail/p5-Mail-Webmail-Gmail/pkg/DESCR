@@ -1,0 +1,3 @@
+This perl module uses objects to make it easy to interface with Gmail.
+The author hope to implement all of the functionality of the Gmail
+website, plus additional features.
