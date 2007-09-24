@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/24 14:41:56 merdely Exp $
 
 COMMENT=		lightweight C library that eases the writing of daemons
 
-DISTNAME=		libdaemon-0.11
+DISTNAME=		libdaemon-0.12
 SHARED_LIBS+=		daemon	3.0	#.3.0
 CATEGORIES=		devel
 
