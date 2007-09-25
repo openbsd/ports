@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/07/29 13:04:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/25 18:29:38 ajacoutot Exp $
 
 COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/index.php/Obconf
@@ -28,7 +29,8 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glade-2.0.>=0.1::devel/libglade2 \
 		startup-notification-1::devel/startup-notification \
 		obparser.>=6,obrender.>=6::x11/openbox
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		:shared-mime-info->=0.21:misc/shared-mime-info
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
