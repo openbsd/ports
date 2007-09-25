@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2007/09/25 22:16:03 merdely Exp $
 
 COMMENT=	safe concurrent access to MLDBM databases
 
 MODULES=	cpan
 VERSION=	0.30
 DISTNAME=	MLDBM-Sync-${VERSION}
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	devel
 
-RUN_DEPENDS=	:p5-MLDBM-*:devel/p5-MLDBM
+RUN_DEPENDS=	:p5-MLDBM-*:devel/p5-MLDBM \
+		::devel/p5-Tie-Cache
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
