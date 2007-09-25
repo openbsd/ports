@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/25 22:11:54 merdely Exp $
+${P5SITE}/Tie/
+${P5SITE}/Tie/Cache.pm
+${P5SITE}/Tie/bench.pl
+@man man/man3p/Tie::Cache.3p
