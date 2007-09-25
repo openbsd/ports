@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/09/25 08:23:04 steven Exp $
+@lib lib/libajax.so.${LIBajax_VERSION}
+@lib lib/libajaxg.so.${LIBajaxg_VERSION}
+@lib lib/libeplplot.so.${LIBeplplot_VERSION}
+@lib lib/libnucleus.so.${LIBnucleus_VERSION}
