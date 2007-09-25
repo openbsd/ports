@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile_unix,v 1.6 2007/06/26 19:47:59 rui Exp $
+$OpenBSD: patch-makefile_unix,v 1.7 2007/09/25 19:40:57 rui Exp $
 --- makefile.unix.orig	Sat Apr 30 08:00:12 2005
-+++ makefile.unix	Mon Jun 25 19:34:54 2007
++++ makefile.unix	Mon Sep 24 17:14:20 2007
 @@ -93,6 +93,8 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o int64.o savep
  	resource.o match.o timefn.o rdwrfn.o consio.o options.o ulinks.o errhnd.o rarvm.o \
  	rijndael.o getbits.o sha1.o extinfo.o extract.o volume.o list.o find.o unpack.o cmddata.o

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2007/09/25 19:40:57 rui Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
-DISTNAME=	unrarsrc-3.7.6
-PKGNAME=	unrar-3.76
+DISTNAME=	unrarsrc-3.7.8
+PKGNAME=	unrar-3.78
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
