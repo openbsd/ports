@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/03/03 01:42:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/25 08:23:38 steven Exp $
 #
 
      SUBDIR += AcePerl
      SUBDIR += AcePerl,opt
      SUBDIR += bioperl
+     SUBDIR += emboss
      SUBDIR += nutdb
      SUBDIR += py-biopython
 
