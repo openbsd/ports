@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/09 14:42:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/09/26 08:25:34 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
-DISTNAME=		foomatic-db-engine-3.0.2
+V=			20070919
+DISTNAME=		foomatic-db-engine-3.0-${V}
+PKGNAME=		foomatic-db-engine-3.0.${V}
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
@@ -15,7 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/
+# tarballs are only available for a 24 hour period
+#MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/
+MASTER_SITES=		http://jakemsr.trancell.org/distfiles/ \
+			http://openbsd.dead-parrot.de/distfiles/ \
+			http://www.obsd.fr/OpenBSD/distfiles/
 
 LIB_DEPENDS=		xml2.>=8::textproc/libxml
 BUILD_DEPENDS=		::print/foomatic-filters
@@ -69,5 +75,10 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2"
 			CUPS_LPINFO="${LOCALBASE}/sbin/lpinfo"
 
 NO_REGRESS=		Yes
+SUBST_VARS=		LOCALBASE
+
+pre-configure:
+	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+		${WRKSRC}/foomatic-combo-xml.c
 
 .include <bsd.port.mk>

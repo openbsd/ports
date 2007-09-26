@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/09/09 14:42:02 ajacoutot Exp $
---- Makefile.in.orig	Sat Dec 20 02:01:43 2003
-+++ Makefile.in	Thu Apr 26 18:03:07 2007
-@@ -182,13 +182,9 @@ check-config:
+$OpenBSD: patch-Makefile_in,v 1.2 2007/09/26 08:25:34 ajacoutot Exp $
+--- Makefile.in.orig	Wed Sep 19 21:49:48 2007
++++ Makefile.in	Tue Sep 25 12:47:05 2007
+@@ -186,13 +186,9 @@ check-config:
  install-bin: check-config lib/Makefile
  #	This is the only way to get the Perl-generated Makefile using
  #	$(DESTDIR) properly
 -	( cd lib && \
 -	  $(MAKE) PREFIX=$(PERLPREFIX) && \
--	  $(MAKE) PREFIX=$(PERLPREFIX) pure_install \
+-	  $(MAKE) PREFIX=$(DESTDIR)$(PERLPREFIX) pure_install \
 -	)
 +	cd lib &&  $(MAKE) PREFIX=$(PERLPREFIX) pure_install
  	${SRC}/mkinstalldirs $(DESTDIR)$(BINDIR)
@@ -16,7 +16,21 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/09/09 14:42:02 ajacoutot Exp $
  	${SRC}/mkinstalldirs $(DESTDIR)$(LIBDIR)/templates
  	${INSTALL} -m 755 $(BINFILES) $(DESTDIR)$(BINDIR)
  	${INSTALL} -m 755 $(SBINFILES) $(DESTDIR)$(SBINDIR)
-@@ -214,6 +210,7 @@ build: defaults lib/Makefile foomatic-combo-xml foomat
+@@ -203,13 +199,6 @@ install-bin: check-config lib/Makefile
+ #	Link to allow foomatic-ppdfile be called under the old name
+ #	foomatic-datafile
+ 	ln -sf foomatic-ppdfile $(DESTDIR)$(BINDIR)/foomatic-datafile
+-#	Link foomatic-ppdfile to the CUPS 1.2 PPD generator directory,
+-#	so that the cups-driverd automatically generates Foomatic PPDs
+-#	on demand (/usr/lib/cups/driver).
+-	if [ -d $(LIB_CUPS) ]; then \
+-	  ${SRC}/mkinstalldirs $(DESTDIR)$(CUPS_DRIVER); \
+-	  ln -sf $(BINDIR)/foomatic-ppdfile $(DESTDIR)$(CUPS_DRIVER)/foomatic; \
+-	fi
+ 
+ install-man: check-config
+ 	${SRC}/mkinstalldirs $(DESTDIR)$(MANDIR)
+@@ -225,6 +214,7 @@ build: defaults lib/Makefile foomatic-combo-xml foomat
  	  $(PERL) -p -i -e "s=use lib '.*lib/';\n==s" $$m; \
  	done
  	chmod a+rx $(AC_OUTPUT_FILES) mkinstalldirs

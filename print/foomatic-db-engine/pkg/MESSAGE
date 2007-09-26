@@ -1,0 +1,5 @@
+If you use CUPS and want it to generate Foomatic PPDs on demand, create
+a symlink from foomatic-ppdfile(1) to the CUPS PPD generator directory:
+
+# ln -sf ${PREFIX}/bin/foomatic-ppdfile \
+	${LOCALBASE}/libexec/cups/driver/foomatic
