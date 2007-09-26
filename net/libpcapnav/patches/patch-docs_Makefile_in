@@ -1,8 +1,8 @@
-$OpenBSD: patch-docs_Makefile_in,v 1.1.1.1 2005/05/27 23:00:45 mjc Exp $
---- docs/Makefile.in.orig	Mon Jul 19 11:38:23 2004
-+++ docs/Makefile.in	Mon Jul 19 11:38:48 2004
-@@ -92,7 +92,7 @@ am__quote = @am__quote@
- install_sh = @install_sh@
+$OpenBSD: patch-docs_Makefile_in,v 1.2 2007/09/26 20:14:37 rui Exp $
+--- docs/Makefile.in.orig	Tue Jun  5 02:17:38 2007
++++ docs/Makefile.in	Fri Jul 27 14:11:37 2007
+@@ -163,7 +163,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  
  # The name of the module, e.g. 'glib'.
 -DOC_MODULE = pcapnav
