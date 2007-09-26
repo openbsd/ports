@@ -1,0 +1,3 @@
+UUIDTools was designed to be a simple library for generating any of the
+various types of UUIDs (or GUIDs if you prefer to call them that).
+It conforms to RFC 4122 whenever possible.
