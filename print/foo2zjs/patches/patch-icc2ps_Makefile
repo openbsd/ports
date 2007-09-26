@@ -1,0 +1,14 @@
+$OpenBSD: patch-icc2ps_Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
+--- icc2ps/Makefile.orig	Tue Sep 25 16:15:36 2007
++++ icc2ps/Makefile	Tue Sep 25 16:15:43 2007
+@@ -1,10 +1,8 @@
+-PREFIX=	/usr
+ BIN=	$(PREFIX)/bin
+ SRC=	icc2ps.c xgetopt.c
+ LIB=	cmscam97.c cmscnvrt.c cmserr.c cmsgamma.c cmsgmt.c cmsintrp.c cmsio1.c \
+ 	cmslut.c cmsmatsh.c cmsmtrx.c cmsnamed.c cmspack.c cmspcs.c cmsps2.c \
+ 	cmssamp.c cmswtpnt.c cmsxform.c cmsio0.c cmsvirt.c
+-CFLAGS=	-O3
+ 
+ all: foo2zjs-icc2ps
+ 

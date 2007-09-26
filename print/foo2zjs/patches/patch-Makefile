@@ -1,0 +1,191 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
+--- Makefile.orig	Wed Jul 18 20:34:22 2007
++++ Makefile	Tue Sep 25 17:10:02 2007
+@@ -6,10 +6,6 @@ SYSNAME := $(shell uname -n)
+ # No version number yet...
+ VERSION=0.0
+ 
+-# Installation prefix...
+-PREFIX=/usr/local
+-PREFIX=/usr
+-
+ # Pathnames for this package...
+ BIN=$(PREFIX)/bin
+ SHAREZJS=$(PREFIX)/share/foo2zjs
+@@ -18,11 +14,11 @@ SHAREHP=$(PREFIX)/share/foo2hp
+ SHAREXQX=$(PREFIX)/share/foo2xqx
+ SHARELAVA=$(PREFIX)/share/foo2lava
+ SHAREQPDL=$(PREFIX)/share/foo2qpdl
+-MANDIR=$(PREFIX)/share/man
++MANDIR=$(PREFIX)/man
+ DOCDIR=$(PREFIX)/share/doc/foo2zjs/
+ 
+ # Pathnames for referenced packages...
+-FOODB=/usr/share/foomatic/db/source
++FOODB=${PREFIX}/share/foo2zjs/db/source
+ 
+ # User ID's
+ LPuid=-olp
+@@ -35,6 +31,10 @@ ifeq ($(UNAME),FreeBSD)
+     LPuid=-oroot
+     LPgid=-gwheel
+ endif
++ifeq ($(UNAME),OpenBSD)
++    LPuid=-oroot
++    LPgid=-gwheel
++endif
+ # If we aren't root, don't try to set ownership
+ ifneq ($(EUID),0)
+     LPuid=
+@@ -46,6 +46,9 @@ MODTIME= date -d "1/1/1970 utc + `stat -t $$1 | cut -f
+ ifeq ($(UNAME),FreeBSD)
+     MODTIME= stat -f "%Sm" -t "%a %b %d %T %Y" $$1
+ endif
++ifeq ($(UNAME),OpenBSD)
++    MODTIME= stat -f "%Sm" -t "%a %b %d %T %Y" $$1
++endif
+ ifeq ($(UNAME),Darwin)
+     MODTIME= stat -f "%Sm" -t "%a %b %d %T %Y" $$1
+ endif
+@@ -196,7 +199,6 @@ ifeq ($(UNAME),Linux)
+ endif
+ 
+ # Compiler flags
+-CFLAGS +=	-O2 -Wall
+ #CFLAGS +=	-g
+ 
+ #
+@@ -388,7 +390,7 @@ opldecode: opldecode.o $(LIBJBG)
+ #
+ # Installation rules
+ #
+-install: all install-test install-prog install-icc2ps install-extra \
++install: all install-prog install-icc2ps \
+ 	    install-crd install-foo install-ppd install-man install-doc
+ 	#
+ 	# If you use CUPS, then restart the spooler:
+@@ -434,10 +436,6 @@ install-prog:
+ 	install -d $(SHAREZJS)/
+ 	install -c -m 644 gamma.ps $(SHAREZJS)/
+ 	install -c -m 644 gamma-lookup.ps $(SHAREZJS)/
+-	install -d $(SHAREOAK)/
+-	install -d $(SHAREHP)/
+-	install -d $(SHAREXQX)/
+-	install -d $(SHARELAVA)/
+ 
+ install-foo:
+ 	#
+@@ -450,6 +448,7 @@ install-foo:
+ 	#
+ 	# Install current database files
+ 	#
++	mkdir -p $(FOODB)/{driver,printer,opt}
+ 	@if [ -d $(FOODB) ]; then \
+ 	    for dir in driver printer opt; do \
+ 		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
+@@ -476,40 +475,6 @@ install-foo:
+ 	    foomatic-combo-xml -O >overview.xml; \
+ 	fi
+ 
+-install-icc2ps:
+-	#
+-	# Install ICM to Postscript file conversion utility
+-	#
+-	cd icc2ps; $(MAKE) PREFIX=$(PREFIX) install
+-
+-install-crd:
+-	#
+-	# Install prebuilt CRD files (from m2300w project)
+-	#
+-	install -d $(SHAREZJS)/
+-	install $(LPuid) $(LPgid) -m 775 -d $(SHAREZJS)/crd/
+-	for i in crd/zjs/*.*; do \
+-	    install -c -m 644 $$i $(SHAREZJS)/crd/; \
+-	done
+-	#
+-	# Install prebuilt CRD files for CLP-300/CLP-600
+-	#
+-	install -d $(SHAREQPDL)/
+-	install $(LPuid) $(LPgid) -m 775 -d $(SHAREQPDL)/crd/
+-	for i in crd/qpdl/*cms* crd/qpdl/*.ps; do \
+-	    install -c -m 644 $$i $(SHAREQPDL)/crd/; \
+-	done
+-
+-install-psfiles:
+-	#
+-	# Install prebuilt psfiles files (from m2300w project)
+-	#
+-	install -d $(SHAREHP)/
+-	install $(LPuid) $(LPgid) -m 775 -d $(SHAREHP)/psfiles/
+-	for i in psfiles/*.*; do \
+-	    install -c -m 644 $$i $(SHAREHP)/psfiles/; \
+-	done
+-
+ install-extra:
+ 	#
+ 	# Install extra files (ICM and firmware), if any exist here.
+@@ -558,33 +523,33 @@ install-extra:
+ 	    fi; \
+ 	done
+ 
++install-icc2ps:
++	#
++	# Install ICM to Postscript file conversion utility
++	#
++	cd icc2ps; $(MAKE) PREFIX=$(PREFIX) install
++
++install-crd:
++	#
++	# Install prebuilt CRD files (from m2300w project)
++	#
++	install -d $(SHAREZJS)/
++	install $(LPuid) $(LPgid) -m 775 -d $(SHAREZJS)/crd/
++	for i in crd/zjs/*.*; do \
++	    install -c -m 644 $$i $(SHAREZJS)/crd/; \
++	done
++
+ MODEL=/usr/share/cups/model
+-LOCALMODEL=/usr/local/share/cups/model
++LOCALMODEL=${PREFIX}/share/foo2zjs/db/source/PPD
+ PPD=/usr/share/ppd
+ install-ppd:
+ 	#
+ 	# Install PPD files for CUPS
+ 	#
+-	if [ -d $(PPD) ]; then \
+-	    find $(PPD) -name '*foo2zjs*' | xargs rm -f; \
+-	    find $(PPD) -name '*foo2hp*' | xargs rm -f; \
+-	    find $(PPD) -name '*foo2xqx*' | xargs rm -f; \
+-	    find $(PPD) -name '*foo2lava*' | xargs rm -f; \
+-	    find $(PPD) -name '*foo2qpdl*' | xargs rm -f; \
+-            [ -d $(PPD)/foo2zjs ] || mkdir $(PPD)/foo2zjs; \
++	mkdir -p $(LOCALMODEL)
++	if [ -d $(LOCALMODEL) ]; then \
+ 	    cd PPD; \
+ 	    for ppd in *.ppd; do \
+-		gzip < $$ppd > $(PPD)/foo2zjs/$$ppd.gz; \
+-	    done; \
+-	fi
+-	if [ -d $(MODEL) ]; then \
+-	    cd PPD; \
+-	    for ppd in *.ppd; do \
+-		gzip < $$ppd > $(MODEL)/$$ppd.gz; \
+-	    done; \
+-	elif [ -d $(LOCALMODEL) ]; then \
+-	    cd PPD; \
+-	    for ppd in *.ppd; do \
+ 		gzip < $$ppd > $(LOCALMODEL)/$$ppd.gz; \
+ 	    done; \
+ 	fi
+@@ -944,11 +909,8 @@ install-doc: doc
+ 	#
+ 	install -d -m 755 $(DOCDIR)
+ 	install -c -m 644 manual.pdf $(DOCDIR)
+-	install -c -m 644 COPYING $(DOCDIR)
+ 	install -c -m 644 INSTALL $(DOCDIR)
+-	install -c -m 644 INSTALL.osx $(DOCDIR)
+ 	install -c -m 644 README $(DOCDIR)
+-	install -c -m 644 ChangeLog $(DOCDIR)
+ 
+ GROFF=/usr/local/test/bin/groff
+ GROFF=groff
