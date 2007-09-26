@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.553 2007/09/26 16:49:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.554 2007/09/26 17:21:07 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -603,6 +603,7 @@
      SUBDIR += ruby-ncurses
      SUBDIR += ruby-needle
      SUBDIR += ruby-rake
+     SUBDIR += ruby-rcov
      SUBDIR += ruby-rubyforge
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-tzinfo
