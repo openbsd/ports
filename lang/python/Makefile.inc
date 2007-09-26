@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.48 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile.inc,v 1.49 2007/09/26 14:02:23 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -132,7 +132,7 @@ FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-sqlite=	python-sqlite-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-bz2=	python-bz2-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION?=2.59
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
