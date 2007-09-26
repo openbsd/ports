@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_dnsmasq_8,v 1.2 2007/05/31 04:28:33 rui Exp $
---- man/dnsmasq.8.orig	Fri Apr 20 14:35:26 2007
-+++ man/dnsmasq.8	Sat May 26 18:26:21 2007
-@@ -763,7 +763,7 @@ with # are skipped. This flag may be given on the comm
+$OpenBSD: patch-man_dnsmasq_8,v 1.3 2007/09/26 19:51:33 rui Exp $
+--- man/dnsmasq.8.orig	Sat Aug 11 20:53:44 2007
++++ man/dnsmasq.8	Tue Sep 25 09:28:25 2007
+@@ -786,7 +786,7 @@ with # are skipped. This flag may be given on the comm
  line or in a configuration file.
  .SH CONFIG FILE
  At startup, dnsmasq reads
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_dnsmasq_8,v 1.2 2007/05/31 04:28:33 rui Exp $
  if it exists. (On
  FreeBSD, the file is 
  .I /usr/local/etc/dnsmasq.conf
-@@ -948,7 +948,7 @@ dnsmasq has been tested successfully with one million 
+@@ -1018,7 +1018,7 @@ dnsmasq has been tested successfully with one million 
  file needs a 1GHz processor and about 60Mb of RAM.
  
  .SH FILES

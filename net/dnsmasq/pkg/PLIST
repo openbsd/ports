@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/23 18:46:58 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/26 19:51:33 rui Exp $
 @man man/man8/dnsmasq.8
 sbin/dnsmasq
-share/examples/dnsmasq.conf.example
+share/examples/dnsmasq/
+share/examples/dnsmasq/dnsmasq.conf.example
 @sample ${SYSCONFDIR}/dnsmasq.conf
