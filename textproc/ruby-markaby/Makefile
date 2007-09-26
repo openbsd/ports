@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/26 17:00:53 bernd Exp $
 
 COMMENT=	HTML templating language for Ruby
 
 DISTNAME=	markaby-0.5
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	textproc devel
 
-# mit
+HOMEPAGE=	http://code.whytheluckystiff.net/markaby/
+
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
