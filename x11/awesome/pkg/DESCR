@@ -1,0 +1,7 @@
+awesome is a window manager initially based on a dwm code rewriting.
+It's extremely fast, small, dynamic and awesome.
+
+It manages windows in several layouts mode: tiled, floating, etc.  Each
+layout can be applied dynamically, optimizing the environment for the
+application in use and the task performed. Every aspect of awesome is
+configurable via a configuration file: awesomerc.

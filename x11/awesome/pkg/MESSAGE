@@ -1,0 +1,3 @@
+Before running awesome, you'll need to create a configuration file. Copy
+the provided ${PREFIX}/share/examples/awesome/awesomerc to ~/.awesomerc
+and modify as necessary.
