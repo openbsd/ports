@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_mibgroup_host_hr_storage_c,v 1.4 2007/06/14 18:19:24 ajacoutot Exp $
---- agent/mibgroup/host/hr_storage.c.orig	Thu Oct 12 11:54:57 2006
-+++ agent/mibgroup/host/hr_storage.c	Thu Jun 14 18:54:14 2007
+$OpenBSD: patch-agent_mibgroup_host_hr_storage_c,v 1.5 2007/09/26 20:03:42 rui Exp $
+--- agent/mibgroup/host/hr_storage.c.orig	Fri Jun  8 11:33:58 2007
++++ agent/mibgroup/host/hr_storage.c	Sat Sep 15 23:12:28 2007
 @@ -175,6 +175,7 @@
  #include <net-snmp/library/read_config.h>
  

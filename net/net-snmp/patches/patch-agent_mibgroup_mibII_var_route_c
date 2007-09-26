@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_mibgroup_mibII_var_route_c,v 1.4 2007/06/14 18:19:24 ajacoutot Exp $
---- agent/mibgroup/mibII/var_route.c.orig	Tue Nov  7 00:43:27 2006
-+++ agent/mibgroup/mibII/var_route.c	Thu Jun 14 18:53:37 2007
+$OpenBSD: patch-agent_mibgroup_mibII_var_route_c,v 1.5 2007/09/26 20:03:42 rui Exp $
+--- agent/mibgroup/mibII/var_route.c.orig	Mon Nov  6 23:43:27 2006
++++ agent/mibgroup/mibII/var_route.c	Sat Sep 15 23:12:28 2007
 @@ -1710,22 +1710,21 @@ TAILQ_HEAD(, snmprt)
              continue;
          switch (bit) {

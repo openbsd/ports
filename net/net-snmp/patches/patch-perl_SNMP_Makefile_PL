@@ -1,6 +1,6 @@
-$OpenBSD: patch-perl_SNMP_Makefile_PL,v 1.2 2007/06/14 18:19:24 ajacoutot Exp $
---- perl/SNMP/Makefile.PL.orig	Fri Sep 15 14:47:00 2006
-+++ perl/SNMP/Makefile.PL	Thu Jun 14 18:53:38 2007
+$OpenBSD: patch-perl_SNMP_Makefile_PL,v 1.3 2007/09/26 20:03:42 rui Exp $
+--- perl/SNMP/Makefile.PL.orig	Wed May 30 23:53:09 2007
++++ perl/SNMP/Makefile.PL	Sat Sep 15 23:12:29 2007
 @@ -21,7 +21,7 @@ sub InitMakeParams {
      my %Params = (
  		  NAME         => 'SNMP',

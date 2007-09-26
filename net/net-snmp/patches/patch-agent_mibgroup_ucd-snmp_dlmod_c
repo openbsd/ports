@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_mibgroup_ucd-snmp_dlmod_c,v 1.2 2005/11/05 19:09:38 bernd Exp $
---- agent/mibgroup/ucd-snmp/dlmod.c.orig	Fri May 20 23:34:43 2005
-+++ agent/mibgroup/ucd-snmp/dlmod.c	Thu Nov  3 23:31:04 2005
+$OpenBSD: patch-agent_mibgroup_ucd-snmp_dlmod_c,v 1.3 2007/09/26 20:03:42 rui Exp $
+--- agent/mibgroup/ucd-snmp/dlmod.c.orig	Thu Mar  9 16:19:40 2006
++++ agent/mibgroup/ucd-snmp/dlmod.c	Sat Sep 15 23:12:28 2007
 @@ -180,7 +180,12 @@ dlmod_load_module(struct dlmod *dlm)
          if (dlm->status == DLMOD_ERROR)
              return;

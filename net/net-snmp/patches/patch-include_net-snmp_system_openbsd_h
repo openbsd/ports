@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_net-snmp_system_openbsd_h,v 1.2 2007/06/14 18:19:24 ajacoutot Exp $
---- include/net-snmp/system/openbsd.h.orig	Wed Oct 11 18:15:00 2006
-+++ include/net-snmp/system/openbsd.h	Thu Jun 14 18:53:38 2007
+$OpenBSD: patch-include_net-snmp_system_openbsd_h,v 1.3 2007/09/26 20:03:42 rui Exp $
+--- include/net-snmp/system/openbsd.h.orig	Thu Mar  8 15:52:34 2007
++++ include/net-snmp/system/openbsd.h	Sat Sep 15 23:12:29 2007
 @@ -3,8 +3,6 @@
  #define netbsd1 netbsd1         /* we're really close to this */
  #define UVM

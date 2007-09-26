@@ -1,38 +1,43 @@
-$OpenBSD: patch-agent_Makefile_in,v 1.3 2007/05/19 10:52:06 rui Exp $
---- agent/Makefile.in.orig	Sun May  6 20:22:22 2007
-+++ agent/Makefile.in	Sun May  6 20:29:13 2007
-@@ -74,11 +74,11 @@ INSTALLUCDHEADERS= \
+$OpenBSD: patch-agent_Makefile_in,v 1.4 2007/09/26 20:03:42 rui Exp $
+--- agent/Makefile.in.orig	Thu Jul  5 00:26:56 2007
++++ agent/Makefile.in	Sat Sep 15 23:12:28 2007
+@@ -18,8 +18,8 @@ top_builddir	= ..
+ SUBDIRS=helpers mibgroup
+ 
+ INSTALLSBINPROGS= @SNMPD@
+-INSTALLLIBS	= libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
+-INSTALLPOSTLIBS	= libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
++INSTALLLIBS	= libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION)
++INSTALLPOSTLIBS	= libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
+ 
+ INCLUDESUBDIR=agent
+ INCLUDESUBDIRHEADERS=agent_read_config.h \
+@@ -74,10 +74,10 @@ INSTALLUCDHEADERS= \
  #
  # how to build it info
  #
 -USELIBS		= ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
 -HELPERLIB	= helpers/libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
-+USELIBS         = ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION)
-+HELPERLIB       = helpers/libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
- LOCAL_LIBS	= 
- PERLLDOPTS      = @PERLLDOPTS@
--LIBS		= ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION) @AGENTLIBS@ $(PERLLDOPTS)
-+LIBS            = ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION) @AGENTLIBS@ $(PERLLDOPTS)
- OUR_AGENT_LIBS	= $(INSTALLLIBS) $(HELPERLIB) @WRAPLIBS@ $(LIBS) @DLLIBS@
- CPPFLAGS	= $(TOP_INCLUDES) -I. $(AGENT_INCLUDES) $(MIBGROUP_INCLUDES) \
- 		  $(SNMPLIB_INCLUDES) @CPPFLAGS@ 
-@@ -136,13 +136,13 @@ snmpd$(EXEEXT):	${LAGENTOBJS} $(USELIBS) $(HELPERLIB) 
+-AGENTLIB	= libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
+-MIBLIB		= libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
++USELIBS		= ../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION)
++HELPERLIB	= helpers/libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
++AGENTLIB	= libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION)
++MIBLIB		= libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmib_VERSION)
+ 
+ LOCAL_LIBS	= -L../snmplib/.libs -L../snmplib -L./.libs -L./helpers/.libs -L./helpers
+ LAGENTLIBS	= @LAGENTLIBS@
+@@ -142,11 +142,11 @@ snmpd$(EXEEXT):	${LAGENTOBJS} $(USELIBS) $(AGENTLIB) $
  	$(LINK) $(CFLAGS) -o $@ ${LAGENTOBJS} $(LOCAL_LIBS) ${LDFLAGS} ${OUR_AGENT_LIBS}
  
  
--libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION):    ${LLIBAGENTOBJS}
--	$(LIB_LD_CMD) libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION) ${LLIBAGENTOBJS}  $(LIB_LD_LIBS)
--	$(RANLIB) libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
-+libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION):    ${LLIBAGENTOBJS}
-+	$(LIB_LD_CMD) libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION) ${LLIBAGENTOBJS}  $(LIB_LD_LIBS)
-+	$(RANLIB) libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION)
+-libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION):    ${LLIBAGENTOBJS} $(USELIBS)
++libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION):    ${LLIBAGENTOBJS} $(USELIBS)
+ 	$(LIB_LD_CMD) $(AGENTLIB) ${LLIBAGENTOBJS} $(USELIBS) ${LAGENTLIBS} $(LDFLAGS) $(PERLLDOPTS_FOR_LIBS) $(LIB_LD_LIBS)
+ 	$(RANLIB) $(AGENTLIB)
  
--libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION):    ${LMIBOBJS}
--	$(LIB_LD_CMD) libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION) ${LMIBOBJS}  $(LIB_LD_LIBS) @SENSORLIBS@
--	$(RANLIB) libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
-+libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION):    ${LMIBOBJS}
-+	$(LIB_LD_CMD) libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION) ${LMIBOBJS}  $(LIB_LD_LIBS) @SENSORLIBS@
-+	$(RANLIB) libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
- 
- agentlib: libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
+-libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION): ${LMIBOBJS} $(HELPERLIB) $(AGENTLIB) $(USELIBS)
++libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION): ${LMIBOBJS} $(HELPERLIB) $(AGENTLIB) $(USELIBS)
+ 	$(LIB_LD_CMD) $(MIBLIB) ${LMIBOBJS} $(HELPERLIB) $(AGENTLIB) $(USELIBS) ${LMIBLIBS} $(LDFLAGS) $(LIB_LD_LIBS)
+ 	$(RANLIB) $(MIBLIB)
  

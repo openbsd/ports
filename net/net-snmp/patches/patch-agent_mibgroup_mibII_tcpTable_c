@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.4 2007/06/14 18:19:24 ajacoutot Exp $
---- agent/mibgroup/mibII/tcpTable.c.orig	Tue Nov  7 00:43:27 2006
-+++ agent/mibgroup/mibII/tcpTable.c	Thu Jun 14 18:53:37 2007
+$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.5 2007/09/26 20:03:42 rui Exp $
+--- agent/mibgroup/mibII/tcpTable.c.orig	Mon Nov  6 23:43:27 2006
++++ agent/mibgroup/mibII/tcpTable.c	Sat Sep 15 23:12:28 2007
 @@ -450,7 +450,7 @@ tcpTable_next_entry( void **loop_context,
       * and update the loop context ready for the next one.
       */

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_rules,v 1.2 2007/05/19 10:52:06 rui Exp $
---- Makefile.rules.orig	Sun May  6 20:59:42 2007
-+++ Makefile.rules	Sun May  6 21:04:39 2007
-@@ -216,14 +216,20 @@ uninstalllibs:
+$OpenBSD: patch-Makefile_rules,v 1.3 2007/09/26 20:03:42 rui Exp $
+--- Makefile.rules.orig	Sat Jul  7 00:39:10 2007
++++ Makefile.rules	Sat Sep 15 23:12:28 2007
+@@ -228,14 +228,20 @@ uninstalllibs:
  installbin: installlocalbin installsubdirbin
  
  installlocalbin: $(INSTALLBINPROGS)
@@ -26,7 +26,7 @@ $OpenBSD: patch-Makefile_rules,v 1.2 2007/05/19 10:52:06 rui Exp $
  
  installsubdirbin:
  	@if test "$(SUBDIRS)" != ""; then \
-@@ -257,7 +263,7 @@ installlocalsbin: $(INSTALLSBINPROGS)
+@@ -269,7 +275,7 @@ installlocalsbin: $(INSTALLSBINPROGS)
  	@if test "$(INSTALLSBINPROGS)" != ""; then \
  		it="$(INSTALLSBINPROGS)" ; \
  		$(SHELL) $(top_srcdir)/mkinstalldirs $(INSTALL_PREFIX)$(sbindir) ; \

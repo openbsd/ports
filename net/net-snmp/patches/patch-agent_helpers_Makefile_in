@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_helpers_Makefile_in,v 1.3 2007/06/14 18:19:24 ajacoutot Exp $
---- agent/helpers/Makefile.in.orig	Thu Sep 14 11:53:44 2006
-+++ agent/helpers/Makefile.in	Thu Jun 14 18:53:36 2007
+$OpenBSD: patch-agent_helpers_Makefile_in,v 1.4 2007/09/26 20:03:42 rui Exp $
+--- agent/helpers/Makefile.in.orig	Tue Jun 26 22:45:20 2007
++++ agent/helpers/Makefile.in	Sat Sep 15 23:12:28 2007
 @@ -12,7 +12,7 @@ top_builddir=../..
  # What to install
  #
@@ -8,15 +8,28 @@ $OpenBSD: patch-agent_helpers_Makefile_in,v 1.3 2007/06/14 18:19:24 ajacoutot Ex
 -INSTALLLIBS=libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
 +INSTALLLIBS=libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
  INCLUDESUBDIR=agent
- INCLUDESUBDIRHEADERS=all_helpers.h \
+ HEADERS=all_helpers.h \
  	baby_steps.h \
-@@ -131,6 +131,6 @@ LOBJS = all_helpers.lo \
+@@ -48,10 +48,10 @@ INCLUDESUBDIRHEADERS=$(HEADERS) $(HEADERSONLY)
+ #
+ # Build info
+ #
+-NETSNMPLIB      = ../../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
+-HELPERLIB       = libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
+-AGENTLIB        = ../libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
+-MIBLIB          = ../libnetsnmpmibs.$(LIB_EXTENSION)$(LIB_VERSION)
++NETSNMPLIB      = ../../snmplib/libnetsnmp.$(LIB_EXTENSION)$(LIBnetsnmp_VERSION)
++HELPERLIB       = libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
++AGENTLIB        = ../libnetsnmpagent.$(LIB_EXTENSION)$(LIBnetsnmpagent_VERSION)
++MIBLIB          = ../libnetsnmpmibs.$(LIB_EXTENSION)$(LIBnetsnmpmibs_VERSION)
+ # -I. -I.. -I../..
+ CPPFLAGS= $(TOP_INCLUDES) -I. $(AGENT_INCLUDES) $(MIBGROUP_INCLUDES) \
+ 	$(SNMPLIB_INCLUDES) @CPPFLAGS@
+@@ -139,6 +139,6 @@ LOBJS = all_helpers.lo \
  
  all: standardall
  
--libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION):    ${LOBJS}
--	$(LIB_LD_CMD) libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION) ${LOBJS}  $(LIB_LD_LIBS)
--	$(RANLIB) libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION)
-+libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION):    ${LOBJS}
-+	$(LIB_LD_CMD) libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION) ${LOBJS}  $(LIB_LD_LIBS)
-+	$(RANLIB) libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION)
+-libnetsnmphelpers.$(LIB_EXTENSION)$(LIB_VERSION):    $(LOBJS)
++libnetsnmphelpers.$(LIB_EXTENSION)$(LIBnetsnmphelpers_VERSION):    $(LOBJS)
+ 	$(LIB_LD_CMD) $@ $(LOBJS) $(AGENTLIB) $(NETSNMPLIB) $(LDFLAGS) $(LIB_LD_LIBS)
+ 	$(RANLIB) $@
