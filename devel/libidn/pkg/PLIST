@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/01/27 16:41:06 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/09/26 05:05:40 bernd Exp $
 %%SHARED%%
 bin/idn
 include/idn-free.h
@@ -8,6 +8,7 @@ include/pr29.h
 include/punycode.h
 include/stringprep.h
 include/tld.h
+info/libidn-components.png
 @info info/libidn.info
 lib/libidn.a
 lib/libidn.la
@@ -67,6 +68,7 @@ share/locale/en@quot/LC_MESSAGES/libidn.mo
 share/locale/eo/LC_MESSAGES/libidn.mo
 share/locale/fr/LC_MESSAGES/libidn.mo
 share/locale/it/LC_MESSAGES/libidn.mo
+share/locale/ja/LC_MESSAGES/libidn.mo
 share/locale/nl/LC_MESSAGES/libidn.mo
 share/locale/pl/LC_MESSAGES/libidn.mo
 share/locale/ro/LC_MESSAGES/libidn.mo

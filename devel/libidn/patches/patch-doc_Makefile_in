@@ -1,19 +1,19 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2006/01/27 16:41:06 bernd Exp $
---- doc/Makefile.in.orig	Fri Jan 20 13:38:07 2006
-+++ doc/Makefile.in	Sat Jan 21 12:26:54 2006
-@@ -516,10 +516,7 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefi
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2007/09/26 05:05:40 bernd Exp $
+--- doc/Makefile.in.orig	Sat Sep  1 13:50:53 2007
++++ doc/Makefile.in	Fri Sep 21 08:04:14 2007
+@@ -646,10 +646,7 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir
  		&& exit 0; \
  	      exit 1;; \
  	  esac; \
 -	done; \
--	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnits  doc/Makefile'; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  doc/Makefile'; \
 -	cd $(top_srcdir) && \
--	  $(AUTOMAKE) --gnits  doc/Makefile
+-	  $(AUTOMAKE) --gnu  doc/Makefile
 +	done;
  .PRECIOUS: Makefile
  Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
  	@case '$?' in \
-@@ -592,7 +589,7 @@ distclean-libtool:
+@@ -719,7 +716,7 @@ clean-libtool:
  	    rm -rf $(@:.html=); else rm -Rf $(@:.html=.htp) $@; fi; \
  	  exit 1; \
  	fi

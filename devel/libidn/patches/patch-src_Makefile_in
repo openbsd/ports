@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2006/01/27 16:41:06 bernd Exp $
---- src/Makefile.in.orig	Fri Jan 20 13:36:25 2006
-+++ src/Makefile.in	Sat Jan 21 12:26:54 2006
-@@ -530,7 +530,7 @@ info: info-am
+$OpenBSD: patch-src_Makefile_in,v 1.4 2007/09/26 05:05:40 bernd Exp $
+--- src/Makefile.in.orig	Sat Sep  1 13:50:12 2007
++++ src/Makefile.in	Fri Sep 21 08:04:41 2007
+@@ -622,7 +622,7 @@ info: info-am
  
  info-am:
  
 -install-data-am: install-dist_lispDATA
 +install-data-am:
  
- install-exec-am: install-binPROGRAMS
+ install-dvi: install-dvi-am
  
