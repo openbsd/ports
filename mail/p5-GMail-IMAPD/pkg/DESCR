@@ -1,0 +1,2 @@
+This module allows users to access their Gmail messages with an IMAP
+client by running a server which accepts IMAP connections.
