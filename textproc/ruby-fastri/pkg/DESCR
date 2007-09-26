@@ -1,0 +1,5 @@
+FastRI is an alternative to the ri command-line tool. It is *much* faster,
+and also allows you to offer RI lookup services over DRb. FastRI is a bit
+smarter than ri, and can find classes anywhere in the hierarchy without
+specifying the "full path". It also knows about gems, and can tell you e.g.
+which extensions to a core class were added by a specific gem.
