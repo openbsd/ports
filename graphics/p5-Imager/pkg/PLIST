@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/07/31 15:40:56 simon Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/09/26 20:30:59 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Imager/
 ${P5ARCH}/Imager.pm
 ${P5ARCH}/Imager/API.pod
 ${P5ARCH}/Imager/APIRef.pod
-@comment ${P5ARCH}/Imager/Color/
+${P5ARCH}/Imager/Color/
 ${P5ARCH}/Imager/Color.pm
 @comment ${P5ARCH}/Imager/Color/Float.pm
 ${P5ARCH}/Imager/Color/Table.pm
@@ -26,7 +26,7 @@ ${P5ARCH}/Imager/Filter/DynTest.pm
 ${P5ARCH}/Imager/Filter/Flines.pm
 ${P5ARCH}/Imager/Filter/Mandelbrot.pm
 ${P5ARCH}/Imager/Filters.pod
-@comment ${P5ARCH}/Imager/Font/
+${P5ARCH}/Imager/Font/
 ${P5ARCH}/Imager/Font.pm
 ${P5ARCH}/Imager/Font/BBox.pm
 @comment ${P5ARCH}/Imager/Font/FreeType2.pm
