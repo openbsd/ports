@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/26 20:21:05 rui Exp $
 
 COMMENT=	network traffic visualization and editing tool
 
-DISTNAME=	netdude-0.4.6
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	netdude-0.4.8a
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 
 HOMEPAGE=	http://netdude.sourceforge.net/
 
-MAINTAINER=	Markus Friedl <markus@openbsd.org> \
-		Michael Coulter <mjc@openbsd.org>
+MAINTAINER=	Rui Reis <rui@rui.cx>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +23,7 @@ LIB_DEPENDS=	netdude::net/libnetdude/libnetdude \
 		glib.>=1,gmodule.>=1::devel/glib \
 		gdk,gtk::x11/gtk+
 
-WANTLIB=		Xi X11 m c Xext pcap
+WANTLIB=		Xau Xdmcp Xi X11 m c Xext pcap
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes

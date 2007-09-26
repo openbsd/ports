@@ -1,21 +1,21 @@
-$OpenBSD: patch-protocols_ether_Makefile_in,v 1.3 2007/04/01 14:08:32 steven Exp $
---- protocols/ether/Makefile.in.orig	Wed May  4 03:31:35 2005
-+++ protocols/ether/Makefile.in	Sun Apr  1 16:03:37 2007
-@@ -64,7 +64,7 @@ host_triplet = @host@
- EXEEXT = @EXEEXT@
- OBJEXT = @OBJEXT@
- PATH_SEPARATOR = @PATH_SEPARATOR@
+$OpenBSD: patch-protocols_ether_Makefile_in,v 1.4 2007/09/26 20:21:06 rui Exp $
+--- protocols/ether/Makefile.in.orig	Fri Jul 27 16:28:15 2007
++++ protocols/ether/Makefile.in	Fri Jul 27 16:28:58 2007
+@@ -75,7 +75,7 @@ DIST_SOURCES = $(nd_ethernet_la_SOURCES)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 -pkgincludedir = $(includedir)/netdude/$(version_major)/protocols/ether
-+pkgincludedir = $(includedir)/netdude/protocols/ether
- AMTAR = @AMTAR@
- AS = @AS@
- AWK = @AWK@
-@@ -103,7 +103,7 @@ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLAGS@ -I$(top_sr
++pkgincludedir = $(includedir)/netdude/protocols/ether 
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@
+@@ -203,7 +203,7 @@ AM_LDFLAGS = -L$(top_srcdir)/src
+ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLAGS@ -I$(top_srcdir) \
                         -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
  
- 
 -pkgdir = $(pkgdatadir)/$(version_major)/protocols
-+pkgdir = $(pkgdatadir)/protocols
- 
++pkgdir = $(pkgdatadir)/protocols 
  pkg_LTLIBRARIES = nd_ethernet.la 
- 
+ nd_ethernet_la_SOURCES = \
+ 	nd_ether.c nd_ether.h \

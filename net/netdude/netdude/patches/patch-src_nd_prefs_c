@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_nd_prefs_c,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
---- src/nd_prefs.c.orig	Wed Dec  1 14:30:14 2004
-+++ src/nd_prefs.c	Wed Dec  1 14:31:13 2004
+$OpenBSD: patch-src_nd_prefs_c,v 1.2 2007/09/26 20:21:06 rui Exp $
+--- src/nd_prefs.c.orig	Wed Jun  6 01:55:17 2007
++++ src/nd_prefs.c	Fri Jul 27 16:20:01 2007
 @@ -81,8 +81,8 @@ nd_prefs_get_plugin_dir_global(void)
    if (dir[0] != 0)
      return dir;

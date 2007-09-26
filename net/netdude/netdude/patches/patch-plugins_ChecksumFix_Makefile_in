@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_ChecksumFix_Makefile_in,v 1.2 2005/07/05 00:08:09 mjc Exp $
---- plugins/ChecksumFix/Makefile.in.orig	Tue May  3 18:31:34 2005
-+++ plugins/ChecksumFix/Makefile.in	Fri Jun 17 15:41:50 2005
-@@ -102,7 +102,7 @@ LIBS = 
+$OpenBSD: patch-plugins_ChecksumFix_Makefile_in,v 1.3 2007/09/26 20:21:06 rui Exp $
+--- plugins/ChecksumFix/Makefile.in.orig	Fri Jul 27 16:25:27 2007
++++ plugins/ChecksumFix/Makefile.in	Fri Jul 27 16:25:58 2007
+@@ -201,7 +201,7 @@ version_minor = @version_minor@
+ MAINTAINERCLEANFILES = Makefile.in
  AM_LDFLAGS = -L$(top_srcdir)/src
  INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLAGS@ -I$(top_srcdir) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
- 
 -pkgdir = $(pkgdatadir)/$(version_major)/plugins
-+pkgdir = $(pkgdatadir)/plugins
- 
++pkgdir = $(pkgdatadir)/plugins 
  pkg_LTLIBRARIES = nd_cksumfix.la
- 
+ nd_cksumfix_la_SOURCES = nd_cksumfix.c
+ nd_cksumfix_la_LDFLAGS = -module -avoid-version

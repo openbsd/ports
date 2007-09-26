@@ -1,21 +1,21 @@
-$OpenBSD: patch-protocols_udp_Makefile_in,v 1.3 2007/04/01 14:08:32 steven Exp $
---- protocols/udp/Makefile.in.orig	Wed May  4 03:31:35 2005
-+++ protocols/udp/Makefile.in	Sun Apr  1 16:03:37 2007
-@@ -64,7 +64,7 @@ host_triplet = @host@
- EXEEXT = @EXEEXT@
- OBJEXT = @OBJEXT@
- PATH_SEPARATOR = @PATH_SEPARATOR@
+$OpenBSD: patch-protocols_udp_Makefile_in,v 1.4 2007/09/26 20:21:06 rui Exp $
+--- protocols/udp/Makefile.in.orig	Fri Jul 27 17:10:34 2007
++++ protocols/udp/Makefile.in	Fri Jul 27 17:11:13 2007
+@@ -75,7 +75,7 @@ DIST_SOURCES = $(nd_udp_la_SOURCES)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 -pkgincludedir = $(includedir)/netdude/$(version_major)/protocols/udp
-+pkgincludedir = $(includedir)/netdude/protocols/udp
- AMTAR = @AMTAR@
- AS = @AS@
- AWK = @AWK@
-@@ -103,7 +103,7 @@ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLAGS@ -I$(top_sr
++pkgincludedir = $(includedir)/netdude/protocols/udp 
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@
+@@ -203,7 +203,7 @@ AM_LDFLAGS = -L$(top_srcdir)/src
+ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLAGS@ -I$(top_srcdir) \
                         -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
  
- 
 -pkgdir = $(pkgdatadir)/$(version_major)/protocols
-+pkgdir = $(pkgdatadir)/protocols
- 
++pkgdir = $(pkgdatadir)/protocols 
  pkg_LTLIBRARIES = nd_udp.la 
- 
+ nd_udp_la_SOURCES = \
+ 	nd_udp.c nd_udp.h \

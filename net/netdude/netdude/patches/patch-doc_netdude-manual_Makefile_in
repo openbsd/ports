@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_netdude-manual_Makefile_in,v 1.1 2005/07/05 00:08:09 mjc Exp $
---- doc/netdude-manual/Makefile.in.orig	Fri Jun 17 16:31:05 2005
-+++ doc/netdude-manual/Makefile.in	Fri Jun 17 16:31:15 2005
-@@ -101,7 +101,7 @@ version_major = @version_major@
+$OpenBSD: patch-doc_netdude-manual_Makefile_in,v 1.2 2007/09/26 20:21:06 rui Exp $
+--- doc/netdude-manual/Makefile.in.orig	Sun Jun 24 22:38:09 2007
++++ doc/netdude-manual/Makefile.in	Fri Jul 27 16:20:00 2007
+@@ -175,7 +175,7 @@ version_major = @version_major@
  version_minor = @version_minor@
  
  # The name of the module, e.g. 'glib'.

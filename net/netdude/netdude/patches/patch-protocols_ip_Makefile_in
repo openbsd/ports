@@ -1,21 +1,21 @@
-$OpenBSD: patch-protocols_ip_Makefile_in,v 1.3 2007/04/01 14:08:32 steven Exp $
---- protocols/ip/Makefile.in.orig	Wed May  4 03:31:35 2005
-+++ protocols/ip/Makefile.in	Sun Apr  1 16:03:37 2007
-@@ -64,7 +64,7 @@ host_triplet = @host@
- EXEEXT = @EXEEXT@
- OBJEXT = @OBJEXT@
- PATH_SEPARATOR = @PATH_SEPARATOR@
+$OpenBSD: patch-protocols_ip_Makefile_in,v 1.4 2007/09/26 20:21:06 rui Exp $
+--- protocols/ip/Makefile.in.orig	Fri Jul 27 17:05:40 2007
++++ protocols/ip/Makefile.in	Fri Jul 27 17:06:24 2007
+@@ -76,7 +76,7 @@ DIST_SOURCES = $(nd_ip_la_SOURCES)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 -pkgincludedir = $(includedir)/netdude/$(version_major)/protocols/ip
-+pkgincludedir = $(includedir)/netdude/protocols/ip
- AMTAR = @AMTAR@
- AS = @AS@
- AWK = @AWK@
-@@ -103,7 +103,7 @@ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLAGS@ -I$(top_sr
++pkgincludedir = $(includedir)/netdude/protocols/ip 
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@
+@@ -204,7 +204,7 @@ AM_LDFLAGS = -L$(top_srcdir)/src
+ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLAGS@ -I$(top_srcdir) \
                         -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
  
- 
 -pkgdir = $(pkgdatadir)/$(version_major)/protocols
-+pkgdir = $(pkgdatadir)/protocols
- 
++pkgdir = $(pkgdatadir)/protocols 
  pkg_LTLIBRARIES = nd_ip.la 
- 
+ nd_ip_la_SOURCES = \
+ 	nd_ip.c nd_ip.h \
