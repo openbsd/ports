@@ -1,15 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/07/05 00:08:05 mjc Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/09/26 20:18:08 rui Exp $
 %%SHARED%%
 bin/lndtool
 include/libnetdude/
 include/libnetdude/libnd.h
 include/libnetdude/libnd_debug.h
+include/libnetdude/libnd_dumper.h
 include/libnetdude/libnd_filter.h
 include/libnetdude/libnd_filter_factory.h
 include/libnetdude/libnd_filter_registry.h
 include/libnetdude/libnd_globals.h
 include/libnetdude/libnd_init.h
 include/libnetdude/libnd_macros.h
+include/libnetdude/libnd_magic.h
 include/libnetdude/libnd_misc.h
 include/libnetdude/libnd_null_protocol.h
 include/libnetdude/libnd_packet.h
@@ -76,24 +78,12 @@ lib/libnetdude/protocols/libnd_tcp.la
 lib/libnetdude/protocols/libnd_udp.a
 lib/libnetdude/protocols/libnd_udp.la
 share/doc/libnetdude/
-share/doc/libnetdude/a7079.html
-share/doc/libnetdude/a7083.html
-share/doc/libnetdude/a7089.html
-share/doc/libnetdude/a7154.html
-share/doc/libnetdude/a7398.html
+share/doc/libnetdude/a8757.html
 share/doc/libnetdude/api.html
-share/doc/libnetdude/c23.html
-share/doc/libnetdude/c393.html
-share/doc/libnetdude/c394.html
-share/doc/libnetdude/c398.html
-share/doc/libnetdude/c489.html
-share/doc/libnetdude/c493.html
-share/doc/libnetdude/c494.html
-share/doc/libnetdude/c551.html
-share/doc/libnetdude/c555.html
-share/doc/libnetdude/c83.html
-share/doc/libnetdude/c84.html
-share/doc/libnetdude/c88.html
+share/doc/libnetdude/c24.html
+share/doc/libnetdude/c401.html
+share/doc/libnetdude/c558.html
+share/doc/libnetdude/c89.html
 share/doc/libnetdude/images/
 share/doc/libnetdude/images/caution.gif
 share/doc/libnetdude/images/logo.gif
@@ -104,6 +94,7 @@ share/doc/libnetdude/images/warning.gif
 share/doc/libnetdude/index.html
 share/doc/libnetdude/index.sgml
 share/doc/libnetdude/libnetdude-libnd-debug.html
+share/doc/libnetdude/libnetdude-libnd-dumper.html
 share/doc/libnetdude/libnetdude-libnd-filter-factory.html
 share/doc/libnetdude/libnetdude-libnd-filter-registry.html
 share/doc/libnetdude/libnetdude-libnd-filter.html

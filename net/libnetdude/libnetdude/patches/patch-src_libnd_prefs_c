@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libnd_prefs_c,v 1.2 2005/07/05 00:08:05 mjc Exp $
---- src/libnd_prefs.c.orig	Mon May 10 15:51:37 2004
-+++ src/libnd_prefs.c	Fri Jun 17 13:08:25 2005
+$OpenBSD: patch-src_libnd_prefs_c,v 1.3 2007/09/26 20:18:08 rui Exp $
+--- src/libnd_prefs.c.orig	Sat Apr  7 07:05:09 2007
++++ src/libnd_prefs.c	Fri Jul 27 14:23:17 2007
 @@ -130,8 +130,8 @@ libnd_prefs_get_plugin_dir_global(void)
    if (dir[0] != 0)
      return dir;
@@ -45,7 +45,7 @@ $OpenBSD: patch-src_libnd_prefs_c,v 1.2 2005/07/05 00:08:05 mjc Exp $
  
    return dir;
  }
-@@ -492,8 +492,8 @@ prefs_assert_dirs(void)
+@@ -516,8 +516,8 @@ prefs_assert_dirs(void)
  	    return FALSE;
  	}
  
@@ -56,7 +56,7 @@ $OpenBSD: patch-src_libnd_prefs_c,v 1.2 2005/07/05 00:08:05 mjc Exp $
  
        if (mkdir(dir, mode_755) < 0)
  	{
-@@ -501,8 +501,8 @@ prefs_assert_dirs(void)
+@@ -525,8 +525,8 @@ prefs_assert_dirs(void)
  	    return FALSE;
  	}
  

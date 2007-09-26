@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/09/26 20:18:08 rui Exp $
 
 COMMENT=	packet manipulation backend of Netdude framework
 
-DISTNAME=	libnetdude-0.7
-PKGNAME=	${DISTNAME}p2
-SHARED_LIBS=	netdude	0.0
+DISTNAME=	libnetdude-0.10a
+SHARED_LIBS=	netdude	1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 
 HOMEPAGE=	http://netdude.sourceforge.net/
 
-MAINTAINER=	Markus Friedl <markus@openbsd.org> \
-		Michael Coulter <mjc@openbsd.org>
+MAINTAINER=	Rui Reis <rui@rui.cx>
 
 LIB_DEPENDS=	pcapnav::net/libpcapnav \
 		glib::devel/glib

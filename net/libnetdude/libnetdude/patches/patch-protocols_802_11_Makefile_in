@@ -1,12 +1,12 @@
-$OpenBSD: patch-protocols_802_11_Makefile_in,v 1.1 2005/07/05 00:08:05 mjc Exp $
---- protocols/802.11/Makefile.in.orig	Fri Jun 17 13:08:43 2005
-+++ protocols/802.11/Makefile.in	Fri Jun 17 13:09:25 2005
-@@ -102,7 +102,7 @@ MAINTAINERCLEANFILES = Makefile.in
- 
+$OpenBSD: patch-protocols_802_11_Makefile_in,v 1.2 2007/09/26 20:18:08 rui Exp $
+--- protocols/802.11/Makefile.in.orig	Fri Jul 27 14:39:30 2007
++++ protocols/802.11/Makefile.in	Fri Jul 27 14:40:03 2007
+@@ -205,7 +205,7 @@ version_minor = @version_minor@
+ # A list of all the files in the current directory which can be regenerated
+ MAINTAINERCLEANFILES = Makefile.in
  INCLUDES = @glib_cflags@ @pcapnav_cflags@ -I$(top_srcdir) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
- 
 -pkgdir = $(pkgdatadir)/$(version_major).$(version_minor)/protocols
-+pkgdir = $(pkgdatadir)/protocols
- 
++pkgdir = $(pkgdatadir)/protocols 
  pkg_LTLIBRARIES = libnd_802_11.la 
- 
+ libnd_802_11_la_SOURCES = libnd_802_11.c libnd_802_11.h
+ libnd_802_11_la_LDFLAGS = -module -avoid-version

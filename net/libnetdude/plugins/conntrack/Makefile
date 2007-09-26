@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/09/26 20:18:08 rui Exp $
 
 COMMENT=	libnetdude plugin for tcp connection tracking
 
-DISTNAME=	libnetdude-conntrack-plugin-0.5
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	libnetdude-conntrack-plugin-0.8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 
 HOMEPAGE=	http://netdude.sourceforge.net/
 
-MAINTAINER=	Markus Friedl <markus@openbsd.org> \
-		Michael Coulter <mjc@openbsd.org>
+MAINTAINER=	Rui Reis <rui@rui.cx>
 
 RUN_DEPENDS=	::net/libnetdude/libnetdude
 

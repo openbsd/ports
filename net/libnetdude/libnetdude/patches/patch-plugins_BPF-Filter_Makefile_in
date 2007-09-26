@@ -1,21 +1,21 @@
-$OpenBSD: patch-plugins_BPF-Filter_Makefile_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
---- plugins/BPF-Filter/Makefile.in.orig	Wed Apr 14 16:01:37 2004
-+++ plugins/BPF-Filter/Makefile.in	Wed Jul 21 16:04:37 2004
-@@ -64,7 +64,7 @@ host_triplet = @host@
- EXEEXT = @EXEEXT@
- OBJEXT = @OBJEXT@
- PATH_SEPARATOR = @PATH_SEPARATOR@
+$OpenBSD: patch-plugins_BPF-Filter_Makefile_in,v 1.2 2007/09/26 20:18:08 rui Exp $
+--- plugins/BPF-Filter/Makefile.in.orig	Fri Jul 27 14:27:04 2007
++++ plugins/BPF-Filter/Makefile.in	Fri Jul 27 14:28:14 2007
+@@ -79,7 +79,7 @@ HEADERS = $(pkginclude_HEADERS)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 -pkgincludedir = $(includedir)/libnetdude/$(version_major).$(version_minor)/plugins/
-+pkgincludedir = $(includedir)/libnetdude/plugins/
- AMTAR = @AMTAR@
- AS = @AS@
- AWK = @AWK@
-@@ -106,7 +106,7 @@ LIBS = 
- LDFLAGS = -L$(top_srcdir)/src
++pkgincludedir = $(includedir)/libnetdude/plugins/ 
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@
+@@ -210,7 +210,7 @@ AUTOMAKE_OPTIONS = 1.4 foreign
+ # A list of all the files in the current directory which can be regenerated
+ MAINTAINERCLEANFILES = Makefile.in
  INCLUDES = @glib_cflags@ @pcapnav_cflags@ -I$(top_srcdir) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
- 
 -pkgdir = $(pkgdatadir)/$(version_major).$(version_minor)/plugins
-+pkgdir = $(pkgdatadir)/plugins
- 
++pkgdir = $(pkgdatadir)/plugins 
  pkg_LTLIBRARIES = libnd_bpf.la
  pkginclude_HEADERS = libnd_bpf.h
+ libnd_bpf_la_SOURCES = libnd_bpf.c

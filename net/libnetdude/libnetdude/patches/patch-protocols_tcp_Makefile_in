@@ -1,21 +1,21 @@
-$OpenBSD: patch-protocols_tcp_Makefile_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
---- protocols/tcp/Makefile.in.orig	Wed Apr 14 16:01:29 2004
-+++ protocols/tcp/Makefile.in	Wed Jul 21 16:10:10 2004
-@@ -64,7 +64,7 @@ host_triplet = @host@
- EXEEXT = @EXEEXT@
- OBJEXT = @OBJEXT@
- PATH_SEPARATOR = @PATH_SEPARATOR@
+$OpenBSD: patch-protocols_tcp_Makefile_in,v 1.2 2007/09/26 20:18:08 rui Exp $
+--- protocols/tcp/Makefile.in.orig	Fri Jul 27 14:56:13 2007
++++ protocols/tcp/Makefile.in	Fri Jul 27 14:57:00 2007
+@@ -79,7 +79,7 @@ HEADERS = $(pkginclude_HEADERS)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 -pkgincludedir = $(includedir)/libnetdude/$(version_major).$(version_minor)/protocols/tcp
-+pkgincludedir = $(includedir)/libnetdude/protocols/tcp
- AMTAR = @AMTAR@
- AS = @AS@
- AWK = @AWK@
-@@ -102,7 +102,7 @@ MAINTAINERCLEANFILES = Makefile.in
- 
++pkgincludedir = $(includedir)/libnetdude/protocols/tcp 
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@
+@@ -209,7 +209,7 @@ version_minor = @version_minor@
+ # A list of all the files in the current directory which can be regenerated
+ MAINTAINERCLEANFILES = Makefile.in
  INCLUDES = @glib_cflags@ @pcapnav_cflags@ -I$(top_srcdir) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
- 
 -pkgdir = $(pkgdatadir)/$(version_major).$(version_minor)/protocols
-+pkgdir = $(pkgdatadir)/protocols
- 
++pkgdir = $(pkgdatadir)/protocols 
  pkg_LTLIBRARIES = libnd_tcp.la 
- 
+ pkginclude_HEADERS = libnd_tcp.h libnd_tcb.h
+ libnd_tcp_la_SOURCES = \

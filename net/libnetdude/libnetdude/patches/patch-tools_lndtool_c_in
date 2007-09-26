@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_lndtool_c_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
---- tools/lndtool.c.in.orig	Wed Jul 21 11:44:00 2004
-+++ tools/lndtool.c.in	Wed Jul 21 11:44:38 2004
+$OpenBSD: patch-tools_lndtool_c_in,v 1.2 2007/09/26 20:18:08 rui Exp $
+--- tools/lndtool.c.in.orig	Fri Jan 12 00:33:25 2007
++++ tools/lndtool.c.in	Fri Jul 27 14:23:17 2007
 @@ -158,7 +158,7 @@ main(int argc, char **argv)
  
  	  if (strcmp("@PACKAGE_INCLUDE_DIR@", "/usr/include"))

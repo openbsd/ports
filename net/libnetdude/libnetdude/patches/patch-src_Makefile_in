@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
---- src/Makefile.in.orig	Wed Jul 21 11:58:44 2004
-+++ src/Makefile.in	Wed Jul 21 11:58:52 2004
-@@ -65,7 +65,7 @@ EXEEXT = @EXEEXT@
- OBJEXT = @OBJEXT@
- PATH_SEPARATOR = @PATH_SEPARATOR@
- 
+$OpenBSD: patch-src_Makefile_in,v 1.2 2007/09/26 20:18:08 rui Exp $
+--- src/Makefile.in.orig	Fri Jul 27 15:12:48 2007
++++ src/Makefile.in	Fri Jul 27 15:13:33 2007
+@@ -88,7 +88,7 @@ HEADERS = $(pkginclude_HEADERS)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 -pkgincludedir = $(includedir)/libnetdude/$(version_major).$(version_minor)
-+pkgincludedir = $(includedir)/libnetdude
- AMTAR = @AMTAR@
- AS = @AS@
- AWK = @AWK@
++pkgincludedir = $(includedir)/libnetdude 
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@

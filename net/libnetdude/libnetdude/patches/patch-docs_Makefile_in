@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_Makefile_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
---- docs/Makefile.in.orig	Wed Jul 21 11:46:01 2004
-+++ docs/Makefile.in	Wed Jul 21 11:46:08 2004
-@@ -103,7 +103,7 @@ version_major = @version_major@
+$OpenBSD: patch-docs_Makefile_in,v 1.2 2007/09/26 20:18:08 rui Exp $
+--- docs/Makefile.in.orig	Tue Jun  5 02:08:19 2007
++++ docs/Makefile.in	Fri Jul 27 14:23:16 2007
+@@ -180,7 +180,7 @@ version_major = @version_major@
  version_minor = @version_minor@
  
  # The name of the module, e.g. 'glib'.
