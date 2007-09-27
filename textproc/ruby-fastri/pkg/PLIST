@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/26 17:08:14 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/27 05:29:54 bernd Exp $
 bin/fastri-server
 bin/fri
 bin/qri
@@ -294,7 +294,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RI/TextFormatter/print-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RI/TextFormatter/puts-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RI/cdesc-RI.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/cdesc-.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGES
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/COPYING
