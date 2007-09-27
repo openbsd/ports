@@ -1,0 +1,26 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2007/09/27 10:08:24 ajacoutot Exp $
+
+The default superuser account is: admin (password: admin).
+
+* Creating a dedicated user and database for Tikiwiki:
+  While Tikiwiki partially supports any relational databases such as
+  PostgreSQL or SQLite, only MySQL is fully supported.
+  Also, it is recommended to use the mysqli extension (php5-mysqli) for php
+  communication to the database.
+
+  $ mysqladmin -u root -p create 'tiki'
+  $ mysql -u root -p mysql
+  mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER
+      -> ON tiki TO 'tiki'@'localhost' IDENTIFIED BY 'yourpassword';
+  mysql> quit
+
+* Configuring your /var/www/conf/php.ini for Tikiwiki:
+  - if you experience timeouts you may need to increase
+    max_execution_time and max_input_time
+  - if you want to allow trackback pings in your blogs you need to set
+    allow_url_fopen = On
+  - you should also set the default character encoding to utf-8
+    default_charset = "utf-8"
+
+* Tikiwiki is a big piece of software, you should refer to the official
+  documentation before using it. (http://doc.tikiwiki.org/)
