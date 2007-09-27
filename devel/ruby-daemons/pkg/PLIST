@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/20 17:16:41 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/09/27 18:56:32 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemonize.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemonize.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemonize.src/M000060.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemonize.src/M000061.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemonize.src/M000062.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemonize.src/M000063.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemonize.src/M000064.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemonize.src/M000065.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons.src/
@@ -35,9 +36,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Application.sr
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Application.src/M000028.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Application.src/M000029.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Application.src/M000030.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Application.src/M000031.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.src/M000050.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.src/M000051.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.src/M000052.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.src/M000053.html
@@ -47,23 +48,24 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGro
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.src/M000057.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.src/M000058.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.src/M000059.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/ApplicationGroup.src/M000060.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/CmdException.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Controller.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Controller.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Controller.src/M000031.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Controller.src/M000032.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Controller.src/M000033.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Controller.src/M000034.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Controller.src/M000035.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Controller.src/M000036.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Controller.src/M000037.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Error.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Exception.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Monitor.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Monitor.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Monitor.src/M000046.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Monitor.src/M000047.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Monitor.src/M000048.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Monitor.src/M000049.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Monitor.src/M000050.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Optparse.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Optparse.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Optparse.src/M000014.html
@@ -79,7 +81,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Pid.src/M00001
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/Pid.src/M000013.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/M000037.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/M000038.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/M000039.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/M000040.html
@@ -87,11 +88,12 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/M0
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/M000042.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/M000043.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/M000044.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidFile.src/M000045.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/PidMem.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/RuntimeException.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/SystemError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/SystemError.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/SystemError.src/M000045.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Daemons/SystemError.src/M000046.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README.html
@@ -120,6 +122,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemonize/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemonize/call_as_daemon-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemonize/cdesc-Daemonize.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemonize/daemonize-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemonize/redirect_io-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemonize/safefork-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemonize/simulate-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/
@@ -128,6 +131,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Application/cdesc-Applic
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Application/exception_log-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Application/logfile-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Application/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Application/output_logfile-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Application/pidfile_dir-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Application/running%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Application/script-i.yaml
@@ -180,7 +184,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/cdesc-Pid.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/cleanup-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/dir-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/exists%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/exist%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/pid%3d-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/pid-i.yaml
@@ -188,8 +192,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/Pid/running%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/PidFile/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/PidFile/cdesc-PidFile.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/PidFile/cleanup-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/PidFile/exist%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/PidFile/existing-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/PidFile/exists%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/PidFile/filename-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/PidFile/find_files-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/PidFile/new-c.yaml
@@ -211,6 +215,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/run-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Daemons/run_proc-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/LICENSE
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Releases
@@ -229,7 +234,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/run/ctrl_monitor.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/run/ctrl_multiple.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/run/ctrl_normal.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/run/ctrl_ontop.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/run/ctrl_proc.output
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/run/ctrl_optionparser.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/run/ctrl_proc.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/run/ctrl_proc.rb.output
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/run/ctrl_proc_simple.rb
