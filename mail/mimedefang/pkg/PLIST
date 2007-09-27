@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/09/26 21:24:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/09/27 07:42:09 sthen Exp $
 @newgroup _mdefang:570
 @newuser _mdefang:570:_mdefang:daemon:MIMEDefang:/nonexistent:/sbin/nologin
 bin/md-mx-ctrl
@@ -17,6 +17,7 @@ bin/watch-multiple-mimedefangs.tcl
 @man man/man8/watch-mimedefang.8
 @man man/man8/watch-multiple-mimedefangs.8
 share/examples/mimedefang/
+@sample ${SYSCONFDIR}/mail/
 share/examples/mimedefang/mimedefang-filter
 @sample ${SYSCONFDIR}/mail/mimedefang-filter
 share/examples/mimedefang/rc.mimedefang
@@ -32,6 +33,6 @@ share/examples/mimedefang/sa-mimedefang.cf
 @sample /var/spool/MD-Quarantine/
 @mode 0755
 @sample /var/run/mdefang/
-@extraunexec rm -rf /var/run/mdefang/*
+@unexec rm -rf /var/run/mdefang/*
 @extraunexec rm -rf /var/spool/MIMEDefang/*
 @extraunexec rm -rf /var/spool/MD-Quarantine/*

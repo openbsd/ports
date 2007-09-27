@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/26 21:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2007/09/27 07:42:09 sthen Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
 DISTNAME=	mimedefang-2.62
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	mail perl5
 
 HOMEPAGE=	http://www.mimedefang.org/
