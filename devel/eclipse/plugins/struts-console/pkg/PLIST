@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/28 23:49:58 ian Exp $
+eclipse/plugins/com.jamesholmes.console.struts/
+eclipse/plugins/com.jamesholmes.console.struts/icons/
+eclipse/plugins/com.jamesholmes.console.struts/icons/console.gif
+eclipse/plugins/com.jamesholmes.console.struts/lib/
+eclipse/plugins/com.jamesholmes.console.struts/lib/struts-console.jar
+eclipse/plugins/com.jamesholmes.console.struts/lib/xerces.jar
+eclipse/plugins/com.jamesholmes.console.struts/plugin.xml

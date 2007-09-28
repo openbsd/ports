@@ -1,0 +1,15 @@
+"The Struts Console is a free (to use) Java application for developing
+and managing Struts-based applications. With the Struts Console you
+can visually edit JSP Tag Library, Struts, Tiles and Validator
+configuration files.
+
+"The Struts Console can be used standalone and also plugs into most
+popular Java IDEs for seamless management of Struts applications
+from one central development tool. This port enables its use in Eclipse.
+
+"Features
+   * Full support for JSP Tag Library files (*.tld)
+   * Full support for Struts 1.0 - 1.2 config files
+   * Full support for Tiles config files
+   * Full support for Validator 1.0 and 1.1 config files
+   * Plugin support for many popular Java IDEs"
