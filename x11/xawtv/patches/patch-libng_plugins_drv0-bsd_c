@@ -1,0 +1,201 @@
+$OpenBSD: patch-libng_plugins_drv0-bsd_c,v 1.1 2007/09/28 08:24:42 jakemsr Exp $
+--- libng/plugins/drv0-bsd.c.orig	Thu Sep 27 15:42:52 2007
++++ libng/plugins/drv0-bsd.c	Thu Sep 27 16:39:59 2007
+@@ -242,7 +242,7 @@ static int signal_off = METEOR_SIG_MODE_MASK;
+ #define PREFIX "bktr: ioctl: "
+ 
+ static int
+-xioctl(int fd, int cmd, void *arg)
++xioctl(int fd, unsigned long cmd, void *arg)
+ {
+     int rc;
+ 
+@@ -254,7 +254,7 @@ xioctl(int fd, int cmd, void *arg)
+     {
+ 	struct meteor_video *a = arg;
+ 
+-	fprintf(stderr,PREFIX "METEORSVIDEO(addr=0x%08lx,width=%ld,bank=%ld,ram=%ld)",
++	fprintf(stderr,PREFIX "METEORSVIDEO(addr=0x%08ux,width=%u,bank=%u,ram=%u)",
+ 		a->addr,a->width,a->banksize,a->ramsize);
+ 	break;
+     }
+@@ -262,7 +262,7 @@ xioctl(int fd, int cmd, void *arg)
+     {
+ 	struct meteor_geomet *a = arg;
+ 
+-	fprintf(stderr,PREFIX "METEORSETGEO(%dx%d,frames=%d,oformat=0x%lx)",
++	fprintf(stderr,PREFIX "METEORSETGEO(%dx%d,frames=%d,oformat=0x%x)",
+ 		a->columns,a->rows,a->frames,a->oformat);
+ 	break;
+     }
+@@ -271,7 +271,7 @@ xioctl(int fd, int cmd, void *arg)
+ 	struct meteor_pixfmt *a = arg;
+ 
+ 	fprintf(stderr,PREFIX "METEORSACTPIXFMT(%d,type=%d,bpp=%d,"
+-		"masks=0x%lx/0x%lx/0x%lx,sb=%d,ss=%d)",
++		"masks=0x%x/0x%x/0x%x,sb=%u,ss=%u)",
+ 		a->index,a->type,a->Bpp,a->masks[0],a->masks[1],a->masks[2],
+ 		a->swap_bytes,a->swap_shorts);
+ 	break;
+@@ -285,18 +285,119 @@ xioctl(int fd, int cmd, void *arg)
+     }
+     case METEORSSIGNAL:
+     {
+-        int *a = arg;
++        unsigned int *a = arg;
+ 
+-	fprintf(stderr,PREFIX "METEORSSIGNAL(0x%x)",*a);
++	fprintf(stderr,PREFIX "METEORSSIGNAL(0x%ux)",*a);
+ 	break;
+     }
+     case BT848SCLIP:
+     {
+-	fprintf(stderr,PREFIX "BT848SCLIP");
++	struct bktr_clip *a = arg;
++
++	fprintf(stderr,PREFIX "BT848SCLIP(%d,%d,%d,%d",
++	    a->x_min, a->x_max, a->y_min, a->y_max);
+ 	break;
+     }
++    case BT848GFMT:
++    {
++	unsigned int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848GFMT(%u)",*a);
++	break;
++    }
++    case BT848SFMT:
++    {
++	unsigned int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848SFMT(%u)",*a);
++	break;
++    }
++    case METEORGINPUT:
++    {
++	unsigned int *a = arg;
++
++	fprintf(stderr,PREFIX "METEORGINPUT(%u)",*a);
++	break;
++    }
++    case METEORSINPUT:
++    {
++	unsigned int *a = arg;
++
++	fprintf(stderr,PREFIX "METEORSINPUT(%u)",*a);
++	break;
++    }
++    case BT848_GAUDIO:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_GAUDIO(%d)",*a);
++	break;
++    }
++    case BT848_SAUDIO:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_SAUDIO(%d)",*a);
++	break;
++    }
++    case BT848_GHUE:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_GHUE(%d)",*a);
++	break;
++    }
++    case BT848_SHUE:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_SHUE(%d)",*a);
++	break;
++    }
++    case BT848_GBRIG:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_GBRIG(%d)",*a);
++	break;
++    }
++    case BT848_SBRIG:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_SBRIG(%d)",*a);
++	break;
++    }
++    case BT848_GCONT:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_GCONT(%d)",*a);
++	break;
++    }
++    case BT848_SCONT:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_SCONT(%d)",*a);
++	break;
++    }
++    case BT848_GCSAT:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_GCSAT(%d)",*a);
++	break;
++    }
++    case BT848_SCSAT:
++    {
++	int *a = arg;
++
++	fprintf(stderr,PREFIX "BT848_SCSAT(%d)",*a);
++	break;
++    }
+     default:
+-	fprintf(stderr,PREFIX "UNKNOWN(cmd=0x%x)",cmd);
++	fprintf(stderr,PREFIX "UNKNOWN(cmd=0x%lux)",cmd);
+ 	break;
+     }
+     fprintf(stderr,": %s\n",(rc == 0) ? "ok" : strerror(errno));
+@@ -311,7 +412,7 @@ bsd_print_format(struct meteor_pixfmt *pf, int format)
+     switch (pf->type) {
+     case METEOR_PIXTYPE_RGB:
+ 	fprintf(stderr,
+-		"bktr: pf: rgb bpp=%d mask=%ld,%ld,%ld",
++		"bktr: pf: rgb bpp=%d mask=%u,%u,%u",
+ 		pf->Bpp,pf->masks[0],pf->masks[1],pf->masks[2]);
+ 	break;
+     case METEOR_PIXTYPE_YUV:
+@@ -474,7 +575,7 @@ static struct ng_attribute* bsd_attrs(void *handle)
+ /* ---------------------------------------------------------------------- */
+ 
+ static int
+-bsd_get_range(int id, int *get, int *set)
++bsd_get_range(int id, unsigned long *get, unsigned long *set)
+ {
+     switch (id) {
+     case ATTR_ID_HUE:
+@@ -502,7 +603,8 @@ bsd_get_range(int id, int *get, int *set)
+ static int bsd_read_attr(struct ng_attribute *attr)
+ {
+     struct bsd_handle *h = attr->handle;
+-    int arg, get, set, i;
++    unsigned long get, set;
++    int arg, i;
+     int value = -1;
+ 
+     switch (attr->id) {
+@@ -545,7 +647,8 @@ static int bsd_read_attr(struct ng_attribute *attr)
+ static void bsd_write_attr(struct ng_attribute *attr, int value)
+ {
+     struct bsd_handle *h = attr->handle;
+-    int arg, get, set;
++    unsigned long get, set;
++    int arg;
+ 
+     switch (attr->id) {
+     case ATTR_ID_NORM:

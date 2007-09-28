@@ -1,7 +1,7 @@
-$OpenBSD: patch-x11_blit_c,v 1.1 2004/06/25 00:14:38 robert Exp $
---- x11/blit.c.orig	Tue May  4 11:41:59 2004
-+++ x11/blit.c	Fri Jun 25 02:14:46 2004
-@@ -42,7 +42,9 @@
+$OpenBSD: patch-x11_blit_c,v 1.2 2007/09/28 08:24:42 jakemsr Exp $
+--- x11/blit.c.orig	Tue May  4 02:41:59 2004
++++ x11/blit.c	Thu Sep 27 15:37:48 2007
+@@ -42,7 +42,9 @@ static unsigned int    display_bytes = 0;
  static unsigned int    pixmap_bytes = 0;
  static bool            x11_byteswap = 0;
  static int             no_mitshm = 0;
@@ -11,7 +11,7 @@ $OpenBSD: patch-x11_blit_c,v 1.1 2004/06/25 00:14:38 robert Exp $
  
  #if HAVE_LIBXV
  static int             ver, rel, req, ev, err;
-@@ -90,6 +92,7 @@
+@@ -90,6 +92,7 @@ catch_no_mitshm(Display * dpy, XErrorEvent * event)
      return 0;
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-x11_blit_c,v 1.1 2004/06/25 00:14:38 robert Exp $
  static int
  catch_gl_error(Display * dpy, XErrorEvent * event)
  {
-@@ -97,6 +100,7 @@
+@@ -97,6 +100,7 @@ catch_gl_error(Display * dpy, XErrorEvent * event)
      gl_error++;
      return 0;
  }
@@ -27,7 +27,7 @@ $OpenBSD: patch-x11_blit_c,v 1.1 2004/06/25 00:14:38 robert Exp $
  
  /* ------------------------------------------------------------------------ */
  /* plain X11 stuff                                                          */
-@@ -672,7 +676,9 @@
+@@ -672,7 +676,9 @@ enum blit_status {
      STATUS_BROKEN  = 1,
      STATUS_CONVERT = 2,
      STATUS_XVIDEO  = 3,

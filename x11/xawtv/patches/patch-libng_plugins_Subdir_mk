@@ -1,0 +1,13 @@
+$OpenBSD: patch-libng_plugins_Subdir_mk,v 1.1 2007/09/28 08:24:42 jakemsr Exp $
+--- libng/plugins/Subdir.mk.orig	Thu Sep 27 16:48:48 2007
++++ libng/plugins/Subdir.mk	Thu Sep 27 16:50:10 2007
+@@ -41,6 +41,9 @@ libng/plugins/read-qt.so  : LDLIBS := $(QT_LIBS)
+ libng/plugins/write-qt.so : LDLIBS := $(QT_LIBS)
+ libng/plugins/read-dv.so  : LDLIBS := $(DV_LIBS)
+ libng/plugins/write-dv.so : LDLIBS := $(DV_LIBS)
++ifeq ($(FOUND_OS),bsd)
++libng/plugins/snd-oss.so  : LDLIBS := -lossaudio
++endif
+ 
+ # global targets
+ all:: $(TARGETS-plugins)

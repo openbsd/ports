@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/07/19 13:06:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/28 08:24:42 jakemsr Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386 macppc amd64
 COMMENT=	TV viewing application for bktr(4) cards
 
 DISTNAME=	xawtv-3.94
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>

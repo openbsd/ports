@@ -1,7 +1,7 @@
-$OpenBSD: patch-console_Subdir_mk,v 1.1.1.1 2003/11/16 16:17:58 sturm Exp $
---- console/Subdir.mk.orig	2003-02-14 15:13:42.000000000 +0100
-+++ console/Subdir.mk	2003-11-16 14:53:30.000000000 +0100
-@@ -80,8 +80,9 @@ console/scantv   : LDLIBS  += $(THREAD_L
+$OpenBSD: patch-console_Subdir_mk,v 1.2 2007/09/28 08:24:42 jakemsr Exp $
+--- console/Subdir.mk.orig	Fri Feb 14 06:14:04 2003
++++ console/Subdir.mk	Thu Sep 27 15:37:48 2007
+@@ -80,8 +80,9 @@ console/scantv   : LDLIBS  += $(THREAD_LIBS) $(VBI_LIB
  console/streamer : LDLIBS  += $(THREAD_LIBS) -ljpeg -lm
  console/webcam   : LDLIBS  += $(THREAD_LIBS) -ljpeg -lm
  console/radio    : LDLIBS  += $(CURSES_LIBS)

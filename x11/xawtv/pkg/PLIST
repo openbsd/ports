@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/12/30 00:43:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/09/28 08:24:42 jakemsr Exp $
 @conflict cqcam-*
 bin/dump-mixers
 bin/ntsc-cc
-@comment bin/pia
+bin/pia
 bin/propwatch
-@comment bin/record
+bin/record
 bin/rootv
 bin/showqt
 bin/showriff
