@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_getopt_h,v 1.1.1.1 2007/09/28 14:18:17 jasper Exp $
+--- src/getopt.h.orig	Tue Sep 18 22:50:13 2007
++++ src/getopt.h	Tue Sep 18 22:50:45 2007
+@@ -112,7 +112,7 @@ struct option
+ extern int getopt (int argc, char *const *argv, const char *shortopts);
+ #else /* not __GNU_LIBRARY__ */
+ # if !defined (HAVE_DECL_GETOPT)
+-extern int getopt ();
++/* extern int getopt (); */
+ # endif
+ #endif /* __GNU_LIBRARY__ */
+ extern int getopt_long (int argc, char *const *argv, const char *shortopts,

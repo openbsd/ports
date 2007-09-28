@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/28 14:18:17 jasper Exp $
+bin/VisualBoyAdvance
+bin/gvba
+share/VisualBoyAdvance/
+share/VisualBoyAdvance/VisualBoyAdvance.cfg
+@sample ${SYSCONFDIR}/VisualBoyAdvance.cfg
+share/VisualBoyAdvance/vba-64.png
+share/VisualBoyAdvance/vba.glade
+share/locale/fr/LC_MESSAGES/vba-1.7.2.mo

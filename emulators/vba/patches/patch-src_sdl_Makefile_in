@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sdl_Makefile_in,v 1.1.1.1 2007/09/28 14:18:17 jasper Exp $
+--- src/sdl/Makefile.in.orig	Wed Sep 19 17:26:31 2007
++++ src/sdl/Makefile.in	Wed Sep 19 17:26:45 2007
+@@ -70,7 +70,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ INTLLIBS = @INTLLIBS@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ -lintl -liconv
+ LEX = @LEX@
+ LEXLIB = @LEXLIB@
+ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/09/28 14:18:17 jasper Exp $
+--- src/Makefile.in.orig	Thu May 20 20:17:48 2004
++++ src/Makefile.in	Wed Sep 19 18:34:14 2007
+@@ -46,7 +46,7 @@ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@
++CFLAGS += @CFLAGS@
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@
+@@ -160,7 +160,7 @@ SUBDIRS = $(CORE_SUBDIRS) @VBA_SRC_EXTRA@
+ 
+ DIST_SUBDIRS = $(CORE_SUBDIRS) $(EXTRA_SUBDIRS)
+ 
+-dist_sysconf_DATA = VisualBoyAdvance.cfg
++dist_sysconf_DATA =
+ 
+ EXTRA_DIST = \
+ 	win32			\

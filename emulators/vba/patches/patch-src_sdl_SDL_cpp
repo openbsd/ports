@@ -1,0 +1,271 @@
+$OpenBSD: patch-src_sdl_SDL_cpp,v 1.1.1.1 2007/09/28 14:18:17 jasper Exp $
+--- src/sdl/SDL.cpp.orig	Fri May 21 22:16:58 2004
++++ src/sdl/SDL.cpp	Wed Sep 19 17:14:09 2007
+@@ -98,6 +98,7 @@ extern void MotionBlurIB32(u8*,u32,int,int);
+ void Init_Overlay(SDL_Surface *surface, int overlaytype);
+ void Quit_Overlay(void);
+ void Draw_Overlay(SDL_Surface *surface, int size);
++SDL_Surface *Set_Video(bool first);
+ 
+ extern void remoteInit();
+ extern void remoteCleanUp();
+@@ -248,8 +249,12 @@ bool screenMessage = false;
+ char screenMessageBuffer[21];
+ u32  screenMessageTime = 0;
+ 
++#if 0
+ SDL_cond *cond = NULL;
+ SDL_mutex *mutex = NULL;
++#else
++SDL_sem *rsem, *wsem;
++#endif
+ u8 sdlBuffer[4096];
+ int sdlSoundLen = 0;
+ 
+@@ -886,8 +891,8 @@ FILE *sdlFindFile(const char *name)
+   char *home = getenv("HOME");
+ 
+   if(home != NULL) {
+-    fprintf(stderr, "Searching home directory: %s\n", home);
+-    sprintf(path, "%s%c%s", home, FILE_SEP, name);
++    fprintf(stderr, "Searching home directory: %s%c.vba\n", home, FILE_SEP);
++    sprintf(path, "%s%c.vba%c%s", home, FILE_SEP, FILE_SEP, name);
+     f = fopen(path, "r");
+     if(f != NULL)
+       return f;
+@@ -1744,11 +1749,8 @@ void sdlPollEvents()
+       case SDLK_f:
+         if(!(event.key.keysym.mod & MOD_NOCTRL) &&
+            (event.key.keysym.mod & KMOD_CTRL)) {
+-          int flags = 0;
+           fullscreen = !fullscreen;
+-          if(fullscreen)
+-            flags |= SDL_FULLSCREEN;
+-          SDL_SetVideoMode(destWidth, destHeight, systemColorDepth, flags);
++	  Set_Video(false);
+           //          if(SDL_WM_ToggleFullScreen(surface))
+           //            fullscreen = !fullscreen;
+         }
+@@ -2320,9 +2322,7 @@ int main(int argc, char **argv)
+   destWidth = (sizeOption+1)*srcWidth;
+   destHeight = (sizeOption+1)*srcHeight;
+   
+-  surface = SDL_SetVideoMode(destWidth, destHeight, 16,
+-                             SDL_ANYFORMAT|SDL_HWSURFACE|SDL_DOUBLEBUF|
+-                             (fullscreen ? SDL_FULLSCREEN : 0));
++  surface = Set_Video(true);
+   
+   if(surface == NULL) {
+     systemMessage(0, "Failed to set video mode");
+@@ -2916,6 +2916,7 @@ void soundCallback(void *,u8 *stream,int len)
+ {
+   if(!emulating)
+     return;
++#if 0
+   SDL_mutexP(mutex);
+   //  printf("Locked mutex\n");
+   if(!speedup && !throttle) {
+@@ -2926,19 +2927,27 @@ void soundCallback(void *,u8 *stream,int len)
+         break;
+     }
+   }
++#else
++  SDL_SemWait(rsem);
++#endif
+   if(emulating) {
+     //  printf("Copying data\n");
+     memcpy(stream, sdlBuffer, len);
+   }
+   sdlSoundLen = 0;
++#if 0
+   if(mutex)
+     SDL_mutexV(mutex);
++#else
++  SDL_SemPost(wsem);
++#endif
+ }
+ 
+ void systemWriteDataToSoundBuffer()
+ {
+   if(SDL_GetAudioStatus() != SDL_AUDIO_PLAYING)
+     SDL_PauseAudio(0);
++#if 0
+   bool cont = true;
+   while(cont && !speedup && !throttle) {
+     SDL_mutexP(mutex);
+@@ -2976,6 +2985,11 @@ soundBufferLen);
+     memcpy(&sdlBuffer[sdlSoundLen], soundFinalWave, soundBufferLen);
+     sdlSoundLen += soundBufferLen;
+   }
++#else
++  memcpy(sdlBuffer, soundFinalWave, soundBufferLen);
++  SDL_SemPost(rsem);
++  SDL_SemWait(wsem);
++#endif
+ }
+ 
+ bool systemSoundInit()
+@@ -2998,7 +3012,7 @@ bool systemSoundInit()
+   }
+   audio.format=AUDIO_S16SYS;
+   audio.channels = 2;
+-  audio.samples = 1024;
++  audio.samples = soundBufferLen/4;
+   audio.callback = soundCallback;
+   audio.userdata = NULL;
+   if(SDL_OpenAudio(&audio, NULL)) {
+@@ -3006,8 +3020,13 @@ bool systemSoundInit()
+     return false;
+   }
+   soundBufferTotalLen = soundBufferLen*10;
++#if 0
+   cond = SDL_CreateCond();
+   mutex = SDL_CreateMutex();
++#else
++  rsem = SDL_CreateSemaphore(0);
++  wsem = SDL_CreateSemaphore(0);
++#endif
+   sdlSoundLen = 0;
+   systemSoundOn = true;
+   return true;
+@@ -3015,6 +3034,7 @@ bool systemSoundInit()
+ 
+ void systemSoundShutdown()
+ {
++#if 0
+   SDL_mutexP(mutex);
+   SDL_CondSignal(cond);
+   SDL_mutexV(mutex);
+@@ -3022,7 +3042,15 @@ void systemSoundShutdown()
+   cond = NULL;
+   SDL_DestroyMutex(mutex);
+   mutex = NULL;
++#else
++  SDL_SemPost(rsem);
++#endif
+   SDL_CloseAudio();
++#if 0
++#else
++  SDL_DestroySemaphore(rsem);
++  SDL_DestroySemaphore(wsem);
++#endif 
+ }
+ 
+ void systemSoundPause()
+@@ -3139,9 +3167,15 @@ bool systemPauseOnFrame()
+ 
+ void Init_Overlay(SDL_Surface *gbascreen, int overlaytype)
+ {
+-  
+-  overlay = SDL_CreateYUVOverlay( GBA_WIDTH,
+-                                  GBA_HEIGHT,
++  int width;
++
++  if (overlaytype == SDL_YUY2_OVERLAY)
++    width = srcWidth *2;
++  else
++    width = srcWidth;
++
++  overlay = SDL_CreateYUVOverlay( width,
++                                  srcHeight,
+                                   overlaytype, gbascreen);
+   fprintf(stderr, "Created %dx%dx%d %s %s overlay\n",
+           overlay->w,overlay->h,overlay->planes,
+@@ -3304,19 +3338,15 @@ inline void ConvertRGBtoYUY2(SDL_Overlay *o)
+   
+   SDL_LockYUVOverlay(o);
+   
+-  for(y=0; y<160 && y<o->h; y++) {
++  for(y=0; y<srcHeight && y<o->h; y++) {
+     p=(Uint8 *)pix+srcPitch*y;
+     op=o->pixels[0]+o->pitches[0]*y;
+-    for(x=0; x<240 && x<o->w; x++) {
++    for(x=0; x<srcWidth && x<o->w; x++) {
+       RGBtoYUV(p,yuv);
+-      if(x%2==0) {
+-        *(op++)=yuv[0];
+-        *(op++)=yuv[1];
+-        op[1]=yuv[2];
+-      } else {
+-        *op=yuv[0];
+-        op+=2;
+-      }
++      *(op++)=yuv[0];
++      *(op++)=yuv[1];
++      *(op++)=yuv[0];
++      *(op++)=yuv[2];
+       
+       p+=4; //s->format->BytesPerPixel;
+     }
+@@ -3358,11 +3388,6 @@ inline void Draw_Overlay(SDL_Surface *display, int siz
+   
+   Convert32bit(display);
+   
+-  overlay_rect.x = 0;
+-  overlay_rect.y = 0;
+-  overlay_rect.w = GBA_WIDTH  * size;
+-  overlay_rect.h = GBA_HEIGHT * size;
+-
+   SDL_DisplayYUVOverlay(overlay, &overlay_rect);
+   SDL_UnlockYUVOverlay(overlay);
+ }
+@@ -3378,9 +3403,8 @@ void systemGbBorderOn()
+   destWidth = (sizeOption+1)*srcWidth;
+   destHeight = (sizeOption+1)*srcHeight;
+   
+-  surface = SDL_SetVideoMode(destWidth, destHeight, 16,
+-                             SDL_ANYFORMAT|SDL_HWSURFACE|SDL_DOUBLEBUF|
+-                             (fullscreen ? SDL_FULLSCREEN : 0));  
++  surface = Set_Video(true);
++
+ #ifndef C_CORE
+   sdlMakeStretcher(srcWidth);
+ #else
+@@ -3439,4 +3463,47 @@ void systemGbBorderOn()
+     else
+       srcPitch = srcWidth*3;
+   }
++}
++
++SDL_Surface *
++Set_Video(bool first)
++{
++  int flags;
++
++  flags = SDL_HWSURFACE|SDL_DOUBLEBUF;
++  if (first) {
++    flags |= SDL_ANYFORMAT;
++    systemColorDepth = 16;
++  }
++
++  if(fullscreen)
++    flags |= SDL_FULLSCREEN;
++
++  destWidth = srcWidth*(sizeOption+1);
++  destHeight = srcHeight*(sizeOption+1);
++
++  if (yuv) {
++    double mul, mul2;
++
++    if (fullscreen) {
++      SDL_Rect **mode;
++      if ((mode=SDL_ListModes(NULL, SDL_FULLSCREEN|SDL_HWSURFACE))
++	  != NULL) {
++	destWidth = mode[0]->w;
++	destHeight = mode[0]->h;
++      }
++    }
++    
++    mul = (double)destWidth/srcWidth;
++    mul2 = (double)destHeight/srcHeight;
++    if (mul2 < mul)
++      mul = mul2;
++
++    overlay_rect.w = (Uint16)(srcWidth*mul);
++    overlay_rect.h = (Uint16)(srcHeight*mul);
++    overlay_rect.x = (destWidth-overlay_rect.w)/2;
++    overlay_rect.y = (destHeight-overlay_rect.h)/2;
++  }
++
++  return SDL_SetVideoMode(destWidth, destHeight, systemColorDepth, flags);
+ }

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_remote_cpp,v 1.1.1.1 2007/09/28 14:18:17 jasper Exp $
+--- src/remote.cpp.orig	Wed Sep 19 17:22:26 2007
++++ src/remote.cpp	Wed Sep 19 17:22:42 2007
+@@ -22,6 +22,7 @@
+ 
+ #ifndef WIN32
+ # include <unistd.h>
++# undef _BSD_SOCKLEN_T_
+ # include <sys/socket.h>
+ # include <netdb.h>
+ # ifdef HAVE_NETINET_IN_H

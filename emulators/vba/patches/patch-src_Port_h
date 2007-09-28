@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_Port_h,v 1.1.1.1 2007/09/28 14:18:17 jasper Exp $
+--- src/Port.h.orig	Tue Sep 18 21:26:36 2007
++++ src/Port.h	Tue Sep 18 21:56:04 2007
+@@ -20,18 +20,6 @@
+ #ifndef VBA_PORT_H
+ #define VBA_PORT_H
+ 
+-// swaps a 16-bit value
+-static inline u16 swap16(u16 v)
+-{
+-  return (v<<8)|(v>>8);
+-}
+-
+-// swaps a 32-bit value
+-static inline u32 swap32(u32 v)
+-{
+-  return (v<<24)|((v<<8)&0xff0000)|((v>>8)&0xff00)|(v>>24);
+-}
+-
+ #ifdef WORDS_BIGENDIAN
+ #if defined(__GNUC__) && defined(__ppc__)
+ 
