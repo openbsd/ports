@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.58 2007/09/28 07:59:06 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	videolan client; multimedia player
 
 V=		0.8.6c
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -24,7 +24,6 @@ USE_X11=	Yes
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
-		nspr4,plc4,plds4::devel/nspr \
 		png.>=4.1::graphics/png \
 		id3tag.>=3.0::audio/libid3tag \
 		mad.>=2.1::audio/libmad \
@@ -41,11 +40,12 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 		dvdnav.>=3.0::multimedia/libdvdnav \
                 dvdread.>=3.0::devel/libdvdread \
 		x264::multimedia/x264 \
+		dvbpsi.>=3::graphics/libdvbpsi \
 		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
-		pthread stdc++ usbhid z Xau Xdmcp \
+		pthread stdc++ usbhid z Xau Xdmcp Xrandr Xrender \
 		SDL jpeg tiff faad ogg vorbis vorbisenc
 
 CONFIGURE_STYLE=autoconf
@@ -96,7 +96,6 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-gnutls \
 		--disable-dshow \
 		--disable-smb \
-		--disable-dvbpsi \
 		--disable-libcdio \
 		--disable-libcddb \
 		--disable-cdda \
@@ -159,7 +158,8 @@ CONFIGURE_ARGS+=--enable-ncurses \
 		--enable-mpc \
 		--enable-wxwidgets \
 		--enable-dvdread \
-		--enable-dvdnav
+		--enable-dvdnav \
+		--enable-dvbpsi
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
@@ -170,6 +170,7 @@ FLAVOR?=
 BUILD_DEPENDS+=	:seamonkey-devel-*:www/seamonkey,-devel
 CONFIGURE_ARGS+=--enable-mozilla
 PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/seamonkey
+LIB_DEPENDS+=	nspr4,plc4,plds4::devel/nspr
 WANTLIB+=	Xt
 .else
 CONFIGURE_ARGS+=--disable-mozilla
