@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/09/28 22:12:00 pyr Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-docs=		documentation
@@ -7,7 +7,7 @@ COMMENT-clamav=		clamav plugin
 COMMENT-dillo=		dillo plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.0.0
+V=			3.0.1
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=			${DISTNAME}
 FULLPKGNAME-docs=		claws-mail-docs-${V}
@@ -22,7 +22,7 @@ HOMEPAGE=		http://www.claws-mail.org/
 
 MAINTAINER=		Ulrich Kahl <ulrich.kahl@cityweb.de>
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -56,7 +56,7 @@ WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 WANTLIB-main=		${WANTLIB} ICE SM c pthread stdc++
 
 WANTLIB-docs=		
-WANTLIB-clamav=		${WANTLIB} bz2 gmp idn
+WANTLIB-clamav=		${WANTLIB} bz2 gmp
 
 LIB_DEPENDS=		atk-1.0::devel/atk \
 			cairo::graphics/cairo \
@@ -79,8 +79,7 @@ LIB_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
 LIB_DEPENDS-clamav=	${LIB_DEPENDS} \
-			clamav::security/clamav \
-			curl::net/curl
+			clamav::security/clamav
 
 MODULES=		devel/gettext
 USE_X11=		Yes
