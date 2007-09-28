@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: update-patches,v 1.15 2007/02/03 17:08:13 espie Exp $
+# $OpenBSD: update-patches,v 1.16 2007/09/28 17:11:10 kurt Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -48,7 +48,7 @@ do
 	# Ignore non-files, or old backup
 	[ -f $i ] || continue
 	case $i in \
-	*${PATCHORIG}|*.rej|*~) ;;
+	*.orig|*.rej|*~) ;;
 	*) # Patch found. Is this the one ?
 	    if grep "^--- $file$PATCHORIG" $i >/dev/null
 	    then
@@ -65,7 +65,7 @@ do
 		    rm $i.new
 		else
 		    echo 1>&2 "Patch $i for $file updated"
-		    mv $i $i$PATCHORIG
+		    mv $i $i.orig
 		    mv $i.new $i
 		    edit="$edit $i"
 		fi
@@ -88,7 +88,7 @@ if cd $PATCHDIR 2>/dev/null; then
     do
 	[ -f $i ] || continue
 	case $i in \
-	*$PATCHORIG|*.rej|*~) ;;
+	*.orig|*.rej|*~) ;;
 	*)
 	    if grep '^\\ No newline at end of file' $i >/dev/null; then
 		    echo 1>&2 "*** Patch $i needs manual intervention"
@@ -107,7 +107,7 @@ else
     echo 1>&2 "No patch found"
 fi
 
-# Check for $Id: update-patches,v 1.15 2007/02/03 17:08:13 espie Exp $ and similar bugs in all those patch files.
+# Check for $Id: update-patches,v 1.16 2007/09/28 17:11:10 kurt Exp $ and similar bugs in all those patch files.
 for i in $accounted
 do
     if sed -e '/1,^---/ d' $i|grep '$(Id|OpenBSD'
