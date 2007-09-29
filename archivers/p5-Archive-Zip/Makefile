@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/09/29 17:50:07 simon Exp $
 
 COMMENT=	perl interface to ZIP files
 
 MODULES=	cpan
 
-DISTNAME=	Archive-Zip-1.18
+DISTNAME=	Archive-Zip-1.20
 
 CATEGORIES=	archivers
 
