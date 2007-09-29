@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/24 19:36:49 todd Exp $
+# $OpenBSD: Makefile,v 1.15 2007/09/29 12:18:06 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= 	i386
 
-COMMENT=		Distributed filesystem OpenAFS
+COMMENT=		distributed filesystem OpenAFS
 
-DISTNAME=		openafs-1.4.0-src
-PKGNAME=		openafs-1.4.0p6
+V=			1.4.0
+DISTNAME=		openafs-${V}-src
+PKGNAME=		openafs-${V}p7
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.openafs.org
@@ -20,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c pthread
 
-MASTER_SITES=		http://www.openafs.org/dl/openafs/1.4.0/
+MASTER_SITES=		http://www.openafs.org/dl/openafs/${V}/
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	autoconf
@@ -41,8 +42,8 @@ post-patch:
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/
 .for file in openafs-setup
-	@sed s,%LOCALBASE%,${LOCALBASE},g < ${FILESDIR}/${file} > \
-	${PREFIX}/sbin/${file}
+	@sed -e s,%PREFIX%,${PREFIX},g -e s,%SYSCONFDIR%,${SYSCONFDIR},g \
+		< ${FILESDIR}/${file} > ${PREFIX}/sbin/${file}
 	@chmod u+x ${PREFIX}/sbin/${file}
 .endfor
  
