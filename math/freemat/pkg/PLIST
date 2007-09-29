@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/09/07 15:55:25 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/09/29 06:53:39 steven Exp $
 bin/freemat
 share/FreeMat-${V}/
 share/FreeMat-${V}/help/
@@ -223,6 +223,18 @@ share/FreeMat-${V}/help/html/expei1.png
 share/FreeMat-${V}/help/html/expei_eqn1.png
 share/FreeMat-${V}/help/html/expplot1.png
 share/FreeMat-${V}/help/html/expplot2.png
+share/FreeMat-${V}/help/html/external_cenum.html
+share/FreeMat-${V}/help/html/external_ctypecast.html
+share/FreeMat-${V}/help/html/external_ctypedefine.html
+share/FreeMat-${V}/help/html/external_ctypefreeze.html
+share/FreeMat-${V}/help/html/external_ctypenew.html
+share/FreeMat-${V}/help/html/external_ctypeprint.html
+share/FreeMat-${V}/help/html/external_ctyperead.html
+share/FreeMat-${V}/help/html/external_ctypesize.html
+share/FreeMat-${V}/help/html/external_ctypethaw.html
+share/FreeMat-${V}/help/html/external_ctypewrite.html
+share/FreeMat-${V}/help/html/external_import.html
+share/FreeMat-${V}/help/html/external_loadlib.html
 share/FreeMat-${V}/help/html/fft1.png
 share/FreeMat-${V}/help/html/fft2.png
 share/FreeMat-${V}/help/html/fft_eqn1.png
@@ -254,6 +266,7 @@ share/FreeMat-${V}/help/html/freemat_clocktotime.html
 share/FreeMat-${V}/help/html/freemat_computer.html
 share/FreeMat-${V}/help/html/freemat_diary.html
 share/FreeMat-${V}/help/html/freemat_docli.html
+share/FreeMat-${V}/help/html/freemat_edit.html
 share/FreeMat-${V}/help/html/freemat_editor.html
 share/FreeMat-${V}/help/html/freemat_errorcount.html
 share/FreeMat-${V}/help/html/freemat_etime.html
@@ -264,9 +277,7 @@ share/FreeMat-${V}/help/html/freemat_feval.html
 share/FreeMat-${V}/help/html/freemat_filesep.html
 share/FreeMat-${V}/help/html/freemat_help.html
 share/FreeMat-${V}/help/html/freemat_helpwin.html
-share/FreeMat-${V}/help/html/freemat_import.html
 share/FreeMat-${V}/help/html/freemat_jitcontrol.html
-share/FreeMat-${V}/help/html/freemat_loadlib.html
 share/FreeMat-${V}/help/html/freemat_mfilename.html
 share/FreeMat-${V}/help/html/freemat_path.html
 share/FreeMat-${V}/help/html/freemat_pathsep.html
@@ -339,6 +350,7 @@ share/FreeMat-${V}/help/html/handle_hsurface.html
 share/FreeMat-${V}/help/html/handle_htext.html
 share/FreeMat-${V}/help/html/handle_image.html
 share/FreeMat-${V}/help/html/handle_imageproperties.html
+share/FreeMat-${V}/help/html/handle_imagesc.html
 share/FreeMat-${V}/help/html/handle_is2dview.html
 share/FreeMat-${V}/help/html/handle_ishold.html
 share/FreeMat-${V}/help/html/handle_legend.html
@@ -421,6 +433,7 @@ share/FreeMat-${V}/help/html/io_disp.html
 share/FreeMat-${V}/help/html/io_dlmread.html
 share/FreeMat-${V}/help/html/io_fclose.html
 share/FreeMat-${V}/help/html/io_feof.html
+share/FreeMat-${V}/help/html/io_fflush.html
 share/FreeMat-${V}/help/html/io_fgetline.html
 share/FreeMat-${V}/help/html/io_fopen.html
 share/FreeMat-${V}/help/html/io_format.html
@@ -640,6 +653,7 @@ share/FreeMat-${V}/help/html/sec_curvefit.html
 share/FreeMat-${V}/help/html/sec_debug.html
 share/FreeMat-${V}/help/html/sec_elementary.html
 share/FreeMat-${V}/help/html/sec_eqn1.png
+share/FreeMat-${V}/help/html/sec_external.html
 share/FreeMat-${V}/help/html/sec_flow.html
 share/FreeMat-${V}/help/html/sec_freemat.html
 share/FreeMat-${V}/help/html/sec_function.html
@@ -842,6 +856,7 @@ share/FreeMat-${V}/help/text/cd.mdc
 share/FreeMat-${V}/help/text/ceil.mdc
 share/FreeMat-${V}/help/text/cell.mdc
 share/FreeMat-${V}/help/text/cellstr.mdc
+share/FreeMat-${V}/help/text/cenum.mdc
 share/FreeMat-${V}/help/text/char.mdc
 share/FreeMat-${V}/help/text/circshift.mdc
 share/FreeMat-${V}/help/text/cla.mdc
@@ -886,6 +901,15 @@ share/FreeMat-${V}/help/text/csch.mdc
 share/FreeMat-${V}/help/text/csvread.mdc
 share/FreeMat-${V}/help/text/csvwrite.mdc
 share/FreeMat-${V}/help/text/ctranspose.mdc
+share/FreeMat-${V}/help/text/ctypecast.mdc
+share/FreeMat-${V}/help/text/ctypedefine.mdc
+share/FreeMat-${V}/help/text/ctypefreeze.mdc
+share/FreeMat-${V}/help/text/ctypenew.mdc
+share/FreeMat-${V}/help/text/ctypeprint.mdc
+share/FreeMat-${V}/help/text/ctyperead.mdc
+share/FreeMat-${V}/help/text/ctypesize.mdc
+share/FreeMat-${V}/help/text/ctypethaw.mdc
+share/FreeMat-${V}/help/text/ctypewrite.mdc
 share/FreeMat-${V}/help/text/cumprod.mdc
 share/FreeMat-${V}/help/text/cumsum.mdc
 share/FreeMat-${V}/help/text/dawson.mdc
@@ -917,6 +941,7 @@ share/FreeMat-${V}/help/text/dottimes.mdc
 share/FreeMat-${V}/help/text/double.mdc
 share/FreeMat-${V}/help/text/drawnow.mdc
 share/FreeMat-${V}/help/text/e.mdc
+share/FreeMat-${V}/help/text/edit.mdc
 share/FreeMat-${V}/help/text/editor.mdc
 share/FreeMat-${V}/help/text/ei.mdc
 share/FreeMat-${V}/help/text/eig.mdc
@@ -944,6 +969,7 @@ share/FreeMat-${V}/help/text/fclose.mdc
 share/FreeMat-${V}/help/text/feof.mdc
 share/FreeMat-${V}/help/text/feps.mdc
 share/FreeMat-${V}/help/text/feval.mdc
+share/FreeMat-${V}/help/text/fflush.mdc
 share/FreeMat-${V}/help/text/fft.mdc
 share/FreeMat-${V}/help/text/fftn.mdc
 share/FreeMat-${V}/help/text/fftshift.mdc
@@ -1012,6 +1038,7 @@ share/FreeMat-${V}/help/text/ifftshift.mdc
 share/FreeMat-${V}/help/text/imag.mdc
 share/FreeMat-${V}/help/text/image.mdc
 share/FreeMat-${V}/help/text/imageproperties.mdc
+share/FreeMat-${V}/help/text/imagesc.mdc
 share/FreeMat-${V}/help/text/import.mdc
 share/FreeMat-${V}/help/text/imread.mdc
 share/FreeMat-${V}/help/text/indexing.mdc
@@ -1383,6 +1410,7 @@ share/FreeMat-${V}/toolbox/graph/gray.m
 share/FreeMat-${V}/toolbox/graph/grid.m
 share/FreeMat-${V}/toolbox/graph/hold.m
 share/FreeMat-${V}/toolbox/graph/image.m
+share/FreeMat-${V}/toolbox/graph/imagesc.m
 share/FreeMat-${V}/toolbox/graph/legend.m
 share/FreeMat-${V}/toolbox/graph/line.m
 share/FreeMat-${V}/toolbox/graph/loglog.m
@@ -1633,6 +1661,7 @@ share/FreeMat-${V}/toolbox/test/bbtest_cd.m
 share/FreeMat-${V}/toolbox/test/bbtest_ceil.m
 share/FreeMat-${V}/toolbox/test/bbtest_cell.m
 share/FreeMat-${V}/toolbox/test/bbtest_cellstr.m
+share/FreeMat-${V}/toolbox/test/bbtest_cenum.m
 share/FreeMat-${V}/toolbox/test/bbtest_char.m
 share/FreeMat-${V}/toolbox/test/bbtest_circshift.m
 share/FreeMat-${V}/toolbox/test/bbtest_cla.m
@@ -1677,6 +1706,15 @@ share/FreeMat-${V}/toolbox/test/bbtest_csch.m
 share/FreeMat-${V}/toolbox/test/bbtest_csvread.m
 share/FreeMat-${V}/toolbox/test/bbtest_csvwrite.m
 share/FreeMat-${V}/toolbox/test/bbtest_ctranspose.m
+share/FreeMat-${V}/toolbox/test/bbtest_ctypecast.m
+share/FreeMat-${V}/toolbox/test/bbtest_ctypedefine.m
+share/FreeMat-${V}/toolbox/test/bbtest_ctypefreeze.m
+share/FreeMat-${V}/toolbox/test/bbtest_ctypenew.m
+share/FreeMat-${V}/toolbox/test/bbtest_ctypeprint.m
+share/FreeMat-${V}/toolbox/test/bbtest_ctyperead.m
+share/FreeMat-${V}/toolbox/test/bbtest_ctypesize.m
+share/FreeMat-${V}/toolbox/test/bbtest_ctypethaw.m
+share/FreeMat-${V}/toolbox/test/bbtest_ctypewrite.m
 share/FreeMat-${V}/toolbox/test/bbtest_cumprod.m
 share/FreeMat-${V}/toolbox/test/bbtest_cumsum.m
 share/FreeMat-${V}/toolbox/test/bbtest_dawson.m
@@ -1708,6 +1746,7 @@ share/FreeMat-${V}/toolbox/test/bbtest_dottimes.m
 share/FreeMat-${V}/toolbox/test/bbtest_double.m
 share/FreeMat-${V}/toolbox/test/bbtest_drawnow.m
 share/FreeMat-${V}/toolbox/test/bbtest_e.m
+share/FreeMat-${V}/toolbox/test/bbtest_edit.m
 share/FreeMat-${V}/toolbox/test/bbtest_editor.m
 share/FreeMat-${V}/toolbox/test/bbtest_ei.m
 share/FreeMat-${V}/toolbox/test/bbtest_eig.m
@@ -1735,6 +1774,7 @@ share/FreeMat-${V}/toolbox/test/bbtest_fclose.m
 share/FreeMat-${V}/toolbox/test/bbtest_feof.m
 share/FreeMat-${V}/toolbox/test/bbtest_feps.m
 share/FreeMat-${V}/toolbox/test/bbtest_feval.m
+share/FreeMat-${V}/toolbox/test/bbtest_fflush.m
 share/FreeMat-${V}/toolbox/test/bbtest_fft.m
 share/FreeMat-${V}/toolbox/test/bbtest_fftn.m
 share/FreeMat-${V}/toolbox/test/bbtest_fftshift.m
@@ -1803,6 +1843,7 @@ share/FreeMat-${V}/toolbox/test/bbtest_ifftshift.m
 share/FreeMat-${V}/toolbox/test/bbtest_imag.m
 share/FreeMat-${V}/toolbox/test/bbtest_image.m
 share/FreeMat-${V}/toolbox/test/bbtest_imageproperties.m
+share/FreeMat-${V}/toolbox/test/bbtest_imagesc.m
 share/FreeMat-${V}/toolbox/test/bbtest_import.m
 share/FreeMat-${V}/toolbox/test/bbtest_imread.m
 share/FreeMat-${V}/toolbox/test/bbtest_indexing.m
@@ -2522,6 +2563,7 @@ share/FreeMat-${V}/toolbox/test/wbtest_isvector_3.m
 share/FreeMat-${V}/toolbox/test/wbtest_isvector_4.m
 share/FreeMat-${V}/toolbox/test/wbtest_isvector_5.m
 share/FreeMat-${V}/toolbox/test/wbtest_isvector_6.m
+share/FreeMat-${V}/toolbox/test/wbtest_linspace_1.m
 share/FreeMat-${V}/toolbox/test/wbtest_lower_1.m
 share/FreeMat-${V}/toolbox/test/wbtest_lower_2.m
 share/FreeMat-${V}/toolbox/test/wbtest_lower_3.m
@@ -2633,6 +2675,10 @@ share/FreeMat-${V}/toolbox/trig/tand.m
 share/FreeMat-${V}/toolbox/trig/tanh.m
 share/FreeMat-${V}/toolbox/util/
 share/FreeMat-${V}/toolbox/util/addpath.m
+share/FreeMat-${V}/toolbox/util/ctypecast.m
+share/FreeMat-${V}/toolbox/util/ctypenew.m
+share/FreeMat-${V}/toolbox/util/ctyperead.m
+share/FreeMat-${V}/toolbox/util/ctypewrite.m
 share/FreeMat-${V}/toolbox/util/exit.m
 share/FreeMat-${V}/toolbox/util/filesep.m
 share/FreeMat-${V}/toolbox/util/fullfile.m
