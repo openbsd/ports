@@ -1,10 +1,10 @@
-#   $OpenBSD: Makefile,v 1.15 2007/09/16 00:17:06 merdely Exp $
+#   $OpenBSD: Makefile,v 1.16 2007/09/29 17:56:23 simon Exp $
 
 COMMENT=	modules for handling mail with perl
 
 MODULES=	cpan
-DISTNAME=	MailTools-1.74
-PKGNAME=	p5-Mail-Tools-1.74
+DISTNAME=	MailTools-1.77
+PKGNAME=	p5-Mail-Tools-1.77
 CATEGORIES=	mail devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Mail/}
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+RUN_DEPENDS=	::devel/p5-Time-TimeDate
 
 # Build examples as well
 post-build:
