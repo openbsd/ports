@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2007/09/29 05:52:17 steven Exp $
 
 COMMENT=	cryptographic cipher block chaining mode
 
 MODULES=	cpan
-DISTNAME=	Crypt-CBC-2.17
+DISTNAME=	Crypt-CBC-2.24
 CATEGORIES=	security
 
 RUN_DEPENDS=	:p5-Crypt-DES-*:security/p5-Crypt-DES \
