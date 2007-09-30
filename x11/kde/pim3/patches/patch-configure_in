@@ -1,7 +1,53 @@
-$OpenBSD: patch-configure_in,v 1.4 2007/05/25 09:49:55 espie Exp $
---- configure.in.orig	Mon May 14 13:48:50 2007
-+++ configure.in	Tue May 15 00:44:39 2007
-@@ -717,7 +717,8 @@ if test "$HAVE_PISOCK" = "1" ; then
+$OpenBSD: patch-configure_in,v 1.5 2007/09/30 09:36:58 ajacoutot Exp $
+--- configure.in.orig	Thu May 17 08:43:38 2007
++++ configure.in	Sat Sep 29 23:38:37 2007
+@@ -402,29 +402,30 @@ if test -d "$with_opensync"; then
+ fi
+ export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:$prefix/lib/pkgconfig:/usr/local/lib/pkgconfig
+ 
+-
++dnl don't try to compile opensync support
++dnl (libopensync-0.3x is not compatible with KDE3 yet)
+ HAVE_OPENSYNC=0
+ HAVE_OPENSYNC_ENGINE=0
+-PKG_CHECK_MODULES(OPENSYNC, opensync-1.0 >= 0.19, HAVE_OPENSYNC=1,HAVE_OPENSYNC=0)
+-PKG_CHECK_MODULES(OPENSYNCENGINE, osengine-1.0 >= 0.19, HAVE_OPENSYNC_ENGINE=1, HAVE_OPENSYNC_ENGINE=0)
+-PKG_CHECK_MODULES(LIBXML,   libxml-2.0, , HAVE_OPENSYNC=0)
+-PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.6, , HAVE_OPENSYNC=0)
++dnl PKG_CHECK_MODULES(OPENSYNC, opensync-1.0 >= 0.19, HAVE_OPENSYNC=1,HAVE_OPENSYNC=0)
++dnl PKG_CHECK_MODULES(OPENSYNCENGINE, osengine-1.0 >= 0.19, HAVE_OPENSYNC_ENGINE=1, HAVE_OPENSYNC_ENGINE=0)
++dnl PKG_CHECK_MODULES(LIBXML,   libxml-2.0, , HAVE_OPENSYNC=0)
++dnl PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.6, , HAVE_OPENSYNC=0)
+ 
+ if test -z "PKG_CONFIG"; then
+     AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
+ fi
+ 
+-if test "$PKG_CONFIG" != "no"; then
+-    OPENSYNC_CONFIGDIR=`$PKG_CONFIG  --variable=configdir  "opensync-1.0"`
+-    OPENSYNC_PLUGINDIR=`$PKG_CONFIG  --variable=plugindir  "opensync-1.0"`
+-    OPENSYNC_FORMATSDIR=`$PKG_CONFIG --variable=formatsdir "opensync-1.0"`
+-    OPENSYNC_HEADERDIR=`$PKG_CONFIG  --variable=headerdir  "opensync-1.0"`
+-fi
++dnl if test "$PKG_CONFIG" != "no"; then
++dnl    OPENSYNC_CONFIGDIR=`$PKG_CONFIG  --variable=configdir  "opensync-1.0"`
++dnl    OPENSYNC_PLUGINDIR=`$PKG_CONFIG  --variable=plugindir  "opensync-1.0"`
++dnl    OPENSYNC_FORMATSDIR=`$PKG_CONFIG --variable=formatsdir "opensync-1.0"`
++dnl    OPENSYNC_HEADERDIR=`$PKG_CONFIG  --variable=headerdir  "opensync-1.0"`
++dnl fi
+ 
+-AC_SUBST(OPENSYNC_CONFIGDIR)
+-AC_SUBST(OPENSYNC_PLUGINDIR)
+-AC_SUBST(OPENSYNC_FORMATSDIR)
+-AC_SUBST(OPENSYNC_HEADERDIR)
++dnl AC_SUBST(OPENSYNC_CONFIGDIR)
++dnl AC_SUBST(OPENSYNC_PLUGINDIR)
++dnl AC_SUBST(OPENSYNC_FORMATSDIR)
++dnl AC_SUBST(OPENSYNC_HEADERDIR)
+ 
+ dnl Check if we can compile KitchenSync
+ AM_CONDITIONAL(compile_kitchensync, test "$HAVE_OPENSYNC" = 1 -a "$HAVE_OPENSYNC_ENGINE" = 1)
+@@ -717,7 +718,8 @@ if test "$HAVE_PISOCK" = "1" ; then
  			],
  			[-lsocket]
  			)
@@ -11,7 +57,7 @@ $OpenBSD: patch-configure_in,v 1.4 2007/05/25 09:49:55 espie Exp $
  		)
  fi
  fi
-@@ -855,7 +856,7 @@ if test "x$with_mal" = "xCHECK" ; then
+@@ -855,7 +857,7 @@ if test "x$with_mal" = "xCHECK" ; then
          mal_libdir)
        if test -r $mal_libdir/libmal.$ext ; then
          if test "x$mal_libdir" != "x/usr/lib$kdelibsuff" ; then
