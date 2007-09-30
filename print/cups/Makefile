@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2007/09/20 09:34:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2007/09/30 14:39:23 steven Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}p7
+PKGNAME=		cups-${VERSION}p8
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		3.0 \
 			cupsimage	2.3
@@ -97,5 +97,6 @@ post-install:
 	@sed s,y0y0y0,${LOCALBASE}, < ${FILESDIR}/${file} > \
 		${PREFIX}/sbin/${file}
 .endfor
+	@ln -s ${TRUEPREFIX}/bin/foomatic-rip ${PREFIX}/libexec/cups/filter/
 
 .include <bsd.port.mk>

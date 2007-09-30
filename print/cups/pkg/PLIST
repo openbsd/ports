@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/09/09 14:53:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/09/30 14:39:23 steven Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
@@ -54,6 +54,7 @@ libexec/cups/daemon/cups-lpd
 libexec/cups/daemon/cups-polld
 libexec/cups/driver/
 libexec/cups/filter/
+libexec/cups/filter/foomatic-rip
 libexec/cups/filter/gziptoany
 libexec/cups/filter/hpgltops
 libexec/cups/filter/imagetops
@@ -1285,5 +1286,3 @@ share/locale/sv/cups_sv.po
 @sample /var/spool/cups/
 @sample /var/spool/cups/tmp/
 @sample /var/cache/cups/
-@exec ln -sf ${LOCALBASE}/bin/foomatic-rip ${PREFIX}/libexec/cups/filter/
-@unexec rm -f ${PREFIX}/libexec/cups/filter/foomatic-rip
