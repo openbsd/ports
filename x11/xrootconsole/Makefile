@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/09/30 07:04:37 sturm Exp $
 
 COMMENT=		writes any log live onto the background
 V=			0.6
 DISTNAME=		xrootconsole-${V}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11	
 
-MAINTAINER=		Sebastian Trahm <inthisdefiance@gmx.net>
+MAINTAINER=		Sebastian Trahm <basti@schleifi.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
