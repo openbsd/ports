@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.554 2007/09/26 17:21:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.555 2007/09/30 09:38:57 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -145,6 +145,7 @@
      SUBDIR += libofx
      SUBDIR += liboil
      SUBDIR += liboop
+     SUBDIR += libopensync
      SUBDIR += libproplist
      SUBDIR += libregexp9
      SUBDIR += libsigc++
