@@ -1,0 +1,9 @@
+$OpenBSD: patch-osengine-1_0_pc_in,v 1.1.1.1 2007/09/30 09:37:53 ajacoutot Exp $
+--- osengine-1.0.pc.in.orig	Thu Feb  3 16:25:48 2005
++++ osengine-1.0.pc.in	Sun Sep 30 10:15:13 2007
+@@ -7,4 +7,4 @@ Name: osengine
+ Description: OpenSync sync engine
+ Version: @VERSION@
+ Libs: -L${libdir} -losengine
+-Cflags: -I${includedir}/opensync-1.0
++Cflags: -I${includedir}/glib-2.0 -I${includedir}/opensync-1.0

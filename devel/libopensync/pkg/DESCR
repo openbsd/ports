@@ -1,0 +1,5 @@
+OpenSync is a synchronization framework that is platform and
+distribution independent. It consists of a powerful sync-engine and
+several plugins that can be used to connect to devices.
+OpenSync is very flexible and capable of synchronizing any type of data,
+including contacts, calendar, tasks, notes and files.

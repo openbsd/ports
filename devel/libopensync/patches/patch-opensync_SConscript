@@ -1,0 +1,21 @@
+$OpenBSD: patch-opensync_SConscript,v 1.1.1.1 2007/09/30 09:37:53 ajacoutot Exp $
+--- opensync/SConscript.orig	Sat Jul  7 20:29:23 2007
++++ opensync/SConscript	Sat Sep 29 15:13:52 2007
+@@ -146,7 +146,7 @@ engine/opensync_status.h
+ 
+ Libraries = r"""
+ glib-2.0
+-gthread-2.0
++gthread-2.0 pthread
+ gmodule-2.0
+ libxml2
+ sqlite3
+@@ -154,7 +154,7 @@ sqlite3
+ 
+ #libopensync = env.SharedLibrary('opensync', Split(sources), LIBS = Split(Libraries))
+ libopensync = env.build_shlib('opensync', Split(sources), 
+-					vnum="%d.%d.%d" % (config["major"], config["minor"], config["micro"]), 
++					vnum="%d.%d" % (config["major"], config["minor"]), 
+ 					LIBS = Split(Libraries))
+ 
+ env.Prepend(LIBPATH = '#opensync')
