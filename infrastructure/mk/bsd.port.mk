@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.915 2007/09/21 08:04:06 steven Exp $
+#	$OpenBSD: bsd.port.mk,v 1.916 2007/09/30 15:07:40 steven Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1806,7 +1806,7 @@ _do_libs_too = NO_SHARED_LIBS=Yes
 _extra_info =
 .for _s in ${MULTI_PACKAGES}
 _extra_info += PLIST${_s}='${PLIST${_s}}'
-_extra_info += DEPPATHS${_s}="`${SETENV} FLAVOR=${FLAVOR} SUBPACKAGE=${_s} ${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`"
+_extra_info += DEPPATHS${_s}="`${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} ${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`"
 .endfor
 
 _internal-plist _internal-update-plist: _internal-fake
