@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2007/07/04 16:23:05 sturm Exp $
---- configure.orig	Mon Jun  4 11:02:48 2007
-+++ configure	Wed Jul  4 16:20:24 2007
-@@ -20285,13 +20285,13 @@ if test "${with_pgsql+set}" = set; then
+$OpenBSD: patch-configure,v 1.9 2007/09/30 10:37:07 sturm Exp $
+--- configure.orig	Sat Sep 29 03:02:23 2007
++++ configure	Sat Sep 29 10:22:20 2007
+@@ -20288,13 +20288,13 @@ if test "${with_pgsql+set}" = set; then
    PGSQL=$withval
  fi;
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.8 2007/07/04 16:23:05 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -20347,12 +20347,12 @@ if test $ac_cv_lib_crypt_main = yes; then
+@@ -20350,12 +20350,12 @@ if test $ac_cv_lib_crypt_main = yes; then
  #define HAVE_LIBCRYPT 1
  _ACEOF
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-configure,v 1.8 2007/07/04 16:23:05 sturm Exp $
      LDFLAGS="$LDFLAGS -L$PGSQL/lib"
      CPPFLAGS="$CPPFLAGS -I$PGSQL/include"
    fi
-@@ -20363,7 +20363,7 @@ if test "${ac_cv_lib_pq_PQsetdbLogin+set}" = set; then
+@@ -20366,7 +20366,7 @@ if test "${ac_cv_lib_pq_PQsetdbLogin+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -42,7 +42,7 @@ $OpenBSD: patch-configure,v 1.8 2007/07/04 16:23:05 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -20878,16 +20878,16 @@ fi
+@@ -20881,16 +20881,16 @@ fi
  done
  
      if [ -n "$PGSQL" -a "$ac_cv_header_libpq_fe_h" = "yes" ]; then
@@ -65,7 +65,7 @@ $OpenBSD: patch-configure,v 1.8 2007/07/04 16:23:05 sturm Exp $
        PGINCLUDE="-I$PGSQL/include"
      fi
      if test -z "$PGINCLUDE"; then
-@@ -21682,7 +21682,7 @@ done
+@@ -22080,7 +22080,7 @@ done
  
  if test "$FOUNDINCLUDE" = "no"; then
    _SAVEDCPPFLAGS="$CPPFLAGS"
@@ -74,7 +74,7 @@ $OpenBSD: patch-configure,v 1.8 2007/07/04 16:23:05 sturm Exp $
    unset ac_cv_header_krb5_h
  
  for ac_header in krb5.h
-@@ -21828,7 +21828,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -22226,7 +22226,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
