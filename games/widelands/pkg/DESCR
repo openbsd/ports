@@ -1,0 +1,10 @@
+Widelands is an economic and military simulation game.  The map is shown
+in parallel perspective with 3-dimensional terrain.  Buildings and units
+are animated.  The player controls a tribe.  Land is claimed and held by
+military presence and then used to build an economy to support military
+expansion and confrontation.  The project is a work in progress where
+much remains to be done; computer players and multiplayer are in very
+early stages of development.  Some features that have already been
+implemented are exploration, fog of war, sound effects, background
+music, adjustable simulation speed, a few tutorial campaigns,
+translations to several languages, and a map editor.
