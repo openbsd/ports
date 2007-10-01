@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/08/29 16:34:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	documentation system for C, C++, IDL and Java
 
 DISTNAME=	doc++-3.4.10
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docpp.sourceforge.net/
@@ -19,7 +19,7 @@ WANTLIB=		c m stdc++
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docpp/}
 
 RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu \
-		:teTeX_base-*:print/teTeX/base
+		::print/texlive/base
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

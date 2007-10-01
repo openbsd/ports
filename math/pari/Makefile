@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 18:44:37 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	number theory-oriented computer algebra system
 
@@ -19,7 +19,7 @@ WANTLIB=		m ncurses readline c X11
 
 MASTER_SITES=		${HOMEPAGE}/pub/pari/unix/
 
-BUILD_DEPENDS=		::print/teTeX/base
+BUILD_DEPENDS=		::print/texlive/base
 
 USE_X11=		Yes
 

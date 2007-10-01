@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	Scalable PostScript fonts for MetaFont
 
 CATEGORIES=	print
 DISTNAME=	mftrace-1.2.4
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.xs4all.nl/~hanwen/mftrace/
 
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	:potrace-*:graphics/potrace
 RUN_DEPENDS=	:potrace-*:graphics/potrace \
 		:t1utils-*:print/t1utils \
 		:fontforge-*:print/fontforge \
-		:teTeX_base-*:print/teTeX/base
+		::print/texlive/base
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu

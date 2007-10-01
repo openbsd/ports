@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=		macros for the OpenJade DSSSL TeX backend
 
 DISTNAME=		jadetex-3.13
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	print
 
 HOMEPAGE=		http://jadetex.sourceforge.net/
@@ -15,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=jadetex/}
 
-RUN_DEPENDS=		:teTeX_base->=3:print/teTeX/base
+RUN_DEPENDS=		::print/texlive/base
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 ALL_TARGET=		jadetex.fmt pdfjadetex.fmt

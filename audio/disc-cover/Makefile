@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	creates cover for audio cds using cddb and latex
 
 DISTNAME=	disc-cover-1.5.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.vanhemert.co.uk/disc-cover.html
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://home.wanadoo.nl/jano/files/
 
-RUN_DEPENDS=	:teTeX_base-*:print/teTeX/base \
+RUN_DEPENDS=	::print/texlive/base \
 		:ImageMagick-*:graphics/ImageMagick \
 		:p5-libwww-*:www/p5-libwww \
 		:p5-Audio-CD-*:audio/p5-Audio-CD

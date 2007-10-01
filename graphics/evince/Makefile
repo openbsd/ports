@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	document viewer for multiple document formats
 
 DISTNAME=	evince-0.8.1
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://www.gnome.org/projects/evince/
@@ -20,7 +20,7 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:gnome-doc-utils-*:x11/gnome/doc-utils \
 		:ghostscript-*:print/ghostscript/gnu \
-		:teTeX_base-*:print/teTeX/base
+		::print/texlive/base
 LIB_DEPENDS=	poppler.>=1,poppler-glib.>=1::print/poppler \
 		gnomeui-2::x11/gnome/libgnomeui \
 		gnomeprintui-2-2::x11/gnome/libgnomeprintui \
@@ -28,7 +28,7 @@ LIB_DEPENDS=	poppler.>=1,poppler-glib.>=1::print/poppler \
 		audiofile::devel/libaudiofile
 RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
 		:ghostscript-*:print/ghostscript/gnu \
-		:teTeX_base-*:print/teTeX/base \
+		::print/texlive/base \
 		:shared-mime-info-*:misc/shared-mime-info
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor \

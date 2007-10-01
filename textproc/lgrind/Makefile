@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	LaTeX vgrind(1) look-alike
 
@@ -6,7 +6,7 @@ CATEGORIES=	textproc devel print
 
 VERSION=	3.67
 DISTNAME=	lgrind-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 DISTFILES=source/lgrind.c source/lgutil.c source/lgrindef.c source/lgrindef.h \
 	source/regexp.c source/regexp.h source/v2lg.c \
 	source/retest.c source/lgrind.1 source/lgrindef.5 source/Makefile \
@@ -35,7 +35,7 @@ MAKE_FLAGS=	BASEDIR=${PREFIX} \
 		CC='${CC}' CFLAGS='${CFLAGS}'
 FAKE_FLAGS=	BASEDIR=${WRKINST}${PREFIX}
 
-RUN_DEPENDS=	:teTeX_base-*:print/teTeX/base
+RUN_DEPENDS=	::print/texlive/base
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 TEXMF=		${PREFIX}/share/texmf-local

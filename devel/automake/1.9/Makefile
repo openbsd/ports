@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -37,7 +37,7 @@ REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 			::devel/libtool \
 			::lang/python/2.3 \
 			::editors/emacs21 \
-			::print/teTeX/base \
+			::print/texlive/base \
 			::devel/dejagnu
 
 TESTS_ENVIRONMENT=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2007/09/15 23:36:43 merdely Exp $
+# $OpenBSD: Makefile,v 1.44 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-1.4.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.lyx.org/
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	devel/gettext lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::print/teTeX/base \
+RUN_DEPENDS=	::print/texlive/base \
 		::graphics/ImageMagick
 
 LIB_DEPENDS=	aspell::textproc/aspell/core

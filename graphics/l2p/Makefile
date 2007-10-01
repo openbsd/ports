@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=		create PNG images from LaTeX expressions
 
 DISTNAME=		l2p-1.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		graphics print
 
 HOMEPAGE=		http://redsymbol.net/software/l2p/
@@ -17,7 +18,7 @@ MASTER_SITES=		${HOMEPAGE}dist/
 EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS=		::graphics/ImageMagick \
-			::print/teTeX/base
+			::print/texlive/base
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

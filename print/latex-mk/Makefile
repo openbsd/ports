@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	set of Makefile fragments to manage LaTeX documents
 
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=latex-mk/}
 CONFIGURE_STYLE=gnu
 PKG_ARCH=	*
 
-REGRESS_DEPENDS=::print/teTeX/base
+REGRESS_DEPENDS=::print/texlive/base
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/dated_draft.ps ${PREFIX}/share/latex-mk

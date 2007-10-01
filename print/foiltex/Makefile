@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	LaTeX2e class for overhead transparencies
 
 DISTNAME=	foiltex-2.1.4a
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	print
 
 PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
@@ -19,7 +19,7 @@ DISTFILES=	foiltex.ins foiltex.dtx
 DIST_SUBDIR=	${DISTNAME}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:teTeX_base->=3:print/teTeX/base
+RUN_DEPENDS=	::print/texlive/base
 
 CLS_DIR=	${PREFIX}/share/texmf-local/tex/latex/foiltex
 DOC_DIR=	${PREFIX}/share/texmf-local/doc/latex/foiltex

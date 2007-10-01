@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2007/10/01 11:42:30 steven Exp $
 
 COMMENT=	LaTeX to HTML converter
 
 VERSION=	2002-2-1
 DISTNAME=	latex2html-${VERSION}
-PKGNAME=	latex2html-${VERSION:S/-/./g}p0
+PKGNAME=	latex2html-${VERSION:S/-/./g}p1
 CATEGORIES=	textproc www
 
 HOMEPAGE=	http://www.latex2html.org/
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/latex2html/}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:netpbm-*:graphics/netpbm \
 		:ghostscript-*:print/ghostscript/gnu \
-		:teTeX_base-*:print/teTeX/base
+		::print/texlive/base
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--shlibdir=${PREFIX}/share/latex2html \
