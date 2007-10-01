@@ -1,12 +1,12 @@
-$OpenBSD: patch-Main_hs,v 1.1.1.1 2007/09/01 22:18:41 kili Exp $
---- Main.hs.orig	Thu May 31 03:04:51 2007
-+++ Main.hs	Sat Aug 25 19:07:00 2007
-@@ -61,7 +61,7 @@ main = do
-         st = XState
-             { windowset     = winset
-             , layouts       = M.fromList [(w, safeLayouts) | w <- [0 .. W workspaces - 1]]
--            , statusGaps    = take (length xinesc) $ defaultGaps ++ repeat (0,0,0,0)
-+            , statusGaps    = take (length xinesc) $ repeat (0,0,0,0)
-             , xineScreens   = xinesc
-             , dimensions    = (fromIntegral (displayWidth  dpy dflt),
-                                fromIntegral (displayHeight dpy dflt)) }
+$OpenBSD: patch-Main_hs,v 1.2 2007/10/01 20:46:30 kili Exp $
+--- Main.hs.orig	Tue Sep  4 21:34:21 2007
++++ Main.hs	Fri Sep 14 15:10:20 2007
+@@ -53,7 +53,7 @@ main = do
+     let winset | ("--resume" : s : _) <- args
+                , [(x, "")]            <- reads s = x
+                | otherwise = new workspaces $ zipWith SD xinesc gaps
+-        gaps = take (length xinesc) $ defaultGaps ++ repeat (0,0,0,0)
++        gaps = take (length xinesc) $ repeat (0,0,0,0)
+ 
+         safeLayouts = case defaultLayouts of [] -> (full, []); (x:xs) -> (x,xs)
+         cf = XConf

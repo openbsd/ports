@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/01 20:46:30 kili Exp $
 
 COMMENT=		tiling window manager
 
-DISTNAME=		xmonad-0.2
+V=			0.3
+DISTNAME=		xmonad-$V
 CATEGORIES=		x11
 HOMEPAGE=		http://www.xmonad.org/
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://hackage.haskell.org/packages/archive/xmonad/0.2/
+MASTER_SITES=		http://hackage.haskell.org/packages/archive/xmonad/$V/
 
 WANTLIB=		X11 Xext Xinerama c gmp m
 
