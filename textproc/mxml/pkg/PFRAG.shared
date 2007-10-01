@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/01 18:40:11 jakemsr Exp $
+@lib lib/libmxml.so.${LIBmxml_VERSION}

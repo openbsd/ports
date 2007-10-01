@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/01 18:40:11 jakemsr Exp $
+%%SHARED%%
+bin/mxmldoc
+include/mxml.h
+lib/libmxml.a
+lib/pkgconfig/
+lib/pkgconfig/mxml.pc
+@man man/cat1/mxmldoc.0
+@man man/cat3/mxml.0
+@comment man/man1/mxmldoc.1
+@comment man/man3/mxml.3
+share/doc/mxml/
+share/doc/mxml/CHANGES
+share/doc/mxml/COPYING
+share/doc/mxml/README
+share/doc/mxml/mxml.html
+share/doc/mxml/mxmldoc.xsd
