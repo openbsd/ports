@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/05/05 13:41:12 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/10/01 09:02:52 mbalmer Exp $
 horde/
 horde/COPYING
 horde/README
@@ -27,7 +27,6 @@ horde/admin/setup/diff.php
 horde/admin/setup/index.php
 horde/admin/setup/scripts.php
 horde/admin/sqlshell.php
-horde/admin/templates.php
 horde/admin/user.php
 @mode 700
 @owner www
@@ -134,7 +133,6 @@ horde/lib/Horde/Auth/http.php
 horde/lib/Horde/Auth/imap.php
 horde/lib/Horde/Auth/imsp.php
 horde/lib/Horde/Auth/ipbasic.php
-horde/lib/Horde/Auth/ipmap.php
 horde/lib/Horde/Auth/kolab.php
 horde/lib/Horde/Auth/krb5.php
 horde/lib/Horde/Auth/ldap.php
@@ -525,7 +523,6 @@ horde/lib/VFS/sql.php
 horde/lib/VFS/sql_file.php
 horde/lib/VFS/tests/
 horde/lib/XML/
-horde/lib/XML/SVG.php
 horde/lib/XML/WBXML/
 horde/lib/XML/WBXML.php
 horde/lib/XML/WBXML/ContentHandler.php
