@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-gimp,v 1.1.1.1 2007/10/01 10:32:57 ajacoutot Exp $
+lib/gimp/
+lib/gimp/2.0/
+lib/gimp/2.0/plug-ins/
+lib/gimp/2.0/plug-ins/gutenprint

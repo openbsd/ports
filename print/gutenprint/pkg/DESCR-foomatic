@@ -1,0 +1,5 @@
+Gutenprint, formerly known as gimp-print, is a project to provide high
+quality drivers for Canon, Epson, Lexmark and PCL printers.
+This package contains gutenprint driver information for creating PPD
+files with the foomatic-db-engine package. The PPD files can be used
+with foomatic-rip and/or CUPS print filters.

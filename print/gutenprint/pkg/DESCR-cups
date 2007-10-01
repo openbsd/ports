@@ -1,0 +1,3 @@
+Gutenprint, formerly known as gimp-print, is a project to provide high
+quality drivers for Canon, Epson, Lexmark and PCL printers.
+This package contains the gutenprint CUPS driver.
