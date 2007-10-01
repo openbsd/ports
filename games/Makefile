@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2007/09/29 12:32:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2007/10/01 21:37:55 simon Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -128,6 +128,7 @@
      SUBDIR += wesnoth
      SUBDIR += wesnoth,lite
      SUBDIR += wesnoth,tinygui
+     SUBDIR += widelands
      SUBDIR += wmminichess
      SUBDIR += wmtictactoe
      SUBDIR += wormux
