@@ -1,7 +1,7 @@
-$OpenBSD: patch-pidgin_gtknotify_c,v 1.4 2007/08/11 22:15:46 ckuethe Exp $
---- pidgin/gtknotify.c.orig	Fri May 25 12:28:22 2007
-+++ pidgin/gtknotify.c	Mon May 28 01:57:23 2007
-@@ -967,7 +967,16 @@ uri_command(const char *command, gboolean sync)
+$OpenBSD: patch-pidgin_gtknotify_c,v 1.5 2007/10/01 22:03:30 merdely Exp $
+--- pidgin/gtknotify.c.orig	Sat Sep 29 12:39:14 2007
++++ pidgin/gtknotify.c	Sat Sep 29 20:18:28 2007
+@@ -1010,7 +1010,16 @@ uri_command(const char *command, gboolean sync)
  			g_error_free(error);
  		}
  		else

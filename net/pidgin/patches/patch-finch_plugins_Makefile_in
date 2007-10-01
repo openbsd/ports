@@ -1,9 +1,9 @@
-$OpenBSD: patch-finch_plugins_Makefile_in,v 1.4 2007/08/11 22:15:46 ckuethe Exp $
---- finch/plugins/Makefile.in.orig	Fri May 25 12:29:19 2007
-+++ finch/plugins/Makefile.in	Mon May 28 01:57:22 2007
-@@ -76,7 +76,8 @@ am__gnthistory_la_SOURCES_DIST = gnthistory.c
- @PLUGINS_TRUE@am_gnthistory_la_OBJECTS = gnthistory.lo
- gnthistory_la_OBJECTS = $(am_gnthistory_la_OBJECTS)
+$OpenBSD: patch-finch_plugins_Makefile_in,v 1.5 2007/10/01 22:03:29 merdely Exp $
+--- finch/plugins/Makefile.in.orig	Sat Sep 29 12:40:53 2007
++++ finch/plugins/Makefile.in	Sat Sep 29 20:18:28 2007
+@@ -81,7 +81,8 @@ gnthistory_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLF
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(gnthistory_la_LDFLAGS) $(LDFLAGS) -o $@
  @PLUGINS_TRUE@am_gnthistory_la_rpath = -rpath $(plugindir)
 -@PLUGINS_TRUE@gntlastlog_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
 +@PLUGINS_TRUE@gntlastlog_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
@@ -11,12 +11,12 @@ $OpenBSD: patch-finch_plugins_Makefile_in,v 1.4 2007/08/11 22:15:46 ckuethe Exp 
  am__gntlastlog_la_SOURCES_DIST = lastlog.c
  @PLUGINS_TRUE@am_gntlastlog_la_OBJECTS = lastlog.lo
  gntlastlog_la_OBJECTS = $(am_gntlastlog_la_OBJECTS)
-@@ -452,7 +453,7 @@ gntlastlog_la_LDFLAGS = -module -avoid-version
+@@ -377,7 +378,7 @@ gntlastlog_la_LDFLAGS = -module -avoid-version
+ @PLUGINS_TRUE@gntclipboard_la_CFLAGS = $(X11_CFLAGS)
+ @PLUGINS_TRUE@gntgf_la_CFLAGS = $(X11_CFLAGS)
  @PLUGINS_TRUE@gntclipboard_la_LIBADD = $(GLIB_LIBS) $(X11_LIBS)
- @PLUGINS_TRUE@gntgf_la_LIBADD = $(GLIB_LIBS) $(X11_LIBS) $(top_builddir)/finch/libgnt/libgnt.la
+-@PLUGINS_TRUE@gntgf_la_LIBADD = $(GLIB_LIBS) $(X11_LIBS) $(top_builddir)/finch/libgnt/libgnt.la
++@PLUGINS_TRUE@gntgf_la_LIBADD = $(GLIB_LIBS) $(X11_LIBS)
  @PLUGINS_TRUE@gnthistory_la_LIBADD = $(GLIB_LIBS)
--@PLUGINS_TRUE@gntlastlog_la_LIBADD = $(GLIB_LIBS)
-+@PLUGINS_TRUE@gntlastlog_la_LIBADD = $(GLIB_LIBS) $(top_builddir)/finch/libgnt/libgnt.la
- EXTRA_DIST = 
- AM_CPPFLAGS = \
- 	-DDATADIR=\"$(datadir)\" \
+ @PLUGINS_TRUE@gntlastlog_la_LIBADD = $(GLIB_LIBS)
+ EXTRA_DIST = pietray.py
