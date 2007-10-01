@@ -1,0 +1,15 @@
+$OpenBSD: patch-akode_plugins_ffmpeg_decoder_ffmpeg_decoder_cpp,v 1.1 2007/10/01 17:39:50 jakemsr Exp $
+--- akode/plugins/ffmpeg_decoder/ffmpeg_decoder.cpp.orig	Sun Sep 30 16:42:06 2007
++++ akode/plugins/ffmpeg_decoder/ffmpeg_decoder.cpp	Sun Sep 30 16:42:46 2007
+@@ -26,9 +26,11 @@
+ #include "decoder.h"
+ 
+ #include <assert.h>
++extern "C" {
+ #include <ffmpeg/avcodec.h>
+ #include <ffmpeg/avformat.h>
+ #include <ffmpeg/avio.h>
++}
+ 
+ #include "ffmpeg_decoder.h"
+ #include <iostream>
