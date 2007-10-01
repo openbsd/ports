@@ -1,15 +1,14 @@
-$OpenBSD: patch-configure_ac,v 1.2 2007/04/01 20:43:59 steven Exp $
---- configure.ac.orig	Wed Mar  7 20:02:19 2007
-+++ configure.ac	Sun Apr  1 22:30:31 2007
-@@ -455,8 +455,9 @@ if test -n "$with_silc_includes" || test -n "$with_sil
+$OpenBSD: patch-configure_ac,v 1.3 2007/10/01 22:03:53 simon Exp $
+--- configure.ac.orig	Thu Jun 28 12:54:19 2007
++++ configure.ac	Sat Jun 30 15:15:40 2007
+@@ -605,8 +605,8 @@ if test -n "$with_silc_includes" || test -n "$with_sil
  
  else
    # pkg-config check
--  PKG_CHECK_MODULES(SILC, silc, compile_libs=false, compile_libs=true)
--  PKG_CHECK_MODULES(SILCCLIENT, silcclient, compile_libs=false, compile_libs=true)
-+  #PKG_CHECK_MODULES(SILC, silc, compile_libs=false, compile_libs=true)
-+  #PKG_CHECK_MODULES(SILCCLIENT, silcclient, compile_libs=false, compile_libs=true)
-+  compile_libs=true
+-  PKG_CHECK_MODULES(SILC, [silc >= 1.1], compile_libs=false, compile_libs=true)
+-  PKG_CHECK_MODULES(SILCCLIENT, [silcclient >= 1.1.1], compile_libs=false, compile_libs=true)
++  #PKG_CHECK_MODULES(SILC, [silc >= 1.1], compile_libs=false, compile_libs=true)
++  #PKG_CHECK_MODULES(SILCCLIENT, [silcclient >= 1.1.1], compile_libs=false, compile_libs=true)
  
    if test x$compile_libs = xfalse; then
      LIBSUBDIR=

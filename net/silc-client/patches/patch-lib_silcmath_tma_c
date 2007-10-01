@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_silcmath_tma_c,v 1.1 2006/10/03 18:34:50 brad Exp $
---- lib/silcmath/tma.c.orig	Sun Apr 24 11:24:12 2005
-+++ lib/silcmath/tma.c	Tue Oct  3 14:20:26 2006
-@@ -1488,6 +1488,7 @@ mp_count_bits (mp_int * a)
-  * Tom St Denis, tomstdenis@iahu.ca, http://math.libtomcrypt.org
+$OpenBSD: patch-lib_silcmath_tma_c,v 1.2 2007/10/01 22:03:53 simon Exp $
+--- lib/silcmath/tma.c.orig	Thu May  3 11:13:16 2007
++++ lib/silcmath/tma.c	Wed Jun 13 22:55:31 2007
+@@ -1570,6 +1570,7 @@ tma_mp_count_bits (tma_mp_int * a)
+  * Tom St Denis, tomstdenis@gmail.com, http://libtom.org
   */
  
 +#define BN_MP_DIV_SMALL

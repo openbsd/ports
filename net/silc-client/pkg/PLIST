@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.19 2007/03/21 11:24:02 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.20 2007/10/01 22:03:53 simon Exp $
 bin/silc
 @man man/man1/silc.1
-@comment modules/
 share/doc/silc/
 @comment share/doc/silc/CHANGES
 @comment share/doc/silc/COPYING
@@ -9,13 +8,8 @@ share/doc/silc/
 share/doc/silc/FAQ
 @comment share/doc/silc/INSTALL
 share/doc/silc/README
+share/doc/silc/README.PLUGIN
 @comment share/doc/silc/TODO
-@comment share/doc/silc/draft-riikonen-presence-attrs-03.txt
-@comment share/doc/silc/draft-riikonen-silc-commands-06.txt
-@comment share/doc/silc/draft-riikonen-silc-flags-payloads-04.txt
-@comment share/doc/silc/draft-riikonen-silc-ke-auth-08.txt
-@comment share/doc/silc/draft-riikonen-silc-pp-09.txt
-@comment share/doc/silc/draft-riikonen-silc-spec-08.txt
 share/doc/silc/formats.txt
 share/doc/silc/manual.txt
 share/doc/silc/signals.txt
@@ -86,6 +80,7 @@ share/silc/help/perlflush
 share/silc/help/ping
 share/silc/help/query
 share/silc/help/quit
+share/silc/help/recode
 share/silc/help/reconnect
 share/silc/help/reload
 share/silc/help/rmreconns
@@ -117,13 +112,20 @@ share/silc/help/whowas
 share/silc/help/window
 share/silc/scripts/
 share/silc/scripts/autoop.pl
-share/silc/scripts/beep.pl
-share/silc/scripts/clones.pl
+share/silc/scripts/autorejoin.pl
+share/silc/scripts/buf.pl
+share/silc/scripts/command.pl
 share/silc/scripts/dns.pl
-share/silc/scripts/hello.pl
-share/silc/scripts/mail-maildir.pl
+share/silc/scripts/kills.pl
 share/silc/scripts/mail.pl
-share/silc/scripts/silc-mime.pl
+share/silc/scripts/mlock.pl
+share/silc/scripts/msg-event.pl
+share/silc/scripts/quitmsg.pl
+share/silc/scripts/redirect.pl
+share/silc/scripts/scriptassist.pl
 share/silc/scripts/silc.pl
+share/silc/scripts/splitlong.pl
+share/silc/scripts/usercount.pl
 share/silc/themes/
 share/silc/themes/default.theme
+share/silc/themes/plugin.theme
