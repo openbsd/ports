@@ -1,0 +1,17 @@
+$OpenBSD: patch-ucb_source_ucp_ftp_ftpurl_cxx,v 1.1 2007/10/02 16:53:49 naddy Exp $
+--- ucb/source/ucp/ftp/ftpurl.cxx.orig.port	Thu Sep 27 17:33:30 2007
++++ ucb/source/ucp/ftp/ftpurl.cxx	Thu Sep 27 17:46:46 2007
+@@ -592,11 +592,11 @@ rtl::OUString FTPURL::net_title() const
+                 aNetTitle = aNetTitle.copy(1+index1);
+             }
+             try_more = false;
+-        } else if(err == CURLE_BAD_PASSWORD_ENTERED)
++        } else if(err == CURLE_LOGIN_DENIED)
+ 			// the client should retry after getting the correct
+ 			// username + password
+ 			throw curl_exception(err);
+-		else if(try_more && err == CURLE_FTP_ACCESS_DENIED) {
++		else if(try_more && err == CURLE_REMOTE_ACCESS_DENIED) {
+             // We  were  either denied access when trying to login to
+             //  an FTP server or when trying to change working directory
+             //  to the one given in the URL.

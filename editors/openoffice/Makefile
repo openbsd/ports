@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2007/09/20 10:05:19 robert Exp $
+# $OpenBSD: Makefile,v 1.61 2007/10/02 16:53:49 naddy Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,7 +10,7 @@ VERSION=	2.2.1
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOF680_m18
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p0
+PKGNAME-main=	openoffice-${VERSION}p1
 PKGNAME-kde=	openoffice-kde-${VERSION}p0
 PKGNAME-java=	openoffice-java-${VERSION}p0
 CATEGORIES=	editors productivity
@@ -86,7 +86,7 @@ MODULES+=	python
 LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION} \
 		db.>=4:db-4.*:databases/db/v4 \
-		curl.>=2::net/curl \
+		curl.>=7::net/curl \
 		neon.>=24::net/neon \
 		sndfile.>=1::audio/libsndfile \
 		wpd.>=8::textproc/libwpd

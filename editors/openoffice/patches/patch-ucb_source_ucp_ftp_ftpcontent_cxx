@@ -1,0 +1,20 @@
+$OpenBSD: patch-ucb_source_ucp_ftp_ftpcontent_cxx,v 1.1 2007/10/02 16:53:49 naddy Exp $
+--- ucb/source/ucp/ftp/ftpcontent.cxx.orig.port	Sun Sep 17 15:49:38 2006
++++ ucb/source/ucp/ftp/ftpcontent.cxx	Thu Sep 27 18:00:56 2007
+@@ -600,13 +600,12 @@ Any SAL_CALL FTPContent::execute(
+ 				action = THROWINTERACTIVECONNECT;
+ 			else if(e.code() == CURLE_COULDNT_RESOLVE_HOST )
+ 				action = THROWRESOLVENAME;
+-			else if(e.code() == CURLE_FTP_USER_PASSWORD_INCORRECT ||
+-					e.code() == CURLE_BAD_PASSWORD_ENTERED || 
++			else if(e.code() == CURLE_LOGIN_DENIED ||
+ 					e.code() == CURLE_FTP_WEIRD_PASS_REPLY )
+ 				action = THROWAUTHENTICATIONREQUEST;
+-			else if(e.code() == CURLE_FTP_ACCESS_DENIED)
++			else if(e.code() == CURLE_REMOTE_ACCESS_DENIED)
+ 				action = THROWACCESSDENIED;
+-			else if(e.code() == CURLE_FTP_QUOTE_ERROR)
++			else if(e.code() == CURLE_QUOTE_ERROR)
+ 				action = THROWQUOTE;
+ 			else if(e.code() == CURLE_FTP_COULDNT_RETR_FILE)
+ 				action = THROWNOFILE;
