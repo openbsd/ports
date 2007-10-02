@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/10/02 17:35:48 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Python bindings for the SILC toolkit
 
 V=		0.4
 DISTNAME=	pysilc-${V}
-PKGNAME=	py-silc-${V}p0v0
+PKGNAME=	py-silc-${V}p1v0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.liquidx.net/pysilc/
@@ -24,7 +24,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python converters/libiconv
 
-LIB_DEPENDS=	silc.>=6,silcclient.>=4::devel/silc-toolkit
+LIB_DEPENDS=	silc.>=7,silcclient.>=5::devel/silc-toolkit
 
 NO_REGRESS=	Yes
 
