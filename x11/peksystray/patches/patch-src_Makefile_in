@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2007/10/02 18:35:47 winiger Exp $
+--- src/Makefile.in.orig	Sat Sep 29 10:43:30 2007
++++ src/Makefile.in	Sat Sep 29 10:44:06 2007
+@@ -143,10 +143,10 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-x_includes = @x_includes@
+-x_libraries = @x_libraries@
+-INCLUDES = @x_includes@
+-peksystray_LDADD = @x_libraries@
++x_includes =
++x_libraries =
++INCLUDES =
++peksystray_LDADD =
+ peksystray_SOURCES = peksystray.c
+ all: all-am
+ 
