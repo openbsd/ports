@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 10:14:32 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2007/10/02 19:09:44 jasper Exp $
 
 COMMENT=	GNU copy-in/out (cpio)
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=cpio/}
 
-MODULES=	gettext
+MODULES=	devel/gettext
 WANTLIB=	c
 
 CONFIGURE_STYLE=gnu

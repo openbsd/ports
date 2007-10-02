@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2007/10/02 19:09:44 jasper Exp $
 # Uses pthreads
 
 COMMENT=		Music tracking tool for X11
@@ -25,7 +25,7 @@ MASTER_SITES=		http://www.soundtracker.org/dl/$V/ \
 LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 			audiofile::devel/libaudiofile
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 FLAVORS=		gnome esd
 FLAVOR?=

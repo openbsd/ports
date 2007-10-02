@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/10/02 19:09:44 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,7 +40,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
-MODULES=	gettext
+MODULES=	devel/gettext
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes

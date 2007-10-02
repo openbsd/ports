@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/24 07:46:38 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.17 2007/10/02 19:09:44 jasper Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	flash player with firefox browser plugin
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIBTOOL_FLAGS+=	--tag=disable-static
-MODULES=	gettext
+MODULES=	devel/gettext
 NO_REGRESS=	testsuite available at http://www.gnashdev.org/testcases/
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

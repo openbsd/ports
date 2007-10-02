@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/02 19:09:44 jasper Exp $
 
 COMMENT-main=		streaming media framework - core
 COMMENT-frontend=	streaming media framework - frontend commands
@@ -29,7 +29,7 @@ WANTLIB-frontend=	c iconv intl
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gstreamer/0.8/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 MULTI_PACKAGES=		-main -frontend
 

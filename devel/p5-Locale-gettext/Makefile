@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/10/02 19:09:44 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES+=	gettext
+MODULES+=	devel/gettext
 
 DIST_SUBDIR=	p5-Locale-${DISTNAME}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/10/02 19:09:44 jasper Exp $
 
 COMMENT=		noninteractive ftp client
 DISTNAME=		weex-2.6.1.5
@@ -18,7 +18,7 @@ WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=weex/}	
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	autoconf

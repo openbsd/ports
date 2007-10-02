@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.62 2007/10/02 19:09:44 jasper Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -45,7 +45,7 @@ WANTLIB=        X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi Xinerama \
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
 
-MODULES=	gettext
+MODULES=	devel/gettext
 RUN_DEPENDS=	:esound-*:audio/esound
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip

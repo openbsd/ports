@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/30 10:37:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2007/10/02 19:09:44 jasper Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -114,7 +114,7 @@ RUN_DEPENDS-snmp=	::net/net-snmp \
 
 WANTLIB-main=		${WANTLIB} crypto m ssl
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 # many broken tests, but...
 REGRESS_IS_INTERACTIVE=Yes

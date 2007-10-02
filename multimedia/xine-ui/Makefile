@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/10/02 19:09:44 jasper Exp $
 
 COMMENT=		multimedia player
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 LIB_DEPENDS=		xine.>=14::multimedia/xine-lib \
 			curl.>=2::net/curl \

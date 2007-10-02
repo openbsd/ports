@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/08 18:41:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/02 19:09:44 jasper Exp $
 
 COMMENT=	scanner frontend for SANE
 
@@ -29,7 +29,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		gphoto2_port jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png pthread tiff usb
 
-MODULES=	gettext
+MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		lcms.>=1::graphics/lcms \
 		sane.>=1::graphics/sane-backends

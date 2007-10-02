@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2007/10/02 19:09:44 jasper Exp $
 
 COMMENT=		multimedia decoding library
 
@@ -28,7 +28,7 @@ PKG_ARGS+=		-Di386=1
 PKG_ARGS+=		-Di386=0
 .endif
 
-MODULES=		gettext
+MODULES=		devel/gettext
 LIB_DEPENDS=		FLAC.>=5::audio/flac \
 			SDL.>=3::devel/sdl \
 			a52::audio/liba52 \
