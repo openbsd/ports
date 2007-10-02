@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2007/09/15 22:36:54 merdely Exp $
+# $OpenBSD: Makefile,v 1.69 2007/10/02 07:39:16 sthen Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-3.5.4
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	lftp-3.5.14
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
@@ -19,7 +18,6 @@ WANTLIB=		c crypto curses expat m readline ssl stdc++ util
 
 MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/
-EXTRACT_SUFX=	.tar.bz2
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
