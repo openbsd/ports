@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2007/10/01 21:37:55 simon Exp $
+# $OpenBSD: Makefile,v 1.156 2007/10/02 19:31:52 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -101,6 +101,7 @@
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
      SUBDIR += singularity
+     SUBDIR += ski
      SUBDIR += slash
      SUBDIR += slash,no_x11
      SUBDIR += slash-em
