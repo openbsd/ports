@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2007/10/02 14:01:12 steven Exp $
 
 COMMENT=		strip TeX/LaTeX codes from a file
 
 DISTNAME=		detex-2.6
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print
 
 MASTER_SITES=		ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=		.tar
 
-# License: NONE
-PERMIT_PACKAGE_CDROM=	no license
-PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_CDROM=	no license
-PERMIT_DISTFILES_FTP=	no license
+# free redistribution, see README
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 WRKDIST=		${WRKDIR}
