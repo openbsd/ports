@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2007/09/28 07:59:06 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.59 2007/10/03 04:12:43 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	videolan client; multimedia player
 
 V=		0.8.6c
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -22,7 +22,7 @@ USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
 MODULES=	devel/gettext
-
+BUILD_DEPENDS+= ::net/livemedia
 LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
 		png.>=4.1::graphics/png \
 		id3tag.>=3.0::audio/libid3tag \
@@ -62,7 +62,6 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-debug \
 		--disable-release \
 		--without-contrib \
-		--disable-live555 \
 		--disable-v4l \
 		--disable-pvr \
 		--disable-vcdx \
@@ -159,7 +158,9 @@ CONFIGURE_ARGS+=--enable-ncurses \
 		--enable-wxwidgets \
 		--enable-dvdread \
 		--enable-dvdnav \
-		--enable-dvbpsi
+		--enable-dvbpsi \
+		--enable-live555 \
+		--with-live555-tree=${LOCALBASE}/live
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
