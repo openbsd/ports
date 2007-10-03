@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Jul 31 12:09:19 2007
++++ Makefile	Fri Sep 14 12:31:49 2007
+@@ -4,7 +4,7 @@
+ 
+ builddir     = .
+ 
+-top_dir      = /usr/local/apache2
++top_dir      = !!PREFIX!!/share/apache2
+ 
+ top_srcdir   = ${top_dir}
+ top_builddir = ${top_dir}

@@ -1,0 +1,7 @@
+To completely uninstall this package you need to remove the following
+line from ${SYSCONFDIR}/apache2/httpd2.conf
+
+	LoadModule perl_module ${PREFIX}/lib/apache2/mod_fcgid.so
+
+Do not do this if you plan on re-installing this package at some future
+time.
