@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.302 2007/09/27 10:12:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.303 2007/10/03 18:20:52 merdely Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
      SUBDIR += analog
      SUBDIR += ap2-mod_fastcgi
+     SUBDIR += ap2-mod_fcgid
      SUBDIR += apache-httpd
      SUBDIR += apache-httpd,ldap
      SUBDIR += august
