@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2007/09/12 00:33:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2007/10/03 14:08:59 chl Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -90,5 +90,6 @@
      SUBDIR += xtar
      SUBDIR += xtimer
      SUBDIR += ytree
+     SUBDIR += zzuf
 
 .include <bsd.port.subdir.mk>
