@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/03 13:48:17 chl Exp $
+lib/zzuf/libzzuf.so

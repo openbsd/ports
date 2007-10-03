@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/03 13:48:17 chl Exp $
+%%SHARED%%
+bin/zzuf
+lib/zzuf/
+lib/zzuf/libzzuf.a
+lib/zzuf/libzzuf.la
+@man man/man1/zzuf.1
