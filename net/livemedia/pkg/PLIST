@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/19 08:32:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/10/03 02:19:06 jakemsr Exp $
 bin/openRTSP
 bin/playSIP
 bin/sapWatch
@@ -76,6 +76,7 @@ live/liveMedia/include/InputFile.hh
 live/liveMedia/include/JPEGVideoRTPSink.hh
 live/liveMedia/include/JPEGVideoRTPSource.hh
 live/liveMedia/include/JPEGVideoSource.hh
+live/liveMedia/include/Locale.hh
 live/liveMedia/include/MP3ADU.hh
 live/liveMedia/include/MP3ADURTPSink.hh
 live/liveMedia/include/MP3ADURTPSource.hh
@@ -134,6 +135,7 @@ live/liveMedia/include/RTPSink.hh
 live/liveMedia/include/RTPSource.hh
 live/liveMedia/include/RTSPClient.hh
 live/liveMedia/include/RTSPCommon.hh
+live/liveMedia/include/RTSPOverHTTPServer.hh
 live/liveMedia/include/RTSPServer.hh
 live/liveMedia/include/SIPClient.hh
 live/liveMedia/include/ServerMediaSession.hh
