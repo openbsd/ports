@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2007/10/02 19:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/10/03 06:36:43 jakemsr Exp $
 
 COMMENT=		multimedia decoding library
 
 V=			1.1.7
 DISTNAME=		xine-lib-${V}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
 SHARED_LIBS=		xine	18.1
@@ -94,8 +94,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			PTHREAD_LIBS="-pthread" \
 			PTHREAD_CFLAGS="-pthread" \
 			XV_LIBS="-lXv" \
-			SDL_LIBS="$$(sdl-config --libs)" \
-			SDL_CFLAGS="$$(sdl-config --cflags)"
+			ac_cv_member_audio_info_t_output_muted=yes
 
 post-patch:
 .if ${MACHINE_ARCH} == "i386"
