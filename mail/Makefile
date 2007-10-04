@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2007/09/25 19:27:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.190 2007/10/04 19:54:48 merdely Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -124,6 +124,7 @@
      SUBDIR += p5-Email-Simple-Creator
      SUBDIR += p5-Email-Valid
      SUBDIR += p5-Email-Valid-Loose
+     SUBDIR += p5-FuzzyOcr
      SUBDIR += p5-GMail-IMAPD
      SUBDIR += p5-Log-Procmail
      SUBDIR += p5-MIME-Lite
