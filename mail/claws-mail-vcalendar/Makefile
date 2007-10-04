@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/26 13:59:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/04 09:13:52 pyr Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	groupware plugin for Claws-mail
 
-VERSION=	1.96
+VERSION=	1.98
 DISTNAME=	vcalendar-${VERSION}
 PKGNAME=	claws-mail-vcalendar-${VERSION}
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
@@ -13,7 +13,7 @@ CATEGORIES=	mail
 HOMEPAGE=	http://www.claws-mail.org/plugin.php?plugin=vcalendar
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
