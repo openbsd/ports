@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/04 11:58:07 steven Exp $
+bin/ristretto
+share/applications/
+share/applications/ristretto.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/ristretto.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/ristretto.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/ristretto.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/ristretto.png
+share/icons/hicolor/36x36/
+share/icons/hicolor/36x36/apps/
+share/icons/hicolor/36x36/apps/ristretto.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/ristretto.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/ristretto.svg
+share/locale/de/LC_MESSAGES/ristretto.mo
+share/locale/fi/LC_MESSAGES/ristretto.mo
+share/locale/fr/LC_MESSAGES/ristretto.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/ristretto.mo
+share/locale/nl/LC_MESSAGES/ristretto.mo
+@exec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/update-desktop-database
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
