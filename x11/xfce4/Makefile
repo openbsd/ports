@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/07/04 19:24:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2007/10/04 11:58:55 steven Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
@@ -7,6 +7,7 @@
      SUBDIR+= libxfcegui4
      SUBDIR+= mousepad
      SUBDIR+= orage
+     SUBDIR+= ristretto
      SUBDIR+= terminal
      SUBDIR+= thunar
      SUBDIR+= thunar-media-tags
