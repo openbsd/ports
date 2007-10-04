@@ -1,0 +1,33 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/10/04 07:17:40 steven Exp $
+--- Makefile.orig	Sat Sep 22 20:21:19 2007
++++ Makefile	Sat Sep 29 15:04:07 2007
+@@ -14,12 +14,12 @@ CGI_DIR=$(HOME)/public_html/cgi-bin
+ # libharu include files and library.
+ #
+ # to build without pdf support use the following
+-#HARULIB_LDFLAG=
+-#HARULIB_CFLAG=
++HARULIB_LDFLAG=
++HARULIB_CFLAG=
+ 
+ # use the following, if you have libharu in standard location
+-HARULIB_LDFLAG=-lhpdf
+-HARULIB_CFLAG=-D HARULIB
++#HARULIB_LDFLAG=-lhpdf
++#HARULIB_CFLAG=-D HARULIB
+ 
+ # use this to specify location of library and include files explicitly
+ #HARULIB_LDFLAG=-L$(HOME)/lib -lhpdf
+@@ -39,9 +39,9 @@ CGIBINS=$(wildcard *.cgi)
+ MANPAGE=$(PROGNAME).1
+ DOCS=$(wildcard *.html) COPYING README INSTALL 
+ 
+-CC=gcc
+-LDFLAGS=$(HARULIB_LDFLAG) -lm -lz -lpthread
+-CFLAGS=-g -I. $(HARULIB_CFLAG) -Wall
++#CC=gcc
++LDFLAGS=$(HARULIB_LDFLAG) -lm -lz -pthread
++CFLAGS+= -I. $(HARULIB_CFLAG) -Wall -pthread
+ 
+ all: $(PROGNAME)
+ 

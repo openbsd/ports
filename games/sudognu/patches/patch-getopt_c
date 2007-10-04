@@ -1,0 +1,12 @@
+$OpenBSD: patch-getopt_c,v 1.1.1.1 2007/10/04 07:17:40 steven Exp $
+--- getopt.c.orig	Sat Sep 29 15:02:33 2007
++++ getopt.c	Sat Sep 29 15:02:42 2007
+@@ -76,7 +76,7 @@ int getoptions(int argc, char *argv[]) {
+ 				symmgrid = 1;
+ 				break;
+ 			case 't':
+-				nthread = sysconf(_SC_NPROCESSORS_ONLN);
++				nthread = 0;
+ 				break;
+ 			case 'w':
+ 				action = 4;

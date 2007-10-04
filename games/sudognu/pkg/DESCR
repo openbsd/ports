@@ -1,0 +1,4 @@
+Sudognu is a command line sudoku solver and creator. Sudognu can display
+the logical steps it uses to find the solution. It can print four
+sudokus to a PDF page and it comes with example CGI scripts for
+integration into web sites.

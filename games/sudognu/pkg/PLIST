@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/04 07:17:40 steven Exp $
+bin/sudognu
+@man man/man1/sudognu.1
+share/examples/sudognu/
+share/examples/sudognu/csudognu.cgi
+share/examples/sudognu/psudognu.cgi
+share/examples/sudognu/ssudognu.cgi
+share/examples/sudognu/wsudognu.cgi
