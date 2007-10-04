@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.32 2007/10/04 07:08:23 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	freetype tcl84 z
 
-MASTER_SITES=	http://www.pythonware.net/storage/
+MASTER_SITES=	http://effbot.org/media/downloads/
 
 MODULES=	lang/python
 
