@@ -1,7 +1,9 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.4 2007/09/05 22:42:52 sthen Exp $
---- contrib/scripts/safe_asterisk.orig	Mon Jun 18 18:46:40 2007
-+++ contrib/scripts/safe_asterisk	Wed Aug  1 13:01:21 2007
-@@ -2,19 +2,20 @@
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.5 2007/10/04 11:25:44 sthen Exp $
+--- contrib/scripts/safe_asterisk.orig	Thu Sep 20 22:01:20 2007
++++ contrib/scripts/safe_asterisk	Wed Oct  3 21:15:26 2007
+@@ -1,20 +1,21 @@
+-#!/bin/bash
++#!/bin/sh
  # vim:textwidth=80:tabstop=4:shiftwidth=4:smartindent:autoindent
  
  CLIARGS="$*"				# Grab any args passed to safe_asterisk

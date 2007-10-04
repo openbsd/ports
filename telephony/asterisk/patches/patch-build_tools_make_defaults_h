@@ -1,10 +1,10 @@
-$OpenBSD: patch-build_tools_make_defaults_h,v 1.3 2007/09/05 22:42:52 sthen Exp $
---- build_tools/make_defaults_h.orig	Sat Apr 15 23:53:53 2006
-+++ build_tools/make_defaults_h	Mon Jun 18 12:01:50 2007
+$OpenBSD: patch-build_tools_make_defaults_h,v 1.4 2007/10/04 11:25:44 sthen Exp $
+--- build_tools/make_defaults_h.orig	Mon Sep 24 18:22:08 2007
++++ build_tools/make_defaults_h	Wed Oct  3 12:54:37 2007
 @@ -15,7 +15,7 @@ cat << END
  #define AST_LOG_DIR    "${INSTALL_PATH}${ASTLOGDIR}"
  #define AST_AGI_DIR    "${INSTALL_PATH}${AGI_DIR}"
- #define AST_KEY_DIR    "${INSTALL_PATH}${ASTVARLIBDIR}/keys"
+ #define AST_KEY_DIR    "${INSTALL_PATH}${ASTDATADIR}/keys"
 -#define AST_DB         "${INSTALL_PATH}${ASTVARLIBDIR}/astdb"
 +#define AST_DB         "${INSTALL_PATH}${ASTDBDIR}/astdb"
  #define AST_TMP_DIR    "${INSTALL_PATH}${ASTSPOOLDIR}/tmp"

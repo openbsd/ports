@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/09/05 22:42:52 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/10/04 11:25:44 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
@@ -17,6 +17,7 @@ include/asterisk/ast_expr.h
 include/asterisk/astdb.h
 include/asterisk/astmm.h
 include/asterisk/astobj.h
+include/asterisk/astobj2.h
 include/asterisk/astosp.h
 include/asterisk/autoconfig.h
 include/asterisk/build.h
@@ -753,7 +754,6 @@ share/examples/asterisk/default/manager.conf
 @comment share/examples/asterisk/default/meetme.conf
 share/examples/asterisk/default/mgcp.conf
 @comment share/examples/asterisk/default/misdn.conf
-@comment share/examples/asterisk/default/modem.conf
 share/examples/asterisk/default/modules.conf
 share/examples/asterisk/default/musiconhold.conf
 share/examples/asterisk/default/muted.conf

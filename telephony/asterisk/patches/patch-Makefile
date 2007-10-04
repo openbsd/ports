@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.11 2007/09/05 22:42:52 sthen Exp $
---- Makefile.orig	Fri Aug 10 00:10:46 2007
-+++ Makefile	Wed Aug 15 22:17:33 2007
+$OpenBSD: patch-Makefile,v 1.12 2007/10/04 11:25:44 sthen Exp $
+--- Makefile.orig	Tue Oct  2 21:06:07 2007
++++ Makefile	Wed Oct  3 12:50:21 2007
 @@ -35,6 +35,7 @@ export ASTVARRUNDIR
  export MODULES_DIR
  export ASTSPOOLDIR
@@ -9,8 +9,8 @@ $OpenBSD: patch-Makefile,v 1.11 2007/09/05 22:42:52 sthen Exp $
  export ASTDATADIR
  export ASTLOGDIR
  export ASTLIBDIR
-@@ -74,7 +75,7 @@ ifneq ($(wildcard makeopts),)
- endif
+@@ -81,7 +82,7 @@ ASTCFLAGS+=$(COPTS)
+ ASTLDFLAGS+=$(LDOPTS)
  
  #Uncomment this to see all build commands instead of 'quiet' output
 -#NOISY_BUILD=yes
@@ -18,7 +18,7 @@ $OpenBSD: patch-Makefile,v 1.11 2007/09/05 22:42:52 sthen Exp $
  
  # Create OPTIONS variable
  OPTIONS=
-@@ -85,7 +86,7 @@ ASTTOPDIR:=$(shell pwd)
+@@ -92,7 +93,7 @@ ASTTOPDIR:=$(shell pwd)
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -27,7 +27,7 @@ $OpenBSD: patch-Makefile,v 1.11 2007/09/05 22:42:52 sthen Exp $
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -120,6 +121,7 @@ else
+@@ -127,6 +128,7 @@ else
  ifneq ($(findstring BSD,$(OSARCH)),)
    ASTVARLIBDIR=$(prefix)/share/asterisk
    ASTVARRUNDIR=$(localstatedir)/run/asterisk
@@ -35,7 +35,7 @@ $OpenBSD: patch-Makefile,v 1.11 2007/09/05 22:42:52 sthen Exp $
  else
    ASTVARLIBDIR=$(localstatedir)/lib/asterisk
  endif
-@@ -148,8 +150,10 @@ HTTP_CGIDIR=/var/www/cgi-bin
+@@ -155,8 +157,10 @@ HTTP_CGIDIR=/var/www/cgi-bin
  # The file /etc/asterisk.makeopts will also be included but can be overridden
  # by the file in your home directory.
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-Makefile,v 1.11 2007/09/05 22:42:52 sthen Exp $
  
  MOD_SUBDIR_CFLAGS=-I$(ASTTOPDIR)/include
  OTHER_SUBDIR_CFLAGS=-I$(ASTTOPDIR)/include
-@@ -187,7 +191,7 @@ ifeq ($(OSARCH),linux-gnu)
+@@ -194,7 +198,7 @@ ifeq ($(OSARCH),linux-gnu)
    endif
  endif
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-Makefile,v 1.11 2007/09/05 22:42:52 sthen Exp $
  
  ASTCFLAGS+=-include $(ASTTOPDIR)/include/asterisk/autoconfig.h
  
-@@ -200,9 +204,11 @@ ifneq ($(findstring BSD,$(OSARCH)),)
+@@ -207,9 +211,11 @@ ifneq ($(findstring BSD,$(OSARCH)),)
    ASTLDFLAGS+=-L/usr/local/lib
  endif
  
@@ -67,7 +67,7 @@ $OpenBSD: patch-Makefile,v 1.11 2007/09/05 22:42:52 sthen Exp $
  
  ifeq ($(PROC),ppc)
    ASTCFLAGS+=-fsigned-char
-@@ -541,21 +547,25 @@ samples: adsi
+@@ -552,21 +558,25 @@ samples: adsi
  		echo "astetcdir => $(ASTETCDIR)" ; \
  		echo "astmoddir => $(MODULES_DIR)" ; \
  		echo "astvarlibdir => $(ASTVARLIBDIR)" ; \
