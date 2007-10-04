@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2007/10/04 09:16:16 sturm Exp $
 
 COMMENT=	cross-platform high-level application framework
 
 DISTNAME=	paragui-0.7.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	paragui 3.0
 CATEGORIES=	x11 devel
 
@@ -20,6 +20,7 @@ WANTLIB=	X11 Xext freetype jpeg m png stdc++ tiff usbhid z
 
 MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 
+MODULES=	converters/libiconv
 BUILD_DEPENDS=	:zip-*:archivers/zip
 
 LIB_DEPENDS=	SDL::devel/sdl \
@@ -32,7 +33,8 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS=-pthread
 
 .include <bsd.port.mk>
