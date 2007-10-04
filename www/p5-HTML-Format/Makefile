@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2007/10/04 21:25:25 jasper Exp $
 
 COMMENT=	HTML text formating class
 
 MODULES=	cpan
 DISTNAME=	HTML-Format-2.04
-PKGNAME=	p5-${DISTNAME}p0
-CATEGORIES=	devel
+PKGNAME=	p5-${DISTNAME}p1
+CATEGORIES=	www devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

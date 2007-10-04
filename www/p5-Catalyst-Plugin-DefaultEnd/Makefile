@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/04 21:25:25 jasper Exp $
 
 COMMENT=		sensible default end action
 
 MODULES=		cpan
 DISTNAME=		Catalyst-Plugin-DefaultEnd-0.06
-CATEGORIES=		devel
+PKGNAME=		p5-${DISTNAME}p0
+CATEGORIES=		www devel
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 
