@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/04 07:17:40 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/04 07:19:14 steven Exp $
 
 COMMENT=	sudoku solver and creator
 
@@ -7,7 +7,7 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://sudognu.sourceforge.net/
 
-MAINTAINER=	Steven Mestdagh <ajacoutot@openbsd.org>
+MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
