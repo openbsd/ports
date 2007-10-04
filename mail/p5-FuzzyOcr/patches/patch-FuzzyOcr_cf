@@ -1,0 +1,53 @@
+$OpenBSD: patch-FuzzyOcr_cf,v 1.1.1.1 2007/10/04 19:53:49 merdely Exp $
+--- FuzzyOcr.cf.orig	Tue Sep  4 13:31:13 2007
++++ FuzzyOcr.cf	Tue Oct  2 12:25:00 2007
+@@ -1,7 +1,7 @@
+ # Syntax:
+ # loadplugin <Plugin_Name> <Location>
+ #  <Location> path where Plugin resides.
+-loadplugin FuzzyOcr FuzzyOcr.pm
++loadplugin FuzzyOcr
+ 
+ body     FUZZY_OCR                   eval:fuzzyocr_check()
+ body     FUZZY_OCR_WRONG_CTYPE       eval:dummy_check()
+@@ -43,7 +43,7 @@ priority FUZZY_OCR 900
+ 
+ # Logfile (make sure it is writable by the plugin) 
+ # Default value: none
+-#focr_logfile /tmp/FuzzyOcr.log
++focr_logfile /var/db/spamassassin/FuzzyOcr.log
+ 
+ ###
+ ### Wordlists 
+@@ -96,8 +96,8 @@ priority FUZZY_OCR 900
+ 
+ # Include additional scanner/preprocessor commands here:
+ #
+-focr_bin_helper pnmnorm, pnminvert, pamthreshold, ppmtopgm, pamtopnm
+-focr_bin_helper tesseract
++focr_bin_helper pnmnorm, pnminvert, pamditherbw, ppmtopgm, pamtopnm
++#focr_bin_helper tesseract
+ 
+ # These helpers must be defined before enabling PDF scanning
+ #focr_bin_helper pdfinfo, pdftops, pstopnm
+@@ -314,17 +314,17 @@ focr_bin_helper tesseract
+ # If the image hash database feature is enabled (Type 1 Hashing),
+ # specify the file to use as database
+ # Default value: /etc/mail/spamassassin/FuzzyOcr.hashdb
+-#focr_digest_db /etc/mail/spamassassin/FuzzyOcr.hashdb
++focr_digest_db /var/db/spamassassin/FuzzyOcr.hashdb
+ 
+ # If the image hash db feature is enabled (Type 2 Hashing),
+ # specify the file to use as the SPAM database
+ # Default value: /etc/mail/spamassassin/FuzzyOcr.db
+-#focr_db_hash /etc/mail/spamassassin/FuzzyOcr.db
++focr_db_hash /var/db/spamassassin/FuzzyOcr.db
+ 
+ # If the image hash db feature is enabled (Type 2 Hashing), 
+ # specify the file to use as the HAM database
+ # Default value: /etc/mail/spamassassin/FuzzyOcr.safe.db
+-#focr_db_safe /etc/mail/spamassassin/FuzzyOcr.safe.db
++focr_db_safe /var/db/spamassassin/FuzzyOcr.safe.db
+ 
+ # Auto-prune: Expire records from hasing databases after these many days
+ # Default value: 35

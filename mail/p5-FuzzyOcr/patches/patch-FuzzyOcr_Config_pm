@@ -1,0 +1,40 @@
+$OpenBSD: patch-FuzzyOcr_Config_pm,v 1.1.1.1 2007/10/04 19:53:49 merdely Exp $
+--- FuzzyOcr/Config.pm.orig	Tue Oct  2 14:16:29 2007
++++ FuzzyOcr/Config.pm	Tue Oct  2 14:17:24 2007
+@@ -51,8 +51,10 @@ our @EXPORT_OK = qw/
+     read_words 
+     /;
+ 
+-use constant HAS_DBI => eval { require DBI; };
+-use constant HAS_DBD_MYSQL => eval { require DBD::mysql; };
++eval { require DBI; };
++my $HAS_DBI = ($@) ? undef : 1;
++eval { require DBD::mysql; };
++my $HAS_DBD_MYSQL = ($@) ? undef : 1;
+ use constant HAS_MLDBM => eval { require MLDBM; require MLDBM::Sync;};
+ use constant HAS_DB_FILE => eval { require DB_File; };
+ use constant HAS_STORABLE => eval { require Storable; };
+@@ -179,7 +181,7 @@ sub get_db_ref {
+ }
+ 
+ sub get_mysql_ddb {
+-    return undef unless (HAS_DBI and HAS_DBD_MYSQL);
++    return undef unless ($HAS_DBI and $HAS_DBD_MYSQL);
+ 
+     my $conf = get_config();
+     my %dopts = ( AutoCommit => 1 );
+@@ -685,11 +687,11 @@ sub finish_parsing_end {
+     }
+ 
+     if ($conf->{focr_enable_image_hashing} == 3) {
+-        unless (HAS_DBI and HAS_DBD_MYSQL) {
++        unless ($HAS_DBI and $HAS_DBD_MYSQL) {
+             $conf->{focr_enable_image_hashing} = 0;
+             errorlog("Disable Image Hashing");
+-            errorlog("Missing DBI") unless HAS_DBI;
+-            errorlog("Missing DBD::mysql") unless HAS_DBD_MYSQL;
++            errorlog("Missing DBI") unless $HAS_DBI;
++            errorlog("Missing DBD::mysql") unless $HAS_DBD_MYSQL;
+         }
+ 
+         # Warn if MLDBM databases are present, but can't be imported

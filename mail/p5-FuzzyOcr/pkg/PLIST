@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/04 19:53:49 merdely Exp $
+${P5SITE}/FuzzyOcr/
+${P5SITE}/FuzzyOcr.pm
+${P5SITE}/FuzzyOcr/Config.pm
+${P5SITE}/FuzzyOcr/Deanimate.pm
+${P5SITE}/FuzzyOcr/Hashing.pm
+${P5SITE}/FuzzyOcr/Logging.pm
+${P5SITE}/FuzzyOcr/Misc.pm
+${P5SITE}/FuzzyOcr/Preprocessor.pm
+${P5SITE}/FuzzyOcr/Scanset.pm
+${P5SITE}/FuzzyOcr/Scoring.pm
+share/examples/FuzzyOcr/
+share/examples/FuzzyOcr/FuzzyOcr.cf
+@sample ${CONFDIR}/FuzzyOcr.cf
+share/examples/FuzzyOcr/FuzzyOcr.mysql
+share/examples/FuzzyOcr/FuzzyOcr.preps
+@sample ${CONFDIR}/FuzzyOcr.preps
+share/examples/FuzzyOcr/FuzzyOcr.scansets
+@sample ${CONFDIR}/FuzzyOcr.scansets
+share/examples/FuzzyOcr/FuzzyOcr.words
+@sample ${CONFDIR}/FuzzyOcr.words

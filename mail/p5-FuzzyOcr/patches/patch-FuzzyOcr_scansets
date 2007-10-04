@@ -1,0 +1,42 @@
+$OpenBSD: patch-FuzzyOcr_scansets,v 1.1.1.1 2007/10/04 19:53:49 merdely Exp $
+--- FuzzyOcr.scansets.orig	Tue Sep  4 13:31:13 2007
++++ FuzzyOcr.scansets	Mon Sep 17 14:21:43 2007
+@@ -18,19 +18,36 @@ scanset ocrad-invert {
+     args = -s5 -i $input
+ }
+ 
++## Inverted Ocrad scanset with decolorization
++#scanset ocrad-decolorize-invert {
++#    preprocessors = ppmtopgm, pamthreshold, pamtopnm
++#    command = $ocrad
++#    args = -s5 -i $input
++#}
++
++## Ocrad scanset with decolorization
++#scanset ocrad-decolorize {
++#    preprocessors = ppmtopgm, pamthreshold, pamtopnm
++#    command = $ocrad
++#    args = -s5 $input
++#}
++
+ # Inverted Ocrad scanset with decolorization
++# (without pamthreshold - for netpbm < 10.34)
+ scanset ocrad-decolorize-invert {
+-    preprocessors = ppmtopgm, pamthreshold, pamtopnm
++    preprocessors = ppmtopgm, pamditherbw, pamtopnm
+     command = $ocrad
+     args = -s5 -i $input
+ }
+ 
+ # Ocrad scanset with decolorization
++# (without pamthreshold - for netpbm < 10.34)
+ scanset ocrad-decolorize {
+-    preprocessors = ppmtopgm, pamthreshold, pamtopnm
++    preprocessors = ppmtopgm, pamditherbw, pamtopnm
+     command = $ocrad
+     args = -s5 $input
+ }
++
+ 
+ # Standard Gocr Scanset
+ scanset gocr {

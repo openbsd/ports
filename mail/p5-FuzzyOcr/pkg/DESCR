@@ -1,0 +1,11 @@
+FuzzyOcr is a plugin for SpamAssassin which is aimed at unsolicited bulk
+mail (also known as "Spam") containing images as the main content
+carrier. Using different methods, it analyzes the content and properties
+of images to distinguish between normal mails (Ham) and spam mails. The
+methods mainly are:
+
+* Optical Character Recognition using different engines and settings
+* Fuzzy word matching algorithm applied to OCR results
+* Image hashing system to learn unique properties of known spam images
+* Dimension, size and integrity checking of images
+* Content-Type verification for the containing email
