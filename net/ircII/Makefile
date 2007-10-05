@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2007/09/01 20:11:21 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2007/10/05 19:54:55 kili Exp $
 
 COMMENT=	Internet Relay Chat client
 
-VERSION=	20040820
+VERSION=	20060725
 DISTNAME=	ircii-${VERSION}
-PKGNAME=	ircII-${VERSION}p0
+PKGNAME=	ircII-${VERSION}
 CATEGORIES=	net
 EXTRACT_SUFX=	.tar.bz2
 
@@ -19,10 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termcap
 
-MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
-		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
-		ftp://ftp.warped.com/pub/ircII/old/ \
-		ftp://ircftp.au.eterna.com.au/pub/ircII/old/
+MASTER_SITES=	ftp://ircii.warped.com/pub/ircII/ \
+		ftp://ircii.warped.com/pub/ircII/old/
 
 SUBST_VARS=	VERSION
 
