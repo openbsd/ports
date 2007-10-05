@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/03 05:13:29 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2007/10/05 09:18:35 steven Exp $
 
 COMMENT=	critique perl source code for best practices
 
 MODULES=	cpan
 DISTNAME=	Perl-Critic-1.051
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@kisoku.net> 
