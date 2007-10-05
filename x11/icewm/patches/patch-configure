@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.8 2006/11/04 17:59:19 fgsch Exp $
---- configure.orig	Sun Sep 10 17:12:20 2006
-+++ configure	Tue Oct 24 12:36:48 2006
+$OpenBSD: patch-configure,v 1.9 2007/10/05 14:15:13 ajacoutot Exp $
+--- configure.orig	Tue Aug  7 07:12:15 2007
++++ configure	Fri Oct  5 16:05:37 2007
 @@ -1461,7 +1461,7 @@ test -n "$target_alias" &&
      NONENONEs,x,x, &&
    program_prefix=${target_alias}-
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.8 2006/11/04 17:59:19 fgsch Exp $
  APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icewmtray'
  TESTCASES=`echo src/test*.cc | sed 's%src/\([^ ]*\)\.cc%\1%g'`
  TESTCASES="$TESTCASES iceview icesame iceicon icerun icelist" # iceclock
-@@ -9748,7 +9748,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+@@ -10060,7 +10060,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.8 2006/11/04 17:59:19 fgsch Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9807,7 +9807,7 @@ fi
+@@ -10119,7 +10119,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_intl_bindtextdomain" >&5
  echo "${ECHO_T}$ac_cv_lib_intl_bindtextdomain" >&6
  if test $ac_cv_lib_intl_bindtextdomain = yes; then

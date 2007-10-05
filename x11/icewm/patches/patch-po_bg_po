@@ -1,7 +1,7 @@
-$OpenBSD: patch-po_bg_po,v 1.4 2006/12/27 16:18:24 ajacoutot Exp $
---- po/bg.po.orig	Sun Dec 24 17:05:00 2006
-+++ po/bg.po	Tue Dec 26 11:48:52 2006
-@@ -12,7 +12,7 @@ msgstr	"Project-Id-Version: IceWM 1.2.10
+$OpenBSD: patch-po_bg_po,v 1.5 2007/10/05 14:15:13 ajacoutot Exp $
+--- po/bg.po.orig	Tue Aug  7 07:12:05 2007
++++ po/bg.po	Fri Oct  5 16:05:38 2007
+@@ -12,7 +12,7 @@ msgstr	"Project-Id-Version: IceWM 1.2.10\n"
  	"Last-Translator: Pavel Pyuter <pavel@unix-bg.org>\n"
  	"Language-Team: Bulgarian\n"
  	"MIME-Version: 1.0\n"
