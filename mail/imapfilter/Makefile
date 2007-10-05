@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/02 18:35:22 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/05 15:09:19 simon Exp $
 
 COMMENT=	remote IMAP filtering utility
 
-DISTNAME=	imapfilter-2.0.3
+DISTNAME=	imapfilter-2.0.5
 CATEGORIES=	mail
 
 HOMEPAGE=	http://imapfilter.hellug.gr/
@@ -22,11 +22,10 @@ LIB_DEPENDS=	pcre::devel/pcre \
 		lua::lang/lua
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	-d ${WRKINST} \
-		-p ${LOCALBASE} \
-		-b ${LOCALBASE}/bin \
-		-s ${LOCALBASE}/share/imapfilter \
-		-m ${LOCALBASE}/man \
+CONFIGURE_ARGS=	-p ${PREFIX} \
+		-b ${PREFIX}/bin \
+		-s ${PREFIX}/share/imapfilter \
+		-m ${PREFIX}/man \
 		-o ssltls=yes -o crammd5=yes
 MAKE_ENV+=	CC="${CC}"
 
