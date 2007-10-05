@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.555 2007/09/30 09:38:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.556 2007/10/05 20:32:25 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -451,6 +451,7 @@
      SUBDIR += p5-TAP-Parser
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
+     SUBDIR += p5-Term-Encoding
      SUBDIR += p5-Term-Prompt
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
