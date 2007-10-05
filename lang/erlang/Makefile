@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.29 2007/10/05 21:05:24 kili Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 
@@ -32,7 +32,8 @@ CONFIGURE_ARGS=	--disable-jinterface	\
 		--enable-kernel-poll
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=autoconf no-autoheader
+AUTOCONF_VERSION=2.59
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/erts/autoconf \
 				${WRKSRC}/lib/erl_interface/src/auxdir
 
