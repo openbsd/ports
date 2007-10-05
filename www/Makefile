@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.303 2007/10/03 18:20:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.304 2007/10/05 13:36:19 winiger Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -263,6 +263,7 @@
      SUBDIR += squidguard
      SUBDIR += squidguard,ldap
      SUBDIR += surfraw
+     SUBDIR += syweb
      SUBDIR += thttpd
      SUBDIR += tidy
      SUBDIR += tikiwiki
