@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/05 14:19:46 jasper Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/XMPP/
+${P5SITE}/Net/XMPP.pm
+${P5SITE}/Net/XMPP/Client.pm
+${P5SITE}/Net/XMPP/Connection.pm
+${P5SITE}/Net/XMPP/Debug.pm
+${P5SITE}/Net/XMPP/IQ.pm
+${P5SITE}/Net/XMPP/JID.pm
+${P5SITE}/Net/XMPP/Message.pm
+${P5SITE}/Net/XMPP/Namespaces.pm
+${P5SITE}/Net/XMPP/Presence.pm
+${P5SITE}/Net/XMPP/PrivacyLists.pm
+${P5SITE}/Net/XMPP/Protocol.pm
+${P5SITE}/Net/XMPP/Roster.pm
+${P5SITE}/Net/XMPP/Stanza.pm
+@man man/man3p/Net::XMPP.3p
+@man man/man3p/Net::XMPP::Client.3p
+@man man/man3p/Net::XMPP::Connection.3p
+@man man/man3p/Net::XMPP::Debug.3p
+@man man/man3p/Net::XMPP::IQ.3p
+@man man/man3p/Net::XMPP::JID.3p
+@man man/man3p/Net::XMPP::Message.3p
+@man man/man3p/Net::XMPP::Namespaces.3p
+@man man/man3p/Net::XMPP::Presence.3p
+@man man/man3p/Net::XMPP::PrivacyLists.3p
+@man man/man3p/Net::XMPP::Protocol.3p
+@man man/man3p/Net::XMPP::Roster.3p
+@man man/man3p/Net::XMPP::Stanza.3p
+share/examples/p5-Net-XMPP/
+share/examples/p5-Net-XMPP/client.pl
+share/examples/p5-Net-XMPP/client_xpath.pl
