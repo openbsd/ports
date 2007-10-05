@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2007/10/05 13:36:19 winiger Exp $
+# $OpenBSD: Makefile,v 1.305 2007/10/05 20:57:20 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -190,6 +190,7 @@
      SUBDIR += p5-HTTP-Server-Simple-Mason
      SUBDIR += p5-HTTP-Server-Simple-Recorder
      SUBDIR += p5-HTTPD-Log-Filter
+     SUBDIR += p5-LWP-Authen-Wsse
      SUBDIR += p5-LWP-UserAgent-Determined
      SUBDIR += p5-MasonX-Interp-WithCallbacks
      SUBDIR += p5-Maypole
