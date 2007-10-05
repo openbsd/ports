@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/06/22 03:47:18 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/10/05 14:52:00 jcs Exp $
 bin/rails
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -255,6 +255,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/log.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/misc.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/pre_namespace_aliases.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/rails.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/routes.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/statistics.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/testing.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/tmp.rake
