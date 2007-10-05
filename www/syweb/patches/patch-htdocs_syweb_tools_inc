@@ -1,0 +1,12 @@
+$OpenBSD: patch-htdocs_syweb_tools_inc,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp $
+--- htdocs/syweb/tools.inc.orig	Fri Oct  5 10:10:05 2007
++++ htdocs/syweb/tools.inc	Fri Oct  5 10:10:36 2007
+@@ -60,7 +60,7 @@ function normalise_filename($filename) {
+ 	$filename = $match[1];
+     }
+     /* remove all but lowercase and digits */
+-    $filename = preg_replace("/[^a-z0-9_]/", '', $filename);
++    $filename = preg_replace("/[^a-z0-9_-]/", '', $filename);
+ 
+     return $filename;
+ }

@@ -1,0 +1,16 @@
+$OpenBSD: patch-install_rrdtool_sh,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp $
+--- install_rrdtool.sh.orig	Fri Oct  5 10:51:01 2007
++++ install_rrdtool.sh	Fri Oct  5 10:51:56 2007
+@@ -31,10 +31,11 @@ if [ "${LIBS}x" = x ]; then
+ fi
+ 
+ cd ${PREFIX}
+-mkdir -p bin usr/lib usr/libexec
++mkdir -p bin usr/lib usr/libexec usr/local/share/rrdtool/fonts
+ cp -f $LIBS usr/lib
+ cp -f ${RRD_CMD} bin
+ cp -f /usr/libexec/ld.so usr/libexec
+ cp -f /bin/sh bin/sh
++cp /usr/local/share/rrdtool/fonts/*.ttf usr/local/share/rrdtool/fonts/
+ echo rrdtool and libs installed in apache root
+ exit 1

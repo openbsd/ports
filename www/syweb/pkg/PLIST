@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp $
+@owner root
+@group www
+htdocs/syweb/
+htdocs/syweb/class_cache.inc
+htdocs/syweb/class_graph.inc
+htdocs/syweb/class_layout.inc
+htdocs/syweb/class_lexer.inc
+htdocs/syweb/class_rrdtool.inc
+htdocs/syweb/class_session.inc
+htdocs/syweb/class_text.inc
+htdocs/syweb/class_vars.inc
+htdocs/syweb/configtest.php
+htdocs/syweb/graph.php
+htdocs/syweb/graph_defaults.inc
+htdocs/syweb/index.php
+htdocs/syweb/setup.inc
+htdocs/syweb/spacer.png
+htdocs/syweb/symon.css
+htdocs/syweb/symon.png
+htdocs/syweb/tools.inc
+symon/
+@mode 775
+symon/cache/
+@mode
+symon/hifn_test.layout
+symon/install_rrdtool.sh
+symon/pf.layout
+symon/rrds/
+symon/total_firewall.layout

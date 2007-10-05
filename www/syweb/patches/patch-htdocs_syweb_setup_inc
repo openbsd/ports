@@ -1,0 +1,31 @@
+$OpenBSD: patch-htdocs_syweb_setup_inc,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp $
+--- htdocs/syweb/setup.inc.orig	Tue Oct  2 15:31:49 2007
++++ htdocs/syweb/setup.inc	Tue Oct  2 15:32:04 2007
+@@ -18,12 +18,11 @@
+  *
+  */
+ 
+-/* running OpenBSD, apache chrooted:
++/* running OpenBSD, apache chrooted: */
+ $symon['rrdtool_path']='/bin/rrdtool';
+ $symon['cache_dir']='/symon/cache';
+ $symon['host_tree']='/symon/rrds';
+ $symon['layout_dir']='/symon';
+-*/
+ 
+ /* running OpenBSD, apache not chrooted:
+ $symon['rrdtool_path']='/usr/local/bin/rrdtool';
+@@ -32,11 +31,12 @@ $symon['host_tree']='/var/www/symon/rrds';
+ $symon['layout_dir']='/var/www/symon';
+ */
+ 
+-/* running FreeBSD, apache not chrooted: */
++/* running FreeBSD, apache not chrooted:
+ $symon['rrdtool_path']='/usr/local/bin/rrdtool';
+ $symon['cache_dir']='/usr/local/www/symon/cache';
+ $symon['host_tree']='/usr/local/www/symon/rrds';
+ $symon['layout_dir']='/usr/local/www/symon';
++*/
+ 
+ $symon['cache_duration']=20;
+ $symon['isolate_hosts']=1;
