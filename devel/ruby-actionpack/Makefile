@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/10/05 14:40:19 jcs Exp $
 
 COMMENT=	eases web-request routing, handling, and response
 
-DISTNAME=       actionpack-1.13.3
+DISTNAME=       actionpack-1.13.4
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=     devel
 
@@ -17,7 +17,7 @@ MASTER_SITES=   ${MASTER_SITE_RUBYFORGE:=actionpack/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-activesupport-1.4.2:devel/ruby-activesupport
+RUN_DEPENDS=	:ruby-activesupport->=1.4.3:devel/ruby-activesupport
 
 CONFIGURE_STYLE=ruby gem
 
