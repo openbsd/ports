@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/10/05 14:41:21 jcs Exp $
 
 COMMENT=	easy email delivery and testing for ruby
 
-DISTNAME=	actionmailer-1.3.3
+DISTNAME=	actionmailer-1.3.4
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	mail
 
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=actionmailer/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS= 	:ruby-actionpack-1.13.3:devel/ruby-actionpack
+RUN_DEPENDS= 	:ruby-actionpack->=1.13.4:devel/ruby-actionpack
 
 CONFIGURE_STYLE=ruby gem
 
