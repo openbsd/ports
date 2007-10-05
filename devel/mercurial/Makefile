@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/10/05 02:00:45 merdely Exp $
 
 COMMENT=		fast, lightweight source control management
 
-DISTNAME=		mercurial-0.9.3
+DISTNAME=		mercurial-0.9.4
 CATEGORIES=     	devel
 HOMEPAGE=		http://www.selenic.com/mercurial/
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.selenic.com/mercurial/release/
 
-USE_GMAKE=		Yes
 MODULES=		lang/python
 
 # Many regress tests broken on OpenBSD.
@@ -34,7 +33,7 @@ post-install:
 .for script in convert-repo darcs2hg.py hg-ssh hgdiff hgk tcsh_completion_build.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/${script} ${PREFIX}/share/mercurial/.
 .endfor
-.for dir in git-viz hgsh purge vim
+.for dir in git-viz hgsh vim
 	@cp -rp ${WRKSRC}/contrib/${dir} ${PREFIX}/share/mercurial/.
 	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/mercurial/${dir}/*
 .endfor
