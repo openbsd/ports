@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.308 2007/09/26 19:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.309 2007/10/05 11:09:12 winiger Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -181,6 +181,7 @@
      SUBDIR += rxvt
      SUBDIR += sawfish
      SUBDIR += sclock
+     SUBDIR += sisctrl
      SUBDIR += skippy
      SUBDIR += sliderule
      SUBDIR += slock
