@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2007/07/21 15:20:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2007/10/05 16:12:20 naddy Exp $
 
 COMMENT=	RPN and algebraic scientific calculator
 
-DISTNAME=	calcoo-1.3.17
+DISTNAME=	calcoo-1.3.18
 CATEGORIES=	math
 HOMEPAGE=	http://calcoo.sourceforge.net/
 
