@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_config_arm_elf_h,v 1.1 2007/10/05 13:14:13 sturm Exp $
+--- gcc/config/arm/elf.h.orig	Fri Oct  5 15:05:10 2007
++++ gcc/config/arm/elf.h	Fri Oct  5 15:05:42 2007
+@@ -46,7 +46,7 @@
+ 
+ #ifndef SUBTARGET_ASM_FLOAT_SPEC
+ #define SUBTARGET_ASM_FLOAT_SPEC "\
+-%{mapcs-float:-mfloat} %{msoft-float:-mfpu=softfpa}"
++%{mapcs-float:-mfloat} %{!mhard-float:-mfpu=softfpa} %{mhard-float:-mfpu=fpa}"
+ #endif
+ 
+ #ifndef ASM_SPEC

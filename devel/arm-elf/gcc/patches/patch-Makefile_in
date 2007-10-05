@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
---- Makefile.in.orig	Sat Oct 14 18:12:49 2006
-+++ Makefile.in	Sat Oct 14 18:22:26 2006
+$OpenBSD: patch-Makefile_in,v 1.2 2007/10/05 13:14:13 sturm Exp $
+--- Makefile.in.orig	Wed Sep 14 01:56:45 2005
++++ Makefile.in	Fri Oct  5 15:04:31 2007
 @@ -597,22 +597,7 @@ configure-host: maybe-configure-gcc  \
      maybe-configure-utils
  .PHONY: configure-target
@@ -116,7 +116,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
  
  # GCC, the eternal special case
  .PHONY: maybe-TAGS-gcc TAGS-gcc
-@@ -6408,22 +6333,7 @@ install-info-host: maybe-install-info-gc
+@@ -6408,22 +6333,7 @@ install-info-host: maybe-install-info-gcc  \
  
  .PHONY: install-info-target
  install-info-target:  \
@@ -139,7 +139,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
  
  # GCC, the eternal special case
  .PHONY: maybe-install-info-gcc install-info-gcc
-@@ -8365,22 +8275,7 @@ installcheck-host: maybe-installcheck-gc
+@@ -8365,22 +8275,7 @@ installcheck-host: maybe-installcheck-gcc  \
  
  .PHONY: installcheck-target
  installcheck-target:  \
@@ -162,7 +162,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
  
  # GCC, the eternal special case
  .PHONY: maybe-installcheck-gcc installcheck-gcc
-@@ -10241,22 +10136,7 @@ mostlyclean-host: maybe-mostlyclean-gcc 
+@@ -10241,22 +10136,7 @@ mostlyclean-host: maybe-mostlyclean-gcc  \
  
  .PHONY: mostlyclean-target
  mostlyclean-target:  \
@@ -231,7 +231,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/04/02 15:35:02 sturm Exp $
  
  # GCC, the eternal special case
  .PHONY: maybe-distclean-gcc distclean-gcc
-@@ -15528,22 +15378,7 @@ maintainer-clean-host: maybe-maintainer-
+@@ -15528,22 +15378,7 @@ maintainer-clean-host: maybe-maintainer-clean-gcc  \
  
  .PHONY: maintainer-clean-target
  maintainer-clean-target:  \
