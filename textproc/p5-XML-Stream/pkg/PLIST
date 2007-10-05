@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/05 14:16:57 jasper Exp $
+${P5SITE}/XML/
+${P5SITE}/XML/Stream/
+${P5SITE}/XML/Stream.pm
+${P5SITE}/XML/Stream/Namespace.pm
+${P5SITE}/XML/Stream/Node.pm
+${P5SITE}/XML/Stream/Parser/
+${P5SITE}/XML/Stream/Parser.pm
+${P5SITE}/XML/Stream/Parser/DTD.pm
+${P5SITE}/XML/Stream/Tree.pm
+${P5SITE}/XML/Stream/XPath/
+${P5SITE}/XML/Stream/XPath.pm
+${P5SITE}/XML/Stream/XPath/Op.pm
+${P5SITE}/XML/Stream/XPath/Query.pm
+${P5SITE}/XML/Stream/XPath/Value.pm
+@man man/man3p/XML::Stream.3p
+@man man/man3p/XML::Stream::Namespace.3p
+@man man/man3p/XML::Stream::Node.3p
+@man man/man3p/XML::Stream::Parser.3p
+@man man/man3p/XML::Stream::Parser::DTD.3p
+@man man/man3p/XML::Stream::Tree.3p
