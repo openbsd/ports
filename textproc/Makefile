@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2007/10/01 18:42:31 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.214 2007/10/05 14:18:42 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -166,6 +166,7 @@
      SUBDIR += p5-XML-Sablotron
      SUBDIR += p5-XML-Simple
      SUBDIR += p5-XML-Smart
+     SUBDIR += p5-XML-Stream
      SUBDIR += p5-XML-Twig
      SUBDIR += p5-XML-Validator-Schema
      SUBDIR += p5-XML-Writer
