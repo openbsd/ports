@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/06 15:27:28 simon Exp $
+${P5SITE}/XML/RSS/
+${P5SITE}/XML/RSS/LibXML/
+${P5SITE}/XML/RSS/LibXML.pm
+${P5SITE}/XML/RSS/LibXML/ImplBase.pm
+${P5SITE}/XML/RSS/LibXML/MagicElement.pm
+${P5SITE}/XML/RSS/LibXML/Namespaces.pm
+${P5SITE}/XML/RSS/LibXML/Null.pm
+${P5SITE}/XML/RSS/LibXML/V0_9.pm
+${P5SITE}/XML/RSS/LibXML/V0_91.pm
+${P5SITE}/XML/RSS/LibXML/V1_0.pm
+${P5SITE}/XML/RSS/LibXML/V2_0.pm
+@man man/man3p/XML::RSS::LibXML.3p
+@man man/man3p/XML::RSS::LibXML::ImplBase.3p
+@man man/man3p/XML::RSS::LibXML::MagicElement.3p
+@man man/man3p/XML::RSS::LibXML::Namespaces.3p

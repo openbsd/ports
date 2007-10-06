@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_XML_RSS_LibXML_pm,v 1.1.1.1 2007/10/06 15:27:28 simon Exp $
+--- lib/XML/RSS/LibXML.pm.orig	Tue Oct  2 11:18:38 2007
++++ lib/XML/RSS/LibXML.pm	Tue Oct  2 11:18:57 2007
+@@ -169,7 +169,7 @@ sub get_namespaces
+     my $self = shift;
+     my $node = shift;
+     my %h = map {
+-        (($_->getName() || '#default') => $_->getData)
++        (($_->getLocalName() || '#default') => $_->getData)
+     } $node->getNamespaces();
+ 
+ #    while (my($p, $uri) = each %h) {
