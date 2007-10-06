@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/19 14:08:33 fkr Exp $
+# $OpenBSD: Makefile,v 1.11 2007/10/06 22:32:41 fkr Exp $
 
 COMMENT=	drive some car across the moon
 
-DISTNAME=	moon-buggy-0.5.1
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	moon-buggy-1.0
+PKGNAME=	${DISTNAME}
 CATEGORIES=    	games	
-HOMEPAGE=	http://hangout.de/moon-buggy/
+HOMEPAGE=	http://seehuhn.de/pages/moon-buggy
 
 MAINTAINER=	Felix Kronlage <fkr@openbsd.org>
 
@@ -15,11 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=games/arcade/}
+MASTER_SITES=	http://seehuhn.de/media/programs/
 
 WANTLIB=	c curses m
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--sharedstatedir=/var --with-setgid=games
+USE_GMAKE=  Yes
 
 .include <bsd.port.mk>

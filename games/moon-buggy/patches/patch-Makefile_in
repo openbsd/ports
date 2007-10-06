@@ -1,25 +1,24 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2005/11/01 14:07:20 naddy Exp $
---- Makefile.in.orig	Sun May  7 13:03:18 2000
-+++ Makefile.in	Tue Nov  1 14:56:46 2005
-@@ -86,7 +86,7 @@ bin_SCRIPTS = maint-buggy
+--- Makefile.in.orig	Mon Dec 27 17:15:56 2004
++++ Makefile.in	Thu Oct  4 23:05:27 2007
+@@ -210,7 +210,7 @@
+ moon_buggy_LDADD = @CURSES_LIBS@
  info_TEXINFOS = moon-buggy.texi
- man_MANS = moon-buggy.6 maint-buggy.6
- 
+ man_MANS = moon-buggy.6
 -scoredir = $(sharedstatedir)/moon-buggy
 +scoredir = $(sharedstatedir)/games
- 
  BUILT_SOURCES = copying.h buggy.h
- 
-@@ -643,7 +643,7 @@ install-exec-hook:
+ @short_getopt_TRUE@mbsep = \\\\\"
+ all: $(BUILT_SOURCES) config.h
+@@ -840,7 +840,7 @@
  	@$(POST_INSTALL)
  	if test "x@GAMEGROUP@" != "x"; then \
  	  chgrp "@GAMEGROUP@" "$(DESTDIR)$(bindir)/moon-buggy" \
 -	    && chmod 2111 "$(DESTDIR)$(bindir)/moon-buggy" ; \
 +	    && chmod g+s "$(DESTDIR)$(bindir)/moon-buggy" ; \
  	fi
- 	chmod go-x "$(DESTDIR)$(bindir)/maint-buggy"
  	@$(NORMAL_INSTALL)
-@@ -661,7 +661,6 @@ install-data-hook:
+ 
+@@ -857,7 +857,6 @@
  		 || chmod 664 "$(DESTDIR)$(scoredir)/mbscore" ; } \
  	    && chmod 575 "$(DESTDIR)$(scoredir)" ; \
  	fi
