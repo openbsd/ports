@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/05/25 09:49:54 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/10/06 22:46:04 ajacoutot Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -2061,6 +2061,7 @@ share/config.kcfg/taskbar.kcfg
 share/config/katerc
 share/config/kdesktop_custom_menu1
 share/config/kdesktop_custom_menu2
+share/config/kdesurc
 share/config/klipperrc
 share/config/konqsidebartng.rc
 share/config/kshorturifilterrc
