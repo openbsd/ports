@@ -1,6 +1,18 @@
-$OpenBSD: patch-SOAPpy_Types_py,v 1.1.1.1 2005/11/12 00:57:13 djm Exp $
---- SOAPpy/Types.py.orig	Sat Sep 11 13:03:33 2004
-+++ SOAPpy/Types.py	Fri Nov 11 18:52:56 2005
+$OpenBSD: patch-SOAPpy_Types_py,v 1.2 2007/10/06 14:27:52 steven Exp $
+--- SOAPpy/Types.py.orig	Sat Sep 11 05:03:33 2004
++++ SOAPpy/Types.py	Tue Sep 25 11:25:16 2007
+@@ -33,10 +33,10 @@
+ ################################################################################
+ """
+ 
++from __future__ import nested_scopes
+ ident = '$Id: patch-SOAPpy_Types_py,v 1.2 2007/10/06 14:27:52 steven Exp $'
+ from version import __version__
+ 
+-from __future__ import nested_scopes
+ 
+ import UserList
+ import base64
 @@ -590,7 +590,7 @@ class timeType(anyType):
              d = self._data
              s = ''

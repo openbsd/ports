@@ -1,0 +1,15 @@
+$OpenBSD: patch-SOAPpy_GSIServer_py,v 1.1 2007/10/06 14:27:52 steven Exp $
+--- SOAPpy/GSIServer.py.orig	Tue Sep 25 11:26:31 2007
++++ SOAPpy/GSIServer.py	Tue Sep 25 11:26:39 2007
+@@ -43,10 +43,10 @@ GSIServer - Contributed by Ivan R. Judson <judson@mcs.
+ ################################################################################
+ """
+ 
++from __future__ import nested_scopes
+ ident = '$Id: patch-SOAPpy_GSIServer_py,v 1.1 2007/10/06 14:27:52 steven Exp $'
+ from version import __version__
+ 
+-from __future__ import nested_scopes
+ 
+ #import xml.sax
+ import re

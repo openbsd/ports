@@ -1,0 +1,15 @@
+$OpenBSD: patch-SOAPpy_Server_py,v 1.1 2007/10/06 14:27:52 steven Exp $
+--- SOAPpy/Server.py.orig	Tue Sep 25 11:25:34 2007
++++ SOAPpy/Server.py	Tue Sep 25 11:25:39 2007
+@@ -40,10 +40,10 @@
+ ################################################################################
+ """
+ 
++from __future__ import nested_scopes
+ ident = '$Id: patch-SOAPpy_Server_py,v 1.1 2007/10/06 14:27:52 steven Exp $'
+ from version import __version__
+ 
+-from __future__ import nested_scopes
+ 
+ #import xml.sax
+ import re
