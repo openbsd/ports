@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2007/10/05 14:18:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.215 2007/10/06 15:27:37 simon Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -131,6 +131,7 @@
      SUBDIR += p5-Text-SimpleTable
      SUBDIR += p5-Text-Table
      SUBDIR += p5-Text-TabularDisplay
+     SUBDIR += p5-Text-Tags
      SUBDIR += p5-Text-Template
      SUBDIR += p5-Text-Textile
      SUBDIR += p5-Text-Tmpl
@@ -139,11 +140,13 @@
      SUBDIR += p5-Text-WordDiff
      SUBDIR += p5-Text-Wrapper
      SUBDIR += p5-WML-Card
+     SUBDIR += p5-XML-Atom
      SUBDIR += p5-XML-AutoWriter
      SUBDIR += p5-XML-Checker
      SUBDIR += p5-XML-DOM
      SUBDIR += p5-XML-Dumper
      SUBDIR += p5-XML-Elemental
+     SUBDIR += p5-XML-Feed
      SUBDIR += p5-XML-Filter-BufferText
      SUBDIR += p5-XML-Filter-ExceptionLocator
      SUBDIR += p5-XML-LibXML
@@ -153,6 +156,7 @@
      SUBDIR += p5-XML-Parser
      SUBDIR += p5-XML-RAI
      SUBDIR += p5-XML-RSS
+     SUBDIR += p5-XML-RSS-LibXML
      SUBDIR += p5-XML-RSS-Parser
      SUBDIR += p5-XML-RSS-Timing
      SUBDIR += p5-XML-RSS-TimingBot
