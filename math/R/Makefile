@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/10/07 17:54:54 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
-DISTNAME=	R-2.5.0
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	Rlapack 25.0 \
-		Rblas	25.0
+DISTNAME=	R-2.6.0
+SHARED_LIBS=	Rlapack 26.0 \
+		Rblas	26.0
 
 CATEGORIES=    	math
 HOMEPAGE=	http://www.r-project.org/
@@ -30,7 +29,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		tk84.>=1:tk-8.4.*:x11/tk/8.4
 
-CONFIGURE_STYLE=gnu dest
+CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-readline --with-tcltk \
