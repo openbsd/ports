@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/15 20:20:23 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/10/07 21:29:50 steven Exp $
 bin/chartex
 ${P5SITE}/Spreadsheet/
 ${P5SITE}/Spreadsheet/WriteExcel/
@@ -27,6 +27,7 @@ ${P5SITE}/Spreadsheet/WriteExcel/Worksheet.pm
 @man man/man3p/Spreadsheet::WriteExcel::Worksheet.3p
 share/examples/p5-Spreadsheet-WriteExcel/
 share/examples/p5-Spreadsheet-WriteExcel/README
+share/examples/p5-Spreadsheet-WriteExcel/autofilter.pl
 share/examples/p5-Spreadsheet-WriteExcel/autofit.pl
 share/examples/p5-Spreadsheet-WriteExcel/bigfile.pl
 share/examples/p5-Spreadsheet-WriteExcel/bug_report.pl
@@ -79,7 +80,6 @@ share/examples/p5-Spreadsheet-WriteExcel/stocks.pl
 share/examples/p5-Spreadsheet-WriteExcel/tab2xls.pl
 share/examples/p5-Spreadsheet-WriteExcel/tab_colors.pl
 share/examples/p5-Spreadsheet-WriteExcel/textwrap.pl
-share/examples/p5-Spreadsheet-WriteExcel/unicode.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_2022_jp.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_8859_11.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_8859_7.pl
@@ -87,11 +87,12 @@ share/examples/p5-Spreadsheet-WriteExcel/unicode_big5.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_cp1251.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_cp1256.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_cyrillic.pl
-share/examples/p5-Spreadsheet-WriteExcel/unicode_japan.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_koi8r.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_list.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_polish_utf8.pl
 share/examples/p5-Spreadsheet-WriteExcel/unicode_shift_jis.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_utf16.pl
+share/examples/p5-Spreadsheet-WriteExcel/unicode_utf16_japan.pl
 share/examples/p5-Spreadsheet-WriteExcel/win32ole.pl
 share/examples/p5-Spreadsheet-WriteExcel/writeA1.pl
 share/examples/p5-Spreadsheet-WriteExcel/write_arrays.pl
