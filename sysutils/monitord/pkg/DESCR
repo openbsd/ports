@@ -1,0 +1,20 @@
+Monitord is a compact Perl-based tool for watching the health of UNIX
+systems.  Monitord monitors the local system by watching the process
+table, load average figures, the amount of free space in file systems,
+and the output of custom monitoring scripts.
+
+Monitord is not tied to any system management framework (e.g., HP
+OpenView), and executes custom commands for producing its output.
+Therefore, monitord can be plugged in to any existing monitoring
+framework, provided the framework has a reasonable API, or used as a
+standalone tool.
+
+Monitord's configuration file resembles the configuration file of the
+Net-SNMP agent, except a number of additional parameters.  However,
+unlike any SNMP agent, monitord does not have to be polled for getting
+results, but it rather produces asynchronous output events which is a
+more scalable approach.  Monitord is also able to generate periodic
+keepalive events, so its own health can be monitored by another
+applicaton.
+
+For more information, read the output of monitord --help.
