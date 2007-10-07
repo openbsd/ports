@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_digitemp_c,v 1.1.1.1 2007/10/07 09:42:03 sturm Exp $
+--- src/digitemp.c.orig	Sat Mar 17 16:49:27 2007
++++ src/digitemp.c	Sat Mar 17 16:49:40 2007
+@@ -73,7 +73,11 @@
+ #include <fcntl.h>
+ #include <strings.h>
+ #include <stdint.h>
++#ifdef OPENBSD
++#include <sys/endian.h>
++#else
+ #include <endian.h>
++#endif
+ 
+ #ifdef LINUX
+ #ifndef OWUSB

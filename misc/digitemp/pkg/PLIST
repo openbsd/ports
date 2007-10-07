@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/07 09:42:03 sturm Exp $
+bin/digitemp_DS2490
+bin/digitemp_DS9097
+bin/digitemp_DS9097U
+@man man/man1/digitemp.1
+share/doc/digitemp/
+share/doc/digitemp/FAQ
+share/doc/digitemp/README
