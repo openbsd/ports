@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2007/09/21 05:55:27 bernd Exp $
+# $OpenBSD: Makefile,v 1.136 2007/10/07 09:54:27 sturm Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -49,6 +49,7 @@
      SUBDIR += mergemaster
      SUBDIR += modlogan
      SUBDIR += monit
+     SUBDIR += monitord
      SUBDIR += mtools
      SUBDIR += multitail
      SUBDIR += ncdu
