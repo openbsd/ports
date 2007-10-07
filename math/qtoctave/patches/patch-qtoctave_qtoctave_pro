@@ -1,0 +1,18 @@
+$OpenBSD: patch-qtoctave_qtoctave_pro,v 1.1.1.1 2007/10/07 18:37:01 steven Exp $
+--- qtoctave/qtoctave.pro.orig	Sun Oct  7 19:35:02 2007
++++ qtoctave/qtoctave.pro	Sun Oct  7 19:35:34 2007
+@@ -51,12 +51,12 @@ SOURCES += autocomplete.cpp \
+            operations/table_plot.cpp
+ DEFINES+=USER_CONFIG
+ QT+=xml
+-qtoctave_help.path = /home/lucas/usr//share/qtoctave/qtoctave_doc/
++qtoctave_help.path = !!QTOCTHELP_PATH!!
+ qtoctave_help.files = ./qtoctave_doc/*
+ INSTALLS+=qtoctave_help
+ octave_help.path = /home/lucas/usr//share/qtoctave/octave_doc/
+ octave_help.files = ./octave_doc/*
+-INSTALLS+=octave_help
++#INSTALLS+=octave_help
+ images.path = /home/lucas/usr//share/qtoctave/images/
+ images.files = ./images/*
+ INSTALLS+=images

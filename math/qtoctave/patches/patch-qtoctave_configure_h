@@ -1,0 +1,11 @@
+$OpenBSD: patch-qtoctave_configure_h,v 1.1.1.1 2007/10/07 18:37:01 steven Exp $
+--- qtoctave/configure.h.orig	Tue Jun 12 09:01:23 2007
++++ qtoctave/configure.h	Sun Oct  7 19:36:11 2007
+@@ -1,5 +1,5 @@
+ #define CONFIG_PATH "/home/lucas/usr//share/qtoctave"
+ #define ICON_PATH "/home/lucas/usr//share/qtoctave/images"
+-#define QTOCTAVE_HELP_PATH "/home/lucas/usr//share/qtoctave/qtoctave_doc/index.html"
+-#define HELP_PATH "/home/lucas/usr//share/qtoctave/octave_doc/octave.html"
++#define QTOCTAVE_HELP_PATH "!!QTOCTHELP_PATH!!"
++#define HELP_PATH "!!OCTHELP_PATH!!"
+ 
