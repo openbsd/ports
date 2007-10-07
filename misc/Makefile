@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2007/10/03 14:08:59 chl Exp $
+# $OpenBSD: Makefile,v 1.103 2007/10/07 09:42:45 sturm Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -18,6 +18,7 @@
      SUBDIR += deco
      SUBDIR += delay
      SUBDIR += dialog
+     SUBDIR += digitemp
      SUBDIR += dnetc
      SUBDIR += dtach
      SUBDIR += figlet
