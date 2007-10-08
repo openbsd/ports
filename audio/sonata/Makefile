@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/02 15:18:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:39 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	elegant music player for MPD
 
 DISTNAME=	sonata-1.2.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://sonata.berlios.de/

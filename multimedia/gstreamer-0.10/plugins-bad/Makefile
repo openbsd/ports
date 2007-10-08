@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:41 steven Exp $
 
 COMMENT-main=		multimedia framework - plugins bad
 COMMENT-tremor=		multimedia framework - tremor plugin
@@ -15,18 +15,18 @@ COMMENT-swf=		multimedia framework - flash plugin
 
 V=			0.10.4
 DISTNAME=		gst-plugins-bad-$V
-PKGNAME-main=		gstreamer-plugins-bad-$V
-PKGNAME-tremor=		gstreamer-tremor-$V
-PKGNAME-musepack=	gstreamer-musepack-$V
-PKGNAME-faac=		gstreamer-faac-$V
-PKGNAME-faad=		gstreamer-faad-$V
-PKGNAME-xvid=		gstreamer-xvid-$V
-PKGNAME-sdl=		gstreamer-sdl-$V
-PKGNAME-bz2=		gstreamer-bz2-$V
-PKGNAME-gsm=		gstreamer-gsm-$V
-PKGNAME-ladspa=		gstreamer-ladspa-$V
-PKGNAME-neon=		gstreamer-neon-$V
-PKGNAME-swf=		gstreamer-flash-$V
+PKGNAME-main=		gstreamer-plugins-bad-$Vp0
+PKGNAME-tremor=		gstreamer-tremor-$Vp0
+PKGNAME-musepack=	gstreamer-musepack-$Vp0
+PKGNAME-faac=		gstreamer-faac-$Vp0
+PKGNAME-faad=		gstreamer-faad-$Vp0
+PKGNAME-xvid=		gstreamer-xvid-$Vp0
+PKGNAME-sdl=		gstreamer-sdl-$Vp0
+PKGNAME-bz2=		gstreamer-bz2-$Vp0
+PKGNAME-gsm=		gstreamer-gsm-$Vp0
+PKGNAME-ladspa=		gstreamer-ladspa-$Vp0
+PKGNAME-neon=		gstreamer-neon-$Vp0
+PKGNAME-swf=		gstreamer-flash-$Vp0
 MULTI_PACKAGES=		-main -tremor -musepack -faac -faad -xvid -sdl -bz2 \
 			-gsm -ladspa 
 

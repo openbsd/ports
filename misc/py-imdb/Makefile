@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/08 08:22:41 steven Exp $
 
 COMMENT=	Python package to retrieve data of the IMDb movie database
 
 V=		2.0
 DISTNAME=	IMDbPY-${V}
-PKGNAME=	py-imdb-${V}p0
+PKGNAME=	py-imdb-${V}p1
 CATEGORIES=	misc
 
 HOMEPAGE=	http://imdbpy.sourceforge.net/

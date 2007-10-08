@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/18 18:33:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/08 08:22:41 steven Exp $
 
 COMMENT-main=		multimedia framework - good plugins
 COMMENT-aalib=		multimedia framework - aalib plugin
@@ -17,20 +17,20 @@ COMMENT-shout=		multimedia framework - shoutcast plugin
 
 V=			0.10.5
 DISTNAME=		gst-plugins-good-$V
-PKGNAME-main=		gstreamer-plugins-good-$V
-PKGNAME-aalib=		gstreamer-aalib-$V
-PKGNAME-cairo=		gstreamer-cairo-$Vp0
-PKGNAME-gconf=		gstreamer-confelements-$Vp0
-PKGNAME-esd=		gstreamer-esd-$V
-PKGNAME-flac=		gstreamer-flac-$Vp0
-PKGNAME-speex=		gstreamer-speex-$V
-PKGNAME-taglib=		gstreamer-taglib-$V
-PKGNAME-dv=		gstreamer-dv-$V
-PKGNAME-jpeg=		gstreamer-jpeg-$V
-PKGNAME-png=		gstreamer-png-$V
-PKGNAME-gdk=		gstreamer-gdk-pixbuf-$Vp0
-PKGNAME-caca=		gstreamer-libcaca-$V
-PKGNAME-shout=		gstreamer-shoutcast-$V
+PKGNAME-main=		gstreamer-plugins-good-$Vp0
+PKGNAME-aalib=		gstreamer-aalib-$Vp0
+PKGNAME-cairo=		gstreamer-cairo-$Vp1
+PKGNAME-gconf=		gstreamer-confelements-$Vp1
+PKGNAME-esd=		gstreamer-esd-$Vp0
+PKGNAME-flac=		gstreamer-flac-$Vp1
+PKGNAME-speex=		gstreamer-speex-$Vp0
+PKGNAME-taglib=		gstreamer-taglib-$Vp0
+PKGNAME-dv=		gstreamer-dv-$Vp0
+PKGNAME-jpeg=		gstreamer-jpeg-$Vp0
+PKGNAME-png=		gstreamer-png-$Vp0
+PKGNAME-gdk=		gstreamer-gdk-pixbuf-$Vp1
+PKGNAME-caca=		gstreamer-libcaca-$Vp0
+PKGNAME-shout=		gstreamer-shoutcast-$Vp0
 
 
 MULTI_PACKAGES=		-main -aalib -cairo -gconf -esd -flac -speex \

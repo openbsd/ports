@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/23 19:28:15 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/08 08:22:42 steven Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -11,7 +11,7 @@ COMMENT-docs=		lilypond documentation
 VERSION=		2.10.33
 DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
-PKGNAME-main=		lilypond-${VERSION}
+PKGNAME-main=		lilypond-${VERSION}p0
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
 

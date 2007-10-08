@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 18:44:37 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:41 steven Exp $
 
 COMMENT=	Python interface to the gnuplot plotting program
 
 DISTNAME=	gnuplot-py-1.7
-PKGNAME=	py-${DISTNAME:S/py-//}p0
+PKGNAME=	py-${DISTNAME:S/py-//}p1
 CATEGORIES=	math graphics
 
 HOMEPAGE=	http://gnuplot-py.sourceforge.net/

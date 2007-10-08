@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/23 09:11:20 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/10/08 08:22:41 steven Exp $
 
 COMMENT=	3D creation software
 
 DISTNAME=	blender-2.45
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.blender.org/
@@ -19,7 +20,7 @@ MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
 		http://public.planetmirror.com/pub/blender/source/
 
-PYTHON_VER=	2.4
+PYTHON_VER=	2.5
 
 RUN_DEPENDS=	::graphics/tiff
 BUILD_DEPENDS=	:scons-*:devel/scons \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:41 steven Exp $
 
 COMMENT=	Python interface to Graphiz's Dot
 
 DISTNAME=	pydot-0.9.10
-PKGNAME=	${DISTNAME:S/py/py-/}
+PKGNAME=	${DISTNAME:S/py/py-/}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://dkbza.org/pydot.html

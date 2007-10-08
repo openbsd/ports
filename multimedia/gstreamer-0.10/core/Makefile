@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:41 steven Exp $
 
 COMMENT-main=		streaming media framework - core
 COMMENT-frontend=	streaming media framework - frontend commands
 
 V=			0.10.12
 
-PKGNAME-main=		gstreamer-$V
-PKGNAME-frontend=	gstreamer-frontend-$V
+PKGNAME-main=		gstreamer-$Vp0
+PKGNAME-frontend=	gstreamer-frontend-$Vp0
 
 DISTNAME=		gstreamer-$V
 

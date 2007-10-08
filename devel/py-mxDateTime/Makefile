@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/16 02:53:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2007/10/08 08:22:39 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Date and Time types for Python
 
 VERSION=	2.0.5
 DISTNAME=	egenix-mx-base-${VERSION}
-PKGNAME=	py-mxDateTime-${VERSION}p0
+PKGNAME=	py-mxDateTime-${VERSION}p1
 CATEGORIES=	devel
 
 MASTER_SITES=	http://www.lemburg.com/files/python/

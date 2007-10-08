@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:00 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:39 steven Exp $
 
 COMMENT=	small application for managing a LDAP address book
 
 DISTNAME=	directoryassistant-2.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	databases
 
 HOMEPAGE=	http://olivier.sessink.nl/directoryassistant/

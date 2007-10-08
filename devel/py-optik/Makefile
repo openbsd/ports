@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/16 02:53:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/08 08:22:39 steven Exp $
 
 COMMENT=	command line parsing library for Python
 
 VERSION=	1.3
 DISTNAME=	Optik-${VERSION}
-PKGNAME=	py-optik-${VERSION}p0
+PKGNAME=	py-optik-${VERSION}p1
 CATEGORIES=    	devel
 
 HOMEPAGE=	http://optik.sourceforge.net/

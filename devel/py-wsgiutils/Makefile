@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:40 steven Exp $
 
 COMMENT=		libraries for WSGI development
 
 V=			0.7
 DISTNAME=		WSGIUtils-${V}
-PKGNAME=		py-wsgiutils-${V}
+PKGNAME=		py-wsgiutils-${V}p0
 
 CATEGORIES=		devel textproc www lang/python
 

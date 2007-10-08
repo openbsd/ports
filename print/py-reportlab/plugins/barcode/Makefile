@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:36:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:42 steven Exp $
 
 COMMENT=	barcode generator for reportlab
 
 VERSION=	0.9.2
 DISTNAME=	rlbarcode-${VERSION}
-PKGNAME=	py-reportlab-barcode-${VERSION}p0
+PKGNAME=	py-reportlab-barcode-${VERSION}p1
 
 MASTER_SITES=	http://www.reportlab.org/ftp/extensions/
 

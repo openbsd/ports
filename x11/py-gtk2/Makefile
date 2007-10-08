@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2007/10/08 08:22:44 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GTK+2 Python bindings
 
 V=		2.10.4
 DISTNAME=	pygtk-${V}
-PKGNAME=	py-gtk2-${V}
+PKGNAME=	py-gtk2-${V}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.pygtk.org/

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:44 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python bindings for wxWidgets C++ class library
 
 DISTNAME=	wxPython-src-2.6.3.2
-PKGNAME=	${DISTNAME:S/^/py-/:S/-src//}p0
+PKGNAME=	${DISTNAME:S/^/py-/:S/-src//}p1
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.wxpython.org/

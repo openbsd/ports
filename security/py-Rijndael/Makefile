@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2007/10/08 08:22:42 steven Exp $
 
 COMMENT=	Python implementation of the Rijndael encryption algorithm
 
 VERSION=	1.3
 DISTNAME=	pyrijndael-${VERSION}-src
-PKGNAME=	py-Rijndael-${VERSION}p0
+PKGNAME=	py-Rijndael-${VERSION}p1
 CATEGORIES=     security devel
 
 HOMEPAGE=	http://jclement.ca/software/pyrijndael/

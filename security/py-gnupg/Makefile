@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2007/10/08 08:22:42 steven Exp $
 
 COMMENT=	Python module for GnuPG interface
 
 VERSION=	0.3.2
 DISTNAME=	GnuPGInterface-${VERSION}
-PKGNAME=	py-gnupg-${VERSION}p0
+PKGNAME=	py-gnupg-${VERSION}p1
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://py-gnupg.sourceforge.net/

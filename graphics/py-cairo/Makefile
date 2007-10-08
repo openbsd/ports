@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/08 08:22:41 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	cairo bindings for Python
 
 V=		1.4.0
 DISTNAME=	pycairo-${V}
-PKGNAME=	py-cairo-${V}
+PKGNAME=	py-cairo-${V}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://cairographics.org/introduction/

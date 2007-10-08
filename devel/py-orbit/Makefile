@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/19 13:11:09 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2007/10/08 08:22:39 steven Exp $
 
 COMMENT=	ORBit2 Python bindings
 
 V=		2.14.3
 DISTNAME=	pyorbit-${V}
-PKGNAME=	py-orbit-${V}
+PKGNAME=	py-orbit-${V}p0
 CATEGORIES=	devel lang/python
 
 HOMEPAGE=	http://www.pygtk.org/

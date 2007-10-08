@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/05 13:38:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:39 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Python bindings for glib2 gobject
 
 V=		2.14.0
 DISTNAME=	pygobject-${V}
-PKGNAME=	py-gobject-${V}p0
+PKGNAME=	py-gobject-${V}p1
 CATEGORIES=	devel x11
 
 HOMEPAGE=	http://www.pygtk.org/

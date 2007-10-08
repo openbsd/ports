@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2007/10/04 07:08:23 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2007/10/08 08:22:41 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python imaging library
 
 DISTNAME=	Imaging-1.1.5
-PKGNAME=	py-${DISTNAME}p0
+PKGNAME=	py-${DISTNAME}p1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.pythonware.com/products/pil/

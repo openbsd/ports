@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/08 08:22:43 steven Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
 DISTNAME=	trac-0.10.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www devel
 
 MAINTAINER=	Ben Lovett <ben@tilderoot.com>

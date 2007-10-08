@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 01:40:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/08 08:22:39 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python unicode codecs for Chinese, Japanese and Korean
 
 DISTNAME=	cjkcodecs-1.1.1
-PKGNAME=	py-${DISTNAME}p1
+PKGNAME=	py-${DISTNAME}p2
 CATEGORIES=	converters
 
 HOMEPAGE=	http://cjkpython.berlios.de/

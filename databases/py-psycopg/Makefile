@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/15 20:34:02 simon Exp $
+# $OpenBSD: Makefile,v 1.28 2007/10/08 08:22:39 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,9 +7,9 @@ COMMENT-zope=	database adapter for Zope
 
 VERSION=	1.1.21
 DISTNAME=	psycopg-${VERSION}
-PKGNAME=	py-${DISTNAME}p3
-PKGNAME-main=	py-${DISTNAME}p3
-PKGNAME-zope=	py-psycopg-zope-${VERSION}p0
+PKGNAME=	py-${DISTNAME}p4
+PKGNAME-main=	py-${DISTNAME}p4
+PKGNAME-zope=	py-psycopg-zope-${VERSION}p1
 CATEGORIES=	databases
 
 HOMEPAGE=	http://initd.org/projects/psycopg1

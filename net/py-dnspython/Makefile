@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:42 steven Exp $
 
 COMMENT=		DNS toolkit for Python
 
 DISTNAME=		dnspython-1.5.0
-PKGNAME=		${DISTNAME:S/^/py-/}
+PKGNAME=		${DISTNAME:S/^/py-/}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.dnspython.org/

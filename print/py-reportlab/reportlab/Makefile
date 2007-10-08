@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 21:36:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/08 08:22:42 steven Exp $
 
 COMMENT=	PDF-generating toolkit for Python
 
 VERSION=	1.19
 DISTNAME=	ReportLab_${VERSION:S/./_/}
-PKGNAME=	py-reportlab-${VERSION}p1
+PKGNAME=	py-reportlab-${VERSION}p2
 CATEGORIES=	print graphics
 
 HOMEPAGE=	http://www.reportlab.org/rl_toolkit.html

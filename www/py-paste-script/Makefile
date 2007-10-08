@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:43 steven Exp $
 
 COMMENT=		pluggable command-line frontend
 
 V=			1.3.4
 DISTNAME=		PasteScript-${V}
-PKGNAME=		py-paste-script-${V}
+PKGNAME=		py-paste-script-${V}p0
 
 CATEGORIES=		www lang/python
 

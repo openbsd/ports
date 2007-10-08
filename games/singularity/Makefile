@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/08/31 06:23:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/08 08:22:41 steven Exp $
 
 COMMENT=	simulation of a true AI
 
 V=		0.26a
 DISTNAME=	singularity_${V}
-PKGNAME=	singularity-${V}
+PKGNAME=	singularity-${V}p0
 CATEGORIES=	games
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

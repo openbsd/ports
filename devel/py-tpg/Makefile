@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/08 08:22:40 steven Exp $
 
 COMMENT=	parser generator in Python
 
 DISTNAME=	TPG-3.1.0
-PKGNAME=	py-${DISTNAME:L}
+PKGNAME=	py-${DISTNAME:L}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://christophe.delord.free.fr/en/tpg/

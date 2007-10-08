@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/16 02:53:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2007/10/08 08:22:40 steven Exp $
 
 
 COMMENT=		unit testing framework for Python
 
 VERSION=		1.4.1
 DISTNAME=		pyunit-${VERSION}
-PKGNAME=		py-unit-${VERSION}p0
+PKGNAME=		py-unit-${VERSION}p1
 CATEGORIES=     	devel
 
 HOMEPAGE=		http://pyunit.sourceforge.net/

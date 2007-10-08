@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:40 steven Exp $
 
 COMMENT=	DNS protocol implementation
 
 CATEGORIES+=	net
 
 DISTNAME=	TwistedNames-0.3.0
-PKGNAME=	py-twisted-names-0.3.0
+PKGNAME=	py-twisted-names-0.3.0p0
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedNames
 

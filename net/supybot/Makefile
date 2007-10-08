@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:42 steven Exp $
 
 COMMENT=	cross-platform IRC bot written in Python
 
 DISTNAME=	Supybot-0.83.2
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	net devel
 
 HOMEPAGE=	http://supybot.com/

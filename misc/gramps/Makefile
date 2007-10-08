@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/13 20:03:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/08 08:22:41 steven Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
 DISTNAME=	gramps-2.2.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc x11
 
 HOMEPAGE=	http://www.gramps-project.org/

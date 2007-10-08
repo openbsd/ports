@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 21:14:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/08 08:22:43 steven Exp $
 
 COMMENT=	distributed command execution
 
 DISTNAME=	tentakel-2.1.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils
 MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 HOMEPAGE=	http://tentakel.biskalar.de/

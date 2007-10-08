@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:28:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:42 steven Exp $
 
 COMMENT=		Python-based presentation tool
 
 DISTNAME=		bruce-1.2
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		productivity python
 

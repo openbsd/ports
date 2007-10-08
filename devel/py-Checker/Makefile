@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2007/09/16 02:53:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.27 2007/10/08 08:22:39 steven Exp $
 
 COMMENT=	Python codes checker
 
 VERSION=	0.8.13
 DISTNAME=	pychecker-${VERSION}
-PKGNAME=	py-Checker-${VERSION}p0
+PKGNAME=	py-Checker-${VERSION}p1
 CATEGORIES=    	devel
 
 HOMEPAGE=	http://pychecker.sourceforge.net/

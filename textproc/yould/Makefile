@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/05 09:54:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/08 08:22:43 steven Exp $
 
 COMMENT=		generator for pronounceable random words
 
 DISTNAME=		yould-0.3.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://ygingras.net/yould

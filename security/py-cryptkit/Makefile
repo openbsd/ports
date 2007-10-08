@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/08 08:22:42 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python Cryptographic Toolkit
 
 DISTNAME=	cryptkit-0.9
-PKGNAME=	py-${DISTNAME}p0
+PKGNAME=	py-${DISTNAME}p1
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://eevolved.com/cryptkit/

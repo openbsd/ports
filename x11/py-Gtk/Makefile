@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2007/10/08 08:22:44 steven Exp $
 
 COMMENT=	Gtk bindings for Python
 
@@ -7,7 +7,7 @@ COMMENT=	Gtk bindings for Python
 # py-gnome's version number, even for py-gtk.
 
 V=		1.4.2		## For py-gtk, this really is 0.6.9
-PKGNAME=	py-Gtk-${V}p1
+PKGNAME=	py-Gtk-${V}p2
 DISTNAME=	gnome-python-${V}
 CATEGORIES=	x11 devel
 

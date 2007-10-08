@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:43 steven Exp $
 
 COMMENT=		tools for using web server gateway interface stack
 
 V=			1.3
 DISTNAME=		Paste-${V}
-PKGNAME=		py-paste-${V}
+PKGNAME=		py-paste-${V}p0
 
 CATEGORIES=		www lang/python
 

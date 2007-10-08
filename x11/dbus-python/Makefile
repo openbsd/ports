@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/08/29 16:31:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:43 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	dbus bindings for Python
 
 DISTNAME=	dbus-python-0.82.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}releases/dbus-python/
 

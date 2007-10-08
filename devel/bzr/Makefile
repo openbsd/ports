@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	distributed version control system by Canonical
 
 DISTNAME=	bzr-0.14
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://bazaar-vcs.org/

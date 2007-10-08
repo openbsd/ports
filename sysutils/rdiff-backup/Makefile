@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.2 2007/08/31 13:14:39 jsg Exp $
+#	$OpenBSD: Makefile,v 1.3 2007/10/08 08:22:42 steven Exp $
 
 COMMENT=	incremental backup
 DISTNAME=	rdiff-backup-1.0.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.nongnu.org/rdiff-backup/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>

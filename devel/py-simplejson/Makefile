@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:40 steven Exp $
 
 COMMENT=		JSON encoder/decoder
 
 DISTNAME=		simplejson-1.7.1
-PKGNAME=		py-${DISTNAME}
+PKGNAME=		py-${DISTNAME}p0
 
 CATEGORIES=		devel lang/python
 

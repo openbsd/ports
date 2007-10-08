@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/07/12 10:27:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2007/10/08 08:22:39 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 R=			1.10
 DISTNAME=		evolution-data-server-${R}.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		databases
 SHARED_LIBS +=	edataserver-1.2      9.0      # .9.0
 SHARED_LIBS +=	egroupwise-1.2       13.0     # .13.0

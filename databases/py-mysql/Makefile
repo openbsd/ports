@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/09/15 20:34:02 simon Exp $
+# $OpenBSD: Makefile,v 1.31 2007/10/08 08:22:39 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Python interface to MySQL
 
 VERSION=	1.2.2
 DISTNAME=	MySQL-python-${VERSION}
-PKGNAME=	py-mysql-${VERSION}p0
+PKGNAME=	py-mysql-${VERSION}p1
 CATEGORIES=	databases lang/python
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mysql-python/}

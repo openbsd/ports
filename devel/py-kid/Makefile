@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
 
 COMMENT=		template language for XML based vocabularies
 
 V=			0.9.5
 DISTNAME=		kid-${V}
-PKGNAME=		py-${DISTNAME}
+PKGNAME=		py-${DISTNAME}p0
 
 CATEGORIES=		devel lang/python
 

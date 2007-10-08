@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:40 steven Exp $
 
 COMMENT=	zope.interface package from Zope 3
 
 DISTNAME=	ZopeInterface-3.0.1
-PKGNAME=	py-${DISTNAME:L}
+PKGNAME=	py-${DISTNAME:L}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://zope.org/Products/ZopeInterface/

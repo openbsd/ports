@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/17 19:45:46 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:43 steven Exp $
 
 COMMENT=		web admin plugin for trac
 
 V=			0.1.2
 DISTNAME=		trac-adminplugin-${V}-svn6011
-PKGNAME=		trac-adminplugin-${V}
+PKGNAME=		trac-adminplugin-${V}p0
 CATEGORIES=		www devel
 
 MAINTAINER=		Michael Erdely <merdely@openbsd.org>

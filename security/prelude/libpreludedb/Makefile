@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/10/08 08:22:42 steven Exp $
 
 COMMENT-main=	Prelude framework database-access library
 COMMENT-pgsql=	PostgreSQL module for libpreludedb
@@ -8,10 +8,10 @@ COMMENT-sqlite=	SQLite3 module for libpreludedb
 VERSION=	0.9.13
 DISTNAME=	libpreludedb-${VERSION}
 
-PKGNAME-main=	prelude-libpreludedb-${VERSION}
-PKGNAME-pgsql=	prelude-libpreludedb-pgsql-${VERSION}
-PKGNAME-mysql=	prelude-libpreludedb-mysql-${VERSION}
-PKGNAME-sqlite=	prelude-libpreludedb-sqlite-${VERSION}
+PKGNAME-main=	prelude-libpreludedb-${VERSION}p0
+PKGNAME-pgsql=	prelude-libpreludedb-pgsql-${VERSION}p0
+PKGNAME-mysql=	prelude-libpreludedb-mysql-${VERSION}p0
+PKGNAME-sqlite=	prelude-libpreludedb-sqlite-${VERSION}p0
 
 MODULES=	lang/python \
 		devel/gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:43 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Gnome2 Python bindings
 
 GNOME_PROJECT=	gnome-python	
 GNOME_VERSION=	2.18.2
-PKGNAME=	py-gnome-${VERSION}
+PKGNAME=	py-gnome-${VERSION}p0
 
 HOMEPAGE=	http://www.pygtk.org/
 

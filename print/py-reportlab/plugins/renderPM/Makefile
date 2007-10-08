@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 21:36:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/10/08 08:22:42 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	pixmap rendering for reportlab
 
 VERSION=	0.9
 DISTNAME=	renderPM-${VERSION:S/./-/}
-PKGNAME=	py-reportlab-renderPM-${VERSION}p1
+PKGNAME=	py-reportlab-renderPM-${VERSION}p2
 
 MASTER_SITES=	http://www.reportlab.org/ftp/
 
