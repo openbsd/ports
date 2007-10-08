@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/08 07:15:46 jakob Exp $
 
 COMMENT=	DKIM milter
 
-DISTNAME=	dkim-milter-2.2.1
+DISTNAME=	dkim-milter-2.3.0
 PKGNAME=	${DISTNAME}
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dkim-milter/
