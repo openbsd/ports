@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.216 2007/10/06 18:10:17 simon Exp $
+# $OpenBSD: Makefile,v 1.217 2007/10/08 14:40:59 robert Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
      SUBDIR += agrep
      SUBDIR += antiword
+     SUBDIR += asciidoc
      SUBDIR += aspell
      SUBDIR += boust
      SUBDIR += c2html
