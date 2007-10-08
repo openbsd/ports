@@ -1,47 +1,18 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2003/05/11 18:24:49 naddy Exp $
---- src/Makefile.in.orig	Mon Nov 19 05:34:18 2001
-+++ src/Makefile.in	Sun May 11 12:14:43 2003
-@@ -75,7 +75,7 @@ uae: $(OBJS)
- 	$(CC) $(OBJS) -o uae $(GFXLDFLAGS) $(LDFLAGS) $(DEBUGFLAGS) $(LIBRARIES) $(MATHLIB)
- 
- clean:
--	$(MAKE) -C tools clean
-+	cd tools && ${MAKE} clean
- 	-rm -f $(OBJS) *.o uae readdisk
- 	-rm -f blit.h cpudefs.c
- 	-rm -f cpuemu.c build68k cputmp.s cpufast*.s cpustbl.c cputbl.h
-@@ -99,13 +99,13 @@ blittable.c: tools/genblitter blitfunc.h
+$OpenBSD: patch-src_Makefile_in,v 1.3 2007/10/08 13:45:53 fgsch Exp $
+--- src/Makefile.in.orig	Thu Oct  4 11:25:12 2007
++++ src/Makefile.in	Thu Oct  4 11:25:38 2007
+@@ -100,11 +100,11 @@ blittable.c: tools/genblitter blitfunc.h
  	./tools/genblitter t >blittable.c
  
  tools/genblitter:
 -	$(MAKE) -C tools genblitter
-+	cd tools && ${MAKE} genblitter
++	cd tools && $(MAKE) genblitter
  tools/build68k:
 -	$(MAKE) -C tools build68kc
-+	cd tools && ${MAKE} build68kc
- tools/cpuopti:
--	$(MAKE) -C tools cpuopti
-+	cd tools && ${MAKE} cpuopti
++	cd tools && $(MAKE) build68kc
  tools/gencpu: 
 -	$(MAKE) -C tools gencpu
-+	cd tools && ${MAKE} gencpu
++	cd tools && $(MAKE) gencpu
  
  custom.o: blit.h
  drawing.o: linetoscr.c
-@@ -120,13 +120,11 @@ cpuemu.c: tools/gencpu
- cpustbl.c: cpuemu.c
- cputbl.h: cpuemu.c
- 
--cpufast.s: cpuemu.c tools/cpuopti
--	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) $< -o cputmp.s
--	./tools/cpuopti <cputmp.s >$@
--	rm cputmp.s
-+cpufast.s: cpuemu.c
-+	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) cpuemu.c -o $@
- 
- console_missing.o: missing.c
--	$(CC) $(INCLUDES) -c $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(CFLAGS_$@) $< -o $@
-+	$(CC) $(INCLUDES) -c $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(CFLAGS_$@) $? -o $@
- 
- osdep/beos.o: osdep/beos.cpp
- 	$(CC) $(INCLUDES) -c $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) osdep/beos.cpp -o osdep/beos.o

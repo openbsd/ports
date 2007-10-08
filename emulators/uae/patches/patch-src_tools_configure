@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_tools_configure,v 1.1 2007/10/08 13:45:53 fgsch Exp $
+--- src/tools/configure.orig	Thu Oct  4 12:07:07 2007
++++ src/tools/configure	Thu Oct  4 12:07:34 2007
+@@ -734,17 +734,9 @@ echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
+ if test "$ac_test_CFLAGS" = set; then
+   CFLAGS="$ac_save_CFLAGS"
+ elif test $ac_cv_prog_cc_g = yes; then
+-  if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
+-  else
+-    CFLAGS="-g"
+-  fi
++  CFLAGS="-g"
+ else
+-  if test "$GCC" = yes; then
+-    CFLAGS="-O2"
+-  else
+-    CFLAGS=
+-  fi
++  CFLAGS=
+ fi
+ 
+ 

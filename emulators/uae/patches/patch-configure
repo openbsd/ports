@@ -1,9 +1,29 @@
-$OpenBSD: patch-configure,v 1.1 2003/05/11 18:24:49 naddy Exp $
---- configure.orig	Sun May 11 12:11:59 2003
-+++ configure	Sun May 11 12:12:54 2003
-@@ -6082,8 +6082,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2007/10/08 13:45:53 fgsch Exp $
+--- configure.orig	Fri Jul  1 14:00:17 2005
++++ configure	Thu Oct  4 12:03:59 2007
+@@ -1973,17 +1973,9 @@ echo "${ECHO_T}$ac_cv_prog_cc_g" >&6
+ if test "$ac_test_CFLAGS" = set; then
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+-  if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
+-  else
+-    CFLAGS="-g"
+-  fi
++  CFLAGS="-g"
+ else
+-  if test "$GCC" = yes; then
+-    CFLAGS="-O2"
+-  else
+-    CFLAGS=
+-  fi
++  CFLAGS=
+ fi
+ echo "$as_me:$LINENO: checking for $CC option to accept ANSI C" >&5
+ echo $ECHO_N "checking for $CC option to accept ANSI C... $ECHO_C" >&6
+@@ -13858,8 +13850,7 @@ fi
  
- if test $ac_cv_prog_gcc = yes; then
+ if test $ac_cv_c_compiler_gnu = yes; then
    WARNING_CFLAGS="-Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
 -  OPTIMIZE_CFLAGS="-O2 -fomit-frame-pointer"
 -    CFLAGS=
