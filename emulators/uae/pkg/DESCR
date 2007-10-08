@@ -4,3 +4,7 @@ to do this. The hardware of an Amiga is emulated accurately, so that Amiga
 software is tricked into thinking it is running on the real thing, with
 your computer's display, keyboard, harddisk and mouse taking the parts of
 their emulated counterparts.
+
+Available flavors:
+
+	sdl: use SDL for sound and low-level functions

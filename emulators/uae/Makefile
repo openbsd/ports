@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/10/08 13:45:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/08 18:49:54 fgsch Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	emulators x11
 
 HOMEPAGE=	http://uae.coresystems.de/
@@ -24,6 +25,14 @@ LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-dga --enable-vidmode
+
+FLAVORS=	sdl
+FLAVOR?=
+
+.if ${FLAVOR:L:Msdl}
+CONFIGURE_ARGS+=	--with-sdl-sound
+LIB_DEPENDS+=		SDL::devel/sdl
+.endif
 
 NO_REGRESS=	Yes
 

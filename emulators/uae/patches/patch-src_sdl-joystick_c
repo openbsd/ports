@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_sdl-joystick_c,v 1.1 2007/10/08 18:49:54 fgsch Exp $
+--- src/sdl-joystick.c.orig	Mon Oct  8 15:39:58 2007
++++ src/sdl-joystick.c	Mon Oct  8 15:40:24 2007
+@@ -27,29 +27,14 @@ struct joyinfo {
+ 
+ static struct joyinfo joys[MAX_INPUT_DEVICES];
+ 
+-static int isjoy (int pcport, int amigaport)
+-{
+-    if (pcport == 0)
+-	return JSEM_ISJOY0 (amigaport, &currprefs);
+-    else
+-	return JSEM_ISJOY1 (amigaport, &currprefs);
+-}
+-
+ static void read_joy(int nr)
+ {
+     int num, i, axes, axis;
+     SDL_Joystick *joy;
+ 
+     if (currprefs.input_selected_setting == 0) {
+-	if (nr >= 2)
+-	    return;
+-	if (isjoy (nr, 0)) {
+-	    if (JSEM_ISNUMPAD (0, &currprefs) || JSEM_ISCURSOR (0, &currprefs) || JSEM_ISSOMEWHEREELSE (0, &currprefs))
+-		return;
+-	} else if (isjoy (nr, 1)) {
+-	    if (JSEM_ISNUMPAD (1, &currprefs) || JSEM_ISCURSOR (1, &currprefs) || JSEM_ISSOMEWHEREELSE (1, &currprefs))
+-		return;
+-	} else
++        if (jsem_isjoy (0, &currprefs) != (int)nr && jsem_isjoy (1, &currprefs)
++!= (int)nr)
+ 	    return;
+     }
+     joy = joys[nr].joy;
