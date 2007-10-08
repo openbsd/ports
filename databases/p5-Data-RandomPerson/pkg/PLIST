@@ -1,0 +1,72 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/08 14:10:24 steven Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/RandomPerson/
+${P5SITE}/Data/RandomPerson.pm
+${P5SITE}/Data/RandomPerson/Choice.pm
+${P5SITE}/Data/RandomPerson/Names/
+${P5SITE}/Data/RandomPerson/Names.pm
+${P5SITE}/Data/RandomPerson/Names/AncientGreekFemale.pm
+${P5SITE}/Data/RandomPerson/Names/AncientGreekMale.pm
+${P5SITE}/Data/RandomPerson/Names/ArabicFemale.pm
+${P5SITE}/Data/RandomPerson/Names/ArabicLast.pm
+${P5SITE}/Data/RandomPerson/Names/ArabicMale.pm
+${P5SITE}/Data/RandomPerson/Names/BasqueFemale.pm
+${P5SITE}/Data/RandomPerson/Names/BasqueMale.pm
+${P5SITE}/Data/RandomPerson/Names/CelticFemale.pm
+${P5SITE}/Data/RandomPerson/Names/CelticMale.pm
+${P5SITE}/Data/RandomPerson/Names/EnglishFemale.pm
+${P5SITE}/Data/RandomPerson/Names/EnglishLast.pm
+${P5SITE}/Data/RandomPerson/Names/EnglishMale.pm
+${P5SITE}/Data/RandomPerson/Names/Female.pm
+${P5SITE}/Data/RandomPerson/Names/HindiFemale.pm
+${P5SITE}/Data/RandomPerson/Names/HindiMale.pm
+${P5SITE}/Data/RandomPerson/Names/JapaneseFemale.pm
+${P5SITE}/Data/RandomPerson/Names/JapaneseMale.pm
+${P5SITE}/Data/RandomPerson/Names/Last.pm
+${P5SITE}/Data/RandomPerson/Names/LatvianFemale.pm
+${P5SITE}/Data/RandomPerson/Names/LatvianMale.pm
+${P5SITE}/Data/RandomPerson/Names/Male.pm
+${P5SITE}/Data/RandomPerson/Names/ModernGreekFemale.pm
+${P5SITE}/Data/RandomPerson/Names/ModernGreekLast.pm
+${P5SITE}/Data/RandomPerson/Names/ModernGreekMale.pm
+${P5SITE}/Data/RandomPerson/Names/SpanishFemale.pm
+${P5SITE}/Data/RandomPerson/Names/SpanishLast.pm
+${P5SITE}/Data/RandomPerson/Names/SpanishMale.pm
+${P5SITE}/Data/RandomPerson/Names/ThaiFemale.pm
+${P5SITE}/Data/RandomPerson/Names/ThaiMale.pm
+${P5SITE}/Data/RandomPerson/Names/VikingFemale.pm
+${P5SITE}/Data/RandomPerson/Names/VikingMale.pm
+@man man/man3p/Data::RandomPerson.3p
+@man man/man3p/Data::RandomPerson::Choice.3p
+@man man/man3p/Data::RandomPerson::Names.3p
+@man man/man3p/Data::RandomPerson::Names::AncientGreekFemale.3p
+@man man/man3p/Data::RandomPerson::Names::AncientGreekMale.3p
+@man man/man3p/Data::RandomPerson::Names::ArabicFemale.3p
+@man man/man3p/Data::RandomPerson::Names::ArabicLast.3p
+@man man/man3p/Data::RandomPerson::Names::ArabicMale.3p
+@man man/man3p/Data::RandomPerson::Names::BasqueFemale.3p
+@man man/man3p/Data::RandomPerson::Names::BasqueMale.3p
+@man man/man3p/Data::RandomPerson::Names::CelticFemale.3p
+@man man/man3p/Data::RandomPerson::Names::CelticMale.3p
+@man man/man3p/Data::RandomPerson::Names::EnglishFemale.3p
+@man man/man3p/Data::RandomPerson::Names::EnglishLast.3p
+@man man/man3p/Data::RandomPerson::Names::EnglishMale.3p
+@man man/man3p/Data::RandomPerson::Names::Female.3p
+@man man/man3p/Data::RandomPerson::Names::HindiFemale.3p
+@man man/man3p/Data::RandomPerson::Names::HindiMale.3p
+@man man/man3p/Data::RandomPerson::Names::JapaneseFemale.3p
+@man man/man3p/Data::RandomPerson::Names::JapaneseMale.3p
+@man man/man3p/Data::RandomPerson::Names::Last.3p
+@man man/man3p/Data::RandomPerson::Names::LatvianFemale.3p
+@man man/man3p/Data::RandomPerson::Names::LatvianMale.3p
+@man man/man3p/Data::RandomPerson::Names::Male.3p
+@man man/man3p/Data::RandomPerson::Names::ModernGreekFemale.3p
+@man man/man3p/Data::RandomPerson::Names::ModernGreekLast.3p
+@man man/man3p/Data::RandomPerson::Names::ModernGreekMale.3p
+@man man/man3p/Data::RandomPerson::Names::SpanishFemale.3p
+@man man/man3p/Data::RandomPerson::Names::SpanishLast.3p
+@man man/man3p/Data::RandomPerson::Names::SpanishMale.3p
+@man man/man3p/Data::RandomPerson::Names::ThaiFemale.3p
+@man man/man3p/Data::RandomPerson::Names::ThaiMale.3p
+@man man/man3p/Data::RandomPerson::Names::VikingFemale.3p
+@man man/man3p/Data::RandomPerson::Names::VikingMale.3p
