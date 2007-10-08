@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_ratpoison_1,v 1.1 2007/10/08 19:55:53 kili Exp $
+
+C-t q isn't bound. Noticed by merdely@.
+
+--- doc/ratpoison.1.orig	Sun Oct  7 06:07:16 2007
++++ doc/ratpoison.1	Mon Oct  8 21:49:18 2007
+@@ -153,9 +153,6 @@ key bindings start with an escape key, per default
+ (read Control\-t).
+ Some important default key bindings:
+ .PP
+-.B C\-t q
+-Quit ratpoison
+-.br
+ .B C\-t ?\&
+ Show key bindings
+ .br
