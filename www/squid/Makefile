@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.89 2007/09/10 17:49:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.90 2007/10/08 07:04:50 aanriot Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
 DISTNAME=	squid-2.6.STABLE16
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}Versions/v2/2.6/
 DIST_SUBDIR=	squid
@@ -46,7 +47,8 @@ CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
 		--enable-removal-policies="lru heap" \
 		--enable-ssl \
 		--enable-storeio="ufs diskd null" \
-		--localstatedir="${SQUIDDIR}"
+		--localstatedir="${SQUIDDIR}" \
+		--enable-follow-x-forwarded-for
 
 .if ${FLAVOR:L:Mtransparent}
 CONFIGURE_ARGS+=--enable-pf-transparent
