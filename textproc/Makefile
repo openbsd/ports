@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2007/10/08 14:40:59 robert Exp $
+# $OpenBSD: Makefile,v 1.218 2007/10/08 15:24:58 steven Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -122,6 +122,7 @@
      SUBDIR += p5-Text-CSV_XS
      SUBDIR += p5-Text-Diff
      SUBDIR += p5-Text-Diff-HTML
+     SUBDIR += p5-Text-DoubleMetaphone
      SUBDIR += p5-Text-German
      SUBDIR += p5-Text-Glob
      SUBDIR += p5-Text-LevenshteinXS
