@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2007/08/02 03:35:22 david Exp $
+# $OpenBSD: Makefile,v 1.123 2007/10/08 14:12:50 steven Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -67,6 +67,7 @@
      SUBDIR += p5-DBIx-XHTML_Table
      SUBDIR += p5-Data-Page
      SUBDIR += p5-Data-Pageset
+     SUBDIR += p5-Data-RandomPerson
      SUBDIR += p5-GDBM_File
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-Jifty-DBI
