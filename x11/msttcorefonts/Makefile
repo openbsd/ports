@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 11:14:46 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2007/10/08 05:16:08 ajacoutot Exp $
 
 COMMENT=		Microsoft TrueType core fonts
 
-DISTNAME=		msttcorefonts-1.2
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		msttcorefonts-2.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://corefonts.sourceforge.net/
@@ -26,7 +25,7 @@ NO_REGRESS=		Yes
 PKG_ARCH=		*
 
 DISTFILES=		andale32.exe \
-	 		arial32.exe \
+			arial32.exe \
 			arialb32.exe \
 			comic32.exe \
 			courie32.exe \
@@ -35,12 +34,16 @@ DISTFILES=		andale32.exe \
 			times32.exe \
 			trebuc32.exe \
 			verdan32.exe \
+			wd97vwr32.exe \
 			webdin32.exe
 
 INST_DIR=		${PREFIX}/lib/X11/fonts/mscorefonts
 
 EXTRACT_CASES=		*.exe) cabextract --lowercase --quiet \
 			--directory=${WRKDIST} ${FULLDISTDIR}/$$archive ;;
+
+post-extract:
+	@cabextract --lowercase --directory=${WRKDIST} ${WRKDIST}/viewer1.cab
 
 do-install:
 	${INSTALL_DATA_DIR} ${INST_DIR}

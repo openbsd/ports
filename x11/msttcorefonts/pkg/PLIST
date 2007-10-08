@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/07/22 08:03:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/10/08 05:16:08 ajacoutot Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/mscorefonts/
 lib/X11/fonts/mscorefonts/andalemo.ttf
@@ -19,6 +19,7 @@ lib/X11/fonts/mscorefonts/georgiab.ttf
 lib/X11/fonts/mscorefonts/georgiai.ttf
 lib/X11/fonts/mscorefonts/georgiaz.ttf
 lib/X11/fonts/mscorefonts/impact.ttf
+lib/X11/fonts/mscorefonts/tahoma.ttf
 lib/X11/fonts/mscorefonts/times.ttf
 lib/X11/fonts/mscorefonts/timesbd.ttf
 lib/X11/fonts/mscorefonts/timesbi.ttf
