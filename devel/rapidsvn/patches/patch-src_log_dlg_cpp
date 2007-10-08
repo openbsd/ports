@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_log_dlg_cpp,v 1.1 2007/10/08 20:38:17 steven Exp $
+--- src/log_dlg.cpp.orig	Fri Dec  8 18:47:07 2006
++++ src/log_dlg.cpp	Mon Oct  8 13:01:47 2007
+@@ -32,6 +32,7 @@
+ #include "wx/valgen.h"
+ #include "wx/listctrl.h"
+ #include "wx/splitter.h"
++#include "wx/notebook.h"
+ 
+ 
+ // svncpp

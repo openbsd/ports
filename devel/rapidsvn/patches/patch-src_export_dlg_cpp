@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_export_dlg_cpp,v 1.1 2007/10/08 20:38:17 steven Exp $
+--- src/export_dlg.cpp.orig	Fri Dec  8 18:47:07 2006
++++ src/export_dlg.cpp	Mon Oct  8 13:01:47 2007
+@@ -295,7 +295,6 @@ struct ExportDlg::Data (public)
+ 
+ BEGIN_EVENT_TABLE (ExportDlg, wxDialog)
+   EVT_BUTTON (ID_BUTTON_BROWSE, ExportDlg::OnBrowse)
+-  EVT_BUTTON (wxID_OK, ExportDlg::OnOK)
+   EVT_CHECKBOX (ID_USE_LATEST, ExportDlg::OnUseLatest)
+   EVT_CHECKBOX (ID_NOT_SPECIFIED, ExportDlg::OnNotSpecified)
+   EVT_COMBOBOX (ID_NATIVE_EOL, ExportDlg::OnNativeEol)

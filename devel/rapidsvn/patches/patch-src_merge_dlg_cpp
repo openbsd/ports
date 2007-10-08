@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_merge_dlg_cpp,v 1.1 2007/10/08 20:38:17 steven Exp $
+--- src/merge_dlg.cpp.orig	Mon Oct  8 13:03:19 2007
++++ src/merge_dlg.cpp	Mon Oct  8 13:03:33 2007
+@@ -113,7 +113,7 @@ MergeDlg::OnOK (wxCommandEvent & event)
+     }
+   }
+ 
+-  wxDialog::OnOK(event);
++  wxDialog::EndModal (wxID_OK);
+ }
+ 
+ void

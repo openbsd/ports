@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_import_dlg_cpp,v 1.1 2007/10/08 20:38:17 steven Exp $
+--- src/import_dlg.cpp.orig	Mon Oct  8 13:03:12 2007
++++ src/import_dlg.cpp	Mon Oct  8 13:03:33 2007
+@@ -196,7 +196,7 @@ ImportDlg::OnOk (wxCommandEvent &event)
+     }
+   }
+ 
+-  wxDialog::OnOK(event);
++  wxDialog::EndModal (wxID_OK);
+ }
+ 
+ void

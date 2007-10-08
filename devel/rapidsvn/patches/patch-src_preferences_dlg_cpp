@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_preferences_dlg_cpp,v 1.1 2007/10/08 20:38:17 steven Exp $
+--- src/preferences_dlg.cpp.orig	Mon Oct  8 13:03:28 2007
++++ src/preferences_dlg.cpp	Mon Oct  8 13:03:33 2007
+@@ -114,10 +114,8 @@ class ProgramsPanel : public wxPanel (public)
+    */
+   bool SelectExecutable (const wxString & title, wxTextCtrl * textCtrl)
+   {
+-    wxFileDialog dlg (this, title);
+-
+-    dlg.SetStyle (wxHIDE_READONLY | wxOPEN);
+-    dlg.SetWildcard (EXECUTABLE_WILDCARD);
++    wxFileDialog dlg (this, title, wxEmptyString, wxEmptyString, 
++                      EXECUTABLE_WILDCARD, wxOPEN);
+     dlg.SetPath (textCtrl->GetValue ());
+ 
+     if (dlg.ShowModal () != wxID_OK)

@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_add_action_cpp,v 1.1 2007/10/08 20:38:17 steven Exp $
+--- src/add_action.cpp.orig	Fri Dec  8 18:47:07 2006
++++ src/add_action.cpp	Mon Oct  8 13:01:47 2007
+@@ -23,11 +23,11 @@
+  * ====================================================================
+  */
+ 
+-// svncpp
+-#include "svncpp/client.hpp"
+-
+ // wxWidgets
+ #include "wx/intl.h"
++
++// svncpp
++#include "svncpp/client.hpp"
+ 
+ // app
+ #include "ids.hpp"
