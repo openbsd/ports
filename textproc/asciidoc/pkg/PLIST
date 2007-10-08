@@ -1,0 +1,133 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/08 14:39:04 robert Exp $
+bin/a2x
+bin/asciidoc
+@man man/man1/a2x.1
+@man man/man1/asciidoc.1
+share/examples/asciidoc/
+@sample ${SYSCONFDIR}/asciidoc/
+share/examples/asciidoc/asciidoc.conf
+@sample ${SYSCONFDIR}/asciidoc/asciidoc.conf
+share/examples/asciidoc/docbook-xsl/
+@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/
+share/examples/asciidoc/docbook-xsl/chunked.xsl
+@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/chunked.xsl
+share/examples/asciidoc/docbook-xsl/common.xsl
+@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/common.xsl
+share/examples/asciidoc/docbook-xsl/fo.xsl
+@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/fo.xsl
+share/examples/asciidoc/docbook-xsl/htmlhelp.xsl
+@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/htmlhelp.xsl
+share/examples/asciidoc/docbook-xsl/manpage.xsl
+@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/manpage.xsl
+share/examples/asciidoc/docbook-xsl/xhtml.xsl
+@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/xhtml.xsl
+share/examples/asciidoc/docbook.conf
+@sample ${SYSCONFDIR}/asciidoc/docbook.conf
+share/examples/asciidoc/filters/
+@sample ${SYSCONFDIR}/asciidoc/filters/
+share/examples/asciidoc/filters/code-filter.conf
+@sample ${SYSCONFDIR}/asciidoc/filters/code-filter.conf
+share/examples/asciidoc/filters/code-filter.py
+@sample ${SYSCONFDIR}/asciidoc/filters/code-filter.py
+share/examples/asciidoc/filters/music-filter.conf
+@sample ${SYSCONFDIR}/asciidoc/filters/music-filter.conf
+share/examples/asciidoc/filters/music2png.py
+@sample ${SYSCONFDIR}/asciidoc/filters/music2png.py
+share/examples/asciidoc/filters/source-highlight-filter.conf
+@sample ${SYSCONFDIR}/asciidoc/filters/source-highlight-filter.conf
+share/examples/asciidoc/help.conf
+@sample ${SYSCONFDIR}/asciidoc/help.conf
+share/examples/asciidoc/html4.conf
+@sample ${SYSCONFDIR}/asciidoc/html4.conf
+share/examples/asciidoc/images/
+@sample ${SYSCONFDIR}/asciidoc/images/
+share/examples/asciidoc/images/icons/
+@sample ${SYSCONFDIR}/asciidoc/images/icons/
+share/examples/asciidoc/images/icons/callouts/
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/
+share/examples/asciidoc/images/icons/callouts/1.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/1.png
+share/examples/asciidoc/images/icons/callouts/10.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/10.png
+share/examples/asciidoc/images/icons/callouts/11.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/11.png
+share/examples/asciidoc/images/icons/callouts/12.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/12.png
+share/examples/asciidoc/images/icons/callouts/13.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/13.png
+share/examples/asciidoc/images/icons/callouts/14.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/14.png
+share/examples/asciidoc/images/icons/callouts/15.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/15.png
+share/examples/asciidoc/images/icons/callouts/2.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/2.png
+share/examples/asciidoc/images/icons/callouts/3.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/3.png
+share/examples/asciidoc/images/icons/callouts/4.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/4.png
+share/examples/asciidoc/images/icons/callouts/5.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/5.png
+share/examples/asciidoc/images/icons/callouts/6.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/6.png
+share/examples/asciidoc/images/icons/callouts/7.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/7.png
+share/examples/asciidoc/images/icons/callouts/8.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/8.png
+share/examples/asciidoc/images/icons/callouts/9.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/callouts/9.png
+share/examples/asciidoc/images/icons/caution.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/caution.png
+share/examples/asciidoc/images/icons/example.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/example.png
+share/examples/asciidoc/images/icons/home.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/home.png
+share/examples/asciidoc/images/icons/important.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/important.png
+share/examples/asciidoc/images/icons/next.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/next.png
+share/examples/asciidoc/images/icons/note.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/note.png
+share/examples/asciidoc/images/icons/prev.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/prev.png
+share/examples/asciidoc/images/icons/tip.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/tip.png
+share/examples/asciidoc/images/icons/up.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/up.png
+share/examples/asciidoc/images/icons/warning.png
+@sample ${SYSCONFDIR}/asciidoc/images/icons/warning.png
+share/examples/asciidoc/javascripts/
+@sample ${SYSCONFDIR}/asciidoc/javascripts/
+share/examples/asciidoc/javascripts/ASCIIMathML.js
+@sample ${SYSCONFDIR}/asciidoc/javascripts/ASCIIMathML.js
+share/examples/asciidoc/javascripts/LaTeXMathML.js
+@sample ${SYSCONFDIR}/asciidoc/javascripts/LaTeXMathML.js
+share/examples/asciidoc/javascripts/toc.js
+@sample ${SYSCONFDIR}/asciidoc/javascripts/toc.js
+share/examples/asciidoc/latex.conf
+@sample ${SYSCONFDIR}/asciidoc/latex.conf
+share/examples/asciidoc/linuxdoc.conf
+@sample ${SYSCONFDIR}/asciidoc/linuxdoc.conf
+share/examples/asciidoc/stylesheets/
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/
+share/examples/asciidoc/stylesheets/docbook-xsl.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/docbook-xsl.css
+share/examples/asciidoc/stylesheets/xhtml-deprecated-manpage.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml-deprecated-manpage.css
+share/examples/asciidoc/stylesheets/xhtml-deprecated.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml-deprecated.css
+share/examples/asciidoc/stylesheets/xhtml11-manpage.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11-manpage.css
+share/examples/asciidoc/stylesheets/xhtml11-quirks.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11-quirks.css
+share/examples/asciidoc/stylesheets/xhtml11.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11.css
+share/examples/asciidoc/text.conf
+@sample ${SYSCONFDIR}/asciidoc/text.conf
+share/examples/asciidoc/xhtml-deprecated-css.conf
+@sample ${SYSCONFDIR}/asciidoc/xhtml-deprecated-css.conf
+share/examples/asciidoc/xhtml-deprecated.conf
+@sample ${SYSCONFDIR}/asciidoc/xhtml-deprecated.conf
+share/examples/asciidoc/xhtml11-quirks.conf
+@sample ${SYSCONFDIR}/asciidoc/xhtml11-quirks.conf
+share/examples/asciidoc/xhtml11.conf
+@sample ${SYSCONFDIR}/asciidoc/xhtml11.conf
