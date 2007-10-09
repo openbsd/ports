@@ -1,0 +1,23 @@
+$OpenBSD: patch-bin_iodbc-config_in,v 1.1 2007/10/09 20:00:14 sthen Exp $
+--- bin/iodbc-config.in.orig	Tue Oct  9 15:58:50 2007
++++ bin/iodbc-config.in	Tue Oct  9 16:01:19 2007
+@@ -192,16 +192,16 @@ if test "$echo_cflags" = "yes"; then
+ 	echo "$includes"
+ fi
+ if test "$echo_libs" = "yes"; then
+-	libs=""
++	libs="-pthread"
+ 	if test "$lib_iodbc" = "yes"; then
+ 		libs="$libs -liodbc -liodbcinst"
+ 	fi
+ 	echo "-L@libdir@ $libs"
+ fi
+ if test "$echo_staticlibs" = "yes"; then
+-	libs=""
++	libs="-pthread"
+ 	if test "$lib_iodbc" = "yes"; then
+-		libs="@libdir@/libiodbc.a @libdir@/libiodbcinst.a @LIBADD_DL@"
++		libs="$libs @libdir@/libiodbc.a @libdir@/libiodbcinst.a @LIBADD_DL@"
+ 	fi
+ 	echo "$libs"
+ fi
