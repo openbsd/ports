@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/14 14:58:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/09 15:39:17 merdely Exp $
 
 COMMENT-main=		network backup solution
 COMMENT-client=		network backup solution (client)
@@ -6,9 +6,9 @@ COMMENT-server=		network backup solution (server)
 
 VERSION=		2.0.3
 DISTNAME=		bacula-${VERSION}
-PKGNAME-main=		${DISTNAME}p2
+PKGNAME-main=		${DISTNAME}p3
 FULLPKGNAME-client=	bacula-client-${VERSION}p3
-PKGNAME-server=		bacula-server-${VERSION}p3
+PKGNAME-server=		bacula-server-${VERSION}p4
 CATEGORIES=		sysutils
 DIST_SUBDIR=		bacula
 PATCHFILES=		${VERSION}-restore.patch

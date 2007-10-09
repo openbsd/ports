@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
---- src/dird/bacula-dir.conf.in.orig	Thu Jul 12 11:22:02 2007
-+++ src/dird/bacula-dir.conf.in	Thu Jul 12 11:24:22 2007
+$OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.2 2007/10/09 15:39:17 merdely Exp $
+--- src/dird/bacula-dir.conf.in.orig	Sun Aug 20 09:27:55 2006
++++ src/dird/bacula-dir.conf.in	Mon Oct  8 20:37:51 2007
 @@ -13,7 +13,8 @@
  #
  
@@ -40,7 +40,20 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert
    Storage = File                      
    Pool = Default
    Messages = Standard
-@@ -150,8 +151,8 @@ FileSet {
+@@ -101,11 +102,7 @@ FileSet {
+ #    if you have other partitons such as /usr or /home
+ #    you will probably want to add them too.
+ #
+-#  By default this is defined to point to the Bacula build
+-#    directory to give a reasonable FileSet to backup to
+-#    disk storage during initial testing.
+-#
+-    File = @BUILD_DIR@
++    File = /
+   }
+ 
+ #
+@@ -150,8 +147,8 @@ FileSet {
  
  # Client (File Services) to backup
  Client {
@@ -51,7 +64,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert
    FDPort = @fd_port@
    Catalog = MyCatalog
    Password = "@fd_password@"          # password for FileDaemon
-@@ -165,8 +166,8 @@ Client {
+@@ -165,8 +162,8 @@ Client {
  #  You should change Name, Address, and Password before using
  #
  #Client {
@@ -62,7 +75,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert
  #  FDPort = @fd_port@
  #  Catalog = MyCatalog
  #  Password = "@fd_password@2"         # password for FileDaemon 2
-@@ -180,7 +181,7 @@ Client {
+@@ -180,7 +177,7 @@ Client {
  Storage {
    Name = File
  # Do not use "localhost" here    
@@ -71,7 +84,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert
    SDPort = @sd_port@
    Password = "@sd_password@"
    Device = FileStorage
-@@ -193,7 +194,7 @@ Storage {
+@@ -193,7 +190,7 @@ Storage {
  #Storage {
  #  Name = DDS-4    
  #  Do not use "localhost" here
@@ -80,7 +93,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert
  #  SDPort = @sd_port@
  #  Password = "@sd_password@"          # password for Storage daemon
  #  Device = DDS-4                      # must be same as Device in Storage daemon
-@@ -205,7 +206,7 @@ Storage {
+@@ -205,7 +202,7 @@ Storage {
  #Storage {
  #  Name = "8mmDrive"
  #  Do not use "localhost" here
@@ -89,7 +102,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert
  #  SDPort = @sd_port@
  #  Password = "@sd_password@"
  #  Device = "Exabyte 8mm"
-@@ -216,7 +217,7 @@ Storage {
+@@ -216,7 +213,7 @@ Storage {
  #Storage {
  #  Name = "DVD"
  #  Do not use "localhost" here
@@ -98,7 +111,7 @@ $OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert
  #  SDPort = @sd_port@
  #  Password = "@sd_password@"
  #  Device = "DVD Writer"
-@@ -286,7 +287,7 @@ Pool {
+@@ -286,7 +283,7 @@ Pool {
  # Restricted console used by tray-monitor to get the status of the director
  #
  Console {
