@@ -1,0 +1,6 @@
+RSSyl plugin is an RSS feed aggregator for Claws Mail. It has the
+following features:
+- Handling of RSS 1.0, RSS 2.0, and Atom feeds
+- Fetching and threaded display of comment feeds
+- Customisable refresh interval for each feed
+- Customisable number of feed items to keep for each feed
