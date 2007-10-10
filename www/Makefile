@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.305 2007/10/05 20:57:20 simon Exp $
+# $OpenBSD: Makefile,v 1.306 2007/10/10 19:36:28 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -196,6 +196,7 @@
      SUBDIR += p5-Maypole
      SUBDIR += p5-Maypole-Authentication-UserSessionCookie
      SUBDIR += p5-PHP-Session
+     SUBDIR += p5-Plagger
      SUBDIR += p5-PodToHTML
      SUBDIR += p5-Rose-HTML-Objects
      SUBDIR += p5-Rose-HTMLx-Form-Field-Autocomplete
