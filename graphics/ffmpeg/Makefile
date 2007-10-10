@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2007/09/24 07:51:24 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.31 2007/10/10 07:59:32 aanriot Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 DISTNAME=		ffmpeg-svn-20070910
-PKGNAME=		${DISTNAME:S/-svn//}
+PKGNAME=		${DISTNAME:S/-svn//}p0
 SHARED_LIBS=		avutil		4.0 \
 			avcodec		10.0 \
 			avformat	10.0 \
@@ -56,11 +56,11 @@ WRKTMP=			${WRKDIR}/tmp
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--cc=${CC} \
+			--disable-debug \
 			--disable-opts \
 			--enable-pp \
 			--enable-gpl \
 			--enable-pthreads \
-			--disable-debug \
 			--enable-liba52 \
 			--enable-libfaac \
 			--enable-libfaad \
@@ -69,6 +69,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-libtheora \
 			--enable-libvorbis \
 			--enable-libx264 \
+			--enable-x11grab \
 			--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include"
 
