@@ -1,0 +1,22 @@
+$OpenBSD: patch-Manual,v 1.1.1.1 2007/10/10 15:17:49 merdely Exp $
+--- Manual.orig	Sat Sep  8 14:23:33 2007
++++ Manual	Wed Oct 10 07:59:19 2007
+@@ -47,15 +47,15 @@ Following are the possible options :
+                         web page via curl (the webpage fetcher behind the 
+                         scenes)
+       CurlBin         = CommandForCurl ('curl -k' by default).
+-      Processor       = FilterCommand ('/usr/bin/procmail' by default). Any
++      Processor       = FilterCommand ('!!LOCALBASE!!/bin/procmail' by default). Any
+                         filtercommand taking the message in mbox format on its
+                         stdin and doing something with it.
+                         
+                           *) '/bin/cat - >> FetchedMail' might be another 
+                              interesting one to drop directly in a mbox file.
+ 
+-                          *) The distribution contains also SmtpForward.pl and
+-                             SmtpAuthForward.pl. Those can be used as 
++                          *) The distribution contains also SmtpForward and
++                             SmtpAuthForward. Those can be used as 
+                              'Processor' to forward the mails to an SMTP server.
+ 
+       Folder          = FolderName. Folders that need to be fetched. 

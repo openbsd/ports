@@ -1,0 +1,5 @@
+Refer to ${PREFIX}/share/doc/GetLive/Manual for configuration file
+options.
+
+To use GetLive with SMTP as a delivery mechanism, see the scripts in
+${PREFIX}/share/examples/GetLive.

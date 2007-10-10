@@ -1,0 +1,12 @@
+$OpenBSD: patch-GetLive_pl,v 1.1.1.1 2007/10/10 15:17:49 merdely Exp $
+--- GetLive.pl.orig	Sat Sep  8 14:23:33 2007
++++ GetLive.pl	Wed Oct 10 07:59:06 2007
+@@ -53,7 +53,7 @@ my $Password                = "";
+ my $Domain                  = 'hotmail.com';
+ my $CurlCommand             = 'curl -k';
+ my $Verbosity               = 1; 									  # 0:Silent; 1:Normal; 2:Verbose; 10:debug; 100:heavy debug 
+-my $MailProcessor           = '/usr/bin/procmail';	# Any program taking mbox formatted at stdin will do.
++my $MailProcessor           = '!!LOCALBASE!!/bin/procmail';	# Any program taking mbox formatted at stdin will do.
+ my $DownloadedIdsFile       = "";                   # Local file with Ids of already downloaded messages.
+ my $RetryLimit              = 2;
+ my $MarkRead                = "No";                 # No,Yes : But never when downloaded before !
