@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Plagger_Template_pm,v 1.1.1.1 2007/10/10 19:36:22 simon Exp $
+--- lib/Plagger/Template.pm.orig	Fri Oct  5 11:08:05 2007
++++ lib/Plagger/Template.pm	Fri Oct  5 11:08:26 2007
+@@ -11,7 +11,7 @@ use Template::Stash::ForceUTF8;
+ sub new {
+     my($class, $context, $plugin) = @_;
+ 
+-    my $path = $context->conf->{assets_path} || catfile($FindBin::Bin, "assets");
++    my $path = $context->conf->{assets_path} || catfile('%%SHAREDIR%%', "assets");
+     my $paths = [ catfile($path, "plugins", $plugin->class_id),
+                   catfile($path, "common") ];
+ 

@@ -1,0 +1,5 @@
+Plagger is a pluggable RSS/Atom feed aggregator and remixer platform.
+
+Everything is implemented as a small plugin and all you have to do is to
+write a flow of aggregation, filters, syndication, publishing and
+notification plugins into a config file (YAML).

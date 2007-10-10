@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Plagger_Plugin_pm,v 1.1.1.1 2007/10/10 19:36:22 simon Exp $
+--- lib/Plagger/Plugin.pm.orig	Tue Dec  5 08:01:34 2006
++++ lib/Plagger/Plugin.pm	Fri Oct  5 10:15:00 2007
+@@ -111,7 +111,7 @@ sub assets_dir {
+ 
+     my $assets_base =
+         $context->conf->{assets_path} ||              # or global:assets_path
+-        File::Spec->catfile($FindBin::Bin, "assets"); # or "assets" under plagger script
++        File::Spec->catfile('%%SHAREDIR%%', "assets"); # or "assets" under plagger script
+ 
+     return File::Spec->catfile(
+         $assets_base, "plugins", $self->class_id,

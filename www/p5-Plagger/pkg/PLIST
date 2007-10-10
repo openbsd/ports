@@ -1,0 +1,720 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/10 19:36:23 simon Exp $
+bin/plagger
+bin/plagger-ircbot
+${P5SITE}/Plagger/
+${P5SITE}/Plagger.pm
+${P5SITE}/Plagger/Cache/
+${P5SITE}/Plagger/Cache.pm
+${P5SITE}/Plagger/Cache/Null.pm
+${P5SITE}/Plagger/CacheProxy.pm
+${P5SITE}/Plagger/ConfigLoader.pm
+${P5SITE}/Plagger/Cookies.pm
+${P5SITE}/Plagger/Crypt/
+${P5SITE}/Plagger/Crypt.pm
+${P5SITE}/Plagger/Crypt/Base64.pm
+${P5SITE}/Plagger/Date.pm
+${P5SITE}/Plagger/Enclosure.pm
+${P5SITE}/Plagger/Entry.pm
+${P5SITE}/Plagger/Feed.pm
+${P5SITE}/Plagger/FeedParser.pm
+${P5SITE}/Plagger/Mechanize.pm
+${P5SITE}/Plagger/Operator.pm
+${P5SITE}/Plagger/Plugin/
+${P5SITE}/Plagger/Plugin.pm
+@comment ${P5SITE}/Plagger/Plugin.pm.orig
+${P5SITE}/Plagger/Plugin/Aggregator/
+${P5SITE}/Plagger/Plugin/Aggregator/Null.pm
+${P5SITE}/Plagger/Plugin/Aggregator/Simple.pm
+${P5SITE}/Plagger/Plugin/Aggregator/Xango.pm
+${P5SITE}/Plagger/Plugin/Bundle/
+${P5SITE}/Plagger/Plugin/Bundle/Defaults.pm
+${P5SITE}/Plagger/Plugin/Bundle/Planet.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/
+${P5SITE}/Plagger/Plugin/CustomFeed/2chSearch.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/AmazonAssociateReportJP.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/BloglinesCitations.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/Debug.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/FlickrSearch.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/Frepa/
+${P5SITE}/Plagger/Plugin/CustomFeed/Frepa.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/Frepa/FriendDiary.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/Frepa/FriendStatus.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/Frepa/RecentComment.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/GoogleNews.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/Mailman.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/Mixi.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/MixiDiarySearch.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/POP3.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/PerlMonks.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/SVNLog.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/Script.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/Simple.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/YouTube.pm
+${P5SITE}/Plagger/Plugin/CustomFeed/iTunesRecentPlay.pm
+${P5SITE}/Plagger/Plugin/Filter/
+${P5SITE}/Plagger/Plugin/Filter/2chNewsokuTitle.pm
+${P5SITE}/Plagger/Plugin/Filter/2chRSSContent.pm
+${P5SITE}/Plagger/Plugin/Filter/AtomLinkRelated.pm
+${P5SITE}/Plagger/Plugin/Filter/Babelfish.pm
+${P5SITE}/Plagger/Plugin/Filter/Base.pm
+${P5SITE}/Plagger/Plugin/Filter/BlogPet.pm
+${P5SITE}/Plagger/Plugin/Filter/BloglinesContentNormalize.pm
+${P5SITE}/Plagger/Plugin/Filter/BreakEntriesToFeeds.pm
+${P5SITE}/Plagger/Plugin/Filter/BulkfeedsTerms.pm
+${P5SITE}/Plagger/Plugin/Filter/CompositeFeed.pm
+${P5SITE}/Plagger/Plugin/Filter/DegradeYouTube.pm
+${P5SITE}/Plagger/Plugin/Filter/Delicious.pm
+${P5SITE}/Plagger/Plugin/Filter/DeliciousFeedTags.pm
+${P5SITE}/Plagger/Plugin/Filter/Emoticon.pm
+${P5SITE}/Plagger/Plugin/Filter/EntryFullText.pm
+${P5SITE}/Plagger/Plugin/Filter/ExtractAuthorName.pm
+${P5SITE}/Plagger/Plugin/Filter/FeedBurnerPermalink.pm
+${P5SITE}/Plagger/Plugin/Filter/FeedFlareStripper.pm
+${P5SITE}/Plagger/Plugin/Filter/FetchEnclosure/
+${P5SITE}/Plagger/Plugin/Filter/FetchEnclosure.pm
+${P5SITE}/Plagger/Plugin/Filter/FetchEnclosure/Curl.pm
+${P5SITE}/Plagger/Plugin/Filter/FetchEnclosure/ParallelUA.pm
+${P5SITE}/Plagger/Plugin/Filter/FetchEnclosure/Wget.pm
+${P5SITE}/Plagger/Plugin/Filter/FetchEnclosure/Xango.pm
+${P5SITE}/Plagger/Plugin/Filter/FindEnclosures.pm
+${P5SITE}/Plagger/Plugin/Filter/FloatingDateTime.pm
+${P5SITE}/Plagger/Plugin/Filter/ForceTimeZone.pm
+${P5SITE}/Plagger/Plugin/Filter/GuessLanguage.pm
+${P5SITE}/Plagger/Plugin/Filter/GuessTimeZoneByDomain.pm
+${P5SITE}/Plagger/Plugin/Filter/HEADEnclosureMetadata.pm
+${P5SITE}/Plagger/Plugin/Filter/HTMLScrubber.pm
+${P5SITE}/Plagger/Plugin/Filter/HTMLTidy.pm
+${P5SITE}/Plagger/Plugin/Filter/HatenaBookmarkTag.pm
+${P5SITE}/Plagger/Plugin/Filter/HatenaBookmarkUsersCount.pm
+${P5SITE}/Plagger/Plugin/Filter/HatenaDiaryKeywordLink.pm
+${P5SITE}/Plagger/Plugin/Filter/HatenaDiaryKeywordUnlink.pm
+${P5SITE}/Plagger/Plugin/Filter/HatenaFormat.pm
+${P5SITE}/Plagger/Plugin/Filter/HatenaKeywordTag.pm
+${P5SITE}/Plagger/Plugin/Filter/ImageInfo.pm
+${P5SITE}/Plagger/Plugin/Filter/Kansai.pm
+${P5SITE}/Plagger/Plugin/Filter/LivedoorClipUsersCount.pm
+${P5SITE}/Plagger/Plugin/Filter/LivedoorKeywordUnlink.pm
+${P5SITE}/Plagger/Plugin/Filter/Markdown.pm
+${P5SITE}/Plagger/Plugin/Filter/POPFile.pm
+${P5SITE}/Plagger/Plugin/Filter/Pipe.pm
+${P5SITE}/Plagger/Plugin/Filter/Profanity.pm
+${P5SITE}/Plagger/Plugin/Filter/RSSLiberalDateTime.pm
+${P5SITE}/Plagger/Plugin/Filter/RSSTimeZoneString.pm
+${P5SITE}/Plagger/Plugin/Filter/Regexp.pm
+${P5SITE}/Plagger/Plugin/Filter/ResolveRelativeLink.pm
+${P5SITE}/Plagger/Plugin/Filter/RewriteEnclosureURL.pm
+${P5SITE}/Plagger/Plugin/Filter/Romanize/
+${P5SITE}/Plagger/Plugin/Filter/Romanize.pm
+${P5SITE}/Plagger/Plugin/Filter/Romanize/Japanese.pm
+${P5SITE}/Plagger/Plugin/Filter/Rule.pm
+${P5SITE}/Plagger/Plugin/Filter/SpamAssassin.pm
+${P5SITE}/Plagger/Plugin/Filter/StripRSSAd.pm
+${P5SITE}/Plagger/Plugin/Filter/StripTagsFromTitle.pm
+${P5SITE}/Plagger/Plugin/Filter/TTP.pm
+${P5SITE}/Plagger/Plugin/Filter/TagsToTitle.pm
+${P5SITE}/Plagger/Plugin/Filter/Thumbnail.pm
+${P5SITE}/Plagger/Plugin/Filter/TruePermalink.pm
+${P5SITE}/Plagger/Plugin/Filter/URLBL.pm
+${P5SITE}/Plagger/Plugin/Filter/UnicodeNormalize.pm
+${P5SITE}/Plagger/Plugin/Filter/tDiaryComment.pm
+${P5SITE}/Plagger/Plugin/Namespace/
+${P5SITE}/Plagger/Plugin/Namespace/ApplePhotocast.pm
+${P5SITE}/Plagger/Plugin/Namespace/HatenaFotolife.pm
+${P5SITE}/Plagger/Plugin/Namespace/MediaRSS.pm
+${P5SITE}/Plagger/Plugin/Notify/
+${P5SITE}/Plagger/Plugin/Notify/Audio/
+${P5SITE}/Plagger/Plugin/Notify/Audio.pm
+${P5SITE}/Plagger/Plugin/Notify/Audio/MSWin32.pm
+${P5SITE}/Plagger/Plugin/Notify/Audio/iTunesMac.pm
+${P5SITE}/Plagger/Plugin/Notify/Audio/iTunesWin32.pm
+${P5SITE}/Plagger/Plugin/Notify/Balloon.pm
+${P5SITE}/Plagger/Plugin/Notify/Beep.pm
+${P5SITE}/Plagger/Plugin/Notify/Campfire.pm
+${P5SITE}/Plagger/Plugin/Notify/Command.pm
+${P5SITE}/Plagger/Plugin/Notify/Eject/
+${P5SITE}/Plagger/Plugin/Notify/Eject.pm
+${P5SITE}/Plagger/Plugin/Notify/Eject/darwin.pm
+${P5SITE}/Plagger/Plugin/Notify/Eject/freebsd.pm
+${P5SITE}/Plagger/Plugin/Notify/Eject/linux.pm
+${P5SITE}/Plagger/Plugin/Notify/Eject/mswin32.pm
+${P5SITE}/Plagger/Plugin/Notify/Growl.pm
+${P5SITE}/Plagger/Plugin/Notify/IRC.pm
+${P5SITE}/Plagger/Plugin/Notify/MSAgent.pm
+${P5SITE}/Plagger/Plugin/Notify/NetSend.pm
+${P5SITE}/Plagger/Plugin/Notify/OpenBrowser/
+${P5SITE}/Plagger/Plugin/Notify/OpenBrowser.pm
+${P5SITE}/Plagger/Plugin/Notify/OpenBrowser/FirefoxRemote.pm
+${P5SITE}/Plagger/Plugin/Notify/OpenBrowser/darwin.pm
+${P5SITE}/Plagger/Plugin/Notify/OpenBrowser/freebsd.pm
+${P5SITE}/Plagger/Plugin/Notify/OpenBrowser/linux.pm
+${P5SITE}/Plagger/Plugin/Notify/OpenBrowser/mswin32.pm
+${P5SITE}/Plagger/Plugin/Notify/SSTP.pm
+${P5SITE}/Plagger/Plugin/Notify/Tiarra.pm
+${P5SITE}/Plagger/Plugin/Notify/UpdatePing.pm
+${P5SITE}/Plagger/Plugin/Publish/
+${P5SITE}/Plagger/Plugin/Publish/2chdat.pm
+${P5SITE}/Plagger/Plugin/Publish/CHTML.pm
+${P5SITE}/Plagger/Plugin/Publish/CSV.pm
+${P5SITE}/Plagger/Plugin/Publish/Debug.pm
+${P5SITE}/Plagger/Plugin/Publish/Delicious.pm
+${P5SITE}/Plagger/Plugin/Publish/Excel.pm
+${P5SITE}/Plagger/Plugin/Publish/FOAFRoll.pm
+${P5SITE}/Plagger/Plugin/Publish/Feed.pm
+${P5SITE}/Plagger/Plugin/Publish/Gmail.pm
+${P5SITE}/Plagger/Plugin/Publish/HatenaBookmark.pm
+${P5SITE}/Plagger/Plugin/Publish/IMAP.pm
+${P5SITE}/Plagger/Plugin/Publish/JSON.pm
+${P5SITE}/Plagger/Plugin/Publish/JavaScript.pm
+${P5SITE}/Plagger/Plugin/Publish/LivedoorClip.pm
+${P5SITE}/Plagger/Plugin/Publish/MT.pm
+${P5SITE}/Plagger/Plugin/Publish/MTWidget.pm
+${P5SITE}/Plagger/Plugin/Publish/Maildir.pm
+${P5SITE}/Plagger/Plugin/Publish/OPML.pm
+${P5SITE}/Plagger/Plugin/Publish/OutlineText.pm
+${P5SITE}/Plagger/Plugin/Publish/PDF.pm
+${P5SITE}/Plagger/Plugin/Publish/PSP.pm
+${P5SITE}/Plagger/Plugin/Publish/PalmDoc.pm
+${P5SITE}/Plagger/Plugin/Publish/Pipe.pm
+${P5SITE}/Plagger/Plugin/Publish/Planet.pm
+${P5SITE}/Plagger/Plugin/Publish/Playlog.pm
+${P5SITE}/Plagger/Plugin/Publish/PowerPoint.pm
+${P5SITE}/Plagger/Plugin/Publish/SWF.pm
+${P5SITE}/Plagger/Plugin/Publish/Serializer.pm
+${P5SITE}/Plagger/Plugin/Publish/Speech/
+${P5SITE}/Plagger/Plugin/Publish/Speech.pm
+${P5SITE}/Plagger/Plugin/Publish/Speech/MacOSX.pm
+${P5SITE}/Plagger/Plugin/Publish/Speech/Win32.pm
+${P5SITE}/Plagger/Plugin/Publish/Takahashi.pm
+${P5SITE}/Plagger/Plugin/Publish/iCal.pm
+${P5SITE}/Plagger/Plugin/Search/
+${P5SITE}/Plagger/Plugin/Search/Estraier.pm
+${P5SITE}/Plagger/Plugin/Search/Grep.pm
+${P5SITE}/Plagger/Plugin/Search/KinoSearch.pm
+${P5SITE}/Plagger/Plugin/Search/Namazu.pm
+${P5SITE}/Plagger/Plugin/Search/Rast.pm
+${P5SITE}/Plagger/Plugin/Search/Spotlight.pm
+${P5SITE}/Plagger/Plugin/SmartFeed/
+${P5SITE}/Plagger/Plugin/SmartFeed.pm
+${P5SITE}/Plagger/Plugin/SmartFeed/All.pm
+${P5SITE}/Plagger/Plugin/Subscription/
+${P5SITE}/Plagger/Plugin/Subscription/2chThreadList.pm
+${P5SITE}/Plagger/Plugin/Subscription/Bloglines.pm
+${P5SITE}/Plagger/Plugin/Subscription/Bookmarks/
+${P5SITE}/Plagger/Plugin/Subscription/Bookmarks.pm
+${P5SITE}/Plagger/Plugin/Subscription/Bookmarks/InternetExplorer.pm
+${P5SITE}/Plagger/Plugin/Subscription/Bookmarks/Mozilla.pm
+${P5SITE}/Plagger/Plugin/Subscription/Bookmarks/Safari.pm
+${P5SITE}/Plagger/Plugin/Subscription/Config.pm
+${P5SITE}/Plagger/Plugin/Subscription/DBI.pm
+${P5SITE}/Plagger/Plugin/Subscription/FOAF.pm
+${P5SITE}/Plagger/Plugin/Subscription/Feed.pm
+${P5SITE}/Plagger/Plugin/Subscription/File.pm
+${P5SITE}/Plagger/Plugin/Subscription/HatenaGroup.pm
+${P5SITE}/Plagger/Plugin/Subscription/HatenaRSS.pm
+${P5SITE}/Plagger/Plugin/Subscription/LivedoorReader.pm
+${P5SITE}/Plagger/Plugin/Subscription/OPML.pm
+${P5SITE}/Plagger/Plugin/Subscription/Odeo.pm
+${P5SITE}/Plagger/Plugin/Subscription/PingServer.pm
+${P5SITE}/Plagger/Plugin/Subscription/Planet.pm
+${P5SITE}/Plagger/Plugin/Subscription/PlanetINI.pm
+${P5SITE}/Plagger/Plugin/Subscription/XOXO.pm
+${P5SITE}/Plagger/Plugin/Subscription/XPath.pm
+${P5SITE}/Plagger/Plugin/Summary/
+${P5SITE}/Plagger/Plugin/Summary/AppleScript.pm
+${P5SITE}/Plagger/Plugin/Summary/Auto.pm
+${P5SITE}/Plagger/Plugin/Summary/English.pm
+${P5SITE}/Plagger/Plugin/Summary/GetSen.pm
+${P5SITE}/Plagger/Plugin/Summary/HatenaBookmark.pm
+${P5SITE}/Plagger/Plugin/Summary/Japanese.pm
+${P5SITE}/Plagger/Plugin/Summary/Simple.pm
+${P5SITE}/Plagger/Plugin/Summary/TextOriginal.pm
+${P5SITE}/Plagger/Plugin/Summary/TrackbackRDF.pm
+${P5SITE}/Plagger/Plugin/UserAgent/
+${P5SITE}/Plagger/Plugin/UserAgent/AuthenRequest.pm
+${P5SITE}/Plagger/Plugin/UserAgent/RequestHeader.pm
+${P5SITE}/Plagger/Plugin/Widget/
+${P5SITE}/Plagger/Plugin/Widget/BloglinesSubscription.pm
+${P5SITE}/Plagger/Plugin/Widget/BulkfeedsSpamReport.pm
+${P5SITE}/Plagger/Plugin/Widget/Delicious.pm
+${P5SITE}/Plagger/Plugin/Widget/HatenaBookmark.pm
+${P5SITE}/Plagger/Plugin/Widget/HatenaBookmarkUsersCount.pm
+${P5SITE}/Plagger/Plugin/Widget/Simple.pm
+${P5SITE}/Plagger/Rule/
+${P5SITE}/Plagger/Rule.pm
+${P5SITE}/Plagger/Rule/Always.pm
+${P5SITE}/Plagger/Rule/DateTimeCron.pm
+${P5SITE}/Plagger/Rule/Deduped/
+${P5SITE}/Plagger/Rule/Deduped.pm
+${P5SITE}/Plagger/Rule/Deduped/Base.pm
+${P5SITE}/Plagger/Rule/Deduped/DB_File.pm
+${P5SITE}/Plagger/Rule/EntryTag.pm
+${P5SITE}/Plagger/Rule/Expression.pm
+${P5SITE}/Plagger/Rule/FeedAttr.pm
+${P5SITE}/Plagger/Rule/FeedType.pm
+${P5SITE}/Plagger/Rule/Fresh.pm
+${P5SITE}/Plagger/Rule/Rating.pm
+${P5SITE}/Plagger/Rule/URLBL.pm
+${P5SITE}/Plagger/Rules.pm
+${P5SITE}/Plagger/Subscription.pm
+${P5SITE}/Plagger/TT/
+${P5SITE}/Plagger/TT/Plagger/
+${P5SITE}/Plagger/TT/Plagger/Util.pm
+${P5SITE}/Plagger/Tag.pm
+${P5SITE}/Plagger/Template.pm
+@comment ${P5SITE}/Plagger/Template.pm.orig
+${P5SITE}/Plagger/Text.pm
+${P5SITE}/Plagger/Thing.pm
+${P5SITE}/Plagger/Update.pm
+${P5SITE}/Plagger/UserAgent.pm
+${P5SITE}/Plagger/Util.pm
+${P5SITE}/Plagger/Walker.pm
+@man man/man3p/Plagger.3p
+@man man/man3p/Plagger::Cookies.3p
+@man man/man3p/Plagger::Date.3p
+@man man/man3p/Plagger::Plugin.3p
+@man man/man3p/Plagger::Plugin::Aggregator::Null.3p
+@man man/man3p/Plagger::Plugin::Aggregator::Simple.3p
+@man man/man3p/Plagger::Plugin::Bundle::Defaults.3p
+@man man/man3p/Plagger::Plugin::Bundle::Planet.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::2chSearch.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::AmazonAssociateReportJP.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::BloglinesCitations.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::Debug.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::FlickrSearch.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::Frepa.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::GoogleNews.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::Mailman.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::Mixi.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::MixiDiarySearch.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::POP3.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::PerlMonks.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::SVNLog.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::Script.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::Simple.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::YouTube.3p
+@man man/man3p/Plagger::Plugin::CustomFeed::iTunesRecentPlay.3p
+@man man/man3p/Plagger::Plugin::Filter::2chNewsokuTitle.3p
+@man man/man3p/Plagger::Plugin::Filter::2chRSSContent.3p
+@man man/man3p/Plagger::Plugin::Filter::AtomLinkRelated.3p
+@man man/man3p/Plagger::Plugin::Filter::Babelfish.3p
+@man man/man3p/Plagger::Plugin::Filter::Base.3p
+@man man/man3p/Plagger::Plugin::Filter::BlogPet.3p
+@man man/man3p/Plagger::Plugin::Filter::BloglinesContentNormalize.3p
+@man man/man3p/Plagger::Plugin::Filter::BreakEntriesToFeeds.3p
+@man man/man3p/Plagger::Plugin::Filter::BulkfeedsTerms.3p
+@man man/man3p/Plagger::Plugin::Filter::CompositeFeed.3p
+@man man/man3p/Plagger::Plugin::Filter::DegradeYouTube.3p
+@man man/man3p/Plagger::Plugin::Filter::Delicious.3p
+@man man/man3p/Plagger::Plugin::Filter::DeliciousFeedTags.3p
+@man man/man3p/Plagger::Plugin::Filter::Emoticon.3p
+@man man/man3p/Plagger::Plugin::Filter::EntryFullText.3p
+@man man/man3p/Plagger::Plugin::Filter::ExtractAuthorName.3p
+@man man/man3p/Plagger::Plugin::Filter::FeedBurnerPermalink.3p
+@man man/man3p/Plagger::Plugin::Filter::FeedFlareStripper.3p
+@man man/man3p/Plagger::Plugin::Filter::FetchEnclosure.3p
+@man man/man3p/Plagger::Plugin::Filter::FetchEnclosure::Curl.3p
+@man man/man3p/Plagger::Plugin::Filter::FetchEnclosure::ParallelUA.3p
+@man man/man3p/Plagger::Plugin::Filter::FetchEnclosure::Wget.3p
+@man man/man3p/Plagger::Plugin::Filter::FindEnclosures.3p
+@man man/man3p/Plagger::Plugin::Filter::FloatingDateTime.3p
+@man man/man3p/Plagger::Plugin::Filter::ForceTimeZone.3p
+@man man/man3p/Plagger::Plugin::Filter::GuessLanguage.3p
+@man man/man3p/Plagger::Plugin::Filter::GuessTimeZoneByDomain.3p
+@man man/man3p/Plagger::Plugin::Filter::HEADEnclosureMetadata.3p
+@man man/man3p/Plagger::Plugin::Filter::HTMLScrubber.3p
+@man man/man3p/Plagger::Plugin::Filter::HTMLTidy.3p
+@man man/man3p/Plagger::Plugin::Filter::HatenaBookmarkTag.3p
+@man man/man3p/Plagger::Plugin::Filter::HatenaBookmarkUsersCount.3p
+@man man/man3p/Plagger::Plugin::Filter::HatenaDiaryKeywordLink.3p
+@man man/man3p/Plagger::Plugin::Filter::HatenaDiaryKeywordUnlink.3p
+@man man/man3p/Plagger::Plugin::Filter::HatenaFormat.3p
+@man man/man3p/Plagger::Plugin::Filter::HatenaKeywordTag.3p
+@man man/man3p/Plagger::Plugin::Filter::ImageInfo.3p
+@man man/man3p/Plagger::Plugin::Filter::Kansai.3p
+@man man/man3p/Plagger::Plugin::Filter::LivedoorClipUsersCount.3p
+@man man/man3p/Plagger::Plugin::Filter::LivedoorKeywordUnlink.3p
+@man man/man3p/Plagger::Plugin::Filter::Markdown.3p
+@man man/man3p/Plagger::Plugin::Filter::POPFile.3p
+@man man/man3p/Plagger::Plugin::Filter::Pipe.3p
+@man man/man3p/Plagger::Plugin::Filter::Profanity.3p
+@man man/man3p/Plagger::Plugin::Filter::RSSLiberalDateTime.3p
+@man man/man3p/Plagger::Plugin::Filter::RSSTimeZoneString.3p
+@man man/man3p/Plagger::Plugin::Filter::Regexp.3p
+@man man/man3p/Plagger::Plugin::Filter::ResolveRelativeLink.3p
+@man man/man3p/Plagger::Plugin::Filter::RewriteEnclosureURL.3p
+@man man/man3p/Plagger::Plugin::Filter::Rule.3p
+@man man/man3p/Plagger::Plugin::Filter::SpamAssassin.3p
+@man man/man3p/Plagger::Plugin::Filter::StripRSSAd.3p
+@man man/man3p/Plagger::Plugin::Filter::StripTagsFromTitle.3p
+@man man/man3p/Plagger::Plugin::Filter::TTP.3p
+@man man/man3p/Plagger::Plugin::Filter::TagsToTitle.3p
+@man man/man3p/Plagger::Plugin::Filter::Thumbnail.3p
+@man man/man3p/Plagger::Plugin::Filter::TruePermalink.3p
+@man man/man3p/Plagger::Plugin::Filter::UnicodeNormalize.3p
+@man man/man3p/Plagger::Plugin::Filter::tDiaryComment.3p
+@man man/man3p/Plagger::Plugin::Namespace::ApplePhotocast.3p
+@man man/man3p/Plagger::Plugin::Namespace::HatenaFotolife.3p
+@man man/man3p/Plagger::Plugin::Namespace::MediaRSS.3p
+@man man/man3p/Plagger::Plugin::Notify::Audio.3p
+@man man/man3p/Plagger::Plugin::Notify::Balloon.3p
+@man man/man3p/Plagger::Plugin::Notify::Beep.3p
+@man man/man3p/Plagger::Plugin::Notify::Campfire.3p
+@man man/man3p/Plagger::Plugin::Notify::Command.3p
+@man man/man3p/Plagger::Plugin::Notify::Eject.3p
+@man man/man3p/Plagger::Plugin::Notify::Eject::darwin.3p
+@man man/man3p/Plagger::Plugin::Notify::Eject::freebsd.3p
+@man man/man3p/Plagger::Plugin::Notify::Eject::linux.3p
+@man man/man3p/Plagger::Plugin::Notify::Eject::mswin32.3p
+@man man/man3p/Plagger::Plugin::Notify::IRC.3p
+@man man/man3p/Plagger::Plugin::Notify::MSAgent.3p
+@man man/man3p/Plagger::Plugin::Notify::NetSend.3p
+@man man/man3p/Plagger::Plugin::Notify::OpenBrowser.3p
+@man man/man3p/Plagger::Plugin::Notify::OpenBrowser::FirefoxRemote.3p
+@man man/man3p/Plagger::Plugin::Notify::SSTP.3p
+@man man/man3p/Plagger::Plugin::Notify::Tiarra.3p
+@man man/man3p/Plagger::Plugin::Notify::UpdatePing.3p
+@man man/man3p/Plagger::Plugin::Publish::2chdat.3p
+@man man/man3p/Plagger::Plugin::Publish::CSV.3p
+@man man/man3p/Plagger::Plugin::Publish::Delicious.3p
+@man man/man3p/Plagger::Plugin::Publish::Excel.3p
+@man man/man3p/Plagger::Plugin::Publish::FOAFRoll.3p
+@man man/man3p/Plagger::Plugin::Publish::Feed.3p
+@man man/man3p/Plagger::Plugin::Publish::Gmail.3p
+@man man/man3p/Plagger::Plugin::Publish::HatenaBookmark.3p
+@man man/man3p/Plagger::Plugin::Publish::IMAP.3p
+@man man/man3p/Plagger::Plugin::Publish::JSON.3p
+@man man/man3p/Plagger::Plugin::Publish::JavaScript.3p
+@man man/man3p/Plagger::Plugin::Publish::LivedoorClip.3p
+@man man/man3p/Plagger::Plugin::Publish::MT.3p
+@man man/man3p/Plagger::Plugin::Publish::MTWidget.3p
+@man man/man3p/Plagger::Plugin::Publish::Maildir.3p
+@man man/man3p/Plagger::Plugin::Publish::OPML.3p
+@man man/man3p/Plagger::Plugin::Publish::OutlineText.3p
+@man man/man3p/Plagger::Plugin::Publish::PDF.3p
+@man man/man3p/Plagger::Plugin::Publish::PalmDoc.3p
+@man man/man3p/Plagger::Plugin::Publish::Pipe.3p
+@man man/man3p/Plagger::Plugin::Publish::Planet.3p
+@man man/man3p/Plagger::Plugin::Publish::Playlog.3p
+@man man/man3p/Plagger::Plugin::Publish::PowerPoint.3p
+@man man/man3p/Plagger::Plugin::Publish::SWF.3p
+@man man/man3p/Plagger::Plugin::Publish::Serializer.3p
+@man man/man3p/Plagger::Plugin::Publish::Speech::MacOSX.3p
+@man man/man3p/Plagger::Plugin::Publish::Takahashi.3p
+@man man/man3p/Plagger::Plugin::Publish::iCal.3p
+@man man/man3p/Plagger::Plugin::Search::Estraier.3p
+@man man/man3p/Plagger::Plugin::Search::Grep.3p
+@man man/man3p/Plagger::Plugin::Search::KinoSearch.3p
+@man man/man3p/Plagger::Plugin::Search::Namazu.3p
+@man man/man3p/Plagger::Plugin::Search::Rast.3p
+@man man/man3p/Plagger::Plugin::Search::Spotlight.3p
+@man man/man3p/Plagger::Plugin::Subscription::Bloglines.3p
+@man man/man3p/Plagger::Plugin::Subscription::Bookmarks.3p
+@man man/man3p/Plagger::Plugin::Subscription::Config.3p
+@man man/man3p/Plagger::Plugin::Subscription::DBI.3p
+@man man/man3p/Plagger::Plugin::Subscription::FOAF.3p
+@man man/man3p/Plagger::Plugin::Subscription::Feed.3p
+@man man/man3p/Plagger::Plugin::Subscription::File.3p
+@man man/man3p/Plagger::Plugin::Subscription::HatenaGroup.3p
+@man man/man3p/Plagger::Plugin::Subscription::HatenaRSS.3p
+@man man/man3p/Plagger::Plugin::Subscription::LivedoorReader.3p
+@man man/man3p/Plagger::Plugin::Subscription::OPML.3p
+@man man/man3p/Plagger::Plugin::Subscription::Odeo.3p
+@man man/man3p/Plagger::Plugin::Subscription::PingServer.3p
+@man man/man3p/Plagger::Plugin::Subscription::Planet.3p
+@man man/man3p/Plagger::Plugin::Subscription::PlanetINI.3p
+@man man/man3p/Plagger::Plugin::Subscription::XOXO.3p
+@man man/man3p/Plagger::Plugin::Subscription::XPath.3p
+@man man/man3p/Plagger::Plugin::Summary::AppleScript.3p
+@man man/man3p/Plagger::Plugin::Summary::Auto.3p
+@man man/man3p/Plagger::Plugin::Summary::English.3p
+@man man/man3p/Plagger::Plugin::Summary::GetSen.3p
+@man man/man3p/Plagger::Plugin::Summary::HatenaBookmark.3p
+@man man/man3p/Plagger::Plugin::Summary::Japanese.3p
+@man man/man3p/Plagger::Plugin::Summary::Simple.3p
+@man man/man3p/Plagger::Plugin::Summary::TextOriginal.3p
+@man man/man3p/Plagger::Plugin::Summary::TrackbackRDF.3p
+@man man/man3p/Plagger::Plugin::UserAgent::AuthenRequest.3p
+@man man/man3p/Plagger::Plugin::UserAgent::RequestHeader.3p
+@man man/man3p/Plagger::Plugin::Widget::BloglinesSubscription.3p
+@man man/man3p/Plagger::Plugin::Widget::BulkfeedsSpamReport.3p
+@man man/man3p/Plagger::Plugin::Widget::Delicious.3p
+@man man/man3p/Plagger::Plugin::Widget::HatenaBookmarkUsersCount.3p
+@man man/man3p/Plagger::Plugin::Widget::Simple.3p
+@man man/man3p/Plagger::Rule::Deduped.3p
+@man man/man3p/Plagger::Rule::Fresh.3p
+@man man/man3p/Plagger::Rule::URLBL.3p
+@man man/man3p/Plagger::Template.3p
+share/examples/p5-Plagger/
+share/examples/p5-Plagger/atode.yaml
+share/examples/p5-Plagger/bloglines2gmail.yaml
+share/examples/p5-Plagger/iefav2opml.yaml
+share/examples/p5-Plagger/irc.yaml
+share/examples/p5-Plagger/livedoorreader2gmail.yaml
+share/examples/p5-Plagger/planet-old.yaml
+share/examples/p5-Plagger/planet.yaml
+share/examples/p5-Plagger/podcast.yaml
+share/examples/p5-Plagger/rss2email.yaml
+share/examples/p5-Plagger/schema.yaml
+share/examples/p5-Plagger/search.yaml
+share/examples/p5-Plagger/weather-notify.yaml
+share/examples/p5-Plagger/xoxo-planet.yaml
+share/examples/p5-Plagger/xoxo2opml.yaml
+share/examples/p5-Plagger/yapcvideo.yaml
+share/p5-Plagger/
+share/p5-Plagger/assets/
+share/p5-Plagger/assets/common/
+share/p5-Plagger/assets/common/html.tt
+share/p5-Plagger/assets/common/mail.tt
+share/p5-Plagger/assets/plugins/
+share/p5-Plagger/assets/plugins/CustomFeed-Script/
+share/p5-Plagger/assets/plugins/CustomFeed-Script/domain-expire.pl
+share/p5-Plagger/assets/plugins/CustomFeed-Script/jsports-football.pl
+share/p5-Plagger/assets/plugins/CustomFeed-Script/slims_calendar.pl
+share/p5-Plagger/assets/plugins/CustomFeed-Script/ssl-expire.pl
+share/p5-Plagger/assets/plugins/CustomFeed-Script/wowow-hv-51ch.pl
+share/p5-Plagger/assets/plugins/CustomFeed-Script/wowow-liga-espanola.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/2ch.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/actiblog_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/akibablog.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/ameblo_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/ap_teacup_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/arstechnica.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/asahi_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/asahi_wcup2006.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/ascii24_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/atmarkit.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/baltimoresun_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/barks.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/bbc.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/blog_goo_ne_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/blog_japan_cnet_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/blog_pasonatech_co_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/blog_smatch_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/blog_tech.rikunabi_next.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/bounce.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/business-i.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/business_nikkeibp_co_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/catalyst_advent.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/cdjournal.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/chugoku-np.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/chuspo_dragons.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/cnet_japan.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/cnn.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/computerworld_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/cookpad.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/cyberpolice_go_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/daily_sports.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/dailymotion.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/debian_administration_org.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/distrowatch.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/docs_info_apple_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/drecom.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/dsp_co_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/eweek.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/extremetech.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/forbes.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/ft.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/gigazine_net.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/gyao_content.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/hatena_diary.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/hatena_serif.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/headlines_yahoo_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/hmv.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/impress.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/indiesmusic_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/it_nikkei_co_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/itmedia.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/itpro_nikkeibp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/itpro_nikkeibp_column.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/iza_ne_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/japan_internet_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/japan_zdnet_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/juno.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/keizai_biz.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/kojii_net.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/kyodo.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/kyoko_shimbun_news.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/kyoto-np.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/linuxjournal.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/listen-japan.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/livedoorblog.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/mailman.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/mainichi-msn-graph.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/mainichi-msn.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/matino-akari_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/memn0ck.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/mt2.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/mtv-music.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/mycom_journal.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/netkeiba.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/news_3yen_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/news_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/news_livedoor_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/newsforge.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/nifty_com_usuta.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/nikkansports.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/nikkei.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/nytimes.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/okinawatimes_day.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/opentechpress_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/osaka_nikkansports.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/physorg.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/pitchforkmedia.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/plaza_rakuten.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/pmachine.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/pya.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/qwik.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/rbbtoday_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/reuters.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/reuters_co_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/ryukyushimpo.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/sankei_co_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/sanspo.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/sarusarudiary.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/sciam.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/searchenginejournal.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/seesaa_net.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/sixapart.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/slashcode.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/slashdot_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/sponichi.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/sportsnavi.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/stage6.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/talesweaver_news.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/technobahn_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/tencount.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/theinquirer.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/theregister.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/thinkit_co_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/ti-da_net.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/til_info_apple_co_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/tiyu_to.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/usatoday.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/usewill_com_diary.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/video_mina-kuru_jp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/wired_com.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/wordpress.pl
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/worldtimes.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/www_nikkeibp.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/www_nikkeibp_co_jp_sj.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/yakult.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/yaplog.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/yomiuri.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/youtube.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/zakzak.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/zianplus_net.yaml
+share/p5-Plagger/assets/plugins/Filter-EntryFullText/zzz_google_adsense.pl
+share/p5-Plagger/assets/plugins/Filter-FindEnclosures/
+share/p5-Plagger/assets/plugins/Filter-FindEnclosures/dailymotion.pl
+share/p5-Plagger/assets/plugins/Filter-FindEnclosures/impress_watch.pl
+share/p5-Plagger/assets/plugins/Filter-FindEnclosures/mainichi_msn.pl
+share/p5-Plagger/assets/plugins/Filter-FindEnclosures/stage6.pl
+share/p5-Plagger/assets/plugins/Filter-FindEnclosures/typepad_images.pl
+share/p5-Plagger/assets/plugins/Filter-FindEnclosures/yourfilehost.pl
+share/p5-Plagger/assets/plugins/Filter-FindEnclosures/youtube.pl
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/feedburner.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/google_adsense.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/google_adsense2.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/namaan_ad.yaml
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/pheedo.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/pheedo_jp.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/pheedo_jp2.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/pheedo_jp_ad_entry.yaml
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/plaza_rakuten.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/rssad_jp.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/rsscache.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/seesaa.pat
+share/p5-Plagger/assets/plugins/Filter-StripRSSAd/valueclick.pat
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/2chrss.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/blogpeople.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/cnet_podcast.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/dailymotion.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/google_groups.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/imenu.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/joltmark.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/msn-mainichi.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/namaan.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/oreillynet_com.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/podtrac.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/rd_yahoo.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/reddit.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/refrss.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/rssquery.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/stage6.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/tech_souken.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/tiyu_to.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/yahoo_blog_search.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/yahoo_blog_search2.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/yahoo_us_rd.yaml
+share/p5-Plagger/assets/plugins/Filter-TruePermalink/youtube.yaml
+share/p5-Plagger/assets/plugins/Notify-IRC/
+share/p5-Plagger/assets/plugins/Notify-IRC/irc_notify.tt
+share/p5-Plagger/assets/plugins/Notify-NetSend/
+share/p5-Plagger/assets/plugins/Notify-NetSend/net_send_notify.tt
+share/p5-Plagger/assets/plugins/Notify-SSTP/
+share/p5-Plagger/assets/plugins/Notify-SSTP/sstp.tt
+share/p5-Plagger/assets/plugins/Notify-Tiarra/
+share/p5-Plagger/assets/plugins/Notify-Tiarra/irc_notify.tt
+share/p5-Plagger/assets/plugins/Publish-CHTML/
+share/p5-Plagger/assets/plugins/Publish-CHTML/chtml_entry.tt
+share/p5-Plagger/assets/plugins/Publish-CHTML/chtml_feed.tt
+share/p5-Plagger/assets/plugins/Publish-CHTML/chtml_index.tt
+share/p5-Plagger/assets/plugins/Publish-FOAFRoll/
+share/p5-Plagger/assets/plugins/Publish-FOAFRoll/foafroll.tt
+share/p5-Plagger/assets/plugins/Publish-Gmail/
+share/p5-Plagger/assets/plugins/Publish-Gmail/gmail_notify.tt
+share/p5-Plagger/assets/plugins/Publish-JavaScript/
+share/p5-Plagger/assets/plugins/Publish-JavaScript/javascript.tt
+share/p5-Plagger/assets/plugins/Publish-MT/
+share/p5-Plagger/assets/plugins/Publish-MT/mt.tt
+share/p5-Plagger/assets/plugins/Publish-MTWidget/
+share/p5-Plagger/assets/plugins/Publish-MTWidget/mt_widget.tt
+share/p5-Plagger/assets/plugins/Publish-OPML/
+share/p5-Plagger/assets/plugins/Publish-OPML/opml.tt
+share/p5-Plagger/assets/plugins/Publish-PSP/
+share/p5-Plagger/assets/plugins/Publish-PSP/psp.tt
+share/p5-Plagger/assets/plugins/Publish-PalmDoc/
+share/p5-Plagger/assets/plugins/Publish-PalmDoc/palmdoc.tt
+share/p5-Plagger/assets/plugins/Publish-Planet/
+share/p5-Plagger/assets/plugins/Publish-Planet/default/
+share/p5-Plagger/assets/plugins/Publish-Planet/default/static/
+share/p5-Plagger/assets/plugins/Publish-Planet/default/static/css/
+share/p5-Plagger/assets/plugins/Publish-Planet/default/static/css/handheld.css
+share/p5-Plagger/assets/plugins/Publish-Planet/default/static/css/print.css
+share/p5-Plagger/assets/plugins/Publish-Planet/default/static/css/screen-members-list.css
+share/p5-Plagger/assets/plugins/Publish-Planet/default/static/css/screen.css
+share/p5-Plagger/assets/plugins/Publish-Planet/default/template/
+share/p5-Plagger/assets/plugins/Publish-Planet/default/template/index.tt
+share/p5-Plagger/assets/plugins/Publish-Planet/sixapart-std/
+share/p5-Plagger/assets/plugins/Publish-Planet/sixapart-std/template/
+share/p5-Plagger/assets/plugins/Publish-Planet/sixapart-std/template/index.tt
+share/p5-Plagger/assets/plugins/Publish-Takahashi/
+share/p5-Plagger/assets/plugins/Publish-Takahashi/takahashi.css
+share/p5-Plagger/assets/plugins/Publish-Takahashi/takahashi.js
+share/p5-Plagger/assets/plugins/Publish-Takahashi/takahashi.tt
+share/p5-Plagger/assets/plugins/Search-Namazu/
+share/p5-Plagger/assets/plugins/Search-Namazu/namazu.tt
+share/p5-Plagger/assets/plugins/Search-Spotlight/
+share/p5-Plagger/assets/plugins/Search-Spotlight/spotlight.tt
+share/p5-Plagger/assets/plugins/Subscription-Planet/
+share/p5-Plagger/assets/plugins/Subscription-Planet/default.yaml
+share/p5-Plagger/assets/plugins/Subscription-Planet/ja.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/
+share/p5-Plagger/assets/plugins/Widget-Simple/1470.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/bloglines.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/blogmap.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/bulkfeeds.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/delicious.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/delicious_bookmark_users.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/digg.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/google_pagerank.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/hatena_bookmark.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/hatena_bookmark_users.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/livedoor_clip.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/livedoor_clip_users.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/mm.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/reddit.yaml
+share/p5-Plagger/assets/plugins/Widget-Simple/technorati.yaml
