@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/05/16 19:29:11 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/10/10 18:09:56 jasper Exp $
 bin/irssi
 lib/irssi/
 lib/irssi/modules/
@@ -77,6 +77,7 @@ share/examples/irssi/themes/default.theme
 @sample ${SYSCONFDIR}/irssi/themes/default.theme
 share/irssi/
 share/irssi/help/
+share/irssi/help/accept
 share/irssi/help/action
 share/irssi/help/admin
 share/irssi/help/alias
