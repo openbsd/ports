@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.17 2007/10/10 21:42:14 steven Exp $
+# $OpenBSD: python.port.mk,v 1.18 2007/10/10 21:44:06 steven Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -13,7 +13,7 @@ MODPY_NO_RUNDEP?=	No
 .if ${NO_BUILD:L} == "no"
 BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 .endif
-.if ${MODPY_NO_RUNDEP} == "no"
+.if ${MODPY_NO_RUNDEP:L} == "no"
 RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
 .endif
 
