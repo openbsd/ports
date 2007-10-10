@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/04 09:13:52 pyr Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/10 18:08:54 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	groupware plugin for Claws-mail
 
 VERSION=	1.98
 DISTNAME=	vcalendar-${VERSION}
-PKGNAME=	claws-mail-vcalendar-${VERSION}
+PKGNAME=	claws-mail-vcalendar-${VERSION}p0
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=	::mail/claws-mail
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender crypto fontconfig freetype m ssl z expat iconv intl \
+		Xrender crypto fontconfig freetype m ssl z expat \
 		atk-1.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo glitz png \
 		gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		gtk-x11-2.0 curl idn
