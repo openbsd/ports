@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-mikmod,v 1.1 2002/02/05 04:07:57 pvalchev Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-mikmod,v 1.2 2007/10/10 14:54:05 merdely Exp $
+lib/xmms/Input/libmikmod.so

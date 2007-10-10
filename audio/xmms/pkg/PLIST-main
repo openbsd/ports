@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 19:04:39 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/10/10 14:54:05 merdely Exp $
 @pkgpath audio/xmms
 bin/wmxmms
 bin/xmms
@@ -12,26 +12,46 @@ include/xmms/plugin.h
 include/xmms/titlestring.h
 include/xmms/util.h
 include/xmms/xmmsctrl.h
-lib/libxmms.a
 lib/libxmms.la
+@lib lib/libxmms.so.${LIBxmms_VERSION}
+lib/xmms/
+lib/xmms/Effect/
 @comment lib/xmms/Effect/libecho.la
+lib/xmms/Effect/libecho.so
 @comment lib/xmms/Effect/libstereo.la
+lib/xmms/Effect/libstereo.so
 @comment lib/xmms/Effect/libvoice.la
+lib/xmms/Effect/libvoice.so
+lib/xmms/General/
 @comment lib/xmms/General/libir.la
+lib/xmms/General/libir.so
 @comment lib/xmms/General/libsong_change.la
+lib/xmms/General/libsong_change.so
+lib/xmms/Input/
 @comment lib/xmms/Input/libcdaudio.la
+lib/xmms/Input/libcdaudio.so
 @comment lib/xmms/Input/libmikmod.la
 @comment lib/xmms/Input/libmpg123.la
 @comment lib/xmms/Input/libtonegen.la
+lib/xmms/Input/libtonegen.so
 @comment lib/xmms/Input/libvorbis.la
 @comment lib/xmms/Input/libwav.la
+lib/xmms/Input/libwav.so
+lib/xmms/Output/
 @comment lib/xmms/Output/libOSS.la
+@comment lib/xmms/Output/libOSS.so
 @comment lib/xmms/Output/libdisk_writer.la
+lib/xmms/Output/libdisk_writer.so
 @comment lib/xmms/Output/libesdout.la
 @comment lib/xmms/Output/libsun.la
+lib/xmms/Output/libsun.so
+lib/xmms/Visualization/
 @comment lib/xmms/Visualization/libbscope.la
+lib/xmms/Visualization/libbscope.so
 @comment lib/xmms/Visualization/libogl_spectrum.la
+lib/xmms/Visualization/libogl_spectrum.so
 @comment lib/xmms/Visualization/libsanalyzer.la
+lib/xmms/Visualization/libsanalyzer.so
 @man man/man1/wmxmms.1
 @man man/man1/xmms.1
 share/aclocal/xmms.m4
@@ -42,8 +62,6 @@ share/doc/xmms/README
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/xmms.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xmms.mo
 share/locale/be/LC_MESSAGES/xmms.mo
 share/locale/bg/LC_MESSAGES/xmms.mo
@@ -62,8 +80,6 @@ share/locale/en/LC_MESSAGES/xmms.mo
 share/locale/eo/LC_MESSAGES/xmms.mo
 share/locale/es/LC_MESSAGES/xmms.mo
 share/locale/et/LC_MESSAGES/xmms.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xmms.mo
 share/locale/fi/LC_MESSAGES/xmms.mo
 share/locale/fr/LC_MESSAGES/xmms.mo
@@ -78,8 +94,6 @@ share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/xmms.mo
 share/locale/ko/LC_MESSAGES/xmms.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xmms.mo
 share/locale/lv/LC_MESSAGES/xmms.mo
 share/locale/mk/
@@ -118,11 +132,8 @@ share/locale/uz/
 share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/xmms.mo
 share/locale/vi/LC_MESSAGES/xmms.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/xmms.mo
 share/locale/zh_CN/LC_MESSAGES/xmms.mo
 share/locale/zh_TW/LC_MESSAGES/xmms.mo
 share/xmms/
 share/xmms/wmxmms.xpm
-%%SHARED%%

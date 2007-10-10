@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.52 2007/10/10 14:54:05 merdely Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-esd=		Esound output plugin for XMMS
@@ -6,15 +6,16 @@ COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
 COMMENT-mikmod=		Mikmod input plugin for XMMS
 COMMENT-mp3=		MP3 input plugin for XMMS
 
+SHARED_ONLY=		Yes
+
 VERSION=		1.2.10
 DISTNAME=		xmms-${VERSION}
-PKGNAME-main=		xmms-${VERSION}p9
-PKGNAME-esd=		xmms-esd-${VERSION}p5
-PKGNAME-vorbis=		xmms-vorbis-${VERSION}p5
-PKGNAME-mikmod=		xmms-mikmod-${VERSION}p5
-PKGNAME-mp3=		xmms-mp3-${VERSION}p6
+PKGNAME-main=		xmms-${VERSION}p10
+PKGNAME-esd=		xmms-esd-${VERSION}p6
+PKGNAME-vorbis=		xmms-vorbis-${VERSION}p6
+PKGNAME-mikmod=		xmms-mikmod-${VERSION}p6
+PKGNAME-mp3=		xmms-mp3-${VERSION}p7
 SHARED_LIBS=		xmms	4.1
-MODGNU_SHARED_LIBS=	xmms	'-export-dynamic'
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
 
@@ -62,10 +63,11 @@ LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 			gthread.>=1.2::devel/glib
 
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--without-gnome \
+CONFIGURE_ARGS=		--without-gnome \
 			--enable-ipv6
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
