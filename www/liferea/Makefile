@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/09 20:21:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/10 15:03:38 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
-DISTNAME=		liferea-1.2.23
+DISTNAME=		liferea-1.4.4
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
@@ -35,7 +35,9 @@ LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunn
 			dbus-glib-1::x11/dbus-glib \
 			gnutls.>=12::security/gnutls \
 			gcrypt.>=12::security/libgcrypt \
-			gpg-error.>=1::security/libgpg-error
+			gpg-error.>=1::security/libgpg-error \
+			sqlite3::databases/sqlite3 \
+			glade-2.0.::devel/libglade2
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::x11/hicolor-icon-theme
 

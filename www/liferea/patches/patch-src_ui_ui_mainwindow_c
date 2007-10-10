@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_callbacks_c,v 1.1.1.1 2007/06/28 16:20:42 jasper Exp $
---- src/callbacks.c.orig	Mon Jun 25 22:58:51 2007
-+++ src/callbacks.c	Mon Jun 25 23:01:06 2007
-@@ -115,20 +115,20 @@ void on_homepagebtn_clicked(GtkButton *button, gpointe
+$OpenBSD: patch-src_ui_ui_mainwindow_c,v 1.1 2007/10/10 15:03:38 jasper Exp $
+--- src/ui/ui_mainwindow.c.orig	Tue Sep 18 23:43:08 2007
++++ src/ui/ui_mainwindow.c	Tue Sep 18 23:45:30 2007
+@@ -211,20 +211,20 @@ on_homepagebtn_clicked (GtkButton *button, gpointer us
  }
  
  void on_topics_activate(GtkMenuItem *menuitem, gpointer user_data) {
