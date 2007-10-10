@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/10/10 12:13:00 jakob Exp $
+--- Makefile.in.orig	Wed Oct 10 13:13:18 2007
++++ Makefile.in	Wed Oct 10 13:13:19 2007
+@@ -12,7 +12,7 @@ datarootdir	= @datarootdir@
+ datadir		= @datadir@
+ libdir		= @libdir@
+ includedir	= @includedir@
+-doxygen		= @doxygen@
++#doxygen		= @doxygen@
+ glibtool	= @glibtool@
+ libtool		= @libtool@
+ ifdef glibtool
