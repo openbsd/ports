@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_conky_c,v 1.1.1.1 2007/10/10 21:20:23 jasper Exp $
+--- src/conky.c.orig	Fri Aug 31 04:05:03 2007
++++ src/conky.c	Fri Sep 28 18:57:07 2007
+@@ -3602,7 +3602,12 @@ static void generate_text_internal(char *p, int p_max_
+ #endif /* !__OpenBSD__ */
+ 				OBJ(freq) {
+ 					if (obj->a) {
+-						obj->a = get_freq(p, p_max_size, "%.0f", 1, obj->data.cpu_index); 
++#ifndef __OpenBSD__
++						obj->a = get_freq(p, p_max_size, "%'.2f", 1000, obj->data.cpu_index); 
++#else
++						/* OpenBSD has no such flag (SUSv2) */
++						obj->a = get_freq(p, p_max_size, "%.2f", 1000, obj->data.cpu_index); 
++#endif
+ 					}
+ 				}
+ 				OBJ(freq_g) {
+@@ -3670,9 +3675,17 @@ static void generate_text_internal(char *p, int p_max_
+ 				}
+ 				OBJ(freq_dyn_g) {
+ 					if (use_spacer) {
+-						get_freq_dynamic(p, 6, "%'.2f     ", 1000); 
+-					} else {
+-						get_freq_dynamic(p, p_max_size, "%'.2f", 1000); 
++#ifndef __OpenBSD__
++ 						get_freq_dynamic(p, 6, "%'.2f     ", 1000);
++#else
++						get_freq_dynamic(p, 6, "%.2f     ", 1000);
++#endif
++ 					} else {
++#ifndef __OpenBSD__
++ 						get_freq_dynamic(p, p_max_size, "%'.2f", 1000);
++#else
++						get_freq_dynamic(p, p_max_size, "%.2f", 1000);
++#endif
+ 					}
+ 				}
+ #ifndef __OpenBSD__
