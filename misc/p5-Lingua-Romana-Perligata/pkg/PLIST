@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/10 14:37:48 jasper Exp $
+${P5SITE}/Lingua/
+${P5SITE}/Lingua/Romana/
+${P5SITE}/Lingua/Romana/Perligata.pm
+@man man/man3p/Lingua::Romana::Perligata.3p

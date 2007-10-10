@@ -1,0 +1,4 @@
+The Lingua::Romana::Perligata makes it makes it possible to write Perl
+programs in Latin. The linguistic principles behind Perligata are
+described in:
+http://www.csse.monash.edu.au/~damian/papers/HTML/Perligata.html
