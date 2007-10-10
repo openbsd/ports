@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.16 2007/10/08 08:21:33 steven Exp $
+# $OpenBSD: python.port.mk,v 1.17 2007/10/10 21:42:14 steven Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -8,10 +8,14 @@ MODPY_VERSION?=		2.5
 MODPY_RUN_DEPENDS=	:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
 _MODPY_BUILD_DEPENDS=	:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
 
+MODPY_NO_RUNDEP?=	No
+
 .if ${NO_BUILD:L} == "no"
 BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 .endif
+.if ${MODPY_NO_RUNDEP} == "no"
 RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
+.endif
 
 .if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
 # The setuptools module provides a package locator (site.py) that is
