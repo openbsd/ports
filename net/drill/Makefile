@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/10 12:13:53 jakob Exp $
 
 COMMENT=	DNS debugger
 
-VERSION=	1.2.0
+VERSION=	1.2.1
 DISTNAME=	ldns-${VERSION}
 PKGNAME=	drill-${VERSION}
 CATEGORIES=	net
