@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/10/11 20:21:07 jasper Exp $
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME=	geany-0.11
+DISTNAME=	geany-0.12
 CATEGORIES=	devel
 
 HOMEPAGE=	http://geany.uvena.de/
@@ -41,5 +41,9 @@ LIB_DEPENDS+=	:vte-*:devel/vte
 .else
 CONFIGURE_ARGS+=--disable-vte
 .endif
+
+pre-configure:
+	@perl -pi -e 's:\@GMSGFMT\@:${LOCALBASE}/bin/msgfmt:' \
+		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>
