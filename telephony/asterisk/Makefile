@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2007/10/04 11:25:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2007/10/11 08:05:18 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-V=			1.4.12
-DISTNAME=		asterisk-${V}
+V=			1.4.13
+DISTNAME=		asterisk-$V
 FULLPKGNAME-main=	${DISTNAME}
 
 CATEGORIES=		telephony
@@ -25,7 +25,8 @@ WANTLIB-main=		c crypto m pthread ssl stdc++ termcap z
 
 LIB_DEPENDS-main=	popt::devel/popt
 
-MASTER_SITES=		http://downloads.digium.com/pub/telephony/asterisk/
+MASTER_SITES=		http://downloads.digium.com/pub/telephony/asterisk/ \
+			http://downloads.digium.com/pub/telephony/asterisk/old-releases/
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
@@ -165,8 +166,8 @@ CONFIGURE_ARGS+=        --with-gnutls=${LOCALBASE} \
 .endif
 
 .for i in ${MULTI_PACKAGES:S/-main//}
-FULLPKGNAME${i}=	asterisk${i}-${V}
-RUN_DEPENDS${i}=	:asterisk-${V}:telephony/asterisk
+FULLPKGNAME$i=		asterisk$i-$V
+RUN_DEPENDS$i=		:asterisk-$V:telephony/asterisk
 .endfor
 
 MAKE_ENV=		ASTCFLAGS="${CFLAGS}" \
