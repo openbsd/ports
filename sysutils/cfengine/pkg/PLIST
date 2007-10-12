@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/10/27 21:47:28 sturm Exp $
-@comment doc/
-@comment doc/cfengine-${V}/
+@comment $OpenBSD: PLIST,v 1.10 2007/10/12 20:12:19 sturm Exp $
 @info info/cfengine-Anomalies.info
 @info info/cfengine-Reference.info
 @info info/cfengine-Tutorial.info

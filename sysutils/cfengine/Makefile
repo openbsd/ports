@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2007/10/12 20:12:18 sturm Exp $
 
 COMMENT=	GNU system administration tool for networks
 
-V=		2.1.16
-DISTNAME=      	cfengine-${V}
+DISTNAME=      	cfengine-2.2.1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.cfengine.org/
@@ -23,9 +22,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-docs
 
 LIB_DEPENDS=		lib/db4/db.=4:db-4.*:databases/db/v4
-
-CONFIGURE_ENV=		ac_cv_lib_pthread_main=no
-
-SUBST_VARS=		V
 
 .include <bsd.port.mk>

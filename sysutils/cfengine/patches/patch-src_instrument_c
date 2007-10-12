@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_instrument_c,v 1.1 2007/10/12 20:12:19 sturm Exp $
+--- src/instrument.c.orig	Sun Sep  2 16:20:59 2007
++++ src/instrument.c	Sun Sep  2 16:22:24 2007
+@@ -331,7 +331,7 @@ while (dbcp->c_get(dbcp, &key, &value, DB_NEXT) == 0)
+    
+    tthen = (time_t)then;
+ 
+-   snprintf(datebuf,CF_BUFSIZE-1,"%s",ctime(&tthen));
++   snprintf(datebuf,CF_MAXVARSIZE-1,"%s",ctime(&tthen));
+    datebuf[strlen(datebuf)-9] = '\0';                     /* Chop off second and year */
+ 
+    snprintf(addr,15,"%s",hostname+1);
