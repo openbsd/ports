@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/27 10:08:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/10/12 07:58:57 ajacoutot Exp $
 tikiwiki/
 tikiwiki/INSTALL
 tikiwiki/README
@@ -2430,7 +2430,6 @@ tikiwiki/lib/wiki3d/src/test/br/arca/morcego/Vertex3DTest.java
 tikiwiki/lib/wiki3d/xmlrpc-1.2-b1.jar
 tikiwiki/lib/ziplib.php
 tikiwiki/license.txt
-tikiwiki/maps/
 tikiwiki/messu-archive.php
 tikiwiki/messu-broadcast.php
 tikiwiki/messu-compose.php
@@ -2439,7 +2438,6 @@ tikiwiki/messu-read.php
 tikiwiki/messu-read_archive.php
 tikiwiki/messu-read_sent.php
 tikiwiki/messu-sent.php
-tikiwiki/mods/
 tikiwiki/modules/
 tikiwiki/modules/_htaccess
 @mode 775
