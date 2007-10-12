@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2007/10/12 12:38:00 winiger Exp $
 
 COMMENT=	mpeg video player library with sound support
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xau Xdmcp Xext c m pthread usbhid
+WANTLIB=		X11 Xau Xdmcp Xext Xrandr Xrender c iconv m pthread \
+			usbhid
 
 MASTER_SITES=	http://www.dulug.de/loki/open-source/smpeg/ \
 		http://gd.tuwien.ac.at/video/lib/smpeg/ \
