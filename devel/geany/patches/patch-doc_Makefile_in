@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2007/10/12 09:44:21 ajacoutot Exp $
+--- doc/Makefile.in.orig	Fri Oct 12 10:53:01 2007
++++ doc/Makefile.in	Fri Oct 12 10:53:21 2007
+@@ -452,11 +452,6 @@ install-data-local:
+ 	$(INSTALL_DATA) $(srcdir)/geany.html $(DOCDIR)/html/index.html
+ 	$(INSTALL_DATA) $(srcdir)/geany.txt $(DOCDIR)/manual.txt
+ 	$(INSTALL_DATA) $(top_srcdir)/README $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/ChangeLog $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/NEWS $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/COPYING $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/AUTHORS $(DOCDIR)
+-	$(INSTALL_DATA) $(top_srcdir)/TODO $(DOCDIR)
+ 	$(INSTALL_DATA) $(top_srcdir)/scintilla/License.txt $(DOCDIR)/ScintillaLicense.txt
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
