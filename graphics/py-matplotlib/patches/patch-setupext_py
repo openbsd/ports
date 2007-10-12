@@ -1,7 +1,7 @@
-$OpenBSD: patch-setupext_py,v 1.7 2006/07/30 06:12:38 steven Exp $
---- setupext.py.orig	Tue Jul  5 17:36:37 2005
-+++ setupext.py	Sun Jul 30 01:48:47 2006
-@@ -34,6 +34,8 @@ WIN32
+$OpenBSD: patch-setupext_py,v 1.8 2007/10/12 11:07:43 djm Exp $
+--- setupext.py.orig	Mon Feb 26 19:30:45 2007
++++ setupext.py	Wed Sep  5 21:57:56 2007
+@@ -44,6 +44,8 @@ WIN32 - VISUAL STUDIO 7.1 (2003)
  import os
  
  basedir = {
@@ -10,16 +10,16 @@ $OpenBSD: patch-setupext_py,v 1.7 2006/07/30 06:12:38 steven Exp $
      'win32'  : ['win32_static',],
      'linux2' : ['/usr/local', '/usr',],
      'linux'  : ['/usr/local', '/usr',],
-@@ -97,6 +99,8 @@ def temp_copy(_from, _to):
- def add_base_flags(module):
-     incdirs = [os.path.join(p, 'include') for p in basedir[sys.platform]
-                if os.path.exists(p)]
+@@ -127,6 +129,8 @@ def add_base_flags(module):
+ 
+     incdirs = filter(os.path.exists,
+                      [os.path.join(p, 'include') for p in basedir[sys.platform] ])
 +    if os.getenv('EXTRA_INCLUDES') is not None:
 +	incdirs += os.getenv('EXTRA_INCLUDES').split()
-     libdirs = [os.path.join(p, 'lib')     for p in basedir[sys.platform]
-                if os.path.exists(p)]
-     module.include_dirs.extend(incdirs)
-@@ -174,7 +178,9 @@ def add_pygtk_flags(module):
+     libdirs = filter(os.path.exists,
+                      [os.path.join(p, 'lib')     for p in basedir[sys.platform] ]+
+                      [os.path.join(p, 'lib64')     for p in basedir[sys.platform] ] )
+@@ -227,7 +231,9 @@ def add_pygtk_flags(module):
      pygtkIncludes = getoutput('pkg-config --cflags-only-I pygtk-2.0').split()
      gtkIncludes = getoutput('pkg-config --cflags-only-I gtk+-2.0').split()
      includes = pygtkIncludes + gtkIncludes

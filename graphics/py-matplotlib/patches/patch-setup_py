@@ -1,71 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.6 2005/09/19 01:42:12 djm Exp $
---- setup.py.orig	Wed Jul  6 23:49:36 2005
-+++ setup.py	Mon Sep 19 10:46:46 2005
-@@ -35,8 +35,8 @@ BUILD_GTK          = 'auto'
- # build TK GUI with Agg renderer ; requires Tkinter Python extension
- # and Tk includes
- # Use False or 0 if you don't want to build
--#BUILD_TKAGG        = 0
--BUILD_TKAGG        = 'auto'
-+BUILD_TKAGG        = 0
-+#BUILD_TKAGG        = 'auto'
+$OpenBSD: patch-setup_py,v 1.7 2007/10/12 11:07:43 djm Exp $
+--- setup.py.orig	Fri Oct 12 17:25:08 2007
++++ setup.py	Fri Oct 12 17:25:24 2007
+@@ -224,7 +224,7 @@ def havegtk():
+             havegtk.gotit = True
+     return havegtk.gotit
  
- # build a small extension to manage the focus on win32 platforms.
- #BUILD_WINDOWING        = 0
-@@ -84,7 +84,7 @@ data.extend(glob.glob('images/*.png'))
- data.extend(glob.glob('images/*.ppm'))
- data.append('matplotlibrc')
+-havegtk.gotit = None
++havegtk.gotit = True
  
--data_files=[('share/matplotlib', data),]
-+data_files=[('share/py-matplotlib', data),]
- 
- # Figure out which array packages to provide binary support for
- # and define the NUMERIX value: Numeric, numarray, or both.
-@@ -161,27 +161,31 @@ build_swigagg(ext_modules, packages)
- build_transforms(ext_modules, packages, NUMERIX)
- build_enthought(ext_modules, packages)
- 
--if BUILD_GTK:
--    try:
--        import gtk
--    except ImportError:
--        print 'GTK requires pygtk'
--        BUILD_GTK=0
--    except RuntimeError:
--        print 'pygtk present but import failed'
-+# Dependencies ensure that py-gtk2 exists, so this isn't necessary. Also, 
-+# the "import gtk" tries to access $DISPLAY at build time!
-+#if BUILD_GTK:
-+#    try:
-+#        import gtk
-+#    except ImportError:
-+#        print 'GTK requires pygtk'
-+#        BUILD_GTK=0
-+#    except RuntimeError:
-+#        print 'pygtk present but import failed'
-     
- 
- if BUILD_GTK:
+ if BUILD_GTK and havegtk():
      build_gdk(ext_modules, packages, NUMERIX)
-     
--if BUILD_GTKAGG:
--    try:
--        import gtk
--    except ImportError:
--        print 'GTKAgg requires pygtk'
--        BUILD_GTKAGG=0
--    except RuntimeError:
--        print 'pygtk present but import failed'
-+# Dependencies ensure that py-gtk2 exists, so this isn't necessary. Also, 
-+# the "import gtk" tries to access $DISPLAY at build time!
-+#if BUILD_GTKAGG:
-+#    try:
-+#        import gtk
-+#    except ImportError:
-+#        print 'GTKAgg requires pygtk'
-+#        BUILD_GTKAGG=0
-+#    except RuntimeError:
-+#        print 'pygtk present but import failed'
- if BUILD_GTKAGG:
-     BUILD_AGG = 1
-     build_gtkagg(ext_modules, packages, NUMERIX)
