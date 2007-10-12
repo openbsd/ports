@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/10/12 19:57:56 jasper Exp $
+--- Makefile.in.orig	Wed Oct 10 17:09:01 2007
++++ Makefile.in	Wed Oct 10 17:09:29 2007
+@@ -135,7 +135,7 @@ strlcpy.o: extras/strlcpy.c $(HEADERS)
+ 
+ clean:
+ 	$(RM) $(OBJ) $(OBJ_WMP) $(OBJ_QT) $(OBJ_RM) $(OBJ_GMP) $(OBJ_DVX) $(SHAREDTARGET)*.so $(SHAREDTARGET)*.xpt
+-	make -C po clean
++	$(MAKE) -C po clean
+ 
+ distclean: clean
+ 	$(RM) install.sh uninstall.sh po/Makefile
+@@ -145,7 +145,7 @@ install: all 
+ 	./install.sh $(DESTDIR)
+ 
+ languages:
+-	make -C po
++	$(MAKE) -C po
+ 
+ uninstall:
+ 	./uninstall.sh
