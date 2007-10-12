@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2007/10/12 08:22:58 landry Exp $
+lib/geany/classbuilder.so
+lib/geany/export.so
+lib/geany/htmlchars.so
