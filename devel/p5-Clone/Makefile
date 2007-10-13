@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/10/13 07:23:52 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	recursively copy Perl datatypes
 
 MODULES=	cpan
-DISTNAME=	Clone-0.22
+DISTNAME=	Clone-0.27
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
