@@ -1,0 +1,2 @@
+Apache::Session::Memcached stores persistent data using memcached
+(memory cache daemon) for Apache::Session storage.
