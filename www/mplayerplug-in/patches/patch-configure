@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/10/13 16:05:13 fgsch Exp $
+--- configure.orig	Sat Oct 13 16:33:26 2007
++++ configure	Sat Oct 13 16:33:54 2007
+@@ -9534,7 +9534,7 @@ done
+ 
+ #AC_REPLACE_FUNCS([memmem strlcpy strlcat])
+ 
+-for ac_func in memmem
++for ac_func in memmem strlcpy strlcat
+ do
+ as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ { echo "$as_me:$LINENO: checking for $ac_func" >&5
