@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.557 2007/10/11 06:56:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.558 2007/10/13 06:45:04 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -205,6 +205,7 @@
      SUBDIR += p5-AppConfig
      SUBDIR += p5-AppConfig-Std
      SUBDIR += p5-Array-Compare
+     SUBDIR += p5-Array-Window
      SUBDIR += p5-B-Deobfuscate
      SUBDIR += p5-B-Graph
      SUBDIR += p5-B-Keywords
@@ -238,10 +239,12 @@
      SUBDIR += p5-Class-Data-Accessor
      SUBDIR += p5-Class-Data-Inheritable
      SUBDIR += p5-Class-Date
+     SUBDIR += p5-Class-Default
      SUBDIR += p5-Class-ErrorHandler
      SUBDIR += p5-Class-Factory
      SUBDIR += p5-Class-Factory-Util
      SUBDIR += p5-Class-Generate
+     SUBDIR += p5-Class-Handle
      SUBDIR += p5-Class-InsideOut
      SUBDIR += p5-Class-Inspector
      SUBDIR += p5-Class-Loader
@@ -501,6 +504,7 @@
      SUBDIR += p5-Tie-LLHash
      SUBDIR += p5-Tie-RegexpHash
      SUBDIR += p5-Time-Clock
+     SUBDIR += p5-Time-Duration
      SUBDIR += p5-Time-Format
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece
