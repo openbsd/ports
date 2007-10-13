@@ -1,0 +1,2 @@
+This package provides Tcl bindings to the PostgreSQL client library,
+which is used to communicate with a PostreSQL server.
