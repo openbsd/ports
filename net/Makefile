@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.486 2007/10/05 14:22:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.487 2007/10/13 09:56:07 simon Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -259,6 +259,7 @@
      SUBDIR += p5-SNMP_Session
      SUBDIR += p5-Socket6
      SUBDIR += p5-Sys-Hostname-Long
+     SUBDIR += p5-Validate-Net
      SUBDIR += p5-flowd
      SUBDIR += packit
      SUBDIR += pavuk
