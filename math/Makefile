@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2007/10/07 18:37:42 steven Exp $
+# $OpenBSD: Makefile,v 1.71 2007/10/13 08:01:01 simon Exp $
 #
 
      SUBDIR += R
@@ -47,6 +47,7 @@
      SUBDIR += p5-AI-NeuralNet-Mesh
      SUBDIR += p5-AI-Perceptron
      SUBDIR += p5-Bit-Vector
+     SUBDIR += p5-Chart-Math-Axis
      SUBDIR += p5-GraphViz
      SUBDIR += p5-Math-Bezier
      SUBDIR += p5-Math-BigInt-GMP
