@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_cgi-wrapper_1,v 1.2 2007/04/25 13:55:58 ajacoutot Exp $
---- doc/cgi-wrapper.1.orig	Wed Mar  7 00:33:48 2007
-+++ doc/cgi-wrapper.1	Wed Apr 25 15:49:45 2007
+$OpenBSD: patch-doc_cgi-wrapper_1,v 1.3 2007/10/14 09:09:46 ajacoutot Exp $
+--- doc/cgi-wrapper.1.orig	Fri Oct 12 11:08:41 2007
++++ doc/cgi-wrapper.1	Sun Oct 14 11:05:53 2007
 @@ -11,7 +11,7 @@ cgi-wrapper
- The CGI-wrapper can be used to run certain CGI programs with a different userid then the webserver's userid. To function properly, the CGI-wrapper binary needs the su-bit. To prevent abuse, it has the necessary security checks. As a result, the CGI-wrapper can only be executed by the Hiawatha webserver.
+ The CGI-wrapper can be used to run certain CGI programs with a different userid then the webserver's userid. To function properly, the CGI-wrapper binary needs the su-bit. To prevent abuse, it has the necessary security checks. The CGI-wrapper can only be executed by the Hiawatha webserver. It uses the Hiawatha PID-file for this verification.
  
  .SH CONFIGURATION
 -The CGI-wrapper can be configured via the configuration file /etc/hiawatha/cgi-wrapper.conf. The following options are available:

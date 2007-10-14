@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_hiawatha_1,v 1.7 2007/09/28 10:12:23 ajacoutot Exp $
---- doc/hiawatha.1.orig	Mon Sep 24 11:21:07 2007
-+++ doc/hiawatha.1	Fri Sep 28 12:06:39 2007
+$OpenBSD: patch-doc_hiawatha_1,v 1.8 2007/10/14 09:09:46 ajacoutot Exp $
+--- doc/hiawatha.1.orig	Fri Oct 12 11:10:43 2007
++++ doc/hiawatha.1	Sun Oct 14 11:05:53 2007
 @@ -23,7 +23,7 @@ hiawatha \- Advanced and secure webserver
  Hiawatha is a secure webserver for Unix. It has been written with 'being secure' as its main goal. Hiawatha has lots of features that no other webserver has. This and the fact that Hiawatha's source code is free of security-bugs, makes Hiawatha the most secure webserver available.
  .br
@@ -30,7 +30,7 @@ $OpenBSD: patch-doc_hiawatha_1,v 1.7 2007/09/28 10:12:23 ajacoutot Exp $
  Close all other connections that originate from the same IP in case of a ban.
 @@ -235,7 +235,7 @@ Default = /var/run/hiawatha.pid, example: PIDfile = /u
  .B ServerId = <userid>|<userid>:<groupid>[,<groupid>, ...]
- The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid 'root' are not allowed here.
+ The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here.
  .br
 -Default = 65534:65534, example: ServerId = www-data
 +Default = 579:579, example: ServerId = www-data
@@ -47,7 +47,7 @@ $OpenBSD: patch-doc_hiawatha_1,v 1.7 2007/09/28 10:12:23 ajacoutot Exp $
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
 @@ -779,15 +779,15 @@ Will unban all clients.
- Will disconnect all clients.
+ Will close all open logfiles
  
  .SH FILES
 -.B /usr/sbin/hiawatha
