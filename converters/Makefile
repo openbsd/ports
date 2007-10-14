@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2007/09/17 19:23:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2007/10/14 15:39:24 jasper Exp $
 #
 
     SUBDIR += base64
@@ -45,5 +45,6 @@
     SUBDIR += wv
     SUBDIR += wv2
     SUBDIR += xlhtml
+    SUBDIR += xmltoman
 
 .include <bsd.port.subdir.mk>
