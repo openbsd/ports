@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-gconf,v 1.1 2007/01/09 21:33:25 espie Exp $
+@comment $OpenBSD: PLIST-gconf,v 1.2 2007/10/14 11:12:54 ajacoutot Exp $
 lib/gstreamer-${VERSION}/libgstautodetect.la
 lib/gstreamer-${VERSION}/libgstautodetect.so
 lib/gstreamer-${VERSION}/libgstgconfelements.la
 lib/gstreamer-${VERSION}/libgstgconfelements.so
-@sample ${SYSCONFDIR}/gconf/
-@sample ${SYSCONFDIR}/gconf/schemas/
-lib/gstreamer-${VERSION}/schemas.sample
-@sample ${SYSCONFDIR}/gconf/schemas/gstreamer-${VERSION}.schemas
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gst-plugins/*.schemas > /dev/null
+share/schemas/
+share/schemas/gst-plugins/
+share/schemas/gst-plugins/gstreamer-${VERSION}.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gst-plugins/*.schemas > /dev/null

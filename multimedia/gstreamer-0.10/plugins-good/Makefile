@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/14 11:12:54 ajacoutot Exp $
 
 COMMENT-main=		multimedia framework - good plugins
 COMMENT-aalib=		multimedia framework - aalib plugin
@@ -17,10 +17,10 @@ COMMENT-shout=		multimedia framework - shoutcast plugin
 
 V=			0.10.5
 DISTNAME=		gst-plugins-good-$V
-PKGNAME-main=		gstreamer-plugins-good-$Vp0
-PKGNAME-aalib=		gstreamer-aalib-$Vp0
-PKGNAME-cairo=		gstreamer-cairo-$Vp1
-PKGNAME-gconf=		gstreamer-confelements-$Vp1
+PKGNAME-main=		gstreamer-plugins-good-$Vp1
+PKGNAME-aalib=		gstreamer-aalib-$Vp1
+PKGNAME-cairo=		gstreamer-cairo-$Vp2
+PKGNAME-gconf=		gstreamer-confelements-$Vp2
 PKGNAME-esd=		gstreamer-esd-$Vp0
 PKGNAME-flac=		gstreamer-flac-$Vp1
 PKGNAME-speex=		gstreamer-speex-$Vp0
@@ -28,8 +28,8 @@ PKGNAME-taglib=		gstreamer-taglib-$Vp0
 PKGNAME-dv=		gstreamer-dv-$Vp0
 PKGNAME-jpeg=		gstreamer-jpeg-$Vp0
 PKGNAME-png=		gstreamer-png-$Vp0
-PKGNAME-gdk=		gstreamer-gdk-pixbuf-$Vp1
-PKGNAME-caca=		gstreamer-libcaca-$Vp0
+PKGNAME-gdk=		gstreamer-gdk-pixbuf-$Vp2
+PKGNAME-caca=		gstreamer-libcaca-$Vp1
 PKGNAME-shout=		gstreamer-shoutcast-$Vp0
 
 
@@ -39,6 +39,7 @@ SHARED_LIBS=
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
+USE_X11=		Yes
 MODULES=		devel/gettext
 
 RUN_DEPENDS=		::${BUILD_PKGPATH}
@@ -48,27 +49,26 @@ LIB_DEPENDS=		gstreamer-0.10:gstreamer->=0.10:multimedia/gstreamer-0.10/core
 
 WANTLIB-main=		${WANTLIB} \
 			ICE SM X11 Xdamage Xext Xfixes ossaudio \
-			gstcontroller-0.10 gstbase-0.10
+			gstcontroller-0.10 gstbase-0.10 Xau Xdmcp
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
 			gstaudio-0.10,gstinterfaces-0.10,gstnetbuffer-0.10,gstriff-0.10,gstrtp-0.10,gsttag-0.10,gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base
 RUN_DEPENDS-main=	
 
 WANTLIB-aalib=		${WANTLIB} \
-			X11 ncurses gstbase-0.10
+			X11 ncurses gstbase-0.10 Xau Xdmcp
 LIB_DEPENDS-aalib=	${LIB_DEPENDS} \
 			aa::graphics/aalib
 
 WANTLIB-cairo=		${WANTLIB} \
-			ICE SM X11 Xext Xrender fontconfig freetype \
-			glitz png gstbase-0.10
+			X11 Xau Xdmcp Xrender fontconfig freetype \
+			glitz png gstbase-0.10 expat
 LIB_DEPENDS-cairo=	${LIB_DEPENDS} \
 			cairo::graphics/cairo
 
 WANTLIB-gconf=		${WANTLIB} \
 			ORBit-2
 LIB_DEPENDS-gconf=	${LIB_DEPENDS} \
-			popt::devel/popt \
 			gconf-2::devel/gconf2
 
 WANTLIB-esd=		${WANTLIB} \
@@ -116,10 +116,10 @@ WANTLIB-png=		${WANTLIB} \
 LIB_DEPENDS-png=	${LIB_DEPENDS} \
 			png::graphics/png
 
-WANTLIB-gdk=		${WANTLIB} ICE SM \
+WANTLIB-gdk=		${WANTLIB} \
 			X11 Xext Xrender atk-1.0 cairo fontconfig freetype \
 			glitz pango-1.0 pangocairo-1.0 pangoft2-1.0 png \
-			gstbase-0.10
+			gstbase-0.10 Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
 
 LIB_DEPENDS-gdk=	${LIB_DEPENDS} \
 			gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
@@ -127,7 +127,7 @@ LIB_DEPENDS-gdk=	${LIB_DEPENDS} \
 BUILD_DEPENDS+=		::graphics/libcaca
 
 WANTLIB-caca=		${WANTLIB} \
-			X11 gstbase-0.10 ncurses
+			X11 gstbase-0.10 ncurses Xau Xdmcp
 
 LIB_DEPENDS-caca=	${LIB_DEPENDS}
 			
@@ -141,8 +141,7 @@ LIB_DEPENDS-shout=	${LIB_DEPENDS} \
 CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-cdio \
 			--disable-dv1394 \
-
-post-install:
-		${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/gconf/schemas/gstreamer-${VERSION}.schemas ${PREFIX}/lib/gstreamer-${VERSION}/schemas.sample
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gst-plugins \
+			--disable-schemas-install
 
 .include <bsd.port.mk>
