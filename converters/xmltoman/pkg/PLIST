@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/14 15:37:56 jasper Exp $
+bin/xmlmantohtml
+bin/xmltoman
+@man man/man1/xmlmantohtml.1
+@man man/man1/xmltoman.1
+share/examples/xmltoman/
+share/examples/xmltoman/masqmail.8.xml
+share/examples/xmltoman/xmlmantohtml.1.xml
+share/examples/xmltoman/xmltoman.1.xml
+share/xmltoman/
+share/xmltoman/xmltoman.css
+share/xmltoman/xmltoman.dtd
+share/xmltoman/xmltoman.xsl

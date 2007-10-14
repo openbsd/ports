@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2007/10/14 15:37:56 jasper Exp $
+--- Makefile.orig	Fri Sep 28 16:44:12 2007
++++ Makefile	Fri Sep 28 16:44:15 2007
+@@ -7,10 +7,10 @@ DISTFILES= COPYING Makefile README xml/ xmlmantohtml x
+ all: xmltoman.1 xmlmantohtml.1
+ 
+ xmltoman.1: xml/xmltoman.1.xml
+-	./xmltoman $< > $@
++	./xmltoman $? > $@
+ 
+ xmlmantohtml.1: xml/xmlmantohtml.1.xml
+-	./xmltoman $< > $@
++	./xmltoman $? > $@
+ 
+ install:
+ 	install -D xmltoman $(DESTDIR)/$(PREFIX)/bin/xmltoman
