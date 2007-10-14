@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2007/10/14 14:52:41 kili Exp $
 
 COMMENT=		MP3 ID3 tags editor
 
@@ -27,8 +27,6 @@ LIB_DEPENDS=		id3.>=3::audio/id3lib \
 			FLAC.>=4::audio/flac \
 			vorbis.>=1,vorbisfile.>=1::audio/libvorbis \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-
-BUILD_DEPENDS=		:help2man-*:devel/help2man
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
