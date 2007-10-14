@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_mixer_c,v 1.1 2001/05/22 13:05:01 naddy Exp $
---- src/mixer.c.orig	Thu Jan  4 16:37:50 2001
-+++ src/mixer.c	Sun May 20 16:45:19 2001
-@@ -275,7 +275,11 @@ void mixer_init(gint init_device_id)
+$OpenBSD: patch-src_mixer_c,v 1.2 2007/10/14 14:12:42 jasper Exp $
+--- src/mixer.c.orig	Tue Sep 10 16:16:26 2002
++++ src/mixer.c	Sun Oct 14 15:47:27 2007
+@@ -285,7 +285,11 @@ void mixer_init(gint init_device_id)
  
    mixer_device = getenv("MIXERDEVICE");
    if (mixer_device == NULL)
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_mixer_c,v 1.1 2001/05/22 13:05:01 naddy Exp $
  
    if ((fd = open(mixer_device, O_RDWR)) == -1) {
      perror(mixer_device);
-@@ -352,7 +356,11 @@ static void mixer_set_vol(DeviceData *de
+@@ -362,7 +366,11 @@ static void mixer_set_vol(DeviceData *device, gint vol
  
    mixer_device = getenv("MIXERDEVICE");
    if (mixer_device == NULL)
@@ -25,7 +25,7 @@ $OpenBSD: patch-src_mixer_c,v 1.1 2001/05/22 13:05:01 naddy Exp $
  
    if ((fd = open(mixer_device, O_RDWR)) == -1) {
      perror(mixer_device);
-@@ -396,7 +404,11 @@ static gint mixer_get_vol(DeviceData *de
+@@ -406,7 +414,11 @@ static gint mixer_get_vol(DeviceData *device)
  
    mixer_device = getenv("MIXERDEVICE");
    if (mixer_device == NULL)
