@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/10/14 09:28:13 aanriot Exp $
+--- Makefile.in.orig	Thu May  7 11:52:29 1998
++++ Makefile.in	Thu Sep 13 12:53:26 2007
+@@ -36,7 +36,7 @@ libdir = $(exec_prefix)/lib
+ # The directory for installing the Info files for this package.
+ infodir = $(prefix)/info
+ 
+-elispdir = $(libdir)/emacs/site-lisp
++elispdir = $(exec_prefix)/share/emacs/site-lisp
+ 
+ AUTOCONF       = autoconf
+ EMACS          = emacs
+@@ -74,7 +74,8 @@ ELFILES = zenirc-18.el zenirc-away.el zenirc-bork.el z
+ 	  zenirc-popup.el zenirc-random-away.el zenirc-random-nick.el \
+ 	  zenirc-signal.el zenirc-stamp.el zenirc-swedish.el zenirc-yow.el \
+ 	  zenirc-history.el zenirc-color.el zenirc-8ball.el zenirc-trigger.el \
+-	  zenirc-yow-filter.el zenirc.el zenirc-prime-p.el zenirc-eval.el
++	  zenirc-yow-filter.el zenirc.el zenirc-prime-p.el zenirc-eval.el \
++	  zenirc-chanbuf.el
+ 
+ MFLAGS = ELFILES='$(ELFILES)' \
+          AUTOCONF='$(AUTOCONF)' EMACS='$(EMACS)' ETAGS='$(ETAGS)' \

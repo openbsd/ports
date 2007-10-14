@@ -1,0 +1,11 @@
+Here is a sample configuration you could want to add to your .emacs:
+
+(load-library "zenirc")
+
+(eval-after-load "zenirc"
+    '(progn
+     (load "zenirc-chanbuf.elc")
+     (add-hook 'zenirc-mode-hook  'zenirc-chanbuf-minor-mode)))
+
+(setq zenirc-server-alist
+    '(("IRCSERVER" IRCPORT SERVERPASS "NICK" nil)))

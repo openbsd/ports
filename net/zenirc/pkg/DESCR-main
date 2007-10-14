@@ -1,0 +1,9 @@
+ZenIRC is a full-featured scriptable IRC client for the EMACS text
+editor. Most features are implemented via module extensions. For
+example, DCC (Direct Client-to-Client) can be enabled at the user's
+option.
+
+Note that this package also comes with "zenirc-chanbuf.el" which allows
+to have one channel per IRC buffer. See [*] for details.
+
+[*] http://www.emacswiki.org/cgi-bin/emacs/ZenircChanbuf
