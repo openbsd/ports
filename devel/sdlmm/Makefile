@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/10/14 08:22:17 winiger Exp $
 
 COMMENT-main=	C++ wrapper for the Simple DirectMedia Layer
 COMMENT-docs=	SDLmm documentation
 
 VERSION=	0.1.8
 DISTNAME=	SDLmm-${VERSION}
-PKGNAME-main=	sdlmm-${VERSION}p5
+PKGNAME-main=	sdlmm-${VERSION}p6
 PKGNAME-docs=	sdlmm-doc-${VERSION}p3
 SHARED_LIBS +=	SDLmm                9.0      # .8.0
 CATEGORIES=	devel
@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlmm/}
 MULTI_PACKAGES=	-main -docs
 
 LIB_DEPENDS-main=	SDL::devel/sdl
-WANTLIB-main=	m stdc++ usbhid X11 Xau Xdmcp Xext
+WANTLIB-main=	iconv m stdc++ usbhid X11 Xau Xdmcp Xext Xrandr Xrender
 PKG_ARCH-docs=	*
 
 USE_X11=	Yes

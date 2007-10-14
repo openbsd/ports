@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2007/09/16 02:53:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.34 2007/10/14 08:22:17 winiger Exp $
 
 COMMENT=	SDL multi-channel audio mixer library
 DISTNAME=	SDL_mixer-1.2.6
-PKGNAME=	${DISTNAME:L:S/_/-/}p5
+PKGNAME=	${DISTNAME:L:S/_/-/}p6
 SHARED_LIBS=	SDL_mixer 3.0
 CATEGORIES=	devel audio
 MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	mikmod.>=2::audio/libmikmod \
 		SDL.>=4::devel/sdl \
 		smpeg.>=1::devel/smpeg
 
-WANTLIB=	X11 Xau Xdmcp Xext c ogg pthread usbhid m
+WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender c iconv ogg pthread usbhid m
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
