@@ -1,0 +1,65 @@
+$OpenBSD: patch-snowball_cc,v 1.1 2007/10/14 13:25:01 sturm Exp $
+--- snowball.cc.orig	Sun Oct 14 06:24:00 2007
++++ snowball.cc	Sun Oct 14 06:25:14 2007
+@@ -6,10 +6,10 @@
+ static int an;
+ static long subKind;
+ static long ve;
+-static long time;
++static long my_time;
+ 
+ void snb_init(void) {
+-  time = -1;
++  my_time = -1;
+ }
+ 
+ /* move the snowball and check if it hits something */
+@@ -22,19 +22,19 @@ void snb_movesnowball(void) {
+ 
+   int nr;
+ 
+-  if (time < 0) return;
++  if (my_time < 0) return;
+ 
+-  if (time == 12) {
+-    time = -1;
++  if (my_time == 12) {
++    my_time = -1;
+     return;
+   }
+ 
+-  time++;
++  my_time++;
+   an = (an + subKind * 2) & 0x7f;
+-  ve += schusshoch[time - 1];
++  ve += schusshoch[my_time - 1];
+ 
+   if (!lev_testfigure(an, ve, -1, 0, 2, 2, 5)) {
+-    time = -1;
++    my_time = -1;
+     return;
+   }
+ 
+@@ -45,11 +45,11 @@ void snb_movesnowball(void) {
+   else {
+     snd_hit();
+     pts_add(rob_gothit(nr));
+-    time = -1;
++    my_time = -1;
+   }
+ }
+ 
+-bool snb_exists(void) { return time != -1; }
++bool snb_exists(void) { return my_time != -1; }
+ 
+ void snb_start(int verticalpos, int anglepos, bool look_left) {
+ 
+@@ -62,7 +62,7 @@ void snb_start(int verticalpos, int anglepos, bool loo
+     subKind = 1;
+   }
+   an &= 0x7f;
+-  time = 0;
++  my_time = 0;
+ }
+ 
+ int snb_verticalpos(void) { return ve; }
