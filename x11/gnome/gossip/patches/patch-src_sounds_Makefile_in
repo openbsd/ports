@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_sounds_Makefile_in,v 1.1.1.1 2007/05/27 19:38:47 jasper Exp $
---- src/sounds/Makefile.in.orig	Sun May 27 16:22:27 2007
-+++ src/sounds/Makefile.in	Sun May 27 16:23:36 2007
-@@ -343,13 +343,6 @@ uninstall-soundDATA:
+$OpenBSD: patch-src_sounds_Makefile_in,v 1.2 2007/10/15 05:08:20 jasper Exp $
+--- src/sounds/Makefile.in.orig	Mon Aug 13 20:36:55 2007
++++ src/sounds/Makefile.in	Sun Oct 14 23:17:22 2007
+@@ -340,13 +340,6 @@ uninstall-soundDATA:
  	done
  install-soundlistDATA: $(soundlist_DATA)
  	@$(NORMAL_INSTALL)
