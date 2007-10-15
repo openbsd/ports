@@ -1,7 +1,13 @@
-$OpenBSD: patch-utils_dialog_Makefile_in,v 1.1.1.1 2007/07/17 21:53:31 jasper Exp $
---- utils/dialog/Makefile.in.orig	Tue Jan 17 21:16:42 2006
-+++ utils/dialog/Makefile.in	Fri May  4 20:28:41 2007
-@@ -109,18 +109,18 @@ install: install-exec $(man1dir)/tcdialog.$(manext)
+$OpenBSD: patch-utils_dialog_Makefile_in,v 1.2 2007/10/15 07:31:57 kili Exp $
+--- utils/dialog/Makefile.in.orig	Tue Jan 17 22:16:42 2006
++++ utils/dialog/Makefile.in	Sun Oct 14 21:54:04 2007
+@@ -104,23 +104,23 @@ SHELL = /bin/sh
+ @SET_MAKE@
+ 
+ .PHONY: install installdirs install-exec
+-install: install-exec $(man1dir)/tcdialog.$(manext)
++install: install-exec ${DESTDIR}$(man1dir)/tcdialog.$(manext)
+ 
  install-exec: installdirs $(bindir)/tcdialog
  
  installdirs:
@@ -12,9 +18,9 @@ $OpenBSD: patch-utils_dialog_Makefile_in,v 1.1.1.1 2007/07/17 21:53:31 jasper Ex
 -	$(INSTALL_PROGRAM) dialog $@
 +	$(INSTALL_PROGRAM) dialog ${DESTDIR}$@
  
- $(man1dir)/tcdialog.$(manext): dialog.man
--	$(INSTALL_DATA) $(srcdir)/dialog.man $@
-+	$(INSTALL_DATA) $(srcdir)/dialog.man ${DESTDIR}$@
+-$(man1dir)/tcdialog.$(manext): dialog.man
++${DESTDIR}$(man1dir)/tcdialog.$(manext): dialog.man
+ 	$(INSTALL_DATA) $(srcdir)/dialog.man $@
  
  
  check:
