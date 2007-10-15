@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/10/05 14:48:53 jcs Exp $
+# $OpenBSD: Makefile,v 1.10 2007/10/15 15:28:22 jcs Exp $
 
 COMMENT=	action controller and action view of rails MVC framework
 
-DISTNAME=	actionwebservice-1.2.4
+DISTNAME=	actionwebservice-1.2.5
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	www
 
@@ -17,8 +17,8 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=aws/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-activerecord->=1.15.4:databases/ruby-activerecord \
-		:ruby-actionpack->=1.13.4:devel/ruby-actionpack
+RUN_DEPENDS=	:ruby-activerecord->=1.15.5:databases/ruby-activerecord \
+		:ruby-actionpack->=1.13.5:devel/ruby-actionpack
 
 CONFIGURE_STYLE=ruby gem
 
