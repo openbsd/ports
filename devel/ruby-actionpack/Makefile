@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/15 15:22:22 jcs Exp $
+# $OpenBSD: Makefile,v 1.11 2007/10/15 15:24:22 jcs Exp $
 
 COMMENT=	eases web-request routing, handling, and response
 
@@ -17,7 +17,7 @@ MASTER_SITES=   ${MASTER_SITE_RUBYFORGE:=actionpack/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-activesupport->=1.4.3:devel/ruby-activesupport
+RUN_DEPENDS=	:ruby-activesupport->=1.4.4:devel/ruby-activesupport
 
 CONFIGURE_STYLE=ruby gem
 
