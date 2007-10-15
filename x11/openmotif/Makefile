@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2007/08/14 14:19:11 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.32 2007/10/15 21:55:53 mbalmer Exp $
+
+NOT_FOR_ARCHS=		vax
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
