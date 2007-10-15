@@ -1,0 +1,7 @@
+pymsn is a rewrite of libivy (http://hybrid.tuxfamily.org/ivy), during
+this rewrite the usage of Python asyncore and asynchat were dropped in
+favor of the pymsn.gio library based on Glib GIOChannel. This change
+enabled easy integration with the Glib main loop.
+
+pymsn also gained msnp2p support for display pictures and custom smileys
+as well a Http Polling transport and proxy support.
