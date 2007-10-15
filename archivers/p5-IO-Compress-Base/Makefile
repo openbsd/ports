@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/26 19:29:53 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/15 16:44:53 sthen Exp $
 
 COMMENT=	base class for IO::Compress modules
 
 MODULES=	cpan
 
-DISTNAME=	IO-Compress-Base-2.005
+DISTNAME=	IO-Compress-Base-2.006
 CATEGORIES=	archivers
 
 MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
