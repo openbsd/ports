@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2003/01/02 18:56:06 lebel Exp $
---- configure.orig	Sun Nov 24 08:17:37 2002
-+++ configure	Thu Jan  2 13:50:29 2003
+$OpenBSD: patch-configure,v 1.3 2007/10/15 17:53:37 jasper Exp $
+--- configure.orig	Sun Nov 24 13:17:37 2002
++++ configure	Mon Oct 15 14:55:20 2007
 @@ -4297,6 +4297,8 @@ openbsd*)
    version_type=sunos
    need_lib_prefix=no
@@ -10,3 +10,27 @@ $OpenBSD: patch-configure,v 1.2 2003/01/02 18:56:06 lebel Exp $
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case "$host_os" in
      openbsd2.[89] | openbsd2.[89].*)
+@@ -5602,11 +5604,11 @@ fi
+ 
+ 
+ if test x$IRSSI_INCLUDE = x; then
+-    if test -f ../irssi-config; then
++    if test -f ../irssi-version.h; then
+     IRSSI_INCLUDE=".."
+-  elif test -f ../irssi/irssi-config; then
++  elif test -f ../irssi/irssi-version.h; then
+     IRSSI_INCLUDE="../irssi"
+-  elif test -f ../../irssi/irssi-config; then
++  elif test -f ../../irssi/irssi-version.h; then
+     IRSSI_INCLUDE="../../irssi"
+   fi
+ fi
+@@ -5618,7 +5620,7 @@ cd $old
+ 
+ 
+ 
+-if test ! -f $IRSSI_INCLUDE/irssi-config; then
++if test ! -f $IRSSI_INCLUDE/irssi-version.h; then
+   { echo "configure: error: Not irssi directory: $IRSSI_INCLUDE" 1>&2; exit 1; }
+ fi
+ 
