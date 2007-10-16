@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/10/16 09:49:18 ajacoutot Exp $
+--- Makefile.in.orig	Sun May  2 07:02:56 2004
++++ Makefile.in	Thu Oct 11 18:31:27 2007
+@@ -155,7 +155,7 @@ SUBDIRS = src
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = $(PACKAGE)-$(API).pc
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ doc_DATA = \
+ 	AUTHORS \
+ 	COPYING \
+@@ -587,7 +587,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-pkgconfigDATA
++install-data-am: install-pkgconfigDATA
+ 
+ install-exec-am:
+ 
