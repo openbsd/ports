@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/16 01:37:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2007/10/16 12:44:50 ajacoutot Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
 VERSION=	0.6.14
 DISTNAME=	gnokii-${VERSION}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 
@@ -28,6 +28,8 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
+MODULES=		devel/gettext
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 CONFIGURE_ARGS=		--enable-security \
@@ -41,11 +43,13 @@ CONFIGURE_ARGS+=	--without-x
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		X11 Xau Xdmcp Xpm Xrender fontconfig freetype z \
-			iconv intl m pthread atk-1.0.>=800.0 glib-2.0.>=400.8 \
+			m pthread atk-1.0.>=800.0 glib-2.0.>=400.8 \
 			gmodule-2.0.>=400.8 gobject-2.0.>=400.8 \
 			pango-1.0.>=600.0 pangoft2-1.0.>=600.0 \
-			pangocairo-1.0 cairo glitz png expat
+			pangocairo-1.0 cairo glitz png expat \
+			Xcursor Xext Xfixes Xi Xinerama Xrandr
 LIB_DEPENDS=		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
+RUN_DEPENDS+=		:desktop-file-utils-*:devel/desktop-file-utils
 .endif
 
 LIB_DEPENDS+=		usb.>=8::devel/libusb

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Docs_sample_gnokiirc,v 1.1.1.1 2006/05/29 18:05:53 robert Exp $
---- Docs/sample/gnokiirc.orig	Mon May 29 19:45:22 2006
-+++ Docs/sample/gnokiirc	Mon May 29 19:45:52 2006
+$OpenBSD: patch-Docs_sample_gnokiirc,v 1.2 2007/10/16 12:44:50 ajacoutot Exp $
+--- Docs/sample/gnokiirc.orig	Mon Aug 28 00:36:54 2006
++++ Docs/sample/gnokiirc	Tue Oct 16 14:22:35 2007
 @@ -7,7 +7,7 @@
  
  # Set port to the physical port used to connect to your phone.
@@ -10,7 +10,7 @@ $OpenBSD: patch-Docs_sample_gnokiirc,v 1.1.1.1 2006/05/29 18:05:53 robert Exp $
  #
  # For MacOSX you will need something like:
  # port = /dev/cu.USA28X1P1.1
-@@ -42,10 +42,10 @@
+@@ -42,10 +42,10 @@ port = /dev/ttyS0
  # model = series60
  # For other non-Nokia phones and when you want to use AT
  # mode use:
@@ -23,7 +23,7 @@ $OpenBSD: patch-Docs_sample_gnokiirc,v 1.1.1.1 2006/05/29 18:05:53 robert Exp $
  # There are few main models that should make use of the certain drivers.
  # These are: 6110, 7110, 6510, 3110, 2110, 6160.
  
-@@ -98,7 +98,7 @@
+@@ -102,7 +102,7 @@ connection = serial
  # port software (eg. minicom). If you have wrong permissions for the
  # directory, a warning will be generated. If you don't want a lockfile, set
  # it to 'no'.

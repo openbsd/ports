@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/08/03 17:42:45 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/10/16 12:44:50 ajacoutot Exp $
 @conflict smstools-*
 %%SHARED%%
 !%%no_x11%%
@@ -34,40 +34,15 @@ share/doc/gnokii/gnapplet.sis
 share/examples/gnokii/
 share/examples/gnokii/gnokiirc
 @sample ${SYSCONFDIR}/gnokiirc
-share/locale/
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/gnokii.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gnokii.mo
-share/locale/et/
-share/locale/et/LC_MESSAGES/
 share/locale/et/LC_MESSAGES/gnokii.mo
-share/locale/fi/
-share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/gnokii.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gnokii.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/gnokii.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gnokii.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/gnokii.mo
-share/locale/sk/
-share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/gnokii.mo
-share/locale/sl/
-share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/gnokii.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/gnokii.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/gnokii.mo
