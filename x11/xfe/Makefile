@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/12 16:23:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/10/16 14:46:46 ajacoutot Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
 DISTNAME= 	xfe-1.04
+PKGNAME=	${DISTNAME}p0
 CATEGORIES= 	x11	
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
@@ -31,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${X11BASE}/include \
 			-I${X11BASE}/include/freetype2 \
 			-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl \
+		LDFLAGS="-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib -lXft"
 
 .include <bsd.port.mk>

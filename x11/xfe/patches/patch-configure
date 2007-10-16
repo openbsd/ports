@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.1 2007/08/10 12:50:33 ajacoutot Exp $
---- configure.orig	Fri Jun 15 09:41:13 2007
-+++ configure	Tue Jul 17 15:24:54 2007
-@@ -7523,13 +7523,13 @@ fi
+$OpenBSD: patch-configure,v 1.2 2007/10/16 14:46:46 ajacoutot Exp $
+--- configure.orig	Tue Aug 28 10:47:02 2007
++++ configure	Tue Oct 16 16:35:38 2007
+@@ -2273,7 +2273,6 @@ _ACEOF
+ 
+ 
+ 
+-CXXFLAGS="-O2"
+ 
+ { echo "$as_me:$LINENO: checking whether ${MAKE-make} sets \$(MAKE)" >&5
+ echo $ECHO_N "checking whether ${MAKE-make} sets \$(MAKE)... $ECHO_C" >&6; }
+@@ -7523,13 +7522,13 @@ fi
  
          else
            # Some library is needed. Try libpthread and libc_r.
@@ -18,7 +26,7 @@ $OpenBSD: patch-configure,v 1.1 2007/08/10 12:50:33 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -7586,8 +7586,8 @@ fi
+@@ -7586,8 +7585,8 @@ fi
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_kill" >&6; }
  if test $ac_cv_lib_pthread_pthread_kill = yes; then
    gl_have_pthread=yes
@@ -29,18 +37,23 @@ $OpenBSD: patch-configure,v 1.1 2007/08/10 12:50:33 ajacoutot Exp $
  fi
  
            if test -z "$gl_have_pthread"; then
-@@ -12100,12 +12100,12 @@ cat >>conftest.$ac_ext <<_ACEOF
- #include <libintl.h>
- $gt_revision_test_code
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int libintl_nl_domain_bindings;
- int
- main ()
- {
- bindtextdomain ("", "");
--return * gettext ("")$gt_expression_test_code + _nl_msg_cat_cntr + *_nl_domain_bindings
-+return * gettext ("")$gt_expression_test_code + _nl_msg_cat_cntr + libintl_nl_domain_bindings
-   ;
-   return 0;
- }
+@@ -14529,7 +14528,7 @@ LIBTHREAD!$LIBTHREAD$ac_delim
+ LTLIBTHREAD!$LTLIBTHREAD$ac_delim
+ LIBMULTITHREAD!$LIBMULTITHREAD$ac_delim
+ LTLIBMULTITHREAD!$LTLIBMULTITHREAD$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+ INTLBISON!$INTLBISON$ac_delim
+ GLIBC21!$GLIBC21$ac_delim
+@@ -14547,8 +14546,8 @@ INSTOBJEXT!$INSTOBJEXT$ac_delim
+ GENCAT!$GENCAT$ac_delim
+ INTLOBJS!$INTLOBJS$ac_delim
+ INTL_LIBTOOL_SUFFIX_PREFIX!$INTL_LIBTOOL_SUFFIX_PREFIX$ac_delim
+-INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++INTLLIBS!$LTLIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ CXXCPP!$CXXCPP$ac_delim
