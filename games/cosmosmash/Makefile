@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/16 16:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/10/16 16:34:11 ajacoutot Exp $
 
 COMMENT=	astrosmash clone for X
 
@@ -22,7 +22,7 @@ MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 LIB_DEPENDS=	flatzebra-0.1::devel/flatzebra \
 		SDL_mixer::devel/sdl-mixer \
 		SDL_image::devel/sdl-image
-ksh: q: not found
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
 
