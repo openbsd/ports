@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/16 07:30:49 ajacoutot Exp $
+@lib lib/libexif-gtk.so.${LIBexif-gtk_VERSION}
