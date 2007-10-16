@@ -5,3 +5,9 @@ ${INSTDIR}/${HORDE_MODULE}/docs/INSTALL
 
 Before installing ${HORDE_NAME}, make sure that Horde is correctly
 configured and working first!
+
+To work inside a chroot, you must create files so that the userid
+of the user running httpd may be looked up:
+
+# grep ^www: /etc/master.passwd > ${PREFIX}/etc/master.passwd
+# pwd_mkdb -d ${PREFIX}/etc ${PREFIX}/etc/master.passwd
