@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/06 15:27:28 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/16 09:39:26 sthen Exp $
 
 COMMENT= 	XML::RSS with XML::LibXML
 
@@ -19,6 +19,8 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-DateTime-Format-W3CDTF \
 		::devel/p5-Universal-require \
 		::textproc/p5-XML-LibXML
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV+=	TEST_POD=1
 
