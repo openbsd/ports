@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2007/09/15 16:40:59 simon Exp $
+# $OpenBSD: Makefile,v 1.192 2007/10/16 07:31:38 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -80,6 +80,7 @@
      SUBDIR += libdivxdecore
      SUBDIR += libdvbpsi
      SUBDIR += libexif
+     SUBDIR += libexif-gtk
      SUBDIR += libgphoto2
      SUBDIR += libkdcraw
      SUBDIR += libkexif
