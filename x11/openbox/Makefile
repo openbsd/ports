@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2007/08/27 11:49:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2007/10/16 14:46:01 ajacoutot Exp $
 
 COMMENT=	small, fast & usable window manager
 
 DISTNAME=	openbox-3.4.4
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS+=	obparser	6.0 # .16.1
 SHARED_LIBS+=	obrender	6.0 # .16.1
 CATEGORIES=	x11
@@ -34,7 +35,7 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:

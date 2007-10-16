@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/25 18:29:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/10/16 14:46:01 ajacoutot Exp $
 
 COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/index.php/Obconf
@@ -37,6 +37,6 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
