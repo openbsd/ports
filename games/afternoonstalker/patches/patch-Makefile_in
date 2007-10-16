@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/10/16 15:46:22 ajacoutot Exp $
+--- Makefile.in.orig	Sun May  2 07:13:49 2004
++++ Makefile.in	Thu Oct 11 18:41:34 2007
+@@ -131,7 +131,7 @@ SUBDIRS = src
+ 
+ man_MANS = doc/$(PACKAGE).6
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ doc_DATA = \
+ 	AUTHORS \
+ 	COPYING \
+@@ -575,7 +575,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-man
++install-data-am: install-man
+ 
+ install-exec-am:
+ 
