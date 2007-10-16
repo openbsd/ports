@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2007/10/16 16:28:36 ajacoutot Exp $
+--- src/Makefile.in.orig	Tue Oct 16 18:23:58 2007
++++ src/Makefile.in	Tue Oct 16 18:24:06 2007
+@@ -588,8 +588,8 @@ uninstall-am: uninstall-binPROGRAMS uninstall-desktope
+ 
+ check: all
+ @HAVE_GETOPT_LONG_TRUE@	test "`./$(PACKAGE) --version`" = "$(PACKAGE) $(VERSION)"
+-@HAVE_GETOPT_LONG_TRUE@	./$(PACKAGE) --version >& /dev/null
+-@HAVE_GETOPT_LONG_TRUE@	./$(PACKAGE) --help >& /dev/null
++@HAVE_GETOPT_LONG_TRUE@	./$(PACKAGE) --version > /dev/null
++@HAVE_GETOPT_LONG_TRUE@	./$(PACKAGE) --help > /dev/null
+ 
+ run: check all
+ 	PKGSOUNDDIR=$(srcdir)/sounds ./$(PACKAGE)
