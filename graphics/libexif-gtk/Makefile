@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/16 07:30:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/16 11:47:34 steven Exp $
 
 COMMENT=	GTK2 interface to libexif
 
 DISTNAME=	libexif-gtk-0.3.5
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	exif-gtk 0.0	# .5.0
 CATEGORIES=	graphics
 
-HOMEPAGE=	libexif.sourceforge.net/
+HOMEPAGE=	http://libexif.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +30,7 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

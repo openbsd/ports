@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/10/16 07:30:49 ajacoutot Exp $
---- configure.orig	Mon Oct 15 13:11:22 2007
-+++ configure	Mon Oct 15 13:11:40 2007
+$OpenBSD: patch-configure,v 1.2 2007/10/16 11:47:34 steven Exp $
+--- configure.orig	Mon Oct 18 21:13:47 2004
++++ configure	Tue Oct 16 13:27:45 2007
 @@ -26420,12 +26420,12 @@ cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <libintl.h>
@@ -16,3 +16,23 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/10/16 07:30:49 ajacoutot Exp $
    ;
    return 0;
  }
+@@ -28238,7 +28238,7 @@ s,@HAVE_POSIX_PRINTF@,$HAVE_POSIX_PRINTF,;t t
+ s,@HAVE_ASPRINTF@,$HAVE_ASPRINTF,;t t
+ s,@HAVE_SNPRINTF@,$HAVE_SNPRINTF,;t t
+ s,@HAVE_WPRINTF@,$HAVE_WPRINTF,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLBISON@,$INTLBISON,;t t
+ s,@BUILD_INCLUDED_LIBINTL@,$BUILD_INCLUDED_LIBINTL,;t t
+@@ -28249,8 +28249,8 @@ s,@INSTOBJEXT@,$INSTOBJEXT,;t t
+ s,@GENCAT@,$GENCAT,;t t
+ s,@INTLOBJS@,$INTLOBJS,;t t
+ s,@INTL_LIBTOOL_SUFFIX_PREFIX@,$INTL_LIBTOOL_SUFFIX_PREFIX,;t t
+-s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@INTLLIBS@,$LTLIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@PKG_CONFIG@,$PKG_CONFIG,;t t
