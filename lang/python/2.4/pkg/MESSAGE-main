@@ -1,4 +1,4 @@
-If you want to use this package as your default system python, create
-symbolic links like so:
-ln -s ${PREFIX}/bin/python2.4 ${PREFIX}/bin/python
-ln -s ${PREFIX}/bin/pydoc2.4  ${PREFIX}/bin/pydoc
+If you want to use this package as your default system python, as root
+create symbolic links like so (overwriting any previous default):
+ ln -sf ${PREFIX}/bin/python2.4 ${PREFIX}/bin/python
+ ln -sf ${PREFIX}/bin/pydoc2.4  ${PREFIX}/bin/pydoc
