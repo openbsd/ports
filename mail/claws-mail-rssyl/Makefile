@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/09 21:44:48 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/17 21:40:35 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	RSS aggregator plugin for Claws-mail
 
 VERSION=	0.15
 DISTNAME=	rssyl-${VERSION}
-PKGNAME=	claws-mail-rssyl-${VERSION}
+PKGNAME=	claws-mail-rssyl-${VERSION}p0
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 
@@ -37,7 +37,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-static
 
 .include <bsd.port.mk>
