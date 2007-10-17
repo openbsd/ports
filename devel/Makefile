@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.559 2007/10/16 09:50:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.560 2007/10/17 16:50:21 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -73,7 +73,6 @@
      SUBDIR += gconf2
      SUBDIR += gconfmm
      SUBDIR += geany
-     SUBDIR += gengameng
      SUBDIR += geotiff
      SUBDIR += gettext
      SUBDIR += getxml
