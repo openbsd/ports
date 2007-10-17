@@ -1,0 +1,21 @@
+$OpenBSD: patch-testsuite_testit,v 1.1 2007/10/17 14:37:34 ajacoutot Exp $
+--- testsuite/testit.orig	Mon Aug 28 00:36:54 2006
++++ testsuite/testit	Wed Oct 17 13:40:52 2007
+@@ -1,15 +1,10 @@
+-#!/bin/bash
+-(
+-	cd ..
+-	./configure --disable-shared
+-	make || ( echo "*** Compile FAILED"; sleep 10 )
+-)
++#!/bin/sh
+ export HOME=`pwd`
+ GNOKII=../gnokii/gnokii
+ for A in test.0.identify test.1.sms test.10.oplogo test.11.ringtone test.13.emspicture test.14.oplogo-xpm test.16.imelody test.17.picture2 test.18.emsanimation test.2.concatsms; do
+     echo -n "Doing $A... "
+     B=`echo $A | sed s/test/out/`
+-    source $A 2>&1 | grep -v ^GNOKII | grep -v '^Doing operation' > my$B
++    . $A 2>&1 | grep -v ^GNOKII | grep -v '^Doing operation' > my$B
+     if cmp my$B $B > /dev/null 2>&1; then
+ 	echo ok
+     else
