@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/10 18:08:54 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/17 21:39:20 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	groupware plugin for Claws-mail
 
 VERSION=	1.98
 DISTNAME=	vcalendar-${VERSION}
-PKGNAME=	claws-mail-vcalendar-${VERSION}p0
+PKGNAME=	claws-mail-vcalendar-${VERSION}p1
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 
@@ -36,7 +36,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-static
 
 .include <bsd.port.mk>
