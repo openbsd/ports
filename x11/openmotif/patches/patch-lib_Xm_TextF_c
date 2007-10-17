@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_Xm_TextF_c,v 1.1 2007/10/17 07:57:03 mbalmer Exp $
+--- lib/Xm/TextF.c.orig	Tue Oct 16 08:33:28 2007
++++ lib/Xm/TextF.c	Mon Oct 15 23:27:45 2007
+@@ -8092,6 +8092,7 @@ SetValues(Widget old,
+   XmTextPosition new_position = 0;
+   XmTextPosition newInsert;
+   int n = 0;
++  unsigned long blink_rate;
+   
+   if (new_w->core.being_destroyed) return False;
+   TextFieldResetIC(old);
+@@ -8357,7 +8358,6 @@ SetValues(Widget old,
+   }
+   
+ #ifdef XSETTINS_ON
+-  unsigned long blink_rate;
+   blink_rate  = (unsigned long) BlinkRate_xsetting(new_tf);
+   if (new_tf->text.has_focus && XtIsSensitive((Widget)new_tf) &&
+    blink_rate!= BlinkRate_xsetting(old_tf)) {

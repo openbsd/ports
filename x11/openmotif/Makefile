@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2007/10/15 21:55:53 mbalmer Exp $
-
-NOT_FOR_ARCHS=		vax
+# $OpenBSD: Makefile,v 1.33 2007/10/17 07:57:03 mbalmer Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
 
 VERSION=		2.3.0
 DISTNAME=		openmotif-${VERSION}
-PKGNAME-main=		openmotif-${VERSION}
-PKGNAME-demos=		openmotif-demos-${VERSION}p0
+PKGNAME-main=		openmotif-${VERSION}p0
+PKGNAME-demos=		openmotif-demos-${VERSION}p1
 
 SHARED_LIBS=		Mrm	4.0	\
 			Uil	4.0	\

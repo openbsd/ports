@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_Xm_DataF_c,v 1.1 2007/10/17 07:57:03 mbalmer Exp $
+--- lib/Xm/DataF.c.orig	Tue Oct 16 10:11:27 2007
++++ lib/Xm/DataF.c	Tue Oct 16 10:12:05 2007
+@@ -10604,6 +10604,7 @@ df_SetValues(
+     XmTextPosition new_position = 0;
+     XmTextPosition newInsert;
+     int n = 0;
++    unsigned long blink_rate;
+ 
+     if (new_w->core.being_destroyed) return False;
+ 
+@@ -10925,7 +10926,6 @@ df_SetValues(
+     }
+ 
+ #ifdef XSETTINS_ON
+-	unsigned long blink_rate;
+ 	blink_rate = (unsigned long) Blink_rate_xsetting(new_tf);
+ 
+     if (XmTextF_has_focus(new_tf) && XtIsSensitive((Widget)new_tf) &&
