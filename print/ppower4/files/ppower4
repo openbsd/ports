@@ -1,6 +1,0 @@
-#!/bin/sh
-# $OpenBSD: ppower4,v 1.2 2006/08/05 16:41:08 kurt Exp $
-
-JAVACMD=$(javaPathHelper -c ppower4)
-
-${JAVACMD} -jar %%PREFIX%%/share/java/pp4p.jar "$@"
