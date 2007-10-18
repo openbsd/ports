@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/02 08:50:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2007/10/18 09:13:21 sturm Exp $
+
+BROKEN=		some hidden BUILD_DEPENDS, nobody wants to fix
 
 COMMENT=	fantasy turn-based strategy game
 
