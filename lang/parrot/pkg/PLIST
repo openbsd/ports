@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/10 17:32:06 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/10/18 18:51:10 simon Exp $
 %%i386%%
 bin/disassemble
 bin/parrot
@@ -367,7 +367,6 @@ share/doc/parrot/docs/pdds/
 share/doc/parrot/docs/pdds/README
 share/doc/parrot/docs/pdds/draft/
 share/doc/parrot/docs/pdds/draft/pdd01_overview.pod
-share/doc/parrot/docs/pdds/draft/pdd02_vtables.pod
 share/doc/parrot/docs/pdds/draft/pdd04_datatypes.pod
 share/doc/parrot/docs/pdds/draft/pdd05_opfunc.pod
 share/doc/parrot/docs/pdds/draft/pdd06_pasm.pod
@@ -380,10 +379,8 @@ share/doc/parrot/docs/pdds/draft/pdd14_bignum.pod
 share/doc/parrot/docs/pdds/draft/pdd16_native_call.pod
 share/doc/parrot/docs/pdds/draft/pdd18_security.pod
 share/doc/parrot/docs/pdds/draft/pdd19_pir.pod
-share/doc/parrot/docs/pdds/draft/pdd24_events.pod
 share/doc/parrot/docs/pdds/draft/pdd25_concurrency.pod
-share/doc/parrot/docs/pdds/draft/pddXX_cstruct.pod
-share/doc/parrot/docs/pdds/draft/pddXX_pmc.pod
+share/doc/parrot/docs/pdds/draft/pdd26_ast.pod
 share/doc/parrot/docs/pdds/pdd00_pdd.pod
 share/doc/parrot/docs/pdds/pdd03_calling_conventions.pod
 share/doc/parrot/docs/pdds/pdd07_codingstd.pod
@@ -396,6 +393,7 @@ share/doc/parrot/docs/pdds/pdd20_lexical_vars.pod
 share/doc/parrot/docs/pdds/pdd21_namespaces.pod
 share/doc/parrot/docs/pdds/pdd22_io.pod
 share/doc/parrot/docs/pdds/pdd23_exceptions.pod
+share/doc/parrot/docs/pdds/pdd24_events.pod
 share/doc/parrot/docs/pdds/pdd_template.pod
 share/doc/parrot/docs/pmc/
 share/doc/parrot/docs/pmc.pod
