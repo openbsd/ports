@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.41 2007/10/18 08:59:15 sthen Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -9,8 +9,8 @@ COMMENT-python= python interface to librrd
 VERSION=	1.2.23
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
-PKGNAME-perl=	p5-RRD-${VERSION}
-PKGNAME-python= py-rrd-${VERSION}p0
+PKGNAME-perl=	p5-RRD-${VERSION}p0
+PKGNAME-python= py-rrd-${VERSION}p1
 
 SHARED_LIBS+=	rrd 2.10
 SHARED_LIBS+=	rrd_th 2.8
@@ -56,10 +56,10 @@ LIB_DEPENDS-main=	png::graphics/png \
 RUN_DEPENDS-main=	
 
 WANTLIB-perl=		m
-LIB_DEPENDS-perl=	rrd::net/rrdtool
+LIB_DEPENDS-perl=	rrd:rrdtool-${VERSION}:net/rrdtool
 RUN_DEPENDS-perl=	
 
-LIB_DEPENDS-python=	rrd::net/rrdtool
+LIB_DEPENDS-python=	rrd:rrdtool-${VERSION}:net/rrdtool
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 
 .include <bsd.port.mk>
