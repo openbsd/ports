@@ -1,6 +1,15 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2007/04/06 10:10:01 ajacoutot Exp $
---- doc/Makefile.in.orig	Thu Apr  5 23:04:49 2007
-+++ doc/Makefile.in	Thu Apr  5 23:05:00 2007
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2007/10/18 14:18:40 ajacoutot Exp $
+--- doc/Makefile.in.orig	Thu Mar 29 11:15:09 2007
++++ doc/Makefile.in	Thu Oct 18 11:27:51 2007
+@@ -276,7 +276,7 @@ EXTRA_DIST = \
+ 	shape.dtd \
+ 	sheet.dtd
+ 
+-@HAVE_GNOME_FALSE@helpdir = $(pkgdatadir)/help
++@HAVE_GNOME_FALSE@helpdir = $(datadir)/gnome/help/dia
+ @HAVE_GNOME_TRUE@helpdir = $(datadir)/gnome/help/dia
+ all: all-recursive
+ 
 @@ -590,7 +590,7 @@ uninstall-info: uninstall-info-recursive
  
  # a simple rule to symlink en to C

@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.47 2007/07/30 17:02:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2007/10/18 14:18:40 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
 DISTNAME=	dia-0.96.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/Dia/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/dia/0.96/}
 
@@ -15,18 +17,21 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender atk-1.0 c cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread xml2 z
 
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
-		::textproc/docbook-xsl
+		::textproc/xmlto \
+		::textproc/docbook
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		art_lgpl_2.>=5::graphics/libart \
 		popt::devel/popt \
 		xslt.>=1::textproc/libxslt
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		:shared-mime-info-*:misc/shared-mime-info
 
 MODULES=	devel/gettext
 
@@ -58,7 +63,14 @@ WANTLIB+=		gthread-2.0 gnomevfs-2 ORBitCosNaming-2 crypto \
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
-post-configure:
-	@rm -f ${WRKSRC}/doc/en/dia.1
+pre-configure:
+	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' \
+		${WRKSRC}/app/commands.c
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dia/html/{en,pl}
+	xmlto -o ${PREFIX}/share/doc/dia/html/en html ${WRKSRC}/doc/en/dia.xml
+	xmlto -o ${PREFIX}/share/doc/dia/html/pl html ${WRKSRC}/doc/pl/dia.xml
+	@cd ${PREFIX}/share/doc/dia/html && ln -s en C
 
 .include <bsd.port.mk>

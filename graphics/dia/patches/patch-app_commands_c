@@ -1,0 +1,51 @@
+$OpenBSD: patch-app_commands_c,v 1.1 2007/10/18 14:18:40 ajacoutot Exp $
+--- app/commands.c.orig	Sun Mar 18 20:49:14 2007
++++ app/commands.c	Thu Oct 18 14:02:37 2007
+@@ -523,16 +523,13 @@ edit_redo_callback (GtkAction *action)
+ void
+ help_manual_callback (GtkAction *action)
+ {
+-#ifdef GNOME
+-  gnome_help_display("dia", NULL, NULL);
+-#else
+   char *helpdir, *helpindex = NULL, *command;
+   guint bestscore = G_MAXINT;
+   GDir *dp;
+   const char *dentry;
+   GError *error = NULL;
+ 
+-  helpdir = dia_get_data_directory("help");
++  helpdir = g_strdup("!!PREFIX!!/share/doc/dia/html");
+   if (!helpdir) {
+     message_warning(_("Could not find help directory"));
+     return;
+@@ -581,13 +578,16 @@ help_manual_callback (GtkAction *action)
+   ShellExecuteA (0, "open", helpindex, NULL, helpdir, SW_SHOWNORMAL);
+ #else
+   command = getenv("BROWSER");
++#ifdef GNOME
+   command = g_strdup_printf("%s 'file://%s' &", command ? command : "gnome-open", helpindex);
++#else
++  command = g_strdup_printf("%s '%s' &", command ? command : "xterm -e lynx", helpindex);
++#endif
+   system(command);
+   g_free(command);
+ #endif
+ 
+   g_free(helpindex);
+-#endif
+ }
+ 
+ static void 
+@@ -599,7 +599,11 @@ activate_url (GtkAboutDialog *about,
+   ShellExecuteA (0, "open", link, NULL, NULL, SW_SHOWNORMAL);
+ #else
+   gchar *command = getenv("BROWSER");
++#ifdef GNOME
+   command = g_strdup_printf("%s '%s' &", command ? command : "gnome-open", link);
++#else
++  command = g_strdup_printf("%s '%s' &", command ? command : "xterm -e lynx", link);
++#endif
+   system(command);
+   g_free(command);
+ #endif

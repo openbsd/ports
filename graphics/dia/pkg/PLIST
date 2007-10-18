@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/07/30 17:02:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/10/18 14:18:40 ajacoutot Exp $
 bin/dia
 lib/dia/
 lib/dia/libaadl_objects.a
@@ -1698,6 +1698,71 @@ share/dia/xslt/dia-uml2java.xsl
 share/dia/xslt/dia-uml2owl.xsl
 share/dia/xslt/dia-uml2python.xsl
 share/dia/xslt/stylesheets.xml
+share/doc/dia/
+share/doc/dia/html/
+share/doc/dia/html/C
+share/doc/dia/html/en/
+share/doc/dia/html/en/ch01.html
+share/doc/dia/html/en/ch02.html
+share/doc/dia/html/en/ch02s02.html
+share/doc/dia/html/en/ch02s03.html
+share/doc/dia/html/en/ch02s04.html
+share/doc/dia/html/en/ch02s05.html
+share/doc/dia/html/en/ch02s06.html
+share/doc/dia/html/en/ch02s07.html
+share/doc/dia/html/en/ch03.html
+share/doc/dia/html/en/ch03s02.html
+share/doc/dia/html/en/ch03s03.html
+share/doc/dia/html/en/ch03s04.html
+share/doc/dia/html/en/ch03s05.html
+share/doc/dia/html/en/ch04.html
+share/doc/dia/html/en/ch04s02.html
+share/doc/dia/html/en/ch04s03.html
+share/doc/dia/html/en/ch04s04.html
+share/doc/dia/html/en/ch05.html
+share/doc/dia/html/en/ch06.html
+share/doc/dia/html/en/ch06s02.html
+share/doc/dia/html/en/ch07.html
+share/doc/dia/html/en/ch07s02.html
+share/doc/dia/html/en/ch08.html
+share/doc/dia/html/en/ch08s02.html
+share/doc/dia/html/en/ch09.html
+share/doc/dia/html/en/ch10.html
+share/doc/dia/html/en/ch10s02.html
+share/doc/dia/html/en/ch10s03.html
+share/doc/dia/html/en/ch11.html
+share/doc/dia/html/en/ch12.html
+share/doc/dia/html/en/index.html
+share/doc/dia/html/pl/
+share/doc/dia/html/pl/ch01.html
+share/doc/dia/html/pl/ch01s02.html
+share/doc/dia/html/pl/ch01s03.html
+share/doc/dia/html/pl/ch01s04.html
+share/doc/dia/html/pl/ch01s05.html
+share/doc/dia/html/pl/ch01s06.html
+share/doc/dia/html/pl/ch01s07.html
+share/doc/dia/html/pl/ch02.html
+share/doc/dia/html/pl/ch02s02.html
+share/doc/dia/html/pl/ch02s03.html
+share/doc/dia/html/pl/ch02s04.html
+share/doc/dia/html/pl/ch02s05.html
+share/doc/dia/html/pl/ch03.html
+share/doc/dia/html/pl/ch03s02.html
+share/doc/dia/html/pl/ch03s03.html
+share/doc/dia/html/pl/ch03s04.html
+share/doc/dia/html/pl/ch04.html
+share/doc/dia/html/pl/ch04s02.html
+share/doc/dia/html/pl/ch05.html
+share/doc/dia/html/pl/ch05s02.html
+share/doc/dia/html/pl/ch06.html
+share/doc/dia/html/pl/ch06s02.html
+share/doc/dia/html/pl/ch07.html
+share/doc/dia/html/pl/ch08.html
+share/doc/dia/html/pl/ch08s02.html
+share/doc/dia/html/pl/ch08s03.html
+share/doc/dia/html/pl/ch09.html
+share/doc/dia/html/pl/ch10.html
+share/doc/dia/html/pl/index.html
 share/gnome/
 share/gnome/help/
 share/gnome/help/dia/
@@ -1740,8 +1805,6 @@ share/locale/am/LC_MESSAGES/dia.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/dia.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/dia.mo
 share/locale/be/LC_MESSAGES/dia.mo
 share/locale/bg/LC_MESSAGES/dia.mo
@@ -1760,8 +1823,6 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/dia.mo
 share/locale/es/LC_MESSAGES/dia.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/dia.mo
 share/locale/fi/LC_MESSAGES/dia.mo
 share/locale/fr/LC_MESSAGES/dia.mo
@@ -1779,8 +1840,6 @@ share/locale/is/LC_MESSAGES/dia.mo
 share/locale/it/LC_MESSAGES/dia.mo
 share/locale/ja/LC_MESSAGES/dia.mo
 share/locale/ko/LC_MESSAGES/dia.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/dia.mo
 share/locale/lv/LC_MESSAGES/dia.mo
 share/locale/mk/
@@ -1792,8 +1851,6 @@ share/locale/ml/LC_MESSAGES/dia.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/dia.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/dia.mo
 share/locale/nb/LC_MESSAGES/dia.mo
 share/locale/ne/
@@ -1806,13 +1863,9 @@ share/locale/pt/LC_MESSAGES/dia.mo
 share/locale/pt_BR/LC_MESSAGES/dia.mo
 share/locale/ro/LC_MESSAGES/dia.mo
 share/locale/ru/LC_MESSAGES/dia.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/dia.mo
 share/locale/sk/LC_MESSAGES/dia.mo
 share/locale/sl/LC_MESSAGES/dia.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/dia.mo
 share/locale/sr/LC_MESSAGES/dia.mo
 share/locale/sr@Latn/
@@ -1830,12 +1883,14 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 share/mime-info/
 share/mime-info/dia.keys
 share/mime-info/dia.mime
-share/oaf/
-share/omf/
-share/omf/dia/
+@comment share/oaf/
+@comment share/omf/
+@comment share/omf/dia/
 share/pixmaps/
 share/pixmaps/dia-diagram.png
 share/pixmaps/dia_gnome_icon.png
 %%SHARED%%
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
