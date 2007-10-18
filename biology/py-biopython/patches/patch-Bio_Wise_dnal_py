@@ -1,14 +1,14 @@
-$OpenBSD: patch-Bio_Wise_dnal_py,v 1.1 2007/10/18 15:22:15 ajacoutot Exp $
---- Bio/Wise/dnal.py.orig	Thu Oct 18 17:12:41 2007
-+++ Bio/Wise/dnal.py	Thu Oct 18 17:12:52 2007
+$OpenBSD: patch-Bio_Wise_dnal_py,v 1.2 2007/10/18 20:56:59 ajacoutot Exp $
+--- Bio/Wise/dnal.py.orig	Thu Oct 18 21:18:53 2007
++++ Bio/Wise/dnal.py	Thu Oct 18 21:19:01 2007
 @@ -1,8 +1,8 @@
  #!/usr/bin/env python
  
--__version__ = "$Revision: 1.1 $"
+-__version__ = "$Revision: 1.2 $"
 -
  from __future__ import division
 +
-+__version__ = "$Revision: 1.1 $"
++__version__ = "$Revision: 1.2 $"
  
  import commands
  import itertools
