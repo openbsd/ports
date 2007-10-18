@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/05/04 17:43:27 alek Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/10/18 08:04:13 steven Exp $
 bin/pylint
 bin/symilar
 lib/python${MODPY_VERSION}/site-packages/pylint/
@@ -67,7 +67,6 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/input/
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func___future___import_not_first_stmt.py
-lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func___future___import_not_first_stmt.pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func___name___access.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func___name___access.pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_attrs_definition_order.py
