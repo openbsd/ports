@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/10 21:20:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/19 12:12:33 jasper Exp $
+
+# needs apmvar.h
+ONLY_FOR_ARCHS= 	amd64 arm i386 macppc sparc
 
 COMMENT=		light-weight system monitor
 
 DISTNAME=		conky-1.4.7
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils
 HOMEPAGE=		http://conky.sourceforge.net/
 
@@ -31,6 +35,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-mpd \
 			--enable-rss \
 			--disable-portmon
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/conky
 	${INSTALL_DATA} ${WRKSRC}/doc/conkyrc.sample \
