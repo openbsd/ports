@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/19 22:21:23 jasper Exp $
 
 COMMENT=		Tango icon theme extras for GNOME and KDE
 
 DISTNAME=		tango-icon-theme-extras-0.1.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.tango-project.org/
-MASTER_SITES=		${HOMEPAGE}releases/
+MASTER_SITES=		${HOMEPAGE}/releases/
 
-# LGPL
+# CC Attribution-ShareAlike 2.5
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
