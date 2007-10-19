@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2007/10/10 15:19:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.193 2007/10/19 10:57:22 grunk Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -129,6 +129,7 @@
      SUBDIR += p5-GMail-IMAPD
      SUBDIR += p5-GetLive
      SUBDIR += p5-Log-Procmail
+     SUBDIR += p5-MIME-Base32
      SUBDIR += p5-MIME-Lite
      SUBDIR += p5-MIME-Types
      SUBDIR += p5-MIME-tools
