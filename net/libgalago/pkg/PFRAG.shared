@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/19 09:03:37 jasper Exp $
+@lib lib/libgalago.so.${LIBgalago_VERSION}
