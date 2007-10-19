@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2007/10/19 13:00:18 ajacoutot Exp $
 
 COMMENT=	digital camera command-line interface
 CATEGORIES=	graphics
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>, Arnaud Launay <asl@launay.org>
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-VERSION=	2.1.5
+VERSION=	2.4.0
 DISTNAME=	gphoto2-${VERSION}
 PKGNAME=	gphoto-${VERSION}
 
@@ -18,14 +18,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		c exif m ncurses readline
+WANTLIB=		c exif m ncurses readline ltdl pthread usb
 
 USE_X11=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.57
-SEPARATE_BUILD=		simple
-CONFIGURE_ARGS=		--disable-nls --without-aalib --without-cdk
+USE_LIBTOOL=		Yes
 
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--without-aalib --without-cdk
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			POPT_CFLAGS="-I${LOCALBASE}/include" \
+			POPT_LIBS="-I${LOCALBASE}/lib -lpopt"
+
+MODULES=	devel/gettext
 LIB_DEPENDS=	gphoto2,gphoto2_port::graphics/libgphoto2 \
 		jpeg::graphics/jpeg \
 		popt::devel/popt

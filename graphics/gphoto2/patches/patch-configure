@@ -1,0 +1,45 @@
+$OpenBSD: patch-configure,v 1.1 2007/10/19 13:00:18 ajacoutot Exp $
+--- configure.orig	Mon Jul 30 02:49:04 2007
++++ configure	Tue Oct 16 17:34:00 2007
+@@ -23183,13 +23183,13 @@ echo "${ECHO_T}$ac_cv_header_pthread_h" >&6; }
+ fi
+ if test $ac_cv_header_pthread_h = yes; then
+ 
+-                { echo "$as_me:$LINENO: checking for pthread_exit in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_exit in -lpthread... $ECHO_C" >&6; }
++                { echo "$as_me:$LINENO: checking for pthread_exit in -pthread" >&5
++echo $ECHO_N "checking for pthread_exit in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_exit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -23251,8 +23251,8 @@ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_PTHREAD 1
+ _ACEOF
+ 
+-                    pthread_msg="yes (-lpthread)"
+-                    PTHREAD_LIBS="-lpthread"
++                    pthread_msg="yes (-pthread)"
++                    PTHREAD_LIBS="-pthread"
+ else
+ 
+                     { echo "$as_me:$LINENO: checking for pthread_create in -lc_r" >&5
+@@ -26695,10 +26695,10 @@ MSGFMT!$MSGFMT$ac_delim
+ GMSGFMT!$GMSGFMT$ac_delim
+ XGETTEXT!$XGETTEXT$ac_delim
+ MSGMERGE!$MSGMERGE$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+-INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++INTLLIBS!$LTLIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ LIBGPHOTO2_CFLAGS!$LIBGPHOTO2_CFLAGS$ac_delim

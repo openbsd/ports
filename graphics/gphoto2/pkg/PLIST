@@ -1,3 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/10/19 13:00:18 ajacoutot Exp $
 bin/gphoto2
 @man man/man1/gphoto2.1
+share/doc/gphoto2/
+share/doc/gphoto2/test-hook.sh
+share/locale/az/
+share/locale/az/LC_MESSAGES/
+share/locale/az/LC_MESSAGES/gphoto2.mo
+share/locale/cs/LC_MESSAGES/gphoto2.mo
+share/locale/da/LC_MESSAGES/gphoto2.mo
+share/locale/de/LC_MESSAGES/gphoto2.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/gphoto2.mo
+share/locale/es/LC_MESSAGES/gphoto2.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
+share/locale/eu/LC_MESSAGES/gphoto2.mo
+share/locale/fi/LC_MESSAGES/gphoto2.mo
+share/locale/fr/LC_MESSAGES/gphoto2.mo
+share/locale/hu/LC_MESSAGES/gphoto2.mo
+share/locale/it/LC_MESSAGES/gphoto2.mo
+share/locale/ja/LC_MESSAGES/gphoto2.mo
+share/locale/nb/LC_MESSAGES/gphoto2.mo
+share/locale/nl/LC_MESSAGES/gphoto2.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
+share/locale/pa/LC_MESSAGES/gphoto2.mo
+share/locale/pl/LC_MESSAGES/gphoto2.mo
+share/locale/pt_BR/LC_MESSAGES/gphoto2.mo
+share/locale/ro/LC_MESSAGES/gphoto2.mo
+share/locale/ru/LC_MESSAGES/gphoto2.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/gphoto2.mo
+share/locale/sk/LC_MESSAGES/gphoto2.mo
+share/locale/sl/LC_MESSAGES/gphoto2.mo
+share/locale/sr/LC_MESSAGES/gphoto2.mo
+share/locale/sv/LC_MESSAGES/gphoto2.mo
+share/locale/uk/LC_MESSAGES/gphoto2.mo
+share/locale/vi/LC_MESSAGES/gphoto2.mo
+share/locale/zh_CN/LC_MESSAGES/gphoto2.mo
+share/locale/zh_TW/LC_MESSAGES/gphoto2.mo
