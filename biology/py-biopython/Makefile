@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/18 15:22:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2007/10/19 08:38:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	Python tools for computational molecular biology
 
 DISTNAME=	biopython-1.41
-PKGNAME=	py-${DISTNAME}p1
+PKGNAME=	py-${DISTNAME}p2
 CATEGORIES=	biology
 
 HOMEPAGE=	http://www.biopython.org/
@@ -28,6 +28,9 @@ RUN_DEPENDS=	${MODPY_EXPAT_DEPENDS} \
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-biopython
+
+pre-configure:
+	@echo '5\nm2\nwq' | ed -s ${WRKSRC}/Bio/Wise/dnal.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
