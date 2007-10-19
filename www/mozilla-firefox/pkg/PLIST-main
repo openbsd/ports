@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/03/06 17:43:36 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/10/19 17:36:17 fgsch Exp $
 @conflict mozilla-firebird-*
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
@@ -9,6 +9,7 @@ bin/mozilla-firefox
 mozilla-firefox/
 mozilla-firefox/LICENSE
 mozilla-firefox/README.OpenBSD
+mozilla-firefox/browserconfig.properties
 mozilla-firefox/chrome/
 mozilla-firefox/chrome/browser.jar
 mozilla-firefox/chrome/browser.manifest
