@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.53 2007/10/19 11:30:37 ajacoutot Exp $
 
 COMMENT-server=		University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=	University of Washington IMAP4rev1/POP2/POP3 mail utility
@@ -21,10 +21,11 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.sunet.se/pub/unix/mail/imap/ \
 		ftp://ftp.sunet.se/pub/unix/mail/imap/old/
 
-PERMIT_PACKAGE_CDROM=	no
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	no
-PERMIT_DISTFILES_FTP=	yes
+# Apache License 2.0
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		asn1 c com_err crypto des gssapi kafs krb5 ssl
 
 ALL_TARGET=	bso
