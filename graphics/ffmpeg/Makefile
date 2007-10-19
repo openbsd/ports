@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2007/10/10 07:59:32 aanriot Exp $
+# $OpenBSD: Makefile,v 1.32 2007/10/19 14:32:57 jakemsr Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 DISTNAME=		ffmpeg-svn-20070910
-PKGNAME=		${DISTNAME:S/-svn//}p0
+PKGNAME=		${DISTNAME:S/-svn//}p1
 SHARED_LIBS=		avutil		4.0 \
 			avcodec		10.0 \
 			avformat	10.0 \
@@ -46,9 +46,9 @@ CFLAGS+=-fomit-frame-pointer
 
 # inter-library dependencies for the current configuration
 LIBavutil_EXTRALIBS=-lm
-LIBavcodec_EXTRALIBS=-lavutil -lm -lz -L${LOCALBASE}/lib -lfaac -lfaad -lmp3lame -lvorbis -lvorbisenc -la52 -ltheora -lx264 -pthread
-LIBavformat_EXTRALIBS=-lavutil -lavcodec -lossaudio -lm -L${LOCALBASE}/lib -logg
-LIBpostproc_EXTRALIBS=-lavutil
+LIBavcodec_EXTRALIBS=-lavutil -lm -lz -L${LOCALBASE}/lib -lfaac -lfaad -lmp3lame -lvorbis -lvorbisenc -la52 -ltheora -logg -lx264 -pthread -Wl,-rpath,${LOCALBASE}/lib
+LIBavformat_EXTRALIBS=-lavutil -lavcodec -lossaudio -lm -L${LOCALBASE}/lib -logg -L${X11BASE}/lib -lX11 -lXext -Wl,-rpath,${LOCALBASE}/lib  -Wl,-rpath,${X11BASE}/lib
+LIBpostproc_EXTRALIBS=-lavutil -lm
 
 # configure wants a directory it can execute files in 
 WRKTMP=			${WRKDIR}/tmp
@@ -77,6 +77,8 @@ CONFIGURE_ENV+=		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 			LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 			LIBavformat_EXTRALIBS="${LIBavformat_EXTRALIBS}" \
 			LIBpostproc_EXTRALIBS="${LIBpostproc_EXTRALIBS}" \
+			LIBavcodec_REQUIRES="vorbis vorbisenc theora x264" \
+			LIBavformat_REQUIRES="ogg" \
 			TMPDIR=${WRKTMP} \
 			CPPFLAGS="-I${X11BASE}/include"
 
