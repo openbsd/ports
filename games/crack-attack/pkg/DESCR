@@ -1,0 +1,9 @@
+A free OpenGL game based on the Super Nintendo classic Tetris Attack.
+Slowly, your stack of blocks grows from the bottom, and you've got to
+make sure it never reaches the top. Because, once it does, you lose!
+To eliminate blocks from the stack, line up at least three of one color,
+horizontally or vertically.
+To add to the excitement, chunks of red garbage will fall from above. It
+is impossible to eliminate this garbage directly. However, if you
+eliminate any blocks which are touching the garbage, the garbage will
+shatter into normal, run-of-the-mill blocks.

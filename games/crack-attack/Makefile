@@ -1,0 +1,37 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2007/10/19 19:31:33 ajacoutot Exp $
+
+COMMENT=	OpenGL game based on SNES classic Tetris Attack
+
+DISTNAME=	crack-attack-1.1.14
+CATEGORIES=	games
+
+MAINTAINER=	Mattieu Baptiste <mattieu.b@free.fr>
+
+HOMEPAGE=	http://www.nongnu.org/crack-attack/
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	GL GLU ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes \
+		Xinerama Xrandr Xrender Xi Xmu c expat fontconfig \
+		freetype m stdc++ z atk-1.0 cairo gobject-2.0 \
+		glib-2.0 gmodule-2.0 glitz png pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0
+
+MASTER_SITES=	http://savannah.nongnu.org/download/crack-attack/
+
+MODULES=	devel/gettext
+
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		glut.>=3::graphics/glut
+
+USE_X11=	Yes
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.mk>

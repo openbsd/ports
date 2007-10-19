@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtk-gui_interface_cxx,v 1.1.1.1 2007/10/19 19:31:33 ajacoutot Exp $
+--- src/gtk-gui/interface.cxx.orig	Fri Oct 19 18:22:37 2007
++++ src/gtk-gui/interface.cxx	Fri Oct 19 18:23:07 2007
+@@ -620,7 +620,7 @@ create_winNetworking (void)
+   gtk_box_pack_start (GTK_BOX (vbox10), alignment14, FALSE, FALSE, 0);
+   gtk_alignment_set_padding (GTK_ALIGNMENT (alignment14), 5, 5, 5, 5);
+ 
+-  btnCancel = gtk_button_new_from_stock ("gtk-cancel");
++  btnCancel = gtk_button_new_from_stock ("gtk-quit");
+   gtk_widget_set_name (btnCancel, "btnCancel");
+   gtk_widget_show (btnCancel);
+   gtk_container_add (GTK_CONTAINER (alignment14), btnCancel);
