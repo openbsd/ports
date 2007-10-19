@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/19 17:45:52 simon Exp $
 
 SHARED_ONLY=		Yes
 COMMENT=		XS speed-up for Class-C3
 
 MODULES=		cpan
-DISTNAME=		Class-C3-XS-0.02
+DISTNAME=		Class-C3-XS-0.08
 CATEGORIES=		devel
 CPAN_AUTHOR=		BLBLACK
 
-# Artistic
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
