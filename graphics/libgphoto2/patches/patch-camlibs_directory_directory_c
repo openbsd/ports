@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_directory_directory_c,v 1.1 2007/10/19 12:57:52 ajacoutot Exp $
+--- camlibs/directory/directory.c.orig	Thu Oct 11 12:42:30 2007
++++ camlibs/directory/directory.c	Thu Oct 11 12:41:53 2007
+@@ -38,6 +38,7 @@
+ # include <sys/vfs.h>
+ #endif
+ #ifdef HAVE_SYS_MOUNT_H
++# include <sys/param.h>
+ # include <sys/mount.h>
+ #endif
+ #ifdef HAVE_SYS_STATFS_H

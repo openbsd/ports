@@ -1,0 +1,35 @@
+$OpenBSD: patch-camlibs_ptp2_library_c,v 1.1 2007/10/19 12:57:52 ajacoutot Exp $
+--- camlibs/ptp2/library.c.orig	Fri Jul 27 02:35:37 2007
++++ camlibs/ptp2/library.c	Mon Oct 15 12:34:45 2007
+@@ -26,7 +26,11 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <time.h>
++#ifndef __OpenBSD__
++/* nl_langinfo(CODESET) returns 646, not usable by iconv_open() */
++#define HAVE_NL_LANGINFO
+ #include <langinfo.h>
++#endif
+ 
+ #include <gphoto2/gphoto2-library.h>
+ #include <gphoto2/gphoto2-port-log.h>
+@@ -683,6 +687,7 @@ static struct {
+ 	{"Canon:PowerShot A710 IS (PTP mode)",  0x04a9, 0x3138, PTPBUG_DELETE_SENDS_EVENT},
+ 	{"Canon:PowerShot A640 (PTP mode)",     0x04a9, 0x3139, PTPBUG_DELETE_SENDS_EVENT|PTP_CAP|PTP_CAP_PREVIEW},
+ 	{"Canon:PowerShot A630 (PTP mode)",     0x04a9, 0x313a, PTPBUG_DELETE_SENDS_EVENT},
++	{"Canon:EOS 40D (PTP mode)",            0x04a9, 0x3146, 0},
+ 	{"Canon:PowerShot S5 IS (PTP mode)",    0x04a9, 0x3148, PTP_CAP|PTP_CAP_PREVIEW},
+ 	{"Canon:PowerShot A570 IS (PTP mode)",  0x04a9, 0x314c, PTPBUG_DELETE_SENDS_EVENT},
+ 	{"Canon:PowerShot A560 (PTP mode)",  0x04a9, 0x314d, PTPBUG_DELETE_SENDS_EVENT},
+@@ -4203,7 +4208,11 @@ camera_init (Camera *camera, GPContext *context)
+ 		break;
+ 	}
+ 
++#ifdef HAVE_NL_LANGINFO
+ 	curloc = nl_langinfo (CODESET);
++#else
++	curloc="ISO-8859-1";
++#endif
+ 	if (!curloc) curloc="UTF-8";
+ 	camera->pl->params.cd_ucs2_to_locale = iconv_open(curloc, camloc);
+ 	camera->pl->params.cd_locale_to_ucs2 = iconv_open(camloc, curloc);

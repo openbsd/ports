@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2007/10/19 12:57:52 ajacoutot Exp $
+--- tests/Makefile.in.orig	Thu Oct 11 13:22:39 2007
++++ tests/Makefile.in	Thu Oct 11 13:22:56 2007
+@@ -351,9 +351,9 @@ test_camera_list_LDADD = \
+ 	$(INTLLIBS)
+ 
+ @HAVE_GCC_FALSE@PEDANTIC_CFLAGS = 
+-@HAVE_GCC_TRUE@PEDANTIC_CFLAGS = -std=c99 -pedantic-errors -W -Wall -Wextra -Werror
++@HAVE_GCC_TRUE@PEDANTIC_CFLAGS = -std=c99 -pedantic-errors -W -Wall -Werror
+ @HAVE_GCC_FALSE@PEDANTIC_CXXFLAGS = 
+-@HAVE_GCC_TRUE@PEDANTIC_CXXFLAGS = -std=c++98 -pedantic-errors -W -Wall -Wextra -Werror
++@HAVE_GCC_TRUE@PEDANTIC_CXXFLAGS = -std=c++98 -pedantic-errors -W -Wall -Werror
+ test_pedantic_c_SOURCES = test-pedantic-compilation.c
+ test_pedantic_c_CPPFLAGS = \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) \

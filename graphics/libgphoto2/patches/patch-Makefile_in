@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/10/19 12:57:51 ajacoutot Exp $
+--- Makefile.in.orig	Thu Oct 11 13:22:12 2007
++++ Makefile.in	Thu Oct 11 13:22:27 2007
+@@ -299,7 +299,7 @@ EXTRA_DIST = HACKING MAINTAINERS TESTERS installcheck.
+ SUBDIRS = @subdirs@ libgphoto2 camlibs tests po packaging doc
+ pkgconfig_DATA = libgphoto2.pc
+ noinst_DATA = libgphoto2-uninstalled.pc
+-doc_DATA = AUTHORS COPYING README NEWS
++doc_DATA = README
+ nobase_include_HEADERS = \
+ 	gphoto2/gphoto2.h		\
+ 	gphoto2/gphoto2-abilities-list.h\

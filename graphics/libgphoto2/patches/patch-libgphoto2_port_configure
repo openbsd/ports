@@ -1,0 +1,17 @@
+$OpenBSD: patch-libgphoto2_port_configure,v 1.1 2007/10/19 12:57:52 ajacoutot Exp $
+--- libgphoto2_port/configure.orig	Tue Oct 16 17:04:24 2007
++++ libgphoto2_port/configure	Tue Oct 16 17:04:49 2007
+@@ -27528,10 +27528,10 @@ MSGFMT!$MSGFMT$ac_delim
+ GMSGFMT!$GMSGFMT$ac_delim
+ XGETTEXT!$XGETTEXT$ac_delim
+ MSGMERGE!$MSGMERGE$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+-INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++INTLLIBS!$LTLIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ MDNS_LIBS!$MDNS_LIBS$ac_delim
