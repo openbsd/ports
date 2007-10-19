@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/10/19 08:39:08 jasper Exp $
+--- Makefile.in.orig	Wed Nov 22 00:19:11 2006
++++ Makefile.in	Thu Oct 18 13:56:20 2007
+@@ -197,7 +197,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = src doc . tests
+-AM_MAKEINFOFLAGS = -I$(top_srcdir)/doc/example
++AM_MAKEINFOFLAGS = -I$(top_srcdir)/share/examples/check/
+ CLEANFILES = *~\
+ 	$(PACKAGE)-$(VERSION).tar.gz\
+ 	ChangeLog.bak
+@@ -660,7 +660,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-m4dataDATA install-pcdataDATA
++install-data-am: install-m4dataDATA install-pcdataDATA
+ 
+ install-exec-am:
+ 

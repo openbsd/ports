@@ -1,0 +1,22 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2007/10/19 08:39:08 jasper Exp $
+--- doc/Makefile.in.orig	Thu Oct 18 20:46:08 2007
++++ doc/Makefile.in	Thu Oct 18 20:54:23 2007
+@@ -220,14 +220,14 @@ EXTRA_DIST = $(example_docs) \
+              $(example_src_docs) \
+              $(example_tests_docs)
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)
++docdir = $(datadir)/doc/check/
+ 
+ # install money example
+-exampledir = $(docdir)/example
++exampledir = $(datadir)/examples/check/
+ example_DATA = $(example_docs)
+-examplesrcdir = $(docdir)/example/src
++examplesrcdir = $(exampledir)/src
+ examplesrc_DATA = $(example_src_docs)
+-exampletestsdir = $(docdir)/example/tests
++exampletestsdir = $(exampledir)/tests
+ exampletests_DATA = $(example_tests_docs)
+ all: all-am
+ 
