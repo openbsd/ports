@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/22 16:44:25 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/19 18:48:26 simon Exp $
 
 COMMENT=	process multiple HTTP requests in parallel without blocking
 
 MODULES=	cpan
-DISTNAME=	HTTP-Async-0.07
+DISTNAME=	HTTP-Async-0.09
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
