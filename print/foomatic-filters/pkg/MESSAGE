@@ -1,5 +1,5 @@
 To use foomatic-rip(1) as the input filter for lpd(8), create a
-printcap(5) entry similar to the folowing:
+printcap(5) entry similar to the following:
 
 C64|Epson Stylus C64:\
 	:lp=/dev/ulpt0:\
