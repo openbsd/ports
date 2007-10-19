@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2007/10/04 07:18:12 steven Exp $
+# $OpenBSD: Makefile,v 1.158 2007/10/19 19:32:28 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -31,6 +31,7 @@
      SUBDIR += corewars
      SUBDIR += cosmosmash
      SUBDIR += cowsay
+     SUBDIR += crack-attack
      SUBDIR += crimson
      SUBDIR += crossfire-client
      SUBDIR += defendguin
