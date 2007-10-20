@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.34 2007/10/20 11:44:23 fgsch Exp $
 
-COMMENT=	graphics and text browser with javascript support
+COMMENT=	graphics and text browser
 
-VER=		2.1pre28
+VER=		2.1pre30
 DISTNAME=	links-${VER}
-PKGNAME=	links+-${VER}p0
+PKGNAME=	links+-${VER}
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -22,7 +22,7 @@ FLAVOR?=
 
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS+= --enable-javascript --with-ssl --without-sdl
+CONFIGURE_ARGS+= --with-ssl --without-sdl
 
 .if !${FLAVOR:L:Mno_x11}
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \

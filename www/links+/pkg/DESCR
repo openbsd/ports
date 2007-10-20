@@ -4,7 +4,6 @@ Links main features:
   graphics mode, in 25 languages.
 - Tables, frames in both graphics and text mode, builtin image
   display in graphics mode
-- Javascript support with full user control over script run
 
 Flavors:
 	no_x11 - disable X support.
