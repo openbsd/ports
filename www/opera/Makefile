@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.46 2007/10/20 06:17:52 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	fast and customizable WWW browser
 
-DISTNAME=	opera-9.23-20070809.1-static-qt.i386-en
-PKGNAME=	opera-9.23
+DISTNAME=	opera-9.24-20071015.1-static-qt.i386-en
+PKGNAME=	opera-9.24
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.opera.com/
@@ -29,7 +29,7 @@ MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
 			ftp://ftp.rge.com/pub/infosystems/opera/ \
 			http://www.rge.com/pub/infosystems/opera/
 
-MASTER_SITES=	${MASTER_SITES_OPERA:=linux/923/final/en/i386/static/}
+MASTER_SITES=	${MASTER_SITES_OPERA:=linux/924/final/en/i386/static/}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	::emulators/fedora/base
@@ -37,7 +37,7 @@ RUN_DEPENDS=	::emulators/fedora/base
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/${DISTNAME}-660
+WRKDIST=	${WRKDIR}/${DISTNAME}-671
 
 do-install:
 	cd ${WRKBUILD} && ./install.sh \
