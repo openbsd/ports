@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/10/16 08:22:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/20 06:54:55 espie Exp $
 
 VERSION=		2.5
 PATCHLEVEL=		.1
@@ -12,5 +12,8 @@ PATCH_LIST=		patch-* sup64-*
 .endif
 
 CONFIGURE_ARGS+=	--with-cxx_main
+
+post-extract:
+	rm -r ${WRKDIST}/Modules/expat
 
 .include <bsd.port.mk>
