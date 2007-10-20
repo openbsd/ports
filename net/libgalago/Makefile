@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/19 09:03:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/20 12:37:33 espie Exp $
 
 COMMENT=		desktop presence framework
 
@@ -29,8 +29,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-tests
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-extract:
-	echo REGRESS=${REGRESS_DEPENDS}
 
 .include <bsd.port.mk>
