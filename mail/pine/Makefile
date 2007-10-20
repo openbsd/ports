@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2007/10/20 22:09:06 deraadt Exp $
+# $OpenBSD: Makefile,v 1.72 2007/10/20 22:11:22 deraadt Exp $
 
 COMMENT-main=	program for Internet E-mail and News
 COMMENT-pico=	small text editor
@@ -25,9 +25,9 @@ HOMEPAGE=	http://www.washington.edu/pine/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_FTP=	No
 WANTLIB=		c
 
 NO_REGRESS=	Yes
