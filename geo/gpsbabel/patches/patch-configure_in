@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2006/11/09 02:31:30 ckuethe Exp $
---- configure.in.orig	Sun Nov  5 16:54:07 2006
-+++ configure.in	Mon Nov  6 22:41:20 2006
+$OpenBSD: patch-configure_in,v 1.3 2007/10/20 15:50:26 ckuethe Exp $
+--- configure.in.orig	Mon Aug  6 21:27:07 2007
++++ configure.in	Sat Oct 20 09:41:21 2007
 @@ -50,16 +50,22 @@ if test "$cet" = "default"; then
  fi
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure_in,v 1.2 2006/11/09 02:31:30 ckuethe Exp $
  AC_MSG_CHECKING(whether to support Palm/OS pdb formats)
  AC_ARG_ENABLE(pdb,
    [  --enable-pdb=[(yes)|no]],
-@@ -180,6 +186,7 @@ AC_SUBST(USB_LIBS)
+@@ -182,6 +188,7 @@ AC_SUBST(USB_LIBS)
  AC_SUBST(USB_CFLAGS)
  AC_SUBST(OSJEEPS)
  AC_SUBST(GBSER)
