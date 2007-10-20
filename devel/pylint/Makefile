@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/20 13:01:57 ajacoutot Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
 VERSION=		0.13.1
 DISTNAME=		pylint-${VERSION}
-PKGNAME-main=		pylint-${VERSION}p0
+PKGNAME-main=		pylint-${VERSION}p1
 PKGNAME-gui=		pylint-gui-${VERSION}p0
 CATEGORIES=		devel
 
@@ -29,6 +29,9 @@ RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
 			:pylint-${VERSION}:devel/pylint
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
 			::math/py-Numeric
+
+pre-configure:
+	@rm ${WRKSRC}/test/input/func___future___import_not_first_stmt.py.orig
 
 do-regress: fake
 	cd ${WRKSRC}/test && env \

@@ -1,0 +1,10 @@
+$OpenBSD: patch-test_input_func___future___import_not_first_stmt_py,v 1.1 2007/10/20 13:01:57 ajacoutot Exp $
+--- test/input/func___future___import_not_first_stmt.py.orig	Thu Oct 18 17:26:15 2007
++++ test/input/func___future___import_not_first_stmt.py	Thu Oct 18 17:26:38 2007
+@@ -1,5 +1,5 @@
+ """a docstring"""
+ 
+-__revision__ = 1
+ from __future__ import generators
++__revision__ = 1
+ 
