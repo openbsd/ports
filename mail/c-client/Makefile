@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.37 2007/10/20 22:52:44 ajacoutot Exp $
 
 COMMENT=	University of Washington's c-client mail access routines
 NO_REGRESS=	Yes
@@ -16,9 +16,9 @@ HOMEPAGE=	http://www.washington.edu/imap/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_FTP=	No
 
 SHLIB=		libc-client.so.${LIBc-client_VERSION}
 
