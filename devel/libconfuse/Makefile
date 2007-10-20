@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/20 11:43:24 espie Exp $
 
 COMMENT=		configuration file parser library
 DISTNAME=		confuse-2.5
@@ -21,6 +21,7 @@ MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS+=	--without-check
 
 USE_LIBTOOL=		Yes
 
