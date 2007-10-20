@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/01/05 18:34:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/10/20 21:13:35 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},kerberos
 bin/pine
@@ -8,6 +8,7 @@ bin/rpload
 @man man/man1/rpdump.1
 @man man/man1/rpload.1
 share/doc/pine/
+share/doc/pine/license.txt
 share/doc/pine/tech-notes.txt
 @extra ${SYSCONFDIR}/pine.conf
 @extra ${SYSCONFDIR}/pine.conf.fixed

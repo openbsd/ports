@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.70 2007/10/20 21:13:35 ajacoutot Exp $
 
 COMMENT-main=	program for Internet E-mail and News
 COMMENT-pico=	small text editor
@@ -12,10 +12,11 @@ VERSION=	4.64
 PICO_VERSION=	4.10
 PILOT_VERSION=	2.0
 
+# N is appended to version to comply to the Distribution License
 DISTNAME=	pine${VERSION}
-PKGNAME-main=	pine-${VERSION}p4
-PKGNAME-pico=	pico-${PICO_VERSION}p0
-PKGNAME-pilot=	pilot-${PILOT_VERSION}p0
+PKGNAME-main=	pine-${VERSION}N
+PKGNAME-pico=	pico-${PICO_VERSION}N
+PKGNAME-pilot=	pilot-${PILOT_VERSION}N
 
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
@@ -24,9 +25,11 @@ HOMEPAGE=	http://www.washington.edu/pine/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	No
+# Pine License
+# cf. files/license.txt
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
@@ -61,6 +64,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pine
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${PREFIX}/share/doc/pine
+	${INSTALL_DATA} ${FILESDIR}/license.txt ${PREFIX}/share/doc/pine
 	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} pico pilot pine rpdump rpload \
 		${PREFIX}/bin
 	cd ${WRKSRC}/doc; ${INSTALL_MAN} pico.1 pilot.1 pine.1 rpdump.1 rpload.1 \
