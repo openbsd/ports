@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2007/10/20 13:05:35 espie Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
@@ -24,7 +24,12 @@ MODULES=		devel/gettext
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --with-ssl --with-xml2 --enable-nls
+CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
+			LDFLAGS=-L${LOCALBASE}/lib
+
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-ssl --enable-nls \
+			--with-xml2 --without-expat
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/neon/macros
