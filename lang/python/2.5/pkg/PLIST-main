@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/04/24 23:32:47 djm Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/10/21 11:41:32 steven Exp $
 @option no-default-conflict
 @conflict python->=2.5,<2.6
 @pkgpath lang/python/2.5
@@ -1680,15 +1680,6 @@ lib/python2.5/telnetlib.pyo
 lib/python2.5/tempfile.py
 lib/python2.5/tempfile.pyc
 lib/python2.5/tempfile.pyo
-lib/python2.5/test/infinite_reload.py
-lib/python2.5/test/infinite_reload.pyc
-lib/python2.5/test/infinite_reload.pyo
-lib/python2.5/test/test_complex_args.py
-lib/python2.5/test/test_complex_args.pyc
-lib/python2.5/test/test_complex_args.pyo
-lib/python2.5/test/test_structmembers.py
-lib/python2.5/test/test_structmembers.pyc
-lib/python2.5/test/test_structmembers.pyo
 lib/python2.5/textwrap.py
 lib/python2.5/textwrap.pyc
 lib/python2.5/textwrap.pyo

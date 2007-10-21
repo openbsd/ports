@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1 2006/11/01 20:59:18 alek Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2007/10/21 11:41:32 steven Exp $
 @option no-default-conflict
 @conflict python-tests->=2.5,<2.6
 lib/python2.5/test/
@@ -69,6 +69,9 @@ lib/python2.5/test/fork_wait.py
 lib/python2.5/test/fork_wait.pyc
 lib/python2.5/test/fork_wait.pyo
 lib/python2.5/test/greyrgb.uue
+lib/python2.5/test/infinite_reload.py
+lib/python2.5/test/infinite_reload.pyc
+lib/python2.5/test/infinite_reload.pyo
 lib/python2.5/test/inspect_fodder.py
 lib/python2.5/test/inspect_fodder.pyc
 lib/python2.5/test/inspect_fodder.pyo
@@ -356,6 +359,9 @@ lib/python2.5/test/test_compiler.pyo
 lib/python2.5/test/test_complex.py
 lib/python2.5/test/test_complex.pyc
 lib/python2.5/test/test_complex.pyo
+lib/python2.5/test/test_complex_args.py
+lib/python2.5/test/test_complex_args.pyc
+lib/python2.5/test/test_complex_args.pyo
 lib/python2.5/test/test_contains.py
 lib/python2.5/test/test_contains.pyc
 lib/python2.5/test/test_contains.pyo
@@ -943,6 +949,9 @@ lib/python2.5/test/test_strptime.pyo
 lib/python2.5/test/test_struct.py
 lib/python2.5/test/test_struct.pyc
 lib/python2.5/test/test_struct.pyo
+lib/python2.5/test/test_structmembers.py
+lib/python2.5/test/test_structmembers.pyc
+lib/python2.5/test/test_structmembers.pyo
 lib/python2.5/test/test_structseq.py
 lib/python2.5/test/test_structseq.pyc
 lib/python2.5/test/test_structseq.pyo
