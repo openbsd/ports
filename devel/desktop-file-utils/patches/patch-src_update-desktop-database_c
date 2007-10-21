@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_update-desktop-database_c,v 1.2 2007/03/20 06:43:49 jasper Exp $
---- src/update-desktop-database.c.orig	Tue Mar 20 07:35:09 2007
-+++ src/update-desktop-database.c	Tue Mar 20 07:36:02 2007
+$OpenBSD: patch-src_update-desktop-database_c,v 1.3 2007/10/21 18:05:11 jasper Exp $
+--- src/update-desktop-database.c.orig	Tue Apr 18 16:08:10 2006
++++ src/update-desktop-database.c	Fri Oct 19 15:21:36 2007
 @@ -34,6 +34,7 @@
  #include <glib/gi18n.h>
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_update-desktop-database_c,v 1.2 2007/03/20 06:43:49 jasper E
  #define CACHE_FILENAME "mimeinfo.cache"
  #define TEMP_CACHE_FILENAME_PREFIX ".mimeinfo.cache.XXXXXX"
  
-@@ -305,7 +306,7 @@ open_temp_cache_file (const char *dir, c
+@@ -305,7 +306,7 @@ open_temp_cache_file (const char *dir, char **filename
    FILE *fp;
    mode_t mask;
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_update-desktop-database_c,v 1.2 2007/03/20 06:43:49 jasper E
    fd = g_mkstemp (file);
  
    if (fd < 0) 
-@@ -387,7 +388,7 @@ sync_database (const char *dir, GError *
+@@ -387,7 +388,7 @@ sync_database (const char *dir, GError **error)
  
    fclose (tmp_file);
  

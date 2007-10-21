@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/07/13 08:05:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/21 18:05:11 jasper Exp $
 
 COMMENT=	utilities for 'desktop' entries
 
-DISTNAME=	desktop-file-utils-0.12
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	desktop-file-utils-0.14
 CATEGORIES=	devel
 
 HOMEPAGE=	http://freedesktop.org/wiki/Software/desktop-file-utils
