@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/10/14 11:12:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2007/10/21 14:33:07 espie Exp $
 
 COMMENT-main=		multimedia framework - good plugins
 COMMENT-aalib=		multimedia framework - aalib plugin
@@ -141,6 +141,7 @@ LIB_DEPENDS-shout=	${LIB_DEPENDS} \
 CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-cdio \
 			--disable-dv1394 \
+			--without-check \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gst-plugins \
 			--disable-schemas-install
 
