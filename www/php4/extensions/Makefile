@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.57 2007/10/21 09:43:22 espie Exp $
 
 FULLPKGNAME-main=	php4-extensions-${V}p1
 COMMENT-main=	informational package about PHP4 extensions
@@ -301,8 +301,7 @@ CONFIGURE_ARGS+=	--disable-xslt
 .else
 MULTI_PACKAGES+=	-xslt
 COMMENT-xslt=		xslt transformation extensions for php4
-CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared,${LOCALBASE} \
-			--with-expat-dir=${X11BASE}
+CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared,${LOCALBASE} 
 LIB_DEPENDS-xslt=	sablot.>=96::textproc/sablotron
 WANTLIB-xslt=		${WANTLIB} expat iconv
 FULLPKGNAME-xslt=	php4-xslt-${V}p2
