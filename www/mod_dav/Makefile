@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2007/10/21 09:04:59 sturm Exp $
 
 COMMENT=	class 1 and 2 DAV server for the Apache webserver
 
@@ -26,8 +26,7 @@ MODAPACHE_NAME=	dav
 MODAPACHE_FILE=	${MODAPACHE_LOCATION}/libdav.so
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
-			--with-expat=${X11BASE}
+CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs
 
 SUBST_VARS=	PKGNAME
 
