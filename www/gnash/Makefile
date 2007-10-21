@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/10/02 19:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/10/21 09:25:48 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	flash player with firefox browser plugin
@@ -70,8 +70,6 @@ CONFIGURE_ARGS+=--enable-media=ffmpeg \
 		--enable-renderer=agg \
 		--enable-gui=gtk \
 		--without-gcc-arch \
-		--with-expat-incl=${X11BASE}/include \
-		--with-expat-lib=${X11BASE}/lib \
 		--with-libintl-prefix=${LOCALBASE}
 
 MAKE_FLAGS+=	libgnashbase_la_LDFLAGS= \
