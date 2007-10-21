@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2007/08/29 18:19:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.85 2007/10/21 18:41:20 ckuethe Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 DISTNAME=	vim-7.1
-REVISION=	39
+REVISION=	145
 VERSION=	7.1.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 MASTER_SITES0=	${MASTER_SITES:S/unix/patches\/7.1/}
 MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
 DISTFILES=	${DISTNAME}.tar.bz2 \
-		${DISTNAME}-lang.tar.gz:1 
+		${DISTNAME}-lang.tar.gz:1
 DIST_SUBDIR=	vim71
 
 HOMEPAGE=	http://www.vim.org/
@@ -26,7 +26,7 @@ MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 PATCHFILES=	#
 _patches!=	jot -w%03d - 1 ${REVISION} 1 | \
-	egrep -v '003|007'
+	egrep -v '003|007|041|065|070|072|080|088|091|092|122|123|124|126|128|129|134'
 .for p in ${_patches}
 PATCHFILES+=	7.1.${p}:0
 .endfor
