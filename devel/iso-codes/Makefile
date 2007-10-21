@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/28 09:55:41 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/10/21 11:59:47 steven Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -19,14 +19,15 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
-PYTHON_VER=	2.4
+MODULES=	lang/python
+MODPY_NO_RUNDEP=Yes
 
-BUILD_DEPENDS=	python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat
+BUILD_DEPENDS=	:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat
 
 FAKE_FLAGS=	DESTDIR=${WRKINST}  pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 post-extract:
-	@perl -pi -e 's,/usr/bin/env python,${LOCALBASE}/bin/python${PYTHON_VER},' \
+	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
 		${WRKSRC}/{iso2pot.py,iso_3166/iso3166tab.py}
 
 .include <bsd.port.mk>
