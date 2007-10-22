@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/10/22 20:18:24 sturm Exp $
 
 COMMENT=	essential utilities and scripts for xfce4
 
@@ -26,6 +26,7 @@ LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 RUN_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
 		:xfce4-session->=4.4.1:x11/xfce4/xfce4-session \
 		::x11/xfce4/exo
+BUILD_DEPENDS=	${RUN_DEPENDS}
 WANTLIB=	ICE SM X11 Xau Xdmcp Xrender c fontconfig freetype m \
 		Xcursor Xext Xfixes Xi Xinerama Xrandr pthread expat \
 		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
