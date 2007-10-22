@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/21 18:00:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/10/22 10:14:02 steven Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -19,7 +19,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 
 MODULES=	lang/python
-MODPY_NO_RUNDEP=Yes
+MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat
 
