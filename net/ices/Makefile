@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/08 16:25:06 mgrimm Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/22 14:47:58 steven Exp $
 
 COMMENT=	icecast source for streaming MP3
 
 DISTNAME=	ices-0.4
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/ices.php
@@ -37,9 +37,9 @@ FLAVORS=	python mp4
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpython}
-PYTHON_VER=	2.4
-CONFIGURE_ARGS+=--with-python=${LOCALBASE}/bin/python${PYTHON_VER}
-LIB_DEPENDS+=	python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+MODULES+=	lang/python
+CONFIGURE_ARGS+=--with-python=${MODPY_BIN}
+LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
 .else
 CONFIGURE_ARGS+=--without-python
 .endif
