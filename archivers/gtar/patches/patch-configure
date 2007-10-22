@@ -1,21 +1,12 @@
-$OpenBSD: patch-configure,v 1.5 2007/08/25 19:49:01 naddy Exp $
---- configure.orig	Fri Jun 29 13:02:47 2007
-+++ configure	Wed Aug 15 17:06:22 2007
-@@ -40213,7 +40213,7 @@ FCNTL_H!$FCNTL_H$ac_delim
- NEXT_FLOAT_H!$NEXT_FLOAT_H$ac_delim
- FLOAT_H!$FLOAT_H$ac_delim
- FNMATCH_H!$FNMATCH_H$ac_delim
--LIBINTL!$LIBINTL$ac_delim
-+LIBINTL!$LTLIBINTL$ac_delim
- LTLIBINTL!$LTLIBINTL$ac_delim
- NEXT_SYS_TIME_H!$NEXT_SYS_TIME_H$ac_delim
- HAVE_SYS_TIME_H!$HAVE_SYS_TIME_H$ac_delim
-@@ -40418,7 +40418,7 @@ DEFAULT_ARCHIVE_FORMAT!$DEFAULT_ARCHIVE_FORMAT$ac_deli
- DEFAULT_ARCHIVE!$DEFAULT_ARCHIVE$ac_delim
- DEFAULT_BLOCKING!$DEFAULT_BLOCKING$ac_delim
- DEFAULT_QUOTING_STYLE!$DEFAULT_QUOTING_STYLE$ac_delim
--LIBICONV!$LIBICONV$ac_delim
-+LIBICONV!$LTLIBICONV$ac_delim
- LTLIBICONV!$LTLIBICONV$ac_delim
- USE_NLS!$USE_NLS$ac_delim
- _ACEOF
+$OpenBSD: patch-configure,v 1.6 2007/10/22 16:33:41 naddy Exp $
+--- configure.orig	Mon Oct 22 17:11:20 2007
++++ configure	Mon Oct 22 17:13:26 2007
+@@ -33394,7 +33394,7 @@ fi
+ echo "${ECHO_T}$acl_cv_rpath" >&6; }
+   wl="$acl_cv_wl"
+   acl_libext="$acl_cv_libext"
+-  acl_shlibext="$acl_cv_shlibext"
++  acl_shlibext="${SHLIBEXT-$acl_cv_shlibext}"
+   acl_libname_spec="$acl_cv_libname_spec"
+   acl_library_names_spec="$acl_cv_library_names_spec"
+   acl_hardcode_libdir_flag_spec="$acl_cv_hardcode_libdir_flag_spec"
