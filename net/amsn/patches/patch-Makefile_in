@@ -1,0 +1,79 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/10/22 19:32:24 steven Exp $
+--- Makefile.in.orig	Wed Nov  1 18:05:49 2006
++++ Makefile.in	Mon Oct 22 20:47:10 2007
+@@ -10,10 +10,10 @@ STATIC		:= @STATIC@
+ doc_files	:= docs INSTALL CREDITS FAQ GNUGPL HELP README TODO AGREEMENT remote.help
+ 
+ FILES_TO_INSTALL := *.tcl hotmlog.htm amsn amsn-remote amsn-remote-CLI amsn.desktop langlist
+-FILES_TO_INSTALL += $(doc_files)
++FILES_TO_INSTALL += remote.help
+ FILES_TO_INSTALL += icons lang skins utils/base64 utils/drawboard utils/framec utils/http2.4
+ FILES_TO_INSTALL += utils/pixmapscroll utils/pixmapmenu utils/contentmanager
+-FILES_TO_INSTALL += utils/scalable-bg utils/sha1 utils/snit utils/BWidget-1.7.0 utils/dpbrowser
++FILES_TO_INSTALL += utils/scalable-bg utils/sha1 utils/snit utils/dpbrowser
+ FILES_TO_INSTALL += plugins
+ FILES_TO_INSTALL += utils/tclsoap1.6.7 utils/log utils/uri utils/tcldom utils/Tclxml utils/combobox
+ 
+@@ -75,7 +75,7 @@ USE_MMX		:= @USE_MMX@
+ # build final cflags
+ CFLAGS   := @CFLAGS@
+ ifeq (@DEBUG@,no)
+-CFLAGS   += -O2
++#CFLAGS   += -O2
+ else
+ CFLAGS   += -g3 -DDEBUG
+ endif
+@@ -116,6 +116,13 @@ FILES_TO_INSTALL += utils/webcamsn/webcamsn.so utils/w
+ FILES_TO_EXCLUDE += AppMain.tcl utils/linux/capture/test.tcl
+ endif
+ 
++ifeq ($(FOUND_OS),bsd)
++FILES_TO_INSTALL += utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/traydock/libtray.so utils/linux/traydock/pkgIndex.tcl utils/webcamsn/pkgIndex.tcl utils/webcamsn/webcamsn.so
++FILES_TO_EXCLUDE += AppMain.tcl utils/linux/capture/test.tcl
++endif
++
++
++
+ CONFIGURE_ARGS := @CONFIGURE_ARGS@
+ 
+ #########################################################
+@@ -143,19 +150,20 @@ distclean:: clean
+ 
+ install:: $(FILES_TO_INSTALL)
+ 	rm -Rf $(dstdir)/$(PACKAGE)
+-	mkdir --parents $(dstdir)/$(PACKAGE)
++	mkdir -p  $(dstdir)/$(PACKAGE)
+ 	mkdir -p $(slnkdir)
+ 	@for p in $?; do \
+-			cp -Rf --parents $(srcdir)/$$p $(dstdir)/$(PACKAGE); \
++			mkdir -p $(dstdir)/$(PACKAGE)/`dirname $$p`; \
++			cp -Rf $(srcdir)/$$p $(dstdir)/$(PACKAGE)/`dirname $$p`; \
+ 		done
+ 	find $(dstdir)/$(PACKAGE) -name CVS -print | xargs rm -Rf
+ 	@for p in $(FILES_TO_EXCLUDE); do \
+ 			rm -Rf $(dstdir)/$(PACKAGE)/$$p; \
+ 		done
+ 
+-	ln -sf $(dstdir)/$(PACKAGE)/amsn $(slnkdir)/amsn
+-	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote $(slnkdir)/amsn-remote
+-	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote-CLI $(slnkdir)/amsn-remote-CLI
++	#ln -sf $(dstdir)/$(PACKAGE)/amsn $(slnkdir)/amsn
++	#ln -sf $(dstdir)/$(PACKAGE)/amsn-remote $(slnkdir)/amsn-remote
++	#ln -sf $(dstdir)/$(PACKAGE)/amsn-remote-CLI $(slnkdir)/amsn-remote-CLI
+ 
+ 	chmod -R +rx $(dstdir)/$(PACKAGE)
+ 	mkdir -p $(dstdir)/icons/hicolor
+@@ -238,6 +246,13 @@ ifeq ($(FOUND_OS),linux)
+       ADDLIBS	 += ${X_LIBS}
+       include $(tray_dir)/Rules.mk
+       include $(linflash_dir)/Rules.mk
++  endif
++endif
++
++ifeq ($(FOUND_OS),bsd)
++   ifeq ($(FOUND_X11),yes)
++      ADDLIBS    += ${X_LIBS}
++      include $(tray_dir)/Rules.mk
+   endif
+ endif
+ 
