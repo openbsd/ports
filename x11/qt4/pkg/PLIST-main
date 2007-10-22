@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2007/08/29 12:30:58 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2007/10/22 15:36:59 espie Exp $
 @pkgpath x11/qt4
 %%SHARED%%
 bin/assistant4
@@ -1990,6 +1990,7 @@ lib/qt4/bin/rcc
 lib/qt4/bin/syncqt
 lib/qt4/bin/uic
 lib/qt4/bin/uic3
+lib/qt4/examples/tools/codecs/encodedfiles/.gitattributes
 lib/qt4/include
 @comment lib/qt4/libQt3Support.la
 lib/qt4/libQt3Support.prl
@@ -2144,12 +2145,12 @@ lib/qt4/mkspecs/hpux-g++-64/qmake.conf
 lib/qt4/mkspecs/hpux-g++-64/qplatformdefs.h
 lib/qt4/mkspecs/hpux-g++/qmake.conf
 lib/qt4/mkspecs/hpux-g++/qplatformdefs.h
-lib/qt4/mkspecs/hpuxi-acc/
+lib/qt4/mkspecs/hpuxi-acc-32/
+lib/qt4/mkspecs/hpuxi-acc-32/qmake.conf
+lib/qt4/mkspecs/hpuxi-acc-32/qplatformdefs.h
 lib/qt4/mkspecs/hpuxi-acc-64/
 lib/qt4/mkspecs/hpuxi-acc-64/qmake.conf
 lib/qt4/mkspecs/hpuxi-acc-64/qplatformdefs.h
-lib/qt4/mkspecs/hpuxi-acc/qmake.conf
-lib/qt4/mkspecs/hpuxi-acc/qplatformdefs.h
 lib/qt4/mkspecs/hurd-g++/
 lib/qt4/mkspecs/hurd-g++/qmake.conf
 lib/qt4/mkspecs/hurd-g++/qplatformdefs.h
@@ -2302,9 +2303,24 @@ lib/qt4/mkspecs/unixware-cc/qplatformdefs.h
 lib/qt4/mkspecs/unixware-g++/
 lib/qt4/mkspecs/unixware-g++/qmake.conf
 lib/qt4/mkspecs/unixware-g++/qplatformdefs.h
+lib/qt4/mkspecs/win32-borland/
+lib/qt4/mkspecs/win32-borland/qmake.conf
+lib/qt4/mkspecs/win32-borland/qplatformdefs.h
 lib/qt4/mkspecs/win32-g++/
 lib/qt4/mkspecs/win32-g++/qmake.conf
 lib/qt4/mkspecs/win32-g++/qplatformdefs.h
+lib/qt4/mkspecs/win32-msvc/
+lib/qt4/mkspecs/win32-msvc.net/
+lib/qt4/mkspecs/win32-msvc.net/qmake.conf
+lib/qt4/mkspecs/win32-msvc.net/qplatformdefs.h
+lib/qt4/mkspecs/win32-msvc/features/
+lib/qt4/mkspecs/win32-msvc/features/incremental.prf
+lib/qt4/mkspecs/win32-msvc/features/incremental_off.prf
+lib/qt4/mkspecs/win32-msvc/qmake.conf
+lib/qt4/mkspecs/win32-msvc/qplatformdefs.h
+lib/qt4/mkspecs/win32-msvc2005/
+lib/qt4/mkspecs/win32-msvc2005/qmake.conf
+lib/qt4/mkspecs/win32-msvc2005/qplatformdefs.h
 lib/qt4/phrasebooks/
 lib/qt4/phrasebooks/danish.qph
 lib/qt4/phrasebooks/dutch.qph
@@ -2344,20 +2360,31 @@ lib/qt4/q3porting.xml
 lib/qt4/translations/
 lib/qt4/translations/assistant_de.qm
 lib/qt4/translations/assistant_ja.qm
+lib/qt4/translations/assistant_pl.qm
+lib/qt4/translations/assistant_zh_CN.qm
 lib/qt4/translations/designer_de.qm
 lib/qt4/translations/designer_ja.qm
+lib/qt4/translations/designer_pl.qm
+lib/qt4/translations/designer_zh_CN.qm
 lib/qt4/translations/linguist_ja.qm
+lib/qt4/translations/linguist_pl.qm
+lib/qt4/translations/linguist_zh_CN.qm
 lib/qt4/translations/qt_ar.qm
 lib/qt4/translations/qt_de.qm
 lib/qt4/translations/qt_es.qm
 lib/qt4/translations/qt_fr.qm
 lib/qt4/translations/qt_iw.qm
 lib/qt4/translations/qt_ja_jp.qm
+lib/qt4/translations/qt_pl.qm
 lib/qt4/translations/qt_pt.qm
 lib/qt4/translations/qt_ru.qm
 lib/qt4/translations/qt_sk.qm
 lib/qt4/translations/qt_sv.qm
 lib/qt4/translations/qt_uk.qm
 lib/qt4/translations/qt_zh_CN.qm
+lib/qt4/translations/qtconfig_pl.qm
+lib/qt4/translations/qtconfig_zh_CN.qm
+lib/qt4/translations/qvfb_pl.qm
+lib/qt4/translations/qvfb_zh_CN.qm
 share/doc/qt4/OPENSOURCE-NOTICE.TXT
 share/doc/qt4/README

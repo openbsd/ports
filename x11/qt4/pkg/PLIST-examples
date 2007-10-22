@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.14 2007/08/29 12:30:58 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.15 2007/10/22 15:36:59 espie Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 bin/pixeltool
@@ -1934,8 +1934,6 @@ lib/qt4/examples/widgets/movie/movie.pro
 lib/qt4/examples/widgets/movie/movie.qrc
 lib/qt4/examples/widgets/movie/movieplayer.cpp
 lib/qt4/examples/widgets/movie/movieplayer.h
-lib/qt4/examples/widgets/movie/movies/
-lib/qt4/examples/widgets/movie/movies/fire.mng
 lib/qt4/examples/widgets/scribble/
 lib/qt4/examples/widgets/scribble/main.cpp
 lib/qt4/examples/widgets/scribble/mainwindow.cpp
