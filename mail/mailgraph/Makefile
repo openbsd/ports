@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/12 15:16:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2007/10/22 23:33:52 sthen Exp $
 
 COMMENT=	RRDtool frontend for Postfix statistics
 
-VERSION=	1.13
-DISTNAME=	mailgraph-${VERSION}
+DISTNAME=	mailgraph-1.14
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}/pub/ \
@@ -31,5 +30,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.pl ${PREFIX}/bin/mailgraph
 	${INSTALL_DATA_DIR} ${PREFIX}/${LIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${PREFIX}/lib/mailgraph
+	${INSTALL_DATA} ${WRKSRC}/mailgraph.css ${PREFIX}/lib/mailgraph
 
 .include <bsd.port.mk>
