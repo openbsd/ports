@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2007/10/19 11:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2007/10/22 12:42:57 naddy Exp $
 
 COMMENT-server=		University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=	University of Washington IMAP4rev1/POP2/POP3 mail utility
@@ -6,8 +6,8 @@ COMMENT-mailutil=	University of Washington IMAP4rev1/POP2/POP3 mail utility
 VERSION=		2006d
 DISTNAME=		imap-2006d
 
-PKGNAME-server=		imap-uw-${VERSION}
-PKGNAME-mailutil=	mailutil-uw-${VERSION}
+PKGNAME-server=		imap-uw-${VERSION}p0
+PKGNAME-mailutil=	mailutil-uw-${VERSION}p0
 CATEGORIES=		mail
 
 EXTRACT_SUFX=	.tar.Z
