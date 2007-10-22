@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/10/08 08:22:44 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/10/22 14:08:22 steven Exp $
 
 COMMENT=	Gtk bindings for Python
 
@@ -7,7 +7,7 @@ COMMENT=	Gtk bindings for Python
 # py-gnome's version number, even for py-gtk.
 
 V=		1.4.2		## For py-gtk, this really is 0.6.9
-PKGNAME=	py-Gtk-${V}p2
+PKGNAME=	py-Gtk-${V}p3
 DISTNAME=	gnome-python-${V}
 CATEGORIES=	x11 devel
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		GL GLU X11 Xext Xi gdk glib gmodule gtk \
 			jpeg m png pthread tiff ungif xml z ICE SM
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext lang/python
 LIB_DEPENDS+=	gdk_imlib::graphics/imlib \
 		gtkgl.>=1.2::x11/gtkglarea \
 		gdk_pixbuf::graphics/gdk-pixbuf \
@@ -35,13 +35,7 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 
-PYTHON_VER=	2.4
-SUBST_VARS=	PYTHON_VER
-
-CONFIGURE_ENV=	PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
-
-RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-BUILD_DEPENDS+=	${RUN_DEPENDS}
+CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 
 PATCH_STRIP=  -p1
 PATCH_LIST=   patch-pygtk_configure
