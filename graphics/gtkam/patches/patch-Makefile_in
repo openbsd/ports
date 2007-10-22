@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/10/22 20:36:15 ajacoutot Exp $
+--- Makefile.in.orig	Mon Dec 18 01:11:40 2006
++++ Makefile.in	Mon Oct 15 15:09:57 2007
+@@ -261,7 +261,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = m4m art doc help omf-install packaging pixmaps po src test
++SUBDIRS = m4m art doc packaging pixmaps po src test
+ ACLOCAL_AMFLAGS = -I m4m
+ 
+ # disable scrollkeeper for distcheck
+@@ -270,7 +270,7 @@ DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper
+ ########################################################################
+ # Install a few support and doc files
+ gtkamdocdir = $(datadir)/doc/gtkam
+-gtkamdoc_DATA = AUTHORS COPYING NEWS README TODO CHANGES
++gtkamdoc_DATA = NEWS README TODO CHANGES
+ desktopdir = $(datadir)/applications
+ desktop_DATA = gtkam.desktop
+ icondir = $(datadir)/pixmaps

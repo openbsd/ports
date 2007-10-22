@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2007/10/22 20:36:15 ajacoutot Exp $
+--- configure.orig	Tue Oct 16 17:54:24 2007
++++ configure	Tue Oct 16 17:54:45 2007
+@@ -26212,10 +26212,10 @@ MSGFMT!$MSGFMT$ac_delim
+ GMSGFMT!$GMSGFMT$ac_delim
+ XGETTEXT!$XGETTEXT$ac_delim
+ MSGMERGE!$MSGMERGE$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+-INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++INTLLIBS!$LTLIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ LIBGPHOTO2_CFLAGS!$LIBGPHOTO2_CFLAGS$ac_delim

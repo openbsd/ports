@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/01/20 23:54:19 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/10/22 20:36:15 ajacoutot Exp $
 bin/gtkam
 @man man/man1/gtkam.1
-@comment share/doc/gtkam/
-@comment share/doc/gtkam/AUTHORS
-@comment share/doc/gtkam/COPYING
+share/applications/
+share/applications/gtkam.desktop
+share/doc/gtkam/
+share/doc/gtkam/CHANGES
+share/doc/gtkam/NEWS
+share/doc/gtkam/README
+share/doc/gtkam/TODO
 share/gtkam/
 share/gtkam/pixmaps/
 share/gtkam/pixmaps/camera.xpm
@@ -20,6 +24,7 @@ share/images/gtkam/gtkam-folder-camera.png
 share/images/gtkam/gtkam-folder.png
 share/images/gtkam/gtkam-lock.png
 share/images/gtkam/gtkam-new.png
+share/locale/cs/LC_MESSAGES/gtkam.mo
 share/locale/da/LC_MESSAGES/gtkam.mo
 share/locale/de/LC_MESSAGES/gtkam.mo
 share/locale/es/LC_MESSAGES/gtkam.mo
@@ -27,7 +32,8 @@ share/locale/fr/LC_MESSAGES/gtkam.mo
 share/locale/hu/LC_MESSAGES/gtkam.mo
 share/locale/it/LC_MESSAGES/gtkam.mo
 share/locale/ja/LC_MESSAGES/gtkam.mo
-share/locale/no/LC_MESSAGES/gtkam.mo
+share/locale/nb/LC_MESSAGES/gtkam.mo
+share/locale/pl/LC_MESSAGES/gtkam.mo
 share/locale/pt_BR/LC_MESSAGES/gtkam.mo
 share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/
@@ -36,3 +42,7 @@ share/locale/ru/LC_MESSAGES/gtkam.mo
 share/locale/sl/LC_MESSAGES/gtkam.mo
 share/locale/sv/LC_MESSAGES/gtkam.mo
 share/locale/uk/LC_MESSAGES/gtkam.mo
+share/pixmaps/
+share/pixmaps/gtkam.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

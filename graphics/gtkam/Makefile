@@ -1,39 +1,51 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/22 20:36:15 ajacoutot Exp $
 
 COMMENT=	digital camera frontend
 
-VERSION=	0.1.10
-DISTNAME=	gtkam-${VERSION}
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	gtkam-0.1.14
 CATEGORIES=	graphics
+
+# gtkam-0.1.14 contains corrupted PNG files so we're getting
+# them from a previous release
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gtkam-0.1.12${EXTRACT_SUFX}
 
 HOMEPAGE=	http://gphoto.sourceforge.net/proj/gtkam/
 
-MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	gmodule-2.0 X11 Xext Xrender gobject-2.0 glitz png \
-		atk-1.0 fontconfig freetype m c z cairo \
-		glib-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
+		atk-1.0 fontconfig freetype m c z cairo glib-2.0 \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 Xau Xcursor \
+		Xdmcp Xfixes Xi Xinerama Xrandr exif expat ltdl usb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 
 LIB_DEPENDS=	gphoto2,gphoto2_port::graphics/libgphoto2 \
-		gdk_pixbuf-2.0.>=0.11,gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
+		gdk_pixbuf-2.0.>=0.11,gdk-x11-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2 \
+		exif-gtk::graphics/libexif-gtk
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-MODULES=	devel/gettext      
+MODULES=	devel/gettext
 
-SEPARATE_BUILD=	concurrent
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--without-gnome \
-		--without-gimp \
-		--without-bonobo-activation \
-		--without-exif
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-gnome=no \
+		--with-gimp=no \
+		--with-bonobo=no \
+		--disable-scrollkeeper
+
+post-extract:
+	@mv ${WRKDIR}/gtkam-0.1.12/art/*.png ${WRKSRC}/art
 
 .include <bsd.port.mk>

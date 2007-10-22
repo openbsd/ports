@@ -1,12 +1,17 @@
-$OpenBSD: patch-src_gtkam-save_c,v 1.1 2003/10/23 05:58:53 pvalchev Exp $
---- src/gtkam-save.c.orig	2003-10-22 20:18:55.000000000 -0600
-+++ src/gtkam-save.c	2003-10-22 20:19:09.000000000 -0600
-@@ -351,7 +351,7 @@ save_file (GtkamSave *save, CameraFile *
- 	} else {
- 		progname = gtk_entry_get_text (save->priv->program);
- 		if (progname && fork ()) {
--			execlp (progname, progname, full_path, NULL);
-+			execlp (progname, progname, full_path, (void *)NULL);
- 			_exit (0);
- 		} 
- 	}
+$OpenBSD: patch-src_gtkam-save_c,v 1.2 2007/10/22 20:36:15 ajacoutot Exp $
+--- src/gtkam-save.c.orig	Thu Dec 14 19:38:12 2006
++++ src/gtkam-save.c	Sun Oct 21 15:13:25 2007
+@@ -167,9 +167,11 @@ default_numbering_start(const GtkamSave *save)
+ 	gchar *tail,*prefix;
+ 	int max = 1;
+ 	int plen, current;
++	gchar *filename ;
+ 
+-	if (!(dir = g_dir_open (gtk_file_chooser_get_filename (
+-		GTK_FILE_CHOOSER (save)) , 0, NULL))) return 1;
++	filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (save));
++	if (filename == NULL) return 1;
++	if (!(dir = g_dir_open (filename , 0, NULL))) return 1;
+ 	prefix = g_strdup (gtk_entry_get_text
+ 					(GTK_ENTRY (save->priv->prefix_entry)));
+ 	plen = strlen (prefix);
