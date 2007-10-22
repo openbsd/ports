@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.309 2007/10/05 11:09:12 winiger Exp $
+# $OpenBSD: Makefile,v 1.310 2007/10/22 19:10:53 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -27,6 +27,7 @@
      SUBDIR += blackbox
      SUBDIR += blast
      SUBDIR += bricons
+     SUBDIR += bwidget
      SUBDIR += chbg
      SUBDIR += ctwm
      SUBDIR += dbus
