@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/22 07:52:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2007/10/22 16:28:45 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -40,7 +40,7 @@ FLAVOR+=c++
 .endif
 
 DISTFILES=  ${DISTNAME}.tar.bz2
-SUPDISTFILES=	adastrap-i386-3.3.6-4.tgz:0
+SUPDISTFILES=	adastrap-i386-3.3.6-5.tgz:0
 
 BUILD_DEPENDS+= :autoconf-2.59:devel/autoconf/2.59
 BUILD_DEPENDS+=	::devel/metaauto
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 .if ${FLAVOR:L:Mada}
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
-DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-4.tgz:0
+DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-5.tgz:0
 CONFIGURE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC=${WRKDIR}/bin/egcc
