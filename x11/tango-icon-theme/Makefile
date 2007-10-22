@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/22 22:02:12 jasper Exp $
 
 COMMENT=		Tango icon theme for GNOME and KDE
 
-DISTNAME=		tango-icon-theme-0.8.0
+DISTNAME=		tango-icon-theme-0.8.1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.tango-project.org/
-MASTER_SITES=		${HOMEPAGE}releases/
+MASTER_SITES=		${HOMEPAGE}/releases/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
