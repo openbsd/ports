@@ -1,4 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-python,v 1.1 2005/05/22 05:34:52 mjc Exp $
-lib/python${PYTHON_VER}/
-lib/python${PYTHON_VER}/site-packages/
-lib/python${PYTHON_VER}/site-packages/dnet.so
+@comment $OpenBSD: PFRAG.shared-python,v 1.2 2007/10/22 15:07:15 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/dnet.so
