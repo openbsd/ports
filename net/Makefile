@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.490 2007/10/19 09:05:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.491 2007/10/22 19:32:35 steven Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += aguri
      SUBDIR += aiccu
      SUBDIR += aimsniff
+     SUBDIR += amsn
      SUBDIR += amule
      SUBDIR += angst
      SUBDIR += ap-utils
