@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/11/12 10:10:09 grunk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/10/23 22:13:38 naddy Exp $
 @man man/man8/pptp.8
 sbin/pptp
 share/doc/pptp/
@@ -19,4 +19,3 @@ share/doc/pptp/Reference/rfc1990.txt
 share/doc/pptp/Reference/rfc791.txt
 share/doc/pptp/Reference/rfc793.txt
 share/doc/pptp/USING
-@sysctl net.inet.gre.allow=1

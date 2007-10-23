@@ -1,4 +1,4 @@
-.\" $OpenBSD: pptp_8,v 1.5 2006/11/12 10:10:09 grunk Exp $
+.\" $OpenBSD: pptp_8,v 1.6 2007/10/23 22:13:38 naddy Exp $
 .\" Manual page for pptp-1.1.0
 .\" Information gleaned from USING file in the distribution
 .\" SH section heading
@@ -14,10 +14,19 @@
 .Sh SYNOPSIS
 .Nm
 .Ar hostname
-[
-.Op Ar --phone <phone number>
-.Op Ar --quirks ISP_NAME
--- ]
+.Op Fl -version
+.Op Fl -phone Ar number
+.Op Fl -nolaunchpppd 
+.Op Fl -quirks Ar quirk
+.Op Fl -debug
+.Op Fl -sync
+.Op Fl -timeout Ar secs
+.Op Fl -nobuffer
+.Op Fl -idle-wait Ar time
+.Op Fl -max-echo-wait Ar time
+.Op Fl -logstring Ar name
+.Op Fl -localbind Ar addr
+.Op Fl -loglevel Ar level
 .Op Ar ppp options
 .Sh DESCRIPTION
 .Nm
@@ -37,33 +46,285 @@ uses GRE, the net.inet.gre.allow sysctl needs to be enabled.
 The
 .Ar hostname
 parameter specifies which host should be contacted as the PPTP server.
-Additional parameters are passed on to
-.Ic ppp
+.Pp
+.Op Ar ppp options
+are passed on to
+.Xr ppp 8
 and typically include a remote username or a file containing options.
 .Pp
 .Nm
 must be run as root.
-
-.Sh EXAMPLE
+.Pp
 .Nm
-.Ar hostname
-.Op Ar ppp options
+accepts the following options:
+.Bl -tag -width Ds
+.It Fl -version
+Display version number and exit.
+.It Fl -phone Ar number
+Pass
+.Ar number
+to remote host as phone number.
+.It Fl -nolaunchpppd 
+Do not launch a ppp daemon, for use as a ppp daemon pty.
+.It Fl -quirks Ar quirk
+Work around a buggy PPTP implementation.
+The only currently recognised value is
+.Ar BEZEQ_ISRAEL .
+See the file
+.Pa PREFIX/share/doc/pptp/USING
+for details.
+.It Fl -debug
+Run in foreground (for debugging with gdb).
+.It Fl -sync
+Enable Synchronous HDLC.
+.Xr ppp 8
+must use it, too.
+.It Fl -timeout Ar secs
+Time to wait for reordered packets (0.01 to 10 secs).
+.It Fl -nobuffer
+Disable packet buffering and reordering completely
+.It Fl -idle-wait Ar secs
+Time to wait before sending echo request.
+.It Fl -max-echo-wait Ar secs
+Time to wait before giving up on lack of reply. This option
+seems to be unimplemented, because the flag can be set but is
+never evaluated (look at pptp_ctrl.c) \(em dead, unused code?
+.It Fl -logstring Ar name
+Use
+.Ar name
+instead of
+.Dq anon
+in syslog messages.
+.It Fl -localbind Ar addr
+Bind to specified IP address instead of wildcard.
+.It Fl -loglevel Ar level
+Sets the debugging level (0=low, 1=default, 2=high).
+.Sh EXAMPLES
+.Ss PPTP on a stand-alone VPN client
+This example assumes that you want to use pptp to connect
+to a VPN and use the VPN connection as your default route.
+Let us assume that the VPN server was called vpn-gateway.net.
+.Pp
+First, edit
+.Pa /etc/ppp/ppp.conf
+and add an entry for the VPN
+connection. See
+.Xr ppp 8
+for details on the format of this file.
+.Bd -literal
+  vpn:
+	set device "!/usr/local/sbin/pptp --nolaunchpppd vpn-gateway.net"
+	set authname User
+	set authkey MySecret
+	set mppe 128 stateless
+.Ed
+.Pp
+Next, you need to configure routing in
+.Pa /etc/ppp/ppp.linkup :
+.Bd -literal
+  vpn: 
+    add default HISADDR
+.Ed
+.Pp
+If vpn-gateway.net does not reside on the local network,
+we have to add a host route pointing to vpn-gateway.net in order to
+avoid a chicken-and-egg problem once the default route is set to
+the VPN tunnel.
+Assuming the standard default route is 42.42.42.42:
+.Pp
+.Pa /etc/ppp/ppp.linkup :
+.Bd -literal
+  vpn: 
+    add vpn-gateway.net 42.42.42.42
+    add default HISADDR
+.Ed
+.Pp
+If your default route is not fixed, for example if you connect
+to the VPN from many different networks while on the road,
+use a script to figure out the current default route and add the
+host route to the VPN gateway. For example:
+.Pp
+.Pa /etc/ppp/vpn-default-route.sh :
+.Bd -literal
+	#!/bin/sh
+        gw=`netstat -rn -f inet | grep ^default | awk '{print $2};'`
+        route add -host vpn-gateway.net ${gw}
+.Ed
+.Pp
+Call the script from
+.Pa /etc/ppp/ppp.linkup :
+.Bd -literal
+  vpn:
+    ! sh /etc/ppp/vpn-default-route.sh
+    add default HISADDR
+.Pp
+Make sure the changes to the routing table are reversed in
+.Pa /etc/ppp/ppp.linkdown :
+.Bd -literal
+  vpn:
+    delete vpn-gateway.net
+.Ed
+.Pp
+Restoring the previous default route in
+.Pa /etc/ppp/ppp.linkdown
+is left as an exercise for the reader. On a laptop it is usually
+enough to issue a DHCP request to restore the routing table
+after the VPN connection is terminated.
+.Pp
+Connect by running:
+.Dl ppp -ddial vpn
+.Pp
+To terminate the connection, kill the ppp process. It creates a PID
+file in /var/run/tunX.pid, where X is the number of the tun device used.
+.Ss PPTP on a router
+This example assumes that you want to configure a router running
+OpenBSD to provide PPTP VPN access to a remote network for all hosts
+on your internal network.
+.Pp
+Let us assume that the VPN server was called vpn-gateway.net,
+and that the default route of our OpenBSD box was 42.42.42.42.
+The remote network shall be 10.42.0.0/16; we want all traffic to
+this network to go through the VPN tunnel.
+.Pp
+First, edit
+.Pa /etc/ppp/ppp.conf
+and add an entry for the VPN
+connection. See
+.Xr ppp 8
+for details on the format of this file.
+.Bd -literal
+  default:
+	set log Phase Chat LCP IPCP CCP tun command
+  vpn:
+	set device "!/usr/local/sbin/pptp --nolaunchpppd vpn-gateway.net"
+	set authname User
+	set authkey MySecret
+	set mppe 128 stateless
+.Ed
+.Pp
+Next, you need to configure routing in
+.Pa /etc/ppp/ppp.linkup .
+We also load
+.Xr pf 4
+anchors for the vpn interface here.
+More on that later.
+.Pp
+.Pa /etc/ppp/ppp.linkup :
+.Bd -literal
+  vpn: 
+    add 10.42.0.0/16 HISADDR
+    ! sh -c "/sbin/pfctl -a vpn -f /etc/pf.conf.vpn"
+.Ed
+.Pp
+If vpn-gateway.net resides inside 10.42.0.0/16, we have to add a host
+route pointing to vpn-gateway.net in order to avoid a chicken-and-egg
+problem once packets to 10.42.0.0/16 are routed through the tunnel.
+.Pp
+.Pa /etc/ppp/ppp.linkup :
+.Bd -literal
+  vpn: 
+    add vpn-gateway.net 42.42.42.42
+    add 10.42.0.0/16 HISADDR
+    ! sh -c "/sbin/pfctl -a vpn -f /etc/pf.conf.vpn"
+.Ed
+.Pp
+If your default route is not fixed, for example if your ISP does not
+always assign the same gateway to you, use a script to figure out
+the current default route and add the host route to the VPN gateway.
+For example:
+.Pp
+.Pa /etc/ppp/vpn-default-route.sh :
+.Bd -literal
+	#!/bin/sh
+        gw=`netstat -rn -f inet | grep ^default | awk '{print $2};'`
+        route add -host vpn-gateway.net ${gw}
+.Ed
+.Pp
+Call the script from
+.Pa /etc/ppp/ppp.linkup :
+.Bd -literal
+  vpn:
+    ! sh /etc/ppp/vpn-default-route.sh
+    add 10.42.0.0/16 HISADDR
+    ! sh -c "/sbin/pfctl -a vpn -f /etc/pf.conf.vpn"
+.Pp
+Make sure the changes to the routing table are
+reversed when the VPN connection drops:
+.Pp
+.Pa /etc/ppp/ppp.linkdown:
+.Bd -literal
+  vpn:
+    ! sh -c "/sbin/pfctl -a vpn -F all"
+    delete 10.42.0.0/16
+    delete vpn-gateway.net
+.Ed
+.Pp
+To make
+.Xr pf 4
+aware of the vpn anchors, put these lines into the
+NAT and Filter sections of
+.Pa /etc/pf.conf ,
+respectively:
+.Bd -literal
+  nat-anchor	vpn
+  anchor	vpn
+.Ed
+.Pp
+See
+.Xr pf.conf 5
+for details on the format of this file.
+.Pp
+Now define vpn anchor rules in
+.Pa /etc/pf.conf.vpn ,
+for example:
+.Bd -literal
+  int_if=xl0
+  vpn_if=tun0
+
+  # NAT is of course optional. The remote network needs
+  # a route to our network as well if we don't do NAT.
+  nat on $vpn_if from $int_if:network to any -> ($vpn_if)
+
+  block drop on $vpn_if
+  pass out on $vpn_if 
+
+  # Allow ping from remote, and explicitly make sure our replies are
+  # routed back through the tunnel.
+  pass in on $vpn_if reply-to ($vpn_if vpn-gateway.net) \e
+	inet proto icmp icmp-type echoreq keep state
+
+  # Same for ssh.
+  pass in on $vpn_if reply-to ($vpn_if vpn-gateway.net) proto tcp \e
+	from any to ($vpn_if) port ssh flags S/SA keep state
+.Ed
+.Pp
+Connect by running:
+.Dl ppp -unit0 -ddial vpn
+.Pp
+The -unit0 option makes sure ppp configures tun0 as the VPN
+connection end point, and not some other tun device.
+The packet filter rules configured above assume tun0 as the
+VPN connection end point.
+.Pp
+To terminate the connection, kill the ppp process. It creates a PID
+file in /var/run/tunX.pid, where X is the number of the tun device used.
 .Sh FILES
 .Pa /var/run/pptp/<ip-address>
 is created as a socket.  It is used for communicating with an existing
 PPTP call manager for a given remote server host.
-.Pp
-.Pa PREFIX/sbin/pptp-reconnect
-can be used to (re)establish a pptp connection.
 .Sh SEE ALSO
 .Xr ppp 8 ,
 .Xr gre 4 ,
+.Xr pf 4 ,
+.Xr pf.conf 5 ,
 .Pa PREFIX/share/doc/pptp/USING .
 .Sh HISTORY
 This man page appeared first in 
-.Nx 
-\'s pptp-package.
+.Nx
+\'s pptp package.
 .Sh AUTHORS
+.An Stefan Sperling Aq stsp@stsp.name
+(detailed option description, EXAMPLES section),
 .An C. Scott Ananian Aq cananian@alumni.princeton.edu ,
 .An John Kohl Aq jtk@NetBSD.org 
 (patches and original man page).

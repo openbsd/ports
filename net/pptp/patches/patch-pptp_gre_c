@@ -1,0 +1,50 @@
+$OpenBSD: patch-pptp_gre_c,v 1.1 2007/10/23 22:13:38 naddy Exp $
+--- pptp_gre.c.orig	Mon Feb 13 04:07:42 2006
++++ pptp_gre.c	Tue Oct 23 10:49:46 2007
+@@ -11,6 +11,8 @@
+ #include <sys/socket.h>
+ #include <sys/stat.h>
+ #include <sys/time.h>
++#include <sys/sysctl.h>
++#include <netinet/ip_gre.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <errno.h>
+@@ -73,12 +75,36 @@ uint64_t time_now_usecs()
+     return (tv.tv_sec * 1000000) + tv.tv_usec;
+ }
+ 
++static int set_gre_sysctl(int value)
++{
++    int mib[4];
++
++    /* "net.inet.gre.allow" */
++    mib[0] = CTL_NET;
++    mib[1] = PF_INET;
++    mib[2] = IPPROTO_GRE;
++    mib[3] = GRECTL_ALLOW;
++    
++    if (sysctl(mib, 4, NULL, 0, &value, sizeof(value)) == -1)
++        return 0;
++    return 1;
++}
++
+ /*** Open IP protocol socket **************************************************/
+ int pptp_gre_bind(struct in_addr inetaddr)
+ {
+     struct sockaddr_in src_addr, loc_addr;
+     extern struct in_addr localbind;
+-    int s = socket(AF_INET, SOCK_RAW, PPTP_PROTO);
++    int s;
++    
++    /* On OpenBSD, we need to enable GRE via sysctl before
++     * it can be used. */
++    if (! set_gre_sysctl(1)) {
++	    warn("Could not enable net.inet.gre.allow sysctl");
++	    return -1;
++    }
++
++    s = socket(AF_INET, SOCK_RAW, PPTP_PROTO);
+     if (s < 0) { warn("socket: %s", strerror(errno)); return -1; }
+     if (localbind.s_addr != INADDR_NONE) {
+         bzero(&loc_addr, sizeof(loc_addr));

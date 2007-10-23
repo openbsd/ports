@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2007/10/23 22:13:38 naddy Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/04/10 01:14:01 jtk Exp $
 
 COMMENT=	PPTP client package for Microsoft VPN servers
 
 DISTNAME=	pptp-1.7.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=pptpclient/}
 
 HOMEPAGE=	http://pptpclient.sf.net
 
-MAINTAINER=	Stefan Sperling <stsp@stsp.in-berlin.de>
+MAINTAINER=	Stefan Sperling <stsp@stsp.name>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

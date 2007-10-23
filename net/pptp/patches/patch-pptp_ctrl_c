@@ -1,6 +1,6 @@
-$OpenBSD: patch-pptp_ctrl_c,v 1.1 2006/09/22 02:00:50 pvalchev Exp $
---- pptp_ctrl.c.orig	Thu Sep 21 19:03:03 2006
-+++ pptp_ctrl.c	Thu Sep 21 19:03:19 2006
+$OpenBSD: patch-pptp_ctrl_c,v 1.2 2007/10/23 22:13:38 naddy Exp $
+--- pptp_ctrl.c.orig	Mon Feb 13 04:07:42 2006
++++ pptp_ctrl.c	Tue Sep 18 07:24:12 2007
 @@ -457,6 +457,7 @@ void pptp_conn_destroy(PPTP_CONN * conn)
  void pptp_fd_set(PPTP_CONN * conn, fd_set * read_set, fd_set * write_set,
                   int * max_fd)
@@ -9,7 +9,7 @@ $OpenBSD: patch-pptp_ctrl_c,v 1.1 2006/09/22 02:00:50 pvalchev Exp $
      assert(conn && conn->call);
      /* Add fd to write_set if there are outstanding writes. */
      if (conn->write_size > 0)
-@@ -465,7 +466,7 @@ void pptp_fd_set(PPTP_CONN * conn, fd_se
+@@ -465,7 +466,7 @@ void pptp_fd_set(PPTP_CONN * conn, fd_set * read_set, 
      FD_SET(conn->inet_sock, read_set);
      if (*max_fd < conn->inet_sock) *max_fd = conn->inet_sock;
      /* Add signal pipe file descriptor to set */
