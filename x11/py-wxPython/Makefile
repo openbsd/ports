@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:44 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/23 11:45:14 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python bindings for wxWidgets C++ class library
 
-DISTNAME=	wxPython-src-2.6.3.2
-PKGNAME=	${DISTNAME:S/^/py-/:S/-src//}p1
+V=		2.8.6.0
+DISTNAME=	wxPython-src-$V
+PKGNAME=	py-wxPython-$V
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.wxpython.org/
@@ -19,9 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wxpython/}
+EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
-LIB_DEPENDS=    wx_gtk2_gizmos,wx_gtk2_stc,wx_base_xml,wx_gtk2_qa,wx_base_odbc,wx_gtk2_html,wx_gtk2_gl,wx_base,wx_gtk2_adv,wx_gtk2_xrc,wx_gtk2_core,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_animate:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+LIB_DEPENDS=    wx_gtk2_aui,wx_gtk2_richtext,wx_gtk2_gizmos,wx_gtk2_stc,wx_base_xml,wx_gtk2_qa,wx_base_odbc,wx_gtk2_html,wx_gtk2_gl,wx_base,wx_gtk2_adv,wx_gtk2_xrc,wx_gtk2_core,wx_base_net,wx_gtk2_dbgrid:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
 
 WRKSRC=		${WRKDIST}/wxPython
 NO_REGRESS=	Yes

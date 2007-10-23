@@ -1,9 +1,9 @@
-$OpenBSD: patch-wxPython_setup_py,v 1.1 2006/10/18 16:37:12 alek Exp $
---- wxPython/setup.py.orig	Wed Oct 18 18:23:05 2006
-+++ wxPython/setup.py	Wed Oct 18 18:23:14 2006
-@@ -858,7 +858,7 @@ if __name__ == "__main__":
-               )
- 
+$OpenBSD: patch-wxPython_setup_py,v 1.2 2007/10/23 11:45:14 steven Exp $
+--- wxPython/setup.py.orig	Thu Jul 19 00:33:55 2007
++++ wxPython/setup.py	Wed Oct  3 11:08:48 2007
+@@ -912,7 +912,7 @@ if __name__ == "__main__":
+                   packages = ['wxaddons']
+              )
  
 -        if INSTALL_MULTIVERSION:
 +        if 1:

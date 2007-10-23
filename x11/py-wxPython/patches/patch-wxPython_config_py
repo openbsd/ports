@@ -1,16 +1,7 @@
-$OpenBSD: patch-wxPython_config_py,v 1.1.1.1 2006/10/17 10:04:17 alek Exp $
---- wxPython/config.py.orig	Tue Apr  4 06:00:19 2006
-+++ wxPython/config.py	Fri Oct 13 12:46:25 2006
-@@ -107,7 +107,7 @@ FULL_DOCS = 0      # Some docstrings are
-                    # cause the two strings to be combined and output
-                    # as the full docstring.
- 
--UNICODE = 0        # This will pass the 'wxUSE_UNICODE' flag to SWIG and
-+UNICODE = 1        # This will pass the 'wxUSE_UNICODE' flag to SWIG and
-                    # will ensure that the right headers are found and the
-                    # right libs are linked.
- 
-@@ -123,7 +123,7 @@ UNDEF_NDEBUG = 1   # Python 2.2 on Unix/
+$OpenBSD: patch-wxPython_config_py,v 1.2 2007/10/23 11:45:14 steven Exp $
+--- wxPython/config.py.orig	Wed Oct  3 11:20:46 2007
++++ wxPython/config.py	Wed Oct  3 11:21:52 2007
+@@ -121,7 +121,7 @@ UNDEF_NDEBUG = 1   # Python 2.2 on Unix/Linux by defau
  NO_SCRIPTS = 0     # Don't install the tool scripts
  NO_HEADERS = 0     # Don't install the wxPython *.h and *.i files
  
@@ -19,7 +10,7 @@ $OpenBSD: patch-wxPython_config_py,v 1.1.1.1 2006/10/17 10:04:17 alek Exp $
                     # can co-exist.  When turned on the wx and wxPython
                     # pacakges will be installed in a versioned subdir
                     # of site-packages, and a *.pth file will be
-@@ -136,7 +136,7 @@ INSTALL_MULTIVERSION = 1 # Install the p
+@@ -134,7 +134,7 @@ INSTALL_MULTIVERSION = 1 # Install the packages such t
  FLAVOUR = ""       # Optional flavour string to be appended to VERSION
                     # in MULTIVERSION installs
  
@@ -28,23 +19,16 @@ $OpenBSD: patch-wxPython_config_py,v 1.1.1.1 2006/10/17 10:04:17 alek Exp $
                     # ansi/unicode settings can optionally be added to the
                     # subdir path used in site-packages
  
-@@ -179,7 +179,7 @@ CONTRIBS_INC = ""  # A dir to add as an 
- 
- # Some MSW build settings
- 
--MONOLITHIC = 1     # The core wxWidgets lib can be built as either a
-+MONOLITHIC = 0     # The core wxWidgets lib can be built as either a
-                    # single monolithic DLL or as a collection of DLLs.
-                    # This flag controls which set of libs will be used
-                    # on Windows.  (For other platforms it is automatic
-@@ -512,13 +512,13 @@ class wx_install_headers(distutils.comma
+@@ -486,7 +486,7 @@ class wx_install_headers(distutils.command.install_hea
          if not headers:
              return
  
 -        root = self.root
 +        root = "!!WRKINST!!"
-         if root is None or WXPREFIX.startswith(root):
-             root = ''
+         #print "WXPREFIX is %s, root is %s" % (WXPREFIX, root)
+         # hack for universal builds, which append i386/ppc
+         # to the root
+@@ -495,7 +495,7 @@ class wx_install_headers(distutils.command.install_hea
          for header, location in headers:
              install_dir = os.path.normpath(root +
                                             WXPREFIX +
@@ -53,7 +37,7 @@ $OpenBSD: patch-wxPython_config_py,v 1.1.1.1 2006/10/17 10:04:17 alek Exp $
                                             location)
              self.mkpath(install_dir)
              (out, _) = self.copy_file(header, install_dir)
-@@ -573,7 +573,7 @@ def find_data_files(srcdir, *wildcards):
+@@ -549,7 +549,7 @@ def find_data_files(srcdir, *wildcards):
  
  def makeLibName(name):
      if os.name == 'posix':
@@ -62,7 +46,7 @@ $OpenBSD: patch-wxPython_config_py,v 1.1.1.1 2006/10/17 10:04:17 alek Exp $
      elif name:
          libname = 'wxmsw%s%s_%s' % (WXDLLVER, libFlag(), name)
      else:
-@@ -780,8 +780,6 @@ elif os.name == 'posix':
+@@ -893,8 +893,6 @@ elif os.name == 'posix':
      if debug:
          cflags.append('-g')
          cflags.append('-O0')
@@ -70,4 +54,4 @@ $OpenBSD: patch-wxPython_config_py,v 1.1.1.1 2006/10/17 10:04:17 alek Exp $
 -        cflags.append('-O3')
  
      lflags = os.popen(WX_CONFIG + ' --libs', 'r').read()[:-1]
-     lflags = lflags.split()
+     MONOLITHIC = (lflags.find("_xrc") == -1)
