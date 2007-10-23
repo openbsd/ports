@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2007/10/19 17:36:17 fgsch Exp $
+# $OpenBSD: Makefile,v 1.83 2007/10/23 20:13:26 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -6,11 +6,11 @@ ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 COMMENT-main=	redesign of Mozilla's browser component
 COMMENT-devel=	devel files for Gecko
 
-VER=		2.0.0.7
+VER=		2.0.0.8
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}p1
-PKGNAME-devel=	mozilla-firefox-devel-${VER}p1
+PKGNAME-main=	mozilla-firefox-${VER}
+PKGNAME-devel=	mozilla-firefox-devel-${VER}
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -121,9 +121,6 @@ MOZ=		${PREFIX}/mozilla-firefox
 DATADIRS=	chrome components defaults dictionaries extensions \
 		greprefs icons init.d plugins res searchplugins
 DISTDIRS=	include idl
-
-post-extract:
-	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
