@@ -1,0 +1,31 @@
+--- config.h.orig	Sat Sep 22 03:11:13 2007
++++ config.h	Fri Oct 12 08:52:40 2007
+@@ -4,12 +4,12 @@
+ #define BARPOS			BarTop /* BarBot, BarOff */
+ #define BORDERPX		1
+ #define FONT			"-*-terminus-medium-r-*-*-12-*-*-*-*-*-iso10646-*"
+-#define NORMBORDERCOLOR		"#333"
+-#define NORMBGCOLOR		"#000"
+-#define NORMFGCOLOR		"#ccc"
+-#define SELBORDERCOLOR		"#f00"
+-#define SELBGCOLOR		"#00f"
+-#define SELFGCOLOR		"#fff"
++#define NORMBORDERCOLOR		"#404040"
++#define NORMBGCOLOR		"#202020"
++#define NORMFGCOLOR		"#c0c0c0"
++#define SELBORDERCOLOR		"#8888ff"
++#define SELBGCOLOR		"#404040"
++#define SELFGCOLOR		"#f0f0f0"
+ 
+ /* tagging */
+ const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", NULL };
+@@ -39,8 +39,7 @@
+ 	{ MODKEY,			XK_p,		spawn, \
+ 		"exe=`dmenu_path | dmenu -fn '"FONT"' -nb '"NORMBGCOLOR"' -nf '"NORMFGCOLOR"'" \
+ 		" -sb '"SELBGCOLOR"' -sf '"SELFGCOLOR"'` && exec $exe" }, \
+-	{ MODKEY|ShiftMask,		XK_Return,	spawn, \
+-		"exec xterm -bg '"NORMBGCOLOR"' -fg '"NORMFGCOLOR"' -cr '"NORMFGCOLOR"' +sb -fn '"FONT"'" }, \
++	{ MODKEY|ShiftMask,		XK_Return,	spawn,  "exec xterm" }, \
+ 	{ MODKEY,			XK_space,	setlayout,	NULL }, \
+ 	{ MODKEY,			XK_b,		togglebar,	NULL }, \
+ 	{ MODKEY,			XK_j,		focusnext,	NULL }, \

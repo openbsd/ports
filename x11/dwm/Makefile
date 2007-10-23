@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/29 17:26:10 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/23 13:29:03 merdely Exp $
 
 COMMENT=		dynamic window manager
 
-V=			4.3
+V=			4.5
 DISTNAME=		dwm-$V
 
 CATEGORIES=		x11
@@ -21,7 +21,8 @@ WANTLIB=		X11 c
 
 MASTER_SITES=		http://www.suckless.org/download/
 
-RUN_DEPENDS=		::x11/dmenu
+RUN_DEPENDS=		::x11/dmenu \
+			::x11/terminus-font
 
 CFLAGS+=		-I. -I${X11BASE}/include -DVERSION=\\\"$V\\\"
 LDFLAGS+=		-L${X11BASE}/lib -lX11
