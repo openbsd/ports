@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/23 09:22:13 aanriot Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
 DISTNAME=	agg-2.4
-SHARED_LIBS=	agg		2.4 \
-		aggfontfreetype	2.4 \
-		aggplatformsdl	2.4 \
-		aggplatformX11	2.4
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	agg		2.5 \
+		aggfontfreetype	2.5 \
+		aggplatformsdl	2.5 \
+		aggplatformX11	2.5
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.antigrain.com/
@@ -19,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	X11 Xext freetype m usbhid
+WANTLIB=	iconv freetype m usbhid X11 Xau Xdmcp Xext Xrandr Xrender z
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -39,8 +40,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gpc \
 		--disable-examples \
 		--disable-sdltest
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I/usr/X11R6/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -I/usr/X11R6/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
