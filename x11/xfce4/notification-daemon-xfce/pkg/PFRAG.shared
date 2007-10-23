@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/23 14:02:40 landry Exp $
+lib/notification-daemon-xfce-1.0/engines/libstandard.so
+lib/xfce4/mcs-plugins/notification_settings.so

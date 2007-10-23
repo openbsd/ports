@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/23 14:02:40 landry Exp $
+@conflict notification-daemon->=0.3.7
+%%SHARED%%
+bin/notification-settings
+lib/notification-daemon-xfce-1.0/
+lib/notification-daemon-xfce-1.0/engines/
+lib/notification-daemon-xfce-1.0/engines/libstandard.a
+lib/notification-daemon-xfce-1.0/engines/libstandard.la
+lib/xfce4/
+lib/xfce4/mcs-plugins/
+lib/xfce4/mcs-plugins/notification_settings.a
+lib/xfce4/mcs-plugins/notification_settings.la
+libexec/notification-daemon-xfce
+share/applications/notification-settings.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.freedesktop.Notifications.service
+share/icons/hicolor/22x22/apps/notification-settings.png
+share/icons/hicolor/48x48/apps/notification-settings.png
+share/locale/be/LC_MESSAGES/notification-daemon-xfce.mo
+share/locale/en_GB/LC_MESSAGES/notification-daemon-xfce.mo
+share/locale/fr/LC_MESSAGES/notification-daemon-xfce.mo
+share/locale/hu/LC_MESSAGES/notification-daemon-xfce.mo
+share/locale/nl/LC_MESSAGES/notification-daemon-xfce.mo
+share/locale/pl/LC_MESSAGES/notification-daemon-xfce.mo
+share/locale/uk/LC_MESSAGES/notification-daemon-xfce.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
