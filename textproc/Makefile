@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2007/10/13 09:56:20 simon Exp $
+# $OpenBSD: Makefile,v 1.220 2007/10/23 16:50:21 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -230,6 +230,7 @@
      SUBDIR += xml2rfc,no_x11
      SUBDIR += xmlcatmgr
      SUBDIR += xmlto
+     SUBDIR += xmlwf
      SUBDIR += xpdf
      SUBDIR += xxdiff
      SUBDIR += yould
