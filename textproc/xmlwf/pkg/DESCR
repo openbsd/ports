@@ -1,0 +1,8 @@
+xmlwf  uses the Expat library to determine if an XML document is well-formed.  
+It is non-validating.
+
+xmlwf is normally distributed with the expat library.
+OpenBSD includes expat in base, because it's needed by ports and Xwindows.
+
+xmlwf is not needed for anything in base nor in X.
+Hence the separate package.
