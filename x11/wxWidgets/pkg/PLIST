@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2006/10/12 14:09:33 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/10/23 11:28:10 steven Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -14,20 +14,30 @@
 bin/wx-config
 bin/wxrc
 include/wx/
+include/wx/aboutdlg.h
 include/wx/accel.h
 include/wx/access.h
 include/wx/afterstd.h
-include/wx/animate/
-include/wx/animate/animate.h
+include/wx/anidecod.h
+include/wx/animate.h
+include/wx/animdecod.h
 include/wx/app.h
 include/wx/apptrait.h
 include/wx/archive.h
 include/wx/arrimpl.cpp
 include/wx/arrstr.h
 include/wx/artprov.h
+include/wx/aui/
+include/wx/aui/aui.h
+include/wx/aui/auibook.h
+include/wx/aui/dockart.h
+include/wx/aui/floatpane.h
+include/wx/aui/framemanager.h
+include/wx/aui/tabmdi.h
 include/wx/beforestd.h
 include/wx/bitmap.h
 include/wx/bmpbuttn.h
+include/wx/bmpcbox.h
 include/wx/bookctrl.h
 include/wx/brush.h
 include/wx/buffer.h
@@ -44,20 +54,26 @@ include/wx/choice.h
 include/wx/choicebk.h
 include/wx/clipbrd.h
 include/wx/clntdata.h
+include/wx/clrpicker.h
 include/wx/cmdline.h
 include/wx/cmdproc.h
 include/wx/cmndata.h
+include/wx/collpane.h
 include/wx/colordlg.h
 include/wx/colour.h
+include/wx/combo.h
 include/wx/combobox.h
 include/wx/confbase.h
 include/wx/config.h
 include/wx/containr.h
 include/wx/control.h
+include/wx/convauto.h
+include/wx/cpp.h
 include/wx/cshelp.h
 include/wx/ctrlsub.h
 include/wx/cursor.h
 include/wx/dataobj.h
+include/wx/dataview.h
 include/wx/datectrl.h
 include/wx/dateevt.h
 include/wx/datetime.h
@@ -69,6 +85,7 @@ include/wx/dbtable.h
 include/wx/dc.h
 include/wx/dcbuffer.h
 include/wx/dcclient.h
+include/wx/dcgraph.h
 include/wx/dcmemory.h
 include/wx/dcmirror.h
 include/wx/dcprint.h
@@ -78,22 +95,13 @@ include/wx/dde.h
 include/wx/debug.h
 include/wx/debugrpt.h
 include/wx/defs.h
-include/wx/deprecated/
-include/wx/deprecated/expr.h
-include/wx/deprecated/prop.h
-include/wx/deprecated/propform.h
-include/wx/deprecated/proplist.h
-include/wx/deprecated/resource.h
-include/wx/deprecated/setup.h
-include/wx/deprecated/tbarsmpl.h
-include/wx/deprecated/treelay.h
-include/wx/deprecated/wxexpr.h
 include/wx/dialog.h
 include/wx/dialup.h
 include/wx/dir.h
 include/wx/dirctrl.h
 include/wx/dirdlg.h
 include/wx/display.h
+include/wx/display_impl.h
 include/wx/dlimpexp.h
 include/wx/dnd.h
 include/wx/docmdi.h
@@ -116,6 +124,7 @@ include/wx/fileconf.h
 include/wx/filedlg.h
 include/wx/filefn.h
 include/wx/filename.h
+include/wx/filepicker.h
 include/wx/filesys.h
 include/wx/fl/
 include/wx/fl/antiflickpl.h
@@ -143,8 +152,11 @@ include/wx/fontdlg.h
 include/wx/fontenc.h
 include/wx/fontenum.h
 include/wx/fontmap.h
+include/wx/fontpicker.h
 include/wx/fontutil.h
 include/wx/frame.h
+include/wx/fs_arc.h
+include/wx/fs_filter.h
 include/wx/fs_inet.h
 include/wx/fs_mem.h
 include/wx/fs_zip.h
@@ -153,11 +165,20 @@ include/wx/gbsizer.h
 include/wx/gdicmn.h
 include/wx/gdiobj.h
 include/wx/generic/
+include/wx/generic/aboutdlgg.h
 include/wx/generic/accel.h
+include/wx/generic/animate.h
+include/wx/generic/bmpcbox.h
+include/wx/generic/busyinfo.h
+include/wx/generic/buttonbar.h
 include/wx/generic/calctrl.h
 include/wx/generic/caret.h
 include/wx/generic/choicdgg.h
+include/wx/generic/clrpickerg.h
+include/wx/generic/collpaneg.h
 include/wx/generic/colrdlgg.h
+include/wx/generic/combo.h
+include/wx/generic/dataview.h
 include/wx/generic/datectrl.h
 include/wx/generic/dcpsg.h
 include/wx/generic/dirctrlg.h
@@ -165,11 +186,14 @@ include/wx/generic/dirdlgg.h
 include/wx/generic/dragimgg.h
 include/wx/generic/fdrepdlg.h
 include/wx/generic/filedlgg.h
+include/wx/generic/filepickerg.h
 include/wx/generic/fontdlgg.h
+include/wx/generic/fontpickerg.h
 include/wx/generic/grid.h
 include/wx/generic/gridctrl.h
 include/wx/generic/gridsel.h
 include/wx/generic/helpext.h
+include/wx/generic/icon.h
 include/wx/generic/imaglist.h
 include/wx/generic/laywin.h
 include/wx/generic/listctrl.h
@@ -188,6 +212,7 @@ include/wx/generic/scrolwin.h
 include/wx/generic/spinctlg.h
 include/wx/generic/splash.h
 include/wx/generic/splitter.h
+include/wx/generic/srchctlg.h
 include/wx/generic/statusbr.h
 include/wx/generic/tabg.h
 include/wx/generic/textdlgg.h
@@ -206,11 +231,14 @@ include/wx/gizmos/splittree.h
 include/wx/gizmos/statpict.h
 include/wx/gizmos/xh_statpict.h
 include/wx/glcanvas.h
+include/wx/graphics.h
 include/wx/grid.h
 include/wx/gsocket.h
 include/wx/gtk/
 include/wx/gtk/accel.h
+include/wx/gtk/animate.h
 include/wx/gtk/app.h
+include/wx/gtk/assertdlg_gtk.h
 include/wx/gtk/bitmap.h
 include/wx/gtk/bmpbuttn.h
 include/wx/gtk/brush.h
@@ -219,6 +247,8 @@ include/wx/gtk/checkbox.h
 include/wx/gtk/checklst.h
 include/wx/gtk/choice.h
 include/wx/gtk/clipbrd.h
+include/wx/gtk/clrpicker.h
+include/wx/gtk/collpane.h
 include/wx/gtk/colordlg.h
 include/wx/gtk/colour.h
 include/wx/gtk/combobox.h
@@ -232,17 +262,19 @@ include/wx/gtk/dcclient.h
 include/wx/gtk/dcmemory.h
 include/wx/gtk/dcscreen.h
 include/wx/gtk/dialog.h
+include/wx/gtk/dirdlg.h
 include/wx/gtk/dnd.h
 include/wx/gtk/filedlg.h
+include/wx/gtk/filepicker.h
 include/wx/gtk/font.h
 include/wx/gtk/fontdlg.h
+include/wx/gtk/fontpicker.h
 include/wx/gtk/frame.h
 include/wx/gtk/gauge.h
-include/wx/gtk/gdiobj.h
 include/wx/gtk/glcanvas.h
 include/wx/gtk/gnome/
 include/wx/gtk/gnome/gprint.h
-include/wx/gtk/icon.h
+include/wx/gtk/gnome/gvfs.h
 include/wx/gtk/listbox.h
 include/wx/gtk/mdi.h
 include/wx/gtk/menu.h
@@ -271,6 +303,7 @@ include/wx/gtk/timer.h
 include/wx/gtk/tooltip.h
 include/wx/gtk/toplevel.h
 include/wx/gtk/treectrl.h
+include/wx/gtk/treeentry_gtk.h
 include/wx/gtk/win_gtk.h
 include/wx/gtk/window.h
 include/wx/hash.h
@@ -284,7 +317,9 @@ include/wx/html/
 include/wx/html/forcelnk.h
 include/wx/html/helpctrl.h
 include/wx/html/helpdata.h
+include/wx/html/helpdlg.h
 include/wx/html/helpfrm.h
+include/wx/html/helpwnd.h
 include/wx/html/htmlcell.h
 include/wx/html/htmldefs.h
 include/wx/html/htmlfilt.h
@@ -296,6 +331,7 @@ include/wx/html/htmprint.h
 include/wx/html/m_templ.h
 include/wx/html/winpars.h
 include/wx/htmllbox.h
+include/wx/hyperlink.h
 include/wx/icon.h
 include/wx/iconbndl.h
 include/wx/iconloc.h
@@ -308,6 +344,7 @@ include/wx/imaglist.h
 include/wx/imagpcx.h
 include/wx/imagpng.h
 include/wx/imagpnm.h
+include/wx/imagtga.h
 include/wx/imagtiff.h
 include/wx/imagxpm.h
 include/wx/init.h
@@ -321,6 +358,7 @@ include/wx/isqlext.h
 include/wx/joystick.h
 include/wx/layout.h
 include/wx/laywin.h
+include/wx/link.h
 include/wx/list.h
 include/wx/listbase.h
 include/wx/listbook.h
@@ -368,6 +406,7 @@ include/wx/mstream.h
 include/wx/notebook.h
 include/wx/numdlg.h
 include/wx/object.h
+include/wx/odcombo.h
 include/wx/ogl/
 include/wx/ogl/basic.h
 include/wx/ogl/basicp.h
@@ -384,12 +423,15 @@ include/wx/ogl/mfutils.h
 include/wx/ogl/misc.h
 include/wx/ogl/ogl.h
 include/wx/ogl/ogldiag.h
+include/wx/overlay.h
 include/wx/ownerdrw.h
 include/wx/palette.h
 include/wx/panel.h
 include/wx/paper.h
 include/wx/pen.h
+include/wx/pickerbase.h
 include/wx/platform.h
+include/wx/platinfo.h
 include/wx/plot/
 include/wx/plot/plot.h
 include/wx/plot/plot_dwn.bmp
@@ -400,6 +442,7 @@ include/wx/plot/plot_zin.bmp
 include/wx/plot/plot_zot.bmp
 include/wx/plot/wxplot.rc
 include/wx/popupwin.h
+include/wx/power.h
 include/wx/print.h
 include/wx/printdlg.h
 include/wx/prntbase.h
@@ -420,6 +463,16 @@ include/wx/recguard.h
 include/wx/regex.h
 include/wx/region.h
 include/wx/renderer.h
+include/wx/richtext/
+include/wx/richtext/richtextbuffer.h
+include/wx/richtext/richtextctrl.h
+include/wx/richtext/richtextformatdlg.h
+include/wx/richtext/richtexthtml.h
+include/wx/richtext/richtextprint.h
+include/wx/richtext/richtextstyledlg.h
+include/wx/richtext/richtextstyles.h
+include/wx/richtext/richtextsymboldlg.h
+include/wx/richtext/richtextxml.h
 include/wx/sashwin.h
 include/wx/sckaddr.h
 include/wx/sckipc.h
@@ -438,6 +491,7 @@ include/wx/spinbutt.h
 include/wx/spinctrl.h
 include/wx/splash.h
 include/wx/splitter.h
+include/wx/srchctrl.h
 include/wx/sstream.h
 include/wx/stack.h
 include/wx/stackwalk.h
@@ -459,6 +513,7 @@ include/wx/svg/dcsvg.h
 include/wx/sysopt.h
 include/wx/tab.h
 include/wx/tabctrl.h
+include/wx/tarstrm.h
 include/wx/taskbar.h
 include/wx/tbarbase.h
 include/wx/textbuf.h
@@ -473,22 +528,24 @@ include/wx/tipdlg.h
 include/wx/tipwin.h
 include/wx/tokenzr.h
 include/wx/toolbar.h
+include/wx/toolbook.h
 include/wx/tooltip.h
 include/wx/toplevel.h
 include/wx/treebase.h
+include/wx/treebook.h
 include/wx/treectrl.h
 include/wx/txtstrm.h
 include/wx/types.h
 include/wx/unix/
 include/wx/unix/apptbase.h
 include/wx/unix/apptrait.h
-include/wx/unix/displayx11.h
 include/wx/unix/execute.h
 include/wx/unix/fontutil.h
 include/wx/unix/gsockunx.h
 include/wx/unix/joystick.h
 include/wx/unix/mimetype.h
 include/wx/unix/pipe.h
+include/wx/unix/private.h
 include/wx/unix/sound.h
 include/wx/unix/stackwalk.h
 include/wx/unix/stdpaths.h
@@ -512,6 +569,7 @@ include/wx/wave.h
 include/wx/wfstream.h
 include/wx/window.h
 include/wx/wizard.h
+include/wx/wupdlock.h
 include/wx/wx.h
 include/wx/wxchar.h
 include/wx/wxhtml.h
@@ -522,28 +580,40 @@ include/wx/xpmdecod.h
 include/wx/xpmhand.h
 include/wx/xrc/
 include/wx/xrc/xh_all.h
+include/wx/xrc/xh_animatctrl.h
 include/wx/xrc/xh_bmp.h
 include/wx/xrc/xh_bmpbt.h
+include/wx/xrc/xh_bmpcbox.h
 include/wx/xrc/xh_bttn.h
 include/wx/xrc/xh_cald.h
 include/wx/xrc/xh_chckb.h
 include/wx/xrc/xh_chckl.h
 include/wx/xrc/xh_choic.h
 include/wx/xrc/xh_choicbk.h
+include/wx/xrc/xh_clrpicker.h
+include/wx/xrc/xh_collpane.h
 include/wx/xrc/xh_combo.h
 include/wx/xrc/xh_datectrl.h
+include/wx/xrc/xh_dirpicker.h
 include/wx/xrc/xh_dlg.h
+include/wx/xrc/xh_filepicker.h
+include/wx/xrc/xh_fontpicker.h
 include/wx/xrc/xh_frame.h
 include/wx/xrc/xh_gauge.h
 include/wx/xrc/xh_gdctl.h
+include/wx/xrc/xh_grid.h
 include/wx/xrc/xh_html.h
+include/wx/xrc/xh_htmllbox.h
+include/wx/xrc/xh_hyperlink.h
 include/wx/xrc/xh_listb.h
 include/wx/xrc/xh_listbk.h
 include/wx/xrc/xh_listc.h
 include/wx/xrc/xh_mdi.h
 include/wx/xrc/xh_menu.h
 include/wx/xrc/xh_notbk.h
+include/wx/xrc/xh_odcombo.h
 include/wx/xrc/xh_panel.h
+include/wx/xrc/xh_propdlg.h
 include/wx/xrc/xh_radbt.h
 include/wx/xrc/xh_radbx.h
 include/wx/xrc/xh_scrol.h
@@ -561,6 +631,7 @@ include/wx/xrc/xh_text.h
 include/wx/xrc/xh_tglbtn.h
 include/wx/xrc/xh_toolb.h
 include/wx/xrc/xh_tree.h
+include/wx/xrc/xh_treebk.h
 include/wx/xrc/xh_unkwn.h
 include/wx/xrc/xh_wizrd.h
 include/wx/xrc/xmlres.h
@@ -574,30 +645,29 @@ include/wx/zstream.h
 @lib lib/libwx_base_odbc.so.${LIBwx_base_odbc_VERSION}
 @lib lib/libwx_base_xml.so.${LIBwx_base_xml_VERSION}
 @lib lib/libwx_gtk2_adv.so.${LIBwx_gtk2_adv_VERSION}
-@lib lib/libwx_gtk2_animate.so.${LIBwx_gtk2_animate_VERSION}
+@lib lib/libwx_gtk2_aui.so.${LIBwx_gtk2_aui_VERSION}
 @lib lib/libwx_gtk2_core.so.${LIBwx_gtk2_core_VERSION}
 @lib lib/libwx_gtk2_dbgrid.so.${LIBwx_gtk2_dbgrid_VERSION}
-@lib lib/libwx_gtk2_deprecated.so.${LIBwx_gtk2_deprecated_VERSION}
 @lib lib/libwx_gtk2_fl.so.${LIBwx_gtk2_fl_VERSION}
 @lib lib/libwx_gtk2_gizmos.so.${LIBwx_gtk2_gizmos_VERSION}
 @lib lib/libwx_gtk2_gizmos_xrc.so.${LIBwx_gtk2_gizmos_xrc_VERSION}
 @lib lib/libwx_gtk2_gl.so.${LIBwx_gtk2_gl_VERSION}
 @lib lib/libwx_gtk2_html.so.${LIBwx_gtk2_html_VERSION}
-@lib lib/libwx_gtk2_media.so.${LIBwx_gtk2_media_VERSION}
 @lib lib/libwx_gtk2_mmedia.so.${LIBwx_gtk2_mmedia_VERSION}
 @lib lib/libwx_gtk2_ogl.so.${LIBwx_gtk2_ogl_VERSION}
 @lib lib/libwx_gtk2_plot.so.${LIBwx_gtk2_plot_VERSION}
 @lib lib/libwx_gtk2_qa.so.${LIBwx_gtk2_qa_VERSION}
+@lib lib/libwx_gtk2_richtext.so.${LIBwx_gtk2_richtext_VERSION}
 @lib lib/libwx_gtk2_stc.so.${LIBwx_gtk2_stc_VERSION}
 @lib lib/libwx_gtk2_svg.so.${LIBwx_gtk2_svg_VERSION}
 @lib lib/libwx_gtk2_xrc.so.${LIBwx_gtk2_xrc_VERSION}
 lib/wx/
 lib/wx/config/
-lib/wx/config/gtk2-unicode-release-2.6
+lib/wx/config/gtk2-unicode-release-2.8
 lib/wx/include/
-lib/wx/include/gtk2-unicode-release-2.6/
-lib/wx/include/gtk2-unicode-release-2.6/wx/
-lib/wx/include/gtk2-unicode-release-2.6/wx/setup.h
+lib/wx/include/gtk2-unicode-release-2.8/
+lib/wx/include/gtk2-unicode-release-2.8/wx/
+lib/wx/include/gtk2-unicode-release-2.8/wx/setup.h
 share/aclocal/wxwin.m4
 share/bakefile/
 share/bakefile/presets/

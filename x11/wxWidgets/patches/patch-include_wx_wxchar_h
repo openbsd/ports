@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_wx_wxchar_h,v 1.1 2006/10/12 14:09:33 alek Exp $
---- include/wx/wxchar.h.orig	Sat Oct  7 13:10:36 2006
-+++ include/wx/wxchar.h	Sat Oct  7 13:10:56 2006
-@@ -426,6 +426,8 @@
+$OpenBSD: patch-include_wx_wxchar_h,v 1.2 2007/10/23 11:28:10 steven Exp $
+--- include/wx/wxchar.h.orig	Tue Sep 25 10:51:18 2007
++++ include/wx/wxchar.h	Tue Oct  2 11:53:18 2007
+@@ -443,6 +443,8 @@
          #endif
      #endif
  

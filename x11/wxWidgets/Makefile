@@ -1,33 +1,32 @@
-# $OpenBSD: Makefile,v 1.7 2007/10/02 19:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/23 11:28:09 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	c++ cross-platform GUI toolkit
 
-DISTNAME=	wxWidgets-2.6.3
-PKGNAME=	wxWidgets-gtk2-2.6.3p0
-SHARED_LIBS=	wx_base		0.0	\
-		wx_base_net	0.0	\
-		wx_base_odbc	0.0	\
-		wx_base_xml	0.0	\
-		wx_gtk2_adv	0.0	\
-		wx_gtk2_core	0.0	\
-		wx_gtk2_dbgrid	0.0	\
-		wx_gtk2_gl	0.0	\
-		wx_gtk2_html	0.0	\
-		wx_gtk2_media	0.0	\
-		wx_gtk2_qa	0.0	\
-		wx_gtk2_xrc	0.0	\
-		wx_gtk2_fl	0.0	\
-		wx_gtk2_gizmos	0.0	\
-		wx_gtk2_gizmos_xrc	0.0	\
-		wx_gtk2_mmedia	0.0	\
-		wx_gtk2_ogl	0.0	\
-		wx_gtk2_plot	0.0	\
-		wx_gtk2_stc	0.0	\
-		wx_gtk2_svg	0.0	\
-		wx_gtk2_deprecated	0.0	\
-		wx_gtk2_animate	0.0
+DISTNAME=	wxWidgets-2.8.6
+PKGNAME=	wxWidgets-gtk2-2.8.6
+SHARED_LIBS=	wx_base			1.0	\
+		wx_base_net		1.0	\
+		wx_base_odbc		1.0	\
+		wx_base_xml		1.0	\
+		wx_gtk2_adv		1.0	\
+		wx_gtk2_aui		1.0	\
+		wx_gtk2_core		1.0	\
+		wx_gtk2_dbgrid		1.0	\
+		wx_gtk2_fl		1.0	\
+		wx_gtk2_gizmos		1.0	\
+		wx_gtk2_gizmos_xrc	1.0	\
+		wx_gtk2_gl		1.0	\
+		wx_gtk2_html		1.0	\
+		wx_gtk2_mmedia		1.0	\
+		wx_gtk2_ogl		1.0	\
+		wx_gtk2_plot		1.0	\
+		wx_gtk2_qa		1.0	\
+		wx_gtk2_richtext	1.0	\
+		wx_gtk2_stc		1.0	\
+		wx_gtk2_svg		1.0	\
+		wx_gtk2_xrc		1.0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.wxwidgets.org/
@@ -42,7 +41,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
 MODULES=	devel/gettext
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 USE_X11=	Yes
 VMEM_WARNING=	Yes
 
@@ -52,12 +50,12 @@ LIB_DEPENDS=	mspack::archivers/libmspack \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		iodbc::databases/iodbc \
 		esd::audio/esound
-		
-WANTLIB=	X11 Xext Xinerama Xxf86vm c fontconfig freetype m pthread \
-		Xrender stdc++ usbhid z expat ossaudio jpeg png tiff glitz \
+
+WANTLIB=	SM Xau Xcursor Xdmcp Xfixes Xi Xrandr X11 Xext Xinerama \
+		Xxf86vm Xrender GL GLU fontconfig freetype pthread \
+		c m stdc++ z expat ossaudio jpeg png tiff glitz \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		pango-1.0 pangoft2-1.0 \
-		atk-1.0 GL GLU
+		pango-1.0 pangoft2-1.0 atk-1.0
 
 AUTOCONF_VERSION=2.59
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
@@ -74,6 +72,10 @@ CONFIGURE_ARGS=	--disable-stl \
 		--without-hildon \
 		--with-opengl \
 		--enable-unicode
+
+.for _l _v in ${SHARED_LIBS}
+MAKE_ENV+=	LIB${_l}_VERSION=${_v}
+.endfor
 
 MAKE_FLAGS=	WXUNICODEFLAG=""
 FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST}

@@ -1,38 +1,13 @@
-$OpenBSD: patch-wx-config_in,v 1.1 2006/10/12 14:09:33 alek Exp $
---- wx-config.in.orig	Thu Feb 16 10:53:49 2006
-+++ wx-config.in	Thu Oct  5 03:44:30 2006
+$OpenBSD: patch-wx-config_in,v 1.2 2007/10/23 11:28:10 steven Exp $
+--- wx-config.in.orig	Tue Sep 25 10:51:19 2007
++++ wx-config.in	Tue Oct  2 16:39:45 2007
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!/bin/ksh
  #
  # Name:        wx-config{.in,}
  # Purpose:     wx configuration search and query tool {template,}
-@@ -20,24 +20,6 @@
- # Extra^2 debug mode, for if things ever get really weird.
- [ -z "$WXDEBUG_X" ] || set -x
- 
--# We expect a posix shell, so if this is a Bourne shell,
--# and apparently a few still exist, try for bash or ksh.
--
--if [ ~ = '~' ]
--then
--    if (bash -c echo) >/dev/null 2>&1
--    then
--        exec bash "$0" "$@"
--    fi
--    if (ksh -c echo) >/dev/null 2>&1
--    then
--        exec ksh "$0" "$@"
--    fi
--    echo "$0: this script requires bash or ksh"
--    exit 1
--fi
-- 
--
- # On with some basic stuff, like the ability to die gracefully,
- # and to tell people what we are about.
- # ------------------------------------------------------------------
-@@ -579,8 +561,8 @@ find_best_delegate()
+@@ -566,8 +566,8 @@ find_best_delegate()
  get_legacy_mask()
  {
      [ $# -gt 0 ] || set m
@@ -43,7 +18,7 @@ $OpenBSD: patch-wx-config_in,v 1.1 2006/10/12 14:09:33 alek Exp $
      eval echo "wx\${$1_toolkit}${_unicode_flag}${_debug_flag}-\${$1_version}\${$1_host}-config"
  }
  
-@@ -998,7 +980,7 @@ lib_flags_for()
+@@ -993,7 +993,7 @@ lib_flags_for()
              _libname="@WX_LIBRARY_BASENAME_GUI@"
          fi
          [ $lib = base ] || _libname="${_libname}_$lib"
@@ -52,7 +27,7 @@ $OpenBSD: patch-wx-config_in,v 1.1 2006/10/12 14:09:33 alek Exp $
  
          if is_static; then
              _wxlibs="$_wxlibs ${libdir}/lib${_libname}.a"
-@@ -1057,7 +1039,7 @@ link_deps_for()
+@@ -1052,7 +1052,7 @@ link_deps_for()
              _libname="@WX_LIBRARY_BASENAME_GUI@"
          fi
          [ $lib = base ] || _libname="${_libname}_$lib"
@@ -61,7 +36,7 @@ $OpenBSD: patch-wx-config_in,v 1.1 2006/10/12 14:09:33 alek Exp $
  
          _wxlibs="$_wxlibs ${libdir}/lib${_libname}.a"
      done
-@@ -1138,7 +1120,7 @@ fi
+@@ -1133,7 +1133,7 @@ fi
  [ "$using_gui" = "yes" ] || _gui_cppflags="-DwxUSE_GUI=0"
  
  if is_installed; then

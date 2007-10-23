@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_wxrc_Makefile_in,v 1.1 2006/10/12 14:09:33 alek Exp $
---- utils/wxrc/Makefile.in.orig	Sun Feb  5 22:41:14 2006
-+++ utils/wxrc/Makefile.in	Fri Aug  4 00:38:52 2006
-@@ -66,14 +66,14 @@ WXRC_OBJECTS =  \
+$OpenBSD: patch-utils_wxrc_Makefile_in,v 1.2 2007/10/23 11:28:10 steven Exp $
+--- utils/wxrc/Makefile.in.orig	Tue Sep 25 10:51:54 2007
++++ utils/wxrc/Makefile.in	Tue Oct  2 12:13:11 2007
+@@ -68,15 +68,15 @@ WXRC_OBJECTS =  \
  @COND_USE_THREADS_0@__THREAD_DEFINE_p = -DwxNO_THREADS
  @COND_SHARED_1@__DLLFLAG_p = -DWXUSINGDLL
  COND_MONOLITHIC_0___WXLIB_XML_p = \
@@ -13,20 +13,23 @@ $OpenBSD: patch-utils_wxrc_Makefile_in,v 1.1 2006/10/12 14:09:33 alek Exp $
 +	-lwx_base$(WXBASEPORT)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)
  @COND_MONOLITHIC_0@__WXLIB_BASE_p = $(COND_MONOLITHIC_0___WXLIB_BASE_p)
  @COND_USE_XRC_1@__install_wxrc___depname = install_wxrc
+ @COND_USE_XRC_1@__uninstall_wxrc___depname = uninstall_wxrc
  COND_MONOLITHIC_1___WXLIB_MONO_p = \
 -	-lwx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
 +	-lwx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)
  @COND_MONOLITHIC_1@__WXLIB_MONO_p = $(COND_MONOLITHIC_1___WXLIB_MONO_p)
- @COND_USE_GUI_1_WXUSE_LIBTIFF_BUILTIN@__LIB_TIFF_p \
- @COND_USE_GUI_1_WXUSE_LIBTIFF_BUILTIN@	= \
-@@ -120,9 +120,7 @@ distclean: clean
+ @COND_WXUSE_ZLIB_BUILTIN@__LIB_ZLIB_p = \
+ @COND_WXUSE_ZLIB_BUILTIN@	-lwxzlib$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
+@@ -114,11 +114,7 @@ distclean: clean
  
  @COND_USE_XRC_1@install_wxrc: 
  @COND_USE_XRC_1@	$(INSTALL_DIR) $(DESTDIR)$(bindir)
+-@COND_USE_XRC_1@	$(INSTALL_PROGRAM) wxrc$(EXEEXT) $(DESTDIR)$(bindir)
+-@COND_USE_XRC_1@	rm -f $(DESTDIR)$(bindir)/wxrc$(EXEEXT) $(DESTDIR)$(bindir)/wxrc-$(WX_RELEASE)
 -@COND_USE_XRC_1@	$(INSTALL_PROGRAM) wxrc$(EXEEXT) $(DESTDIR)$(bindir)
 -@COND_USE_XRC_1@	mv -f $(DESTDIR)$(bindir)/wxrc$(EXEEXT) $(DESTDIR)$(bindir)/wxrc-$(WX_RELEASE)
 -@COND_USE_XRC_1@	(cd $(DESTDIR)$(bindir) && $(LN_S) wxrc-$(WX_RELEASE) wxrc$(EXEEXT))
 +@COND_USE_XRC_1@	$(INSTALL_PROGRAM) wxrc$(EXEEXT) $(DESTDIR)$(bindir)/wxrc
  
- wxrc_wxrc.o: $(srcdir)/wxrc.cpp
- 	$(CXXC) -c -o $@ $(WXRC_CXXFLAGS) $(srcdir)/wxrc.cpp
+ @COND_USE_XRC_1@uninstall_wxrc: 
+ @COND_USE_XRC_1@	rm -f $(DESTDIR)$(bindir)/wxrc$(EXEEXT)
