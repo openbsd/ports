@@ -1,5 +1,0 @@
-# $OpenBSD: systrace.filter,v 1.1 2007/10/22 13:56:29 ajacoutot Exp $
-
-# needed for xmllint to check support for XML catalogs
-	native-connect: sockaddr sub ":53" then permit
-	native-connect: sockaddr sub ":80" then permit

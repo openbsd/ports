@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/23 21:16:20 ajacoutot Exp $
 
 COMMENT=	front-end to an XSL toolchain
 
 DISTNAME=	xmlto-0.0.18
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	textproc
 
@@ -22,14 +22,17 @@ RUN_DEPENDS=	::shells/bash \
 		::misc/gnugetopt \
 		::textproc/libxml \
 		::textproc/libxslt \
-		::textproc/docbook-xsl 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
+		::textproc/docbook-xsl
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::textproc/docbook
 
 CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \
 		--with-getopt=${LOCALBASE}/bin/gnugetopt
 
-.include <bsd.port.mk>
+pre-configure:
+	@perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \
+		${WRKSRC}/xmlif/test/run-test
 
+.include <bsd.port.mk>
