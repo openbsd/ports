@@ -1,17 +1,7 @@
-$OpenBSD: patch-noip2_c,v 1.4 2006/10/18 22:02:39 wilfried Exp $
---- noip2.c.orig	Fri Feb 24 17:45:23 2006
-+++ noip2.c	Thu Oct 19 00:01:12 2006
-@@ -154,7 +154,9 @@
- 
- #define ENCRYPT			1
- 
-+#if !(defined(__OpenBSD__) && defined(MAX))
- #define MAX(x,y)		(((x)>(y))?(x):(y))
-+#endif
- 
- #define READ_TIMEOUT		90
- #define WRITE_TIMEOUT		60
-@@ -204,11 +206,8 @@
+$OpenBSD: patch-noip2_c,v 1.5 2007/10/23 08:27:14 wilfried Exp $
+--- noip2.c.orig	Mon Aug 27 23:54:19 2007
++++ noip2.c	Tue Oct 23 09:49:14 2007
+@@ -218,11 +218,8 @@
  #define NODNSGROUP		"@@NO_GROUP@@"
  #define HOST			1
  #define GROUP			2
