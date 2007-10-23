@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/10 12:13:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/23 22:46:18 naddy Exp $
 
 COMMENT=	DNS library modelled after Net::DNS
 
-VERSION=	1.2.1
-DISTNAME=	ldns-${VERSION}
-PKGNAME=	ldns-${VERSION}
-SHARED_LIBS=	ldns	${VERSION}
+DISTNAME=	ldns-1.2.1
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS +=	ldns                 0.0      # .0.0
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/
@@ -21,18 +20,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	crypto
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		ac_cv_prog_doxygen=
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-SUBST_VARS+=		VERSION
+NO_REGRESS=		Yes
 
 post-build:
 	mkdir ${WRKBUILD}/doc
 	cd ${WRKBUILD} && ${MAKE_PROGRAM} doc
 
 post-install:
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/man/man3
+	@chown -R ${MANOWN}:${MANGRP} ${PREFIX}/man/man3
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/10/10 12:13:00 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/10/23 22:46:18 naddy Exp $
 %%SHARED%%
 include/ldns/
 include/ldns/buffer.h
@@ -26,7 +26,6 @@ include/ldns/wire2host.h
 include/ldns/zone.h
 lib/libldns.a
 lib/libldns.la
-@owner root
 @man man/man3/ldns_bget_token.3
 @man man/man3/ldns_bgetc.3
 @man man/man3/ldns_bskipcs.3
