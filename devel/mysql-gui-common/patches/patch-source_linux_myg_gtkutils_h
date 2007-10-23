@@ -1,0 +1,14 @@
+$OpenBSD: patch-source_linux_myg_gtkutils_h,v 1.1 2007/10/23 13:44:02 wilfried Exp $
+--- source/linux/myg_gtkutils.h.orig	Tue Dec  5 23:44:08 2006
++++ source/linux/myg_gtkutils.h	Tue Oct 23 12:57:45 2007
+@@ -38,8 +38,8 @@ class MGTextViewUndoManager {
+   public:
+     Command(const Glib::ustring &text, unsigned int offset, bool del);
+ 
+-    virtual void undo(Gtk::TextView *view);
+-    virtual void redo(Gtk::TextView *view);
++    void undo(Gtk::TextView *view);
++    void redo(Gtk::TextView *view);
+   };
+   
+   Gtk::TextView *_textView;

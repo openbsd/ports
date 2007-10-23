@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_linux_Makefile_in,v 1.3 2007/01/30 07:59:58 wilfried Exp $
---- source/linux/Makefile.in.orig	Thu Jan 18 18:00:15 2007
-+++ source/linux/Makefile.in	Thu Jan 25 22:18:42 2007
+$OpenBSD: patch-source_linux_Makefile_in,v 1.4 2007/10/23 13:44:39 wilfried Exp $
+--- source/linux/Makefile.in.orig	Wed May  2 15:00:46 2007
++++ source/linux/Makefile.in	Tue Oct 23 15:36:22 2007
 @@ -68,10 +68,10 @@ mysql_query_browser_bin_OBJECTS =  \
  	$(am_mysql_query_browser_bin_OBJECTS)
  mysql_query_browser_bin_DEPENDENCIES =  \
@@ -31,7 +31,7 @@ $OpenBSD: patch-source_linux_Makefile_in,v 1.3 2007/01/30 07:59:58 wilfried Exp 
          -I$(top_srcdir)/library/include\
  	-I$(top_srcdir)/source/linux/gtksourceview\
  	-DPREFIX=\""$(PREFIX)"\"\
-@@ -249,10 +249,10 @@ INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@
+@@ -249,10 +249,10 @@ INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@ @PCRE_CFLAGS@
  	-DDOCDIR=\""$(DOCDIR)"\"
  
  mysql_query_browser_bin_LDADD = $(top_builddir)/library/source/libqb.a\
@@ -46,7 +46,7 @@ $OpenBSD: patch-source_linux_Makefile_in,v 1.3 2007/01/30 07:59:58 wilfried Exp 
  	$(top_builddir)/source/linux/gtksourceview/gtksourceview/.libs/libgtksourceview-1.0.a\
          @MYSQL_LIBS@ @GNOME_LIBS@ @PCRE_LIBS@ 
  
-@@ -568,14 +568,8 @@ uninstall-am: uninstall-binPROGRAMS unin
+@@ -568,14 +568,8 @@ uninstall-am: uninstall-binPROGRAMS uninstall-binSCRIP
  	uninstall-am uninstall-binPROGRAMS uninstall-binSCRIPTS \
  	uninstall-info-am
  

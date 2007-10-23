@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_linux_Makefile_in,v 1.3 2007/01/30 07:59:42 wilfried Exp $
---- source/linux/Makefile.in.orig	Thu Jan 18 17:59:55 2007
-+++ source/linux/Makefile.in	Thu Jan 25 21:13:07 2007
+$OpenBSD: patch-source_linux_Makefile_in,v 1.4 2007/10/23 13:45:22 wilfried Exp $
+--- source/linux/Makefile.in.orig	Wed May  2 15:00:24 2007
++++ source/linux/Makefile.in	Tue Oct 23 12:11:27 2007
 @@ -68,10 +68,10 @@ mysql_administrator_bin_OBJECTS =  \
  	$(am_mysql_administrator_bin_OBJECTS)
  mysql_administrator_bin_DEPENDENCIES =  \
@@ -31,7 +31,7 @@ $OpenBSD: patch-source_linux_Makefile_in,v 1.3 2007/01/30 07:59:42 wilfried Exp 
  	-I$(top_srcdir)/library/include\
  	-DPREFIX=\""$(PREFIX)"\"\
          -DDATADIRNAME=\""$(DATADIRNAME)"\"\
-@@ -244,10 +244,10 @@ INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@
+@@ -244,10 +244,10 @@ INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@ @PCRE_CFLAGS@
  # mysql_administrator_bin_LDFLAGS=-pthread
  mysql_administrator_bin_LDADD = \
  	$(top_srcdir)/library/source/libadmin.a\

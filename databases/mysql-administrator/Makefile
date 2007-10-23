@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:34:00 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2007/10/23 13:45:22 wilfried Exp $
 
 COMMENT=	visual administration console for MySQL
 
-DISTNAME=	mysql-gui-tools-5.0r11
-PKGNAME=	mysql-administrator-1.2.11
+DISTNAME=	mysql-gui-tools-5.0r12
+PKGNAME=	mysql-administrator-1.2.12
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/administrator/
