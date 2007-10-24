@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/10/14 18:33:44 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2007/10/24 20:10:45 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -6,11 +6,11 @@ ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 COMMENT-main=	integrated mozilla application suite
 COMMENT-devel=  devel files for Gecko
 
-VER=		1.1.4
+VER=		1.1.5
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
-PKGNAME-main=	seamonkey-${VER}p0
-PKGNAME-devel=	seamonkey-devel-${VER}p0
+PKGNAME-main=	seamonkey-${VER}
+PKGNAME-devel=	seamonkey-devel-${VER}
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -46,24 +46,24 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-.for i in 1.1.4 1.1.3 1.1.2
+.for i in 1.1.5 1.1.4 1.1.3 1.1.2
 MASTER_SITES${i:E}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/$i/contrib-localized/
 .endfor
 
 LANGUAGES=	be-BY 1.1.2 \
 		ca-AD 1.1.4 \
-		cs-CZ 1.1.3 \
-		de-AT 1.1.4 \
+		cs-CZ 1.1.5 \
+		de-AT 1.1.5 \
 		el-GR 1.1.2 \
 		es-ES 1.1.4 \
 		fr-FR 1.1.4 \
 		he-IL 1.1.2 \
 		it-IT 1.1.2 \
-		nl-NL 1.1.3 \
-		pl-PL 1.1.4 \
-		pt-BR 1.1.4 \
-		ru-RU 1.1.4 \
-		sv-SE 1.1.4
+		nl-NL 1.1.4 \
+		pl-PL 1.1.5 \
+		pt-BR 1.1.5 \
+		ru-RU 1.1.5 \
+		sv-SE 1.1.5
 BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -83,7 +83,7 @@ BUILD_DEPENDS=  :zip->=2.3:archivers/zip \
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
-WANTLIB=	c glib-2.0 m pthread stdc++
+WANTLIB=	c glib-2.0 gthread-2.0 m pthread stdc++
 
 RUN_DEPENDS-main= :esound-*:audio/esound
 WANTLIB-main=	${WANTLIB} X11 Xau Xcursor Xdmcp Xext Xfixes Xft \
@@ -161,7 +161,6 @@ post-extract:
 .for l v in ${LANGUAGES}
 	@rm -f ${WRKDIR}/$l/chrome/*-{mac,win}.jar
 .endfor
-	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
 	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
