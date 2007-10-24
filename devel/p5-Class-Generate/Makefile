@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/28 14:51:32 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/24 15:51:59 simon Exp $
 
 COMMENT=        generate Perl class hierarchies
 
 MODULES=	cpan
-DISTNAME=	Class-Generate-1.09
+DISTNAME=	Class-Generate-1.10
 CATEGORIES=     devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
