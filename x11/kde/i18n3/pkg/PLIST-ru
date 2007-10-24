@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ru,v 1.10 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-ru,v 1.11 2007/10/24 21:52:17 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.ru.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -1939,7 +1939,6 @@ ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

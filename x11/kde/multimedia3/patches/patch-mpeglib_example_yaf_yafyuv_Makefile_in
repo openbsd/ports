@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_yaf_yafyuv_Makefile_in,v 1.15 2007/05/25 09:49:55 espie Exp $
---- mpeglib/example/yaf/yafyuv/Makefile.in.orig	Mon May 14 13:37:23 2007
-+++ mpeglib/example/yaf/yafyuv/Makefile.in	Thu May 24 16:28:55 2007
-@@ -176,7 +176,7 @@ KDE_USE_PIE = @KDE_USE_PIE@
+$OpenBSD: patch-mpeglib_example_yaf_yafyuv_Makefile_in,v 1.16 2007/10/24 21:52:18 espie Exp $
+--- mpeglib/example/yaf/yafyuv/Makefile.in.orig	Mon Oct  8 16:27:13 2007
++++ mpeglib/example/yaf/yafyuv/Makefile.in	Wed Oct 24 11:55:37 2007
+@@ -181,7 +181,7 @@ KDE_USE_PIE = @KDE_USE_PIE@
  KDE_XSL_STYLESHEET = @KDE_XSL_STYLESHEET@
  LAME_LIBS = @LAME_LIBS@
  LDADD_GST = @LDADD_GST@
@@ -10,7 +10,7 @@ $OpenBSD: patch-mpeglib_example_yaf_yafyuv_Makefile_in,v 1.15 2007/05/25 09:49:5
  LDFLAGS_AS_NEEDED = @LDFLAGS_AS_NEEDED@
  LDFLAGS_GST = @LDFLAGS_GST@
  LDFLAGS_NEW_DTAGS = @LDFLAGS_NEW_DTAGS@
-@@ -473,7 +473,7 @@ INCLUDES = -I../../include $(all_includes)
+@@ -403,7 +403,7 @@ INCLUDES = -I../../include $(all_includes)
  EXTRA_DIST = 
  yaf_yuv_SOURCES = yuv_control.cpp
  noinst_HEADERS = 

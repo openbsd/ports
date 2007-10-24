@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pl,v 1.12 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-pl,v 1.13 2007/10/24 21:52:17 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.pl.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -52,6 +52,10 @@ ${DOC}akregator/main-window4.png
 ${DOC}akregator/quick-filter.png
 ${DOC}akregator/rss.png
 ${DOC}akregator/rss3.png
+${DOC}amor/
+${DOC}amor/common
+${DOC}amor/${C}
+${DOC}amor/${I}
 ${DOC}ark/
 ${DOC}ark/common
 ${DOC}ark/${C}
@@ -125,6 +129,10 @@ ${DOC}kate/part.docbook
 ${DOC}kate/plugins.docbook
 ${DOC}kate/regular-expressions.docbook
 ${DOC}kate/unhighlighted.png
+${DOC}katomic/
+${DOC}katomic/common
+${DOC}katomic/${C}
+${DOC}katomic/${I}
 ${DOC}kaudiocreator/
 ${DOC}kaudiocreator/common
 ${DOC}kaudiocreator/${C}
@@ -137,6 +145,10 @@ ${DOC}kbattleship/
 ${DOC}kbattleship/common
 ${DOC}kbattleship/${C}
 ${DOC}kbattleship/${I}
+${DOC}kbounce/
+${DOC}kbounce/common
+${DOC}kbounce/${C}
+${DOC}kbounce/${I}
 ${DOC}kbruch/
 ${DOC}kbruch/checked.png
 ${DOC}kbruch/common
@@ -730,6 +742,10 @@ ${DOC}kjots/
 ${DOC}kjots/common
 ${DOC}kjots/${C}
 ${DOC}kjots/${I}
+${DOC}kjumpingcube/
+${DOC}kjumpingcube/common
+${DOC}kjumpingcube/${C}
+${DOC}kjumpingcube/${I}
 ${DOC}klatin/
 ${DOC}klatin/adjectives.docbook
 ${DOC}klatin/common
@@ -753,6 +769,10 @@ ${DOC}klickety/
 ${DOC}klickety/common
 ${DOC}klickety/${C}
 ${DOC}klickety/${I}
+${DOC}klines/
+${DOC}klines/common
+${DOC}klines/${C}
+${DOC}klines/${I}
 ${DOC}klipper/
 ${DOC}klipper/common
 ${DOC}klipper/${C}
@@ -966,6 +986,10 @@ ${DOC}kpercentage/install.docbook
 ${DOC}kpercentage/introduction.docbook
 ${DOC}kpercentage/using.docbook
 ${DOC}kpercentage/welcome.png
+${DOC}kpf/
+${DOC}kpf/common
+${DOC}kpf/${C}
+${DOC}kpf/${I}
 ${DOC}kppp/
 ${DOC}kppp/accounting.docbook
 ${DOC}kppp/callback.docbook
@@ -1239,6 +1263,10 @@ ${DOC}kweather/
 ${DOC}kweather/common
 ${DOC}kweather/${C}
 ${DOC}kweather/${I}
+${DOC}kwifimanager/
+${DOC}kwifimanager/common
+${DOC}kwifimanager/${C}
+${DOC}kwifimanager/${I}
 ${DOC}kwin4/
 ${DOC}kwin4/common
 ${DOC}kwin4/${C}
@@ -1707,7 +1735,6 @@ ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

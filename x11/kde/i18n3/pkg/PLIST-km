@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-km,v 1.6 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-km,v 1.7 2007/10/24 21:52:17 espie Exp $
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 ${LOC}akregator.mo
@@ -62,6 +62,7 @@ ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
 ${LOC}katecppsymbolviewer.mo
+${LOC}katedefaultproject.mo
 ${LOC}katefiletemplates.mo
 ${LOC}katefll_initplugin.mo
 ${LOC}katefll_plugin.mo
@@ -171,6 +172,7 @@ ${LOC}kcmwifi.mo
 ${LOC}kcmxinerama.mo
 ${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
+${LOC}kcron.mo
 ${LOC}kdcop.mo
 ${LOC}kdebugdialog.mo
 ${LOC}kdelibs.mo
@@ -315,6 +317,7 @@ ${LOC}klettres.mo
 ${LOC}klickety.mo
 ${LOC}klines.mo
 ${LOC}klipper.mo
+${LOC}kmag.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmail_text_calendar_plugin.mo
@@ -338,6 +341,7 @@ ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmobile.mo
 ${LOC}kmoon.mo
+${LOC}kmousetool.mo
 ${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
@@ -407,6 +411,7 @@ ${LOC}krfb.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
+${LOC}ksayit.mo
 ${LOC}kscd.mo
 ${LOC}kscreensaver.mo
 ${LOC}kshisen.mo
@@ -433,6 +438,7 @@ ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
 ${LOC}ktalkd.mo
+${LOC}ktaskbarapplet.mo
 ${LOC}kteatime.mo
 ${LOC}ktexteditor_autobookmarker.mo
 ${LOC}ktexteditor_docwordcompletion.mo
@@ -450,10 +456,15 @@ ${LOC}ktron.mo
 ${LOC}kttsd.mo
 ${LOC}kttsd_commandplugin.mo
 ${LOC}kttsd_eposplugin.mo
+${LOC}kttsd_festivalintplugin.mo
 ${LOC}kttsd_fliteplugin.mo
 ${LOC}kttsd_freettsplugin.mo
+${LOC}kttsd_hadifixplugin.mo
 ${LOC}kttsd_sbdplugin.mo
+${LOC}kttsd_stringreplacerplugin.mo
+${LOC}kttsd_talkerchooserplugin.mo
 ${LOC}kttsd_xmltransformerplugin.mo
+${LOC}kttsjobmgr.mo
 ${LOC}kttsmgr.mo
 ${LOC}ktuberling.mo
 ${LOC}kturtle.mo
@@ -542,6 +553,7 @@ ${LOC}rellinks.mo
 ${LOC}searchbarplugin.mo
 ${LOC}superkaramba.mo
 ${LOC}synaescope.mo
+${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo
 ${LOC}trashapplet.mo

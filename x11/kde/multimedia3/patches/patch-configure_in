@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.27 2007/09/18 18:36:53 mgrimm Exp $
---- configure.in.orig	Mon May 14 13:36:25 2007
-+++ configure.in	Sun Sep 16 19:15:15 2007
+$OpenBSD: patch-configure_in,v 1.28 2007/10/24 21:52:18 espie Exp $
+--- configure.in.orig	Mon Oct  8 16:26:39 2007
++++ configure.in	Wed Oct 24 12:03:20 2007
 @@ -164,22 +164,22 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
      [:], [have_oggvorbis=no])
  
@@ -125,7 +125,7 @@ $OpenBSD: patch-configure_in,v 1.27 2007/09/18 18:36:53 mgrimm Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1343,6 +1330,12 @@ case "$OS_TYPE" in
+@@ -1346,6 +1333,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -135,10 +135,10 @@ $OpenBSD: patch-configure_in,v 1.27 2007/09/18 18:36:53 mgrimm Exp $
 +    AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
 +    ;;
 +
-   FreeBSD)
+   FreeBSD | DragonFly)
      OS_TYPE="BSD"
      AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
-@@ -1386,7 +1379,7 @@ KDE_MPEGLIB_COMPILES
+@@ -1389,7 +1382,7 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

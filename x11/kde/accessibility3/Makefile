@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.29 2007/10/24 21:52:16 espie Exp $
 
 COMMENT= 		X11 toolkit, accessibility aids
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.7
+VERSION=		3.5.8
 DISTNAME=		kdeaccessibility-${VERSION}
 PKGNAME=		${DISTNAME}
-MODKDE_VERSION?=	3.5.7
+MODKDE_VERSION?=	3.5.8
 SHARED_LIBS +=	KTTSD_Lib            1.0      # .0.1
 SHARED_LIBS +=	kttsd                2.0      # .1.0
 
@@ -20,6 +20,7 @@ WANTLIB=	ICE SM X11 Xext Xrender Xtst art_lgpl_2 c jpeg \
 		vorbisenc artsflow_idl audiofile ossaudio mad \
 		vorbisfile qtmcop gmodule-2.0 gthread-2.0 \
 		glib-2.0 soundserver_idl \
-		kmedia2_idl artsflow vorbis mcop idn
+		kmedia2_idl artsflow vorbis mcop idn \
+		Xau Xdmcp fam rpcsvc
 
 .include <bsd.port.mk>

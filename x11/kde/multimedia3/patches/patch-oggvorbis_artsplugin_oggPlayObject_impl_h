@@ -1,9 +1,9 @@
-$OpenBSD: patch-oggvorbis_artsplugin_oggPlayObject_impl_h,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- oggvorbis_artsplugin/oggPlayObject_impl.h.orig	Fri Apr 19 03:21:27 2002
-+++ oggvorbis_artsplugin/oggPlayObject_impl.h	Fri Apr 19 03:21:41 2002
+$OpenBSD: patch-oggvorbis_artsplugin_oggPlayObject_impl_h,v 1.2 2007/10/24 21:52:18 espie Exp $
+--- oggvorbis_artsplugin/oggPlayObject_impl.h.orig	Mon Oct  8 11:48:53 2007
++++ oggvorbis_artsplugin/oggPlayObject_impl.h	Wed Oct 24 11:55:37 2007
 @@ -3,7 +3,7 @@
  
- #if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
+ #if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED) || defined(__DragonFly__)
  /* union semun is defined by including <sys/sem.h> */
 -#else
 +#elif !defined(__OpenBSD__)

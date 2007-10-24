@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kk,v 1.5 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-kk,v 1.6 2007/10/24 21:52:17 espie Exp $
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 ${LOC}akregator.mo
@@ -172,6 +172,7 @@ ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
+${LOC}kdvi.mo
 ${LOC}kedit.mo
 ${LOC}kfile_au.mo
 ${LOC}kfile_avi.mo
@@ -355,7 +356,6 @@ ${LOC}kstyle_highcontrast_config.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ja,v 1.8 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-ja,v 1.9 2007/10/24 21:52:17 espie Exp $
 share/doc/HTML/ja/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -166,6 +166,16 @@ ${DOC}kcontrol/windowmanagement/
 ${DOC}kcontrol/windowmanagement/common
 ${DOC}kcontrol/windowmanagement/${C}
 ${DOC}kcontrol/windowmanagement/${I}
+${DOC}kgpg/
+${DOC}kgpg/common
+${DOC}kgpg/editor.png
+${DOC}kgpg/${C}
+${DOC}kgpg/${I}
+${DOC}kgpg/keygen.png
+${DOC}kgpg/keymanage.png
+${DOC}kgpg/keys.png
+${DOC}kgpg/kicker.png
+${DOC}kgpg/options.png
 ${DOC}khelpcenter/
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
@@ -232,6 +242,11 @@ ${DOC}kinfocenter/xserver/
 ${DOC}kinfocenter/xserver/common
 ${DOC}kinfocenter/xserver/${C}
 ${DOC}kinfocenter/xserver/${I}
+${DOC}kshisen/
+${DOC}kshisen/common
+${DOC}kshisen/${C}
+${DOC}kshisen/${I}
+${DOC}kshisen/kshisen-configuration.png
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -669,7 +684,6 @@ ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
@@ -750,7 +764,6 @@ ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
 ${LOC}libksieve.mo
 ${LOC}libksirtet.mo
-${LOC}libksync.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo

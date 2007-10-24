@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nl,v 1.9 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-nl,v 1.10 2007/10/24 21:52:17 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.nl.xml
 share/apps/khangman/
@@ -611,6 +611,10 @@ ${DOC}kgoldrunner/
 ${DOC}kgoldrunner/common
 ${DOC}kgoldrunner/${C}
 ${DOC}kgoldrunner/${I}
+${DOC}kgpg/
+${DOC}kgpg/common
+${DOC}kgpg/${C}
+${DOC}kgpg/${I}
 ${DOC}khangman/
 ${DOC}khangman/common
 ${DOC}khangman/${C}
@@ -2027,7 +2031,6 @@ ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

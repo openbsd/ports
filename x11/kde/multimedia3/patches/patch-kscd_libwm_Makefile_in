@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.16 2007/05/25 09:49:55 espie Exp $
---- kscd/libwm/Makefile.in.orig	Mon May 14 13:37:23 2007
-+++ kscd/libwm/Makefile.in	Thu May 24 16:28:55 2007
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.17 2007/10/24 21:52:18 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Mon Oct  8 16:27:12 2007
++++ kscd/libwm/Makefile.in	Wed Oct 24 12:05:08 2007
 @@ -16,7 +16,7 @@
  @SET_MAKE@
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.16 2007/05/25 09:49:55 espie Exp $
  # shared library.
  #
  
-@@ -55,27 +55,27 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -51,30 +51,30 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(noinst_LTLIBRARIES)
  am__DEPENDENCIES_1 =
@@ -40,23 +40,28 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.16 2007/05/25 09:49:55 espie Exp $
  	drv_toshiba.lo
 -@KDE_USE_FINAL_FALSE@libworkman_la_OBJECTS = $(libworkman_la_nofinal_OBJECTS)
 -@KDE_USE_FINAL_TRUE@libworkman_la_OBJECTS = $(libworkman_la_final_OBJECTS)
+-libworkman_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 +@KDE_USE_FINAL_FALSE@libkworkman_la_OBJECTS = $(libkworkman_la_nofinal_OBJECTS)
 +@KDE_USE_FINAL_TRUE@libkworkman_la_OBJECTS = $(libkworkman_la_final_OBJECTS)
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
++libkworkman_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(libworkman_la_LDFLAGS) $(LDFLAGS) -o $@
++	$(libkworkman_la_LDFLAGS) $(LDFLAGS) -o $@
+ DEFAULT_INCLUDES = -I. -I$(top_builddir)@am__isrc@
  depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
  am__depfiles_maybe = depfiles
-@@ -87,8 +87,8 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
- CCLD = $(CC)
- LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -87,8 +87,8 @@ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
 -SOURCES = $(libworkman_la_SOURCES)
 -DIST_SOURCES = $(libworkman_la_SOURCES)
 +SOURCES = $(libkworkman_la_SOURCES)
 +DIST_SOURCES = $(libkworkman_la_SOURCES)
  #>- RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
  #>- 	html-recursive info-recursive install-data-recursive \
- #>- 	install-exec-recursive install-info-recursive \
-@@ -487,10 +487,10 @@ xine_artsplugin_SUBDIR_included_TRUE = @xine_artsplugi
+ #>- 	install-dvi-recursive install-exec-recursive \
+@@ -416,10 +416,10 @@ xdg_menudir = @xdg_menudir@
  subdirs = include
  SUBDIRS = audio
  INCLUDES = $(all_includes) 
@@ -71,19 +76,19 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.16 2007/05/25 09:49:55 espie Exp $
  database.c index.c scsi.c cdda.c plat_linux_cdda.c plat_sun_cdda.c\
  plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
  plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
-@@ -554,8 +554,8 @@ clean-noinstLTLIBRARIES:
+@@ -483,8 +483,8 @@ clean-noinstLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
 -libworkman.la: $(libworkman_la_OBJECTS) $(libworkman_la_DEPENDENCIES) 
--	$(LINK)  $(libworkman_la_LDFLAGS) $(libworkman_la_OBJECTS) $(libworkman_la_LIBADD) $(LIBS)
+-	$(libworkman_la_LINK)  $(libworkman_la_OBJECTS) $(libworkman_la_LIBADD) $(LIBS)
 +libkworkman.la: $(libkworkman_la_OBJECTS) $(libkworkman_la_DEPENDENCIES) 
-+	$(LINK)  $(libkworkman_la_LDFLAGS) $(libkworkman_la_OBJECTS) $(libkworkman_la_LIBADD) $(LIBS)
++	$(libkworkman_la_LINK)  $(libkworkman_la_OBJECTS) $(libkworkman_la_LIBADD) $(LIBS)
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -897,8 +897,8 @@ uninstall-info: uninstall-info-recursive
- 	tags tags-recursive uninstall uninstall-am uninstall-info-am
+@@ -832,8 +832,8 @@ uninstall-am:
+ 	uninstall uninstall-am
  
  
 -#libworkmanincludedir = $(includedir)/libwm
@@ -93,7 +98,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.16 2007/05/25 09:49:55 espie Exp $
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
-@@ -949,19 +949,19 @@ bcheck-am:
+@@ -884,19 +884,19 @@ bcheck-am:
  
  #>+ 3
  final:

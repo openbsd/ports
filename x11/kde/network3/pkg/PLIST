@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2007/05/25 09:49:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.36 2007/10/24 21:52:18 espie Exp $
 @conflict sirc-*
 bin/dsirc
 bin/feedbrowser
@@ -58,6 +58,7 @@ include/kopete/kopetepassword.h
 include/kopete/kopetepasswordedaccount.h
 include/kopete/kopetepicture.h
 include/kopete/kopeteplugin.h
+include/kopete/kopetepluginmanager.h
 include/kopete/kopeteprefs.h
 include/kopete/kopeteprotocol.h
 include/kopete/kopetesimplemessagehandler.h

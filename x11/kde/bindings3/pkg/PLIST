@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/08/08 22:49:33 steven Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/10/24 21:52:16 espie Exp $
 bin/embedjs
 bin/jsaccess
 bin/kjscmd
@@ -58,11 +58,11 @@ lib/libsmokekde.la
 @lib lib/libsmokekde.so.${LIBsmokekde_VERSION}
 lib/libsmokeqt.la
 @lib lib/libsmokeqt.so.${LIBsmokeqt_VERSION}
-lib/python2.4/
-lib/python2.4/pydcop.py
-lib/python2.4/site-packages/
-lib/python2.4/site-packages/pcop.la
-lib/python2.4/site-packages/pcop.so
+lib/python2.5/
+lib/python2.5/pydcop.py
+lib/python2.5/site-packages/
+lib/python2.5/site-packages/pcop.la
+lib/python2.5/site-packages/pcop.so
 lib/ruby/site_ruby/1.8/KDE/
 lib/ruby/site_ruby/1.8/KDE/korundum.rb
 lib/ruby/site_ruby/1.8/Korundum.rb

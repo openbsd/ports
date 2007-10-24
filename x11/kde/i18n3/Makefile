@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.46 2007/10/24 21:52:17 espie Exp $
 
 LANGS=  af ar az bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
@@ -33,9 +33,9 @@ SUBST_VARS+=DOC LOC
 
 DISTNAME=		kde-i18n-${VERSION}
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.7
+VERSION=		3.5.8
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
-MASTER_SITES=	${MASTER_SITE_KDE:=stable/3.5.7/src/kde-i18n/}
+MASTER_SITES=	${MASTER_SITE_KDE:=stable/3.5.8/src/kde-i18n/}
 
 BUILD_DEPENDS = ::x11/kde/libs3
 RUN_DEPENDS = ::x11/kde/libs3

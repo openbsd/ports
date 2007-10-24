@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.37 2007/05/14 14:06:43 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.38 2007/10/24 21:52:16 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 .if defined(VERSION) && ${VERSION} == "3.1.95"
@@ -33,6 +33,9 @@ AUTOCONF_VERSION?=	2.59
 .  endif
 .  if (${MODKDE_VERSION} == "3.5.7")
 AUTOCONF_VERSION?=	2.60
+.  endif
+.  if (${MODKDE_VERSION} == "3.5.8")
+AUTOCONF_VERSION?=	2.61
 .  endif
 .endif
 AUTOCONF_VERSION?=	2.57

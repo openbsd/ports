@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-es,v 1.13 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.14 2007/10/24 21:52:17 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.es.xml
 share/apps/khangman/
@@ -927,6 +927,9 @@ ${DOC}kdcop/${C}
 ${DOC}kdcop/${I}
 ${DOC}kde_app_devel/
 ${DOC}kde_app_devel/appwizard.png
+${DOC}kde_app_devel/common
+${DOC}kde_app_devel/${C}
+${DOC}kde_app_devel/${I}
 ${DOC}kde_app_devel/kscribblefiles.png
 ${DOC}kdearch/
 ${DOC}kdearch/affine-general.png
@@ -939,6 +942,9 @@ ${DOC}kdearch/canvas.png
 ${DOC}kdearch/capflat.png
 ${DOC}kdearch/capround.png
 ${DOC}kdearch/capsquare.png
+${DOC}kdearch/common
+${DOC}kdearch/${C}
+${DOC}kdearch/${I}
 ${DOC}kdearch/joinbevel.png
 ${DOC}kdearch/joinmiter.png
 ${DOC}kdearch/joinround.png
@@ -1047,6 +1053,7 @@ ${DOC}kdevelop/automake-target-popup.png
 ${DOC}kdevelop/automakemanager.png
 ${DOC}kdevelop/class-browsers.docbook
 ${DOC}kdevelop/classview.png
+${DOC}kdevelop/commands.docbook
 ${DOC}kdevelop/configure-adddialog-baselibs.png
 ${DOC}kdevelop/configure-doctree-textsearch.png
 ${DOC}kdevelop/configure-docu-chm.png
@@ -1077,16 +1084,20 @@ ${DOC}kdevelop/folded-tabs.png
 ${DOC}kdevelop/getting-started.docbook
 ${DOC}kdevelop/kdevelop-ideal-mode-0.png
 ${DOC}kdevelop/kdevelop-ideal-mode.png
+${DOC}kdevelop/kdevelop-install.docbook
 ${DOC}kdevelop/kdevelop-mdi-mode.png
 ${DOC}kdevelop/kdevelop-scripting.docbook
+${DOC}kdevelop/kdevelop-survey.docbook
 ${DOC}kdevelop/kdevelop-tabbed-mode.png
 ${DOC}kdevelop/kdevelop-toplevel-mode.png
 ${DOC}kdevelop/nutshell.docbook
 ${DOC}kdevelop/project-advanced.docbook
+${DOC}kdevelop/project-management.docbook
 ${DOC}kdevelop/select-user-interface-0.png
 ${DOC}kdevelop/select-user-interface.png
 ${DOC}kdevelop/survey-manual.docbook
 ${DOC}kdevelop/tip.database
+${DOC}kdevelop/unixdev.docbook
 ${DOC}kdf/
 ${DOC}kdf/common
 ${DOC}kdf/${C}
@@ -3463,7 +3474,6 @@ ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
@@ -3544,7 +3554,6 @@ ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
 ${LOC}libksieve.mo
 ${LOC}libksirtet.mo
-${LOC}libksync.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo

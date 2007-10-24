@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2007/05/25 09:49:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2007/10/24 21:52:16 espie Exp $
 bin/apmount
 bin/blinken
 bin/celestrongps
@@ -1849,6 +1849,7 @@ share/apps/ktouch/he.keyboard
 share/apps/ktouch/hu.keyboard
 share/apps/ktouch/hungarian.ktouch.xml
 share/apps/ktouch/hungarian_expert.ktouch.xml
+share/apps/ktouch/it.keyboard
 share/apps/ktouch/italian.ktouch.xml
 share/apps/ktouch/ktouchui.rc
 share/apps/ktouch/nederlands.ktouch.xml
@@ -2790,6 +2791,7 @@ share/mimelnk/application/x-kig.desktop
 share/mimelnk/application/x-kmplot.desktop
 share/mimelnk/application/x-kseg.desktop
 share/mimelnk/application/x-kwordquiz.desktop
+share/mimelnk/text/x-kvtml.desktop
 share/services/keduca_part.desktop
 share/services/kfile_drgeo.desktop
 share/services/kfile_kig.desktop

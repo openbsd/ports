@@ -1,7 +1,7 @@
-$OpenBSD: patch-qtruby_rubylib_designer_uilib_Makefile_in,v 1.7 2007/08/08 22:49:33 steven Exp $
---- qtruby/rubylib/designer/uilib/Makefile.in.orig	Mon May 14 13:28:58 2007
-+++ qtruby/rubylib/designer/uilib/Makefile.in	Wed Aug  8 16:26:21 2007
-@@ -416,8 +416,8 @@ INCLUDES = -I$(top_srcdir)/smoke -I$(top_srcdir)/qtrub
+$OpenBSD: patch-qtruby_rubylib_designer_uilib_Makefile_in,v 1.8 2007/10/24 21:52:16 espie Exp $
+--- qtruby/rubylib/designer/uilib/Makefile.in.orig	Mon Oct  8 16:21:26 2007
++++ qtruby/rubylib/designer/uilib/Makefile.in	Wed Oct 24 18:44:14 2007
+@@ -387,8 +387,8 @@ INCLUDES = -I$(top_srcdir)/smoke -I$(top_srcdir)/qtrub
  rubylibdir = $(RUBY_SITEARCHDIR)
  rubylib_LTLIBRARIES = qui.la
  qui_la_SOURCES = qui.cpp

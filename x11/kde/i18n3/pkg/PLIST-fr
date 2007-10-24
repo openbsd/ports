@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.13 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-fr,v 1.14 2007/10/24 21:52:17 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -221,6 +221,7 @@ ${DOC}kate/highlighting.docbook
 ${DOC}kate/${C}
 ${DOC}kate/${I}
 ${DOC}kate/kate.png
+${DOC}kate/man-kate.1.docbook
 ${DOC}kate/mdi.docbook
 ${DOC}kate/menus.docbook
 ${DOC}kate/mimetypechoose.png
@@ -603,7 +604,33 @@ ${DOC}kdesu/${C}
 ${DOC}kdesu/${I}
 ${DOC}kdesu/man-kdesu.1.docbook
 ${DOC}kdevelop/
+${DOC}kdevelop/adv-build-management.docbook
+${DOC}kdevelop/app-changelog.docbook
+${DOC}kdevelop/app-files.docbook
+${DOC}kdevelop/app-menu.docbook
+${DOC}kdevelop/app-misc-info.docbook
+${DOC}kdevelop/app-uimodes-examples.docbook
+${DOC}kdevelop/applicationwizard.docbook
+${DOC}kdevelop/class-browsers.docbook
+${DOC}kdevelop/commands.docbook
+${DOC}kdevelop/credits.docbook
+${DOC}kdevelop/cvs.docbook
+${DOC}kdevelop/debugger.docbook
+${DOC}kdevelop/documentation.docbook
+${DOC}kdevelop/editing.docbook
+${DOC}kdevelop/file-browsers.docbook
+${DOC}kdevelop/getting-started.docbook
+${DOC}kdevelop/kdevelop-install.docbook
+${DOC}kdevelop/kdevelop-scripting.docbook
+${DOC}kdevelop/kdevelop-survey.docbook
+${DOC}kdevelop/nutshell.docbook
+${DOC}kdevelop/plugin-tools.docbook
+${DOC}kdevelop/project-advanced.docbook
+${DOC}kdevelop/project-management.docbook
+${DOC}kdevelop/setup.docbook
+${DOC}kdevelop/survey-manual.docbook
 ${DOC}kdevelop/tip.database
+${DOC}kdevelop/unixdev.docbook
 ${DOC}kdf/
 ${DOC}kdf/common
 ${DOC}kdf/${C}
@@ -615,6 +642,9 @@ ${DOC}kdict/common
 ${DOC}kdict/${C}
 ${DOC}kdict/${I}
 ${DOC}kdm/
+${DOC}kdm/common
+${DOC}kdm/${C}
+${DOC}kdm/${I}
 ${DOC}kdm/kdmrc-ref.docbook
 ${DOC}kdvi/
 ${DOC}kdvi/common
@@ -702,6 +732,7 @@ ${DOC}khangman/${C}
 ${DOC}khangman/${I}
 ${DOC}khangman/khangman1.png
 ${DOC}khangman/khangman2.png
+${DOC}khangman/man-khangman.6.docbook
 ${DOC}khangman/settings1.png
 ${DOC}khangman/settings2.png
 ${DOC}khangman/settings3.png
@@ -1093,6 +1124,7 @@ ${DOC}kmathtool/${C}
 ${DOC}kmathtool/${I}
 ${DOC}kmenuedit/
 ${DOC}kmenuedit/common
+${DOC}kmenuedit/done.png
 ${DOC}kmenuedit/i_copy.png
 ${DOC}kmenuedit/i_cut.png
 ${DOC}kmenuedit/i_delete.png
@@ -1104,6 +1136,10 @@ ${DOC}kmenuedit/icon_sets.png
 ${DOC}kmenuedit/icons.png
 ${DOC}kmenuedit/${C}
 ${DOC}kmenuedit/${I}
+${DOC}kmenuedit/itemname.png
+${DOC}kmenuedit/new.png
+${DOC}kmenuedit/selecticon.png
+${DOC}kmenuedit/selectinternet.png
 ${DOC}kmessedwords/
 ${DOC}kmessedwords/common
 ${DOC}kmessedwords/${C}
@@ -1254,6 +1290,16 @@ ${DOC}kompare/
 ${DOC}kompare/common
 ${DOC}kompare/${C}
 ${DOC}kompare/${I}
+${DOC}kompare/settings-diff1.png
+${DOC}kompare/settings-diff2.png
+${DOC}kompare/settings-diff3.png
+${DOC}kompare/settings-diff4.png
+${DOC}kompare/settings-view1.png
+${DOC}kompare/settings-view2.png
+${DOC}kompmgr/
+${DOC}kompmgr/common
+${DOC}kompmgr/${C}
+${DOC}kompmgr/${I}
 ${DOC}konq-plugins/
 ${DOC}konq-plugins/babel/
 ${DOC}konq-plugins/babel/common
@@ -2377,7 +2423,6 @@ ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

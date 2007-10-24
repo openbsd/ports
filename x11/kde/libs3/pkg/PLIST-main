@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/05/25 09:49:54 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2007/10/24 21:52:18 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -64,6 +64,7 @@ bin/makekdewidgets
 bin/meinproc
 bin/preparetips
 bin/start_kdeinit
+bin/start_kdeinit_wrapper
 include/arts/artskde.h
 include/arts/kartsdispatcher.h
 include/arts/kartsfloatwatch.h
@@ -661,6 +662,7 @@ include/kstringhandler.h
 include/kstringvalidator.h
 include/kstyle.h
 include/ksvgiconengine.h
+include/kswitchlanguagedialog.h
 include/ksycoca.h
 include/ksycocaentry.h
 include/ksycocatype.h
@@ -1218,6 +1220,8 @@ share/apps/kdeprint/filters/enscript.desktop
 share/apps/kdeprint/filters/enscript.xml
 share/apps/kdeprint/filters/imagetops.desktop
 share/apps/kdeprint/filters/imagetops.xml
+share/apps/kdeprint/filters/pdf2ps.desktop
+share/apps/kdeprint/filters/pdf2ps.xml
 share/apps/kdeprint/filters/pdfwrite.desktop
 share/apps/kdeprint/filters/pdfwrite.xml
 share/apps/kdeprint/filters/poster.desktop
@@ -5428,6 +5432,7 @@ share/mimelnk/application/x-webarchive.desktop
 share/mimelnk/application/x-x509-ca-cert.desktop
 share/mimelnk/application/x-xliff.desktop
 share/mimelnk/application/x-zerosize.desktop
+share/mimelnk/application/x-zip-compressed.desktop
 share/mimelnk/application/x-zip.desktop
 share/mimelnk/application/x-zoo.desktop
 share/mimelnk/application/xhtml+xml.desktop

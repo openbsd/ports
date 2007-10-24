@@ -1,0 +1,12 @@
+$OpenBSD: patch-kioslave_floppy_Makefile_in,v 1.1 2007/10/24 21:52:16 espie Exp $
+--- kioslave/floppy/Makefile.in.orig	Tue Oct 23 10:20:23 2007
++++ kioslave/floppy/Makefile.in	Tue Oct 23 10:21:15 2007
+@@ -456,7 +456,7 @@ AM_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ kde_module_LTLIBRARIES = kio_floppy.la
+ kio_floppy_la_SOURCES = kio_floppy.cpp program.cpp
+ kio_floppy_la_LIBADD = $(LIB_KIO)
+-kio_floppy_la_LDFLAGS = -module $(KDE_PLUGIN)
++kio_floppy_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ kdelnk_DATA = floppy.protocol
+ kdelnkdir = $(kde_servicesdir)
+ #>- METASOURCES = AUTO

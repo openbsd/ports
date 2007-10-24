@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-bs,v 1.5 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-bs,v 1.6 2007/10/24 21:52:17 espie Exp $
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -330,7 +330,6 @@ ${LOC}kstyle_highcontrast_config.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

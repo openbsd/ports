@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.84 2007/10/06 12:47:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2007/10/24 21:52:17 espie Exp $
 
 COMMENT-main=		K Desktop Environment, libraries
 COMMENT-cups=		K Desktop Environment, cups support
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.7
+VERSION=		3.5.8
 DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
-#PATCHFILES=	post-3.4.3-kdelibs-kjs.diff:0
 
-PKGNAME-main=		${DISTNAME}p1
-PKGNAME-cups=		kdecups-${VERSION}p0
-MODKDE_VERSION=		3.5.7
+PKGNAME-main=		${DISTNAME}
+PKGNAME-cups=		kdecups-${VERSION}
+MODKDE_VERSION=		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
 SHARED_LIBS +=	kdefx                7.0      # .6.0
 SHARED_LIBS +=	kdefakes             7.0      # .6.0
@@ -62,7 +61,7 @@ CONFIGURE_ARGS+= --enable-cups
 LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 		idn::devel/libidn \
 		fam::sysutils/fam
-WANTLIB=	iconv util jpeg m X11 ICE Xrender c SM pthread \
+WANTLIB=	iconv intl util jpeg m X11 ICE Xrender c SM pthread \
 		stdc++ Xext z png rpcsvc Xau Xdmcp
 
 LIB_DEPENDS-main=${LIB_DEPENDS} \
@@ -75,7 +74,7 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 		Half,Iex,Imath,IlmImf::graphics/openexr	\
 		aspell::textproc/aspell/core
 
-WANTLIB-main=	${WANTLIB} intl \
+WANTLIB-main=	${WANTLIB} \
 		audiofile esd glib-2.0 \
 		gmodule-2.0 gthread-2.0 mad ogg \
 		ossaudio vorbisenc vorbis vorbisfile \

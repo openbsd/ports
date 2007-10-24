@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nn,v 1.7 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-nn,v 1.8 2007/10/24 21:52:17 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/nn/
@@ -70,6 +70,7 @@ ${LOC}katexmlcheck.mo
 ${LOC}katexmltools.mo
 ${LOC}katomic.mo
 ${LOC}kaudiocreator.mo
+${LOC}kay.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
@@ -160,8 +161,6 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
-${LOC}kdevelop.mo
-${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdgantt.mo
 ${LOC}kdialog.mo
@@ -238,6 +237,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kinetd.mo
@@ -247,7 +247,7 @@ ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
-${LOC}kio_imap4.mo
+${LOC}kio_home.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo
@@ -265,6 +265,8 @@ ${LOC}kio_sieve.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smtp.mo
 ${LOC}kio_system.mo
+${LOC}kio_tar.mo
+${LOC}kio_thumbnail.mo
 ${LOC}kio_trash.mo
 ${LOC}kioexec.mo
 ${LOC}kjobviewer.mo
@@ -299,6 +301,7 @@ ${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
+${LOC}knetwalk.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
@@ -360,10 +363,10 @@ ${LOC}ksplashthemes.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
+${LOC}kstyle_highcontrast_config.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
@@ -411,6 +414,7 @@ ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxsconfig.mo
+${LOC}libKTTSD.mo
 ${LOC}libdmctl.mo
 ${LOC}libkcal.mo
 ${LOC}libkcddb.mo
@@ -432,7 +436,6 @@ ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
 ${LOC}libksieve.mo
 ${LOC}libksirtet.mo
-${LOC}libksync.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo

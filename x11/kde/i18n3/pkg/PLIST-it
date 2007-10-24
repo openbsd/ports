@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.12 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-it,v 1.13 2007/10/24 21:52:17 espie Exp $
 @conflict kde-i18n-ca-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -653,6 +653,10 @@ ${DOC}kdesu/common
 ${DOC}kdesu/${C}
 ${DOC}kdesu/${I}
 ${DOC}kdesu/man-kdesu.1.docbook
+${DOC}kdesvn-build/
+${DOC}kdesvn-build/common
+${DOC}kdesvn-build/${C}
+${DOC}kdesvn-build/${I}
 ${DOC}kdevelop/
 ${DOC}kdevelop/SF-general.png
 ${DOC}kdevelop/SF-indent.png
@@ -2385,7 +2389,6 @@ ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
@@ -2466,7 +2469,6 @@ ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
 ${LOC}libksieve.mo
 ${LOC}libksirtet.mo
-${LOC}libksync.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo

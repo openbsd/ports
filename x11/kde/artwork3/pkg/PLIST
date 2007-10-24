@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2006/11/06 12:40:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.30 2007/10/24 21:52:16 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kclock.kss
@@ -2600,6 +2600,7 @@ share/icons/kdeclassic/16x16/apps/cookie.png
 share/icons/kdeclassic/16x16/apps/date.png
 share/icons/kdeclassic/16x16/apps/designer.png
 share/icons/kdeclassic/16x16/apps/dlgedit.png
+share/icons/kdeclassic/16x16/apps/dolphin.png
 share/icons/kdeclassic/16x16/apps/edu_languages.png
 share/icons/kdeclassic/16x16/apps/edu_mathematics.png
 share/icons/kdeclassic/16x16/apps/edu_miscellanous.png
@@ -3723,6 +3724,7 @@ share/icons/kdeclassic/22x22/actions/window_nofullscreen.png
 share/icons/kdeclassic/22x22/actions/wizard.png
 share/icons/kdeclassic/22x22/actions/xdays.png
 share/icons/kdeclassic/22x22/apps/
+share/icons/kdeclassic/22x22/apps/dolphin.png
 share/icons/kdeclassic/22x22/apps/kaboodle.png
 share/icons/kdeclassic/22x22/apps/kivio.png
 share/icons/kdeclassic/22x22/apps/konqsidebar_mediaplayer.png
@@ -4031,6 +4033,7 @@ share/icons/kdeclassic/32x32/apps/cookie.png
 share/icons/kdeclassic/32x32/apps/date.png
 share/icons/kdeclassic/32x32/apps/designer.png
 share/icons/kdeclassic/32x32/apps/dlgedit.png
+share/icons/kdeclassic/32x32/apps/dolphin.png
 share/icons/kdeclassic/32x32/apps/edu_languages.png
 share/icons/kdeclassic/32x32/apps/edu_mathematics.png
 share/icons/kdeclassic/32x32/apps/edu_miscellanous.png
@@ -4482,6 +4485,7 @@ share/icons/kdeclassic/48x48/apps/colors.png
 share/icons/kdeclassic/48x48/apps/cookie.png
 share/icons/kdeclassic/48x48/apps/date.png
 share/icons/kdeclassic/48x48/apps/designer.png
+share/icons/kdeclassic/48x48/apps/dolphin.png
 share/icons/kdeclassic/48x48/apps/edu_languages.png
 share/icons/kdeclassic/48x48/apps/emacs.png
 share/icons/kdeclassic/48x48/apps/email.png
@@ -4819,6 +4823,8 @@ share/icons/kdeclassic/48x48/mimetypes/video.png
 share/icons/kdeclassic/48x48/mimetypes/widget_doc.png
 share/icons/kdeclassic/48x48/mimetypes/wordprocessing.png
 share/icons/kdeclassic/64x64/
+share/icons/kdeclassic/64x64/apps/
+share/icons/kdeclassic/64x64/apps/dolphin.png
 share/icons/kdeclassic/64x64/filesystems/
 share/icons/kdeclassic/64x64/filesystems/folder.png
 share/icons/kdeclassic/64x64/filesystems/folder_html.png

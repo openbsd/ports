@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2007/05/25 09:49:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2007/10/24 21:52:18 espie Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -401,6 +401,8 @@ ${KDE}/libkaddrbk_distributionlist.la
 ${KDE}/libkaddrbk_distributionlist.so
 ${KDE}/libkaddrbk_eudora_xxport.la
 ${KDE}/libkaddrbk_eudora_xxport.so
+${KDE}/libkaddrbk_gnokii_xxport.la
+${KDE}/libkaddrbk_gnokii_xxport.so
 ${KDE}/libkaddrbk_iconview.la
 ${KDE}/libkaddrbk_iconview.so
 ${KDE}/libkaddrbk_kde2_xxport.la
@@ -487,6 +489,8 @@ lib/libakregatorprivate.la
 lib/libakregatorprivate.so
 lib/libgpgme++.la
 @lib lib/libgpgme++.so.${LIBgpgme++_VERSION}
+lib/libgwsoap.la
+@lib lib/libgwsoap.so.${LIBgwsoap_VERSION}
 lib/libindex.la
 @lib lib/libindex.so.${LIBindex_VERSION}
 lib/libkabc_groupdav.la
@@ -629,6 +633,7 @@ share/apps/kaddressbook/csv-templates/outlook2000.desktop
 share/apps/kaddressbook/csv-templates/yahoo.desktop
 share/apps/kaddressbook/csv_xxportui.rc
 share/apps/kaddressbook/eudora_xxportui.rc
+share/apps/kaddressbook/gnokii_xxportui.rc
 share/apps/kaddressbook/icons/
 share/apps/kaddressbook/icons/crystalsvg/
 share/apps/kaddressbook/icons/crystalsvg/16x16/
@@ -733,6 +738,7 @@ share/apps/kconf_update/kmail-3.3-use-ID-for-accounts.pl
 share/apps/kconf_update/kmail-3.3b1-misc.pl
 share/apps/kconf_update/kmail-3.4-misc.pl
 share/apps/kconf_update/kmail-3.4.1-update-status-filters.pl
+share/apps/kconf_update/kmail-3.5-trigger-flag-migration.pl
 share/apps/kconf_update/kmail-pgpidentity.pl
 share/apps/kconf_update/kmail-upd-identities.pl
 share/apps/kconf_update/kmail.upd
@@ -1249,6 +1255,7 @@ share/apps/libical/zoneinfo/America/Indiana/Indianapolis.ics
 share/apps/libical/zoneinfo/America/Indiana/Knox.ics
 share/apps/libical/zoneinfo/America/Indiana/Marengo.ics
 share/apps/libical/zoneinfo/America/Indiana/Petersburg.ics
+share/apps/libical/zoneinfo/America/Indiana/Tell_City.ics
 share/apps/libical/zoneinfo/America/Indiana/Vevay.ics
 share/apps/libical/zoneinfo/America/Indiana/Vincennes.ics
 share/apps/libical/zoneinfo/America/Indiana/Winamac.ics
@@ -1571,6 +1578,7 @@ share/apps/libkdepim/about/top-left.png
 share/apps/libkdepim/about/top-middle.png
 share/apps/libkholidays/
 share/apps/libkholidays/holiday_Suedtirol
+share/apps/libkholidays/holiday_ar
 share/apps/libkholidays/holiday_at
 share/apps/libkholidays/holiday_au
 share/apps/libkholidays/holiday_bavarian

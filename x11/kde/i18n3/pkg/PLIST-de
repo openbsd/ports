@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-de,v 1.13 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-de,v 1.14 2007/10/24 21:52:17 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -119,6 +119,28 @@ ${DOC}KRegExpEditor/
 ${DOC}KRegExpEditor/common
 ${DOC}KRegExpEditor/${C}
 ${DOC}KRegExpEditor/${I}
+${DOC}akregator/
+${DOC}akregator/add-feed.png
+${DOC}akregator/add-feed2.png
+${DOC}akregator/add-folder.png
+${DOC}akregator/add-folder2.png
+${DOC}akregator/advanced-tab.png
+${DOC}akregator/appearance-tab.png
+${DOC}akregator/archive-tab.png
+${DOC}akregator/browser-tab.png
+${DOC}akregator/common
+${DOC}akregator/general-tab.png
+${DOC}akregator/${C}
+${DOC}akregator/${I}
+${DOC}akregator/konq.png
+${DOC}akregator/konq2.png
+${DOC}akregator/main-window.png
+${DOC}akregator/main-window2.png
+${DOC}akregator/main-window3.png
+${DOC}akregator/main-window4.png
+${DOC}akregator/quick-filter.png
+${DOC}akregator/rss.png
+${DOC}akregator/rss3.png
 ${DOC}amor/
 ${DOC}amor/common
 ${DOC}amor/${C}
@@ -1600,6 +1622,11 @@ ${DOC}kshisen/common
 ${DOC}kshisen/${C}
 ${DOC}kshisen/${I}
 ${DOC}kshisen/kshisen-configuration.png
+${DOC}ksig/
+${DOC}ksig/common
+${DOC}ksig/${C}
+${DOC}ksig/${I}
+${DOC}ksig/screenshot.png
 ${DOC}ksim/
 ${DOC}ksim/common
 ${DOC}ksim/${C}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-kpilot_conduits_Makefile_in,v 1.3 2007/05/25 09:49:55 espie Exp $
---- kpilot/conduits/Makefile.in.orig	Mon May 14 13:50:34 2007
-+++ kpilot/conduits/Makefile.in	Tue May 15 00:44:39 2007
-@@ -492,6 +492,7 @@ xdg_directorydir = @xdg_directorydir@
+$OpenBSD: patch-kpilot_conduits_Makefile_in,v 1.4 2007/10/24 21:52:18 espie Exp $
+--- kpilot/conduits/Makefile.in.orig	Mon Oct  8 16:36:06 2007
++++ kpilot/conduits/Makefile.in	Tue Oct 23 16:04:48 2007
+@@ -372,6 +372,7 @@ xdg_directorydir = @xdg_directorydir@
  xdg_menudir = @xdg_menudir@
  @include_malconduit_FALSE@MAL_SUBDIR = 
  @include_malconduit_TRUE@MAL_SUBDIR = malconduit
@@ -9,7 +9,7 @@ $OpenBSD: patch-kpilot_conduits_Makefile_in,v 1.3 2007/05/25 09:49:55 espie Exp 
  SUBDIRS = \
  	  abbrowserconduit \
  	  docconduit \
-@@ -502,7 +503,8 @@ SUBDIRS = \
+@@ -382,7 +383,8 @@ SUBDIRS = \
  	  popmail \
  	  sysinfoconduit \
  	  timeconduit \

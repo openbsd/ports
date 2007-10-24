@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.73 2007/10/01 11:42:30 steven Exp $
+# $OpenBSD: Makefile,v 1.74 2007/10/24 21:52:17 espie Exp $
 
 COMMENT-main=		K Desktop Environment, graphic applications
 COMMENT-kamera=		KDE interface to digital cameras
 COMMENT-kpov=		KDE modeller for povray
 COMMENT-sane=		KDE interface to scanners
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.7
+VERSION=		3.5.8
 DISTNAME=		kdegraphics-${VERSION}
-MODKDE_VERSION=		3.5.7
+MODKDE_VERSION=		3.5.8
 
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}
 PKGNAME-kamera=	kamera-${VERSION}
 PKGNAME-kpov=	kpovmodeller-${VERSION}
 PKGNAME-sane=	ksane-${VERSION}
 
-MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
-PATCHFILES=		post-3.5.7-kdegraphics-CVE-2007-3387.diff:0
+#MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
+#PATCHFILES=		post-3.5.7-kdegraphics-CVE-2007-3387.diff:0
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -49,24 +49,24 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 WANTLIB-main=		${WANTLIB} \
 			tiff fontconfig lcms Xrender ICE c \
 			freetype pcreposix pcre Xxf86vm SM Xext Xft \
-			cairo expat glitz
+			cairo expat glitz intl
 
 
 LIB_DEPENDS-kpov=	${LIB_DEPENDS} \
 			kparts::x11/kde/libs3
 RUN_DEPENDS-kpov=	::graphics/povray
-WANTLIB-kpov=		${WANTLIB} GL freetype Xrender Xmu GLU c Xi  Xt
+WANTLIB-kpov=		${WANTLIB} GL freetype Xrender Xmu GLU c Xi  Xt intl
 
 
 LIB_DEPENDS-kamera= 	${LIB_DEPENDS} \
 			gphoto2,gphoto2_port::graphics/libgphoto2
-WANTLIB-kamera=		${WANTLIB} exif Xrender intl
+WANTLIB-kamera=		${WANTLIB} exif Xrender intl ltdl
 
 
 LIB_DEPENDS-sane= 	${LIB_DEPENDS-kamera} \
 			ktexteditor,vcard,kabc,kparts,kresources,kspell,kdeprint::x11/kde/libs3 \
 			sane::graphics/sane-backends
-WANTLIB-sane=		${WANTLIB-kamera} usb tiff c
+WANTLIB-sane=		${WANTLIB-kamera} usb tiff c ltdl
 
 
 CONFIGURE_ENV+=	\

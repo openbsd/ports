@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gl,v 1.5 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-gl,v 1.6 2007/10/24 21:52:17 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -429,7 +429,6 @@ ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

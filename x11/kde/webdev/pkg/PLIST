@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/10/12 23:12:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/10/24 21:52:19 espie Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
 bin/kfilereplace
@@ -84,9 +84,9 @@ share/apps/klinkstatuspart/
 share/apps/klinkstatuspart/klinkstatus_part.rc
 share/apps/klinkstatuspart/pics/
 share/apps/klinkstatuspart/pics/304.png
-share/apps/kmdr-editor/
-share/apps/kmdr-editor/pics/
-share/apps/kmdr-editor/pics/kommandersplash.png
+share/apps/kommander/
+share/apps/kommander/pics/
+share/apps/kommander/pics/kommandersplash.png
 share/apps/kxsldbg/
 share/apps/kxsldbg/kxsldbg_shell.rc
 share/apps/kxsldbgpart/

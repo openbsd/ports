@@ -1,0 +1,21 @@
+$OpenBSD: patch-ksim_monitors_filesystem_filesystemstats_cpp,v 1.1 2007/10/24 21:52:18 espie Exp $
+--- ksim/monitors/filesystem/filesystemstats.cpp.orig	Wed Oct 24 09:24:45 2007
++++ ksim/monitors/filesystem/filesystemstats.cpp	Wed Oct 24 09:25:31 2007
+@@ -62,7 +62,7 @@
+ #if defined(HAVE_STATVFS) && !defined(__DragonFly__)
+ typedef struct statvfs ksim_statfs;
+ #define ksim_getfsstat getvfsstat
+-#elif defined( HAVE_STATFS ) || defined( Q_OS_FREEBSD )
++#elif defined( HAVE_STATFS ) || defined( Q_OS_FREEBSD ) || defined( Q_OS_OPENBSD )
+ typedef struct statfs ksim_statfs;
+ #define ksim_getfsstat getfsstat
+ #else
+@@ -77,7 +77,7 @@ int fsystemStats( const char * file, ksim_statfs & sta
+ {
+ #if defined(HAVE_STATVFS) && !defined(__DragonFly__)
+   return statvfs( file, &stats );
+-#elif defined( HAVE_STATFS ) || defined( Q_OS_FREEBSD )
++#elif defined( HAVE_STATFS ) || defined( Q_OS_FREEBSD ) || defined( Q_OS_OPENBSD )
+   return statfs( file, &stats );
+ #else // fall back for (possibly) non-supported systems
+   (void)file;

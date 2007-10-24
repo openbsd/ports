@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.36 2007/10/24 21:52:18 espie Exp $
 
 COMMENT= 		K Desktop Environment, developer extensions
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.5.7
+VERSION=		3.5.8
 DISTNAME=		kdesdk-${VERSION}
 PKGNAME=		${DISTNAME}
-MODKDE_VERSION=		3.5.7
+MODKDE_VERSION=		3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
 SHARED_LIBS +=	kbabelcommon         6.0      # .5.0
 SHARED_LIBS +=	kbabeldictplugin     4.0      # .3.0
@@ -21,7 +21,7 @@ SEPARATE_BUILD=flavored
 
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg ktnef m pcre \
 		pcreposix png pthread qui-mt stdc++ util z iconv idn \
-		xslt xml2 Xau Xdmcp fam rpcsvc
+		xslt xml2 Xau Xdmcp fam rpcsvc intl
 
 
 post-install:

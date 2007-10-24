@@ -1,0 +1,12 @@
+$OpenBSD: patch-kinit_start_kdeinit_wrapper_c,v 1.1 2007/10/24 21:52:18 espie Exp $
+--- kinit/start_kdeinit_wrapper.c.orig	Wed Oct 24 00:43:42 2007
++++ kinit/start_kdeinit_wrapper.c	Wed Oct 24 00:43:48 2007
+@@ -85,7 +85,7 @@ int main(int argc, char **argv)
+    if(argc == 0)
+       return 1;
+    argv[0] = "start_kdeinit";
+-   execv("start_kdeinit",argv);
++   execvp("start_kdeinit",argv);
+    perror("start_kdeinit");
+    return 1;
+ }

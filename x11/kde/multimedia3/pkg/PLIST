@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2007/05/25 09:49:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.29 2007/10/24 21:52:18 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -446,6 +446,7 @@ lib/mcop/RawWriter.mcopclass
 lib/mcop/SplayPlayObject.mcopclass
 lib/mcop/VoiceRemoval.mcopclass
 lib/mcop/WAVPlayObject.mcopclass
+lib/mcop/akodeFFMPEGPlayObject.mcopclass
 lib/mcop/akodeMPCPlayObject.mcopclass
 lib/mcop/akodeMPEGPlayObject.mcopclass
 lib/mcop/akodePlayObject.mcopclass
@@ -594,6 +595,7 @@ share/apps/juk/jukui.rc
 share/apps/juk/pics/
 share/apps/juk/pics/playing.png
 share/apps/juk/pics/splash.png
+share/apps/juk/pics/yahoo_credit.png
 share/apps/kaboodle/
 share/apps/kaboodle/icons/
 share/apps/kaboodle/icons/crystalsvg/

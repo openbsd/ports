@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-se,v 1.3 2006/08/04 10:41:01 espie Exp $
+@comment $OpenBSD: PLIST-se,v 1.4 2007/10/24 21:52:17 espie Exp $
 share/locale/se/
 share/locale/se/ChangeLog
 share/locale/se/LC_MESSAGES/
@@ -159,7 +159,6 @@ ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
-${LOC}kio_imap4.mo
 ${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo
 ${LOC}kio_man.mo
@@ -218,7 +217,6 @@ ${LOC}krdb.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kres_exchange.mo
-${LOC}kres_imap.mo
 ${LOC}kres_remote.mo
 ${LOC}kres_xmlrpc.mo
 ${LOC}kruler.mo
@@ -235,7 +233,6 @@ ${LOC}kstart.mo
 ${LOC}kstyle_highcontrast_config.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2007/09/30 09:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2007/10/24 21:52:18 espie Exp $
 
 COMMENT= 		KDE personal information applications
 COMMENT-kpilot=		KDE interface to sync with Palm Pilot
 CATEGORIES=		x11 x11/kde productivity
-VERSION=		3.5.7
+VERSION=		3.5.8
 DISTNAME=		kdepim-${VERSION}
-PKGNAME=		${DISTNAME}p0
-MODKDE_VERSION=		3.5.7
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION=		3.5.8
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
 SHARED_LIBS +=	kode                 2.0      # .1.0
@@ -48,6 +48,7 @@ SHARED_LIBS +=	kcalkolab            1.0      # .0.0
 SHARED_LIBS +=	kslox                1.0      # .0.0
 SHARED_LIBS +=	kcal_slox            1.0      # .0.0
 SHARED_LIBS +=	kabc_slox            1.0      # .0.0
+SHARED_LIBS +=	gwsoap               0.0      # .0.0
 SHARED_LIBS +=	kcal_groupwise       2.0      # .1.0
 SHARED_LIBS +=	kabc_groupwise       2.0      # .1.0
 SHARED_LIBS +=	kcal_resourcefeatureplan 2.0      # .1.0
@@ -67,14 +68,15 @@ WANTLIB=	Xss audiofile stdc++ ossaudio X11 jpeg util m \
 		artsflow_idl art_lgpl_2 mad qtmcop \
 		glib-2.0 ICE soundserver_idl Xrender \
 		gpg-error vorbis pcre esd z sasl2 idn \
-		Xau Xdmcp fam rpcsvc
+		Xau Xdmcp fam rpcsvc Xpm usb
 
 FLAVORS=	debug
 LIB_DEPENDS+=	pisock::comms/pilot-link
 RUN_DEPENDS+=	::x11/kde/base3
 LIB_DEPENDS+=	gpgme:gpgme->=0.4.5:security/gpgme \
 		sasl2::security/cyrus-sasl2 \
-		mal.>=1::comms/libmal
+		mal.>=1::comms/libmal \
+		gnokii::comms/gnokii
 
 #MULTI_PACKAGES=-kpilot
 FULLPKGNAME-kpilot = kpilot-${VERSION}p0

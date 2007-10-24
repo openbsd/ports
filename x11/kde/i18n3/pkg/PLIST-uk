@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-uk,v 1.10 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-uk,v 1.11 2007/10/24 21:52:17 espie Exp $
 share/doc/HTML/uk/
 ${DOC}docs/
 ${DOC}docs/common/
@@ -378,6 +378,7 @@ ${LOC}kmobile.mo
 ${LOC}kmoon.mo
 ${LOC}kmousetool.mo
 ${LOC}kmouth.mo
+${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
 ${LOC}knetwalk.mo
@@ -464,7 +465,6 @@ ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
-${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

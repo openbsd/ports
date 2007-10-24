@@ -1,12 +1,12 @@
-$OpenBSD: patch-kresources_groupwise_soap_stdsoap2_h,v 1.8 2007/05/30 16:42:03 espie Exp $
---- kresources/groupwise/soap/stdsoap2.h.orig	Tue May 15 11:43:47 2007
-+++ kresources/groupwise/soap/stdsoap2.h	Tue May 15 11:44:03 2007
+$OpenBSD: patch-kresources_groupwise_soap_stdsoap2_h,v 1.9 2007/10/24 21:52:18 espie Exp $
+--- kresources/groupwise/soap/stdsoap2.h.orig	Mon Oct  8 11:50:39 2007
++++ kresources/groupwise/soap/stdsoap2.h	Tue Oct 23 16:06:01 2007
 @@ -547,7 +547,7 @@ extern "C" {
  /* Portability: define SOAP_SOCKLEN_T */
  #if defined(SOCKLEN_T)
  # define SOAP_SOCKLEN_T SOCKLEN_T
--#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__QNX__) || defined(QNX) || defined(_AIX)
-+#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__QNX__) || defined(QNX) || defined(_AIX)
+-#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__QNX__) || defined(QNX) || defined(_AIX) || defined(__NetBSD__) || defined(__DragonFly__)
++#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__QNX__) || defined(QNX) || defined(_AIX) || defined(__NetBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
  # define SOAP_SOCKLEN_T socklen_t
  #elif defined(IRIX) || defined(WIN32) || defined(__APPLE__) || defined(HP_UX) || defined(SUN_OS) || defined(OPENSERVER) || defined(__osf__) || defined(VXWORKS)
  # define SOAP_SOCKLEN_T int

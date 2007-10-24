@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-csb,v 1.1 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-csb,v 1.2 2007/10/24 21:52:17 espie Exp $
 share/locale/csb/
 share/locale/csb/LC_MESSAGES/
 ${LOC}appletproxy.mo
@@ -93,6 +93,7 @@ ${LOC}knetattach.mo
 ${LOC}konqueror.mo
 ${LOC}konsole.mo
 ${LOC}kpager.mo
+${LOC}kpat.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kprinter.mo
 ${LOC}krandr.mo

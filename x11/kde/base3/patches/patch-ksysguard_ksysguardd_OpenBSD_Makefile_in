@@ -1,7 +1,7 @@
-$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_Makefile_in,v 1.3 2007/05/25 09:49:54 espie Exp $
---- ksysguard/ksysguardd/OpenBSD/Makefile.in.orig	Mon May 14 13:56:53 2007
-+++ ksysguard/ksysguardd/OpenBSD/Makefile.in	Mon May 14 19:06:57 2007
-@@ -52,11 +52,11 @@ LIBRARIES = $(noinst_LIBRARIES)
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_Makefile_in,v 1.4 2007/10/24 21:52:16 espie Exp $
+--- ksysguard/ksysguardd/OpenBSD/Makefile.in.orig	Mon Oct  8 16:40:28 2007
++++ ksysguard/ksysguardd/OpenBSD/Makefile.in	Thu Oct 18 14:53:31 2007
+@@ -48,11 +48,11 @@ LIBRARIES = $(noinst_LIBRARIES)
  ARFLAGS = cru
  libksysguardd_a_AR = $(AR) $(ARFLAGS)
  libksysguardd_a_LIBADD =
@@ -15,8 +15,8 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_Makefile_in,v 1.3 2007/05/25 09:49:
 +libksysguardd_a_nofinal_OBJECTS = cpu.$(OBJEXT) memory.$(OBJEXT) ProcessList.$(OBJEXT)
  @KDE_USE_FINAL_FALSE@libksysguardd_a_OBJECTS = $(libksysguardd_a_nofinal_OBJECTS)
  @KDE_USE_FINAL_TRUE@libksysguardd_a_OBJECTS = $(libksysguardd_a_final_OBJECTS)
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
-@@ -573,7 +573,7 @@ xdg_menudir = @xdg_menudir@
+ DEFAULT_INCLUDES = -I. -I$(top_builddir)@am__isrc@
+@@ -422,7 +422,7 @@ xdg_menudir = @xdg_menudir@
  AM_CFLAGS = -Wall
  INCLUDES = -I$(srcdir)/../../CContLib -I$(srcdir)/..
  noinst_LIBRARIES = libksysguardd.a
@@ -25,15 +25,15 @@ $OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_Makefile_in,v 1.3 2007/05/25 09:49:
  #>- all: all-am
  #>+ 1
  all: docs-am  all-am
-@@ -638,6 +638,7 @@ distclean-compile:
+@@ -487,6 +487,7 @@ distclean-compile:
  
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpu.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/memory.Po@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ProcessList.Po@am__quote@
  
  .c.o:
- @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
-@@ -846,7 +847,7 @@ uninstall-am: uninstall-info-am
+ @am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@@ -701,7 +702,7 @@ uninstall-am:
  .NOEXPORT:
  
  #>+ 2
