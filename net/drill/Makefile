@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/10 12:13:53 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2007/10/24 10:48:42 naddy Exp $
 
 COMMENT=	DNS debugger
 
 VERSION=	1.2.1
 DISTNAME=	ldns-${VERSION}
-PKGNAME=	drill-${VERSION}
+PKGNAME=	drill-${VERSION}p0
 CATEGORIES=	net
 
 MASTER_SITES+=	http://www.nlnetlabs.nl/downloads/
