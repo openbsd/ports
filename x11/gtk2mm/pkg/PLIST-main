@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/04/25 10:40:44 wilfried Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/10/24 22:36:20 jasper Exp $
 @pkgpath x11/gtk2mm
 %%SHARED%%
 include/atkmm-1.6/
@@ -121,6 +121,7 @@ include/gtkmm-2.4/gtkmm/assistant.h
 include/gtkmm-2.4/gtkmm/base.h
 include/gtkmm-2.4/gtkmm/bin.h
 include/gtkmm-2.4/gtkmm/box.h
+include/gtkmm-2.4/gtkmm/builder.h
 include/gtkmm-2.4/gtkmm/button.h
 include/gtkmm-2.4/gtkmm/buttonbox.h
 include/gtkmm-2.4/gtkmm/calendar.h
@@ -220,6 +221,7 @@ include/gtkmm-2.4/gtkmm/private/aspectframe_p.h
 include/gtkmm-2.4/gtkmm/private/assistant_p.h
 include/gtkmm-2.4/gtkmm/private/bin_p.h
 include/gtkmm-2.4/gtkmm/private/box_p.h
+include/gtkmm-2.4/gtkmm/private/builder_p.h
 include/gtkmm-2.4/gtkmm/private/button_p.h
 include/gtkmm-2.4/gtkmm/private/buttonbox_p.h
 include/gtkmm-2.4/gtkmm/private/calendar_p.h
@@ -308,6 +310,7 @@ include/gtkmm-2.4/gtkmm/private/radiomenuitem_p.h
 include/gtkmm-2.4/gtkmm/private/radiotoolbutton_p.h
 include/gtkmm-2.4/gtkmm/private/range_p.h
 include/gtkmm-2.4/gtkmm/private/rc_p.h
+include/gtkmm-2.4/gtkmm/private/recentaction_p.h
 include/gtkmm-2.4/gtkmm/private/recentchooser_p.h
 include/gtkmm-2.4/gtkmm/private/recentchooserdialog_p.h
 include/gtkmm-2.4/gtkmm/private/recentchoosermenu_p.h
@@ -317,6 +320,7 @@ include/gtkmm-2.4/gtkmm/private/recentinfo_p.h
 include/gtkmm-2.4/gtkmm/private/recentmanager_p.h
 include/gtkmm-2.4/gtkmm/private/ruler_p.h
 include/gtkmm-2.4/gtkmm/private/scale_p.h
+include/gtkmm-2.4/gtkmm/private/scalebutton_p.h
 include/gtkmm-2.4/gtkmm/private/scrollbar_p.h
 include/gtkmm-2.4/gtkmm/private/scrolledwindow_p.h
 include/gtkmm-2.4/gtkmm/private/selectiondata_p.h
@@ -348,6 +352,7 @@ include/gtkmm-2.4/gtkmm/private/toggletoolbutton_p.h
 include/gtkmm-2.4/gtkmm/private/toolbar_p.h
 include/gtkmm-2.4/gtkmm/private/toolbutton_p.h
 include/gtkmm-2.4/gtkmm/private/toolitem_p.h
+include/gtkmm-2.4/gtkmm/private/tooltip_p.h
 include/gtkmm-2.4/gtkmm/private/tooltips_p.h
 include/gtkmm-2.4/gtkmm/private/treedragdest_p.h
 include/gtkmm-2.4/gtkmm/private/treedragsource_p.h
@@ -364,6 +369,7 @@ include/gtkmm-2.4/gtkmm/private/treeview_p.h
 include/gtkmm-2.4/gtkmm/private/treeviewcolumn_p.h
 include/gtkmm-2.4/gtkmm/private/uimanager_p.h
 include/gtkmm-2.4/gtkmm/private/viewport_p.h
+include/gtkmm-2.4/gtkmm/private/volumebutton_p.h
 include/gtkmm-2.4/gtkmm/private/widget_p.h
 include/gtkmm-2.4/gtkmm/private/window_p.h
 include/gtkmm-2.4/gtkmm/progressbar.h
@@ -374,6 +380,7 @@ include/gtkmm-2.4/gtkmm/radiomenuitem.h
 include/gtkmm-2.4/gtkmm/radiotoolbutton.h
 include/gtkmm-2.4/gtkmm/range.h
 include/gtkmm-2.4/gtkmm/rc.h
+include/gtkmm-2.4/gtkmm/recentaction.h
 include/gtkmm-2.4/gtkmm/recentchooser.h
 include/gtkmm-2.4/gtkmm/recentchooserdialog.h
 include/gtkmm-2.4/gtkmm/recentchoosermenu.h
@@ -383,6 +390,7 @@ include/gtkmm-2.4/gtkmm/recentinfo.h
 include/gtkmm-2.4/gtkmm/recentmanager.h
 include/gtkmm-2.4/gtkmm/ruler.h
 include/gtkmm-2.4/gtkmm/scale.h
+include/gtkmm-2.4/gtkmm/scalebutton.h
 include/gtkmm-2.4/gtkmm/scrollbar.h
 include/gtkmm-2.4/gtkmm/scrolledwindow.h
 include/gtkmm-2.4/gtkmm/selectiondata.h
@@ -418,6 +426,7 @@ include/gtkmm-2.4/gtkmm/toggletoolbutton.h
 include/gtkmm-2.4/gtkmm/toolbar.h
 include/gtkmm-2.4/gtkmm/toolbutton.h
 include/gtkmm-2.4/gtkmm/toolitem.h
+include/gtkmm-2.4/gtkmm/tooltip.h
 include/gtkmm-2.4/gtkmm/tooltips.h
 include/gtkmm-2.4/gtkmm/treedragdest.h
 include/gtkmm-2.4/gtkmm/treedragsource.h
@@ -436,6 +445,7 @@ include/gtkmm-2.4/gtkmm/treeview_private.h
 include/gtkmm-2.4/gtkmm/treeviewcolumn.h
 include/gtkmm-2.4/gtkmm/uimanager.h
 include/gtkmm-2.4/gtkmm/viewport.h
+include/gtkmm-2.4/gtkmm/volumebutton.h
 include/gtkmm-2.4/gtkmm/widget.h
 include/gtkmm-2.4/gtkmm/window.h
 include/gtkmm-2.4/gtkmm/wrap_init.h
