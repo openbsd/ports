@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2007/10/24 15:02:31 jasper Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		3.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  xklavier             12.0     # .11.0
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/LibXklavier
@@ -25,7 +26,8 @@ LIB_DEPENDS=		glib-2.0.>=1200.0,gobject-2.0.>=1200.0::devel/glib2 \
 			xml2::textproc/libxml
 
 USE_X11=		Yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-x
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
