@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/10/24 23:32:00 landry Exp $
+bin/slim
+@man man/man1/slim.1
+share/doc/slim/
+share/doc/slim/README.OpenBSD
+share/examples/slim/
+share/examples/slim/slim.conf
+@sample ${SYSCONFDIR}/slim.conf
+share/slim/
+share/slim/themes/
+share/slim/themes/default/
+share/slim/themes/default/background.jpg
+share/slim/themes/default/panel.png
+share/slim/themes/default/slim.theme

@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_openbsd,v 1.1.1.1 2007/10/24 23:32:00 landry Exp $
+--- Makefile.openbsd.orig	Wed Oct 24 19:29:25 2007
++++ Makefile.openbsd	Wed Oct 24 19:31:24 2007
+@@ -5,12 +5,10 @@
+ #######################################################
+ CXX=/usr/bin/g++
+ CC=/usr/bin/gcc
+-CFLAGS=-I. -I/usr/X11R6/include -I/usr/X11R6/include/freetype2 -I/usr/X11R6/include/freetype2/config -I/usr/local/include/libpng -I/usr/local/include -I/usr/include
+-LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib -lXft -lX11 -lfreetype -lXrender -lfontconfig -lpng -lz -lm -lXmu -lpng -ljpeg
++CFLAGS=-I. -I${X11BASE}/include -I${X11BASE}/include/freetype2 -I${X11BASE}/include/freetype2/config -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I/usr/include
++LDFLAGS=-L${X11BASE}/lib -L${LOCALBASE}/lib -lXft -lX11 -lfreetype -lXrender -lfontconfig -lpng -lz -lm -lXmu -lpng -ljpeg
+ CUSTOM=-DNEEDS_BASENAME
+-PREFIX=/usr
+-CFGDIR=/etc
+-MANDIR=/usr/share/man
++MANDIR=${PREFIX}/man
+ DESTDIR=
+ #######################################################
+ 
