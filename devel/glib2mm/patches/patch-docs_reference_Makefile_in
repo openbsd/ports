@@ -1,0 +1,13 @@
+$OpenBSD: patch-docs_reference_Makefile_in,v 1.1 2007/10/24 22:35:28 jasper Exp $
+--- docs/reference/Makefile.in.orig	Mon Oct 15 15:37:40 2007
++++ docs/reference/Makefile.in	Mon Oct 15 15:38:50 2007
+@@ -400,8 +400,7 @@ uninstall-am: uninstall-gmmproc_binSCRIPTS uninstall-l
+ 
+ #Ideally, libstdc++.tag.xml would be installed by gcc, instead of being copied into every project.
+ 
+-html/index.html: $(doxygen_configfile_source) $(beautify_docs_source) $(top_srcdir)/glib/glibmm/*.h
+-	-rm -rf html
++html/index.html: $(doxygen_configfile_source) $(beautify_docs_source)
+ 	image_path=""; \
+ 	dir="`pkg-config --silence-errors --variable=prefix gtk+-2.0`/share/gtk-doc/html/gtk"; \
+ 	test -d "$$dir" && image_path="$$dir"; \

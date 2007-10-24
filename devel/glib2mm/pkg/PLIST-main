@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 17:52:52 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/10/24 22:35:28 jasper Exp $
 @pkgpath devel/glib2mm
 %%SHARED%%
 include/glibmm-${V}/
@@ -21,6 +21,7 @@ include/glibmm-${V}/glibmm/i18n.h
 include/glibmm-${V}/glibmm/init.h
 include/glibmm-${V}/glibmm/interface.h
 include/glibmm-${V}/glibmm/iochannel.h
+include/glibmm-${V}/glibmm/keyfile.h
 include/glibmm-${V}/glibmm/listhandle.h
 include/glibmm-${V}/glibmm/main.h
 include/glibmm-${V}/glibmm/markup.h
@@ -38,12 +39,14 @@ include/glibmm-${V}/glibmm/private/date_p.h
 include/glibmm-${V}/glibmm/private/fileutils_p.h
 include/glibmm-${V}/glibmm/private/interface_p.h
 include/glibmm-${V}/glibmm/private/iochannel_p.h
+include/glibmm-${V}/glibmm/private/keyfile_p.h
 include/glibmm-${V}/glibmm/private/markup_p.h
 include/glibmm-${V}/glibmm/private/module_p.h
 include/glibmm-${V}/glibmm/private/object_p.h
 include/glibmm-${V}/glibmm/private/optioncontext_p.h
 include/glibmm-${V}/glibmm/private/optionentry_p.h
 include/glibmm-${V}/glibmm/private/optiongroup_p.h
+include/glibmm-${V}/glibmm/private/regex_p.h
 include/glibmm-${V}/glibmm/private/shell_p.h
 include/glibmm-${V}/glibmm/private/spawn_p.h
 include/glibmm-${V}/glibmm/private/thread_p.h
@@ -54,6 +57,7 @@ include/glibmm-${V}/glibmm/propertyproxy_base.h
 include/glibmm-${V}/glibmm/quark.h
 include/glibmm-${V}/glibmm/random.h
 include/glibmm-${V}/glibmm/refptr.h
+include/glibmm-${V}/glibmm/regex.h
 include/glibmm-${V}/glibmm/sarray.h
 include/glibmm-${V}/glibmm/shell.h
 include/glibmm-${V}/glibmm/signalproxy.h
