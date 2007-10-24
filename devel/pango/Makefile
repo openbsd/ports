@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/10 19:14:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2007/10/24 22:31:48 jasper Exp $
 
 COMMENT=		library for layout and rendering of text
 
-DISTNAME=		pango-1.16.5
-SHARED_LIBS += pango-1.0	   1300.2    # .1600.5
-SHARED_LIBS += pangox-1.0	   1300.2    # .1600.5
-SHARED_LIBS += pangoft2-1.0	   1300.2    # .1600.5
-SHARED_LIBS += pangoxft-1.0	   1300.2    # .1600.5
-SHARED_LIBS += pangocairo-1.0	   1300.2    # .1600.5
+DISTNAME=		pango-1.18.3
+SHARED_LIBS += pango-1.0	   1400.0    # .1800.2
+SHARED_LIBS += pangox-1.0	   1400.0    # .1800.2
+SHARED_LIBS += pangoft2-1.0	   1400.0    # .1800.2
+SHARED_LIBS += pangoxft-1.0	   1400.0    # .1800.2
+SHARED_LIBS += pangocairo-1.0	   1400.0    # .1800.2
 CATEGORIES=		devel x11
 
-HOMEPAGE=		http://www.gtk.org
+HOMEPAGE=		http://www.gtk.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,12 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xft Xrender c expat fontconfig freetype \
 		glitz m png z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/1.16/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/1.18/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		glib-2.0.>=1200.0,gmodule-2.0.>=1200.0,gobject-2.0.>=1200.0::devel/glib2 \
+LIB_DEPENDS=		glib-2.0.>=1400.0,gmodule-2.0.>=1400.0,gobject-2.0.>=1400.0::devel/glib2 \
 			cairo.>=3::graphics/cairo
 
 USE_X11=		Yes
