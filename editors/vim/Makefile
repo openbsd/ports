@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2007/10/21 18:41:20 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.86 2007/10/24 18:05:10 steven Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -8,7 +8,7 @@ REVISION=	145
 VERSION=	7.1.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
-PKGNAME-main=	vim-${VERSION}
+PKGNAME-main=	vim-${VERSION}p0
 PKGNAME-lang=	vim-lang-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
@@ -65,11 +65,11 @@ WANTLIB+=	m perl util
 .endif
 
 .if ${FLAVOR:L:Mpython}
-PYTHON_VER=	2.4
-CONFIGURE_ENV+=	vi_cv_path_python=${DEPBASE}/bin/python${PYTHON_VER}
+MODULES+=	lang/python
+CONFIGURE_ENV+=	vi_cv_path_python=${MODPY_BIN}
 CONFIGURE_ARGS+=--enable-pythoninterp \
-	--with-python-config-dir=${DEPBASE}/lib/python${PYTHON_VER}/config
-LIB_DEPENDS+=	python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+	--with-python-config-dir=${MODPY_LIBDIR}/config
+LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
 WANTLIB+=	m pthread util
 .endif
 
@@ -113,7 +113,7 @@ RUN_DEPENDS-lang=	::${BUILD_PKGPATH}
 PKG_ARCH-lang=		*
 LIB_DEPENDS-lang=
 WANTLIB-lang=
-MODULES=		devel/gettext
+MODULES+=		devel/gettext
 
 WRKDIST=	${WRKDIR}/${P}
 WRKSRC=		${WRKDIST}/src
