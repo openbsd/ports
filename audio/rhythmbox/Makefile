@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2007/10/24 22:41:36 jasper Exp $
+
+BROKEN=			needs an update to 0.10.x
 
 COMMENT=		Music Management Application
 
