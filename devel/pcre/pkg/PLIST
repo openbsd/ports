@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/06/13 07:19:06 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/10/24 22:28:10 jasper Exp $
 bin/pcre-config
 bin/pcregrep
 bin/pcretest
@@ -55,6 +55,7 @@ lib/pkgconfig/libpcrecpp.pc
 @man man/man3/pcresample.3
 %%SHARED%%
 @man man/man3/pcrestack.3
+@man man/man3/pcresyntax.3
 share/doc/pcre/
 share/doc/pcre/AUTHORS
 share/doc/pcre/COPYING
@@ -100,6 +101,7 @@ share/doc/pcre/html/pcreposix.html
 share/doc/pcre/html/pcreprecompile.html
 share/doc/pcre/html/pcresample.html
 share/doc/pcre/html/pcrestack.html
+share/doc/pcre/html/pcresyntax.html
 share/doc/pcre/html/pcretest.html
 share/doc/pcre/pcre-config.txt
 share/doc/pcre/pcre.txt
