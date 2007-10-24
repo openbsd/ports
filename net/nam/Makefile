@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2007/10/24 14:59:36 steven Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	UCB/LBNL Network Animator
 
-DISTNAME=	nam-src-1.9
-PKGNAME=	nam-1.9p0
+V=		1.13
+DISTNAME=	nam-src-$V
+PKGNAME=	nam-$V
 CATEGORIES=	net
 
-MASTER_SITES= 	ftp://ftp.isi.edu/nsnam/ \
-		http://www.isi.edu/nsnam/dist/
+MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=nsnam/}
 
 HOMEPAGE=	http://www.isi.edu/nsnam/nam/
 
@@ -17,15 +17,15 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext c m otcl stdc++ tcl83 tk83 z
+WANTLIB=		X11 Xext c m otcl stdc++ tcl84 tk84 z
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:tclcl->=1.0b13p0:devel/tclcl
 
-WRKDIST=	${WRKDIR}/${DISTNAME:S/-src//g}
+WRKDIST=	${WRKDIR}/nam-$V
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3 \
+CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4 \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
 

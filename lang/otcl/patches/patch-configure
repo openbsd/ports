@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.4 2006/01/04 20:26:59 alek Exp $
---- configure.orig	2003-08-20 00:43:44.000000000 -0400
-+++ configure	2003-08-20 00:47:19.000000000 -0400
-@@ -4213,16 +4213,16 @@ case $system in
+$OpenBSD: patch-configure,v 1.5 2007/10/24 14:58:16 steven Exp $
+--- configure.orig	Sun Feb 18 23:19:10 2007
++++ configure	Sat Oct 13 15:48:01 2007
+@@ -4163,6 +4163,7 @@ TCL_H_PLACES=" \
+ 		/usr/local/lib/tcl$TCL_HI_VERS \
+ 		/usr/local/lib/tcl$TCL_ALT_VERS \
+ 		/usr/local/include/tcl$TCL_VERS \
++		/usr/local/include/tcl$TCL_HI_VERS/generic \
+ 		/usr/local/include/tcl$TCL_HI_VERS \
+ 		/usr/local/include/tcl$TCL_ALT_VERS \
+ 		/usr/local/include \
+@@ -5532,16 +5533,16 @@ case $system in
          DL_LIBS="-ldl"
          SHLD_FLAGS="-Wl,-Bexport"
          ;;
