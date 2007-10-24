@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.24 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/10/24 22:38:53 jasper Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
-GNOME_VERSION=		2.6.1
+GNOME_VERSION=		2.6.2
 GNOME_PROJECT=		libglade
-PKGNAME=		libglade2-${GNOME_VERSION}p0
-SHARED_LIBS +=	glade-2.0            0.9      # .0.8
+PKGNAME=		libglade2-${GNOME_VERSION}
+SHARED_LIBS +=	glade-2.0            1.0      # .0.8
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.gnome.org
+HOMEPAGE=		http://www.gnome.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender atk-1.0 cairo expat fontconfig freetype glib-2.0 \
-		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png z
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
+		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 png z
 
 MODULES=		devel/gettext \
 			lang/python \
