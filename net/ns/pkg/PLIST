@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/10/24 15:01:09 steven Exp $
 bin/ns
 @man man/man1/ns.1
 share/examples/ns2/
@@ -10,6 +10,7 @@ share/examples/ns2/diffusion-rate-run.tcl
 share/examples/ns2/dumbbell.tcl
 share/examples/ns2/example.tcl
 share/examples/ns2/flooding-run.tcl
+share/examples/ns2/flooding.tcl
 share/examples/ns2/fq-cbr.tcl
 share/examples/ns2/fq.tcl
 share/examples/ns2/grid2.tcl
@@ -109,6 +110,7 @@ share/examples/ns2/web-traffic.tcl
 share/examples/ns2/wired-cum-wireless-sim.tcl
 share/examples/ns2/wireless-demo-csci694.tcl
 share/examples/ns2/wireless-dsdv-newnode.tcl
+share/examples/ns2/wireless-flooding.tcl
 share/examples/ns2/wireless-landmark.tcl
 share/examples/ns2/wireless-mip-test.tcl
 share/examples/ns2/wireless-mitf.tcl
@@ -116,5 +118,7 @@ share/examples/ns2/wireless-newnode-energy.tcl
 share/examples/ns2/wireless-pkt-demo.tcl
 share/examples/ns2/wireless-shadowing-test.tcl
 share/examples/ns2/wireless-shadowing-vis-test.tcl
+share/examples/ns2/wireless-simple-mac.tcl
 share/examples/ns2/wireless-test.tcl
 share/examples/ns2/wireless.tcl
+share/examples/ns2/worm.tcl

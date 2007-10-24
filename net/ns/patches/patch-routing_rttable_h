@@ -1,7 +1,7 @@
-$OpenBSD: patch-routing_rttable_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
---- routing/rttable.h.orig	2003-02-26 17:09:15.000000000 -0500
-+++ routing/rttable.h	2003-08-22 07:45:21.000000000 -0400
-@@ -52,7 +52,7 @@ redistribute these changes without encum
+$OpenBSD: patch-routing_rttable_h,v 1.2 2007/10/24 15:01:09 steven Exp $
+--- routing/rttable.h.orig	Tue Aug  2 21:48:52 2005
++++ routing/rttable.h	Sat Oct 13 22:22:22 2007
+@@ -44,7 +44,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
  #include "config.h"
  #include "scheduler.h"

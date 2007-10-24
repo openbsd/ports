@@ -1,7 +1,7 @@
-$OpenBSD: patch-webcache_webtraf_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
---- webcache/webtraf.h.orig	2003-02-26 17:11:31.000000000 -0500
-+++ webcache/webtraf.h	2003-08-22 07:45:21.000000000 -0400
-@@ -39,7 +39,7 @@
+$OpenBSD: patch-webcache_webtraf_h,v 1.2 2007/10/24 15:01:09 steven Exp $
+--- webcache/webtraf.h.orig	Thu Aug 25 20:58:13 2005
++++ webcache/webtraf.h	Sat Oct 13 22:22:22 2007
+@@ -60,7 +60,7 @@
  #include "random.h"
  #include "timer-handler.h"
  
