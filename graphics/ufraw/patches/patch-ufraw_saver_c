@@ -1,0 +1,12 @@
+$OpenBSD: patch-ufraw_saver_c,v 1.1 2007/10/24 22:44:22 jasper Exp $
+--- ufraw_saver.c.orig	Mon Jul  9 14:54:27 2007
++++ ufraw_saver.c	Tue Oct 16 12:57:56 2007
+@@ -239,7 +239,7 @@ long ufraw_saver(void *widget, gpointer user_data)
+     gtk_file_chooser_set_current_name(fileChooser, base);
+     g_free(base);
+ 
+-    GtkTooltips *tips = gtk_tooltips_new();
++    GtkTooltip *tips = gtk_tooltips_new();
+ #if GTK_CHECK_VERSION(2,10,0)
+     g_object_ref_sink(GTK_OBJECT(tips));
+ #else

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ufraw_developer_c,v 1.2 2006/10/28 16:48:16 mbalmer Exp $
---- ufraw_developer.c.orig	Thu Aug 24 21:33:42 2006
-+++ ufraw_developer.c	Sat Oct 28 18:39:51 2006
-@@ -30,7 +30,7 @@ developer_data *developer_init()
+$OpenBSD: patch-ufraw_developer_c,v 1.3 2007/10/24 22:44:22 jasper Exp $
+--- ufraw_developer.c.orig	Sat Jun 16 16:37:30 2007
++++ ufraw_developer.c	Tue Oct 16 12:57:56 2007
+@@ -41,7 +41,7 @@ developer_data *developer_init()
      d->saturation = -1;
      for (i=0; i<profile_types; i++) {
          d->profile[i] = NULL;
@@ -10,7 +10,7 @@ $OpenBSD: patch-ufraw_developer_c,v 1.2 2006/10/28 16:48:16 mbalmer Exp $
      }
      memset(&d->baseCurveData, 0, sizeof(d->baseCurveData));
      d->baseCurveData.m_gamma = -1.0;
-@@ -85,7 +85,7 @@ void developer_profile(developer_data *d
+@@ -97,7 +97,7 @@ void developer_profile(developer_data *d, int type, pr
              g_strlcpy(p->productName, cmsTakeProductName(d->profile[type]),
                          max_name);
          else
