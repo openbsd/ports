@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.38 2007/09/13 10:51:13 djm Exp $
+# $OpenBSD: Makefile,v 1.39 2007/10/24 22:29:02 jasper Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
-VERSION=		2.12.13
+VERSION=		2.14.2
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p0
+PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.gtk.org
+HOMEPAGE=		http://www.gtk.org/
 
-SHARED_LIBS +=	glib-2.0             1200.13   # .1200.13
-SHARED_LIBS +=	gobject-2.0          1200.13   # .1200.13
-SHARED_LIBS +=	gmodule-2.0          1200.13   # .1200.13  
-SHARED_LIBS +=	gthread-2.0          1200.13   # .1200.13
+SHARED_LIBS +=	glib-2.0             1400.0   # .1400.1
+SHARED_LIBS +=	gobject-2.0          1400.0   # .1400.1
+SHARED_LIBS +=	gmodule-2.0          1400.0   # .1400.1
+SHARED_LIBS +=	gthread-2.0          1400.0   # .1400.1
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,13 +22,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.12/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.14/}
 EXTRACT_SUFX=		.tar.bz2
 
 MULTI_PACKAGES=		-main -docs
 
 MODULES=		devel/gettext
 WANTLIB-main=		c
+
+LIB_DEPENDS-main=	pcre:pcre->=7.2:devel/pcre
+
 
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
@@ -48,7 +51,9 @@ PATCH_LIST=		patch-* PPC-patch-glib_Makefile_in
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--enable-static \
+			--with-pcre=system
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

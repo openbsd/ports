@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_gutils_c,v 1.1 2007/04/24 18:21:14 jasper Exp $
---- glib/gutils.c.orig	Thu Jul  6 14:30:16 2006
-+++ glib/gutils.c	Thu Dec 21 14:07:45 2006
-@@ -2489,7 +2489,7 @@ g_get_system_data_dirs (void)
+$OpenBSD: patch-glib_gutils_c,v 1.2 2007/10/24 22:29:03 jasper Exp $
+--- glib/gutils.c.orig	Sun Sep 16 18:28:32 2007
++++ glib/gutils.c	Tue Oct  2 20:47:04 2007
+@@ -2619,7 +2619,7 @@ g_get_system_data_dirs (void)
        gchar *data_dirs = (gchar *) g_getenv ("XDG_DATA_DIRS");
  
        if (!data_dirs || !data_dirs[0])

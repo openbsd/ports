@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.12 2007/04/23 16:22:07 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.13 2007/10/24 22:29:03 jasper Exp $
 @conflict glib2-<2.4.6
 share/aclocal/
 share/gtk-doc/
@@ -43,10 +43,12 @@ share/gtk-doc/html/glib/glib-Miscellaneous-Macros.html
 share/gtk-doc/html/glib/glib-Miscellaneous-Utility-Functions.html
 share/gtk-doc/html/glib/glib-N-ary-Trees.html
 share/gtk-doc/html/glib/glib-Numerical-Definitions.html
+share/gtk-doc/html/glib/glib-Perl-compatible-regular-expressions.html
 share/gtk-doc/html/glib/glib-Pointer-Arrays.html
 share/gtk-doc/html/glib/glib-Quarks.html
 share/gtk-doc/html/glib/glib-Random-Numbers.html
 share/gtk-doc/html/glib/glib-Relations-and-Tuples.html
+share/gtk-doc/html/glib/glib-Sequences.html
 share/gtk-doc/html/glib/glib-Shell-related-Utilities.html
 share/gtk-doc/html/glib/glib-Simple-XML-Subset-Parser.html
 share/gtk-doc/html/glib/glib-Singly-Linked-Lists.html
@@ -73,6 +75,7 @@ share/gtk-doc/html/glib/glib-cross-compiling.html
 share/gtk-doc/html/glib/glib-data-types.html
 share/gtk-doc/html/glib/glib-fundamentals.html
 share/gtk-doc/html/glib/glib-gettextize.html
+share/gtk-doc/html/glib/glib-regex-syntax.html
 share/gtk-doc/html/glib/glib-resources.html
 share/gtk-doc/html/glib/glib-running.html
 share/gtk-doc/html/glib/glib-utilities.html
@@ -90,6 +93,7 @@ share/gtk-doc/html/glib/ix05.html
 share/gtk-doc/html/glib/ix06.html
 share/gtk-doc/html/glib/ix07.html
 share/gtk-doc/html/glib/ix08.html
+share/gtk-doc/html/glib/ix09.html
 share/gtk-doc/html/glib/left.png
 share/gtk-doc/html/glib/mainloop-states.gif
 share/gtk-doc/html/glib/right.png
@@ -99,13 +103,13 @@ share/gtk-doc/html/glib/up.png
 share/gtk-doc/html/gobject/
 share/gtk-doc/html/gobject/GTypeModule.html
 share/gtk-doc/html/gobject/GTypePlugin.html
-share/gtk-doc/html/gobject/ch01.html
 share/gtk-doc/html/gobject/ch01s02.html
-share/gtk-doc/html/gobject/ch02.html
 share/gtk-doc/html/gobject/ch06s03.html
 share/gtk-doc/html/gobject/ch07s02.html
 share/gtk-doc/html/gobject/ch07s03.html
 share/gtk-doc/html/gobject/chapter-gobject.html
+share/gtk-doc/html/gobject/chapter-gtype.html
+share/gtk-doc/html/gobject/chapter-intro.html
 share/gtk-doc/html/gobject/chapter-signal.html
 share/gtk-doc/html/gobject/glib-genmarshal.html
 share/gtk-doc/html/gobject/glib-mkenums.html
@@ -151,6 +155,7 @@ share/gtk-doc/html/gobject/ix05.html
 share/gtk-doc/html/gobject/ix06.html
 share/gtk-doc/html/gobject/ix07.html
 share/gtk-doc/html/gobject/ix08.html
+share/gtk-doc/html/gobject/ix09.html
 share/gtk-doc/html/gobject/left.png
 share/gtk-doc/html/gobject/pr01.html
 share/gtk-doc/html/gobject/pt01.html

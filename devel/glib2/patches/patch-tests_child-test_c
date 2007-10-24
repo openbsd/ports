@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_child-test_c,v 1.1 2005/11/13 06:22:03 marcm Exp $
---- tests/child-test.c.orig	Mon Oct 31 21:12:02 2005
-+++ tests/child-test.c	Mon Oct 31 21:12:36 2005
-@@ -174,7 +174,7 @@ main (int argc, char *argv[])
+$OpenBSD: patch-tests_child-test_c,v 1.2 2007/10/24 22:29:03 jasper Exp $
+--- tests/child-test.c.orig	Sun Sep 16 18:28:30 2007
++++ tests/child-test.c	Tue Oct  2 20:47:04 2007
+@@ -175,7 +175,7 @@ main (int argc, char *argv[])
  #ifdef G_OS_WIN32
    system ("ipconfig /all");
  #else
