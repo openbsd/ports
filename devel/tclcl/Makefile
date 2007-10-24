@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2007/10/24 14:58:57 steven Exp $
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
 
 COMMENT=	Tcl/C++ interface used by ns and nam
 
-V=1.0b13
-DISTFILES=	tclcl-src-$V.tar.gz
-DISTNAME=	tclcl-$V
-PKGNAME=	${DISTNAME}p0
+V=		1.19
+DISTNAME=	tclcl-src-$V
+PKGNAME=	tclcl-$V
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.isi.edu/nsnam/tclcl/index.html
@@ -18,12 +17,13 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c m stdc++
 
-MASTER_SITES=	http://www.isi.edu/nsnam/dist/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=otcl-tclcl/}
+WRKDIST=	${WRKDIR}/tclcl-$V
 
 LIB_DEPENDS=	otcl.>=1::lang/otcl
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
+CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${PREFIX}/bin

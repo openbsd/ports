@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2007/10/24 14:58:57 steven Exp $
+--- configure.orig	Wed Oct 24 15:42:32 2007
++++ configure	Wed Oct 24 15:42:55 2007
+@@ -5304,6 +5304,7 @@ TCL_H_PLACES=" \
+ 		/usr/local/lib/tcl$TCL_HI_VERS \
+ 		/usr/local/lib/tcl$TCL_ALT_VERS \
+ 		/usr/local/include/tcl$TCL_VERS \
++		/usr/local/include/tcl$TCL_HI_VERS/generic \
+ 		/usr/local/include/tcl$TCL_HI_VERS \
+ 		/usr/local/include/tcl$TCL_ALT_VERS \
+ 		/usr/local/include \
