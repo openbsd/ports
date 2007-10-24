@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_tracedialog_c,v 1.1.1.1 2007/05/29 04:48:59 jason Exp $
---- src/gui_tracedialog.c.orig	Wed Nov 23 12:12:36 2005
-+++ src/gui_tracedialog.c	Wed Nov 23 12:13:26 2005
-@@ -67,10 +67,8 @@ stop_tracing (void)
+$OpenBSD: patch-src_gui_tracedialog_c,v 1.2 2007/10/24 22:43:16 jasper Exp $
+--- src/gui_tracedialog.c.orig	Mon Jan 22 08:33:42 2007
++++ src/gui_tracedialog.c	Tue Oct 16 13:27:52 2007
+@@ -64,10 +64,8 @@ stop_tracing (void)
  	fclose (finfo.fd);
  	dup2 (saved_fd, STDERR_FILENO);
  	close (saved_fd);
@@ -11,5 +11,5 @@ $OpenBSD: patch-src_gui_tracedialog_c,v 1.1.1.1 2007/05/29 04:48:59 jason Exp $
  	stderr = fdopen (STDERR_FILENO, "w");
 -#endif
  #endif
- 	hamlibresult = start_hamlib (preferences.radio, preferences.device,
+ 	hamlibresult = start_hamlib (preferences.rigid, preferences.device,
  		RIG_DEBUG_NONE, preferences.polltime);

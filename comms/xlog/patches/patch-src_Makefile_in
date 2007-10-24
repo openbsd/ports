@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2007/10/24 22:43:16 jasper Exp $
+--- src/Makefile.in.orig	Tue Oct 16 13:55:30 2007
++++ src/Makefile.in	Tue Oct 16 13:55:50 2007
+@@ -231,7 +231,6 @@ INCLUDES = \
+ 	-DG_DISABLE_DEPRECATED \
+ 	-DGDK_DISABLE_DEPRECATED \
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED \
+-	-DGTK_DISABLE_DEPRECATED \
+ 	-DDATADIR=\""$(datadir)"\" \
+ 	-DXLOG_LOCALEDIR=\""$(datadir)/locale"\" \
+ 	-DXLOG_DATADIR=\""$(datadir)/xlog"\" 
