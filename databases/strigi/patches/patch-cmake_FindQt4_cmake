@@ -1,7 +1,7 @@
-$OpenBSD: patch-cmake_FindQt4_cmake,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
---- cmake/FindQt4.cmake.orig	Thu Apr  5 10:08:25 2007
-+++ cmake/FindQt4.cmake	Fri Jun  8 23:26:03 2007
-@@ -174,6 +174,19 @@
+$OpenBSD: patch-cmake_FindQt4_cmake,v 1.2 2007/10/24 22:49:38 espie Exp $
+--- cmake/FindQt4.cmake.orig	Mon Jul 16 13:26:59 2007
++++ cmake/FindQt4.cmake	Thu Oct 25 00:10:55 2007
+@@ -184,6 +184,19 @@
  # Copyright (c) 2002 Kitware, Inc., Insight Consortium.  All rights reserved.
  # See Copyright.txt or http://www.cmake.org/HTML/Copyright.html for details.
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-cmake_FindQt4_cmake,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
  
  INCLUDE(CheckSymbolExists)
  INCLUDE(MacroAddFileDependencies)
-@@ -206,7 +219,7 @@ MACRO(QT_QUERY_QMAKE outvar invar)
+@@ -217,7 +230,7 @@ MACRO(QT_QUERY_QMAKE outvar invar)
  ENDMACRO(QT_QUERY_QMAKE)
  
  # check for qmake
@@ -30,7 +30,7 @@ $OpenBSD: patch-cmake_FindQt4_cmake,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
    $ENV{QTDIR}/bin
-@@ -541,7 +554,7 @@ IF (QT4_QMAKE_FOUND)
+@@ -557,7 +570,7 @@ IF (QT4_QMAKE_FOUND)
    MARK_AS_ADVANCED( QT_LIBRARY_DIR QT_INCLUDE_DIR QT_QT_INCLUDE_DIR QT_DOC_DIR QT_MKSPECS_DIR QT_PLUGINS_DIR)
  
    # Set QT_INCLUDES
@@ -39,7 +39,7 @@ $OpenBSD: patch-cmake_FindQt4_cmake,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
  
  
    ########################################
-@@ -1135,7 +1148,142 @@ IF (QT4_QMAKE_FOUND)
+@@ -1190,7 +1203,142 @@ IF (QT4_QMAKE_FOUND)
      SET(QT_QTCORE_LIBRARY ${QT_QTCORE_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})
    ENDIF(UNIX)
  
@@ -182,7 +182,7 @@ $OpenBSD: patch-cmake_FindQt4_cmake,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
    #######################################
    #
    #       compatibility settings 
-@@ -1163,4 +1311,3 @@ ELSE(QT4_QMAKE_FOUND)
+@@ -1218,4 +1366,3 @@ ELSE(QT4_QMAKE_FOUND)
     ENDIF(Qt4_FIND_REQUIRED)
   
  ENDIF (QT4_QMAKE_FOUND)

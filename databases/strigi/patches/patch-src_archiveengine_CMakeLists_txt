@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_archiveengine_CMakeLists_txt,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
---- src/archiveengine/CMakeLists.txt.orig	Fri Jun  8 22:59:16 2007
-+++ src/archiveengine/CMakeLists.txt	Fri Jun  8 22:59:32 2007
-@@ -11,4 +11,4 @@ add_library(archiveengine
+$OpenBSD: patch-src_archiveengine_CMakeLists_txt,v 1.2 2007/10/24 22:49:38 espie Exp $
+--- src/archiveengine/CMakeLists.txt.orig	Mon Aug  6 00:15:19 2007
++++ src/archiveengine/CMakeLists.txt	Thu Oct 25 00:10:55 2007
+@@ -15,4 +15,4 @@ add_library(archiveengine
  	streamengine.cpp
  )
  

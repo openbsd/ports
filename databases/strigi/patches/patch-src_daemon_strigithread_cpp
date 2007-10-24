@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_daemon_strigithread_cpp,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
---- src/daemon/strigithread.cpp.orig	Tue Mar 13 15:19:45 2007
-+++ src/daemon/strigithread.cpp	Thu Jun  7 20:11:52 2007
+$OpenBSD: patch-src_daemon_strigithread_cpp,v 1.2 2007/10/24 22:49:38 espie Exp $
+--- src/daemon/strigithread.cpp.orig	Thu Jul  5 11:03:40 2007
++++ src/daemon/strigithread.cpp	Thu Oct 25 00:14:14 2007
 @@ -99,12 +99,14 @@ threadstarter(void *d) {
                  + ".threadstarter",
-                 string("error setting priority: ") + strerror(errno))
+                 string("error setting priority: ") + strerror(errno));
          }
 +#ifndef __OpenBSD__
          r = sched_setscheduler(0, SCHED_BATCH, &param);
          if (r != 0) {
              STRIGI_LOG_INFO (string("strigi.daemon.") + thread->name
                  + ".threadstarter",
-                 string("error setting to batch: ") + strerror(errno))
+                 string("error setting to batch: ") + strerror(errno));
          }
 +#endif
  #ifdef HAVE_LINUXIOPRIO

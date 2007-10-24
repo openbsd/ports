@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:27:39 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/24 22:49:38 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	document indexer
 CATEGORIES=	databases devel textproc sysutils
 
 HOMEPAGE=	http://www.vandenoever.info/software/strigi/
-DISTNAME=	strigi-0.5.1
+DISTNAME=	strigi-0.5.5
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${HOMEPAGE}
 

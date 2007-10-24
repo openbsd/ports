@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/10/24 22:49:38 espie Exp $
 bin/deepfind
 bin/deepgrep
 bin/luceneindexer
@@ -16,6 +16,7 @@ include/strigi/asyncsocketclient.h
 include/strigi/bufferedstream.h
 include/strigi/clientinterface.h
 include/strigi/diranalyzer.h
+include/strigi/encodinginputstream.h
 include/strigi/fieldproperties.h
 include/strigi/fieldtypes.h
 include/strigi/fileinputstream.h
@@ -40,10 +41,10 @@ include/strigi/streamsaxanalyzer.h
 include/strigi/streamthroughanalyzer.h
 include/strigi/strigiconfig.h
 include/strigi/strigihtmlgui.h
-include/strigi/stringreader.h
 include/strigi/stringstream.h
 include/strigi/substreamprovider.h
 include/strigi/substreamproviderprovider.h
+include/strigi/textutils.h
 lib/libcluceneindex.so
 @lib lib/libcluceneindex.so.${LIBcluceneindex_VERSION}
 lib/libsearchclient.so
@@ -59,26 +60,35 @@ lib/libstrigiqtdbusclient.so
 lib/pkgconfig/libstreamanalyzer.pc
 lib/pkgconfig/libstreams.pc
 lib/strigi/
+lib/strigi/StrigiConfig.cmake
+lib/strigi/strigiea_jpeg.so
 lib/strigi/strigila_cpp.so
 lib/strigi/strigila_deb.so
+lib/strigi/strigila_namespaceharvester.so
 lib/strigi/strigila_xpm.so
 lib/strigi/strigita_au.so
+lib/strigi/strigita_gif.so
 lib/strigi/strigita_pcx.so
 lib/strigi/strigita_xbm.so
+share/dbus-1/services/org.freedesktop.xesam.searcher.service
+share/dbus-1/services/vandenoever.strigi.service
 share/strigi/
 share/strigi/fieldproperties/
 share/strigi/fieldproperties/strigi_audio.fieldproperties
 share/strigi/fieldproperties/strigi_av.fieldproperties
 share/strigi/fieldproperties/strigi_chemistry.fieldproperties
+share/strigi/fieldproperties/strigi_compressed.fieldproperties
 share/strigi/fieldproperties/strigi_container.fieldproperties
 share/strigi/fieldproperties/strigi_content.fieldproperties
 share/strigi/fieldproperties/strigi_cursor.fieldproperties
+share/strigi/fieldproperties/strigi_diff.fieldproperties
 share/strigi/fieldproperties/strigi_documentstats.fieldproperties
 share/strigi/fieldproperties/strigi_email.fieldproperties
 share/strigi/fieldproperties/strigi_font.fieldproperties
 share/strigi/fieldproperties/strigi_image.fieldproperties
 share/strigi/fieldproperties/strigi_media.fieldproperties
 share/strigi/fieldproperties/strigi_message.fieldproperties
+share/strigi/fieldproperties/strigi_ole.fieldproperties
 share/strigi/fieldproperties/strigi_photo.fieldproperties
 share/strigi/fieldproperties/strigi_software.fieldproperties
 share/strigi/fieldproperties/strigi_source_code.fieldproperties
@@ -87,3 +97,4 @@ share/strigi/fieldproperties/strigi_text.fieldproperties
 share/strigi/fieldproperties/strigi_trash.fieldproperties
 share/strigi/fieldproperties/strigi_user.fieldproperties
 share/strigi/fieldproperties/strigi_video.fieldproperties
+share/strigi/fieldproperties/strigi_xml.fieldproperties
