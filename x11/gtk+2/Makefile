@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.54 2007/09/10 19:15:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2007/10/24 22:34:34 jasper Exp $
 
 SHARED_ONLY=			Yes
 
 COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+-2 documentation
 
-VERSION=			2.10.14
+VERSION=			2.12.1
 DISTNAME=			gtk+-${VERSION}
 PKGNAME-main=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-SHARED_LIBS +=	gdk_pixbuf-2.0       1000.14  # .1000.14
-SHARED_LIBS +=	gdk-x11-2.0          1000.14  # .1000.14
-SHARED_LIBS +=	gtk-x11-2.0          1000.14  # .1000.14
-SHARED_LIBS +=	gdk_pixbuf_xlib-2.0  1000.14  # .1000.14
+SHARED_LIBS +=	gdk_pixbuf-2.0       1200.0   # .1200.0
+SHARED_LIBS +=	gdk-x11-2.0          1200.0   # .1200.0
+SHARED_LIBS +=	gtk-x11-2.0          1200.0   # .1200.0
+SHARED_LIBS +=	gdk_pixbuf_xlib-2.0  1200.0   # .1200.0
 CATEGORIES=			x11 devel
 
 HOMEPAGE=			http://www.gtk.org/
@@ -23,15 +23,15 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Yes
 PERMIT_DISTFILES_FTP=		Yes
 
-MASTER_SITES=			${MASTER_SITE_GNOME:=sources/gtk+/2.10/}
+MASTER_SITES=			${MASTER_SITE_GNOME:=sources/gtk+/2.12/}
 EXTRACT_SUFX=			.tar.bz2
 
 MULTI_PACKAGES=         	-main -docs
 
-WANTLIB-main=		X11.>=10 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
-			Xrender Xrandr c cairo expat fontconfig freetype \
-			glib-2.0 glitz m gmodule-2.0 gobject-2.0 gthread-2.0 \
-			pthread z
+WANTLIB-main=		X11.>=10 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+			Xfixes Xi Xinerama Xrender Xrandr c cairo expat \
+			fontconfig freetype glib-2.0 glitz m gmodule-2.0 \
+			gobject-2.0 gthread-2.0 pthread z
 
 MODULES=			devel/gettext
 

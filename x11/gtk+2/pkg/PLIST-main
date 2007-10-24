@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/05/12 20:24:56 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2007/10/24 22:34:34 jasper Exp $
 @pkgpath x11/gtk+2
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
+bin/gtk-builder-convert
 bin/gtk-demo
 bin/gtk-query-immodules-2.0
 bin/gtk-update-icon-cache
@@ -72,6 +73,8 @@ include/gtk-2.0/gtk/gtkbbox.h
 include/gtk-2.0/gtk/gtkbin.h
 include/gtk-2.0/gtk/gtkbindings.h
 include/gtk-2.0/gtk/gtkbox.h
+include/gtk-2.0/gtk/gtkbuildable.h
+include/gtk-2.0/gtk/gtkbuilder.h
 include/gtk-2.0/gtk/gtkbutton.h
 include/gtk-2.0/gtk/gtkcalendar.h
 include/gtk-2.0/gtk/gtkcelleditable.h
@@ -181,6 +184,7 @@ include/gtk-2.0/gtk/gtkradiomenuitem.h
 include/gtk-2.0/gtk/gtkradiotoolbutton.h
 include/gtk-2.0/gtk/gtkrange.h
 include/gtk-2.0/gtk/gtkrc.h
+include/gtk-2.0/gtk/gtkrecentaction.h
 include/gtk-2.0/gtk/gtkrecentchooser.h
 include/gtk-2.0/gtk/gtkrecentchooserdialog.h
 include/gtk-2.0/gtk/gtkrecentchoosermenu.h
@@ -189,6 +193,7 @@ include/gtk-2.0/gtk/gtkrecentfilter.h
 include/gtk-2.0/gtk/gtkrecentmanager.h
 include/gtk-2.0/gtk/gtkruler.h
 include/gtk-2.0/gtk/gtkscale.h
+include/gtk-2.0/gtk/gtkscalebutton.h
 include/gtk-2.0/gtk/gtkscrollbar.h
 include/gtk-2.0/gtk/gtkscrolledwindow.h
 include/gtk-2.0/gtk/gtkselection.h
@@ -224,6 +229,7 @@ include/gtk-2.0/gtk/gtktoggletoolbutton.h
 include/gtk-2.0/gtk/gtktoolbar.h
 include/gtk-2.0/gtk/gtktoolbutton.h
 include/gtk-2.0/gtk/gtktoolitem.h
+include/gtk-2.0/gtk/gtktooltip.h
 include/gtk-2.0/gtk/gtktooltips.h
 include/gtk-2.0/gtk/gtktree.h
 include/gtk-2.0/gtk/gtktreednd.h
@@ -243,6 +249,7 @@ include/gtk-2.0/gtk/gtkvbbox.h
 include/gtk-2.0/gtk/gtkvbox.h
 include/gtk-2.0/gtk/gtkversion.h
 include/gtk-2.0/gtk/gtkviewport.h
+include/gtk-2.0/gtk/gtkvolumebutton.h
 include/gtk-2.0/gtk/gtkvpaned.h
 include/gtk-2.0/gtk/gtkvruler.h
 include/gtk-2.0/gtk/gtkvscale.h
@@ -278,6 +285,9 @@ lib/gtk-2.0/2.10.0/immodules/im-inuktitut.so
 lib/gtk-2.0/2.10.0/immodules/im-ipa.a
 lib/gtk-2.0/2.10.0/immodules/im-ipa.la
 lib/gtk-2.0/2.10.0/immodules/im-ipa.so
+lib/gtk-2.0/2.10.0/immodules/im-multipress.a
+lib/gtk-2.0/2.10.0/immodules/im-multipress.la
+lib/gtk-2.0/2.10.0/immodules/im-multipress.so
 lib/gtk-2.0/2.10.0/immodules/im-thai.a
 lib/gtk-2.0/2.10.0/immodules/im-thai.la
 lib/gtk-2.0/2.10.0/immodules/im-thai.so
@@ -357,7 +367,6 @@ lib/libgdk_pixbuf_xlib-2.0.la
 lib/libgtk-x11-2.0.a
 lib/libgtk-x11-2.0.la
 @lib lib/libgtk-x11-2.0.so.${LIBgtk-x11-2.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gdk-2.0.pc
 lib/pkgconfig/gdk-pixbuf-2.0.pc
 lib/pkgconfig/gdk-pixbuf-xlib-2.0.pc
@@ -367,6 +376,7 @@ lib/pkgconfig/gtk+-unix-print-2.0.pc
 lib/pkgconfig/gtk+-x11-2.0.pc
 @man man/man1/gdk-pixbuf-csource.1
 @man man/man1/gdk-pixbuf-query-loaders.1
+@man man/man1/gtk-builder-convert.1
 @man man/man1/gtk-query-immodules-2.0.1
 @man man/man1/gtk-update-icon-cache.1
 share/aclocal/gtk-2.0.m4
@@ -377,11 +387,13 @@ share/gtk-2.0/demo/apple-red.png
 share/gtk-2.0/demo/appwindow.c
 share/gtk-2.0/demo/assistant.c
 share/gtk-2.0/demo/background.jpg
+share/gtk-2.0/demo/builder.c
 share/gtk-2.0/demo/button_box.c
 share/gtk-2.0/demo/changedisplay.c
 share/gtk-2.0/demo/clipboard.c
 share/gtk-2.0/demo/colorsel.c
 share/gtk-2.0/demo/combobox.c
+share/gtk-2.0/demo/demo.ui
 share/gtk-2.0/demo/dialog.c
 share/gtk-2.0/demo/drawingarea.c
 share/gtk-2.0/demo/editable_cells.c
@@ -427,8 +439,6 @@ share/locale/ang/LC_MESSAGES/gtk20-properties.mo
 share/locale/ang/LC_MESSAGES/gtk20.mo
 share/locale/ar/LC_MESSAGES/gtk20-properties.mo
 share/locale/ar/LC_MESSAGES/gtk20.mo
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gtk20-properties.mo
 share/locale/as/LC_MESSAGES/gtk20.mo
 share/locale/az/LC_MESSAGES/gtk20-properties.mo
@@ -507,6 +517,10 @@ share/locale/ia/LC_MESSAGES/gtk20-properties.mo
 share/locale/ia/LC_MESSAGES/gtk20.mo
 share/locale/id/LC_MESSAGES/gtk20-properties.mo
 share/locale/id/LC_MESSAGES/gtk20.mo
+share/locale/io/
+share/locale/io/LC_MESSAGES/
+share/locale/io/LC_MESSAGES/gtk20-properties.mo
+share/locale/io/LC_MESSAGES/gtk20.mo
 share/locale/is/LC_MESSAGES/gtk20-properties.mo
 share/locale/is/LC_MESSAGES/gtk20.mo
 share/locale/it/LC_MESSAGES/gtk20-properties.mo
@@ -555,6 +569,8 @@ share/locale/nso/
 share/locale/nso/LC_MESSAGES/
 share/locale/nso/LC_MESSAGES/gtk20-properties.mo
 share/locale/nso/LC_MESSAGES/gtk20.mo
+share/locale/oc/LC_MESSAGES/gtk20-properties.mo
+share/locale/oc/LC_MESSAGES/gtk20.mo
 share/locale/or/LC_MESSAGES/gtk20-properties.mo
 share/locale/or/LC_MESSAGES/gtk20.mo
 share/locale/pa/LC_MESSAGES/gtk20-properties.mo
@@ -571,10 +587,6 @@ share/locale/ru/LC_MESSAGES/gtk20-properties.mo
 share/locale/ru/LC_MESSAGES/gtk20.mo
 share/locale/rw/LC_MESSAGES/gtk20-properties.mo
 share/locale/rw/LC_MESSAGES/gtk20.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
-share/locale/si/LC_MESSAGES/gtk20-properties.mo
-share/locale/si/LC_MESSAGES/gtk20.mo
 share/locale/sk/LC_MESSAGES/gtk20-properties.mo
 share/locale/sk/LC_MESSAGES/gtk20.mo
 share/locale/sl/LC_MESSAGES/gtk20-properties.mo
@@ -613,10 +625,10 @@ share/locale/uz/
 share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/gtk20-properties.mo
 share/locale/uz/LC_MESSAGES/gtk20.mo
-share/locale/uz@Latn/
-share/locale/uz@Latn/LC_MESSAGES/
-share/locale/uz@Latn/LC_MESSAGES/gtk20-properties.mo
-share/locale/uz@Latn/LC_MESSAGES/gtk20.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/gtk20-properties.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gtk20.mo
 share/locale/vi/LC_MESSAGES/gtk20-properties.mo
 share/locale/vi/LC_MESSAGES/gtk20.mo
 share/locale/wa/LC_MESSAGES/gtk20-properties.mo

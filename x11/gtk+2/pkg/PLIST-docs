@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.18 2007/04/23 16:29:05 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.19 2007/10/24 22:34:34 jasper Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -120,6 +120,7 @@ share/gtk-doc/html/gdk/ix04.html
 share/gtk-doc/html/gdk/ix05.html
 share/gtk-doc/html/gdk/ix06.html
 share/gtk-doc/html/gdk/ix07.html
+share/gtk-doc/html/gdk/ix08.html
 share/gtk-doc/html/gdk/left.png
 share/gtk-doc/html/gdk/left_ptr.png
 share/gtk-doc/html/gdk/left_side.png
@@ -173,6 +174,7 @@ share/gtk-doc/html/gdk/xterm.png
 share/gtk-doc/html/gtk/
 share/gtk-doc/html/gtk/AbstractObjects.html
 share/gtk-doc/html/gtk/Actions.html
+share/gtk-doc/html/gtk/Builder.html
 share/gtk-doc/html/gtk/ButtonWidgets.html
 share/gtk-doc/html/gtk/DeprecatedObjects.html
 share/gtk-doc/html/gtk/DisplayWidgets.html
@@ -188,6 +190,7 @@ share/gtk-doc/html/gtk/GtkAspectFrame.html
 share/gtk-doc/html/gtk/GtkAssistant.html
 share/gtk-doc/html/gtk/GtkBin.html
 share/gtk-doc/html/gtk/GtkBox.html
+share/gtk-doc/html/gtk/GtkBuilder.html
 share/gtk-doc/html/gtk/GtkButton.html
 share/gtk-doc/html/gtk/GtkButtonBox.html
 share/gtk-doc/html/gtk/GtkCList.html
@@ -286,6 +289,7 @@ share/gtk-doc/html/gtk/GtkRadioButton.html
 share/gtk-doc/html/gtk/GtkRadioMenuItem.html
 share/gtk-doc/html/gtk/GtkRadioToolButton.html
 share/gtk-doc/html/gtk/GtkRange.html
+share/gtk-doc/html/gtk/GtkRecentAction.html
 share/gtk-doc/html/gtk/GtkRecentChooser.html
 share/gtk-doc/html/gtk/GtkRecentChooserDialog.html
 share/gtk-doc/html/gtk/GtkRecentChooserMenu.html
@@ -294,6 +298,7 @@ share/gtk-doc/html/gtk/GtkRecentFilter.html
 share/gtk-doc/html/gtk/GtkRecentManager.html
 share/gtk-doc/html/gtk/GtkRuler.html
 share/gtk-doc/html/gtk/GtkScale.html
+share/gtk-doc/html/gtk/GtkScaleButton.html
 share/gtk-doc/html/gtk/GtkScrollbar.html
 share/gtk-doc/html/gtk/GtkScrolledWindow.html
 share/gtk-doc/html/gtk/GtkSeparator.html
@@ -321,6 +326,7 @@ share/gtk-doc/html/gtk/GtkToggleToolButton.html
 share/gtk-doc/html/gtk/GtkToolButton.html
 share/gtk-doc/html/gtk/GtkToolItem.html
 share/gtk-doc/html/gtk/GtkToolbar.html
+share/gtk-doc/html/gtk/GtkTooltip.html
 share/gtk-doc/html/gtk/GtkTooltips.html
 share/gtk-doc/html/gtk/GtkTree.html
 share/gtk-doc/html/gtk/GtkTreeItem.html
@@ -341,6 +347,7 @@ share/gtk-doc/html/gtk/GtkVScale.html
 share/gtk-doc/html/gtk/GtkVScrollbar.html
 share/gtk-doc/html/gtk/GtkVSeparator.html
 share/gtk-doc/html/gtk/GtkViewport.html
+share/gtk-doc/html/gtk/GtkVolumeButton.html
 share/gtk-doc/html/gtk/GtkWidget.html
 share/gtk-doc/html/gtk/GtkWindow.html
 share/gtk-doc/html/gtk/GtkWindowGroup.html
@@ -404,6 +411,7 @@ share/gtk-doc/html/gtk/gtk-about.png
 share/gtk-doc/html/gtk/gtk-add.png
 share/gtk-doc/html/gtk/gtk-apply.png
 share/gtk-doc/html/gtk/gtk-bold.png
+share/gtk-doc/html/gtk/gtk-builder-convert.html
 share/gtk-doc/html/gtk/gtk-building.html
 share/gtk-doc/html/gtk/gtk-cancel.png
 share/gtk-doc/html/gtk/gtk-cdrom.png
@@ -435,7 +443,6 @@ share/gtk-doc/html/gtk/gtk-find-and-replace.png
 share/gtk-doc/html/gtk/gtk-find.png
 share/gtk-doc/html/gtk/gtk-floppy.png
 share/gtk-doc/html/gtk/gtk-font.png
-share/gtk-doc/html/gtk/gtk-framebuffer.html
 share/gtk-doc/html/gtk/gtk-fullscreen.png
 share/gtk-doc/html/gtk/gtk-go-back-ltr.png
 share/gtk-doc/html/gtk/gtk-go-back-rtl.png
@@ -449,6 +456,7 @@ share/gtk-doc/html/gtk/gtk-goto-first-rtl.png
 share/gtk-doc/html/gtk/gtk-goto-last-ltr.png
 share/gtk-doc/html/gtk/gtk-goto-last-rtl.png
 share/gtk-doc/html/gtk/gtk-goto-top.png
+share/gtk-doc/html/gtk/gtk-gtkbuildable.html
 share/gtk-doc/html/gtk/gtk-gtkfilefilter.html
 share/gtk-doc/html/gtk/gtk-harddisk.png
 share/gtk-doc/html/gtk/gtk-help.png
@@ -481,6 +489,7 @@ share/gtk-doc/html/gtk/gtk-media-stop.png
 share/gtk-doc/html/gtk/gtk-migrating-GtkAboutDialog.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkAction.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkAssistant.html
+share/gtk-doc/html/gtk/gtk-migrating-GtkBuilder.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkColorButton.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkComboBox.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkFileChooser.html
@@ -488,6 +497,7 @@ share/gtk-doc/html/gtk/gtk-migrating-GtkIconView.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkLinkButton.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkRecentChooser.html
 share/gtk-doc/html/gtk/gtk-migrating-checklist.html
+share/gtk-doc/html/gtk/gtk-migrating-tooltips.html
 share/gtk-doc/html/gtk/gtk-missing-image.png
 share/gtk-doc/html/gtk/gtk-network.png
 share/gtk-doc/html/gtk/gtk-new.png
@@ -562,6 +572,7 @@ share/gtk-doc/html/gtk/ix04.html
 share/gtk-doc/html/gtk/ix05.html
 share/gtk-doc/html/gtk/ix06.html
 share/gtk-doc/html/gtk/ix07.html
+share/gtk-doc/html/gtk/ix08.html
 share/gtk-doc/html/gtk/label.png
 share/gtk-doc/html/gtk/left.png
 share/gtk-doc/html/gtk/link-button.png
@@ -591,6 +602,8 @@ share/gtk-doc/html/gtk/statusbar.png
 share/gtk-doc/html/gtk/style.css
 share/gtk-doc/html/gtk/toggle-button.png
 share/gtk-doc/html/gtk/toolbar.png
+share/gtk-doc/html/gtk/tree-view-coordinates.png
 share/gtk-doc/html/gtk/ui-manager.html
 share/gtk-doc/html/gtk/up.png
+share/gtk-doc/html/gtk/volumebutton.png
 share/gtk-doc/html/gtk/window.png
