@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 08:30:21 steven Exp $
-@pkgpath devel/libsigc++-2
+@comment $OpenBSD: PLIST-main,v 1.2 2007/10/24 08:51:58 wilfried Exp $
 @option no-default-conflict
 @conflict libsigc++-2.*
+@pkgpath devel/libsigc++-2
 %%SHARED%%
 include/sigc++-${V}/
 include/sigc++-${V}/sigc++/
