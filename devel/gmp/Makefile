@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2007/10/24 16:19:57 naddy Exp $
 
 COMMENT=	library for arbitrary precision arithmetic
 
-DISTNAME=	gmp-4.2.1
-SHARED_LIBS +=	gmp                  7.0      # .7.1
+DISTNAME=	gmp-4.2.2
+SHARED_LIBS +=	gmp                  7.1      # .7.2
 CATEGORIES=	devel math
 
 HOMEPAGE=	http://www.swox.com/gmp/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# (L)GPL
+# LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
