@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.44 2007/10/25 20:51:41 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
 
 COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
 COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
-V=			1.5.0.12
+V=			1.5.0.13
 PKGNAME=		jdk-${V}
 PKGNAME-main=		jdk-${V}
 PKGNAME-jre=		jre-${V}
@@ -18,15 +18,15 @@ HOMEPAGE=		https://tiger.dev.java.net/
 
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
-JRLSRC=			jdk-1_5_0_12-fcs-src-b04-jrl-02_may_2007.jar
-JRLBIN=			jdk-1_5_0_12-fcs-bin-b04-jrl-02_may_2007.jar
-PATCHSET=		bsd-jdk15-patches-6.tar.bz2
+JRLSRC=			jdk-1_5_0_13-fcs-src-b05-jrl-25_sep_2007.jar
+JRLBIN=			jdk-1_5_0_13-fcs-bin-b05-jrl-25_sep_2007.jar
+PATCHSET=		bsd-jdk15-patches-7.tar.bz2
 
 DISTFILES=		${JRLSRC} \
 			${JRLBIN} \
 			${PATCHSET}
 
-MASTER_SITES=		http://www.java.net/download/tiger/tiger_u12/
+MASTER_SITES=		http://www.java.net/download/tiger/tiger_u13/
 
 # Java Research License
 # http://www.java.net/jrl.csp
@@ -67,11 +67,11 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 # Error message for distfile.
 FETCH_MANUALLY=		"You must manually fetch the distribution files, place"
 FETCH_MANUALLY+=	"them in ${FULLDISTDIR} and then run make again."
-FETCH_MANUALLY+=	"Get the 'Update 12 Source under the JRL license' file:"
+FETCH_MANUALLY+=	"Get the 'Update 13 Source under the JRL license' file:"
 FETCH_MANUALLY+=	"    ${JRLSRC} and"
 FETCH_MANUALLY+=	"    the 'Source Binaries needed for Source Build' file:"
 FETCH_MANUALLY+=	"    ${JRLBIN}"
-FETCH_MANUALLY+=	"from http://download.java.net/tiger/tiger_u12/"
+FETCH_MANUALLY+=	"from http://download.java.net/tiger/tiger_u13/"
 FETCH_MANUALLY+=	"Get the BSD patchset file:"
 FETCH_MANUALLY+=	"   ${PATCHSET}"
 FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk15.html"
@@ -91,12 +91,12 @@ EXTRACT_CASES+=		*.jar) true ;;
 BUILD_DEPENDS+=		:jdk-1.5*:devel/jdk/1.5
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
-DISTFILES+=		jdk-1_5_0_12-solaris-i586.tar.Z \
+DISTFILES+=		jdk-1_5_0_13-solaris-i586.tar.Z \
 			xalan-j_2_7_0-bin.tar.gz
-FETCH_MANUALLY+=	"Get 'JDK 5.0 Update 12' for 'Solaris x86 packages' file:"
-FETCH_MANUALLY+=	"    jdk-1_5_0_12-solaris-i586.tar.Z"
+FETCH_MANUALLY+=	"Get 'JDK 5.0 Update 13' for 'Solaris x86 packages' file:"
+FETCH_MANUALLY+=	"    jdk-1_5_0_13-solaris-i586.tar.Z"
 FETCH_MANUALLY+=	"from http://java.sun.com/javase/downloads/index_jdk5.jsp or"
-FETCH_MANUALLY+=	"http://java.sun.com/products/archive/j2se/5.0_12/index.html"
+FETCH_MANUALLY+=	"http://java.sun.com/products/archive/j2se/5.0_13/index.html"
 FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
 FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
 FETCH_MANUALLY+=	"from http://www.apache.org/dist/xml/xalan-j/"
@@ -120,7 +120,7 @@ MESSAGE=		${PKGDIR}/MESSAGE-amd64
 . endif
 .else
 #no plugin - no messages
-MESSAGE=		/dev/null
+MESSAGE=		${PKGDIR}/MESSAGE-no_web
 MAKE_ENV+=		DONT_BUILD_DEPLOY="YES"
 .endif
 
@@ -143,7 +143,19 @@ JDKIMAGEDIR=		${OUTPUTDIR}/j2sdk-image
 JDKIMAGEDIR_G=		${OUTPUTDIR}/j2sdk-debug-image
 JREIMAGEDIR=		${OUTPUTDIR}/j2re-image
 
+.include <bsd.own.mk>
+
+ACCEPT_JRL_LICENSE ?= No
+
+.if ${ACCEPT_JRL_LICENSE:L} != "yes"
+IS_INTERACTIVE=	Yes
+pre-extract:
+	@${SH} ${FILESDIR}/license.sh
+	@echo continuing...
+.endif
+
 post-extract:
+	@rm -rf ${WRKDIR}/tmp
 	@mkdir ${WRKDIR}/tmp && \
 		${CC} ${CFLAGS} -o ${WRKDIR}/tmp/x_x2zip ${FILESDIR}/x_x2zip.c
 .for jar in ${JRLSRC} ${JRLBIN}
@@ -165,7 +177,6 @@ post-extract:
 pre-patch:
 	@cp -f ${FILESDIR}/cacerts ${WRKDIR}/j2se/src/share/lib/security
 	@cd ${WRKDIR} &&  \
-		${CHMOD} -R u+w * && \
 		${PATCH} -p0 -z .orig.bsd --quiet < ${WRKDIR}/jdk15.patches
 
 .if !${FLAVOR:L:Mnative_bootstrap}
@@ -190,5 +201,8 @@ do-install:
 	cd ${JDKIMAGEDIR_G} && tar -cf - * | tar -C ${PREFIX}/${JDKHOME} -xf - 
 	${INSTALL_DATA_DIR} ${PREFIX}/${JREHOME}
 	cd ${JREIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JREHOME} -xf -
+	cd ${WRKDIR} && \
+		${INSTALL_DATA} JavaResearchLicense.txt ${PREFIX}/${JDKHOME}/LICENSE && \
+		${INSTALL_DATA} JavaResearchLicense.txt ${PREFIX}/${JREHOME}/LICENSE
 
 .include <bsd.port.mk>

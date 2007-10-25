@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_web-main,v 1.5 2007/07/27 19:29:52 kurt Exp $
+@comment $OpenBSD: PFRAG.no-no_web-main,v 1.6 2007/10/25 20:51:41 kurt Exp $
 ${JDKHOME}/bin/ControlPanel
 ${JDKHOME}/bin/HtmlConverter
 ${JDKHOME}/bin/javaws
@@ -758,7 +758,9 @@ ${JDKHOME}/jre/bin/javaws
 ${JDKHOME}/jre/bin/javaws_g
 ${JDKHOME}/jre/javaws/
 ${JDKHOME}/jre/javaws/javaws
+${JDKHOME}/jre/lib/deploy/
 ${JDKHOME}/jre/lib/deploy.jar
+${JDKHOME}/jre/lib/deploy/ffjcext.zip
 ${JDKHOME}/jre/lib/deploy_g.jar
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libdeploy.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libdeploy_g.so

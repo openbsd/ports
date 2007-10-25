@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.11 2007/07/27 19:29:52 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.12 2007/10/25 20:51:41 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.5,<1.6
 @pkgpath devel/jdk/1.5,-jre,native_bootstrap
@@ -35,8 +35,6 @@ ${JREHOME}/lib/cmm/LINEAR_RGB.pf
 ${JREHOME}/lib/cmm/PYCC.pf
 ${JREHOME}/lib/cmm/sRGB.pf
 ${JREHOME}/lib/content-types.properties
-${JREHOME}/lib/deploy/
-${JREHOME}/lib/deploy/ffjcext.zip
 ${JREHOME}/lib/ext/
 ${JREHOME}/lib/ext/dnsns.jar
 ${JREHOME}/lib/ext/localedata.jar
@@ -254,6 +252,7 @@ ${JREHOME}/lib/zi/America/Indiana/Indianapolis
 ${JREHOME}/lib/zi/America/Indiana/Knox
 ${JREHOME}/lib/zi/America/Indiana/Marengo
 ${JREHOME}/lib/zi/America/Indiana/Petersburg
+${JREHOME}/lib/zi/America/Indiana/Tell_City
 ${JREHOME}/lib/zi/America/Indiana/Vevay
 ${JREHOME}/lib/zi/America/Indiana/Vincennes
 ${JREHOME}/lib/zi/America/Indiana/Winamac

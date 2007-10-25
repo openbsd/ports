@@ -13,7 +13,7 @@ Flavors:
     Bootstrap the jdk using a previously built and installed
     devel/jdk/1.5 package. NOTE: if this flavor is used without a
     previously installed devel/jdk/1.5 package, the port will
-    build the jdk twice!
+    just build the jdk with default (kaffe) bootstrap and stop.
 
   no_web
     The Mozilla plugin and Java Web Start (javaws) are not built.

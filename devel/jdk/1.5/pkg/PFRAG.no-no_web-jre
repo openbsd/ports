@@ -1,10 +1,12 @@
-@comment $OpenBSD: PFRAG.no-no_web-jre,v 1.5 2007/07/27 19:29:52 kurt Exp $
+@comment $OpenBSD: PFRAG.no-no_web-jre,v 1.6 2007/10/25 20:51:41 kurt Exp $
 ${JREHOME}/bin/ControlPanel
 ${JREHOME}/bin/java_vm
 ${JREHOME}/bin/javaws
 ${JREHOME}/javaws/
 ${JREHOME}/javaws/javaws
+${JREHOME}/lib/deploy/
 ${JREHOME}/lib/deploy.jar
+${JREHOME}/lib/deploy/ffjcext.zip
 ${JREHOME}/lib/${MACHINE_ARCH}/libdeploy.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjavaplugin_jni.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjavaplugin_nscp.so
