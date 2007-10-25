@@ -1,0 +1,48 @@
+$OpenBSD: patch-Imakefile_in,v 1.1.1.1 2007/10/25 10:55:59 naddy Exp $
+--- Imakefile.in.orig	Sat Jun 23 15:31:42 2007
++++ Imakefile.in	Tue Oct 23 17:25:44 2007
+@@ -207,11 +207,14 @@ $(IDP)ibm-1388_P103-2001.cnv: ibm-1388_P103-2001.ucm
+ install:: ProgramTargetName(x3270if)
+ 	$(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) ProgramTargetName(x3270if) $(DESTDIR)$(autoconf_bindir)/ProgramTargetName(x3270if)
+ 
++install:: ProgramTargetName(x3270)
++	$(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) ProgramTargetName(x3270) $(DESTDIR)$(autoconf_bindir)/ProgramTargetName(x3270)
++
+ /* Extra install rule to regenerate fonts.dir. */
+ install:: $(DESTDIR)$(FONTINSTDIR)/fonts.dir
+ $(DESTDIR)$(FONTINSTDIR)/fonts.dir::
+-	-chmod u+w $(DESTDIR)$(FONTINSTDIR) $(DESTDIR)$(FONTINSTDIR)/fonts.dir
+ 	$(MKFONTDIR) $(DESTDIR)$(FONTINSTDIR)
++	-chmod u+w $(DESTDIR)$(FONTINSTDIR) $(DESTDIR)$(FONTINSTDIR)/fonts.dir
+ 	chmod u=rwx,go=rx $(DESTDIR)$(FONTINSTDIR)
+ 	chmod a=r $(DESTDIR)$(FONTINSTDIR)/fonts.dir
+ 
+@@ -232,7 +235,8 @@ install:: $(ICU_CNV)
+  * These are specified explicitly, instead of using the standard Imake macros,
+  * because we may want to install in a directory other than PROJECTROOT.
+  */
+-install.man:: x3270if.man x3270-script.man ibm_hosts.man
++install:: x3270.man x3270if.man x3270-script.man ibm_hosts.man
++	$(INSTALL) -c $(INSTMANFLAGS) x3270.man $(DESTDIR)$(autoconf_mandir)/man1/x3270.1
+ 	$(INSTALL) -c $(INSTMANFLAGS) x3270if.man $(DESTDIR)$(autoconf_mandir)/man1/x3270if.1
+ 	$(INSTALL) -c $(INSTMANFLAGS) x3270-script.man $(DESTDIR)$(autoconf_mandir)/man1/x3270-script.1
+ 	$(INSTALL) -c $(INSTMANFLAGS) ibm_hosts.man $(DESTDIR)$(autoconf_mandir)/man5/ibm_hosts.5
+@@ -241,7 +245,7 @@ install.man:: x3270if.man x3270-script.man ibm_hosts.m
+ /* Rules for installing pr3287. */
+ install::
+ 	-cd pr3287 && $(MAKE) install PROJECTROOT=$(PROJECTROOT)
+-install.man::
++install::
+ 	-cd pr3287 && $(MAKE) install.man PROJECTROOT=$(PROJECTROOT)
+ #endif
+ 
+@@ -258,8 +262,8 @@ install.byprefix::
+ 	@for i in $(FONTS); \
+ 	do	(set -x; $(INSTALL) -c $(INSTDATFLAGS) $$i $(DESTDIR)$(autoconf_fontinstdir)/$$i); \
+ 	done
+-	-chmod u+w $(DESTDIR)$(autoconf_fontinstdir) $(DESTDIR)$(autoconf_fontinstdir)/fonts.dir
+ 	$(MKFONTDIR) $(DESTDIR)$(autoconf_fontinstdir)
++	-chmod u+w $(DESTDIR)$(autoconf_fontinstdir) $(DESTDIR)$(autoconf_fontinstdir)/fonts.dir
+ 	chmod u=rwx,go=rx $(DESTDIR)$(autoconf_fontinstdir)
+ 	chmod a=r $(DESTDIR)$(autoconf_fontinstdir)/fonts.dir
+ 	@[ -r $(DESTDIR)$(LIBX3270DIR)/$(HOSTSFILE) ] || \

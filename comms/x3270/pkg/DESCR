@@ -1,0 +1,15 @@
+x3270 is an IBM 3270 terminal emulator for the X Window System.
+x3270 runs over a TELNET connection, emulating either an IBM
+3279 (color) or 3278 (monochrome). It supports:
+
+    * The full TN3270E protocol
+    * SSL/TLS (via the OpenSSL library) for encrypted sessions
+    * APL2 characters
+    * Non-English character sets, including Russian, Turkish, Hebrew 
+      and DBCS Chinese and Japanese
+    * IND$FILE file transfer
+    * NVT mode (emulating a color xterm)
+    * A pop-up keypad for 3270-specific keys
+    * A scrollbar
+    * Printer session integration
+    * Extensive debugging and scripting facilities

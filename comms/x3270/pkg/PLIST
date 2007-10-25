@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/25 10:55:59 naddy Exp $
+bin/pr3287
+bin/x3270
+bin/x3270if
+lib/X11/fonts/
+@fontdir lib/X11/fonts/x3270/
+lib/X11/fonts/x3270/3270-12.pcf.gz
+lib/X11/fonts/x3270/3270-12b.pcf.gz
+lib/X11/fonts/x3270/3270-20.pcf.gz
+lib/X11/fonts/x3270/3270-20b.pcf.gz
+lib/X11/fonts/x3270/3270.pcf.gz
+lib/X11/fonts/x3270/3270b.pcf.gz
+lib/X11/fonts/x3270/3270e-12.pcf.gz
+lib/X11/fonts/x3270/3270e-12b.pcf.gz
+lib/X11/fonts/x3270/3270e-20.pcf.gz
+lib/X11/fonts/x3270/3270e-20b.pcf.gz
+lib/X11/fonts/x3270/3270e.pcf.gz
+lib/X11/fonts/x3270/3270eb.pcf.gz
+lib/X11/fonts/x3270/3270egt12.pcf.gz
+lib/X11/fonts/x3270/3270egt12b.pcf.gz
+lib/X11/fonts/x3270/3270egt16.pcf.gz
+lib/X11/fonts/x3270/3270egt16b.pcf.gz
+lib/X11/fonts/x3270/3270egt24.pcf.gz
+lib/X11/fonts/x3270/3270egt24b.pcf.gz
+lib/X11/fonts/x3270/3270egt32.pcf.gz
+lib/X11/fonts/x3270/3270egt32b.pcf.gz
+lib/X11/fonts/x3270/3270egt8.pcf.gz
+lib/X11/fonts/x3270/3270gr.pcf.gz
+lib/X11/fonts/x3270/3270gt12.pcf.gz
+lib/X11/fonts/x3270/3270gt12b.pcf.gz
+lib/X11/fonts/x3270/3270gt16.pcf.gz
+lib/X11/fonts/x3270/3270gt16b.pcf.gz
+lib/X11/fonts/x3270/3270gt24.pcf.gz
+lib/X11/fonts/x3270/3270gt24b.pcf.gz
+lib/X11/fonts/x3270/3270gt32.pcf.gz
+lib/X11/fonts/x3270/3270gt32b.pcf.gz
+lib/X11/fonts/x3270/3270gt8.pcf.gz
+lib/X11/fonts/x3270/3270h.pcf.gz
+@comment lib/X11/fonts/x3270/fonts.dir
+@man man/man1/pr3287.1
+@man man/man1/x3270-script.1
+@man man/man1/x3270.1
+@man man/man1/x3270if.1
+@man man/man5/ibm_hosts.5
+share/examples/x3270/
+@sample ${SYSCONFDIR}/x3270/
+share/examples/x3270/ibm_hosts
+@sample ${SYSCONFDIR}/x3270/ibm_hosts
