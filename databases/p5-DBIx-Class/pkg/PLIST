@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/23 18:46:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/10/25 21:26:47 simon Exp $
 bin/dbicadmin
 ${P5SITE}/DBIx/
 ${P5SITE}/DBIx/Class/
@@ -34,9 +34,11 @@ ${P5SITE}/DBIx/Class/Componentised.pm
 ${P5SITE}/DBIx/Class/Core.pm
 ${P5SITE}/DBIx/Class/Cursor.pm
 ${P5SITE}/DBIx/Class/DB.pm
+${P5SITE}/DBIx/Class/Exception.pm
 ${P5SITE}/DBIx/Class/InflateColumn/
 ${P5SITE}/DBIx/Class/InflateColumn.pm
 ${P5SITE}/DBIx/Class/InflateColumn/DateTime.pm
+${P5SITE}/DBIx/Class/InflateColumn/File.pm
 ${P5SITE}/DBIx/Class/Manual/
 ${P5SITE}/DBIx/Class/Manual.pod
 ${P5SITE}/DBIx/Class/Manual/Component.pod
@@ -46,6 +48,7 @@ ${P5SITE}/DBIx/Class/Manual/Example.pod
 ${P5SITE}/DBIx/Class/Manual/FAQ.pod
 ${P5SITE}/DBIx/Class/Manual/Glossary.pod
 ${P5SITE}/DBIx/Class/Manual/Intro.pod
+${P5SITE}/DBIx/Class/Manual/Joining.pod
 ${P5SITE}/DBIx/Class/Manual/Troubleshooting.pod
 ${P5SITE}/DBIx/Class/Ordered.pm
 ${P5SITE}/DBIx/Class/PK/
@@ -69,6 +72,8 @@ ${P5SITE}/DBIx/Class/Relationship/HasOne.pm
 ${P5SITE}/DBIx/Class/Relationship/Helpers.pm
 ${P5SITE}/DBIx/Class/Relationship/ManyToMany.pm
 ${P5SITE}/DBIx/Class/Relationship/ProxyMethods.pm
+${P5SITE}/DBIx/Class/ResultClass/
+${P5SITE}/DBIx/Class/ResultClass/HashRefInflator.pm
 ${P5SITE}/DBIx/Class/ResultSet.pm
 ${P5SITE}/DBIx/Class/ResultSetColumn.pm
 ${P5SITE}/DBIx/Class/ResultSetManager.pm
@@ -76,11 +81,14 @@ ${P5SITE}/DBIx/Class/ResultSetProxy.pm
 ${P5SITE}/DBIx/Class/ResultSource/
 ${P5SITE}/DBIx/Class/ResultSource.pm
 ${P5SITE}/DBIx/Class/ResultSource/Table.pm
+${P5SITE}/DBIx/Class/ResultSourceHandle.pm
 ${P5SITE}/DBIx/Class/ResultSourceProxy/
 ${P5SITE}/DBIx/Class/ResultSourceProxy.pm
 ${P5SITE}/DBIx/Class/ResultSourceProxy/Table.pm
 ${P5SITE}/DBIx/Class/Row.pm
+${P5SITE}/DBIx/Class/Schema/
 ${P5SITE}/DBIx/Class/Schema.pm
+${P5SITE}/DBIx/Class/Schema/Versioned.pm
 ${P5SITE}/DBIx/Class/Serialize/
 ${P5SITE}/DBIx/Class/Serialize/Storable.pm
 ${P5SITE}/DBIx/Class/Storage/
@@ -95,8 +103,12 @@ ${P5SITE}/DBIx/Class/Storage/DBI/NoBindVars.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/ODBC/
 ${P5SITE}/DBIx/Class/Storage/DBI/ODBC.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/ODBC/DB2_400_SQL.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Oracle/
 ${P5SITE}/DBIx/Class/Storage/DBI/Oracle.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Oracle/Generic.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Oracle/WhereJoins.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/Pg.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Replication.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/SQLite.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/Sybase/
 ${P5SITE}/DBIx/Class/Storage/DBI/Sybase.pm
@@ -121,8 +133,10 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man3p/DBIx::Class::Core.3p
 @man man/man3p/DBIx::Class::Cursor.3p
 @man man/man3p/DBIx::Class::DB.3p
+@man man/man3p/DBIx::Class::Exception.3p
 @man man/man3p/DBIx::Class::InflateColumn.3p
 @man man/man3p/DBIx::Class::InflateColumn::DateTime.3p
+@man man/man3p/DBIx::Class::InflateColumn::File.3p
 @man man/man3p/DBIx::Class::Manual.3p
 @man man/man3p/DBIx::Class::Manual::Component.3p
 @man man/man3p/DBIx::Class::Manual::Cookbook.3p
@@ -131,6 +145,7 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man3p/DBIx::Class::Manual::FAQ.3p
 @man man/man3p/DBIx::Class::Manual::Glossary.3p
 @man man/man3p/DBIx::Class::Manual::Intro.3p
+@man man/man3p/DBIx::Class::Manual::Joining.3p
 @man man/man3p/DBIx::Class::Manual::Troubleshooting.3p
 @man man/man3p/DBIx::Class::Ordered.3p
 @man man/man3p/DBIx::Class::PK.3p
@@ -144,15 +159,19 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man3p/DBIx::Class::Relationship.3p
 @man man/man3p/DBIx::Class::Relationship::Base.3p
 @man man/man3p/DBIx::Class::Relationship::BelongsTo.3p
+@man man/man3p/DBIx::Class::ResultClass::HashRefInflator.3p
 @man man/man3p/DBIx::Class::ResultSet.3p
 @man man/man3p/DBIx::Class::ResultSetColumn.3p
 @man man/man3p/DBIx::Class::ResultSetManager.3p
 @man man/man3p/DBIx::Class::ResultSource.3p
 @man man/man3p/DBIx::Class::ResultSource::Table.3p
+@man man/man3p/DBIx::Class::ResultSourceHandle.3p
 @man man/man3p/DBIx::Class::ResultSourceProxy::Table.3p
 @man man/man3p/DBIx::Class::Row.3p
 @man man/man3p/DBIx::Class::Schema.3p
+@man man/man3p/DBIx::Class::Schema::Versioned.3p
 @man man/man3p/DBIx::Class::Serialize::Storable.3p
+@man man/man3p/DBIx::Class::Storage.3p
 @man man/man3p/DBIx::Class::Storage::DBI.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Cursor.3p
 @man man/man3p/DBIx::Class::Storage::DBI::DB2.3p
@@ -162,7 +181,10 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man3p/DBIx::Class::Storage::DBI::ODBC.3p
 @man man/man3p/DBIx::Class::Storage::DBI::ODBC::DB2_400_SQL.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Oracle.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Oracle::Generic.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Oracle::WhereJoins.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Pg.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Replication.3p
 @man man/man3p/DBIx::Class::Storage::DBI::SQLite.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Sybase.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Sybase::MSSQL.3p

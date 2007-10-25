@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2007/10/25 21:26:47 simon Exp $
+--- Makefile.PL.orig	Tue Sep  4 20:33:11 2007
++++ Makefile.PL	Tue Oct 23 12:58:22 2007
+@@ -22,8 +22,8 @@ requires 'Scope::Guard'              => 0.03;
+ # Perl 5.8.0 doesn't have utf8::is_utf8()
+ requires 'Encode'                    => 0 if ($] <= 5.008000);  
+ 
+-build_requires 'DBD::SQLite'         => 1.13;
+-build_requires 'Test::Builder'       => 0.33;
++#build_requires 'DBD::SQLite'         => 1.13;
++#build_requires 'Test::Builder'       => 0.33;
+ 
+ install_script 'script/dbicadmin';
+ 
