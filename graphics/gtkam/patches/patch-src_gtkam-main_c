@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtkam-main_c,v 1.1 2007/10/25 10:53:53 ajacoutot Exp $
+--- src/gtkam-main.c.orig	Thu Oct 25 09:09:55 2007
++++ src/gtkam-main.c	Thu Oct 25 09:10:11 2007
+@@ -575,7 +575,7 @@ static GtkActionEntry entries[] = {
+ 
+ /* Toggle menu items */
+ static GtkToggleActionEntry toggle_entries[] = {
+-	{ "ViewThumbnails", NULL, N_("_View Thumbnails"), NULL, NULL, G_CALLBACK (action_view_thumbnails), TRUE }
++	{ "ViewThumbnails", GTK_STOCK_ORIENTATION_PORTRAIT, N_("_View Thumbnails"), NULL, NULL, G_CALLBACK (action_view_thumbnails), TRUE }
+ };
+ 
+ static const char *ui_description =
