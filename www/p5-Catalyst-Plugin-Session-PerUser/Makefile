@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/25 16:20:50 simon Exp $
 
 COMMENT= 	per-user session for catalyst
 
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	::www/p5-Catalyst-Plugin-Session \
 		::devel/p5-Hash-Merge
 
-REGRESS_DEPENDS=::devel/p5-Test-WWW-Mechanize-Catalyst
+REGRESS_DEPENDS=::devel/p5-Test-WWW-Mechanize-Catalyst \
+		::security/p5-Catalyst-Plugin-Authentication
 
 CONFIGURE_STYLE=modbuild
 
