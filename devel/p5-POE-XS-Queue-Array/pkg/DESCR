@@ -1,0 +1,8 @@
+This class is an implementation of the abstract POE::Queue interface.
+It implements a priority queue using C, with an XS interface supplied.
+
+The current implementation could use some optimization, especially
+for large queues.
+
+Please see the POE::Queue documentation, which explains this one's
+functions, features, and behavior.
