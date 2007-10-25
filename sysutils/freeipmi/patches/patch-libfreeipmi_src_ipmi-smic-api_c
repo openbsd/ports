@@ -1,0 +1,20 @@
+$OpenBSD: patch-libfreeipmi_src_ipmi-smic-api_c,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
+--- libfreeipmi/src/ipmi-smic-api.c.orig	Sat Jun  2 20:18:29 2007
++++ libfreeipmi/src/ipmi-smic-api.c	Tue Oct 23 17:56:48 2007
+@@ -135,7 +135,15 @@ ipmi_smic_io_init (uint8_t sms_io_base, unsigned long 
+ {
+   smic_sleep_usecs = sleep_usecs;
+ 
+-#ifdef __FreeBSD__
++#ifdef __OpenBSD__
++# if defined(__amd64__)
++  return (amd64_iopl (3));
++# elif defined(__i386__)
++  return (i386_iopl (3));
++# else
++  return (-1);
++# endif
++#elif __FreeBSD__
+ #ifdef USE_IOPERM
+   /* i386_set_ioperm has known problems on FBSD 5.x (bus errors). */
+   return (i386_set_ioperm(sms_io_base, 0x02, 0x01));

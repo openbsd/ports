@@ -1,0 +1,29 @@
+FreeIPMI is a collection of Intelligent Platform Management IPMI
+system software. It provides in-band and out-of-band software and
+a development library conforming to the Intelligent Platform
+Management Interface (IPMI v1.5 and v2.0) standards.
+
+The FreeIPMI project currently includes:
+
+* Libfreeipmi - OpenIPMI, KCS, SMIC, SSIF, LAN drivers, and an IPMI
+  API in a C Library
+* Bmc-info - A tool to read information about the local BMC.
+* Bmc-config - A BMC configuration tool.
+* Bmc-watchdog - A BMC Watchdog tool/daemon.
+* Ipmi-chassis - An IPMI Chassis management tool.
+* Ipmi-fru - A field replaceable unit (FRU) reading tool
+* Ipmi-locate - A tool to probe for an IPMI BMC Device.
+* Ipmi-raw - A raw interface for IPMI commands.
+* Ipmi-sel - An IPMI System Event Log (SEL) reading tool.
+* Ipmi-sensors - An IPMI sensor reading tool.
+* Ipmiconsole - A Serial-over-Lan (SOL) console tool.
+* Libipmiconsole - A library for Serial-over-Lan (SOL).
+* Ipmidetect/Ipmidetectd/libipmidetect - A tool, daemon, and library
+  for IPMI node detection.
+* Ipmimonitoring/Libipmimonitoring - A tool and library for sensor
+  monitoring.
+* Ipmipower - An IPMI power control tool.
+* Ipmiping - An IPMI ping tool for debugging.
+* Rmcpping - An RMCP ping tool for debugging.
+* Pef-config - An IPMI Platform Event Filtering (PEF) Configuration
+  tool.

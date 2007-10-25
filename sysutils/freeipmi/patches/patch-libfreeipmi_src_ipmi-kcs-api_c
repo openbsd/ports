@@ -1,0 +1,27 @@
+$OpenBSD: patch-libfreeipmi_src_ipmi-kcs-api_c,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
+--- libfreeipmi/src/ipmi-kcs-api.c.orig	Sat Jun  2 20:18:29 2007
++++ libfreeipmi/src/ipmi-kcs-api.c	Tue Oct 23 18:55:45 2007
+@@ -350,7 +350,22 @@ ipmi_kcs_ctx_io_init(ipmi_kcs_ctx_t ctx)
+   if (!(ctx && ctx->magic == IPMI_KCS_CTX_MAGIC))
+     return (-1);
+ 
+-#ifdef __FreeBSD__
++#ifdef __OpenBSD__
++# if defined(__amd64__)
++  if (amd64_iopl (3) < 0)
++# elif defined(__i386__)
++  if (i386_iopl (3) < 0)
++# else
++  if (0)
++# endif
++    {
++      if (errno == EPERM || errno == EACCES)
++        ctx->errnum = IPMI_KCS_CTX_ERR_PERMISSION;
++      else
++        ERR_LOG(ctx->errnum = IPMI_KCS_CTX_ERR_INTERNAL);
++      return (-1);
++    }
++#elif __FreeBSD__
+ #ifdef USE_IOPERM
+   /* i386_set_ioperm has known problems on FBSD 5.x (bus errors). */
+   if (i386_set_ioperm (ctx->driver_address, 0x02, 0x01) != 0)

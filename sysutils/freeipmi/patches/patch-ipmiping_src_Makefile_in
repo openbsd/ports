@@ -1,0 +1,25 @@
+$OpenBSD: patch-ipmiping_src_Makefile_in,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
+--- ipmiping/src/Makefile.in.orig	Thu Oct 11 17:58:30 2007
++++ ipmiping/src/Makefile.in	Tue Oct 23 18:35:26 2007
+@@ -57,8 +57,8 @@ sbinPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(sbin_PROGRAMS)
+ am_ipmiping_OBJECTS = ipmiping-ipmiping.$(OBJEXT)
+ ipmiping_OBJECTS = $(am_ipmiping_OBJECTS)
+-ipmiping_DEPENDENCIES = ../../libfreeipmi/src/libfreeipmi.la \
+-	../../common/src/libipmiping.la
++ipmiping_DEPENDENCIES = ../../common/src/libipmiping.la \
++	../../libfreeipmi/src/libfreeipmi.la
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -196,8 +196,8 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ ipmiping_SOURCES = ipmiping.c
+ ipmiping_LDADD = \
+-	../../libfreeipmi/src/libfreeipmi.la \
+-	 ../../common/src/libipmiping.la
++	 ../../common/src/libipmiping.la \
++	../../libfreeipmi/src/libfreeipmi.la
+ 
+ ipmiping_CPPFLAGS = \
+ 	-I$(srcdir)/../../libfreeipmi/include \

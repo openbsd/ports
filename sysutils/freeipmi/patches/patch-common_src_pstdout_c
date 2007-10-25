@@ -1,0 +1,110 @@
+$OpenBSD: patch-common_src_pstdout_c,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
+--- common/src/pstdout.c.orig	Sat Apr 28 19:26:47 2007
++++ common/src/pstdout.c	Tue Oct 23 16:58:53 2007
+@@ -83,8 +83,8 @@ struct pstdout_thread_data {
+ struct pstdout_state {
+   uint32_t magic;
+   char *hostname; 
+-  cbuf_t stdout;
+-  cbuf_t stderr;
++  cbuf_t my_stdout;
++  cbuf_t my_stderr;
+   char *buffer_stdout;
+   char *buffer_stderr;
+   unsigned int buffer_stdout_len;
+@@ -495,8 +495,8 @@ _pstdout_print(pstdout_state_t pstate, 
+ 
+   assert(pstate);
+   assert(pstate->magic == PSTDOUT_STATE_MAGIC);
+-  assert(pstate->stdout);
+-  assert(pstate->stderr);
++  assert(pstate->my_stdout);
++  assert(pstate->my_stderr);
+   assert(stream);
+   assert(stream == stdout || stream == stderr);
+   assert(format);
+@@ -504,7 +504,7 @@ _pstdout_print(pstdout_state_t pstate, 
+ 
+   if (stream == stdout)
+     {
+-      whichcbuf = pstate->stdout;
++      whichcbuf = pstate->my_stdout;
+       whichdefaultmask = PSTDOUT_OUTPUT_STDOUT_DEFAULT;
+       whichprependmask = PSTDOUT_OUTPUT_STDOUT_PREPEND_HOSTNAME;
+       whichbuffermask = PSTDOUT_OUTPUT_BUFFER_STDOUT;
+@@ -514,7 +514,7 @@ _pstdout_print(pstdout_state_t pstate, 
+     }
+   else
+     {
+-      whichcbuf = pstate->stderr;
++      whichcbuf = pstate->my_stderr;
+       whichdefaultmask = PSTDOUT_OUTPUT_STDERR_DEFAULT;
+       whichprependmask = PSTDOUT_OUTPUT_STDERR_PREPEND_HOSTNAME;
+       whichbuffermask = PSTDOUT_OUTPUT_BUFFER_STDERR;
+@@ -796,14 +796,14 @@ _pstdout_state_init(pstdout_state_t pstate, char *host
+   pstate->magic = PSTDOUT_STATE_MAGIC;
+   pstate->hostname = hostname;
+ 
+-  if (!(pstate->stdout = cbuf_create(PSTDOUT_STATE_CBUF_MIN, PSTDOUT_STATE_CBUF_MAX)))
++  if (!(pstate->my_stdout = cbuf_create(PSTDOUT_STATE_CBUF_MIN, PSTDOUT_STATE_CBUF_MAX)))
+     {
+       if (pstdout_debug_flags & PSTDOUT_DEBUG_STANDARD)
+         fprintf(stderr, "cbuf_create: %s\n", strerror(errno));
+       pstdout_errnum = PSTDOUT_ERR_INTERNAL;
+       return -1;
+     }
+-  if (!(pstate->stderr = cbuf_create(PSTDOUT_STATE_CBUF_MIN, PSTDOUT_STATE_CBUF_MAX)))
++  if (!(pstate->my_stderr = cbuf_create(PSTDOUT_STATE_CBUF_MIN, PSTDOUT_STATE_CBUF_MAX)))
+     {
+       if (pstdout_debug_flags & PSTDOUT_DEBUG_STANDARD)
+         fprintf(stderr, "cbuf_create: %s\n", strerror(errno));
+@@ -839,8 +839,8 @@ _pstdout_output_buffer_data(pstdout_state_t pstate, 
+ {
+   assert(pstate);
+   assert(pstate->magic == PSTDOUT_STATE_MAGIC);
+-  assert(pstate->stdout);
+-  assert(pstate->stderr);
++  assert(pstate->my_stdout);
++  assert(pstate->my_stderr);
+   assert(stream);
+   assert(stream == stdout || stream == stderr);
+   assert(whichbuffer);
+@@ -942,8 +942,8 @@ _pstdout_output_finish(pstdout_state_t pstate)
+ 
+   assert(pstate);
+   assert(pstate->magic == PSTDOUT_STATE_MAGIC);
+-  assert(pstate->stdout);
+-  assert(pstate->stderr);
++  assert(pstate->my_stdout);
++  assert(pstate->my_stderr);
+ 
+   if ((rc = pthread_mutex_lock(&(pstate->mutex))))
+     {
+@@ -957,10 +957,10 @@ _pstdout_output_finish(pstdout_state_t pstate)
+   /* If there is remaining junk in the cbufs, write a "\n" to it so we
+    * finish off the line and get it flushed out.
+    */
+-  if (!cbuf_is_empty(pstate->stdout))
++  if (!cbuf_is_empty(pstate->my_stdout))
+     _pstdout_print_wrapper(pstate, 1, stdout, "\n");
+   
+-  if (!cbuf_is_empty(pstate->stderr))
++  if (!cbuf_is_empty(pstate->my_stderr))
+     _pstdout_print_wrapper(pstate, 1, stderr, "\n");
+   
+   if (_pstdout_output_buffer_data(pstate,
+@@ -1008,10 +1008,10 @@ _pstdout_state_cleanup(pstdout_state_t pstate)
+   assert(pstate);
+   assert(pstate->magic == PSTDOUT_STATE_MAGIC);
+ 
+-  if (pstate->stdout)
+-    cbuf_destroy(pstate->stdout);
+-  if (pstate->stderr)
+-    cbuf_destroy(pstate->stderr);
++  if (pstate->my_stdout)
++    cbuf_destroy(pstate->my_stdout);
++  if (pstate->my_stderr)
++    cbuf_destroy(pstate->my_stderr);
+   if (pstate->buffer_stdout)
+     free(pstate->buffer_stdout);
+   if (pstate->buffer_stderr)

@@ -1,0 +1,180 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
+%%SHARED%%
+include/freeipmi/
+include/freeipmi/fiid.h
+include/freeipmi/freeipmi.h
+include/freeipmi/ipmi-authentication-type-spec.h
+include/freeipmi/ipmi-bmc-watchdog-timer-cmds.h
+include/freeipmi/ipmi-channel-spec.h
+include/freeipmi/ipmi-chassis-boot-options-parameter-spec.h
+include/freeipmi/ipmi-chassis-cmds.h
+include/freeipmi/ipmi-cipher-suite-spec.h
+include/freeipmi/ipmi-cmd-spec.h
+include/freeipmi/ipmi-comp-code-spec.h
+include/freeipmi/ipmi-crypt.h
+include/freeipmi/ipmi-debug.h
+include/freeipmi/ipmi-device-global-cmds.h
+include/freeipmi/ipmi-error.h
+include/freeipmi/ipmi-fru-information-storage-definition.h
+include/freeipmi/ipmi-fru-inventory-device-cmds.h
+include/freeipmi/ipmi-ipmb-interface.h
+include/freeipmi/ipmi-kcs-api.h
+include/freeipmi/ipmi-kcs.h
+include/freeipmi/ipmi-lan-cmds.h
+include/freeipmi/ipmi-lan-interface.h
+include/freeipmi/ipmi-lan-parameter-spec.h
+include/freeipmi/ipmi-lan-utils.h
+include/freeipmi/ipmi-lan.h
+include/freeipmi/ipmi-locate.h
+include/freeipmi/ipmi-messaging-support-cmds.h
+include/freeipmi/ipmi-netfn-spec.h
+include/freeipmi/ipmi-openipmi-api.h
+include/freeipmi/ipmi-pef-and-alerting-cmds.h
+include/freeipmi/ipmi-pef-parameter-spec.h
+include/freeipmi/ipmi-privilege-level-spec.h
+include/freeipmi/ipmi-rmcpplus-interface.h
+include/freeipmi/ipmi-rmcpplus-status-spec.h
+include/freeipmi/ipmi-rmcpplus-support-and-payload-cmds.h
+include/freeipmi/ipmi-rmcpplus-utils.h
+include/freeipmi/ipmi-rmcpplus.h
+include/freeipmi/ipmi-sdr-record-types.h
+include/freeipmi/ipmi-sdr-repository-cmds.h
+include/freeipmi/ipmi-sel-cmds.h
+include/freeipmi/ipmi-sel-record-types.h
+include/freeipmi/ipmi-sensor-and-event-code-tables.h
+include/freeipmi/ipmi-sensor-cmds.h
+include/freeipmi/ipmi-sensor-types-spec.h
+include/freeipmi/ipmi-sensor-units-spec.h
+include/freeipmi/ipmi-sensor-utils.h
+include/freeipmi/ipmi-serial-modem-cmds.h
+include/freeipmi/ipmi-serial-modem-parameter-spec.h
+include/freeipmi/ipmi-slave-address-spec.h
+include/freeipmi/ipmi-smic-api.h
+include/freeipmi/ipmi-sol-cmds.h
+include/freeipmi/ipmi-sol-parameter-spec.h
+include/freeipmi/ipmi-ssif-api.h
+include/freeipmi/ipmi-utils.h
+include/freeipmi/rmcp-utils.h
+include/freeipmi/rmcp.h
+include/freeipmi/udm/
+include/freeipmi/udm/ipmi-chassis-cmds-udm.h
+include/freeipmi/udm/ipmi-device-global-cmds-udm.h
+include/freeipmi/udm/ipmi-fru-inventory-device-cmds-udm.h
+include/freeipmi/udm/ipmi-kcs-api-udm.h
+include/freeipmi/udm/ipmi-lan-cmds-udm.h
+include/freeipmi/udm/ipmi-lan-interface-udm.h
+include/freeipmi/udm/ipmi-messaging-support-cmds-udm.h
+include/freeipmi/udm/ipmi-openipmi-api-udm.h
+include/freeipmi/udm/ipmi-pef-and-alerting-cmds-udm.h
+include/freeipmi/udm/ipmi-rmcpplus-support-and-payload-cmds-udm.h
+include/freeipmi/udm/ipmi-sdr-repository-cmds-udm.h
+include/freeipmi/udm/ipmi-sel-cmds-udm.h
+include/freeipmi/udm/ipmi-sensor-cmds-udm.h
+include/freeipmi/udm/ipmi-serial-modem-cmds-udm.h
+include/freeipmi/udm/ipmi-sol-cmds-udm.h
+include/freeipmi/udm/ipmi-ssif-api-udm.h
+include/freeipmi/udm/ipmi-udm.h
+include/freeipmi/udm/udm.h
+include/ipmi_monitoring.h
+include/ipmiconsole.h
+include/ipmidetect.h
+@info info/freeipmi-faq.info
+lib/libfreeipmi.a
+lib/libfreeipmi.la
+lib/libipmiconsole.a
+lib/libipmiconsole.la
+lib/libipmidetect.a
+lib/libipmidetect.la
+lib/libipmimonitoring.a
+lib/libipmimonitoring.la
+@man man/man3/libipmiconsole.3
+@man man/man3/libipmidetect.3
+@man man/man3/libipmimonitoring.3
+@man man/man5/bmc-config.conf.5
+@man man/man5/ipmiconsole.conf.5
+@man man/man5/ipmidetect.conf.5
+@man man/man5/ipmidetectd.conf.5
+@man man/man5/ipmipower.conf.5
+@man man/man8/bmc-autoconfig.8
+@man man/man8/bmc-config.8
+@man man/man8/bmc-info.8
+@man man/man8/bmc-watchdog.8
+@man man/man8/ipmi-chassis.8
+@man man/man8/ipmi-fru.8
+@man man/man8/ipmi-locate.8
+@man man/man8/ipmi-raw.8
+@man man/man8/ipmi-sel.8
+@man man/man8/ipmi-sensors.8
+@man man/man8/ipmiconsole.8
+@man man/man8/ipmidetect.8
+@man man/man8/ipmidetectd.8
+@man man/man8/ipmimonitoring.8
+@man man/man8/ipmiping.8
+@man man/man8/ipmipower.8
+@man man/man8/pef-config.8
+@man man/man8/rmcpping.8
+sbin/bmc-autoconfig
+sbin/bmc-config
+sbin/bmc-info
+sbin/bmc-watchdog
+sbin/ipmi-chassis
+sbin/ipmi-fru
+sbin/ipmi-locate
+sbin/ipmi-raw
+sbin/ipmi-sel
+sbin/ipmi-sensors
+sbin/ipmiconsole
+sbin/ipmidetect
+sbin/ipmidetectd
+sbin/ipmimonitoring
+sbin/ipmiping
+sbin/ipmipower
+sbin/pef-config
+sbin/rmcpping
+share/doc/freeipmi/
+share/doc/freeipmi/AUTHORS
+share/doc/freeipmi/COPYING
+share/doc/freeipmi/COPYING.ZRESEARCH
+share/doc/freeipmi/COPYING.bmc-watchdog
+share/doc/freeipmi/COPYING.ipmi-fru
+share/doc/freeipmi/COPYING.ipmiconsole
+share/doc/freeipmi/COPYING.ipmidetect
+share/doc/freeipmi/COPYING.ipmimonitoring
+share/doc/freeipmi/COPYING.ipmiping
+share/doc/freeipmi/COPYING.ipmipower
+share/doc/freeipmi/COPYING.pstdout
+share/doc/freeipmi/COPYING.rmcpping
+share/doc/freeipmi/ChangeLog
+share/doc/freeipmi/ChangeLog.0
+share/doc/freeipmi/DISCLAIMER.bmc-watchdog
+share/doc/freeipmi/DISCLAIMER.ipmi-fru
+share/doc/freeipmi/DISCLAIMER.ipmiconsole
+share/doc/freeipmi/DISCLAIMER.ipmidetect
+share/doc/freeipmi/DISCLAIMER.ipmimonitoring
+share/doc/freeipmi/DISCLAIMER.ipmiping
+share/doc/freeipmi/DISCLAIMER.ipmipower
+share/doc/freeipmi/DISCLAIMER.pstdout
+share/doc/freeipmi/DISCLAIMER.rmcpping
+share/doc/freeipmi/INSTALL
+share/doc/freeipmi/NEWS
+share/doc/freeipmi/README
+share/doc/freeipmi/TODO
+share/doc/freeipmi/freeipmi-coding.txt
+share/doc/freeipmi/freeipmi-hostrange.txt
+share/doc/freeipmi/freeipmi-libraries.txt
+share/examples/freeipmi/
+share/examples/freeipmi/ipmi_monitoring_sensors.conf
+@sample ${SYSCONFDIR}/ipmi_monitoring_sensors.conf
+share/examples/freeipmi/sysconfig/
+@sample ${SYSCONFDIR}/sysconfig/
+share/examples/freeipmi/sysconfig/freeipmi-bmc-watchdog
+@sample ${SYSCONFDIR}/sysconfig/freeipmi-bmc-watchdog
+@comment var/
+var/cache/
+var/cache/ipmimonitoringsdrcache/
+var/lib/
+var/lib/freeipmi/
+var/lib/freeipmi/bmc-config-template
+var/lib/freeipmi/ipckey
+@comment var/log/
+var/log/freeipmi/

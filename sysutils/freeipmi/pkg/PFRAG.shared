@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
+@lib lib/libipmiconsole.so.${LIBipmiconsole_VERSION}
+@lib lib/libipmidetect.so.${LIBipmidetect_VERSION}
+@lib lib/libipmimonitoring.so.${LIBipmimonitoring_VERSION}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ipmi-sel_Makefile_in,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
+--- ipmi-sel/Makefile.in.orig	Thu Oct 11 17:58:28 2007
++++ ipmi-sel/Makefile.in	Tue Oct 23 18:29:34 2007
+@@ -556,7 +556,7 @@ uninstall-man: uninstall-man8
+ 
+ 
+ $(MANS_CPP): $(MANS_CPP:%=%.pre)
+-	cpp -P -I. -x c $@.pre -o $@
++	cpp -P -I. -x c < $@.pre > $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
