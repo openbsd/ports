@@ -1,0 +1,6 @@
+Version Strings (v-strings) in base Perl have been deprecated and
+will not be available after Perl 5.8.
+
+This module revives them as a simple module implementation.
+Version strings are well suited in many version "numbering" schemes
+and straightforward (if you always remember they are not numbers).
