@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2007/10/23 14:07:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.139 2007/10/25 18:17:55 wilfried Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -30,6 +30,7 @@
      SUBDIR += filelight
      SUBDIR += findlib
      SUBDIR += freedt
+     SUBDIR += freeipmi
      SUBDIR += ggrep
      SUBDIR += gkrellm
      SUBDIR += gpioflicker
