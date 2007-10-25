@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.562 2007/10/25 21:23:00 simon Exp $
+# $OpenBSD: Makefile,v 1.563 2007/10/25 22:06:38 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -286,6 +286,7 @@
      SUBDIR += p5-Data-Structure-Util
      SUBDIR += p5-Data-Types
      SUBDIR += p5-Data-UUID
+     SUBDIR += p5-Data-VString
      SUBDIR += p5-Data-Visitor
      SUBDIR += p5-Date-Calc
      SUBDIR += p5-Date-Handler
@@ -329,6 +330,7 @@
      SUBDIR += p5-ExtUtils-PkgConfig
      SUBDIR += p5-ExtUtils-XSBuilder
      SUBDIR += p5-File-BaseDir
+     SUBDIR += p5-File-BOM
      SUBDIR += p5-File-Copy-Recursive
      SUBDIR += p5-File-DesktopEntry
      SUBDIR += p5-File-Find-Rule
@@ -380,6 +382,7 @@
      SUBDIR += p5-Inline
      SUBDIR += p5-Lchown
      SUBDIR += p5-List-MoreUtils
+     SUBDIR += p5-Locale-Hebrew
      SUBDIR += p5-Locale-Maketext-Fuzzy
      SUBDIR += p5-Locale-Maketext-Gettext
      SUBDIR += p5-Locale-Maketext-Lexicon
@@ -413,6 +416,7 @@
      SUBDIR += p5-PAR-Dist
      SUBDIR += p5-POE
      SUBDIR += p5-POE-Component-IKC
+     SUBDIR += p5-POE-XS-Queue-Array
      SUBDIR += p5-PadWalker
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Parallel-Forker
