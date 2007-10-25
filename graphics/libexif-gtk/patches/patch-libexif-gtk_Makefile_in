@@ -1,0 +1,13 @@
+$OpenBSD: patch-libexif-gtk_Makefile_in,v 1.1 2007/10/25 10:33:09 ajacoutot Exp $
+--- libexif-gtk/Makefile.in.orig	Thu Oct 25 12:22:26 2007
++++ libexif-gtk/Makefile.in	Thu Oct 25 12:22:35 2007
+@@ -251,8 +251,7 @@ INCLUDES = \
+ 	-I$(top_srcdir)/intl				\
+ 	-I$(top_srcdir)/gtk-extensions			\
+ 	$(LIBEXIF_GTK_CFLAGS)				\
+-	-DG_LOG_DOMAIN=\"libexif\"			\
+-	-DGTK_DISABLE_DEPRECATED
++	-DG_LOG_DOMAIN=\"libexif\"
+ 
+ lib_LTLIBRARIES = libexif-gtk.la
+ libexif_gtkincludedir = $(includedir)/libexif-gtk
