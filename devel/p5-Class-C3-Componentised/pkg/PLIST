@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/25 21:22:22 simon Exp $
+${P5SITE}/Class/C3/Componentised.pm
+@man man/man3p/Class::C3::Componentised.3p
