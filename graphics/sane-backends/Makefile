@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:43 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2007/10/25 20:43:14 winiger Exp $
 
 COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.18
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	sane 1.17
 CATEGORIES=	graphics
 
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
 		http://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
-WANTLIB=	c m pthread exif z
+WANTLIB=	c m pthread exif ltdl z
 
 LIB_DEPENDS=	usb.>=7::devel/libusb \
 		jpeg.>=62::graphics/jpeg \
