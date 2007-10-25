@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.561 2007/10/25 18:14:24 wilfried Exp $
+# $OpenBSD: Makefile,v 1.562 2007/10/25 21:23:00 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -230,10 +230,12 @@
      SUBDIR += p5-Catalyst-Plugin-StackTrace
      SUBDIR += p5-Class-Accessor
      SUBDIR += p5-Class-Accessor-Chained
+     SUBDIR += p5-Class-Accessor-Grouped
      SUBDIR += p5-Class-AutoClass
      SUBDIR += p5-Class-Autouse
      SUBDIR += p5-Class-Base
      SUBDIR += p5-Class-C3
+     SUBDIR += p5-Class-C3-Componentised
      SUBDIR += p5-Class-C3-XS
      SUBDIR += p5-Class-Classless
      SUBDIR += p5-Class-Container
@@ -390,6 +392,7 @@
      SUBDIR += p5-Log-Log4perl
      SUBDIR += p5-MLDBM
      SUBDIR += p5-MLDBM-Sync
+     SUBDIR += p5-MRO-Compat
      SUBDIR += p5-Module-Build
      SUBDIR += p5-Module-CoreList
      SUBDIR += p5-Module-Find
@@ -438,6 +441,7 @@
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-SVN-Web
      SUBDIR += p5-Scalar-Defer
+     SUBDIR += p5-Scope-Guard
      SUBDIR += p5-Set-IntRange
      SUBDIR += p5-Set-Object
      SUBDIR += p5-Set-Scalar
