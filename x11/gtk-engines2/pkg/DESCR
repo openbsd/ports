@@ -1,10 +1,12 @@
 This package provides several theme engines for GTK+2 including:
 
-* Pixmap: A generic engine that renders using pixmaps.
-  One theme using this theme engine is included.
+* Clearlooks: Clean and simple theme engine.
 
-* Metal: A fairly complete theme engine that looks like the
-  Java-Metal look of Swing.
+* HC: High Contrast engine.
+
+* Mist: Minimalistic engine, designed to provide a simple UI.
 
 * Redmond95: A simple theme engine that looks a bit like 
   Microsoft Windows95.
+
+* Smooth: Very flexible engine, yet very fast.
