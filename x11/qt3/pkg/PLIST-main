@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/02/17 18:59:04 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/10/25 09:29:39 wilfried Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 @pkgpath x11/qt3,mt
@@ -1497,6 +1497,7 @@ lib/qt3/${QT_PLUGINS}/designer/
 lib/qt3/${QT_PLUGINS}/inputmethods/
 lib/qt3/${QT_PLUGINS}/sqldrivers/
 lib/qt3/${QT_PLUGINS}/styles/
+share/doc/qt3/
 share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
