@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.8 2007/06/18 06:34:48 steven Exp $
+$OpenBSD: patch-configure,v 1.9 2007/10/25 10:00:03 steven Exp $
 --- configure.orig	Wed May 30 02:49:24 2007
 +++ configure	Mon Jun 11 08:38:35 2007
 @@ -3012,7 +3012,7 @@ if test "$INSTALL" = "build/install-sh -c"; then
@@ -33,7 +33,7 @@ $OpenBSD: patch-configure,v 1.8 2007/06/18 06:34:48 steven Exp $
  
  
 -PYTHON="`$abs_srcdir/build/find_python.sh`"
-+PYTHON="python!!PYTHON_VER!!"
++PYTHON="python!!MODPY_VERSION!!"
  if test -z "$PYTHON"; then
    { echo "$as_me:$LINENO: WARNING: Python 2.0 or later is required to run the testsuite" >&5
  echo "$as_me: WARNING: Python 2.0 or later is required to run the testsuite" >&2;}

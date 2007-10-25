@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.41 2007/10/25 10:00:03 steven Exp $
 
 COMMENT-main=	subversion revision control system
 COMMENT-perl=	perl interface to subversion
@@ -11,7 +11,7 @@ DISTNAME=	subversion-${VERSION}
 PKGNAME=	${DISTNAME}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	p5-SVN-${VERSION}
-PKGNAME-python=	py-subversion-${VERSION}p0
+PKGNAME-python=	py-subversion-${VERSION}p1
 PKGNAME-ruby=	ruby-subversion-${VERSION}p0
 PKGNAME-ap2=	ap2-subversion-${VERSION}
 
@@ -39,10 +39,6 @@ MASTER_SITES=	${HOMEPAGE}/tarballs/
 
 PSEUDO_FLAVORS=	no_bindings no_ap2
 FLAVOR?=
-
-PYTHON_VER=	2.4
-
-SUBST_VARS=	PYTHON_VER
 
 MODULES=	devel/gettext
 
@@ -81,9 +77,8 @@ LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversio
 .  endfor
 
 WANTLIB-python=	${WANTLIB} crypto m ssl neon xml2 aprutil-1
-RUN_DEPENDS-python=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-LIB_DEPENDS-python=	python${PYTHON_VER}:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-			${MODGETTEXT_LIB_DEPENDS}
+RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
+LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
@@ -95,15 +90,14 @@ LIB_DEPENDS-ruby=	${MODGETTEXT_LIB_DEPENDS}
 LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
-MODULES+=	lang/ruby
-BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		::devel/swig
+MODULES+=	lang/ruby lang/python
+BUILD_DEPENDS+=	::devel/swig
 .endif
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PYTHON2=${LOCALBASE}/bin/python${PYTHON_VER}
+CONFIGURE_ENV=	PYTHON2=${MODPY_BIN}
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-neon=${LOCALBASE} \
 		--with-apr=${LOCALBASE} \
@@ -124,14 +118,15 @@ CONFIGURE_ARGS+=--with-apxs=${LOCALBASE}/sbin/apxs2
 CONFIGURE_ARGS+=--without-apxs
 .endif
 
-REGRESS_DEPENDS=::lang/python/${PYTHON_VER}
+REGRESS_DEPENDS=::lang/python/${MODPY_VERSION}
+MODPY_VERSION?=	2.5
 
 pre-configure:
 	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE}," ${WRKSRC}/configure
-	@perl -pi -e "s,!!PYTHON_VER!!,${PYTHON_VER}," ${WRKSRC}/configure
+	@perl -pi -e "s,!!MODPY_VERSION!!,${MODPY_VERSION}," ${WRKSRC}/configure
 
 pre-build:
-	@perl -pi -e "s,!!PYTHON_VER!!,${PYTHON_VER}," ${WRKBUILD}/Makefile
+	@perl -pi -e "s,!!MODPY_VERSION!!,${MODPY_VERSION}," ${WRKBUILD}/Makefile
 
 .if !${FLAVOR:L:Mno_bindings}
 REGRESS_DEPENDS+=	::devel/p5-IO-String \
