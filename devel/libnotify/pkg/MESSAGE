@@ -1,0 +1,3 @@
+If you want to use popup notifications, you'll have to install a
+notification daemon for D-BUS, either notification-daemon or
+notification-daemon-xfce.

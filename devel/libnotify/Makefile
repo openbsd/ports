@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/25 17:02:10 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/25 20:12:08 landry Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
 DISTNAME=		libnotify-0.4.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		devel
 SHARED_LIBS +=	notify             2.2      # .2.2
 
