@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2007/10/22 15:36:59 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2007/10/25 09:30:22 wilfried Exp $
 @pkgpath x11/qt4
 %%SHARED%%
 bin/assistant4
@@ -1990,7 +1990,6 @@ lib/qt4/bin/rcc
 lib/qt4/bin/syncqt
 lib/qt4/bin/uic
 lib/qt4/bin/uic3
-lib/qt4/examples/tools/codecs/encodedfiles/.gitattributes
 lib/qt4/include
 @comment lib/qt4/libQt3Support.la
 lib/qt4/libQt3Support.prl
@@ -2386,5 +2385,6 @@ lib/qt4/translations/qtconfig_pl.qm
 lib/qt4/translations/qtconfig_zh_CN.qm
 lib/qt4/translations/qvfb_pl.qm
 lib/qt4/translations/qvfb_zh_CN.qm
+share/doc/qt4/
 share/doc/qt4/OPENSOURCE-NOTICE.TXT
 share/doc/qt4/README

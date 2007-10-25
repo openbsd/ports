@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.15 2007/10/22 15:36:59 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.16 2007/10/25 09:30:22 wilfried Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 bin/pixeltool
@@ -1576,6 +1576,7 @@ lib/qt4/examples/tools/codecs/
 lib/qt4/examples/tools/codecs/codecs
 lib/qt4/examples/tools/codecs/codecs.pro
 lib/qt4/examples/tools/codecs/encodedfiles/
+lib/qt4/examples/tools/codecs/encodedfiles/.gitattributes
 lib/qt4/examples/tools/codecs/encodedfiles/iso-8859-1.txt
 lib/qt4/examples/tools/codecs/encodedfiles/iso-8859-15.txt
 lib/qt4/examples/tools/codecs/encodedfiles/utf-16.txt
