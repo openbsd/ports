@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/07/02 21:56:57 mbalmer Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/10/25 09:46:44 wilfried Exp $
 @pkgpath ${BASE_PKGPATH}
 bin/eventlogadm
 bin/findsmb
@@ -112,7 +112,6 @@ share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/smb.conf
 share/swat/
 share/swat/help/
-share/swat/help/Samba3-Developers-Guide/pr01.html
 share/swat/help/welcome-no-samba-doc.html
 share/swat/images/
 share/swat/images/globals.gif
