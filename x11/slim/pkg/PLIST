@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/10/24 23:32:00 landry Exp $
+@comment $OpenBSD: PLIST,v 1.1 2007/10/25 09:30:13 landry Exp $
+@pkgpath x11/slim,-main
 bin/slim
 @man man/man1/slim.1
 share/doc/slim/
