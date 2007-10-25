@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/23 12:57:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2007/10/25 07:30:25 ajacoutot Exp $
 
 COMMENT=	Snapshot and background plugin for Gkrellm2
 
 VERSION=	0.4.3
 DISTNAME=	gkrellshoot-${VERSION}
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	x11 sysutils/gkrellm
 
 HOMEPAGE=	http://gkrellshoot.sourceforge.net

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/23 12:57:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/25 07:30:24 ajacoutot Exp $
 
 COMMENT=	GkrellM2 load meter with a familiar face
 
 DISTNAME=	gkrellflynn-0.8
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11 sysutils/gkrellm
 
 HOMEPAGE=	http://horus.comlab.uni-rostock.de/flynn/

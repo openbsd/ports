@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.15 2007/09/23 12:57:08 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2007/10/25 07:30:24 ajacoutot Exp $
 
-MAINTAINER?=		Peter Hessler <spambox@theapt.org>
+MAINTAINER?=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM?=	Yes

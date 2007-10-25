@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/23 12:57:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2007/10/25 07:30:24 ajacoutot Exp $
 
 COMMENT=	Web cam plugin for GkrellM2
 
 VERSION=	2.0.0
 DISTNAME=	gkrellkam-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	graphics sysutils/gkrellm
 
 HOMEPAGE=	http://gkrellkam.sourceforge.net
