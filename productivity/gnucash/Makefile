@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 21:28:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2007/10/25 21:05:33 steven Exp $
 
 BROKEN= 	needs an update
 
@@ -6,7 +6,7 @@ NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	Quicken-like money and finance manager
 DISTNAME=	gnucash-1.8.12
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 DOCVER=		1.8.5
 CATEGORIES=	x11/gnome productivity
 
@@ -62,7 +62,7 @@ LIB_DEPENDS=	glade.>=4,glade-gnome::devel/libglade,gnome \
 		gal.>=16::devel/gal \
 		gnomeprint.>=16::x11/gnome/print \
 		gdk_pixbuf.>=2::graphics/gdk-pixbuf \
-		lib/db4/db.=4:db-4.*:databases/db/v4 \
+		lib/db4/db.>=4:db-4.*:databases/db/v4 \
 		gwrap-glib,gwrap-wct::devel/g-wrap \
 		gtkhtml-1.1.>=3.5::www/gtkhtml
 BUILD_DEPENDS=	::devel/swig \

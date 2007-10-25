@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2007/09/15 23:36:43 merdely Exp $
+# $OpenBSD: Makefile,v 1.34 2007/10/25 21:05:33 steven Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd2.xiaoka.com/
 
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--disable-pgsql
 .endif
 
 .if ${FLAVOR:L:Mdb}
-LIB_DEPENDS+=		lib/db4/db.=4::databases/db/v4
+LIB_DEPENDS+=		lib/db4/db.>=4::databases/db/v4
 CONFIGURE_ARGS+=	--enable-db
 EXTRA_INCLUDE_PATH:=	${EXTRA_INCLUDE_PATH}:${LOCALBASE}/include/db4
 .else

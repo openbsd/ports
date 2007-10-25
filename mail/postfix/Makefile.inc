@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.65 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile.inc,v 1.66 2007/10/25 21:05:33 steven Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -76,7 +76,7 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
 
 .if ${FLAVOR:L:Mdb4}
-LIB_DEPENDS+=	lib/db4/db.=4:db-4.*:databases/db/v4
+LIB_DEPENDS+=	lib/db4/db.>=4:db-4.*:databases/db/v4
 MAKE_CCARGS+=	-I${LOCALBASE}/include/db4
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/db4 -ldb
 .endif

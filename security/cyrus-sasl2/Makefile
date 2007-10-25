@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2007/07/25 16:25:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2007/10/25 21:05:33 steven Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.22
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
 		digestmd5	2.22 \
@@ -58,7 +58,7 @@ PKG_ARGS?=	-Dsql=0
 CONFIGURE_ARGS+=--with-dblib=berkeley \
 		--with-bdb-libdir="${LOCALBASE}/lib/db4" \
 		--with-bdb-incdir="${LOCALBASE}/include/db4"
-LIB_DEPENDS+=	lib/db4/db.=4:db-4.*:databases/db/v4
+LIB_DEPENDS+=	lib/db4/db.>=4:db-4.*:databases/db/v4
 .else
 CONFIGURE_ARGS+=--with-dblib=ndbm \
 		--without-bdb-libdir \

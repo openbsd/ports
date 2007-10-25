@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.50 2007/10/20 06:55:54 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.51 2007/10/25 21:05:33 steven Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -52,7 +52,7 @@ LIB_DEPENDS=
 RUN_DEPENDS-main=
 WANTLIB-main=	ssl panel m crypto c util z readline pthread ncurses stdc++
 
-LIB_DEPENDS-bsddb=	lib/db4/db.=4:db-4.*:databases/db/v4
+LIB_DEPENDS-bsddb=	lib/db4/db.>=4:db-4.*:databases/db/v4
 LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm
 LIB_DEPENDS-bz2=	bz2::archivers/bzip2
 RUN_DEPENDS-idle=	${RUN_DEPENDS} \

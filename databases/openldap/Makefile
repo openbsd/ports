@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.80 2007/10/25 21:05:33 steven Exp $
 
 COMMENT-main=	Open source LDAP software (client)
 COMMENT-server=	Open source LDAP software (server)
 
 DISTNAME=		openldap-2.3.33
-FULLPKGNAME-main=	${DISTNAME:S/-/-client-/}
-PKGNAME-server=		${DISTNAME:S/-/-server-/}p1
+FULLPKGNAME-main=	${DISTNAME:S/-/-client-/}p0
+PKGNAME-server=		${DISTNAME:S/-/-server-/}p2
 
 SHARED_LIBS +=	lber                 9.1      # .2.15
 SHARED_LIBS +=	ldap                 9.1      # .2.15
@@ -78,7 +78,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include/sasl
 
 .if ${FLAVOR:L:Mbdb}
 CONFIGURE_ARGS+=	--enable-bdb --enable-hdb
-LIB_DEPENDS+=		lib/db4/db.=4:db-4.*:databases/db/v4
+LIB_DEPENDS+=		lib/db4/db.>=4:db-4.*:databases/db/v4
 CPPFLAGS+=		-I${LOCALBASE}/include/db4
 LDFLAGS+=		-L${LOCALBASE}/lib/db4
 LIBS+=			-ldb
