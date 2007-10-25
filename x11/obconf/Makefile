@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/10/16 14:46:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/25 16:04:10 ajacoutot Exp $
 
 COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/index.php/Obconf
@@ -22,7 +22,7 @@ WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pangoxft-1.0 png xml2 z
+		pangoxft-1.0 png xml2 z Xcomposite Xdamage
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
