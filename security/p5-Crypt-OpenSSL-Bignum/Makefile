@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/10/25 09:04:59 wilfried Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	OpenSSL's multiprecision integer arithmetic
 
 MODULES=	cpan
-DISTNAME=	Crypt-OpenSSL-Bignum-0.03
+DISTNAME=	Crypt-OpenSSL-Bignum-0.04
 CATEGORIES=	security
 
 HOMEPAGE=	http://perl-openssl.sourceforge.net/
