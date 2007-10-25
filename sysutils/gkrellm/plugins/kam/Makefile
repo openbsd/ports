@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2007/10/25 07:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/25 15:15:54 ajacoutot Exp $
 
-COMMENT=	Web cam plugin for GkrellM2
+COMMENT=	webcam plugin for GkrellM2
 
-VERSION=	2.0.0
-DISTNAME=	gkrellkam-${VERSION}
-PKGNAME=	${DISTNAME}p3
-CATEGORIES=	graphics sysutils/gkrellm
+V=		2.0.0
+DISTNAME=	gkrellkam-${V}
+PKGNAME=	${DISTNAME}p4
+CATEGORIES=	graphics
 
 HOMEPAGE=	http://gkrellkam.sourceforge.net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellkam/}
-DISTFILES=	gkrellkam_${VERSION}.tar.gz
+DISTFILES=	gkrellkam_${V}.tar.gz
 
 RUN_DEPENDS+=	:wget-*:net/wget
 

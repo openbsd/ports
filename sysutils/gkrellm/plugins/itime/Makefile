@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/10/25 07:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/25 15:15:54 ajacoutot Exp $
 
-COMMENT=	GkrellM2 plugin that shows Interet Time
+COMMENT=	GkrellM2 plugin that shows Internet time
 
-VERSION=	1.0.1
-DISTNAME=	gkrellmitime-${VERSION}
-PKGNAME=	${DISTNAME}p7
-CATEGORIES=	net sysutils/gkrellm
-
-HOMEPAGE=	http://eric.bianchi.free.fr/gkrellm/
-
-MASTER_SITES=	http://eric.bianchi.free.fr/Softwares/
+V=		1.0.1
+DISTNAME=	gkrellmitime-${V}
+PKGNAME=	${DISTNAME}p8
+CATEGORIES=	net
 
 ALL_TARGET=	gkrellm_itime.so
 PLUGIN=		${WRKSRC}/gkrellm_itime.so

@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/25 07:30:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/10/25 15:15:54 ajacoutot Exp $
 
-COMMENT=	Stock Ticker for GkrellM2
+COMMENT=	stock ticker for GkrellM2
 
-VERSION=	0.5.1
-DISTNAME=	gkrellstock-${VERSION}
-PKGNAME=	${DISTNAME}p7
-CATEGORIES=	misc sysutils/gkrellm
+V=		0.5.1
+DISTNAME=	gkrellstock-${V}
+PKGNAME=	${DISTNAME}p8
+CATEGORIES=	misc
 
 HOMEPAGE=	http://gkrellstock.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellstock/}
 
 RUN_DEPENDS+=	:p5-Finance-Quote-*:misc/p5-Finance-Quote
 
-WRKDIST=       	${WRKDIR}/gkrellStock-${VERSION}
+WRKDIST=       	${WRKDIR}/gkrellStock-${V}
 ALL_TARGET=	gkrellstock.so
 PLUGIN=		${WRKSRC}/gkrellstock.so
 PERLDIR=	${PREFIX}/libdata/perl5/site_perl/Finance/Quote/

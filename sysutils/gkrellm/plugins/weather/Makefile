@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2007/10/25 07:30:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/10/25 15:15:54 ajacoutot Exp $
 
 COMMENT=	Weather plugin for GkrellM2
 
 DISTNAME=	gkrellweather-2.0.6
-PKGNAME=	${DISTNAME}p7
-CATEGORIES=	x11 sysutils/gkrellm
+PKGNAME=	${DISTNAME}p8
+CATEGORIES=	x11
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/index.html

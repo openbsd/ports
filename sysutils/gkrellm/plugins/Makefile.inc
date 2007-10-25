@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.16 2007/10/25 07:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2007/10/25 15:15:54 ajacoutot Exp $
 
 MAINTAINER?=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
+CATEGORIES+=	sysutils/gkrellm
 
 # GPL
 PERMIT_PACKAGE_CDROM?=	Yes
@@ -13,7 +15,7 @@ WANTLIB?=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 			glib-2.0 gmodule-2.0 gobject-2.0 glitz png \
 			gthread-2.0 gtk-x11-2.0 iconv intl m \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-			cairo
+			cairo Xcomposite Xdamage
 .if defined(EXTRA_WANTLIB)
 WANTLIB+=	${EXTRA_WANTLIB}
 .endif
