@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2007/10/25 21:42:35 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	library to provide LWP https support via OpenSSL
 
 MODULES=	cpan
-DISTNAME=	Crypt-SSLeay-0.54
+DISTNAME=	Crypt-SSLeay-0.57
 CATEGORIES=	security
 
 # Perl
@@ -14,5 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto ssl
+
+CONFIGURE_ARGS+=--default --lib=/usr
 
 .include <bsd.port.mk>
