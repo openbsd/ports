@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-client,v 1.5 2005/09/06 20:11:28 sturm Exp $
+@comment $OpenBSD: PLIST-client,v 1.6 2007/10/25 07:34:29 ajacoutot Exp $
 @mode 2755
 @group kmem
 bin/gkrellm
@@ -7,43 +7,19 @@ bin/gkrellm
 include/gkrellm2/
 include/gkrellm2/gkrellm-public-proto.h
 include/gkrellm2/gkrellm.h
-lib/pkgconfig/
 lib/pkgconfig/gkrellm.pc
 @man man/man1/gkrellm.1
-share/locale/
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
+share/locale/bg/LC_MESSAGES/gkrellm.mo
 share/locale/cs/LC_MESSAGES/gkrellm.mo
-share/locale/da/
-share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/gkrellm.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gkrellm.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gkrellm.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gkrellm.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/gkrellm.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/gkrellm.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gkrellm.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/gkrellm.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
+share/locale/pt_BR/LC_MESSAGES/gkrellm.mo
 share/locale/ru/LC_MESSAGES/gkrellm.mo
-share/locale/sl/
-share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/gkrellm.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/gkrellm.mo
