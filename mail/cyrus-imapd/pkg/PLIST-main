@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/08/29 20:08:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/10/25 09:42:40 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _cyrus:543
 @newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/var/empty:/sbin/nologin
@@ -33,7 +33,6 @@ include/cyrus/lock.h
 include/cyrus/lsort.h
 include/cyrus/map.h
 include/cyrus/md5.h
-include/cyrus/message_uuid.h
 include/cyrus/mkgmtime.h
 include/cyrus/mpool.h
 include/cyrus/nonblock.h
@@ -61,6 +60,7 @@ libexec/cyrus-imapd/ctl_mboxlist
 libexec/cyrus-imapd/cvt_cyrusdb
 libexec/cyrus-imapd/cyr_dbtool
 libexec/cyrus-imapd/cyr_expire
+libexec/cyrus-imapd/cyr_synclog
 libexec/cyrus-imapd/cyrdump
 libexec/cyrus-imapd/deliver
 libexec/cyrus-imapd/fetchnews
@@ -106,6 +106,7 @@ libexec/cyrus-imapd/unexpunge
 @man man/man8/cvt_cyrusdb.8
 @man man/man8/cyr_dbtool.8
 @man man/man8/cyr_expire.8
+@man man/man8/cyr_synclog.8
 @man man/man8/cyrus-fetchnews.8
 @man man/man8/cyrus-idled.8
 @man man/man8/cyrus-imapd.8
@@ -118,6 +119,7 @@ libexec/cyrus-imapd/unexpunge
 @man man/man8/ipurge.8
 @man man/man8/lmtpd.8
 @man man/man8/make_md5.8
+@man man/man8/make_sha1.8
 @comment @man man/man8/master.8
 @man man/man8/mbexamine.8
 @man man/man8/mbpath.8
