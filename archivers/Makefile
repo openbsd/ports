@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2007/05/01 19:57:42 steven Exp $
+# $OpenBSD: Makefile,v 1.35 2007/10/25 10:41:34 merdely Exp $
 
      SUBDIR += arc
      SUBDIR += bzip
@@ -33,6 +33,7 @@
      SUBDIR += par1cmdline
      SUBDIR += par2cmdline
      SUBDIR += rar
+     SUBDIR += ripole
      SUBDIR += rzip
      SUBDIR += star
      SUBDIR += star,static
