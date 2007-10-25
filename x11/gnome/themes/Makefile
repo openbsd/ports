@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2007/10/25 14:00:37 jasper Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes
-GNOME_VERSION=		2.18.1
-PKGNAME=		${DISTNAME}p2
+GNOME_VERSION=		2.20.1
 CATEGORIES=		x11
 
 # LGPL
@@ -15,10 +14,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		x11/gnome
 
-BUILD_DEPENDS=		:gtk-engines2->=2.9:x11/gtk-engines2 \
-			:icon-naming-utils-*:x11/icon-naming-utils \
-			:gettext-*:devel/gettext
-RUN_DEPENDS=		:gtk-engines2->=2.9:x11/gtk-engines2
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			:icon-naming-utils-*:x11/icon-naming-utils
+RUN_DEPENDS=		:gettext-*:devel/gettext \
+			:gtk-engines2->=2.9:x11/gtk-engines2
 
 USE_X11=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
