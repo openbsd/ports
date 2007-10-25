@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_afpd_directory_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- etc/afpd/directory.c.orig	Wed Feb  9 20:23:10 2005
-+++ etc/afpd/directory.c	Sat Dec 31 14:16:49 2005
+$OpenBSD: patch-etc_afpd_directory_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- etc/afpd/directory.c.orig	Thu Feb 10 02:23:10 2005
++++ etc/afpd/directory.c	Thu Oct 25 20:30:05 2007
 @@ -681,7 +681,7 @@ int netatalk_unlink(const char *name)
  /* ------------------- */
  static int deletedir(char *dir)
@@ -39,7 +39,7 @@ $OpenBSD: patch-etc_afpd_directory_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
      DIR *dp;
      struct dirent	*de;
      struct stat st;
-@@ -754,13 +754,13 @@ static int copydir(const struct vol *vol
+@@ -754,13 +754,13 @@ static int copydir(const struct vol *vol, char *src, c
      }
  
      /* set things up to copy */
@@ -57,7 +57,7 @@ $OpenBSD: patch-etc_afpd_directory_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
      dlen++;
      drem = sizeof(dpath) - dlen -1;
  
-@@ -774,14 +774,14 @@ static int copydir(const struct vol *vol
+@@ -774,14 +774,14 @@ static int copydir(const struct vol *vol, char *src, c
              err = AFPERR_PARAM;
              break;
          }

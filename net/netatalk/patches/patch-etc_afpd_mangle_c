@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_afpd_mangle_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- etc/afpd/mangle.c.orig	Mon Feb 14 11:01:54 2005
-+++ etc/afpd/mangle.c	Sat Dec 31 14:19:54 2005
+$OpenBSD: patch-etc_afpd_mangle_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- etc/afpd/mangle.c.orig	Mon Feb 14 17:01:54 2005
++++ etc/afpd/mangle.c	Thu Oct 25 20:30:05 2007
 @@ -235,7 +235,7 @@ unsigned char *
  mangle(const struct vol *vol, unsigned char *filename, size_t filenamelen, unsigned char *uname, cnid_t id, int flags) {
      unsigned char *ext = NULL;
@@ -10,7 +10,7 @@ $OpenBSD: patch-etc_afpd_mangle_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
      unsigned char mangle_suffix[MANGLE_LENGTH + 1];
      size_t ext_len = 0;
      size_t maxlen;
-@@ -259,19 +259,19 @@ mangle(const struct vol *vol, unsigned c
+@@ -259,19 +259,19 @@ mangle(const struct vol *vol, unsigned char *filename,
  	    ext_len = MAX_EXT_LENGTH;
  	}
      }

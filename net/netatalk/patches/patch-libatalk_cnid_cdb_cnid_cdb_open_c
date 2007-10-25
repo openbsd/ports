@@ -1,7 +1,7 @@
-$OpenBSD: patch-libatalk_cnid_cdb_cnid_cdb_open_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- libatalk/cnid/cdb/cnid_cdb_open.c.orig	Sun Mar 21 23:38:51 2004
-+++ libatalk/cnid/cdb/cnid_cdb_open.c	Sat Dec 31 00:26:34 2005
-@@ -179,21 +179,22 @@ static struct _cnid_db *cnid_cdb_new(con
+$OpenBSD: patch-libatalk_cnid_cdb_cnid_cdb_open_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- libatalk/cnid/cdb/cnid_cdb_open.c.orig	Mon Mar 22 05:38:51 2004
++++ libatalk/cnid/cdb/cnid_cdb_open.c	Thu Oct 25 20:30:06 2007
+@@ -179,21 +179,22 @@ static struct _cnid_db *cnid_cdb_new(const char *volpa
  /* --------------- */
  static int upgrade_required(char *dbdir)
  {
@@ -41,7 +41,7 @@ $OpenBSD: patch-libatalk_cnid_cdb_cnid_cdb_open_c,v 1.1 2006/09/22 05:56:25 pval
      CNID_private *db;
      struct _cnid_db *cdb;
      int open_flag, len;
-@@ -223,7 +224,7 @@ struct _cnid_db *cnid_cdb_open(const cha
+@@ -223,7 +224,7 @@ struct _cnid_db *cnid_cdb_open(const char *dir, mode_t
  
      /* this checks .AppleDB.
         We need space for dir + '/' + DBHOMELEN + '/' + DBLEN */
@@ -50,7 +50,7 @@ $OpenBSD: patch-libatalk_cnid_cdb_cnid_cdb_open_c,v 1.1 2006/09/22 05:56:25 pval
          LOG(log_error, logtype_default, "cnid_open: Pathname too large: %s", dir);
          return NULL;
      }
-@@ -241,13 +242,12 @@ struct _cnid_db *cnid_cdb_open(const cha
+@@ -241,13 +242,12 @@ struct _cnid_db *cnid_cdb_open(const char *dir, mode_t
      cdb->_private = (void *) db;
      db->magic = CNID_DB_MAGIC;
  

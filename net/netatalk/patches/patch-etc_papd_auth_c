@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_papd_auth_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- etc/papd/auth.c.orig	Fri Mar 11 10:36:59 2005
-+++ etc/papd/auth.c	Sat Dec 31 13:10:37 2005
-@@ -96,7 +96,7 @@ int auth_register(const int type, struct
+$OpenBSD: patch-etc_papd_auth_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- etc/papd/auth.c.orig	Fri Mar 11 16:36:59 2005
++++ etc/papd/auth.c	Thu Oct 25 20:30:06 2007
+@@ -96,7 +96,7 @@ int auth_register(const int type, struct uam_obj *uam)
  /* load all of the modules */
  int auth_load(const char *path, const char *list)
  {
@@ -10,7 +10,7 @@ $OpenBSD: patch-etc_papd_auth_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
    struct uam_mod *mod;
    struct stat st;
    int len;
-@@ -108,9 +108,9 @@ int auth_load(const char *path, const ch
+@@ -108,9 +108,9 @@ int auth_load(const char *path, const char *list)
    if ((p = strtok(buf, ",")) == NULL)
      return -1;
  

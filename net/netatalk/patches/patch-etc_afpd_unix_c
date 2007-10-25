@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_afpd_unix_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- etc/afpd/unix.c.orig	Tue Jun 15 18:53:55 2004
-+++ etc/afpd/unix.c	Fri Dec 30 23:04:27 2005
+$OpenBSD: patch-etc_afpd_unix_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- etc/afpd/unix.c.orig	Wed Jun 16 00:53:55 2004
++++ etc/afpd/unix.c	Thu Oct 25 20:30:05 2007
 @@ -342,8 +342,8 @@ const mode_t	mode;
                  strcmp( deskp->d_name, ".." ) == 0 || strlen( deskp->d_name ) > 2 ) {
              continue;
@@ -109,7 +109,7 @@ $OpenBSD: patch-etc_afpd_unix_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
          if ( chown( buf, uid, gid ) < 0 && errno != EPERM ) {
              LOG(log_debug, logtype_afpd, "setdirowner: chown %d/%d %s: %s",
                  uid, gid, fullpathname(buf), strerror(errno) );
-@@ -788,8 +788,8 @@ static int recursive_chown(const char *p
+@@ -788,8 +788,8 @@ static int recursive_chown(const char *path, uid_t uid
      struct dirent *entry;
      char *name;
      int ret = 0;
@@ -129,7 +129,7 @@ $OpenBSD: patch-etc_afpd_unix_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  	int i;
          struct stat pd_stat;
          uid_t uid;
-@@ -840,7 +840,7 @@ int unix_rename(const char *oldpath, con
+@@ -840,7 +840,7 @@ int unix_rename(const char *oldpath, const char *newpa
  	if (rename(oldpath, newpath) < 0)
  		return -1;
  #if 0

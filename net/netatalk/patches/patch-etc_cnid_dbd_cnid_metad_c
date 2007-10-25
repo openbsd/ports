@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_cnid_dbd_cnid_metad_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- etc/cnid_dbd/cnid_metad.c.orig	Mon Sep  6 03:19:21 2004
-+++ etc/cnid_dbd/cnid_metad.c	Sat Dec 31 12:40:35 2005
-@@ -270,8 +270,8 @@ static int maybe_start_dbd(char *dbdpn, 
+$OpenBSD: patch-etc_cnid_dbd_cnid_metad_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- etc/cnid_dbd/cnid_metad.c.orig	Mon Sep  6 09:19:21 2004
++++ etc/cnid_dbd/cnid_metad.c	Thu Oct 25 20:30:06 2007
+@@ -270,8 +270,8 @@ static int maybe_start_dbd(char *dbdpn, char *dbdir, c
              }
          }
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-etc_cnid_dbd_cnid_metad_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp
  	
  	if (up->count == MAXSPAWN) {
  	    /* there's a pb with the db inform child 
-@@ -298,7 +298,7 @@ static int maybe_start_dbd(char *dbdpn, 
+@@ -298,7 +298,7 @@ static int maybe_start_dbd(char *dbdpn, char *dbdir, c
  }
  
  /* ------------------ */
@@ -21,7 +21,7 @@ $OpenBSD: patch-etc_cnid_dbd_cnid_metad_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp
  {
     struct stat st;
  
-@@ -310,11 +310,11 @@ static int set_dbdir(char *dbdir, int le
+@@ -310,11 +310,11 @@ static int set_dbdir(char *dbdir, int len)
          return -1;
      }
  

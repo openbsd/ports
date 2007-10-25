@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_uniconv_uniconv_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- bin/uniconv/uniconv.c.orig	Sun Jul 11 20:15:18 2004
-+++ bin/uniconv/uniconv.c	Fri Dec 30 22:51:44 2005
+$OpenBSD: patch-bin_uniconv_uniconv_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- bin/uniconv/uniconv.c.orig	Mon Jul 12 02:15:18 2004
++++ bin/uniconv/uniconv.c	Thu Oct 25 20:30:05 2007
 @@ -105,7 +105,7 @@ static int veto(const char *path)
  
  static int do_rename( char* src, char *dst, struct stat *st)
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_uniconv_uniconv_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
      struct      stat tmp_st;
  
      if (!stat(dst, &tmp_st)) {
-@@ -121,7 +121,7 @@ static int do_rename( char* src, char *d
+@@ -121,7 +121,7 @@ static int do_rename( char* src, char *dst, struct sta
      if (S_ISDIR(st->st_mode))
  	return 0;
  

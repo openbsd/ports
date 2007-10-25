@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- etc/afpd/volume.c.orig	Sun Apr 24 18:26:31 2005
-+++ etc/afpd/volume.c	Sat Dec 31 12:09:29 2005
-@@ -231,13 +231,14 @@ static char *volxlate(AFPObj *obj, char 
+$OpenBSD: patch-etc_afpd_volume_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- etc/afpd/volume.c.orig	Mon Apr 25 00:26:31 2005
++++ etc/afpd/volume.c	Thu Oct 25 20:30:05 2007
+@@ -231,13 +231,14 @@ static char *volxlate(AFPObj *obj, char *dest, size_t 
          return NULL;
      }
      if (!dest) {
@@ -18,7 +18,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
      if ((p = strchr(src, '$')) == NULL) /* nothing to do */
          return ret;
  
-@@ -262,7 +263,7 @@ static char *volxlate(AFPObj *obj, char 
+@@ -262,7 +263,7 @@ static char *volxlate(AFPObj *obj, char *dest, size_t 
              if (obj->proto == AFPPROTO_ASP) {
                  ASP asp = obj->handle;
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
                                asp->asp_sat.sat_addr.s_node);
                  dest += len;
                  destlen -= len;
-@@ -270,7 +271,7 @@ static char *volxlate(AFPObj *obj, char 
+@@ -270,7 +271,7 @@ static char *volxlate(AFPObj *obj, char *dest, size_t 
              } else if (obj->proto == AFPPROTO_DSI) {
                  DSI *dsi = obj->handle;
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
                                ntohs(dsi->client.sin_port));
                  dest += len;
                  destlen -= len;
-@@ -291,7 +292,7 @@ static char *volxlate(AFPObj *obj, char 
+@@ -291,7 +292,7 @@ static char *volxlate(AFPObj *obj, char *dest, size_t 
              if (obj->proto == AFPPROTO_ASP) {
                  ASP asp = obj->handle;
   
@@ -45,7 +45,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
                  dest += len;
                  destlen -= len;
   
-@@ -606,14 +607,13 @@ static int creatvol(AFPObj *obj, struct 
+@@ -606,14 +607,13 @@ static int creatvol(AFPObj *obj, struct passwd *pwd, 
          free(volume);
          return -1;
      }
@@ -147,7 +147,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
              }
  
              /* check allow/deny lists:
-@@ -2103,9 +2103,9 @@ static int create_special_folder (const 
+@@ -2103,9 +2103,9 @@ static int create_special_folder (const struct vol *vo
  	u_int16_t	attr;
  	struct stat	st;
  	int		ret;
@@ -159,7 +159,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  	if ( p == NULL) {
  		LOG(log_error, logtype_afpd,"malloc failed");
  		exit (EXITERR_SYS);
-@@ -2117,8 +2117,8 @@ static int create_special_folder (const 
+@@ -2117,8 +2117,8 @@ static int create_special_folder (const struct vol *vo
  		exit (EXITERR_SYS);
  	}
  
@@ -170,7 +170,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  
  	r=q;
  	while (*r) {
-@@ -2128,7 +2128,7 @@ static int create_special_folder (const 
+@@ -2128,7 +2128,7 @@ static int create_special_folder (const struct vol *vo
  			*r=tolower(*r);
  		r++;
  	}
@@ -179,7 +179,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  
      	if ( (ret = stat( p, &st )) < 0 ) {
  		if (folder->precreate) {
-@@ -2259,7 +2259,7 @@ static int savevoloptions (const struct 
+@@ -2259,7 +2259,7 @@ static int savevoloptions (const struct vol *vol)
      snprintf(item, sizeof(item), "CNIDDBDPORT:%u\n", Cnid_port);
      strlcat(buf, item, sizeof(buf));
  
@@ -188,7 +188,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
      if (vol->v_dbpath)
          strlcat(item, vol->v_dbpath, sizeof(item));
      else
-@@ -2268,7 +2268,7 @@ static int savevoloptions (const struct 
+@@ -2268,7 +2268,7 @@ static int savevoloptions (const struct vol *vol)
      strlcat(buf, item, sizeof(buf));
  
      /* volume flags */
@@ -197,7 +197,7 @@ $OpenBSD: patch-etc_afpd_volume_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
      for (;op->name; op++) {
  	if ( (vol->v_flags & op->option) ) {
              strlcat(item, op->name, sizeof(item));
-@@ -2279,7 +2279,7 @@ static int savevoloptions (const struct 
+@@ -2279,7 +2279,7 @@ static int savevoloptions (const struct vol *vol)
      strlcat(buf, item, sizeof(buf));
  
      /* casefold flags */

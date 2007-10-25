@@ -1,7 +1,7 @@
-$OpenBSD: patch-libatalk_cnid_dbd_cnid_dbd_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- libatalk/cnid/dbd/cnid_dbd.c.orig	Sun Feb  6 05:16:03 2005
-+++ libatalk/cnid/dbd/cnid_dbd.c	Sat Dec 31 11:56:19 2005
-@@ -52,7 +52,7 @@ static void RQST_RESET(struct cnid_dbd_r
+$OpenBSD: patch-libatalk_cnid_dbd_cnid_dbd_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- libatalk/cnid/dbd/cnid_dbd.c.orig	Sun Feb  6 11:16:03 2005
++++ libatalk/cnid/dbd/cnid_dbd.c	Thu Oct 25 20:30:06 2007
+@@ -52,7 +52,7 @@ static void RQST_RESET(struct cnid_dbd_rqst  *r) 
  }
  
  /* ----------- */
@@ -10,7 +10,7 @@ $OpenBSD: patch-libatalk_cnid_dbd_cnid_dbd_c,v 1.1 2006/09/22 05:56:25 pvalchev 
  extern int              Cnid_port;
  
  static int tsock_getfd(char *host, int port)
-@@ -398,7 +398,7 @@ struct _cnid_db *cnid_dbd_open(const cha
+@@ -398,7 +398,7 @@ struct _cnid_db *cnid_dbd_open(const char *dir, mode_t
  
      /* We keep a copy of the directory in the db structure so that we can
         transparently reconnect later. */

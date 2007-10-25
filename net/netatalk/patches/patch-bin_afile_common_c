@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_afile_common_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- bin/afile/common.c.orig	Fri Jun 29 10:14:46 2001
-+++ bin/afile/common.c	Sat Dec 31 11:14:53 2005
-@@ -64,22 +64,23 @@ char *dataname_to_adname(const char *dat
+$OpenBSD: patch-bin_afile_common_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- bin/afile/common.c.orig	Fri Jun 29 16:14:46 2001
++++ bin/afile/common.c	Thu Oct 25 20:30:05 2007
+@@ -64,22 +64,23 @@ char *dataname_to_adname(const char *dataname)
  {
    const char *filepart;
    char *adname;
@@ -33,7 +33,7 @@ $OpenBSD: patch-bin_afile_common_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
    }
  
    return adname;
-@@ -89,20 +90,21 @@ char *adname_to_dataname(const char *adn
+@@ -89,20 +90,21 @@ char *adname_to_dataname(const char *adname)
  {
    const char *filepart;
    char *dataname;

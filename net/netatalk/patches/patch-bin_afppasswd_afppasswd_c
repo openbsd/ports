@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_afppasswd_afppasswd_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- bin/afppasswd/afppasswd.c.orig	Wed Feb  9 20:23:07 2005
-+++ bin/afppasswd/afppasswd.c	Fri Dec 30 22:25:07 2005
+$OpenBSD: patch-bin_afppasswd_afppasswd_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- bin/afppasswd/afppasswd.c.orig	Thu Feb 10 02:23:07 2005
++++ bin/afppasswd/afppasswd.c	Thu Oct 25 20:30:05 2007
 @@ -64,7 +64,7 @@
  #define HEXPASSWDLEN 16
  #define PASSWDLEN 8
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_afppasswd_afppasswd_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp
  
  /* if newpwd is null, convert buf from hex to binary. if newpwd isn't
   * null, convert newpwd to hex and save it in buf. */
-@@ -117,7 +117,7 @@ static void convert_passwd(char *buf, ch
+@@ -117,7 +117,7 @@ static void convert_passwd(char *buf, char *newpwd, co
  /* this matches the code in uam_randnum.c */
  static int update_passwd(const char *path, const char *name, int flags)
  {
@@ -19,7 +19,7 @@ $OpenBSD: patch-bin_afppasswd_afppasswd_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp
    FILE *fp;
    off_t pos;
    int keyfd = -1, err = 0;
-@@ -128,9 +128,9 @@ static int update_passwd(const char *pat
+@@ -128,9 +128,9 @@ static int update_passwd(const char *path, const char 
    }
  
    /* open the key file if it exists */
@@ -31,7 +31,7 @@ $OpenBSD: patch-bin_afppasswd_afppasswd_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp
      keyfd = open(buf, O_RDONLY);
    } 
  
-@@ -154,8 +154,8 @@ static int update_passwd(const char *pat
+@@ -154,8 +154,8 @@ static int update_passwd(const char *path, const char 
    }
  
    if (flags & OPT_ADDUSER) {
@@ -42,7 +42,7 @@ $OpenBSD: patch-bin_afppasswd_afppasswd_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp
      p = strchr(buf, ':') + 1;
      fwrite(buf, strlen(buf), 1, fp);
    } else {
-@@ -239,8 +239,8 @@ static int create_file(const char *path,
+@@ -239,8 +239,8 @@ static int create_file(const char *path, uid_t minuid)
      /* a little paranoia */
      if (strlen(pwd->pw_name) + FORMAT_LEN > sizeof(buf) - 1)
        continue;
@@ -53,7 +53,7 @@ $OpenBSD: patch-bin_afppasswd_afppasswd_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp
      len = strlen(buf);
      if (write(fd, buf, len) != len) {
        fprintf(stderr, "afppasswd: problem writing to %s: %s\n", path,
-@@ -255,6 +255,22 @@ static int create_file(const char *path,
+@@ -255,6 +255,22 @@ static int create_file(const char *path, uid_t minuid)
    return err;
  }
  

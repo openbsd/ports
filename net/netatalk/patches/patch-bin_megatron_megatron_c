@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_megatron_megatron_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
---- bin/megatron/megatron.c.orig	Sun Apr 28 21:52:49 2002
-+++ bin/megatron/megatron.c	Fri Dec 30 22:34:51 2005
-@@ -246,7 +246,7 @@ int megatron( path, module, newname, fla
+$OpenBSD: patch-bin_megatron_megatron_c,v 1.2 2007/10/25 18:57:32 steven Exp $
+--- bin/megatron/megatron.c.orig	Mon Apr 29 03:52:49 2002
++++ bin/megatron/megatron.c	Thu Oct 25 20:30:05 2007
+@@ -246,7 +246,7 @@ int megatron( path, module, newname, flags )
   */
  
      if (*newname)
