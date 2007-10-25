@@ -1,0 +1,5 @@
+Bidirectional Hebrew support based on code from the Unicode Consortium.
+
+The charset on their code was bogus, therefore this module had to
+work the real charset from scratch. There might have some mistakes,
+though.
