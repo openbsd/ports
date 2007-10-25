@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/16 00:17:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/10/25 21:10:22 landry Exp $
 
-COMMENT=	wm-dockapp; multiple mailbox checker
-DISTNAME=	wmbiff-0.4.22
+COMMENT=	multiple mailbox checker dockapp
+DISTNAME=	wmbiff-0.4.27
 CATEGORIES=	mail x11 x11/windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wmbiff/}
 
 HOMEPAGE=	http://wmbiff.sourceforge.net/
-
-MAINTAINER=	Michael Schubert <michael@schubert.cx>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
@@ -24,9 +22,9 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	ac_cv_path_CVS2CL=""
 
 pre-configure:
-	@perl -pi -e 's,/usr/share/doc/wmbiff/examples/sample.wmbiffrc,\
-		${PREFIX}/share/examples/wmbiff/sample.wmbiffrc,g' \
-		${WRKSRC}/wmbiff/{wmbiff.1,wmbiffrc.5}
+	@perl -pi -e 's,/usr/share/doc/wmbiff/examples/,\
+		${PREFIX}/share/examples/wmbiff/,g' \
+		${WRKSRC}/wmbiff/{wmbiff.1,wmbiffrc.5.in}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wmbiff
