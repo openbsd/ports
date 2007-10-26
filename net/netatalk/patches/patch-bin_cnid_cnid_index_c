@@ -1,0 +1,15 @@
+$OpenBSD: patch-bin_cnid_cnid_index_c,v 1.1 2007/10/26 14:27:23 steven Exp $
+--- bin/cnid/cnid_index.c.orig	Sun Apr 10 14:49:18 2005
++++ bin/cnid/cnid_index.c	Thu Oct 25 20:45:50 2007
+@@ -274,7 +274,11 @@ static int dbif_count(const int dbi, u_int32_t *count)
+     DB_BTREE_STAT *sp;
+     DB *db = db_table[dbi].db;
+ 
++#if DB_VERSION_MAJOR == 4 && DB_VERSION_MINOR > 2
++    ret = db->stat(db, NULL, &sp, 0);
++#else
+     ret = db->stat(db, &sp, 0);
++#endif
+ 
+     if (ret) {
+         LOG(log_error, logtype_cnid, "error getting stat infotmation on database: %s", db_strerror(errno));

@@ -1,0 +1,15 @@
+$OpenBSD: patch-etc_cnid_dbd_dbif_c,v 1.1 2007/10/26 14:27:23 steven Exp $
+--- etc/cnid_dbd/dbif.c.orig	Thu Oct 25 20:44:42 2007
++++ etc/cnid_dbd/dbif.c	Thu Oct 25 20:45:23 2007
+@@ -514,7 +514,11 @@ int dbif_count(const int dbi, u_int32_t *count) 
+     DB_BTREE_STAT *sp;
+     DB *db = db_table[dbi].db;
+ 
++#if DB_VERSION_MAJOR == 4 && DB_VERSION_MINOR > 2
++    ret = db->stat(db, NULL, &sp, 0);
++#else
+     ret = db->stat(db, &sp, 0);
++#endif
+ 
+     if (ret) {
+         LOG(log_error, logtype_cnid, "error getting stat infotmation on database: %s", db_strerror(errno));
