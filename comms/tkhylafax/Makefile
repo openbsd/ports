@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/10/26 20:38:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2007/10/26 20:54:05 ajacoutot Exp $
 
 COMMENT=	Tcl/Tk interface to Sam Leffler's fax package
 
@@ -6,7 +6,7 @@ DISTNAME=	tkhylafax-3.0b2
 PKGNAME=	tkhylafax-3.0
 CATEGORIES=	comms
 
-#BROKEN=		required dependencies not available
+BROKEN=		required dependencies not available
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
