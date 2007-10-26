@@ -1,0 +1,51 @@
+$OpenBSD: patch-base_c,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- base.c.orig	Fri Oct 26 23:05:33 2007
++++ base.c	Fri Oct 26 23:05:40 2007
+@@ -48,11 +48,6 @@ XImage *explosion;
+ 
+ int ReadBaseImage()
+ {
+-  unsigned int width, height;
+-  int x_hot, y_hot;
+-  char *data, filename[255];
+-  int status;
+-
+   base->width = (scale == 1) ? base1_width : base2_width;
+   base->height = (scale == 1) ? base1_height : base2_height;
+ 
+@@ -105,7 +100,7 @@ GC gc;
+ }
+ 
+ 
+-ShowBase(i, gc)
++void ShowBase(i, gc)
+ int i;
+ GC gc;
+ {
+@@ -114,7 +109,7 @@ GC gc;
+ 	    base->width, base->height);
+ }
+ 
+-PaintBasesLeft()
++void PaintBasesLeft()
+ {
+   int i;
+   XDrawString(dpy, labelwindow, scoregc,
+@@ -156,7 +151,7 @@ int x,y;
+   return FALSE;
+ }
+ 
+-ResetGame()
++void ResetGame()
+ {
+   static Arg args[1];
+ 
+@@ -314,7 +309,7 @@ int x,y;
+   return FALSE;
+ }
+ 
+-InitBuildings()
++void InitBuildings()
+ {
+   int i, j, k;
+ 

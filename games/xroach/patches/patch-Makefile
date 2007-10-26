@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1 2007/10/26 21:19:17 ajacoutot Exp $
+--- Makefile.orig	Wed Jun  9 02:00:00 1993
++++ Makefile	Fri Oct 26 23:11:45 2007
+@@ -1,9 +1,11 @@
+ #	@(#)Makefile	8.1 (Berkeley) 6/8/93
+ 
+ PROG=	xroach
+-MAN6=	xroach.0
+-CFLAGS+= -I${.CURDIR}/bitmaps
+-DPADD=	${LIBX} ${LIBM}
+-LDADD=	-lX11/X11 -lm
++MAN=	xroach.6
++
++DPADD+=		${X11BASE}/lib/libX11.a ${LIBM}
++CFLAGS+=	-I${X11BASE}/include -I${.CURDIR}/bitmaps
++LDDESTDIR+=	-L${X11BASE}/lib
++LDADD+=		${LDDESTDIR} -lX11 -lm
+ 
+ .include <bsd.prog.mk>

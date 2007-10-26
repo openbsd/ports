@@ -1,0 +1,12 @@
+$OpenBSD: patch-Game_h,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- Game.h.orig	Thu Jan 23 17:22:50 1997
++++ Game.h	Fri Oct 26 23:01:31 2007
+@@ -4,7 +4,7 @@
+ #include "objects.h"
+ 
+ class Game {
+-	unsigned state;
++	int state;
+ 	int efficiency;
+ public:
+ 	unsigned score, level, iteration;

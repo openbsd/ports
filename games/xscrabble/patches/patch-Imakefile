@@ -1,0 +1,10 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 21:19:17 ajacoutot Exp $
+--- Imakefile.orig	Tue Mar 11 06:56:29 1997
++++ Imakefile	Fri Oct 26 23:12:39 2007
+@@ -9,3 +9,6 @@ DependSubdirs($(SUBDIRS))
+ MakeLintLibSubdirs($(SUBDIRS))
+ MakeLintSubdirs($(SUBDIRS),install.ln,install.ln)
+ 
++InstallNamedNonExec(XScrabble.ad,XScrabble,$(LIBDIR)/app-defaults)
++InstallNonExecFile(OSPD3.gz,@XSCRABBLEDIR@)
++InstallNonExecFile(scrabble_permutations,@XSCRABBLEDIR@)

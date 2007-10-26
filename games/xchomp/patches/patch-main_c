@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_c,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- main.c.orig	Fri Mar 18 06:12:24 1994
++++ main.c	Fri Oct 26 23:02:48 2007
+@@ -166,7 +166,7 @@ play_game() {
+          if (event.xany.window != window) continue;
+          switch (event.type) {
+             case KeyPress:
+-               XLookupString(&event, &c_buf, 1, &last_key, &status);
++               XLookupString((XKeyEvent *) &event, &c_buf, 1, &last_key, &status);
+                if (last_key == XK_space)
+                   if (!pause_seq())
+                      goto demo;

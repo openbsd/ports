@@ -1,0 +1,9 @@
+$OpenBSD: patch-xmine_man,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- xmine.man.orig	Mon Mar 28 20:15:52 1994
++++ xmine.man	Fri Oct 26 23:07:55 2007
+@@ -1,4 +1,4 @@
+-.TH XMINE 1
++.TH XMINE 6
+ .SH NAME
+ xmine \- identify mines in a mine field without getting blown up
+ .SH SYNOPSIS

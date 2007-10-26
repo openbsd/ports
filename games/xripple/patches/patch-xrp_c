@@ -1,0 +1,23 @@
+$OpenBSD: patch-xrp_c,v 1.1 2007/10/26 21:19:17 ajacoutot Exp $
+--- xrp.c.orig	Wed Jul 10 14:47:30 1996
++++ xrp.c	Fri Oct 26 23:10:56 2007
+@@ -124,7 +124,19 @@ doit()
+ 
+ main(int argc, char **argv)
+ {  
++  int ch;
++  extern char *__progname;
+   waterh=64;
++  while ((ch = getopt(argc, argv, "h:")) != -1)
++	switch (ch) {
++	case 'h':
++		waterh = atoi(optarg);
++		break;
++	default:
++		fprintf(stderr, "usage: %s [-h <height>]\n", __progname);
++		exit(1);
++		break;
++	}
+   OpenWindow(waterh);
+   doit();
+ }

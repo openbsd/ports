@@ -1,0 +1,5 @@
+$OpenBSD: patch-xchomp_man,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- xchomp.man.orig	Fri Oct 26 23:02:48 2007
++++ xchomp.man	Fri Oct 26 23:02:48 2007
+@@ -0,0 +1 @@
++

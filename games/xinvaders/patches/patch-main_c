@@ -1,0 +1,32 @@
+$OpenBSD: patch-main_c,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- main.c.orig	Fri Oct 26 23:05:33 2007
++++ main.c	Fri Oct 26 23:05:40 2007
+@@ -135,14 +135,13 @@ caddr_t data;
+   return w;
+ }
+ 
+-main(argc, argv)
++int main(argc, argv)
+ Cardinal argc;
+ char **argv;
+ {
+   static Arg args[10];
+   int n;
+   Widget form, button;
+-  extern WidgetClass labelwidgetclass;
+ 
+   me_image = NULL;
+ 
+@@ -268,12 +267,4 @@ char *path;
+ #endif
+      }
+ }
+-#endif
+-
+-#ifdef sparc
+-XShapeCombineMask()
+-{}
+-
+-XShapeQueryExtension()
+-{}
+ #endif

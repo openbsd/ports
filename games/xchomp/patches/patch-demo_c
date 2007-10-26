@@ -1,0 +1,12 @@
+$OpenBSD: patch-demo_c,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- demo.c.orig	Fri Mar 18 06:12:23 1994
++++ demo.c	Fri Oct 26 23:02:48 2007
+@@ -127,7 +127,7 @@ demo_seq()
+       if (event.xany.window != window) continue;
+       switch (event.type) {
+          case KeyPress:
+-	    XLookupString(&event, &c_buf, 1, &last_key, &status);
++	    XLookupString((XKeyEvent *) &event, &c_buf, 1, &last_key, &status);
+ 	    if ((last_key == XK_q) || (last_key == XK_Q))
+ 	       do_exit();
+ 	    XFillRectangle(display, window, clearGC, 0, 0, WIN_WIDTH,

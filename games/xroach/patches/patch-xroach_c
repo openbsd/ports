@@ -1,0 +1,58 @@
+$OpenBSD: patch-xroach_c,v 1.1 2007/10/26 21:19:17 ajacoutot Exp $
+--- xroach.c.orig	Fri Jun  4 02:00:00 1993
++++ xroach.c	Fri Oct 26 23:11:46 2007
+@@ -77,7 +77,7 @@ int CalcRootVisible();
+ int MarkHiddenRoaches();
+ Pixel AllocNamedColor();
+ 
+-void
++int
+ main(ac, av)
+ int ac;
+ char *av[];
+@@ -96,26 +96,30 @@ char *av[];
+     /*
+        Process command line options.
+     */
+-    for (ax=1; ax<ac; ax++) {
+-	arg = av[ax];
++    for (ax=1; ax<ac; ) {
++	arg = av[ax++];
++
++	if (ax >= ac)
++	    Usage();
++
+ 	if (strcmp(arg, "-display") == 0) {
+-	    display_name = av[++ax];
++	    display_name = av[ax++];
+ 	}
+ 	else if (strcmp(arg, "-rc") == 0) {
+-	    roachColor = av[++ax];
++	    roachColor = av[ax++];
+ 	}
+ 	else if (strcmp(arg, "-speed") == 0) {
+-	    roachSpeed = atof(av[++ax]);
++	    roachSpeed = atof(av[ax++]);
+ 	}
+ 	else if (strcmp(arg, "-roaches") == 0) {
+-	    maxRoaches = strtol(av[++ax], (char **)NULL, 0);
++	    maxRoaches = strtol(av[ax++], (char **)NULL, 0);
+ 	}
+ 	else {
+ 	    Usage();
+ 	}
+     }
+ 
+-    srand((int)time((long *)NULL));
++    srand((int)time(NULL));
+     
+     /*
+        Catch some signals so we can erase any visible roaches.
+@@ -212,6 +216,7 @@ char *av[];
+     CoverRoot();
+     
+     XCloseDisplay(display);
++    return (0);
+ }
+ 
+ #define USEPRT(msg) fprintf(stderr, msg)

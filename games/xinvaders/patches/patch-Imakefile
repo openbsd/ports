@@ -1,0 +1,12 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- Imakefile.orig	Fri Oct 26 23:05:34 2007
++++ Imakefile	Fri Oct 26 23:05:39 2007
+@@ -4,6 +4,7 @@ OBJS = spacers.o base.o widget.o main.o vaders.o shot.
+ 
+ SRCS = spacers.c base.c widget.c main.c vaders.c shot.c score.c
+ 
+-INCLUDES = -I$(TOP) -I$(TOP)/X11
++INCLUDES = -I$(TOP)
+ 
+ ComplexProgramTarget(xinvaders)
++MANSUFFIX=6

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xc_Control_c,v 1.1 2007/10/26 21:19:17 ajacoutot Exp $
+--- Xc/Control.c.orig	Sun Nov  5 13:17:43 1995
++++ Xc/Control.c	Sun Nov  5 13:17:43 1995
+@@ -547,7 +547,7 @@ char ch;
+ 	 *dest = ch;
+    }
+ 
+-   dest = NULL;
++   *dest = 0;
+ 
+ }  /* end of ToLower */
+ 

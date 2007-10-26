@@ -1,0 +1,12 @@
+$OpenBSD: patch-Cable_h,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- Cable.h.orig	Thu Jan 23 17:22:49 1997
++++ Cable.h	Fri Oct 26 23:01:32 2007
+@@ -13,7 +13,7 @@ class Cable { (public)
+ 	void setup();
+ 	void draw();
+ 	void update();
+-	onspark (int locx, int locy);
++	int onspark (int locx, int locy);
+ 
+ };
+ 

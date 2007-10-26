@@ -1,0 +1,27 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- Imakefile.orig	Thu Jan 23 17:38:35 1997
++++ Imakefile	Fri Oct 26 23:01:31 2007
+@@ -1,4 +1,4 @@
+-XBILL_DIR = /var/lib/games/xbill/
++XBILL_DIR = /usr/local/share/xbill/
+ XCOMM XBILL_DIR = $(HOME)/.xbill/
+ 
+ XCOMM Which widget set?  Motif looks slightly better; Athena is free.
+@@ -19,7 +19,7 @@ XBILL_DEF = -DXBILL_HOME=\"$(XBILL_DIR)\"
+ 
+ INCLUDES = -I. $(XPMINC)
+ CXXDEFINES = $(XBILL_DEF) $(DEFS) $(INCS)
+-CCFLAGS = $(ALLDEFINES) -Wall -g
++CCFLAGS = $(ALLDEFINES) -Wall
+ 
+ CXX = g++ $(CCFLAGS)
+ CCC = $(CXX)
+@@ -136,6 +136,5 @@ XBMS =	bitmaps/apple.xbm \
+ 
+ ComplexProgramTarget($(TARGET))
+ 
+-InstallProgramWithFlags(scores, $(XBILL_DIR), -m 777)
+-InstallMultiple ($(XPMS), $(XBILL_DIR)pixmaps)
+-InstallMultiple ($(XBMS), $(XBILL_DIR)bitmaps)
++InstallMultiple ($(XPMS),$(XBILL_DIR)pixmaps)
++InstallMultiple ($(XBMS),$(XBILL_DIR)bitmaps)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-shot_c,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- shot.c.orig	Fri Oct 26 23:05:34 2007
++++ shot.c	Fri Oct 26 23:05:41 2007
+@@ -230,7 +230,7 @@ int ReadVshotImages()
+   return BitmapSuccess;
+ }
+ 
+-InitShot()
++void InitShot()
+ {
+     shottimerid = NULL;
+     numshots = 0;

@@ -1,0 +1,23 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- Imakefile.orig	Mon Dec 26 12:42:58 1994
++++ Imakefile	Fri Oct 26 23:07:54 2007
+@@ -1,5 +1,7 @@
++MANSUFFIX=6
++
+ /* if you have Xaw3d installed, you might wish to use this: */
+-#define UseXaw3d  0
++#define UseXaw3d  YES
+ 
+ /* for debugging: */
+ /*  CDEBUGFLAGS = -g -O2 */
+@@ -19,6 +21,10 @@
+ #else
+ # define WarnLevel
+ #endif
++
++# for FreeBSD package: do not compress man page, otherwise gzip will
++# complain when building the package target
++COMPRESSMANCMD = echo
+ 
+         DEPLIBS = XawClientDepLibs
+ LOCAL_LIBRARIES = XawClientLibs

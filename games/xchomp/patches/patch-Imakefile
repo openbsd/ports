@@ -1,0 +1,12 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- Imakefile.orig	Fri Mar 18 06:16:10 1994
++++ Imakefile	Fri Oct 26 23:02:48 2007
+@@ -2,7 +2,7 @@
+ #include BandAidCompiler
+ #endif
+ 
+-DEFINES = -DX11
++DEFINES = -DX11 -DFRAME_DELAY=40000
+ INCLUDES = -I$(TOP) -I$(TOP)/X11
+ DEPLIBS = $(DEPXLIB)
+ LOCAL_LIBRARIES = $(XLIB)

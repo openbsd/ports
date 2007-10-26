@@ -1,0 +1,21 @@
+$OpenBSD: patch-xeyes_man,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- xeyes.man.orig	Fri Jun  4 01:53:05 1993
++++ xeyes.man	Fri Oct 26 23:03:56 2007
+@@ -1,12 +1,12 @@
+-.TH XEYES 1 "Release 5" "X Version 11"
++.TH XGOLGO 1 "Release 5" "X Version 11"
+ .SH NAME
+-xeyes \- a follow the mouse X demo
++xgolgo \- a follow the mouse X demo
+ .SH SYNOPSIS
+-.B xeyes
++.B xgolgo
+ [-option ...]
+ .SH DESCRIPTION
+-.I Xeyes
+-watches what you do and reports to the Boss.
++.I Xgolgo
++watches what you do and whether you are hostile or not.
+ .SH OPTIONS
+ .TP 8
+ .B \-fg \fIforeground color\fB

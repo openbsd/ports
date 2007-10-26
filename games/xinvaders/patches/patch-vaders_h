@@ -1,0 +1,56 @@
+$OpenBSD: patch-vaders_h,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- vaders.h.orig	Fri Oct 26 23:05:36 2007
++++ vaders.h	Fri Oct 26 23:05:41 2007
+@@ -130,11 +130,11 @@ ext int vaderwait;		/* Number of milleseconds to wait 
+ 
+ ext Pixel spacerpixel;
+ ext XtIntervalId spacertimerid;
+-ext int spacerwait;		/* Number of milliseconds to wait between
+-				/* moving spacers. /*
++ext int spacerwait;		/* Number of milliseconds to wait between */
++				/* moving spacers. */
+ ext int spacerappear;		/* same, but for the interval between appearances */
+ 
+-ext Boolean spacer_shown;    	/* Currnet_Spacer is something */
++ext Boolean spacer_shown;    	/* Current_Spacer is something */
+ ext int spacer_counter;		/* number of cycles to create a spacer */
+ 
+ /* Shot info. */
+@@ -168,7 +168,6 @@ ext XImage *me_image;
+ 
+ /* From widget.c */
+ 
+-extern Boolean TakeFocus();
+ extern void Quit();
+ extern void Pause();
+ extern int paused;
+@@ -188,6 +187,10 @@ extern Boolean ShotHitsBuilding();
+ extern void InitBase();
+ extern void PaintBase();
+ extern void DrawBuildings();
++extern void InitBuildings();
++extern void PaintBasesLeft();
++extern void ShowBase();
++extern void ResetGame();
+ 
+ /* From vaders.c */
+ 
+@@ -207,6 +210,10 @@ extern void MakeSpacer();
+ extern void InitSpacers();
+ extern void PaintSpacer();
+ 
++/* from score.c */
++extern void PaintScore();
++extern void InitScore();
++
+ /* From shot.c */
+ 
+ extern void AddLine();
+@@ -216,6 +223,7 @@ extern void MoveShots();
+ extern void MoveVshots();
+ extern void PaintAllShots();
+ ext Pixel defaultfore, defaultback;
++extern void InitShot();
+ 
+ ext char *vaderfont;
+ 

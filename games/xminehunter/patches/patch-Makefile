@@ -1,0 +1,33 @@
+$OpenBSD: patch-Makefile,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- Makefile.orig	Mon Jul 22 08:11:34 1996
++++ Makefile	Fri Oct 26 23:08:54 2007
+@@ -1,14 +1,13 @@
+-INSTALL_BIN_PATH = /usr/local/bin
+-INSTALL_SCORE_PATH = /usr/local/lib/xminehunter
++INSTALL_BIN_PATH = ${LOCALBASE}/bin
++INSTALL_SCORE_PATH = ${LOCALBASE}/lib/X11/xminehunter
+ 
+-INCLUDES = -I/usr/local/X11R5/include
+-LIBS = -L/usr/local/X11R5/lib -lXm -lXt -lXpm -lXext -lX11
++INCLUDES = -I${LOCALBASE}/include -I${X11BASE}/include
++LIBS = -L${LOCALBASE}/lib -L${X11BASE}/lib ${MOTIFLIB} -lXt -lXpm -lXext -lX11
+ 
++CC = ${CXX}
+ 
+-CC = g++
++CFLAGS += -DMINE_SCORE_PATH=\"${INSTALL_SCORE_PATH}\"
+ 
+-CFLAGS = -DMINE_SCORE_PATH=\"${INSTALL_SCORE_PATH}\"
+-
+ # no need to change anything below this line
+ 
+ PGM = xminehunter
+@@ -50,7 +49,7 @@ bitmap.o: ${HEADERS} bitmap.cc
+ 
+ install:
+ 	mkdir -p ${INSTALL_SCORE_PATH}
+-	chmod 333 ${INSTALL_SCORE_PATH}
++	chmod 666 ${INSTALL_SCORE_PATH}
+ 	cp xminehunter ${INSTALL_BIN_PATH}
+ 
+ clean:

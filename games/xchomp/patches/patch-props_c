@@ -1,0 +1,21 @@
+$OpenBSD: patch-props_c,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
+--- props.c.orig	Fri Mar 18 06:13:17 1994
++++ props.c	Fri Oct 26 23:02:48 2007
+@@ -115,7 +115,7 @@ Bool pause_seq()
+       if (event.xany.window != window) continue;
+       switch (event.type) {
+ 	 case KeyPress:
+-	    XLookupString(&event, &c_buf, 1, &last_key, &status);
++	    XLookupString((XKeyEvent *) &event, &c_buf, 1, &last_key, &status);
+ 	    if ((last_key == XK_q) || (last_key == XK_Q))
+ 	       do_exit();
+ 	    if ((last_key == XK_r) || (last_key == XK_R))
+@@ -175,7 +175,7 @@ check_normal_events()
+       if (event.xany.window != window) continue;
+       switch (event.type) {
+          case KeyPress:
+-            XLookupString(&event, &c_buf, 1, &last_key, &status);
++            XLookupString((XKeyEvent *) &event, &c_buf, 1, &last_key, &status);
+             if (last_key == XK_space)
+                if (!pause_seq())
+                   longjmp(jb_start, 1);
