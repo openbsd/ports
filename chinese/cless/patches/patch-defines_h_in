@@ -1,5 +1,6 @@
---- defines.h.in.orig	Sun Sep 15 22:58:20 1996
-+++ defines.h.in	Sun Sep 15 22:58:27 1996
+$OpenBSD: patch-defines_h_in,v 1.1 2007/10/26 20:31:19 ajacoutot Exp $
+--- defines.h.in.orig	Tue Apr 25 04:33:06 1995
++++ defines.h.in	Fri Oct 26 22:20:02 2007
 @@ -104,8 +104,8 @@
   * DEF_LESSKEYINFILE is the filename of the default lesskey input 
   * (in the HOME directory).
@@ -9,4 +10,5 @@
 +#define	LESSKEYFILE		".cless"
 +#define	DEF_LESSKEYINFILE	".clesskey"
  
+ 
  /* Settings always true on Unix.  */

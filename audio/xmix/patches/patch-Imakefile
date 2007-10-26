@@ -1,0 +1,14 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 20:28:51 ajacoutot Exp $
+--- Imakefile.orig	Wed Feb  2 05:54:35 1994
++++ Imakefile	Fri Oct 26 22:14:51 2007
+@@ -12,6 +12,8 @@ PROGRAMS = xmix
+ 
+ all::  $(PROGRAMS)
+ 
+-LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
++LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) -lossaudio
+ 
+-NormalProgramTarget(xmix,$(OBJS1),,$(LOCAL_LIBRARIES),)
++PROGRAM = $(PROGRAMS)
++
++ComplexProgramTarget_1($(PROGRAM),$(LOCAL_LIBRARIES),)

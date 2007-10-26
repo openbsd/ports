@@ -1,0 +1,5 @@
+$OpenBSD: patch-xmix_man,v 1.1 2007/10/26 20:28:51 ajacoutot Exp $
+--- xmix.man.orig	Fri Oct 26 22:14:51 2007
++++ xmix.man	Fri Oct 26 22:14:51 2007
+@@ -0,0 +1 @@
++

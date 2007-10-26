@@ -1,6 +1,7 @@
---- Makefile.in.orig	Tue Apr 25 02:41:39 1995
-+++ Makefile.in	Tue Jun 12 09:01:41 2001
-@@ -25,7 +25,7 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/10/26 20:31:19 ajacoutot Exp $
+--- Makefile.in.orig	Tue Apr 25 04:41:39 1995
++++ Makefile.in	Fri Oct 26 22:20:02 2007
+@@ -25,7 +25,7 @@ bindir = ${exec_prefix}/bin
  binprefix = 
  
  # Where the help file goes.
@@ -9,7 +10,7 @@
  
  mandir = ${prefix}/man/man${manext}
  manext = 1
-@@ -73,24 +73,24 @@
+@@ -73,24 +73,24 @@ lesskey: lesskey.${O} version.${O}
  ${OBJ}: less.h defines.h funcs.h
  
  filename.${O}: filename.c

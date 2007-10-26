@@ -1,0 +1,11 @@
+$OpenBSD: patch-dacio_h,v 1.1 2007/10/26 20:28:51 ajacoutot Exp $
+--- dacio.h.orig	Sat Sep 16 09:01:08 1995
++++ dacio.h	Fri Oct 26 22:12:40 2007
+@@ -3,6 +3,7 @@
+ #endif
+ 
+ typedef struct {
++    int bits;
+     int speed;
+     int stereo;
+ } DacioConfInfo;

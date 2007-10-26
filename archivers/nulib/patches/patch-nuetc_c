@@ -1,6 +1,7 @@
---- nuetc.c.~1~	Wed Nov 27 23:48:29 1996
-+++ nuetc.c	Fri Feb 20 19:46:12 1998
-@@ -525,7 +525,20 @@
+$OpenBSD: patch-nuetc_c,v 1.1 2007/10/26 20:25:39 ajacoutot Exp $
+--- nuetc.c.orig	Thu Nov 28 08:48:29 1996
++++ nuetc.c	Fri Oct 26 22:06:17 2007
+@@ -525,7 +525,20 @@ char *buffer;
  
  #ifdef UNIX
      strcpy(buffer, "nulb.tmpXXXXXX");

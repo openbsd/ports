@@ -1,5 +1,6 @@
---- less.nro.orig	Sun Sep 15 23:00:49 1996
-+++ less.nro	Sun Sep 15 23:06:46 1996
+$OpenBSD: patch-less_nro,v 1.1 2007/10/26 20:31:19 ajacoutot Exp $
+--- less.nro.orig	Thu Mar  2 22:15:01 1995
++++ less.nro	Fri Oct 26 22:20:02 2007
 @@ -1,12 +1,12 @@
  .TH LESS 1
  .SH NAME
@@ -17,7 +18,7 @@
  .br
  .B "     [-b \fIbufs\fP] [-h \fIlines\fP] [-j \fIline\fP] [-k \fIkeyfile\fP]"
  .br
-@@ -23,7 +23,7 @@
+@@ -23,7 +23,7 @@ is a program similar to 
  (1), but which allows backward movement
  in the file as well as forward movement.
  Also,
@@ -26,7 +27,7 @@
  does not have to read the entire input file before starting,
  so with large input files it starts up faster than text editors like
  .I vi
-@@ -114,7 +114,7 @@
+@@ -114,7 +114,7 @@ standard input, rather than a file, is being read.)
  Go to a position N percent into the file.
  N should be between 0 and 100.
  (This works if standard input is being read, but only if
@@ -35,7 +36,7 @@
  has already read to the end of the file.
  It is always fast, but not always useful.)
  .PP
-@@ -329,18 +329,18 @@
+@@ -329,18 +329,18 @@ The setting of the option is not changed.
  .IP +cmd
  Causes the specified cmd to be executed each time a new file is examined.
  For example, +G causes 
@@ -57,7 +58,7 @@
  .PP
  The following 
  three
-@@ -374,13 +374,13 @@
+@@ -374,13 +374,13 @@ If <m> is . or newline, the current screen is piped.
  .SH OPTIONS
  Command line options are described below.
  Most options may be changed while
@@ -74,7 +75,7 @@
  is invoked, you might tell 
  .I csh:
  .sp
-@@ -402,10 +402,10 @@
+@@ -402,10 +402,10 @@ This is important only for options like -P which take 
  following string.
  .IP -?
  This option displays a summary of the commands accepted by
@@ -87,7 +88,7 @@
  exits after the help screen is viewed.
  (Depending on how your shell interprets the question mark,
  it may be necessary to quote the question mark, thus: "-\\?".)
-@@ -417,7 +417,7 @@
+@@ -417,7 +417,7 @@ By default, searches start at the second line on the s
  (or after the last found line; see the -j option).
  .IP -b\fIn\fP
  Specifies the number of buffers
@@ -96,7 +97,7 @@
  will use for each file.
  Buffers are 1K, and by default 10 buffers are used for each file
  (except if the file is a pipe; see the -B option).
-@@ -444,7 +444,7 @@
+@@ -444,7 +444,7 @@ normally displayed if the terminal is dumb;
  that is, lacks some important capability,
  such as the ability to clear the screen or scroll backward.
  The -d option does not otherwise change the behavior of
@@ -105,7 +106,7 @@
  on a dumb terminal).
  .IP -D\fBx\fP\fIcolor\fP
  [MS-DOS only]
-@@ -457,31 +457,31 @@
+@@ -457,31 +457,31 @@ the background color of the text.
  A single number \fIN\fP is the same as \fIN.0\fP.
  .IP -e
  Causes 
@@ -143,7 +144,7 @@
  to run somewhat faster than the default.
  .IP -G
  The -G flag suppresses all highlighting of strings found by search commands.
-@@ -519,32 +519,32 @@
+@@ -519,32 +519,32 @@ fourth line on the screen, so searches begin at the fi
  on the screen.
  .IP -k\fIfilename\fP
  Causes
@@ -184,7 +185,7 @@
  to run more slowly in some cases, especially with a very large input file.
  Suppressing line numbers with the -n flag will avoid this problem.
  Using line numbers means: the line number will be displayed in the verbose
-@@ -556,12 +556,12 @@
+@@ -556,12 +556,12 @@ Causes a line number to be displayed at the beginning 
  each line in the display.
  .IP -o\fIfilename\fP
  Causes
@@ -199,7 +200,7 @@
  will ask for confirmation before overwriting it.
  .IP -O\fIfilename\fP
  The -O option is like -o, but it will overwrite an existing
-@@ -569,23 +569,23 @@
+@@ -569,23 +569,23 @@ file without asking for confirmation.
  .sp
  If no log file has been specified,
  the -o and -O options can be used from within 
@@ -227,7 +228,7 @@
  command.
  Such an option must either be the last option in the LESS variable,
  or be terminated by a dollar sign.
-@@ -613,7 +613,7 @@
+@@ -613,7 +613,7 @@ Causes "raw" control characters to be displayed.
  The default is to display control characters using the caret notation;
  for example, a control-A (octal 001) is displayed as "^A".
  Warning: when the -r flag is used,
@@ -236,7 +237,7 @@
  cannot keep track of the actual appearance of the screen
  (since this depends on how the screen responds to
  each type of control character).
-@@ -638,10 +638,10 @@
+@@ -638,10 +638,10 @@ current directory, which was previously built by the 
  .I ctags
  (1) command.
  This option may also be specified from within 
@@ -249,7 +250,7 @@
  .IP -T\fItagsfile\fP
  Specifies a tags file to be used instead of "tags".
  .IP -u
-@@ -667,7 +667,7 @@
+@@ -667,7 +667,7 @@ Text which is overstruck or underlined can be searched
  if neither -u nor -U is in effect.
  .IP -V
  Displays the version number of 
@@ -258,7 +259,7 @@
  .IP -w
  Causes blank lines to be used to represent lines
  past the end of the file.
-@@ -705,9 +705,9 @@
+@@ -705,9 +705,9 @@ the scrolling window automatically changes to 36 lines
  .IP +
  If a command line option begins with \fB+\fP,
  the remainder of that option is taken to be an initial command to
@@ -270,7 +271,7 @@
  to start at the end of the file rather than the beginning,
  and +/xyz tells it to start at the first occurrence of "xyz" in the file.
  As a special case, +<number> acts like +<number>g; 
-@@ -777,25 +777,25 @@
+@@ -777,25 +777,25 @@ other than ^U, that character is used instead of ^U.
  
  .SH "KEY BINDINGS"
  You may define your own 
@@ -303,7 +304,7 @@
  opens a file, it first gives your input preprocessor a chance to modify the
  way the contents of the file are displayed.
  An input preprocessor is simply an executable program (or shell script),
-@@ -805,7 +805,7 @@
+@@ -805,7 +805,7 @@ The contents of the replacement file are then displaye
  in place of the contents of the original file.
  However, it will appear to the user as if the original file is opened;
  that is, 
@@ -312,7 +313,7 @@
  will display the original filename as the name of the current file.
  .PP
  An input preprocessor receives one command line argument, the original filename,
-@@ -813,7 +813,7 @@
+@@ -813,7 +813,7 @@ as entered by the user.
  It should create the replacement file, and when finished,
  print the name of the replacement file to its standard output.
  If the input preprocessor does not output a replacement filename, 
@@ -321,7 +322,7 @@
  uses the original file, as normal.
  The input preprocessor is not called when viewing standard input.
  To set up an input preprocessor, set the LESSOPEN environment variable
-@@ -823,7 +823,7 @@
+@@ -823,7 +823,7 @@ which will be replaced by the filename
  when the input preprocessor command is invoked.
  .PP
  When 
@@ -330,7 +331,7 @@
  closes a file opened in such a way, it will call another program,
  called the input postprocessor,
  which may perform any desired clean-up action (such as deleting the
-@@ -839,24 +839,24 @@
+@@ -839,24 +839,24 @@ which was output by LESSOPEN.
  .PP
  For example, on many Unix systems, these two scripts will allow you
  to keep files in compressed format, but still let
@@ -361,7 +362,7 @@
  .br
  		fi
  .br
-@@ -878,7 +878,7 @@
+@@ -878,7 +878,7 @@ to accept other types of compressed files, and so on.
  .PP
  It is also possible to set up an input preprocessor to
  pipe the file data directly to 
@@ -370,7 +371,7 @@
  rather than putting the data into a replacement file.
  This avoids the need to decompress the entire file before 
  starting to view it.
-@@ -888,7 +888,7 @@
+@@ -888,7 +888,7 @@ its standard output,
  writes the entire contents of the replacement file on its standard output.
  If the input pipe does not write any characters on its standard output,
  then there is no replacement file and 
@@ -379,7 +380,7 @@
  uses the original file, as normal.
  To use an input pipe,
  make the first character in the LESSOPEN environment variable a 
-@@ -950,7 +950,7 @@
+@@ -950,7 +950,7 @@ Selects a Russian character set.
  Selects a character set appropriate for NeXT computers.
  .PP
  In special cases, it may be desired to tailor
@@ -388,7 +389,7 @@
  to use a character set other than the ones definable by LESSCHARSET.
  In this case, the environment variable LESSCHARDEF can be used
  to define a character set.
-@@ -983,7 +983,7 @@
+@@ -983,7 +983,7 @@ If neither LESSCHARSET nor LESSCHARDEF is set, 
  but your system supports the 
  .I setlocale
  interface,
@@ -397,7 +398,7 @@
  will use setlocale to determine the character set.
  setlocale is controlled by setting the LANG or LC_CTYPE environment variables.
  .PP
-@@ -1173,14 +1173,14 @@
+@@ -1173,14 +1173,14 @@ LINES and COLUMNS environment variables.)
  .IP EDITOR
  The name of the editor (used for the v command).
  .IP HOME
@@ -414,7 +415,7 @@
  automatically.
  .IP LESSBINFMT
  Format for displaying non-printable, non-control characters.
-@@ -1204,13 +1204,14 @@
+@@ -1204,13 +1204,14 @@ Takes precedence over the number of lines specified by
  The shell used to execute the ! command, as well as to expand filenames.
  .IP TERM
  The type of terminal on which

@@ -1,0 +1,14 @@
+$OpenBSD: patch-xmix_c,v 1.1 2007/10/26 20:28:51 ajacoutot Exp $
+--- xmix.c.orig	Fri Oct 26 22:14:51 2007
++++ xmix.c	Fri Oct 26 22:14:51 2007
+@@ -76,8 +76,8 @@ to Rick! I'll call this version V2.1
+ #include "circle_off.bit"
+ #include "square_empty.bit"
+ #include "square_with_x.bit"
+-
+-#include <linux/soundcard.h>
++#include <sys/ioctl.h> 
++#include <soundcard.h>
+ 
+ #define SOUND_FULL_SCALE 100.0
+ #define MAX_SOUND_VOL 95

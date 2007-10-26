@@ -1,5 +1,6 @@
---- lesskey.nro.orig	Sun Sep 15 23:00:54 1996
-+++ lesskey.nro	Sun Sep 15 23:03:28 1996
+$OpenBSD: patch-lesskey_nro,v 1.1 2007/10/26 20:31:19 ajacoutot Exp $
+--- lesskey.nro.orig	Wed Feb  1 00:55:56 1995
++++ lesskey.nro	Fri Oct 26 22:20:02 2007
 @@ -1,22 +1,22 @@
  .TH LESSKEY 1
  .SH NAME
@@ -31,7 +32,7 @@
  will overwrite it.
  .PP
  The input file consists of lines of the form:
-@@ -26,7 +26,7 @@
+@@ -26,7 +26,7 @@ The input file consists of lines of the form:
  Whitespace is any sequence of one or more spaces and/or tabs.
  The \fIstring\fP is the command key(s) which invoke the action.
  The \fIstring\fP may be a single command key, or a sequence of up to 15 keys.
@@ -40,7 +41,7 @@
  The characters in the \fIstring\fP may appear literally, or be
  prefixed by a caret to indicate a control key.
  A backslash followed by one to three octal digits may be used to
-@@ -41,22 +41,22 @@
+@@ -41,22 +41,22 @@ Blank lines and lines which start with a pound sign (#
  .PP
  An action may be followed by an "extra" string.
  When such a command is entered while running
@@ -67,7 +68,7 @@
  .sp
  .nf
  	\er		forw-line 
-@@ -147,14 +147,14 @@
+@@ -147,14 +147,14 @@ default command keys used by less:
  .sp
  .SH PRECEDENCE
  Commands specified by
@@ -84,7 +85,7 @@
  will give an error beep for an "invalid" command, 
  but not for a "noaction" command.
  In addition, ALL default commands may be disabled by 
-@@ -185,7 +185,7 @@
+@@ -185,7 +185,7 @@ one per line as in the example below.
  
  .SH EXAMPLE
  The following input file describes the set of
@@ -93,7 +94,7 @@
  .sp
  .nf
  	#line-edit
-@@ -210,6 +210,7 @@
+@@ -210,6 +210,7 @@ default line-editing keys used by less:
  .sp
  
  .SH "SEE ALSO"
