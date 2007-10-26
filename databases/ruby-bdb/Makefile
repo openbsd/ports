@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:34:02 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/26 14:10:40 steven Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		ruby interface to Berkeley DB
-DISTNAME=		bdb-0.6.0
-PKGNAME=		ruby-${DISTNAME}p0
+DISTNAME=		bdb-0.6.2
+PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		databases ruby
 
 HOMEPAGE=		http://moulon.inra.fr/ruby/bdb.html
@@ -20,7 +20,7 @@ MASTER_SITES=		ftp://moulon.inra.fr/pub/ruby/
 
 MODULES= 		lang/ruby
 
-LIB_DEPENDS=		lib/db4/db.>=4.2:db-4.*:databases/db/v4 \
+LIB_DEPENDS=		lib/db4/db.>=4:db-4.*:databases/db/v4 \
 			ruby.>=1::lang/ruby
 
 CONFIGURE_STYLE=	ruby extconf
