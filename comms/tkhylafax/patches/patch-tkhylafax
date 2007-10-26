@@ -1,5 +1,6 @@
+$OpenBSD: patch-tkhylafax,v 1.1 2007/10/26 20:38:21 ajacoutot Exp $
 --- tkhylafax.orig	Tue Dec 31 02:49:43 1996
-+++ tkhylafax	Sun Jun  8 12:34:58 1997
++++ tkhylafax	Fri Oct 26 22:34:14 2007
 @@ -1,6 +1,6 @@
  #!/bin/sh
  #\
@@ -8,7 +9,7 @@
  
  #
  # 
-@@ -291,7 +291,7 @@
+@@ -291,7 +291,7 @@ proc fileToFax { args } {
  
  proc previewCover { args } {
  

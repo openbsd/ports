@@ -1,0 +1,9 @@
+$OpenBSD: patch-makefile,v 1.1 2007/10/26 20:39:26 ajacoutot Exp $
+--- makefile.orig	Sun Aug  5 13:04:08 1990
++++ makefile	Fri Oct 26 22:35:41 2007
+@@ -1,4 +1,4 @@
+-DEST = .
++DEST = $(PREFIX)/bin
+ #CFLAGS = -O -DSysV
+ CFLAGS = -O
+ LDFLAGS = -s

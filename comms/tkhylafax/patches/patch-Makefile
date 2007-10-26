@@ -1,6 +1,7 @@
+$OpenBSD: patch-Makefile,v 1.1 2007/10/26 20:38:21 ajacoutot Exp $
 --- Makefile.orig	Sun Dec 29 19:26:39 1996
-+++ Makefile	Sun Jun  8 13:06:59 1997
-@@ -14,10 +14,10 @@
++++ Makefile	Fri Oct 26 22:34:13 2007
+@@ -14,10 +14,10 @@ TCLPRG_DEST = /usr/local/bin
  TCLMAN_DEST = /usr/local/man/man1
  
  # The full path to tclsh
@@ -13,7 +14,7 @@
  ### DON'T EDIT ANYTHING BELOW THIS LINE ###
  
  TCLLIB_FILES =  \
-@@ -40,7 +40,9 @@
+@@ -40,7 +40,9 @@ TCLLIB_FILES =  \
  TCLPRG_FILE = tkhylafax
  TCLMAN_FILE = tkhylafax
  
@@ -24,7 +25,7 @@
  	echo 'auto_mkindex $(TCLLIB_DEST) *.tcl *.t' | $(TCLSH);
  
  $(TCLLIB_DEST):
-@@ -59,16 +61,15 @@
+@@ -59,16 +61,15 @@ $(TCLPRG_DEST):
  	if [ ! -d $(TCLPRG_DEST) ]; then mkdir -p $(TCLPRG_DEST); fi
  	chmod 775 $(TCLPRG_DEST)
  
