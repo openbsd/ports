@@ -1,32 +1,20 @@
-$OpenBSD: patch-dist_configure,v 1.8 2006/11/15 17:23:27 kurt Exp $
---- dist/configure.orig	Wed Dec  3 16:10:02 2003
-+++ dist/configure	Tue Nov 14 17:26:54 2006
-@@ -5889,12 +5889,10 @@ nto-qnx | nto-qnx6*)
-   ;;
- 
- openbsd*)
--  lt_cv_file_magic_cmd=/usr/bin/file
--  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
-   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
-+    lt_cv_deplibs_check_method='match_pattern /lib[[^/]]+(\.so\.[[0-9]]+\.[[0-9]]+|\.so|_pic\.a)$'
-   else
--    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
-+    lt_cv_deplibs_check_method='match_pattern /lib[[^/]]+(\.so\.[[0-9]]+\.[[0-9]]+|_pic\.a)$'
-   fi
-   ;;
- 
-@@ -8805,6 +8803,7 @@ if test -z "$aix_libpath"; then aix_libp
-       hardcode_shlibpath_var=no
-       if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
- 	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+	archive_expsym_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags ${wl}-retain-symbols-file,$export_symbols'
- 	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
- 	export_dynamic_flag_spec='${wl}-E'
-       else
-@@ -11730,6 +11729,20 @@ if test -z "$aix_libpath"; then aix_libp
-     # Workaround some broken pre-1.5 toolchains
-     output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
+$OpenBSD: patch-dist_configure,v 1.9 2007/10/26 14:06:02 steven Exp $
+--- dist/configure.orig	Fri Aug 10 17:47:40 2007
++++ dist/configure	Sat Sep 15 16:44:27 2007
+@@ -849,7 +849,9 @@ MAKEFILE_CC
+ MAKEFILE_CCLINK
+ MAKEFILE_CXX
+ MAKEFILE_CXXLINK
+-MAKEFILE_SOLINK
++MAKEFILE_dbLINK
++MAKEFILE_dbtclLINK
++MAKEFILE_dbjavaLINK
+ MAKEFILE_XSOLINK
+ OSDIR
+ POSTLINK
+@@ -13323,6 +13325,20 @@ if test -z "$aix_libpath"; then aix_libpath="/usr/lib:
+     fi
+     output_verbose_link_cmd='echo'
      ;;
 +  openbsd2*)
 +      # C++ shared libraries are fairly broken
@@ -44,8 +32,8 @@ $OpenBSD: patch-dist_configure,v 1.8 2006/11/15 17:23:27 kurt Exp $
 +      ;;
    osf3*)
      case $cc_basename in
-       KCC)
-@@ -20135,13 +20148,15 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
+       KCC*)
+@@ -21167,13 +21183,15 @@ echo "${ECHO_T}$JMODSUFFIX" >&6; }
  
  
  
@@ -64,7 +52,27 @@ $OpenBSD: patch-dist_configure,v 1.8 2006/11/15 17:23:27 kurt Exp $
  MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
  
  LIBTOOL="\$(SHELL) ./libtool"
-@@ -20313,13 +20328,22 @@ cat << \EOF > $JAVA_TEST
+@@ -21224,9 +21242,6 @@ else
+ 	o=".lo"
+ fi
+ INSTALL_LIBS="$DEFAULT_LIB"
+-if test "$enable_static" = "yes"; then
+-	INSTALL_LIBS="$INSTALL_LIBS \$(libdb)"
+-fi
+ 
+ # Optional C++ API.
+ if test "$db_cv_cxx" = "yes"; then
+@@ -21237,9 +21252,6 @@ if test "$db_cv_cxx" = "yes"; then
+ 		DEFAULT_LIB_CXX="\$(libxso_target)"
+ 	fi
+ 	INSTALL_LIBS="$INSTALL_LIBS $DEFAULT_LIB_CXX"
+-	if test "$enable_static" = "yes"; then
+-		INSTALL_LIBS="$INSTALL_LIBS \$(libcxx)"
+-	fi
+ fi
+ 
+ # Optional Java API.
+@@ -21360,13 +21372,22 @@ cat << \EOF > $JAVA_TEST
  public class Test {
  }
  EOF
@@ -88,7 +96,7 @@ $OpenBSD: patch-dist_configure,v 1.8 2006/11/15 17:23:27 kurt Exp $
  else
    { { echo "$as_me:$LINENO: error: The Java compiler $JAVAC failed (see config.log, check the CLASSPATH?)" >&5
  echo "$as_me: error: The Java compiler $JAVAC failed (see config.log, check the CLASSPATH?)" >&2;}
-@@ -20876,6 +20900,7 @@ if test "$_JTOPDIR" != "/usr"; then
+@@ -21938,6 +21959,7 @@ if test "$_JTOPDIR" != "/usr"; then
  	aix*)		_JNI_INC_SUBDIRS="aix";;
  	bsdi*)		_JNI_INC_SUBDIRS="bsdos";;
  	freebsd*)	_JNI_INC_SUBDIRS="freebsd";;
@@ -96,7 +104,16 @@ $OpenBSD: patch-dist_configure,v 1.8 2006/11/15 17:23:27 kurt Exp $
  	hp*)		_JNI_INC_SUBDIRS="hp-ux";;
  	linux*)		_JNI_INC_SUBDIRS="linux genunix";;
  	osf*)		_JNI_INC_SUBDIRS="alpha";;
-@@ -21441,7 +21466,7 @@ fi
+@@ -30504,7 +30526,7 @@ int
+ main ()
+ {
+ 
+-	#if (defined(i386) || defined(__i386__)) && defined(__GNUC__)
++	#if (defined(i386) || defined(__i386__) || defined(__x86_64__)) && defined(__GNUC__)
+ 		exit(0);
+ 	#else
+ 		FAIL TO COMPILE/LINK
+@@ -35352,7 +35374,7 @@ fi
  
  # Optional utilities.
  if test "$db_cv_dump185" = "yes"; then
@@ -104,24 +121,24 @@ $OpenBSD: patch-dist_configure,v 1.8 2006/11/15 17:23:27 kurt Exp $
 +	ADDITIONAL_PROGS="db4_dump185 $ADDITIONAL_PROGS"
  fi
  
- # Checks for include files, structures, C types.
-@@ -28525,7 +28550,7 @@ int
- main ()
- {
+ # You can disable pieces of functionality to save space.
+@@ -36224,7 +36246,9 @@ MAKEFILE_CC!$MAKEFILE_CC$ac_delim
+ MAKEFILE_CCLINK!$MAKEFILE_CCLINK$ac_delim
+ MAKEFILE_CXX!$MAKEFILE_CXX$ac_delim
+ MAKEFILE_CXXLINK!$MAKEFILE_CXXLINK$ac_delim
+-MAKEFILE_SOLINK!$MAKEFILE_SOLINK$ac_delim
++MAKEFILE_dbLINK!$MAKEFILE_dbLINK$ac_delim
++MAKEFILE_dbtclLINK!$MAKEFILE_dbtclLINK$ac_delim
++MAKEFILE_dbjavaLINK!$MAKEFILE_dbjavaLINK$ac_delim
+ MAKEFILE_XSOLINK!$MAKEFILE_XSOLINK$ac_delim
+ OSDIR!$OSDIR$ac_delim
+ POSTLINK!$POSTLINK$ac_delim
+@@ -36244,7 +36268,7 @@ DB_VERSION_PATCH!$DB_VERSION_PATCH$ac_delim
+ DB_VERSION_STRING!$DB_VERSION_STRING$ac_delim
+ _ACEOF
  
--#if (defined(i386) || defined(__i386__)) && defined(__GNUC__)
-+#if (defined(i386) || defined(__i386__) || defined(__x86_64__)) && defined(__GNUC__)
- 	exit(0);
- #else
- 	FAIL TO COMPILE/LINK
-@@ -31043,7 +31068,9 @@ s,@MAKEFILE_CC@,$MAKEFILE_CC,;t t
- s,@MAKEFILE_CCLINK@,$MAKEFILE_CCLINK,;t t
- s,@MAKEFILE_CXX@,$MAKEFILE_CXX,;t t
- s,@MAKEFILE_CXXLINK@,$MAKEFILE_CXXLINK,;t t
--s,@MAKEFILE_SOLINK@,$MAKEFILE_SOLINK,;t t
-+s,@MAKEFILE_dbLINK@,$MAKEFILE_dbLINK,;t t
-+s,@MAKEFILE_dbtclLINK@,$MAKEFILE_dbtclLINK,;t t
-+s,@MAKEFILE_dbjavaLINK@,$MAKEFILE_dbjavaLINK,;t t
- s,@MAKEFILE_XSOLINK@,$MAKEFILE_XSOLINK,;t t
- s,@OSDIR@,$OSDIR,;t t
- s,@POSTLINK@,$POSTLINK,;t t
+-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 97; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 99; then
+     break
+   elif $ac_last_try; then
+     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5

@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST-tcl,v 1.2 2005/12/25 20:35:42 sturm Exp $
+@comment $OpenBSD: PLIST-tcl,v 1.3 2007/10/26 14:06:02 steven Exp $
 @option no-default-conflict
 @conflict db-tcl->=4,<5
 lib/db4/libdb_tcl.a
 lib/db4/libdb_tcl.la
-@comment lib/db4/libdb_tcl.so
-@comment lib/db4/libdb_tcl.so.4
 @lib lib/db4/libdb_tcl.so.${LIBdb_tcl_VERSION}
 @lib lib/libdb_tcl.so.${LIBdb_tcl_VERSION}
 share/doc/db4/api_tcl/
+share/doc/db4/api_tcl/api_tcl.html
 share/doc/db4/api_tcl/db_close.html
 share/doc/db4/api_tcl/db_count.html
 share/doc/db4/api_tcl/db_cursor.html
@@ -34,9 +33,6 @@ share/doc/db4/api_tcl/env_dbremove.html
 share/doc/db4/api_tcl/env_dbrename.html
 share/doc/db4/api_tcl/env_open.html
 share/doc/db4/api_tcl/env_remove.html
-share/doc/db4/api_tcl/pindex.src
-share/doc/db4/api_tcl/tcl_index.html
-share/doc/db4/api_tcl/tcl_pindex.html
 share/doc/db4/api_tcl/txn.html
 share/doc/db4/api_tcl/txn_abort.html
 share/doc/db4/api_tcl/txn_checkpoint.html

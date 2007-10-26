@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_tcl_rep_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
---- tcl/tcl_rep.c.orig	2004-01-08 13:42:28.000000000 +0100
-+++ tcl/tcl_rep.c	2004-01-08 13:42:38.000000000 +0100
-@@ -207,7 +207,7 @@ tcl_RepStart(interp, objc, objv, dbenv)
+$OpenBSD: patch-tcl_tcl_rep_c,v 1.2 2007/10/26 14:06:02 steven Exp $
+--- tcl/tcl_rep.c.orig	Tue Jun 19 21:43:45 2007
++++ tcl/tcl_rep.c	Sat Sep 15 12:39:57 2007
+@@ -528,7 +528,7 @@ tcl_RepStart(interp, objc, objv, dbenv)
  
  	i = 2;
  	while (i < objc) {
