@@ -1,5 +1,5 @@
---- doc/elmcharset.1.orig   Sat Nov 17 00:42:41 2001
-+++ doc/elmcharset.1        Sat Nov 17 00:42:43 2001
+--- doc/elmcharset.1.orig	Tue Nov  9 20:43:05 1999
++++ doc/elmcharset.1	Fri Oct 26 23:46:56 2007
 @@ -6,7 +6,7 @@
  .\}
  .TH ELMCHARSET 1L "Elm Version 2.4ME+" "Kari Hurtta"

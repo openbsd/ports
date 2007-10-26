@@ -1,6 +1,7 @@
+$OpenBSD: patch-src_makefile_junx,v 1.1 2007/10/26 21:42:18 ajacoutot Exp $
 --- src/makefile.junx.orig	Sun Jul  2 22:54:33 1995
-+++ src/makefile.junx	Sun Nov 22 00:14:56 1998
-@@ -15,12 +15,12 @@
++++ src/makefile.junx	Fri Oct 26 23:36:44 2007
+@@ -15,12 +15,12 @@ MDOMAIN = -DMDOMAIN=\"Set.Your.Mail.Domain\"
  #
  #>>>>> choose Japanese Kanji code
  #JPCODE = -DJP=\".NN\"
@@ -16,7 +17,7 @@
  #JPDEF = -DONEW				# Canna / Onew
  #JPLIB = -lonew -lcanna			# Canna / Onew
  #JPDEF = -DONEW -DWNN_ISDIR		# Wnn / Onew
-@@ -47,7 +47,13 @@
+@@ -47,7 +47,13 @@ JPLIBPATH = -L../../onew		\
  	    -L/usr/X386/lib		\
  	    -L/usr/local/X11R5/lib	\
  	    -L/usr/local/lib		\
@@ -31,7 +32,7 @@
  ######################################################################
  
  all:
-@@ -183,6 +189,7 @@
+@@ -183,6 +189,7 @@ FreeBSD:
  	@echo 'FreeBSD'
  	$(MAKE) $(TARGET)			\
  		'MACHINE = -DBSD_UNIX'		\
@@ -39,7 +40,7 @@
  		'CC = gcc -O2 -Wall'
  
  # for FreeBSD before 2.0.5R, 'LIBS = -ltermcap -lcompat' may be needed.
-@@ -193,6 +200,12 @@
+@@ -193,6 +200,12 @@ NetBSD:
  		'MACHINE = -DBSD_UNIX'	\
  		'CC = gcc -O2 -Wall'
  
@@ -52,7 +53,7 @@
  AIX3.2:
  	@echo 'AIX 3.2'
  	$(MAKE) $(TARGET) \
-@@ -368,13 +381,13 @@
+@@ -368,13 +381,13 @@ JFOLD = jfold
  JGREP = jgrep
  
  ### Prefix for location of files
@@ -68,7 +69,7 @@
  MANLOC = $(MANDIR)/man1
  
  ### Location of help file
-@@ -500,14 +513,10 @@
+@@ -500,14 +513,10 @@ install:
  	chmod  $(BINMOD) $(BINLOC)/$(JFOLD)
  	@$(CSH) -f -c "if (! -d $(MANDIR)) mkdir $(MANDIR)"
  	@$(CSH) -f -c "if (! -d $(MANLOC)) mkdir $(MANLOC)"

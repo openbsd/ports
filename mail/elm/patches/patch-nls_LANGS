@@ -1,5 +1,6 @@
---- nls/LANGS.orig	Tue Jan  4 18:34:07 2000
-+++ nls/LANGS	Tue Jan  4 18:34:08 2000
+$OpenBSD: patch-nls_LANGS,v 1.1 2007/10/26 21:50:35 ajacoutot Exp $
+--- nls/LANGS.orig	Tue Nov  9 20:42:42 1999
++++ nls/LANGS	Fri Oct 26 23:46:55 2007
 @@ -1,5 +1,5 @@
  # LANGS file
  

@@ -1,6 +1,7 @@
---- utils/newmail.c.orig	Tue Jan  4 18:30:21 2000
-+++ utils/newmail.c	Tue Jan  4 18:31:11 2000
-@@ -144,7 +144,7 @@ int  parent_pid;		/* See if sucide shoul
+$OpenBSD: patch-utils_newmail_c,v 1.1 2007/10/26 21:50:35 ajacoutot Exp $
+--- utils/newmail.c.orig	Tue Nov  9 20:42:42 1999
++++ utils/newmail.c	Fri Oct 26 23:46:56 2007
+@@ -144,7 +144,7 @@ int  parent_pid;		/* See if sucide should be attempt  
  extern int errno;
  
  

@@ -1,6 +1,7 @@
---- src/mailmsg2.c.orig	Tue Jan  4 18:28:50 2000
-+++ src/mailmsg2.c	Tue Jan  4 18:28:58 2000
-@@ -1581,7 +1581,7 @@ FILE * write_header_info(filename, heade
+$OpenBSD: patch-src_mailmsg2_c,v 1.1 2007/10/26 21:50:35 ajacoutot Exp $
+--- src/mailmsg2.c.orig	Tue Nov  9 20:43:05 1999
++++ src/mailmsg2.c	Fri Oct 26 23:46:56 2007
+@@ -1581,7 +1581,7 @@ FILE * write_header_info(filename, headers,
  #ifdef MMDF
  	  fprintf(filedesc, MSG_SEPARATOR);
  #endif /* MMDF */

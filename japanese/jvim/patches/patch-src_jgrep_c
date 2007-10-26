@@ -1,6 +1,7 @@
---- ./src/jgrep.c.orig	Mon Jul  3 23:52:28 1995
-+++ ./src/jgrep.c	Fri Sep  5 14:01:32 1997
-@@ -38,17 +38,19 @@
+$OpenBSD: patch-src_jgrep_c,v 1.1 2007/10/26 21:42:18 ajacoutot Exp $
+--- src/jgrep.c.orig	Mon Jul  3 16:52:28 1995
++++ src/jgrep.c	Fri Oct 26 23:36:44 2007
+@@ -38,17 +38,19 @@ static int o_noerr = FALSE;		/* -s */
  static int o_nomat = FALSE;		/* -v */
  static int o_wsrch = FALSE;		/* -w */
  static int o_scode = FALSE;		/* -C */
@@ -21,7 +22,7 @@
  	fprintf(stderr, "	-w     Search \\<pattern\\>.\n");
  	fprintf(stderr, "	-C     Print kanji code.\n");
  	fprintf(stderr, "	-N -J -E -S -X	\n");
-@@ -104,7 +106,7 @@
+@@ -104,7 +106,7 @@ main(argc, argv)
  	jread = jdisp = JP_NONE;
  #endif
  
@@ -30,7 +31,7 @@
  	{
  		char *cp;
  		for(cp = argv[0] + 1; *cp; cp++)
-@@ -127,6 +129,10 @@
+@@ -127,6 +129,10 @@ main(argc, argv)
  				o_noerr = TRUE;
  				break;
  
@@ -41,7 +42,7 @@
  			case 'v':
  				o_nomat = TRUE;
  				break;
-@@ -268,9 +274,11 @@
+@@ -268,9 +274,11 @@ do_grep(fp, prog, fname)
  	char *fname;
  {
  	int count;
@@ -53,7 +54,7 @@
  
  	reset_jcount();
  
-@@ -282,6 +290,9 @@
+@@ -282,6 +290,9 @@ do_grep(fp, prog, fname)
  		if (fgets(Line, IOSIZE, fp) == NULL)
  			break;
  
@@ -63,7 +64,7 @@
  		len = strlen(Line);
  		len = kanjiconvsfrom(Line, len, IObuff, IOSIZE * 2, NULL,
  															jread, NULL);
-@@ -294,6 +305,8 @@
+@@ -294,6 +305,8 @@ do_grep(fp, prog, fname)
  			{
  				if (fname)
  					printf("%s:", fname);

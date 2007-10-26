@@ -1,5 +1,6 @@
---- src/vim.h.orig	Wed Jul 29 02:16:07 1998
-+++ src/vim.h	Wed Jul 29 02:17:15 1998
+$OpenBSD: patch-src_vim_h,v 1.1 2007/10/26 21:42:18 ajacoutot Exp $
+--- src/vim.h.orig	Mon Jul  3 03:26:28 1995
++++ src/vim.h	Fri Oct 26 23:36:45 2007
 @@ -92,7 +92,7 @@
  # include <stdlib.h>
  #endif
