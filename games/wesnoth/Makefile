@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2007/10/18 09:13:21 sturm Exp $
-
-BROKEN=		some hidden BUILD_DEPENDS, nobody wants to fix
+# $OpenBSD: Makefile,v 1.16 2007/10/26 20:26:23 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.2.6
+DISTNAME=	wesnoth-1.2.7
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.wesnoth.org/
@@ -20,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xext c freetype m stdc++ pthread usbhid z
+WANTLIB=	X11 c freetype m pthread stdc++ z
 
 USE_LIBTOOL=	Yes
 LIB_DEPENDS=	SDL::devel/sdl \
@@ -30,7 +28,8 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		fribidi::devel/fribidi
 # png is only required for the tools, which we don't build yet.
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+# The detection of kde-config/gnome-config will only lead to some
+# desktop file installation...
 
 MODULES=	devel/gettext
 
@@ -57,8 +56,6 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 CONFIGURE_ARGS+=--enable-server \
 		--enable-campaign-server \
 		--enable-editor \
-		--with-gnome \
-		--with-kde \
 		--with-fifodir=/var/run
 
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"

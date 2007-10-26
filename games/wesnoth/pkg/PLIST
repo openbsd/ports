@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/09/02 08:50:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2007/10/26 20:26:23 jasper Exp $
 bin/campaignd
 bin/wesnoth
 bin/wesnoth_editor
@@ -62,17 +62,6 @@ man/sv/man6/
 @man man/sv/man6/wesnoth.6
 @man man/sv/man6/wesnoth_editor.6
 @man man/sv/man6/wesnothd.6
-share/applications/
-share/applications/wesnoth.desktop
-share/applications/wesnoth_editor.desktop
-share/gnome/
-share/gnome/apps/
-share/gnome/apps/Games/
-share/gnome/apps/Games/wesnoth.desktop
-share/gnome/apps/Games/wesnoth_editor.desktop
-share/icons/
-share/icons/wesnoth-icon.png
-share/icons/wesnoth_editor-icon.png
 share/wesnoth/
 share/wesnoth/data/
 share/wesnoth/data/COPYING.txt
@@ -1322,7 +1311,8 @@ share/wesnoth/data/languages/ro_RO.cfg
 share/wesnoth/data/languages/ru_RU.cfg
 share/wesnoth/data/languages/sk_SK.cfg
 share/wesnoth/data/languages/sl_SI.cfg
-share/wesnoth/data/languages/sr_CS.cfg
+share/wesnoth/data/languages/sr_RS.cfg
+share/wesnoth/data/languages/sr_RS@latin.cfg
 share/wesnoth/data/languages/sv_SE.cfg
 share/wesnoth/data/languages/tl_PH.cfg
 share/wesnoth/data/languages/tr_TR.cfg
@@ -1687,6 +1677,7 @@ share/wesnoth/fonts/
 share/wesnoth/fonts/COPYING
 share/wesnoth/fonts/DejaVuSans.ttf
 share/wesnoth/fonts/FreeSans.ttf
+share/wesnoth/fonts/sazanami-gothic.ttf
 share/wesnoth/images/
 share/wesnoth/images/attacks/
 share/wesnoth/images/attacks/axe-deathblade.png
@@ -6043,6 +6034,18 @@ share/wesnoth/translations/sr/LC_MESSAGES/wesnoth-tsg.mo
 share/wesnoth/translations/sr/LC_MESSAGES/wesnoth-tutorial.mo
 share/wesnoth/translations/sr/LC_MESSAGES/wesnoth-utbs.mo
 share/wesnoth/translations/sr/LC_MESSAGES/wesnoth.mo
+share/wesnoth/translations/sr@latin/
+share/wesnoth/translations/sr@latin/LC_MESSAGES/
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth-editor.mo
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth-ei.mo
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth-httt.mo
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth-lib.mo
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth-tb.mo
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth-trow.mo
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth-tsg.mo
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth-tutorial.mo
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth-utbs.mo
+share/wesnoth/translations/sr@latin/LC_MESSAGES/wesnoth.mo
 share/wesnoth/translations/sv/
 share/wesnoth/translations/sv/LC_MESSAGES/
 share/wesnoth/translations/sv/LC_MESSAGES/wesnoth-editor.mo
@@ -6091,5 +6094,3 @@ share/wesnoth/translations/zh_CN/LC_MESSAGES/wesnoth-tsg.mo
 share/wesnoth/translations/zh_CN/LC_MESSAGES/wesnoth-tutorial.mo
 share/wesnoth/translations/zh_CN/LC_MESSAGES/wesnoth-utbs.mo
 share/wesnoth/translations/zh_CN/LC_MESSAGES/wesnoth.mo
-@exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
