@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/05/06 15:24:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/10/26 15:41:20 ajacoutot Exp $
 %%SHARED%%
 bin/rsvg
 bin/rsvg-convert
@@ -14,9 +14,6 @@ lib/gtk-2.0/2.10.0/
 lib/gtk-2.0/2.10.0/engines/
 lib/gtk-2.0/2.10.0/engines/libsvg.a
 lib/gtk-2.0/2.10.0/engines/libsvg.la
-lib/gtk-2.0/2.10.0/loaders/
-lib/gtk-2.0/2.10.0/loaders/svg_loader.a
-lib/gtk-2.0/2.10.0/loaders/svg_loader.la
 lib/librsvg-2.a
 lib/librsvg-2.la
 @comment lib/mozilla/
@@ -46,5 +43,6 @@ share/gtk-doc/html/rsvg/style.css
 share/gtk-doc/html/rsvg/up.png
 share/pixmaps/
 share/pixmaps/svg-viewer.svg
+!%%no_gnome%%
 @exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
 @unexec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
