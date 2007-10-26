@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2007/09/21 15:13:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.181 2007/10/26 20:24:27 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -179,6 +179,7 @@
      SUBDIR += xmms-speex
      SUBDIR += xmms-tremor
      SUBDIR += xmms-xf86audio
+     SUBDIR += xmmsctrl
      SUBDIR += xmp
 
 .include <bsd.port.subdir.mk>
