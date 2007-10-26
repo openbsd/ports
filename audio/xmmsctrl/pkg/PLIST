@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/26 20:22:42 jasper Exp $
+bin/xmmsctrl
+share/examples/xmmsctrl/
+share/examples/xmmsctrl/emacs-transcriber
+share/examples/xmmsctrl/keylaunchrc
+share/examples/xmmsctrl/pause_stop_play.sh
+share/examples/xmmsctrl/play_pause.sh
+share/examples/xmmsctrl/play_unpause_next.sh
+share/examples/xmmsctrl/playlist2html.sh
+share/examples/xmmsctrl/twmrc_bindings
+share/examples/xmmsctrl/win_playlist.sh
+share/examples/xmmsctrl/window_shown.sh
+share/examples/xmmsctrl/xmmsnext.sh
+share/examples/xmmsctrl/xmmsprev.sh
+share/examples/xmmsctrl/xmmsswitch.sh
