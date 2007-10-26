@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/10/26 11:16:32 landry Exp $
 
 COMMENT=	xfce4 window manager
 V=		4.4.1
 DISTNAME=	xfwm4-${V}
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.xfce.org/projects/xfwm4/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -26,7 +27,7 @@ WANTLIB=	ICE SM X11 Xcomposite Xdamage Xext Xfixes Xrandr freetype \
 		Xrender Xau Xdmcp expat Xcursor Xi Xinerama fontconfig \
 		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
-		pangoft2-1.0 startup-notification-1 \
+		pangoft2-1.0 startup-notification-1 pcre \
 		xfce4util.>=1 pangocairo-1.0 cairo glitz png z c m
 
 .include <bsd.port.mk>

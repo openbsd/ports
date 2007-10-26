@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_hints_h,v 1.1 2007/10/26 11:16:32 landry Exp $
+--- src/hints.h.orig	Sun Mar 11 14:44:43 2007
++++ src/hints.h	Fri Oct 26 10:04:18 2007
+@@ -269,6 +269,7 @@ gboolean                 setAtomIdManagerOwner        
+                                                                  int, 
+                                                                  Window , 
+                                                                  Window);
++void                     updateXserverTime                      (DisplayInfo *);
+ Time                     getXServerTime                         (DisplayInfo *);
+ 
+ #ifdef ENABLE_KDE_SYSTRAY_PROXY

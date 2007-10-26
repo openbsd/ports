@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_display_h,v 1.1 2007/10/26 11:16:32 landry Exp $
+--- src/display.h.orig	Mon Apr  2 21:32:01 2007
++++ src/display.h	Fri Oct 26 10:04:18 2007
+@@ -226,6 +226,7 @@ struct _DisplayInfo
+     gboolean quit;
+     gboolean reload;
+ 
++    Window timestamp_win;
+     Cursor busy_cursor;
+     Cursor move_cursor;
+     Cursor root_cursor;
