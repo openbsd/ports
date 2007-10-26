@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1 2007/10/26 21:49:00 jasper Exp $
+--- Makefile.orig	Mon Apr 19 01:07:07 1993
++++ Makefile	Fri Oct 26 23:43:18 2007
+@@ -36,8 +36,8 @@
+ # lptops program expects them to reside in files without a ".afm"
+ # suffix.
+ #
+-DEPTH=..
+-include ${DEPTH}/defs
++AFMDIR=${PREFIX}/lib/afm
++INSTALL=${INSTALL_DATA}
+ 
+ AFMFILES=\
+ 	AvantGarde-Book.afm \
+@@ -80,6 +80,7 @@ AFMFILES=\
+ 	${NULL}
+ 
+ install: ${AFMFILES}
++	[ -d ${AFMDIR} ] || mkdir -p ${AFMDIR}
+ 	for i in ${AFMFILES}; do \
+-	    ${INSTALL} -F ${AFMDIR} -m 444 -src $$i -O `basename $$i .afm`; \
++	    ${INSTALL} $$i  ${AFMDIR}/`basename $$i .afm`; \
+ 	done

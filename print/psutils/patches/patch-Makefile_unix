@@ -1,6 +1,7 @@
---- Makefile.unix	Wed Mar 12 07:52:59 1997
-+++ Makefile.unix	Wed Mar 11 10:10:59 1998
-@@ -222,27 +222,27 @@
+$OpenBSD: patch-Makefile_unix,v 1.1 2007/10/26 21:49:00 jasper Exp $
+--- Makefile.unix.orig	Tue Mar 11 23:52:59 1997
++++ Makefile.unix	Fri Oct 26 23:44:40 2007
+@@ -222,27 +222,27 @@ install.bin: $(BIN)
  	-mkdir $(BINDIR)
  	@for i in $(BIN); do \
  		echo Installing $$i; \
