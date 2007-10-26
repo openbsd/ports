@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/10/26 22:18:54 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,8 +18,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	expat
-USE_X11=	Yes
-
-CONFIGURE_ARGS=	EXPATLIBPATH=${X11BASE}/lib EXPATINCPATH=${X11BASE}/include
 
 .include <bsd.port.mk>
