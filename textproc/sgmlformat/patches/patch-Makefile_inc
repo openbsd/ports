@@ -1,6 +1,6 @@
-diff -u -r /tmp/sgmlformat-1.6/Makefile.inc ./Makefile.inc
---- /tmp/sgmlformat-1.6/Makefile.inc	Wed Jul 16 18:47:09 1997
-+++ ./Makefile.inc	Sun Apr  5 10:26:11 1998
+$OpenBSD: patch-Makefile_inc,v 1.1 2007/10/26 21:29:30 jasper Exp $
+--- Makefile.inc.orig	Wed Jul 16 18:47:09 1997
++++ Makefile.inc	Fri Oct 26 23:26:36 2007
 @@ -3,5 +3,5 @@
  SUBDIR=	
  PREFIX?=	/usr/local

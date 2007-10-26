@@ -1,5 +1,6 @@
+$OpenBSD: patch-transpec_html_sdata,v 1.1 2007/10/26 21:29:30 jasper Exp $
 --- transpec/html.sdata.orig	Wed Jul 16 18:19:53 1997
-+++ transpec/html.sdata	Sat Jun 10 02:22:36 2000
++++ transpec/html.sdata	Fri Oct 26 23:26:36 2007
 @@ -80,13 +80,14 @@ Enhancement by John R Fieber, 1996
  <map from="[darr  ]" to="&#38;darr;">
  <map from="[copy  ]" to="&#38;copy;">

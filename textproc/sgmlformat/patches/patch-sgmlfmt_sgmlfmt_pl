@@ -1,0 +1,12 @@
+$OpenBSD: patch-sgmlfmt_sgmlfmt_pl,v 1.1 2007/10/26 21:29:30 jasper Exp $
+--- sgmlfmt/sgmlfmt.pl.orig	Fri Oct 26 23:26:37 2007
++++ sgmlfmt/sgmlfmt.pl	Fri Oct 26 23:26:37 2007
+@@ -45,7 +45,7 @@ $sgmldir = "##PREFIX##/share/sgml";
+ # The SGML parser, and translation engine.
+ #
+ 
+-$sgmls = "nsgmls";
++$sgmls = "onsgmls";
+ $instant = "instant";
+ 
+ #

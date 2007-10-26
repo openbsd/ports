@@ -1,5 +1,6 @@
+$OpenBSD: patch-transpec_linuxdoc-roff_ts,v 1.1 2007/10/26 21:29:30 jasper Exp $
 --- transpec/linuxdoc-roff.ts.orig	Sat Jan 17 17:32:58 1998
-+++ transpec/linuxdoc-roff.ts	Sat Jun 10 02:22:37 2000
++++ transpec/linuxdoc-roff.ts	Fri Oct 26 23:26:36 2007
 @@ -98,7 +98,7 @@
  .  SA 0
  .  ftr C R
