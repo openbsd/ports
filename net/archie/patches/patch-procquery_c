@@ -1,0 +1,12 @@
+$OpenBSD: patch-procquery_c,v 1.1 2007/10/26 22:10:06 ajacoutot Exp $
+--- procquery.c.orig	Mon Oct 26 02:46:26 1992
++++ procquery.c	Sat Oct 27 00:02:51 2007
+@@ -174,7 +174,7 @@ int max_hits,offset;
+ Query query;
+ {
+     VLINK l;
+-    long now;
++    time_t now;
+ 
+     /* initialize data structures for this query */
+     (void)time(&now);

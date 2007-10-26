@@ -1,0 +1,21 @@
+$OpenBSD: patch-misc_c,v 1.1 2007/10/26 22:10:06 ajacoutot Exp $
+--- misc.c.orig	Sun Aug 28 16:12:08 1994
++++ misc.c	Sat Oct 27 00:05:07 2007
+@@ -106,7 +106,7 @@ void bell_command(ses)
+   char temp[2];
+   temp[0]=7;
+   temp[1]=0;
+-  write(1, temp, 2);
++  write(1, temp, 1);
+ }
+ 
+ 
+@@ -172,7 +172,7 @@ void end_command(command, ses)
+       cleanup_session(sesptr);
+     ses=NULL;  
+     if (is_split) 
+-      write(1, "c", 3);
++      write(1, "c", 2);
+     tintin_puts2("TINTIN suffers from bloodlack, and the lack of a beating heart...", ses);
+     tintin_puts2("TINTIN is dead! R.I.P.", ses);
+     tintin_puts2("Your blood freezes as you hear TINTIN's death cry.", ses);

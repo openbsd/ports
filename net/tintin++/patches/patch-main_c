@@ -1,0 +1,39 @@
+$OpenBSD: patch-main_c,v 1.1 2007/10/26 22:10:06 ajacoutot Exp $
+--- main.c.orig	Sun Aug 28 16:12:06 1994
++++ main.c	Sat Oct 27 00:05:07 2007
+@@ -562,7 +562,7 @@ void read_mud(ses)
+     if(ses->logfile) {
+       if (!OLD_LOG) {
+       count=0;
+-      for(n=0;n<=didget;n++) 
++      for(n=0;n<didget;n++)
+          if (buffer[n]!='\r') { 
+             temp[count]=buffer[n]; 
+             count++;
+@@ -732,7 +732,7 @@ void tintin_puts2(cptr, ses)
+       sprintf(strng,"%c8%s\n\r%c7%c[%d;%df", E, cptr, E, E, input_row, input_col);
+     else
+       sprintf(strng,"%s\n\r", cptr);
+-    write(1,strng, strlen(strng)+1);
++    write(1,strng, strlen(strng));
+     display_col=1;
+     if (redraw && term_echoing && !is_split)
+       write(1, k_input, strlen(k_input));
+@@ -764,7 +764,7 @@ void tintin_puts3(cptr, ses)
+       cptr++;
+       sprintf(strng,"%s\n\r", cptr);
+     }
+-    write(1,strng, strlen(strng)+1);
++    write(1,strng, strlen(strng));
+     display_col=1;
+   } 
+   text_came=TRUE;  
+@@ -832,7 +832,7 @@ void split_command(arg)
+   input_col=1;  
+   sprintf(fn, "%c[2J%c[1;%dr%c[%d;1f", E, E, display_row, E, split_line);
+   write(1,fn, strlen(fn));
+-  write(1,"-------------------------------------------------------------------------------", 80);
++  write(1,"--------------------------------------------------------------------------------", 80);
+   sprintf(fn, "%c[%d;1f%c7", E, split_line-1, E);
+   write(1,fn,strlen(fn));
+   sprintf(fn, "%c[%d;1f", E, input_row);

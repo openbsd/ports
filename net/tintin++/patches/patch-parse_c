@@ -1,0 +1,16 @@
+$OpenBSD: patch-parse_c,v 1.1 2007/10/26 22:10:06 ajacoutot Exp $
+--- parse.c.orig	Sun Aug 28 16:12:10 1994
++++ parse.c	Sat Oct 27 00:05:07 2007
+@@ -670,10 +670,10 @@ void prompt(ses)
+   if(ses && !PSEUDO_PROMPT)
+     write_line_mud("", ses);
+   else if (!is_split)
+-    write(1,"> ", 3);
++    write(1,"> ", 2);
+   else {
+     sprintf(strng,"8> 7[%d;%df", input_row, input_col);
+-    write(1,strng, strlen(strng)+1);
++    write(1,strng, strlen(strng));
+     display_col+=2;
+   } 
+ }

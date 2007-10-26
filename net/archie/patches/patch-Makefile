@@ -1,0 +1,58 @@
+$OpenBSD: patch-Makefile,v 1.1 2007/10/26 22:10:06 ajacoutot Exp $
+--- Makefile.orig	Tue Oct 27 00:11:04 1992
++++ Makefile	Sat Oct 27 00:02:51 2007
+@@ -2,14 +2,14 @@
+ # Makefile for the minimal build for an archie Prospero client.
+ #
+ # Your C compiler:
+-#CC=cc
++CC=cc
+ 
+ # For most systems, these OPTIONS will suffice.  Exceptions:
+ #
+ #	* If you're on a Stardent, add  -43
+ #	* If you're running EP/IX, you may need to add  -systype bsd43
+ #	  but try it without it first.
+-OPTIONS= -O -I. -I/usr/netinclude -I/usr/ucbinclude
++OPTIONS= -I.
+ 
+ # For this, DEFINES is usually ok as-is.  Try it without any of these
+ # first; if some stuff fails or shows up undefined, then come back and
+@@ -30,7 +30,7 @@ OPTIONS= -O -I. -I/usr/netinclude -I/usr/ucbinclude
+ #     * if your system is lacking strspn(), add               -DSTRSPN
+ #     * if you're using the unbundled SparcCompiler on a
+ #	Solaris 2 system, add				      -DSOLARIS2
+-DEFINES= -DDEBUG
++DEFINES= -DNOREGEX
+ 
+ # The default Archie server; choose one of:
+ #    archie.ans.net		(USA [NY])
+@@ -53,7 +53,7 @@ ARCHIE= archie.sura.net
+ #	 you defined ARCHIE_HOST as), you need to add `-lresolv'.
+ #
+ #	* If you need the PW library (e.g. A/UX), add -lPW
+-LDFLAGS=
++#LDFLAGS=
+ # If you're using ISC, use:
+ #LDFLAGS= -linet
+ # If you're using Wallongong TCP/IP on an AT&T box, use:
+@@ -73,7 +73,7 @@ LDFLAGS=
+ # Yer' done....make archie.
+ # =========================
+ #
+-CFLAGS=$(OPTIONS) $(DEFINES) -DARCHIE_HOST=\"$(ARCHIE)\"
++CFLAGS+=$(OPTIONS) $(DEFINES) -DARCHIE_HOST=\"$(ARCHIE)\"
+ 
+ VERSION=1.4.1
+ VMS_VERSION=`echo $(VERSION) | sed -e 's,\\.,_,g'`
+@@ -84,6 +84,10 @@ OBJS=	aquery.o archie.o atalloc.o dirsend.o get_pauth.
+ 	vlalloc.o vl_comp.o
+ 
+ all: archie
++
++install:
++	${BSD_INSTALL_PROGRAM} archie  ${PREFIX}/bin/
++	${BSD_INSTALL_MAN} archie.man ${PREFIX}/man/man1/archie.1
+ 
+ archie: $(OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS)

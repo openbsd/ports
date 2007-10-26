@@ -1,0 +1,12 @@
+$OpenBSD: patch-regex_c,v 1.1 2007/10/26 22:10:06 ajacoutot Exp $
+--- regex.c.orig	Wed Oct 21 00:57:58 1992
++++ regex.c	Sat Oct 27 00:02:51 2007
+@@ -447,7 +447,7 @@ char *pat;
+ static char *bol;
+ static char *bopat[MAXTAG];
+ static char *eopat[MAXTAG];
+-char *pmatch();
++static char *pmatch();
+ 
+ /*
+  * re_exec:
