@@ -1,5 +1,6 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 23:54:56 ajacoutot Exp $
 --- Imakefile.orig	Wed Dec 16 01:04:35 1992
-+++ Imakefile	Tue Jun  9 08:46:15 1998
++++ Imakefile	Sat Oct 27 01:50:24 2007
 @@ -2,12 +2,12 @@
  LOCAL_LIBRARIES = $(XLIB)
          DEPLIBS = $(DEPXLIB)
