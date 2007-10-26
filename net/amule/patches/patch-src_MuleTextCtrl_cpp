@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_MuleTextCtrl_cpp,v 1.1 2007/10/26 15:00:39 steven Exp $
+--- src/MuleTextCtrl.cpp.orig	Sun Jan  1 06:17:25 2006
++++ src/MuleTextCtrl.cpp	Wed Oct 10 17:53:08 2007
+@@ -26,6 +26,7 @@
+ #include <wx/menu.h>
+ #include <wx/intl.h>
+ #include <wx/clipbrd.h>
++#include <wx/dataobj.h>
+ 
+ /**
+  * These are the IDs used to identify the different menu-items.

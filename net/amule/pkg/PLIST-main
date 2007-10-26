@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/07/08 18:09:58 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/10/26 15:00:39 steven Exp $
 @pkgpath net/amule
 bin/amule
 bin/amulegui
 bin/ed2k
+bin/mldonkey_importer
 @comment lib/xchat/
 @comment lib/xchat/plugins/
 @comment lib/xchat/plugins/xas.pl

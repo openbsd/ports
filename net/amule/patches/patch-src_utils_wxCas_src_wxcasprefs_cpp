@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_utils_wxCas_src_wxcasprefs_cpp,v 1.1 2007/10/26 15:00:39 steven Exp $
+--- src/utils/wxCas/src/wxcasprefs.cpp.orig	Fri Dec 16 13:09:29 2005
++++ src/utils/wxCas/src/wxcasprefs.cpp	Wed Oct 10 17:53:08 2007
+@@ -297,7 +297,7 @@ WxCasPrefs::WxCasPrefs ( wxWindow * parent ) : wxDialo
+ 	m_validateButton =
+ 	    new wxButton ( this, ID_VALIDATE_BUTTON, wxString ( _( "Validate" ) ) );
+ 	m_cancelButton =
+-	    new wxButton ( this, ID_CANCEL_BUTTON, wxString ( _( "Cancel" ) ) );
++	    new wxButton ( this, wxID_CANCEL, wxString ( _( "Cancel" ) ) );
+ 
+ 	m_buttonHBox->Add ( m_validateButton, 0, wxALIGN_CENTER | wxALL, 5 );
+ 	m_buttonHBox->Add ( m_cancelButton, 0, wxALIGN_CENTER | wxALL, 5 );
+@@ -321,7 +321,6 @@ BEGIN_EVENT_TABLE ( WxCasPrefs, wxDialog )
+ EVT_BUTTON ( ID_OSPATH_BROWSE_BUTTON, WxCasPrefs::OnOSPathBrowseButton )
+ EVT_BUTTON ( ID_AUTOSTATIMG_BROWSE_BUTTON, WxCasPrefs::OnAutoStatImgBrowseButton )
+ EVT_BUTTON ( ID_VALIDATE_BUTTON, WxCasPrefs::OnValidateButton )
+-EVT_BUTTON ( ID_CANCEL_BUTTON, WxCasPrefs::OnCancel )       	// Defined in wxDialog
+ EVT_CHECKBOX ( ID_AUTOSTATIMG_CHECK, WxCasPrefs::OnAutoStatImgCheck )
+ EVT_CHECKBOX ( ID_FTP_UPDATE_CHECK, WxCasPrefs::OnFtpUpdateCheck )
+ END_EVENT_TABLE ()

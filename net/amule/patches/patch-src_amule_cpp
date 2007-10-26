@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_amule_cpp,v 1.1 2007/10/26 15:00:39 steven Exp $
+--- src/amule.cpp.orig	Fri Apr 21 05:13:51 2006
++++ src/amule.cpp	Wed Oct 10 17:53:08 2007
+@@ -97,6 +97,7 @@
+ 		#include <CoreFoundation/CFBundle.h>
+ 		#include <wx/mac/corefoundation/cfstring.h>
+ 	#endif
++	#include <wx/msgdlg.h>
+ #endif
+ 
+ 

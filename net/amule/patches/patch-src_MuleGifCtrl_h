@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_MuleGifCtrl_h,v 1.1 2007/10/26 15:00:39 steven Exp $
+--- src/MuleGifCtrl.h.orig	Sun Jan  1 06:17:25 2006
++++ src/MuleGifCtrl.h	Wed Oct 10 17:53:08 2007
+@@ -27,11 +27,10 @@
+ 
+ #include <wx/control.h>
+ #include <wx/timer.h>
+-#include <wx/bitmap.h>
+ 
+ const int GIFTIMERID = 271283;
+ 
+-class wxGIFDecoder;
++class MuleGIFDecoder;
+ class wxBitmap;
+ 
+ /**
+@@ -121,7 +120,7 @@ class MuleGifCtrl : public wxControl (private)
+ 	void OnErase( wxEraseEvent& WXUNUSED(event) ) {}
+ 
+ 	//! A pointer to the current gif-animation.
+-	wxGIFDecoder*	m_decoder;
++	MuleGIFDecoder*	m_decoder;
+ 	//! Timer used for the delay between each frame.
+ 	wxTimer			m_timer;
+ 	//! Current frame.
+@@ -133,3 +132,4 @@ class MuleGifCtrl : public wxControl (private)
+ 
+ #endif
+ 
++// File_checked_for_headers

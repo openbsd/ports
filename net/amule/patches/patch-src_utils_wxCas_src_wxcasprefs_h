@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_utils_wxCas_src_wxcasprefs_h,v 1.1 2007/10/26 15:00:39 steven Exp $
+--- src/utils/wxCas/src/wxcasprefs.h.orig	Fri Dec 16 13:09:29 2005
++++ src/utils/wxCas/src/wxcasprefs.h	Wed Oct 10 17:53:08 2007
+@@ -101,8 +101,7 @@ class WxCasPrefs: public wxDialog (private)
+ 	    ID_AUTOSTATIMG_COMBO,
+ 	    ID_AUTOSTATIMG_BROWSE_BUTTON,
+ 	    ID_FTP_UPDATE_CHECK,
+-	    ID_VALIDATE_BUTTON,
+-	    ID_CANCEL_BUTTON
++	    ID_VALIDATE_BUTTON
+ 	};
+ 
+ protected:
