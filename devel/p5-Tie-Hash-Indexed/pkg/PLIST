@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/26 21:22:44 simon Exp $
+${P5ARCH}/
+${P5ARCH}/Tie/
+${P5ARCH}/Tie/Hash/
+${P5ARCH}/Tie/Hash/Indexed.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Tie/
+${P5ARCH}/auto/Tie/Hash/
+${P5ARCH}/auto/Tie/Hash/Indexed/
+${P5ARCH}/auto/Tie/Hash/Indexed/Indexed.bs
+${P5ARCH}/auto/Tie/Hash/Indexed/Indexed.so
+@man man/man3p/Tie::Hash::Indexed.3p
