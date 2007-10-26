@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
+--- Makefile.orig	Fri Oct 26 23:52:30 2007
++++ Makefile	Fri Oct 26 23:52:33 2007
+@@ -23,8 +23,8 @@ OBJ = astrolog.o data.o data2.o general.o io.o\
+  charts0.o charts1.o charts2.o charts3.o intrpret.o\
+  xdata.o xgeneral.o xdevice.o xcharts0.o xcharts1.o xcharts2.o xscreen.o
+ # If you don't have X windows, delete the "-lX11" part from the line below:
+-LIBS = -lm -lX11
+-CFLAGS = -O
++LIBS = -L${X11BASE}/lib -lX11 -lm
++CFLAGS += -I${X11BASE}/include -DDEFAULT_DIR=\"${PREFIX}/lib/astrolog\"
+ 
+ astrolog:: $(OBJ)
+ 	cc -o $(NAME) $(OBJ) $(LIBS)

@@ -1,6 +1,7 @@
+$OpenBSD: patch-Makefile,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
 --- Makefile.orig	Thu Jan  9 07:19:34 1997
-+++ Makefile	Tue Mar 20 18:26:43 2001
-@@ -17,10 +17,10 @@
++++ Makefile	Fri Oct 26 23:53:28 2007
+@@ -17,10 +17,10 @@ HAVE_RC_FILE=true
  # can be disabled to make dialog a bit smaller (could be done for more things)
  HAVE_GUAGE=true
  
@@ -14,7 +15,7 @@
  CPP = gcc -E
  OPTIM = -O2 -Wall -Wstrict-prototypes -fomit-frame-pointer -pipe
  #OPTIM = -O -Wall -Wstrict-prototypes -g -pipe
-@@ -29,8 +29,8 @@
+@@ -29,8 +29,8 @@ OPTIM = -O2 -Wall -Wstrict-prototypes -fomit-frame-poi
  #----------------------------------------------------------------------------
  # do not edit below this line
  
@@ -25,7 +26,7 @@
  LDLIBS = -ldialog
  
  OBJS = checklist.o inputbox.o menubox.o msgbox.o \
-@@ -42,8 +42,8 @@
+@@ -42,8 +42,8 @@ CFLAGS+=-DHAVE_LIBGPM
  OBJS+=mouse.o
  endif
  ifeq ($(HAVE_NCURSES), true)
@@ -36,7 +37,7 @@
  endif
  ifeq ($(HAVE_RC_FILE), true)
  CFLAGS+=-DHAVE_RC_FILE
-@@ -59,7 +59,8 @@
+@@ -59,7 +59,8 @@ SRCS = $(OBJS:.o=.c)
  all: libdialog.a dialog
  
  libdialog.a: $(OBJS)

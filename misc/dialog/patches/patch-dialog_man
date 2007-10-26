@@ -1,6 +1,7 @@
---- dialog.man.orig	Mon Nov  8 14:49:01 1999
-+++ dialog.man	Mon Nov  8 14:49:52 1999
-@@ -41,7 +41,7 @@
+$OpenBSD: patch-dialog_man,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
+--- dialog.man.orig	Thu Jan  9 07:15:24 1997
++++ dialog.man	Fri Oct 26 23:53:28 2007
+@@ -41,7 +41,7 @@ these types of dialog boxes are implemented: 
  .BR yes/no " box," " menu" " box," " input" " box,"
  .BR message " box," " text" " box," " info" " box,"
  '\" NOHAVEGUAGE
@@ -9,7 +10,7 @@
  '\" NOHAVEGUAGE
  .BR checklist " box, and" " radiolist" " box."
  .SH OPTIONS
-@@ -189,14 +189,14 @@
+@@ -189,14 +189,14 @@ that you can indicate which entry is currently selecte
  .IR status " to " on "."
  
  '\" NOHAVEGUAGE

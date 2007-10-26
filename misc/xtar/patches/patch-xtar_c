@@ -1,6 +1,7 @@
+$OpenBSD: patch-xtar_c,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
 --- xtar.c.orig	Mon Jul 17 13:44:19 1995
-+++ xtar.c	Wed Jun  7 00:29:15 2000
-@@ -1164,7 +1164,7 @@ static int xtar_show(char *tfname, char 
++++ xtar.c	Fri Oct 26 23:58:56 2007
+@@ -1164,7 +1164,7 @@ static int xtar_show(char *tfname, char *filename)
  static int xtar_attributes(TAR_FILE *tf, char *filename)
  {
      int retval = 0;

@@ -1,5 +1,6 @@
+$OpenBSD: patch-common_str_c,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
 --- common/str.c.orig	Tue May  9 10:06:46 1995
-+++ common/str.c	Wed Jun  7 00:29:15 2000
++++ common/str.c	Fri Oct 26 23:58:56 2007
 @@ -283,7 +283,6 @@ char *str_word(char **string)
  char *str_error(int errnum)
  {

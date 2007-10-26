@@ -1,0 +1,22 @@
+$OpenBSD: patch-viz_c,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
+--- viz.c.orig	Fri Apr 14 15:30:56 1995
++++ viz.c	Fri Oct 26 23:57:18 2007
+@@ -55,14 +55,17 @@
+ #define VIZ_MAIN
+ #include "viz.h"
+ 
++#ifndef _SYS_ERRNO_H_
+ extern errno;
+ extern int sys_nerr;
+ extern char *sys_errlist[];
++#endif
+ 
+-
++#ifndef _STDLIB_H_
+ extern char *malloc();
+ extern optind, opterr;
+ extern char *optarg;
++#endif
+ 
+ char *prog;
+ struct Format Fmt = {

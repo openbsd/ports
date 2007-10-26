@@ -1,6 +1,7 @@
---- guage.c.orig	Mon Nov  8 14:08:43 1999
-+++ guage.c	Mon Nov  8 14:36:22 1999
-@@ -86,16 +86,16 @@
+$OpenBSD: patch-guage_c,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
+--- guage.c.orig	Sat Aug 12 00:54:52 1995
++++ guage.c	Fri Oct 26 23:53:28 2007
+@@ -86,16 +86,16 @@ dialog_guage (const char *title, const char *prompt, i
  
  	if (feof (stdin))
  	    break;

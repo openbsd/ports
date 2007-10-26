@@ -1,5 +1,6 @@
+$OpenBSD: patch-XTar_tmpl,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
 --- XTar.tmpl.orig	Mon Jul 17 14:04:17 1995
-+++ XTar.tmpl	Wed Jun  7 00:29:15 2000
++++ XTar.tmpl	Fri Oct 26 23:58:56 2007
 @@ -27,7 +27,7 @@ CCOPTIONS = -Ae
  XMINC = -I/usr/include/Motif1.2
  XMLIB = -L/usr/lib/Motif1.2 -lXm -lPW

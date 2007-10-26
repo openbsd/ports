@@ -1,6 +1,6 @@
---- Xbr/Imakefile.orig	Sun Jul  9 19:58:00 2000
-+++ Xbr/Imakefile	Sun Jul  9 19:58:13 2000
-@@ -20,7 +20,7 @@
+--- Xbr/Imakefile.orig	Tue May  9 10:06:46 1995
++++ Xbr/Imakefile	Fri Oct 26 23:58:56 2007
+@@ -20,7 +20,7 @@ SRCS = XbrCB.c XbrCreate.c XbrCursor.c XbrDialog.c \
  
  OBJS = $(SRCS:.c=.o)
  
