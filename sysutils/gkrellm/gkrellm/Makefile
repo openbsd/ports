@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.34 2007/10/25 15:14:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2007/10/26 22:56:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	single process stack of system monitors for GTK+2 (server)
 COMMENT-client=	single process stack of system monitors for GTK+2
 
-V=		2.2.10
+V=		2.3.0
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
-PKGNAME-client=	gkrellm-${V}p0
+PKGNAME-client=	gkrellm-${V}
 CATEGORIES=	sysutils sysutils/gkrellm
 
-HOMEPAGE=	http://www.gkrellm.net/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+HOMEPAGE=	http://www.gkrellm.net/
+
+# GPLv3
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -37,11 +38,10 @@ WRKBUILD=	${WRKDIST}/server
 .endif
 
 MODULES=		devel/gettext
-
 LIB_DEPENDS=		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
-
 LIB_DEPENDS-client=	${LIB_DEPENDS} \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+
 WANTLIB-client=		${WANTLIB} ICE SM X11 Xau Xcursor Xdmcp Xfixes Xi \
 			Xinerama Xrandr crypto expat fontconfig freetype \
 			Xext Xrender glitz png z Xcomposite Xdamage \
@@ -53,6 +53,8 @@ USE_GMAKE=	Yes
 
 ALL_TARGET=	openbsd
 INSTALL_TARGET=	install_openbsd
+
+MAKE_ENV+=	without_gnutls=yes
 
 pre-configure:
 	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g" \

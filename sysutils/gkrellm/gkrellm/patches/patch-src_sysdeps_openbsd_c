@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.6 2005/06/12 12:07:19 sturm Exp $
---- src/sysdeps/openbsd.c.orig	Sun Sep  5 21:57:34 2004
-+++ src/sysdeps/openbsd.c	Sat Jun 11 21:40:27 2005
-@@ -53,40 +53,70 @@ gkrellm_sys_main_cleanup(void)
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.7 2007/10/26 22:56:57 ajacoutot Exp $
+--- src/sysdeps/openbsd.c.orig	Sat Jul  7 01:54:22 2007
++++ src/sysdeps/openbsd.c	Fri Oct 26 15:48:30 2007
+@@ -53,41 +53,71 @@ gkrellm_sys_main_cleanup(void)
  #include <sys/dkstat.h>
  #include <kvm.h>
  
@@ -83,12 +83,31 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.6 2005/06/12 12:07:19 sturm Exp $
 +	static int mib[] = { CTL_HW, HW_NCPU };
 +	int ncpus;
 +	size_t size = sizeof(int);
-+
+ 
 +	if (sysctl(mib, 2, &ncpus, &size, NULL, 0) < 0)
 +		return 1;
 +	else
 +		return ncpus;
 +}
- 
++
  /* ===================================================================== */
  /* Proc monitor interface */
+ 
+@@ -405,7 +435,7 @@ gkrellm_sys_disk_read_data(void)
+ 		/* Separate read/write stats were implemented in NetBSD 1.6K.
+ 		*/
+ 
+-#if __NetBSD_Version__ >= 106110000
++#if __NetBSD_Version__ >= 106110000 || defined(__OpenBSD__)
+ 		rbytes = d.dk_rbytes;
+ 		wbytes = d.dk_wbytes;
+ #else
+@@ -413,7 +443,7 @@ gkrellm_sys_disk_read_data(void)
+ 		wbytes = 0;
+ #endif
+ 
+-		gkrellm_disk_assign_data_by_name(buf, rbytes, wbytes);
++		gkrellm_disk_assign_data_by_name(buf, rbytes, wbytes, FALSE);
+ 		}
+ 	}
+ }

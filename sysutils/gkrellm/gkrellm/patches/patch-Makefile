@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.7 2004/10/16 16:33:56 sturm Exp $
---- Makefile.orig	Mon Sep  6 15:32:40 2004
-+++ Makefile	Mon Oct 11 00:11:29 2004
+$OpenBSD: patch-Makefile,v 1.8 2007/10/26 22:56:57 ajacoutot Exp $
+--- Makefile.orig	Thu Jul 19 23:21:50 2007
++++ Makefile	Fri Oct 26 15:38:58 2007
 @@ -89,16 +89,12 @@ BINMODE = 755
  
- VERSION = 2.2.4
+ VERSION = 2.3.0
  
 -INSTALLROOT ?= $(DESTDIR)$(PREFIX)
 +INSTALLROOT ?= ${PREFIX}

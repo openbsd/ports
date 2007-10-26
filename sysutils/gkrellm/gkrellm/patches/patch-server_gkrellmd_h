@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_gkrellmd_h,v 1.3 2006/02/05 15:08:44 david Exp $
---- server/gkrellmd.h.orig	Mon Sep  6 17:33:14 2004
-+++ server/gkrellmd.h	Sat Feb  4 07:37:54 2006
-@@ -105,9 +105,11 @@
+$OpenBSD: patch-server_gkrellmd_h,v 1.4 2007/10/26 22:56:57 ajacoutot Exp $
+--- server/gkrellmd.h.orig	Thu Jul 19 23:22:16 2007
++++ server/gkrellmd.h	Fri Oct 26 15:52:38 2007
+@@ -110,9 +110,11 @@ GKRELLMD_VERSION_REV >= (rev)))
  #endif
  
  #if !defined(WIN32)
@@ -15,4 +15,4 @@ $OpenBSD: patch-server_gkrellmd_h,v 1.3 2006/02/05 15:08:44 david Exp $
 +#endif /* WIN32 */
  
  
- typedef struct
+ typedef struct _GkrellmdClient
