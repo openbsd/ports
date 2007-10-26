@@ -1,0 +1,30 @@
+$OpenBSD: patch-ctm_ctm_ctm_pass3_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+--- ctm/ctm/ctm_pass3.c.orig	Fri Oct 26 22:39:59 2007
++++ ctm/ctm/ctm_pass3.c	Fri Oct 26 22:40:00 2007
+@@ -176,6 +176,26 @@ Pass3(FILE *fd)
+ 
+ 	if (Verbose > 0)
+ 		fprintf(stderr,"> %s %s\n",sp->Key,name);
++	if ((strcmp(sp->Key, "FS") == 0 ||
++	     strcmp(sp->Key, "FN") == 0 ||
++	     strcmp(sp->Key, "FE") == 0) && -1 == access(name, W_OK)) {
++		if (Verbose > 1)
++			fprintf(stderr, "  %s: chmod u+w %s\n", 
++			    sp->Key, name);
++		if (!Force) {
++			warn("%s", name);
++			WRONG
++		}
++		if (-1 == stat(name, &st)) {
++			warn("stat: %s", name);
++			WRONG
++		}
++		if (-1 == chmod(name, st.st_mode | S_IWUSR)) {
++			warn("chmod: %s", name);
++			WRONG
++		}
++	}
++
+ 	if(!strcmp(sp->Key,"FM") || !strcmp(sp->Key, "FS")) {
+ 	    i = open(name,O_WRONLY|O_CREAT|O_TRUNC,0666);
+ 	    if(i < 0) {

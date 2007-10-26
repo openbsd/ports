@@ -1,0 +1,15 @@
+$OpenBSD: patch-ctm_ctm_ctm_pass2_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+--- ctm/ctm/ctm_pass2.c.orig	Fri Oct 26 22:39:59 2007
++++ ctm/ctm/ctm_pass2.c	Fri Oct 26 22:40:00 2007
+@@ -114,6 +114,11 @@ Pass2(FILE *fd)
+ 			    ret |= Exit_NotOK;
+ 			break;
+ 		    }
++		    if (-1 == access(name, W_OK)) {
++			fprintf(stderr, "  %s: %s not writable.\n",
++				sp->Key, name);
++			ret |= Exit_Forcible;
++		    }
+ 		    if (SetTime && getuid() && (getuid() != st.st_uid)) {
+ 			    fprintf(stderr,
+ 				"  %s: %s not mine, cannot set time.\n",

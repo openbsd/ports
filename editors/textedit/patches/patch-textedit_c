@@ -1,6 +1,7 @@
---- textedit.c.orig	1995-04-19 00:53:43.000000000 +0200
-+++ textedit.c	2003-12-30 17:19:49.000000000 +0100
-@@ -17,7 +17,7 @@ static char sccsid[] = "@(#)textedit.c 1
+$OpenBSD: patch-textedit_c,v 1.1 2007/10/26 20:49:32 ajacoutot Exp $
+--- textedit.c.orig	Wed Apr 19 00:53:43 1995
++++ textedit.c	Fri Oct 26 22:45:17 2007
+@@ -17,7 +17,7 @@ static char sccsid[] = "@(#)textedit.c 15.50 90/05/22"
  
  #include <fcntl.h>
  #include <stdio.h>
@@ -9,7 +10,7 @@
  #include <X11/X.h>
  #include <xview/defaults.h>
  #include <xview/font.h>
-@@ -31,19 +31,11 @@ static char sccsid[] = "@(#)textedit.c 1
+@@ -31,19 +31,11 @@ static char sccsid[] = "@(#)textedit.c 15.50 90/05/22"
  #include <xview/sel_svc.h>
  #include <xview/sel_attrs.h>
  

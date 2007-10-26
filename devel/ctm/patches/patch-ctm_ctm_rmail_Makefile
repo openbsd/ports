@@ -1,0 +1,10 @@
+$OpenBSD: patch-ctm_ctm_rmail_Makefile,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+--- ctm/ctm_rmail/Makefile.orig	Fri Oct 26 22:39:59 2007
++++ ctm/ctm_rmail/Makefile	Fri Oct 26 22:40:01 2007
+@@ -4,6 +4,5 @@ MANDIR=${PREFIX}/man/cat
+ PROG=           ctm_rmail
+ SRCS=           ctm_rmail.c error.c
+ CFLAGS+=        -Wall
+-MLINKS+=	ctm_rmail.1 ctm_smail.1
+ 
+ .include <bsd.prog.mk>

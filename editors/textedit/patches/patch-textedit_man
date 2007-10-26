@@ -1,5 +1,6 @@
---- textedit.man.orig	1995-04-19 00:53:43.000000000 +0200
-+++ textedit.man	2003-12-30 17:19:49.000000000 +0100
+$OpenBSD: patch-textedit_man,v 1.1 2007/10/26 20:49:32 ajacoutot Exp $
+--- textedit.man.orig	Wed Apr 19 00:53:43 1995
++++ textedit.man	Fri Oct 26 22:45:18 2007
 @@ -7,7 +7,7 @@ textedit 
  .SH SYNOPSIS
  .B textedit
@@ -22,7 +23,7 @@
  .SH DESCRIPTION
  .IX tools textedit "" "\fLtextedit\fR"
  .LP
-@@ -640,6 +638,13 @@ abnormal termination during initializati
+@@ -640,6 +638,13 @@ abnormal termination during initialization,
  usually due to a missing file or running out of swap space
  .PD
  .RE
@@ -36,7 +37,7 @@
  .SH BUGS
  Multi-click to change the current selection does not work for
  .BR "Adjust Selection" .
-@@ -647,4 +652,3 @@ Multi-click to change the current select
+@@ -647,4 +652,3 @@ Multi-click to change the current selection does not w
  Handling of long lines is incorrect in certain scrolling situations.
  .LP
  There is no way to replay any editing sequence except the most recent.

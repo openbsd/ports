@@ -1,6 +1,7 @@
---- ctm/ctm/Makefile.orig	Fri Feb 18 15:47:27 2000
-+++ ctm/ctm/Makefile	Fri Feb 18 15:47:37 2000
-@@ -15,7 +15,7 @@
+$OpenBSD: patch-ctm_ctm_Makefile,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+--- ctm/ctm/Makefile.orig	Fri Oct 26 22:39:58 2007
++++ ctm/ctm/Makefile	Fri Oct 26 22:40:00 2007
+@@ -15,7 +15,7 @@ MANDIR=${PREFIX}/man/cat
  PROG=		ctm
  NOTYET=		ctm_ed.c
  SRCS=   	ctm.c ctm_input.c ctm_pass1.c ctm_pass2.c ctm_pass3.c \

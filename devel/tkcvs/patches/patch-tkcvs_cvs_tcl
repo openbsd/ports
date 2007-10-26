@@ -1,6 +1,7 @@
---- tkcvs/cvs.tcl.orig	Thu Dec 17 22:03:52 1998
-+++ tkcvs/cvs.tcl	Thu Dec 17 22:04:05 1998
-@@ -285,7 +285,7 @@
+$OpenBSD: patch-tkcvs_cvs_tcl,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+--- tkcvs/cvs.tcl.orig	Sat May 25 04:54:58 1996
++++ tkcvs/cvs.tcl	Fri Oct 26 22:41:28 2007
+@@ -285,7 +285,7 @@ proc cvs_commit {revision comment args} {
        # -sj
        set errstr "You must select files to be committed with CVS version"
        set errstr "$errstr $cvscfg(cvsver)."

@@ -1,5 +1,6 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/10/26 20:49:32 ajacoutot Exp $
 --- Makefile.in.orig	Mon Dec 27 00:11:38 1999
-+++ Makefile.in	Thu Feb 10 10:19:58 2000
++++ Makefile.in	Fri Oct 26 22:47:33 2007
 @@ -13,10 +13,11 @@ DESTDIR=@bindir@
  LIBDIR=@libdir@
  XWPELIBDIR=	$(LIBDIR)/xwpe

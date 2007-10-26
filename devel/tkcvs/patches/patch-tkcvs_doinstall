@@ -1,8 +1,9 @@
---- tkcvs/doinstall.orig	Wed Jan 10 05:17:52 1996
-+++ tkcvs/doinstall	Tue Mar 28 06:46:46 2000
+$OpenBSD: patch-tkcvs_doinstall,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+--- tkcvs/doinstall.orig	Tue Jan  9 22:17:52 1996
++++ tkcvs/doinstall	Fri Oct 26 22:41:26 2007
 @@ -2,10 +2,10 @@
  #
- # $Id: patch-aa,v 1.4 2003/12/27 23:40:49 jose Exp $
+ # $Id: patch-tkcvs_doinstall,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
  #
 -
 +PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin
@@ -13,7 +14,7 @@
  BINDIR=/usr/local/bin
  MANDIR=/usr/local/man/mann
  
-@@ -14,22 +14,32 @@
+@@ -14,22 +14,32 @@ INSTALL_PROG=./install-sh
  # This must be an X based editor -- do NOT use vi except via an xterm
  # or shelltool.
  
@@ -51,7 +52,7 @@
  do
    if [ -d "$GDIR" ]; then
      break
-@@ -46,15 +56,15 @@
+@@ -46,15 +56,15 @@ fi
  
  # Find out where we want the system installed.
  
@@ -71,7 +72,7 @@
      echo "I cant write to that directory"
      exit 1
    fi
-@@ -62,25 +72,25 @@
+@@ -62,25 +72,25 @@ fi
  
  # Some directories we have to create.
  
@@ -103,7 +104,7 @@
      echo "I cant write to that directory" 
      exit 1 
    fi
-@@ -94,21 +104,21 @@
+@@ -94,21 +104,21 @@ do
        -e "/GDIR/ s;;$GDIR;g" \
        -e "/EDITOR/ s;;$EDITOR;g" \
        -e "/TCDIR/ s;;$TCDIR;g" ${file}.blank >$file

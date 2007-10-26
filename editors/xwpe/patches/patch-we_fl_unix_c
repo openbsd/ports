@@ -1,5 +1,6 @@
---- we_fl_unix.c.orig	Fri Nov  5 13:39:59 1999
-+++ we_fl_unix.c	Fri Nov  5 13:41:52 1999
+$OpenBSD: patch-we_fl_unix_c,v 1.1 2007/10/26 20:49:32 ajacoutot Exp $
+--- we_fl_unix.c.orig	Mon Dec 27 00:11:38 1999
++++ we_fl_unix.c	Fri Oct 26 22:47:35 2007
 @@ -12,6 +12,9 @@
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -10,7 +11,7 @@
  
  struct dirfile *e_make_win_list(FENSTER * f);
  extern char    *e_tmp_dir;
-@@ -3538,7 +3541,13 @@
+@@ -3546,7 +3549,13 @@ struct dirfile *e_make_funct(char *man)
    if(getenv("MANPATH"))
      strcpy(manpath, getenv("MANPATH"));
    if(manpath[0] == '\0')

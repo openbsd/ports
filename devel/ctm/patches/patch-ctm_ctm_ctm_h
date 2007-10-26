@@ -1,5 +1,6 @@
---- ctm/ctm/ctm.h.orig	Sun Jul  9 20:43:45 2000
-+++ ctm/ctm/ctm.h	Sun Jul  9 20:44:00 2000
+$OpenBSD: patch-ctm_ctm_ctm_h,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+--- ctm/ctm/ctm.h.orig	Fri Oct 26 22:39:59 2007
++++ ctm/ctm/ctm.h	Fri Oct 26 22:40:01 2007
 @@ -26,7 +26,7 @@
  #include <sys/time.h>
  

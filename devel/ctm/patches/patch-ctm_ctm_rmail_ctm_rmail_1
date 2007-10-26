@@ -1,8 +1,6 @@
-
-Gets rid of the extraneous documentation that we don't need/want.
-
---- ctm/ctm_rmail/ctm_rmail.1.orig2	Mon Feb 28 07:32:22 2000
-+++ ctm/ctm_rmail/ctm_rmail.1	Mon Feb 28 07:32:49 2000
+$OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+--- ctm/ctm_rmail/ctm_rmail.1.orig	Fri Oct 26 22:40:00 2007
++++ ctm/ctm_rmail/ctm_rmail.1	Fri Oct 26 22:40:01 2007
 @@ -6,27 +6,12 @@
  .\" Author: Stephen McKay
  .\"
@@ -33,7 +31,7 @@ Gets rid of the extraneous documentation that we don't need/want.
  .Nm ctm_rmail
  .Op Fl Dfuv
  .Op Fl l Ar log
-@@ -35,104 +20,13 @@
+@@ -35,106 +20,15 @@ deltas via mail
  .Op Fl b Ar basedir
  .Op Ar
  .Sh DESCRIPTION
@@ -43,7 +41,8 @@ Gets rid of the extraneous documentation that we don't need/want.
 -.Nm ctm_smail ,
 -.Nm ctm_dequeue
 -and
--.Nm ctm_rmail
++The
+ .Nm ctm_rmail
 -are used to distribute changes to a source tree via email.
 -.Nm ctm_smail
 -is given a compressed
@@ -52,8 +51,7 @@ Gets rid of the extraneous documentation that we don't need/want.
 -pieces, encodes them as mail messages and sends them to the mailing list
 -(optionally queued to spread the mail load).
 -Each recipient uses
-+The
- .Nm ctm_rmail
+-.Nm ctm_rmail
 +program is used
  (either manually or automatically) to decode and reassemble the delta, and
  optionally call
@@ -63,8 +61,8 @@ Gets rid of the extraneous documentation that we don't need/want.
 -several source trees are distributed, and by several sites.  These include
 -the FreeBSD-current source and CVS trees, distributed by
 -.Li freefall.FreeBSD.org .
--.Pp
--Command line arguments for
+ .Pp
+ Command line arguments for
 -.Nm ctm_smail :
 -.Bl -tag -width indent
 -.It Fl l Ar log
@@ -137,10 +135,12 @@ Gets rid of the extraneous documentation that we don't need/want.
 -for each tree being distributed.  This is because entries are served in
 -alphabetical order, and one tree will be unfairly serviced before any others,
 -based on the delta names, not delta creation times.
- .Pp
- Command line arguments for
+-.Pp
+-Command line arguments for
  .Nm ctm_rmail :
-@@ -272,19 +166,8 @@
+ .Bl -tag -width indent
+ .It Fl l Ar log
+@@ -272,19 +166,8 @@ You can retrieve this delta via ftpmail, or your good 
  .Pp
  You are then on your own!
  .Sh EXAMPLES
@@ -161,7 +161,7 @@ Gets rid of the extraneous documentation that we don't need/want.
  message in your mailbox, assemble them into complete deltas, then apply
  any deltas built or lying around, you could use:
  .Bd -literal -offset indent
-@@ -359,7 +242,7 @@
+@@ -359,7 +242,7 @@ manipulation in
  which allows
  .Nm ctm_rmail
  to execute
@@ -170,7 +170,7 @@ Gets rid of the extraneous documentation that we don't need/want.
  on the (non-OpenBSD) machine that this example was taken from.
  .Sh SECURITY
  If you automatically take your mail and pass it to a file tree patcher, you
-@@ -409,11 +292,8 @@
+@@ -409,11 +292,8 @@ source tree.
  .\" This next request is for sections 1, 6, 7 & 8 only
  .\"     (command return values (to shell) and fprintf/stderr type diagnostics)
  .Sh DIAGNOSTICS
@@ -183,7 +183,7 @@ Gets rid of the extraneous documentation that we don't need/want.
  .Nm ctm_rmail
  is expected to be called from a mail transfer program, and thus signals
  failure only when the input mail message should be bounced (preferably into
-@@ -424,24 +304,6 @@
+@@ -424,24 +304,6 @@ is not considered an error important enough to bounce 
  .Nm ctm_rmail
  returns an exit status of 0.
  .Pp
@@ -208,7 +208,7 @@ Gets rid of the extraneous documentation that we don't need/want.
  .Nm ctm_rmail
  will report messages like:
  .Bd -literal -offset indent
-@@ -470,6 +332,8 @@
+@@ -470,6 +332,8 @@ turn up here too.  Error messages should be self expla
  .Sh SEE ALSO
  .Xr ctm 1 ,
  .Xr ctm 5
@@ -217,12 +217,3 @@ Gets rid of the extraneous documentation that we don't need/want.
  .\" .Sh STANDARDS
  .\" .Sh HISTORY
  .Sh AUTHOR
---- ctm/ctm_rmail/Makefile.orig2	Mon Feb 28 07:33:51 2000
-+++ ctm/ctm_rmail/Makefile	Mon Feb 28 07:34:01 2000
-@@ -4,6 +4,5 @@
- PROG=           ctm_rmail
- SRCS=           ctm_rmail.c error.c
- CFLAGS+=        -Wall
--MLINKS+=	ctm_rmail.1 ctm_smail.1
- 
- .include <bsd.prog.mk>

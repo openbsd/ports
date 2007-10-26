@@ -1,0 +1,49 @@
+$OpenBSD: patch-ctm_ctm_ctm_ed_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+--- ctm/ctm/ctm_ed.c.orig	Tue May 30 05:47:22 1995
++++ ctm/ctm/ctm_ed.c	Fri Oct 26 22:39:59 2007
+@@ -6,7 +6,7 @@
+  * this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
+  * ----------------------------------------------------------------------------
+  *
+- * $Id: patch-ctm_ctm_ctm_ed_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
++ * $Id: patch-ctm_ctm_ctm_ed_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+  *
+  */
+ 
+@@ -21,13 +21,13 @@ ctm_edit(u_char *script, int length, char *filein, cha
+ 
+     fi = fopen(filein,"r");
+     if(!fi) {
+-	perror(filein);
++	warn("%s", filein);
+ 	return 8;
+     }
+ 
+     fo = fopen(fileout,"w");
+     if(!fo) {
+-	perror(fileout);
++	warn("%s", fileout);
+ 	fclose(fi);
+ 	return 4;
+     }
+@@ -96,17 +96,17 @@ ctm_edit(u_char *script, int length, char *filein, cha
+ bye:
+     if(fi) {
+ 	if(fclose(fi) != 0) {
+-	    perror(filein);
++	    warn("%s", filein);
+ 	    ret = 1;
+ 	}
+     }
+     if(fo) {
+      	if(fflush(fo) != 0) {
+-	    perror(fileout);
++	    warn("%s", fileout);
+ 	    ret = 1;
+      	}
+      	if(fclose(fo) != 0) {
+-	    perror(fileout);
++	    warn("%s", fileout);
+ 	    ret = 1;
+      	}
+     }
