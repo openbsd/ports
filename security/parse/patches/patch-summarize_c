@@ -1,5 +1,6 @@
---- summarize.c.orig	Thu Jan 27 14:51:23 2000
-+++ summarize.c	Thu Jan 27 14:57:12 2000
+$OpenBSD: patch-summarize_c,v 1.1 2007/10/26 21:38:24 jasper Exp $
+--- summarize.c.orig	Wed Nov  6 23:59:38 1996
++++ summarize.c	Fri Oct 26 23:33:35 2007
 @@ -31,7 +31,8 @@
   */
  
@@ -20,7 +21,7 @@
  #include "parse.h"
  
  void summarize_handler();
-@@ -90,7 +92,7 @@
+@@ -90,7 +92,7 @@ u_char *p;
    u_char *abuf, *abuf2;
    u_long src, dst;
    u_short src_port, dst_port;

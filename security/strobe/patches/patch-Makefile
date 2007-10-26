@@ -1,5 +1,6 @@
---- Makefile.orig	Thu Jul  3 04:48:00 1997
-+++ Makefile	Tue Dec 29 11:15:04 1998
+$OpenBSD: patch-Makefile,v 1.1 2007/10/26 21:38:24 jasper Exp $
+--- Makefile.orig	Thu Jul  3 13:48:00 1997
++++ Makefile	Fri Oct 26 23:34:42 2007
 @@ -3,15 +3,16 @@
  
  # Modify the below to suit your filesystem
@@ -23,7 +24,7 @@
  
  #LIBS= -lnsl -lsocket		# SYSVR4 / SOLARIS
  #LIBS= -lsocket -lmalloc -lc_s	# SCO
-@@ -31,7 +32,7 @@
+@@ -31,7 +32,7 @@ DEFS=-DLIB_STROBE_SERVICES='"$(LIBDIR)/$(DATA)"'\
       -DSTROBE_SERVICES='"$(DATA)"'\
       -DETC_SERVICES='"$(ETC_SERVICES)"'
  
@@ -32,7 +33,7 @@
  
  $(BIN): $(OBJS)
  	$(CC) $(CFLAGS) -o $(BIN) $(OBJS) $(LIBS)
-@@ -40,13 +41,13 @@
+@@ -40,13 +41,13 @@ $(DATA):
  $(MAN):
  $(INSTALLDIR)/$(BIN): $(BIN)
  	-rm -f $(INSTALLDIR)/$(BIN)

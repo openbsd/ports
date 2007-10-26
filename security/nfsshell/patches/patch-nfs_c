@@ -1,5 +1,6 @@
---- nfs.c-orig	Thu Jun 10 03:42:59 1999
-+++ nfs.c	Thu Jun 10 10:42:56 1999
+$OpenBSD: patch-nfs_c,v 1.1 2007/10/26 21:38:24 jasper Exp $
+--- nfs.c.orig	Tue May 19 22:36:10 1998
++++ nfs.c	Fri Oct 26 23:32:30 2007
 @@ -40,7 +40,6 @@
  #include <stdlib.h>
  #include <time.h>
@@ -24,7 +25,7 @@
  #endif
  
  /*
-@@ -169,7 +166,6 @@
+@@ -169,7 +166,6 @@ int interact = 1;		/* interactive mode */
  int authtype = AUTH_UNIX;	/* type of authentication */
  int uid = -2;			/* remote user id (initialy nobody) */
  int gid = -2;			/* remote group id (initialy nobody) */
@@ -32,7 +33,7 @@
  
  /* server information (also used as state information) */
  char *mountpath;		/* remote mount path */
-@@ -384,7 +380,7 @@
+@@ -384,7 +380,7 @@ getline(char *buf, int bufsize, int *argc, char **argv
  #ifdef READLINE
      if (interact) {
  	char *line;
@@ -41,7 +42,7 @@
  	    return 0;
  	strncpy(buf, line, bufsize);
  	add_history(line);
-@@ -394,7 +390,7 @@
+@@ -394,7 +390,7 @@ getline(char *buf, int bufsize, int *argc, char **argv
  	    return 0;
      }
  #else
@@ -50,7 +51,7 @@
      if (fgets(buf, bufsize, stdin) == NULL)
  	return 0;
  #endif
-@@ -447,16 +443,13 @@
+@@ -447,16 +443,13 @@ void
  do_setuid(int argc, char **argv)
  {
      if (argc > 3) {

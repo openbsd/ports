@@ -1,5 +1,6 @@
---- parse_input.c.orig	Thu Jan 27 14:57:40 2000
-+++ parse_input.c	Thu Jan 27 15:14:22 2000
+$OpenBSD: patch-parse_input_c,v 1.1 2007/10/26 21:38:24 jasper Exp $
+--- parse_input.c.orig	Wed Nov  6 23:59:38 1996
++++ parse_input.c	Fri Oct 26 23:33:35 2007
 @@ -32,6 +32,8 @@
   */
  
@@ -9,7 +10,7 @@
  #include <fcntl.h>
  #include <sys/signal.h>
  
-@@ -48,6 +50,12 @@
+@@ -48,6 +50,12 @@ time_t time_offset=0;
  
  extern int reverseFlag;
  
@@ -22,7 +23,7 @@
  main(argc, argv)
  int argc;
  char *argv[];
-@@ -55,8 +63,6 @@
+@@ -55,8 +63,6 @@ char *argv[];
    int dump=0;
    char *input_filename=NULL, *output_filename=NULL;
    int con_id=-1, c;

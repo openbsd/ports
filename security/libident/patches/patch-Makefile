@@ -1,6 +1,7 @@
---- Makefile.orig	Tue Jan 19 16:11:38 1999
-+++ Makefile	Tue Jan 19 16:13:57 1999
-@@ -8,7 +8,7 @@
+$OpenBSD: patch-Makefile,v 1.1 2007/10/26 21:38:24 jasper Exp $
+--- Makefile.orig	Fri Jan 17 20:10:55 1997
++++ Makefile	Fri Oct 26 23:31:46 2007
+@@ -8,7 +8,7 @@ RM=rm -f
  RANLIB=ranlib
  AR=ar cq
  
@@ -9,7 +10,7 @@
  LIBDIR=$(INSTROOT)/lib
  INCDIR=$(INSTROOT)/include
  MANDIR=$(INSTROOT)/man/man3
-@@ -19,7 +19,7 @@
+@@ -19,7 +19,7 @@ MANDIR=$(INSTROOT)/man/man3
  # Add -DHAVE_ANSIHEADERS if your system have the ANSI C header files
  # needed for our purposes (stdlib, string, unistd).
  #
@@ -18,7 +19,7 @@
  
  LDLIBS =
  LIBIDENT = libident.a
-@@ -33,6 +33,7 @@
+@@ -33,6 +33,7 @@ fail:
  	@echo aix
  	@echo bsd
  	@echo bsd2.11
@@ -26,7 +27,7 @@
  	@echo dynix
  	@echo hpux
  	@echo irix
-@@ -126,6 +127,10 @@
+@@ -126,6 +127,10 @@ bsd:
  bsd2.11:
  	@$(MAKE) all CC="$(CC)" CFLAGS="-O -DSIGRETURNTYPE=int -DHAVE_ANSIHEADERS"
  

@@ -1,7 +1,6 @@
-# $OpenBSD: patch-ab,v 1.2 2000/02/06 10:41:13 form Exp $
-
---- todos.c.orig	Tue Dec 22 05:50:00 1998
-+++ todos.c	Sun Feb  6 16:39:32 2000
+$OpenBSD: patch-todos_c,v 1.1 2007/10/26 21:41:29 jasper Exp $
+--- todos.c.orig	Tue Dec 22 00:50:00 1998
++++ todos.c	Fri Oct 26 23:40:11 2007
 @@ -33,6 +33,7 @@
  #include <stdio.h>
  #include <string.h>
@@ -10,7 +9,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #if defined(__MSDOS__) || defined(__OS2__)
-@@ -55,7 +56,6 @@
+@@ -55,7 +56,6 @@ char inbuf[NEEDSIZ];
  char outbuf[NEEDSIZ];
  #endif
  
@@ -18,7 +17,7 @@
  int RENAME(), decode();
  
  #include "alt2koi8.h"
-@@ -63,6 +63,9 @@
+@@ -63,6 +63,9 @@ int RENAME(), decode();
  #include "win2koi8.h"
  #include "koi82win.h"
  
@@ -28,7 +27,7 @@
  char tmp_pat[] = "$1489_XXXXXX";
  char tmp_name[256], out_name[256];
  char **table;
-@@ -251,10 +254,21 @@
+@@ -251,10 +254,21 @@ usage:
  	}
  
  	sprintf(tmp_name, "%s%s%s", outdir, *outdir ? "/" : "", tmp_pat);
@@ -50,7 +49,7 @@
  
  	while (ac-- > 1) {
  		srcn = av[1];
-@@ -267,10 +281,12 @@
+@@ -267,10 +281,12 @@ usage:
  			perror(srcn);
  			goto usage;
  		}

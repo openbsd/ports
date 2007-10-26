@@ -1,5 +1,6 @@
---- comment.c.orig	Thu Jan 27 14:50:26 2000
-+++ comment.c	Thu Jan 27 14:56:52 2000
+$OpenBSD: patch-comment_c,v 1.1 2007/10/26 21:38:24 jasper Exp $
+--- comment.c.orig	Wed Nov  6 23:59:38 1996
++++ comment.c	Fri Oct 26 23:33:35 2007
 @@ -28,8 +28,8 @@
   */
  
