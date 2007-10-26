@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/20 10:18:37 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/10/26 01:23:38 sthen Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.2.10
 DISTNAME=	apr-util-$V
-FULLPKGNAME=	apr-util${MT}-$V${FLAVOR_EXT:S/-mt//}
+FULLPKGNAME=	apr-util${MT}-$Vp0${FLAVOR_EXT:S/-mt//}
 SHARED_LIBS +=	aprutil-1${MT}          2.11     # .2.11
 
 CATEGORIES=	devel
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
 WANTLIB=	expat
-LIB_DEPENDS=	lib/db4/db.=4:db-4.*:databases/db/v4
+LIB_DEPENDS=	lib/db4/db.>=4:db-4.*:databases/db/v4
 
 MODULES=	converters/libiconv		
 USE_LIBTOOL=	Yes
