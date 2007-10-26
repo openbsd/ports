@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/14 18:34:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2007/10/26 13:10:14 simon Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -8,8 +8,8 @@ COMMENT-devel=	devel files for Gecko
 VER=		1.8.1.6
 DISTNAME=	mozilla
 PKGNAME=	xulrunner-${VER}
-PKGNAME-main=	xulrunner-${VER}p0
-PKGNAME-devel=	xulrunner-devel-${VER}p0
+PKGNAME-main=	xulrunner-${VER}p1
+PKGNAME-devel=	xulrunner-devel-${VER}p1
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -42,10 +42,10 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 WANTLIB=	c glib-2.0 m pthread stdc++
 
-WANTLIB-main=	${WANTLIB} X11 Xau Xcursor Xdmcp Xext Xfixes Xft \
-		Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo expat \
-		fontconfig freetype glitz gmodule-2.0 gobject-2.0 \
-		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
+WANTLIB-main=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+		Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo expat \
+		fontconfig freetype glitz gmodule-2.0 gobject-2.0 jpeg \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
 
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
 		xulrunner/mozjs,xulrunner/xpcom,xulrunner/xul:${PKGNAME-main}:devel/xulrunner,-main
