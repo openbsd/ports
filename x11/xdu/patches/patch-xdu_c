@@ -1,10 +1,7 @@
-
-* Allow filenames with whitespace characters (not CR or LF though)
-* Correctly handle root directory entry ("/")
-
---- xdu.c.orig	Mon Apr 24 09:01:53 2000
-+++ xdu.c	Mon Apr 24 10:08:07 2000
-@@ -234,6 +234,7 @@
+$OpenBSD: patch-xdu_c,v 1.1 2007/10/26 20:59:01 jasper Exp $
+--- xdu.c.orig	Sun Jun  5 21:29:23 1994
++++ xdu.c	Fri Oct 26 22:44:33 2007
+@@ -235,6 +235,7 @@ char *filename;
  	char	name[4096];
  	int	size;
  	FILE	*fp;
@@ -12,7 +9,7 @@
  
  	if (strcmp(filename, "-") == 0) {
  		fp = stdin;
-@@ -243,11 +244,21 @@
+@@ -244,11 +245,21 @@ char *filename;
  			exit(1);
  		}
  	}
@@ -35,7 +32,7 @@
  	fclose(fp);
  }
  
-@@ -268,7 +279,7 @@
+@@ -269,7 +280,7 @@ int size;
  	length = strlen(name);
  	if ((length > 0) && (name[length-1] == '/')) {
  		/* strip off trailing / (e.g. GNU du) */
@@ -44,7 +41,7 @@
  	}
  
  	arg = 0; indx = 0;
-@@ -288,8 +299,10 @@
+@@ -289,8 +300,10 @@ int size;
  		}
  		name++;
  	}
@@ -57,7 +54,7 @@
  	path[arg] = NULL;
  
  	addtree(&top,path,size);
-@@ -398,15 +411,15 @@
+@@ -399,15 +412,15 @@ int size;
  
  	/*printf("addtree(\"%s\",\"%s\",%d)\n", top->name, path[0], size);*/
  

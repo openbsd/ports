@@ -1,6 +1,7 @@
+$OpenBSD: patch-plaid_c,v 1.1 2007/10/26 20:59:01 jasper Exp $
 --- plaid.c.orig	Thu Dec 10 17:40:26 1992
-+++ plaid.c	Mon May  6 13:23:17 1996
-@@ -60,6 +60,7 @@
++++ plaid.c	Fri Oct 26 22:55:30 2007
+@@ -60,6 +60,7 @@ CreatePlaidWidget()
  {
  	Arg args[4];
  	register int nargs;
@@ -8,7 +9,7 @@
  
  	/*
  	 * Create the plaid widget.
-@@ -78,20 +79,22 @@
+@@ -78,20 +79,22 @@ CreatePlaidWidget()
  	 * Get the width and height of the widget.
  	 */
  	nargs = 0;
@@ -38,13 +39,3 @@
  
  		XtSetValues(plaidwidget, args, nargs);
  	}
---- ./xpostit.c.org	Thu Dec 10 08:40:27 1992
-+++ ./xpostit.c	Thu Oct 31 21:31:14 1996
-@@ -121,7 +121,6 @@
- {
- 	Arg args[4];
- 	char *appname;
--	char *rindex();
- 	Atom protos[2];
- 	register int nargs;
- 	Boolean setsigs = False;

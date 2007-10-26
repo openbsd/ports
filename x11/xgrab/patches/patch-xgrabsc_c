@@ -1,7 +1,7 @@
-$OpenBSD: patch-ab,v 1.2 2000/06/02 15:47:50 espie Exp $
+$OpenBSD: patch-xgrabsc_c,v 1.1 2007/10/26 20:59:01 jasper Exp $
 --- xgrabsc.c.orig	Tue Nov  7 20:31:41 1995
-+++ xgrabsc.c	Fri Jun  2 17:09:12 2000
-@@ -106,6 +106,7 @@ static Window xgTryChildren (win, WM_STA
++++ xgrabsc.c	Fri Oct 26 22:51:21 2007
+@@ -106,6 +106,7 @@ static Window xgTryChildren (win, WM_STATE)
  int ScreenNumberOfScreen (scr)
      register Screen *scr;
  {

@@ -1,0 +1,12 @@
+$OpenBSD: patch-xlogout_c,v 1.1 2007/10/26 20:59:01 jasper Exp $
+--- xlogout.c.orig	Thu Nov 30 00:29:37 1989
++++ xlogout.c	Fri Oct 26 22:54:37 2007
+@@ -48,7 +48,7 @@ static XrmOptionDescRec options[] = {
+ };
+ 
+ 
+-void main (argc, argv)
++int main (argc, argv)
+     int argc;
+     char **argv;
+ {
