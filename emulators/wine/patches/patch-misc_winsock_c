@@ -1,7 +1,7 @@
-$OpenBSD: patch-misc_winsock_c,v 1.1 2003/12/31 04:21:45 espie Exp $
---- misc/winsock.c.orig	2003-12-31 04:56:34.000000000 +0100
-+++ misc/winsock.c	2003-12-31 04:56:42.000000000 +0100
-@@ -1964,8 +1964,8 @@ HANDLE16 WINAPI WSAAsyncGetHostByName16(
+$OpenBSD: patch-misc_winsock_c,v 1.2 2007/10/26 21:04:25 ajacoutot Exp $
+--- misc/winsock.c.orig	Sat Feb 20 17:46:39 1999
++++ misc/winsock.c	Fri Oct 26 22:55:06 2007
+@@ -1964,8 +1964,8 @@ HANDLE16 WINAPI WSAAsyncGetHostByName16(HWND16 hWnd, U
  {
    LPWSINFO              pwsi = wsi_find(GetCurrentTask());
  

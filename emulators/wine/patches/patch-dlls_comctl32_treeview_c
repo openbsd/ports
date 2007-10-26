@@ -1,7 +1,7 @@
-$OpenBSD: patch-dlls_comctl32_treeview_c,v 1.1 2003/12/31 04:21:45 espie Exp $
---- dlls/comctl32/treeview.c.orig	2003-12-31 04:42:42.000000000 +0100
-+++ dlls/comctl32/treeview.c	2003-12-31 04:43:02.000000000 +0100
-@@ -1127,7 +1127,7 @@ TREEVIEW_InsertItem32A (WND *wndPtr, WPA
+$OpenBSD: patch-dlls_comctl32_treeview_c,v 1.2 2007/10/26 21:04:25 ajacoutot Exp $
+--- dlls/comctl32/treeview.c.orig	Wed Feb 17 14:51:07 1999
++++ dlls/comctl32/treeview.c	Fri Oct 26 22:55:05 2007
+@@ -1127,7 +1127,7 @@ TREEVIEW_InsertItem32A (WND *wndPtr, WPARAM32 wParam, 
    if (listItems>1) {
       prevsib=NULL;
       switch ((INT32)ptdi->hInsertAfter) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-dlls_comctl32_treeview_c,v 1.1 2003/12/31 04:21:45 espie Exp $
  			if (wineItem->parent) {
  				wineItem->sibling=parentItem->firstChild;
  				parentItem->firstChild=(HTREEITEM)iItem;
-@@ -1137,7 +1137,7 @@ TREEVIEW_InsertItem32A (WND *wndPtr, WPA
+@@ -1137,7 +1137,7 @@ TREEVIEW_InsertItem32A (WND *wndPtr, WPARAM32 wParam, 
  			}
  			sibItem->upsibling=(HTREEITEM)iItem;
  			break;
@@ -19,7 +19,7 @@ $OpenBSD: patch-dlls_comctl32_treeview_c,v 1.1 2003/12/31 04:21:45 espie Exp $
  			if (sibItem==wineItem) break;
  			while (sibItem->sibling) {
  				prevsib=sibItem;
-@@ -1146,7 +1146,7 @@ TREEVIEW_InsertItem32A (WND *wndPtr, WPA
+@@ -1146,7 +1146,7 @@ TREEVIEW_InsertItem32A (WND *wndPtr, WPARAM32 wParam, 
  			sibItem->sibling=(HTREEITEM)iItem;
  			wineItem->upsibling=sibItem->hItem;
  			break;

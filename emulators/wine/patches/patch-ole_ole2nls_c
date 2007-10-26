@@ -1,7 +1,7 @@
-$OpenBSD: patch-ole_ole2nls_c,v 1.1 2003/12/31 04:21:45 espie Exp $
---- ole/ole2nls.c.orig	2003-12-31 04:59:48.000000000 +0100
-+++ ole/ole2nls.c	2003-12-31 04:59:54.000000000 +0100
-@@ -2661,8 +2661,8 @@ static INT32 OLE_GetFormatW(LCID locale,
+$OpenBSD: patch-ole_ole2nls_c,v 1.2 2007/10/26 21:04:25 ajacoutot Exp $
+--- ole/ole2nls.c.orig	Wed Feb 17 14:51:13 1999
++++ ole/ole2nls.c	Fri Oct 26 22:55:07 2007
+@@ -2661,8 +2661,8 @@ static INT32 OLE_GetFormatW(LCID locale, DWORD flags, 
     int     datevars=0, timevars=0;
  
     /* make a debug report */

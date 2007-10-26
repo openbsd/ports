@@ -1,7 +1,7 @@
-$OpenBSD: patch-windows_class_c,v 1.1 2003/12/31 04:21:45 espie Exp $
---- windows/class.c.orig	2003-12-31 05:01:45.000000000 +0100
-+++ windows/class.c	2003-12-31 05:01:52.000000000 +0100
-@@ -421,8 +421,8 @@ ATOM WINAPI RegisterClass16( const WNDCL
+$OpenBSD: patch-windows_class_c,v 1.2 2007/10/26 21:04:25 ajacoutot Exp $
+--- windows/class.c.orig	Wed Feb 17 14:51:14 1999
++++ windows/class.c	Fri Oct 26 22:55:07 2007
+@@ -421,8 +421,8 @@ ATOM WINAPI RegisterClass16( const WNDCLASS16 *wc )
          return 0;
      }
  

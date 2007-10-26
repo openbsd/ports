@@ -1,5 +1,6 @@
---- msdos/dpmi.c.orig	1999-02-25 18:32:56.000000000 +0100
-+++ msdos/dpmi.c	2003-12-31 04:57:46.000000000 +0100
+$OpenBSD: patch-msdos_dpmi_c,v 1.1 2007/10/26 21:04:25 ajacoutot Exp $
+--- msdos/dpmi.c.orig	Thu Feb 25 18:32:56 1999
++++ msdos/dpmi.c	Fri Oct 26 22:55:04 2007
 @@ -20,6 +20,7 @@
  #include "process.h"
  #include "callback.h"
@@ -8,7 +9,7 @@
  
  #define DOS_GET_DRIVE(reg) ((reg) ? (reg) - 1 : DRIVE_GetCurrentDrive())
  
-@@ -211,22 +212,24 @@ static void DPMI_CallRMCBProc( CONTEXT *
+@@ -211,22 +212,24 @@ static void DPMI_CallRMCBProc( CONTEXT *context, RMCB 
           * real-mode call structure. */
          if (flag & 1) {
              /* 32-bit DPMI client */
