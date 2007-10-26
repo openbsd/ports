@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.563 2007/10/25 22:06:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.564 2007/10/26 21:22:48 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -509,6 +509,7 @@
      SUBDIR += p5-Tie-Cache
      SUBDIR += p5-Tie-Cache-LRU
      SUBDIR += p5-Tie-Cache-LRU-Expires
+     SUBDIR += p5-Tie-Hash-Indexed
      SUBDIR += p5-Tie-IxHash
      SUBDIR += p5-Tie-LLHash
      SUBDIR += p5-Tie-RegexpHash
