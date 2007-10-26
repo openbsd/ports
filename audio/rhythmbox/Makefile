@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2007/10/24 22:41:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2007/10/26 15:05:12 jasper Exp $
 
-BROKEN=			needs an update to 0.10.x
+BROKEN=			needs an update to 0.11.x (and working totem)
 
 COMMENT=		Music Management Application
 
