@@ -1,5 +1,6 @@
---- sys/FreeBSD/audio.c.orig	Sun Apr  2 13:02:20 2000
-+++ sys/FreeBSD/audio.c	Sun Apr  2 13:07:43 2000
+$OpenBSD: patch-sys_FreeBSD_audio_c,v 1.1 2007/10/26 20:44:07 jasper Exp $
+--- sys/FreeBSD/audio.c.orig	Thu Sep  2 16:34:34 1999
++++ sys/FreeBSD/audio.c	Fri Oct 26 22:33:32 2007
 @@ -90,7 +90,9 @@ S_PlaySound(char *soundfile)
  	return (SOUND_DEVICE_ERROR);
      }
@@ -22,7 +23,7 @@
      XtFree(buffer);
      
      close(sdev); 
-@@ -159,11 +165,17 @@ S_PlayCacheSound(SoundCacheBuffer *cache
+@@ -159,11 +165,17 @@ S_PlayCacheSound(SoundCacheBuffer *cacheBufferPtr)
  	return(SOUND_DEVICE_ERROR);
      }
      

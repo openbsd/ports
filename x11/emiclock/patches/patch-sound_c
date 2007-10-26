@@ -1,6 +1,7 @@
---- sound.c.orig	Sun Apr  2 13:00:11 2000
-+++ sound.c	Sun Apr  2 13:00:53 2000
-@@ -103,10 +103,10 @@ static Boolean		isHalfHourChimeCached = 
+$OpenBSD: patch-sound_c,v 1.1 2007/10/26 20:44:07 jasper Exp $
+--- sound.c.orig	Thu Sep  2 16:33:49 1999
++++ sound.c	Fri Oct 26 22:33:32 2007
+@@ -103,10 +103,10 @@ static Boolean		isHalfHourChimeCached = False;
  #include "sys/Linux/audio.c"
  #endif	/* linux */
  

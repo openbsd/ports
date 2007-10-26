@@ -1,0 +1,12 @@
+$OpenBSD: patch-SwissWatch_c,v 1.1 2007/10/26 20:44:07 jasper Exp $
+--- SwissWatch.c.orig	Sun Jan 17 13:11:17 1993
++++ SwissWatch.c	Fri Oct 26 22:38:26 2007
+@@ -280,7 +280,7 @@ tock(w, init_p)
+   struct timeval tvnow;
+ 
+   gettimeofday(& tvnow, (struct timezone *) 0);
+-  tm_now = localtime(&tvnow.tv_sec);
++  tm_now = localtime((time_t *)&tvnow.tv_sec);
+ #if HAVE_GMTOFF
+   w->swiss_watch.now_local_sec = tvnow.tv_sec+tm_now->tm_gmtoff;
+ #else /* not HAVE_GMTOFF */

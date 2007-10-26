@@ -1,0 +1,70 @@
+$OpenBSD: patch-xantfarm_c,v 1.1 2007/10/26 20:44:07 jasper Exp $
+--- xantfarm.c.orig	Sun Nov 12 04:15:15 1995
++++ xantfarm.c	Fri Oct 26 22:39:40 2007
+@@ -117,12 +117,13 @@ typedef struct falling_sand_struct {
+ 
+ 
+ /* Externals. */
+-
++#ifndef __OpenBSD__
+ extern char* getenv();
+ extern char* malloc();
+ extern long random();
+ extern char* realloc();
+ extern long time();
++#endif
+ 
+ 
+ /* Forward routines. */
+@@ -404,7 +405,11 @@ usage:
+ 	}
+ 
+     /* Initialize the random number generator. */
++#ifndef __OpenBSD__
+     srandom( (int) ( time( (long*) 0 ) ^ getpid() ) );
++#else
++    srandom( (int) ( time( (time_t*) 0 ) ^ getpid() ) );
++#endif
+ 
+     /* Create the ant world. */
+     ant_init();
+@@ -626,18 +631,18 @@ x_init_rdb( argcP, argv )
+ 	char buf[500];
+ 
+ 	cp = getenv( "HOME" );
+-	if ( cp != (char*) 0 )
++	if ( cp != NULL )
+ 	    (void) strcpy( buf, cp );
+ 	else
+ 	    {
+ 	    struct passwd* pw;
+ 
+ 	    cp = getenv( "USER" );
+-	    if ( cp != (char*) 0 )
++	    if ( cp != NULL )
+ 		pw = getpwnam( cp );
+ 	    else
+ 		pw = getpwuid( getuid() );
+-	    if ( pw != (struct passwd*) 0 )
++	    if ( pw != NULL )
+ 		(void) strcpy( buf, pw->pw_dir );
+ 	    else
+ 		(void) strcpy( buf, "." );	/* best we can do */
+@@ -648,7 +653,7 @@ x_init_rdb( argcP, argv )
+ 
+     /* Merge in XENVIRONMENT, if any. */
+     xenv = getenv( "XENVIRONMENT" );
+-    if ( xenv != (char*) 0 )
++    if ( xenv != NULL )
+ 	{
+ 	XrmDatabase tdb;
+ 
+@@ -1539,7 +1544,7 @@ read_world( cf )
+     char* cf;
+     {
+     FILE* cfP;
+-    char* buf[500];
++    char buf[500];
+     int w, h, x, y, c;
+ 
+     cfP = fopen( cf, "r" );

@@ -1,5 +1,6 @@
---- Imakefile.org	Sat Dec 16 19:10:12 1995
-+++ Imakefile	Sat Dec 16 18:59:27 1995
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 20:44:07 jasper Exp $
+--- Imakefile.orig	Fri Aug 28 10:23:24 1992
++++ Imakefile	Fri Oct 26 22:38:26 2007
 @@ -1,7 +1,7 @@
  #ifdef ContribRules
  ContribRules

@@ -1,5 +1,6 @@
+$OpenBSD: patch-mouseclock_c,v 1.1 2007/10/26 20:44:07 jasper Exp $
 --- mouseclock.c.orig	Sun May  5 18:47:18 1996
-+++ mouseclock.c	Wed May 17 18:05:35 2000
++++ mouseclock.c	Fri Oct 26 22:37:18 2007
 @@ -31,6 +31,7 @@ int Scr;
  Window Root;
  int shadow_size = 2;

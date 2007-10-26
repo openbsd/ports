@@ -1,5 +1,0 @@
-$OpenBSD: patch-ab,v 1.2 2000/05/17 16:20:14 espie Exp $
---- mouseclock.man.orig	Wed May 17 18:05:35 2000
-+++ mouseclock.man	Wed May 17 18:05:35 2000
-@@ -0,0 +1 @@
-+

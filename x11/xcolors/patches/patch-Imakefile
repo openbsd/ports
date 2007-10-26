@@ -1,6 +1,7 @@
---- ./Imakefile.org	Mon Jun  6 17:28:45 1994
-+++ ./Imakefile	Sun Dec 22 16:28:05 1996
-@@ -8,12 +8,7 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 20:44:07 jasper Exp $
+--- Imakefile.orig	Tue Jun  7 02:28:45 1994
++++ Imakefile	Fri Oct 26 22:41:13 2007
+@@ -8,12 +8,7 @@ LOCAL_LIBRARIES = XawClientLibs
             OBJS = xcolors.o
    SYS_LIBRARIES = -lm
  

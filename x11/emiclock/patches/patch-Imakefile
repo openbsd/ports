@@ -1,6 +1,7 @@
---- Imakefile.orig	Thu Jun 30 09:34:55 1994
-+++ Imakefile	Sat Apr  1 00:16:02 2000
-@@ -90,8 +90,14 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 20:44:07 jasper Exp $
+--- Imakefile.orig	Thu Sep  2 16:33:47 1999
++++ Imakefile	Fri Oct 26 22:33:32 2007
+@@ -104,8 +104,14 @@ XCOMM
  /* FreeBSD */
  #if defined(i386BsdArchitecture) && (defined(i386FreeBsd) || defined(FreeBSDArchitecture))
  #define	StartupSound	myu.au
@@ -15,7 +16,7 @@
  #else	/* USE_NETAUDIO */
  
  /* netaudio (NCDaudio) */
-@@ -218,6 +224,6 @@
+@@ -234,6 +240,6 @@ XCOMM
  
  #ifdef	USE_SOUND
  install:: sounds/StartupSound
