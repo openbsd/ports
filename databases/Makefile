@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2007/10/13 08:54:57 steven Exp $
+# $OpenBSD: Makefile,v 1.125 2007/10/27 14:08:00 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -56,6 +56,7 @@
      SUBDIR += p5-DBD-mysql
      SUBDIR += p5-DBD-mysqlPP
      SUBDIR += p5-DBI
+     SUBDIR += p5-DBI-Shell
      SUBDIR += p5-DBIx-Class
      SUBDIR += p5-DBIx-Class-HTMLWidget
      SUBDIR += p5-DBIx-Class-Schema-Loader
@@ -63,6 +64,7 @@
      SUBDIR += p5-DBIx-Class-Validation
      SUBDIR += p5-DBIx-ContextualFetch
      SUBDIR += p5-DBIx-DBSchema
+     SUBDIR += p5-DBIx-Migration
      SUBDIR += p5-DBIx-SearchBuilder
      SUBDIR += p5-DBIx-XHTML_Table
      SUBDIR += p5-Data-Page
