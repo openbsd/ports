@@ -1,0 +1,9 @@
+$OpenBSD: patch-Imakefile,v 1.1 2007/10/27 13:32:05 ajacoutot Exp $
+--- Imakefile.orig	Fri May  5 16:46:04 1989
++++ Imakefile	Sat Oct 27 15:15:14 2007
+@@ -4,4 +4,4 @@ LOCAL_LIBRARIES = $(XLIB)
+            OBJS = bicons.o cicons.o cicons1.o cicons2.o cicons3.o cicons4.o \
+ 		  cicons5.o event.o icons.o mj.o nicons.o
+ 
+-ComplexProgramTarget(xmj)
++ComplexProgramTargetNoMan(xmj)
