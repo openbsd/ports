@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/10/27 07:38:13 wilfried Exp $
 
-ONLY_FOR_ARCHS=		i386 m68k sparc
+ONLY_FOR_ARCHS=		i386 amd64 m68k sparc
 
 COMMENT=		official distributed.net client
 
 A-i386=			x86-elf
-V-i386=			2.9008
-SV-i386=		491
+V-i386=			2.9013
+SV-i386=		498
 S-i386=			0
+
+A-amd64=		amd64-elf
+V-amd64=		2.9011
+SV-amd64=		496
+S-amd64=		3
 
 A-m68k=			m68k
 V-m68k=			2.9005
