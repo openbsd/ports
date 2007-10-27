@@ -1,8 +1,8 @@
-$OpenBSD: patch-makefiles_Makefile_openbsd,v 1.7 2007/08/29 10:06:52 mbalmer Exp $
---- makefiles/Makefile.openbsd.orig	Sat Nov 22 14:03:39 2003
-+++ makefiles/Makefile.openbsd	Mon Aug 27 12:01:17 2007
+$OpenBSD: patch-makefiles_Makefile_openbsd,v 1.8 2007/10/27 14:01:38 mbalmer Exp $
+--- makefiles/Makefile.openbsd.orig	Sat Nov 22 06:03:39 2003
++++ makefiles/Makefile.openbsd	Sat Oct 27 07:31:57 2007
 @@ -1,6 +1,6 @@
- # $Id: patch-makefiles_Makefile_openbsd,v 1.7 2007/08/29 10:06:52 mbalmer Exp $
+ # $Id: patch-makefiles_Makefile_openbsd,v 1.8 2007/10/27 14:01:38 mbalmer Exp $
 -CC=cc
 -AR=ar
 +CC?=cc
@@ -22,7 +22,7 @@ $OpenBSD: patch-makefiles_Makefile_openbsd,v 1.7 2007/08/29 10:06:52 mbalmer Exp
  ARFLAGS=-ur
 -LIBS= -L/usr/X11R6/lib -lXm -lXpm -lXp -lXext -lXt -lSM -lICE -lX11 -lm
 +MOTIFLIB?=-L${LOCALBASE} -lXm
-+LIBS=-L${X11BASE}/lib ${MOTIFLIB} -lXpm -lXp -lXext -lXt -lSM -lICE -lX11 -lm
++LIBS=-L${X11BASE}/lib ${MOTIFLIB} -lXft -lXpm -lXp -lXext -lXt -lSM -lICE -lX11 -lfontconfig -lfreetype -lexpat -lm -lXau -lXdmcp -lXrender -lXmu -lz -liconv 
  
  include Makefile.common
  
