@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/10/08 08:22:44 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2007/10/27 09:42:48 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GTK+2 Python bindings
 
 V=		2.10.4
 DISTNAME=	pygtk-${V}
-PKGNAME=	py-gtk2-${V}p0
+PKGNAME=	py-gtk2-${V}p1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -22,12 +22,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygtk/${V:R}/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	X11 Xext Xrender atk-1.0 fontconfig freetype \
-		gdk-x11-2.0.>=802.0 gdk_pixbuf-2.0.>=802.0 glib-2.0.>=1000.0 \
-		gmodule-2.0.>=1000.0 gobject-2.0.>=1000.0 \
-		gtk-x11-2.0.>=802.0 m pango-1.0 pangoft2-1.0 \
-		pangocairo-1.0 xml2 z cairo glitz png
-WANTLIB += Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
+		Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
+		freetype gdk-x11-2.0.>=802.0 gdk_pixbuf-2.0.>=802.0 \
+		glib-2.0.>=1000.0 glitz gmodule-2.0.>=1000.0 \
+		gobject-2.0.>=1000.0 gtk-x11-2.0.>=802.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pcre png xml2 z
 
 MODULES=	devel/gettext lang/python
 
