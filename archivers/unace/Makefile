@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2007/10/27 13:01:28 espie Exp $
 
 COMMENT=	extract, view & test ACE archives
 
@@ -19,7 +19,11 @@ MAKE_FILE=	unix/makefile
 
 NO_REGRESS=	Yes
 
-ALL_TARGET=	clean unace
+pre-build:
+	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} clean
+
+ALL_TARGET=	unace
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/unace ${PREFIX}/bin
