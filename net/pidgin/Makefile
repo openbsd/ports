@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/27 16:57:20 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
-DISTNAME=	pidgin-2.2.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	pidgin-2.2.2
 SHARED_LIBS += jabber               0.0      # .0.0
 SHARED_LIBS += oscar                0.0      # .0.0
 SHARED_LIBS += purple               1.0      # .1.0
@@ -22,7 +21,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		glib-2.0 ICE SM X11 Xext Xrender Xss \
+WANTLIB=		glib-2.0 ICE SM X11 Xcomposite Xext Xrender Xss \
+			Xdamage pcre \
 			atk-1.0 c crypto dbus-1 expat fontconfig freetype \
 			gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 \
 			ssl pangocairo-1.0 cairo glitz png \

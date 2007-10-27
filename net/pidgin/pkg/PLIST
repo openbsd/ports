@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/10/01 22:03:30 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/10/27 16:57:20 steven Exp $
 @conflict gaim-*
 bin/finch
 bin/pidgin
@@ -210,6 +210,7 @@ lib/pidgin/timestamp_format.la
 lib/pidgin/timestamp_format.so
 lib/pidgin/xmppconsole.la
 lib/pidgin/xmppconsole.so
+lib/pkgconfig/finch.pc
 lib/pkgconfig/gnt.pc
 lib/pkgconfig/pidgin.pc
 lib/pkgconfig/purple.pc
@@ -320,8 +321,6 @@ share/locale/id/LC_MESSAGES/pidgin.mo
 share/locale/it/LC_MESSAGES/pidgin.mo
 share/locale/ja/LC_MESSAGES/pidgin.mo
 share/locale/ka/LC_MESSAGES/pidgin.mo
-share/locale/kn/
-share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/pidgin.mo
 share/locale/ko/LC_MESSAGES/pidgin.mo
 share/locale/ku/LC_MESSAGES/pidgin.mo
@@ -908,6 +907,7 @@ share/purple/
 share/purple/ca-certs/
 share/purple/ca-certs/Equifax_Secure_CA.pem
 share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
+share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
 share/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
 share/sounds/
