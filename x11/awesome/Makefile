@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/26 19:13:35 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/27 12:34:55 merdely Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
-V=1.1
+V=1.3
 DISTNAME=		awesome-${V}
 
 CATEGORIES=		x11
@@ -17,15 +17,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xext Xinerama Xrandr c
+WANTLIB=		X11 Xext Xinerama Xrandr Xft c
 
 MASTER_SITES=		${HOMEPAGE}/download/
 
 LIB_DEPENDS=		config::devel/libconfig
 
-CFLAGS+=                -I. -I${X11BASE}/include -I${PREFIX}/include -DVERSION=\\\"$V\\\" \
+CFLAGS+=                -I. -I${X11BASE}/include -I${X11BASE}/include/freetype2 \
+			-I${LOCALBASE}/include -DVERSION=\\\"$V\\\" \
 			$$(pkg-config --cflags libconfig)
-LDFLAGS+=               -L${X11BASE}/lib -L${PREFIX}/lib -lX11 -lXext -lXrandr -lXinerama \
+LDFLAGS+=               -L${X11BASE}/lib -L${LOCALBASE}/lib \
+			-lX11 -lXext -lXrandr -lXinerama -lXft \
 			$$(pkg-config --libs libconfig)
 MAKE_FLAGS=             CC=${CC} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS=             MANPREFIX=${PREFIX}/man \
