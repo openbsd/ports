@@ -1,0 +1,43 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/10/27 15:25:37 ajacoutot Exp $
+--- configure.orig	Tue Oct 23 19:52:15 2007
++++ configure	Sat Oct 27 17:23:06 2007
+@@ -6690,13 +6690,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+ #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+ 
+-    echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
++    echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -6756,7 +6756,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthre
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
+ 
+-	LIBS="$LIBS -lpthread"
++	LIBS="$LIBS -pthread"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBPTHREAD 1
+@@ -7729,10 +7729,10 @@ s,@host_cpu@,$host_cpu,;t t
+ s,@host_vendor@,$host_vendor,;t t
+ s,@host_os@,$host_os,;t t
+ s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+-s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@INTLLIBS@,$LTLIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@CPP@,$CPP,;t t
