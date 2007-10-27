@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.492 2007/10/27 16:22:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.493 2007/10/27 23:14:43 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11
      SUBDIR += ezstream
+     SUBDIR += farsight
      SUBDIR += firewalk
      SUBDIR += flow-tools
      SUBDIR += flowd
