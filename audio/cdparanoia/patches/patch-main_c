@@ -1,7 +1,7 @@
-$OpenBSD: patch-main_c,v 1.5 2003/01/23 23:45:24 espie Exp $
---- main.c.orig	Fri Jan 24 00:36:25 2003
-+++ main.c	Fri Jan 24 00:38:12 2003
-@@ -376,7 +376,7 @@ static void callback(long inpos, int fun
+$OpenBSD: patch-main_c,v 1.6 2007/10/27 15:01:53 espie Exp $
+--- main.c.orig	Mon Mar 26 05:44:50 2001
++++ main.c	Sat Oct 27 16:57:49 2007
+@@ -376,7 +376,7 @@ static void callback(long inpos, int function){
    int graph=30;
    char buffer[256];
    static long c_sector=0,v_sector=0;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-interface_cooked_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp $
+$OpenBSD: patch-interface_cooked_interface_c,v 1.3 2007/10/27 15:01:53 espie Exp $
 --- interface/cooked_interface.c.orig	Thu Apr 20 00:41:04 2000
-+++ interface/cooked_interface.c	Mon Sep 16 12:47:11 2002
++++ interface/cooked_interface.c	Sat Oct 27 16:57:49 2007
 @@ -13,6 +13,7 @@
  static int cooked_readtoc (cdrom_drive *d){
    int i;
@@ -9,7 +9,7 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp
    struct cdrom_tochdr hdr;
    struct cdrom_tocentry entry;
  
-@@ -52,6 +53,45 @@ static int cooked_readtoc (cdrom_drive *
+@@ -52,6 +53,45 @@ static int cooked_readtoc (cdrom_drive *d){
    d->disc_toc[i].dwStartSector = entry.cdte_addr.lba;
  
    tracks=hdr.cdth_trk1+1;
@@ -55,7 +55,7 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp
    d->cd_extra=FixupTOC(d,tracks);
    return(--tracks);  /* without lead-out */
  }
-@@ -60,10 +100,14 @@ static int cooked_readtoc (cdrom_drive *
+@@ -60,10 +100,14 @@ static int cooked_readtoc (cdrom_drive *d){
  /* Set operating speed */
  static int cooked_setspeed(cdrom_drive *d, int speed)
  {
@@ -70,7 +70,7 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp
  }
  
  
-@@ -72,6 +116,7 @@ static int cooked_setspeed(cdrom_drive *
+@@ -72,6 +116,7 @@ static int cooked_setspeed(cdrom_drive *d, int speed)
   */
  
  static long cooked_read (cdrom_drive *d, void *p, long begin, long sectors){
@@ -78,7 +78,7 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp
    int retry_count,err;
    struct cdrom_read_audio arg;
    char *buffer=(char *)p;
-@@ -127,6 +172,9 @@ static long cooked_read (cdrom_drive *d,
+@@ -127,6 +172,9 @@ static long cooked_read (cdrom_drive *d, void *p, long
    } while (err);
    
    return(sectors);
@@ -88,7 +88,7 @@ $OpenBSD: patch-interface_cooked_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp
  }
  
  /* hook */
-@@ -191,6 +239,7 @@ static void check_exceptions(cdrom_drive
+@@ -191,6 +239,7 @@ static void check_exceptions(cdrom_drive *d,exception 
  
  /* set function pointers to use the ioctl routines */
  int cooked_init_drive (cdrom_drive *d){

@@ -1,7 +1,7 @@
-$OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp $
---- interface/scsi_interface.c.orig	Fri Mar 23 17:15:46 2001
-+++ interface/scsi_interface.c	Thu Dec 22 22:30:02 2005
-@@ -23,6 +23,7 @@ static void tweak_SG_buffer(cdrom_drive 
+$OpenBSD: patch-interface_scsi_interface_c,v 1.4 2007/10/27 15:01:53 espie Exp $
+--- interface/scsi_interface.c.orig	Sat Mar 24 02:15:46 2001
++++ interface/scsi_interface.c	Sat Oct 27 16:57:49 2007
+@@ -23,6 +23,7 @@ static void tweak_SG_buffer(cdrom_drive *d){
    int table,reserved;
    char buffer[256];
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
    /* maximum transfer size? */
    if(ioctl(d->cdda_fd,SG_GET_RESERVED_SIZE,&reserved)){
      /* Up, guess not. */
-@@ -31,6 +32,10 @@ static void tweak_SG_buffer(cdrom_drive 
+@@ -31,6 +32,10 @@ static void tweak_SG_buffer(cdrom_drive *d){
    }
  
    if(ioctl(d->cdda_fd,SG_GET_SG_TABLESIZE,&table))table=1;
@@ -20,7 +20,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
    {
      int cur;
  
-@@ -53,20 +58,27 @@ static void tweak_SG_buffer(cdrom_drive 
+@@ -53,20 +58,27 @@ static void tweak_SG_buffer(cdrom_drive *d){
      cdmessage(d,buffer);
    } 
  
@@ -57,7 +57,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
  static void clear_garbage(cdrom_drive *d){
    fd_set fdset;
    struct timeval tv;
-@@ -104,6 +117,7 @@ static void clear_garbage(cdrom_drive *d
+@@ -104,6 +117,7 @@ static void clear_garbage(cdrom_drive *d){
      flag=1;
    }
  }
@@ -65,7 +65,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
  
  /* process a complete scsi command. */
  static int handle_scsi_cmd(cdrom_drive *d,
-@@ -114,11 +128,16 @@ static int handle_scsi_cmd(cdrom_drive *
+@@ -114,11 +128,16 @@ static int handle_scsi_cmd(cdrom_drive *d,
  			   unsigned char bytefill,
  			   int bytecheck){
    int status = 0;
@@ -83,7 +83,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
    /* clear out any possibly preexisting garbage */
    clear_garbage(d);
  
-@@ -213,8 +232,38 @@ static int handle_scsi_cmd(cdrom_drive *
+@@ -213,8 +232,38 @@ static int handle_scsi_cmd(cdrom_drive *d,
        }
      }
    }
@@ -122,7 +122,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
    status = read(d->cdda_fd, sg_hd, SG_OFF + out_size);
    sigprocmask ( SIG_UNBLOCK, &(d->sigset), NULL );
  
-@@ -229,6 +278,13 @@ static int handle_scsi_cmd(cdrom_drive *
+@@ -229,6 +278,13 @@ static int handle_scsi_cmd(cdrom_drive *d,
      char key=sg_hd->sense_buffer[2]&0xf;
      char ASC=sg_hd->sense_buffer[12];
      char ASCQ=sg_hd->sense_buffer[13];
@@ -136,7 +136,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
      switch(key){
      case 0:
        if(errno==0)errno=EIO;
-@@ -266,9 +322,19 @@ static int handle_scsi_cmd(cdrom_drive *
+@@ -266,9 +322,19 @@ static int handle_scsi_cmd(cdrom_drive *d,
       commands still get through.  Perhaps no data comes back even
       though the target reports success? */
  
@@ -156,7 +156,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
        if(d->sg_buffer[i]!=bytefill){
  	flag=1;
  	break;
-@@ -600,6 +666,24 @@ static int scsi_read_toc2 (cdrom_drive *
+@@ -600,6 +666,24 @@ static int scsi_read_toc2 (cdrom_drive *d){
    return(tracks);
  }
  
@@ -181,7 +181,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
  /* These do one 'extra' copy in the name of clean code */
  
  static int i_read_28 (cdrom_drive *d, void *p, long begin, long sectors){
-@@ -833,16 +917,28 @@ static long scsi_read_map (cdrom_drive *
+@@ -833,16 +917,28 @@ static long scsi_read_map (cdrom_drive *d, void *p, lo
    while(1) {
      if((err=map(d,(p?buffer:NULL),begin,sectors))){
        if(d->report_all){
@@ -210,7 +210,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
  	cdmessage(d,b);
  	sprintf(b,"                 Transport error: %s\n",strerror_tr[err]);
  	cdmessage(d,b);
-@@ -852,9 +948,16 @@ static long scsi_read_map (cdrom_drive *
+@@ -852,9 +948,16 @@ static long scsi_read_map (cdrom_drive *d, void *p, lo
  	fprintf(stderr,"scsi_read error: sector=%ld length=%ld retry=%d\n",
  		begin,sectors,retry_count);
  	fprintf(stderr,"                 Sense key: %x ASC: %x ASCQ: %x\n",
@@ -227,7 +227,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp
  	fprintf(stderr,"                 Transport error: %s\n",strerror_tr[err]);
  	fprintf(stderr,"                 System error: %s\n",strerror(errno));
        }
-@@ -1308,21 +1411,37 @@ static void check_fua_bit(cdrom_drive *d
+@@ -1308,21 +1411,37 @@ static void check_fua_bit(cdrom_drive *d){
  }
  
  static int check_atapi(cdrom_drive *d){
