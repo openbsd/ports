@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/27 14:04:45 sthen Exp $
+bin/dbix-migration.pl
+${P5SITE}/DBIx/
+${P5SITE}/DBIx/Migration.pm
+@man man/man1/dbix-migration.pl.1
+@man man/man3p/DBIx::Migration.3p
