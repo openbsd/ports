@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2007/10/26 20:24:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.182 2007/10/27 09:03:38 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -117,6 +117,7 @@
      SUBDIR += p5-cddb
      SUBDIR += p5-libvorbis
      SUBDIR += pacpl
+     SUBDIR += portaudio-svn
      SUBDIR += py-ao
      SUBDIR += py-cddb
      SUBDIR += py-eyed3
