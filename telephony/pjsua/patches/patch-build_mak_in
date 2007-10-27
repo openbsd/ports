@@ -1,0 +1,58 @@
+$OpenBSD: patch-build_mak_in,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
+--- build.mak.in.orig	Tue Apr 17 12:16:01 2007
++++ build.mak.in	Thu May 24 10:09:23 2007
+@@ -1,6 +1,6 @@
+ # @configure_input@
+ export MACHINE_NAME := auto
+-export OS_NAME := auto
++export OS_NAME = openbsd
+ export HOST_NAME := unix
+ export CC_NAME := gcc
+ export TARGET_NAME := @target@
+@@ -10,33 +10,22 @@ export LINUX_POLL := @ac_linux_poll@ 
+ # Determine which party libraries to use
+ export APP_THIRD_PARTY_LIBS := -lresample-$(TARGET_NAME)
+ 
+-ifneq (@ac_no_gsm_codec@,1)
+ APP_THIRD_PARTY_LIBS += -lgsmcodec-$(TARGET_NAME)
+-endif
+-
+-ifneq (@ac_no_speex_codec@,1)
+ APP_THIRD_PARTY_LIBS += -lspeex-$(TARGET_NAME)
+-endif
+-
+-ifneq (@ac_no_ilbc_codec@,1)
+ APP_THIRD_PARTY_LIBS += -lilbccodec-$(TARGET_NAME)
+-endif
+-
+-ifneq ($(findstring pa,@ac_pjmedia_snd@),)
+ APP_THIRD_PARTY_LIBS += -lportaudio-$(TARGET_NAME)
+-endif
+ 
+-
+ # CFLAGS, LDFLAGS, and LIBS to be used by applications
+ export PJDIR := @ac_pjdir@
+ export APP_CC := $(CROSS_COMPILE)$(CC_NAME)
+-export APP_CFLAGS := -DPJ_AUTOCONF=1\
+-	@CFLAGS@\
++export APP_CFLAGS := @CFLAGS@\
+ 	-I$(PJDIR)/pjlib/include\
+ 	-I$(PJDIR)/pjlib-util/include\
+ 	-I$(PJDIR)/pjnath/include\
+ 	-I$(PJDIR)/pjmedia/include\
+-	-I$(PJDIR)/pjsip/include
++	-I$(PJDIR)/pjsip/include\
++	-I$(PJDIR)/thirdparty/speex/include\
++	-I$(PJDIR)/thirdparty/portaudio/include
+ export APP_CXXFLAGS := $(APP_CFLAGS)
+ export APP_LDFLAGS := -L$(PJDIR)/pjlib/lib\
+ 	-L$(PJDIR)/pjlib-util/lib\
+@@ -55,7 +44,7 @@ export APP_LDLIBS := -lpjsua-$(TARGET_NAME)\
+ 	-lpjlib-util-$(TARGET_NAME)\
+ 	$(APP_THIRD_PARTY_LIBS)\
+ 	-lpj-$(TARGET_NAME)\
+-	@LIBS@
++	@LIBS@ -lossaudio
+ 
+ export PJ_DIR := $(PJDIR)
+ export PJ_CC := $(APP_CC)

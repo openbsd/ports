@@ -1,0 +1,14 @@
+$OpenBSD: patch-pjlib_include_pj_config_h,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
+--- pjlib/include/pj/config.h.orig	Thu May  3 09:31:21 2007
++++ pjlib/include/pj/config.h	Sat Jun  2 19:16:29 2007
+@@ -120,6 +120,10 @@
+      * RTEMS
+      */
+ #  include <pj/compat/os_rtems.h>
++
++#elif defined(__OpenBSD__)
++#    include <pj/compat/os_openbsd.h>    
++
+ #else
+ #   error "Please specify target os."
+ #endif

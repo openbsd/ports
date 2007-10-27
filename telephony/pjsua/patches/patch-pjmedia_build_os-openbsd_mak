@@ -1,0 +1,17 @@
+$OpenBSD: patch-pjmedia_build_os-openbsd_mak,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
+--- pjmedia/build/os-openbsd.mak.orig	Sat Jun  2 19:16:29 2007
++++ pjmedia/build/os-openbsd.mak	Sat Jun  2 19:37:26 2007
+@@ -0,0 +1,13 @@
++AC_PJMEDIA_SND=pa_unix
++AC_PA_USE_ALSA=0
++
++export CODEC_OBJS += l16.o
++export CODEC_OBJS += gsm.o
++export CFLAGS += -I$(THIRD_PARTY)/build/speex -I$(THIRD_PARTY)/speex/include
++export CODEC_OBJS += speex_codec.o
++export PJMEDIA_OBJS += echo_speex.o
++export CODEC_OBJS += ilbc.o
++export CFLAGS += -I$(THIRD_PARTY)/build/portaudio \
++		 -I$(THIRD_PARTY)/portaudio/include \
++		 -DPJMEDIA_SOUND_IMPLEMENTATION=PJMEDIA_SOUND_PORTAUDIO_SOUND
++export SOUND_OBJS = pasound.o

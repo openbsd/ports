@@ -1,0 +1,14 @@
+$OpenBSD: patch-pjlib_include_pj_compat_socket_h,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
+--- pjlib/include/pj/compat/socket.h.orig	Mon Apr 30 17:03:32 2007
++++ pjlib/include/pj/compat/socket.h	Wed May 23 17:51:45 2007
+@@ -48,6 +48,10 @@
+ #  include <sys/select.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#   include <netinet/in_systm.h>
++#endif
++
+ #if defined(PJ_HAS_NETINET_IN_H) && PJ_HAS_NETINET_IN_H != 0
+ #  include <netinet/in.h>
+ #endif

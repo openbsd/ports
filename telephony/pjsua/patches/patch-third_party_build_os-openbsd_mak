@@ -1,0 +1,9 @@
+$OpenBSD: patch-third_party_build_os-openbsd_mak,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
+--- third_party/build/os-openbsd.mak.orig	Sat Jun  2 19:16:29 2007
++++ third_party/build/os-openbsd.mak	Sat Jun  2 19:16:29 2007
+@@ -0,0 +1,5 @@
++DIRS = resample
++DIRS += portaudio
++DIRS += gsm
++DIRS += speex
++DIRS += ilbc

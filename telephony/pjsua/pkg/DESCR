@@ -1,0 +1,23 @@
+pjsua is an open source command line SIP user agent that is used as
+the reference implementation for PJSIP and PJMEDIA. It has many
+features, such as:
+
+    * Mutiple identities/account registrations
+    * Concurrent calls and conference (unlimited number, but only up
+      to 254 sources can be mixed to a single destination)
+    * Call features: call hold, call transfer (attended or unattended,
+      with or without refersub).
+    * SIP Presence/SIMPLE with PIDF and XPIDF support. PUBLISH support.
+    * Instant messaging and message composing indication
+    * DTMF digits transmission/receipt (RFC 2833)
+    * WAV file playing, streaming, and recording.
+    * Accoustic echo cancellation (AEC).
+    * Auto-answer, auto-play file, auto-loop RTP
+    * Support SIP UDP, TCP, and TLS transports. Support for DNS SRV
+      resolution.
+    * NAT traversal with rport and STUN.
+    * Tone generation.
+    * Codecs: PCMA, PCMU, GSM, Speex (including wideband/16KHz and
+      ultra-wideband/32KHz), L16 (8-48KHz, mono or stereo), and iLBC.
+    * Adaptive jitter buffer, adaptive silence detection, and packet
+      lost concealment audio features.

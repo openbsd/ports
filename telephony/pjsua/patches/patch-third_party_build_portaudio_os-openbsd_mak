@@ -1,0 +1,9 @@
+$OpenBSD: patch-third_party_build_portaudio_os-openbsd_mak,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
+--- third_party/build/portaudio/os-openbsd.mak.orig	Sat Jun  2 19:16:29 2007
++++ third_party/build/portaudio/os-openbsd.mak	Sat Jun  2 19:16:29 2007
+@@ -0,0 +1,5 @@
++PORTAUDIO_OBJS += pa_unix_oss.o pa_unix_util.o \
++		  pa_unix_hostapis.o
++
++AC_PJMEDIA_SND=pa_unix
++export CFLAGS += -DPA_USE_OSS=1
