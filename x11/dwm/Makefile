@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/23 13:29:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/10/27 12:41:48 merdely Exp $
 
 COMMENT=		dynamic window manager
 
-V=			4.5
+V=			4.6
 DISTNAME=		dwm-$V
 
 CATEGORIES=		x11
@@ -33,5 +33,8 @@ FAKE_FLAGS=		MANPREFIX=${PREFIX}/man \
 USE_X11=		Yes
 
 NO_REGRESS=		Yes
+
+pre-patch:
+	@cp ${WRKSRC}/config.def.h ${WRKSRC}/config.h
 
 .include <bsd.port.mk>
