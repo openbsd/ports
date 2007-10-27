@@ -1,7 +1,7 @@
-$OpenBSD: patch-snowball_cc,v 1.1 2007/10/14 13:25:01 sturm Exp $
---- snowball.cc.orig	Sun Oct 14 06:24:00 2007
-+++ snowball.cc	Sun Oct 14 06:25:14 2007
-@@ -6,10 +6,10 @@
+$OpenBSD: patch-snowball_cc,v 1.2 2007/10/27 15:24:30 kili Exp $
+--- snowball.cc.orig	Thu Jul 19 16:26:35 2007
++++ snowball.cc	Sat Oct 13 22:00:52 2007
+@@ -24,10 +24,10 @@
  static int an;
  static long subKind;
  static long ve;
@@ -14,7 +14,7 @@ $OpenBSD: patch-snowball_cc,v 1.1 2007/10/14 13:25:01 sturm Exp $
  }
  
  /* move the snowball and check if it hits something */
-@@ -22,19 +22,19 @@ void snb_movesnowball(void) {
+@@ -40,19 +40,19 @@ void snb_movesnowball(void) {
  
    int nr;
  
@@ -40,9 +40,9 @@ $OpenBSD: patch-snowball_cc,v 1.1 2007/10/14 13:25:01 sturm Exp $
      return;
    }
  
-@@ -45,11 +45,11 @@ void snb_movesnowball(void) {
+@@ -63,11 +63,11 @@ void snb_movesnowball(void) {
    else {
-     snd_hit();
+     ttsounds::instance()->startsound(SND_HIT);
      pts_add(rob_gothit(nr));
 -    time = -1;
 +    my_time = -1;
@@ -54,7 +54,7 @@ $OpenBSD: patch-snowball_cc,v 1.1 2007/10/14 13:25:01 sturm Exp $
  
  void snb_start(int verticalpos, int anglepos, bool look_left) {
  
-@@ -62,7 +62,7 @@ void snb_start(int verticalpos, int anglepos, bool loo
+@@ -80,7 +80,7 @@ void snb_start(int verticalpos, int anglepos, bool loo
      subKind = 1;
    }
    an &= 0x7f;

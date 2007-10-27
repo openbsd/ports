@@ -1,0 +1,12 @@
+$OpenBSD: patch-toppler_desktop_in,v 1.1 2007/10/27 15:24:30 kili Exp $
+--- toppler.desktop.in.orig	Thu Jul 19 16:26:35 2007
++++ toppler.desktop.in	Sun Oct 14 13:49:12 2007
+@@ -6,7 +6,7 @@ Name=@FULLNAME@
+ Comment=A clone of the 'Nebulus' game on old 8 and 16 bit machines.
+ Comment[de]=Klon des alten Spiels 'Nebulus'
+ Comment[cs]=Klon hry 'Nebulus' z dob 8 a 16 bitovÃœch poÄÃ­taÄÅ¯.
+-Icon=@prefix@/pixmaps/@PACKAGE@.xpm
++Icon=@prefix@/share/pixmaps/@PACKAGE@.xpm
+ Exec=@prefix@/bin/toppler
+ Terminal=0
+ Type=Application

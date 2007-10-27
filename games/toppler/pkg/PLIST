@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/11/10 22:51:34 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/10/27 15:24:30 kili Exp $
 @mode g+s
 @group games
 bin/toppler
 @mode
 @group
-share/doc/toppler/
-share/doc/toppler/README
+@man man/man6/toppler.6
+share/applications/
+share/applications/toppler.desktop
 share/examples/toppler/
 share/examples/toppler/toppler.hsc
 @mode g+w
@@ -13,27 +14,30 @@ share/examples/toppler/toppler.hsc
 @sample /var/games/toppler.hsc
 @mode
 @group
+share/locale/cz/
+share/locale/cz/LC_MESSAGES/
+share/locale/cz/LC_MESSAGES/toppler.mo
+share/locale/de/LC_MESSAGES/toppler.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
+share/locale/eu/LC_MESSAGES/toppler.mo
+share/locale/fi/LC_MESSAGES/toppler.mo
+share/locale/fr/LC_MESSAGES/toppler.mo
+share/locale/pt/LC_MESSAGES/toppler.mo
+share/locale/ro/LC_MESSAGES/toppler.mo
+share/locale/sv/LC_MESSAGES/toppler.mo
+share/pixmaps/
+share/pixmaps/toppler.xpm
 share/toppler/
-share/toppler/alarm.wav
-share/toppler/boing.wav
-share/toppler/bubbles.wav
-share/toppler/fanfare.wav
-share/toppler/hit.wav
-share/toppler/honk.wav
-share/toppler/layer1.tga
-share/toppler/layer2.tga
-share/toppler/layer3.tga
+share/toppler/abc.ttm
+share/toppler/ball1.ttm
+share/toppler/ball2.ttm
+share/toppler/ball3.ttm
+share/toppler/david1.ttm
 share/toppler/m1.ttm
 share/toppler/m2.ttm
-share/toppler/rumble.wav
-share/toppler/score.wav
-share/toppler/splash.wav
-share/toppler/swoosh.wav
-share/toppler/tap.wav
-share/toppler/tick.wav
-share/toppler/toppler.6
+share/toppler/pasi2.ttm
 share/toppler/toppler.dat
-share/toppler/water.wav
-@comment var/
-@comment var/toppler/
-@comment var/toppler/toppler.hsc
+share/toppler/toppler.ogg
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

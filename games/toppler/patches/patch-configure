@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2007/10/27 15:24:30 kili Exp $
+--- configure.orig	Sat Oct 27 11:10:13 2007
++++ configure	Sat Oct 27 11:10:55 2007
+@@ -24833,10 +24833,10 @@ CCDEPMODE!$CCDEPMODE$ac_delim
+ am__fastdepCC_TRUE!$am__fastdepCC_TRUE$ac_delim
+ am__fastdepCC_FALSE!$am__fastdepCC_FALSE$ac_delim
+ INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+-INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++INTLLIBS!$LTLIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ CXX!$CXX$ac_delim

@@ -1,0 +1,78 @@
+$OpenBSD: patch-bonus_cc,v 1.1 2007/10/27 15:24:30 kili Exp $
+--- bonus.cc.orig	Thu Jul 19 16:26:35 2007
++++ bonus.cc	Sat Oct 13 21:58:11 2007
+@@ -42,13 +42,13 @@ static struct {
+ } fish[fishcnt];
+ 
+ /* position of the submarine and the torpedo,
+- * the state is taken from time
++ * the state is taken from my_time
+  */
+ static Sint32 torpedox, torpedoy, subposx, subposy;
+ 
+ /* current game time
+  */
+-static Sint32 time;
++static Sint32 my_time;
+ 
+ /* current xposition, this is ongoing from tower to
+  * tower so that you continue where you've left of in
+@@ -62,10 +62,10 @@ static void show() {
+   /* lets first calc the position of the tower on the screen */
+   Sint32 towerpos;
+ 
+-  if (time < gametime/2)
+-    towerpos = -(4*time);
++  if (my_time < gametime/2)
++    towerpos = -(4*my_time);
+   else
+-    towerpos = gametime * scrollerspeed - 4*time + SCREENWID + (SPR_SLICEWID*2);
++    towerpos = gametime * scrollerspeed - 4*my_time + SCREENWID + (SPR_SLICEWID*2);
+ 
+   /* draw the background layers */
+   scr_draw_bonus1(xpos, towerpos);
+@@ -75,7 +75,7 @@ static void show() {
+     scr_draw_torpedo(torpedoy, torpedox);
+ 
+   /* output the submarine */
+-  scr_draw_submarine(subposy - 20, subposx, time % 9);
++  scr_draw_submarine(subposy - 20, subposx, my_time % 9);
+ 
+   /* and the fishes */
+   for (int b = 0; b < fishcnt; b++)
+@@ -137,7 +137,7 @@ bool bns_game(void) {
+   torpedox = -1;
+ 
+   /* restart timer */
+-  time = 0;
++  my_time = 0;
+ 
+   key_readkey();
+ 
+@@ -254,22 +254,22 @@ bool bns_game(void) {
+     }
+ 
+     /* change towercolor in the middle of the game */
+-    if ((time > gametime/2) && !newtowercol) {
++    if ((my_time > gametime/2) && !newtowercol) {
+       scr_settowercolor(lev_towercol_red(), lev_towercol_green(), lev_towercol_blue());
+       newtowercol = true;
+     }
+ 
+     /* end of game, switch to automatic, stop scrolling */
+-    if (time == gametime) {
++    if (my_time == gametime) {
+       automatic = true;
+       if ((subposx == SUBM_TARGET_X) && (subposy == SUBM_TARGET_Y)) break;
+     } else {
+       xpos +=4;
+       xpos_ofs += 4;
+-      time++;
++      my_time++;
+     }
+ 
+-    if (!((time + 20) & 0x3f)) ttsounds::instance()->startsound(SND_SONAR);
++    if (!((my_time + 20) & 0x3f)) ttsounds::instance()->startsound(SND_SONAR);
+ 
+     /* display screen and wait */
+     show();
