@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/06/07 07:44:29 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/10/27 14:42:59 simon Exp $
 ${P5ARCH}/Gtk2/
 ${P5ARCH}/Gtk2.pm
 ${P5ARCH}/Gtk2/AboutDialog.pod
@@ -15,6 +15,8 @@ ${P5ARCH}/Gtk2/AspectFrame.pod
 ${P5ARCH}/Gtk2/Assistant.pod
 ${P5ARCH}/Gtk2/Bin.pod
 ${P5ARCH}/Gtk2/Box.pod
+${P5ARCH}/Gtk2/Buildable.pod
+${P5ARCH}/Gtk2/Builder.pod
 ${P5ARCH}/Gtk2/Button.pod
 ${P5ARCH}/Gtk2/ButtonBox.pod
 ${P5ARCH}/Gtk2/Calendar.pod
@@ -102,6 +104,10 @@ ${P5ARCH}/Gtk2/Gdk/Geometry.pod
 ${P5ARCH}/Gtk2/Gdk/Input.pod
 ${P5ARCH}/Gtk2/Gdk/Keymap.pod
 ${P5ARCH}/Gtk2/Gdk/Keysyms.pm
+${P5ARCH}/Gtk2/Gdk/Pango/
+${P5ARCH}/Gtk2/Gdk/Pango/AttrEmbossColor.pod
+${P5ARCH}/Gtk2/Gdk/Pango/AttrEmbossed.pod
+${P5ARCH}/Gtk2/Gdk/Pango/AttrStipple.pod
 ${P5ARCH}/Gtk2/Gdk/PangoRenderer.pod
 ${P5ARCH}/Gtk2/Gdk/Pixbuf.pod
 ${P5ARCH}/Gtk2/Gdk/PixbufAnimation.pod
@@ -171,11 +177,39 @@ ${P5ARCH}/Gtk2/PageSetup.pod
 ${P5ARCH}/Gtk2/Paned.pod
 ${P5ARCH}/Gtk2/Pango/
 ${P5ARCH}/Gtk2/Pango.pm
+${P5ARCH}/Gtk2/Pango/AttrBackground.pod
+${P5ARCH}/Gtk2/Pango/AttrColor.pod
+${P5ARCH}/Gtk2/Pango/AttrFallback.pod
+${P5ARCH}/Gtk2/Pango/AttrFamily.pod
+${P5ARCH}/Gtk2/Pango/AttrFontDesc.pod
+${P5ARCH}/Gtk2/Pango/AttrForeground.pod
+${P5ARCH}/Gtk2/Pango/AttrGravity.pod
+${P5ARCH}/Gtk2/Pango/AttrGravityHint.pod
+${P5ARCH}/Gtk2/Pango/AttrInt.pod
+${P5ARCH}/Gtk2/Pango/AttrIterator.pod
+${P5ARCH}/Gtk2/Pango/AttrLanguage.pod
+${P5ARCH}/Gtk2/Pango/AttrLetterSpacing.pod
 ${P5ARCH}/Gtk2/Pango/AttrList.pod
+${P5ARCH}/Gtk2/Pango/AttrRise.pod
+${P5ARCH}/Gtk2/Pango/AttrScale.pod
+${P5ARCH}/Gtk2/Pango/AttrShape.pod
+${P5ARCH}/Gtk2/Pango/AttrSize.pod
+${P5ARCH}/Gtk2/Pango/AttrStretch.pod
+${P5ARCH}/Gtk2/Pango/AttrStrikethrough.pod
+${P5ARCH}/Gtk2/Pango/AttrStrikethroughColor.pod
+${P5ARCH}/Gtk2/Pango/AttrString.pod
+${P5ARCH}/Gtk2/Pango/AttrStyle.pod
+${P5ARCH}/Gtk2/Pango/AttrUnderline.pod
+${P5ARCH}/Gtk2/Pango/AttrUnderlineColor.pod
+${P5ARCH}/Gtk2/Pango/AttrVariant.pod
+${P5ARCH}/Gtk2/Pango/AttrWeight.pod
+${P5ARCH}/Gtk2/Pango/Attribute.pod
 ${P5ARCH}/Gtk2/Pango/Cairo/
 ${P5ARCH}/Gtk2/Pango/Cairo.pod
 ${P5ARCH}/Gtk2/Pango/Cairo/Context.pod
+${P5ARCH}/Gtk2/Pango/Cairo/Font.pod
 ${P5ARCH}/Gtk2/Pango/Cairo/FontMap.pod
+${P5ARCH}/Gtk2/Pango/Color.pod
 ${P5ARCH}/Gtk2/Pango/Context.pod
 ${P5ARCH}/Gtk2/Pango/Font.pod
 ${P5ARCH}/Gtk2/Pango/FontDescription.pod
@@ -184,9 +218,11 @@ ${P5ARCH}/Gtk2/Pango/FontFamily.pod
 ${P5ARCH}/Gtk2/Pango/FontMap.pod
 ${P5ARCH}/Gtk2/Pango/FontMetrics.pod
 ${P5ARCH}/Gtk2/Pango/Fontset.pod
+${P5ARCH}/Gtk2/Pango/Gravity.pod
 ${P5ARCH}/Gtk2/Pango/Language.pod
 ${P5ARCH}/Gtk2/Pango/Layout.pod
 ${P5ARCH}/Gtk2/Pango/LayoutIter.pod
+${P5ARCH}/Gtk2/Pango/LayoutLine.pod
 ${P5ARCH}/Gtk2/Pango/Matrix.pod
 ${P5ARCH}/Gtk2/Pango/Renderer.pod
 ${P5ARCH}/Gtk2/Pango/Script.pod
@@ -208,6 +244,7 @@ ${P5ARCH}/Gtk2/RadioToolButton.pod
 ${P5ARCH}/Gtk2/Range.pod
 ${P5ARCH}/Gtk2/Rc.pod
 ${P5ARCH}/Gtk2/RcStyle.pod
+${P5ARCH}/Gtk2/RecentAction.pod
 ${P5ARCH}/Gtk2/RecentChooser.pod
 ${P5ARCH}/Gtk2/RecentChooserDialog.pod
 ${P5ARCH}/Gtk2/RecentChooserMenu.pod
@@ -218,6 +255,7 @@ ${P5ARCH}/Gtk2/RecentManager.pod
 ${P5ARCH}/Gtk2/Requisition.pod
 ${P5ARCH}/Gtk2/Ruler.pod
 ${P5ARCH}/Gtk2/Scale.pod
+${P5ARCH}/Gtk2/ScaleButton.pod
 ${P5ARCH}/Gtk2/Scrollbar.pod
 ${P5ARCH}/Gtk2/ScrolledWindow.pod
 ${P5ARCH}/Gtk2/Selection.pod
@@ -253,6 +291,7 @@ ${P5ARCH}/Gtk2/ToggleToolButton.pod
 ${P5ARCH}/Gtk2/ToolButton.pod
 ${P5ARCH}/Gtk2/ToolItem.pod
 ${P5ARCH}/Gtk2/Toolbar.pod
+${P5ARCH}/Gtk2/Tooltip.pod
 ${P5ARCH}/Gtk2/Tooltips.pod
 ${P5ARCH}/Gtk2/TreeDragDest.pod
 ${P5ARCH}/Gtk2/TreeDragSource.pod
@@ -278,6 +317,7 @@ ${P5ARCH}/Gtk2/VScale.pod
 ${P5ARCH}/Gtk2/VScrollbar.pod
 ${P5ARCH}/Gtk2/VSeparator.pod
 ${P5ARCH}/Gtk2/Viewport.pod
+${P5ARCH}/Gtk2/VolumeButton.pod
 ${P5ARCH}/Gtk2/Widget.pod
 ${P5ARCH}/Gtk2/Window.pod
 ${P5ARCH}/Gtk2/WindowGroup.pod
@@ -305,6 +345,8 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Assistant.3p
 @man man/man3p/Gtk2::Bin.3p
 @man man/man3p/Gtk2::Box.3p
+@man man/man3p/Gtk2::Buildable.3p
+@man man/man3p/Gtk2::Builder.3p
 @man man/man3p/Gtk2::Button.3p
 @man man/man3p/Gtk2::ButtonBox.3p
 @man man/man3p/Gtk2::Calendar.3p
@@ -389,6 +431,9 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Gdk::Input.3p
 @man man/man3p/Gtk2::Gdk::Keymap.3p
 @man man/man3p/Gtk2::Gdk::Keysyms.3p
+@man man/man3p/Gtk2::Gdk::Pango::AttrEmbossColor.3p
+@man man/man3p/Gtk2::Gdk::Pango::AttrEmbossed.3p
+@man man/man3p/Gtk2::Gdk::Pango::AttrStipple.3p
 @man man/man3p/Gtk2::Gdk::PangoRenderer.3p
 @man man/man3p/Gtk2::Gdk::Pixbuf.3p
 @man man/man3p/Gtk2::Gdk::PixbufAnimation.3p
@@ -447,10 +492,38 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::PageSetup.3p
 @man man/man3p/Gtk2::Paned.3p
 @man man/man3p/Gtk2::Pango.3p
+@man man/man3p/Gtk2::Pango::AttrBackground.3p
+@man man/man3p/Gtk2::Pango::AttrColor.3p
+@man man/man3p/Gtk2::Pango::AttrFallback.3p
+@man man/man3p/Gtk2::Pango::AttrFamily.3p
+@man man/man3p/Gtk2::Pango::AttrFontDesc.3p
+@man man/man3p/Gtk2::Pango::AttrForeground.3p
+@man man/man3p/Gtk2::Pango::AttrGravity.3p
+@man man/man3p/Gtk2::Pango::AttrGravityHint.3p
+@man man/man3p/Gtk2::Pango::AttrInt.3p
+@man man/man3p/Gtk2::Pango::AttrIterator.3p
+@man man/man3p/Gtk2::Pango::AttrLanguage.3p
+@man man/man3p/Gtk2::Pango::AttrLetterSpacing.3p
 @man man/man3p/Gtk2::Pango::AttrList.3p
+@man man/man3p/Gtk2::Pango::AttrRise.3p
+@man man/man3p/Gtk2::Pango::AttrScale.3p
+@man man/man3p/Gtk2::Pango::AttrShape.3p
+@man man/man3p/Gtk2::Pango::AttrSize.3p
+@man man/man3p/Gtk2::Pango::AttrStretch.3p
+@man man/man3p/Gtk2::Pango::AttrStrikethrough.3p
+@man man/man3p/Gtk2::Pango::AttrStrikethroughColor.3p
+@man man/man3p/Gtk2::Pango::AttrString.3p
+@man man/man3p/Gtk2::Pango::AttrStyle.3p
+@man man/man3p/Gtk2::Pango::AttrUnderline.3p
+@man man/man3p/Gtk2::Pango::AttrUnderlineColor.3p
+@man man/man3p/Gtk2::Pango::AttrVariant.3p
+@man man/man3p/Gtk2::Pango::AttrWeight.3p
+@man man/man3p/Gtk2::Pango::Attribute.3p
 @man man/man3p/Gtk2::Pango::Cairo.3p
 @man man/man3p/Gtk2::Pango::Cairo::Context.3p
+@man man/man3p/Gtk2::Pango::Cairo::Font.3p
 @man man/man3p/Gtk2::Pango::Cairo::FontMap.3p
+@man man/man3p/Gtk2::Pango::Color.3p
 @man man/man3p/Gtk2::Pango::Context.3p
 @man man/man3p/Gtk2::Pango::Font.3p
 @man man/man3p/Gtk2::Pango::FontDescription.3p
@@ -459,9 +532,11 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Pango::FontMap.3p
 @man man/man3p/Gtk2::Pango::FontMetrics.3p
 @man man/man3p/Gtk2::Pango::Fontset.3p
+@man man/man3p/Gtk2::Pango::Gravity.3p
 @man man/man3p/Gtk2::Pango::Language.3p
 @man man/man3p/Gtk2::Pango::Layout.3p
 @man man/man3p/Gtk2::Pango::LayoutIter.3p
+@man man/man3p/Gtk2::Pango::LayoutLine.3p
 @man man/man3p/Gtk2::Pango::Matrix.3p
 @man man/man3p/Gtk2::Pango::Renderer.3p
 @man man/man3p/Gtk2::Pango::Script.3p
@@ -483,6 +558,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Range.3p
 @man man/man3p/Gtk2::Rc.3p
 @man man/man3p/Gtk2::RcStyle.3p
+@man man/man3p/Gtk2::RecentAction.3p
 @man man/man3p/Gtk2::RecentChooser.3p
 @man man/man3p/Gtk2::RecentChooserDialog.3p
 @man man/man3p/Gtk2::RecentChooserMenu.3p
@@ -493,6 +569,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Requisition.3p
 @man man/man3p/Gtk2::Ruler.3p
 @man man/man3p/Gtk2::Scale.3p
+@man man/man3p/Gtk2::ScaleButton.3p
 @man man/man3p/Gtk2::Scrollbar.3p
 @man man/man3p/Gtk2::ScrolledWindow.3p
 @man man/man3p/Gtk2::Selection.3p
@@ -527,6 +604,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::ToolButton.3p
 @man man/man3p/Gtk2::ToolItem.3p
 @man man/man3p/Gtk2::Toolbar.3p
+@man man/man3p/Gtk2::Tooltip.3p
 @man man/man3p/Gtk2::Tooltips.3p
 @man man/man3p/Gtk2::TreeDragDest.3p
 @man man/man3p/Gtk2::TreeDragSource.3p
@@ -551,6 +629,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::VScrollbar.3p
 @man man/man3p/Gtk2::VSeparator.3p
 @man man/man3p/Gtk2::Viewport.3p
+@man man/man3p/Gtk2::VolumeButton.3p
 @man man/man3p/Gtk2::Widget.3p
 @man man/man3p/Gtk2::Window.3p
 @man man/man3p/Gtk2::WindowGroup.3p
