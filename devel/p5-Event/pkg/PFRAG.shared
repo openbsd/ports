@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/07/01 18:23:09 sturm Exp $
-${P5ARCH}/auto/Event/Event.so
