@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2007/10/23 20:13:26 martynas Exp $
+# $OpenBSD: Makefile,v 1.84 2007/10/27 09:04:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -9,8 +9,8 @@ COMMENT-devel=	devel files for Gecko
 VER=		2.0.0.8
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}
-PKGNAME-devel=	mozilla-firefox-devel-${VER}
+PKGNAME-main=	mozilla-firefox-${VER}p0
+PKGNAME-devel=	mozilla-firefox-devel-${VER}p0
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -51,12 +51,13 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender atk-1.0 c cairo expat fontconfig freetype \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png pthread stdc++ z
+WANTLIB=	X11 Xau Xcomposite Xdamage Xcursor Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		png pthread stdc++ z
 
-WANTLIB-main=	${WANTLIB} Xft Xinerama Xt jpeg pangox-1.0
+WANTLIB-main=	${WANTLIB} Xft Xinerama Xt gthread-2.0 jpeg pangox-1.0
 
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
 		mozilla-firefox/gtkembedmoz,mozilla-firefox/mozjs,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:${PKGNAME-main}:www/mozilla-firefox,-main
