@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/08/29 09:17:04 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/27 23:44:41 ajacoutot Exp $
 
 COMMENT=	true web content filtering for all
 DISTNAME=	dansguardian-2.9.8.5
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++ z
 
-MASTER_SITES=		http://www.obsd.fr/OpenBSD/distfiles/
+MASTER_SITES=		http://www.bsdfrog.org/OpenBSD/distfiles/
 
 LIB_DEPENDS=		pcre.>=1,pcreposix.>=1::devel/pcre
 

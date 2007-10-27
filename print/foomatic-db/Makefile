@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/26 08:17:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/27 23:44:41 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD data
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 #MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/
 MASTER_SITES=		http://jakemsr.trancell.org/distfiles/ \
 			http://openbsd.dead-parrot.de/distfiles/ \
-			http://www.obsd.fr/OpenBSD/distfiles/
+			http://www.bsdfrog.org/OpenBSD/distfiles/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-ppds-to-cups

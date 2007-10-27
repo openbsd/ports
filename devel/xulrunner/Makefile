@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/10/26 13:10:14 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/27 23:44:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -32,7 +32,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/xulrunner/ \
-		http://www.obsd.fr/OpenBSD/distfiles/mozilla/xulrunner/
+		http://www.bsdfrog.org/OpenBSD/distfiles/mozilla/xulrunner/
 DISTFILES=	xulrunner-${VER}${EXTRACT_SUFX}
 
 MODULES=	devel/gettext

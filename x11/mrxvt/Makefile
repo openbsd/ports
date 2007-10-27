@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/10/27 23:44:41 ajacoutot Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 HOMEPAGE=	http://materm.sourceforge.net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=materm/}
-MASTER_SITES0=	http://www.obsd.fr/OpenBSD/distfiles/
+MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 

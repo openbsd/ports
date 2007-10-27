@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.41 2007/10/27 23:44:41 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
@@ -12,7 +12,7 @@ CATEGORIES=		editors x11
 MASTER_SITES=		http://www.nedit.org/ftp/v5_5/ \
 			${MASTER_SITE_SOURCEFORGE:=nedit/}
 
-MASTER_SITES0=		http://www.obsd.fr/OpenBSD/distfiles/
+MASTER_SITES0=		http://www.bsdfrog.org/OpenBSD/distfiles/
 
 HOMEPAGE=		http://www.nedit.org/
 

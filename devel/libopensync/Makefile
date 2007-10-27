@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/30 09:37:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/27 23:44:41 ajacoutot Exp $
 
 COMMENT=	data synchronization framework
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.obsd.fr/OpenBSD/distfiles/
+MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
 
 WANTLIB=	c pthread
 

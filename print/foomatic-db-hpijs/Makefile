@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/18 16:15:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/10/27 23:44:41 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD data for hpijs
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 #MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/
 MASTER_SITES=		http://jakemsr.trancell.org/distfiles/ \
 			http://openbsd.dead-parrot.de/distfiles/ \
-			http://www.obsd.fr/OpenBSD/distfiles/
+			http://www.bsdfrog.org/OpenBSD/distfiles/
 
 RUN_DEPENDS=		::print/foomatic-db
 BUILD_DEPENDS=		${RUN_DEPENDS}

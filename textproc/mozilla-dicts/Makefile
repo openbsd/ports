@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/27 23:44:41 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/dicts/${V}/ \
-		http://www.obsd.fr/OpenBSD/distfiles/mozilla/dictionaries/${V}/
+		http://www.bsdfrog.org/OpenBSD/distfiles/mozilla/dictionaries/${V}/
 
 # define one language for the main package
 MAINLANG=	en-GB
