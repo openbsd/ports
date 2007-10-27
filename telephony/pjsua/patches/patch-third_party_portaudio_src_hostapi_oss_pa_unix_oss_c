@@ -1,14 +1,16 @@
-$OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
---- third_party/portaudio/src/hostapi/oss/pa_unix_oss.c.orig	Sun Mar 25 16:20:31 2007
-+++ third_party/portaudio/src/hostapi/oss/pa_unix_oss.c	Fri Oct 26 13:55:16 2007
-@@ -1,5 +1,5 @@
- /*
-- * $Id: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
-+ * $Id: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
-  * PortAudio Portable Real-Time Audio Library
-  * Latest Version at: http://www.portaudio.com
-  * OSS implementation by:
-@@ -32,19 +32,19 @@
+$OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.2 2007/10/27 16:33:02 sthen Exp $
+--- third_party/portaudio/src/hostapi/oss/pa_unix_oss.c.orig	Sun Mar 25 22:20:31 2007
++++ third_party/portaudio/src/hostapi/oss/pa_unix_oss.c	Sat Oct 27 14:30:30 2007
+@@ -8,6 +8,8 @@
+  *   Dominic Mazzoni
+  *   Arve Knudsen
+  *
++ * Updated to Id: pa_unix_oss.c 1278 2007-09-12 17:39:48Z aknudsen $
++ *
+  * Based on the Open Source API proposed by Ross Bencina
+  * Copyright (c) 1999-2002 Ross Bencina, Phil Burk
+  *
+@@ -32,19 +34,19 @@
   */
  
  /*
@@ -32,7 +34,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
  */
  
  #include <stdio.h>
-@@ -63,18 +63,8 @@
+@@ -63,18 +65,8 @@
  #include <limits.h>
  #include <semaphore.h>
  
@@ -52,7 +54,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
  
  #include "portaudio.h"
  #include "pa_util.h"
-@@ -84,6 +74,7 @@
+@@ -84,6 +76,7 @@
  #include "pa_cpuload.h"
  #include "pa_process.h"
  #include "pa_unix_util.h"
@@ -60,7 +62,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
  
  static int sysErr_;
  static pthread_t mainThread_;
-@@ -113,7 +104,7 @@ static pthread_t mainThread_;
+@@ -113,7 +106,7 @@ static pthread_t mainThread_;
   */
  static int Get_AFMT_S16_NE( void )
  {
@@ -69,7 +71,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
      char *ptr = (char *) &testData;
      int isLittle = ( *ptr == 1 ); /* Does address point to least significant byte? */
      return isLittle ? AFMT_S16_LE : AFMT_S16_BE;
-@@ -384,7 +375,7 @@ static PaError QueryDirection( const char *deviceName,
+@@ -384,7 +377,7 @@ static PaError QueryDirection( const char *deviceName,
          {
              maxNumChannels = (stereo) ? 2 : 1;
          }
@@ -78,7 +80,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
      }
  
      /* During channel negotiation, the last ioctl() may have failed. This can
-@@ -402,8 +393,12 @@ static PaError QueryDirection( const char *deviceName,
+@@ -402,8 +395,12 @@ static PaError QueryDirection( const char *deviceName,
          sr = 44100;
          if( ioctl( devHandle, SNDCTL_DSP_SPEED, &sr ) < 0 )
          {
@@ -93,7 +95,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
          }
  
          *defaultSampleRate = sr;
-@@ -507,9 +502,9 @@ static PaError BuildDeviceList( PaOSSHostApiRepresenta
+@@ -507,9 +504,9 @@ static PaError BuildDeviceList( PaOSSHostApiRepresenta
      /* Find devices by calling QueryDevice on each
       * potential device names.  When we find a valid one,
       * add it to a linked list.
@@ -105,7 +107,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
      {
         char deviceName[32];
         PaDeviceInfo *deviceInfo;
-@@ -809,9 +804,11 @@ static PaError OpenDevices( const char *idevName, cons
+@@ -809,9 +806,11 @@ static PaError OpenDevices( const char *idevName, cons
          ENSURE_( *idev = open( idevName, flags ), paDeviceUnavailable );
          PA_ENSURE( ModifyBlocking( *idev, 1 ) ); /* Blocking */
  
@@ -117,7 +119,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
      }
      if( odevName )
      {
-@@ -820,9 +817,11 @@ static PaError OpenDevices( const char *idevName, cons
+@@ -820,9 +819,11 @@ static PaError OpenDevices( const char *idevName, cons
              ENSURE_( *odev = open( odevName, flags ), paDeviceUnavailable );
              PA_ENSURE( ModifyBlocking( *odev, 1 ) ); /* Blocking */
  
@@ -129,7 +131,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
          }
          else
          {
-@@ -975,8 +974,8 @@ static int CalcHigherLogTwo( int n )
+@@ -975,8 +976,8 @@ static int CalcHigherLogTwo( int n )
      return log2;
  }
  
@@ -140,7 +142,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
  {
      PaError result = paNoError;
      int temp, nativeFormat;
-@@ -986,7 +985,7 @@ static PaError PaOssStreamComponent_Configure( PaOssSt
+@@ -986,7 +987,7 @@ static PaError PaOssStreamComponent_Configure( PaOssSt
      int frgmt;
      int numBufs;
      int bytesPerBuf;
@@ -149,7 +151,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
      unsigned long fragSz;
      audio_buf_info bufInfo;
  
-@@ -998,21 +997,21 @@ static PaError PaOssStreamComponent_Configure( PaOssSt
+@@ -998,21 +999,21 @@ static PaError PaOssStreamComponent_Configure( PaOssSt
           * The hardware need not respect the requested fragment size, so we may have to adapt.
           */
          if( framesPerBuffer == paFramesPerBufferUnspecified )
@@ -175,7 +177,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
          bytesPerBuf = PA_MAX( fragSz * Pa_GetSampleSize( hostFormat ) * chans, 16 );
  
          /* The fragment parameters are encoded like this:
-@@ -1119,7 +1118,8 @@ static PaError PaOssStream_Configure( PaOssStream *str
+@@ -1119,7 +1120,8 @@ static PaError PaOssStream_Configure( PaOssStream *str
      if( stream->capture )
      {
          PaOssStreamComponent *component = stream->capture;
@@ -185,7 +187,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
  
          assert( component->hostChannelCount > 0 );
          assert( component->hostFrames > 0 );
-@@ -1187,6 +1187,7 @@ static PaError OpenStream( struct PaUtilHostApiReprese
+@@ -1187,6 +1189,7 @@ static PaError OpenStream( struct PaUtilHostApiReprese
      const PaDeviceInfo *inputDeviceInfo = 0, *outputDeviceInfo = 0;
      int bpInitialized = 0;
      double inLatency = 0., outLatency = 0.;
@@ -193,7 +195,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
  
      /* validate platform specific flags */
      if( (streamFlags & paPlatformSpecificFlags) != 0 )
-@@ -1222,7 +1223,14 @@ static PaError OpenStream( struct PaUtilHostApiReprese
+@@ -1222,7 +1225,14 @@ static PaError OpenStream( struct PaUtilHostApiReprese
                  return paInvalidChannelCount;
          }
      }
@@ -209,7 +211,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
      /* allocate and do basic initialization of the stream structure */
      PA_UNLESS( stream = (PaOssStream*)PaUtil_AllocateMemory( sizeof(PaOssStream) ), paInsufficientMemory );
      PA_ENSURE( PaOssStream_Initialize( stream, inputParameters, outputParameters, streamCallback, userData, streamFlags, ossHostApi ) );
-@@ -1594,7 +1602,8 @@ static void *PaOSS_AudioThreadProc( void *userData )
+@@ -1594,7 +1604,8 @@ static void *PaOSS_AudioThreadProc( void *userData )
           */
          if( !initiateProcessing )
          {
@@ -219,7 +221,7 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 20
              assert( framesAvail % stream->framesPerHostBuffer == 0 );
          }
          else
-@@ -1933,11 +1942,11 @@ static signed long GetStreamReadAvailable( PaStream* s
+@@ -1933,11 +1944,11 @@ static signed long GetStreamReadAvailable( PaStream* s
  static signed long GetStreamWriteAvailable( PaStream* s )
  {
      PaOssStream *stream = (PaOssStream*)s;
