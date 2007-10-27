@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/27 08:59:04 jakemsr Exp $
+@lib lib/libportaudio.so.${LIBportaudio_VERSION}

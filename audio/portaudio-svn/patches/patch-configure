@@ -1,0 +1,49 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2007/10/27 08:59:04 jakemsr Exp $
+--- configure.orig	Sun Aug 26 00:06:14 2007
++++ configure	Mon Aug 27 00:57:51 2007
+@@ -19714,7 +19714,7 @@ fi
+ 
+ 
+ 
+-for ac_header in sys/soundcard.h linux/soundcard.h machine/soundcard.h
++for ac_header in sys/soundcard.h linux/soundcard.h machine/soundcard.h soundcard.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
+@@ -19848,7 +19848,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+   cat >>confdefs.h <<_ACEOF
+ #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+-
++LIBS="$LIBS -lossaudio"
+ fi
+ 
+ done
+@@ -21602,13 +21602,13 @@ _ACEOF
+ 
+   *)
+ 
+-   { echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++   { echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21711,8 +21711,8 @@ _ACEOF
+ 	fi
+ 
+ 	THREAD_CFLAGS="-pthread"
+-	DLL_LIBS="$DLL_LIBS -lm -lpthread";
+-	LIBS="$LIBS -lm -lpthread";
++	DLL_LIBS="$DLL_LIBS -lm -pthread";
++	LIBS="$LIBS -lm -pthread";
+ 	PADLL="libportaudio.so";
+ 	SHARED_FLAGS="-shared -fPIC";
+ 

@@ -1,0 +1,80 @@
+$OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 08:59:04 jakemsr Exp $
+--- src/hostapi/oss/pa_unix_oss.c.orig	Sat Sep 29 19:11:09 2007
++++ src/hostapi/oss/pa_unix_oss.c	Sat Sep 29 21:45:19 2007
+@@ -72,6 +72,9 @@
+ #elif defined(HAVE_MACHINE_SOUNDCARD_H)
+ # include <machine/soundcard.h> /* JH20010905 */
+ # define DEVICE_NAME_BASE            "/dev/audio"
++#elif defined(HAVE_SOUNDCARD_H)
++# include <soundcard.h>
++# define DEVICE_NAME_BASE            "/dev/audio"
+ #else
+ # error No sound card header file
+ #endif
+@@ -403,8 +406,12 @@ static PaError QueryDirection( const char *deviceName,
+         sr = 44100;
+         if( ioctl( devHandle, SNDCTL_DSP_SPEED, &sr ) < 0 )
+         {
+-            result = paUnanticipatedHostError;
+-            goto error;
++            sr = 48000;
++            if( ioctl( devHandle, SNDCTL_DSP_SPEED, &sr ) < 0 )
++            {
++                result = paUnanticipatedHostError;
++                goto error;
++	    }
+         }
+ 
+         *defaultSampleRate = sr;
+@@ -810,9 +817,11 @@ static PaError OpenDevices( const char *idevName, cons
+         ENSURE_( *idev = open( idevName, flags ), paDeviceUnavailable );
+         PA_ENSURE( ModifyBlocking( *idev, 1 ) ); /* Blocking */
+ 
++#ifndef __OpenBSD__
+         /* Initially disable */
+         enableBits = ~PCM_ENABLE_INPUT;
+         ENSURE_( ioctl( *idev, SNDCTL_DSP_SETTRIGGER, &enableBits ), paUnanticipatedHostError );
++#endif
+     }
+     if( odevName )
+     {
+@@ -821,9 +830,11 @@ static PaError OpenDevices( const char *idevName, cons
+             ENSURE_( *odev = open( odevName, flags ), paDeviceUnavailable );
+             PA_ENSURE( ModifyBlocking( *odev, 1 ) ); /* Blocking */
+ 
++#ifndef __OpenBSD__
+             /* Initially disable */
+             enableBits = ~PCM_ENABLE_OUTPUT;
+             ENSURE_( ioctl( *odev, SNDCTL_DSP_SETTRIGGER, &enableBits ), paUnanticipatedHostError );
++#endif
+         }
+         else
+         {
+@@ -1226,10 +1237,12 @@ static PaError OpenStream( struct PaUtilHostApiReprese
+         }
+     }
+ 
++#if 0
+     /* Round framesPerBuffer to the next power-of-two to make OSS happy. */
+     framesPerBuffer &= INT_MAX;
+     for (i = 1; framesPerBuffer > i; i <<= 1) ;
+     framesPerBuffer = i;
++#endif
+ 
+     /* allocate and do basic initialization of the stream structure */
+     PA_UNLESS( stream = (PaOssStream*)PaUtil_AllocateMemory( sizeof(PaOssStream) ), paInsufficientMemory );
+@@ -1942,11 +1955,11 @@ static signed long GetStreamReadAvailable( PaStream* s
+ static signed long GetStreamWriteAvailable( PaStream* s )
+ {
+     PaOssStream *stream = (PaOssStream*)s;
+-    int delay = 0;
++    struct count_info delay;
+ 
+-    if( ioctl( stream->playback->fd, SNDCTL_DSP_GETODELAY, &delay ) < 0 )
++    if( ioctl( stream->playback->fd, SNDCTL_DSP_GETOPTR, &delay ) < 0 )
+         return paUnanticipatedHostError;
+ 
+-    return (PaOssStreamComponent_BufferSize( stream->playback ) - delay) / PaOssStreamComponent_FrameSize( stream->playback );
++    return (PaOssStreamComponent_BufferSize( stream->playback ) - delay.ptr) / PaOssStreamComponent_FrameSize( stream->playback );
+ }
+ 
