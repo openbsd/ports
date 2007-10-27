@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
+--- configure.ac.orig	Fri Oct 12 21:06:15 2007
++++ configure.ac	Fri Oct 12 21:06:31 2007
+@@ -166,7 +166,7 @@ if test -z "$DBUS_BINDING_TOOL"; then
+   AC_MSG_ERROR([dbus-binding-tool (from dbus-glib) is required])
+ fi
+ PYTHON=
+-AC_CHECK_PROGS([PYTHON], [python2.3 python2.4 python2.5 python])
++AC_CHECK_PROGS([PYTHON], [python2.5])
+ if test -z "$PYTHON"; then
+   AC_MSG_ERROR([Python is required to compile this package])
+ fi

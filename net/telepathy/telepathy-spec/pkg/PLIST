@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/telepathy-spec/
+share/gtk-doc/html/telepathy-spec/spec.html
+share/gtk-doc/html/telepathy-spec/telepathy-spec.devhelp2

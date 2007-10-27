@@ -1,0 +1,3 @@
+Mission Control, or MC, is a telepathy (chat and voip framework)
+component providing a way for "end-user" applications to abstract some
+details of low level telepathy components such as connection managers.

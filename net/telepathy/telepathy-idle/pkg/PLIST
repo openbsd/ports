@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
+bin/telepathy-idle
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.idle.service
+share/telepathy/
+share/telepathy/managers/
+share/telepathy/managers/idle.manager
