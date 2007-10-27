@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/27 14:01:26 sthen Exp $
+bin/dbish
+${P5SITE}/DBI/
+${P5SITE}/DBI/Format/
+${P5SITE}/DBI/Format.pm
+${P5SITE}/DBI/Format/SQLMinus.pm
+${P5SITE}/DBI/Shell/
+${P5SITE}/DBI/Shell.pm
+${P5SITE}/DBI/Shell/Completion.pm
+${P5SITE}/DBI/Shell/FindSqlFile.pm
+${P5SITE}/DBI/Shell/SQLMinus.pm
+${P5SITE}/DBI/Shell/Spool.pm
+${P5SITE}/DBI/Shell/Timing.pm
+@man man/man1/dbish.1
+@man man/man3p/DBI::Format.3p
+@man man/man3p/DBI::Format::SQLMinus.3p
+@man man/man3p/DBI::Shell.3p
