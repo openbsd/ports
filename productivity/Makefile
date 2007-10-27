@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2007/08/31 09:06:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/10/27 15:26:24 ajacoutot Exp $
 
      SUBDIR += bruce
+     SUBDIR += calcurse
      SUBDIR += devtodo
      SUBDIR += fet
      SUBDIR += grisbi
