@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/05/17 14:40:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/10/28 07:56:01 jasper Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/broken-date-parser.h
@@ -1038,7 +1038,6 @@ share/locale/xh/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-data-server-${R}.mo
-share/pixmaps/
 share/pixmaps/evolution-data-server/
 share/pixmaps/evolution-data-server/category_birthday_16.png
 share/pixmaps/evolution-data-server/category_business_16.png

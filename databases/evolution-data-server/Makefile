@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2007/10/28 07:56:01 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		data backends for the Evolution mail/PIM suite
 
-R=			1.10
-DISTNAME=		evolution-data-server-${R}.2
-PKGNAME=		${DISTNAME}p1
+GNOME_PROJECT=		evolution-data-server
+GNOME_VERSION=		1.10.2
+
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		databases
 SHARED_LIBS +=	edataserver-1.2      9.0      # .9.0
 SHARED_LIBS +=	egroupwise-1.2       13.0     # .13.0
@@ -19,10 +20,7 @@ SHARED_LIBS +=	ecal-1.2             7.1      # .7.1
 SHARED_LIBS +=	edata-cal-1.2        6.1      # .6.1
 SHARED_LIBS +=	edataserverui-1.2    8.1      # .8.1
 
-HOMEPAGE=		http://www.gnome.org
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/evolution-data-server/${R}/}
-EXTRACT_SUFX=           .tar.bz2
+HOMEPAGE=		http://www.gnome.org/projects/evolution/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,10 +36,10 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcursor Xdmcp Xext \
 		png popt pthread sasl2 ssl util xml2 z
 
 MODULES=		devel/gettext \
-			lang/python
+			lang/python \
+			x11/gnome
 
 BUILD_DEPENDS=		:bison-*:devel/bison \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:libgnomeui-*:x11/gnome/libgnomeui
 LIB_DEPENDS= 		ldap,lber::databases/openldap \
 			glade-2.0::devel/libglade2 \
@@ -51,8 +49,6 @@ LIB_DEPENDS= 		ldap,lber::databases/openldap \
 			nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 YACC=			bison
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
@@ -67,6 +63,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+R=			${GNOME_VERSION:R}
 SUBST_VARS=		R
 
 post-extract:
