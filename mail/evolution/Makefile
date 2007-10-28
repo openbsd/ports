@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2007/06/27 08:27:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2007/10/28 20:56:46 jasper Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
-R=			2.10
-DISTNAME=		evolution-${R}.1
-PKGNAME=		${DISTNAME}p0
-CATEGORIES=    		mail x11/gnome
+GNOME_PROJECT=		evolution
+GNOME_VERSION=		2.10.1
+PKGNAME=		${DISTNAME}p1
+CATEGORIES=    		mail
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
 
@@ -34,17 +34,13 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		jpeg krb5 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 plc4 \
 		plds4 png popt pthread sasl2 soup-2.2 ssl util xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/evolution/${R}/}
-EXTRACT_SUFX=           .tar.bz2
-
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
 BUILD_DEPENDS=		:bison-*:devel/bison \
 			:scrollkeeper-*:textproc/scrollkeeper \
-			:gnome-doc-utils-*:x11/gnome/doc-utils: \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+			:gnome-doc-utils-*:x11/gnome/doc-utils
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
-			:desktop-file-utils-*:devel/desktop-file-utils \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
 			:control-center2-*:x11/gnome/controlcenter2:
 LIB_DEPENDS=		camel-1.2,camel-provider-1.2.>=4.1,ebook-1.2.>=4.1,ecal-1.2.>=2.1,edataserver-1.2.>=4.0,edataserverui-1.2.>=5.1,egroupwise-1.2.>=5.0,exchange-storage-1.2.>=3.0::databases/evolution-data-server \
@@ -56,8 +52,7 @@ LIB_DEPENDS=		camel-1.2,camel-provider-1.2.>=4.1,ebook-1.2.>=4.1,ecal-1.2.>=2.1,
 			notify.>=2::devel/libnotify
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
+DESKTOP_FILES=		Yes
 YACC=			bison
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
@@ -76,7 +71,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib/evolution/${R}:${LOCALBASE}/lib -Z"
 
-SUBST_VARS=		${R}
+R=			${GNOME_VERSION:R}
+SUBST_VARS=		R
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
