@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/18 17:56:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/10/28 21:37:34 jasper Exp $
 
 COMMENT=		jabber server written in Erlang
 
 V=			1.1.4
 DISTNAME=		ejabberd-$V
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		net chat
 
@@ -29,7 +30,6 @@ FAKE_FLAGS+=		EJABBERDDIR=${WRKINST}/${PREFIX}/lib/ejabberd \
 			LOGDIR=${WRKINST}${EJLOGDIR} \
 			ETCDIR=${WRKINST}/${PREFIX}/share/examples/ejabberd
 
-USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 SHARED_ONLY=		Yes
