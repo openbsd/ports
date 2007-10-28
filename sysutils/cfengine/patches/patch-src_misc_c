@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_misc_c,v 1.7 2007/10/28 18:32:14 sturm Exp $
+--- src/misc.c.orig	Sun Sep  2 16:36:12 2007
++++ src/misc.c	Sun Sep  2 16:36:28 2007
+@@ -272,7 +272,7 @@ else if (pid == 0)                     /* child */
+    {
+    if (useshell)
+       {
+-      if (execl("/bin/sh","sh","-c",comm,NULL) == -1)
++      if (execl("/bin/sh","sh","-c",comm,(void *)NULL) == -1)
+          {
+          yyerror("script failed");
+          perror("execl");

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_do_c,v 1.7 2007/10/28 18:32:14 sturm Exp $
+--- src/do.c.orig	Sun Sep  2 16:14:43 2007
++++ src/do.c	Sun Sep  2 16:20:28 2007
+@@ -3278,7 +3278,7 @@ if (MatchStringInFstab(mountpt))
+          CfLog(cfinform,"---------------------------------------------------","");
+          
+          /* delete current fstab entry and unmount if necessary */
+-         snprintf(mountspec,CF_BUFSIZE,".+:%s",mountpt);
++         snprintf(mountspec,MAXPATHLEN,".+:%s",mountpt);
+          mntentry = LocateItemContainingRegExp(VMOUNTED,mountspec);
+          if (mntentry)
+             {
+@@ -3287,7 +3287,7 @@ if (MatchStringInFstab(mountpt))
+             strcat(mountspec,mountpt);
+             }
+          else  /* mountpt isn't mounted, so Unmount can use dummy host name */
+-             snprintf(mountspec,CF_BUFSIZE,"host:%s",mountpt);
++             snprintf(mountspec,MAXPATHLEN,"host:%s",mountpt);
+          
+          /* delete current fstab entry and unmount if necessary (don't rmdir) */
+          cleaner.name        = mountspec;
