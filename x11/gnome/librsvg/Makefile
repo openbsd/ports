@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2007/10/26 15:41:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2007/10/29 21:54:13 ajacoutot Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.18.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	rsvg-2         19.0           # .20.1
 CATEGORIES=	devel
 
@@ -23,7 +23,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MODULES=	devel/gettext x11/gnome
 
 LIB_DEPENDS=	gdk-x11-2.0.>=1200,gdk_pixbuf-2.0.>=1200,gtk-x11-2.0.>=1200::x11/gtk+2 \
-		gsf-1::devel/libgsf,-main \
 		croco-0.6.>=3::www/libcroco
 
 USE_X11=		Yes
@@ -42,9 +41,11 @@ FLAVOR?=
 CONFIGURE_ARGS+=--disable-pixbuf-loader \
 		--disable-gnome-print \
 		--disable-gnome-vfs
+LIB_DEPENDS+=	gsf-1::devel/libgsf,no_gnome
 .else
 LIB_DEPENDS+=	gnomevfs-2.>=1800::x11/gnome/vfs2 \
-		gnomeprintui-2-2.>=2::x11/gnome/libgnomeprintui
+		gnomeprintui-2-2.>=2::x11/gnome/libgnomeprintui \
+		gsf-1::devel/libgsf
 WANTLIB+=	crypto ssl util ORBit-2 art_lgpl_2 dbus-1 dbus-glib-1 \
 		gconf-2 gnomecanvas-2 gnomeprint-2-2
 .endif
