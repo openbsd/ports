@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.3 2007/10/29 15:56:56 steven Exp $
+# $OpenBSD: libtool,v 1.4 2007/10/29 18:47:19 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -325,6 +325,7 @@ if ($mode eq 'compile') {
 			'R=s'			=> \@Ropts,
 			'shrext=s'		=> \$opts{'shrext'},
 			'static'		=> \$opts{'static'},
+			'thread-safe'		=> \$opts{'thread-safe'},
 			'version-info=s{1}'	=> \$opts{'version-info'},
 			'version_info=s{1}'	=> \$opts{'version-info'},
 			'version-number=s{1}'	=> \$opts{'version-info'},
@@ -332,7 +333,7 @@ if ($mode eq 'compile') {
 	# XXX options ignored: dlopen, dlpreopen, export-dynamic,
 	# 	export-symbols, export-symbols-regex, no-fast-install,
 	# 	no-install, no-undefined, objectlist, precious-files-regex,
-	# 	shrext
+	# 	shrext, thread-safe
 
 	@libsearchdirs = get_search_dirs();
 
@@ -360,6 +361,9 @@ if ($mode eq 'compile') {
 	$argvstring = parse_linkargs($argvstring, 1);
 	@ARGV = split /\s+/, $argvstring;
 	print "deplibs = @deplibs\n" if $D;
+
+	# eat multiple version-info arguments, we only accept the first.
+	map { $_ = '' if ($_ =~ m/\d+:\d+:\d+/); } @ARGV;
 
 	handle_special_chars(\@ARGV);
 
