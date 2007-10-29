@@ -1,6 +1,6 @@
-$OpenBSD: patch-libac3_Makefile_in,v 1.1 2001/02/27 12:12:46 naddy Exp $
---- libac3/Makefile.in.orig	Mon Feb 26 01:59:16 2001
-+++ libac3/Makefile.in	Mon Feb 26 01:59:35 2001
+$OpenBSD: patch-libac3_Makefile_in,v 1.2 2007/10/29 07:59:27 jakemsr Exp $
+--- libac3/Makefile.in.orig	Wed Mar 29 16:55:28 2000
++++ libac3/Makefile.in	Mon Oct 29 00:13:50 2007
 @@ -70,8 +70,6 @@ VERSION = @VERSION@
  
  AUTOMAKE_OPTIONS = 1.3 foreign
@@ -10,7 +10,7 @@ $OpenBSD: patch-libac3_Makefile_in,v 1.1 2001/02/27 12:12:46 naddy Exp $
  noinst_LIBRARIES = libac3.a
  
  libac3_a_SOURCES = bitstream.c decode.c imdct.c coeff.c exponent.c stats.c 	bit_allocate.c  parse.c crc.c debug.c rematrix.c downmix.c dither.c 	sanity_check.c
-@@ -94,6 +92,7 @@ libac3_a_OBJECTS =  bitstream.o decode.o
+@@ -94,6 +92,7 @@ libac3_a_OBJECTS =  bitstream.o decode.o imdct.o coeff
  stats.o bit_allocate.o parse.o crc.o debug.o rematrix.o downmix.o \
  dither.o sanity_check.o
  AR = ar

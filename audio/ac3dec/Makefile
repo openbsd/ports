@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:00 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2007/10/29 07:59:27 jakemsr Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/07 04:20:49 hubertf Exp $
 
 COMMENT=	ac3 audio (as used on DVDs) decoding tools
 
 DISTNAME=	ac3dec-0.6.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://liba52.sourceforge.net/

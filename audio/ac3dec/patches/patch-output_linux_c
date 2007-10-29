@@ -1,0 +1,40 @@
+$OpenBSD: patch-output_linux_c,v 1.1 2007/10/29 07:59:27 jakemsr Exp $
+--- output_linux.c.orig	Mon Oct 29 00:17:49 2007
++++ output_linux.c	Mon Oct 29 00:23:37 2007
+@@ -33,6 +33,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <math.h>
++#include <sys/ioctl.h>
+ #if defined(__OpenBSD__)
+ #include <soundcard.h>
+ #elif defined(__FreeBSD__)
+@@ -40,16 +41,15 @@
+ #else
+ #include <sys/soundcard.h>
+ #endif
+-#include <sys/ioctl.h>
+ 
+ //this sux...types should go in config.h methinks
+-typedef signed short sint_16;
+-typedef unsigned int uint_32;
++typedef int16_t sint_16;
++typedef uint32_t uint_32;
+ 
+ #include "output.h"
+ 
+ 
+-static char dev[] = "/dev/dsp";
++static char dev[] = "/dev/audio";
+ static int fd;
+ 
+ 
+@@ -82,7 +82,7 @@ int output_open(int bits, int rate, int channels)
+   ioctl(fd,SNDCTL_DSP_SPEED, &tmp);
+ 
+ 	//this is cheating
+-	tmp = 256;
++	tmp = 0x000c000a;
+   ioctl(fd,SNDCTL_DSP_SETFRAGMENT,&tmp);
+ 
+ 
