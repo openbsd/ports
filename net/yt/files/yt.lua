@@ -1,5 +1,5 @@
 #!%%LOCALBASE%%/bin/lua
--- $OpenBSD: yt.lua,v 1.5 2007/08/26 21:47:46 jasper Exp $
+-- $OpenBSD: yt.lua,v 1.6 2007/10/29 22:50:31 jolan Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -13,7 +13,7 @@ url = assert(arg[1], "Wrong usage, no URL given")
 fetch = "ftp -o <file> <url>"
 
 -- Set this to a command capable of converting from FLV to MPEG.
-convert = "ffmpeg -y -i <flv> -b 1000k -vcodec mpeg4 -acodec copy <avi> 1>/dev/null 2>&1"
+convert = "ffmpeg -y -i <flv> -b 1000k -f mp4 -vcodec mpeg4 -acodec aac -ab 128k <mp4> 1>/dev/null 2>&1"
 
 -- Set this to the base location where to fetch YouTube videos from.
 base_url = "http://www.youtube.com/get_video?video_id="
@@ -31,11 +31,11 @@ file = string.gsub(title, " ", "_")
 file = string.gsub(title, "[^%w-]", "_")
 file = "youtube-" .. string.lower(file)
 flv = file .. ".flv"
-avi = file .. ".avi"
+mp4 = file .. ".mp4"
 
 -- Escape the file names.
 e_flv = string.format("%q", flv)
-e_avi = string.format("%q", avi)
+e_mp4 = string.format("%q", mp4)
 
 -- Look for the video ID.
 pattern = "/watch_fullscreen.*video_id=(.-)&fs="
@@ -47,9 +47,9 @@ cmd = string.gsub(fetch, "<(%w+)>", { url = url, file = e_flv })
 assert(os.execute(cmd) == 0, "Failed")
 
 -- Convert it to MPEG.
-cmd = string.gsub(convert, "<(%w+)>", { flv = e_flv, avi = e_avi })
+cmd = string.gsub(convert, "<(%w+)>", { flv = e_flv, mp4 = e_mp4 })
 print("Converting ...")
 assert(os.execute(cmd) == 0, "Failed")
 
 os.remove(flv)
-print("Done. Video saved in " .. avi .. ".")
+print("Done. Video saved in " .. mp4 .. ".")
