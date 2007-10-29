@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.1 2007/10/28 14:34:09 steven Exp $
+# $OpenBSD: libtool,v 1.2 2007/10/29 11:49:52 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1161,5 +1161,5 @@ sub guess_implicit_mode
 sub handle_special_chars
 {
 	my $a = shift;
-	map { $_ =~ s,(['"()<>]),\\$1,g; $_ = "\"$_\"" if $_ =~ m/[\s&<>]/ } @$a;
+	map { $_ =~ s,(['"]),\\$1,g; $_ = "\"$_\"" if $_ =~ m/[\s&()<>]/ } @$a;
 }
