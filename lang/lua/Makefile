@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.33 2007/10/29 22:38:42 jolan Exp $
 
 COMMENT=	powerful, light-weight programming language
 
@@ -27,7 +27,6 @@ WANTLIB=	c m edit curses
 NO_REGRESS=	Yes
 
 pre-configure:
-	@perl -pi -e 's:\@prefix@:${PREFIX}/:g;' ${WRKSRC}/src/luaconf.h
 	@perl -pi -e 's:\@prefix@:${PREFIX}/:g;' ${WRKSRC}/etc/lua.pc
 
 post-install:
