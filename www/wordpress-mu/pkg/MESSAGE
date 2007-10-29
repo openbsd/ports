@@ -1,0 +1,12 @@
+The WordPress has been installed into
+${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+   # ln -s ../wordpress-mu /var/www/htdocs/wordpress-mu
+(make sure you use a relative symlink since Apache is chrooted)
+
+and proceed to complete the installation by reading:
+${INSTDIR}/README.txt
+
+You can ensure you have a working install by accessing:
+http://<localhost>/wordpress-mu/
