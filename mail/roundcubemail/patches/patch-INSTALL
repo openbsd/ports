@@ -1,7 +1,7 @@
-$OpenBSD: patch-INSTALL,v 1.1 2007/06/01 10:24:30 steven Exp $
---- INSTALL.orig	Fri Jun  1 12:21:24 2007
-+++ INSTALL	Fri Jun  1 12:21:37 2007
-@@ -75,7 +75,7 @@ an example how you can setup the sqlite.db for roundcu
+$OpenBSD: patch-INSTALL,v 1.2 2007/10/29 09:24:43 sthen Exp $
+--- INSTALL.orig	Sat Oct 20 23:50:24 2007
++++ INSTALL	Sun Oct 28 08:48:11 2007
+@@ -76,7 +76,7 @@ an example how you can setup the sqlite.db for roundcu
  # sqlite -init SQL/sqlite.initial.sql sqlite.db
  
  Make sure your configuration points to the sqlite.db file and that the

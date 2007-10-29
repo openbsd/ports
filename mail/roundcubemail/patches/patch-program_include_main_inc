@@ -1,7 +1,7 @@
-$OpenBSD: patch-program_include_main_inc,v 1.1 2007/09/17 11:45:26 ajacoutot Exp $
---- program/include/main.inc.orig	Mon Sep 17 11:58:44 2007
-+++ program/include/main.inc	Mon Sep 17 11:59:14 2007
-@@ -1313,7 +1313,7 @@ function format_date($date, $format=NULL)
+$OpenBSD: patch-program_include_main_inc,v 1.2 2007/10/29 09:24:43 sthen Exp $
+--- program/include/main.inc.orig	Thu Oct 18 11:33:49 2007
++++ program/include/main.inc	Sun Oct 28 08:48:11 2007
+@@ -1568,7 +1568,7 @@ function format_date($date, $format=NULL)
     
    // get user's timezone
    $tz = $CONFIG['timezone'];
