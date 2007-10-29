@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.23 2007/10/29 06:47:20 jakemsr Exp $
 
 COMMENT=	simple gtk+ pool simulation game
 
 DISTNAME=	gtkpool-0.5.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}	
 
