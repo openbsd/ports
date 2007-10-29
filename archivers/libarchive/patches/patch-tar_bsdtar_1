@@ -1,0 +1,12 @@
+$OpenBSD: patch-tar_bsdtar_1,v 1.1.1.1 2007/10/29 19:28:29 naddy Exp $
+--- tar/bsdtar.1.orig	Thu Oct 25 11:44:48 2007
++++ tar/bsdtar.1	Thu Oct 25 11:47:32 2007
+@@ -28,7 +28,7 @@
+ .Dt BSDTAR 1
+ .Os
+ .Sh NAME
+-.Nm tar
++.Nm bsdtar
+ .Nd manipulate tape archives
+ .Sh SYNOPSIS
+ .Nm

@@ -1,0 +1,8 @@
+Libarchive is a programming library that can create and read several
+different streaming archive formats, including most popular tar variants
+and several cpio formats.
+
+bsdtar is an almost fully GNU tar-compatible frontend for libarchive.
+It is one of the fastest tar implementations and supports many advanced
+features not found elsewhere.
+
