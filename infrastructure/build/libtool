@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.2 2007/10/29 11:49:52 steven Exp $
+# $OpenBSD: libtool,v 1.3 2007/10/29 15:56:56 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -246,8 +246,16 @@ if ($mode eq 'compile') {
 	my %toinstall;
 	my %tosymlink;	# for libraries with a -release in their name
 	foreach my $s (@src) {
+		my $dstfile = basename $s;
+		# resolve symbolic links, so we don't try to test later
+		# whether the symlink is a program wrapper etc.
+		if (-l $s) {
+			$s = readlink($s) or die "Cannot readlink $s";
+		}
 		my $srcdir = dirname $s;
 		my $srcfile = basename $s;
+		print "srcdir = $srcdir\nsrcfile = $srcfile\n" if $D;
+		print "dstdir = $dstdir\ndstfile = $dstfile\n" if $D;
 		if ($srcfile =~ m/^\S+\.la$/) {
 			# we are installing a .la library
 			my %lainfo;
@@ -271,7 +279,7 @@ if ($mode eq 'compile') {
 				if ($staticlib);
 			$toinstall{"$srcdir/$ltdir/$sharedlib"} = "$dstdir/$sharedlib"
 				if ($sharedlib);
-			$toinstall{"$srcdir/$ltdir/$srcfile"} = "$dstdir/$srcfile";
+			$toinstall{"$srcdir/$ltdir/$srcfile"} = "$dstdir/$dstfile";
 			foreach my $n (@libnames) {
 				$tosymlink{$n} = $sharedlib if ($n ne $sharedlib);
 			}
