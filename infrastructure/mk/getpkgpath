@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: getpkgpath,v 1.3 2007/10/29 20:00:53 sturm Exp $
+# $OpenBSD: getpkgpath,v 1.4 2007/10/29 21:50:40 sturm Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -27,8 +27,8 @@ my $pkgpath;
 my $real_dir = abs_path($dir);
 for my $d (split ':', $path) {
 	my $real_d = abs_path($d);
-	if ($real_dir =~ m/^\Q$real_d\E/) {
-		my $newpath = $real_d;
+	if ($real_dir =~ m/^\Q$real_d\E\//) {
+		my $newpath = $';
 		if (!defined $pkgpath or length $newpath < length $pkgpath) {
 			$pkgpath = $newpath;
 		}
