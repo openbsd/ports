@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: license.sh,v 1.1 2007/09/06 15:46:18 kurt Exp $
+# $OpenBSD: license.sh,v 1.2 2007/10/29 01:22:34 kurt Exp $
 # $FreeBSD: ports/java/jdk15/files/license.sh,v 1.1 2007/08/13 04:57:47 glewis Exp $
 
 # License agreement
@@ -181,15 +181,20 @@ agreed=
 while [ x$agreed = x ]; do
         echo
         echo "Do you agree to the above license terms? [yes or no] "
-        read reply leftover
-        case $reply in
-                y* | Y*)
-                        agreed=1
-                        ;;
-                n* | N*)
-                        echo
-                        echo "If you don't agree to the license you can't build this software"
-                        exit 1
-                        ;;
-        esac
+        if read reply leftover; then
+	        case $reply in
+                	y* | Y*)
+                        	agreed=1
+                        	;;
+                	n* | N*)
+                        	echo
+                        	echo "If you don't agree to the license you can't build this software"
+                        	exit 1
+                        	;;
+        	esac
+	else
+		echo
+		echo "An error occurred reading your response!"
+		exit 1
+	fi
 done
