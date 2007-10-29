@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.3 2007/03/15 07:18:12 jasper Exp $
---- src/Makefile.orig	Wed Mar 22 01:41:49 2006
-+++ src/Makefile	Tue Mar 13 16:42:11 2007
+$OpenBSD: patch-src_Makefile,v 1.4 2007/10/29 20:30:32 espie Exp $
+--- src/Makefile.orig	Sun Mar 25 16:49:23 2007
++++ src/Makefile	Mon Oct 29 21:28:39 2007
 @@ -7,8 +7,7 @@
  # Your platform. See PLATS for possible values.
  PLAT= none
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_Makefile,v 1.3 2007/03/15 07:18:12 jasper Exp $
  AR= ar rcu
  RANLIB= ranlib
  RM= rm -f
-@@ -34,9 +33,10 @@
+@@ -34,9 +33,10 @@ LUA_O=	lua.o
  
  LUAC_T=	luac
  LUAC_O=	luac.o print.o
@@ -23,22 +23,22 @@ $OpenBSD: patch-src_Makefile,v 1.3 2007/03/15 07:18:12 jasper Exp $
  ALL_A= $(LUA_A)
  
  default: $(PLAT)
-@@ -57,6 +57,9 @@
+@@ -57,6 +57,9 @@ $(LUA_T): $(LUA_O) $(LUA_A)
  $(LUAC_T): $(LUAC_O) $(LUA_A)
  	$(CC) -o $@ $(MYLDFLAGS) $(LUAC_O) $(LUA_A) $(LIBS)
  
-+$(LUA_SO):
++$(LUA_SO): $(CORE_O) $(LIB_O)
 +	$(CC) -o $@ -shared -fPIC $(MYLDFLAGS) $(CORE_O) $(LIB_O)
 +
  clean:
  	$(RM) $(ALL_T) $(ALL_O)
  
-@@ -86,7 +89,7 @@
+@@ -87,7 +90,7 @@ ansi:
  	$(MAKE) all MYCFLAGS=-DLUA_ANSI
  
  bsd:
 -	$(MAKE) all MYCFLAGS="-DLUA_USE_POSIX -DLUA_USE_DLOPEN" MYLIBS="-Wl,-E"
 +	$(MAKE) all MYCFLAGS=-DLUA_USE_BSD MYLIBS="-Wl,-E -ledit -lcurses"
  
- generic:
- 	$(MAKE) all MYCFLAGS=
+ freebsd:
+ 	$(MAKE) all MYCFLAGS="-DLUA_USE_LINUX" MYLIBS="-Wl,-E -lreadline"
