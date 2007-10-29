@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/09/16 19:52:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2007/10/29 21:32:45 ajacoutot Exp $
 
      SUBDIR += applets2
      SUBDIR += audio
@@ -33,6 +33,7 @@
      SUBDIR += libgnomeprintui
      SUBDIR += libgtkhtml
      SUBDIR += librsvg
+     SUBDIR += librsvg,no_gnome
      SUBDIR += libs
      SUBDIR += libxklavier
      SUBDIR += media
