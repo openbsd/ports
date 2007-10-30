@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/24 13:46:47 todd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/10/30 16:47:50 steven Exp $
 %%SHARED%%
 bin/apr-1${MT}-config
 include/apr-1${MT}/
@@ -40,7 +40,6 @@ include/apr-1${MT}/apr_version.h
 include/apr-1${MT}/apr_want.h
 lib/apr-1${MT}/
 lib/apr-1${MT}/apr_rules.mk
-lib/apr-1${MT}/libtool
 lib/apr-1${MT}/make_exports.awk
 lib/apr-1${MT}/make_var_export.awk
 lib/apr-1${MT}/mkdir.sh

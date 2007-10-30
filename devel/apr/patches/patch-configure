@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2007/09/20 10:17:21 steven Exp $
+$OpenBSD: patch-configure,v 1.8 2007/10/30 16:47:50 steven Exp $
 --- configure.orig	Tue Sep  4 03:42:02 2007
-+++ configure	Sat Sep 15 21:15:35 2007
++++ configure	Tue Oct 30 17:41:25 2007
 @@ -4326,6 +4326,11 @@ if test "x$apr_preload_done" != "xyes" ; then
          ;;
      *-openbsd*)
@@ -13,6 +13,15 @@ $OpenBSD: patch-configure,v 1.7 2007/09/20 10:17:21 steven Exp $
    if test "x$CPPFLAGS" = "x"; then
      test "x$silent" != "xyes" && echo "  setting CPPFLAGS to \"-D_POSIX_THREADS\""
      CPPFLAGS="-D_POSIX_THREADS"
+@@ -23954,7 +23959,7 @@ fi
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(apr_builddir)/libtool'
++#LIBTOOL='$(SHELL) $(apr_builddir)/libtool'
+ 
+ # Prevent multiple expansion
+ 
 @@ -26156,7 +26161,7 @@ if test "${apr_cv_pthreads_lib+set}" = set; then
  else
  
