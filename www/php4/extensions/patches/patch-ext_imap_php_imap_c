@@ -1,0 +1,21 @@
+$OpenBSD: patch-ext_imap_php_imap_c,v 1.1 2007/10/30 10:13:05 ajacoutot Exp $
+--- ext/imap/php_imap.c.orig	Sun Oct 28 00:22:52 2007
++++ ext/imap/php_imap.c	Sun Oct 28 00:23:13 2007
+@@ -71,7 +71,7 @@ static int _php_imap_address_size(ADDRESS *addresslist
+ void rfc822_date(char *date);
+ char *cpystr(const char *str);
+ char *cpytxt(SIZEDTEXT *dst, char *text, unsigned long size);
+-long utf8_mime2text(SIZEDTEXT *src, SIZEDTEXT *dst);
++long utf8_mime2text (SIZEDTEXT *src, SIZEDTEXT *dst, long flags);
+ unsigned long find_rightmost_bit(unsigned long *valptr);
+ void fs_give(void **block);
+ void *fs_get(size_t size);
+@@ -2061,7 +2061,7 @@ PHP_FUNCTION(imap_utf8)
+ 	dest.size = 0;
+ 
+ 	cpytxt(&src, Z_STRVAL_PP(str), Z_STRLEN_PP(str));
+-	utf8_mime2text(&src, &dest);
++	utf8_mime2text(&src, &dest, U8T_CANONICAL);
+ 	RETURN_STRINGL(dest.data, strlen(dest.data), 1);
+ }
+ /* }}} */
