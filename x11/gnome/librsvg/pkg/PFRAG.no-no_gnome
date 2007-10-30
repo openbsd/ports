@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.no-no_gnome,v 1.1 2007/10/26 15:41:20 ajacoutot Exp $
-%%SHARED%%
-lib/gtk-2.0/2.10.0/loaders/
-lib/gtk-2.0/2.10.0/loaders/svg_loader.a
-lib/gtk-2.0/2.10.0/loaders/svg_loader.la

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2007/10/29 21:54:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2007/10/30 07:26:30 eric Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.18.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS +=	rsvg-2         19.0           # .20.1
 CATEGORIES=	devel
 
@@ -38,8 +38,7 @@ FLAVORS=	no_gnome
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_gnome}
-CONFIGURE_ARGS+=--disable-pixbuf-loader \
-		--disable-gnome-print \
+CONFIGURE_ARGS+=--disable-gnome-print \
 		--disable-gnome-vfs
 LIB_DEPENDS+=	gsf-1::devel/libgsf,no_gnome
 .else
