@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2007/10/30 10:29:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.195 2007/10/30 13:02:28 landry Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -18,6 +18,7 @@
      SUBDIR += bulk_mailer
      SUBDIR += clamsmtp
      SUBDIR += claws-mail
+     SUBDIR += claws-mail-notification
      SUBDIR += claws-mail-rssyl
      SUBDIR += claws-mail-vcalendar
      SUBDIR += cmail
