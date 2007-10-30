@@ -1,24 +1,77 @@
-@comment $OpenBSD: PLIST-server,v 1.1 2006/12/01 14:40:00 jakob Exp $
-@pkgpath ${BASE_PKGPATH}
+@comment $OpenBSD: PLIST-server,v 1.2 2007/10/30 10:12:41 ajacoutot Exp $
 @conflict courier-imap-*
 @conflict courier-pop3-*
+@pkgpath ${BASE_PKGPATH}
 bin/dmail
 bin/tmail
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
+libexec/mlock
 @man man/man1/dmail.1
 @man man/man1/tmail.1
 @man man/man8/imapd.8
 @man man/man8/ipopd.8
 share/doc/imap-uw/
+share/doc/imap-uw/BUILD
+share/doc/imap-uw/CONFIG
 share/doc/imap-uw/FAQ.html
 share/doc/imap-uw/FAQ.txt
+share/doc/imap-uw/IPv6.txt
 share/doc/imap-uw/RELNOTES
+share/doc/imap-uw/SSLBUILD
+share/doc/imap-uw/Y2K
+share/doc/imap-uw/bugs.txt
+share/doc/imap-uw/calendar.txt
 share/doc/imap-uw/commndmt.txt
+share/doc/imap-uw/draft/
+share/doc/imap-uw/draft/README
+share/doc/imap-uw/draft/i18n.txt
+share/doc/imap-uw/draft/sort.txt
 share/doc/imap-uw/drivers.txt
 share/doc/imap-uw/formats.txt
 share/doc/imap-uw/imaprc.txt
+share/doc/imap-uw/internal.txt
+share/doc/imap-uw/locking.txt
 share/doc/imap-uw/md5.txt
 share/doc/imap-uw/mixfmt.txt
 share/doc/imap-uw/naming.txt
+share/doc/imap-uw/rfc/
+share/doc/imap-uw/rfc/README
+share/doc/imap-uw/rfc/rfc1732.txt
+share/doc/imap-uw/rfc/rfc1733.txt
+share/doc/imap-uw/rfc/rfc2061.txt
+share/doc/imap-uw/rfc/rfc2062.txt
+share/doc/imap-uw/rfc/rfc2087.txt
+share/doc/imap-uw/rfc/rfc2088.txt
+share/doc/imap-uw/rfc/rfc2177.txt
+share/doc/imap-uw/rfc/rfc2180.txt
+share/doc/imap-uw/rfc/rfc2192.txt
+share/doc/imap-uw/rfc/rfc2193.txt
+share/doc/imap-uw/rfc/rfc2195.txt
+share/doc/imap-uw/rfc/rfc2221.txt
+share/doc/imap-uw/rfc/rfc2342.txt
+share/doc/imap-uw/rfc/rfc2683.txt
+share/doc/imap-uw/rfc/rfc2971.txt
+share/doc/imap-uw/rfc/rfc3348.txt
+share/doc/imap-uw/rfc/rfc3501.txt
+share/doc/imap-uw/rfc/rfc3502.txt
+share/doc/imap-uw/rfc/rfc3503.txt
+share/doc/imap-uw/rfc/rfc3516.txt
+share/doc/imap-uw/rfc/rfc3656.txt
+share/doc/imap-uw/rfc/rfc3691.txt
+share/doc/imap-uw/rfc/rfc4234.txt
+share/doc/imap-uw/rfc/rfc4314.txt
+share/doc/imap-uw/rfc/rfc4315.txt
+share/doc/imap-uw/rfc/rfc4422.txt
+share/doc/imap-uw/rfc/rfc4466.txt
+share/doc/imap-uw/rfc/rfc4467.txt
+share/doc/imap-uw/rfc/rfc4468.txt
+share/doc/imap-uw/rfc/rfc4469.txt
+share/doc/imap-uw/rfc/rfc4505.txt
+share/doc/imap-uw/rfc/rfc4549.txt
+share/doc/imap-uw/rfc/rfc4551.txt
+share/doc/imap-uw/rfc/rfc4616.txt
+share/doc/imap-uw/rfc/rfc4731.txt
+share/doc/imap-uw/rfc/rfc4752.txt
+share/doc/imap-uw/rfc/rfc4790.txt

@@ -1,20 +1,27 @@
-# $OpenBSD: Makefile,v 1.54 2007/10/22 12:42:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2007/10/30 10:12:41 ajacoutot Exp $
 
 COMMENT-server=		University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=	University of Washington IMAP4rev1/POP2/POP3 mail utility
+COMMENT-c-client=	University of Washington's c-client mail access routines
 
-VERSION=		2006d
-DISTNAME=		imap-2006d
+BASEVER=		2006j
+VERSION=		${BASEVER}2
+DISTNAME=		imap-${VERSION}
 
-PKGNAME-server=		imap-uw-${VERSION}p0
-PKGNAME-mailutil=	mailutil-uw-${VERSION}p0
+PKGNAME-server=		imap-uw-${VERSION}
+PKGNAME-mailutil=	mailutil-uw-${VERSION}
+PKGNAME-c-client=	c-client-${VERSION}
+
 CATEGORIES=		mail
+CATEGORIES-c-client=	mail devel
+
+SHARED_LIBS=	c-client 5.0
 
 EXTRACT_SUFX=	.tar.Z
 
 HOMEPAGE=	http://www.washington.edu/imap/
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.cac.washington.edu/imap/old/ \
@@ -26,12 +33,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		asn1 c com_err crypto des gssapi kafs krb5 ssl
+WANTLIB-c-client=
 
+WRKDIST=	${WRKDIR}/imap-${BASEVER}
 ALL_TARGET=	bso
-MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6
+SHLIB=		libc-client.so.${LIBc-client_VERSION}
+MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6 \
+		SHLIB="${SHLIB}" SHLIBNAME=${SHLIB} CC="${CC}"
 
-MULTI_PACKAGES=	-server -mailutil
+MULTI_PACKAGES=	-server -mailutil -c-client
 SUBPACKAGE?=	-server
 
 FLAVORS=	plaintext
@@ -45,17 +57,17 @@ MAKE_FLAGS+=	SSLTYPE="unix.nopwd"
 
 NO_REGRESS=	Yes
 
-DOCDIR=		share/doc/imap-uw
-DOCFILES=	FAQ.txt FAQ.html commndmt.txt drivers.txt formats.txt \
-		imaprc.txt md5.txt mixfmt.txt naming.txt RELNOTES
-
-post-configure:
-	touch ${WRKSRC}/ip6
+HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flockcyg.h \
+		flocksim.h flstring.h fs.h ftl.h imap4r1.h linkage.c linkage.h \
+		mail.h misc.h netmsg.h newsrc.h nl.h nntp.h osdep.h pseudo.h \
+		rfc822.h smtp.h sslio.h tcp.h tcp_unix.h unix.h utf8.h \
+		utf8aux.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop2d ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop3d ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/mlock/mlock ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/dmail/dmail ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mailutil/mailutil ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tmail/tmail ${PREFIX}/bin
@@ -64,9 +76,21 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/dmail/dmail.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/${DOCDIR}
-.for f in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/${DOCDIR}
-.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imap-uw
+	tar -C ${WRKSRC}/docs -cf - . | \
+		tar -C ${PREFIX}/share/doc/imap-uw -xf -
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/imap-uw
+	${INSTALL_DATA_DIR} ${PREFIX}/include/c-client
+	cd ${WRKSRC}/c-client; ${INSTALL_DATA} ${HEADERS} \
+		${PREFIX}/include/c-client
+	${INSTALL_DATA} ${WRKSRC}/c-client/c-client.a \
+		${PREFIX}/lib/libc-client.a
+	@if [ -f ${WRKSRC}/c-client/${SHLIB} ]; then \
+		${INSTALL_DATA} ${WRKSRC}/c-client/${SHLIB} ${PREFIX}/lib; \
+	fi
 
 .include <bsd.port.mk>
+
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
+MAKE_ENV+=	NO_SHARED_LIBS=Yes
+.endif
