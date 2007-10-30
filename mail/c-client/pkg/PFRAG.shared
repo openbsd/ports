@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/26 13:16:16 steven Exp $
-@lib lib/libc-client.so.${LIBc-client_VERSION}
