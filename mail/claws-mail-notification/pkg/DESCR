@@ -1,0 +1,8 @@
+The Notification plugin provides various ways to notify the user of new
+and possibly unread mail.
+Currently, the following modules are implemented:
+* A system tray icon, optionally with popup on new mail arrival
+* A popup window using devel/libnotify
+* A mail banner (stocks ticker-like widget)
+* Support for a command to be issued on new mail arrival
+* Support for displaying mail status on a LCD
