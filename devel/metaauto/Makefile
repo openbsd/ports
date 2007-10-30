@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2007/10/30 21:50:36 eric Exp $
 
 COMMENT=	wrapper for gnu auto*
 
@@ -9,8 +9,8 @@ DISTFILES=	pkg-config-0.21.tar.gz
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-MASTER_SITES=	http://www.freedesktop.org/software/pkgconfig/releases/ \
-		${MASTER_SITE_GNOME:=sources/pkg-config/0.19/}
+MASTER_SITES=	http://pkg-config.freedesktop.org/releases/
+
 
 # BSD, except pkg.m4 which is GPL
 PERMIT_DISTFILES_CDROM=	Yes
