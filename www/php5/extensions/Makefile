@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.39 2007/10/30 10:13:22 ajacoutot Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 COMMENT-main=		informational package about PHP5 extensions
@@ -120,7 +120,7 @@ MULTI_PACKAGES+=	-imap
 COMMENT-imap=		imap, pop3 and nntp extensions for php5
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
-LIB_DEPENDS-imap=	c-client.>=3::mail/c-client
+LIB_DEPENDS-imap=	c-client.>=5::mail/imap-uw,-c-client
 WANTLIB-imap=		${WANTLIB} gssapi crypto krb5 ssl
 .endif
 
@@ -345,6 +345,8 @@ FULLPKGNAME${i} ?=	php5${i}-${V}
 RUN_DEPENDS${i}=	:php5-core-${V}:www/php5/core
 MODULE_NAME${i}=	${i:S/-//g}
 .endfor
+
+FULLPKGNAME-imap=	php5-imap-$Vp0
 
 MESSAGE=		${PKGDIR}/MESSAGE
 SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE V
