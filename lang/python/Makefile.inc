@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.51 2007/10/25 21:05:33 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.52 2007/10/30 13:35:18 steven Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -67,7 +67,7 @@ LIB_DEPENDS-sqlite=	sqlite3.>=8.7::databases/sqlite3
 SETUP_PY=	"s,!!LOCALBASE!!,${LOCALBASE},g" \
 		"s,!!X11BASE!!,${X11BASE},g"
 
-.if empty(FLAVOR:L:Mno_bsddb)
+.if empty(FLAVOR:L:Mno_bsddb) && ${VERSION} == "2.5"
 SETUP_PY+=	"s,!!USE_BSDDB!!,1,g"
 MULTI_PACKAGES+=-bsddb
 .else
