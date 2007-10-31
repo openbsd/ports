@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2007/10/24 22:29:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2007/10/31 21:50:51 winiger Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
 VERSION=		2.14.2
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}
+PKGNAME-main=		glib2-${VERSION}p0
 PKGNAME-docs=		glib2-docs-${VERSION}
 CATEGORIES=		devel
 
@@ -30,7 +30,8 @@ MULTI_PACKAGES=		-main -docs
 MODULES=		devel/gettext
 WANTLIB-main=		c
 
-LIB_DEPENDS-main=	pcre:pcre->=7.2:devel/pcre
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			pcre:pcre->=7.2:devel/pcre
 
 
 PKG_ARCH-docs=		*
