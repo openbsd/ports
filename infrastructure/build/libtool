@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.5 2007/10/31 17:32:55 steven Exp $
+# $OpenBSD: libtool,v 1.6 2007/10/31 21:49:08 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -261,21 +261,16 @@ if ($mode eq 'compile') {
 			my %lainfo;
 			parse_file($s, \%lainfo);
 			# replace info where needed when installing the .la file
-			my $deplibs = $lainfo{'dependency_libs'};
 			my $sharedlib = $lainfo{'dlname'};
 			my $staticlib = $lainfo{'old_library'};
 			my @libnames = split /\s+/, $lainfo{'library_names'};
-			$deplibs = process_deplibs($deplibs);
-			$lainfo{'installed'} = 'yes';
-			$lainfo{'dependency_libs'} = $deplibs;
-			# XXX the new .la file should not overwrite the one
-			# in the build directory, so write it under .libs
-			write_la_file("$srcdir/$ltdir/$srcfile", \%lainfo);
+			my $laipath = "$srcdir/$ltdir/$srcfile".'i';
 			$toinstall{"$srcdir/$ltdir/$staticlib"} = "$dstdir/$staticlib"
 				if ($staticlib);
 			$toinstall{"$srcdir/$ltdir/$sharedlib"} = "$dstdir/$sharedlib"
 				if ($sharedlib);
-			$toinstall{"$srcdir/$ltdir/$srcfile"} = "$dstdir/$dstfile";
+			$toinstall{"$laipath"} = "$dstdir/$dstfile"
+				if ($sharedlib);
 			foreach my $n (@libnames) {
 				$tosymlink{$n} = $sharedlib if ($n ne $sharedlib);
 			}
@@ -448,7 +443,8 @@ if ($mode eq 'compile') {
 		}
 		$lainfo{'installed'} = 'no';
 		$lainfo{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
-		$lainfo{'dependency_libs'} = join ' ', @deplibs;
+		my $deplibs = join ' ', @deplibs;
+		$lainfo{'dependency_libs'} = $deplibs;
 		if ($opts{'rpath'}) {
 			$lainfo{'libdir'} = $opts{'rpath'};
 		} else {
@@ -456,6 +452,14 @@ if ($mode eq 'compile') {
 			$lainfo{'libdir'} = $instlibdir;
 		}
 		write_la_file($outfile, \%lainfo);
+		perform("cd $odir/$ltdir && ln -s ../$ofile $ofile");
+		if ($shared) {
+			my $lai = "$odir/$ltdir/$ofile".'i';
+			$lainfo{'dependency_libs'} = process_deplibs($deplibs);
+			$lainfo{'installed'} = 'yes';
+			# write .lai file (.la file that will be installed)
+			write_la_file($lai, \%lainfo);
+		}
 	}
 } elsif ($mode eq 'finish' || $mode eq 'clean' || $mode eq 'uninstall') {
 	# don't do anything
