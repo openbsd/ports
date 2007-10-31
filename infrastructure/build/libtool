@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.4 2007/10/29 18:47:19 steven Exp $
+# $OpenBSD: libtool,v 1.5 2007/10/31 17:32:55 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -268,10 +268,6 @@ if ($mode eq 'compile') {
 			$deplibs = process_deplibs($deplibs);
 			$lainfo{'installed'} = 'yes';
 			$lainfo{'dependency_libs'} = $deplibs;
-			# XXX fix instlibdir, may be different from /usr/local/lib !
-			#     strip off WRKINST somehow inside ports?
-			#     start at the last /usr occurrence?
-			$lainfo{'libdir'} = $instlibdir;
 			# XXX the new .la file should not overwrite the one
 			# in the build directory, so write it under .libs
 			write_la_file("$srcdir/$ltdir/$srcfile", \%lainfo);
@@ -453,7 +449,12 @@ if ($mode eq 'compile') {
 		$lainfo{'installed'} = 'no';
 		$lainfo{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
 		$lainfo{'dependency_libs'} = join ' ', @deplibs;
-		$lainfo{'libdir'} = "$absodir/$ltdir";
+		if ($opts{'rpath'}) {
+			$lainfo{'libdir'} = $opts{'rpath'};
+		} else {
+			# XXX sensible default?
+			$lainfo{'libdir'} = $instlibdir;
+		}
 		write_la_file($outfile, \%lainfo);
 	}
 } elsif ($mode eq 'finish' || $mode eq 'clean' || $mode eq 'uninstall') {
@@ -708,7 +709,8 @@ sub resolve_la
 			$a = '';
 			next;
 		}
-		my $d = $lainfo{'libdir'};
+		my $d = abs_path(dirname($a));
+		$d .= "/$ltdir" if ($lainfo{'installed'} eq 'no');
 		my $dlname = $lainfo{'dlname'};
 		my $oldlib = $lainfo{'old_library'};
 		my $lib;
@@ -842,7 +844,9 @@ sub parse_linkargs
 			} elsif (exists $lainfo{'old_library'} &&
 				  $lainfo{'old_library'} ne '') {
 				if (!exists $libs{$2}) {
-					$libs{$2} = $lainfo{'libdir'}.'/'.$lainfo{'old_library'};
+					my $d = abs_path(dirname($a));
+					$d .= "/$ltdir" if ($lainfo{'installed'} eq 'no');
+					$libs{$2} = $d.'/'.$lainfo{'old_library'};
 				}
 				push @deplibs, $lainfo{'dependency_libs'}
 					if (exists $lainfo{'dependency_libs'});
@@ -938,19 +942,11 @@ sub process_deplibs
 	my %la_in_ldpath;
 
 	foreach my $lf (@linkflags) {
-		if ($lf =~ m/(\/\S+)\/(lib\S+\.la)/) {
-			my $dir = $1;
-			my $lafile = $2;
-			# XXX fix test: if the .la file can be found
-			# in /usr/lib, /usr/local/lib etc, nothing should
-			# be adapted.
-			if ($dir =~ m/^\/usr\//) {
-				$la_in_ldpath{$lafile} = 1;
-			}
-			if (!exists $la_in_ldpath{$lafile}) {
-				print "could not find $lafile in ldpath\n" if $D;
-				$lf = "$instlibdir/$lafile";
-			}
+		if ($lf =~ m/\/\S+\/(lib\S+\.la)/) {
+			my $lafile = $1;
+			my %lainfo;
+			parse_file($lf, \%lainfo);
+			$lf = $lainfo{'libdir'}.'/'.$lafile;
 		}
 	}
 	return join ' ', @linkflags;
