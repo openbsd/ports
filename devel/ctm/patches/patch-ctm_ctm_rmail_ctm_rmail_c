@@ -1,12 +1,7 @@
-$OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+$OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_c,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
 --- ctm/ctm_rmail/ctm_rmail.c.orig	Wed May  1 01:01:45 1996
-+++ ctm/ctm_rmail/ctm_rmail.c	Fri Oct 26 22:40:00 2007
-@@ -1,3 +1,4 @@
-+/* $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $ */
- /*
-  * Accept one (or more) ASCII encoded chunks that together make a compressed
-  * CTM delta.  Decode them and reconstruct the deltas.  Any completed
-@@ -12,7 +13,7 @@
++++ ctm/ctm_rmail/ctm_rmail.c	Wed Oct 31 23:14:02 2007
+@@ -12,7 +12,7 @@
  
  #include <stdio.h>
  #include <stdlib.h>
@@ -15,7 +10,7 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_c,v 1.1 2007/10/26 20:44:35 ajacoutot Ex
  #include <ctype.h>
  #include <errno.h>
  #include <unistd.h>
-@@ -292,6 +293,7 @@ read_piece(char *input_file)
+@@ -292,6 +292,7 @@ read_piece(char *input_file)
  	if (!decoding)
  	    {
  	    char *s;
@@ -23,7 +18,7 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_c,v 1.1 2007/10/26 20:44:35 ajacoutot Ex
  
  	    if (sscanf(line, "CTM_MAIL BEGIN %s %d %d %c",
  		    delta, &pce, &npieces, junk) != 3)
-@@ -302,19 +304,19 @@ read_piece(char *input_file)
+@@ -302,19 +303,19 @@ read_piece(char *input_file)
  
  	    got_one++;
  	    strcpy(tname, piece_dir);
@@ -52,7 +47,7 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_c,v 1.1 2007/10/26 20:44:35 ajacoutot Ex
  
  	    cksum = 0xffff;
  	    decoding++;
-@@ -494,17 +496,19 @@ combine(char *delta, int npieces, char *dname, char *p
+@@ -494,17 +495,19 @@ combine(char *delta, int npieces, char *dname, char *p
      FILE *dfp, *pfp;
      int i, n, e;
      char buf[BUFSIZ];

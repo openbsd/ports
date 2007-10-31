@@ -1,7 +1,7 @@
-$OpenBSD: patch-ctm_ctm_ctm_passb_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
---- ctm/ctm/ctm_passb.c.orig	Fri Oct 26 22:39:59 2007
-+++ ctm/ctm/ctm_passb.c	Fri Oct 26 22:40:00 2007
-@@ -0,0 +1,142 @@
+$OpenBSD: patch-ctm_ctm_ctm_passb_c,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
+--- ctm/ctm/ctm_passb.c.orig	Wed Oct 31 23:09:23 2007
++++ ctm/ctm/ctm_passb.c	Wed Oct 31 23:10:13 2007
+@@ -0,0 +1,141 @@
 +/*
 + * ----------------------------------------------------------------------------
 + * "THE BEER-WARE LICENSE" (Revision 42):
@@ -10,7 +10,6 @@ $OpenBSD: patch-ctm_ctm_ctm_passb_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
 + * this stuff is worth it, you can buy me a beer in return.   Joseph Koshy
 + * ----------------------------------------------------------------------------
 + *
-+ * $Id: patch-ctm_ctm_ctm_passb_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
 + *
 + */
 +

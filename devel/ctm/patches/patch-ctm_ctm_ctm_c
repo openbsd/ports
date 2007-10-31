@@ -1,15 +1,6 @@
-$OpenBSD: patch-ctm_ctm_ctm_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
---- ctm/ctm/ctm.c.orig	Wed May  1 01:01:43 1996
-+++ ctm/ctm/ctm.c	Fri Oct 26 22:39:59 2007
-@@ -6,7 +6,7 @@
-  * this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
-  * ----------------------------------------------------------------------------
-  *
-- * $Id: patch-ctm_ctm_ctm_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
-+ * $Id: patch-ctm_ctm_ctm_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
-  *
-  * This is the client program of 'CTM'.  It will apply a CTM-patch to a
-  * collection of files.
+$OpenBSD: patch-ctm_ctm_ctm_c,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
+--- ctm/ctm/ctm.c.orig	Wed Oct 31 23:06:34 2007
++++ ctm/ctm/ctm.c	Wed Oct 31 23:06:34 2007
 @@ -14,7 +14,6 @@
   * Options we'd like to see:
   *

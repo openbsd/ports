@@ -1,6 +1,6 @@
-$OpenBSD: patch-ctm_ctm_ctm_1,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
---- ctm/ctm/ctm.1.orig	Wed May  1 01:01:43 1996
-+++ ctm/ctm/ctm.1	Fri Oct 26 22:39:59 2007
+$OpenBSD: patch-ctm_ctm_ctm_1,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
+--- ctm/ctm/ctm.1.orig	Wed Oct 31 23:06:34 2007
++++ ctm/ctm/ctm.1	Wed Oct 31 23:06:34 2007
 @@ -1,5 +1,5 @@
  .\"----------------------------------------------------------------------------
 -.\""THE BEER-WARE LICENSE" (Revision 42): 
@@ -8,15 +8,6 @@ $OpenBSD: patch-ctm_ctm_ctm_1,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
  .\"<joerg@freebsd.org> wrote this file.  As long as you retain this notice you
  .\"can do whatever you want with this stuff. If we meet some day, and you think
  .\"this stuff is worth it, you can buy me a beer in return.       Joerg Wunsch
-@@ -10,7 +10,7 @@
- .\"
- .\" CTM and ctm(1) by <phk@login.dknet.dk>
- .\"
--.\" $Id: patch-ctm_ctm_ctm_1,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
-+.\" $Id: patch-ctm_ctm_ctm_1,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
- .\"
- .Dd Mar 25, 1995
- .Os
 @@ -20,19 +20,23 @@
  .Nd source code mirror program
  .Sh SYNOPSIS

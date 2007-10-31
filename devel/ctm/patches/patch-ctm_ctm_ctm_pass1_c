@@ -1,15 +1,6 @@
-$OpenBSD: patch-ctm_ctm_ctm_pass1_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
---- ctm/ctm/ctm_pass1.c.orig	Mon Feb  5 17:06:50 1996
-+++ ctm/ctm/ctm_pass1.c	Fri Oct 26 22:39:59 2007
-@@ -6,7 +6,7 @@
-  * this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
-  * ----------------------------------------------------------------------------
-  *
-- * $Id: patch-ctm_ctm_ctm_pass1_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
-+ * $Id: patch-ctm_ctm_ctm_pass1_c,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
-  *
-  */
- 
+$OpenBSD: patch-ctm_ctm_ctm_pass1_c,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
+--- ctm/ctm/ctm_pass1.c.orig	Wed Oct 31 23:06:34 2007
++++ ctm/ctm/ctm_pass1.c	Wed Oct 31 23:06:34 2007
 @@ -23,9 +23,9 @@ Pass1(FILE *fd, unsigned applied)
      u_char *p,*q;
      MD5_CTX ctx;

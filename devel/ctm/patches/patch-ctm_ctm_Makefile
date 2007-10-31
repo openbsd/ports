@@ -1,12 +1,20 @@
-$OpenBSD: patch-ctm_ctm_Makefile,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
---- ctm/ctm/Makefile.orig	Fri Oct 26 22:39:58 2007
-+++ ctm/ctm/Makefile	Fri Oct 26 22:40:00 2007
-@@ -15,7 +15,7 @@ MANDIR=${PREFIX}/man/cat
- PROG=		ctm
- NOTYET=		ctm_ed.c
+--- ctm/ctm/Makefile.orig	Tue May 28 09:47:37 1996
++++ ctm/ctm/Makefile	Wed Oct 31 23:38:04 2007
+@@ -11,4 +11,4 @@
+ 
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/man/cat
++BINDIR=${PREFIX}/bin
++MANDIR=${PREFIX}/man/cat
+ 
+@@ -17,8 +17,4 @@
  SRCS=   	ctm.c ctm_input.c ctm_pass1.c ctm_pass2.c ctm_pass3.c \
 -		ctm_syntax.c ctm_ed.c
+-LDADD+=		-L/usr/local/lib -lmd
+-DPADD+=		${LIBMD}
+-MAN1=		ctm.1
+-MAN5=		ctm.5
+-CFLAGS+=	-I/usr/local/include -Wall
 +		ctm_syntax.c ctm_ed.c ctm_passb.c
- MAN=		ctm.1 ctm.5
++MAN=		ctm.1 ctm.5
  
- .if exists(${.CURDIR}/../../Makefile.inc)

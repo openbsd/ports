@@ -1,15 +1,6 @@
-$OpenBSD: patch-ctm_README,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
---- ctm/README.orig	Thu Sep 22 04:49:07 1994
-+++ ctm/README	Fri Oct 26 22:39:59 2007
-@@ -5,7 +5,7 @@
- # this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
- # ----------------------------------------------------------------------------
- #
--# $Id: patch-ctm_README,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
-+# $Id: patch-ctm_README,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
- #
- 
- What will I not find in this file ?
+$OpenBSD: patch-ctm_README,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
+--- ctm/README.orig	Wed Oct 31 23:06:34 2007
++++ ctm/README	Wed Oct 31 23:06:34 2007
 @@ -21,7 +21,7 @@ CTM is now meant to be the definitive way to make and 
  two versions of a directory tree.
  There are two parts to this, making the delta and applying it.  These are two
