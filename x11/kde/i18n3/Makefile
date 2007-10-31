@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2007/10/24 21:52:17 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2007/10/31 20:20:41 naddy Exp $
 
 LANGS=  af ar az bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
 	nl nn pa pl pt pt_BR ro ru rw se sk sl sr sr@Latn ss sv ta tg th \
 	tr uk uz vi zh_CN zh_TW
+
+PATCH_LANGS=	fa
 
 # some extra vars to compact PLISTs
 I=index.docbook
@@ -26,6 +28,9 @@ COMMENT= $l translations for KDE
 PLIST=${PKGDIR}/PLIST-$l
 DOC=share/doc/HTML/$l/
 LOC=share/locale/$l/LC_MESSAGES/
+.    if ${PATCH_LANGS:L:M${l:L}}
+PATCH_LIST+=$l-patch-*
+.    endif
 .  endif
 SUPDISTFILES+= kde-i18n-$l-${VERSION}.tar.bz2
 SUBST_VARS+=DOC LOC
@@ -40,7 +45,7 @@ MASTER_SITES=	${MASTER_SITE_KDE:=stable/3.5.8/src/kde-i18n/}
 BUILD_DEPENDS = ::x11/kde/libs3
 RUN_DEPENDS = ::x11/kde/libs3
 
-PATCH_LIST=	patch-*
+PATCH_LIST+=	patch-*
 MODKDE_VERSION=
 CONFIGURE_STYLE=gnu
 

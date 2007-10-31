@@ -1,0 +1,30 @@
+$OpenBSD: fa-patch-messages_kdepim_kdepimwizards_po,v 1.1 2007/10/31 20:20:41 naddy Exp $
+--- messages/kdepim/kdepimwizards.po.orig	Fri Oct 26 02:50:50 2007
++++ messages/kdepim/kdepimwizards.po	Fri Oct 26 02:51:24 2007
+@@ -231,26 +231,6 @@ msgstr ""
+ msgid "Journal"
+ msgstr ""
+ 
+-#: kmailchanges.cpp:139
+-msgid "Calendar"
+-msgstr ""
+-
+-#: kmailchanges.cpp:36
+-msgid "Contacts"
+-msgstr ""
+-
+-#: kmailchanges.cpp:37
+-msgid "Notes"
+-msgstr ""
+-
+-#: kmailchanges.cpp:38
+-msgid "Tasks"
+-msgstr ""
+-
+-#: kmailchanges.cpp:39
+-msgid "Journal"
+-msgstr ""
+-
+ #: kmailchanges.cpp:136
+ msgid "Create Disconnected IMAP Account for KMail"
+ msgstr "ایجاد حساب قطع‌شدۀ IMAP برای KMail"
