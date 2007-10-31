@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.313 2007/10/25 09:32:51 landry Exp $
+# $OpenBSD: Makefile,v 1.314 2007/10/31 07:32:23 eric Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -179,6 +179,7 @@
      SUBDIR += rep-gtk
      SUBDIR += root-tail
      SUBDIR += rox-filer
+     SUBDIR += roxterm
      SUBDIR += ruby-gtk
      SUBDIR += rxvt
      SUBDIR += sawfish
