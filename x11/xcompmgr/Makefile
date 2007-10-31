@@ -1,9 +1,9 @@
-#	$OpenBSD: Makefile,v 1.6 2007/09/15 20:04:26 merdely Exp $
+#	$OpenBSD: Makefile,v 1.7 2007/10/31 21:38:45 jasper Exp $
 
 COMMENT=	Sample X Compositing Manager
 
 DISTNAME=	xcompmgr-1.1.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11
 
 MASTER_SITES=	http://freedesktop.org/xapps/release/
