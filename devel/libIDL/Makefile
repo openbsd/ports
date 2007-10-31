@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2007/10/31 21:54:11 winiger Exp $
 
 COMMENT=		IDL parsing library
 
 DISTNAME=		libIDL-0.8.8
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	IDL-2                0.1      # .0.0
 CATEGORIES=		devel
 
@@ -17,6 +18,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libIDL/0.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
+WANTLIB=		pcre
 LIB_DEPENDS=		glib-2.0::devel/glib2
 
 USE_GMAKE=		Yes
