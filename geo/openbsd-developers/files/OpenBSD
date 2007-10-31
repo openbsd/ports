@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.15 2007/09/23 19:32:13 fgsch Exp $
+# $OpenBSD: OpenBSD,v 1.16 2007/10/31 20:24:07 wilfried Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -80,8 +80,8 @@
 53.562888	9.961555	"henning"	# Henning Brauer
 53.59		10.05		"simon"		# Simon Bertrang
 55.16		23.88		"martynas"	# Martynas Venckus
-55.593		12.987		"wilfried"	# Peter Stromberg
 55.599		-2.4324		"jmc"		# Jason McIntyre
+55.8589		13.0837		"wilfried"	# Peter Stromberg
 57.698		11.967		"jakob"		# Jakob Schlyter
 57.717		11.967		"niklas"	# Niklas Hallqvist
 59.33		18.08		"art"		# Artur Grabowski
