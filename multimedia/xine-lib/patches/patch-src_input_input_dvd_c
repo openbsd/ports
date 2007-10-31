@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_input_dvd_c,v 1.2 2007/06/13 10:58:29 jakemsr Exp $
---- src/input/input_dvd.c.orig	Mon Apr 16 18:00:50 2007
-+++ src/input/input_dvd.c	Sun May 20 22:40:02 2007
+$OpenBSD: patch-src_input_input_dvd_c,v 1.3 2007/10/31 10:55:37 jakemsr Exp $
+--- src/input/input_dvd.c.orig	Sat Aug 18 19:36:45 2007
++++ src/input/input_dvd.c	Wed Oct 17 20:34:03 2007
 @@ -119,8 +119,8 @@
  #define DVD_PATH "d:\\"
  #define RDVD_PATH "d:\\"
@@ -21,12 +21,12 @@ $OpenBSD: patch-src_input_input_dvd_c,v 1.2 2007/06/13 10:58:29 jakemsr Exp $
        if (block != buf->mem) dvdnav_free_cache_block(this->dvdnav, block);
        buf->free_buffer(buf);
        return NULL;
-@@ -1498,7 +1498,7 @@ static int dvd_plugin_open (input_plugin_t *this_gen) 
+@@ -1500,7 +1500,7 @@ static int dvd_plugin_open (input_plugin_t *this_gen) 
      xprintf(this->stream->xine, XINE_VERBOSITY_LOG, _("input_dvd: Error opening DVD device\n"));
      _x_message(this->stream, XINE_MSG_READ_ERROR,
        /* FIXME: see FIXME in dvd_parse_try_open() */
 -      (strlen(locator) && !(locator[0] == '/' && locator[1] == '\0')) ? locator : class->dvd_device, NULL);
 +      (strlen(locator) && !(locator[0] == '/' && locator[1] == '\0')) ? locator : class->dvd_device, (char *)NULL);
+     free (locator_orig);
      return 0;
    }
-   

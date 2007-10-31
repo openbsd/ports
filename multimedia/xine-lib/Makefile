@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2007/10/03 06:36:43 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.20 2007/10/31 10:55:37 jakemsr Exp $
 
 COMMENT=		multimedia decoding library
 
-V=			1.1.7
+V=			1.1.8
 DISTNAME=		xine-lib-${V}
-PKGNAME=		${DISTNAME}p2
-EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
-SHARED_LIBS=		xine	18.1
+SHARED_LIBS=		xine	19.0
 
 HOMEPAGE=		http://xinehq.de/
 
@@ -19,8 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 
-WANTLIB=		X11 Xau Xdmcp Xext Xinerama Xv expat \
-			freetype fontconfig jpeg lcms m usbhid z
+WANTLIB=		X11 Xau Xdmcp Xext Xinerama Xrandr Xrender \
+			Xv expat faac freetype fontconfig jpeg lcms m \
+			mp3lame usbhid x264 z
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=		-Di386=1
@@ -32,13 +31,13 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		FLAC.>=5::audio/flac \
 			SDL.>=3::devel/sdl \
 			a52::audio/liba52 \
-			avcodec.>=7,postproc.>=7::graphics/ffmpeg \
+			avcodec.>=7,avutil.>=2,postproc.>=7::graphics/ffmpeg \
 			dvdnav.>=5::multimedia/libdvdnav \
 			faad.>=1::audio/faad \
 			mad.>=2::audio/libmad \
 			mng.>=3::graphics/libmng \
 			ogg.>=5::audio/libogg \
-                        vorbis.>=4::audio/libvorbis \
+			vorbis.>=4,vorbisenc.>=2::audio/libvorbis \
 			speex.>=3::audio/speex \
 			theora.>=1::multimedia/libtheora
 

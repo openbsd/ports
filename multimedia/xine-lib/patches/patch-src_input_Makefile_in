@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_input_Makefile_in,v 1.4 2007/06/13 10:58:29 jakemsr Exp $
---- src/input/Makefile.in.orig	Tue Apr 17 15:17:43 2007
-+++ src/input/Makefile.in	Sun May 20 22:40:02 2007
-@@ -667,7 +667,7 @@ EXTRA_DIST = input_dvd.c input_vcd.c input_gnome_vfs.c
+$OpenBSD: patch-src_input_Makefile_in,v 1.5 2007/10/31 10:55:37 jakemsr Exp $
+--- src/input/Makefile.in.orig	Mon Aug 27 14:27:57 2007
++++ src/input/Makefile.in	Wed Oct 17 20:29:24 2007
+@@ -676,7 +676,7 @@ EXTRA_DIST = input_dvd.c input_vcd.c input_gnome_vfs.c
  # ---------
  # All of xine input plugins should be named like the scheme "xineplug_inp_"
  #

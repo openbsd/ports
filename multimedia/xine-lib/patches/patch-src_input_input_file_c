@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_input_file_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
---- src/input/input_file.c.orig	Sat Jun  2 18:50:47 2007
-+++ src/input/input_file.c	Fri Jun  8 17:27:46 2007
+$OpenBSD: patch-src_input_input_file_c,v 1.2 2007/10/31 10:55:37 jakemsr Exp $
+--- src/input/input_file.c.orig	Sat Aug 18 19:36:45 2007
++++ src/input/input_file.c	Wed Oct 17 20:29:24 2007
 @@ -202,7 +202,7 @@ static buf_element_t *file_plugin_read_block (input_pl
  	  xine_log (this->stream->xine, XINE_LOG_MSG,
  		    _("input_file: read error (%s)\n"), strerror(errno));
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_input_input_file_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
  	}
  	buf->free_buffer (buf);
  	buf = NULL;
-@@ -398,12 +398,12 @@ static int file_plugin_open (input_plugin_t *this_gen 
+@@ -375,12 +375,12 @@ static int file_plugin_open (input_plugin_t *this_gen 
  
      if (this->fh == -1) {
        if (errno == EACCES) {
@@ -25,7 +25,7 @@ $OpenBSD: patch-src_input_input_file_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
  	xine_log (this->stream->xine, XINE_LOG_MSG,
  		  _("input_file: File not found: >%s<\n"), this->mrl);
        }
-@@ -438,7 +438,7 @@ static int file_plugin_open (input_plugin_t *this_gen 
+@@ -415,7 +415,7 @@ static int file_plugin_open (input_plugin_t *this_gen 
  #endif
  
    if (file_plugin_get_length (this_gen) == 0) {
