@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/31 14:24:54 jasper Exp $
 
-COMMENT=		Virtual desktop manager
+COMMENT=		virtual desktop manager
 DISTNAME=		vdesk-1.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		x11
 MASTER_SITES=		http://offog.org/files/
