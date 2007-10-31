@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.5 2007/01/18 22:15:55 jasper Exp $
---- tests/Makefile.in.orig	Mon Jan  8 22:15:06 2007
-+++ tests/Makefile.in	Wed Jan 17 14:22:57 2007
-@@ -173,7 +173,7 @@ LDFLAGS = @LDFLAGS@
+$OpenBSD: patch-tests_Makefile_in,v 1.6 2007/10/31 19:10:45 jasper Exp $
+--- tests/Makefile.in.orig	Sun Oct 28 18:37:11 2007
++++ tests/Makefile.in	Wed Oct 31 17:28:17 2007
+@@ -189,7 +189,7 @@ LIBGCRYPT_LIBS = @LIBGCRYPT_LIBS@
  LIBGNUTLS_CFLAGS = @LIBGNUTLS_CFLAGS@
  LIBGNUTLS_LIBS = @LIBGNUTLS_LIBS@
  LIBOBJS = @LIBOBJS@
