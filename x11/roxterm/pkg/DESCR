@@ -1,0 +1,6 @@
+ROXTerm is a terminal emulator intended to provide similar features to
+gnome-terminal, based on the same VTE library, but with a smaller
+footprint and quicker start-up time. It achieves this by not using the
+Gnome libraries and by using a separate applet to provide the
+configuration GUI. It can be used as a ROX application, as the name
+implies, or in any other X environment.
