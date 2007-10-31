@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.28 2007/10/24 21:52:18 espie Exp $
+$OpenBSD: patch-configure_in,v 1.29 2007/10/31 11:09:02 jakemsr Exp $
 --- configure.in.orig	Mon Oct  8 16:26:39 2007
 +++ configure.in	Wed Oct 24 12:03:20 2007
 @@ -164,22 +164,22 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
@@ -147,3 +147,12 @@ $OpenBSD: patch-configure_in,v 1.28 2007/10/24 21:52:18 espie Exp $
  AC_SUBST(THIS_LIB_LIBS)
  dnl =======================================================
  dnl FILE: ./mpeglib/lib/mpegplay/configure.in.in
+@@ -1765,7 +1758,7 @@ dnl Check for new internal xine symbol names
+ KDE_CHECK_LIB(xine, _x_ao_new_port, :, 
+ [
+   AC_DEFINE(_x_ao_new_port, ao_new_port, [Compatibility with older version of xine])
+-])
++], -pthread)
+ AC_CHECK_FUNC([ao_new_port])
+ 
+ AC_ARG_WITH([xine],
