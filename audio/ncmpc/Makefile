@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/19 19:15:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2007/10/31 06:34:55 jasper Exp $
 
 # mips64 architecture does not support trampoline code yet
 NOT_FOR_ARCHS=		mips64
@@ -6,6 +6,7 @@ NOT_FOR_ARCHS=		mips64
 COMMENT=		curses based frontend for mpd
 
 DISTNAME=		ncmpc-20070917
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://hem.bredband.net/kaw/ncmpc/
@@ -20,6 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c ncurses
 LIB_DEPENDS=		glib-2.0::devel/glib2
+
+USE_LIBTOOL=    	Yes
 
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
