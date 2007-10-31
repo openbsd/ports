@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/16 14:20:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/10/31 17:37:09 jasper Exp $
 
 COMMENT=		modular webapplication server for C++
 
 DISTNAME=		tntnet-1.6.0.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www devel
 
 HOMEPAGE=		http://www.tntnet.org/
@@ -29,6 +30,7 @@ MODULES+=		gcc3
 MODGCC3_ARCHES= 	sparc
 MODGCC3_LANGS=		c++
 
+BUILD_DEPENDS=		::archivers/zip
 LIB_DEPENDS= 		cxxtools::devel/cxxtools
 
 USE_LIBTOOL=		Yes
