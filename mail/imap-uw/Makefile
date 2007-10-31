@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2007/10/30 10:12:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2007/10/31 13:53:56 ajacoutot Exp $
 
 COMMENT-server=		University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=	University of Washington IMAP4rev1/POP2/POP3 mail utility
@@ -8,9 +8,9 @@ BASEVER=		2006j
 VERSION=		${BASEVER}2
 DISTNAME=		imap-${VERSION}
 
-PKGNAME-server=		imap-uw-${VERSION}
-PKGNAME-mailutil=	mailutil-uw-${VERSION}
-PKGNAME-c-client=	c-client-${VERSION}
+PKGNAME-server=		imap-uw-${VERSION}p0
+PKGNAME-mailutil=	mailutil-uw-${VERSION}p0
+PKGNAME-c-client=	c-client-${VERSION}p0
 
 CATEGORIES=		mail
 CATEGORIES-c-client=	mail devel
@@ -77,6 +77,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imap-uw
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/imap-uw
+	@perl -pi -e 's,!!TRUEPREFIX!!,${TRUEPREFIX},' \
+		${PREFIX}/share/doc/imap-uw/README.OpenBSD
 	tar -C ${WRKSRC}/docs -cf - . | \
 		tar -C ${PREFIX}/share/doc/imap-uw -xf -
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/imap-uw

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_mlock_mlock_c,v 1.1 2007/10/31 13:53:56 ajacoutot Exp $
+--- src/mlock/mlock.c.orig	Wed Oct 31 13:53:25 2007
++++ src/mlock/mlock.c	Wed Oct 31 13:53:38 2007
+@@ -70,10 +70,10 @@ int main (int argc,char *argv[])
+   char *s,*lock,*hitch,tmp[1024];
+   time_t t;
+   struct stat sb,fsb;
+-  struct group *grp = getgrnam ("mail");
++  struct group *grp = getgrnam ("smmsp");
+ 				/* get syslog */
+   openlog (argv[0],LOG_PID,LOG_MAIL);
+-  if (!grp || (grp->gr_gid != getegid ())) die ("not setgid mail",EX_USAGE);
++  if (!grp || (grp->gr_gid != getegid ())) die ("not setgid smmsp",EX_USAGE);
+   if (argc != 3) die ("invalid arguments",EX_USAGE);
+   for (s = argv[1]; *s; s++) if (!isdigit (*s)) die ("invalid fd",EX_USAGE);
+   len = strlen (argv[2]);	/* make buffers */

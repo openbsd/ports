@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.2 2007/10/30 10:12:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.3 2007/10/31 13:53:56 ajacoutot Exp $
 @conflict courier-imap-*
 @conflict courier-pop3-*
 @pkgpath ${BASE_PKGPATH}
@@ -7,7 +7,9 @@ bin/tmail
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
+@group smmsp
 libexec/mlock
+@group
 @man man/man1/dmail.1
 @man man/man1/tmail.1
 @man man/man8/imapd.8
@@ -18,6 +20,7 @@ share/doc/imap-uw/CONFIG
 share/doc/imap-uw/FAQ.html
 share/doc/imap-uw/FAQ.txt
 share/doc/imap-uw/IPv6.txt
+share/doc/imap-uw/README.OpenBSD
 share/doc/imap-uw/RELNOTES
 share/doc/imap-uw/SSLBUILD
 share/doc/imap-uw/Y2K

@@ -6,5 +6,4 @@ Included are backwards-compatible (almost) POP2 and POP3 servers.
 	imapd		IMAP4rev1 daemon
 
 Flavors
-
 	plaintext	Enable unencrypted plaintext passwords

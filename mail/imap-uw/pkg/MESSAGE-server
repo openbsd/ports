@@ -1,23 +1,2 @@
-The ipop2d, ipop3d, and imapd daemons should be invoked by your
-/etc/inetd.conf file with lines such as:
-
-  pop2    stream  tcp     nowait  root    ${PREFIX}/libexec/ipop2d   ipop2d
-  pop2    stream  tcp6    nowait  root    ${PREFIX}/libexec/ipop2d   ipop2d
-  pop3    stream  tcp     nowait  root    ${PREFIX}/libexec/ipop3d   ipop3d
-  pop3    stream  tcp6    nowait  root    ${PREFIX}/libexec/ipop3d   ipop3d
-  imap    stream  tcp     nowait  root    ${PREFIX}/libexec/imapd    imapd
-  imap    stream  tcp6    nowait  root    ${PREFIX}/libexec/imapd    imapd
-
-
-To use SSL as default transport you need to add the lines below to
-/etc/inetd.conf.
-
-  pop3s   stream  tcp     nowait  root    ${PREFIX}/libexec/ipop3d   ipop3d
-  pop3s   stream  tcp6    nowait  root    ${PREFIX}/libexec/ipop3d   ipop3d
-  imaps   stream  tcp     nowait  root    ${PREFIX}/libexec/imapd    imapd
-  imaps   stream  tcp6    nowait  root    ${PREFIX}/libexec/imapd    imapd
-
-You also need to install files containing RSA certificates to
-/etc/ssl/{imapd,ipop3d}.pem and files containing the corresponding private
-keys to /etc/ssl/private/{imapd,ipop3d}.pem.  See ssl(8) for how to do this.
-
+Please see ${PREFIX}/share/doc/imap-uw/README.OpenBSD for information
+about running imap-uw on OpenBSD.
