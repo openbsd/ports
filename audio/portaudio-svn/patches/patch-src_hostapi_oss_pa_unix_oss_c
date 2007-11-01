@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 08:59:04 jakemsr Exp $
+$OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.2 2007/11/01 03:29:54 jakemsr Exp $
 --- src/hostapi/oss/pa_unix_oss.c.orig	Sat Sep 29 19:11:09 2007
-+++ src/hostapi/oss/pa_unix_oss.c	Sat Sep 29 21:45:19 2007
++++ src/hostapi/oss/pa_unix_oss.c	Sun Oct 28 17:05:10 2007
 @@ -72,6 +72,9 @@
  #elif defined(HAVE_MACHINE_SOUNDCARD_H)
  # include <machine/soundcard.h> /* JH20010905 */
@@ -11,6 +11,15 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 08:59:04 jake
  #else
  # error No sound card header file
  #endif
+@@ -97,7 +100,7 @@ static pthread_t mainThread_;
+             /* PaUtil_SetLastHostErrorInfo should only be used in the main thread */ \
+             if( (code) == paUnanticipatedHostError && pthread_self() == mainThread_ ) \
+             { \
+-                PaUtil_SetLastHostErrorInfo( paALSA, sysErr_, strerror( errno ) ); \
++                PaUtil_SetLastHostErrorInfo( paOSS, sysErr_, strerror( errno ) ); \
+             } \
+             \
+             PaUtil_DebugPrint(( "Expression '" #expr "' failed in '" __FILE__ "', line: " STRINGIZE( __LINE__ ) "\n" )); \
 @@ -403,8 +406,12 @@ static PaError QueryDirection( const char *deviceName,
          sr = 44100;
          if( ioctl( devHandle, SNDCTL_DSP_SPEED, &sr ) < 0 )
@@ -26,7 +35,59 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 08:59:04 jake
          }
  
          *defaultSampleRate = sr;
-@@ -810,9 +817,11 @@ static PaError OpenDevices( const char *idevName, cons
+@@ -597,6 +604,7 @@ static PaError IsFormatSupported( struct PaUtilHostApi
+     int tempDevHandle = -1;
+     int flags;
+     PaSampleFormat inputSampleFormat, outputSampleFormat;
++    int sr;
+ 
+     if( inputParameters )
+     {
+@@ -692,6 +700,43 @@ static PaError IsFormatSupported( struct PaUtilHostApi
+     /* PaOssStream_Configure will do the rest of the checking for us */
+     /* PA_ENSURE( PaOssStream_Configure( tempDevHandle, deviceName, outputChannelCount, &sampleRate ) ); */
+ 
++    /* try to set the number of channels */
++    if (outputChannelCount > 0) {
++        if ( ioctl( tempDevHandle, SNDCTL_DSP_CHANNELS, &outputChannelCount ) < 0 ) {
++            result = paInvalidChannelCount;
++            goto error;
++        }
++        if (outputChannelCount != outputParameters->channelCount) {
++            result =  paInvalidChannelCount;
++            goto error;
++        }
++    }
++    if ((inputChannelCount > 0) && (inputChannelCount != outputChannelCount)) {
++        if ( ioctl( tempDevHandle, SNDCTL_DSP_CHANNELS, &inputChannelCount ) < 0 ) {
++            result = paInvalidChannelCount;
++            goto error;
++        }
++        if (inputChannelCount != inputParameters->channelCount) {
++            result =  paInvalidChannelCount;
++            goto error;
++        }
++    }
++
++    /* try to set the sample rate */
++    sr = (int)sampleRate;
++
++    if ( ioctl( tempDevHandle, SNDCTL_DSP_SPEED, &sr ) < 0) {
++        result = paInvalidSampleRate;
++        goto error;
++    }
++
++    /* reject if there's no sample rate within 1% of the one requested */
++    if( (fabs( sampleRate - (double)sr ) / sampleRate) > 0.01 )
++    {
++        result = paInvalidSampleRate;
++        goto error;
++    }
++
+     /* everything succeeded! */
+ 
+  error:
+@@ -810,9 +855,11 @@ static PaError OpenDevices( const char *idevName, cons
          ENSURE_( *idev = open( idevName, flags ), paDeviceUnavailable );
          PA_ENSURE( ModifyBlocking( *idev, 1 ) ); /* Blocking */
  
@@ -38,7 +99,7 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 08:59:04 jake
      }
      if( odevName )
      {
-@@ -821,9 +830,11 @@ static PaError OpenDevices( const char *idevName, cons
+@@ -821,9 +868,11 @@ static PaError OpenDevices( const char *idevName, cons
              ENSURE_( *odev = open( odevName, flags ), paDeviceUnavailable );
              PA_ENSURE( ModifyBlocking( *odev, 1 ) ); /* Blocking */
  
@@ -50,7 +111,7 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 08:59:04 jake
          }
          else
          {
-@@ -1226,10 +1237,12 @@ static PaError OpenStream( struct PaUtilHostApiReprese
+@@ -1226,10 +1275,12 @@ static PaError OpenStream( struct PaUtilHostApiReprese
          }
      }
  
@@ -63,7 +124,7 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.1.1.1 2007/10/27 08:59:04 jake
  
      /* allocate and do basic initialization of the stream structure */
      PA_UNLESS( stream = (PaOssStream*)PaUtil_AllocateMemory( sizeof(PaOssStream) ), paInsufficientMemory );
-@@ -1942,11 +1955,11 @@ static signed long GetStreamReadAvailable( PaStream* s
+@@ -1942,11 +1993,11 @@ static signed long GetStreamReadAvailable( PaStream* s
  static signed long GetStreamWriteAvailable( PaStream* s )
  {
      PaOssStream *stream = (PaOssStream*)s;

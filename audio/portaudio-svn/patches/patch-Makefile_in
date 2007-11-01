@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/11/01 03:29:54 jakemsr Exp $
+--- Makefile.in.orig	Sun Oct 28 00:13:02 2007
++++ Makefile.in	Sun Oct 28 00:13:24 2007
+@@ -120,7 +120,7 @@ LTOBJS:= $(OBJS:.o=.lo)
+ SUBDIRS =
+ @ENABLE_CXX_TRUE@SUBDIRS += bindings/cpp
+ 
+-all: lib/$(PALIB) all-recursive tests
++all: lib/$(PALIB) all-recursive
+ 
+ tests: bin-stamp $(TESTS)
+ 
