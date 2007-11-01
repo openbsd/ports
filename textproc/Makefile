@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2007/10/25 21:33:57 simon Exp $
+# $OpenBSD: Makefile,v 1.222 2007/11/01 20:24:31 steven Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -127,6 +127,7 @@
      SUBDIR += p5-Text-German
      SUBDIR += p5-Text-Glob
      SUBDIR += p5-Text-LevenshteinXS
+     SUBDIR += p5-Text-Markdown
      SUBDIR += p5-Text-PDF
      SUBDIR += p5-Text-Quoted
      SUBDIR += p5-Text-RecordParser
