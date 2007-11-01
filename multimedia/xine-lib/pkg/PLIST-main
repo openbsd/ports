@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/06/13 10:58:29 jakemsr Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2007/11/01 04:01:36 jakemsr Exp $
 %%i386%%
 bin/xine-config
 include/xine/

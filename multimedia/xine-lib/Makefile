@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2007/10/31 10:55:37 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.21 2007/11/01 04:01:36 jakemsr Exp $
 
-COMMENT=		multimedia decoding library
+COMMENT-main=		multimedia decoding library
+COMMENT-esd=		esound audio output module for xine-lib
+COMMENT-arts=		artsd audio output muodule for xine-lib
 
 V=			1.1.8
 DISTNAME=		xine-lib-${V}
+PKGNAME-main=		xine-lib-${V}p0
+PKGNAME-esd=		xine-lib-esd-${V}
+PKGNAME-arts=		xine-lib-arts-${V}
 CATEGORIES=		multimedia
 SHARED_LIBS=		xine	19.0
 
@@ -17,9 +22,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 
-WANTLIB=		X11 Xau Xdmcp Xext Xinerama Xrandr Xrender \
-			Xv expat faac freetype fontconfig jpeg lcms m \
-			mp3lame usbhid x264 z
+MULTI_PACKAGES=		-main -esd -arts
+
+WANTLIB=		expat fontconfig freetype m z
+WANTLIB-main=		${WANTLIB} X11 Xau Xdmcp Xext Xinerama Xrandr \
+			Xrender Xv faac jpeg lcms mp3lame usbhid x264
+WANTLIB-esd=		${WANTLIB}
+WANTLIB-arts=		${WANTLIB} stdc++ glib-2.0 gmodule-2.0 gthread-2.0
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=		-Di386=1
@@ -28,7 +37,8 @@ PKG_ARGS+=		-Di386=0
 .endif
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		FLAC.>=5::audio/flac \
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			FLAC.>=5::audio/flac \
 			SDL.>=3::devel/sdl \
 			a52::audio/liba52 \
 			avcodec.>=7,avutil.>=2,postproc.>=7::graphics/ffmpeg \
@@ -40,6 +50,16 @@ LIB_DEPENDS=		FLAC.>=5::audio/flac \
 			vorbis.>=4,vorbisenc.>=2::audio/libvorbis \
 			speex.>=3::audio/speex \
 			theora.>=1::multimedia/libtheora
+
+LIB_DEPENDS-esd=	${LIB_DEPENDS} \
+			esd.>=2::audio/esound \
+			audiofile.>=0::devel/libaudiofile \
+			::${BUILD_PKGPATH}
+RUN_DEPENDS-esd=	${RUN_DEPENDS}
+LIB_DEPENDS-arts=	${LIB_DEPENDS} \
+			artsc.>=1::x11/kde/arts3 \
+			::${BUILD_PKGPATH}
+RUN_DEPENDS-arts=	${RUN_DEPENDS}
 
 SHARED_ONLY=		Yes
 USE_X11=		Yes
@@ -66,8 +86,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-pulseaudio \
 			--disable-oss \
 			--without-alsa \
-			--without-arts \
-			--without-esound \
+			--with-esound \
+			--with-arts \
 			--without-jack \
 			--without-imagemagick \
 			--disable-samba \
