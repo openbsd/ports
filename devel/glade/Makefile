@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/06 19:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2007/11/01 12:59:15 steven Exp $
 
 COMMENT=		free user interface builder for GTK+ and GNOME
 
 DISTNAME=		glade-0.6.4
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://glade.gnome.org/
@@ -33,6 +33,8 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	--without-bonobo
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+# avoid bundled libintl headers
+MAKE_FLAGS=		INCLUDES=
 
 WANTLIB=		X11 Xau Xdmcp Xext Xi c glib gmodule iconv intl m
 .if ${FLAVOR:L:Mgnome}
