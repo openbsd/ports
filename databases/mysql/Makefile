@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.134 2007/09/15 22:27:39 simon Exp $
-# Uses pthreads
+# $OpenBSD: Makefile,v 1.135 2007/11/01 23:54:54 merdely Exp $
 
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
+.if ${MACHINE_ARCH} == "m88k"
 BROKEN=		gen_lex_hash hangs
 .endif
 
