@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2007/10/27 13:01:28 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2007/11/01 11:18:05 steven Exp $
 
 COMMENT=	extract, view & test ACE archives
 
@@ -20,7 +20,7 @@ MAKE_FILE=	unix/makefile
 NO_REGRESS=	Yes
 
 pre-build:
-	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} clean
 
 ALL_TARGET=	unace
