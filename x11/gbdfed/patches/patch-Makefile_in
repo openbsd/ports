@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/11/01 18:29:43 naddy Exp $
+--- Makefile.in.orig	Thu Nov  1 19:26:32 2007
++++ Makefile.in	Thu Nov  1 19:26:44 2007
+@@ -32,8 +32,7 @@ CC = @CC@
+ CFLAGS = @XX_CFLAGS@ @CFLAGS@
+ 
+ DEFINES = @DEFINES@ -DG_DISABLE_DEPRECATED \
+-	-DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED \
+-	-DGTK_DISABLE_DEPRECATED
++	-DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED
+ 
+ SRCS = bdf.c bdfcons.c bdffnt.c bdfgname.c bdfgrab.c bdfgrid.c bdfotf.c \
+        bdfpkgf.c bdfpsf.c @HBFSRC@ \
