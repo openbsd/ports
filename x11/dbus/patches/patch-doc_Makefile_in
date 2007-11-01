@@ -1,0 +1,24 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2007/11/01 11:04:28 espie Exp $
+--- doc/Makefile.in.orig	Tue Dec 12 20:41:48 2006
++++ doc/Makefile.in	Thu Nov  1 12:00:18 2007
+@@ -407,16 +407,16 @@ uninstall-am: uninstall-info-am
+ @DBUS_XML_DOCS_ENABLED_TRUE@all-local: $(HTML_FILES)
+ 
+ @DBUS_XML_DOCS_ENABLED_TRUE@dbus-specification.html: dbus-specification.xml
+-@DBUS_XML_DOCS_ENABLED_TRUE@	$(XMLTO) html-nochunks $<
++@DBUS_XML_DOCS_ENABLED_TRUE@	$(XMLTO) html-nochunks $(srcdir)/dbus-specification.xml
+ 
+ @DBUS_XML_DOCS_ENABLED_TRUE@dbus-test-plan.html: dbus-test-plan.xml
+-@DBUS_XML_DOCS_ENABLED_TRUE@	$(XMLTO) html-nochunks $<
++@DBUS_XML_DOCS_ENABLED_TRUE@	$(XMLTO) html-nochunks $(srcdir)/dbus-test-plan.xml
+ 
+ @DBUS_XML_DOCS_ENABLED_TRUE@dbus-tutorial.html: dbus-tutorial.xml
+-@DBUS_XML_DOCS_ENABLED_TRUE@	$(XMLTO) html-nochunks $<
++@DBUS_XML_DOCS_ENABLED_TRUE@	$(XMLTO) html-nochunks $(srcdir)/dbus-tutorial.xml
+ 
+ @DBUS_XML_DOCS_ENABLED_TRUE@dbus-faq.html: dbus-faq.xml
+-@DBUS_XML_DOCS_ENABLED_TRUE@	$(XMLTO) html-nochunks $<
++@DBUS_XML_DOCS_ENABLED_TRUE@	$(XMLTO) html-nochunks $(srcdir)/dbus-faq.xml
+ 
+ maintainer-clean-local:
+ 	rm -f $(HTML_FILES)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/11/01 11:04:28 espie Exp $
 
 COMMENT=		message system
 
@@ -27,7 +27,9 @@ CONFIGURE_ENV=		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread"
 CONFIGURE_ARGS=		--localstatedir=/var \
 			--with-dbus-user=_dbus \
-			--with-xml=expat
+			--with-xml=expat \
+			--disable-xml-docs \
+			--disable-doxygen-docs
 # Tests are disabled as they change the final dbus binaries
 #CONFIGURE_ARGS=		--enable-tests
 #CONFIGURE_ARGS=		--enable-verbose-mode
