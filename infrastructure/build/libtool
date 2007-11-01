@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.6 2007/10/31 21:49:08 steven Exp $
+# $OpenBSD: libtool,v 1.7 2007/11/01 10:39:33 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -107,7 +107,7 @@ $gp->configure(	'no_ignore_case',
 		'no_auto_abbrev',
 		'require_order'
 	);
-$gp->getoptions('config' => \&notyet,
+$gp->getoptions('config' => \&config,
 		'debug' => \$D,
 		'dry-run' => sub { $dry = 1; },
 		'features' => \&features,
@@ -289,7 +289,7 @@ if ($mode eq 'compile') {
 		perform("$ltprog @realinstopts $s $d");
 	}
 	while (my ($d, $s) = each %tosymlink) {
-		perform("cd $dstdir && ln -s $s $d");
+		perform("cd $dstdir && rm -f $d && ln -s $s $d");
 	}
 	if (defined $install_opts{'d'}) {
 		perform("$ltprog @instopts @ARGV");
@@ -452,7 +452,7 @@ if ($mode eq 'compile') {
 			$lainfo{'libdir'} = $instlibdir;
 		}
 		write_la_file($outfile, \%lainfo);
-		perform("cd $odir/$ltdir && ln -s ../$ofile $ofile");
+		perform("cd $odir/$ltdir && rm -f $ofile && ln -s ../$ofile $ofile");
 		if ($shared) {
 			my $lai = "$odir/$ltdir/$ofile".'i';
 			$lainfo{'dependency_libs'} = process_deplibs($deplibs);
@@ -516,6 +516,14 @@ sub perform
 	$performed++;
 }
 
+# XXX incomplete
+sub config
+{
+	print "objdir=$ltdir\n";
+	print "...\n";
+	exit 0;
+}
+
 sub features
 {
 	chomp (my $osver = `uname -r`);	# XXX avoid calling uname
@@ -548,9 +556,8 @@ sub create_symlinks
 	foreach my $f (@$libfiles) {
 		my $libfile = basename $f;
 		print "ln -s $f $dir/$libfile\n" if $D;
-		if (! -f "$dir/$libfile") {
-			symlink abs_path($f), "$dir/$libfile" or die "cannot create symlink: $!\n";
-		}
+		unlink "$dir/$libfile";
+		symlink abs_path($f), "$dir/$libfile" or die "cannot create symlink: $!\n";
 	}
 }
 
