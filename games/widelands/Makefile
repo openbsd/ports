@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/03 13:21:20 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/02 13:12:53 sturm Exp $
 
 COMMENT=	economic and military simulation game
 
 DISTNAME= 	widelands-build-11-source
-PKGNAME=	widelands-0.11p0
+PKGNAME=	widelands-0.11p1
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=	X11 Xext SDL c m png pthread stdc++ usbhid z
+WANTLIB=	SDL c m png pthread stdc++ z
 
 LIB_DEPENDS=	SDL_gfx::devel/sdl-gfx \
 		SDL_image::devel/sdl-image \
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	::devel/scons
 
 MODULES=	devel/gettext
 
-PYTHON_VER=	2.4
+PYTHON_VER=	2.5
 
 WRKDIST=	${WRKDIR}/widelands
 
