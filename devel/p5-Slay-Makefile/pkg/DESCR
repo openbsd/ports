@@ -1,0 +1,2 @@
+Slay::Makefile wrapper allows for the rules to be contained within a
+SlayMakefile file whose syntax is similar to that of a normal Makefile.

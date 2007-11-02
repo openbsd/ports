@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/02 14:47:59 merdely Exp $
+bin/slaymake
+${P5SITE}/Slay/Makefile.pm
+@man man/man1/slaymake.1
+@man man/man3p/Slay::Makefile.3p
