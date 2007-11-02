@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/10/24 22:46:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2007/11/02 10:32:21 sturm Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -27,12 +27,14 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp Xext \
 		pangoft2-1.0 png popt pthread ssl util xml2 z
 
 MODULES=		devel/gettext \
+			lang/python \
 			x11/gnome
 
 BUILD_DEPENDS= 		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme->=2.15.91:x11/gnome/icon-theme
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme->=2.15.91:x11/gnome/icon-theme
+MODPY_RUNDEP=		No
 LIB_DEPENDS=		notify::devel/libnotify \
 			panel-applet-2::x11/gnome/panel
 LIB_DEPENDS-main=	${LIB_DEPENDS} \

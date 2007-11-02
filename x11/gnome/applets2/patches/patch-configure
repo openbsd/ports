@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.11 2007/05/17 14:12:20 jasper Exp $
---- configure.orig	Mon Mar 12 14:04:16 2007
-+++ configure	Thu May 17 16:08:05 2007
+$OpenBSD: patch-configure,v 1.12 2007/11/02 10:32:21 sturm Exp $
+--- configure.orig	Mon Mar 12 07:04:16 2007
++++ configure	Fri Nov  2 03:33:02 2007
+@@ -22266,7 +22266,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+-	for am_cv_pathless_PYTHON in python python2 python2.4 python2.3 python2.2 python2.1 python2.0 python1.6 python1.5 none; do
++	for am_cv_pathless_PYTHON in python2.5 python python2 python2.4 python2.3 python2.2 python2.1 python2.0 python1.6 python1.5 none; do
+ 	  test "$am_cv_pathless_PYTHON" = none && break
+ 	  prog="import sys, string
+ # split strings by '.' and convert to numeric.  Append some zeros
 @@ -22939,6 +22939,7 @@ echo "${ECHO_T}yes" >&6; }
  	:
  fi
