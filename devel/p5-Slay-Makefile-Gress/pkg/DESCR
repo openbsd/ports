@@ -1,0 +1,2 @@
+Slay::Makefile::Gress provides support for running a set of regression
+tests from a .t file by doing builds with a Slay::Makefile file.
