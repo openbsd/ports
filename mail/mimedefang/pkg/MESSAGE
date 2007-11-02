@@ -6,7 +6,7 @@ INPUT_MAIL_FILTER(`mimedefang', \
 	F=T, T=S:360s;R:360s;E:15m')dnl
 
 If you wish to start up mimedefang automatically during system
-startup, add following lines to /etc/rc.local:
+startup, add the following lines to /etc/rc.local:
 
 if [ -f ${SYSCONFDIR}/rc.mimedefang ]; then
 	. ${SYSCONFDIR}/rc.mimedefang

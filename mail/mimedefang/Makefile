@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/27 07:42:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2007/11/02 22:40:03 sthen Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-2.62
-PKGNAME=	${DISTNAME}p1
-CATEGORIES=	mail perl5
+DISTNAME=	mimedefang-2.63
+CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mimedefang.org/
+
+MAINTAINER=	Okan Demirmen <okan@demirmen.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,13 +29,17 @@ CONFIGURE_ARGS=	--with-user=_mdefang \
 
 NO_REGRESS=	Yes
 
+post-build:
+	@sed -e 's,%LOCALBASE%,${LOCALBASE},g' < ${FILESDIR}/rc.mimedefang \
+		> ${WRKSRC}/rc.mimedefang
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mimedefang
 	${INSTALL_DATA} ${WRKSRC}/examples/suggested-minimum-filter-for-windows-clients \
 		${PREFIX}/share/examples/mimedefang/mimedefang-filter
 	${INSTALL_DATA} ${WRKSRC}/SpamAssassin/spamassassin.cf \
 		${PREFIX}/share/examples/mimedefang/sa-mimedefang.cf
-	${INSTALL_SCRIPT} ${FILESDIR}/rc.mimedefang \
+	${INSTALL_SCRIPT} ${WRKSRC}/rc.mimedefang \
 		${PREFIX}/share/examples/mimedefang/
 
 .include <bsd.port.mk>
