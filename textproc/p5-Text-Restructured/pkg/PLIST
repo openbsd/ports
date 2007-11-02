@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/02 14:54:27 merdely Exp $
+bin/prest
+${P5SITE}/Text/Restructured/
+${P5SITE}/Text/Restructured.pm
+${P5SITE}/Text/Restructured/DOM.pm
+${P5SITE}/Text/Restructured/Directive/
+${P5SITE}/Text/Restructured/Directive/code_block.pm
+${P5SITE}/Text/Restructured/Directive/if.pm
+${P5SITE}/Text/Restructured/Directive/perl.pm
+${P5SITE}/Text/Restructured/Directive/rst.st
+${P5SITE}/Text/Restructured/Directive/system.pm
+${P5SITE}/Text/Restructured/Graph.pm
+${P5SITE}/Text/Restructured/PrestConfig.pm
+${P5SITE}/Text/Restructured/Transforms.pm
+${P5SITE}/Text/Restructured/URIre.pm
+${P5SITE}/Text/Restructured/Writer/
+${P5SITE}/Text/Restructured/Writer.pm
+${P5SITE}/Text/Restructured/Writer/dom.wrt
+${P5SITE}/Text/Restructured/Writer/html.wrt
+${P5SITE}/Text/Restructured/Writer/index.wrt
+${P5SITE}/Text/Restructured/Writer/latex.wrt
+${P5SITE}/Text/Restructured/Writer/toc.wrt
+${P5SITE}/Text/Restructured/Writer/xml.wrt
+${P5SITE}/Text/Restructured/Writer/xref.wrt
+${P5SITE}/Text/Restructured/default.css
