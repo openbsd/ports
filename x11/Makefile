@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.314 2007/10/31 07:32:23 eric Exp $
+# $OpenBSD: Makefile,v 1.315 2007/11/02 11:18:25 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -104,6 +104,7 @@
      SUBDIR += kdirstat
      SUBDIR += kmplayer
      SUBDIR += kountdown
+     SUBDIR += krusader
      SUBDIR += lablgtk
      SUBDIR += lesstif
      SUBDIR += libdnd
