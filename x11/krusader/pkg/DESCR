@@ -1,0 +1,9 @@
+Krusader is an advanced twin panel (commander style) file manager for
+KDE similar to Midnight or Total Commander.
+It provides all the file management features you could possibly want:
+extensive archive handling, mounted filesystem support, FTP, advanced
+search module, an internal viewer/editor, directory synchronisation,
+file content comparisons, powerful batch renaming and much much more.
+It supports a wide variety of archive formats and can handle other KIO
+slaves such as smb or fish. It is (almost) completely customizable, very
+user friendly and fast.
