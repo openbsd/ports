@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/06/03 09:23:14 alek Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/11/02 10:10:11 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/Bio/
 lib/python${MODPY_VERSION}/site-packages/Bio/Affy/
 lib/python${MODPY_VERSION}/site-packages/Bio/Affy/CelFile.py
@@ -885,6 +885,7 @@ lib/python${MODPY_VERSION}/site-packages/Martel/optimize.py
 lib/python${MODPY_VERSION}/site-packages/Martel/optimize.pyc
 @comment lib/python${MODPY_VERSION}/site-packages/Martel/setup.py
 @comment lib/python${MODPY_VERSION}/site-packages/Martel/setup.pyc
+lib/python${MODPY_VERSION}/site-packages/biopython-1.41-py${MODPY_VERSION}.egg-info
 share/examples/py-biopython/
 share/examples/py-biopython/Ace/
 share/examples/py-biopython/Ace/contig1.ace
