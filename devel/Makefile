@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.564 2007/10/26 21:22:48 simon Exp $
+# $OpenBSD: Makefile,v 1.565 2007/11/02 14:51:29 merdely Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -450,6 +450,9 @@
      SUBDIR += p5-Set-Object
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Shell-Command
+     SUBDIR += p5-Slay-Makefile
+     SUBDIR += p5-Slay-Makefile-Gress
+     SUBDIR += p5-Slay-Maker
      SUBDIR += p5-Smart-Comments
      SUBDIR += p5-Sort-Key
      SUBDIR += p5-Spiffy
