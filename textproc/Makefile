@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2007/11/01 20:24:31 steven Exp $
+# $OpenBSD: Makefile,v 1.223 2007/11/02 14:57:10 merdely Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -60,7 +60,6 @@
      SUBDIR += ocaml-xml-light
      SUBDIR += openjade
      SUBDIR += ots
-     SUBDIR += p5-ack
      SUBDIR += p5-Blatte
      SUBDIR += p5-CGI-FastTemplate
      SUBDIR += p5-Catalyst-Plugin-Textile
@@ -117,6 +116,7 @@
      SUBDIR += p5-Template-Plugin-Number-Format
      SUBDIR += p5-Template-Provider-Encoding
      SUBDIR += p5-Template-Timer
+     SUBDIR += p5-Text-ASCIIMathML
      SUBDIR += p5-Text-Aligner
      SUBDIR += p5-Text-Aspell
      SUBDIR += p5-Text-Autoformat
@@ -132,6 +132,7 @@
      SUBDIR += p5-Text-Quoted
      SUBDIR += p5-Text-RecordParser
      SUBDIR += p5-Text-Reform
+     SUBDIR += p5-Text-Restructured
      SUBDIR += p5-Text-SimpleTable
      SUBDIR += p5-Text-Table
      SUBDIR += p5-Text-TabularDisplay
@@ -181,6 +182,7 @@
      SUBDIR += p5-XML-XPathEngine
      SUBDIR += p5-XML-XSLT
      SUBDIR += p5-XML-XSPF
+     SUBDIR += p5-ack
      SUBDIR += p5-sdf
      SUBDIR += p5-tkispell
      SUBDIR += par
