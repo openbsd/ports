@@ -1,0 +1,5 @@
+HPLIP is an HP developed solution for printing, scanning, and faxing
+with HP inkjet and laser based printers in Unix.
+The HPLIP project provides printing support for 1,248 printer models,
+including Deskjet, Officejet, Photosmart, PSC (Print Scan Copy),
+Business Inkjet, LaserJet, Edgeline MFP, and LaserJet MFP.

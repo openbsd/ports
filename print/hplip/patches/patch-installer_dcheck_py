@@ -1,0 +1,21 @@
+$OpenBSD: patch-installer_dcheck_py,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
+--- installer/dcheck.py.orig	Sat Oct 27 16:35:40 2007
++++ installer/dcheck.py	Sat Oct 27 16:36:07 2007
+@@ -34,7 +34,7 @@ mod_output = ''
+ def update_ld_output():
+     # For library checks
+     global ld_output
+-    status, ld_output = utils.run('%s -p' % os.path.join(utils.which('ldconfig'), 'ldconfig'), log_output=False)
++    status, ld_output = utils.run('%s -r' % os.path.join(utils.which('ldconfig'), 'ldconfig'), log_output=False)
+ 
+     if status != 0:
+         log.debug("ldconfig failed.")
+@@ -89,7 +89,7 @@ def check_lib(lib, min_ver=0):
+         log.debug("Not found.")
+         return False
+ 
+-def check_file(f, dir="/usr/include"):
++def check_file(f, dir="!!LOCALBASE!!/include"):
+     log.debug("Searching for file '%s' in '%s'..." % (f, dir))
+     for w in utils.walkFiles(dir, recurse=True, abs_paths=True, return_folders=False, pattern=f):
+         log.debug("File found at '%s'" % w)

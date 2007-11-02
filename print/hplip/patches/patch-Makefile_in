@@ -1,0 +1,72 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
+--- Makefile.in.orig	Sat Oct 20 00:38:37 2007
++++ Makefile.in	Tue Oct 23 19:19:30 2007
+@@ -1845,7 +1845,7 @@ lib_LTLIBRARIES = $(am__append_4)
+ @DOC_BUILD_TRUE@www243dir = $(docdir)/install/step4/suse
+ @DOC_BUILD_TRUE@dist_www243_DATA = $(wwwsrc)/install/step4/suse/*
+ @DOC_BUILD_TRUE@www251dir = $(docdir)/install/manual
+-@DOC_BUILD_TRUE@dist_www251_DATA = $(wwwsrc)/install/manual/*
++@DOC_BUILD_TRUE@dist_www251_DATA = $(wwwsrc)/install/manual/*.html
+ @DOC_BUILD_TRUE@www252dir = $(docdir)/install/manual/distros
+ @DOC_BUILD_TRUE@dist_www252_DATA = $(wwwsrc)/install/manual/distros/*
+ @DOC_BUILD_TRUE@www261dir = $(docdir)/install/install
+@@ -1857,7 +1857,7 @@ lib_LTLIBRARIES = $(am__append_4)
+ @DOC_BUILD_TRUE@www5dir = $(docdir)/supported_devices
+ @DOC_BUILD_TRUE@dist_www5_DATA = $(wwwsrc)/supported_devices/*
+ @DOC_BUILD_TRUE@www6dir = $(docdir)/tech_docs
+-@DOC_BUILD_TRUE@dist_www6_DATA = $(wwwsrc)/tech_docs/*
++@DOC_BUILD_TRUE@dist_www6_DATA = $(wwwsrc)/tech_docs/*.html
+ @DOC_BUILD_TRUE@www61dir = $(docdir)/tech_docs/man_pages
+ @DOC_BUILD_TRUE@dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*
+ @DOC_BUILD_TRUE@www7dir = $(docdir)/troubleshooting
+@@ -7102,7 +7102,7 @@ install-data-am: install-cupsextLTLIBRARIES install-di
+ 	install-dist_localzDATA install-dist_modelsDATA \
+ 	install-dist_pcardSCRIPTS install-dist_pclDATA \
+ 	install-dist_pluginsSCRIPTS install-dist_postscriptDATA \
+-	install-dist_prntSCRIPTS install-dist_rulesDATA \
++	install-dist_prntSCRIPTS \
+ 	install-dist_scanSCRIPTS install-dist_uiSCRIPTS \
+ 	install-dist_unrelDATA install-dist_www0DATA \
+ 	install-dist_www1DATA install-dist_www21DATA \
+@@ -7113,8 +7113,8 @@ install-data-am: install-cupsextLTLIBRARIES install-di
+ 	install-dist_www261DATA install-dist_www2DATA \
+ 	install-dist_www3DATA install-dist_www4DATA \
+ 	install-dist_www5DATA install-dist_www61DATA \
+-	install-dist_www6DATA install-dist_www7DATA install-docDATA \
+-	install-hpPROGRAMS install-hplip_confDATA \
++	install-dist_www6DATA install-dist_www7DATA \
++	install-hpPROGRAMS \
+ 	install-hplip_desktopDATA install-hpmudextLTLIBRARIES \
+ 	install-libsane_hpaioLTLIBRARIES install-pcardextLTLIBRARIES \
+ 	install-scanextLTLIBRARIES
+@@ -7249,17 +7249,6 @@ uninstall-am: uninstall-binPROGRAMS uninstall-cupsextL
+ 
+ 
+ install-data-hook: install-foo 
+-#	   If scanner build, add hpaio entry to sane dll.conf.
+-@HPLIP_BUILD_TRUE@	if [ "$(scan_build)" = "yes" ]; then \
+-@HPLIP_BUILD_TRUE@	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
+-@HPLIP_BUILD_TRUE@	   if [ ! -f $(DESTDIR)/etc/sane.d/dll.conf ]; then \
+-@HPLIP_BUILD_TRUE@		  touch $(DESTDIR)/etc/sane.d/dll.conf; \
+-@HPLIP_BUILD_TRUE@	   fi; \
+-@HPLIP_BUILD_TRUE@	   if ! grep ^hpaio $(DESTDIR)/etc/sane.d/dll.conf >/dev/null 2>/dev/null ; then \
+-@HPLIP_BUILD_TRUE@		  echo "Adding hpaio entry to /etc/sane.d/dll.conf." ; \
+-@HPLIP_BUILD_TRUE@		  echo hpaio >>$(DESTDIR)/etc/sane.d/dll.conf ; \
+-@HPLIP_BUILD_TRUE@	   fi \
+-@HPLIP_BUILD_TRUE@	fi
+ #	   Create hp-xxx commands in bindir.
+ @HPLIP_BUILD_TRUE@	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ @HPLIP_BUILD_TRUE@	for i in $(dist_cmd_SCRIPTS); do \
+@@ -7279,12 +7268,7 @@ install-foo:
+ 	if [ "$(foomatic_ppd_install)" = "yes" ]; then \
+ 	   $(mkinstalldirs) $(DESTDIR)$(hpppddir); \
+ 	   $(INSTALL_DATA) $(foomatic_ppd_printers) $(DESTDIR)$(hpppddir); \
+-	   $(INSTALL_DATA) $(foomatic_ps_printers) $(DESTDIR)$(hpppddir); \
+ 	   for i in $(foomatic_ppd_printers); do \
+-		  id=`basename $$i`; \
+-		  gzip -f $(DESTDIR)$(hpppddir)/$$id; \
+-	   done; \
+-	   for i in $(foomatic_ps_printers); do \
+ 		  id=`basename $$i`; \
+ 		  gzip -f $(DESTDIR)$(hpppddir)/$$id; \
+ 	   done; \

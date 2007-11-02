@@ -1,0 +1,52 @@
+$OpenBSD: patch-installer_core_install_py,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
+--- installer/core_install.py.orig	Fri Oct 12 18:50:01 2007
++++ installer/core_install.py	Sat Oct 27 17:03:15 2007
+@@ -182,9 +182,9 @@ class CoreInstall(object):
+             'reportlab':        (False, ['fax'], "Reportlab - PDF library for Python", self.check_reportlab), 
+             'python23':         (True,  ['fax'], "Python 2.3 or greater - Required for fax functionality", self.check_python23),
+ 
+-            'ppdev':            (True,  ['parallel'], "ppdev - Parallel port support kernel module.", self.check_ppdev),
++            'ppdev':            (False,  ['parallel'], "ppdev - Parallel port support kernel module.", self.check_ppdev),
+ 
+-            'pyqt':             (True,  ['gui'], "PyQt - Qt interface for Python", self.check_pyqt),
++            'pyqt':             (False,  ['gui'], "PyQt - Qt interface for Python", self.check_pyqt),
+ 
+             'libnetsnmp-devel': (True,  ['network'], "libnetsnmp-devel - SNMP networking library development files", self.check_libnetsnmp),
+             'libcrypto':        (True,  ['network'], "libcrypto - OpenSSL cryptographic library", self.check_libcrypto),
+@@ -543,23 +543,23 @@ class CoreInstall(object):
+         return check_tool('gcc --version', 0) and check_tool('g++ --version', 0)
+ 
+     def check_make(self):
+-        return check_tool('make --version', 3.0)
++        return check_tool('true', 0)
+ 
+     def check_libusb(self):
+         if not check_lib('libusb'):
+             return False
+ 
+-        return len(locate_file_contains("usb.h", '/usr/include', 'usb_init(void)')) > 0
++        return len(locate_file_contains("usb.h", '!!LOCALBASE!!/include', 'usb_init(void)')) > 0
+         
+ 
+     def check_libjpeg(self):
+         return check_lib("libjpeg") and check_file("jpeglib.h")
+ 
+     def check_libcrypto(self):
+-        return check_lib("libcrypto") and check_file("crypto.h")
++        return True
+ 
+     def check_libpthread(self):
+-        return check_lib("libpthread") and check_file("pthread.h")
++        return True
+ 
+     def check_libnetsnmp(self):
+         return check_lib("libnetsnmp") and check_file("net-snmp-config.h")
+@@ -597,7 +597,7 @@ class CoreInstall(object):
+         return check_lib('libsane')
+ 
+     def check_sane_devel(self):
+-        return len(locate_file_contains("sane.h", '/usr/include', 'extern SANE_Status sane_init')) > 0
++        return len(locate_file_contains("sane.h", '!!LOCALBASE!!/include', 'extern SANE_Status sane_init')) > 0
+ 
+     def check_xsane(self):
+         if os.getenv('DISPLAY'):
