@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/02 14:46:30 merdely Exp $
+${P5SITE}/Slay/
+${P5SITE}/Slay/Maker.pm
+${P5SITE}/Slay/MakerRule.pm
+@man man/man3p/Slay::Maker.3p
+@man man/man3p/Slay::MakerRule.3p

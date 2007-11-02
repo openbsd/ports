@@ -1,0 +1,7 @@
+Slay::Maker is a make engine that uses perl declaration syntax for
+rules, including regular expressions for targets and anonymous subs for
+targets, dependencies, and actions.
+
+This allows you to tightly integrate a make engine in an application and
+to exercise a large amount of control over the make process, taking full
+advantage of Perl code at any point in the make cycle.
