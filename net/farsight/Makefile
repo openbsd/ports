@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/27 23:11:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/02 11:01:49 sturm Exp $
 
 COMMENT=		audio/video communications framework
 
 DISTNAME=		farsight-0.1.25
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	farsight-0.1         0.0      # .2.0
 CATEGORIES=		net
 
@@ -16,10 +17,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/releases/farsight/
 
-WANTLIB=		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pcre z
+WANTLIB=		glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10 \
+			gthread-2.0 m pcre z
 
-LIB_DEPENDS=		gstreamer-0.10::multimedia/gstreamer-0.10/core \
-			xml2::textproc/libxml
+BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS=		xml2::textproc/libxml
+RUN_DEPENDS=		::multimedia/gstreamer-0.10/plugins-base
 
 MODULES=		devel/gettext
 
