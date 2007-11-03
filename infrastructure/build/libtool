@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.8 2007/11/01 17:21:25 steven Exp $
+# $OpenBSD: libtool,v 1.9 2007/11/03 08:47:46 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -377,7 +377,7 @@ if ($mode eq 'compile') {
 	if ($linkmode == PROGRAM) {
 		# XXX give higher priority to dirs of not installed libs
 		# XXX no static linking yet here
-		my @tmpcmd = linkcmds($ofile, $odir, PROGRAM, 1, \@objs);
+		my @tmpcmd = linkcmds($ofile, $ofile, $odir, PROGRAM, 1, \@objs);
 		$cmd = $tmpcmd[0];
 		map { $_ = "-Wl,-rpath,$_" } @Ropts;
 		$cmd .= " @Ropts" if (@Ropts);
@@ -432,19 +432,22 @@ if ($mode eq 'compile') {
 			$lainfo{'library_names'} = $sharedlib;
 			$lainfo{'library_names'} .= " $sharedlib_symlink"
 				if ($opts{'release'});
-			perform(linkcmds($sharedlib, $odir, LIBRARY, 1, \@sobjs));
+			perform(linkcmds($ofile, $sharedlib, $odir, LIBRARY, 1, \@sobjs));
 			print "sharedlib: $sharedlib\n" if $D;
 			($lainfo{'current'}, $lainfo{'age'}) = split /\./, $sover;
 		}
 		if ($static) {
 			$lainfo{'old_library'} = $staticlib;
-			perform(linkcmds($staticlib, $odir, LIBRARY, 0, ($allpicobj) ? \@sobjs : \@objs));
+			perform(linkcmds($ofile, $staticlib, $odir, LIBRARY, 0, ($allpicobj) ? \@sobjs : \@objs));
 			print "staticlib: $staticlib\n" if $D;
 		}
 		$lainfo{'installed'} = 'no';
 		$lainfo{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
-		my $deplibs = join ' ', @deplibs;
-		$lainfo{'dependency_libs'} = $deplibs;
+		my $deplibstring = join ' ', @deplibs;
+		@deplibs = split /\s+/, $deplibstring;
+		my @finaldeplibs = reverse_zap_duplicates(@deplibs);
+		$deplibstring = join ' ', @finaldeplibs;
+		$lainfo{'dependency_libs'} = $deplibstring;
 		if ($opts{'rpath'}) {
 			$lainfo{'libdir'} = $opts{'rpath'};
 		} else {
@@ -455,7 +458,7 @@ if ($mode eq 'compile') {
 		perform("cd $odir/$ltdir && rm -f $ofile && ln -s ../$ofile $ofile");
 		if ($shared) {
 			my $lai = "$odir/$ltdir/$ofile".'i';
-			$lainfo{'dependency_libs'} = process_deplibs($deplibs);
+			$lainfo{'dependency_libs'} = process_deplibs($deplibstring);
 			$lainfo{'installed'} = 'yes';
 			# write .lai file (.la file that will be installed)
 			write_la_file($lai, \%lainfo);
@@ -722,18 +725,21 @@ sub resolve_la
 			next;
 		}
 		my $d = abs_path(dirname($a));
-		$d .= "/$ltdir" if ($lainfo{'installed'} eq 'no');
+		if ($d !~ m/\Q$ltdir\E$/ && $lainfo{'installed'} eq 'no') {
+			$d .= "/$ltdir";
+		}
 		my $dlname = $lainfo{'dlname'};
 		my $oldlib = $lainfo{'old_library'};
 		my $lib;
 		# get the name we need (this may include a -release)
 		if ($dlname) {
-			($lib = $dlname) =~ s/^lib(\S+)\.so(\.\d+\.\d+)?$/$1/;
+			($lib = $dlname) =~ s/^(\S+)\.so(\.\d+\.\d+)?$/$1/;
 		} elsif ($oldlib) {
-			($lib = $oldlib) =~ s/^lib(\S+)\.a$/$1/;
+			($lib = $oldlib) =~ s/^(\S+)\.a$/$1/;
 		} else {
 			die "neither static nor shared library found in $a\n";
 		}
+		$lib =~ s/^lib//;
 		if (!exists $dirs{$d}) {
 			$dirs{$d} = 1;
 		}
@@ -821,7 +827,8 @@ sub parse_linkargs
 						# push @deplibs, @deps;
 						foreach my $d (@deps) {
 							my $k = basename $d;
-							$k =~ s/^lib(\S+)\.so.*$/$1/;
+							$k =~ s/^(\S+)\.so.*$/$1/;
+							$k =~ s/^lib//;
 							$lstring .= "-l$k ";
 						}
 						push @deplibs, $a;
@@ -837,15 +844,19 @@ sub parse_linkargs
 				push @orderedlibs, $key;
 				$a = '';
 			}
-		} elsif ($a && $a =~ m/(\S+\/)*lib(\S+)\.a$/) {
-			if (!exists $libs{$2}) {
-				$libs{$2} = $a;
+		} elsif ($a && $a =~ m/(\S+\/)*(\S+)\.a$/) {
+			my $key = $2;
+			$key =~ s/^lib//;
+			if (!exists $libs{$key}) {
+				$libs{$key} = $a;
 			}
 			if (!$la) {
-				push @orderedlibs, $2;
+				push @orderedlibs, $key;
 				$a = '';
 			}
-		} elsif ($la && $a && $a =~ m/(\S+\/)*lib(\S+)\.la$/) {
+		} elsif ($la && $a && $a =~ m/(\S+\/)*(\S+)\.la$/) {
+			my $key = $2;
+			$key =~ s/^lib//;
 			my %lainfo;
 			my $fulla = abs_path($a);
 			parse_file($fulla, \%lainfo);
@@ -855,10 +866,12 @@ sub parse_linkargs
 				push @deplibs, $fulla;
 			} elsif (exists $lainfo{'old_library'} &&
 				  $lainfo{'old_library'} ne '') {
-				if (!exists $libs{$2}) {
+				if (!exists $libs{$key}) {
 					my $d = abs_path(dirname($a));
-					$d .= "/$ltdir" if ($lainfo{'installed'} eq 'no');
-					$libs{$2} = $d.'/'.$lainfo{'old_library'};
+					if ($d !~ m/\Q$ltdir\E$/ && $lainfo{'installed'} eq 'no') {
+						$d .= "/$ltdir";
+					}
+					$libs{$key} = $d.'/'.$lainfo{'old_library'};
 				}
 				push @deplibs, $lainfo{'dependency_libs'}
 					if (exists $lainfo{'dependency_libs'});
@@ -881,9 +894,10 @@ sub find_la
 	print "searching .la for $l ...\n" if $D;
 	foreach my $d (@dirs) {
 		print "   ... in $d\n" if $D;
-		my $la_candidate = "$d/lib$l.la";
-		if (-f $la_candidate) {
-			return $la_candidate;
+		foreach my $la_candidate ("$d/lib$l.la", "$d/$l.a") {
+			if (-f $la_candidate) {
+				return $la_candidate;
+			}
 		}
 	}
 	print ".la for $l not found!\n" if $D;
@@ -954,7 +968,7 @@ sub process_deplibs
 	my %la_in_ldpath;
 
 	foreach my $lf (@linkflags) {
-		if ($lf =~ m/\/\S+\/(lib\S+\.la)/) {
+		if ($lf =~ m/\/\S+\/(\S+\.la)/) {
 			my $lafile = $1;
 			my %lainfo;
 			parse_file($lf, \%lainfo);
@@ -967,6 +981,7 @@ sub process_deplibs
 # construct linker command (list) for either libraries or programs
 sub linkcmds
 {
+	my $la = shift;
 	my $fname = shift;
 	my $odir = shift;
 	my $lmode = shift;	# LIBRARY or PROGRAM
@@ -993,7 +1008,7 @@ sub linkcmds
 				if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
 					# extract objects from archive
 					my $libfile = basename $a;
-					my $xdir = "$odir/$ltdir/${fname}x/$libfile";
+					my $xdir = "$odir/$ltdir/${la}x/$libfile";
 					extract_archive($xdir, $a);
 					my @kobjs = get_objlist_from_archive($a);
 					map { $_ = "$xdir/$_"; } @kobjs;
@@ -1045,7 +1060,7 @@ sub linkcmds
 			if ($lmode == LIBRARY) {
 				# extract objects from archive
 				my $libfile = basename $a;
-				my $xdir = "$odir/$ltdir/${fname}x/$libfile";
+				my $xdir = "$odir/$ltdir/${la}x/$libfile";
 				extract_archive($xdir, $a);
 				my @kobjs = get_objlist_from_archive($a);
 				map { $_ = "$xdir/$_"; } @kobjs;
