@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.11 2007/11/03 10:15:41 steven Exp $
+# $OpenBSD: libtool,v 1.12 2007/11/03 13:40:08 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -542,7 +542,7 @@ sub features
 	exit 0;
 }
 
-# convert 4:5:8 to 4.5
+# convert 4:5:8 into a list of numbers
 sub parse_version_info
 {
 	my $vinfo = shift;
@@ -967,7 +967,9 @@ sub inspect_lib
 	return @deps;
 }
 
-# convert /a/b/c/libfoo.la to /usr/local/lib/libfoo.la
+# prepare dependency_libs information for the .la file which is installed
+# i.e. remove any .libs directories and use the final libdir for all the
+# .la files
 sub process_deplibs
 {
 	my $deplibline = shift;
@@ -1150,7 +1152,6 @@ sub extract_archive
 	my $archive = shift;
 
 	if (! -d $dir) {
-#		perform("mkdir -p $dir");
 		print "mkdir -p $dir\n" if $D;
 		File::Path::mkpath($dir);
 	}
