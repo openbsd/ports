@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/03 17:00:40 merdely Exp $
+${P5SITE}/Mail/DKIM/
+${P5SITE}/Mail/DKIM.pm
+${P5SITE}/Mail/DKIM/Algorithm/
+${P5SITE}/Mail/DKIM/Algorithm/Base.pm
+${P5SITE}/Mail/DKIM/Algorithm/dk_rsa_sha1.pm
+${P5SITE}/Mail/DKIM/Algorithm/rsa_sha1.pm
+${P5SITE}/Mail/DKIM/Algorithm/rsa_sha256.pm
+${P5SITE}/Mail/DKIM/Canonicalization/
+${P5SITE}/Mail/DKIM/Canonicalization/Base.pm
+${P5SITE}/Mail/DKIM/Canonicalization/DkCommon.pm
+${P5SITE}/Mail/DKIM/Canonicalization/DkimCommon.pm
+${P5SITE}/Mail/DKIM/Canonicalization/dk_nofws.pm
+${P5SITE}/Mail/DKIM/Canonicalization/dk_simple.pm
+${P5SITE}/Mail/DKIM/Canonicalization/nowsp.pm
+${P5SITE}/Mail/DKIM/Canonicalization/relaxed.pm
+${P5SITE}/Mail/DKIM/Canonicalization/simple.pm
+${P5SITE}/Mail/DKIM/Common.pm
+${P5SITE}/Mail/DKIM/DNS.pm
+${P5SITE}/Mail/DKIM/DkSignature.pm
+${P5SITE}/Mail/DKIM/DkimPolicy.pm
+${P5SITE}/Mail/DKIM/Key.pm
+${P5SITE}/Mail/DKIM/KeyValueList.pm
+${P5SITE}/Mail/DKIM/MessageParser.pm
+${P5SITE}/Mail/DKIM/Policy.pm
+${P5SITE}/Mail/DKIM/PrivateKey.pm
+${P5SITE}/Mail/DKIM/PublicKey.pm
+${P5SITE}/Mail/DKIM/Signature.pm
+${P5SITE}/Mail/DKIM/Signer.pm
+${P5SITE}/Mail/DKIM/SignerPolicy.pm
+${P5SITE}/Mail/DKIM/TextWrap.pm
+${P5SITE}/Mail/DKIM/Verifier.pm
+@man man/man3p/Mail::DKIM.3p
+@man man/man3p/Mail::DKIM::Algorithm::Base.3p
+@man man/man3p/Mail::DKIM::Canonicalization::Base.3p
+@man man/man3p/Mail::DKIM::Canonicalization::DkimCommon.3p
+@man man/man3p/Mail::DKIM::DkSignature.3p
+@man man/man3p/Mail::DKIM::DkimPolicy.3p
+@man man/man3p/Mail::DKIM::Policy.3p
+@man man/man3p/Mail::DKIM::Signature.3p
+@man man/man3p/Mail::DKIM::Signer.3p
+@man man/man3p/Mail::DKIM::SignerPolicy.3p
+@man man/man3p/Mail::DKIM::Verifier.3p

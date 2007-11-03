@@ -1,0 +1,5 @@
+This module implements the various components of the DKIM and DomainKeys
+message-signing and verifying standards for Internet mail. It currently
+tries to implement these Internet Drafts:
+ * draft-ietf-dkim-base-10
+ * draft-delany-domainkeys-base
