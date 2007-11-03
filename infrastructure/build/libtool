@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.10 2007/11/03 09:20:34 steven Exp $
+# $OpenBSD: libtool,v 1.11 2007/11/03 10:15:41 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -404,10 +404,14 @@ if ($mode eq 'compile') {
 		my $sover = '0.0';
 		# environment overrides -version-info
 		(my $envlibname = $libname) =~ s/[.+-]/_/g;
+		my ($current, $revision, $age) = (0, 0, 0);
 		if ($ENV{"${envlibname}_ltversion"}) {
 			$sover = $ENV{"${envlibname}_ltversion"};
+			($current, $revision) = split /\./, $sover;
+			$age = 0;
 		} elsif ($opts{'version-info'}) {
-			$sover = parse_version_info($opts{'version-info'});
+			($current, $revision, $age) = parse_version_info($opts{'version-info'});
+			$sover = "$current.$revision";
 		}
 		if ($opts{'release'}) {
 			$sharedlib_symlink = $sharedlib;
@@ -434,7 +438,9 @@ if ($mode eq 'compile') {
 				if ($opts{'release'});
 			perform(linkcmds($ofile, $sharedlib, $odir, LIBRARY, 1, \@sobjs));
 			print "sharedlib: $sharedlib\n" if $D;
-			($lainfo{'current'}, $lainfo{'age'}) = split /\./, $sover;
+			$lainfo{'current'} = $current;
+			$lainfo{'revision'} = $revision;
+			$lainfo{'age'} = $age;
 		}
 		if ($static) {
 			$lainfo{'old_library'} = $staticlib;
@@ -541,8 +547,8 @@ sub parse_version_info
 {
 	my $vinfo = shift;
 
-	if ($vinfo =~ m/(\d+):(\d+):\d+/) {
-		return "$1.$2";
+	if ($vinfo =~ m/(\d+):(\d+):(\d+)/) {
+		return ($1, $2, $3);
 	} else {
 		die "error parsing -version-info $vinfo\n";
 	}
@@ -597,8 +603,10 @@ sub write_la_file
 	my $staticlibname = $lainfo->{'old_library'} || '';
 	my $librarynames = $lainfo->{'library_names'} || '';
 	my $deplibs = $lainfo->{'dependency_libs'};
-	my $current = $lainfo->{'current'} || '';
-	my $age = $lainfo->{'age'} || '';
+	my ($current, $revision, $age) = ('', '', '');
+	$current = $lainfo->{'current'} if (defined $lainfo->{'current'});
+	$revision = $lainfo->{'revision'} if (defined $lainfo->{'revision'});
+	$age = $lainfo->{'age'} if (defined $lainfo->{'age'});
 	my $installed = $lainfo->{'installed'};
 	my $shouldnotlink = $lainfo->{'shouldnotlink'};
 	my $libdir = $lainfo->{'libdir'};
@@ -627,7 +635,7 @@ dependency_libs='$deplibs'
 # Version information for $sharedlibname
 current=$current
 age=$age
-revision=0
+revision=$revision
 
 # Is this an already installed library?
 installed=$installed
