@@ -1,24 +1,6 @@
-$OpenBSD: patch-acinclude_m4,v 1.4 2007/06/09 23:10:45 espie Exp $
+$OpenBSD: patch-acinclude_m4,v 1.5 2007/11/03 08:04:40 steven Exp $
 --- acinclude.m4.orig	Wed May 30 23:53:52 2007
 +++ acinclude.m4	Fri Jun  1 00:53:23 2007
-@@ -4624,8 +4624,7 @@ fi
- 
- AC_DEFUN([KDE_CHECK_PYTHON],
- [
--  KDE_CHECK_PYTHON_INTERN("2.5",
--    [KDE_CHECK_PYTHON_INTERN("2.4",
-+    KDE_CHECK_PYTHON_INTERN("2.4",
-      [KDE_CHECK_PYTHON_INTERN("2.3", 
-        [KDE_CHECK_PYTHON_INTERN("2.2", 
-          [KDE_CHECK_PYTHON_INTERN("2.1", 
-@@ -4635,7 +4634,6 @@ AC_DEFUN([KDE_CHECK_PYTHON],
-          ])
-        ])
-      ])
--  ])
- ])
- 
- AC_DEFUN([KDE_CHECK_STL],
 @@ -6644,6 +6642,19 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [dnl
      lt_cv_sys_max_cmd_len=8192;
      ;;
