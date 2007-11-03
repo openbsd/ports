@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/24 08:00:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/11/03 11:42:35 ajacoutot Exp $
 
 COMMENT=	simple GTK+ text editor
 
 DISTNAME=	leafpad-0.8.12
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors x11
 
 HOMEPAGE=	http://tarot.freeshell.org/leafpad/
@@ -17,10 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://savannah.nongnu.org/download/leafpad/
 
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender atk-1.0 c cairo expat fontconfig freetype \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png z
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		png z
 
 MODULES=	devel/gettext
 
