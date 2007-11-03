@@ -1,0 +1,44 @@
+$OpenBSD: patch-readsmb_c,v 1.1 2007/11/03 15:25:38 naddy Exp $
+--- readsmb.c.orig	Sat Nov  3 16:24:16 2007
++++ readsmb.c	Sat Nov  3 16:24:16 2007
+@@ -44,16 +44,17 @@ be
+ #include <stdio.h>
+ #include <string.h>
+ #include <unistd.h>
+-#include <asm/signal.h>
+-#ifdef __FreeBSD__
++#include <sys/param.h>
++#include <signal.h>
++#ifdef BSD
+ #include <sys/socket.h>
+-#endif /* __FreeBSD__ */
++#endif /* BSD */
+ #ifdef __sun                    /* Solaris 2.x */
+ #define u_int32_t uint32_t
+ #include <sys/socket.h>
+-#endif /* Not FreeBSD, not Solaris.  Our default is Linux */
++#endif /* Not BSD, not Solaris.  Our default is Linux */
+ #include <net/if.h>
+-#include "pcap.h"
++#include <pcap.h>
+ 
+ #define FILTER_CMD      "src port 139 or dst port 139"
+ #define TRUE    (1)
+@@ -86,7 +87,7 @@ eth0 */
+ int current_pkt_type = 0;
+ int neg_prot, pw_offset, sk_offset, user_offset;
+ 
+-void *
++void
+ killed (int sig)
+ {
+   fflush (log);
+@@ -330,7 +331,7 @@ num5, num6);
+   free (pc6);
+   return (lmhash);
+ }
+-void
++int
+ main (int argc, char **argv)
+ {
+   char *cur_pkt, *next_pkt;

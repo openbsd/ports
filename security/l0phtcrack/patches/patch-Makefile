@@ -1,0 +1,58 @@
+$OpenBSD: patch-Makefile,v 1.1 2007/11/03 15:25:38 naddy Exp $
+--- Makefile.orig	Sat Nov  3 16:24:16 2007
++++ Makefile	Sat Nov  3 16:24:16 2007
+@@ -2,15 +2,15 @@
+ 
+ # C compiler
+ #CC=cc
+-CC=gcc
++#CC=gcc
+ 
+ # Uncomment the following to add symbols to the code for debugging
+-DEBUG=-g -Wall 
++#DEBUG=-g -Wall 
+ #DEBUG=-D_DEBUG
+ 
+ # Optimization for the compiler
+ #OPTIMIZE=
+-OPTIMIZE=-O2
++#OPTIMIZE=-O2
+ 
+ # Choose your architecture
+ #  note that if you are on a big-endian machine like SUN's
+@@ -18,9 +18,9 @@ OPTIMIZE=-O2
+ #  the correct order yet. You're on your own right now.
+ #
+ # FreeBSD
+-ARCH=-DMPU8086 
+-STATIC=
+-XLIBS=
++#ARCH=-DMPU8086 
++#STATIC=
++#XLIBS=
+ #
+ # SUNOS
+ #ARCH=-DBIGENDIAN
+@@ -47,13 +47,18 @@ XLIBS=
+ #OPTIMIZE=
+ #XLIBS=
+ 
+-CFLAGS= $(DEBUG) $(OPTIMIZE) $(ARCH) $(VISUAL) $(PERMUTE) $(STATIC) 
++#CFLAGS= $(DEBUG) $(OPTIMIZE) $(ARCH) $(VISUAL) $(PERMUTE) $(STATIC) 
+ 
+-OBJS = des_enc.o ecb_enc.o llist.o md4.o util.o ztest.o set_key.o chal_resp.o
++OBJS = llist.o md4.o util.o ztest.o set_key.o chal_resp.o
+ 
++all:	lc readsmb
++
+ lc:	$(OBJS)
+-	$(CC) $(CFLAGS) $(XLIBS) -o lc_CLI $(OBJS)
++	$(CC) $(CFLAGS) $(XLIBS) -o lc $(OBJS) -ldes
+ 
++readsmb: readsmb.c
++	$(CC) -o $@ readsmb.c -lpcap
++
+ clean:
+-	rm -f core *.o lc_CLI
++	rm -f core *.o lc readsmb
+ 

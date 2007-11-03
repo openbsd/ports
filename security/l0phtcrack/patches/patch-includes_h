@@ -1,0 +1,22 @@
+$OpenBSD: patch-includes_h,v 1.1 2007/11/03 15:25:38 naddy Exp $
+--- includes.h.orig	Sat Nov  3 16:24:16 2007
++++ includes.h	Sat Nov  3 16:24:16 2007
+@@ -1,9 +1,17 @@
+ #include "md4.h"
+-#include "des.h"
++#include <des.h>
+ #include <memory.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <ctype.h>
++#include <machine/endian.h>
++
++/* XXX */
++#if BYTE_ORDER == BIG_ENDIAN
++# define BIGENDIAN
++#else
++# define MPU8086
++#endif
+ 
+ typedef short int16;
+ typedef int int32;
