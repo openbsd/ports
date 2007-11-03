@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.9 2007/11/03 08:47:46 steven Exp $
+# $OpenBSD: libtool,v 1.10 2007/11/03 09:20:34 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -968,7 +968,9 @@ sub process_deplibs
 	my %la_in_ldpath;
 
 	foreach my $lf (@linkflags) {
-		if ($lf =~ m/\/\S+\/(\S+\.la)/) {
+		if ($lf =~ m/-L\S+\Q$ltdir\E$/) {
+			$lf = '';
+		} elsif ($lf =~ m/\/\S+\/(\S+\.la)/) {
 			my $lafile = $1;
 			my %lainfo;
 			parse_file($lf, \%lainfo);
