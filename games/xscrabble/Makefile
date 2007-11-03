@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 18:01:04 simon Exp $
+# $OpenBSD: Makefile,v 1.21 2007/11/03 15:20:37 naddy Exp $
 
 COMMENT=	X11 version of the popular board game
 
@@ -17,6 +17,9 @@ WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c
 CONFIGURE_STYLE=imake noman
 USE_X11=	Yes
 NO_REGRESS=	Yes
+
+post-extract:
+	@rm -f ${WRKSRC}/Xc/*.orig
 
 pre-configure:
 	@/usr/bin/perl -pi.bak -e "s|\@XSCRABBLEDIR\@|${PREFIX}/lib/X11/xscrabble|;" \
