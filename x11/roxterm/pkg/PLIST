@@ -1,15 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/31 07:30:06 eric Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/04 16:09:15 eric Exp $
 bin/roxterm
 bin/roxterm-config
 share/applications/
 share/applications/roxterm.desktop
 share/doc/roxterm/
-share/doc/roxterm/AUTHORS
-share/doc/roxterm/COPYING
-share/doc/roxterm/Changes
-share/doc/roxterm/NEWS
-share/doc/roxterm/README
-share/doc/roxterm/TODO
 share/doc/roxterm/imgs/
 share/doc/roxterm/imgs/project-support.jpg
 share/doc/roxterm/imgs/roxterm_logo.png
