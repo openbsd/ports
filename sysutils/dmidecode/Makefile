@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/04 19:51:29 aanriot Exp $
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	dump DMI/SMBIOS contents in human-readable format
-DISTNAME=	dmidecode-2.6
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	dmidecode-2.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://savannah.nongnu.org/download/dmidecode/
 
@@ -20,7 +19,7 @@ NO_REGRESS=	Yes
 WANTLIB=	c
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dmidecode
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dmidecode
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dmidecode/
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dmidecode/
 
 .include <bsd.port.mk>
