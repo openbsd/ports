@@ -1,7 +1,7 @@
---- Makefile.orig	Mon Feb 20 16:30:31 2006
-+++ Makefile	Sun Apr  2 12:57:56 2006
-@@ -63,7 +63,7 @@ distname = evilwm-$(version)
- #DEFINES += -DXDEBUG	# show some X calls
+--- Makefile.orig	Mon Jun 18 14:29:22 2007
++++ Makefile	Sun Nov  4 10:39:02 2007
+@@ -71,7 +71,7 @@ distname = evilwm-$(version)
+ #DEFINES += -DXDEBUG  # show some X calls
  
  DEFINES += -DVERSION=\"$(version)\" $(DEBIAN)
 -CFLAGS  += $(INCLUDES) $(DEFINES) -Os -Wall
