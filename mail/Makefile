@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2007/11/03 17:01:49 merdely Exp $
+# $OpenBSD: Makefile,v 1.197 2007/11/04 16:53:35 bernd Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -164,6 +164,7 @@
      SUBDIR += relaydb
      SUBDIR += roundcubemail
      SUBDIR += ruby-actionmailer
+     SUBDIR += ruby-rmail
      SUBDIR += signify
      SUBDIR += sma
      SUBDIR += smsmail
