@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/11/04 16:27:53 merdely Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/Server/
 ${P5SITE}/Net/Server.pm
+${P5SITE}/Net/Server.pod
 ${P5SITE}/Net/Server/Daemonize.pm
 ${P5SITE}/Net/Server/Fork.pm
 ${P5SITE}/Net/Server/INET.pm
