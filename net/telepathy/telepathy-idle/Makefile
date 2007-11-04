@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/30 13:07:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/04 22:20:35 steven Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
 DISTNAME=		telepathy-idle-0.1.2
-PKGNAME= 		${DISTNAME}p0
+PKGNAME= 		${DISTNAME}p1
 
 MASTER_SITES=		http://telepathy.freedesktop.org/releases/telepathy-idle/
 
@@ -20,8 +20,7 @@ LIB_DEPENDS=		telepathy-glib::net/telepathy/telepathy-glib
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" \
