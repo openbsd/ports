@@ -1,20 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/04 15:47:45 merdely Exp $
 bin/arm2hpdl
 bin/foo2hp
 bin/foo2hp2600-wrapper
 bin/foo2lava
 bin/foo2lava-wrapper
+bin/foo2oak
 bin/foo2oak-wrapper
 bin/foo2qpdl
 bin/foo2qpdl-wrapper
+bin/foo2slx
+bin/foo2slx-wrapper
 bin/foo2xqx
 bin/foo2xqx-wrapper
 bin/foo2zjs
-bin/foo2zjs-icc2ps
+bin/foo2zjs-pstops
 bin/foo2zjs-wrapper
 bin/lavadecode
+bin/oakdecode
 bin/opldecode
 bin/qpdldecode
+bin/slxdecode
 bin/xqxdecode
 bin/zjsdecode
 @man man/man1/foo2hp.1
@@ -25,6 +30,8 @@ bin/zjsdecode
 @man man/man1/foo2oak.1
 @man man/man1/foo2qpdl-wrapper.1
 @man man/man1/foo2qpdl.1
+@man man/man1/foo2slx-wrapper.1
+@man man/man1/foo2slx.1
 @man man/man1/foo2xqx-wrapper.1
 @man man/man1/foo2xqx.1
 @man man/man1/foo2zjs-wrapper.1
@@ -33,6 +40,7 @@ bin/zjsdecode
 @man man/man1/oakdecode.1
 @man man/man1/opldecode.1
 @man man/man1/qpdldecode.1
+@man man/man1/slxdecode.1
 @man man/man1/xqxdecode.1
 @man man/man1/zjsdecode.1
 share/doc/foo2zjs/
@@ -69,6 +77,7 @@ share/foo2zjs/db/source/PPD/HP-LaserJet_M1005_MFP.ppd.gz
 share/foo2zjs/db/source/PPD/KonicaMinolta-magicolor_2480_MF.ppd.gz
 share/foo2zjs/db/source/PPD/KonicaMinolta-magicolor_2490_MF.ppd.gz
 share/foo2zjs/db/source/PPD/KonicaMinolta-magicolor_2530_DL.ppd.gz
+share/foo2zjs/db/source/PPD/Lexmark-C500.ppd.gz
 share/foo2zjs/db/source/PPD/Minolta-Color_PageWorks_Pro_L.ppd.gz
 share/foo2zjs/db/source/PPD/Minolta-magicolor_2200_DL.ppd.gz
 share/foo2zjs/db/source/PPD/Minolta-magicolor_2300_DL.ppd.gz
@@ -84,6 +93,7 @@ share/foo2zjs/db/source/driver/foo2hp.xml
 share/foo2zjs/db/source/driver/foo2lava.xml
 share/foo2zjs/db/source/driver/foo2oak.xml
 share/foo2zjs/db/source/driver/foo2qpdl.xml
+share/foo2zjs/db/source/driver/foo2slx.xml
 share/foo2zjs/db/source/driver/foo2xqx.xml
 share/foo2zjs/db/source/driver/foo2zjs.xml
 share/foo2zjs/db/source/opt/
@@ -116,6 +126,12 @@ share/foo2zjs/db/source/opt/foo2qpdl-MediaType.xml
 share/foo2zjs/db/source/opt/foo2qpdl-PageSize.xml
 share/foo2zjs/db/source/opt/foo2qpdl-Quality.xml
 share/foo2zjs/db/source/opt/foo2qpdl-Resolution.xml
+share/foo2zjs/db/source/opt/foo2slx-ColorMode.xml
+share/foo2zjs/db/source/opt/foo2slx-ICM.xml
+share/foo2zjs/db/source/opt/foo2slx-InputSlot.xml
+share/foo2zjs/db/source/opt/foo2slx-MediaType.xml
+share/foo2zjs/db/source/opt/foo2slx-PageSize.xml
+share/foo2zjs/db/source/opt/foo2slx-Resolution.xml
 share/foo2zjs/db/source/opt/foo2xqx-Duplex.xml
 share/foo2zjs/db/source/opt/foo2xqx-InputSlot.xml
 share/foo2zjs/db/source/opt/foo2xqx-MediaType.xml
@@ -149,6 +165,7 @@ share/foo2zjs/db/source/printer/HP-LaserJet_M1005_MFP.xml
 share/foo2zjs/db/source/printer/KonicaMinolta-magicolor_2480_MF.xml
 share/foo2zjs/db/source/printer/KonicaMinolta-magicolor_2490_MF.xml
 share/foo2zjs/db/source/printer/KonicaMinolta-magicolor_2530_DL.xml
+share/foo2zjs/db/source/printer/Lexmark-C500.xml
 share/foo2zjs/db/source/printer/Minolta-Color_PageWorks_Pro_L.xml
 share/foo2zjs/db/source/printer/Minolta-magicolor_2200_DL.xml
 share/foo2zjs/db/source/printer/Minolta-magicolor_2300_DL.xml

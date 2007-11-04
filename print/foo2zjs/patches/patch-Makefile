@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
---- Makefile.orig	Wed Jul 18 20:34:22 2007
-+++ Makefile	Tue Sep 25 17:10:02 2007
+$OpenBSD: patch-Makefile,v 1.2 2007/11/04 15:47:45 merdely Exp $
+--- Makefile.orig	Sat Nov  3 05:22:39 2007
++++ Makefile	Sat Nov  3 17:19:32 2007
 @@ -6,10 +6,6 @@ SYSNAME := $(shell uname -n)
  # No version number yet...
  VERSION=0.0
@@ -12,10 +12,10 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  # Pathnames for this package...
  BIN=$(PREFIX)/bin
  SHAREZJS=$(PREFIX)/share/foo2zjs
-@@ -18,11 +14,11 @@ SHAREHP=$(PREFIX)/share/foo2hp
- SHAREXQX=$(PREFIX)/share/foo2xqx
+@@ -19,11 +15,11 @@ SHAREXQX=$(PREFIX)/share/foo2xqx
  SHARELAVA=$(PREFIX)/share/foo2lava
  SHAREQPDL=$(PREFIX)/share/foo2qpdl
+ SHARESLX=$(PREFIX)/share/foo2slx
 -MANDIR=$(PREFIX)/share/man
 +MANDIR=$(PREFIX)/man
  DOCDIR=$(PREFIX)/share/doc/foo2zjs/
@@ -26,7 +26,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  
  # User ID's
  LPuid=-olp
-@@ -35,6 +31,10 @@ ifeq ($(UNAME),FreeBSD)
+@@ -40,6 +36,10 @@ ifeq ($(UNAME),OpenBSD)
      LPuid=-oroot
      LPgid=-gwheel
  endif
@@ -37,8 +37,8 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  # If we aren't root, don't try to set ownership
  ifneq ($(EUID),0)
      LPuid=
-@@ -46,6 +46,9 @@ MODTIME= date -d "1/1/1970 utc + `stat -t $$1 | cut -f
- ifeq ($(UNAME),FreeBSD)
+@@ -54,6 +54,9 @@ endif
+ ifeq ($(UNAME),OpenBSD)
      MODTIME= stat -f "%Sm" -t "%a %b %d %T %Y" $$1
  endif
 +ifeq ($(UNAME),OpenBSD)
@@ -47,7 +47,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  ifeq ($(UNAME),Darwin)
      MODTIME= stat -f "%Sm" -t "%a %b %d %T %Y" $$1
  endif
-@@ -196,7 +199,6 @@ ifeq ($(UNAME),Linux)
+@@ -210,7 +213,6 @@ ifeq ($(UNAME),Linux)
  endif
  
  # Compiler flags
@@ -55,7 +55,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  #CFLAGS +=	-g
  
  #
-@@ -388,7 +390,7 @@ opldecode: opldecode.o $(LIBJBG)
+@@ -444,7 +446,7 @@ slxdecode: slxdecode.o $(LIBJBG)
  #
  # Installation rules
  #
@@ -64,7 +64,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  	    install-crd install-foo install-ppd install-man install-doc
  	#
  	# If you use CUPS, then restart the spooler:
-@@ -434,10 +436,6 @@ install-prog:
+@@ -493,10 +495,6 @@ install-prog:
  	install -d $(SHAREZJS)/
  	install -c -m 644 gamma.ps $(SHAREZJS)/
  	install -c -m 644 gamma-lookup.ps $(SHAREZJS)/
@@ -75,7 +75,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  
  install-foo:
  	#
-@@ -450,6 +448,7 @@ install-foo:
+@@ -509,6 +507,7 @@ install-foo:
  	#
  	# Install current database files
  	#
@@ -83,7 +83,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  	@if [ -d $(FOODB) ]; then \
  	    for dir in driver printer opt; do \
  		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
-@@ -476,40 +475,6 @@ install-foo:
+@@ -535,40 +534,6 @@ install-foo:
  	    foomatic-combo-xml -O >overview.xml; \
  	fi
  
@@ -124,24 +124,24 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  install-extra:
  	#
  	# Install extra files (ICM and firmware), if any exist here.
-@@ -558,33 +523,33 @@ install-extra:
+@@ -629,34 +594,33 @@ install-extra:
  	    fi; \
  	done
  
 +install-icc2ps:
-+	#
-+	# Install ICM to Postscript file conversion utility
-+	#
-+	cd icc2ps; $(MAKE) PREFIX=$(PREFIX) install
++       #
++       # Install ICM to Postscript file conversion utility
++       #
++       cd icc2ps; $(MAKE) PREFIX=$(PREFIX) install
 +
 +install-crd:
-+	#
-+	# Install prebuilt CRD files (from m2300w project)
-+	#
++       #
++       # Install prebuilt CRD files (from m2300w project)
++       #
 +	install -d $(SHAREZJS)/
 +	install $(LPuid) $(LPgid) -m 775 -d $(SHAREZJS)/crd/
 +	for i in crd/zjs/*.*; do \
-+	    install -c -m 644 $$i $(SHAREZJS)/crd/; \
++      	  install -c -m 644 $$i $(SHAREZJS)/crd/; \
 +	done
 +
  MODEL=/usr/share/cups/model
@@ -158,6 +158,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
 -	    find $(PPD) -name '*foo2xqx*' | xargs rm -f; \
 -	    find $(PPD) -name '*foo2lava*' | xargs rm -f; \
 -	    find $(PPD) -name '*foo2qpdl*' | xargs rm -f; \
+-	    find $(PPD) -name '*foo2slx*' | xargs rm -f; \
 -            [ -d $(PPD)/foo2zjs ] || mkdir $(PPD)/foo2zjs; \
 +	mkdir -p $(LOCALMODEL)
 +	if [ -d $(LOCALMODEL) ]; then \
@@ -177,7 +178,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
  		gzip < $$ppd > $(LOCALMODEL)/$$ppd.gz; \
  	    done; \
  	fi
-@@ -944,11 +909,8 @@ install-doc: doc
+@@ -1027,11 +991,8 @@ install-doc: doc
  	#
  	install -d -m 755 $(DOCDIR)
  	install -c -m 644 manual.pdf $(DOCDIR)

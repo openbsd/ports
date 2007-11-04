@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/04 15:47:45 merdely Exp $
 
 COMMENT=		driver for ZjStream wire protocol compatible printers
 
-VERSION=		20070901
+VERSION=		20071102
 DISTNAME=		foo2zjs-${VERSION}
 CATEGORIES=		print
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m 
+WANTLIB=		c
 
 MASTER_SITES=		http://bigio.snb.it/openbsd/distfiles/ \
 			http://openbsd.dead-parrot.de/distfiles/ \
