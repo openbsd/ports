@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2007/07/23 16:34:22 rui Exp $
---- configure.orig	Tue Jul 17 21:46:59 2007
-+++ configure	Mon Jul 23 11:10:44 2007
+$OpenBSD: patch-configure,v 1.7 2007/11/04 08:39:20 rui Exp $
+--- configure.orig	Sun Oct 28 11:18:29 2007
++++ configure	Thu Nov  1 13:44:09 2007
 @@ -17576,7 +17576,7 @@ _ACEOF
  # Set CFLAGS _after_ all the above checks, since our warnings are stricter
  # than autoconf's macros like.
