@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
-lib/python${MODPY_VERSION}/site-packages/_renderPM.so
