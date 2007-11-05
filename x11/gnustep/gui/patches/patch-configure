@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2007/11/05 22:52:58 ajacoutot Exp $
+--- configure.orig	Mon Nov  5 23:48:54 2007
++++ configure	Mon Nov  5 23:50:00 2007
+@@ -7088,7 +7088,7 @@ if test "${ac_cv_lib_cups_cupsServer+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcups  $LIBS"
++LIBS="$GSCUPS_LIBS  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF

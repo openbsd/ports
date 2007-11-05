@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/25 06:10:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/05 22:52:58 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME=	gnustep-gui-0.12.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gnustep-gui 0.12	# .0.12
 CATEGORIES=	devel
 
