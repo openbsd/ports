@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.13 2007/11/05 11:27:34 steven Exp $
+# $OpenBSD: libtool,v 1.14 2007/11/05 12:15:35 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -135,7 +135,7 @@ if (!($mode && grep { $_ eq $mode } @valid_modes)) {
 }
 
 # from here, options may be intermixed with arguments
-$gp->configure('no_ignore_case', 'pass_through', 'no_auto_abbrev', 'permute');
+$gp->configure('permute');
 
 if ($mode eq 'compile') {
 	# deal with multi-arg ltprog
@@ -143,17 +143,28 @@ if ($mode eq 'compile') {
 		my $arg = shift @ARGV;
 		$ltprog .= " $arg";
 	}
-	my $cmd;
-	# assume we need to build pic objects
-	$shared = 1 if (!$noshared);
-	$static = 0 if ($shared && grep { $_ eq 'disable-static' } @tags);
-	$shared = 0 if ($static && grep { $_ eq 'disable-shared' } @tags);
 	$gp->getoptions('o=s'		=> \$opts{'o'},
 			'prefer-pic'	=> \$opts{'prefer-pic'},
 			'prefer-non-pic'=> \$opts{'prefer-non-pic'},
 			'static'	=> \$opts{'static'},
 			);
-	# XXX options ignored: prefer-pic, prefer-non-pic
+	my $cmd;
+	my $pic = 0;
+	my $nonpic = 1;
+	# assume we need to build pic objects
+	$pic = 1 if (!$noshared);
+	if ($opts{'prefer-pic'} && $opts{'prefer-non-pic'}) {
+		die "Can't use -prefer-pic and -prefer-non-pic together!\n";
+	}
+	$nonpic = 0 if ($pic && grep { $_ eq 'disable-static' } @tags);
+	$pic = 0 if ($nonpic && grep { $_ eq 'disable-shared' } @tags);
+	if ($opts{'prefer-pic'} && !$noshared) {
+		$pic = 1; $nonpic = 0;
+	} elsif ($opts{'prefer-non-pic'}) {
+		$pic = 0; $nonpic = 1;
+	}
+	$nonpic = 1 if ($opts{'static'});
+
 	my $outfile = $opts{'o'};
 	my $srcfile;
 	# XXX check whether -c flag is present and if not, die?
@@ -188,8 +199,7 @@ if ($mode eq 'compile') {
 	handle_special_chars(\@ARGV);
 
 	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
-	# pic object
-	if ($shared) {
+	if ($pic) {
 		$cmd = $ltprog;
 		$cmd .= " @ARGV" if (@ARGV);
 		$cmd .= " $picflags";
@@ -198,8 +208,7 @@ if ($mode eq 'compile') {
 		$cmd .= $picobj;
 		perform($cmd);
 	}
-	# non-pic object
-	if ($static) {
+	if ($nonpic) {
 		$cmd = $ltprog;
 		$cmd .= " @ARGV" if (@ARGV);
 		$cmd .= " -o ";
