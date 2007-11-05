@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.315 2007/11/02 11:18:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.316 2007/11/05 20:02:51 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -199,6 +199,7 @@
      SUBDIR += tilda
      SUBDIR += tk
      SUBDIR += tktable
+     SUBDIR += transset-df
      SUBDIR += trayer
      SUBDIR += treewm
      SUBDIR += tvtwm
