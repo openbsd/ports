@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.39 2007/10/30 10:13:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2007/11/05 10:11:10 robert Exp $
 
-FULLPKGNAME-main=	php5-extensions-${V}
+FULLPKGNAME-main=	php5-extensions-${V}p0
 COMMENT-main=		informational package about PHP5 extensions
 
 MULTI_PACKAGES=	-main
@@ -49,7 +49,6 @@ COMMENT-curl=		curl URL library extensions for php5
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	curl.>=2::net/curl
 WANTLIB-curl=		${WANTLIB} crypto idn ssl z
-FULLPKGNAME-curl=	php5-curl-${V}
 .endif
 
 # dba
@@ -91,11 +90,10 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 
 . if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir
-FULLPKGNAME-gd=		php5-gd-${V}-no_x11
+FULLPKGNAME-gd=		php5-gd-${V}p1-no_x11
 . else
 USE_X11=		yes
 CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
-FULLPKGNAME-gd=		php5-gd-${V}
 WANTLIB-gd+=		X11 Xpm freetype
 . endif
 .endif
@@ -122,6 +120,11 @@ CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 LIB_DEPENDS-imap=	c-client.>=5::mail/imap-uw,-c-client
 WANTLIB-imap=		${WANTLIB} gssapi crypto krb5 ssl
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/etc
+	${INSTALL_DATA} ${FILESDIR}/master.passwd.imap ${PREFIX}/etc
+	pwd_mkdb -d ${PREFIX}/etc master.passwd.imap
 .endif
 
 # ldap
@@ -341,14 +344,14 @@ WANTLIB-xsl=		${WANTLIB} iconv xml2 z
 .endif
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i} ?=	php5${i}-${V}
+FULLPKGNAME${i} ?=	php5${i}-${V}p1
 RUN_DEPENDS${i}=	:php5-core-${V}:www/php5/core
 MODULE_NAME${i}=	${i:S/-//g}
 .endfor
 
-FULLPKGNAME-imap=	php5-imap-$Vp0
-
 MESSAGE=		${PKGDIR}/MESSAGE
+UNMESSAGE=		${PKGDIR}/UNMESSAGE
+
 SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE V
 
 LIB_DEPENDS-main=
@@ -359,10 +362,12 @@ BUILD_DEPENDS+=		::textproc/libxml
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODULES_SUBDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
 .for m in ${MULTI_PACKAGES:N-main:S/-//g}
 	${INSTALL_DATA} ${WRKBUILD}/modules/${m}.so \
 		${PREFIX}/${MODULES_SUBDIR}/${m}.so
+	@echo "extension=${m}.so" > \
+		${PREFIX}/conf/php5.sample/${m}.ini
 .endfor
-
 
 .include <bsd.port.mk>

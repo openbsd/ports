@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-dist,v 1.11 2007/09/05 09:11:34 robert Exp $
+$OpenBSD: patch-php_ini-dist,v 1.12 2007/11/05 10:11:10 robert Exp $
 --- php.ini-dist.orig	Wed Aug 22 01:24:18 2007
-+++ php.ini-dist	Wed Sep  5 10:38:43 2007
++++ php.ini-dist	Fri Oct 26 12:25:59 2007
 @@ -466,10 +466,7 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -127,7 +127,7 @@ $OpenBSD: patch-php_ini-dist,v 1.11 2007/09/05 09:11:34 robert Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1277,6 +1192,53 @@ soap.wsdl_cache_dir="/tmp"
+@@ -1277,6 +1192,15 @@ soap.wsdl_cache_dir="/tmp"
  ; instead of original one.
  soap.wsdl_cache_ttl=86400
  
@@ -146,41 +146,3 @@ $OpenBSD: patch-php_ini-dist,v 1.11 2007/09/05 09:11:34 robert Exp $
 +; Note that it should be the name of the module only; no directory information
 +; needs to go here.  Specify the location of the extension with the
 +; extension_dir directive above.
-+
-+;extension=bz2.so
-+;extension=cpdf.so
-+;extension=crack.so
-+;extension=curl.so
-+;extension=db.so
-+;extension=dba.so
-+;extension=dbase.so
-+;extension=dbx.so
-+;extension=exif.so
-+;extension=fbsql.so
-+;extension=fdf.so
-+;extension=filepro.so
-+;extension=gd.so
-+;extension=hyperwave.so
-+;extension=ifx.so
-+;extension=imap.so
-+;extension=interbase.so
-+;extension=java.so
-+;extension=ldap.so
-+;extension=mbstring.so
-+;extension=mcrypt.so
-+;extension=mhash.so
-+;extension=ming.so
-+;extension=mssql.so
-+;extension=mysql.so
-+;extension=oci8.so
-+;extension=openssl.so
-+;extension=oracle.so
-+;extension=pdf.so
-+;extension=pgsql.so
-+;extension=printer.so
-+;extension=shmop.so
-+;extension=snmp.so
-+;extension=sockets.so
-+;extension=sybase_ct.so
-+;extension=xmlrpc.so
-+;extension=yaz.so

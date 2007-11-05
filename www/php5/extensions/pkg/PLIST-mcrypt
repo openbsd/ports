@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-mcrypt,v 1.3 2006/10/21 11:44:10 robert Exp $
+@comment $OpenBSD: PLIST-mcrypt,v 1.4 2007/11/05 10:11:10 robert Exp $
 @conflict php4-mcrypt-*
 @pkgpath www/php5/extensions,-mcrypt,hardened
+conf/php5.sample/mcrypt.ini
 lib/php/modules/mcrypt.so

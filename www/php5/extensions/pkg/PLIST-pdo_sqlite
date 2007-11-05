@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST-pdo_sqlite,v 1.1 2007/04/01 21:37:27 robert Exp $
+@comment $OpenBSD: PLIST-pdo_sqlite,v 1.2 2007/11/05 10:11:10 robert Exp $
+conf/php5.sample/pdo_sqlite.ini
 lib/php/modules/pdo_sqlite.so

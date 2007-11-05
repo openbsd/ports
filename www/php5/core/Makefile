@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2007/09/17 08:37:22 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2007/11/05 10:11:09 robert Exp $
 
 COMMENT-main=	server-side HTML-embedded scripting language
 COMMENT-fastcgi=stand-alone FastCGI version of PHP
 
-PKGNAME=	php5-core-${V}p0
-PKGNAME-main=	php5-core-${V}p0
-PKGNAME-fastcgi=php5-fastcgi-${V}p0
+PKGNAME=	php5-core-${V}p1
+PKGNAME-main=	php5-core-${V}p1
+PKGNAME-fastcgi=php5-fastcgi-${V}p1
 
 DISTFILES=	php-${V}.tar.gz
 
@@ -32,12 +32,13 @@ CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--without-pdo-sqlite \
 		--with-pear=${LOCALBASE}/share/php5 \
 		--enable-fastcgi \
-		--enable-force-cgi-redirect
+		--enable-force-cgi-redirect \
+		--with-config-file-scan-dir=${PHP_CONFIG_PATH}/php5
 		
 MODULES=	devel/gettext
 
 # some variables to substitute
-SUBST_VARS=	PHP_CONFIG_FILE
+SUBST_VARS=	PHP_CONFIG_FILE PHP_CONFIG_PATH
 PHP_VERSION=	${V}
 
 .for i in TRUEPREFIX PHP_CONFIG_FILE MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
@@ -63,6 +64,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php5
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-fastcgi
+	${INSTALL_DATA} ${FILESDIR}/php5.conf \
+		${PREFIX}/share/examples/php5/php5.conf
 	
 .for i in dist recommended
 	@sed -e 's,MODULES_DIR,${MODULES_DIR},' \
@@ -70,9 +73,6 @@ post-install:
 		<${WRKSRC}/php.ini-${i} \
 		>${PREFIX}/share/examples/php5/php.ini-${i}
 .endfor
-	@sed ${PHPXS_SUBST} <${FILESDIR}/phpxs >${PREFIX}/sbin/phpxs
-	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/phpxs
-	@chmod ${BINMODE} ${PREFIX}/sbin/phpxs
 	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
