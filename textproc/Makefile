@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2007/11/02 14:57:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.224 2007/11/05 21:35:29 bernd Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -209,6 +209,7 @@
      SUBDIR += ruby-fastercsv
      SUBDIR += ruby-fastri
      SUBDIR += ruby-hyperestraier
+     SUBDIR += ruby-icalendar
      SUBDIR += ruby-markaby
      SUBDIR += ruby-pdf-writer
      SUBDIR += ruby-redcloth
