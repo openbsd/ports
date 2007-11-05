@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.12 2007/11/03 13:40:08 steven Exp $
+# $OpenBSD: libtool,v 1.13 2007/11/05 11:27:34 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -75,6 +75,7 @@ my $verbose = 1;
 my $dry = 0;		# dry-run
 
 my %opts;		# options passed to libtool
+my @Ropts;		# -R options
 my @tags;		# list of --tag options passed to libtool
 my @deplibs;		# list of dependent libraries (both -L and -l flags)
 my %libs;		# libraries
@@ -296,7 +297,6 @@ if ($mode eq 'compile') {
 	}
 } elsif ($mode eq 'link') {
 	my $cmd;
-	my @Ropts;
 	$gp->getoptions('all-static'		=> \$opts{'all-static'},
 			'avoid-version'		=> \$opts{'avoid-version'},
 			'dlopen=s{1}'		=> \$opts{'dlopen'},
@@ -379,8 +379,6 @@ if ($mode eq 'compile') {
 		# XXX no static linking yet here
 		my @tmpcmd = linkcmds($ofile, $ofile, $odir, PROGRAM, 1, \@objs);
 		$cmd = $tmpcmd[0];
-		map { $_ = "-Wl,-rpath,$_" } @Ropts;
-		$cmd .= " @Ropts" if (@Ropts);
 		perform($cmd);
 		write_prog_wrapper($outfile);
 		chmod 0755, $outfile;
@@ -453,6 +451,9 @@ if ($mode eq 'compile') {
 		@deplibs = split /\s+/, $deplibstring;
 		my @finaldeplibs = reverse_zap_duplicates(@deplibs);
 		$deplibstring = join ' ', @finaldeplibs;
+		my @Rflags = @Ropts;
+		map { $_ = "-R$_" } @Rflags;
+		$deplibstring = "@Rflags $deplibstring" if (@Rflags);
 		$lainfo{'dependency_libs'} = $deplibstring;
 		if ($opts{'rpath'}) {
 			$lainfo{'libdir'} = $opts{'rpath'};
@@ -1037,6 +1038,8 @@ sub linkcmds
 	}
 
 	# dynamic linking
+	my @Rflags = @Ropts;
+	map { $_ = "-Wl,-rpath,$_" } @Rflags;
 	my @argvcopy = @ARGV;
 	my $argvstring = join ' ', @argvcopy;
 	$argvstring = resolve_la($argvstring, !$shared);
@@ -1091,6 +1094,7 @@ sub linkcmds
 	$cmd .= " @argvcopy";
 	$cmd .= " @$objs" if (@$objs);
 	$cmd .= " -L$ltdir @libflags" if (@libflags);
+	$cmd .= " @Rflags" if (@Rflags);
 	push @cmdlist, $cmd;
 
 	return @cmdlist;
