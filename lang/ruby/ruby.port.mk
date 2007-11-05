@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.11 2006/12/01 14:04:06 steven Exp $
+# $OpenBSD: ruby.port.mk,v 1.12 2007/11/05 20:55:03 bernd Exp $
 
 # ruby module
 
@@ -37,7 +37,7 @@ SUBST_VARS+=	DISTNAME
 GEM=		${LOCALBASE}/bin/gem
 GEM_BASE=	${PREFIX}/lib/ruby/gems/${MODRUBY_REV}
 GEM_FLAGS=	--local --rdoc --no-force
-_GEM_CONTENT=	${WRKDIR}/gem-content
+_GEM_CONTENT=	${WRKDIST}/.gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -45,6 +45,7 @@ _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
 do-extract:
 	@mkdir -p ${_GEM_CONTENT} ${WRKDIST}
 	@cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@cd ${_GEM_CONTENT} && ${GUNZIP_CMD} metadata.gz
 	@cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm ${_GEM_DATAFILE}
 .  endif
 .  if !target(pre-fake)
@@ -52,8 +53,10 @@ pre-fake:
 	@${ECHO_MSG} "===>  Writing patched gem for ${FULLPKGNAME}${_MASTER}"
 # "special" handling for ruby tar, included in ruby-gems
 	@cd ${WRKDIST} && find . -type f \! -name '*.orig' -print | \
+		fgrep -v `basename ${_GEM_CONTENT}` | \
 		pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}
-	@cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
+	@cd ${_GEM_CONTENT} && ${GZIP_CMD} metadata && \
+		tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
 .  endif
 .  if !target(do-regress)
 # XXX gem errors out w/o unit tests to run and I have not found any gem
