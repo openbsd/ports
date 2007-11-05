@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.14 2007/11/05 12:15:35 steven Exp $
+# $OpenBSD: libtool,v 1.15 2007/11/05 12:45:34 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -268,6 +268,9 @@ if ($mode eq 'compile') {
 		print "dstdir = $dstdir\ndstfile = $dstfile\n" if $D;
 		if ($srcfile =~ m/^\S+\.la$/) {
 			# we are installing a .la library
+			if ($ltprog =~ m/install([.-]sh)?$/) {
+				push @instopts, '-m 644';
+			}
 			my %lainfo;
 			parse_file($s, \%lainfo);
 			# replace info where needed when installing the .la file
