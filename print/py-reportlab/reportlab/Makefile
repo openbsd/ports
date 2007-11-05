@@ -1,23 +1,27 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/05 09:44:19 ajacoutot Exp $
 
 COMMENT=	PDF-generating toolkit for Python
 
-VERSION=	1.19
+VERSION=	2.1
 DISTNAME=	ReportLab_${VERSION:S/./_/}
-PKGNAME=	py-reportlab-${VERSION}p2
+PKGNAME=	py-reportlab-${VERSION}
 CATEGORIES=	print graphics
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		rl_accel-0.61-daily-unix${EXTRACT_SUFX}:0
 
 HOMEPAGE=	http://www.reportlab.org/rl_toolkit.html
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
-# BSD
+# BSD - LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.reportlab.org/ftp/
+MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
@@ -25,11 +29,14 @@ MODULES=	lang/python
 RUN_DEPENDS=	:py-Imaging-*:graphics/py-Imaging \
 		${MODPY_EXPAT_DEPENDS}
 
-WRKDIST=	${WRKDIR}/reportlab-${VERSION:S/./_/}
+WRKDIST=	${WRKDIR}/reportlab_${VERSION:S/./_/}
 WRKSRC=		${WRKDIST}/reportlab
 
 REGRESS_DEPENDS=${RUN_DEPENDS} \
 		::print/py-reportlab/plugins/renderPM 
+
+post-extract:
+	@mv ${WRKDIR}/rl_accel-*/rl_accel ${WRKSRC}/rl_accel
 
 do-regress: fake
 	@cd ${WRKSRC}/test && \
