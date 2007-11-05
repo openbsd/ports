@@ -1,0 +1,5 @@
+transset-df is a heavily patched version of xorg's transset. It is used
+to set the transparency of windows in X with the xcomposite extension.
+It adds several command line options to make it easier to use directly,
+bound to hot keys in your window manager, or through scripts. These
+include the ability to select a window by window ID.
