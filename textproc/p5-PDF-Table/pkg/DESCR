@@ -1,0 +1,11 @@
+A utility class for building table layouts in a PDF::API2 object.
+
+This class is a utility for use with the PDF::API2 module from CPAN.
+It can be used to display text data in a table layout within the
+PDF. The text data must be in a 2d array (such as returned by a DBI
+statement handle fetchall_arrayref() call). The PDF::Table will
+automatically add as many new pages as necessary to display all of
+the data. Various layout properties, such as font, font size, and
+cell padding and background color can be specified for each column
+and/or for even/odd rows. Also a (non)repeated header row with
+different layout properties can be specified.
