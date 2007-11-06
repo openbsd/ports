@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2007/09/25 19:40:57 rui Exp $
+# $OpenBSD: Makefile,v 1.39 2007/11/06 09:44:54 jasper Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -23,6 +23,13 @@ WRKDIST=	${WRKDIR}/unrar
 
 MAKE_FILE=	makefile.unix
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+
+# gcc 3.3.5 internal compiler error
+.if ${MACHINE_ARCH} == "mips64"
+EXTRA_CFLAGS=	-O0
+.endif
+
+MAKE_FLAGS+=		EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/unrar ${PREFIX}/bin
