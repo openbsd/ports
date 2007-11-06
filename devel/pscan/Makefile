@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/06 06:30:32 bernd Exp $
 
 COMMENT=	limited problem scanner for C source files
 
 V=		1.6
 DISTNAME=	pscan
-PKGNAME=	${DISTNAME}-${V}
+PKGNAME=	${DISTNAME}-${V}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.striker.ottawa.on.ca/~aland/pscan/
