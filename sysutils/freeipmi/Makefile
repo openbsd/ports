@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/06 17:03:46 ajacoutot Exp $
+
+# needs machine/sysarch.h
+ONLY_FOR_ARCHS=	alpha amd64 arm i386
 
 COMMENT=	FreeIPMI provides in-band and out-of-band IPMI software
 
