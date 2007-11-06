@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2007/11/06 20:45:21 jakemsr Exp $
+--- configure.orig	Sun Sep 23 06:21:10 2007
++++ configure	Tue Nov  6 02:55:39 2007
+@@ -384,8 +385,8 @@ $APP_NAME$CFG_BINEXT: $OBJS
+ 	# Linking $APP_NAME$CFG_BINEXT
+ 	$DOIT$CC $OBJS $LDFLAGS -o $APP_NAME$CFG_BINEXT
+ $APP_NAME.1.gz: $SRCDIR/$APP_NAME.1 Makefile
+-	# Generating manual page $APP_NAME.1.gz
+-	${DOIT}sed -e 's|%%CONFFILE%%|$CONFFILE|' $SRCDIR/$APP_NAME.1 | gzip -9 > $APP_NAME.1.gz
++	# Generating manual page $APP_NAME.1
++	${DOIT}perl -pi -e 's|\%\%CONFFILE\%\%|$CONFFILE|' $SRCDIR/$APP_NAME.1
+ clean:
+ 	# Removing $APP_NAME$CFG_BINEXT $APP_NAME.1.gz *.mo *.o
+ 	${DOIT}rm -f $APP_NAME$CFG_BINEXT $APP_NAME.1.gz *.mo *.o

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/23 15:50:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2007/11/06 20:45:21 jakemsr Exp $
 
 COMMENT=		minimalistic console-based audio player
 
 DISTNAME=		herrie-1.8.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://herrie.info/
@@ -30,7 +31,8 @@ LIB_DEPENDS=		mad.>=2::audio/libmad \
 			curl.>=4::net/curl
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ENV+= 	PREFIX=${PREFIX}
+CONFIGURE_ENV+= 	CONFDIR=${SYSCONFDIR} \
+			PREFIX=${PREFIX}
 CONFIGURE_ARGS= 	ncurses \
 			no_modplug \
 			no_strip \
@@ -50,5 +52,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${l}.mo \
 		${PREFIX}/share/locale/${l}/LC_MESSAGES/herrie.mo
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/herrie
+	${INSTALL_DATA} ${WRKSRC}/herrie.conf.sample ${PREFIX}/share/herrie
 
 .include <bsd.port.mk>

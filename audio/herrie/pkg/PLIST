@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/08/26 19:05:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/11/06 20:45:21 jakemsr Exp $
 bin/herrie
 @man man/man1/herrie.1
+share/herrie/
+share/herrie/herrie.conf.sample
+@sample ${SYSCONFDIR}/herrie.conf
 share/locale/de/LC_MESSAGES/herrie.mo
 share/locale/ga/LC_MESSAGES/herrie.mo
 share/locale/nl/LC_MESSAGES/herrie.mo
