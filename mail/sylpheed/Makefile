@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.76 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.77 2007/11/06 21:18:10 rui Exp $
 
 COMMENT=	mail/news client in gtk+
 
 MAJOR=		2.4
-VERSION=	${MAJOR}.3
+VERSION=	${MAJOR}.5
 DISTNAME=	sylpheed-${VERSION}
 CATEGORIES=    	mail news x11
 HOMEPAGE=	http://sylpheed.sraoss.jp/en
@@ -18,13 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk_pixbuf-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2
-WANTLIB=	X11 Xau Xdmcp Xrender Xcursor Xext Xfixes \
-		Xi Xinerama Xrandr atk-1.0 c cairo crypto expat \
-		fontconfig freetype glib-2.0 glitz gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0 \
-		gtk-x11-2.0 m pthread pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png ssl z
-
+WANTLIB=	X11 Xau Xcomposite Xdamage Xdmcp Xrender \
+		Xcursor Xext Xfixes Xi Xinerama Xrandr \
+		atk-1.0 c cairo crypto expat fontconfig \
+		freetype glib-2.0 glitz gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pcre \
+		pthread pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		png ssl z
 
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${MAJOR}/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}

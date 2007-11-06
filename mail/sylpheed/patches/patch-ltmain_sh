@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_sh,v 1.6 2006/06/05 15:31:16 couderc Exp $
---- ltmain.sh.orig	Sat Mar 11 19:49:04 2006
-+++ ltmain.sh	Thu May 11 23:22:41 2006
+$OpenBSD: patch-ltmain_sh,v 1.7 2007/11/06 21:18:10 rui Exp $
+--- ltmain.sh.orig	Sat Mar 11 18:49:04 2006
++++ ltmain.sh	Fri Nov  2 15:06:59 2007
 @@ -1607,6 +1607,17 @@ EOF
  	continue
  	;;

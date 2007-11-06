@@ -1,6 +1,6 @@
-$OpenBSD: patch-libsylph_smtp_h,v 1.1 2006/06/05 15:31:16 couderc Exp $
---- libsylph/smtp.h.orig	Thu Dec  1 06:13:57 2005
-+++ libsylph/smtp.h	Thu May 11 23:41:52 2006
+$OpenBSD: patch-libsylph_smtp_h,v 1.2 2007/11/06 21:18:10 rui Exp $
+--- libsylph/smtp.h.orig	Tue Nov 21 05:51:33 2006
++++ libsylph/smtp.h	Fri Nov  2 15:06:59 2007
 @@ -33,7 +33,9 @@ typedef struct _SMTPSession	SMTPSession;
  
  #define SMTP_SESSION(obj)	((SMTPSession *)obj)
