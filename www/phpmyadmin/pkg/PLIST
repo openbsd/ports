@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2007/10/31 11:48:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2007/11/06 21:13:46 rui Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -8,7 +8,7 @@ phpMyAdmin/Documentation.txt
 phpMyAdmin/INSTALL
 phpMyAdmin/LICENSE
 phpMyAdmin/README
-phpMyAdmin/RELEASE-DATE-2.11.0
+phpMyAdmin/RELEASE-DATE-2.11.1.1
 phpMyAdmin/TODO
 phpMyAdmin/browse_foreigners.php
 phpMyAdmin/calendar.php
@@ -183,7 +183,6 @@ phpMyAdmin/libraries/Config.class.php
 phpMyAdmin/libraries/File.class.php
 phpMyAdmin/libraries/List.class.php
 phpMyAdmin/libraries/List_Database.class.php
-phpMyAdmin/libraries/Sql.class.php
 phpMyAdmin/libraries/StorageEngine.class.php
 phpMyAdmin/libraries/Table.class.php
 phpMyAdmin/libraries/Theme.class.php
