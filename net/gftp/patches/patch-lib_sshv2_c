@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_sshv2_c,v 1.1.1.1 2005/11/02 20:19:29 alek Exp $
---- lib/sshv2.c.orig	Thu Oct 20 10:48:22 2005
-+++ lib/sshv2.c	Thu Oct 20 10:49:54 2005
-@@ -1867,31 +1867,13 @@ sshv2_put_file (gftp_request * request, 
+$OpenBSD: patch-lib_sshv2_c,v 1.2 2007/11/06 12:14:18 ajacoutot Exp $
+--- lib/sshv2.c.orig	Tue Jan  4 14:32:11 2005
++++ lib/sshv2.c	Tue Nov  6 13:05:08 2007
+@@ -1867,31 +1867,13 @@ sshv2_put_file (gftp_request * request, const char *fi
  }
  
  
