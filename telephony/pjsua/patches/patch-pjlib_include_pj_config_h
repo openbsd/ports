@@ -1,6 +1,6 @@
-$OpenBSD: patch-pjlib_include_pj_config_h,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
+$OpenBSD: patch-pjlib_include_pj_config_h,v 1.2 2007/11/06 02:50:28 deanna Exp $
 --- pjlib/include/pj/config.h.orig	Thu May  3 09:31:21 2007
-+++ pjlib/include/pj/config.h	Sat Jun  2 19:16:29 2007
++++ pjlib/include/pj/config.h	Sat Nov  3 17:39:38 2007
 @@ -120,6 +120,10 @@
       * RTEMS
       */
@@ -12,3 +12,32 @@ $OpenBSD: patch-pjlib_include_pj_config_h,v 1.1.1.1 2007/10/27 04:34:23 deanna E
  #else
  #   error "Please specify target os."
  #endif
+@@ -133,6 +137,28 @@
+      * Autoconf configured
+      */
+ #include <pj/compat/m_auto.h>
++
++#elif defined(__OpenBSD__)
++#include <sys/param.h>
++#include <machine/endian.h>
++#define PJ_M_NAME		MACHINE
++#if defined(__LP64__)
++#define PJ_POOL_ALIGNMENT	8
++#else
++#define PJ_POOL_ALIGNMENT	4
++#endif
++#if defined(__i386__) || defined(__x86_64__)
++#define PJ_HAS_PENTIUM	1
++#else
++#define PJ_HAS_PENTIUM	0
++#endif
++#if _BYTE_ORDER == _LITTLE_ENDIAN
++#define PJ_IS_LITTLE_ENDIAN	1
++#define PJ_IS_BIG_ENDIAN	0
++#else
++#define PJ_IS_LITTLE_ENDIAN	0
++#define PJ_IS_BIG_ENDIAN	1
++#endif
+ 
+ #elif defined (PJ_M_I386) || defined(_i386_) || defined(i_386_) || \
+ 	defined(_X86_) || defined(x86) || defined(__i386__) || \

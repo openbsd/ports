@@ -1,0 +1,21 @@
+$OpenBSD: patch-pjlib_include_pj_sock_h,v 1.1 2007/11/06 02:50:28 deanna Exp $
+--- pjlib/include/pj/sock.h.orig	Sat Nov  3 19:52:52 2007
++++ pjlib/include/pj/sock.h	Sat Nov  3 20:03:22 2007
+@@ -207,8 +207,6 @@ struct pj_sockaddr_in
+     char	sin_zero[8];	/**< Padding.			    */
+ };
+ 
+-#undef s6_addr
+-
+ /**
+  * This structure describes IPv6 address.
+  */
+@@ -221,7 +219,7 @@ typedef struct pj_in6_addr
+ 	pj_uint32_t u6_addr32[4];   /**< u6_addr32  */
+     } in6_u;
+ /** Shortcut to access in6_u.u6_addr8. */
+-#define s6_addr                 in6_u.u6_addr8
++#define pj_s6_addr              in6_u.u6_addr8
+ /** Shortcut to access in6_u.u6_addr16. */
+ #define s6_addr16               in6_u.u6_addr16
+ /** Shortcut to access in6_u.u6_addr32. */
