@@ -1,0 +1,11 @@
+$OpenBSD: patch-runtime_syntax_c_vim,v 1.1 2007/11/07 19:52:15 ckuethe Exp $
+--- runtime/syntax/c.vim.orig	Wed Nov  7 12:30:06 2007
++++ runtime/syntax/c.vim	Wed Nov  7 12:31:10 2007
+@@ -169,6 +169,7 @@ if !exists("c_no_c99") " ISO C99
+   syn keyword	cType		bool complex
+   syn keyword	cType		int8_t int16_t int32_t int64_t
+   syn keyword	cType		uint8_t uint16_t uint32_t uint64_t
++  syn keyword	cType		u_int8_t u_int16_t u_int32_t u_int64_t
+   syn keyword	cType		int_least8_t int_least16_t int_least32_t int_least64_t
+   syn keyword	cType		uint_least8_t uint_least16_t uint_least32_t uint_least64_t
+   syn keyword	cType		int_fast8_t int_fast16_t int_fast32_t int_fast64_t
