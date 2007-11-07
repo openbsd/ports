@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2004/07/03 23:45:37 jolan Exp $
---- Makefile.orig	Sat Nov 17 10:39:52 2001
-+++ Makefile	Sat Jul  3 18:15:34 2004
-@@ -1,17 +1,9 @@
+$OpenBSD: patch-Makefile,v 1.2 2007/11/07 20:58:16 jasper Exp $
+--- Makefile.orig	Sat Nov 17 17:39:52 2001
++++ Makefile	Tue Nov  6 10:35:21 2007
+@@ -1,17 +1,12 @@
 +OBJS = backend.o checkpar.o makepar.o rwpar.o rs.o md5.o fileops.o main.o readoldpar.o interface.o ui_text.o
  
 -CFLAGS=-g -W -Wall -Wno-unused -O2
@@ -10,7 +10,9 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2004/07/03 23:45:37 jolan Exp $
  
 -par: backend.o checkpar.o makepar.o rwpar.o rs.o md5.o fileops.o main.o readoldpar.o interface.o ui_text.o
 -	$(CC) -o $@ $^
--
++rs.o: rs.c
++	${CC} ${CFLAGS} $(EXTRA_CFLAGS) -c -Wall $< -o $@
+ 
 -clean:
 -	rm -f core par par.exe *.o
 -

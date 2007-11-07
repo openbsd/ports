@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/07 20:58:15 jasper Exp $
 
 COMMENT=	command line implementation of the PAR v1.0 specification
 DISTNAME=	par-v1.1
@@ -20,6 +20,13 @@ WANTLIB=		c
 NO_REGRESS=	Yes
 
 WRKDIST=${WRKDIR}/par-cmdline
+
+# gcc 3.3.5 internal compiler error
+.if ${MACHINE_ARCH} == "mips64"
+EXTRA_CFLAGS=	-O0
+.endif
+
+MAKE_FLAGS+=		EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/par1cmdline
