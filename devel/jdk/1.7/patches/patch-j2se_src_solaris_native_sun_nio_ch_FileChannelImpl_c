@@ -1,6 +1,6 @@
-$OpenBSD: patch-j2se_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.1 2007/09/06 15:46:20 kurt Exp $
---- j2se/src/solaris/native/sun/nio/ch/FileChannelImpl.c.orig	Thu Jul  5 05:03:45 2007
-+++ j2se/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Fri Jul 27 18:39:26 2007
+$OpenBSD: patch-j2se_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.2 2007/11/07 03:53:53 kurt Exp $
+--- j2se/src/solaris/native/sun/nio/ch/FileChannelImpl.c.orig	Thu Aug 30 05:06:05 2007
++++ j2se/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Tue Nov  6 18:38:11 2007
 @@ -29,12 +29,17 @@
  #include "jlong.h"
  #include <sys/mman.h>
@@ -93,7 +93,7 @@ $OpenBSD: patch-j2se_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.1 2007/
      fl.l_start = (off64_t)pos;
      fl.l_type = F_UNLCK;
      lockResult = fcntl(fd, cmd, &fl);
-+#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
 +    /* XXXFREEBSD:  While doing of preClose0() we're closing actual fd which
 +       was locked, so here we'll get an error which need to be ignored to
 +       satisfy TCK FileLock test */

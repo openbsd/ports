@@ -1,7 +1,7 @@
-$OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2007/09/06 15:46:19 kurt Exp $
---- j2se/src/solaris/native/java/net/net_util_md.c.orig	Thu Jul  5 05:03:38 2007
-+++ j2se/src/solaris/native/java/net/net_util_md.c	Fri Jul 27 18:25:14 2007
-@@ -34,6 +34,11 @@
+$OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.2 2007/11/07 03:53:53 kurt Exp $
+--- j2se/src/solaris/native/java/net/net_util_md.c.orig	Thu Aug 30 05:05:58 2007
++++ j2se/src/solaris/native/java/net/net_util_md.c	Tue Nov  6 18:36:47 2007
+@@ -34,6 +34,15 @@
  #include <stdlib.h>
  #include <dlfcn.h>
  
@@ -10,10 +10,14 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2007/09/06 
 +#include <sys/sysctl.h>
 +#endif
 +
++#ifdef __OpenBSD__
++#include <sys/socketvar.h>
++#endif
++
  #ifdef __solaris__
  #include <sys/sockio.h>
  #include <stropts.h>
-@@ -219,8 +224,16 @@ NET_GetFileDescriptorID(JNIEnv *env)
+@@ -219,8 +228,16 @@ NET_GetFileDescriptorID(JNIEnv *env)
      return (*env)->GetFieldID(env, cls, "fd", "I");
  }
  
@@ -30,7 +34,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2007/09/06 
  #ifndef AF_INET6
      return JNI_FALSE;
  #endif
-@@ -355,6 +368,7 @@ jint  IPv6_supported()
+@@ -355,6 +372,7 @@ jint  IPv6_supported()
      close(fd);
      return JNI_TRUE; 
  }
@@ -38,7 +42,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2007/09/06 
  
  void 
  NET_AllocSockaddr(struct sockaddr **him, int *len) {
-@@ -689,6 +703,10 @@ NET_InetAddressToSockaddr(JNIEnv *env, jobject iaObj, 
+@@ -689,6 +707,10 @@ NET_InetAddressToSockaddr(JNIEnv *env, jobject iaObj, 
  	him6->sin6_family = AF_INET6; 
  	*len = sizeof(struct sockaddr_in6) ;
  
@@ -49,13 +53,16 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2007/09/06 
  	/*
   	 * On Linux if we are connecting to a link-local address
  	 * we need to specify the interface in the scope_id (2.4 kernel only)
-@@ -1133,6 +1151,17 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+@@ -1133,6 +1155,20 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
  #define IPTOS_PREC_MASK 0xe0
  #endif
  
-+#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(_ALLBSD_SOURCE)
++#if defined(KIPC_MAXSOCKBUF)
 +    int mib[3];
 +    size_t rlen;
++#endif
++
 +    int *bufsize;
 +
 +    static long maxsockbuf = -1;
@@ -67,7 +74,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2007/09/06 
      /*
       * IPPROTO/IP_TOS :-
       * 1. IPv6 on Solaris: no-op and will be set in flowinfo
-@@ -1165,6 +1194,10 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+@@ -1165,6 +1201,10 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
          *iptos &= (IPTOS_TOS_MASK | IPTOS_PREC_MASK);
      }
  
@@ -78,7 +85,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2007/09/06 
      /*
       * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris need to
       * ensure that value is <= max_buf as otherwise we get
-@@ -1203,12 +1236,87 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+@@ -1203,12 +1243,89 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
       * is that if SO_RCVBUF is too small then small packets
       * must be discard.
       */
@@ -92,7 +99,7 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2007/09/06 
 +    }
 +#endif
 +
-+#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(_ALLBSD_SOURCE)
 +    /*
 +     * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On FreeBSD need to
 +     * ensure that value is <= kern.ipc.maxsockbuf as otherwise we get
@@ -116,6 +123,8 @@ $OpenBSD: patch-j2se_src_solaris_native_java_net_net_util_md_c,v 1.1 2007/09/06 
 +               maxsockbuf = (maxsockbuf/5)*4;
 +#endif
 +           }
++#elif defined(__OpenBSD__)
++	   maxsockbuf = SB_MAX;
 +#else
 +	   maxsockbuf = 64 * 1024;	/* XXX: NetBSD */
 +#endif
