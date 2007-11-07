@@ -1,11 +1,4 @@
-#!/bin/sh
-# $OpenBSD: license.sh,v 1.2 2007/10/29 01:22:34 kurt Exp $
-# $FreeBSD: ports/java/jdk15/files/license.sh,v 1.1 2007/08/13 04:57:47 glewis Exp $
-
-# License agreement
-more << EOF_LICENSE
-JAVA RESEARCH LICENSE
-Version 1.6
+JAVA RESEARCH LICENSE Version 1.6
 
 
 I.    DEFINITIONS.
@@ -150,7 +143,6 @@ Terms") shall survive termination.
 
 D.     Miscellaneous.
 
-
 1.    Trademark.  You agree to comply with Sun's Trademark & Logo
 Usage Requirements, as modified from time to time, available at
 http://www.sun.com/policies/trademarks/.  Except as expressly provided
@@ -174,27 +166,3 @@ In no event shall this License be construed against the drafter.
 http://www.sun.com/its, you agree to comply with the U.S. export
 controls and trade laws of other countries that apply to Technology
 and Modifications.
-
-EOF_LICENSE
-
-agreed=
-while [ x$agreed = x ]; do
-        echo
-        echo "Do you agree to the above license terms? [yes or no] "
-        if read reply leftover; then
-	        case $reply in
-                	y* | Y*)
-                        	agreed=1
-                        	;;
-                	n* | N*)
-                        	echo
-                        	echo "If you don't agree to the license you can't build this software"
-                        	exit 1
-                        	;;
-        	esac
-	else
-		echo
-		echo "An error occurred reading your response!"
-		exit 1
-	fi
-done

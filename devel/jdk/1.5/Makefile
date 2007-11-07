@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2007/10/25 20:51:41 kurt Exp $
+# $OpenBSD: Makefile,v 1.45 2007/11/07 17:04:36 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -148,10 +148,10 @@ JREIMAGEDIR=		${OUTPUTDIR}/j2re-image
 ACCEPT_JRL_LICENSE ?= No
 
 .if ${ACCEPT_JRL_LICENSE:L} != "yes"
-IS_INTERACTIVE=	Yes
-pre-extract:
-	@${SH} ${FILESDIR}/license.sh
-	@echo continuing...
+ERRORS += "Fatal: you must read and accept Sun's JRL license located"
+ERRORS += "at ${FILESDIR}/JavaResearchLicense.txt"
+ERRORS += "To indicate your acceptance of the JRL add ACCEPT_JRL_LICENSE=Yes"
+ERRORS += "to /etc/mk.conf and restart the build."
 .endif
 
 post-extract:
