@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/03 13:48:17 chl Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/07 19:11:54 chl Exp $
 
 COMMENT=		zzuf is a transparent application input fuzzer
 
-DISTNAME=		zzuf-0.9
+DISTNAME=		zzuf-0.10
 CATEGORIES=		misc
 MASTER_SITES=		http://sam.zoy.org/zzuf/
 
