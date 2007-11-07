@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 21:30:27 simon Exp $
+# $OpenBSD: Makefile,v 1.21 2007/11/07 20:57:37 jasper Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 COMMENT=	self-scaling network benchmark
@@ -21,6 +21,13 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_GETRUSAGE"
 ALL_TARGET=	NPtcp
 
 NO_REGRESS=	Yes
+
+# gcc 3.3.5 internal compiler error
+.if ${MACHINE_ARCH} == "mips64"
+EXTRA_CFLAGS=	-O0
+.endif
+
+MAKE_FLAGS+=		EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/NPtcp ${PREFIX}/bin
