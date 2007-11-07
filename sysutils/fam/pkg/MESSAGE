@@ -8,7 +8,7 @@ way, add the following line to /etc/inetd.conf:
 
 sgi_fam/1-2     stream  rpc/tcp wait    root    ${PREFIX}/sbin/famd famd
 
-and reload inetd(8) daemon.  To enable the FAM daemon in as a standalone
+and reload inetd(8) daemon.  To enable the FAM daemon as a standalone
 server add the following lines to /etc/rc.local file:
 
 if [ -x ${PREFIX}/sbin/famd ]; then
