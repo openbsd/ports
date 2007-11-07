@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/29 07:46:33 winiger Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/07 20:02:57 winiger Exp $
 
 COMMENT=	multi user weblog
 
-DISTNAME=	wordpress-mu-1.2.5a
+DISTNAME=	wordpress-mu-1.3
 CATEGORIES=	www
 
 HOMEPAGE=	http://mu.wordpress.org/
