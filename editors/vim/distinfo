@@ -126,6 +126,9 @@ MD5 (vim71/7.1.142) = Egz0XY3Xwa9vkUCHdq3m5g==
 MD5 (vim71/7.1.143) = zXVQ4Ingp2qLujeMrmtEIw==
 MD5 (vim71/7.1.144) = eeZad3wRLxvT5ROyGrrbzA==
 MD5 (vim71/7.1.145) = nNlDC51l5WWtnRqxO7xRSA==
+MD5 (vim71/7.1.147) = SCjCPRDiwwoAzCfeFk4YYQ==
+MD5 (vim71/7.1.148) = p+D1Ig8kaIs8zbKrPVpjgQ==
+MD5 (vim71/7.1.149) = SsoW2WudvhLO0zqm8He4Fg==
 MD5 (vim71/vim-7.1-lang.tar.gz) = FEqgSbpwYhrPQkfwRZ8+5w==
 MD5 (vim71/vim-7.1.tar.bz2) = RMa0kU841vmqlZZAuJ2jKQ==
 RMD160 (vim71/7.1.001) = ycfSFbDc62tw91bf1zObEejKPRM=
@@ -256,6 +259,9 @@ RMD160 (vim71/7.1.142) = rXw74Rg7qbub+SCC72LPZ+brpZs=
 RMD160 (vim71/7.1.143) = tUWkjtTOK/qaooSDJq3OtHVL/yU=
 RMD160 (vim71/7.1.144) = rU5pnSQ0ZU8eLN9bvX+Wiw9bxAU=
 RMD160 (vim71/7.1.145) = XzkEULn3RaGkduxOSJiPe478ft0=
+RMD160 (vim71/7.1.147) = CmO1GxvDCVkA7jws6QfDw2Lj2rM=
+RMD160 (vim71/7.1.148) = uRaaQXwzoNR73Zh54ItPUQ5hjMI=
+RMD160 (vim71/7.1.149) = XQKPgoBuXNCb/LnDqY8Aa2fSh8o=
 RMD160 (vim71/vim-7.1-lang.tar.gz) = rDjd6bLkl2h/nQRnhrPOHkX0UCA=
 RMD160 (vim71/vim-7.1.tar.bz2) = Rwd14NAhnK/n4E3ZEZntdEGIJFY=
 SHA1 (vim71/7.1.001) = yRRfh1kk8LdNNT8pPkX1zkPNS5U=
@@ -386,6 +392,9 @@ SHA1 (vim71/7.1.142) = oRNhigr9e1pJ27HBZKRDgUQSWxQ=
 SHA1 (vim71/7.1.143) = n6bj+tYAAYKO3hnFq2et1Kzwq7w=
 SHA1 (vim71/7.1.144) = u4djNVqXQ0vuIDwc3a3BqkIIbDQ=
 SHA1 (vim71/7.1.145) = UnzANrN+TpQySgSSByA0eOjJUeo=
+SHA1 (vim71/7.1.147) = eRH6RcdyGIQA2bgK5LnpqTHJcdo=
+SHA1 (vim71/7.1.148) = +nASmhNfq2Bx+aIAkNr6OeJEUiI=
+SHA1 (vim71/7.1.149) = XwBGGgruHrEbZ16n2FGwt8OzIO8=
 SHA1 (vim71/vim-7.1-lang.tar.gz) = fB4vSY4fgwSHnnO4hWL5A2gBx+4=
 SHA1 (vim71/vim-7.1.tar.bz2) = mB4azsxNjxVoC24WDehK7QONhX0=
 SHA256 (vim71/7.1.001) = zv0G1i0OC9fH+khdzyHM1XvwQqhguLjBGMIsNL+CwmQ=
@@ -516,6 +525,9 @@ SHA256 (vim71/7.1.142) = 94k3eXUKI0vx/B+jvr7dYA19NsaqtygnKqrfKt7n8Wk=
 SHA256 (vim71/7.1.143) = vcq3OMcldfkYKFWtNHy29c0z0EMiZRIFosoFo+J13HI=
 SHA256 (vim71/7.1.144) = 08bonIoGjyll3FxbkhbqQfco3sx3XdI2TmsYXCPkUD4=
 SHA256 (vim71/7.1.145) = s4eUVxsqgqOL/S2OzSkrhII24NS/+cxg9uXLmnw+6OQ=
+SHA256 (vim71/7.1.147) = kUg6AN+mmyLbotvFeEaVcXLM0ok9Xf74Ha/YS27r1qw=
+SHA256 (vim71/7.1.148) = rxxNzJiwQ10kb95Hf6Fw1YjjtRKBFWC/Ft9rfnwEhwQ=
+SHA256 (vim71/7.1.149) = T/MU77YYroplxa22c4kknwJyUc5v6mfSjZelzztC7bo=
 SHA256 (vim71/vim-7.1-lang.tar.gz) = /72ZuqwQWZQWPv54obCjx3+q449m198ARlx91/iHmUc=
 SHA256 (vim71/vim-7.1.tar.bz2) = fwpRldsZgYBgkKRqqWL5gO3Gjrpyylz8goev9hLxz3A=
 SIZE (vim71/7.1.001) = 2404
@@ -646,5 +658,8 @@ SIZE (vim71/7.1.142) = 2161
 SIZE (vim71/7.1.143) = 1723
 SIZE (vim71/7.1.144) = 1250
 SIZE (vim71/7.1.145) = 6160
+SIZE (vim71/7.1.147) = 2079
+SIZE (vim71/7.1.148) = 2557
+SIZE (vim71/7.1.149) = 4823
 SIZE (vim71/vim-7.1-lang.tar.gz) = 1188738
 SIZE (vim71/vim-7.1.tar.bz2) = 6876053
