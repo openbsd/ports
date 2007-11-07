@@ -1,0 +1,4 @@
+Data::Dumper::Simple is actually a source filter that replaces all
+instances of Dumper($some, @args) in your code with a call to
+Data::Dumper->Dump(). You can use the one function provided to make
+dumping variables for debugging a trivial task.
