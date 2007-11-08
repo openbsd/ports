@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/19 13:45:00 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/08 22:00:36 merdely Exp $
 bin/${LNAME}-admin.py
+lib/python${MODPY_VERSION}/site-packages/Django-${V}.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/__init__.pyc
