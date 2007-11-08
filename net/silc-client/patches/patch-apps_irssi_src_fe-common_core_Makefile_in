@@ -1,0 +1,17 @@
+$OpenBSD: patch-apps_irssi_src_fe-common_core_Makefile_in,v 1.1 2007/11/08 20:51:23 espie Exp $
+--- apps/irssi/src/fe-common/core/Makefile.in.orig	Thu Nov  8 21:45:14 2007
++++ apps/irssi/src/fe-common/core/Makefile.in	Thu Nov  8 21:45:45 2007
+@@ -266,11 +266,11 @@ noinst_LIBRARIES = libfe_common_core.a
+ #
+ # INCLUDE defines
+ #
+-INCLUDES = $(ADD_INCLUDES) $(SILC_CFLAGS) -DHAVE_SILCDEFS_H \
++INCLUDES = $(ADD_INCLUDES) -DHAVE_SILCDEFS_H \
+ 	-I$(srcdir) -I$(top_srcdir) -I$(silc_top_srcdir) \
+ 	$(SILC_LIB_INCLUDES) -I$(silc_top_srcdir)/includes \
+ 	-I$(silc_top_srcdir)/doc -I$(top_srcdir)/src \
+-	-I$(top_srcdir)/src/core/ $(GLIB_CFLAGS) \
++	-I$(top_srcdir)/src/core/ $(GLIB_CFLAGS) $(SILC_CFLAGS) \
+ 	-DHELPDIR=\""$(silc_helpdir)"\" \
+ 	-DTHEMESDIR=\""$(silc_etcdir)"\"
+ libfe_common_core_a_SOURCES = \

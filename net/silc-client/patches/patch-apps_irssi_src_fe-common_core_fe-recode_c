@@ -1,6 +1,6 @@
---- apps/irssi/src/fe-common/core/fe-recode.c.orig	Fri Jul 27 13:55:52 2007
-+++ apps/irssi/src/fe-common/core/fe-recode.c	Fri Jul 27 13:56:54 2007
-@@ -182,8 +182,8 @@
+--- apps/irssi/src/fe-common/core/fe-recode.c.orig	Thu Jan 25 13:02:14 2007
++++ apps/irssi/src/fe-common/core/fe-recode.c	Tue Nov  6 10:48:23 2007
+@@ -182,8 +182,8 @@ static void read_settings(void)
  		g_free(term_charset);
  #if defined (HAVE_NL_LANGINFO) && defined(CODESET)
  		term_charset = is_valid_charset(old_term_charset) ? g_strdup(old_term_charset) : 

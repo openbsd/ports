@@ -1,6 +1,6 @@
---- apps/irssi/src/fe-common/core/fe-common-core.c.orig	Fri Jul 27 13:21:58 2007
-+++ apps/irssi/src/fe-common/core/fe-common-core.c	Fri Jul 27 13:22:30 2007
-@@ -176,7 +176,8 @@
+--- apps/irssi/src/fe-common/core/fe-common-core.c.orig	Thu Jan 25 13:02:14 2007
++++ apps/irssi/src/fe-common/core/fe-common-core.c	Tue Nov  6 10:48:23 2007
+@@ -176,7 +176,8 @@ void fe_common_core_init(void)
  	settings_add_bool("lookandfeel", "use_msgs_window", FALSE);
  #if defined (HAVE_NL_LANGINFO) && defined(CODESET)
  	settings_add_str("lookandfeel", "term_charset", 
