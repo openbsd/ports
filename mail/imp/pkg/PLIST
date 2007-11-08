@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/11/05 10:29:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2007/11/08 21:20:59 sthen Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
@@ -122,10 +122,6 @@ horde/${HORDE_MODULE}/lib/Session.php
 horde/${HORDE_MODULE}/lib/Spam.php
 horde/${HORDE_MODULE}/lib/api.php
 horde/${HORDE_MODULE}/lib/base.php
-horde/${HORDE_MODULE}/lib/data/
-@sample etc/
-horde/${HORDE_MODULE}/lib/data/pwd.db
-@sample etc/pwd.db
 horde/${HORDE_MODULE}/lib/prefs.php
 horde/${HORDE_MODULE}/lib/version.php
 horde/${HORDE_MODULE}/locale/
