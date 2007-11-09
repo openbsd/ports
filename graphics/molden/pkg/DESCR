@@ -1,0 +1,7 @@
+Molden is a package for displaying molecular density from the ab initio
+packages GAMESS-UK, GAMESS-US and GAUSSIAN and the semi-empirical packages
+Mopac/Ampac.  Molden is capable of displaying molecular orbitals, the
+electron density and the molecular minus atomic density. Molden supports
+contour plots, 3-d grid plots with hidden lines and a combination of both.
+It can write a variety of graphics instructions: postscript, XWindows,
+VRML, povray, OpenGL, tekronix4014, hpgl, hp2392 and Figure.

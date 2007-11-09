@@ -1,0 +1,10 @@
+$OpenBSD: patch-ambfor_alloc_c,v 1.1.1.1 2007/11/09 17:26:27 ckuethe Exp $
+--- ambfor/alloc.c.orig	Wed Oct 17 05:41:06 2007
++++ ambfor/alloc.c	Thu Nov  8 20:08:27 2007
+@@ -1,5 +1,5 @@
+ 
+-#if defined(DARWIN) || defined(FREEBSD)
++#if defined(DARWIN) || defined(FREEBSD) || defined(__OpenBSD__)
+ #else
+ #include <malloc.h>
+ #endif

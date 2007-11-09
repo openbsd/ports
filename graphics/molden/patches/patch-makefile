@@ -1,0 +1,15 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2007/11/09 17:26:27 ckuethe Exp $
+--- makefile.orig	Thu Nov  8 20:01:56 2007
++++ makefile	Thu Nov  8 20:03:33 2007
+@@ -51,9 +51,9 @@ LIBSG = -L/usr/X11R6/lib -lGLU -lGL -lXmu -lX11 -lm
+ # with GCC4.0 or higher replace the line with:
+ # 'external gfortran_iargc'
+ #
+-CFLAGS = -c -I/usr/X11R6/include -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
++CFLAGS = -c -O2 -I/usr/X11R6/include -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
+ FC = g77
+-FFLAGS =
++FFLAGS = -O2
+ LIBS =  -L/usr/X11R6/lib -lX11 -lm
+ LDR = g77   
+ # 64 bit machines:

@@ -1,0 +1,84 @@
+$OpenBSD: patch-xwin_c,v 1.1.1.1 2007/11/09 17:26:27 ckuethe Exp $
+--- xwin.c.orig	Wed Nov  7 04:08:55 2007
++++ xwin.c	Thu Nov  8 20:08:16 2007
+@@ -20,7 +20,7 @@
+ #include <GL/gl.h>
+ #include <GL/glu.h>
+ #endif
+-#if defined(DARWIN) || defined(FREEBSD)
++#if defined(DARWIN) || defined(FREEBSD) || defined(__OpenBSD__)
+ #else
+ #include <malloc.h>
+ #endif
+@@ -11274,7 +11274,7 @@ qupd()
+            picnum++;
+            if (picnum < *picmax) {
+ 		glXWaitGL();
+-		sprintf(stemp, "%s%03d.rgb",GifFile,picnum);
++		sprintf(stemp, "%s%06d.rgb",GifFile,picnum);
+ 		save_rgb(stemp);
+ 		glXSwapBuffers(display, win);
+ 	   }
+@@ -11316,7 +11316,7 @@ QUPD()
+            picnum++;
+            if (picnum < *picmax) {
+ 		glXWaitGL();
+-		sprintf(stemp, "%s%03d.rgb",GifFile,picnum);
++		sprintf(stemp, "%s%06d.rgb",GifFile,picnum);
+ 		save_rgb(stemp);
+ 		glXSwapBuffers(display, win);
+ 	   }
+@@ -11357,7 +11357,7 @@ qupd_()
+            picnum++;
+            if (picnum < *picmax) {
+ 		glXWaitGL();
+-		sprintf(stemp, "%s%03d.rgb",GifFile,picnum);
++		sprintf(stemp, "%s%06d.rgb",GifFile,picnum);
+ 		save_rgb(stemp);
+ 		glXSwapBuffers(display, win);
+ 	   }
+@@ -14444,7 +14444,7 @@ to align to the current molecule.\n \n\
+ 				              picnum++;
+ 				              if (picnum < *picmax) {
+ 				   		glXWaitGL();
+-				   		sprintf(stemp, "%s%03d.rgb",GifFile,picnum);
++				   		sprintf(stemp, "%s%06d.rgb",GifFile,picnum);
+ 				   		save_rgb(stemp);
+ 				   		glXSwapBuffers(display, win);
+ 				   	      }
+@@ -16354,7 +16354,7 @@ doexp_()
+ 	    sprintf(stemp, "convert X:MOLDEN gif87:%s%d.gif",GifFile,picnum);
+ 	    system(stemp);
+ */
+-	   sprintf(stemp, "%s%03d.gif",GifFile,picnum);
++	   sprintf(stemp, "%s%06d.gif",GifFile,picnum);
+ 	   ToGIF(molcur,stemp);
+ 	}
+      }
+@@ -19819,7 +19819,7 @@ static void handle_tnk()
+    char cmdcyc[MAXCMD];
+    struct stat st;
+ 
+-   sprintf(cmdcyc,"%s.%03d",cmdstr,cycle);
++   sprintf(cmdcyc,"%s.%06d",cmdstr,cycle);
+    phlp = pdone;
+    fndfile = 1;
+    st.st_mode = 0;
+@@ -19863,7 +19863,7 @@ static void handle_tnkesc()
+    char cmdtmp[MAXCMD];
+    struct stat st;
+ 
+-   sprintf(cmdcyc,"%s.%03d",cmdstr,cycle);
++   sprintf(cmdcyc,"%s.%06d",cmdstr,cycle);
+    sprintf(cmdtmp,"%s.tmp",cmdstr);
+    phlp = pdone;
+    fndfile = 1;
+@@ -31068,7 +31068,7 @@ RescoreResrot()
+    tnk_single = 1;
+    for (j=0; j<nresrot; j++) {
+ 	showresrot(j);
+-	sprintf(wfile, "rescore%03d",j);
++	sprintf(wfile, "rescore%06d",j);
+ 	cpstr(wfile,tnkjn,SUBLEN1);
+ #if defined(VMS) || defined(UNDERSC)
+ 	wrtsng();

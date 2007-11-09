@@ -1,0 +1,12 @@
+$OpenBSD: patch-ambfor_makefile,v 1.1.1.1 2007/11/09 17:26:27 ckuethe Exp $
+--- ambfor/makefile.orig	Thu Nov  8 20:03:46 2007
++++ ambfor/makefile	Thu Nov  8 20:04:35 2007
+@@ -16,7 +16,7 @@
+ 
+ CFLAGS = -c
+ FC = g77
+-FFLAGS = -c -O3 -ffast-math
++FFLAGS = -c -O2 -ffast-math
+ LIBS =  -lm
+ LDR = g77 
+ 
