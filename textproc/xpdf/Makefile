@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.56 2007/08/25 14:42:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2007/11/09 07:15:12 bernd Exp $
 
 COMMENT=	PDF viewer for X11
 
 DISTNAME=	xpdf-3.02
-PKGNAME=	xpdf-3.02pl1p0
+PKGNAME=	xpdf-3.02pl2
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		ftp://gd.tuwien.ac.at/publishing/xpdf/ \
 		ftp://tug.org/xpdf/
-PATCHFILES=	xpdf-3.02pl1.patch
+PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch
 PATCH_DIST_STRIP=-p1
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
