@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.15 2007/11/05 12:45:34 steven Exp $
+# $OpenBSD: libtool,v 1.16 2007/11/09 15:20:57 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -576,6 +576,7 @@ sub create_symlinks
 		mkdir $dir or die "cannot create directory: $!\n";
 	}
 	foreach my $f (@$libfiles) {
+		next if ($f =~ m/\.a$/);
 		my $libfile = basename $f;
 		print "ln -s $f $dir/$libfile\n" if $D;
 		if (! -f "$dir/$libfile") {
