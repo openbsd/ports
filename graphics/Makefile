@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2007/10/16 07:31:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2007/11/09 17:28:38 ckuethe Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -94,6 +94,7 @@
      SUBDIR += makehuman
      SUBDIR += mapivi
      SUBDIR += mhgui
+     SUBDIR += molden
      SUBDIR += mpeg-lib
      SUBDIR += mpeg_encode
      SUBDIR += mpeg_play
