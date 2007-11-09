@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/03/08 01:47:26 kurt Exp $
---- Makefile.in.orig	Fri Sep 10 00:11:44 2004
-+++ Makefile.in	Fri Feb 18 14:27:05 2005
-@@ -424,7 +424,7 @@ DIST_SOURCES = $(smartctl_SOURCES) $(am_
- 
- NROFF = nroff
- MANS = $(man_MANS)
+$OpenBSD: patch-Makefile_in,v 1.2 2007/11/09 13:35:38 pyr Exp $
+--- Makefile.in.orig	Wed Dec 20 21:38:50 2006
++++ Makefile.in	Thu Oct 25 14:44:43 2007
+@@ -172,7 +172,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
+ docsDATA_INSTALL = $(INSTALL_DATA)
+ initdDATA_INSTALL = $(INSTALL_DATA)
+ sysconfDATA_INSTALL = $(INSTALL_DATA)
 -DATA = $(docs_DATA) $(initd_DATA) $(sysconf_DATA)
 +DATA = $(docs_DATA) $(sysconf_DATA)
- 
- 
- RECURSIVE_TARGETS = info-recursive dvi-recursive pdf-recursive \
-@@ -1145,9 +1145,9 @@ info: info-recursive
+ ETAGS = etags
+ CTAGS = ctags
+ DIST_SUBDIRS = $(SUBDIRS)
+@@ -1122,9 +1122,9 @@ info: info-recursive
  
  info-am:
  
