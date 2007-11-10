@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/10 15:42:09 jasper Exp $
 
 COMMENT=		GNOME media utilities
 
 GNOME_PROJECT=		gnome-media
-GNOME_VERSION=		2.18.0
+GNOME_VERSION=		2.20.1
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 SHARED_LIBS +=	cddb-slave2          0.0      # .0.0
 CATEGORIES=		x11
@@ -13,19 +13,22 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
-		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
-		audiofile bonobo-2 bonobo-activation c cairo crypto \
-		dbus-1 dbus-glib-1 esd expat fontconfig freetype gdk-x11-2.0 \
-		gdk_pixbuf-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
-		gnome-2 gnome-keyring gnomecanvas-2 gobject-2.0 gthread-2.0 \
-		gtk-x11-2.0 jpeg m png popt pthread ssl util xml2 z
+
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
+		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 bonobo-activation \
+		c cairo crypto dbus-1 dbus-glib-1 esd expat fontconfig \
+		freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
+		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
+		gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m pcre png \
+		popt pthread ssl util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		::textproc/scrollkeeper \
-			::multimedia/gstreamer-0.10/plugins-good,-gconf
+			::multimedia/gstreamer-0.10/plugins-good,-gconf \
+			::x11/gnome/doc-utils
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			bonoboui-2::x11/gnome/libbonoboui \
 			gnomevfs-2::x11/gnome/vfs2 \
