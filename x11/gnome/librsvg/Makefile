@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2007/10/30 07:26:30 eric Exp $
+# $OpenBSD: Makefile,v 1.33 2007/11/10 16:00:55 jasper Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
-GNOME_VERSION=	2.18.1
-PKGNAME=	${DISTNAME}p2
+GNOME_VERSION=	2.18.2
 SHARED_LIBS +=	rsvg-2         19.0           # .20.1
 CATEGORIES=	devel
 
@@ -22,7 +21,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 MODULES=	devel/gettext x11/gnome
 
-LIB_DEPENDS=	gdk-x11-2.0.>=1200,gdk_pixbuf-2.0.>=1200,gtk-x11-2.0.>=1200::x11/gtk+2 \
+LIB_DEPENDS=	gailutil.>=20::x11/gnome/gail \
+		gdk-x11-2.0.>=1200,gdk_pixbuf-2.0.>=1200,gtk-x11-2.0.>=1200::x11/gtk+2 \
 		croco-0.6.>=3::www/libcroco
 
 USE_X11=		Yes
