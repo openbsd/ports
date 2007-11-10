@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_pkg_pkg_m,v 1.1 2007/11/10 11:15:05 steven Exp $
+--- scripts/pkg/pkg.m.orig	Sat Nov 10 12:10:44 2007
++++ scripts/pkg/pkg.m	Sat Nov 10 12:10:52 2007
+@@ -996,7 +996,7 @@ function configure_make (desc, packdir, verbose)   
+     ## make
+     if (exist (fullfile (src, "Makefile"), "file"))
+       [status, output] = shell (strcat ("export INSTALLDIR=\"", desc.dir,
+-					 "\"; make -C ", src));
++					 "\"; gmake -C ", src));
+       if (status != 0)
+ 	rm_rf (desc.dir);
+ 	error ("'make' returned the following error: %s", output);
