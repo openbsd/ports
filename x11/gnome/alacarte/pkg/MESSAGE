@@ -1,0 +1,2 @@
+Note that you must have the File Alteration Monitor daemon running.
+Otherwise alacarte won't work.
