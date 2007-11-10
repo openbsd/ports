@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.16 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/11/10 15:49:05 jasper Exp $
 
 COMMENT=		dialogs for Gnome
 
 GNOME_PROJECT=		zenity
-GNOME_VERSION=		2.18.2
+GNOME_VERSION=		2.20.0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 c cairo dbus-1 expat \
-		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glade-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		png pthread xml2 z
+
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 c cairo \
+		dbus-1 expat fontconfig freetype gailutil gdk-x11-2.0 \
+		gdk_pixbuf-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre png pthread xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -27,7 +28,7 @@ LIB_DEPENDS=		dbus-glib-1.>=3::x11/dbus-glib \
 
 USE_X11=		Yes
 USE_LIBTOOL=		No
-
+CONFIGURE_ARGS= 	--enable-libnotify
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
