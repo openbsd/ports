@@ -1,0 +1,2 @@
+This package provides the smb module for GNOME VFS, which allows it to
+surf networks using the SMB protocol (also known as Microsoft Networks).

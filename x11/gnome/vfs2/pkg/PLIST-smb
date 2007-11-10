@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-smb,v 1.1 2007/11/10 14:39:26 jasper Exp $
+lib/gnome-vfs-2.0/modules/libsmb.a
+lib/gnome-vfs-2.0/modules/libsmb.la
+lib/gnome-vfs-2.0/modules/libsmb.so
+share/examples/gnome-vfs2/gnome-vfs-2.0/modules/smb-module.conf
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/smb-module.conf
