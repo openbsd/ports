@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.26 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2007/11/10 15:46:37 jasper Exp $
 
 COMMENT=		lightweight window manager
 
 GNOME_PROJECT=		metacity
-GNOME_VERSION=		2.18.5
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.20.0
 SHARED_LIBS=		metacity-private 0.0
 CATEGORIES=		x11
-
-HOMEPAGE=		http://www.gnome.org/softwaremap/projects/Metacity
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi \
-		Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z
+WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
+		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
+		expat fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre png pthread z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -29,15 +27,17 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/metacity
-CONFIGURE_ARGS+=	--disable-schemas-install
+DESKTOP_FILES=		Yes
+CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/metacity \
+			--disable-schemas-install \
+			--disable-compositor
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/metacity && \
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/metacity/; \
-	${INSTALL_DATA} ${WRKSRC}/doc/theme-format.txt ${PREFIX}/share/doc/metacity/; \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/metacity
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/metacity/
+	${INSTALL_DATA} ${WRKSRC}/doc/theme-format.txt ${PREFIX}/share/doc/metacity/
 	${INSTALL_DATA} ${WRKSRC}/doc/metacity-theme.dtd ${PREFIX}/share/doc/metacity/
 
 .include <bsd.port.mk>

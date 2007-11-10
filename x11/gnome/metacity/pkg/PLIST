@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/04/24 16:41:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/11/10 15:46:37 jasper Exp $
+%%SHARED%%
 bin/metacity
 bin/metacity-message
 bin/metacity-theme-viewer
@@ -25,6 +26,10 @@ share/doc/metacity/README
 share/doc/metacity/metacity-theme.dtd
 share/doc/metacity/theme-format.txt
 share/gnome/
+share/gnome-control-center/
+share/gnome-control-center/keybindings/
+share/gnome-control-center/keybindings/50-metacity-desktop-key.xml
+share/gnome-control-center/keybindings/50-metacity-key.xml
 share/gnome/wm-properties/
 share/gnome/wm-properties/metacity.desktop
 share/locale/am/
@@ -132,6 +137,9 @@ share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/metacity.mo
 share/locale/nl/LC_MESSAGES/metacity.mo
 share/locale/nn/LC_MESSAGES/metacity.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/metacity.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/metacity.mo
@@ -146,6 +154,9 @@ share/locale/ru/LC_MESSAGES/metacity.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/metacity.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/metacity.mo
 share/locale/sk/LC_MESSAGES/metacity.mo
 share/locale/sl/LC_MESSAGES/metacity.mo
 share/locale/sq/
@@ -175,8 +186,6 @@ share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/metacity.mo
 share/locale/zh_CN/LC_MESSAGES/metacity.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/metacity.mo
 share/locale/zh_TW/LC_MESSAGES/metacity.mo
 share/metacity/
@@ -303,5 +312,6 @@ share/themes/Simple/metacity-1/maximize.png
 share/themes/Simple/metacity-1/maximized.png
 share/themes/Simple/metacity-1/metacity-theme-1.xml
 share/themes/Simple/metacity-1/minimize.png
-%%SHARED%%
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/metacity/*.schemas > /dev/null
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
