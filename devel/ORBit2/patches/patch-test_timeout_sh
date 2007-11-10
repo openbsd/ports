@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_timeout_sh,v 1.1 2007/11/10 14:06:45 jasper Exp $
+--- test/timeout.sh.orig	Fri Oct 19 13:31:53 2007
++++ test/timeout.sh	Fri Oct 19 13:32:01 2007
+@@ -12,6 +12,6 @@ echo "Running timeout client..."
+ retv=$?
+ 
+ 
+-killall lt-timeout-server
++pkill lt-timeout-server
+ 
+ exit $retv
