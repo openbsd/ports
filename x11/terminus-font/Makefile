@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/07/22 08:02:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2007/11/10 22:32:12 kili Exp $
 
 COMMENT=		fixed width fonts especially for long hacking sessions
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.is-vn.bg/hamster/ \
-			http://legonet.org/~salan/distfiles/
+MASTER_SITES=		http://www.is-vn.bg/hamster/
 
 CONFIGURE_STYLE=	simple
 NO_REGRESS=		Yes
