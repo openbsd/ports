@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/07/05 22:50:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2007/11/10 15:13:23 jasper Exp $
+%%SHARED%%
 bin/gnome-about
 include/gnome-desktop-2.0/
 include/gnome-desktop-2.0/libgnome/
@@ -14,6 +15,8 @@ share/applications/
 share/applications/gnome-about.desktop
 share/gnome/
 share/gnome-about/
+share/gnome-about/contributors.list
+share/gnome-about/foundation-members.list
 share/gnome-about/gnome-64.png
 share/gnome-about/gnome-version.xml
 share/gnome-about/headers/
@@ -38,10 +41,14 @@ share/gnome/help/fdl/fr/
 share/gnome/help/fdl/fr/fdl.xml
 share/gnome/help/fdl/ko/
 share/gnome/help/fdl/ko/fdl.xml
+share/gnome/help/fdl/oc/
+share/gnome/help/fdl/oc/fdl.xml
 share/gnome/help/fdl/sv/
 share/gnome/help/fdl/sv/fdl.xml
 share/gnome/help/fdl/uk/
 share/gnome/help/fdl/uk/fdl.xml
+share/gnome/help/fdl/vi/
+share/gnome/help/fdl/vi/fdl.xml
 share/gnome/help/gpl/
 share/gnome/help/gpl/C/
 share/gnome/help/gpl/C/gpl.xml
@@ -57,6 +64,8 @@ share/gnome/help/gpl/fr/
 share/gnome/help/gpl/fr/gpl.xml
 share/gnome/help/gpl/ko/
 share/gnome/help/gpl/ko/gpl.xml
+share/gnome/help/gpl/oc/
+share/gnome/help/gpl/oc/gpl.xml
 share/gnome/help/gpl/pa/
 share/gnome/help/gpl/pa/gpl.xml
 share/gnome/help/gpl/sv/
@@ -78,12 +87,16 @@ share/gnome/help/lgpl/fr/
 share/gnome/help/lgpl/fr/lgpl.xml
 share/gnome/help/lgpl/ko/
 share/gnome/help/lgpl/ko/lgpl.xml
+share/gnome/help/lgpl/oc/
+share/gnome/help/lgpl/oc/lgpl.xml
 share/gnome/help/lgpl/pa/
 share/gnome/help/lgpl/pa/lgpl.xml
 share/gnome/help/lgpl/sv/
 share/gnome/help/lgpl/sv/lgpl.xml
 share/gnome/help/lgpl/uk/
 share/gnome/help/lgpl/uk/lgpl.xml
+share/gnome/help/lgpl/vi/
+share/gnome/help/lgpl/vi/lgpl.xml
 share/gnome/help/lgpl/zh_CN/
 share/gnome/help/lgpl/zh_CN/lgpl.xml
 share/gtk-doc/
@@ -241,6 +254,9 @@ share/locale/ru/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sq/
@@ -269,6 +285,9 @@ share/locale/uk/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
@@ -283,8 +302,6 @@ share/locale/yo/
 share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zu/
@@ -296,8 +313,10 @@ share/omf/fdl/fdl-ar.omf
 share/omf/fdl/fdl-es.omf
 share/omf/fdl/fdl-fr.omf
 share/omf/fdl/fdl-ko.omf
+share/omf/fdl/fdl-oc.omf
 share/omf/fdl/fdl-sv.omf
 share/omf/fdl/fdl-uk.omf
+share/omf/fdl/fdl-vi.omf
 share/omf/gpl/
 share/omf/gpl/gpl-C.omf
 share/omf/gpl/gpl-ar.omf
@@ -306,6 +325,7 @@ share/omf/gpl/gpl-es.omf
 share/omf/gpl/gpl-fi.omf
 share/omf/gpl/gpl-fr.omf
 share/omf/gpl/gpl-ko.omf
+share/omf/gpl/gpl-oc.omf
 share/omf/gpl/gpl-pa.omf
 share/omf/gpl/gpl-sv.omf
 share/omf/gpl/gpl-uk.omf
@@ -317,9 +337,11 @@ share/omf/lgpl/lgpl-ar.omf
 share/omf/lgpl/lgpl-es.omf
 share/omf/lgpl/lgpl-fr.omf
 share/omf/lgpl/lgpl-ko.omf
+share/omf/lgpl/lgpl-oc.omf
 share/omf/lgpl/lgpl-pa.omf
 share/omf/lgpl/lgpl-sv.omf
 share/omf/lgpl/lgpl-uk.omf
+share/omf/lgpl/lgpl-vi.omf
 share/omf/lgpl/lgpl-zh_CN.omf
 share/pixmaps/
 share/pixmaps/apple-green.png
@@ -394,7 +416,6 @@ share/pixmaps/gtkvim.png
 share/pixmaps/kterm.xpm
 share/pixmaps/monitor.png
 share/pixmaps/vnterm.xpm
-%%SHARED%%
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec %D/bin/update-desktop-database
