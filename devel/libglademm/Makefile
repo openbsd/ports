@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/07/17 16:54:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/10 14:44:50 jasper Exp $
 
 COMMENT-main=	C++ bindings for libglade
 COMMENT-docs=	C++ bindings for libglade documentation
 
 GNOME_PROJECT=	libglademm
-GNOME_VERSION=	2.6.4
+GNOME_VERSION=	2.6.5
 PKGNAME-main=	${DISTNAME}
 PKGNAME-docs=	libglademm-docs-${GNOME_VERSION}
 SHARED_LIBS +=	glademm-2.4          1.6      # .1.5
@@ -24,11 +24,12 @@ PKG_ARCH-docs=	*
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
-WANTLIB-main=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrender Xrandr \
-		atk-1.0 cairo.>=4 cairomm-1.0 expat fontconfig freetype \
-		glib-2.0 gmodule-2.0 gobject-2.0 glibmm-2.4.>=3 glitz.>=1 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 png.>=5 sigc-2.0.>=1 \
-		xml2.>=9 z
+WANTLIB-main=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 cairo cairomm-1.0 \
+		expat fontconfig freetype glib-2.0 glibmm-2.4 glitz \
+		gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre png sigc-2.0 xml2 z
+
 MODULES=	devel/gettext \
 		x11/gnome
 LIB_DEPENDS=	gtkmm-2.4.>=3,gdkmm-2.4.>=3,atkmm-1.6.>=3,pangomm-1.4.>=3::x11/gtk2mm \
