@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/05/13 18:04:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/11/10 14:10:09 jasper Exp $
 bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/
@@ -11,6 +11,14 @@ share/gnome/help/gconf-editor/C/figures/
 share/gnome/help/gconf-editor/C/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/C/gconf-editor.xml
 share/gnome/help/gconf-editor/C/legal.xml
+share/gnome/help/gconf-editor/de/
+share/gnome/help/gconf-editor/de/figures/
+share/gnome/help/gconf-editor/de/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/de/gconf-editor.xml
+share/gnome/help/gconf-editor/es/
+share/gnome/help/gconf-editor/es/figures/
+share/gnome/help/gconf-editor/es/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/es/gconf-editor.xml
 share/gnome/help/gconf-editor/fr/
 share/gnome/help/gconf-editor/fr/figures/
 share/gnome/help/gconf-editor/fr/figures/gconf_editor_anno_window.png
@@ -19,10 +27,18 @@ share/gnome/help/gconf-editor/it/
 share/gnome/help/gconf-editor/it/figures/
 share/gnome/help/gconf-editor/it/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/it/gconf-editor.xml
+share/gnome/help/gconf-editor/oc/
+share/gnome/help/gconf-editor/oc/figures/
+share/gnome/help/gconf-editor/oc/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/oc/gconf-editor.xml
 share/gnome/help/gconf-editor/sv/
 share/gnome/help/gconf-editor/sv/figures/
 share/gnome/help/gconf-editor/sv/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/sv/gconf-editor.xml
+share/gnome/help/gconf-editor/uk/
+share/gnome/help/gconf-editor/uk/figures/
+share/gnome/help/gconf-editor/uk/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/uk/gconf-editor.xml
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/48x48/
@@ -32,6 +48,9 @@ share/locale/am/LC_MESSAGES/gconf-editor.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gconf-editor.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/gconf-editor.mo
 share/locale/az/LC_MESSAGES/gconf-editor.mo
 share/locale/be/LC_MESSAGES/gconf-editor.mo
 share/locale/be@latin/
@@ -129,6 +148,9 @@ share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/gconf-editor.mo
 share/locale/nl/LC_MESSAGES/gconf-editor.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/gconf-editor.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gconf-editor.mo
@@ -143,6 +165,9 @@ share/locale/ru/LC_MESSAGES/gconf-editor.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gconf-editor.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/gconf-editor.mo
 share/locale/sk/LC_MESSAGES/gconf-editor.mo
 share/locale/sl/LC_MESSAGES/gconf-editor.mo
 share/locale/sq/
@@ -170,15 +195,17 @@ share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_CN/LC_MESSAGES/gconf-editor.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 share/omf/gconf-editor/
 share/omf/gconf-editor/gconf-editor-C.omf
+share/omf/gconf-editor/gconf-editor-de.omf
+share/omf/gconf-editor/gconf-editor-es.omf
 share/omf/gconf-editor/gconf-editor-fr.omf
 share/omf/gconf-editor/gconf-editor-it.omf
+share/omf/gconf-editor/gconf-editor-oc.omf
 share/omf/gconf-editor/gconf-editor-sv.omf
+share/omf/gconf-editor/gconf-editor-uk.omf
 share/pixmaps/
 share/pixmaps/gconf-editor/
 share/pixmaps/gconf-editor/entry-blank.png
