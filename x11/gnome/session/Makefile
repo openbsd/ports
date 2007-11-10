@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2007/11/10 15:52:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2007/11/10 16:26:22 jasper Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.20.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 # GPL/LGPL
@@ -31,7 +32,8 @@ LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
 
 # Here we hang all the additional ports that will make up a satisfying
 # Gnome2 user experience :)
-RUN_DEPENDS+=		::x11/gnome/applets2 \
+RUN_DEPENDS+=		::x11/gnome/alacarte \
+			::x11/gnome/applets2 \
 			::x11/gnome/backgrounds \
 			::x11/gnome/controlcenter2 \
 			::x11/gnome/gedit \

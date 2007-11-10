@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2007/10/29 21:32:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2007/11/10 16:26:22 jasper Exp $
 
+     SUBDIR += alacarte
      SUBDIR += applets2
      SUBDIR += audio
      SUBDIR += backgrounds
