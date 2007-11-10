@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/17 14:55:26 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/10 15:23:12 jasper Exp $
 %%SHARED%%
 bin/file-roller
 lib/nautilus/
@@ -7,13 +7,17 @@ lib/nautilus/extensions-1.0/libnautilus-fileroller.a
 lib/nautilus/extensions-1.0/libnautilus-fileroller.la
 libexec/file-roller/
 libexec/file-roller/isoinfo.sh
-libexec/file-roller/move-here.sh
 share/applications/
 share/applications/file-roller.desktop
 share/file-roller/
 share/file-roller/glade/
-share/file-roller/glade/ask-password.glade
-share/file-roller/glade/file-roller.glade
+share/file-roller/glade/add-options.glade
+share/file-roller/glade/batch-add-files.glade
+share/file-roller/glade/batch-password.glade
+share/file-roller/glade/delete.glade
+share/file-roller/glade/open-with.glade
+share/file-roller/glade/password.glade
+share/file-roller/glade/properties.glade
 share/file-roller/icons/
 share/file-roller/icons/hicolor/
 share/file-roller/icons/hicolor/16x16/
@@ -87,6 +91,14 @@ share/gnome/help/file-roller/nl/figures/file-roller_main_window.png
 share/gnome/help/file-roller/nl/figures/file-roller_rightarrow.png
 share/gnome/help/file-roller/nl/figures/file-roller_uparrow.png
 share/gnome/help/file-roller/nl/file-roller.xml
+share/gnome/help/file-roller/oc/
+share/gnome/help/file-roller/oc/figures/
+share/gnome/help/file-roller/oc/figures/file-roller_home.png
+share/gnome/help/file-roller/oc/figures/file-roller_leftarrow.png
+share/gnome/help/file-roller/oc/figures/file-roller_main_window.png
+share/gnome/help/file-roller/oc/figures/file-roller_rightarrow.png
+share/gnome/help/file-roller/oc/figures/file-roller_uparrow.png
+share/gnome/help/file-roller/oc/file-roller.xml
 share/gnome/help/file-roller/ru/
 share/gnome/help/file-roller/ru/figures/
 share/gnome/help/file-roller/ru/figures/file-roller_home.png
@@ -247,6 +259,9 @@ share/locale/ru/LC_MESSAGES/file-roller.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/file-roller.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/file-roller.mo
 share/locale/sk/LC_MESSAGES/file-roller.mo
 share/locale/sl/LC_MESSAGES/file-roller.mo
 share/locale/sq/
@@ -277,8 +292,6 @@ share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/file-roller.mo
 share/locale/zh_CN/LC_MESSAGES/file-roller.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/file-roller.mo
 share/locale/zh_TW/LC_MESSAGES/file-roller.mo
 share/omf/file-roller/
@@ -289,6 +302,7 @@ share/omf/file-roller/file-roller-es.omf
 share/omf/file-roller/file-roller-fr.omf
 share/omf/file-roller/file-roller-it.omf
 share/omf/file-roller/file-roller-nl.omf
+share/omf/file-roller/file-roller-oc.omf
 share/omf/file-roller/file-roller-ru.omf
 share/omf/file-roller/file-roller-sv.omf
 share/omf/file-roller/file-roller-uk.omf
