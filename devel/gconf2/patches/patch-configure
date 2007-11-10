@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2007/04/24 12:53:37 jasper Exp $
---- configure.orig	Mon Mar 19 01:10:53 2007
-+++ configure	Mon Mar 19 01:11:06 2007
-@@ -21939,6 +21939,8 @@ else
+$OpenBSD: patch-configure,v 1.7 2007/11/10 14:08:16 jasper Exp $
+--- configure.orig	Mon Oct 15 04:02:50 2007
++++ configure	Fri Oct 19 13:55:59 2007
+@@ -22106,6 +22106,8 @@ else
    LDAP_SUPPORT_FALSE=
  fi
  

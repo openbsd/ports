@@ -1,7 +1,7 @@
-$OpenBSD: patch-gconf_Makefile_in,v 1.8 2007/04/24 12:53:38 jasper Exp $
---- gconf/Makefile.in.orig	Mon Mar 19 01:50:27 2007
-+++ gconf/Makefile.in	Mon Mar 19 01:51:46 2007
-@@ -797,8 +797,8 @@ default.path: $(srcdir)/default.path.in
+$OpenBSD: patch-gconf_Makefile_in,v 1.9 2007/11/10 14:08:16 jasper Exp $
+--- gconf/Makefile.in.orig	Mon Oct 15 04:02:53 2007
++++ gconf/Makefile.in	Fri Oct 19 13:55:59 2007
+@@ -794,8 +794,8 @@ default.path: $(srcdir)/default.path.in
  		<$(srcdir)/default.path.in >default.path
  
  install-data-local: default.path

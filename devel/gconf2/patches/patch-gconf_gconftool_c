@@ -1,7 +1,7 @@
-$OpenBSD: patch-gconf_gconftool_c,v 1.6 2007/04/24 12:53:38 jasper Exp $
---- gconf/gconftool.c.orig	Fri Mar  2 23:10:13 2007
-+++ gconf/gconftool.c	Thu Apr 19 20:32:10 2007
-@@ -4049,7 +4049,7 @@ do_get_default_source (const gchar** args)
+$OpenBSD: patch-gconf_gconftool_c,v 1.7 2007/11/10 14:08:16 jasper Exp $
+--- gconf/gconftool.c.orig	Wed Aug  1 07:36:59 2007
++++ gconf/gconftool.c	Fri Oct 19 13:55:59 2007
+@@ -4182,7 +4182,7 @@ do_get_default_source (const gchar** args)
      }
  
    /* Use default database */
