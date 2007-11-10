@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/05/05 13:27:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/11/10 14:56:25 jasper Exp $
+%%SHARED%%
 bin/gnome-keyring-daemon
 include/gnome-keyring-1/
+include/gnome-keyring-1/gnome-keyring-memory.h
+include/gnome-keyring-1/gnome-keyring-result.h
 include/gnome-keyring-1/gnome-keyring.h
 lib/libgnome-keyring.a
 lib/libgnome-keyring.la
@@ -11,7 +14,18 @@ share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gnome-keyring/
 share/gtk-doc/html/gnome-keyring/ch01.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-acl.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-attributes.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-find.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-generic-callbacks.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-item-info.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-items.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-keyring-info.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-keyrings.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-memory.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-misc.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-network.html
+share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-result.html
 share/gtk-doc/html/gnome-keyring/gnome-keyring.devhelp
 share/gtk-doc/html/gnome-keyring/gnome-keyring.devhelp2
 share/gtk-doc/html/gnome-keyring/home.png
@@ -28,6 +42,9 @@ share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gnome-keyring.mo
 share/locale/be/LC_MESSAGES/gnome-keyring.mo
+share/locale/be@latin/
+share/locale/be@latin/LC_MESSAGES/
+share/locale/be@latin/LC_MESSAGES/gnome-keyring.mo
 share/locale/bg/LC_MESSAGES/gnome-keyring.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
@@ -111,6 +128,9 @@ share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/gnome-keyring.mo
 share/locale/nl/LC_MESSAGES/gnome-keyring.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/gnome-keyring.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gnome-keyring.mo
@@ -125,6 +145,9 @@ share/locale/ru/LC_MESSAGES/gnome-keyring.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gnome-keyring.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/gnome-keyring.mo
 share/locale/sk/LC_MESSAGES/gnome-keyring.mo
 share/locale/sl/LC_MESSAGES/gnome-keyring.mo
 share/locale/sq/
@@ -138,6 +161,9 @@ share/locale/sv/LC_MESSAGES/gnome-keyring.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gnome-keyring.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/gnome-keyring.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gnome-keyring.mo
@@ -148,8 +174,5 @@ share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
-%%SHARED%%
