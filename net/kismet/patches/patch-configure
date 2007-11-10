@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.1 2007/11/10 21:10:42 kili Exp $
+--- configure.orig	Sat Oct  6 23:32:15 2007
++++ configure	Fri Nov  9 14:13:43 2007
+@@ -8584,6 +8584,7 @@ echo "${ECHO_T}no" >&6; }
+ 
+ fi
+ 
++if false; then
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for DBUS" >&5
+ echo $ECHO_N "checking for DBUS... $ECHO_C" >&6; }
+@@ -8621,9 +8622,8 @@ else
+   pkg_failed=yes
+ fi
+     fi
+-else
+-	pkg_failed=untried
+ fi
++pkg_failed=untried
+ 
+ 
+ 
+@@ -8663,6 +8663,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+ fi
++fi
+ 
+ local=no
+ # Check whether --enable-local-dumper was given.
+@@ -9836,7 +9837,7 @@ sharedatadir=`(
+     test "$exec_prefix" = NONE && exec_prefix=${prefix}
+     eval echo "$sharedatadir"
+ )`
+-sharedatadir=${sharedatadir}
++eval sharedatadir=${sharedatadir}
+ 
+ 
+ ac_config_files="$ac_config_files Makefile extra/buzzme/Makefile extra/Makefile conf/kismet.conf conf/kismet_ui.conf"

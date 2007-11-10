@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2007/11/10 21:10:42 kili Exp $
 
 # Don't hard code -O2 -Wall.
 # Use BSD_INSTALL_* macros for installation.
 
---- Makefile.in.orig	Fri Dec 15 00:01:06 2006
-+++ Makefile.in	Thu Dec 28 11:06:53 2006
+--- Makefile.in.orig	Sun Sep  9 23:01:20 2007
++++ Makefile.in	Wed Sep 12 22:02:32 2007
 @@ -21,8 +21,8 @@ LD	= @CXX@
  LDFLAGS	= @LDFLAGS@
  LIBS	= @LIBS@
@@ -16,9 +16,12 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
  CPPFLAGS = @CPPFLAGS@
  SUID	= @suid@
  
-@@ -128,52 +128,52 @@ checkuiconfig:
+@@ -137,53 +137,55 @@ checkuiconfig:
+ 		echo "latest version is `grep version= conf/kismet_ui.conf | cut -f 2 -d=`"; \
  	fi
  
++.PHONY: binuserinstall
++
  binuserinstall:
 -	install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(PS) $(BIN)/$(PS); 
 -	install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(DRONE) $(BIN)/$(DRONE);
@@ -37,10 +40,10 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
 +	$(BSD_INSTALL_DATA_DIR) $(ETC)
 +	$(BSD_INSTALL_PROGRAM_DIR) $(BIN)
  
--	install -o $(INSTUSR) -g $(INSTGRP) -m 755 scripts/kismet $(BIN)/kismet
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 755 $(WRAP) $(BIN)/kismet
 -	install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(NC) $(BIN)/$(NC)
 -	# install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(HOPPER) $(BIN)/$(HOPPER)
-+	$(BSD_INSTALL_SCRIPT) scripts/kismet $(BIN)/kismet
++	$(BSD_INSTALL_PROGRAM) $(WRAP) $(BIN)/kismet
 +	$(BSD_INSTALL_PROGRAM) $(NC) $(BIN)/$(NC)
 +	# $(BSD_INSTALL_PROGRAM) $(HOPPER) $(BIN)/$(HOPPER)
  	@if test "$(ZAURUS)" = "yes"; then \
@@ -104,7 +107,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
  
  	@if test -f $(BIN)/kismet_curses; then \
  		echo "Removing old kismet_curses binary.  The panels frontend is now kismet_client."; \
-@@ -186,22 +186,22 @@ suidinstall: $(PS) $(DRONE) $(NC) $(GPSL
+@@ -196,22 +198,22 @@ suidinstall: $(PS) $(DRONE) $(NC) $(GPSLBUILD) $(ZAURU
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -133,7 +136,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -219,22 +219,22 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUIL
+@@ -229,22 +231,22 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUILD) $(ZAURUSBUI
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -162,7 +165,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -250,11 +250,11 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUIL
+@@ -260,11 +262,11 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUILD) $(ZAURUSBUI
  forceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binuserinstall
@@ -177,7 +180,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -269,11 +269,11 @@ forceinstall: $(PS)
+@@ -279,11 +281,11 @@ forceinstall: $(PS)
  suidforceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binsuidinstall
@@ -192,7 +195,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -358,13 +358,11 @@ depend:
+@@ -367,13 +369,11 @@ depend:
  	@$(MAKE) $(DEPEND)
  
  $(DEPEND):
@@ -201,7 +204,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2007/04/09 20:50:57 kili Exp $
  	@echo "Generating dependencies... "
  	@echo > $(DEPEND)
  	@$(CXX) $(CFLAGS) -MM \
- 		`echo $(PSO) $(DRONEO) $(GPSLO) $(NCO) | sed -e "s/\.o/\.cc/g"` >> $(DEPEND)
+ 		`echo $(PSO) $(DRONEO) $(GPSLO) $(NCO) | sed -e "s/\.o/\.cc/g" | sed -e "s/\.mo/\.m/g"` >> $(DEPEND)
 -
 -include $(DEPEND)
  

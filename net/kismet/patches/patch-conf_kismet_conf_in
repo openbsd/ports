@@ -1,16 +1,16 @@
-$OpenBSD: patch-conf_kismet_conf_in,v 1.5 2007/04/09 20:50:57 kili Exp $
---- conf/kismet.conf.in.orig	Sat Jan 13 17:57:59 2007
-+++ conf/kismet.conf.in	Tue Jan 16 20:37:15 2007
-@@ -10,7 +10,7 @@ version=2005.06.R1
+$OpenBSD: patch-conf_kismet_conf_in,v 1.6 2007/11/10 21:10:42 kili Exp $
+--- conf/kismet.conf.in.orig	Sun Oct  7 17:48:51 2007
++++ conf/kismet.conf.in	Sun Oct  7 17:51:25 2007
+@@ -10,7 +10,7 @@ version=2007.09.R1
  servername=Kismet
  
  # User to setid to (should be your normal user)
 -suiduser=your_user_here
 +suiduser=_kismet
  
- # Sources are defined as:
- # source=sourcetype,interface,name[,initialchannel]
-@@ -19,6 +19,10 @@ suiduser=your_user_here
+ # Do we try to put networkmanager to sleep?  If you use NM, this is probably
+ # what you want to do, so that it will leave the interfaces alone while
+@@ -24,6 +24,10 @@ networkmanagersleep=true
  # The initial channel is optional, if hopping is not enabled it can be used
  # to set the channel the interface listens on.
  # YOU MUST CHANGE THIS TO BE THE SOURCE YOU WANT TO USE
@@ -21,7 +21,7 @@ $OpenBSD: patch-conf_kismet_conf_in,v 1.5 2007/04/09 20:50:57 kili Exp $
  source=none,none,addme
  
  # Comma-separated list of sources to enable.  This is only needed if you defined
-@@ -175,7 +179,7 @@ writeinterval=300
+@@ -206,7 +210,7 @@ trackivs=false
  # server itself will play sound.  Primarily for headless or automated systems.
  sound=false
  # Path to sound player
@@ -30,7 +30,7 @@ $OpenBSD: patch-conf_kismet_conf_in,v 1.5 2007/04/09 20:50:57 kili Exp $
  # Optional parameters to pass to the player
  # soundopts=--volume=.3
  # New network found
-@@ -229,7 +233,7 @@ metric=false
+@@ -264,7 +268,7 @@ metric=false
  # recent versions of GPSDrive's native support of Kismet.
  waypoints=false
  # GPSDrive waypoint file.  This WILL be truncated.
@@ -39,7 +39,7 @@ $OpenBSD: patch-conf_kismet_conf_in,v 1.5 2007/04/09 20:50:57 kili Exp $
  # Do we want ESSID or BSSID as the waypoint name ?
  waypoint_essid=false
  
-@@ -327,14 +331,14 @@ logdefault=Kismet
+@@ -362,14 +366,14 @@ logdefault=Kismet
  # crypt/Pok-Dec-20-01-1
  # and so on.  The "dump", "crypt", etc, dirs must exist before kismet is run
  # in this case.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/13 08:35:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2007/11/10 21:10:42 kili Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -8,10 +8,10 @@ COMMENT-gpsmap=	reads GPS and Network XML datafiles and plots networks
 # No wireless capabilities
 NOT_FOR_ARCHS=m68k m88k vax
 
-V=		2007-01-R1b
+V=		2007-10-R1
 DISTNAME=	kismet-${V}
-PKGNAME-main=	kismet-${V:S,-,,g}p0
-PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}p1
+PKGNAME-main=	kismet-${V:S,-,,g}
+PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.kismetwireless.net/
@@ -25,13 +25,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	autoconf old
-AUTOCONF_VERSION=	2.59
+# "old" is required for setting --sysconfdir
+CONFIGURE_STYLE=	gnu old
 
 CONFDIR=		${SYSCONFDIR}/kismet
 SUBST_VARS+=		CONFDIR
 
-CONFIGURE_ARGS=		--sysconfdir=${CONFDIR}
+CONFIGURE_ARGS=		--sysconfdir=${CONFDIR} \
+			--mandir=${PREFIX}/man
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
@@ -67,7 +68,7 @@ CONFIGURE_ARGS+=	--disable-gpsmap
 post-configure:
 	@cd ${WRKSRC} && ${GMAKE} depend
 
-post-build:
+post-patch:
 	@perl -pi -e \
 		's,/usr/local/etc(/kismet.conf),${CONFDIR}$$1,' \
 		${WRKSRC}/man/kismet.conf.5
