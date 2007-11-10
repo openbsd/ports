@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.20 2007/07/05 22:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2007/11/10 14:43:39 jasper Exp $
 
 COMMENT=		GNOME component and compound document system
 
 GNOME_PROJECT=		libbonobo
-GNOME_VERSION=		2.18.0
-SHARED_LIBS +=	bonobo-activation    5.0      # .4.0
-SHARED_LIBS +=	bonobo-2             1.0      # .0.0
+GNOME_VERSION=		2.20.1
+SHARED_LIBS +=	bonobo-activation    6.0      # .4.0
+SHARED_LIBS +=	bonobo-2             2.0      # .0.0
 CATEGORIES=		devel
 
-# LGPL
+# GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=                c glib-2.0 gmodule-2.0 gobject-2.0 \
-                        gthread-2.0 m pthread z
+
+WANTLIB=		c m pcre pthread z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -29,7 +29,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libbonobo; \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libbonobo; \
 	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/libbonobo/
 
 .include <bsd.port.mk>
