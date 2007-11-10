@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/06/26 19:59:33 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.17 2007/11/10 15:42:52 jasper Exp $
 bin/gnome-terminal
 lib/bonobo/
 lib/bonobo/servers/
@@ -24,13 +24,16 @@ share/gnome/help/gnome-terminal/bg/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/bg/figures/terminal_window.png
 share/gnome/help/gnome-terminal/bg/gnome-terminal.xml
 share/gnome/help/gnome-terminal/bg/legal.xml
+share/gnome/help/gnome-terminal/ca/
+share/gnome/help/gnome-terminal/ca/figures/
+share/gnome/help/gnome-terminal/ca/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/ca/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/ca/gnome-terminal.xml
 share/gnome/help/gnome-terminal/de/
 share/gnome/help/gnome-terminal/de/figures/
 share/gnome/help/gnome-terminal/de/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/de/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/de/figures/terminal_window.png
 share/gnome/help/gnome-terminal/de/gnome-terminal.xml
-share/gnome/help/gnome-terminal/de/legal.xml
 share/gnome/help/gnome-terminal/es/
 share/gnome/help/gnome-terminal/es/figures/
 share/gnome/help/gnome-terminal/es/figures/gnome-terminal-default.png
@@ -57,9 +60,12 @@ share/gnome/help/gnome-terminal/ko/
 share/gnome/help/gnome-terminal/ko/figures/
 share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-tabbed.png
-share/gnome/help/gnome-terminal/ko/figures/terminal_window.png
 share/gnome/help/gnome-terminal/ko/gnome-terminal.xml
-share/gnome/help/gnome-terminal/ko/legal.xml
+share/gnome/help/gnome-terminal/oc/
+share/gnome/help/gnome-terminal/oc/figures/
+share/gnome/help/gnome-terminal/oc/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/oc/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/oc/gnome-terminal.xml
 share/gnome/help/gnome-terminal/ro/
 share/gnome/help/gnome-terminal/ro/figures/
 share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-default.png
@@ -100,6 +106,9 @@ share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/gnome-terminal.mo
 share/locale/az/LC_MESSAGES/gnome-terminal.mo
 share/locale/be/LC_MESSAGES/gnome-terminal.mo
 share/locale/be@latin/
@@ -211,6 +220,9 @@ share/locale/ru/LC_MESSAGES/gnome-terminal.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gnome-terminal.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/gnome-terminal.mo
 share/locale/sk/LC_MESSAGES/gnome-terminal.mo
 share/locale/sl/LC_MESSAGES/gnome-terminal.mo
 share/locale/sq/
@@ -235,19 +247,19 @@ share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 share/omf/gnome-terminal/
 share/omf/gnome-terminal/gnome-terminal-C.omf
 share/omf/gnome-terminal/gnome-terminal-bg.omf
+share/omf/gnome-terminal/gnome-terminal-ca.omf
 share/omf/gnome-terminal/gnome-terminal-de.omf
 share/omf/gnome-terminal/gnome-terminal-es.omf
 share/omf/gnome-terminal/gnome-terminal-fr.omf
 share/omf/gnome-terminal/gnome-terminal-it.omf
 share/omf/gnome-terminal/gnome-terminal-ja.omf
 share/omf/gnome-terminal/gnome-terminal-ko.omf
+share/omf/gnome-terminal/gnome-terminal-oc.omf
 share/omf/gnome-terminal/gnome-terminal-ro.omf
 share/omf/gnome-terminal/gnome-terminal-ru.omf
 share/omf/gnome-terminal/gnome-terminal-sv.omf
