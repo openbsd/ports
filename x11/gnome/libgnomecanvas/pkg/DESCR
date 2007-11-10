@@ -5,4 +5,3 @@ The GNOMECanvas library provides a number of features:
   drawables (windows, pixmaps), GdkRGB buffers.
 - A cache interface
 
-For more information about the library, visit:
