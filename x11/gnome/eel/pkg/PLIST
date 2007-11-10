@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/05/11 13:02:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/11/10 15:18:51 jasper Exp $
+%%SHARED%%
 include/eel-2/
 include/eel-2/eel/
 include/eel-2/eel/eel-accessibility.h
@@ -160,6 +161,9 @@ share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/eel-2.0.mo
 share/locale/nl/LC_MESSAGES/eel-2.0.mo
 share/locale/nn/LC_MESSAGES/eel-2.0.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/eel-2.0.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/eel-2.0.mo
@@ -174,6 +178,9 @@ share/locale/ru/LC_MESSAGES/eel-2.0.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/eel-2.0.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/eel-2.0.mo
 share/locale/sk/LC_MESSAGES/eel-2.0.mo
 share/locale/sl/LC_MESSAGES/eel-2.0.mo
 share/locale/sq/
@@ -203,8 +210,5 @@ share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/eel-2.0.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/eel-2.0.mo
-%%SHARED%%
