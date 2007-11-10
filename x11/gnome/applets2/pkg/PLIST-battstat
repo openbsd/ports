@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-battstat,v 1.12 2007/05/16 22:18:38 jasper Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.13 2007/11/10 15:38:18 jasper Exp $
 lib/bonobo/servers/GNOME_BattstatApplet.server
 libexec/battstat-applet-2
 share/examples/gnome-applets2/
@@ -50,6 +50,14 @@ share/gnome/help/battstat/fr/figures/battstat-applet.png
 share/gnome/help/battstat/fr/figures/battstat-credits-hal.png
 share/gnome/help/battstat/fr/figures/battstat-preferences.png
 share/gnome/help/battstat/fr/figures/context-menu.png
+share/gnome/help/battstat/oc/
+share/gnome/help/battstat/oc/battstat.xml
+share/gnome/help/battstat/oc/figures/
+share/gnome/help/battstat/oc/figures/battstat-applet-expanded.png
+share/gnome/help/battstat/oc/figures/battstat-applet.png
+share/gnome/help/battstat/oc/figures/battstat-credits-hal.png
+share/gnome/help/battstat/oc/figures/battstat-preferences.png
+share/gnome/help/battstat/oc/figures/context-menu.png
 share/gnome/help/battstat/pa/
 share/gnome/help/battstat/pa/battstat.xml
 share/gnome/help/battstat/pa/figures/
