@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2007/11/10 15:25:42 jasper Exp $
 
 COMMENT=		GNOME panel
 
 GNOME_PROJECT=		gnome-panel
-GNOME_VERSION=		2.18.2
+GNOME_VERSION=		2.20.1
 SHARED_LIBS=	panel-applet-2       2.17      # .2.17
 CATEGORIES=		x11
 
-# LGPL
+# GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,7 +19,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcursor \
 		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
+		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png popt \
 		pthread rpcsvc ssl startup-notification-1 stdc++ util xml2 z
 
 MODULES=		devel/gettext \
@@ -29,14 +29,15 @@ BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS= 		gnome-desktop-2.>=5::x11/gnome/desktop \
 			gnome-menu::x11/gnome/menus \
-			wnck-1.>=20::devel/libwnck
+			wnck-1.>=21::devel/libwnck
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+= 	--disable-eds \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-panel \
 			--disable-schemas-install \
-			--disable-scrollkeeper
+			--disable-scrollkeeper \
+			--disable-eds
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
