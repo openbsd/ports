@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 19:00:55 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/11 00:22:57 ajacoutot Exp $
 
 COMMENT=	disassembler and other tools for palmos binaries
 
@@ -8,13 +8,15 @@ CATEGORIES=	palm
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
 WANTLIB=		c m
 
-MASTER_SITES=	http://www.fh-wilhelmshaven.de/~akcaagaa/palmpower/files/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
