@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.6 2007/06/21 17:26:29 bernd Exp $
---- doc/Makefile.in.orig	Fri Apr  6 09:17:10 2007
-+++ doc/Makefile.in	Sat Apr  7 11:40:35 2007
-@@ -395,7 +395,7 @@ uninstall-am: uninstall-info-am uninstall-local
+$OpenBSD: patch-doc_Makefile_in,v 1.7 2007/11/11 10:09:43 sthen Exp $
+--- doc/Makefile.in.orig	Thu Nov  1 19:13:14 2007
++++ doc/Makefile.in	Fri Nov  2 08:17:10 2007
+@@ -396,7 +396,7 @@ uninstall-am: uninstall-info-am uninstall-local
  all:
  	$(MAKE) makedoc-all
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.6 2007/06/21 17:26:29 bernd Exp $
  
  install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -472,8 +472,8 @@ update-doc: stamp-doc-xml stamp-doc-chunked manual.txt
+@@ -475,8 +475,8 @@ update-doc: stamp-doc-xml stamp-doc-chunked manual.txt
  
  muttrc.man: ../makedoc$(EXEEXT) $(top_srcdir)/init.h muttrc.man.head muttrc.man.tail
  	$(MAKEDOC_CPP) $(top_srcdir)/init.h | ../makedoc -m | 	    \

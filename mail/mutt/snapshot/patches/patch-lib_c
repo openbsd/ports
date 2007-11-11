@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_c,v 1.1 2007/11/11 10:09:43 sthen Exp $
+--- lib.c.orig	Fri Nov  2 08:22:46 2007
++++ lib.c	Fri Nov  2 08:24:20 2007
+@@ -451,8 +451,13 @@ int safe_rename (const char *src, const char *target)
+      * FUSE may return ENOSYS. VFAT may return EPERM. FreeBSD's
+      * msdosfs may return EOPNOTSUPP.  ENOTSUP can also appear.
+      */
++#if defined(ENOTSUP)
+     if (errno == EXDEV || errno == ENOSYS || errno == EPERM ||
+ 	errno == ENOTSUP || errno == EOPNOTSUPP)
++#else
++    if (errno == EXDEV || errno == ENOSYS || errno == EPERM ||
++	errno == EOPNOTSUPP)
++#endif
+     {
+       dprint (1, (debugfile, "safe_rename: trying rename...\n"));
+       if (rename (src, target) == -1) 

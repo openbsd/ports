@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2007/06/21 17:26:29 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2007/11/11 10:09:43 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-WANTLIB=	c crypto des ssl
 
 FLAVORS+=	slang mixmaster compressed
 FLAVOR?=
@@ -78,10 +76,10 @@ CONFIGURE_ARGS+=	--without-idn
 .endif
 
 .if ${FLAVOR:L:Msidebar}
-PATCHFILES+=		patch-1.5.16.sidebar.txt:1
+PATCHFILES+=		patch-1.5.17.sidebar.txt:1
 PATCH_DIST_STRIP=	-p1
 .else
-SUPDISTFILES+=		patch-1.5.16.sidebar.txt:1
+SUPDISTFILES+=		patch-1.5.17.sidebar.txt:1
 .endif
 
 .if defined(HOMESPOOL)

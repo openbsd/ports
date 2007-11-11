@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/06/21 17:26:29 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.17 2007/11/11 10:09:43 sthen Exp $
 @pkgpath mail/mutt/snapshot,hcache
 bin/flea
 bin/mutt
@@ -37,6 +37,7 @@ share/doc/mutt/manual.html
 share/doc/mutt/manual.txt
 share/doc/mutt/mimesupport.html
 share/doc/mutt/miscellany.html
+share/doc/mutt/optionalfeatures.html
 share/doc/mutt/patch-notes.txt
 share/doc/mutt/reference.html
 share/doc/mutt/samples/
