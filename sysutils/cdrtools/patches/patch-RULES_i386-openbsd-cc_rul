@@ -1,6 +1,6 @@
-$OpenBSD: patch-RULES_i386-openbsd-cc_rul,v 1.2 2003/02/17 15:32:58 naddy Exp $
+$OpenBSD: patch-RULES_i386-openbsd-cc_rul,v 1.3 2007/11/11 01:41:11 jakemsr Exp $
 --- RULES/i386-openbsd-cc.rul.orig	Tue Oct 15 13:43:40 2002
-+++ RULES/i386-openbsd-cc.rul	Sun Oct 27 16:12:12 2002
++++ RULES/i386-openbsd-cc.rul	Mon Oct 29 03:10:07 2007
 @@ -24,13 +24,13 @@ include $(SRCROOT)/$(RULESDIR)/rules.prg
  ###########################################################################
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-RULES_i386-openbsd-cc_rul,v 1.2 2003/02/17 15:32:58 naddy Exp $
  LDLIBS=		$(LIBS) $(LIBX)
  
  #LDOPTS=		$(LIBS_PATH) $(LDPATH) $(RUNPATH)
-@@ -57,14 +57,14 @@ LNDYNLIB=	@$(SYMLINK) $(TARGET) $(PTARGE
+@@ -57,14 +57,14 @@ LNDYNLIB=	@$(SYMLINK) $(TARGET) $(PTARGET_BASE).so
  
  FLOAT_OPTIONS=	
  

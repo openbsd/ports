@@ -1,0 +1,56 @@
+$OpenBSD: patch-cdda2wav_sndconfig_c,v 1.1 2007/11/11 01:41:11 jakemsr Exp $
+--- cdda2wav/sndconfig.c.orig	Mon Oct 29 03:51:04 2007
++++ cdda2wav/sndconfig.c	Mon Oct 29 03:59:12 2007
+@@ -163,11 +163,11 @@ int init_soundcard(rate, bits)
+         	(MY_LITTLE_ENDIAN ? AFMT_S16_LE : AFMT_S16_BE);
+ 	int mask;
+ 
+-	if (ioctl(global.soundcard_fd, (int)SNDCTL_DSP_GETBLKSIZE, &dummy) == -1) {
++	if (ioctl(global.soundcard_fd, SNDCTL_DSP_GETBLKSIZE, &dummy) == -1) {
+ 	    fprintf(stderr, "Cannot get blocksize for %s\n", snd_device);
+ 	    global.echo = 0;
+ 	}
+-	if (ioctl(global.soundcard_fd, (int)SNDCTL_DSP_SYNC, NULL) == -1) {
++	if (ioctl(global.soundcard_fd, SNDCTL_DSP_SYNC, NULL) == -1) {
+ 	    fprintf(stderr, "Cannot sync for %s\n", snd_device);
+ 	    global.echo = 0;
+ 	}
+@@ -180,7 +180,7 @@ int init_soundcard(rate, bits)
+ #endif
+ 
+ 	/* check, if the sound device can do the requested format */
+-	if (ioctl(global.soundcard_fd, (int)SNDCTL_DSP_GETFMTS, &mask) == -1) {
++	if (ioctl(global.soundcard_fd, SNDCTL_DSP_GETFMTS, &mask) == -1) {
+ 		perror("fatal error:");
+ 		return -1;
+ 	}
+@@ -191,25 +191,25 @@ int init_soundcard(rate, bits)
+ 			myformat = AFMT_U8;
+ 		}
+ 	}
+-	if (ioctl(global.soundcard_fd, (int)SNDCTL_DSP_SETFMT, &myformat) == -1) {
++	if (ioctl(global.soundcard_fd, SNDCTL_DSP_SETFMT, &myformat) == -1) {
+ 	    fprintf(stderr, "Cannot set %d bits/sample for %s\n",bits, snd_device);
+ 	    global.echo = 0;
+ 	}
+ 
+ 	/* limited sound devices may not support stereo */
+ 	if (stereo
+-	    && ioctl(global.soundcard_fd, (int)SNDCTL_DSP_STEREO, &stereo) == -1) {
++	    && ioctl(global.soundcard_fd, SNDCTL_DSP_STEREO, &stereo) == -1) {
+ 	    fprintf(stderr, "Cannot set stereo mode for %s\n", snd_device);
+ 	    stereo = 0;
+ 	}
+ 	if (!stereo
+-            && ioctl(global.soundcard_fd, (int)SNDCTL_DSP_STEREO, &stereo) == -1) {
++            && ioctl(global.soundcard_fd, SNDCTL_DSP_STEREO, &stereo) == -1) {
+ 	    fprintf(stderr, "Cannot set mono mode for %s\n", snd_device);
+ 	    global.echo = 0;
+ 	}
+ 
+ 	/* set the sample rate */
+-	if (ioctl(global.soundcard_fd, (int)SNDCTL_DSP_SPEED, &garbled_rate) == -1) {
++	if (ioctl(global.soundcard_fd, SNDCTL_DSP_SPEED, &garbled_rate) == -1) {
+ 	    fprintf(stderr, "Cannot set rate %d.%2d Hz for %s\n",
+ 		(int)rate, (int)(rate*100)%100, snd_device);
+ 	    global.echo = 0;

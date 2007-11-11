@@ -1,7 +1,16 @@
-$OpenBSD: patch-cdda2wav_local_cnf_in,v 1.2 2004/11/30 05:44:03 jolan Exp $
---- cdda2wav/local.cnf.in.orig	2003-09-04 01:35:24.000000000 -0700
-+++ cdda2wav/local.cnf.in	2004-01-15 23:48:57.000000000 -0800
-@@ -137,5 +137,5 @@ $(WANT_INFOFILES) $(WANT_MD5) -DAUX_DEVI
+$OpenBSD: patch-cdda2wav_local_cnf_in,v 1.3 2007/11/11 01:41:11 jakemsr Exp $
+--- cdda2wav/local.cnf.in.orig	Thu Sep  4 01:35:46 2003
++++ cdda2wav/local.cnf.in	Mon Oct 29 03:18:42 2007
+@@ -43,7 +43,7 @@ HAVE_IOCTL=	$(__HAVE_IOCTL:$(_UNIQ)$(HAVE_BSD_OS)$(HAV
+ 
+ ############# Sound device support
+ #to disable sound support comment out the corresponding line with HAVE_SOUND
+-OSS_SOUND_DEV=	'"/dev/dsp"'
++OSS_SOUND_DEV=	'"/dev/audio"'
+ SUN_SOUND_DEV=	'"/dev/audio"'
+ 
+ HAVE_OSS=	@HAVE_OSS@
+@@ -137,5 +137,5 @@ $(WANT_INFOFILES) $(WANT_MD5) -DAUX_DEVICE=$(AUX_DEVIC
  
  LIBS +=	@LIBS@
  
