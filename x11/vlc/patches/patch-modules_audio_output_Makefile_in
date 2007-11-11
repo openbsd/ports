@@ -1,0 +1,20 @@
+$OpenBSD: patch-modules_audio_output_Makefile_in,v 1.1 2007/11/11 01:37:54 jakemsr Exp $
+--- modules/audio_output/Makefile.in.orig	Sat Jun 16 07:26:01 2007
++++ modules/audio_output/Makefile.in	Wed Oct  3 12:53:07 2007
+@@ -381,6 +381,7 @@ libarts_plugin_la_LDFLAGS = `$(VLC_CONFIG) --libs plug
+ 	-rpath '$(libvlcdir)' -avoid-version -module -shrext $(LIBEXT)
+ 
+ libarts_plugin_la_LIBADD = $(LTLIBVLC)
++libarts_plugin_la_EXTRALIBS = -lstdc++
+ 
+ libarts_a_SOURCES = $(SOURCES_arts)
+ libarts_builtin_la_SOURCES = $(SOURCES_arts)
+@@ -3173,7 +3174,7 @@ all-modules:
+ 
+ # Build a plugin with the adequate linker and linker's flags
+ _plugin.a_plugin$(LIBEXT):
+-	@mod="$*" ; mod=$${mod#lib} ; 	ldfl="`$(VLC_CONFIG) --libs plugin $$mod` $(LIBADD) -u $(SYMPREF)$(VLC_ENTRY)" ; 	case `$(VLC_CONFIG) --linkage $$mod` in \
++	@mod="$*" ; mod=$${mod#lib} ; 	ldfl="`$(VLC_CONFIG) --libs plugin $$mod` $(LIBADD) $($*_plugin_la_EXTRALIBS) -u $(SYMPREF)$(VLC_ENTRY)" ; 	case `$(VLC_CONFIG) --linkage $$mod` in \
+ 	  c++)  ld="$(CXXLINK)" ;; 	  objc) ld="$(OBJCLINK)" ;; 	  c|*)  ld="$(LINK)" ;; 	esac ; 	echo $$ld $< $$ldfl ; 	$$ld $< $$ldfl
+ #ifneq (,$(findstring cygwin,$(host)))
+ #	mv -f "$@.exe" "$@"

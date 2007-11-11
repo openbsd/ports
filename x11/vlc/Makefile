@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.59 2007/10/03 04:12:43 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.60 2007/11/11 01:37:54 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	videolan client; multimedia player
+COMMENT-main=	videolan client; multimedia player
 
 V=		0.8.6c
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p4
+PKGNAME-main=	${DISTNAME}p5
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -23,12 +23,13 @@ USE_X11=	Yes
 
 MODULES=	devel/gettext
 BUILD_DEPENDS+= ::net/livemedia
-LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
+LIB_DEPENDS-main=${LIB_DEPENDS} \
+		SDL_image.>=1.3::devel/sdl-image \
 		png.>=4.1::graphics/png \
 		id3tag.>=3.0::audio/libid3tag \
 		mad.>=2.1::audio/libmad \
 		mpeg2::graphics/libmpeg2 \
-		avcodec.>=7.0,avformat.>=7.0,postproc.>=7.0::graphics/ffmpeg \
+		avcodec.>=9.0,avformat.>=9.0,postproc.>=9.0,avutil.>=3.0::graphics/ffmpeg \
 		fribidi::devel/fribidi \
 		a52::audio/liba52 \
 		theora.>=1::multimedia/libtheora \
@@ -41,12 +42,12 @@ LIB_DEPENDS=	SDL_image.>=1.3::devel/sdl-image \
                 dvdread.>=3.0::devel/libdvdread \
 		x264::multimedia/x264 \
 		dvbpsi.>=3::graphics/libdvbpsi \
-		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
+WANTLIB-main=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 		pthread stdc++ usbhid z Xau Xdmcp Xrandr Xrender \
-		SDL jpeg tiff faad ogg vorbis vorbisenc
+		SDL jpeg tiff faad ogg vorbis vorbisenc faac mp3lame ossaudio
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.61
@@ -80,9 +81,7 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-glide \
 		--disable-aa \
 		--disable-caca \
-		--disable-esd \
 		--disable-portaudio \
-		--disable-arts \
 		--disable-opie \
 		--disable-galaktos \
 		--disable-goom \
@@ -123,8 +122,6 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-cmml \
 		--disable-shout \
 		--disable-gnomevfs \
-		--disable-real \
-		--disable-realrtsp \
 		--disable-cyberlink \
 		--disable-bonjour \
 		--disable-daap \
@@ -160,21 +157,56 @@ CONFIGURE_ARGS+=--enable-ncurses \
 		--enable-dvdnav \
 		--enable-dvbpsi \
 		--enable-live555 \
-		--with-live555-tree=${LOCALBASE}/live
+		--with-live555-tree=${LOCALBASE}/live \
+		--enable-real \
+		--enable-realrtsp
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
-FLAVORS=no_web
+MULTI_PACKAGES=-main
+
+FLAVORS=altivec
+PSEUDO_FLAVORS=no_web no_arts no_esd
 FLAVOR?=
 
 .if !${FLAVOR:L:Mno_web}
+MULTI_PACKAGES+=-web
+COMMENT-web=	mozilla plugin for embedded media playback
+PKGNAME-web=	vlc-web-${V}
 BUILD_DEPENDS+=	:seamonkey-devel-*:www/seamonkey,-devel
 CONFIGURE_ARGS+=--enable-mozilla
 PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/seamonkey
-LIB_DEPENDS+=	nspr4,plc4,plds4::devel/nspr
-WANTLIB+=	Xt
+LIB_DEPENDS-web=${LIB_DEPENDS}
+RUN_DEPENDS-web=::${BUILD_PKGPATH}
+WANTLIB-web=	ICE SM X11 Xau Xdmcp Xext Xinerama Xt Xv Xxf86vm dvbpsi m ogg theora
 .else
 CONFIGURE_ARGS+=--disable-mozilla
+.endif
+
+.if !${FLAVOR:L:Mno_arts}
+MULTI_PACKAGES+=-arts
+COMMENT-arts=	artsd audio output module for vlc
+FULLPKGNAME-arts=vlc-arts-${V}
+CONFIGURE_ARGS+=--enable-arts
+LIB_DEPENDS-arts=${LIB_DEPENDS} artsc.>=1::x11/kde/arts3
+# any FLAVOR of vlc will do
+RUN_DEPENDS-arts=::x11/vlc
+WANTLIB-arts=	glib-2.0 gmodule-2.0 gthread-2.0 stdc++ pthread
+.else
+CONFIGURE_ARGS+=--disable-arts
+.endif
+
+.if !${FLAVOR:L:Mno_esd}
+MULTI_PACKAGES+=-esd
+COMMENT-esd=	esound audio output module for vlc
+FULLPKGNAME-esd=vlc-esd-${V}
+CONFIGURE_ARGS+=--enable-esd
+LIB_DEPENDS-esd=esd.>=2::audio/esound
+# any FLAVOR of vlc will do
+RUN_DEPENDS-esd=::x11/vlc
+WANTLIB-esd=	audiofile m
+.else
+CONFIGURE_ARGS+=--disable-esd
 .endif
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -191,7 +223,8 @@ CONFIGURE_ARGS+=--disable-loader
 PKG_ARGS+=-Dwin32=0
 .endif
 
-.if ${MACHINE_ARCH} == "powerpc"
+.if ${FLAVOR:L} == "altivec"
+ONLY_FOR_ARCHS=	powerpc
 CONFIGURE_ARGS+=--enable-altivec
 PKG_ARGS+=-Daltivec=1
 .else

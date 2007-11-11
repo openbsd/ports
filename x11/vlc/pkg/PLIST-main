@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.31 2007/10/03 04:12:43 jakemsr Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2007/11/11 01:37:54 jakemsr Exp $
 %%altivec%%
 %%win32%%
 %%x86opt%%
-!%%no_web%%
 bin/vlc
 bin/vlc-config
 bin/wxvlc
@@ -26,6 +25,7 @@ lib/vlc/access/libaccess_file_plugin.so
 lib/vlc/access/libaccess_ftp_plugin.so
 lib/vlc/access/libaccess_http_plugin.so
 lib/vlc/access/libaccess_mms_plugin.so
+lib/vlc/access/libaccess_realrtsp_plugin.so
 lib/vlc/access/libaccess_tcp_plugin.so
 lib/vlc/access/libaccess_udp_plugin.so
 lib/vlc/access/libdvdnav_plugin.so
@@ -93,6 +93,7 @@ lib/vlc/codec/liblpcm_plugin.so
 lib/vlc/codec/libmpeg_audio_plugin.so
 lib/vlc/codec/libpng_plugin.so
 lib/vlc/codec/librawvideo_plugin.so
+lib/vlc/codec/librealaudio_plugin.so
 lib/vlc/codec/libsdl_image_plugin.so
 lib/vlc/codec/libspudec_plugin.so
 lib/vlc/codec/libsubsdec_plugin.so
@@ -268,8 +269,6 @@ share/locale/nb/LC_MESSAGES/vlc.mo
 share/locale/ne/LC_MESSAGES/vlc.mo
 share/locale/nl/LC_MESSAGES/vlc.mo
 share/locale/nn/LC_MESSAGES/vlc.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/vlc.mo
 share/locale/pa/LC_MESSAGES/vlc.mo
 share/locale/pt_BR/LC_MESSAGES/vlc.mo
