@@ -1,25 +1,22 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 23:29:58 merdely Exp $
-			
+# $OpenBSD: Makefile,v 1.7 2007/11/11 08:39:18 sthen Exp $
+
 COMMENT=		wireless auditing suite
 
 DISTNAME=		bsd-airtools-v0.2
-PKGNAME=		bsd-airtools-0.2p2
+PKGNAME=		bsd-airtools-0.2p3
 CATEGORIES=    		security net
 EXTRACT_SUFX=           .tgz
-
-HOMEPAGE=		http://www.dachb0den.com/projects/bsd-airtools.html
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto curses pcap
 
-MASTER_SITES=		http://www.dachb0den.com/projects/bsd-airtools/ \
-			ftp://ftp.dachb0den.com/pub/projects/bsd-airtools/
+MASTER_SITES=		http://spacehopper.org/
 
 WRKDIST=		${WRKDIR}/bsd-airtools
 
