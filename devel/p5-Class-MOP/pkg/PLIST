@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/12 14:21:19 msf Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/MOP/
+${P5SITE}/Class/MOP.pm
+${P5SITE}/Class/MOP/Attribute.pm
+${P5SITE}/Class/MOP/Class.pm
+${P5SITE}/Class/MOP/Immutable.pm
+${P5SITE}/Class/MOP/Instance.pm
+${P5SITE}/Class/MOP/Method/
+${P5SITE}/Class/MOP/Method.pm
+${P5SITE}/Class/MOP/Method/Accessor.pm
+${P5SITE}/Class/MOP/Method/Constructor.pm
+${P5SITE}/Class/MOP/Method/Wrapped.pm
+${P5SITE}/Class/MOP/Module.pm
+${P5SITE}/Class/MOP/Object.pm
+${P5SITE}/Class/MOP/Package.pm
+${P5SITE}/metaclass.pm
+@man man/man3p/Class::MOP.3p
+@man man/man3p/Class::MOP::Attribute.3p
+@man man/man3p/Class::MOP::Class.3p
+@man man/man3p/Class::MOP::Immutable.3p
+@man man/man3p/Class::MOP::Instance.3p
+@man man/man3p/Class::MOP::Method.3p
+@man man/man3p/Class::MOP::Method::Accessor.3p
+@man man/man3p/Class::MOP::Method::Constructor.3p
+@man man/man3p/Class::MOP::Method::Wrapped.3p
+@man man/man3p/Class::MOP::Module.3p
+@man man/man3p/Class::MOP::Object.3p
+@man man/man3p/Class::MOP::Package.3p
+@man man/man3p/metaclass.3p
