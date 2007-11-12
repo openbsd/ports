@@ -1,0 +1,12 @@
+$OpenBSD: patch-frontend_common_src_System_cc,v 1.1 2007/11/12 22:05:41 jasper Exp $
+--- frontend/common/src/System.cc.orig	Thu Nov  8 20:51:08 2007
++++ frontend/common/src/System.cc	Thu Nov  8 20:51:34 2007
+@@ -24,6 +24,8 @@
+ #include <glib.h>
+ #endif
+ 
++#include <sys/wait.h>
++
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
