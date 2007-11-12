@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2007/11/03 08:04:40 steven Exp $
+# $OpenBSD: Makefile,v 1.50 2007/11/12 21:02:03 kili Exp $
 
 COMMENT=		office suite for KDE
 
@@ -8,10 +8,11 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
-PATCHFILES=		koffice-xpdf-CVE-2007-3387.diff:0
+PATCHFILES=		koffice-xpdf-CVE-2007-3387.diff:0 \
+			koffice-1.6.3-xpdf2-CVE-2007-4352-5392-5393.diff:0
 
 SHARED_LIBS +=	kstore               3.0      # .3.0
 SHARED_LIBS +=	kwmf                 3.0      # .3.0
