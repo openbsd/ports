@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.567 2007/11/07 22:12:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.568 2007/11/12 14:32:14 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -251,6 +251,7 @@
      SUBDIR += p5-Class-InsideOut
      SUBDIR += p5-Class-Inspector
      SUBDIR += p5-Class-Loader
+     SUBDIR += p5-Class-MOP
      SUBDIR += p5-Class-MakeMethods
      SUBDIR += p5-Class-Meta
      SUBDIR += p5-Class-Meta-Express
@@ -407,6 +408,7 @@
      SUBDIR += p5-Module-Refresh
      SUBDIR += p5-Module-ScanDeps
      SUBDIR += p5-Module-Versions-Report
+     SUBDIR += p5-Moose
      SUBDIR += p5-Net-Server
      SUBDIR += p5-Number-Compare
      SUBDIR += p5-Number-Compare-Date
