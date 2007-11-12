@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2007/10/24 21:52:17 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2007/11/12 21:01:05 kili Exp $
 
 COMMENT-main=		K Desktop Environment, graphic applications
 COMMENT-kamera=		KDE interface to digital cameras
@@ -14,13 +14,13 @@ SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-kamera=	kamera-${VERSION}
 PKGNAME-kpov=	kpovmodeller-${VERSION}
 PKGNAME-sane=	ksane-${VERSION}
 
-#MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
-#PATCHFILES=		post-3.5.7-kdegraphics-CVE-2007-3387.diff:0
+MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
+PATCHFILES=		post-3.5.8-kdegraphics-kpdf.diff:0
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
