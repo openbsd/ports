@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2007/11/09 15:49:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2007/11/12 07:08:24 ajacoutot Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		movie player supporting MPEG, DivX, AVI, ASF, MOV & more
 
 DISTNAME=		MPlayer-1.0pre8
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p15
+PKGNAME=		${DISTNAME:L}p16
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -174,6 +174,7 @@ CONFIGURE_ARGS+=--disable-mad
 .endif
 
 .if ${MACHINE_ARCH:Mi386}
+PATCH_LIST=	patch-* i386-patch-postproc_Makefile
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32 \
 		--enable-qtx \
 		--with-reallibdir=${LOCALBASE}/lib/win32

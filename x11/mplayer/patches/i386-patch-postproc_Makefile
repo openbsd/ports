@@ -1,0 +1,13 @@
+$OpenBSD: i386-patch-postproc_Makefile,v 1.1 2007/11/12 07:08:24 ajacoutot Exp $
+--- postproc/Makefile.orig	Sun Jun 11 20:35:46 2006
++++ postproc/Makefile	Sun Nov 11 11:21:43 2007
+@@ -11,7 +11,8 @@ ifeq ($(TARGET_ALTIVEC),yes)
+ SWSOBJS +=  yuv2rgb_altivec.o
+ endif
+ 
+-CFLAGS  = $(OPTFLAGS) $(MLIB_INC) -I. -I.. $(EXTRA_INC)
++# XXX add "-O -fomit-frame-pointer" to prevent a mencoder crash in hScale_MMX2
++CFLAGS  = $(OPTFLAGS) -O -fomit-frame-pointer $(MLIB_INC) -I. -I.. $(EXTRA_INC)
+ # -I/usr/X11R6/include/
+ 
+ .SUFFIXES: .c .o
