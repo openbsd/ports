@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/10 15:17:49 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/12 17:30:30 merdely Exp $
 
 COMMENT=	automatically fetch hotmail.com email
 
-DISTNAME=	GetLive_0_54
-PKGNAME=	p5-GetLive-0.54
+DISTNAME=	GetLive_0_55
+PKGNAME=	p5-GetLive-0.55
 CATEGORIES=	mail perl5
 EXTRACT_SUFX=	.tgz
 
@@ -28,8 +28,6 @@ NO_REGRESS=	Yes
 
 PROGS=		GetLive SmtpAuthForward SmtpForward
 DOCS=		License Manual
-
-WRKDIST=	${WRKDIR}
 
 post-patch:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},' \
