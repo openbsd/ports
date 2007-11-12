@@ -1,0 +1,83 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/12 14:27:33 msf Exp $
+${P5SITE}/Moose/
+${P5SITE}/Moose.pm
+${P5SITE}/Moose/Cookbook/
+${P5SITE}/Moose/Cookbook.pod
+${P5SITE}/Moose/Cookbook/FAQ.pod
+${P5SITE}/Moose/Cookbook/Recipe1.pod
+${P5SITE}/Moose/Cookbook/Recipe2.pod
+${P5SITE}/Moose/Cookbook/Recipe3.pod
+${P5SITE}/Moose/Cookbook/Recipe4.pod
+${P5SITE}/Moose/Cookbook/Recipe5.pod
+${P5SITE}/Moose/Cookbook/Recipe6.pod
+${P5SITE}/Moose/Cookbook/Recipe7.pod
+${P5SITE}/Moose/Cookbook/Snack/
+${P5SITE}/Moose/Cookbook/Snack/Types.pod
+${P5SITE}/Moose/Cookbook/WTF.pod
+${P5SITE}/Moose/Meta/
+${P5SITE}/Moose/Meta/Attribute.pm
+${P5SITE}/Moose/Meta/Class.pm
+${P5SITE}/Moose/Meta/Instance.pm
+${P5SITE}/Moose/Meta/Method/
+${P5SITE}/Moose/Meta/Method.pm
+${P5SITE}/Moose/Meta/Method/Accessor.pm
+${P5SITE}/Moose/Meta/Method/Constructor.pm
+${P5SITE}/Moose/Meta/Method/Destructor.pm
+${P5SITE}/Moose/Meta/Method/Overriden.pm
+${P5SITE}/Moose/Meta/Role/
+${P5SITE}/Moose/Meta/Role.pm
+${P5SITE}/Moose/Meta/Role/Method/
+${P5SITE}/Moose/Meta/Role/Method.pm
+${P5SITE}/Moose/Meta/Role/Method/Required.pm
+${P5SITE}/Moose/Meta/TypeCoercion/
+${P5SITE}/Moose/Meta/TypeCoercion.pm
+${P5SITE}/Moose/Meta/TypeCoercion/Union.pm
+${P5SITE}/Moose/Meta/TypeConstraint/
+${P5SITE}/Moose/Meta/TypeConstraint.pm
+${P5SITE}/Moose/Meta/TypeConstraint/Parameterized.pm
+${P5SITE}/Moose/Meta/TypeConstraint/Registry.pm
+${P5SITE}/Moose/Meta/TypeConstraint/Union.pm
+${P5SITE}/Moose/Object.pm
+${P5SITE}/Moose/Role.pm
+${P5SITE}/Moose/Spec/
+${P5SITE}/Moose/Spec/Role.pod
+${P5SITE}/Moose/Util/
+${P5SITE}/Moose/Util.pm
+${P5SITE}/Moose/Util/TypeConstraints.pm
+${P5SITE}/Test/
+${P5SITE}/Test/Moose.pm
+@man man/man3p/Moose.3p
+@man man/man3p/Moose::Cookbook.3p
+@man man/man3p/Moose::Cookbook::FAQ.3p
+@man man/man3p/Moose::Cookbook::Recipe1.3p
+@man man/man3p/Moose::Cookbook::Recipe2.3p
+@man man/man3p/Moose::Cookbook::Recipe3.3p
+@man man/man3p/Moose::Cookbook::Recipe4.3p
+@man man/man3p/Moose::Cookbook::Recipe5.3p
+@man man/man3p/Moose::Cookbook::Recipe6.3p
+@man man/man3p/Moose::Cookbook::Recipe7.3p
+@man man/man3p/Moose::Cookbook::Snack::Types.3p
+@man man/man3p/Moose::Cookbook::WTF.3p
+@man man/man3p/Moose::Meta::Attribute.3p
+@man man/man3p/Moose::Meta::Class.3p
+@man man/man3p/Moose::Meta::Instance.3p
+@man man/man3p/Moose::Meta::Method.3p
+@man man/man3p/Moose::Meta::Method::Accessor.3p
+@man man/man3p/Moose::Meta::Method::Constructor.3p
+@man man/man3p/Moose::Meta::Method::Destructor.3p
+@man man/man3p/Moose::Meta::Method::Overriden.3p
+@man man/man3p/Moose::Meta::Role.3p
+@man man/man3p/Moose::Meta::Role::Method.3p
+@man man/man3p/Moose::Meta::Role::Method::Required.3p
+@man man/man3p/Moose::Meta::TypeCoercion.3p
+@man man/man3p/Moose::Meta::TypeCoercion::Union.3p
+@man man/man3p/Moose::Meta::TypeConstraint.3p
+@man man/man3p/Moose::Meta::TypeConstraint::Parameterized.3p
+@man man/man3p/Moose::Meta::TypeConstraint::Registry.3p
+@man man/man3p/Moose::Meta::TypeConstraint::Union.3p
+@man man/man3p/Moose::Object.3p
+@man man/man3p/Moose::Role.3p
+@man man/man3p/Moose::Spec::Role.3p
+@man man/man3p/Moose::Util.3p
+@man man/man3p/Moose::Util::TypeConstraints.3p
+@man man/man3p/Test::Moose.3p
