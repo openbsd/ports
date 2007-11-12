@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/12 12:58:40 landry Exp $
+lib/claws-mail/plugins/gtkhtml2_viewer.la
+lib/claws-mail/plugins/gtkhtml2_viewer.so
+share/locale/ca/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/de/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/es/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/fi/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/fr/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/hu/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/it/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/pl/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/pt_BR/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/sk/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/sr/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/zh_CN/LC_MESSAGES/gtkhtml2_viewer.mo

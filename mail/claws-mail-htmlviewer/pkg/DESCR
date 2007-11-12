@@ -1,0 +1,7 @@
+Gtkhtml2Viewer plugin is an HTML renderer plugin for Claws Mail.
+Features :
+* Basic rendering of HTML message parts
+* Displaying of attached images
+* Optional fetching and displaying of remote images
+* Remote image caching
+* The ability to reply to the message, quoting the selected text
