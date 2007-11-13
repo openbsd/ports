@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_mongrel_rb,v 1.1 2007/11/13 18:13:18 bernd Exp $
+
+We don't need the cgi_multipart_eof_fix gem to be installed. The Ruby    
+CGI problem got fixed in lang/ruby.
+
+--- lib/mongrel.rb.orig	Sun Nov  4 15:56:10 2007
++++ lib/mongrel.rb	Sun Nov  4 15:56:00 2007
+@@ -9,7 +9,6 @@ require 'stringio'
+ 
+ require 'mongrel/gems'
+ 
+-Mongrel::Gems.require 'cgi_multipart_eof_fix'
+ Mongrel::Gems.require 'fastthread'
+ require 'thread'
+ 

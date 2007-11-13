@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/20 12:51:52 msf Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/13 18:13:18 bernd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast HTTP library and server for Ruby
 
-DISTNAME=	mongrel-0.3.13.4
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	mongrel-1.1
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	www
 
 MAINTAINER=	Jason LaRiviere <jason@indelicate.net>
@@ -27,9 +27,18 @@ MODULES=	lang/ruby
 LIB_DEPENDS=	ruby.>=1::lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-daemons->=0.4.2:devel/ruby-daemons \
-		:ruby-gem_plugin->=0.2.1:devel/ruby-gem_plugin
+RUN_DEPENDS=	:ruby-daemons->=1.0.3:devel/ruby-daemons \
+		:ruby-gem_plugin->=0.2.3:devel/ruby-gem_plugin \
+		:ruby-fastthread->=1.0.1:devel/ruby-fastthread
+
+GEM_SKIPDEPENDS=cgi_multipart_eof_fix
 
 CONFIGURE_STYLE=ruby gem
+
+REGRESS_DEPENDS=:${PKGNAME}:www/ruby-mongrel
+
+do-regress:
+	@cd ${WRKDIST} && touch Rakefile && ${RUBY} setup.rb test && \
+		rm -f Rakefile
 
 .include <bsd.port.mk>

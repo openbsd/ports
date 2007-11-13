@@ -1,0 +1,15 @@
+$OpenBSD: patch-mongrel_gemspec,v 1.1 2007/11/13 18:13:18 bernd Exp $
+
+We don't need the cgi_multipart_eof_fix gem to be installed. The Ruby
+CGI problem got fixed in lang/ruby.
+
+--- mongrel.gemspec.orig	Tue Nov 13 17:18:22 2007
++++ mongrel.gemspec	Tue Nov 13 17:18:22 2007
+@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
+   s.test_files = ["test/test_cgi_wrapper.rb", "test/test_command.rb", "test/test_conditional.rb", "test/test_configurator.rb", "test/test_debug.rb", "test/test_handlers.rb", "test/test_http11.rb", "test/test_redirect_handler.rb", "test/test_request_progress.rb", "test/test_response.rb", "test/test_stats.rb", "test/test_uriclassifier.rb", "test/test_ws.rb"]
+ 
+   s.add_dependency(%q<gem_plugin>, [">= 0.2.3"])
+-  s.add_dependency(%q<cgi_multipart_eof_fix>, [">= 2.4"])
+   s.add_dependency(%q<daemons>, [">= 1.0.3"])
+   s.add_dependency(%q<fastthread>, [">= 1.0.1"])
+ end
