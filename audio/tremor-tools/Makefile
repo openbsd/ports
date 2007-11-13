@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/13 12:44:23 steven Exp $
 
 COMMENT=	integer-only ogg vorbis command-line player
 DISTNAME=	vorbis-tools-1.0
-PKGNAME=	${DISTNAME:S/vorbis/tremor/}p2
+PKGNAME=	${DISTNAME:S/vorbis/tremor/}p3
 CATEGORIES=    	audio
 MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/
 
@@ -26,8 +26,9 @@ BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION}
 LIB_DEPENDS=	ao.>=3::audio/libao \
 		ogg.>=5::audio/libogg \
 		vorbisidec.>=1::audio/tremor \
-		iconv.>=2::converters/libiconv \
 		curl.>=2::net/curl
+
+MODULES=	devel/gettext
 
 WANTLIB=	c crypto idn pthread ssl z
 

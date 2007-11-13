@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/18 18:27:00 mgrimm Exp $
+# $OpenBSD: Makefile,v 1.12 2007/11/13 12:44:22 steven Exp $
 
 COMMENT=	free audio editor
 
 V=		1.3.3
 DISTNAME=	audacity-src-${V}
-PKGNAME=	audacity-${V}p1
+PKGNAME=	audacity-${V}p2
 CATEGORIES=     audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=audacity/}
@@ -23,7 +23,7 @@ WANTLIB=	c m ossaudio pthread stdc++ ogg expat sndfile glib-2.0 \
 		gobject-2.0 gtk-x11-2.0
 
 BUILD_DEPENDS=	::archivers/zip
-LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_html,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.6.3:x11/wxWidgets \
+LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_html,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core,wx_gtk2_aui:wxWidgets-gtk2->=2.6.3:x11/wxWidgets \
 		samplerate.>=1::audio/libsamplerate \
 		FLAC.>=8,FLAC++.>=7::audio/flac \
 		vorbis.>=5,vorbisfile.>=4,vorbisenc.>=2::audio/libvorbis \

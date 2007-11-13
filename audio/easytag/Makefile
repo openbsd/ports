@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/10/14 14:52:41 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2007/11/13 12:44:22 steven Exp $
 
 COMMENT=		MP3 ID3 tags editor
 
 DISTNAME=		easytag-2.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://easytag.sourceforge.net/
@@ -20,6 +21,7 @@ MODULES=		devel/gettext
 
 WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 			Xrender atk-1.0 c cairo expat fontconfig freetype \
+			Xcomposite Xdamage pcre \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 m ogg pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 png stdc++ z
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/11/13 12:44:23 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	elegant music player for MPD
 
 DISTNAME=	sonata-1.2.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://sonata.berlios.de/
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage \
 		Xrender atk-1.0 cairo expat fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 png z

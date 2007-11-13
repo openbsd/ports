@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2007/10/14 14:12:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2007/11/13 12:44:23 steven Exp $
 
 COMMENT=		front-end to various audio players
 
 DISTNAME=		gqmpeg-0.91.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gqmpeg.sourceforge.net/
@@ -13,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage \
 		Xrender atk-1.0 c expat fontconfig freetype glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 png z

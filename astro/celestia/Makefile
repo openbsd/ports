@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/25 15:24:58 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/13 12:44:22 steven Exp $
 
 COMMENT=	free space simulator and planetarium
 
 DISTNAME=	celestia-1.4.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	astro x11
 
 HOMEPAGE=	http://www.shatters.net/celestia/
@@ -18,12 +18,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=celestia/}
 
-WANTLIB=	GL GLU ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi \
-		Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo expat \
+WANTLIB=	GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdmcp Xext Xfixes Xi \
+		Xdamage Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 \
-		png stdc++ z
+		pcre png stdc++ z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdkglext-x11-1.0,gtkglext-x11-1.0::x11/gtkglext \

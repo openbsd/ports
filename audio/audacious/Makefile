@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 21:26:00 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/11/13 12:44:22 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GTK+-2 media player based on BMP and XMMS
 
 DISTNAME=	audacious-1.3.2
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	audacious	5.0
 CATEGORIES=	audio
 
@@ -24,8 +25,8 @@ NO_REGRESS=	Yes
 
 MODULES=	devel/gettext
 
-WANTLIB=	X11 Xau Xdmcp Xrender  Xcursor Xext Xfixes Xi Xinerama Xrandr \
-		expat fontconfig freetype m z c pthread \
+WANTLIB=	X11 Xau Xdmcp Xrender Xcursor Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage expat fontconfig freetype m z c pthread \
 		glib-2.0 gthread-2.0 gmodule-2.0 gobject-2.0 gdk_pixbuf-2.0 \
 		gdk-x11-2.0 gtk-x11-2.0 atk-1.0 cairo glitz png \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 stdc++ xml2

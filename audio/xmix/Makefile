@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.24 2007/11/13 12:44:23 steven Exp $
 
 COMMENT=	X11-based audio mixer
 DISTNAME=	xmix-2.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xaw Xext Xmu Xt c ossaudio
+
+WANTLIB=	Xau Xdmcp ICE SM X11 Xaw Xext Xmu Xt c ossaudio
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/sound/mixers/}
 PATCHFILES=	xmix-2.1.mixers.patch

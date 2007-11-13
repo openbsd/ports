@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.26 2007/11/13 12:44:23 steven Exp $
 
 COMMENT=	generic playlist manager for UNIX
 
 DISTNAME=	xhippo-3.3
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.gnu.org/software/xhippo/
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 WANTLIB=	X11 Xau Xdmcp Xrender expat fontconfig freetype c m z \
+		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr \
 		atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 glitz png \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo
 

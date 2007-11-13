@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2007/09/15 10:37:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2007/11/13 12:44:22 steven Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	astro
 MASTER_SITES=	http://humppa.nl/distfiles/
 
@@ -11,7 +12,7 @@ PERMIT_PACKAGE_CDROM=   no modifications, no fee
 PERMIT_PACKAGE_FTP=     no modifications
 PERMIT_DISTFILES_CDROM= no fee
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		ICE SM X11 Xext Xp Xt c m
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xp Xt c m
 
 USE_MOTIF=	any
 CONFIGURE_STYLE= imake

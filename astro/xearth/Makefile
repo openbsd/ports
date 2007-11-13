@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/20 15:22:30 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2007/11/13 12:44:22 steven Exp $
 
 COMMENT=	set the root window to the image of earth
 DISTNAME=	xearth-1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	astro x11
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=   Cannot sell
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Cannot sell
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		ICE SM X11 Xext Xt c m
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xt c m
 
 CONFIGURE_STYLE= imake
 

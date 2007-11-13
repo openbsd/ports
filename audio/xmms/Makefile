@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2007/10/10 14:54:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.53 2007/11/13 12:44:23 steven Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-esd=		Esound output plugin for XMMS
@@ -10,11 +10,11 @@ SHARED_ONLY=		Yes
 
 VERSION=		1.2.10
 DISTNAME=		xmms-${VERSION}
-PKGNAME-main=		xmms-${VERSION}p10
-PKGNAME-esd=		xmms-esd-${VERSION}p6
-PKGNAME-vorbis=		xmms-vorbis-${VERSION}p6
-PKGNAME-mikmod=		xmms-mikmod-${VERSION}p6
-PKGNAME-mp3=		xmms-mp3-${VERSION}p7
+PKGNAME-main=		xmms-${VERSION}p11
+PKGNAME-esd=		xmms-esd-${VERSION}p7
+PKGNAME-vorbis=		xmms-vorbis-${VERSION}p7
+PKGNAME-mikmod=		xmms-mikmod-${VERSION}p7
+PKGNAME-mp3=		xmms-mp3-${VERSION}p8
 SHARED_LIBS=		xmms	4.1
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi glib gmodule m pthread
+WANTLIB=		X11 Xau Xdmcp Xext Xi glib gmodule m pthread
 
 V=			1.2.x
 MASTER_SITES=		${HOMEPAGE}/files/$V/ \
@@ -55,7 +55,7 @@ MULTI_PACKAGES+=	-mp3
 PATCH_LIST=	patch-* gcc-*
 .endif
 
-WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM Xau Xdmcp
+WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		:unzip-*:archivers/unzip

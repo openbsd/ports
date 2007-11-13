@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/11/13 12:44:22 steven Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		fancy display that shows information, for gmpc
 
 VERSION=		0.15.0
 DISTNAME=		gmpc-qosd-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,9 +19,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xrender atk-1.0 cairo expat fontconfig \
+		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m mpd pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png xml2 z
+		pangocairo-1.0 pangoft2-1.0 pcre png xml2 z
 
 MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/plugins/ \
 			http://humppa.nl/distfiles/gmpc/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/07/11 14:25:34 aanriot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/11/13 12:44:23 steven Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
 DISTNAME=		gnomad2-2.8.13
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -14,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender atk-1.0 c cairo expat fontconfig freetype glitz \
+		Xcomposite Xdamage Xrender \
+		atk-1.0 c cairo expat fontconfig freetype glitz \
 		m png pthread z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gnomad2/}
