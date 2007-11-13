@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/11/13 21:03:03 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT-main=	standalone XUL/XPCOM runtime environment
 COMMENT-devel=	devel files for Gecko
 
-VER=		1.8.1.6
+VER=		1.8.1.9
 DISTNAME=	mozilla
 PKGNAME=	xulrunner-${VER}
-PKGNAME-main=	xulrunner-${VER}p1
-PKGNAME-devel=	xulrunner-devel-${VER}p2
+PKGNAME-main=	xulrunner-${VER}
+PKGNAME-devel=	xulrunner-devel-${VER}
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -44,12 +44,12 @@ WANTLIB=	c glib-2.0 m pthread stdc++
 
 WANTLIB-main=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo expat \
-		fontconfig freetype glitz gmodule-2.0 gobject-2.0 jpeg \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
+		fontconfig freetype glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
+		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
 
-WANTLIB-devel=	nspr4 plc4 plds4
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
 		xulrunner/mozjs,xulrunner/xpcom,xulrunner/xul:${PKGNAME-main}:devel/xulrunner,-main
+WANTLIB-devel=	${WANTLIB} nspr4 plc4 plds4
 
 VMEM_WARNING=	Yes
 
@@ -104,9 +104,6 @@ DISTDIRS=	idl include
 TOOLS=		TestGtkEmbed xpcshell xpt_link mozilla-xremote-client \
 		xpicleanup xulrunner-bin nsinstall xpidl xulrunner-stub \
 		regxpcom xpt_dump
-
-post-extract:
-	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
