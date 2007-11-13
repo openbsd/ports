@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/13 16:02:35 bernd Exp $
+# $OpenBSD: Makefile,v 1.11 2007/11/13 17:27:17 bernd Exp $
 
 COMMENT=	package management framework for the Ruby language
 
 V=		0.9.4
 DISTNAME=	rubygems-$V
-PKGNAME= 	ruby-gems-$Vp1
+PKGNAME= 	ruby-gems-$Vp2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docs.rubygems.org/

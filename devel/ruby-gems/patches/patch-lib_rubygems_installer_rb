@@ -1,16 +1,18 @@
-$OpenBSD: patch-lib_rubygems_installer_rb,v 1.3 2007/11/13 16:02:35 bernd Exp $
+$OpenBSD: patch-lib_rubygems_installer_rb,v 1.4 2007/11/13 17:27:17 bernd Exp $
 
 This is for GEM_SKIPDEPENDS in ruby.port.mk.
 
 --- lib/rubygems/installer.rb.orig	Thu May 10 21:01:45 2007
-+++ lib/rubygems/installer.rb	Sat Nov 10 20:35:12 2007
-@@ -79,7 +79,10 @@ module Gem
++++ lib/rubygems/installer.rb	Tue Nov 13 18:08:41 2007
+@@ -79,7 +79,12 @@ module Gem
          end
          unless @options[:ignore_dependencies]
            spec.dependencies.each do |dep_gem|
 -            ensure_dependency!(spec, dep_gem)
-+            unless @options[:skip_dependencies] &&
-+                   @options[:skip_dependencies].include?(dep_gem.name)
++            if @options[:skip_dependencies] &&
++               @options[:skip_dependencies].include?(dep_gem.name)
++              spec.dependencies.delete(dep_gem)
++            else
 +              ensure_dependency!(spec, dep_gem)		
 +            end
            end
