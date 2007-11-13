@@ -1,0 +1,4 @@
+Tool to help start/stop/restart multiple mongrel servers to use behind a
+load balancer like Nginx, Lighttpd, Pound, Pen or Balance. This plugin
+adds an option to specify a number of mongrel servers to launch, a range
+of ports, and a configuration file for the cluster.

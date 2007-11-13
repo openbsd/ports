@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/13 18:41:18 bernd Exp $
+bin/mongrel_cluster_ctl
+lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGELOG
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/COPYING
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/LICENSE
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Manifest
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/mongrel_cluster_ctl
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/mongrel_cluster/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/mongrel_cluster/init.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/mongrel_cluster/recipes.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/mongrel_cluster/recipes_1.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/mongrel_cluster/recipes_2.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/mongrel_cluster.gemspec
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/resources/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/resources/defaults.yaml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/resources/mongrel_cluster
+lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec
