@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/13 20:05:00 jasper Exp $
 
 COMMENT=	lightweight PDF document viewer
 
 DISTNAME=	epdfview-0.1.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	print
 HOMEPAGE=	http://trac.emma-soft.com/epdfview/
 
-MAINTAINER=	Vlad Glagolev <stelzy@gmail.com>
+MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
 MASTER_SITES=	${HOMEPAGE}chrome/site/releases/
 

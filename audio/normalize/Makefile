@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2007/11/13 20:05:00 jasper Exp $
 
 COMMENT=	audio file volume normalizer
 
 DISTNAME=	normalize-0.7.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 MASTER_SITES=	http://savannah.nongnu.org/download/normalize/
 
 HOMEPAGE=	http://normalize.nongnu.org/
 
-MAINTAINER=	Vlad Glagolev <stelzy@gmail.com>
+MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org> 
 
 # GPL license
 PERMIT_PACKAGE_CDROM=	Yes

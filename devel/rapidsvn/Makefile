@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 20:38:17 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/13 20:05:00 jasper Exp $
 
 COMMENT=	graphical subversion client
 
 VERSION=	0.9.4
 DISTNAME=	rapidsvn-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.rapidsvn.org/
 
 SHARED_LIBS=	svncpp	0.0
 
-MAINTAINER=	Vlad Glagolev <stelzy@gmail.com>
+MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
 MASTER_SITES=	${HOMEPAGE}download/release/${VERSION}/
 

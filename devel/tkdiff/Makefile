@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/11/13 20:05:00 jasper Exp $
 
 COMMENT=	graphical front-end to the diff program
 
 V=		4.1.3
 DISTNAME=	tkdiff-${V}-unix
-PKGNAME=	tkdiff-${V}p0
+PKGNAME=	tkdiff-${V}p1
 CATEGORIES=	devel sysutils
 
 HOMEPAGE=	http://tkdiff.sourceforge.net/
 
-MAINTAINER=	Vlad Glagolev <stelzy@gmail.com>
+MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org> 
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

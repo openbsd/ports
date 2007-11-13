@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/11/13 20:05:00 jasper Exp $
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.12
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://geany.uvena.de/
 
-MAINTAINER=	Vlad Glagolev <stelzy@gmail.com>
+MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
 # GPL + Scintilla License
 PERMIT_PACKAGE_CDROM=	Yes

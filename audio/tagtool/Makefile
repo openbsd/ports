@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2007/11/13 12:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2007/11/13 20:05:00 jasper Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
 DISTNAME=	tagtool-0.12.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 HOMEPAGE=	http://pwp.netcabo.pt/paol/tagtool/
 
-MAINTAINER=	Vlad Glagolev <stelzy@gmail.com>
+MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tagtool/}
 EXTRACT_SUFX=	.tar.bz2
