@@ -1,0 +1,4 @@
+GAMMApage is a gamma-adjusting utility for your monitor.  It is able to
+adjust gamma on the fly and save settings to be used at each login (on
+a per-user basis, GAMMApage will only write to the user's home
+directory).

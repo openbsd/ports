@@ -1,0 +1,25 @@
+$OpenBSD: patch-GAMMApage_py,v 1.1.1.1 2007/11/13 07:12:30 ajacoutot Exp $
+--- GAMMApage.py.orig	Fri Nov 17 03:17:51 2006
++++ GAMMApage.py	Mon Nov 12 16:17:48 2007
+@@ -717,6 +717,8 @@ class ShowGamma:
+ 				return True
+ 		if re.search("id:5:initdefault:", ret):
+ 			return True
++		if sys.platform.startswith('openbsd'):
++			return False
+ 		else:
+ 			self.info("Logon type cannot be determined,\ntherefore GAMMApage does not know\nwhere to save the gamma-adjusting \ncommand to be run on X-startup.\n\nThe \"Save\" button will be disabled.\nIn its place, the \"Exit\" button will close the program but keep your gamma adjustments until your X-session ends.\n\nSee the \"HELP\" pages for further instructions.")
+ 			self.save_btn.disconnect(self.saveid)
+@@ -728,9 +730,10 @@ class ShowGamma:
+ 	def toggle_init(self, data=None):
+ 	
+ 		if self.tog_init.get_active():		
+-			if not os.path.basename(os.getenv("SHELL")) == "bash":	
++			myshell=os.path.basename(os.getenv("SHELL"))
++			if myshell != "bash" and myshell != "ksh" and myshell != "zsh" and myshell != "sh":
+ 				self.saveable = False
+-				self.info("GAMMApage uses bash shell scripts to adjust gamma on system startup. Since you appear to NOT be using a bash shell... \n\nThe \"Save\" button cannot be enabled.\nIn its place, the \"Exit\" button will close the program but keep your gamma adjustments until your X-session ends.\n\nSee the \"HELP\" pages for further instructions.")
++				self.info("GAMMApage uses bourne shell scripts to adjust gamma on system startup. Since you appear to NOT be using a bourne shell... \n\nThe \"Save\" button cannot be enabled.\nIn its place, the \"Exit\" button will close the program but keep your gamma adjustments until your X-session ends.\n\nSee the \"HELP\" pages for further instructions.")
+ 				return False
+ 			else:	
+ 
