@@ -1,6 +1,6 @@
---- icu/makefile.mk.orig.port	Mon Jan 22 11:13:24 2007
-+++ icu/makefile.mk	Tue Feb  6 23:13:33 2007
-@@ -82,7 +82,7 @@ DISABLE_64BIT=--enable-64bit-libs=no
+--- icu/makefile.mk.orig.port	Tue Jul 31 15:04:47 2007
++++ icu/makefile.mk	Thu Oct 25 16:23:46 2007
+@@ -91,7 +91,7 @@ LDFLAGSADD += -Wl,--hash-style=both
  
  CONFIGURE_DIR=source
  

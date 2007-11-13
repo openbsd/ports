@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_system_h,v 1.6 2007/06/15 07:42:17 robert Exp $
---- sal/osl/unx/system.h.orig.port	Tue May  8 12:06:37 2007
-+++ sal/osl/unx/system.h	Fri Jun 15 09:31:34 2007
+$OpenBSD: patch-sal_osl_unx_system_h,v 1.7 2007/11/13 09:46:28 robert Exp $
+--- sal/osl/unx/system.h.orig.port	Thu Jul  5 11:06:28 2007
++++ sal/osl/unx/system.h	Thu Oct 25 16:23:47 2007
 @@ -198,6 +198,32 @@
  #	define  NO_PTHREAD_RTL
  #endif
@@ -34,7 +34,7 @@ $OpenBSD: patch-sal_osl_unx_system_h,v 1.6 2007/06/15 07:42:17 robert Exp $
  #ifdef SCO
  #   define AF_IPX -1
  #	include <strings.h>
-@@ -382,7 +408,7 @@ int macxp_resolveAlias(char *path, int buflen);
+@@ -376,7 +402,7 @@ int macxp_resolveAlias(char *path, int buflen);
      !defined(LINUX)   && !defined(NETBSD) && !defined(FREEBSD) && !defined(SCO)  && \
  	!defined(AIX)     && !defined(HPUX)   && \
  	!defined(SOLARIS) && !defined(IRIX)   && !defined(MAC) && \

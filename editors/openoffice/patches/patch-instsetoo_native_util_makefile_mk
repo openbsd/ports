@@ -1,6 +1,6 @@
-$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.9 2007/06/15 07:42:17 robert Exp $
---- instsetoo_native/util/makefile.mk.orig.port	Tue May  8 13:50:23 2007
-+++ instsetoo_native/util/makefile.mk	Fri Jun 15 09:31:34 2007
+$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.10 2007/11/13 09:46:28 robert Exp $
+--- instsetoo_native/util/makefile.mk.orig.port	Thu Oct 25 12:10:41 2007
++++ instsetoo_native/util/makefile.mk	Thu Oct 25 12:12:29 2007
 @@ -54,12 +54,14 @@ PYTHONPATH:=$(PWD)$/$(BIN):$(SOLARLIBDIR):$(SOLARLIBDI
  .ENDIF			# "$(GUI)"=="WNT"
  .EXPORT: PYTHONPATH
@@ -25,19 +25,19 @@ $OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.9 2007/06/15 07:42:17 robe
  
  openofficedev: $(foreach,i,$(alllangiso) openofficedev_$i)
  
-@@ -219,7 +221,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
+@@ -222,7 +224,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
  openoffice_% :
  .ENDIF			# "$(PKGFORMAT)"!=""
  .IF "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!="portable"
--	+$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) $(PKGFORMATSWITCH))
-+	+$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) -dontstrip $(PKGFORMATSWITCH))
+-	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) $(PKGFORMATSWITCH))
++	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) -dontstrip $(PKGFORMATSWITCH))
  	$(PERL) -w $(SOLARENV)$/bin$/gen_update_info.pl --buildid $(BUILD) --arch "$(RTL_ARCH)" --os "$(RTL_OS)" --lstfile $(PRJ)$/util$/openoffice.lst --product OpenOffice --languages $(subst,$(@:s/_/ /:1)_, $(@:b)) $(PRJ)$/util$/update.xml > $(MISC)/$(@:b)_$(RTL_OS)_$(RTL_ARCH).update.xml
  .ELSE                   # "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!=""
- 	+$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -destdir $(subst,$(@:s/_/ /:1)_,$(OUT)$/OpenOffice$/install$/ $(@:b))_inprogress$/ -simple staging
-@@ -496,11 +498,11 @@ hack_msitemplates .PHONY:
- 	+-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
- 	+-$(MKDIRHIER) $(MSISDKOOTEMPLATEDIR)
- 	+-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
+ 	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -destdir $(subst,$(@:s/_/ /:1)_,$(OUT)$/OpenOffice$/install$/ $(@:b))_inprogress$/ -simple staging
+@@ -511,11 +513,11 @@ hack_msitemplates .PHONY:
+ 	-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
+ 	-$(MKDIRHIER) $(MSISDKOOTEMPLATEDIR)
+ 	-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
 -	$(GNUCOPY) -ua $(MSIOFFICETEMPLATESOURCE) $(MSIOFFICETEMPLATEDIR:d:d)
 -	$(GNUCOPY) -ua $(MSILANGPACKTEMPLATESOURCE) $(MSILANGPACKTEMPLATEDIR:d:d)
 -	$(GNUCOPY) -ua $(MSIURETEMPLATESOURCE) $(MSIURETEMPLATEDIR:d:d)
@@ -48,6 +48,6 @@ $OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.9 2007/06/15 07:42:17 robe
 +	$(GNUCOPY) -R $(MSIURETEMPLATESOURCE) $(MSIURETEMPLATEDIR:d:d)
 +	$(GNUCOPY) -R $(MSISDKOOTEMPLATESOURCE) $(MSISDKOOTEMPLATEDIR:d:d)
 +	$(GNUCOPY) -R $(MSIURETEMPLATESOURCE) $(MSIURETEMPLATEDIR:d:d)
- 	+$(RM) $(MSIOFFICETEMPLATEDIR)$/Binary$/Image.bmp
- 	+$(RM) $(MSILANGPACKTEMPLATEDIR)$/Binary$/Image.bmp
- 	+$(RM) $(MSIURETEMPLATEDIR)$/Binary$/Image.bmp
+ 	$(RM) $(MSIOFFICETEMPLATEDIR)$/Binary$/Image.bmp
+ 	$(RM) $(MSILANGPACKTEMPLATEDIR)$/Binary$/Image.bmp
+ 	$(RM) $(MSIURETEMPLATEDIR)$/Binary$/Image.bmp

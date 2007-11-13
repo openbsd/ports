@@ -1,0 +1,12 @@
+$OpenBSD: patch-vcl_source_control_tabctrl_cxx,v 1.1 2007/11/13 09:46:28 robert Exp $
+--- vcl/source/control/tabctrl.cxx.orig.port	Fri Oct 26 10:49:05 2007
++++ vcl/source/control/tabctrl.cxx	Fri Oct 26 10:49:16 2007
+@@ -420,7 +420,7 @@ Size TabControl::ImplGetItemSize( ImplTabItem* pItem, 
+     pItem->maFormatText = pItem->maText;
+     Size aSize( GetCtrlTextWidth( pItem->maFormatText ), GetTextHeight() );
+     
+-    Region aCtrlRegion(  Rectangle( Point( 0, 0 ), aSize ) );
++    Region aCtrlRegion = Region (  Rectangle( Point( 0, 0 ), aSize ) );
+     Region aBoundingRgn, aContentRgn;
+     const ImplControlValue aControlValue( BUTTONVALUE_DONTKNOW, rtl::OUString(), 0 );
+     if(GetNativeControlRegion( CTRL_TAB_ITEM, PART_ENTIRE_CONTROL, aCtrlRegion,

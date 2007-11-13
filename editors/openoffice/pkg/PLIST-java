@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.3 2007/03/17 15:27:45 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.4 2007/11/13 09:46:28 robert Exp $
 %%SHARED%%
 openoffice/program/JREProperties.class
 openoffice/program/classes/
@@ -19,7 +19,6 @@ openoffice/program/classes/fax.jar
 openoffice/program/classes/form.jar
 openoffice/program/classes/hsqldb.jar
 openoffice/program/classes/java_uno.jar
-openoffice/program/classes/java_uno_accessbridge.jar
 openoffice/program/classes/js.jar
 openoffice/program/classes/juh.jar
 openoffice/program/classes/jurt.jar

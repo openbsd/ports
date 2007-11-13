@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-de,v 1.2 2007/03/17 15:27:45 robert Exp $
+@comment $OpenBSD: PLIST-i18n-de,v 1.3 2007/11/13 09:46:28 robert Exp $
 openoffice/help/de/
 openoffice/help/de/default.css
 openoffice/help/de/err.html
@@ -38,8 +38,19 @@ openoffice/help/de/scalc.idx/SCHEMA
 openoffice/help/de/scalc.jar
 openoffice/help/de/scalc.key
 openoffice/help/de/scalc.tree
+openoffice/help/de/schart.cfg
 openoffice/help/de/schart.db
 openoffice/help/de/schart.ht
+openoffice/help/de/schart.idx/
+openoffice/help/de/schart.idx/CONTEXTS
+openoffice/help/de/schart.idx/DICTIONARY
+openoffice/help/de/schart.idx/DOCS
+openoffice/help/de/schart.idx/DOCS.TAB
+openoffice/help/de/schart.idx/EDGE
+openoffice/help/de/schart.idx/LINKNAMES
+openoffice/help/de/schart.idx/OFFSETS
+openoffice/help/de/schart.idx/POSITIONS
+openoffice/help/de/schart.idx/SCHEMA
 openoffice/help/de/schart.jar
 openoffice/help/de/schart.key
 openoffice/help/de/schart.tree
@@ -135,6 +146,7 @@ openoffice/presets/config/modern_de.sog
 openoffice/presets/config/palette_de.soc
 openoffice/presets/config/styles_de.sod
 openoffice/program/resource/abp680de.res
+openoffice/program/resource/acc680de.res
 openoffice/program/resource/analysis680de.res
 openoffice/program/resource/avmedia680de.res
 openoffice/program/resource/basctl680de.res
@@ -143,12 +155,12 @@ openoffice/program/resource/bf_ofa680de.res
 openoffice/program/resource/bf_sc680de.res
 openoffice/program/resource/bf_sch680de.res
 openoffice/program/resource/bf_sd680de.res
-openoffice/program/resource/bf_sfx680de.res
 openoffice/program/resource/bf_sm680de.res
 openoffice/program/resource/bf_svx680de.res
 openoffice/program/resource/bf_sw680de.res
 openoffice/program/resource/bib680de.res
 openoffice/program/resource/cal680de.res
+openoffice/program/resource/chartcontroller680de.res
 openoffice/program/resource/cnr680de.res
 openoffice/program/resource/date680de.res
 openoffice/program/resource/dba680de.res
@@ -177,10 +189,13 @@ openoffice/program/resource/pcr680de.res
 openoffice/program/resource/pdffilter680de.res
 openoffice/program/resource/preload680de.res
 openoffice/program/resource/productregistration680de.res
+openoffice/program/resource/rpt680de.res
+openoffice/program/resource/rptui680de.res
 openoffice/program/resource/san680de.res
+openoffice/program/resource/sb680de.res
 openoffice/program/resource/sc680de.res
-openoffice/program/resource/sch680de.res
 openoffice/program/resource/sd680de.res
+openoffice/program/resource/sdbcl680de.res
 openoffice/program/resource/sdbt680de.res
 openoffice/program/resource/sfx680de.res
 openoffice/program/resource/sm680de.res
@@ -216,6 +231,7 @@ openoffice/share/registry/res/de/org/openoffice/Office/
 openoffice/share/registry/res/de/org/openoffice/Office/Common.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/DataAccess.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/Embedding.xcu
+openoffice/share/registry/res/de/org/openoffice/Office/ExtendedColorScheme.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/FormWizard.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/SFX.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/TableWizard.xcu
@@ -232,6 +248,7 @@ openoffice/share/registry/res/de/org/openoffice/Office/UI/ChartWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/DbBrowserWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/DbQueryWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/DbRelationWindowState.xcu
+openoffice/share/registry/res/de/org/openoffice/Office/UI/DbReportWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/DbTableWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/DbuCommands.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/DrawImpressCommands.xcu
@@ -242,14 +259,19 @@ openoffice/share/registry/res/de/org/openoffice/Office/UI/GenericCommands.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/ImpressWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/MathCommands.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/MathWindowState.xcu
+openoffice/share/registry/res/de/org/openoffice/Office/UI/ReportCommands.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/StartModuleCommands.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/StartModuleWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/WriterCommands.xcu
+openoffice/share/registry/res/de/org/openoffice/Office/UI/WriterFormWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/WriterGlobalWindowState.xcu
+openoffice/share/registry/res/de/org/openoffice/Office/UI/WriterReportWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/WriterWebWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/UI/WriterWindowState.xcu
+openoffice/share/registry/res/de/org/openoffice/Office/UI/XFormsWindowState.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/WebWizard.xcu
 openoffice/share/registry/res/de/org/openoffice/Office/Writer.xcu
+openoffice/share/registry/res/de/org/openoffice/Setup.xcu
 openoffice/share/registry/res/de/org/openoffice/TypeDetection/
 openoffice/share/registry/res/de/org/openoffice/TypeDetection/Filter.xcu
 openoffice/share/template/de/

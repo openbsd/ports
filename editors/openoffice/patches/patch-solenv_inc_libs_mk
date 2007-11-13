@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_inc_libs_mk,v 1.5 2007/03/17 15:27:45 robert Exp $
---- solenv/inc/libs.mk.orig.port	Wed Jan 17 07:49:47 2007
-+++ solenv/inc/libs.mk	Tue Feb  6 23:13:34 2007
-@@ -173,7 +173,7 @@ ZLIB3RDLIB=-lz
+$OpenBSD: patch-solenv_inc_libs_mk,v 1.6 2007/11/13 09:46:28 robert Exp $
+--- solenv/inc/libs.mk.orig.port	Tue Jul 31 15:06:06 2007
++++ solenv/inc/libs.mk	Thu Oct 25 16:23:47 2007
+@@ -199,7 +199,7 @@ ZLIB3RDLIB=-lz
  ZLIB3RDLIB=-lzlib
  .ENDIF
  .IF "$(SYSTEM_JPEG)"=="YES"

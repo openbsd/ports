@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2007/10/22 10:47:19 steven Exp $
+# $OpenBSD: Makefile,v 1.63 2007/11/13 09:46:27 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,13 +6,13 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
-VERSION=	2.2.1
+VERSION=	2.3.0
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOF680_m18
+WRKDIST=	${WRKDIR}/OOG680_m5
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p2
-PKGNAME-kde=	openoffice-kde-${VERSION}p0
-PKGNAME-java=	openoffice-java-${VERSION}p0
+PKGNAME-main=	openoffice-${VERSION}
+PKGNAME-kde=	openoffice-kde-${VERSION}
+PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		36.0 \
@@ -118,8 +118,7 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
 
-PATCHFILES=	go_oo_src680_20061105.diff:0 \
-		build-java-target-2.2.0.diff:0
+PATCHFILES=	build-java-target-2.2.0.diff:0
 
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
@@ -161,7 +160,8 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-lang="en-US ${LANGS}"
 
 .if ${FLAVOR:L:Mdebug}
-CONFIGURE_ARGS+=	--enable-symbols
+CONFIGURE_ARGS+=	--enable-symbols \
+			--enable-debug
 .endif
 
 MAKE_ENV+=	envcflags="${CFLAGS}"
@@ -201,7 +201,7 @@ do-install:
 			${INSTALL_DATA} $$ICONS ${PREFIX}/share/icons/openoffice; \
 		done
 
-	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/en-US/openbsd-* && \
+	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/en-US*/openbsd-* && \
 		for SW in `ls -1 *.sw`; do \
 			${TAR} xf $$SW -C ${PREFIX}; \
 		done
@@ -212,6 +212,12 @@ do-install:
 			${TAR} xf $$SW -C ${PREFIX}; \
 		done
 .endfor
+
+	cd ${WRKSRC}/bridges/unxobsd.pro/lib && \
+		for UNOLIB in `ls -1 *.so`; do \
+			${INSTALL_DATA} $$UNOLIB \
+				${PREFIX}/openoffice/program; \
+		done
 
 	${INSTALL_SCRIPT} ${FILESDIR}/soffice.sh ${PREFIX}/bin/soffice
 	perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g; \

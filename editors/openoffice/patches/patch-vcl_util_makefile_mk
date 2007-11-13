@@ -1,6 +1,6 @@
---- vcl/util/makefile.mk.orig.port	Mon Jan 22 11:26:44 2007
-+++ vcl/util/makefile.mk	Tue Feb  6 23:13:34 2007
-@@ -301,7 +301,7 @@ SHL2STDLIBS+=$(LIBSN_LIBS)
+--- vcl/util/makefile.mk.orig.port	Thu Aug  2 17:00:59 2007
++++ vcl/util/makefile.mk	Thu Oct 25 16:23:48 2007
+@@ -322,7 +322,7 @@ SHL2STDLIBS+=$(LIBSN_LIBS)
  .ENDIF
  
  SHL2STDLIBS += -lXext -lSM -lICE -lX11

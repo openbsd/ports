@@ -1,12 +1,12 @@
-$OpenBSD: patch-automation_source_testtool_objtest_cxx,v 1.4 2007/04/18 13:20:48 kurt Exp $
---- automation/source/testtool/objtest.cxx.orig.port	Mon Nov  6 09:46:02 2006
-+++ automation/source/testtool/objtest.cxx	Wed Apr 18 03:46:24 2007
-@@ -537,6 +537,8 @@ void TestToolObj::LoadIniFile()				// Laden der IniEin
-     abGP.Append( "15" );  // Linux x86-64
- #elif defined LINUX && defined SPARC
+$OpenBSD: patch-automation_source_testtool_objtest_cxx,v 1.5 2007/11/13 09:46:27 robert Exp $
+--- automation/source/testtool/objtest.cxx.orig.port	Thu Oct 25 11:54:44 2007
++++ automation/source/testtool/objtest.cxx	Thu Oct 25 11:55:08 2007
+@@ -538,6 +538,8 @@ void TestToolObj::LoadIniFile()				// Laden der IniEin
      abGP.Append( "16" );  // Linux SPARC
+ #elif defined OS2
+     abGP.Append( "17" );
 +#elif defined OPENBSD
-+    abGP.Append( "17" );
++    abGP.Append( "18" );
  #else
  #error ("unknown platform. please request an ID for your platform on qa/dev")
  #endif

@@ -1,12 +1,12 @@
-$OpenBSD: patch-pyuno_source_module_makefile_mk,v 1.4 2007/04/18 13:20:48 kurt Exp $
---- pyuno/source/module/makefile.mk.orig.port	Tue Jan 31 13:18:25 2006
-+++ pyuno/source/module/makefile.mk	Wed Apr 18 03:46:26 2007
+$OpenBSD: patch-pyuno_source_module_makefile_mk,v 1.5 2007/11/13 09:46:28 robert Exp $
+--- pyuno/source/module/makefile.mk.orig.port	Thu Oct 25 12:14:00 2007
++++ pyuno/source/module/makefile.mk	Thu Oct 25 12:14:29 2007
 @@ -130,6 +130,8 @@ $(PYUNO_MODULE) : $(SLO)$/pyuno_dlopenwrapper.obj
- 	@+ echo $(LINK) $(LINKFLAGSSHLCUI) -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
+ 	@echo $(LINK) $(LINKFLAGSSHLCUI) -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
  .ELIF "$(OS)" == "MACOSX"
- 	@+ echo $(CC) -bundle -ldl -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
+ 	@echo $(CC) -bundle -ldl -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
 +.ELIF "$(OS)" == "OPENBSD"
 +	@+ echo ld -shared -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
  .ELSE
- 	@+ echo $(LINK) $(LINKFLAGSSHLCUI) -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
+ 	@echo $(LINK) $(LINKFLAGSSHLCUI) -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
  .ENDIF

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ko,v 1.1 2006/11/20 09:33:02 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ko,v 1.2 2007/11/13 09:46:28 robert Exp $
 openoffice/help/ko/
 openoffice/help/ko/default.css
 openoffice/help/ko/err.html
@@ -38,8 +38,19 @@ openoffice/help/ko/scalc.idx/SCHEMA
 openoffice/help/ko/scalc.jar
 openoffice/help/ko/scalc.key
 openoffice/help/ko/scalc.tree
+openoffice/help/ko/schart.cfg
 openoffice/help/ko/schart.db
 openoffice/help/ko/schart.ht
+openoffice/help/ko/schart.idx/
+openoffice/help/ko/schart.idx/CONTEXTS
+openoffice/help/ko/schart.idx/DICTIONARY
+openoffice/help/ko/schart.idx/DOCS
+openoffice/help/ko/schart.idx/DOCS.TAB
+openoffice/help/ko/schart.idx/EDGE
+openoffice/help/ko/schart.idx/LINKNAMES
+openoffice/help/ko/schart.idx/OFFSETS
+openoffice/help/ko/schart.idx/POSITIONS
+openoffice/help/ko/schart.idx/SCHEMA
 openoffice/help/ko/schart.jar
 openoffice/help/ko/schart.key
 openoffice/help/ko/schart.tree
@@ -135,6 +146,7 @@ openoffice/presets/config/modern_ko.sog
 openoffice/presets/config/palette_ko.soc
 openoffice/presets/config/styles_ko.sod
 openoffice/program/resource/abp680ko.res
+openoffice/program/resource/acc680ko.res
 openoffice/program/resource/analysis680ko.res
 openoffice/program/resource/avmedia680ko.res
 openoffice/program/resource/basctl680ko.res
@@ -143,12 +155,12 @@ openoffice/program/resource/bf_ofa680ko.res
 openoffice/program/resource/bf_sc680ko.res
 openoffice/program/resource/bf_sch680ko.res
 openoffice/program/resource/bf_sd680ko.res
-openoffice/program/resource/bf_sfx680ko.res
 openoffice/program/resource/bf_sm680ko.res
 openoffice/program/resource/bf_svx680ko.res
 openoffice/program/resource/bf_sw680ko.res
 openoffice/program/resource/bib680ko.res
 openoffice/program/resource/cal680ko.res
+openoffice/program/resource/chartcontroller680ko.res
 openoffice/program/resource/cnr680ko.res
 openoffice/program/resource/date680ko.res
 openoffice/program/resource/dba680ko.res
@@ -177,10 +189,13 @@ openoffice/program/resource/pcr680ko.res
 openoffice/program/resource/pdffilter680ko.res
 openoffice/program/resource/preload680ko.res
 openoffice/program/resource/productregistration680ko.res
+openoffice/program/resource/rpt680ko.res
+openoffice/program/resource/rptui680ko.res
 openoffice/program/resource/san680ko.res
+openoffice/program/resource/sb680ko.res
 openoffice/program/resource/sc680ko.res
-openoffice/program/resource/sch680ko.res
 openoffice/program/resource/sd680ko.res
+openoffice/program/resource/sdbcl680ko.res
 openoffice/program/resource/sdbt680ko.res
 openoffice/program/resource/sfx680ko.res
 openoffice/program/resource/sm680ko.res
@@ -219,6 +234,7 @@ openoffice/share/registry/res/ko/org/openoffice/Office/
 openoffice/share/registry/res/ko/org/openoffice/Office/Common.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/DataAccess.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/Embedding.xcu
+openoffice/share/registry/res/ko/org/openoffice/Office/ExtendedColorScheme.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/FormWizard.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/SFX.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/TableWizard.xcu
@@ -235,6 +251,7 @@ openoffice/share/registry/res/ko/org/openoffice/Office/UI/ChartWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/DbBrowserWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/DbQueryWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/DbRelationWindowState.xcu
+openoffice/share/registry/res/ko/org/openoffice/Office/UI/DbReportWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/DbTableWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/DbuCommands.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/DrawImpressCommands.xcu
@@ -245,14 +262,19 @@ openoffice/share/registry/res/ko/org/openoffice/Office/UI/GenericCommands.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/ImpressWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/MathCommands.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/MathWindowState.xcu
+openoffice/share/registry/res/ko/org/openoffice/Office/UI/ReportCommands.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/StartModuleCommands.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/StartModuleWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/WriterCommands.xcu
+openoffice/share/registry/res/ko/org/openoffice/Office/UI/WriterFormWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/WriterGlobalWindowState.xcu
+openoffice/share/registry/res/ko/org/openoffice/Office/UI/WriterReportWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/WriterWebWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/UI/WriterWindowState.xcu
+openoffice/share/registry/res/ko/org/openoffice/Office/UI/XFormsWindowState.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/WebWizard.xcu
 openoffice/share/registry/res/ko/org/openoffice/Office/Writer.xcu
+openoffice/share/registry/res/ko/org/openoffice/Setup.xcu
 openoffice/share/registry/res/ko/org/openoffice/TypeDetection/
 openoffice/share/registry/res/ko/org/openoffice/TypeDetection/Filter.xcu
 openoffice/share/template/ko/

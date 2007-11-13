@@ -1,0 +1,21 @@
+$OpenBSD: patch-vcl_source_window_status_cxx,v 1.1 2007/11/13 09:46:28 robert Exp $
+--- vcl/source/window/status.cxx.orig.port	Fri Oct 26 10:56:17 2007
++++ vcl/source/window/status.cxx	Fri Oct 26 10:56:52 2007
+@@ -694,7 +694,7 @@ void StatusBar::ImplCalcProgressRect()
+     if( IsNativeControlSupported( CTRL_PROGRESS, PART_ENTIRE_CONTROL ) )
+     {
+         ImplControlValue aValue;
+-        Region aControlRegion( Rectangle( Point(), maPrgsFrameRect.GetSize() ) );
++        Region aControlRegion = Region ( Rectangle( Point(), maPrgsFrameRect.GetSize() ) );
+         Region aNativeControlRegion, aNativeContentRegion;
+         if( (bNativeOK = GetNativeControlRegion( CTRL_PROGRESS, PART_ENTIRE_CONTROL, aControlRegion,
+                                                  CTRL_STATE_ENABLED, aValue, rtl::OUString(),
+@@ -1689,7 +1689,7 @@ Size StatusBar::CalcWindowSizePixel() const
+     if( pThis->IsNativeControlSupported( CTRL_PROGRESS, PART_ENTIRE_CONTROL ) )
+     {
+         ImplControlValue aValue;
+-        Region aControlRegion( Rectangle( Point(), Size( nCalcWidth, nMinHeight ) ) );
++        Region aControlRegion = Region ( Rectangle( Point(), Size( nCalcWidth, nMinHeight ) ) );
+         Region aNativeControlRegion, aNativeContentRegion;
+         if( pThis->GetNativeControlRegion( CTRL_PROGRESS, PART_ENTIRE_CONTROL, aControlRegion,
+                                            CTRL_STATE_ENABLED, aValue, rtl::OUString(),

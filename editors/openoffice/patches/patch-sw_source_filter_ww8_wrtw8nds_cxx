@@ -1,0 +1,12 @@
+$OpenBSD: patch-sw_source_filter_ww8_wrtw8nds_cxx,v 1.1 2007/11/13 09:46:28 robert Exp $
+--- sw/source/filter/ww8/wrtw8nds.cxx.orig.port	Sat Oct 27 11:12:27 2007
++++ sw/source/filter/ww8/wrtw8nds.cxx	Sat Oct 27 11:12:38 2007
+@@ -1420,7 +1420,7 @@ SvxBrushItem SwWW8Writer::TrueFrameBgBrush(const SwFrm
+     if (!pRet)
+         pRet = GetCurrentPageBgBrush();
+ 
+-    SvxBrushItem aRet( Color(COL_WHITE), RES_BACKGROUND );
++    SvxBrushItem aRet = SvxBrushItem( Color(COL_WHITE), RES_BACKGROUND );
+     if (pRet && (pRet->GetGraphic() ||( pRet->GetColor() != COL_TRANSPARENT)))
+         aRet = *pRet;
+ 

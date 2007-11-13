@@ -1,0 +1,12 @@
+$OpenBSD: patch-vcl_source_control_combobox_cxx,v 1.1 2007/11/13 09:46:28 robert Exp $
+--- vcl/source/control/combobox.cxx.orig.port	Fri Oct 26 10:46:04 2007
++++ vcl/source/control/combobox.cxx	Fri Oct 26 10:46:45 2007
+@@ -176,7 +176,7 @@ void ComboBox::ImplCalcEditHeight()
+     // FIXME: currently only on aqua; see if we can use this on other platforms
+     if( ImplGetSVData()->maNWFData.mbNoFocusRects && ! IsDropDownBox() )
+     {
+-        Region aCtrlRegion( Rectangle( Point(), Size( 10, 10 ) ) );
++        Region aCtrlRegion = Region ( Rectangle( Point(), Size( 10, 10 ) ) );
+         Region aBoundRegion, aContentRegion;
+         ImplControlValue aControlValue;
+         if( GetNativeControlRegion( CTRL_EDITBOX, PART_ENTIRE_CONTROL,

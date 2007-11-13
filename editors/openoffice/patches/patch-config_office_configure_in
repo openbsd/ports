@@ -1,23 +1,24 @@
---- config_office/configure.in.orig.port	Wed Apr 18 03:46:23 2007
-+++ config_office/configure.in	Wed Apr 18 03:46:24 2007
-@@ -808,6 +808,16 @@ case "$build_os" in
+$OpenBSD: patch-config_office_configure_in,v 1.14 2007/11/13 09:46:28 robert Exp $
+--- config_office/configure.in.orig.port	Thu Oct 25 16:21:59 2007
++++ config_office/configure.in	Thu Oct 25 16:55:33 2007
+@@ -831,6 +831,16 @@ case "$build_os" in
  		AC_MSG_RESULT([$PTHREAD_LIBS])
  		_os=FreeBSD
  		;;
-+        openbsd*)
-+                test_x=yes
-+                test_gtk=yes
-+                build_cairo=yes
-+                test_kde=yes
-+                test_cups=yes
-+                PTHREAD_CFLAGS="-pthread -D_THREAD_SAFE"
-+                PTHREAD_LIBS="-pthread"
-+                _os=OpenBSD
-+                ;;
++	openbsd*)
++		test_x=yes
++		test_gtk=yes
++		build_cairo=yes
++		test_kde=yes
++		test_cups=yes
++		PTHREAD_CFLAGS="-pthread -D_THREAD_SAFE"
++		PTHREAD_LIBS="-pthread"
++		_os=OpenBSD
++		;;
  	osf)
  		test_cups=no
  		_os=OSF1
-@@ -2469,11 +2479,11 @@ dnl ==================================================
+@@ -2585,11 +2595,11 @@ dnl ==================================================
  dnl Checks for programs.
  dnl ===================================================================
  dnl Check whether there's a C pre-processor.
@@ -31,7 +32,7 @@
     AC_PROG_CXXCPP
  fi
  
-@@ -2603,6 +2613,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
+@@ -2719,6 +2729,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
  	AIX)
  		PKGFORMAT=aix
  		;;
@@ -41,7 +42,7 @@
  	*BSD)
  		PKGFORMAT=bsd
  		;;
-@@ -2932,7 +2945,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
+@@ -3048,7 +3061,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
          test "$with_system_libwpd" != "no"; then
      AC_MSG_RESULT([external])
      SYSTEM_LIBWPD=YES
@@ -50,7 +51,7 @@
  else
      AC_MSG_RESULT([internal])
      SYSTEM_LIBWPD=NO
-@@ -2996,12 +3009,13 @@ if test -n "$with_system_python" && test "$with_system
+@@ -3159,12 +3172,13 @@ if test -n "$with_system_python" && test "$with_system
  
     python_include=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('INCLUDEPY');"`
     python_version=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('VERSION');"`
@@ -65,7 +66,7 @@
     fi
     
     dnl check if the headers really work:
-@@ -3031,16 +3045,13 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
+@@ -3194,15 +3208,12 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
  	test "$with_system_db" != "no"; then
      SYSTEM_DB=YES
      AC_MSG_RESULT([external])
@@ -77,16 +78,15 @@
 -             [ AC_MSG_ERROR(no. install the db4 libraries) ], []+             )
 -        ], []
 +    AC_CHECK_HEADER(db4/db.h, [ DB_INCLUDES=${prefix}/include/db4 ],
-+             [ AC_MSG_ERROR(no. install the db4 libraries) ], []
++	     [ AC_MSG_ERROR(no. install the db4 libraries) ], []
      )
      AC_MSG_CHECKING([whether db is at least 4.1])
-     # FIXME: Will db 4.3 work? Can't test it since the 4.3 java bindings are not packaged :/
 +    save_CXXFLAGS=$CXXFLAGS
 +    CXXFLAGS=-I$DB_INCLUDES
-     for v in 1 2; do
+     for v in 1 2 3 4 5; do
         AC_TRY_RUN([
  #include <db.h>
-@@ -3051,6 +3062,7 @@ int main(int argc, char **argv) {
+@@ -3213,6 +3224,7 @@ int main(int argc, char **argv) {
  }
         ], [DB_VERSION_MINOR=$v], [])
      done
@@ -94,7 +94,7 @@
      if test "$DB_VERSION_MINOR" -gt "1"; then
         AC_MSG_RESULT([OK])
         DB_VERSION=4.$DB_VERSION_MINOR
-@@ -3776,7 +3788,7 @@ elif test "$_os" != "WINNT" ; then
+@@ -3893,7 +3905,7 @@ elif test "$_os" != "WINNT" ; then
        AC_MSG_ERROR([No X includes found]) # Exit
     fi
     CFLAGS=$X_CFLAGS
@@ -103,29 +103,80 @@
     AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
     dnl Check if the XauDisposeAuth symbol is provided by libXau.
     AC_CHECK_LIB(Xau, XauDisposeAuth, XAU_LIBS="-lXau", [])
-@@ -3969,7 +3981,6 @@ if test -n "$with_system_neon" -o -n "$with_system_lib
+@@ -4088,7 +4100,6 @@ if test -n "$with_system_neon" -o -n "$with_system_lib
  	test "$with_system_neon" != "no"; then
          AC_MSG_RESULT([external])
-         PKG_CHECK_MODULES(NEON, neon >= 0.24.0)
--        PKG_CHECK_MODULES(NEON, neon < 0.27.0, , AC_MSG_ERROR([you need neon 0.24.x to 0.26.x for system-neon]))
+         PKG_CHECK_MODULES(NEON, neon >= 0.26.0)
+-        PKG_CHECK_MODULES(NEON, neon < 0.27.0, , AC_MSG_ERROR([you need neon 0.26.x for system-neon]))
          NEON_VERSION="`$PKG_CONFIG --modversion neon | $SED 's/\.//g'`"
          NEON_CFLAGS="$NEON_CFLAGS -DSYSTEM_NEON -DUSE_DAV_LOCKS=1"
          SYSTEM_NEON=YES
-@@ -4731,7 +4742,7 @@ if test "$test_kde" = "yes" -a "$ENABLE_KDE" = "TRUE" 
+@@ -4832,42 +4843,24 @@ KDE_LIBS=""
+ MOC="moc"
+ if test "$test_kde" = "yes" -a "$ENABLE_KDE" = "TRUE" ; then
+     dnl Search paths for Qt and KDE
+-    if test "$build_cpu" != "x86_64" ; then
+-        qt_incdirs="$QTINC /usr/local/qt/include /usr/include/qt /usr/include /usr/X11R6/include/X11/qt /usr/X11R6/include/qt /usr/lib/qt3/include /usr/lib/qt/include /usr/share/qt3/include $x_includes"
+-        qt_libdirs="$QTLIB /usr/local/qt/lib /usr/lib/qt /usr/lib /usr/X11R6/lib/X11/qt /usr/X11R6/lib/qt /usr/lib/qt3/lib /usr/lib/qt/lib /usr/share/qt3/lib $x_libraries"
+-    else
+-        qt_incdirs="$QTINC /usr/local/qt/include /usr/include/qt /usr/include /usr/X11R6/include/X11/qt /usr/X11R6/include/qt /usr/lib64/qt3/include /usr/lib64/qt/include /usr/share/qt3/include /usr/lib/qt3/include /usr/lib/qt/include $x_includes"
+-        qt_libdirs="$QTLIB /usr/local/qt/lib64 /usr/lib64/qt /usr/lib64 /usr/X11R6/lib64/X11/qt /usr/X11R6/lib64/qt /usr/lib64/qt3/lib64 /usr/lib64/qt/lib64 /usr/share/qt3/lib64 /usr/local/qt/lib /usr/lib/qt /usr/lib /usr/X11R6/lib/X11/qt /usr/X11R6/lib/qt /usr/lib/qt3/lib /usr/lib/qt/lib /usr/share/qt3/lib $x_libraries"
+-    fi
++    qt_incdirs="$QTINC /usr/local/qt/include /usr/include/qt /usr/include /usr/X11R6/include/X11/qt /usr/X11R6/include/qt /usr/lib/qt3/include /usr/lib/qt/include /usr/share/qt3/include /usr/lib/qt3/include /usr/lib/qt/include $x_includes"
++    qt_libdirs="$QTLIB /usr/local/qt/lib /usr/lib/qt /usr/lib /usr/X11R6/lib/X11/qt /usr/X11R6/lib/qt /usr/lib/qt3/lib /usr/lib/qt/lib /usr/share/qt3/lib /usr/local/qt/lib /usr/lib/qt /usr/lib /usr/X11R6/lib/X11/qt /usr/X11R6/lib/qt /usr/lib/qt3/lib /usr/lib/qt/lib /usr/share/qt3/lib $x_libraries"
+     if test -n "$QTDIR" ; then
+         qt_incdirs="$QTDIR/include $qt_incdirs"
+-        if test "$build_cpu" != "x86_64" ; then
+-            qt_libdirs="$QTDIR/lib $qt_libdirs"
+-        else
+-            qt_libdirs="$QTDIR/lib64 $QTDIR/lib $qt_libdirs"
+-        fi
++        qt_libdirs="$QTDIR/lib $qt_libdirs"
+     fi
+-    if test "$build_cpu" != "x86_64" ; then
+-        kde_incdirs="/usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/kde3/include /opt/kde/include $x_includes"
+-        kde_libdirs="/usr/lib/kde/lib /usr/local/kde/lib /usr/kde/lib /usr/lib/kde /usr/lib/kde3 /usr/lib /usr/X11R6/lib /usr/local/lib /opt/kde3/lib /opt/kde/lib /usr/X11R6/kde/lib $x_libraries"
+-    else
+-        kde_incdirs="/usr/lib64/kde/include /usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/kde3/include /opt/kde/include $x_includes"
+-        kde_libdirs="/usr/lib64/kde/lib64 /usr/local/kde/lib64 /usr/kde/lib64 /usr/lib64/kde /usr/lib64/kde3 /usr/lib64 /usr/X11R6/lib64 /usr/local/lib64 /opt/kde3/lib64 /opt/kde/lib64 /usr/X11R6/kde/lib64 /usr/lib/kde/lib /usr/local/kde/lib /usr/kde/lib /usr/lib/kde /usr/lib/kde3 /usr/lib /usr/X11R6/lib /usr/local/lib /opt/kde3/lib /opt/kde/lib /usr/X11R6/kde/lib $x_libraries"
+-    fi
++    kde_incdirs="/usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/kde3/include /opt/kde/include $x_includes"
++    kde_libdirs="/usr/local/lib /usr/lib/kde/lib /usr/local/kde/lib /usr/kde/lib /usr/lib/kde /usr/lib/kde3 /usr/lib /usr/X11R6/lib /opt/kde3/lib /opt/kde/lib /usr/X11R6/kde/lib $x_libraries"
+     if test -n "$KDEDIR" ; then
+         kde_incdirs="$KDEDIR/include $kde_incdirs"
+-        if test "$build_cpu" != "x86_64" ; then
+-            kde_libdirs="$KDEDIR/lib $kde_libdirs"
+-        else
+-            kde_libdirs="$KDEDIR/lib64 $KDEDIR/lib $kde_libdirs"
+-        fi
++        kde_libdirs="$KDEDIR/lib $kde_libdirs"
+     fi
  
      dnl What to test
      qt_test_include="qstyle.h"
 -    qt_test_library="libqt-mt.so"
 +    qt_test_library="libqt-mt.so*"
      kde_test_include="ksharedptr.h"
-     kde_test_library="libkdeui.la"
+-    kde_test_library="libkdeui.so"
++    kde_test_library="libkdeui.so*"
  
-@@ -4754,7 +4765,7 @@ your Qt installation by exporting QTDIR before running
+     dnl Check for Qt headers
+     AC_MSG_CHECKING([for Qt headers])
+@@ -4888,7 +4881,7 @@ your Qt installation by exporting QTDIR before running
      AC_MSG_CHECKING([for Qt libraries])
      qt_libdir="no"
      for qt_check in $qt_libdirs ; do
 -        if test -r "$qt_check/$qt_test_library" ; then
-+        if test -r "`ls $qt_check/$qt_test_library | head -1`" ; then
++	if test -r "`ls $qt_check/$qt_test_library | head -1`" ; then
              qt_libdir="$qt_check"
+             break
+         fi
+@@ -4924,7 +4917,7 @@ your KDE installation by exporting KDEDIR before runni
+     AC_MSG_CHECKING([for KDE libraries])
+     kde_libdir="no"
+     for kde_check in $kde_libdirs ; do
+-        if test -r "$kde_check/$kde_test_library" ; then
++	if test -r "`ls $kde_check/$kde_test_library | head -1`" ; then
+             kde_libdir="$kde_check"
              break
          fi

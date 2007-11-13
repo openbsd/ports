@@ -1,5 +1,5 @@
---- instsetoo_native/inc_openoffice/unix/packagelist.txt.orig.port	Tue May  8 13:49:33 2007
-+++ instsetoo_native/inc_openoffice/unix/packagelist.txt	Fri Jun 15 09:31:34 2007
+--- instsetoo_native/inc_openoffice/unix/packagelist.txt.orig.port	Fri May 25 16:35:43 2007
++++ instsetoo_native/inc_openoffice/unix/packagelist.txt	Sun Oct 28 09:10:30 2007
 @@ -29,7 +29,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
@@ -180,19 +180,19 @@
  End
  
  Start
-@@ -333,7 +333,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -333,7 +333,7 @@ copyright = "1999-2007 by OpenOffice.org"
  solariscopyright = "solariscopyrightfile"
- vendor = "%PRODUCTNAME"
- description = "Mailcap module for %PRODUCTNAME %PRODUCTVERSION"
+ vendor = "OpenOffice.org"
+ description = "Headless display module for %PRODUCTNAME %PRODUCTVERSION"
 -destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +destpath = "openoffice"
  End
  
  Start
-@@ -349,7 +349,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -348,7 +348,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
- description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+ description = "Mailcap module for %PRODUCTNAME %PRODUCTVERSION"
 -destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
 +destpath = "openoffice"
  End
@@ -261,7 +261,16 @@
  End
  
  Start
-@@ -470,5 +470,5 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -469,7 +469,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+ solariscopyright = "solariscopyrightfile"
+ vendor = "%PRODUCTNAME"
+ description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
++destpath = "openoffice"
+ End
+ 
+ Start
+@@ -485,5 +485,5 @@ copyright = "1999-2006 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"

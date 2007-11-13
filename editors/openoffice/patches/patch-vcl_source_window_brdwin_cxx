@@ -1,0 +1,12 @@
+$OpenBSD: patch-vcl_source_window_brdwin_cxx,v 1.1 2007/11/13 09:46:28 robert Exp $
+--- vcl/source/window/brdwin.cxx.orig.port	Fri Oct 26 10:54:16 2007
++++ vcl/source/window/brdwin.cxx	Fri Oct 26 10:54:30 2007
+@@ -1181,7 +1181,7 @@ void ImplSmallBorderWindowView::Init( OutputDevice* pD
+             if( mbNWFBorder )
+             {
+                 ImplControlValue aControlValue;
+-                Region aCtrlRegion( Rectangle( Point(), Size( mnWidth < 10 ? 10 : mnWidth, mnHeight < 10 ? 10 : mnHeight ) ) );
++                Region aCtrlRegion = Region ( Rectangle( Point(), Size( mnWidth < 10 ? 10 : mnWidth, mnHeight < 10 ? 10 : mnHeight ) ) );
+                 Region aBoundingRgn( aCtrlRegion );
+                 Region aContentRgn( aCtrlRegion );
+                 if( pWin->GetNativeControlRegion( aCtrlType, PART_ENTIRE_CONTROL, aCtrlRegion,

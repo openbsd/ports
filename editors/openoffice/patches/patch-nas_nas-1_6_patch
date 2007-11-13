@@ -1,6 +1,6 @@
-$OpenBSD: patch-nas_nas-1_6_patch,v 1.3 2006/10/18 12:45:59 kurt Exp $
---- nas/nas-1.6.patch.orig.port	Fri Mar 10 10:59:50 2006
-+++ nas/nas-1.6.patch	Tue Oct 17 22:42:40 2006
+$OpenBSD: patch-nas_nas-1_6_patch,v 1.4 2007/11/13 09:46:28 robert Exp $
+--- nas/nas-1.6.patch.orig.port	Tue Jul  3 16:01:47 2007
++++ nas/nas-1.6.patch	Thu Oct 25 16:23:46 2007
 @@ -109,7 +109,7 @@
     */
    
@@ -43,7 +43,7 @@ $OpenBSD: patch-nas_nas-1_6_patch,v 1.3 2006/10/18 12:45:59 kurt Exp $
  *** 105,110 ****
  --- 105,113 ----
    # if defined(LinuxArchitecture)
-@@ -763,3 +780,72 @@
+@@ -763,6 +780,75 @@
        XtAppAddActions(appContext, actions, XtNumber(actions));
    
        if (argc == 3)
@@ -116,3 +116,6 @@ $OpenBSD: patch-nas_nas-1_6_patch,v 1.3 2006/10/18 12:45:59 kurt Exp $
 +  # define VOXWARE_SERVER
 +  #endif                                          /* voxware */
 +  
+ *** misc/nas-1.6/clients/audio/auedit/auedit.c.old	2007-01-15 18:34:12.000000000 +0100
+ --- misc/build/nas-1.6/clients/audio/auedit/auedit.c	2007-01-22 13:17:43.000000000 +0100
+ ***************

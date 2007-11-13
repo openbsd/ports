@@ -1,12 +1,12 @@
-$OpenBSD: patch-store_util_makefile_mk,v 1.3 2007/03/17 15:27:45 robert Exp $
---- store/util/makefile.mk.orig.port	Fri Feb  2 20:05:57 2007
-+++ store/util/makefile.mk	Tue Feb  6 23:13:34 2007
-@@ -76,7 +76,7 @@ SHL1STDLIBS+=$(LIBSTLPORT)
- 
- # On gcc3 __Unwind_SetIP is not in supc++ but in libgcc_s.so
- .IF "$(COMID)"=="gcc3"
--.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD"
-+.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)"=="OPENBSD"
+$OpenBSD: patch-store_util_makefile_mk,v 1.4 2007/11/13 09:46:28 robert Exp $
+--- store/util/makefile.mk.orig.port	Thu Oct 25 12:28:11 2007
++++ store/util/makefile.mk	Thu Oct 25 12:28:34 2007
+@@ -79,7 +79,7 @@ SHL1STDLIBS+=$(LIBSTLPORT)
+ .IF "$(GUI)"=="WNT"
+ SHL1STDLIBS+= 	-lsupc++
+ .ELSE
+-.IF "$(OS)"=="NETBSD"
++.IF "$(OS)"=="NETBSD" || "$(OS)"=="OPENBSD"
  SHL1STDLIBS+= 	-lsupc++
  .ELIF "$(OS)"=="MACOSX"
  .IF "$(CCNUMVER)"<="000399999999"

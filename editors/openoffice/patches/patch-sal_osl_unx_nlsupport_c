@@ -1,6 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.4 2007/04/18 13:20:48 kurt Exp $
---- sal/osl/unx/nlsupport.c.orig.port	Fri Jan 19 06:43:27 2007
-+++ sal/osl/unx/nlsupport.c	Wed Apr 18 03:46:26 2007
+$OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.5 2007/11/13 09:46:28 robert Exp $
+--- sal/osl/unx/nlsupport.c.orig.port	Tue Jul  3 14:48:57 2007
++++ sal/osl/unx/nlsupport.c	Thu Oct 25 16:23:47 2007
 @@ -38,7 +38,7 @@
  #include <osl/process.h>
  #include <rtl/memory.h>
@@ -55,7 +55,7 @@ $OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.4 2007/04/18 13:20:48 kurt Exp $
  #endif /* ifdef SOLARIS IRIX LINUX FREEBSD NETBSD */
  
  static pthread_mutex_t aLocalMutex = PTHREAD_MUTEX_INITIALIZER;
-@@ -984,7 +1013,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
+@@ -946,7 +975,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
              snprintf(env_buf, sizeof(env_buf), "LC_ALL=%s", locale_buf);
              env_buf[sizeof(env_buf)] = '\0';
              putenv(env_buf);
@@ -64,7 +64,7 @@ $OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.4 2007/04/18 13:20:48 kurt Exp $
              setenv( "LC_ALL", locale_buf, 1);
  #else
              setenv( "LC_ALL", locale_buf );
-@@ -996,7 +1025,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
+@@ -958,7 +987,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
              snprintf(env_buf, sizeof(env_buf), "LC_CTYPE=%s", locale_buf);
              env_buf[sizeof(env_buf)] = '\0';
              putenv(env_buf);
@@ -73,7 +73,7 @@ $OpenBSD: patch-sal_osl_unx_nlsupport_c,v 1.4 2007/04/18 13:20:48 kurt Exp $
              setenv("LC_CTYPE", locale_buf, 1 );
  #else
              setenv( "LC_CTYPE", locale_buf );
-@@ -1008,7 +1037,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
+@@ -970,7 +999,7 @@ int _imp_setProcessLocale( rtl_Locale * pLocale )
              snprintf(env_buf, sizeof(env_buf), "LANG=%s", locale_buf);
              env_buf[sizeof(env_buf)] = '\0';
              putenv(env_buf);

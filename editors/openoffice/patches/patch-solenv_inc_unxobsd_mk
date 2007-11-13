@@ -1,16 +1,16 @@
-$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.3 2007/01/17 07:29:01 robert Exp $
---- solenv/inc/unxobsd.mk.orig.port	Tue Jan 16 21:47:25 2007
-+++ solenv/inc/unxobsd.mk	Tue Jan 16 21:58:28 2007
-@@ -0,0 +1,236 @@
+$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.4 2007/11/13 09:46:28 robert Exp $
+--- solenv/inc/unxobsd.mk.orig.port	Sat Oct 27 12:50:07 2007
++++ solenv/inc/unxobsd.mk	Sat Oct 27 15:12:51 2007
+@@ -0,0 +1,237 @@
 +#*************************************************************************
 +#
 +#   OpenOffice.org - a multi-platform office productivity suite
 +#
 +#   $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+#   $Revision: 1.3 $
++#   $Revision: 1.4 $
 +#
-+#   last change: $Author: robert $ $Date: 2007/01/17 07:29:01 $
++#   last change: $Author: robert $ $Date: 2007/11/13 09:46:28 $
 +#
 +#   The Contents of this file are made available subject to
 +#   the terms of GNU Lesser General Public License Version 2.1.
@@ -50,7 +50,7 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.3 2007/01/17 07:29:01 robert Exp $
 +#LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
 +
 +# _PTHREADS is needed for the stl
-+CDEFS+=$(PTHREAD_CFLAGS) -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=450
++CDEFS+=-D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=450
 +
 +# enable visibility define in "sal/types.h"
 +.IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
@@ -89,14 +89,15 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.3 2007/01/17 07:29:01 robert Exp $
 +INCPOST=$(LOCALBASE)/include
 +
 +# flags for the C++ Compiler
-+CFLAGSCC=$(ARCH_FLAGS)
++CFLAGSCC=$(ARCH_FLAGS) $(PTHREAD_CFLAGS)
 +# Flags for enabling exception handling
 +CFLAGSEXCEPTIONS=-fexceptions -fno-enforce-eh-specs
 +# Flags for disabling exception handling
 +CFLAGS_NO_EXCEPTIONS=-fno-exceptions -DBOOST_NO_EXCEPTIONS
 +
 +# -fpermissive should be removed as soon as possible
-+CFLAGSCXX=$(ARCH_FLAGS)
++CFLAGSCXX=$(ARCH_FLAGS) $(PTHREAD_CFLAGS)
++
 +.IF "$(CPUNAME)" == "X86_64"
 +PICSWITCH:=-fpic -fPIC
 +LINKFLAGSOPTIMIZE*=-Wl,-O1 -fPIC

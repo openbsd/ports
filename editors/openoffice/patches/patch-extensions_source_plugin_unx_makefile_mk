@@ -1,6 +1,6 @@
---- extensions/source/plugin/unx/makefile.mk.orig.port	Sat Jan 13 00:23:55 2007
-+++ extensions/source/plugin/unx/makefile.mk	Sat Jan 13 00:24:00 2007
-@@ -80,7 +80,7 @@ APP1STDLIBS+=-lXm -lXt -lXext -lX11 -ldl
+--- extensions/source/plugin/unx/makefile.mk.orig.port	Thu Jul  5 10:52:09 2007
++++ extensions/source/plugin/unx/makefile.mk	Thu Oct 25 16:23:46 2007
+@@ -86,7 +86,7 @@ APP1STDLIBS+=-lXm -lXt -lXext -lX11 -ldl
  .IF "$(DISABLE_XAW)" != "TRUE"
  APP1STDLIBS+=-lXaw 
  .ENDIF

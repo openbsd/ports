@@ -1,6 +1,5 @@
-$OpenBSD: patch-config_office_set_soenv_in,v 1.11 2007/04/18 13:20:48 kurt Exp $
---- config_office/set_soenv.in.orig.port	Wed Apr 18 03:46:23 2007
-+++ config_office/set_soenv.in	Wed Apr 18 03:46:24 2007
+--- config_office/set_soenv.in.orig.port	Thu Oct 25 16:21:59 2007
++++ config_office/set_soenv.in	Thu Oct 25 16:23:46 2007
 @@ -368,6 +368,46 @@ elsif ( $platform =~ m/freebsd/ ) 
        $INPATH         = $OUTPATH.$PROEXT;
        $GVERDIR        = $INPATH;
@@ -48,43 +47,40 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.11 2007/04/18 13:20:48 kurt Exp $
  elsif ( $platform =~ m/linux-gnu/ ) 
  {
  # General Linux settings:
-@@ -969,7 +1009,7 @@ if ($platform =~ m/solaris/) 
+@@ -973,7 +1013,7 @@ if ($platform =~ m/solaris/) 
                          $ps.$JRETHREADDIR.
                          $ps.'$SOLARVER'.$ds.'$INPATH'.$LIB;
  }
 -elsif ($platform =~ m/linux-gnu|netbsd|osf1|freebsd|aix/)
-+elsif ($platform =~ m/linux-gnu|netbsd|osf1|openbsd|freebsd|aix/)
++elsif ($platform =~ m/linux-gnu|netbsd|osf1|freebsd|openbsd|aix/)
  {  $LD_LIBRARY_PATH   = $cur_dir.
                          $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
                          $ps.$JRELIBDIR.
-@@ -1018,7 +1058,7 @@ if ($platform =~ m/solaris/) 
-                         $D."SUPD=$UPD".
-                         $D."UPDVER=".'""'."'".'"'."'".'"'."SV$UPD".'"'."'".'"'."'".'"'.'"';
- }
--elsif ($platform =~ m/linux-gnu|netbsd|freebsd|osf1|irix|aix/)
-+elsif ($platform =~ m/linux-gnu|netbsd|openbsd|freebsd|osf1|irix|aix/)
- {  $SOLARDEF          = $D."UNX".
-                         $D.$COM.
-                         $D.$CVER.
-@@ -1055,7 +1095,7 @@ if ($platform =~ m/solaris/) 
+@@ -1015,7 +1055,7 @@ if ($platform =~ m/solaris/) 
                          $L.$USR_DT.$LIB.
                          $L.$USR_OPENWIN.$LIB;
  }
 -elsif ($platform =~ m/linux-gnu|netbsd|osf1|irix|freebsd|aix/)
-+elsif ($platform =~ m/linux-gnu|netbsd|osf1|irix|openbsd|freebsd|aix/)
++elsif ($platform =~ m/linux-gnu|netbsd|osf1|irix|freebsd|openbsd|aix/)
  {
     $SOLAREXTRALIB     = $L.$par_dir.$LIB64;
  }
-@@ -1091,7 +1131,7 @@ if ($platform =~ m/cygwin/)
+@@ -1065,7 +1105,7 @@ if ($platform =~ m/cygwin/)
  }
       
  # The general environment path.
 -if ($platform =~ m/linux-gnu|netbsd|odf1|irix|freebsd|aix|solaris/)
-+if ($platform =~ m/linux-gnu|netbsd|odf1|irix|openbsd|freebsd|aix|solaris/)
++if ($platform =~ m/linux-gnu|netbsd|odf1|irix|freebsd|aix|solaris|openbsd/)
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1260,6 +1300,7 @@ elsif ($platform =~ m/linux-gnu|netbasd|osf1|irix|aix|
+@@ -1245,11 +1285,12 @@ if ($platform =~ m/solaris/) 
+                         $L_STLPORT_LIB.
+                         $L.$XLIB;
+ }
+-elsif ($platform =~ m/linux-gnu|netbasd|osf1|irix|aix|freebsd/)
++elsif ($platform =~ m/linux-gnu|netbasd|osf1|irix|aix|freebsd|openbsd/)
+ {  $SOLARLIB          = $L.$par_dir.$LIB.
                          $L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
                          $L.'$SOLARVER'.$ds.'$INPATH'.$LIB.
                          $L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
@@ -92,7 +88,7 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.11 2007/04/18 13:20:48 kurt Exp $
                          $L.'$JAVA_HOME'.$LIB64.
                          $L.$JRELIBDIR.
                          $L.$JRETOOLKITDIR.
-@@ -1267,6 +1308,19 @@ elsif ($platform =~ m/linux-gnu|netbasd|osf1|irix|aix|
+@@ -1257,6 +1298,19 @@ elsif ($platform =~ m/linux-gnu|netbasd|osf1|irix|aix|
                          $L_STLPORT_LIB.
                          $L.$XLIB;
  }
@@ -112,24 +108,24 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.11 2007/04/18 13:20:48 kurt Exp $
  elsif ($platform =~ m/cygwin/)
  {  $SOLARLIB          = $L.'$SOLARVER'.$ds.'$INPATH'.$LIB.
                          $L.$par_dir.$LIB.
-@@ -1298,10 +1352,10 @@ $SOLARINC             = $I.$cur_dir.
+@@ -1288,10 +1342,10 @@ $SOLARINC             = $I.$cur_dir.
                          $I.'$SOLARENV'.$INC.
                          $I.'$SRC_ROOT'.$ds."res";
  
 -if ($platform =~ m/solaris|linux-gnu|osf1|freebsd|netbsd|irix/)
-+if ($platform =~ m/solaris|linux-gnu|osf1|openbsd|freebsd|netbsd|irix/)
++if ($platform =~ m/solaris|linux-gnu|osf1|freebsd|netbsd|openbsd|irix/)
  {
  $SOLARINC	     .= $STLPORT_stlport;
 -if ($platform =~ m/linux|freebsd|netbsd/)
-+if ($platform =~ m/linux|openbsd|freebsd|netbsd/)
++if ($platform =~ m/linux|freebsd|netbsd|openbsd/)
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1322,10 +1376,15 @@ if ($platform =~ m/linux-gnu/)
+@@ -1312,9 +1366,14 @@ if ($platform =~ m/linux-gnu/)
     $SOLARINC         .= $STLPORT_inc_stlport;
  }
  
-+   	$SOLARINC      .= $I.'$SOLARENV'.$INC.$ds."Xp31";
++	$SOLARINC      .= $I.'$SOLARENV'.$INC.$ds."Xp31";
  
 -   	$SOLARINC      .= $I.'$SOLARENV'.$INC.$ds."Xp31".
 -                     $I.'$JAVA_HOME'.$INCLUDE;
@@ -137,29 +133,28 @@ $OpenBSD: patch-config_office_set_soenv_in,v 1.11 2007/04/18 13:20:48 kurt Exp $
 +        if ($platform =~ m/openbsd/)
 +        {  $SOLARINC  .= $I.$USR_LOCAL.$INCLUDE;
 +        }
- 
++ 
 +        $SOLARINC      .= $I.'$JAVA_HOME'.$INCLUDE;
-+
+ 
  	#include system dependent Java include directory
  	if (!($JDK eq "gcj"))
- 	{
-@@ -1341,6 +1400,10 @@ if ($platform =~ m/linux-gnu/)
+@@ -1331,6 +1390,10 @@ if ($platform =~ m/linux-gnu/)
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."bsd";
        		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
     		}
-+		elsif ($platform =~ m/openbsd/)
-+		{
-+		$SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."openbsd";
-+		}
++                elsif ($platform =~ m/openbsd/)
++                {
++                $SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."openbsd";
++                }
     		elsif ($platform =~ m/netbsd/)
     		{  $SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."netbsd";
     		}
-@@ -1353,7 +1416,7 @@ if ($platform =~ m/linux-gnu/)
+@@ -1343,7 +1406,7 @@ if ($platform =~ m/linux-gnu/)
     		$SOLARINC .=$I.'$JAVA_HOME'.$INCLUDE.$ds."native_threads".$ds."include";
  	}
      #The tail, if needed
 -    if ($platform =~ m/linux-gnu|freebsd|netbsd/)
-+    if ($platform =~ m/linux-gnu|freebsd|openbsd|netbsd/)
++    if ($platform =~ m/linux-gnu|freebsd|netbsd|openbsd/)
      {  $SOLARINC  .= $I.$XINC;
      }
      elsif ($platform =~ m/osf1/)

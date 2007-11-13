@@ -1,15 +1,11 @@
-$OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.1 2007/06/09 10:42:56 steven Exp $
---- shell/source/unix/sysshell/recently_used_file_handler.cxx.orig.port	Sun Sep 17 03:42:41 2006
-+++ shell/source/unix/sysshell/recently_used_file_handler.cxx	Thu Jun  7 07:26:10 2007
-@@ -95,478 +95,12 @@
+$OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.2 2007/11/13 09:46:28 robert Exp $
+--- shell/source/unix/sysshell/recently_used_file_handler.cxx.orig.port	Tue Jun 19 18:12:29 2007
++++ shell/source/unix/sysshell/recently_used_file_handler.cxx	Fri Oct 26 15:51:03 2007
+@@ -69,508 +69,12 @@
  #include <vector>
  #include <algorithm>
  #include <functional>
 +#include <gtk/gtk.h>
- 
-+#include <stdio.h>
-+
- using namespace ::com::sun::star;
  
 -namespace /* private */ {
 -    
@@ -87,7 +83,8 @@ $OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.1 
 -    
 -        void set_groups(const string_t& character)
 -        { groups_.push_back(character); }
--
++#include <stdio.h>
+ 
 -        void set_nothing(const string_t& /*character*/)
 -        {}
 -		
@@ -199,6 +196,8 @@ $OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.1 
 -    //########################################   
 -    // thrown if we encounter xml tags that we do not know
 -    class unknown_xml_format_exception {};
+-    // thrown if we encounter an end tag without matching start tag
+-    class end_tag_without_start_tag_exception {};
 -
 -    //########################################   
 -    class recently_used_file_filter : public i_xml_parser_event_handler
@@ -229,6 +228,9 @@ $OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.1 
 -
 -        virtual void end_element(const string_t& /*raw_name*/, const string_t& local_name)
 -        {
+-            if( local_name != TAG_RECENT_FILES && NULL == item_ )
+-                throw end_tag_without_start_tag_exception();
+-            
 -            if (named_command_map_.find(local_name) != named_command_map_.end())
 -                (item_->*named_command_map_[local_name])(current_element_);
 -            else
@@ -480,13 +482,6 @@ $OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.1 
 -                </RecentFiles>
 -*/
 -
- const rtl::OUString DEFAULT_CONTEXT = rtl::OUString::createFromAscii("DefaultContext");
- 
- // We need to re-encode file urls because osl_getFileURLFromSystemPath converts
-@@ -591,31 +125,9 @@ static rtl::OUString translateToExternalUrl(const rtl:
- 	return extUrl;
- }
- 
 -extern "C" void add_to_recently_used_file_list(const rtl::OUString& file_url, const rtl::OUString& mime_type)
 +extern "C" void add_to_recently_used_file_list(const rtl::OUString& file_url, const rtl::OUString& )
  {
@@ -496,10 +491,8 @@ $OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.1 
 -        recently_used_item_list_t item_list;
 -        cleanup_guard guard(item_list);	
 -	
-         rtl::OUString externalUrl = translateToExternalUrl(file_url);
--	
 -        read_recently_used_items(ruf, item_list);	
--        recently_used_item_list_add(item_list, externalUrl.getLength() ? externalUrl : file_url, mime_type);
+-        recently_used_item_list_add(item_list, file_url, mime_type);
 -        write_recently_used_items(ruf, item_list);                                
 -    }
 -    catch(const char* ex)
@@ -514,6 +507,10 @@ $OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.1 
 -    {
 -        OSL_ENSURE(false, "XML format unknown");
 -    }        
+-    catch(const end_tag_without_start_tag_exception&)
+-    {
+-        OSL_ENSURE(false, "XML file damaged");
+-    }
 +	GtkRecentManager* recentmanager = gtk_recent_manager_get_default();
 +	gtk_recent_manager_add_item(recentmanager, rtl::OUStringToOString(file_url, RTL_TEXTENCODING_UTF8).getStr());
  }

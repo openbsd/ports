@@ -1,7 +1,7 @@
-$OpenBSD: patch-ucb_source_ucp_ftp_ftpcontent_cxx,v 1.1 2007/10/02 16:53:49 naddy Exp $
---- ucb/source/ucp/ftp/ftpcontent.cxx.orig.port	Sun Sep 17 15:49:38 2006
-+++ ucb/source/ucp/ftp/ftpcontent.cxx	Thu Sep 27 18:00:56 2007
-@@ -600,13 +600,12 @@ Any SAL_CALL FTPContent::execute(
+$OpenBSD: patch-ucb_source_ucp_ftp_ftpcontent_cxx,v 1.2 2007/11/13 09:46:28 robert Exp $
+--- ucb/source/ucp/ftp/ftpcontent.cxx.orig.port	Tue Jun  5 19:58:59 2007
++++ ucb/source/ucp/ftp/ftpcontent.cxx	Thu Oct 25 16:23:47 2007
+@@ -584,13 +584,12 @@ Any SAL_CALL FTPContent::execute(
  				action = THROWINTERACTIVECONNECT;
  			else if(e.code() == CURLE_COULDNT_RESOLVE_HOST )
  				action = THROWRESOLVENAME;

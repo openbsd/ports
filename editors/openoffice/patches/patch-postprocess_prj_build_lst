@@ -1,8 +1,8 @@
-$OpenBSD: patch-postprocess_prj_build_lst,v 1.1 2006/11/20 09:33:02 robert Exp $
---- postprocess/prj/build.lst.orig.port	Sun Nov 19 20:50:55 2006
-+++ postprocess/prj/build.lst	Sun Nov 19 20:52:30 2006
+$OpenBSD: patch-postprocess_prj_build_lst,v 1.2 2007/11/13 09:46:28 robert Exp $
+--- postprocess/prj/build.lst.orig.port	Fri Jul  6 11:29:30 2007
++++ postprocess/prj/build.lst	Thu Oct 25 16:23:47 2007
 @@ -1,6 +1,5 @@
- po	postprocess	::	accessibility automation basctl bean fondu BINFILTER:binfilter chart2 configmgr CRASHREP:crashrep dbaccess desktop dtrans embeddedobj embedserv EPM:epm eventattacher extensions extras fileaccess filter forms fpicker helpcontent2 hwpfilter io lingucomponent MATHMLDTD:MathMLDTD MSFONTEXTRACT:msfontextract ODK:odk officecfg package padmin psprint_config remotebridges sc scaddins scp2 scripting sd ODK:sdk_oo setup_native slideshow starmath sw sysui testshl2 testtools ucb UnoControls unoxml ure wizards xmerge xmlsecurity BITSTREAM_VERA_FONTS:bitstream_vera_fonts DICTIONARIES:dictionaries OOo:pyuno OOo:readlicense_oo SO:top unodevtools NULL
+ po	postprocess	::	accessibility automation basctl bean fondu BINFILTER:binfilter chart2 configmgr CRASHREP:crashrep dbaccess desktop dtrans embeddedobj embedserv EPM:epm eventattacher extensions extras fileaccess filter forms fpicker helpcontent2 hwpfilter io JAVAINSTALLER2:javainstaller2 lingucomponent MATHMLDTD:MathMLDTD MSFONTEXTRACT:msfontextract ODK:odk officecfg package padmin psprint_config remotebridges sc scaddins scp2 scripting sd ODK:sdk_oo setup_native slideshow starmath sw sysui testshl2 testtools ucb UnoControls unoxml ure wizards xmerge xmlsecurity BITSTREAM_VERA_FONTS:bitstream_vera_fonts DICTIONARIES:dictionaries OOo:pyuno OOo:readlicense_oo SO:top unodevtools jfreereport reportdesign NULL
  po	postprocess			    	usr1	-	all	po_mkout NULL
  po	postprocess\checkxml		nmake	-	all	po_checkxml NULL
 -po	postprocess\checkdeliver	nmake	-	all	po_checkdlv NULL

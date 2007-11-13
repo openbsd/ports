@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-lv,v 1.1 2006/11/26 20:59:08 robert Exp $
+@comment $OpenBSD: PLIST-i18n-lv,v 1.2 2007/11/13 09:46:28 robert Exp $
 openoffice/help/lv/
 openoffice/help/lv/default.css
 openoffice/help/lv/err.html
@@ -38,8 +38,19 @@ openoffice/help/lv/scalc.idx/SCHEMA
 openoffice/help/lv/scalc.jar
 openoffice/help/lv/scalc.key
 openoffice/help/lv/scalc.tree
+openoffice/help/lv/schart.cfg
 openoffice/help/lv/schart.db
 openoffice/help/lv/schart.ht
+openoffice/help/lv/schart.idx/
+openoffice/help/lv/schart.idx/CONTEXTS
+openoffice/help/lv/schart.idx/DICTIONARY
+openoffice/help/lv/schart.idx/DOCS
+openoffice/help/lv/schart.idx/DOCS.TAB
+openoffice/help/lv/schart.idx/EDGE
+openoffice/help/lv/schart.idx/LINKNAMES
+openoffice/help/lv/schart.idx/OFFSETS
+openoffice/help/lv/schart.idx/POSITIONS
+openoffice/help/lv/schart.idx/SCHEMA
 openoffice/help/lv/schart.jar
 openoffice/help/lv/schart.key
 openoffice/help/lv/schart.tree
@@ -135,6 +146,7 @@ openoffice/presets/config/modern_en-US_lv.sog
 openoffice/presets/config/palette_en-US_lv.soc
 openoffice/presets/config/styles_en-US_lv.sod
 openoffice/program/resource/abp680lv.res
+openoffice/program/resource/acc680lv.res
 openoffice/program/resource/analysis680lv.res
 openoffice/program/resource/avmedia680lv.res
 openoffice/program/resource/basctl680lv.res
@@ -143,12 +155,12 @@ openoffice/program/resource/bf_ofa680lv.res
 openoffice/program/resource/bf_sc680lv.res
 openoffice/program/resource/bf_sch680lv.res
 openoffice/program/resource/bf_sd680lv.res
-openoffice/program/resource/bf_sfx680lv.res
 openoffice/program/resource/bf_sm680lv.res
 openoffice/program/resource/bf_svx680lv.res
 openoffice/program/resource/bf_sw680lv.res
 openoffice/program/resource/bib680lv.res
 openoffice/program/resource/cal680lv.res
+openoffice/program/resource/chartcontroller680lv.res
 openoffice/program/resource/cnr680lv.res
 openoffice/program/resource/date680lv.res
 openoffice/program/resource/dba680lv.res
@@ -177,10 +189,13 @@ openoffice/program/resource/pcr680lv.res
 openoffice/program/resource/pdffilter680lv.res
 openoffice/program/resource/preload680lv.res
 openoffice/program/resource/productregistration680lv.res
+openoffice/program/resource/rpt680lv.res
+openoffice/program/resource/rptui680lv.res
 openoffice/program/resource/san680lv.res
+openoffice/program/resource/sb680lv.res
 openoffice/program/resource/sc680lv.res
-openoffice/program/resource/sch680lv.res
 openoffice/program/resource/sd680lv.res
+openoffice/program/resource/sdbcl680lv.res
 openoffice/program/resource/sdbt680lv.res
 openoffice/program/resource/sfx680lv.res
 openoffice/program/resource/sm680lv.res
@@ -217,6 +232,7 @@ openoffice/share/registry/res/lv/org/openoffice/Office/
 openoffice/share/registry/res/lv/org/openoffice/Office/Common.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/DataAccess.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/Embedding.xcu
+openoffice/share/registry/res/lv/org/openoffice/Office/ExtendedColorScheme.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/FormWizard.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/SFX.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/TableWizard.xcu
@@ -233,6 +249,7 @@ openoffice/share/registry/res/lv/org/openoffice/Office/UI/ChartWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/DbBrowserWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/DbQueryWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/DbRelationWindowState.xcu
+openoffice/share/registry/res/lv/org/openoffice/Office/UI/DbReportWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/DbTableWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/DbuCommands.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/DrawImpressCommands.xcu
@@ -243,14 +260,19 @@ openoffice/share/registry/res/lv/org/openoffice/Office/UI/GenericCommands.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/ImpressWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/MathCommands.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/MathWindowState.xcu
+openoffice/share/registry/res/lv/org/openoffice/Office/UI/ReportCommands.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/StartModuleCommands.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/StartModuleWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/WriterCommands.xcu
+openoffice/share/registry/res/lv/org/openoffice/Office/UI/WriterFormWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/WriterGlobalWindowState.xcu
+openoffice/share/registry/res/lv/org/openoffice/Office/UI/WriterReportWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/WriterWebWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/UI/WriterWindowState.xcu
+openoffice/share/registry/res/lv/org/openoffice/Office/UI/XFormsWindowState.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/WebWizard.xcu
 openoffice/share/registry/res/lv/org/openoffice/Office/Writer.xcu
+openoffice/share/registry/res/lv/org/openoffice/Setup.xcu
 openoffice/share/registry/res/lv/org/openoffice/TypeDetection/
 openoffice/share/registry/res/lv/org/openoffice/TypeDetection/Filter.xcu
 openoffice/share/template/lv/

@@ -1,6 +1,6 @@
---- sal/osl/unx/security.c.orig.port	Tue May  8 12:15:10 2007
-+++ sal/osl/unx/security.c	Fri Jun 15 09:31:34 2007
-@@ -509,7 +509,7 @@ osl_psz_loginUser(const sal_Char* pszUserName, const s
+--- sal/osl/unx/security.c.orig.port	Tue Jun 19 18:17:07 2007
++++ sal/osl/unx/security.c	Thu Oct 25 16:23:47 2007
+@@ -503,7 +503,7 @@ osl_psz_loginUser(const sal_Char* pszUserName, const s
  			   oslSecurity* pSecurity)
  {
  #if defined NETBSD || defined SCO || defined AIX || defined FREEBSD || \
