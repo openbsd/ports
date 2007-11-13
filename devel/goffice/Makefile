@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/13 21:23:00 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/13 14:06:21 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	document centric objects and utilities
 
+PKGNAME=	${DISTNAME}p0
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.2.2
 V=		${GNOME_VERSION}
@@ -18,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
+		Xcomposite Xdamage pcre \
 		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
 		audiofile bonobo-2 bonobo-activation bonoboui-2 bz2 \
 		cairo crypto dbus-1 dbus-glib-1 esd expat fontconfig \

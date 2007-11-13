@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/10/23 13:45:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=	visual administration console for MySQL
 
 DISTNAME=	mysql-gui-tools-5.0r12
-PKGNAME=	mysql-administrator-1.2.12
+PKGNAME=	mysql-administrator-1.2.12p0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/administrator/
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://mysql.serenitynet.com/Downloads/MySQLGUITools/
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
+		Xcomposite Xdamage \
 		c cairo cairomm-1.0 crypto expat fontconfig freetype atk-1.0 \
 		atkmm-1.6 gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 glibmm-2.4 \
 		glitz gtk-x11-2.0 m pango-1.0 pangomm-1.4.>=1.0 pangoft2-1.0 \

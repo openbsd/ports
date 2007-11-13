@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=		GNOME Application Libs
 
 VERSION=		2.5.3
 API_VERSION=		2.6
 DISTNAME=		gal-${VERSION}
-PKGNAME=		gal2-${VERSION}p0
+PKGNAME=		gal2-${VERSION}p1
 SHARED_LIBS +=	gal-a11y-2.4         1.0      # .1.0
 SHARED_LIBS +=	gal-2.4              1.0      # .1.0
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
+		Xcomposite Xdamage pcre \
 		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
 		audiofile bonobo-2 bonobo-activation bonoboui-2 cairo \
 		crypto dbus-1 dbus-glib-1 esd expat fontconfig freetype \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=	SDL C++ GUI widget library
 
 DISTNAME=	GUIlib-1.1.1
-PKGNAME=	${DISTNAME:L}p4
+PKGNAME=	${DISTNAME:L}p5
 SHARED_LIBS +=	GUI                  1.0      # .0.1
 
 CATEGORIES=	devel graphics
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xau Xdmcp Xext m usbhid
+
+WANTLIB=	X11 Xau Xrandr Xrender iconv Xdmcp Xext m usbhid
 
 LIB_DEPENDS=	SDL.::devel/sdl
 

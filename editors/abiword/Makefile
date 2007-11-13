@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.64 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	2.4.6
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.abisource.com/
@@ -22,8 +22,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xext Xft Xrender art_lgpl_2 atk-1.0 c \
-		fontconfig freetype glade-2.0 glib-2.0 gmodule-2.0 \
+WANTLIB=	ICE SM X11 Xext Xft Xrender art_lgpl_2 atk-1.0 c Xrandr \
+		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
+		expat fontconfig freetype glade-2.0 glib-2.0 gmodule-2.0 \
 		gnomecanvas-2 gnomeprint-2-2 gobject-2.0 glitz \
 		gthread-2.0 m pango-1.0 pangocairo-1.0 cairo \
 		pangoft2-1.0 pangoxft-1.0 png popt pthread stdc++ \

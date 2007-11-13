@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2007/11/13 14:06:21 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Python bindings for glib2 gobject
 
 V=		2.14.0
 DISTNAME=	pygobject-${V}
-PKGNAME=	py-gobject-${V}p1
+PKGNAME=	py-gobject-${V}p2
 CATEGORIES=	devel x11
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	pcre
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygobject/${V:R}/}
 EXTRACT_SUFX=	.tar.bz2

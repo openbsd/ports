@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=	ORBit2 Python bindings
 
 V=		2.14.3
 DISTNAME=	pyorbit-${V}
-PKGNAME=	py-orbit-${V}p0
+PKGNAME=	py-orbit-${V}p1
 CATEGORIES=	devel lang/python
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pyorbit/2.14/}
 
-WANTLIB=	m util IDL-2 glib-2.0 gmodule-2.0 gobject-2.0 \
+WANTLIB=	m util IDL-2 pcre glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0
 
 MODULES=	devel/gettext lang/python

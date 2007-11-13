@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2007/10/25 18:20:04 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.16.9
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		devel
 SHARED_LIBS +=  vte                  11.10    # .11.12
 
@@ -19,7 +19,7 @@ WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi Xinerama Xcomposite \
 		Xrandr Xrender Xdamage atk-1.0 c cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m ncurses pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pangox-1.0 pangoxft-1.0 \
-		png util z
+		pcre png util z
 
 MODULES=		devel/gettext \
 			x11/gnome

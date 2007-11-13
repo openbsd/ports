@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.28 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=		portable library for obtaining system information
 
 V=			2.14.6
 DISTNAME=		libgtop-${V}
-PKGNAME=		libgtop2-${V}p1
+PKGNAME=		libgtop2-${V}p2
 SHARED_LIBS=		gtop-2.0	7.0	# .7.0
 
 CATEGORIES=		devel
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		Xau c kvm
+WANTLIB=		Xau c kvm pcre
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		::textproc/p5-XML-Parser

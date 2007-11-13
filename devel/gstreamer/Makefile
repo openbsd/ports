@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/10/02 19:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2007/11/13 14:06:21 steven Exp $
 
 COMMENT-main=		streaming media framework - core
 COMMENT-frontend=	streaming media framework - frontend commands
@@ -7,9 +7,9 @@ VERSION=		0.8
 SUBST_VARS+=		VERSION
 
 DISTNAME=		gstreamer-0.8.11
-PKGNAME-main=		${DISTNAME}p2
+PKGNAME-main=		${DISTNAME}p3
 
-PKGNAME-frontend=	gstreamer-frontend-0.8.11p0
+PKGNAME-frontend=	gstreamer-frontend-0.8.11p1
 SHARED_LIBS +=	gstreamer-0.8        5.0      # .5.0
 SHARED_LIBS +=	gstcontrol-0.8       5.0      # .5.0
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m pthread z
+WANTLIB=		c m pthread z pcre
 WANTLIB-frontend=	c iconv intl
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gstreamer/0.8/}

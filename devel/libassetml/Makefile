@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=	library to share image and audio files between projects
 
 DISTNAME=	libassetml-1.2.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	assetml              0.0      # .0.0
 CATEGORIES=	devel
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ofset/}
 
-WANTLIB=	c m z
+WANTLIB=	c m z pcre
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	::textproc/texi2html

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/13 14:06:22 steven Exp $
 
 COMMENT=		flexible and small GTK+ editor
 
 VERSION=		1.74
 DISTNAME=		scite${VERSION:S/.//}
-PKGNAME=		scite-${VERSION}
+PKGNAME=		scite-${VERSION}p0
 CATEGORIES=		editors x11
 
 HOMEPAGE=		http://www.scintilla.org/SciTE.html
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xrender c m z pthread stdc++ fontconfig \
 			freetype Xau Xdmcp expat Xcursor Xext Xfixes \
-			Xi Xinerama Xrandr \
+			Xi Xinerama Xrandr Xcomposite Xdamage \
 			glib-2.0 gobject-2.0 gthread-2.0 gmodule-2.0 \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 			cairo atk-1.0 glitz png

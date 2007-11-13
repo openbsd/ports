@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2007/07/07 21:38:36 aanriot Exp $
+# $OpenBSD: Makefile,v 1.45 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.11
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xp Xpm Xt \
-			c m ncurses stdc++
+WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xp Xpm Xt c m z stdc++ \
+		Xft Xrender expat fontconfig freetype iconv ncurses
 
 REGRESS_IS_INTERACTIVE=Yes
 # Note - we need ~/.XAuthority, which doesn't exist in

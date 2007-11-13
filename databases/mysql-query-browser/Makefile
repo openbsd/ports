@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/10/23 13:44:39 wilfried Exp $
+# $OpenBSD: Makefile,v 1.17 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=	visual query tool for MySQL
 
 DISTNAME=	mysql-gui-tools-5.0r12
-PKGNAME=	mysql-query-browser-1.2.12
+PKGNAME=	mysql-query-browser-1.2.12p0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/query-browser/
@@ -19,11 +19,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://mysql.serenitynet.com/Downloads/MySQLGUITools/
 
 WANTLIB=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
+		Xcomposite Xdamage \
 		Xrandr Xrender art_lgpl_2 atk-1.0 atkmm-1.6 bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo cairomm-1.0 crypto expat \
 		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gdkmm-2.4 glibmm-2.4 glitz gnome-2 gnomecanvas-2 \
-		gnomeui-2 \
+		gnomeui-2 gnome-keyring \
 		gnomevfs-2 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pangomm-1.4 png popt pthread sigc-2.0 ssl stdc++ z
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/13 14:06:22 steven Exp $
 
 COMMENT=	GTK+2 tool to edit subtitles
 
 DISTNAME=	subtitleeditor-0.13.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics editors
 
 HOMEPAGE=	http://kitone.free.fr/subtitleeditor/
@@ -18,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/files/
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage \
 		Xrender atk-1.0 atkmm-1.6 c cairo cairomm-1.0 expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gdkmm-2.4 glade-2.0 glib-2.0 glibmm-2.4 glitz \

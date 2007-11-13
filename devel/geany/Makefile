@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/12 09:44:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2007/11/13 14:06:21 steven Exp $
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.12
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://geany.uvena.de/
@@ -26,6 +26,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 WANTLIB=	X11 Xext Xrender Xau Xcursor Xdmcp Xfixes Xi \
+		Xcomposite Xdamage pcre \
 		Xinerama Xrandr expat stdc++ c m z glitz png \
 		glib-2.0 gmodule-2.0 gobject-2.0 \
 		fontconfig freetype atk-1.0 cairo \

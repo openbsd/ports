@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/10/27 23:44:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/11/13 14:06:21 steven Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -9,7 +9,7 @@ VER=		1.8.1.6
 DISTNAME=	mozilla
 PKGNAME=	xulrunner-${VER}
 PKGNAME-main=	xulrunner-${VER}p1
-PKGNAME-devel=	xulrunner-devel-${VER}p1
+PKGNAME-devel=	xulrunner-devel-${VER}p2
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -47,6 +47,7 @@ WANTLIB-main=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		fontconfig freetype glitz gmodule-2.0 gobject-2.0 jpeg \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
 
+WANTLIB-devel=	nspr4 plc4 plds4
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
 		xulrunner/mozjs,xulrunner/xpcom,xulrunner/xul:${PKGNAME-main}:devel/xulrunner,-main
 

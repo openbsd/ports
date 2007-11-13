@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2007/11/13 14:06:21 steven Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
 
 VERSION=		1.14.3
 DISTNAME=		libgsf-${VERSION}
-PKGNAME-main=		${DISTNAME}p3
-PKGNAME-gnome=		libgsf-gnome-${VERSION}p2
+PKGNAME-main=		${DISTNAME}p4
+PKGNAME-gnome=		libgsf-gnome-${VERSION}p3
 SHARED_LIBS +=  gsf-1                114.3     # .114.3
 SHARED_LIBS +=  gsf-gnome-1          114.3     # .114.3
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m z
+
+WANTLIB=		c m z pcre
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgsf/1.14/}
 EXTRACT_SUFX=		.tar.bz2
