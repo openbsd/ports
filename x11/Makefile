@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.316 2007/11/05 20:02:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.317 2007/11/13 07:15:30 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -61,6 +61,7 @@
      SUBDIR += fvwm2,i18n
      SUBDIR += fvwm95
      SUBDIR += gaia
+     SUBDIR += gammapage
      SUBDIR += gatos-bin
      SUBDIR += gbdfed
      SUBDIR += gentoo
