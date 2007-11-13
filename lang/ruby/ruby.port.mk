@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.12 2007/11/05 20:55:03 bernd Exp $
+# $OpenBSD: ruby.port.mk,v 1.13 2007/11/13 16:10:37 bernd Exp $
 
 # ruby module
 
@@ -40,6 +40,12 @@ GEM_FLAGS=	--local --rdoc --no-force
 _GEM_CONTENT=	${WRKDIST}/.gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
+
+# Ignore specified gem dependencies.
+GEM_SKIPDEPENDS?=
+.if !empty(GEM_SKIPDEPENDS)
+GEM_FLAGS+=	--skip-dependencies "${GEM_SKIPDEPENDS}"
+.endif
 
 .  if !target(do-extract)
 do-extract:
