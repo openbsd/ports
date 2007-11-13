@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_osdep_unix_env_unix.c,v 1.8 2007/10/30 10:12:41 ajacoutot Exp $
+$OpenBSD: patch-src_osdep_unix_env_unix.c,v 1.9 2007/11/13 14:11:17 ajacoutot Exp $
 
---- src/osdep/unix/env_unix.c.orig	Tue May 29 22:29:52 2007
-+++ src/osdep/unix/env_unix.c	Thu Oct 25 00:13:05 2007
-@@ -935,15 +935,12 @@ char *myhomedir ()
+--- src/osdep/unix/env_unix.c.orig	Fri Sep 14 18:05:57 2007
++++ src/osdep/unix/env_unix.c	Tue Nov 13 14:57:52 2007
+@@ -936,15 +936,12 @@ char *myhomedir ()
  static char *mymailboxdir ()
  {
    char *home = myhomedir ();

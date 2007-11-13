@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.56 2007/10/31 13:53:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2007/11/13 14:11:17 ajacoutot Exp $
 
-COMMENT-server=		University of Washington IMAP4rev1/POP2/POP3 mail servers
-COMMENT-mailutil=	University of Washington IMAP4rev1/POP2/POP3 mail utility
-COMMENT-c-client=	University of Washington's c-client mail access routines
+COMMENT-server=	University of Washington IMAP4rev1/POP2/POP3 mail servers
+COMMENT-mailutil=University of Washington IMAP4rev1/POP2/POP3 mail utility
+COMMENT-c-client=University of Washington's c-client mail access routines
 
-BASEVER=		2006j
-VERSION=		${BASEVER}2
-DISTNAME=		imap-${VERSION}
+V=		2006k
+DISTNAME=	imap-${V}
 
-PKGNAME-server=		imap-uw-${VERSION}p0
-PKGNAME-mailutil=	mailutil-uw-${VERSION}p0
-PKGNAME-c-client=	c-client-${VERSION}p0
+PKGNAME-server=	imap-uw-${V}
+PKGNAME-mailutil=mailutil-uw-${V}
+PKGNAME-c-client=c-client-${V}
 
-CATEGORIES=		mail
-CATEGORIES-c-client=	mail devel
+CATEGORIES=	mail
+CATEGORIES-c-client=mail devel
 
 SHARED_LIBS=	c-client 5.0
 
@@ -34,10 +33,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		asn1 c com_err crypto des gssapi kafs krb5 ssl
+WANTLIB=	asn1 c com_err crypto des gssapi kafs krb5 ssl
 WANTLIB-c-client=
 
-WRKDIST=	${WRKDIR}/imap-${BASEVER}
 ALL_TARGET=	bso
 SHLIB=		libc-client.so.${LIBc-client_VERSION}
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6 \
