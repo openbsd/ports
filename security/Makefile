@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2007/07/25 09:00:26 dlg Exp $
+# $OpenBSD: Makefile,v 1.187 2007/11/13 18:34:57 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -15,6 +15,7 @@
      SUBDIR += bfbtester
      SUBDIR += bounix
      SUBDIR += bsd-airtools
+     SUBDIR += bunny
      SUBDIR += ccrypt
      SUBDIR += ccrypt,emacs21
      SUBDIR += cfs
