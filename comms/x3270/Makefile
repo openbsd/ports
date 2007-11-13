@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/25 10:55:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/13 12:55:46 steven Exp $
 
 COMMENT=	IBM 3270 terminal emulator for the X Window System
 
 DISTNAME=	x3270-3.3.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	comms
 
 HOMEPAGE=	http://x3270.bgp.nu/
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xaw Xext Xmu Xt crypto ssl util c
+WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt crypto ssl util c
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

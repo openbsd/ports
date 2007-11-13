@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/16 01:37:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2007/11/13 12:55:46 steven Exp $
 
 COMMENT=	communication package for X11
 
 DISTNAME=	Seyon-2.14b
-PKGNAME=	seyon-2.14b
+PKGNAME=	seyon-2.14bp0
 CATEGORIES=	comms x11
 
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c
+
+WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xp Xpm Xt c
 
 CONFIGURE_STYLE=imake
 

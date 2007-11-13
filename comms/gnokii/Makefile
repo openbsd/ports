@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/10/17 14:37:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2007/11/13 12:55:46 steven Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
 DISTNAME=	gnokii-0.6.14
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 
@@ -41,7 +41,8 @@ CONFIGURE_ARGS+=	--without-x
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		X11 Xau Xdmcp Xpm Xrender fontconfig freetype z \
-			m pthread atk-1.0.>=800.0 glib-2.0.>=400.8 \
+			Xcomposite Xdamage \
+			m pthread pcre atk-1.0.>=800.0 glib-2.0.>=400.8 \
 			gmodule-2.0.>=400.8 gobject-2.0.>=400.8 \
 			pango-1.0.>=600.0 pangoft2-1.0.>=600.0 \
 			pangocairo-1.0 cairo glitz png expat \

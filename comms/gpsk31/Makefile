@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 01:37:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/13 12:55:46 steven Exp $
 
 COMMENT=	gtk PSK31 send and receive
 
 DISTNAME=	gpsk31-0.3
-PKGNAME=	$(DISTNAME)p0
+PKGNAME=	$(DISTNAME)p1
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/gpsk31.html
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=		gtk-x11-2.0,gdk_pixbuf-2.0,gdk-x11-2.0::x11/gtk+2
 
 WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-			Xrender atk-1.0 c cairo expat fontconfig \
-			freetype glib-2.0 glitz gmodule-2.0 \
+			Xcomposite Xdamage  Xrender atk-1.0 c cairo expat \
+			fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 			gobject-2.0 iconv intl m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 png z ossaudio pthread stdc++
 

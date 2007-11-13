@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 12:54:38 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/13 12:55:46 steven Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20070912
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	cad
 
 HOMEPAGE=	http://pcb.sourceforge.net/
@@ -15,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xau Xdmcp Xrender \
-		c m z expat fontconfig freetype jpeg png \
+		Xcomposite Xdamage c m z expat fontconfig freetype jpeg png \
 		cairo glitz atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0
 
