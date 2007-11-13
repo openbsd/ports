@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2007/10/27 23:44:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2007/11/13 21:24:47 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	small, simple, and powerful web browser for mobile devices
-DISTNAME=	minimo-20070804
+DISTNAME=	minimo-20071108
 
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/minimo/ \
@@ -28,8 +28,9 @@ LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
-WANTLIB=	X11 Xcursor Xext Xfixes Xft Xi Xinerama Xrandr Xrender \
-		Xt Xau Xdmcp expat c fontconfig freetype m pthread z \
+WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi Xinerama \
+		Xrandr Xrender Xt Xau Xdmcp expat c fontconfig freetype m \
+		pthread z \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
 		pangoft2-1.0 cairo glitz stdc++
@@ -92,9 +93,6 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/share/minimo
-
-post-extract:
-	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 do-install:
 	${INSTALL_DATA_DIR} ${MOZ}
