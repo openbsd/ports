@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_rubygems_gem_commands_rb,v 1.1 2007/11/13 16:02:35 bernd Exp $
+
+This is for GEM_SKIPDEPENDS in ruby.port.mk.
+
+--- lib/rubygems/gem_commands.rb.orig	Thu May 10 21:01:45 2007
++++ lib/rubygems/gem_commands.rb	Sat Nov 10 20:35:12 2007
+@@ -164,6 +164,11 @@ module Gem
+                  'dependent gems') do |value, options|
+         options[:include_dependencies] = value
+       end
++
++      add_option('-S', '--skip-dependencies DEPENDENCIES',
++        'Skip the given dependent gems') do |value, options|
++        options[:skip_dependencies] = value.split(' ')
++      end
+     end
+     
+     # Default options for the gem install command.
