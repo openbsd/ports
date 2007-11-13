@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/08 18:41:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/11/13 17:10:25 steven Exp $
 
 COMMENT=	API for accessing scanners, frontends
 
 DISTNAME=	sane-frontends-1.0.14
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/
@@ -22,6 +22,7 @@ MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage exif \
 		Xrender atk-1.0 c cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gphoto2 \
 		gphoto2_port jpeg m pango-1.0 pangocairo-1.0 \

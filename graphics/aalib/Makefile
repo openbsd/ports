@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.29 2007/11/13 17:10:25 steven Exp $
 
 COMMENT=	ascii art library
 
 DISTNAME=	aalib-1.2
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	aa	1.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aa-project/}
@@ -29,7 +29,7 @@ FLAVOR?=
 CONFIGURE_ARGS+= --without-x
 .else
 USE_X11=	Yes
-WANTLIB+=	X11
+WANTLIB+=	X11 Xau Xdmcp
 .endif
 
 post-extract:
