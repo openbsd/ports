@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.26 2007/11/13 14:54:31 steven Exp $
 
 COMMENT=	X11-based asteroids-style arcade
 
 DISTNAME=	xasteroids
-PKGNAME=	xasteroids-5.0
+PKGNAME=	xasteroids-5.0p0
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
@@ -13,9 +13,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c m
 
-CONFIGURE_STYLE=	imake
+WANTLIB=	X11 Xau Xdmcp Xext c m
+
+CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}
 

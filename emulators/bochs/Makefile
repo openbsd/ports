@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.41 2007/11/13 14:54:30 steven Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	x86 machine simulator
 
 DISTNAME=	bochs-2.1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	emulators
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
@@ -18,7 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 c m stdc++ termlib z
+
+WANTLIB=	ICE SM X11 Xau Xdmcp Xpm c m stdc++ termlib z
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu

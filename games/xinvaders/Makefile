@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.23 2007/11/13 14:54:31 steven Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	shoot them nasty little bugs
 
 DISTNAME=       xinvaders
 DIST_SUBDIR=	xinvaders
-PKGNAME=	xinvaders-2.0
+PKGNAME=	xinvaders-2.0p0
 CATEGORIES=	games
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xaw Xext Xmu Xt c
+
+WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt c
 
 MASTER_SITES=	ftp://ftp.uu.net/usenet/comp.sources.x/volume19/xinvaders/ \
 		ftp://unix.hensa.ac.uk/archive/usenet/comp.sources.x/volume19/xinvaders/

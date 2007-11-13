@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/30 13:56:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/13 14:54:31 steven Exp $
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-8.4.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -17,10 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gcompris/}
 
-WANTLIB=	Xau Xdmcp X11 Xext Xrender atk-1.0 c cairo z \
-		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 xml2 \
+WANTLIB=	Xau Xdmcp X11 Xext Xrender Xcomposite atk-1.0 c cairo z \
+		Xdamage fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 xml2 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 util \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 util pcre \
 		pangoft2-1.0 png pthread Xxf86vm expat Xcursor Xfixes \
 		Xi Xinerama Xrandr
 

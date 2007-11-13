@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/05 06:07:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/13 14:54:31 steven Exp $
 
 COMMENT=	32-card trick-taking game
 
 DISTNAME=	belooted-0.1.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.gnomefiles.org/app.php/Belooted
@@ -18,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage \
 		Xrender atk-1.0 c cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png z

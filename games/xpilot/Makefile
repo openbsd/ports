@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 18:01:04 simon Exp $
+# $OpenBSD: Makefile,v 1.19 2007/11/13 14:54:32 steven Exp $
 
 COMMENT=	multiplayer 2d space battles game
 
 DISTNAME=	xpilot-4.5.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.xpilot.org/
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext c m
+
+WANTLIB=	X11 Xau Xdmcp Xext c m
 
 MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 		ftp://ftp.xpilot.org/pub/xpilot/old \

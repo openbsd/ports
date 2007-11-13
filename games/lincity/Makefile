@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/11/13 14:54:31 steven Exp $
 
 COMMENT=		Rich city simulation game for X
 
 DISTNAME=		lincity-1.11
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		games
 HOMEPAGE=		http://www.floot.demon.co.uk/lincity.html
 
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c m stdc++
+WANTLIB=		X11 Xau Xdmcp Xext c m stdc++
 
 MASTER_SITES=		ftp://ftp.demon.co.uk/pub/unix/linux/games/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/

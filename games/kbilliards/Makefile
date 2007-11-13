@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2007/11/13 14:54:31 steven Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
 MODULES=		x11/kde
 DISTNAME=		kbilliards-0.7
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/
 EXTRACT_SUFX=		.tar.bz2
@@ -15,7 +15,8 @@ WANTLIB=		m stdc++ ICE X11 z SM Xext util c ossaudio \
 			vorbisfile mad qtmcop intl iconv mcop esd \
 			art_lgpl_2 artsflow audiofile artsflow_idl \
 			kmedia2_idl soundserver_idl idn \
-			gthread-2.0 glib-2.0 gmodule-2.0
+			gthread-2.0 glib-2.0 gmodule-2.0 \
+			Xau Xdmcp fam pcre rpcsvc
 
 MODKDE_VERSION=	3.3.0
 CONFIGURE_STYLE=	autoconf

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.23 2007/11/13 14:54:31 steven Exp $
 
 COMMENT=	Pac-man-like game under X11
 
 DISTNAME=	xchomp-pl1
-PKGNAME=	xchomp-0p1
+PKGNAME=	xchomp-0p2
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
@@ -13,7 +13,8 @@ PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
-WANTLIB=		X11 Xext c m
+
+WANTLIB=	X11 Xau Xdmcp Xext c m
 
 WRKDIST=	${WRKDIR}/xchomp
 CONFIGURE_STYLE=imake noman

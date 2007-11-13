@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2007/11/13 14:54:30 steven Exp $
 
 COMMENT=		Free Unix Spectrum Emulator utilities
 
 DISTNAME=		fuse-utils-0.7.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
 
-WANTLIB=		c z gcrypt bz2 glib-2.0 gpg-error
+WANTLIB=		c z gcrypt bz2 glib-2.0 gpg-error pcre
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
