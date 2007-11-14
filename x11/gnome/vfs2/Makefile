@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/11/10 14:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2007/11/14 14:59:21 martynas Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		samba module for gnome-vfs2
 
 GNOME_PROJECT=		gnome-vfs
-GNOME_VERSION=		2.20.0
+GNOME_VERSION=		2.20.1
 PKGNAME=		gnome-vfs2-${VERSION}
 PKGNAME-main=		gnome-vfs2-${VERSION}
 PKGNAME-smb=		gnome-vfs2-smb-${VERSION}
@@ -25,8 +25,7 @@ WANTLIB=	crypto dbus-1 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 MODULES=		devel/gettext \
 			x11/gnome
 BUILD_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
-LIB_DEPENDS=		cdda_interface,cdda_paranoia::audio/cdparanoia \
-			ORBit-2.>=2::devel/ORBit2 \
+LIB_DEPENDS=		ORBit-2.>=2::devel/ORBit2 \
 			gconf-2.>=5::devel/gconf2 \
 			xml2.>=9::textproc/libxml \
 			dbus-glib-1.>=3::x11/dbus-glib
@@ -34,6 +33,7 @@ RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
 WANTLIB-main=		${WANTLIB} c pthread rpcsvc stdc++
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			cdda_interface,cdda_paranoia::audio/cdparanoia \
 			bz2.>=10::archivers/bzip2 \
 			fam::sysutils/fam
 RUN_DEPENDS-main=	${RUN_DEPENDS}
