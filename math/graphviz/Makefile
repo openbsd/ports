@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2007/11/14 19:27:35 merdely Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -57,9 +57,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE SM X11 Xaw Xext Xmu Xpm Xrender Xrandr Xt c dbus-1 \
-		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama
-		dbus-glib-1 expat fontconfig freetype m pcre util z
+WANTLIB=	ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp \
+		Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt \
+		c dbus-1 dbus-glib-1 expat fontconfig freetype m pcre \
+		util z
 
 MODULES=	converters/libiconv devel/gettext
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
