@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/14 09:43:39 steven Exp $
 
 # max data size too small to build. needs at least 256M
 NOT_FOR_ARCHS=	m68k sparc vax
@@ -6,6 +6,7 @@ NOT_FOR_ARCHS=	m68k sparc vax
 COMMENT=	essential libraries for java
 
 DISTNAME=	classpath-0.91
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	lang java
 
@@ -32,6 +33,8 @@ MODULES=	converters/libiconv
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 WANTLIB=	z ICE SM X11 Xext Xrender Xtst atk-1.0 fontconfig \
+		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
+		Xrandr expat pcre \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 intl m pango-1.0 pangoft2-1.0 \

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2007/11/14 09:43:40 steven Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-4.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		mail	
 
 HOMEPAGE=		http://www.nongnu.org/mailnotify/
@@ -14,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
+		Xcomposite Xdamage pcre \
 		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
 		audiofile bonobo-2 bonobo-activation bonoboui-2 c cairo \
 		crypto dbus-1 dbus-glib-1 esd expat fam fontconfig \

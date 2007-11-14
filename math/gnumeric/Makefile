@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/13 21:58:58 martynas Exp $
+# $OpenBSD: Makefile,v 1.22 2007/11/14 09:43:40 steven Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
+PKGNAME=		${DISTNAME}p0
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.6.3
 CATEGORIES=    		math
@@ -15,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 audiofile \
+		Xcomposite Xdamage pcre \
 		bonobo-2 bonobo-activation bonoboui-2 bz2 c cairo crypto \
 		dbus-1 dbus-glib-1 esd expat fontconfig freetype gconf-2 \
 		gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 \

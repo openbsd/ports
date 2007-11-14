@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/17 21:40:35 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/14 09:43:40 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	RSS aggregator plugin for Claws-mail
 
 VERSION=	0.15
 DISTNAME=	rssyl-${VERSION}
-PKGNAME=	claws-mail-rssyl-${VERSION}p0
+PKGNAME=	claws-mail-rssyl-${VERSION}p1
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 
@@ -30,6 +30,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	xml2.>=9::textproc/libxml
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage pcre \
 		Xrender crypto fontconfig freetype m ssl z expat \
 		atk-1.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo glitz png \
 		gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \

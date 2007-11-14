@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/07/27 22:01:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/14 09:43:39 steven Exp $
 
 CATEGORIES=		lang
 V=			5.6.27
@@ -6,7 +6,7 @@ XV=			6.6.27
 FULLARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS=		V XV FULLARCH
 DISTNAME=		pl-$V
-PKGNAME=		swi-prolog-$Vp2
+PKGNAME=		swi-prolog-$Vp3
 MASTER_SITES=		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
 COMMENT=		Prolog for the real world
 HOMEPAGE=		http://www.swi-prolog.org/
@@ -42,7 +42,8 @@ FAKE_FLAGS=		${MAKE_FLAGS} \
 			DESTDIR=${WRKINST}
 
 WANTLIB=		ICE Xrender readline SM freetype Xt pthread \
-			c Xinerama Xft Xpm m fontconfig X11 ncurses z
+			c Xinerama Xft Xpm m fontconfig X11 ncurses z \
+			Xau Xdmcp expat
 
 LIB_DEPENDS=		jpeg::graphics/jpeg
 SUBST_VARS+=		BOOT
