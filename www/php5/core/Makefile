@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2007/11/05 10:11:09 robert Exp $
+# $OpenBSD: Makefile,v 1.31 2007/11/14 10:53:50 robert Exp $
 
 COMMENT-main=	server-side HTML-embedded scripting language
 COMMENT-fastcgi=stand-alone FastCGI version of PHP
 
-PKGNAME=	php5-core-${V}p1
-PKGNAME-main=	php5-core-${V}p1
-PKGNAME-fastcgi=php5-fastcgi-${V}p1
+PKGNAME=	php5-core-${V}
+PKGNAME-main=	php5-core-${V}
+PKGNAME-fastcgi=php5-fastcgi-${V}
 
 DISTFILES=	php-${V}.tar.gz
 
@@ -52,6 +52,9 @@ pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
 INSTALL_TARGET= install-headers install-build install-programs
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
+
+post-patch:
+	mv ${WRKDIR}/suhosin-${SUHOSIN_V} ${WRKSRC}/ext/suhosin
 
 pre-configure:
 	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" \

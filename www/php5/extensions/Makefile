@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2007/11/05 10:11:10 robert Exp $
+# $OpenBSD: Makefile,v 1.41 2007/11/14 10:53:50 robert Exp $
 
-FULLPKGNAME-main=	php5-extensions-${V}p0
+FULLPKGNAME-main=	php5-extensions-${V}
 COMMENT-main=		informational package about PHP5 extensions
 
 MULTI_PACKAGES=	-main
+
+DISTFILES=		php-${V}.tar.gz
 
 # extensions get installed under the apache chroot
 PREFIX?=		${CHROOT_DIR}
@@ -90,7 +92,7 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 
 . if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir
-FULLPKGNAME-gd=		php5-gd-${V}p1-no_x11
+FULLPKGNAME-gd=		php5-gd-${V}-no_x11
 . else
 USE_X11=		yes
 CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
@@ -344,7 +346,7 @@ WANTLIB-xsl=		${WANTLIB} iconv xml2 z
 .endif
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i} ?=	php5${i}-${V}p1
+FULLPKGNAME${i} ?=	php5${i}-${V}
 RUN_DEPENDS${i}=	:php5-core-${V}:www/php5/core
 MODULE_NAME${i}=	${i:S/-//g}
 .endfor
