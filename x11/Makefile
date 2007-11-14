@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.317 2007/11/13 07:15:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.318 2007/11/14 21:50:21 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -209,6 +209,7 @@
      SUBDIR += vdesk
      SUBDIR += viewfax
      SUBDIR += vlc
+     SUBDIR += vlc,altivec
      SUBDIR += waimea
      SUBDIR += wampager
      SUBDIR += windowmaker
