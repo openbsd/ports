@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2007/09/22 01:12:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.57 2007/11/14 07:16:39 ajacoutot Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.12
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -23,7 +23,7 @@ MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
 MASTER_SITES0=	http://dev.beastie.hu/ \
 		http://www.beastie.hu/
 
-FLAVORS=	sun esd arts aa caca no_x11
+FLAVORS=	sun esd arts aa caca no_x11 altivec
 FLAVOR?=	sun
 
 USE_LIBTOOL=	Yes
@@ -99,6 +99,16 @@ CONFIGURE_ARGS+= --without-x \
 .else
 USE_X11=	Yes
 WANTLIB+=	X11.>=10 Xau Xdmcp Xext Xrandr Xrender
+.endif
+
+.if ${FLAVOR:L} == "altivec"
+ONLY_FOR_ARCHS=	powerpc
+CONFIGURE_ARGS+=--enable-altivec
+# XXX Segmentation fault
+# Blit_RGB888_RGB565Altivec at SDL_blit_N.c:203
+BROKEN=		segfault when altivec is enabled
+.else
+CONFIGURE_ARGS+=--disable-altivec
 .endif
 
 NO_REGRESS=	Yes
