@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2007/10/25 10:57:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2007/11/14 12:04:04 kurt Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -9,7 +9,6 @@
      SUBDIR += flipit
      SUBDIR += gmfsk
      SUBDIR += gnokii
-     SUBDIR += gnokii,no_x11
      SUBDIR += gpsk31
      SUBDIR += hamlib
      SUBDIR += hylafax
