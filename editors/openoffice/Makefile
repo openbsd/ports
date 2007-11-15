@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2007/11/14 20:10:49 robert Exp $
+# $OpenBSD: Makefile,v 1.65 2007/11/15 15:54:32 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -53,7 +53,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-main -kde -java
 
-PSEUDO_FLAVORS=	linkobj no_lang
+PSEUDO_FLAVORS=	normal_build no_lang
 FLAVORS=	debug
 FLAVOR?=
 
@@ -169,11 +169,11 @@ MAKE_ENV+=	envcflags="${CFLAGS}"
 # kludge
 TCSH=		${LOCALBASE}/bin/tcsh
 
-.if ${FLAVOR:L:Mlinkobj}
+.if ${FLAVOR:L:Mnormal_build}
+BUILD_CMD=	dmake && cd instsetoo_native/util && dmake ooolanguagepack
+.else
 BUILD_CMD=	cd instsetoo_native && build.pl --all --dlv_switch -link && \
 		cd util && dmake ooolanguagepack
-.else
-BUILD_CMD=	dmake && cd instsetoo_native/util && dmake ooolanguagepack
 .endif
 
 pre-patch:
