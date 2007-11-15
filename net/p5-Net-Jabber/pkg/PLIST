@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/15 18:45:28 jasper Exp $
+${P5SITE}/Net/Jabber/
+${P5SITE}/Net/Jabber.pm
+${P5SITE}/Net/Jabber/Client.pm
+${P5SITE}/Net/Jabber/Component.pm
+${P5SITE}/Net/Jabber/Data.pm
+${P5SITE}/Net/Jabber/Debug.pm
+${P5SITE}/Net/Jabber/Dialback/
+${P5SITE}/Net/Jabber/Dialback.pm
+${P5SITE}/Net/Jabber/Dialback/Result.pm
+${P5SITE}/Net/Jabber/Dialback/Verify.pm
+${P5SITE}/Net/Jabber/IQ.pm
+${P5SITE}/Net/Jabber/JID.pm
+${P5SITE}/Net/Jabber/Key.pm
+${P5SITE}/Net/Jabber/Log.pm
+${P5SITE}/Net/Jabber/Message.pm
+${P5SITE}/Net/Jabber/Namespaces.pm
+${P5SITE}/Net/Jabber/Presence.pm
+${P5SITE}/Net/Jabber/Protocol.pm
+${P5SITE}/Net/Jabber/Server.pm
+${P5SITE}/Net/Jabber/Stanza.pm
+${P5SITE}/Net/Jabber/XDB.pm
+@man man/man3p/Net::Jabber.3p
+@man man/man3p/Net::Jabber::Client.3p
+@man man/man3p/Net::Jabber::Component.3p
+@man man/man3p/Net::Jabber::Data.3p
+@man man/man3p/Net::Jabber::Debug.3p
+@man man/man3p/Net::Jabber::Dialback.3p
+@man man/man3p/Net::Jabber::Dialback::Result.3p
+@man man/man3p/Net::Jabber::Dialback::Verify.3p
+@man man/man3p/Net::Jabber::IQ.3p
+@man man/man3p/Net::Jabber::JID.3p
+@man man/man3p/Net::Jabber::Key.3p
+@man man/man3p/Net::Jabber::Log.3p
+@man man/man3p/Net::Jabber::Message.3p
+@man man/man3p/Net::Jabber::Namespaces.3p
+@man man/man3p/Net::Jabber::Presence.3p
+@man man/man3p/Net::Jabber::Protocol.3p
+@man man/man3p/Net::Jabber::Server.3p
+@man man/man3p/Net::Jabber::Stanza.3p
+@man man/man3p/Net::Jabber::XDB.3p
+share/examples/p5-Net-Jabber/
+share/examples/p5-Net-Jabber/client.pl
+share/examples/p5-Net-Jabber/client_xpath.pl
+share/examples/p5-Net-Jabber/component_accept.pl
+share/examples/p5-Net-Jabber/component_test.pl
+share/examples/p5-Net-Jabber/rpc_client.pl
+share/examples/p5-Net-Jabber/rpc_server.pl
