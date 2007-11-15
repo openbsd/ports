@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2007/07/29 17:08:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2007/11/15 15:56:07 ajacoutot Exp $
 
      SUBDIR += avidemux
+     SUBDIR += devede
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
      SUBDIR += dvdcpy
