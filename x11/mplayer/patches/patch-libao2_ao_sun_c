@@ -1,144 +1,125 @@
-$OpenBSD: patch-libao2_ao_sun_c,v 1.2 2006/07/19 21:40:47 robert Exp $
---- libao2/ao_sun.c.orig	Sun Jun 11 20:35:42 2006
-+++ libao2/ao_sun.c	Thu Jul  6 00:08:11 2006
-@@ -65,7 +65,57 @@ static enum {
- } enable_sample_timing;
- 
- 
-+#if defined(__OpenBSD__) || defined(__NetBSD__)
-+int sun_mixer_get_dev(int fd, int *dev, char *id)
-+{
-+	mixer_devinfo_t info;
- 
-+	for (info.index = 0; ioctl(fd, AUDIO_MIXER_DEVINFO, &info) >= 0;
-+	     info.index++) {
-+		if (!strcmp(id, info.label.name)) {
-+			*dev = info.index;
-+			return 0;
-+		}
-+	}
-+	return -1;
-+}
-+
-+int sun_get_volume(int fd, int *l, int *r)
-+{
-+	mixer_ctrl_t mixer;
-+
-+	if (sun_mixer_get_dev(fd, &mixer.dev, "master") < 0)
-+		return -1;
-+
-+	mixer.type = AUDIO_MIXER_VALUE;
-+	mixer.un.value.num_channels = 2;
-+	if (ioctl(fd, AUDIO_MIXER_READ, &mixer) < 0)
-+		return -1;
-+	*l = mixer.un.value.level[AUDIO_MIXER_LEVEL_LEFT];
-+	*r = mixer.un.value.level[AUDIO_MIXER_LEVEL_RIGHT];
-+
-+	return 0;
-+}
-+
-+int sun_set_volume(int fd, int l, int r)
-+{
-+	mixer_ctrl_t mixer;
-+
-+	if (sun_mixer_get_dev(fd, &mixer.dev, "master") < 0)
-+		return -1;
-+
-+	mixer.type = AUDIO_MIXER_VALUE;
-+	mixer.un.value.num_channels = 2;
-+	mixer.un.value.level[AUDIO_MIXER_LEVEL_LEFT] = l;
-+	mixer.un.value.level[AUDIO_MIXER_LEVEL_RIGHT] = r;
-+
-+	if (ioctl(fd, AUDIO_MIXER_WRITE, &mixer) < 0)
-+		return -1;
-+
-+	return 0;
-+}
-+#endif
-+
- // convert an OSS audio format specification into a sun audio encoding
- static int af2sunfmt(int format)
+$OpenBSD: patch-libao2_ao_sun_c,v 1.3 2007/11/15 07:50:27 jakemsr Exp $
+--- libao2/ao_sun.c.orig	Sun Jun 11 11:35:42 2006
++++ libao2/ao_sun.c	Wed Oct 31 00:53:40 2007
+@@ -95,6 +95,7 @@ static int af2sunfmt(int format)
+ // sample counter information
+ static int realtime_samplecounter_available(char *dev)
  {
-@@ -365,13 +415,21 @@ static void setup_device_paths()
- 	    audio_dev = "/dev/audio";
++#ifdef __svr4__
+     int fd = -1;
+     audio_info_t info;
+     int rtsc_ok = RTSC_DISABLED;
+@@ -213,6 +214,9 @@ error:
      }
  
-+#if defined(__OpenBSD__) || defined(__NetBSD__)
-     if (sun_mixer_device == NULL) {
-+	if (mixer_device == NULL)
-+	    mixer_device = strdup("/dev/mixer");
-+	sun_mixer_device = mixer_device;
-+    }
+     return rtsc_ok;
 +#else
-+    if (sun_mixer_device == NULL) {
- 	if ((sun_mixer_device = mixer_device) == NULL || !sun_mixer_device[0]) {
- 	    sun_mixer_device = malloc(strlen(audio_dev) + 4);
- 	    strcpy(sun_mixer_device, audio_dev);
- 	    strcat(sun_mixer_device, "ctl");
- 	}
-     }
++    return RTSC_DISABLED;
 +#endif
- 
-     if (ao_subdevice) audio_dev = ao_subdevice;
  }
-@@ -395,6 +453,14 @@ static int control(int cmd,void *arg){
- 	if ( fd != -1 )
- 	{
- 	    ao_control_vol_t *vol = (ao_control_vol_t *)arg;
-+#if defined(__OpenBSD__) || defined(__NetBSD__)
-+	    int r, l;
-+	    if (sun_get_volume(fd, &r, &l) < 0) {
-+		    close(fd);
-+		    goto cgerr;
-+	    }
-+	    vol->right = vol->left = (float)(r * 100. / AUDIO_MAX_GAIN);
-+#else
- 	    float volume;
- 	    struct audio_info info;
- 	    ioctl( fd,AUDIO_GETINFO,&info);
-@@ -409,9 +475,11 @@ static int control(int cmd,void *arg){
- 							/ AUDIO_MID_BALANCE;
- 		vol->right = volume;
- 	    }
-+#endif
- 	    close( fd );
- 	    return CONTROL_OK;
--	}	
-+	}
-+cgerr:
- 	return CONTROL_ERROR;
-     }
-     case AOCONTROL_SET_VOLUME:
-@@ -422,10 +490,18 @@ static int control(int cmd,void *arg){
- 	if ( !sun_mixer_device )    /* control function is used before init? */
- 	    setup_device_paths();
  
--	fd=open( sun_mixer_device,O_RDONLY );
-+	fd=open( sun_mixer_device,O_RDWR );
- 	if ( fd != -1 )
- 	{
- 	    struct audio_info info;
-+#if defined(__OpenBSD__) || defined(__NetBSD__)
-+	    int r;
-+	    r = (int)(vol->right * AUDIO_MAX_GAIN / 100);
-+	    if (sun_set_volume(fd, r, r) < 0) {
-+		    close(fd);
-+		    goto cserr;
-+	    }
-+#else
- 	    float volume;
- 	    AUDIO_INITINFO(&info);
- 	    volume = vol->right > vol->left ? vol->right : vol->left;
-@@ -440,9 +516,11 @@ static int control(int cmd,void *arg){
+ 
+@@ -436,7 +440,7 @@ static int control(int cmd,void *arg){
+ 		else
+ 		    info.play.balance = (vol->right - vol->left + volume) * AUDIO_RIGHT_BALANCE / (2*volume);
+ 	    }
+-#if !defined (__OpenBSD__) && !defined (__NetBSD__)
++#if !defined (__NetBSD__)
  	    info.output_muted = (volume == 0);
  #endif
  	    ioctl( fd,AUDIO_SETINFO,&info );
+@@ -562,6 +566,13 @@ static int init(int rate,int channels,int format,int f
+     ao_data.bps = byte_per_sec = bytes_per_sample * ao_data.samplerate;
+     ao_data.outburst = byte_per_sec > 100000 ? 16384 : 8192;
+ 
++#if defined(__OpenBSD__) || defined(__NetBSD__)
++    AUDIO_INITINFO(&info);
++    info.blocksize = ao_data.outburst;
++    ioctl(audio_fd, AUDIO_SETINFO, &info);
 +#endif
- 	    close( fd );
- 	    return CONTROL_OK;
--	}	
-+	}
-+cserr:
- 	return CONTROL_ERROR;
++
++
+ #ifdef	__not_used__
+     /*
+      * hmm, ao_data.buffersize is currently not used in this driver, do there's
+@@ -598,11 +609,15 @@ static int init(int rate,int channels,int format,int f
      }
-     }
+ #endif	/* __not_used__ */
+ 
++#ifdef __svr4__
+     AUDIO_INITINFO(&info);
+     info.play.samples = 0;
+     info.play.eof = 0;
+     info.play.error = 0;
+     ioctl (audio_fd, AUDIO_SETINFO, &info);
++#else
++    ioctl (audio_fd, AUDIO_FLUSH);
++#endif
+ 
+     queued_bursts = 0;
+     queued_samples = 0;
+@@ -616,6 +631,9 @@ static void uninit(int immed){
+     // throw away buffered data in the audio driver's STREAMS queue
+     if (immed)
+ 	ioctl(audio_fd, I_FLUSH, FLUSHW);
++#else
++    if (immed)
++	ioctl(audio_fd, AUDIO_FLUSH);
+ #endif
+     close(audio_fd);
+ }
+@@ -641,9 +659,11 @@ static void reset(){
+ 	 : AUDIO_PRECISION_8);
+     info.play.channels = ao_data.channels;
+     info.play.sample_rate = ao_data.samplerate;
++#ifdef __svr4__
+     info.play.samples = 0;
+     info.play.eof = 0;
+     info.play.error = 0;
++#endif
+     ioctl (audio_fd, AUDIO_SETINFO, &info);
+     queued_bursts = 0;
+     queued_samples = 0;
+@@ -670,7 +690,11 @@ static void audio_resume()
+ 
+ // return: how many bytes can be played without blocking
+ static int get_space(){
++#if defined(__OpenBSD__)
++    audio_bufinfo_t ab;
++#else
+     audio_info_t info;
++#endif
+ 
+     // check buffer
+ #ifdef HAVE_AUDIO_SELECT
+@@ -691,9 +715,9 @@ static int get_space(){
+ 	return 0;
+ #endif
+ 
+-#if defined(__NetBSD__) || defined(__OpenBSD__)
+-    ioctl(audio_fd, AUDIO_GETINFO, &info);
+-    return info.hiwat * info.blocksize - info.play.seek;
++#if defined(__OpenBSD__)
++    ioctl(audio_fd, AUDIO_GETPRINFO, &ab);
++    return (ab.hiwat * ab.blksize - ab.seek);
+ #else
+     return ao_data.outburst;
+ #endif
+@@ -722,11 +746,14 @@ static int play(void* data,int len,int flags){
+ 
+ // return: delay in seconds between first and last sample in buffer
+ static float get_delay(){
+-    audio_info_t info;
+-    ioctl(audio_fd, AUDIO_GETINFO, &info);
+ #if defined (__OpenBSD__) || defined(__NetBSD__)
+-    return (float) info.play.seek/ (float)byte_per_sec ;
++    u_long bytes;
++    ioctl(audio_fd, AUDIO_WSEEK, &bytes);
++    return (float) bytes/ (float)byte_per_sec ;
+ #else
++    audio_info_t info;
++    ioctl(audio_fd, AUDIO_GETINFO, &info);
++
+     if (info.play.samples && enable_sample_timing == RTSC_ENABLED)
+ 	return (float)(queued_samples - info.play.samples) / (float)ao_data.samplerate;
+     else

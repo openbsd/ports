@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.41 2007/04/19 08:37:09 ajacoutot Exp $
---- configure.orig	Sun Jun 11 20:35:47 2006
-+++ configure	Thu Apr 19 09:41:27 2007
+$OpenBSD: patch-configure,v 1.42 2007/11/15 07:50:27 jakemsr Exp $
+--- configure.orig	Sun Jun 11 11:35:47 2006
++++ configure	Thu Jul 19 23:31:17 2007
 @@ -77,7 +77,7 @@ cc_check() {
  }
  
@@ -18,6 +18,15 @@ $OpenBSD: patch-configure,v 1.41 2007/04/19 08:37:09 ajacoutot Exp $
 +
    for ext in $pparam ; do
      eval _$ext=auto && eval _$ext=yes
+   done
+@@ -2939,7 +2941,7 @@ int main(void) { pthread_t tid; return pthread_create 
+ EOF
+ _pthreads=no
+ if not hpux ; then
+-  for _ld_tmp in "-lpthreadGC2" "" "-lpthread" "-pthread" ; do
++  for _ld_tmp in "-lpthreadGC2" "" "-pthread" "-lpthread" ; do
+     # for crosscompilation, we cannot execute the program, be happy if we can link statically
+     cc_check $_ld_tmp && (tmp_run || test "$_ld_static") && _ld_pthread="$_ld_tmp" && _pthreads=yes && break
    done
 @@ -2970,7 +2972,7 @@ fi
  echores "$_rpath"
