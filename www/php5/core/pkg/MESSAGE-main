@@ -2,7 +2,7 @@ To enable the php5 module please create a symbolic
 link from ${PHP_CONFIG_PATH}/modules.sample/php5.conf
 to ${PHP_CONFIG_PATH}/modules/php5.conf.
 
-ln -s ${PHP_CONFIG_PATH}/modules.sample/php.conf \
+ln -s ${PHP_CONFIG_PATH}/modules.sample/php5.conf \
 	${PHP_CONFIG_PATH}/modules
 
 The recommended php configuration has been installed
