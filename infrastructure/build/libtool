@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.16 2007/11/09 15:20:57 steven Exp $
+# $OpenBSD: libtool,v 1.17 2007/11/16 15:37:20 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -83,7 +83,7 @@ my %libstofind;
 my @orderedlibs;	# ordered library keys (may contain duplicates)
 my %dirs;		# paths to find libraries
 my %file_parsed;	# which files have been parsed
-my $res_level = 0;	# resolution recursion level
+my $res_level = 0;	# resolve level
 my $parse_level = 0;	# parse recursion level
 my $performed = 0;	# number of commands executed via system()
 
@@ -91,7 +91,6 @@ my $performed = 0;	# number of commands executed via system()
 my $static = 1;
 my $shared = 0;
 my $noshared = 0;
-my $allpicobj = 0;
 if (grep { $_ eq $machine_arch } @no_shared_archs) {
 	$noshared = 1;
 }
@@ -148,21 +147,14 @@ if ($mode eq 'compile') {
 			'prefer-non-pic'=> \$opts{'prefer-non-pic'},
 			'static'	=> \$opts{'static'},
 			);
+	# XXX options ignored: -prefer-pic and -prefer-non-pic
 	my $cmd;
 	my $pic = 0;
 	my $nonpic = 1;
 	# assume we need to build pic objects
 	$pic = 1 if (!$noshared);
-	if ($opts{'prefer-pic'} && $opts{'prefer-non-pic'}) {
-		die "Can't use -prefer-pic and -prefer-non-pic together!\n";
-	}
 	$nonpic = 0 if ($pic && grep { $_ eq 'disable-static' } @tags);
 	$pic = 0 if ($nonpic && grep { $_ eq 'disable-shared' } @tags);
-	if ($opts{'prefer-pic'} && !$noshared) {
-		$pic = 1; $nonpic = 0;
-	} elsif ($opts{'prefer-non-pic'}) {
-		$pic = 0; $nonpic = 1;
-	}
 	$nonpic = 1 if ($opts{'static'});
 
 	my $outfile = $opts{'o'};
@@ -216,7 +208,8 @@ if ($mode eq 'compile') {
 		$cmd .= $nonpicobj;
 		perform($cmd);
 	}
-	write_lo_file($outfile, $picobj, $nonpicobj);
+	write_lo_file($outfile, ($pic) ? $picobj : '',
+			($nonpic) ? $nonpicobj : '');
 } elsif ($mode eq 'install') {
 	# deal with multi-arg ltprog (e.g. /bin/sh install-sh ...)
 	while (@ARGV && $ltprog !~ m/(install([.-]sh)?|cp)$/) {
@@ -323,6 +316,8 @@ if ($mode eq 'compile') {
 			'o=s'			=> \$opts{'o'},
 			'objectlist=s'		=> \$opts{'objectlist'},
 			'precious-files-regex=s'=> \$opts{'precious-files-regex'},
+			'prefer-pic'		=> \$opts{'prefer-pic'},
+			'prefer-non-pic'	=> \$opts{'prefer-non-pic'},
 			'release=s'		=> \$opts{'release'},
 			'rpath=s'		=> \$opts{'rpath'},
 			'R=s'			=> \@Ropts,
@@ -336,7 +331,7 @@ if ($mode eq 'compile') {
 	# XXX options ignored: dlopen, dlpreopen, export-dynamic,
 	# 	export-symbols, export-symbols-regex, no-fast-install,
 	# 	no-install, no-undefined, objectlist, precious-files-regex,
-	# 	shrext, thread-safe
+	# 	shrext, thread-safe, prefer-pic, prefer-non-pic
 
 	@libsearchdirs = get_search_dirs();
 
@@ -372,19 +367,9 @@ if ($mode eq 'compile') {
 
 	my @objs;
 	my @sobjs;
-	generate_objlist(\@objs, \@sobjs);
+	my $allpicobj = generate_objlist(\@objs, \@sobjs);
 	print "objs = @objs\n" if $D;
 	print "sobjs = @sobjs\n" if $D;
-
-	# if one ore more shared objects are absent, don't link dynamically
-	$allpicobj = 1;
-	foreach my $so (@sobjs) {
-		if (! -f $so) {
-			$shared = 0;
-			$allpicobj = 0;
-			last;
-		}
-	}
 
 	if ($linkmode == PROGRAM) {
 		# XXX give higher priority to dirs of not installed libs
@@ -459,13 +444,13 @@ if ($mode eq 'compile') {
 		}
 		$lainfo{'installed'} = 'no';
 		$lainfo{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
+		my @Rflags = @Ropts;
+		map { $_ = "-R$_" } @Rflags;
 		my $deplibstring = join ' ', @deplibs;
+		$deplibstring = "@Rflags $deplibstring" if (@Rflags);
 		@deplibs = split /\s+/, $deplibstring;
 		my @finaldeplibs = reverse_zap_duplicates(@deplibs);
 		$deplibstring = join ' ', @finaldeplibs;
-		my @Rflags = @Ropts;
-		map { $_ = "-R$_" } @Rflags;
-		$deplibstring = "@Rflags $deplibstring" if (@Rflags);
 		$lainfo{'dependency_libs'} = $deplibstring;
 		if ($opts{'rpath'}) {
 			$lainfo{'libdir'} = $opts{'rpath'};
@@ -473,14 +458,14 @@ if ($mode eq 'compile') {
 			# XXX sensible default?
 			$lainfo{'libdir'} = $instlibdir;
 		}
-		write_la_file($outfile, \%lainfo);
+		write_la_file($outfile, $ofile, \%lainfo);
 		perform("cd $odir/$ltdir && rm -f $ofile && ln -s ../$ofile $ofile");
 		if ($shared) {
 			my $lai = "$odir/$ltdir/$ofile".'i';
 			$lainfo{'dependency_libs'} = process_deplibs($deplibstring);
 			$lainfo{'installed'} = 'yes';
 			# write .lai file (.la file that will be installed)
-			write_la_file($lai, \%lainfo);
+			write_la_file($lai, $ofile, \%lainfo);
 		}
 	}
 } elsif ($mode eq 'finish' || $mode eq 'clean' || $mode eq 'uninstall') {
@@ -610,9 +595,9 @@ EOF
 sub write_la_file
 {
 	my $filename = shift;
+	my $name = shift;
 	my $lainfo = shift;
 
-	my $name = basename $filename;
 	my $sharedlibname = $lainfo->{'dlname'} || '';
 	my $staticlibname = $lainfo->{'old_library'} || '';
 	my $librarynames = $lainfo->{'library_names'} || '';
@@ -725,13 +710,10 @@ sub parse_file
 	}
 }
 
-# eliminate all .la files in the argument string and replace them by
-# their library plus dependencies.
-# start populating libs hash with paths to the library files.
+# resolve .la files until a level with empty dependency_libs is reached.
 sub resolve_la
 {
 	my $argstring = shift;
-	my $static = shift;
 
 	my @args = split /\s+/, $argstring;
 	print "resolve level: $res_level\n" if $D;
@@ -742,50 +724,15 @@ sub resolve_la
 		if (!exists $file_parsed{$a} || !$file_parsed{$a}) {
 			parse_file($a, \%lainfo);
 			$file_parsed{$a} = 1;
+			if (exists $lainfo{'dependency_libs'}) {
+				$res_level++;
+				$a = $a . ' ' . resolve_la($lainfo{'dependency_libs'});
+				$res_level--;
+				push @deplibs, $lainfo{'dependency_libs'};
+			}
 		} else {
 			$a = '';
 			next;
-		}
-		my $d = abs_path(dirname($a));
-		if ($d !~ m/\Q$ltdir\E$/ && $lainfo{'installed'} eq 'no') {
-			$d .= "/$ltdir";
-		}
-		my $dlname = $lainfo{'dlname'};
-		my $oldlib = $lainfo{'old_library'};
-		my $lib;
-		# get the name we need (this may include a -release)
-		if ($dlname) {
-			($lib = $dlname) =~ s/^(\S+)\.so(\.\d+\.\d+)?$/$1/;
-		} elsif ($oldlib) {
-			($lib = $oldlib) =~ s/^(\S+)\.a$/$1/;
-		} else {
-			die "neither static nor shared library found in $a\n";
-		}
-		$lib =~ s/^lib//;
-		if (!exists $dirs{$d}) {
-			$dirs{$d} = 1;
-		}
-		# XXX in some cases there are multiple libs with the same name
-		# so probably need to use a different key
-		if ($static || $lainfo{'dlname'} eq '') {
-			# static
-			if (!exists $libs{$lib}) {
-				$libs{$lib} = $d.'/'.$lainfo{'old_library'};
-			}
-			$a = $d.'/'.$lainfo{'old_library'};
-		} else {
-			# shared
-			if (!exists $libs{$lib}) {
-				$libs{$lib} = $d.'/'.$lainfo{'dlname'};
-			}
-			$a = "-l$lib";
-		}
-		print "\$libs{$lib} = ", $libs{$lib}, "\n" if $D;
-		if ($lainfo{'dependency_libs'}) {
-			$res_level++;
-			$a .= ' ';
-			$a .= resolve_la($lainfo{'dependency_libs'}, $static);
-			$res_level--;
 		}
 	}
 	return join ' ', @args;
@@ -830,10 +777,14 @@ sub parse_linkargs
 				push @deplibs, $a;
 			}
 			$a = '';
+		} elsif ($a && $a =~ m/^-R(.*)/) {
+			# -R options coming from .la resolution
+			# those from @ARGV are in @Ropts
+			$a = "-Wl,-rpath,$1";
 		} elsif ($a && $a =~ m/^-l(.*)/) {
 			my $lstring = '';
 			my $key = $1;
-			if (!exists $libs{$key} && !exists $libstofind{$key}) {
+			if (!exists $libstofind{$key}) {
 				$libstofind{$key} = 1;
 				if ($la) {
 					my $lafile = find_la($key);
@@ -869,36 +820,45 @@ sub parse_linkargs
 		} elsif ($a && $a =~ m/(\S+\/)*(\S+)\.a$/) {
 			my $key = $2;
 			$key =~ s/^lib//;
-			if (!exists $libs{$key}) {
-				$libs{$key} = $a;
-			}
+			$libs{$key} = $a;
 			if (!$la) {
 				push @orderedlibs, $key;
 				$a = '';
 			}
-		} elsif ($la && $a && $a =~ m/(\S+\/)*(\S+)\.la$/) {
+		} elsif ($a && $a =~ m/(\S+\/)*(\S+)\.la$/) {
 			my $key = $2;
 			$key =~ s/^lib//;
 			my %lainfo;
+			my $d = abs_path(dirname($a));
+			$dirs{$d} = 1;
 			my $fulla = abs_path($a);
 			parse_file($fulla, \%lainfo);
-			# if we are dealing with a static library, it will
-			# be linked in and won't be a dependent one.
-			if (exists $lainfo{'dlname'} && $lainfo{'dlname'} ne '') {
-				push @deplibs, $fulla;
-			} elsif (exists $lainfo{'old_library'} &&
-				  $lainfo{'old_library'} ne '') {
-				if (!exists $libs{$key}) {
-					my $d = abs_path(dirname($a));
-					if ($d !~ m/\Q$ltdir\E$/ && $lainfo{'installed'} eq 'no') {
-						$d .= "/$ltdir";
-					}
-					$libs{$key} = $d.'/'.$lainfo{'old_library'};
-				}
-				push @deplibs, $lainfo{'dependency_libs'}
-					if (exists $lainfo{'dependency_libs'});
-				# $a = '';
+			my $dlname = $lainfo{'dlname'};
+			my $oldlib = $lainfo{'old_library'};
+			if ($d !~ m/\Q$ltdir\E$/ && $lainfo{'installed'} eq 'no') {
+				$d .= "/$ltdir";
 			}
+			if ($dlname && $la) {
+				push @deplibs, $fulla;
+			}
+			# the following should happen only in pass 2
+			next if ($la);
+			push @orderedlibs, $key;
+			$a = '';
+			# get the name we need (this may include a -release)
+			if (!$dlname && !$oldlib) {
+				die "neither static nor shared library found in $a\n";
+			}
+			# XXX in some cases there are multiple libs with the same name
+			# so probably need to use a different key
+			if ($dlname eq '') {
+				# static
+				$libs{$key} = "$d/$oldlib";
+			} else {
+				# shared
+				$libs{$key} = "$d/$dlname";
+			}
+			print "\$libs{$key} = ", $libs{$key}, "\n" if $D;
 		}
 	}
 	return join ' ', @args;
@@ -1024,12 +984,30 @@ sub linkcmds
 	my $dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
 	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
 
+	my @argvcopy = @ARGV;
+	my $argvstring = join ' ', @argvcopy;
+	$argvstring = resolve_la($argvstring);
+	@orderedlibs = ();
+	$argvstring = parse_linkargs($argvstring, 0);
+	@argvcopy = split /\s+/, $argvstring;
+	print "orderedlibs = @orderedlibs\n" if $D;
+	my @finalorderedlibs = reverse_zap_duplicates(@orderedlibs);
+	print "final orderedlibs = @finalorderedlibs\n" if $D;
+
 	# static linking
 	if (!$shared) {
+		my @libfiles = values %libs;
+		if ($D) {
+			my @dirval = keys %dirs;
+			my @libval = keys %libs;
+			print "dirs:  @dirval\n";
+			print "libs:  @libval\n";
+			print "libfiles: @libfiles\n";
+		}
 		if ($lmode == LIBRARY) {
 			$cmd = "ar cru $dst";
 			$cmd .= " @$objs" if (@$objs);
-			foreach my $k (keys %libs) {  # FIX ORDER HERE
+			foreach my $k (@finalorderedlibs) {
 				my $a = $libs{$k};
 				if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
 					# extract objects from archive
@@ -1053,20 +1031,9 @@ sub linkcmds
 	# dynamic linking
 	my @Rflags = @Ropts;
 	map { $_ = "-Wl,-rpath,$_" } @Rflags;
-	my @argvcopy = @ARGV;
-	my $argvstring = join ' ', @argvcopy;
-	$argvstring = resolve_la($argvstring, !$shared);
-	@orderedlibs = ();
-	$argvstring = parse_linkargs($argvstring, 0);
-	@argvcopy = split /\s+/, $argvstring;
-	print "orderedlibs = @orderedlibs\n" if $D;
-	my @finalorderedlibs = reverse_zap_duplicates(@orderedlibs);
-	print "final orderedlibs = @finalorderedlibs\n" if $D;
 	foreach my $l (keys %libstofind) {
-		if (!exists $libs{$l}) {
-			my $libpath = find_lib($l);
-			$libs{$l} = $libpath if ($libpath);
-		}
+		my $libpath = find_lib($l);
+		$libs{$l} = $libpath if ($libpath);
 	}
 
 	my @libfiles = values %libs;
@@ -1082,8 +1049,8 @@ sub linkcmds
 	map { $_ = "$ltdir/". basename $_ } @libfiles;
 	print "symlinks to libfiles used for linking: @libfiles\n" if $D;
 	foreach my $k (@finalorderedlibs) {
-		$a = $libs{$k};
-		if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
+		my $a = $libs{$k};
+		if ($a =~ m/\.a$/) {
 			# don't make a -lfoo out of a static library
 			if ($lmode == LIBRARY) {
 				# extract objects from archive
@@ -1097,7 +1064,14 @@ sub linkcmds
 				push @libflags, $a;
 			}
 		} else {
-			push @libflags, "-l$k";
+			my $lib = basename $a;
+			if ($lib =~ m/^lib(.*)\.so(\.\d+){2}/) {
+				$lib = $1;
+			} else {
+				print "warning: cannot derive -l flag from library filename, assuming hash key\n";
+				$lib = $k;
+			}
+			push @libflags, "-l$lib";
 		}
 	}
 
@@ -1118,6 +1092,7 @@ sub generate_objlist
 {
 	my $objs = shift;
 	my $sobjs = shift;
+	my $allpic = 1;
 
 	foreach my $a (@ARGV) {
 		if ($a =~ m/\S+\.lo$/) {
@@ -1136,10 +1111,13 @@ sub generate_objlist
 				$o .= "$odir/" if ($odir ne '.');
 				$o .= $loinfo{'pic_object'};
 				push @$sobjs, $o;
+			} else {
+				$allpic = 0;
 			}
 			$a = '';
 		}
 	}
+	return $allpic;
 }
 
 # XXX reuse code from SharedLibs.pm instead
