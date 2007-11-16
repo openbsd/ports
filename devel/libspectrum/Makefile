@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/11/16 16:37:12 naddy Exp $
 
 COMMENT=		ZX Spectrum emulator file format library
 DISTNAME=		libspectrum-0.2.2
-PKGNAM=			${DISTNAME}p0
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		spectrum 4.0
 CATEGORIES=		devel
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/libspectrum.php
