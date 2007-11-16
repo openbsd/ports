@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2007/11/16 14:12:34 kili Exp $
 
 DISTNAME=	mod_auth_radius-1.5.7
 PKGNAME=	${DISTNAME}p4
@@ -21,8 +21,6 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/
 EXTRACT_SUFX=	.tar
 
 NO_REGRESS=	Yes
-
-WRKDIST=	${WRKDIR}/${DISTNAME}
 
 do-build:
 	@cd ${WRKSRC}; /usr/sbin/apxs -c mod_auth_radius.c

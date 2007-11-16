@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.36 2007/11/16 14:13:05 kili Exp $
 
 COMMENT=	SOCKS v5 application layer gateway and clients
 
@@ -30,8 +30,6 @@ CONFIGURE_ARGS=	--with-libconffile="${SYSCONFDIR}/libsocks5.conf" \
 		${EXTRA_CONFIGURE_ARGS}
 
 MAKE_ENV=	INSTALL_RUNSOCKS="${INSTALL_RUNSOCKS}"
-
-WRKDIST=	${WRKDIR}/${DISTNAME}
 
 NO_REGRESS=	Yes
 
