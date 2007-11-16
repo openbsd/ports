@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.63 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.64 2007/11/16 21:32:10 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's mail component
 
-VER=		2.0.0.6
+VER=		2.0.0.9
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p1
+PKGNAME=	mozilla-thunderbird-${VER}
 SO_VERSION=	13.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
@@ -36,11 +36,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=        X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi Xinerama \
-                Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
-                freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-                jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-                pangox-1.0 png pthread stdc++ z Xcomposite Xdamage
+WANTLIB=        X11 Xau Xcursor Xdmcp Xext Xfixes Xcomposite Xdamage \
+                Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 c cairo \
+                expat fontconfig freetype glib-2.0 gthread-2.0 glitz \
+		gmodule-2.0 gobject-2.0 jpeg m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pangox-1.0 png pthread stdc++ z
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
@@ -105,9 +105,6 @@ MOZ=		${PREFIX}/mozilla-thunderbird
 
 DATADIRS=	chrome components defaults dictionaries extensions \
 		greprefs icons init.d res
-
-post-extract:
-	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
 
 pre-configure:
 	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_libpref_src_init_all_js,v 1.5 2007/04/30 22:40:31 martynas Exp $
---- modules/libpref/src/init/all.js.orig	Fri Jan  5 03:04:33 2007
-+++ modules/libpref/src/init/all.js	Thu Apr 19 14:31:47 2007
-@@ -1932,33 +1932,33 @@ pref("font.name.monospace.ko", "monospace");
+$OpenBSD: patch-modules_libpref_src_init_all_js,v 1.6 2007/11/16 21:32:11 martynas Exp $
+--- modules/libpref/src/init/all.js.orig	Thu Sep 13 22:06:23 2007
++++ modules/libpref/src/init/all.js	Tue Nov 13 20:36:32 2007
+@@ -1933,33 +1933,33 @@ pref("font.name.monospace.ko", "monospace");
  
  // th
  
@@ -50,7 +50,7 @@ $OpenBSD: patch-modules_libpref_src_init_all_js,v 1.5 2007/04/30 22:40:31 martyn
  
  pref("font.name.serif.zh-CN", "serif");
  pref("font.name.sans-serif.zh-CN", "sans-serif");
-@@ -2098,7 +2098,7 @@ pref("font.scale.outline.min",      6);
+@@ -2099,7 +2099,7 @@ pref("font.scale.outline.min",      6);
  
  // TrueType
  pref("font.FreeType2.enable", false);
