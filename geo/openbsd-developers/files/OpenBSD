@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.18 2007/11/15 22:36:55 okan Exp $
+# $OpenBSD: OpenBSD,v 1.19 2007/11/16 20:50:01 landry Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -43,6 +43,7 @@
 47.581		7.589		"mbalmer"	# Marc Balmer
 48.0718		11.9582		"grunk"		# Alexander von Gernler
 48.08		11.31		"sturm"		# Nikolay Sturm
+48.111761	-1.680265	"landry"	# Landry Breuil
 48.1247		11.5975		"mpf"		# Marco Pfatschbacher
 48.1248		11.5972		"mickey"	# Michael Shalayeff
 48.137970	11.542279	"markus"	# Markus Friedl
