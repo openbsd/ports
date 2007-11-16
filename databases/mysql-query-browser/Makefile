@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/11/16 07:42:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2007/11/16 10:32:51 steven Exp $
 
 COMMENT=	visual query tool for MySQL
 
 DISTNAME=	mysql-gui-tools-5.0r12
-PKGNAME=	mysql-query-browser-1.2.12p1
+PKGNAME=	mysql-query-browser-1.2.12p2
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/query-browser/
@@ -38,7 +38,7 @@ LIB_DEPENDS=	pcre::devel/pcre \
 		glade-2.0::devel/libglade2 \
 		gtkmm-2.4::x11/gtk2mm \
 		xml2.>=6:libxml->=2.6.2:textproc/libxml \
-		gtkhtml-3.16:gtkhtml3-3.14.*:www/gtkhtml3 \
+		gtkhtml-3.14:gtkhtml3->=3.14:www/gtkhtml3 \
 		gnomeprint-2-2.>=1.0::x11/gnome/libgnomeprint \
 		gnomeprintui-2-2.>=1.0::x11/gnome/libgnomeprintui
 
