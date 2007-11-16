@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/05 15:09:19 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/16 19:22:07 simon Exp $
 
 COMMENT=	remote IMAP filtering utility
 
-DISTNAME=	imapfilter-2.0.5
+DISTNAME=	imapfilter-2.0.6
 CATEGORIES=	mail
 
 HOMEPAGE=	http://imapfilter.hellug.gr/
