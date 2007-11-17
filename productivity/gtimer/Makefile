@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 21:28:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/11/17 18:09:17 sturm Exp $
 
 COMMENT=		GTK-based time tracker
 
 DISTNAME=		gtimer-1.1.6
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	productivity x11
 
 HOMEPAGE=		http://www.k5n.us/gtimer.php
