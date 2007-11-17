@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2007/10/27 23:44:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2007/11/17 20:39:03 steven Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	determine the malware activity on a network
 
 DISTNAME= 	nepenthes-20070830
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://nepenthes.mwcollect.org/
@@ -27,7 +27,7 @@ LIB_DEPENDS=	adns.>=1::net/adns \
 		magic.>=1::devel/libmagic \
 		pcre.>=1::devel/pcre
 
-WANTLIB=	c crypto iconv idn m ssl stdc++ pcap z
+WANTLIB=	c crypto iconv intl idn m ssl stdc++ pcap z
 
 FAKE_FLAGS+=	localstatedir='/var/nepenthes' \
 		sysconfdir='${PREFIX}/share/examples'

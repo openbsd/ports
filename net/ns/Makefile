@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2007/10/24 15:01:09 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2007/11/17 20:39:03 steven Exp $
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
 
 V=		2.31
 DISTNAME=	ns-src-$V
-PKGNAME=	ns-$V
+PKGNAME=	ns-$Vp0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.isi.edu/nsnam/ns/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xext c m pcap stdc++ tcl84 tk84
+WANTLIB=	X11 c m pcap stdc++ tcl84 tk84
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nsnam/}
 WRKDIST=	${WRKDIR}/ns-$V

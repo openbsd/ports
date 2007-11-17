@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2007/09/02 17:02:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2007/11/17 20:39:02 steven Exp $
 
 COMMENT=		Gtk-based GUI client for the Gnutella Network
 
 DISTNAME=		gtk-gnutella-0.96.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	net 
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
@@ -13,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
+		Xcomposite Xdamage \
 		atk-1.0 c expat fontconfig.>=2 freetype.>=13 cairo glib-2.0 \
 		gmodule-2.0 gobject-2.0 m z pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 glitz png

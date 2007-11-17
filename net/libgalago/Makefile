@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/20 12:37:33 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/17 20:39:02 steven Exp $
 
 COMMENT=		desktop presence framework
 
 DISTNAME=		libgalago-0.5.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	galago               0.0      # .3.0
 CATEGORIES=		net devel
 
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.galago-project.org/files/releases/source/libgalago/
 
-WANTLIB=		dbus-1 glib-2.0 gobject-2.0
+WANTLIB=		dbus-1 glib-2.0 gobject-2.0 pcre
 
 MODULES=		devel/gettext
 

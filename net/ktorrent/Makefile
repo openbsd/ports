@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/08 21:13:10 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/17 20:39:02 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,8 +6,9 @@ COMMENT=	BitTorrent client for KDE
 
 VERSION=	2.1.4
 DISTNAME=	ktorrent-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net x11 x11/kde
+
 MASTER_SITES=	${HOMEPAGE}downloads/${VERSION}/
 
 HOMEPAGE=	http://ktorrent.org/
@@ -19,13 +20,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		art_lgpl_2 jpeg ICE SM X11 Xau Xdmcp Xext Xrender c m pcre \
-			pcreposix png pthread stdc++ util z idn iconv fam rpcsvc
+
+WANTLIB=	art_lgpl_2 jpeg ICE SM X11 Xau Xdmcp Xext Xrender c m pcre \
+		pcreposix png pthread stdc++ util z idn fam rpcsvc
 
 LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kparts,kdeui,khtml,kio,kjs,kmdi,kutils,kwalletclient::x11/kde/libs3 \
 		gmp.>=4.::devel/gmp
 
-MODULES=	x11/kde
+MODULES=	x11/kde devel/gettext
 
 PORTHOME=	${WRKDIR}
 

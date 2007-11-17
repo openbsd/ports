@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.72 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.73 2007/11/17 20:39:03 steven Exp $
 
 COMMENT=	scan ports and fingerprint stack of network hosts
 
 DISTNAME=	nmap-4.20
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security
+
 MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
 
@@ -16,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c crypto m pcap ssl stdc++ 
 
 USE_GMAKE=		yes
@@ -44,7 +47,7 @@ LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 USE_X11=	Yes
 ALL_TARGET=	nmap nmapfe/nmapfe
 WANTLIB+=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender expat fontconfig freetype z \
+		Xcomposite Xdamage Xrender expat fontconfig freetype z \
 		atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 glitz png \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo
 MODULES=	devel/gettext

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/11/17 20:39:02 steven Exp $
 
 COMMENT=		Quasar DV codec
 
 DISTNAME=		libdv-0.104
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://libdv.sourceforge.net/
@@ -28,7 +28,8 @@ LIB_DEPENDS=		SDL.>=2::devel/sdl \
 			glib.>=1.2,gmodule.>=1.2::devel/glib \
 			popt::devel/popt
 
-WANTLIB=		X11 Xext Xi Xv c m ossaudio pthread usbhid
+WANTLIB=		X11 Xext Xi Xv Xau Xdmcp Xrandr Xrender \
+			c m ossaudio pthread usbhid
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

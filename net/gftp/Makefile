@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/11/06 12:14:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/11/17 20:39:02 steven Exp $
 
 COMMENT=	multithreaded gtk2 file transfer client
 
 DISTNAME=	gftp-2.0.18
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 CATEGORIES=	net
 
 HOMEPAGE=	http://gftp.seul.org/
@@ -44,6 +44,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x11/gtk+2
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 WANTLIB+=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage \
 		Xrender atk-1.0 cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z

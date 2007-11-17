@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/17 20:39:03 steven Exp $
 
 COMMENT=	Graphical Direct-Connect client
 
 VERSION=	0.3.7
 DISTNAME=	valknut-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://dcgui.berlios.de/
@@ -23,7 +24,8 @@ MODQT_MT=	Yes
 LIB_DEPENDS=	dc::net/dclib \
 		jpeg::graphics/jpeg \
 		bz2::archivers/bzip2
-WANTLIB=	ICE SM X11 Xext c crypto m png pthread ssl stdc++ xml2 z
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext c crypto m png \
+		pthread ssl stdc++ xml2 z
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

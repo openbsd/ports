@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2007/11/17 20:39:02 steven Exp $
 
 COMMENT=	free video editor
 
 V=		2.3.0
 DISTNAME=	avidemux_${V}
-PKGNAME=	avidemux-${V}p3
+PKGNAME=	avidemux-${V}p4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=avidemux/}
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage pcre \
 		Xrender Xv atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 m ogg pango-1.0 pangocairo-1.0 \

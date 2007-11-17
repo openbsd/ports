@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2007/11/17 20:39:03 steven Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
@@ -6,7 +6,7 @@ COMMENT-gui=	lightweight BitTorrent client with graphical interface
 VER=		0.81
 DISTNAME=	Transmission-${VER}
 PKGNAME-main=	transmission-${VER}
-PKGNAME-gui=	transmission-gui-${VER}
+PKGNAME-gui=	transmission-gui-${VER}p0
 CATEGORIES=	net
 HOMEPAGE=	http://transmission.m0k.org/
 
@@ -39,6 +39,7 @@ CONFIGURE_ARGS+=--disable-gtk
 MULTI_PACKAGES+=-gui
 MODULES=	devel/gettext
 WANTLIB-gui=	${WANTLIB} X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
+		Xcomposite Xdamage \
 		Xrandr Xrender atk-1.0.>=1809.0 cairo expat fontconfig \
 		freetype glib-2.0.>=1200.0 glitz gmodule-2.0.>=1200.0 \
 		gobject-2.0.>=1200.0 pango-1.0.>=1300.0 pangoft2-1.0.>=1300.0 \

@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/11/17 20:39:02 steven Exp $
 
 COMMENT=		Gnome2 MUD/Moo Client
 
 DISTNAME=		gmudix-0.10
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		net x11
+
 HOMEPAGE=		http://dw.nl.eu.org/mudix.html
 MASTER_SITES=		http://dw.nl.eu.org/gmudix/
+
 MAINTAINER=		Chris Kuethe <ckuethe@ualberta.ca>
 
 # GPL
@@ -14,8 +16,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xrender atk-1.0 c m cairo \
-			fontconfig freetype gmodule-2.0 gobject-2.0 \
+
+WANTLIB=		X11 Xext Xrender atk-1.0 c m cairo Xau Xcomposite \
+			Xcursor Xdamage Xdmcp Xfixes Xi Xinerama Xrandr \
+			expat fontconfig freetype gmodule-2.0 gobject-2.0 \
 			pango-1.0 pangocairo-1.0 glitz png \
 			pangoft2-1.0 pthread z
 
