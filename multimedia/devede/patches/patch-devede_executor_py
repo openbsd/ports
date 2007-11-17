@@ -1,0 +1,12 @@
+$OpenBSD: patch-devede_executor_py,v 1.1 2007/11/17 11:06:14 ajacoutot Exp $
+--- devede_executor.py.orig	Sat Nov 17 11:48:18 2007
++++ devede_executor.py	Sat Nov 17 11:49:23 2007
+@@ -140,7 +140,7 @@ class executor:
+ 		self.output=output
+ 
+ 		wd=sys.path[-1:] # working directory.  This works with py2exe
+-		pathlist=["/usr/bin","/usr/local/bin","/usr/share/bin","/usr/share/local/bin","/bin", os.path.join(wd[0],"bin"), r'C:\WINDOWS', r'C:\WINDOWS\system32', r'C:\WINNT']
++		pathlist=["!!LOCALBASE!!/bin","/usr/bin","/usr/local/bin","/usr/share/bin","/usr/share/local/bin","/bin", os.path.join(wd[0],"bin"), r'C:\WINDOWS', r'C:\WINDOWS\system32', r'C:\WINNT']
+ 
+ 		print "Launching program:"
+ 		print "program: ",program

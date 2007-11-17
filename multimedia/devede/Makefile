@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/15 15:55:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/17 11:06:14 ajacoutot Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
 DISTNAME=	devede-3.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -41,6 +42,9 @@ NO_REGRESS=	Yes
 pre-configure:
 	@find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
+	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
+		-e 's,!!PREFIX!!,${PREFIX},g' \
+		${WRKSRC}/{devede_other,devede_executor,devede}.py
 
 do-install:
 	cd ${WRKSRC} && /bin/sh install.sh prefix=${TRUEPREFIX} uninstall=no
