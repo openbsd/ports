@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/02 14:53:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/17 22:29:49 okan Exp $
 
 COMMENT=	perl extension for parsing ASCIIMathML text into MathML
 
-DISTNAME=	Text-ASCIIMathML-0.5
+DISTNAME=	Text-ASCIIMathML-0.6
 CATEGORIES=	textproc
 MODULES=	cpan
 
-MAINTAINER=	Okan Demirmen <okan@demirmen.com>
+MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
