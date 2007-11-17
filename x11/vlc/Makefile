@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2007/11/11 01:37:54 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.61 2007/11/17 20:53:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	videolan client; multimedia player
 
 V=		0.8.6c
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p5
+PKGNAME-main=	${DISTNAME}p6
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -223,11 +223,13 @@ CONFIGURE_ARGS+=--disable-loader
 PKG_ARGS+=-Dwin32=0
 .endif
 
-.if ${FLAVOR:L} == "altivec"
+.if ${FLAVOR:L:Maltivec}
 ONLY_FOR_ARCHS=	powerpc
 CONFIGURE_ARGS+=--enable-altivec
 PKG_ARGS+=-Daltivec=1
 .else
+CONFIGURE_ENV+=	ac_cv_altivec_inline=no \
+		ac_cv_c_altivec=no
 CONFIGURE_ARGS+=--disable-altivec
 PKG_ARGS+=-Daltivec=0
 .endif
