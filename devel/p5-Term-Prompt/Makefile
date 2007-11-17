@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/17 21:18:41 simon Exp $
 
 COMMENT= 	handles various forms of terminal input
 
 MODULES=	cpan
 
-DISTNAME=	Term-Prompt-1.03
+DISTNAME=	Term-Prompt-1.04
 CATEGORIES=	devel
 
 # perl
@@ -14,4 +14,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::devel/p5-Term-ReadKey
+
 .include <bsd.port.mk>
