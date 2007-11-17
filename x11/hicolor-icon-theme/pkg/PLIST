@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/03/17 14:08:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/11/17 23:35:59 steven Exp $
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/128x128/
@@ -314,3 +314,4 @@ share/icons/hicolor/scalable/stock/net/
 share/icons/hicolor/scalable/stock/object/
 share/icons/hicolor/scalable/stock/table/
 share/icons/hicolor/scalable/stock/text/
+@extra share/icons/hicolor/icon-theme.cache
