@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/17 20:42:14 simon Exp $
 
 COMMENT= 	dispatcher for command line interface programs
 
 MODULES=	cpan
-DISTNAME=	App-CLI-0.06
+DISTNAME=	App-CLI-0.07
 CATEGORIES=	www devel
 
 # Artistic + GPL
