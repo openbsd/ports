@@ -1,0 +1,11 @@
+$OpenBSD: patch-apps_irssi_src_fe-common_silc_Makefile_in,v 1.1 2007/11/18 17:36:18 martynas Exp $
+--- apps/irssi/src/fe-common/silc/Makefile.in.orig	Thu Nov 15 18:04:13 2007
++++ apps/irssi/src/fe-common/silc/Makefile.in	Thu Nov 15 18:10:48 2007
+@@ -649,7 +649,6 @@ clean-local:
+ 	-rm -f libfe_common_silc.a
+ 
+ libfe_common_silc.a: libfe_common_silc.la
+-	cp .libs/libfe_common_silc.a .
+ 
+ @SILCPLUGIN_TRUE@install-data-hook: libfe_common_silc.la
+ @SILCPLUGIN_TRUE@	-ln -s libfe_common_silc.so $(DESTDIR)$(moduledir)/libfe_silc.so

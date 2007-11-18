@@ -1,0 +1,11 @@
+$OpenBSD: patch-apps_irssi_src_fe-common_silc_fe-common-silc_c,v 1.1 2007/11/18 17:36:18 martynas Exp $
+--- apps/irssi/src/fe-common/silc/fe-common-silc.c.orig	Sun May 20 19:40:29 2007
++++ apps/irssi/src/fe-common/silc/fe-common-silc.c	Wed Nov 14 00:06:11 2007
+@@ -42,6 +42,7 @@ static void silc_init(void)
+   fe_silc_messages_init();
+   fe_silc_queries_init();
+   fe_silcnet_init();
++  irssi_redraw();
+ }
+ 
+ void fe_common_silc_init(void)

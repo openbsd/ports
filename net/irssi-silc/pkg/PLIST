@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/05/16 19:30:01 martynas Exp $
-lib/irssi/modules/libfe_silc.la
+@comment $OpenBSD: PLIST,v 1.4 2007/11/18 17:36:18 martynas Exp $
+lib/irssi/modules/libfe_common_silc.la
+lib/irssi/modules/libfe_common_silc.so
 lib/irssi/modules/libfe_silc.so
 lib/irssi/modules/libsilc_core.la
 lib/irssi/modules/libsilc_core.so
@@ -7,15 +8,26 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/Silc.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/Silc.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/Silc.so
+@comment @man man/man1/silc.1
 share/doc/irssi/silc/
+@comment share/doc/irssi/silc/CHANGES
+@comment share/doc/irssi/silc/COPYING
+@comment share/doc/irssi/silc/CREDITS
+share/doc/irssi/silc/FAQ
+@comment share/doc/irssi/silc/INSTALL
 share/doc/irssi/silc/README
-share/doc/irssi/silc/USAGE
-share/examples/irssi/scripts/silc-mime.pl
-@sample ${SYSCONFDIR}/irssi/scripts/silc-mime.pl
+share/doc/irssi/silc/README.PLUGIN
+@comment share/doc/irssi/silc/TODO
+@comment share/doc/irssi/silc/example_silc.conf
+share/doc/irssi/silc/formats.txt
+share/doc/irssi/silc/manual.txt
+share/doc/irssi/silc/signals.txt
+share/doc/irssi/silc/special_vars.txt
+share/doc/irssi/silc/startup-HOWTO.html
 share/examples/irssi/scripts/silc.pl
 @sample ${SYSCONFDIR}/irssi/scripts/silc.pl
-share/examples/irssi/themes/silc.theme
-@sample ${SYSCONFDIR}/irssi/themes/silc.theme
+share/examples/irssi/themes/plugin.theme
+@sample ${SYSCONFDIR}/irssi/themes/plugin.theme
 share/irssi/help/silc/
 share/irssi/help/silc/action
 share/irssi/help/silc/admin
@@ -76,6 +88,7 @@ share/irssi/help/silc/perlflush
 share/irssi/help/silc/ping
 share/irssi/help/silc/query
 share/irssi/help/silc/quit
+share/irssi/help/silc/recode
 share/irssi/help/silc/reconnect
 share/irssi/help/silc/reload
 share/irssi/help/silc/rmreconns

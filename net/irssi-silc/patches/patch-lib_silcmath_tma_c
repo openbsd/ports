@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_silcmath_tma_c,v 1.1 2007/11/18 17:36:18 martynas Exp $
+--- lib/silcmath/tma.c.orig	Thu May  3 11:13:16 2007
++++ lib/silcmath/tma.c	Wed Jun 13 22:55:31 2007
+@@ -1570,6 +1570,7 @@ tma_mp_count_bits (tma_mp_int * a)
+  * Tom St Denis, tomstdenis@gmail.com, http://libtom.org
+  */
+ 
++#define BN_MP_DIV_SMALL
+ #ifdef BN_MP_DIV_SMALL
+ 
+ /* slower bit-bang division... also smaller */

@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2007/11/18 17:36:18 martynas Exp $
+--- lib/Makefile.in.orig	Tue Nov  6 16:45:06 2007
++++ lib/Makefile.in	Fri Nov 16 00:26:36 2007
+@@ -580,7 +580,6 @@ install-dvi: install-dvi-recursive
+ 
+ install-exec-am:
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ 
+ install-html: install-html-recursive
+ 

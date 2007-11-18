@@ -1,0 +1,11 @@
+$OpenBSD: patch-apps_irssi_src_silc_core_Makefile_in,v 1.1 2007/11/18 17:36:18 martynas Exp $
+--- apps/irssi/src/silc/core/Makefile.in.orig	Thu Nov 15 18:04:13 2007
++++ apps/irssi/src/silc/core/Makefile.in	Thu Nov 15 18:11:14 2007
+@@ -656,7 +656,6 @@ clean-local:
+ 	-rm -f libsilc_core.a
+ 
+ libsilc_core.a: libsilc_core.la
+-	cp .libs/libsilc_core.a .
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
