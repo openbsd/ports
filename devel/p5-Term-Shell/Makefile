@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/18 12:40:52 simon Exp $
 # Original from: Neil Watkiss <nwatkiss@ttul.org>
 
 COMMENT=	simple command-line shell framework
 
 MODULES=	cpan
-DISTNAME=	Term-Shell-0.01
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Term-Shell-0.02
 CATEGORIES=	devel
 
-# Artistic
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
