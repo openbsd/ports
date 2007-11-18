@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/11/18 10:40:27 steven Exp $
 
 COMMENT=	3D creation software
 
 DISTNAME=	blender-2.45
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.blender.org/
-
-MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
