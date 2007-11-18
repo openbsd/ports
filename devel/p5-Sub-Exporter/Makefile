@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/18 21:50:33 simon Exp $
 
 COMMENT=	exporter on steroids
 
 MODULES=	cpan
-DISTNAME=	Sub-Exporter-0.972
+DISTNAME=	Sub-Exporter-0.976
 CATEGORIES=	devel
 
 # perl
@@ -18,8 +18,7 @@ RUN_DEPENDS=	::devel/p5-Data-OptList \
 MAKE_ENV=	TEST_POD=Yes \
 		PERL_TEST_CRITIC=Yes
 
-REGRESS_DEPENDS=::devel/p5-Test-Perl-Critic
-
-# Misses Package::Generator to run all tests
+REGRESS_DEPENDS=::devel/p5-Package-Generator \
+		::devel/p5-Test-Perl-Critic
 
 .include <bsd.port.mk>
