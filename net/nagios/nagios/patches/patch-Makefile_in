@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/07/25 16:32:05 sturm Exp $
---- Makefile.in.orig	Mon Jan 31 20:38:45 2005
-+++ Makefile.in	Mon Jan 31 20:39:22 2005
-@@ -57,7 +57,6 @@ all:
+$OpenBSD: patch-Makefile_in,v 1.2 2007/11/18 07:37:57 sturm Exp $
+--- Makefile.in.orig	Mon Apr 23 17:44:25 2007
++++ Makefile.in	Mon Oct 22 12:00:38 2007
+@@ -58,7 +58,6 @@ all:
  	cd $(SRC_BASE) && $(MAKE)
  	cd $(SRC_CGI) && $(MAKE)
  	cd $(SRC_HTM) && $(MAKE)
