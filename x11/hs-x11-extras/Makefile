@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 19:56:33 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/18 19:44:27 kili Exp $
 
 COMMENT=		missing bindings to the X11 graphics library for GHC
 
-V=			0.3
+V=			0.4
 DISTNAME=		X11-extras-$V
 PKGNAME=		hs-x11-extras-$V
 
