@@ -1,5 +1,0 @@
-To link against the c2hs library components, add:
-
-  -package c2hs
-
-to the GHC command line

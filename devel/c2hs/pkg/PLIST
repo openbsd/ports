@@ -1,17 +1,67 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/25 05:53:21 dons Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/11/18 16:30:36 kili Exp $
 bin/c2hs
-bin/c2hs-config
-lib/c2hs-${V}/
-lib/c2hs-${V}/ghc6/
-lib/c2hs-${V}/ghc6/c2hs.conf
-lib/c2hs-${V}/ghc6/import/
-lib/c2hs-${V}/ghc6/import/C2HS.hi
-lib/c2hs-${V}/ghc6/import/C2HSBase.hi
-lib/c2hs-${V}/ghc6/import/C2HSMarsh.hi
-lib/c2hs-${V}/ghc6/libc2hs.a
-@man man/man1/c2hs-config.1
 @man man/man1/c2hs.1
-@exec /usr/bin/sed '1d;$d' %D/lib/c2hs-${V}/ghc6/c2hs.conf | /usr/bin/env PREFIX=%D %D/bin/ghc-pkg -u
-@exec /bin/rm -f %D/lib/ghc-${V}/package.conf.old
-@unexec %D/bin/ghc-pkg -r c2hs
-@unexec /bin/rm -f %D/lib/ghc-${V}/package.conf.old
+share/c2hs-${V}/
+share/c2hs-${V}/C2HS.hs
+share/doc/c2hs/
+share/doc/c2hs/c2hs.html
+share/doc/c2hs/c2hs1.html
+share/doc/c2hs/c2hs10.html
+share/doc/c2hs/c2hs11.html
+share/doc/c2hs/c2hs12.html
+share/doc/c2hs/c2hs13.html
+share/doc/c2hs/c2hs14.html
+share/doc/c2hs/c2hs15.html
+share/doc/c2hs/c2hs16.html
+share/doc/c2hs/c2hs17.html
+share/doc/c2hs/c2hs18.html
+share/doc/c2hs/c2hs19.html
+share/doc/c2hs/c2hs2.html
+share/doc/c2hs/c2hs20.html
+share/doc/c2hs/c2hs21.html
+share/doc/c2hs/c2hs22.html
+share/doc/c2hs/c2hs23.html
+share/doc/c2hs/c2hs24.html
+share/doc/c2hs/c2hs25.html
+share/doc/c2hs/c2hs26.html
+share/doc/c2hs/c2hs27.html
+share/doc/c2hs/c2hs28.html
+share/doc/c2hs/c2hs29.html
+share/doc/c2hs/c2hs3.html
+share/doc/c2hs/c2hs30.html
+share/doc/c2hs/c2hs31.html
+share/doc/c2hs/c2hs32.html
+share/doc/c2hs/c2hs33.html
+share/doc/c2hs/c2hs34.html
+share/doc/c2hs/c2hs35.html
+share/doc/c2hs/c2hs36.html
+share/doc/c2hs/c2hs37.html
+share/doc/c2hs/c2hs38.html
+share/doc/c2hs/c2hs39.html
+share/doc/c2hs/c2hs4.html
+share/doc/c2hs/c2hs40.html
+share/doc/c2hs/c2hs41.html
+share/doc/c2hs/c2hs42.html
+share/doc/c2hs/c2hs5.html
+share/doc/c2hs/c2hs6.html
+share/doc/c2hs/c2hs7.html
+share/doc/c2hs/c2hs8.html
+share/doc/c2hs/c2hs9.html
+share/doc/c2hs/c2hs_toc.html
+share/doc/c2hs/lib/
+share/doc/c2hs/lib/CError.hs
+share/doc/c2hs/lib/CForeign.hs
+share/doc/c2hs/lib/CString.hs
+share/doc/c2hs/lib/CTypes.hs
+share/doc/c2hs/lib/CTypesISO.hs
+share/doc/c2hs/lib/Foreign.hs
+share/doc/c2hs/lib/ForeignPtr.hs
+share/doc/c2hs/lib/Int.hs
+share/doc/c2hs/lib/MarshalAlloc.hs
+share/doc/c2hs/lib/MarshalArray.hs
+share/doc/c2hs/lib/MarshalError.hs
+share/doc/c2hs/lib/MarshalUtils.hs
+share/doc/c2hs/lib/Ptr.hs
+share/doc/c2hs/lib/StablePtr.hs
+share/doc/c2hs/lib/Storable.hs
+share/doc/c2hs/lib/Word.hs

@@ -1,0 +1,12 @@
+$OpenBSD: patch-c2hs_toplevel_C2HSConfig_hs,v 1.1 2007/11/18 16:30:36 kili Exp $
+--- c2hs/toplevel/C2HSConfig.hs.orig	Fri Aug 31 12:54:31 2007
++++ c2hs/toplevel/C2HSConfig.hs	Sun Nov 18 17:24:02 2007
+@@ -59,7 +59,7 @@ cpp  = "cpp"
+ cppopts :: String
+ cppopts  = case os of
+   "darwin" -> "-x=c"   --why oh why must gcc on OSX be different!?
+-  _        -> "-x c"
++  _        -> "-xc"
+ 
+ -- |C2HS Library file name
+ --

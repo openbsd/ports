@@ -1,9 +1,9 @@
-C->Haskell is an interface generator that simplifies the development
-of Haskell bindings to C libraries.  The tool processes existing C
-header files that determine data layout and function signatures on the
-C side, in conjunction with Haskell modules that specify Haskell-side
-type signatures and marshaling details. Hooks embedded in the Haskell
-code signal access to C structures and functions; they are expanded by
-the interfacing tool in conjunction with information in the
-corresponding C header file.  A noteworthy property is the lightweight
-nature of the approach.
+c2hs is an interface generator that simplifies the development of
+Haskell bindings to C libraries.  The tool processes existing C
+header files that determine data layout and function signatures on
+the C side, in conjunction with Haskell modules that specify
+Haskell-side type signatures and marshaling details. Hooks embedded
+in the Haskell code signal access to C structures and functions;
+they are expanded by the interfacing tool in conjunction with
+information in the corresponding C header file.  A noteworthy
+property is the lightweight nature of the approach.
