@@ -1,11 +1,11 @@
---- Config.hs.orig	Tue Sep  4 21:34:21 2007
-+++ Config.hs	Mon Oct  1 21:36:08 2007
-@@ -58,7 +58,7 @@ modMask = mod1Mask
+--- Config.hs.orig	Wed Oct 17 01:53:12 2007
++++ Config.hs	Sun Oct 28 18:21:41 2007
+@@ -90,7 +90,7 @@ focusedBorderColor = "#ff0000"
  -- Fields are: top, bottom, left, right.
  --
  defaultGaps :: [(Int,Int,Int,Int)]
--defaultGaps = [(0,0,0,0)] -- 15 for default dzen
-+defaultGaps = repeat (15,0,0,0) -- 15 for default dzen
+-defaultGaps = [(0,0,0,0)] -- 15 for default dzen font
++defaultGaps = repeat (15,0,0,0) -- 15 for default dzen font
  
- -- |
- -- numlock handling:
+ ------------------------------------------------------------------------
+ -- Window rules

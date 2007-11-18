@@ -1,12 +1,12 @@
-$OpenBSD: patch-Main_hs,v 1.2 2007/10/01 20:46:30 kili Exp $
---- Main.hs.orig	Tue Sep  4 21:34:21 2007
-+++ Main.hs	Fri Sep 14 15:10:20 2007
-@@ -53,7 +53,7 @@ main = do
-     let winset | ("--resume" : s : _) <- args
-                , [(x, "")]            <- reads s = x
-                | otherwise = new workspaces $ zipWith SD xinesc gaps
+$OpenBSD: patch-Main_hs,v 1.3 2007/11/18 20:13:31 kili Exp $
+--- Main.hs.orig	Wed Oct 17 01:53:12 2007
++++ Main.hs	Sun Oct 28 18:22:13 2007
+@@ -62,7 +62,7 @@ main = do
+                     return . W.ensureTags layoutHook workspaces
+                            $ W.mapLayout (fromMaybe layoutHook . maybeRead) ws
+ 
 -        gaps = take (length xinesc) $ defaultGaps ++ repeat (0,0,0,0)
 +        gaps = take (length xinesc) $ repeat (0,0,0,0)
  
-         safeLayouts = case defaultLayouts of [] -> (full, []); (x:xs) -> (x,xs)
          cf = XConf
+             { display       = dpy
