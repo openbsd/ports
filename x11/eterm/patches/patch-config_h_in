@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_h_in,v 1.1 2007/11/18 12:55:58 jasper Exp $
+--- config.h.in.orig	Tue Aug 22 20:25:54 2006
++++ config.h.in	Wed Nov 14 17:14:21 2007
+@@ -174,6 +174,9 @@
+ /* Define to 1 if you have the `seteuid' function. */
+ #undef HAVE_SETEUID
+ 
++/* Define if you have the setegid function.  */
++#undef HAVE_SETEGID
++
+ /* Define to 1 if you have the `setresgid' function. */
+ #undef HAVE_SETRESGID
+ 

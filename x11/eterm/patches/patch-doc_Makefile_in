@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2000/10/30 22:44:01 espie Exp $
---- doc/Makefile.in.orig	Mon Oct 30 23:21:15 2000
-+++ doc/Makefile.in	Mon Oct 30 23:21:33 2000
-@@ -253,7 +253,7 @@ Eterm.1: $(top_srcdir)/doc/Eterm.1.in
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2007/11/18 12:55:58 jasper Exp $
+--- doc/Makefile.in.orig	Wed Nov 14 17:01:18 2007
++++ doc/Makefile.in	Wed Nov 14 17:02:03 2007
+@@ -414,7 +414,7 @@ uninstall-man: uninstall-man1
+ 	uninstall-man1
+ 
+ 
+-all: Makefile Eterm.1.html
++all: Makefile
+ 
+ Eterm.1: $(top_srcdir)/doc/Eterm.1.in
  	$(SED) -e 's%@''VERSION''@%$(VERSION)%g' -e 's%@''DATE''@%$(DATE)%g' -e 's%@THEMEDIR@%$(pkgdatadir)/themes%g' $(top_srcdir)/doc/$@.in > $@
- 
- Eterm.1.html: Eterm.1
--	-nroff -man $< | man2html > $@
-+	-nroff -man Eterm.1 | man2html > $@
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
