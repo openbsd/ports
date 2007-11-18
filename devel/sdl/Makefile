@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2007/11/14 07:16:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2007/11/18 09:39:02 ajacoutot Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.12
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -101,7 +101,7 @@ USE_X11=	Yes
 WANTLIB+=	X11.>=10 Xau Xdmcp Xext Xrandr Xrender
 .endif
 
-.if ${FLAVOR:L} == "altivec"
+.if ${FLAVOR:L:Maltivec}
 ONLY_FOR_ARCHS=	powerpc
 CONFIGURE_ARGS+=--enable-altivec
 # XXX Segmentation fault
