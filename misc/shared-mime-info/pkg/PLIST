@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/09/13 17:56:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/11/19 19:52:31 kili Exp $
 bin/update-mime-database
 lib/pkgconfig/
 lib/pkgconfig/shared-mime-info.pc
@@ -452,6 +452,7 @@ share/mime/inode/fifo.xml
 share/mime/inode/mount-point.xml
 share/mime/inode/socket.xml
 share/mime/inode/symlink.xml
+@comment no checksum
 share/mime/magic
 share/mime/message/
 share/mime/message/delivery-status.xml
