@@ -1,12 +1,12 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2007/07/16 14:24:57 jasper Exp $
---- po/Makefile.in.in.orig	Mon Jul 16 15:23:03 2007
-+++ po/Makefile.in.in	Mon Jul 16 15:23:12 2007
-@@ -146,7 +146,7 @@ uninstall:
+$OpenBSD: patch-po_Makefile_in_in,v 1.2 2007/11/19 01:01:45 okan Exp $
+--- po/Makefile.in.in.orig	Fri Sep 14 22:23:25 2007
++++ po/Makefile.in.in	Sat Nov 17 22:53:43 2007
+@@ -142,7 +142,7 @@ uninstall:
  	  rm -f $(DESTDIR)$(itlocaledir)/$$lang/LC_MESSAGES/$(GETTEXT_PACKAGE).mo.m; \
  	done
  
 -check: all $(GETTEXT_PACKAGE).pot
 +check: all
- 
- mostlyclean:
- 	rm -f *.pox $(GETTEXT_PACKAGE).pot *.old.po cat-id-tbl.tmp
+ 	rm -f missing notexist
+ 	srcdir=$(srcdir) $(INTLTOOL_UPDATE) -m
+ 	if [ -r missing -o -r notexist ]; then \
