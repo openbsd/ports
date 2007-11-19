@@ -1,12 +1,20 @@
-$OpenBSD: patch-greylist_conf,v 1.2 2006/11/22 22:26:31 jakob Exp $
---- greylist.conf.orig	Wed Sep 27 22:03:49 2006
-+++ greylist.conf	Wed Nov 22 15:54:29 2006
-@@ -8,7 +8,7 @@
- pidfile "/var/run/milter-greylist.pid"
- socket "/var/milter-greylist/milter-greylist.sock"
- dumpfile "/var/milter-greylist/greylist.db"
--user "smmsp"
-+user "_milter-greylist"
+$OpenBSD: patch-greylist_conf,v 1.3 2007/11/19 09:18:18 jakob Exp $
+--- greylist.conf.orig	Wed Oct 24 23:20:11 2007
++++ greylist.conf	Wed Nov  7 11:35:35 2007
+@@ -6,12 +6,12 @@
+ #
  
- # Be verbose (or use -v flag)
- #verbose
+ pidfile "/var/run/milter-greylist.pid"
+-socket "/var/milter-greylist/milter-greylist.sock"
+-dumpfile "/var/milter-greylist/greylist.db"
+-user "smmsp"
++socket "!!GREYLISTDIR!!/milter-greylist.sock"
++dumpfile "!!GREYLISTDIR!!/greylist.db"
++user "!!USERNAME!!"
+ 
+ # Log milter-greylist activity to a file
+-#stat "/var/milter-greylist/greylist.log" \
++#stat "!!GREYLISTDIR!!/greylist.log" \
+ #      "%T{%Y/%m/%d %T} %d [%i] %r -> %f %S (ACL %A) %Xc %Xe %Xm %Xh"
+ # Same, sent to syslog
+ #stat "|logger -p local7.info" \
