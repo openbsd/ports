@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2007/11/12 12:59:47 landry Exp $
+# $OpenBSD: Makefile,v 1.199 2007/11/19 07:10:08 jakob Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -29,7 +29,6 @@
      SUBDIR += cue
      SUBDIR += cyrus-imapd
      SUBDIR += cyrus-imapd,kerberos
-     SUBDIR += dk-milter
      SUBDIR += dkim-milter
      SUBDIR += dovecot
      SUBDIR += dovecot,ldap
