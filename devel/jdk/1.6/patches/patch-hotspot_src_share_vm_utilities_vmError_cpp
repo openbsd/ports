@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
+--- hotspot/src/share/vm/utilities/vmError.cpp.orig	Sat Nov 17 16:49:21 2007
++++ hotspot/src/share/vm/utilities/vmError.cpp	Sat Nov 17 16:51:32 2007
+@@ -264,7 +264,7 @@ void VMError::report(outputStream* st) {
+          st->print("# java.lang.OutOfMemoryError: ");
+          if (_size) {
+            st->print("requested ");
+-           sprintf(buf,"%d",_size);
++           sprintf(buf,"%ld",_size);
+            st->print(buf);
+            st->print(" bytes");
+            if (_message != NULL) {

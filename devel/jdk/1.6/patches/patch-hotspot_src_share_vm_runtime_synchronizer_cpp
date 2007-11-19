@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_share_vm_runtime_synchronizer_cpp,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
+--- hotspot/src/share/vm/runtime/synchronizer.cpp.orig	Sat Nov 17 16:47:48 2007
++++ hotspot/src/share/vm/runtime/synchronizer.cpp	Sat Nov 17 16:48:04 2007
+@@ -379,7 +379,7 @@ void ObjectSynchronizer::Initialize () {
+ // asserts is that error message -- often something about negative array
+ // indices -- is opaque. 
+ 
+-#define CTASSERT(x) { int tag[1-(2*!(x))]; printf ("Tag @%X\n", tag); } 
++#define CTASSERT(x) { int tag[1-(2*!(x))]; printf ("Tag @%p\n", tag); } 
+ 
+ void ObjectMonitor::ctAsserts() { 
+   CTASSERT(offset_of (ObjectMonitor, _header) == 0); 

@@ -1,0 +1,25 @@
+$OpenBSD: patch-j2se_make_common_shared_Compiler-gcc_gmk,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
+--- j2se/make/common/shared/Compiler-gcc.gmk.orig	Wed Oct 10 22:18:01 2007
++++ j2se/make/common/shared/Compiler-gcc.gmk	Wed Oct 10 22:19:33 2007
+@@ -76,17 +76,17 @@ endif
+ 
+ ifeq ($(PLATFORM), bsd)
+   # Settings specific to BSD
+-  CC             = $(COMPILER_PATH)gcc
+-  CPP            = $(COMPILER_PATH)gcc -E
++  CC             ?= $(COMPILER_PATH)gcc
++  CPP            = $(CC) -E
+   # statically link libstdc++ before C++ ABI is stablized on Linux
+   STATIC_CXX     = false
+   ifeq ($(STATIC_CXX),true)
+     # g++ always dynamically links libstdc++, even we use "-Wl,-Bstatic -lstdc++"
+     # We need to use gcc to statically link the C++ runtime. gcc and g++ use
+     # the same subprocess to compile C++ files, so it is OK to build using gcc.
+-    CXX            = $(COMPILER_PATH)gcc
++    CXX            = $(CC)
+   else
+-    CXX            = $(COMPILER_PATH)g++
++    CXX            ?= $(COMPILER_PATH)g++
+   endif
+   REQUIRED_CC_VER = 3.3
+   REQUIRED_GCC_VER = 3.3.*

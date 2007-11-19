@@ -1,0 +1,16 @@
+$OpenBSD: patch-deploy_make_common_DeployRules-solaris_gmk,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
+--- deploy/make/common/DeployRules-solaris.gmk.orig	Thu Oct 11 21:36:13 2007
++++ deploy/make/common/DeployRules-solaris.gmk	Thu Oct 11 21:37:05 2007
+@@ -28,9 +28,9 @@ ifeq ($(PLATFORM), solaris)
+ 
+     LDFLAGS = -xnolib -norunpath -lCrun -lnsl -ldl -lc
+ else
+-    CC   = $(COMPILER_PATH)gcc
+-    CXX  = $(COMPILER_PATH)g++
+-    LINK = $(COMPILER_PATH)g++
++    CC   ?= $(COMPILER_PATH)gcc
++    CXX  ?= $(COMPILER_PATH)g++
++    LINK = $(CXX)
+ 
+     # Option used to create a shared library
+     SHARED_LIBRARY_FLAG = -fPIC -shared

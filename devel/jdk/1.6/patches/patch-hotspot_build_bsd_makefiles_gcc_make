@@ -1,0 +1,22 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
+--- hotspot/build/bsd/makefiles/gcc.make.orig	Sat Nov 17 16:55:39 2007
++++ hotspot/build/bsd/makefiles/gcc.make	Sat Nov 17 17:25:34 2007
+@@ -8,8 +8,7 @@
+ #------------------------------------------------------------------------
+ # CC, CPP & AS
+ 
+-CPP = g++
+-CC  = gcc
++CPP = $(CXX)
+ AS  = $(CC) -c
+ 
+ # -dumpversion in gcc-2.91 shows "egcs-2.91.66". In later version, it only
+@@ -68,7 +67,7 @@ endif
+ WARNINGS_ARE_ERRORS = -Werror
+ # Except for a few acceptable ones
+ ACCEPTABLE_WARNINGS = -Wpointer-arith -Wconversion -Wsign-compare
+-CFLAGS_WARN/DEFAULT = $(WARNINGS_ARE_ERRORS) $(ACCEPTABLE_WARNINGS)
++CFLAGS_WARN/DEFAULT = $(ACCEPTABLE_WARNINGS)
+ # Special cases
+ CFLAGS_WARN/BYFILE = $(CFLAGS_WARN/$@)$(CFLAGS_WARN/DEFAULT$(CFLAGS_WARN/$@)) 
+ CFLAGS_WARN/os_bsd_i486.o = $(CFLAGS_WARN/DEFAULT) -Wno-deprecated-declarations

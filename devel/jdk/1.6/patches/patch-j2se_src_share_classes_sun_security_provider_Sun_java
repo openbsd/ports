@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_share_classes_sun_security_provider_Sun_java,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
+--- j2se/src/share/classes/sun/security/provider/Sun.java.orig	Thu Apr 12 04:48:44 2007
++++ j2se/src/share/classes/sun/security/provider/Sun.java	Wed Oct 10 17:52:20 2007
+@@ -261,7 +261,7 @@ public final class Sun extends Provider {
+     // name of the *Security* property
+     private final static String PROP_RNDSOURCE = "securerandom.source";
+     
+-    final static String URL_DEV_RANDOM = "file:/dev/random";
++    final static String URL_DEV_RANDOM = "file:/dev/srandom";
+     final static String URL_DEV_URANDOM = "file:/dev/urandom";
+ 
+     private static final String seedSource;
