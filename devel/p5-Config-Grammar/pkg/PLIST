@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/22 12:41:29 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/19 18:57:10 simon Exp $
 ${P5SITE}/Config/
+${P5SITE}/Config/Grammar/
 ${P5SITE}/Config/Grammar.pm
+${P5SITE}/Config/Grammar/Document.pm
+${P5SITE}/Config/Grammar/Dynamic.pm
 @man man/man3p/Config::Grammar.3p
+@man man/man3p/Config::Grammar::Dynamic.3p
