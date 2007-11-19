@@ -1,0 +1,21 @@
+$OpenBSD: patch-greylist_conf_5,v 1.1 2007/11/19 09:18:42 jakob Exp $
+--- greylist.conf.5.orig	Sun Oct 28 19:14:26 2007
++++ greylist.conf.5	Wed Nov  7 11:35:21 2007
+@@ -802,7 +802,7 @@ This chooses the location of the greylist dump file, l
+ command line option does. The path must be absolute and enclosed in quotes.
+ Example:
+ .IP
+-  dumpfile "/var/milter-greylist/greylist.db"
++  dumpfile "!!GREYLISTDIR!!/greylist.db"
+ .TP
+ .I subnetmatch
+ This is equivalent to the 
+@@ -831,7 +831,7 @@ to communicate with
+ It must be enclosed in quotes and can optionally be followed by a permission mode
+ (valid values are 666, 660 or 600, other values cause an error):
+ .IP
+-  socket "/var/milter-greylist/milter-greylist.sock" 660
++  socket "!!GREYLISTDIR!!/milter-greylist.sock" 660
+ .TP
+ .I user
+ This keyword should be followed by a quoted user login and optionally a 

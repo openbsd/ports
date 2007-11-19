@@ -1,0 +1,21 @@
+$OpenBSD: patch-milter-greylist_8,v 1.1 2007/11/19 09:18:42 jakob Exp $
+--- milter-greylist.8.orig	Tue Oct 23 07:38:51 2007
++++ milter-greylist.8	Wed Nov  7 11:36:22 2007
+@@ -100,7 +100,7 @@ will start with an empty grey list. 
+ .PP
+ The default location for the grey list database and the socket for
+ communicating with sendmail is
+-.B /var/milter-greylist/\fR.
++.B !!GREYLISTDIR!!\fR.
+ That directory must be owned and writeable by the user id under
+ which 
+ .B milter-greylist
+@@ -147,7 +147,7 @@ option in the configuration file.
+ .TP
+ .B -d \fIdumpfile\fR
+ Location of the dump file. Default is 
+-.I /var/milter-greylist/greylist.db\fR.
++.I !!GREYLISTDIR!!/greylist.db\fR.
+ Equivalent to the
+ .I dumpfile
+ option in the configuration file.
