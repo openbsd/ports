@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2007/11/19 18:31:03 mgrimm Exp $
+--- src/Makefile.in.orig	Thu Mar 16 17:27:31 2006
++++ src/Makefile.in	Sun Jul  8 15:30:35 2007
+@@ -783,14 +783,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-info-am
+ @HAVE_SIGBLOCK_FALSE@sigblock.o: $(pinfo_SIGBLOCK)
+ 
+ install-data-local:
+-	if [ ! -f $(DESTDIR)$(sysconfdir)/pinforc ] ; then \
+-		if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
+-		   $(INSTALL) -d $(DESTDIR)$(sysconfdir); \
+-		fi; \
+-		$(INSTALL) -m 644 $(srcdir)/pinforc $(DESTDIR)$(sysconfdir) ; \
+-	else \
+-		echo "WARNING! Old pinforc detected. I'm not installing the new file"; \
+-        fi
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

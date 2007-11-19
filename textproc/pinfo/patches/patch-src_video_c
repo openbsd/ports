@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_video_c,v 1.1 2007/11/19 18:31:03 mgrimm Exp $
+--- src/video.c.orig	Wed Mar 15 22:54:56 2006
++++ src/video.c	Sun Jul  8 17:27:51 2007
+@@ -88,9 +88,10 @@ showscreen(char **message, char *type, long lines, lon
+ 	attrset(normal);
+ 	for (i = pos;(i < lines) &&(i < pos + maxy - 2); i++)
+ 	{
+-		if (!message[i]) continue;
++		int tmp;
+ 
+-		int tmp = strlen(message[i]) - 1;
++		if (!message[i]) continue;
++		tmp = strlen(message[i]) - 1;
+ 		message[i][tmp] = 0;
+ 		if (tmp>column)
+ 			mvaddstr(i + 1 - pos, 0, message[i]+column);
+@@ -263,12 +264,13 @@ info_add_highlights(int pos, int cursor, long lines, i
+ 	{
+ 		regmatch_t pmatch[1];
+ 		long maxpos = pos +(maxy - 2);
++		int maxregexp;
+ 		if (maxpos > lines)
+ 		{
+ 			maxpos = lines;
+ 		}
+ 
+-		int maxregexp = aftersearch ? h_regexp_num + 1 : h_regexp_num;
++		maxregexp = aftersearch ? h_regexp_num + 1 : h_regexp_num;
+ 		/*
+ 		 * if it is after search, then we have user defined regexps+
+ 		 * a searched regexp to highlight
+@@ -285,6 +287,9 @@ info_add_highlights(int pos, int cursor, long lines, i
+ 				/* check if this regexp is present on this line */
+ 				while (!regexec(&h_regexp[j], str, 1, pmatch, 0))
+ 				{
++					int x, y;
++					char tmp;
++
+ 					/* yes, found something, so highlight it */
+ 					int n = pmatch[0].rm_eo - pmatch[0].rm_so;
+ 
+@@ -292,12 +297,12 @@ info_add_highlights(int pos, int cursor, long lines, i
+ 					str += pmatch[0].rm_so;
+ 
+ 					/* calculate position on screen */
+-					int x = calculate_len(message[i], str);
+-					int y = i - pos + 1;
++					x = calculate_len(message[i], str);
++					y = i - pos + 1;
+ 
+ 					/* save the char after the end of the match, 
+ 					 * and replace it by \0 */
+-					char tmp = str[n];
++					tmp = str[n];
+ 					str[n] = 0;
+ 					
+ 					/* write out the highlighted match to screen */

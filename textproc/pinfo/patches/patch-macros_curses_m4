@@ -1,0 +1,30 @@
+$OpenBSD: patch-macros_curses_m4,v 1.1 2007/11/19 18:31:03 mgrimm Exp $
+
+The world isn't debian.
+
+--- macros/curses.m4.orig	Thu Mar  9 20:44:38 2006
++++ macros/curses.m4	Sun Jul 22 21:44:40 2007
+@@ -254,11 +254,11 @@ dnl check if the curses header we found, works
+ dnl
+ AC_DEFUN([AC_CHECK_CURSES_COMPILE], [
+ 
+-	dnl save CFLAGS and LDFLAGS and set new ones
++	dnl save CFLAGS and LIBS and set new ones
+ 	CFLAGS_OLD=$CFLAGS
+ 	CFLAGS="$CFLAGS $curses_includes"
+-	LDFLAGS_OLD=$LDFLAGS
+-	LDFLAGS="$LDFLAGS $curses_libs"
++	LIBS_OLD=$LIBS
++	LIBS="$LIBS $curses_libs"
+ 
+ 	dnl do the compile test 
+ 	AC_MSG_CHECKING([if curses is usable])
+@@ -288,7 +288,7 @@ AC_DEFUN([AC_CHECK_CURSES_COMPILE], [
+ 
+ 	dnl restore variables
+ 	CFLAGS=$CFLAGS_OLD
+-	LDFLAGS=$LDFLAGS_OLD
++	LIBS=$LIBS_OLD
+ 
+ ])
+ 

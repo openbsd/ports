@@ -1,39 +1,21 @@
-$OpenBSD: patch-src_manual_c,v 1.1.1.1 2003/07/08 16:23:47 espie Exp $
---- src/manual.c.orig	Wed Jul  2 12:07:43 2003
-+++ src/manual.c	Wed Jul  2 12:08:15 2003
-@@ -215,7 +215,7 @@ handlemanual (char *name)	/*
-       unlink (tmpfilename1);
-       xfree (tmpfilename1);
-     }
--  tmpfilename1 = tempnam ("/tmp", NULL);
-+  tmpfilename1 = mytempfile ();
+$OpenBSD: patch-src_manual_c,v 1.2 2007/11/19 18:31:03 mgrimm Exp $
+--- src/manual.c.orig	Sun Jul  8 17:10:13 2007
++++ src/manual.c	Sun Jul  8 17:10:56 2007
+@@ -797,7 +797,7 @@ man_initializelinks(char *tmp, int carry)
+ 				if ((!strchr(p_t1, '(')) &&(!is_in_manlinks(manlinks, p_t1)))
+ 				{
+ 					char tempchar;
+-					int breakpos;
++					int breakpos, cols_before_link;
+ 					i = mylink - tmp - 1;
+ 					if (i < 0)
+ 						i++;
+@@ -830,7 +830,7 @@ man_initializelinks(char *tmp, int carry)
+ 					 */
  
- #ifdef getmaxyx
-   init_curses ();
-@@ -315,7 +315,7 @@ handlemanual (char *name)	/*
- 	  }
- 	else
- 	  source = fopen (location, "r");	/* from cmd output  */
--	name = tempnam ("/tmp", NULL);
-+	name = mytempfile ();
- 	raw_tempfilename = name;
- 	id = fopen (name, "w");
+ 					/* calculate the number of columns in front of the link */
+-					int cols_before_link = width_of_string(tmp, i-1);
++					cols_before_link = width_of_string(tmp, i-1);
  
-@@ -393,7 +393,7 @@ handlemanual (char *name)	/*
-       if (use_apropos)
- 	{
- 	  printf (_ ("Calling apropos \n"));
--	  apropos_tempfilename = tempnam ("/tmp", NULL);
-+	  apropos_tempfilename = mytempfile ();
- 	  snprintf (cmd, 255, "apropos %s > %s", name, apropos_tempfilename);
- 	  if (system (cmd) != 0)
- 	    {
-@@ -437,7 +437,7 @@ handlemanual (char *name)	/*
- 	      unlink (tmpfilename2);
- 	      xfree (tmpfilename2);
- 	    }
--	  tmpfilename2 = tempnam ("/tmp", NULL);
-+	  tmpfilename2 = mytempfile ();
- 	  if (return_value != -2)	/* key_back is not pressed;
- 					   and return_value is an
- 					   offset to manuallinks */
+ 					/* a small check */
+ 					if (!((use_apropos) &&(manualhistorylength == 0)))

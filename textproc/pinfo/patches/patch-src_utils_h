@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_utils_h,v 1.1.1.1 2003/07/08 16:23:47 espie Exp $
---- src/utils.h.orig	Wed Jul  2 12:05:36 2003
-+++ src/utils.h	Wed Jul  2 12:05:48 2003
-@@ -51,4 +51,5 @@ void waitforgetch ();		/* Block until so
- 
- extern int curses_open;		/* is curses screen open? */
- 
-+extern char *mytempfile ();
- #endif

@@ -1,30 +1,37 @@
-$OpenBSD: patch-src_filehandling_functions_c,v 1.1.1.1 2003/07/08 16:23:47 espie Exp $
---- src/filehandling_functions.c.orig	Wed Jul  2 12:08:36 2003
-+++ src/filehandling_functions.c	Wed Jul  2 12:09:05 2003
-@@ -503,7 +503,7 @@ opendirfile (int number)
- 	  unlink (tmpfilename1);	/* erase old tmpfile */
- 	  free (tmpfilename1);
- 	}
--      tmpfilename1 = tempnam ("/tmp", NULL);
-+      tmpfilename1 = mytempfile ();
-       tmpfilename = tmpfilename1;	/* later we will refere only to tmp1 */
-     }
-   for (i = 0; i < infopathcount; i++)	/* go through all paths */
-@@ -671,7 +671,7 @@ openinfo (char *filename, int number)	/*
- 	  unlink (tmpfilename1);	/* erase old tmpfile */
- 	  free (tmpfilename1);
- 	}
--      tmpfilename1 = tempnam ("/tmp", NULL);
-+      tmpfilename1 = mytempfile ();
-       tmpfilename = tmpfilename1;	/* later we will refere only to tmp1 */
-     }
-   else
-@@ -682,7 +682,7 @@ openinfo (char *filename, int number)	/*
- 	  unlink (tmpfilename2);	/* erase old tmpfile */
- 	  free (tmpfilename2);
- 	}
--      tmpfilename2 = tempnam ("/tmp", NULL);
-+      tmpfilename2 = mytempfile ();
-       tmpfilename = tmpfilename2;	/* later we will refere only to tmp2 */
-     }
+$OpenBSD: patch-src_filehandling_functions_c,v 1.2 2007/11/19 18:31:03 mgrimm Exp $
+--- src/filehandling_functions.c.orig	Sun Jul  8 17:06:45 2007
++++ src/filehandling_functions.c	Sun Jul  8 17:09:39 2007
+@@ -139,6 +139,7 @@ dirpage_lookup(char **type, char ***message, long *lin
+ 	char name[256];
+ 	char file[256];
+ 	int i;
++	char *nameend, *filestart, *fileend, *dot;
+ 	
+ 	id = opendirfile(0);
+ 	if (!id)
+@@ -146,8 +147,6 @@ dirpage_lookup(char **type, char ***message, long *lin
+ 	
+ 	read_item(id, type, message, lines);
  
+-	char *nameend, *filestart, *fileend, *dot;
+-	
+ 	/* search for node-links in every line */
+ 	for (i = 1; i < Lines; i++)
+ 	{
+@@ -160,6 +159,7 @@ dirpage_lookup(char **type, char ***message, long *lin
+ 				&& (strncasecmp(filename, Message[i] + 2, filenamelen) == 0)
+ 		   )
+ 		{
++			char *tmp;
+ 
+ 			/* skip this hit if it is not a perfect match and 
+ 			 * we have already found a previous partial match */
+@@ -170,7 +170,7 @@ dirpage_lookup(char **type, char ***message, long *lin
+ 			}
+ 
+ 			/* find the name of the node link */
+-			char *tmp = name;
++			tmp = name;
+ 			strncpy(file, filestart + 1, fileend - filestart - 1);
+ 			file[fileend - filestart - 1] = 0;
+ 			strncpy(name, fileend + 1, dot - fileend - 1);
