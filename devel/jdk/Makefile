@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2005/05/25 17:29:01 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2007/11/19 03:20:55 kurt Exp $
 
 SUBDIR+= 1.3-linux
 SUBDIR+= 1.3
 SUBDIR+= 1.4
 SUBDIR+= 1.5
+SUBDIR+= 1.6
 
 .include <bsd.port.subdir.mk>
