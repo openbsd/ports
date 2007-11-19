@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/19 21:47:20 jasper Exp $
+${P5SITE}/Net/Google/
+${P5SITE}/Net/Google.pm
+${P5SITE}/Net/Google/Cache.pm
+${P5SITE}/Net/Google/Response.pm
+${P5SITE}/Net/Google/Search.pm
+${P5SITE}/Net/Google/Service.pm
+${P5SITE}/Net/Google/Services/
+${P5SITE}/Net/Google/Services/GoogleSearch.wsdl
+${P5SITE}/Net/Google/Spelling.pm
+${P5SITE}/Net/Google/tool.pm
+@man man/man3p/Net::Google.3p
+@man man/man3p/Net::Google::Cache.3p
+@man man/man3p/Net::Google::Response.3p
+@man man/man3p/Net::Google::Search.3p
+@man man/man3p/Net::Google::Service.3p
+@man man/man3p/Net::Google::Spelling.3p
+@man man/man3p/Net::Google::tool.3p
