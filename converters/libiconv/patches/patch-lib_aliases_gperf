@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_aliases_gperf,v 1.1 2007/11/19 13:12:57 sthen Exp $
+--- lib/aliases.gperf.orig	Wed Oct 24 23:41:32 2007
++++ lib/aliases.gperf	Wed Oct 24 23:47:38 2007
+@@ -10,6 +10,7 @@ struct alias { int name; unsigned int encoding_index; 
+ %pic
+ %%
+ US-ASCII, ei_ascii
++646, ei_ascii
+ ASCII, ei_ascii
+ ISO646-US, ei_ascii
+ ISO_646.IRV:1991, ei_ascii

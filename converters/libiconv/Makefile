@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2007/08/25 13:51:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2007/11/19 13:12:57 sthen Exp $
 
 COMMENT=	character set conversion library
 
 DISTNAME=	libiconv-1.9.2
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
 SHARED_LIBS +=	charset              1.0      # .1.0
 SHARED_LIBS +=	iconv                4.0      # .4.0
+BUILD_DEPENDS=	::devel/gperf
 
 HOMEPAGE=	http://www.gnu.org/software/libiconv/
 
@@ -32,8 +33,12 @@ CONFIGURE_ARGS+= --enable-static \
 
 USE_LIBTOOL=Yes
 
+pre-configure:
+	@cd ${WRKSRC}; make -f Makefile.devel lib/aliases.h
+
 .include <bsd.port.mk>
 
 .if ${NO_SHARED_LIBS:L} == "no"
 CONFIGURE_ENV=	LIBTOOL_FLAGS="-fPIC -DPIC"
 .endif
+

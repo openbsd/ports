@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_encodings_def,v 1.1 2007/11/19 13:12:57 sthen Exp $
+--- lib/encodings.def.orig	Wed Oct 24 23:41:41 2007
++++ lib/encodings.def	Wed Oct 24 23:43:47 2007
+@@ -37,6 +37,7 @@
+ 
+ 
+ DEFENCODING(( "US-ASCII",               /* IANA */
++              "646",
+               "ASCII",                  /* IANA, JDK 1.1 */
+               "ISO646-US",              /* IANA */
+               "ISO_646.IRV:1991",       /* IANA */
