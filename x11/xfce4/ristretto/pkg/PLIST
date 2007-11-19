@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/04 11:58:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/19 13:36:07 landry Exp $
 bin/ristretto
 share/applications/
 share/applications/ristretto.desktop
@@ -25,13 +25,19 @@ share/icons/hicolor/48x48/apps/ristretto.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/ristretto.svg
+share/locale/cs/LC_MESSAGES/ristretto.mo
 share/locale/de/LC_MESSAGES/ristretto.mo
 share/locale/fi/LC_MESSAGES/ristretto.mo
 share/locale/fr/LC_MESSAGES/ristretto.mo
+share/locale/hu/LC_MESSAGES/ristretto.mo
 share/locale/nb_NO/
 share/locale/nb_NO/LC_MESSAGES/
 share/locale/nb_NO/LC_MESSAGES/ristretto.mo
 share/locale/nl/LC_MESSAGES/ristretto.mo
+share/locale/pt_BR/LC_MESSAGES/ristretto.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/ristretto.mo
 @exec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @unexec %D/bin/update-desktop-database
