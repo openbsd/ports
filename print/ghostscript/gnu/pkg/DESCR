@@ -1,27 +1,9 @@
-This is GNU Ghostscript, the GPL'ed version.
-
-Ghostscript is the well-known PostScript interpreter which is available for
-all common and most esoteric platforms and supports many different printers
-and some displays.
-
-Official ghostscript homepage, see:
-	http://www.cs.wisc.edu/~ghost/index.html
-
-This port includes useful add-ons:
-	o Support for HP DeskJet 670, 690, 850, 855, 870, 890, 1100 and 1600,
-	  see announcement on
-		 http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
-	o A Separate package with support for pdf encryption, 
-	  see description on
-	  	http://www.ozemail.com.au/~geoffk/pdfencrypt/
-		
-Thomas Merz has written a Ghostscript manual in PDF format:
-	http://www.cs.wisc.edu/~ghost/merz.html
-
-The manual is also available in German language, see:
-	http://www.muc.de/~tm/free/free.html
+Ghostscript is the well-known PostScript interpreter which is
+available for all common and most esoteric platforms and supports
+many different printers, file formats and some displays.
 
 Flavors:
        a4 - Build with support for A4 page size
+     cups - Build with the cups device and ps2raster
       gtk - Build with Gtk+ support
    no_x11 - Build without X support

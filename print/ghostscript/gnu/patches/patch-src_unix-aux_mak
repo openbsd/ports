@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_unix-aux_mak,v 1.1 2007/11/19 20:06:56 kili Exp $
+--- src/unix-aux.mak.orig	Fri Jun 29 00:08:46 2007
++++ src/unix-aux.mak	Mon Sep  3 15:27:31 2007
+@@ -77,7 +77,7 @@ $(GENHT_XE): $(GLSRC)genht.c $(AK) $(GENHT_DEPS)
+ $(GENINIT_XE): $(GLSRC)geninit.c $(AK) $(GENINIT_DEPS)
+ 	$(CCAUX) $(I_)$(GLSRCDIR)$(_I) $(O_)$(GENINIT_XE) $(GLSRC)geninit.c
+ 
+-MKROMFS_OBJS=$(MKROMFS_ZLIB_OBJS) $(GLOBJ)gscdefs.$(OBJ) $(GLOBJ)gsmisc.$(OBJ) \
++MKROMFS_OBJS=$(GLOBJ)gscdefs.$(OBJ) $(GLOBJ)gsmisc.$(OBJ) \
+  $(GLOBJ)gpmisc.$(OBJ) $(GLOBJ)gslibctx.$(OBJ) $(GLOBJ)gp_getnv.$(OBJ) \
+  $(GLOBJ)gp_unix.$(OBJ) $(GLOBJ)gp_unifs.$(OBJ) $(GLOBJ)gp_unifn.$(OBJ) \
+  $(GLOBJ)gp_stdia.$(OBJ) $(GLOBJ)gsutil.$(OBJ)

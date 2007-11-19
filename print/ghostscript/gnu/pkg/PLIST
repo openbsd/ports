@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/10/20 16:45:58 steven Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/11/19 20:06:56 kili Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 bin/bdftops
 bin/dumphint
@@ -28,6 +28,7 @@ bin/ps2pdf13
 bin/ps2pdf14
 bin/ps2pdfwr
 bin/ps2ps
+bin/ps2ps2
 bin/pv.sh
 bin/unix-lpr.sh
 bin/wftopfa
@@ -225,6 +226,8 @@ share/ghostscript/${VERSION}/Resource/CMap/Hojo-H
 share/ghostscript/${VERSION}/Resource/CMap/Hojo-RKSJ-H
 share/ghostscript/${VERSION}/Resource/CMap/Hojo-V
 share/ghostscript/${VERSION}/Resource/CMap/Identity-H
+share/ghostscript/${VERSION}/Resource/CMap/Identity-UTF16-H
+share/ghostscript/${VERSION}/Resource/CMap/Identity-UTF16-V
 share/ghostscript/${VERSION}/Resource/CMap/Identity-V
 share/ghostscript/${VERSION}/Resource/CMap/KSC-EUC-H
 share/ghostscript/${VERSION}/Resource/CMap/KSC-EUC-V
@@ -313,15 +316,20 @@ share/ghostscript/${VERSION}/Resource/ColorSpace/DefaultGray
 share/ghostscript/${VERSION}/Resource/ColorSpace/DefaultRGB
 share/ghostscript/${VERSION}/Resource/ColorSpace/TrivialCMYK
 share/ghostscript/${VERSION}/Resource/Decoding/
+share/ghostscript/${VERSION}/Resource/Decoding/FCO_Dingbats
+share/ghostscript/${VERSION}/Resource/Decoding/FCO_Symbol
+share/ghostscript/${VERSION}/Resource/Decoding/FCO_Unicode
+share/ghostscript/${VERSION}/Resource/Decoding/FCO_Wingdings
 share/ghostscript/${VERSION}/Resource/Decoding/Latin1
 share/ghostscript/${VERSION}/Resource/Decoding/StandardEncoding
 share/ghostscript/${VERSION}/Resource/Decoding/Unicode
+share/ghostscript/${VERSION}/Resource/Encoding/
+share/ghostscript/${VERSION}/Resource/Encoding/Wingdings
 share/ghostscript/${VERSION}/doc/
 share/ghostscript/${VERSION}/doc/API.htm
 share/ghostscript/${VERSION}/doc/C-style.htm
 share/ghostscript/${VERSION}/doc/Changes.htm
 share/ghostscript/${VERSION}/doc/Commprod.htm
-share/ghostscript/${VERSION}/doc/Copying.htm
 share/ghostscript/${VERSION}/doc/DLL.htm
 share/ghostscript/${VERSION}/doc/Deprecated.htm
 share/ghostscript/${VERSION}/doc/Details.htm
@@ -346,7 +354,6 @@ share/ghostscript/${VERSION}/doc/Install.htm
 share/ghostscript/${VERSION}/doc/Issues.htm
 share/ghostscript/${VERSION}/doc/Language.htm
 share/ghostscript/${VERSION}/doc/Lib.htm
-share/ghostscript/${VERSION}/doc/Maintain.htm
 share/ghostscript/${VERSION}/doc/Make.htm
 share/ghostscript/${VERSION}/doc/News.htm
 share/ghostscript/${VERSION}/doc/Projects.htm
@@ -354,7 +361,6 @@ share/ghostscript/${VERSION}/doc/Ps-style.htm
 share/ghostscript/${VERSION}/doc/Ps2epsi.htm
 share/ghostscript/${VERSION}/doc/Ps2pdf.htm
 share/ghostscript/${VERSION}/doc/Psfiles.htm
-share/ghostscript/${VERSION}/doc/Public.htm
 share/ghostscript/${VERSION}/doc/README
 share/ghostscript/${VERSION}/doc/Readme.htm
 share/ghostscript/${VERSION}/doc/Release.htm
@@ -380,11 +386,11 @@ share/ghostscript/${VERSION}/examples/tiger.eps
 share/ghostscript/${VERSION}/examples/vasarely.ps
 share/ghostscript/${VERSION}/examples/waterfal.ps
 share/ghostscript/${VERSION}/lib/
-share/ghostscript/${VERSION}/lib/FAPIcidfmap
-share/ghostscript/${VERSION}/lib/FAPIconfig
-share/ghostscript/${VERSION}/lib/FAPIfontmap
+share/ghostscript/${VERSION}/lib/FCOfontmap-PCLPS2
 share/ghostscript/${VERSION}/lib/Fontmap
 share/ghostscript/${VERSION}/lib/Fontmap.GS
+share/ghostscript/${VERSION}/lib/PDFA_def.ps
+share/ghostscript/${VERSION}/lib/PDFX_def.ps
 share/ghostscript/${VERSION}/lib/acctest.ps
 share/ghostscript/${VERSION}/lib/addxchar.ps
 share/ghostscript/${VERSION}/lib/align.ps
@@ -432,6 +438,7 @@ share/ghostscript/${VERSION}/lib/gs_agl.ps
 share/ghostscript/${VERSION}/lib/gs_btokn.ps
 share/ghostscript/${VERSION}/lib/gs_ccfnt.ps
 share/ghostscript/${VERSION}/lib/gs_ce_e.ps
+share/ghostscript/${VERSION}/lib/gs_cet.ps
 share/ghostscript/${VERSION}/lib/gs_cff.ps
 share/ghostscript/${VERSION}/lib/gs_cidcm.ps
 share/ghostscript/${VERSION}/lib/gs_ciddc.ps
@@ -522,8 +529,10 @@ share/ghostscript/${VERSION}/lib/level1.ps
 share/ghostscript/${VERSION}/lib/lines.ps
 share/ghostscript/${VERSION}/lib/markhint.ps
 share/ghostscript/${VERSION}/lib/markpath.ps
+share/ghostscript/${VERSION}/lib/mkcidfm.ps
 share/ghostscript/${VERSION}/lib/necp2x.upp
 share/ghostscript/${VERSION}/lib/necp2x6.upp
+share/ghostscript/${VERSION}/lib/opdfread.ps
 share/ghostscript/${VERSION}/lib/packfile.ps
 share/ghostscript/${VERSION}/lib/pcharstr.ps
 share/ghostscript/${VERSION}/lib/pdf2dsc.ps
@@ -539,6 +548,8 @@ share/ghostscript/${VERSION}/lib/pdfwrite.ps
 share/ghostscript/${VERSION}/lib/pf2afm.ps
 share/ghostscript/${VERSION}/lib/pfbtopfa.ps
 share/ghostscript/${VERSION}/lib/ppath.ps
+share/ghostscript/${VERSION}/lib/pphs
+share/ghostscript/${VERSION}/lib/pphs.ps
 share/ghostscript/${VERSION}/lib/prfont.ps
 share/ghostscript/${VERSION}/lib/printafm.ps
 share/ghostscript/${VERSION}/lib/ps2ai.ps
@@ -603,4 +614,5 @@ share/ghostscript/${VERSION}/lib/winmaps.ps
 share/ghostscript/${VERSION}/lib/wrfont.ps
 share/ghostscript/${VERSION}/lib/xlatmap
 share/ghostscript/${VERSION}/lib/zeroline.ps
+%%cups%%
 %%gtk%%

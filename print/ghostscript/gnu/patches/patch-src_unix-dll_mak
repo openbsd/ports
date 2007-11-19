@@ -1,33 +1,53 @@
-$OpenBSD: patch-src_unix-dll_mak,v 1.4 2006/10/19 13:12:37 kili Exp $
---- src/unix-dll.mak.orig	Mon Mar 13 17:18:19 2006
-+++ src/unix-dll.mak	Sat Sep 30 22:25:32 2006
-@@ -43,11 +43,11 @@ GSSOX=$(BINDIR)/$(SOBINRELDIR)/$(GSSOX_X
- 
- # shared library
- GS_SONAME=lib$(GS).so
+$OpenBSD: patch-src_unix-dll_mak,v 1.5 2007/11/19 20:06:56 kili Exp $
+--- src/unix-dll.mak.orig	Wed Jul 11 01:30:47 2007
++++ src/unix-dll.mak	Wed Oct 24 15:43:09 2007
+@@ -47,9 +47,9 @@ GS_SONAME_BASE=lib$(GS)
+ # GNU/Linux
+ GS_SOEXT=so
+ GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
 -GS_SONAME_MAJOR=$(GS_SONAME).$(GS_VERSION_MAJOR)
--GS_SONAME_MAJOR_MINOR= $(GS_SONAME).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR)
-+GS_SONAME_MAJOR=$(GS_SONAME).$(LIBgs_VERSION:R)
-+GS_SONAME_MAJOR_MINOR= $(GS_SONAME).$(LIBgs_VERSION)
- GS_SO=$(BINDIR)/$(GS_SONAME)
--GS_SO_MAJOR=$(GS_SO).$(GS_VERSION_MAJOR)
--GS_SO_MAJOR_MINOR=$(GS_SO_MAJOR).$(GS_VERSION_MINOR)
-+GS_SO_MAJOR=$(GS_SO).$(LIBgs_VERSION:R)
-+GS_SO_MAJOR_MINOR=$(GS_SO).$(LIBgs_VERSION)
+-GS_SONAME_MAJOR_MINOR=$(GS_SONAME).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR)
+-LDFLAGS_SO=-shared -Wl,-soname=$(GS_SONAME_MAJOR)
++GS_SONAME_MAJOR=$(GS_SONAME).$(basename $(LIBgs_VERSION))
++GS_SONAME_MAJOR_MINOR=$(GS_SONAME).$(LIBgs_VERSION)
++LDFLAGS_SO=-shared
  
- # Shared object is built by redefining GS_XE in a recursive make.
+ # MacOS X
+ #GS_SOEXT=dylib
+@@ -77,11 +77,12 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
  
-@@ -67,11 +67,11 @@ $(GSSOX_XE): $(GS_SO) $(GLSRC)dxmain.c
- 	$(GLCC) -g `gtk-config --cflags` -o $(GSSOX_XE) $(GLSRC)dxmain.c -L$(BINDIR) -l$(GS) `gtk-config --libs`
+ # Build the small Ghostscript loaders, with Gtk+ and without
  
- $(GSSOC_XE): $(GS_SO) $(GLSRC)dxmainc.c
+-$(GSSOC_XE): $(GS_SO) $(GLSRC)$(SOC_LOADER)
 -	$(GLCC) -g -o $(GSSOC_XE) $(GLSRC)dxmainc.c -L$(BINDIR) -l$(GS)
-+	$(GLCC) -g -o $(GSSOC_XE) $(GLSRC)dxmainc.c -L$(BINDIR) -l$(GS) $(XLDFLAGS) $(XLIBDIRS) -lXt -lSM -lICE -lXext -lX11 -lpng
++$(GSSOC_XE): $(GS_SO) $(GLSRC)dxmainc.c
++	$(GLCC) -g -o $(GSSOC_XE) $(GLSRC)dxmainc.c -L$(BINDIR) -l$(GS) \
++	$(SOC_LIBS)
+ 
+-$(GSSOX_XE): $(GS_SO) $(GLSRC)$(SOC_LOADER)
+-	$(GLCC) -g $(SOC_CFLAGS) -o $(GSSOX_XE) $(GLSRC)$(SOC_LOADER) \
++$(GSSOX_XE): $(GS_SO) $(GLSRC)dxmain.c
++	$(GLCC) -g $(SOC_CFLAGS) -o $(GSSOX_XE) $(GLSRC)dxmain.c \
+ 	-L$(BINDIR) -l$(GS) $(SOC_LIBS)
  
  # ------------------------- Recursive make targets ------------------------- #
+@@ -99,7 +100,7 @@ SODEFS=LDFLAGS='$(LDFLAGS) $(LDFLAGS_SO)'\
  
--SODEFS=LDFLAGS='$(LDFLAGS) $(CFLAGS_SO) -shared -Wl,-soname=$(GS_SONAME_MAJOR)'\
-+SODEFS=LDFLAGS='$(LDFLAGS) $(CFLAGS_SO) -shared'\
-  GS_XE=$(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR)\
-  STDIO_IMPLEMENTATION=c\
-  DISPLAY_DEV=$(DD)$(SOOBJRELDIR)/display.dev\
+ # Normal shared object
+ so: SODIRS
+-	$(MAKE) $(SODEFS) CFLAGS='$(CFLAGS_STANDARD) $(CFLAGS_SO) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix) $(GSSOC) $(GSSOX)
++	$(MAKE) $(SODEFS) CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix) $(GSSOC) $(GSSOX)
+ 
+ # Debug shared object
+ # Note that this is in the same directory as the normal shared
+@@ -117,10 +118,6 @@ install-so: so
+ 	$(INSTALL_PROGRAM) $(GSSOC) $(DESTDIR)$(bindir)/$(GSSOC_XENAME)
+ 	$(INSTALL_PROGRAM) $(GSSOX) $(DESTDIR)$(bindir)/$(GSSOX_XENAME)
+ 	$(INSTALL_PROGRAM) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR_MINOR)
+-	$(RM_) $(DESTDIR)$(libdir)/$(GS_SONAME)
+-	ln -s $(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME)
+-	$(RM_) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR)
+-	ln -s $(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR)
+ 
+ soinstall: install-so install-scripts install-data
+ 

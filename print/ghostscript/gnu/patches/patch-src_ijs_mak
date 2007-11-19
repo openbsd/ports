@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_ijs_mak,v 1.1 2007/11/19 20:06:56 kili Exp $
+--- src/ijs.mak.orig	Wed Jun  6 00:23:38 2007
++++ src/ijs.mak	Fri Sep 14 21:11:40 2007
+@@ -18,6 +18,8 @@
+ #		in spawning the server. currently
+ #		'unix' and 'win' are supported.
+ #	BINDIR - where to put the executible examples
++#	SHARE_IJS - 0 to compile the library, 1 to share
++#	IJS_NAME - if SHARE_IJS = 1, the name of the shared library
+ 
+ # This partial makefile compiles the IJS client library for use in
+ # Ghostscript.
+@@ -51,9 +53,19 @@ ijs.config-clean :
+ 
+ IJSDEP=$(AK)
+ 
++# Define the version of ijslib.dev that we are actually using.
++$(IJSGEN)ijslib.dev : $(TOP_MAKEFILES) $(IJSGEN)ijslib_$(SHARE_IJS).dev
++	$(CP_) $(IJSGEN)ijslib_$(SHARE_IJS).dev $(IJSGEN)ijslib.dev
++
++# Define the shared version of libpng.
++# Note that it requires libz, which must be searched *after* libpng.
++$(IJSGEN)ijslib_1.dev : $(TOP_MAKEFILES) $(IJS_MAK) $(ECHOGS_XE)
++	$(SETMOD) $(IJSGEN)ijslib_1 -lib $(IJS_NAME)
++
++# Define the non-shared version of ijslib.
+ ijslib_=$(IJSOBJ)ijs.$(OBJ) $(IJSOBJ)ijs_server.$(OBJ) \
+     $(IJSOBJ)ijs_client.$(OBJ) $(IJSOBJ)ijs_exec_$(IJSEXECTYPE).$(OBJ)
+-$(IJSGEN)ijslib.dev : $(IJS_MAK) $(ECHOGS_XE) $(ijslib_)
++$(IJSGEN)ijslib_0.dev : $(IJS_MAK) $(ECHOGS_XE) $(ijslib_)
+ 	$(SETMOD) $(IJSGEN)ijslib $(ijslib_)
+ 
+ ijs_h=$(IJSSRC)ijs.h

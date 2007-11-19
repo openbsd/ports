@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_devs_mak,v 1.1 2007/11/19 20:06:56 kili Exp $
+--- src/devs.mak.orig	Thu Jun  7 00:03:27 2007
++++ src/devs.mak	Thu Oct 25 14:25:34 2007
+@@ -659,14 +659,13 @@ $(GLOBJ)gdevlj56.$(OBJ) : $(GLSRC)gdevlj56.c $(PDEVH) 
+ 
+ ### -------------------- The ijs client ----------------- ###
+ 
+-ijs_=$(GLOBJ)gdevijs.$(OBJ) $(IJSOBJ)ijs.$(OBJ) $(IJSOBJ)ijs_client.$(OBJ) \
+- $(IJSOBJ)ijs_exec_$(IJSEXECTYPE).$(OBJ)
++ijs_=$(GLOBJ)gdevijs.$(OBJ) 
+ 
+-$(DD)ijs.dev : $(ijs_) $(GLD)page.dev $(DD)ijslib.dev
++$(DD)ijs.dev : $(ijs_) $(GLD)page.dev
+ 	$(SETPDEV) $(DD)ijs $(ijs_)
++	$(ADDMOD) $(DD)ijs -lib ijs
+ 
+-$(GLOBJ)gdevijs.$(OBJ) : $(GLSRC)gdevijs.c $(PDEVH) $(unistd__h) $(gp_h)\
+- $(ijs_h) $(ijs_client_h)
++$(GLOBJ)gdevijs.$(OBJ) : $(GLSRC)gdevijs.c $(PDEVH) $(unistd__h) $(gp_h)
+ 	$(CC_) $(I_)$(GLI_) $(II)$(IJSI_)$(_I) $(GLF_) $(GLO_)gdevijs.$(OBJ) $(C_) $(GLSRC)gdevijs.c
+ 
+ # Please see ijs.mak for the Makefile fragment which builds the IJS

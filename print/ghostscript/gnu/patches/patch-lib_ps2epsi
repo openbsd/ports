@@ -1,26 +1,25 @@
-$OpenBSD: patch-lib_ps2epsi,v 1.5 2006/10/19 13:12:37 kili Exp $
---- lib/ps2epsi.orig	Fri Jan 27 22:58:27 2006
-+++ lib/ps2epsi	Sat Sep 30 22:49:46 2006
-@@ -6,13 +6,7 @@
- GS_EXECUTABLE=gs
+$OpenBSD: patch-lib_ps2epsi,v 1.6 2007/11/19 20:06:56 kili Exp $
+--- lib/ps2epsi.orig	Thu Jul  5 21:04:29 2007
++++ lib/ps2epsi	Mon Sep  3 15:27:31 2007
+@@ -11,20 +11,7 @@ fi
+ GS_EXECUTABLE="$gs"
  
  # try to create a temporary file securely
--tmpdir=/tmp/ps2epsi.$$
--(umask 077 && mkdir $tmpdir)
--if ! test -d $tmpdir; then
--	echo "failed: could not create temporary file"
--	exit 1
+-if test -z "$TMPDIR"; then
+-	TMPDIR=/tmp
 -fi
--tmpfile=$tmpdir/ps2epsi$$
+-if which mktemp >/dev/null 2>/dev/null; then
+-	tmpfile="`mktemp $TMPDIR/ps2epsi.XXXXXX`"
+-else
+-	tmpdir=$TMPDIR/ps2epsi.$$
+-	(umask 077 && mkdir "$tmpdir")
+-	if test ! -d "$tmpdir"; then
+-		echo "failed: could not create temporary file"
+-		exit 1
+-	fi
+-	tmpfile="$tmpdir"/ps2epsi$$
+-fi
 +tmpfile=`mktemp -t ps2epsiXXXXXXXXXX` || exit 1
+ trap "rm -rf \"$tmpfile\"" 0 1 2 3 7 13 15
  
  export outfile
- 
-@@ -64,7 +58,6 @@ awk 'F==1	{
- 
- $GS_EXECUTABLE -q -dNOPAUSE -dSAFER -dDELAYSAFER -r72 -sDEVICE=bit -sOutputFile=/dev/null $tmpfile ps2epsi.ps $tmpfile <"${infile}" 1>&2
- rm -f $tmpfile
--rm -rf $tmpdir
- 
- (
- cat << BEGINEPS
