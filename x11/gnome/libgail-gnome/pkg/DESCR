@@ -1,0 +1,3 @@
+The libgail-gnome package contains the GNOME Accessibility
+Implementation library additions which implement ATK interfaces for
+libbonoboui and libgnomeui widgets.
