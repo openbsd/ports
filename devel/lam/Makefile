@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2007/11/19 01:40:48 okan Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.9
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=  lamf77mpi	0.0	# .0.0
 SHARED_LIBS +=  pmpi		0.0	# .0.0
 SHARED_LIBS +=  lam		0.0	# .0.0
