@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
---- conf.c.orig	Thu Feb 24 02:47:58 2005
-+++ conf.c	Tue Nov  1 21:50:32 2005
-@@ -129,9 +129,10 @@ conf_t *conf_load( int argc, char *argv[
+$OpenBSD: patch-conf_c,v 1.4 2007/11/19 11:44:33 martynas Exp $
+--- conf.c.orig	Mon Aug 20 16:27:13 2007
++++ conf.c	Mon Nov 19 13:39:01 2007
+@@ -129,9 +129,10 @@ conf_t *conf_load( int argc, char *argv[] )
  	
  	if( conf->configdir[strlen(conf->configdir)-1] != '/' )
  	{
@@ -14,7 +14,7 @@ $OpenBSD: patch-conf_c,v 1.3 2006/04/11 15:11:33 naddy Exp $
  		g_free( conf->configdir );
  		conf->configdir = s;
  	}
-@@ -226,9 +227,9 @@ static int conf_loadini( conf_t *conf, c
+@@ -226,9 +227,9 @@ static int conf_loadini( conf_t *conf, char *file )
  					return( 0 );
  				}
  				

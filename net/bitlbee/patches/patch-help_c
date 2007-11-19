@@ -1,6 +1,6 @@
-$OpenBSD: patch-help_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
---- help.c.orig	Sun Apr  2 04:53:39 2006
-+++ help.c	Thu Apr  6 23:39:32 2006
+$OpenBSD: patch-help_c,v 1.2 2007/11/19 11:44:33 martynas Exp $
+--- help.c.orig	Mon Aug 20 16:27:13 2007
++++ help.c	Mon Nov 19 13:39:01 2007
 @@ -83,8 +83,7 @@ help_t *help_init( help_t **help )
  		}
  		h->string = g_new ( char, i );
@@ -11,7 +11,7 @@ $OpenBSD: patch-help_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
  		h->fd = (*help)->fd;
  		h->offset.file_offset = lseek( h->fd, 0, SEEK_CUR ) - buflen + i + 1;
  		h->length = t - s - i - 1;
-@@ -138,7 +137,7 @@ char *help_get( help_t **help, char *str
+@@ -138,7 +137,7 @@ char *help_get( help_t **help, char *string )
  		}
  		else
  		{

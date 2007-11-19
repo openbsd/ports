@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_oscar_conn_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
---- protocols/oscar/conn.c.orig	Mon Nov 21 03:27:39 2005
-+++ protocols/oscar/conn.c	Sun Jan 29 03:23:00 2006
-@@ -446,7 +446,7 @@ aim_conn_t *aim_newconn(aim_session_t *s
+$OpenBSD: patch-protocols_oscar_conn_c,v 1.2 2007/11/19 11:44:33 martynas Exp $
+--- protocols/oscar/conn.c.orig	Mon Aug 20 16:27:15 2007
++++ protocols/oscar/conn.c	Mon Nov 19 13:39:01 2007
+@@ -446,7 +446,7 @@ aim_conn_t *aim_newconn(aim_session_t *sess, int type,
  	}
  
  	host = (char *)g_malloc(i+1);

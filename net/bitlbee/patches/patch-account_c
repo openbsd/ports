@@ -1,7 +1,7 @@
-$OpenBSD: patch-account_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
---- account.c.orig	Sat Sep 17 22:42:26 2005
-+++ account.c	Tue Nov  1 21:50:11 2005
-@@ -134,9 +134,9 @@ void account_on( irc_t *irc, account_t *
+$OpenBSD: patch-account_c,v 1.2 2007/11/19 11:44:33 martynas Exp $
+--- account.c.orig	Mon Aug 20 16:27:13 2007
++++ account.c	Mon Nov 19 13:39:00 2007
+@@ -134,9 +134,9 @@ void account_on( irc_t *irc, account_t *a )
  	u = g_new0 ( struct aim_user, 1 );
  	u->irc = irc;
  	u->protocol = a->protocol;

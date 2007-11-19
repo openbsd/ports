@@ -1,7 +1,7 @@
-$OpenBSD: patch-user_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
---- user.c.orig	Thu Nov 18 21:34:31 2004
-+++ user.c	Tue Nov  1 21:51:33 2005
-@@ -132,7 +132,7 @@ user_t *user_find( irc_t *irc, char *nic
+$OpenBSD: patch-user_c,v 1.2 2007/11/19 11:44:33 martynas Exp $
+--- user.c.orig	Mon Aug 20 16:27:13 2007
++++ user.c	Mon Nov 19 13:39:02 2007
+@@ -132,7 +132,7 @@ user_t *user_find( irc_t *irc, char *nick )
  {
  	char key[512] = "";
  	

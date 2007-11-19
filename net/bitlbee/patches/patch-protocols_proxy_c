@@ -1,6 +1,6 @@
-$OpenBSD: patch-protocols_proxy_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
---- protocols/proxy.c.orig	Fri Dec  9 22:59:55 2005
-+++ protocols/proxy.c	Sun Jan 29 03:37:58 2006
+$OpenBSD: patch-protocols_proxy_c,v 1.2 2007/11/19 11:44:33 martynas Exp $
+--- protocols/proxy.c.orig	Mon Aug 20 16:27:14 2007
++++ protocols/proxy.c	Mon Nov 19 13:39:01 2007
 @@ -25,6 +25,7 @@
   , 2nd provide an easy way to add socks support */
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-protocols_proxy_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -82,6 +83,7 @@ static struct sockaddr_in *gaim_gethostb
+@@ -82,6 +83,7 @@ static struct sockaddr_in *gaim_gethostbyname(const ch
  			return NULL;
  		}
  		memset(&sin, 0, sizeof(struct sockaddr_in));
@@ -17,7 +17,7 @@ $OpenBSD: patch-protocols_proxy_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
  		memcpy(&sin.sin_addr.s_addr, hp->h_addr, hp->h_length);
  		sin.sin_family = hp->h_addrtype;
  	} else
-@@ -406,6 +408,7 @@ static void s5_sendconnect(gpointer data
+@@ -406,6 +408,7 @@ static void s5_sendconnect(gpointer data, gint source)
  	buf[2] = 0x00;		/* reserved */
  	buf[3] = 0x03;		/* address type -- host name */
  	buf[4] = hlen;
@@ -25,7 +25,7 @@ $OpenBSD: patch-protocols_proxy_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
  	memcpy(buf + 5, phb->host, hlen);
  	buf[5 + strlen(phb->host)] = phb->port >> 8;
  	buf[5 + strlen(phb->host) + 1] = phb->port & 0xff;
-@@ -474,8 +477,10 @@ static void s5_canread(gpointer data, gi
+@@ -474,8 +477,10 @@ static void s5_canread(gpointer data, gint source, Gai
  		unsigned int i = strlen(proxyuser), j = strlen(proxypass);
  		buf[0] = 0x01;	/* version 1 */
  		buf[1] = i;

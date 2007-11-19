@@ -1,6 +1,6 @@
-$OpenBSD: patch-util_c,v 1.2 2007/01/14 21:53:01 simon Exp $
---- util.c.orig	Sat Jun 24 17:01:00 2006
-+++ util.c	Sat Dec 16 15:19:38 2006
+$OpenBSD: patch-util_c,v 1.3 2007/11/19 11:44:33 martynas Exp $
+--- util.c.orig	Mon Aug 20 16:27:32 2007
++++ util.c	Mon Nov 19 13:39:02 2007
 @@ -43,14 +43,15 @@
  void strip_linefeed(gchar *text)
  {
@@ -52,7 +52,7 @@ $OpenBSD: patch-util_c,v 1.2 2007/01/14 21:53:01 simon Exp $
  	g_free( out );
  }
  
-@@ -334,12 +335,12 @@ void info_string_append(GString *str, ch
+@@ -334,12 +335,12 @@ void info_string_append(GString *str, char *newline, c
  }
  
  /* Decode%20a%20file%20name						*/
@@ -97,7 +97,7 @@ $OpenBSD: patch-util_c,v 1.2 2007/01/14 21:53:01 simon Exp $
  			j += 2;
  		}
  		else
-@@ -420,7 +421,7 @@ signed int do_iconv( char *from_cs, char
+@@ -420,7 +421,7 @@ signed int do_iconv( char *from_cs, char *to_cs, char 
  	iconv_t cd;
  	size_t res;
  	size_t inbytesleft, outbytesleft;

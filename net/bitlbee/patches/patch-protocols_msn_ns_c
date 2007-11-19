@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_msn_ns_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
---- protocols/msn/ns.c.orig	Fri Jun  3 11:15:35 2005
-+++ protocols/msn/ns.c	Tue Nov  1 21:26:47 2005
-@@ -216,10 +216,9 @@ static int msn_ns_command( gpointer data
+$OpenBSD: patch-protocols_msn_ns_c,v 1.3 2007/11/19 11:44:33 martynas Exp $
+--- protocols/msn/ns.c.orig	Mon Aug 20 16:27:14 2007
++++ protocols/msn/ns.c	Mon Nov 19 13:39:01 2007
+@@ -216,10 +216,9 @@ static int msn_ns_command( gpointer data, char **cmd, 
  		}
  		else if( num_parts == 7 && strcmp( cmd[2], "OK" ) == 0 )
  		{
@@ -14,7 +14,7 @@ $OpenBSD: patch-protocols_msn_ns_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
  			
  			set_login_progress( gc, 1, "Authenticated, getting buddy list" );
  			
-@@ -291,7 +290,7 @@ static int msn_ns_command( gpointer data
+@@ -291,7 +290,7 @@ static int msn_ns_command( gpointer data, char **cmd, 
  			return( 0 );
  		}
  		
@@ -23,7 +23,7 @@ $OpenBSD: patch-protocols_msn_ns_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
  		list = atoi( cmd[3] );
  		
  		if( list & 1 ) /* FL */
-@@ -352,7 +351,7 @@ static int msn_ns_command( gpointer data
+@@ -352,7 +351,7 @@ static int msn_ns_command( gpointer data, char **cmd, 
  		
  		g_snprintf( buf, sizeof( buf ), "QRY %d %s %d\r\n", ++md->trId, QRY_NAME, 32 );
  		for( i = 0; i < 16; i ++ )
@@ -32,7 +32,7 @@ $OpenBSD: patch-protocols_msn_ns_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
  		
  		return( msn_write( gc, buf, strlen( buf ) ) );
  	}
-@@ -373,7 +372,7 @@ static int msn_ns_command( gpointer data
+@@ -373,7 +372,7 @@ static int msn_ns_command( gpointer data, char **cmd, 
  			return( 0 );
  		}
  		
@@ -41,7 +41,7 @@ $OpenBSD: patch-protocols_msn_ns_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
  		serv_buddy_rename( gc, cmd[3], cmd[4] );
  		
  		st = msn_away_state_by_code( cmd[2] );
-@@ -401,7 +400,7 @@ static int msn_ns_command( gpointer data
+@@ -401,7 +400,7 @@ static int msn_ns_command( gpointer data, char **cmd, 
  			return( 0 );
  		}
  		
@@ -50,7 +50,7 @@ $OpenBSD: patch-protocols_msn_ns_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
  		serv_buddy_rename( gc, cmd[2], cmd[3] );
  		
  		st = msn_away_state_by_code( cmd[1] );
-@@ -457,7 +456,7 @@ static int msn_ns_command( gpointer data
+@@ -457,7 +456,7 @@ static int msn_ns_command( gpointer data, char **cmd, 
  		{
  			GSList *l;
  			
@@ -59,7 +59,7 @@ $OpenBSD: patch-protocols_msn_ns_c,v 1.2 2006/04/11 15:11:33 naddy Exp $
  			
  			if( strchr( cmd[4], '@' ) == NULL )
  			{
-@@ -511,14 +510,13 @@ static int msn_ns_command( gpointer data
+@@ -511,14 +510,13 @@ static int msn_ns_command( gpointer data, char **cmd, 
  		
  		if( g_strcasecmp( cmd[3], gc->username ) == 0 )
  		{

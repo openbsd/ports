@@ -1,6 +1,6 @@
-$OpenBSD: patch-commands_c,v 1.4 2007/01/14 21:53:01 simon Exp $
---- commands.c.orig	Sat Jun 24 17:00:43 2006
-+++ commands.c	Fri Dec 15 21:20:07 2006
+$OpenBSD: patch-commands_c,v 1.5 2007/11/19 11:44:33 martynas Exp $
+--- commands.c.orig	Mon Aug 20 16:27:13 2007
++++ commands.c	Mon Nov 19 13:39:01 2007
 @@ -63,8 +63,8 @@ int cmd_help( irc_t *irc, char **cmd )
  	memset( param, 0, sizeof(param) );
  	for ( i = 1; (cmd[i] != NULL && ( strlen(param) < (sizeof(param)-1) ) ); i++ ) {
@@ -12,7 +12,7 @@ $OpenBSD: patch-commands_c,v 1.4 2007/01/14 21:53:01 simon Exp $
  	}
  
  	s = help_get( &(global.help), param );
-@@ -118,10 +118,10 @@ int cmd_register( irc_t *irc, char **cmd
+@@ -118,10 +118,10 @@ int cmd_register( irc_t *irc, char **cmd )
  		return( 0 );
  	}
  	

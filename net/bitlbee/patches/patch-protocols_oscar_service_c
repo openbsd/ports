@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_oscar_service_c,v 1.2 2007/01/14 21:53:01 simon Exp $
---- protocols/oscar/service.c.orig	Sat Jun 24 17:00:44 2006
-+++ protocols/oscar/service.c	Fri Dec 15 21:20:08 2006
-@@ -937,7 +937,7 @@ int general_modfirst(aim_session_t *sess
+$OpenBSD: patch-protocols_oscar_service_c,v 1.3 2007/11/19 11:44:33 martynas Exp $
+--- protocols/oscar/service.c.orig	Mon Aug 20 16:27:15 2007
++++ protocols/oscar/service.c	Mon Nov 19 13:39:01 2007
+@@ -937,7 +937,7 @@ int general_modfirst(aim_session_t *sess, aim_module_t
  	mod->toolid = 0x0110;
  	mod->toolversion = 0x0629;
  	mod->flags = 0;

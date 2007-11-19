@@ -1,6 +1,6 @@
-$OpenBSD: patch-protocols_jabber_jabber_c,v 1.4 2007/01/14 21:53:01 simon Exp $
---- protocols/jabber/jabber.c.orig	Sat Jun 24 17:00:44 2006
-+++ protocols/jabber/jabber.c	Fri Dec 15 21:20:07 2006
+$OpenBSD: patch-protocols_jabber_jabber_c,v 1.5 2007/11/19 11:44:33 martynas Exp $
+--- protocols/jabber/jabber.c.orig	Mon Aug 20 16:27:14 2007
++++ protocols/jabber/jabber.c	Mon Nov 19 13:39:01 2007
 @@ -285,7 +285,7 @@ static char *gjab_getsid(gjconn gjc)
  
  static char *gjab_getid(gjconn gjc)
@@ -25,7 +25,7 @@ $OpenBSD: patch-protocols_jabber_jabber_c,v 1.4 2007/01/14 21:53:01 simon Exp $
  		hash = shahash(hash);
  		xmlnode_insert_cdata(z, hash, 40);
  	} else {
-@@ -1214,8 +1215,7 @@ static void jabber_handlebuddy(gjconn gj
+@@ -1214,8 +1215,7 @@ static void jabber_handlebuddy(gjconn gjc, xmlnode x)
  					serv_got_update(GJ_GC(gjc), buddyname, 1, 0, signon, idle, uc, 0);
  				}
  			} else if(name != NULL && strcmp(b->show, name)) {
@@ -35,7 +35,7 @@ $OpenBSD: patch-protocols_jabber_jabber_c,v 1.4 2007/01/14 21:53:01 simon Exp $
  				serv_buddy_rename(GJ_GC(gjc), buddyname, b->show);
  			}
  		}
-@@ -1355,7 +1355,7 @@ static void jabber_handlelast(gjconn gjc
+@@ -1355,7 +1355,7 @@ static void jabber_handlelast(gjconn gjc, xmlnode iqno
  	xmlnode_put_attrib(x, "to", from);
  	xmlnode_put_attrib(x, "id", id);
  	querytag = xmlnode_get_tag(x, "query");
@@ -44,7 +44,7 @@ $OpenBSD: patch-protocols_jabber_jabber_c,v 1.4 2007/01/14 21:53:01 simon Exp $
  	xmlnode_put_attrib(querytag, "seconds", idle_time);
  
  	gjab_send(gjc, x);
-@@ -2134,7 +2134,7 @@ static xmlnode insert_tag_to_parent_tag(
+@@ -2134,7 +2134,7 @@ static xmlnode insert_tag_to_parent_tag(xmlnode start,
  			/*
  			 * Descend?
  			 */

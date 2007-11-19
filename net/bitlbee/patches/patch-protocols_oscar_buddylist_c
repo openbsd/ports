@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_oscar_buddylist_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
---- protocols/oscar/buddylist.c.orig	Thu Mar 24 00:38:46 2005
-+++ protocols/oscar/buddylist.c	Tue Nov  1 22:03:24 2005
-@@ -85,7 +85,7 @@ int buddylist_modfirst(aim_session_t *se
+$OpenBSD: patch-protocols_oscar_buddylist_c,v 1.2 2007/11/19 11:44:33 martynas Exp $
+--- protocols/oscar/buddylist.c.orig	Mon Aug 20 16:27:15 2007
++++ protocols/oscar/buddylist.c	Mon Nov 19 13:39:01 2007
+@@ -85,7 +85,7 @@ int buddylist_modfirst(aim_session_t *sess, aim_module
  	mod->toolid = 0x0110;
  	mod->toolversion = 0x0629;
  	mod->flags = 0;

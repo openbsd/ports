@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_msn_sb_c,v 1.3 2007/01/14 21:53:01 simon Exp $
---- protocols/msn/sb.c.orig	Sat Jun 24 17:00:44 2006
-+++ protocols/msn/sb.c	Fri Dec 15 21:20:07 2006
-@@ -126,10 +126,11 @@ int msn_sb_sendmessage( struct msn_switc
+$OpenBSD: patch-protocols_msn_sb_c,v 1.4 2007/11/19 11:44:33 martynas Exp $
+--- protocols/msn/sb.c.orig	Mon Aug 20 16:27:14 2007
++++ protocols/msn/sb.c	Mon Nov 19 13:39:01 2007
+@@ -126,10 +126,11 @@ int msn_sb_sendmessage( struct msn_switchboard *sb, ch
  		
  		if( strcmp( text, TYPING_NOTIFICATION_MESSAGE ) != 0 )
  		{
@@ -15,7 +15,7 @@ $OpenBSD: patch-protocols_msn_sb_c,v 1.3 2007/01/14 21:53:01 simon Exp $
  			for( j = 0; text[j]; j ++ )
  			{
  				if( text[j] == '\n' )
-@@ -632,7 +633,7 @@ static int msn_sb_message( gpointer data
+@@ -632,7 +633,7 @@ static int msn_sb_message( gpointer data, char *msg, i
  				}
  				else
  				{

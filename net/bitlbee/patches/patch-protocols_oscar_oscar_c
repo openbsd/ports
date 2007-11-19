@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_oscar_oscar_c,v 1.4 2007/01/14 21:53:01 simon Exp $
---- protocols/oscar/oscar.c.orig	Sat Jun 24 17:00:44 2006
-+++ protocols/oscar/oscar.c	Fri Dec 15 21:20:08 2006
-@@ -146,7 +146,7 @@ static char *extract_name(const char *na
+$OpenBSD: patch-protocols_oscar_oscar_c,v 1.5 2007/11/19 11:44:33 martynas Exp $
+--- protocols/oscar/oscar.c.orig	Mon Aug 20 16:27:15 2007
++++ protocols/oscar/oscar.c	Mon Nov 19 13:39:01 2007
+@@ -146,7 +146,7 @@ static char *extract_name(const char *name) {
  			tmp[j++] = x[i];
  			continue;
  		}
@@ -10,7 +10,7 @@ $OpenBSD: patch-protocols_oscar_oscar_c,v 1.4 2007/01/14 21:53:01 simon Exp $
  		i++;
  		tmp[j++] = (char)strtol(hex, NULL, 16);
  	}
-@@ -291,7 +291,7 @@ static void oscar_callback(gpointer data
+@@ -291,7 +291,7 @@ static void oscar_callback(gpointer data, gint source,
  				c->inpa = 0;
  				c->fd = -1;
  				aim_conn_kill(odata->sess, &conn);
@@ -19,7 +19,7 @@ $OpenBSD: patch-protocols_oscar_oscar_c,v 1.4 2007/01/14 21:53:01 simon Exp $
  				do_error_dialog(sess->aux_data, buf, _("Chat Error!"));
  			} else if (conn->type == AIM_CONN_TYPE_CHATNAV) {
  				if (odata->cnpa > 0)
-@@ -1362,7 +1362,7 @@ static int gaim_parse_msgerr(aim_session
+@@ -1362,7 +1362,7 @@ static int gaim_parse_msgerr(aim_session_t *sess, aim_
  	destn = va_arg(ap, char *);
  	va_end(ap);
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-protocols_oscar_oscar_c,v 1.4 2007/01/14 21:53:01 simon Exp $
  			(reason < msgerrreasonlen) ? msgerrreason[reason] : _("Reason unknown"));
  	do_error_dialog(sess->aux_data, buf, _("Gaim - Error"));
  
-@@ -1380,7 +1380,7 @@ static int gaim_parse_locerr(aim_session
+@@ -1380,7 +1380,7 @@ static int gaim_parse_locerr(aim_session_t *sess, aim_
  	destn = va_arg(ap, char *);
  	va_end(ap);
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-protocols_oscar_oscar_c,v 1.4 2007/01/14 21:53:01 simon Exp $
  			(reason < msgerrreasonlen) ? msgerrreason[reason] : _("Reason unknown"));
  	do_error_dialog(sess->aux_data, buf, _("Gaim - Error"));
  
-@@ -2383,7 +2383,7 @@ static char *oscar_encoding_to_utf8(char
+@@ -2384,7 +2384,7 @@ static char *oscar_encoding_to_utf8(char *encoding, ch
  	 * that was specified.  So we assume it's UTF-8 and hope for the best.
  	 */
  	if (*utf8 == 0) {

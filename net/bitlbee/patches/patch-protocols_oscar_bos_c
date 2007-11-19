@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_oscar_bos_c,v 1.1 2006/04/11 15:11:33 naddy Exp $
---- protocols/oscar/bos.c.orig	Thu Mar 24 00:38:46 2005
-+++ protocols/oscar/bos.c	Tue Nov  1 22:03:38 2005
-@@ -152,7 +152,7 @@ int bos_modfirst(aim_session_t *sess, ai
+$OpenBSD: patch-protocols_oscar_bos_c,v 1.2 2007/11/19 11:44:33 martynas Exp $
+--- protocols/oscar/bos.c.orig	Mon Aug 20 16:27:15 2007
++++ protocols/oscar/bos.c	Mon Nov 19 13:39:01 2007
+@@ -152,7 +152,7 @@ int bos_modfirst(aim_session_t *sess, aim_module_t *mo
  	mod->toolid = 0x0110;
  	mod->toolversion = 0x0629;
  	mod->flags = 0;
