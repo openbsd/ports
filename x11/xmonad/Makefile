@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/11/18 20:13:31 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/19 19:59:40 kili Exp $
 
 COMMENT=		tiling window manager
 
 V=			0.4
 DISTNAME=		xmonad-$V
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 HOMEPAGE=		http://www.xmonad.org/
 
@@ -17,10 +18,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://hackage.haskell.org/packages/archive/xmonad/$V/
 
-WANTLIB=		X11 Xext Xinerama c gmp m
+WANTLIB=		X11 Xext Xinerama c m
 
 MODULES=		lang/ghc
-LIB_DEPENDS=		::x11/hs-x11-extras
+MODGHC_RUNTIME=		No
+BUILD_DEPENDS=		:hs-x11-extras->=0.4:x11/hs-x11-extras
+LIB_DEPENDS=		gmp::devel/gmp
 
 SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX}
 SETUP_CONF_ENV=		HOME=${PORTHOME} PATH=${PATH}
