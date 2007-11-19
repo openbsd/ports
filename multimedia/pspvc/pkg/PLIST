@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/19 21:10:40 ckuethe Exp $
+bin/pspvc
+@comment share/doc/pspvc/
+@comment share/doc/pspvc/AUTHORS
+@comment share/doc/pspvc/COPYING
+@comment share/doc/pspvc/ChangeLog
+@comment share/doc/pspvc/INSTALL
+@comment share/doc/pspvc/NEWS
+@comment share/doc/pspvc/README
+@comment share/doc/pspvc/TODO
+share/pixmaps/
+share/pixmaps/psp-console.png
+share/pixmaps/pspvc_09.png
+share/pixmaps/pspvc_logo.png
+share/pixmaps/pspvc_thm.png
+@comment share/pspvc/
+@comment share/pspvc/.keep

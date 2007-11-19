@@ -1,0 +1,40 @@
+--- src/callbacks.c.orig	Tue Mar 13 05:02:00 2007
++++ src/callbacks.c	Wed Nov  7 15:06:34 2007
+@@ -379,9 +379,9 @@ void launchffmpeg_video(struct convparam *param,gint p
+ 			
+ 
+ //	needed stuff for H.264'
+-//  -acodec aac -vcodec h264 width*height<=76800 width%16=0? height%16=0? -ar 48000 -coder 1 -r 30000/1001  -f psp 
++//  -acodec libfaac -vcodec libx264 width*height<=76800 width%16=0? height%16=0? -ar 48000 -coder 1 -r 30000/1001  -f psp
+ 			
+-			args[argc++]=g_strdup(PACKAGE_DATA_DIR"/pspvc/bin/ffmpeg");
++			args[argc++]=g_strdup("ffmpeg");
+ 			if(nb_threads>1)
+ 			{
+ 				args[argc++]=g_strdup("-threads");
+@@ -391,14 +391,14 @@ void launchffmpeg_video(struct convparam *param,gint p
+  			args[argc++]=g_strdup("-i");
+  			args[argc++]=g_strdup_printf("%s",cparam->filename);
+ 			args[argc++]=g_strdup("-acodec");
+-			args[argc++]=g_strdup("aac");
++			args[argc++]=g_strdup("libfaac");
+ 			args[argc++]=g_strdup("-ab");
+ 			args[argc++]=g_strdup_printf("%dkb",cparam->ab);
+ 			args[argc++]=g_strdup("-vol");
+ 			args[argc++]=g_strdup_printf("%d",cparam->volume);
+ 			args[argc++]=g_strdup("-vcodec");
+ 			if(cparam->codec==0)
+-				args[argc++]=g_strdup("h264");
++				args[argc++]=g_strdup("libx264");
+ 			else
+ 				args[argc++]=g_strdup("mpeg4");
+ 			args[argc++]=g_strdup("-b");
+@@ -549,7 +549,7 @@ void launchffmpeg_thumbnail(struct convparam *param,gi
+ //				command=g_strdup_printf("ffmpeg -y -i \"%s\" -title \"%s\" -f singlejpeg -ss 5 -vframes 1 -s %s -padtop %d -padbottom %d -an M4V%05d.THM 2>&1"
+ 				 //,shm_param->filename,shm_param->title,thmsize,cf,cf,shm_param->pspnum);
+ 			argc=0;
+-			args[argc++]=g_strdup(PACKAGE_DATA_DIR"/pspvc/bin/ffmpeg");
++			args[argc++]=g_strdup("ffmpeg");
+ 			printf("[launchffmpeg] program=%s\n",args[0]);
+ 			args[argc++]=g_strdup("-y");
+  			args[argc++]=g_strdup("-i");

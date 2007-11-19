@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Mar 12 14:54:12 2007
++++ Makefile.in	Tue Nov  6 20:11:11 2007
+@@ -217,7 +217,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = po src pixmaps data
+-pspvcdocdir = ${prefix}/doc/pspvc
++pspvcdocdir = ${prefix}/share/doc/pspvc
+ pspvcdoc_DATA = \
+ 	README\
+ 	COPYING\

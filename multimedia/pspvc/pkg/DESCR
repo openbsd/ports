@@ -1,0 +1,3 @@
+pspvc is a FFMPEG front-end to convert video files for the PSP.
+It allow you to queue severals conversions with different
+parameters for each.
