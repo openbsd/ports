@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/20 21:34:19 fkr Exp $
+@newgroup _openvpnusers:596
+@mode 2550
+@owner _openvpn
+@group auth
+libexec/openvpn_bsdauth
+@mode
+@owner
+@group
+@man man/cat8/openvpn_bsdauth.0
