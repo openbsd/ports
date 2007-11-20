@@ -1,0 +1,21 @@
+CLN is a C++ library providing the following features:
+
+ * Rich set of number classes:
+   Integer (unlimited precision), rational, short float, single 
+   float, double float, long float (unlimited precision), complex,
+   modular integer, univariate polynomial.
+ * Elementary, logical, transcendental functions.
+ * C++ as implementation language brings
+       o efficiency,
+       o type safety,
+       o algebraic syntax.
+ * Memory efficiency:
+       o Small integers and short floats are immediate, not heap
+         allocated.
+       o Automatic, non-interruptive garbage collection.
+ * Speed efficiency:
+       o Assembly language kernel for some CPUs,
+       o Karatsuba and Schönhage-Strassen multiplication.
+ * Interoperability:
+       o Garbage collection with no burden on the main application,
+       o hooks for memory allocation and exceptions.

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/11/20 12:09:52 steven Exp $
+@lib lib/libcln.so.${LIBcln_VERSION}

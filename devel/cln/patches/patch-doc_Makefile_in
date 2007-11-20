@@ -1,0 +1,17 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2007/11/20 12:09:52 steven Exp $
+--- doc/Makefile.in.orig	Tue Nov 20 11:54:26 2007
++++ doc/Makefile.in	Tue Nov 20 11:55:01 2007
+@@ -11,10 +11,11 @@ local_prefix = /usr/local
+ exec_prefix = @exec_prefix@
+ datarootdir = @datarootdir@
+ datadir = @datadir@
++docdir = @docdir@
+ infodir = @infodir@
+ mandir = @mandir@
+-htmldir = $(datadir)/html
+-dvidir = $(datadir)/dvi
++htmldir = $(docdir)
++dvidir = $(docdir)
+ DESTDIR =
+ 
+ # Programs used by "make":
