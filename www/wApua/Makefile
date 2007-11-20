@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/20 20:29:41 jasper Exp $
 
 COMMENT=		browser for wap/wml
 
 DISTNAME=		wApua-0.06
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 
-HOMEPAGE=		http://fsinfo.cs.uni-sb.de/~abe/wApua/
+HOMEPAGE=		http://fsinfo.noone.org/~abe/wApua/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
