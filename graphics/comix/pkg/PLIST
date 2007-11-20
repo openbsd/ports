@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/05 07:25:31 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/20 18:53:21 mgrimm Exp $
 bin/comix
+@man man/man1/comix.1
 share/applications/
 share/applications/comix.desktop
 share/icons/
@@ -23,9 +24,6 @@ share/locale/pt_BR/LC_MESSAGES/comix.mo
 share/locale/sv/LC_MESSAGES/comix.mo
 share/locale/zh_CN/LC_MESSAGES/comix.mo
 share/locale/zh_TW/LC_MESSAGES/comix.mo
-share/man/
-share/man/man1/
-@man share/man/man1/comix.1.gz
 share/pixmaps/
 share/pixmaps/comix/
 share/pixmaps/comix.png

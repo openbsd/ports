@@ -1,0 +1,12 @@
+$OpenBSD: patch-install_py,v 1.1 2007/11/20 18:53:21 mgrimm Exp $
+--- install.py.orig	Mon Nov 19 19:36:30 2007
++++ install.py	Mon Nov 19 19:38:08 2007
+@@ -156,7 +156,7 @@ if args == ["install"]:
+     check_dependencies()
+     print "Installing Comix in", install_dir, "...\n"
+     install("comix", "bin/comix")
+-    install("comix.1.gz", "share/man/man1/comix.1.gz")
++    install("comix.1", "man/man1/comix.1")
+     install("comix.desktop", "share/applications/comix.desktop")
+     install("images/logo/comix.png", "share/pixmaps/comix.png")
+     install("images/logo/comix.png", "share/icons/hicolor/48x48/apps/comix.png")

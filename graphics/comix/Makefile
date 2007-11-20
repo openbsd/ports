@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/20 18:53:21 mgrimm Exp $
 
 COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-3.6.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -24,6 +24,9 @@ RUN_DEPENDS=	::graphics/py-Imaging \
 NO_REGRESS=	Yes
 
 PYTHON=		${LOCALBASE}/bin/python${MODPY_VERSION}
+
+post-extract:
+		${GUNZIP_CMD} ${WRKSRC}/comix.1.gz
 
 do-build:
 		# defined as empty to override do-build target from python module
