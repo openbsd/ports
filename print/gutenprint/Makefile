@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/01 10:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/20 15:48:41 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -9,7 +9,7 @@ V=			5.0.1
 DISTNAME=		gutenprint-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-foomatic=	foomatic-db-${DISTNAME}
-PKGNAME-cups=		gutenprint-cups-${V}
+PKGNAME-cups=		gutenprint-cups-${V}p0
 PKGNAME-gimp=		gutenprint-gimp-${V}
 CATEGORIES=		print
 
@@ -81,7 +81,8 @@ LIB_DEPENDS-cups=	cups.>=3,cupsimage.>=2::print/cups
 
 RUN_DEPENDS-main=	::print/ghostscript/gnu
 RUN_DEPENDS-foomatic=	::${BUILD_PKGPATH}
-RUN_DEPENDS-cups=	::${BUILD_PKGPATH}
+RUN_DEPENDS-cups=	::${BUILD_PKGPATH} \
+			:ghostscript-*-cups:print/ghostscript/gnu,cups
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
