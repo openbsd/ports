@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/11/20 19:28:20 simon Exp $
 
 COMMENT=        load various configuration file formats
 
 MODULES=	cpan
-DISTNAME=	Config-Any-0.07
+DISTNAME=	Config-Any-0.08
 CATEGORIES=     devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-CONFIGURE_STYLE=modbuild
-
-RUN_DEPENDS=	::devel/p5-version
+RUN_DEPENDS=	::devel/p5-version \
+		::devel/p5-Module-Pluggable
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # All of these would be needed to parse all these configuration
 # formats.
