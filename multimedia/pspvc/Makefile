@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/19 21:10:40 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/20 19:12:12 ckuethe Exp $
 
 COMMENT=	Video converter for the Playstation Portable
 
 V=		0.3
 DISTNAME=	pspvc-${V}
+PKGNAME=	${DISTNAME}p0
 DISTFILES=	pspvc-install-${V}.tar.gz
 CATEGORIES=	multimedia
 
