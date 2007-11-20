@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2007/11/20 21:24:58 simon Exp $
 
 COMMENT=	read MPEG1-Layer3 tags
 
-DISTNAME=	MP3-Info-1.22
+DISTNAME=	MP3-Info-1.23
 CATEGORIES=	audio
 
 MODULES=	cpan
