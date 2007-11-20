@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2007/11/20 01:46:42 sthen Exp $
 
 COMMENT=	perfect hash functions, to help write parsers
 
@@ -24,4 +24,6 @@ CONFIGURE_STYLE=	gnu
 # and it also insists upon installing under $(prefix)/doc...
 FAKE_FLAGS=docdir='$$(prefix)/share/doc/gperf' mandir='$$(prefix)/man'
 
+# N.B. gperf is a build dependency for libiconv; take care if
+# gettext support is added to gperf.
 .include <bsd.port.mk>
