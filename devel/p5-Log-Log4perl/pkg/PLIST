@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/11/30 21:45:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/11/20 19:11:24 simon Exp $
 ${P5SITE}/Log/
 ${P5SITE}/Log/Log4perl/
 ${P5SITE}/Log/Log4perl.pm
@@ -43,12 +43,15 @@ ${P5SITE}/Log/Log4perl/JavaMap/TestBuffer.pm
 ${P5SITE}/Log/Log4perl/Layout/
 ${P5SITE}/Log/Log4perl/Layout.pm
 ${P5SITE}/Log/Log4perl/Layout/NoopLayout.pm
+${P5SITE}/Log/Log4perl/Layout/PatternLayout/
 ${P5SITE}/Log/Log4perl/Layout/PatternLayout.pm
+${P5SITE}/Log/Log4perl/Layout/PatternLayout/Multiline.pm
 ${P5SITE}/Log/Log4perl/Layout/SimpleLayout.pm
 ${P5SITE}/Log/Log4perl/Level.pm
 ${P5SITE}/Log/Log4perl/Logger.pm
 ${P5SITE}/Log/Log4perl/MDC.pm
 ${P5SITE}/Log/Log4perl/NDC.pm
+${P5SITE}/Log/Log4perl/Resurrector.pm
 ${P5SITE}/Log/Log4perl/Util.pm
 @man man/man3p/Log::Log4perl.3p
 @man man/man3p/Log::Log4perl::Appender.3p
@@ -88,9 +91,11 @@ ${P5SITE}/Log/Log4perl/Util.pm
 @man man/man3p/Log::Log4perl::Layout.3p
 @man man/man3p/Log::Log4perl::Layout::NoopLayout.3p
 @man man/man3p/Log::Log4perl::Layout::PatternLayout.3p
+@man man/man3p/Log::Log4perl::Layout::PatternLayout::Multiline.3p
 @man man/man3p/Log::Log4perl::Layout::SimpleLayout.3p
 @man man/man3p/Log::Log4perl::Level.3p
 @man man/man3p/Log::Log4perl::Logger.3p
 @man man/man3p/Log::Log4perl::MDC.3p
 @man man/man3p/Log::Log4perl::NDC.3p
+@man man/man3p/Log::Log4perl::Resurrector.3p
 @man man/man3p/Log::Log4perl::Util.3p
