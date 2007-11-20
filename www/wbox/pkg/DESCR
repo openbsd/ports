@@ -1,0 +1,12 @@
+wbox aims to help you having fun while testing HTTP related stuff. You
+can use it to perform many tasks, including the following.
+  * Benchmarking how much time it takes to generate content for your
+    web application.
+  * Web server and web application stressing.
+  * Testing virtual domains configuration without the need to alter
+    your local resolver.
+  * Check if your redirects are working correctly emitting the right
+    HTTP code.
+  * Test if the HTTP compression is working and if it is actually
+    serving pages faster.
+  * Use it as a configuration-less HTTP server to share files!      
