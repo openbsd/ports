@@ -1,22 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/11/09 13:35:38 pyr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/11/20 21:24:28 okan Exp $
 @man man/man5/smartd.conf.5
 @man man/man8/smartctl.8
 @man man/man8/smartd.8
 sbin/smartctl
 sbin/smartd
-share/doc/smartmontools-5.37/
-share/doc/smartmontools-5.37/AUTHORS
-share/doc/smartmontools-5.37/CHANGELOG
-share/doc/smartmontools-5.37/COPYING
-share/doc/smartmontools-5.37/INSTALL
-share/doc/smartmontools-5.37/NEWS
-share/doc/smartmontools-5.37/README
-share/doc/smartmontools-5.37/TODO
-share/doc/smartmontools-5.37/WARNINGS
-share/doc/smartmontools-5.37/examplescripts/
-share/doc/smartmontools-5.37/examplescripts/Example1
-share/doc/smartmontools-5.37/examplescripts/Example2
-share/doc/smartmontools-5.37/examplescripts/Example3
-share/doc/smartmontools-5.37/examplescripts/Example4
-share/doc/smartmontools-5.37/examplescripts/README
-share/doc/smartmontools-5.37/smartd.conf
+share/doc/smartmontools/
+share/doc/smartmontools/examplescripts/
+share/doc/smartmontools/examplescripts/Example1
+share/doc/smartmontools/examplescripts/Example2
+share/doc/smartmontools/examplescripts/Example3
+share/doc/smartmontools/examplescripts/Example4
+share/doc/smartmontools/examplescripts/README
+share/doc/smartmontools/smartd.conf
+@sample ${SYSCONFDIR}/smartd.conf

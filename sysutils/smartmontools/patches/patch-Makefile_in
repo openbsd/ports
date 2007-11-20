@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2007/11/09 13:35:38 pyr Exp $
---- Makefile.in.orig	Wed Dec 20 21:38:50 2006
-+++ Makefile.in	Thu Oct 25 14:44:43 2007
+$OpenBSD: patch-Makefile_in,v 1.3 2007/11/20 21:24:28 okan Exp $
+--- Makefile.in.orig	Wed Dec 20 15:38:50 2006
++++ Makefile.in	Tue Nov 20 15:44:27 2007
 @@ -172,7 +172,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
  docsDATA_INSTALL = $(INSTALL_DATA)
  initdDATA_INSTALL = $(INSTALL_DATA)
@@ -10,7 +10,24 @@ $OpenBSD: patch-Makefile_in,v 1.2 2007/11/09 13:35:38 pyr Exp $
  ETAGS = etags
  CTAGS = ctags
  DIST_SUBDIRS = $(SUBDIRS)
-@@ -1122,9 +1122,9 @@ info: info-recursive
+@@ -346,15 +346,7 @@ EXTRA_smartctl_SOURCES = os_linux.cpp os_linux.h os_fr
+ @OS_SOLARIS_FALSE@                  smartd.8
+ 
+ docsdir = $(docdir)
+-docs_DATA = AUTHORS     \
+-            CHANGELOG   \
+-            COPYING     \
+-            INSTALL     \
+-            NEWS        \
+-            README      \
+-            TODO        \
+-            WARNINGS    \
+-            smartd.conf
++docs_DATA = smartd.conf
+ 
+ sysconf_DATA = smartd.conf$(smartd_suffix)
+ EXTRA_DIST = smartmontools.spec                    \
+@@ -1122,9 +1114,9 @@ info: info-recursive
  
  info-am:
  
