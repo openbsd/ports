@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2007/11/20 20:05:35 simon Exp $
 
 COMMENT= 	read and modify Apache .htpasswd files
 
-DISTNAME=	Authen-Htpasswd-0.15
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Authen-Htpasswd-0.16
 CATEGORIES=	security
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -19,10 +18,9 @@ MODULES=	cpan
 RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-IO-LockedFile
 
-REGRESS_DEPENDS=::security/p5-Crypt-PasswdMD5
+REGRESS_DEPENDS=::security/p5-Crypt-PasswdMD5 \
+		::security/p5-Digest-SHA1
 
 MAKE_ENV=	TEST_POD=Yes
-
-CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>
