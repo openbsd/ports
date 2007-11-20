@@ -1,0 +1,7 @@
+This module provides a simple object for logging to files under the
+Log::Dispatch::* system, and automatically rotating them according
+to different constraints. This is basically a Log::Dispatch::File
+wrapper with additions. To that end the arguments:
+        name, min_level, filename and mode
+behave the same as Log::Dispatch::File. So see its man page (perldoc
+Log::Dispatch::File)
