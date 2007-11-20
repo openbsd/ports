@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2007/11/13 18:34:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.188 2007/11/20 21:10:47 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -26,6 +26,7 @@
      SUBDIR += corkscrew
      SUBDIR += crack
      SUBDIR += crank
+     SUBDIR += cryptcat
      SUBDIR += cryptokit
      SUBDIR += cyrus-sasl2
      SUBDIR += cyrus-sasl2,db4
