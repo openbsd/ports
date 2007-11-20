@@ -1,0 +1,191 @@
+$OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
+--- Mowitz/MwFilesel.c.orig	Thu Jan 16 21:31:13 2003
++++ Mowitz/MwFilesel.c	Tue Nov 20 21:54:19 2007
+@@ -80,7 +80,7 @@ getdirent(char ***ldirp, int *ndirp, char ***lfilep, i
+ {
+ 	DIR *dird;
+ 	struct dirent *dire;
+-	char fn[1024];
++	char fn[PATH_MAX];
+ 	struct stat buf;
+ 	char **ldir = NULL, **lfile = NULL;
+ 	int ndir = 0, mdir = 0, nfile = 0, mfile = 0;
+@@ -90,7 +90,10 @@ getdirent(char ***ldirp, int *ndirp, char ***lfilep, i
+ 		return 1;
+ 	}
+ 	while ((dire = readdir(dird))) {
+-		sprintf(fn, "%s/%s", path, dire->d_name);
++		if (snprintf(fn, PATH_MAX, "%s/%s", path, dire->d_name) >= PATH_MAX) {
++			fprintf(stderr, "Path too long %s/%s\n", path, dire->d_name);
++			continue;
++		}
+ 		if ((stat(fn, &buf))) {
+ 			fprintf(stderr, "Can't stat %s\n", fn);
+ 			continue;
+@@ -169,13 +172,17 @@ static void make_dirmenu(char *);
+ static void fsel_scan(void)
+ {
+ 	String string;
+-	char dir[1024];
++	char dir[PATH_MAX];
+ 	char pattern[1024];
+ 	char *pst;
+ 
+ 	if (files != NULL)
+ 		freedirent(dirs, ndirs, files, nfiles);
+-	
++
++	if (strnlen(MwLabelGet(fsel_dirbutton), PATH_MAX)>=PATH_MAX) {
++		fprintf(stderr, "Path too long %s\n", MwLabelGet(fsel_dirbutton));
++		return;
++	}
+ 	strcpy(dir, MwLabelGet(fsel_dirbutton));
+ 	string = MwLabelGet(fsel_formatbutton);
+ 	pst = strchr(string, '(');
+@@ -183,15 +190,20 @@ static void fsel_scan(void)
+ 		/* apparently no pattern here; use foolproof default */
+ 		strcpy(pattern, "*");
+ 	} else {
++		if (strnlen(pst+1, 1024) >= 1024) {
++			fprintf(stderr, "Pattern too long %s\n", pattern);
++			return;
++		}
+ 		strcpy(pattern, pst+1);
+ 		if ((pst = strchr(pattern, ')')))
+ 			*pst = '\0';
+ 	}
+ 	if (getdirent(&dirs, &ndirs, &files, &nfiles, dir, pattern)) {
+ 		fprintf(stderr, "Grmbl. getdirent() failed\n");
++	} else {
++		make_files(files, nfiles);
++		make_dirs(dirs, ndirs);
+ 	}
+-	make_files(files, nfiles);
+-	make_dirs(dirs, ndirs);
+ 	make_dirmenu(dir);
+ }
+ 
+@@ -248,22 +260,24 @@ static void file_select(Widget w, XtPointer client_dat
+ 
+ static void dir_select(Widget w, XtPointer client_data, XtPointer call_data)
+ {
+-	char path[1024];
+-	char newpath[1024];
++	char path[PATH_MAX];
++	char newpath[PATH_MAX];
+ 
+ 	XawListReturnStruct *list_struct = (XawListReturnStruct *)call_data;
+ 	String string = list_struct->string;
+ 
+-	sprintf(path, "%s/%s", MwLabelGet(fsel_dirbutton), string);
+-
+-	if (!realpath(path, newpath))
+-		fprintf(stderr, "Couldn't realpath %s\n", path);
+-
+-	MwLabelSet(fsel_dirbutton, newpath);
+-
+-	XawListUnhighlight(fsel_filelist);
+-	XawListUnhighlight(fsel_dirlist);
+-	fsel_scan();
++	if(snprintf(path, PATH_MAX, "%s/%s", MwLabelGet(fsel_dirbutton), string) >= PATH_MAX) {
++		fprintf(stderr, "Path too long %s/%s\n", MwLabelGet(fsel_dirbutton), string);
++	} else {
++		if (!realpath(path, newpath)) {
++			fprintf(stderr, "Couldn't realpath %s\n", path);
++		} else {
++			MwLabelSet(fsel_dirbutton, newpath);
++			XawListUnhighlight(fsel_filelist);
++			XawListUnhighlight(fsel_dirlist);
++			fsel_scan();
++		}
++	}
+ }
+ 
+ static void make_menu(char **menu_entry_names, Widget menu)
+@@ -299,17 +313,14 @@ static struct {
+ 
+ static void change_dir(Widget w, XtPointer client_data, XtPointer call_data)
+ {
+-	char path[1024];
+-	char newpath[1024];
++	char newpath[PATH_MAX];
+ 
+-	strcpy(path, (char *)client_data);
+-
+-	if (!realpath(path, newpath))
+-		fprintf(stderr, "Couldn't realpath %s\n", path);
+-
+-	MwLabelSet(fsel_dirbutton, newpath);
+-
+-	fsel_scan();
++	if (!realpath((char *)client_data, newpath)) {
++		fprintf(stderr, "Couldn't realpath %s\n", (char *)client_data);
++	} else {
++		MwLabelSet(fsel_dirbutton, newpath);
++		fsel_scan();
++	}
+ }
+ 
+ static void make_dirmenu(char *dir)
+@@ -357,16 +368,33 @@ static int status;
+ 
+ static void fsel_done(Widget w, XtPointer client_data, XtPointer call_data)
+ {
+-	char path[1024], newpath[1024];
++	char path[PATH_MAX], newpath[PATH_MAX];
+ 	struct stat buf;
+ 	String string;
++	int failed = 0;
+ 	XtVaGetValues(fsel_filetext,
+ 		XtNstring, &string, (char *)0);
+-	if (string[0] == '/') strcpy(path, string);
+-	else sprintf(path, "%s/%s", MwLabelGet(fsel_dirbutton), string);
+-	realpath(path, newpath);
+-	if (!stat(newpath, &buf) &&
+-		(S_IFDIR & buf.st_mode)) {
++
++	if (string[0] == '/') {
++		if (strlen(string) >= PATH_MAX) {
++			fprintf(stderr, "Filename too long %s\n", string);
++			failed = 1;
++		} else {
++			strcpy(path, string);
++		}
++	} else {
++		if (snprintf(path, PATH_MAX, "%s/%s", MwLabelGet(fsel_dirbutton), string) >= PATH_MAX) {
++			fprintf(stderr, "Path too long %s/%s\n", MwLabelGet(fsel_dirbutton), string);
++			failed = 1;
++		}
++	}
++	if(!failed && !realpath(path, newpath)) {
++		newpath[0] = '\0';
++		fprintf(stderr, "Couldn't realpath %s\n", path);
++		failed = 1;
++	}
++	if (failed ||
++	    (!stat(newpath, &buf) && (S_IFDIR & buf.st_mode))) {
+ 		MwLabelSet(fsel_dirbutton, newpath);
+ 		XtVaSetValues(fsel_filetext,
+ 			XtNstring, "", (char *)0);
+@@ -690,7 +718,7 @@ int MwFileselInput(Widget pw, char *path, char *name, 
+ 	String string;
+ 	XtAppContext app_context = XtWidgetToApplicationContext(pw);
+ 	int i;
+-	char newpath[1024];
++	char newpath[PATH_MAX];
+ 
+ 	if (!realpath(path, newpath))
+ 		getcwd(newpath, sizeof newpath);
+@@ -744,5 +772,12 @@ int MwFileselInput(Widget pw, char *path, char *name, 
+ 	strcpy(path, MwLabelGet(fsel_dirbutton));
+ 	strcpy(fmt, MwLabelGet(fsel_formatbutton));
+ 	return status;
++}
++
++size_t
++strnlen (const char *string, size_t maxlen)
++{
++	const char *end = memchr (string, '\0', maxlen);
++	return end ? (size_t) (end - string) : maxlen;
+ }
+ 

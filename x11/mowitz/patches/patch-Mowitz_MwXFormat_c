@@ -1,0 +1,12 @@
+$OpenBSD: patch-Mowitz_MwXFormat_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
+--- Mowitz/MwXFormat.c.orig	Fri Nov 16 19:55:40 2007
++++ Mowitz/MwXFormat.c	Fri Nov 16 19:56:02 2007
+@@ -490,7 +490,7 @@ static XFontStruct *load_cached_font(char *result, cha
+ 		if (!strcmp(loaded_fonts[i].name, result))
+ 			return loaded_fonts[i].fs;
+ 	}
+-	loaded_fonts = MwRealloc(loaded_fonts, (i+1)*sizeof(*loaded_fonts));
++	loaded_fonts = MwRealloc(loaded_fonts, (i+2)*sizeof(*loaded_fonts));
+ 	loaded_fonts[i].name = MwStrdup(result);
+ 	fs = XLoadQueryFont(dpy, result);
+ 	if (fs == NULL) {

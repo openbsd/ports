@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/08/30 13:04:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/20 21:05:30 jasper Exp $
 
 COMMENT=		widgets library
 
 DISTNAME=		Mowitz-0.3.0
-PKGNAME=		${DISTNAME:L}p0
+PKGNAME=		${DISTNAME:L}p1
 SHARED_LIBS +=	Mowitz               3.0      # .3.0
 CATEGORIES=		x11 devel
 
