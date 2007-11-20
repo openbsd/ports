@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2007/10/30 10:13:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2007/11/20 19:23:25 sturm Exp $
 
 FULLPKGNAME-main=	php4-extensions-${V}p1
 COMMENT-main=	informational package about PHP4 extensions
@@ -153,6 +153,7 @@ CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 LIB_DEPENDS-imap=	c-client.>=5::mail/imap-uw,-c-client
 WANTLIB-imap=		${WANTLIB} des gssapi crypto krb5 ssl
+FULLPKGNAME-imap=	php4-imap-$Vp2
 .endif
 
 # ldap
@@ -312,8 +313,6 @@ FULLPKGNAME${i}?=	php4${i}-${V}p1
 RUN_DEPENDS${i}=	:php4-core-${V}:www/php4/core
 MODULE_NAME${i}=	${i:S/-//g}
 .endfor
-
-FULLPKGNAME-imap=	php4-imap-$Vp0
 
 MESSAGE=		${PKGDIR}/MESSAGE
 SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE V
