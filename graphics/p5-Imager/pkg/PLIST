@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/09/26 20:30:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/11/20 19:18:00 simon Exp $
 ${P5ARCH}/
 ${P5ARCH}/Imager/
 ${P5ARCH}/Imager.pm
@@ -19,6 +19,7 @@ ${P5ARCH}/Imager/ExtUtils.pm
 ${P5ARCH}/Imager/File/
 ${P5ARCH}/Imager/File/CUR.pm
 ${P5ARCH}/Imager/File/ICO.pm
+${P5ARCH}/Imager/File/SGI.pm
 ${P5ARCH}/Imager/Files.pod
 @comment ${P5ARCH}/Imager/Fill.pm
 ${P5ARCH}/Imager/Filter/
@@ -39,6 +40,7 @@ ${P5ARCH}/Imager/Font/Wrap.pm
 ${P5ARCH}/Imager/Handy.pod
 ${P5ARCH}/Imager/ImageTypes.pod
 ${P5ARCH}/Imager/Inline.pod
+${P5ARCH}/Imager/LargeSamples.pod
 @comment ${P5ARCH}/Imager/Matrix2d.pm
 ${P5ARCH}/Imager/Regops.pm
 ${P5ARCH}/Imager/Test.pm
@@ -82,6 +84,9 @@ ${P5ARCH}/auto/Imager/File/
 ${P5ARCH}/auto/Imager/File/ICO/
 ${P5ARCH}/auto/Imager/File/ICO/ICO.bs
 ${P5ARCH}/auto/Imager/File/ICO/ICO.so
+${P5ARCH}/auto/Imager/File/SGI/
+${P5ARCH}/auto/Imager/File/SGI/SGI.bs
+${P5ARCH}/auto/Imager/File/SGI/SGI.so
 ${P5ARCH}/auto/Imager/Filter/
 ${P5ARCH}/auto/Imager/Filter/DynTest/
 ${P5ARCH}/auto/Imager/Filter/DynTest/DynTest.bs
@@ -108,6 +113,7 @@ ${P5ARCH}/auto/Imager/Imager.so
 @man man/man3p/Imager::Expr::Assem.3p
 @man man/man3p/Imager::ExtUtils.3p
 @man man/man3p/Imager::File::ICO.3p
+@man man/man3p/Imager::File::SGI.3p
 @man man/man3p/Imager::Files.3p
 @man man/man3p/Imager::Fill.3p
 @man man/man3p/Imager::Filter::Flines.3p
@@ -124,6 +130,7 @@ ${P5ARCH}/auto/Imager/Imager.so
 @man man/man3p/Imager::Handy.3p
 @man man/man3p/Imager::ImageTypes.3p
 @man man/man3p/Imager::Inline.3p
+@man man/man3p/Imager::LargeSamples.3p
 @man man/man3p/Imager::Matrix2d.3p
 @man man/man3p/Imager::Regops.3p
 @man man/man3p/Imager::Test.3p
