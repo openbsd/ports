@@ -1,0 +1,11 @@
+$OpenBSD: patch-mail_em-utils_h,v 1.1 2007/11/21 16:18:15 jasper Exp $
+--- mail/em-utils.h.orig	Wed Oct 31 19:12:05 2007
++++ mail/em-utils.h	Wed Oct 31 19:12:18 2007
+@@ -23,6 +23,7 @@
+ #ifndef __EM_UTILS_H__
+ #define __EM_UTILS_H__
+ 
++#include <sys/types.h>
+ #include <glib.h>
+ 
+ #ifdef __cplusplus

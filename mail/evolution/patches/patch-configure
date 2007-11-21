@@ -1,15 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2007/06/27 08:27:40 ajacoutot Exp $
---- configure.orig	Mon Apr  9 07:12:54 2007
-+++ configure	Tue Jun 26 11:00:14 2007
-@@ -24979,6 +24979,7 @@ int main (int argc, char **argv)
- {
-         iconv_t cd;
-         cd = iconv_open ("UTF-8", "ISO-8859-1");
-+	exit (0);
- }
- 
- _ACEOF
-@@ -27802,9 +27803,6 @@ LIBS=$ac_check_lib_save_LIBS
+$OpenBSD: patch-configure,v 1.4 2007/11/21 16:18:15 jasper Exp $
+--- configure.orig	Mon Oct 15 08:31:10 2007
++++ configure	Wed Oct 31 18:37:20 2007
+@@ -27347,9 +27347,6 @@ LIBS=$ac_check_lib_save_LIBS
  fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_query" >&5
  echo "${ECHO_T}$ac_cv_lib_resolv_res_query" >&6; }
@@ -17,14 +9,14 @@ $OpenBSD: patch-configure,v 1.3 2007/06/27 08:27:40 ajacoutot Exp $
 -  LDAP_LIBS="-lresolv"
 -fi
  
- 		{ echo "$as_me:$LINENO: checking for bind in -lsocket" >&5
+                 { echo "$as_me:$LINENO: checking for bind in -lsocket" >&5
  echo $ECHO_N "checking for bind in -lsocket... $ECHO_C" >&6; }
-@@ -30819,7 +30817,7 @@ if test "x${with_krb5}" != "xno"; then
+@@ -29382,7 +29379,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
 -	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
 +	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
+ 	sunlibs="-lkrb5 -lgss"
  	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
  echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
- if test "${ac_cv_lib_kerberos5+set}" = set; then

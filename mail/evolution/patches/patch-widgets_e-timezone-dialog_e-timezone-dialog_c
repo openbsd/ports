@@ -1,30 +1,37 @@
-$OpenBSD: patch-widgets_e-timezone-dialog_e-timezone-dialog_c,v 1.2 2007/06/27 08:27:40 ajacoutot Exp $
---- widgets/e-timezone-dialog/e-timezone-dialog.c.orig	Mon Apr  9 07:10:21 2007
-+++ widgets/e-timezone-dialog/e-timezone-dialog.c	Tue Jun 26 10:59:53 2007
-@@ -80,8 +80,6 @@ struct _ETimezoneDialogPrivate {
+$OpenBSD: patch-widgets_e-timezone-dialog_e-timezone-dialog_c,v 1.3 2007/11/21 16:18:15 jasper Exp $
+--- widgets/e-timezone-dialog/e-timezone-dialog.c.orig	Fri Oct 12 09:03:43 2007
++++ widgets/e-timezone-dialog/e-timezone-dialog.c	Wed Oct 31 23:03:38 2007
+@@ -82,7 +82,9 @@ struct _ETimezoneDialogPrivate {
  
  #ifndef G_OS_WIN32 /* Declared properly in time.h already */
  extern char *tzname[2];
--extern long timezone;
--extern int daylight;
++#ifndef __BSD_VISIBLE
+ extern long timezone;
++#endif
+ extern int daylight;
  #endif
  
- static void e_timezone_dialog_class_init	(ETimezoneDialogClass *class);
-@@ -314,6 +312,8 @@ get_local_offset ()
- 	t_gmt = mktime (&gmt);
- 	t_local = mktime (&local);
- 	diff = t_local - t_gmt;
-+	if (local.tm_isdst == 1)
-+		diff += 3600;
- 
- 	return diff;
- }
-@@ -324,7 +324,7 @@ get_local_timezone()
+@@ -326,9 +328,22 @@ static const icaltimezone*
+ get_local_timezone()
+ {
  	icaltimezone *zone;
++	long offset;
++
++#ifdef __BSD_VISIBLE
++	time_t tt;
++	struct tm tm;
++#endif /* __BSD_VISIBLE__ */
  	
  	tzset();
 -	zone =  icaltimezone_get_builtin_timezone_from_offset (-timezone, tzname[0]);
-+	zone =  icaltimezone_get_builtin_timezone_from_offset (-get_local_offset(), tzname[0]);
++
++#ifdef __BSD_VISIBLE
++	localtime_r (&tt, &tm);
++	offset = tm.tm_gmtoff;
++#else
++	offset = -timezone;
++#endif
++	zone =  icaltimezone_get_builtin_timezone_from_offset (offset, tzname[0]);
  
  	return zone;
  }

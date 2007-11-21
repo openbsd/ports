@@ -2,9 +2,9 @@ Evolution, by Ximian Inc., integrates email, calendaring, meeting
 scheduling, contact management and online task lists into one
 application.
 
-Evolution supports a number of communication standards including
-SMTP, SMTP/Authorized, POP, IMAP, Kerberos and others. Peer-to-peer
-calendaring is also supported with products that support iCalendar
-such as Microsoft Exchange or Lotus Notes.  Evolution can also
-import mailboxes created with Netscape, Outlook Express, UNIX mbox,
-Eudora and other email managers.
+Evolution supports a number of communication standards including SMTP,
+SMTP/Authorized, POP, IMAP, Kerberos and others. Peer-to-peer
+calendaring is also supported with products that support iCalendar such
+as Microsoft Exchange or Lotus Notes.  Evolution can also import
+mailboxes created with Netscape, Outlook Express, UNIX mbox, Eudora and
+other email managers.
