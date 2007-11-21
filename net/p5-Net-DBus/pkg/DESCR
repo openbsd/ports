@@ -1,0 +1,3 @@
+Net::DBus provides a Perl API for the DBus message system. The DBus Perl
+interface is currently operating against the 0.32 development version of
+DBus, but should work with later versions too.

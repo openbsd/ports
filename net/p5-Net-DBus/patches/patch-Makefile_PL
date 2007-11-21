@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2007/11/21 21:12:18 landry Exp $
+--- Makefile.PL.orig	Thu Jul 19 05:02:29 2007
++++ Makefile.PL	Tue Nov  6 12:54:40 2007
+@@ -47,26 +47,4 @@ sub libscan
+     ($path =~ /\~$/ || $path =~ m,/CVS/,) ? undef : $path;
+   }
+ 
+-sub test {
+-    my $self = shift;
+-    my $mm_test = $self->SUPER::test(@_);
+-    
+-    return '
+-TO_TEST_PM = $(TO_INST_PM:lib/%.pm=blib/test/%.pm.tstamp)
+-
+-test :: test-syntax
+-
+-test-syntax: pure_all $(TO_TEST_PM)
+-
+-blib/test/%.pm.tstamp: lib/%.pm
+-	@echo -n "Checking $<: "
+-	#@perl -I blib/lib -c $<
+-	@podchecker $<
+-	@mkdir -p `dirname $@`
+-	@touch $@
+-
+-' . $mm_test;
+-  }
+-
+-
+ __END__

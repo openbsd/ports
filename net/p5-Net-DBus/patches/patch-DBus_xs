@@ -1,0 +1,51 @@
+$OpenBSD: patch-DBus_xs,v 1.1.1.1 2007/11/21 21:12:18 landry Exp $
+--- DBus.xs.orig	Wed Nov 21 20:41:03 2007
++++ DBus.xs	Wed Nov 21 20:43:03 2007
+@@ -528,10 +528,10 @@ _open(address)
+ 	dbus_error_init(&error);
+         DEBUG_MSG("Open connection shared %s\n", address);
+ 	con = dbus_connection_open(address, &error);
+-        dbus_connection_ref(con);
+ 	if (!con) {
+ 	  _croak_error (&error);
+ 	}
++        dbus_connection_ref(con);
+ 	RETVAL = con;
+     OUTPUT:
+ 	RETVAL
+@@ -546,10 +546,10 @@ _open_private(address)
+ 	dbus_error_init(&error);
+         DEBUG_MSG("Open connection private %s\n", address);
+ 	con = dbus_connection_open_private(address, &error);
+-        dbus_connection_ref(con);
+ 	if (!con) {
+ 	  _croak_error (&error);
+ 	}
++        dbus_connection_ref(con);
+ 	RETVAL = con;
+     OUTPUT:
+ 	RETVAL
+@@ -909,10 +909,10 @@ _open(type)
+ 	dbus_error_init(&error);
+         DEBUG_MSG("Open bus shared %d\n", type);
+ 	con = dbus_bus_get(type, &error);
+-        dbus_connection_ref(con);
+ 	if (!con) {
+ 	  _croak_error(&error);
+ 	}
++        dbus_connection_ref(con);
+ 	RETVAL = con;
+     OUTPUT:
+ 	RETVAL
+@@ -927,10 +927,10 @@ _open_private(type)
+ 	dbus_error_init(&error);
+         DEBUG_MSG("Open bus private %d\n", type);
+ 	con = dbus_bus_get_private(type, &error);
+-        dbus_connection_ref(con);
+ 	if (!con) {
+ 	  _croak_error(&error);
+ 	}
++        dbus_connection_ref(con);
+ 	RETVAL = con;
+     OUTPUT:
+ 	RETVAL
