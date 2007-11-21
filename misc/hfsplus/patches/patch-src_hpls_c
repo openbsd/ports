@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_hpls_c,v 1.2 2003/01/05 01:59:34 brad Exp $
---- src/hpls.c.orig	Sun Mar 17 12:20:39 2002
-+++ src/hpls.c	Fri Jan  3 14:27:54 2003
+$OpenBSD: patch-src_hpls_c,v 1.3 2007/11/21 14:30:36 ajacoutot Exp $
+--- src/hpls.c.orig	Sun Mar 17 18:20:39 2002
++++ src/hpls.c	Wed Nov 21 13:55:02 2007
 @@ -417,7 +417,7 @@ void showmisc(record *ent, int flags)
      {
  	size = ent->record.u.file.data_fork.total_size + 
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_hpls_c,v 1.2 2003/01/05 01:59:34 brad Exp $
      }
  }
  
-@@ -484,7 +484,7 @@ void show_long(int sz, queueent *ents, c
+@@ -484,7 +484,7 @@ void show_long(int sz, queueent *ents, char **strs,
  	else if (ent->record.type == HFSP_FILE)
  	{
  	    hfsp_cat_file* f = &ent->record.u.file;

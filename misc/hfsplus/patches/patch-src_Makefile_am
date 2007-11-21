@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_am,v 1.3 2007/11/21 14:30:36 ajacoutot Exp $
+--- src/Makefile.am.orig	Wed Nov 21 13:58:32 2007
++++ src/Makefile.am	Wed Nov 21 13:59:01 2007
+@@ -8,8 +8,6 @@
+ 
+ INCLUDES = -I../libhfsp/src
+ 
+-CFLAGS = -O2 -Wall
+-
+ bin_PROGRAMS = hpmount hpumount hpls hpcd hpcopy hppwd hpfsck hprm hpmkdir
+ 
+ hpmount_SOURCES = hpmount.c hpcache.c hfsputil.c glob.c dstring.c dlist.c

@@ -1,8 +1,8 @@
-$OpenBSD: patch-libhfsp_src_swab_h,v 1.2 2003/01/05 01:59:34 brad Exp $
---- libhfsp/src/swab.h.orig	Tue Mar  5 14:50:29 2002
-+++ libhfsp/src/swab.h	Fri Jan  3 14:27:53 2003
+$OpenBSD: patch-libhfsp_src_swab_h,v 1.3 2007/11/21 14:30:36 ajacoutot Exp $
+--- libhfsp/src/swab.h.orig	Tue Mar  5 20:50:29 2002
++++ libhfsp/src/swab.h	Wed Nov 21 13:55:02 2007
 @@ -24,8 +24,13 @@
-  * $Id: patch-libhfsp_src_swab_h,v 1.2 2003/01/05 01:59:34 brad Exp $
+  * $Id: patch-libhfsp_src_swab_h,v 1.3 2007/11/21 14:30:36 ajacoutot Exp $
   */
  
 +#if defined(__OpenBSD__)
