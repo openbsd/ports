@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/21 18:48:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/21 23:36:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -124,7 +124,8 @@ pre-configure:
 		perl -pi -e 's,/bin/env python,${MODPY_BIN},g' {} \;
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/* ${PREFIX}/lib/ocf/resource.d/heartbeat
+	${INSTALL_SCRIPT} ${FILESDIR}/{Telephony,apache13,openvpn} \
+		${PREFIX}/lib/ocf/resource.d/heartbeat
 	${INSTALL_DATA} ${WRKSRC}/crm/cib-example-1.xml \
 		${PREFIX}/share/examples/heartbeat/cib.xml
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
