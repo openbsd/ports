@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/20 21:08:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/21 06:24:02 jasper Exp $
 
 COMMENT=		netcat enhanced with twofish encryption
 
 V=			1.2.1
 DISTNAME=		cryptcat-unix-$V
-PKGNAME=		cryptcat-$V
+PKGNAME=		cryptcat-$Vp0
 CATEGORIES=		security
 
 HOMEPAGE=		http://cryptcat.sourceforge.net
@@ -16,8 +16,8 @@ MAINTAINER=		Laurent Fanis <laurent@humppa.nl>
 # Added Twofish encryption is under Cryptix General Licence
 PERMIT_PACKAGE_CDROM=	No clear Licence
 PERMIT_PACKAGE_FTP=	No clear Licence
-PERMIT_DISTFILES_CDROM= No clear liscence
-PERMIT_DISTFILES_FTP=	No clear liscence
+PERMIT_DISTFILES_CDROM= No clear Licence
+PERMIT_DISTFILES_FTP=	No clear Licence
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cryptcat/}
 
