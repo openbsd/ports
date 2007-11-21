@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/04/21 09:27:54 espie Exp $
-@conflict p5-Catalyst-Runtime-<5.7005
+@comment $OpenBSD: PLIST,v 1.4 2007/11/21 21:10:53 simon Exp $
 ${P5SITE}/Catalyst/
 ${P5SITE}/Catalyst/Manual/
-${P5SITE}/Catalyst/Manual.pm
 ${P5SITE}/Catalyst/Manual/About.pod
 ${P5SITE}/Catalyst/Manual/Actions.pod
 ${P5SITE}/Catalyst/Manual/Cookbook.pod
@@ -22,7 +20,8 @@ ${P5SITE}/Catalyst/Manual/Tutorial/CatalystBasics.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/Debugging.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/Intro.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/Testing.pod
-@man man/man3p/Catalyst::Manual.3p
+${P5SITE}/Catalyst/Manual/WritingPlugins.pod
+${P5SITE}/Catalyst/ManualPlaceholder.pm
 @man man/man3p/Catalyst::Manual::About.3p
 @man man/man3p/Catalyst::Manual::Actions.3p
 @man man/man3p/Catalyst::Manual::Cookbook.3p
@@ -41,3 +40,5 @@ ${P5SITE}/Catalyst/Manual/Tutorial/Testing.pod
 @man man/man3p/Catalyst::Manual::Tutorial::Debugging.3p
 @man man/man3p/Catalyst::Manual::Tutorial::Intro.3p
 @man man/man3p/Catalyst::Manual::Tutorial::Testing.3p
+@man man/man3p/Catalyst::Manual::WritingPlugins.3p
+@man man/man3p/Catalyst::ManualPlaceholder.3p

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/11/21 21:10:53 simon Exp $
 
 COMMENT=	catalyst documentation
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Manual-5.700701
+DISTNAME=	Catalyst-Manual-5.701003
 CATEGORIES=	devel
 
 # perl
