@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2007/11/13 18:42:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.141 2007/11/21 18:50:14 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -35,6 +35,7 @@
      SUBDIR += gkrellm
      SUBDIR += gpioflicker
      SUBDIR += grub
+     SUBDIR += heartbeat
      SUBDIR += hot-babe
      SUBDIR += idled
      SUBDIR += iogen
