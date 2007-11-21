@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/03/17 16:54:26 simon Exp $
-@conflict p5-Catalyst-Manual-<5.700501
+@comment $OpenBSD: PLIST,v 1.5 2007/11/21 21:20:09 simon Exp $
+@conflict p5-Catalyst-Manual-<5.701003
 bin/catalyst.pl
 ${P5SITE}/Catalyst/
 ${P5SITE}/Catalyst.pm
@@ -31,7 +31,7 @@ ${P5SITE}/Catalyst/Engine/HTTP/Restarter/Watcher.pm
 ${P5SITE}/Catalyst/Exception.pm
 ${P5SITE}/Catalyst/Log.pm
 ${P5SITE}/Catalyst/Manual/
-${P5SITE}/Catalyst/Manual.pod
+${P5SITE}/Catalyst/Manual.pm
 ${P5SITE}/Catalyst/Manual/Installation/
 ${P5SITE}/Catalyst/Manual/Installation.pod
 ${P5SITE}/Catalyst/Manual/Installation/CentOS4.pod
@@ -69,7 +69,7 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Engine::HTTP::Restarter::Watcher.3p
 @man man/man3p/Catalyst::Exception.3p
 @man man/man3p/Catalyst::Log.3p
-@comment @man man/man3p/Catalyst::Manual.3p
+@man man/man3p/Catalyst::Manual.3p
 @man man/man3p/Catalyst::Manual::Installation.3p
 @man man/man3p/Catalyst::Manual::Installation::CentOS4.3p
 @man man/man3p/Catalyst::Model.3p
