@@ -1,0 +1,179 @@
+#!/bin/sh
+#
+#
+#	Telephony OCF RA. Manages Asterisk or Callweaver instances.
+#
+# Copyright (c) 2007 l00 bugdead prods, Sebastian Reitenbach
+#                    All Rights Reserved.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of version 2 of the GNU General Public License as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it would be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# Further, this software is distributed without any warranty that it is
+# free of the rightful claim of any third person regarding infringement
+# or the like.  Any license provided herein, whether implied or
+# otherwise, applies only to this software file.  Patent licenses, if
+# any, provided herein do not apply to combinations of this program with
+# other software, or any other product whatsoever.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write the Free Software Foundation,
+# Inc., 59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+#
+
+#######################################################################
+# Initialization:
+
+. ${OCF_ROOT}/resource.d/heartbeat/.ocf-shellfuncs
+
+#######################################################################
+
+meta_data() {
+	cat <<END
+<?xml version="1.0"?>
+<!DOCTYPE resource-agent SYSTEM "ra-api-1.dtd">
+<resource-agent name="Telephony" version="0.1">
+<version>1.0</version>
+
+<longdesc lang="en">
+This resource manages Asterisk or Callweaver
+servers.
+</longdesc>
+<shortdesc lang="en">Telephony server</shortdesc>
+
+<parameters>
+
+<parameter name="binary" unique="1" required="1">
+<longdesc lang="en">
+The location of the asterisk or callweaver binary.
+</longdesc>
+<shortdesc lang="en">location of the binary.</shortdesc>
+<content type="string" default="!!LOCALBASE!!/sbin/callweaver" />
+</parameter>
+<parameter name="pid" unique="1" required="1">
+<longdesc lang="en">
+Location to store the PID file.
+</longdesc>
+<shortdesc lang="en">PID file location.</shortdesc>
+<content type="string" default="/var/run/callweaver/callweaver.pid" />
+</parameter>
+
+</parameters>
+
+<actions>
+<action name="start"        timeout="90" />
+<action name="stop"         timeout="100" />
+<action name="monitor"      timeout="20" interval="10" depth="0" start-delay="0" />
+<action name="reload"       timeout="90" />
+<action name="migrate_to"   timeout="100" />
+<action name="migrate_from" timeout="90" />
+<action name="meta-data"    timeout="5" />
+<action name="verify-all"   timeout="30" />
+</actions>
+</resource-agent>
+END
+}
+
+#######################################################################
+
+# don't exit on TERM, to test that lrmd makes sure that we do exit
+trap sigterm_handler TERM
+sigterm_handler() {
+	ocf_log info "They use TERM to bring us down. No such luck."
+	return
+}
+
+Telephony_usage() {
+	cat <<END
+usage: $0 {start|stop|monitor|migrate_to|migrate_from|validate-all|meta-data}
+
+Expects to have a fully populated OCF RA-compliant environment set.
+END
+}
+
+Telephony_start() {
+    Telephony_monitor
+    if [ $? =  $OCF_SUCCESS ]; then
+	# phone system is already running, nothing to do
+	return $OCF_SUCCESS
+    fi
+    ${OCF_RESKEY_binary}
+    return ${OCF_SUCCESS}
+}
+
+Telephony_stop() {
+    Telephony_monitor
+    if [ $? ==  $OCF_SUCCESS ]; then
+	kill -9 `cat ${OCF_RESKEY_pid}`
+	Telephony_monitor 
+	if [ $? ==  $OCF_SUCCESS ]; then
+		return $OCF_ERR_GENERIC
+	fi
+        return $OCF_SUCCESS
+    else
+	# already down
+    	return $OCF_SUCCESS
+    fi
+}
+
+Telephony_monitor() {
+	# Monitor _MUST!_ differentiate correctly between running
+	# (SUCCESS), failed (ERROR) or _cleanly_ stopped (NOT RUNNING).
+	# That is THREE states, not just yes/no.
+	
+	ps -p `cat ${OCF_RESKEY_pid}`
+	if [ $? -eq 0 ];then
+		return $OCF_SUCCESS
+	else
+		return $OCF_NOT_RUNNING
+	fi
+}
+
+Telephony_validate() {
+    
+    if [ ! -x ${OCF_RESKEY_binary} ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+    if [ ! -d `dirname ${OCF_RESKEY_pid}` ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+
+    return ${OCF_SUCCESS}
+}
+
+: ${OCF_RESKEY_binary=!!LOCALBASE!!/sbin/callweaver}
+: ${OCF_RESKEY_pid=/var/run/callweaver/callweaver.pid}
+
+case $__OCF_ACTION in
+meta-data)	meta_data
+		exit $OCF_SUCCESS
+		;;
+start)		Telephony_start;;
+stop)		Telephony_stop;;
+monitor)	Telephony_monitor;;
+migrate_to)	ocf_log info "Migrating ${OCF_RESOURCE_INSTANCE} to ${OCF_RESKEY_CRM_meta_migrate_to}."
+	        Telephony_stop
+		;;
+migrate_from)	ocf_log info "Migrating ${OCF_RESOURCE_INSTANCE} to ${OCF_RESKEY_CRM_meta_migrated_from}."
+	        Telephony_start
+		;;
+reload)		ocf_log err "Reloading..."
+	        Telephony_start
+		;;
+validate-all)	Telephony_validate;;
+usage|help)	Telephony_usage
+		exit $OCF_SUCCESS
+		;;
+*)		Telephony_usage
+		exit $OCF_ERR_UNIMPLEMENTED
+		;;
+esac
+rc=$?
+ocf_log debug "${OCF_RESOURCE_INSTANCE} $__OCF_ACTION : $rc"
+exit $rc
+

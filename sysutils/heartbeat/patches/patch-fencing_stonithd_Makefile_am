@@ -1,0 +1,11 @@
+$OpenBSD: patch-fencing_stonithd_Makefile_am,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- fencing/stonithd/Makefile.am.orig	Sat Nov 17 13:50:26 2007
++++ fencing/stonithd/Makefile.am	Sat Nov 17 13:50:44 2007
+@@ -43,7 +43,4 @@ AM_CFLAGS = $(INCLUDES)
+ 
+ # need to make stonithd's owner as hacluster:haclient?
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)/$(havarlibdir)/fencing
+-	-chgrp $(apigid) $(DESTDIR)/$(havarlibdir)/fencing
+-	chmod 750 $(DESTDIR)/$(havarlibdir)/fencing
+ 

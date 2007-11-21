@@ -1,0 +1,13 @@
+$OpenBSD: patch-crm_pengine_Makefile_am,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- crm/pengine/Makefile.am.orig	Sat Nov 17 13:56:08 2007
++++ crm/pengine/Makefile.am	Sat Nov 17 13:57:02 2007
+@@ -79,9 +79,5 @@ clean-generic:
+ 	rm -f *.log *.debug *~ .gres.* testcases/.gres.*
+ 
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)/$(pe_varlibdir)
+-	-chown $(HA_CCMUSER) $(DESTDIR)/$(pe_varlibdir)
+-	-chgrp $(HA_APIGROUP) $(DESTDIR)/$(pe_varlibdir)
+-	-chmod 750 $(DESTDIR)/$(pe_varlibdir)
+ 
+ uninstall-local:

@@ -1,0 +1,626 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+@newgroup ${HBGROUP}:${HBGID}
+@newuser ${HBUSER}:${HBUID}:${HBGROUP}:daemon:Heartbeat User:/nonexistent:/sbin/nologin
+bin/cl_respawn
+@mode g+s
+@group ${HBGROUP}
+bin/cl_status
+@mode
+@group
+include/clplumbing/
+include/clplumbing/GSource.h
+include/clplumbing/GSource_internal.h
+include/clplumbing/Gmain_timeout.h
+include/clplumbing/apphb_cs.h
+include/clplumbing/base64.h
+include/clplumbing/cl_log.h
+include/clplumbing/cl_malloc.h
+include/clplumbing/cl_misc.h
+include/clplumbing/cl_pidfile.h
+include/clplumbing/cl_plugin.h
+include/clplumbing/cl_poll.h
+include/clplumbing/cl_quorum.h
+include/clplumbing/cl_quorumd.h
+include/clplumbing/cl_random.h
+include/clplumbing/cl_signal.h
+include/clplumbing/cl_syslog.h
+include/clplumbing/cl_tiebreaker.h
+include/clplumbing/cl_uuid.h
+include/clplumbing/coredumps.h
+include/clplumbing/cpulimits.h
+include/clplumbing/ipc.h
+include/clplumbing/loggingdaemon.h
+include/clplumbing/longclock.h
+include/clplumbing/lsb_exitcodes.h
+include/clplumbing/md5.h
+include/clplumbing/mkstemp_mode.h
+include/clplumbing/netstring.h
+include/clplumbing/proctrack.h
+include/clplumbing/realtime.h
+include/clplumbing/recoverymgr_cs.h
+include/clplumbing/replytrack.h
+include/clplumbing/setproctitle.h
+include/clplumbing/timers.h
+include/clplumbing/uids.h
+include/heartbeat/
+include/heartbeat/HBauth.h
+include/heartbeat/HBcomm.h
+include/heartbeat/apphb.h
+include/heartbeat/apphb_notify.h
+include/heartbeat/compress.h
+include/heartbeat/crm/
+include/heartbeat/crm/cib.h
+include/heartbeat/crm/common/
+include/heartbeat/crm/common/ctrl.h
+include/heartbeat/crm/common/ipc.h
+include/heartbeat/crm/common/iso8601.h
+include/heartbeat/crm/common/msg.h
+include/heartbeat/crm/common/util.h
+include/heartbeat/crm/common/xml.h
+include/heartbeat/crm/crm.h
+include/heartbeat/crm/msg_xml.h
+include/heartbeat/crm/pengine/
+include/heartbeat/crm/pengine/common.h
+include/heartbeat/crm/pengine/complex.h
+include/heartbeat/crm/pengine/rules.h
+include/heartbeat/crm/pengine/status.h
+include/heartbeat/crm/transition.h
+include/heartbeat/fencing/
+include/heartbeat/fencing/stonithd_api.h
+include/heartbeat/fencing/stonithd_msg.h
+include/heartbeat/ha_msg.h
+include/heartbeat/hb_api.h
+include/heartbeat/hb_config.h
+include/heartbeat/heartbeat.h
+include/heartbeat/lrm/
+include/heartbeat/lrm/lrm_api.h
+include/heartbeat/lrm/lrm_msg.h
+include/heartbeat/lrm/racommon.h
+include/heartbeat/lrm/raexec.h
+include/heartbeat/mgmt/
+include/heartbeat/mgmt/mgmt.h
+include/heartbeat/mgmt/mgmt_client.h
+include/heartbeat/mgmt/mgmt_common.h
+include/heartbeat/mgmt/mgmt_tls.h
+include/heartbeat/recoverymgr.h
+include/heartbeat/replace_uuid.h
+include/ocf/
+include/ocf/oc_event.h
+include/ocf/oc_membership.h
+include/pils/
+include/pils/generic.h
+include/pils/interface.h
+include/pils/plugin.h
+include/saf/
+include/saf/ais.h
+include/saf/ais_amf.h
+include/saf/ais_base.h
+include/saf/ais_checkpoint.h
+include/saf/ais_event.h
+include/saf/ais_lock.h
+include/saf/ais_membership.h
+include/saf/ais_message.h
+include/stonith/
+include/stonith/expect.h
+include/stonith/st_ttylock.h
+include/stonith/stonith.h
+include/stonith/stonith_plugin.h
+lib/heartbeat/
+lib/heartbeat/BasicSanityCheck
+lib/heartbeat/README.hb_report
+lib/heartbeat/ResourceManager
+lib/heartbeat/TestHeartbeatComm
+lib/heartbeat/api_test
+lib/heartbeat/apphbd
+lib/heartbeat/apphbtest
+lib/heartbeat/atest
+lib/heartbeat/attrd
+lib/heartbeat/base64_md5_test
+lib/heartbeat/ccm
+lib/heartbeat/ccm_testclient
+lib/heartbeat/cib
+lib/heartbeat/cibmon
+lib/heartbeat/clmtest
+lib/heartbeat/crm.dtd
+lib/heartbeat/crm_commands.py
+lib/heartbeat/crm_commands.pyc
+lib/heartbeat/crm_commands.pyo
+lib/heartbeat/crm_primitive.py
+lib/heartbeat/crm_primitive.pyc
+lib/heartbeat/crm_primitive.pyo
+lib/heartbeat/crm_utils.py
+lib/heartbeat/crm_utils.pyc
+lib/heartbeat/crm_utils.pyo
+lib/heartbeat/crmd
+lib/heartbeat/cts
+lib/heartbeat/findif
+lib/heartbeat/ha_config
+lib/heartbeat/ha_logd
+lib/heartbeat/ha_logger
+lib/heartbeat/ha_propagate
+lib/heartbeat/haresources2cib.py
+lib/heartbeat/hb_addnode
+lib/heartbeat/hb_delnode
+lib/heartbeat/hb_setsite
+lib/heartbeat/hb_setweight
+lib/heartbeat/hb_standby
+lib/heartbeat/hb_takeover
+lib/heartbeat/heartbeat
+lib/heartbeat/ipctest
+lib/heartbeat/ipctransientclient
+lib/heartbeat/ipctransientserver
+lib/heartbeat/ipfail
+lib/heartbeat/logtest
+lib/heartbeat/lrmadmin
+lib/heartbeat/lrmd
+lib/heartbeat/lrmtest
+lib/heartbeat/mach_down
+lib/heartbeat/mgmtd
+lib/heartbeat/mgmtdtest
+lib/heartbeat/mlock
+lib/heartbeat/ocf-returncodes
+lib/heartbeat/ocf-shellfuncs
+lib/heartbeat/pengine
+lib/heartbeat/pingd
+lib/heartbeat/plugins/
+lib/heartbeat/plugins/AppHBNotification/
+lib/heartbeat/plugins/AppHBNotification/recmgr.la
+lib/heartbeat/plugins/AppHBNotification/recmgr.so
+lib/heartbeat/plugins/HBauth/
+lib/heartbeat/plugins/HBauth/crc.la
+lib/heartbeat/plugins/HBauth/crc.so
+lib/heartbeat/plugins/HBauth/md5.la
+lib/heartbeat/plugins/HBauth/md5.so
+lib/heartbeat/plugins/HBauth/sha1.la
+lib/heartbeat/plugins/HBauth/sha1.so
+lib/heartbeat/plugins/HBcomm/
+lib/heartbeat/plugins/HBcomm/bcast.la
+lib/heartbeat/plugins/HBcomm/bcast.so
+lib/heartbeat/plugins/HBcomm/mcast.la
+lib/heartbeat/plugins/HBcomm/mcast.so
+lib/heartbeat/plugins/HBcomm/ping.la
+lib/heartbeat/plugins/HBcomm/ping.so
+lib/heartbeat/plugins/HBcomm/ping_group.la
+lib/heartbeat/plugins/HBcomm/ping_group.so
+lib/heartbeat/plugins/HBcomm/serial.la
+lib/heartbeat/plugins/HBcomm/serial.so
+lib/heartbeat/plugins/HBcomm/ucast.la
+lib/heartbeat/plugins/HBcomm/ucast.so
+lib/heartbeat/plugins/HBcompress/
+lib/heartbeat/plugins/HBcompress/bz2.la
+lib/heartbeat/plugins/HBcompress/bz2.so
+lib/heartbeat/plugins/HBcompress/zlib.la
+lib/heartbeat/plugins/HBcompress/zlib.so
+lib/heartbeat/plugins/RAExec/
+lib/heartbeat/plugins/RAExec/heartbeat.la
+lib/heartbeat/plugins/RAExec/heartbeat.so
+lib/heartbeat/plugins/RAExec/lsb.la
+lib/heartbeat/plugins/RAExec/lsb.so
+lib/heartbeat/plugins/RAExec/ocf.la
+lib/heartbeat/plugins/RAExec/ocf.so
+lib/heartbeat/plugins/RAExec/stonith.la
+lib/heartbeat/plugins/RAExec/stonith.so
+lib/heartbeat/plugins/quorum/
+lib/heartbeat/plugins/quorum/majority.la
+lib/heartbeat/plugins/quorum/majority.so
+lib/heartbeat/plugins/quorum/quorumd.la
+lib/heartbeat/plugins/quorum/quorumd.so
+lib/heartbeat/plugins/quorum/twonodes.la
+lib/heartbeat/plugins/quorum/twonodes.so
+lib/heartbeat/plugins/quorum/weight.la
+lib/heartbeat/plugins/quorum/weight.so
+lib/heartbeat/plugins/quorumd/
+lib/heartbeat/plugins/quorumd/2_0_8.la
+lib/heartbeat/plugins/quorumd/2_0_8.so
+lib/heartbeat/plugins/test/
+lib/heartbeat/plugins/test/test.la
+lib/heartbeat/plugins/test/test.so
+lib/heartbeat/plugins/tiebreaker/
+lib/heartbeat/plugins/tiebreaker/twonodes.la
+lib/heartbeat/plugins/tiebreaker/twonodes.so
+lib/heartbeat/quorumd
+lib/heartbeat/quorumdtest
+lib/heartbeat/recoverymgrd
+lib/heartbeat/req_resource
+lib/heartbeat/send_arp
+lib/heartbeat/stonithd
+lib/heartbeat/stonithdtest/
+lib/heartbeat/stonithdtest/apitest
+lib/heartbeat/tengine
+lib/heartbeat/transient-test.sh
+lib/heartbeat/ttest
+lib/heartbeat/utillib.sh
+lib/libapphb.la
+@lib lib/libapphb.so.${LIBapphb_VERSION}
+lib/libccmclient.la
+@lib lib/libccmclient.so.${LIBccmclient_VERSION}
+lib/libcib.la
+@lib lib/libcib.so.${LIBcib_VERSION}
+lib/libclm.la
+@lib lib/libclm.so.${LIBclm_VERSION}
+lib/libcrmcommon.la
+@lib lib/libcrmcommon.so.${LIBcrmcommon_VERSION}
+lib/libhbclient.la
+@lib lib/libhbclient.so.${LIBhbclient_VERSION}
+lib/libhbmgmt.la
+@lib lib/libhbmgmt.so.${LIBhbmgmt_VERSION}
+lib/libhbmgmtclient.la
+@lib lib/libhbmgmtclient.so.${LIBhbmgmtclient_VERSION}
+lib/libhbmgmtcommon.la
+@lib lib/libhbmgmtcommon.so.${LIBhbmgmtcommon_VERSION}
+lib/libhbmgmttls.la
+@lib lib/libhbmgmttls.so.${LIBhbmgmttls_VERSION}
+lib/liblrm.la
+@lib lib/liblrm.so.${LIBlrm_VERSION}
+lib/libpe_rules.la
+@lib lib/libpe_rules.so.${LIBpe_rules_VERSION}
+lib/libpe_status.la
+@lib lib/libpe_status.so.${LIBpe_status_VERSION}
+lib/libpengine.la
+@lib lib/libpengine.so.${LIBpengine_VERSION}
+lib/libpils.la
+@lib lib/libpils.so.${LIBpils_VERSION}
+lib/libplumb.la
+@lib lib/libplumb.so.${LIBplumb_VERSION}
+lib/libplumbgpl.la
+@lib lib/libplumbgpl.so.${LIBplumbgpl_VERSION}
+lib/librecoverymgr.la
+@lib lib/librecoverymgr.so.${LIBrecoverymgr_VERSION}
+lib/libstonith.la
+@lib lib/libstonith.so.${LIBstonith_VERSION}
+lib/libstonithd.la
+@lib lib/libstonithd.so.${LIBstonithd_VERSION}
+lib/libtransitioner.la
+@lib lib/libtransitioner.so.${LIBtransitioner_VERSION}
+lib/ocf/
+lib/ocf/resource.d/
+lib/ocf/resource.d/heartbeat/
+lib/ocf/resource.d/heartbeat/.ocf-binaries
+lib/ocf/resource.d/heartbeat/.ocf-directories
+lib/ocf/resource.d/heartbeat/.ocf-returncodes
+lib/ocf/resource.d/heartbeat/.ocf-shellfuncs
+lib/ocf/resource.d/heartbeat/AudibleAlarm
+lib/ocf/resource.d/heartbeat/ClusterMon
+lib/ocf/resource.d/heartbeat/Delay
+lib/ocf/resource.d/heartbeat/Dummy
+lib/ocf/resource.d/heartbeat/EvmsSCC
+lib/ocf/resource.d/heartbeat/Evmsd
+lib/ocf/resource.d/heartbeat/Filesystem
+lib/ocf/resource.d/heartbeat/ICP
+lib/ocf/resource.d/heartbeat/IPaddr
+lib/ocf/resource.d/heartbeat/IPaddr2
+lib/ocf/resource.d/heartbeat/IPsrcaddr
+lib/ocf/resource.d/heartbeat/LVM
+lib/ocf/resource.d/heartbeat/LinuxSCSI
+lib/ocf/resource.d/heartbeat/MailTo
+lib/ocf/resource.d/heartbeat/ManageRAID
+lib/ocf/resource.d/heartbeat/ManageVE
+lib/ocf/resource.d/heartbeat/Pure-FTPd
+lib/ocf/resource.d/heartbeat/Raid1
+lib/ocf/resource.d/heartbeat/SAPDatabase
+lib/ocf/resource.d/heartbeat/SAPInstance
+lib/ocf/resource.d/heartbeat/SendArp
+lib/ocf/resource.d/heartbeat/ServeRAID
+lib/ocf/resource.d/heartbeat/Stateful
+lib/ocf/resource.d/heartbeat/SysInfo
+lib/ocf/resource.d/heartbeat/Telephony
+lib/ocf/resource.d/heartbeat/VIPArip
+lib/ocf/resource.d/heartbeat/WAS
+lib/ocf/resource.d/heartbeat/WAS6
+lib/ocf/resource.d/heartbeat/WinPopup
+lib/ocf/resource.d/heartbeat/Xen
+lib/ocf/resource.d/heartbeat/Xinetd
+lib/ocf/resource.d/heartbeat/apache
+lib/ocf/resource.d/heartbeat/apache13
+lib/ocf/resource.d/heartbeat/db2
+lib/ocf/resource.d/heartbeat/drbd
+lib/ocf/resource.d/heartbeat/eDir88
+lib/ocf/resource.d/heartbeat/ids
+lib/ocf/resource.d/heartbeat/ldirectord
+lib/ocf/resource.d/heartbeat/mysql
+lib/ocf/resource.d/heartbeat/o2cb
+lib/ocf/resource.d/heartbeat/openvpn
+lib/ocf/resource.d/heartbeat/oracle
+lib/ocf/resource.d/heartbeat/oralsnr
+lib/ocf/resource.d/heartbeat/pgsql
+lib/ocf/resource.d/heartbeat/pingd
+lib/ocf/resource.d/heartbeat/portblock
+lib/ocf/resource.d/heartbeat/rsyncd
+lib/ocf/resource.d/heartbeat/tomcat
+lib/pils/
+lib/pils/plugins/
+lib/pils/plugins/InterfaceMgr/
+lib/pils/plugins/InterfaceMgr/generic.la
+lib/pils/plugins/InterfaceMgr/generic.so
+lib/stonith/
+lib/stonith/plugins/
+lib/stonith/plugins/external/
+lib/stonith/plugins/external/ibmrsa
+lib/stonith/plugins/external/rackpdu
+lib/stonith/plugins/external/riloe
+lib/stonith/plugins/external/ssh
+lib/stonith/plugins/external/vmware
+lib/stonith/plugins/stonith2/
+lib/stonith/plugins/stonith2/apcmaster.la
+lib/stonith/plugins/stonith2/apcmaster.so
+lib/stonith/plugins/stonith2/apcsmart.la
+lib/stonith/plugins/stonith2/apcsmart.so
+lib/stonith/plugins/stonith2/baytech.la
+lib/stonith/plugins/stonith2/baytech.so
+lib/stonith/plugins/stonith2/cyclades.la
+lib/stonith/plugins/stonith2/cyclades.so
+lib/stonith/plugins/stonith2/drac3.la
+lib/stonith/plugins/stonith2/drac3.so
+lib/stonith/plugins/stonith2/external.la
+lib/stonith/plugins/stonith2/external.so
+lib/stonith/plugins/stonith2/ibmhmc.la
+lib/stonith/plugins/stonith2/ibmhmc.so
+lib/stonith/plugins/stonith2/meatware.la
+lib/stonith/plugins/stonith2/meatware.so
+lib/stonith/plugins/stonith2/null.la
+lib/stonith/plugins/stonith2/null.so
+lib/stonith/plugins/stonith2/nw_rpc100s.la
+lib/stonith/plugins/stonith2/nw_rpc100s.so
+lib/stonith/plugins/stonith2/rcd_serial.la
+lib/stonith/plugins/stonith2/rcd_serial.so
+lib/stonith/plugins/stonith2/ribcl.py
+lib/stonith/plugins/stonith2/rps10.la
+lib/stonith/plugins/stonith2/rps10.so
+lib/stonith/plugins/stonith2/ssh.la
+lib/stonith/plugins/stonith2/ssh.so
+lib/stonith/plugins/stonith2/suicide.la
+lib/stonith/plugins/stonith2/suicide.so
+lib/stonith/plugins/stonith2/wti_nps.la
+lib/stonith/plugins/stonith2/wti_nps.so
+@man man/man1/cl_status.1
+@man man/man1/ha_logger.1
+@man man/man1/hb_addnode.1
+@man man/man1/hb_delnode.1
+@man man/man1/hb_standby.1
+@man man/man1/hb_takeover.1
+@man man/man8/apphbd.8
+@man man/man8/cibadmin.8
+@man man/man8/crm_resource.8
+@man man/man8/ha_logd.8
+@man man/man8/heartbeat.8
+@man man/man8/ldirectord.8
+@man man/man8/meatclient.8
+@man man/man8/stonith.8
+sbin/attrd_updater
+sbin/ccm_tool
+sbin/cibadmin
+sbin/crm_attribute
+sbin/crm_diff
+sbin/crm_failcount
+sbin/crm_master
+sbin/crm_mon
+sbin/crm_resource
+sbin/crm_sh
+sbin/crm_standby
+sbin/crm_uuid
+sbin/crm_verify
+sbin/crmadmin
+sbin/ha_logger
+sbin/hb_report
+sbin/iso8601
+sbin/ldirectord
+sbin/meatclient
+sbin/ocf-tester
+sbin/ptest
+sbin/stonith
+share/doc/heartbeat/
+share/doc/heartbeat/AUTHORS
+share/doc/heartbeat/ChangeLog
+share/doc/heartbeat/DirectoryMap.txt
+share/doc/heartbeat/GettingStarted.txt
+share/doc/heartbeat/HardwareGuide.txt
+share/doc/heartbeat/README
+share/doc/heartbeat/Requirements.txt
+share/doc/heartbeat/apphbd.cf
+share/doc/heartbeat/authkeys
+@sample ${SYSCONFDIR}/ha.d/
+@mode 600
+@sample ${SYSCONFDIR}/ha.d/authkeys
+@mode
+share/doc/heartbeat/faqntips.txt
+share/doc/heartbeat/ha.cf
+@sample ${SYSCONFDIR}/ha.d/ha.cf
+share/doc/heartbeat/ha_logd.cf
+@sample ${SYSCONFDIR}/logd.cf
+share/doc/heartbeat/haresources
+@sample ${SYSCONFDIR}/ha.d/haresources
+share/doc/heartbeat/heartbeat_api.txt
+share/doc/heartbeat/rsync.txt
+share/doc/heartbeat/startstop
+share/examples/heartbeat/
+@mode 750
+@owner ${HBUSER}
+@group ${HBGROUP}
+@sample /var/lib/heartbeat/crm/
+@mode
+@owner
+@group
+share/examples/heartbeat/cib.xml
+@sample /var/lib/heartbeat/crm/cib.xml
+share/examples/heartbeat/ha.d/
+share/examples/heartbeat/ha.d/README.config
+@sample ${SYSCONFDIR}/ha.d/README.config
+share/examples/heartbeat/ha.d/harc
+@sample ${SYSCONFDIR}/ha.d/harc
+share/examples/heartbeat/ha.d/init.d/
+@sample /etc/ha.d/init.d/
+share/examples/heartbeat/ha.d/init.d/heartbeat.sh
+@mode 755
+@sample /etc/ha.d/init.d/heartbeat.sh
+@mode
+share/examples/heartbeat/ha.d/init.d/ldirectord.sh
+@mode 755
+@sample /etc/ha.d/init.d/ldirectord.sh
+@mode
+share/examples/heartbeat/ha.d/rc.d/
+@sample ${SYSCONFDIR}/ha.d/rc.d/
+share/examples/heartbeat/ha.d/rc.d/ask_resources
+@sample ${SYSCONFDIR}/ha.d/rc.d/ask_resources
+share/examples/heartbeat/ha.d/rc.d/hb_takeover
+@sample ${SYSCONFDIR}/ha.d/rc.d/hb_takeover
+share/examples/heartbeat/ha.d/rc.d/ip-request
+@sample ${SYSCONFDIR}/ha.d/rc.d/ip-request
+share/examples/heartbeat/ha.d/rc.d/ip-request-resp
+@sample ${SYSCONFDIR}/ha.d/rc.d/ip-request-resp
+share/examples/heartbeat/ha.d/rc.d/status
+@sample ${SYSCONFDIR}/ha.d/rc.d/status
+share/examples/heartbeat/ha.d/resource.d/
+@sample ${SYSCONFDIR}/ha.d/resource.d/
+@mode 555
+share/examples/heartbeat/ha.d/resource.d/AudibleAlarm
+@sample ${SYSCONFDIR}/ha.d/resource.d/AudibleAlarm
+share/examples/heartbeat/ha.d/resource.d/Delay
+@sample ${SYSCONFDIR}/ha.d/resource.d/Delay
+share/examples/heartbeat/ha.d/resource.d/Filesystem
+@sample ${SYSCONFDIR}/ha.d/resource.d/Filesystem
+share/examples/heartbeat/ha.d/resource.d/ICP
+@sample ${SYSCONFDIR}/ha.d/resource.d/ICP
+share/examples/heartbeat/ha.d/resource.d/IPaddr
+@sample ${SYSCONFDIR}/ha.d/resource.d/IPaddr
+share/examples/heartbeat/ha.d/resource.d/IPaddr2
+@sample ${SYSCONFDIR}/ha.d/resource.d/IPaddr2
+share/examples/heartbeat/ha.d/resource.d/IPsrcaddr
+@sample ${SYSCONFDIR}/ha.d/resource.d/IPsrcaddr
+share/examples/heartbeat/ha.d/resource.d/IPv6addr
+@sample ${SYSCONFDIR}/ha.d/resource.d/IPv6addr
+share/examples/heartbeat/ha.d/resource.d/LVM
+@sample ${SYSCONFDIR}/ha.d/resource.d/LVM
+share/examples/heartbeat/ha.d/resource.d/LVSSyncDaemonSwap
+@sample ${SYSCONFDIR}/ha.d/resource.d/LVSSyncDaemonSwap
+share/examples/heartbeat/ha.d/resource.d/LinuxSCSI
+@sample ${SYSCONFDIR}/ha.d/resource.d/LinuxSCSI
+share/examples/heartbeat/ha.d/resource.d/MailTo
+@sample ${SYSCONFDIR}/ha.d/resource.d/MailTo
+share/examples/heartbeat/ha.d/resource.d/OCF
+@sample ${SYSCONFDIR}/ha.d/resource.d/OCF
+share/examples/heartbeat/ha.d/resource.d/Raid1
+@sample ${SYSCONFDIR}/ha.d/resource.d/Raid1
+share/examples/heartbeat/ha.d/resource.d/SendArp
+@sample ${SYSCONFDIR}/ha.d/resource.d/SendArp
+share/examples/heartbeat/ha.d/resource.d/ServeRAID
+@sample ${SYSCONFDIR}/ha.d/resource.d/ServeRAID
+share/examples/heartbeat/ha.d/resource.d/WAS
+@sample ${SYSCONFDIR}/ha.d/resource.d/WAS
+share/examples/heartbeat/ha.d/resource.d/WinPopup
+@sample ${SYSCONFDIR}/ha.d/resource.d/WinPopup
+share/examples/heartbeat/ha.d/resource.d/Xinetd
+@sample ${SYSCONFDIR}/ha.d/resource.d/Xinetd
+share/examples/heartbeat/ha.d/resource.d/apache
+@sample ${SYSCONFDIR}/ha.d/resource.d/apache
+share/examples/heartbeat/ha.d/resource.d/db2
+@sample ${SYSCONFDIR}/ha.d/resource.d/db2
+share/examples/heartbeat/ha.d/resource.d/hto-mapfuncs
+@sample ${SYSCONFDIR}/ha.d/resource.d/hto-mapfuncs
+share/examples/heartbeat/ha.d/resource.d/ids
+@sample ${SYSCONFDIR}/ha.d/resource.d/ids
+share/examples/heartbeat/ha.d/resource.d/ldirectord
+share/examples/heartbeat/ha.d/resource.d/portblock
+@sample ${SYSCONFDIR}/ha.d/resource.d/portblock
+@mode
+share/examples/heartbeat/ha.d/shellfuncs
+@sample ${SYSCONFDIR}/ha.d/shellfuncs
+share/examples/heartbeat/logrotate.d/
+share/examples/heartbeat/logrotate.d/heartbeat
+share/examples/heartbeat/logrotate.d/ldirectord
+share/heartbeat/
+share/heartbeat/BasicSanityCheck
+share/heartbeat/README.hb_report
+share/heartbeat/ResourceManager
+share/heartbeat/TestHeartbeatComm
+share/heartbeat/crm.dtd
+share/heartbeat/cts/
+share/heartbeat/cts/CIB.py
+share/heartbeat/cts/CIB.pyc
+share/heartbeat/cts/CIB.pyo
+share/heartbeat/cts/CM_LinuxHAv2.py
+share/heartbeat/cts/CM_LinuxHAv2.pyc
+share/heartbeat/cts/CM_LinuxHAv2.pyo
+share/heartbeat/cts/CM_fs.py
+share/heartbeat/cts/CM_fs.pyc
+share/heartbeat/cts/CM_fs.pyo
+share/heartbeat/cts/CM_hb.py
+share/heartbeat/cts/CM_hb.pyc
+share/heartbeat/cts/CM_hb.pyo
+share/heartbeat/cts/CTS.py
+share/heartbeat/cts/CTS.pyc
+share/heartbeat/cts/CTS.pyo
+share/heartbeat/cts/CTSaudits.py
+share/heartbeat/cts/CTSaudits.pyc
+share/heartbeat/cts/CTSaudits.pyo
+share/heartbeat/cts/CTSlab.py
+share/heartbeat/cts/CTSlab.pyc
+share/heartbeat/cts/CTSlab.pyo
+share/heartbeat/cts/CTSproxy.py
+share/heartbeat/cts/CTStests.py
+share/heartbeat/cts/CTStests.pyc
+share/heartbeat/cts/CTStests.pyo
+share/heartbeat/cts/LSBDummy
+share/heartbeat/cts/OCFIPraTest.py
+share/heartbeat/cts/OCFIPraTest.pyc
+share/heartbeat/cts/OCFIPraTest.pyo
+share/heartbeat/cts/README
+share/heartbeat/cts/extracttests.py
+share/heartbeat/cts/extracttests.pyc
+share/heartbeat/cts/extracttests.pyo
+share/heartbeat/cts/getpeinputs.sh
+share/heartbeat/ha_config
+share/heartbeat/ha_propagate
+share/heartbeat/hb_addnode
+share/heartbeat/hb_delnode
+share/heartbeat/hb_setsite
+share/heartbeat/hb_setweight
+share/heartbeat/hb_standby
+share/heartbeat/hb_takeover
+share/heartbeat/lrmtest/
+share/heartbeat/lrmtest/LRMBasicSanityCheck
+share/heartbeat/lrmtest/README.regression
+share/heartbeat/lrmtest/defaults
+share/heartbeat/lrmtest/descriptions
+share/heartbeat/lrmtest/evaltest.sh
+share/heartbeat/lrmtest/language
+share/heartbeat/lrmtest/lrmadmin-interface
+share/heartbeat/lrmtest/lrmregtest
+share/heartbeat/lrmtest/lrmregtest-heartbeat
+share/heartbeat/lrmtest/lrmregtest-lsb
+share/heartbeat/lrmtest/regression.sh
+share/heartbeat/lrmtest/testcases/
+share/heartbeat/lrmtest/testcases/BSC
+share/heartbeat/lrmtest/testcases/common.filter
+share/heartbeat/lrmtest/testcases/metadata
+share/heartbeat/lrmtest/testcases/metadata.exp
+share/heartbeat/lrmtest/testcases/ra-list.sh
+share/heartbeat/lrmtest/testcases/rscexec
+share/heartbeat/lrmtest/testcases/rscexec.exp
+share/heartbeat/lrmtest/testcases/rscmgmt
+share/heartbeat/lrmtest/testcases/rscmgmt.exp
+share/heartbeat/lrmtest/testcases/rscmgmt.log_filter
+share/heartbeat/lrmtest/testcases/xmllint.sh
+share/heartbeat/mach_down
+share/heartbeat/req_resource
+share/heartbeat/stonithdtest/
+share/heartbeat/stonithdtest/STONITHDBasicSanityCheck
+share/heartbeat/utillib.sh
+@sample /var/lib/heartbeat/cores/
+@mode 700
+@owner ${HBUSER}
+@sample /var/lib/heartbeat/cores/${HBUSER}/
+@owner nobody
+@sample /var/lib/heartbeat/cores/nobody/
+@owner
+@sample /var/lib/heartbeat/cores/root/
+@mode 750
+@group ${HBGROUP}
+@sample /var/lib/heartbeat/fencing/
+@mode 770
+@sample /var/lib/heartbeat/lrm/
+@sample /var/lib/heartbeat/mgmt/
+@mode 750
+@owner ${HBUSER}
+@sample /var/lib/heartbeat/pengine/
+@exec ln -sf ${PREFIX}/sbin/ldirectord ${SYSCONFDIR}/ha.d/resource.d/
+@unexec rm -f ${SYSCONFDIR}/ha.d/resource.d/ldirectord

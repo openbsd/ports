@@ -1,0 +1,256 @@
+#!/bin/sh
+#
+#
+#	OpenVPN OCF RA. Manages OpenVPN Server or Client instances.
+#
+# Copyright (c) 2007 l00 bugdead prods, Sebastian Reitenbach
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of version 2 of the GNU General Public License as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it would be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# Further, this software is distributed without any warranty that it is
+# free of the rightful claim of any third person regarding infringement
+# or the like.  Any license provided herein, whether implied or
+# otherwise, applies only to this software file.  Patent licenses, if
+# any, provided herein do not apply to combinations of this program with
+# other software, or any other product whatsoever.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write the Free Software Foundation,
+# Inc., 59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+#
+
+#######################################################################
+# Initialization:
+
+. ${OCF_ROOT}/resource.d/heartbeat/.ocf-shellfuncs
+
+#######################################################################
+
+HOSTOS=`uname`
+if [ "X${HOSTOS}" == "XOpenBSD" ]; then
+OCF_RESKEY_binary_default="!!LOCALBASE!!/sbin/openvpn"
+OCF_RESKEY_configfile_default="!!SYSCONFDIR!!/openvpn/openvpn.conf"
+OCF_RESKEY_pid_default="/var/run/openvpn/openvpn-${OCF_RESOURCE_INSTANCE}.pid"
+OCF_RESKEY_chrootdir_default="!!SYSCONFDIR!!/openvpn"
+OCF_RESKEY_user_default="_openvpn"
+OCF_RESKEY_group_default="_openvpn"
+else
+OCF_RESKEY_binary_default="/usr/sbin/openvpn"
+OCF_RESKEY_configfile_default="/etc/openvpn/openvpn.conf"
+OCF_RESKEY_pid_default="/var/run/openvpn/openvpn-${OCF_RESOURCE_INSTANCE}.pid"
+OCF_RESKEY_chrootdir_default="/etc/openvpn"
+OCF_RESKEY_user_default="openvpn"
+OCF_RESKEY_group_default="openvpn"
+fi
+
+meta_data() {
+	cat <<END
+<?xml version="1.0"?>
+<!DOCTYPE resource-agent SYSTEM "ra-api-1.dtd">
+<resource-agent name="openvpn" version="0.1">
+<version>1.0</version>
+
+<longdesc lang="en">
+This resource agent manages instances of openvpn servers
+or clients.
+</longdesc>
+<shortdesc lang="en">OpenVPN server or client agent</shortdesc>
+
+<parameters>
+
+<parameter name="binary" unique="1" required="1">
+<longdesc lang="en">
+Location of the OpenVPN binary.
+</longdesc>
+<shortdesc lang="en">binary file location.</shortdesc>
+<content type="string" default="${OCF_RESKEY_binary_default}" />
+</parameter>
+<parameter name="pid" unique="1" required="1">
+<longdesc lang="en">
+Location to store the PID file.
+</longdesc>
+<shortdesc lang="en">PID file location.</shortdesc>
+<content type="string" default="${OCF_RESKEY_pid_default}" />
+</parameter>
+<parameter name="configfile" unique="1" required="1">
+<longdesc lang="en">
+Location of the configuration file.
+</longdesc>
+<shortdesc lang="en">Configuration file location.</shortdesc>
+<content type="string" default="${OCF_RESKEY_configfile_default}" />
+</parameter>
+<parameter name="chrootdir" unique="1" required="1">
+<longdesc lang="en">
+Directory to chroot into after startup initialization.
+</longdesc>
+<shortdesc lang="en">Chroot directory.</shortdesc>
+<content type="string" default="${OCF_RESKEY_chrootdir_default}" />
+</parameter>
+<parameter name="user" unique="1" required="1">
+<longdesc lang="en">
+Name of the user that openvpn should drop privileges to.
+</longdesc>
+<shortdesc lang="en">Unprivileged user account.</shortdesc>
+<content type="string" default="${OCF_RESKEY_user_default}" />
+</parameter>
+<parameter name="group" unique="1" required="1">
+<longdesc lang="en">
+Name of the group that openvpn should drop privileges to.
+</longdesc>
+<shortdesc lang="en">Unprivileged group.</shortdesc>
+<content type="string" default="${OCF_RESKEY_group_default}" />
+</parameter>
+
+</parameters>
+
+<actions>
+<action name="start"        timeout="90" />
+<action name="stop"         timeout="100" />
+<action name="monitor"      timeout="20" interval="10" depth="0" start-delay="0" />
+<action name="reload"       timeout="90" />
+<action name="migrate_to"   timeout="100" />
+<action name="migrate_from" timeout="90" />
+<action name="meta-data"    timeout="5" />
+<action name="verify-all"   timeout="30" />
+</actions>
+</resource-agent>
+END
+}
+
+#######################################################################
+
+# don't exit on TERM, to test that lrmd makes sure that we do exit
+trap sigterm_handler TERM
+sigterm_handler() {
+	ocf_log info "They use TERM to bring us down. No such luck."
+	return
+}
+
+openvpn_usage() {
+	cat <<END
+usage: $0 {start|stop|monitor|migrate_to|migrate_from|validate-all|meta-data}
+
+Expects to have a fully populated OCF RA-compliant environment set.
+END
+}
+
+openvpn_start() {
+    openvpn_monitor
+    if [ $? =  $OCF_SUCCESS ]; then
+	# openvpn is already running, nothing to do
+	return $OCF_SUCCESS
+    fi
+    mkdir -p `dirname ${OCF_RESKEY_pid}`
+    echo ${OCF_RESKEY_binary} --daemon --writepid ${OCF_RESKEY_pid} --config ${OCF_RESKEY_configfile} --cd ${OCF_RESKEY_chrootdir} --user ${OCF_RESKEY_user} --group ${OCF_RESKEY_group}
+    ${OCF_RESKEY_binary} --daemon --writepid ${OCF_RESKEY_pid} --config ${OCF_RESKEY_configfile} --cd ${OCF_RESKEY_chrootdir} --user ${OCF_RESKEY_user} --group ${OCF_RESKEY_group}
+    
+}
+
+openvpn_stop() {
+    openvpn_monitor
+    if [ $? =  $OCF_SUCCESS ]; then
+	# openvpn already stopped, only remove possible leftovers
+echo was alredy stopped says the monitor
+    else
+	if [ -f ${OCF_RESKEY_pid} ];then
+		kill `cat ${OCF_RESKEY_pid}`
+	else
+		kill `ps axwww | grep -e "${OCF_RESKEY_configfile}" | grep -v grep 2>/dev/null` 2>/dev/null
+	fi
+	openvpn_monitor
+	if [ $? ==  ${OCF_NOT_RUNNING} ]; then
+echo not running anymore
+	else
+		kill -9 `ps axwww | grep -e "${OCF_RESKEY_configfile}" | grep -v grep 2>/dev/null` 2>/dev/null
+		openvpn_monitor
+		if [ $? ==  $OCF_NOT_RUNNING ]; then
+			rm -f ${OCF_RESKEY_pid}
+		else
+			return ${OCF_ERR_GENERIC}
+		fi
+	fi
+    fi
+    return $OCF_SUCCESS
+}
+
+openvpn_monitor() {
+	# Monitor _MUST!_ differentiate correctly between running
+	# (SUCCESS), failed (ERROR) or _cleanly_ stopped (NOT RUNNING).
+	# That is THREE states, not just yes/no.
+	
+	ps axwww | grep -e "${OCF_RESKEY_configfile}" | grep -v grep > /dev/null 2>/dev/null
+	if [ $? -eq 0 ];then
+		return $OCF_SUCCESS
+	else
+		return $OCF_NOT_RUNNING
+	fi
+}
+
+openvpn_validate() {
+    
+    if [ ! -x ${OCF_RESKEY_binary} ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+    mkdir -p `dirname ${OCF_RESKEY_pid}`
+    if [ ! -d `dirname ${OCF_RESKEY_pid}` ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+    if [ ! -d ${OCF_RESKEY_chrootdir} ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+    if [ ! -f ${OCF_RESKEY_configfile} ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+    id ${OCF_RESKEY_user} >/dev/null 2>/dev/null
+    if [ $? -ne 0 ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+    groupinfo -e ${OCF_RESKEY_group}
+    if [ $? -ne 0 ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+
+    return ${OCF_SUCCESS}
+}
+
+: ${OCF_RESKEY_binary=${OCF_RESKEY_binary_default}}
+: ${OCF_RESKEY_configfile=${OCF_RESKEY_configfile_default}}
+: ${OCF_RESKEY_pid=${OCF_RESKEY_pid_default}}
+: ${OCF_RESKEY_chrootdir=${OCF_RESKEY_chrootdir_default}}
+: ${OCF_RESKEY_user=${OCF_RESKEY_user_default}}
+: ${OCF_RESKEY_group=${OCF_RESKEY_group_default}}
+
+case $__OCF_ACTION in
+meta-data)	meta_data
+		exit $OCF_SUCCESS
+		;;
+start)		openvpn_start;;
+stop)		openvpn_stop;;
+monitor)	openvpn_monitor;;
+migrate_to)	ocf_log info "Migrating ${OCF_RESOURCE_INSTANCE} to ${OCF_RESKEY_CRM_meta_migrate_to}."
+	        openvpn_stop
+		;;
+migrate_from)	ocf_log info "Migrating ${OCF_RESOURCE_INSTANCE} to ${OCF_RESKEY_CRM_meta_migrated_from}."
+	        openvpn_start
+		;;
+reload)		ocf_log err "Reloading..."
+	        openvpn_start
+		;;
+validate-all)	openvpn_validate;;
+usage|help)	openvpn_usage
+		exit $OCF_SUCCESS
+		;;
+*)		openvpn_usage
+		exit $OCF_ERR_UNIMPLEMENTED
+		;;
+esac
+rc=$?
+ocf_log debug "${OCF_RESOURCE_INSTANCE} $__OCF_ACTION : $rc"
+exit $rc
+

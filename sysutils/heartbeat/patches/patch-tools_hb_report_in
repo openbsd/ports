@@ -1,0 +1,106 @@
+$OpenBSD: patch-tools_hb_report_in,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- tools/hb_report.in.orig	Thu Oct 25 09:40:41 2007
++++ tools/hb_report.in	Mon Nov 12 11:13:26 2007
+@@ -56,10 +56,10 @@ fi
+ 
+ usage() {
+ 	cat<<EOF
+-usage: hb_report -f time [-t time] [-u user] [-l file] [-p patt] [-L patt]
+-       [-e prog] [-SDC] dest
++usage: hb_report -f {time|"cts:"testnum} [-t time] [-u user] [-l file] [-p patt]
++       [-L patt] [-e prog] [-SDC] dest
+ 
+-	-f time: time to start from
++	-f time: time to start from or a CTS test number
+ 	-t time: time to finish at (dflt: now)
+ 	-u user: ssh user to access other nodes (dflt: empty, hacluster, root)
+ 	-l file: log file
+@@ -93,6 +93,7 @@ EOF
+ 	  hb_report -f 1:00 -t 3:00 -l /var/log/cluster/ha-debug /tmp/report_3
+ 	  hb_report -f "09sep07 2:00" -u hbadmin /tmp/report_4
+ 	  hb_report -f 18:00 -p "usern.*" -p "admin.*" /tmp/report_5
++	  hb_report -f cts:133 /tmp/ctstest_133
+ 
+ 	. WARNING . WARNING . WARNING . WARNING . WARNING . WARNING .
+ 	  We try to sanitize the CIB and the peinputs files. If you
+@@ -544,40 +545,35 @@ getlogvars
+ if [ "$SLAVE" = "" ]; then
+ 	setvarsanddefaults
+ 	userargs="$@"
+-	args=`getopt -o f:t:l:u:p:L:e:SDCh -- "$@"`
+-	[ $? -ne 0 ] && usage
+-	eval set -- "$args"
+-	while [ x"$1" != x ]; do
+-		case "$1" in
+-			-h) usage;;
+-			-f)
+-				if echo "$2" | grep -qs '^cts:'; then
++	while getopts f:t:l:u:p:L:e:SDCh o; do
++		case "$o" in
++			h) usage;;
++			f)
++				if echo "$OPTARG" | grep -qs '^cts:'; then
+ 					FROM_TIME=0 # to be calculated later
+-					CTS=`echo "$2" | sed 's/cts://'`
++					CTS=`echo "$OPTARG" | sed 's/cts://'`
+ 				else
+-					FROM_TIME=`str2time "$2"`
+-					chktime "$FROM_TIME" "$2"
++					FROM_TIME=`str2time "$OPTARG"`
++					chktime "$FROM_TIME" "$OPTARG"
+ 				fi
+-				shift 2
+ 			;;
+-			-t) TO_TIME=`str2time "$2"`
+-			    chktime "$TO_TIME" "$2"
+-				shift 2
++			t) TO_TIME=`str2time "$OPTARG"`
++			    chktime "$TO_TIME" "$OPTARG"
+ 			;;
+-			-u) SSH_USER="$2"; shift 2;;
+-			-l) HA_LOG="$2"; shift 2;;
+-			-e) EDITOR="$2"; shift 2;;
+-			-p) SANITIZE="$SANITIZE $2"; shift 2;;
+-			-L) LOG_PATTERNS="$LOG_PATTERNS $2"; shift 2;;
+-			-S) NO_SSH=1; shift 1;;
+-			-D) NO_DESCRIPTION=1; shift 1;;
+-			-C) REMOVE_DEST=1; shift 1;;
+-			--) shift 1; break;;
+-			*) usage short;;
++			u) SSH_USER="$OPTARG";;
++			l) HA_LOG="$OPTARG";;
++			e) EDITOR="$OPTARG";;
++			p) SANITIZE="$SANITIZE $OPTARG";;
++			L) LOG_PATTERNS="$LOG_PATTERNS $OPTARG";;
++			S) NO_SSH=1;;
++			D) NO_DESCRIPTION=1;;
++			C) REMOVE_DEST=1;;
++			[?]) usage short;;
+ 		esac
+ 	done
++	shift $((OPTIND-1))
+ 	[ $# -ne 1 ] && usage short
+-	DESTDIR=$1
++	DESTDIR=`echo $1 | sed 's,/*$,,'`
+ 	chkdirname $DESTDIR
+ 	[ "$FROM_TIME" ] || usage short
+ fi
+@@ -628,7 +624,8 @@ if [ "$SLAVE" = "" ]; then
+ 	if [ "$HA_LOGFACILITY" ]; then
+ 		sev="info"
+ 		cfdebug=`getcfvar debug` # prefer debuglog if set
+-		[ "$cfdebug" -a "$cfdebug" -gt 0 ] &&
++		isnumber $cfdebug || cfdebug=0
++		[ "$cfdebug" -a $cfdebug -gt 0 ] &&
+ 			sev="debug"
+ 		logmarks $sev $UNIQUE_MSG
+ 	fi
+@@ -688,7 +685,7 @@ if [ ! "$SLAVE" ]; then
+ 		send_config
+ 		start_remote_collectors
+ 	else
+-		[ `getnodes | wc -w` -gt 1 ] &&
++		[ -z "$NO_SSH" -a `getnodes | wc -w` -gt 1 ] &&
+ 			warning "ssh does not work to all nodes"
+ 	fi
+ fi

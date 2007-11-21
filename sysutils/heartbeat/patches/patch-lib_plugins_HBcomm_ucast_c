@@ -1,0 +1,59 @@
+$OpenBSD: patch-lib_plugins_HBcomm_ucast_c,v 1.1.1.1 2007/11/21 18:48:39 ajacoutot Exp $
+--- lib/plugins/HBcomm/ucast.c.orig	Thu Oct 25 09:40:41 2007
++++ lib/plugins/HBcomm/ucast.c	Mon Nov 12 11:13:26 2007
+@@ -455,6 +455,9 @@ static int HB_make_send_sock(struct hb_media *mp)
+ #if defined(SO_BINDTODEVICE)
+ 	struct ifreq i;
+ #endif
++#if defined(SO_REUSEPORT)
++	int i = 1;
++#endif
+ 
+ 	UCASTASSERT(mp);
+ 	ei = (struct ip_private*)mp->pd;
+@@ -501,6 +504,22 @@ static int HB_make_send_sock(struct hb_media *mp)
+ 			i.ifr_name);
+ 	}
+ #endif
++#if defined(SO_REUSEPORT)
++	{
++		/* this is for OpenBSD to allow multiple *
++		*  ucast connections, e.g. a more than   *
++		*  two node cluster 			 */
++
++		if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT,
++				&i, sizeof(i)) == -1) {
++			PILCallLog(LOG, PIL_CRIT,
++			  "ucast: error setting option SO_REUSEPORT(w): %s", strerror(errno));
++			close(sockfd);
++			return -1;
++		}
++		PILCallLog(LOG, PIL_INFO, "ucast: set SO_REUSEPORT(w)");
++	}
++#endif
+ 	if (fcntl(sockfd,F_SETFD, FD_CLOEXEC) < 0) {
+ 		PILCallLog(LOG, PIL_CRIT, "ucast: error setting close-on-exec flag: %s",
+ 			strerror(errno));
+@@ -569,6 +588,22 @@ static int HB_make_receive_sock(struct hb_media *mp) {
+ 		}
+ 		PILCallLog(LOG, PIL_INFO, "ucast: bound receive socket to device: %s",
+ 			i.ifr_name);
++	}
++#endif
++#if defined(SO_REUSEPORT)
++	{
++		/*
++		 *  Needed for OpenBSD for more than two nodes in a ucast cluster
++		 */
++		int i = 1;
++		if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT,
++				&i, sizeof(i)) == -1) {
++			PILCallLog(LOG, PIL_CRIT,
++			  "ucast: error setting option SO_REUSEPORT(r) %s", strerror(errno));
++			close(sockfd);
++			return -1;
++		}
++		PILCallLog(LOG, PIL_INFO, "ucast: set SO_REUSEPORT(w)");
+ 	}
+ #endif
+ 

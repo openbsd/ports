@@ -1,0 +1,26 @@
+$OpenBSD: patch-doc_Makefile_am,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- doc/Makefile.am.orig	Thu Oct 25 09:40:41 2007
++++ doc/Makefile.am	Tue Nov 13 10:52:36 2007
+@@ -19,7 +19,7 @@
+ #
+ MAINTAINERCLEANFILES    = Makefile.in
+ 
+-docdir 			= $(datadir)/doc/@HB_PKG@-@VERSION@
++docdir 			= $(datadir)/doc/@HB_PKG@
+ 
+ htmlfiles		= HardwareGuide.html	\
+ 			GettingStarted.html	\
+@@ -34,11 +34,11 @@ CLEANFILES              = ChangeLog $(txtfiles)
+ 
+ SPECSRC 		= $(top_builddir)/heartbeat.spec
+ 
+-OTHER_DOCS              = AUTHORS COPYING COPYING.LGPL ChangeLog \
++OTHER_DOCS              = AUTHORS ChangeLog \
+                                 README authkeys ha.cf startstop haresources \
+ 				DirectoryMap.txt apphbd.cf ha_logd.cf
+ 
+-doc_DATA		= $(OTHER_DOCS) $(txtfiles) $(htmlfiles) 
++doc_DATA		= $(OTHER_DOCS) $(txtfiles)
+ 
+ man_MANS		= heartbeat.8 apphbd.8 cl_status.1 ha_logd.8 ha_logger.1 \
+ 			 hb_standby.1 hb_takeover.1 hb_addnode.1 hb_delnode.1

@@ -1,0 +1,151 @@
+$OpenBSD: patch-resources_OCF_Filesystem,v 1.1.1.1 2007/11/21 18:48:39 ajacoutot Exp $
+--- resources/OCF/Filesystem.orig	Thu Oct 25 09:40:41 2007
++++ resources/OCF/Filesystem	Mon Nov 12 11:13:26 2007
+@@ -74,6 +74,7 @@
+ . ${OCF_ROOT}/resource.d/heartbeat/.ocf-shellfuncs
+ 
+ #######################################################################
++HOSTOS=`uname`
+ 
+ usage() {
+ 	cat <<-EOT
+@@ -168,7 +169,7 @@ END
+ #
+ flushbufs() {
+     if have_binary $BLOCKDEV ; then
+-      if [ "$blockdevice" = "yes" ] ; then
++      if [ "$blockdevice" == "yes" ] ; then
+         $BLOCKDEV --flushbufs $1
+         return $?
+       fi
+@@ -176,11 +177,11 @@ flushbufs() {
+     return 0
+ }
+ 
+-# Take advantage of /proc/mounts if present, use portabel mount command
++# Take advantage of /etc/mtab if present, use portabel mount command
+ # otherwise. Normalize format to "dev mountpoint fstype".
+ list_mounts() {
+-	if [ -f "/proc/mounts" -a -r "/proc/mounts" ]; then
+-		cut -d' ' -f1,2,3 </proc/mounts
++	if [ -f "/etc/mtab" -a -r "/etc/mtab" ]; then
++		cut -d' ' -f1,2,3 </etc/mtab
+ 	else
+ 		$MOUNT | cut -d' ' -f1,3,5
+ 	fi
+@@ -277,7 +278,7 @@ ocfs2_init()
+ 		fi
+ 	fi
+ 
+-	if [ $blockdevice = "no" ]; then
++	if [ $blockdevice == "no" ]; then
+ 		ocf_log err "$DEVICE: ocfs2 needs a block device instead."
+ 		exit $OCF_ERR_GENERIC
+ 	fi
+@@ -342,20 +343,22 @@ Filesystem_start()
+ 		return $OCF_SUCCESS
+ 	fi
+ 
+-	# Insert SCSI module
+-	# TODO: This probably should go away. Why should the filesystem
+-	# RA magically load a kernel module?
+-	$MODPROBE scsi_hostadapter >/dev/null 2>&1
++	if [ "X${HOSTOS}" != "XOpenBSD" ];then
++		# Insert SCSI module
++		# TODO: This probably should go away. Why should the filesystem
++		# RA magically load a kernel module?
++		$MODPROBE scsi_hostadapter >/dev/null 2>&1
+ 
+-	if [ -z "$FSTYPE" ]; then
+-		: No FSTYPE specified, rely on the system has the right file-system support already 
+-	else
+-		# Insert Filesystem module
+-		$MODPROBE $FSTYPE >/dev/null 2>&1
+-		grep -e "$FSTYPE"'$' /proc/filesystems >/dev/null
+-		if [ $? -ne 0 ] ; then
+-			ocf_log err "Couldn't find filesystem $FSTYPE in /proc/filesystems"
+-			return $OCF_ERR_ARGS
++		if [ -z "$FSTYPE" ]; then
++			: No FSTYPE specified, rely on the system has the right file-system support already 
++		else
++			# Insert Filesystem module
++			$MODPROBE $FSTYPE >/dev/null 2>&1
++			grep -e "$FSTYPE"'$' /proc/filesystems >/dev/null
++			if [ $? -ne 0 ] ; then
++				ocf_log err "Couldn't find filesystem $FSTYPE in /proc/filesystems"
++				return $OCF_ERR_ARGS
++			fi
+ 		fi
+ 	fi
+ 
+@@ -363,7 +366,7 @@ Filesystem_start()
+ 	# NOTE: Some filesystem types don't need this step...  Please modify
+ 	#       accordingly
+ 
+-	if [ $blockdevice = "yes" ]; then
++	if [ $blockdevice == "yes" ]; then
+ 		if [ "$DEVICE" != "/dev/null" -a ! -b "$DEVICE" ] ; then
+ 			ocf_log err "Couldn't find device [$DEVICE]. Expected /dev/??? to exist"
+ 			exit $OCF_ERR_ARGS
+@@ -377,9 +380,9 @@ Filesystem_start()
+ 		then
+ 			ocf_log info  "Starting filesystem check on $DEVICE"
+ 			if [ -z "$FSTYPE" ]; then
+-				$FSCK -a $DEVICE
++				$FSCK -p $DEVICE
+ 			else
+-				$FSCK -t $FSTYPE -a $DEVICE
++				$FSCK -t $FSTYPE -p $DEVICE
+ 			fi
+ 
+ 			# NOTE: if any errors at all are detected, it returns non-zero
+@@ -599,10 +602,18 @@ Filesystem_stop()
+ 					# fuser returns a non-zero return code if none of the
+ 					# specified files is accessed or in case of a fatal 
+ 					# error.
+-					if $FUSER -$sig -m -k $SUB ; then
+-						ocf_log info "Some processes on $SUB were signalled"
++					if [ "X${HOSTOS}" == "XOpenBSD" ];then
++						PIDS=`fstat | grep ${SUB} | awk '{print $3}'`
++						for PID in ${PIDS};do
++							kill -9 ${PID}
++							ocf_log info "Sent kill -9 to ${PID}"
++						done
+ 					else
+-						ocf_log info "No processes on $SUB were signalled"
++						if $FUSER -$sig -m -k $SUB ; then
++							ocf_log info "Some processes on $SUB were signalled"
++						else
++							ocf_log info "No processes on $SUB were signalled"
++						fi
+ 					fi
+ 					sleep 1
+ 				fi
+@@ -723,10 +734,12 @@ case $DEVICE in
+ /dev/null)	# Special case for BSC
+ 	blockdevice=yes
+ 	;;
+-*)	if [ ! -b "$DEVICE"  -a "X$OP" != Xstart ] ; then
++*)	if [ ! -b "$DEVICE"  -a ! -d "$DEVICE" -a "X$OP" != Xstart ] ; then
+ 		ocf_log warn "Couldn't find device [$DEVICE]. Expected /dev/??? to exist"
+ 	fi
+-	blockdevice=yes
++	if [ ! -d "$DEVICE" ];then
++		blockdevice=yes
++	fi
+ 	;;
+ esac
+ 
+@@ -749,9 +762,11 @@ else
+ fi
+ 	
+ # Check to make sure the utilites are found
++if [ "X${HOSTOS}" != "XOpenBSD" ];then
+ check_binary $MODPROBE
+-check_binary $FSCK
+ check_binary $FUSER
++fi
++check_binary $FSCK
+ check_binary $MOUNT
+ check_binary $UMOUNT
+ 

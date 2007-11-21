@@ -1,0 +1,30 @@
+$OpenBSD: patch-resources_OCF_Xen,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- resources/OCF/Xen.orig	Thu Oct 25 09:40:41 2007
++++ resources/OCF/Xen	Mon Nov 12 11:13:26 2007
+@@ -13,8 +13,10 @@
+ #
+ #	  OCF parameters are as below:
+ #		OCF_RESKEY_xmfile
+-#		Absolute path to the Xen control file,
+-#		for this virtual machine.
++#			Absolute path to the Xen control file,
++#			for this virtual machine.
++#		OCF_RESKEY_allow_migrate
++#			Use migration where possible
+ 
+ #######################################################################
+ # Initialization:
+@@ -61,6 +63,13 @@ for this virtual machine.
+ <content type="string" default="" />
+ </parameter>
+ 
++<parameter name="allow_migrate" unique="0" required="1">
++<longdesc lang="en">
++Use migration where possible.
++</longdesc>
++<shortdesc lang="en">use migration</shortdesc>
++<content type="boolean" default="0" />
++</parameter>
+ </parameters>
+ 
+ <actions>

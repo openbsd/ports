@@ -1,0 +1,14 @@
+$OpenBSD: patch-heartbeat_Makefile_am,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- heartbeat/Makefile.am.orig	Sat Nov 17 13:54:50 2007
++++ heartbeat/Makefile.am	Sat Nov 17 13:55:19 2007
+@@ -85,10 +85,6 @@ EXTRA_DIST              = $(ha_DATA) $(ha_SCRIPTS)
+ ## additional Makefile targets
+ # additional installations not covered normally
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)$(havarrundir) 
+-	$(mkinstalldirs) $(DESTDIR)$(havarlibdir)
+-	$(mkinstalldirs) $(DESTDIR)$(havarrunhbdir)
+-	-chmod 755 $(DESTDIR)$(havarrunhbdir)
+ 
+ uninstall-local:
+ 	-test -p $(DESTDIR)$(hafifo) && rm $(DESTDIR)$(hafifo)

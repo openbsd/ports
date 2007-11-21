@@ -1,0 +1,12 @@
+$OpenBSD: patch-resources_OCF_IPaddr,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- resources/OCF/IPaddr.orig	Thu Oct 25 09:40:41 2007
++++ resources/OCF/IPaddr	Mon Nov 12 11:13:26 2007
+@@ -299,7 +299,7 @@ find_interface_solaris() {
+ 
+ find_interface_bsd() {
+     #$IFCONFIG $IFCONFIG_A_OPT | grep "inet.*[: ]$OCF_RESKEY_ip "
+-    $IFCONFIG | grep "$ipaddr" -B20 | grep "UP," | tail -n 1 | cut -d ":" -f 1
++    $IFCONFIG $IFCONFIG_A_OPT | grep "$ipaddr" -B20 | grep "UP," | tail -n 1 | cut -d ":" -f 1
+ }
+ 
+ #

@@ -1,0 +1,10 @@
+$OpenBSD: patch-lib_lrm_Makefile_am,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- lib/lrm/Makefile.am.orig	Sat Nov 17 14:32:16 2007
++++ lib/lrm/Makefile.am	Sat Nov 17 14:32:43 2007
+@@ -37,6 +37,3 @@ liblrm_la_LDFLAGS = $(COMMONLIBS)
+ liblrm_la_CFLAGS = $(INCLUDES)
+ 
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)$(lrmdir)
+-	-chgrp $(apigid) $(DESTDIR)/$(lrmdir)
+-	chmod 770 $(DESTDIR)/$(lrmdir)

@@ -1,0 +1,14 @@
+$OpenBSD: patch-membership_ccm_Makefile_am,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- membership/ccm/Makefile.am.orig	Sat Nov 17 13:59:52 2007
++++ membership/ccm/Makefile.am	Sat Nov 17 14:00:37 2007
+@@ -109,10 +109,6 @@ clmtest_LDADD		= libclm.la libccmclient.la \
+ ## additional Makefile targets
+ # additional installations not covered normally
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)$(ccmdir)
+-	-chgrp $(apigid) $(DESTDIR)/$(ccmdir)
+-	-chown $(ccmuid) $(DESTDIR)/$(ccmdir)
+-	chmod 750 $(DESTDIR)/$(ccmdir)
+ 
+ 
+ uninstall-local:

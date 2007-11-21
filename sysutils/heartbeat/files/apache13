@@ -1,0 +1,185 @@
+#!/bin/sh
+#
+#
+#	Apache 1.3 OCF RA. Manages OpenBSD 1.3 httpd. 
+#
+# Copyright (c) 2007 l00 bugdead prods, Sebastian Reitenbach
+#                    All Rights Reserved.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of version 2 of the GNU General Public License as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it would be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# Further, this software is distributed without any warranty that it is
+# free of the rightful claim of any third person regarding infringement
+# or the like.  Any license provided herein, whether implied or
+# otherwise, applies only to this software file.  Patent licenses, if
+# any, provided herein do not apply to combinations of this program with
+# other software, or any other product whatsoever.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write the Free Software Foundation,
+# Inc., 59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+#
+
+#######################################################################
+# Initialization:
+
+. ${OCF_ROOT}/resource.d/heartbeat/.ocf-shellfuncs
+
+#######################################################################
+
+meta_data() {
+	cat <<END
+<?xml version="1.0"?>
+<!DOCTYPE resource-agent SYSTEM "ra-api-1.dtd">
+<resource-agent name="apache13" version="0.1">
+<version>1.0</version>
+
+<longdesc lang="en">
+This resource agent manages OpenBSD apache server
+or clients.
+</longdesc>
+<shortdesc lang="en">OpenBSD apache</shortdesc>
+
+<parameters>
+
+<parameter name="apachectl" unique="1" required="1">
+<longdesc lang="en">
+Location of the apachectl binary.
+</longdesc>
+<shortdesc lang="en">apachectl location.</shortdesc>
+<content type="string" default="/usr/sbin/apachectl" />
+</parameter>
+<parameter name="pid" unique="1" required="1">
+<longdesc lang="en">
+Location to store the PID file.
+</longdesc>
+<shortdesc lang="en">PID file location.</shortdesc>
+<content type="string" default="/var/www/logs/httpd.pid" />
+</parameter>
+<parameter name="parameters" unique="1" required="1">
+<longdesc lang="en">
+Parameters to apachectl, e.g. start or startssl.
+</longdesc>
+<shortdesc lang="en">apachectl parameters.</shortdesc>
+<content type="string" default="start" />
+</parameter>
+
+</parameters>
+
+<actions>
+<action name="start"        timeout="90" />
+<action name="stop"         timeout="100" />
+<action name="monitor"      timeout="20" interval="10" depth="0" start-delay="0" />
+<action name="reload"       timeout="90" />
+<action name="migrate_to"   timeout="100" />
+<action name="migrate_from" timeout="90" />
+<action name="meta-data"    timeout="5" />
+<action name="verify-all"   timeout="30" />
+</actions>
+</resource-agent>
+END
+}
+
+#######################################################################
+
+# don't exit on TERM, to test that lrmd makes sure that we do exit
+trap sigterm_handler TERM
+sigterm_handler() {
+	ocf_log info "They use TERM to bring us down. No such luck."
+	return
+}
+
+apache13_usage() {
+	cat <<END
+usage: $0 {start|stop|monitor|migrate_to|migrate_from|validate-all|meta-data}
+
+Expects to have a fully populated OCF RA-compliant environment set.
+END
+}
+
+apache13_start() {
+    apache13_monitor
+    if [ $? =  $OCF_SUCCESS ]; then
+	# apache13 is already running, nothing to do
+	return $OCF_SUCCESS
+    fi
+    ${OCF_RESKEY_apachectl} ${OCF_RESKEY_parameters}
+    return ${OCF_SUCCESS}
+}
+
+apache13_stop() {
+ocf_log debug stop
+    apache13_monitor
+    if [ $? ==  $OCF_SUCCESS ]; then
+	${OCF_RESKEY_apachectl} stop
+        return $OCF_SUCCESS
+    else
+	${OCF_RESKEY_apachectl} stop
+    fi
+	${OCF_RESKEY_apachectl} stop
+    return $OCF_SUCCESS
+}
+
+apache13_monitor() {
+	# Monitor _MUST!_ differentiate correctly between running
+	# (SUCCESS), failed (ERROR) or _cleanly_ stopped (NOT RUNNING).
+	# That is THREE states, not just yes/no.
+	
+	ps axwww | grep -e "parent" | grep -v grep > /dev/null 2>/dev/null
+	if [ $? -eq 0 ];then
+		return $OCF_SUCCESS
+	else
+		return $OCF_NOT_RUNNING
+	fi
+}
+
+apache13_validate() {
+    
+    if [ ! -x ${OCF_RESKEY_apachectl} ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+    if [ ! -d `dirname ${OCF_RESKEY_pid}` ];then
+	return ${OCF_ERR_GENERIC}
+    fi
+
+    return ${OCF_SUCCESS}
+}
+
+: ${OCF_RESKEY_apachectl=/usr/sbin/apachectl}
+: ${OCF_RESKEY_pid=/var/www/logs/httpd.pid}
+: ${OCF_RESKEY_parameters=start}
+
+case $__OCF_ACTION in
+meta-data)	meta_data
+		exit $OCF_SUCCESS
+		;;
+start)		apache13_start;;
+stop)		apache13_stop;;
+monitor)	apache13_monitor;;
+migrate_to)	ocf_log info "Migrating ${OCF_RESOURCE_INSTANCE} to ${OCF_RESKEY_CRM_meta_migrate_to}."
+	        apache13_stop
+		;;
+migrate_from)	ocf_log info "Migrating ${OCF_RESOURCE_INSTANCE} to ${OCF_RESKEY_CRM_meta_migrated_from}."
+	        apache13_start
+		;;
+reload)		ocf_log err "Reloading..."
+	        apache13_start
+		;;
+validate-all)	apache13_validate;;
+usage|help)	apache13_usage
+		exit $OCF_SUCCESS
+		;;
+*)		apache13_usage
+		exit $OCF_ERR_UNIMPLEMENTED
+		;;
+esac
+rc=$?
+ocf_log debug "${OCF_RESOURCE_INSTANCE} $__OCF_ACTION : $rc"
+exit $rc
+

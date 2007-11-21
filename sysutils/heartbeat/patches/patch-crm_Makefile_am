@@ -1,0 +1,15 @@
+$OpenBSD: patch-crm_Makefile_am,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- crm/Makefile.am.orig	Sat Nov 17 13:57:35 2007
++++ crm/Makefile.am	Sat Nov 17 13:58:46 2007
+@@ -32,11 +32,3 @@ crm.dtd: crm-1.0.dtd
+ 	cp $(top_srcdir)/crm/crm-1.0.dtd crm.dtd
+ 
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)/$(crm_varlibdir)
+-	-chown $(HA_CCMUSER) $(DESTDIR)/$(crm_varlibdir)
+-	-chgrp $(HA_APIGROUP) $(DESTDIR)/$(crm_varlibdir)
+-	-chmod 750 $(DESTDIR)/$(crm_varlibdir)
+-	$(mkinstalldirs) $(DESTDIR)/$(crm_varrundir)
+-	-chown $(HA_CCMUSER) $(DESTDIR)/$(crm_varrundir)
+-	-chgrp $(HA_APIGROUP) $(DESTDIR)/$(crm_varrundir)
+-	-chmod 750 $(DESTDIR)/$(crm_varrundir)

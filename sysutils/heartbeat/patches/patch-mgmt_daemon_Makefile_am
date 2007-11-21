@@ -1,0 +1,23 @@
+$OpenBSD: patch-mgmt_daemon_Makefile_am,v 1.1.1.1 2007/11/21 18:48:39 ajacoutot Exp $
+--- mgmt/daemon/Makefile.am.orig	Thu Oct 25 09:40:41 2007
++++ mgmt/daemon/Makefile.am	Sat Nov 17 14:33:22 2007
+@@ -32,16 +32,15 @@ EXTRA_DIST	=  mgmtd.pam
+ 		   
+ LRM_DIR		= lrm
+ 
+-pamdir 		= /etc/pam.d
+-pam_DATA	= mgmtd.pam
++pamdir 		=
++pam_DATA	=
+ 
+ install-data-hook:
+-		mv $(DESTDIR)$(pamdir)/mgmtd.pam $(DESTDIR)$(pamdir)/hbmgmtd
+ 
+ 
+ halib_PROGRAMS 	=  mgmtd
+ mgmtd_SOURCES 	=  mgmtd.c
+-mgmtd_LDFLAGS	= -lpam
++mgmtd_LDFLAGS	= 
+ mgmtd_LDADD 	=  $(top_builddir)/lib/mgmt/libhbmgmtclient.la \
+ 		   $(top_builddir)/lib/mgmt/libhbmgmttls.la \
+ 		   libhbmgmt.la \

@@ -1,0 +1,122 @@
+$OpenBSD: patch-resources_OCF_pgsql,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- resources/OCF/pgsql.orig	Thu Oct 25 09:40:41 2007
++++ resources/OCF/pgsql	Mon Nov 12 11:13:26 2007
+@@ -25,6 +25,28 @@
+ 
+ . ${OCF_ROOT}/resource.d/heartbeat/.ocf-shellfuncs
+ 
++HOSTOS=`uname`
++if [ "X${HOSTOS}" == "XOpenBSD" ];then
++OCF_RESKEY_pgctl_default="!!LOCALBASE!!/bin/pg_ctl"
++OCF_RESKEY_psql_default="!!LOCALBASE!!/bin/psql"
++OCF_RESKEY_pgdata_default="/var/postgresql/data"
++OCF_RESKEY_pgdba_default="_postgresql"
++OCF_RESKEY_pgport_default="5432"
++OCF_RESKEY_pgdb_default="template1"
++OCF_RESKEY_logfile_default="/dev/null"
++OCF_RESKEY_stop_escalate_default=30
++else
++OCF_RESKEY_pgctl_default="/usr/bin/pg_ctl"
++OCF_RESKEY_psql_default="/usr/bin/psql"
++OCF_RESKEY_pgdata_default="/var/lib/pgsql/data"
++OCF_RESKEY_pgdba_default="_postgresql"
++OCF_RESKEY_pgport_default="5432"
++OCF_RESKEY_pgdb_default="template1"
++OCF_RESKEY_logfile_default="/dev/null"
++OCF_RESKEY_stop_escalate_default=30
++fi
++
++
+ unset LC_ALL; export LC_ALL
+ unset LANGUAGE; export LANGUAGE
+ 
+@@ -62,7 +84,7 @@ Resource script for PostgreSQL. It manages a PostgreSQ
+ Path to pg_ctl command.
+ </longdesc>
+ <shortdesc lang="en">pgctl</shortdesc>
+-<content type="string" default="/usr/bin/pg_ctl" />
++<content type="string" default="${OCF_RESKEY_pgctl_default}" />
+ </parameter>
+ <parameter name="start_opt" unique="0" required="0">
+ <longdesc lang="en">
+@@ -83,21 +105,21 @@ Additional pg_ctl options (-w, -W etc..). Default is "
+ Path to psql command.
+ </longdesc>
+ <shortdesc lang="en">psql</shortdesc>
+-<content type="string" default="/usr/bin/psql" />
++<content type="string" default="${OCF_RESKEY_psql_default}" />
+ </parameter>
+ <parameter name="pgdata" unique="0" required="0">
+ <longdesc lang="en">
+ Path PostgreSQL data directory.
+ </longdesc>
+ <shortdesc lang="en">pgdata</shortdesc>
+-<content type="string" default="/var/lib/pgsql/data" />
++<content type="string" default="${OCF_RESKEY_pgdata_default}" />
+ </parameter>
+ <parameter name="pgdba" unique="0" required="0">
+ <longdesc lang="en">
+ User that owns PostgreSQL.
+ </longdesc>
+ <shortdesc lang="en">pgdba</shortdesc>
+-<content type="string" default="postgres" />
++<content type="string" default="${OCF_RESKEY_pgdba_default}" />
+ </parameter>
+ <parameter name="pghost" unique="0" required="0">
+ <longdesc lang="en">
+@@ -111,28 +133,28 @@ Hostname/IP Addreess where PosrgeSQL is listening
+ Port where PosrgeSQL is listening
+ </longdesc>
+ <shortdesc lang="en">pgport</shortdesc>
+-<content type="string" default="5432" />
++<content type="string" default="${OCF_RESKEY_pgport_default}" />
+ </parameter>
+ <parameter name="pgdb" unique="0" required="0">
+ <longdesc lang="en">
+ Database that will be used for monitoring.
+ </longdesc>
+ <shortdesc lang="en">pgdb</shortdesc>
+-<content type="string" default="template1" />
++<content type="string" default="${OCF_RESKEY_pgdb_default}" />
+ </parameter>
+ <parameter name="logfile" unique="0" required="0">
+ <longdesc lang="en">
+ Path to PostgreSQL server log output file.
+ </longdesc>
+ <shortdesc lang="en">logfile</shortdesc>
+-<content type="string" default="/dev/null" />
++<content type="string" default="${OCF_RESKEY_logfile_default}" />
+ </parameter>
+ <parameter name="stop_escalate" unique="0" required="0">
+ <longdesc lang="en">
+ Number of retries (using -m fast) before resorting to -m immediate
+ </longdesc>
+ <shortdesc lang="en">stop escalation</shortdesc>
+-<content type="string" default="30" />
++<content type="string" default="${OCF_RESKEY_stop_escalate_default}" />
+ </parameter>
+ </parameters>
+ 
+@@ -362,14 +384,14 @@ then
+     exit 1
+ fi
+ 
+-: ${OCF_RESKEY_pgctl=/usr/bin/pg_ctl}
+-: ${OCF_RESKEY_psql=/usr/bin/psql}
+-: ${OCF_RESKEY_pgdata=/var/lib/pgsql/data}
+-: ${OCF_RESKEY_pgdba=postgres}
+-: ${OCF_RESKEY_pgport=5432}
+-: ${OCF_RESKEY_pgdb=template1}
+-: ${OCF_RESKEY_logfile=/dev/null}
+-: ${OCF_RESKEY_stop_escalate=30}
++: ${OCF_RESKEY_pgctl=${OCF_RESKEY_pgctl_default}}
++: ${OCF_RESKEY_psql=${OCF_RESKEY_psql_default}}
++: ${OCF_RESKEY_pgdata=${OCF_RESKEY_pgdata_default}}
++: ${OCF_RESKEY_pgdba=${OCF_RESKEY_pgdba_default}}
++: ${OCF_RESKEY_pgport=${OCF_RESKEY_pgport_default}}
++: ${OCF_RESKEY_pgdb=${OCF_RESKEY_pgdb_default}}
++: ${OCF_RESKEY_logfile=${OCF_RESKEY_logfile_default}}
++: ${OCF_RESKEY_stop_escalate=${OCF_RESKEY_stop_escalate_default}}
+ 
+ PIDFILE=${OCF_RESKEY_pgdata}/postmaster.pid
+ 

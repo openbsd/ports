@@ -1,0 +1,4 @@
+The basic goal of the High Availability Linux project is to provide a
+high availability (clustering) solution for Linux (and Unix-like) which
+promotes reliability, availability, and serviceability (RAS) through a
+community development effort.

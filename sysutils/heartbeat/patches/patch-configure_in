@@ -1,0 +1,64 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- configure.in.orig	Thu Oct 25 09:40:41 2007
++++ configure.in	Mon Nov 12 14:03:47 2007
+@@ -224,7 +224,7 @@ includedir=`var "$includedir" "$exec_prefix/include"`
+ oldincludedir=`var "$oldincludedir" "$exec_prefix/include"`
+ infodir=`var "$infodir" "$prefix/info"`
+ mandir=`var "$mandir" "$exec_prefix/man"`
+-docdir=${datadir}/doc/${HB_PKG}-${VERSION}
++docdir=${datadir}/doc/${HB_PKG}
+ libdir=`var "$libdir" "$exec_prefix/lib"`
+ libexecdir=`var "$libexecdir" "$exec_prefix/libexec"`
+ noarchlibdir=`var "$noarchlibdir" "$prefix/lib"`
+@@ -280,7 +280,7 @@ case ${LibDirSuffix} in
+ 		case $OutFileType in
+ 		  *64-bit*)	
+ 		  	case $host_os in
+-			  openbsd)	LibDirSuffix=lib;;
++			  openbsd*)	LibDirSuffix=lib;;
+ 		  	  *)		LibDirSuffix=lib64;;
+ 			esac;;
+ 		  *32-bit*)	LibDirSuffix=lib;;
+@@ -817,7 +817,7 @@ AC_DEFINE(PROCROUTE, "/proc/net/route", path were to f
+ 
+ 
+ AC_MSG_CHECKING(ifconfig option to list interfaces)
+-for IFCONFIG_A_OPT in "" "-A" "-a"
++for IFCONFIG_A_OPT in "-A" "" "-a"
+ do
+   $IFCONFIG $IFCONFIG_A_OPT > /dev/null 2>&1
+   if
+@@ -871,7 +871,7 @@ FindADir() {
+         return 1
+ 
+ }
+-locale_locations="/usr/share/locale /usr/lib/locale /usr/lib/nls/loc"
++locale_locations="!!LOCALBASE!!/share/locale /usr/lib/locale /usr/lib/nls/loc"
+ LOCALE=`FindADir error "locale" $locale_locations`
+ if
+   test  "X$LOCALE" = X
+@@ -2532,6 +2532,7 @@ dnl management and quorum daemons.
+ 
+ AC_CHECK_HEADERS(gnutls/gnutls.h)
+ AC_CHECK_HEADERS(security/pam_appl.h pam/pam_appl.h)
++AC_CHECK_HEADERS(bsd_auth.h login_cap.h)
+ 
+ dnl GNUTLS library: Attempt to determine by 'libgnutls-config' program.
+ dnl If no 'libgnutls-config', try traditional autoconf means.
+@@ -2575,10 +2576,12 @@ if test "x${enable_mgmt}" != "xno"; then
+ 	fi
+ 
+ 	if test "$ac_cv_header_security_pam_appl_h" = "no" -a "$ac_cv_header_pam_pam_appl_h" = "no"; then
+-  		$MISSING_FN "security/pam_appl.h" \
+-		  "The GUI managment module needs the pam-devel package"
+-		enable_mgmt="no"
+-		MGMT_ENABLED=0
++		if test "$ac_cv_header_security_bsd_auth_h" = "no" -a "$ac_cv_header_login_cap_h" = "no"; then
++  			$MISSING_FN "security/pam_appl.h or bsd_auth_h" \
++		  	"The GUI managment module needs the pam-devel package or OpenBSD auth"
++			enable_mgmt="no"
++			MGMT_ENABLED=0
++		fi
+ 	fi
+ 
+ 	if test "$ac_cv_header_gnutls_gnutls_h" = "no"; then

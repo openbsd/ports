@@ -1,0 +1,229 @@
+$OpenBSD: patch-resources_OCF_mysql,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- resources/OCF/mysql.orig	Thu Oct 25 09:40:41 2007
++++ resources/OCF/mysql	Mon Nov 12 11:13:26 2007
+@@ -6,9 +6,10 @@
+ # Description:	Manages a MySQL database as Linux-HA resource
+ 
+ #
+-# Author:	Alan Robertson : DB2 Script
+-# Author:	Jakub Janczak  : Rewrite as MySQL
+-# Author:	Andrew Beekhof : Cleanup and import
++# Author:	Alan Robertson 		: DB2 Script
++# Author:	Jakub Janczak  		: Rewrite as MySQL
++# Author:	Andrew Beekhof 		: Cleanup and import
++# Author:	Sebastian Reitenbach 	: add OpenBSD defaults, more cleanup
+ #
+ # Support:	linux-ha@lists.linux-ha.org
+ # License:	GNU General Public License (GPL)
+@@ -20,11 +21,19 @@
+ # See usage() function below for more details...
+ #
+ # OCF instance parameters:
+-#   OCF_RESKEY_mysql_config
+-#   OCF_RESKEY_mysql_datadir
+-#   OCF_RESKEY_mysql_user
+-#   OCF_RESKEY_mysql_group
+-#   OCF_RESKEY_mysql_test_table
++#   OCF_RESKEY_binary
++#   OCF_RESKEY_config
++#   OCF_RESKEY_datadir
++#   OCF_RESKEY_user
++#   OCF_RESKEY_group
++#   OCF_RESKEY_test_table
++#   OCF_RESKEY_test_user
++#   OCF_RESKEY_test_password
++#   OCF_RESKEY_enable_creation
++#   OCF_RESKEY_additional_parameters
++#   OCF_RESKEY_log
++#   OCF_RESKEY_pid
++#   OCF_RESKEY_socket
+ 
+ #######################################################################
+ # Initialization:
+@@ -33,28 +42,57 @@
+ 
+ #######################################################################
+ 
+-SH=/bin/sh
+-
+ # Fill in some defaults if no values are specified
+-: ${OCF_RESKEY_binary="/usr/bin/safe_mysqld"}
++HOSTOS=`uname`
++if [ "X${HOSTOS}" == "XOpenBSD" ];then
++OCF_RESKEY_binary_default="!!LOCALBASE!!/bin/mysqld_safe"
++OCF_RESKEY_config_default="!!SYSCONFDIR!!/my.cnf"
++OCF_RESKEY_datadir_default="/var/mysql"
++OCF_RESKEY_user_default="_mysql"
++OCF_RESKEY_group_default="_mysql"
++OCF_RESKEY_log_default="/var/log/mysqld.log"
++OCF_RESKEY_pid_default="/var/mysql/mysqld.pid"
++OCF_RESKEY_socket_default="/var/run/mysql/mysql.sock"
++OCF_RESKEY_test_user_default="root"
++OCF_RESKEY_test_table_default="mysql.user"
++OCF_RESKEY_test_passwd_default=""
++OCF_RESKEY_enable_creation_default=0
++OCF_RESKEY_additional_parameters_default=""
++else
++OCF_RESKEY_binary_default="/usr/bin/safe_mysqld"
++OCF_RESKEY_config_default="/etc/my.cnf"
++OCF_RESKEY_datadir_default="/var/lib/mysql"
++OCF_RESKEY_user_default="mysql"
++OCF_RESKEY_group_default="mysql"
++OCF_RESKEY_log_default="/var/log/mysqld.log"
++OCF_RESKEY_pid_default="/var/run/mysql/mysqld.pid"
++OCF_RESKEY_socket_default="/var/lib/mysql/mysql.sock"
++OCF_RESKEY_test_user_default="root"
++OCF_RESKEY_test_table_default="mysql.user"
++OCF_RESKEY_test_passwd_default=""
++OCF_RESKEY_enable_creation_default=0
++OCF_RESKEY_additional_parameters_default=""
++fi
++
++: ${OCF_RESKEY_binary=${OCF_RESKEY_binary_default}}
+ MYSQL_BINDIR=`dirname ${OCF_RESKEY_binary}`
+ 
+-: ${OCF_RESKEY_config="/etc/my.cnf"}
+-: ${OCF_RESKEY_datadir="/var/lib/mysql"}
++: ${OCF_RESKEY_config=${OCF_RESKEY_config_default}}
++: ${OCF_RESKEY_datadir=${OCF_RESKEY_datadir_default}}
+ 
+-: ${OCF_RESKEY_user="mysql"}
+-: ${OCF_RESKEY_group="mysql"}
++: ${OCF_RESKEY_user=${OCF_RESKEY_user_default}}
++: ${OCF_RESKEY_group=${OCF_RESKEY_group_default}}
+ 
+-: ${OCF_RESKEY_log="/var/log/mysqld.log"}
+-: ${OCF_RESKEY_pid="/var/run/mysql/mysqld.pid"}
+-: ${OCF_RESKEY_socket="/var/lib/mysql/mysql.sock"}
++: ${OCF_RESKEY_log=${OCF_RESKEY_log_default}}
++: ${OCF_RESKEY_pid=${OCF_RESKEY_pid_default}}
++: ${OCF_RESKEY_socket=${OCF_RESKEY_socket_default}}
+ 
+-: ${OCF_RESKEY_test_user="root"}
+-: ${OCF_RESKEY_test_table="mysql.user"}
+-: ${OCF_RESKEY_test_passwd=""}
++: ${OCF_RESKEY_test_user=${OCF_RESKEY_test_user_default}}
++: ${OCF_RESKEY_test_table=${OCF_RESKEY_test_table_default}}
++: ${OCF_RESKEY_test_passwd=${OCF_RESKEY_test_passwd_default}}
+ 
+-: ${OCF_RESKEY_enable_creation=0}
+-: ${OCF_RESKEY_additional_parameters=""}
++: ${OCF_RESKEY_enable_creation=${OCF_RESKEY_enable_creation_default}}
++: ${OCF_RESKEY_additional_parameters=${OCF_RESKEY_additional_parameters_default}}
+ 
+ usage() {
+   cat <<UEND
+@@ -91,7 +129,7 @@ It manages a MySQL Database instance as an HA resource
+ Location of the MySQL binary
+ </longdesc>
+ <shortdesc lang="en">MySQL binary</shortdesc>
+-<content type="string" default="/usr/bin/safe_mysqld" />
++<content type="string" default="${OCF_RESKEY_binary_default}" />
+ </parameter>
+ 
+ <parameter name="config" unique="0" required="0">
+@@ -99,7 +137,7 @@ Location of the MySQL binary
+ Configuration file
+ </longdesc>
+ <shortdesc lang="en">MySQL config</shortdesc>
+-<content type="string" default="/etc/my.cnf" />
++<content type="string" default="${OCF_RESKEY_config_default}" />
+ </parameter>
+ 
+ <parameter name="datadir" unique="0" required="0">
+@@ -107,7 +145,7 @@ Configuration file
+ Directory containing databases
+ </longdesc>
+ <shortdesc lang="en">MySQL datadir</shortdesc>
+-<content type="string" default="/var/lib/mysql" />
++<content type="string" default="${OCF_RESKEY_datadir_default}" />
+ </parameter>
+ 
+ <parameter name="user" unique="0" required="0">
+@@ -115,7 +153,7 @@ Directory containing databases
+ User running MySQL daemon
+ </longdesc>
+ <shortdesc lang="en">MySQL user</shortdesc>
+-<content type="string" default="mysql" />
++<content type="string" default="${OCF_RESKEY_user_default}" />
+ </parameter>
+ 
+ <parameter name="group" unique="0" required="0">
+@@ -123,15 +161,39 @@ User running MySQL daemon
+ Group running MySQL daemon (for logfile and directory permissions)
+ </longdesc>
+ <shortdesc lang="en">MySQL group</shortdesc>
+-<content type="string" default="mysql"/>
++<content type="string" default="${OCF_RESKEY_group_default}"/>
+ </parameter>
+ 
++<parameter name="log" unique="0" required="0">
++<longdesc lang="en">
++The logfile to be used for mysqld.
++</longdesc>
++<shortdesc lang="en">MySQL log file</shortdesc>
++<content type="string" default="${OCF_RESKEY_log_default}"/>
++</parameter>
++
++<parameter name="pid" unique="0" required="0">
++<longdesc lang="en">
++The pidfile to be used for mysqld.
++</longdesc>
++<shortdesc lang="en">MySQL pid file</shortdesc>
++<content type="string" default="${OCF_RESKEY_pid_default}"/>
++</parameter>
++
++<parameter name="socket" unique="0" required="0">
++<longdesc lang="en">
++The socket to be used for mysqld.
++</longdesc>
++<shortdesc lang="en">MySQL socket</shortdesc>
++<content type="string" default="${OCF_RESKEY_pid_default}"/>
++</parameter>
++
+ <parameter name="test_table" unique="0" required="0">
+ <longdesc lang="en">
+ Table to be tested in monitor statement (in database.table notation)
+ </longdesc>
+ <shortdesc lang="en">MySQL test table</shortdesc>
+-<content type="string" default="mysql.user" />
++<content type="string" default="OCF_RESKEY_test_table_default" />
+ </parameter>
+ 
+ <parameter name="test_user" unique="0" required="0">
+@@ -139,7 +201,7 @@ Table to be tested in monitor statement (in database.t
+ MySQL test user
+ </longdesc>
+ <shortdesc lang="en">MySQL test user</shortdesc>
+-<content type="string" default="root" />
++<content type="string" default="OCF_RESKEY_test_user_default" />
+ </parameter>
+ 
+ <parameter name="test_passwd" unique="0" required="0">
+@@ -147,7 +209,7 @@ MySQL test user
+ MySQL test user password
+ </longdesc>
+ <shortdesc lang="en">MySQL test user password</shortdesc>
+-<content type="string" default="" />
++<content type="string" default="${OCF_RESKEY_test_passwd_default}" />
+ </parameter>
+ 
+ <parameter name="enable_creation" unique="0" required="0">
+@@ -155,7 +217,7 @@ MySQL test user password
+ If the MySQL database does not exist, it will be created 
+ </longdesc>
+ <shortdesc lang="en">Create the database if it does not exist</shortdesc>
+-<content type="integer" default="0"/>
++<content type="integer" default="${OCF_RESKEY_enable_creation_default}"/>
+ </parameter>
+ 
+ <parameter name="additional_parameters" unique="0" required="0">
+@@ -164,7 +226,7 @@ Additional parameters which are passed to the mysqld o
+ (e.g. --skip-external-locking or --skip-grant-tables)
+ </longdesc>
+ <shortdesc lang="en">Additional paramters to pass to mysqld</shortdesc>
+-<content type="integer" default="0"/>
++<content type="integer" default="${OCF_RESKEY_additional_parameters_default}"/>
+ </parameter>
+ 
+ </parameters>

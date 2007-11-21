@@ -1,0 +1,14 @@
+$OpenBSD: patch-ConfigureMe,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- ConfigureMe.orig	Thu Oct 25 09:40:41 2007
++++ ConfigureMe	Thu Nov 15 17:10:52 2007
+@@ -121,10 +121,6 @@ ConfigureFreeBSD() {
+ }
+ 
+ ConfigureOpenBSD() {
+-  FLAGS="--prefix=/usr/local --sysconfdir=/etc --localstatedir=/var  --with-group-id=584 --with-ccmuser-id=584 --disable-rpath --with-group-name=_heartbeat --with-ccmuser-name=_heartbeat --with-ocf-root=/usr/local/lib/ocf/ --enable-fatal-warnings=no" 
+-  export LDFLAGS="-liconv -L/usr/local/lib/libnet-1.0"
+-  export LIBNETCONFIG=/usr/local/bin/libnet-config-1.0
+-  export AUTOCONF_VERSION=2.61
+   CFENV="OpenBSD"
+ }
+ 

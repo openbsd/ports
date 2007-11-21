@@ -1,0 +1,12 @@
+$OpenBSD: patch-heartbeat_init_d_heartbeat_in,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- heartbeat/init.d/heartbeat.in.orig	Sat Nov 17 13:20:03 2007
++++ heartbeat/init.d/heartbeat.in	Sat Nov 17 13:20:22 2007
+@@ -48,7 +48,7 @@ HA_DIR=@sysconfdir@/ha.d; export HA_DIR
+ CONFIG=$HA_DIR/ha.cf
+ . $HA_DIR/shellfuncs
+ 
+-LOCKDIR=@localstatedir@/lock/subsys
++LOCKDIR=@localstatedir@/spool/lock/subsys
+ RUNDIR=@localstatedir@/run
+ 
+ 

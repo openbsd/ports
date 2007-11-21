@@ -1,0 +1,6 @@
+The LSB directory is ${SYSCONFDIR}/ha.d/init.d
+
+To start heartbeat, as root run:
+	install -d -o ${HBUSER} -g ${HBGROUP} -m 750 \
+		/var/run/heartbeat/{ccm,crm,rsctmp}
+	${SYSCONFDIR}/ha.d/init.d/heartbeat.sh start

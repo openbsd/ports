@@ -1,0 +1,5 @@
+To start the GUI, as an unprivileged user run:
+	${PREFIX}/bin/hb_gui
+
+You have to assign a password to the ${HBUSER} user to be able
+to login with the GUI.

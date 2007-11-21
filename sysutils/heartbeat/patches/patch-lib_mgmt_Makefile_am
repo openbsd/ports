@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_mgmt_Makefile_am,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- lib/mgmt/Makefile.am.orig	Thu Oct 25 09:40:41 2007
++++ lib/mgmt/Makefile.am	Sat Nov 17 13:54:06 2007
+@@ -55,10 +55,10 @@ _pymgmt_la_LIBADD = $(top_builddir)/replace/libreplace
+ 
+ guilib_SCRIPTS = pymgmt.py
+ 
++_pymgmt.la: $(_pymgmt_la_OBJECTS) $(_pymgmt_la_DEPENDENCIES)
++	$(LINK) -avoid-version -rpath $(guilibdir) $(_pymgmt_la_LDFLAGS) $(_pymgmt_la_OBJECTS) $(_pymgmt_la_LIBADD) $(LIBS)
++
+ pymgmt_wrap.c pymgmt.py: pymgmt.i
+ 	$(SWIG) -python $^
+ 
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)$(mgmtdir)
+-	-chgrp $(apigid) $(DESTDIR)/$(mgmtdir)
+-	chmod 770 $(DESTDIR)/$(mgmtdir)

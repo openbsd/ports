@@ -1,0 +1,88 @@
+$OpenBSD: patch-mgmt_daemon_mgmtd_c,v 1.1.1.1 2007/11/21 18:48:39 ajacoutot Exp $
+--- mgmt/daemon/mgmtd.c.orig	Thu Oct 25 09:40:41 2007
++++ mgmt/daemon/mgmtd.c	Mon Nov 12 11:13:26 2007
+@@ -40,10 +40,11 @@
+ #include <fcntl.h>
+ #if HAVE_SECURITY_PAM_APPL_H
+ #  include <security/pam_appl.h>
+-#else
+-#  if HAVE_PAM_PAM_APPL_H
++#elif HAVE_PAM_PAM_APPL_H
+ #    include <pam/pam_appl.h>
+-#  endif
++#else
++#    include <login_cap.h>
++#    include <bsd_auth.h>
+ #endif
+ #include <glib.h>
+ 
+@@ -100,9 +101,11 @@ static int new_client(int sock, void* session);
+ static client_t* lookup_client(int id);
+ static int del_client(int id);
+ 
++#if HAVE_SECURITY_PAM_APPL_H || HAVE_PAM_PAM_APPL_H
+ static int pam_auth(const char* user, const char* passwd);
+ static int pam_conv(int n, const struct pam_message **msg,
+ 		    struct pam_response **resp, void *data);
++#endif
+ 
+ static char* dispatch_msg(const char* msg, int client_id);
+ 
+@@ -429,6 +432,7 @@ on_listen(GIOChannel *source, GIOCondition condition, 
+ 	unsigned laddr;
+ 	struct sockaddr_in addr;
+ 	int num = 0;
++	int ret;
+ 	char** args = NULL;
+ 	const char *client_proto = "1.0"; /* allow old clients to connect */
+ 
+@@ -477,14 +481,25 @@ on_listen(GIOChannel *source, GIOCondition condition, 
+ 			return TRUE;
+ 		}
+ 		/* authorization check with pam */	
++#if HAVE_SECURITY_PAM_APPL_H || HAVE_PAM_PAM_APPL_H
+ 		if (pam_auth(args[1],args[2]) != 0 || !usr_belong_grp(args[1],ALLOW_GRP)) {
+-			mgmt_del_args(args);
+-			mgmt_del_msg(msg);
+-			_mgmt_session_sendmsg(session, MSG_FAIL);
+-			tls_detach(session);
+-			close(csock);
+-			mgmt_log(LOG_ERR, "%s pam auth failed", __FUNCTION__);
+-			return TRUE;
++		mgmt_log(LOG_ERR, "have pam!!!!!!!");
++#else
++		ret = auth_userokay(args[1],NULL,NULL,args[2]);
++		mgmt_log(LOG_ERR, "ret: %i for user: %s", ret, args[1]);
++		if (ret == 0) {
++			if (!usr_belong_grp(args[1],ALLOW_GRP)) {
++#endif
++				mgmt_del_args(args);
++				mgmt_del_msg(msg);
++				_mgmt_session_sendmsg(session, MSG_FAIL);
++				tls_detach(session);
++				close(csock);
++				mgmt_log(LOG_ERR, "%s pam or bsd auth failed", __FUNCTION__);
++				return TRUE;
++#if ! HAVE_SECURITY_PAM_APPL_H || ! HAVE_PAM_PAM_APPL_H
++			}
++#endif
+ 		}
+ 		mgmt_del_args(args);
+ 		mgmt_del_msg(msg);
+@@ -573,6 +588,7 @@ del_client(int id)
+ 	return 0;
+ }
+ 
++#if HAVE_SECURITY_PAM_APPL_H || HAVE_PAM_PAM_APPL_H
+ int 
+ pam_auth(const char* user, const char* passwd)
+ {
+@@ -633,6 +649,8 @@ pam_conv(int n, const struct pam_message **msg,
+ 	
+ 	return PAM_SUCCESS;
+ }
++#endif
++
+ int
+ on_event(const char* event) 
+ {

@@ -1,0 +1,25 @@
+$OpenBSD: patch-doc_ha_cf,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+--- doc/ha.cf.orig	Sun Nov 18 13:06:45 2007
++++ doc/ha.cf	Sun Nov 18 13:10:20 2007
+@@ -38,6 +38,21 @@
+ logfacility	local0
+ #
+ #
++#	Set automatic join mode/style (default none)
++#
++#autojoin any
++#
++#
++#	Specifies whether Heartbeat should run v2-style (default no)
++#
++#crm yes
++#
++#
++#	Name of the cluster
++#
++cluster OpenBSD-Heartbeat
++#
++#
+ #	A note on specifying "how long" times below...
+ #
+ #	The default time unit is seconds

@@ -1,0 +1,12 @@
+$OpenBSD: patch-fencing_stonithd_stonithd_c,v 1.1.1.1 2007/11/21 18:48:39 ajacoutot Exp $
+--- fencing/stonithd/stonithd.c.orig	Thu Oct 25 09:40:41 2007
++++ fencing/stonithd/stonithd.c	Mon Nov 12 11:13:25 2007
+@@ -1051,7 +1051,7 @@ handle_msg_tstit(struct ha_msg* msg, void* private_dat
+ 		return;
+ 	}
+ 	return_on_msg_from_us(T_STIT);
+-	return_on_msg_shoot_us();
++	return_on_msg_shoot_us(void);
+ 
+ 	srsc = get_local_stonithobj_can_stonith(target, NULL);
+ 	if( !srsc ) {
