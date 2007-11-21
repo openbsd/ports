@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/21 11:48:37 jasper Exp $
 
 COMMENT=	window manipulation tool
 
-DISTNAME=	devilspie-0.19
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	devilspie-0.21
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.burtonini.com/blog/computers/devilspie
@@ -16,10 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xext Xrender cairo atk-1.0 c fontconfig freetype m z \
-		gdk_pixbuf-2.0 gdk-x11-2.0 glib-2.0 glitz png \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
-		pango-1.0 pangoft2-1.0 pangocairo-1.0
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
+		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png startup-notification-1 z
 
 MASTER_SITES=	http://www.burtonini.com/computing/
 
