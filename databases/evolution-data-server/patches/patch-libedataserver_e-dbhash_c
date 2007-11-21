@@ -1,0 +1,12 @@
+$OpenBSD: patch-libedataserver_e-dbhash_c,v 1.1 2007/11/21 16:10:24 jasper Exp $
+--- libedataserver/e-dbhash.c.orig	Sun Oct 28 11:37:41 2007
++++ libedataserver/e-dbhash.c	Sun Oct 28 11:38:48 2007
+@@ -12,7 +12,7 @@
+ 
+ #include <string.h>
+ #include <fcntl.h>
+-#include "db.h"
++#include <db4/db.h>
+ #include "md5-utils.h"
+ 
+ struct _EDbHashPrivate 

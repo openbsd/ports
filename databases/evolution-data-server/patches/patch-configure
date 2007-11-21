@@ -1,12 +1,22 @@
-$OpenBSD: patch-configure,v 1.3 2007/07/12 10:27:46 ajacoutot Exp $
---- configure.orig	Mon May 28 09:47:47 2007
-+++ configure	Thu Jul 12 10:36:57 2007
-@@ -29041,7 +29041,7 @@ if test "x${with_krb5}" != "xno"; then
+$OpenBSD: patch-configure,v 1.4 2007/11/21 16:10:24 jasper Exp $
+--- configure.orig	Sun Oct 14 19:45:52 2007
++++ configure	Wed Nov 21 13:41:43 2007
+@@ -27390,7 +27390,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
 -	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
 +	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
+ 	sunlibs="-lkrb5 -lgss"
  	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
  echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
- if test "${ac_cv_lib_kerberos5+set}" = set; then
+@@ -27409,8 +27409,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ int
+ main ()
+ {
+-krb5_init_context
+-  ;
++krb5_init_context;
+   return 0;
+ }
+ _ACEOF
