@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-pico,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
+@pkgpath mail/pine,pico
+bin/pico
+@man man/man1/pico.1

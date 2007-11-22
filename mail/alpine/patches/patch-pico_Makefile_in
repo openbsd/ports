@@ -1,0 +1,12 @@
+$OpenBSD: patch-pico_Makefile_in,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
+--- pico/Makefile.in.orig	Tue Nov 20 14:09:31 2007
++++ pico/Makefile.in	Tue Nov 20 14:10:29 2007
+@@ -255,7 +255,7 @@ pico_SOURCES = main.c utf8stub.c
+ pilot_SOURCES = pilot.c utf8stub.c
+ pico_LDADD = $(LDADD) $(INTLLIBS)
+ pilot_LDADD = $(LDADD) $(INTLLIBS)
+-LDADD = ../c-client/utf8.o libpico.a osdep/libpicoosd.a \
++LDADD = ../pith/charconv/utf8.o !!LOCALBASE!!/lib/libc-client.a libpico.a osdep/libpicoosd.a \
+ 	../pith/osdep/libpithosd.a ../pith/charconv/libpithcc.a
+ 
+ noinst_LIBRARIES = libpico.a

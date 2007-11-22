@@ -1,0 +1,38 @@
+$OpenBSD: patch-alpine_Makefile_in,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
+--- alpine/Makefile.in.orig	Tue Nov 20 14:03:52 2007
++++ alpine/Makefile.in	Tue Nov 20 14:05:54 2007
+@@ -83,14 +83,14 @@ rpdump_LDADD = $(LDADD)
+ rpdump_DEPENDENCIES = ../pico/libpico.a ../pico/osdep/libpicoosd.a \
+ 	../pith/libpith.a ../pith/osdep/libpithosd.a \
+ 	../pith/charconv/libpithcc.a osdep/libpineosd.a \
+-	../c-client/c-client.a
++	!!LOCALBASE!!/lib/libc-client.a
+ am_rpload_OBJECTS = rpload.$(OBJEXT)
+ rpload_OBJECTS = $(am_rpload_OBJECTS)
+ rpload_LDADD = $(LDADD)
+ rpload_DEPENDENCIES = ../pico/libpico.a ../pico/osdep/libpicoosd.a \
+ 	../pith/libpith.a ../pith/osdep/libpithosd.a \
+ 	../pith/charconv/libpithcc.a osdep/libpineosd.a \
+-	../c-client/c-client.a
++	!!LOCALBASE!!/lib/libc-client.a
+ DEFAULT_INCLUDES = 
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -122,7 +122,7 @@ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS)
+ ACLOCAL = @ACLOCAL@
+ AMTAR = @AMTAR@
+ AM_CFLAGS = @AM_CFLAGS@
+-AM_LDFLAGS = `cat $(top_srcdir)/c-client/LDFLAGS`
++AM_LDFLAGS = -L/usr/lib -lkafs -lgssapi -lkrb5 -lasn1 -lcom_err -ldes -lssl -lcrypto
+ AR = @AR@
+ AUTOCONF = @AUTOCONF@
+ AUTOHEADER = @AUTOHEADER@
+@@ -277,7 +277,7 @@ BUILT_SOURCES = date.c
+ LDADD = ../pico/libpico.a ../pico/osdep/libpicoosd.a \
+ 	../pith/libpith.a ../pith/osdep/libpithosd.a  \
+ 	../pith/charconv/libpithcc.a \
+-	osdep/libpineosd.a ../c-client/c-client.a
++	osdep/libpineosd.a !!LOCALBASE!!/lib/libc-client.a
+ 
+ AM_CPPFLAGS = -I$(top_builddir)/include -I$(top_srcdir)/include -DLOCALEDIR=\"$(localedir)\"
+ CLEANFILES = date.c

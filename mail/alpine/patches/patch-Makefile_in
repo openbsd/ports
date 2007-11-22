@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
+--- Makefile.in.orig	Tue Nov 20 14:03:02 2007
++++ Makefile.in	Tue Nov 20 14:03:42 2007
+@@ -235,7 +235,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ EXTRA_DIST = config.rpath  VERSION README LICENSE
+ SUBDIRS = m4 po $(REGEX_BUILD) pith pico alpine $(WEB_BUILD) $(WEB_PUBCOOKIE_BUILD)
+-BUILT_SOURCES = c-client.d c-client
++BUILT_SOURCES =
+ CLEANFILES = c-client
+ man_MANS = doc/alpine.1 doc/pico.1 doc/pilot.1 doc/rpdump.1 doc/rpload.1
+ ACLOCAL_AMFLAGS = -I m4
