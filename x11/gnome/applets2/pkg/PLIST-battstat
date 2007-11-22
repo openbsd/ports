@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-battstat,v 1.13 2007/11/10 15:38:18 jasper Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.14 2007/11/22 20:38:39 sturm Exp $
 lib/bonobo/servers/GNOME_BattstatApplet.server
 libexec/battstat-applet-2
 share/examples/gnome-applets2/
@@ -88,6 +88,7 @@ share/omf/battstat/battstat-bg.omf
 share/omf/battstat/battstat-en_GB.omf
 share/omf/battstat/battstat-es.omf
 share/omf/battstat/battstat-fr.omf
+share/omf/battstat/battstat-oc.omf
 share/omf/battstat/battstat-pa.omf
 share/omf/battstat/battstat-sv.omf
 share/omf/battstat/battstat-uk.omf

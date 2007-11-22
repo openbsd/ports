@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/11/10 15:38:18 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2007/11/22 20:38:39 sturm Exp $
 @pkgpath x11/gnome/applets2
 @pkgpath x11/gnome/applets2,no_battstat
 %%SHARED%%
@@ -1103,7 +1103,6 @@ share/omf/accessx-status/accessx-status-nl.omf
 share/omf/accessx-status/accessx-status-oc.omf
 share/omf/accessx-status/accessx-status-sv.omf
 share/omf/accessx-status/accessx-status-uk.omf
-share/omf/battstat/battstat-oc.omf
 share/omf/char-palette/
 share/omf/char-palette/char-palette-C.omf
 share/omf/char-palette/char-palette-bg.omf
