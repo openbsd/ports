@@ -1,0 +1,8 @@
+DBIx::DataModel is a wrapper framework for building Perl abstractions
+(classes, objects and datastructures) that interact with relational
+database management systems (RDBMS).  Of course the ubiquitous DBI
+module is used as a basic layer for communicating with databases; on
+top of that, DBIx::DataModel provides facilities for generating SQL
+queries, joining tables automatically, navigating through the results,
+converting values, and building complex datastructures so that other
+modules can conveniently exploit the data.

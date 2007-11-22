@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/22 19:43:40 simon Exp $
+${P5SITE}/DBIx/
+${P5SITE}/DBIx/DataModel/
+${P5SITE}/DBIx/DataModel.pm
+${P5SITE}/DBIx/DataModel/AbstractTable.pm
+${P5SITE}/DBIx/DataModel/Base.pm
+${P5SITE}/DBIx/DataModel/Iterator.pm
+${P5SITE}/DBIx/DataModel/Schema.pm
+${P5SITE}/DBIx/DataModel/Table.pm
+${P5SITE}/DBIx/DataModel/View.pm
+@man man/man3p/DBIx::DataModel.3p
+@man man/man3p/DBIx::DataModel::AbstractTable.3p
+@man man/man3p/DBIx::DataModel::Base.3p
+@man man/man3p/DBIx::DataModel::Iterator.3p
+@man man/man3p/DBIx::DataModel::Schema.3p
+@man man/man3p/DBIx::DataModel::Table.3p
+@man man/man3p/DBIx::DataModel::View.3p
