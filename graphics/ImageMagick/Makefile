@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.99 2007/10/22 14:23:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2007/11/22 17:20:19 okan Exp $
 
 COMMENT=		image processing tools
 
-VER=			6.3.5
-DASHVER=		9
+VER=			6.3.6
+DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
-SHARED_LIBS=		Magick++	12.0	\
-			Magick		12.0	\
-			Wand		12.0
+SHARED_LIBS=		Magick++	12.1	\
+			Magick		12.1	\
+			Wand		12.1
 
 CATEGORIES=		graphics
 
@@ -32,7 +32,8 @@ LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
 			tiff.>=36::graphics/tiff \
 			xml2.>=9::textproc/libxml \
 			lcms.>=1::graphics/lcms \
-			jasper.>=1::graphics/jasper
+			jasper.>=1::graphics/jasper \
+			wmflite.>=7::graphics/libwmf
 
 RUN_DEPENDS=		:netpbm-*:graphics/netpbm
 BUILD_DEPENDS=		:netpbm-*:graphics/netpbm
@@ -53,7 +54,7 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--without-threads \
 			--without-perl \
 			--without-rsvg \
-			--without-wmf \
+			--with-wmf \
 			--disable-ltdl-install
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
