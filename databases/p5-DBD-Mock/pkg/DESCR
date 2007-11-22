@@ -1,0 +1,11 @@
+Testing with databases can be tricky.  If you are developing a system
+married to a single database then you can make some assumptions about
+your environment and ask the user to provide relevant connection
+information.  But if you need to test a framework that uses DBI,
+particularly a framework that uses different types of persistence
+schemes, then it may be more useful to simply verify what the framework
+is trying to do -- ensure the right SQL is generated and that the
+correct parameters are bound.
+DBD::Mock makes it easy to just modify your configuration (presumably
+held outside your code) and just use it instead of DBD::Foo (like
+DBD::Pg or DBD::mysql) in your framework.
