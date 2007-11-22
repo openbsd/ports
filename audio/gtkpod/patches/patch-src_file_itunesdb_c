@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_file_itunesdb_c,v 1.2 2007/03/17 21:55:40 ckuethe Exp $
---- src/file_itunesdb.c.orig	Sun Jun 25 10:08:22 2006
-+++ src/file_itunesdb.c	Thu Mar 15 08:49:17 2007
-@@ -547,7 +547,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+$OpenBSD: patch-src_file_itunesdb_c,v 1.3 2007/11/22 22:46:42 ckuethe Exp $
+--- src/file_itunesdb.c.orig	Wed Jun 27 13:29:33 2007
++++ src/file_itunesdb.c	Sun Nov 18 11:19:49 2007
+@@ -563,7 +563,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_itdb, const gi
      gp_itdb_add_extra_full (itdb);
  
      eitdb = itdb->userdata;
@@ -10,9 +10,9 @@ $OpenBSD: patch-src_file_itunesdb_c,v 1.2 2007/03/17 21:55:40 ckuethe Exp $
  
      eitdb->offline = offline;
  
-@@ -571,9 +571,9 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
-     {
+@@ -588,9 +588,9 @@ iTunesDB *gp_import_itdb (iTunesDB *old_itdb, const gi
  	Track *track = gl->data;
+    
  	ExtraTrackData *etr;
 -	g_return_val_if_fail (track, (release_widgets(), NULL));
 +	g_return_val_if_fail (track, (release_widgets(), (iTunesDB *)NULL));
@@ -22,20 +22,7 @@ $OpenBSD: patch-src_file_itunesdb_c,v 1.2 2007/03/17 21:55:40 ckuethe Exp $
  	fill_in_extended_info (track, total, num);
  	gp_track_validate_entries (track);
  	/* properly set value for has_artwork */
-@@ -589,9 +589,9 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
- 		track->has_artwork = 0x02;
- 	}
- 
--	/* set unk208 to audio if unset (important only for iPod Video) */
--	if (track->unk208 == 0)
--	    track->unk208 = 0x00000001;
-+	/* set mediatype to audio if unset (important only for iPod Video) */
-+	if (track->mediatype == 0)
-+	    track->mediatype = 0x00000001;
- 	/* restore deleted thumbnails */
- 	if ((track->artwork->thumbnails == NULL) &&
- 	    (strlen (etr->thumb_path_locale) != 0))
-@@ -609,7 +609,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+@@ -630,7 +630,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_itdb, const gi
      while (extendeddeletion)
      {
  	Track *track = extendeddeletion->data;
@@ -44,7 +31,7 @@ $OpenBSD: patch-src_file_itunesdb_c,v 1.2 2007/03/17 21:55:40 ckuethe Exp $
  	mark_track_for_deletion (itdb, track);
  	extendeddeletion = g_list_delete_link (extendeddeletion,
  					       extendeddeletion);
-@@ -632,15 +632,15 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+@@ -654,15 +654,15 @@ iTunesDB *gp_import_itdb (iTunesDB *old_itdb, const gi
  	GHashTable *track_hash = g_hash_table_new (g_direct_hash,
  						   g_direct_equal);
  	Playlist *mpl = itdb_playlist_mpl (itdb);
@@ -63,7 +50,7 @@ $OpenBSD: patch-src_file_itunesdb_c,v 1.2 2007/03/17 21:55:40 ckuethe Exp $
  	    duptr = itdb_track_duplicate (track);
  	    /* add to database -- if duplicate detection is on and the
  	       same track already exists in the database, the already
-@@ -659,15 +659,15 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+@@ -681,15 +681,15 @@ iTunesDB *gp_import_itdb (iTunesDB *old_itdb, const gi
  	    GList *glm;
  	    Playlist *duppl;
  	    Playlist *pl = gl->next->data; /* skip MPL */
@@ -82,7 +69,7 @@ $OpenBSD: patch-src_file_itunesdb_c,v 1.2 2007/03/17 21:55:40 ckuethe Exp $
  		glm->data = newtr;
  	    }
  	    /* if it's the podcasts list, don't add the list again if
-@@ -678,7 +678,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_
+@@ -700,7 +700,7 @@ iTunesDB *gp_import_itdb (iTunesDB *old_itdb, const gi
  		Playlist *podcasts = itdb_playlist_podcasts (itdb);
  		for (glm=duppl->members; glm; glm=glm->next)
  		{
@@ -91,7 +78,7 @@ $OpenBSD: patch-src_file_itunesdb_c,v 1.2 2007/03/17 21:55:40 ckuethe Exp $
  		    itdb_playlist_add_track (podcasts, glm->data, -1);
  		}
  		itdb_playlist_free (duppl);
-@@ -740,9 +740,9 @@ iTunesDB *gp_merge_itdb (iTunesDB *old_i
+@@ -779,9 +779,9 @@ iTunesDB *gp_merge_itdb (iTunesDB *old_itdb)
      ExtraiTunesDBData *old_eitdb;
      iTunesDB *new_itdb;
  

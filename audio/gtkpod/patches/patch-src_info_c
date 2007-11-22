@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_info_c,v 1.1 2006/10/15 22:44:35 ckuethe Exp $
---- src/info.c.orig	Tue Oct  3 12:05:13 2006
-+++ src/info.c	Tue Oct  3 12:07:38 2006
-@@ -576,14 +576,17 @@ gboolean ipod_connected (void)
+$OpenBSD: patch-src_info_c,v 1.2 2007/11/22 22:46:42 ckuethe Exp $
+--- src/info.c.orig	Wed Jun 27 13:29:33 2007
++++ src/info.c	Sun Nov 18 11:21:32 2007
+@@ -579,14 +579,17 @@ gboolean ipod_connected (void)
  
  /* we'll use statvfs to determine free space on the iPod where
     available, df otherwise */
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_info_c,v 1.1 2006/10/15 22:44:35 ckuethe Exp $
      int	status;
  
      g_mutex_lock (space_mutex);
-@@ -595,13 +598,13 @@ static void th_space_update (void)
+@@ -598,13 +601,13 @@ static void th_space_update (void)
      }
      if (mp)
      {

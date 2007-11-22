@@ -1,0 +1,21 @@
+Newer ipods attempt to tie the song database to the hardware with the device
+serial number. This foolish behaviour has of course been defeated. In order
+for libgpod to write an appropriately keyed database, you will need your ipod's
+"firewire id."
+
+One way to get this number is using usbctl from the sysutils/usbutil port:
+	usbctl -f /dev/usb0 -a 2 | grep Serial
+... assuming that your ipod is at address 2 on the first usb bus.
+
+The firewire id a 16 character long string like 00A1234567891231. For an iPod
+Touch, this number will be much longer than 16 characters, the firewire ID is
+constituted by the first 16 characters.
+
+Once you have that number, create/edit /mnt/iPod_Control/Device/SysInfo (if
+your iPod is mounted at /mnt/), and add following line:
+FirewireGuid: 0xffffffffffffffff
+where ffffffffffffffff your ipod's id number. The "0x" prefix is required.
+
+Gtkpod should now be able to write a valid database to your ipod.
+
+(Based heavily on the libgpod "README.SysInfo" file)
