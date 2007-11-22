@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/01/30 10:13:11 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/11/22 12:52:34 ajacoutot Exp $
 bin/timidity
 @man man/man1/timidity.1
 @man man/man5/timidity.cfg.5
@@ -261,3 +261,4 @@ share/timidity/goemon/woodblk.pat
 share/timidity/goemon/woodblk1.pat
 share/timidity/goemon/woodblk2.pat
 share/timidity/goemon/woodflut.pat
+%%xaw%%

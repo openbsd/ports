@@ -1,8 +1,23 @@
 TiMidity is a MIDI to WAVE converter using Gravis Ultrasound-compatible
 patch files or soundfonts to generate digital audio data from General
-MIDI files.  The data can be stored in a file for processing, or played
-in real time through an audio device.
+MIDI (GM) files.  The data can be stored in a file for processing, or
+played in real time through an audio device.
 
-FLAVORs:
+TiMidity has several different interfaces which can be chosen by appending
+a character to the "-i" interface command line switch.
+The defaults are:
+	-in		ncurses interface
+	-iT		vt100 interface
+	-id		dumb interface
+	-ir		remote interface
 
-	gtk2 - build gtk+2 interface which may be used via 'timidity -ig'
+Some of the interfaces support "play tracing" which shows you the notes
+being played in realtime. This can be enabled by appending a 't' to the
+respective interface switch, e.g. to enable play tracing on the ncurses
+interface use 'timidity -int <filename>'.
+
+Available flavors:
+	gtk2 - Build gtk+2 interface which may be used via 'timidity -ig'
+		(does not support play tracing)
+	xaw - Build Xaw interface which may be used via 'timidity -ia'
+		(support play tracing)

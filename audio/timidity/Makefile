@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.32 2007/11/22 12:52:34 ajacoutot Exp $
 
 COMMENT=	MIDI to WAV renderer and player
-DISTNAME=	TiMidity++-2.13.2
-PKGNAME=	${DISTNAME:L:S/++//}p0
+
+V=		2.13.2
+DISTNAME=	TiMidity++-${V}
+PKGNAME=	timidity-${V}p1
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
@@ -17,6 +19,7 @@ PERMIT_PACKAGE_CDROM=   copyrighted patches
 PERMIT_PACKAGE_FTP=     copyrighted patches
 PERMIT_DISTFILES_CDROM= copyrighted patches
 PERMIT_DISTFILES_FTP=   copyrighted patches
+
 WANTLIB=		c m ncurses 
 
 CONFIGURE_STYLE=gnu
@@ -28,7 +31,7 @@ CONFIGURE_ARGS= --enable-audio=sun \
 		--enable-server \
 		--with-default-path=${SYSCONFDIR}
 
-FLAVORS=	gtk2
+FLAVORS=	gtk2 xaw
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgtk2}
@@ -36,10 +39,19 @@ CONFIGURE_ARGS+=--enable-gtk
 MODULES=	devel/gettext
 USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-WANTLIB+=	X11 Xext Xrender atk-1.0 fontconfig freetype \
-		glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 glitz cairo png z
-.else
+WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
+		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
+.endif
+
+.if ${FLAVOR:L:Mxaw}
+CONFIGURE_ARGS+=--enable-xaw
+USE_X11=	Yes
+WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xt
+.endif
+
+.if ! ${FLAVOR:L:Mgtk2} && ! ${FLAVOR:L:Mxaw}
 CONFIGURE_ARGS+=--without-x
 .endif
 

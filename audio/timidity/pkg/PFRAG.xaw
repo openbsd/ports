@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.xaw,v 1.1 2007/11/22 12:52:34 ajacoutot Exp $
+lib/timidity/
+lib/timidity/bitmaps/
+lib/timidity/bitmaps/back.xbm
+lib/timidity/bitmaps/fwrd.xbm
+lib/timidity/bitmaps/next.xbm
+lib/timidity/bitmaps/pause.xbm
+lib/timidity/bitmaps/play.xbm
+lib/timidity/bitmaps/prev.xbm
+lib/timidity/bitmaps/quit.xbm
+lib/timidity/bitmaps/random.xbm
+lib/timidity/bitmaps/repeat.xbm
+lib/timidity/bitmaps/stop.xbm
+lib/timidity/bitmaps/timidity.xbm
