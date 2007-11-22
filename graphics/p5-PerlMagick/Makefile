@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2007/11/19 20:11:41 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2007/11/22 17:20:56 okan Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		object-oriented Perl interface to ImageMagick
 
-VER=			6.3.5
-DASHVER=		9
+VER=			6.3.6
+DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		p5-PerlMagick-${VER}.${DASHVER}p0
+PKGNAME=		p5-PerlMagick-${VER}.${DASHVER}
 CATEGORIES=		graphics devel
 
 HOMEPAGE=		http://www.imagemagick.org
@@ -18,13 +18,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext bz2 freetype jasper jbig jpeg \
-			lcms m png tiff xml2 z Xt
+WANTLIB=		freetype
 
 RUN_DEPENDS=		:ImageMagick-${VER}.${DASHVER}:graphics/ImageMagick
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::print/ghostscript/gnu:patch
-LIB_DEPENDS=		Magick.>=10::graphics/ImageMagick
+LIB_DEPENDS=		Magick.>=12.1,Wand.>=12.1::graphics/ImageMagick
 USE_X11=		Yes
 
 MODULES=		cpan

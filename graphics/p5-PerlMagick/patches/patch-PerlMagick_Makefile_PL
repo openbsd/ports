@@ -1,7 +1,7 @@
-$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.11 2007/09/19 18:52:05 sthen Exp $
---- PerlMagick/Makefile.PL.orig	Sun Sep 16 02:14:07 2007
-+++ PerlMagick/Makefile.PL	Mon Sep 17 23:40:44 2007
-@@ -44,13 +44,13 @@ WriteMakefile
+$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.12 2007/11/22 17:20:56 okan Exp $
+--- PerlMagick/Makefile.PL.orig	Tue Nov  6 21:29:54 2007
++++ PerlMagick/Makefile.PL	Mon Nov 19 15:24:16 2007
+@@ -59,13 +59,13 @@ WriteMakefile
     'DEFINE'	=> ' -D_LARGE_FILES=1 -DHAVE_CONFIG_H',     # e.g., '-DHAVE_SOMETHING' 
  
     # Header search specfication and preprocessor flags
@@ -12,17 +12,17 @@ $OpenBSD: patch-PerlMagick_Makefile_PL,v 1.11 2007/09/19 18:52:05 sthen Exp $
     # 'CPPFLAGS'    => "$Config{'cppflags'} -I/usr/include/freetype2 -I/usr/include/libxml2",
  
     # C compiler flags (e.g. -O -g)
--   'CCFLAGS'     => "$Config{'ccflags'} -O3 -g -Wall -W -pthread -fopenmp",
+-   'CCFLAGS'     => "$Config{'ccflags'} -O3 -g -Wall -W -pthread",
 +   'CCFLAGS'     => "$Config{'ccflags'} %%CFLAGS%%",
  
     # Linker flags for building an executable
-    'LDFLAGS'    =>  "-L../magick/.libs -lMagick $Config{'ldflags'} -fopenmp -L/usr/lib64 -lfreetype",
-@@ -62,7 +62,7 @@ WriteMakefile
+    'LDFLAGS'    =>  "-L../magick/.libs -lMagick -L../wand/.libs -lWand $Config{'ldflags'} -L/usr/lib64 -lfreetype",
+@@ -77,7 +77,7 @@ WriteMakefile
     'INSTALLBIN'	=> '/usr/bin',
  
     # Library specification
--   'LIBS'	=> [ '-L/usr/lib -L../magick/.libs -lMagick' ],
-+   'LIBS'	=> [ '-L%%LOCALBASE%%/lib -L%%X11BASE%%/lib -L../magick/.libs -lMagick' ],
+-   'LIBS'	=> [ '-L/usr/lib -L../magick/.libs -lMagick -L../wand/.libs -lWand' ],
++   'LIBS'	=> [ '-L%%LOCALBASE%%/lib -L%%X11BASE%%/lib -L../magick/.libs -lMagick -L../wand/.libs -lWand' ],
  
     # Perl binary name (if a Perl binary is built)
     'MAP_TARGET'	=> 'PerlMagick',
