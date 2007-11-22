@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.199 2007/11/19 07:10:08 jakob Exp $
+# $OpenBSD: Makefile,v 1.200 2007/11/22 13:53:08 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
      SUBDIR += abook
      SUBDIR += adcomplain
      SUBDIR += akpop3d
+     SUBDIR += alpine
      SUBDIR += amavisd-new
      SUBDIR += archivemail
      SUBDIR += asmail
@@ -151,7 +152,6 @@
      SUBDIR += perdition
      SUBDIR += pflogsumm
      SUBDIR += pgpsendmail
-     SUBDIR += pine
      SUBDIR += popclient
      SUBDIR += poppassd
      SUBDIR += poppy
