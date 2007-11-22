@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2007/10/27 14:08:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.126 2007/11/22 19:43:45 simon Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -49,6 +49,7 @@
      SUBDIR += p5-Class-DBI-mysql
      SUBDIR += p5-DBD-CSV
      SUBDIR += p5-DBD-LDAP
+     SUBDIR += p5-DBD-Mock
      SUBDIR += p5-DBD-Pg
      SUBDIR += p5-DBD-SQLite
      SUBDIR += p5-DBD-SQLite2
@@ -64,6 +65,7 @@
      SUBDIR += p5-DBIx-Class-Validation
      SUBDIR += p5-DBIx-ContextualFetch
      SUBDIR += p5-DBIx-DBSchema
+     SUBDIR += p5-DBIx-DataModel
      SUBDIR += p5-DBIx-Migration
      SUBDIR += p5-DBIx-SearchBuilder
      SUBDIR += p5-DBIx-XHTML_Table
