@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/03/17 21:54:16 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/11/22 22:37:33 ckuethe Exp $
 %%SHARED%%
 include/gpod-1.0/
 include/gpod-1.0/gpod/
@@ -38,4 +38,5 @@ share/locale/fr/LC_MESSAGES/libgpod.mo
 share/locale/he/LC_MESSAGES/libgpod.mo
 share/locale/it/LC_MESSAGES/libgpod.mo
 share/locale/ja/LC_MESSAGES/libgpod.mo
+share/locale/ro/LC_MESSAGES/libgpod.mo
 share/locale/sv/LC_MESSAGES/libgpod.mo
