@@ -1,17 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/15 15:55:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/22 09:36:43 ajacoutot Exp $
 bin/devede
 lib/devede/
 lib/devede/devede_bincue.py
 lib/devede/devede_convert.py
 lib/devede/devede_delete.py
+lib/devede/devede_dialogs.py
+lib/devede/devede_disctype.py
 lib/devede/devede_dvd.py
+lib/devede/devede_dvdmenu.py
 lib/devede/devede_executor.py
-lib/devede/devede_gtk_helper.py
+lib/devede/devede_loadsave.py
+lib/devede/devede_main.py
+lib/devede/devede_newfiles.py
 lib/devede/devede_other.py
 lib/devede/devede_subtitles.py
+lib/devede/devede_title_properties.py
 lib/devede/devede_video_convert.py
 lib/devede/devede_xml_menu.py
-share/applications/
 share/applications/devede.desktop
 share/devede/
 share/devede/background.png
@@ -63,7 +68,6 @@ share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/devede.mo
 share/locale/sk/LC_MESSAGES/devede.mo
 share/locale/sv/LC_MESSAGES/devede.mo
-share/pixmaps/
 share/pixmaps/devede.svg
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

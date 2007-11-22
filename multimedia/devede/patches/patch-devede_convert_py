@@ -1,7 +1,7 @@
-$OpenBSD: patch-devede_convert_py,v 1.1.1.1 2007/11/15 15:55:15 ajacoutot Exp $
---- devede_convert.py.orig	Sun Oct 21 23:52:48 2007
-+++ devede_convert.py	Wed Nov 14 12:00:59 2007
-@@ -141,9 +141,13 @@ class create_all:
+$OpenBSD: patch-devede_convert_py,v 1.2 2007/11/22 09:36:43 ajacoutot Exp $
+--- devede_convert.py.orig	Thu Nov 22 10:24:04 2007
++++ devede_convert.py	Thu Nov 22 10:26:19 2007
+@@ -147,9 +147,13 @@ class create_all:
  		# TODO Windows Stuff
  		estado=''
  		freespace=''
@@ -16,25 +16,3 @@ $OpenBSD: patch-devede_convert_py,v 1.1.1.1 2007/11/15 15:55:15 ajacoutot Exp $
  		else:
  			try:
  				spc, bps, fc, tc = win32api.GetDiskFreeSpace(filefolder)
-@@ -349,7 +353,9 @@ class create_all:
- 				mplay="mplayer.exe"
- 			else:
- 		 		mplay="mplayer"
--			parameters=[mplay,"-sid","0x20",self.filefolder+"previewfile_01_01.mpg"]
-+			playfile=glob.glob(self.filefolder+"previewfile_01_01.*")
-+			for prefile in playfile:
-+				parameters=[mplay,"-sid","0x20",prefile]
- 			newtree=gtk.glade.XML(self.gladefile,"wpreviewagain_dialog",domain="devede")
- 			w=newtree.get_widget("wpreviewagain_dialog")
- 			while True:
-@@ -364,7 +370,9 @@ class create_all:
- 				while gtk.events_pending():
- 					gtk.main_iteration()
- 			w.destroy()
--			os.remove(self.filefolder+"previewfile_01_01.mpg")
-+			remfile=glob.glob(self.filefolder+"previewfile_01_01.*")
-+			for remprefile in remfile:
-+				os.remove(remprefile)
- 			return False
- 		
- 		if self.current_action=="create_disc":

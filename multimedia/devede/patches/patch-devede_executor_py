@@ -1,7 +1,7 @@
-$OpenBSD: patch-devede_executor_py,v 1.1 2007/11/17 11:06:14 ajacoutot Exp $
---- devede_executor.py.orig	Sat Nov 17 11:48:18 2007
-+++ devede_executor.py	Sat Nov 17 11:49:23 2007
-@@ -140,7 +140,7 @@ class executor:
+$OpenBSD: patch-devede_executor_py,v 1.2 2007/11/22 09:36:43 ajacoutot Exp $
+--- devede_executor.py.orig	Wed Nov 21 00:21:51 2007
++++ devede_executor.py	Thu Nov 22 10:27:51 2007
+@@ -145,7 +145,7 @@ class executor:
  		self.output=output
  
  		wd=sys.path[-1:] # working directory.  This works with py2exe

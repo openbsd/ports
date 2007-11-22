@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/18 10:23:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/22 09:36:43 ajacoutot Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
-DISTNAME=	devede-3.3
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	devede-3.4
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2

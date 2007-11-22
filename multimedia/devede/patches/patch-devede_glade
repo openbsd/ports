@@ -1,7 +1,7 @@
-$OpenBSD: patch-devede_glade,v 1.1 2007/11/18 10:23:55 ajacoutot Exp $
---- devede.glade.orig	Sun Nov 18 11:16:23 2007
-+++ devede.glade	Sun Nov 18 11:16:45 2007
-@@ -4036,7 +4036,7 @@ VISCII</property>
+$OpenBSD: patch-devede_glade,v 1.2 2007/11/22 09:36:43 ajacoutot Exp $
+--- devede.glade.orig	Wed Nov 21 00:26:52 2007
++++ devede.glade	Thu Nov 22 10:27:52 2007
+@@ -3505,7 +3505,7 @@ VISCII</property>
                  <property name="width_request">330</property>
                  <property name="height_request">89</property>
                  <property name="visible">True</property>
