@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/28 10:15:35 espie Exp $
-${P5SITE}/DBIx/Class/Schema/
+@comment $OpenBSD: PLIST,v 1.3 2007/11/23 22:08:14 simon Exp $
 ${P5SITE}/DBIx/Class/Schema/Loader/
 ${P5SITE}/DBIx/Class/Schema/Loader.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/Base.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/DB2.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/Oracle.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/Pg.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/SQLite.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/Writing.pm
@@ -15,6 +15,7 @@ ${P5SITE}/DBIx/Class/Schema/Loader/RelBuilder.pm
 @man man/man3p/DBIx::Class::Schema::Loader::Base.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::DB2.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::Oracle.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::Pg.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::SQLite.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::Writing.3p
