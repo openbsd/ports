@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2006/10/20 17:54:45 ajacoutot Exp $
---- lib/Makefile.in.orig	Fri Oct 20 16:42:25 2006
-+++ lib/Makefile.in	Fri Oct 20 16:43:14 2006
-@@ -41,8 +41,7 @@ COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2007/11/23 09:07:26 ajacoutot Exp $
+--- lib/Makefile.in.orig	Sat Nov 22 10:51:42 2003
++++ lib/Makefile.in	Fri Nov 23 09:40:05 2007
+@@ -41,8 +41,7 @@ COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(C
  
  @SET_MAKE@
  

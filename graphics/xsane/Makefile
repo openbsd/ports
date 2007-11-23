@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/13 17:10:26 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/11/23 09:07:26 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
-DISTNAME=	xsane-0.994
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	xsane-0.995
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/xsane/ \
@@ -17,18 +16,17 @@ HOMEPAGE=	http://www.xsane.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xcomposite Xdamage exif \
-		Xrender z atk-1.0 c cairo expat fontconfig freetype \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 gphoto2 \
-		gphoto2_port jpeg m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread tiff usb
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo exif expat \
+		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gphoto2 gphoto2_port jpeg m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 png pthread tiff usb z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
@@ -48,14 +46,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 
 NO_REGRESS=	Yes
 
-post-extract:
-	@rm -f ${WRKSRC}/src/xsane-save.c.orig
-
 FLAVORS=	gimp
 FLAVOR?=
 
 .if ${FLAVOR:L} == "gimp"
-LIB_DEPENDS+=	gimp-2.0.>=200.0,gimpui-2.0.>=200.0,gimpmath-2.0.>=200.0,gimpwidgets-2.0.>=200.0,gimpbase-2.0.>=200.0,gimpcolor-2.0.>=200.0::graphics/gimp/stable
+LIB_DEPENDS+=	gimp-2.0.>=200.0,gimpmodule-2.0,gimpui-2.0,gimpmath-2.0,gimpwidgets-2.0,gimpbase-2.0,gimpcolor-2.0::graphics/gimp/stable
 CONFIGURE_ENV+=	CPPFLAGS+="-I${LOCALBASE}/include/gimp-2.0"
 .else
 CONFIGURE_ARGS+=--disable-gimp
