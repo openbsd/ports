@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2007/11/10 15:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2007/11/23 10:12:43 martynas Exp $
 
 COMMENT=		lightweight window manager
 
 GNOME_PROJECT=		metacity
-GNOME_VERSION=		2.20.0
+GNOME_VERSION=		2.20.1
 SHARED_LIBS=		metacity-private 0.0
 CATEGORIES=		x11
 
