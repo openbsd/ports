@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib-src_portmixer_configure,v 1.1 2007/11/23 10:07:41 ajacoutot Exp $
+--- lib-src/portmixer/configure.orig	Thu May 17 21:55:50 2007
++++ lib-src/portmixer/configure	Sun Oct 28 03:28:14 2007
+@@ -2827,6 +2827,11 @@ fi
+ #
+ # Make sure the support is there
+ #
++
++# skip test for now
++
++if [ x"yes" = x"no" ]; then
++
+ have_support=yes
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -2919,6 +2924,9 @@ echo "$as_me: error: \"You're version of portaudio doe
+    { (exit 1); exit 1; }; };
+ fi
+ 
++# end skip test
++fi
++
+ #
+ #
+ #
+@@ -3429,7 +3437,7 @@ else
+   have_coreaudio=no
+ fi
+ 
+-
++have_oss=yes
+ 
+ #
+ # Set up to use the identified ones

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2007/09/18 18:27:00 mgrimm Exp $
---- configure.orig	Fri May 18 06:56:02 2007
-+++ configure	Sun Sep 16 10:52:20 2007
+$OpenBSD: patch-configure,v 1.8 2007/11/23 10:07:41 ajacoutot Exp $
+--- configure.orig	Thu May 17 21:56:02 2007
++++ configure	Sat Oct 27 03:12:09 2007
 @@ -4316,13 +4316,13 @@ else
  fi;
  
@@ -68,7 +68,34 @@ $OpenBSD: patch-configure,v 1.7 2007/09/18 18:27:00 mgrimm Exp $
        LIBFLAC_SYSTEM_CPPSYMBOLS="USE_LIBFLAC"
        { echo "$as_me:$LINENO: FLAC libraries are available as system libraries" >&5
  echo "$as_me: FLAC libraries are available as system libraries" >&6;}
-@@ -8516,7 +8516,7 @@ echo "$as_me: WARNING: no configuration information is
+@@ -6293,6 +6293,7 @@ cat >>confdefs.h <<\_ACEOF
+ #define USE_PORTAUDIO_V19 1
+ _ACEOF
+ 
++if [ x"no" = x"yes" ] ; then
+ 
+    BUILDLIBS="$BUILDLIBS portaudio-v19/lib/libportaudio.a"
+    EXTRAOBJS="$EXTRAOBJS ../lib-src/portaudio-v19/lib/libportaudio.a"
+@@ -6731,6 +6732,9 @@ done
+          ;;
+    esac
+ 
++fi
++
++
+ else
+       CXXFLAGS="-I\$(top_srcdir)/lib-src/portaudio/pa_common $CXXFLAGS"
+ 
+@@ -6786,7 +6790,7 @@ _ACEOF
+ 
+ subdirs="$subdirs lib-src/portmixer"
+ 
+-      ac_configure_args="$ac_configure_args --with-pa-include=../portaudio-v19/include"
++      # ac_configure_args="$ac_configure_args --with-pa-include=../portaudio-v19/include"
+    else
+ 
+       CXXFLAGS="-I\$(top_srcdir)/lib-src/portmixer/px_common $CXXFLAGS"
+@@ -8516,7 +8520,7 @@ echo "$as_me: WARNING: no configuration information is
        { echo "$as_me:$LINENO: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&5
  echo "$as_me: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&6;}
        # The eval makes quoting arguments work.
@@ -77,12 +104,16 @@ $OpenBSD: patch-configure,v 1.7 2007/09/18 18:27:00 mgrimm Exp $
  	   --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir ||
  	{ { echo "$as_me:$LINENO: error: $ac_sub_configure failed for $ac_dir" >&5
  echo "$as_me: error: $ac_sub_configure failed for $ac_dir" >&2;}
-@@ -8532,7 +8532,7 @@ pa_libs=
+@@ -8530,9 +8534,10 @@ fi
+ 
+ pa_libs=
  if [ "$use_portaudio" = "v19" ] ; then
-    pa_libs=`grep 'Libs:' lib-src/portaudio-v19/portaudio-2.0.pc | sed -e 's/Libs://;s/-L${libdir}//;s/-lportaudio//'`
+-   pa_libs=`grep 'Libs:' lib-src/portaudio-v19/portaudio-2.0.pc | sed -e 's/Libs://;s/-L${libdir}//;s/-lportaudio//'`
++   # pa_libs=`grep 'Libs:' lib-src/portaudio-v19/portaudio-2.0.pc | sed -e 's/Libs://;s/-L${libdir}//;s/-lportaudio//'`
++   pa_libs="`pkg-config --libs portaudio-2.0`"
  fi
 -sed -i -e "s/@PA_LIBS@/$pa_libs/" src/Makefile
-+perl -pi -e "s/\@PA_LIBS\@/$pa_libs/" src/Makefile
++perl -pi -e "s#\@PA_LIBS\@#$pa_libs#" src/Makefile
  
  echo ""
  echo "Finished configure:"

@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_AudioIO_cpp,v 1.1 2007/11/23 10:07:41 ajacoutot Exp $
+--- src/AudioIO.cpp.orig	Thu May 17 21:55:57 2007
++++ src/AudioIO.cpp	Sun Oct 28 17:26:33 2007
+@@ -479,7 +479,7 @@ void AudioIO::HandleDeviceChange()
+    if( error )
+       return;
+ 
+-   mPortMixer = Px_OpenMixer(stream, 0);
++   mPortMixer = Px_OpenMixer(stream, recDeviceNum);
+ 
+    if (!mPortMixer) {
+       Pa_CloseStream(stream);
+@@ -667,7 +667,8 @@ bool AudioIO::StartPortAudioStream(double sampleRate,
+    }
+    mPortMixer = NULL;
+    if (mPortStreamV19 != NULL && mLastPaError == paNoError) {
+-      mPortMixer = Px_OpenMixer(mPortStreamV19, 0);
++      mPortMixer = Px_OpenMixer(mPortStreamV19, captureParameters != NULL ?
++          captureParameters->device : playbackParameters->device);
+ 
+       #ifdef __MACOSX__
+       if (mPortMixer) {
+@@ -770,7 +771,7 @@ bool AudioIO::StartPortAudioStream(double sampleRate,
+    }
+    mPortMixer = NULL;
+    if (mPortStreamV18 != NULL && mLastPaError == paNoError) {
+-      mPortMixer = Px_OpenMixer(mPortStreamV18, 0);
++      mPortMixer = Px_OpenMixer(mPortStreamV18, captureDevice);
+ 
+       #ifdef __MACOSX__
+       if (mPortMixer) {
