@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/15 22:11:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/24 10:55:27 ajacoutot Exp $
 @mode g+s
 @group utmp
 bin/mrxvt
 @mode
 @group
-man/cat1/mrxvt.1
+@man man/man1/mrxvt.1
 share/doc/mrxvt/
 share/doc/mrxvt/README.greek
 share/doc/mrxvt/README.menu
@@ -20,11 +20,15 @@ share/doc/mrxvt/scripts/settitle.c
 share/doc/mrxvt/xterm-ctlseqs.txt
 share/examples/mrxvt/
 @sample ${SYSCONFDIR}/mrxvt/
+share/examples/mrxvt/XTerm.ad
 share/examples/mrxvt/default.menu
 @sample ${SYSCONFDIR}/mrxvt/default.menu
+share/examples/mrxvt/mrxvt.terminfo
 share/examples/mrxvt/mrxvtrc
 @sample ${SYSCONFDIR}/mrxvt/mrxvtrc
 share/examples/mrxvt/mrxvtrc.sample
+share/examples/mrxvt/rxvt.termcap
+share/examples/mrxvt/rxvt.terminfo
 share/examples/mrxvt/submenus.menu
 @sample ${SYSCONFDIR}/mrxvt/submenus.menu
 share/pixmaps/

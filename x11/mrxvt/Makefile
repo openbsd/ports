@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2007/10/27 23:44:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/11/24 10:55:27 ajacoutot Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
-DISTNAME=	mrxvt-0.5.2 
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	mrxvt-0.5.3
 CATEGORIES=	x11
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		mrxvt.1${EXTRACT_SUFX}:0
 
 HOMEPAGE=	http://materm.sourceforge.net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=materm/}
-MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -39,17 +35,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 \
 			-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-BZDOCS=		README.greek README.menu README.xvt behind_mrxvt.txt \
-		hack-mrxvt.txt mrxvt_seq.txt rxvtRef.txt \
-		xterm-ctlseqs.txt
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
+		etcdir=${PREFIX}/share/examples/mrxvt
 
 post-install:
-	${INSTALL_MAN} ${WRKDIR}/mrxvt.1 \
-		${PREFIX}/man/cat1
-.for i in ${BZDOCS}
-	@bunzip2 ${WRKSRC}/doc/${i}.bz2
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} \
-		${PREFIX}/share/doc/mrxvt
-.endfor
+	@cd ${PREFIX}/share/doc/mrxvt && \
+		bunzip2 *.bz2
 
 .include <bsd.port.mk>

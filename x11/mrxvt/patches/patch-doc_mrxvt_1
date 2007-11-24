@@ -1,0 +1,81 @@
+$OpenBSD: patch-doc_mrxvt_1,v 1.1 2007/11/24 10:55:27 ajacoutot Exp $
+--- doc/mrxvt.1.orig	Sat Nov 24 11:38:48 2007
++++ doc/mrxvt.1	Sat Nov 24 11:36:51 2007
+@@ -137,7 +137,7 @@ X display name, the X server to contact
+ geometry at startup
+ .Op Cm geometry
+ .
+-.It Fl ic Ar file Ns Op Ns ; Ns Ar geometry
++.It Fl ic Ar file[;geometry]
+ application icon file.
+ .Op appIcon
+ .
+@@ -256,19 +256,19 @@ Enable / disable pseudo-transparent tabbar. Pseudo-tra
+ .Bd -filled
+ .Bl -tag -width 4n
+ .
+-.It Fl mbpixmap Ar file Ns Op Ns ; Ns Ar geometry
++.It Fl mbpixmap Ar file[;geometry]
+ Menubar background image. Pseudo-transparency must be turned off.
+ .Op Cm menubarPixmap
+ .
+-.It Fl pixmap Ar file Ns Op Ns ; Ns Ar geometry
++.It Fl pixmap Ar file[;geometry]
+ Background image for all terminals if not set individually. Pseudo-transparency must be turned off.
+ .Op Cm Pixmap
+ .
+-.It Fl sbpixmap Ar file Ns Op Ns ; Ns Ar geometry
++.It Fl sbpixmap Ar file[;geometry]
+ Scrollbar background image. Pseudo transparency must be turned off.
+ .Op Cm scrollbarPixmap
+ .
+-.It Fl tbpixmap Ar file Ns Op Ns ; Ns Ar geometry
++.It Fl tbpixmap Ar file[;geometry]
+ Tabbar background image. Pseudo transparency must be turned off.
+ .Op Cm tabbarPixmap
+ .
+@@ -843,7 +843,7 @@ Greek keyboard mapping:
+ .
+ .Bl -tag -width 4n
+ .
+-.It Fl menu Ar filename Ns Op ; Ns Ar tag
++.It Fl menu Ar filename[;tag]
+ Menubar definition file.
+ .Op Cm menu
+ .
+@@ -1616,7 +1616,7 @@ and not
+ as you would with the argument of
+ .Fl blc .
+ .\" ------------------------------------------------------------
+-.It Ic NewTab Oo Ar -N Oc Oo Ar \*qtitle\*q Oc Op Oo ! Oc Ns Ar command
++.It Ic NewTab Ar [-N] ["title"] [[!]command]
+ Open a new tab.
+ .Ar N
+ specifies the profile number. If omitted, profile 0 is used. If only
+@@ -1693,7 +1693,7 @@ Copy selection into clipboard (not implemented).
+ .\" ------------------------------------------------------------
+ .It Ic Paste
+ Pasete selection into active tab.
+-.It Ic ToggleSubwin Op Oo Ar + Ns | Ns Ar - Oc Ns Op Ar b Ns | Ns Ar m Ns | Ns Ar s Ns | Ns Ar t
++.It Ic ToggleSubwin Ar [[+|-][b|m|s|t]]
+ Toggle visibility of sub-windows. If the argument begins with a
+ .Sq +
+ the subwindow is shown. If it begins with a
+@@ -1706,7 +1706,7 @@ and
+ .Sq Ar t
+ represent the tabbar buttons, menubar, scrollbar and tabbar respectively. NOTE: Currently you can only toggle one subwindow at a time.
+ .\" ------------------------------------------------------------
+-.It Ic ResizeFont Oo Ar + Ns | Ns Ar - Oc Ns Ar N
++.It Ic ResizeFont Ar [+|-]N
+ Resize the font. With Xft,
+ .Ar N
+ represents the size increment of the xft font. Without Xft,
+@@ -1777,7 +1777,7 @@ should be
+ .Sy 0 , 1 , -1
+ to disable, enable or toggle respectively.
+ .\" ------------------------------------------------------------
+-.It Ic PrintScreen Oo Fl psn Oc Op Ar command
++.It Ic PrintScreen [-psn] Ar [command]
+ Dump screen to printer (or
+ .Ar command ) .
+ If
