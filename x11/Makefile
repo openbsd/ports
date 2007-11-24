@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.318 2007/11/14 21:50:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.319 2007/11/24 16:57:12 steven Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -197,6 +197,7 @@
      SUBDIR += tango-icon-theme-extras
      SUBDIR += tellico
      SUBDIR += terminus-font
+     SUBDIR += thewidgetfactory
      SUBDIR += tilda
      SUBDIR += tk
      SUBDIR += tktable
