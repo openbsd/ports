@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/24 13:25:50 steven Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.18
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	djvulibre 18.0
 CATEGORIES=	graphics print
 
-HOMEPAGE=	http://djvulibre.djvuzone.org/
+HOMEPAGE=	http://djvu.sourceforge.net/
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
