@@ -1,0 +1,2 @@
+This module is a DBIx::DataModel model class that allows to use
+database models from Catalyst.
