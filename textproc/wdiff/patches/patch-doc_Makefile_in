@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2007/11/24 14:46:29 simon Exp $
+--- doc/Makefile.in.orig	Sat Sep  8 16:29:38 2007
++++ doc/Makefile.in	Sat Sep  8 16:30:07 2007
+@@ -33,7 +33,7 @@ SHELL = @SHELL@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+-prefix = @prefix@
++prefix = ${PREFIX}
+ exec_prefix = @exec_prefix@
+ 
+ bindir = @bindir@

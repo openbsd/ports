@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2007/11/24 14:46:29 simon Exp $
+--- src/Makefile.in.orig	Tue Jul  6 02:42:50 1999
++++ src/Makefile.in	Mon Nov 12 09:00:51 2007
+@@ -34,8 +34,8 @@ SHELL = @SHELL@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+-prefix = @prefix@
+-exec_prefix = @exec_prefix@
++prefix = ${PREFIX}
++exec_prefix = ${PREFIX}
+ 
+ bindir = @bindir@
+ sbindir = @sbindir@
+@@ -114,7 +114,7 @@ l = @l@
+ 
+ AUTOMAKE_OPTIONS = gnits ansi2knr
+ bin_PROGRAMS = unify wdiff
+-man_MANS = mdiff.1 unify.1 wdiff.1
++man_MANS = unify.1 wdiff.1
+ noinst_PROGRAMS = mdiff wdiff2
+ noinst_SCRIPTS = cbars
+ 

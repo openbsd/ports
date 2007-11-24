@@ -1,4 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:44:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/11/24 14:46:29 simon Exp $
+bin/unify
 bin/wdiff
 @info info/wdiff.info
+@man man/man1/unify.1
 @man man/man1/wdiff.1
+share/locale/cs/LC_MESSAGES/wdiff.mo
+share/locale/de/LC_MESSAGES/wdiff.mo
+share/locale/es/LC_MESSAGES/wdiff.mo
+share/locale/fr/LC_MESSAGES/wdiff.mo
+share/locale/nl/LC_MESSAGES/wdiff.mo
+share/locale/no/LC_MESSAGES/wdiff.mo
+share/locale/pl/LC_MESSAGES/wdiff.mo
+share/locale/ru/LC_MESSAGES/wdiff.mo
+share/locale/sv/LC_MESSAGES/wdiff.mo

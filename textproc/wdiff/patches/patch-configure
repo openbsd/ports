@@ -1,11 +1,21 @@
-$OpenBSD: patch-configure,v 1.1 2002/12/23 09:09:12 pvalchev Exp $
---- configure.orig	Sun Nov  6 00:59:26 1994
-+++ configure	Mon Dec 23 02:06:10 2002
-@@ -1159,6 +1159,7 @@ EOF
+$OpenBSD: patch-configure,v 1.2 2007/11/24 14:46:29 simon Exp $
+--- configure.orig	Fri Sep  7 19:47:52 2007
++++ configure	Fri Sep  7 19:58:26 2007
+@@ -2962,7 +2962,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS=" -lintl -liconv $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2968 "configure"
+ #include "confdefs.h"
+@@ -3008,7 +3008,7 @@ fi
  
- 
- 
-+LIBS="$saved_LIBS -ltermcap"
- for ac_func in strerror tputs
- do
- echo $ac_n "checking for $ac_func""... $ac_c" 1>&4
+       echo "$ac_t""$with_included_gettext" 1>&6
+       if test $with_included_gettext$ac_cv_func_gettext = nono; then
+-        LIBS="$LIBS -lintl"
++        LIBS="$LIBS -lintl -liconv"
+       fi
+     else
+       with_included_gettext=yes
