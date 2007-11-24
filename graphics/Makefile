@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2007/11/09 17:28:38 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.194 2007/11/24 13:24:09 steven Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -24,6 +24,7 @@
      SUBDIR += dia
      SUBDIR += digikam
      SUBDIR += digikam-doc
+     SUBDIR += djview4
      SUBDIR += djvulibre
      SUBDIR += djvulibre,no_x11
      SUBDIR += dumpmpeg
