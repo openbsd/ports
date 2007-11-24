@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/23 11:28:09 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/11/24 08:05:56 winiger Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	c++ cross-platform GUI toolkit
 
 DISTNAME=	wxWidgets-2.8.6
-PKGNAME=	wxWidgets-gtk2-2.8.6
+PKGNAME=	wxWidgets-gtk2-2.8.6p0
 SHARED_LIBS=	wx_base			1.0	\
 		wx_base_net		1.0	\
 		wx_base_odbc		1.0	\
@@ -51,9 +51,9 @@ LIB_DEPENDS=	mspack::archivers/libmspack \
 		iodbc::databases/iodbc \
 		esd::audio/esound
 
-WANTLIB=	SM Xau Xcursor Xdmcp Xfixes Xi Xrandr X11 Xext Xinerama \
-		Xxf86vm Xrender GL GLU fontconfig freetype pthread \
-		c m stdc++ z expat ossaudio jpeg png tiff glitz \
+WANTLIB=	SM Xau Xcursor Xcomposite Xdamage Xdmcp Xfixes Xi Xrandr X11 \
+		Xext Xinerama Xxf86vm Xrender GL GLU fontconfig freetype \
+		pthread c m stdc++ z expat ossaudio jpeg png tiff glitz \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 		pango-1.0 pangoft2-1.0 atk-1.0
 
