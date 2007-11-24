@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/24 13:23:26 steven Exp $
+%%SHARED%%
+bin/djview
+bin/djview4
+lib/netscape/
+lib/netscape/plugins/
+@man man/man1/djview.1
+@man man/man1/djview4.1
+@man man/man1/nsdejavu.1
+share/djvu/
+share/djvu/djview4/
+share/djvu/djview4/desktop/
+share/djvu/djview4/desktop/djvulibre-djview4.desktop
+share/djvu/djview4/desktop/hi32-djview4.png
+share/djvu/djview4/desktop/register-djview-menu
+share/djvu/djview4/djview_fr.qm
+share/djvu/djview4/djview_uk.qm

@@ -1,0 +1,16 @@
+DjView4 is a portable DjVu viewer and browser plugin.
+
+Highlights:
+    * Entirely based on the public djvulibre api
+    * Entirely written in portable Qt4
+    * Works with Qt/X11, Qt/Mac, and Qt/Windows
+    * Continuous scrolling of pages
+    * Side-by-side display of pages
+    * Ability to specify a url to the djview command
+    * All plugin and cgi options available from the command line
+    * All silly annotations implemented
+    * Display thumbnails as a grid
+    * Display outlines
+    * Page names supported (see djvused command set-page-title)
+    * Metadata dialog (see djvused command set-meta)
+    * Implemented as reusable Qt widgets
