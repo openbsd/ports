@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2007/11/24 23:52:55 jasper Exp $
+--- configure.orig	Tue Jan  2 22:57:16 2007
++++ configure	Sun Nov 18 13:29:41 2007
+@@ -726,8 +726,7 @@ STACK_LIMIT=16384
+ stacksizelimit=`ulimit -s 2>/dev/null || :` # cygwin /bin/sh ulimit is broken
+ # need 3 separate test calls because of "integer expression expected" errors
+ # when $stacksizelimit is "" or "unlimited" (no short-circuiting!)
+-test -z "$stacksizelimit" || { test "$stacksizelimit" != unlimited && test "$stacksizelimit" -lt ${STACK_LIMIT}; }
+-STACK_TOO_SMALL=$?      # 0=true => need to reset; 1=false => big enough
++STACK_TOO_SMALL=0      # 0=true => need to reset; 1=false => big enough
+ 
+ if test -z "$do_build"; then
+ 

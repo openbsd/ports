@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_makemake_in,v 1.7 2006/02/27 16:45:37 pvalchev Exp $
---- src/makemake.in.orig	Thu May 27 08:43:39 2004
-+++ src/makemake.in	Mon Feb 27 09:37:50 2006
-@@ -1550,7 +1550,7 @@ echol "prefix = ${PREFIX}"
- echol "exec_prefix = ${EXEC_PREFIX}"
- echol "bindir  = \$(exec_prefix)${NEXT_}bin"
- echol "shared  = \$(prefix)${NEXT_}share"
--echol "mandir  = \$(shared)${NEXT_}man"
-+echol "mandir  = \$(prefix)${NEXT_}man"
- echol "docdir  = \$(shared)${NEXT_}doc"
- case "$fsstnd" in
-   suse)
+$OpenBSD: patch-src_makemake_in,v 1.8 2007/11/24 23:52:55 jasper Exp $
+--- src/makemake.in.orig	Mon Oct 15 20:16:52 2007
++++ src/makemake.in	Sun Nov 18 11:41:24 2007
+@@ -1930,7 +1930,7 @@ echol "# This can also be used for pre-test and post-r
+ echol "#   make distrib VERSION_SUFFIX=pre"
+ echol "VERSION_SUFFIX="
+ echol "# The distribution's top directory"
+-echol 'TOPDIR=clisp-$(VERSION)$(VERSION_SUFFIX)'
++echol 'TOPDIR=clisp'
+ echol
+ echol '# Directories used by "make install":'
+ echol "prefix = ${PREFIX}"
