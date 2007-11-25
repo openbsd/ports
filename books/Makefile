@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/07/21 17:09:45 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2007/11/25 22:12:59 jasper Exp $
 
      SUBDIR += AsteriskTFOT
      SUBDIR += JLS
      SUBDIR += autobook
+     SUBDIR += clisp-hyperspec
      SUBDIR += cvs-guide
      SUBDIR += diveintopython
      SUBDIR += docbook-guide
