@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_configure,v 1.3 2007/11/24 23:52:55 jasper Exp $
---- src/configure.orig	Wed Nov 21 15:51:33 2007
-+++ src/configure	Wed Nov 21 15:52:36 2007
-@@ -19627,41 +19627,6 @@ else
- echo "${ECHO_T}no" >&6
+$OpenBSD: patch-src_configure,v 1.4 2007/11/25 22:16:21 jasper Exp $
+--- src/configure.orig	Sun Nov 25 21:14:31 2007
++++ src/configure	Sun Nov 25 21:14:54 2007
+@@ -21713,43 +21713,6 @@ echo "${ECHO_T}no" >&6; }
  fi
+ 
  
 -# Extract the first word of "dvipdf", so it can be a program name with args.
 -set dummy dvipdf; ac_word=$2
--echo "$as_me:$LINENO: checking for $ac_word" >&5
--echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+-{ echo "$as_me:$LINENO: checking for $ac_word" >&5
+-echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
 -if test "${ac_cv_prog_DVIPDF+set}" = set; then
 -  echo $ECHO_N "(cached) $ECHO_C" >&6
 -else
@@ -21,24 +21,26 @@ $OpenBSD: patch-src_configure,v 1.3 2007/11/24 23:52:55 jasper Exp $
 -  IFS=$as_save_IFS
 -  test -z "$as_dir" && as_dir=.
 -  for ac_exec_ext in '' $ac_executable_extensions; do
--  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
 -    ac_cv_prog_DVIPDF="dvipdf"
 -    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
 -done
+-IFS=$as_save_IFS
 -
 -fi
 -fi
 -DVIPDF=$ac_cv_prog_DVIPDF
 -if test -n "$DVIPDF"; then
--  echo "$as_me:$LINENO: result: $DVIPDF" >&5
--echo "${ECHO_T}$DVIPDF" >&6
+-  { echo "$as_me:$LINENO: result: $DVIPDF" >&5
+-echo "${ECHO_T}$DVIPDF" >&6; }
 -else
--  echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6
+-  { echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6; }
 -fi
+-
 -
  for ac_prog in gzip zip compress
  do

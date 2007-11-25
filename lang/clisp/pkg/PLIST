@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/11/24 23:52:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/11/25 22:16:21 jasper Exp $
 bin/clisp
 lib/clisp/
 lib/clisp/base/
@@ -6,11 +6,11 @@ lib/clisp/base/calls.o
 lib/clisp/base/gettext.o
 lib/clisp/base/libavcall.a
 lib/clisp/base/libcallback.a
-lib/clisp/base/libcharset.a
 lib/clisp/base/libnoreadline.a
 lib/clisp/base/lisp.a
 lib/clisp/base/lisp.run
 lib/clisp/base/lispinit.mem
+lib/clisp/base/localcharset.o
 lib/clisp/base/makevars
 lib/clisp/base/modules.h
 lib/clisp/base/modules.o
@@ -18,6 +18,8 @@ lib/clisp/base/readline.o
 lib/clisp/base/regex.o
 lib/clisp/base/regexi.o
 lib/clisp/base/regexp.dvi
+lib/clisp/base/uniname.o
+lib/clisp/base/width.o
 lib/clisp/clisp-link
 lib/clisp/data/
 lib/clisp/data/Symbol-Table.text
@@ -27,11 +29,11 @@ lib/clisp/full/calls.o
 lib/clisp/full/gettext.o
 lib/clisp/full/libavcall.a
 lib/clisp/full/libcallback.a
-lib/clisp/full/libcharset.a
 lib/clisp/full/libnoreadline.a
 lib/clisp/full/lisp.a
 lib/clisp/full/lisp.run
 lib/clisp/full/lispinit.mem
+lib/clisp/full/localcharset.o
 lib/clisp/full/makevars
 lib/clisp/full/modules.h
 lib/clisp/full/modules.o
@@ -39,6 +41,8 @@ lib/clisp/full/readline.o
 lib/clisp/full/regex.o
 lib/clisp/full/regexi.o
 lib/clisp/full/regexp.dvi
+lib/clisp/full/uniname.o
+lib/clisp/full/width.o
 lib/clisp/linkkit/
 lib/clisp/linkkit/clisp.h
 lib/clisp/linkkit/modprep.lisp
