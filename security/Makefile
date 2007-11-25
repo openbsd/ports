@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2007/11/20 21:10:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.189 2007/11/25 23:36:50 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -156,7 +156,6 @@
      SUBDIR += ruby-ezcrypto
      SUBDIR += scanlogd
      SUBDIR += scanssh
-     SUBDIR += seal
      SUBDIR += sentinel
      SUBDIR += shash
      SUBDIR += shash,static
