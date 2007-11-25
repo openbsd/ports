@@ -1,6 +1,5 @@
-$OpenBSD: patch-config_h,v 1.2 2007/10/27 12:41:48 merdely Exp $
---- config.h.orig	Thu Oct 25 16:34:34 2007
-+++ config.h	Thu Oct 25 16:35:44 2007
+--- config.h.orig	Sat Nov 24 23:23:08 2007
++++ config.h	Sat Nov 24 23:23:09 2007
 @@ -4,12 +4,12 @@
  #define BARPOS			BarTop /* BarBot, BarOff */
  #define BORDERPX		1
@@ -19,13 +18,13 @@ $OpenBSD: patch-config_h,v 1.2 2007/10/27 12:41:48 merdely Exp $
 +#define SELFGCOLOR		"#f0f0f0"
  
  /* tagging */
- const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "www" };
-@@ -39,7 +39,7 @@ Key keys[] = { \
- 	{ MODKEY,			XK_p,		spawn, \
- 		"exe=`dmenu_path | dmenu -fn '"FONT"' -nb '"NORMBGCOLOR"' -nf '"NORMFGCOLOR"'" \
- 		" -sb '"SELBGCOLOR"' -sf '"SELFGCOLOR"'` && exec $exe" }, \
--	{ MODKEY|ShiftMask,		XK_Return,	spawn, "exec uxterm" }, \
-+	{ MODKEY|ShiftMask,		XK_Return,	spawn, "exec xterm" }, \
- 	{ MODKEY,			XK_space,	setlayout,	NULL }, \
- 	{ MODKEY,			XK_b,		togglebar,	NULL }, \
- 	{ MODKEY,			XK_j,		focusnext,	NULL }, \
+ const char tags[][MAXTAGLEN] = { "1", "2", "3", "4", "5", "6", "7", "8", "www" };
+@@ -39,7 +39,7 @@ Key keys[] = {
+ 	{ MODKEY,			XK_p,		spawn,
+ 		"exe=`dmenu_path | dmenu -fn '"FONT"' -nb '"NORMBGCOLOR"' -nf '"NORMFGCOLOR"'"
+ 		" -sb '"SELBGCOLOR"' -sf '"SELFGCOLOR"'` && exec $exe" },
+-	{ MODKEY|ShiftMask,		XK_Return,	spawn, "exec uxterm" },
++	{ MODKEY|ShiftMask,		XK_Return,	spawn, "exec xterm" },
+ 	{ MODKEY,			XK_space,	setlayout,	NULL },
+ 	{ MODKEY,			XK_b,		togglebar,	NULL },
+ 	{ MODKEY,			XK_j,		focusnext,	NULL },
