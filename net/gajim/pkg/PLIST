@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/09/23 18:50:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/11/25 15:17:20 jasper Exp $
 bin/gajim
 bin/gajim-remote
 lib/gajim/
@@ -844,6 +844,7 @@ share/locale/be@latin/LC_MESSAGES/gajim.mo
 share/locale/bg/LC_MESSAGES/gajim.mo
 share/locale/br/LC_MESSAGES/gajim.mo
 share/locale/cs/LC_MESSAGES/gajim.mo
+share/locale/da/LC_MESSAGES/gajim.mo
 share/locale/de/LC_MESSAGES/gajim.mo
 share/locale/el/LC_MESSAGES/gajim.mo
 share/locale/en_GB/LC_MESSAGES/gajim.mo
