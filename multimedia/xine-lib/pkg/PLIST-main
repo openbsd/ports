@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/11/01 04:01:36 jakemsr Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/11/25 14:22:36 bernd Exp $
+@pkgpath multimedia/xine-lib
 %%i386%%
 bin/xine-config
 include/xine/
