@@ -1,9 +1,9 @@
-Maxima is a descendant of DOE Macsyma, which had its origins in the
-late 1960s at MIT. It is the only system based on that effort still
-publicly available and with an active user community, thanks to its
-open source nature. Macsyma was the first of a new breed of computer
-algebra systems, leading the way for programs such as Maple and
-Mathematica. Maxima itself is reasonably feature complete at this
-stage, with abilities such as symbolic integration, 3D plotting, and
-an ODE solver, but there is a lot of work yet to be done in terms of
-bug fixing, cleanup, and documentation.
+Maxima is a descendant of DOE Macsyma, which had its origins in the late
+1960s at MIT. It is the only system based on that effort still publicly
+available and with an active user community, thanks to its open source
+nature. Macsyma was the first of a new breed of computer algebra
+systems, leading the way for programs such as Maple and Mathematica.
+Maxima itself is reasonably feature complete at this stage, with
+abilities such as symbolic integration, 3D plotting, and an ODE solver,
+but there is a lot of work yet to be done in terms of bug fixing,
+cleanup, and documentation.

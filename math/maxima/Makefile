@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/11/25 14:56:09 jasper Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
-VERSION=		5.9.0
+VERSION=		5.13.0
 DISTNAME=		maxima-${VERSION}
-PKGNAME=		maxima-${VERSION}p1
 CATEGORIES=		math
 
 HOMEPAGE=		http://maxima.sourceforge.net/
@@ -17,10 +16,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=maxima/}
 
+USE_GMAKE=		yes
 CONFIGURE_STYLE=	gnu
 
-RUN_DEPENDS=		:clisp-*:lang/clisp 
+RUN_DEPENDS=		:clisp->=2.42:lang/clisp 
 BUILD_DEPENDS=		${RUN_DEPENDS}
+WANTLIB +=		c m ncurses readline sigsegv
 
 SUBST_VARS=		VERSION
 
