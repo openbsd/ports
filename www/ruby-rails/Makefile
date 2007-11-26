@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2007/10/15 15:32:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.12 2007/11/26 18:19:31 bernd Exp $
 
 COMMENT=	ruby MVC web application framework
 
-DISTNAME=	rails-1.2.5
+DISTNAME=	rails-1.2.6
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	www 
 
@@ -18,8 +18,8 @@ MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:ruby-rake-0.7.3:devel/ruby-rake \
-		:ruby-actionmailer->=1.3.5:mail/ruby-actionmailer \
-		:ruby-actionwebservice->=1.2.5:www/ruby-actionwebservice \
+		:ruby-actionmailer->=1.3.6:mail/ruby-actionmailer \
+		:ruby-actionwebservice->=1.2.6:www/ruby-actionwebservice \
 		:ruby-activesupport->=1.4.4:devel/ruby-activesupport
 
 CONFIGURE_STYLE=ruby gem
