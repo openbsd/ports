@@ -1,0 +1,3 @@
+unworkable is an asynchronous, single-thread BitTorrent implementation
+written in C using libevent and mmap().  Goals of the project include
+efficiency, simplicity and high code quality.
