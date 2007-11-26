@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.497 2007/11/21 21:13:19 landry Exp $
+# $OpenBSD: Makefile,v 1.498 2007/11/26 20:38:40 okan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -388,6 +388,7 @@
      SUBDIR += ucspi-unix
      SUBDIR += udptunnel
      SUBDIR += unison
+     SUBDIR += unworkable
      SUBDIR += uucp
      SUBDIR += valknut
      SUBDIR += vicq
