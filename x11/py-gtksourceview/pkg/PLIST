@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/26 21:06:35 bernd Exp $
+lib/pkgconfig/pygtksourceview-2.0.pc
+lib/python${MODPY_VERSION}/site-packages/gtksourceview2.la
+lib/python${MODPY_VERSION}/site-packages/gtksourceview2.so
+share/gtk-doc/html/pygtksourceview2/
+share/gtk-doc/html/pygtksourceview2/class-gtksourcebuffer.html
+share/gtk-doc/html/pygtksourceview2/class-gtksourcelanguage.html
+share/gtk-doc/html/pygtksourceview2/class-gtksourcelanguagesmanager.html
+share/gtk-doc/html/pygtksourceview2/class-gtksourcestylescheme.html
+share/gtk-doc/html/pygtksourceview2/class-gtksourceview.html
+share/gtk-doc/html/pygtksourceview2/index.html
+share/gtk-doc/html/pygtksourceview2/index.sgml
+share/gtk-doc/html/pygtksourceview2/pygtksourceview2.devhelp
+share/gtk-doc/html/pygtksourceview2/style.css
+share/pygtk/2.0/defs/gtksourceview2.defs
