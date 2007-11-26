@@ -1,0 +1,12 @@
+$OpenBSD: patch-cpio_bsdcpio_1,v 1.1 2007/11/26 18:38:03 naddy Exp $
+--- cpio/bsdcpio.1.orig	Fri Nov 23 17:43:01 2007
++++ cpio/bsdcpio.1	Fri Nov 23 17:43:21 2007
+@@ -28,7 +28,7 @@
+ .Dt BSDCPIO 1
+ .Os
+ .Sh NAME
+-.Nm cpio
++.Nm bsdcpio
+ .Nd copy files to and from archives
+ .Sh SYNOPSIS
+ .Nm

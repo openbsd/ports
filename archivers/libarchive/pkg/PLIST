@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/29 19:28:29 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/26 18:38:03 naddy Exp $
 %%SHARED%%
+bin/bsdcpio
 bin/bsdtar
 include/archive.h
 include/archive_entry.h
 lib/libarchive.a
 lib/libarchive.la
+@man man/cat1/bsdcpio.0
 @man man/cat1/bsdtar.0
 @man man/cat3/archive_entry.0
 @man man/cat3/archive_read.0
@@ -17,6 +19,7 @@ lib/libarchive.la
 @man man/cat5/libarchive-formats.0
 @man man/cat5/mtree.0
 @man man/cat5/tar.0
+@man man/man1/bsdcpio.1
 @comment @man man/man1/bsdtar.1
 @comment @man man/man3/archive_entry.3
 @comment @man man/man3/archive_read.3

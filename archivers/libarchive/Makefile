@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/29 19:28:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/26 18:38:03 naddy Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
-V=		2.3.4
+V=		2.4.0
 DISTNAME=	libarchive-$V
-SHARED_LIBS +=  archive              0.0      # .5.4
+SHARED_LIBS +=  archive              1.0      # .6.0
 CATEGORIES=	archivers
 HOMEPAGE=	http://people.freebsd.org/~kientzle/libarchive/
 
@@ -26,7 +26,8 @@ LIB_DEPENDS=	bz2.>=10::archivers/bzip2
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-bsdcpio
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config.aux
