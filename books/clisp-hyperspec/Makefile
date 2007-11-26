@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/25 22:11:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/11/26 21:54:45 jasper Exp $
 
 COMMENT=		Common Lisp reference
 
@@ -18,9 +18,10 @@ NO_REGRESS=		Yes
 PKG_ARCH=		*
 
 DOC=			${PREFIX}/share/doc/clisp-hyperspec
+WRKSRC= 		${WRKDIR}/HyperSpec
 
 do-install:
 	${INSTALL_DATA_DIR} ${DOC}
-	cd ${WRKDIR} && umask 022 && pax -rw . ${DOC}
+	cd ${WRKSRC} && umask 022 && pax -rw . ${DOC}
 
 .include <bsd.port.mk>
