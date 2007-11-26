@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/26 16:46:48 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/11/26 18:01:07 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -27,6 +27,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UUID.src/M000019.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UUID.src/M000020.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UUID.src/M000021.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UUID.src/M000022.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UUID.src/M000023.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UUID.src/M000025.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README.html
@@ -41,6 +43,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/%3c%3d%3e-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/cdesc-UUID.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/eql%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/get_mac_address-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/hash-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/hexdigest-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/inspect-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/mac_address%3d-c.yaml
