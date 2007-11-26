@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/26 20:01:29 okan Exp $
 
 COMMENT=	log file preprocessor
 
-DISTNAME=	logpp-0.13
+DISTNAME=	logpp-0.14
 CATEGORIES=	sysutils
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
