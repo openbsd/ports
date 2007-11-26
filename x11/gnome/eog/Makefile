@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2007/11/10 15:21:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2007/11/26 20:43:06 jasper Exp $
 
 COMMENT=		Eye of GNOME: an image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		2.20.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		graphics
 
 MAINTAINER=		Thomas Delaet <thomas@delaet.org>
@@ -27,13 +28,13 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
-			:scrollkeeper-*:textproc/scrollkeeper \
-			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 LIB_DEPENDS=		gnome-desktop-2.>=5::x11/gnome/desktop \
 			exif::graphics/libexif \
 			lcms.>=1::graphics/lcms
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
+			:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 
 USE_X11=		Yes
