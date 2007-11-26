@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_externaltools_data_Makefile_in,v 1.1 2007/11/26 21:31:54 bernd Exp $
+--- plugins/externaltools/data/Makefile.in.orig	Sat Nov 24 12:10:16 2007
++++ plugins/externaltools/data/Makefile.in	Sat Nov 24 12:10:16 2007
+@@ -465,7 +465,7 @@ uninstall-am: uninstall-toolsSCRIPTS
+ # (.desktop), which happens to be translated using intltool.
+ $(tools_SCRIPTS): %: %.tool.in %.desktop $(TOOL_MERGE)
+ 	perl $(TOOL_MERGE) -o $@ $< $(word 2,$^)
+-	chmod --reference=$< $@
++#	chmod --reference=$< $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
