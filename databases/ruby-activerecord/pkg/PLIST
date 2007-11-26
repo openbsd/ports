@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/10/05 14:45:09 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/11/26 18:17:49 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -1313,6 +1313,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveRecord/HasManyThroughAssoc
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveRecord/HasManyThroughAssociationPolymorphicError/cdesc-HasManyThroughAssociationPolymorphicError.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveRecord/HasManyThroughCantAssociateNewRecords/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveRecord/HasManyThroughCantAssociateNewRecords/cdesc-HasManyThroughCantAssociateNewRecords.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveRecord/HasManyThroughCantDissociateNewRecords/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveRecord/HasManyThroughCantDissociateNewRecords/cdesc-HasManyThroughCantDissociateNewRecords.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveRecord/HasManyThroughSourceAssociationMacroError/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveRecord/HasManyThroughSourceAssociationMacroError/cdesc-HasManyThroughSourceAssociationMacroError.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveRecord/HasManyThroughSourceAssociationNotFoundError/
@@ -1819,6 +1821,8 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/bad_fixtures/duplica
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/bad_fixtures/missing_value
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/binaries.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/binary.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/book.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/books.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/categories/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/categories.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/categories/special_categories.yml
@@ -1829,6 +1833,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/categories_posts.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/categorization.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/categorizations.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/category.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/citation.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/column_name.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/comment.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/comments.yml
