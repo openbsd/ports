@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/27 23:12:24 naddy Exp $
-@lib lib/libgtksourceview-1.0.so.${LIBgtksourceview-1.0_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.5 2007/11/26 21:01:21 bernd Exp $
+@lib lib/libgtksourceview-${MAJOR_VERSION}.so.${LIBgtksourceview-2.0_VERSION}
