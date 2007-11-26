@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/10/05 14:40:19 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/11/26 18:15:57 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -1671,6 +1671,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/controller/resources_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/controller/routing_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/controller/selector_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/controller/send_file_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/controller/session_fixation_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/controller/session_management_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/controller/test_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/controller/url_rewriter_test.rb
