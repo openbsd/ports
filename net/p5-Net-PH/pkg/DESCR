@@ -1,0 +1,2 @@
+Net::PH is a class implementing a simple Nameserver/PH client in Perl as
+described in the CCSO Nameserver -- Server-Client Protocol.
