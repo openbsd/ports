@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2007/10/11 08:05:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2007/11/27 10:41:04 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-V=			1.4.13
+V=			1.4.14
 DISTNAME=		asterisk-$V
 FULLPKGNAME-main=	${DISTNAME}
 
@@ -60,9 +60,7 @@ CONFIGURE_ARGS+=	--with-osptk=no \
 			--with-radius=no \
 			--with-sqlite=no \
 			--with-tds=no \
-			--with-imap=no \
-			--with-pwlib=no \
-			--with-h323=no
+			--with-imap=no
 
 # Some build options (including a useful malloc debug) are available
 # via menuselect. They may be enabled by running 'make configure', cd
@@ -70,6 +68,7 @@ CONFIGURE_ARGS+=	--with-osptk=no \
 # and 'make'.
 
 FLAVOR?=
+FLAVORS=		h323
 
 # odbc
 PSEUDO_FLAVORS+=        no_odbc
@@ -163,6 +162,21 @@ WANTLIB-jabber=		gcrypt gnutls gpg-error z
 LIB_DEPENDS-jabber=	iksemel::textproc/iksemel
 CONFIGURE_ARGS+=        --with-gnutls=${LOCALBASE} \
 			--with-iksemel=${LOCALBASE}
+.endif
+
+# h323
+.if ${FLAVOR:L:Mh323}
+IS_INTERACTIVE=		Yes
+# must restart build by hand.
+LIB_DEPENDS-main+=	h323::net/openh323 \
+			pt::devel/pwlib
+CONFIGURE_ARGS+=	--with-pwlib=${LOCALBASE}/lib \
+			--with-h323=${LOCALBASE}/lib
+WANTLIB-main+=		expat ossaudio avutil
+FULLPKGNAME-main=	${DISTNAME}-h323
+.else
+CONFIGURE_ARGS+=	--with-pwlib=no \
+			--with-h323=no
 .endif
 
 .for i in ${MULTI_PACKAGES:S/-main//}

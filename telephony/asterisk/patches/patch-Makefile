@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.12 2007/10/04 11:25:44 sthen Exp $
---- Makefile.orig	Tue Oct  2 21:06:07 2007
-+++ Makefile	Wed Oct  3 12:50:21 2007
+$OpenBSD: patch-Makefile,v 1.13 2007/11/27 10:41:04 sthen Exp $
+--- Makefile.orig	Thu Nov 15 18:37:38 2007
++++ Makefile	Sat Nov 17 00:58:06 2007
 @@ -35,6 +35,7 @@ export ASTVARRUNDIR
  export MODULES_DIR
  export ASTSPOOLDIR
@@ -46,16 +46,18 @@ $OpenBSD: patch-Makefile,v 1.12 2007/10/04 11:25:44 sthen Exp $
  
  MOD_SUBDIR_CFLAGS=-I$(ASTTOPDIR)/include
  OTHER_SUBDIR_CFLAGS=-I$(ASTTOPDIR)/include
-@@ -194,7 +198,7 @@ ifeq ($(OSARCH),linux-gnu)
-   endif
+@@ -195,8 +199,10 @@ ifeq ($(OSARCH),linux-gnu)
  endif
  
--ASTCFLAGS+=-pipe -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG)
-+ASTCFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG)
+ ifeq ($(findstring -save-temps,$(ASTCFLAGS)),)
++ifneq ($(OSARCH),OpenBSD)
+ ASTCFLAGS+=-pipe
+ endif
++endif
  
- ASTCFLAGS+=-include $(ASTTOPDIR)/include/asterisk/autoconfig.h
+ ASTCFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG)
  
-@@ -207,9 +211,11 @@ ifneq ($(findstring BSD,$(OSARCH)),)
+@@ -211,9 +217,11 @@ ifneq ($(findstring BSD,$(OSARCH)),)
    ASTLDFLAGS+=-L/usr/local/lib
  endif
  
@@ -67,7 +69,7 @@ $OpenBSD: patch-Makefile,v 1.12 2007/10/04 11:25:44 sthen Exp $
  
  ifeq ($(PROC),ppc)
    ASTCFLAGS+=-fsigned-char
-@@ -552,21 +558,25 @@ samples: adsi
+@@ -556,13 +564,14 @@ samples: adsi
  		echo "astetcdir => $(ASTETCDIR)" ; \
  		echo "astmoddir => $(MODULES_DIR)" ; \
  		echo "astvarlibdir => $(ASTVARLIBDIR)" ; \
@@ -80,17 +82,24 @@ $OpenBSD: patch-Makefile,v 1.12 2007/10/04 11:25:44 sthen Exp $
  		echo "" ; \
 -		echo ";[options]" ; \
 +		echo "[options]" ; \
- 		echo ";internal_timing = yes" ; \
- 		echo ";systemname = my_system_name ; prefix uniqueid with a system name for global uniqueness issues" ; \
+ 		echo ";verbose = 3" ; \
+ 		echo ";debug = 3" ; \
+ 		echo ";alwaysfork = yes ; same as -F at startup" ; \
+@@ -585,15 +594,15 @@ samples: adsi
+ 		echo ";record_cache_dir = /tmp ; Specify cache directory (used in cnjunction with cache_record_files)" ; \
+ 		echo ";transmit_silence_during_record = yes ; Transmit SLINEAR silence while a channel is being recorded" ; \
+ 		echo ";transcode_via_sln = yes ; Build transcode paths via SLINEAR, instead of directly" ; \
+-		echo ";runuser = asterisk ; The user to run as" ; \
+-		echo ";rungroup = asterisk ; The group to run as" ; \
++		echo "runuser = _asterisk ; The user to run as" ; \
++		echo "rungroup = _asterisk ; The group to run as" ; \
+ 		echo "" ; \
  		echo "; Changing the following lines may compromise your security." ; \
 -		echo ";[files]" ; \
 -		echo ";astctlpermissions = 0660" ; \
 -		echo ";astctlowner = root" ; \
 -		echo ";astctlgroup = apache" ; \
 -		echo ";astctl = asterisk.ctl" ; \
-+		echo "runuser => _asterisk" ; \
-+		echo "rungroup => _asterisk" ; \
-+		echo "" ; \
 +		echo "[files]" ; \
 +		echo "astctlpermissions = 0660" ; \
 +		echo "astctlowner = _asterisk" ; \

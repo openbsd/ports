@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/10/04 11:25:44 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/11/27 10:41:04 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
+%%h323%%
 include/asterisk/
 include/asterisk.h
 include/asterisk/abstract_jb.h
@@ -683,7 +684,6 @@ share/doc/asterisk/extconfig.txt
 share/doc/asterisk/extensions.txt
 share/doc/asterisk/externalivr.txt
 share/doc/asterisk/freetds.txt
-share/doc/asterisk/h323.txt
 share/doc/asterisk/hardware.txt
 share/doc/asterisk/iax.txt
 share/doc/asterisk/ices.txt
@@ -714,6 +714,7 @@ share/doc/asterisk/sla.tex
 share/doc/asterisk/smdi.txt
 share/doc/asterisk/sms.txt
 share/doc/asterisk/speechrec.txt
+share/doc/asterisk/valgrind.txt
 share/doc/asterisk/video.txt
 share/examples/asterisk/
 @sample ${SYSCONFDIR}/asterisk/
@@ -743,7 +744,6 @@ share/examples/asterisk/default/extensions.conf
 @comment share/examples/asterisk/default/features.conf
 share/examples/asterisk/default/festival.conf
 share/examples/asterisk/default/followme.conf
-@comment share/examples/asterisk/default/h323.conf
 share/examples/asterisk/default/http.conf
 share/examples/asterisk/default/iax.conf
 share/examples/asterisk/default/iaxprov.conf
