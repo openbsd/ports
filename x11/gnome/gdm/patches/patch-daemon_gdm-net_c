@@ -1,7 +1,7 @@
-$OpenBSD: patch-daemon_gdm-net_c,v 1.4 2007/05/18 17:20:40 jasper Exp $
---- daemon/gdm-net.c.orig	Sat Apr 21 13:29:27 2007
-+++ daemon/gdm-net.c	Sat Apr 21 13:29:48 2007
-@@ -451,7 +451,7 @@ gdm_connection_open_fifo (const char *fifo, mode_t mod
+$OpenBSD: patch-daemon_gdm-net_c,v 1.5 2007/11/27 20:26:13 jasper Exp $
+--- daemon/gdm-net.c.orig	Mon Oct 15 23:43:04 2007
++++ daemon/gdm-net.c	Sat Oct 27 17:09:35 2007
+@@ -456,7 +456,7 @@ gdm_connection_open_fifo (const char *fifo, mode_t mod
  		return NULL;
  	}
  

@@ -1,10 +1,10 @@
-$OpenBSD: patch-config_gdm_conf_in,v 1.6 2007/05/18 17:20:40 jasper Exp $
---- config/gdm.conf.in.orig	Mon Apr  9 08:15:16 2007
-+++ config/gdm.conf.in	Fri May 18 19:34:41 2007
+$OpenBSD: patch-config_gdm_conf_in,v 1.7 2007/11/27 20:26:13 jasper Exp $
+--- config/gdm.conf.in.orig	Sat Oct 27 16:58:34 2007
++++ config/gdm.conf.in	Sat Oct 27 16:59:42 2007
 @@ -99,8 +99,8 @@ TimedLoginDelay=30
- # User and group used for running GDM GUI applicaitons.  By default this is set
+ # User and group used for running GDM GUI applications.  By default this is set
  # to user "gdm" and group "gdm".  This user/group should have very limited
- # permissions and access to ony the gdm directories and files.
+ # permissions and access to only the gdm directories and files.
 -User=gdm
 -Group=gdm
 +User=_x11
@@ -12,8 +12,8 @@ $OpenBSD: patch-config_gdm_conf_in,v 1.6 2007/05/18 17:20:40 jasper Exp $
  
  # To try to kill all clients started at greeter time or in the Init script.
  # does not always work, only if those clients have a window of their own.
-@@ -178,7 +178,7 @@ XnestUnscaledFontPath=@X_XNEST_UNSCALED_FONTPATH@
- # X to use specific vts.  turn VTAllocation to false if this is causing
+@@ -203,7 +203,7 @@ XnestUnscaledFontPath=@X_XNEST_UNSCALED_FONTPATH@
+ # X to use specific vts.  Turn VTAllocation to false if this is causing
  # problems.
  #FirstVT=7
 -#VTAllocation=true
@@ -21,7 +21,7 @@ $OpenBSD: patch-config_gdm_conf_in,v 1.6 2007/05/18 17:20:40 jasper Exp $
  # Should double login be treated with a warning (and possibility to change VT's
  # on Linux and FreeBSD systems for console logins)
  #DoubleLoginWarning=true
-@@ -353,7 +353,7 @@ Browser=false
+@@ -397,7 +397,7 @@ Browser=false
  # User ID's less than the MinimalUID value will not be included in the face
  # browser or in the gdmselection list for Automatic/Timed login.  They will not
  # be displayed regardless of the settings for Include and Exclude.

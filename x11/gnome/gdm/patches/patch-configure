@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.8 2007/09/19 20:59:55 jasper Exp $
---- configure.orig	Mon Jul 30 22:10:54 2007
-+++ configure	Wed Sep 19 22:52:25 2007
-@@ -29630,7 +29630,6 @@ else
+$OpenBSD: patch-configure,v 1.9 2007/11/27 20:26:13 jasper Exp $
+--- configure.orig	Mon Oct 15 23:55:40 2007
++++ configure	Sat Oct 27 17:45:52 2007
+@@ -30752,7 +30752,6 @@ if test x$with_tcp_wrappers = xno ; then
+ else
+   { echo "$as_me:$LINENO: checking whether to use TCP wrappers" >&5
+ echo $ECHO_N "checking whether to use TCP wrappers... $ECHO_C" >&6; }
+-  LIBWRAP_PATH=""
+   case "$host" in
+     *-*-solaris*)
+ 	if test -f /usr/sfw/lib/libwrap.so; then
+@@ -30973,7 +30972,6 @@ else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
@@ -9,7 +17,7 @@ $OpenBSD: patch-configure,v 1.8 2007/09/19 20:59:55 jasper Exp $
  fi
  
  rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-@@ -31426,7 +31425,7 @@ fi
+@@ -32757,7 +32755,7 @@ fi
  #
  # Define some variables to represent the directories we use.
  #
@@ -18,19 +26,22 @@ $OpenBSD: patch-configure,v 1.8 2007/09/19 20:59:55 jasper Exp $
  
  gdmlocaledir=${gdmconfdir}
  
-@@ -31794,9 +31793,9 @@ case "$host" in
+@@ -33458,11 +33456,11 @@ case "$host" in
  	;;
  *)
-         GDM_USER_PATH="/bin:/usr/bin"
--        HALT_COMMAND="/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
-+        HALT_COMMAND="/sbin/halt -p;/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
-         REBOOT_COMMAND="/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now"
--        SUSPEND_COMMAND=""
-+        SUSPEND_COMMAND="/usr/sbin/zzz"
-         XSESSION_SHELL=/bin/sh
-         SOUND_PROGRAM=/usr/bin/play
-         GDMGNOMESESSIONCMD=gnome-session
-@@ -31812,7 +31811,14 @@ if test ! -h /usr/X11R6 -a -x /usr/X11R6/bin/X; then
+ 	HOST_GDM_USER_PATH="/bin:/usr/bin"
+-	HOST_HALT_COMMAND="/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
++	HALT_COMMAND="/sbin/halt -p;/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
+ 	HOST_REBOOT_COMMAND="/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now"
+-	HOST_SUSPEND_COMMAND=""
++	SUSPEND_COMMAND="/usr/sbin/zzz"
+ 	HOST_XSESSION_SHELL=/bin/sh
+-	HOST_SOUND_PROGRAM=/usr/bin/play
++	HOST_SOUND_PROGRAM=$(prefix)/bin/play
+ 	HOST_GDMGNOMESESSIONCMD=gnome-session
+ 	HOST_UTMP_LINE_ATTACHED="/dev/console"
+ 	HOST_UTMP_LINE_REMOTE=""
+@@ -33503,7 +33501,14 @@ elif test ! -h /usr/X11R6 -a ! -h /usr/X11R6/bin -a -x
     X_SERVER_PATH="/usr/X11R6/bin"
     X_SERVER="/usr/X11R6/bin/X"
     GDM_USER_PATH="$GDM_USER_PATH:/usr/X11R6/bin"
@@ -43,6 +54,6 @@ $OpenBSD: patch-configure,v 1.8 2007/09/19 20:59:55 jasper Exp $
 +       X_CONFIG_OPTIONS="-audit 0"
 +       ;;
 +   esac
- elif test ! -h /usr/X11 -a -x /usr/X11/bin/X; then
+ elif test ! -h /usr/X11 -a ! -h /usr/X11/bin -a -x /usr/X11/bin/X; then
     X_PATH="/usr/X11/bin"
     X_SERVER_PATH="/usr/X11/bin"

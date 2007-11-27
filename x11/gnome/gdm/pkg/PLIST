@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/06/26 21:08:29 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/11/27 20:26:13 jasper Exp $
 %%SHARED%%
 bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -23,11 +23,6 @@ sbin/gdm-restart
 sbin/gdm-safe-restart
 sbin/gdm-stop
 sbin/gdmsetup
-share/applications/
-share/applications/gdmflexiserver-xnest.desktop
-share/applications/gdmflexiserver.desktop
-share/applications/gdmphotosetup.desktop
-share/applications/gdmsetup.desktop
 share/examples/gdm/
 @sample ${SYSCONFDIR}/X11/gdm/
 share/examples/gdm/Init/
@@ -49,7 +44,9 @@ share/examples/gdm/PreSession/Default
 share/examples/gdm/XKeepsCrashing
 @sample ${SYSCONFDIR}/X11/gdm/XKeepsCrashing
 share/examples/gdm/Xsession
+@mode 711
 @sample ${SYSCONFDIR}/X11/gdm/Xsession
+@mode
 share/examples/gdm/custom.conf
 @sample ${SYSCONFDIR}/X11/gdm/custom.conf
 share/examples/gdm/locale.alias
@@ -67,6 +64,11 @@ share/examples/gdm/modules/factory-AccessKeyMouseEvents
 share/gdm/
 share/gdm/BuiltInSessions/
 share/gdm/BuiltInSessions/default.desktop
+share/gdm/applications/
+share/gdm/applications/gdmflexiserver-xnest.desktop
+share/gdm/applications/gdmflexiserver.desktop
+share/gdm/applications/gdmphotosetup.desktop
+share/gdm/applications/gdmsetup.desktop
 share/gdm/defaults.conf
 share/gdm/factory-defaults.conf
 share/gdm/gdmchooser.glade
@@ -78,22 +80,18 @@ share/gdm/themes/circles/GdmGreeterTheme.desktop
 share/gdm/themes/circles/background.svg
 share/gdm/themes/circles/circles.xml
 share/gdm/themes/circles/flower.png
-share/gdm/themes/circles/help.png
-share/gdm/themes/circles/options.png
 share/gdm/themes/circles/screenshot.png
 share/gdm/themes/happygnome/
 share/gdm/themes/happygnome-list/
 share/gdm/themes/happygnome-list/GdmGreeterTheme.desktop
 share/gdm/themes/happygnome-list/background.svg
 share/gdm/themes/happygnome-list/gnome-logo.svg
-share/gdm/themes/happygnome-list/happygnome.xml
-share/gdm/themes/happygnome-list/options.png
+share/gdm/themes/happygnome-list/happygnome-list.xml
 share/gdm/themes/happygnome-list/screenshot.png
 share/gdm/themes/happygnome/GdmGreeterTheme.desktop
 share/gdm/themes/happygnome/background.svg
 share/gdm/themes/happygnome/gnome-logo.svg
 share/gdm/themes/happygnome/happygnome.xml
-share/gdm/themes/happygnome/options.png
 share/gdm/themes/happygnome/screenshot.png
 share/gnome/
 share/gnome/help/
@@ -101,57 +99,27 @@ share/gnome/help/gdm/
 share/gnome/help/gdm/C/
 share/gnome/help/gdm/C/gdm.xml
 share/gnome/help/gdm/C/legal.xml
-share/gnome/help/gdm/de/
-share/gnome/help/gdm/de/figures/
-share/gnome/help/gdm/de/figures/gdm_window.png
-share/gnome/help/gdm/de/gdm.xml
-share/gnome/help/gdm/de/legal.xml
+share/gnome/help/gdm/en_GB/
+share/gnome/help/gdm/en_GB/gdm.xml
 share/gnome/help/gdm/es/
-share/gnome/help/gdm/es/figures/
-share/gnome/help/gdm/es/figures/gdm_window.png
 share/gnome/help/gdm/es/gdm.xml
-share/gnome/help/gdm/es/legal.xml
 share/gnome/help/gdm/fr/
-share/gnome/help/gdm/fr/figures/
-share/gnome/help/gdm/fr/figures/gdm_window.png
 share/gnome/help/gdm/fr/gdm.xml
-share/gnome/help/gdm/fr/legal.xml
-share/gnome/help/gdm/it/
-share/gnome/help/gdm/it/figures/
-share/gnome/help/gdm/it/figures/gdm_window.png
-share/gnome/help/gdm/it/gdm.xml
-share/gnome/help/gdm/it/legal.xml
-share/gnome/help/gdm/ja/
-share/gnome/help/gdm/ja/figures/
-share/gnome/help/gdm/ja/figures/gdm_window.png
-share/gnome/help/gdm/ja/gdm.xml
-share/gnome/help/gdm/ja/legal.xml
 share/gnome/help/gdm/ko/
-share/gnome/help/gdm/ko/figures/
-share/gnome/help/gdm/ko/figures/gdm_window.png
 share/gnome/help/gdm/ko/gdm.xml
-share/gnome/help/gdm/ko/legal.xml
+share/gnome/help/gdm/oc/
+share/gnome/help/gdm/oc/gdm.xml
+share/gnome/help/gdm/sv/
+share/gnome/help/gdm/sv/gdm.xml
 share/gnome/help/gdm/uk/
 share/gnome/help/gdm/uk/gdm.xml
-share/gnome/help/gdm/uk/legal.xml
-share/gnome/help/gdm/zh_CN/
-share/gnome/help/gdm/zh_CN/figures/
-share/gnome/help/gdm/zh_CN/figures/gdm_window.png
-share/gnome/help/gdm/zh_CN/gdm.xml
-share/gnome/help/gdm/zh_CN/legal.xml
-share/gnome/help/gdm/zh_HK/
-share/gnome/help/gdm/zh_HK/figures/
-share/gnome/help/gdm/zh_HK/figures/gdm_window.png
-share/gnome/help/gdm/zh_HK/gdm.xml
-share/gnome/help/gdm/zh_HK/legal.xml
-share/gnome/help/gdm/zh_TW/
-share/gnome/help/gdm/zh_TW/figures/
-share/gnome/help/gdm/zh_TW/figures/gdm_window.png
-share/gnome/help/gdm/zh_TW/gdm.xml
-share/gnome/help/gdm/zh_TW/legal.xml
 share/icons/hicolor/16x16/apps/gdm-xnest.png
 share/icons/hicolor/32x32/apps/gdm-setup.png
 share/icons/hicolor/32x32/apps/gdm-xnest.png
+share/icons/hicolor/48x48/apps/gdm-login-photo.png
+share/icons/hicolor/48x48/apps/gdm-setup.png
+share/icons/hicolor/48x48/apps/gdm-xnest.png
+share/icons/hicolor/48x48/apps/gdm.png
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gdm.mo
@@ -224,6 +192,7 @@ share/locale/ja/LC_MESSAGES/gdm.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/gdm.mo
+share/locale/kn/LC_MESSAGES/gdm.mo
 share/locale/ko/LC_MESSAGES/gdm.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
@@ -279,6 +248,9 @@ share/locale/ru/LC_MESSAGES/gdm.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gdm.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/gdm.mo
 share/locale/sk/LC_MESSAGES/gdm.mo
 share/locale/sl/LC_MESSAGES/gdm.mo
 share/locale/sq/
@@ -290,6 +262,9 @@ share/locale/sv/LC_MESSAGES/gdm.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gdm.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/gdm.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gdm.mo
@@ -303,8 +278,6 @@ share/locale/xh/
 share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gdm.mo
 share/locale/zh_CN/LC_MESSAGES/gdm.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/
@@ -315,16 +288,13 @@ share/man/man1/
 @man share/man/man1/gdm.1
 share/omf/gdm/
 share/omf/gdm/gdm-C.omf
-share/omf/gdm/gdm-de.omf
+share/omf/gdm/gdm-en_GB.omf
 share/omf/gdm/gdm-es.omf
 share/omf/gdm/gdm-fr.omf
-share/omf/gdm/gdm-it.omf
-share/omf/gdm/gdm-ja.omf
 share/omf/gdm/gdm-ko.omf
+share/omf/gdm/gdm-oc.omf
+share/omf/gdm/gdm-sv.omf
 share/omf/gdm/gdm-uk.omf
-share/omf/gdm/gdm-zh_CN.omf
-share/omf/gdm/gdm-zh_HK.omf
-share/omf/gdm/gdm-zh_TW.omf
 share/pixmaps/
 share/pixmaps/faces/
 share/pixmaps/faces/astronaut.jpg
@@ -352,10 +322,6 @@ share/pixmaps/faces/sunset.jpg
 share/pixmaps/faces/tennis-ball.png
 share/pixmaps/faces/yellow-rose.jpg
 share/pixmaps/gdm-foot-logo.png
-share/pixmaps/gdm-setup.png
-share/pixmaps/gdm-xnest.png
-share/pixmaps/gdm.png
-share/pixmaps/login-photo.png
 share/pixmaps/nobody.png
 share/pixmaps/nohost.png
 share/xsessions/

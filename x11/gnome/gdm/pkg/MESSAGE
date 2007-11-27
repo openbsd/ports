@@ -2,6 +2,5 @@ To enable the GNOME Display Manager, add the following lines to the
 /etc/rc.local file:
 
 if [ -x ${PREFIX}/sbin/gdm ]; then
-        echo -n ' gdm';
-        ${PREFIX}/sbin/gdm
+        echo -n ' gdm';        ${PREFIX}/sbin/gdm
 fi

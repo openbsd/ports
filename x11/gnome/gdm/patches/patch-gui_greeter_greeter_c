@@ -1,7 +1,7 @@
-$OpenBSD: patch-gui_greeter_greeter_c,v 1.6 2007/05/18 17:20:40 jasper Exp $
---- gui/greeter/greeter.c.orig	Sat Apr 21 13:38:54 2007
-+++ gui/greeter/greeter.c	Sat Apr 21 13:39:38 2007
-@@ -1440,8 +1440,8 @@ main (int argc, char *argv[])
+$OpenBSD: patch-gui_greeter_greeter_c,v 1.7 2007/11/27 20:26:13 jasper Exp $
+--- gui/greeter/greeter.c.orig	Mon Oct 15 23:42:38 2007
++++ gui/greeter/greeter.c	Sat Oct 27 17:09:35 2007
+@@ -1523,8 +1523,8 @@ main (int argc, char *argv[])
        gtk_dialog_run (GTK_DIALOG (dialog));
        gtk_widget_destroy (dialog);
  
@@ -10,5 +10,5 @@ $OpenBSD: patch-gui_greeter_greeter_c,v 1.6 2007/05/18 17:20:40 jasper Exp $
 +      execl (LIBEXECDIR "/gdmlogin", LIBEXECDIR "/gdmlogin", (void *)NULL);
 +      execlp ("gdmlogin", "gdmlogin", (void *)NULL);
  
-       dialog = ve_hig_dialog_new (NULL /* parent */,
- 				  GTK_DIALOG_MODAL /* flags */,
+       dialog = hig_dialog_new (NULL /* parent */,
+                                GTK_DIALOG_MODAL /* flags */,
