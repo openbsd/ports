@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/08/07 21:25:55 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/11/27 13:53:19 okan Exp $
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan::Amavisd-new Daemon:/var/empty:/sbin/nologin
 sbin/amavisd
@@ -12,30 +12,37 @@ share/doc/amavisd-new/README.banned
 share/doc/amavisd-new/README.chroot
 share/doc/amavisd-new/README.contributed
 share/doc/amavisd-new/README.courier
+share/doc/amavisd-new/README.courier-old
 share/doc/amavisd-new/README.customize
 share/doc/amavisd-new/README.exim_v3
 share/doc/amavisd-new/README.exim_v3_app
 share/doc/amavisd-new/README.exim_v4
 share/doc/amavisd-new/README.exim_v4_app
 share/doc/amavisd-new/README.exim_v4_app2
+share/doc/amavisd-new/README.ldap
 share/doc/amavisd-new/README.lookups
 share/doc/amavisd-new/README.milter
 share/doc/amavisd-new/README.old.scanners
 share/doc/amavisd-new/README.performance
 share/doc/amavisd-new/README.policy-on-notifications
 share/doc/amavisd-new/README.postfix
+share/doc/amavisd-new/README.postfix.html
 share/doc/amavisd-new/README.protocol
 share/doc/amavisd-new/README.sendmail
 share/doc/amavisd-new/README.sendmail-dual
+share/doc/amavisd-new/README.sendmail-dual.old
 share/doc/amavisd-new/README.sql
+share/doc/amavisd-new/README.sql-mysql
+share/doc/amavisd-new/README.sql-pg
 share/doc/amavisd-new/RELEASE_NOTES
 share/examples/amavisd-new/
-share/examples/amavisd-new/amavisd.conf-sample
-share/examples/amavisd-new/amavisd.conf-default
 share/examples/amavisd-new/amavisd.conf
 @sample ${SYSCONFDIR}/amavisd.conf
+share/examples/amavisd-new/amavisd.conf-default
+share/examples/amavisd-new/amavisd.conf-sample
+@mode 0755
 @owner _vscan
 @group _vscan
-@mode 755
 @sample /var/amavisd/
+@sample /var/amavisd/tmp/
 @extraunexec rm -rf /var/amavisd/* 2>/dev/null || true

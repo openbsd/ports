@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/27 13:53:19 okan Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
-VERSION=		2.3.2
-PKGNAME=		${DISTNAME}p0
+VERSION=		2.5.2
 DISTNAME=		amavisd-new-${VERSION}
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.ijs.si/software/amavisd/
-MAINTAINER=		Peter Hessler <spambox@theapt.org>
+MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,17 +19,20 @@ MASTER_SITES=		${HOMEPAGE}
 
 RUN_DEPENDS=		::archivers/arc \
 			::archivers/bzip2 \
+			::archivers/cabextract \
 			::archivers/freeze \
 			::archivers/lha \
 			::archivers/lzop \
 			::archivers/p5-Archive-Tar \
 			:p5-Archive-Zip->=1.14:archivers/p5-Archive-Zip \
 			::archivers/p5-Compress-Zlib \
+			::archivers/ripole \
 			::archivers/unarj \
 			::archivers/unrar \
 			::archivers/unzip \
 			::archivers/zoo \
 			::converters/p5-Convert-TNEF \
+			::converters/rpm2cpio \
 			:p5-Convert-UUlib->=1.05:converters/p5-Convert-UUlib \
 			::devel/p5-Net-Server \
 			::mail/p5-Mail-SpamAssassin \
