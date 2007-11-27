@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/17 20:39:03 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/11/27 20:30:19 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
 
-VER=		0.81
-DISTNAME=	Transmission-${VER}
+VER=		0.93
+DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
-PKGNAME-gui=	transmission-gui-${VER}p0
+PKGNAME-gui=	transmission-gui-${VER}
 CATEGORIES=	net
 HOMEPAGE=	http://transmission.m0k.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://download.m0k.org/transmission/files/
+EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_gui
 FLAVOR?=
@@ -26,25 +27,29 @@ FLAVOR?=
 MULTI_PACKAGES=	-main
 
 WANTLIB=	c crypto m pthread
-WANTLIB-main=	${WANTLIB} event
+WANTLIB-main=	${WANTLIB}
 
-WRKDIST=	${WRKDIR}
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--prefix="${PREFIX}"
+USE_LIBTOOL=	Yes
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-shared --without-wx
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		OPENSSL_CFLAGS="-I/usr/include" \
+		OPENSSL_LIBS="-lcrypto"
+LIBTOOL_FLAGS=	--tag=disable-shared
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/third-party/libevent
 
 .if ${FLAVOR:L:Mno_gui}
-CONFIGURE_ARGS+=--disable-gtk
+CONFIGURE_ARGS+=--without-gtk
 .else
 MULTI_PACKAGES+=-gui
 MODULES=	devel/gettext
-WANTLIB-gui=	${WANTLIB} X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
-		Xcomposite Xdamage \
-		Xrandr Xrender atk-1.0.>=1809.0 cairo expat fontconfig \
-		freetype glib-2.0.>=1200.0 glitz gmodule-2.0.>=1200.0 \
-		gobject-2.0.>=1200.0 pango-1.0.>=1300.0 pangoft2-1.0.>=1300.0 \
-		pangocairo-1.0.>=1300.0 png z
-LIB_DEPENDS=	gdk_pixbuf-2.0.>=1000.0,gdk-x11-2.0.>=1000.0,gtk-x11-2.0.>=1000.0::x11/gtk+2
+WANTLIB-gui=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
+		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		gthread-2.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 png pcre z
+LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=
 RUN_DEPENDS-gui=:${PKGNAME-main}:net/transmission,-main ${RUN_DEPENDS}
@@ -52,5 +57,8 @@ USE_X11=	Yes
 .endif
 
 NO_REGRESS=	Yes
+
+post-install:
+	@cd ${PREFIX}/man/man1 && mv transmissioncli.1 transmission-cli.1
 
 .include <bsd.port.mk>

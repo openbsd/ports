@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST-gui,v 1.4 2007/09/02 21:08:21 naddy Exp $
-bin/transmission-gtk
-@man man/man1/transmission-gtk.1
+@comment $OpenBSD: PLIST-gui,v 1.5 2007/11/27 20:30:19 naddy Exp $
+bin/transmission
+@man man/man1/transmission.1
 share/applications/
-share/applications/transmission-gtk.desktop
-share/locale/bg/LC_MESSAGES/transmission-gtk.mo
-share/locale/es/LC_MESSAGES/transmission-gtk.mo
-share/locale/fi/LC_MESSAGES/transmission-gtk.mo
-share/locale/fr/LC_MESSAGES/transmission-gtk.mo
-share/locale/it/LC_MESSAGES/transmission-gtk.mo
-share/locale/nl/LC_MESSAGES/transmission-gtk.mo
-share/locale/pl/LC_MESSAGES/transmission-gtk.mo
-share/locale/pt/LC_MESSAGES/transmission-gtk.mo
-share/locale/pt_BR/LC_MESSAGES/transmission-gtk.mo
-share/locale/ro/LC_MESSAGES/transmission-gtk.mo
-share/locale/ru/LC_MESSAGES/transmission-gtk.mo
-share/locale/sk/LC_MESSAGES/transmission-gtk.mo
-share/locale/sv/LC_MESSAGES/transmission-gtk.mo
+share/applications/transmission.desktop
+share/locale/de/LC_MESSAGES/transmission.mo
+share/locale/es/LC_MESSAGES/transmission.mo
+share/locale/fi/LC_MESSAGES/transmission.mo
+share/locale/fr/LC_MESSAGES/transmission.mo
+share/locale/it/LC_MESSAGES/transmission.mo
+share/locale/nl/LC_MESSAGES/transmission.mo
+share/locale/pl/LC_MESSAGES/transmission.mo
+share/locale/pt/LC_MESSAGES/transmission.mo
+share/locale/pt_BR/LC_MESSAGES/transmission.mo
+share/locale/ro/LC_MESSAGES/transmission.mo
+share/locale/ru/LC_MESSAGES/transmission.mo
+share/locale/sk/LC_MESSAGES/transmission.mo
+share/locale/sv/LC_MESSAGES/transmission.mo
 share/pixmaps/
 share/pixmaps/transmission.png

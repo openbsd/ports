@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.4 2007/11/27 20:30:19 naddy Exp $
+--- configure.orig	Mon Nov 12 22:07:36 2007
++++ configure	Thu Nov 22 17:51:26 2007
+@@ -20783,10 +20783,6 @@ else
+ fi
+ 
+ 
+-if test "x$GCC" = "xyes" ; then
+-    CFLAGS="-g -Wall -W -O3 -funroll-loops"
+-    CXXFLAGS="-g -Wall -W -O3 -funroll-loops"
+-fi
+ { echo "$as_me:$LINENO: checking for ANSI C header files" >&5
+ echo $ECHO_N "checking for ANSI C header files... $ECHO_C" >&6; }
+ if test "${ac_cv_header_stdc+set}" = set; then
