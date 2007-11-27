@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-pl,v 1.2 2007/11/13 09:46:28 robert Exp $
+@comment $OpenBSD: PLIST-i18n-pl,v 1.3 2007/11/27 14:19:52 robert Exp $
 openoffice/help/pl/
 openoffice/help/pl/default.css
 openoffice/help/pl/err.html
@@ -216,15 +216,6 @@ openoffice/program/resource/wzi680pl.res
 openoffice/program/resource/xsltdlg680pl.res
 openoffice/readmes/README_pl
 openoffice/readmes/README_pl.html
-openoffice/share/autotext/bg/template.bau
-openoffice/share/autotext/de/template.bau
-openoffice/share/autotext/es/template.bau
-openoffice/share/autotext/fi/template.bau
-openoffice/share/autotext/fr/template.bau
-openoffice/share/autotext/hu/template.bau
-openoffice/share/autotext/it/template.bau
-openoffice/share/autotext/ja/template.bau
-openoffice/share/autotext/ko/template.bau
 openoffice/share/autotext/pl/
 openoffice/share/autotext/pl/crdbus50.bau
 openoffice/share/autotext/pl/standard.bau

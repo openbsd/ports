@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-fr,v 1.2 2007/11/13 09:46:28 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fr,v 1.3 2007/11/27 14:19:52 robert Exp $
 openoffice/help/fr/
 openoffice/help/fr/default.css
 openoffice/help/fr/err.html
@@ -219,6 +219,7 @@ openoffice/readmes/README_fr.html
 openoffice/share/autotext/fr/
 openoffice/share/autotext/fr/crdbus50.bau
 openoffice/share/autotext/fr/standard.bau
+openoffice/share/autotext/fr/template.bau
 openoffice/share/readme/LICENSE_fr
 openoffice/share/readme/LICENSE_fr.html
 openoffice/share/readme/README_fr
