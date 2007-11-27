@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/23 22:08:14 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2007/11/27 22:08:18 simon Exp $
 
 COMMENT= 	dynamic definition of a DBIx::Class::Schema
 
@@ -19,7 +19,8 @@ RUN_DEPENDS=	::databases/p5-DBIx-Class \
 		:p5-Universal-exports-<0.05|p5-Universal-require->=0.11:devel/p5-Universal-require \
 		::textproc/p5-Lingua-EN-Inflect \
 		::textproc/p5-Lingua-EN-Inflect-Number
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::databases/p5-DBD-SQLite
 REGRESS_DEPENDS=::databases/p5-DBD-SQLite
 
 MAKE_ENV=	TEST_POD=Yes
