@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/18 16:30:36 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2007/11/28 21:04:36 kili Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
@@ -33,7 +33,7 @@ WANTLIB=		c m
 
 LIB_DEPENDS=		gmp::devel/gmp
 
-BUILD_DEPENDS=		::textproc/sgmlformat
+BUILD_DEPENDS=		::devel/alex ::devel/happy ::textproc/sgmlformat
 
 do-configure:
 	@cd ${WRKSRC} && ghc --make -o ${SETUP_PROG} Setup.hs
