@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/25 10:55:59 naddy Exp $
-bin/pr3287
+@comment $OpenBSD: PLIST,v 1.2 2007/11/28 21:18:08 naddy Exp $
+@comment bin/pr3287
 bin/x3270
-bin/x3270if
+@comment bin/x3270if
 lib/X11/fonts/
 @fontdir lib/X11/fonts/x3270/
 lib/X11/fonts/x3270/3270-12.pcf.gz
