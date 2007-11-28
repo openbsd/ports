@@ -1,7 +1,7 @@
-$OpenBSD: patch-libpurple_protocols_oscar_Makefile_in,v 1.5 2007/10/01 22:03:30 merdely Exp $
---- libpurple/protocols/oscar/Makefile.in.orig	Sat Sep 29 12:40:57 2007
-+++ libpurple/protocols/oscar/Makefile.in	Sat Sep 29 20:18:28 2007
-@@ -466,9 +466,9 @@ libicq_la_LDFLAGS = -module -avoid-version
+$OpenBSD: patch-libpurple_protocols_oscar_Makefile_in,v 1.6 2007/11/28 08:48:32 steven Exp $
+--- libpurple/protocols/oscar/Makefile.in.orig	Sat Nov 24 14:07:14 2007
++++ libpurple/protocols/oscar/Makefile.in	Mon Nov 26 16:06:45 2007
+@@ -469,9 +469,9 @@ libicq_la_LDFLAGS = -module -avoid-version
  @STATIC_OSCAR_FALSE@liboscar_la_SOURCES = $(OSCARSOURCES)
  @STATIC_OSCAR_FALSE@liboscar_la_LIBADD = $(GLIB_LIBS)
  @STATIC_OSCAR_FALSE@libaim_la_SOURCES = libaim.c

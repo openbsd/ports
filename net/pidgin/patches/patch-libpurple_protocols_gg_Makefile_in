@@ -1,7 +1,7 @@
-$OpenBSD: patch-libpurple_protocols_gg_Makefile_in,v 1.5 2007/10/01 22:03:29 merdely Exp $
---- libpurple/protocols/gg/Makefile.in.orig	Sat Sep 29 12:40:56 2007
-+++ libpurple/protocols/gg/Makefile.in	Sat Sep 29 20:18:28 2007
-@@ -417,7 +417,7 @@ libgg_la_LDFLAGS = -module -avoid-version
+$OpenBSD: patch-libpurple_protocols_gg_Makefile_in,v 1.6 2007/11/28 08:48:32 steven Exp $
+--- libpurple/protocols/gg/Makefile.in.orig	Sat Nov 24 14:07:11 2007
++++ libpurple/protocols/gg/Makefile.in	Mon Nov 26 16:06:45 2007
+@@ -420,7 +420,7 @@ libgg_la_LDFLAGS = -module -avoid-version
  @STATIC_GG_TRUE@libgg_a_CFLAGS = $(AM_CFLAGS)
  @STATIC_GG_TRUE@libgg_a_LIBADD = $(GADU_LIBS)
  @STATIC_GG_FALSE@libgg_la_SOURCES = $(GGSOURCES)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-finch_libgnt_Makefile_in,v 1.5 2007/10/01 22:03:29 merdely Exp $
---- finch/libgnt/Makefile.in.orig	Sat Sep 29 12:40:53 2007
-+++ finch/libgnt/Makefile.in	Sat Sep 29 20:18:28 2007
-@@ -351,7 +351,7 @@ target_vendor = @target_vendor@
+$OpenBSD: patch-finch_libgnt_Makefile_in,v 1.6 2007/11/28 08:48:32 steven Exp $
+--- finch/libgnt/Makefile.in.orig	Sat Nov 24 14:07:07 2007
++++ finch/libgnt/Makefile.in	Mon Nov 26 16:06:45 2007
+@@ -354,7 +354,7 @@ target_vendor = @target_vendor@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  EXTRA_DIST = genmarshal pygnt
