@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2007/11/14 12:04:04 kurt Exp $
+# $OpenBSD: Makefile,v 1.46 2007/11/28 21:18:57 naddy Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
      SUBDIR += bottlerocket
+     SUBDIR += c3270
      SUBDIR += colrdx
      SUBDIR += conserver
      SUBDIR += efax
