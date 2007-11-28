@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/04 21:24:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/28 13:08:50 ajacoutot Exp $
 
 COMMENT=	standards compliant LDAP browser
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jxplorer/}
 WRKDIST=	${WRKDIR}/jxplorer
 
-MODULES=	Java
+MODULES=	java
 MODJAVA_VER=	1.5+
 JAVA_HOME=	${LOCALBASE}/jdk-1.5.0
 
