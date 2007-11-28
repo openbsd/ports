@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/28 21:16:59 naddy Exp $
+bin/c3270
+bin/pr3287
+bin/x3270if

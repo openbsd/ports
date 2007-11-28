@@ -1,0 +1,11 @@
+c3270 is a curses-based 3270 terminal emulator. It features:
+
+- The full TN3270E protocol
+- SSL/TLS (via the OpenSSL library) for encrypted sessions
+- APL2 characters
+- Non-English character sets, including Russian, Turkish, Hebrew and
+  DBCS Chinese and Japanese
+- IND$FILE file transfer
+- NVT mode (emulating a color xterm)
+- Printer session integration
+- Extensive debugging and scripting facilities
