@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.43 2007/11/28 21:36:26 naddy Exp $
 
 COMMENT=	GdkPixbuf graphics library
 
 DISTNAME=	gdk-pixbuf-0.22.0
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 SHARED_LIBS=	gdk_pixbuf		2.0	\
 		gdk_pixbuf_xlib		2.0
 CATEGORIES=	graphics
