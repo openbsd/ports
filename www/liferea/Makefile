@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/04 21:03:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2007/11/28 13:30:33 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
-DISTNAME=		liferea-1.4.6
+DISTNAME=		liferea-1.4.8
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
