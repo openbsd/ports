@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:34:00 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/11/28 13:07:19 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://download.sqlpower.ca/architect/${V}/ \
 			ftp://ftp.darwinsys.com/pub/OpenBSD/distfiles/
 
-MODULES=		Java
+MODULES=		java
 MODJAVA_VER=	1.5+
 
 NO_BUILD=		Yes
