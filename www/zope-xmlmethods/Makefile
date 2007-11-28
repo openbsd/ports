@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/28 13:11:57 ajacoutot Exp $
 
 COMMENT=	methods to apply to Zope objects for XML/XSLT processing
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zopexmlmethods/}
 EXTRACT_SUFX=	.zip
 
-MODULES=	zope
+MODULES=	www/zope
 
 WRKDIST=	${WRKDIR}/ZopeXMLMethods
 

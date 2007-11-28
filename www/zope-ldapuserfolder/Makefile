@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/11/28 13:11:57 ajacoutot Exp $
 
 COMMENT=	Zope LDAPUserFolder product
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/ldapuserfolder_${VERSION:S/_/./g}/
 EXTRACT_SUFX=	.tgz
 
-MODULES=	zope
+MODULES=	www/zope
 
 RUN_DEPENDS=	:py-ldap-*:databases/py-ldap
 

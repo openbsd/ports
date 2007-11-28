@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.41 2007/11/28 13:14:12 ajacoutot Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 
-MODULES+=	gettext
+MODULES+=	devel/gettext
 
 LIB_DEPENDS+=   glib-2.0::devel/glib2
 

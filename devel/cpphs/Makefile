@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/07/28 18:52:58 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2007/11/28 13:10:24 ajacoutot Exp $
 
 COMMENT=	liberalised reimplementation of cpp in Haskell
 
@@ -20,7 +20,7 @@ WANTLIB+=	c m
 
 # Pure Haskell 98. Could also interpret via Hugs
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-MODULES=	ghc
+MODULES=	lang/ghc
 MODGHC_RUNTIME=	No
 LIB_DEPENDS=	gmp::devel/gmp
 HC=		ghc

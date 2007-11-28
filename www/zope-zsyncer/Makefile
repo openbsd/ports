@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/11/28 13:11:57 ajacoutot Exp $
 
 COMMENT=	synchronize and compare Zope objects
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zsyncer/}
 EXTRACT_SUFX=	.tgz
 
-MODULES=	zope
+MODULES=	www/zope
 
 WRKDIST=	${WRKDIR}/ZSyncer
 
