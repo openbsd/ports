@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/11/28 08:48:32 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/11/29 13:58:53 okan Exp $
 @conflict gaim-*
 bin/finch
 bin/pidgin
@@ -279,6 +279,7 @@ share/aclocal/purple.m4
 share/applications/
 share/applications/pidgin.desktop
 share/dbus-1/services/purple.service
+share/doc/pidgin/
 share/icons/hicolor/16x16/apps/pidgin.png
 share/icons/hicolor/22x22/apps/pidgin.png
 share/icons/hicolor/24x24/apps/pidgin.png

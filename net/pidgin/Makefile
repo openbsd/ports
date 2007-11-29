@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2007/11/28 08:48:32 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/11/29 13:58:53 okan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
 DISTNAME=	pidgin-2.3.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS += jabber               0.0      # .0.0
 SHARED_LIBS += oscar                0.0      # .0.0
 SHARED_LIBS += purple               2.0      # .3.0
@@ -108,5 +109,6 @@ post-install:
 		> ${PREFIX}/share/dbus-1/services/purple.service
 	mv ${PREFIX}/lib/purple-2/libjabber.* ${PREFIX}/lib
 	mv ${PREFIX}/lib/purple-2/liboscar.* ${PREFIX}/lib
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pidgin/
 
 .include <bsd.port.mk>
