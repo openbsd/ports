@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.572 2007/11/20 18:45:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.573 2007/11/29 13:54:13 okan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -86,6 +86,7 @@
      SUBDIR += glib
      SUBDIR += glib2
      SUBDIR += glib2mm
+     SUBDIR += glpk
      SUBDIR += gmake
      SUBDIR += gmp
      SUBDIR += goffice
