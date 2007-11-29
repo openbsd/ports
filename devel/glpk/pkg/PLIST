@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/29 13:53:03 okan Exp $
+%%SHARED%%
+bin/glpsol
+bin/tspsol
+include/glpk.h
+lib/libglpk.a
+lib/libglpk.la
+share/doc/glpk/
+share/doc/glpk/glpk.ps
+share/doc/glpk/glpk_faq.txt
+share/doc/glpk/gmpl.ps
+share/doc/glpk/opb.txt
