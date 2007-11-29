@@ -1,0 +1,9 @@
+$OpenBSD: patch-pilot-link_m4_in,v 1.1 2007/11/29 22:56:49 okan Exp $
+--- pilot-link.m4.in.orig	Thu Nov 29 17:02:27 2007
++++ pilot-link.m4.in	Thu Nov 29 17:02:36 2007
+@@ -1,4 +1,4 @@
+-AC_DEFUN([IT_PROG_INTLTOOL], [AC_PREREQ([2.50])dnl
++AC_DEFUN([IT_PROG_INTLTOOL], [AC_PREREQ([2.50])])dnl
+ 
+ AC_DEFUN([AC_PILOT_LINK_HOOK],
+ [
