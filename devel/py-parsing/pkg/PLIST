@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/04/30 18:16:16 alek Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/11/29 19:00:41 okan Exp $
+lib/python${MODPY_VERSION}/site-packages/pyparsing-1.4.8-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing.pyc
 share/doc/py-parsing/
@@ -8,6 +9,7 @@ share/doc/py-parsing/README
 share/doc/py-parsing/__builtin__.object-class.html
 share/doc/py-parsing/__builtin__.type-class.html
 share/doc/py-parsing/epydoc.css
+share/doc/py-parsing/exceptions.BaseException-class.html
 share/doc/py-parsing/exceptions.Exception-class.html
 share/doc/py-parsing/frames.html
 share/doc/py-parsing/help.html
@@ -96,6 +98,7 @@ share/examples/py-parsing/macroExpander.py
 share/examples/py-parsing/makeHTMLTagExample.py
 share/examples/py-parsing/mozilla.ics
 share/examples/py-parsing/mozillaCalendarParser.py
+share/examples/py-parsing/nested.py
 share/examples/py-parsing/parseListString.py
 share/examples/py-parsing/parsePythonValue.py
 share/examples/py-parsing/pgn.py
@@ -104,6 +107,7 @@ share/examples/py-parsing/removeLineBreaks.py
 share/examples/py-parsing/romanNumerals.py
 share/examples/py-parsing/scanExamples.py
 share/examples/py-parsing/scanYahoo.py
+share/examples/py-parsing/searchParserAppDemo.py
 share/examples/py-parsing/searchparser.py
 share/examples/py-parsing/sexpParser.py
 share/examples/py-parsing/simpleArith.py
@@ -114,4 +118,5 @@ share/examples/py-parsing/sparser.py
 share/examples/py-parsing/sql2dot.py
 share/examples/py-parsing/urlExtractor.py
 share/examples/py-parsing/urlExtractorNew.py
+share/examples/py-parsing/withAttribute.py
 share/examples/py-parsing/wordsToNum.py
