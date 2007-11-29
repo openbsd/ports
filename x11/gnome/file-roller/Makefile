@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/10 15:23:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/11/29 21:57:41 jasper Exp $
 
 COMMENT=		archive manager for GNOME
 
 GNOME_PROJECT=		file-roller
-GNOME_VERSION=		2.20.1
-
+GNOME_VERSION=		2.20.2
 CATEGORIES=		archivers
 
 MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
@@ -42,7 +41,5 @@ CONFIGURE_ARGS=		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/file-ro
 			--disable-scrollkeeper
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
