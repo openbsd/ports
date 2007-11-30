@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_bin_e_fm_c,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+--- src/bin/e_fm.c.orig	Wed Nov  7 23:31:34 2007
++++ src/bin/e_fm.c	Wed Nov  7 23:31:50 2007
+@@ -3214,7 +3214,7 @@ _e_fm2_uri_parse(const char *val)
+    p = val + 7;
+    if (*p != '/')
+      {
+-	for (i = 0; *p != '/' && *p != '\0' && i < _POSIX_HOST_NAME_MAX; p++, i++)
++	for (i = 0; *p != '/' && *p != '\0' && i < MAXHOSTNAMELEN; p++, i++)
+ 	  hostname[i] = *p;
+      }
+    hostname[i] = '\0';
+@@ -3247,9 +3247,9 @@ _e_fm2_uri_path_list_get(Evas_List *uri_list)
+ {
+    E_Fm2_Uri *uri;
+    Evas_List *l, *path_list = NULL;
+-   char current_hostname[_POSIX_HOST_NAME_MAX];
++   char current_hostname[MAXHOSTNAMELEN];
+    
+-   if (gethostname(current_hostname, _POSIX_HOST_NAME_MAX) == -1)
++   if (gethostname(current_hostname, MAXHOSTNAMELEN) == -1)
+      current_hostname[0] = '\0';
+ 
+    for (l = uri_list; l; l = l->next)

@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+%%SHARED%%
+bin/efreet_alloc
+bin/efreet_cache_test
+bin/efreet_menu_alloc
+bin/efreet_spec_test
+bin/efreet_test
+include/efreet/
+include/efreet/Efreet.h
+include/efreet/Efreet_Mime.h
+include/efreet/efreet_base.h
+include/efreet/efreet_desktop.h
+include/efreet/efreet_icon.h
+include/efreet/efreet_ini.h
+include/efreet/efreet_menu.h
+include/efreet/efreet_utils.h
+lib/libefreet.a
+lib/libefreet.la
+lib/libefreet_mime.a
+lib/libefreet_mime.la
+lib/pkgconfig/
+lib/pkgconfig/efreet-mime.pc
+lib/pkgconfig/efreet.pc
+share/efreet/
+share/efreet/test/
+share/efreet/test/entry
+share/efreet/test/entry.png
+share/efreet/test/long.ini
+share/efreet/test/preferences.menu
+share/efreet/test/sub/
+share/efreet/test/sub/test.desktop
+share/efreet/test/test.desktop
+share/efreet/test/test.ini
+share/efreet/test/test.menu
+share/efreet/test/test_menu_slash_bad.menu
+share/efreet/test/test_type.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

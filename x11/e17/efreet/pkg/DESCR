@@ -1,0 +1,16 @@
+Efreet is an implementation of the following specifications from
+freedesktop.org:
+
+  * Base Directory - Locations for system and user specific
+    desktop configuration files.
+  * Desktop Entries - The metadata associated with the applications
+    installed on a system.
+  * Application Menus - The arrangement of available applications
+    into a hierarchical menu.
+  * Icon Themes - A means of associating icons with various objects
+    on the desktop in a themable fashion.
+
+By following these specifications, Enlightenment 0.17 uses the same
+format for describing application launchers, menus and icon themes as
+the Gnome, KDE and XFCE Desktop Environments. A system must only provide
+a single set of this data for use with any of these desktops.

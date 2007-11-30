@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+%%SHARED%%
+bin/edje_cc
+bin/edje_decc
+bin/edje_recc
+include/Edje.h
+lib/libedje.a
+lib/libedje.la
+lib/pkgconfig/
+lib/pkgconfig/edje.pc
+share/edje/
+share/edje/include/
+share/edje/include/edje.inc

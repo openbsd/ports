@@ -1,0 +1,5 @@
+Ecore is the core event abstraction layer and X abstraction layer that
+makes doing selections, Xdnd, general X stuff, and event loops, timeouts
+and idle handlers fast, optimized, and convenient.  It's a separate
+library so anyone can make use of the work put into Ecore to make this
+job easy for applications.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_modules_cpufreq_Makefile_am,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+--- src/modules/cpufreq/Makefile.am.orig	Fri Nov  9 15:16:55 2007
++++ src/modules/cpufreq/Makefile.am	Fri Nov  9 15:17:26 2007
+@@ -28,7 +28,7 @@ freqsetdir = $(pkgdir)
+ freqset_DATA = \
+ freqset$(EXEEXT)
+ 
+-setuid_root_mode = a=rx,u+xs
++setuid_root_mode = a=rx,u+x
+ install-data-hook:
+ 	@chmod $(setuid_root_mode) $(DESTDIR)$(freqsetdir)/freqset$(EXEEXT) || true
+ 

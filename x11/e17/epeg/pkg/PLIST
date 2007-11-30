@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+%%SHARED%%
+bin/epeg
+include/Epeg.h
+lib/libepeg.a
+lib/libepeg.la
+lib/pkgconfig/
+lib/pkgconfig/epeg.pc

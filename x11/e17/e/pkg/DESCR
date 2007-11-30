@@ -1,0 +1,11 @@
+What is a Windowmanager?  Strictly speaking, a Window Manager manages
+windows - it is the Window Manager's task to arrange program windows on
+screen in some defined fashion, and allow the user to move, resize,
+iconify, and otherwise manipulate these client windows, without the
+client programs needing to do this themselves.
+
+Enlightenment goes beyond this, not just Managing Windows, but providing
+a useful, good looking graphical shell from which to work.  It is open
+in design, and instead of dictating a policy it allows the user to
+define their own policy right down to the minute and infinitesimal
+details; from its functionality right on through to its looks.

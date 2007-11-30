@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bin_Makefile_am,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+--- src/bin/Makefile.am.orig	Fri Nov  9 16:20:53 2007
++++ src/bin/Makefile.am	Fri Nov  9 16:21:15 2007
+@@ -345,7 +345,7 @@ e_xinerama.c
+ 
+ enlightenment_init_LDFLAGS = @e_libs@
+ 
+-setuid_root_mode = a=rx,u+xs
++setuid_root_mode = a=rx,u+x
+ install-exec-hook:
+ 	@chmod $(setuid_root_mode) $(DESTDIR)$(bindir)/enlightenment_sys$(EXEEXT) || true
+ 

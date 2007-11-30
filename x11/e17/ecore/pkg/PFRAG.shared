@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/11/30 16:04:37 dlg Exp $
+@lib lib/libecore.so.${LIBecore_VERSION}
+@lib lib/libecore_con.so.${LIBecore_con_VERSION}
+@lib lib/libecore_config.so.${LIBecore_config_VERSION}
+@lib lib/libecore_evas.so.${LIBecore_evas_VERSION}
+@lib lib/libecore_file.so.${LIBecore_file_VERSION}
+@lib lib/libecore_ipc.so.${LIBecore_ipc_VERSION}
+@lib lib/libecore_job.so.${LIBecore_job_VERSION}
+@lib lib/libecore_txt.so.${LIBecore_txt_VERSION}
+@lib lib/libecore_x.so.${LIBecore_x_VERSION}

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+@lib lib/libembryo.so.${LIBembryo_VERSION}

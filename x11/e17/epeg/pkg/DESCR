@@ -1,0 +1,4 @@
+Epeg is a convenience library API to using libjpeg to load JPEG images
+destined to be turned into thumbnails of the original, saving
+information with these thumbnails, retreiving it and managing to load
+the image ready for scaling with the minimum of fuss and CPU overhead.
