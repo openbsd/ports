@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.8 2007/06/19 19:18:49 jakob Exp $
+@comment $OpenBSD: PLIST-server,v 1.9 2007/11/30 09:52:39 jakob Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
@@ -75,8 +75,11 @@ share/doc/dovecot/wiki/AuthDatabase.PasswdFile.txt
 share/doc/dovecot/wiki/AuthDatabase.SQL.txt
 share/doc/dovecot/wiki/AuthDatabase.VPopMail.txt
 share/doc/dovecot/wiki/AuthDatabase.txt
+share/doc/dovecot/wiki/Authentication.Caching.txt
 share/doc/dovecot/wiki/Authentication.Kerberos.txt
 share/doc/dovecot/wiki/Authentication.MasterUsers.txt
+share/doc/dovecot/wiki/Authentication.Mechanisms.DigestMD5.txt
+share/doc/dovecot/wiki/Authentication.Mechanisms.Winbind.txt
 share/doc/dovecot/wiki/Authentication.Mechanisms.txt
 share/doc/dovecot/wiki/Authentication.MultipleDatabases.txt
 share/doc/dovecot/wiki/Authentication.PasswordSchemes.txt
@@ -110,6 +113,7 @@ share/doc/dovecot/wiki/IndexFiles.txt
 share/doc/dovecot/wiki/InetdInstall.txt
 share/doc/dovecot/wiki/Iptables.txt
 share/doc/dovecot/wiki/LDA.Exim.txt
+share/doc/dovecot/wiki/LDA.Indexing.txt
 share/doc/dovecot/wiki/LDA.Postfix.txt
 share/doc/dovecot/wiki/LDA.Qmail.txt
 share/doc/dovecot/wiki/LDA.Sendmail.txt
@@ -124,6 +128,7 @@ share/doc/dovecot/wiki/MailLocation.Maildir.txt
 share/doc/dovecot/wiki/MailLocation.Mbox.txt
 share/doc/dovecot/wiki/MailLocation.SharedDisk.txt
 share/doc/dovecot/wiki/MailLocation.txt
+share/doc/dovecot/wiki/MailboxFormat.Cydir.txt
 share/doc/dovecot/wiki/MailboxFormat.MH.txt
 share/doc/dovecot/wiki/MailboxFormat.Maildir.txt
 share/doc/dovecot/wiki/MailboxFormat.dbox.txt
@@ -138,6 +143,7 @@ share/doc/dovecot/wiki/Migration.Cyrus.txt
 share/doc/dovecot/wiki/Migration.Linuxconf.txt
 share/doc/dovecot/wiki/Migration.MailFormat.txt
 share/doc/dovecot/wiki/Migration.UW.txt
+share/doc/dovecot/wiki/Migration.Vm-pop3d.txt
 share/doc/dovecot/wiki/Migration.txt
 share/doc/dovecot/wiki/MissingMailboxes.txt
 share/doc/dovecot/wiki/NFS.txt
@@ -159,6 +165,7 @@ share/doc/dovecot/wiki/PasswordDatabase.txt
 share/doc/dovecot/wiki/PerformanceTuning.txt
 share/doc/dovecot/wiki/Plugins.Convert.txt
 share/doc/dovecot/wiki/Plugins.Expire.txt
+share/doc/dovecot/wiki/Plugins.FTS.txt
 share/doc/dovecot/wiki/Plugins.Lazyexpunge.txt
 share/doc/dovecot/wiki/Plugins.MailLog.txt
 share/doc/dovecot/wiki/Plugins.Trash.txt
@@ -171,6 +178,7 @@ share/doc/dovecot/wiki/Quota.Dict.txt
 share/doc/dovecot/wiki/Quota.Dirsize.txt
 share/doc/dovecot/wiki/Quota.FS.txt
 share/doc/dovecot/wiki/Quota.Maildir.txt
+share/doc/dovecot/wiki/Quota.New.txt
 share/doc/dovecot/wiki/Quota.txt
 share/doc/dovecot/wiki/Rootless.txt
 share/doc/dovecot/wiki/RunningDovecot.txt
@@ -185,8 +193,11 @@ share/doc/dovecot/wiki/SystemUsers.txt
 share/doc/dovecot/wiki/TestInstallation.txt
 share/doc/dovecot/wiki/TestPop3Installation.txt
 share/doc/dovecot/wiki/TimeMovedBackwards.txt
-share/doc/dovecot/wiki/UpgradingDovecot.txt
+share/doc/dovecot/wiki/Upgrading.1.0.txt
+share/doc/dovecot/wiki/Upgrading.1.1.txt
+share/doc/dovecot/wiki/Upgrading.txt
 share/doc/dovecot/wiki/UserDatabase.ExtraFields.txt
+share/doc/dovecot/wiki/UserDatabase.NSS.txt
 share/doc/dovecot/wiki/UserDatabase.Prefetch.txt
 share/doc/dovecot/wiki/UserDatabase.Static.txt
 share/doc/dovecot/wiki/UserDatabase.txt
