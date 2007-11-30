@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/23 22:46:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2007/11/30 06:59:23 jakob Exp $
 
 COMMENT=	DNS library modelled after Net::DNS
 
-DISTNAME=	ldns-1.2.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	ldns-1.2.2
+PKGNAME=	${DISTNAME}
 SHARED_LIBS +=	ldns                 0.0      # .0.0
 CATEGORIES=	net
 
