@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2007/11/27 10:41:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2007/12/01 10:11:53 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-V=			1.4.14
+V=			1.4.15
 DISTNAME=		asterisk-$V
 FULLPKGNAME-main=	${DISTNAME}
 
