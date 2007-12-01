@@ -1,0 +1,8 @@
+The name GiNaC is an iterated and recursive abbreviation for GiNaC is
+Not a CAS, where CAS stands for Computer Algebra System. It has been
+developed to become a replacement engine for xloops which in the past
+was powered by the Maple CAS. Its design is revolutionary in a sense
+that contrary to other CAS it does not try to provide extensive
+algebraic capabilities and a simple programming language but instead
+accepts a given language (C++) and extends it by a set of algebraic
+capabilities.
