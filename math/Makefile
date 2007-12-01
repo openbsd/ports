@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2007/10/13 08:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.72 2007/12/01 13:39:10 steven Exp $
 #
 
      SUBDIR += R
@@ -20,6 +20,7 @@
      SUBDIR += freemat
      SUBDIR += galculator
      SUBDIR += geg
+     SUBDIR += ginac
      SUBDIR += gnumeric
      SUBDIR += gnuplot
      SUBDIR += gnuplot,no_x11
