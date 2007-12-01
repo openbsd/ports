@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_i_complete_cpp,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
+--- src/i_complete.cpp.orig	Sat Sep 15 10:36:48 2007
++++ src/i_complete.cpp	Sat Sep 15 10:38:21 2007
+@@ -278,7 +278,7 @@ void ExComplete::RepaintStatus()
+ 		(WordFixedCount == 1) ? COM_ORIG : COM_HIGH, W);
+ 	p += l;
+ 	char s[100];
+-	sprintf(s, "] (T:%d/%d  S:%d)", WordPos + 1, WordsLast,
++	sprintf(s, "] (T:%d/%d  S:%zu)", WordPos + 1, WordsLast,
+ 		WordFixedCount);
+ 	MoveStr(B, p, W, s, COM_NORM, W);
+ 	// ConSetCursorPos(cur + WordFixed, H - 1);

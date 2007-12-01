@@ -1,0 +1,67 @@
+$OpenBSD: patch-install,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
+--- install.orig	Mon Jan  6 18:18:30 2003
++++ install	Sat Sep 15 12:33:48 2007
+@@ -12,27 +12,11 @@ PREFIX=${PREFIX:-/usr/local}
+ # INSTALLATION CODE (do not touch):
+ 
+ BINDIR=$PREFIX/bin
+-LIBDIR=$PREFIX/lib/fte
++LIBDIR=$PREFIX/share/fte
+ CONFIGDIR=$LIBDIR/config
+ 
+ LOCALCONFIGDIR=$LIBDIR/localconfig
+ 
+-# To do some of this stuff, you should be root...
+-if [ -z "$INSTALL_NONROOT" ]
+-then
+-    id | grep "^uid=0(" > /dev/null
+-    if [ $? -ne 0 ]
+-    then
+-        echo "We don't recommend installing as non-root.  To try anyway,"
+-        echo "export INSTALL_NONROOT=1 before running the install."
+-        echo "NOTE: You should also export PREFIX=/your/home/dir/fte to"
+-        echo "give this a chance of working."
+-        exit 1
+-    fi
+-else
+-	echo "Root-check bypassed - installing at your own risk"
+-fi
+-
+ # Ensure everything is made.
+ make -e all
+ if [ $? -ne 0 ]
+@@ -45,9 +29,9 @@ fi
+ rm -rf $CONFIGDIR
+ 
+ # Make the directories we'll need.
+-mkdir -p $BINDIR
+-mkdir -p $LIBDIR
+-mkdir -p $LOCALCONFIGDIR
++${BSD_INSTALL_PROGRAM_DIR} $BINDIR
++${BSD_INSTALL_DATA_DIR} $LIBDIR
++${BSD_INSTALL_DATA_DIR} $LOCALCONFIGDIR
+ 
+ # Set up our binaries.
+ for file in fte xfte cfte sfte vfte nfte
+@@ -58,20 +42,7 @@ do
+         # if this is the right directory for this file, use it.
+         if [ -f $dir/$file ]
+         then
+-            # try to copy it.
+-            cp $dir/$file $BINDIR 2> /dev/null
+-            # if that doesn't work, force it.
+-            # NOTE: This may crash any running copy of FTE on some platforms
+-            #       AIX, Linux: confirmed okay
+-            #       Sun: confirmed crash
+-            if [ $? -ne 0 ]
+-            then
+-                # Unix has the nice capability of being able to unlink
+-                # in-use files.
+-                echo "Forcing $file"
+-                rm -f $BINDIR/$file
+-                cp $dir/$file $BINDIR
+-            fi
++            ${BSD_INSTALL_PROGRAM} $dir/$file $BINDIR 2> /dev/null
+         fi
+     done
+ done

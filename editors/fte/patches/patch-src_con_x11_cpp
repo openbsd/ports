@@ -1,0 +1,85 @@
+$OpenBSD: patch-src_con_x11_cpp,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
+--- src/con_x11.cpp.orig	Tue Sep 18 21:57:13 2007
++++ src/con_x11.cpp	Tue Sep 18 22:00:34 2007
+@@ -152,7 +152,7 @@ static char winTitle[256] = "FTE";
+ static char winSTitle[256] = "FTE";
+ 
+ static unsigned char* CurSelectionData[3] = {NULL,NULL,NULL};
+-static int CurSelectionLen[3] = {0,0,0};
++static long CurSelectionLen[3] = {0,0,0};
+ static int CurSelectionOwn[3] = {0,0,0};
+ static Time now;
+ 
+@@ -170,7 +170,7 @@ IncrementalSelectionInfo *incrementalSelections = NULL
+ 
+ static Bool gotXError;
+ 
+-static void SendSelection(XEvent *notify, Atom property, Atom type, unsigned char *data, int len, Bool privateData);
++static void SendSelection(XEvent *notify, Atom property, Atom type, unsigned char *data, long len, Bool privateData);
+ 
+ static int ErrorHandler(Display *, XErrorEvent *ee) {
+     gotXError = True;
+@@ -569,9 +569,9 @@ static int SetupXWindow(int argc, char **argv)
+     }
+     if (i == ICON_COUNT) {
+         // Everything OK, can create property
+-        CARD32 *iconBuffer = (CARD32 *)malloc(iconBufferSize * sizeof(CARD32));
++        long *iconBuffer = (long *)malloc(iconBufferSize * sizeof(long));
+         if (iconBuffer) {
+-            CARD32 *b = iconBuffer;
++            long *b = iconBuffer;
+             for (i = 0; i < ICON_COUNT; i++) {
+                 XpmImage &xpm = xpmImage[i];
+                 CARD32 *&colors = xpmColors[i];
+@@ -1697,7 +1697,7 @@ static int WaitForXEvent(int eventType, XEvent *event)
+     }
+ }
+ 
+-static void SendSelection(XEvent *notify, Atom property, Atom type, unsigned char *data, int len, Bool privateData) {
++static void SendSelection(XEvent *notify, Atom property, Atom type, unsigned char *data, long len, Bool privateData) {
+     int (*oldHandler)(Display *, XErrorEvent *);
+     int i, send;
+ 
+@@ -1787,13 +1787,13 @@ static int ConvertSelection(Atom selection, Atom type,
+ 
+     if (actual_type == proptype_incr) {
+         // Incremental data
+-        int pos, buffer_len;
++        long pos, buffer_len;
+         unsigned char *buffer;
+ 
+         // Get selection length and allocate buffer
+         XGetWindowProperty(display, win, prop_selection, 0, 8, True, proptype_incr,
+                            &actual_type, &actual_format, &nitems, &bytes_after, &d);
+-        buffer_len = *(int *)d;
++        buffer_len = *(long *)d;
+         buffer = (unsigned char *)malloc(buffer_len);
+         XFree(d);
+         // Cannot exit right now if data == NULL since we need to complete the handshake
+@@ -1819,7 +1819,7 @@ static int ConvertSelection(Atom selection, Atom type,
+ 
+             if (nitems && buffer) {
+                 // Data received and have buffer
+-                if (nitems > (unsigned int)(buffer_len - pos)) {
++                if (nitems > (unsigned long)(buffer_len - pos)) {
+                     // More data than expected - realloc buffer
+                     int new_len = pos + nitems;
+                     unsigned char *new_buffer = (unsigned char *)malloc(new_len);
+@@ -1937,7 +1937,7 @@ int GetXSelection(int *len, char **data, int clipboard
+         return 0;
+ }
+ 
+-int SetXSelection(int len, char *data, int clipboard) {
++int SetXSelection(long len, char *data, int clipboard) {
+     Atom clip = GetXClip(clipboard);
+     if (CurSelectionData[clipboard] != NULL)
+         free(CurSelectionData[clipboard]);
+@@ -1952,7 +1952,7 @@ int SetXSelection(int len, char *data, int clipboard) 
+     memcpy(CurSelectionData[clipboard], data, CurSelectionLen[clipboard]);
+     CurSelectionData[clipboard][len] = 0;
+     if (CurSelectionLen[clipboard] < 64 * 1024) {
+-        XStoreBytes(display, data, len);
++        XStoreBytes(display, data, (int)len);
+     }
+     XSetSelectionOwner(display, clip, win, CurrentTime);
+     if (XGetSelectionOwner(display, clip) == win)

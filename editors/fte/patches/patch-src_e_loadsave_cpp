@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_e_loadsave_cpp,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
+--- src/e_loadsave.cpp.orig	Sat Sep 15 10:32:34 2007
++++ src/e_loadsave.cpp	Sat Sep 15 10:34:02 2007
+@@ -506,7 +506,7 @@ int EBuffer::SaveTo(char *AFileName) {
+             while ((bindex = GetUserBookmarkForLine(bindex, l, bname, bpos)) != -1) {
+                 // Skip too long bookmarks
+                 if (strlen(bname) > 256 || blen + strlen(bname) + 6 + 6 > sizeof(book)) continue;
+-                blen += sprintf(book + blen, "%04x%02x%s", bpos.Col, strlen(bname), bname);
++                blen += sprintf(book + blen, "%04x%02zx%s", bpos.Col, strlen(bname), bname);
+             }
+             if (blen != 4) {
+                 blen += sprintf(book + blen, "x%04xb", blen);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_clip_x11_cpp,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
+--- src/clip_x11.cpp.orig	Tue Sep 18 22:02:08 2007
++++ src/clip_x11.cpp	Tue Sep 18 22:02:13 2007
+@@ -10,7 +10,7 @@
+ #include "fte.h"
+ 
+ int GetXSelection(int *len, char **data, int clipboard);
+-int SetXSelection(int len, char *data, int clipboard);
++int SetXSelection(long len, char *data, int clipboard);
+ 
+ int GetPMClip(int clipboard) {
+     char *data;

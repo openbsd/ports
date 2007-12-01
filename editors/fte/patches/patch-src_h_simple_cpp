@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_h_simple_cpp,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
+--- src/h_simple.cpp.orig	Sat Sep 15 10:34:22 2007
++++ src/h_simple.cpp	Sat Sep 15 10:36:39 2007
+@@ -24,8 +24,8 @@ int Hilit_SIMPLE(EBuffer *BF, int LN, PCell B, int Pos
+     int nextState;
+     char *match;
+     int lastPos = -1;
+-    hlState entryState;
+-    int iterCount;
++    hlState entryState = 0;
++    int iterCount = 1;
+     bool reportError = true;
+ 
+     if (hm == 0 || hm->stateCount == 0)

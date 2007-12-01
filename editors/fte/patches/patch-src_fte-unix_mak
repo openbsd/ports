@@ -1,0 +1,99 @@
+$OpenBSD: patch-src_fte-unix_mak,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
+--- src/fte-unix.mak.orig	Sat Sep 15 09:44:17 2007
++++ src/fte-unix.mak	Sat Sep 15 18:51:54 2007
+@@ -5,10 +5,10 @@
+ 
+ #  vfte - for Linux console directly (with limitations, see con_linux.cpp)
+ 
+-TGT_NFTE = nfte
++#TGT_NFTE = nfte
+ #TGT_QFTE = qfte
+ #TGT_SFTE = sfte
+-TGT_VFTE = vfte
++#TGT_VFTE = vfte
+ TGT_XFTE = xfte
+ 
+ TARGETS = $(TGT_XFTE) $(TGT_NFTE) $(TGT_QFTE) $(TGT_SFTE) $(TGT_VFTE)
+@@ -43,9 +43,10 @@ XPMLIB = -lXpm
+ #gcc/g++
+ #CC = g++
+ #LD = g++
+-CC = $(CXX)
++CC?= cc
++CXX?= c++
+ LD = $(CXX)
+-CPPOPTIONS = -Wall -Wpointer-arith -Wconversion -Wwrite-strings -Winline
++CPPOPTIONS = -Wall -Wpointer-arith -Wconversion -Wwrite-strings
+ 
+ # try this for smaller/faster code and less dependencies
+ NOEXCEPTION = -fno-rtti -fno-exceptions
+@@ -56,8 +57,8 @@ NOEXCEPTION = -fno-rtti -fno-exceptions
+ #######################################################################
+ # Linux
+ UOS      = -DLINUX
+-XINCDIR  = -I/usr/X11R6/include
+-XLIBDIR  = -L/usr/X11R6/lib
++XINCDIR  = -I${X11BASE}/include
++XLIBDIR  = -L${X11BASE}/lib
+ 
+ #######################################################################
+ # HP/UX
+@@ -77,7 +78,7 @@ XLIBDIR  = -L/usr/X11R6/lib
+ #MINCDIR  = -I/usr/include/Motif1.2
+ #MLIBDIR  = -L/usr/lib/Motif1.2
+ 
+-SINCDIR   = -I/usr/include/slang
++#SINCDIR   = -I/usr/include/slang
+ 
+ #######################################################################
+ # AIX
+@@ -137,17 +138,17 @@ SINCDIR   = -I/usr/include/slang
+ #QLIBDIR  = -L$(QTDIR)/lib
+ #QINCDIR  = -I$(QTDIR)/include
+ #QINCDIR  = -I/usr/include/qt
+-QINCDIR =  -I/usr/include/qt3
++#QINCDIR =  -I/usr/include/qt3
+ MOC      = moc
+ 
+ LIBDIRS   =
+ INCDIRS   = $(XINCDIR) $(QINCDIR) $(MINCDIR) $(SINCDIR)
+ 
+-OPTIMIZE = -g # -O -g
++DEBUG ?= -g -ggdb
+ #OPTIMIZE = -O2
+ #OPTIMIZE = -O2 -s
+ 
+-CCFLAGS  = $(CPPOPTIONS) $(OPTIMIZE) $(NOEXCEPTION) $(INCDIRS) -DUNIX $(UOS) \
++CCFLAGS  = ${DEBUG} $(CPPOPTIONS) $(NOEXCEPTION) $(INCDIRS) -DUNIX $(UOS) \
+ 	$(I18NOPTIONS) $(APPOPTIONS) $(USE_XICON)
+ LDFLAGS  = $(OPTIMIZE) $(LIBDIRS)
+ 
+@@ -160,7 +161,7 @@ include objs.inc
+ SRCS = $(OBJS:.o=.cpp)
+ 
+ # Need -lXt below if USE_XTINIT is defined
+-XLIBS    = $(XLIBDIR) -lX11 $(SOCKETLIB) $(XPMLIB)
++XLIBS    = $(XLIBDIR) $(XPMLIB) -lX11 -lXdmcp -lXau $(SOCKETLIB)
+ VLIBS    = -lgpm -lncurses
+ NLIBS    = -lncurses
+ SLIBS    = -lslang
+@@ -169,7 +170,7 @@ QLIBS    = $(QLIBDIR) -lqt-mt
+ #MLIBS    = $(MLIBDIR) -lXm -lXp -lXt -lXpm -lXext
+ 
+ .cpp.o:
+-	$(CC) -c $< $(CXXFLAGS) $(CPPFLAGS) $(CCFLAGS)
++	$(CXX) -c $< $(CXXFLAGS) $(CPPFLAGS) $(CCFLAGS)
+ 
+ .c.o:
+ 	$(CC) -c $< $(CFLAGS) $(CPPFLAGS) $(CCFLAGS)
+@@ -232,10 +233,3 @@ tags: $(SRCS) $(wildcard *.h)
+ clean:
+ 	rm -f core *.o *.moc .depend $(TARGETS) defcfg.h defcfg.cnf \
+ 	cfte fte sfte vfte nfte qfte xfte compkeys tags
+-
+-#
+-# include dependency files if they exist
+-#
+-ifneq ($(wildcard .depend),)
+-include .depend
+-endif

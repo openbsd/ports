@@ -1,0 +1,13 @@
+The FTE Text Editor is a powerful, yet very easy and intuitive to use
+text editor for programmers. In fact, its features virtually make it a
+complete IDE. It is small and fast.
+
+Among many other things, it supports syntax highlighting and
+syntax-aware autoindenting for many languages, parenthesis matching,
+parsing of compiler output and folds. Most of its features are
+configurable, including user-definable syntax highlighting through a
+configurable state machine.
+
+This port is based on a CVS snapshot, which includes Subversion support
+in addition to CVS. Only the X11 version of FTE (xfte) is currently
+functional.
