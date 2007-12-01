@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.916 2007/09/30 15:07:40 steven Exp $
+#	$OpenBSD: bsd.port.mk,v 1.917 2007/12/01 14:44:47 merdely Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2161,10 +2161,10 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .if empty(PLIST_DB)
 _register_plist =:
 .else
-_register_plist = perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB}
+_register_plist = mkdir -p ${PLIST_DB} && perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB}
 .endif
 .if ${CHECK_LIB_DEPENDS:L} == "yes"
-_check_lib_depends =perl ${PORTSDIR}/infrastructure/package/check-lib-depends -d ${_PKG_REPO} -B ${WRKINST}
+_check_lib_depends = perl ${PORTSDIR}/infrastructure/package/check-lib-depends -d ${_PKG_REPO} -B ${WRKINST}
 .else
 _check_lib_depends =:
 .endif
