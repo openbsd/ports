@@ -1,30 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.4 2007/06/13 15:07:34 alek Exp $
---- setup.py.orig	Tue May  8 23:57:09 2007
-+++ setup.py	Thu May 10 05:31:10 2007
-@@ -126,15 +126,17 @@ if 'bdist_wininst' in sys.argv:
-         sys.exit(1)
-     scriptfiles.append('scripts/ipython_win_post_install.py')
- 
--datafiles = [('data', docdirbase, docfiles),
--                          ('data', os.path.join(docdirbase, 'examples'),
--                           examfiles),
--                          ('data', os.path.join(docdirbase, 'manual'),
--                           manfiles),
--                          ('data', manpagebase, manpages),
--                          ('lib', 'IPython/UserConfig', cfgfiles),
--                          ('data',os.path.join(docdirbase, 'extensions'),
--                           igridhelpfiles)]
-+# These files are manually installed by the port's Makefile.
-+#datafiles = [('data', docdirbase, docfiles),
-+#                          ('data', os.path.join(docdirbase, 'examples'),
-+#                           examfiles),
-+#                          ('data', os.path.join(docdirbase, 'manual'),
-+#                           manfiles),
-+#                          ('data', manpagebase, manpages),
-+#                          ('lib', 'IPython/UserConfig', cfgfiles),
-+#                          ('data',os.path.join(docdirbase, 'extensions'),
-+#                           igridhelpfiles)]
+$OpenBSD: patch-setup_py,v 1.5 2007/12/01 13:35:20 steven Exp $
+--- setup.py.orig	Mon Aug 13 14:38:45 2007
++++ setup.py	Fri Nov 30 18:26:24 2007
+@@ -139,6 +139,7 @@ datafiles = [('data', docdirbase, docfiles),
+              ('lib', 'IPython/UserConfig', cfgfiles),
+              ('data',pjoin(docdirbase, 'extensions'),igridhelpfiles),
+              ]
 +datafiles = [('lib', 'IPython/UserConfig', cfgfiles),]
+ 
  if 'setuptools' in sys.modules:
      # setuptools config for egg building
-     egg_extra_kwds = {
