@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2007/11/30 16:04:37 dlg Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2007/12/02 13:55:21 bernd Exp $
 
 CATEGORIES?=		x11
 
@@ -8,3 +8,11 @@ MASTER_SITES?=		http://www.itee.uq.edu.au/~dlg/openbsd/
 DIST_SUBDIR?=		e17
 
 USE_LIBTOOL?=		Yes
+
+e17-post-patch:
+	@cd ${WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} NOCONFIGURE=true \
+		${SH} autogen.sh
+
+.if !target(post-patch)
+post-patch: e17-post-patch
+.endif

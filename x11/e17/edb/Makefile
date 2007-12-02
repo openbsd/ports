@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
 
 COMMENT=		databse conveneince library based on db 2.7.7
 DISTNAME=		edb-20071107
@@ -22,9 +22,5 @@ AUTOMAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 CONFIGURE_STYLE=	automake autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	cd ${WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} NOCONFIGURE=true \
-		${SH} autogen.sh
 
 .include <bsd.port.mk>

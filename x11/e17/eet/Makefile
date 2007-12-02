@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
 
 COMMENT=	library to write an arbitary set of chunks of data to a file
 DISTNAME=	eet-20071107
@@ -25,9 +25,5 @@ LIB_DEPENDS=		jpeg::graphics/jpeg
 CONFIGURE_STYLE=	automake
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	cd ${WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} NOCONFIGURE=true \
-		${SH} autogen.sh
 
 .include <bsd.port.mk>

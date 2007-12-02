@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
 
 COMMENT=	canvas API for X
 DISTNAME=	evas-20071107
@@ -32,10 +32,6 @@ CONFIGURE_STYLE=	automake
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=		--disable-image-loader-svg --enable-image-loader-edb
-
-post-patch:
-	cd ${WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} NOCONFIGURE=true \
-		${SH} autogen.sh
 
 .if ${MACHINE_ARCH} == "amd64"
 EVAS_ARCH=		x86_64

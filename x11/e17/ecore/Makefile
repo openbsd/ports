@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/30 16:04:37 dlg Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
 
 COMMENT=	core event/X abstraction layer
 DISTNAME=	ecore-20071107
@@ -39,9 +39,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			SSL_CFLAGS="-I/usr/include" SSL_LIBS="-lssl"
 CONFIGURE_ARGS=		--with-iconv-link=-liconv
-
-post-patch:
-	cd ${WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} NOCONFIGURE=true \
-		${SH} autogen.sh
 
 .include <bsd.port.mk>

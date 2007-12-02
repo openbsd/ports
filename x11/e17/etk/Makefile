@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
 
 COMMENT=	toolkit based on the EFL
 DISTNAME=	etk
@@ -35,10 +35,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			E_CFLAGS="-I${LOCALBASE}/include/efreet" \
 			E_LIBS="-lssl -lcrypto -leet -levas -lecore -lecore_ipc -ledje -lefreet -lefreet_mime"
-
-post-patch:
-	cd ${WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} NOCONFIGURE=true \
-		${SH} autogen.sh
 
 #post-install:
 #	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/enlightenment
