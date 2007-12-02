@@ -1,0 +1,38 @@
+$OpenBSD: patch-nepenthes-core_src_DownloadManager_cpp,v 1.1 2007/12/02 20:46:52 rui Exp $
+--- nepenthes-core/src/DownloadManager.cpp.orig	Thu Aug 30 23:14:37 2007
++++ nepenthes-core/src/DownloadManager.cpp	Sun Dec  2 18:20:26 2007
+@@ -28,6 +28,7 @@
+ /* $Id: patch-nepenthes-core_src_DownloadManager_cpp,v 1.1 2007/12/02 20:46:52 rui Exp $ */
+ 
+ #include <string>
++#include <sys/param.h>
+ 
+ #include "DownloadManager.hpp"
+ #include "DownloadHandler.hpp"
+@@ -114,16 +115,16 @@ bool  DownloadManager::Exit()
+  * these cool makros are taken from the clamav mailing list  
+  * 
+  */
+-//#ifndef BIG_ENDIAN
+-//	#define SWAP_ORDER(x) (x)
+-//#else
+-	#define SWAP_ORDER(x) ( \
+-		((x & 0xff) << 24) | \
+-		((x & 0xff00) << 8) | \
+-		((x & 0xff0000) >> 8 ) | \
+-		((x & 0xff000000) >> 24 ))
+-//#endif
+-
++#if BYTE_ORDER == BIG_ENDIAN
++        #define SWAP_ORDER(x) (x)
++#else
++        #define SWAP_ORDER(x) ( \
++                ((x & 0xff) << 24) | \
++                ((x & 0xff00) << 8) | \
++                ((x & 0xff0000) >> 8 ) | \
++                ((x & 0xff000000) >> 24 ))
++#endif
++   
+ #define PACKADDR(a, b, c, d) SWAP_ORDER((((uint32_t)(a) << 24) | ((b) << 16) | ((c) << 8) | (d)))
+ #define MAKEMASK(bits)	SWAP_ORDER(((uint32_t)(0xffffffff << (32-bits))))
+ 
