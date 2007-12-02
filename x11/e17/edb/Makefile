@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/02 13:58:12 bernd Exp $
 
-COMMENT=		databse conveneince library based on db 2.7.7
+COMMENT=		database convenience library based on db 2.7.7
 DISTNAME=		edb-20071107
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	edb                  0.0      # .1.5
 
 MAINTAINER=		Laurent FANIS <laurent@humppa.nl>

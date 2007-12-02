@@ -1,6 +1,6 @@
-This is a database conveneince library base on db 2.7.7 from
+This is a database convenience library based on db 2.7.7 from
 http://www.sleepycat.com. It is intended to make accessing database
-information portable, easy, fast and efficient as well as bypass the
-proplem of libdb continuously changing formats.  Read the Edb.h header
+information portable, easy, fast and efficient as well as bypassing the
+problem of libdb continuously changing formats.  Read the Edb.h header
 for inormation on how to use the calls and the test directory for sample
 code.
