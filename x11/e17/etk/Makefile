@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/02 14:18:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/02 18:18:10 bernd Exp $
 
 COMMENT=	toolkit based on the EFL
 DISTNAME=	etk-20071107
@@ -22,11 +22,6 @@ LIB_DEPENDS=		ecore,ecore_evas,ecore_file,ecore_job,ecore_txt,ecore_x::x11/e17/e
 			edje::x11/e17/edje
 
 RUN_DEPENDS=		::devel/desktop-file-utils
-
-AUTOCONF_VERSION=	2.61
-AUTOMAKE_VERSION=	1.9
-AUTOMAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 USE_GMAKE=		Yes
 

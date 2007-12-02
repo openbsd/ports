@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/02 18:18:10 bernd Exp $
 
 COMMENT=	core event/X abstraction layer
 DISTNAME=	ecore-20071107
@@ -24,11 +24,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MODULES=		devel/gettext
 
 USE_X11=		Yes
-
-AUTOCONF_VERSION=	2.61
-AUTOMAKE_VERSION=	1.9
-AUTOMAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 LIB_DEPENDS=		SDL::devel/sdl \
 			curl::net/curl \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/02 18:18:10 bernd Exp $
 
 COMMENT=	the enlightened window manager
 DISTNAME=	e-20071107
@@ -21,11 +21,6 @@ LIB_DEPENDS=		SDL::devel/sdl \
 			edje::x11/e17/edje \
 			efreet,efreet_mime::x11/e17/efreet
 RUN_DEPENDS=		::devel/desktop-file-utils
-
-AUTOCONF_VERSION=	2.61
-AUTOMAKE_VERSION=	1.9
-AUTOMAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 CONFIGURE_STYLE=	automake autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/02 18:18:10 bernd Exp $
 
 COMMENT=	implementations of freedesktop.org specifications
 DISTNAME=	efreet-20071107
@@ -14,11 +14,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto curl idn m ssl z
 
 MODULES=		devel/gettext
-
-AUTOCONF_VERSION=	2.61
-AUTOMAKE_VERSION=	1.9
-AUTOMAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 LIB_DEPENDS=		ecore,ecore_file::x11/e17/ecore
 RUN_DEPENDS=		::devel/desktop-file-utils
