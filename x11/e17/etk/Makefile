@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/02 13:55:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/02 14:18:37 jasper Exp $
 
 COMMENT=	toolkit based on the EFL
-DISTNAME=	etk
+DISTNAME=	etk-20071107
+SHARED_LIBS +=  etk                 0.0          # .1.0
 
-SHARED_LIB +=	etk 		0.0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,15 +13,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xinerama Xp Xrandr Xrender Xss c crypto curl ecore \
-		ecore_con ecore_evas ecore_file ecore_ipc ecore_job \
-		ecore_txt ecore_x eet embryo evas expat fontconfig \
-		freetype idn jpeg m pthread ssl usbhid z
+WANTLIB=	SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xinerama Xp Xrandr Xrender Xss c crypto curl eet evas \
+		expat fontconfig freetype idn jpeg m pthread ssl usbhid z
 
-LIB_DEPENDS=		evas::x11/e17/evas \
-			ecore::x11/e17/ecore \
-			edje::x11/e17/edje 
+LIB_DEPENDS=		ecore,ecore_evas,ecore_file,ecore_job,ecore_txt,ecore_x::x11/e17/ecore \
+			embryo::x11/e17/embryo \
+			edje::x11/e17/edje
 
 RUN_DEPENDS=		::devel/desktop-file-utils
 
@@ -30,15 +28,13 @@ AUTOMAKE_VERSION=	1.9
 AUTOMAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
+USE_GMAKE=		Yes
+
 CONFIGURE_STYLE=	automake autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			E_CFLAGS="-I${LOCALBASE}/include/efreet" \
 			E_LIBS="-lssl -lcrypto -leet -levas -lecore -lecore_ipc -ledje -lefreet -lefreet_mime"
-
-#post-install:
-#	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/enlightenment
-#	mv ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/
 
 .if ${MACHINE_ARCH} == "amd64"
 E_ARCH=			x86_64
