@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/12/03 18:54:58 fgsch Exp $
 bin/eboard
 bin/eboard-addtheme
 bin/eboard-config
@@ -15,16 +15,16 @@ share/doc/eboard/Sjeng.txt
 share/doc/eboard/Themes.txt
 share/eboard/
 share/eboard/NAG.en.txt
-share/eboard/basic_g.png
-share/eboard/basic_w.png
-share/eboard/basic_y.png
+share/eboard/classic.png
+share/eboard/eboard.cs.dict
+share/eboard/eboard.de.dict
+share/eboard/eboard.es.dict
+share/eboard/eboard.fr.dict
+share/eboard/eboard.hu.dict
+share/eboard/eboard.it.dict
+share/eboard/eboard.ja.dict
+share/eboard/eboard.pl.dict
+share/eboard/eboard.pt_BR.dict
 share/eboard/eboard_themes.conf
-share/eboard/rock.png
-share/locale/cs/LC_MESSAGES/eboard.mo
-share/locale/de/LC_MESSAGES/eboard.mo
-share/locale/es/LC_MESSAGES/eboard.mo
-share/locale/it/LC_MESSAGES/eboard.mo
-@comment share/locale/it_IT/
-@comment share/locale/it_IT/LC_MESSAGES/
-@comment share/locale/it_IT/LC_MESSAGES/eboard.mo
-share/locale/pt_BR/LC_MESSAGES/eboard.mo
+share/eboard/ghouls.png
+share/eboard/plastic.png

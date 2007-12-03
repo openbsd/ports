@@ -1,0 +1,26 @@
+$OpenBSD: patch-elifekam,v 1.1 2007/12/03 18:54:58 fgsch Exp $
+--- elifekam.orig	Wed May 23 19:57:45 2007
++++ elifekam	Mon Dec  3 05:26:24 2007
+@@ -26,11 +26,11 @@ all: eboard nls-dicts
+ eboard: $(OBJS)
+ 	$(CXX) $(LDFLAGS) -o eboard $(OBJS)
+ 
+-.cc.o: $< $(HEADERS) $(XPMS)
++.cc.o: $(HEADERS) $(XPMS)
+ 	$(CXX) $(CXXFLAGS) -c $< -o $@
+ 
+ nls-dicts:
+-	$(MAKE) -C multilang dicts
++	cd multilang && $(MAKE) dicts
+ 
+ clean:
+ 	rm -f $(OBJS) eboard *~
+@@ -62,7 +62,7 @@ install-data:
+ 	$(INSTALL) -m 0644 NAG.en.txt  $(datadir)/NAG.en.txt
+ 
+ install-nls:
+-	$(MAKE) -C multilang install-nls INSTALL=$(INSTALL) datadir=$(datadir)
++	cd multilang && $(MAKE) install-nls INSTALL=$(INSTALL) datadir=$(datadir)
+ 
+ uninstall:
+ 	rm -f $(bindir)/eboard 

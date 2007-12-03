@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure,v 1.1 2007/12/03 18:54:58 fgsch Exp $
+--- configure.orig	Wed May 23 19:57:45 2007
++++ configure	Mon Dec  3 11:39:59 2007
+@@ -6,7 +6,7 @@ my $prefix      = "/usr/local";
+ my $package     = "eboard";
+ my $version     = "1.0.4";
+ my $cxx         = "g++";
+-my @cxxflags    = ("-O6");
++my @cxxflags    = ();
+ my @ldflags     = ("-lpthread");
+ my @libs        = ();
+ my $configh     = "config.h";
+@@ -236,7 +236,7 @@ sub append_flags {
+     my $x = shift @_;
+     my @y;
+ 
+-    @y = split(/:/, $x);
++    @y = split(/ /, $x);
+     for (@y) {
+ 	push @cxxflags, "$_";
+     }
+@@ -264,7 +264,7 @@ sub macro_check {
+     my $hdr = shift @_;
+     my $mac = shift @_;
+     my $chn = shift @_;
+-    my $program = "#include <$hdr>\n#if !defined($mac)\n#error not there\n#endif\n";
++    my $program = "#include <sys/types.h>\n#include <$hdr>\n#if !defined($mac)\n#error not there\n#endif\n";
+ 
+     print "checking for $mac in $hdr... ";
+     if (!open(TESTCC,">test.cc")) {
+@@ -342,6 +342,8 @@ sub header_check {
+ 	print "$y";
+ 	if ($bsdbug != 0) {
+ 	    $program = "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <unistd.h>\n#include <$z>\nint main() { return 0; }\n";
++	} elsif ($z == "sys/audioio.h") {
++	    $program = "#include <sys/types.h>\n#include <$z>\nint main() { return 0; }\n";
+ 	} else {
+ 	    $program = "#include <$z>\nint main() { return 0; }\n";
+         }
+@@ -536,7 +538,7 @@ if ($t2 != 0) {
+ 	print "netinet/tcp.h not required, SOL_TCP present.\n";
+     }
+ } else {
+-    if ($t5 != 0 && ($t1!=0 || $t4!=0) && ($t3!=0 || $t6!=0) ) {
++    if ($t5 != 0 && ($t1!=0 || $t4!=0 || $t3!=0 || $t6!=0) ) {
+ 	cppdef("NEED_TCP_H");
+ 	cppdef("USE_SOCK_OPTS");
+ 	if ($t1!=0 || $t4!=0) {

@@ -1,35 +1,32 @@
-# $OpenBSD: Makefile,v 1.30 2007/09/15 18:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.31 2007/12/03 18:54:58 fgsch Exp $
 
-COMMENT=	gtk+ chess board interface
+COMMENT=	gtk+2 chess board interface
 
-DISTNAME=	eboard-0.9.0
-PKGNAME=	${DISTNAME}
+DISTNAME=	eboard-1.0.4
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://eboard.sourceforge.net/
-
-MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
+HOMEPAGE=	http://www.bergo.eng.br/eboard/
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext Xi c gdk glib gmodule gtk jpeg m png \
-			stdc++ tiff ungif z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=eboard/}
+WANTLIB= 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
+		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv \
+		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread \
+		stdc++ z
 
-LIB_DEPENDS=		gdk_imlib::graphics/imlib
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
 
-MODULES=		devel/gettext
+EXTRACT_SUFX=	.tar.bz2
 
-USE_X11=		Yes
-AUTOCONF_VERSION=	2.52
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-                LDFLAGS="-L${LOCALBASE}/lib"
+LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
-MAKE_FLAGS+=	CXXFLAGS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
+USE_X11=	Yes
+CONFIGURE_STYLE=simple
+CONFIGURE_ARGS+=--extra-flags="$(CXXFLAGS)"
 
 DOCS=	Crafty.txt FICS-Timeseal.txt GNUChess4.txt GNUChess5.txt \
 	Scripts.txt Sjeng.txt Themes.txt

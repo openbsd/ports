@@ -1,12 +1,39 @@
-$OpenBSD: patch-sound_cc,v 1.5 2003/01/26 19:26:25 fgsch Exp $
---- sound.cc.orig	Sun Jan 19 16:24:03 2003
-+++ sound.cc	Sat Jan 25 02:51:15 2003
-@@ -76,7 +76,7 @@ SoundEvent::SoundEvent() {
+$OpenBSD: patch-sound_cc,v 1.6 2007/12/03 18:54:58 fgsch Exp $
+--- sound.cc.orig	Wed May 23 19:57:45 2007
++++ sound.cc	Mon Dec  3 11:58:00 2007
+@@ -46,6 +46,7 @@
+ #include "eboard.h"
+ 
+ #define SOME_DRIVER 1
++#define SOUND_DEV "/dev/dsp"
+ 
+ #ifdef HAVE_SYS_SOUNDCARD_H
+ 
+@@ -54,6 +55,9 @@
+ 
+ #elif defined HAVE_SYS_AUDIOIO_H
+ 
++#undef SOUND_DEV
++#define SOUND_DEV "/dev/audio"
++
+ #define OPENBSD_DRIVER 1
+ #include <sys/audioio.h>
+ 
+@@ -74,7 +78,7 @@ SoundEvent::SoundEvent() {
    Pitch=800;
    Duration=250;
    Count=1;
 -  strcpy(Device,"/dev/dsp");
-+  strcpy(Device,"/dev/audio");
++  strcpy(Device,SOUND_DEV);
    ExtraData[0]=0;
    enabled = true;
  }
+@@ -157,7 +161,7 @@ ostream & operator<<(ostream &s,  SoundEvent e) {
+     s << e.Device << ',' << e.Count << ',' << (e.enabled?1:0);
+     break;
+   case EXT_WAVE:
+-    if (e.Device[0] == 0) strcpy(e.Device,"/dev/dsp");
++    if (e.Device[0] == 0) strcpy(e.Device,SOUND_DEV);
+     s << "1," << e.Device << ',' << e.ExtraData;
+     s << ',' << (e.enabled?1:0);
+     break;
