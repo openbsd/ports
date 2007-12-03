@@ -1,7 +1,6 @@
-OpenCDK (Open Crypto Development Kit) provides basic parts 
-of the OpenPGP message format. The aim of the library is 
-*not* to replace any available OpenPGP version. There will be 
-no real support for key management (sign, revoke, alter 
-preferences, etc) and some other parts are only rudimentary
-available. The main purpose is to handle and understand 
-OpenPGP packets and to use basic operations.
+OpenCDK (Open Crypto Development Kit) provides basic parts of the
+OpenPGP message format. The aim of the library is *not* to replace any
+available OpenPGP version. There will be no real support for key
+management (sign, revoke, alter preferences, etc) and some other parts
+are only rudimentary available. The main purpose is to handle and
+understand OpenPGP packets and to use basic operations.

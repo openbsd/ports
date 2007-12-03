@@ -1,17 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/03 20:48:39 landry Exp $
 bin/opencdk-config
 include/opencdk.h
 lib/libopencdk.a
 lib/libopencdk.la
+lib/pkgconfig/
+lib/pkgconfig/opencdk.pc
 share/doc/opencdk/
 share/doc/opencdk/README
 share/doc/opencdk/opencdk-api.html
 share/examples/opencdk/
-share/examples/opencdk/minpg.c
+share/examples/opencdk/basic.c
+share/examples/opencdk/exp-key.gpg
+share/examples/opencdk/newkey.gpg
+share/examples/opencdk/photo-key.gpg
+share/examples/opencdk/plain-test-pubenc-part.gpg
+share/examples/opencdk/plain-test-sym.gpg
+share/examples/opencdk/plain-test.gpg
+share/examples/opencdk/pub-asc.gpg
 share/examples/opencdk/pub.gpg
 share/examples/opencdk/sec-with-pwd.gpg
 share/examples/opencdk/sec.gpg
+share/examples/opencdk/t-encr.c
+share/examples/opencdk/t-key.c
+share/examples/opencdk/t-keydb.c
+share/examples/opencdk/t-misc.c
+share/examples/opencdk/t-sign.c
 share/examples/opencdk/t-stream.c
+share/examples/opencdk/testpa.c
 share/examples/opencdk/ts.gpg
 share/examples/opencdk/wkold.gpg
 %%SHARED%%
