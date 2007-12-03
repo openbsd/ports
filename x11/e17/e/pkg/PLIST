@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/30 16:04:38 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/03 10:57:22 bernd Exp $
 %%SHARED%%
 bin/enlightenment
 bin/enlightenment-config
@@ -515,7 +515,7 @@ share/enlightenment/doc/cache.txt
 share/enlightenment/doc/documentation.html
 share/enlightenment/doc/enlightenment.png
 share/examples/enlightenment/
-@sample ${SYSCONFDIR}/enlightenment
+@sample ${SYSCONFDIR}/enlightenment/
 share/examples/enlightenment/sysactions.conf
 @sample ${SYSCONFDIR}/enlightenment/sysactions.conf
 share/locale/
