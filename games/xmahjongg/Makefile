@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/12/03 18:57:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2007/12/03 19:06:08 jasper Exp $
 
 COMMENT=	colorful solitaire Mah Jongg game for X11
 
 DISTNAME=	xmahjongg-3.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.lcdf.org/~eddietwo/xmahjongg/

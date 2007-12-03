@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/12/03 18:57:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.18 2007/12/03 19:06:08 jasper Exp $
 
 COMMENT=	X11 Go Toolset
 
 DISTNAME=	cgoban-1.9.12
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.igoweb.org/~wms/comp/cgoban/
