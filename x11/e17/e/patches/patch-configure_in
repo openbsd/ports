@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1 2007/12/03 11:36:28 bernd Exp $
+--- configure.in.orig	Wed Nov  7 11:45:47 2007
++++ configure.in	Mon Dec  3 12:13:37 2007
+@@ -148,6 +148,9 @@ AC_SUBST(ALL_LINGUAS)
+ 
+ AM_GNU_GETTEXT([external])
+ AM_GNU_GETTEXT_VERSION([0.12.1])
++LIBICONV="$LTLIBICONV"
++LIBINTL="$LTLIBINTL"
++INTLLIBS="$LTLIBINTL"
+ if test "x$LIBINTL" = "x"; then
+   LIBINTL="$INTLLIBS"
+ fi
