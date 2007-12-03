@@ -1,27 +1,42 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/05/11 11:16:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/12/03 20:57:33 landry Exp $
 bin/certtool
 bin/gnutls-cli
 bin/gnutls-cli-debug
 bin/gnutls-serv
-bin/gnutls-srpcrypt
 bin/libgnutls-config
 bin/libgnutls-extra-config
+bin/psktool
 bin/srptool
 include/gnutls/
-include/gnutls/compat4.h
-include/gnutls/compat8.h
+include/gnutls/compat.h
 include/gnutls/extra.h
 include/gnutls/gnutls.h
+include/gnutls/gnutlsxx.h
 include/gnutls/openpgp.h
 include/gnutls/openssl.h
 include/gnutls/pkcs12.h
 include/gnutls/x509.h
+info/gnutls-certificate-user-use-case.png
+info/gnutls-client-server-use-case.png
+info/gnutls-extensions_st.png
+info/gnutls-handshake-sequence.png
+info/gnutls-handshake-state.png
+info/gnutls-internals.png
+info/gnutls-layers.png
+info/gnutls-logo.png
+info/gnutls-mod_auth_st.png
+info/gnutls-objects.png
+info/gnutls-pgp.png
+info/gnutls-x509.png
+@info info/gnutls.info
 lib/libgnutls-extra.a
 lib/libgnutls-extra.la
 lib/libgnutls-openssl.a
 lib/libgnutls-openssl.la
 lib/libgnutls.a
 lib/libgnutls.la
+lib/libgnutlsxx.a
+lib/libgnutlsxx.la
 lib/pkgconfig/
 lib/pkgconfig/gnutls-extra.pc
 lib/pkgconfig/gnutls.pc
@@ -29,8 +44,437 @@ lib/pkgconfig/gnutls.pc
 @man man/man1/gnutls-cli-debug.1
 @man man/man1/gnutls-cli.1
 @man man/man1/gnutls-serv.1
+@man man/man1/psktool.1
 @man man/man1/srptool.1
-share/aclocal/
+@man man/man3/gnutls_alert_get.3
+@man man/man3/gnutls_alert_get_name.3
+@man man/man3/gnutls_alert_send.3
+@man man/man3/gnutls_alert_send_appropriate.3
+@man man/man3/gnutls_anon_allocate_client_credentials.3
+@man man/man3/gnutls_anon_allocate_server_credentials.3
+@man man/man3/gnutls_anon_free_client_credentials.3
+@man man/man3/gnutls_anon_free_server_credentials.3
+@man man/man3/gnutls_anon_set_params_function.3
+@man man/man3/gnutls_anon_set_server_dh_params.3
+@man man/man3/gnutls_anon_set_server_params_function.3
+@man man/man3/gnutls_auth_client_get_type.3
+@man man/man3/gnutls_auth_get_type.3
+@man man/man3/gnutls_auth_server_get_type.3
+@man man/man3/gnutls_bye.3
+@man man/man3/gnutls_certificate_activation_time_peers.3
+@man man/man3/gnutls_certificate_allocate_credentials.3
+@man man/man3/gnutls_certificate_client_get_request_status.3
+@man man/man3/gnutls_certificate_client_set_retrieve_function.3
+@man man/man3/gnutls_certificate_expiration_time_peers.3
+@man man/man3/gnutls_certificate_free_ca_names.3
+@man man/man3/gnutls_certificate_free_cas.3
+@man man/man3/gnutls_certificate_free_credentials.3
+@man man/man3/gnutls_certificate_free_crls.3
+@man man/man3/gnutls_certificate_free_keys.3
+@man man/man3/gnutls_certificate_get_ours.3
+@man man/man3/gnutls_certificate_get_peers.3
+@man man/man3/gnutls_certificate_send_x509_rdn_sequence.3
+@man man/man3/gnutls_certificate_server_set_request.3
+@man man/man3/gnutls_certificate_server_set_retrieve_function.3
+@man man/man3/gnutls_certificate_set_dh_params.3
+@man man/man3/gnutls_certificate_set_openpgp_key.3
+@man man/man3/gnutls_certificate_set_openpgp_key_file.3
+@man man/man3/gnutls_certificate_set_openpgp_key_mem.3
+@man man/man3/gnutls_certificate_set_openpgp_keyring_file.3
+@man man/man3/gnutls_certificate_set_openpgp_keyring_mem.3
+@man man/man3/gnutls_certificate_set_openpgp_keyserver.3
+@man man/man3/gnutls_certificate_set_openpgp_trustdb.3
+@man man/man3/gnutls_certificate_set_params_function.3
+@man man/man3/gnutls_certificate_set_rsa_export_params.3
+@man man/man3/gnutls_certificate_set_verify_flags.3
+@man man/man3/gnutls_certificate_set_verify_limits.3
+@man man/man3/gnutls_certificate_set_x509_crl.3
+@man man/man3/gnutls_certificate_set_x509_crl_file.3
+@man man/man3/gnutls_certificate_set_x509_crl_mem.3
+@man man/man3/gnutls_certificate_set_x509_key.3
+@man man/man3/gnutls_certificate_set_x509_key_file.3
+@man man/man3/gnutls_certificate_set_x509_key_mem.3
+@man man/man3/gnutls_certificate_set_x509_simple_pkcs12_file.3
+@man man/man3/gnutls_certificate_set_x509_trust.3
+@man man/man3/gnutls_certificate_set_x509_trust_file.3
+@man man/man3/gnutls_certificate_set_x509_trust_mem.3
+@man man/man3/gnutls_certificate_type_get.3
+@man man/man3/gnutls_certificate_type_get_name.3
+@man man/man3/gnutls_certificate_type_list.3
+@man man/man3/gnutls_certificate_type_set_priority.3
+@man man/man3/gnutls_certificate_verify_peers.3
+@man man/man3/gnutls_certificate_verify_peers2.3
+@man man/man3/gnutls_check_version.3
+@man man/man3/gnutls_cipher_get.3
+@man man/man3/gnutls_cipher_get_key_size.3
+@man man/man3/gnutls_cipher_get_name.3
+@man man/man3/gnutls_cipher_list.3
+@man man/man3/gnutls_cipher_set_priority.3
+@man man/man3/gnutls_cipher_suite_get_name.3
+@man man/man3/gnutls_cipher_suite_info.3
+@man man/man3/gnutls_compression_get.3
+@man man/man3/gnutls_compression_get_name.3
+@man man/man3/gnutls_compression_list.3
+@man man/man3/gnutls_compression_set_priority.3
+@man man/man3/gnutls_credentials_clear.3
+@man man/man3/gnutls_credentials_set.3
+@man man/man3/gnutls_db_check_entry.3
+@man man/man3/gnutls_db_get_ptr.3
+@man man/man3/gnutls_db_remove_session.3
+@man man/man3/gnutls_db_set_cache_expiration.3
+@man man/man3/gnutls_db_set_ptr.3
+@man man/man3/gnutls_db_set_remove_function.3
+@man man/man3/gnutls_db_set_retrieve_function.3
+@man man/man3/gnutls_db_set_store_function.3
+@man man/man3/gnutls_deinit.3
+@man man/man3/gnutls_dh_get_group.3
+@man man/man3/gnutls_dh_get_peers_public_bits.3
+@man man/man3/gnutls_dh_get_prime_bits.3
+@man man/man3/gnutls_dh_get_pubkey.3
+@man man/man3/gnutls_dh_get_secret_bits.3
+@man man/man3/gnutls_dh_params_cpy.3
+@man man/man3/gnutls_dh_params_deinit.3
+@man man/man3/gnutls_dh_params_export_pkcs3.3
+@man man/man3/gnutls_dh_params_export_raw.3
+@man man/man3/gnutls_dh_params_generate2.3
+@man man/man3/gnutls_dh_params_import_pkcs3.3
+@man man/man3/gnutls_dh_params_import_raw.3
+@man man/man3/gnutls_dh_params_init.3
+@man man/man3/gnutls_dh_set_prime_bits.3
+@man man/man3/gnutls_error_is_fatal.3
+@man man/man3/gnutls_error_to_alert.3
+@man man/man3/gnutls_extra_check_version.3
+@man man/man3/gnutls_fingerprint.3
+@man man/man3/gnutls_free.3
+@man man/man3/gnutls_global_deinit.3
+@man man/man3/gnutls_global_init.3
+@man man/man3/gnutls_global_init_extra.3
+@man man/man3/gnutls_global_set_log_function.3
+@man man/man3/gnutls_global_set_log_level.3
+@man man/man3/gnutls_global_set_mem_functions.3
+@man man/man3/gnutls_handshake.3
+@man man/man3/gnutls_handshake_get_last_in.3
+@man man/man3/gnutls_handshake_get_last_out.3
+@man man/man3/gnutls_handshake_set_max_packet_length.3
+@man man/man3/gnutls_handshake_set_private_extensions.3
+@man man/man3/gnutls_hex_decode.3
+@man man/man3/gnutls_hex_encode.3
+@man man/man3/gnutls_ia_allocate_client_credentials.3
+@man man/man3/gnutls_ia_allocate_server_credentials.3
+@man man/man3/gnutls_ia_enable.3
+@man man/man3/gnutls_ia_endphase_send.3
+@man man/man3/gnutls_ia_extract_inner_secret.3
+@man man/man3/gnutls_ia_free_client_credentials.3
+@man man/man3/gnutls_ia_free_server_credentials.3
+@man man/man3/gnutls_ia_generate_challenge.3
+@man man/man3/gnutls_ia_get_client_avp_ptr.3
+@man man/man3/gnutls_ia_get_server_avp_ptr.3
+@man man/man3/gnutls_ia_handshake.3
+@man man/man3/gnutls_ia_handshake_p.3
+@man man/man3/gnutls_ia_permute_inner_secret.3
+@man man/man3/gnutls_ia_recv.3
+@man man/man3/gnutls_ia_send.3
+@man man/man3/gnutls_ia_set_client_avp_function.3
+@man man/man3/gnutls_ia_set_client_avp_ptr.3
+@man man/man3/gnutls_ia_set_server_avp_function.3
+@man man/man3/gnutls_ia_set_server_avp_ptr.3
+@man man/man3/gnutls_ia_verify_endphase.3
+@man man/man3/gnutls_init.3
+@man man/man3/gnutls_kx_get.3
+@man man/man3/gnutls_kx_get_name.3
+@man man/man3/gnutls_kx_list.3
+@man man/man3/gnutls_kx_set_priority.3
+@man man/man3/gnutls_mac_get.3
+@man man/man3/gnutls_mac_get_name.3
+@man man/man3/gnutls_mac_list.3
+@man man/man3/gnutls_mac_set_priority.3
+@man man/man3/gnutls_malloc.3
+@man man/man3/gnutls_openpgp_key_check_hostname.3
+@man man/man3/gnutls_openpgp_key_deinit.3
+@man man/man3/gnutls_openpgp_key_export.3
+@man man/man3/gnutls_openpgp_key_get_creation_time.3
+@man man/man3/gnutls_openpgp_key_get_expiration_time.3
+@man man/man3/gnutls_openpgp_key_get_fingerprint.3
+@man man/man3/gnutls_openpgp_key_get_id.3
+@man man/man3/gnutls_openpgp_key_get_key_usage.3
+@man man/man3/gnutls_openpgp_key_get_name.3
+@man man/man3/gnutls_openpgp_key_get_pk_algorithm.3
+@man man/man3/gnutls_openpgp_key_get_version.3
+@man man/man3/gnutls_openpgp_key_import.3
+@man man/man3/gnutls_openpgp_key_init.3
+@man man/man3/gnutls_openpgp_key_to_xml.3
+@man man/man3/gnutls_openpgp_key_verify_ring.3
+@man man/man3/gnutls_openpgp_key_verify_self.3
+@man man/man3/gnutls_openpgp_key_verify_trustdb.3
+@man man/man3/gnutls_openpgp_keyring_check_id.3
+@man man/man3/gnutls_openpgp_keyring_deinit.3
+@man man/man3/gnutls_openpgp_keyring_import.3
+@man man/man3/gnutls_openpgp_keyring_init.3
+@man man/man3/gnutls_openpgp_privkey_deinit.3
+@man man/man3/gnutls_openpgp_privkey_get_pk_algorithm.3
+@man man/man3/gnutls_openpgp_privkey_import.3
+@man man/man3/gnutls_openpgp_privkey_init.3
+@man man/man3/gnutls_openpgp_privkey_sign_hash.3
+@man man/man3/gnutls_openpgp_send_key.3
+@man man/man3/gnutls_openpgp_set_recv_key_function.3
+@man man/man3/gnutls_openpgp_trustdb_deinit.3
+@man man/man3/gnutls_openpgp_trustdb_import_file.3
+@man man/man3/gnutls_openpgp_trustdb_init.3
+@man man/man3/gnutls_pem_base64_decode.3
+@man man/man3/gnutls_pem_base64_decode_alloc.3
+@man man/man3/gnutls_pem_base64_encode.3
+@man man/man3/gnutls_pem_base64_encode_alloc.3
+@man man/man3/gnutls_perror.3
+@man man/man3/gnutls_pk_algorithm_get_name.3
+@man man/man3/gnutls_pkcs12_bag_decrypt.3
+@man man/man3/gnutls_pkcs12_bag_deinit.3
+@man man/man3/gnutls_pkcs12_bag_encrypt.3
+@man man/man3/gnutls_pkcs12_bag_get_count.3
+@man man/man3/gnutls_pkcs12_bag_get_data.3
+@man man/man3/gnutls_pkcs12_bag_get_friendly_name.3
+@man man/man3/gnutls_pkcs12_bag_get_key_id.3
+@man man/man3/gnutls_pkcs12_bag_get_type.3
+@man man/man3/gnutls_pkcs12_bag_init.3
+@man man/man3/gnutls_pkcs12_bag_set_crl.3
+@man man/man3/gnutls_pkcs12_bag_set_crt.3
+@man man/man3/gnutls_pkcs12_bag_set_data.3
+@man man/man3/gnutls_pkcs12_bag_set_friendly_name.3
+@man man/man3/gnutls_pkcs12_bag_set_key_id.3
+@man man/man3/gnutls_pkcs12_deinit.3
+@man man/man3/gnutls_pkcs12_export.3
+@man man/man3/gnutls_pkcs12_generate_mac.3
+@man man/man3/gnutls_pkcs12_get_bag.3
+@man man/man3/gnutls_pkcs12_import.3
+@man man/man3/gnutls_pkcs12_init.3
+@man man/man3/gnutls_pkcs12_set_bag.3
+@man man/man3/gnutls_pkcs12_verify_mac.3
+@man man/man3/gnutls_pkcs7_deinit.3
+@man man/man3/gnutls_pkcs7_delete_crl.3
+@man man/man3/gnutls_pkcs7_delete_crt.3
+@man man/man3/gnutls_pkcs7_export.3
+@man man/man3/gnutls_pkcs7_get_crl_count.3
+@man man/man3/gnutls_pkcs7_get_crl_raw.3
+@man man/man3/gnutls_pkcs7_get_crt_count.3
+@man man/man3/gnutls_pkcs7_get_crt_raw.3
+@man man/man3/gnutls_pkcs7_import.3
+@man man/man3/gnutls_pkcs7_init.3
+@man man/man3/gnutls_pkcs7_set_crl.3
+@man man/man3/gnutls_pkcs7_set_crl_raw.3
+@man man/man3/gnutls_pkcs7_set_crt.3
+@man man/man3/gnutls_pkcs7_set_crt_raw.3
+@man man/man3/gnutls_prf.3
+@man man/man3/gnutls_prf_raw.3
+@man man/man3/gnutls_protocol_get_name.3
+@man man/man3/gnutls_protocol_get_version.3
+@man man/man3/gnutls_protocol_list.3
+@man man/man3/gnutls_protocol_set_priority.3
+@man man/man3/gnutls_psk_allocate_client_credentials.3
+@man man/man3/gnutls_psk_allocate_server_credentials.3
+@man man/man3/gnutls_psk_free_client_credentials.3
+@man man/man3/gnutls_psk_free_server_credentials.3
+@man man/man3/gnutls_psk_server_get_username.3
+@man man/man3/gnutls_psk_set_client_credentials.3
+@man man/man3/gnutls_psk_set_client_credentials_function.3
+@man man/man3/gnutls_psk_set_params_function.3
+@man man/man3/gnutls_psk_set_server_credentials_file.3
+@man man/man3/gnutls_psk_set_server_credentials_function.3
+@man man/man3/gnutls_psk_set_server_dh_params.3
+@man man/man3/gnutls_psk_set_server_params_function.3
+@man man/man3/gnutls_record_check_pending.3
+@man man/man3/gnutls_record_disable_padding.3
+@man man/man3/gnutls_record_get_direction.3
+@man man/man3/gnutls_record_get_max_size.3
+@man man/man3/gnutls_record_recv.3
+@man man/man3/gnutls_record_send.3
+@man man/man3/gnutls_record_set_max_size.3
+@man man/man3/gnutls_rehandshake.3
+@man man/man3/gnutls_rsa_export_get_modulus_bits.3
+@man man/man3/gnutls_rsa_export_get_pubkey.3
+@man man/man3/gnutls_rsa_params_cpy.3
+@man man/man3/gnutls_rsa_params_deinit.3
+@man man/man3/gnutls_rsa_params_export_pkcs1.3
+@man man/man3/gnutls_rsa_params_export_raw.3
+@man man/man3/gnutls_rsa_params_generate2.3
+@man man/man3/gnutls_rsa_params_import_pkcs1.3
+@man man/man3/gnutls_rsa_params_import_raw.3
+@man man/man3/gnutls_rsa_params_init.3
+@man man/man3/gnutls_server_name_get.3
+@man man/man3/gnutls_server_name_set.3
+@man man/man3/gnutls_session_enable_compatibility_mode.3
+@man man/man3/gnutls_session_get_client_random.3
+@man man/man3/gnutls_session_get_data.3
+@man man/man3/gnutls_session_get_data2.3
+@man man/man3/gnutls_session_get_id.3
+@man man/man3/gnutls_session_get_master_secret.3
+@man man/man3/gnutls_session_get_ptr.3
+@man man/man3/gnutls_session_get_server_random.3
+@man man/man3/gnutls_session_is_resumed.3
+@man man/man3/gnutls_session_set_data.3
+@man man/man3/gnutls_session_set_ptr.3
+@man man/man3/gnutls_set_default_export_priority.3
+@man man/man3/gnutls_set_default_priority.3
+@man man/man3/gnutls_sign_algorithm_get_name.3
+@man man/man3/gnutls_sign_callback_get.3
+@man man/man3/gnutls_sign_callback_set.3
+@man man/man3/gnutls_srp_allocate_client_credentials.3
+@man man/man3/gnutls_srp_allocate_server_credentials.3
+@man man/man3/gnutls_srp_base64_decode.3
+@man man/man3/gnutls_srp_base64_decode_alloc.3
+@man man/man3/gnutls_srp_base64_encode.3
+@man man/man3/gnutls_srp_base64_encode_alloc.3
+@man man/man3/gnutls_srp_free_client_credentials.3
+@man man/man3/gnutls_srp_free_server_credentials.3
+@man man/man3/gnutls_srp_server_get_username.3
+@man man/man3/gnutls_srp_set_client_credentials.3
+@man man/man3/gnutls_srp_set_client_credentials_function.3
+@man man/man3/gnutls_srp_set_server_credentials_file.3
+@man man/man3/gnutls_srp_set_server_credentials_function.3
+@man man/man3/gnutls_srp_verifier.3
+@man man/man3/gnutls_strerror.3
+@man man/man3/gnutls_transport_get_ptr.3
+@man man/man3/gnutls_transport_get_ptr2.3
+@man man/man3/gnutls_transport_set_errno.3
+@man man/man3/gnutls_transport_set_global_errno.3
+@man man/man3/gnutls_transport_set_lowat.3
+@man man/man3/gnutls_transport_set_ptr.3
+@man man/man3/gnutls_transport_set_ptr2.3
+@man man/man3/gnutls_transport_set_pull_function.3
+@man man/man3/gnutls_transport_set_push_function.3
+@man man/man3/gnutls_x509_crl_check_issuer.3
+@man man/man3/gnutls_x509_crl_deinit.3
+@man man/man3/gnutls_x509_crl_export.3
+@man man/man3/gnutls_x509_crl_get_crt_count.3
+@man man/man3/gnutls_x509_crl_get_crt_serial.3
+@man man/man3/gnutls_x509_crl_get_dn_oid.3
+@man man/man3/gnutls_x509_crl_get_issuer_dn.3
+@man man/man3/gnutls_x509_crl_get_issuer_dn_by_oid.3
+@man man/man3/gnutls_x509_crl_get_next_update.3
+@man man/man3/gnutls_x509_crl_get_signature.3
+@man man/man3/gnutls_x509_crl_get_signature_algorithm.3
+@man man/man3/gnutls_x509_crl_get_this_update.3
+@man man/man3/gnutls_x509_crl_get_version.3
+@man man/man3/gnutls_x509_crl_import.3
+@man man/man3/gnutls_x509_crl_init.3
+@man man/man3/gnutls_x509_crl_print.3
+@man man/man3/gnutls_x509_crl_set_crt.3
+@man man/man3/gnutls_x509_crl_set_crt_serial.3
+@man man/man3/gnutls_x509_crl_set_next_update.3
+@man man/man3/gnutls_x509_crl_set_this_update.3
+@man man/man3/gnutls_x509_crl_set_version.3
+@man man/man3/gnutls_x509_crl_sign.3
+@man man/man3/gnutls_x509_crl_sign2.3
+@man man/man3/gnutls_x509_crl_verify.3
+@man man/man3/gnutls_x509_crq_deinit.3
+@man man/man3/gnutls_x509_crq_export.3
+@man man/man3/gnutls_x509_crq_get_attribute_by_oid.3
+@man man/man3/gnutls_x509_crq_get_challenge_password.3
+@man man/man3/gnutls_x509_crq_get_dn.3
+@man man/man3/gnutls_x509_crq_get_dn_by_oid.3
+@man man/man3/gnutls_x509_crq_get_dn_oid.3
+@man man/man3/gnutls_x509_crq_get_pk_algorithm.3
+@man man/man3/gnutls_x509_crq_get_version.3
+@man man/man3/gnutls_x509_crq_import.3
+@man man/man3/gnutls_x509_crq_init.3
+@man man/man3/gnutls_x509_crq_set_attribute_by_oid.3
+@man man/man3/gnutls_x509_crq_set_challenge_password.3
+@man man/man3/gnutls_x509_crq_set_dn_by_oid.3
+@man man/man3/gnutls_x509_crq_set_key.3
+@man man/man3/gnutls_x509_crq_set_version.3
+@man man/man3/gnutls_x509_crq_sign.3
+@man man/man3/gnutls_x509_crq_sign2.3
+@man man/man3/gnutls_x509_crt_check_hostname.3
+@man man/man3/gnutls_x509_crt_check_issuer.3
+@man man/man3/gnutls_x509_crt_check_revocation.3
+@man man/man3/gnutls_x509_crt_cpy_crl_dist_points.3
+@man man/man3/gnutls_x509_crt_deinit.3
+@man man/man3/gnutls_x509_crt_export.3
+@man man/man3/gnutls_x509_crt_get_activation_time.3
+@man man/man3/gnutls_x509_crt_get_authority_key_id.3
+@man man/man3/gnutls_x509_crt_get_basic_constraints.3
+@man man/man3/gnutls_x509_crt_get_ca_status.3
+@man man/man3/gnutls_x509_crt_get_crl_dist_points.3
+@man man/man3/gnutls_x509_crt_get_dn.3
+@man man/man3/gnutls_x509_crt_get_dn_by_oid.3
+@man man/man3/gnutls_x509_crt_get_dn_oid.3
+@man man/man3/gnutls_x509_crt_get_expiration_time.3
+@man man/man3/gnutls_x509_crt_get_extension_by_oid.3
+@man man/man3/gnutls_x509_crt_get_extension_data.3
+@man man/man3/gnutls_x509_crt_get_extension_info.3
+@man man/man3/gnutls_x509_crt_get_extension_oid.3
+@man man/man3/gnutls_x509_crt_get_fingerprint.3
+@man man/man3/gnutls_x509_crt_get_issuer.3
+@man man/man3/gnutls_x509_crt_get_issuer_dn.3
+@man man/man3/gnutls_x509_crt_get_issuer_dn_by_oid.3
+@man man/man3/gnutls_x509_crt_get_issuer_dn_oid.3
+@man man/man3/gnutls_x509_crt_get_key_id.3
+@man man/man3/gnutls_x509_crt_get_key_purpose_oid.3
+@man man/man3/gnutls_x509_crt_get_key_usage.3
+@man man/man3/gnutls_x509_crt_get_pk_algorithm.3
+@man man/man3/gnutls_x509_crt_get_pk_dsa_raw.3
+@man man/man3/gnutls_x509_crt_get_pk_rsa_raw.3
+@man man/man3/gnutls_x509_crt_get_proxy.3
+@man man/man3/gnutls_x509_crt_get_raw_dn.3
+@man man/man3/gnutls_x509_crt_get_raw_issuer_dn.3
+@man man/man3/gnutls_x509_crt_get_serial.3
+@man man/man3/gnutls_x509_crt_get_signature.3
+@man man/man3/gnutls_x509_crt_get_signature_algorithm.3
+@man man/man3/gnutls_x509_crt_get_subject.3
+@man man/man3/gnutls_x509_crt_get_subject_alt_name.3
+@man man/man3/gnutls_x509_crt_get_subject_alt_othername_oid.3
+@man man/man3/gnutls_x509_crt_get_subject_key_id.3
+@man man/man3/gnutls_x509_crt_get_version.3
+@man man/man3/gnutls_x509_crt_import.3
+@man man/man3/gnutls_x509_crt_init.3
+@man man/man3/gnutls_x509_crt_list_import.3
+@man man/man3/gnutls_x509_crt_list_verify.3
+@man man/man3/gnutls_x509_crt_print.3
+@man man/man3/gnutls_x509_crt_set_activation_time.3
+@man man/man3/gnutls_x509_crt_set_authority_key_id.3
+@man man/man3/gnutls_x509_crt_set_basic_constraints.3
+@man man/man3/gnutls_x509_crt_set_ca_status.3
+@man man/man3/gnutls_x509_crt_set_crl_dist_points.3
+@man man/man3/gnutls_x509_crt_set_crq.3
+@man man/man3/gnutls_x509_crt_set_dn_by_oid.3
+@man man/man3/gnutls_x509_crt_set_expiration_time.3
+@man man/man3/gnutls_x509_crt_set_extension_by_oid.3
+@man man/man3/gnutls_x509_crt_set_issuer_dn_by_oid.3
+@man man/man3/gnutls_x509_crt_set_key.3
+@man man/man3/gnutls_x509_crt_set_key_purpose_oid.3
+@man man/man3/gnutls_x509_crt_set_key_usage.3
+@man man/man3/gnutls_x509_crt_set_proxy.3
+@man man/man3/gnutls_x509_crt_set_proxy_dn.3
+@man man/man3/gnutls_x509_crt_set_serial.3
+@man man/man3/gnutls_x509_crt_set_subject_alternative_name.3
+@man man/man3/gnutls_x509_crt_set_subject_key_id.3
+@man man/man3/gnutls_x509_crt_set_version.3
+@man man/man3/gnutls_x509_crt_sign.3
+@man man/man3/gnutls_x509_crt_sign2.3
+@man man/man3/gnutls_x509_crt_to_xml.3
+@man man/man3/gnutls_x509_crt_verify.3
+@man man/man3/gnutls_x509_crt_verify_data.3
+@man man/man3/gnutls_x509_dn_get_rdn_ava.3
+@man man/man3/gnutls_x509_dn_oid_known.3
+@man man/man3/gnutls_x509_privkey_cpy.3
+@man man/man3/gnutls_x509_privkey_deinit.3
+@man man/man3/gnutls_x509_privkey_export.3
+@man man/man3/gnutls_x509_privkey_export_dsa_raw.3
+@man man/man3/gnutls_x509_privkey_export_pkcs8.3
+@man man/man3/gnutls_x509_privkey_export_rsa_raw.3
+@man man/man3/gnutls_x509_privkey_fix.3
+@man man/man3/gnutls_x509_privkey_generate.3
+@man man/man3/gnutls_x509_privkey_get_key_id.3
+@man man/man3/gnutls_x509_privkey_get_pk_algorithm.3
+@man man/man3/gnutls_x509_privkey_import.3
+@man man/man3/gnutls_x509_privkey_import_dsa_raw.3
+@man man/man3/gnutls_x509_privkey_import_pkcs8.3
+@man man/man3/gnutls_x509_privkey_import_rsa_raw.3
+@man man/man3/gnutls_x509_privkey_init.3
+@man man/man3/gnutls_x509_privkey_sign_data.3
+@man man/man3/gnutls_x509_privkey_sign_hash.3
+@man man/man3/gnutls_x509_privkey_verify_data.3
+@man man/man3/gnutls_x509_rdn_get.3
+@man man/man3/gnutls_x509_rdn_get_by_oid.3
+@man man/man3/gnutls_x509_rdn_get_oid.3
 share/aclocal/libgnutls-extra.m4
 share/aclocal/libgnutls.m4
 share/doc/gnutls/
@@ -40,9 +484,13 @@ share/examples/gnutls/ex-alert.c
 share/examples/gnutls/ex-cert-select.c
 share/examples/gnutls/ex-client-resume.c
 share/examples/gnutls/ex-client-srp.c
+share/examples/gnutls/ex-client-tlsia.c
+share/examples/gnutls/ex-client1.c
 share/examples/gnutls/ex-client2.c
 share/examples/gnutls/ex-crq.c
 share/examples/gnutls/ex-pkcs12.c
+share/examples/gnutls/ex-rfc2818.c
+share/examples/gnutls/ex-serv-anon.c
 share/examples/gnutls/ex-serv-export.c
 share/examples/gnutls/ex-serv-pgp.c
 share/examples/gnutls/ex-serv-srp.c
@@ -50,4 +498,13 @@ share/examples/gnutls/ex-serv1.c
 share/examples/gnutls/ex-session-info.c
 share/examples/gnutls/ex-verify.c
 share/examples/gnutls/ex-x509-info.c
+share/examples/gnutls/tcp.c
+share/locale/de/LC_MESSAGES/gnutls.mo
+share/locale/en@boldquot/LC_MESSAGES/gnutls.mo
+share/locale/en@quot/LC_MESSAGES/gnutls.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/gnutls.mo
+share/locale/pl/LC_MESSAGES/gnutls.mo
+share/locale/sv/LC_MESSAGES/gnutls.mo
 %%SHARED%%

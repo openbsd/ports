@@ -1,47 +1,46 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2007/12/03 20:57:33 landry Exp $
 
-COMMENT=		GNU Transport Layer Security library
+COMMENT=	GNU Transport Layer Security library
 
-DISTNAME=		gnutls-1.0.25
-PKGNAME=		${DISTNAME}p1
-CATEGORIES=		security
-SHARED_LIBS=		gnutls-extra	12.25 \
-			gnutls-openssl	12.25 \
-			gnutls		12.25
-MODGNU_SHARED_LIBS=	gnutls-extra	'' \
-			gnutls-openssl	'' \
-			gnutls		''
-LIBgnutls-extra_ALIAS=	realgnutls_extra
-LIBgnutls-openssl_ALIAS=gnutls_openssl
-LIBgnutls_ALIAS=	realgnutls
+DISTNAME=	gnutls-2.0.4
+CATEGORIES=	security
+SHARED_LIBS=	gnutls-extra	13.0 \
+		gnutls-openssl	13.0 \
+		gnutls		13.0 \
+		gnutlsxx	13.0   # 21.5
 
-HOMEPAGE=		http://www.gnutls.org/
+HOMEPAGE=	http://www.gnutls.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c gpg-error intl z
+WANTLIB=		c gpg-error intl ncurses readline z
+
+EXTRACT_SUFX=           .tar.bz2
 
 MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/ \
 		ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/ \
 		http://josefsson.org/gnutls/releases/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/gnutls/
 
-MODULES=	converters/libiconv
-LIB_DEPENDS=	gcrypt.>=12::security/libgcrypt \
-		opencdk.>=8::security/opencdk
+MODULES=	devel/gettext
+LIB_DEPENDS=	gcrypt.>=13::security/libgcrypt \
+		opencdk.>=9::security/opencdk
 
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-included-libtasn1 \
-			--with-included-libcfg \
-			--with-included-lzo
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
+		--with-included-libtasn1 \
+		--with-included-libcfg \
+		--with-included-lzo \
+		--with-libgcrypt-prefix=${LOCALBASE} \
+		--with-libopencdk-prefix=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-liconv"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls

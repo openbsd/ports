@@ -1,4 +1,3 @@
-GnuTLS is a portable ANSI C based library which implements 
-the TLS 1.0 and SSL 3.0 protocols.
-The library does not include any patented algorithms and
-is available under the GNU Lesser GPL license. 
+GnuTLS is a portable ANSI C based library which implements the TLS 1.0
+and SSL 3.0 protocols. The library does not include any patented
+algorithms and is available under the GNU Lesser GPL license.
