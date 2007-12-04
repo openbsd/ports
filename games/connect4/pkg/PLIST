@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/24 09:08:22 espie Exp $
-@group games
+@comment $OpenBSD: PLIST,v 1.8 2007/12/04 15:00:20 ajacoutot Exp $
 @mode 2755
+@group games
 bin/connect4
 @mode
 @group
 @man man/man6/connect4.6
 share/examples/connect4/
 share/examples/connect4/connect4.scores
-@group games
 @mode 664
+@group games
 @sample /var/games/connect4.scores
