@@ -1,6 +1,6 @@
-$OpenBSD: patch-randnum_c,v 1.1.1.1 2003/12/03 02:18:44 naddy Exp $
---- randnum.c.orig	2003-12-03 02:06:51.000000000 +0100
-+++ randnum.c	2003-12-03 02:09:07.000000000 +0100
+$OpenBSD: patch-randnum_c,v 1.2 2007/12/04 10:28:29 sthen Exp $
+--- randnum.c.orig	Thu Jul  5 01:42:19 2007
++++ randnum.c	Mon Dec  3 09:15:48 2007
 @@ -17,6 +17,15 @@
  
  #include "pwgen.h"
@@ -17,7 +17,7 @@ $OpenBSD: patch-randnum_c,v 1.1.1.1 2003/12/03 02:18:44 naddy Exp $
  #ifdef HAVE_DRAND48
  extern double drand48(void);
  #endif
-@@ -90,3 +99,4 @@ int pw_random_number(int max_num)
+@@ -93,3 +102,4 @@ int pw_random_number(max_num)
  	return ((int) (random() / ((float) RAND_MAX) * max_num));
  #endif
  }

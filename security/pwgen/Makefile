@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/04 10:28:29 sthen Exp $
 
 COMMENT=	simple password generator
 
-DISTNAME=	pwgen-2.03
+DISTNAME=	pwgen-2.06
 CATEGORIES=	security
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -23,8 +23,5 @@ CONFIGURE_STYLE=autoconf
 MAKE_FLAGS=	WALL_OPTS=""
 
 NO_REGRESS=	Yes
-
-pre-configure:
-	@rm ${WRKSRC}/config.cache
 
 .include <bsd.port.mk>

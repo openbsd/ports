@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2003/12/03 02:18:44 naddy Exp $
---- configure.in.orig	2003-12-03 02:06:27.000000000 +0100
-+++ configure.in	2003-12-03 02:06:39.000000000 +0100
+$OpenBSD: patch-configure_in,v 1.2 2007/12/04 10:28:29 sthen Exp $
+--- configure.in.orig	Thu Jul  5 01:42:19 2007
++++ configure.in	Mon Dec  3 09:15:48 2007
 @@ -6,6 +6,6 @@ AC_PATH_PROG(MV, mv, mv)
  AC_PATH_PROG(RM, rm, rm)
  AC_PATH_PROG(SED, sed, sed)
