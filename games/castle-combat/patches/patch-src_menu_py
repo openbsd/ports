@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_menu_py,v 1.1 2007/12/04 14:43:17 ajacoutot Exp $
+--- src/menu.py.orig	Tue Dec  4 15:19:36 2007
++++ src/menu.py	Tue Dec  4 15:20:12 2007
+@@ -132,7 +132,7 @@ class MenuState(WidgetState):
+ 		def help():
+ 			from webbrowser import open
+ 			from os.path import abspath
+-			file = "file://" + abspath("data/doc/rules.html")
++			file = "file://" + abspath("!!PREFIX!!/share/doc/castle-combat/rules.html")
+ 			print file
+ 			open(file, new=True)
+ 

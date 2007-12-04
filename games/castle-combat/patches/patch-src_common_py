@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_common_py,v 1.1 2007/12/04 14:43:17 ajacoutot Exp $
+--- src/common.py.orig	Tue Dec  4 14:12:03 2007
++++ src/common.py	Tue Dec  4 14:12:34 2007
+@@ -10,7 +10,7 @@ screen_undraws = []
+ block_size = 20
+ field_size = array((40, 30))
+ #data_path = "../data"
+-data_path = "data"
++data_path = "!!PREFIX!!/share/castle-combat"
+ 
+ ###### Exceptions ######
+ 

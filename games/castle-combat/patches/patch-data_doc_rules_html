@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_doc_rules_html,v 1.1 2007/12/04 14:43:17 ajacoutot Exp $
+--- data/doc/rules.html.orig	Tue Dec  4 15:21:32 2007
++++ data/doc/rules.html	Tue Dec  4 15:21:47 2007
+@@ -64,7 +64,7 @@
+ 	<p>
+ 		Coding and Graphics: <a href="mailto:karlb@gmx.net">Karl Bartel</a> (comments are always welcome)<br/>
+ 		Music: Crystal Crew<br/>
+-		Fonts: <a href="http://larabiefonts.com">Larabie Fonts</a> (<a href="../font_read_me.html">font readme</a>)<br/>
++		Fonts: <a href="http://larabiefonts.com">Larabie Fonts</a> (<a href="font_read_me.html">font readme</a>)<br/>
+ 	</p>
+ 	<h2>Links</h2>
+ 	<p>

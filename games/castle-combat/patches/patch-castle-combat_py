@@ -1,0 +1,14 @@
+$OpenBSD: patch-castle-combat_py,v 1.1 2007/12/04 14:43:17 ajacoutot Exp $
+--- castle-combat.py.orig	Sun Jan  9 19:04:37 2005
++++ castle-combat.py	Tue Dec  4 15:24:18 2007
+@@ -1,8 +1,6 @@
+-#!/usr/bin/python
++#!!!MODPY_BIN!!
+ import sys
+-sys.path.append('src')
+-
+-print "Castle-Combat requires pygame and twisted. If the game doesn't start up correctly, please verify that these are installed."
++sys.path.append('!!PREFIX!!/share/castle-combat/src')
+ 
+ import main
+ main.main()
