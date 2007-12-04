@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/24 13:25:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2007/12/04 13:40:46 steven Exp $
 
 COMMENT=	IO:: style interface to Compress::Zlib
 
 MODULES=	cpan
 
-DISTNAME=	IO-Zlib-1.07
+DISTNAME=	IO-Zlib-1.08
 CATEGORIES=	archivers
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
