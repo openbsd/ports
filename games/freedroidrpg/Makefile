@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/10 08:37:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/04 17:21:29 ajacoutot Exp $
 
 # Bus Error on startup
 NOT_FOR_ARCHS=	sparc64
 
 COMMENT=	isometric RPG game
 
-DISTNAME=	freedroidrpg-0.10.2
+DISTNAME=	freedroidrpg-0.10.3
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/}
 
 WANTLIB=	GL SDL X11 Xext Xi c glib gmodule jpeg m ogg png \
-		pthread usbhid vorbis z
+		pthread vorbis z
 
 MODULES=	devel/gettext
 USE_X11=	Yes
