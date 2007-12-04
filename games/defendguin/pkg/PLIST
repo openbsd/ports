@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/04 15:27:35 ajacoutot Exp $
 bin/defendguin
 @man man/man6/defendguin.6
 share/defendguin/
@@ -37,6 +37,7 @@ share/defendguin/images/land/center.bmp
 share/defendguin/images/land/left.bmp
 share/defendguin/images/land/right.bmp
 share/defendguin/images/loader/
+share/defendguin/images/loader/loading-orig.bmp.gz
 share/defendguin/images/loader/loading-text.bmp
 share/defendguin/images/loader/loading.bmp
 share/defendguin/images/loader/press-a-key.bmp
@@ -74,7 +75,6 @@ share/defendguin/images/ship/ship-win-2.bmp
 share/defendguin/images/status/
 share/defendguin/images/status/catch-the-penguinoid.bmp
 share/defendguin/images/status/circle.bmp
-share/defendguin/images/status/circle.ppm
 share/defendguin/images/status/game-over.bmp
 share/defendguin/images/status/get-ready.bmp
 share/defendguin/images/status/level-bonus.bmp

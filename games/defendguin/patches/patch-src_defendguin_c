@@ -1,7 +1,7 @@
-$OpenBSD: patch-defendguin_c,v 1.1.1.1 2003/08/08 21:15:06 jolan Exp $
---- defendguin.c.orig	2002-07-28 12:04:16.000000000 +0200
-+++ defendguin.c	2003-08-08 22:28:35.000000000 +0200
-@@ -3803,40 +3803,48 @@ int option_screen(void)
+$OpenBSD: patch-src_defendguin_c,v 1.1 2007/12/04 15:27:35 ajacoutot Exp $
+--- src/defendguin.c.orig	Tue Dec  4 16:06:26 2007
++++ src/defendguin.c	Tue Dec  4 16:09:55 2007
+@@ -3821,20 +3821,24 @@ int option_screen(void)
  	        {
  		  if (option_line == 3)
  		  {
@@ -24,8 +24,9 @@ $OpenBSD: patch-defendguin_c,v 1.1.1.1 2003/08/08 21:15:06 jolan Exp $
  		    }
 +#endif
  		  }
- 	        }
- 	      else if (key == SDLK_RIGHT)
+ 		  else if (option_line == 5)
+ 		  {
+@@ -3861,20 +3865,24 @@ int option_screen(void)
  	        {
  		  if (option_line == 3)
  		  {
@@ -48,9 +49,9 @@ $OpenBSD: patch-defendguin_c,v 1.1.1.1 2003/08/08 21:15:06 jolan Exp $
  		    }
 +#endif
  		  }
- 	        }
- 	      else if (key == SDLK_SPACE || key == SDLK_RETURN)
-@@ -5812,7 +5820,7 @@ void load_options(void)
+ 		  else if (option_line == 5)
+ 		  {
+@@ -5880,7 +5888,7 @@ void load_options(void)
    char fname[512], str[128];
    
    vol_effects = 5;
