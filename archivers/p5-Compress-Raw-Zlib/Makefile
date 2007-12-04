@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/15 16:45:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/04 13:38:30 steven Exp $
 
 SHARED_ONLY=	Yes
 MODULES=	cpan
 
 COMMENT=	low-level interface to the zlib compression library
 
-DISTNAME=	Compress-Raw-Zlib-2.006
+DISTNAME=	Compress-Raw-Zlib-2.008
 CATEGORIES=	archivers
 
 MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
