@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/03 11:36:28 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/04 17:43:15 bernd Exp $
 
 COMMENT=	the enlightened window manager
 DISTNAME=	e-20071107
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
