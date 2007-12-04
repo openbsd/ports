@@ -3,8 +3,8 @@ serial number. This foolish behaviour has of course been defeated. In order
 for libgpod to write an appropriately keyed database, you will need your ipod's
 "firewire id."
 
-One way to get this number is using usbctl from the sysutils/usbutil port:
-	usbctl -f /dev/usb0 -a 2 | grep Serial
+One way to get this number is using usbdevs:
+	usbdevs -v -f /dev/usb0 -a 2
 ... assuming that your ipod is at address 2 on the first usb bus.
 
 The firewire id a 16 character long string like 00A1234567891231. For an iPod
