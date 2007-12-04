@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.90 2007/10/08 07:04:50 aanriot Exp $
+# $OpenBSD: Makefile,v 1.91 2007/12/04 01:27:13 todd Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
-DISTNAME=	squid-2.6.STABLE16
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	squid-2.6.STABLE17
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}Versions/v2/2.6/
 DIST_SUBDIR=	squid
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m ssl
+WANTLIB=		c crypto m pthread ssl
 
 SQUIDDIR?=	/var/squid
 SUBST_VARS=	SQUIDDIR
@@ -46,7 +45,8 @@ CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
 		--enable-external-acl-helpers="ip_user unix_group" \
 		--enable-removal-policies="lru heap" \
 		--enable-ssl \
-		--enable-storeio="ufs diskd null" \
+		--enable-storeio="aufs ufs diskd null" \
+		--with-pthreads \
 		--localstatedir="${SQUIDDIR}" \
 		--enable-follow-x-forwarded-for
 
