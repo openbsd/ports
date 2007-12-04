@@ -1,4 +1,7 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/23 19:52:51 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2007/12/04 19:26:56 okan Exp $
+lib/zsh/
+lib/zsh/${VERSION}/
+lib/zsh/${VERSION}/zsh/
 lib/zsh/${VERSION}/zsh/cap.so
 lib/zsh/${VERSION}/zsh/clone.so
 lib/zsh/${VERSION}/zsh/compctl.so
@@ -12,8 +15,10 @@ lib/zsh/${VERSION}/zsh/files.so
 lib/zsh/${VERSION}/zsh/langinfo.so
 lib/zsh/${VERSION}/zsh/mapfile.so
 lib/zsh/${VERSION}/zsh/mathfunc.so
+lib/zsh/${VERSION}/zsh/net/
 lib/zsh/${VERSION}/zsh/net/socket.so
 lib/zsh/${VERSION}/zsh/net/tcp.so
+lib/zsh/${VERSION}/zsh/newuser.so
 lib/zsh/${VERSION}/zsh/parameter.so
 lib/zsh/${VERSION}/zsh/rlimits.so
 lib/zsh/${VERSION}/zsh/sched.so
@@ -21,6 +26,7 @@ lib/zsh/${VERSION}/zsh/stat.so
 lib/zsh/${VERSION}/zsh/system.so
 lib/zsh/${VERSION}/zsh/termcap.so
 lib/zsh/${VERSION}/zsh/terminfo.so
+lib/zsh/${VERSION}/zsh/zftp.so
 lib/zsh/${VERSION}/zsh/zle.so
 lib/zsh/${VERSION}/zsh/zleparameter.so
 lib/zsh/${VERSION}/zsh/zprof.so
@@ -45,3 +51,36 @@ share/zsh/${VERSION}/functions/tcp_shoot
 share/zsh/${VERSION}/functions/tcp_spam
 share/zsh/${VERSION}/functions/tcp_talk
 share/zsh/${VERSION}/functions/tcp_wait
+share/zsh/${VERSION}/functions/zfanon
+share/zsh/${VERSION}/functions/zfautocheck
+share/zsh/${VERSION}/functions/zfcd
+share/zsh/${VERSION}/functions/zfcd_match
+share/zsh/${VERSION}/functions/zfcget
+share/zsh/${VERSION}/functions/zfclose
+share/zsh/${VERSION}/functions/zfcput
+share/zsh/${VERSION}/functions/zfdir
+share/zsh/${VERSION}/functions/zffcache
+share/zsh/${VERSION}/functions/zfgcp
+share/zsh/${VERSION}/functions/zfget
+share/zsh/${VERSION}/functions/zfget_match
+share/zsh/${VERSION}/functions/zfgoto
+share/zsh/${VERSION}/functions/zfhere
+share/zsh/${VERSION}/functions/zfinit
+share/zsh/${VERSION}/functions/zfls
+share/zsh/${VERSION}/functions/zfmark
+share/zsh/${VERSION}/functions/zfopen
+share/zsh/${VERSION}/functions/zfparams
+share/zsh/${VERSION}/functions/zfpcp
+share/zsh/${VERSION}/functions/zfput
+share/zsh/${VERSION}/functions/zfrglob
+share/zsh/${VERSION}/functions/zfrtime
+share/zsh/${VERSION}/functions/zfsession
+share/zsh/${VERSION}/functions/zfstat
+share/zsh/${VERSION}/functions/zftp_chpwd
+share/zsh/${VERSION}/functions/zftp_progress
+share/zsh/${VERSION}/functions/zftransfer
+share/zsh/${VERSION}/functions/zftype
+share/zsh/${VERSION}/functions/zfuget
+share/zsh/${VERSION}/functions/zfuput
+share/zsh/${VERSION}/functions/zsh-newuser-install
+share/zsh/${VERSION}/scripts/newuser

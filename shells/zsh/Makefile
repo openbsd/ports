@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2007/09/15 21:17:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.43 2007/12/04 19:26:56 okan Exp $
 
-COMMENT-main=	Z shell, Bourne shell-compatible
-COMMENT-zftp=	Z shell embedded ftp client
+COMMENT=	Z shell, Bourne shell-compatible
 
-VERSION=	4.2.6
+VERSION=	4.3.4
 DISTNAME=	zsh-${VERSION}
-PKGNAME-main=	${DISTNAME}p2
-PKGNAME-zftp=	zsh-zftp-${VERSION}
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		${HOMEPAGE}pub/ \
@@ -14,8 +11,7 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
 		http://www.math.technion.ac.il/pub/zsh/ \
 		ftp://ftp.demon.nl/pub/mirrors/zsh/ \
-		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/ \
-		http://zsh.open-mirror.com/
+		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/
 
 HOMEPAGE=	http://www.zsh.org/
 
@@ -31,12 +27,8 @@ AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED:S/shared/dynamic/} \
 		--enable-zsh-mem --enable-zsh-secure-free \
-		--enable-maildir-support --with-tcsetpgrp
-
-# we only enable zftp if shared libraries are available
-MULTI_PACKAGES= -main ${NO_SHARED_LIBS:S/Yes//:S/No/-zftp/}
-
-RUN_DEPENDS-zftp=	::shells/zsh
+		--enable-maildir-support --with-tcsetpgrp \
+		--enable-multibyte
 
 SUBST_VARS=	VERSION
 
@@ -44,8 +36,14 @@ SUBST_VARS=	VERSION
 PORTHOME=	${WRKDIR}
 
 REGRESS_FLAGS=	INSTALL_PROGRAM="install -c -s -m 555" \
-	        INSTALL_DATA="install -c -m 444" \
+		INSTALL_DATA="install -c -m 444" \
 		INSTALL="install -c" \
 		TMPPREFIX=${WRKBUILD}/tmp
-	        
+
+pre-configure:
+	@cp ${FILESDIR}/zshcalsys.1 ${WRKSRC}/Doc
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/${VERSION}/scripts/
+
 .include <bsd.port.mk>
