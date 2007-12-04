@@ -1,31 +1,9 @@
-$OpenBSD: patch-xmms_main_c,v 1.6 2004/04/15 19:23:46 naddy Exp $
---- xmms/main.c.orig	2004-02-23 21:31:43.000000000 +0100
-+++ xmms/main.c	2004-04-14 23:33:55.000000000 +0200
-@@ -3390,6 +3390,18 @@ void segfault_handler(int sig)
- 	exit(1);
- }
- 
-+void sigterm_handler(int sig)
-+{
-+	/* Original author of patch said that you should not use mainwin_quit_cb(),
-+	 * but his way deadlock xmms, and it anyhow just calls ctrlsocket stuff with
-+	 * with CMD_QUIT, which anyhow calls mainwin_quit_cb() in turn.  This is not
-+	 * entirely clean, but works.
-+	 * <azarah@gentoo.org> (19 Jan 2003)
-+	 */
-+	xmms_remote_quit(ctrlsocket_get_session_id());
-+	mainwin_quit_cb();
-+}
-+	
- static gboolean pposition_configure(GtkWidget *w, GdkEventConfigure *event, gpointer data)
- {
- 	gint x,y;
-@@ -3521,12 +3533,15 @@ int main(int argc, char **argv)
- #endif
+$OpenBSD: patch-xmms_main_c,v 1.7 2007/12/04 09:39:16 robert Exp $
+--- xmms/main.c.orig	Mon Feb 23 21:31:43 2004
++++ xmms/main.c	Tue Dec  4 10:16:45 2007
+@@ -3522,11 +3522,12 @@ int main(int argc, char **argv)
  
  	signal(SIGPIPE, SIG_IGN); /* for controlsocket.c */
-+	signal(SIGTERM, sigterm_handler);
-+	signal(SIGINT, sigterm_handler);
  	signal(SIGSEGV, segfault_handler);
 +#if !defined(OpenBSD)
  	g_thread_init(NULL);
