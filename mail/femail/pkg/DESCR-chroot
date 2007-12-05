@@ -1,0 +1,2 @@
+statically linked version of femail which installs itself into the
+default httpd(8) chroot area.

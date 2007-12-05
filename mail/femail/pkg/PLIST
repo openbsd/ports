@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/22 09:29:14 bernd Exp $
-@man man/man8/femail.8
-sbin/femail
