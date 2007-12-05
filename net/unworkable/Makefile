@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/26 20:37:09 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/05 14:52:27 okan Exp $
 
 COMMENT=		simple BitTorrent implementation
 
-DISTNAME=		unworkable-20071120
+DISTNAME=		unworkable-20071205
 CATEGORIES=		net
 
 HOMEPAGE=		http://niallohiggins.com/unworkable
