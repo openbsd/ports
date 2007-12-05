@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 21:17:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/12/05 14:42:51 okan Exp $
 
 COMMENT=		stand-alone shell with built-in commands
 
-VERSION=		3.6
-DISTNAME=		sash-${VERSION}
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		sash-3.7
 CATEGORIES=		shells
 HOMEPAGE=		http://www.canb.auug.org.au/~dbell/
 
@@ -15,8 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
-MASTER_SITES=		http://www.canb.auug.org.au/~dbell/programs/ \
-			http://mirror.csoft.org/sash/
+MASTER_SITES=		http://www.canb.auug.org.au/~dbell/programs/
 
 ALL_TARGET=		sash
 
@@ -30,7 +27,7 @@ MAKE_FLAGS=		CFLAGS="${CFLAGS}"
 NO_REGRESS=		Yes
 
 do-install:
-	    cd ${WRKSRC} && ${INSTALL_PROGRAM} sash ${PREFIX}/bin
-	    cd ${WRKSRC} && ${INSTALL_MAN} sash.1 ${PREFIX}/man/man1
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} sash ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_MAN} sash.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

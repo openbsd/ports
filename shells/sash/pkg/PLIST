@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 08:57:23 espie Exp $
-bin/sash
+@comment $OpenBSD: PLIST,v 1.4 2007/12/05 14:42:51 okan Exp $
+@shell bin/sash
 @man man/man1/sash.1
