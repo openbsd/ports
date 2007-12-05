@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.917 2007/12/01 14:44:47 merdely Exp $
+#	$OpenBSD: bsd.port.mk,v 1.918 2007/12/05 06:55:41 jolan Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -962,7 +962,7 @@ EXTRACT_ONLY ?= ${_DISTFILES}
 .if !empty(EXTRACT_ONLY:M*.zip)
 _USE_ZIP ?= Yes
 .endif
-.if !empty(EXTRACT_ONLY:M*.tar.bz2) || \
+.if !empty(EXTRACT_ONLY:M*.tar.bz2) || !empty(EXTRACT_ONLY:M*.tbz2) || \
 	(defined(PATCHFILES) && !empty(_PATCHFILES:M*.bz2))
 _USE_BZIP2 ?= Yes
 .endif
@@ -981,7 +981,7 @@ EXTRACT_CASES += *.zip) \
 .endif
 .if ${_USE_BZIP2:L} != "no"
 BUILD_DEPENDS += :bzip2-*:archivers/bzip2
-EXTRACT_CASES += *.tar.bz2) \
+EXTRACT_CASES += *.tar.bz2|*.tbz2) \
 	${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .endif
 EXTRACT_CASES += *.tar) \
