@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.3 2006/01/27 01:12:23 jolan Exp $
---- configure.orig	Fri Feb  7 17:36:27 2003
-+++ configure	Thu Jan 26 17:35:10 2006
-@@ -4199,8 +4199,8 @@ echo $ECHO_N "checking target platform a
+$OpenBSD: patch-configure,v 1.4 2007/12/05 10:49:24 ajacoutot Exp $
+--- configure.orig	Wed Dec  5 11:24:20 2007
++++ configure	Wed Dec  5 11:24:45 2007
+@@ -5025,8 +5025,8 @@ echo $ECHO_N "checking target platform and install sty
  build_macosx_bundle=no
  build_simple_bundle=no
  unix_scoredir=yes
--DATADIR='$(datadir)/games/kobo-deluxe'
--SCOREDIR='$(prefix)/games/kobo-deluxe/scores'
+-DATADIR='$(datadir)/kobo-deluxe'
+-SCOREDIR='$(sharedstatedir)/kobo-deluxe/scores'
 +DATADIR='$(datadir)/kobodeluxe'
 +SCOREDIR='/var/games/kobodeluxe'
  CONFIGDIR='HOME>>'

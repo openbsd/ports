@@ -1,28 +1,12 @@
-$OpenBSD: patch-data_Makefile_in,v 1.2 2006/01/27 01:12:23 jolan Exp $
---- data/Makefile.in.orig	Sun Feb  9 22:27:09 2003
-+++ data/Makefile.in	Thu Jan 26 17:44:08 2006
-@@ -149,12 +149,12 @@ target_vendor = @target_vendor@
- KOBOGFX_OBJECTS = *.png *.pcx
- 
- KOBOSFX_OBJECTS = *.raw *.agw *.mid *.h
--@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobogfxdir = $(datadir)/games/kobo-deluxe/gfx
-+@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobogfxdir = $(datadir)/kobodeluxe/gfx
- 
- @BUILD_MACOSX_BUNDLE_TRUE@kobogfxdir = $(srcdir)/../@PACKAGE@.app/Contents/Resources/gfx
- 
- @BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_TRUE@kobogfxdir = $(srcdir)/../@PACKAGE@/gfx
--@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobosfxdir = $(datadir)/games/kobo-deluxe/sfx
-+@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobosfxdir = $(datadir)/kobodeluxe/sfx
- @BUILD_MACOSX_BUNDLE_TRUE@kobosfxdir = $(srcdir)/../@PACKAGE@.app/Contents/Resources/sfx
- @BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_TRUE@kobosfxdir = $(srcdir)/../@PACKAGE@/sfx
- 
-@@ -323,8 +323,7 @@ info: info-am
+$OpenBSD: patch-data_Makefile_in,v 1.3 2007/12/05 10:49:24 ajacoutot Exp $
+--- data/Makefile.in.orig	Wed Dec  5 11:24:57 2007
++++ data/Makefile.in	Wed Dec  5 11:28:12 2007
+@@ -467,7 +467,7 @@ info: info-recursive
  
  info-am:
  
--install-data-am: install-kobogfxDATA install-koboscoreDATA \
--	install-kobosfxDATA
-+install-data-am: install-kobogfxDATA install-kobosfxDATA
+-install-data-am: install-koboscoreDATA
++install-data-am:
  
  install-exec-am:
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gamectl_cpp,v 1.1.1.1 2003/04/12 15:22:10 espie Exp $
---- gamectl.cpp.orig	Sun May  5 04:50:02 2002
-+++ gamectl.cpp	Sat Apr 12 17:02:10 2003
-@@ -39,7 +39,7 @@ int gamecontrol_t::dl;
+$OpenBSD: patch-gamectl_cpp,v 1.2 2007/12/05 10:49:24 ajacoutot Exp $
+--- gamectl.cpp.orig	Sun Oct 28 02:28:04 2007
++++ gamectl.cpp	Wed Dec  5 11:23:44 2007
+@@ -38,7 +38,7 @@ int gamecontrol_t::dl;
  int gamecontrol_t::dr;
  int gamecontrol_t::ul;
  int gamecontrol_t::ur;
@@ -10,7 +10,7 @@ $OpenBSD: patch-gamectl_cpp,v 1.1.1.1 2003/04/12 15:22:10 espie Exp $
  int gamecontrol_t::direction = 1;
  int gamecontrol_t::new_direction = 0;
  int gamecontrol_t::latch_timer = 0;
-@@ -52,7 +52,7 @@ void gamecontrol_t::init()
+@@ -52,7 +52,7 @@ void gamecontrol_t::init(int always_fire)
  	right = 0;
  	up = 0;
  	down = 0;
@@ -19,7 +19,7 @@ $OpenBSD: patch-gamectl_cpp,v 1.1.1.1 2003/04/12 15:22:10 espie Exp $
  	movekey_pressed = 0;
  	SDL_EnableKeyRepeat(r_delay, r_interval);
  }
-@@ -207,7 +207,7 @@ void gamecontrol_t::press(int k)
+@@ -213,7 +213,7 @@ void gamecontrol_t::press(int k)
  		dr = 1;
  		break;
  	  case BTN_FIRE:
@@ -28,7 +28,7 @@ $OpenBSD: patch-gamectl_cpp,v 1.1.1.1 2003/04/12 15:22:10 espie Exp $
  		break;
  	}
  	gamecontrol_t::change();
-@@ -242,7 +242,6 @@ void gamecontrol_t::release(int k)
+@@ -248,7 +248,6 @@ void gamecontrol_t::release(int k)
  		dr = 0;
  		break;
  	  case BTN_FIRE:

@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_sfx_Makefile_in,v 1.1 2007/12/05 10:49:24 ajacoutot Exp $
+--- data/sfx/Makefile.in.orig	Wed Dec  5 11:25:49 2007
++++ data/sfx/Makefile.in	Wed Dec  5 11:26:54 2007
+@@ -179,7 +179,7 @@ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ KOBOSFX_OBJECTS = *.raw *.agw *.mid *.h
+-@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobosfxdir = $(datadir)/kobo-deluxe/sfx
++@BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_FALSE@kobosfxdir = $(datadir)/kobodeluxe/sfx
+ @BUILD_MACOSX_BUNDLE_FALSE@@BUILD_SIMPLE_BUNDLE_TRUE@kobosfxdir = $(srcdir)/../@PACKAGE@/sfx
+ @BUILD_MACOSX_BUNDLE_TRUE@kobosfxdir = $(srcdir)/../@PACKAGE@.app/Contents/Resources/sfx
+ kobosfx_DATA = $(KOBOSFX_OBJECTS)

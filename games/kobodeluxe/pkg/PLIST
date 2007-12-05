@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/01/27 01:12:23 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/12/05 10:49:24 ajacoutot Exp $
 @mode 2555
 @group games
 bin/kobodl
@@ -6,58 +6,58 @@ bin/kobodl
 @group
 share/kobodeluxe/
 share/kobodeluxe/gfx/
-share/kobodeluxe/gfx/bigship.pcx
+share/kobodeluxe/gfx/bigship.png
+share/kobodeluxe/gfx/bolt.png
 share/kobodeluxe/gfx/brushes.png
-share/kobodeluxe/gfx/bullets.pcx
+share/kobodeluxe/gfx/bullets.png
 share/kobodeluxe/gfx/counter.png
+share/kobodeluxe/gfx/deluxe.png
+share/kobodeluxe/gfx/explo1b.png
+share/kobodeluxe/gfx/explo2b.png
+share/kobodeluxe/gfx/focusfx.png
 share/kobodeluxe/gfx/font2b.png
 share/kobodeluxe/gfx/font3b.png
 share/kobodeluxe/gfx/font4b.png
+share/kobodeluxe/gfx/hitnoise.png
 share/kobodeluxe/gfx/loading.png
-share/kobodeluxe/gfx/logo3.png
-share/kobodeluxe/gfx/noise.pcx
+share/kobodeluxe/gfx/logo.png
+share/kobodeluxe/gfx/logomask.png
+share/kobodeluxe/gfx/microfont.png
+share/kobodeluxe/gfx/noise.png
 share/kobodeluxe/gfx/screen.png
-share/kobodeluxe/gfx/sprites.pcx
-share/kobodeluxe/gfx/tiles.pcx
-share/kobodeluxe/gfx/tube1.png
-share/kobodeluxe/gfx/tube2.png
+share/kobodeluxe/gfx/sprites.png
+share/kobodeluxe/gfx/tiles.png
 share/kobodeluxe/sfx/
 share/kobodeluxe/sfx/aguitar1.agw
-share/kobodeluxe/sfx/ballad1.agw
-share/kobodeluxe/sfx/ballad1.mid
-share/kobodeluxe/sfx/bassdrum3.agw
 share/kobodeluxe/sfx/bassdrum5.agw
 share/kobodeluxe/sfx/beam.raw
 share/kobodeluxe/sfx/bomb.raw
-share/kobodeluxe/sfx/bongo1.agw
 share/kobodeluxe/sfx/brass2.agw
+share/kobodeluxe/sfx/breakdown1.agw
 share/kobodeluxe/sfx/bubble.raw
 share/kobodeluxe/sfx/bzzzt1.agw
 share/kobodeluxe/sfx/claps1.agw
 share/kobodeluxe/sfx/edge2.agw
-share/kobodeluxe/sfx/elecbass2.agw
 share/kobodeluxe/sfx/enemym.raw
 share/kobodeluxe/sfx/expl.raw
 share/kobodeluxe/sfx/expl2.raw
-share/kobodeluxe/sfx/expl3.raw
-share/kobodeluxe/sfx/fine.raw
 share/kobodeluxe/sfx/gameover1.agw
 share/kobodeluxe/sfx/hardsync1.agw
 share/kobodeluxe/sfx/kobosfx.h
 share/kobodeluxe/sfx/launch.agw
 share/kobodeluxe/sfx/launch2.agw
-share/kobodeluxe/sfx/marimba2.agw
 share/kobodeluxe/sfx/metallic.raw
+share/kobodeluxe/sfx/missile1.agw
 share/kobodeluxe/sfx/music.agw
-share/kobodeluxe/sfx/noiseburst1.agw
+share/kobodeluxe/sfx/music_c.agw
 share/kobodeluxe/sfx/noiseburst2.agw
 share/kobodeluxe/sfx/oneup.raw
-share/kobodeluxe/sfx/phattpad1.agw
 share/kobodeluxe/sfx/phattpad2.agw
 share/kobodeluxe/sfx/ready1.agw
 share/kobodeluxe/sfx/ring.raw
+share/kobodeluxe/sfx/save_waves.agw
 share/kobodeluxe/sfx/sfx.agw
-share/kobodeluxe/sfx/shot.raw
+share/kobodeluxe/sfx/sfx_c.agw
 share/kobodeluxe/sfx/sine.agw
 share/kobodeluxe/sfx/snare1.agw
 share/kobodeluxe/sfx/synbass1.agw
@@ -66,7 +66,8 @@ share/kobodeluxe/sfx/test2.mid
 share/kobodeluxe/sfx/thunder1.agw
 share/kobodeluxe/sfx/trance1.agw
 share/kobodeluxe/sfx/trance1.mid
+share/kobodeluxe/sfx/trance1_c.agw
 @mode 775
 @group games
 @sample /var/games/kobodeluxe/
-@extraunexec rm  /var/games/kobodeluxe/* 2>/dev/null || true
+@extraunexec rm -rf /var/games/kobodeluxe
