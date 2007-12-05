@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/04 16:09:15 eric Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/05 20:59:21 okan Exp $
 
 COMMENT=		terminal emulator for X
 
-DISTNAME=		roxterm-1.7.4
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		roxterm-1.8.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
