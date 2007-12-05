@@ -1,27 +1,31 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2007/12/05 13:46:56 ajacoutot Exp $
 
-COMMENT=		essentially an Asteroids clone
+COMMENT=	essentially an Asteroids clone
 
-DISTNAME=		sdlroids-1.3.4
-PKGNAME=		${DISTNAME}p0
-CATEGORIES=		games
+DISTNAME=	sdlroids-1.3.4
+PKGNAME=	${DISTNAME}p1
+CATEGORIES=	games
 
-HOMEPAGE=		http://david.hedbor.org/projects/sdlroids/
+HOMEPAGE=	http://david.hedbor.org/projects/sdlroids/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdlroids/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlroids/}
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext c m pthread usbhid
 
-LIB_DEPENDS=		SDL::devel/sdl \
-			SDL_mixer::devel/sdl-mixer
+WANTLIB=	SDL c m pthread
 
-USE_X11=		Yes
+LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer
 
-SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE= 	gnu
+USE_X11=	Yes
+
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE=gnu
+
+post-extract:
+	@rm ${WRKSRC}/README.orig
 
 .include <bsd.port.mk>
