@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2007/12/04 19:26:56 okan Exp $
+# $OpenBSD: Makefile,v 1.44 2007/12/05 18:37:01 okan Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
 VERSION=	4.3.4
 DISTNAME=	zsh-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		${HOMEPAGE}pub/ \
@@ -14,6 +15,8 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/
 
 HOMEPAGE=	http://www.zsh.org/
+
+MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
