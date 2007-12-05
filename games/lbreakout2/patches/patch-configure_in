@@ -1,21 +1,11 @@
-$OpenBSD: patch-configure_in,v 1.1 2003/12/18 03:56:19 naddy Exp $
---- configure.in.orig	2003-12-17 20:12:33.000000000 -0700
-+++ configure.in	2003-12-17 20:14:20.000000000 -0700
-@@ -11,6 +11,7 @@ AC_PROG_RANLIB
- 
- dnl Checks for libraries.
- AC_CHECK_LIB(m, main,, AC_MSG_ERROR(lib math is needed))
-+AC_CHECK_LIB(z, main,, AC_MSG_ERROR(libz is needed))
- AC_CHECK_LIB(png, main,, AC_MSG_ERROR(libpng is needed))
- 
- CFLAGS="$CFLAGS -Wall"
-@@ -54,8 +55,8 @@ dnl substitute
- AC_SUBST(doc_dir)
+$OpenBSD: patch-configure_in,v 1.2 2007/12/05 12:53:50 ajacoutot Exp $
+--- configure.in.orig	Sun Aug 27 13:25:04 2006
++++ configure.in	Wed Dec  5 12:39:05 2007
+@@ -84,7 +88,7 @@ locdir_flag="-DLOCALEDIR=\\\"$localedir\\\""
  
  dnl installation&highscore path
--inst_dir="$datadir/games/lbreakout2"
--hi_dir="/var/lib/games"
-+inst_dir="$datadir/lbreakout2"
+ inst_dir="$datadir/lbreakout2"
+-hi_dir=$localstatedir
 +hi_dir="/var/games"
  
  dnl check if installation was disabled
