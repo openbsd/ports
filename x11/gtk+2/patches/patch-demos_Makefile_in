@@ -1,7 +1,7 @@
-$OpenBSD: patch-demos_Makefile_in,v 1.13 2007/10/24 22:34:34 jasper Exp $
---- demos/Makefile.in.orig	Thu Sep 13 17:40:46 2007
-+++ demos/Makefile.in	Wed Oct 10 12:37:07 2007
-@@ -832,6 +832,7 @@ uninstall-info: uninstall-info-recursive
+$OpenBSD: patch-demos_Makefile_in,v 1.14 2007/12/05 14:32:19 steven Exp $
+--- demos/Makefile.in.orig	Mon Nov 26 20:44:18 2007
++++ demos/Makefile.in	Sat Dec  1 18:51:34 2007
+@@ -833,6 +833,7 @@ uninstall-info: uninstall-info-recursive
  
  
  test-inline-pixbufs.h: $(pixbuf_csource_deps) apple-red.png gnome-foot.png
