@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/30 22:36:32 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/12/05 15:45:18 ajacoutot Exp $
 @mode 2555
 @group games
 bin/xbill
 @mode
 @group
-@man man/cat1/xbill.0
+@man man/man6/xbill.6
 share/examples/xbill/
 share/examples/xbill/xbill.scores
 @mode g+w
@@ -26,6 +26,7 @@ share/xbill/bitmaps/hurd.xbm
 share/xbill/bitmaps/linux.xbm
 share/xbill/bitmaps/next.xbm
 share/xbill/bitmaps/os2.xbm
+share/xbill/bitmaps/palm.xbm
 share/xbill/bitmaps/redhat.xbm
 share/xbill/bitmaps/sgi.xbm
 share/xbill/bitmaps/sun.xbm
@@ -68,6 +69,8 @@ share/xbill/pixmaps/next.xpm
 share/xbill/pixmaps/nextcpu.xpm
 share/xbill/pixmaps/os2.xpm
 share/xbill/pixmaps/os2cpu.xpm
+share/xbill/pixmaps/palm.xpm
+share/xbill/pixmaps/palmcpu.xpm
 share/xbill/pixmaps/redhat.xpm
 share/xbill/pixmaps/sgi.xpm
 share/xbill/pixmaps/sgicpu.xpm

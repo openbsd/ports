@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2007/12/05 15:45:18 ajacoutot Exp $
+--- Makefile.in.orig	Tue Oct 30 19:31:09 2001
++++ Makefile.in	Wed Dec  5 16:29:34 2007
+@@ -23,7 +23,7 @@ VPATH = @srcdir@
+ ALL_CFLAGS =	$(CFLAGS) $(CPPFLAGS) -I$(srcdir)
+ ALL_LDFLAGS =	$(CFLAGS) $(LDFLAGS)
+ IMAGE_DEFINES=-DIMAGES=\"${datadir}/xbill\"
+-SCORE_DEFINES=-DSCOREFILE=\"${localstatedir}/xbill/scores\"
++SCORE_DEFINES=-DSCOREFILE=\"/var/games/xbill.scores\"
+ 
+ PROG =	xbill
+ 
+@@ -85,8 +85,6 @@ install:
+ 	$(INSTALL) ${PROG} ${DESTDIR}${bindir}/${PROG}
+ 	$(MKINSTALLDIRS) ${DESTDIR}${mandir}/${MANDIR}
+ 	$(INSTALL_DATA) ${srcdir}/${MAN} ${DESTDIR}${mandir}/${MANDIR}
+-	$(MKINSTALLDIRS) ${DESTDIR}${localstatedir}/xbill
+-	$(INSTALL_DATA) -m 0666 ${srcdir}/scores ${DESTDIR}${localstatedir}/xbill
+ 	$(MKINSTALLDIRS) ${DESTDIR}${datadir}/xbill
+ 	$(MKINSTALLDIRS) ${DESTDIR}${datadir}/xbill/pixmaps
+ 	$(MKINSTALLDIRS) ${DESTDIR}${datadir}/xbill/bitmaps
