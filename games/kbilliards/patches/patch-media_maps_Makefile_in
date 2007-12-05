@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_maps_Makefile_in,v 1.1 2007/12/05 16:36:30 ajacoutot Exp $
+--- media/maps/Makefile.in.orig	Wed Dec  5 11:29:10 2007
++++ media/maps/Makefile.in	Wed Dec  5 11:29:23 2007
+@@ -228,7 +228,7 @@ install_sh = @install_sh@
+ kde_appsdir = @kde_appsdir@
+ kde_bindir = @kde_bindir@
+ kde_confdir = @kde_confdir@
+-kde_datadir = @kde_datadir@
++kde_datadir = $(DESTDIR)@kde_datadir@
+ kde_htmldir = @kde_htmldir@
+ kde_icondir = @kde_icondir@
+ kde_includes = @kde_includes@
