@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/12/05 14:21:09 ajacoutot Exp $
 
 COMMENT=	vector-based, pretty, Asteroids clone
 
@@ -8,10 +8,12 @@ CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.newbreedsoftware.com/vectoroids/
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
 WANTLIB=		X11 Xext c m pthread usbhid
 
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/vectoroids/src/
