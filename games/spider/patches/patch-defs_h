@@ -1,7 +1,7 @@
-$OpenBSD: patch-defs_h,v 1.1 2004/10/25 13:49:22 brad Exp $
---- defs.h.orig	Sun Oct 24 17:34:49 2004
-+++ defs.h	Sun Oct 24 17:35:38 2004
-@@ -31,7 +31,7 @@ typedef enum	{Ace, Deuce, Three, Four, F
+$OpenBSD: patch-defs_h,v 1.2 2007/12/05 14:22:08 ajacoutot Exp $
+--- defs.h.orig	Sat Sep 28 19:46:21 1991
++++ defs.h	Wed Dec  5 15:19:46 2007
+@@ -31,7 +31,7 @@ typedef enum	{Ace, Deuce, Three, Four, Five, Six, Seve
  
  typedef enum	{Faceup, Facedown, Joker}	Type;
  
