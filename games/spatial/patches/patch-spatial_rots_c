@@ -1,6 +1,6 @@
-$OpenBSD: patch-spatial_rots_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+$OpenBSD: patch-spatial_rots_c,v 1.2 2007/12/05 14:08:36 ajacoutot Exp $
 --- spatial/rots.c.orig	Mon Aug 23 20:45:55 1993
-+++ spatial/rots.c	Thu Sep  8 11:53:20 2005
++++ spatial/rots.c	Wed Dec  5 15:03:28 2007
 @@ -3,6 +3,7 @@
   notice is retained. */
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-spatial_rots_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
  #include <math.h>    
  #include <X11/Xlib.h>
  #include "spatial.h"
-@@ -24,9 +25,6 @@ int colors[11] = {1, 3, 4, 7, 9, 10, 11,
+@@ -24,9 +25,6 @@ int colors[11] = {1, 3, 4, 7, 9, 10, 11, 12, 13, 14, 1
  
  extern GC gcblack, gcwhite, gcinv, gccopy, gcline, gccubes[]; 
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-spatial_rots_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
  void startpiece()
  {
      piecelist *p;
-@@ -129,8 +127,7 @@ void updatepiece() /* create traplist fr
+@@ -129,8 +127,7 @@ void updatepiece() /* create traplist from plist+offse
      };
  }
  

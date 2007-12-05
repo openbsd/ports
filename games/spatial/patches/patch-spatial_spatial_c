@@ -1,7 +1,7 @@
-$OpenBSD: patch-spatial_spatial_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+$OpenBSD: patch-spatial_spatial_c,v 1.2 2007/12/05 14:08:36 ajacoutot Exp $
 --- spatial/spatial.c.orig	Thu Aug 26 00:26:15 1993
-+++ spatial/spatial.c	Thu Sep  8 23:42:45 2005
-@@ -3,6 +3,9 @@ given to copy and use, as long as this c
++++ spatial/spatial.c	Wed Dec  5 15:03:28 2007
+@@ -3,6 +3,9 @@ given to copy and use, as long as this copyright
   notice is retained. */
  
  #include <stdio.h>
@@ -11,7 +11,7 @@ $OpenBSD: patch-spatial_spatial_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
  #include <X11/Xlib.h>
  #include "spatial.h"
  #include "patchlevel.h"
-@@ -10,21 +13,20 @@ given to copy and use, as long as this c
+@@ -10,21 +13,20 @@ given to copy and use, as long as this copyright
  #define INITWINSIZEX (720)
  #define INITWINSIZEY (740)
  

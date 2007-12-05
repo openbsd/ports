@@ -1,6 +1,6 @@
-$OpenBSD: patch-spatial_intro_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+$OpenBSD: patch-spatial_intro_c,v 1.2 2007/12/05 14:08:36 ajacoutot Exp $
 --- spatial/intro.c.orig	Fri Aug 27 21:02:51 1993
-+++ spatial/intro.c	Thu Sep  8 14:20:42 2005
++++ spatial/intro.c	Wed Dec  5 15:03:28 2007
 @@ -3,8 +3,13 @@
   notice is retained. */
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-spatial_intro_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
  #include <X11/keysym.h>
  #include "spatial.h"
  
-@@ -18,8 +23,6 @@ XDrawLine(dpy, win, gcwhite, x1, y1, x2,
+@@ -18,8 +23,6 @@ XDrawLine(dpy, win, gcwhite, x1, y1, x2, y2) 
  extern GC gcblack, gcwhite, gcinv, gccopy, gcline,
  gcfield, gccubes[];
  
