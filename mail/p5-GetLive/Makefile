@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/12 17:30:30 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/05 23:00:56 merdely Exp $
 
 COMMENT=	automatically fetch hotmail.com email
 
-DISTNAME=	GetLive_0_55
-PKGNAME=	p5-GetLive-0.55
+DISTNAME=	GetLive_0_56
+PKGNAME=	p5-GetLive-0.56
 CATEGORIES=	mail perl5
 EXTRACT_SUFX=	.tgz
 
@@ -26,9 +26,6 @@ PKG_ARCH=	*
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-PROGS=		GetLive SmtpAuthForward SmtpForward
-DOCS=		License Manual
-
 post-patch:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},' \
 		${WRKSRC}/{GetLive.pl,Manual}
@@ -36,9 +33,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/GetLive.pl ${PREFIX}/bin/GetLive
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/GetLive
-	${INSTALL_SCRIPT} ${WRKSRC}/SmtpAuthForward.pl \
-		${PREFIX}/share/examples/GetLive/
-	${INSTALL_SCRIPT} ${WRKSRC}/SmtpForward.pl \
+	${INSTALL_SCRIPT} ${WRKSRC}/{SmtpAuthForward,SmtpForward}.pl \
 		${PREFIX}/share/examples/GetLive/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/GetLive
 	${INSTALL_DATA} ${WRKSRC}/{License,Manual} ${PREFIX}/share/doc/GetLive
