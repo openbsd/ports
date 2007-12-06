@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2007/11/10 15:42:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2007/12/06 21:04:18 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	2.18.2
+PKGNAME=	${DISTNAME}p0
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +25,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		:gnome-doc-utils-*:x11/gnome/doc-utils
 RUN_DEPENDS=	:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
 		startup-notification-1::devel/startup-notification \
