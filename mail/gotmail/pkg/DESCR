@@ -1,3 +1,0 @@
-Gotmail is a perl script to fetch mail out of a Hotmail account and
-either place it into the current directory in unix mbox format or
-forward it to another email address.
