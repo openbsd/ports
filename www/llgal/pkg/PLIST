@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/27 19:16:27 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/06 13:51:25 steven Exp $
 bin/llgal
 libdata/perl5/site_perl/Llgal/
 libdata/perl5/site_perl/Llgal/Config.pm
@@ -16,5 +16,7 @@ share/llgal/next.png
 share/llgal/prev.png
 share/llgal/slidetemplate.html
 share/llgal/tile.png
+share/locale/de/LC_MESSAGES/llgal.mo
 share/locale/en/LC_MESSAGES/llgal.mo
 share/locale/fr/LC_MESSAGES/llgal.mo
+share/locale/it/LC_MESSAGES/llgal.mo
