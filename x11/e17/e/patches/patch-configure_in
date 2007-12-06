@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.1 2007/12/03 11:36:28 bernd Exp $
+$OpenBSD: patch-configure_in,v 1.2 2007/12/06 19:46:09 bernd Exp $
 --- configure.in.orig	Wed Nov  7 11:45:47 2007
-+++ configure.in	Mon Dec  3 12:13:37 2007
++++ configure.in	Wed Dec  5 21:29:17 2007
+@@ -70,7 +70,7 @@ AC_CHECK_HEADERS(security/pam_appl.h, [
+ AC_SUBST(VALGRIND_CFLAGS)
+ AC_SUBST(VALGRIND_LIBS)
+ 
+-MODULE_ARCH="$host_os-$host_cpu"
++MODULE_ARCH=""
+ AC_SUBST(MODULE_ARCH)
+ AC_DEFINE_UNQUOTED(MODULE_ARCH, "$MODULE_ARCH", "Module architecture")
+ 
 @@ -148,6 +148,9 @@ AC_SUBST(ALL_LINGUAS)
  
  AM_GNU_GETTEXT([external])

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/02 18:18:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/06 19:47:08 bernd Exp $
 
 COMMENT=	canvas API for X
 DISTNAME=	evas-20071107
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS +=	evas                 0.0      # .9.9
 
 # BSD
@@ -27,13 +27,5 @@ CONFIGURE_STYLE=	automake
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=		--disable-image-loader-svg --enable-image-loader-edb
-
-.if ${MACHINE_ARCH} == "amd64"
-EVAS_ARCH=		x86_64
-.else
-EVAS_ARCH=		${MACHINE_ARCH}
-.endif
-
-SUBST_VARS=		EVAS_ARCH
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/04 17:43:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/06 19:46:09 bernd Exp $
 
 COMMENT=	the enlightened window manager
 DISTNAME=	e-20071107
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,13 +32,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/enlightenment
 	mv ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/
-
-.if ${MACHINE_ARCH} == "amd64"
-E_ARCH=			x86_64
-.else
-E_ARCH=			${MACHINE_ARCH}
-.endif
-
-SUBST_VARS=		E_ARCH
 
 .include <bsd.port.mk>
