@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 18:01:04 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/06 16:14:14 ajacoutot Exp $
 
 COMMENT=	2.5 dimensional tetris-like game
 
 DISTNAME=	xwelltris-1.0.1
 DISTFILES=	${DISTNAME}.src.tar.gz
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}src/
 
-HOMEPAGE=	http://xnc.dubna.su/xwelltris/
+HOMEPAGE=	http://xnc.jinr.ru/xwelltris/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c m stdc++
+
+WANTLIB=	c m stdc++
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
@@ -27,11 +28,11 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mno_sdl}
 CONFIGURE_ARGS+=--with-x
-WANTLIB+=		ICE SM
+WANTLIB+=	ICE SM X11 Xext
 .else
 CONFIGURE_ARGS+=--with-sdl
 LIB_DEPENDS=	SDL_image::devel/sdl-image
-WANTLIB+=	SDL pthread usbhid
+WANTLIB+=	SDL pthread
 .endif
 
 do-install:
