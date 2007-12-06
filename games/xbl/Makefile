@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2007/12/06 15:45:23 ajacoutot Exp $
 
 COMMENT=	3D block-dropping game
 
-DISTNAME=	xbl-1.1.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	xbl-1.1.5
 CATEGORIES=	games
 HOMEPAGE=	http://www710.univ-lyon1.fr/ftp/xbl/xbl.html
 
@@ -19,6 +18,7 @@ MASTER_SITES=	http://www710.univ-lyon1.fr/ftp/xbl/
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu	# also uses imake
+MAKE_ENV=	OPTCFLAGS='${CFLAGS}'
 
 NO_REGRESS=	Yes
 

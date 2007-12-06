@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile.in,v 1.3 2003/10/17 18:03:29 naddy Exp $
---- Makefile.in.orig	2003-08-31 21:59:38.000000000 +0200
-+++ Makefile.in	2003-10-17 19:55:27.000000000 +0200
+$OpenBSD: patch-Makefile.in,v 1.4 2007/12/06 15:45:23 ajacoutot Exp $
+--- Makefile.in.orig	Sun Jan 28 19:22:32 2007
++++ Makefile.in	Thu Dec  6 16:41:56 2007
 @@ -11,11 +11,10 @@
  
  # If xbl must NOT run with SGID bit (for protect scores files) then
@@ -57,8 +57,17 @@ $OpenBSD: patch-Makefile.in,v 1.3 2003/10/17 18:03:29 naddy Exp $
 -all:demo
 +all:bl
  
- XBLVERSION=1.1.2
+ XBLVERSION=1.1.5
  XBL=xbl-$(XBLVERSION)
+@@ -94,7 +89,7 @@ CFLAGS = -DSCOREDIR=\"$(SCOREDIR)\" \
+ 	 -DRESOURCEDIR=\"$(RESOURCEDIR)\" \
+ 	 -DXBLVERSION=\"$(XBLVERSION)\" \
+ 	 -DGROUP_GID=$(GROUP_GID) \
+-	  $(USE_SETGID) @DEFS@ @CFLA@ -g
++	  $(USE_SETGID) @DEFS@ @CFLA@ $(OPTCFLAGS)
+ # For link edit options
+ LDOPTIONS=$(CFLAGS)
+ LDOPTIONS=@LDOPTIONS@
 @@ -124,29 +119,24 @@ install:bl
  	@echo "Executable go in $(BINDIR)"
  	@echo "Scores     go in $(SCOREDIR)"
@@ -95,7 +104,15 @@ $OpenBSD: patch-Makefile.in,v 1.3 2003/10/17 18:03:29 naddy Exp $
  	-if [ "" = "$(USE_SETGID)" ] ; then \
  	     chmod 755  $(BINDIR)/xbl ;\
  	   else \
-@@ -173,17 +163,11 @@ install:bl
+@@ -163,7 +153,6 @@ install:bl
+ 	$(CP) COPYING  $(SCOREDIR) ;		chmod 444 $(SCOREDIR)/COPYING
+ 	-if [ "" = "$(USE_SETGID)" ] ; then \
+ 	     chmod 777 $(SCOREDIR) ;\
+-	     chmod 666 $(SCOREDIR)/[1-9]* ;\
+ 	   else \
+ 	     chmod 775 $(SCOREDIR) ;\
+ 	     chmod 664 $(SCOREDIR)/[1-9]* ;\
+@@ -173,17 +162,11 @@ install:bl
  	#
  	# Install manual pages
  	#
