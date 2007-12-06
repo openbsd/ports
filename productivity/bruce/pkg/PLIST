@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/01/02 21:40:52 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/06 15:32:08 okan Exp $
 bin/socrates
 lib/python${MODPY_VERSION}/site-packages/bruce/
+lib/python${MODPY_VERSION}/site-packages/bruce-1.2.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/bruce/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bruce/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/bruce/baseinterp.py
@@ -36,3 +37,10 @@ lib/python${MODPY_VERSION}/site-packages/bruce/text.pyc
 share/doc/bruce/
 share/doc/bruce/README
 share/doc/bruce/socrates.txt
+share/examples/bruce/
+share/examples/bruce/demo/
+share/examples/bruce/demo/example.soc
+share/examples/bruce/demo/images/
+share/examples/bruce/demo/images/gstpy-logo.png
+share/examples/bruce/example.py
+share/examples/bruce/sample.jpg
