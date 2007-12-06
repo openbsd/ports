@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.499 2007/11/27 18:50:48 okan Exp $
+# $OpenBSD: Makefile,v 1.500 2007/12/06 10:02:07 pyr Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -314,6 +314,7 @@
      SUBDIR += py-irclib
      SUBDIR += py-libpcap
      SUBDIR += py-msnp
+     SUBDIR += py-pcs
      SUBDIR += py-snmp
      SUBDIR += py-xmpp
      SUBDIR += pymsn
