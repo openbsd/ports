@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/14 12:04:11 alek Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/06 15:45:16 okan Exp $
 bin/markdown
+lib/python${MODPY_VERSION}/site-packages/markdown-1.6b-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/markdown.py
 lib/python${MODPY_VERSION}/site-packages/markdown.pyc
-share/examples/markdown/
-share/examples/markdown/mdx_footnotes.py
-share/examples/markdown/mdx_rss.py

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/06 15:45:16 okan Exp $
 
 COMMENT=	text-to-HTML conversion tool
 
-DISTNAME=	markdown-1.6a
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	markdown-1.6b
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.freewisdom.org/projects/python-markdown/
@@ -21,17 +20,14 @@ MODULES=	lang/python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-markdown/}
 EXTRACT_SUFX=	.zip
 
-WRKDIST=	${WRKDIR}/markdown-1.6
-
-NO_REGRESS=	Yes
-
 pre-build:
 	@sed -e "1s|%MODPY_BIN%|${MODPY_BIN}|" ${FILESDIR}/markdown > \
-	    ${WRKSRC}/markdown
+		${WRKSRC}/markdown
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/markdown ${PREFIX}/bin/markdown
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/markdown
-	${INSTALL_DATA} ${WRKSRC}/mdx_*py ${PREFIX}/share/examples/markdown/
+
+do-regress:
+	@cd ${WRKDIST} && TMP_DIR=${WRKBUILD} ${MODPY_BIN} test-markdown.py
 
 .include <bsd.port.mk>
