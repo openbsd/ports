@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2007/12/05 21:55:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.202 2007/12/06 17:28:46 merdely Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -64,7 +64,6 @@
      SUBDIR += fetchmail
      SUBDIR += getmail
      SUBDIR += gmime
-     SUBDIR += gotmail
      SUBDIR += grepmail
      SUBDIR += hashcash
      SUBDIR += hypermail
