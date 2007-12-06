@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/02 18:18:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/06 09:32:24 laurent Exp $
 
 COMMENT=	toolkit based on the EFL
 DISTNAME=	etk-20071107
@@ -30,6 +30,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			E_CFLAGS="-I${LOCALBASE}/include/efreet" \
 			E_LIBS="-lssl -lcrypto -leet -levas -lecore -lecore_ipc -ledje -lefreet -lefreet_mime"
+
+REGRESS_TARGET=         etk_test
+REGRESS_IS_INTERACTIVE= yes
 
 .if ${MACHINE_ARCH} == "amd64"
 E_ARCH=			x86_64
