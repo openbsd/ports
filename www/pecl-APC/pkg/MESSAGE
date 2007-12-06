@@ -1,7 +1,9 @@
-To finish the install of pecl-APC, you need
-to enable the module by using the following command
+You can enable this module by creating a symbolic
+link from ${PREFIX}/conf/php5.sample/apc.ini to
+${PREFIX}/conf/php5/apc.ini.
 
-    # ${LOCALBASE}/sbin/phpxs -a apc
+ln -fs ${PREFIX}/conf/php5.sample/apc.ini \
+        ${PREFIX}/conf/php5/apc.ini
 
 If you already have Apache running on your machine,
 you should not use "apachectl restart" - instead,

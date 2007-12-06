@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/17 15:12:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2007/12/06 11:21:09 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Alternative PHP Cache
 
-DISTNAME=	APC-3.0.14
-PKGNAME=	pecl-${DISTNAME}p0
+DISTNAME=	APC-3.0.15
+PKGNAME=	pecl-${DISTNAME}
 CATEGORIES=	www
 
 HOMEPAGE=	http://pecl.php.net/package/APC
@@ -58,5 +58,8 @@ post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/pecl-APC
 	@${INSTALL_DATA} ${WRKSRC}/apc.php ${WRKSRC}/INSTALL \
 		${PREFIX}/pecl-APC
+	@${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
+	@echo "extension=apc.so" > \
+		${PREFIX}/conf/php5.sample/apc.ini
 
 .include <bsd.port.mk>
