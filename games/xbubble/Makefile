@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/07 12:09:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/07 15:59:35 ajacoutot Exp $
 
 COMMENT=	x bust a move clone
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=		png.>=2::graphics/png
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	GNU
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
