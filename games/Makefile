@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2007/10/19 19:32:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2007/12/07 08:22:53 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -96,7 +96,6 @@
      SUBDIR += quake2
      SUBDIR += ri-li
      SUBDIR += rocksndiamonds
-     SUBDIR += sarien
      SUBDIR += scummvm
      SUBDIR += scummvm-tools
      SUBDIR += sdlroids
