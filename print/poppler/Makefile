@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.12 2007/07/31 22:22:01 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2007/12/07 19:55:58 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 
-V=		0.5.4
+V=		0.6.2
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-PKGNAME-main=	poppler-$Vp1
-FULLPKGNAME-qt=	poppler-qt-$Vp1
-FULLPKGNAME-qt4=poppler-qt4-$Vp0
+PKGNAME-main=	poppler-$V
+FULLPKGNAME-qt=	poppler-qt-$V
+FULLPKGNAME-qt4=poppler-qt4-$V
 
-SHARED_LIBS +=	poppler              2.0      # .1.0
-SHARED_LIBS +=	poppler-glib         2.0      # .1.0
-SHARED_LIBS +=	poppler-qt           2.0      # .1.0
-SHARED_LIBS +=	poppler-qt4          0.0      # .1.0
+SHARED_LIBS +=	poppler              3.0      # .2.0
+SHARED_LIBS +=	poppler-glib         3.0      # .2.0
+SHARED_LIBS +=	poppler-qt           3.0      # .2.0
+SHARED_LIBS +=	poppler-qt4          2.0      # .2.0
 
 HOMEPAGE=	http://poppler.freedesktop.org/
 
@@ -45,7 +45,7 @@ MODULES+=	x11/qt3
 .endif
 .if empty(FLAVOR:L:Mno_qt4)
 MULTI_PACKAGES+=-qt4
-MAKE_FLAGS+=	POPPLER_QT4_CXXFLAGS='-pthread -I${X11BASE}/include -I${MODQT4_INCDIR}' \
+MAKE_FLAGS+=	POPPLER_QT4_CFLAGS='-pthread -I${X11BASE}/include -I${MODQT4_INCDIR}' \
 		POPPLER_QT4_LIBS='-pthread -L${MODQT4_LIBDIR} -lQtCore -lQtGui -lQtXml' \
 		qt4_subdir=qt4 \
 		qt4_pc_file=poppler-qt4.pc \
@@ -57,19 +57,23 @@ MAKE_FLAGS+=	POPPLER_QT4_CXXFLAGS='-pthread -I${X11BASE}/include -I${MODQT4_INCD
 MODULES+=	x11/qt4
 .endif
 
-WANTLIB=	X11 Xau Xdmcp Xrender cairo expat freetype fontconfig \
-		glitz m png z
-
-LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} poppler::print/poppler
-LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 poppler::print/poppler
+WANTLIB=	expat freetype fontconfig jpeg m z
 
 MODULES+=	devel/gettext
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
-		gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 
+		gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
+		xml2::textproc/libxml
+LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} poppler::print/poppler
+LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 poppler::print/poppler
+
+
 WANTLIB-main=	${WANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr \
 		glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 
+		pangoft2-1.0 \
+		X11 Xau Xcomposite Xdamage Xdmcp Xrender cairo glitz pcre png
+WANTLIB-qt=	${WANTLIB} iconv xml2
+WANTLIB-qt4=	${WANTLIB} iconv xml2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-xpdf-headers \
@@ -78,20 +82,14 @@ CONFIGURE_ARGS= --enable-xpdf-headers \
 		--disable-utils \
 		--enable-zlib
 
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
-
-# Force installation to avoid PLIST headaches.
-.if ${FLAVOR:L:Mno_qt} && ${FLAVOR:L:Mno_qt4}
-post-install:
-	echo ${PREFIX}
-	${INSTALL_DATA} ${WRKSRC}/qt/poppler-page-transition.h \
-			${PREFIX}/include/poppler
-.endif
 
 .include <bsd.port.mk>
