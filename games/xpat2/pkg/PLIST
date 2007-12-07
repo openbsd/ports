@@ -1,16 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/10/01 07:34:34 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/12/07 16:49:36 ajacoutot Exp $
 @mode 2755
 @group games
 bin/xpat2
 @mode
 @group
 lib/X11/app-defaults/XPat
+lib/X11/de_DE/
+lib/X11/de_DE/app-defaults/
+lib/X11/de_DE/app-defaults/XPat
+lib/X11/fr_FR/
+lib/X11/fr_FR/app-defaults/
+lib/X11/fr_FR/app-defaults/XPat
 lib/X11/french/
 lib/X11/french/app-defaults/
 lib/X11/french/app-defaults/XPat
 lib/X11/german/
 lib/X11/german/app-defaults/
 lib/X11/german/app-defaults/XPat
+lib/X11/it_IT/
+lib/X11/it_IT/app-defaults/
+lib/X11/it_IT/app-defaults/XPat
 lib/X11/italian/
 lib/X11/italian/app-defaults/
 lib/X11/italian/app-defaults/XPat
@@ -18,26 +27,73 @@ lib/X11/russian/
 lib/X11/russian/app-defaults/
 lib/X11/russian/app-defaults/XPat
 lib/X11/xpat/
-lib/X11/xpat/XPat.ad.Motif
+lib/X11/xpat/PySol-large/
+lib/X11/xpat/PySol-large/COPYRIGHT
+lib/X11/xpat/PySol-large/Cards.conf
+lib/X11/xpat/PySol-large/Empty.Clubs.xpm
+lib/X11/xpat/PySol-large/Empty.Diamonds.xpm
+lib/X11/xpat/PySol-large/Empty.Hearts.xpm
+lib/X11/xpat/PySol-large/Empty.Spades.xpm
+lib/X11/xpat/PySol-large/Makefile
+lib/X11/xpat/PySol-large/README
+lib/X11/xpat/PySol-medium/
+lib/X11/xpat/PySol-medium/COPYRIGHT
+lib/X11/xpat/PySol-medium/Cards.conf
+lib/X11/xpat/PySol-medium/Empty.Clubs.xpm
+lib/X11/xpat/PySol-medium/Empty.Diamonds.xpm
+lib/X11/xpat/PySol-medium/Empty.Hearts.xpm
+lib/X11/xpat/PySol-medium/Empty.Spades.xpm
+lib/X11/xpat/PySol-medium/Makefile
+lib/X11/xpat/PySol-medium/README
+lib/X11/xpat/PySol-small/
+lib/X11/xpat/PySol-small/COPYRIGHT
+lib/X11/xpat/PySol-small/Cards.conf
+lib/X11/xpat/PySol-small/Empty.Clubs.xpm
+lib/X11/xpat/PySol-small/Empty.Diamonds.xpm
+lib/X11/xpat/PySol-small/Empty.Hearts.xpm
+lib/X11/xpat/PySol-small/Empty.Spades.xpm
+lib/X11/xpat/PySol-small/Makefile
+lib/X11/xpat/PySol-small/README
+lib/X11/xpat/XPat.ad.XQt
 lib/X11/xpat/XPat.ad.Xaw
 lib/X11/xpat/XPat.ad.Xlib
+lib/X11/xpat/XPat.ad.Xm1
+lib/X11/xpat/XPat.ad.Xm2
 lib/X11/xpat/XPat.ad.Xview
 lib/X11/xpat/audio/
 lib/X11/xpat/audio/cannotsave.au
+lib/X11/xpat/audio/cannotsave.wav
 lib/X11/xpat/audio/giveup.au
+lib/X11/xpat/audio/giveup.wav
 lib/X11/xpat/audio/goodbye.au
+lib/X11/xpat/audio/goodbye.wav
 lib/X11/xpat/audio/success.au
+lib/X11/xpat/audio/success.wav
+lib/X11/xpat/de_DE
 lib/X11/xpat/default/
 lib/X11/xpat/default/Background.xpm
+lib/X11/xpat/default/Cardback0.xpm
 lib/X11/xpat/default/Cardback1.xpm
 lib/X11/xpat/default/Cardback2.xpm
 lib/X11/xpat/default/Cardback3.xpm
 lib/X11/xpat/default/Cardback4.xpm
 lib/X11/xpat/default/Cardback5.xpm
+lib/X11/xpat/default/Cardback6.lowcol.xpm
+lib/X11/xpat/default/Cardback6.xpm
 lib/X11/xpat/default/Cards.conf
 lib/X11/xpat/default/Pictures.xpm
 lib/X11/xpat/default/Ranks.xpm
 lib/X11/xpat/default/Suits.xpm
+lib/X11/xpat/docvt
+lib/X11/xpat/dummy.xpm
+lib/X11/xpat/fallback/
+lib/X11/xpat/fallback/Background.xpm
+lib/X11/xpat/fallback/Cardback1.xpm
+lib/X11/xpat/fallback/Cards.conf
+lib/X11/xpat/fallback/Pictures.xpm
+lib/X11/xpat/fallback/Ranks.xpm
+lib/X11/xpat/fallback/Suits.xpm
+lib/X11/xpat/fr_FR
 lib/X11/xpat/french/
 lib/X11/xpat/french.cards
 lib/X11/xpat/french/README.french
@@ -60,9 +116,29 @@ lib/X11/xpat/french/aidmodCanfield
 lib/X11/xpat/french/keys
 lib/X11/xpat/french/messages
 lib/X11/xpat/german/
+lib/X11/xpat/german/Notes
 lib/X11/xpat/german/XPat
+lib/X11/xpat/german/hilf.BakersDozen
+lib/X11/xpat/german/hilf.BlueMoon
+lib/X11/xpat/german/hilf.Calculation
+lib/X11/xpat/german/hilf.Canfield
+lib/X11/xpat/german/hilf.Cotillion
+lib/X11/xpat/german/hilf.Delight
+lib/X11/xpat/german/hilf.FreeCell
+lib/X11/xpat/german/hilf.Gypsy
+lib/X11/xpat/german/hilf.Klondike
+lib/X11/xpat/german/hilf.Michaels
+lib/X11/xpat/german/hilf.MidnightOil
+lib/X11/xpat/german/hilf.ModCanfield
+lib/X11/xpat/german/hilf.MonteCarlo
+lib/X11/xpat/german/hilf.Oonsoo
+lib/X11/xpat/german/hilf.Seahaven
+lib/X11/xpat/german/hilf.Spider
+lib/X11/xpat/german/hilf.bedien
+lib/X11/xpat/german/hilf.tasten
 lib/X11/xpat/german/keys
 lib/X11/xpat/german/messages
+lib/X11/xpat/help.BlueMoon
 lib/X11/xpat/help.Canfield
 lib/X11/xpat/help.Cotillion
 lib/X11/xpat/help.Delight
@@ -70,6 +146,7 @@ lib/X11/xpat/help.FreeCell
 lib/X11/xpat/help.Gypsy
 lib/X11/xpat/help.Klondike
 lib/X11/xpat/help.Michaels
+lib/X11/xpat/help.Oonsoo
 lib/X11/xpat/help.Seahaven
 lib/X11/xpat/help.Spider
 lib/X11/xpat/help.keys
@@ -78,6 +155,7 @@ lib/X11/xpat/hlpCalculation
 lib/X11/xpat/hlpMidnightOil
 lib/X11/xpat/hlpMonteCarlo
 lib/X11/xpat/hlpmodCanfield
+lib/X11/xpat/it_IT
 lib/X11/xpat/italian/
 lib/X11/xpat/italian/XPat
 lib/X11/xpat/italian/help.Canfield
@@ -103,10 +181,10 @@ lib/X11/xpat/russian/keys
 lib/X11/xpat/russian/messages
 lib/X11/xpat/russian/sq01.bdf
 lib/X11/xpat/small.cards
-@man man/cat1/xpat2.0
+@man man/cat6/xpat2.0
 @man man/man6/xpat2.6
 share/examples/xpat2/
 share/examples/xpat2/xpat.log
-@group games
 @mode g+w
+@group games
 @sample /var/games/xpat.log

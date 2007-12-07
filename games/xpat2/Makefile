@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.23 2007/11/13 14:54:32 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2007/12/07 16:49:36 ajacoutot Exp $
 
 COMMENT=	X11 solitaire with 14 variations
 
-DISTNAME=	xpat2-1.04
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	xpat2-1.07
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_BACKUP}
+
+MASTER_SITES=	http://www.ibiblio.org/pub/linux/games/solitaires/
+
 EXTRACT_SUFX=	-src.tar.gz
 
-# License: GPL
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -18,10 +19,14 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xp Xpm Xt c
 
 USE_X11=	Yes
 
-WRKSRC=${WRKDIST}/src
+WRKSRC=		${WRKDIST}/src
 CONFIGURE_STYLE=imake
 
 NO_REGRESS=	Yes
+
+pre-configure:
+	@perl -pi -e 's,!!X11BASE!!,${X11BASE},g' \
+		${WRKSRC}/Xpat.tmpl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xpat2

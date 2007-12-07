@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_Xpat_tmpl,v 1.1 2007/12/07 16:49:36 ajacoutot Exp $
+--- src/Xpat.tmpl.orig	Sun Nov  5 21:03:10 2000
++++ src/Xpat.tmpl	Fri Dec  7 17:38:35 2007
+@@ -40,9 +40,9 @@ XCOMM ################################################
+ 
+ XCOMM 1. Specify User Interface (_exactly_ one of the interfaces below)
+ #undef useXlib		/* similar to xpat version 1.x, not all features */
+-#undef useXaw		/* the classic Athena based interface for xpat2 */
++#define useXaw		/* the classic Athena based interface for xpat2 */
+ #undef useXview		/* Xview / OpenLook interface */
+-#define useXQt		/* Qt widgets, playable, but NOT YET FINISHED */
++#undef useXQt		/* Qt widgets, playable, but NOT YET FINISHED */
+ 			/* advice on Qt improvements from experienced
+ 			   programmers welcome at Michael.Bischoff@gmx.net */
+ #undef useXm1		/* Motif based interface (first variant) */
+@@ -57,12 +57,12 @@ XCOMM 3. Specify, if you want round cards (requires Xm
+ 
+ XCOMM 4. Specify, if you want sound (must copy the appropriate sound module).
+ XCOMM	 Doesn't harm if you don't have a sound card.
+-#define USE_SOUND
++#undef USE_SOUND
+ XCOMM    SOUNDOBJ must be one module of X-sound_*.o.
+ XCOMM    Ignored if USE_SOUND is OFF.
+ XCOMM    Note:  The default is to copy an .au-file to /dev/audio,
+ XCOMM           so /dev/audio must have 666 permissions */
+-SOUNDOBJ	= X-sound_SUN.o
++SOUNDOBJ	=
+ SOUNDLIB	=
+ XCOMM Uncomment this if you're using the NAS audio system:
+ XCOMM SOUNDOBJ	= X-sound_NAS.o
+@@ -113,7 +113,7 @@ XCOMM Although static linking may bloat your binary´s 
+ 
+ #ifndef XPMINCLUDE
+ XCOMM Default for most platforms
+-XPMINCLUDE	= -I$(INCROOT)/X11
++XPMINCLUDE	= -I!!X11BASE!!/include/X11
+ XCOMM Default for Solaris Visual Workshop
+ XCOMM XPMINCLUDE	= /opt/SUNWspro/WS4.0/contrib/xpm/lib
+ #endif
+@@ -122,7 +122,7 @@ XCOMM XPMINCLUDE	= /opt/SUNWspro/WS4.0/contrib/xpm/lib
+ XCOMM Default for most platforms, statically linked
+ XCOMM XPMLIB 	= -$(USRLIBDIR)/libXpm.a
+ XCOMM Default for most platforms, dynamically linked
+-XPMLIB		= -L$(USRLIBDIR) -lXpm
++XPMLIB		= -L$(USRLIBDIR) -L!!X11BASE!!/lib -lXpm
+ XCOMM Default for Solaris Visual Workshop, statically linked
+ XCOMM XPMLIB	= /opt/SUNWspro/WS4.0/contrib/xpm/lib/libXpm.a
+ #endif
+@@ -161,13 +161,14 @@ XCOMM ##     Installation Directories                 
+ XCOMM #########################################################################
+ 
+ XCOMM Root directory of xpat2 installation
+-XPATROOT	= /usr/games/lib/xpat
++XPATROOT	= $(PREFIX)/lib/xpat
+ XCOMM XPATROOT	= /usr/local/lib/xpat
+ XCOMM XPATROOT	= /opt/XPat2
+ 
+-XPATLIBDIR	= $(XPATROOT)
++XPATLIBDIR	= $(LIBDIR)/xpat
+ APPDEFSDIR	= $(LIBDIR)
+-XPATMANDIR	= $(XPATROOT)/man/man6
++XPATMANDIR	= $(MANPATH)/man6
++MANSUFFIX	= 6
+ 
+ XCOMM This is the name of the log-file, where solved games are stored:
+ SCOREFILE	= /var/games/xpat.log

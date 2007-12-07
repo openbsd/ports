@@ -1,46 +1,19 @@
-$OpenBSD: patch-src_Imakefile,v 1.2 2002/09/19 07:00:42 pvalchev Exp $
---- src/Imakefile.orig	Sat Nov 25 10:55:35 1995
-+++ src/Imakefile	Thu Sep 19 00:46:46 2002
-@@ -22,8 +22,8 @@
- # 4.) specify, if you want sound (must copy the appropriate sound module)
- #     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
- #     Note: for X-sound_SUN.o, /dev/audio must have 666 permissions */
--#define USE_SOUND	/* doesn't harm if you don't have a sound card */
--SOUNDOBJ = X-sound_SUN.o
-+#undef USE_SOUND	/* doesn't harm if you don't have a sound card */
-+SOUNDOBJ = 
+$OpenBSD: patch-src_Imakefile,v 1.3 2007/12/07 16:49:36 ajacoutot Exp $
+--- src/Imakefile.orig	Sun Nov  5 20:05:10 2000
++++ src/Imakefile	Fri Dec  7 17:43:10 2007
+@@ -188,7 +188,7 @@ STDOBJS		= rules.o commands.o messages.o hints.o layou
+ 		  r_Calculatio.o r_Michaels.o r_Royal.o r_Canfield.o \
+ 		  r_mdCanfield.o r_Bakers.o r_Oonsoo.o r_BlueMoon.o
  
- # 5.) specify, if you want the antialiased card construction set (SLOW!)
- #define USE_CARD_CONSTRUCTION
-@@ -37,9 +37,9 @@ SOUNDOBJ = X-sound_SUN.o
- # BINDIR and LIBDIR should be predefined by the templates
- # BINDIR = /usr/bin/X11
- # LIBDIR = /usr/lib/X11
--XPATLIBDIR = /usr/games/lib/xpat
-+XPATLIBDIR = $(LIBDIR)/xpat
- APPDEFSDIR = $(LIBDIR)
--XPATMANDIR = /usr/man/man6
-+XPATMANDIR = $(MANPATH)/man6
+-OBJS		= $(STDOBJS) $(XOBJS) $(KIT_OBJS)
++OBJS		= $(STDOBJS) $(XOBJS) $(KIT_OBJS) -lcompat
  
- # This is the name of the log-file, where solved games are stored:
- # an alternative path would be $(XPATLIBDIR)/xpat.log
-@@ -52,9 +52,10 @@ LXPATMANDIR = $(HOME)/xpat
- LAPPDEFSDIR = $(HOME)
  
- # xpat2 needs to know where the xpm library resides (if needed)
--XPMLIB 			= -L$(USRLIBDIR) -lXpm
--XPMINCLUDE		= -I $(INCDIR)
-+XPMLIB 			= -L$(USRLIBDIR) -L/usr/X11R6/lib -lXpm
-+XPMINCLUDE		= -I/usr/X11R6/include/X11
+ MYPROG		= xpat2
+@@ -205,23 +205,23 @@ XCOMM X-widget.c additionally requires TableauP.h
+ all::		$(MYPROG)
  
-+CFLAGS += -DNO_CUSERID
- # *****************************************************************************
- # I hope you don't need to change anything below this point
- # *****************************************************************************
-@@ -166,23 +167,23 @@ DEFINES =  $(LOAD_OPTION) $(HELP_OPTION)
- all::	$(MYPROG)
- 
- install:: $(MYPROGS)
+ install::	$(MYPROGS)
 -	mkdirhier $(XPATLIBDIR)
 -	chmod 755 $(XPATLIBDIR)
 +	mkdirhier $(DESTDIR)$(XPATLIBDIR)
