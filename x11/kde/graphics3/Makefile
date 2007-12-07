@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2007/11/12 21:01:05 kili Exp $
+# $OpenBSD: Makefile,v 1.76 2007/12/07 20:12:02 kili Exp $
 
 COMMENT-main=		K Desktop Environment, graphic applications
 COMMENT-kamera=		KDE interface to digital cameras
@@ -14,7 +14,7 @@ SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 PKGNAME-kamera=	kamera-${VERSION}
 PKGNAME-kpov=	kpovmodeller-${VERSION}
 PKGNAME-sane=	ksane-${VERSION}
@@ -49,7 +49,7 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 WANTLIB-main=		${WANTLIB} \
 			tiff fontconfig lcms Xrender ICE c \
 			freetype pcreposix pcre Xxf86vm SM Xext Xft \
-			cairo expat glitz intl
+			expat intl xml2
 
 
 LIB_DEPENDS-kpov=	${LIB_DEPENDS} \
