@@ -1,11 +1,11 @@
-$OpenBSD: patch-common_gkr-secure-memory_c,v 1.1 2007/11/10 14:56:25 jasper Exp $
---- common/gkr-secure-memory.c.orig	Wed Oct 24 20:26:57 2007
-+++ common/gkr-secure-memory.c	Wed Oct 24 20:28:53 2007
+$OpenBSD: patch-common_gkr-secure-memory_c,v 1.2 2007/12/07 22:05:58 martynas Exp $
+--- common/gkr-secure-memory.c.orig	Sat Nov 24 19:40:21 2007
++++ common/gkr-secure-memory.c	Mon Dec  3 00:34:25 2007
 @@ -31,6 +31,7 @@
  
  #include "gkr-secure-memory.h"
  
-+#include <stdlib.h>
++#include <sys/types.h>
  #include <sys/mman.h>
  #include <stddef.h>
  #include <string.h>
