@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/07 17:56:01 ajacoutot Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -14,7 +14,7 @@ CATEGORIES=	mail news
 CATEGORIES-pico=editors
 CATEGORIES-pilot=sysutils
 
-PKGNAME-main=	alpine-${V}
+PKGNAME-main=	alpine-${V}p0
 PKGNAME-pico=	pico-${PICO_V}
 PKGNAME-pilot=	pilot-${PILOT_V}
 
@@ -73,5 +73,12 @@ pre-configure:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/alpine/Makefile.in \
 		${WRKSRC}/pico/Makefile.in
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/alpine
+	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt \
+		${WRKSRC}/doc/mailcap.unx \
+		${WRKSRC}/doc/mime.types \
+		${PREFIX}/share/doc/alpine
 
 .include <bsd.port.mk>
