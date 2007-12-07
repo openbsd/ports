@@ -1,6 +1,6 @@
-$OpenBSD: patch-highscore.c,v 1.3 2004/03/06 02:41:00 naddy Exp $
---- highscore.c.orig	1996-11-22 02:28:46.000000000 +0100
-+++ highscore.c	2004-03-06 02:01:05.000000000 +0100
+$OpenBSD: patch-highscore.c,v 1.4 2007/12/07 10:25:46 ajacoutot Exp $
+--- highscore.c.orig	Fri Nov 22 02:28:46 1996
++++ highscore.c	Fri Dec  7 09:53:24 2007
 @@ -55,6 +55,7 @@
  #include <time.h>
  #include <file.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-highscore.c,v 1.3 2004/03/06 02:41:00 naddy Exp $
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
  #include <X11/Xos.h>
-@@ -119,7 +120,7 @@ static void SetHighScoreWait(enum HighSc
+@@ -119,7 +120,7 @@ static void SetHighScoreWait(enum HighScoreStates newM
  static void InitialiseHighScores(void);
  static void SortHighScores(void);
  static void DeleteScore(int i);
@@ -18,7 +18,7 @@ $OpenBSD: patch-highscore.c,v 1.3 2004/03/06 02:41:00 naddy Exp $
  #else
  static int LockUnlock();
  static void DeleteScore();
-@@ -844,7 +845,7 @@ int CheckAndAddScoreToHighScore(score, l
+@@ -844,7 +845,7 @@ int CheckAndAddScoreToHighScore(score, level, gameTime
  
  	/* Lock the file for me only */
  	if (type == GLOBAL)
@@ -27,7 +27,7 @@ $OpenBSD: patch-highscore.c,v 1.3 2004/03/06 02:41:00 naddy Exp $
  
  	/* Read in the lastest scores */
  	if (ReadHighScoreTable(type) == False)
-@@ -875,8 +876,8 @@ int CheckAndAddScoreToHighScore(score, l
+@@ -875,8 +876,8 @@ int CheckAndAddScoreToHighScore(score, level, gameTime
  				{
  					/* Don't add as score is smaller */
  					if (id != -1) 
@@ -38,7 +38,7 @@ $OpenBSD: patch-highscore.c,v 1.3 2004/03/06 02:41:00 naddy Exp $
  				}
  			}
  		}	/* for */
-@@ -898,16 +899,17 @@ int CheckAndAddScoreToHighScore(score, l
+@@ -898,16 +899,17 @@ int CheckAndAddScoreToHighScore(score, level, gameTime
  
  				/* Unlock the file now thanks */
  				if (id != -1) 

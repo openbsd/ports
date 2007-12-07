@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/12/07 10:25:46 ajacoutot Exp $
 
 COMMENT=	blockout style game for X11
 
-DISTNAME=	xboing2.4
-PKGNAME=	xboing-2.4p0
+V=		2.4
+DISTNAME=	xboing${V}
+PKGNAME=	xboing-${V}p1
+
 CATEGORIES=	games
+
+HOMEPAGE=	http://www.techrescue.org/xboing/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

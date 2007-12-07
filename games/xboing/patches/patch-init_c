@@ -1,7 +1,7 @@
-$OpenBSD: patch-init_c,v 1.1 2004/03/06 02:41:00 naddy Exp $
---- init.c.orig	2004-03-06 00:49:08.000000000 +0100
-+++ init.c	2004-03-06 02:02:14.000000000 +0100
-@@ -438,7 +438,7 @@ static void HandleDisplayErrors(displayN
+$OpenBSD: patch-init_c,v 1.2 2007/12/07 10:25:46 ajacoutot Exp $
+--- init.c.orig	Fri Nov 22 02:28:46 1996
++++ init.c	Fri Dec  7 09:53:24 2007
+@@ -438,7 +438,7 @@ static void HandleDisplayErrors(displayName)
  		WarningMessage("Your X Window system display variable is not set.");
  	else
  	{

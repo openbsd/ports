@@ -1,7 +1,7 @@
-$OpenBSD: patch-Imakefile,v 1.4 2004/03/06 02:41:00 naddy Exp $
---- Imakefile.orig	1996-11-22 02:28:46.000000000 +0100
-+++ Imakefile	2004-03-06 02:34:53.000000000 +0100
-@@ -24,23 +24,23 @@ XCOMM ==================================
+$OpenBSD: patch-Imakefile,v 1.5 2007/12/07 10:25:46 ajacoutot Exp $
+--- Imakefile.orig	Fri Nov 22 02:28:46 1996
++++ Imakefile	Fri Dec  7 09:53:24 2007
+@@ -24,23 +24,23 @@ XCOMM ================================================
  XCOMM This is the directory where the highscore, level & sound data will be 
  XCOMM placed. Default will be the current directory.
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-Imakefile,v 1.4 2004/03/06 02:41:00 naddy Exp $
  
  XCOMM Uncomment this if you want to use ANY of the AUDIO sound systems
  #define COMPILE_IN_AUDIO    
-@@ -81,7 +81,7 @@ XCOMM Below are the special defines for 
+@@ -81,7 +81,7 @@ XCOMM Below are the special defines for different mach
      AUDIO_LIB 		= -laudio
  #endif /* SGIArchitecture */
  

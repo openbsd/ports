@@ -1,6 +1,6 @@
-$OpenBSD: patch-presents_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
---- presents.c.orig	1996-11-22 02:28:46.000000000 +0100
-+++ presents.c	2004-03-05 23:30:39.000000000 +0100
+$OpenBSD: patch-presents_c,v 1.2 2007/12/07 10:25:46 ajacoutot Exp $
+--- presents.c.orig	Fri Nov 22 02:28:46 1996
++++ presents.c	Fri Dec  7 09:53:24 2007
 @@ -287,7 +287,7 @@ void DoPresentFlag(display, window)
  	}
  #endif
@@ -73,7 +73,7 @@ $OpenBSD: patch-presents_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
          }
      }
  }
-@@ -499,7 +499,7 @@ static void DoSpecialText1(display, wind
+@@ -499,7 +499,7 @@ static void DoSpecialText1(display, window)
  		len = strlen(wisdom);
  		x = ((PLAY_WIDTH + MAIN_WIDTH) / 2) - 
  			(XTextWidth(dataFont, wisdom, len) / 2);
@@ -82,7 +82,7 @@ $OpenBSD: patch-presents_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
  		first = False;
  	}
  
-@@ -508,11 +508,11 @@ static void DoSpecialText1(display, wind
+@@ -508,11 +508,11 @@ static void DoSpecialText1(display, window)
  		if (noSound == False) playSoundFile("key", 60);
  		DrawText(display, window, x, y, dataFont, red, wisdom, i);
  
@@ -96,7 +96,7 @@ $OpenBSD: patch-presents_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
  	}
  }
  
-@@ -542,7 +542,7 @@ static void DoSpecialText2(display, wind
+@@ -542,7 +542,7 @@ static void DoSpecialText2(display, window)
  		len = strlen(wisdom2);
  		x = ((PLAY_WIDTH + MAIN_WIDTH) / 2) - 
  			(XTextWidth(dataFont, wisdom2, len) / 2);
@@ -105,7 +105,7 @@ $OpenBSD: patch-presents_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
  		first = False;
  	}
  
-@@ -551,11 +551,11 @@ static void DoSpecialText2(display, wind
+@@ -551,11 +551,11 @@ static void DoSpecialText2(display, window)
  		if (noSound == False) playSoundFile("key", 60);
  		DrawText(display, window, x, y, dataFont, red, wisdom2, i);
  
@@ -119,7 +119,7 @@ $OpenBSD: patch-presents_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
  	}
  }
  
-@@ -584,7 +584,7 @@ static void DoSpecialText3(display, wind
+@@ -584,7 +584,7 @@ static void DoSpecialText3(display, window)
  		len = strlen(wisdom3);
  		x = ((PLAY_WIDTH + MAIN_WIDTH) / 2) - 
  			(XTextWidth(dataFont, wisdom3, len) / 2);
@@ -128,7 +128,7 @@ $OpenBSD: patch-presents_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
  		first = False;
  	}
  
-@@ -593,11 +593,11 @@ static void DoSpecialText3(display, wind
+@@ -593,11 +593,11 @@ static void DoSpecialText3(display, window)
  		if (noSound == False) playSoundFile("key", 60);
  		DrawText(display, window, x, y, dataFont, red, wisdom3, i);
  
