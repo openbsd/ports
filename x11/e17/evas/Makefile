@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/06 19:47:08 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/07 09:49:58 mbalmer Exp $
 
 COMMENT=	canvas API for X
 DISTNAME=	evas-20071107
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS +=	evas                 0.0      # .9.9
 
 # BSD

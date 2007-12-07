@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_lib_include_evas_common_h,v 1.1 2007/12/07 09:49:58 mbalmer Exp $
+--- src/lib/include/evas_common.h.orig	Fri Dec  7 10:34:46 2007
++++ src/lib/include/evas_common.h	Fri Dec  7 10:34:59 2007
+@@ -46,6 +46,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <stdint.h>
+ #include <string.h>
+ #include <signal.h>
+ #include <setjmp.h>
