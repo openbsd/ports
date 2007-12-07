@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/11/13 20:05:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/07 20:10:33 kili Exp $
 
 COMMENT=	lightweight PDF document viewer
 
 DISTNAME=	epdfview-0.1.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 HOMEPAGE=	http://trac.emma-soft.com/epdfview/
 
@@ -19,8 +19,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr X11 \
-		Xext Xrender atk-1.0 c cairo fontconfig freetype \
+WANTLIB=	Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
+		Xrandr X11 Xext Xrender atk-1.0 c cairo fontconfig freetype \
                 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
                 m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread \
                 stdc++ z expat
@@ -28,7 +28,7 @@ WANTLIB=	Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr X11 \
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	gtk-x11-2.0.>=0.14,gdk-x11-2.0.>=0.14,gdk_pixbuf-2.0.>=0.14::x11/gtk+2 \
-		poppler.>=1,poppler-glib.>=1::print/poppler
+		poppler.>=3,poppler-glib.>=3::print/poppler
 
 CONFIGURE_STYLE=gnu
 
