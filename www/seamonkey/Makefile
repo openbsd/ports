@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/10/24 20:10:45 martynas Exp $
+# $OpenBSD: Makefile,v 1.18 2007/12/07 21:48:01 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 COMMENT-main=	integrated mozilla application suite
 COMMENT-devel=  devel files for Gecko
 
-VER=		1.1.5
+VER=		1.1.7
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
 PKGNAME-main=	seamonkey-${VER}
@@ -46,25 +46,27 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-.for i in 1.1.5 1.1.4 1.1.3 1.1.2
+.for i in 1.1.2 1.1.3 1.1.4 1.1.5 1.1.6 1.1.7
 MASTER_SITES${i:E}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/$i/contrib-localized/
 .endfor
 
 LANGUAGES=	be-BY 1.1.2 \
 		ca-AD 1.1.4 \
-		cs-CZ 1.1.5 \
-		de-AT 1.1.5 \
+		cs-CZ 1.1.6 \
+		de-AT 1.1.7 \
 		el-GR 1.1.2 \
-		es-ES 1.1.4 \
-		fr-FR 1.1.4 \
+		es-ES 1.1.6 \
+		fr-FR 1.1.6 \
 		he-IL 1.1.2 \
-		it-IT 1.1.2 \
+		hi-IN 1.1.5 \
+		it-IT 1.1.6 \
 		nl-NL 1.1.4 \
-		pl-PL 1.1.5 \
-		pt-BR 1.1.5 \
-		ru-RU 1.1.5 \
-		sv-SE 1.1.5
-BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
+		pl-PL 1.1.7 \
+		pt-BR 1.1.6 \
+		ru-RU 1.1.6 \
+		ur-PK 1.1.4 \
+		sv-SE 1.1.6
+BINLANGS=	be-BY el-GR fr-FR hi-IN pl-PL pt-BR
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -83,14 +85,14 @@ BUILD_DEPENDS=  :zip->=2.3:archivers/zip \
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
-WANTLIB=	c glib-2.0 gthread-2.0 m pthread stdc++
+WANTLIB=	c glib-2.0 m pthread stdc++
 
 RUN_DEPENDS-main= :esound-*:audio/esound
-WANTLIB-main=	${WANTLIB} X11 Xau Xcursor Xdmcp Xext Xfixes Xft \
-		Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo expat \
-		fontconfig freetype glitz gmodule-2.0 gobject-2.0 \
-		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 \
-		png z \
+WANTLIB-main=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
+		Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 \
+		cairo expat fontconfig freetype glitz gmodule-2.0 \
+		gobject-2.0 gthread-2.0 jpeg pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pangox-1.0 png z
 
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
 		seamonkey/mozjs,seamonkey/xpcom,seamonkey/xpcom_core:${PKGNAME-main}:www/seamonkey,-main
