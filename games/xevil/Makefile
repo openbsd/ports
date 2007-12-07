@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/12/07 15:54:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2007/12/07 17:28:57 ajacoutot Exp $
 #
 
 COMMENT=	side-view, fast-action, kill everything type of game
@@ -10,7 +10,7 @@ PKGNAME=	xevil-${V}
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.xevil.com/
-MASTER_SITES=	{HOMEPAGE}download/stable/
+MASTER_SITES=	${HOMEPAGE}download/stable/
 EXTRACT_SUFX=	.zip
 
 # GPL
