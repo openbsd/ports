@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2007/11/27 14:19:52 robert Exp $
+# $OpenBSD: Makefile,v 1.67 2007/12/07 11:30:55 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,9 +6,9 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
-VERSION=	2.3.0
+VERSION=	2.3.1
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOG680_m5
+WRKDIST=	${WRKDIR}/OOG680_m9
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
@@ -63,7 +63,7 @@ LANGS=			bg br-pt ca de es fa fi fr hu it ja ko \
 
 .for l in ${LANGS}
 MULTI_PACKAGES+=	-i18n-$l
-PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}p0
+PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
 COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
 RUN_DEPENDS-i18n-$l=	::editors/openoffice
 WANTLIB-i18n-$l=

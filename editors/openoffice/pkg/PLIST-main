@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2007/11/13 09:46:28 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2007/12/07 11:30:55 robert Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -1349,10 +1349,12 @@ openoffice/share/dict/ooo/README_hyph_de_DE.txt
 openoffice/share/dict/ooo/README_hyph_et_EE.txt
 openoffice/share/dict/ooo/README_hyph_hu_HU.txt
 openoffice/share/dict/ooo/README_hyph_lt_LT.txt
+openoffice/share/dict/ooo/README_hyph_pl_PL.txt
 openoffice/share/dict/ooo/README_hyph_sl_SI.txt
 openoffice/share/dict/ooo/README_it_IT.txt
 openoffice/share/dict/ooo/README_lt_LT.txt
 openoffice/share/dict/ooo/README_nl_NL.txt
+openoffice/share/dict/ooo/README_pl_PL.txt
 openoffice/share/dict/ooo/README_pt_BR.txt
 openoffice/share/dict/ooo/README_sk_SK.txt
 openoffice/share/dict/ooo/README_sl_SI.txt
@@ -1390,6 +1392,7 @@ openoffice/share/dict/ooo/hyph_hu_HU.dic
 openoffice/share/dict/ooo/hyph_it_IT.dic
 openoffice/share/dict/ooo/hyph_lt_LT.dic
 openoffice/share/dict/ooo/hyph_nl_NL.dic
+openoffice/share/dict/ooo/hyph_pl_PL.dic
 openoffice/share/dict/ooo/hyph_ru_RU.dic
 openoffice/share/dict/ooo/hyph_sl_SI.dic
 openoffice/share/dict/ooo/it_IT.aff
@@ -1398,6 +1401,8 @@ openoffice/share/dict/ooo/lt_LT.aff
 openoffice/share/dict/ooo/lt_LT.dic
 openoffice/share/dict/ooo/nl_NL.aff
 openoffice/share/dict/ooo/nl_NL.dic
+openoffice/share/dict/ooo/pl_PL.aff
+openoffice/share/dict/ooo/pl_PL.dic
 openoffice/share/dict/ooo/pt_BR.aff
 openoffice/share/dict/ooo/pt_BR.dic
 openoffice/share/dict/ooo/sk_SK.aff

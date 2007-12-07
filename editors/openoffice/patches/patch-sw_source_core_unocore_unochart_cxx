@@ -1,7 +1,7 @@
-$OpenBSD: patch-sw_source_core_unocore_unochart_cxx,v 1.1 2007/11/13 09:46:28 robert Exp $
---- sw/source/core/unocore/unochart.cxx.orig.port	Sun Oct 28 00:17:02 2007
-+++ sw/source/core/unocore/unochart.cxx	Sun Oct 28 00:07:32 2007
-@@ -1638,7 +1638,7 @@ void SwChartDataProvider::InvalidateTable( const SwTab
+$OpenBSD: patch-sw_source_core_unocore_unochart_cxx,v 1.2 2007/12/07 11:30:55 robert Exp $
+--- sw/source/core/unocore/unochart.cxx.orig.port	Fri Oct 26 16:59:49 2007
++++ sw/source/core/unocore/unochart.cxx	Thu Dec  6 16:36:13 2007
+@@ -1640,7 +1640,7 @@ void SwChartDataProvider::InvalidateTable( const SwTab
          Set_DataSequenceRef_t::iterator aIt( rSet.begin() );
          while (aIt != rSet.end())
          {
@@ -10,7 +10,7 @@ $OpenBSD: patch-sw_source_core_unocore_unochart_cxx,v 1.1 2007/11/13 09:46:28 ro
              if (xRef.is())
              {
                  // mark the sequence as 'dirty' and notify listeners
-@@ -1671,7 +1671,7 @@ sal_Bool SwChartDataProvider::DeleteBox( const SwTable
+@@ -1673,7 +1673,7 @@ sal_Bool SwChartDataProvider::DeleteBox( const SwTable
              sal_Bool bNowEmpty = sal_False;
  
              // check if weak reference is still valid...
@@ -19,7 +19,7 @@ $OpenBSD: patch-sw_source_core_unocore_unochart_cxx,v 1.1 2007/11/13 09:46:28 ro
              if (xRef.is())
              {
                  // then delete that table box (check if implementation cursor needs to be adjusted)
-@@ -1713,7 +1713,7 @@ void SwChartDataProvider::DisposeAllDataSequences( con
+@@ -1715,7 +1715,7 @@ void SwChartDataProvider::DisposeAllDataSequences( con
          Set_DataSequenceRef_t::iterator aEndIt( rSet.end() );
          while (aIt != aEndIt)
          {
@@ -28,7 +28,7 @@ $OpenBSD: patch-sw_source_core_unocore_unochart_cxx,v 1.1 2007/11/13 09:46:28 ro
              if (xRef.is())
              {
                  xRef->dispose();
-@@ -1792,7 +1792,7 @@ void SwChartDataProvider::AddRowCols(
+@@ -1794,7 +1794,7 @@ void SwChartDataProvider::AddRowCols(
  			Set_DataSequenceRef_t::iterator aIt( rSet.begin() );
  			while (aIt != rSet.end())
  			{

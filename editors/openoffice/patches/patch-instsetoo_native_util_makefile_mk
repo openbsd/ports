@@ -1,6 +1,6 @@
-$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.10 2007/11/13 09:46:28 robert Exp $
---- instsetoo_native/util/makefile.mk.orig.port	Thu Oct 25 12:10:41 2007
-+++ instsetoo_native/util/makefile.mk	Thu Oct 25 12:12:29 2007
+$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.11 2007/12/07 11:30:55 robert Exp $
+--- instsetoo_native/util/makefile.mk.orig.port	Thu Nov  1 12:03:38 2007
++++ instsetoo_native/util/makefile.mk	Thu Dec  6 16:36:09 2007
 @@ -54,12 +54,14 @@ PYTHONPATH:=$(PWD)$/$(BIN):$(SOLARLIBDIR):$(SOLARLIBDI
  .ENDIF			# "$(GUI)"=="WNT"
  .EXPORT: PYTHONPATH
@@ -25,7 +25,7 @@ $OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.10 2007/11/13 09:46:28 rob
  
  openofficedev: $(foreach,i,$(alllangiso) openofficedev_$i)
  
-@@ -222,7 +224,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
+@@ -226,7 +228,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
  openoffice_% :
  .ENDIF			# "$(PKGFORMAT)"!=""
  .IF "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!="portable"
@@ -34,7 +34,7 @@ $OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.10 2007/11/13 09:46:28 rob
  	$(PERL) -w $(SOLARENV)$/bin$/gen_update_info.pl --buildid $(BUILD) --arch "$(RTL_ARCH)" --os "$(RTL_OS)" --lstfile $(PRJ)$/util$/openoffice.lst --product OpenOffice --languages $(subst,$(@:s/_/ /:1)_, $(@:b)) $(PRJ)$/util$/update.xml > $(MISC)/$(@:b)_$(RTL_OS)_$(RTL_ARCH).update.xml
  .ELSE                   # "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!=""
  	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -destdir $(subst,$(@:s/_/ /:1)_,$(OUT)$/OpenOffice$/install$/ $(@:b))_inprogress$/ -simple staging
-@@ -511,11 +513,11 @@ hack_msitemplates .PHONY:
+@@ -525,11 +527,11 @@ hack_msitemplates .PHONY:
  	-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
  	-$(MKDIRHIER) $(MSISDKOOTEMPLATEDIR)
  	-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
