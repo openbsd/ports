@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_bin_e_fm_c,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
---- src/bin/e_fm.c.orig	Wed Nov  7 23:31:34 2007
-+++ src/bin/e_fm.c	Wed Nov  7 23:31:50 2007
+$OpenBSD: patch-src_bin_e_fm_c,v 1.2 2007/12/07 15:10:27 mbalmer Exp $
+--- src/bin/e_fm.c.orig	Wed Nov  7 11:45:43 2007
++++ src/bin/e_fm.c	Fri Dec  7 15:44:09 2007
+@@ -104,7 +104,7 @@ struct _E_Fm2_Smart_Data
+    E_Drop_Handler     *drop_handler;
+    E_Fm2_Icon         *drop_icon;
+    E_Fm2_Mount        *mount;
+-   char                drop_after;
++   signed char         drop_after;
+    unsigned char       drop_show : 1;
+    unsigned char       drop_in_show : 1;
+    unsigned char       drop_all : 1;
 @@ -3214,7 +3214,7 @@ _e_fm2_uri_parse(const char *val)
     p = val + 7;
     if (*p != '/')
