@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmn_role_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+--- cmn/role.cpp.orig	Fri Dec  7 14:00:38 2007
++++ cmn/role.cpp	Fri Dec  7 14:05:43 2007
+@@ -29,9 +29,12 @@
+ 
+ #include "stdafx.h"
+ 
+-#include <iostream.h>
++#include <iostream>
++
++using namespace std;
++
+ #if X11
+-#include <strstream.h>
++#include <strstream>
+ #include <time.h>
+ #endif
+ #if WIN32

@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmn_game_style_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+--- cmn/game_style.cpp.orig	Sat Mar 22 20:47:42 2003
++++ cmn/game_style.cpp	Fri Dec  7 14:24:57 2007
+@@ -29,12 +29,10 @@
+ 
+ // Include Files
+ #include "stdafx.h"
+-extern "C" {
+-#include <string.h>
+-}
++#include <cstring>
+ 
+ #if X11
+-#include <strstream.h>
++#include <strstream>
+ #endif
+ 
+ #if WIN32

@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/12/07 15:54:56 ajacoutot Exp $
 bin/xevil
 lib/X11/app-defaults/XEvil.iris
 lib/X11/app-defaults/XEvil.mac
 lib/X11/app-defaults/XEvil.sun3
 lib/X11/app-defaults/XEvil.sun4_sparc
-@man man/man6/xevil.6
+share/doc/xevil/
+share/doc/xevil/html/
+share/doc/xevil/html/UNIXSetControls.gif
+share/doc/xevil/html/UNIXShowControls.gif
+share/doc/xevil/html/UNIXmenu.gif
+share/doc/xevil/html/instructions.html
+share/doc/xevil/html/keysdlg.gif
+share/doc/xevil/html/optionsdlg.gif

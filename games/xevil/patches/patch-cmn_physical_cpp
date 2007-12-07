@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmn_physical_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+--- cmn/physical.cpp.orig	Fri Dec  7 14:00:16 2007
++++ cmn/physical.cpp	Fri Dec  7 14:05:56 2007
+@@ -33,10 +33,12 @@
+ // Include Files
+ #include "xdata.h"
+ #include "physical.h"
+-#include <iostream.h>
++#include <iostream>
+ 
++using namespace std;
++
+ #if X11
+-#include <strstream.h>
++#include <strstream>
+ #endif
+ #if WIN32
+ #include <strstrea.h>

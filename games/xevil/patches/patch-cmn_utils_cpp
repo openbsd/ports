@@ -1,0 +1,31 @@
+$OpenBSD: patch-cmn_utils_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+--- cmn/utils.cpp.orig	Wed Mar 19 10:05:12 2003
++++ cmn/utils.cpp	Fri Dec  7 14:27:50 2007
+@@ -30,18 +30,21 @@
+ 
+ // Include Files
+ #include "stdafx.h"
+-#include <iostream.h>
+-#include <limits.h>
+-#include <string.h>
+-#include <ctype.h>
+-#include <fstream.h>
++#include <iostream>
++
++#include <climits>
++#include <cstring>
++#include <cctype>
++#include <fstream>
+ #if WIN32
+ #include <strstrea.h>
+ #endif
+ #if X11
+-#include <strstream.h>
++#include <strstream>
+ #endif
+ 
++using namespace std;
++
+ #ifdef WIN32
+ // For file manipulation routines.
+ #include <direct.h>

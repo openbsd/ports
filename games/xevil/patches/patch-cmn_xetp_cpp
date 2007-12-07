@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmn_xetp_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+--- cmn/xetp.cpp.orig	Fri Dec  7 14:03:22 2007
++++ cmn/xetp.cpp	Fri Dec  7 14:03:37 2007
+@@ -29,9 +29,12 @@
+ 
+ #include "stdafx.h"
+ 
+-#include <iostream.h>
++#include <iostream>
++
++using namespace std;
++
+ #if X11
+-#include <strstream.h>
++#include <strstream>
+ #endif
+ #if WIN32
+ #include <strstrea.h>

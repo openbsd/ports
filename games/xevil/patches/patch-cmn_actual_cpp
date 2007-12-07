@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmn_actual_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+--- cmn/actual.cpp.orig	Wed Jan 19 12:54:36 2000
++++ cmn/actual.cpp	Fri Dec  7 14:14:44 2007
+@@ -32,7 +32,9 @@
+ 
+ // Include Files
+ #if X11
+-#include <strstream.h>
++#include <strstream>
++using namespace std;
++using namespace std;
+ #endif
+ #if WIN32
+ #include <strstrea.h>

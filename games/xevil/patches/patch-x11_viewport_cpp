@@ -1,0 +1,14 @@
+$OpenBSD: patch-x11_viewport_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+--- x11/viewport.cpp.orig	Fri Dec  7 13:25:41 2007
++++ x11/viewport.cpp	Fri Dec  7 13:26:03 2007
+@@ -44,8 +44,9 @@ extern "C" {
+ #include <X11/Xos.h>
+ #include <X11/keysym.h>
+ }
+-#include <strstream.h>
++#include <strstream>
+ 
++using namespace std;
+ 
+ #define TICK_BORDER_WIDTH 5 // border width big enough for a tick mark.
+ #define TICK_WIDTH 3
