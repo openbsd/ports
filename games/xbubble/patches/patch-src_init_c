@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_init_c,v 1.1 2007/12/07 12:09:09 ajacoutot Exp $
+--- src/init.c.orig	Fri Nov 14 15:26:22 2003
++++ src/init.c	Fri Dec  7 13:00:00 2007
+@@ -460,7 +460,7 @@ int parse_bubble_name(const char *name,int *color_val,
+   return return_val;
+ }
+ 
+-int diren_select_bubbles (const struct dirent *d) {
++int diren_select_bubbles (struct dirent *d) {
+   int color;
+   int state;
+ 
+@@ -644,7 +644,7 @@ void load_images( double zoom ) {
+   width = scale_x( BOARD_WIDTH, scale ) - x;
+   height = 20*scale/MAX_SCALE;
+   XSetTile( display, gc, bar );
+-  XSetForeground( display, gc_mask, WhitePixel(display, root));
++  XSetForeground( display, gc_mask, WhitePixel(display, 0));
+   XSetFillStyle( display, gc_mask, FillSolid );
+   XSetClipMask( display, gc, None );
+   XSetClipOrigin( display, gc, 0, 0 );

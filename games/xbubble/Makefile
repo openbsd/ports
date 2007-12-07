@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/07 12:09:09 ajacoutot Exp $
 
 COMMENT=	x bust a move clone
 
-VERSION=	0.2
-DISTNAME=	xbubble-${VERSION}
+DISTNAME=	xbubble-0.5.8
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://savannah.gnu.org/projects/xbubble/
+HOMEPAGE=	http://www.nongnu.org/xbubble/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 c m z
 
-MASTER_SITES=		http://freesoftware.fsf.org/download/xbubble/
+WANTLIB=		X11 c m z
+
+MASTER_SITES=		ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/ \
+			http://gentoo.osuosl.org/distfiles/
+
+MODULES=		devel/gettext
 
 LIB_DEPENDS=		png.>=2::graphics/png
 
@@ -24,6 +27,6 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	GNU
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
 .include <bsd.port.mk>

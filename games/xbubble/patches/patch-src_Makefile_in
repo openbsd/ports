@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2007/12/07 12:09:09 ajacoutot Exp $
+--- src/Makefile.in.orig	Fri Dec  7 11:38:28 2007
++++ src/Makefile.in	Fri Dec  7 11:38:45 2007
+@@ -128,7 +128,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-AM_CFLAGS = -g -O2 -Werror
++AM_CFLAGS =
+ 
+ # Tricks to generate the traj cache at compile time
+ noinst_PROGRAMS = pathinit
