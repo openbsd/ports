@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/05 16:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/08 20:21:33 ajacoutot Exp $
 
 COMMENT=	real-time strategy game
 
 V=		2.4.1
 DISTNAME=	boswars-${V}-src
-PKGNAME=	boswars-${V}
+PKGNAME=	boswars-${V}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.boswars.org/
@@ -19,9 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 
-WANTLIB=	X11 Xext c m ogg pthread stdc++ usbhid z GL
+WANTLIB=	GL X11 c m ogg pthread stdc++ z
 
-BUILD_DEPENDS=	:scons-*:devel/scons
+MODULES=	devel/scons
+MODSCONS_FLAGS=	CPPPATH="${CPPPATH} ${LOCALBASE}/include/libpng" \
+		LIBS="-lm" \
+		opengl=1
+
 LIB_DEPENDS=	SDL.>=7::devel/sdl \
 		lua.>=5::lang/lua \
 		theora.>=2::multimedia/libtheora \
@@ -38,13 +42,6 @@ pre-configure:
 		${WRKSRC}/engine/include/stratagus.h
 	@perl -pi -e 's,!!X11BASE!!,${X11BASE},g' \
 		${WRKSRC}/SConstruct
-
-do-build:
-	@${SETENV} ${MAKE_ENV} scons -C ${WRKSRC} \
-		CC=${CC} CXX=${CXX} CCFLAGS="${CFLAGS}" \
-		CPPPATH="${X11BASE}/include ${LOCALBASE}/include/libpng" \
-		LIBPATH="${X11BASE}/lib ${LOCALBASE}/lib" LIBS="-lm" \
-		opengl=1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/boswars ${PREFIX}/bin
