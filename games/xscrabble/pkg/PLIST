@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/30 22:31:06 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/12/08 22:00:02 ajacoutot Exp $
 @mode 2555
 @group games
 bin/xscrab
@@ -7,10 +7,11 @@ bin/xscrabble
 @group
 lib/X11/app-defaults/XScrabble
 lib/X11/xscrabble/
-lib/X11/xscrabble/OSPD3.gz
-lib/X11/xscrabble/scrabble_permutations
+lib/X11/xscrabble/duplicate
 share/examples/xscrabble/
 share/examples/xscrabble/xscrabble.scores
 @mode g+w
 @group games
 @sample /var/games/xscrabble.scores
+%%en%%
+%%fr%%

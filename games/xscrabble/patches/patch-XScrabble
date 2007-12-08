@@ -1,0 +1,25 @@
+$OpenBSD: patch-XScrabble,v 1.1 2007/12/08 22:00:01 ajacoutot Exp $
+--- XScrabble.orig	Mon Jan 15 21:19:25 2007
++++ XScrabble	Sat Dec  8 14:59:50 2007
+@@ -1,9 +1,9 @@
+ ! *** XScrabble_en (English) resource file ***
+ 
+ ! edit the following four pathnames as required:
+-*dictfile:			/usr/share/games/scrabble/en/OSPD3
+-*scorefile:			/usr/share/games/scrabble/en/scrabble_scores
+-*rulesfile:			/usr/share/games/scrabble/en/scrabble_rules
++*dictfile:			!!XSCRABBLEDIR!!/!!DICT!!
++*scorefile:			/var/games/xscrabble.scores
++*rulesfile:			!!XSCRABBLEDIR!!/!!RULES!!
+ 
+ ! version string, to make sure correct resource file is loaded
+ *version:			212
+@@ -600,7 +600,7 @@ Human\nComp\nGood\nBetter\nGreat\nSmashing\nSuper\nAce
+ *setup*langtitle.fromVert:	name3
+ *setup*langtitle.fromHoriz:     name3
+ *setup*langtitle.vertDistance:  20
+-*setup*langtitle.label:		Language(fr/eng):
++*setup*langtitle.label:		Language(fr/en):
+ *setup*langtitle.width:		120
+ *setup*langtitle.borderWidth:	0
+ *setup*langtitle.justify:	left
