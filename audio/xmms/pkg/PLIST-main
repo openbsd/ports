@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/10/10 14:54:05 merdely Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/12/08 21:54:57 ajacoutot Exp $
 @pkgpath audio/xmms
 bin/wmxmms
 bin/xmms
@@ -77,6 +77,9 @@ share/locale/da/LC_MESSAGES/xmms.mo
 share/locale/de/LC_MESSAGES/xmms.mo
 share/locale/el/LC_MESSAGES/xmms.mo
 share/locale/en/LC_MESSAGES/xmms.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/xmms.mo
 share/locale/eo/LC_MESSAGES/xmms.mo
 share/locale/es/LC_MESSAGES/xmms.mo
 share/locale/et/LC_MESSAGES/xmms.mo

@@ -1,11 +1,11 @@
-$OpenBSD: patch-libxmms_xmmsctrl_c,v 1.1 2002/06/15 12:05:15 naddy Exp $
---- libxmms/xmmsctrl.c.orig	Sat Jun 15 13:21:09 2002
-+++ libxmms/xmmsctrl.c	Sat Jun 15 13:21:22 2002
+$OpenBSD: patch-libxmms_xmmsctrl_c,v 1.2 2007/12/08 21:54:57 ajacoutot Exp $
+--- libxmms/xmmsctrl.c.orig	Fri Nov 23 16:20:56 2007
++++ libxmms/xmmsctrl.c	Fri Nov 23 16:21:07 2007
 @@ -30,6 +30,7 @@
  #include <errno.h>
  #include <stdio.h>
  #include <stdlib.h>
 +#include <string.h>
+ #include <math.h>
  #include "xmmsctrl.h"
  #include "../xmms/controlsocket.h"
- 

@@ -1,0 +1,22 @@
+$OpenBSD: patch-Output_sun_configure_c,v 1.3 2007/12/08 21:54:57 ajacoutot Exp $
+--- Output/sun/configure.c.orig	Sat May 14 17:01:20 2005
++++ Output/sun/configure.c	Sat Dec  8 12:26:01 2007
+@@ -415,12 +415,13 @@ static void configure_stats_loop(void)
+ 			char s[128];
+ 
+ 			sprintf(s, "Currently %s",
+-				(info.mode == AUMODE_PLAY) ? "playing" :
+-				(info.mode == AUMODE_RECORD) ? "recording" :
+-				(info.mode == AUMODE_PLAY_ALL) ? "playing" :
+-				"not playing");
++				((info.play.active == 1) &&
++				 (info.record.active == 1)) ? "playing and recording" :
++				(info.record.active == 1) ? "recording" :
++				(info.play.active == 1) ? "playing" :
++				"not playing or recording");
+ 
+-			if (info.mode == AUMODE_PLAY)
++			if (info.mode & AUMODE_PLAY)
+ 			{
+ 				sprintf(s, "%s at %i Hz (%i-bit %s)", s,
+ 					info.play.sample_rate, info.play.precision,

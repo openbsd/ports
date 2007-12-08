@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_in,v 1.7 2004/04/15 19:23:46 naddy Exp $
---- configure.in.orig	2004-02-23 22:40:44.000000000 +0100
-+++ configure.in	2004-04-14 23:34:14.000000000 +0200
-@@ -549,7 +549,7 @@ AC_SUBST(GENERAL_PLUGIN_DIR)
- AC_SUBST(VISUALIZATION_PLUGIN_DIR)
- AC_SUBST(pluginsubs)
+$OpenBSD: patch-configure_in,v 1.8 2007/12/08 21:54:57 ajacoutot Exp $
+--- configure.in.orig	Fri Nov 16 22:52:30 2007
++++ configure.in	Fri Nov 23 16:25:25 2007
+@@ -607,7 +607,7 @@ AC_SUBST([GENERAL_PLUGIN_DIR])
+ AC_SUBST([VISUALIZATION_PLUGIN_DIR])
+ AC_SUBST([pluginsubs])
  
 -XMMS_DEFINES="$CFLAGS -DDATA_DIR=\\\"$datadir/xmms\\\" -DPLUGIN_DIR=\\\"$plugindir\\\" -DPLUGINSUBS=$pluginsubs -DLOCALEDIR=\\\"$localedir\\\""
 +XMMS_DEFINES="$CFLAGS -DDATA_DIR=\\\"$datadir/xmms\\\" -DPLUGIN_DIR=\\\"$plugindir\\\" -DPLUGINSUBS=$pluginsubs -DLOCALEDIR=\\\"$localedir\\\" -I$LOCALBASE/include"

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Output_sun_audio_c,v 1.5 2005/04/27 16:31:34 robert Exp $
+$OpenBSD: patch-Output_sun_audio_c,v 1.6 2007/12/08 21:54:57 ajacoutot Exp $
 --- Output/sun/audio.c.orig	Sun Jun  2 15:42:03 2002
-+++ Output/sun/audio.c	Wed Apr 27 18:13:18 2005
-@@ -123,14 +123,12 @@
++++ Output/sun/audio.c	Fri Nov 23 18:38:44 2007
+@@ -123,14 +123,12 @@ static void sun_setformat(AFormat fmt, int rate, int n
  	
  	sun = sun_format(fmt);
  
@@ -16,8 +16,12 @@ $OpenBSD: patch-Output_sun_audio_c,v 1.5 2005/04/27 16:31:34 robert Exp $
  	output.frequency = rate;
  	output.channels = nch;
  	sun_setparams();
-@@ -153,7 +151,7 @@
- 	info.mode = AUMODE_PLAY;
+@@ -150,10 +148,10 @@ void sun_setparams(void)
+ 
+ 	AUDIO_INITINFO(&info);
+ 
+-	info.mode = AUMODE_PLAY;
++	info.mode = AUMODE_PLAY_ALL;
  	if (ioctl(audio.fd, AUDIO_SETINFO, &info) != 0)
  	{
 -		g_error("%s: cannot play (%s)", audio.devaudio,
@@ -25,7 +29,7 @@ $OpenBSD: patch-Output_sun_audio_c,v 1.5 2005/04/27 16:31:34 robert Exp $
  			strerror(errno));
  		return;
  	}
-@@ -171,7 +169,7 @@
+@@ -171,7 +169,7 @@ void sun_setparams(void)
  	strcpy(output.name, enc.name);
  	if (ioctl(audio.fd, AUDIO_SETINFO, &info) != 0)
  	{
@@ -34,7 +38,7 @@ $OpenBSD: patch-Output_sun_audio_c,v 1.5 2005/04/27 16:31:34 robert Exp $
  			output.name, strerror(errno));
  		return;
  	}
-@@ -182,7 +180,7 @@
+@@ -182,7 +180,7 @@ void sun_setparams(void)
  	info.play.sample_rate = output.frequency;
  	if (ioctl(audio.fd, AUDIO_SETINFO, &info) < 0)
  	{
@@ -43,7 +47,7 @@ $OpenBSD: patch-Output_sun_audio_c,v 1.5 2005/04/27 16:31:34 robert Exp $
  			output.frequency, strerror(errno));
  		return;
  	}
-@@ -328,7 +326,7 @@
+@@ -328,7 +326,7 @@ static inline void sun_write_audio(gpointer data, int 
  		output_time_offset += (output_bytes * 1000) / output.bps;
  		output_bytes = 0;
  		close(audio.fd);
@@ -52,7 +56,7 @@ $OpenBSD: patch-Output_sun_audio_c,v 1.5 2005/04/27 16:31:34 robert Exp $
  		sun_setformat(new_format, new_frequency, new_channels);
  	}
  	if (effects_enabled() && ep && ep->mod_samples)
-@@ -518,7 +516,7 @@
+@@ -518,7 +516,7 @@ static void* sun_loop(void *arg)
  		{
  			audio.unpause = FALSE;
  			close(audio.fd);
@@ -61,7 +65,7 @@ $OpenBSD: patch-Output_sun_audio_c,v 1.5 2005/04/27 16:31:34 robert Exp $
  			sun_setparams();
  			audio.paused = FALSE;
  		}
-@@ -535,9 +533,9 @@
+@@ -535,9 +533,9 @@ int sun_open(AFormat fmt, int rate, int nch)
  
  	AUDIO_INITINFO(&info);
  
