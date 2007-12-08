@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2007/12/05 16:36:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2007/12/08 16:44:19 ajacoutot Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
-MODULES=		x11/kde
 DISTNAME=		kbilliards-0.8.7b
 HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/
@@ -21,7 +20,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 artsflow \
 		soundserver_idl stdc++ util vorbis vorbisenc \
 		vorbisfile z
 
-MODULES=		devel/gettext
+MODULES=		x11/kde	devel/gettext
 
 # gtk-update-icon-cache
 RUN_DEPENDS=		::x11/gtk+2

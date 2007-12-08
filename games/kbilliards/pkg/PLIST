@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/05 16:36:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/08 16:44:19 ajacoutot Exp $
 bin/kbilliards
 share/applnk/
 share/applnk/Games/
 share/applnk/Games/kbilliards.desktop
-share/apps/
 share/apps/kbilliards/
 share/apps/kbilliards/ball.png
 share/apps/kbilliards/balls/
