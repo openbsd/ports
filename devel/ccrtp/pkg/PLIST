@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/08 05:23:20 jakemsr Exp $
+%%SHARED%%
+include/ccrtp/
+include/ccrtp/CryptoContext.h
+include/ccrtp/base.h
+include/ccrtp/channel.h
+include/ccrtp/cqueue.h
+include/ccrtp/ext.h
+include/ccrtp/formats.h
+include/ccrtp/ioqueue.h
+include/ccrtp/iqueue.h
+include/ccrtp/oqueue.h
+include/ccrtp/pool.h
+include/ccrtp/queuebase.h
+include/ccrtp/rtcppkt.h
+include/ccrtp/rtp.h
+include/ccrtp/rtppkt.h
+include/ccrtp/sources.h
+@info info/ccrtp.info
+lib/libccrtp1.a
+lib/libccrtp1.la
+lib/pkgconfig/
+lib/pkgconfig/libccrtp1.pc

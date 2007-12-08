@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/12/08 05:23:20 jakemsr Exp $
+@lib lib/libccrtp1.so.${LIBccrtp1_VERSION}

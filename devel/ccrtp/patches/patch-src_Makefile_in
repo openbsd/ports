@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/12/08 05:23:20 jakemsr Exp $
+--- src/Makefile.in.orig	Sun Dec 31 08:24:19 2006
++++ src/Makefile.in	Sat Jul 21 22:40:18 2007
+@@ -254,7 +254,7 @@ libccrtp1_la_SOURCES = rtppkt.cpp rtcppkt.cpp source.c
+ 	outqueue.cpp queue.cpp control.cpp members.cpp socket.cpp duplex.cpp pool.cpp \
+ 	CryptoContext.cxx $(srtp_src_g) $(srtp_src_o)
+ 
+-libccrtp1_la_LDFLAGS = $(RELEASE)
++libccrtp1_la_LDFLAGS = $(LT_VERSION) @GNULIBS@
+ noinst_HEADERS = private.h
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
