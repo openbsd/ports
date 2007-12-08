@@ -1,0 +1,12 @@
+$OpenBSD: patch-m4_ost_ssl_m4,v 1.1.1.1 2007/12/08 05:22:09 jakemsr Exp $
+--- m4/ost_ssl.m4.orig	Sun Oct 14 02:17:46 2007
++++ m4/ost_ssl.m4	Sun Oct 14 02:25:45 2007
+@@ -40,7 +40,7 @@ AC_DEFUN([OST_LIB_SSL],[
+ #		])
+ #	],[
+ 		AC_CHECK_HEADER(openssl/ssl.h,[
+-			SSL_LIBS="-lssl"
++			SSL_LIBS="-lssl -lcrypto"
+ 			ost_cv_ssl=true
+ 			AC_DEFINE(CCXX_OPENSSL, [1], [define openssl])
+ 			AC_DEFINE(CCXX_SSL, [OPENSSL], [defines ssl])

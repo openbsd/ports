@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/12/08 05:22:09 jakemsr Exp $
+@lib lib/libccext2.so.${LIBccext2_VERSION}
+@lib lib/libccgnu2.so.${LIBccgnu2_VERSION}

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/12/08 05:22:09 jakemsr Exp $
+--- src/Makefile.in.orig	Tue Jun 12 08:43:50 2007
++++ src/Makefile.in	Sat Jul 21 22:09:49 2007
+@@ -321,7 +321,7 @@ aclocal_DATA = ost_check2.m4
+ scriptdir = $(bindir)
+ script_DATA = ccgnu2-config
+ libccgnu2_la_LIBADD = @THREAD_LIBS@
+-libccgnu2_la_LDFLAGS = $(RELEASE) $(SHARED_FLAGS)
++libccgnu2_la_LDFLAGS = $(LT_VERSION) $(SHARED_FLAGS)
+ noinst_DATA = @STAGE2@
+ libccgnu2_la_SOURCES = thread.cpp mutex.cpp semaphore.cpp threadkey.cpp \
+ 	friends.cpp event.cpp slog.cpp dir.cpp file.cpp inaddr.cpp \
+@@ -331,7 +331,7 @@ libccgnu2_la_SOURCES = thread.cpp mutex.cpp semaphore.
+ 	nat.cpp runlist.cpp assoc.cpp pointer.cpp linked.cpp map.cpp \
+ 	cidr.cpp private.h nat.h
+ 
+-@EXTRAS_TRUE@libccext2_la_LDFLAGS = @BASE_LIB@ @THREAD_LIBS@ @SSL_LIBS@ @ZSTREAM_LIBS@ $(RELEASE) $(SHARED_FLAGS)
++@EXTRAS_TRUE@libccext2_la_LDFLAGS = @BASE_LIB@ @THREAD_LIBS@ @SSL_LIBS@ @ZSTREAM_LIBS@ $(LT_VERSION) $(SHARED_FLAGS)
+ @EXTRAS_TRUE@@GETOPT_LONG_TRUE@optincludedir = $(includedir)/cc++2
+ @EXTRAS_TRUE@@GETOPT_LONG_TRUE@optinclude_HEADERS = getopt.h
+ @EXTRAS_TRUE@@GETOPT_LONG_FALSE@libccext2_la_SOURCES = numbers.cpp zstream.cpp socketport.cpp \

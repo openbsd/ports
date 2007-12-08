@@ -1,0 +1,12 @@
+$OpenBSD: patch-m4_ost_pthread_m4,v 1.1.1.1 2007/12/08 05:22:09 jakemsr Exp $
+--- m4/ost_pthread.m4.orig	Sat Jul 21 22:26:34 2007
++++ m4/ost_pthread.m4	Sat Jul 21 22:26:49 2007
+@@ -232,7 +232,7 @@ AC_LANG_RESTORE
+ 		ost_cv_rt_library="-lrt"
+ 		AC_DEFINE(HAVE_HIRES_TIMER, [1], [have hires])
+ 	],[
+-		AC_CHECK_FUNCS(clock_gettime,[
++		AC_CHECK_FUNCS(clock_nanosleep,[
+ 			AC_DEFINE(HAVE_HIRES_TIMER, [1], [have hires])
+ 		])
+ 	])
