@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.573 2007/11/29 13:54:13 okan Exp $
+# $OpenBSD: Makefile,v 1.574 2007/12/08 05:25:31 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -35,6 +35,7 @@
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
      SUBDIR += ccache
+     SUBDIR += ccrtp
      SUBDIR += cflow
      SUBDIR += check
      SUBDIR += chmlib
@@ -43,6 +44,7 @@
      SUBDIR += cln
      SUBDIR += cmake
      SUBDIR += cook
+     SUBDIR += commoncpp
      SUBDIR += cpphs
      SUBDIR += cppunit
      SUBDIR += cscope
