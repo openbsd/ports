@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib-src_portmixer_src_px_mixer_c,v 1.1 2007/11/23 10:07:41 ajacoutot Exp $
---- lib-src/portmixer/src/px_mixer.c.orig	Thu May 17 21:55:50 2007
-+++ lib-src/portmixer/src/px_mixer.c	Sun Oct 28 02:48:11 2007
+$OpenBSD: patch-lib-src_portmixer_src_px_mixer_c,v 1.2 2007/12/08 11:08:38 ajacoutot Exp $
+--- lib-src/portmixer/src/px_mixer.c.orig	Tue Nov 13 23:02:44 2007
++++ lib-src/portmixer/src/px_mixer.c	Sat Nov 24 12:19:08 2007
 @@ -35,7 +35,7 @@
   * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   *
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib-src_portmixer_src_px_mixer_c,v 1.1 2007/11/23 10:07:41 ajaco
  #include "portmixer.h"
  #include "px_mixer.h"
  
-@@ -122,6 +122,9 @@ PxMixer *Px_OpenMixer(PaStream *pa_stream, int i)
+@@ -124,6 +124,9 @@ PxMixer *Px_OpenMixer(PaStream *pa_stream, int i)
        return NULL;
     }
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-lib-src_portmixer_src_px_mixer_c,v 1.1 2007/11/23 10:07:41 ajaco
     switch (Pa_GetStreamHostApiType(pa_stream))
     {
  #if defined(PX_USE_WIN_MME)
-@@ -154,6 +157,22 @@ PxMixer *Px_OpenMixer(PaStream *pa_stream, int i)
+@@ -156,6 +159,22 @@ PxMixer *Px_OpenMixer(PaStream *pa_stream, int i)
        break;
  #endif
     }

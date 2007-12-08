@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib-src_portmixer_src_px_unix_oss_c,v 1.1 2007/11/23 10:07:41 ajacoutot Exp $
---- lib-src/portmixer/src/px_unix_oss.c.orig	Thu May 17 21:55:50 2007
-+++ lib-src/portmixer/src/px_unix_oss.c	Sun Oct 28 14:39:03 2007
+$OpenBSD: patch-lib-src_portmixer_src_px_unix_oss_c,v 1.2 2007/12/08 11:08:38 ajacoutot Exp $
+--- lib-src/portmixer/src/px_unix_oss.c.orig	Sat Nov 24 12:28:16 2007
++++ lib-src/portmixer/src/px_unix_oss.c	Sat Nov 24 12:31:44 2007
 @@ -41,8 +41,12 @@
  #elif defined(__FreeBSD__)
  #include <sys/soundcard.h>
@@ -51,23 +51,24 @@ $OpenBSD: patch-lib-src_portmixer_src_px_unix_oss_c,v 1.1 2007/11/23 10:07:41 aj
  
     do {
        dev->fd = open(name, O_RDWR);
-@@ -161,14 +166,22 @@ int OpenMixer_Unix_OSS(px_mixer *Px, int index)
+@@ -160,7 +165,11 @@ int OpenMixer_Unix_OSS(px_mixer *Px, int index)
     info->playback.num = 0;   
     
     do {
 +#ifdef PX_USE_PA_V18
-       info->capture.name = PaOSS_GetInputDevice(Px->pa_stream);
+       info->capture.name = PaOSS_GetStreamInputDevice(Px->pa_stream);
 +#else
 +      info->capture.name = (Pa_GetDeviceInfo(index))->name;
 +#endif
+ 
        if (info->capture.name) {
           if (!open_mixer(&info->capture, SOUND_MIXER_READ_RECMASK)) {
-             break;
+@@ -168,7 +177,11 @@ int OpenMixer_Unix_OSS(px_mixer *Px, int index)
           }
        }
        
 +#ifdef PX_USE_PA_V18
-       info->playback.name = PaOSS_GetOutputDevice(Px->pa_stream);
+       info->playback.name = PaOSS_GetStreamOutputDevice(Px->pa_stream);
 +#else
 +      info->playback.name = (Pa_GetDeviceInfo(index))->name;
 +#endif

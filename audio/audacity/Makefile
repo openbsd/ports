@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2007/11/23 10:07:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2007/12/08 11:08:38 ajacoutot Exp $
 
 COMMENT=	free audio editor
 
-V=		1.3.3
+V=		1.3.4
 DISTNAME=	audacity-src-${V}
-PKGNAME=	audacity-${V}p3
+PKGNAME=	audacity-${V}
 CATEGORIES=     audio
+
+EXTRACT_SUFX=	.tar.bz2
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=audacity/}
 
@@ -29,7 +31,8 @@ LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_aui,wx_gtk2_html,wx_gtk2_adv,wx_gt
 		vorbis.>=5,vorbisfile.>=4,vorbisenc.>=2::audio/libvorbis \
 		id3tag.>=2::audio/libid3tag \
 		mad.>=2::audio/libmad \
-		portaudio::audio/portaudio-svn
+		portaudio::audio/portaudio-svn \
+		SoundTouch::audio/soundtouch
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=		Yes
@@ -45,6 +48,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-unicode \
+			--enable-vamp \
+			--enable-ladspa \
 			--with-id3=system \
 			--with-vorbis=system \
 			--with-libflac=system \
@@ -52,12 +57,11 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-libsndfile=system \
 			--with-libsamplerate=system \
 			--with-expat=system \
+			--with-soundtouch=system \
 			--without-libresample \
 			--without-libtwolame \
 			--with-nyquist=local \
-			--with-ladspa \
 			--with-portmixer \
-			--with-soundtouch=local \
 			--with-portaudio=v19 \
 			--with-pa-include=${LOCALBASE}/include \
 			--with-help

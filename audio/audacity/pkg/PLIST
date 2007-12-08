@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/06/06 09:35:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/12/08 11:08:38 ajacoutot Exp $
 bin/audacity
 @man man/man1/audacity.1
 share/applications/
 share/applications/audacity.desktop
 share/audacity/
+share/audacity/audacity.xpm
 share/audacity/nyquist/
 share/audacity/nyquist/bug.lsp
 share/audacity/nyquist/dspprims.lsp
@@ -25,14 +26,18 @@ share/audacity/nyquist/test.lsp
 share/audacity/nyquist/xlinit.lsp
 share/audacity/plug-ins/
 share/audacity/plug-ins/SilenceMarker.ny
+share/audacity/plug-ins/beat.ny
 share/audacity/plug-ins/clicktrack.ny
 share/audacity/plug-ins/crossfadein.ny
 share/audacity/plug-ins/crossfadeout.ny
 share/audacity/plug-ins/delay.ny
+share/audacity/plug-ins/equalabel.ny
 share/audacity/plug-ins/highpass.ny
 share/audacity/plug-ins/lowpass.ny
 share/audacity/plug-ins/pluck.ny
+share/audacity/plug-ins/rissetdrum.ny
 share/audacity/plug-ins/tremolo.ny
+share/audacity/plug-ins/vocoder.ny
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/audacity.mo
@@ -62,6 +67,7 @@ share/locale/gl/LC_MESSAGES/audacity.mo
 share/locale/hu/LC_MESSAGES/audacity.mo
 share/locale/it/LC_MESSAGES/audacity.mo
 share/locale/ja/LC_MESSAGES/audacity.mo
+share/locale/ko/LC_MESSAGES/audacity.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/audacity.mo
@@ -74,7 +80,7 @@ share/locale/oc/
 share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/audacity.mo
 share/locale/pl/LC_MESSAGES/audacity.mo
-share/locale/pt/LC_MESSAGES/audacity.mo
+share/locale/pt_BR/LC_MESSAGES/audacity.mo
 share/locale/ro/LC_MESSAGES/audacity.mo
 share/locale/ru/LC_MESSAGES/audacity.mo
 share/locale/sk/LC_MESSAGES/audacity.mo
