@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2007/12/08 22:39:36 eric Exp $
 
 COMMENT=		vector graphics library
 
-DISTNAME=		cairo-1.4.10
-SHARED_LIBS +=  cairo                7.0      # .13.5
+DISTNAME=		cairo-1.4.12
+SHARED_LIBS=		cairo   7.1
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://cairographics.org/introduction
 
-MAINTAINER=		Eric Faurot <eric.faurot@gmail.com>
+MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
 WANTLIB=		X11.>=10 Xau Xdmcp expat Xrender freetype fontconfig m z
 
