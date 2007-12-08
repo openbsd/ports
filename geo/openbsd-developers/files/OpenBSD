@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.19 2007/11/16 20:50:01 landry Exp $
+# $OpenBSD: OpenBSD,v 1.20 2007/12/08 17:37:17 matthieu Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -29,7 +29,7 @@
 42.49538	-82.89954	"nick"		# Nick Holland
 43.084950	-89.361468	"jolan"		# Jolan Luff
 43.30		5.37		"aanriot"	# Alexandre Anriot
-43.5826		1.4376		"matthieu"	# Matthieu Herrb
+43.61495	1.44094		"matthieu"	# Matthieu Herrb
 43.5826		1.4376		"miod"		# Miod Vallat
 43.633		-79.500		"brad"		# Brad Smith
 43.66		7.18		"pyr"		# Pierre-Yves Ritschard
