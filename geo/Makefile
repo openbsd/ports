@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 14:05:43 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/08 19:48:46 eric Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += geos
@@ -16,5 +16,6 @@
      SUBDIR += p5-Geo-Inverse
      SUBDIR += p5-Geo-StreetAddress-US
      SUBDIR += p5-Geo-TigerLine
+     SUBDIR += postgis
 
 .include <bsd.port.subdir.mk>
