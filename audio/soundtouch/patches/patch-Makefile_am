@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2007/12/08 11:05:58 ajacoutot Exp $
+--- Makefile.am.orig	Sat Nov 24 14:56:18 2007
++++ Makefile.am	Sat Nov 24 14:59:39 2007
+@@ -28,10 +28,11 @@ SUBDIRS=include source
+ 
+ 
+ # list files that are documentation to be packaged in a release tarball and installed
+-pkgdoc_DATA=COPYING.TXT README.html
++pkgdoc_DATA=README.html
+ 
+ # extra data files that are to be pacakged in a release tarball and installed into the data directory
+ #pkgdata_DATA=
++pkgdocdir=$(datadir)/doc/soundtouch
+ 
+ # sets up for soundtouch.m4 to be installed
+ m4datadir=$(datadir)/aclocal

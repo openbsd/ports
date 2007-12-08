@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_STTypes_h,v 1.1.1.1 2007/12/08 11:05:58 ajacoutot Exp $
+--- include/STTypes.h.orig	Sat Nov 24 13:17:03 2007
++++ include/STTypes.h	Sat Nov 24 13:17:37 2007
+@@ -92,7 +92,9 @@ namespace soundtouch
+     /// However, if you're having difficulties getting the optimized routines 
+     /// compiled with your compler (e.g. some gcc compiler versions may be picky), 
+     /// you may wish to disable the optimizations to make the library compile.
++#ifndef __OpenBSD__
+     #define ALLOW_OPTIMIZATIONS     1
++#endif
+ 
+ 
+     // If defined, allows the SIMD-optimized routines to take minor shortcuts 

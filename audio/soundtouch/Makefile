@@ -1,0 +1,44 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2007/12/08 11:05:58 ajacoutot Exp $
+
+COMMENT=	tempo/pitch audio processing library
+
+DISTNAME=	soundtouch-1.3.1
+SHARED_LIBS +=	BPM		0.0      # .0.0
+SHARED_LIBS +=	SoundTouch	0.0      # .0.0
+CATEGORIES=	audio devel
+
+HOMEPAGE=	http://www.surina.net/soundtouch/
+
+# LGPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${HOMEPAGE}
+
+WANTLIB=	c m stdc++
+
+BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+		:automake-${AUTOMAKE_VERSION}.*:devel/automake/${AUTOMAKE_VERSION}
+
+USE_LIBTOOL=	Yes
+
+AUTOCONF_VERSION=2.59
+AUTOMAKE_VERSION=1.9
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+MAKE_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		CXXFLAGS="${CXXFLAGS}"
+
+pre-configure:
+	cd ${WRKSRC} && \
+		touch NEWS README AUTHORS ChangeLog && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
+
+.include <bsd.port.mk>

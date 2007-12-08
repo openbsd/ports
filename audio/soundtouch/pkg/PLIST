@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/08 11:05:58 ajacoutot Exp $
+%%SHARED%%
+bin/soundstretch
+include/soundtouch/
+include/soundtouch/BPMDetect.h
+include/soundtouch/FIFOSampleBuffer.h
+include/soundtouch/FIFOSamplePipe.h
+include/soundtouch/STTypes.h
+include/soundtouch/SoundTouch.h
+include/soundtouch/soundtouch_config.h
+lib/libBPM.a
+lib/libBPM.la
+lib/libSoundTouch.a
+lib/libSoundTouch.la
+lib/pkgconfig/
+lib/pkgconfig/soundtouch-1.0.pc
+share/aclocal/
+share/aclocal/soundtouch.m4
+share/doc/soundtouch/
+share/doc/soundtouch/README.html

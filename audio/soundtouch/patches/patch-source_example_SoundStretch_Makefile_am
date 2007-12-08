@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_example_SoundStretch_Makefile_am,v 1.1.1.1 2007/12/08 11:05:58 ajacoutot Exp $
+--- source/example/SoundStretch/Makefile.am.orig	Sat Nov 24 13:45:12 2007
++++ source/example/SoundStretch/Makefile.am	Sat Nov 24 13:45:57 2007
+@@ -47,7 +47,7 @@ soundstretch_LDADD=../../SoundTouch/libSoundTouch.la .
+ soundstretch_LDFLAGS=-s
+ 
+ ## additional compiler flags
+-soundstretch_CXXFLAGS=-O3 -I../bpm
++soundstretch_CXXFLAGS=-I../bpm
+ 
+ #clean-local: 
+ #	-rm -f additional-files-to-remove-on-make-clean
