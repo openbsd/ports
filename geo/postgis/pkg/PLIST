@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/08 19:47:47 eric Exp $
+bin/pgsql2shp
+bin/shp2pgsql
+lib/postgresql/liblwgeom.so
+@comment lib/postgresql/liblwgeom.so.1
+libexec/postgis/
+libexec/postgis/utils/
+libexec/postgis/utils/README
+libexec/postgis/utils/create_undef.pl
+libexec/postgis/utils/postgis_proc_upgrade.pl
+libexec/postgis/utils/postgis_restore.pl
+libexec/postgis/utils/profile_intersects.pl
+libexec/postgis/utils/test_estimation.pl
+libexec/postgis/utils/test_joinestimation.pl
+@man man/man1/pgsql2shp.1
+@man man/man1/shp2pgsql.1
+share/doc/postgis/
+share/doc/postgis/README.postgis
+share/doc/postgis/postgis.html
+share/postgresql/contrib/
+share/postgresql/contrib/lwpostgis.sql
+share/postgresql/contrib/lwpostgis_upgrade.sql
+share/postgresql/contrib/spatial_ref_sys.sql
