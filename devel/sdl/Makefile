@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2007/11/18 09:39:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2007/12/09 13:40:16 ajacoutot Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.12
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}p2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -23,8 +23,8 @@ MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
 MASTER_SITES0=	http://dev.beastie.hu/ \
 		http://www.beastie.hu/
 
-FLAVORS=	sun esd arts aa caca no_x11 altivec
-FLAVOR?=	sun
+FLAVORS=	esd arts aa caca no_x11 altivec
+FLAVOR?=
 
 USE_LIBTOOL=	Yes
 MODULES=	converters/libiconv
@@ -45,7 +45,8 @@ CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-oss \
 		 --disable-ltdl \
-		 --enable-pthread-sem
+		 --enable-pthread-sem \
+		 --enable-sunaudio
 
 .include <bsd.own.mk>
 USE_GCC3?=No
@@ -55,12 +56,6 @@ BUILD_DEPENDS+=	nasm::devel/nasm
 CONFIGURE_ARGS+= --enable-nasm
 .else
 CONFIGURE_ARGS+= --disable-nasm
-.endif
-
-.if ${FLAVOR:L:Msun}
-CONFIGURE_ARGS+= --enable-sunaudio
-.else
-CONFIGURE_ARGS+= --disable-sunaudio
 .endif
 
 .if ${FLAVOR:L:Mesd}
