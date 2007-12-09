@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.7 2007/11/28 08:48:32 steven Exp $
---- configure.ac.orig	Sat Nov 24 14:05:48 2007
-+++ configure.ac	Mon Nov 26 16:06:45 2007
+$OpenBSD: patch-configure_ac,v 1.8 2007/12/09 10:56:31 steven Exp $
+--- configure.ac.orig	Fri Dec  7 15:36:58 2007
++++ configure.ac	Sat Dec  8 21:03:07 2007
 @@ -610,6 +610,7 @@ if test "x$enable_consoleui" = "xyes"; then
  		# ncursesw was not found. Look for plain old ncurses
  		enable_consoleui=yes
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure_ac,v 1.7 2007/11/28 08:48:32 steven Exp $
  		AC_CHECK_LIB(panel, update_panels, [GNT_LIBS="$GNT_LIBS -lpanel"], [enable_consoleui=no])
  		AC_DEFINE(NO_WIDECHAR, 1, [Define to 1 if you don't have wide-character support.])
  		if test x"$ac_ncurses_includes" != "x"; then
-@@ -823,7 +824,7 @@ else
+@@ -831,7 +832,7 @@ else
  	if test "$ac_silc_libs" != "no"; then
  		SILC_LIBS="-L$ac_silc_libs"
  	fi
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure_ac,v 1.7 2007/11/28 08:48:32 steven Exp $
  	AC_CHECK_LIB(silcclient, silc_client_init, [silcclient=yes], , $SILC_LIBS)
  
  	if test "x$silcincludes" = "xyes" -a "x$silcclient" = "xyes"; then
-@@ -1510,8 +1511,13 @@ dnl ##################################################
+@@ -1518,8 +1519,13 @@ dnl ##################################################
  
  dnl These two are inverses of each other <-- stolen from evolution!
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-configure_ac,v 1.7 2007/11/28 08:48:32 steven Exp $
  	[enable_gnutls="$enableval"],
  	[enable_gnutls="yes"])
  
-@@ -1523,6 +1529,90 @@ AC_ARG_ENABLE(nss,
+@@ -1531,6 +1537,90 @@ AC_ARG_ENABLE(nss,
  msg_ssl="None. MSN, Novell Groupwise and Google Talk will not work without GnuTLS or NSS. OpenSSL is NOT usable!"
  
  dnl #
@@ -124,7 +124,7 @@ $OpenBSD: patch-configure_ac,v 1.7 2007/11/28 08:48:32 steven Exp $
  dnl # Check for GnuTLS if it's specified.
  dnl #
  if test "x$enable_gnutls" != "xno"; then
-@@ -1877,12 +1967,20 @@ fi
+@@ -1893,12 +1983,20 @@ fi
  
  AM_CONDITIONAL(USE_NSS, test "x$enable_nss" = "xyes")
  
