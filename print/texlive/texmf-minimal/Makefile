@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/10 14:50:50 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/09 10:49:34 steven Exp $
 
 COMMENT=		minimal texmf tree for TeXLive
 
@@ -6,7 +6,7 @@ V=			2007
 # distfile generation number (distfiles can change for same TeXLive version)
 G=			g0
 DISTNAME=		texlive_texmf-minimal-$V$G
-PKGNAME=		texlive_texmf-minimal-$Vp0
+PKGNAME=		texlive_texmf-minimal-$Vp1
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

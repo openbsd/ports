@@ -1,3 +1,0 @@
-You may wish to remove the following directories:
-	${PREFIX}/share/texmf-config
-	${PREFIX}/share/texmf-var

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/11/06 06:33:51 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/12/09 10:49:34 steven Exp $
 @conflict teTeX_base-*
 @conflict ht-*
 @unexec texlinks -u
@@ -486,3 +486,9 @@ share/texmf/xdvi/xdvi.cfg
 @exec fmtutil-sys --all > /dev/null 2>&1
 @exec updmap-sys > /dev/null 2>&1
 @exec texlinks
+@extra share/texmf/ls-R
+@extra share/texmf-dist/ls-R
+@extra share/texmf-var/ls-R
+@extra share/texmf-config/ls-R
+@extraunexec rm -rf %D/share/texmf-var/
+@extraunexec rm -rf %D/share/texmf-config/
