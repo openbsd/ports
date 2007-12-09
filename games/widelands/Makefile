@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/02 13:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/09 22:37:30 simon Exp $
 
 COMMENT=	economic and military simulation game
 
@@ -26,9 +26,8 @@ LIB_DEPENDS=	SDL_gfx::devel/sdl-gfx \
 		SDL_net::devel/sdl-net \
 		SDL_ttf::devel/sdl-ttf
 
-BUILD_DEPENDS=	::devel/scons
-
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		devel/scons
 
 PYTHON_VER=	2.5
 
@@ -37,7 +36,7 @@ WRKDIST=	${WRKDIR}/widelands
 USE_X11=	Yes
 NO_REGRESS=	Yes
 
-SCONS_OPTS=	\
+MODSCONS_FLAGS=	\
 	install_prefix=${PREFIX} \
 	bindir=${PREFIX}/bin \
 	datadir=${PREFIX}/share/widelands \
@@ -46,15 +45,8 @@ SCONS_OPTS=	\
 	extra_include_path=${LOCALBASE}/include \
 	extra_lib_path="${LOCALBASE}/lib"
 
-
 pre-configure:
 	perl -pi -e 's,^#!/usr/bin/python,#!${LOCALBASE}/bin/python${PYTHON_VER},' \
 		${WRKSRC}/utils/buildlocale.py
-
-do-build:
-	@${SETENV} ${MAKE_ENV} scons -C ${WRKSRC} ${SCONS_OPTS}
-
-do-install:
-	@${SETENV} ${MAKE_ENV} scons -C ${WRKSRC} install ${SCONS_OPTS}
 
 .include <bsd.port.mk>
