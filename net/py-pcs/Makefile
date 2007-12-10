@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/06 09:56:30 pyr Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/10 21:09:09 martynas Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		Python Packet Construction Set
 DISTNAME=		pcs-0.5
 PKGNAME=		py-${DISTNAME}
 
-CATEGORIES=		net python
+CATEGORIES=		net
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pcs/}
 

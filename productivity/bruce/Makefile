@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/06 15:32:08 okan Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/10 21:09:09 martynas Exp $
 
 COMMENT=		Python-based presentation tool
 
 DISTNAME=		bruce-1.2.1
 
-CATEGORIES=		productivity python
+CATEGORIES=		productivity
 
 HOMEPAGE=		http://bruce.python-hosting.com/
 
