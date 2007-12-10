@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
@@ -7,7 +7,7 @@ REVISION=		2306
 DISTNAME=		RuleDispatch
 PKGNAME=		py-ruledispatch-${VERSION}r${REVISION}p0
 
-CATEGORIES=		devel lang/python
+CATEGORIES=		devel
 
 HOMEPAGE=		http://peak.telecommunity.com/
 

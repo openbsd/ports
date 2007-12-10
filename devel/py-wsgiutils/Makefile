@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
 
 COMMENT=		libraries for WSGI development
 
@@ -6,7 +6,7 @@ V=			0.7
 DISTNAME=		WSGIUtils-${V}
 PKGNAME=		py-wsgiutils-${V}p0
 
-CATEGORIES=		devel textproc www lang/python
+CATEGORIES=		devel textproc www
 
 HOMEPAGE=		http://www.owlfish.com/software/wsgiutils/
 

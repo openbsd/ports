@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
 
 COMMENT=		Object Relational Manager
 
@@ -6,7 +6,7 @@ V=			0.9.0
 DISTNAME=		SQLObject-${V}
 PKGNAME=		py-sqlobject-${V}p0
 
-CATEGORIES=		databases lang/python
+CATEGORIES=		databases
 
 HOMEPAGE=		http://www.sqlobject.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:52 martynas Exp $
 
 COMMENT=		random assortment of WSGI servers, middleware
 
@@ -7,7 +7,7 @@ REVISION=		2311
 DISTNAME=		flup-${VERSION}
 PKGNAME=		py-flup-${VERSION}r${REVISION}p0
 
-CATEGORIES=		www lang/python
+CATEGORIES=		www
 
 HOMEPAGE=		http://trac.saddi.com/flup
 

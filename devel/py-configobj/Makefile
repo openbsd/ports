@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
 
 COMMENT=		config file reader and writer
 
 DISTNAME=		configobj-4.4.0
 PKGNAME=		py-${DISTNAME}p0
 
-CATEGORIES=		devel lang/python
+CATEGORIES=		devel
 
 HOMEPAGE=		http://www.voidspace.org.uk/python/configobj.html
 

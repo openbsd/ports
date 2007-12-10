@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/10 21:07:52 martynas Exp $
 
 COMMENT=		HTML form validation, generation, and conversion
 
@@ -6,7 +6,7 @@ V=			0.7.1
 DISTNAME=		FormEncode-${V}
 PKGNAME=		py-formencode-${V}p1
 
-CATEGORIES=		www lang/python
+CATEGORIES=		www
 
 HOMEPAGE=		http://www.formencode.org/
 

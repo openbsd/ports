@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:52 martynas Exp $
 
 COMMENT=		Python web development megaframework
 
@@ -6,7 +6,7 @@ V=			1.0.2.2
 DISTNAME=		TurboGears-${V}
 PKGNAME=		py-turbogears-${V}p0
 
-CATEGORIES=		www lang/python
+CATEGORIES=		www
 
 HOMEPAGE=		http://www.turbogears.org/
 

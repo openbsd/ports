@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/10 21:07:51 martynas Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64 powerpc
 
@@ -8,7 +8,7 @@ V=			0.9.0
 DISTNAME=		py-${V}
 PKGNAME=		py-py-${V}p0
 
-CATEGORIES=		devel lang/python
+CATEGORIES=		devel
 
 HOMEPAGE=		http://codespeak.net/pypy/
 

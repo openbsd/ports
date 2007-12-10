@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
 
 COMMENT=		discovery-based unittest extension
 
 DISTNAME=		nose-0.9.3
 PKGNAME=		py-${DISTNAME}p0
 
-CATEGORIES=		devel lang/python
+CATEGORIES=		devel
 
 HOMEPAGE=		http://somethingaboutorange.com/mrl/projects/nose/
 

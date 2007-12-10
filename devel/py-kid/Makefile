@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
 
 COMMENT=		template language for XML based vocabularies
 
@@ -6,7 +6,7 @@ V=			0.9.5
 DISTNAME=		kid-${V}
 PKGNAME=		py-${DISTNAME}p0
 
-CATEGORIES=		devel lang/python
+CATEGORIES=		devel
 
 HOMEPAGE=		http://www.kid-templating.org/
 

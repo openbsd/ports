@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
 
 COMMENT=		class and function decorators
 
@@ -6,7 +6,7 @@ V=			1.4
 DISTNAME=		DecoratorTools-${V}
 PKGNAME=		py-decoratortools-${V}p0
 
-CATEGORIES=		devel lang/python
+CATEGORIES=		devel
 
 HOMEPAGE=		http://cheeseshop.python.org/pypi/DecoratorTools
 

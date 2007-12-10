@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/08 22:00:36 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:52 martynas Exp $
 
 COMMENT=	high-level Python web framework
 
@@ -7,7 +7,7 @@ V=		0.96
 LNAME=		django
 DISTNAME=	Django-${VP}
 PKGNAME=	py-${LNAME}-${VP}
-CATEGORIES=	www lang/python
+CATEGORIES=	www
 
 HOMEPAGE=	http://www.djangoproject.com/
 
