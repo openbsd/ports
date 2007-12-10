@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2007/10/29 19:29:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2007/12/10 21:24:10 eric Exp $
 
      SUBDIR += arc
      SUBDIR += bzip
@@ -47,5 +47,6 @@
      SUBDIR += zip
      SUBDIR += zipios
      SUBDIR += zoo
+     SUBDIR += zziplib
 
 .include <bsd.port.subdir.mk>
