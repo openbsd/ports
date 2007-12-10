@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/12/10 21:22:48 eric Exp $
+@lib lib/libzzip.so.${LIBzzip_VERSION}
+@lib lib/libzzipfseeko.so.${LIBzzipfseeko_VERSION}
+@lib lib/libzzipmmapped.so.${LIBzzipmmapped_VERSION}
+@lib lib/libzzipwrap.so.${LIBzzipwrap_VERSION}

@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/12/10 21:22:48 eric Exp $
+--- Makefile.in.orig	Tue May  8 12:59:06 2007
++++ Makefile.in	Tue May  8 12:59:18 2007
+@@ -233,8 +233,8 @@ AUTOMAKE_OPTIONS = 1.4 foreign dist-bzip2
+ ACLOCAL_AMFLAGS = -I m4
+ WANT_AUTOMAKE = 1.7
+ WANT_AUTOCONF = 2.57
+-DIST_SUBDIRS = zzip zzipwrap bins test docs  SDL
+-SUBDIRS = zzip zzipwrap bins test docs @SDL@
++DIST_SUBDIRS = zzip zzipwrap bins test SDL
++SUBDIRS = zzip zzipwrap bins test @SDL@
+ MSVC8 = msvc8/README.TXT msvc8/zip.exe msvc8/test1.zip msvc8/test.zip \
+ msvc8/zzdir.vcproj    msvc8/zzipself.vcproj     msvc8/zzip.vcproj \
+ msvc8/zziplib.sln     msvc8/zzipsetstub.sln     msvc8/zzobfuscated.sln \
