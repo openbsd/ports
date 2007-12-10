@@ -1,7 +1,10 @@
-# $OpenBSD: gnustep.port.mk,v 1.4 2007/08/26 21:49:07 ajacoutot Exp $
+# $OpenBSD: gnustep.port.mk,v 1.5 2007/12/10 16:18:22 ajacoutot Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS=	i386 amd64
+
+# plmerge needs to create a lock directory under the user's homedir
+NO_SYSTRACE=	Yes
 
 SHARED_ONLY=	Yes
 
