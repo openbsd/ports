@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2007/10/26 22:56:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2007/12/10 20:07:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	single process stack of system monitors for GTK+2 (server)
 COMMENT-client=	single process stack of system monitors for GTK+2
 
-V=		2.3.0
+V=		2.3.1
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
