@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2007/11/26 20:54:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2007/12/11 21:42:38 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -12,6 +12,7 @@
      SUBDIR += devhelp
      SUBDIR += doc-utils
      SUBDIR += eel
+     SUBDIR += empathy
      SUBDIR += eog
      SUBDIR += file-roller
      SUBDIR += gail
