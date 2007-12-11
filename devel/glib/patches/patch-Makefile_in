@@ -1,5 +1,6 @@
---- Makefile.in.orig	Thu Mar 15 10:48:50 2001
-+++ Makefile.in	Thu Sep 20 00:13:08 2001
+$OpenBSD: patch-Makefile_in,v 1.5 2007/12/11 10:57:25 jakemsr Exp $
+--- Makefile.in.orig	Thu Mar 15 07:48:50 2001
++++ Makefile.in	Sun Oct 21 01:31:05 2007
 @@ -96,9 +96,9 @@ VERSION = @VERSION@
  
  AUTOMAKE_OPTIONS = 1.4
@@ -21,7 +22,7 @@
  
  
  noinst_PROGRAMS = testglib testgdate testgdateparser
-@@ -629,7 +629,7 @@ uninstall-am: uninstall-libLTLIBRARIES u
+@@ -629,7 +629,7 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-binSC
  		uninstall-configincludeDATA uninstall-m4dataDATA \
  		uninstall-pkgconfigDATA uninstall-glibincludeHEADERS
  uninstall: uninstall-recursive

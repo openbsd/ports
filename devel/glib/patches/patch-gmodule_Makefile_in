@@ -1,6 +1,7 @@
---- gmodule/Makefile.in.orig	Thu Mar 15 10:48:51 2001
-+++ gmodule/Makefile.in	Thu Sep 20 00:13:09 2001
-@@ -109,7 +109,7 @@ libglib = $(top_builddir)/libglib.la # -
+$OpenBSD: patch-gmodule_Makefile_in,v 1.4 2007/12/11 10:57:25 jakemsr Exp $
+--- gmodule/Makefile.in.orig	Thu Mar 15 07:48:51 2001
++++ gmodule/Makefile.in	Sun Oct 21 01:31:06 2007
+@@ -109,7 +109,7 @@ libglib = $(top_builddir)/libglib.la # -lglib
  lib_LTLIBRARIES = libgmodule.la libgplugin_a.la libgplugin_b.la
  
  libgmodule_la_SOURCES = gmodule.c

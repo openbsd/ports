@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.59 2007/12/11 10:57:25 jakemsr Exp $
 # Uses pthreads
 
 COMMENT=	useful routines for C programming
 
 DISTNAME=	glib-1.2.10
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS +=	glib                 1.2      # .1.2
 SHARED_LIBS +=	gmodule              1.2      # .1.2
 SHARED_LIBS +=	gthread              1.2      # .1.2

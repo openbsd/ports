@@ -1,3 +1,4 @@
+$OpenBSD: patch-glib-config_in,v 1.6 2007/12/11 10:57:25 jakemsr Exp $
 --- glib-config.in.orig	Sat Oct 28 00:35:30 2000
 +++ glib-config.in	Wed Jan  9 12:19:36 2002
 @@ -88,7 +88,7 @@ if test "$echo_cflags" = "yes"; then

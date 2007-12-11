@@ -1,5 +1,6 @@
---- configure.orig	Thu Mar 15 10:44:01 2001
-+++ configure	Mon Oct  1 21:52:58 2001
+$OpenBSD: patch-configure,v 1.5 2007/12/11 10:57:25 jakemsr Exp $
+--- configure.orig	Thu Mar 15 07:44:01 2001
++++ configure	Sun Oct 21 01:39:52 2007
 @@ -4385,6 +4385,13 @@ else
  fi
  
@@ -14,20 +15,21 @@
  if test "$G_MODULE_IMPL" = "G_MODULE_IMPL_DL"; then
  	case "$host_os" in
  	  linux*)
-@@ -5183,6 +5190,12 @@ G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_REE
+@@ -5183,6 +5190,13 @@ G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_REENTRANT" # good
  		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
  		# -mthreads flag.
  		;;
 +	*-openbsd*)
 +		G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_THREAD_SAFE"
-+		  if test "x$G_THREAD_LIBS" = "x-lc_r"; then
++		  if test "x$G_THREAD_LIBS" = "x-lc_r" -o \
++			"x$G_THREAD_LIBS" = "x-lpthread" ; then
 +		    G_THREAD_LIBS="-pthread"
 +		  fi
 +		;;
      esac
  
      # if we are not finding the ctime_r function, then we probably are
-@@ -5468,8 +5481,6 @@ EOF
+@@ -5468,8 +5482,6 @@ EOF
  
  
  
