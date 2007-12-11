@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/11 19:49:43 merdely Exp $
 
 COMMENT=	match globbing patterns against text
 
 MODULES=	cpan
-DISTNAME=	Text-Glob-0.06
+DISTNAME=	Text-Glob-0.08
 CATEGORIES=	textproc
 
 # same as perl
