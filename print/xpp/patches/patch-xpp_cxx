@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpp_cxx,v 1.1.1.1 2006/10/22 12:02:11 mbalmer Exp $
---- xpp.cxx.orig	Mon Dec  6 20:00:04 2004
-+++ xpp.cxx	Mon Aug 22 10:19:54 2005
-@@ -85,6 +85,10 @@ printFiles::printFiles(int  argc, /* I -
+$OpenBSD: patch-xpp_cxx,v 1.2 2007/12/11 08:00:06 jakemsr Exp $
+--- xpp.cxx.orig	Mon Dec  6 11:00:04 2004
++++ xpp.cxx	Wed Oct 31 04:33:00 2007
+@@ -85,6 +85,10 @@ printFiles::printFiles(int  argc, /* I - Number of com
    num_copies  = 1;
    priority    = 50;
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-xpp_cxx,v 1.1.1.1 2006/10/22 12:02:11 mbalmer Exp $
    // Set CUPS server, port, and user
  
    CupsHelper::setup();
-@@ -250,7 +254,8 @@ printFiles::printFiles(int  argc, /* I -
+@@ -250,7 +254,8 @@ printFiles::printFiles(int  argc, /* I - Number of com
  
    // Remove trailing space in the end of the file list
  

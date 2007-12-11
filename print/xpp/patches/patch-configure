@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2007/12/11 08:00:06 jakemsr Exp $
+--- configure.orig	Wed Oct 31 04:36:29 2007
++++ configure	Wed Oct 31 04:37:47 2007
+@@ -2708,7 +2708,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lcups  $LIBS"
++LIBS="`cups-config --libs`  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2714 "configure"
+ #include "confdefs.h"
+@@ -2742,7 +2742,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lcups $LIBS"
++  LIBS="`cups-config --libs` $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6

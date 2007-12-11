@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/02 17:42:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/11 08:00:06 jakemsr Exp $
 
 COMMENT=		X Printing Panel
 
 DISTNAME=		xpp-1.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print sysutils
 
 HOMEPAGE=		http://cups.sourceforge.net/xpp/
@@ -15,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE stdc++ Xext GL X11 SM c m z
+WANTLIB=		GL ICE SM X11 Xau Xdmcp Xext c crypto m \
+			pthread stdc++ ssl z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cups/}
 
@@ -27,5 +29,7 @@ LIB_DEPENDS=		cups::print/cups \
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 USE_X11=		Yes
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

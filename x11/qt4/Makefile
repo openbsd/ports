@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2007/10/25 09:30:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.45 2007/12/11 08:00:06 jakemsr Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples for qt4
@@ -14,7 +14,7 @@ PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}p0
 PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
-PKGNAME-main=		qt4-${VERSION}p0
+PKGNAME-main=		qt4-${VERSION}p1
 FULLPKGNAME-html=	qt4-html-${VERSION}p0
 SHARED_LIBS=	Qt3Support 8.0 \
 		QtCore 7.0 \
@@ -202,6 +202,10 @@ MAKE_FLAGS+=LIB$l_VERSION=$v
 .endfor
 
 FAKE_FLAGS=$(MAKE_FLAGS) INSTALL_ROOT=${WRKINST}
+
+post-patch:
+	perl -pi -e "s#!!CUPS_LIBS!!#`cups-config --libs`#" \
+		${WRKSRC}/config.tests/unix/cups/cups.pro
 
 post-install:
 	# extra doc

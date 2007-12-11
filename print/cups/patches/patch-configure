@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2007/05/07 13:58:07 ajacoutot Exp $
---- configure.orig	Thu Nov 16 15:51:56 2006
-+++ configure	Mon May  7 15:49:38 2007
+$OpenBSD: patch-configure,v 1.5 2007/12/11 08:00:06 jakemsr Exp $
+--- configure.orig	Thu Nov 16 06:51:56 2006
++++ configure	Sun Oct 21 00:41:30 2007
 @@ -7910,8 +7910,8 @@ if test x$enable_shared != xno; then
  			DSOFLAGS="$DSOFLAGS -set_version,sgi2.6,-soname,\`basename \$@\` -shared \$(OPTIM)"
  			;;
@@ -21,3 +21,12 @@ $OpenBSD: patch-configure,v 1.4 2007/05/07 13:58:07 ajacoutot Exp $
  		else
  			OPTIM="$with_optim $OPTIM"
  		fi
+@@ -12405,7 +12405,7 @@ fi
+ 
+ 
+ 	if test x$ac_cv_header_pthread_h = xyes; then
+-				for flag in -lpthreads -lpthread -pthread; do
++				for flag in -pthread -lpthreads -lpthread ; do
+         		echo "$as_me:$LINENO: checking for pthread_create using $flag" >&5
+ echo $ECHO_N "checking for pthread_create using $flag... $ECHO_C" >&6
+ 			SAVELIBS="$LIBS"

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mainwindow_fl,v 1.1.1.1 2006/10/22 12:02:11 mbalmer Exp $
---- mainwindow.fl.orig	Mon Aug 22 13:07:48 2005
-+++ mainwindow.fl	Mon Aug 22 13:08:38 2005
-@@ -22,30 +22,18 @@ print=new printFiles(argc,argv,exitstat)
+$OpenBSD: patch-mainwindow_fl,v 1.2 2007/12/11 08:00:06 jakemsr Exp $
+--- mainwindow.fl.orig	Mon Dec  6 19:24:46 2004
++++ mainwindow.fl	Wed Oct 31 04:33:00 2007
+@@ -22,30 +22,18 @@ print=new printFiles(argc,argv,exitstat);
  if (exitstat != 0) return;} {}
      Fl_Window mainWindow {
        label {X Printing Panel}
@@ -100,7 +100,7 @@ $OpenBSD: patch-mainwindow_fl,v 1.1.1.1 2006/10/22 12:02:11 mbalmer Exp $
            code0 {\#include "xpp.h"}
          }
        }
-@@ -166,7 +154,7 @@ for (i = 0; i < print->dests[print->dest
+@@ -166,7 +154,7 @@ for (i = 0; i < print->dests[print->dest_pos].num_opti
        &(print->changed_options));} {}
      Fl_Window optionDialog {
        label {Printing Options} open
