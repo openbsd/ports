@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/11 20:22:27 merdely Exp $
 
 COMMENT=		perl module to query Sender Policy Framework
 
 DISTNAME=		Mail-SPF-Query-1.999.1
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		mail
 
-MAINTAINER=		David Hill <dhill@mindcry.org>
+MAINTAINER=		Michael Erdely <merdely@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

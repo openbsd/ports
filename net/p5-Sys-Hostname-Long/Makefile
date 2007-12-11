@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/11 20:21:56 merdely Exp $
 
 COMMENT=	perl module to get FQDN
 
 MODULES=	cpan
 DISTNAME=	Sys-Hostname-Long-1.4
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	net
 
-MAINTAINER=	David Hill <dhill@mindcry.org>	
+MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
