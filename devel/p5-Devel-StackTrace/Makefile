@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/12/11 20:56:00 simon Exp $
 
 COMMENT=	stack trace and stack trace frame objects
 
 MODULES=	cpan
-DISTNAME=	Devel-StackTrace-1.12
+DISTNAME=	Devel-StackTrace-1.15
 CATEGORIES=	devel
 
 MAINTAINER=	Michael Coulter <mjc@openbsd.org>
@@ -13,5 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MAKE_ENV+=	TEST_POD=Yes
 
 .include <bsd.port.mk>
