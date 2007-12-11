@@ -6,7 +6,9 @@ manipulation, and regular expression support.
 
 A rich set of extensions to the language are available, as well.
 
-The best way to get started with Tcl is to read ``Tcl and the Tk
-Toolkit, 4th ed'' by John K. Ousterhout, Addison-Wesley, ISBN 0-13-038560-3.
+The best way to get started with Tcl is to read ``Practical Programming in
+TCL and Tk, 4th Edition'' by Brent Welch and Ken Jones, Prentice Hall PTR,
+ISBN 0-13-038560-3.  There's also the collectable ``Tcl and the Tk
+Toolkit'' by John K. Ousterhout, Addison-Wesley, ISBN 0-20-163337-X.
 
 A full set of manual pages is also provided with this package.
