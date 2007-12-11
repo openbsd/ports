@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure_in,v 1.29 2007/10/24 21:52:18 espie Exp $
---- configure.in.orig	Mon Oct  8 16:41:26 2007
-+++ configure.in	Mon Oct 22 23:35:14 2007
-@@ -2011,7 +2011,7 @@ dnl ==================================================
+$OpenBSD: patch-configure_in,v 1.30 2007/12/11 07:55:05 jakemsr Exp $
+--- configure.in.orig	Thu May 17 00:09:47 2007
++++ configure.in	Sun Oct 21 13:56:57 2007
+@@ -1145,7 +1145,7 @@ if test "$ac_use_cups" = "yes"; then
+   else
+     AC_MSG_RESULT(cups-config not found, using default libraries: $kde_cups_libs. You should consider upgrading CUPS)
+   fi
+-  KDE_CHECK_LIB(cups,cupsServer,[ac_cups_libs=1],[ac_cups_libs=0],[$LIBDL $LIBSOCKET])
++  KDE_CHECK_LIB(cups,cupsServer,[ac_cups_libs=1],[ac_cups_libs=0],[$kde_cups_libs $LIBDL $LIBSOCKET])
+   if test "$ac_cups_libs" = "0"; then
+     AC_MSG_WARN(CUPS library not found. CUPS support disabled)
+     ac_use_cups="no"
+@@ -2009,7 +2009,7 @@ dnl ==================================================
         AC_LANG_SAVE
         AC_LANG_C
         dnl Check for aspell library

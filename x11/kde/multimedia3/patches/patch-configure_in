@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.29 2007/10/31 11:09:02 jakemsr Exp $
+$OpenBSD: patch-configure_in,v 1.30 2007/12/11 07:55:05 jakemsr Exp $
 --- configure.in.orig	Mon Oct  8 16:26:39 2007
 +++ configure.in	Wed Oct 24 12:03:20 2007
 @@ -164,22 +164,22 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
@@ -44,12 +44,16 @@ $OpenBSD: patch-configure_in,v 1.29 2007/10/31 11:09:02 jakemsr Exp $
  then
    DO_NOT_COMPILE="$DO_NOT_COMPILE akode_artsplugin"
  else
+-  KDE_CHECK_LIB(akode_mpeg_decoder,   mpeg_decoder,   have_akode_mpeg=yes,   have_akode_mpeg=no,   -lakode)
+-  KDE_CHECK_LIB(akode_mpc_decoder,    mpc_decoder,    have_akode_mpc=yes,    have_akode_mpc=no,    -lakode)
+-  KDE_CHECK_LIB(akode_xiph_decoder,   xiph_decoder,   have_akode_xiph=yes,   have_akode_xiph=no,   -lakode)
+-  KDE_CHECK_LIB(akode_ffmpeg_decoder, ffmpeg_decoder, have_akode_ffmpeg=yes, have_akode_ffmpeg=no, -lakode)
 +  AC_LANG_SAVE
 +  AC_LANG_CPLUSPLUS
-   KDE_CHECK_LIB(akode_mpeg_decoder,   mpeg_decoder,   have_akode_mpeg=yes,   have_akode_mpeg=no,   -lakode)
-   KDE_CHECK_LIB(akode_mpc_decoder,    mpc_decoder,    have_akode_mpc=yes,    have_akode_mpc=no,    -lakode)
-   KDE_CHECK_LIB(akode_xiph_decoder,   xiph_decoder,   have_akode_xiph=yes,   have_akode_xiph=no,   -lakode)
-   KDE_CHECK_LIB(akode_ffmpeg_decoder, ffmpeg_decoder, have_akode_ffmpeg=yes, have_akode_ffmpeg=no, -lakode)
++  KDE_CHECK_LIB(akode_mpeg_decoder,   mpeg_decoder,   have_akode_mpeg=yes,   have_akode_mpeg=no,   $akode_libs)
++  KDE_CHECK_LIB(akode_mpc_decoder,    mpc_decoder,    have_akode_mpc=yes,    have_akode_mpc=no,    $akode_libs)
++  KDE_CHECK_LIB(akode_xiph_decoder,   xiph_decoder,   have_akode_xiph=yes,   have_akode_xiph=no,   $akode_libs)
++  KDE_CHECK_LIB(akode_ffmpeg_decoder, ffmpeg_decoder, have_akode_ffmpeg=yes, have_akode_ffmpeg=no, $akode_libs)
 +  AC_LANG_RESTORE
  fi
  

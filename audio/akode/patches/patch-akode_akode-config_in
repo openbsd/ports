@@ -1,0 +1,12 @@
+$OpenBSD: patch-akode_akode-config_in,v 1.1 2007/12/11 07:55:05 jakemsr Exp $
+--- akode/akode-config.in.orig	Sun Oct 21 18:21:09 2007
++++ akode/akode-config.in	Sun Oct 21 18:21:42 2007
+@@ -29,7 +29,7 @@ while test $# -gt 0
+ do
+   case $1 in
+     --libs)
+-	  flags="$flags -L$libdir -lakode"
++	  flags="$flags -L$libdir -lakode @LIBPTHREAD@"
+ 	  ;;
+     --cflags)
+ 	  flags="$flags -I$includedir"

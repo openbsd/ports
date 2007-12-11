@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/08/25 08:53:28 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2007/12/11 07:55:05 jakemsr Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	music player for kde
@@ -7,7 +7,7 @@ HOMEPAGE=	http://amarok.kde.org/
 V=		1.4.7
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME=	amarok-$V
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 
 FLAVORS=	debug
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3 \
 		njb::audio/libnjb
 
 WANTLIB=	stdc++ Xext Xrender z X11 Xau Xdmcp util m SM c \
-		pthread ICE idn freetype \
+		pthread ICE idn expat fontconfig freetype \
 		iconv pcre pcreposix \
 		jpeg png art_lgpl_2 intl usb \
 		gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \

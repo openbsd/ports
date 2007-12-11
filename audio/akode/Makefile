@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/10/01 17:39:50 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.8 2007/12/11 07:55:05 jakemsr Exp $
 COMMENT=	Decoding Library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS +=	akode                2.1      # .2.0
 
 CATEGORIES=	audio multimedia x11/kde
@@ -22,12 +22,13 @@ PERMIT_DISTFILES_FTP=   Yes
 LIB_DEPENDS=	FLAC.>=8::audio/flac \
 		mad::audio/libmad \
 		speex::audio/speex \
-		vorbis,vorbisfile::audio/libvorbis \
+		vorbis,vorbisfile,vorbisenc::audio/libvorbis \
 		ltdl::devel/libtool,-ltdl \
-		avcodec.>=10,avformat.>=10::graphics/ffmpeg \
+		avcodec.>=10,avformat.>=10,avutil.>=3::graphics/ffmpeg \
 		samplerate.>=1::audio/libsamplerate
 
-WANTLIB=	c stdc++ pthread m ossaudio ogg
+WANTLIB=	X11 Xau Xdmcp Xext a52 c faac faad m mp3lame \
+		ogg ossaudio pthread stdc++ theora x264 z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -36,6 +37,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.60
 CONFIGURE=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
+CONFIGURE_ENV=		PTHREAD_LIBS=-pthread
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib
 
