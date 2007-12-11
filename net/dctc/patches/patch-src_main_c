@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
---- src/main.c.orig	Tue Jan 22 14:47:39 2002
-+++ src/main.c	Mon Jan 28 17:05:52 2002
+$OpenBSD: patch-src_main_c,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
+--- src/main.c.orig	Tue Jan 22 05:47:39 2002
++++ src/main.c	Tue Dec 11 00:04:50 2007
 @@ -34,9 +34,16 @@
  #include <sys/param.h>
  #include <sys/utsname.h>
@@ -29,7 +29,7 @@ $OpenBSD: patch-src_main_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  	disp_msg(VAR_MSG,NULL,"cnx_status",buf,NULL);
  }
  
-@@ -247,14 +254,14 @@ void hub_disconnect(HUBDISC_FLAG exit_fl
+@@ -247,14 +254,14 @@ void hub_disconnect(HUBDISC_FLAG exit_flag)
  		disp_msg(INFO_MSG,"hub_disconnect","have xfer ?",NULL);
  		G_LOCK(waiting_action);
  		
@@ -57,7 +57,7 @@ $OpenBSD: patch-src_main_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  }
  
  /************************************************************/
-@@ -1061,7 +1072,9 @@ static void start_rebuild_db_thread(void
+@@ -1061,7 +1072,9 @@ static void start_rebuild_db_thread(void)
  /* beginning of the code */
  int main(int argc,char **argv)
  {

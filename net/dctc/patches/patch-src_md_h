@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_md_h,v 1.1 2003/09/01 16:51:39 avsm Exp $
---- src/md.h.orig	2003-08-29 11:48:07.000000000 -0400
-+++ src/md.h	2003-08-29 11:48:19.000000000 -0400
-@@ -22,7 +22,7 @@ void md5_process_block (const void *buff
+$OpenBSD: patch-src_md_h,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
+--- src/md.h.orig	Sat Oct 13 00:17:33 2001
++++ src/md.h	Tue Dec 11 00:04:51 2007
+@@ -22,7 +22,7 @@ void md5_process_block (const void *buffer, unsigned c
  /****************************************************/
  /* convert the given md5sum into a printable string */
  /****************************************************/

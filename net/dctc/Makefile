@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/12/11 11:04:57 jakemsr Exp $
 
 COMMENT=		Direct Connect clone
 
@@ -21,6 +21,9 @@ SEPARATE_BUILD=		concurrent
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-DMSG_NOSIGNAL=0"
+
+post-extract:
+	echo "#undef HAVE_LIBPTHREAD" > ${WRKSRC}/acconfig.h
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dctc; \

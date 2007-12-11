@@ -1,7 +1,12 @@
-$OpenBSD: patch-config_h_in,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
---- config.h.in.orig	Sun Jan 13 17:19:20 2002
-+++ config.h.in	Sun Jan 13 17:19:22 2002
-@@ -27,6 +27,9 @@
+$OpenBSD: patch-config_h_in,v 1.2 2007/12/11 11:04:57 jakemsr Exp $
+--- config.h.in.orig	Sat Jan  5 01:07:48 2002
++++ config.h.in	Tue Dec 11 00:04:52 2007
+@@ -24,9 +24,14 @@
+ /* Define if your <sys/time.h> declares struct tm.  */
+ #undef TM_IN_SYS_TIME
+ 
++#undef HAVE_LIBPTHREAD
++
  /* Define if you have the getcwd function.  */
  #undef HAVE_GETCWD
  
@@ -11,7 +16,7 @@ $OpenBSD: patch-config_h_in,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
  /* Define if you have the getpagesize function.  */
  #undef HAVE_GETPAGESIZE
  
-@@ -63,8 +66,14 @@
+@@ -63,9 +68,15 @@
  /* Define if you have the <fcntl.h> header file.  */
  #undef HAVE_FCNTL_H
  
@@ -20,9 +25,20 @@ $OpenBSD: patch-config_h_in,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
 +
  /* Define if you have the <limits.h> header file.  */
  #undef HAVE_LIMITS_H
-+
+ 
 +/* Define if you have the <linux/sem.h> header file.  */
 +#undef HAVE_LINUX_SEM_H
- 
++
  /* Define if you have the <ndir.h> header file.  */
  #undef HAVE_NDIR_H
+ 
+@@ -95,9 +106,6 @@
+ 
+ /* Define if you have the gthread library (-lgthread).  */
+ #undef HAVE_LIBGTHREAD
+-
+-/* Define if you have the pthread library (-lpthread).  */
+-#undef HAVE_LIBPTHREAD
+ 
+ /* Name of package */
+ #undef PACKAGE

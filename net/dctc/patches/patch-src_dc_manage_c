@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
---- src/dc_manage.c.orig	Fri Jan 25 17:39:48 2002
-+++ src/dc_manage.c	Mon Jan 28 18:26:10 2002
+$OpenBSD: patch-src_dc_manage_c,v 1.2 2007/12/11 11:04:57 jakemsr Exp $
+--- src/dc_manage.c.orig	Fri Jan 25 08:39:48 2002
++++ src/dc_manage.c	Tue Dec 11 00:04:50 2007
 @@ -69,6 +69,16 @@ typedef enum
  	MY_DIR_UPLOAD=1,				/* what we should do on the connection: Upload */
  } MY_DIR;
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  int hub_logged=0;	/* set to 1 when dctc is logged on the hub */
  
  /********************************************************/
-@@ -294,13 +304,13 @@ static int send_file_data(int sck,char *
+@@ -294,13 +304,13 @@ static int send_file_data(int sck,char *filename, int 
  		act->last_touch=time(NULL);
  
  		get_slices(bl_semid,sizeof(buf)/512);							/* obtain upload authorization */
@@ -34,7 +34,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  		disp_msg(XFER_UL_STAT,NULL,ul_stat,NULL);
  	}
  
-@@ -317,7 +327,7 @@ static int send_file_data(int sck,char *
+@@ -317,7 +327,7 @@ static int send_file_data(int sck,char *filename, int 
  		act->last_touch=time(NULL);
  
  		get_slices(bl_semid,(remain+511)/512);							/* obtain upload authorization */
@@ -43,7 +43,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  
  		act->last_touch=time(NULL);
  		if(res!=remain)
-@@ -351,7 +361,7 @@ static int send_array_data(int sck,GByte
+@@ -351,7 +361,7 @@ static int send_array_data(int sck,GByteArray *ba,WAIT
  		act->last_touch=time(NULL);
  
  		get_slices(bl_semid,BLOCK_SIZE/512);							/* obtain upload authorization */
@@ -52,7 +52,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  
  		act->last_touch=time(NULL);
  		if(res!=BLOCK_SIZE)
-@@ -369,7 +379,7 @@ static int send_array_data(int sck,GByte
+@@ -369,7 +379,7 @@ static int send_array_data(int sck,GByteArray *ba,WAIT
  		act->last_touch=time(NULL);
  
  		get_slices(bl_semid,(remain+511)/512);							/* obtain upload authorization */
@@ -61,7 +61,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  
  		act->last_touch=time(NULL);
  		if(res!=remain)
-@@ -454,17 +464,18 @@ static int com_up_get_list_len_process(c
+@@ -454,17 +464,18 @@ static int com_up_get_list_len_process(const char *cmd
  
  	disp_msg(DEBUG_MSG,"reply",out->str,NULL);
  
@@ -83,7 +83,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  	}
  
  	/* get command */
-@@ -480,7 +491,9 @@ static int com_up_get_list_len_process(c
+@@ -480,7 +491,9 @@ static int com_up_get_list_len_process(const char *cmd
  				g_string_sprintfa(out,"%lu|",(unsigned long)100000+rand()%500000);
  			else
  				g_string_sprintfa(out,"%lu|",(unsigned long)cpy_data->len);
@@ -94,7 +94,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  			res=(res!=out->len);
  			g_string_free(out,TRUE);
  			if(res)
-@@ -685,7 +698,7 @@ static int com_up_get_process(const char
+@@ -685,7 +698,7 @@ static int com_up_get_process(const char *cmd,WAIT_ACT
  	disp_msg(XFER_UL_START,"",act->remote_nick->str,fullpathname,NULL);
  	{
  		char tmp[510];
@@ -103,7 +103,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  		disp_msg(XFER_UL_RUN,NULL,tmp,act->remote_nick->str,act->disp_info->str,NULL);
  	}
  	
-@@ -885,8 +898,9 @@ static int copie_fd_to_file(int remote, 
+@@ -885,8 +898,9 @@ static int copie_fd_to_file(int remote, FILE *local, u
  
  		/* touch the action slot to avoid timeout */
  		act->last_touch=time(NULL);
@@ -115,7 +115,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  		if((ret==-1)||(ret==0))
  		{	/* error or nothing received */
  			disp_msg(ERR_MSG,"copie_fd_to_file","connection closed (1)",NULL);
-@@ -1298,7 +1312,8 @@ static int start_a_xdownload(WAIT_ACT *a
+@@ -1298,7 +1312,8 @@ static int start_a_xdownload(WAIT_ACT *act, WAIT_REVCO
  				break;
  
  			act->last_touch=time(NULL);
@@ -125,7 +125,7 @@ $OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
  			if((ret==-1)||(ret==0))
  			{	/* error or nothing received */
  				goto end_on_error;
-@@ -1388,12 +1403,9 @@ static int copie_fd_to_bytearray(int rem
+@@ -1388,12 +1403,9 @@ static int copie_fd_to_bytearray(int remote, GByteArra
  
  		/* touch the action slot to avoid timeout */
  		act->last_touch=time(NULL);

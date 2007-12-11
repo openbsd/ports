@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
---- configure.in.orig	Sun Jan 20 13:27:03 2002
-+++ configure.in	Tue Jan 29 15:57:59 2002
-@@ -26,7 +27,7 @@ AM_PATH_GLIB(1.2.0, , , glib gthread)
+$OpenBSD: patch-configure_in,v 1.2 2007/12/11 11:04:57 jakemsr Exp $
+--- configure.in.orig	Sun Jan 20 04:27:03 2002
++++ configure.in	Sun Oct 21 03:41:56 2007
+@@ -19,14 +19,14 @@ AC_CHECK_LIB(glib, main)
+ dnl Replace `main' with a function in -lgthread:
+ AC_CHECK_LIB(gthread, main)
+ dnl Replace `main' with a function in -lpthread:
+-AC_CHECK_LIB(pthread, main)
++AC_CHECK_LIB(pthread, main, [AC_DEFINE(HAVE_LIBPTHREAD, 1), LIBS="$LIBS -pthread"])
+ 
+ AM_PATH_GLIB(1.2.0, , , glib gthread)
+ 
  dnl Checks for header files.
  AC_HEADER_DIRENT
  AC_HEADER_STDC
@@ -10,7 +18,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
  
  dnl Checks for typedefs, structures, and compiler characteristics.
  AC_C_CONST
-@@ -39,6 +40,6 @@ AC_STRUCT_TM
+@@ -39,6 +39,6 @@ AC_STRUCT_TM
  dnl Checks for library functions.
  AC_FUNC_MEMCMP
  AC_FUNC_MMAP

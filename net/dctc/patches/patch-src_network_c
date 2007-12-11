@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_network_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
---- src/network.c.orig	Sun Jan 13 17:10:07 2002
-+++ src/network.c	Sun Jan 13 17:12:42 2002
+$OpenBSD: patch-src_network_c,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
+--- src/network.c.orig	Sat Jan  5 00:47:40 2002
++++ src/network.c	Tue Dec 11 00:04:51 2007
 @@ -231,11 +231,17 @@ GString *get_default_host_ip(void)
  	char buf[512];
  
@@ -11,10 +11,10 @@ $OpenBSD: patch-src_network_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
 +	/* 2) obtain the IP of this interface from ifconfig */
 +
 +#ifdef __OpenBSD__
-+	const char *cmd=
+ 	const char *cmd=
 +               "/sbin/ifconfig `netstat -rn | grep ^default | awk '{print $7;}'` | fgrep 'inet ' | awk '{print $2;}'";
 +#else        
- 	const char *cmd=
++	const char *cmd=
  		"/sbin/ifconfig `netstat -rn | grep ^0.0.0.0 | awk '{print $8;}'` | fgrep inet | cut -d : -f 2 | awk '{print $1;}'";
 -
 +#endif

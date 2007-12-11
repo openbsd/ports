@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_db_c,v 1.2 2003/09/01 16:51:39 avsm Exp $
---- src/db.c.orig	2002-01-26 03:05:21.000000000 -0500
-+++ src/db.c	2003-08-29 11:47:53.000000000 -0400
+$OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
+--- src/db.c.orig	Sat Jan 26 00:05:21 2002
++++ src/db.c	Tue Dec 11 00:04:50 2007
 @@ -45,7 +45,7 @@
  /* list of shared directories */
  /******************************/
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_db_c,v 1.2 2003/09/01 16:51:39 avsm Exp $
  
  /********************************************************************/
  /* database containing the list of all shared files with their type */
-@@ -398,6 +398,29 @@ static GArray *rebuild_dir_database(GArr
+@@ -398,6 +398,29 @@ static GArray *rebuild_dir_database(GArray *db,double 
  }
  
  /***************************************************************/
@@ -56,15 +56,14 @@ $OpenBSD: patch-src_db_c,v 1.2 2003/09/01 16:51:39 avsm Exp $
  	if(shared_dirs!=NULL)
  	{
 -		for(i=0;i<shared_dirs->len;i++)
--		{
++                lvl = 0;
++                li = shared_dirs;
++                while( li != NULL )
+ 		{
 -			int lvl=0;
 -			add_initial_dir_to_ls(&ls_format,&lvl,g_ptr_array_index(shared_dirs,i));
 -			
 -			new_shared=rebuild_dir_database(new_shared,&sod,g_ptr_array_index(shared_dirs,i),&ls_format,lvl);
-+                lvl = 0;
-+                li = shared_dirs;
-+                while( li != NULL )
-+		{
 +                        nextdir = li->data;
 +                        if(prevdir)
 +                            nextdir = get_level_for_next_dir(prevdir, nextdir, &lvl );
@@ -152,7 +151,7 @@ $OpenBSD: patch-src_db_c,v 1.2 2003/09/01 16:51:39 avsm Exp $
  		}
  	}
  	G_UNLOCK(shared_dirs);
-@@ -743,7 +777,7 @@ static void send_a_db_result(int output_
+@@ -743,7 +777,7 @@ static void send_a_db_result(int output_sck, char *des
  	else
  	{
  		char strmd5[512];
