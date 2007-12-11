@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2007/04/10 19:10:54 kurt Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2007/12/11 23:43:03 kurt Exp $
 @pkgpath www/jakarta-tomcat/v5,-examples
 @owner _tomcat
 @group _tomcat
@@ -657,6 +657,7 @@ webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/mcast/McastMem
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/mcast/McastMembership.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/mcast/McastService.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/mcast/McastServiceImpl.ReceiverThread.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/mcast/McastServiceImpl.RecoveryThread.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/mcast/McastServiceImpl.SenderThread.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/mcast/McastServiceImpl.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/mcast/package-frame.html
@@ -784,6 +785,7 @@ webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/NamingResources
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ResourceBase.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/SecurityCollection.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/SecurityConstraint.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/SecurityRoleRef.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-frame.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-summary.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-tree.html
@@ -813,6 +815,7 @@ webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/ContextResource
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/DefaultContextMBean.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/GlobalResourcesLifecycleListener.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/GroupMBean.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/JMXAdaptorLifecycleListener.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/MBeanFactory.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/MBeanUtils.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/mbeans/MemoryUserDatabaseMBean.html
