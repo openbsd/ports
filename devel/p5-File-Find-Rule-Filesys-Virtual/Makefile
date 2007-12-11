@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/11 19:52:19 merdely Exp $
 
 COMMENT=	File::Find::Rule adapted to Filesys::Virtual
 
 MODULES=	cpan
-DISTNAME=	File-Find-Rule-Filesys-Virtual-1.21
+DISTNAME=	File-Find-Rule-Filesys-Virtual-1.22
 CATEGORIES=	net
 
 # perl
