@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/12/07 20:00:40 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2007/12/11 10:08:18 landry Exp $
 
 COMMENT=	document viewer for multiple document formats
 
 V=		2.20.2
 DISTNAME=	evince-$V
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://www.gnome.org/projects/evince/
