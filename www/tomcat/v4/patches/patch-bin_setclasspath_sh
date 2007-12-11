@@ -1,8 +1,7 @@
-$OpenBSD: patch-bin_setclasspath_sh,v 1.1.1.1 2006/10/25 18:10:17 kurt Exp $
---- bin/setclasspath.sh.orig	Sat Sep 25 12:42:54 2004
-+++ bin/setclasspath.sh	Tue Dec  7 23:11:58 2004
-@@ -4,10 +4,16 @@
- #  $Id: patch-bin_setclasspath_sh,v 1.1.1.1 2006/10/25 18:10:17 kurt Exp $
+$OpenBSD: patch-bin_setclasspath_sh,v 1.2 2007/12/11 23:40:53 kurt Exp $
+--- bin/setclasspath.sh.orig	Sun Apr  1 15:41:32 2007
++++ bin/setclasspath.sh	Tue Dec 11 08:57:14 2007
+@@ -5,8 +5,14 @@
  # -----------------------------------------------------------------------------
  
 +# Read $JAVA_HOME - sudo doesn't pass environment variables
@@ -17,4 +16,3 @@ $OpenBSD: patch-bin_setclasspath_sh,v 1.1.1.1 2006/10/25 18:10:17 kurt Exp $
 +  echo "Edit \`%%SYSCONFDIR%%/tomcat/tomcat.rc' to point to your \$JAVA_HOME"
    exit 1
  fi
- if $os400; then
