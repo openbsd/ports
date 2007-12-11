@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.62 2007/11/25 14:21:57 bernd Exp $
+# $OpenBSD: Makefile,v 1.63 2007/12/11 11:07:54 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	videolan client; multimedia player
 
-V=		0.8.6c
+V=		0.8.6d
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p7
+PKGNAME-main=	${DISTNAME}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -191,7 +191,7 @@ CONFIGURE_ARGS+=--enable-arts
 LIB_DEPENDS-arts=${LIB_DEPENDS} artsc.>=1::x11/kde/arts3
 # any FLAVOR of vlc will do
 RUN_DEPENDS-arts=::x11/vlc
-WANTLIB-arts=	glib-2.0 gmodule-2.0 gthread-2.0 stdc++ pthread
+WANTLIB-arts=	glib-2.0 gmodule-2.0 gthread-2.0 stdc++ pcre pthread
 .else
 CONFIGURE_ARGS+=--disable-arts
 .endif
