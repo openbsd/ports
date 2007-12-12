@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.321 2007/12/12 14:56:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.322 2007/12/12 17:56:01 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -193,7 +193,7 @@
      SUBDIR += slim
      SUBDIR += slim-themes
      SUBDIR += slock
-     SUBDIR += stalonetree
+     SUBDIR += stalonetray
      SUBDIR += swisswatch
      SUBDIR += tango-icon-theme
      SUBDIR += tango-icon-theme-extras
