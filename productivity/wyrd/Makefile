@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 21:28:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/12 22:11:51 okan Exp $
 
 COMMENT=		curses calendar front-end to remind
 
-DISTNAME=		wyrd-1.4.1
+DISTNAME=		wyrd-1.4.3
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://www.eecs.umich.edu/~pelzlpj/wyrd/
@@ -16,19 +16,19 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m curses
+WANTLIB=		c m ncurses
 
 MODULES=		lang/ocaml
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
-EXAMPLE_DIR=		${PREFIX}/share/examples/wyrd
+
 BUILD_DEPENDS=		::misc/remind
-RUN_DEPENDS=		::misc/remind
+RUN_DEPENDS=		${BUILD_DEPENDS}
 
 NO_REGRESS=		Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-	${INSTALL_DATA} ${WRKSRC}/wyrdrc ${EXAMPLE_DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wyrd
+	${INSTALL_DATA} ${WRKSRC}/wyrdrc ${PREFIX}/share/examples/wyrd
 
 .include <bsd.port.mk>
