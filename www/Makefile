@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.316 2007/12/10 21:38:10 martynas Exp $
+# $OpenBSD: Makefile,v 1.317 2007/12/12 13:22:29 robert Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -39,6 +39,7 @@
      SUBDIR += junkbuster
      SUBDIR += konqueror-embedded
      SUBDIR += kronolith
+     SUBDIR += ktdms
      SUBDIR += larbin
      SUBDIR += libcroco
      SUBDIR += libghttp
