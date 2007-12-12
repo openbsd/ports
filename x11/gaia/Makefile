@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/12 10:42:07 ajacoutot Exp $
 
 COMMENT=	3D earth viewer with GPS support
 
 DISTNAME=	gaia-0.1.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11 geo
 
 EXTRACT_SUFX=	.tar.bz2
@@ -12,7 +12,7 @@ HOMEPAGE=	http://gaia.serezhkin.com/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,9 +22,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaia-clean/}
 
 WANTLIB=	GL GLU c crypto idn m pthread ssl stdc++ z
 
+MODULES=	devel/scons
+MODSCONS_FLAGS=	datadir=share/gaia gpsd=1
+
 USE_X11=	Yes
 NO_REGRESS=	Yes
-BUILD_DEPENDS=	::devel/scons
 LIB_DEPENDS=	SDL.>=6::devel/sdl \
 		gps.>=16::misc/gpsd \
 		curl.>=4::net/curl \
@@ -40,10 +42,6 @@ pre-configure:
 		-e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
 		-e 's,!!X11BASE!!,${X11BASE},g;' \
 		${WRKSRC}/SConstruct
-
-do-build:
-	@${SETENV} ${MAKE_ENV} scons -C ${WRKSRC} \
-		prefix=${PREFIX} datadir=share/gaia gpsd=1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/gaia ${PREFIX}/bin
