@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2007/12/12 21:39:40 okan Exp $
 
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-03.00.24
-PKGNAME=        remind-3.0.24
+DISTNAME=	remind-03.01.03
+PKGNAME=	remind-3.1.3
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/
@@ -23,6 +23,10 @@ RUN_DEPENDS=	::x11/tk/8.4
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/remind
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/remind
 
 do-regress:
 	cd ${WRKSRC}/tests; sh test-rem
