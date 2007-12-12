@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/12/12 14:43:44 ajacoutot Exp $
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-8.4.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -25,11 +25,10 @@ WANTLIB=	Xau Xdmcp X11 Xext Xrender Xcomposite atk-1.0 c cairo z \
 		pangoft2-1.0 png pthread Xxf86vm expat Xcursor Xfixes \
 		Xi Xinerama Xrandr
 
-MODULES=	devel/gettext lang/python
+MODULES=	devel/gettext lang/python textproc/intltool
 
 BUILD_DEPENDS=	::textproc/texi2html \
 		::x11/py-gtk2 \
-		::textproc/intltool \
 		::games/gnuchess \
 		::archivers/gtar
 LIB_DEPENDS=	python${MODPY_VERSION}::lang/python/${MODPY_VERSION} \
@@ -65,12 +64,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-nsbundle \
 		--with-x \
 		--with-python=${MODPY_BIN}
-
-pre-configure:
-	@perl -pi -e 's,\@INTLTOOL_MERGE\@,${LOCALBASE}/bin/intltool-merge,g;' \
-		-e 's,\@INTLTOOL_UPDATE\@,${LOCALBASE}/bin/intltool-update,g;' \
-		-e 's,\@INTLTOOL_EXTRACT\@,${LOCALBASE}/bin/intltool-extract,g' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/po/Makefile.in.in
 
 post-install:
 	find ${PREFIX}/share/gcompris -type f -perm 755 -exec chmod 644 {} \;
