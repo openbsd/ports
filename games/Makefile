@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2007/12/08 13:35:45 simon Exp $
+# $OpenBSD: Makefile,v 1.161 2007/12/12 18:14:21 simon Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -73,6 +73,7 @@
      SUBDIR += lgeneral
      SUBDIR += life
      SUBDIR += lincity
+     SUBDIR += lincity-ng
      SUBDIR += londonlaw
      SUBDIR += mirrormagic
      SUBDIR += moon-buggy
