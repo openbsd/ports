@@ -1,0 +1,25 @@
+To finish the installation of KnowledgeTree, setup a database.
+In order to create the dms database issue the following command,
+on your database server:
+
+  # mysqladmin -p create dms
+
+Then you have to create and populate the tables by issuing the
+following commands on the same database server:
+
+  # mysql -p dms < %%INSTDIR%%/ktdms/sql/mysql/install/structure.sql
+  # mysql -p dms < %%INSTDIR%%/ktdms/sql/mysql/install/data.sql
+
+
+Please adjust the %%INSTDIR%%/ktdms/config/config.ini file to your
+needs. This file also cointains the default username and password
+for the dms database.
+
+Note: A default Admin user with username admin and password admin
+is set up during the database setup.
+The default admin user login allows initial access to KnowledgeTree.
+This initial login has no relation to the two MySQL accounts in the 
+%%INSTDIR%%/ktdms/config/config.ini file.
+
+If yur are running a chroot'ed apache please read the
+%%INSTDIR%%/ktdms/docs/README.chroot file.

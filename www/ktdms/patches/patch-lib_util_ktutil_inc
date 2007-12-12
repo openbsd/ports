@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_util_ktutil_inc,v 1.1.1.1 2007/12/12 13:21:43 robert Exp $
+--- lib/util/ktutil.inc.orig	Tue Nov 20 11:54:41 2007
++++ lib/util/ktutil.inc	Tue Nov 20 11:54:27 2007
+@@ -578,6 +578,9 @@ class KTUtil {
+     	$sExecSearchPath .= PATH_SEPARATOR . KT_DIR . "/../bin/antiword/";
+     	$sExecSearchPath .= PATH_SEPARATOR . KT_DIR . "/../bin/zip/";
+     	$sExecSearchPath .= PATH_SEPARATOR . KT_DIR . "/../bin/unzip/";
++	$sExecSearchPath .= PATH_SEPARATOR . "/bin/";
++	$sExecSearchPath .= PATH_SEPARATOR . "/usr/bin/";
++	$sExecSearchPath .= PATH_SEPARATOR . "/usr/local/bin/";
+ 
+     	$paths = split(PATH_SEPARATOR, $sExecSearchPath);
+     	foreach ($paths as $path) {

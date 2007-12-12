@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_config_ini,v 1.1.1.1 2007/12/12 13:21:43 robert Exp $
+--- config/config.ini.orig	Tue Nov 20 11:53:41 2007
++++ config/config.ini	Tue Nov 20 11:53:50 2007
+@@ -31,7 +31,7 @@ dbAdminPass      = js9281djw
+ ;
+ ; Leave as default to have it automatically detected.
+ ;
+-fileSystemRoot = default
++fileSystemRoot = /ktdms/
+ 
+ ; Webserver name (host name)
+ ;
