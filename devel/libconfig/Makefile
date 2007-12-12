@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/23 17:07:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/12 15:41:59 merdely Exp $
 
 COMMENT=		library for manipulating structured configuration files
 
-DISTNAME=		libconfig-1.1.3
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		libconfig-1.2
 
-SHARED_LIBS=		config		4.3 \
-			config++	4.3
+SHARED_LIBS=		config		5.0 \
+			config++	5.0
 
 CATEGORIES=		devel
 
