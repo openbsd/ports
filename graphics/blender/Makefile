@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/11/18 10:40:27 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2007/12/12 15:14:30 ajacoutot Exp $
 
 COMMENT=	3D creation software
 
@@ -20,9 +20,10 @@ MASTER_SITES=	http://download.blender.org/source/ \
 
 PYTHON_VER=	2.5
 
+MODULES=	devel/scons
+
 RUN_DEPENDS=	::graphics/tiff
-BUILD_DEPENDS=	:scons-*:devel/scons \
-		::graphics/tiff
+BUILD_DEPENDS=	::graphics/tiff
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		SDL::devel/sdl \
@@ -39,9 +40,9 @@ CFLAGS+=	-fPIC -funsigned-char -fno-strict-aliasing
 post-extract:
 	@cd ${WRKSRC}/config && cp openbsd3-config.py openbsd4-config.py
 
-do-build:
-	@${SETENV} ${MAKE_ENV} scons -C ${WRKSRC} blendernogame \
-		CC=${CC} CXX=${CXX} C_WARN="-Wall" \
+ALL_TARGET=	blendernogame
+
+MODSCONS_ENV=	CC=${CC} CXX=${CXX} C_WARN="-Wall" \
 		CFLAGS="${CFLAGS}" CCFLAGS="${CXXFLAGS}" \
 		REL_CFLAGS= REL_CCFLAGS= \
 		BF_BUILDDIR=${WRKBUILD} \
