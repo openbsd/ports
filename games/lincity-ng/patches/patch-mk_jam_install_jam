@@ -1,0 +1,12 @@
+$OpenBSD: patch-mk_jam_install_jam,v 1.1.1.1 2007/12/12 18:14:16 simon Exp $
+--- mk/jam/install.jam.orig	Wed Nov 14 20:17:09 2007
++++ mk/jam/install.jam	Wed Nov 14 20:18:07 2007
+@@ -11,7 +11,7 @@ INSTALL_DATA ?= "$(INSTALL) -m644" ;
+ 
+ # set some paths
+ appdatadir ?= [ ConcatDirs $(datadir) $(PACKAGE_NAME) ] ;
+-appdocdir ?= [ ConcatDirs $(datadir) doc $(PACKAGE_NAME)-$(PACKAGE_VERSION) ] ;
++appdocdir ?= [ ConcatDirs $(datadir) doc $(PACKAGE_NAME) ] ;
+ appconfdir ?= [ ConcatDirs $(sysconfdir) $(PACKAGE_NAME) ] ;
+ plugindir ?= [ ConcatDirs $(libdir) $(PACKAGE_NAME) ] ;
+ applicationsdir ?= [ ConcatDirs $(datadir) applications ] ;
