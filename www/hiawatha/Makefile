@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2007/11/11 13:56:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2007/12/13 13:03:32 ajacoutot Exp $
 
 COMMENT=	secure webserver
 
-DISTNAME=	hiawatha-6.1
+DISTNAME=	hiawatha-6.2
 CATEGORIES=	www net
 
 HOMEPAGE=	http://hiawatha.leisink.org
