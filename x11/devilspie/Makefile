@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/21 11:48:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2007/12/14 12:41:22 ajacoutot Exp $
 
 COMMENT=	window manipulation tool
 
@@ -23,10 +23,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 MASTER_SITES=	http://www.burtonini.com/computing/
 
-MODULES=	devel/gettext
-
-BUILD_DEPENDS=	:intltool-*:textproc/intltool \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
+MODULES=	devel/gettext textproc/intltool
 
 LIB_DEPENDS=	wnck-1.>=16::devel/libwnck
 
