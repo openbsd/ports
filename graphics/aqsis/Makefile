@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/14 11:45:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	photorealistic 3D rendering solution
 
 V=		1.2.0
 DISTNAME=	aqsis-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 
 SHARED_LIBS+=	aqsis		1.0 \
@@ -19,7 +19,7 @@ HOMEPAGE=	http://www.aqsis.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2/LGPL
+# GPL - LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -29,9 +29,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqsis/}
 
 WANTLIB=	c m stdc++ z
 
+MODULES=	devel/scons
+
 BUILD_DEPENDS=	::textproc/libxslt \
 		:boost-headers-1.33.*:devel/boost \
-		::devel/scons \
 		::devel/bison
 LIB_DEPENDS=	fltk.>=1::x11/fltk \
 		jpeg.>=62::graphics/jpeg \
@@ -43,16 +44,16 @@ NO_REGRESS=	Yes
 MAKE_ENV+=	CC=${CC} CXX=${CXX} LDFLAGS="-fPIC -L${X11BASE}/lib" VERSION_STR=1.2.0
 
 pre-configure:
-	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/platform/default/SConscript
-	perl -pi -e 's,major.*$$,major = ${LIBaqsis_VERSION:R},g;' \
+	@perl -pi -e 's,major.*$$,major = ${LIBaqsis_VERSION:R},g;' \
 		-e 's,minor.*$$,minor = ${LIBaqsis_VERSION:E},g;' \
 		${WRKSRC}/version.py
-	perl -pi -e 's,VERSION_STR.*$$,VERSION_STR "${V}",g' \
+	@perl -pi -e 's,VERSION_STR.*$$,VERSION_STR "${V}",g' \
 		${WRKSRC}/version.h.in
 
 do-build:
-	@cd ${WRKSRC} && env -i ${MAKE_ENV} scons \
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${MODSCONS_BIN} \
 		tiff_include_path=${LOCALBASE}/include \
 		tiff_lib_path=${LOCALBASE}/lib \
 		jpeg_include_path=${LOCALBASE}/include \
@@ -64,10 +65,11 @@ do-build:
 		bison=${LOCALBASE}/bin/bison \
 		sysconfdir=${SYSCONFDIR} \
 		destdir=${DESTDIR} \
-		install_prefix='${PREFIX}' build
+		install_prefix='${PREFIX}' \
+		no_rpath=true build
 
 do-install:
-	@cd ${WRKSRC} && env -i ${MAKE_ENV} scons
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${MODSCONS_BIN}
 		install_prefix='${PREFIX}'
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/aqsis
 	${INSTALL_DATA} ${WRKSRC}/build/aqsisrc \
