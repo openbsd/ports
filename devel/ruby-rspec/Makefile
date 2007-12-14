@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/13 19:25:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/14 22:01:22 bernd Exp $
 
 COMMENT=		Ruby framework for Behaviour Driven Development
 
-DISTNAME=		rspec-1.0.8
+DISTNAME=		rspec-1.1.0
 PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		devel
 
