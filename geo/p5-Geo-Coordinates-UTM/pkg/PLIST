@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/14 22:42:28 matthieu Exp $
+${P5SITE}/Geo/
+${P5SITE}/Geo/Coordinates/
+${P5SITE}/Geo/Coordinates/UTM.pm
+@man man/man3p/Geo::Coordinates::UTM.3p
