@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/14 22:15:27 simon Exp $
 
 COMMENT= 	serving static pages with catalyst
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-Static-Simple-0.17
+DISTNAME=	Catalyst-Plugin-Static-Simple-0.20
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
