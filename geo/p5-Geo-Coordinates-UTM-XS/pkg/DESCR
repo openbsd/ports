@@ -1,0 +1,3 @@
+C/XS reimplementation of Geo::Coordinates::UTM
+It's written in C/XS and around 10x-15x times faster than the Perl
+implementation. 
