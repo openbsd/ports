@@ -1,0 +1,5 @@
+VNC Snapshot is a command-line program for VNC, based on TightVNC
+and RealVNC. It will save a JPEG image of the VNC server's screen.
+
+If non-interactive operation is required, the vncpasswd tool from
+the TightVNC package can be used to store an obfuscated password.
