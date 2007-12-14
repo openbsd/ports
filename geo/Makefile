@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/08 19:48:46 eric Exp $
+# $OpenBSD: Makefile,v 1.8 2007/12/14 22:45:57 matthieu Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += geos
@@ -9,6 +9,8 @@
      SUBDIR += p5-GPS-PRN
      SUBDIR += p5-Geo-Coder-US
      SUBDIR += p5-Geo-Constants
+     SUBDIR += p5-Geo-Coordinates-UTM
+     SUBDIR += p5-Geo-Coordinates-UTM-XS
      SUBDIR += p5-Geo-Ellipsoids
      SUBDIR += p5-Geo-Fips55
      SUBDIR += p5-Geo-Forward
