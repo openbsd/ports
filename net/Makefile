@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.501 2007/12/07 22:01:54 okan Exp $
+# $OpenBSD: Makefile,v 1.502 2007/12/14 21:15:33 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -395,6 +395,7 @@
      SUBDIR += uucp
      SUBDIR += valknut
      SUBDIR += vicq
+     SUBDIR += vncsnapshot
      SUBDIR += vsftpd
      SUBDIR += weex
      SUBDIR += wget
