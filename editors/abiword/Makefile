@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.64 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.65 2007/12/15 20:32:57 ajacoutot Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	2.4.6
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.abisource.com/
 
 MODULES=	devel/gettext
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	fribidi::devel/fribidi \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		gnomeprintui-2-2::x11/gnome/libgnomeprintui

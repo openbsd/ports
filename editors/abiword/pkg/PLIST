@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/07/15 19:21:24 brad Exp $
+@comment $OpenBSD: PLIST,v 1.19 2007/12/15 20:32:57 ajacoutot Exp $
 bin/AbiWord-${MAJORVER}
 bin/abiword
 bin/ttfadmin.sh
@@ -516,3 +516,5 @@ share/doc/abiword/Tutorials/klw/images/xbutton.png
 share/doc/abiword/Tutorials/klw/index.html
 share/icons/
 share/icons/abiword_48.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
