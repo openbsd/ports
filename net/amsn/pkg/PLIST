@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/22 19:32:25 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/15 21:00:30 ajacoutot Exp $
 %%SHARED%%
 bin/amsn
 bin/amsn-remote
@@ -678,3 +678,5 @@ share/icons/hicolor/64x64/tux-64x64.png
 share/icons/hicolor/96x96/
 share/icons/hicolor/96x96/aMSN_96.png
 share/icons/hicolor/96x96/tux-96x96.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

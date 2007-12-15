@@ -1,8 +1,9 @@
-#$OpenBSD: Makefile,v 1.1.1.1 2007/10/22 19:32:24 steven Exp $
+#$OpenBSD: Makefile,v 1.2 2007/12/15 21:00:30 ajacoutot Exp $
 
 COMMENT=	open source MSN Messenger clone
 
 DISTNAME=	amsn-0.96
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.amsn-project.net/
@@ -22,7 +23,8 @@ LIB_DEPENDS=	jpeg::graphics/jpeg \
 		png::graphics/png
 RUN_DEPENDS=	:tk-8.4.*:x11/tk/8.4 \
 		::security/tcltls \
-		::x11/bwidget
+		::x11/bwidget \
+		:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS= 	:tk-8.4.*:x11/tk/8.4 \
 		::security/tcltls
 
