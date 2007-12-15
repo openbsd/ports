@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/20 12:49:51 simon Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/12/15 20:14:16 simon Exp $
 bin/SOAPsh.pl
 bin/XMLRPCsh.pl
 bin/stubmaker.pl
@@ -37,7 +37,6 @@ ${P5SITE}/SOAP/Transport/TCP.pm
 ${P5SITE}/SOAP/Utils.pm
 ${P5SITE}/UDDI/
 ${P5SITE}/UDDI/Lite.pm
-${P5SITE}/XML/
 ${P5SITE}/XML/Parser/
 ${P5SITE}/XML/Parser/Lite.pm
 ${P5SITE}/XMLRPC/

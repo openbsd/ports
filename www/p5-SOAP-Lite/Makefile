@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/15 20:14:16 simon Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
 MODULES=	cpan
 DISTNAME=	SOAP-Lite-0.69
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 
 # Artistic License
@@ -20,7 +21,8 @@ RUN_DEPENDS=	::mail/p5-MIME-tools \
 		::www/p5-libwww \
 		::mail/p5-MIME-Lite \
 		::textproc/p5-XML-Parser \
-		::www/mod_perl
+		::www/mod_perl \
+		::net/p5-Net-Jabber
 
 CONFIGURE_ARGS+=	--noprompt \
 			--HTTP-Client --HTTPS-Client \
@@ -28,7 +30,7 @@ CONFIGURE_ARGS+=	--noprompt \
 			--HTTP-Daemon --HTTP-Apache \
 			--noHTTP-FCGI --POP3-Server \
 			--IO-Server --noMQ \
-			--noJABBER --MIMEParser \
+			--JABBER --MIMEParser \
 			--TCP --HTTP
 
 post-extract:
