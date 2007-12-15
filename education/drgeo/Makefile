@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/10/31 18:30:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2007/12/15 20:37:32 ajacoutot Exp $
 
 COMMENT=	interactive geometry program
 
 DISTNAME=	drgeo-1.1.0
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	education math
 
 HOMEPAGE=	http://www.ofset.org/drgeo/	
@@ -24,6 +24,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 
 MODULES=	devel/gettext
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=	glade-2.0::devel/libglade2 \
 		guile,guile-ltdl::lang/guile

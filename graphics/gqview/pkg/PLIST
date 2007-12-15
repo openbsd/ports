@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2007/03/24 16:37:02 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.24 2007/12/15 20:42:11 ajacoutot Exp $
 bin/gqview
 @man man/man1/gqview.1
 share/applications/
@@ -102,3 +102,5 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 share/locale/zh_TW/LC_MESSAGES/gqview.mo
 share/pixmaps/
 share/pixmaps/gqview.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

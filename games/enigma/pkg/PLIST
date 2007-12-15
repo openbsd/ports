@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/12/15 20:37:53 ajacoutot Exp $
 bin/enigma
 @man man/man6/enigma.6
 share/applications/
@@ -1686,3 +1686,5 @@ share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/enigma.png
 share/pixmaps/
 share/pixmaps/enigma.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

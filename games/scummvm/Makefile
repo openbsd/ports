@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.26 2007/12/15 20:37:53 ajacoutot Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		gcc bug
@@ -6,6 +6,7 @@ BROKEN=		gcc bug
 
 COMMENT=	graphical adventure game interpreter
 DISTNAME=	scummvm-0.10.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -24,6 +25,7 @@ WANTLIB=		X11 Xext c m pthread stdc++ usbhid z
 BUILD_DEPENDS=	::devel/nasm
 .endif
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	SDL::devel/sdl \
 		mad.>=2::audio/libmad \
 		mpeg2::graphics/libmpeg2 \

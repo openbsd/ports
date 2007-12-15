@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/07/07 01:37:53 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/12/15 20:37:53 ajacoutot Exp $
 bin/scummvm
 @man man/man6/scummvm.6
 share/applications/
@@ -14,3 +14,5 @@ share/scummvm/
 share/scummvm/classic080.ini
 share/scummvm/modern.ini
 share/scummvm/modern.zip
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2007/11/07 22:51:51 simon Exp $
+# $OpenBSD: Makefile,v 1.51 2007/12/15 20:42:11 ajacoutot Exp $
 
 COMMENT=	Gtk-based graphic file viewer
 
 DISTNAME=	gqview-2.0.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqview/}
 
@@ -24,6 +24,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 
 MODULES=	devel/gettext
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_X11=	Yes

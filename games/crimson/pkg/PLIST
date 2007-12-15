@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/01/24 06:48:36 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/12/15 20:37:53 ajacoutot Exp $
 bin/bi2cf
 bin/cfed
 bin/comet
@@ -58,3 +58,5 @@ share/crimson/sound/select.wav
 share/crimson/title.bmp
 share/pixmaps/
 share/pixmaps/crimson.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
