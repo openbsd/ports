@@ -1,32 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/30 21:56:38 jason Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/15 19:11:42 ajacoutot Exp $
 bin/xlog
 @man man/man1/xlog.1
 share/applications/
 share/applications/xlog.desktop
-share/locale/
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/xlog.mo
-share/locale/da/
-share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/xlog.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/xlog.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/xlog.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/xlog.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/xlog.mo
-share/locale/sk/
-share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/xlog.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/xlog.mo
 share/mime/
 share/mime/packages/
@@ -89,3 +72,5 @@ share/xlog/images/xlog-printdialog.png
 share/xlog/images/xlog-scorewindow.png
 share/xlog/images/xlog-workedwindow.png
 share/xlog/qsllabels.glabels
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
