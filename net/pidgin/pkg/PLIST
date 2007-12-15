@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/11/29 13:58:53 okan Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/12/15 21:13:00 ajacoutot Exp $
 @conflict gaim-*
 bin/finch
 bin/pidgin
@@ -924,3 +924,7 @@ share/sounds/purple/login.wav
 share/sounds/purple/logout.wav
 share/sounds/purple/receive.wav
 share/sounds/purple/send.wav
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
