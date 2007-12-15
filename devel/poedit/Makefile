@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/11/14 05:57:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/15 20:28:51 ajacoutot Exp $
 
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
 DISTNAME=	poedit-1.3.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.poedit.net/
@@ -22,6 +22,7 @@ USE_X11=	Yes
 
 WANTLIB=	c m pthread stdc++
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	wx_base_xml,wx_gtk2_html,wx_gtk2_adv,wx_gtk2_xrc,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 
 CONFIGURE_STYLE=gnu
