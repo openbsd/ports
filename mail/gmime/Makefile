@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/11/19 19:05:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/15 20:52:31 martynas Exp $
 
 COMMENT=		library for the creation and parsing of MIME messages
 
-DISTNAME=		gmime-2.2.11
-SHARED_LIBS +=	gmime-2.0            0.1      # .4.8
+DISTNAME=		gmime-2.2.12
+SHARED_LIBS +=	gmime-2.0            0.2      # .4.12
 CATEGORIES=		mail devel
 
 HOMEPAGE=		http://spruce.sourceforge.net/gmime/
