@@ -1,14 +1,22 @@
-$OpenBSD: patch-po-POTFILES_in,v 1.3 2007/06/15 17:29:17 jasper Exp $
---- po/POTFILES.in.orig	Sun Jun 10 18:04:04 2007
-+++ po/POTFILES.in	Fri Jun 15 19:26:34 2007
-@@ -30,10 +30,4 @@ src/browsers/playlist3-metadata-browser.c
- src/browsers/playlist3-tag-browser.c
- src/egg/eggcellrendererkeys.c
- src/egg/eggtrayicon.c
--src/gob/gmpc-clicklabel.gob  
+$OpenBSD: patch-po-POTFILES_in,v 1.4 2007/12/15 13:11:22 landry Exp $
+--- po/POTFILES.in.orig	Wed Dec 12 11:34:10 2007
++++ po/POTFILES.in	Wed Dec 12 11:36:01 2007
+@@ -42,18 +42,6 @@ src/egg/eggcellrendererkeys.c
+ src/egg/eggaccelerators.c
+ 
+ 
+-# Gob files
 -src/gob/gmpc-mpddata-model.gob
--src/gob/gmpc-connection.gob  
+-src/gob/gmpc-mpddata-model-sort.gob
 -src/gob/gmpc-mpddata-treeview.gob
--src/gob/gmpc-metaimage.gob   
 -src/gob/gmpc-profiles.gob
+-src/gob/gmpc-meta-text-view.gob
+-src/gob/gmpc-metaimage.gob
+-src/gob/gmpc-clicklabel.gob
+-src/gob/gmpc-connection.gob
+-src/gob/gmpc-clicklabel.gob
+-src/gob/gmpc-meta-watcher.gob
+-
+ #?
+ src/qlib/qasyncqueue.c
  
