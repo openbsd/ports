@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/12/15 11:39:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/12/15 12:07:49 jasper Exp $
 bin/vte
 include/vte/
 include/vte/pty.h
@@ -9,6 +9,8 @@ lib/libvte.a
 lib/libvte.la
 lib/pkgconfig/
 lib/pkgconfig/vte.pc
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/vtemodule.a
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/vtemodule.la
 lib/vte/
 lib/vte/decset
 lib/vte/interpret
@@ -25,8 +27,6 @@ lib/vte/window
 libexec/gnome-pty-helper
 @mode
 @group
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/vte/
 share/gtk-doc/html/vte/VteReaper.html
 share/gtk-doc/html/vte/VteTerminal.html

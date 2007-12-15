@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2007/12/15 11:39:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2007/12/15 12:07:48 jasper Exp $
 
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.16.10
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 SHARED_LIBS +=  vte                  11.10    # .11.12
 
@@ -21,14 +22,19 @@ WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi Xinerama Xcomposite \
 		pcre png util z
 
 MODULES=		devel/gettext \
+			lang/python \
 			x11/gnome
+
+BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+RUN_DEPENDS=		::x11/py-gtk2
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-python
+			--enable-python
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			PYTHON="${MODPY_BIN}"
 
 .include <bsd.port.mk>
