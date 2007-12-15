@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/19 07:27:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/15 13:13:13 landry Exp $
 share/gmpc/plugins/
+share/gmpc/plugins/lyricsplugin.a
+share/gmpc/plugins/lyricsplugin.la
 share/gmpc/plugins/lyricsplugin.so

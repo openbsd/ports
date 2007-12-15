@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/13 12:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2007/12/15 13:18:16 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Amazon cover art provider for gmpc
 
-VERSION=	0.15.0
+VERSION=	0.15.5.0
 DISTNAME=	gmpc-coveramazon-${VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -19,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/plugins/ \
+MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION:S/.0//}/ \
 			http://humppa.nl/distfiles/gmpc/
 
 WANTLIB=		X11 Xau Xdmcp Xrender Xrandr atk-1.0 expat fontconfig \
@@ -32,7 +31,7 @@ MODULES=		devel/gettext
 RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		xml2.>=9::textproc/libxml \
-			mpd.>=0::audio/libmpd \
+			mpd.>=2::audio/libmpd \
 			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_LIBTOOL=		Yes

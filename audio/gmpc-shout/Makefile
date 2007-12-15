@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/13 12:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/15 13:16:16 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		shoutcast support, for gmpc
 
-VERSION=		0.15.0
+VERSION=		0.15.5.0
 DISTNAME=		gmpc-shout-${VERSION}
-PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 # GPL
@@ -21,7 +20,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		gtk-x11-2.0 m mpd pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		png xml2 z
 
-MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION}/plugins/ \
+MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION:S/.0//}/ \
 			http://humppa.nl/distfiles/gmpc/
 
 MODULES=		devel/gettext

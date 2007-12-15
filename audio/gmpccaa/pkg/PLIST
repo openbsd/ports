@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/30 23:38:43 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/15 13:18:16 landry Exp $
 share/gmpc/plugins/
+share/gmpc/plugins/caaplugin.a
+share/gmpc/plugins/caaplugin.la
 share/gmpc/plugins/caaplugin.so
