@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/24 22:42:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/15 19:12:06 ajacoutot Exp $
 
 COMMENT=	X DX cluster watcher
 
 VERSION=	2.2
 DISTNAME=	xdx-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/xdx.html
@@ -27,6 +27,7 @@ CONFIGURE_STYLE=	gnu
 
 MODULES=	devel/gettext
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
 
 USE_X11=	Yes
