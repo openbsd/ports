@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2007/11/10 14:47:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2007/12/15 17:58:05 martynas Exp $
 
 COMMENT=		GNOME Accessibility Implementation Library
 
 GNOME_PROJECT=		gail
-GNOME_VERSION=		1.20.1
+GNOME_VERSION=		1.20.2
 SHARED_LIBS +=	gailutil         20.0         # .18.1
 CATEGORIES=		devel
 
