@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/10/01 20:25:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2007/12/15 20:54:19 ajacoutot Exp $
 bin/galculator
 @man man/man1/galculator.1
 share/applications/
@@ -30,3 +30,5 @@ share/pixmaps/
 share/pixmaps/galculator/
 share/pixmaps/galculator/galculator.svg
 share/pixmaps/galculator/galculator_48x48.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

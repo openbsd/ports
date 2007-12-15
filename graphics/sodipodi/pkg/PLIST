@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/24 09:44:08 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/15 20:54:19 ajacoutot Exp $
 %%SHARED%%
 bin/sodipodi
 lib/sodipodi/
@@ -241,3 +241,5 @@ share/sodipodi/zoom_in.xpm
 share/sodipodi/zoom_out.xpm
 share/sodipodi/zoom_page.xpm
 share/sodipodi/zoom_select.xpm
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

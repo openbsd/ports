@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/12/15 20:54:19 ajacoutot Exp $
 
 COMMENT=	image viewer/manager
 DISTNAME=	pornview-0.2.0pre1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://pornview.sourceforge.net/
@@ -23,12 +23,13 @@ FLAVORS=	mplayer
 FLAVOR?=
 
 MODULES=	devel/gettext
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gdk_pixbuf.>=2::graphics/gdk-pixbuf
 
 
 .if ${FLAVOR:L:Mmplayer}
 CONFIGURE_ARGS+=--enable-mplayer
-RUN_DEPENDS=	:mplayer-*:x11/mplayer
+RUN_DEPENDS+=	:mplayer-*:x11/mplayer
 .endif
 
 USE_X11=	Yes

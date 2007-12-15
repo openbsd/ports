@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2007/12/15 20:54:19 ajacoutot Exp $
 
 COMMENT=		SVG vector drawing application
 
 DISTNAME=		sodipodi-0.34
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://sodipodi.sourceforge.net/
@@ -25,6 +25,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sodipodi/}
 
 MODULES=		devel/gettext
 
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 			art_lgpl_2.>=5::graphics/libart \
 			popt.>=0.3::devel/popt \

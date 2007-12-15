@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/03/31 12:32:35 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/12/15 20:54:19 ajacoutot Exp $
 bin/pornview
 share/applications/
 share/applications/pornview.desktop
@@ -9,3 +9,5 @@ share/pixmaps/pornview.png
 share/pornview/
 share/pornview/scripts/
 share/pornview/scripts/helloworld
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
