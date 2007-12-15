@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.38 2007/12/15 21:14:22 ajacoutot Exp $
 
 COMMENT=	GNOME web browser based on gecko
 
 V=		2.0.3
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -38,7 +38,8 @@ RUN_DEPENDS=	:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 		:gnome-themes-*:x11/gnome/themes \
 		:iso-codes-*:devel/iso-codes \
 		:scrollkeeper-*:textproc/scrollkeeper \
-		:yelp-*:x11/gnome/yelp
+		:yelp-*:x11/gnome/yelp \
+		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gnome-desktop-2::x11/gnome/desktop \
 		gnomeui-2.>=1400::x11/gnome/libgnomeui \
 		mozilla-firefox/gtkembedmoz,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:mozilla-firefox->=2.0:www/mozilla-firefox \

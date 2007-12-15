@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2007/12/15 21:14:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	extremely lightweight and simple web browser for gnome
@@ -6,6 +6,7 @@ COMMENT=	extremely lightweight and simple web browser for gnome
 M=		2.18
 V=		2.18.2
 DISTNAME=	epiphany-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
@@ -25,7 +26,8 @@ RUN_DEPENDS=	:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 		:gnome-themes-*:x11/gnome/themes \
 		:iso-codes-*:devel/iso-codes \
 		:scrollkeeper-*:textproc/scrollkeeper \
-		:yelp-*:x11/gnome/yelp
+		:yelp-*:x11/gnome/yelp \
+		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gnome-desktop-2::x11/gnome/desktop \
 		gnomeui-2.>=1400::x11/gnome/libgnomeui \
 		mozilla-firefox/gtkembedmoz,mozilla-firefox/mozjs,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:mozilla-firefox->=2.0:www/mozilla-firefox \
