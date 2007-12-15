@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2007/10/24 21:52:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2007/12/15 23:47:41 ajacoutot Exp $
 bin/adddebug
 bin/build-progress.sh
 bin/catalogmanager
@@ -967,3 +967,5 @@ share/servicetypes/kbabeldict_module.desktop
 share/servicetypes/kbabelfilter.desktop
 share/servicetypes/komparenavigationpart.desktop
 share/servicetypes/kompareviewpart.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

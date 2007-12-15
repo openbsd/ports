@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/10/06 22:46:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2007/12/15 23:47:40 ajacoutot Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -4780,3 +4780,5 @@ share/wallpapers/sunshine-after-the-rain.jpg
 share/wallpapers/sunshine-after-the-rain.jpg.desktop
 share/wallpapers/triplegears.jpg
 share/wallpapers/triplegears.jpg.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

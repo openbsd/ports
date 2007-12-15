@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/10/24 21:52:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/12/15 23:47:41 ajacoutot Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
 bin/kfilereplace
@@ -1731,3 +1731,5 @@ share/services/quanta_preview_config.desktop
 share/services/quantadebuggerdbgp.desktop
 share/services/quantadebuggergubed.desktop
 share/servicetypes/quantadebugger.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

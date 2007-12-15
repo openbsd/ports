@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2007/10/24 21:52:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.30 2007/12/15 23:47:41 ajacoutot Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -1298,3 +1298,5 @@ share/services/krec_exportwave.desktop
 share/services/videothumbnail.desktop
 share/servicetypes/audiomidi.desktop
 share/servicetypes/krec_exportitem.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

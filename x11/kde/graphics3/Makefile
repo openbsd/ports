@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2007/12/07 20:12:02 kili Exp $
+# $OpenBSD: Makefile,v 1.77 2007/12/15 23:47:40 ajacoutot Exp $
 
 COMMENT-main=		K Desktop Environment, graphic applications
 COMMENT-kamera=		KDE interface to digital cameras
@@ -14,10 +14,10 @@ SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}p2
 PKGNAME-kamera=	kamera-${VERSION}
-PKGNAME-kpov=	kpovmodeller-${VERSION}
-PKGNAME-sane=	ksane-${VERSION}
+PKGNAME-kpov=	kpovmodeller-${VERSION}p0
+PKGNAME-sane=	ksane-${VERSION}p0
 
 MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
 PATCHFILES=		post-3.5.8-kdegraphics-kpdf.diff:0
@@ -36,7 +36,8 @@ WANTLIB=		X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext \
 			m idn iconv Xau Xdmcp fam rpcsvc stdc++
 
 
-RUN_DEPENDS-main=	:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS-main=	:ghostscript-*:print/ghostscript/gnu \
+			:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			kdeprint,khtml,kjs,kparts,kutils::x11/kde/libs3 \
 			Imlib::graphics/imlib \
@@ -54,7 +55,8 @@ WANTLIB-main=		${WANTLIB} \
 
 LIB_DEPENDS-kpov=	${LIB_DEPENDS} \
 			kparts::x11/kde/libs3
-RUN_DEPENDS-kpov=	::graphics/povray
+RUN_DEPENDS-kpov=	::graphics/povray \
+		:desktop-file-utils-*:devel/desktop-file-utils
 WANTLIB-kpov=		${WANTLIB} GL freetype Xrender Xmu GLU c Xi  Xt intl
 
 
@@ -62,7 +64,7 @@ LIB_DEPENDS-kamera= 	${LIB_DEPENDS} \
 			gphoto2,gphoto2_port::graphics/libgphoto2
 WANTLIB-kamera=		${WANTLIB} exif Xrender intl ltdl
 
-
+RUN_DEPENDS-sane=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-sane= 	${LIB_DEPENDS-kamera} \
 			ktexteditor,vcard,kabc,kparts,kresources,kspell,kdeprint::x11/kde/libs3 \
 			sane::graphics/sane-backends

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2006/11/04 23:58:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2007/12/15 23:47:41 ajacoutot Exp $
 bin/amor
 bin/kodo
 bin/kteatime
@@ -661,3 +661,5 @@ share/icons/hicolor/48x48/apps/kworldclock.png
 share/services/kcmweather.desktop
 share/services/kcmweatherservice.desktop
 share/services/kweatherservice.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

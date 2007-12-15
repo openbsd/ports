@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2007/10/24 21:52:16 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2007/12/15 23:47:40 ajacoutot Exp $
 
 COMMENT-main= 		K Desktop Environment, basic applications
 COMMENT-plugins=	Konqueror nsplugins, essentially native JDK
@@ -6,7 +6,7 @@ COMMENT-samba=		K Desktop Environment, samba support
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.8
 DISTNAME=		kdebase-${VERSION}
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 PKGNAME-samba=		kdesamba-${VERSION}
 MODKDE_VERSION?=	3.5.8
 SHARED_LIBS +=	konq                 7.0      # .6.0
@@ -29,6 +29,7 @@ FLAVORS=		debug
 LIB_DEPENDS=	kdecore.>=6,DCOP,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
 WANTLIB=	ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv fam rpcsvc intl stdc++ Xdmcp Xau 
 
+RUN_DEPENDS-main=:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		kabc,katepartinterfaces,kdefakes,kdnssd,kdeprint,kdeprint_management,khtml,kjs,knewstuff,kmid,kparts,kresources,kscreensaver,ktexteditor,kutils,vcard,artskde::x11/kde/libs3 \
 		lber,ldap.>=2:openldap-client-2.*:databases/openldap \

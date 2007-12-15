@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2007/10/24 21:52:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.29 2007/12/15 23:47:40 ajacoutot Exp $
 bin/apmount
 bin/blinken
 bin/celestrongps
@@ -2797,3 +2797,5 @@ share/services/kfile_drgeo.desktop
 share/services/kfile_kig.desktop
 share/services/kig_part.desktop
 share/services/kmplot_part.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

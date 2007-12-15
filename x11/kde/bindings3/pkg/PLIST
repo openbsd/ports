@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/10/24 21:52:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2007/12/15 23:47:40 ajacoutot Exp $
 bin/embedjs
 bin/jsaccess
 bin/kjscmd
@@ -98,3 +98,5 @@ share/services/javascript.desktop
 share/services/kfileitem_plugin.desktop
 share/services/qprocess_plugin.desktop
 share/servicetypes/binding_type.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

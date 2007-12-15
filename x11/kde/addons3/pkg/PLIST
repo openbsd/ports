@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2007/05/25 14:32:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2007/12/15 23:47:40 ajacoutot Exp $
 bin/atlantikdesigner
 bin/fsview
 bin/jpegorient
@@ -509,3 +509,5 @@ share/services/kuick_plugin.desktop
 share/services/renaudiodlg.desktop
 share/services/renimagedlg.desktop
 share/services/webarchivethumbnail.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

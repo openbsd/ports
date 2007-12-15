@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.49 2007/10/24 21:52:16 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2007/12/15 23:47:40 ajacoutot Exp $
 
 COMMENT=		K Desktop Environment, addons
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.8
 DISTNAME=		kdeaddons-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.8
 
+RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS= kdecore.>=6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmediaplayer,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
 	SDL.>=1:sdl-*-!no_x11:devel/sdl \
 	artsbuilder,artsgui,artsgui_idl,artsgui_kde,artsmidi_idl,artsmodules,artsmodulescommon,artsmoduleseffects,artsmodulesmixers,artsmodulessynth,noatun,noatuncontrols,noatuntags::x11/kde/multimedia3 \

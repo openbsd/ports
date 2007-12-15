@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/01/28 13:18:51 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/12/15 23:47:41 ajacoutot Exp $
 @pkgpath x11/kde/graphics3
 bin/kcolorchooser
 bin/kcoloredit
@@ -913,3 +913,5 @@ share/servicetypes/kimageviewer.desktop
 share/servicetypes/kimageviewercanvas.desktop
 share/servicetypes/kmultipage.desktop
 share/servicetypes/ksvgrenderer.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

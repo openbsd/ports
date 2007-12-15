@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2007/01/28 13:18:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2007/12/15 23:47:41 ajacoutot Exp $
 bin/ark
 bin/irkick
 bin/kcalc
@@ -613,3 +613,5 @@ share/services/kwallet_config.desktop
 share/services/kwalletmanager_show.desktop
 share/servicetypes/kmilo/
 share/servicetypes/kmilo/kmilopluginsvc.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

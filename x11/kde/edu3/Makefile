@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2007/10/24 21:52:16 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2007/12/15 23:47:40 ajacoutot Exp $
 
 COMMENT=		K Desktop Environment, edutainment
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.8
 DISTNAME=		kdeedu-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION?=	3.5.8
 FLAVORS=debug
 SHARED_LIBS +=	kdeeducore           4.0      # .3.0
@@ -14,6 +14,7 @@ SHARED_LIBS +=	extdate              4.0      # .3.0
 SHARED_LIBS +=	kiten                2.0      # .1.0
 SHARED_LIBS +=	kvoctraincore        1.0      # .0.0
 
+RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS= kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kutils,kjs,kwalletclient,vcard,kabc,kresources::x11/kde/libs3
 SEPARATE_BUILD=flavored
 

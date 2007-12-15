@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2007/11/01 04:06:23 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.55 2007/12/15 23:47:41 ajacoutot Exp $
 
 COMMENT= 		K Desktop Environment, multimedia applications
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.8
 DISTNAME=		kdemultimedia-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 MODKDE_VERSION=		3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
 SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0
@@ -52,7 +52,8 @@ EXTRA_CONFIG=	xdg/menus/applications-merged/kde-multimedia-music.menu
 SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample
 
 FAKE_FLAGS=$(MAKE_FLAGS) DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
-RUN_DEPENDS=:xanim-*:graphics/xanim
+RUN_DEPENDS=:xanim-*:graphics/xanim \
+	:desktop-file-utils-*:devel/desktop-file-utils
 SEPARATE_BUILD=flavored
 CONFIGURE_ARGS+=--without-lame
 CONFIGURE_ENV+=aktion_has_xanim=yes
