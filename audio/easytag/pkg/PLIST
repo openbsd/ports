@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/05/29 10:27:33 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/12/15 18:56:35 ajacoutot Exp $
 bin/easytag
 @man man/man1/easytag.1
 share/applications/
@@ -28,3 +28,5 @@ share/locale/uk/LC_MESSAGES/easytag.mo
 share/locale/zh_CN/LC_MESSAGES/easytag.mo
 share/pixmaps/
 share/pixmaps/EasyTAG.xpm
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

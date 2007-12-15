@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/12/15 13:11:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/12/15 18:56:35 ajacoutot Exp $
 bin/gmpc
 include/gmpc/
 include/gmpc/TreeSearchWidget.h
@@ -85,3 +85,5 @@ share/pixmaps/
 share/pixmaps/gmpc.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

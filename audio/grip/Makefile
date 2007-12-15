@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2007/11/13 12:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2007/12/15 18:56:35 ajacoutot Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=	grip-3.2.0
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.nostatic.org/grip/
@@ -38,7 +38,8 @@ LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
 		vte.>=8::devel/vte \
 		cdda_interface,cdda_paranoia::audio/cdparanoia
 RUN_DEPENDS=	::x11/gnome/yelp \
-		::audio/vorbis-tools
+		::audio/vorbis-tools \
+		:desktop-file-utils-*:devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

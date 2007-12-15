@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2007/11/13 12:44:22 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/15 18:56:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GTK+-2 media player based on BMP and XMMS
 
 DISTNAME=	audacious-1.3.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	audacious	5.0
 CATEGORIES=	audio
 
@@ -31,6 +31,7 @@ WANTLIB=	X11 Xau Xdmcp Xrender Xcursor Xext Xfixes Xi Xinerama Xrandr \
 		gdk-x11-2.0 gtk-x11-2.0 atk-1.0 cairo glitz png \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 stdc++ xml2
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	glade-2.0.>=0.3::devel/libglade2 \
 		mcs::devel/mcs
 

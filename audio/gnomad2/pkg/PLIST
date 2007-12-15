@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/11 21:58:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/15 18:56:35 ajacoutot Exp $
 bin/gnomad2
 @man man/man1/gnomad2.1
 share/application-registry/
@@ -7,3 +7,5 @@ share/applications/
 share/applications/gnomad2.desktop
 share/pixmaps/
 share/pixmaps/gnomad2-logo.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

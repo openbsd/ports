@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/11/22 22:46:42 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/12/15 18:56:35 ajacoutot Exp $
 bin/gtkpod
 share/applications/
 share/applications/gtkpod.desktop
@@ -60,3 +60,5 @@ share/locale/he/LC_MESSAGES/gtkpod.mo
 share/locale/it/LC_MESSAGES/gtkpod.mo
 share/locale/ja/LC_MESSAGES/gtkpod.mo
 share/locale/sv/LC_MESSAGES/gtkpod.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

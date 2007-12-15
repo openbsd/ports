@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/06/30 22:34:29 alek Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/12/15 18:56:35 ajacoutot Exp $
 bin/grip
 share/applications/grip.desktop
 share/gnome/
@@ -71,3 +71,5 @@ share/locale/zh_HK/LC_MESSAGES/grip.mo
 share/locale/zh_TW/LC_MESSAGES/grip.mo
 share/pixmaps/
 share/pixmaps/gripicon.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

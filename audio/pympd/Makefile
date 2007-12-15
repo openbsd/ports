@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:38 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/15 18:56:35 ajacoutot Exp $
 
 COMMENT=		frontend to mpd written in Python
 
 DISTNAME=		pympd-0.07
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://pympd.sourceforge.net/
@@ -19,7 +19,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pympd/}
 MODULES=		lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::x11/py-gtk2
+RUN_DEPENDS=		::x11/py-gtk2 \
+			:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=		Yes
 

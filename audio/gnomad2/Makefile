@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/11/13 12:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/12/15 18:56:35 ajacoutot Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
 DISTNAME=		gnomad2-2.8.13
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -37,7 +37,7 @@ LIB_DEPENDS=		id3tag.>=3::audio/libid3tag \
 			dbus-1.>=6::x11/dbus \
 			dbus-glib-1.>=2::x11/dbus-glib \
 			gdk_pixbuf-2.0.>=400.3,gdk-x11-2.0.>=400.3,gtk-x11-2.0.>=0.5::x11/gtk+2
-
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=		::textproc/p5-XML-Parser
 
 .include <bsd.port.mk>
