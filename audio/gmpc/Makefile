@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/12/15 13:11:22 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2007/12/15 16:53:48 landry Exp $
 
 COMMENT=		gnome music player client
 
@@ -25,7 +25,7 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION:S/.0//}/ \
 			http://humppa.nl/distfiles/gmpc/
 
-MODULES=		devel/gettext gcc3 texproc/intltool
+MODULES=		devel/gettext gcc3 textproc/intltool
 
 MODGCC3_ARCHES= 	sparc
 MODGCC3_LANGS=  	c
