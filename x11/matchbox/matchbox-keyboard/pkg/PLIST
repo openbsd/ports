@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/20 21:14:21 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/15 21:43:04 ajacoutot Exp $
 bin/matchbox-keyboard
 share/applications/
 share/applications/inputmethods/
@@ -12,3 +12,5 @@ share/matchbox-keyboard/keyboard-ru.xml
 share/matchbox-keyboard/keyboard-us.xml
 share/matchbox-keyboard/keyboard.xml
 share/pixmaps/matchbox-keyboard.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

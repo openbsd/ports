@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/07 20:10:33 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/15 21:43:03 ajacoutot Exp $
 
 COMMENT=	lightweight PDF document viewer
 
 DISTNAME=	epdfview-0.1.6
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	print
 HOMEPAGE=	http://trac.emma-soft.com/epdfview/
 
@@ -27,6 +27,7 @@ WANTLIB=	Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
 
 MODULES=	devel/gettext
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gtk-x11-2.0.>=0.14,gdk-x11-2.0.>=0.14,gdk_pixbuf-2.0.>=0.14::x11/gtk+2 \
 		poppler.>=3,poppler-glib.>=3::print/poppler
 

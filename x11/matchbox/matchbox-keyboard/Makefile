@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/15 21:43:04 ajacoutot Exp $
 
 COMMENT=	on-screen virtual keyboard
 DISTNAME=	matchbox-keyboard-0.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-keyboard/0.1/
 
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_X11=	Yes
 
 LIB_DEPENDS=	fakekey::x11/matchbox/libfakekey
-RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
+RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common \
+		:desktop-file-utils-*:devel/desktop-file-utils
 WANTLIB=	X11 Xau Xdmcp Xext Xft Xrender Xtst c expat fontconfig freetype z
 
 CONFIGURE_STYLE=gnu

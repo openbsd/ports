@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/17 14:04:16 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/15 21:43:04 ajacoutot Exp $
 bin/epdfview
 share/applications/
 share/applications/epdfview.desktop
@@ -24,3 +24,5 @@ share/locale/pl/LC_MESSAGES/epdfview.mo
 share/locale/ru/LC_MESSAGES/epdfview.mo
 share/locale/vi/LC_MESSAGES/epdfview.mo
 share/locale/zh_TW/LC_MESSAGES/epdfview.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
