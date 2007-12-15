@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/11/10 15:21:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/12/15 17:56:25 martynas Exp $
 bin/eog
 include/eog-2.20/
 include/eog-2.20/eog/
@@ -183,8 +183,6 @@ share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/eog.mo
 share/locale/ca/LC_MESSAGES/eog.mo
 share/locale/cs/LC_MESSAGES/eog.mo
-share/locale/cy/
-share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/eog.mo
 share/locale/da/LC_MESSAGES/eog.mo
 share/locale/de/LC_MESSAGES/eog.mo
@@ -200,8 +198,6 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/eog.mo
 share/locale/es/LC_MESSAGES/eog.mo
 share/locale/et/LC_MESSAGES/eog.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/eog.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
@@ -233,8 +229,6 @@ share/locale/ko/LC_MESSAGES/eog.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/eog.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/eog.mo
 share/locale/lv/LC_MESSAGES/eog.mo
 share/locale/mg/
@@ -249,8 +243,6 @@ share/locale/ml/LC_MESSAGES/eog.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/eog.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/eog.mo
 share/locale/nb/LC_MESSAGES/eog.mo
 share/locale/ne/
@@ -275,16 +267,12 @@ share/locale/pt/LC_MESSAGES/eog.mo
 share/locale/pt_BR/LC_MESSAGES/eog.mo
 share/locale/ro/LC_MESSAGES/eog.mo
 share/locale/ru/LC_MESSAGES/eog.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/eog.mo
 share/locale/si/
 share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/eog.mo
 share/locale/sk/LC_MESSAGES/eog.mo
 share/locale/sl/LC_MESSAGES/eog.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/eog.mo
 share/locale/sr/LC_MESSAGES/eog.mo
 share/locale/sr@Latn/LC_MESSAGES/eog.mo
@@ -306,6 +294,12 @@ share/locale/ug/
 share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/eog.mo
 share/locale/uk/LC_MESSAGES/eog.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
+share/locale/uz/LC_MESSAGES/eog.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/eog.mo
 share/locale/vi/LC_MESSAGES/eog.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
