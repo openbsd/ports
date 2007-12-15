@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/11/16 10:32:51 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2007/12/15 19:18:46 ajacoutot Exp $
 
 COMMENT=	visual query tool for MySQL
 
 DISTNAME=	mysql-gui-tools-5.0r12
-PKGNAME=	mysql-query-browser-1.2.12p2
+PKGNAME=	mysql-query-browser-1.2.12p3
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/query-browser/
@@ -31,7 +31,8 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 MODULES=	devel/gettext
 BUILD_DEPENDS=	::textproc/p5-XML-Parser \
 		:mysql-gui-common->=5:devel/mysql-gui-common
-RUN_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common
+RUN_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common \
+		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	pcre::devel/pcre \
 		mysqlclient_r::databases/mysql \
 		glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0:glib2->=2.6.2:devel/glib2 \
