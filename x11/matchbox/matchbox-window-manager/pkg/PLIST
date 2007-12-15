@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/15 21:44:24 ajacoutot Exp $
 bin/matchbox-remote
 bin/matchbox-window-manager
 share/examples/matchbox/
@@ -44,3 +44,5 @@ share/themes/blondie/matchbox/theme.xml
 share/themes/blondie/matchbox/titleleft.png
 share/themes/blondie/matchbox/titleright.png
 share/themes/blondie/matchbox/titlestrip.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/15 21:44:24 ajacoutot Exp $
 
 COMMENT=	pda style application launcher or item browser
 DISTNAME=	matchbox-desktop-0.9.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-desktop/0.9/
 
@@ -18,11 +18,13 @@ USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
 LIB_DEPENDS=	mb.>=1::x11/matchbox/libmatchbox
-RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
+RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common \
+		:desktop-file-utils-*:devel/desktop-file-utils
 MODULES=	devel/gettext
 WANTLIB=	X11 Xext Xft Xrender c fontconfig freetype m z \
 		glib-2.0.>=600.0 gmodule-2.0.>=600.0 gobject-2.0.>=600.0 jpeg \
-		pango-1.0.>=800.0 pangoft2-1.0.>=800.0 pangoxft-1.0.>=800.0 png
+		pango-1.0.>=800.0 pangoft2-1.0.>=800.0 pangoxft-1.0.>=800.0 png \
+		Xau Xdmcp expat pcre
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \

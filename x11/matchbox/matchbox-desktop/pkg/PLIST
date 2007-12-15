@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/17 02:57:31 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/15 21:44:24 ajacoutot Exp $
 %%SHARED%%
 bin/matchbox-desktop
 include/matchbox-desktop/
@@ -23,3 +23,5 @@ share/examples/matchbox-desktop/
 share/examples/matchbox-desktop/mbdesktop_modules
 @sample ${SYSCONFDIR}/matchbox/mbdesktop_modules
 share/pixmaps/mbdesktop.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
