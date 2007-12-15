@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2007/11/08 18:10:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2007/12/15 22:37:37 ajacoutot Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 DISTNAME=		xscreensaver-5.03
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
@@ -24,6 +24,7 @@ MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		devel/gettext
 
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gdk_pixbuf_xlib-2.0,gtk-x11-2.0::x11/gtk+2 \
 			glade-2.0::devel/libglade2 \
 			xml2.>=6::textproc/libxml

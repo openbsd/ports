@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/15 22:37:36 ajacoutot Exp $
 
 COMMENT=		drop-down terminal emulator
 
 DISTNAME=		tilda-0.9.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tilda.sourceforge.net/
@@ -21,6 +22,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi Xinerama \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tilda/}
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=		confuse::devel/libconfuse \
 			vte.>=11::devel/vte
 

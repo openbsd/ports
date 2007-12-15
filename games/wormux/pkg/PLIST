@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/22 20:49:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/15 22:37:36 ajacoutot Exp $
 bin/wormux
 @man man/man6/wormux.6
 share/applications/
@@ -736,3 +736,5 @@ share/wormux/wormux_128x128.xpm
 share/wormux/wormux_256x256.png
 share/wormux/wormux_32x32.png
 share/wormux/wormux_32x32.xpm
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

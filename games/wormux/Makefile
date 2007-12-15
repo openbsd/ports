@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/15 22:37:36 ajacoutot Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
 DISTNAME=		wormux-0.7.9
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		games
 
 HOMEPAGE=		http://wormux.org
@@ -18,6 +18,7 @@ WANTLIB=		SDL X11 Xext c crypto glib-2.0 glibmm-2.4 gobject-2.0 \
 
 MASTER_SITES=		http://download.gna.org/wormux/
 
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=		SDL_gfx::devel/sdl-gfx \
 			SDL_image::devel/sdl-image \
 			SDL_mixer::devel/sdl-mixer \

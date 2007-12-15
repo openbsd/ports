@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2007/07/18 11:26:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2007/12/15 22:37:37 ajacoutot Exp $
 @conflict circuit-*
 @mode 4755
 bin/xscreensaver
@@ -695,3 +695,5 @@ share/xscreensaver/glade/screensaver-locking.png
 share/xscreensaver/glade/screensaver-power.png
 share/xscreensaver/glade/screensaver-snap.png
 share/xscreensaver/glade/xscreensaver-demo.glade2
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
