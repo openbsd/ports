@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/05/07 19:03:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/12/15 18:21:38 jasper Exp $
 bin/gnome-help
 bin/yelp
 share/applications/
@@ -210,3 +210,5 @@ share/yelp/xslt/search2html.xsl
 share/yelp/xslt/toc2html.xsl
 share/yelp/xslt/yelp-common.xsl
 share/yelp/yelp.js
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

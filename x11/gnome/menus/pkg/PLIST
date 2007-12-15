@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/10/24 23:08:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/12/15 18:21:38 jasper Exp $
 bin/gmenu-simple-editor
 bin/gnome-menu-spec-test
 include/gnome-menus/
@@ -156,3 +156,5 @@ share/locale/xh/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

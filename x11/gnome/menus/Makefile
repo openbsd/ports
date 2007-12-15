@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/12/07 22:18:49 martynas Exp $
+# $OpenBSD: Makefile,v 1.15 2007/12/15 18:21:38 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
 GNOME_PROJECT=		gnome-menus
 GNOME_VERSION=		2.20.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	gnome-menu           3.10      # .3.18
 
 # GPL
