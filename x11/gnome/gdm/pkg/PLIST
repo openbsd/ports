@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/11/27 20:26:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/12/15 18:04:04 martynas Exp $
 %%SHARED%%
 bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -114,12 +114,22 @@ share/gnome/help/gdm/sv/gdm.xml
 share/gnome/help/gdm/uk/
 share/gnome/help/gdm/uk/gdm.xml
 share/icons/hicolor/16x16/apps/gdm-xnest.png
-share/icons/hicolor/32x32/apps/gdm-setup.png
+share/icons/hicolor/16x16/apps/gdmflexiserver.png
+share/icons/hicolor/16x16/apps/gdmsetup.png
+share/icons/hicolor/22x22/apps/gdmflexiserver.png
+share/icons/hicolor/22x22/apps/gdmsetup.png
+share/icons/hicolor/24x24/apps/gdmflexiserver.png
+share/icons/hicolor/24x24/apps/gdmsetup.png
 share/icons/hicolor/32x32/apps/gdm-xnest.png
+share/icons/hicolor/32x32/apps/gdmflexiserver.png
+share/icons/hicolor/32x32/apps/gdmsetup.png
 share/icons/hicolor/48x48/apps/gdm-login-photo.png
-share/icons/hicolor/48x48/apps/gdm-setup.png
 share/icons/hicolor/48x48/apps/gdm-xnest.png
 share/icons/hicolor/48x48/apps/gdm.png
+share/icons/hicolor/48x48/apps/gdmflexiserver.png
+share/icons/hicolor/48x48/apps/gdmsetup.png
+share/icons/hicolor/scalable/apps/gdmflexiserver.svg
+share/icons/hicolor/scalable/apps/gdmsetup.svg
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gdm.mo
@@ -270,6 +280,12 @@ share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gdm.mo
 share/locale/tr/LC_MESSAGES/gdm.mo
 share/locale/uk/LC_MESSAGES/gdm.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
+share/locale/uz/LC_MESSAGES/gdm.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/gdm.mo
 share/locale/vi/LC_MESSAGES/gdm.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/

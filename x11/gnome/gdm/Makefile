@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2007/11/27 20:26:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2007/12/15 18:04:04 martynas Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		2.20.1
+GNOME_VERSION=		2.20.2
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
