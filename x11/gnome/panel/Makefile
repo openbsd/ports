@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2007/11/10 15:25:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2007/12/15 18:10:48 martynas Exp $
 
 COMMENT=		GNOME panel
 
 GNOME_PROJECT=		gnome-panel
-GNOME_VERSION=		2.20.1
-SHARED_LIBS=	panel-applet-2       2.17      # .2.17
+GNOME_VERSION=		2.20.2
+SHARED_LIBS=	panel-applet-2       2.18      # .2.26
 CATEGORIES=		x11
 
 # GPL/LGPL
@@ -20,7 +20,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcursor \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png popt \
-		pthread rpcsvc ssl startup-notification-1 stdc++ util xml2 z
+		pthread rpcsvc ssl startup-notification-1 stdc++ util xml2 z \
+		Xcomposite Xdamage gailutil
 
 MODULES=		devel/gettext \
 			x11/gnome

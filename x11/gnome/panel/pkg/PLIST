@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2007/11/10 15:25:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2007/12/15 18:10:48 martynas Exp $
 %%SHARED%%
 bin/gnome-desktop-item-edit
 bin/gnome-panel
@@ -117,6 +117,11 @@ share/gnome/help/clock/pa/clock.xml
 share/gnome/help/clock/pa/figures/
 share/gnome/help/clock/pa/figures/clock_applet.png
 share/gnome/help/clock/pa/legal.xml
+share/gnome/help/clock/pt_BR/
+share/gnome/help/clock/pt_BR/clock.xml
+share/gnome/help/clock/pt_BR/figures/
+share/gnome/help/clock/pt_BR/figures/clock_applet.png
+share/gnome/help/clock/pt_BR/legal.xml
 share/gnome/help/clock/ru/
 share/gnome/help/clock/ru/clock.xml
 share/gnome/help/clock/ru/figures/
@@ -608,6 +613,7 @@ share/omf/clock/clock-ko.omf
 share/omf/clock/clock-nl.omf
 share/omf/clock/clock-oc.omf
 share/omf/clock/clock-pa.omf
+share/omf/clock/clock-pt_BR.omf
 share/omf/clock/clock-ru.omf
 share/omf/clock/clock-sr.omf
 share/omf/clock/clock-sv.omf
