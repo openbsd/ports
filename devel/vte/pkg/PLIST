@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/09/07 12:47:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/12/15 11:39:51 jasper Exp $
 bin/vte
 include/vte/
 include/vte/pty.h
@@ -188,6 +188,9 @@ share/locale/sv/LC_MESSAGES/vte.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/vte.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/vte.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/vte.mo
