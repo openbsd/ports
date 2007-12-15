@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/15 22:16:46 simon Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		provide an interface to create pseudo ttys
 
 MODULES=		cpan
-DISTNAME=		IO-Tty-1.02
+DISTNAME=		IO-Tty-1.07
 CATEGORIES=		devel
 
-MAINTAINER=		Michael Lestinsky <michael@lestinsky.de>
-
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		util
 
 .include <bsd.port.mk>
