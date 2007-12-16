@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2007/11/27 20:27:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2007/12/16 14:36:34 jasper Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.20.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11
 
 # GPL/LGPL
@@ -43,7 +43,8 @@ RUN_DEPENDS+=		::x11/gnome/alacarte \
 			::x11/gnome/themes-extras \
 			::x11/gnome/utils \
 			::x11/gnome/yelp \
-			::x11/xscreensaver,no_gle
+			::x11/xscreensaver,no_gle \
+			::x11/tango-icon-theme 
 #			::x11/gnome/bug-buddy
 
 USE_X11=		Yes
