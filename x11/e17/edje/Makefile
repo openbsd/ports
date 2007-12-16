@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/02 18:18:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/16 18:28:59 laurent Exp $
 
 COMMENT=	complex graphical design & layout library
-DISTNAME=	edje-20071107
+DISTNAME=	edje-20071211
 SHARED_LIBS +=	edje                 0.0      # .5.0
 
 # BSD
