@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/02 18:18:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/16 18:26:09 laurent Exp $
 
 COMMENT=	core event/X abstraction layer
-DISTNAME=	ecore-20071107
+DISTNAME=	ecore-20071211
 
 SO_VERSION=	0.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in ecore ecore_con ecore_config ecore_evas ecore_file \
-ecore_ipc ecore_job ecore_txt ecore_x
+ecore_ipc ecore_job ecore_txt ecore_x ecore_imf_evas ecore_imf
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
