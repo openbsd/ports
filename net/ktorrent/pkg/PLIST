@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/19 02:59:44 deanna Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/16 00:04:27 ajacoutot Exp $
 bin/ktcachecheck
 bin/ktorrent
 bin/ktshell
@@ -453,3 +453,5 @@ share/services/ktupnpplugin.desktop
 share/services/ktwebinterfaceplugin.desktop
 share/services/ktzeroconfplugin.desktop
 share/servicetypes/ktorrentplugin.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

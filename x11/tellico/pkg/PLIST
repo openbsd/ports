@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/04/28 16:15:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/16 00:04:27 ajacoutot Exp $
 bin/tellico
 share/applications/kde/tellico.desktop
 share/apps/kconf_update/tellico-rename.upd
@@ -213,3 +213,5 @@ share/locale/ro/LC_MESSAGES/tellico.mo
 share/locale/ru/LC_MESSAGES/tellico.mo
 share/locale/sv/LC_MESSAGES/tellico.mo
 share/mimelnk/application/x-tellico.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

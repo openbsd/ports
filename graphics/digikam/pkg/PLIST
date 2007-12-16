@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/06/28 15:10:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/12/16 00:04:27 ajacoutot Exp $
 @conflict digikamimageplugins-*
 bin/digikam
 bin/digikamthemedesigner
@@ -910,3 +910,5 @@ share/services/digikamsearch.protocol
 share/services/digikamtags.protocol
 share/services/digikamthumbnail.protocol
 share/servicetypes/digikamimageplugin.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

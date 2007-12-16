@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/12/16 00:04:27 ajacoutot Exp $
 
 COMMENT=		digital image kde application
 CATEGORIES=		graphics x11 x11/kde
 V=			0.9.2
 DISTNAME=		digikam-$V
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	digikam              2.0      # .0.0
 HOMEPAGE=		http://www.digikam.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES=		${DISTNAME}.tar.bz2
 
 SHARED_ONLY=Yes
+
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3 \
 		kdecore.>=6,kwalletclient,DCOP,kparts,kdeui,kdesu,kio,kdefx,kdeprint,kutils,kabc,vcard,kresources,khtml,kjs::x11/kde/libs3 \
 		gphoto2,gphoto2_port::graphics/libgphoto2 \

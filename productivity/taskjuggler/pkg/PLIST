@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/31 20:56:43 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/16 00:04:27 ajacoutot Exp $
 %%SHARED%%
 bin/TaskJugglerUI
 bin/taskjuggler
@@ -110,3 +110,5 @@ share/locale/tr/LC_MESSAGES/taskjuggler.mo
 share/mimelnk/application/x-tji.desktop
 share/mimelnk/application/x-tjp.desktop
 share/mimelnk/application/x-tjx.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

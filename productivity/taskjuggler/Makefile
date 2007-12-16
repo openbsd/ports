@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 21:28:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2007/12/16 00:04:27 ajacoutot Exp $
 
 COMMENT=	project management tool
 
 DISTNAME=	taskjuggler-2.3.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	productivity
 SHARED_LIBS=	taskjuggler	3.4
 
@@ -40,8 +40,9 @@ CONFIGURE_ARGS+=${MODKDE_CONFIGURE_ARGS} \
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} \
 		ac_cv_prog_DOCBOOK_TO_MAN=no
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::x11/kde/pim3
+BUILD_DEPENDS=	::x11/kde/pim3
+RUN_DEPENDS=	::x11/kde/pim3 \
+		:desktop-file-utils-*:devel/desktop-file-utils
 
 # XXX tries building the documentation from XML, which fails
 NO_REGRESS=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2007/12/16 00:04:27 ajacoutot Exp $
 
 COMMENT=		kde image database
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kphotoalbum-3.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://ktown.kde.org/kphotoalbum/
 MASTER_SITES=		${HOMEPAGE}download/
@@ -15,7 +15,8 @@ LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdesu,kdeui,kio,kmediaplayer,kparts,kwalletc
 		kipi::graphics/libkipi \
 		exiv2::graphics/exiv2
 
-RUN_DEPENDS=	::databases/qt3-sqlite3-plugin
+RUN_DEPENDS=	::databases/qt3-sqlite3-plugin \
+		:desktop-file-utils-*:devel/desktop-file-utils
 
 SHARED_ONLY=Yes
 MODKDE_VERSION=	3.5.3

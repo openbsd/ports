@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/22 15:29:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/16 00:04:27 ajacoutot Exp $
 bin/filelight
 ${KDE}/libfilelight.la
 ${KDE}/libfilelight.so
@@ -14,3 +14,5 @@ share/icons/hicolor/32x32/apps/filelight.png
 share/icons/hicolor/48x48/apps/filelight.png
 share/icons/hicolor/64x64/apps/filelight.png
 share/services/filelight_part.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

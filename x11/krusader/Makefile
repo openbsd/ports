@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/02 11:17:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/16 00:04:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	twin panel file manager for KDE
 
 DISTNAME=	krusader-1.80.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 x11/kde
 
 HOMEPAGE=	http://krusader.sourceforge.net/
@@ -29,6 +30,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	kdecore.>=7,DCOP,kdefx,kdesu,kdeui,kio,kparts,kwalletclient,kdeprint,khtml,kjs,kutils::x11/kde/libs3 \
 		konq.>=7::x11/kde/base3 \
 		kjsembed.>=2::x11/kde/bindings3 \

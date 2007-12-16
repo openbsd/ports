@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/08/25 08:53:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/12/16 00:04:27 ajacoutot Exp $
 bin/amarok
 bin/amarok_daapserver.rb
 bin/amarok_proxy.rb
@@ -1120,3 +1120,5 @@ share/services/amaroklastfm.protocol
 share/services/amarokpcast.protocol
 share/servicetypes/amarok_codecinstall.desktop
 share/servicetypes/amarok_plugin.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
