@@ -1,7 +1,7 @@
-$OpenBSD: patch-Build_PL,v 1.1 2007/03/18 08:33:45 jasper Exp $
---- Build.PL.orig	Fri Jan 26 19:57:53 2007
-+++ Build.PL	Sun Mar 18 00:35:09 2007
-@@ -23,16 +23,7 @@ my $prompt_hostname = 'Please enter the 
+$OpenBSD: patch-Build_PL,v 1.2 2007/12/16 12:48:55 jasper Exp $
+--- Build.PL.orig	Tue Aug 21 00:12:48 2007
++++ Build.PL	Sun Dec 16 13:46:19 2007
+@@ -23,16 +23,7 @@ my $prompt_hostname = 'Please enter the hostname the c
  my $prompt_username = qq|Please enter the username the component will represent. \n| .
  	qq|(NOTE: only valid for JABBERD20)|;
  my $prompt_secret = 'Please enter the secret that will be used to auth.';
