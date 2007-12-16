@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2007/12/16 22:20:52 simon Exp $
 
 COMMENT=		GnuPG Made Easy
 
-DISTNAME=		gpgme-1.1.0
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		gpgme-1.1.5
 CATEGORIES=     	security devel
-SHARED_LIBS=		gpgme-pthread	16.0 \
-			gpgme		16.0
-MODGNU_SHARED_LIBS=	gpgme-pthread	'' \
-			gpgme		''
-LIBgpgme-pthread_ALIAS=	gpgme_pthread
+SHARED_LIBS=		gpgme-pthread	17.0 \
+			gpgme		17.0
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
 
@@ -28,7 +24,7 @@ CONFIGURE_ARGS=		--without-gpgsm
 MODULES=		devel/gettext
 RUN_DEPENDS=		:gnupg->=1.4.*:security/gnupg
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS=		gpg-error::security/libgpg-error
+LIB_DEPENDS=		gpg-error:libgpg-error->=1.4:security/libgpg-error
 
 USE_LIBTOOL=		Yes
 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-gpgme_posix-io_c,v 1.1 2007/12/16 22:20:52 simon Exp $
+--- gpgme/posix-io.c.orig	Wed Aug 15 09:22:21 2007
++++ gpgme/posix-io.c	Wed Aug 15 09:25:05 2007
+@@ -33,6 +33,7 @@
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
++#include <sys/uio.h>
+ 
+ #include "util.h"
+ #include "priv-io.h"
