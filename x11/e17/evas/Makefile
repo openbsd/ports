@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/07 09:49:58 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/16 18:24:56 laurent Exp $
 
 COMMENT=	canvas API for X
-DISTNAME=	evas-20071107
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	evas-20071211
 SHARED_LIBS +=	evas                 0.0      # .9.9
 
 # BSD
@@ -12,7 +11,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xrender expat fontconfig freetype \
-			jpeg m z
+			jpeg png m z
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
