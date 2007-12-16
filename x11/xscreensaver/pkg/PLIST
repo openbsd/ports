@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2007/12/15 22:37:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2007/12/16 14:09:26 jasper Exp $
 @conflict circuit-*
 @mode 4755
 bin/xscreensaver
@@ -12,6 +12,7 @@ bin/xscreensaver-gl-helper
 bin/xscreensaver-text
 lib/X11/app-defaults/XScreenSaver
 libexec/xscreensaver/
+libexec/xscreensaver/abstractile
 libexec/xscreensaver/anemone
 libexec/xscreensaver/anemotaxis
 libexec/xscreensaver/antinspect
@@ -127,6 +128,7 @@ libexec/xscreensaver/lisa
 libexec/xscreensaver/lissie
 libexec/xscreensaver/ljlatest
 libexec/xscreensaver/lmorph
+libexec/xscreensaver/lockward
 libexec/xscreensaver/loop
 libexec/xscreensaver/m6502
 libexec/xscreensaver/maze
@@ -136,6 +138,7 @@ libexec/xscreensaver/metaballs
 libexec/xscreensaver/mirrorblob
 libexec/xscreensaver/mismunch
 libexec/xscreensaver/moebius
+libexec/xscreensaver/moebiusgears
 libexec/xscreensaver/moire
 libexec/xscreensaver/moire2
 libexec/xscreensaver/molecule
@@ -229,6 +232,7 @@ libexec/xscreensaver/zoom
 @man man/man1/xscreensaver-getimage.1
 @man man/man1/xscreensaver-text.1
 @man man/man1/xscreensaver.1
+@man man/man6/abstractile.6
 @man man/man6/anemone.6
 @man man/man6/anemotaxis.6
 @man man/man6/antinspect.6
@@ -344,6 +348,7 @@ libexec/xscreensaver/zoom
 @man man/man6/lissie.6
 @man man/man6/ljlatest.6
 @man man/man6/lmorph.6
+@man man/man6/lockward.6
 @man man/man6/loop.6
 @man man/man6/maze.6
 @man man/man6/memscroller.6
@@ -352,6 +357,7 @@ libexec/xscreensaver/zoom
 @man man/man6/mirrorblob.6
 @man man/man6/mismunch.6
 @man man/man6/moebius.6
+@man man/man6/moebiusgears.6
 @man man/man6/moire.6
 @man man/man6/moire2.6
 @man man/man6/molecule.6
@@ -470,6 +476,7 @@ share/pixmaps/xscreensaver.xpm
 share/xscreensaver/
 share/xscreensaver/config/
 share/xscreensaver/config/README
+share/xscreensaver/config/abstractile.xml
 share/xscreensaver/config/anemone.xml
 share/xscreensaver/config/anemotaxis.xml
 share/xscreensaver/config/antinspect.xml
@@ -588,6 +595,7 @@ share/xscreensaver/config/lightning.xml
 share/xscreensaver/config/lisa.xml
 share/xscreensaver/config/lissie.xml
 share/xscreensaver/config/lmorph.xml
+share/xscreensaver/config/lockward.xml
 share/xscreensaver/config/loop.xml
 share/xscreensaver/config/m6502.xml
 share/xscreensaver/config/maze.xml
@@ -597,6 +605,7 @@ share/xscreensaver/config/metaballs.xml
 share/xscreensaver/config/mirrorblob.xml
 share/xscreensaver/config/mismunch.xml
 share/xscreensaver/config/moebius.xml
+share/xscreensaver/config/moebiusgears.xml
 share/xscreensaver/config/moire.xml
 share/xscreensaver/config/moire2.xml
 share/xscreensaver/config/molecule.xml

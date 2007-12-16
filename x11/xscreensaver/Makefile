@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2007/12/15 22:37:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2007/12/16 14:09:25 jasper Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
-DISTNAME=		xscreensaver-5.03
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		xscreensaver-5.04
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
@@ -53,10 +52,10 @@ CONFIGURE_ARGS+=	--without-gle
 
 post-install:
 # rename deco to xdeco, so it doesn't conflict with misc/deco
-	@mv ${PREFIX}/man/man6/deco.6 ${PREFIX}/man/man6/xdeco.6
-	@mv ${PREFIX}/libexec/xscreensaver/deco \
+	mv ${PREFIX}/man/man6/deco.6 ${PREFIX}/man/man6/xdeco.6
+	mv ${PREFIX}/libexec/xscreensaver/deco \
 		${PREFIX}/libexec/xscreensaver/xdeco
-	@mv ${PREFIX}/share/xscreensaver/config/deco.xml \
+	mv ${PREFIX}/share/xscreensaver/config/deco.xml \
 		${PREFIX}/share/xscreensaver/config/xdeco.xml
 
 .include <bsd.port.mk>

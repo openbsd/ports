@@ -1,7 +1,7 @@
-$OpenBSD: patch-hacks_deco_man,v 1.1 2002/03/27 01:28:27 lebel Exp $
---- hacks/deco.man.orig	Mon Aug  3 04:04:48 1998
-+++ hacks/deco.man	Tue Mar 26 19:49:21 2002
-@@ -1,15 +1,15 @@
+$OpenBSD: patch-hacks_deco_man,v 1.2 2007/12/16 14:09:26 jasper Exp $
+--- hacks/deco.man.orig	Sun Dec 16 13:44:38 2007
++++ hacks/deco.man	Sun Dec 16 13:45:40 2007
+@@ -1,8 +1,8 @@
  .TH XScreenSaver 1 "27-Apr-97" "X Version 11"
  .SH NAME
 -deco - draw tacky 70s basement wall panelling
@@ -9,12 +9,18 @@ $OpenBSD: patch-hacks_deco_man,v 1.1 2002/03/27 01:28:27 lebel Exp $
  .SH SYNOPSIS
 -.B deco
 +.B xdeco
- [\-display \fIhost:display.screen\fP] [\-foreground \fIcolor\fP] [\-background \fIcolor\fP] [\-window] [\-root] [\-mono] [\-install] [\-visual \fIvisual\fP] [\-delay \fIseconds\fP] [\-max\-depth \fIint\fP] [\-min\-width \fIint\fP] [\-min\-height \fIint\fP] [\-cycle] [\-no\-cycle] [\-cycle\-delay]
+ [\-display \fIhost:display.screen\fP]
+ [\-foreground \fIcolor\fP]
+ [\-background \fIcolor\fP]
+@@ -20,12 +20,12 @@ deco - draw tacky 70s basement wall panelling
+ [\-golden\-ratio]
+ [\-mondrian]
  .SH DESCRIPTION
 -The \fIdeco\fP program subdivides and colors rectangles randomly.
 +The \fIxdeco\fP program subdivides and colors rectangles randomly.
  It looks kind of like Brady-Bunch-era rec-room wall paneling.
- (Raven says: "this screensaver is ugly enough to peel paint.")
+ (Raven says: "This screensaver is ugly enough to peel paint.")
+ Can also produce more aesthetically pleasing displays via options.
  .SH OPTIONS
 -.I deco
 +.I xdeco
