@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/09/10 10:52:40 eric Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2007/12/16 11:22:29 sthen Exp $
 bin/7z
 bin/7za
 bin/7zr
@@ -40,7 +40,6 @@ share/doc/p7zip/MANUAL/switches/charset.htm
 share/doc/p7zip/MANUAL/switches/exclude.htm
 share/doc/p7zip/MANUAL/switches/include.htm
 share/doc/p7zip/MANUAL/switches/index.htm
-share/doc/p7zip/MANUAL/switches/large_pages.htm
 share/doc/p7zip/MANUAL/switches/list_tech.htm
 share/doc/p7zip/MANUAL/switches/method.htm
 share/doc/p7zip/MANUAL/switches/output_dir.htm
