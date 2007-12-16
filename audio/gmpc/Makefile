@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2007/12/15 18:56:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2007/12/16 19:13:08 jasper Exp $
 
 COMMENT=		gnome music player client
 
 VERSION=		0.15.5.0
 DISTNAME=		gmpc-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio
 
 MAINTAINER=		Landry Breuil <gaston@gcu.info>
