@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/02 18:20:35 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/16 18:23:34 laurent Exp $
 
 COMMENT=	library to write an arbitary set of chunks of data to a file
-DISTNAME=	eet-20071107
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	eet-20071211
 SHARED_LIBS +=	eet                  0.0      # .9.10
 
 HOMEPAGE=	http://docs.enlightenment.org/api/eet/html/
