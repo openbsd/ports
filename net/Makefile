@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.502 2007/12/14 21:15:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.503 2007/12/16 17:51:37 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11
      SUBDIR += ezstream
+     SUBDIR += ez-ipupdate
      SUBDIR += farsight
      SUBDIR += filezilla
      SUBDIR += firewalk
