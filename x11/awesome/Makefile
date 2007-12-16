@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/27 12:34:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/16 21:27:14 pyr Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
-V=1.3
-DISTNAME=		awesome-${V}
+V=2.0
+DISTNAME=		awesome-$V
 
 CATEGORIES=		x11
 
@@ -21,14 +21,24 @@ WANTLIB=		X11 Xext Xinerama Xrandr Xft c
 
 MASTER_SITES=		${HOMEPAGE}/download/
 
-LIB_DEPENDS=		config::devel/libconfig
+LIB_DEPENDS=		cairo.>=6::graphics/cairo	\
+			confuse::devel/libconfuse
+BUILD_DEPENDS=		::textproc/asciidoc	\
+			::textproc/xmlto
 
-CFLAGS+=                -I. -I${X11BASE}/include -I${X11BASE}/include/freetype2 \
-			-I${LOCALBASE}/include -DVERSION=\\\"$V\\\" \
-			$$(pkg-config --cflags libconfig)
-LDFLAGS+=               -L${X11BASE}/lib -L${LOCALBASE}/lib \
+CFLAGS+=		-I. -I${X11BASE}/include \
+			-I${X11BASE}/include/freetype2 \
+			-I${LOCALBASE}/include \
+			$$(pkg-config --cflags libconfuse) \
+			$$(pkg-config --cflags cairo) \
+			-DVERSION=\\\"$V\\\" \
+			-DRELEASE=\\\"Fruit_Fly\\\"
+
+LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib \
 			-lX11 -lXext -lXrandr -lXinerama -lXft \
-			$$(pkg-config --libs libconfig)
+			$$(pkg-config --libs libconfuse) \
+			$$(pkg-config --libs cairo)
+
 MAKE_FLAGS=             CC=${CC} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS=             MANPREFIX=${PREFIX}/man \
 			PREFIX=${PREFIX}

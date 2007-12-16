@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/26 19:13:35 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/16 21:27:14 pyr Exp $
 bin/awesome
+bin/awesome-client
+@man man/man1/awesome-client.1
 @man man/man1/awesome.1
 share/doc/awesome/
 share/doc/awesome/README
