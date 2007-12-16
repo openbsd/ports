@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2007/12/07 15:10:27 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.9 2007/12/16 18:33:07 laurent Exp $
 
 COMMENT=	the enlightened window manager
-DISTNAME=	e-20071107
-PKGNAME=	${DISTNAME}p4
+DISTNAME=	e-20071211
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,8 +14,9 @@ MODULES=		devel/gettext
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xinerama Xp Xrandr Xrender Xss c crypto curl ecore \
 		ecore_con ecore_evas ecore_file ecore_ipc ecore_job \
-		ecore_txt ecore_x eet embryo evas expat fontconfig \
-		freetype idn jpeg m pthread ssl usbhid z
+		ecore_txt ecore_x ecore_imf ecore_imf_evas eet embryo \
+		evas expat fontconfig freetype idn jpeg m pthread ssl \
+		usbhid z
 
 LIB_DEPENDS=		SDL::devel/sdl \
 			edje::x11/e17/edje \
@@ -27,7 +27,9 @@ CONFIGURE_STYLE=	automake autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			E_CFLAGS="-I${LOCALBASE}/include/efreet" \
-			E_LIBS="-lssl -lcrypto -leet -levas -lecore -lecore_ipc -ledje -lefreet -lefreet_mime"
+			E_LIBS="-lssl -lcrypto -leet -levas -lecore -lecore_ipc -lecore_imf -lecore_imf_evas -ledje -lefreet -lefreet_mime"
+
+
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/enlightenment

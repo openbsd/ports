@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/12/06 19:46:09 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/12/16 18:33:07 laurent Exp $
 %%SHARED%%
 bin/enlightenment
 bin/enlightenment-config
@@ -471,7 +471,11 @@ share/locale/bg/LC_MESSAGES/enlightenment.mo
 share/locale/ca/LC_MESSAGES/enlightenment.mo
 share/locale/de/LC_MESSAGES/enlightenment.mo
 share/locale/eo/LC_MESSAGES/enlightenment.mo
+share/locale/es/LC_MESSAGES/enlightenment.mo
 share/locale/fr/LC_MESSAGES/enlightenment.mo
+share/locale/fr_CH/
+share/locale/fr_CH/LC_MESSAGES/
+share/locale/fr_CH/LC_MESSAGES/enlightenment.mo
 share/locale/hu/LC_MESSAGES/enlightenment.mo
 share/locale/it/LC_MESSAGES/enlightenment.mo
 share/locale/ja/LC_MESSAGES/enlightenment.mo
@@ -479,6 +483,7 @@ share/locale/ko/LC_MESSAGES/enlightenment.mo
 share/locale/pt_BR/LC_MESSAGES/enlightenment.mo
 share/locale/ru/LC_MESSAGES/enlightenment.mo
 share/locale/sl/LC_MESSAGES/enlightenment.mo
+share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
 share/locale/zh_TW/LC_MESSAGES/enlightenment.mo
 share/xsessions/
 share/xsessions/enlightenment.desktop
