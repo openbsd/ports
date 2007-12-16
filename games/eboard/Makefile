@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2007/12/03 18:54:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 2007/12/16 01:46:57 ajacoutot Exp $
 
 COMMENT=	gtk+2 chess board interface
 
 DISTNAME=	eboard-1.0.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.bergo.eng.br/eboard/
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -26,10 +28,17 @@ LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_X11=	Yes
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS+=--extra-flags="$(CXXFLAGS)"
+CONFIGURE_ARGS=	--compiler=${CXX} \
+		--prefix=${PREFIX}
+
+NO_REGRESS=	Yes
 
 DOCS=	Crafty.txt FICS-Timeseal.txt GNUChess4.txt GNUChess5.txt \
 	Scripts.txt Sjeng.txt Themes.txt
+
+pre-configure:
+	@perl -pi -e 's,!!CXXFLAGS!!,${CXXFLAGS},g' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/eboard
