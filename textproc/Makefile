@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2007/11/06 15:30:01 bluhm Exp $
+# $OpenBSD: Makefile,v 1.226 2007/12/16 22:27:51 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -118,6 +118,7 @@
      SUBDIR += p5-Template-Provider-Encoding
      SUBDIR += p5-Template-Timer
      SUBDIR += p5-Text-ASCIIMathML
+     SUBDIR += p5-Text-Affixes
      SUBDIR += p5-Text-Aligner
      SUBDIR += p5-Text-Aspell
      SUBDIR += p5-Text-Autoformat
