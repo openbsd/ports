@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/10/26 20:26:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2007/12/16 00:09:34 jasper Exp $
 bin/campaignd
 bin/wesnoth
 bin/wesnoth_editor
@@ -1449,6 +1449,19 @@ share/wesnoth/data/tools/exploder/wall-concave.cfg
 share/wesnoth/data/tools/exploder/wall-convex.cfg
 share/wesnoth/data/tools/exploder/wall-exploded-concave.cfg
 share/wesnoth/data/tools/exploder/wall-exploded-convex.cfg
+share/wesnoth/data/tools/unit_tree/
+share/wesnoth/data/tools/unit_tree/TeamColorizer.pl
+share/wesnoth/data/tools/unit_tree/anim_header.html
+share/wesnoth/data/tools/unit_tree/index.html
+share/wesnoth/data/tools/unit_tree/index_base.html
+share/wesnoth/data/tools/unit_tree/index_languages.html
+share/wesnoth/data/tools/unit_tree/tree_fact_header.html
+share/wesnoth/data/tools/unit_tree/tree_footer.html
+share/wesnoth/data/tools/unit_tree/tree_header.html
+share/wesnoth/data/tools/unit_tree/tree_race_header.html
+share/wesnoth/data/tools/unit_tree/unit.html
+share/wesnoth/data/tools/unit_tree/units.css
+share/wesnoth/data/tools/unit_tree/units.pl
 share/wesnoth/data/traits.cfg
 share/wesnoth/data/tutorial/
 share/wesnoth/data/tutorial/images/

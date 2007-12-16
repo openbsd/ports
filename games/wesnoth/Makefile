@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/11/13 20:05:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2007/12/16 00:09:34 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.2.7
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	wesnoth-1.2.8
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.wesnoth.org/

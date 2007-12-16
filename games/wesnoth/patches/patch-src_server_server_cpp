@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_server_server_cpp,v 1.3 2007/12/16 00:09:34 jasper Exp $
+--- src/server/server.cpp.orig	Sun Dec 16 00:52:34 2007
++++ src/server/server.cpp	Sun Dec 16 00:53:10 2007
+@@ -29,6 +29,8 @@
+ #include "player.hpp"
+ #include "proxy.hpp"
+ 
++#include <unistd.h>
++
+ #include <algorithm>
+ #include <cstdlib>
+ #include <iostream>
