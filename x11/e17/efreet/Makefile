@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/02 18:18:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/16 18:30:18 laurent Exp $
 
 COMMENT=	implementations of freedesktop.org specifications
-DISTNAME=	efreet-20071107
+DISTNAME=	efreet-20071211
 SHARED_LIBS +=	efreet               0.0      # .0.3
 SHARED_LIBS +=	efreet_mime          0.0      # .0.0
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/16 18:30:18 laurent Exp $
 %%SHARED%%
 bin/efreet_alloc
 bin/efreet_cache_test
