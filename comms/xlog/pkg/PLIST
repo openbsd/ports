@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/15 19:11:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2007/12/16 11:30:20 ajacoutot Exp $
 bin/xlog
 @man man/man1/xlog.1
 share/applications/
@@ -72,5 +72,7 @@ share/xlog/images/xlog-printdialog.png
 share/xlog/images/xlog-scorewindow.png
 share/xlog/images/xlog-workedwindow.png
 share/xlog/qsllabels.glabels
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

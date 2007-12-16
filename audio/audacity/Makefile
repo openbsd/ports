@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/12/08 11:08:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2007/12/16 11:30:20 ajacoutot Exp $
 
 COMMENT=	free audio editor
 
 V=		1.3.4
 DISTNAME=	audacity-src-${V}
-PKGNAME=	audacity-${V}
+PKGNAME=	audacity-${V}p0
 CATEGORIES=     audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -33,7 +33,8 @@ LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_aui,wx_gtk2_html,wx_gtk2_adv,wx_gt
 		mad.>=2::audio/libmad \
 		portaudio::audio/portaudio-svn \
 		SoundTouch::audio/soundtouch
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		:shared-mime-info-*:misc/shared-mime-info
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

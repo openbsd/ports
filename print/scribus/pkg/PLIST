@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/08/25 20:16:32 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.9 2007/12/16 11:30:20 ajacoutot Exp $
 bin/scribus
 include/scribus/
 include/scribus/about.h
@@ -1386,3 +1386,5 @@ share/scribus/templates/textbased/textbased.png
 share/scribus/templates/textbased/textbased.sla.gz
 share/scribus/templates/textbased/textbasedtn.png
 share/scribus/unicodenameslist.txt
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec %D/bin/update-mime-database %D/share/mime

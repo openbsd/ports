@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2007/12/15 21:14:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2007/12/16 11:30:20 ajacoutot Exp $
 bin/bluefish
 @man man/man1/bluefish.1
 share/application-registry/
@@ -66,5 +66,7 @@ share/mime/packages/bluefish.xml
 share/pixmaps/
 share/pixmaps/bluefish-icon.png
 share/pixmaps/gnome-mime-application-bluefish-project.png
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
