@@ -1,38 +1,37 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/15 18:01:01 simon Exp $
-#
+# $OpenBSD: Makefile,v 1.24 2007/12/16 01:01:29 ajacoutot Exp $
 
 COMMENT=	GNU version of Shogi
 
-DISTNAME=	gnushogi-1.2p03
-PKGNAME=	gnushogi-1.2.3
+DISTNAME=	gnushogi-1.3
 CATEGORIES=	games
 
-# License: GPL
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c curses m termcap
+
+WANTLIB=	c curses m termcap
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gnushogi/}
 
-MAKE_ENV=	CC="${CC}"
-WRKSRC=		${WRKDIST}/src
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--without-x \
+		--without-xshogi
 
 NO_REGRESS=	Yes
 
-DOCFILES=	shogi.rules tutorial1.gam tutorial2.gam
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gnushogi
-	${INSTALL_PROGRAM} ${WRKSRC}/gnushogi ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/gnushogir ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/gnushogix ${PREFIX}/libexec
-	${INSTALL_DATA} ${WRKSRC}/gnushogi.bbk ${PREFIX}/share/gnushogi
-	${INSTALL_MAN} ${WRKDIST}/doc/gnushogi.1 ${PREFIX}/man/man6/gnushogi.6
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnushogi
-.for doc in ${DOCFILES}
-	${INSTALL_DATA} ${WRKDIST}/doc/${doc} ${PREFIX}/share/doc/gnushogi
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/gnushogi/gnushogi ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/gnushogi/gnushogi.bbk ${PREFIX}/share/gnushogi
+	${INSTALL_MAN} ${WRKDIST}/doc/gnushogi.6 ${PREFIX}/man/man6/gnushogi.6
+	${INSTALL_DATA} ${WRKDIST}/doc/BOOKFILES ${PREFIX}/share/doc/gnushogi
+	${INSTALL_DATA}	${WRKDIST}/doc/PORTING ${PREFIX}/share/doc/gnushogi
+	${INSTALL_DATA}	${WRKSRC}/doc/*.gam ${PREFIX}/share/doc/gnushogi
+	${INSTALL_DATA}	${WRKSRC}/doc/*.html ${PREFIX}/share/doc/gnushogi
+	${INSTALL_DATA}	${WRKSRC}/doc/*.ref ${PREFIX}/share/doc/gnushogi
+	${INSTALL_DATA}	${WRKSRC}/doc/*.rules ${PREFIX}/share/doc/gnushogi
 
 .include <bsd.port.mk>

@@ -1,0 +1,21 @@
+$OpenBSD: patch-gnushogi_init_c,v 1.1 2007/12/16 01:01:29 ajacoutot Exp $
+--- gnushogi/init.c.orig	Fri Apr 26 17:42:22 2002
++++ gnushogi/init.c	Sun Dec 16 01:48:13 2007
+@@ -62,7 +62,7 @@ short nolist          = 1;  /* Don't list the game aft
+  * or DISPLAY_X; the default is DISPLAY_X to make life easier for xshogi.
+  */
+ 
+-display_t display_type = DISPLAY_X;
++display_t display_type = DISPLAY_CURSES;
+ 
+ unsigned int ttbllimit;
+ 
+@@ -258,7 +258,7 @@ distance(short a, short b)
+ short
+ distance(short a, short b)
+ {
+-    return (use_distdata
++    return (use_distdata && a < NO_SQUARES && b < NO_SQUARES
+             ? (short)(*distdata)[(int)a][(int)b]
+             : (short)computed_distance(a, b));
+ }

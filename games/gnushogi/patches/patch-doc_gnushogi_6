@@ -1,0 +1,88 @@
+$OpenBSD: patch-doc_gnushogi_6,v 1.1 2007/12/16 01:01:29 ajacoutot Exp $
+--- doc/gnushogi.6.orig	Sun Dec 16 01:49:16 2007
++++ doc/gnushogi.6	Sun Dec 16 01:52:26 2007
+@@ -18,7 +18,6 @@ gnushogi \- GNU Shogi (Japanese Chess), version 1.3
+ .B [-T size]
+ .B [-v]
+ .B [-x]
+-.B [-X]
+ .B arg1 arg2
+ ]
+ .SH DESCRIPTION
+@@ -43,19 +42,15 @@ file is written.
+ .PP
+ .I Gnushogi
+ is a modified version of the gnuchess program.  It has a simple
+-alphanumeric board display, or it can be compiled for use with the
+-.B xshogi 
+-program under X windows.  The program gets its opening moves from the file
++alphanumeric board display.
++The program gets its opening moves from the file
+ .B gnushogi.bbk 
+ which is located in a directory specified in the Makefile.  To invoke the
+ program type:
+ .TP
+-.B gnushogi -C
++.B gnushogi -C (or just gnushogi)
+ - simple curses based version
+ .TP
+-.B gnushogi -X (or just gnushogi)
+-- xshogi compatible version
+-.TP
+ .B gnushogi -R
+ - raw test display version
+ .SH TIME CONTROLS
+@@ -68,7 +63,7 @@ will generate one move every 30 seconds, while
+ .B gnushogi 5:00
+ will generate one move every 5 minutes.
+ 
+-If two or more arguments are given, they will be used to set tournament
++if two or more arguments are given, they will be used to set tournament
+ time controls with the first argument of each pair being the number of
+ moves and the second being the total clock time in minutes[:seconds].
+ Thus, entering
+@@ -85,9 +80,6 @@ after that.  Up to 4 pairs of controls may be specifie
+ 
+ If no argument is given the program will prompt the user for level of play.
+ 
+-For use with 
+-.B xshogi
+-see the documentation on that program.
+ .SH BOOK
+ .PP
+ The book
+@@ -201,9 +193,6 @@ Use
+ .BR value
+ as the evaluation window
+ .BR xwndw.
+-.TP
+-.B -X
+-Use xshogi display mode (the default).
+ .SH "COMMANDS"
+ .PP
+ In addition to legal moves, the following commands are available as responses.
+@@ -419,24 +408,10 @@ first the
+ .B go 
+ command must be given.
+ .PP
+-.B xget
+--- read an 
+-.I xshogi
+-position file.
+-.PP
+-.B xsave
+--- save as an 
+-.I xshogi
+-position file.
+-.PP
+ .B xwndw
+ -- change X window. The window around alpha/beta used to determine whether
+ the position should be scored or just estimated.
+ .SH BUGS
+ .PP
+-.fi
+-.SH SEE ALSO
+-.nf
+-xshogi(6)
+ .fi
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnushogi_Makefile_in,v 1.1 2007/12/16 01:01:29 ajacoutot Exp $
+--- gnushogi/Makefile.in.orig	Tue Dec  4 17:48:25 2007
++++ gnushogi/Makefile.in	Tue Dec  4 17:49:35 2007
+@@ -46,7 +46,7 @@ BINDIR  =   $(prefix)/bin
+ 
+ # Where the language description, the book, and the 
+ # persistent hashtable live.
+-LIBDIR  =   $(prefix)/lib/gnushogi
++LIBDIR  =   $(prefix)/share/gnushogi
+ 
+ # Where the man page goes.
+ MANDIR  = $(prefix)/man/man6
