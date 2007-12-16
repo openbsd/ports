@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/16 22:20:23 jasper Exp $
+${P5SITE}/Text/
+${P5SITE}/Text/Affixes.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Text/
+${P5SITE}/auto/Text/Affixes/
+${P5SITE}/auto/Text/Affixes/autosplit.ix
+@man man/man3p/Text::Affixes.3p
