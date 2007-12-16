@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2007/12/08 11:06:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.184 2007/12/16 20:39:43 landry Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -29,6 +29,7 @@
      SUBDIR += gimmix
      SUBDIR += gmpc
      SUBDIR += gmpc-autoplaylist
+     SUBDIR += gmpc-lastfm
      SUBDIR += gmpc-lyrics
      SUBDIR += gmpc-magnatune
      SUBDIR += gmpc-qosd
