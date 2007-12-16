@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ui_ui_mainwindow_c,v 1.1 2007/10/10 15:03:38 jasper Exp $
---- src/ui/ui_mainwindow.c.orig	Tue Sep 18 23:43:08 2007
-+++ src/ui/ui_mainwindow.c	Tue Sep 18 23:45:30 2007
-@@ -211,20 +211,20 @@ on_homepagebtn_clicked (GtkButton *button, gpointer us
+$OpenBSD: patch-src_ui_ui_mainwindow_c,v 1.2 2007/12/16 13:55:14 jasper Exp $
+--- src/ui/ui_mainwindow.c.orig	Wed Nov 21 23:07:14 2007
++++ src/ui/ui_mainwindow.c	Sun Dec 16 14:47:37 2007
+@@ -212,20 +212,20 @@ on_homepagebtn_clicked (GtkButton *button, gpointer us
  }
  
  void on_topics_activate(GtkMenuItem *menuitem, gpointer user_data) {
