@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/06 09:32:24 laurent Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/16 18:34:00 laurent Exp $
 
 COMMENT=	toolkit based on the EFL
-DISTNAME=	etk-20071107
+DISTNAME=	etk-20071211
 SHARED_LIBS +=  etk                 0.0          # .1.0
 
 
@@ -17,7 +17,7 @@ WANTLIB=	SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xinerama Xp Xrandr Xrender Xss c crypto curl eet evas \
 		expat fontconfig freetype idn jpeg m pthread ssl usbhid z
 
-LIB_DEPENDS=		ecore,ecore_evas,ecore_file,ecore_job,ecore_txt,ecore_x::x11/e17/ecore \
+LIB_DEPENDS=		ecore,ecore_evas,ecore_file,ecore_job,ecore_txt,ecore_x,ecore_imf,ecore_imf_evas::x11/e17/ecore \
 			embryo::x11/e17/embryo \
 			edje::x11/e17/edje
 
@@ -33,13 +33,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 REGRESS_TARGET=         etk_test
 REGRESS_IS_INTERACTIVE= yes
-
-.if ${MACHINE_ARCH} == "amd64"
-E_ARCH=			x86_64
-.else
-E_ARCH=			${MACHINE_ARCH}
-.endif
-
-SUBST_VARS=		E_ARCH
 
 .include <bsd.port.mk>

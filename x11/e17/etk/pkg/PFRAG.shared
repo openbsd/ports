@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2007/12/16 18:34:00 laurent Exp $
 lib/etk/engines/ecore_evas.so
 lib/etk/engines/ecore_evas_gl_x11.so
 lib/etk/engines/ecore_evas_software_x11.so
