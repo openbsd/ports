@@ -1,4 +1,4 @@
-# $OpenBSD: README.OpenBSD,v 1.4 2007/11/25 16:16:29 ajacoutot Exp $
+# $OpenBSD: README.OpenBSD,v 1.5 2007/12/16 12:39:52 ajacoutot Exp $
 
 #
 # post-install optionnal steps
@@ -9,6 +9,7 @@ should add the following lines to your ~/.xsession or ~/.xinitrc:
  . !!PREFIX!!/share/GNUstep/Makefiles/GNUstep.sh # (from gnustep-base)
  !!PREFIX!!/bin/gdnc # notifications daemon (from gnustep-base)
  !!PREFIX!!/bin/gpbs # clipboard/pasteboard daemon (from gnustep-back)
+ !!PREFIX!!/bin/make_services # update service cache (from gnustep-gui)
 
 To enable gdomap(8), the distributed objects lookup daemon (from
 gnustep-base), add the following lines to services(5):
@@ -16,6 +17,9 @@ gnustep-base), add the following lines to services(5):
  gdomap 538/udp # GNUstep distrib objects
 
 Then see rc(8) to have "!!PREFIX!!/bin/gdomap -p" launched at boot time.
+
+For more Information regarding the GNUstep services see their respective
+manual pages: GNUstep(7), gdnc(1), gpbs(1), make_services(1), gdomap(8)
 
 
 #
