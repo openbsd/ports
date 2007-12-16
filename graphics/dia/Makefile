@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.50 2007/12/16 11:24:09 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
 DISTNAME=	dia-0.96.1
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/Dia/
@@ -31,8 +31,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		art_lgpl_2.>=5::graphics/libart \
 		popt::devel/popt \
 		xslt.>=1::textproc/libxslt
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		:shared-mime-info-*:misc/shared-mime-info
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 MODULES=	devel/gettext
 

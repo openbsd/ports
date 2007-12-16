@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/10/18 14:18:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2007/12/16 11:24:09 ajacoutot Exp $
 bin/dia
 lib/dia/
 lib/dia/libaadl_objects.a
@@ -1890,7 +1890,5 @@ share/pixmaps/
 share/pixmaps/dia-diagram.png
 share/pixmaps/dia_gnome_icon.png
 %%SHARED%%
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
