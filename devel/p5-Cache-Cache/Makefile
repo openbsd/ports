@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2007/12/16 14:20:41 simon Exp $
 
 COMMENT=	perl cache interface
 
 MODULES=	cpan
-DISTNAME=	Cache-Cache-1.04
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Cache-Cache-1.05
 CATEGORIES=	devel
 
 # perl
