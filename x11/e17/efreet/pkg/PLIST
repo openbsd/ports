@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/16 18:30:18 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/16 19:45:04 laurent Exp $
 %%SHARED%%
 bin/efreet_alloc
 bin/efreet_cache_test
@@ -34,5 +34,3 @@ share/efreet/test/test.ini
 share/efreet/test/test.menu
 share/efreet/test/test_menu_slash_bad.menu
 share/efreet/test/test_type.desktop
-@exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
