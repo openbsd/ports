@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/19 13:04:57 martynas Exp $
+# $OpenBSD: Makefile,v 1.24 2007/12/17 20:33:43 ajacoutot Exp $
 
 COMMENT=		Scrollkeeper Open Documentation Cataloging System
 
-VERSION=		0.3.14
-DISTNAME=		scrollkeeper-${VERSION}
-PKGNAME=		${DISTNAME}p4
+DISTNAME=		scrollkeeper-0.3.14
+PKGNAME=		${DISTNAME}p5
 SHARED_LIBS=		scrollkeeper	1.0
 CATEGORIES=		textproc
 

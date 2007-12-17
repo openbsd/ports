@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/02/03 16:00:09 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.15 2007/12/17 20:33:43 ajacoutot Exp $
 %%SHARED%%
 bin/scrollkeeper-config
 bin/scrollkeeper-extract
@@ -162,3 +162,4 @@ share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd
 @unexec %D/share/libxml2/rebuild
 @extraunexec rm -rf /var/db/scrollkeeper/
 @extraunexec rm -f /var/log/scrollkeeper.log*
+@exec %D/bin/scrollkeeper-update -q
