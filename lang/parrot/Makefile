@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/18 18:51:10 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/17 14:24:27 pyr Exp $
 
 COMMENT=	virtual machine designed for interpreted languages
 
 SHARED_ONLY=	Yes
 
-DISTNAME=	parrot-0.4.17
+DISTNAME=	parrot-0.5.0
 CATEGORIES=	lang perl6
 
 HOMEPAGE=	http://www.parrotcode.org/
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/C/CO/COKE/}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/C/CH/CHROMATIC/}
 
 # Artistic2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,6 +32,10 @@ REGRESS_TARGET=		test
 PKG_ARGS+=		-Di386=1
 .else
 PKG_ARGS+=		-Di386=0
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=	--execcapable=0
 .endif
 
 pre-configure:
