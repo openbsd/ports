@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/17 22:58:45 simon Exp $
 
 COMMENT= 	DateTime parser for ISO8601 date formats
 
 MODULES=	cpan 
-DISTNAME=	DateTime-Format-ISO8601-0.0403
+DISTNAME=	DateTime-Format-ISO8601-0.06
 CATEGORIES=	devel
 
 # perl
