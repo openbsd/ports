@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/02 18:18:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/17 23:00:08 laurent Exp $
 
 COMMENT=	immensly fast JPEG thumbnailer library
-DISTNAME=	epeg-20071107
+DISTNAME=	epeg-20071211
 
 HOMEPAGE=	http://docs.enlightenment.org/api/epeg/html/
 
