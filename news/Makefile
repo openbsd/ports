@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/06/24 16:59:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2007/12/17 00:59:42 merdely Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
@@ -12,6 +12,7 @@
      SUBDIR += p5-News-Newsrc
      SUBDIR += pan
      SUBDIR += plor
+     SUBDIR += py-yenc
      SUBDIR += slrn
      SUBDIR += tin
      SUBDIR += trn
