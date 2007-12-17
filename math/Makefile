@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2007/12/01 13:39:10 steven Exp $
+# $OpenBSD: Makefile,v 1.73 2007/12/17 20:20:46 merdely Exp $
 #
 
      SUBDIR += R
@@ -54,6 +54,8 @@
      SUBDIR += p5-Math-BigInt-GMP
      SUBDIR += p5-Math-Calc-Units
      SUBDIR += p5-Math-FFT
+     SUBDIR += p5-Math-Fibonacci
+     SUBDIR += p5-Math-Fibonacci-Phi
      SUBDIR += p5-Math-GMP
      SUBDIR += p5-Math-Pari
      SUBDIR += p5-Math-Round
