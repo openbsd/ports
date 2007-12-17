@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/12/17 20:42:00 jasper Exp $
+@lib lib/libdoublefann.so.${LIBdoublefann_VERSION}
+@lib lib/libfann.so.${LIBfann_VERSION}
+@lib lib/libfixedfann.so.${LIBfixedfann_VERSION}
+@lib lib/libfloatfann.so.${LIBfloatfann_VERSION}
