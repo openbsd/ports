@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/17 23:10:51 simon Exp $
 
 COMMENT= 	parsesr Email dates into DateTime
 
 MODULES=	cpan 
-DISTNAME=	DateTime-Format-Mail-0.30
+DISTNAME=	DateTime-Format-Mail-0.3001
 CATEGORIES=	devel converters
 
 # perl
