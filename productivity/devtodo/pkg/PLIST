@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/08/03 17:42:45 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/12/17 19:55:48 okan Exp $
 @conflict tdl-*
 @conflict openmotif-demos-*
 bin/devtodo
@@ -21,14 +21,17 @@ share/doc/devtodo/README
 share/examples/devtodo/
 share/examples/devtodo/changelog2html
 share/examples/devtodo/changelog2todo
+share/examples/devtodo/devtodo.bash-completion
 share/examples/devtodo/scripts.sh
 share/examples/devtodo/scripts.tcsh
 share/examples/devtodo/tdrec
 share/examples/devtodo/todo-nodone-html.xslt
+share/examples/devtodo/todo.css
 share/examples/devtodo/todo2html-2.xslt
 share/examples/devtodo/todo2html.xslt
 share/examples/devtodo/todo2pdf.README
 share/examples/devtodo/todo2pdf.sh
 share/examples/devtodo/todo2pdf.xslt
+share/examples/devtodo/todo2xhtml_css.xslt
 share/examples/devtodo/todorc.example
 @sample ${SYSCONFDIR}/todorc
