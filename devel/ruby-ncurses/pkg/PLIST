@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/10/19 01:26:39 bernd Exp $
-lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/ncurses.so
+@comment $OpenBSD: PLIST,v 1.5 2007/12/17 20:11:53 bernd Exp $
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/ncurses_bin.so
 lib/ruby/site_ruby/${MODRUBY_REV}/ncurses.rb
 share/doc/ruby/
 share/doc/ruby/ruby-ncurses/
@@ -8,6 +8,8 @@ share/examples/ruby/
 share/examples/ruby/ruby-ncurses/
 share/examples/ruby/ruby-ncurses/LICENSES_for_examples
 share/examples/ruby/ruby-ncurses/example.rb
+share/examples/ruby/ruby-ncurses/form.rb
+share/examples/ruby/ruby-ncurses/form2.rb
 share/examples/ruby/ruby-ncurses/hello_ncurses.rb
 share/examples/ruby/ruby-ncurses/rain.rb
 share/examples/ruby/ruby-ncurses/read_line.rb
