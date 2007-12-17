@@ -1,0 +1,20 @@
+$OpenBSD: patch-config_c,v 1.1 2007/12/17 20:00:05 bernd Exp $
+
+Backport fix to prevent a segmentation fault.
+
+commit 6281f394674bf2db861967da6c2215cfc3fc78af
+Date:   Sat Dec 8 16:48:05 2007 +0100
+
+    config.c:store_write_pair(): don't read the byte before a malloc'd buffer.
+    
+--- config.c.orig	Sat Dec 15 00:35:13 2007
++++ config.c	Sat Dec 15 00:35:13 2007
+@@ -636,7 +636,7 @@ static int store_write_pair(int fd, const char* key, c
+ 	for (i = 0; value[i]; i++)
+ 		if (value[i] == ';' || value[i] == '#')
+ 			quote = 1;
+-	if (value[i-1] == ' ')
++	if (i && value[i-1] == ' ')
+ 		quote = 1;
+ 
+ 	if (write_in_full(fd, "\t", 1) != 1 ||

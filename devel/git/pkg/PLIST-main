@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2007/09/08 11:29:40 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2007/12/17 20:00:05 bernd Exp $
 @pkgpath devel/git
 bin/git
 bin/git-add
@@ -6,8 +6,6 @@ bin/git-add--interactive
 bin/git-am
 bin/git-annotate
 bin/git-apply
-bin/git-applymbox
-bin/git-applypatch
 bin/git-archimport
 bin/git-archive
 bin/git-bisect
@@ -42,6 +40,7 @@ bin/git-fast-import
 bin/git-fetch
 bin/git-fetch--tool
 bin/git-fetch-pack
+bin/git-filter-branch
 bin/git-fmt-merge-msg
 bin/git-for-each-ref
 bin/git-format-patch
@@ -97,6 +96,7 @@ bin/git-push
 bin/git-quiltimport
 bin/git-read-tree
 bin/git-rebase
+bin/git-rebase--interactive
 bin/git-receive-pack
 bin/git-reflog
 bin/git-relink
@@ -124,8 +124,10 @@ bin/git-ssh-fetch
 bin/git-ssh-pull
 bin/git-ssh-push
 bin/git-ssh-upload
+bin/git-stash
 bin/git-status
 bin/git-stripspace
+bin/git-submodule
 bin/git-symbolic-ref
 bin/git-tag
 bin/git-tar-tree
@@ -149,8 +151,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-am.1
 @man man/man1/git-annotate.1
 @man man/man1/git-apply.1
-@man man/man1/git-applymbox.1
-@man man/man1/git-applypatch.1
 @man man/man1/git-archimport.1
 @man man/man1/git-archive.1
 @man man/man1/git-bisect.1
@@ -164,6 +164,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-checkout.1
 @man man/man1/git-cherry-pick.1
 @man man/man1/git-cherry.1
+@man man/man1/git-citool.1
 @man man/man1/git-clean.1
 @man man/man1/git-clone.1
 @man man/man1/git-commit-tree.1
@@ -183,6 +184,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-fast-import.1
 @man man/man1/git-fetch-pack.1
 @man man/man1/git-fetch.1
+@man man/man1/git-filter-branch.1
 @man man/man1/git-fmt-merge-msg.1
 @man man/man1/git-for-each-ref.1
 @man man/man1/git-format-patch.1
@@ -191,6 +193,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-gc.1
 @man man/man1/git-get-tar-commit-id.1
 @man man/man1/git-grep.1
+@man man/man1/git-gui.1
 @man man/man1/git-hash-object.1
 @man man/man1/git-http-fetch.1
 @man man/man1/git-http-push.1
@@ -256,8 +259,10 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-show.1
 @man man/man1/git-ssh-fetch.1
 @man man/man1/git-ssh-upload.1
+@man man/man1/git-stash.1
 @man man/man1/git-status.1
 @man man/man1/git-stripspace.1
+@man man/man1/git-submodule.1
 @man man/man1/git-symbolic-ref.1
 @man man/man1/git-tag.1
 @man man/man1/git-tar-tree.1
@@ -278,6 +283,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man3p/Git.3p
 @man man/man5/gitattributes.5
 @man man/man5/gitignore.5
+@man man/man5/gitmodules.5
 share/doc/git/
 share/doc/git/RelNotes-1.5.0.1.txt
 share/doc/git/RelNotes-1.5.0.2.txt
@@ -300,6 +306,14 @@ share/doc/git/RelNotes-1.5.2.3.txt
 share/doc/git/RelNotes-1.5.2.4.txt
 share/doc/git/RelNotes-1.5.2.5.txt
 share/doc/git/RelNotes-1.5.2.txt
+share/doc/git/RelNotes-1.5.3.1.txt
+share/doc/git/RelNotes-1.5.3.2.txt
+share/doc/git/RelNotes-1.5.3.3.txt
+share/doc/git/RelNotes-1.5.3.4.txt
+share/doc/git/RelNotes-1.5.3.5.txt
+share/doc/git/RelNotes-1.5.3.6.txt
+share/doc/git/RelNotes-1.5.3.7.txt
+share/doc/git/RelNotes-1.5.3.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
@@ -311,7 +325,6 @@ share/doc/git/cmds-purehelpers.txt
 share/doc/git/cmds-synchelpers.txt
 share/doc/git/cmds-synchingrepositories.txt
 share/doc/git/config.txt
-share/doc/git/core-intro.txt
 share/doc/git/core-tutorial.html
 share/doc/git/core-tutorial.txt
 share/doc/git/cvs-migration.html
@@ -331,10 +344,6 @@ share/doc/git/git-annotate.html
 share/doc/git/git-annotate.txt
 share/doc/git/git-apply.html
 share/doc/git/git-apply.txt
-share/doc/git/git-applymbox.html
-share/doc/git/git-applymbox.txt
-share/doc/git/git-applypatch.html
-share/doc/git/git-applypatch.txt
 share/doc/git/git-archimport.html
 share/doc/git/git-archimport.txt
 share/doc/git/git-archive.html
@@ -361,6 +370,8 @@ share/doc/git/git-cherry-pick.html
 share/doc/git/git-cherry-pick.txt
 share/doc/git/git-cherry.html
 share/doc/git/git-cherry.txt
+share/doc/git/git-citool.html
+share/doc/git/git-citool.txt
 share/doc/git/git-clean.html
 share/doc/git/git-clean.txt
 share/doc/git/git-clone.html
@@ -399,6 +410,8 @@ share/doc/git/git-fetch-pack.html
 share/doc/git/git-fetch-pack.txt
 share/doc/git/git-fetch.html
 share/doc/git/git-fetch.txt
+share/doc/git/git-filter-branch.html
+share/doc/git/git-filter-branch.txt
 share/doc/git/git-fmt-merge-msg.html
 share/doc/git/git-fmt-merge-msg.txt
 share/doc/git/git-for-each-ref.html
@@ -415,6 +428,8 @@ share/doc/git/git-get-tar-commit-id.html
 share/doc/git/git-get-tar-commit-id.txt
 share/doc/git/git-grep.html
 share/doc/git/git-grep.txt
+share/doc/git/git-gui.html
+share/doc/git/git-gui.txt
 share/doc/git/git-hash-object.html
 share/doc/git/git-hash-object.txt
 share/doc/git/git-http-fetch.html
@@ -469,8 +484,6 @@ share/doc/git/git-mv.html
 share/doc/git/git-mv.txt
 share/doc/git/git-name-rev.html
 share/doc/git/git-name-rev.txt
-share/doc/git/git-p4import.html
-share/doc/git/git-p4import.txt
 share/doc/git/git-pack-objects.html
 share/doc/git/git-pack-objects.txt
 share/doc/git/git-pack-redundant.html
@@ -547,10 +560,14 @@ share/doc/git/git-ssh-fetch.html
 share/doc/git/git-ssh-fetch.txt
 share/doc/git/git-ssh-upload.html
 share/doc/git/git-ssh-upload.txt
+share/doc/git/git-stash.html
+share/doc/git/git-stash.txt
 share/doc/git/git-status.html
 share/doc/git/git-status.txt
 share/doc/git/git-stripspace.html
 share/doc/git/git-stripspace.txt
+share/doc/git/git-submodule.html
+share/doc/git/git-submodule.txt
 share/doc/git/git-svn.html
 share/doc/git/git-svn.txt
 share/doc/git/git-svnimport.html
@@ -595,6 +612,8 @@ share/doc/git/gitignore.html
 share/doc/git/gitignore.txt
 share/doc/git/gitk.html
 share/doc/git/gitk.txt
+share/doc/git/gitmodules.html
+share/doc/git/gitmodules.txt
 share/doc/git/glossary.html
 share/doc/git/glossary.txt
 share/doc/git/hooks.html
@@ -624,6 +643,7 @@ share/doc/git/tutorial-2.html
 share/doc/git/tutorial-2.txt
 share/doc/git/tutorial.html
 share/doc/git/tutorial.txt
+share/doc/git/urls-remotes.txt
 share/doc/git/urls.txt
 share/doc/git/user-manual.html
 share/doc/git/user-manual.txt
@@ -652,17 +672,27 @@ share/git-gui/
 share/git-gui/lib/
 share/git-gui/lib/blame.tcl
 share/git-gui/lib/branch.tcl
+share/git-gui/lib/branch_checkout.tcl
+share/git-gui/lib/branch_create.tcl
+share/git-gui/lib/branch_delete.tcl
+share/git-gui/lib/branch_rename.tcl
 share/git-gui/lib/browser.tcl
+share/git-gui/lib/checkout_op.tcl
+share/git-gui/lib/choose_font.tcl
+share/git-gui/lib/choose_rev.tcl
 share/git-gui/lib/class.tcl
 share/git-gui/lib/commit.tcl
 share/git-gui/lib/console.tcl
 share/git-gui/lib/database.tcl
 share/git-gui/lib/diff.tcl
+share/git-gui/lib/encoding.tcl
 share/git-gui/lib/error.tcl
 share/git-gui/lib/index.tcl
 share/git-gui/lib/merge.tcl
 share/git-gui/lib/option.tcl
 share/git-gui/lib/remote.tcl
+share/git-gui/lib/remote_branch_delete.tcl
 share/git-gui/lib/shortcut.tcl
+share/git-gui/lib/status_bar.tcl
 share/git-gui/lib/tclIndex
 share/git-gui/lib/transport.tcl

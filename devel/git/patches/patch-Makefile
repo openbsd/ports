@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.10 2007/07/12 18:26:04 bernd Exp $
---- Makefile.orig	Sat Jun 16 17:31:24 2007
-+++ Makefile	Sun Jun 17 19:42:08 2007
-@@ -137,13 +137,13 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
+$OpenBSD: patch-Makefile,v 1.11 2007/12/17 20:00:05 bernd Exp $
+--- Makefile.orig	Sun Nov 18 23:55:49 2007
++++ Makefile	Thu Nov 22 20:32:19 2007
+@@ -139,13 +139,13 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -16,33 +16,36 @@ $OpenBSD: patch-Makefile,v 1.10 2007/07/12 18:26:04 bernd Exp $
 +#prefix = $(HOME)
  bindir = $(prefix)/bin
  gitexecdir = $(bindir)
- sharedir = $(prefix)/share/
-@@ -153,7 +153,7 @@ sysconfdir = /etc
- else
+ sharedir = $(prefix)/share
+@@ -156,7 +156,7 @@ else
  sysconfdir = $(prefix)/etc
  endif
+ lib = lib
 -ETC_GITCONFIG = $(sysconfdir)/gitconfig
 +ETC_GITCONFIG = $(SYSCONFDIR)/gitconfig
  # DESTDIR=
  
  # default configuration for gitweb
-@@ -174,13 +174,13 @@ GITWEB_SITE_FOOTER =
+@@ -177,15 +177,15 @@ GITWEB_SITE_FOOTER =
  
  export prefix bindir gitexecdir sharedir template_dir sysconfdir
  
 -CC = gcc
 +CC ?= gcc
  AR = ar
+ RM = rm -f
  TAR = tar
+ FIND = find
  INSTALL = install
  RPMBUILD = rpmbuild
- TCL_PATH = tclsh
+-TCL_PATH = tclsh
 -TCLTK_PATH = wish
++TCL_PATH ?= tclsh
 +TCLTK_PATH ?= wish
  
  export TCL_PATH TCLTK_PATH
  
-@@ -451,10 +451,9 @@ ifeq ($(uname_S),FreeBSD)
+@@ -445,10 +445,9 @@ ifeq ($(uname_S),FreeBSD)
  	BASIC_LDFLAGS += -L/usr/local/lib
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -55,16 +58,16 @@ $OpenBSD: patch-Makefile,v 1.10 2007/07/12 18:26:04 bernd Exp $
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -531,7 +530,7 @@ ifndef NO_CURL
- endif
+@@ -535,7 +534,7 @@ endif
+ EXTLIBS += -lz
  
  ifndef NO_OPENSSL
 -	OPENSSL_LIBSSL = -lssl
 +	OPENSSL_LIBSSL = -lssl -lcrypto
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
- 		OPENSSL_LINK = -L$(OPENSSLDIR)/lib $(CC_LD_DYNPATH)$(OPENSSLDIR)/lib
-@@ -962,7 +961,7 @@ all:: $(TEST_PROGRAMS)
+ 		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
+@@ -967,7 +966,7 @@ all:: $(TEST_PROGRAMS)
  
  export NO_SVN_TESTS
  
@@ -72,4 +75,4 @@ $OpenBSD: patch-Makefile,v 1.10 2007/07/12 18:26:04 bernd Exp $
 +test:
  	$(MAKE) -C t/ all
  
- test-date$X: test-date.c date.o ctype.o
+ test-date$X: date.o ctype.o

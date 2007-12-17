@@ -1,0 +1,24 @@
+$OpenBSD: patch-gitweb_gitweb_perl,v 1.1 2007/12/17 20:00:05 bernd Exp $
+
+This prevents the following error: '-T and -B not implemented on filehandles'
+
+--- gitweb/gitweb.perl.orig	Sat Dec 15 00:14:50 2007
++++ gitweb/gitweb.perl	Sat Dec 15 00:12:58 2007
+@@ -4108,7 +4108,7 @@ sub git_blob_plain {
+ 	}
+ 
+ 	my $type = shift;
+-	open my $fd, "-|", git_cmd(), "cat-file", "blob", $hash
++	open my $fd, "-|:raw:perlio", git_cmd(), "cat-file", "blob", $hash
+ 		or die_error(undef, "Couldn't cat $file_name, $hash");
+ 
+ 	$type ||= blob_mimetype($fd, $file_name);
+@@ -4150,7 +4150,7 @@ sub git_blob {
+ 	}
+ 
+ 	my ($have_blame) = gitweb_check_feature('blame');
+-	open my $fd, "-|", git_cmd(), "cat-file", "blob", $hash
++	open my $fd, "-|:raw:perlio", git_cmd(), "cat-file", "blob", $hash
+ 		or die_error(undef, "Couldn't cat $file_name, $hash");
+ 	my $mimetype = blob_mimetype($fd, $file_name);
+ 	if ($mimetype !~ m!^(?:text/|image/(?:gif|png|jpeg)$)!) {
