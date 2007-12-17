@@ -1,0 +1,11 @@
+--- test/test.py.orig	Thu Feb 19 01:11:46 2004
++++ test/test.py	Tue Dec 11 19:36:46 2007
+@@ -32,7 +32,7 @@ from binascii import crc32
+ from stat import *
+ 
+ def main():
+-	os.system("dd if=/dev/urandom of=sampledata bs=1M count=1")
++	os.system("dd if=/dev/urandom of=sampledata bs=1048576 count=1")
+ 	file_in = open("sampledata","r")
+ 	file_out = open("sampledata.out","w")
+ 	data = file_in.read()

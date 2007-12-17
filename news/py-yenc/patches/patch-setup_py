@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2007/12/17 00:57:35 merdely Exp $
+--- setup.py.orig	Fri Dec 14 06:50:56 2007
++++ setup.py	Fri Dec 14 06:51:30 2007
+@@ -38,6 +38,6 @@ setup(	
+ 	license		= "GPL",
+ 	package_dir	= { '': 'lib' },
+ 	py_modules	= ["yenc"],
+-	ext_modules	= [Extension("_yenc",["src/_yenc.c"],extra_compile_args=["-O2","-g"])]
++	ext_modules	= [Extension("_yenc",["src/_yenc.c"])]
+ 	)
+ 
