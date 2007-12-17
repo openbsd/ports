@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2007/12/16 11:38:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2007/12/17 20:31:22 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		control-center
 GNOME_VERSION=		2.18.1
 DISTNAME=		control-center-${VERSION}
-PKGNAME=		control-center2-${VERSION}p2
+PKGNAME=		control-center2-${VERSION}p3
 SHARED_LIBS +=	gnome-window-settings 1.0      # .1.0
 
 CATEGORIES=		x11
@@ -39,8 +39,10 @@ LIB_DEPENDS=		gstaudio-0.10.>=0.1,gstinterfaces-0.10.>=0.1::multimedia/gstreamer
 			metacity-private::x11/gnome/metacity \
 			nautilus-extension.>=1::x11/gnome/nautilus \
 			panel-applet-2::x11/gnome/panel
-BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
-RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info
+BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
+			:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
+			:scrollkeeper-*:textproc/scrollkeeper
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
