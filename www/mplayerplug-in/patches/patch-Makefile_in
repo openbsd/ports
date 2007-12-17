@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2007/10/13 16:05:13 fgsch Exp $
---- Makefile.in.orig	Fri Jan 19 19:17:53 2007
-+++ Makefile.in	Sat Oct 13 16:34:24 2007
+$OpenBSD: patch-Makefile_in,v 1.3 2007/12/17 19:25:59 jasper Exp $
+--- Makefile.in.orig	Sun Dec 16 02:04:45 2007
++++ Makefile.in	Sun Dec 16 02:05:48 2007
 @@ -17,22 +17,22 @@ LDFLAGS= @LDFLAGS@ @LDFLAGS64@ @LIBS@ @XEXT_LIBS@ @XPM
  LIBOBJS= @LIBOBJS@
  OBJ= plugin.o nsScriptablePeer.o npp_gate.o np_entry.o npn_gate.o \
@@ -30,21 +30,3 @@ $OpenBSD: patch-Makefile_in,v 1.2 2007/10/13 16:05:13 fgsch Exp $
  INSTALL = @INSTALL@
  SHAREDTARGET=mplayerplug-in
  NP_HEADERS= include/npplat.h include/pluginbase.h
-@@ -135,7 +135,7 @@ strlcpy.o: extras/strlcpy.c $(HEADERS)
- 
- clean:
- 	$(RM) $(OBJ) $(OBJ_WMP) $(OBJ_QT) $(OBJ_RM) $(OBJ_GMP) $(OBJ_DVX) $(SHAREDTARGET)*.so $(SHAREDTARGET)*.xpt
--	make -C po clean
-+	$(MAKE) -C po clean
- 
- distclean: clean
- 	$(RM) install.sh uninstall.sh po/Makefile
-@@ -145,7 +145,7 @@ install: all 
- 	./install.sh $(DESTDIR)
- 
- languages:
--	make -C po
-+	$(MAKE) -C po
- 
- uninstall:
- 	./uninstall.sh
