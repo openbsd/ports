@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/17 23:06:56 simon Exp $
 
 COMMENT=	parse and format strp and strf time patterns
 
 MODULES=	cpan
-DISTNAME=	DateTime-Format-Strptime-1.0700
+DISTNAME=	DateTime-Format-Strptime-1.0702
 CATEGORIES=	devel
+EXTRACT_SUFX=	.tgz
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
