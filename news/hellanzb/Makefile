@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/17 00:58:24 merdely Exp $
 
 COMMENT=		retrieve and process nzb-files
 
 DISTNAME=		hellanzb-0.13
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		news
 
 HOMEPAGE=		http://www.hellanzb.com/trac/
@@ -20,7 +20,8 @@ MODULES=		lang/python
 RUN_DEPENDS=		::archivers/par2cmdline \
 			::archivers/unrar \
 			::devel/py-twisted/core \
-			::devel/py-twisted/web
+			::devel/py-twisted/web \
+			::news/py-yenc
 
 NO_REGRESS=		Yes
 
