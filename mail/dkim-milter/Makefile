@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/10/21 10:23:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2007/12/17 10:59:37 jakob Exp $
 
 COMMENT=	DKIM milter
 
-DISTNAME=	dkim-milter-2.3.2
+DISTNAME=	dkim-milter-2.4.0
 PKGNAME=	${DISTNAME}
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dkim-milter/
@@ -23,9 +23,14 @@ EXAMPLESDIR=	share/examples/dkim-milter
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj.*/dkim-filter/dkim-filter ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/obj.*/dkim-filter/dkim-testkey ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/obj.*/dkim-filter/dkim-testssp ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/dkim-filter/dkim-genkey.sh ${PREFIX}/bin/dkim-genkey
 	${INSTALL_MAN} ${WRKSRC}/dkim-filter/dkim-filter.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/dkim-filter/dkim-testkey.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/dkim-filter/dkim-testssp.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/dkim-filter/dkim-genkey.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/dkim-filter/dkim-filter.conf.sample ${PREFIX}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/dkim-filter/gentxt.csh ${PREFIX}/${EXAMPLESDIR}
 
 .include <bsd.port.mk>

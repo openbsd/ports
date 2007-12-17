@@ -1,57 +1,83 @@
-(1) Configure sendmail:
-  (a) Choose a socket at which the MTA and the filter will rendezvous
-      (see the documentation in libmilter for details)
-  (b) Add a line like this example to your sendmail.mc using your desired
-      socket specification:
-	INPUT_MAIL_FILTER(`dkim-filter', `S=inet:8891@localhost')
-  (c) Rebuild your sendmail.cf in the usual way
+(1) Choose a selector name.  Current convention is to use a code for the
+    current month and year, or just the year.  However, you are free to
+    choose any name you wish, especially if you have a selector assignment
+    scheme in mind.
 
-(2) Choose a selector name.  Current convention is to use the hostname
-    (hostname only, not the fully-qualified domain name) of the host that
-    will be providing the service, but you are free to choose any name you
-    wish, especially if you have a selector assignment scheme in mind.
+(2) Create a public/private keypair for signing:
 
-(3) Either:
-  (a) Run the script gentxt.csh.  This will generate a public and private
-      key in PEM format and output a TXT record appropriate for insertion
-      into your DNS zone file.  Insert it in your zone file and reload your
-      DNS system so the data is published.
-	-OR-
-  (b) Manually generate a public and private key:
-    (i)   % openssl genrsa -out rsa.private 512
-    (ii)  % openssl rsa -in rsa.private -out rsa.public -pubout -outform PEM
+  (a) Run the script "dkim-genkey".
+
+      This will generate a private key in PEM format and a TXT record
+      appropriate for insertion into your DNS zone file.  Insert the contents
+      of the TXT record file into your DNS zone file, increment the
+      serial number, and reload your DNS server so that the new record
+      is published.  This is by far the easiest approach.
+
+  (b) If for some reason you cannot use the "dkim-genkey" script, manually
+      generate a public and private key.  The steps below are exactly what
+      is performed by the dkim-genkey script.
+
+    (i) Run this command:
+
+	    % openssl genrsa -out rsa.private 1024
+
+	This generates a private key and writes it to the file "rsa.private".
+	The generated key is in PEM format and is a 1024-bit key, the
+	minimum required by the DKIM specification.
+
+    (ii) Run this command:
+
+	    % openssl rsa -in rsa.private -out rsa.public -pubout -outform PEM
+
+	This reads the private key generated in the previous step and
+	extracts from it the matching public key.  This is written to the
+	file "rsa.public".
+
     (iii) Add a TXT DNS record containing the base64 encoding of your public
-          key, which is everything between the BEGIN and END lines in the
-          rsa.public file generated above, with spaces and newlines removed.
-          It should be in this form:
+        key, which is everything between the BEGIN and END lines in the
+        rsa.public file generated above, with spaces and newlines removed.
+        It should be in this form:
 
-	  "g=; k=rsa; t=y; p=MFwwDQYJ...AwEAAQ=="
+	  "g=*; k=rsa; t=y; p=MFwwDQYJ...AwEAAQ=="
 
-          ...using, of course, your own public key's base64 data.  The name of
-          the TXT record should be SELECTOR._domainkey.example.com (where
-          "SELECTOR" is the name you chose and "example.com" is your domain
-          name).  You might want to set a short TTL on this record.  Reload
-          your nameserver so that the record gets published.  For a translation
-          of the parameter and value pairs shown here, see the draft spec;
-          basically this just announces an RSA public key and also declares
-          that your site is using this key in test mode so nobody should take
-          any real action based on success or failure of the use of this key to
-          verify a message.
+        ...using, of course, your own public key's base64 data.  The name of
+        the TXT record should be SELECTOR._domainkey.example.com (where
+        "SELECTOR" is the name you chose and "example.com" is your domain
+        name).  Reload your nameserver so that the record gets published.
+	If you are running BIND 9 the command is "rndc reload"; for other
+	nameservers, consult your vendor documentation.
 
-(4) Store the private key in a safe place.  We generally use a path like
-    /var/db/domainkeys/SELECTOR.key.pem (where "SELECTOR" is the name you
-    chose).
+	For a translation of the parameter and value pairs shown here, see
+	the DKIM specification (RFC4871) section 3.6.  The specification
+	is available in a file in the source code package called
+	"rfc4871.txt".  Basically this key record just announces an RSA
+	public key and also declares that your site is using this key in
+	test mode so nobody should take any real action based on success
+	or failure of the use of this key to verify a message.
 
-(5) Start dkim-filter.  You will need at least the "-p" option.  The current
+(3) Store the private key in a safe place.  We generally use a path like
+    /var/db/dkim/SELECTOR.key.pem (where "SELECTOR" is the name you chose).
+    The /var/db/dkim directory and the associated .pem file should be owned by
+    the user that will be executing the filter (preferably not the
+    superuser) and be mode 0700 and 0600 respectively.
+
+(4) Start dkim-filter.  You will need at least the "-p" option.  (A manual
+    page for this tool is available and will be installed by the above
+    process if you want to see the available options.)  The current
     recommended set of command line options is:
 
-	-l -p SOCKETSPEC -d DOMAIN -s KEYPATH -S SELECTOR
+	-l -p SOCKETSPEC -d DOMAIN -k KEYPATH -s SELECTOR
 
-    ...where SOCKETSPEC is the socket you told sendmail to use above,
+    ...where SOCKETSPEC is the socket you want the MTA to use (see below),
     DOMAIN is the domain or set of domains for which you want to sign
     mail, KEYPATH is the path to the private key file you generated, and
     SELECTOR is the selector name you picked.  You can tack "-f" on there
     if you want it to run in the foreground instead of in the background
     as a daemon.
 
-(7) Restart sendmail.
+    The SOCKETSPEC is a socket where the MTA will attempt to connect
+    to your filter.  The filter must therefore be listening there for
+    connections from MTAs in order to process messages.  See the
+    documentation in libmilter (available with the open source sendmail
+    source code) for details on selecting and specifying a socket.
+
