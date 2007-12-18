@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/18 20:37:41 landry Exp $
 
 COMMENT=	lightweight file manager for xfce4
 
-V=		0.8.0
+V=		0.9.0
 DISTNAME=	Thunar-${V}
-PKGNAME=	thunar-${V}p2
+PKGNAME=	thunar-${V}
 
-SHARED_LIBS +=  thunarx-1            4.2      # .4.2
-SHARED_LIBS +=  thunar-vfs-1         4.2      # .4.2
+SHARED_LIBS=	thunarx-1	5.1 \
+		thunar-vfs-1	5.1
 
 HOMEPAGE=	http://thunar.xfce.org/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -30,16 +30,17 @@ CONFIGURE_ARGS=	--disable-gnome-thumbnailers \
 		--enable-pcre
 
 LIB_DEPENDS=	exo-0.3.>=4::x11/xfce4/exo \
-		pcre.>=1.0::devel/pcre \
+		pcre.>=2.0::devel/pcre \
 		xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
 		exif.>=12.1::graphics/libexif \
 		dbus-glib-1::x11/dbus-glib \
 		dbus-1.>=6::x11/dbus
 
-RUN_DEPENDS=	::x11/xfce4/xfce4-icon-theme
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::x11/xfce4/xfce4-icon-theme
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xrender atk-1.0 c cairo expat \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr fontconfig \
+WANTLIB=	ICE SM X11 Xau Xdmcp Xrender Xdamage atk-1.0 c cairo expat \
+		Xcursor Xext Xfixes Xi Xinerama Xrandr Xcomposite fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread \
