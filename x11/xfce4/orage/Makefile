@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/10/26 08:55:15 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/18 20:59:28 landry Exp $
 
 COMMENT=	advanced calendar for xfce4
 
 V=		4.5.9.6
 DISTNAME=	orage-${V}
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.xfce.org/projects/orage/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -26,6 +27,7 @@ LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4 \
 		notify.>=2::devel/libnotify \
 		dbus-glib-1::x11/dbus-glib \
 		dbus-1.>=6::x11/dbus
+RUN_DEPENDS=	::devel/desktop-file-utils
 
 WANTLIB= ICE SM X11 Xau Xdmcp Xrender Xcomposite c expat fontconfig freetype \
 		Xcursor Xext Xfixes Xi Xinerama Xdamage Xrandr pthread m z \
