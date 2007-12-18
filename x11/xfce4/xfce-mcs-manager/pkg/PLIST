@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/05/28 19:53:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/12/18 20:23:56 landry Exp $
 bin/xfce-mcs-manager
 bin/xfce-setting-show
 include/xfce4/
@@ -13,6 +13,9 @@ share/icons/hicolor/
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/xfce4-settings.png
+share/locale/am/
+share/locale/am/LC_MESSAGES/
+share/locale/am/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce-mcs-manager.mo
@@ -66,6 +69,7 @@ share/locale/ko/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/lv/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/xfce-mcs-manager.mo
@@ -122,4 +126,6 @@ share/xfce4/doc/it/images/smgr_from_root_menu.png
 share/xfce4/doc/it/images/smgr_from_setup_button.png
 share/xfce4/doc/it/xfce-mcs-manager.html
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/update-desktop-database

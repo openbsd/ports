@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/12/18 20:26:39 landry Exp $
 
 COMMENT=	settings manager plug-ins for xfce4
 
-V=		4.4.1
+V=		4.4.2
 DISTNAME=	xfce-mcs-plugins-${V}
-PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.xfce.org/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -20,15 +19,18 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
-LIB_DEPENDS=	xfce4mcs-client.>=3.5,xfce4mcs-manager.>=3.5::x11/xfce4/libxfce4mcs \
+LIB_DEPENDS=	xfce4mcs-client.>=3,xfce4mcs-manager.>=3::x11/xfce4/libxfce4mcs \
 		xfcegui4.>=4::x11/xfce4/libxfcegui4
-RUN_DEPENDS=	:xfce-mcs-manager->=4.4.0:x11/xfce4/xfce-mcs-manager
-BUILD_DEPENDS=	${RUN_DEPENDS}
-WANTLIB=	ICE SM X11 Xcursor Xext Xrandr Xrender Xxf86vm expat \
-		Xau Xdmcp Xfixes Xi Xinerama fontconfig freetype m \
+
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::x11/xfce4/xfce-mcs-manager
+
+WANTLIB=	ICE SM X11 Xcursor Xext Xrandr Xrender Xxf86vm \
+		Xau Xdmcp Xfixes Xi Xinerama fontconfig \
+		Xcomposite Xdamage freetype m expat pcre \
 		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png z \
-		startup-notification-1 xfce4util.>=1
+		startup-notification-1 xfce4util
 
 .include <bsd.port.mk>
