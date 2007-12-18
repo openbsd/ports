@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/06/06 20:36:23 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2007/12/18 16:05:48 ajacoutot Exp $
 @pkgpath print/lilypond
 bin/abc2ly
 bin/convert-ly
@@ -367,3 +367,5 @@ share/omf/lilypond/${VERSION}/lilypond.html.omf
 share/omf/lilypond/${VERSION}/lilypond.pdf.omf
 share/omf/lilypond/${VERSION}/music-glossary.html.omf
 share/omf/lilypond/${VERSION}/music-glossary.pdf.omf
+@exec %D/bin/scrollkeeper-update -q
+@unexec %D/bin/scrollkeeper-update -q
