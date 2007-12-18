@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/06 15:14:48 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/12/18 20:31:56 landry Exp $
 %%SHARED%%
 lib/gtk-2.0/
 lib/gtk-2.0/2.10.0/
 lib/gtk-2.0/2.10.0/engines/
 lib/gtk-2.0/2.10.0/engines/libxfce.a
 lib/gtk-2.0/2.10.0/engines/libxfce.la
+share/themes/
 share/themes/Xfce/
 share/themes/Xfce-4.0/
 share/themes/Xfce-4.0/ICON.png

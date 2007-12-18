@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2007/12/18 20:31:56 landry Exp $
 
 COMMENT=	theme engine for GTK2
-V=		4.4.1
-DISTNAME=	gtk-xfce-engine-2.4.1
+V=		4.4.2
+DISTNAME=	gtk-xfce-engine-2.4.2
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 EXTRACT_SUFX=	.tar.bz2
 
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 LIB_DEPENDS=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
-RUN_DEPENDS=	:xfwm4->=4.0:x11/xfce4/xfwm4
+
 WANTLIB=	X11 Xrender Xau Xdmcp atk-1.0 fontconfig freetype expat \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr \
-		glib-2.0 gmodule-2.0 gobject-2.0 m z png \
+		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr \
+		glib-2.0 gmodule-2.0 gobject-2.0 m z pcre png \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 cairo glitz
 
 .include <bsd.port.mk>
