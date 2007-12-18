@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/17 23:35:59 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2007/12/18 20:48:58 landry Exp $
 PKG_ARCH=	*
 
 COMMENT=	icon theme for xfce4
-V=		4.4.1
+V=		4.4.2
 DISTNAME=	xfce4-icon-theme-${V}
-PKGNAME=	${DISTNAME}p1
 
 HOMEPAGE=	http://www.xfce.org/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -22,6 +21,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	No
 MODULES=
 
-RUN_DEPENDS=	:xfce4-panel->=4.4.1:x11/xfce4/xfce4-panel
+#not yet
+#RUN_DEPENDS=	::x11/gnome/librsvg,no_gnome
 
 .include <bsd.port.mk>

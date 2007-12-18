@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/11/17 23:35:59 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/12/18 20:48:58 landry Exp $
+lib/pkgconfig/
 lib/pkgconfig/xfce4-icon-theme-1.0.pc
+share/icons/
 share/icons/Rodent/
 share/icons/Rodent/48x48/
 share/icons/Rodent/48x48/apps/
@@ -1626,6 +1628,7 @@ share/icons/Rodent/scalable/stock/volume-medium.svg
 share/icons/Rodent/scalable/stock/volume-min.svg
 share/icons/Rodent/scalable/stock/volume-mute.svg
 share/icons/Rodent/scalable/stock/volume-zero.svg
+share/xfce4/
 share/xfce4/mime/
 share/xfce4/mime/Rodent.mime.xml
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Rodent
