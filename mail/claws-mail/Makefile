@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2007/12/18 15:56:16 ajacoutot Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-docs=		documentation
@@ -9,7 +9,7 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.0.1
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}p0
+PKGNAME-main=			${DISTNAME}p1
 FULLPKGNAME-docs=		claws-mail-docs-${V}
 FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p0
 FULLPKGNAME-clamav=		claws-mail-clamav-${V}p0
@@ -69,6 +69,8 @@ LIB_DEPENDS=		atk-1.0::devel/atk \
 			etpan::mail/libetpan \
 			sasl2::security/cyrus-sasl2
 
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			gthread-2.0::devel/glib2 \
 			startup-notification-1::devel/startup-notification \

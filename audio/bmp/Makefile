@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2007/10/27 16:13:37 simon Exp $
+# $OpenBSD: Makefile,v 1.24 2007/12/18 15:56:16 ajacoutot Exp $
 
 COMMENT-main=	gtk+2 media player based on XMMS
 COMMENT-mp3=	MP3 input plugin for bmp
 COMMENT-vorbis=	Ogg Vorbis input plugin for bmp
 V=		0.9.7
 DISTNAME=	bmp-$V
-PKGNAME-main=	bmp-$Vp11
+PKGNAME-main=	bmp-$Vp12
 PKGNAME-mp3=	bmp-mp3-$Vp11
 PKGNAME-vorbis=	bmp-vorbis-$Vp11
 SHARED_LIBS +=	beep                 2.0      # .2.0
@@ -55,6 +55,8 @@ CONFIGURE_ARGS+=--disable-mp3
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
+RUN_DEPENDS-main=${RUN_DEPENDS} \
+		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		esd.>=2.34::audio/esound \
 		glade-2.0.>=0.4::devel/libglade2 \

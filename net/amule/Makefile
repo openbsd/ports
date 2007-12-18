@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/10/26 15:00:39 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2007/12/18 15:56:16 ajacoutot Exp $
 
 COMMENT-main =	another eMule p2p client
 COMMENT-web =	webserver interface to amuled
@@ -10,7 +10,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
 MULTI_PACKAGES =-main -web -daemon
-PKGNAME-main =	amule-$Vp2
+PKGNAME-main =	amule-$Vp3
 PKGNAME-daemon =amuled-$V
 PKGNAME-web =	amuleweb-$V
 
@@ -23,6 +23,9 @@ PERMIT_DISTFILES_FTP =	Yes
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amule/}
 EXTRACT_SUFX =	.tar.bz2
+
+RUN_DEPENDS-main=${RUN_DEPENDS} \
+		:desktop-file-utils-*:devel/desktop-file-utils
 
 LIB_DEPENDS =	wx_base_net,wx_base:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 WANTLIB =	c m pthread z stdc++

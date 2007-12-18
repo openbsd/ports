@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2007/09/08 15:22:40 pyr Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2007/12/18 15:56:16 ajacoutot Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 bin/claws-mail
@@ -311,3 +311,5 @@ share/locale/sr/LC_MESSAGES/claws-mail.mo
 share/locale/sv/LC_MESSAGES/claws-mail.mo
 share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
 share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

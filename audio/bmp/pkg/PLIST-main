@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 00:10:26 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/12/18 15:56:16 ajacoutot Exp $
 @pkgpath audio/bmp
 @pkgpath audio/bmp,no_mp3
 @pkgpath audio/bmp,no_vorbis
@@ -99,3 +99,5 @@ share/locale/sk/LC_MESSAGES/bmp.mo
 share/locale/sv/LC_MESSAGES/bmp.mo
 share/locale/zh_CN/LC_MESSAGES/bmp.mo
 %%SHARED%%
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

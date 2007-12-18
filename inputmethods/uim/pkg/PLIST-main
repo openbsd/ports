@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/04/08 14:58:04 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2007/12/18 15:56:16 ajacoutot Exp $
 @pkgpath inputmethods/uim
 bin/uim-el-agent
 bin/uim-el-helper-agent
@@ -246,3 +246,5 @@ share/uim/ustr.scm
 share/uim/util.scm
 share/uim/viqr.scm
 share/uim/zaurus.scm
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

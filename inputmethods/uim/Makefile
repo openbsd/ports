@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 11:14:46 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2007/12/18 15:56:16 ajacoutot Exp $
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for gtk
 COMMENT-qt=	uim for qt
@@ -12,7 +12,7 @@ V=		1.4.1
 DISTNAME=	uim-$V
 MASTER_SITES=	http://uim.freedesktop.org/releases/uim/stable/
 HOMEPAGE=	http://uim.freedesktop.org/wiki/
-PKGNAME-main=	uim-$V
+PKGNAME-main=	uim-$Vp0
 PKGNAME-gtk=	uim-gtk-$Vp0
 PKGNAME-qt=	uim-qt-$V
 PKGNAME-kde=	uim-kde-$V
@@ -44,6 +44,8 @@ SUBST_VARS=	MODQT_PLUGINS
 
 WANTLIB=	Xrender X11 fontconfig freetype Xext c stdc++ m Xau Xdmcp
 
+RUN_DEPENDS-main=${RUN_DEPENDS} \
+		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-main=anthy,anthydic::inputmethods/anthy \
 		${MODLIBICONV_LIB_DEPENDS} \
 		${MODGETTEXT_LIB_DEPENDS}
