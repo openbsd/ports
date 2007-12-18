@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile,v 1.2 2002/08/02 01:43:47 wcobb Exp $
---- makefile.orig	Thu Aug  1 20:35:34 2002
-+++ makefile	Thu Aug  1 20:42:45 2002
+$OpenBSD: patch-makefile,v 1.3 2007/12/18 09:43:36 ajacoutot Exp $
+--- makefile.orig	Tue Dec 18 09:36:17 2007
++++ makefile	Tue Dec 18 09:36:17 2007
 @@ -2,23 +2,14 @@
  # 	Makefile for luna using BSD cc
  # 
@@ -39,7 +39,7 @@ $OpenBSD: patch-makefile,v 1.2 2002/08/02 01:43:47 wcobb Exp $
  HDRS = luna.h
  HDRSPR = pyramid.h
  HDRSIP = iprintf/iansilib.h iprintf/iprint.h
-@@ -35,13 +26,15 @@ HDRSIP = iprintf/iansilib.h iprintf/ipri
+@@ -35,13 +26,15 @@ HDRSIP = iprintf/iansilib.h iprintf/iprint.h
  #
  all : $(PROG)
  

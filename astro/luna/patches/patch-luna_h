@@ -1,6 +1,6 @@
-$OpenBSD: patch-luna_h,v 1.2 2002/08/02 01:43:47 wcobb Exp $
---- luna.h.orig	Thu Aug  1 20:35:34 2002
-+++ luna.h	Thu Aug  1 20:42:19 2002
+$OpenBSD: patch-luna_h,v 1.3 2007/12/18 09:43:36 ajacoutot Exp $
+--- luna.h.orig	Tue Dec 18 09:36:17 2007
++++ luna.h	Tue Dec 18 09:36:17 2007
 @@ -11,6 +11,7 @@
  
  
@@ -23,11 +23,11 @@ $OpenBSD: patch-luna_h,v 1.2 2002/08/02 01:43:47 wcobb Exp $
 -#define	printf	iprintf
 -#define	sprintf	isprintf
 -#define	fprintf	ifprintf
--
 +extern int		getext(int, int, int);
 +extern int		getmoon(int, int);
 +extern int		ymd2yday(int, int, int);
  
+-
  #if defined(ANSI)
 -	extern void		main(int argc, char **argv);
 +	extern int		main(int argc, char **argv);

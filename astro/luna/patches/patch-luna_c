@@ -1,6 +1,6 @@
-$OpenBSD: patch-luna_c,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
---- luna.c.orig	Fri Nov  9 11:53:53 2001
-+++ luna.c	Fri Nov  9 11:55:05 2001
+$OpenBSD: patch-luna_c,v 1.2 2007/12/18 09:43:36 ajacoutot Exp $
+--- luna.c.orig	Tue Dec 18 09:36:17 2007
++++ luna.c	Tue Dec 18 09:36:17 2007
 @@ -25,27 +25,41 @@
  #include	"luna.h"
  
@@ -17,7 +17,8 @@ $OpenBSD: patch-luna_c,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
 +	int			aotmoon, tzhere, i;
 +	struct tm		*localtmp, algotm;
 +	char			*chp, *envp, *tzname;
-+
+ 
+-	getoptions(argc, argv, &localtmp, &algotmp);
 +	getoptions(argc, argv, &localtmp);
 +	envp = getenv("TZ");
 +	if ((envp = getenv("TZ")) == NULL ||
@@ -28,8 +29,7 @@ $OpenBSD: patch-luna_c,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
 +	tzhere = atoi(chp);
 +	}
 +	tzconv(&algotm, localtmp, tzhere - TZ_ALGO);
- 
--	getoptions(argc, argv, &localtmp, &algotmp);
++
  	for (i = 0; i < bdate; i++) {
  		if (extluna) {
  			aotmoon = getext(localtmp -> tm_year, localtmp -> tm_mon,
@@ -37,11 +37,11 @@ $OpenBSD: patch-luna_c,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
  		} else {
 -			aotmoon = getmoon(algotmp -> tm_year, algotmp -> tm_yday);
 +			aotmoon = getmoon(algotm.tm_year, algotm.tm_yday);
-+		}
+ 		}
 +
 +		if ((tzname = getenv("TZ")) == NULL) {
 +			tzname = TZNAME_DFL;
- 		}
++		}
  	
 -		chp = Asctime(localtmp);
 +		chp = asctime(localtmp);
@@ -83,7 +83,7 @@ $OpenBSD: patch-luna_c,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
  	struct tm		*localtmp;
  
  	argnumcnt = 0;
-@@ -203,7 +215,7 @@ getoptions(argc, argv, localtmpp, algotm
+@@ -203,7 +215,7 @@ getoptions(argc, argv, localtmpp, algotmpp)
  		strlwr(argv[i]);
  #else
  		for (j = 0; j < strlen(argv[i]); j++) {
@@ -92,7 +92,7 @@ $OpenBSD: patch-luna_c,v 1.1.1.1 2002/04/27 15:23:58 wcobb Exp $
  		}
  #endif	/* MSDOS or not */
  
-@@ -376,19 +388,7 @@ getoptions(argc, argv, localtmpp, algotm
+@@ -376,19 +388,7 @@ getoptions(argc, argv, localtmpp, algotmpp)
  		= ymd2yday(localtmp -> tm_year, localtmp -> tm_mon,
  			localtmp -> tm_mday);
  
