@@ -1,5 +1,6 @@
---- ../src/Makefile.orig	Mon Jan 13 18:51:01 1997
-+++ ../src/Makefile	Sat Jan 22 23:37:21 2000
+$OpenBSD: patch-src_Makefile,v 1.1 2007/12/18 09:08:24 ajacoutot Exp $
+--- src/Makefile.orig	Tue Jan 14 00:51:01 1997
++++ src/Makefile	Tue Dec 18 09:53:05 2007
 @@ -113,10 +113,10 @@
  
  # Sun-4         (SPARCstation 5 or 10 with Solaris 2.x, using 'gcc' only)
@@ -15,7 +16,7 @@
  
  # Apollo 700    (HP Apollo 9000 Series 700 with HPUX)
  #
-@@ -228,7 +228,7 @@
+@@ -228,7 +228,7 @@ CC		= gcc
  #CC_CUSR	= -DREVERSEVIDEO -DXWINDOW
  #CC_CUSR	= -DHOMEDIR -DREVERSEVIDEO -DXWINDOW
  
@@ -24,7 +25,7 @@
  
  #
  #-------------------------------------------------------------------------------
-@@ -245,7 +245,8 @@
+@@ -245,7 +245,8 @@ CC_CUSR		= -DHOMEDIR -DREVERSEVIDEO -DSUNTRANSITS -DXW
  # but should be accessible by other users as well.
  #
  
@@ -34,7 +35,7 @@
  
  #
  #-------------------------------------------------------------------------------
-@@ -253,9 +254,13 @@
+@@ -253,9 +254,13 @@ CC_CUSR		= -DHOMEDIR -DREVERSEVIDEO -DSUNTRANSITS -DXW
  # SATTRACK SUB-DIRECTORIES
  #
  
@@ -51,7 +52,7 @@
  
  INC		= $(SRC)/include
  
-@@ -318,13 +323,15 @@
+@@ -318,13 +323,15 @@ CC_CISI		=
  #X11		= /usr/include
  #X11		= /usr/local/include
  #X11		= /usr/include/X11
@@ -69,7 +70,7 @@
  #LX11		= -L/usr/openwin/lib -lX11 -lXt -lICE -lSM
  
  #CC_CXINC	=
-@@ -355,6 +362,30 @@
+@@ -355,6 +362,30 @@ clean:
  	cd $(RUN) ; \
  	/bin/rm -f fixchecksum makeamsat makepassesx maketles maketlex \
  	satfilter sattrack xdemo

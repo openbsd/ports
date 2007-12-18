@@ -1,5 +1,6 @@
---- ../run/getsts.orig	Tue Jan 14 14:21:06 1997
-+++ ../run/getsts	Sat Jan 22 23:50:19 2000
+$OpenBSD: patch-run_getsts,v 1.2 2007/12/18 09:08:24 ajacoutot Exp $
+--- run/getsts.orig	Tue Jan 14 20:21:06 1997
++++ run/getsts	Tue Dec 18 09:53:05 2007
 @@ -24,19 +24,22 @@
  #
  set stsnum=81
