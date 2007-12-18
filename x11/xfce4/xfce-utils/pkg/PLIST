@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/05/28 19:53:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/12/18 20:30:02 landry Exp $
 bin/startxfce4
 bin/xfbrowser4
 bin/xfce4-about
@@ -11,12 +11,14 @@ share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.xfce.RunDialog.service
 @sample ${SYSCONFDIR}/xdg/xfce4/
+share/examples/xfce4/Xft.xrdb
 share/examples/xfce4/xinitrc
 @sample ${SYSCONFDIR}/xdg/xfce4/xinitrc
 share/icons/hicolor/48x48/apps/xfce4-logo.png
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/xfce-utils.mo
+share/locale/am/LC_MESSAGES/xfce-utils.mo
 share/locale/ar/LC_MESSAGES/xfce-utils.mo
 share/locale/az/LC_MESSAGES/xfce-utils.mo
 share/locale/be/LC_MESSAGES/xfce-utils.mo
@@ -49,9 +51,11 @@ share/locale/ja/LC_MESSAGES/xfce-utils.mo
 share/locale/ka/LC_MESSAGES/xfce-utils.mo
 share/locale/ko/LC_MESSAGES/xfce-utils.mo
 share/locale/lt/LC_MESSAGES/xfce-utils.mo
+share/locale/lv/LC_MESSAGES/xfce-utils.mo
 share/locale/mk/LC_MESSAGES/xfce-utils.mo
 share/locale/mr/LC_MESSAGES/xfce-utils.mo
 share/locale/ms/LC_MESSAGES/xfce-utils.mo
+share/locale/nb_NO/LC_MESSAGES/xfce-utils.mo
 share/locale/nl/LC_MESSAGES/xfce-utils.mo
 share/locale/pa/LC_MESSAGES/xfce-utils.mo
 share/locale/pl/LC_MESSAGES/xfce-utils.mo

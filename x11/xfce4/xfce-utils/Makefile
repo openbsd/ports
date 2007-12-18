@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/10/22 20:18:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2007/12/18 20:30:02 landry Exp $
 
 COMMENT=	essential utilities and scripts for xfce4
 
-V=		4.4.1
+V=		4.4.2
 DISTNAME=	xfce-utils-${V}
-PKGNAME=	${DISTNAME}p1
 
 HOMEPAGE=	http://www.xfce.org/projects/xfce-utils/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -23,16 +22,16 @@ USE_GMAKE=	Yes
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		dbus-glib-1::x11/dbus-glib \
 		dbus-1.>=6::x11/dbus
-RUN_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
-		:xfce4-session->=4.4.1:x11/xfce4/xfce4-session \
+RUN_DEPENDS=	::x11/xfce4/xfce-mcs-manager \
+		::x11/xfce4/xfce4-session \
 		::x11/xfce4/exo
-BUILD_DEPENDS=	${RUN_DEPENDS}
-WANTLIB=	ICE SM X11 Xau Xdmcp Xrender c fontconfig freetype m \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr pthread expat \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager
+WANTLIB=	ICE SM X11 Xau Xdmcp Xrender Xcomposite fontconfig freetype \
+		Xcursor Xext Xfixes Xi Xinerama Xrandr Xdamage pthread expat \
+		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 m c \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png z \
-		startup-notification-1 xfce4util.>=1
+		startup-notification-1 xfce4util pcre
 
 CONFIGURE_ARGS+=--with-browser="xterm -e lynx"
 
