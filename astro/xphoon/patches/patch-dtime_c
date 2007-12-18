@@ -1,6 +1,6 @@
---- dtime.c.orig	Fri Sep 13 22:15:25 1991
-+++ dtime.c	Thu Feb 26 11:02:35 1998
-@@ -26,13 +26,13 @@
+--- dtime.c.orig	Sat Sep 14 07:15:25 1991
++++ dtime.c	Tue Dec 18 10:32:09 2007
+@@ -26,13 +26,13 @@ extern long timezone;
  #include <sys/timeb.h>
  #endif /*SYS5*/
  
@@ -16,7 +16,7 @@
  
      (void) time( &clock );
      return dlocaltime( &clock );
-@@ -40,7 +40,7 @@
+@@ -40,7 +40,7 @@ dtwstime()
  
  struct tws*
  dlocaltime( clock )
@@ -25,7 +25,7 @@
      {
      register struct tm* tm;
  #ifndef SYS5
-@@ -48,7 +48,7 @@
+@@ -48,7 +48,7 @@ dlocaltime( clock )
  #endif not SYS5
      static struct tws tw;
  

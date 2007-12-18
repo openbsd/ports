@@ -1,6 +1,6 @@
---- xphoon.c.orig	Wed Sep 18 12:57:37 1991
-+++ xphoon.c	Thu Feb 26 11:06:34 1998
-@@ -32,7 +32,7 @@
+--- xphoon.c.orig	Wed Sep 18 21:57:37 1991
++++ xphoon.c	Tue Dec 18 10:32:09 2007
+@@ -32,7 +32,7 @@ static char rcsid[] =
  /* Externals. */
  
  extern char* malloc();
@@ -9,7 +9,7 @@
  extern long random();
  
  extern void getbits();
-@@ -65,7 +65,7 @@
+@@ -65,7 +65,7 @@ main( argc, argv )
      int blackflag, demoflag;
      int printpid;
      char* display_name;
