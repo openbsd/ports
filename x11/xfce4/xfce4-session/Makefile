@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 20:04:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2007/12/18 20:46:31 landry Exp $
 
 COMMENT=	xfce4 session manager
 
-V=		4.4.1
+V=		4.4.2
 DISTNAME=	xfce4-session-${V}
-PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS +=  xfsm-4.2             0.1      # .0.1
 
@@ -22,18 +21,21 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 
-CONFIGURE_ARGS= --disable-dbus
+CONFIGURE_ARGS=	--disable-dbus \
+		--enable-session-screenshots
 
-BUILD_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager
-LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4 \
-		xfce4mcs-client.>=3.5::x11/xfce4/libxfce4mcs
-RUN_DEPENDS=	:xfce-mcs-manager->=4.4.1:x11/xfce4/xfce-mcs-manager
+BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager \
+		::textproc/p5-XML-Parser
+LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
+		xfce4mcs-client.>=3::x11/xfce4/libxfce4mcs
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::x11/xfce4/xfce-mcs-manager
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xrender c fontconfig freetype m \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr expat \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo glitz png z \
-		startup-notification-1 xfce4util.>=1
+WANTLIB=	ICE SM X11 Xau Xdmcp Xdamage Xrender fontconfig freetype \
+		Xcursor Xext Xfixes Xi Xcomposite Xinerama Xrandr expat \
+		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 m c z \
+		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 pcre \
+		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
+		startup-notification-1 xfce4util
 
 .include <bsd.port.mk>

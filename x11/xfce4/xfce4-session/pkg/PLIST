@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/05/28 19:53:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/12/18 20:46:31 landry Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 bin/xfce4-autostart-editor
@@ -61,6 +61,7 @@ share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xfce4-session.svg
 share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
+share/locale/am/LC_MESSAGES/xfce4-session.mo
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
 share/locale/az/LC_MESSAGES/xfce4-session.mo
 share/locale/be/LC_MESSAGES/xfce4-session.mo
@@ -89,6 +90,7 @@ share/locale/ja/LC_MESSAGES/xfce4-session.mo
 share/locale/ka/LC_MESSAGES/xfce4-session.mo
 share/locale/ko/LC_MESSAGES/xfce4-session.mo
 share/locale/lt/LC_MESSAGES/xfce4-session.mo
+share/locale/lv/LC_MESSAGES/xfce4-session.mo
 share/locale/mk/LC_MESSAGES/xfce4-session.mo
 share/locale/mr/LC_MESSAGES/xfce4-session.mo
 share/locale/ms/LC_MESSAGES/xfce4-session.mo
@@ -125,4 +127,6 @@ share/xfce4/tips/
 share/xfce4/tips/tips
 share/xfce4/tips/tips.dat
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/update-desktop-database
