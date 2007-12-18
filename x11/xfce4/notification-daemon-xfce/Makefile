@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/23 14:02:40 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/18 21:00:52 landry Exp $
 
 COMMENT=	notification daemon for Xfce4 desktop
 DISTNAME=	notification-daemon-xfce-0.3.7
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://goodies.xfce.org/projects/applications/notification-daemon-xfce
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -22,7 +23,7 @@ LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		sexy::x11/libsexy \
 		notify.>=2.2::devel/libnotify
 
-RUN_DEPENDS=	:xfce-mcs-manager-*:x11/xfce4/xfce-mcs-manager \
+RUN_DEPENDS=	::x11/xfce4/xfce-mcs-manager \
 		::devel/desktop-file-utils \
 		::x11/hicolor-icon-theme
 
@@ -34,6 +35,6 @@ WANTLIB=	ICE SM X11 Xext Xrender c fontconfig freetype m z \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
 		startup-notification-1 xml2 dbus-1 dbus-glib-1 \
-		xfce4util.>=1 pthread
+		Xcomposite Xdamage pcre xfce4util pthread
 
 .include <bsd.port.mk>
