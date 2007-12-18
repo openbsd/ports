@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/08 08:56:44 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2007/12/18 20:34:14 landry Exp $
 %%SHARED%%
 bin/xfwm4
 lib/xfce4/
@@ -20,6 +20,7 @@ share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/wmtweaks.svg
 share/icons/hicolor/scalable/apps/xfce4-workspaces.svg
 share/icons/hicolor/scalable/apps/xfwm4.svg
+share/locale/am/LC_MESSAGES/xfwm4.mo
 share/locale/ar/LC_MESSAGES/xfwm4.mo
 share/locale/az/LC_MESSAGES/xfwm4.mo
 share/locale/be/LC_MESSAGES/xfwm4.mo
@@ -49,6 +50,7 @@ share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ka/LC_MESSAGES/xfwm4.mo
 share/locale/ko/LC_MESSAGES/xfwm4.mo
 share/locale/lt/LC_MESSAGES/xfwm4.mo
+share/locale/lv/LC_MESSAGES/xfwm4.mo
 share/locale/mk/LC_MESSAGES/xfwm4.mo
 share/locale/mr/LC_MESSAGES/xfwm4.mo
 share/locale/ms/LC_MESSAGES/xfwm4.mo
@@ -1304,3 +1306,5 @@ share/xfce4/doc/it/images/xfwm_workspaces.png
 share/xfce4/doc/it/xfwm4.html
 share/xfwm4/
 share/xfwm4/defaults
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/10/26 11:16:32 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2007/12/18 20:34:14 landry Exp $
 
 COMMENT=	xfce4 window manager
-V=		4.4.1
+V=		4.4.2
 DISTNAME=	xfwm4-${V}
-PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.xfce.org/projects/xfwm4/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -21,8 +20,10 @@ USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
-		xfce4mcs-client.>=3.5,xfce4mcs-manager.>=3.5::x11/xfce4/libxfce4mcs
-RUN_DEPENDS=	:xfce-mcs-manager->=4.4.1:x11/xfce4/xfce-mcs-manager
+		xfce4mcs-client.>=3,xfce4mcs-manager.>=3::x11/xfce4/libxfce4mcs
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::x11/xfce4/xfce-mcs-manager
+
 WANTLIB=	ICE SM X11 Xcomposite Xdamage Xext Xfixes Xrandr freetype \
 		Xrender Xau Xdmcp expat Xcursor Xi Xinerama fontconfig \
 		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
