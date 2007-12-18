@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/08 08:33:12 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/18 20:57:45 landry Exp $
 bin/mousepad
 share/applications/
 share/applications/mousepad.desktop
+share/locale/am/
+share/locale/am/LC_MESSAGES/
+share/locale/am/LC_MESSAGES/mousepad.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/mousepad.mo
 share/locale/be/LC_MESSAGES/mousepad.mo
 share/locale/ca/LC_MESSAGES/mousepad.mo
 share/locale/cs/LC_MESSAGES/mousepad.mo
@@ -13,6 +19,9 @@ share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/mousepad.mo
 share/locale/el/LC_MESSAGES/mousepad.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/mousepad.mo
 share/locale/eo/LC_MESSAGES/mousepad.mo
 share/locale/es/LC_MESSAGES/mousepad.mo
 share/locale/et/LC_MESSAGES/mousepad.mo
@@ -36,23 +45,40 @@ share/locale/ko/LC_MESSAGES/mousepad.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/mousepad.mo
+share/locale/lv/LC_MESSAGES/mousepad.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/mousepad.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/mousepad.mo
 share/locale/nl/LC_MESSAGES/mousepad.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/mousepad.mo
 share/locale/pl/LC_MESSAGES/mousepad.mo
 share/locale/pt_BR/LC_MESSAGES/mousepad.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/mousepad.mo
+share/locale/ro/LC_MESSAGES/mousepad.mo
 share/locale/ru/LC_MESSAGES/mousepad.mo
 share/locale/sk/LC_MESSAGES/mousepad.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/mousepad.mo
 share/locale/sv/LC_MESSAGES/mousepad.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/mousepad.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/mousepad.mo
+share/locale/tr/LC_MESSAGES/mousepad.mo
 share/locale/uk/LC_MESSAGES/mousepad.mo
 share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 share/locale/zh_TW/LC_MESSAGES/mousepad.mo
 share/pixmaps/
 share/pixmaps/mousepad.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

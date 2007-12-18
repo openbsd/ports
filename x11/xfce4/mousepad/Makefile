@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/18 20:57:45 landry Exp $
 
 COMMENT=	really simple text editor for xfce4
 
-V=		0.2.12
+V=		0.2.13
 DISTNAME=	mousepad-${V}
 
 HOMEPAGE=	http://www.xfce.org/projects/mousepad/
@@ -14,17 +14,19 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.xfce.org/archive/xfce-4.4.1/src/
+MASTER_SITES=	http://www.xfce.org/archive/xfce-4.4.2/src/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 
-LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4
+LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4
+RUN_DEPENDS=	::devel/desktop-file-utils
 
-WANTLIB= ICE SM X11 Xau Xdmcp Xrender atk-1.0 c cairo expat z \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr png xfce4util \
+WANTLIB=	ICE SM X11 Xau Xdmcp Xdamage Xrender atk-1.0 c cairo expat z \
+		Xcursor Xext Xfixes Xi Xinerama Xrandr Xcomposite \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 startup-notification-1
+		pangocairo-1.0 pangoft2-1.0 startup-notification-1 \
+		png xfce4util pcre
 
 .include <bsd.port.mk>
