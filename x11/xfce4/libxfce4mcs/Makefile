@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2007/12/18 20:17:12 landry Exp $
 
 COMMENT=	settings management library used by most xfce4 modules
 
-V=		4.4.1
+V=		4.4.2
 DISTNAME=	libxfce4mcs-${V}
-SHARED_LIBS +=  xfce4mcs-manager     3.5      # .3.5
-SHARED_LIBS +=  xfce4mcs-client      3.5      # .3.5
+SHARED_LIBS=	xfce4mcs-manager	3.5 \
+		xfce4mcs-client		3.5 # .3.5
 
 HOMEPAGE=	http://www.xfce.org/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -20,7 +20,7 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	startup-notification-1::devel/startup-notification \
-		xfce4util.>=1.10::x11/xfce4/libxfce4util
-WANTLIB +=	ICE SM X11 Xau Xdmcp glib-2.0 gobject-2.0
+		xfce4util.>=1::x11/xfce4/libxfce4util
+WANTLIB=	ICE SM X11 Xau Xdmcp glib-2.0 gobject-2.0 pcre
 
 .include <bsd.port.mk>

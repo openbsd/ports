@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2007/12/18 20:18:11 landry Exp $
 
 COMMENT=	widget library for xfce4
-V=		4.4.1
+V=		4.4.2
 DISTNAME=	libxfcegui4-${V}
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS +=  xfcegui4             4.0      # .6.5
+SHARED_LIBS=	xfcegui4	4.0	# .6.6
 
 HOMEPAGE=	http://www.xfce.org/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -18,14 +17,14 @@ PERMIT_PACKAGE_FTP=	Yes
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	xfce4util.>=1.10::x11/xfce4/libxfce4util \
+LIB_DEPENDS=	xfce4util.>=1::x11/xfce4/libxfce4util \
 		startup-notification-1::devel/startup-notification \
-		gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+		gdk-x11-2.0.>=1200,gdk_pixbuf-2.0.>=1200,gtk-x11-2.0.>=1200::x11/gtk+2
 
 WANTLIB=	ICE SM X11 Xrender Xau Xdmcp fontconfig freetype m z png \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr expat cairo glitz \
+		Xcursor Xext Xfixes Xi Xinerama Xrandr Xcomposite Xdamage \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 gmodule-2.0 gobject-2.0 \
-		glib-2.0 atk-1.0
+		glib-2.0 atk-1.0 expat cairo glitz pcre
 
 CONFIGURE_ARGS+=--disable-gtk-doc
 

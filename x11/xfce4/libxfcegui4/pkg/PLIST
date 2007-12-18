@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/05/28 19:53:06 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/12/18 20:18:11 landry Exp $
 @conflict xfce4-panel-<4.4.1
 %%SHARED%%
 include/xfce4/
@@ -54,6 +54,34 @@ lib/libxfcegui4.a
 lib/libxfcegui4.la
 lib/pkgconfig/
 lib/pkgconfig/libxfcegui4-1.0.pc
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libxfcegui4/
+share/gtk-doc/html/libxfcegui4/XfceAboutDialog.html
+share/gtk-doc/html/libxfcegui4/XfceAppMenuItem.html
+share/gtk-doc/html/libxfcegui4/XfceFramebox.html
+share/gtk-doc/html/libxfcegui4/XfceHeading.html
+share/gtk-doc/html/libxfcegui4/XfceIconTheme.html
+share/gtk-doc/html/libxfcegui4/XfceTitledDialog.html
+share/gtk-doc/html/libxfcegui4/home.png
+share/gtk-doc/html/libxfcegui4/index.html
+share/gtk-doc/html/libxfcegui4/index.sgml
+share/gtk-doc/html/libxfcegui4/left.png
+share/gtk-doc/html/libxfcegui4/libxfcegui4-Standard-Macros.html
+share/gtk-doc/html/libxfcegui4/libxfcegui4-Xfce-Gdk-extensions.html
+share/gtk-doc/html/libxfcegui4/libxfcegui4-Xfce-Gtk+-extensions.html
+share/gtk-doc/html/libxfcegui4/libxfcegui4-XfceFileChooser.html
+share/gtk-doc/html/libxfcegui4/libxfcegui4-core.html
+share/gtk-doc/html/libxfcegui4/libxfcegui4-dialogs.html
+share/gtk-doc/html/libxfcegui4/libxfcegui4-fundamentals.html
+share/gtk-doc/html/libxfcegui4/libxfcegui4-netk.html
+share/gtk-doc/html/libxfcegui4/libxfcegui4-xfce-exec.html
+share/gtk-doc/html/libxfcegui4/libxfcegui4.devhelp
+share/gtk-doc/html/libxfcegui4/libxfcegui4.devhelp2
+share/gtk-doc/html/libxfcegui4/reference.html
+share/gtk-doc/html/libxfcegui4/right.png
+share/gtk-doc/html/libxfcegui4/style.css
+share/gtk-doc/html/libxfcegui4/up.png
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/48x48/
@@ -74,6 +102,9 @@ share/icons/hicolor/48x48/apps/xfce-utils.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xfce-filemanager.svg
+share/locale/am/
+share/locale/am/LC_MESSAGES/
+share/locale/am/LC_MESSAGES/libxfcegui4.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libxfcegui4.mo
@@ -123,18 +154,25 @@ share/locale/ko/LC_MESSAGES/libxfcegui4.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libxfcegui4.mo
+share/locale/lv/LC_MESSAGES/libxfcegui4.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/libxfcegui4.mo
 share/locale/mr/
 share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/libxfcegui4.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/libxfcegui4.mo
 share/locale/nl/LC_MESSAGES/libxfcegui4.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libxfcegui4.mo
 share/locale/pl/LC_MESSAGES/libxfcegui4.mo
 share/locale/pt_BR/LC_MESSAGES/libxfcegui4.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/libxfcegui4.mo
 share/locale/ro/LC_MESSAGES/libxfcegui4.mo
 share/locale/ru/LC_MESSAGES/libxfcegui4.mo
 share/locale/sk/LC_MESSAGES/libxfcegui4.mo
@@ -145,6 +183,9 @@ share/locale/sv/LC_MESSAGES/libxfcegui4.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libxfcegui4.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/libxfcegui4.mo
 share/locale/tr/LC_MESSAGES/libxfcegui4.mo
 share/locale/uk/LC_MESSAGES/libxfcegui4.mo
 share/locale/zh_CN/LC_MESSAGES/libxfcegui4.mo
