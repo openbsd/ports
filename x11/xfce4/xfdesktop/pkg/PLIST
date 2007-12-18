@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/05/28 19:53:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/12/18 20:39:20 landry Exp $
 %%SHARED%%
 bin/xfce4-menueditor
 bin/xfce4-popup-menu
 bin/xfdesktop
+lib/xfce4/
+lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/backdrop_settings.a
 lib/xfce4/mcs-plugins/backdrop_settings.la
 lib/xfce4/modules/
@@ -34,6 +36,7 @@ share/examples/xfdesktop/menu.xml.hu
 share/examples/xfdesktop/menu.xml.it
 share/examples/xfdesktop/menu.xml.ja
 share/examples/xfdesktop/menu.xml.ko
+share/examples/xfdesktop/menu.xml.nb_NO
 share/examples/xfdesktop/menu.xml.nl
 share/examples/xfdesktop/menu.xml.pa
 share/examples/xfdesktop/menu.xml.pl
@@ -60,6 +63,7 @@ share/examples/xfdesktop/xfce-registered-categories.xml.he
 share/examples/xfdesktop/xfce-registered-categories.xml.hu
 share/examples/xfdesktop/xfce-registered-categories.xml.it
 share/examples/xfdesktop/xfce-registered-categories.xml.ja
+share/examples/xfdesktop/xfce-registered-categories.xml.nb_NO
 share/examples/xfdesktop/xfce-registered-categories.xml.nl
 share/examples/xfdesktop/xfce-registered-categories.xml.pl
 share/examples/xfdesktop/xfce-registered-categories.xml.pt_BR
@@ -80,6 +84,7 @@ share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xfce4-backdrop.svg
 share/icons/hicolor/scalable/apps/xfce4-menueditor.svg
+share/locale/am/LC_MESSAGES/xfdesktop.mo
 share/locale/ar/LC_MESSAGES/xfdesktop.mo
 share/locale/az/LC_MESSAGES/xfdesktop.mo
 share/locale/be/LC_MESSAGES/xfdesktop.mo
@@ -104,12 +109,15 @@ share/locale/gu/LC_MESSAGES/xfdesktop.mo
 share/locale/he/LC_MESSAGES/xfdesktop.mo
 share/locale/hi/LC_MESSAGES/xfdesktop.mo
 share/locale/hu/LC_MESSAGES/xfdesktop.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/xfdesktop.mo
 share/locale/it/LC_MESSAGES/xfdesktop.mo
 share/locale/ja/LC_MESSAGES/xfdesktop.mo
 share/locale/ka/LC_MESSAGES/xfdesktop.mo
 share/locale/ko/LC_MESSAGES/xfdesktop.mo
 share/locale/lt/LC_MESSAGES/xfdesktop.mo
+share/locale/lv/LC_MESSAGES/xfdesktop.mo
 share/locale/mk/LC_MESSAGES/xfdesktop.mo
 share/locale/mr/LC_MESSAGES/xfdesktop.mo
 share/locale/ms/LC_MESSAGES/xfdesktop.mo
@@ -168,6 +176,9 @@ share/xfce4/doc/fr/images/xfdesktop-behavior-tab.png
 share/xfce4/doc/fr/images/xfdesktop-editor.png
 share/xfce4/doc/fr/images/xfdesktop-list.png
 share/xfce4/doc/fr/xfdesktop.html
+share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/xfce4-menu.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/update-desktop-database
