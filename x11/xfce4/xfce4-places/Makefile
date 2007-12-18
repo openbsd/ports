@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/14 10:08:40 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/18 21:16:40 landry Exp $
 
 COMMENT=	gnome-like places plugin for the xfce4 panel
 
 V=		1.0.0
 DISTNAME=	xfce4-places-plugin-${V}
-PKGNAME=	xfce4-places-${V}
+PKGNAME=	xfce4-places-${V}p0
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -22,8 +22,6 @@ USE_GMAKE=	Yes
 
 LIB_DEPENDS=	xfce4panel.>=2::x11/xfce4/xfce4-panel \
 		thunar-vfs-1.>=4::x11/xfce4/thunar
-
-RUN_DEPENDS=	:xfce4-panel->=4.4.1:x11/xfce4/xfce4-panel
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo exo-0.3 \
