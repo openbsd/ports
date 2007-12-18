@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1 2004/08/02 20:59:38 xsa Exp $
---- setup.py.orig	Mon Aug  2 12:15:19 2004
-+++ setup.py	Mon Aug  2 22:55:43 2004
-@@ -26,6 +26,7 @@ setup(name = "pymetar", version = pymeta
+$OpenBSD: patch-setup_py,v 1.2 2007/12/18 20:54:33 ajacoutot Exp $
+--- setup.py.orig	Thu Oct 18 13:22:15 2007
++++ setup.py	Tue Dec 18 09:40:34 2007
+@@ -26,6 +26,7 @@ setup(name = "pymetar", version = pymetar.__version__,
        packages= [ "" ],
        py_modules=["pymetar"],
        scripts = [ "bin/weather.py" ], 
