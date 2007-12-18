@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/18 20:55:13 landry Exp $
 
 COMMENT=	lightweight vte-based terminal for xfce4
 
-V=		0.2.6
+V=		0.2.8
 DISTNAME=	Terminal-${V}
-PKGNAME=	terminal-${V}p1
+PKGNAME=	terminal-${V}
 
 HOMEPAGE=	http://www.xfce.org/projects/terminal/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -15,15 +15,16 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.xfce.org/archive/xfce-4.4.1/src/
+MASTER_SITES=	http://www.xfce.org/archive/xfce-4.4.2/src/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 
-LIB_DEPENDS=	exo-0.3.>=4::x11/xfce4/exo \
+LIB_DEPENDS=	exo-0.3.>=5::x11/xfce4/exo \
 		dbus-glib-1::x11/dbus-glib \
 		dbus-1.>=6::x11/dbus \
-		vte.>=8.0::devel/vte
+		vte.>=11::devel/vte
+RUN_DEPENDS=	::devel/desktop-file-utils
 
 WANTLIB=	X11 atk-1.0 c gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 \
 		gtk-x11-2.0 startup-notification-1 xfce4util
