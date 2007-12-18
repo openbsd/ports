@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2007/12/15 23:47:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2007/12/18 16:00:12 ajacoutot Exp $
 
 COMMENT-main=		K Desktop Environment, libraries
 COMMENT-cups=		K Desktop Environment, cups support
@@ -7,7 +7,7 @@ VERSION=		3.5.8
 DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 PKGNAME-cups=		kdecups-${VERSION}
 MODKDE_VERSION=		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
@@ -81,7 +81,8 @@ WANTLIB-main=	${WANTLIB} \
 		xml2 krb5 gssapi crypto asn1
 
 
-RUN_DEPENDS-main=::x11/hicolor-icon-theme \
+RUN_DEPENDS-main=${RUN_DEPENDS} \
+		::x11/hicolor-icon-theme \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
 LIB_DEPENDS-cups=${LIB_DEPENDS} \

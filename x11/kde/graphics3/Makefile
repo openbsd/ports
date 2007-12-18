@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2007/12/15 23:47:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2007/12/18 16:00:12 ajacoutot Exp $
 
 COMMENT-main=		K Desktop Environment, graphic applications
 COMMENT-kamera=		KDE interface to digital cameras
@@ -14,7 +14,7 @@ SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-kamera=	kamera-${VERSION}
 PKGNAME-kpov=	kpovmodeller-${VERSION}p0
 PKGNAME-sane=	ksane-${VERSION}p0
@@ -36,8 +36,9 @@ WANTLIB=		X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext \
 			m idn iconv Xau Xdmcp fam rpcsvc stdc++
 
 
-RUN_DEPENDS-main=	:ghostscript-*:print/ghostscript/gnu \
-			:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS-main=${RUN_DEPENDS} \
+		:ghostscript-*:print/ghostscript/gnu \
+		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			kdeprint,khtml,kjs,kparts,kutils::x11/kde/libs3 \
 			Imlib::graphics/imlib \
