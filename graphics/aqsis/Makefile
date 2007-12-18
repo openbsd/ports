@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/14 11:45:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2007/12/18 22:04:32 deanna Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,7 @@ WANTLIB=	c m stdc++ z
 MODULES=	devel/scons
 
 BUILD_DEPENDS=	::textproc/libxslt \
-		:boost-headers-1.33.*:devel/boost \
+		::devel/boost \
 		::devel/bison
 LIB_DEPENDS=	fltk.>=1::x11/fltk \
 		jpeg.>=62::graphics/jpeg \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/10/21 09:25:48 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2007/12/18 22:04:32 deanna Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	flash player with firefox browser plugin
 DISTNAME=	gnash-0.8.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS +=	gnashbase 2.0
 SHARED_LIBS +=	gnashgeo 2.0
 SHARED_LIBS +=	gnashamf 2.0
@@ -40,7 +40,7 @@ LIB_DEPENDS+=	curl.>=5::net/curl \
 		theora.>=2::multimedia/libtheora \
 		agg.>=2::graphics/agg \
 		gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
-		boost_thread-mt,boost_date_time::devel/boost,-libs \
+		boost_thread-mt,boost_date_time::devel/boost \
 		ltdl::devel/libtool,-ltdl \
 		SDL.>=7::devel/sdl \
 		vorbis,vorbisenc::audio/libvorbis \

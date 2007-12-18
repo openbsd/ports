@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/13 12:44:22 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/18 22:04:32 deanna Exp $
 
 COMMENT=	free open source planetarium
 
@@ -24,7 +24,7 @@ WANTLIB=	freetype c pthread stdc++ Xext m GL X11 Xau GLU z ICE SM \
 
 USE_X11=	Yes
 MODULES=	devel/gettext devel/cmake x11/qt4
-BUILD_DEPENDS=	:boost-headers-*:devel/boost,-main
+BUILD_DEPENDS=	::devel/boost
 LIB_DEPENDS=	png.>=5::graphics/png \
 		curl.>=6::net/curl
 
