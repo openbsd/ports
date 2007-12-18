@@ -11,5 +11,3 @@ standardization. Ten Boost libraries are already included in the
 C++ Standards Committee's Library Technical Report (TR1) as a step
 toward becoming part of a future C++ Standard. More Boost libraries
 are proposed for the upcoming TR2.
-
-This package contains the header files.
