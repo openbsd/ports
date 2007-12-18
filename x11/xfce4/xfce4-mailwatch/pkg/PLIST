@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/30 10:01:10 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/18 21:13:16 landry Exp $
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
 libexec/xfce4/panel-plugins/xfce4-mailwatch-plugin
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/xfce-newmail.png
 share/icons/hicolor/48x48/apps/xfce-nomail.png
 share/icons/hicolor/scalable/
@@ -11,15 +15,23 @@ share/icons/hicolor/scalable/apps/xfce-nomail.svg
 share/locale/ca/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/el/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+share/xfce4/
+share/xfce4/doc/
+share/xfce4/doc/C/
+share/xfce4/doc/C/images/
 share/xfce4/doc/C/images/mailwatch-gmail-settings.png
 share/xfce4/doc/C/images/mailwatch-imap-advanced.png
 share/xfce4/doc/C/images/mailwatch-imap-new-folders.png
@@ -34,4 +46,5 @@ share/xfce4/doc/C/images/mailwatch-pop3-advanced.png
 share/xfce4/doc/C/images/mailwatch-pop3-settings.png
 share/xfce4/doc/C/images/mailwatch-properties.png
 share/xfce4/doc/C/xfce4-mailwatch-plugin.html
+share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/mailwatch.desktop

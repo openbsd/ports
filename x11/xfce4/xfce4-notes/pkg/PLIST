@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/05/28 19:53:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2007/12/18 21:15:48 landry Exp $
 bin/xfce4-popup-notes
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
 libexec/xfce4/panel-plugins/xfce4-notes-plugin
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/xfce4-notes-plugin.png
 share/icons/hicolor/22x22/
 share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/xfce4-notes-plugin.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/xfce4-notes-plugin.png
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
@@ -17,12 +23,16 @@ share/icons/hicolor/scalable/apps/xfce4-notes-plugin.svg
 share/locale/ca/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-notes-plugin.mo
+share/xfce4/
+share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/xfce4-notes-plugin.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

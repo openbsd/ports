@@ -1,10 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/29 07:41:04 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/18 21:18:09 landry Exp $
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
 libexec/xfce4/panel-plugins/xfce4-time-out-plugin
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/xfce4-time-out-plugin.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xfce4-time-out-plugin.svg
 share/locale/de/LC_MESSAGES/xfce4-time-out-plugin.mo
+share/xfce4/
+share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/xfce4-time-out-plugin.desktop
