@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/05/28 19:53:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/12/18 20:41:27 landry Exp $
 @conflict xfce4-datetime-*
 @conflict xfce4-iconbox-*
 @conflict xfce4-showdesktop-*
@@ -26,8 +26,6 @@ include/xfce4/libxfce4panel/xfce-panel-window.h
 lib/libxfce4panel.a
 lib/libxfce4panel.la
 lib/pkgconfig/libxfce4panel-1.0.pc
-lib/xfce4/
-lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/libxfce4settings.a
 lib/xfce4/mcs-plugins/libxfce4settings.la
 lib/xfce4/panel-plugins/
@@ -72,8 +70,6 @@ share/examples/xfce4/panel/systray-4.rc
 @sample ${SYSCONFDIR}/xdg/xfce4/panel/systray-4.rc
 share/examples/xfce4/panel/xfce4-menu-5.rc
 @sample ${SYSCONFDIR}/xdg/xfce4/panel/xfce4-menu-5.rc
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libxfce4panel/
 share/gtk-doc/html/libxfce4panel/XfceArrowButton.html
 share/gtk-doc/html/libxfce4panel/XfceExternalPanelPlugin.html
@@ -106,6 +102,7 @@ share/icons/hicolor/48x48/apps/xfce-mouse.png
 share/icons/hicolor/48x48/apps/xfce4-iconbox.png
 share/icons/hicolor/48x48/apps/xfce4-panel.png
 share/icons/hicolor/48x48/apps/xfce4-taskbar.png
+share/locale/am/LC_MESSAGES/xfce4-panel.mo
 share/locale/ar/LC_MESSAGES/xfce4-panel.mo
 share/locale/az/LC_MESSAGES/xfce4-panel.mo
 share/locale/be/LC_MESSAGES/xfce4-panel.mo
@@ -138,6 +135,7 @@ share/locale/ja/LC_MESSAGES/xfce4-panel.mo
 share/locale/ka/LC_MESSAGES/xfce4-panel.mo
 share/locale/ko/LC_MESSAGES/xfce4-panel.mo
 share/locale/lt/LC_MESSAGES/xfce4-panel.mo
+share/locale/lv/LC_MESSAGES/xfce4-panel.mo
 share/locale/mk/LC_MESSAGES/xfce4-panel.mo
 share/locale/mr/LC_MESSAGES/xfce4-panel.mo
 share/locale/ms/LC_MESSAGES/xfce4-panel.mo
@@ -176,4 +174,6 @@ share/xfce4/panel-plugins/systray.desktop
 share/xfce4/panel-plugins/tasklist.desktop
 share/xfce4/panel-plugins/windowlist.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/update-desktop-database
