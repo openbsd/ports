@@ -1,6 +1,6 @@
-$OpenBSD: patch-GetKp,v 1.1.1.1 2001/01/10 16:54:49 naddy Exp $
+$OpenBSD: patch-GetKp,v 1.2 2007/12/18 10:39:47 ajacoutot Exp $
 --- wmSpaceWeather/GetKp.orig	Fri Feb 12 06:42:01 1999
-+++ wmSpaceWeather/GetKp	Wed Jan 10 14:37:37 2001
++++ wmSpaceWeather/GetKp	Tue Dec 18 10:22:00 2007
 @@ -7,19 +7,31 @@
  
      require "ctime.pl";
@@ -32,11 +32,11 @@ $OpenBSD: patch-GetKp,v 1.1.1.1 2001/01/10 16:54:49 naddy Exp $
 -    if (-e "/tmp/curind.txt"){
 -	unlink("/tmp/curind.txt");
 -    }
-+
+ 
 +    ($Year, $Month, $Day) = &year_month_day();
  
- 
 -    $grabcmd = "cd /tmp; wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/indices/DGD.txt";
++
 +    $grabcmd = "wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/indices/DGD.txt";
      system "$grabcmd";
  

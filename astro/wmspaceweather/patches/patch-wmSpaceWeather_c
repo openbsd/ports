@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmSpaceWeather_c,v 1.2 2003/06/18 14:07:14 avsm Exp $
---- wmSpaceWeather/wmSpaceWeather.c.orig	Thu Feb 18 17:57:45 1999
-+++ wmSpaceWeather/wmSpaceWeather.c	Wed Jun 18 03:08:57 2003
+$OpenBSD: patch-wmSpaceWeather_c,v 1.3 2007/12/18 10:39:47 ajacoutot Exp $
+--- wmSpaceWeather/wmSpaceWeather.c.orig	Thu Feb 18 18:57:45 1999
++++ wmSpaceWeather/wmSpaceWeather.c	Tue Dec 18 10:22:00 2007
 @@ -115,7 +115,7 @@ XEvent		event;
  int			i, n, s, k, m, dt1, dt2;
  int 		Year, Month, Day, DayOfMonth, OldDayOfMonth;
@@ -10,7 +10,7 @@ $OpenBSD: patch-wmSpaceWeather_c,v 1.2 2003/06/18 14:07:14 avsm Exp $
  int			height, UpToDate, LEDOn;
  double		UT, TU, TU2, TU3, T0, gmst, hour24();
  
-@@ -126,6 +126,7 @@ int 		Kp[8] = { -1, -1, -1, -1, -1, -1, 
+@@ -126,6 +126,7 @@ int 		Kp[8] = { -1, -1, -1, -1, -1, -1, -1, -1 };
  double		E1, E2, P1, P2, P3;
  char		Xray[10], digit[2];
  FILE		*fp;
@@ -68,7 +68,7 @@ $OpenBSD: patch-wmSpaceWeather_c,v 1.2 2003/06/18 14:07:14 avsm Exp $
  
  	    if (!UpToDate){
  
-@@ -560,7 +561,7 @@ void ParseCMDLine(int argc, char *argv[]
+@@ -560,7 +561,7 @@ void ParseCMDLine(int argc, char *argv[]) {
  
          } else if ((!strcmp(argv[i], "-url"))||(!strcmp(argv[i], "-u"))){
  

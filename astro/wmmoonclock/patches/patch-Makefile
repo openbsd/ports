@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/03 14:07:48 naddy Exp $
+$OpenBSD: patch-Makefile,v 1.2 2007/12/18 10:39:47 ajacoutot Exp $
 --- Src/Makefile.orig	Tue Mar 23 03:20:32 1999
-+++ Src/Makefile	Thu Dec 21 09:16:58 2000
++++ Src/Makefile	Tue Dec 18 10:16:26 2007
 @@ -1,8 +1,5 @@
 -CC     = gcc
 -CFLAGS = -O2
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/03 14:07:48 naddy Exp $
  
  # for Linux
  LIBS   = -lXpm -lX11 -lXext
-@@ -13,16 +10,11 @@
+@@ -13,16 +10,11 @@ LIBS   = -lXpm -lX11 -lXext
  OBJS   = wmMoonClock.o CalcEphem.o Moon.o MoonRise.o \
           xutils.o
  
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/03 14:07:48 naddy Exp $
  
  clean:
  	for i in $(OBJS) ; do \
-@@ -31,6 +23,6 @@
+@@ -31,6 +23,6 @@ clean:
  	rm -f wmMoonClock
  
  install:: wmMoonClock
