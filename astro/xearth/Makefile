@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2007/11/13 12:44:22 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2007/12/18 09:30:31 ajacoutot Exp $
 
 COMMENT=	set the root window to the image of earth
 DISTNAME=	xearth-1.1
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	astro x11
-MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
