@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/18 20:44:12 landry Exp $
 
 COMMENT=	volume mixer module for xfce4-panel
 
-V=		4.4.1
+V=		4.4.2
 DISTNAME=	xfce4-mixer-${V}
-PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	xfce4mixer 1.0
 
-HOMEPAGE=	http://www.xfce.org/projects/xfce4-mixer/
+HOMEPAGE=	http://www.xfce.org/projects/xfce4-mixer
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # GPLv2
@@ -21,17 +20,19 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 
-LIB_DEPENDS=	xfcegui4.>=4.0::x11/xfce4/libxfcegui4 \
-		xfce4mcs-client.>=3.5::x11/xfce4/libxfce4mcs \
+LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
+		xfce4mcs-client.>=3::x11/xfce4/libxfce4mcs \
 		xml2.>=9::textproc/libxml \
-		xfce4panel.>=2.2::x11/xfce4/xfce4-panel
-RUN_DEPENDS=	:xfce-mcs-manager->=4.4.1:x11/xfce4/xfce-mcs-manager
-WANTLIB=	ICE Xrender Xau Xdmcp expat SM freetype fontconfig X11 \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr c m z \
-		gmodule-2.0 glib-2.0 pangocairo-1.0 pango-1.0 \
+		xfce4panel.>=2::x11/xfce4/xfce4-panel
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::x11/xfce4/xfce-mcs-manager
+
+WANTLIB=	ICE Xrender Xau Xdamage Xdmcp expat SM freetype fontconfig \
+		X11 Xcursor Xcomposite Xext Xfixes Xi Xinerama Xrandr \
+		gmodule-2.0 glib-2.0 pangocairo-1.0 pango-1.0 pcre \
 		gdk_pixbuf-2.0 gtk-x11-2.0 gdk-x11-2.0 pangoft2-1.0 \
 		cairo startup-notification-1 glitz atk-1.0 png \
-		gobject-2.0 xfce4util.>=1 ossaudio
+		gobject-2.0 xfce4util.>=1 ossaudio c m z
 
 CONFIGURE_ARGS=	--with-sound=oss \
 		--enable-mighty-mouse \
