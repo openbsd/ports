@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:03:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/19 21:36:08 sthen Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	conferencing application for asterisk
 DISTNAME=	app_conference-20070809
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	telephony
 MASTER_SITES=	http://spacehopper.org/
 
@@ -20,7 +21,7 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:asterisk->=1.4:telephony/asterisk
+RUN_DEPENDS=	:asterisk->=1.4.16:telephony/asterisk
 
 MAKE_ENV+=	LOCALBASE=${LOCALBASE} \
 		ASTERISK_INCLUDE_DIR=${LOCALBASE}/include

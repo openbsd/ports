@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/14 13:24:42 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/19 21:36:28 sthen Exp $
 
 COMMENT=		Asterisk access for Nortel i2002/i2004/i2050 phones
 
 DISTNAME=		chan_unistim-1.0.0.5c	# for Asterisk 1.4
+PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		telephony
@@ -19,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://mlkj.net/UNISTIM/
 
-BUILD_DEPENDS=		:asterisk->=1.4:telephony/asterisk
-RUN_DEPENDS=		:asterisk->=1.4:telephony/asterisk
+BUILD_DEPENDS=		:asterisk->=1.4.16:telephony/asterisk
+RUN_DEPENDS=		:asterisk->=1.4.16:telephony/asterisk
 
 CFLAGS+=-pipe -Wall -Wmissing-prototypes -Wmissing-declarations \
 	-D_REENTRANT -D_GNU_SOURCE -fPIC -O6 \
