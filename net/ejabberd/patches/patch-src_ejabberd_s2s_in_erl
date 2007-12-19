@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ejabberd_s2s_in_erl,v 1.1 2007/12/19 22:55:30 sthen Exp $
+--- src/ejabberd_s2s_in.erl.orig	Thu Dec  6 12:21:26 2007
++++ src/ejabberd_s2s_in.erl	Thu Dec  6 12:22:44 2007
+@@ -30,8 +30,9 @@
+ 
+ -include("ejabberd.hrl").
+ -include("jlib.hrl").
+--include_lib("ssl/include/PKIX1Explicit88.hrl").
+--include_lib("ssl/include/PKIX1Implicit88.hrl").
++-include_lib("ssl/pkix/PKIX1Explicit88.hrl").
++-include_lib("ssl/pkix/PKIX1Implicit88.hrl").
++-include_lib("ssl/pkix/OTP-PKIX.hrl").
+ -include("XmppAddr.hrl").
+ 
+ -define(DICT, dict).
