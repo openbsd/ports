@@ -18,6 +18,7 @@ fi
 
 This uses safe_asterisk which monitors for abnormal termination
 and restarts the daemon, and also creates the directory for the
-control socket (astrundir in ${SYSCONFDIR}/asterisk/asterisk.conf).
-If you prefer not to use safe_asterisk, you will need to do this
-yourself.
+control socket and pid file (by default, /var/run/asterisk).
+
+If you prefer not to use safe_asterisk, you must create this
+directory yourself since /var/run is cleared at boot.
