@@ -1,33 +1,31 @@
-# $OpenBSD: Makefile,v 1.55 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.56 2007/12/19 08:58:03 fgsch Exp $
 
 COMMENT=	multi-router traffic grapher
 
-DISTNAME=	mrtg-2.12.2
-PKGNAME=	${DISTNAME}p4
+DISTNAME=	mrtg-2.15.2
 CATEGORIES=	net
-
-MASTER_SITES=	${HOMEPAGE}pub/old/
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
 
-LIB_DEPENDS=	gd.>=18::graphics/gd
-
-RUN_DEPENDS=	::net/p5-SNMP_Session \
-		::textproc/p5-Pod-Simple
-
-MODULES=	converters/libiconv
-USE_X11=	Yes
-
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m png jpeg z
+
+WANTLIB=	c jpeg m png z
+
+MASTER_SITES=	${HOMEPAGE}pub/ \
+		${HOMEPAGE}pub/old
+
+RUN_DEPENDS=	::net/p5-SNMP_Session
+LIB_DEPENDS=	gd.>=18::graphics/gd
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.57
-CONFIGURE_ARGS=	--with-gd-inc="${LOCALBASE}/include" \
+AUTOCONF_VERSION= 2.59
+CONFIGURE_ARGS+=--with-gd-inc="${LOCALBASE}/include" \
 		--with-gd-lib="${LOCALBASE}/lib" \
 		--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
@@ -44,15 +42,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/share/mrtg
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${PREFIX}/bin
-	cd ${WRKSRC}/doc; ${INSTALL_DATA} *.html *.pod *.txt *.png *.wml \
-		${PREFIX}/share/doc/mrtg
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} *.pod *.txt *.png \
+	    ${PREFIX}/share/doc/mrtg
 	cd ${WRKSRC}/bin; ${INSTALL_SCRIPT} cfgmaker indexmaker mrtg \
-		${PREFIX}/bin
+	    ${PREFIX}/bin
 	cd ${WRKSRC}/lib/mrtg2; ${INSTALL_DATA} MRTG_lib.pm locales_mrtg.pm \
-		${PREFIX}/libdata/perl5/site_perl/
+	    ${PREFIX}/libdata/perl5/site_perl/
 	cd ${WRKSRC}/lib/mrtg2/Pod; ${INSTALL_DATA} *.pm \
-		${PREFIX}/libdata/perl5/site_perl/Pod
+	    ${PREFIX}/libdata/perl5/site_perl/Pod
 	${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg \
-		${PREFIX}/share/examples/mrtg
+	    ${PREFIX}/share/examples/mrtg
 
 .include <bsd.port.mk>

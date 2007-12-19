@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2006/12/29 13:37:24 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.21 2007/12/19 08:58:03 fgsch Exp $
 @newgroup _mrtg:578
 @newuser _mrtg:578:578:daemon:MRTG account:/var/empty:/sbin/nologin
 bin/cfgmaker
@@ -6,6 +6,7 @@ bin/indexmaker
 bin/mrtg
 bin/rateup
 libdata/perl5/site_perl/MRTG_lib.pm
+libdata/perl5/site_perl/Pod/
 libdata/perl5/site_perl/Pod/InputObjects.pm
 libdata/perl5/site_perl/Pod/Parser.pm
 libdata/perl5/site_perl/Pod/PlainText.pm
@@ -30,62 +31,42 @@ libdata/perl5/site_perl/locales_mrtg.pm
 @man man/man1/mrtg.1
 @man man/man1/mrtglib.1
 share/doc/mrtg/
-share/doc/mrtg/cfgmaker.html
 share/doc/mrtg/cfgmaker.pod
 share/doc/mrtg/cfgmaker.txt
-share/doc/mrtg/index.html
-share/doc/mrtg/index.txt
-share/doc/mrtg/index.wml
-share/doc/mrtg/indexmaker.html
 share/doc/mrtg/indexmaker.pod
 share/doc/mrtg/indexmaker.txt
-share/doc/mrtg/mrtg-contrib.html
 share/doc/mrtg/mrtg-contrib.pod
 share/doc/mrtg/mrtg-contrib.txt
-share/doc/mrtg/mrtg-faq.html
 share/doc/mrtg/mrtg-faq.pod
 share/doc/mrtg/mrtg-faq.txt
-share/doc/mrtg/mrtg-forum.html
 share/doc/mrtg/mrtg-forum.pod
 share/doc/mrtg/mrtg-forum.txt
-share/doc/mrtg/mrtg-ipv6.html
 share/doc/mrtg/mrtg-ipv6.pod
 share/doc/mrtg/mrtg-ipv6.txt
 share/doc/mrtg/mrtg-l.png
-share/doc/mrtg/mrtg-logfile.html
 share/doc/mrtg/mrtg-logfile.pod
 share/doc/mrtg/mrtg-logfile.txt
 share/doc/mrtg/mrtg-m.png
-share/doc/mrtg/mrtg-mibhelp.html
 share/doc/mrtg/mrtg-mibhelp.pod
 share/doc/mrtg/mrtg-mibhelp.txt
-share/doc/mrtg/mrtg-nt-guide.html
 share/doc/mrtg/mrtg-nt-guide.pod
 share/doc/mrtg/mrtg-nt-guide.txt
-share/doc/mrtg/mrtg-nw-guide.html
 share/doc/mrtg/mrtg-nw-guide.pod
 share/doc/mrtg/mrtg-nw-guide.txt
 share/doc/mrtg/mrtg-r.png
-share/doc/mrtg/mrtg-reference.html
 share/doc/mrtg/mrtg-reference.pod
 share/doc/mrtg/mrtg-reference.txt
-share/doc/mrtg/mrtg-rrd.html
 share/doc/mrtg/mrtg-rrd.pod
 share/doc/mrtg/mrtg-rrd.txt
-share/doc/mrtg/mrtg-squid.html
 share/doc/mrtg/mrtg-squid.pod
 share/doc/mrtg/mrtg-squid.txt
 share/doc/mrtg/mrtg-ti.png
-share/doc/mrtg/mrtg-unix-guide.html
 share/doc/mrtg/mrtg-unix-guide.pod
 share/doc/mrtg/mrtg-unix-guide.txt
-share/doc/mrtg/mrtg-webserver.html
 share/doc/mrtg/mrtg-webserver.pod
 share/doc/mrtg/mrtg-webserver.txt
-share/doc/mrtg/mrtg.html
 share/doc/mrtg/mrtg.pod
 share/doc/mrtg/mrtg.txt
-share/doc/mrtg/mrtglib.html
 share/doc/mrtg/mrtglib.pod
 share/doc/mrtg/mrtglib.txt
 share/examples/mrtg/
