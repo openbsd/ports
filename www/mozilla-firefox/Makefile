@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2007/12/19 14:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2007/12/19 17:25:28 jasper Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -47,7 +47,7 @@ DISTFILES=	firefox-${VER}-source.tar.bz2
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	:esound-*:audio/esound \
-		:desktop-file-utils-*:desktop-file-utils
+		:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
