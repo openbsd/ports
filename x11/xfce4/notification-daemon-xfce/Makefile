@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/18 21:00:52 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/19 12:58:20 landry Exp $
 
 COMMENT=	notification daemon for Xfce4 desktop
 DISTNAME=	notification-daemon-xfce-0.3.7
@@ -27,7 +27,8 @@ RUN_DEPENDS=	::x11/xfce4/xfce-mcs-manager \
 		::devel/desktop-file-utils \
 		::x11/hicolor-icon-theme
 
-BUILD_DEPENDS=	::textproc/p5-XML-Parser
+BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager \
+		::textproc/p5-XML-Parser
 
 WANTLIB=	ICE SM X11 Xext Xrender c fontconfig freetype m z \
 		Xcursor Xau Xdmcp Xfixes Xi Xinerama Xrandr expat \
