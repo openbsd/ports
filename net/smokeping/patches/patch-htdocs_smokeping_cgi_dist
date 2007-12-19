@@ -1,7 +1,7 @@
-$OpenBSD: patch-htdocs_smokeping_cgi_dist,v 1.7 2007/06/29 06:58:22 jakob Exp $
---- htdocs/smokeping.cgi.dist.orig	Wed May  2 18:15:31 2007
-+++ htdocs/smokeping.cgi.dist	Wed Jun 27 09:38:14 2007
-@@ -1,13 +1,11 @@
+$OpenBSD: patch-htdocs_smokeping_cgi_dist,v 1.8 2007/12/19 17:54:51 sthen Exp $
+--- htdocs/smokeping.cgi.dist.orig	Mon Nov  5 21:59:38 2007
++++ htdocs/smokeping.cgi.dist	Wed Dec 19 15:07:30 2007
+@@ -1,6 +1,4 @@
 -#!/usr/sepp/bin/speedy -w
 +#!%%LOCALBASE%%/bin/speedy -w
  # -*-perl-*-
@@ -9,11 +9,8 @@ $OpenBSD: patch-htdocs_smokeping_cgi_dist,v 1.7 2007/06/29 06:58:22 jakob Exp $
 -use lib qw(/usr/pack/rrdtool-1.0.33-to/lib/perl);
 -use lib qw(/home/oetiker/data/projects/AADJ-smokeping/dist/lib);
  use CGI::Carp qw(fatalsToBrowser);
- 
- use Smokeping 2.001001;
+@@ -9,3 +7,3 @@ use Smokeping 2.002007;
  
 -Smokeping::cgi("/home/oetiker/data/projects/AADJ-smokeping/dist/etc/config");
 +Smokeping::cgi("%%SYSCONFDIR%%/smokeping/config");
- 
- =head1 NAME
  

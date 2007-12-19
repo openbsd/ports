@@ -1,23 +1,15 @@
-$OpenBSD: patch-bin_smokeping_dist,v 1.7 2007/06/29 06:58:22 jakob Exp $
---- bin/smokeping.dist.orig	Wed May  2 18:15:31 2007
-+++ bin/smokeping.dist	Wed Jun 27 09:42:29 2007
-@@ -1,12 +1,15 @@
+$OpenBSD: patch-bin_smokeping_dist,v 1.8 2007/12/19 17:54:51 sthen Exp $
+--- bin/smokeping.dist.orig	Mon Nov  5 21:59:38 2007
++++ bin/smokeping.dist	Wed Dec 19 15:05:07 2007
+@@ -1,5 +1,4 @@
 -#!/usr/sepp/bin/perl-5.8.4 -w
 +#!/usr/bin/perl -w
  # -*-perl-*-
  
--use lib qw(/usr/pack/rrdtool-1.0.49-to/lib/perl);
+-use lib qw(/usr/pack/rrdtool-1.2.23-mo/lib/perl);
  use lib qw(lib);
- 
- use Smokeping 2.001001;
-- 
+@@ -8,3 +7,3 @@ use Smokeping 2.002007;
+  
 -Smokeping::main("etc/config.dist");
-+
 +Smokeping::main("%%SYSCONFDIR%%/smokeping/config");
-+
-+use POSIX qw(setuid setgid getpwnam);
-+print "Dropping privileges to _smokeping ...\n";
-+my (undef, undef, $uid, $gid) = POSIX::getpwnam("_smokeping");
- 
- =head1 NAME
  

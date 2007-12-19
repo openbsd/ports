@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/12 15:13:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2007/12/19 17:54:51 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
-VERSION=	2.1.1
-DISTNAME=	smokeping-${VERSION}
-PKGNAME=	smokeping-${VERSION}p3
+DISTNAME=	smokeping-2.2.7
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
@@ -31,11 +29,7 @@ PKG_ARCH=	*
 
 PMDIR=		libdata/perl5/site_perl
 SUBST_VARS=	PMDIR
-
-ETCFILES=	basepage.html config smokemail tmail
-
-post-extract:
-	@find ${WRKDIST} -name \*.tmp -print0 | xargs -0 rm
+WWWDIR=		${PREFIX}/share/examples/smokeping
 
 do-install:
 	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g; \
@@ -48,25 +42,25 @@ do-install:
 		s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		< ${WRKSRC}/htdocs/smokeping.cgi.dist \
 		> ${WRKSRC}/htdocs/smokeping.cgi
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/smokeping
-	${INSTALL_SCRIPT} ${WRKSRC}/htdocs/smokeping.cgi \
-		${PREFIX}/share/examples/smokeping/smokeping.cgi
+	${INSTALL_DATA_DIR} ${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/htdocs/smokeping.cgi ${WWWDIR}
+	cd ${WRKSRC}/htdocs/; tar cf - cropper | tar xf - -C ${WWWDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/${PMDIR}/Smokeping
 	cd ${WRKSRC}/lib/; tar cf - Smokeping* | \
 		tar xf - -C ${PREFIX}/${PMDIR}/
 	${INSTALL_MAN} ${WRKSRC}/doc/smokeping*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping/examples
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/smokeping
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping/matchers
-	${INSTALL_DATA} ${WRKSRC}/doc/Smokeping/matchers/*.txt \
-		${PREFIX}/share/doc/smokeping/matchers
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping/probes
-	${INSTALL_DATA} ${WRKSRC}/doc/Smokeping/probes/*.txt \
-		${PREFIX}/share/doc/smokeping/probes
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping/sorters
-	${INSTALL_DATA} ${WRKSRC}/doc/Smokeping/sorters/*.txt \
-		${PREFIX}/share/doc/smokeping/sorters
-.for file in ${ETCFILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/* \
+		${PREFIX}/share/doc/smokeping/examples
+.for dir in matchers probes sorters
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smokeping/${dir}
+	${INSTALL_DATA} ${WRKSRC}/doc/Smokeping/${dir}/*.txt \
+		${PREFIX}/share/doc/smokeping/${dir}
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/smokeping
+.for file in basepage.html config smokemail tmail smokeping_secrets
 	${INSTALL_DATA} ${WRKSRC}/etc/${file}.dist \
 		${PREFIX}/share/examples/smokeping/${file}
 .endfor

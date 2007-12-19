@@ -1,12 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/06/29 17:49:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2007/12/19 17:54:51 sthen Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeping
 ${PMDIR}/Smokeping/
 ${PMDIR}/Smokeping.pm
 ${PMDIR}/Smokeping/Colorspace.pm
+${PMDIR}/Smokeping/Config.pm
 ${PMDIR}/Smokeping/Examples.pm
+${PMDIR}/Smokeping/Graphs.pm
+${PMDIR}/Smokeping/Master.pm
+${PMDIR}/Smokeping/RRDhelpers.pm
 ${PMDIR}/Smokeping/RRDtools.pm
+${PMDIR}/Smokeping/Slave.pm
 ${PMDIR}/Smokeping/ciscoRttMonMIB.pm
 ${PMDIR}/Smokeping/matchers/
 ${PMDIR}/Smokeping/matchers/Avgratio.pm
@@ -61,6 +66,13 @@ ${PMDIR}/Smokeping/sorters/base.pm
 @man man/man1/smokeping.cgi.1
 share/doc/smokeping/
 share/doc/smokeping/Smokeping.txt
+share/doc/smokeping/examples/
+share/doc/smokeping/examples/config.echoping
+share/doc/smokeping/examples/config.fping-instances
+share/doc/smokeping/examples/config.multiple-probes
+share/doc/smokeping/examples/config.simple
+share/doc/smokeping/examples/config.targetvars-with-Curl
+share/doc/smokeping/examples/config.template
 share/doc/smokeping/matchers/
 share/doc/smokeping/matchers/Avgratio.txt
 share/doc/smokeping/matchers/CheckLatency.txt
@@ -110,6 +122,7 @@ share/doc/smokeping/smokeping_config.txt
 share/doc/smokeping/smokeping_examples.txt
 share/doc/smokeping/smokeping_extend.txt
 share/doc/smokeping/smokeping_install.txt
+share/doc/smokeping/smokeping_master_slave.txt
 share/doc/smokeping/smokeping_upgrade.txt
 share/doc/smokeping/sorters/
 share/doc/smokeping/sorters/Loss.txt
@@ -122,23 +135,61 @@ share/examples/smokeping/
 @sample ${SYSCONFDIR}/smokeping/
 @sample /var/www/smokeping/
 @sample /var/www/smokeping/cgi-bin/
+@sample /var/www/htdocs/smokeping/
+@owner www
+@sample /var/www/htdocs/smokeping/img/
+@owner
 share/examples/smokeping/basepage.html
 @sample ${SYSCONFDIR}/smokeping/basepage.html
 share/examples/smokeping/config
 @sample ${SYSCONFDIR}/smokeping/config
+share/examples/smokeping/cropper/
+@sample /var/www/htdocs/smokeping/cropper/
+share/examples/smokeping/cropper/cropper.css
+@sample /var/www/htdocs/smokeping/cropper/cropper.css
+share/examples/smokeping/cropper/cropper.js
+@sample /var/www/htdocs/smokeping/cropper/cropper.js
+share/examples/smokeping/cropper/cropper.uncompressed.js
+@sample /var/www/htdocs/smokeping/cropper/cropper.uncompressed.js
+share/examples/smokeping/cropper/lib/
+@sample /var/www/htdocs/smokeping/cropper/lib/
+share/examples/smokeping/cropper/lib/builder.js
+@sample /var/www/htdocs/smokeping/cropper/lib/builder.js
+share/examples/smokeping/cropper/lib/controls.js
+@sample /var/www/htdocs/smokeping/cropper/lib/controls.js
+share/examples/smokeping/cropper/lib/dragdrop.js
+@sample /var/www/htdocs/smokeping/cropper/lib/dragdrop.js
+share/examples/smokeping/cropper/lib/effects.js
+@sample /var/www/htdocs/smokeping/cropper/lib/effects.js
+share/examples/smokeping/cropper/lib/prototype.js
+@sample /var/www/htdocs/smokeping/cropper/lib/prototype.js
+share/examples/smokeping/cropper/lib/prototype.js.LICENSE
+@sample /var/www/htdocs/smokeping/cropper/lib/prototype.js.LICENSE
+share/examples/smokeping/cropper/lib/scriptaculous.js
+@sample /var/www/htdocs/smokeping/cropper/lib/scriptaculous.js
+share/examples/smokeping/cropper/lib/slider.js
+@sample /var/www/htdocs/smokeping/cropper/lib/slider.js
+share/examples/smokeping/cropper/lib/unittest.js
+@sample /var/www/htdocs/smokeping/cropper/lib/unittest.js
+share/examples/smokeping/cropper/licence.txt
+@sample /var/www/htdocs/smokeping/cropper/licence.txt
+share/examples/smokeping/cropper/marqueeHoriz.gif
+@sample /var/www/htdocs/smokeping/cropper/marqueeHoriz.gif
+share/examples/smokeping/cropper/marqueeVert.gif
+@sample /var/www/htdocs/smokeping/cropper/marqueeVert.gif
+share/examples/smokeping/cropper/smokeping-zoom.js
+@sample /var/www/htdocs/smokeping/cropper/smokeping-zoom.js
 share/examples/smokeping/smokemail
 @sample ${SYSCONFDIR}/smokeping/smokemail
 share/examples/smokeping/smokeping.cgi
-@mode 0755
+@mode 755
 @sample /var/www/smokeping/cgi-bin/smokeping.cgi
 @mode
+share/examples/smokeping/smokeping_secrets
+@sample ${SYSCONFDIR}/smokeping/smokeping_secrets
 share/examples/smokeping/tmail
 @sample ${SYSCONFDIR}/smokeping/tmail
 @mode 0755
 @owner _smokeping
 @group _smokeping
 @sample /var/db/smokeping/
-@sample /var/www/htdocs/smokeping/
-@owner www
-@group
-@sample /var/www/htdocs/smokeping/img/
