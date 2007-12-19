@@ -1,0 +1,27 @@
+$OpenBSD: patch-Imlib_misc_c,v 1.1 2007/12/19 21:30:53 bernd Exp $
+
+Include patch (max24bpp.patch) to fix mishandling of 32-bit
+visuals (LP: #70367)
+
+https://bugs.launchpad.net/ubuntu/+source/imlib/+bug/70367
+
+--- Imlib/misc.c.orig	Mon Dec 17 22:16:57 2007
++++ Imlib/misc.c	Mon Dec 17 22:17:41 2007
+@@ -423,6 +423,8 @@ Imlib_init(Display * disp)
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
+@@ -1023,6 +1025,8 @@ Imlib_init_with_params(Display * disp, ImlibInitParams
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;

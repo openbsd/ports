@@ -1,0 +1,27 @@
+$OpenBSD: patch-gdk_imlib_misc_c,v 1.1 2007/12/19 21:30:53 bernd Exp $
+
+Include patch (max24bpp.patch) to fix mishandling of 32-bit  
+visuals (LP: #70367)    
+
+https://bugs.launchpad.net/ubuntu/+source/imlib/+bug/70367
+
+--- gdk_imlib/misc.c.orig	Mon Dec 17 22:15:38 2007
++++ gdk_imlib/misc.c	Mon Dec 17 22:16:38 2007
+@@ -455,6 +455,8 @@ gdk_imlib_init()
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
+@@ -1004,6 +1006,8 @@ gdk_imlib_init_params(GdkImlibInitParams * p)
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;

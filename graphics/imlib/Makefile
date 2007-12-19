@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.56 2007/12/19 21:30:53 bernd Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	image manipulation library for X11
 
 V=		1.9.14
 DISTNAME=	imlib-${V}
-PKGNAME=	imlib-${V}p5
+PKGNAME=	imlib-${V}p6
 SHARED_LIBS=	Imlib		19.14	\
 		gdk_imlib	19.14
 CATEGORIES=	graphics devel
