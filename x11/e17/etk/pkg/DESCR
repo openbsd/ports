@@ -1,0 +1,4 @@
+ETK is a toolkit library based on EFL.
+Its API is very similar to GTK, which makes it faster to learn
+if you're already familiar with GTK.
+It replaces a Glade library called Enhance.

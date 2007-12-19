@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/16 18:34:00 laurent Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/19 20:09:36 laurent Exp $
 
 COMMENT=	toolkit based on the EFL
 DISTNAME=	etk-20071211
+PKGNAME=        ${DISTNAME}p1
 SHARED_LIBS +=  etk                 0.0          # .1.0
 
 
