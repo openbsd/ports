@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/12/18 20:26:39 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2007/12/19 12:56:54 landry Exp $
 
 COMMENT=	settings manager plug-ins for xfce4
 
@@ -24,6 +24,8 @@ LIB_DEPENDS=	xfce4mcs-client.>=3,xfce4mcs-manager.>=3::x11/xfce4/libxfce4mcs \
 
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::x11/xfce4/xfce-mcs-manager
+
+BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager
 
 WANTLIB=	ICE SM X11 Xcursor Xext Xrandr Xrender Xxf86vm \
 		Xau Xdmcp Xfixes Xi Xinerama fontconfig \
