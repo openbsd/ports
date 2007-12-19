@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 16:10:03 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/19 20:24:31 fgsch Exp $
 bin/supybot
 bin/supybot-adduser
 bin/supybot-botchk
@@ -8,6 +8,7 @@ bin/supybot-plugin-package
 bin/supybot-test
 bin/supybot-wizard
 lib/python${MODPY_VERSION}/site-packages/supybot/
+lib/python${MODPY_VERSION}/site-packages/supybot-0.83.3-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/supybot/__init__.py
 lib/python${MODPY_VERSION}/site-packages/supybot/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/supybot/ansi.py
@@ -383,10 +384,10 @@ lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/__init__.py
 lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/config.py
 lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/config.pyc
+lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/feedparser.py
+lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/feedparser.pyc
 lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/plugin.py
 lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/plugin.pyc
-lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/rssparser.py
-lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/rssparser.pyc
 lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/test.py
 lib/python${MODPY_VERSION}/site-packages/supybot/plugins/RSS/test.pyc
 lib/python${MODPY_VERSION}/site-packages/supybot/plugins/Relay/
