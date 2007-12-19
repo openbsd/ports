@@ -1,0 +1,30 @@
+$OpenBSD: patch-obmenu,v 1.1.1.1 2007/12/19 16:09:34 ajacoutot Exp $
+--- obmenu.orig	Thu Feb  2 13:03:38 2006
++++ obmenu	Wed Dec 19 15:10:23 2007
+@@ -462,9 +462,12 @@ class App:
+ 			self.remove(None)
+ 	
+ 	def show_about(self, args):
+-		#gtk.glade.XML("/usr/local/share/obmenu/obmenu.glade", "aboutdialog1")
+-		gtk.glade.XML(self.gladefile, "aboutdialog1")
+-		
++		self.aboutdialog.show()
++
++	def close_about(self, *args):
++		self.aboutdialog.hide()	
++		return True
++
+ 	# application init
+ 	def init(self):
+ 		if len(sys.argv) == 2:
+@@ -503,6 +506,10 @@ class App:
+ 		
+ 		# Set the basics for GTK
+ 		self.arbol = gtk.glade.XML(self.gladefile, "window1")
++		self.about = gtk.glade.XML(self.gladefile, "aboutdialog1")
++		self.aboutdialog=self.about.get_widget("aboutdialog1")
++		self.aboutdialog.connect ('delete-event', self.close_about)
++		self.aboutdialog.connect ('response', self.close_about)
+ 		
+ 		self.treeview=self.arbol.get_widget("treeview1")
+ 		self.label_entry = self.arbol.get_widget("entry1")

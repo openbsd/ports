@@ -1,0 +1,12 @@
+$OpenBSD: patch-obmenu_glade,v 1.1.1.1 2007/12/19 16:09:34 ajacoutot Exp $
+--- obmenu.glade.orig	Wed Dec 19 15:15:38 2007
++++ obmenu.glade	Wed Dec 19 15:15:49 2007
+@@ -727,7 +727,7 @@ Exit</property>
+ </widget>
+ 
+ <widget class="GtkAboutDialog" id="aboutdialog1">
+-  <property name="visible">True</property>
++  <property name="visible">False</property>
+   <property name="destroy_with_parent">True</property>
+   <property name="name" translatable="yes">Openbox Menu Editor</property>
+   <property name="comments" translatable="yes">Thank you for using this sofware.
