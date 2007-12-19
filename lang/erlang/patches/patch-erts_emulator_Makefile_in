@@ -1,7 +1,7 @@
-$OpenBSD: patch-erts_emulator_Makefile_in,v 1.5 2007/03/29 17:18:57 steven Exp $
---- erts/emulator/Makefile.in.orig	Tue Mar 27 15:26:54 2007
-+++ erts/emulator/Makefile.in	Thu Mar 29 17:56:02 2007
-@@ -152,7 +152,7 @@ darwinCFLAGS=-DDARWIN
+$OpenBSD: patch-erts_emulator_Makefile_in,v 1.6 2007/12/19 22:51:29 sthen Exp $
+--- erts/emulator/Makefile.in.orig	Mon Nov 26 19:55:14 2007
++++ erts/emulator/Makefile.in	Thu Dec  6 09:46:12 2007
+@@ -135,7 +135,7 @@ darwinCFLAGS=-DDARWIN
  noopsysCFLAGS=
  OPSYSCFLAGS=$($(OPSYS)CFLAGS)
  ARCH=@ARCH@
@@ -10,7 +10,7 @@ $OpenBSD: patch-erts_emulator_Makefile_in,v 1.5 2007/03/29 17:18:57 steven Exp $
  ARCHCFLAGS=$($(ARCH)CFLAGS)
  
  ifdef HIPE_ENABLED
-@@ -201,12 +201,12 @@ endif
+@@ -184,12 +184,12 @@ endif
  
  ifeq ($(CC), gcc)
  ifeq ($(NO_INLINE_FUNCTIONS),true)
@@ -26,7 +26,7 @@ $OpenBSD: patch-erts_emulator_Makefile_in,v 1.5 2007/03/29 17:18:57 steven Exp $
  endif
  endif
  UNROLL_FLG = -funroll-loops
-@@ -827,7 +827,7 @@ $(OBJDIR)/%.o: hipe/%.S
+@@ -814,7 +814,7 @@ $(OBJDIR)/%.o: hipe/%.S
  	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
  
  $(OBJDIR)/%.o: hipe/%.c

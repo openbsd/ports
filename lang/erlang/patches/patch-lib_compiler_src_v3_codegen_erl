@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_compiler_src_v3_codegen_erl,v 1.1 2007/12/19 22:51:29 sthen Exp $
+Fix a compiler bug, http://thread.gmane.org/gmane.comp.lang.erlang.general/26285
+--- lib/compiler/src/v3_codegen.erl.orig	Thu Dec  6 09:52:02 2007
++++ lib/compiler/src/v3_codegen.erl	Thu Dec  6 09:53:20 2007
+@@ -1457,6 +1457,8 @@ cg_binary_size_1([], Bits, Acc) ->
+     Sizes = filter(fun({_,{integer,0}}) -> false;
+ 		      (_) -> true end, Sizes0),
+     case Sizes of
++       [] ->
++           {bs_init2,[{integer,0}]};
+ 	[{1,_}|_] ->
+ 	    {bs_init_bits,cg_binary_bytes_to_bits(Sizes, [])};
+ 	[{8,_}|_] ->
