@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/13 18:41:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/19 21:52:56 bernd Exp $
 
 COMMENT=	tool to help start/stop/restart multiple mongrel servers
 
-DISTNAME=	mongrel_cluster-1.0.4
+DISTNAME=	mongrel_cluster-1.0.5
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	sysutils
 
