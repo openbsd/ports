@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2007/11/28 20:22:25 martynas Exp $
+# $OpenBSD: Makefile,v 1.87 2007/12/19 14:47:50 jasper Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -8,8 +8,8 @@ COMMENT-devel=	devel files for Gecko
 
 VER=		2.0.0.10
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}
+PKGNAME=	mozilla-firefox-${VER}p0
+PKGNAME-main=	mozilla-firefox-${VER}p0
 PKGNAME-devel=	mozilla-firefox-devel-${VER}
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -46,7 +46,8 @@ MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${VER
 DISTFILES=	firefox-${VER}-source.tar.bz2
 
 MODULES=	devel/gettext
-RUN_DEPENDS=	:esound-*:audio/esound
+RUN_DEPENDS=	:esound-*:audio/esound \
+		:desktop-file-utils-*:desktop-file-utils
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
@@ -162,5 +163,9 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
 	${INSTALL_MAN} ${WRKSRC}/xpfe/bootstrap/firefox.1 ${PREFIX}/man/man1/
 	@ln -f ${PREFIX}/man/man1/firefox.1 ${PREFIX}/man/man1/mozilla-firefox.1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
+		< ${FILESDIR}/firefox.desktop > \
+			${PREFIX}/share/applications/firefox.desktop
 
 .include <bsd.port.mk>
