@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2006/03/18 19:33:10 bernd Exp $
---- configure.orig	Sun Jan  1 15:25:55 2006
-+++ configure	Thu Feb  2 13:28:16 2006
-@@ -11663,7 +11663,8 @@ echo "${ECHO_T}$ac_cv_libsqlite3_libs" >
+$OpenBSD: patch-configure,v 1.2 2007/12/19 21:44:08 bernd Exp $
+--- configure.orig	Sat Nov 24 05:37:19 2007
++++ configure	Fri Dec 14 18:01:09 2007
+@@ -12520,7 +12520,8 @@ echo "${ECHO_T}$ac_cv_libsqlite3_libs" >&6; }
  
  
  
@@ -10,8 +10,8 @@ $OpenBSD: patch-configure,v 1.1 2006/03/18 19:33:10 bernd Exp $
 +	LTLIBDB="$LTLIBSQLITE3"
  	WITH_DB_ENGINE="sqlite3"
  	;;
-     xqdbm)
-@@ -12102,7 +12103,8 @@ echo "${ECHO_T}$ac_cv_libqdbm_libs" >&6
+     xtokyocabinet)
+@@ -13455,7 +13456,8 @@ echo "${ECHO_T}$ac_cv_libqdbm_libs" >&6; }
  
  
  
@@ -21,27 +21,43 @@ $OpenBSD: patch-configure,v 1.1 2006/03/18 19:33:10 bernd Exp $
  	saveLIBS="$LIBS"
  	LIBS="$LIBS $LIBDB"
  	cat >conftest.$ac_ext <<_ACEOF
-@@ -14914,7 +14916,7 @@ s,@DISABLE_UNICODE_TRUE@,$DISABLE_UNICOD
- s,@DISABLE_UNICODE_FALSE@,$DISABLE_UNICODE_FALSE,;t t
- s,@ENABLE_UNICODE_TRUE@,$ENABLE_UNICODE_TRUE,;t t
- s,@ENABLE_UNICODE_FALSE@,$ENABLE_UNICODE_FALSE,;t t
--s,@LIBICONV@,$LIBICONV,;t t
-+s,@LIBICONV@,$LTLIBICONV,;t t
- s,@LTLIBICONV@,$LTLIBICONV,;t t
- s,@ENCODING@,$ENCODING,;t t
- s,@DEFAULT_CHARSET@,$DEFAULT_CHARSET,;t t
-@@ -14928,11 +14930,11 @@ s,@DISABLE_TRANSACTIONS_TRUE@,$DISABLE_T
- s,@DISABLE_TRANSACTIONS_FALSE@,$DISABLE_TRANSACTIONS_FALSE,;t t
- s,@ENABLE_TRANSACTIONS_TRUE@,$ENABLE_TRANSACTIONS_TRUE,;t t
- s,@ENABLE_TRANSACTIONS_FALSE@,$ENABLE_TRANSACTIONS_FALSE,;t t
--s,@LIBSQLITE3@,$LIBSQLITE3,;t t
-+s,@LIBSQLITE3@,$LTLIBSQLITE3,;t t
- s,@LTLIBSQLITE3@,$LTLIBSQLITE3,;t t
--s,@LIBQDBM@,$LIBQDBM,;t t
-+s,@LIBQDBM@,$LTLIBQDBM,;t t
- s,@LTLIBQDBM@,$LTLIBQDBM,;t t
--s,@LIBDB@,$LIBDB,;t t
-+s,@LIBDB@,$LTLIBDB,;t t
- s,@LTLIBDB@,$LTLIBDB,;t t
- s,@DB_EXT@,$DB_EXT,;t t
- s,@DB_TYPE@,$DB_TYPE,;t t
+@@ -16427,7 +16429,7 @@ DISABLE_UNICODE_TRUE!$DISABLE_UNICODE_TRUE$ac_delim
+ DISABLE_UNICODE_FALSE!$DISABLE_UNICODE_FALSE$ac_delim
+ ENABLE_UNICODE_TRUE!$ENABLE_UNICODE_TRUE$ac_delim
+ ENABLE_UNICODE_FALSE!$ENABLE_UNICODE_FALSE$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+ ENCODING!$ENCODING$ac_delim
+ DEFAULT_CHARSET!$DEFAULT_CHARSET$ac_delim
+@@ -16442,13 +16444,13 @@ DISABLE_TRANSACTIONS_TRUE!$DISABLE_TRANSACTIONS_TRUE$a
+ DISABLE_TRANSACTIONS_FALSE!$DISABLE_TRANSACTIONS_FALSE$ac_delim
+ ENABLE_TRANSACTIONS_TRUE!$ENABLE_TRANSACTIONS_TRUE$ac_delim
+ ENABLE_TRANSACTIONS_FALSE!$ENABLE_TRANSACTIONS_FALSE$ac_delim
+-LIBSQLITE3!$LIBSQLITE3$ac_delim
++LIBSQLITE3!$LTLIBSQLITE3$ac_delim
+ LTLIBSQLITE3!$LTLIBSQLITE3$ac_delim
+ LIBTOKYOCABINET!$LIBTOKYOCABINET$ac_delim
+ LTLIBTOKYOCABINET!$LTLIBTOKYOCABINET$ac_delim
+-LIBQDBM!$LIBQDBM$ac_delim
++LIBQDBM!$LTLIBQDBM$ac_delim
+ LTLIBQDBM!$LTLIBQDBM$ac_delim
+-LIBDB!$LIBDB$ac_delim
++LIBDB!$LTLIBDB$ac_delim
+ LTLIBDB!$LTLIBDB$ac_delim
+ DB_EXT!$DB_EXT$ac_delim
+ DB_TYPE!$DB_TYPE$ac_delim
+@@ -17086,9 +17088,9 @@ echo "$as_me:   CFLAGS=$CFLAGS" >&6;}
+ echo "$as_me:  LDFLAGS=$LDFLAGS" >&6;}
+ { echo "$as_me:$LINENO:     LIBS=$LIBS" >&5
+ echo "$as_me:     LIBS=$LIBS" >&6;}
+-{ echo "$as_me:$LINENO:    LIBDB=$LIBDB" >&5
+-echo "$as_me:    LIBDB=$LIBDB" >&6;}
++{ echo "$as_me:$LINENO:    LIBDB=$LTLIBDB" >&5
++echo "$as_me:    LIBDB=$LTLIBDB" >&6;}
+ { echo "$as_me:$LINENO: GSL_LIBS=$GSL_LIBS" >&5
+ echo "$as_me: GSL_LIBS=$GSL_LIBS" >&6;}
+-{ echo "$as_me:$LINENO: LIBICONV=$LIBICONV" >&5
+-echo "$as_me: LIBICONV=$LIBICONV" >&6;}
++{ echo "$as_me:$LINENO: LIBICONV=$LTLIBICONV" >&5
++echo "$as_me: LIBICONV=$LTLIBICONV" >&6;}

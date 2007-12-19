@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/25 21:05:33 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/12/19 21:44:08 bernd Exp $
 
 COMMENT=	bayesian spam filter
 
-DISTNAME=	bogofilter-1.0.3
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	bogofilter-1.1.6
 CATEGORIES=	mail
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-HOMEPAGE=	http://www.bogofilter.org/
+HOMEPAGE=	http://bogofilter.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bogofilter/}
 
-# GPL
+# GPLv2/GPLv3
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
