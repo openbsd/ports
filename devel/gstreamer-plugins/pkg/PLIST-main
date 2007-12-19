@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 17:13:12 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2007/12/19 07:31:15 ajacoutot Exp $
 @pkgpath devel/gstreamer-plugins
 bin/gst-launch-ext-0.8
 bin/gst-visualise-0.8
@@ -414,6 +414,7 @@ share/locale/sv/LC_MESSAGES/gst-plugins-0.8.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-0.8.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-0.8.mo
 share/locale/zh_TW/LC_MESSAGES/gst-plugins-0.8.mo
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gst-plugins/*.schemas > /dev/null
 share/schemas/
 share/schemas/gst-plugins/
 share/schemas/gst-plugins/gstreamer-0.8.schemas

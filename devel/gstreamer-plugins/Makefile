@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2007/09/18 18:33:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2007/12/19 07:31:15 ajacoutot Exp $
 
 COMMENT-main=		GStreamer Streaming-media framework plug-ins
 
 VERSION=		0.8.11
 DISTNAME=		gst-plugins-${VERSION}
-PKGNAME-main=		gstreamer-plugins-${VERSION}p16
+PKGNAME-main=		gstreamer-plugins-${VERSION}p17
 # Don't forget about PKGNAME-${PLUGIN} (See below)
 SHARED_LIBS=		gstgconf-0.8		1.0 \
 			gstinterfaces-0.8	1.0 \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2007/10/26 15:05:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2007/12/19 07:31:15 ajacoutot Exp $
 
 BROKEN=			needs an update to 0.11.x (and working totem)
 
 COMMENT=		Music Management Application
 
 DISTNAME=		rhythmbox-0.8.8
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.rhythmbox.org

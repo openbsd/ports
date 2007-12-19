@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/12/15 21:14:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2007/12/19 07:31:15 ajacoutot Exp $
 bin/epiphany
 include/epiphany/
 include/epiphany/${M}/
@@ -341,6 +341,7 @@ share/omf/epiphany/epiphany-nl.omf
 share/omf/epiphany/epiphany-ru.omf
 share/omf/epiphany/epiphany-sv.omf
 share/omf/epiphany/epiphany-uk.omf
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/epiphany/*.schemas > /dev/null
 share/schemas/epiphany/
 share/schemas/epiphany/epiphany-fonts.schemas
 share/schemas/epiphany/epiphany-lockdown.schemas
