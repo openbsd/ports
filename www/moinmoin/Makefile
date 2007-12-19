@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2007/12/19 22:58:58 martynas Exp $
 
 COMMENT=	Python clone of WikiWiki
 
 DISTNAME=	moin-1.5.8
-PKGNAME=	moin${DISTNAME}p0
+PKGNAME=	moin${DISTNAME}p1
 CATEGORIES=	www
 PKG_ARCH=	*
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=moin/}
 
-HOMEPAGE=	http://moinmoin.wikiwikiweb.de/
+HOMEPAGE=	http://moinmo.in/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
