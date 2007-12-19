@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/16 12:31:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2007/12/19 18:08:57 fgsch Exp $
 
 COMMENT=	HTML/XML parser that supports invalid markup
 
 DISTNAME=	BeautifulSoup-3.0.5
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=    	www
 
 HOMEPAGE=	http://www.crummy.com/software/BeautifulSoup/
