@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.322 2007/12/12 17:56:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.323 2007/12/19 16:12:33 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -128,6 +128,7 @@
      SUBDIR += netwmpager
      SUBDIR += numlockx
      SUBDIR += obconf
+     SUBDIR += obmenu
      SUBDIR += ogle
      SUBDIR += ogle,altivec
      SUBDIR += ogle_gui
