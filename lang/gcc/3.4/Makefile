@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 02:59:32 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2007/12/20 16:11:35 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 BROKEN=adjust for types changes
@@ -50,8 +50,6 @@ MAKE_GXX=Yes
 .endif
 
 MULTI_PACKAGES=
-# No sub packages description
-DESCR=${PKGDIR}/DESCR
 
 REGRESS_DEPENDS=::devel/dejagnu
 

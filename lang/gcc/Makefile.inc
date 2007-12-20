@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2007/12/20 16:11:35 ajacoutot Exp $
 
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
@@ -29,6 +29,15 @@ PKGNAME-f95?=	g95-${FULL_PKGVERSION}
 PKGNAME-java?=	gcj-${FULL_PKGVERSION}
 PKGNAME-objc?=	gobjc-${FULL_PKGVERSION}
 PKGNAME-ada?=	gnat-${FULL_PKGVERSION}
+
+DESCR-main ?=	${PORTSDIR}/lang/gcc/DESCR
+DESCR-c++ ?=	${PORTSDIR}/lang/gcc/DESCR-c++
+DESCR-estdc++ ?=${PORTSDIR}/lang/gcc/DESCR-estdc++
+DESCR-g77 ?=	${PORTSDIR}/lang/gcc/DESCR-g77
+DESCR-f95 ?=	${PORTSDIR}/lang/gcc/DESCR-f95
+DESCR-java ?=	${PORTSDIR}/lang/gcc/DESCR-java
+DESCR-objc ?=	${PORTSDIR}/lang/gcc/DESCR-objc
+DESCR-ada ?=	${PORTSDIR}/lang/gcc/DESCR-ada
 
 HOMEPAGE?=	http://gcc.gnu.org/
 
