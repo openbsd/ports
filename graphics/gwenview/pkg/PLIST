@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2006/12/18 17:05:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2007/12/20 16:25:19 ajacoutot Exp $
 bin/gwenview
 ${KDE}/gwenview.la
 ${KDE}/gwenview.so
@@ -121,3 +121,5 @@ share/icons/hicolor/scalable/apps/gvdirpart.svg
 share/icons/hicolor/scalable/apps/gwenview.svgz
 share/services/gvdirpart.desktop
 share/services/gvimagepart.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

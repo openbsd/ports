@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.39 2007/12/20 16:25:19 ajacoutot Exp $
 
 COMMENT=	image viewer for KDE
 
 DISTNAME=	gwenview-1.4.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	gwenviewcore         5.0      # .1.0
 CATEGORIES=	graphics x11 x11/kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	art_lgpl_2 jpeg ICE SM X11 Xau Xdmcp Xext Xrender c m png \
 		pthread stdc++ util z idn mng Xcursor fam rpcsvc
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdeprint,kdesu,kparts,kdeui,kio,kmediaplayer,kutils,kwalletclient::x11/kde/libs3 \
 		kipi::graphics/libkipi \
 		exiv2::graphics/exiv2
