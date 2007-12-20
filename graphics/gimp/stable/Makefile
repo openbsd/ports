@@ -1,26 +1,27 @@
-# $OpenBSD: Makefile,v 1.27 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2007/12/20 22:54:28 kili Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME=	gimp-2.2.17
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gimp-2.0	200.17	\
-		gimpbase-2.0	200.17	\
-		gimpcolor-2.0	200.17	\
-		gimpmath-2.0	200.17	\
-		gimpmodule-2.0	200.17	\
-		gimpthumb-2.0	200.17	\
-		gimpui-2.0	200.17	\
-		gimpwidgets-2.0	200.17
+DISTNAME=	gimp-2.4.3
+SHARED_LIBS=	gimp-2.0	243.00	\
+		gimpbase-2.0	243.00	\
+		gimpcolor-2.0	243.00	\
+		gimpconfig-2.0	243.00	\
+		gimpmath-2.0	243.00	\
+		gimpmodule-2.0	243.00	\
+		gimpthumb-2.0	243.00	\
+		gimpui-2.0	243.00	\
+		gimpwidgets-2.0	243.00
 
 CATEGORIES=	graphics
-DIR=		gimp/v2.2
+DIR=		gimp/v2.4
 MASTER_SITES=	ftp://ftp.gimp.org/pub/${DIR}/ \
 		ftp://ftp.sunet.se/pub/gnu/${DIR}/ \
-		ftp://ftp.cs.umn.edu/pub/${DIR}/ \
-		ftp://ftp.funet.fi/pub/sci/graphics/packages/gimp/${DIR}/
+		ftp://ftp.cs.umn.edu/pub/gimp/pub/${DIR}/
 
 HOMEPAGE=	http://www.gimp.org/
+
+EXTRACT_SUFX=	.tar.bz2
 
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=    :wget-*:net/wget
@@ -30,7 +31,8 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		exif::graphics/libexif \
 		mng::graphics/libmng \
 		tiff.>=35::graphics/tiff \
-		wmf.>=6,wmflite.>=6::graphics/libwmf
+		wmf.>=6,wmflite.>=6::graphics/libwmf \
+		poppler.>=3,poppler-glib.>=3::print/poppler
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -43,8 +45,9 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		fontconfig freetype glib-2.0 gmodule-2.0 \
 		gobject-2.0 jpeg.>=62 lcms.>=1 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png.>=4 \
-		pthread ncurses xml2 z cairo glitz
-WANTLIB += Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
+		pthread ncurses xml2 z cairo glitz \
+		Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr \
+		expat Xcomposite Xdamage gthread-2.0 pcre
 
 MODULES=	devel/gettext
 
@@ -56,10 +59,11 @@ AUTOCONF_VERSION= 2.61
 
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --disable-print --without-gtkhtml2 --without-librsvg \
-		 --disable-sse
+CONFIGURE_ARGS+=--without-gtkhtml2 --without-librsvg --without-print \
+		--without-gnomevfs --without-libcurl --without-dbus \
+		--disable-python
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 FLAVORS=	altivec
 FLAVOR?=
@@ -73,6 +77,11 @@ CONFIGURE_ARGS+= --disable-altivec
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE} == "amd64"
 CONFIGURE_ARGS+= --enable-mmx
+.if ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ARGS+= --enable-sse
+.else
+CONFIGURE_ARGS+= --disable-sse
+.endif
 .endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/27 18:08:45 steven Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2007/12/20 22:54:28 kili Exp $
 lib/gimp/2.0/modules/libcdisplay_colorblind.so
 lib/gimp/2.0/modules/libcdisplay_gamma.so
 lib/gimp/2.0/modules/libcdisplay_highcontrast.so
+lib/gimp/2.0/modules/libcdisplay_lcms.so
 lib/gimp/2.0/modules/libcdisplay_proof.so
 lib/gimp/2.0/modules/libcolorsel_cmyk.so
 lib/gimp/2.0/modules/libcolorsel_triangle.so
@@ -10,6 +11,7 @@ lib/gimp/2.0/modules/libcontroller_midi.so
 @lib lib/libgimp-2.0.so.${LIBgimp-2.0_VERSION}
 @lib lib/libgimpbase-2.0.so.${LIBgimpbase-2.0_VERSION}
 @lib lib/libgimpcolor-2.0.so.${LIBgimpcolor-2.0_VERSION}
+@lib lib/libgimpconfig-2.0.so.${LIBgimpconfig-2.0_VERSION}
 @lib lib/libgimpmath-2.0.so.${LIBgimpmath-2.0_VERSION}
 @lib lib/libgimpmodule-2.0.so.${LIBgimpmodule-2.0_VERSION}
 @lib lib/libgimpthumb-2.0.so.${LIBgimpthumb-2.0_VERSION}

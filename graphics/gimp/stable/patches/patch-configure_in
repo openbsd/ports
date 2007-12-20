@@ -1,59 +1,32 @@
-$OpenBSD: patch-configure_in,v 1.3 2007/07/01 15:42:17 steven Exp $
---- configure.in.orig	Sat May 26 16:10:46 2007
-+++ configure.in	Wed Jun 27 08:39:08 2007
-@@ -896,7 +896,7 @@ AC_ARG_WITH(libtiff,  [  --without-libtiff       build
-   if test x$with_libtiff != xno && test -z "$LIBTIFF"; then
-     AC_CHECK_LIB(tiff, TIFFReadScanline,
-       [AC_CHECK_HEADER(tiffio.h,
--	TIFF='tiff$(EXEEXT)'; LIBTIFF='-ltiff',
-+	TIFF='tiff$(EXEEXT)'; LIBTIFF='-ltiff -ljpeg -lz',
- 	[AC_MSG_WARN(*** TIFF plug-in will not be built (TIFF header files not found) ***)])],
-       [AC_CHECK_LIB(tiff, TIFFWriteScanline,
- 	[AC_CHECK_HEADER(tiffio.h,
-@@ -906,7 +906,7 @@ AC_ARG_WITH(libtiff,  [  --without-libtiff       build
- 	  [AC_CHECK_HEADER(tiffio.h,
-             TIFF='tiff$(EXEEXT)'; LIBTIFF='-ltiff34 -ljpeg -lz',
- 	    [AC_MSG_WARN(*** TIFF plug-in will not be built (TIFF header files not found) ***)])],
--        [AC_MSG_WARN(*** TIFF plug-in will not be built (TIFF library not found) ***)], -ljpeg -lz -lm)], -ljpeg -lz -lm)], -lm)
-+        [AC_MSG_WARN(*** TIFF plug-in will not be built (TIFF library not found) ***)], -ljpeg -lz -lm)], -ljpeg -lz -lm)], -ljpeg -lz -lm)
-   fi
- 
-   if test x$with_libtiff != xno && test -z "$LIBTIFF"; then
-@@ -1032,9 +1032,9 @@ AC_ARG_WITH(libmng,  [  --without-libmng        build 
+$OpenBSD: patch-configure_in,v 1.4 2007/12/20 22:54:28 kili Exp $
+--- configure.in.orig	Wed Oct 31 09:06:02 2007
++++ configure.in	Sat Nov  3 11:09:13 2007
+@@ -1102,10 +1102,10 @@ AC_ARG_WITH(libmng,  [  --without-libmng        build 
+   if test "x$with_libmng" != xno && test -z "$LIBMNG" &&
       test -n "$LIBPNG" && test -n "$LIBJPEG" && test -n "$LIBZ"; then
      AC_CHECK_LIB(mng, mng_create,
-       [AC_CHECK_HEADER(libmng.h, mng_ok=yes)],
--      [AC_MSG_WARN(*** MNG plug-in will not be built (MNG library not found) ***)], -lz -lm)
-+      [AC_MSG_WARN(*** MNG plug-in will not be built (MNG library not found) ***)], -llcms $LIBJPEG -lz -lm)
+-      [AC_CHECK_HEADER(libmng.h, mng_ok=yes)],
+-      [have_libmng="no (MNG library not found)"], -lz -lm)
++      [AC_CHECK_HEADER(libmng.h, mng_ok=yes, $LIBJPEG -lz -lm -llcms)],
++      [have_libmng="no (MNG library not found)"], $LIBJPEG -lz -lm -llcms)
      if test "$mng_ok" = yes; then
 -      MNG='mng$(EXEEXT)'; LIBMNG="-lmng $LIBJPEG $LIBPNG"
-+      MNG='mng$(EXEEXT)'; LIBMNG="-lmng -llcms $LIBJPEG $LIBPNG"
++      MNG='mng$(EXEEXT)'; LIBMNG="-lmng $LIBJPEG $LIBPNG -llcms"
      else
-       AC_MSG_WARN(*** MNG plug-in will not be built (MNG header file not found) ***)
+       have_libmng="no (MNG header file not found)"
      fi
-@@ -1071,9 +1071,9 @@ AC_ARG_WITH(aa,  [  --without-aa            do not bui
- if test x$with_aa != xno && test -z "$LIBAA"; then
-   AC_CHECK_LIB(aa, aa_printf,
-     [AC_CHECK_HEADER(aalib.h,
--      AA='aa$(EXEEXT)'; LIBAA='-laa',
-+      AA='aa$(EXEEXT)'; LIBAA='-laa -L/usr/X11R6/lib -lX11',
-       [AC_MSG_WARN(*** AA plug-in will not be built (AA header file not found) ***)])],
--    [AC_MSG_WARN(*** AA plug-in will not be built (AA library not found) ***)])
-+    [AC_MSG_WARN(*** AA plug-in will not be built (AA library not found) ***)], -L/usr/X11R6/lib -lX11)
- fi
- 
- AC_SUBST(AA)
-@@ -1224,10 +1224,10 @@ if test "x$with_lcms" != xno; then
+@@ -1374,11 +1374,11 @@ if test "x$with_lcms" != xno; then
          have_lcms=yes
          AC_DEFINE(HAVE_LCMS_LCMS_H, 1,
            [Define to 1 if the lcms header must be included as lcms/lcms.h]))
 -      ])
 -  ])
-+      ], , -lm)
-+  ], , -lm)
-   if test $have_lcms = yes; then
--    LCMS_LIBS="-llcms"
-+    LCMS_LIBS="-llcms -lm"
++      ], ,-lm)
++  ], ,-lm)
+   if test "x$have_lcms" = xyes; then
+     AC_DEFINE(HAVE_LCMS, 1, [Define to 1 if lcms is available])
+-    LIBLCMS="-llcms"
++    LIBLCMS="-lm -llcms"
+     LCMS='lcms$(EXEEXT)'
    else
-     AC_MSG_WARN([*** color proof module will not be built (lcms not found or unusable) ***])
-   fi
+     have_lcms="no (lcms not found or unusable)"
