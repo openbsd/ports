@@ -1,6 +1,6 @@
-$OpenBSD: patch-obmenu,v 1.1.1.1 2007/12/19 16:09:34 ajacoutot Exp $
+$OpenBSD: patch-obmenu,v 1.2 2007/12/20 11:53:24 ajacoutot Exp $
 --- obmenu.orig	Thu Feb  2 13:03:38 2006
-+++ obmenu	Wed Dec 19 15:10:23 2007
++++ obmenu	Thu Dec 20 09:49:59 2007
 @@ -462,9 +462,12 @@ class App:
  			self.remove(None)
  	
@@ -17,7 +17,44 @@ $OpenBSD: patch-obmenu,v 1.1.1.1 2007/12/19 16:09:34 ajacoutot Exp $
  	# application init
  	def init(self):
  		if len(sys.argv) == 2:
-@@ -503,6 +506,10 @@ class App:
+@@ -472,6 +475,36 @@ class App:
+ 			self.menu_path = sys.argv[1]
+ 		elif len(sys.argv) == 1:
+ 			self.menu_path = os.getenv("HOME") + "/.config/openbox/menu.xml"
++			if not os.path.isfile("%s/.config/openbox/menu.xml" % (os.getenv("HOME"))):				
++				if not os.path.isdir("%s/.config/" % (os.getenv("HOME"))):
++					try:
++						os.mkdir("%s/.config/" % (os.getenv("HOME")))
++					except:
++						print "Error: Can't create ~/.config directory!"
++						return
++					
++				if not os.path.isdir("%s/.config/openbox" % (os.getenv("HOME"))):
++					try:
++						os.mkdir("%s/.config/openbox" % (os.getenv("HOME")))
++					except:
++						print "Error: Can't create ~/.config/openbox directory!"
++						return
++			
++				if not os.path.isfile("!!SYSCONFDIR!!/xdg/openbox/menu.xml"):
++					print "Error: Couldn't find default menu file!"
++					return
++				
++				try:
++					orig = open("!!SYSCONFDIR!!/xdg/openbox/menu.xml", "r")
++					dest = open("%s/.config/openbox/menu.xml" % (os.getenv("HOME")), "w")
++					dest.write(orig.read())
++					orig.close()
++					dest.close()
++				except:
++					print "Error: Couldn't create default menu file!"
++					return
++		elif len(sys.argv) == 1:
++			self.menu_path = os.getenv("HOME") + "/.config/openbox/menu.xml"
+ 		else:
+ 			print "Error: Wrong number of arguments"
+ 			print "Usage: obmenu /path/to/menu.xml"
+@@ -503,6 +536,10 @@ class App:
  		
  		# Set the basics for GTK
  		self.arbol = gtk.glade.XML(self.gladefile, "window1")
