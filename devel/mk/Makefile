@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2007/12/20 15:47:18 ajacoutot Exp $
 
 COMMENT=	Streamlined replacement for make
 
 VERSION=	2.0
 DISTNAME=	mk-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel plan9
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
@@ -15,11 +16,13 @@ BUILD_DEPENDS=	::devel/libfmt \
 		::devel/libregexp9 \
 		::devel/libutf
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
+
+WANTLIB=	c
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 NO_REGRESS=	Yes

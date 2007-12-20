@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Feb 13 08:05:44 2003
-+++ Makefile	Sun Mar  2 17:05:52 2003
-@@ -10,7 +10,7 @@ OBJTYPE!=uname -m | sed 's;i.86;386;; s;
+--- Makefile.orig	Thu Feb 13 16:05:44 2003
++++ Makefile	Thu Dec 20 16:46:01 2007
+@@ -10,7 +10,7 @@ OBJTYPE!=uname -m | sed 's;i.86;386;; s;/.*;;'
  # the gnu rules will mess up bsd but not vice versa,
  # hence the gnu rules come first.
  

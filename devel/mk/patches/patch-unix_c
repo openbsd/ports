@@ -1,7 +1,7 @@
-$OpenBSD: patch-unix_c,v 1.1 2003/03/03 00:56:32 pvalchev Exp $
---- unix.c.orig	Sun Mar  2 17:17:35 2003
-+++ unix.c	Sun Mar  2 17:18:15 2003
-@@ -128,9 +128,9 @@ execsh(char *args, char *cmd, Bufblock *
+$OpenBSD: patch-unix_c,v 1.2 2007/12/20 15:47:18 ajacoutot Exp $
+--- unix.c.orig	Thu Feb 13 16:05:44 2003
++++ unix.c	Thu Dec 20 16:46:01 2007
+@@ -128,9 +128,9 @@ execsh(char *args, char *cmd, Bufblock *buf, Envy *e)
  			if (e)
  				exportenv(e);
  			if(shflags)
