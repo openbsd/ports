@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2007/12/20 21:50:31 kurt Exp $
+# $OpenBSD: Makefile,v 1.90 2007/12/20 22:41:18 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -8,9 +8,9 @@ COMMENT-devel=	devel files for Gecko
 
 VER=		2.0.0.10
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p1
-PKGNAME-main=	mozilla-firefox-${VER}p1
-PKGNAME-devel=	mozilla-firefox-devel-${VER}
+PKGNAME=	mozilla-firefox-${VER}
+PKGNAME-main=	mozilla-firefox-${VER}p2
+PKGNAME-devel=	mozilla-firefox-devel-${VER}p2
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -147,7 +147,7 @@ do-install:
 	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE \
-		${MOB}/browserconfig.properties ${MOZ}
+		${FILESDIR}/browserconfig.properties ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/firefox \
 		${MOB}/firefox-config ${PREFIX}/bin
 	ln -f ${PREFIX}/bin/firefox ${PREFIX}/bin/mozilla-firefox
