@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/07/17 08:53:54 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2007/12/20 22:03:05 ajacoutot Exp $
 bin/xblast
 bin/xbsndsrv
+share/locale/de/LC_MESSAGES/xblast.mo
+share/locale/fr/LC_MESSAGES/xblast.mo
 share/xblast/
 share/xblast/image/
 share/xblast/image/Imakefile
