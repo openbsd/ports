@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/21 13:49:02 sturm Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/TestLister.pl
+${P5SITE}/Test/TestRunner.pl
+${P5SITE}/Test/TkTestRunner.pl
+${P5SITE}/Test/Unit/
+${P5SITE}/Test/Unit.pm
+${P5SITE}/Test/Unit/Assert.pm
+${P5SITE}/Test/Unit/Assertion/
+${P5SITE}/Test/Unit/Assertion.pm
+${P5SITE}/Test/Unit/Assertion/Boolean.pm
+${P5SITE}/Test/Unit/Assertion/CodeRef.pm
+${P5SITE}/Test/Unit/Assertion/Exception.pm
+${P5SITE}/Test/Unit/Assertion/Regexp.pm
+${P5SITE}/Test/Unit/Debug.pm
+${P5SITE}/Test/Unit/Decorator.pm
+${P5SITE}/Test/Unit/Error.pm
+${P5SITE}/Test/Unit/Exception.pm
+${P5SITE}/Test/Unit/Failure.pm
+${P5SITE}/Test/Unit/HarnessUnit.pm
+${P5SITE}/Test/Unit/Listener.pm
+${P5SITE}/Test/Unit/Loader.pm
+${P5SITE}/Test/Unit/Procedural.pm
+${P5SITE}/Test/Unit/Result.pm
+${P5SITE}/Test/Unit/Runner/
+${P5SITE}/Test/Unit/Runner.pm
+${P5SITE}/Test/Unit/Runner/Terminal.pm
+${P5SITE}/Test/Unit/Setup.pm
+${P5SITE}/Test/Unit/Test.pm
+${P5SITE}/Test/Unit/TestCase.pm
+${P5SITE}/Test/Unit/TestRunner.pm
+${P5SITE}/Test/Unit/TestSuite.pm
+${P5SITE}/Test/Unit/TkTestRunner.pm
+${P5SITE}/Test/Unit/Tutorial.pm
+${P5SITE}/Test/Unit/UnitHarness.pm
+${P5SITE}/Test/Unit/Warning.pm
+@man man/man3p/Test::Unit.3p
+@man man/man3p/Test::Unit::Assert.3p
+@man man/man3p/Test::Unit::Assertion.3p
+@man man/man3p/Test::Unit::Assertion::Boolean.3p
+@man man/man3p/Test::Unit::Assertion::CodeRef.3p
+@man man/man3p/Test::Unit::Assertion::Exception.3p
+@man man/man3p/Test::Unit::Assertion::Regexp.3p
+@man man/man3p/Test::Unit::Debug.3p
+@man man/man3p/Test::Unit::Decorator.3p
+@man man/man3p/Test::Unit::Error.3p
+@man man/man3p/Test::Unit::Exception.3p
+@man man/man3p/Test::Unit::Failure.3p
+@man man/man3p/Test::Unit::HarnessUnit.3p
+@man man/man3p/Test::Unit::Listener.3p
+@man man/man3p/Test::Unit::Loader.3p
+@man man/man3p/Test::Unit::Procedural.3p
+@man man/man3p/Test::Unit::Result.3p
+@man man/man3p/Test::Unit::Runner.3p
+@man man/man3p/Test::Unit::Runner::Terminal.3p
+@man man/man3p/Test::Unit::Setup.3p
+@man man/man3p/Test::Unit::Test.3p
+@man man/man3p/Test::Unit::TestCase.3p
+@man man/man3p/Test::Unit::TestRunner.3p
+@man man/man3p/Test::Unit::TestSuite.3p
+@man man/man3p/Test::Unit::TkTestRunner.3p
+@man man/man3p/Test::Unit::Tutorial.3p
+@man man/man3p/Test::Unit::UnitHarness.3p
+@man man/man3p/Test::Unit::Warning.3p
