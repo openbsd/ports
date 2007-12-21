@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.575 2007/12/17 20:22:43 merdely Exp $
+# $OpenBSD: Makefile,v 1.576 2007/12/21 13:54:16 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -252,6 +252,7 @@
      SUBDIR += p5-Class-Factory-Util
      SUBDIR += p5-Class-Generate
      SUBDIR += p5-Class-Handle
+     SUBDIR += p5-Class-Inner
      SUBDIR += p5-Class-InsideOut
      SUBDIR += p5-Class-Inspector
      SUBDIR += p5-Class-Loader
@@ -489,6 +490,7 @@
      SUBDIR += p5-Test-Base
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
+     SUBDIR += p5-Test-Cmd
      SUBDIR += p5-Test-Deep
      SUBDIR += p5-Test-Differences
      SUBDIR += p5-Test-Distribution
@@ -512,6 +514,7 @@
      SUBDIR += p5-Test-Spelling
      SUBDIR += p5-Test-Taint
      SUBDIR += p5-Test-Tester
+     SUBDIR += p5-Test-Unit
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
