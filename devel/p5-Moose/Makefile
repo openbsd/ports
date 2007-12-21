@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/12 14:27:33 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/21 02:48:33 msf Exp $
 
 COMMENT=	a complete modern object system for perl 5
 
 MODULES=	cpan
-DISTNAME=	Moose-0.26
+DISTNAME=	Moose-0.33
 CATEGORIES=	devel
 
 # perl
@@ -17,7 +17,7 @@ CPAN_AUTHOR=	STEVAN
 CONFIGURE_STYLE=build
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-Class-MOP \
+RUN_DEPENDS=	:p5-Class-MOP->=0.49:devel/p5-Class-MOP \
 		::devel/p5-Sub-Exporter
 
 REGRESS_DEPENDS=::devel/p5-Test-Exception \

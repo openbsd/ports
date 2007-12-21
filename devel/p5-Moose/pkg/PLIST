@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/12 14:27:33 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/21 02:48:33 msf Exp $
 ${P5SITE}/Moose/
 ${P5SITE}/Moose.pm
 ${P5SITE}/Moose/Cookbook/
 ${P5SITE}/Moose/Cookbook.pod
 ${P5SITE}/Moose/Cookbook/FAQ.pod
 ${P5SITE}/Moose/Cookbook/Recipe1.pod
+${P5SITE}/Moose/Cookbook/Recipe11.pod
 ${P5SITE}/Moose/Cookbook/Recipe2.pod
 ${P5SITE}/Moose/Cookbook/Recipe3.pod
 ${P5SITE}/Moose/Cookbook/Recipe4.pod
@@ -46,10 +47,12 @@ ${P5SITE}/Moose/Util.pm
 ${P5SITE}/Moose/Util/TypeConstraints.pm
 ${P5SITE}/Test/
 ${P5SITE}/Test/Moose.pm
+${P5SITE}/oose.pm
 @man man/man3p/Moose.3p
 @man man/man3p/Moose::Cookbook.3p
 @man man/man3p/Moose::Cookbook::FAQ.3p
 @man man/man3p/Moose::Cookbook::Recipe1.3p
+@man man/man3p/Moose::Cookbook::Recipe11.3p
 @man man/man3p/Moose::Cookbook::Recipe2.3p
 @man man/man3p/Moose::Cookbook::Recipe3.3p
 @man man/man3p/Moose::Cookbook::Recipe4.3p
@@ -81,3 +84,4 @@ ${P5SITE}/Test/Moose.pm
 @man man/man3p/Moose::Util.3p
 @man man/man3p/Moose::Util::TypeConstraints.3p
 @man man/man3p/Test::Moose.3p
+@man man/man3p/oose.3p
