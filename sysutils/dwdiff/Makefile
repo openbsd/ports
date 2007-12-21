@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/21 07:45:11 jasper Exp $
 
 COMMENT=		word-based diff program
 
-DISTNAME=		dwdiff-1.2.1
+DISTNAME=		dwdiff-1.3
 CATEGORIES=		sysutils textproc
 
 HOMEPAGE=		http://os.ghalkes.nl/dwdiff.html
 
-# OSL 2.0
-# http://os.ghalkes.nl/licenses/osl-2.0.txt
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
