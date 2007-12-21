@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/21 13:52:42 sturm Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Cmd/
+${P5SITE}/Test/Cmd.pm
+${P5SITE}/Test/Cmd/Common.pm
+@man man/man3p/Test::Cmd.3p
+@man man/man3p/Test::Common.3p
