@@ -1,16 +1,16 @@
-$OpenBSD: patch-UPGRADING,v 1.2 2006/01/22 04:10:42 brad Exp $
---- UPGRADING.orig	Tue Jan 17 15:49:08 2006
-+++ UPGRADING	Sat Jan 21 22:54:40 2006
-@@ -13,8 +13,10 @@ UPGRADING FROM < 3.6.1
+$OpenBSD: patch-UPGRADING,v 1.3 2007/12/21 14:42:23 todd Exp $
+--- UPGRADING.orig	Sun Mar 18 17:42:25 2007
++++ UPGRADING	Sun Apr 29 18:02:34 2007
+@@ -16,9 +16,9 @@ UPGRADING FROM 3.6
+    log file selection. This is now required.
  
- - For users of hash_drv: A cssconvert tool has been provided to convert all
-   v3.6.0 databases to the correct, 8-byte aligned format used in all newer
--  versions. Please run cssconvert on all of your .css databases before 
--  turning on your new version of dspam.
-+  versions. 
-+  
-+  The OpenBSD port of DSPAM 3.6.0 already used the correctly aligned format,
-+  so that you don't need to run cssconvert before upgrading to 3.6.1 and later.
+ 3. Ensure 3.6.0 malaligned hash databases are converted
+-   Version 3.6.0 failed to align hash databases to 8-byte boundaries. If you
+-   are upgrading from v3.6.0 and are using the hash_drv storage driver, you
+-   should run cssconvert to upgrade your .css files to a fully aligned format.
++   Version 3.6.0 failed to align hash databases to 8-byte boundaries. The
++   OpenBSD port of DSPAM 3.6.0 already used the correctly aligned format,
++   so that you don't need to run cssconvert.
  
- UPGRADING FROM < 3.6.0
- ----------------------
+ 4. Invert "SupressWebStats" setting in dspam.conf
+    SupressWebStats has been changed to simply WebStats, and the setting is

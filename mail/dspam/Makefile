@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/06 19:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2007/12/21 14:42:23 todd Exp $
 
 COMMENT=	anti-spam filter
 
-VERSION=	3.6.8
+VERSION=	3.8.0
 DISTNAME=	dspam-${VERSION}
-PKGNAME=	${DISTNAME}p4
-SHARED_LIBS=	dspam	7.0
+SHARED_LIBS=	dspam	8.0
 CATEGORIES=	mail
 
 MASTER_SITES=	http://dspam.nuclearelephant.com/sources/
@@ -21,11 +20,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
-
-USE_LIBTOOL=		Yes
-
 CONFIGURE_ARGS+=	--with-dspam-home=/var/dspam \
 			--with-dspam-home-owner=_dspam \
 			--with-dspam-home-group=_dspam \

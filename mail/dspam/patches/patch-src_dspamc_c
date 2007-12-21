@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_dspamc_c,v 1.1 2007/12/21 14:42:23 todd Exp $
+--- src/dspamc.c.orig	Thu Dec 20 18:00:46 2007
++++ src/dspamc.c	Thu Dec 20 18:01:59 2007
+@@ -99,6 +99,7 @@ main (int argc, char *argv[])
+   int exitcode = EXIT_SUCCESS;
+   buffer *message = NULL;       /* input Message */
+   int agent_init = 0;		/* agent is initialized */
++  struct passwd *pwent;
+ 
+   setbuf (stdout, NULL);	/* unbuffered output */
+ #ifdef DEBUG
+@@ -112,6 +113,14 @@ main (int argc, char *argv[])
+   LOG(LOG_ERR, ERR_DAEMON_NO_SUPPORT);
+   exit(EXIT_FAILURE);
+ #endif
++
++  /* Cache my username and uid for trusted user security */
++
++  if (!init_pwent_cache()) {
++    LOG(LOG_ERR, ERR_AGENT_RUNTIME_USER);
++    exitcode = EXIT_FAILURE;
++    goto BAIL;
++  }
+ 
+   /* Read dspam.conf into global config structure (ds_config_t) */
+ 

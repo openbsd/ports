@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_client_c,v 1.3 2006/04/28 01:13:37 brad Exp $
---- src/client.c.orig	Wed Feb 15 21:06:35 2006
-+++ src/client.c	Thu Apr 27 10:03:28 2006
-@@ -108,7 +108,7 @@ int client_process(AGENT_CTX *ATX, buffe
+$OpenBSD: patch-src_client_c,v 1.4 2007/12/21 14:42:23 todd Exp $
+--- src/client.c.orig	Thu May 25 17:36:39 2006
++++ src/client.c	Sun Apr 29 17:57:52 2007
+@@ -108,7 +108,7 @@ int client_process(AGENT_CTX *ATX, buffer *message) {
  
    /* RCPT TO - Send recipient information */
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_client_c,v 1.3 2006/04/28 01:13:37 brad Exp $
    node_nt = c_nt_first(ATX->users, &c_nt);
    while(node_nt != NULL) {
      const char *ptr = (const char *) node_nt->ptr;
-@@ -170,7 +170,7 @@ int client_process(AGENT_CTX *ATX, buffe
+@@ -170,7 +170,7 @@ int client_process(AGENT_CTX *ATX, buffer *message) {
      if (ATX->flags & DAF_SUMMARY)
        head = 1;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_client_c,v 1.3 2006/04/28 01:13:37 brad Exp $
  
      while(line != NULL && strcmp(line, ".")) {
        chomp(line);
-@@ -192,7 +192,7 @@ int client_process(AGENT_CTX *ATX, buffe
+@@ -192,7 +192,7 @@ int client_process(AGENT_CTX *ATX, buffer *message) {
            break;
        } 
        free(line);
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_client_c,v 1.3 2006/04/28 01:13:37 brad Exp $
        if (line) chomp(line);
      }
      free(line);
-@@ -200,7 +200,7 @@ int client_process(AGENT_CTX *ATX, buffe
+@@ -200,7 +200,7 @@ int client_process(AGENT_CTX *ATX, buffer *message) {
        goto BAIL;
    } else {
      for(i=0;i<ATX->users->items;i++) {
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_client_c,v 1.3 2006/04/28 01:13:37 brad Exp $
        char *x;
        int code = 500;
  
-@@ -313,7 +313,7 @@ int client_connect(AGENT_CTX *ATX, int f
+@@ -313,7 +313,7 @@ int client_connect(AGENT_CTX *ATX, int flags) {
    if (domain) {
      sockfd = socket(AF_UNIX, SOCK_STREAM, 0);
      saun.sun_family = AF_UNIX;
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_client_c,v 1.3 2006/04/28 01:13:37 brad Exp $
      addr_len = sizeof(saun.sun_family) + strlen(saun.sun_path) + 1;
  
      LOGDEBUG(INFO_CLIENT_CONNECTING, host, 0);
-@@ -443,7 +443,7 @@ char * client_expect(THREAD_CTX *TTX, in
+@@ -443,7 +443,7 @@ char * client_expect(THREAD_CTX *TTX, int code, char *
    char *inp, *dup, *ptr, *ptrptr;
    int recv_code;
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-src_client_c,v 1.3 2006/04/28 01:13:37 brad Exp $
    while(inp != NULL) {
      recv_code = 0;
      dup = strdup(inp);
-@@ -467,7 +467,7 @@ char * client_expect(THREAD_CTX *TTX, in
+@@ -467,7 +467,7 @@ char * client_expect(THREAD_CTX *TTX, int code, char *
      
      strlcpy(err, inp, len);
      free(inp);
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_client_c,v 1.3 2006/04/28 01:13:37 brad Exp $
    }
  
    return NULL;
-@@ -512,13 +512,13 @@ int client_getcode(THREAD_CTX *TTX, char
+@@ -512,13 +512,13 @@ int client_getcode(THREAD_CTX *TTX, char *err, size_t 
    char *inp, *ptr, *ptrptr;
    int i;
  

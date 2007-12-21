@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_agent_shared_h,v 1.1 2007/12/21 14:42:23 todd Exp $
+--- src/agent_shared.h.orig	Thu Dec 20 18:03:38 2007
++++ src/agent_shared.h	Thu Dec 20 18:03:54 2007
+@@ -107,6 +107,8 @@ int initialize_atx      (AGENT_CTX *ATX);
+ int process_parseto	(AGENT_CTX *ATX, const char *buf);
+ buffer *read_stdin	(AGENT_CTX *ATX);
+ 
++int init_pwent_cache();
++
+ #ifndef MIN
+ #   define MAX(a,b)  ((a)>(b)?(a):(b))
+ #   define MIN(a,b)  ((a)<(b)?(a):(b))
