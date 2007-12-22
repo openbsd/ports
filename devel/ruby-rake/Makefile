@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2007/12/22 11:52:17 bernd Exp $
 
 COMMENT=	ruby make
 
-DISTNAME=	rake-0.7.3
+DISTNAME=	rake-0.8.0
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	devel
 
@@ -21,5 +21,12 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 PKG_ARCH=	*
+
+REGRESS_DEPENDS=:${PKGNAME}:devel/ruby-rake \
+		::devel/ruby-rcov \
+		::devel/ruby-flexmock
+
+do-regress:
+	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test_all
 
 .include <bsd.port.mk>
