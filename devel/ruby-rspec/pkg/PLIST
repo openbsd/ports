@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/14 22:01:22 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/22 11:32:25 bernd Exp $
 bin/spec
 bin/spec_translator
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
@@ -462,6 +462,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Extensions/Main/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Extensions/Main/cdesc-Main.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Extensions/Main/context-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Extensions/Main/describe-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Extensions/Main/share_as-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Extensions/Main/share_examples_for-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Extensions/Main/shared_examples_for-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Extensions/cdesc-Extensions.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/
