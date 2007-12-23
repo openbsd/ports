@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/15 05:08:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2007/12/23 14:08:25 jasper Exp $
 
 COMMENT=		Jabber client for the GNOME desktop
 
 GNOME_PROJECT=		gossip
-GNOME_VERSION=		0.27
+GNOME_VERSION=		0.28
 CATEGORIES=		net
 
 HOMEPAGE=		http://developer.imendio.com/projects/gossip/
@@ -24,7 +24,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		pthread ssl util xml2 z
 
 # XXX: To be fixed
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gossip/0.27/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gossip/0.28/}
 
 MODULES=		devel/gettext \
 			x11/gnome
