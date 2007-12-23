@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.319 2007/12/23 18:00:51 merdely Exp $
+# $OpenBSD: Makefile,v 1.320 2007/12/23 18:30:02 merdely Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -253,7 +253,6 @@
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
      SUBDIR += py-paste-script
-     SUBDIR += py-storm
      SUBDIR += py-turbogears
      SUBDIR += py-webpy
      SUBDIR += pyblosxom

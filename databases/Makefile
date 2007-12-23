@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2007/11/24 12:29:38 simon Exp $
+# $OpenBSD: Makefile,v 1.128 2007/12/23 18:30:02 merdely Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -105,6 +105,7 @@
      SUBDIR += py-sqlite
      SUBDIR += py-sqlite2
      SUBDIR += py-sqlobject
+     SUBDIR += py-storm
      SUBDIR += py-sybase
      SUBDIR += qdbm
      SUBDIR += qt3-sqlite3-plugin
