@@ -1,0 +1,59 @@
+$OpenBSD: patch-deezer_cpp,v 1.1.1.1 2007/12/25 10:02:58 espie Exp $
+--- deezer.cpp.orig	Tue Dec 25 10:45:07 2007
++++ deezer.cpp	Tue Dec 25 10:50:18 2007
+@@ -300,6 +300,19 @@ void parse_searchresults(vector<song>* res, char* buf,
+ }
+ 
+ 
++FILE *tempfile()
++{
++	FILE *f = NULL;
++	char t[] = "/tmp/deezer.XXXXXXX";
++	int fd = mkstemp(t);
++	if (fd != -1) {
++		unlink(t);
++		f = fdopen(fd, "w+");
++		if (f == NULL)
++			close(fd);
++	}
++	return f;
++}
+ 
+ 
+ vector<song>* search_deezer(const char* search)
+@@ -348,7 +361,7 @@ vector<song>* search_deezer(const char* search)
+     postfield[current]=search_encrypted[i];
+     ++current;
+   }
+-  FILE* searchres_fd=fopen(TEMP_SEARCHRESULTS_FILENAME, "wb");
++  FILE* searchres_fd=tempfile();
+   if(searchres_fd==NULL)
+   {
+     cerr<<"Error : unable to open the search results file. Permissions problem ?"<<endl;
+@@ -378,24 +391,13 @@ vector<song>* search_deezer(const char* search)
+   curl_slist_free_all(headers);
+   curl_easy_cleanup(easyhandle);
+   
+-  fclose(searchres_fd);
+-
+-  searchres_fd=fopen(TEMP_SEARCHRESULTS_FILENAME, "rb");
+-  if(searchres_fd==NULL)
+-  {
+-    cerr<<"Error : unable to open the search results file. Permissions problem ?"<<endl;
+-    exit(42);
+-  }
++  fflush(searchres_fd);
++  rewind(searchres_fd);
+   fsize=filesize(searchres_fd);
+   bufsearch=new char[fsize+1];
+   fread(bufsearch, 1, fsize, searchres_fd);
+   fclose(searchres_fd);
+ 
+-  if(unlink(TEMP_SEARCHRESULTS_FILENAME)==-1)
+-  {
+-    cerr<<"Error : unable to delete the search results file. Permissions problem ?"<<endl;
+-    exit(42);
+-  }
+   parse_searchresults(res, bufsearch, fsize);
+ 
+   delete bufsearch;

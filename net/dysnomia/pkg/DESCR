@@ -1,0 +1,21 @@
+Dysnomia is a program that *shows the possibility* to download songs
+from on-demand music websites (only the deezer.com website in this
+version). It's only a proof of concept of that possibility, and
+its main interest is in its code and how it works, not in using
+it to download songs on these websites.
+
+It must *not* be used to download songs that are copyrighted and
+licensed under a license that does not allow freely copying. Such
+an utilization of that program is illegal. If you intend to use
+that program to do that, you and you only take responsability for
+that.
+
+If you wish to test the program, try for example the "tryad" search
+request : tryad is a an Internet-based musical group that publish
+all their works under a Creative Commons license, allowing it to
+be freely copied and diffused.
+
+Dysnomia 0.3.4 allows you to download using two different modes :
+the "regular" one, wich has exactly the same behaviour as the
+deezer.com flash applet, and the "alternative" one, wich downloads
+by directly accessing the deezer.com cache.
