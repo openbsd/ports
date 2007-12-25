@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_bin_e_config_c,v 1.1 2007/12/24 14:11:11 laurent Exp $
---- src/bin/e_config.c.orig     Fri Dec 20 17:07:06 2007
-+++ src/bin/e_config.c  Fri Dec 20 17:07:48 2007
+$OpenBSD: patch-src_bin_e_config_c,v 1.2 2007/12/25 13:07:55 laurent Exp $
+--- src/bin/e_config.c.orig	Fri Dec 20 17:07:06 2007
++++ src/bin/e_config.c	Fri Dec 20 17:07:48 2007
 @@ -766,9 +766,9 @@ e_config_init(void)
-        CFG_MODULE("ibox", 1, 0);
-        CFG_MODULE("dropshadow", 1, 0);
-        CFG_MODULE("clock", 1, 0);
--       CFG_MODULE("battery", 1, 0);
--       CFG_MODULE("cpufreq", 1, 0);
--       CFG_MODULE("temperature", 1, 0);
-+       CFG_MODULE("battery", 0, 0);
-+       CFG_MODULE("cpufreq", 0, 0);
-+       CFG_MODULE("temperature", 0, 0);
-        CFG_MODULE("pager", 1, 0);
-        CFG_MODULE("exebuf", 1, 1);
-        CFG_MODULE("winlist", 1, 1);
+ 	CFG_MODULE("ibox", 1, 0);
+ 	CFG_MODULE("dropshadow", 1, 0);
+ 	CFG_MODULE("clock", 1, 0);
+-	CFG_MODULE("battery", 1, 0);
+-	CFG_MODULE("cpufreq", 1, 0);
+-	CFG_MODULE("temperature", 1, 0);
++	CFG_MODULE("battery", 0, 0);
++	CFG_MODULE("cpufreq", 0, 0);
++	CFG_MODULE("temperature", 0, 0);
+ 	CFG_MODULE("pager", 1, 0);
+ 	CFG_MODULE("exebuf", 1, 1);
+ 	CFG_MODULE("winlist", 1, 1);
