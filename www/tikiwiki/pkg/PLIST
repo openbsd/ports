@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/10/12 07:58:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2007/12/25 20:36:30 ajacoutot Exp $
 tikiwiki/
 tikiwiki/INSTALL
 tikiwiki/README
@@ -811,6 +811,9 @@ tikiwiki/lang/_htaccess
 tikiwiki/lang/ar/
 tikiwiki/lang/ar/index.php
 tikiwiki/lang/ar/language.php
+tikiwiki/lang/bg/
+tikiwiki/lang/bg/index.php
+tikiwiki/lang/bg/language.php
 tikiwiki/lang/ca/
 tikiwiki/lang/ca/index.php
 tikiwiki/lang/ca/language.php
@@ -1197,6 +1200,8 @@ tikiwiki/lib/cache/cachelib.php
 tikiwiki/lib/cache/index.php
 tikiwiki/lib/calendar/
 tikiwiki/lib/calendar/calendarlib.php
+tikiwiki/lib/calendar/change_class.php
+tikiwiki/lib/calendar/display_class.php
 tikiwiki/lib/calendar/index.php
 tikiwiki/lib/categories/
 tikiwiki/lib/categories/categlib.php
@@ -1325,6 +1330,7 @@ tikiwiki/lib/imagegals/
 tikiwiki/lib/imagegals/imagegallib.js
 tikiwiki/lib/imagegals/imagegallib.php
 tikiwiki/lib/imagegals/index.php
+tikiwiki/lib/importerlib.php
 tikiwiki/lib/index.php
 tikiwiki/lib/init/
 tikiwiki/lib/init/index.php
@@ -1481,6 +1487,7 @@ tikiwiki/lib/modules/index.php
 tikiwiki/lib/modules/modlib.php
 tikiwiki/lib/multilingual/
 tikiwiki/lib/multilingual/multilinguallib.php
+tikiwiki/lib/newcalendarlib.php
 tikiwiki/lib/newsletters/
 tikiwiki/lib/newsletters/index.php
 tikiwiki/lib/newsletters/nllib.php
@@ -2198,7 +2205,6 @@ tikiwiki/lib/taglines/index.php
 tikiwiki/lib/taglines/taglinelib.php
 tikiwiki/lib/tail/
 tikiwiki/lib/tail/index.php
-tikiwiki/lib/tail/taillib.php
 tikiwiki/lib/tar.class.php
 tikiwiki/lib/tasks/
 tikiwiki/lib/tasks/index.php
@@ -2503,7 +2509,6 @@ tikiwiki/modules/mod-since_last_visit_new.php
 tikiwiki/modules/mod-switch_lang.php
 tikiwiki/modules/mod-switch_lang2.php
 tikiwiki/modules/mod-switch_theme.php
-tikiwiki/modules/mod-tail.php
 tikiwiki/modules/mod-top_active_blogs.php
 tikiwiki/modules/mod-top_articles.php
 tikiwiki/modules/mod-top_file_galleries.php
@@ -2843,6 +2848,7 @@ tikiwiki/templates/mail/submission_notification.tpl
 tikiwiki/templates/mail/submission_notification_subject.tpl
 tikiwiki/templates/mail/tracker_changed_notification.tpl
 tikiwiki/templates/mail/tracker_changed_notification_subject.tpl
+tikiwiki/templates/mail/user_admin_validation_msg.tpl
 tikiwiki/templates/mail/user_validation_mail.tpl
 tikiwiki/templates/mail/user_validation_mail_subject.tpl
 tikiwiki/templates/mail/user_validation_msg.tpl
@@ -2963,7 +2969,6 @@ tikiwiki/templates/modules/mod-switch_lang.tpl
 tikiwiki/templates/modules/mod-switch_lang2.tpl
 tikiwiki/templates/modules/mod-switch_theme.tpl
 tikiwiki/templates/modules/mod-switch_theme.tpl.nocache
-tikiwiki/templates/modules/mod-tail.tpl
 tikiwiki/templates/modules/mod-top_active_blogs.tpl
 tikiwiki/templates/modules/mod-top_articles.tpl
 tikiwiki/templates/modules/mod-top_file_galleries.tpl
@@ -3185,6 +3190,7 @@ tikiwiki/templates/tiki-admin_mailin.tpl
 tikiwiki/templates/tiki-admin_menu_options.tpl
 tikiwiki/templates/tiki-admin_menus.tpl
 tikiwiki/templates/tiki-admin_modules.tpl
+tikiwiki/templates/tiki-admin_newcalendar.tpl
 tikiwiki/templates/tiki-admin_newsletter_subscriptions.tpl
 tikiwiki/templates/tiki-admin_newsletters.tpl
 tikiwiki/templates/tiki-admin_notifications.tpl
@@ -3270,6 +3276,7 @@ tikiwiki/templates/tiki-export_tracker.tpl
 tikiwiki/templates/tiki-faq_questions.tpl
 tikiwiki/templates/tiki-featured_link.tpl
 tikiwiki/templates/tiki-file_galleries.tpl
+tikiwiki/templates/tiki-forum_import.tpl
 tikiwiki/templates/tiki-forum_queue.tpl
 tikiwiki/templates/tiki-forums.tpl
 tikiwiki/templates/tiki-forums_reported.tpl
@@ -3520,6 +3527,7 @@ tikiwiki/tiki-admin_mailin.php
 tikiwiki/tiki-admin_menu_options.php
 tikiwiki/tiki-admin_menus.php
 tikiwiki/tiki-admin_modules.php
+tikiwiki/tiki-admin_newcalendar.php
 tikiwiki/tiki-admin_newsletter_subscriptions.php
 tikiwiki/tiki-admin_newsletters.php
 tikiwiki/tiki-admin_notifications.php
@@ -3622,6 +3630,7 @@ tikiwiki/tiki-file_galleries.php
 tikiwiki/tiki-file_galleries_rankings.php
 tikiwiki/tiki-file_galleries_rss.php
 tikiwiki/tiki-file_gallery_rss.php
+tikiwiki/tiki-forum_import.php
 tikiwiki/tiki-forum_queue.php
 tikiwiki/tiki-forum_rankings.php
 tikiwiki/tiki-forum_rss.php
