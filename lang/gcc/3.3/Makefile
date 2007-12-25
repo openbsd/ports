@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2007/10/22 16:28:45 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2007/12/25 19:47:35 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -6,13 +6,13 @@ V=3.3.6
 FULL_VERSION=3.3.6
 FULL_PKGVERSION=3.3.6
 
-PKGNAME-main=	gcc-${FULL_PKGVERSION}p7
-PKGNAME-c++ =	g++-${FULL_PKGVERSION}p6
-PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}p2
-PKGNAME-g77=	g77-${FULL_PKGVERSION}p6
-PKGNAME-java=	gcj-${FULL_PKGVERSION}p3
-PKGNAME-objc=	gobjc-${FULL_PKGVERSION}p7
-PKGNAME-ada=	gnat-${FULL_PKGVERSION}p5
+PKGNAME-main=	gcc-${FULL_PKGVERSION}p8
+PKGNAME-c++ =	g++-${FULL_PKGVERSION}p7
+PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}p3
+PKGNAME-g77=	g77-${FULL_PKGVERSION}p7
+PKGNAME-java=	gcj-${FULL_PKGVERSION}p4
+PKGNAME-objc=	gobjc-${FULL_PKGVERSION}p8
+PKGNAME-ada=	gnat-${FULL_PKGVERSION}p6
 SHARED_LIBS=	estdc++		6.0 \
 		g2c		1.0 \
 		-org-w3c-dom	1.0 \
@@ -45,13 +45,17 @@ BUILD_DEPENDS+= :bison-*:devel/bison
 MULTI_PACKAGES=-main
 # No sub packages description
 DESCR=${PKGDIR}/DESCR
+DESCR-main = ${DESCR}
+DESCR-c++ = ${DESCR}
+DESCR-estdc = ${DESCR}
+DESCR-g77 = ${DESCR}
+DESCR-java = ${DESCR}
+DESCR-objc = ${DESCR}
+DESCR-ada= ${DESCR}
 
 REGRESS_DEPENDS=::devel/dejagnu
 
-
-
 DISTNAME=	gcc-${FULL_VERSION}
-
 
 DISTFILES=  ${DISTNAME}.tar.bz2
 SUPDISTFILES=adastrap-i386-3.3.6-5.tgz:0
@@ -175,4 +179,3 @@ LIB_DEPENDS-java=gc::devel/boehm-gc
 RUN_DEPENDS-c++ =${RUN_DEPENDS} ::${PKGPATH},-estdc
 
 .include <bsd.port.mk>
-
