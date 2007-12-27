@@ -1,0 +1,11 @@
+$OpenBSD: patch-libktorrent_util_fileops_cpp,v 1.1 2007/12/27 10:24:51 sthen Exp $
+--- libktorrent/util/fileops.cpp.orig	Mon Aug 27 12:45:55 2007
++++ libktorrent/util/fileops.cpp	Sat Sep 29 02:31:07 2007
+@@ -62,7 +62,6 @@ typedef	int64_t		__s64;
+ #endif
+ 
+ 				 
+-#include <sys/statvfs.h>
+ 
+ 
+ namespace bt

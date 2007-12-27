@@ -1,0 +1,11 @@
+$OpenBSD: patch-libktorrent_net_address_cpp,v 1.1 2007/12/27 10:24:51 sthen Exp $
+--- libktorrent/net/address.cpp.orig	Sat Sep 29 01:31:27 2007
++++ libktorrent/net/address.cpp	Sat Sep 29 01:31:39 2007
+@@ -17,6 +17,7 @@
+  *   Free Software Foundation, Inc.,                                       *
+  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
+  ***************************************************************************/
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include "address.h"
