@@ -1,7 +1,7 @@
-$OpenBSD: patch-Docs_Html_Availability_html,v 1.1 2001/04/10 00:51:59 espie Exp $
+$OpenBSD: patch-Docs_Html_Availability_html,v 1.2 2007/12/27 16:34:19 espie Exp $
 --- Docs/Html/Availability.html.orig	Thu Apr 11 19:21:06 1996
-+++ Docs/Html/Availability.html	Tue Apr 10 02:20:48 2001
-@@ -53,7 +53,7 @@ You can also contact me at the following
++++ Docs/Html/Availability.html	Thu Dec 27 16:51:26 2007
+@@ -53,7 +53,7 @@ You can also contact me at the following e-mail addres
  </P>
  <DL><DT><DD>
  <PRE>

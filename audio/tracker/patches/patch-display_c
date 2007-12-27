@@ -1,7 +1,7 @@
-$OpenBSD: patch-display_c,v 1.1 2001/04/10 00:52:01 espie Exp $
+$OpenBSD: patch-display_c,v 1.2 2007/12/27 16:34:19 espie Exp $
 --- display.c.orig	Mon May  6 16:28:52 1996
-+++ display.c	Tue Apr 10 02:20:49 2001
-@@ -543,7 +543,14 @@ LOCAL void disp_offset(unsigned samp, un
++++ display.c	Thu Dec 27 16:51:26 2007
+@@ -543,7 +543,14 @@ LOCAL void disp_offset(unsigned samp, unsigned para, n
  		copy3(note2name(note));
  		copy4(" off");
  		if (ch->samp->length)

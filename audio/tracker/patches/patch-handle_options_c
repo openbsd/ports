@@ -1,6 +1,6 @@
-$OpenBSD: patch-handle_options_c,v 1.1 2001/04/10 00:52:01 espie Exp $
+$OpenBSD: patch-handle_options_c,v 1.2 2007/12/27 16:34:19 espie Exp $
 --- handle_options.c.orig	Tue May  7 17:22:08 1996
-+++ handle_options.c	Tue Apr 10 02:29:16 2001
++++ handle_options.c	Thu Dec 27 16:51:26 2007
 @@ -52,6 +52,7 @@
  #include "tags.h"
  #include "prefs.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-handle_options_c,v 1.1 2001/04/10 00:52:01 espie Exp $
  
  #ifdef VOLUME_CONTROL
  #ifdef __hpux
-@@ -235,7 +236,9 @@ void handle_options(int argc, char *argv
+@@ -235,7 +236,9 @@ void handle_options(int argc, char *argv[])
  		print_usage();
  		end_all(0);
  		}

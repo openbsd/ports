@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_Pro_effects_c,v 1.1 2001/04/10 00:52:00 espie Exp $
+$OpenBSD: patch-Modules_Pro_effects_c,v 1.2 2007/12/27 16:34:19 espie Exp $
 --- Modules/Pro/effects.c.orig	Sat Apr 13 19:16:54 1996
-+++ Modules/Pro/effects.c	Tue Apr 10 02:20:49 2001
-@@ -207,8 +207,9 @@ LOCAL void do_vibrato(struct channel *ch
++++ Modules/Pro/effects.c	Thu Dec 27 16:51:26 2007
+@@ -207,8 +207,9 @@ LOCAL void do_vibrato(struct channel *ch)
        /* temporary update of only the step value,
         * note that we do not change the saved pitch.
         */

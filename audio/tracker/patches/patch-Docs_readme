@@ -1,7 +1,7 @@
-$OpenBSD: patch-Docs_readme,v 1.2 2001/07/11 23:39:57 miod Exp $
+$OpenBSD: patch-Docs_readme,v 1.3 2007/12/27 16:34:19 espie Exp $
 --- Docs/readme.orig	Thu Apr 11 19:21:05 1996
-+++ Docs/readme	Tue Apr 10 02:20:48 2001
-@@ -5,6 +5,12 @@ See the accompanying TeXinfo documentati
++++ Docs/readme	Thu Dec 27 16:51:26 2007
+@@ -5,6 +5,12 @@ See the accompanying TeXinfo documentation for more de
  From version 4.29 on, commercial use of tracker is forbidden without
  negotiating an agreement with me first.
  
