@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/26 18:19:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2007/12/27 19:43:46 bernd Exp $
 
 COMMENT=	ruby MVC web application framework
 
-DISTNAME=	rails-1.2.6
+DISTNAME=	rails-2.0.2
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	www 
 
@@ -17,10 +17,12 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=rails/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-rake-0.7.3:devel/ruby-rake \
-		:ruby-actionmailer->=1.3.6:mail/ruby-actionmailer \
-		:ruby-actionwebservice->=1.2.6:www/ruby-actionwebservice \
-		:ruby-activesupport->=1.4.4:devel/ruby-activesupport
+RUN_DEPENDS=	:ruby-rake->=0.7.3:devel/ruby-rake \
+		:ruby-activesupport-2.0.2:devel/ruby-activesupport \
+		:ruby-activerecord-2.0.2:databases/ruby-activerecord \
+		:ruby-actionpack-2.0.2:devel/ruby-actionpack \
+		:ruby-actionmailer-2.0.2:mail/ruby-actionmailer \
+		:ruby-activeresource-2.0.2:www/ruby-activeresource
 
 CONFIGURE_STYLE=ruby gem
 
