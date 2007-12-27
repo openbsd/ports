@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_man_nanorc_5,v 1.1 2006/12/14 21:26:53 naddy Exp $
---- doc/man/nanorc.5.orig	Sat Oct 28 21:21:12 2006
-+++ doc/man/nanorc.5	Thu Dec  7 19:54:23 2006
-@@ -250,8 +250,7 @@ Per-user configuration file
+$OpenBSD: patch-doc_man_nanorc_5,v 1.2 2007/12/27 20:53:18 naddy Exp $
+--- doc/man/nanorc.5.orig	Thu Oct 11 07:01:29 2007
++++ doc/man/nanorc.5	Thu Dec 27 21:47:21 2007
+@@ -262,8 +262,7 @@ Per-user configuration file
  .TP
  \fBnano\fP(1)
  .PP
