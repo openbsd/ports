@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/29 20:06:59 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/27 18:35:06 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -106,7 +106,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Object/method_added-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/cdesc-String.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/to_xs-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGES
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
