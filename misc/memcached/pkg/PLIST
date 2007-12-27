@@ -1,3 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/10 20:23:31 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/27 17:42:50 jasper Exp $
 bin/memcached
+bin/memcached-debug
 @man man/man1/memcached.1
+share/doc/memcached/
+share/doc/memcached/binary-protocol-plan.txt
+share/doc/memcached/memory_management.txt
+share/doc/memcached/protocol.txt
+share/doc/memcached/threads.txt
