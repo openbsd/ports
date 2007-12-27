@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.22 2007/12/27 16:29:54 espie Exp $
 
 COMMENT=	Ogg bitstream library
 
@@ -16,6 +16,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
+
+MAKE_FLAGS=mkdir_p="mkdir -p"
+FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
