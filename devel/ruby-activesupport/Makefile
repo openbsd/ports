@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/10/15 15:19:37 jcs Exp $
+# $OpenBSD: Makefile,v 1.10 2007/12/27 19:40:59 bernd Exp $
 
 COMMENT=	utility classes and extensions for rails framework 
 
-DISTNAME=       activesupport-1.4.4
+DISTNAME=       activesupport-2.0.2
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=     devel
 
