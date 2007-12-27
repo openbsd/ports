@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.57 2007/12/27 18:32:32 bernd Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,19 +7,20 @@ COMMENT-iconv=		libiconv interface for ruby
 COMMENT-gdbm=		gdbm interface for ruby
 COMMENT-tk=		tk interface for ruby
 
-VERSION=		1.8.5
-DISTNAME=		ruby-${VERSION}
-SHARED_LIBS=		ruby 1.85
-PKGNAME-main=		${DISTNAME}p7
-PKGNAME-iconv=		ruby-iconv-${VERSION}p4
-PKGNAME-gdbm=		ruby-gdbm-${VERSION}p4
-PKGNAME-tk=		ruby-tk-${VERSION}p4
+VERSION=		1.8.6
+PATCHLEVEL=		111
+DISTNAME=		ruby-${VERSION}-p${PATCHLEVEL}
+SHARED_LIBS=		ruby 1.86
+PKGNAME-main=		ruby-${VERSION}.${PATCHLEVEL}
+PKGNAME-iconv=		ruby-iconv-${VERSION}.${PATCHLEVEL}
+PKGNAME-gdbm=		ruby-gdbm-${VERSION}.${PATCHLEVEL}
+PKGNAME-tk=		ruby-tk-${VERSION}.${PATCHLEVEL}
 
 CATEGORIES=		lang
 
 HOMEPAGE=		http://www.ruby-lang.org/
 
-MAINTAINER=		Mathieu Sauve-Frankel <msf@openbsd.org>
+MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
 # GPL/Artistic/BSD/Public Domain/Beer-Ware
 PERMIT_PACKAGE_CDROM=	Yes
@@ -76,7 +77,7 @@ LIB_DEPENDS-tk=		tk84:tk-8.4.*:x11/tk/8.4 \
 RUN_DEPENDS-tk=
 .endif
 
-REGRESS_DEPENDS=	::lang/ruby
+REGRESS_DEPENDS=	:${PKGNAME-main}:lang/ruby
 INSTALL_TARGET=		install install-doc
 REV=			1.8
 SUB=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}

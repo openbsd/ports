@@ -1,0 +1,27 @@
+$OpenBSD: patch-common_mk,v 1.1 2007/12/27 18:32:33 bernd Exp $
+
+Build the docs and the ext stuff during the build phase so we don't have to
+run 'make clean' as root.
+
+--- common.mk.orig	Wed Feb 28 14:23:42 2007
++++ common.mk	Sat Sep 22 12:22:12 2007
+@@ -68,7 +68,9 @@ PRE_LIBRUBY_UPDATE = $(MINIRUBY) -e 'ARGV[1] or File.u
+ TESTSDIR      = $(srcdir)/test
+ TESTWORKDIR   = testwork
+ 
+-all: $(MKFILES) $(PREP) $(RBCONFIG) $(LIBRUBY)
++all: $(MKFILES) $(PREP) $(RBCONFIG) $(LIBRUBY) all-extmk rdoc
++
++all-extmk:
+ 	@$(MINIRUBY) $(srcdir)/ext/extmk.rb $(EXTMK_ARGS)
+ prog: $(PROGRAM) $(WPROGRAM)
+ 
+@@ -238,7 +240,7 @@ dont-install-man:
+ post-no-install-man::
+ 	@$(NULLCMD)
+ 
+-install-doc: rdoc pre-install-doc do-install-doc post-install-doc
++install-doc: pre-install-doc do-install-doc post-install-doc
+ pre-install-doc:: install-prereq
+ do-install-doc: $(PROGRAM)
+ 	$(MINIRUBY) $(srcdir)/instruby.rb $(INSTRUBY_ARGS) --install=rdoc --rdoc-output="$(RDOCOUT)"

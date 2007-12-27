@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tk,v 1.4 2005/12/29 17:27:32 msf Exp $
+@comment $OpenBSD: PLIST-tk,v 1.5 2007/12/27 18:32:33 bernd Exp $
 lib/ruby/${REV}/${SUB}/tcltklib.so
 lib/ruby/${REV}/${SUB}/tkutil.so
 lib/ruby/${REV}/multi-tk.rb
@@ -256,6 +256,7 @@ lib/ruby/${REV}/tkextlib/tile/
 lib/ruby/${REV}/tkextlib/tile.rb
 lib/ruby/${REV}/tkextlib/tile/dialog.rb
 lib/ruby/${REV}/tkextlib/tile/setup.rb
+lib/ruby/${REV}/tkextlib/tile/sizegrip.rb
 lib/ruby/${REV}/tkextlib/tile/style.rb
 lib/ruby/${REV}/tkextlib/tile/tbutton.rb
 lib/ruby/${REV}/tkextlib/tile/tcheckbutton.rb
@@ -318,6 +319,7 @@ lib/ruby/${REV}/tkextlib/trofs/
 lib/ruby/${REV}/tkextlib/trofs.rb
 lib/ruby/${REV}/tkextlib/trofs/setup.rb
 lib/ruby/${REV}/tkextlib/trofs/trofs.rb
+lib/ruby/${REV}/tkextlib/version.rb
 lib/ruby/${REV}/tkextlib/vu/
 lib/ruby/${REV}/tkextlib/vu.rb
 lib/ruby/${REV}/tkextlib/vu/bargraph.rb
