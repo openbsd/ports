@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tools_qstring_cpp,v 1.1 2007/03/31 22:49:46 espie Exp $
---- src/tools/qstring.cpp.orig	Thu Oct 19 16:25:03 2006
-+++ src/tools/qstring.cpp	Sat Mar 31 14:51:51 2007
-@@ -5799,6 +5799,7 @@ QString QString::fromUtf8( const char* utf8, int len )
+$OpenBSD: patch-src_tools_qstring_cpp,v 1.2 2007/12/28 17:45:04 espie Exp $
+--- src/tools/qstring.cpp.orig	Fri Feb  2 15:01:05 2007
++++ src/tools/qstring.cpp	Sun Oct 28 01:16:23 2007
+@@ -5805,6 +5805,7 @@ QString QString::fromUtf8( const char* utf8, int len )
      result.setLength( len ); // worst case
      QChar *qch = (QChar *)result.unicode();
      uint uc = 0;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_tools_qstring_cpp,v 1.1 2007/03/31 22:49:46 espie Exp $
      int need = 0;
      int error = -1;
      uchar ch;
-@@ -5816,6 +5817,12 @@ QString QString::fromUtf8( const char* utf8, int len )
+@@ -5822,6 +5823,12 @@ QString QString::fromUtf8( const char* utf8, int len )
  			unsigned short low = uc%0x400 + 0xdc00;
  			*qch++ = QChar(high);
  			*qch++ = QChar(low);
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_tools_qstring_cpp,v 1.1 2007/03/31 22:49:46 espie Exp $
  		    } else {
  			*qch++ = uc;
  		    }
-@@ -5838,14 +5845,17 @@ QString QString::fromUtf8( const char* utf8, int len )
+@@ -5844,14 +5851,17 @@ QString QString::fromUtf8( const char* utf8, int len )
  		uc = ch & 0x1f;
  		need = 1;
  		error = i;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2007/10/25 09:29:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.82 2007/12/28 17:45:04 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -9,13 +9,13 @@ COMMENT-mysql=		MySQL plugin for qt3
 COMMENT-sqlite2=	sqlite2 plugin for qt3
 
 PKGNAME=		qt3-${VERSION}
-PKGNAME-mysql=		qt3-mysql-${VERSION}p1
-PKGNAME-postgresql=	qt3-postgresql-${VERSION}p1
-PKGNAME-examples=	qt3-examples-${VERSION}p1
-PKGNAME-main=		qt3-mt-${VERSION}p6
-FULLPKGNAME-html=	qt3-html-${VERSION}p0
-PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}p1
-SHARED_LIBS=		qt-mt	31.0 \
+PKGNAME-mysql=		qt3-mysql-${VERSION}
+PKGNAME-postgresql=	qt3-postgresql-${VERSION}
+PKGNAME-examples=	qt3-examples-${VERSION}
+PKGNAME-main=		qt3-mt-${VERSION}
+FULLPKGNAME-html=	qt3-html-${VERSION}
+PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
+SHARED_LIBS=		qt-mt	31.1 \
 			qui	2.0 \
 			qui-mt	2.0
 
@@ -25,14 +25,17 @@ SHARED_LIBS=		qt-mt	31.0 \
 QT_PLUGINS=		plugins-${LIBqt-mt_VERSION:R}
 
 
-VERSION=	3.7
+VERSION=	3.8
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
-MASTER_SITES0=	http://freedesktop.org/~daisuke/
+# Old official site
+#MASTER_SITES0=	http://freedesktop.org/~daisuke/
+MASTER_SITES0=	ftp://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/
 
-PATCHFILES=	qt-x11-immodule-unified-qt3.3.7-20061229.diff.bz2:0
+
+PATCHFILES=	qt-x11-immodule-unified-qt3.3.8-20070321-gentoo.diff.bz2:0
 PATCH_DIST_STRIP=	-p1
 
 pre-configure:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/10/25 09:29:39 wilfried Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2007/12/28 17:45:04 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 @pkgpath x11/qt3,mt
@@ -1503,5 +1503,5 @@ share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
 share/doc/qt3/README-QT.TXT
 share/doc/qt3/README.immodule
-share/doc/qt3/changes-3.3.7
+share/doc/qt3/changes-3.3.8
 share/doc/qt3/changes.immodule
