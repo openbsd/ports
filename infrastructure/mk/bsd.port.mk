@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.918 2007/12/05 06:55:41 jolan Exp $
+#	$OpenBSD: bsd.port.mk,v 1.919 2007/12/28 12:46:03 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -143,8 +143,14 @@ FTP_KEEPALIVE ?= 0
 FETCH_CMD ?= /usr/bin/ftp -V -m -k ${FTP_KEEPALIVE}
 
 PKG_TMPDIR ?= /var/tmp
+
+PKGDB_LOCK ?=
+_PKG_QUERY = pkg_info ${PKGDB_LOCK} -e
 PKG_CMD ?= /usr/sbin/pkg_create
 PKG_DELETE ?= /usr/sbin/pkg_delete
+PKG_CMD += ${PKGDB_LOCK}
+PKG_DELETE += ${PKGDB_LOCK}
+
 # remount those mount points ro before fake.
 # XXX tends to panic the OS
 PROTECT_MOUNT_POINTS ?=
@@ -1431,7 +1437,7 @@ ${_INSTALL_COOKIE${_S}}:
 .    endif
 .  endfor
 .  if ${TRUST_PACKAGES:L} == "yes"
-	@if pkg_info -q -e ${FULLPKGNAME${_S}}; then \
+	@if ${_PKG_QUERY} ${FULLPKGNAME${_S}}; then \
 		echo "Package ${FULLPKGNAME${_S}} is already installed"; \
 	else \
 		${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE${_S}}; \
@@ -1450,7 +1456,7 @@ ${_UPDATE_COOKIE${_S}}:
 	@mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
 	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${_S}}"
-	@a=`pkg_info -e ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
+	@a=`${_PKG_QUERY} ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
@@ -1571,7 +1577,7 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 			what=$$pkg; \
 			if $$checkinstall; then \
 				$$early_exit || ${_force_update_fragment}; \
-				if pkg_info -q -e "$$pkg"; then \
+				if ${_PKG_QUERY} "$$pkg" -q; then \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what - found"; \
 					break; \
 				else \
@@ -2626,7 +2632,7 @@ _print-package-args:
 		if default=`eval $$toset ${MAKE} _print-packagename`; then \
 			case "X$$pkg" in X) pkg=`echo $$default|${_version2default}`;; \
 			esac; \
-			if pkg_info -q -e $$pkg; then \
+			if ${_PKG_QUERY} $$pkg -q; then \
 				listlibs='echo ${DEPDIR}$$shdir/lib*'; \
 				case $$dir in ${PKGPATH}) \
 					listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; $$listlibs";; \
