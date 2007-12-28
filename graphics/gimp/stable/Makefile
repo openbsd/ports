@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2007/12/20 22:54:28 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2007/12/28 18:59:50 kili Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.4.3
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gimp-2.0	243.00	\
 		gimpbase-2.0	243.00	\
 		gimpcolor-2.0	243.00	\

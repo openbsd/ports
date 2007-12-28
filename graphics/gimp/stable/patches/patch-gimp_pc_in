@@ -1,0 +1,11 @@
+$OpenBSD: patch-gimp_pc_in,v 1.1 2007/12/28 18:59:50 kili Exp $
+--- gimp.pc.in.orig	Tue Nov 20 10:33:50 2007
++++ gimp.pc.in	Thu Dec 27 15:20:05 2007
+@@ -12,6 +12,6 @@ gimplocaledir=@gimplocaledir@
+ Name: GIMP
+ Description: GIMP Library
+ Version: @GIMP_REAL_VERSION@
+-Requires: glib-2.0 >= @GLIB_REQUIRED_VERSION@
++Requires: glib-2.0 >= @GLIB_REQUIRED_VERSION@, gthread-2.0, gobject-2.0
+ Libs: -L${libdir} -lgimp-@GIMP_API_VERSION@ -lgimpmath-@GIMP_API_VERSION@  -lgimpconfig-@GIMP_API_VERSION@ -lgimpcolor-@GIMP_API_VERSION@ -lgimpbase-@GIMP_API_VERSION@ @RT_LIBS@
+ Cflags: -I${includedir}/gimp-@GIMP_API_VERSION@
