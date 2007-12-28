@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.919 2007/12/28 12:46:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.920 2007/12/28 12:49:12 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -326,6 +326,19 @@ MAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 FAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 .endif
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
+
+PARALLEL_BUILD ?= Yes
+PARALLEL_INSTALL ?= ${PARALLEL_BUILD}
+MAKE_JOBS ?= 1
+
+.if ${MAKE_JOBS} != 1
+.  if ${PARALLEL_BUILD:L} == "yes"
+MAKE_FLAGS += -j${MAKE_JOBS}
+.  endif
+.  if ${PARALLEL_INSTALL:L} == "yes"
+FAKE_FLAGS += -j${MAKE_JOBS}
+.  endif
+.endif
 
 .if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES)
 # XXX let's cheat so we always have MULTI_PACKAGES
