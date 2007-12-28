@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnats_getdate_c,v 1.1 2003/08/25 23:35:06 brad Exp $
---- gnats/getdate.c.orig	Tue Feb 20 13:45:43 2001
-+++ gnats/getdate.c	Wed Jul  2 13:23:13 2003
+$OpenBSD: patch-gnats_getdate_c,v 1.2 2007/12/28 17:11:25 espie Exp $
+--- gnats/getdate.c.orig	Tue Feb 20 21:45:43 2001
++++ gnats/getdate.c	Fri Dec 28 18:00:24 2007
 @@ -51,6 +51,7 @@
  #endif
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-gnats_getdate_c,v 1.1 2003/08/25 23:35:06 brad Exp $
  #include <ctype.h>
  
  #if	defined (vms)
-@@ -1225,6 +1226,7 @@ yyerrlab:   /* here on detecting error *
+@@ -1225,6 +1226,7 @@ yyerrlab:   /* here on detecting error */
  	{
  	  int size = 0;
  	  char *msg;
@@ -17,7 +17,7 @@ $OpenBSD: patch-gnats_getdate_c,v 1.1 2003/08/25 23:35:06 brad Exp $
  	  int x, count;
  
  	  count = 0;
-@@ -1233,10 +1235,11 @@ yyerrlab:   /* here on detecting error *
+@@ -1233,10 +1235,11 @@ yyerrlab:   /* here on detecting error */
  	       x < (sizeof(yytname) / sizeof(char *)); x++)
  	    if (yycheck[x + yyn] == x)
  	      size += strlen(yytname[x]) + 15, count++;
@@ -31,7 +31,7 @@ $OpenBSD: patch-gnats_getdate_c,v 1.1 2003/08/25 23:35:06 brad Exp $
  
  	      if (count < 5)
  		{
-@@ -1245,9 +1248,10 @@ yyerrlab:   /* here on detecting error *
+@@ -1245,9 +1248,10 @@ yyerrlab:   /* here on detecting error */
  		       x < (sizeof(yytname) / sizeof(char *)); x++)
  		    if (yycheck[x + yyn] == x)
  		      {

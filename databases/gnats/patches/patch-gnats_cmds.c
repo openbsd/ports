@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnats_cmds.c,v 1.3 2003/08/25 23:33:56 brad Exp $
---- gnats/cmds.c.orig	Sun Feb  4 13:56:10 2001
-+++ gnats/cmds.c	Wed Jul  2 13:23:13 2003
+$OpenBSD: patch-gnats_cmds.c,v 1.4 2007/12/28 17:11:25 espie Exp $
+--- gnats/cmds.c.orig	Sun Feb  4 21:56:10 2001
++++ gnats/cmds.c	Fri Dec 28 18:00:24 2007
 @@ -115,28 +115,26 @@ get_text ()
  {
    register FILE *tf;
@@ -28,13 +28,13 @@ $OpenBSD: patch-gnats_cmds.c,v 1.3 2003/08/25 23:33:56 brad Exp $
 +  
 +  snprintf (path, PATH_MAX, "%s/gnatsXXXXXX", tmpdir);
 +  if ((fd = mkstemp (path)) < 0)
-+    {
+     {
 +      xfree(path); 
 +      return (NULL);
 +    }
 +  
 +  if ((tf = fdopen (fd, "w")) == (FILE *) NULL)
-     {
++    {
        /* give error that we can't create the temp and leave. */
 -      xfree (path);
 +      close(fd);

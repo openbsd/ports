@@ -1,7 +1,7 @@
-$OpenBSD: patch-libiberty_functions_def,v 1.1 2003/12/30 10:07:48 espie Exp $
---- libiberty/functions.def.orig	2003-12-30 10:54:08.000000000 +0100
-+++ libiberty/functions.def	2003-12-30 11:00:37.000000000 +0100
-@@ -27,26 +27,26 @@ DEF(memcpy, PTR, (s1, s2, length), PTR s
+$OpenBSD: patch-libiberty_functions_def,v 1.2 2007/12/28 17:11:25 espie Exp $
+--- libiberty/functions.def.orig	Thu Nov  5 20:54:15 1998
++++ libiberty/functions.def	Fri Dec 28 18:00:24 2007
+@@ -27,26 +27,26 @@ DEF(memcpy, PTR, (s1, s2, length), PTR s1 AND CONST PT
  DEF(memmove, PTR, (s1, s2, length), PTR s1 AND CONST PTR s2 AND size_t length)
  DEF(memset, PTR, (s, val, length), PTR s AND int val AND size_t length )
  DEF(random, long int, (), NOTHING)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnats_db_conf_c,v 1.1 2003/08/25 23:35:06 brad Exp $
---- gnats/db_conf.c.orig	Tue Sep 21 20:31:01 1999
-+++ gnats/db_conf.c	Wed Jul  2 13:23:13 2003
-@@ -47,7 +47,7 @@ Software Foundation, 59 Temple Place - S
+$OpenBSD: patch-gnats_db_conf_c,v 1.2 2007/12/28 17:11:25 espie Exp $
+--- gnats/db_conf.c.orig	Wed Sep 22 04:31:01 1999
++++ gnats/db_conf.c	Fri Dec 28 18:00:24 2007
+@@ -47,7 +47,7 @@ Software Foundation, 59 Temple Place - Suite 330, Bost
  static int get_conf_key_list_and_count  PARAMS((Conf_entry *list, char ***keys,
  					int *count));
  static int get_conf_entry_count         PARAMS(( Conf_entry *head));

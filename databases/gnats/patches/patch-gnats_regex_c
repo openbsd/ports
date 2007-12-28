@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnats_regex_c,v 1.1 2003/08/25 23:35:06 brad Exp $
---- gnats/regex.c.orig	Thu Nov  5 12:54:10 1998
-+++ gnats/regex.c	Wed Jul  2 13:23:13 2003
-@@ -1623,11 +1623,12 @@ regex_compile (pattern, size, syntax, bu
+$OpenBSD: patch-gnats_regex_c,v 1.2 2007/12/28 17:11:25 espie Exp $
+--- gnats/regex.c.orig	Thu Nov  5 20:54:10 1998
++++ gnats/regex.c	Fri Dec 28 18:00:24 2007
+@@ -1623,11 +1623,12 @@ regex_compile (pattern, size, syntax, bufp)
              case ')':
                if (syntax & RE_NO_BK_PARENS) goto normal_backslash;
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-gnats_regex_c,v 1.1 2003/08/25 23:35:06 brad Exp $
  
              handle_close:
                if (fixup_alt_jump)
-@@ -1643,11 +1644,12 @@ regex_compile (pattern, size, syntax, bu
+@@ -1643,11 +1644,12 @@ regex_compile (pattern, size, syntax, bufp)
                  }
  
                /* See similar code for backslashed left paren above.  */
@@ -29,7 +29,7 @@ $OpenBSD: patch-gnats_regex_c,v 1.1 2003/08/25 23:35:06 brad Exp $
  
                /* Since we just checked for an empty stack above, this
                   ``can't happen''.  */
-@@ -4903,15 +4905,7 @@ regerror (errcode, preg, errbuf, errbuf_
+@@ -4903,15 +4905,7 @@ regerror (errcode, preg, errbuf, errbuf_size)
    msg_size = strlen (msg) + 1; /* Includes the null.  */
    
    if (errbuf_size != 0)

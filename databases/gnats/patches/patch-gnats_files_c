@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnats_files_c,v 1.1 2003/08/25 23:35:06 brad Exp $
---- gnats/files.c.orig	Sun Feb 11 14:36:25 2001
-+++ gnats/files.c	Wed Jul  2 13:23:13 2003
+$OpenBSD: patch-gnats_files_c,v 1.2 2007/12/28 17:11:25 espie Exp $
+--- gnats/files.c.orig	Sun Feb 11 22:36:25 2001
++++ gnats/files.c	Fri Dec 28 18:00:24 2007
 @@ -41,7 +41,7 @@ find_submitter (cptr, site)
    if (site == NULL)
      return -1;
@@ -104,7 +104,7 @@ $OpenBSD: patch-gnats_files_c,v 1.1 2003/08/25 23:35:06 brad Exp $
      }
    return (strdup (line));
  }
-@@ -901,7 +903,7 @@ get_responsible_addr (full, strict, name
+@@ -901,7 +903,7 @@ get_responsible_addr (full, strict, name)
      {
        address = (char *) xmalloc (STR_MAX);
        if (full)
@@ -113,7 +113,7 @@ $OpenBSD: patch-gnats_files_c,v 1.1 2003/08/25 23:35:06 brad Exp $
        else
  	{
  	  if (r->alias[0]
-@@ -909,9 +911,9 @@ get_responsible_addr (full, strict, name
+@@ -909,9 +911,9 @@ get_responsible_addr (full, strict, name)
  		 added a space after the colon, we don't accept that as
  		 an address.  */
  	      && isalpha (r->alias[0]))

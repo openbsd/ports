@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnats_gnatsd_c,v 1.1 2003/08/25 23:35:06 brad Exp $
---- gnats/gnatsd.c.orig	Tue Sep 21 17:18:39 1999
-+++ gnats/gnatsd.c	Wed Jul  2 13:23:13 2003
+$OpenBSD: patch-gnats_gnatsd_c,v 1.2 2007/12/28 17:11:25 espie Exp $
+--- gnats/gnatsd.c.orig	Wed Sep 22 01:18:39 1999
++++ gnats/gnatsd.c	Fri Dec 28 18:00:24 2007
 @@ -237,7 +237,7 @@ get_name (host)
      return NULL;
    i = strlen (hp->h_name);
@@ -19,7 +19,7 @@ $OpenBSD: patch-gnats_gnatsd_c,v 1.1 2003/08/25 23:35:06 brad Exp $
    acc = fopen (filename, "r");
    if (acc == (FILE *)NULL)
      {
-@@ -397,7 +397,7 @@ get_user_access (database, filename, use
+@@ -397,7 +397,7 @@ get_user_access (database, filename, user, passwd)
  {
    FILE *acc;
    char buffer[BUFSIZ], *x;

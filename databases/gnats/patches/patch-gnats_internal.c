@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnats_internal.c,v 1.4 2003/08/25 23:33:56 brad Exp $
---- gnats/internal.c.orig	Tue Mar  2 17:18:53 1999
-+++ gnats/internal.c	Wed Jul  2 13:37:01 2003
+$OpenBSD: patch-gnats_internal.c,v 1.5 2007/12/28 17:11:25 espie Exp $
+--- gnats/internal.c.orig	Wed Mar  3 01:18:53 1999
++++ gnats/internal.c	Fri Dec 28 18:00:24 2007
 @@ -32,28 +32,25 @@ write_index (index_start)
  
    FILE *fp;
@@ -23,13 +23,12 @@ $OpenBSD: patch-gnats_internal.c,v 1.4 2003/08/25 23:33:56 brad Exp $
 -  tmpnam (name);
 -  strcpy (workfile, name);
 -#endif
--
--  fp = fopen (workfile, "w");
--  if (fp == NULL)
 +  len = strlen (gnats_root) + strlen ("/gnats-adm/indXXXXXX") + 1 /* null */;
 +  workfile = (char *) xmalloc (len);
 +  snprintf (workfile, len, "%s/gnats-adm/indXXXXXX", gnats_root);
-+
+ 
+-  fp = fopen (workfile, "w");
+-  if (fp == NULL)
 +  if ((fd = mkstemp (workfile)) < 0) {
 +	  fprintf (stderr, "%s: can't open the temporary file %s\n",
 +		   program_name, workfile);

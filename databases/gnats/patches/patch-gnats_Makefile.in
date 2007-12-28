@@ -1,16 +1,16 @@
-$OpenBSD: patch-gnats_Makefile.in,v 1.2 2002/05/09 16:16:02 millert Exp $
---- gnats/Makefile.in.orig	Tue May  8 11:23:36 2001
-+++ gnats/Makefile.in	Wed May  8 22:08:48 2002
-@@ -256,7 +256,7 @@ all-gnats: all-tools file-pr gnatsd queu
+$OpenBSD: patch-gnats_Makefile.in,v 1.3 2007/12/28 17:11:25 espie Exp $
+--- gnats/Makefile.in.orig	Tue May  8 19:23:36 2001
++++ gnats/Makefile.in	Fri Dec 28 18:09:38 2007
+@@ -256,7 +256,7 @@ all-gnats: all-tools file-pr gnatsd queue-pr mail-quer
  
  all-tools: libgnats.a query-pr nquery-pr pr-addr npr-addr pr-age pr-edit \
  	npr-edit pr-mail sub-type gnats-edit-pr edit-pr nedit-pr getclose \
 -        gnats.elc config-send-pr tools-man-pages
-+        config-send-pr tools-man-pages
++        config-send-pr
  
  libgnats.a: $(LIBOBJS)
  	-rm -f tmplibgnats.a libgnats.a
-@@ -489,14 +489,12 @@ install-tools-arch-dep: install-tools-bi
+@@ -489,14 +489,12 @@ install-tools-arch-dep: install-tools-bin install-tool
  # Create $(datadir)/gnats so that mkcat can find it
  install-tools-arch-indep: all-tools
  	$(SHELL) $(srcdir)/../mkinstalldirs $(datadir)/gnats
@@ -42,7 +42,7 @@ $OpenBSD: patch-gnats_Makefile.in,v 1.2 2002/05/09 16:16:02 millert Exp $
  	fi
  
  EXTRA_INSTALL =
-@@ -533,7 +532,7 @@ install-gnats-arch-indep: all-gnats inst
+@@ -533,7 +532,7 @@ install-gnats-arch-indep: all-gnats install-tools-arch
  	$(SHELL) $(srcdir)/../mkinstalldirs $(GNATS_ROOT)/gnats-adm/locks
  	$(SHELL) $(srcdir)/../mkinstalldirs $(GNATS_ROOT)/gnats-queue
  	$(SHELL) $(srcdir)/../mkinstalldirs $(GNATS_ROOT)/pending
@@ -51,7 +51,7 @@ $OpenBSD: patch-gnats_Makefile.in,v 1.2 2002/05/09 16:16:02 millert Exp $
  	  echo "chown $(GNATS_USER) $(GNATS_ROOT) $(GNATS_ROOT)/gnats-adm $(GNATS_ROOT)/pending"; \
  	  echo "chown $(GNATS_USER) $(GNATS_ROOT)/gnats-adm/locks $(GNATS_ROOT)/gnats-queue" ; \
  	  chown $(GNATS_USER) $(GNATS_ROOT) $(GNATS_ROOT)/gnats-adm $(GNATS_ROOT)/pending ; \
-@@ -545,33 +544,34 @@ install-gnats-arch-indep: all-gnats inst
+@@ -545,33 +544,34 @@ install-gnats-arch-indep: all-gnats install-tools-arch
  	   echo "Not putting categories file in gnats-adm, it's already there." ; \
  	   true ; \
  	else \
@@ -91,7 +91,7 @@ $OpenBSD: patch-gnats_Makefile.in,v 1.2 2002/05/09 16:16:02 millert Exp $
  	  echo "chmod 600 $(GNATS_ROOT)/gnats-adm/gnatsd.access" ; \
  	  chmod 600 $(GNATS_ROOT)/gnats-adm/gnatsd.access ; \
  	fi
-@@ -579,35 +579,35 @@ install-gnats-arch-indep: all-gnats inst
+@@ -579,35 +579,35 @@ install-gnats-arch-indep: all-gnats install-tools-arch
  	   echo "Not putting gnatsd.conf file in gnats-adm, it's already there." ; \
  	   true ; \
  	else \
@@ -132,7 +132,7 @@ $OpenBSD: patch-gnats_Makefile.in,v 1.2 2002/05/09 16:16:02 millert Exp $
                  $(GNATS_ROOT)/gnats-adm/classes ; \
  	fi
  	@echo "*** Don't forget to run $(libexecdir)/gnats/mkcat as $(GNATS_USER)."
-@@ -625,7 +625,7 @@ install-gnats-bin: all-gnats install-too
+@@ -625,7 +625,7 @@ install-gnats-bin: all-gnats install-tools-bin
  	$(INSTALL_PROGRAM) queue-pr $(libexecdir)/gnats/queue-pr
  	$(INSTALL_PROGRAM) gen-index $(libexecdir)/gnats/gen-index
  	$(INSTALL_SCRIPT) mail-query $(libexecdir)/gnats/mail-query
@@ -141,7 +141,7 @@ $OpenBSD: patch-gnats_Makefile.in,v 1.2 2002/05/09 16:16:02 millert Exp $
  	  echo "chown $(GNATS_USER) $(libexecdir)/gnats/queue-pr $(libexecdir)/gnats/file-pr $(libexecdir)/gnats/gen-index" ; \
  	  echo "chmod 4555 $(libexecdir)/gnats/queue-pr $(libexecdir)/gnats/file-pr $(libexecdir)/gnats/gen-index" ; \
  	  echo "chown $(GNATS_USER) $(libexecdir)/gnats/gnatsd" ; \
-@@ -636,6 +636,7 @@ install-gnats-bin: all-gnats install-too
+@@ -636,6 +636,7 @@ install-gnats-bin: all-gnats install-tools-bin
  	  chmod 555 $(libexecdir)/gnats/gnatsd ; \
  	else \
  	  echo "*** Warning: must make queue-pr and gen-index suid gnats." ; \

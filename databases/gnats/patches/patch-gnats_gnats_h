@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnats_gnats_h,v 1.1 2003/08/25 23:35:06 brad Exp $
---- gnats/gnats.h.orig	Wed Nov 25 07:14:47 1998
-+++ gnats/gnats.h	Wed Jul  2 13:23:13 2003
-@@ -234,7 +234,7 @@ extern FILE *open_index			PARAMS((void))
+$OpenBSD: patch-gnats_gnats_h,v 1.2 2007/12/28 17:11:25 espie Exp $
+--- gnats/gnats.h.orig	Wed Nov 25 15:14:47 1998
++++ gnats/gnats.h	Fri Dec 28 18:00:24 2007
+@@ -234,7 +234,7 @@ extern FILE *open_index			PARAMS((void));
  extern time_t stat_index		PARAMS((char *));
  extern int check_index			PARAMS((void));
  extern char *find_pr_category		PARAMS((FILE *, char *));
