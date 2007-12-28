@@ -1,7 +1,19 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2004/01/06 20:58:43 sturm Exp $
---- src/Makefile.in.orig	1999-02-24 09:30:33.000000000 +0100
-+++ src/Makefile.in	2004-01-06 21:33:55.000000000 +0100
-@@ -60,7 +60,7 @@ pho.sel1st: d1st pho1st
+$OpenBSD: patch-src_Makefile_in,v 1.2 2007/12/28 13:47:21 espie Exp $
+--- src/Makefile.in.orig	Wed Feb 24 09:30:33 1999
++++ src/Makefile.in	Fri Dec 28 14:45:27 2007
+@@ -53,14 +53,18 @@ xcin: $(OBJS1) $(OBJS2)
+ #
+ tsintab: $(TSINTABS)
+ 
+-tsin: tsa2d tsin.src 
++tsin tsin.idx: tsin_built
++
++tsin_built: tsa2d tsin.src 
+ 	./tsa2d tsin.src
++	touch tsin_built
++
+ pho.sel1st: d1st pho1st
+ 	./d1st
  sample.phs.out: phs_out sample.phs
  	./phs_out sample.phs
  tsin_pin.map: pin2tsin pin_pho
@@ -10,3 +22,12 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2004/01/06 20:58:43 sturm Exp $
  tsin.rel: tsa2rel tsin.rel.src
  	./tsa2rel tsin.rel.src > tsin.rel
  
+@@ -178,7 +182,7 @@ install_tsintabsrc:
+ 	done
+ 
+ clean:
+-	rm -f *.o core filelist $(PROGS) $(TSINTABS) $(KBMS) $(INPUT0)
++	rm -f *.o core filelist tsin_built $(PROGS) $(TSINTABS) $(KBMS) $(INPUT0)
+ 
+ veryclean: clean
+ 	rm -f Makefile
