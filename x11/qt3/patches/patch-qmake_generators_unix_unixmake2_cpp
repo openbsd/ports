@@ -1,6 +1,6 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.17 2007/03/31 22:49:46 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Thu Oct 19 16:25:42 2006
-+++ qmake/generators/unix/unixmake2.cpp	Sat Mar 31 14:51:24 2007
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.18 2007/12/28 18:53:20 espie Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	Fri Feb  2 15:01:27 2007
++++ qmake/generators/unix/unixmake2.cpp	Fri Dec 28 19:12:54 2007
 @@ -129,6 +129,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
  	 src_incremental=FALSE, moc_incremental=FALSE;
  
@@ -30,7 +30,15 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.17 2007/03/31 22:49:46 e
  	} else {
  	    t << "TARGETD	= " << var("TARGET_x") << endl;
  	    t << "TARGET0	= " << var("TARGET_") << endl;
-@@ -1293,10 +1300,20 @@ void UnixMakefileGenerator::init2()
+@@ -375,6 +382,7 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+     }
+ 
+     t << "####### Build rules" << endl << endl;
++    t << "$(OBJECTS): $(UICDECLS)" << endl << endl;
+     if(!project->variables()["SUBLIBS"].isEmpty()) {
+ 	QString libdir = "tmp/";
+ 	if(!project->isEmpty("SUBLIBS_DIR"))
+@@ -1293,10 +1301,20 @@ void UnixMakefileGenerator::init2()
  		project->variables()["TARGET_x"].append("lib" + project->first("TARGET") + "." +
  							project->first("QMAKE_EXTENSION_SHLIB") +
  							"." + project->first("VER_MAJ"));
@@ -55,7 +63,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.17 2007/03/31 22:49:46 e
  		project->variables()["TARGET_x.y.z"].append("lib" + project->first("TARGET") +
  							    "." +
  							    project->variables()[
-@@ -1305,7 +1322,10 @@ void UnixMakefileGenerator::init2()
+@@ -1305,7 +1323,10 @@ void UnixMakefileGenerator::init2()
  							    project->first("VER_MIN") +  "." +
  							    project->first("VER_PAT"));
  	    }
@@ -67,7 +75,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.17 2007/03/31 22:49:46 e
  	}
  	if(project->isEmpty("QMAKE_LN_SHLIB"))
  	    project->variables()["QMAKE_LN_SHLIB"].append("ln -s");
-@@ -1586,5 +1606,6 @@ UnixMakefileGenerator::writePkgConfigFile()     // ###
+@@ -1586,5 +1607,6 @@ UnixMakefileGenerator::writePkgConfigFile()     // ###
        << varGlue("PRL_EXPORT_DEFINES","-D"," -D"," ")
        << project->variables()["PRL_EXPORT_CXXFLAGS"].join(" ")
  	//      << varGlue("DEFINES","-D"," -D"," ")
