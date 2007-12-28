@@ -1,6 +1,20 @@
-$OpenBSD: patch-libcharset_Makefile_in,v 1.4 2003/12/24 00:08:02 brad Exp $
---- libcharset/Makefile.in.orig	2003-04-23 07:29:22.000000000 -0400
-+++ libcharset/Makefile.in	2003-12-21 13:36:54.000000000 -0500
+$OpenBSD: patch-libcharset_Makefile_in,v 1.5 2007/12/28 14:12:53 espie Exp $
+--- libcharset/Makefile.in.orig	Wed Apr 23 13:29:22 2003
++++ libcharset/Makefile.in	Fri Dec 28 15:10:47 2007
+@@ -33,11 +33,11 @@ all : include/libcharset.h include/localcharset.h forc
+ 	cd lib && $(MAKE) all
+ 
+ include/libcharset.h :
+-	if [ ! -d include ] ; then mkdir include ; fi
++	if [ ! -d include ] ; then mkdir -p include ; fi
+ 	$(CP) $(srcdir)/include/libcharset.h.in include/libcharset.h
+ 
+ include/localcharset.h :
+-	if [ ! -d include ] ; then mkdir include ; fi
++	if [ ! -d include ] ; then mkdir -p include ; fi
+ 	$(CP) $(srcdir)/include/localcharset.h.in include/localcharset.h
+ 
+ # Installs the library and include files only. Typically called with only
 @@ -45,8 +45,8 @@ include/localcharset.h :
  install-lib : all force
  	cd lib && $(MAKE) install-lib libdir='$(libdir)' includedir='$(includedir)'
