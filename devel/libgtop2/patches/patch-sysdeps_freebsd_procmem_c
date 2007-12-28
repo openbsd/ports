@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_freebsd_procmem_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
---- sysdeps/freebsd/procmem.c.orig	Wed Jan 17 09:01:28 2007
-+++ sysdeps/freebsd/procmem.c	Wed Jan 17 09:05:01 2007
+$OpenBSD: patch-sysdeps_freebsd_procmem_c,v 1.6 2007/12/28 14:31:52 jasper Exp $
+--- sysdeps/freebsd/procmem.c.orig	Tue Jan  2 23:50:28 2007
++++ sysdeps/freebsd/procmem.c	Fri Dec 28 15:29:17 2007
 @@ -34,7 +34,7 @@
  #include <sys/resource.h>
  #if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000)
@@ -26,7 +26,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmem_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
  /* Fixme ... */
  #undef _KERNEL
  #define _UVM_UVM_AMAP_I_H_ 1
-@@ -71,10 +72,8 @@ static const unsigned long _glibtop_sysd
+@@ -71,10 +72,8 @@ static const unsigned long _glibtop_sysdeps_proc_mem =
  (1L << GLIBTOP_PROC_MEM_RSS_RLIM);
  
  static const unsigned long _glibtop_sysdeps_proc_mem_share =
@@ -38,7 +38,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmem_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
  #else
  0;
  #endif
-@@ -121,7 +120,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -121,7 +120,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace *vms, vmspace;
@@ -47,7 +47,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmem_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
  	struct vnode vnode;
  #else
  	struct vm_object object;
-@@ -223,7 +222,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -223,7 +222,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
   			continue;
  #endif
  #else
@@ -56,7 +56,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmem_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -232,7 +231,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -232,7 +231,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
  #endif
  #endif
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmem_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -259,7 +258,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -259,7 +258,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
  #endif
  		/* If the object is of type vnode, add its size */
  
@@ -74,7 +74,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmem_c,v 1.5 2007/01/18 19:31:34 jasper Exp $
  #if defined(UVM_VNODE_VALID)
  		if (!vnode.v_uvm.u_flags & UVM_VNODE_VALID)
  			continue;
-@@ -275,7 +274,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -275,7 +274,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
  #else
  
  		/* Reference count must be at least two. */

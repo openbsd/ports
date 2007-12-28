@@ -1,7 +1,7 @@
-$OpenBSD: patch-sysdeps_freebsd_sem_limits_c,v 1.5 2007/02/21 17:27:54 steven Exp $
+$OpenBSD: patch-sysdeps_freebsd_sem_limits_c,v 1.6 2007/12/28 14:31:52 jasper Exp $
 --- sysdeps/freebsd/sem_limits.c.orig	Tue Jan  2 23:50:28 2007
-+++ sysdeps/freebsd/sem_limits.c	Sun Feb 18 20:23:18 2007
-@@ -57,7 +57,10 @@ glibtop_get_sem_limits_p (glibtop *serve
++++ sysdeps/freebsd/sem_limits.c	Fri Dec 28 15:29:17 2007
+@@ -57,7 +57,10 @@ glibtop_get_sem_limits_p (glibtop *server, glibtop_sem
  #include <sys/sem.h>
  
  static unsigned long _glibtop_sysdeps_sem_limits =
@@ -13,7 +13,7 @@ $OpenBSD: patch-sysdeps_freebsd_sem_limits_c,v 1.5 2007/02/21 17:27:54 steven Ex
  (1L << GLIBTOP_IPC_SEMMNS) + (1L << GLIBTOP_IPC_SEMMNU) +
  (1L << GLIBTOP_IPC_SEMMSL) + (1L << GLIBTOP_IPC_SEMOPM) +
  (1L << GLIBTOP_IPC_SEMUME) + (1L << GLIBTOP_IPC_SEMUSZ) +
-@@ -105,7 +108,9 @@ glibtop_get_sem_limits_p (glibtop *serve
+@@ -105,7 +108,9 @@ glibtop_get_sem_limits_p (glibtop *server, glibtop_sem
  	if (server->sysdeps.sem_limits == 0)
  		return;
  

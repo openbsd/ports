@@ -1,18 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2007/12/28 14:31:52 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
-V=			2.14.6
-DISTNAME=		libgtop-${V}
-PKGNAME=		libgtop2-${V}p2
+GNOME_VERSION=		2.14.6
+GNOME_PROJECT=		libgtop
+PKGNAME=		libgtop2-${VERSION}p3
 SHARED_LIBS=		gtop-2.0	7.0	# .7.0
 
 CATEGORIES=		devel
-
-HOMEPAGE=		http://www.gnome.org
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtop/2.14/}
-EXTRACT_SUFX=		.tar.bz2
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,13 +16,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		Xau c kvm pcre
 
-MODULES=		devel/gettext
-BUILD_DEPENDS=		::textproc/p5-XML-Parser
+MODULES=		devel/gettext \
+			x11/gnome
+
 LIB_DEPENDS=		glib-2.0::devel/glib2 \
 			popt::devel/popt
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}

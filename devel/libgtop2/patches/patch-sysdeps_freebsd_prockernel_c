@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_freebsd_prockernel_c,v 1.4 2007/01/18 19:31:34 jasper Exp $
---- sysdeps/freebsd/prockernel.c.orig	Wed Jan 17 08:57:14 2007
-+++ sysdeps/freebsd/prockernel.c	Wed Jan 17 09:00:34 2007
+$OpenBSD: patch-sysdeps_freebsd_prockernel_c,v 1.5 2007/12/28 14:31:52 jasper Exp $
+--- sysdeps/freebsd/prockernel.c.orig	Tue Jan  2 23:50:28 2007
++++ sysdeps/freebsd/prockernel.c	Fri Dec 28 15:29:17 2007
 @@ -35,8 +35,9 @@
  #if (!defined __OpenBSD__) && (!defined __bsdi__)
  #include <sys/user.h>
@@ -23,7 +23,7 @@ $OpenBSD: patch-sysdeps_freebsd_prockernel_c,v 1.4 2007/01/18 19:31:34 jasper Ex
  		_glibtop_sysdeps_proc_kernel_wchan;
  }
  
-@@ -216,13 +219,15 @@ glibtop_get_proc_kernel_p (glibtop *serv
+@@ -216,13 +219,15 @@ glibtop_get_proc_kernel_p (glibtop *server,
  			/*xxx FreeBSD/Alpha? */
  #endif
  #else
@@ -40,7 +40,7 @@ $OpenBSD: patch-sysdeps_freebsd_prockernel_c,v 1.4 2007/01/18 19:31:34 jasper Ex
  #else
  #if defined(__NetBSD__)
  #if defined(__m68k__)
-@@ -249,7 +254,10 @@ glibtop_get_proc_kernel_p (glibtop *serv
+@@ -249,7 +254,10 @@ glibtop_get_proc_kernel_p (glibtop *server,
  			buf->kstk_eip = (guint64) 0;
  #endif /* ${MACHINE_ARCH} */
  #endif /* __NetBSD__ */
