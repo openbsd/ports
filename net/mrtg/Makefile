@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2007/12/19 08:58:03 fgsch Exp $
+# $OpenBSD: Makefile,v 1.57 2007/12/28 02:09:07 fgsch Exp $
 
 COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.15.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
