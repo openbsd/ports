@@ -1,0 +1,14 @@
+$OpenBSD: patch-Jamrules,v 1.1 2007/12/29 20:51:10 simon Exp $
+--- Jamrules.orig	Sat Dec 29 21:07:03 2007
++++ Jamrules	Sat Dec 29 21:16:20 2007
+@@ -21,8 +21,8 @@ if $(USE_STLPORT_DEBUG)
+ 
+ switch $(VARIANT) {
+     case optimize :
+-        CFLAGS += -O3 -g -Wall ;
+-        CXXFLAGS += -O3 -g -Wall ;
++        CFLAGS += -g -Wall ;
++        CXXFLAGS += -g -Wall ;
+         LIBS += -g ;
+     case debug :
+         CFLAGS += -Wall -W -O0 -g3 -DDEBUG ;

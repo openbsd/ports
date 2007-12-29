@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/12 18:14:15 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/29 20:51:10 simon Exp $
 
 COMMENT=	city simulation game
 
 DISTNAME=	lincity-ng-1.1.2
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games
 
@@ -27,15 +28,16 @@ LIB_DEPENDS=	SDL_gfx::devel/sdl-gfx \
 BUILD_DEPENDS=	::devel/jam
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-pthread"
 CONFIGURE_STYLE=gnu
 
 do-build:
-	cd ${WRKSRC} && jam
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam
 
 do-install:
-	cd ${WRKSRC} && jam install install_man
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${FAKE_FLAGS} jam \
+		install install_man
 
 .include <bsd.port.mk>
