@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_tube-stream_c,v 1.1 2007/12/30 22:49:28 jasper Exp $
+--- src/tube-stream.c.orig	Mon Nov 19 22:06:39 2007
++++ src/tube-stream.c	Mon Nov 19 22:06:55 2007
+@@ -29,6 +29,7 @@
+ #include <fcntl.h>
+ #include <errno.h>
+ #include <netdb.h>
++#include <netinet/in.h>
+ 
+ #include <glib.h>
+ #include <glib/gstdio.h>
