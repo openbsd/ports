@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/30 22:34:41 okan Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Safe/
+${P5ARCH}/Safe/Hole.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Safe/
+${P5ARCH}/auto/Safe/Hole/
+${P5ARCH}/auto/Safe/Hole/Hole.bs
+@man man/man3p/Safe::Hole.3p
