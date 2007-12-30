@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.576 2007/12/21 13:54:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.577 2007/12/30 22:36:09 okan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -368,6 +368,7 @@
      SUBDIR += p5-Glib2
      SUBDIR += p5-Graph
      SUBDIR += p5-Hash-Merge
+     SUBDIR += p5-Hash-NoRef
      SUBDIR += p5-Heap
      SUBDIR += p5-Hook-LexWrap
      SUBDIR += p5-I18N-LangTags
@@ -455,6 +456,8 @@
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-SVN-Web
+     SUBDIR += p5-Safe-Hole
+     SUBDIR += p5-Safe-World
      SUBDIR += p5-Scalar-Defer
      SUBDIR += p5-Scope-Guard
      SUBDIR += p5-Set-IntRange
