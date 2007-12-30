@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/30 22:54:04 jasper Exp $
 
 COMMENT=		flexible communications framework, specifications
 
-DISTNAME=		telepathy-spec-0.16.0
+DISTNAME=		telepathy-spec-0.17.0
 CATEGORIES+=		books
 
-MASTER_SITES=		http://telepathy.freedesktop.org/releases/telepathy-spec/
+MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-spec/}
 
 BUILD_DEPENDS=		::lang/python/2.5 \
 			::textproc/libxslt
