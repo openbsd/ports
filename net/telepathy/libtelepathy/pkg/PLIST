@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/27 16:18:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/30 22:47:16 jasper Exp $
 %%SHARED%%
 include/telepathy-1.0/
 include/telepathy-1.0/libtelepathy/
-include/telepathy-1.0/libtelepathy/_gen-tp-constants.h
-include/telepathy-1.0/libtelepathy/_gen-tp-interfaces.h
+include/telepathy-1.0/libtelepathy/_gen-tp-constants-deprecated-aliases.h
+include/telepathy-1.0/libtelepathy/_gen-tp-constants-deprecated.h
+include/telepathy-1.0/libtelepathy/_gen-tp-constants-whitelist-aliases.h
+include/telepathy-1.0/libtelepathy/_gen-tp-interfaces-deprecated-aliases.h
+include/telepathy-1.0/libtelepathy/_gen-tp-interfaces-deprecated.h
+include/telepathy-1.0/libtelepathy/_gen-tp-interfaces-whitelist-aliases.h
 include/telepathy-1.0/libtelepathy/tp-ch-gen.h
 include/telepathy-1.0/libtelepathy/tp-chan-gen.h
 include/telepathy-1.0/libtelepathy/tp-chan-iface-chat-state-gen.h
@@ -46,5 +50,4 @@ include/telepathy-1.0/libtelepathy/tp-props-iface-gen.h
 include/telepathy-1.0/libtelepathy/tp-props-iface.h
 lib/libtelepathy.a
 lib/libtelepathy.la
-lib/pkgconfig/
 lib/pkgconfig/libtelepathy.pc

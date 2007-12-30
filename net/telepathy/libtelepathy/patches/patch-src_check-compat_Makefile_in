@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_check-compat_Makefile_in,v 1.1 2007/12/30 22:47:16 jasper Exp $
+--- src/check-compat/Makefile.in.orig	Thu Nov 22 20:18:14 2007
++++ src/check-compat/Makefile.in	Sun Dec 30 22:58:21 2007
+@@ -224,7 +224,7 @@ AM_CFLAGS = \
+     $(TP_GLIB_CFLAGS) \
+     $(WNO_DEPRECATED_DECLARATIONS)
+ 
+-everything_CFLAGS = $(AM_CFLAGS) -Wall -Wextra
++everything_CFLAGS = $(AM_CFLAGS) -Wall
+ check_backwards_compat_LDADD = ../libtelepathy.la
+ TESTS = $(noinst_PROGRAMS)
+ all: all-am
+@@ -272,28 +272,28 @@ check-backwards-compat$(EXEEXT): $(check_backwards_com
+ 	$(LINK) $(check_backwards_compat_LDFLAGS) $(check_backwards_compat_OBJECTS) $(check_backwards_compat_LDADD) $(LIBS)
+ everything$(EXEEXT): $(everything_OBJECTS) $(everything_DEPENDENCIES) 
+ 	@rm -f everything$(EXEEXT)
+-	$(LINK) $(everything_LDFLAGS) $(everything_OBJECTS) $(everything_LDADD) $(LIBS)
++	$(LINK) $(everything_LDFLAGS) $(TP_GLIB_LIBS) $(everything_OBJECTS) $(everything_LDADD) $(LIBS)
+ tp-chan$(EXEEXT): $(tp_chan_OBJECTS) $(tp_chan_DEPENDENCIES) 
+ 	@rm -f tp-chan$(EXEEXT)
+-	$(LINK) $(tp_chan_LDFLAGS) $(tp_chan_OBJECTS) $(tp_chan_LDADD) $(LIBS)
++	$(LINK) $(tp_chan_LDFLAGS) $(TP_GLIB_LIBS) $(tp_chan_OBJECTS) $(tp_chan_LDADD) $(LIBS)
+ tp-conn$(EXEEXT): $(tp_conn_OBJECTS) $(tp_conn_DEPENDENCIES) 
+ 	@rm -f tp-conn$(EXEEXT)
+-	$(LINK) $(tp_conn_LDFLAGS) $(tp_conn_OBJECTS) $(tp_conn_LDADD) $(LIBS)
++	$(LINK) $(tp_conn_LDFLAGS) $(TP_GLIB_LIBS) $(tp_conn_OBJECTS) $(tp_conn_LDADD) $(LIBS)
+ tp-connmgr$(EXEEXT): $(tp_connmgr_OBJECTS) $(tp_connmgr_DEPENDENCIES) 
+ 	@rm -f tp-connmgr$(EXEEXT)
+-	$(LINK) $(tp_connmgr_LDFLAGS) $(tp_connmgr_OBJECTS) $(tp_connmgr_LDADD) $(LIBS)
++	$(LINK) $(tp_connmgr_LDFLAGS) $(TP_GLIB_LIBS) $(tp_connmgr_OBJECTS) $(tp_connmgr_LDADD) $(LIBS)
+ tp-constants$(EXEEXT): $(tp_constants_OBJECTS) $(tp_constants_DEPENDENCIES) 
+ 	@rm -f tp-constants$(EXEEXT)
+-	$(LINK) $(tp_constants_LDFLAGS) $(tp_constants_OBJECTS) $(tp_constants_LDADD) $(LIBS)
++	$(LINK) $(tp_constants_LDFLAGS) $(TP_GLIB_LIBS) $(tp_constants_OBJECTS) $(tp_constants_LDADD) $(LIBS)
+ tp-helpers$(EXEEXT): $(tp_helpers_OBJECTS) $(tp_helpers_DEPENDENCIES) 
+ 	@rm -f tp-helpers$(EXEEXT)
+-	$(LINK) $(tp_helpers_LDFLAGS) $(tp_helpers_OBJECTS) $(tp_helpers_LDADD) $(LIBS)
++	$(LINK) $(tp_helpers_LDFLAGS) $(TP_GLIB_LIBS) $(tp_helpers_OBJECTS) $(tp_helpers_LDADD) $(LIBS)
+ tp-interfaces$(EXEEXT): $(tp_interfaces_OBJECTS) $(tp_interfaces_DEPENDENCIES) 
+ 	@rm -f tp-interfaces$(EXEEXT)
+-	$(LINK) $(tp_interfaces_LDFLAGS) $(tp_interfaces_OBJECTS) $(tp_interfaces_LDADD) $(LIBS)
++	$(LINK) $(tp_interfaces_LDFLAGS) $(TP_GLIB_LIBS) $(tp_interfaces_OBJECTS) $(tp_interfaces_LDADD) $(LIBS)
+ tp-props-iface$(EXEEXT): $(tp_props_iface_OBJECTS) $(tp_props_iface_DEPENDENCIES) 
+ 	@rm -f tp-props-iface$(EXEEXT)
+-	$(LINK) $(tp_props_iface_LDFLAGS) $(tp_props_iface_OBJECTS) $(tp_props_iface_LDADD) $(LIBS)
++	$(LINK) $(tp_props_iface_LDFLAGS) $(TP_GLIB_LIBS) $(tp_props_iface_OBJECTS) $(tp_props_iface_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
