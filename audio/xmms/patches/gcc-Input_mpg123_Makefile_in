@@ -1,21 +1,17 @@
-$OpenBSD: gcc-Input_mpg123_Makefile_in,v 1.1 2005/08/16 18:24:10 sturm Exp $
---- Input/mpg123/Makefile.in.orig	Sun Aug 14 11:26:30 2005
-+++ Input/mpg123/Makefile.in	Sun Aug 14 11:28:57 2005
-@@ -426,6 +426,17 @@ distclean-compile:
- @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
- @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+$OpenBSD: gcc-Input_mpg123_Makefile_in,v 1.2 2007/12/30 20:23:15 naddy Exp $
+--- Input/mpg123/Makefile.in.orig	Fri Nov 16 22:54:40 2007
++++ Input/mpg123/Makefile.in	Tue Dec 11 00:22:18 2007
+@@ -455,6 +455,13 @@ distclean-compile:
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
  
 +layer3.lo: layer3.c
-+@am__fastdepCC_TRUE@	if $(LTCOMPILE) -O0 -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
-+@am__fastdepCC_TRUE@	  -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<; \
-+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; \
-+@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; \
-+@am__fastdepCC_TRUE@	fi
++@am__fastdepCC_TRUE@	if $(LTCOMPILE) -O0 -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
-+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
-+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-+@am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LTCOMPILE) -O0 -c -o $@ $<
 +
  .s.o:
- 	$(CCASCOMPILE) -c `test -f '$<' || echo '$(srcdir)/'`$<
+ 	$(CCASCOMPILE) -c $<
  
