@@ -1,4 +1,4 @@
-$OpenBSD: patch-slim_conf,v 1.1.1.1 2007/10/24 23:32:00 landry Exp $
+$OpenBSD: patch-slim_conf,v 1.2 2007/12/30 10:46:49 landry Exp $
 --- slim.conf.orig	Wed Oct 24 17:03:14 2007
 +++ slim.conf	Wed Oct 24 17:06:03 2007
 @@ -1,13 +1,13 @@
@@ -26,7 +26,7 @@ $OpenBSD: patch-slim_conf,v 1.1.1.1 2007/10/24 23:32:00 landry Exp $
  # i.e. for freebsd use:
 -# login_cmd           exec /bin/sh - ~/.xinitrc %session
 -login_cmd           exec /bin/bash -login ~/.xinitrc %session
-+login_cmd           exec /bin/sh - ~/.xinitrc %session
++login_cmd           exec /bin/sh -l ~/.xinitrc %session
 +# login_cmd           exec /bin/bash -login ~/.xinitrc %session
  
  # Commands executed when starting and exiting a session.
