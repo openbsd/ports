@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/11 21:40:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/30 22:54:20 jasper Exp $
 
 COMMENT= 		telepathy based messenger for the Gnome desktop
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		0.14
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	empathy              0.0      # .4.0
 SHARED_LIBS +=	empathy-gtk          0.0      # .5.0
 CATEGORIES=		net
@@ -28,7 +29,7 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4 \
 		nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre plc4 \
 		plds4 png popt pthread smime3 softokn3 ssl ssl3 telepathy \
-		util xml2 z
+		telepathy-glib util xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \
