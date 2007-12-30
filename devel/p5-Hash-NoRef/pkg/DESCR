@@ -1,0 +1,4 @@
+This HASH will store it's values without increasing the reference count
+(weak references).  It can be used to store objects but without
+interfering in the DESTROY mechanism, since the reference in this HASH
+won't count.
