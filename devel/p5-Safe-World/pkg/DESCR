@@ -1,0 +1,3 @@
+Safe::World allows one to create multiple virtual instances/compartments
+of a Perl interpreter, that will work/run without touching the other
+instances/compartments and mantaining the main interpreter normal.

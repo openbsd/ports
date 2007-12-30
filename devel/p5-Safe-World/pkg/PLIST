@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/30 22:35:20 okan Exp $
+${P5SITE}/Safe/
+${P5SITE}/Safe/World/
+${P5SITE}/Safe/World.pm
+${P5SITE}/Safe/World/Compartment.pm
+${P5SITE}/Safe/World/Hole.pm
+${P5SITE}/Safe/World/ScanPack.pm
+${P5SITE}/Safe/World/Scope.pm
+${P5SITE}/Safe/World/select.pm
+${P5SITE}/Safe/World/stderr.pm
+${P5SITE}/Safe/World/stdout.pm
+${P5SITE}/Safe/World/stdoutsimple.pm
+@man man/man3p/Safe::World.3p
+@man man/man3p/Safe::World::Hole.3p
+@man man/man3p/Safe::World::Scope.3p
