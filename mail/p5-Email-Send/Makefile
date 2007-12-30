@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2007/12/30 11:23:58 simon Exp $
 
-COMMENT= 	simply sending Email
+COMMENT= 	simply sending email
 
 MODULES=	cpan
 
-DISTNAME=	Email-Send-2.185
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Email-Send-2.192
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -21,6 +20,9 @@ RUN_DEPENDS=	::devel/p5-Module-Pluggable \
 		::mail/p5-Email-Address \
 		::mail/p5-Email-Simple
 
-REGRESS_DEPENDS=::devel/p5-IO-All
+REGRESS_DEPENDS=::mail/p5-Email-Abstract \
+		::mail/p5-Mail-Tools
+
+MAKE_ENV+=	TEST_POD=1
 
 .include <bsd.port.mk>
