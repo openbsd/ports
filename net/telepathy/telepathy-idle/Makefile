@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/04 22:20:35 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/30 22:50:27 jasper Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
 DISTNAME=		telepathy-idle-0.1.2
 PKGNAME= 		${DISTNAME}p1
 
-MASTER_SITES=		http://telepathy.freedesktop.org/releases/telepathy-idle/
+MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-idle}
 
 WANTLIB=		c crypto dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 \
 			pcre pthread ssl
