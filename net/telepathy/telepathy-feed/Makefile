@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/30 22:48:13 jasper Exp $
 
 COMMENT=		flexible communications framework, feed component
 
 DISTNAME=		telepathy-feed-0.13
+PKGNAME=		${DISTNAME}p0
 
-MASTER_SITES=		http://telepathy.freedesktop.org/releases/telepathy-feed/
+MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-feed/}
 
-WANTLIB=		c dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 pthread
+WANTLIB=		c dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 pthread \
+			telepathy-glib
 
 MODULES=		devel/gettext
 
