@@ -1,12 +1,12 @@
-$OpenBSD: patch-libclamav_vba_extract_c,v 1.2 2007/02/28 20:31:08 mbalmer Exp $
---- libclamav/vba_extract.c.orig	Wed Jan 31 19:07:33 2007
-+++ libclamav/vba_extract.c	Wed Feb 14 08:26:32 2007
-@@ -101,7 +101,7 @@ vba_version_t vba_version[] = {
-                                   2 +  /* type1 record count */ \
-                                   2)   /* unknown */
+$OpenBSD: patch-libclamav_vba_extract_c,v 1.3 2007/12/30 22:42:39 bernd Exp $
+--- libclamav/vba_extract.c.orig	Tue Dec 18 10:58:37 2007
++++ libclamav/vba_extract.c	Tue Dec 18 10:58:51 2007
+@@ -128,7 +128,7 @@ static const vba_version_t vba_version[NUM_VBA_VERSION
+ };
  
--static char *get_unicode_name(char *name, int size, int is_mac)
-+static char *get_unicode_name(signed char *name, int size, int is_mac)
+ static char *
+-get_unicode_name(const char *name, int size, int is_mac)
++get_unicode_name(const signed char *name, int size, int is_mac)
  {
-         int i, j;
-         char *newname;
+         int i, increment;
+         char *newname, *ret;

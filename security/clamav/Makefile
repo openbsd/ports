@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.33 2007/09/17 21:13:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2007/12/30 22:42:38 bernd Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.91.2
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		clamav-0.92
 CATEGORIES=		security
-SHARED_LIBS=		clamav 5.0
+SHARED_LIBS+=		clamav		6.0 # .3.3
+SHARED_LIBS+=		clamunrar       3.3 # .3.3
+SHARED_LIBS+=		clamunrar_iface	3.3 # .3.3
 
 HOMEPAGE=		http://www.clamav.net/
 
 MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
-#GPL
+# GPLv2/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

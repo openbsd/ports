@@ -1,2 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2005/12/24 20:52:58 sturm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2007/12/30 22:42:39 bernd Exp $
 @lib lib/libclamav.so.${LIBclamav_VERSION}
+@lib lib/libclamunrar.so.${LIBclamunrar_VERSION}
+@lib lib/libclamunrar_iface.so.${LIBclamunrar_iface_VERSION}
