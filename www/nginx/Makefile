@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 19:23:43 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2007/12/31 02:20:01 okan Exp $
 
-COMMENT=	robust and small HTTP server and IMAP/POP3 proxy server
+COMMENT=	robust and small HTTP server and mail proxy server
 
-DISTNAME=	nginx-0.5.32
-PKGNAME=	${DISTNAME}
+DISTNAME=	nginx-0.5.34
 CATEGORIES=	www
 
 HOMEPAGE=	http://nginx.net/
@@ -20,20 +19,14 @@ WANTLIB=		c crypto ssl z
 
 MASTER_SITES=		http://sysoev.ru/nginx/
 
+LIB_DEPENDS=		pcre::devel/pcre
 
-LIB_DEPENDS+=		pcre::devel/pcre
 NGINX_DIR=		/var/nginx
-
-SUBST_VARS+=		NGINX_DIR
+SUBST_VARS=		NGINX_DIR
 
 CONFIGURE_STYLE=	simple
-
-# Some conf files are relative to --prefix and
-# have no --xxx-path of their own. Set this so
-# all runtime configs live in the same place.
-CONFIGURE_ARGS+=	--prefix=${SYSCONFDIR}/nginx
-
-CONFIGURE_ARGS+=	--conf-path=${SYSCONFDIR}/nginx/nginx.conf \
+CONFIGURE_ARGS=		--prefix=${SYSCONFDIR}/nginx \
+			--conf-path=${SYSCONFDIR}/nginx/nginx.conf \
 			--sbin-path=${PREFIX}/sbin/nginx \
 			--pid-path=/var/run/nginx.pid \
 			--lock-path=${NGINX_DIR}/tmp/nginx.lock \
@@ -44,28 +37,28 @@ CONFIGURE_ARGS+=	--conf-path=${SYSCONFDIR}/nginx/nginx.conf \
 			--error-log-path=/var/log/nginx/error.log \
 			--user=_nginx \
 			--group=_nginx \
-			--with-cc-opt="-I ${LOCALBASE}/include" \
-			--with-ld-opt="-L ${LOCALBASE}/lib" \
 			--with-http_ssl_module \
 			--with-http_stub_status_module \
-			--with-imap \
-			--with-imap_ssl_module
+			--with-mail \
+			--with-mail_ssl_module
+
+# Get rid of '#include <malloc.h>' which caused many warnings
+CONFIGURE_ARGS+=	--with-cc-opt="-DNGX_HAVE_MALLOC_H=0"
 
 NO_REGRESS=		Yes
 ALL_TARGET=
 
 pre-configure:
 	@perl -pi -e 's,!!NGINX_DIR!!,${NGINX_DIR},' \
-	${WRKBUILD}/conf/nginx.conf
+		${WRKBUILD}/conf/nginx.conf
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx
+	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx/
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
 .for i in koi-win koi-utf win-utf fastcgi_params mime.types nginx.conf
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/share/nginx/
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx/html
+	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx/html/
 	${INSTALL_DATA} ${WRKSRC}/html/* ${PREFIX}/share/nginx/html/
-
 
 .include <bsd.port.mk>

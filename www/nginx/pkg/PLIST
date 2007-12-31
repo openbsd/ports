@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/04 21:58:26 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2007/12/31 02:20:01 okan Exp $
 @newgroup _nginx:593
-@newuser _nginx:593:_nginx:daemon:nginx user:/nonexistant:/sbin/nologin
+@newuser _nginx:593:_nginx:daemon:nginx user:/nonexistent:/sbin/nologin
 sbin/nginx
 @mode 755
 @sample ${NGINX_DIR}/
