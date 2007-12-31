@@ -1,0 +1,35 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2007/12/31 11:32:30 eric Exp $
+--- setup.py.orig	Wed May 24 15:33:56 2006
++++ setup.py	Sun Dec 30 20:26:38 2007
+@@ -75,7 +75,7 @@ adddatafiles("sharedir", "share/pyx", ["contrib/pyx.de
+ 
+ # Note that on windows we can't install to absolute paths. Hence
+ # we put the global pyxrc into the share directory as well.
+-adddatafiles("pyxrcdir", os.name != "nt" and "/etc" or "share/pyx", ["pyxrc"])
++adddatafiles("pyxrcdir", "share/examples/pyx", ["pyxrc"])
+ 
+ ################################################################################
+ # extend install commands to overwrite siteconfig.py during build and install
+@@ -115,7 +115,7 @@ class pyx_build_py(build_py):
+ class pyx_install_data(install_data):
+ 
+     def run(self):
+-        self.siteconfiglines = []
++        self.siteconfiglines = ["import os\n"]
+         for dir, files in self.data_files:
+             # append siteconfiglines by "<siteconfigname> = <dir>"
+ 
+@@ -127,7 +127,12 @@ class pyx_install_data(install_data):
+             elif self.root:
+                 dir = change_root(self.root, dir)
+ 
+-            self.siteconfiglines.append("%s = '%s'\n" % (siteconfignames[files], dir))
++            if siteconfignames[files] in ("lfsdir", "sharedir"):
++                self.siteconfiglines.append("%s = '%s/share/pyx'\n" % (siteconfignames[files], os.getenv('LOCALBASE')))
++            elif siteconfignames[files] == "pyxrcdir":
++                self.siteconfiglines.append("pyxrcdir = '/etc'\n")
++            else:
++                self.siteconfiglines.append("%s = '%s'\n" % (siteconfignames[files], dir))
+ 
+         install_data.run(self)
+ 

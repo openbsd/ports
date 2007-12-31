@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_cfg,v 1.1.1.1 2007/12/31 11:32:30 eric Exp $
+--- setup.cfg.orig	Sat Nov 17 16:12:55 2007
++++ setup.cfg	Sat Nov 17 16:12:59 2007
+@@ -2,7 +2,7 @@
+ # In this section you can specify which c extension modules should be built
+ 
+ # C extension module for fast t1font decoding and encoding
+-build_t1code=0
++build_t1code=1
+ 
+ # Python bindings for the kpathsea library. You need the kpathsea header
+ # and library and you may need to specify their location below.
