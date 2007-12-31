@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/12 13:21:38 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2007/12/31 14:49:51 espie Exp $
 
 COMMENT=	web-based document management system
 
 V=		3.5.1
 DISTNAME=	ktdms-${V}
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 DISTFILES=	ktdms-src-oss-${V}.tgz
 
 CATEGORIES=	www
@@ -40,6 +40,7 @@ RUN_DEPENDS=	:php5-core-*:www/php5/core \
 
 do-install:
 	@mv ${WRKDIR}/knowledgeTree-OSS ${PREFIX}/ktdms
+	@chown -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/ktdms
 	@${INSTALL_DATA} ${FILESDIR}/INSTALL ${PREFIX}/ktdms/docs
 	@${INSTALL_DATA} ${FILESDIR}/README.chroot \
 		${PREFIX}/ktdms/docs
