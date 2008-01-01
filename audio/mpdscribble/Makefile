@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/21 15:12:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/01 21:54:20 jasper Exp $
+
+BROKEN= 		due to protocol change, this doesn't function anymore
 
 COMMENT=		last.fm client for MPD
 
