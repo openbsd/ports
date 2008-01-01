@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/23 22:06:46 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/01 21:22:27 jasper Exp $
 
 COMMENT=		client for MPD to submit tracks to Last.fm
 CATEGORIES=		audio
 DISTNAME=		scmpc-0.2.2
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 HOMEPAGE=		http://scmpc.berlios.de/
 
@@ -24,9 +24,9 @@ MODGCC3_LANGS=		c
 MODULES+=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ENV+= 	CFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			CFLAGS="-I${LOCALBASE}/include"
 
 LIB_DEPENDS=		argtable2.>=1::devel/argtable \
 			confuse.>=0::devel/libconfuse \
