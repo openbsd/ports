@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/19 22:55:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/02 12:16:43 jasper Exp $
 
 COMMENT=		jabber server written in Erlang
 
 V=			1.1.4
 DISTNAME=		ejabberd-$V
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 CATEGORIES=		net chat
 
 HOMEPAGE=		http://ejabberd.jabber.ru/
+
+MAINTAINER=		Wiktor Izdebski <vicviq@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
