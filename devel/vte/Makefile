@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2007/12/19 23:00:16 martynas Exp $
+# $OpenBSD: Makefile,v 1.32 2008/01/02 23:16:16 landry Exp $
 
-COMMENT=		terminal emulation library
+COMMENT-main=		terminal emulation library
+COMMENT-python= 	python bindings for vte
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.16.11
+FULLPKGNAME-main=	${DISTNAME}p0
+FULLPKGNAME-python=	py-${DISTNAME}
 CATEGORIES=		devel
 SHARED_LIBS +=  vte                  11.11    # .11.15
 
@@ -14,19 +17,26 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi Xinerama Xcomposite \
-		Xrandr Xrender Xdamage atk-1.0 c cairo expat fontconfig freetype \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 m ncurses pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pangox-1.0 pangoxft-1.0 \
-		pcre png util z
 
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS=		gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
-RUN_DEPENDS=		::x11/py-gtk2
+MODPY_RUNDEP=		No
+MULTI_PACKAGES= 	-main -python
+
+WANTLIB-main=		${WANTLIB-python} util c
+LIB_DEPENDS-main=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+
+WANTLIB-python= 	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi Xinerama Xcomposite \
+			Xrandr Xrender Xdamage atk-1.0 cairo expat fontconfig freetype m z \
+			glib-2.0 glitz gmodule-2.0 gobject-2.0 intl iconv ncurses pango-1.0 \
+			pangocairo-1.0 pangoft2-1.0 pangox-1.0 pangoxft-1.0 pcre png z
+BUILD_DEPENDS-python=	${RUN_DEPENDS-python}
+LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
+			vte.>=11::${BASE_PKGPATH}
+RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
+			::x11/py-gtk2
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

@@ -1,0 +1,2 @@
+VTE is an experimental terminal emulator widget for use with GTK+ 2.0.
+This package contains the python binding of VTE.

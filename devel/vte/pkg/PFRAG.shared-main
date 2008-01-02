@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2008/01/02 23:16:16 landry Exp $
+@lib lib/libvte.so.${LIBvte_VERSION}

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-python,v 1.1 2008/01/02 23:16:16 landry Exp $
+%%SHARED%%
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/vtemodule.a
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/vtemodule.la

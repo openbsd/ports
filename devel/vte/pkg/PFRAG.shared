@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2007/12/15 12:07:49 jasper Exp $
-@lib lib/libvte.so.${LIBvte_VERSION}
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/vtemodule.so
