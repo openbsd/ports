@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2007/12/30 22:42:38 bernd Exp $
+# $OpenBSD: Makefile,v 1.35 2008/01/02 18:10:50 bernd Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.92
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security
 SHARED_LIBS+=		clamav		6.0 # .3.3
-SHARED_LIBS+=		clamunrar       3.3 # .3.3
-SHARED_LIBS+=		clamunrar_iface	3.3 # .3.3
 
 HOMEPAGE=		http://www.clamav.net/
 
@@ -43,7 +42,8 @@ CONFIGURE_ARGS+=        --disable-clamav \
 			--with-user=_clamav \
 			--with-group=_clamav \
                         --disable-cr \
-			--with-dbdir=/var/db/clamav
+			--with-dbdir=/var/db/clamav \
+			--disable-unrar
 
 NO_REGRESS=		Yes
 
