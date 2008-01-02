@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_CToolViewLog_cpp,v 1.1.1.1 2008/01/02 19:06:22 pvalchev Exp $
+--- src/CToolViewLog.cpp.orig	Thu Sep 20 11:24:20 2007
++++ src/CToolViewLog.cpp	Fri Dec 28 18:26:04 2007
+@@ -122,7 +122,9 @@ void CToolViewLog::slotPosition(const CGarminLiveLog::
+         lblErrorHoriz->setText(QString("\261%1m").arg(pvt.eph/2,0,'f',0));
+         lblErrorVert->setText(QString("\261%1m").arg(pvt.epv/2,0,'f',0));
+         lblSpeed->setText(QString("%1km/h").arg(speed_km_h, 0, 'f', 1));
+-        lblHeading->setText(QString("%1\260T").arg(nearbyintf(heading),3,'f',0,'0'));
++	// XXX this is a bad hack
++        //lblHeading->setText(QString("%1\260T").arg(nearbyintf(heading),3,'f',0,'0'));
++        lblHeading->setText(QString("%1\260T").arg((int)heading+0.5,3,'f',0,'0'));
+         lblTime->setText(t.toString());
+     }
+     else{

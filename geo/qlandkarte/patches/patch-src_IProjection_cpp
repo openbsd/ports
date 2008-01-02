@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_IProjection_cpp,v 1.1.1.1 2008/01/02 19:06:22 pvalchev Exp $
+--- src/IProjection.cpp.orig	Fri Nov 30 06:25:05 2007
++++ src/IProjection.cpp	Tue Dec 25 21:02:56 2007
+@@ -106,7 +106,7 @@ double IProjection::distance(const XY& p1, const XY& p
+         lambdaP = lambda;
+         lambda = L + (1-C) * f * sinAlpha * (sigma + C*sinSigma*(cos2SigmaM + C * cosSigma * (-1 + 2 * cos2SigmaM * cos2SigmaM)));
+     }
+-    if (iterLimit==0) return FP_NAN;  // formula failed to converge
++    //if (iterLimit==0) return FP_NAN;  // formula failed to converge
+ 
+     double uSq = cosSqAlpha * (a*a - b*b) / (b*b);
+     double A = 1 + uSq/16384*(4096+uSq*(-768+uSq*(320-175*uSq)));

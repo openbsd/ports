@@ -1,0 +1,20 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/01/02 19:06:22 pvalchev Exp $
+lib/${BASE_PKGPATH}/libEmap.so
+lib/${BASE_PKGPATH}/libEtrexLegend.so
+lib/${BASE_PKGPATH}/libEtrexLegendC.so
+lib/${BASE_PKGPATH}/libEtrexLegendCx.so
+lib/${BASE_PKGPATH}/libEtrexVentureCx.so
+lib/${BASE_PKGPATH}/libEtrexVentureHC.so
+lib/${BASE_PKGPATH}/libEtrexVista.so
+lib/${BASE_PKGPATH}/libEtrexVistaC.so
+lib/${BASE_PKGPATH}/libEtrexVistaCx.so
+lib/${BASE_PKGPATH}/libEtrexVistaHCx.so
+lib/${BASE_PKGPATH}/libGPSMap60CS.so
+lib/${BASE_PKGPATH}/libGPSMap60CSx.so
+lib/${BASE_PKGPATH}/libGPSMap60Cx.so
+lib/${BASE_PKGPATH}/libGPSMap76CS.so
+lib/${BASE_PKGPATH}/libGPSMap76CSx.so
+lib/${BASE_PKGPATH}/libGPSMap76Cx.so
+lib/${BASE_PKGPATH}/libNMEA.so
+lib/${BASE_PKGPATH}/libNMEATcp.so
+lib/${BASE_PKGPATH}/libwhatGarmin.so
