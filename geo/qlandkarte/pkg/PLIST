@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/02 19:06:22 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/02 22:17:51 bernd Exp $
 %%SHARED%%
 bin/QLandkarte
-lib/${BASE_PKGPATH}/
+lib/qlandkarte/
