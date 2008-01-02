@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/16 21:08:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/02 22:30:34 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/JSON/
 ${P5ARCH}/JSON/Syck.pm
@@ -8,7 +8,6 @@ ${P5ARCH}/YAML/Dumper/Syck.pm
 ${P5ARCH}/YAML/Loader/
 ${P5ARCH}/YAML/Loader/Syck.pm
 ${P5ARCH}/YAML/Syck.pm
-${P5ARCH}/YAML/Syck.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/YAML/
 ${P5ARCH}/auto/YAML/Syck/
