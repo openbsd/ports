@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.504 2007/12/25 10:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.505 2008/01/03 18:44:46 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -147,6 +147,7 @@
      SUBDIR += luasocket
      SUBDIR += maradns
      SUBDIR += mbrowse
+     SUBDIR += mcabber
      SUBDIR += meanwhile
      SUBDIR += micq
      SUBDIR += mirror
