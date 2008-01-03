@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2007/11/10 14:51:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2008/01/03 23:30:57 jasper Exp $
 
 COMMENT=		libraries for the GNOME project
 
 GNOME_PROJECT=		libgnome
 GNOME_VERSION=		2.20.1.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	gnome-2              1900.0   # .1999.2
 
 # LGPL

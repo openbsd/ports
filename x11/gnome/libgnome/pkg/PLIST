@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/11/10 14:51:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/01/03 23:30:57 jasper Exp $
 %%SHARED%%
 bin/gnome-open
 include/libgnome-2.0/
@@ -38,7 +38,7 @@ share/examples/libgnome/sound/events/
 share/examples/libgnome/sound/events/gnome-2.soundlist
 @sample ${SYSCONFDIR}/gnome/sound/events/gnome-2.soundlist
 share/examples/libgnome/sound/events/gtk-events-2.soundlist
-@sample ${SYSCONFDIR}/gnome/sound/events/gtk-events-2.soundlis
+@sample ${SYSCONFDIR}/gnome/sound/events/gtk-events-2.soundlist
 share/gnome-background-properties/
 share/gnome-background-properties/gnome-default.xml
 share/gtk-doc/
