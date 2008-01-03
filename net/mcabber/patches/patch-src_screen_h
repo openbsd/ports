@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_screen_h,v 1.1.1.1 2008/01/03 18:42:00 jasper Exp $
+--- src/screen.h.orig	Sat Dec  1 13:26:21 2007
++++ src/screen.h	Sat Dec  1 13:26:28 2007
+@@ -2,6 +2,7 @@
+ #define __SCREEN_H__ 1
+ 
+ #include <glib.h>
++#include <stdbool.h>
+ 
+ #if HAVE_NCURSESW_NCURSES_H
+ # include <ncursesw/ncurses.h>

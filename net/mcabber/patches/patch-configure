@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/01/03 18:42:00 jasper Exp $
+--- configure.orig	Sun Dec 30 20:33:36 2007
++++ configure	Sun Dec 30 20:34:15 2007
+@@ -10336,7 +10336,7 @@ if test x"${datadir}" != x""; then
+   exec_prefix_NONE=
+   test "x$prefix" = xNONE && prefix_NONE=yes && prefix=$ac_default_prefix
+   test "x$exec_prefix" = xNONE && exec_prefix_NONE=yes && exec_prefix=$prefix
+-  ac_define_dir=`eval echo $"${datadir}"`
++  ac_define_dir=`eval echo "${datadir}"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   DATA_DIR="$ac_define_dir"
+ 

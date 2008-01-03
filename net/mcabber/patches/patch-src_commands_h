@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_commands_h,v 1.1.1.1 2008/01/03 18:42:00 jasper Exp $
+--- src/commands.h.orig	Sat Dec  1 13:24:04 2007
++++ src/commands.h	Sat Dec  1 13:24:15 2007
+@@ -2,6 +2,7 @@
+ #define __COMMANDS_H__ 1
+ 
+ #include <glib.h>
++#include <stdbool.h>
+ 
+ // Command structure
+ typedef struct {
