@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
---- configure.orig	Tue Nov 20 14:06:11 2007
-+++ configure	Tue Nov 20 14:09:21 2007
-@@ -21062,6 +21062,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2008/01/03 10:54:35 ajacoutot Exp $
+--- configure.orig	Thu Dec 20 23:32:04 2007
++++ configure	Thu Jan  3 09:58:12 2008
+@@ -21234,6 +21234,7 @@ fi
    fi
  
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
  
  
  
-@@ -21969,6 +21970,7 @@ echo "${ECHO_T}$gt_cv_func_gnugettext1_libintl" >&6; }
+@@ -22141,6 +22142,7 @@ echo "${ECHO_T}$gt_cv_func_gnugettext1_libintl" >&6; }
            INCINTL=
          fi
  
@@ -17,16 +17,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
  
  
      if test -n "$INTL_MACOSX_LIBS"; then
-@@ -32763,7 +32765,7 @@ _ACEOF
-   *-*-openbsd*)
-     systype="BSO"
-     alpine_path_delim="/"
--    alpine_local_maildir="/usr/spool/mail"
-+    alpine_local_maildir="/var/mail"
-     alpine_mode_readonly="(0600)"
-     alpine_c_client_target="bso"
-     LIBS="$LIBS $LIBINTL"
-@@ -33809,10 +33811,10 @@ GMSGFMT!$GMSGFMT$ac_delim
+@@ -33882,10 +33884,10 @@ GMSGFMT!$GMSGFMT$ac_delim
  XGETTEXT!$XGETTEXT$ac_delim
  MSGMERGE!$MSGMERGE$ac_delim
  INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim

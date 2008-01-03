@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/07 17:56:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/03 10:54:35 ajacoutot Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
 COMMENT-pilot=	UW file system navigator
 
-V=		0.99999
+V=		1.00
 DISTNAME=	alpine-${V}
 
 PICO_V=		4.98
@@ -14,7 +14,7 @@ CATEGORIES=	mail news
 CATEGORIES-pico=editors
 CATEGORIES-pilot=sysutils
 
-PKGNAME-main=	alpine-${V}p0
+PKGNAME-main=	alpine-${V}
 PKGNAME-pico=	pico-${PICO_V}
 PKGNAME-pilot=	pilot-${PILOT_V}
 
@@ -36,7 +36,7 @@ WANTLIB-main=	${WANTLIB} asn1 com_err crypto des gssapi kafs krb5 ssl
 MULTI_PACKAGES=	-main -pico -pilot
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:c-client-*:mail/imap-uw,-c-client \
+BUILD_DEPENDS=	:c-client->=2007:mail/imap-uw,-c-client \
 		:aspell-*:textproc/aspell/core
 RUN_DEPENDS=	:aspell-*:textproc/aspell/core
 
@@ -44,7 +44,8 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		alpine_with_local_maildir="/var/mail"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-system-pinerc=${SYSCONFDIR}/pine.conf \
 		--with-system-fixed-pinerc=${SYSCONFDIR}/pine.conf.fixed \

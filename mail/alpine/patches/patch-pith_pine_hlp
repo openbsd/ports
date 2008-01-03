@@ -1,7 +1,7 @@
-$OpenBSD: patch-pith_pine_hlp,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
---- pith/pine.hlp.orig	Wed Oct 24 16:01:05 2007
-+++ pith/pine.hlp	Wed Oct 24 16:01:34 2007
-@@ -26098,7 +26098,7 @@ argument (see the &quot;lynx&quot; example below).
+$OpenBSD: patch-pith_pine_hlp,v 1.2 2008/01/03 10:54:35 ajacoutot Exp $
+--- pith/pine.hlp.orig	Thu Dec 20 17:34:31 2007
++++ pith/pine.hlp	Thu Jan  3 09:58:12 2008
+@@ -25920,7 +25920,7 @@ argument (see the &quot;lynx&quot; example below).
  So, here are some example entries:
  <PRE>
  url-viewers = _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_  /usr/local/bin/netscape
@@ -10,7 +10,7 @@ $OpenBSD: patch-pith_pine_hlp,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
                C:&#92;BIN&#92;NETSCAPE.BAT
  </PRE>
  <P>
-@@ -26106,7 +26106,7 @@ This example shows that for the first viewer in the li
+@@ -25928,7 +25928,7 @@ This example shows that for the first viewer in the li
  the environment variable &quot;DISPLAY&quot; must be defined.  If it
  is, then the path and file &quot;/usr/local/bin/netscape&quot; must exist.  
  If neither condition is met,
@@ -19,7 +19,7 @@ $OpenBSD: patch-pith_pine_hlp,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
  If it does, then the &quot;_URL_&quot; token is replaced by the selected URL. 
  If the path to &quot;lynx&quot; is invalid,
  then the final path and file C:&#92;BIN&#92;NETSCAPE.BAT must exist.  
-@@ -26202,7 +26202,7 @@ because of its length, but should all appear on one li
+@@ -26024,7 +26024,7 @@ because of its length, but should all appear on one li
  url-viewers = _TEST("test -L /myhomedir/.netscape/lock")_ &quot;/usr/local/bin/netscape -remote 'openURL(_URL_,  new-window)' &amp;&quot;<BR>
  
  _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_ &quot;/usr/local/bin/netscape &amp;&quot;<BR>
