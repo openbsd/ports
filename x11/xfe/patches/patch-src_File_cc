@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_File_cc,v 1.1 2008/01/03 12:05:24 ajacoutot Exp $
+--- src/File.cc.orig	Wed Jan  2 17:20:09 2008
++++ src/File.cc	Wed Jan  2 17:20:44 2008
+@@ -491,7 +491,10 @@ FXint isEmptyDir(const FXString directory)
+ 		else
+ 			ret=0;
+ 	}
+-	closedir(dir);
++
++	if (dir)
++		closedir(dir);
++
+ 	return ret;
+ }
+ 		
