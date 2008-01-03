@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/11/19 21:11:22 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.25 2008/01/03 19:10:08 oga Exp $
 
      SUBDIR += avidemux
      SUBDIR += devede
@@ -19,6 +19,7 @@
      SUBDIR += mkvtoolnix
      SUBDIR += ogmtools
      SUBDIR += pspvc
+     SUBDIR += regionset
      SUBDIR += streamdvd
      SUBDIR += subrip
      SUBDIR += subtitleripper
