@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2007/12/17 22:16:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2008/01/03 18:39:25 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -52,6 +52,7 @@
      SUBDIR += panel
      SUBDIR += planner
      SUBDIR += py-gnome
+     SUBDIR += seahorse
      SUBDIR += session
      SUBDIR += terminal
      SUBDIR += themes
