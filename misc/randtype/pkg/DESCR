@@ -1,0 +1,4 @@
+Randtype reads either standard input or text files and displays the
+output, character-by-character or line-by-line, at random intervals.
+The randomness can be refined on the command line and special things can
+be done with user defined characters and strings.
