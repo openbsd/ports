@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2007/11/13 14:11:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2008/01/03 10:52:25 ajacoutot Exp $
 
 COMMENT-server=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=University of Washington IMAP4rev1/POP2/POP3 mail utility
 COMMENT-c-client=University of Washington's c-client mail access routines
 
-V=		2006k
+V=		2007
 DISTNAME=	imap-${V}
 
 PKGNAME-server=	imap-uw-${V}
@@ -14,7 +14,7 @@ PKGNAME-c-client=c-client-${V}
 CATEGORIES=	mail
 CATEGORIES-c-client=mail devel
 
-SHARED_LIBS=	c-client 5.0
+SHARED_LIBS=	c-client 5.1
 
 EXTRACT_SUFX=	.tar.Z
 
