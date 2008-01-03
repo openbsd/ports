@@ -1,0 +1,23 @@
+$OpenBSD: patch-dvd_udf_c,v 1.1.1.1 2008/01/03 19:06:35 oga Exp $
+--- dvd_udf.c.orig	Thu Jan  3 02:58:08 2008
++++ dvd_udf.c	Thu Jan  3 02:58:37 2008
+@@ -38,7 +38,7 @@
+ #include <sys/stat.h>
+ 
+ #if defined(__OpenBSD__)
+-# include <sys/dvdio.h>
++# include <sys/cdio.h>
+ #elif defined(__linux__)
+ # include <linux/cdrom.h>
+ #else
+@@ -111,8 +111,8 @@ struct AD {
+ #define GETN(p, n, target) memcpy(target, &data[p], n)
+ 
+ #ifdef DVD_AUTH
+-	dvd_authinfo ai;
+-	dvd_struct dvds;
++	union dvd_authinfo ai;
++	union dvd_struct dvds;
+ 	int last_agid = 0;
+ #endif
+ 
