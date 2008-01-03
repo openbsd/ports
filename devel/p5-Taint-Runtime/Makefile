@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/03 05:34:45 merdely Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	runtime enable taint checking
 
 MODULES=	cpan
-DISTNAME=	Taint-Runtime-0.02
+DISTNAME=	Taint-Runtime-0.03
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
