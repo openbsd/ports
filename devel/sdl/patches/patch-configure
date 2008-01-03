@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.15 2007/09/22 01:12:38 pvalchev Exp $
---- configure.orig	Sat Sep  8 22:38:20 2007
-+++ configure	Sat Sep  8 22:39:50 2007
-@@ -25672,9 +25672,6 @@ echo "${ECHO_T}$CompileNASM_ret" >&6
+$OpenBSD: patch-configure,v 1.16 2008/01/03 17:39:40 pvalchev Exp $
+--- configure.orig	Sun Dec 30 21:09:39 2007
++++ configure	Wed Jan  2 18:41:16 2008
+@@ -26333,9 +26333,6 @@ echo "${ECHO_T}$CompileNASM_ret" >&6; }
                win32)
                    NASMFLAGS="-f win32"
                    ;;
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure,v 1.15 2007/09/22 01:12:38 pvalchev Exp $
                macosx)
                    NASMFLAGS="-f macho"
                    ;;
-@@ -33307,10 +33304,10 @@ _ACEOF
+@@ -33612,10 +33609,10 @@ _ACEOF
              ;;
              netbsd|openbsd)
                  cat >>confdefs.h <<\_ACEOF
