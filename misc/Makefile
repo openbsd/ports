@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2007/10/10 14:38:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.105 2008/01/03 21:52:36 okan Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -64,6 +64,7 @@
      SUBDIR += py-imdb
      SUBDIR += py-memcached
      SUBDIR += pymissile
+     SUBDIR += randtype
      SUBDIR += remind
      SUBDIR += rlwrap
      SUBDIR += rpm
