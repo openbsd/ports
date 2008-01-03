@@ -1,0 +1,11 @@
+regionset allows you to check and set the region code of DVD drives.
+This program was part of the package "dvd_disc_20000215.tar.gz" from
+Convergence, which is no longer distributed because of the new German
+copyright law. (The package also contained some CSS and copying related
+tools.) regionset was separated and all CSS related stuff was removed.
+This program is needed by everyone with a new DVD drive that doesn't
+have a region code set, since the drive will only play Video DVDs when
+the region code has been set once.
+
+regionset must have write privileges to the device in question in order
+to work.

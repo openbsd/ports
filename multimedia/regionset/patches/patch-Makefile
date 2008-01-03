@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/01/03 19:30:16 oga Exp $
+--- Makefile.orig	Thu Oct 30 12:29:49 2003
++++ Makefile	Thu Jan  3 16:13:02 2008
+@@ -6,14 +6,14 @@
+ # cleanups by Mirko Dölle <cooper@linvdr.org>
+ #
+ 
+-CC = gcc -Wall
++CC ?= gcc -Wall ${CFLAGS}
+ MAKE = make
+ 
+ all: regionset
+ .PHONY : all
+ 
+ regionset: regionset.c dvd_udf.h dvd_udf.c
+-	$(CC) -o regionset regionset.c dvd_udf.c
++	$(CC) $(CFLAGS) -o regionset regionset.c dvd_udf.c
+ 
+ .PHONY : clean
+ clean:
