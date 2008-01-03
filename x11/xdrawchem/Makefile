@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/03 09:15:47 sthen Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-qtincdir=${MODQT_INCDIR} \
 		--with-qtlibdir=${MODQT_LIBDIR}
 
-.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "arm"
 PATCH_LIST=	patch-* gcc-*
 .endif
 
