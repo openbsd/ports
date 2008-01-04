@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.18 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/04 18:57:07 ckuethe Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 COMMENT-python=		python bindings for gpsd
 
-VERSION=		2.34
+VERSION=		2.36
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
-PKGNAME-motif=		gpsd-motif-${VERSION}p0
+PKGNAME-motif=		gpsd-motif-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-PKGNAME-python=		gpsd-python-${VERSION}p1
+PKGNAME-python=		gpsd-python-${VERSION}
 SHARED_LIBS=		gps	16.0
 CATEGORIES=		misc geo
 
@@ -28,7 +28,9 @@ MASTER_SITES=		${MASTER_SITE_BERLIOS:=gpsd/}
 
 USE_LIBTOOL=		yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-ntpshm
+CONFIGURE_ARGS+=	--disable-ntpshm \
+			--enable-gpsd-user=_gpsd \
+			--disable-garmintxt
 
 PSEUDO_FLAVORS=		no_motif no_python
 FLAVOR?=
