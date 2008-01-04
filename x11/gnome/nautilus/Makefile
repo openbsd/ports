@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/11/10 15:48:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2008/01/04 18:38:52 espie Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -57,7 +57,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 # You will also need to set the XAUTHORITY environment variable to point
 # to the appropriate .Xauthority file.
 REGRESS_IS_INTERACTIVE=Yes
-REGRESS_FLAGS+=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 .include <bsd.port.mk>
 

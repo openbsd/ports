@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/08/26 18:34:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2008/01/04 18:38:52 espie Exp $
 
 COMMENT=		Gnome/Bonobo component for spell checking
 
@@ -32,7 +32,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-REGRESS_FLAGS+=		XGETTEXT="${LOCALBASE}/bin/xgettext"
+REGRESS_FLAGS=		XGETTEXT="${LOCALBASE}/bin/xgettext"
 SUBST_VARS=		VERSION
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.43 2008/01/04 18:38:51 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	::databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=:postgresql-server-*:databases/postgresql,-server
 
-REGRESS_FLAGS+=	DBI_DSN="dbi:Pg:dbname=template1" DBI_USER="_postgresql" \
+REGRESS_FLAGS=	DBI_DSN="dbi:Pg:dbname=template1" DBI_USER="_postgresql" \
 		DBI_PASS=""
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 

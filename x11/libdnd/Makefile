@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/04 18:38:52 espie Exp $
 
 COMMENT=		drag and drop library
 
@@ -27,7 +27,7 @@ WRKDIST=		${WRKDIR}/DND
 WRKSRC=			${WRKDIST}/DNDlib
 
 # This regression test wants an X11 display
-REGRESS_FLAGS+=         DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS=         DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 REGRESS_IS_INTERACTIVE= Yes
 
 do-regress:

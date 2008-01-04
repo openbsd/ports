@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -37,7 +37,7 @@ CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
 			PYTHON="${MODPY_BIN}"
 
 REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS+=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2

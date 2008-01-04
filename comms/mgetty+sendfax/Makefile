@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2007/09/16 01:37:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.39 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	handle external logins, send and receive faxes
 
@@ -76,7 +76,7 @@ do-regress:
 	@cd ${WRKBUILD} && \
 		exec ${SETENV} ${MAKE_ENV} \
 		TESTS_ENVIRONMENT='${TESTS_ENVIRONMENT}' \
-			${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} \
+			${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} \
 			${REGRESS_TARGET}
 
 .include <bsd.port.mk>

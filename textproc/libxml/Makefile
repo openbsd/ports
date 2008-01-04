@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.110 2008/01/04 18:38:52 espie Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -64,7 +64,7 @@ post-install:
 
 do-regress:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${GMAKE} \
-		${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
+		${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
 
 .include <bsd.port.mk>
 

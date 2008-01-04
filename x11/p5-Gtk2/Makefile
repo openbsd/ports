@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/10/27 14:42:59 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/04 18:38:52 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,6 +37,6 @@ RUN_DEPENDS=	:p5-Glib2->=1.161:devel/p5-Glib2 \
 # to the appropriate .Xauthority file. 
 
 REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS+=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 .include <bsd.port.mk>

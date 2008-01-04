@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2008/01/04 18:38:52 espie Exp $
 
 COMMENT=		FLTK Virtual Styles, List, Table, and Complex Table Widgets
 
@@ -29,7 +29,7 @@ CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -DFLTK_1_0_COMPAT -I${LOCALBASE}/include" 
 
 # This regression test wants an X11 display
 REGRESS_TARGET=		check
-REGRESS_FLAGS+=         DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS=         DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 REGRESS_IS_INTERACTIVE= Yes
 
 WRKDIST=		${WRKDIR}/flvw

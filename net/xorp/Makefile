@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/01/04 18:38:51 espie Exp $
 
 COMMENT-main=	eXtensible Open Router Platform
 
@@ -42,6 +42,6 @@ REGRESS_DEPENDS=	::shells/bash \
 do-regress:
 	@ln -s ${LOCALBASE}/bin/python2.4 ${WRKDIR}/bin
 	@cd ${WRKBUILD}; ${SUDO} ${SETENV} ${MAKE_ENV} \
-		${MAKE_PROGRAM} ${REGRESS_FLAGS} ${REGRESS_TARGET}
+		${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} ${REGRESS_TARGET}
 
 .include <bsd.port.mk>

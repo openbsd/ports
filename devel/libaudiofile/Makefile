@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.35 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	SGI audiofile library clone
 
@@ -24,6 +24,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 
 do-regress:
-	@cd ${WRKBUILD}/test && ${MAKE_PROGRAM} ${REGRESS_FLAGS} check
+	@cd ${WRKBUILD}/test && ${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} check
 
 .include <bsd.port.mk>

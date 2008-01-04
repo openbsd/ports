@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 18:38:51 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,6 +34,6 @@ CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 # to the appropriate .Xauthority file. 
 
 REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS+=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 .include <bsd.port.mk>

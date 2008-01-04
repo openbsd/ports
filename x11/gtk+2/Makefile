@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2007/12/05 14:32:18 steven Exp $
+# $OpenBSD: Makefile,v 1.58 2008/01/04 18:38:52 espie Exp $
 
 SHARED_ONLY=			Yes
 
@@ -60,6 +60,6 @@ CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/includ
 # You will also need to set the XAUTHORITY environment variable to point
 # to the appropriate .Xauthority file.
 REGRESS_IS_INTERACTIVE=Yes
-REGRESS_FLAGS+=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 .include <bsd.port.mk>

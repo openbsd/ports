@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -50,7 +50,7 @@ do-regress:
 	    @cd ${WRKBUILD} && \
 	    	exec ${SETENV} ${MAKE_ENV} \
 		TESTS_ENVIRONMENT='${TESTS_ENVIRONMENT}' \
-		    ${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} \
+		    ${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} \
 		    ${REGRESS_TARGET}
 
 post-install:

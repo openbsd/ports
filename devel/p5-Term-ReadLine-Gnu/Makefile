@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/16 02:53:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/04 18:38:51 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,7 +18,7 @@ WANTLIB=		readline termcap
 
 # This regression test wants an X11 display
 REGRESS_DEPENDS=	:p5-Tk-*:x11/p5-Tk
-REGRESS_FLAGS+=		TERM=${TERM} DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS=		TERM=${TERM} DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 REGRESS_IS_INTERACTIVE=	Yes
 
 pre-regress:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	curses(3) based terminal widgets
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	:p5-Curses-*:devel/p5-Curses
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # Regress tests require an interactive terminal
-REGRESS_FLAGS=	${MAKE_FLAGS} TERM=${TERM}
+REGRESS_FLAGS=	TERM=${TERM}
 REGRESS_IS_INTERACTIVE=	Yes
 
 post-install:

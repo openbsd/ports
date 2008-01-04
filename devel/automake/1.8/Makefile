@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -30,7 +30,7 @@ SUBST_VARS=		SUFFIX
 
 REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 			::devel/libtool
-REGRESS_FLAGS+=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
+REGRESS_FLAGS=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 
 post-install:

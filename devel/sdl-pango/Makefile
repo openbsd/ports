@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
@@ -54,6 +54,6 @@ do-regress:
 	${CXX} -o testbench testbench.c \
 		-I../src `sdl-config --cflags` \
 		`sdl-config --libs` -L../src/.libs -lSDL_Pango && \
-	${SETENV} ${REGRESS_FLAGS} LD_LIBRARY_PATH=${WRKBUILD}/src/.libs ./testbench markup.txt
+	${SETENV} ${ALL_REGRESS_FLAGS} LD_LIBRARY_PATH=${WRKBUILD}/src/.libs ./testbench markup.txt
 
 .include <bsd.port.mk>

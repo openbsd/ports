@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	GNU Standards-compliant Makefile generator
 
@@ -27,6 +27,6 @@ SUBST_VARS=	SUFFIX
 
 do-regress:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} MAKE=gmake gmake -f \
-	    ${MAKE_FILE} ${REGRESS_FLAGS} ${REGRESS_TARGET}
+	    ${MAKE_FILE} ${ALL_REGRESS_FLAGS} ${REGRESS_TARGET}
 
 .include <bsd.port.mk>

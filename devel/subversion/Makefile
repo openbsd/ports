@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2008/01/04 18:38:51 espie Exp $
 
 COMMENT-main=	subversion revision control system
 COMMENT-perl=	perl interface to subversion
@@ -143,15 +143,15 @@ post-build:
 
 do-regress:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${REGRESS_FLAGS} check FS_TYPE=bdb
+		${ALL_REGRESS_FLAGS} check FS_TYPE=bdb
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${REGRESS_FLAGS} check FS_TYPE=fsfs
+		${ALL_REGRESS_FLAGS} check FS_TYPE=fsfs
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${REGRESS_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
+		${ALL_REGRESS_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${REGRESS_FLAGS} check-swig-py
+		${ALL_REGRESS_FLAGS} check-swig-py
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${REGRESS_FLAGS} check-swig-rb
+		${ALL_REGRESS_FLAGS} check-swig-rb
 .endif
 
 post-install:

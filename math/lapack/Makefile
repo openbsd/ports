@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	library of Fortran 77 linear algebra subroutines
 
@@ -50,7 +50,7 @@ post-install:
 	${INSTALL_MAN} ${WRKDIST}/manpages/man/manl/*.3f ${PREFIX}/man/man3f/
 
 do-regress:
-	cd ${WRKDIST}/TESTING/MATGEN && ${MAKE} ${REGRESS_FLAGS}
-	cd ${WRKDIST}/TESTING && ${MAKE} ${REGRESS_FLAGS}
+	cd ${WRKDIST}/TESTING/MATGEN && ${MAKE} ${ALL_REGRESS_FLAGS}
+	cd ${WRKDIST}/TESTING && ${MAKE} ${ALL_REGRESS_FLAGS}
 
 .include <bsd.port.mk>

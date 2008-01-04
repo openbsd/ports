@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	C interface to the BLAS library
 
@@ -43,7 +43,7 @@ post-install:
 
 do-regress:
 	@cd ${WRKDIST}/testing && \
-	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} all1 ${REGRESS_FLAGS} && \
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} all1 ${ALL_REGRESS_FLAGS} && \
 	export LD_LIBRARY_PATH="${WRKSRC}" && \
 		./xscblat1 && \
 		./xdcblat1 && \

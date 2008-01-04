@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.46 2008/01/04 18:38:51 espie Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -20,7 +20,7 @@ WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xp Xpm Xt c m z stdc++ \
 REGRESS_IS_INTERACTIVE=Yes
 # Note - we need ~/.XAuthority, which doesn't exist in
 # /${PKGNAME}_writes_to_home
-REGRESS_FLAGS+=	"DISPLAY=$${DISPLAY}" "HOME=$${HOME}"
+REGRESS_FLAGS=	"DISPLAY=$${DISPLAY}" "HOME=$${HOME}"
 
 VMEM_WARNING=	Yes
 USE_MOTIF=	any
