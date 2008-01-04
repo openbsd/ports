@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/16 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 17:41:31 jasper Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11
 
 SHARED_LIBS +=  planner-1            0.0      # .0.0
@@ -32,8 +32,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:py-gtk2-*:x11/py-gtk2
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
-			:py-gtk2-*:x11/py-gtk2 \
+RUN_DEPENDS=		:py-gtk2-*:x11/py-gtk2 \
     			:scrollkeeper-*:textproc/scrollkeeper  \
 			:shared-mime-info->=0.21:misc/shared-mime-info \
 			:yelp-*:x11/gnome/yelp
