@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/11/27 13:53:19 okan Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/04 02:53:52 okan Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
-VERSION=		2.5.2
-DISTNAME=		amavisd-new-${VERSION}
+DISTNAME=		amavisd-new-2.5.3
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.ijs.si/software/amavisd/
@@ -38,8 +37,6 @@ RUN_DEPENDS=		::archivers/arc \
 			::mail/p5-Mail-SpamAssassin \
 			::mail/p5-MIME-tools \
 			::sysutils/p5-Unix-Syslog
-
-WRKDIST=		${WRKDIR}/amavisd-new-${VERSION}
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
