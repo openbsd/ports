@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2007/12/07 11:30:55 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2008/01/04 14:52:31 robert Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -222,8 +222,6 @@ openoffice/program/libicule.so.36
 openoffice/program/libicuuc.so.36
 openoffice/program/libjvmaccessgcc3.so.3
 openoffice/program/libjvmfwk.so.3
-openoffice/program/libportaudio.so.0
-openoffice/program/libportaudio.so.0.0.18
 openoffice/program/libreg.so.3
 openoffice/program/librmcxt.so.3
 openoffice/program/libsal.so.3

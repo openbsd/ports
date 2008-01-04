@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2007/12/07 11:30:55 robert Exp $
+# $OpenBSD: Makefile,v 1.68 2008/01/04 14:52:31 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,7 +10,7 @@ VERSION=	2.3.1
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOG680_m9
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}
+PKGNAME-main=	openoffice-${VERSION}p0
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
@@ -88,7 +88,6 @@ LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.
 		db.>=4:db-4.*:databases/db/v4 \
 		curl.>=7::net/curl \
 		neon.>=24::net/neon \
-		sndfile.>=1::audio/libsndfile \
 		wpd.>=8::textproc/libwpd
 WANTLIB-main=	ICE SM X11 Xau Xdmcp Xext Xrender Xcursor Xfixes Xi Xinerama \
 		Xrandr atk-1.0 c cairo expat \
@@ -135,6 +134,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--disable-mozilla \
 		--disable-odk \
+		--disable-pasf \
 		--enable-cairo \
 		--enable-kde \
 		--with-system-jpeg \
@@ -147,7 +147,6 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-expat \
 		--with-system-neon \
 		--with-system-db \
-		--with-system-sndfile \
 		--with-system-boost \
 		--with-system-libwpd \
 		--with-epm=internal \
