@@ -1,12 +1,28 @@
-$OpenBSD: patch-mainwindow_cpp,v 1.1.1.1 2007/07/07 17:59:05 ajacoutot Exp $
---- mainwindow.cpp.orig	Fri Jul  6 12:33:26 2007
-+++ mainwindow.cpp	Fri Jul  6 12:34:19 2007
-@@ -2764,7 +2764,7 @@ void Main::helpDoc()
- 		docpath="./vym.app/Contents/vym.pdf";
- 	#else
- 		// default path in SUSE LINUX
--		docpath="/usr/share/doc/packages/vym/doc/vym.pdf";
-+		docpath="!!PREFIX!!/share/doc/vym/vym.pdf";
- 	#endif
+$OpenBSD: patch-mainwindow_cpp,v 1.2 2008/01/04 16:27:30 jasper Exp $
+--- mainwindow.cpp.orig	Tue Sep  4 15:53:33 2007
++++ mainwindow.cpp	Wed Jan  2 10:33:45 2008
+@@ -3,6 +3,7 @@
+ #include <QtGui>
  
- 	if (!QFile (docpath).exists() )
+ #include <iostream>
++#include <unistd.h>
+ 
+ #include "aboutdialog.h"
+ #include "branchpropwindow.h"
+@@ -140,7 +141,7 @@ Main::Main(QWidget* parent, const char* name, Qt::WFla
+ 			#if defined(Q_OS_MACX)
+ 				s=settings.value (p,"/usr/bin/open").toString();
+ 			#else
+-				s=settings.value (p,"mozilla");
++				s=settings.value (p,"mozilla").toString();
+ 			#endif
+ 		#endif
+ 		settings.setValue( p,s);
+@@ -3637,6 +3638,7 @@ void Main::helpDoc()
+ 	searchList << "doc/tex";	// Easy testing working on vym.tex
+ 	searchList << "/usr/share/doc/vym";	// Debian
+ 	searchList << "/usr/share/doc/packages";// Knoppix
++	searchList << "!!PREFIX!!/share/doc/vym"; // OpenBSD
+ 
+ 	bool found=false;
+ 	QFile docfile;
