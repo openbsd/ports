@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.62 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c crypto m ncurses ssl
 
-FAKE_FLAGS=	IP="${WRKINST}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+DESTDIRNAME=	IP
+FAKE_FLAGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
 SEPARATE_BUILD=	simple

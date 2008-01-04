@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=		morse player
 
@@ -16,8 +16,7 @@ WANTLIB=		c m
 
 MASTER_SITES=		http://www.thought.net/jason/radio/
 
-FAKE_FLAGS=		BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/cat" \
-			DESTDIR="${WRKINST}"
+FAKE_FLAGS=		BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/cat"
 
 NO_REGRESS=		Yes
 

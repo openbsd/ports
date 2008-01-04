@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/12/11 11:18:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2008/01/04 17:48:36 espie Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	Tool Command Language
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
-FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
+FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT=${WRKINST} \
 		BASE_INCLUDE_DIR='$$(prefix)/include/tcl$$(VERSION)' \
 		INCLUDE_INSTALL_DIR='$$(INSTALL_ROOT)$$(BASE_INCLUDE_DIR)' \
 		GENERIC_INCLUDE_INSTALL_DIR='$$(BASE_INCLUDE_DIR)/generic' \

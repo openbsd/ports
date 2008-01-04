@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	dungeon explorin', hackin', game.  Hard
 DISTNAME=	se007e7f1
@@ -21,7 +21,7 @@ V=	3.4.3.7e7f1
 
 WRKDIST=${WRKDIR}/slashem-0.0.7E7F1
 
-FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
+FAKE_FLAGS=PREFIX=${PREFIX}
 
 GAMEDIR=lib/slashemdir-$V
 NHDIR=	${PREFIX}/${GAMEDIR}

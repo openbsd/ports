@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/12/18 15:56:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2008/01/04 17:48:35 espie Exp $
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for gtk
 COMMENT-qt=	uim for qt
@@ -85,7 +85,6 @@ MAKE_FLAGS=	moduledir='${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules' \
 		itlocaledir=${TRUEPREFIX}/share/locale
 
 		
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include'
 CONFIGURE_ENV+=	LDFLAGS='-L${MODQT_LIBDIR} -L${LOCALBASE}/lib -L${X11BASE}/lib'
 CONFIGURE_ENV+=	QTDIR=${MODQT_QTDIR}

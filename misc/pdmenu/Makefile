@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -19,7 +19,7 @@ MASTER_SITES=		http://kitenet.net/programs/code/pdmenu/
 
 LIB_DEPENDS=		slang.>=14::devel/libslang
 
-FAKE_FLAGS=		INSTALL_PREFIX=${WRKINST}
+DESTDIRNAME=		INSTALL_PREFIX
 
 FAKE=			lib
 CONFIGURE_STYLE=	autoconf no-autoheader

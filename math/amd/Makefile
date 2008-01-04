@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	order a sparse matrix prior to Cholesky factorization
 
@@ -32,7 +32,7 @@ MAKE_ENV=	SHLIB_MAJOR=${LIBamd_VERSION:R} \
 MAKE_FLAGS=	CSRC="${CSRC}"
 MAKE_ENV_F77=	SHLIB_MAJOR=${LIBamdf77_VERSION:R} \
 		SHLIB_MINOR=${LIBamdf77_VERSION:E}
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
+FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 CFLAGS+=	-I${WRKDIST}/Include -I${WRKDIR}/UFconfig
 
 CSRC=	aat 1 2 dump postorder post_tree defaults order control info \
@@ -52,7 +52,7 @@ post-build:
 
 post-install:
 	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV_F77} ${MAKE_PROGRAM} \
-		${FAKE_FLAGS} -f ${FILESDIR}/Makefile.f77 ${INSTALL_TARGET}
+		${ALL_FAKE_FLAGS} -f ${FILESDIR}/Makefile.f77 ${INSTALL_TARGET}
 	${INSTALL_DATA_DIR} ${PREFIX}/include/amd
 	${INSTALL_DATA} ${WRKDIST}/Include/amd.h ${PREFIX}/include/amd
 

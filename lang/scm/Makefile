@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2008/01/04 17:48:36 espie Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -110,7 +110,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/info
 .endfor
 
-FAKE_FLAGS=${MAKE_FLAGS} exec_prefix=${WRKINST}${TRUEPREFIX}/
+FAKE_FLAGS=exec_prefix=${WRKINST}${TRUEPREFIX}/
 REGRESS_TARGET=	check
 
 .include <bsd.port.mk>

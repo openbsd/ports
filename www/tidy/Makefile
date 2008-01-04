@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=	validate, correct, and pretty-print HTML files
 
@@ -37,7 +37,6 @@ WRKBUILD=	${WRKDIST}/build/gmake
 DOCDIR=		${PREFIX}/share/doc/tidy
 
 MAKE_FLAGS=	TIDY_MAJOR=${LIBtidy_VERSION:R} TIDY_MINOR=${LIBtidy_VERSION:E}
-FAKE_FLAGS=	TIDY_MAJOR=${LIBtidy_VERSION:R} TIDY_MINOR=${LIBtidy_VERSION:E}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

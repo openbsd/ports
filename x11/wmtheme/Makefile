@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=		window manager theme utility
 
@@ -23,7 +23,7 @@ USE_GMAKE=		Yes
 USE_X11=		Yes
 EXTRA_THEMES=		gotheme ortheme
 
-FAKE_FLAGS+=		prefix=${PREFIX} DESTDIR=${WRKINST}
+FAKE_FLAGS+=		prefix=${PREFIX}
 
 post-install:
 .for i in ${EXTRA_THEMES}

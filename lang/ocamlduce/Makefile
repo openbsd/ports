@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	XML extension types for Objective Caml
 CATEGORIES=	lang textproc
@@ -22,7 +22,6 @@ WANTLIB=	curses m c pthread
 NO_REGRESS= 	Yes
 USE_GMAKE=	Yes
 MAKE_FLAGS=	CAMLC=ocamlc${MODOCAML_NATIVE:S,Yes,.opt,:S,No,,}
-FAKE_FLAGS=	CAMLC=ocamlc${MODOCAML_NATIVE:S,Yes,.opt,:S,No,,}
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
 
 BUILD_DEPENDS=	::sysutils/findlib

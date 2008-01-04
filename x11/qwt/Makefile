@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/14 01:19:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/04 17:48:38 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,8 +25,6 @@ NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 
 MAKE_FLAGS=		LIBqwt_VERSION=${LIBqwt_VERSION}
-FAKE_FLAGS=		LIBqwt_VERSION=${LIBqwt_VERSION} \
-			${DESTDIRNAME}=${WRKINST}
 
 WANTLIB+=		ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr
 WANTLIB+=		Xrender fontconfig freetype glib-2.0 gthread-2.0 iconv

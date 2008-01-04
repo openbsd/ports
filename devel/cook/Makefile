@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2008/01/04 17:48:34 espie Exp $
 # $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
 
 COMMENT=	like make(1), but more powerful and clean
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-FAKE_FLAGS=	RPM_BUILD_ROOT="${WRKINST}"
+DESTDIRNAME=RPM_BUILD_ROOT
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

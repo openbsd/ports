@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2007/09/01 20:11:21 kili Exp $
+# $OpenBSD: Makefile,v 1.68 2008/01/04 17:48:34 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT-main=	generic shared library support script
@@ -36,8 +36,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 # future changes/updates, so force GREP in CONFIGURE_ENV, too.
 CONFIGURE_ENV=	GREP=/usr/bin/grep
 MAKE_ENV=	GREP=/usr/bin/grep
-
-FAKE_FLAGS=	 ${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 MULTI_PACKAGES=	-main -ltdl
 

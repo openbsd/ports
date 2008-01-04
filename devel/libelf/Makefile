@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	read, modify, create ELF files on any arch
 CATEGORIES=	devel
@@ -14,7 +14,7 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.13
 CONFIGURE_ARGS=		--disable-nls
 MAKE_FLAGS=		SHLIB_SFX=.so.$(LIBelf_VERSION)
-FAKE_FLAGS=		${MAKE_FLAGS} instroot=${DESTDIR}
+DESTDIRNAME=		instroot
 
 # LGPL
 PERMIT_DISTFILES_FTP=	Yes

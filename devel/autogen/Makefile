@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:52:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=automatic text creation from templates
 CATEGORIES=devel
@@ -27,7 +27,5 @@ CONFIGURE_ARGS=	--without-libregex \
 		${ENABLE_SHARED}
 
 MAKE_FLAGS+=	INFO_DEPS=
-FAKE_FLAGS+=	INFO_DEPS= \
-		DESTDIR=${WRKINST}
 USE_LIBTOOL=	Yes
 .include <bsd.port.mk>

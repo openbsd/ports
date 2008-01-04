@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/11/14 19:27:35 merdely Exp $
+# $OpenBSD: Makefile,v 1.27 2008/01/04 17:48:36 espie Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -123,7 +123,6 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		leftydir="${EXBASE}/lefty" \
 		pathplanexampledir="${EXBASE}/demo/pathplan_data" \
 		undirecteddir="${EXBASE}/graphs/undirected" \
-		${MAKE_FLAGS}
 
 post-build:
 .for CMD in dotty lneato

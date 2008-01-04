@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/01/04 17:48:34 espie Exp $
 # $FreeBSD: ports/devel/ffcall/Makefile,v 1.2 2001/08/31 14:20:18 sobomax Exp $
 # Original From:                jagapen@home.com
 
@@ -28,8 +28,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
-		htmldir="\$$(datadir)/doc/ffcall/html"
+FAKE_FLAGS=	htmldir="\$$(datadir)/doc/ffcall/html"
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ffcall/html

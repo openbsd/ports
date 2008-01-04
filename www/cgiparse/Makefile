@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/16 02:59:32 merdely Exp $
+# $OpenBSD: Makefile,v 1.28 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	C library to parse CGI Forms
 
@@ -26,7 +26,7 @@ BROKEN=		Alpha architecture not yet supported
 NO_REGRESS=	Yes
 
 MAKE_ENV=	LIBcgiparse_VERSION=${LIBcgiparse_VERSION}
-FAKE_FLAGS=	DESTDIR=${WRKINST} MANDIR=${WRKINST}${PREFIX}/man
+FAKE_FLAGS=	MANDIR=${WRKINST}${PREFIX}/man
 
 .include <bsd.port.mk>
 

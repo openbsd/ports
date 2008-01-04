@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	C++ wrapper for the libxml XML parser library
 
@@ -31,7 +31,6 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
-		docdir="${PREFIX}/share/doc/libxml++-2.6"
+FAKE_FLAGS=	docdir="${PREFIX}/share/doc/libxml++-2.6"
 
 .include <bsd.port.mk>

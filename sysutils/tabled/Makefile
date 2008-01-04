@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 21:14:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	daemon to modify pf tables from userland
 
@@ -19,8 +19,6 @@ WANTLIB=		c
 
 MASTER_SITES=  	ftp://ftp.etc.msys.ch/pub/sources/tabled/
 EXTRACT_SUFX=	.tgz
-
-FAKE_FLAGS=	${MAKE_FLAGS}
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	centralised configuration management for networks
 
@@ -27,7 +27,7 @@ NO_BUILD=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ruby-puppet
-	@cd ${WRKSRC} && ${FAKE_FLAGS} ${RUBY} install.rb
+	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
 	for f in `ls -1 ${WRKSRC}/examples/root/etc/puppet/*.conf`; do \
 		${INSTALL_DATA} $$f ${PREFIX}/share/examples/ruby-puppet; \
 	done

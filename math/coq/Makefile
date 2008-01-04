@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2008/01/04 17:48:36 espie Exp $
 
 BROKEN=			requires update due to ocaml 3.08
 
@@ -35,7 +35,7 @@ EXTRACT_ONLY=		${DISTNAME}.tar.gz \
 			doc-html-20040711.tar.gz \
 			library.tar.gz  \
 
-FAKE_FLAGS=		COQINSTALLPREFIX=${WRKINST}
+DESTDIRNAME=		COQINSTALLPREFIX
 
 USE_GMAKE=		Yes
 

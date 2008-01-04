@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 20:04:29 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=	OpenLook Toolkit libs, includes, and man pages
 
@@ -17,7 +17,6 @@ CONFIGURE_STYLE=imake
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 MAKE_FLAGS=	SOOLGXREV=${LIBolgx_VERSION} \
 		SOXVIEWREV=${LIBxview_VERSION}
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} ${MAKE_FLAGS}
 
 NO_REGRESS=	Yes
 

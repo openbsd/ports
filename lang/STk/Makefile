@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	Scheme interpreter with Tk interface
 
@@ -20,7 +20,7 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 
-FAKE_FLAGS=	root=${DESTDIR}
+DESTDIRNAME=	root
 
 NO_REGRESS=	Yes
 SUBST_VARS=	STK_VERSION STK_ARCH

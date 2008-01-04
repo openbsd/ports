@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/30 10:46:49 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=	simple login manager
 
@@ -27,8 +27,7 @@ WANTLIB=	X11 Xft Xmu Xrender fontconfig c m stdc++ z freetype
 MAKE_FILE=	Makefile.openbsd
 MAKE_FLAGS+=	CFGDIR=${SYSCONFDIR}
 FAKE_FLAGS+=	PREFIX=${PREFIX} \
-		CFGDIR=${PREFIX}/share/examples/slim \
-		DESTDIR=${WRKINST}
+		CFGDIR=${PREFIX}/share/examples/slim
 
 pre-configure:
 	perl -pi -e 's!/usr/!${PREFIX}/!' ${WRKSRC}/slim.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/17 19:25:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:37 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -72,6 +72,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.{conf,types} \
 		${PREFIX}/share/examples/mplayerplug-in
 	@cd ${WRKSRC}/po && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${FAKE_FLAGS} ${FAKE_TARGET}
+		${ALL_FAKE_FLAGS} ${FAKE_TARGET}
 
 .include <bsd.port.mk>

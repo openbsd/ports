@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.920 2007/12/28 12:49:12 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.921 2008/01/04 17:48:35 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -301,9 +301,6 @@ DESTDIR ?= ${WRKINST}
 
 MAKE_FLAGS ?=
 LIBTOOL_FLAGS ?=
-.if !defined(FAKE_FLAGS)
-FAKE_FLAGS = ${DESTDIRNAME}=${WRKINST}
-.endif
 
 # where configuration files should go
 SYSCONFDIR ?= /etc
@@ -323,9 +320,11 @@ BUILD_DEPENDS += ::devel/libtool
 CONFIGURE_ENV += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 MAKE_ENV += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 MAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
-FAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 .endif
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
+
+ALL_FAKE_FLAGS=	${MAKE_FLAGS} ${DESTDIRNAME}=${WRKINST} ${FAKE_FLAGS}
+
 
 PARALLEL_BUILD ?= Yes
 PARALLEL_INSTALL ?= ${PARALLEL_BUILD}
@@ -336,7 +335,7 @@ MAKE_JOBS ?= 1
 MAKE_FLAGS += -j${MAKE_JOBS}
 .  endif
 .  if ${PARALLEL_INSTALL:L} == "yes"
-FAKE_FLAGS += -j${MAKE_JOBS}
+ALL_FAKE_FLAGS += -j${MAKE_JOBS}
 .  endif
 .endif
 
@@ -2166,7 +2165,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 # What FAKE normally does:
 	@cd ${WRKBUILD} && exec ${SUDO} ${_SYSTRACE_CMD} \
 		${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} \
-		${MAKE_PROGRAM} ${FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
 .endif
 .if target(post-install)

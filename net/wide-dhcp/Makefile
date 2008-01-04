@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	client and servers for the WIDE DHCP protocol
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c kvm 
 
 MAKE_FLAGS=	OSTYPE=OpenBSD CC=${CC} CFLAGS="${CFLAGS} -g -Wall -I. -I${WRKBUILD}/server" 
-FAKE_FLAGS= 	${MAKE_FLAGS} SBIN=${WRKINST}${PREFIX}/sbin MAN=${WRKINST}${PREFIX}/man LIBEXEC=${WRKINST}${PREFIX}/libexec
+FAKE_FLAGS= 	SBIN=${WRKINST}${PREFIX}/sbin MAN=${WRKINST}${PREFIX}/man LIBEXEC=${WRKINST}${PREFIX}/libexec
 
 NO_REGRESS=	Yes
 

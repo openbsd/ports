@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 18:44:37 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	unsymmetric multifrontal sparse LU factorization package
 
@@ -32,7 +32,7 @@ WRKSRC=		${WRKDIST}/Source
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBumfpack_VERSION:R} \
 		SHLIB_MINOR=${LIBumfpack_VERSION:E}
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
+FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 CFLAGS+=	-I${WRKDIST}/Include -I${WRKDIR}/UFconfig \
 		-I${WRKDIR}/${AMD_DIR}/AMD/Include
 

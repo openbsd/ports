@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/11/13 14:54:32 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	Mr Do video arcade game for X11
 
@@ -30,6 +30,5 @@ ALL_TARGET=	xmris xmred xmris.0 xmred.0
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 .include <bsd.port.mk>

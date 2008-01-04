@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.38 2007/10/24 21:52:16 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.39 2008/01/04 17:48:38 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 .if defined(VERSION) && ${VERSION} == "3.1.95"
@@ -48,7 +48,7 @@ CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
 
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
-FAKE_FLAGS?=	TAR=tar DESTDIR=${WRKINST}
+FAKE_FLAGS?=		TAR=tar 
 # GPL
 PERMIT_DISTFILES_CDROM?=	Yes
 PERMIT_DISTFILES_FTP?=		Yes

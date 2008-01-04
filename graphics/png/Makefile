@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2007/10/16 20:32:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	library for manipulating PNG images
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	VERSION
 
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR="${WRKINST}" PREFIX="${PREFIX}"
+FAKE_FLAGS=	PREFIX="${PREFIX}"
 
 MAKE_ENV=	CC="${CC}"
 MAKE_FILE=	scripts/makefile.openbsd

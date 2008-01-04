@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	i/o generator
 PKGNAME=	iogen-3.1
@@ -17,7 +17,7 @@ NO_CHECKSUM=	Yes
 NO_REGRESS=	Yes
 
 CFLAGS+=	-DVERSION=\"${PKGNAME:S/iogen-//}\"
-FAKE_FLAGS+=	BINDIR="${PREFIX}/bin" DESTDIR="${WRKINST}" MANDIR="${PREFIX}/man/cat"
+FAKE_FLAGS+=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/cat"
 MAKE_ENV=	CC="${CC}"
 WRKDIST=	${WRKDIR}
 

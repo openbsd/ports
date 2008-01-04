@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.25 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	MOD player
 DISTNAME=	tracker-5.3
@@ -25,7 +25,6 @@ MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		INST_MAN_OPT="-c -m 644 -o $(BINOWN) -g $(BINGRP)" \
 		COMPRESSION_FILE='$${DESTDIR}${SYSCONFDIR}/compression_methods' \
 		PREFIX='$${DESTDIR}/${TRUEPREFIX}'
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 NO_REGRESS=	Yes
 

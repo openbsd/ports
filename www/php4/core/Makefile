@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.38 2008/01/04 17:48:38 espie Exp $
 
 MULTI_PACKAGES=	-main -pear
 
@@ -54,7 +54,7 @@ pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
 
 INSTALL_TARGET= install-pear install-headers install-build install-programs
-FAKE_FLAGS= 	INSTALL_ROOT=${DESTDIR}
+DESTDIRNAME=	INSTALL_ROOT
 
 pre-configure:
 	@perl -p -i.orig -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" \

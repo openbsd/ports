@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/01/02 12:15:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2008/01/04 17:48:37 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -45,8 +45,7 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 			::x11/hicolor-icon-theme
 
 MAKE_FLAGS=		liblinotiflibnotify_la_LDFLAGS="-module -avoid-version"
-FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html" \
-			DESTDIR=${WRKINST}
+FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
 CFLAGS+=		-I${LOCALBASE}/xulrunner/include/webbrwsr/ \
 			-I${LOCALBASE}/xulrunner/include/dom/ \
 			-I${LOCALBASE}/xulrunner/include/pref/ \

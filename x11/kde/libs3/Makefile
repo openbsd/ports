@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2007/12/18 16:00:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2008/01/04 17:48:38 espie Exp $
 
 COMMENT-main=		K Desktop Environment, libraries
 COMMENT-cups=		K Desktop Environment, cups support
@@ -97,7 +97,7 @@ SEPARATE_BUILD=	flavored
 SAMPLECONFDIR=${TRUEPREFIX}/share/apps/kde-conf-sample
 EXTRA_CONFIG=xdg/menus/applications.menu
 
-FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
+FAKE_FLAGS=	sysconfdir=${SAMPLECONFDIR}
 
 post-extract:
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin

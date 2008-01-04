@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2007/09/16 01:37:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.52 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-4.1.5
@@ -39,8 +39,7 @@ CONFIGURE_ENV+=		CCOMPILER="${CC}" CXXCOMPILER="${CXX}" \
 CONFIGURE_ARGS+=	--with-PAGESIZE=A4
 .endif
 
-FAKE_FLAGS=	ROOT=${WRKINST} ${DESTDIRNAME}=${WRKINST} \
-		SPOOL=${PREFIX}/libdata/hylafax
+FAKE_FLAGS=	ROOT=${WRKINST} SPOOL=${PREFIX}/libdata/hylafax
 
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter

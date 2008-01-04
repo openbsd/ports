@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2007/11/13 17:10:26 steven Exp $
+# $OpenBSD: Makefile,v 1.35 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	CAD drawing program for X11
 
@@ -30,7 +30,6 @@ RUN_DEPENDS=	::print/transfig \
 MAKE_FLAGS=	XAPPLOADDIR="${PREFIX}/lib/X11/app-defaults" \
 		XFIGDOCDIR="${PREFIX}/share/doc/xfig" \
 		XFIGLIBDIR="${PREFIX}/lib/X11/xfig"
-FAKE_FLAGS=	DESTDIR="${WRKINST}" ${MAKE_FLAGS}
 
 CONFIGURE_STYLE= imake
 

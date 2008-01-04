@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.30 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	collection of C routines to decode MPEG movies
 
@@ -20,8 +20,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
 
 MAKE_FLAGS=	SHLIB=libmpeg.so.${LIBmpeg_VERSION}
-FAKE_FLAGS=	SHLIB=libmpeg.so.${LIBmpeg_VERSION} \
-		${DESTDIRNAME}=${WRKINST}
 
 do-regress:
 	@cd ${WRKSRC} && env LD_LIBRARY_PATH=${WRKSRC} ./mpegtest -checksum test.mpg

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 23:54:18 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	filemanager for X Window
 
@@ -37,8 +37,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/l
 CONFIGURE_ARGS=	--with-x
 
 FAKE_FLAGS=	LIBxncaqua_VERSION=${LIBxncaqua_VERSION} \
-		LIBxncfive_VERSION=${LIBxncfive_VERSION} \
-		DESTDIR=${WRKINST}
+		LIBxncfive_VERSION=${LIBxncfive_VERSION}
 
 XNLAUNCHFILES=	.launch.menu .xnlaunch.ini graphs.gif ives.gif kill.gif \
 		map.gif netscape.gif term.gif tnet.gif

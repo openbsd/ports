@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	library to handle various audio file formats
 
@@ -24,7 +24,6 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
-		htmldocdir=${PREFIX}/share/doc/libsndfile
+FAKE_FLAGS=	htmldocdir=${PREFIX}/share/doc/libsndfile
 
 .include <bsd.port.mk>

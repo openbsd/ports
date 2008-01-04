@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=		SOCKS client wrapper for *BSD
 DISTNAME=		dsocks-1.6
@@ -20,9 +20,7 @@ MASTER_SITES=		${HOMEPAGE}
 MAKE_FLAGS=		SHLIB_MAJOR=${LIBdsocks_VERSION:R} \
 			SHLIB_MINOR=${LIBdsocks_VERSION:E}
 
-FAKE_FLAGS=		SHLIB_MAJOR=${LIBdsocks_VERSION:R} \
-			SHLIB_MINOR=${LIBdsocks_VERSION:E} \
-			DEBUGLIBS=No
+FAKE_FLAGS=		DEBUGLIBS=No
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dsocks.sh ${WRKSRC}/dsocks-torify.sh \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=		multi-platform CD-Player library
 
@@ -19,7 +19,6 @@ USE_X11=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	imake
 MAKE_FLAGS=		WM_LIBVER=${LIBworkman_VERSION}
-FAKE_FLAGS=		${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 WRKDIST=		${WRKDIR}/libworkman
 

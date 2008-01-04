@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/13 08:54:02 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/04 17:48:34 espie Exp $
 
 SHARED_ONLY=	Yes
  
@@ -35,7 +35,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-postgres-lib=${LOCALBASE}/lib
 
 MAKE_FLAGS=	PKG_LIB_FILE=libpgtcl.so.${LIBpgtcl_VERSION}
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${DESTDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgtcl/html

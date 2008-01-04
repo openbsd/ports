@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/09/16 00:33:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.27 2008/01/04 17:48:35 espie Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -55,7 +55,6 @@ MAKE_FLAGS=	LIBRKC_VERSION=$(LIBRKC_VERSION) \
 		LIBcanna_VERSION=$(LIBcanna_VERSION) \
 		LIBcanna16_VERSION=$(LIBcanna16_VERSION)
 
-FAKE_FLAGS=	$(MAKE_FLAGS) DESTDIR=${WRKINST}
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

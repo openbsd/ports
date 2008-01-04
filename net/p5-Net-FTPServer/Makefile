@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 22:36:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	secure, extensible and configurable Perl FTPd
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE_FLAGS=	NOCONF=1 ${DESTDIRNAME}=${WRKINST}
+FAKE_FLAGS=	NOCONF=1
 CONFIG_DIR=	${PREFIX}/share/examples/p5-Net-FTPServer
 
 post-install:

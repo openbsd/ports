@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2007/12/28 18:53:20 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2008/01/04 17:48:38 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -67,7 +67,6 @@ PORTHOME=	${WRKDIST}
 MAKE_FLAGS=	DESIGNER_SUBDIR=dummy \
 		LIBqt-mt_VERSION=$(LIBqt-mt_VERSION) \
 		LIBqui_VERSION=$(LIBqui_VERSION)
-FAKE_FLAGS=	$(MAKE_FLAGS) DESTDIR=${WRKINST}
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zlib \

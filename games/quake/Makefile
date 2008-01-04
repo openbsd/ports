@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/04 17:48:35 espie Exp $
 
 COMMENT-main=		Quake/Quake-world client
 COMMENT-server=		Quake world server
@@ -53,7 +53,6 @@ ERRORS="Need some non empty flavor"
 .endif
 
 WRKDIST=	${WRKDIR}/quakeforge
-FAKE_FLAGS=	${MAKE_FLAGS}	DESTDIR=${WRKINST}
 
 post-extract:
 	cd ${WRKDIST}; rm config.cache config.log

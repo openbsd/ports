@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2008/01/04 17:48:35 espie Exp $
 
 DISTNAME=	cqcam-0.91
 PKGNAME=	${DISTNAME}p1
@@ -30,8 +30,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_FLAGS=	${FAKE_FLAGS}
-FAKE_FLAGS=	CLIENTS="cli webcam"
+MAKE_FLAGS=	CLIENTS="cli webcam"
 .else
 WANTLIB+=	X11 Xext Xi glib gmodule iconv intl
 USE_X11=	Yes
@@ -41,10 +40,7 @@ LIB_DEPENDS+=	xview,olgx::x11/xview/lib
 CONFIGURE_ARGS+= --with-gtk-prefix=${LOCALBASE} 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" # -L${LOCALBASE}/lib/tcl8.3"
-#MAKE_FLAGS=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.3 \
-#		-I${LOCALBASE}/include/tk8.3" \
-MAKE_FLAGS=	${FAKE_FLAGS}
-FAKE_FLAGS=	CLIENTS="cli gtkfe webcam xfe"
+MAKE_FLAGS=	CLIENTS="cli gtkfe webcam xfe"
 .endif
 
 post-install:

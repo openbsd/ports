@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
@@ -23,7 +23,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/example ${WRKSRC}/support
 
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
-		docdir=${DESTDIR}${PREFIX}/share/doc/cgicc
+FAKE_FLAGS=	docdir=${DESTDIR}${PREFIX}/share/doc/cgicc
 
 .include <bsd.port.mk>

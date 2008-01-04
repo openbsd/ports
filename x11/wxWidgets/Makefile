@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/24 08:05:56 winiger Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/04 17:48:38 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -78,7 +78,5 @@ MAKE_ENV+=	LIB${_l}_VERSION=${_v}
 .endfor
 
 MAKE_FLAGS=	WXUNICODEFLAG=""
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST}
-FAKE_FLAGS+=	WXUNICODEFLAG=""
 
 .include <bsd.port.mk>

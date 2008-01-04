@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 20:04:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=		drag and drop library
 
@@ -22,7 +22,6 @@ USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 MAKE_FLAGS=		LIBDnd_VERSION=${LIBDnd_VERSION} \
 			LIBDnd++_VERSION=${LIBDnd++_VERSION}
-FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} ${MAKE_FLAGS}
 
 WRKDIST=		${WRKDIR}/DND
 WRKSRC=			${WRKDIST}/DNDlib

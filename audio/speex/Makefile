@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	patent-free speech codec
 
@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 MAKE_FLAGS=	docdir=${TRUEPREFIX}/share/doc/speex \
 		mandir=${TRUEPREFIX}/man
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 
 .include <bsd.port.mk>

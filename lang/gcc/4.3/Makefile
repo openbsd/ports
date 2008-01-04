@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/20 16:11:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/04 17:48:36 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -165,9 +165,6 @@ MAKE_FLAGS=${BASIC_MAKE_FLAGS} \
 	INSTALL='/usr/bin/install -c' \
 	INSTALL_PROGRAM='/usr/bin/install -c -m 555' \
 	INSTALL_DATA='/usr/bin/install -c -m 444' \
-
-FAKE_FLAGS=DESTDIR=${WRKINST} ${BASIC_MAKE_FLAGS}
-
 
 .if ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"  || ${MACHINE_ARCH} == "amd64"
 PKG_ARGS+=-DPIC=1

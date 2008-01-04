@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2007/11/30 18:39:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.46 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=	themed window manager
 
@@ -48,11 +48,11 @@ post-configure:
 	    ${SH} ./configure ${CONFIGURE_ARGS}
 
 post-install:
-	@cd ${WRKDIR}/${DOCS} && ${SUDO} ${SETENV} ${MAKE_ENV} \
-	    ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} \
+	@cd ${WRKDIR}/${DOCS} && ${SETENV} ${MAKE_ENV} \
+	    ${_FAKE_SETUP} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
 	    -f ${MAKE_FILE} ${FAKE_TARGET}
-	cd ${WRKDIR}/${THEMES} && ${SUDO} ${SETENV} ${MAKE_ENV} \
-	    ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} \
+	cd ${WRKDIR}/${THEMES} && ${SETENV} ${MAKE_ENV} \
+	    ${_FAKE_SETUP} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
 	    -f ${MAKE_FILE} ${FAKE_TARGET}
 
 .include <bsd.port.mk>

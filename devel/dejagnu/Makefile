@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/12/28 20:28:15 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	framework to test programs
 
@@ -26,7 +26,6 @@ CONFIGURE_ENV=	ac_cv_path_tclsh=${LOCALBASE}/bin/tclsh8.4
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 MAKE_FLAGS=mkinstalldirs='mkdir -p --'
-FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 post-build:
 	@cd ${WRKBUILD}/doc && makeinfo --no-split dejagnu.texi

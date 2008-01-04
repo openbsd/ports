@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	extract subtitles from dvds
 DISTNAME=	ogmrip-0.10.0
@@ -28,8 +28,7 @@ WANTLIB=		c m
 NO_REGRESS=		Yes
 
 FAKE_FLAGS=		BINDIR=${TRUEPREFIX}/bin \
-			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-			DESTDIR=${WRKINST}
+			INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 post-install:
 	${INSTALL_PROGRAM} ${FILESDIR}/subrip ${PREFIX}/bin

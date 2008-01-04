@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	The Dungeons of Moria
 
@@ -34,6 +34,6 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/moria
-	@cd ${WRKBUILD}; ${MAKE_PROGRAM} ${FAKE_FLAGS} install
+	@cd ${WRKBUILD}; ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} install
 
 .include <bsd.port.mk>

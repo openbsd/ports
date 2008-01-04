@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/09/15 20:09:43 simon Exp $
+# $OpenBSD: Makefile,v 1.36 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	X11 image display and modification tool
 
@@ -30,8 +30,8 @@ WANTLIB=	X11 Xau Xdmcp c m z
 
 USE_X11=	Yes
 MAKE_ENV=	SYSCONFDIR="$(SYSCONFDIR)"
-FAKE_FLAGS=
 
+DESTDIRNAME=	none
 NO_REGRESS=	Yes
 
 pre-patch:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/22 16:43:30 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
@@ -27,8 +27,6 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	neo_cgi,neo_cs::www/clearsilver \
 		fcgi::www/fcgi
-
-FAKE_FLAGS=	${MAKE_FLAGS}
 
 NO_REGRESS=	Yes
 

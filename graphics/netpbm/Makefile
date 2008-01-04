@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2007/10/15 19:29:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
@@ -30,7 +30,7 @@ INSTALL_TARGET=	install.bin install.lib install.data \
 
 MAKE_FLAGS=	CC="${CC}" \
 		LIBnetpbm_VERSION=${LIBnetpbm_VERSION}
-FAKE_FLAGS=	${MAKE_FLAGS} PKGDIR="${WRKINST}${TRUEPREFIX}"
+FAKE_FLAGS=	PKGDIR="${WRKINST}${TRUEPREFIX}"
 
 pre-build:
 	@perl -i -pe 's#%%X11BASE%%#${X11BASE}#g;' \

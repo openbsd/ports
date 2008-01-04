@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2007/12/14 08:53:27 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.89 2008/01/04 17:48:37 espie Exp $
 
 COMMENT-main=	SMB and CIFS client and server for UNIX
 COMMENT-docs=	documentation and examples for samba
@@ -32,9 +32,6 @@ MODULES= 	converters/libiconv
 LIB_DEPENDS=	popt::devel/popt
 
 MAKE_FLAGS=	PASSWD_PROGRAM="/usr/bin/passwd" \
-		LIBsmbclient_VERSION=${LIBsmbclient_VERSION} \
-		LIBmsrpc_VERSION=${LIBmsrpc_VERSION}
-FAKE_FLAGS=	DESTDIR="${DESTDIR}" \
 		LIBsmbclient_VERSION=${LIBsmbclient_VERSION} \
 		LIBmsrpc_VERSION=${LIBmsrpc_VERSION}
 

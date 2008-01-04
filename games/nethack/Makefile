@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.43 2008/01/04 17:48:35 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	dungeon explorin', hackin', game.  Piece of cake
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termlib
 
-FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
+FAKE_FLAGS=PREFIX=${PREFIX}
 
 GAMEDIR=lib/nethackdir-$V
 NHDIR=	${TRUEPREFIX}/${GAMEDIR}

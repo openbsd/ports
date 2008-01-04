@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.34 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
@@ -29,7 +29,6 @@ FLAVOR?=
 
 CONFIGURE_ARGS+=	--enable-mp3rtp
 MAKE_FLAGS=	pkghtmldir=${TRUEPREFIX}/share/doc/lame
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 USE_LIBTOOL=	Yes
 
 # XXX gcc3/nasm issue

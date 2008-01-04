@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	libraries for fwbuilder
 DISTNAME=	libfwbuilder-2.1.8
@@ -34,6 +34,6 @@ NO_REGRESS=	Yes
 
 MAKE_FLAGS=	LIBfwbuilder_VERSION=${LIBfwbuilder_VERSION} \
 		LIBfwcompiler_VERSION=${LIBfwcompiler_VERSION}
-FAKE_FLAGS=	${MAKE_FLAGS} INSTALL_ROOT=${WRKINST}
+DESTDIRNAME=	INSTALL_ROOT
 
 .include <bsd.port.mk>

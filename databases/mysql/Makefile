@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2007/12/28 22:15:19 espie Exp $
+# $OpenBSD: Makefile,v 1.137 2008/01/04 17:48:34 espie Exp $
 
 .if ${MACHINE_ARCH} == "m88k"
 BROKEN=		gen_lex_hash hangs
@@ -96,7 +96,6 @@ PKG_ARCH-tests=	*
 WANTLIB-tests=
 
 MAKE_FLAGS=	mkdir_p='mkdir -p --'
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 post-install:
 	cd ${PREFIX}/lib && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2007/12/18 16:00:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2008/01/04 17:48:38 espie Exp $
 
 COMMENT-main= 		K Desktop Environment, basic applications
 COMMENT-plugins=	Konqueror nsplugins, essentially native JDK
@@ -70,6 +70,6 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
 	${INSTALL_DATA} ${FILESDIR}/kdesurc ${PREFIX}/share/config
 
-FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
+FAKE_FLAGS=	sysconfdir=${SAMPLECONFDIR}
 
 .include <bsd.port.mk>

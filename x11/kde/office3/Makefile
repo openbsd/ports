@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2007/12/15 23:47:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=		office suite for KDE
 
@@ -69,7 +69,7 @@ SHARED_LIBS +=	kchartimageexport    4.0      # .4.0
 SHARED_LIBS +=	kwordexportfilters   2.0      # .1.1
 SHARED_LIBS +=	kpresenterimageexport 4.0      # .4.0
 
-FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
+FAKE_FLAGS=	TAR=tar
 
 SEPARATE_BUILD=	flavored
 

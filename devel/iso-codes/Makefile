@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/10/22 10:14:02 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -23,7 +23,7 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat
 
-FAKE_FLAGS=	DESTDIR=${WRKINST}  pkgconfigdir=${PREFIX}/lib/pkgconfig
+FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 post-extract:
 	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \

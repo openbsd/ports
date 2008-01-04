@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 20:04:18 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=	3D Athena Widget set that looks like Motif
 
@@ -20,7 +20,6 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE=imake
 MAKE_FLAGS=	SOXAWREV=${LIBXaw3d_VERSION}
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} ${MAKE_FLAGS}
 
 WRKDIST=	${WRKDIR}/xc/lib/Xaw3d
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2007/12/15 23:47:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2008/01/04 17:48:38 espie Exp $
 
 COMMENT= 		K Desktop Environment, multimedia applications
 CATEGORIES=		x11 x11/kde
@@ -51,7 +51,7 @@ LIB_DEPENDS= DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,k
 EXTRA_CONFIG=	xdg/menus/applications-merged/kde-multimedia-music.menu 
 SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample
 
-FAKE_FLAGS=$(MAKE_FLAGS) DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
+FAKE_FLAGS=	sysconfdir=${SAMPLECONFDIR}
 RUN_DEPENDS=:xanim-*:graphics/xanim \
 	:desktop-file-utils-*:devel/desktop-file-utils
 SEPARATE_BUILD=flavored

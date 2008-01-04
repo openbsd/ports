@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	log out idle users and those hogging resources
 
@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.netsw.org/system/tools/process/
 HOMEPAGE=	http://www.darkwing.com/idled/
 
-FAKE_FLAGS=	PREFIX=${PREFIX} DESTDIR=${WRKINST}
+FAKE_FLAGS=	PREFIX=${PREFIX}
 
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2007/09/15 10:14:32 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	block-sorting file compressor, unencumbered
 
@@ -24,7 +24,6 @@ BZ2_CFLAGS+=	-fomit-frame-pointer -fno-strength-reduce
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}" \
 		LIBbz2_VERSION=${LIBbz2_VERSION} PREFIX=${TRUEPREFIX}
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 REGRESS_FLAGS=	LD_LIBRARY_PATH="${WRKBUILD}" LIBbz2_VERSION=${LIBbz2_VERSION}
 
 REGRESS_TARGET=	test

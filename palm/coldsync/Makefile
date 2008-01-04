@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 19:00:54 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=		tool for synchronizing PalmOS devices
 
@@ -20,8 +20,9 @@ MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-usb --without-libusb
 
-FAKE_FLAGS=		${MAKE_FLAGS} \
-			INFODIR=${WRKINST}${PREFIX}/info \
+# DESTDIR bugs the fake process, so make sure it does not get set
+DESTDIRNAME=		none
+FAKE_FLAGS=		INFODIR=${WRKINST}${PREFIX}/info \
 			MANDIR=${WRKINST}${PREFIX}/man
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:38 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--enable-xcache
 CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 PREFIX=		/var/www
-FAKE_FLAGS=	INSTALL_ROOT=${WRKINST}
+DESTDIRNAME=	INSTALL_ROOT
 
 NO_REGRESS=	Yes
 

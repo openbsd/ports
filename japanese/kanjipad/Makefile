@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:33:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=japanese handwriting recognition
 CATEGORIES=japanese
@@ -23,7 +23,7 @@ WANTLIB=	c Xext Xi X11 m
 USE_X11=	Yes
 
 MAKE_FLAGS=OPTIMIZE='${CFLAGS}' PREFIX=${PREFIX}
-FAKE_FLAGS=PREFIX=${WRKINST}${TRUEPREFIX} OPTIMIZE='${CFLAGS}'
+FAKE_FLAGS=PREFIX=${WRKINST}${TRUEPREFIX}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kanjipad

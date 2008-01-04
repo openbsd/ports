@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2007/12/11 08:00:06 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.46 2008/01/04 17:48:38 espie Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples for qt4
@@ -201,7 +201,7 @@ MAKE_FLAGS+=	INSTALL_PROGRAM='${INSTALL_PROGRAM}' \
 MAKE_FLAGS+=LIB$l_VERSION=$v
 .endfor
 
-FAKE_FLAGS=$(MAKE_FLAGS) INSTALL_ROOT=${WRKINST}
+DESTDIRNAME=	INSTALL_ROOT
 
 post-patch:
 	perl -pi -e "s#!!CUPS_LIBS!!#`cups-config --libs`#" \

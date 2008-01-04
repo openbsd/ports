@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	console napster client
 
@@ -24,7 +24,7 @@ NO_REGRESS=		Yes
 
 WRKDIST=	${WRKDIR}/TekNap
 
-FAKE_FLAGS=	INSTALL="${INSTALL_PROGRAM}" DESTDIR=${WRKINST}
+FAKE_FLAGS=	INSTALL="${INSTALL_PROGRAM}"
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/TekNap/help
 

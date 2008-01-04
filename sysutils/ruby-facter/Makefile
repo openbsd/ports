@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:37 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,7 @@ NO_BUILD=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ruby-facter
-	@cd ${WRKSRC} && ${FAKE_FLAGS} ${RUBY} install.rb
+	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
 	${INSTALL_DATA} ${WRKSRC}/etc/facter.conf \
 			${PREFIX}/share/examples/ruby-facter 
 

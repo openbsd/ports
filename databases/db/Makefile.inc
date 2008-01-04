@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2007/09/16 03:05:29 merdely Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2008/01/04 17:48:34 espie Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REVISION}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REVISION}
@@ -31,7 +31,6 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/dist
 MAKE_FLAGS+=	DBVERSION=${LIBdb_VERSION} \
 		DBCXXVERSION=${LIBdb_cxx_VERSION} \
 		DBTCLVERSION=${LIBdb_tcl_VERSION}
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 WRKBUILD=	${WRKDIST}/build_unix
 

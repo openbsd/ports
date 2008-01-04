@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/04 17:48:37 espie Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT-main=		utilities to manipulate ext2 filesystems
@@ -41,7 +41,6 @@ MAKE_FLAGS=		LIBe2p_VERSION=${LIBe2p_VERSION} \
 			LIBext2fs_com_err_VERSION=${LIBext2fs_com_err_VERSION} \
 			LIBss_VERSION=${LIBss_VERSION} \
 			LIBuuid_VERSION=${LIBuuid_VERSION}
-FAKE_FLAGS=		${MAKE_FLAGS}
 LIB_DEPENDS-main=	lib/uuid/uuid::${BUILD_PKGPATH},-uuid
 
 post-install:

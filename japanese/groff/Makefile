@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 00:33:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	japanese groff
 
@@ -34,7 +34,7 @@ CONFIGURE_STYLE=	gnu old dest
 #
 #post-install:
 #	@cd ${WRKBUILD}/xditview && ${SETENV} ${MAKE_ENV} \
-#	    make ${FAKE_FLAGS} -f ${MAKE_FILE} install install.man
+#	    make ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} install install.man
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

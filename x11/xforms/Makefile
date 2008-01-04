@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/15 20:04:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.33 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=	GUI toolkit for X11
 
@@ -24,7 +24,6 @@ CONFIGURE_STYLE=	imake
 MAKE_FLAGS=		LIBflimage_VERSION=${LIBflimage_VERSION} \
 			LIBforms_VERSION=${LIBforms_VERSION} \
 			LIBformsGL_VERSION=${LIBformsGL_VERSION}
-FAKE_FLAGS=		${DESTNAMEDIR}=${WRKINST} ${MAKE_FLAGS}
 
 BUILD_DEPENDS=		::graphics/jpeg
 

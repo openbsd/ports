@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/10/05 19:54:55 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	Internet Relay Chat client
 
@@ -24,7 +24,7 @@ MASTER_SITES=	ftp://ircii.warped.com/pub/ircII/ \
 
 SUBST_VARS=	VERSION
 
-FAKE_FLAGS=	DESTDIR="${WRKINST}" INSTALL_IRC_NAME="ircII" \
+FAKE_FLAGS=	INSTALL_IRC_NAME="ircII" \
 		INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
 
 SEPARATE_BUILD=	simple

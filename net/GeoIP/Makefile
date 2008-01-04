@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 22:36:51 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
@@ -24,8 +24,7 @@ USE_LIBTOOL=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/GeoIP
 
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
-		DEFAULT_CONFIG_FILE=${EXAMPLESDIR}/GeoIP.conf \
+FAKE_FLAGS=	DEFAULT_CONFIG_FILE=${EXAMPLESDIR}/GeoIP.conf \
 		DEFAULT_DB_FILE=${EXAMPLESDIR}/GeoIP.dat
 
 pre-install:

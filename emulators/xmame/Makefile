@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2007/09/16 00:45:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.31 2008/01/04 17:48:34 espie Exp $
 
 COMMENT-main=	emulates arcade machines and old home computers
 COMMENT-mame=	emulates a massive variety of arcade machines
@@ -77,7 +77,6 @@ MAKE_FLAGS+=	MY_CPU=risc
 
 MAKE_ENV=	PREFIX="${PREFIX}"
 MAKE_FILE=	Makefile.OpenBSD
-FAKE_FLAGS=	${MAKE_FLAGS}
 MAKE_FLAGS+=	ARCH=openbsd \
 		CC="${CC}" CFLAGS="${CFLAGS}" \
 		DISPLAY_METHOD="${DISPLAY_METHOD}" \

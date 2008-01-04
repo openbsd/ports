@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/14 09:43:39 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/04 17:48:36 espie Exp $
 
 CATEGORIES=		lang
 V=			5.6.27
@@ -38,8 +38,6 @@ USE_GMAKE=		Yes
 
 MAKE_FLAGS=		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}
-FAKE_FLAGS=		${MAKE_FLAGS} \
-			DESTDIR=${WRKINST}
 
 WANTLIB=		ICE Xrender readline SM freetype Xt pthread \
 			c Xinerama Xft Xpm m fontconfig X11 ncurses z \

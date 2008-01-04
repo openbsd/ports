@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2007/11/19 20:06:56 kili Exp $
+# $OpenBSD: Makefile,v 1.53 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -119,8 +119,6 @@ WANTLIB+=	crypto pthread ssl tiff
 .endif
 
 NO_REGRESS=	Yes
-
-FAKE_FLAGS+=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 # Avoid surprises in update-patches.
 # Use the old-style (non-autoconf) build.

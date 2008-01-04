@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:16:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=		suite of clustering tools based on IBM's PSSP
 
@@ -32,7 +32,6 @@ CONFIGURE_ARGS=		--without-x11
 USE_X11=		Yes
 WANTLIB+=		util X11
 MAKE_FLAGS=		EXTRA_SUBDIRS="${X11_SUBDIRS}"
-FAKE_FLAGS=		EXTRA_SUBDIRS="${X11_SUBDIRS}" ${DESTDIRNAME}=${WRKINST}
 .endif
 
 # The port's existing regress structure seems broken; upstream contacted

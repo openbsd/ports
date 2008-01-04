@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/12/07 19:55:58 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2008/01/04 17:48:37 espie Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -85,8 +85,6 @@ CONFIGURE_ARGS= --enable-xpdf-headers \
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes

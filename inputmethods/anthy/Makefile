@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 11:14:46 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:35 espie Exp $
 COMMENT-main=	japanese input method
 COMMENT-emacs=	emacs files for anthy
 
@@ -33,7 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include'
 CONFIGURE_ENV+=	LDFLAGS='-L${LOCALBASE}/lib'
 CONFIGURE_ENV+=	SWIG=no
 
-FAKE_FLAGS=	DESTDIR=${WRKINST} sysconfdir=$(PREFIX)/share/examples/anthy
+FAKE_FLAGS=	sysconfdir=$(PREFIX)/share/examples/anthy
 
 WANTLIB-main=	c m
 

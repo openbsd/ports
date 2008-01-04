@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/04 17:48:36 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=		:p5-Digest-SHA1->=1.0:security/p5-Digest-SHA1 \
 			:p5-URI->=1.19:www/p5-URI
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} PERL5LIB=${WRKINST}/${PREFIX}/${P5ARCH}
+FAKE_FLAGS=		PERL5LIB=${WRKINST}/${PREFIX}/${P5ARCH}
 
 CONFIGURE_STYLE= 	perl
 

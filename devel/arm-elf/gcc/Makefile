@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/05 13:14:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
 VERSION=	3.4.5
 FULL_VERSION=	3.4-20050913
 DISTNAME=	gcc-${FULL_VERSION}
-PKGNAME=	${CONFIG}-gcc-${VERSION}p0
+PKGNAME=	${CONFIG}-gcc-${VERSION}p1
 
 # GPL
 PERMIT_PACKAGE_FTP=	Yes

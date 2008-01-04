@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=		stylish window manager
 
@@ -17,7 +17,7 @@ WANTLIB=		X11 Xext Xau Xdmcp c m stdc++
 
 MASTER_SITES=		http://www.all-day-breakfast.com/wm2/
 
-FAKE_FLAGS=		PREFIX="${PREFIX}" DESTDIRNAME=${WRKINST}
+FAKE_FLAGS=		PREFIX="${PREFIX}"
 
 USE_X11=		Yes
 

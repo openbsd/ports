@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/06/09 16:17:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	multiuser tip/cu replacement with logging
 
@@ -20,7 +20,7 @@ WRKDIST=	${WRKDIR}
 
 NO_REGRESS=	Yes
 
-FAKE_FLAGS=	DESTROOT=${WRKINST}
+DESTDIRNAME=	DESTROOT
 
 post-install:
 	@${INSTALL_DATA} ${WRKDIR}/README ${PREFIX}/rtty

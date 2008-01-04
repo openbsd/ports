@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	automatically configure source code on many Un*x platforms
 
@@ -25,7 +25,7 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ENV=	M4=/usr/bin/m4
 
 MAKE_FLAGS=acdatadir=${PREFIX}/share/autoconf${SUFFIX}
-FAKE_FLAGS=DESTDIR=${WRKINST} acdatadir=${WRKINST}${PREFIX}/share/autoconf${SUFFIX}
+FAKE_FLAGS=acdatadir=${WRKINST}${PREFIX}/share/autoconf${SUFFIX}
 SUBST_VARS=SUFFIX
 
 post-install:

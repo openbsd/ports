@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/12 14:07:11 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	graphical front-end for octave
 
@@ -27,7 +27,7 @@ WRKDIST=	${WRKDIR}/project
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--qtdir=${MODQT4_QTDIR}
 
-FAKE_FLAGS=	INSTALL_ROOT=${WRKINST}
+DESTDIRNAME=	INSTALL_ROOT
 
 USE_X11=	Yes
 

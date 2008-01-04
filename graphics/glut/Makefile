@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	OpenGL Utility Toolkit
 
@@ -24,7 +24,6 @@ NO_REGRESS=		Yes
 MAKE_FLAGS=	SOGLSMAPREV=${LIBglsmap_VERSION}	\
 		SOGLUTREV=${LIBglut_VERSION}		\
 		SOMUIREV=${LIBmui_VERSION}
-FAKE_FLAGS=	${MAKE_FLAGS} ${DESTDIRNAME}=${WRKINST}
 
 post-extract:
 	@perl -i -p -e 's/3GLUT/3/;' ${WRKSRC}/man/glut/*.man

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/15 19:25:34 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fdm/}
 
 LIB_DEPENDS+=	tdb::databases/tdb
 
-FAKE_FLAGS=	DESTDIR=${WRKINST} PREFIX=${PREFIX}
+FAKE_FLAGS=	PREFIX=${PREFIX}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fdm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	text to speech utility
 
@@ -22,7 +22,6 @@ MAKE_FLAGS=	LIBlibflite.so_VERSION=${LIBflite_VERSION} \
 	LIBlibflite_cmu_us_kal16.so_VERSION=${LIBflite_cmu_us_kal16_VERSION} \
 	LIBlibflite_cmulex.so_VERSION=${LIBflite_cmulex_VERSION} \
 	LIBlibflite_usenglish.so_VERSION=${LIBflite_usenglish_VERSION}
-FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 CATEGORIES=	audio
 

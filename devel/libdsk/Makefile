@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=		library for accessing disks and disk image files
 
@@ -27,7 +27,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-FAKE_FLAGS=		${MAKE_FLAGS} DESTDIR=${WRKINST}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 post-install:

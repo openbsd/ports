@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2007/12/28 14:23:59 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	desktop organizer software for the palm pilot
 
@@ -43,7 +43,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 MAN1=	jpilot-dump.1 jpilot-sync.1 jpilot.1
 
 MAKE_FLAGS = mkdir_p='mkdir -p'
-FAKE_FLAGS = ${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 pre-build:
 .for i in ${MAN1}

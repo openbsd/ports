@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/29 20:51:10 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	city simulation game
 
@@ -37,7 +37,7 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${FAKE_FLAGS} jam \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${ALL_FAKE_FLAGS} jam \
 		install install_man
 
 .include <bsd.port.mk>

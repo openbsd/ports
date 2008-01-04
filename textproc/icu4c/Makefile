@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/02 20:53:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:37 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,7 +39,5 @@ WRKDIST=		${WRKDIR}/icu
 WRKSRC=			${WRKDIST}/source
 
 MAKE_FLAGS=		SO_TARGET_VERSION=${SO_VERSION}
-FAKE_FLAGS=		SO_TARGET_VERSION=${SO_VERSION} \
-			${DESTDIRNAME}=${WRKINST}
 
 .include <bsd.port.mk>

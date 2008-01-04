@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/11/16 22:25:58 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/01/04 17:48:34 espie Exp $
 avr/
 avr/lib/
 bin/avr-c++
@@ -7,7 +7,6 @@ bin/avr-g++
 bin/avr-gcc
 bin/avr-gcc-${V}
 bin/avr-gccbug
-bin/avr-gcov
 lib/gcc/
 lib/gcc/avr/
 lib/gcc/avr/${V}/

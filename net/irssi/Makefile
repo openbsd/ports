@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2007/11/17 20:39:02 steven Exp $
+# $OpenBSD: Makefile,v 1.35 2008/01/04 17:48:37 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -48,8 +48,7 @@ BUILD_DEPENDS+=		::security/dante
 
 MAKE_FLAGS=	scriptdir="${SYSCONFDIR}/irssi/scripts" \
 		themedir="${SYSCONFDIR}/irssi/themes"
-FAKE_FLAGS=	DESTDIR=${WRKINST} \
-		confdir="${PREFIX}/share/examples/irssi" \
+FAKE_FLAGS=	confdir="${PREFIX}/share/examples/irssi" \
 		scriptdir="${PREFIX}/share/examples/irssi/scripts" \
 		themedir="${PREFIX}/share/examples/irssi/themes"
 

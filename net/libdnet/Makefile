@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/11/05 23:27:22 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2008/01/04 17:48:37 espie Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -38,7 +38,6 @@ MODULES+=		lang/python
 MULTI_PACKAGES+=	-python
 CONFIGURE_ARGS+=	--with-python
 MAKE_FLAGS=		PYTHON=${MODPY_BIN}
-FAKE_FLAGS=		${MAKE_FLAGS} DESTDIR=${WRKINST}
 REGRESS_DEPENDS=	::net/libdnet,-python
 REGRESS_FLAGS=		TESTS_ENVIRONMENT=${MODPY_BIN}
 WANTLIB-python=

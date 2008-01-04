@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 10:14:34 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	java-like zip interface
 DISTNAME=	zipios++-0.1.5.9+cvs.2004.02.07
@@ -26,7 +26,6 @@ post-extract:
 	done
 
 MAKE_FLAGS=SUBDIRS='zipios++ src'
-FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/zipios++/zipios-config.h ${PREFIX}/include/zipios++/

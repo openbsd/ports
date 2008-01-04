@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:52:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -26,7 +26,6 @@ CONFIGURE_STYLE=	gnu
 MAKE_FLAGS+=		MAKEINFO="makeinfo --no-split" \
 			pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
 			APIVERSION=${VERSION}
-FAKE_FLAGS+=		${MAKE_FLAGS}
 SUBST_VARS=		SUFFIX
 
 REGRESS_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \

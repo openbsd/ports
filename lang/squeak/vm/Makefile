@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:36 espie Exp $
 
 
 COMMENT=	smalltalk system, vm
@@ -27,7 +27,7 @@ MAKE_FLAGS+=INTERP=gnu-interp
 .endif
 
 MAKE_FLAGS+=docdir=${PREFIX}/share/doc/squeak
-FAKE_FLAGS=${MAKE_FLAGS} ROOT=${WRKINST}
+DESTDIRNAME=	ROOT
 
 post-extract:
 	mkdir ${WRKDIST}/platforms/unix/vm-sound-OpenBSD

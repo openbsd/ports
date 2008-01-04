@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	powerful programming editor
 
@@ -19,8 +19,9 @@ WANTLIB=		ICE SM X11 c ncurses
 ALL_TARGET=	xwpe
 
 CONFIGURE_STYLE=gnu
+DESTDIRNAME=	none
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I${X11BASE}/include'
-FAKE_FLAGS=	${MAKE_FLAGS} prefix=${WRKINST}${PREFIX} MANDIR=${WRKINST}${PREFIX}/man
+FAKE_FLAGS=	prefix=${WRKINST}${PREFIX} MANDIR=${WRKINST}${PREFIX}/man
 
 USE_X11=	Yes
 NO_REGRESS=	Yes

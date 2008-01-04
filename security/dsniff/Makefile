@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.40 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	sniffing tools for penetration testing
 
@@ -38,6 +38,6 @@ WANTLIB+=	ICE SM X11 Xmu
 
 NO_REGRESS=	Yes
 
-FAKE_FLAGS=	install_prefix="${WRKINST}"
+DESTDIRNAME=	install_prefix
 
 .include <bsd.port.mk>

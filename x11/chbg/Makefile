@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=		Desktop wallpaper manager and X11 screensaver
 
@@ -27,8 +27,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng"
 
 # Will install some stub files for gnome. Needed if Gnome not installed
 # when packaging.
-FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} \
-			GNOME_PREFIX=${PREFIX}
+FAKE_FLAGS=		GNOME_PREFIX=${PREFIX}
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

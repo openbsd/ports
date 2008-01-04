@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/12/19 21:27:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=		high performance embedded database library
 
@@ -27,6 +27,5 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-iconv
 
 MAKE_FLAGS=	LIBVER=${LIBqdbm_VERSION:R} LIBREV=${LIBqdbm_VERSION:E}
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 .include <bsd.port.mk>

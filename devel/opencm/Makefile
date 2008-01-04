@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.27 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=		OpenCM change management system
 
@@ -43,7 +43,6 @@ MAKE_FLAGS+= LIBZ=-lz USOURCE_SUBDIRS="libgdiff src"
 MAKE_FLAGS+= LIBGC=
 MAKE_FLAGS+=		infodir=${PREFIX}/info
 MAKE_FLAGS+=		mandir=${PREFIX}/man
-FAKE_FLAGS=		${MAKE_FLAGS}
 
 post-install:
 	gunzip ${PREFIX}/info/opencm.info.gz

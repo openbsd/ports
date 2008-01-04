@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2007/12/14 15:08:18 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.24 2008/01/04 17:48:36 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,7 +44,8 @@ MAKE_FLAGS=	INSTALL='install -c' \
 		INSTALL_SCRIPT='install -c -m 555' \
 		LIBRlapack_VERSION=${LIBRlapack_VERSION}
 
-FAKE_FLAGS=	PREFIX=${PREFIX} DESTDIR=${WRKINST} \
+DESTDIRNAME=	DESTDIR
+FAKE_FLAGS=	PREFIX=${PREFIX} \
 		LIBRlapack_VERSION=${LIBRlapack_VERSION}
 
 post-install:

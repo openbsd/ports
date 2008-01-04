@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2007/12/11 12:45:08 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2008/01/04 17:48:38 espie Exp $
 
 COMMENT-main=	server-side HTML-embedded scripting language
 COMMENT-fastcgi=stand-alone FastCGI version of PHP
@@ -51,7 +51,7 @@ LIB_DEPENDS=	xml2.>=8::textproc/libxml
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
 INSTALL_TARGET= install-headers install-build install-programs
-FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
+DESTDIRNAME=	INSTALL_ROOT
 
 post-patch:
 	mv ${WRKDIR}/suhosin-${SUHOSIN_V} ${WRKSRC}/ext/suhosin

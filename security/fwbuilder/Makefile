@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=firewall gui
 CATEGORIES=net security
@@ -20,7 +20,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder
 
 MODULES=	x11/qt3
-FAKE_FLAGS=	INSTALL_ROOT=${WRKINST} ${MAKE_FLAGS}
+DESTDIRNAME=	INSTALL_ROOT
 LIB_DEPENDS=	fwcompiler.>=9,fwbuilder.>=9::security/libfwbuilder
 NO_REGRESS=	Yes
 USE_X11=	Yes

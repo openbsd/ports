@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	convert man pages to HTML
 
@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--with-distro=openbsd-3
 CONFIGURE_ARGS+= --disable-lynx		# requires lynxcgi support
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/helpers
 
-FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
-		sysconfdir=${PREFIX}/share/examples/man2web
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/man2web
 
 .include <bsd.port.mk>

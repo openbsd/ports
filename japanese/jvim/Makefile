@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/16 00:33:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2008/01/04 17:48:35 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 COMMENT=	Japanized Vim
@@ -68,7 +68,7 @@ MAKE_FILE=	makefile.junx
 ALL_TARGET=jvim jcat jfold jgrep
 
 MAKE_FLAGS=${BFLAGS} PREFIX='${PREFIX}'
-FAKE_FLAGS=${BFLAGS} PREFIX='${WRKINST}${PREFIX}'
+FAKE_FLAGS=PREFIX='${WRKINST}${PREFIX}'
 
 NO_REGRESS=	Yes
 

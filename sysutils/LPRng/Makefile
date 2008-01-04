@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/09/15 21:14:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.36 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	enhanced printer spooler
 
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
 		--disable-nls
 
 CFLAGS+=	-Dlog=mylog
-FAKE_FLAGS=	DESTDIR=${WRKINST} POSTINSTALL=NO prefix=${TRUEPREFIX} \
+FAKE_FLAGS=	POSTINSTALL=NO prefix=${TRUEPREFIX} \
 		MAN=${TRUEPREFIX}/man \
 		FILTER_DIR=${TRUEPREFIX}/libexec/filters \
 		LPD_PERMS_PATH=${TRUEPREFIX}${CONFDIR}/lpd.perms \

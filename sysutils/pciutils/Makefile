@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:37 espie Exp $
 
 NOT_FOR_ARCHS=		sparc m68k m88k vax
 
@@ -24,8 +24,7 @@ MASTER_SITES=		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/
 USE_GMAKE=		Yes
 
 MAKE_ENV=		CC="${CC}"
-FAKE_FLAGS=		PREFIX=${TRUEPREFIX} DESTDIR=${WRKINST} \
-			MANDIR=${TRUEPREFIX}/man
+FAKE_FLAGS=		PREFIX=${TRUEPREFIX} MANDIR=${TRUEPREFIX}/man
 
 NO_REGRESS=		Yes
 

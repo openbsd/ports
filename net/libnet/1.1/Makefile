@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/31 14:03:28 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:37 espie Exp $
 
 REVISION=	1.1
 VERSION=	${REVISION}.2.1
@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 
 AUTOCONF_VERSION=	2.59
 MAKE_FLAGS=	LIBnet_VERSION=${LIBnet_VERSION}
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 CONFIGURE_ENV=	LIBNET_CONFIG_LIBS="-L${LOCALBASE}/lib/libnet-1.1" \
 		LIBNET_CONFIG_CFLAGS="-I${LOCALBASE}/include/libnet-1.1"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	symbolics math system
 
@@ -27,7 +27,7 @@ PKG_ARCH=	*
 do-build:
 	touch ${WRKDIST}/srcdir.mk
 
-FAKE_FLAGS=prefix=${TRUEPREFIX}/ DESTDIR=${WRKINST}
+FAKE_FLAGS=prefix=${TRUEPREFIX}/ 
 
 post-install:
 	${INSTALL_DATA} ${WRKDIST}/jacal.info ${PREFIX}/info

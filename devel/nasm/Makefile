@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	general-purpose multi-platform x86 assembler
 
@@ -24,7 +24,7 @@ CONFIGURE_STYLE= gnu
 
 NO_REGRESS=	Yes
 
-FAKE_FLAGS=	INSTALLROOT="${WRKINST}"
+DESTDIRNAME=	INSTALLROOT
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nasm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2008/01/04 17:48:38 espie Exp $
 
 LANGS= ca cs cy da de el en_GB es et eu fi fr \
 	hu it ja lv ms nb nl pl pt pt_BR ru sk sl sr sr@Latn \
@@ -39,7 +39,6 @@ MODKDE_VERSION=
 CONFIGURE_STYLE=gnu
 
 MAKE_FLAGS+=MEINPROC=
-FAKE_FLAGS=DESTDIR=${WRKINST} MEINPROC=
 CONFIGURE_ARGS+=-C
 
 DESCR=${PKGDIR}/DESCR

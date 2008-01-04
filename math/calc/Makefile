@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 
@@ -28,8 +28,6 @@ MAKE_FLAGS=\
 	READLINE_LIB='-lreadline -lcurses' \
 	LCC=${CC} \
 	CFLAGS='${CFLAGS} -DCALC_SRC $${CCWARN}'
-
-FAKE_FLAGS=${MAKE_FLAGS}
 
 REGRESS_TARGET=	check
 

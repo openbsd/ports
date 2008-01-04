@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-pthread \
 		--disable-libgadu-openssl
 MAKE_FLAGS=	LIBgadu_VERSION=${LIBgadu_VERSION}
-FAKE_FLAGS=	LIBgadu_VERSION=${LIBgadu_VERSION}
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes

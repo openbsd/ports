@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/28 21:18:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=	IBM 3270 terminal emulator for the X Window System
 
@@ -32,6 +32,6 @@ CONFIGURE_ARGS=		--with-fontdir=${PREFIX}/lib/X11/fonts/x3270 \
 WRKDIST=		${WRKDIR}/x3270-3.3
 
 FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples \
-			PREFIX=${PREFIX} DESTDIR=${WRKINST}
+			PREFIX=${PREFIX}
 
 .include <bsd.port.mk>

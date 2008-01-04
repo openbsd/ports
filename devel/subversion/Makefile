@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2007/10/25 10:00:03 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2008/01/04 17:48:34 espie Exp $
 
 COMMENT-main=	subversion revision control system
 COMMENT-perl=	perl interface to subversion
@@ -157,11 +157,11 @@ do-regress:
 post-install:
 .if !${FLAVOR:L:Mno_bindings}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${FAKE_FLAGS} install-swig-py
+		${ALL_FAKE_FLAGS} install-swig-py
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${FAKE_FLAGS} install-swig-pl
+		${ALL_FAKE_FLAGS} install-swig-pl
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${FAKE_FLAGS} install-swig-rb
+		${ALL_FAKE_FLAGS} install-swig-rb
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/backup

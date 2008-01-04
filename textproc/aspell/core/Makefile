@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:59:37 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2008/01/04 17:48:37 espie Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 DISTNAME=	aspell-0.50.5
@@ -46,7 +46,7 @@ post-install:
 	cd ${WRKDIR}/aspell-$i; \
  	ASPELL=${WRKSRC}/prog/aspell \
 	  WORD_LIST_COMPRESS=${WRKSRC}/prog/word-list-compress \
-	  ${MAKE} ${FAKE_FLAGS} install
+	  ${MAKE} ${ALL_FAKE_FLAGS} install
 .endfor
 
 .include <bsd.port.mk>

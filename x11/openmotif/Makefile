@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2007/10/17 07:57:03 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.34 2008/01/04 17:48:38 espie Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -38,7 +38,6 @@ USE_LIBTOOL=		Yes
 MAKE_FLAGS=		SOMRMREV=${LIBMrm_VERSION}	\
 			SOUILREV=${LIBUil_VERSION}	\
 			SOXMREV=${LIBXm_VERSION}
-FAKE_FLAGS=		${MAKE_FLAGS} ${DESTDIRNAME}=${WRKINST}
 
 pre-configure:
 # fix sections

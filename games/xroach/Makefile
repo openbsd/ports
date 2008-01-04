@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 18:01:04 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	cockroaches hide under your windows
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c m
 
 FAKE_FLAGS=	MANDIR="${PREFIX}/man/cat" BINDIR="${PREFIX}/bin" \
-		DESTDIR="${WRKINST}" BINOWN="root" BINMODE="755"
+		BINOWN="root" BINMODE="755"
 
 USE_X11=	Yes
 

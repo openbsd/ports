@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/10/19 14:32:57 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.33 2008/01/04 17:48:35 espie Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
@@ -91,8 +91,7 @@ MAKE_FLAGS=		LIBavutil_VERSION=$(LIBavutil_VERSION) \
 			LIBavformat_EXTRALIBS="-L${WRKBUILD}/libavutil -L${WRKBUILD}/libavcodec ${LIBavformat_EXTRALIBS}" \
 			LIBpostproc_EXTRALIBS="-L${WRKBUILD}/libavutil ${LIBpostproc_EXTRALIBS}"
 
-FAKE_FLAGS=		DESTDIR=${WRKINST} \
-			LDCONFIG=true \
+FAKE_FLAGS=		LDCONFIG=true \
 			LIBavutil_VERSION=$(LIBavutil_VERSION) \
 			LIBavcodec_VERSION=$(LIBavcodec_VERSION) \
 			LIBavformat_VERSION=$(LIBavformat_VERSION) \

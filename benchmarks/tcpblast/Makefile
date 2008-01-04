@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 21:30:27 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	measure the throughput of a TCP connection
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-FAKE_FLAGS=	BINDIR="${PREFIX}/bin" DESTDIR="${WRKINST}" 
+FAKE_FLAGS=	BINDIR="${PREFIX}/bin"
 
 NO_CHECKSUM=	Yes
 

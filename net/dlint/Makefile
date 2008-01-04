@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=		DNS zone verification tool
 
@@ -21,6 +21,6 @@ MASTER_SITES=		http://www.domtools.com/pub/
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
-FAKE_FLAGS=		DESTROOT=${WRKINST}
+DESTDIRNAME=		DESTROOT
 
 .include <bsd.port.mk>

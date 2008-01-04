@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.61 2008/01/04 17:48:38 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -37,7 +37,6 @@ MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include/freetype2" \
 		LD_LIBRARY_PATH="${WRKDIST}/lib"
 MAKE_FLAGS=	DESIGNER_SUBDIR=dummy LIBqt_VERSION=$(LIBqt_VERSION)
-FAKE_FLAGS=	$(MAKE_FLAGS) DESTDIR=$(WRKINST)
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-gif -system-libmng -system-libpng -system-jpeg \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/02 15:35:01 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/04 17:48:34 espie Exp $
 arm-elf/
 arm-elf/lib/
 bin/arm-elf-c++
@@ -7,7 +7,6 @@ bin/arm-elf-g++
 bin/arm-elf-gcc
 bin/arm-elf-gcc-3.4.5
 bin/arm-elf-gccbug
-bin/arm-elf-gcov
 lib/gcc/
 lib/gcc/arm-elf/
 lib/gcc/arm-elf/3.4.5/

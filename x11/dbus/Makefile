@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/01 11:04:28 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=		message system
 
@@ -37,7 +37,6 @@ CONFIGURE_ARGS=		--localstatedir=/var \
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
-FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/dbus \
-			DESTDIR=${WRKINST}
+FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/dbus
 
 .include <bsd.port.mk>

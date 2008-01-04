@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/01/04 17:48:36 espie Exp $
 
 COMMENT=	browse or page through a text file
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m termcap
 
-FAKE_FLAGS=	DESTDIR="${WRKINST}" DOC_DIR='$$(prefix)/share/doc/most'
+FAKE_FLAGS=	DOC_DIR='$$(prefix)/share/doc/most'
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=DEPBASE=${DEPBASE}

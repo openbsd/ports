@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/01/04 17:48:38 espie Exp $
 
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
@@ -26,8 +26,8 @@ MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			LIBS="-L${X11BASE}/lib -lXxf86vm -lXpm -lXext -lX11" \
 			INCLUDES="-I${X11BASE}/include"
 
-FAKE_FLAGS=		ROOT="${DESTDIR}" \
-			DOCFILES="ChangeLog PROBLEMS README README.tiling"
+DESTDIRNAME=	ROOT
+FAKE_FLAGS=		DOCFILES="ChangeLog PROBLEMS README README.tiling"
 
 NO_REGRESS=		Yes
 

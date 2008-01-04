@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.34 2008/01/04 17:48:33 espie Exp $
 
 COMMENT=	u-law to gsm encoding audio converter and library
 
@@ -19,7 +19,7 @@ WANTLIB=		c
 MAKE_FLAGS=	CC="${CC}" DEBUG="${CFLAGS}" LDINC='-L$$(LIB)' \
 		LIBgsm_VERSION=${LIBgsm_VERSION}
 
-FAKE_FLAGS=	${MAKE_FLAGS} INSTALL_ROOT="${WRKINST}${PREFIX}"
+FAKE_FLAGS=	INSTALL_ROOT="${WRKINST}${PREFIX}"
 
 WRKDIST=	${WRKDIR}/gsm-1.0-pl10
 NO_REGRESS=	Yes

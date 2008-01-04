@@ -1,5 +1,5 @@
 # $RuOBSD: Makefile,v 1.3 2002/04/10 05:14:52 form Exp $
-# $OpenBSD: Makefile,v 1.35 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.36 2008/01/04 17:48:34 espie Exp $
 
 COMMENT=		Joe's Own Editor
 
@@ -18,8 +18,7 @@ WANTLIB=		c ncurses m util
 
 CONFIGURE_STYLE=	gnu
 
-FAKE_FLAGS=	DESTDIR=${WRKINST} \
-		sysconf_joedir=${PREFIX}/share/examples/joe \
+FAKE_FLAGS=	sysconf_joedir=${PREFIX}/share/examples/joe \
 		sysconf_docdir=${PREFIX}/share/doc/joe
 
 .include <bsd.port.mk>
