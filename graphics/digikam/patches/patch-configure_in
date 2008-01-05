@@ -1,21 +1,21 @@
-$OpenBSD: patch-configure_in,v 1.2 2007/03/15 08:07:39 espie Exp $
---- configure.in.orig	Sun Mar  4 21:33:34 2007
-+++ configure.in	Wed Mar  7 09:22:57 2007
-@@ -194,7 +194,7 @@ have_lcms='no'
- if test "$have_lcms_header" = 'yes'
- then
+$OpenBSD: patch-configure_in,v 1.3 2008/01/05 21:56:35 espie Exp $
+--- configure.in.orig	Sat Dec 22 18:19:48 2007
++++ configure.in	Sat Jan  5 12:47:55 2008
+@@ -196,7 +196,7 @@ then
+     saved_cflags="$CFLAGS"
+     saved_ldflags="$LDFLAGS"
      saved_libs=$LIBS
 -    LIBS="$LIBS -llcms"
 +    LIBS="$LIBS -llcms -lm"
+     CFLAGS="$CFLAGS $all_includes"
+     LDFLAGS="$LDFLAGS $all_libraries"
      AC_TRY_LINK([
- #define inline __inline /* gcc is in ansi mode */
- #include LCMS_HEADER
-@@ -204,7 +204,7 @@ choke!
+@@ -208,7 +208,7 @@ choke!
  ], [
  cmsOpenProfileFromFile("foo", "r");
  ],
 -        [LCMS_LIBS='-llcms'; have_lcms='yes'])
 +        [LCMS_LIBS='-llcms -lm'; have_lcms='yes'])
      LIBS=$saved_libs
- fi
- 
+     CFLAGS=$saved_cflags
+     LDFLAGS=$saved_ldflags

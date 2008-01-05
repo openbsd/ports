@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2007/12/16 00:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2008/01/05 21:56:35 espie Exp $
 
 COMMENT=		digital image kde application
 CATEGORIES=		graphics x11 x11/kde
-V=			0.9.2
+V=			0.9.3
 DISTNAME=		digikam-$V
-PKGNAME=		${DISTNAME}p1
-SHARED_LIBS +=	digikam              2.0      # .0.0
+PKGNAME=		${DISTNAME}
+SHARED_LIBS +=	digikam              3.0      # .0.0
 HOMEPAGE=		http://www.digikam.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES=		${DISTNAME}.tar.bz2
@@ -29,7 +29,7 @@ WANTLIB=	util m c ICE Xrender SM pthread z stdc++ \
 
 MODULES=	x11/kde
 
-MODKDE_VERSION=		3.5.7
+MODKDE_VERSION=		3.5.8
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}

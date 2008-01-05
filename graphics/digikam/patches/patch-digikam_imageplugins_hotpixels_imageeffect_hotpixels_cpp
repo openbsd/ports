@@ -1,13 +1,12 @@
-$OpenBSD: patch-digikam_imageplugins_hotpixels_imageeffect_hotpixels_cpp,v 1.1 2007/06/28 15:10:34 espie Exp $
---- digikam/imageplugins/hotpixels/imageeffect_hotpixels.cpp.orig	Thu Jun 28 15:51:58 2007
-+++ digikam/imageplugins/hotpixels/imageeffect_hotpixels.cpp	Thu Jun 28 15:52:18 2007
-@@ -157,8 +157,9 @@ void ImageEffect_HotPixels::slotAddBlackFrame()
+$OpenBSD: patch-digikam_imageplugins_hotpixels_imageeffect_hotpixels_cpp,v 1.2 2008/01/05 21:56:35 espie Exp $
+--- digikam/imageplugins/hotpixels/imageeffect_hotpixels.cpp.orig	Sat Dec 22 18:19:47 2007
++++ digikam/imageplugins/hotpixels/imageeffect_hotpixels.cpp	Sat Jan  5 12:48:40 2008
+@@ -155,7 +155,8 @@ void ImageEffect_HotPixels::resetValues(void)
+ 
+ void ImageEffect_HotPixels::slotAddBlackFrame()
  {
-     //Does one need to do this if digikam did so already?
-     KImageIO::registerFormats(); 
-+    QString empty;
-     
 -    KFileDialog fileSelectDialog(QString(), KImageIO::pattern(), this, "", true);
++    QString empty;
 +    KFileDialog fileSelectDialog(empty, KImageIO::pattern(), this, "", true);
      fileSelectDialog.setCaption(i18n("Select Black Frame Image"));
      fileSelectDialog.setURL(m_blackFrameURL.path());
