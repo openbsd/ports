@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2007/08/25 13:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2008/01/05 19:01:23 matthieu Exp $
 
 COMMENT=	GNU gettext
 
@@ -29,8 +29,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-included-gettext \
-		--with-libiconv-prefix="${LOCALBASE}" \
-		--with-libexpat-prefix="${X11BASE}"
+		--with-libiconv-prefix="${LOCALBASE}"
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
