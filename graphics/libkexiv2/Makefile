@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/05 21:55:50 espie Exp $
 
 COMMENT=	kde wrapper around exiv2
 CATEGORIES=	graphics
-DISTNAME=	libkexiv2-0.1.5
+DISTNAME=	libkexiv2-0.1.6
 PKGNAME=	${DISTNAME}
 HOMEPAGE=	http://www.kipi-plugins.org/
 EXTRACT_SUFX=	.tar.bz2
@@ -13,7 +13,7 @@ MODGNU_CONFIG_GUESS_DIRS?=${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS+=${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV+=	${MODKDE_CONFIGURE_ENV}
 
-SHARED_LIBS +=	kexiv2                  1.0   # .2.1
+SHARED_LIBS +=	kexiv2                  2.0   # .2.1
 
 
 SHARED_ONLY=	Yes
@@ -28,7 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xrender iconv intl jpeg m png \
-		pthread util z idn art_lgpl_2 Xau Xdmcp
+		util z idn art_lgpl_2 Xau Xdmcp
 LIB_DEPENDS=	exiv2.>=0.1:exiv2->=0.12:graphics/exiv2 \
 		kdecore.>=7,DCOP,kdefx::x11/kde/libs3
 
