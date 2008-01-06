@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_build_v1_gcc-tools_jam,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
---- tools/build/v1/gcc-tools.jam.orig	Sat Nov 19 20:21:16 2005
-+++ tools/build/v1/gcc-tools.jam	Fri Nov  3 15:18:51 2006
-@@ -60,7 +60,7 @@ flags gcc LINKFLAGS <runtime-link>static
+$OpenBSD: patch-tools_build_v1_gcc-tools_jam,v 1.2 2008/01/06 00:01:15 deanna Exp $
+--- tools/build/v1/gcc-tools.jam.orig	Sat Nov 19 14:21:16 2005
++++ tools/build/v1/gcc-tools.jam	Mon Dec 31 02:29:05 2007
+@@ -60,7 +60,7 @@ flags gcc LINKFLAGS <runtime-link>static : -static ;
  flags gcc CFLAGS <debug-symbols>on : -g ;
  flags gcc LINKFLAGS <debug-symbols>on : -g ;
  flags gcc CFLAGS <optimization>off : -O0 ;
@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_build_v1_gcc-tools_jam,v 1.1.1.1 2006/11/05 19:20:43 wilfr
  
  # Other optimizations we might want for GCC
  # -fforce-mem -fomit-frame-pointer
-@@ -478,6 +478,7 @@ actions gcc-Link-action bind NEEDLIBS NE
+@@ -478,6 +478,7 @@ actions gcc-Link-action bind NEEDLIBS NEEDIMPS
      $(.SET_EXIT)
      $(SHELL_SET)$(gSHELL_LIBPATH)=$(LINK_LIBPATH)$(gAPPEND_LD_LIBRARY_PATH)
      $(SHELL_EXPORT)$(gSHELL_LIBPATH)

@@ -1,0 +1,27 @@
+$OpenBSD: patch-libs_python_src_object_protocol_cpp,v 1.1 2008/01/06 00:01:15 deanna Exp $
+--- libs/python/src/object_protocol.cpp.orig	Mon Dec 31 13:11:50 2007
++++ libs/python/src/object_protocol.cpp	Mon Dec 31 13:14:06 2007
+@@ -107,9 +107,9 @@ namespace // slicing code copied directly out of the P
+ 
+       if (sq && sq->sq_slice && ISINT(v) && ISINT(w)) {
+           int ilow = 0, ihigh = INT_MAX;
+-          if (!_PyEval_SliceIndex(v, &ilow))
++          if (!_PyEval_SliceIndex(v, (Py_ssize_t*) &ilow))
+               return NULL;
+-          if (!_PyEval_SliceIndex(w, &ihigh))
++          if (!_PyEval_SliceIndex(w, (Py_ssize_t*) &ihigh))
+               return NULL;
+           return PySequence_GetSlice(u, ilow, ihigh);
+       }
+@@ -134,9 +134,9 @@ namespace // slicing code copied directly out of the P
+ 
+       if (sq && sq->sq_slice && ISINT(v) && ISINT(w)) {
+           int ilow = 0, ihigh = INT_MAX;
+-          if (!_PyEval_SliceIndex(v, &ilow))
++          if (!_PyEval_SliceIndex(v, (Py_ssize_t*) &ilow))
+               return -1;
+-          if (!_PyEval_SliceIndex(w, &ihigh))
++          if (!_PyEval_SliceIndex(w, (Py_ssize_t*) &ihigh))
+               return -1;
+           if (x == NULL)
+               return PySequence_DelSlice(u, ilow, ihigh);

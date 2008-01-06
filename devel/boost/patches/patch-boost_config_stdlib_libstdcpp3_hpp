@@ -1,6 +1,6 @@
-$OpenBSD: patch-boost_config_stdlib_libstdcpp3_hpp,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
+$OpenBSD: patch-boost_config_stdlib_libstdcpp3_hpp,v 1.2 2008/01/06 00:01:15 deanna Exp $
 --- boost/config/stdlib/libstdcpp3.hpp.orig	Thu Dec  1 10:00:33 2005
-+++ boost/config/stdlib/libstdcpp3.hpp	Fri Nov  3 13:07:29 2006
++++ boost/config/stdlib/libstdcpp3.hpp	Mon Dec 31 02:29:05 2007
 @@ -29,6 +29,15 @@
  #  define _REENTRANT
  #endif
@@ -25,4 +25,3 @@ $OpenBSD: patch-boost_config_stdlib_libstdcpp3_hpp,v 1.1.1.1 2006/11/05 19:20:43
  #endif
  
  #if (defined(linux) || defined(__linux) || defined(__linux__)) && defined(__arm__) && defined(_GLIBCPP_HAVE_GTHR_DEFAULT)
-

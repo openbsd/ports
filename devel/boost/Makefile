@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2007/12/18 20:46:03 deanna Exp $
+# $OpenBSD: Makefile,v 1.11 2008/01/06 00:01:15 deanna Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
-PKGNAME=	boost-${VERSION}p1
+PKGNAME=	boost-${VERSION}p2
 
 VERSION=	1.33.1
 DISTNAME=	boost_${VERSION:S/./_/g}
@@ -17,6 +17,8 @@ SHARED_LIBS=	boost_date_time			0.0 \
 		boost_prg_exec_monitor-mt	0.0 \
 		boost_program_options		0.0 \
 		boost_program_options-mt	0.0 \
+		boost_python			0.0 \
+		boost_python-mt			0.0 \
 		boost_regex			0.0 \
 		boost_regex-mt			0.0 \
 		boost_serialization		0.0 \
@@ -49,6 +51,12 @@ REGRESS_TARGET=	check
 
 WANTLIB=	z c
 
+MODULES=	lang/python
+MODPY_RUNDEP=	No
+
+# python.port.mk makes assumptions about an empty CONFIGURE_STYLE
+CONFIGURE_STYLE=none
+
 do-configure:
 	@cd ${WRKSRC}/libs/config && \
 		${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure && \
@@ -56,7 +64,9 @@ do-configure:
 
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure \
-		--without-libraries=python
+	    --with-python=${MODPY_BIN} \
+	    --with-python-root=${LOCALBASE} \
+	    --with-python-version=${MODPY_VERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/jam_src/bin.*/bjam \
