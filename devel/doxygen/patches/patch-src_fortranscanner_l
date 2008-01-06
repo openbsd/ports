@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fortranscanner_l,v 1.1 2008/01/06 10:02:59 eric Exp $
+--- src/fortranscanner.l.orig	Wed Dec 19 21:53:40 2007
++++ src/fortranscanner.l	Wed Dec 19 21:55:52 2007
+@@ -1132,7 +1132,7 @@ static Argument *addFortranParameter(const QCString &t
+ {
+   //cout<<"addFortranParameter(): "<<name<<" DOCS:"<<(docs.isNull()?QString("null"):docs)<<endl;
+   Argument *ret = 0;
+-  if (current_root->argList==0) return FALSE;
++  if (current_root->argList==0) return NULL;
+   ArgumentListIterator ali(*current_root->argList);
+   Argument *a;
+   for (ali.toFirst();(a=ali.current());++ali)

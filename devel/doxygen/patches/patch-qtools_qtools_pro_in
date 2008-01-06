@@ -1,7 +1,7 @@
-$OpenBSD: patch-qtools_qtools_pro_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
---- qtools/qtools.pro.in.orig	Sun May  1 23:27:26 2005
-+++ qtools/qtools.pro.in	Sun May  1 23:27:34 2005
-@@ -76,7 +76,7 @@ win32:SOURCES +=  qfile_win32.cpp \
+$OpenBSD: patch-qtools_qtools_pro_in,v 1.2 2008/01/06 10:02:59 eric Exp $
+--- qtools/qtools.pro.in.orig	Mon Sep  4 22:53:41 2006
++++ qtools/qtools.pro.in	Wed Dec 19 20:34:17 2007
+@@ -78,7 +78,7 @@ win32:SOURCES +=  qfile_win32.cpp \
  		  qfileinfo_win32.cpp
  
  INCLUDEPATH = .

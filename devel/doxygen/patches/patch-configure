@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.2 2005/07/26 05:45:08 alek Exp $
---- configure.orig	Sun Jul 10 16:54:15 2005
-+++ configure	Mon Jul 25 21:52:27 2005
+$OpenBSD: patch-configure,v 1.3 2008/01/06 10:02:59 eric Exp $
+--- configure.orig	Fri Oct 26 16:27:08 2007
++++ configure	Sat Jan  5 22:21:36 2008
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#! /bin/sh
  #
- # $Id: patch-configure,v 1.2 2005/07/26 05:45:08 alek Exp $
+ # $Id: patch-configure,v 1.3 2008/01/06 10:02:59 eric Exp $
  #
-@@ -241,7 +241,7 @@ if test "$f_wizard" = YES; then
+@@ -259,7 +259,7 @@ if test "$f_wizard" = YES; then
      echo "  QTDIR environment variable not set!"
      echo -n "  Checking for Qt..."
      for d in /usr/{lib,share,qt}/{qt-3,qt3,qt,qt*,3}; do
@@ -16,7 +16,7 @@ $OpenBSD: patch-configure,v 1.2 2005/07/26 05:45:08 alek Exp $
          QTDIR=$d
        fi
      done
-@@ -264,10 +264,6 @@ if test "$f_wizard" = YES; then
+@@ -285,10 +285,6 @@ if test "$f_wizard" = YES; then
        echo "QTDIR is set to $QTDIR, but include directory $QTDIR/include does not exist!"
        exit 2
      fi
@@ -25,9 +25,20 @@ $OpenBSD: patch-configure,v 1.2 2005/07/26 05:45:08 alek Exp $
 -      exit 2
 -    fi
      echo " headers $QTDIR/include,"
-     echo "                     libraries $QTDIR/lib"  
-     if test -n "`ls $QTDIR/lib/* | grep qt-mt`"; then
-@@ -456,7 +452,7 @@ EOF
+     echo "                     libraries $QTDIR/$LIBDIR"  
+     if test -n "`ls $QTDIR/$LIBDIR/* | grep qt-mt`"; then
+@@ -436,9 +432,7 @@ configPWD=`pwd`
+ 
+ cat > .makeconfig <<EOF
+ DOXYGEN   = $configPWD
+-TMAKEPATH = $configPWD/tmake/lib/$f_platform
+-ENV       = env TMAKEPATH=\$(TMAKEPATH)
+-TMAKE     = $configPWD/tmake/bin/tmake
++TMAKE     = /usr/local/bin/tmake
+ MAKE      = $f_make
+ PERL      = $f_perl
+ RM        = rm -f
+@@ -518,7 +512,7 @@ EOF
  fi
  if test "$f_wizard" = YES; then
    cat >> .tmakeconfig <<EOF
@@ -36,7 +47,7 @@ $OpenBSD: patch-configure,v 1.2 2005/07/26 05:45:08 alek Exp $
  EOF
  fi
  
-@@ -482,17 +478,16 @@ EOF
+@@ -544,20 +538,19 @@ EOF
       if test $i = Makefile.in; then
         echo "" >> $DST
         echo "all: src/version.cpp " >> $DST
@@ -49,7 +60,11 @@ $OpenBSD: patch-configure,v 1.2 2005/07/26 05:45:08 alek Exp $
 +       echo "	(cd src && \$(MAKE))" >> $DST
         if test $f_wizard = YES; then
 -         echo "	\$(MAKE) -C addon/doxywizard" >> $DST
-+         echo "	(cd addon/doxywizard && rm -rf obj && \$(MAKE))" >> $DST
++         echo "	(cd addon/doxywizard && \$(MAKE))" >> $DST
+        fi
+        if test $f_app = YES; then
+-         echo "	\$(MAKE) -C addon/doxyapp" >> $DST
++         echo "	(cd addon/doxyapp && \$(MAKE))" >> $DST
         fi
         echo "" >> $DST
         echo "doxywizard_install:" >> $DST

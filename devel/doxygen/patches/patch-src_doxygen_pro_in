@@ -1,18 +1,18 @@
-$OpenBSD: patch-src_doxygen_pro_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
---- src/doxygen.pro.in.orig	Mon Jan  3 20:17:55 2005
-+++ src/doxygen.pro.in	Sun May  1 23:57:39 2005
+$OpenBSD: patch-src_doxygen_pro_in,v 1.2 2008/01/06 10:02:59 eric Exp $
+--- src/doxygen.pro.in.orig	Tue Jun  5 21:54:19 2007
++++ src/doxygen.pro.in	Wed Dec 19 22:04:12 2007
 @@ -18,7 +18,7 @@ TEMPLATE     =	app.t
  CONFIG       =	console warn_on $extraopts
  HEADERS      =	doxygen.h 
  SOURCES      =	main.cpp 
--unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5
-+unix:LIBS                  += -L../lib -L$(LOCALBASE)/lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5 -lz
+-unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5 
++unix:LIBS                  += -L../lib -L$(LOCALBASE)/lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5 -liconv -lz
  win32:INCLUDEPATH          += .
- win32-mingw:LIBS           += -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5
- win32-msvc:LIBS            += qtools.lib png.lib md5.lib doxygen.lib doxycfg.lib shell32.lib 
-@@ -28,6 +28,7 @@ win32-borland:TMAKE_LFLAGS += -L..\lib -
+ win32-mingw:LIBS           += -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5 
+ win32-msvc:LIBS            += qtools.lib png.lib md5.lib doxygen.lib doxycfg.lib shell32.lib iconv.lib
+@@ -28,6 +28,7 @@ win32-borland:TMAKE_LFLAGS += -L..\lib -L$(BCB)\lib\ps
  win32:TMAKE_CXXFLAGS       += -DQT_NODLL
- win32-g++:LIBS             = -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5
+ win32-g++:LIBS             = -L../lib -ldoxygen -ldoxycfg -lqtools -lpng -lmd5 -liconv
  win32-g++:TMAKE_CXXFLAGS   += -fno-exceptions -fno-rtti
 +TMAKE_CXXFLAGS             += $(_CFLAGS)
  INCLUDEPATH                += ../qtools ../libpng ../libmd5 .

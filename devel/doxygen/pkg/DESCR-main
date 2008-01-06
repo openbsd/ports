@@ -19,10 +19,22 @@ generated automatically.
 To take full advantage of doxygen's features the following additional
 ports should be installed:
 
- - print/teTeX for generating LaTeX, Postscript, and PDF output.
+ - print/texlive for generating LaTeX, Postscript, and PDF output.
  - math/graphviz for the include dependency graphs, the graphical
    inheritance graphs, and the collaboration graphs.
  - print/ghostscript
 
 Flavors:
         * gui -- build Qt frontend
+
+Note:
+
+When generating certain filenames (for example directory listing with
+the html backend), doxygen uses an md5 sum of the source path.  This
+is a problem for the ports framework, as the sources location can vary
+(/usr/obj/ports/..., usr/ports/.../w-..., /usr/ports/mystuff/.../w-...).
+
+This port has been modified so that when running doxygen, the
+DOXYGEN_ENCODE_PATH_STRIP environment variable can be set to a prefix
+to be stripped from a path before its md5 sum is calculated.  Ports
+using doxygen should use "DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}".
