@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2007/10/25 09:30:22 wilfried Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2008/01/06 13:48:13 espie Exp $
 @pkgpath x11/qt4
 %%SHARED%%
 bin/assistant4
@@ -1767,6 +1767,7 @@ include/X11/qt4/QtNetwork/QIPv6Address
 include/X11/qt4/QtNetwork/QNetworkAddressEntry
 include/X11/qt4/QtNetwork/QNetworkInterface
 include/X11/qt4/QtNetwork/QNetworkProxy
+include/X11/qt4/QtNetwork/QSsl
 include/X11/qt4/QtNetwork/QSslCertificate
 include/X11/qt4/QtNetwork/QSslCipher
 include/X11/qt4/QtNetwork/QSslError

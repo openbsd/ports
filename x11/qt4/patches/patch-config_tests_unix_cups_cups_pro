@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_tests_unix_cups_cups_pro,v 1.1 2007/12/11 08:00:06 jakemsr Exp $
---- config.tests/unix/cups/cups.pro.orig	Mon Oct 29 16:59:11 2007
-+++ config.tests/unix/cups/cups.pro	Mon Oct 29 17:06:55 2007
+$OpenBSD: patch-config_tests_unix_cups_cups_pro,v 1.2 2008/01/06 13:48:12 espie Exp $
+--- config.tests/unix/cups/cups.pro.orig	Tue Dec  4 17:43:18 2007
++++ config.tests/unix/cups/cups.pro	Mon Dec 24 12:17:32 2007
 @@ -1,4 +1,4 @@
  SOURCES = cups.cpp
  CONFIG -= qt dylib

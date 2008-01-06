@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.14 2007/10/25 09:30:22 wilfried Exp $
+@comment $OpenBSD: PLIST-html,v 1.15 2008/01/06 13:48:13 espie Exp $
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
 share/doc/qt4/html/aboutqt.html
@@ -724,6 +724,11 @@ share/doc/qt4/html/images/insertrowinmodelview.png
 share/doc/qt4/html/images/interview-demo.png
 share/doc/qt4/html/images/interview-shareddirmodel.png
 share/doc/qt4/html/images/itemview-examples.png
+share/doc/qt4/html/images/itemviews-editabletreemodel-indexes.png
+share/doc/qt4/html/images/itemviews-editabletreemodel-items.png
+share/doc/qt4/html/images/itemviews-editabletreemodel-model.png
+share/doc/qt4/html/images/itemviews-editabletreemodel-values.png
+share/doc/qt4/html/images/itemviews-editabletreemodel.png
 share/doc/qt4/html/images/itemviewspuzzle-example.png
 share/doc/qt4/html/images/javaiterators1.png
 share/doc/qt4/html/images/javaiterators2.png
@@ -1430,6 +1435,15 @@ share/doc/qt4/html/itemviews-customsortfiltermodel-window-h.html
 share/doc/qt4/html/itemviews-customsortfiltermodel.html
 share/doc/qt4/html/itemviews-dirview-main-cpp.html
 share/doc/qt4/html/itemviews-dirview.html
+share/doc/qt4/html/itemviews-editabletreemodel-editabletreemodel-qrc.html
+share/doc/qt4/html/itemviews-editabletreemodel-main-cpp.html
+share/doc/qt4/html/itemviews-editabletreemodel-mainwindow-cpp.html
+share/doc/qt4/html/itemviews-editabletreemodel-mainwindow-h.html
+share/doc/qt4/html/itemviews-editabletreemodel-treeitem-cpp.html
+share/doc/qt4/html/itemviews-editabletreemodel-treeitem-h.html
+share/doc/qt4/html/itemviews-editabletreemodel-treemodel-cpp.html
+share/doc/qt4/html/itemviews-editabletreemodel-treemodel-h.html
+share/doc/qt4/html/itemviews-editabletreemodel.html
 share/doc/qt4/html/itemviews-pixelator-imagemodel-cpp.html
 share/doc/qt4/html/itemviews-pixelator-imagemodel-h.html
 share/doc/qt4/html/itemviews-pixelator-images-qrc.html
