@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/10/26 01:23:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2008/01/06 17:13:04 naddy Exp $
 
 COMMENT=	companion library to APR
 
@@ -34,7 +34,6 @@ AUTOCONF_VERSION=2.59
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-dbm=db4 \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib/db4 \
-		--with-expat=${X11BASE} \
 		--with-iconv=${LOCALBASE} \
 		--includedir=${LOCALBASE}/include/apr-1${MT}/ \
 		--with-apr=${LOCALBASE}/bin/apr-1${MT}-config

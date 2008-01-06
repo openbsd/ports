@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/15 21:43:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/06 17:13:04 naddy Exp $
 
 COMMENT=	on-screen virtual keyboard
 DISTNAME=	matchbox-keyboard-0.1
@@ -22,9 +22,7 @@ RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common \
 WANTLIB=	X11 Xau Xdmcp Xext Xft Xrender Xtst c expat fontconfig freetype z
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--enable-nls \
-		--with-expat-includes=${X11BASE}/include \
-		--with-expat-lib=${X11BASE}/lib
+CONFIGURE_ARGS+=--enable-nls
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

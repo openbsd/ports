@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/16 02:53:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/01/06 17:13:04 naddy Exp $
 
 COMMENT=		source code auditing tool
 
@@ -21,11 +21,9 @@ MASTER_SITES=		http://www.securesoftware.com/rats/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
 
 CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ARGS+=	--with-expat-lib=${X11BASE}/lib \
-			--with-expat-include=${X11BASE}/include \
-			--libdir=${WRKINST}${PREFIX}/share/rats \
+CONFIGURE_ARGS+=	--libdir=${WRKINST}${PREFIX}/share/rats \
 			--datadir=${WRKINST}${PREFIX}/share/rats
-MAKE_FLAGS=		CFLAGS='${CFLAGS} -I${X11BASE}/include \
+MAKE_FLAGS=		CFLAGS='${CFLAGS} \
 			  -DHAVE_LIBEXPAT=1 -DHAVE_EXPAT_H=1 \
 			  -DDATADIR=\"${LOCALBASE}/share/rats\"'
 

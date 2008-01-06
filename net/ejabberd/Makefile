@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/02 12:16:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/06 17:13:04 naddy Exp $
 
 COMMENT=		jabber server written in Erlang
 
@@ -35,8 +35,7 @@ FAKE_FLAGS+=		EJABBERDDIR=${WRKINST}/${PREFIX}/lib/ejabberd \
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 SHARED_ONLY=		Yes
-CONFIGURE_ARGS+=	--with-expat=${X11BASE} \
-			--enable-mod_pubsub \
+CONFIGURE_ARGS+=	--enable-mod_pubsub \
 			--enable-mod_irc \
 			--enable-mod_muc \
 			--enable-eldap \

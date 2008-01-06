@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.28 2008/01/06 17:13:04 naddy Exp $
 
 COMMENT=	fast, compact and portable XSL/XSLT processor
 
@@ -32,7 +32,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autocfg
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	SABLOT_GPL=1
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
-		--enable-debugger --with-expat-prefix=${X11BASE} \
+		--enable-debugger \
 		--with-iconv-prefix=${LOCALBASE} --with-readline \
 		--with-html-dir=${PREFIX}/share/doc/sablotron
 
