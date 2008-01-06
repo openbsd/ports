@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2007/12/31 11:33:39 eric Exp $
+# $OpenBSD: Makefile,v 1.196 2008/01/06 19:26:34 landry Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -34,6 +34,7 @@
      SUBDIR += exiv2
      SUBDIR += feh
      SUBDIR += ffmpeg
+     SUBDIR += ffmpegthumbnailer
      SUBDIR += flash
      SUBDIR += fnlib
      SUBDIR += fxtv
