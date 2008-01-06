@@ -1,0 +1,65 @@
+Tips and tricks for a pleasant Xfce desktop environment experience
+==================================================================
+
+- installation
+In order to have a basic Xfce desktop, you should install the
+following core packages (this will install the required libraries):
+$ sudo pkg_add xfce-mcs-manager xfce-mcs-plugins xfce-utils xfce4-panel
+xfce4-session thunar xfdesktop xfwm4
+
+You should also install some basic theme packages:
+$ sudo pkg_add xfce4-icon-theme xfwm4-themes gtk-xfce-engine
+
+And some cool xfce-companion apps for a nicer desktop:
+$ sudo pkg_add terminal orage notification-daemon-xfce ristretto
+mousepad xfce4-appfinder xfce4-mixer
+
+Finally, have a look at available panel plugins here:
+http://goodies.xfce.org/projects/panel-plugins/start
+And make your choice from plugins available in the ports-tree.
+
+If you want the one-line comment for each port, just do:
+$ cd /usr/ports/x11/xfce4 && make show=COMMENT
+
+- startup
+Xfce desktop environment is launched through the 'startxfce4' script,
+provided by the xfce-utils package. Simply add
+'!!LOCALBASE!!/bin/startxfce4'
+to your .xinitrc/.xsession script if you use startx, xdm or slim.
+If you use gdm or kdm, have a look at
+http://wiki.xfce.org/faq#starting_xfce
+
+- logging out and shutting down the computer
+If your installation supports complete shutdown, clicking on the logout
+button on panel will permit you to either logout, rebooting or halt
+the computer, provided you have the needed sudo credentials.
+If you don't want to have to enter your password, simply add this line
+to the /etc/sudoers file using visudo:
+
+$your_username ALL=NOPASSWD: !!PREFIX!!/libexec/xfsm-shutdown-helper
+
+- thunar file manager tips
+thunar can display resizable svg icons if you install the librsvg
+package (prefer using the no_gnome flavor). A nice svg icon theme is
+provided by the tango-icon-theme package.
+You can have a look at hotplugd(8) if you want some kind of auto-mount
+feature in thunar, provided natively by HAL on Linux and FreeBSD.
+Also, see http://thunar.xfce.org/pwiki/documentation/faq.
+
+- terminal, special characters and localized applications
+If you use a particular non-ascii encoding and have problems seeing
+special characters in terminal (like accentued characters in french),
+you should add this line to your .xinitrc/.xsession before startxfce4:
+
+export LC_CTYPE=fr_FR.ISO8859-15
+
+where LC_CTYPE is defined this way (thanks benny) :
+http://foo-projects.org/pipermail/xfce4-dev/2006-July/020680.html
+Similarly, if you want localized applications, add this line too:
+
+export LC_MESSAGES=fr
+
+where 'fr' is your language tag.
+
+More generally, http://wiki.xfce.org/faq and http://wiki.xfce.org/tips
+are the best resources for user-level documentation.

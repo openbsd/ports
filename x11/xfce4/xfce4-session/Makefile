@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2007/12/18 20:46:31 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/06 12:00:07 landry Exp $
 
 COMMENT=	xfce4 session manager
 
 V=		4.4.2
 DISTNAME=	xfce4-session-${V}
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=  xfsm-4.2             0.1      # .0.1
 
@@ -37,5 +38,12 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xdamage Xrender fontconfig freetype \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 pcre \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
 		startup-notification-1 xfce4util
+
+post-install:
+	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},' \
+		-e 's,!!LOCALBASE!!,${LOCALBASE},' \
+		${FILESDIR}/README.OpenBSD > ${WRKBUILD}/README.OpenBSD
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
+		${PREFIX}/share/xfce4/
 
 .include <bsd.port.mk>
