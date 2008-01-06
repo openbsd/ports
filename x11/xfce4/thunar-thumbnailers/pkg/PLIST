@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/06 20:19:11 landry Exp $
+libexec/dvi-thumbnailer
+libexec/eps-thumbnailer
+libexec/ffmpeg-thumbnailer
+libexec/fig-thumbnailer
+libexec/odf-thumbnailer
+libexec/ogg-thumbnailer
+libexec/pdf-thumbnailer
+libexec/ps-thumbnailer
+libexec/svgz-thumbnailer
+share/mime/packages/thunar-thumbnailers.xml
+share/thumbnailers/dvi-thumbnailer.desktop
+share/thumbnailers/eps-thumbnailer.desktop
+share/thumbnailers/ffmpeg-thumbnailer.desktop
+share/thumbnailers/fig-thumbnailer.desktop
+share/thumbnailers/odf-thumbnailer.desktop
+share/thumbnailers/ogg-thumbnailer.desktop
+share/thumbnailers/pdf-thumbnailer.desktop
+share/thumbnailers/ps-thumbnailer.desktop
+share/thumbnailers/svgz-thumbnailer.desktop
+@exec %D/bin/update-mime-database %D/share/mime/
+@unexec %D/bin/update-mime-database %D/share/mime/

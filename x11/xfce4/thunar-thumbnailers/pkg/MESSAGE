@@ -1,0 +1,4 @@
+To update your local thumbnailers cache (located in
+~/.cache/Thunar/thumbnailers.cache), now run as user :
+${PREFIX}/libexec/thunar-vfs-update-thumbnailers-cache-1
+Then run Thunar -q to make it reload this cache.

@@ -1,0 +1,10 @@
+Thunar-thumnbnailers, using ImageMagick and ffmpegthumbnailer provides
+additional thumbnailers to Thunar for the following formats:
+- EPS
+- Postscript
+- PDF
+- DVI
+- OpenDocument Format
+- SVGZ (compressed SVG)
+- Fig (.fig)
+- Video files
