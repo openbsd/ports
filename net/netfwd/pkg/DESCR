@@ -1,0 +1,13 @@
+Netfwd is network traffic forwarder. Netfwd acts as a bridge between
+local and remote source. The source can be one of the following: TCP,
+UDP, UNIX socket and TTY device. Netfwd works with both IPv4 and IPv6
+address families.
+
+Working with TTY device means that you can redirect serial port (i.e.
+COM port) data to any destination. For example, it's possible to create
+software serial port loopback or forward serial port data to network
+(aka serial to network convertor).
+
+Using this tool you can even convert one protocol into another. For
+example, you accept incoming connection on TCP port and forward it into
+UNIX socket on your local computer.
