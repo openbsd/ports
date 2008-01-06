@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.505 2008/01/03 18:44:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.506 2008/01/06 22:38:02 eric Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -171,6 +171,7 @@
      SUBDIR += net-snmp
      SUBDIR += netatalk
      SUBDIR += netdude
+     SUBDIR += netfwd
      SUBDIR += netpipes
      SUBDIR += netrate
      SUBDIR += netsed
