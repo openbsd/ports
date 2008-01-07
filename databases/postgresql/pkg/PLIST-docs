@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.33 2007/09/20 19:20:48 mbalmer Exp $
+@comment $OpenBSD: PLIST-docs,v 1.34 2008/01/07 16:34:52 mbalmer Exp $
 @comment lib/libpq.so.5
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/FAQ
@@ -498,6 +498,7 @@ share/doc/postgresql/html/release-7-3-18.html
 share/doc/postgresql/html/release-7-3-19.html
 share/doc/postgresql/html/release-7-3-2.html
 share/doc/postgresql/html/release-7-3-20.html
+share/doc/postgresql/html/release-7-3-21.html
 share/doc/postgresql/html/release-7-3-3.html
 share/doc/postgresql/html/release-7-3-4.html
 share/doc/postgresql/html/release-7-3-5.html
@@ -516,6 +517,7 @@ share/doc/postgresql/html/release-7-4-15.html
 share/doc/postgresql/html/release-7-4-16.html
 share/doc/postgresql/html/release-7-4-17.html
 share/doc/postgresql/html/release-7-4-18.html
+share/doc/postgresql/html/release-7-4-19.html
 share/doc/postgresql/html/release-7-4-2.html
 share/doc/postgresql/html/release-7-4-3.html
 share/doc/postgresql/html/release-7-4-4.html
@@ -531,6 +533,7 @@ share/doc/postgresql/html/release-8-0-11.html
 share/doc/postgresql/html/release-8-0-12.html
 share/doc/postgresql/html/release-8-0-13.html
 share/doc/postgresql/html/release-8-0-14.html
+share/doc/postgresql/html/release-8-0-15.html
 share/doc/postgresql/html/release-8-0-2.html
 share/doc/postgresql/html/release-8-0-3.html
 share/doc/postgresql/html/release-8-0-4.html
@@ -542,6 +545,7 @@ share/doc/postgresql/html/release-8-0-9.html
 share/doc/postgresql/html/release-8-0.html
 share/doc/postgresql/html/release-8-1-1.html
 share/doc/postgresql/html/release-8-1-10.html
+share/doc/postgresql/html/release-8-1-11.html
 share/doc/postgresql/html/release-8-1-2.html
 share/doc/postgresql/html/release-8-1-3.html
 share/doc/postgresql/html/release-8-1-4.html
@@ -556,6 +560,7 @@ share/doc/postgresql/html/release-8-2-2.html
 share/doc/postgresql/html/release-8-2-3.html
 share/doc/postgresql/html/release-8-2-4.html
 share/doc/postgresql/html/release-8-2-5.html
+share/doc/postgresql/html/release-8-2-6.html
 share/doc/postgresql/html/release-8-2.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html
@@ -822,7 +827,7 @@ share/doc/postgresql/html/wal-intro.html
 share/doc/postgresql/html/wal-reliability.html
 share/doc/postgresql/html/wal.html
 share/doc/postgresql/html/warm-standby.html
-share/doc/postgresql/html/x71187.html
+share/doc/postgresql/html/x71195.html
 share/doc/postgresql/html/xaggr.html
 share/doc/postgresql/html/xfunc-c.html
 share/doc/postgresql/html/xfunc-internal.html
