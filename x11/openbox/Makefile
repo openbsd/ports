@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2007/10/16 14:46:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2008/01/07 14:34:15 ajacoutot Exp $
 
 COMMENT=	small, fast & usable window manager
 
-DISTNAME=	openbox-3.4.4
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS+=	obparser	6.0 # .16.1
-SHARED_LIBS+=	obrender	6.0 # .16.1
+DISTNAME=	openbox-3.4.5
+SHARED_LIBS+=	obparser	6.0 # .16.2
+SHARED_LIBS+=	obrender	6.0 # .16.2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/
@@ -22,7 +21,7 @@ MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
 
 WANTLIB=	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
 		fontconfig freetype m z glib-2.0 gmodule-2.0 \
-		gobject-2.0 Xau Xcursor Xdmcp Xfixes expat
+		gobject-2.0 Xau Xcursor Xdmcp Xfixes expat pcre
 
 MODULES=	devel/gettext
 LIB_DEPENDS+=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
