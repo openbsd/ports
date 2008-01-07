@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/31 14:49:51 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/07 12:05:30 robert Exp $
 
 COMMENT=	web-based document management system
 
@@ -10,6 +10,7 @@ DISTFILES=	ktdms-src-oss-${V}.tgz
 CATEGORIES=	www
 HOMEPAGE=	http://www.knowledgetree.com/
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
