@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/12/18 15:56:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2008/01/08 23:13:23 landry Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-docs=		documentation
@@ -7,14 +7,14 @@ COMMENT-clamav=		clamav plugin
 COMMENT-dillo=		dillo plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.0.1
+V=			3.2.0
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}p1
+PKGNAME-main=			${DISTNAME}
 FULLPKGNAME-docs=		claws-mail-docs-${V}
-FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p0
-FULLPKGNAME-clamav=		claws-mail-clamav-${V}p0
-FULLPKGNAME-dillo=		claws-mail-dillo-${V}p0
-FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}p0
+FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
+FULLPKGNAME-clamav=		claws-mail-clamav-${V}
+FULLPKGNAME-dillo=		claws-mail-dillo-${V}
+FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 
 CATEGORIES=		mail news
 
@@ -35,7 +35,7 @@ DIST_SUBDIR=		claws
 
 MULTI_PACKAGES=		-main -docs -bogofilter -clamav -dillo \
 			-spamassassin
-FLAVORS=		jpilot gnomeprint compface ldap debug
+FLAVORS=		jpilot compface ldap debug
 FLAVOR?=
 
 FLAVOR_STRING=		${FLAVOR_EXT:S/-/,/g}
@@ -50,9 +50,9 @@ RUN_DEPENDS-dillo=	::${BUILD_PKGPATH} \
 RUN_DEPENDS-spamassassin=::${BUILD_PKGPATH} \
 			::mail/p5-Mail-SpamAssassin 
 
-WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-			Xcomposite Xdamage pcre \
-			Xrender crypto expat fontconfig freetype m ssl z
+WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+			Xi Xinerama Xrandr Xrender crypto expat fontconfig \
+			freetype m ssl z pcre
 
 WANTLIB-main=		${WANTLIB} ICE SM c pthread stdc++
 
@@ -71,12 +71,15 @@ LIB_DEPENDS=		atk-1.0::devel/atk \
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			:desktop-file-utils-*:devel/desktop-file-utils
+# at the moment, pgpcore/pgpinline/pgpmime plugins are built but not installed
+# http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=1348
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			gthread-2.0::devel/glib2 \
 			startup-notification-1::devel/startup-notification \
 			aspell::textproc/aspell/core \
 			gpgme::security/gpgme \
 			gpg-error::security/libgpg-error
+CONFIGURE_ARGS+=	--disable-gnomeprint
 
 LIB_DEPENDS-docs=
 PKG_ARCH-docs=	*
@@ -102,15 +105,6 @@ RUN_DEPENDS-main+=	::comms/jpilot
 CONFIGURE_ARGS+=	--disable-jpilot
 .endif
 
-.if ${FLAVOR:L:Mgnomeprint}
-WANTLIB-main+=		art_lgpl_2 xml2
-LIB_DEPENDS-main+=	gnomecanvas-2::x11/gnome/libgnomecanvas \
-			gnomeprint-2-2::x11/gnome/libgnomeprint \
-			gnomeprintui-2-2::x11/gnome/libgnomeprintui 
-.else
-CONFIGURE_ARGS+=	--disable-gnomeprint
-.endif
-
 .if ${FLAVOR:L:Mcompface}
 PERMIT_PACKAGE_CDROM=   No Fee
 PERMIT_DISTFILES_CDROM= No Fee
@@ -134,32 +128,35 @@ INSTALL_STRIP=
 TOOLS=		OOo2claws-mail.pl \
 		acroread2claws-mail.pl \
 		calypso_convert.pl \
+		claws-mail-compose-insert-files.pl \
 		convert_mbox.pl \
+		csv2addressbook.pl \
 		eud2gc.py \
 		filter_conv.pl filter_conv_new.pl \
 		fix_date.sh \
 		freshmeat_search.pl \
 		gif2xface.pl \
 		google_msgid.pl google_search.pl \
-		kmail2claws-mail.pl kmail2claws-mail_v2.pl \
 		kmail-mailbox2claws-mail.pl \
-		multiwebsearch.pl \
+		kmail2claws-mail.pl kmail2claws-mail_v2.pl \
+		mairix.sh \
+		mew2claws-mail.pl \
+		multiwebsearch.conf multiwebsearch.pl \
 		nautilus2claws-mail.sh \
 		outlook2claws-mail.pl \
-		sylprint.pl sylprint.rc \
+		popfile-link.sh \
 		tb2claws-mail tbird2claws.py \
 		textviewer.pl textviewer.sh \
 		thunderbird-filters-convertor.pl \
-		update-po \
 		uudec uuooffice \
 		vcard2xml.py \
-		README README.sylprint \
-		kdeservicemenu/install.sh kdeservicemenu/claws-mail-kdeservicemenu.pl \
+		README \
+		kdeservicemenu/install.sh \
+		kdeservicemenu/claws-mail-attach-files.desktop.template \
+		kdeservicemenu/claws-mail-kdeservicemenu.pl \
 		kdeservicemenu/README
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/claws-mail.desktop ${PREFIX}/share/applications/claws-mail.desktop
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/48x48/apps
 	${INSTALL_DATA} ${WRKSRC}/claws-mail.png ${PREFIX}/share/icons/hicolor/48x48/apps/claws-mail.png
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/64x64/apps
@@ -171,5 +168,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/${i} \
 	${PREFIX}/share/claws-mail/tools/${i}
 .endfor
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/claws-mail
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/claws-mail
 
 .include <bsd.port.mk>

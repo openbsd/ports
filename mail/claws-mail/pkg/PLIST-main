@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2007/12/18 15:56:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2008/01/08 23:13:23 landry Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 bin/claws-mail
@@ -11,7 +11,9 @@ include/claws-mail/addr_compl.h
 include/claws-mail/addrbook.h
 include/claws-mail/addrcache.h
 include/claws-mail/addrclip.h
+include/claws-mail/addrcustomattr.h
 include/claws-mail/addrdefs.h
+include/claws-mail/addrduplicates.h
 include/claws-mail/addressadd.h
 include/claws-mail/addressbook.h
 include/claws-mail/addressbook_foldersel.h
@@ -33,7 +35,6 @@ include/claws-mail/common/hooks.h
 include/claws-mail/common/log.h
 include/claws-mail/common/md5.h
 include/claws-mail/common/mgutils.h
-include/claws-mail/common/nntp.h
 include/claws-mail/common/passcrypt.h
 include/claws-mail/common/plugin.h
 include/claws-mail/common/prefs.h
@@ -75,6 +76,7 @@ include/claws-mail/etpan/etpan-errors.h
 include/claws-mail/etpan/etpan-thread-manager-types.h
 include/claws-mail/etpan/etpan-thread-manager.h
 include/claws-mail/etpan/imap-thread.h
+include/claws-mail/etpan/nntp-thread.h
 include/claws-mail/exphtmldlg.h
 include/claws-mail/expldifdlg.h
 include/claws-mail/export.h
@@ -196,6 +198,7 @@ include/claws-mail/prefs_template.h
 include/claws-mail/prefs_themes.h
 include/claws-mail/prefs_toolbar.h
 include/claws-mail/prefs_wrapping.h
+include/claws-mail/printing.h
 include/claws-mail/privacy.h
 include/claws-mail/procheader.h
 include/claws-mail/procmime.h
@@ -222,14 +225,14 @@ include/claws-mail/vcard.h
 include/claws-mail/wizard.h
 lib/claws-mail/
 lib/claws-mail/plugins/
-lib/claws-mail/plugins/pgpcore.la
-lib/claws-mail/plugins/pgpcore.so
-lib/claws-mail/plugins/pgpinline.deps
-lib/claws-mail/plugins/pgpinline.la
-lib/claws-mail/plugins/pgpinline.so
-lib/claws-mail/plugins/pgpmime.deps
-lib/claws-mail/plugins/pgpmime.la
-lib/claws-mail/plugins/pgpmime.so
+@comment lib/claws-mail/plugins/pgpcore.la
+@comment lib/claws-mail/plugins/pgpcore.so
+@comment lib/claws-mail/plugins/pgpinline.deps
+@comment lib/claws-mail/plugins/pgpinline.la
+@comment lib/claws-mail/plugins/pgpinline.so
+@comment lib/claws-mail/plugins/pgpmime.deps
+@comment lib/claws-mail/plugins/pgpmime.la
+@comment lib/claws-mail/plugins/pgpmime.so
 lib/claws-mail/plugins/trayicon.la
 lib/claws-mail/plugins/trayicon.so
 lib/pkgconfig/
@@ -241,10 +244,11 @@ share/claws-mail/
 share/claws-mail/tools/
 share/claws-mail/tools/OOo2claws-mail.pl
 share/claws-mail/tools/README
-share/claws-mail/tools/README.sylprint
 share/claws-mail/tools/acroread2claws-mail.pl
 share/claws-mail/tools/calypso_convert.pl
+share/claws-mail/tools/claws-mail-compose-insert-files.pl
 share/claws-mail/tools/convert_mbox.pl
+share/claws-mail/tools/csv2addressbook.pl
 share/claws-mail/tools/eud2gc.py
 share/claws-mail/tools/filter_conv.pl
 share/claws-mail/tools/filter_conv_new.pl
@@ -255,22 +259,24 @@ share/claws-mail/tools/google_msgid.pl
 share/claws-mail/tools/google_search.pl
 share/claws-mail/tools/kdeservicemenu/
 share/claws-mail/tools/kdeservicemenu/README
+share/claws-mail/tools/kdeservicemenu/claws-mail-attach-files.desktop.template
 share/claws-mail/tools/kdeservicemenu/claws-mail-kdeservicemenu.pl
 share/claws-mail/tools/kdeservicemenu/install.sh
 share/claws-mail/tools/kmail-mailbox2claws-mail.pl
 share/claws-mail/tools/kmail2claws-mail.pl
 share/claws-mail/tools/kmail2claws-mail_v2.pl
+share/claws-mail/tools/mairix.sh
+share/claws-mail/tools/mew2claws-mail.pl
+share/claws-mail/tools/multiwebsearch.conf
 share/claws-mail/tools/multiwebsearch.pl
 share/claws-mail/tools/nautilus2claws-mail.sh
 share/claws-mail/tools/outlook2claws-mail.pl
-share/claws-mail/tools/sylprint.pl
-share/claws-mail/tools/sylprint.rc
+share/claws-mail/tools/popfile-link.sh
 share/claws-mail/tools/tb2claws-mail
 share/claws-mail/tools/tbird2claws.py
 share/claws-mail/tools/textviewer.pl
 share/claws-mail/tools/textviewer.sh
 share/claws-mail/tools/thunderbird-filters-convertor.pl
-share/claws-mail/tools/update-po
 share/claws-mail/tools/uudec
 share/claws-mail/tools/uuooffice
 share/claws-mail/tools/vcard2xml.py
@@ -313,3 +319,5 @@ share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
 share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

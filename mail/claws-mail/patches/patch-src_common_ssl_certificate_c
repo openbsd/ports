@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_common_ssl_certificate_c,v 1.1 2008/01/08 23:13:23 landry Exp $
+--- src/common/ssl_certificate.c.orig	Tue Dec 18 19:40:50 2007
++++ src/common/ssl_certificate.c	Tue Dec 18 20:07:02 2007
+@@ -37,6 +37,9 @@
+ #include <glib.h>
+ #include <glib/gi18n.h>
+ 
++#include <sys/socket.h>
++#include <netinet/in.h>
++
+ #ifdef G_OS_WIN32
+ #include "winsock2.h"
+ #endif
