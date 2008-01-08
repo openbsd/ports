@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/08 15:33:26 ajacoutot Exp $
 
 COMMENT=	displays the status of multi-player Internet Game servers
 
-DISTNAME=	qstat24e
-PKGNAME=	qstat-2.4e
+DISTNAME=	qstat-2.11
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.qstat.org/
 
+# Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
 
-MASTER_SITES=	http://www.qstat.org/
+WANTLIB=	c
 
-NO_REGRESS=	Yes
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qstat/}
 
-DOCS=		CHANGES.txt qstat.txt qstatdoc.html
+CONFIGURE_STYLE=gnu
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qstat ${PREFIX}/bin
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qstat
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/qstat
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qstat
+	${INSTALL_DATA} ${WRKSRC}/CHANGES.txt ${WRKSRC}/qstatdoc.html \
+		${PREFIX}/share/doc/qstat
+	${INSTALL_DATA} ${WRKSRC}/qstat.cfg \
+		${PREFIX}/share/examples/qstat
 
 .include <bsd.port.mk>

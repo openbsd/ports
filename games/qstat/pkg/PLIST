@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/01/08 15:33:26 ajacoutot Exp $
 bin/qstat
 share/doc/qstat/
 share/doc/qstat/CHANGES.txt
-share/doc/qstat/qstat.txt
 share/doc/qstat/qstatdoc.html
+share/examples/qstat/
+share/examples/qstat/qstat.cfg
+@sample ${SYSCONFDIR}/qstat.cfg
