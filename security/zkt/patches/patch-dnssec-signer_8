@@ -1,0 +1,30 @@
+$OpenBSD: patch-dnssec-signer_8,v 1.1.1.1 2008/01/08 10:51:21 jakob Exp $
+--- dnssec-signer.8.orig	Wed Nov 21 14:31:22 2007
++++ dnssec-signer.8	Tue Jan  8 10:29:35 2008
+@@ -178,7 +178,7 @@ Print out the online help.
+ .SH SAMPLE USAGE
+ .TP 
+ .fam C
+-.B "dnssec-signer \-N /var/named/named.conf \-r \-v \-v 
++.B "dnssec-signer \-N /var/named/etc/named.conf \-r \-v \-v 
+ .fam T
+ Sign all secure zones found in the named.conf file and, if necessary,
+ trigger a reload of the zone.
+@@ -325,7 +325,7 @@ Specifies the name of the default global
+ 
+ .SH FILES
+ .TP
+-.I /var/named/dnssec.conf
++.I /var/named/etc/dnssec.conf
+ Built-in default global configuration file.
+ The name of the default global config file is settable via
+ the environment variable ZKT_CONFFILE.
+@@ -335,7 +335,7 @@ with option
+ .B \-Z
+ to create an initial config file.
+ .TP
+-.I /var/named/dnssec-<view>.conf
++.I /var/named/etc/dnssec-<view>.conf
+ View specific global configuration file.
+ .TP
+ .I ./dnssec.conf

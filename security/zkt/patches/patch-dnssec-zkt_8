@@ -1,0 +1,18 @@
+$OpenBSD: patch-dnssec-zkt_8,v 1.1.1.1 2008/01/08 10:51:21 jakob Exp $
+--- dnssec-zkt.8.orig	Wed Nov 21 14:31:38 2007
++++ dnssec-zkt.8	Tue Jan  8 10:30:11 2008
+@@ -424,12 +424,12 @@ Specifies the name of the default global
+ 
+ .SH FILES
+ .TP
+-.I /var/named/dnssec.conf
++.I /var/named/etc/dnssec.conf
+ Built-in default global configuration file.
+ The name of the default global config file is settable via
+ the environment variable ZKT_CONFFILE.
+ .TP
+-.I /var/named/dnssec-<view>.conf
++.I /var/named/etc/dnssec-<view>.conf
+ View specific global configuration file.
+ .TP
+ .I ./dnssec.conf
