@@ -1,23 +1,23 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.3 2007/05/01 15:50:01 rui Exp $
---- po/Makefile.in.in.orig	Tue May  1 13:33:40 2007
-+++ po/Makefile.in.in	Tue May  1 13:37:26 2007
-@@ -10,6 +10,8 @@
- #
- # Origin: gettext-0.14.4
+$OpenBSD: patch-po_Makefile_in_in,v 1.4 2008/01/08 23:02:29 rui Exp $
+--- po/Makefile.in.in.orig	Wed Dec 26 09:44:45 2007
++++ po/Makefile.in.in	Wed Dec 26 09:46:00 2007
+@@ -11,6 +11,8 @@
+ # Origin: gettext-0.17
+ GETTEXT_MACRO_VERSION = 0.17
  
 +DESTDIR =
 +
  PACKAGE = @PACKAGE@
  VERSION = @VERSION@
  PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
-@@ -24,8 +26,8 @@ VPATH = @srcdir@
- prefix = @prefix@
+@@ -26,8 +28,8 @@ prefix = @prefix@
  exec_prefix = @exec_prefix@
+ datarootdir = @datarootdir@
  datadir = @datadir@
--localedir = $(datadir)/locale
+-localedir = @localedir@
 -gettextsrcdir = $(datadir)/gettext/po
-+localedir = $(prefix)/share/locale 
-+gettextsrcdir = $(prefix)/share/gettext/po 
++localedir = $(prefix)/share/locale
++gettextsrcdir = $(prefix)/share/gettext/po
  
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@

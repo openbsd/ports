@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/01/08 23:02:28 rui Exp $
 
 COMMENT=		simple tcp re-engineering tool
 
-DISTNAME=		tcpreen-1.4.3
+DISTNAME=		tcpreen-1.4.4
 CATEGORIES=		net
 
-HOMEPAGE=		http://www.simphalempin.com/dev/tcpreen/
+HOMEPAGE=		http://www.remlab.net/tcpreen/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tcpreen/}
+MAINTAINER=		Rui Reis <rui@openbsd.org>
 
-# GPL
+MASTER_SITES=		http://www.remlab.net/files/tcpreen/stable/
+
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

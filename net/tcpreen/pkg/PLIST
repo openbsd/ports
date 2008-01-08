@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/01/08 23:02:29 rui Exp $
 bin/tcpreen
 @man man/man1/tcpreen.1
 share/locale/fr/LC_MESSAGES/tcpreen.mo
+share/locale/pt_BR/LC_MESSAGES/tcpreen.mo
