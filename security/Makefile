@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2007/12/16 23:56:46 simon Exp $
+# $OpenBSD: Makefile,v 1.191 2008/01/08 10:52:12 jakob Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -181,5 +181,6 @@
      SUBDIR += wpa_supplicant
      SUBDIR += xmlsec
      SUBDIR += zebedee
+     SUBDIR += zkt
 
 .include <bsd.port.subdir.mk>
