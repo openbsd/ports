@@ -1,0 +1,35 @@
+$OpenBSD: patch-pptpd_c,v 1.1 2008/01/08 16:50:27 naddy Exp $
+--- pptpd.c.orig	Thu Feb 17 03:04:59 2005
++++ pptpd.c	Mon Dec 31 09:55:06 2007
+@@ -36,6 +36,11 @@
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
++#ifdef __OpenBSD__
++#include <netinet/ip_gre.h>
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#endif
+ #include <sys/wait.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+@@ -415,6 +420,19 @@ int main(int argc, char **argv)
+ #endif
+ 	/* after we have our final pid... */
+ 	log_pid(pid_file);
++
++#ifdef __OpenBSD__
++       {
++       int mib[] = { CTL_NET, PF_INET, IPPROTO_GRE, GRECTL_ALLOW };
++       int gre_allow = 1;
++
++       if (sysctl(mib, 4, NULL, 0, &gre_allow, sizeof(gre_allow)) == -1) {
++               syslog(LOG_ERR, "PPTPD: failed to allow GRE, errno=%d\n",
++                       errno);
++               return 1;
++       }
++       }
++#endif
+ 
+ 	/* manage connections until SIGTERM */
+ 	pptp_manager(argc, argv);

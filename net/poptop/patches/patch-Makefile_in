@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2008/01/08 16:50:27 naddy Exp $
+--- Makefile.in.orig	Wed Aug  3 09:47:42 2005
++++ Makefile.in	Tue Jan  8 17:40:03 2008
+@@ -37,7 +37,7 @@ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ EXTRA_PROGRAMS =
+-sbin_PROGRAMS = pptpd$(EXEEXT) pptpctrl$(EXEEXT) bcrelay$(EXEEXT)
++sbin_PROGRAMS = pptpd$(EXEEXT) pptpctrl$(EXEEXT)
+ subdir = .
+ DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+@@ -77,8 +77,8 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+-SOURCES = $(bcrelay_SOURCES) $(pptpctrl_SOURCES) $(pptpd_SOURCES)
+-DIST_SOURCES = $(bcrelay_SOURCES) $(pptpctrl_SOURCES) $(pptpd_SOURCES)
++SOURCES = $(pptpctrl_SOURCES) $(pptpd_SOURCES)
++DIST_SOURCES = $(pptpctrl_SOURCES) $(pptpd_SOURCES)
+ man5dir = $(mandir)/man5
+ man8dir = $(mandir)/man8
+ NROFF = nroff
+@@ -106,7 +106,7 @@ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = -O2 -fno-builtin -Wall -DSBINDIR='"$(sbindir)"'
++CFLAGS = @CFLAGS@ -fno-builtin -Wall -DSBINDIR='"$(sbindir)"'
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CYGPATH_W = @CYGPATH_W@

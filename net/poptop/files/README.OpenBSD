@@ -1,10 +1,8 @@
                      PoPToP - Unix PPTP Server
                    ----------------------------
 1. GRE Support
-   PoPToP requires GRE support to be enabled. As of 3.6, this is now done
-   via a sysctl - net.inet.gre.allow. Modify /etc/sysctl.conf, adding a
-   line such as:
-        net.inet.gre.allow=1			# GRE Support for PoPToP
+   PoPToP requires GRE support to be enabled. It will be enabled at run time
+   by the pptpd daemon.
 2. Configuration of PPTP
    A sample configuration file is copied into your configuration directory
    (normally /etc) as pptpd.conf. Personalise this config file to suit. At
