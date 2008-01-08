@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_init2_c,v 1.1 2001/08/11 16:30:13 lebel Exp $
---- src/init2.c.orig	Sat Aug 11 00:19:17 2001
-+++ src/init2.c	Sat Aug 11 00:20:13 2001
+$OpenBSD: patch-src_init2_c,v 1.2 2008/01/08 10:50:49 ajacoutot Exp $
+--- src/init2.c.orig	Sun Aug  5 05:30:06 2001
++++ src/init2.c	Tue Jan  8 11:35:22 2008
 @@ -130,21 +130,18 @@ void init_file_paths(char *path)
  
  
  #else /* VM */
--
 +#define OPENBSD_VAR "/var/games/zangband"
  
+-
  	/*** Build the sub-directory names ***/
  
  	/* Build a path name */

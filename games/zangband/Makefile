@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 18:01:04 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/08 10:50:49 ajacoutot Exp $
 
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 VERSION=	2.6.2
 DISTNAME=	zangband-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/ \
 		ftp://ftp.planetmirror.com/pub/angband/Variant/ZAngband/ \
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	not-for-profit redistribution only
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c ncurses
 
 HOMEPAGE=		http://www.zangband.org/
@@ -39,13 +40,8 @@ WANTLIB+=		ICE SM X11 Xaw Xmu Xt
 CONFIGURE_ARGS+=	--without-x
 .endif
 
-# Autotools bootstrap
-
 post-patch:
 	@cd ${WRKSRC}; AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
-
-# autoconf...
-# autoheader...
 
 pre-configure:
 	@cd ${WRKSRC}; AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
