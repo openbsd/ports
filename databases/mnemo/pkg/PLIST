@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/11/03 23:03:41 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/01/09 23:12:01 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/LICENSE
 horde/${HORDE_MODULE}/README
@@ -25,6 +25,7 @@ horde/${HORDE_MODULE}/docs/UPGRADING
 horde/${HORDE_MODULE}/index.php
 horde/${HORDE_MODULE}/js/
 horde/${HORDE_MODULE}/js/fixUnstyledOptions.js
+horde/${HORDE_MODULE}/js/prototype.js
 horde/${HORDE_MODULE}/js/tables.js
 horde/${HORDE_MODULE}/lib/
 horde/${HORDE_MODULE}/lib/Block/
@@ -161,6 +162,7 @@ horde/${HORDE_MODULE}/po/sl_SI.po
 horde/${HORDE_MODULE}/po/sv_SE.po
 horde/${HORDE_MODULE}/po/zh_CN.po
 horde/${HORDE_MODULE}/po/zh_TW.po
+horde/${HORDE_MODULE}/pref_api.php
 horde/${HORDE_MODULE}/scripts/
 horde/${HORDE_MODULE}/scripts/.htaccess
 horde/${HORDE_MODULE}/scripts/import_vnotes.php
