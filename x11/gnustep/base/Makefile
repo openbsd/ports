@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/12/10 16:25:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/09 14:19:14 ajacoutot Exp $
 
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.14.1
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gnustep-base 1.14	# .1.14
+DISTNAME=	gnustep-base-1.14.2
+SHARED_LIBS=	gnustep-base 1.14	# .1.14.2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/
