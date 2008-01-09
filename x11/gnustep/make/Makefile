@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/12/16 12:39:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2008/01/09 14:18:31 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	GNUstep makefile package
 
-DISTNAME=	gnustep-make-2.0.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gnustep-make-2.0.4
 CATEGORIES=	devel x11/gnustep
 
 HOMEPAGE=	http://www.gnustep.org/
@@ -39,9 +38,5 @@ post-install:
 		< ${FILESDIR}/README.OpenBSD > ${PREFIX}/share/GNUstep/README.OpenBSD
 	${INSTALL_DATA} ${WRKSRC}/GNUstep.conf \
 		${PREFIX}/share/GNUstep/GNUstep.conf
-	${INSTALL_MAN} ${WRKSRC}/Documentation/openapp.1 \
-		${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/Documentation/GNUstep.7 \
-		${PREFIX}/man/man7
 
 .include <bsd.port.mk>

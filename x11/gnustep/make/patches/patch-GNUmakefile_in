@@ -1,7 +1,7 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
---- GNUmakefile.in.orig	Thu Mar  8 18:15:05 2007
-+++ GNUmakefile.in	Sat May 12 12:30:48 2007
-@@ -69,7 +69,7 @@ export GNUSTEP_TARGET_LDIR
+$OpenBSD: patch-GNUmakefile_in,v 1.2 2008/01/09 14:18:31 ajacoutot Exp $
+--- GNUmakefile.in.orig	Mon Dec 31 03:57:28 2007
++++ GNUmakefile.in	Wed Jan  9 14:55:53 2008
+@@ -70,7 +70,7 @@ export GNUSTEP_TARGET_LDIR
  export MAYBE_LIBRARY_COMBO
  
  INSTALL		= @INSTALL@
@@ -10,21 +10,40 @@ $OpenBSD: patch-GNUmakefile_in,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
  INSTALL_DATA	= @INSTALL_DATA@
  
  VERTAG = $(subst .,_,$(GNUSTEP_MAKE_VERSION))
-@@ -124,7 +124,6 @@ install: generated-files
+@@ -125,7 +125,6 @@ install: generated-files
  	 echo "Creating makefile directories in: $(makedir)"; \
- 	 $(srcdir)/mkinstalldirs \
- 		$(makedir) \
--		$(makedir)/$(GNUSTEP_TARGET_CPU) \
- 		$(makedir)/$(GNUSTEP_TARGET_DIR) \
- 		$(makedir)/$(GNUSTEP_TARGET_LDIR) \
- 		$(makedir)/Additional \
-@@ -133,9 +132,6 @@ install: generated-files
- 		$(makedir)/Instance \
- 		$(makedir)/Instance/Shared \
- 		$(makedir)/Instance/Documentation)
+ 	 "$(srcdir)/mkinstalldirs" \
+ 		"$(makedir)" \
+-		"$(makedir)/$(GNUSTEP_TARGET_CPU)" \
+ 		"$(makedir)/$(GNUSTEP_TARGET_DIR)" \
+ 		"$(makedir)/$(GNUSTEP_TARGET_LDIR)" \
+ 		"$(makedir)/Additional" \
+@@ -134,9 +133,6 @@ install: generated-files
+ 		"$(makedir)/Instance" \
+ 		"$(makedir)/Instance/Shared" \
+ 		"$(makedir)/Instance/Documentation")
 -	$(EC)(echo "Installing GNUstep configuration file in $(GNUSTEP_CONFIG_FILE)"; \
--	 $(srcdir)/mkinstalldirs "$(GNUSTEP_CONFIG_FILE_DIR)"; \
+-	 "$(srcdir)/mkinstalldirs" "$(GNUSTEP_CONFIG_FILE_DIR)"; \
 -	 $(INSTALL_DATA) GNUstep.conf "$(GNUSTEP_CONFIG_FILE)")
  	 $(EC)(echo "Installing gnustep-make support software")
  	 $(EC)(for f in config.guess config.sub install-sh mkinstalldirs \
  		clean_cpu.sh clean_os.sh \
+@@ -185,17 +181,11 @@ install: generated-files
+ 	  "$(srcdir)/mkinstalldirs" "$(mandir)/man1" \
+ 	                          "$(mandir)/man7"; \
+ 	  $(INSTALL_DATA) "$(srcdir)/Documentation/debugapp.1" "$(mandir)/man1"; \
+-	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man1/debugapp.1.gz" && gzip -9 "$(mandir)/man1/debugapp.1"; \
+ 	  $(INSTALL_DATA) "$(srcdir)/Documentation/gnustep-config.1" "$(mandir)/man1"; \
+-	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man1/gnustep-config.1.gz" && gzip -9 "$(mandir)/man1/gnustep-config.1"; \
+ 	  $(INSTALL_DATA) "$(srcdir)/Documentation/openapp.1" "$(mandir)/man1"; \
+-	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man1/openapp.1.gz" && gzip -9 "$(mandir)/man1/openapp.1"; \
+ 	  $(INSTALL_DATA) "$(srcdir)/Documentation/opentool.1" "$(mandir)/man1"; \
+-	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man1/opentool.1.gz" && gzip -9 "$(mandir)/man1/opentool.1"; \
+ 	  $(INSTALL_DATA) "$(srcdir)/Documentation/GNUstep.7" "$(mandir)/man7"; \
+-	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man7/GNUstep.7.gz" && gzip -9 "$(mandir)/man7/GNUstep.7"; \
+-	  $(INSTALL_DATA) "$(srcdir)/Documentation/library-combo.7" "$(mandir)/man7"; \
+-	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man7/library-combo.7.gz" && gzip -9 "$(mandir)/man7/library-combo.7")
++	  $(INSTALL_DATA) "$(srcdir)/Documentation/library-combo.7" "$(mandir)/man7")
+ 	$(EC)(if [ "@GNUSTEP_STRIP_MAKEFILES@" = "strip" ]; then \
+ 	   echo "Stripping makefiles and shell scripts..."; \
+ 	   cd "$(makedir)"; ./strip_makefiles.sh; \

@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/06/21 10:46:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/01/09 14:18:31 ajacoutot Exp $
 bin/debugapp
 bin/gnustep-config
 bin/openapp
 bin/opentool
+@man man/man1/debugapp.1
+@man man/man1/gnustep-config.1
 @man man/man1/openapp.1
+@man man/man1/opentool.1
 @man man/man7/GNUstep.7
+@man man/man7/library-combo.7
 share/GNUstep/
 share/GNUstep/GNUstep.conf
 @sample ${SYSCONFDIR}/GNUstep.conf
@@ -62,6 +66,7 @@ share/GNUstep/Makefiles/Master/gswbundle.make
 share/GNUstep/Makefiles/Master/java-tool.make
 share/GNUstep/Makefiles/Master/java.make
 share/GNUstep/Makefiles/Master/library.make
+share/GNUstep/Makefiles/Master/nsis.make
 share/GNUstep/Makefiles/Master/objc.make
 share/GNUstep/Makefiles/Master/palette.make
 share/GNUstep/Makefiles/Master/resource-set.make
@@ -113,6 +118,7 @@ share/GNUstep/Makefiles/messages.make
 share/GNUstep/Makefiles/mkinstalldirs
 share/GNUstep/Makefiles/names.make
 share/GNUstep/Makefiles/native-library.make
+share/GNUstep/Makefiles/nsi-app.template
 share/GNUstep/Makefiles/objc.make
 share/GNUstep/Makefiles/os.sh
 share/GNUstep/Makefiles/palette.make
