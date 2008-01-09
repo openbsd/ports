@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/09 10:32:49 mbalmer Exp $
 
 COMMENT=		general purpose dynamic array
 
-DISTNAME=		Judy-1.0.3
+DISTNAME=		Judy-1.0.4
 PKGNAME=		lib${DISTNAME}
-SHARED_LIBS +=	Judy                 1.3      # .1.3
+SHARED_LIBS +=	Judy                 1.4      # .1.4
 CATEGORIES=		devel
 
 HOMEPAGE=		http://judy.sourceforge.net/
