@@ -1,6 +1,6 @@
-$OpenBSD: patch-dnssec-signer_8,v 1.1.1.1 2008/01/08 10:51:21 jakob Exp $
+$OpenBSD: patch-dnssec-signer_8,v 1.2 2008/01/09 14:57:31 ajacoutot Exp $
 --- dnssec-signer.8.orig	Wed Nov 21 14:31:22 2007
-+++ dnssec-signer.8	Tue Jan  8 10:29:35 2008
++++ dnssec-signer.8	Wed Jan  9 15:37:07 2008
 @@ -178,7 +178,7 @@ Print out the online help.
  .SH SAMPLE USAGE
  .TP 
@@ -10,7 +10,7 @@ $OpenBSD: patch-dnssec-signer_8,v 1.1.1.1 2008/01/08 10:51:21 jakob Exp $
  .fam T
  Sign all secure zones found in the named.conf file and, if necessary,
  trigger a reload of the zone.
-@@ -325,7 +325,7 @@ Specifies the name of the default global
+@@ -325,7 +325,7 @@ Specifies the name of the default global configuration
  
  .SH FILES
  .TP
