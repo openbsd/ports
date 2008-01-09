@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/05/05 13:57:12 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/01/09 22:47:30 mbalmer Exp $
 horde/turba/
 horde/turba/LICENSE
 horde/turba/README
@@ -250,12 +250,12 @@ horde/turba/scripts/ldap/addou.pl
 horde/turba/scripts/ldap/core.schema.patch
 horde/turba/scripts/ldap/rfc2739.schema
 horde/turba/scripts/sql/
+horde/turba/scripts/sql/turba.mssql.sql
+horde/turba/scripts/sql/turba.mysql.sql
+horde/turba/scripts/sql/turba.oci8.sql
+horde/turba/scripts/sql/turba.pgsql.sql
+horde/turba/scripts/sql/turba.sql
 horde/turba/scripts/sql/turba.xml
-horde/turba/scripts/sql/turba_objects.mssql.sql
-horde/turba/scripts/sql/turba_objects.mysql.sql
-horde/turba/scripts/sql/turba_objects.oci8.sql
-horde/turba/scripts/sql/turba_objects.pgsql.sql
-horde/turba/scripts/sql/turba_objects.sql
 horde/turba/scripts/sql/turba_weddingguests.sql
 horde/turba/scripts/upgrades/
 horde/turba/scripts/upgrades/1.1_to_1.2.sql
