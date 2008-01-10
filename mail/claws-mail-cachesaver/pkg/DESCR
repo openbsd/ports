@@ -1,0 +1,2 @@
+This plugin saves the cache every 60 seconds.
+It helps avoiding the loss of metadata on crashes.

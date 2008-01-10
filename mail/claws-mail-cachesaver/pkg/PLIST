@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/10 09:04:14 landry Exp $
+lib/claws-mail/plugins/cachesaver.la
+lib/claws-mail/plugins/cachesaver.so
