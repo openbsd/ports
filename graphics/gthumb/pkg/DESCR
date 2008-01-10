@@ -1,0 +1,4 @@
+gThumb is an image viewer and organizer for the GNOME desktop
+environment.  It was originally based on GQView, and is designed to have
+a clean, simple interface.  Via gPhoto, gThumb can also acquire data
+directly from digital cameras.
