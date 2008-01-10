@@ -1,0 +1,5 @@
+The PDF Viewer plugin renders PDF and Postscript attachments in Claws
+Mail, using poppler library and ghostscript. It features:
+ * Browsing between document pages
+ * Displaying the PDF Index
+ * Search text inside the document
