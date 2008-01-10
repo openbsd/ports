@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/01/10 21:26:12 ajacoutot Exp $
+lib/gthumb/modules/libduplicates.so
+lib/gthumb/modules/libjpegtran.so
+lib/gthumb/modules/libphotoimporter.so
+lib/gthumb/modules/libpngexporter.so
+lib/gthumb/modules/libsearch.so
+lib/gthumb/modules/libwebexporter.so
+@lib lib/libgthumb.so.${LIBgthumb_VERSION}

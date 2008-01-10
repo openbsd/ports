@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgthumb_Makefile_in,v 1.1.1.1 2008/01/10 21:26:12 ajacoutot Exp $
+--- libgthumb/Makefile.in.orig	Wed Jan  9 12:02:19 2008
++++ libgthumb/Makefile.in	Wed Jan  9 12:02:31 2008
+@@ -315,7 +315,7 @@ INCLUDES = \
+ 
+ libgthumbdir = $(libdir)
+ libgthumb_LTLIBRARIES = libgthumb.la
+-libgthumb_la_LDFLAGS = -avoid-version -no-undefined
++libgthumb_la_LDFLAGS = -no-undefined
+ EEL_CANVAS_RECT = \
+ 	eel-canvas-rect.c	\
+ 	eel-canvas-rect.h
