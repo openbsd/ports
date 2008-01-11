@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2007/12/23 18:30:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.129 2008/01/11 09:38:16 winiger Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -97,9 +97,11 @@
      SUBDIR += postgresql
      SUBDIR += postgresql-jdbc
      SUBDIR += py-cdb
-     SUBDIR += py-ldap
+     SUBDIR += py-ldap,python2.4
+     SUBDIR += py-ldap,python2.5
      SUBDIR += py-mysql
-     SUBDIR += py-psycopg
+     SUBDIR += py-psycopg,python2.4
+     SUBDIR += py-psycopg,python2.5
      SUBDIR += py-psycopg2
      SUBDIR += py-sqlalchemy
      SUBDIR += py-sqlite
