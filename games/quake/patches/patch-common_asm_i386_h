@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_asm_i386_h,v 1.1 2003/04/22 14:15:33 naddy Exp $
---- common/asm_i386.h.orig	Tue Apr 22 16:19:34 2003
-+++ common/asm_i386.h	Tue Apr 22 16:19:47 2003
-@@ -21,7 +21,7 @@ Foundation, Inc., 59 Temple Place - Suit
+$OpenBSD: patch-common_asm_i386_h,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
+--- common/asm_i386.h.orig	Mon Jan 10 17:59:31 2000
++++ common/asm_i386.h	Fri Jan 11 17:46:14 2008
+@@ -21,7 +21,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #ifndef __ASM_I386__
  #define __ASM_I386__
  

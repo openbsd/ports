@@ -1,6 +1,6 @@
-$OpenBSD: patch-qw_server_Makefile_in,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
+$OpenBSD: patch-qw_server_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
 --- qw_server/Makefile.in.orig	Tue Jan 11 15:37:02 2000
-+++ qw_server/Makefile.in	Mon Jul 23 04:56:36 2001
++++ qw_server/Makefile.in	Fri Jan 11 17:46:15 2008
 @@ -16,7 +16,7 @@ COMMON_DIR=$(PROJECT_DIR)/common
  QW_COMMON_DIR= $(PROJECT_DIR)/qw_common
  BUILD_DIR = ../targets/qw_server
@@ -19,7 +19,7 @@ $OpenBSD: patch-qw_server_Makefile_in,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
  
  $(BUILD_DIR)/srv/%.o: $(COMMON_DIR)/%.c
  	$(MAKE_SURE_srv_DIR)
-@@ -121,7 +121,7 @@ $(BUILD_DIR)/srv/%.o: $(QW_COMMON_DIR)/%
+@@ -121,7 +121,7 @@ $(BUILD_DIR)/srv/%.o: $(QW_COMMON_DIR)/%.c
  
  $(BUILD_DIR)/srv/%.o: $(COMMON_DIR)/%.s
  	$(MAKE_SURE_srv_DIR)

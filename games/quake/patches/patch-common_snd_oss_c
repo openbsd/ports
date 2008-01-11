@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_snd_oss_c,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
---- common/snd_oss.c.orig	Mon Jul 23 05:23:56 2001
-+++ common/snd_oss.c	Mon Jul 23 05:24:12 2001
-@@ -30,6 +30,9 @@ Foundation, Inc., 59 Temple Place - Suit
+$OpenBSD: patch-common_snd_oss_c,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
+--- common/snd_oss.c.orig	Mon Jan 10 17:59:31 2000
++++ common/snd_oss.c	Fri Jan 11 17:46:14 2008
+@@ -30,6 +30,9 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #ifdef HAVE_SYS_MMAN_H
  # include <sys/mman.h>
  #endif

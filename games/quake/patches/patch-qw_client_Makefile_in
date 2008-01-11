@@ -1,6 +1,6 @@
-$OpenBSD: patch-qw_client_Makefile_in,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
---- qw_client/Makefile.in.orig	Mon Jul 23 05:30:00 2001
-+++ qw_client/Makefile.in	Mon Jul 23 05:31:19 2001
+$OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
+--- qw_client/Makefile.in.orig	Fri Jan 11 17:46:13 2008
++++ qw_client/Makefile.in	Fri Jan 11 17:46:15 2008
 @@ -17,9 +17,10 @@ mandir      = @mandir@
  
  BUILD_DIR    = ../targets/qw_client
@@ -84,7 +84,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
  
  $(GGIQUAKE): $(BUILD_DIR)/../$(GGIQUAKE)
  
-@@ -398,30 +400,30 @@ MAKE_SURE_gl_DIR = @DIR=gl; $(MAKE_SURE_
+@@ -398,30 +400,30 @@ MAKE_SURE_gl_DIR = @DIR=gl; $(MAKE_SURE_DIR)
  
  $(BUILD_DIR)/gl/%.o: $(SRC_DIR)/%.c
  	$(MAKE_SURE_gl_DIR)

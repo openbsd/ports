@@ -1,7 +1,7 @@
-$OpenBSD: patch-qw_server_sys_unix_c,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
---- qw_server/sys_unix.c.orig	Mon Jul 23 04:26:39 2001
-+++ qw_server/sys_unix.c	Mon Jul 23 04:26:39 2001
-@@ -25,7 +25,7 @@ Foundation, Inc., 59 Temple Place - Suit
+$OpenBSD: patch-qw_server_sys_unix_c,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
+--- qw_server/sys_unix.c.orig	Fri Jan 11 17:46:13 2008
++++ qw_server/sys_unix.c	Fri Jan 11 17:46:14 2008
+@@ -25,7 +25,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #endif
  
  // FIXME: use autoconf
