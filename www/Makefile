@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.321 2007/12/27 19:47:27 bernd Exp $
+# $OpenBSD: Makefile,v 1.322 2008/01/11 14:49:06 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -37,6 +37,7 @@
      SUBDIR += japana
      SUBDIR += jesred
      SUBDIR += junkbuster
+     SUBDIR += kazehakase
      SUBDIR += konqueror-embedded
      SUBDIR += kronolith
      SUBDIR += ktdms
