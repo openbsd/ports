@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.25 2008/01/11 14:05:35 ajacoutot Exp $
 
 COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
 COMMENT-content=	ur-quan masters: game content
@@ -22,7 +22,7 @@ DISTFILES=		${PDIST} ${CDIST}
 SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
-PKGNAME-main=		uqm-0.6.2
+PKGNAME-main=		uqm-0.6.2p1
 PKGNAME-content=	uqm-content-${VER}
 PKGNAME-remix1=		uqm-remix1-${VER}
 PKGNAME-remix2=		uqm-remix2-${VER}
@@ -52,8 +52,7 @@ PKG_ARCH-voice=		*
 RUN_DEPENDS=		:${PKGNAME-main}:games/uqm
 RUN_DEPENDS-content=	
 RUN_DEPENDS-main=	:${PKGNAME-content}:games/uqm,-content
-WANTLIB-main=		X11 Xext c m pthread usbhid z \
-			SDL
+WANTLIB-main=		c m pthread z SDL
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
