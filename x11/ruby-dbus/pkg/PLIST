@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/11 18:08:01 jcs Exp $
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus/
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus/auth.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus/bus.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus/export.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus/introspect.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus/marshall.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus/matchrule.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus/message.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/dbus/type.rb

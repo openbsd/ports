@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_dbus_bus_rb,v 1.1.1.1 2008/01/11 18:08:01 jcs Exp $
+--- lib/dbus/bus.rb.orig	Thu Dec 27 13:43:35 2007
++++ lib/dbus/bus.rb	Thu Jan 10 21:12:16 2008
+@@ -587,6 +587,9 @@ module DBus
+         when "unix:abstract"
+           @type = idx
+           @unix_abstract = val
++        when "unix:path"
++          @type = "unix"
++          @unix = val
+         when "guid"
+           @guid = val
+         end
