@@ -1,43 +1,55 @@
-# $OpenBSD: Makefile,v 1.28 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2008/01/11 09:09:22 winiger Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT-main=	PostgreSQL database adapter for Python
-COMMENT-zope=	database adapter for Zope
+COMMENT-main=		PostgreSQL database adapter for Python
+COMMENT-examples=	examples for PostgreSQL database adapter for Python
+COMMENT-zope=		database adapter for Zope
 
-VERSION=	1.1.21
-DISTNAME=	psycopg-${VERSION}
-PKGNAME=	py-${DISTNAME}p4
-PKGNAME-main=	py-${DISTNAME}p4
-PKGNAME-zope=	py-psycopg-zope-${VERSION}p1
-CATEGORIES=	databases
+VERSION=		1.1.21
+DISTNAME=		psycopg-${VERSION}
+PKGNAME=		py-${DISTNAME}p5
+PKGNAME-main=		py-${DISTNAME}p5
+FULLPKGNAME-examples=	py-${DISTNAME}
+FULLPKGNAME-zope=	py-psycopg-zope-${VERSION}p2
+CATEGORIES=		databases
 
-HOMEPAGE=	http://initd.org/projects/psycopg1
+HOMEPAGE=		http://initd.org/projects/psycopg1
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=		Aleksander Piotrowski <alek@openbsd.org>
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		crypto util pq
+WANTLIB-main=		crypto util pq
 
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 
 MODULES=	lang/python
+MODULES-zope=	www/zope
 
-BUILD_DEPENDS=	:postgresql-server-*:databases/postgresql,-server \
-		:py-mxDateTime->=2.0.0:devel/py-mxDateTime
-RUN_DEPENDS=	:postgresql-client-*:databases/postgresql \
-		:py-mxDateTime->=2.0.0:devel/py-mxDateTime
+BUILD_DEPENDS=	:postgresql-server-*:databases/postgresql,-server
+RUN_DEPENDS=	:postgresql-client-*:databases/postgresql
 
-MULTI_PACKAGES=	-main -zope
+FLAVORS=	python2.4 python2.5
+FLAVOR?=	python2.5
 
-RUN_DEPENDS-zope=	:zope-*:www/zope \
-			:py-psycopg-${VERSION}*:${BUILD_PKGPATH} \
+.if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
+MULTI_PACKAGES=	-main -examples -zope
+.elif ${FLAVOR:L:Mpython2.5} && !${FLAVOR:L:Npython2.5}
+MULTI_PACKAGES=	-main -examples
+.else
+ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"
+.endif
+
+MODPY_VERSION=	${FLAVOR:S/python//}
+BUILD_DEPENDS+=	:py-mxDateTime->=2.0.0*-${FLAVOR}:devel/py-mxDateTime,${FLAVOR}
+RUN_DEPENDS+=	:py-mxDateTime->=2.0.0*-${FLAVOR}:devel/py-mxDateTime,${FLAVOR}
+
+RUN_DEPENDS-zope=	:py-psycopg-${VERSION}*-python${MODZOPE_PYTHON_VERSION}:${BUILD_PKGPATH} \
 			${MODPY_RUN_DEPENDS}
 PKG_ARCH-zope=		*
-WANTLIB-zope=
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-mxdatetime-includes=${MODPY_SITEPKG}/mx/DateTime/mxDateTime
@@ -46,9 +58,11 @@ CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 NO_REGRESS=	Yes
 
 post-install:
+.if ${MULTI_PACKAGES:L:M-zope}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/zope/lib/python/Products/
 	cd ${WRKSRC}; tar cf - ZPsycopgDA | tar xf - -C ${PREFIX}/lib/zope/lib/python/Products
 	${CHOWN} -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/zope/lib/python/Products/ZPsycopgDA
+.endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-psycopg/
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/* \
 		${PREFIX}/share/examples/py-psycopg/
