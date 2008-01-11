@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/01/11 14:47:28 landry Exp $
+--- Makefile.in.orig	Thu Jan 10 13:18:54 2008
++++ Makefile.in	Thu Jan 10 13:19:04 2008
+@@ -284,7 +284,7 @@ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I macros
+-SUBDIRS = po src module ext etc data doc
++SUBDIRS = src module ext etc data doc
+ EXTRA_DIST = autogen.sh \
+ 	README.ja \
+ 	TODO.ja \

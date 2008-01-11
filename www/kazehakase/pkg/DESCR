@@ -1,0 +1,7 @@
+Kazehakase is a web browser using gecko engine, it features:
+* Tabbed browsing
+* Session saving
+* Remote bookmark (e.g. RSS) in menu or sidebar
+* Variable UI (menus, toolbar etc.) on user level
+* Customizable mouse gestures
+* Customizable key accelerator

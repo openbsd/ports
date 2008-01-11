@@ -1,0 +1,87 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/11 14:47:28 landry Exp $
+%%SHARED%%
+bin/kazehakase
+lib/kazehakase/
+lib/kazehakase/embed/
+lib/kazehakase/embed/gecko.a
+lib/kazehakase/embed/gecko.la
+lib/kazehakase/libkazehakase.a
+lib/kazehakase/libkazehakase.la
+lib/kazehakase/search/
+@man man/man1/kazehakase.1
+share/applications/
+share/applications/kazehakase.desktop
+share/examples/kazehakase/
+@sample ${SYSCONFDIR}/kazehakase/
+share/examples/kazehakase/bookmarkbar.xml
+@sample ${SYSCONFDIR}/kazehakase/bookmarkbar.xml
+share/examples/kazehakase/bookmarks.xml
+@sample ${SYSCONFDIR}/kazehakase/bookmarks.xml
+share/examples/kazehakase/kz-ui-beginner.xml
+@sample ${SYSCONFDIR}/kazehakase/kz-ui-beginner.xml
+share/examples/kazehakase/kz-ui-bookmarks.xml
+@sample ${SYSCONFDIR}/kazehakase/kz-ui-bookmarks.xml
+share/examples/kazehakase/kz-ui-expert.xml
+@sample ${SYSCONFDIR}/kazehakase/kz-ui-expert.xml
+share/examples/kazehakase/kz-ui-medium.xml
+@sample ${SYSCONFDIR}/kazehakase/kz-ui-medium.xml
+share/examples/kazehakase/kzrc
+@sample ${SYSCONFDIR}/kazehakase/kzrc
+share/examples/kazehakase/mozilla/
+@sample ${SYSCONFDIR}/kazehakase/mozilla/
+share/examples/kazehakase/mozilla/encodings.xml
+@sample ${SYSCONFDIR}/kazehakase/mozilla/encodings.xml
+share/examples/kazehakase/proxyrc
+@sample ${SYSCONFDIR}/kazehakase/proxyrc
+share/examples/kazehakase/smartbookmarks.xml
+@sample ${SYSCONFDIR}/kazehakase/smartbookmarks.xml
+share/kazehakase/
+share/kazehakase/icons/
+share/kazehakase/icons/autoscroll.xpm
+share/kazehakase/icons/kz-anchor.png
+share/kazehakase/icons/kz-book-search.png
+share/kazehakase/icons/kz-bookmark.png
+share/kazehakase/icons/kz-closebackward.png
+share/kazehakase/icons/kz-closeforward.png
+share/kazehakase/icons/kz-closewindow.png
+share/kazehakase/icons/kz-copyimagelocation.png
+share/kazehakase/icons/kz-copyurl.png
+share/kazehakase/icons/kz-epiphany.png
+share/kazehakase/icons/kz-firefox.png
+share/kazehakase/icons/kz-folder-open.png
+share/kazehakase/icons/kz-folder-search.png
+share/kazehakase/icons/kz-folder.png
+share/kazehakase/icons/kz-font-decrease.png
+share/kazehakase/icons/kz-font-increase.png
+share/kazehakase/icons/kz-galeon.png
+share/kazehakase/icons/kz-google.png
+share/kazehakase/icons/kz-gray.png
+share/kazehakase/icons/kz-green.png
+share/kazehakase/icons/kz-history.png
+share/kazehakase/icons/kz-konqueror.png
+share/kazehakase/icons/kz-logo-bg.png
+share/kazehakase/icons/kz-logo.png
+share/kazehakase/icons/kz-mozilla.png
+share/kazehakase/icons/kz-netscape.png
+share/kazehakase/icons/kz-newwindow.png
+share/kazehakase/icons/kz-openimagewindow.png
+share/kazehakase/icons/kz-openlinkwindow.png
+share/kazehakase/icons/kz-openselectedlink.png
+share/kazehakase/icons/kz-red.png
+share/kazehakase/icons/kz-remote-bookmark.png
+share/kazehakase/icons/kz-rss-feed.png
+share/kazehakase/icons/kz-savelink.png
+share/kazehakase/icons/kz-scrap-bookmark.png
+share/kazehakase/icons/kz-search.png
+share/kazehakase/icons/kz-separator.png
+share/kazehakase/icons/kz-smart-bookmark.png
+share/kazehakase/icons/kz-tab-next.png
+share/kazehakase/icons/kz-tab-prev.png
+share/kazehakase/icons/kz-view-source.png
+share/kazehakase/icons/kz-yellow.png
+share/kazehakase/kz-no-thumbnail.png
+share/kazehakase/search-result.css
+share/pixmaps/
+share/pixmaps/kazehakase-icon.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

@@ -1,0 +1,34 @@
+$OpenBSD: patch-etc_kzrc,v 1.1.1.1 2008/01/11 14:47:28 landry Exp $
+--- etc/kzrc.orig	Fri Jan 11 11:13:18 2008
++++ etc/kzrc	Fri Jan 11 15:36:40 2008
+@@ -29,7 +29,7 @@ entry_open_in_new_tab=false
+ use_migemo=false
+ migemo_command=migemo -t perl /usr/share/migemo/migemo-dict
+ 
+-editor_command=gedit %s
++editor_command=xterm -e vi %s
+ 
+ autoscroll_modifier=shift
+ 
+@@ -113,9 +113,19 @@ content_view_height=220
+ [Mozilla]
+ 
+ [Session]
+-save=false
+-restore=false
++save=true
++restore=true
+ current_session=DefaultSession
++
++[Language]
++intl.charset.default=ISO-8859-15
++
++[Font]
++default=serif
++language_group=x-western
++name_serif_x-western=Bitstream Vera Serif
++name_sans-serif_x-western=Bitstream Vera Sans
++name_monospace_x-western=Bitstream Vera Sans Mono
+ 
+ [Download]
+ # available: up, down, left, right
