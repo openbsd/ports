@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/04 17:35:03 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/11 09:21:51 winiger Exp $
 bin/pytest
 lib/python${MODPY_VERSION}/site-packages/logilab/
 lib/python${MODPY_VERSION}/site-packages/logilab/__init__.py
@@ -161,3 +161,4 @@ lib/python${MODPY_VERSION}/site-packages/logilab/common/visitor.py
 lib/python${MODPY_VERSION}/site-packages/logilab/common/visitor.pyc
 lib/python${MODPY_VERSION}/site-packages/logilab/common/xmlrpcutils.py
 lib/python${MODPY_VERSION}/site-packages/logilab/common/xmlrpcutils.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/logilab_common-0.21.2-py${MODPY_VERSION}.egg-info

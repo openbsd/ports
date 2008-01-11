@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/11 09:21:51 winiger Exp $
 
 COMMENT=	common low-level libraries for logilab projects
 
 DISTNAME=	logilab-common-0.21.2
-PKGNAME=	py-${DISTNAME}p0
+PKGNAME=	py-${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.logilab.org/projects/common/
@@ -19,7 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/
 
 MODULES=	lang/python
-RUN_DEPENDS=	:py-mxDateTime-*:devel/py-mxDateTime
+PY_FLAVOR=	python${MODPY_VERSION}
+
+RUN_DEPENDS=	:py-mxDateTime-*-${PY_FLAVOR}:devel/py-mxDateTime,${PY_FLAVOR}
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 do-regress: fake
