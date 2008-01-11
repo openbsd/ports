@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/11/16 10:09:56 mbalmer Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2008/01/11 09:03:16 winiger Exp $
+@option no-default-conflict
 lib/python${MODPY_VERSION}/site-packages/_ldap.so
 lib/python${MODPY_VERSION}/site-packages/dsml.py
 lib/python${MODPY_VERSION}/site-packages/dsml.pyc
@@ -53,24 +54,3 @@ lib/python${MODPY_VERSION}/site-packages/ldapurl.pyo
 lib/python${MODPY_VERSION}/site-packages/ldif.py
 lib/python${MODPY_VERSION}/site-packages/ldif.pyc
 lib/python${MODPY_VERSION}/site-packages/ldif.pyo
-share/examples/py-ldap/
-share/examples/py-ldap/Demo/
-share/examples/py-ldap/Demo/Lib/
-share/examples/py-ldap/Demo/Lib/ldap/
-share/examples/py-ldap/Demo/Lib/ldap/res/
-share/examples/py-ldap/Demo/Lib/ldapurl/
-share/examples/py-ldap/Demo/Lib/ldapurl/urlsearch.py
-share/examples/py-ldap/Demo/Lib/ldif/
-share/examples/py-ldap/Demo/Lib/ldif/ldifcopy.py
-share/examples/py-ldap/Demo/initialize.py
-share/examples/py-ldap/Demo/ldapcontrols.py
-share/examples/py-ldap/Demo/options.py
-share/examples/py-ldap/Demo/passwd_ext_op.py
-share/examples/py-ldap/Demo/pickle_ldapobject.py
-share/examples/py-ldap/Demo/reconnect.py
-share/examples/py-ldap/Demo/rename.py
-share/examples/py-ldap/Demo/sasl_bind.py
-share/examples/py-ldap/Demo/schema.py
-share/examples/py-ldap/Demo/schema_tree.py
-share/examples/py-ldap/Demo/simple.py
-share/examples/py-ldap/Demo/simplebrowse.py
