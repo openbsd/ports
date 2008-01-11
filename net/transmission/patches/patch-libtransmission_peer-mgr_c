@@ -1,0 +1,23 @@
+$OpenBSD: patch-libtransmission_peer-mgr_c,v 1.1 2008/01/11 18:15:00 naddy Exp $
+--- libtransmission/peer-mgr.c.orig	Tue Jan  8 16:56:34 2008
++++ libtransmission/peer-mgr.c	Tue Jan  8 16:57:36 2008
+@@ -1095,17 +1095,14 @@ void
+ tr_peerMgrAddPex( tr_peerMgr     * manager,
+                   const uint8_t  * torrentHash,
+                   uint8_t          from,
+-                  const tr_pex   * pex,
+-                  int              pexCount )
++                  const tr_pex   * pex )
+ {
+     Torrent * t;
+-    const tr_pex * end;
+ 
+     managerLock( manager );
+ 
+     t = getExistingTorrent( manager, torrentHash );
+-    for( end=pex+pexCount; pex!=end; ++pex )
+-        ensureAtomExists( t, &pex->in_addr, pex->port, pex->flags, from );
++    ensureAtomExists( t, &pex->in_addr, pex->port, pex->flags, from );
+ 
+     managerUnlock( manager );
+ }

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2007/11/27 20:30:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2008/01/11 18:15:00 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
 
-VER=		0.93
+VER=		1.00
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gui=	transmission-gui-${VER}
 CATEGORIES=	net
-HOMEPAGE=	http://transmission.m0k.org/
+HOMEPAGE=	http://www.transmissionbt.com/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -55,10 +55,5 @@ RUN_DEPENDS-main=
 RUN_DEPENDS-gui=:${PKGNAME-main}:net/transmission,-main ${RUN_DEPENDS}
 USE_X11=	Yes
 .endif
-
-NO_REGRESS=	Yes
-
-post-install:
-	@cd ${PREFIX}/man/man1 && mv transmissioncli.1 transmission-cli.1
 
 .include <bsd.port.mk>

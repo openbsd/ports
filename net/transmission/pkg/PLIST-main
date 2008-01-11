@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/11/27 20:30:19 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/01/11 18:15:00 naddy Exp $
 @pkgpath net/transmission
-bin/transmission-cli
 bin/transmission-daemon
 bin/transmission-proxy
 bin/transmission-remote
-@man man/man1/transmission-cli.1
+bin/transmissioncli
 @man man/man1/transmission-daemon.1
 @man man/man1/transmission-proxy.1
 @man man/man1/transmission-remote.1
+@man man/man1/transmissioncli.1
 @comment share/locale/
 @comment share/locale/de/
 @comment share/locale/de/LC_MESSAGES/
