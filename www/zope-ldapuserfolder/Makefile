@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/11/28 13:11:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/11 09:25:59 winiger Exp $
 
 COMMENT=	Zope LDAPUserFolder product
 
 VERSION=	2_7
 DISTNAME=	LDAPUserFolder-${VERSION}
-PKGNAME=	zope-${DISTNAME:S/_/./:L}
+PKGNAME=	zope-${DISTNAME:S/_/./:L}p0
 CATEGORIES=	www
 HOMEPAGE=	http://www.dataflake.org/software/ldapuserfolder
 
@@ -21,7 +21,9 @@ EXTRACT_SUFX=	.tgz
 
 MODULES=	www/zope
 
-RUN_DEPENDS=	:py-ldap-*:databases/py-ldap
+PY_FLAVOR=	python${MODZOPE_PYTHON_VERSION}
+
+RUN_DEPENDS=	:py-ldap-*-${PY_FLAVOR}:databases/py-ldap,${PY_FLAVOR}
 
 WRKDIST=	${WRKDIR}/LDAPUserFolder
 

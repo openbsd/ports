@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/11 09:27:17 winiger Exp $
 
 COMMENT=	small application for managing a LDAP address book
 
 DISTNAME=	directoryassistant-2.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	databases
 
 HOMEPAGE=	http://olivier.sessink.nl/directoryassistant/
@@ -19,8 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	lang/python
+PY_FLAVOR=	python${MODPY_VERSION}
+
 RUN_DEPENDS=	:py-gtk2-*:x11/py-gtk2 \
-                :py-ldap-*:databases/py-ldap
+                :py-ldap-*-${PY_FLAVOR}:databases/py-ldap,${PY_FLAVOR}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
