@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/11 09:15:21 winiger Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Date and Time types for Python
 
 VERSION=	2.0.5
 DISTNAME=	egenix-mx-base-${VERSION}
-PKGNAME=	py-mxDateTime-${VERSION}p1
+PKGNAME=	py-mxDateTime-${VERSION}p2
 CATEGORIES=	devel
 
 MASTER_SITES=	http://www.lemburg.com/files/python/
@@ -23,6 +23,18 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/python
 
+FLAVORS=	python2.4 python2.5      # Needed for Zope, e.g.
+FLAVOR?=	python2.5
+
+.if !${FLAVOR} || ${FLAVOR:L:Npython?.?}
+ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"
+.endif
+
+MODPY_VERSION=          ${FLAVOR:S/python//}
+
 NO_REGRESS=	Yes
+
+post-install:
+	find ${WRKINST} -name \*.egg-info -exec rm {} \;
 
 .include <bsd.port.mk>
