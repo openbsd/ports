@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/05 11:04:25 winiger Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/12 22:38:14 martynas Exp $
 
 COMMENT=		Display Control Panel for X.org SiS driver
 
 DISTNAME=		sisctrl-0.0.20051202
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.winischhofer.eu/linuxsispart1.shtml#sisctrl
+HOMEPAGE=		http://www.winischhofer.eu/linuxsispart1.shtml\#sisctrl
 
 MAINTAINER=		Marc Winiger <winiger@openbsd.org>
 
