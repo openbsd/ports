@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.922 2008/01/04 18:38:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.923 2008/01/12 14:12:43 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1873,6 +1873,16 @@ ${_t}: _internal-${_t}
 .  endif
 .endfor
 
+lock:
+	@lock=${_LOCKNAME}; ${_LOCK}
+	export _LOCKS_HELD="${_LOCKS_HELD} ${_LOCKNAME}"
+
+unlock:
+	@lock=${_LOCKNAME}; ${_UNLOCK}
+.for _i in ${_LOCKNAME}
+	export _LOCKS_HELD="${_LOCKS_HELD:N${_i}}"
+.endfor
+
 subpackage:
 	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
 
@@ -2977,7 +2987,8 @@ _all_phony = ${_recursive_depends_targets} ${_recursive_describe_targets} \
 	pre-fetch pre-install pre-package pre-patch pre-regress \
 	print-build-depends print-run-depends readme readmes rebuild \
 	regress-depends repackage run-depends run-depends-list show-required-by \
-	subpackage uninstall update-patches update-plist mirror-maker-fetch
+	subpackage uninstall update-patches update-plist mirror-maker-fetch \
+	lock unlock
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
