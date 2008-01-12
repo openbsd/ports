@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/16 20:46:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/12 15:08:44 espie Exp $
 ${P5SITE}/Rose/HTML/
 ${P5SITE}/Rose/HTML/Anchor.pm
 ${P5SITE}/Rose/HTML/Form/
@@ -29,6 +29,7 @@ ${P5SITE}/Rose/HTML/Form/Field/Group/OnOff.pm
 ${P5SITE}/Rose/HTML/Form/Field/Hidden.pm
 ${P5SITE}/Rose/HTML/Form/Field/Input.pm
 ${P5SITE}/Rose/HTML/Form/Field/Integer.pm
+${P5SITE}/Rose/HTML/Form/Field/Numeric.pm
 ${P5SITE}/Rose/HTML/Form/Field/OnOff/
 ${P5SITE}/Rose/HTML/Form/Field/OnOff.pm
 ${P5SITE}/Rose/HTML/Form/Field/OnOff/Checkable.pm
@@ -67,6 +68,7 @@ ${P5SITE}/Rose/HTML/Object/
 ${P5SITE}/Rose/HTML/Object.pm
 ${P5SITE}/Rose/HTML/Object/Error/
 ${P5SITE}/Rose/HTML/Object/Error.pm
+@comment ${P5SITE}/Rose/HTML/Object/Error.pm.orig
 ${P5SITE}/Rose/HTML/Object/Error/Localized.pm
 ${P5SITE}/Rose/HTML/Object/Errors.pm
 ${P5SITE}/Rose/HTML/Object/Exporter.pm
@@ -74,8 +76,10 @@ ${P5SITE}/Rose/HTML/Object/Localized.pm
 ${P5SITE}/Rose/HTML/Object/MakeMethods.pm
 ${P5SITE}/Rose/HTML/Object/Message/
 ${P5SITE}/Rose/HTML/Object/Message.pm
+@comment ${P5SITE}/Rose/HTML/Object/Message.pm.orig
 ${P5SITE}/Rose/HTML/Object/Message/Localized.pm
 ${P5SITE}/Rose/HTML/Object/Message/Localizer.pm
+@comment ${P5SITE}/Rose/HTML/Object/Message/Localizer.pm.orig
 ${P5SITE}/Rose/HTML/Object/Messages.pm
 ${P5SITE}/Rose/HTML/Object/WithContents.pm
 ${P5SITE}/Rose/HTML/Objects.pm
@@ -98,6 +102,7 @@ ${P5SITE}/Rose/HTML/Util.pm
 @man man/man3p/Rose::HTML::Form::Field::File.3p
 @man man/man3p/Rose::HTML::Form::Field::Hidden.3p
 @man man/man3p/Rose::HTML::Form::Field::Integer.3p
+@man man/man3p/Rose::HTML::Form::Field::Numeric.3p
 @man man/man3p/Rose::HTML::Form::Field::Option.3p
 @man man/man3p/Rose::HTML::Form::Field::OptionGroup.3p
 @man man/man3p/Rose::HTML::Form::Field::Password.3p

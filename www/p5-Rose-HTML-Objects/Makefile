@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/12 15:08:44 espie Exp $
 COMMENT=	HTML objects for Rose
 
 MODULES=	cpan
-DISTNAME=	Rose-HTML-Objects-0.547
+DISTNAME=	Rose-HTML-Objects-0.552
 CATEGORIES=	www devel databases
 
 RUN_DEPENDS=	::mail/p5-Email-Valid \
@@ -11,7 +11,8 @@ RUN_DEPENDS=	::mail/p5-Email-Valid \
 		::www/p5-URI \
 		::databases/p5-Rose-Object \
 		::databases/p5-Rose-DateTime \
-		::devel/p5-Clone
+		::devel/p5-Clone \
+		::www/p5-Rose-URI
 
 # Perl
 PERMIT_DISTFILES_CDROM=	Yes
