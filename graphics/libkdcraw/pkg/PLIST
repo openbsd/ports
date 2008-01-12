@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/28 15:07:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/12 14:52:28 espie Exp $
 include/libkdcraw/
 include/libkdcraw/dcrawbinary.h
 include/libkdcraw/dcrawinfocontainer.h
@@ -10,20 +10,32 @@ include/libkdcraw/rawfiles.h
 include/libkdcraw/version.h
 lib/libkdcraw.la
 @lib lib/libkdcraw.so.${LIBkdcraw_VERSION}
-lib/libkdcraw1/
-lib/libkdcraw1/kdcraw
+lib/libkdcraw2/
+lib/libkdcraw2/CAMERALIST
+lib/libkdcraw2/kdcraw
 lib/pkgconfig/libkdcraw.pc
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kdcraw.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kdcraw.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kdcraw.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kdcraw.png
+share/locale/ca/LC_MESSAGES/libkdcraw.mo
+share/locale/da/LC_MESSAGES/libkdcraw.mo
+share/locale/de/LC_MESSAGES/libkdcraw.mo
+share/locale/el/LC_MESSAGES/libkdcraw.mo
+share/locale/es/LC_MESSAGES/libkdcraw.mo
+share/locale/et/LC_MESSAGES/libkdcraw.mo
+share/locale/is/LC_MESSAGES/libkdcraw.mo
+share/locale/it/LC_MESSAGES/libkdcraw.mo
+share/locale/ja/LC_MESSAGES/libkdcraw.mo
+share/locale/nds/
+share/locale/nds/LC_MESSAGES/
+share/locale/nds/LC_MESSAGES/libkdcraw.mo
+share/locale/nl/LC_MESSAGES/libkdcraw.mo
+share/locale/pa/LC_MESSAGES/libkdcraw.mo
+share/locale/pt/LC_MESSAGES/libkdcraw.mo
+share/locale/sk/LC_MESSAGES/libkdcraw.mo
+share/locale/sr/LC_MESSAGES/libkdcraw.mo
+share/locale/sr@Latn/LC_MESSAGES/libkdcraw.mo
+share/locale/sv/LC_MESSAGES/libkdcraw.mo
+share/locale/th/LC_MESSAGES/libkdcraw.mo
+share/locale/uk/LC_MESSAGES/libkdcraw.mo
