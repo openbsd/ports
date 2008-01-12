@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2008/01/12 23:05:13 eric Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SQLite3 adapter for Python
 
-DISTNAME=	pysqlite-2.3.5
-PKGNAME=	${DISTNAME:S/^pysqlite/py-sqlite2/}p0
+VERSION=	2.4.0
+DISTNAME=	pysqlite-${VERSION}
+PKGNAME=	py-sqlite2-${VERSION}
 CATEGORIES=	databases devel
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
 
-MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/2.3/2.3.5/
+MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/${VERSION:R}/${VERSION}/
 HOMEPAGE=	http://pysqlite.org/
 
 # BSD-like
@@ -21,6 +22,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 LIB_DEPENDS=	sqlite3.>=8.6::databases/sqlite3
 REGRESS_DEPENDS=	:python-bz2-*:lang/python/${MODPY_VERSION},-bz2
+
+SUBST_VARS=	VERSION
 
 MODULES=	lang/python
 
