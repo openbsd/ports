@@ -1,6 +1,16 @@
---- wrapper.c.orig	Wed Aug 27 12:01:12 1997
-+++ wrapper.c	Tue May 23 07:06:23 2000
-@@ -42,20 +42,27 @@
+--- wrapper.c.orig	Wed Aug 27 15:01:12 1997
++++ wrapper.c	Fri Jan  4 18:06:49 2008
+@@ -16,9 +16,7 @@ static char rcs_header[] = "$Header: /sources/cvsrepos
+ #include <stdio.h>
+ #include <sysexits.h>
+ 
+-#if defined(sun) && defined(sparc)
+ #include <stdlib.h>
+-#endif
+ 
+ 
+ #ifndef STRCHR
+@@ -42,20 +40,27 @@ static char rcs_header[] = "$Header: /sources/cvsrepos
  #  define SHELL "SHELL=/bin/sh"
  #endif
  
@@ -31,7 +41,7 @@
  
  main(argc, argv, env)
      int argc;
-@@ -89,11 +96,7 @@
+@@ -89,11 +94,7 @@ main(argc, argv, env)
       *  if they exist.
       */
  
@@ -44,7 +54,7 @@
  
      for (i = 0 ; env[i] != NULL && e <= new_env_size; i++) {
  	if ((strncmp(env[i], "USER=", 5) == 0) ||
-@@ -153,5 +156,6 @@
+@@ -153,5 +154,6 @@ main(argc, argv, env)
      fprintf(stderr, "    PATH is %s,\n", PATH);
      fprintf(stderr, "    SHELL is %s,\n", SHELL);
      fprintf(stderr, "    MAJORDOMO_CF is %s\n", MAJORDOMO_CF);
