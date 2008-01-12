@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2007/04/30 17:30:39 bernd Exp $
---- Makefile.in.orig	Tue Feb 27 01:10:36 2007
-+++ Makefile.in	Thu Apr 12 13:06:24 2007
+$OpenBSD: patch-Makefile_in,v 1.3 2008/01/12 15:16:07 bernd Exp $
+--- Makefile.in.orig	Wed May 30 06:04:40 2007
++++ Makefile.in	Thu Jan  3 16:14:46 2008
 @@ -22,15 +22,14 @@ PROTVER = @PROTVER@
  # Targets
  MYHEADS = estraier.h estmtdb.h estnode.h
@@ -20,7 +20,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2007/04/30 17:30:39 bernd Exp $
  MYMAN1S = estconfig.1 estcmd.1 estmaster.1 estwaver.1 estcall.1
  MYMAN3S = estraier.3 estnode.3
  MYPCS = hyperestraier.pc
-@@ -48,25 +47,25 @@ MYHEADDIR = @includedir@
+@@ -48,26 +47,25 @@ MYHEADDIR = @includedir@
  MYLIBDIR = @libdir@
  MYBINDIR = @bindir@
  MYLIBEXECDIR = @libexecdir@
@@ -33,13 +33,14 @@ $OpenBSD: patch-Makefile_in,v 1.2 2007/04/30 17:30:39 bernd Exp $
  
  # Building binaries
 -CC = @CC@
--CPPFLAGS = -I. -I$(MYHEADDIR) -I$(HOME)/include -I/usr/local/include -I/usr/include/qdbm \
+-CPPFLAGS = @CPPFLAGS@ -I. -I$(MYHEADDIR) \
+-  -I$(HOME)/include -I/usr/local/include -I/usr/include/qdbm @MYCPPOPTS@ \
 +#CC = @CC@
-+CPPFLAGS = -I. -I/usr/local/include -I/usr/include/qdbm \
-   @MYCPPOPTS@ -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
++CPPFLAGS = @CPPFLAGS@ -I. -I/usr/local/include -I/usr/include/qdbm @MYCPPOPTS@ \
+   -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
    -DPIC=1 -D_THREAD_SAFE=1 -D_REENTRANT=1 @MYDEFS@
 -CFLAGS = @MYCFLAGS@
--LDFLAGS = -L. -L$(MYLIBDIR) -L$(HOME)/lib -L/usr/local/lib @MYLDOPTS@
+-LDFLAGS = @LDFLAGS@ -L. -L$(MYLIBDIR) -L$(HOME)/lib -L/usr/local/lib @MYLDOPTS@
 +CFLAGS += @MYCFLAGS@
 +LDFLAGS = -L. -L/usr/local/lib @MYLDOPTS@
  LIBS = @LIBS@
@@ -53,7 +54,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2007/04/30 17:30:39 bernd Exp $
  MYPOSTCMD = @MYPOSTCMD@
  
  
-@@ -112,22 +111,22 @@ version :
+@@ -113,22 +111,22 @@ version :
  
  
  install :
@@ -92,7 +93,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2007/04/30 17:30:39 bernd Exp $
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using Hyper Estraier.\n'
-@@ -628,13 +627,13 @@ libestraier.a : $(MYLIBOBJS)
+@@ -630,13 +628,13 @@ libestraier.a : $(MYLIBOBJS)
  	$(AR) $(ARFLAGS) $@ $(MYLIBOBJS)
  
  

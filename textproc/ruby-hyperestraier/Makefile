@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/12 15:16:07 bernd Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Ruby interface to hyperestraier
 
-DISTNAME=		hyperestraier-1.4.10
-PKGNAME=		ruby-hyperestraier-1.0.0p3
+DISTNAME=		hyperestraier-1.4.13
+PKGNAME=		ruby-hyperestraier-1.0.0p4
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://hyperestraier.sourceforge.net/
 
-MAINTAINER=		Jeremy Evans <jeremyevans0@gmail.com>
+MAINTAINER=		Jeremy Evans <openbsd@jeremyevans.net>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
