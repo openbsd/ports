@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_rubygems_install_update_options_rb,v 1.1 2008/01/12 14:51:15 bernd Exp $
+
+This is for GEM_SKIPDEPENDS in ruby.port.mk.
+
+--- lib/rubygems/install_update_options.rb.orig	Thu Dec 13 00:36:15 2007
++++ lib/rubygems/install_update_options.rb	Fri Dec 21 16:46:28 2007
+@@ -83,6 +83,11 @@ module Gem::InstallUpdateOptions
+                'foo_exec18') do |value, options|
+       options[:format_executable] = value
+     end
++
++    add_option(:"Install/Update", '-S', '--skip-dependencies DEPENDENCIES',
++               'Skip the given dependencies') do |value, options|
++      options[:skip_dependencies] = value.split(' ')
++    end
+   end
+ 
+   # Default options for the gem install command.

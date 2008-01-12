@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_rubygems_commands_install_command_rb,v 1.1 2008/01/12 14:51:15 bernd Exp $
+
+This is for GEM_SKIPDEPENDS in ruby.port.mk.
+
+--- lib/rubygems/commands/install_command.rb.orig	Thu Dec 13 01:43:02 2007
++++ lib/rubygems/commands/install_command.rb	Fri Dec 21 16:46:28 2007
+@@ -62,6 +62,7 @@ class Gem::Commands::InstallCommand < Gem::Command
+       :install_dir => options[:install_dir],
+       :security_policy => options[:security_policy],
+       :wrappers => options[:wrappers],
++      :skip_dependencies => options[:skip_dependencies]
+     }
+ 
+     get_all_gem_names.each do |gem_name|

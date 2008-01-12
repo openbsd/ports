@@ -1,20 +1,28 @@
-$OpenBSD: patch-lib_rubygems_installer_rb,v 1.4 2007/11/13 17:27:17 bernd Exp $
+$OpenBSD: patch-lib_rubygems_installer_rb,v 1.5 2008/01/12 14:51:15 bernd Exp $
 
 This is for GEM_SKIPDEPENDS in ruby.port.mk.
 
---- lib/rubygems/installer.rb.orig	Thu May 10 21:01:45 2007
-+++ lib/rubygems/installer.rb	Tue Nov 13 18:08:41 2007
-@@ -79,7 +79,12 @@ module Gem
-         end
-         unless @options[:ignore_dependencies]
-           spec.dependencies.each do |dep_gem|
--            ensure_dependency!(spec, dep_gem)
-+            if @options[:skip_dependencies] &&
-+               @options[:skip_dependencies].include?(dep_gem.name)
-+              spec.dependencies.delete(dep_gem)
-+            else
-+              ensure_dependency!(spec, dep_gem)		
-+            end
-           end
+--- lib/rubygems/installer.rb.orig	Fri Dec 21 01:43:06 2007
++++ lib/rubygems/installer.rb	Fri Dec 21 16:46:28 2007
+@@ -73,6 +73,7 @@ class Gem::Installer
+     @format_executable = options[:format_executable]
+     @security_policy = options[:security_policy]
+     @wrappers = options[:wrappers]
++    @skip_dependencies = options[:skip_dependencies]
+ 
+     begin
+       @format = Gem::Format.from_file_by_path @gem, @security_policy
+@@ -117,7 +118,12 @@ class Gem::Installer
+ 
+       unless @ignore_dependencies then
+         @spec.dependencies.each do |dep_gem|
+-          ensure_dependency @spec, dep_gem
++          if @skip_dependencies && @skip_dependencies.include?(dep_gem.name)
++            say "Skipping '#{dep_gem.name}' dependency."
++            @spec.dependencies.delete(dep_gem)
++          else
++            ensure_dependency @spec, dep_gem
++          end
          end
        end
+     end

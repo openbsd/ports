@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib_rubygems_dependency_installer_rb,v 1.1 2008/01/12 14:51:15 bernd Exp $
+
+This is for GEM_SKIPDEPENDS in ruby.port.mk.
+
+--- lib/rubygems/dependency_installer.rb.orig	Tue Dec 18 04:45:04 2007
++++ lib/rubygems/dependency_installer.rb	Fri Dec 21 16:47:17 2007
+@@ -18,7 +18,8 @@ class Gem::DependencyInstaller
+     :format_executable => false, # HACK dup
+     :ignore_dependencies => false,
+     :security_policy => nil, # HACK NoSecurity requires OpenSSL.  AlmostNo? Low?
+-    :wrappers => true
++    :wrappers => true,
++    :skip_dependencies => false
+   }
+ 
+   ##
+@@ -46,6 +47,7 @@ class Gem::DependencyInstaller
+     @install_dir = options[:install_dir] || Gem.dir
+     @security_policy = options[:security_policy]
+     @wrappers = options[:wrappers]
++    @skip_dependencies = options[:skip_dependencies]
+ 
+     @installed_gems = []
+ 
+@@ -231,7 +233,8 @@ class Gem::DependencyInstaller
+                                 :ignore_dependencies => @ignore_dependencies,
+                                 :install_dir => @install_dir,
+                                 :security_policy => @security_policy,
+-                                :wrappers => @wrappers
++                                :wrappers => @wrappers,
++                                :skip_dependencies => @skip_dependencies
+ 
+       spec = inst.install
+ 

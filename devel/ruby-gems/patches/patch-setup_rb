@@ -1,0 +1,24 @@
+$OpenBSD: patch-setup_rb,v 1.1 2008/01/12 14:51:15 bernd Exp $
+--- setup.rb.orig	Fri Dec 21 02:15:55 2007
++++ setup.rb	Fri Dec 21 16:46:28 2007
+@@ -72,7 +72,7 @@ else
+ 
+   raise "invalid --prefix #{prefix.inspect}" if prefix.nil?
+ 
+-  lib_dir = File.join prefix, 'lib'
++  lib_dir = ENV['RUBYLIB']
+   bin_dir = File.join prefix, 'bin'
+ 
+   mkdir_p lib_dir
+@@ -235,8 +235,9 @@ puts <<-EOF.gsub(/^ */, '')
+   Searching $LOAD_PATH for stubs to optionally delete (may take a while)...
+   EOF
+ 
+-gemfiles = Dir[File.join("{#{($LOAD_PATH).join(',')}}", '**', '*.rb')]
+-gemfiles = gemfiles.map { |file| File.expand_path file }.uniq
++#gemfiles = Dir[File.join("{#{($LOAD_PATH).join(',')}}", '**', '*.rb')]
++#gemfiles = gemfiles.map { |file| File.expand_path file }.uniq
++gemfiles = []
+ 
+ puts "...done."
+ 
