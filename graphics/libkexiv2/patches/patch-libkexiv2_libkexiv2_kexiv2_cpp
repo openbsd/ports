@@ -1,0 +1,23 @@
+$OpenBSD: patch-libkexiv2_libkexiv2_kexiv2_cpp,v 1.1 2008/01/12 14:52:56 espie Exp $
+--- libkexiv2/libkexiv2/kexiv2.cpp.orig	Sat Jan  5 12:37:48 2008
++++ libkexiv2/libkexiv2/kexiv2.cpp	Sat Jan  5 12:38:27 2008
+@@ -682,7 +682,8 @@ bool KExiv2::setExifThumbnail(const QImage& thumb, boo
+ 
+     try
+     {   
+-        KTempFile thumbFile(QString(), "KExiv2ExifThumbnail");
++    	QString a;
++        KTempFile thumbFile(a, "KExiv2ExifThumbnail");
+         thumbFile.setAutoDelete(true);
+         thumb.save(thumbFile.name(), "JPEG");
+ 
+@@ -1122,7 +1123,8 @@ bool KExiv2::setImagePreview(const QImage& preview, bo
+ 
+     try
+     {
+-        KTempFile previewFile(QString(), "KExiv2ImagePreview");
++    	QString a;
++        KTempFile previewFile(a, "KExiv2ImagePreview");
+         previewFile.setAutoDelete(true);
+         // A little bit compressed preview jpeg image to limit IPTC size.
+         preview.save(previewFile.name(), "JPEG");
