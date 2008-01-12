@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/05 10:17:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/01/12 14:29:39 espie Exp $
 ${P5SITE}/Rose/DB/
 ${P5SITE}/Rose/DB.pm
+${P5SITE}/Rose/DB/Cache/
+${P5SITE}/Rose/DB/Cache.pm
+${P5SITE}/Rose/DB/Cache/Entry.pm
 ${P5SITE}/Rose/DB/Constants.pm
 ${P5SITE}/Rose/DB/Generic.pm
 ${P5SITE}/Rose/DB/Informix.pm
@@ -14,6 +17,8 @@ ${P5SITE}/Rose/DB/Registry/Entry.pm
 ${P5SITE}/Rose/DB/SQLite.pm
 ${P5SITE}/Rose/DB/Tutorial.pod
 @man man/man3p/Rose::DB.3p
+@man man/man3p/Rose::DB::Cache.3p
+@man man/man3p/Rose::DB::Cache::Entry.3p
 @man man/man3p/Rose::DB::Constants.3p
 @man man/man3p/Rose::DB::Generic.3p
 @man man/man3p/Rose::DB::Informix.3p
