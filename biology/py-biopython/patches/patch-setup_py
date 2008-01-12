@@ -1,15 +1,22 @@
-$OpenBSD: patch-setup_py,v 1.4 2005/12/18 20:33:17 alek Exp $
---- setup.py.orig	Fri Oct 28 21:41:02 2005
-+++ setup.py	Sun Dec 18 19:26:31 2005
-@@ -65,6 +65,7 @@ def check_dependencies_once():
+$OpenBSD: patch-setup_py,v 1.5 2008/01/12 02:00:24 okan Exp $
+--- setup.py.orig	Sat Oct 27 02:11:01 2007
++++ setup.py	Fri Dec 21 16:56:57 2007
+@@ -65,6 +65,14 @@ def check_dependencies_once():
      return _CHECKED
  
  def check_dependencies():
++    NUMPY_PACKAGES.append("Bio.KDTree")
++    NUMPY_EXTENSIONS.append(
++        CplusplusExtension('Bio.KDTree._CKDTree', 
++                           ["Bio/KDTree/KDTree.cpp",
++                            "Bio/KDTree/KDTree.swig.cpp"],
++                           libraries=["stdc++"],
++                           language="c++"))
 +    return 1
      """Return whether the installation should continue."""
      # There should be some way for the user to tell specify not to
      # check dependencies.  For example, it probably should not if
-@@ -254,7 +255,10 @@ def is_Martel_installed():
+@@ -285,7 +293,10 @@ def is_Martel_installed():
          bundled_martel_version = m.__version__
      else:
          bundled_martel_version = None

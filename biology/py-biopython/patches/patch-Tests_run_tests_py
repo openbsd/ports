@@ -1,7 +1,7 @@
-$OpenBSD: patch-Tests_run_tests_py,v 1.1 2005/12/03 22:34:52 alek Exp $
---- Tests/run_tests.py.orig	Sun Nov 20 16:29:24 2005
-+++ Tests/run_tests.py	Sun Nov 20 16:29:35 2005
-@@ -37,11 +37,11 @@ def main(argv):
+$OpenBSD: patch-Tests_run_tests_py,v 1.2 2008/01/12 02:00:24 okan Exp $
+--- Tests/run_tests.py.orig	Thu Oct 11 20:39:07 2007
++++ Tests/run_tests.py	Fri Dec 21 16:45:24 2007
+@@ -39,11 +39,11 @@ def main(argv):
      # A. Because Martel may not be in ../build/lib.*
      test_path = sys.path[0] or "."
      source_path = os.path.abspath("%s/.." % test_path)
