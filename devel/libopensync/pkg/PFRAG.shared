@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/09/30 09:37:53 ajacoutot Exp $
-@lib lib/libopensync.so.${LIBopensync_VERSION}
-lib/opensync/formats/libdata.so
-lib/opensync/formats/libfile.so
-lib/opensync/formats/libxmlformat-doc.so
-lib/opensync/formats/libxmlformat.so

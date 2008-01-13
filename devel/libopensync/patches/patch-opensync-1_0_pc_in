@@ -1,9 +1,9 @@
-$OpenBSD: patch-opensync-1_0_pc_in,v 1.1.1.1 2007/09/30 09:37:53 ajacoutot Exp $
---- opensync-1.0.pc.in.orig	Sun Sep 30 10:11:54 2007
-+++ opensync-1.0.pc.in	Sun Sep 30 10:12:52 2007
+$OpenBSD: patch-opensync-1_0_pc_in,v 1.2 2008/01/13 21:37:27 ajacoutot Exp $
+--- opensync-1.0.pc.in.orig	Sat Jan 12 16:11:24 2008
++++ opensync-1.0.pc.in	Sat Jan 12 16:32:56 2008
 @@ -14,4 +14,4 @@ Name: opensync
  Description: OpenSync synchronization framework
- Version: @VERSION@
- Libs: -L${libdir} -lopensync
--Cflags: -I${includedir}/opensync-1.0
-+Cflags: -I${includedir}/glib-2.0 -I${includedir}/opensync-1.0
+ Version: ${OPENSYNC_VERSION}
+ Libs: -L${LIB_INSTALL_DIR} -lopensync
+-Cflags: -I${INCLUDE_INSTALL_DIR}/${OPENSYNC_API_DIR}
++Cflags: -I${includedir}/glib-2.0 -I${INCLUDE_INSTALL_DIR}/${OPENSYNC_API_DIR}

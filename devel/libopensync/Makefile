@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/12 10:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/13 21:37:27 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	data synchronization framework
 
-DISTNAME=	libopensync-0.31
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS +=	opensync 1.0
+V=		0.35
+DISTNAME=	libopensync-${V}
+SHARED_LIBS +=	opensync 1.1
 CATEGORIES=	devel comms
 
 EXTRACT_SUFX=	.tar.bz2
@@ -19,12 +21,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES=	http://www.opensync.org/download/releases/${V}/
 
 WANTLIB=	c pthread
 
-MODULES=	devel/scons
-MODSCONS_FLAGS=	APPEND_CCFLAGS="${CFLAGS}"
+SEPARATE_BUILD=	simple
+
+MODULES=	devel/cmake \
+		devel/gettext
+
+MAKE_FLAGS=	VERBOSE=2
+CFLAGS+=	-pthread
 
 LIB_DEPENDS=	sqlite3.>=8::databases/sqlite3 \
 		xml2.>=9::textproc/libxml \
