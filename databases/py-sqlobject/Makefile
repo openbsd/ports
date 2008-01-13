@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:10:11 martynas Exp $
 
 COMMENT=		Object Relational Manager
 
-V=			0.9.0
-DISTNAME=		SQLObject-${V}
-PKGNAME=		py-sqlobject-${V}p0
+VERSION=		0.9.3
+DISTNAME=		SQLObject-${VERSION}
+PKGNAME=		py-sqlobject-${VERSION}
 
 CATEGORIES=		databases
 
@@ -24,6 +24,8 @@ MODULES=		lang/python
 RUN_DEPENDS=		::www/py-formencode
 
 NO_REGRESS=		Yes
+
+SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 

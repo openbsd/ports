@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/27 15:11:09 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/13 17:10:11 martynas Exp $
 bin/sqlobject-admin
-lib/python${MODPY_VERSION}/site-packages/SQLObject-0.9.0-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/SQLObject-0.9.0-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/SQLObject-0.9.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/SQLObject-0.9.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/SQLObject-0.9.0-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/SQLObject-0.9.0-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/SQLObject-0.9.0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sqlobject/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/__init__.pyc
