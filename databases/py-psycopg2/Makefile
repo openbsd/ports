@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/13 17:06:31 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PostgreSQL database adapter for Python
 
-DISTNAME=	psycopg2-2.0.5.1
-PKGNAME=	py-${DISTNAME}p0
+VERSION=	2.0.6
+DISTNAME=	psycopg2-${VERSION}
+PKGNAME=	py-${DISTNAME}
 CATEGORIES=	databases
 
 HOMEPAGE=	http://initd.org/projects/psycopg2
@@ -17,14 +18,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		pq
 
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 
 MODULES=	lang/python
+LIB_DEPENDS=	pq::databases/postgresql
 RUN_DEPENDS=	:postgresql-client-*:databases/postgresql
 
 NO_REGRESS=	Yes
+
+SUBST_VARS=	VERSION
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-psycopg2
