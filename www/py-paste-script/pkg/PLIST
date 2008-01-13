@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/24 22:00:23 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/13 17:09:17 martynas Exp $
 bin/paster
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}-nspkg.pth
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}.egg-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/PasteScript-1.3.4-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/PasteScript-${VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/paste/script/
 lib/python${MODPY_VERSION}/site-packages/paste/script/__init__.py
 lib/python${MODPY_VERSION}/site-packages/paste/script/__init__.pyc
@@ -49,6 +49,8 @@ lib/python${MODPY_VERSION}/site-packages/paste/script/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/paste/script/interfaces.pyc
 lib/python${MODPY_VERSION}/site-packages/paste/script/pluginlib.py
 lib/python${MODPY_VERSION}/site-packages/paste/script/pluginlib.pyc
+lib/python${MODPY_VERSION}/site-packages/paste/script/request.py
+lib/python${MODPY_VERSION}/site-packages/paste/script/request.pyc
 lib/python${MODPY_VERSION}/site-packages/paste/script/serve.py
 lib/python${MODPY_VERSION}/site-packages/paste/script/serve.pyc
 lib/python${MODPY_VERSION}/site-packages/paste/script/templates/
@@ -67,6 +69,8 @@ lib/python${MODPY_VERSION}/site-packages/paste/script/twisted_web2_server.pyc
 lib/python${MODPY_VERSION}/site-packages/paste/script/util/
 lib/python${MODPY_VERSION}/site-packages/paste/script/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/paste/script/util/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/paste/script/util/logging_config.py
+lib/python${MODPY_VERSION}/site-packages/paste/script/util/logging_config.pyc
 lib/python${MODPY_VERSION}/site-packages/paste/script/util/secret.py
 lib/python${MODPY_VERSION}/site-packages/paste/script/util/secret.pyc
 lib/python${MODPY_VERSION}/site-packages/paste/script/util/string24.py

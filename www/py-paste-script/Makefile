@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:09:17 martynas Exp $
 
 COMMENT=		pluggable command-line frontend
 
-V=			1.3.4
-DISTNAME=		PasteScript-${V}
-PKGNAME=		py-paste-script-${V}p0
+VERSION=		1.6.1.1
+DISTNAME=		PasteScript-${VERSION}
+PKGNAME=		py-paste-script-${VERSION}
 
 CATEGORIES=		www
 
@@ -31,6 +31,8 @@ RUN_DEPENDS=		::devel/py-cheetah \
 # has shitloads of dependencies) and FakePlugin.  There isn't much
 # point in porting them.
 NO_REGRESS=		Yes
+
+SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
