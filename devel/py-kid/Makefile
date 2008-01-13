@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:24:11 martynas Exp $
 
 COMMENT=		template language for XML based vocabularies
 
-V=			0.9.5
-DISTNAME=		kid-${V}
-PKGNAME=		py-${DISTNAME}p0
+VERSION=		0.9.6
+DISTNAME=		kid-${VERSION}
+PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		devel
 
@@ -18,11 +18,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.kid-templating.org/dist/${V}/
+MASTER_SITES=		http://www.kid-templating.org/dist/${VERSION}/
 
 MODULES=		lang/python
 
+SUBST_VARS=		VERSION
+
 MODPY_SETUPTOOLS=	Yes
+
+pre-configure:
+	rm -fr ${WRKSRC}/doc/html
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-kid

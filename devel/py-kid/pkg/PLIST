@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/24 22:02:32 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/13 17:24:11 martynas Exp $
 bin/kid
 bin/kidc
 lib/python${MODPY_VERSION}/site-packages/kid/
-lib/python${MODPY_VERSION}/site-packages/kid-0.9.5-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kid-0.9.5-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kid-0.9.5-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kid-0.9.5-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kid-0.9.5-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/kid-0.9.5-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/kid-${VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/kid-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/kid-${VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/kid-${VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kid-${VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/kid-${VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kid/__init__.py
 lib/python${MODPY_VERSION}/site-packages/kid/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/kid/codewriter.py
