@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/10 21:07:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/13 17:16:49 martynas Exp $
 
 COMMENT=		HTML form validation, generation, and conversion
 
-V=			0.7.1
-DISTNAME=		FormEncode-${V}
-PKGNAME=		py-formencode-${V}p1
+VERSION=		0.9
+DISTNAME=		FormEncode-${VERSION}
+PKGNAME=		py-formencode-${VERSION}
 
 CATEGORIES=		www
 
@@ -26,6 +26,8 @@ RUN_DEPENDS=		::textproc/py-ElementTree \
 REGRESS_DEPENDS=	::textproc/py-ElementTree \
 			::devel/py-py \
 			::devel/py-ruledispatch
+
+SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
