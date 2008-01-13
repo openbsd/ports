@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/26 23:23:42 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/13 17:26:23 martynas Exp $
 bin/tg-admin
-lib/python${MODPY_VERSION}/site-packages/TurboGears-1.0.2.2-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/TurboGears-1.0.2.2-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/TurboGears-1.0.2.2-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/TurboGears-1.0.2.2-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/TurboGears-1.0.2.2-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/TurboGears-1.0.2.2-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/TurboGears-1.0.2.2-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/TurboGears-${VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/TurboGears-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/TurboGears-${VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/TurboGears-${VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/TurboGears-${VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/TurboGears-${VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/TurboGears-${VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/turbogears/
 lib/python${MODPY_VERSION}/site-packages/turbogears/__init__.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/__init__.pyc
@@ -422,8 +422,12 @@ lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sk.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sk.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sk_SK.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sk_SK.pyc
+lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sl/
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sl.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sl.pyc
+lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sl/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sl/LC_MESSAGES/TurboGears.mo
+lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sl/LC_MESSAGES/TurboGears.po
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sl_SI.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/sl_SI.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/data/so.py

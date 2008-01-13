@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:26:23 martynas Exp $
 
 COMMENT=		Python web development megaframework
 
-V=			1.0.2.2
-DISTNAME=		TurboGears-${V}
-PKGNAME=		py-turbogears-${V}p0
+VERSION=		1.0.3.2
+DISTNAME=		TurboGears-${VERSION}
+PKGNAME=		py-turbogears-${VERSION}
 
 CATEGORIES=		www
 
@@ -41,6 +41,8 @@ RUN_DEPENDS=		::databases/py-sqlalchemy \
 			::www/py-paste-script
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
 			::databases/py-sqlite2
+
+SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
