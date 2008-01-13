@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:34:02 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/13 16:27:29 merdely Exp $
 
 COMMENT=	client interface to LDAP servers
 
-VERSION=	0.33
+VERSION=	0.34
 DISTNAME=	perl-ldap-${VERSION}
 PKGNAME=	p5-ldap-${VERSION}
 CATEGORIES=	databases
@@ -12,11 +12,12 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
 
 HOMEPAGE=	http://ldap.perl.org/
 
-RUN_DEPENDS=	:p5-Convert-ASN1->0.07:converters/p5-Convert-ASN1 \
-		:p5-URI->=1.08:www/p5-URI \
-		:p5-Authen-SASL->=2:security/p5-Authen-SASL \
-		:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
+RUN_DEPENDS=	::converters/p5-Convert-ASN1 \
+		::security/p5-Authen-SASL \
+		::security/p5-IO-Socket-SSL \
+		::textproc/p5-XML-Parser \
+		::textproc/p5-XML-SAX-Writer \
+		::www/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # Perl
