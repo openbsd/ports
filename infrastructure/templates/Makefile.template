@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.53 2007/09/17 09:44:42 ajacoutot Exp $
+# $OpenBSD: Makefile.template,v 1.54 2008/01/13 16:43:57 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -7,31 +7,33 @@
 
 # Reasons why the port/package shouldn't be built
 #
-#ONLY_FOR_ARCHS=	???
-#NOT_FOR_ARCHS=		???
-#SHARED_ONLY=		???
-#COMES_WITH=		???
-#BROKEN=		reason
+#ONLY_FOR_ARCHS =	???
+#NOT_FOR_ARCHS =	???
+#SHARED_ONLY =		???
+#COMES_WITH =		???
+#BROKEN =		reason
 
 #
 # Very short description of the package, 60 chars max
 #
-COMMENT=		???
-# COMMENT-foo=		???	for multi packages
+COMMENT =		???
+# COMMENT-foo =		???	for multi packages
 
 #
 # What port/package will be created
 #
-DISTNAME=		???
-#PKGNAME=		???
-#PKGNAME-foo=		???	for multi packages
+DISTNAME =		???
+#PKGNAME =		???
+#PKGNAME-foo =		???	for multi packages
 
-# for libtool-based ports, have a look at WRKBUILD/shared_libs.log as a basis
-#SHARED_LIBS=		???
+# for any port that create shared libraries.
+# both libtool and cmake handle this automatically.
+# for libtool-based ports, have a look at WRKBUILD/shared_libs.log
+#SHARED_LIBS =		???
 
-CATEGORIES=		???
+CATEGORIES =		???
 
-#HOMEPAGE=		???	URL
+#HOMEPAGE =		???	URL
 
 # where to send bitches about this port
 # Put a complete email address with a real name, e.g.,
@@ -41,7 +43,7 @@ CATEGORIES=		???
 # If you no longer use the port, or are unwilling/unable to handle issues
 # in a timely manner, *leave the field blank*.
 # Default value is ports@openbsd.org, no need to fill in
-#MAINTAINER=		???
+#MAINTAINER =		???
 
 # Licensing:  This determines what we can distribute.
 # When you determine the license type, make sure to look at ALL distfiles.
@@ -53,52 +55,52 @@ CATEGORIES=		???
 # Put a comment there to state what's going on.
 # Can be as brief as `BSD' or `GPL', but it'd better be easy to check,
 # if someone wants to double-check licensing.
-#PERMIT_PACKAGE_CDROM=	Yes | Reason if No
-#PERMIT_PACKAGE_FTP=	Yes | Reason if No
-#PERMIT_DISTFILES_CDROM=Yes | Reason if No
-#PERMIT_DISTFILES_FTP=	Yes | Reason if No
+#PERMIT_PACKAGE_CDROM =	Yes | Reason if No
+#PERMIT_PACKAGE_FTP =	Yes | Reason if No
+#PERMIT_DISTFILES_CDROM =Yes | Reason if No
+#PERMIT_DISTFILES_FTP =	Yes | Reason if No
 
-#WANTLIB=		???
+#WANTLIB =		???
 
 # where the source files and patches can be fetched
 #
-MASTER_SITES=		???
-#MASTER_SITES=		${MASTER_SITE_foo:=subdir/}
+MASTER_SITES =		???
+#MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
 # if more master sites are needed...
-#MASTER_SITES0=
+#MASTER_SITES0 =
 # ...
-#DISTFILES=		???
-#EXTRACT_ONLY=		???
-#EXTRACT_SUFX=		.tar.Z
+#DISTFILES =		???
+#EXTRACT_ONLY =		???
+#EXTRACT_SUFX =		.tar.Z
 
-#DIST_SUBDIR=		???
+#DIST_SUBDIR =		???
 
 # PATCHFILES are also retrieved from MASTER_SITES*
-#PATCHFILES=		???
-#PATCH_DIST_STRIP=	-p0
+#PATCHFILES =		???
+#PATCH_DIST_STRIP =	-p0
 
 # Dependencies
 #
-#MODULES=		???
-#BUILD_DEPENDS=		???
-#RUN_DEPENDS=		???
-#LIB_DEPENDS=		???
-#REGRESS_DEPENDS=	???
+#MODULES =		???
+#BUILD_DEPENDS =	???
+#RUN_DEPENDS =		???
+#LIB_DEPENDS =		???
+#REGRESS_DEPENDS =	???
 
-#MAKE_FLAGS=		???
-#MAKE_ENV=		???
-#FAKE_FLAGS=		???
-#REGRESS_FLAGS=		???
+#MAKE_FLAGS =		???
+#MAKE_ENV =		???
+#FAKE_FLAGS =		???
+#REGRESS_FLAGS =	???
 
 # build/configuration variables
 #
-#SEPARATE_BUILD=	concurrent  (build simultaneously on all arches)
-#SEPARATE_BUILD=	simple  (configure/build still recreates files in source)
-#USE_X11=		Yes
-#USE_GMAKE=		Yes
+#SEPARATE_BUILD =	concurrent  (build simultaneously on all arches)
+#SEPARATE_BUILD =	simple  (configure/build still recreates files in source)
+#USE_X11 =		Yes
+#USE_GMAKE =		Yes
 # Programs that uses libtool should use this option,
 # unless there is a really good reason not to.
-#USE_LIBTOOL=		Yes
+#USE_LIBTOOL =		Yes
 # Set CONFIGURE_STYLE to value corresponding to some standard configuration
 # 	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
 #	  Module::Build Build.PL)
@@ -110,23 +112,28 @@ MASTER_SITES=		???
 # 	  imake [noman]: port uses imake for configuration.
 #   	  (noman: no man page installation)
 # 	  simple: port has its own configure script
-#CONFIGURE_STYLE=	
-#CONFIGURE_SCRIPT=	??? (if other than configure)
-#CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-#CONFIGURE_ENV=		???
+#CONFIGURE_STYLE =	
+#CONFIGURE_SCRIPT =	??? (if other than configure)
+#CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+#CONFIGURE_ENV =	???
+
+# for gnu stuff
+#AUTOCONF_VERSION =	??? (defaults to 2.13)
+#AUTOMAKE_VERSION =	??? (defaults to 1.4)
+#MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC}
 
 # Is the build automagic or is it interactive
 #
-#IS_INTERACTIVE=	Yes
-#REGRESS_IS_INTERACTIVE=Yes
+#IS_INTERACTIVE =		Yes
+#REGRESS_IS_INTERACTIVE =	Yes
 
 # Assume you have one multiple choice flavor: 1 2 3 and switches a b.
 # You would write
 #
-#FLAVORS=1 2 3 a b
-#FLAVOR?=
+#FLAVORS =	1 2 3 a b
+#FLAVOR ?=
 # grab multiple choice value
-#CHOICE=${FLAVOR:L:Na:Nb}
+#CHOICE = ${FLAVOR:L:Na:Nb}
 # check that CHOICE is 1 OR 2 OR 3, or error out
 #.if ${CHOICE} == "1"
 # code for 1
@@ -135,7 +142,7 @@ MASTER_SITES=		???
 #.elif ${CHOICE} == "3"
 # code for 3
 #.else
-#ERRORS+= "Fatal: Conflicting flavor: ${FLAVOR}"
+#ERRORS += "Fatal: Conflicting flavor: ${FLAVOR}"
 #.endif
 # check for switches
 #.if ${FLAVOR:L:Ma}
@@ -149,24 +156,22 @@ MASTER_SITES=		???
 # Generally, DON'T set anything to No if it's not needed.
 # The time gained is not worth it.
 #
-#NO_DEPENDS=		Yes
-#NO_CHECKSUM=		Yes
-#NO_BUILD=		Yes
-#NO_PKG_REGISTER=	Yes
-#NO_REGRESS=		Yes
+#NO_BUILD =		Yes
+#NO_REGRESS =		Yes
 
 # Overrides for default values
 #
-#CFLAGS=		???
-#LDFLAGS=		???
-#MAKE_FILE=		???
-#PKG_ARCH=		???
-#WRKDIST=		??? if other than ${WRKDIR}/$DISTNAME
-#WRKSRC=		??? if other than ${WRKDIST}
-#WRKBUILD=		??? if other than ${WRKSRC}
+#CFLAGS =		???
+#LDFLAGS =		???
+#MAKE_FILE =		???
+#PKG_ARCH =		???
+#WRKDIST =		??? if other than ${WRKDIR}/$DISTNAME
+#WRKSRC =		??? if other than ${WRKDIST}
+#WRKBUILD =		??? if other than ${WRKSRC}
+#WRKCONF =		??? if other than ${WRKBUILD}
 
-#ALL_TARGET=		???
-#INSTALL_TARGET=	???
-#REGRESS_TARGET=	???
+#ALL_TARGET =		???
+#INSTALL_TARGET =	???
+#REGRESS_TARGET =	???
 
 .include <bsd.port.mk>
