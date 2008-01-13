@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:23:17 martynas Exp $
 
 COMMENT=		template plugin for TurboGears that supports json
 
-V=			1.0
-DISTNAME=		TurboJson-${V}
-PKGNAME=		py-turbojson-${V}p0
+VERSION=		1.1.1
+DISTNAME=		TurboJson-${VERSION}
+PKGNAME=		py-turbojson-${VERSION}
 
 CATEGORIES=		devel
 
@@ -26,6 +26,8 @@ RUN_DEPENDS=		::databases/py-sqlobject \
 			::devel/py-simplejson
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
 			::devel/py-nose
+
+SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
