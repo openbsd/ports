@@ -1,0 +1,3 @@
+Finance::IIF is a module for working with IIF files for QuickBooks in
+Perl.  This module reads IIF data records from a file passing each
+successive record to the caller for processing.
