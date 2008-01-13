@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:04:07 martynas Exp $
 
 COMMENT=		tools for using web server gateway interface stack
 
-V=			1.3
-DISTNAME=		Paste-${V}
-PKGNAME=		py-paste-${V}p0
+VERSION=		1.6
+DISTNAME=		Paste-${VERSION}
+PKGNAME=		py-paste-${VERSION}
 
 CATEGORIES=		www
 
@@ -25,6 +25,8 @@ RUN_DEPENDS=		::www/py-flup
 REGRESS_DEPENDS=	::devel/py-py \
 			::www/py-flup
 
+SUBST_VARS=		VERSION
+
 MODPY_SETUPTOOLS=	Yes
 
 post-install:
@@ -32,6 +34,10 @@ post-install:
 	cd ${WRKSRC}/docs && \
 		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-paste/{} \; && \
 		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/py-paste/{} \;
+
+pre-regress:
+	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
+		${WRKSRC}/tests/cgiapp_data/*.cgi
 
 do-regress:
 	cd ${WRKSRC} && py.test .
