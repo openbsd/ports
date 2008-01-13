@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:19:26 martynas Exp $
 
 COMMENT=		discovery-based unittest extension
 
-DISTNAME=		nose-0.9.3
-PKGNAME=		py-${DISTNAME}p0
+VERSION=		0.10.1
+DISTNAME=		nose-${VERSION}
+PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		devel
 
@@ -20,11 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://somethingaboutorange.com/mrl/projects/nose/
 
 MODULES=		lang/python
-REGRESS_DEPENDS=	::devel/py-twisted/core
+REGRESS_DEPENDS=	::devel/py-nose \
+			::devel/py-twisted/core
 
-MAKE_ENV=		NOSE_WHERE=unit_tests
-
-REGRESS_TARGET=		nosetests
+SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
@@ -35,5 +35,9 @@ post-install:
 	cd ${WRKSRC}/examples && \
 		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-nose/{} \; && \
 		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/examples/py-nose/{} \;
+
+do-regress:
+	cd ${WRKSRC}/functional_tests && nosetests
+	cd ${WRKSRC}/unit_tests && nosetests
 
 .include <bsd.port.mk>
