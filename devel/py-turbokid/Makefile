@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:25:17 martynas Exp $
 
 COMMENT=		template plugin that supports Kid templates
 
-V=			1.0.1
-DISTNAME=		TurboKid-${V}
-PKGNAME=		py-turbokid-${V}p0
+VERSION=		1.0.4
+DISTNAME=		TurboKid-${VERSION}
+PKGNAME=		py-turbokid-${VERSION}
 
 CATEGORIES=		devel
 
@@ -18,12 +18,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://cheeseshop.python.org/packages/source/T/TurboKid/
+MASTER_SITES=		http://files.turbogears.org/eggs/
 
 MODULES=		lang/python
 RUN_DEPENDS=		::devel/py-kid
-REGRESS_DEPENDS=	::devel/py-kid \
-			::devel/py-nose
+
+NO_REGRESS=		Yes
+
+SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
