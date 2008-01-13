@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:21:35 martynas Exp $
 
 COMMENT=		plugin to support use of Cheetah templates
 
-V=			0.9.5
-DISTNAME=		TurboCheetah-${V}
-PKGNAME=		py-turbocheetah-${V}p0
+VERSION=		1.0
+DISTNAME=		TurboCheetah-${VERSION}
+PKGNAME=		py-turbocheetah-${VERSION}
 
 CATEGORIES=		devel
 
@@ -25,10 +25,11 @@ RUN_DEPENDS=		::devel/py-cheetah
 REGRESS_DEPENDS=	::devel/py-cheetah \
 			::devel/py-nose
 
-MAKE_ENV=		NOSE_WHERE=turbocheetah/tests
-
-REGRESS_TARGET=		nosetests
+SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
+
+do-regress:
+	cd ${WRKSRC} && NOSE_WHERE=turbocheetah/tests nosetests
 
 .include <bsd.port.mk>
