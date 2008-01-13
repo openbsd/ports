@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2008/01/03 21:52:36 okan Exp $
+# $OpenBSD: Makefile,v 1.106 2008/01/13 18:53:51 simon Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -52,6 +52,7 @@
      SUBDIR += p5-CreditCard
      SUBDIR += p5-File-MMagic
      SUBDIR += p5-File-Rotate-Backup
+     SUBDIR += p5-Finance-IIF
      SUBDIR += p5-Finance-Quote
      SUBDIR += p5-Finance-QuoteHist
      SUBDIR += p5-I18N-Charset
