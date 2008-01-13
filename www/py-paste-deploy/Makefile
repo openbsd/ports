@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/13 17:07:39 martynas Exp $
 
 COMMENT=		load, configure, and compose WSGI applications and servers
 
-V=			1.3
-DISTNAME=		PasteDeploy-${V}
-PKGNAME=		py-paste-deploy-${V}p0
+VERSION=		1.3.1
+DISTNAME=		PasteDeploy-${VERSION}
+PKGNAME=		py-paste-deploy-${VERSION}
 
 CATEGORIES=		www
 
@@ -24,6 +24,8 @@ MODULES=		lang/python
 RUN_DEPENDS=		::www/py-paste
 REGRESS_DEPENDS=	::devel/py-py \
 			::www/py-paste
+
+SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
