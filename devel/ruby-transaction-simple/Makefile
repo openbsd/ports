@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/14 19:20:12 bernd Exp $
 
 COMMENT=	generic active transaction support for ruby objects
 
 DISTNAME=	transaction-simple-1.4.0
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	devel
 
 # mit
@@ -16,11 +16,13 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=trans-simple/}
 
 MODULES=	lang/ruby
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-hoe-1.2.1:devel/ruby-hoe
+GEM_SKIPDEPENDS=hoe
 
 CONFIGURE_STYLE=ruby gem
 
 PKG_ARCH=	*
+
+do-regress:
+	@cd ${WRKBUILD} && ${RUBY} test/test_all.rb
 
 .include <bsd.port.mk>
