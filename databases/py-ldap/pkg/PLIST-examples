@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2008/01/11 09:03:16 winiger Exp $
+@comment $OpenBSD: PLIST-examples,v 1.4 2008/01/14 11:11:33 winiger Exp $
 share/examples/py-ldap/
 share/examples/py-ldap/Demo/
 share/examples/py-ldap/Demo/Lib/
 share/examples/py-ldap/Demo/Lib/ldap/
-share/examples/py-ldap/Demo/Lib/ldap/res/
+share/examples/py-ldap/Demo/Lib/ldap/async/
+share/examples/py-ldap/Demo/Lib/ldap/async/deltree.py
+share/examples/py-ldap/Demo/Lib/ldap/async/ldifwriter.py
+share/examples/py-ldap/Demo/Lib/ldap/async/sizelimit.py
 share/examples/py-ldap/Demo/Lib/ldapurl/
 share/examples/py-ldap/Demo/Lib/ldapurl/urlsearch.py
 share/examples/py-ldap/Demo/Lib/ldif/
@@ -11,10 +14,14 @@ share/examples/py-ldap/Demo/Lib/ldif/ldifcopy.py
 share/examples/py-ldap/Demo/initialize.py
 share/examples/py-ldap/Demo/ldapcontrols.py
 share/examples/py-ldap/Demo/options.py
+share/examples/py-ldap/Demo/page_control.py
 share/examples/py-ldap/Demo/passwd_ext_op.py
 share/examples/py-ldap/Demo/pickle_ldapobject.py
+share/examples/py-ldap/Demo/pyasn1/
+share/examples/py-ldap/Demo/pyasn1/prereadcontrol.py
 share/examples/py-ldap/Demo/reconnect.py
 share/examples/py-ldap/Demo/rename.py
+share/examples/py-ldap/Demo/resiter.py
 share/examples/py-ldap/Demo/sasl_bind.py
 share/examples/py-ldap/Demo/schema.py
 share/examples/py-ldap/Demo/schema_tree.py

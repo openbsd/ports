@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/01/11 09:03:16 winiger Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/01/14 11:11:33 winiger Exp $
 @option no-default-conflict
+@conflict py-ldap-*-python${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/_ldap.so
 lib/python${MODPY_VERSION}/site-packages/dsml.py
 lib/python${MODPY_VERSION}/site-packages/dsml.pyc

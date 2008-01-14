@@ -1,6 +1,19 @@
---- setup.py.orig	Wed Oct 27 00:29:10 2004
-+++ setup.py	Mon Nov 22 22:04:13 2004
-@@ -27,8 +27,14 @@ f.close()
+--- setup.py.orig	Wed Jul 25 00:42:56 2007
++++ setup.py	Mon Jan 14 11:12:16 2008
+@@ -7,11 +7,7 @@ $Id: setup.py,v 1.61 2007/07/16 10:40:29 stroeder Exp 
+ """
+ 
+ has_setuptools = False
+-try:
+-	from setuptools import setup, Extension
+-	has_setuptools = True
+-except ImportError:
+-	from distutils.core import setup, Extension
++from distutils.core import setup, Extension
+ 
+ from ConfigParser import ConfigParser
+ import sys,os,string,time
+@@ -33,8 +29,14 @@ f.close()
  
  #-- A class describing the features and requirements of OpenLDAP 2.0
  class OpenLDAP2:
