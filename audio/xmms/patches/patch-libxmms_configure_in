@@ -1,0 +1,12 @@
+$OpenBSD: patch-libxmms_configure_in,v 1.8 2008/01/14 01:16:37 jakemsr Exp $
+--- libxmms/configure.in.orig	Wed Dec 19 15:37:29 2007
++++ libxmms/configure.in	Wed Dec 19 15:37:53 2007
+@@ -32,7 +32,7 @@ AC_C_BIGENDIAN
+ XMMS_FUNC_POSIX([sched_setscheduler nanosleep])
+ 
+ AM_PATH_GLIB([1.2.2],,[AC_MSG_ERROR([*** GLIB >= 1.2.2 not installed - please install first ***])])
+-AM_PATH_GTK([1.2.2],,[AC_MSG_ERROR([*** GTK+ >= 1.2.2 not installed - please install first ***])],[gthread])
++AM_PATH_GTK([1.2.2],,[AC_MSG_ERROR([*** GTK+ >= 1.2.2 not installed - please install first ***])])
+ 
+ if test -n "$GCC"
+ then

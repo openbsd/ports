@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2007/12/30 20:23:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2008/01/14 01:16:37 jakemsr Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-esd=		Esound output plugin for XMMS
@@ -10,7 +10,7 @@ SHARED_ONLY=		Yes
 
 VERSION=		1.2.11
 DISTNAME=		xmms-${VERSION}
-PKGNAME-main=		xmms-${VERSION}p0
+PKGNAME-main=		xmms-${VERSION}p1
 PKGNAME-esd=		xmms-esd-${VERSION}p0
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}p0
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}p0
