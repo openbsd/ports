@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.578 2008/01/11 09:33:49 winiger Exp $
+# $OpenBSD: Makefile,v 1.579 2008/01/14 14:47:16 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -607,6 +607,7 @@
      SUBDIR += py-setuptools
      SUBDIR += py-silc
      SUBDIR += py-simplejson
+     SUBDIR += py-sip
      SUBDIR += py-tpg
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbojson
