@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/14 14:44:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/14 18:08:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,11 @@ MODULES=	lang/python
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=${MODPY_BIN} configure.py
-CONFIGURE_ARGS=	INCDIR=${LOCALBASE}/include \
+CONFIGURE_ARGS=	-b ${PREFIX}/bin \
+		-d ${MODPY_SITEPKG} \
+		-e ${MODPY_INCDIR} \
+		-v ${PREFIX}/share/sip \
+		INCDIR=${LOCALBASE}/include \
 		LIBDIR=${LOCALBASE}/lib \
 		CC=${CC} CXX=${CXX} \
 		CFLAGS="${CFLAGS}" \
