@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.15 2007/11/13 17:45:28 bernd Exp $
+# $OpenBSD: ruby.port.mk,v 1.16 2008/01/14 18:39:07 bernd Exp $
 
 # ruby module
 
@@ -43,9 +43,9 @@ _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
 
 # Ignore specified gem dependencies.
 GEM_SKIPDEPENDS?=
-.if !empty(GEM_SKIPDEPENDS)
+.  if !empty(GEM_SKIPDEPENDS)
 GEM_FLAGS+=	--skip-dependencies "${GEM_SKIPDEPENDS}"
-.endif
+.  endif
 
 .  if !target(do-extract)
 do-extract:
@@ -61,23 +61,9 @@ pre-fake:
 		pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}
 	@cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
 .  endif
+# Most gems need a custom do-regress target. 
 .  if !target(do-regress)
-# XXX gem errors out w/o unit tests to run and I have not found any gem
-# which actually supports tests
 NO_REGRESS=	Yes
-
-# a generic regress target might look sth like this
-#do-regress:
-#	@if [ ! -d ${WRKINST} ]; then \
-#		_CLEAN_FAKE=Yes; \
-#	fi; \
-#	mkdir -p ${WRKINST}${GEM_BASE}; \
-#	${SUDO} ${GEM} install ${GEM_FLAGS} --test \
-#		--install-dir ${WRKINST}${GEM_BASE} \
-#		${FULLDISTDIR}/${DISTFILES}; \
-#	if [ ! -z "$$_CLEAN_FAKE" ]; then \
-#		${SUDO} rm -fr ${WRKINST}; \
-#	fi
 .  endif
 .  if !target(do-install)
 do-install:
