@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/01/13 00:13:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/14 06:43:16 sturm Exp $
 
 COMMENT=	Rampart arcade game clone for X11
 
 DISTNAME=	castle-combat-0.8.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.linux-games.com/castle-combat/
@@ -20,7 +20,7 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	::devel/pygame \
 		::devel/py-twisted/core \
-		::py-Numeric-*:math/py-Numeric
+		:py-Numeric-*:math/py-Numeric
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
