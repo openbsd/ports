@@ -1,0 +1,7 @@
+SIP is a tool for automatically generating Python bindings for C and C++
+libraries.
+SIP comprises a code generator and a Python module.  The code generator
+processes a set of specification files and generates C or C++ code which
+is then compiled to create the bindings extension module.  The SIP
+Python module provides support functions to the automatically generated
+code.
