@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2007/03/18 17:19:57 martynas Exp $
---- configure.orig	Sun Jun  5 12:50:22 2005
-+++ configure	Sun Mar 18 18:28:08 2007
-@@ -5,7 +5,7 @@ use strict;
+$OpenBSD: patch-configure,v 1.2 2008/01/14 22:40:39 martynas Exp $
+--- configure.orig	Tue Jan  8 11:48:59 2008
++++ configure	Sat Jan 12 21:32:00 2008
+@@ -12,7 +12,7 @@ my $xmlldflags = `xml2-config --libs`;
+ chomp($xmlldflags);
  
- # The defaults. Change here if you need.
- my($prefix) = "/usr/local";
--my($cflags) = '-Wall -Wno-format-y2k -O2 -DLOCALEPATH="\"$(LOCALEPATH)\"" -DOS=\"$(shell uname)\" `xml2-config --cflags` $(EXTRA_CFLAGS) ';
-+my($cflags) = '-Wall -Wno-format-y2k -DLOCALEPATH="\"$(LOCALEPATH)\"" -DOS=\"$(shell uname)\" `xml2-config --cflags` $(EXTRA_CFLAGS) ';
- my($ldflags) = '-lncurses `xml2-config --libs` $(EXTRA_LDFLAGS) ';
+ my $prefix = "/usr/local";
+-my $cflags = "-Wall -Wno-format-y2k -O2 -DLOCALEPATH=\"\\\"\$(LOCALEPATH)\\\"\" -DOS=\\\"$os\\\" $xmlcflags \$(EXTRA_CFLAGS) ";
++my $cflags = "-Wall -Wno-format-y2k -DLOCALEPATH=\"\\\"\$(LOCALEPATH)\\\"\" -DOS=\\\"$os\\\" $xmlcflags \$(EXTRA_CFLAGS) ";
+ my $ldflags = "-lncurses $xmlldflags \$(EXTRA_LDFLAGS) ";
  
- parse_cmdl_line();
+ my $use_nls = 1;

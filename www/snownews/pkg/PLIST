@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/04/10 13:12:43 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/01/14 22:40:39 martynas Exp $
 bin/opml2snow
 bin/snow2opml
 bin/snownews
-bin/snowsync
 man/de/
 man/de/man1/
 @man man/de/man1/snownews.1
@@ -20,6 +19,9 @@ man/nl/man1/
 man/ru_RU.KOI8-R/
 man/ru_RU.KOI8-R/man1/
 @man man/ru_RU.KOI8-R/man1/snownews.1
+share/locale/be@latin/
+share/locale/be@latin/LC_MESSAGES/
+share/locale/be@latin/LC_MESSAGES/snownews.mo
 share/locale/de/LC_MESSAGES/snownews.mo
 share/locale/es/LC_MESSAGES/snownews.mo
 share/locale/fr/LC_MESSAGES/snownews.mo
@@ -29,6 +31,9 @@ share/locale/nl/LC_MESSAGES/snownews.mo
 share/locale/pl/LC_MESSAGES/snownews.mo
 share/locale/pt_BR/LC_MESSAGES/snownews.mo
 share/locale/ru/LC_MESSAGES/snownews.mo
+share/locale/se/
+share/locale/se/LC_MESSAGES/
+share/locale/se/LC_MESSAGES/snownews.mo
 share/locale/sl/LC_MESSAGES/snownews.mo
 share/locale/zh_CN/LC_MESSAGES/snownews.mo
 share/locale/zh_TW/LC_MESSAGES/snownews.mo

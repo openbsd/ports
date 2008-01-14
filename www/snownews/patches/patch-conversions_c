@@ -1,7 +1,7 @@
-$OpenBSD: patch-conversions_c,v 1.6 2007/03/18 17:19:57 martynas Exp $
---- conversions.c.orig	Sun Jun  5 12:50:22 2005
-+++ conversions.c	Sun Mar 18 18:26:42 2007
-@@ -24,6 +24,7 @@
+$OpenBSD: patch-conversions_c,v 1.7 2008/01/14 22:40:39 martynas Exp $
+--- conversions.c.orig	Tue Jan  8 11:41:02 2008
++++ conversions.c	Sat Jan 12 21:30:42 2008
+@@ -21,6 +21,7 @@
   *
   */
   
@@ -9,15 +9,15 @@ $OpenBSD: patch-conversions_c,v 1.6 2007/03/18 17:19:57 martynas Exp $
  #include <string.h>
  #include <iconv.h>
  #include <stdio.h>
-@@ -33,6 +34,7 @@
+@@ -30,6 +31,7 @@
  #include <errno.h>
  #include <libxml/HTMLparser.h>
  #include <langinfo.h>
 +#include <md5.h>
  
- /* I have no idea what needs to be defined to get strptime() on glibc.
-  * This is stolen from somewhere else and it works for me(tm).
-@@ -49,7 +51,6 @@
+ #include "os-support.h"
+ 
+@@ -48,7 +50,6 @@
  #include "interface.h"
  #include "ui-support.h"
  #include "setup.h"
@@ -25,7 +25,7 @@ $OpenBSD: patch-conversions_c,v 1.6 2007/03/18 17:19:57 martynas Exp $
  #include "digcalc.h"
  
  extern struct entity *first_entity;
-@@ -64,17 +65,22 @@ char * iconvert (char * inbuf) {
+@@ -63,17 +64,22 @@ char * iconvert (char * inbuf) {
  	iconv_t cd;							/* Iconvs conversion descriptor. */
  	char *outbuf, *outbuf_first;		/* We need two pointers so we do not lose
  	                                      the string starting position. */

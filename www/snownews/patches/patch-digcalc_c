@@ -1,7 +1,7 @@
-$OpenBSD: patch-digcalc_c,v 1.1 2006/02/20 16:33:55 naddy Exp $
---- digcalc.c.orig	Thu Feb 16 22:13:28 2006
-+++ digcalc.c	Thu Feb 16 22:13:48 2006
-@@ -14,8 +14,8 @@
+$OpenBSD: patch-digcalc_c,v 1.2 2008/01/14 22:40:39 martynas Exp $
+--- digcalc.c.orig	Tue Jan  8 11:41:02 2008
++++ digcalc.c	Sat Jan 12 21:30:42 2008
+@@ -11,8 +11,8 @@
   * MD5 implementation rather than using RSA's.
   */
  
