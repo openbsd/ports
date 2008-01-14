@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_top_mk,v 1.4 2006/06/19 08:22:35 bernd Exp $
---- build/top.mk.orig	Mon Aug 29 20:46:17 2005
-+++ build/top.mk	Wed Dec 28 12:04:37 2005
-@@ -121,7 +121,7 @@ LTLINK_MOD = $(LIBTOOL) $(LTONLY_MOD) --
+$OpenBSD: patch-build_top_mk,v 1.5 2008/01/14 21:01:11 mbalmer Exp $
+--- build/top.mk.orig	Wed Jan  3 00:42:47 2007
++++ build/top.mk	Mon Jan 14 11:55:23 2008
+@@ -121,7 +121,7 @@ LTLINK_MOD = $(LIBTOOL) $(LTONLY_MOD) --mode=link \
  	$(CC) $(LT_CFLAGS) $(LDFLAGS) $(LTFLAGS_MOD)
  
  LTINSTALL = $(LIBTOOL) --mode=install $(INSTALL) 
