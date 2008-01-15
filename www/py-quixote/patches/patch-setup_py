@@ -1,0 +1,27 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2008/01/15 02:00:56 okan Exp $
+--- setup.py.orig	Sun Jan 13 13:22:59 2008
++++ setup.py	Sun Jan 13 13:23:04 2008
+@@ -1,9 +1,9 @@
+ #!/usr/bin/env python
+-#try:
+-#    from setuptools import setup
+-#except ImportError:
+-#    print '(WARNING: importing distutils, not setuptools!)'
+-#    from distutils.core import setup
++try:
++    from setuptools import setup
++except ImportError:
++    print '(WARNING: importing distutils, not setuptools!)'
++    from distutils.core import setup
+ 
+ # Setup script for Quixote
+ 
+@@ -49,7 +49,7 @@ kw = {'name': "Quixote",
+ 
+       'cmdclass': {'build_py': qx_build_py},
+ 
+-#      'test_suite' : 'nose.collector'
++      'test_suite' : 'nose.collector'
+      }
+ 
+ 

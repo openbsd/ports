@@ -1,0 +1,6 @@
+Quixote is a framework for developing Web applications in Python.
+Quixote is based on a simple, flexible design, making it possible to
+write applications quickly and to benefit from the wide range of
+available third-party Python modules.  Deployed appropriately, Quixote
+has excellent performance that allows you to put Quixote-based
+applications into large-scale production use.
