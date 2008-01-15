@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2008/01/15 08:47:09 ajacoutot Exp $
 
 COMMENT=	xml parser for Java
 
-DISTNAME=	Xerces-J-bin.2.4.0
-PKGNAME=	xerces-2.4.0p3
+V=		2.9.1
+DISTNAME=	Xerces-J-bin.${V}
+PKGNAME=	xerces-${V}
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://xml.apache.org/xerces2-j/index.html
@@ -30,14 +31,16 @@ BUILD_DEPENDS=	:gtar-*:archivers/gtar
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/xerces-2_4_0
+VFLAT=		${V:S/./_/g}
+SUBST_VARS=	VFLAT
+WRKDIST=	${WRKDIR}/xerces-${VFLAT}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/xerces-2_4_0
-	${INSTALL_DATA_DIR} ${PREFIX}/share/java/xerces-2_4_0
-	cp ${WRKSRC}/*.jar ${PREFIX}/share/java/classes/xerces-2_4_0
-	cp -R ${WRKSRC}/docs ${PREFIX}/share/java/xerces-2_4_0
-	cp -R ${WRKSRC}/data ${PREFIX}/share/java/xerces-2_4_0
-	cp -R ${WRKSRC}/samples ${PREFIX}/share/java/xerces-2_4_0
+	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/xerces-${VFLAT}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/java/xerces-${VFLAT}
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${PREFIX}/share/java/classes/xerces-${VFLAT}
+	cp -R ${WRKSRC}/docs ${PREFIX}/share/java/xerces-${VFLAT}
+	cp -R ${WRKSRC}/data ${PREFIX}/share/java/xerces-${VFLAT}
+	cp -R ${WRKSRC}/samples ${PREFIX}/share/java/xerces-${VFLAT}
 
 .include <bsd.port.mk>

@@ -1,6 +1,15 @@
-The Xerces Java Parser supports XML 1.0 recommendation and
-contains advanced parser functionality, such as XML Schema, DOM
-Level 2 version 1.0, and SAX Version 2, in addition to supporting
-the industry-standard DOM Level 1 and SAX version 1 APIs.
+The Apache Xerces2 parser is the reference implementation of XNI but
+other parser components, configurations, and parsers can be written
+using the Xerces Native Interface.
 
-This is an Apache Software Foundation project.
+Xerces2 also provides a complete implementation of the Document Object
+Model Level 3 Core and Load/Save W3C Recommendations and provides a
+complete implementation of the XML Inclusions (XInclude) W3C
+Recommendation.  It also provides support for OASIS XML Catalogs v1.1.
+
+Xerces2 is able to parse documents written according to the XML 1.1
+Recommendation, except that it does not yet provide an option to enable
+normalization checking as described in section 2.13 of this
+specification.  It also handles namespaces according to the XML
+Namespaces 1.1 Recommendation, and will correctly serialize XML 1.1
+documents if the DOM level 3 load/save APIs are in use.
