@@ -1,0 +1,12 @@
+$OpenBSD: fpic-patch-specs_openbsd-g++,v 1.1 2008/01/15 08:07:27 ajacoutot Exp $
+--- specs/openbsd-g++.orig	Tue Jan 15 08:01:53 2008
++++ specs/openbsd-g++	Tue Jan 15 08:03:52 2008
+@@ -50,7 +50,7 @@ QMAKE_LINK_SHLIB_CMD	= $$QMAKE_LINK_SHLIB $(LFLAGS) \
+ QMAKE_LFLAGS		=
+ QMAKE_LFLAGS_RELEASE	=
+ QMAKE_LFLAGS_DEBUG	=
+-QMAKE_LFLAGS_SHLIB	= -shared
++QMAKE_LFLAGS_SHLIB	= -shared -fPIC
+ QMAKE_LFLAGS_PLUGIN	= $$QMAKE_LFLAGS_SHLIB
+ QMAKE_LFLAGS_SONAME	= -Wl,-soname,
+ QMAKE_LFLAGS_THREAD	= -pthread

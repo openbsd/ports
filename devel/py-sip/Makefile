@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/01/14 18:08:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/15 08:07:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,6 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	m c stdc++
 
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/
+
+.if ${MACHINE_ARCH} == "amd64"
+PATCH_LIST=	patch-* fpic-patch-specs_openbsd-g++
+.endif
 
 MODULES=	lang/python
 
