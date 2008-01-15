@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/15 13:26:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/15 15:12:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,8 +32,6 @@ MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt3/GPL/
 
 MODULES=	x11/qt3 \
 		lang/python
-
-#MODQT_OVERRIDE_UIC=No
 
 USE_X11=	Yes
 
