@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_demuxers_asfheader_c,v 1.1 2008/01/15 01:27:05 jakemsr Exp $
+--- src/demuxers/asfheader.c.orig	Sat Aug 18 16:36:44 2007
++++ src/demuxers/asfheader.c	Sun Jan 13 17:43:59 2008
+@@ -144,7 +144,7 @@ static char *asf_reader_get_string(asf_reader_t *reade
+   size_t inbytesleft, outbytesleft;
+   char scratch[2048]; 
+ 
+-  if ((reader->size - reader->pos) < size)
++  if ((size == 0) || (reader->size - reader->pos) < size)
+     return NULL;
+ 
+   inbuf = (char *)reader->buffer + reader->pos;
