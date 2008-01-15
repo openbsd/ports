@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/01/15 08:07:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/15 21:16:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
 DISTNAME=	sip-4.7.3
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/sip/
@@ -21,10 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	m c stdc++
 
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/
-
-.if ${MACHINE_ARCH} == "amd64"
-PATCH_LIST=	patch-* fpic-patch-specs_openbsd-g++
-.endif
 
 MODULES=	lang/python
 
