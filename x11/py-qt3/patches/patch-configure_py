@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure_py,v 1.1.1.1 2008/01/15 13:26:00 ajacoutot Exp $
+--- configure.py.orig	Thu Dec  6 15:28:06 2007
++++ configure.py	Tue Jan 15 09:38:26 2008
+@@ -1004,7 +1004,7 @@ def check_license():
+ 
+     while 1:
+         try:
+-            resp = raw_input("Do you accept the terms of the license? ")
++            resp = "yes"
+         except:
+             resp = ""
+ 
+@@ -1084,15 +1084,11 @@ def check_qt_installation(macros):
+         macros["LIBDIR_QT"] = qt_libdir
+ 
+     # Check the Qt header files have been installed.  Quietly check for Qt v4.
+-    qt4_d = os.path.join(qt_incdir, "QtCore")
+ 
+-    qglobal = os.path.join(qt4_d, "qglobal.h")
++    qglobal = os.path.join(qt_incdir, "qglobal.h")
+ 
+     if not os.access(qglobal, os.F_OK):
+-        qglobal = os.path.join(qt_incdir, "qglobal.h")
+-
+-        if not os.access(qglobal, os.F_OK):
+-            sipconfig.error("qglobal.h could not be found in %s." % qt_incdir)
++        sipconfig.error("qglobal.h could not be found in %s." % qt_incdir)
+ 
+     # Get the Qt version number.
+     global qt_version
