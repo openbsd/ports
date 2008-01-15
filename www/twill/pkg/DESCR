@@ -1,0 +1,4 @@
+twill is a simple language that allows users to browse the web from a
+command-line interface.  With twill, you can navigate through web sites
+that use forms, cookies, and most standard web features.  twill supports
+automated web testing and has a simple Python interface.
