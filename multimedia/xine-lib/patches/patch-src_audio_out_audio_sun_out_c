@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.5 2007/07/14 09:21:15 jakemsr Exp $
---- src/audio_out/audio_sun_out.c.orig	Fri Jul 13 23:42:54 2007
-+++ src/audio_out/audio_sun_out.c	Fri Jul 13 23:42:54 2007
-@@ -584,9 +584,9 @@ static int ao_sun_bytes_per_frame(ao_driver_t *this_ge
+$OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.6 2008/01/15 00:36:46 jakemsr Exp $
+--- src/audio_out/audio_sun_out.c.orig	Tue Jan  1 08:30:08 2008
++++ src/audio_out/audio_sun_out.c	Wed Jan  9 01:50:21 2008
+@@ -582,9 +582,9 @@ static int ao_sun_bytes_per_frame(ao_driver_t *this_ge
  static int ao_sun_delay(ao_driver_t *this_gen)
  {
    sun_driver_t *this = (sun_driver_t *) this_gen;
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.5 2007/07/14 09:21:15 jakemsr 
    if (ioctl(this->audio_fd, AUDIO_GETINFO, &info) == 0 &&
        (this->frames_in_buffer == 0 || info.play.samples > 0)) {
  
-@@ -634,8 +634,9 @@ static int ao_sun_delay(ao_driver_t *this_gen)
+@@ -632,8 +632,9 @@ static int ao_sun_delay(ao_driver_t *this_gen)
  #endif
    }
  #else
@@ -24,7 +24,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.5 2007/07/14 09:21:15 jakemsr 
  #endif
    return NOT_REAL_TIME;
  }
-@@ -890,8 +891,7 @@ static int ao_sun_ctrl(ao_driver_t *this_gen, int cmd,
+@@ -888,8 +889,7 @@ static int ao_sun_ctrl(ao_driver_t *this_gen, int cmd,
  
      this->frames_in_buffer = 0;
      this->last_samplecnt = 0;
@@ -34,7 +34,7 @@ $OpenBSD: patch-src_audio_out_audio_sun_out_c,v 1.5 2007/07/14 09:21:15 jakemsr 
      ioctl(this->audio_fd, AUDIO_FLUSH);
  #endif
      break;
-@@ -966,11 +966,20 @@ static ao_driver_t *ao_sun_open_plugin (audio_driver_c
+@@ -964,11 +964,20 @@ static ao_driver_t *ao_sun_open_plugin (audio_driver_c
    status = ioctl(this->audio_fd, AUDIO_SETINFO, &info);
    
    if (status < 0) {

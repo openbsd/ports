@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2007/11/25 14:22:36 bernd Exp $
+# $OpenBSD: Makefile,v 1.23 2008/01/15 00:36:46 jakemsr Exp $
 
 COMMENT-main=		multimedia decoding library
 COMMENT-esd=		esound audio output module for xine-lib
 COMMENT-arts=		artsd audio output muodule for xine-lib
 
-V=			1.1.8
+V=			1.1.9.1
 DISTNAME=		xine-lib-${V}
-PKGNAME-main=		xine-lib-${V}p1
+PKGNAME-main=		xine-lib-${V}
 PKGNAME-esd=		xine-lib-esd-${V}
 PKGNAME-arts=		xine-lib-arts-${V}
+EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
-SHARED_LIBS=		xine	19.0
+SHARED_LIBS=		xine	20.0
 
 HOMEPAGE=		http://xinehq.de/
 
@@ -28,7 +29,8 @@ WANTLIB=		expat fontconfig freetype m z
 WANTLIB-main=		${WANTLIB} X11 Xau Xdmcp Xext Xinerama Xrandr \
 			Xrender Xv faac jpeg lcms mp3lame usbhid x264
 WANTLIB-esd=		${WANTLIB}
-WANTLIB-arts=		${WANTLIB} stdc++ glib-2.0 gmodule-2.0 gthread-2.0
+WANTLIB-arts=		${WANTLIB} pcre stdc++ glib-2.0 \
+			gmodule-2.0 gthread-2.0
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=		-Di386=1

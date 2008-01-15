@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_input_libreal_real_c,v 1.7 2007/10/31 10:55:37 jakemsr Exp $
---- src/input/libreal/real.c.orig	Sat Aug 18 19:36:47 2007
-+++ src/input/libreal/real.c	Wed Oct 17 20:29:25 2007
-@@ -51,8 +51,9 @@ static const unsigned char xor_table[] = {
+$OpenBSD: patch-src_input_libreal_real_c,v 1.8 2008/01/15 00:36:46 jakemsr Exp $
+--- src/input/libreal/real.c.orig	Tue Jan  1 08:30:08 2008
++++ src/input/libreal/real.c	Wed Jan  9 01:50:22 2008
+@@ -48,8 +48,9 @@ static const unsigned char xor_table[] = {
  #define _X_BE_32C(x,y) do { *(uint32_t *)(x) = be2me_32((y)); } while(0)
  #define _X_LE_32C(x,y) do { *(uint32_t *)(x) = le2me_32((y)); } while(0)
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_demuxers_demux_asf_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
---- src/demuxers/demux_asf.c.orig	Sun Apr 15 10:42:15 2007
-+++ src/demuxers/demux_asf.c	Sun May 20 22:40:02 2007
-@@ -427,7 +427,7 @@ static int asf_read_header (demux_asf_t *this) {
+$OpenBSD: patch-src_demuxers_demux_asf_c,v 1.2 2008/01/15 00:36:46 jakemsr Exp $
+--- src/demuxers/demux_asf.c.orig	Tue Jan  1 08:30:08 2008
++++ src/demuxers/demux_asf.c	Sat Jan 12 21:11:35 2008
+@@ -425,7 +425,7 @@ static int asf_read_header (demux_asf_t *this) {
  	xine_log(this->stream->xine, XINE_LOG_MSG,
  		 _("demux_asf: warning: The stream id=%d is encrypted.\n"), asf_stream->stream_number);
  	_x_message(this->stream, XINE_MSG_ENCRYPTED_SOURCE,
@@ -10,3 +10,24 @@ $OpenBSD: patch-src_demuxers_demux_asf_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
  	this->mode = ASF_MODE_ENCRYPTED_CONTENT;
        }
      }
+@@ -723,6 +723,9 @@ static void asf_send_buffer_nodefrag (demux_asf_t *thi
+     buf->size       = bufsize;
+     timestamp       = 0;
+ 
++    if (stream->frag_offset == 0)
++      buf->decoder_flags |= BUF_FLAG_FRAME_START;
++
+     stream->frag_offset += bufsize;
+     frag_len -= bufsize;
+ 
+@@ -733,10 +736,6 @@ static void asf_send_buffer_nodefrag (demux_asf_t *thi
+     else
+       check_newpts (this, buf->pts, PTS_AUDIO, package_done);
+ 
+-      
+-    if (frag_offset == 0)
+-      buf->decoder_flags |= BUF_FLAG_FRAME_START;
+-      
+     /* test if whole packet read */
+     if (package_done) {
+       buf->decoder_flags |= BUF_FLAG_FRAME_END;

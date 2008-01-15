@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libfaad_Makefile_in,v 1.2 2007/10/31 10:55:37 jakemsr Exp $
---- src/libfaad/Makefile.in.orig	Mon Aug 27 14:28:01 2007
-+++ src/libfaad/Makefile.in	Wed Oct 17 20:38:25 2007
+$OpenBSD: patch-src_libfaad_Makefile_in,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
+--- src/libfaad/Makefile.in.orig	Sun Jan  6 10:57:38 2008
++++ src/libfaad/Makefile.in	Wed Jan  9 01:56:17 2008
 @@ -73,43 +73,7 @@ am__DEPENDENCIES_1 = $(top_builddir)/src/xine-engine/l
  am__DEPENDENCIES_2 =
  xineplug_decode_faad_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_libfaad_Makefile_in,v 1.2 2007/10/31 10:55:37 jakemsr Exp $
  	xineplug_decode_faad_la-xine_faad_decoder.lo
  xineplug_decode_faad_la_OBJECTS =  \
  	$(am_xineplug_decode_faad_la_OBJECTS)
-@@ -594,97 +558,11 @@ SUBDIRS = codebook
+@@ -596,97 +560,11 @@ SUBDIRS = codebook
  xineplug_LTLIBRARIES = $(faad_module)
  xineplug_decode_faad_la_CFLAGS = $(VISIBILITY_FLAG) $(AM_CFLAGS) -fno-strict-aliasing
  xineplug_decode_faad_la_SOURCES = \
@@ -91,7 +91,7 @@ $OpenBSD: patch-src_libfaad_Makefile_in,v 1.2 2007/10/31 10:55:37 jakemsr Exp $
  	xine_faad_decoder.c
  
  xineplug_decode_faad_la_LDFLAGS = $(xineplug_ldflags)
--xineplug_decode_faad_la_LIBADD = -lm $(XINE_LIB) $(LTLIBINTL)
+-xineplug_decode_faad_la_LIBADD = $(XINE_LIB) -lm $(LTLIBINTL)
 -noinst_HEADERS = \
 -	analysis.h \
 -	bits.h \
@@ -141,7 +141,7 @@ $OpenBSD: patch-src_libfaad_Makefile_in,v 1.2 2007/10/31 10:55:37 jakemsr Exp $
 -	structs.h \
 -	syntax.h \
 -	tns.h 
-+xineplug_decode_faad_la_LIBADD = -lm $(XINE_LIB) -lfaad $(LTLIBINTL)
++xineplug_decode_faad_la_LIBADD = $(XINE_LIB) -lm -lfaad $(LTLIBINTL)
 +noinst_HEADERS =
  
  all: all-recursive

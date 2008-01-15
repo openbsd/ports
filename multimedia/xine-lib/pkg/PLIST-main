@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/11/25 14:22:36 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
 @pkgpath multimedia/xine-lib
 %%i386%%
 bin/xine-config
@@ -156,6 +156,7 @@ share/locale/it/LC_MESSAGES/libxine1.mo
 share/locale/pl/LC_MESSAGES/libxine1.mo
 share/locale/pt_BR/LC_MESSAGES/libxine1.mo
 share/locale/sk/LC_MESSAGES/libxine1.mo
+share/locale/tr/LC_MESSAGES/libxine1.mo
 share/xine/
 share/xine/libxine1/
 share/xine/libxine1/fonts/
