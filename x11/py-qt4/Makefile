@@ -1,0 +1,81 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2008/01/15 13:25:23 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
+
+COMMENT-main=	python Qt4 bindings
+COMMENT-docs=	py-qt4 documentation
+
+V=		4.3.3
+DISTNAME=	PyQt-x11-gpl-${V}
+PKGNAME=	py-qt4-${V}
+PKGNAME-main=	py-qt4-${V}
+PKGNAME-docs=	py-qt4-docs-${V}
+
+CATEGORIES=	x11 devel
+
+HOMEPAGE=	http://www.riverbankcomputing.co.uk/pyqt/index.php
+
+MAINTAINER=	Lars Hansson <lars@unet.net.ph>
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	GL GLU ICE SM X11 Xcursor Xext Xfixes Xi Xinerama \
+		Xrandr Xrender c crypto dbus-1 fontconfig freetype \
+		glib-2.0 gthread-2.0 iconv intl m png pthread ssl \
+		stdc++ z
+
+MULTI_PACKAGES=	-main -docs
+
+WANTLIB-docs=
+LIB_DEPENDS-docs=
+RUN_DEPENDS-docs=
+PKG_ARCH-docs=	*
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::devel/py-sip \
+		::x11/dbus-python
+LIB_DEPENDS=	QtAssistantClient,QtDesigner,QtGui,QtNetwork,QtOpenGL,QtScript,QtSql,QtSvg,QtTest,QtXml::x11/qt4
+
+NO_REGRESS=	Yes
+
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/
+
+MODULES=	x11/qt4 \
+		lang/python
+
+USE_X11=	Yes
+
+CONFIGURE_STYLE=simple
+CONFIGURE_SCRIPT=${MODPY_BIN} configure.py
+CONFIGURE_ARGS=	--qmake=${LOCALBASE}/bin/qmake4 \
+		--bindir=${PREFIX}/bin \
+		--destdir=${MODPY_SITEPKG} \
+		--sipdir=${PREFIX}/share/sip \
+		--vendorid-incdir=${MODPY_INCDIR} \
+		--vendorid-libdir=${MODPY_LIBDIR} \
+		--no-qsci-api \
+		INCDIR_QT=${MODQT_INCDIR} \
+		LIBDIR=${LOCALBASE}/lib \
+		LIBDIR_QT=${MODQT_LIBDIR} \
+		CC=${CC} \
+		CXX=${CXX} \
+		CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}"
+
+PYQTMODS=	QtCore QtGui QtNetwork QtOpenGL QtScript QtSql QtSvg \
+		QtTest QtXml QtAssistant QtDesigner
+
+.for i in ${PYQTMODS}
+CONFIGURE_ARGS+=--enable=${i}
+.endfor
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-qt4
+	cp -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/py-qt4
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/py-qt4/*
+
+.include <bsd.port.mk>
