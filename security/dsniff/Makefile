@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2008/01/16 21:03:38 kili Exp $
 
 COMMENT=	sniffing tools for penetration testing
 
 DISTNAME=	dsniff-2.3
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	security
 
 MASTER_SITES=	http://monkey.org/~dugsong/dsniff/
