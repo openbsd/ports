@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2008/01/14 23:21:11 simon Exp $
+# $OpenBSD: Makefile,v 1.163 2008/01/16 08:33:56 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -77,6 +77,7 @@
      SUBDIR += lincity-ng
      SUBDIR += londonlaw
      SUBDIR += mirrormagic
+     SUBDIR += mnemosyne
      SUBDIR += moon-buggy
      SUBDIR += moonlander
      SUBDIR += moonlander,no_sound
