@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/16 08:43:31 ckuethe Exp $
 
-COMMENT=	Utility to test for faulty memory system
+COMMENT=	utility to test for memory faults
 
-DISTNAME=	memtester-4.0.7
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	memtester-4.0.8
 
 CATEGORIES=	sysutils
 
-MAINTAINER=	Chris Kuethe <chris.kuethe@ualberta.ca>
+MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 HOMEPAGE=	http://pyropus.ca/software/memtester/
 
