@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/16 06:25:07 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		template processing system
 
 MODULES=		cpan
-VERSION=		2.15
+VERSION=		2.19
 DISTNAME=		Template-Toolkit-${VERSION}
 PKGNAME=		p5-Template-${VERSION}
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.template-toolkit.org/
 
-# Same as PERL: Artistic/GPL
+# Same as Perl: Artistic/GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

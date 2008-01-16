@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/25 10:56:53 djm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/01/16 06:25:07 jasper Exp $
 bin/tpage
 bin/ttree
 ${P5ARCH}/
@@ -51,7 +51,6 @@ ${P5ARCH}/Template/Plugin/Format.pm
 ${P5ARCH}/Template/Plugin/HTML.pm
 ${P5ARCH}/Template/Plugin/Image.pm
 ${P5ARCH}/Template/Plugin/Iterator.pm
-${P5ARCH}/Template/Plugin/Math.pm
 ${P5ARCH}/Template/Plugin/Pod.pm
 ${P5ARCH}/Template/Plugin/Procedural.pm
 ${P5ARCH}/Template/Plugin/String.pm
@@ -75,6 +74,7 @@ ${P5ARCH}/Template/Tutorial/
 ${P5ARCH}/Template/Tutorial.pod
 ${P5ARCH}/Template/Tutorial/Datafile.pod
 ${P5ARCH}/Template/Tutorial/Web.pod
+${P5ARCH}/Template/VMethods.pm
 ${P5ARCH}/Template/View.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Template/
@@ -126,7 +126,6 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Plugin::HTML.3p
 @man man/man3p/Template::Plugin::Image.3p
 @man man/man3p/Template::Plugin::Iterator.3p
-@man man/man3p/Template::Plugin::Math.3p
 @man man/man3p/Template::Plugin::Pod.3p
 @man man/man3p/Template::Plugin::Procedural.3p
 @man man/man3p/Template::Plugin::String.3p
