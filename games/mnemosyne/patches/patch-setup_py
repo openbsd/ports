@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2008/01/16 08:32:47 ajacoutot Exp $
+--- setup.py.orig	Tue Jan 15 12:56:00 2008
++++ setup.py	Tue Jan 15 12:56:28 2008
+@@ -147,8 +147,7 @@ if sys.platform == "win32": # For py2exe.
+ else:
+     base_path = os.path.join(sys.exec_prefix, "lib", "python"+sys.version[:3],
+                              "site-packages","mnemosyne")
+-    data_files = [('/usr/share/applications', ['mnemosyne.desktop']),
+-                  ('/usr/share/icons', ['pixmaps/mnemosyne.png'])]
++    data_files = None
+   
+ pixmap_path = os.path.join(base_path, "pixmaps")
+ util_path   = os.path.join(base_path, "util")
