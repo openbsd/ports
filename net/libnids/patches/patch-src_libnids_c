@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libnids_c,v 1.2 2006/01/29 21:27:52 brad Exp $
+$OpenBSD: patch-src_libnids_c,v 1.3 2008/01/16 21:02:49 kili Exp $
 --- src/libnids.c.orig	Sat Jan 29 05:03:24 2005
-+++ src/libnids.c	Sun Jan 29 13:43:53 2006
-@@ -214,6 +214,7 @@ static void pcap_hand(u_char * par, stru
++++ src/libnids.c	Mon Nov  5 04:30:05 2007
+@@ -214,6 +214,7 @@ static void pcap_hand(u_char * par, struct pcap_pkthdr
  #endif
  #ifdef DLT_IEEE802_11
      case DLT_IEEE802_11:
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_libnids_c,v 1.2 2006/01/29 21:27:52 brad Exp $
  	/* wireless, need to calculate offset per frame */
  	break;
  #endif
-@@ -469,7 +471,12 @@ int nids_init()
+@@ -469,12 +471,20 @@ int nids_init()
      case DLT_NULL:
          linkoffset = 4;
          break;
@@ -31,3 +31,11 @@ $OpenBSD: patch-src_libnids_c,v 1.2 2006/01/29 21:27:52 brad Exp $
      case DLT_EN10MB:
  	linkoffset = 14;
  	break;
+     case DLT_PPP:
+ 	linkoffset = 4;
++	break;
++    case DLT_PPP_ETHER:
++	linkoffset = 8;
+ 	break;
+ 	/* Token Ring Support by vacuum@technotronic.com, thanks dugsong! */
+     case DLT_IEEE802:
