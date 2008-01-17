@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/01/06 18:57:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/17 18:50:13 jasper Exp $
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.20.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=	cryptui              0.0      # .0.0
 CATEGORIES=		security
 

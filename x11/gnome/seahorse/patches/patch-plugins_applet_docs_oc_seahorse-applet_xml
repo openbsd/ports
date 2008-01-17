@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_applet_docs_oc_seahorse-applet_xml,v 1.1 2008/01/17 18:50:13 jasper Exp $
+--- plugins/applet/docs/oc/seahorse-applet.xml.orig	Mon Oct 15 18:20:12 2007
++++ plugins/applet/docs/oc/seahorse-applet.xml	Thu Jan 17 19:40:43 2008
+@@ -171,7 +171,7 @@
+ 	   <title>Encryption Applet Preferences</title>
+ 	   <para>
+ 	       The preferences for the <application>Encryption Applet</application> are part of your <application>Encryption 
+-	       Preferences</application> and can be edited by selecting <menuchoice><guimenu>Desktop</guimenu>
++	       Preferences</application> and can be edited by selecting <menuchoice><guimenu>System</guimenu>
+ 	       <guimenuitem>Preferences</guimenuitem><guimenuitem>Encryption Preferences</guimenuitem></menuchoice>, 
+ 	       or by right clicking on the <application>Encryption Applet</application> and selecting 
+ 	       <guimenuitem>Preferences</guimenuitem>.
