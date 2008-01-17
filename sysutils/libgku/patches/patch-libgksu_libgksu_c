@@ -1,0 +1,34 @@
+$OpenBSD: patch-libgksu_libgksu_c,v 1.1.1.1 2008/01/17 18:10:50 jasper Exp $
+--- libgksu/libgksu.c.orig	Sun Jun 10 20:28:43 2007
++++ libgksu/libgksu.c	Sat Dec 15 22:12:24 2007
+@@ -23,7 +23,12 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <fcntl.h>
++#ifdef __OpenBSD__
++#include <sys/termios.h>
++#include <util.h>
++#else
+ #include <pty.h>
++#endif
+ #include <pwd.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
+@@ -1897,7 +1902,7 @@ gksu_su_full (GksuContext *context,
+       gchar **cmd = g_malloc (sizeof(gchar*)*7);
+ 
+       setsid();   // make us session leader
+-      cmd[i] = g_strdup ("/bin/su"); i++;
++      cmd[i] = g_strdup ("/usr/bin/su"); i++;
+       if (context->login_shell)
+ 	{
+ 	  cmd[i] = g_strdup ("-"); i++;
+@@ -1919,7 +1924,7 @@ gksu_su_full (GksuContext *context,
+       if (execv (cmd[0], cmd) == -1)
+ 	{
+ 	  fprintf (stderr,
+-		   "Unable to run /bin/su: %s",
++		   "Unable to run /usr/bin/su: %s",
+ 		   strerror(errno));
+ 	}
+ 
