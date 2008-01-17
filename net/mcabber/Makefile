@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/03 18:42:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/17 18:01:26 jasper Exp $
 
 COMMENT=		console jabber client
-DISTNAME=		mcabber-0.9.5
+DISTNAME=		mcabber-0.9.6
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.lilotux.net/~mikael/mcabber/
