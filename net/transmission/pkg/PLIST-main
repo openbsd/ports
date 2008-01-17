@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/01/11 18:15:00 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/01/17 18:27:41 naddy Exp $
 @pkgpath net/transmission
 bin/transmission-daemon
 bin/transmission-proxy
@@ -17,6 +17,8 @@ bin/transmissioncli
 @comment share/locale/fi/LC_MESSAGES/
 @comment share/locale/fr/
 @comment share/locale/fr/LC_MESSAGES/
+@comment share/locale/hu/
+@comment share/locale/hu/LC_MESSAGES/
 @comment share/locale/it/
 @comment share/locale/it/LC_MESSAGES/
 @comment share/locale/nl/
@@ -35,3 +37,7 @@ bin/transmissioncli
 @comment share/locale/sk/LC_MESSAGES/
 @comment share/locale/sv/
 @comment share/locale/sv/LC_MESSAGES/
+@comment share/locale/tr/
+@comment share/locale/tr/LC_MESSAGES/
+@comment share/locale/zh_CN/
+@comment share/locale/zh_CN/LC_MESSAGES/
