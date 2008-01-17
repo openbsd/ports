@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.17 2007/12/05 14:32:19 steven Exp $
---- configure.orig	Mon Nov 26 20:44:23 2007
-+++ configure	Sat Dec  1 18:51:34 2007
+$OpenBSD: patch-configure,v 1.18 2008/01/17 22:26:50 jasper Exp $
+--- configure.orig	Thu Jan 17 23:20:27 2008
++++ configure	Thu Jan 17 23:21:05 2008
 @@ -32936,7 +32936,9 @@ fi
  
  fi
