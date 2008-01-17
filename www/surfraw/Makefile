@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/01/17 20:33:43 sthen Exp $
 
 COMMENT=	command line interface to popular WWW search engines
 
-DISTNAME=	surfraw-1.0.7
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	surfraw-2.2.0
 CATEGORIES=	www
-HOMEPAGE=	http://surfraw.sourceforge.net/
+HOMEPAGE=	http://surfraw.alioth.debian.org/
 
 # Public Domain 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,16 +12,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/proff/ \
-		ftp://ftp.funet.fi/pub/NetBSD/misc/proff/
+MASTER_SITES=		${HOMEPAGE}/dist/
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= 	gnu
+USE_GMAKE=		yes
+
+pre-configure:
+	@perl -pi -e 's,\.(1sr|1)\.gz,.1,g' ${WRKSRC}/links.IN
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/elvi.1sr ${PREFIX}/man/man1/elvi.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/surfraw
-	${INSTALL_DATA} ${WRKSRC}/surfraw.conf ${PREFIX}/share/examples/surfraw
+	${INSTALL_DATA} ${WRKSRC}/surfraw.conf ${WRKSRC}/surfraw.bookmarks} \
+	    ${PREFIX}/share/examples/surfraw
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/surfraw
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/HACKING \
 		${PREFIX}/share/doc/surfraw
+
+REGRESS_DEPENDS=	::www/p5-libwww \
+			::www/surfraw
+REGRESS_TARGET=		test
 
 .include <bsd.port.mk>
