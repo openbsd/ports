@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/17 18:45:56 jasper Exp $
+%%SHARED%%
+bin/gksu-properties
+include/libgksu/
+include/libgksu/gksu.h
+include/libgksu/libgksu.h
+lib/libgksu/
+lib/libgksu/gksu-run-helper
+lib/libgksu2.a
+lib/libgksu2.la
+lib/pkgconfig/
+lib/pkgconfig/libgksu2.pc
+share/applications/
+share/applications/gksu-properties.desktop
+share/libgksu/
+share/libgksu/gksu-properties.glade
+share/locale/ca/LC_MESSAGES/libgksu.mo
+share/locale/cs/LC_MESSAGES/libgksu.mo
+share/locale/da/LC_MESSAGES/libgksu.mo
+share/locale/de/LC_MESSAGES/libgksu.mo
+share/locale/es/LC_MESSAGES/libgksu.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
+share/locale/eu/LC_MESSAGES/libgksu.mo
+share/locale/fr/LC_MESSAGES/libgksu.mo
+share/locale/hu/LC_MESSAGES/libgksu.mo
+share/locale/it/LC_MESSAGES/libgksu.mo
+share/locale/ko/LC_MESSAGES/libgksu.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/libgksu.mo
+share/locale/nb/LC_MESSAGES/libgksu.mo
+share/locale/nl/LC_MESSAGES/libgksu.mo
+share/locale/pl/LC_MESSAGES/libgksu.mo
+share/locale/pt_BR/LC_MESSAGES/libgksu.mo
+share/locale/ro/LC_MESSAGES/libgksu.mo
+share/locale/ru/LC_MESSAGES/libgksu.mo
+share/locale/sk/LC_MESSAGES/libgksu.mo
+share/locale/sv/LC_MESSAGES/libgksu.mo
+share/locale/zh_CN/LC_MESSAGES/libgksu.mo
+share/pixmaps/
+share/pixmaps/gksu.png
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gksu2/*.schemas > /dev/null
+share/schemas/
+share/schemas/gksu2/
+share/schemas/gksu2/gksu.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gksu2/*.schemas > /dev/null
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
