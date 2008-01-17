@@ -1,26 +1,23 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2008/01/17 00:16:11 rui Exp $
 
 COMMENT=	resend network traffic saved by tcpdump
 
-DISTNAME=	tcpreplay-1.0.1
+DISTNAME=	tcpreplay-3.2.3
 CATEGORIES=	net
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcpreplay/}
+HOMEPAGE=	http://tcpreplay.synfin.net
 
-LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c pcap 
 
-CONFIGURE_STYLE= gnu dest
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=tcpreplay/}
 
-NO_REGRESS=	Yes
+WANTLIB=		c
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcpreplay ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/tcpreplay.8 ${PREFIX}/man/man8
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
