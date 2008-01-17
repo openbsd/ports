@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2008/01/15 00:21:17 todd Exp $
+# $OpenBSD: Makefile,v 1.144 2008/01/17 18:13:26 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -41,6 +41,8 @@
      SUBDIR += iogen
      SUBDIR += ipmitool
      SUBDIR += knutclient
+     SUBDIR += libgksu
+     SUBDIR += libgksuui
      SUBDIR += libretto-config
      SUBDIR += libstatgrab
      SUBDIR += login_ldap
