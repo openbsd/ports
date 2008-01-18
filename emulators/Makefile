@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2008/01/18 09:13:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2008/01/18 14:42:33 ajacoutot Exp $
 
     SUBDIR += BasiliskII
     SUBDIR += bochs
@@ -13,6 +13,7 @@
     SUBDIR += fuse
     SUBDIR += fuse-utils
     SUBDIR += generator
+    SUBDIR += gns3
     SUBDIR += gxemul
     SUBDIR += ines
     SUBDIR += mastergear
