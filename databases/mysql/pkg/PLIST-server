@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.28 2007/08/08 21:33:51 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.29 2008/01/18 20:31:17 merdely Exp $
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
 bin/comp_err
@@ -145,6 +145,7 @@ share/mysql/mysql_fix_privilege_tables.sql
 share/mysql/mysql_system_tables.sql
 share/mysql/mysql_system_tables_data.sql
 share/mysql/mysql_test_data_timezone.sql
+share/mysql/mysqld_multi.server
 share/mysql/ndb-config-2-node.ini
 share/mysql/norwegian/
 share/mysql/norwegian-ny/
