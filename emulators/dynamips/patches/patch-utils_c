@@ -1,0 +1,11 @@
+$OpenBSD: patch-utils_c,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
+--- utils.c.orig	Thu Jan  4 21:49:43 2007
++++ utils.c	Thu Jan  4 21:49:54 2007
+@@ -12,6 +12,7 @@
+ #include <stdarg.h>
+ #include <unistd.h>
+ #include <time.h>
++#include <pthread.h>
+ #include <signal.h>
+ #include <sys/time.h>
+ #include <sys/ioctl.h>

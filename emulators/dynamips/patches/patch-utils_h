@@ -1,0 +1,46 @@
+$OpenBSD: patch-utils_h,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
+--- utils.h.orig	Sun Oct 14 09:43:07 2007
++++ utils.h	Tue Jan 15 19:17:22 2008
+@@ -84,7 +84,7 @@
+ #define fastcall   __attribute__((regparm(3)))
+ 
+ #if __GNUC__ > 2
+-#define forced_inline inline __attribute__((always_inline))
++#define forced_inline inline __attribute__ ((always_inline))
+ #define no_inline __attribute__ ((noinline))
+ #else
+ #define forced_inline inline
+@@ -255,12 +255,15 @@ static inline u_int normalize_size(u_int val,u_int nb,
+    return(((val+nb-1) & ~(nb-1)) >> shift);
+ }
+ 
++#ifndef swap16
+ /* Convert a 16-bit number between little and big endian */
+ static forced_inline m_uint16_t swap16(m_uint16_t value)
+ {
+    return((value >> 8) | ((value & 0xFF) << 8));
+ }
++#endif
+ 
++#ifndef swap32
+ /* Convert a 32-bit number between little and big endian */
+ static forced_inline m_uint32_t swap32(m_uint32_t value)
+ {
+@@ -272,7 +275,9 @@ static forced_inline m_uint32_t swap32(m_uint32_t valu
+    result |= (value & 0xff) << 24;
+    return(result);
+ }
++#endif
+ 
++#ifndef swap64
+ /* Convert a 64-bit number between little and big endian */
+ static forced_inline m_uint64_t swap64(m_uint64_t value)
+ {
+@@ -282,6 +287,7 @@ static forced_inline m_uint64_t swap64(m_uint64_t valu
+    result |= swap32(value >> 32);
+    return(result);
+ }
++#endif
+ 
+ /* Get current time in number of msec since epoch */
+ static inline m_tmcnt_t m_gettime(void)

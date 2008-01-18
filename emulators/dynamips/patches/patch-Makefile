@@ -1,0 +1,118 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
+--- Makefile.orig	Sun Oct 14 09:43:07 2007
++++ Makefile	Tue Jan 15 19:44:12 2008
+@@ -35,8 +35,8 @@ LEX=flex
+ MIPS64_ARCH_INC_FILE=\"mips64_$(DYNAMIPS_ARCH)_trans.h\"
+ PPC32_ARCH_INC_FILE=\"ppc32_$(DYNAMIPS_ARCH)_trans.h\"
+ 
+-CFLAGS+=-g -Wall -O3 -fomit-frame-pointer \
+-	-DJIT_ARCH=\"$(DYNAMIPS_ARCH)\" -DJIT_CPU=CPU_$(DYNAMIPS_ARCH) \
++CFLAGS?=-g -O3 -fomit-frame-pointer
++CFLAGS+=-Wall -DJIT_ARCH=\"$(DYNAMIPS_ARCH)\" -DJIT_CPU=CPU_$(DYNAMIPS_ARCH) \
+ 	-DMIPS64_ARCH_INC_FILE=$(MIPS64_ARCH_INC_FILE) \
+ 	-DPPC32_ARCH_INC_FILE=$(PPC32_ARCH_INC_FILE) \
+ 	-DDYNAMIPS_VERSION=\"$(VERSION)\" \
+@@ -47,6 +47,14 @@ CFLAGS+=-g -Wall -O3 -fomit-frame-pointer \
+ #PCAP_LIB=/usr/local/lib/libpcap.a
+ PCAP_LIB=-lpcap
+ 
++ifeq ($(shell uname), OpenBSD)
++   PTHREAD_LIBS?=-pthread
++   PCAP_LIB=-lpcap
++   LOCALBASE?=/usr/local
++   CFLAGS+=-I${LOCALBASE}/include -I${LOCALBASE}/include/libelf $(PTHREAD_CFLAGS) \
++         -D_FILE_OFFSET_BITS=64
++   LIBS=-L/usr/local/lib -L. -lelf $(PTHREAD_LIBS)
++else
+ ifeq ($(shell uname), FreeBSD)
+    PTHREAD_LIBS?=-pthread
+    LOCALBASE?=/usr/local
+@@ -85,6 +93,7 @@ endif
+ endif
+ endif
+ endif
++endif
+ 
+ PROG=dynamips$(BIN_EXT)
+ PACKAGE=$(PROG)-$(VERSION)
+@@ -217,20 +226,20 @@ all: $(PROG) nvram_export
+ 
+ $(PROG): mips64_microcode_dump.inc ppc32_microcode_dump.inc \
+ 	$(LEX_C) $(C_OBJS) $(A_OBJS)
+-	@echo "Linking $@"
+-	@$(CC) -o $@ $(C_OBJS) $(A_OBJS) $(LIBS)
++	@#echo "Linking $@"
++	$(CC) -o $@ $(C_OBJS) $(A_OBJS) $(LIBS)
+ 
+ udp_send$(BIN_EXT): udp_send.c net.c crc.c
+-	@echo "Linking $@"
+-	@$(CC) -Wall $(CFLAGS) -o $@ udp_send.c net.c crc.c $(LIBS)
++	@#echo "Linking $@"
++	$(CC) -Wall $(CFLAGS) -o $@ udp_send.c net.c crc.c $(LIBS)
+ 
+ udp_recv$(BIN_EXT): udp_recv.c net.c crc.c
+-	@echo "Linking $@"
+-	@$(CC) -Wall $(CFLAGS) -o $@ udp_recv.c net.c crc.c $(LIBS)
++	@#echo "Linking $@"
++	$(CC) -Wall $(CFLAGS) -o $@ udp_recv.c net.c crc.c $(LIBS)
+ 
+ rom2c$(BIN_EXT): rom2c.c
+-	@echo "Linking $@"
+-	@$(CC) -Wall $(CFLAGS) -o $@ rom2c.c $(LIBS)
++	@#echo "Linking $@"
++	$(CC) -Wall $(CFLAGS) -o $@ rom2c.c $(LIBS)
+ 
+ mips64_microcode_dump.inc: rom2c$(BIN_EXT) mips64_microcode
+ 	@./rom2c mips64_microcode mips64_microcode_dump.inc 0xbfc00000
+@@ -239,24 +248,24 @@ ppc32_microcode_dump.inc: rom2c$(BIN_EXT) ppc32_microc
+ 	@./rom2c ppc32_microcode ppc32_microcode_dump.inc 0xfff00000
+ 
+ asmdefs$(BIN_EXT): asmdefs.c mips64.h
+-	@echo "Linking $@"
+-	@$(CC) -Wall $(CFLAGS) -o $@ asmdefs.c
++	@#echo "Linking $@"
++	$(CC) -Wall $(CFLAGS) -o $@ asmdefs.c
+ 
+ asmdefs.h: asmdefs$(BIN_EXT)
+-	@echo "Building assembly definitions header file"
++	@#echo "Building assembly definitions header file"
+ 	@./asmdefs
+ 
+ nvram_export$(BIN_EXT): nvram_export.c
+-	@echo "Linking $@"
+-	@$(CC) -Wall $(CFLAGS) -o $@ nvram_export.c
++	@#echo "Linking $@"
++	$(CC) -Wall $(CFLAGS) -o $@ nvram_export.c
+ 
+ install: $(PROG) nvram_export
+ 	@echo "Installing"
+-	install -d $(DESTDIR)/bin $(DESTDIR)/man/man1 $(DESTDIR)/man/man7 $(DESTDIR)/etc
+-	install dynamips nvram_export   $(DESTDIR)/bin
+-	install -m644 dynamips.1        $(DESTDIR)/man/man1
+-	install -m644 nvram_export.1    $(DESTDIR)/man/man1
+-	install -m644 hypervisor_mode.7 $(DESTDIR)/man/man7
++	install -d $(PREFIX)/bin $(PREFIX)/man/man1 $(PREFIX)/man/man7 $(DESTDIR)/etc
++	install dynamips nvram_export   $(PREFIX)/bin
++	install -m644 dynamips.1        $(PREFIX)/man/man1
++	install -m644 nvram_export.1    $(PREFIX)/man/man1
++	install -m644 hypervisor_mode.7 $(PREFIX)/man/man7
+ # install -m644 example         $(DESTDIR)/etc/dynamips
+ 
+ 
+@@ -281,12 +290,12 @@ packdev:
+ .SUFFIXES: .c .h .S .l .y .o
+ 
+ .S.o:
+-	@echo "Assembling $<"
+-	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $*.o $<
++	@#echo "Assembling $<"
++	$(CC) $(CFLAGS) $(INCLUDE) -c -o $*.o $<
+ 
+ .c.o:
+-	@echo "Compiling $<"
+-	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $*.o $<
++	@#echo "Compiling $<"
++	$(CC) $(CFLAGS) $(INCLUDE) -c -o $*.o $<
+ 
+ .l.c:
+ 	$(LEX) -o$*.c $<

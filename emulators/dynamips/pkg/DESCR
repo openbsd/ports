@@ -1,0 +1,6 @@
+Dynamips emulates various MIPS64 and PowerPC-based processors
+and other hardware found in Cisco routers, including many NM/PA
+modules e.g. Ethernet, fast Ethernet, serial, ATM, switch.
+
+It is able to boot a large number of Cisco IOS releases
+(not included) for the 7200, 3600, 3700 and 2600 platforms.
