@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.39 2007/09/28 14:20:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2008/01/18 09:13:19 sthen Exp $
 
     SUBDIR += BasiliskII
     SUBDIR += bochs
     SUBDIR += bochs,debug
     SUBDIR += coldfire
     SUBDIR += dosbox
+    SUBDIR += dynagen
+    SUBDIR += dynamips
     SUBDIR += fedora
     SUBDIR += freebsd_lib
     SUBDIR += frodo
