@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_stelutils_Translator_cpp,v 1.1 2007/06/18 11:58:11 ajacoutot Exp $
---- src/stelutils/Translator.cpp.orig	Wed Jun  6 10:25:17 2007
-+++ src/stelutils/Translator.cpp	Mon Jun 18 11:48:14 2007
-@@ -51,6 +51,7 @@ void Translator::initSystemLanguage(void)
+$OpenBSD: patch-src_stelutils_Translator_cpp,v 1.2 2008/01/18 09:52:34 ajacoutot Exp $
+--- src/stelutils/Translator.cpp.orig	Thu Jan 17 15:15:35 2008
++++ src/stelutils/Translator.cpp	Fri Jan 18 09:38:47 2008
+@@ -67,6 +67,7 @@ void Translator::initSystemLanguage(void)
  	if (lang) systemLangName = lang;
  	else
  	{
