@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sim_w_tk_c,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- src/sim/w_tk.c.orig	Fri Nov 30 21:49:55 2007
++++ src/sim/w_tk.c	Mon Jan 14 21:31:31 2008
+@@ -819,7 +819,7 @@ tk_main()
+ 
+   Tk_MainLoop();
+ 
+-  sim_exit(0); // Just sets tkMustExit and ExitReturn
++  sim_really_exit(0);
+ 
+  bail:
+ 

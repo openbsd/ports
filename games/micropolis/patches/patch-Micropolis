@@ -1,0 +1,15 @@
+$OpenBSD: patch-Micropolis,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- Micropolis.orig	Fri Nov 30 21:49:55 2007
++++ Micropolis	Tue Jan 15 20:41:37 2008
+@@ -1,7 +1,8 @@
+-#!/bin/bash
+-export SIMHOME=`pwd`
++#!/bin/sh
++export SIMHOME=%%PREFIX%%/share/micropolis
+ echo "Starting Micropolis in $SIMHOME ... "
+-res/sim $*
++cd $SIMHOME
++%%PREFIX%%/libexec/sim -w $@
+ 
+ #
+ # Micropolis, Unix Version.  This game was released for the Unix platform

@@ -1,0 +1,53 @@
+$OpenBSD: patch-src_sim_makefile,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- src/sim/makefile.orig	Fri Nov 30 21:49:55 2007
++++ src/sim/makefile	Sun Jan 13 11:20:13 2008
+@@ -1,28 +1,24 @@
+-XINCLUDE = /usr/include/X11
++XINCLUDE = %%X11BASE%%/include
++XLIBS = %%X11BASE%%/lib
+ TCLHOME = ../tcl
+ TKHOME = ../tk
+ TCLXHOME = ../tclx
+ TCLLIBRARY = /usr/local/lib/tcl
+ TKLIBRARY = /usr/local/lib/tk
+ 
+-CC = gcc
+-
+ OPTFLAGS = -O3
+ #OPTFLAGS = -g
+ 
+ #DEFINES = -DIS_LINUX -DIS_INTEL -DCAM -DNET
+ DEFINES = -DIS_LINUX -DIS_INTEL
+-
+-CFLAGS = $(OPTFLAGS) $(DEFINES)
+-
++CFLAGS+= $(DEFINES)
+ #LDFLAGS = -Bstatic
+ 
+ INSTALL = install -s
+ 
+ INCLUDES = \
+-	-Iheaders \
+-	-I$(XPMHOME) \
+ 	-I$(XINCLUDE) \
++	-Iheaders \
+ 	-I$(TCLHOME) \
+ 	-I$(TCLXHOME)/src \
+ 	-I$(TKHOME)
+@@ -31,6 +27,7 @@ CPPFLAGS = $(INCLUDES)
+ 
+ LIBS =	$(TCLXHOME)/libtk.a \
+ 	$(TCLXHOME)/libtcl.a \
++	-L$(XLIBS) \
+ 	-lm \
+         -lX11 \
+         -lXext \
+@@ -97,7 +94,7 @@ lint:
+ 	alint $(INCLUDES) $(SRCS) > LINT
+ 
+ sim: $(ALLOBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDES) $(ALLOBJS) $(LIBS) -o sim
++	$(CC) ${DEFINES} $(CFLAGS) $(LDFLAGS) $(INCLUDES) $(ALLOBJS) $(LIBS) -o sim
+ 
+ clean:
+ 	rm -f $(OBJS) \

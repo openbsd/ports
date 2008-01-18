@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_tk_makefile,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- src/tk/makefile.orig	Fri Nov 30 21:49:55 2007
++++ src/tk/makefile	Sun Jan 13 10:56:25 2008
+@@ -27,14 +27,12 @@
+ #			switch unless your library is in a non-standard place.
+ #
+ 
+-CC		= gcc
++EXTRA_CFLAGS		= -I. -I$(XINCLUDE) -I$(TCL_DIR) -DTK_VERSION=\"2.3\" -DUSE_XPM3 -DIS_LINUX
++CFLAGS+= $(EXTRA_CFLAGS)
+ 
+-CFLAGS		= -I. -I$(XINCLUDE) -I$(TCL_DIR) -O3 -DTK_VERSION=\"2.3\" -DUSE_XPM3 -DIS_LINUX
+-#CFLAGS		= -I. -I$(XINCLUDE) -I$(TCL_DIR) -g -DTK_VERSION=\"2.3\" -DUSE_XPM3 -DIS_LINUX
+-
+ TCL_DIR		= ../tcl
+-XINCLUDE	= /usr/include/X11
+-XLIB		= -L/usr/X11R6/lib -lX11 -lXpm
++XINCLUDE	= %%X11BASE%%/include
++XLIB		= -L%%X11BASE%%/lib -lX11 -lXpm
+ 
+ LIBS = libtk.a $(TCL_DIR)/libtcl.a
+ LINKS = $(LIBS) 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tclx_src_tclxint_h,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- src/tclx/src/tclxint.h.orig	Fri Nov 30 21:49:55 2007
++++ src/tclx/src/tclxint.h	Tue Jan 15 20:28:31 2008
+@@ -67,7 +67,10 @@
+ #    include <sys/times.h>
+ #endif 
+ 
+-#include <values.h>
++//#include "values.h"
++#include <limits.h>
++#include <float.h>
++#define MAXDOUBLE       DBL_MAX
+ #include <grp.h>
+ /*
+  * On some systems this is not included by tclUnix.h.

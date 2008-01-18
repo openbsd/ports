@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tclx_ossupp_makefile,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- src/tclx/ossupp/makefile.orig	Fri Nov 30 21:49:55 2007
++++ src/tclx/ossupp/makefile	Tue Jan 15 20:28:31 2008
+@@ -30,7 +30,7 @@ CFLAGS=$(OPTIMIZE_FLAG) $(XCFLAGS) -I../$(TCL_UCB_DIR)
+ all: made.tmp
+ 
+ made.tmp: $(SUPPORT_OBJS)
+-	$(AR) cr ../libtcl.a $(SUPPORT_OBJS)
++	#$(AR) cr ../libtcl.a $(SUPPORT_OBJS)
+ 	touch made.tmp
+ 
+ #------------------------------------------------------------------------------

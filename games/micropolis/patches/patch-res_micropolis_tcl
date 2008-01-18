@@ -1,0 +1,76 @@
+$OpenBSD: patch-res_micropolis_tcl,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- res/micropolis.tcl.orig	Thu Dec  6 17:49:20 2007
++++ res/micropolis.tcl	Tue Jan 15 20:53:58 2008
+@@ -125,7 +125,8 @@ set ServerName "servername"
+ set RealName "realname"
+ set ChannelName "#Micropolis"
+ set HomeDir ""
+-set ResourceDir ""
++set ResourceDir "%%PREFIX%%/share/micropolis/res/"
++set Prefix "%%LOCALBASE%%/bin"
+ set HostName ""
+ set LocalHostName "[exec hostname]"
+ set SaveCityWin ""
+@@ -412,8 +413,8 @@ sim ResetDynamic
+ # the font in res (because it's already in the system fonts).  These lines
+ # are for other systems that lack the font.
+ set FontPath "[pwd]/res/dejavu-lgc"
+-system "xset -fp $FontPath >&/dev/null"
+-system "xset +fp $FontPath >&/dev/null"
++system "xset -fp $FontPath >/dev/null 2>&1"
++system "xset +fp $FontPath >/dev/null 2>&1"
+ 
+ 
+ ########################################################################
+@@ -885,6 +886,12 @@ proc MakeWindow.frob {head {display ":0"}} {
+ 
+ 
+ proc UIInitializeSound {} {
++  global Prefix
++  set i [system "pgrep -x esd > /dev/null"]
++  if {$i == 1} {
++    echo "starting esd"
++    system "$Prefix/esd &"
++  }
+ }
+ 
+ 
+@@ -939,8 +946,11 @@ proc UISetChannelVolume {win chan vol} {
+ proc EchoPlaySound {soundspec} {
+   # Temporary workaround to tell Python Sugar app to play sound.
+   global Sound
++  global Prefix
+   if {$Sound} {
+-    echo PlaySound [lindex $soundspec 0]
++    #echo PlaySound [lindex $soundspec 0]
++    signal ignore SIGCHLD
++    exec $Prefix/esdplay res/sounds/[string tolower [lindex $soundspec 0]].wav &
+   }
+ }
+ 
+@@ -3099,8 +3109,10 @@ proc ShowSplashOf {head} {
+ 
+ 
+ proc WithdrawSplashOf {head} {
+-  set win WindowLink $head.splash]
+-  wm withdraw $win
++  set win [WindowLink $head.splash]
++  if {$win != {}} {
++    wm withdraw $win
++  }
+ }
+ 
+ 
+@@ -3150,8 +3162,10 @@ proc ShowScenarioOf {head} {
+ 
+ 
+ proc WithdrawScenarioOf {head} {
+-  set win WindowLink $head.scenario]
+-  wm withdraw $win
++  set win [WindowLink $head.scenario]
++  if {$win != {}} {
++    wm withdraw $win
++  }
+ }
+ 
+ 

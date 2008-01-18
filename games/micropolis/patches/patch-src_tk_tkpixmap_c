@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tk_tkpixmap_c,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- src/tk/tkpixmap.c.orig	Sat Jan 12 14:48:29 2008
++++ src/tk/tkpixmap.c	Sat Jan 12 14:48:40 2008
+@@ -41,7 +41,7 @@ static char *AtFSid = "$Header: tkPixmap.c[1.1] Mon Se
+  * Include the xpm 3 defines for color pixmaps
+  */
+ //#include "xpmtk.h"
+-#include <xpm.h>
++#include <X11/xpm.h>
+ 
+ /*
+  * One of the following data structures exists for each bitmap that is

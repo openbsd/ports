@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sim_w_resrc_c,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- src/sim/w_resrc.c.orig	Fri Nov 30 21:49:55 2007
++++ src/sim/w_resrc.c	Tue Jan 15 20:28:31 2008
+@@ -71,7 +71,7 @@
+ #endif
+ 
+ 
+-char *HomeDir, *ResourceDir, *KeyDir, *HostName;
++char *HomeDir, *ResourceDir, *KeyDir, *HostName = "";
+ 
+ struct Resource *Resources = NULL;
+ 

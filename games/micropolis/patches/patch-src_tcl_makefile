@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tcl_makefile,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- src/tcl/makefile.orig	Fri Nov 30 21:49:55 2007
++++ src/tcl/makefile	Sun Jan 13 11:45:22 2008
+@@ -24,9 +24,8 @@
+ 
+ TCL_LIBRARY =	/usr/local/lib/tcl
+ 
+-CC =		gcc
+-
+-CFLAGS =	-O3 -I. -DTCL_LIBRARY=\"${TCL_LIBRARY}\" -DIS_LINUX
++EXTRA_CFLAGS =	-I. -DTCL_LIBRARY=\"${TCL_LIBRARY}\" -DIS_LINUX
++CFLAGS +=	$(EXTRA_CFLAGS)
+ #CFLAGS =	-g -I. -DTCL_LIBRARY=\"${TCL_LIBRARY}\" -DIS_LINUX
+ 
+ GENERIC_OBJS = \

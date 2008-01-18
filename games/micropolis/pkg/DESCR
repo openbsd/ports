@@ -1,0 +1,9 @@
+Micropolis, Unix Version, (A.K.A. "S*mC*ty"). This game was released
+for the Unix platform in or about 1990 and has been modified for
+inclusion in the One Laptop Per Child program. Copyright (C) 1989 -
+2007 Electronic Arts Inc.
+
+The Micropolis package was modified from the original source.  The
+changes can be found in the patches directory or online at
+http://www.openbsd.org/cgi-bin/cvsweb/ports/games/micropolis/patches/
+

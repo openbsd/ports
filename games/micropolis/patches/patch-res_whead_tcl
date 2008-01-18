@@ -1,0 +1,72 @@
+$OpenBSD: patch-res_whead_tcl,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- res/whead.tcl.orig	Fri Nov 30 21:49:55 2007
++++ res/whead.tcl	Tue Jan 15 20:28:31 2008
+@@ -78,11 +78,20 @@ global NoticePanelHeight
+ 
+ set visual [winfo screenvisual $win]
+ set depth [winfo screendepth $win]
+-#set screenwidth [winfo screenwidth $win]
+-#set screenheight [winfo screenheight $win]
+-set screenwidth 1200
+-set screenheight 900
++set screenwidth [winfo screenwidth $win]
++set screenheight [winfo screenheight $win]
++set initialwidth 1200
++set initialheight 900
+ 
++if {$screenwidth < $initialwidth} {
++	set initialwidth $screenwidth
++}
++
++if {$screenheight < $initialheight} {
++	set initialheight $screenheight
++}
++
++
+ if {!(("$visual" == "pseudocolor") ||
+       ("$visual" == "truecolor") ||
+       (("$visual" == "staticgray") &&
+@@ -116,11 +125,11 @@ bind $win <Mod2-Key> {tk_traverseToMenu %W %A} 
+ 
+ wm title $win "Micropolis Controls"
+ wm iconname $win {Micropolis Controls}
+-wm geometry $win 1200x900+0+0
++wm geometry $win ${initialwidth}x${initialheight}+0+0
+ #wm positionfrom $win user
+ wm withdraw $win
+-#wm maxsize $win $screenwidth $screenheight
+-#wm minsize $win 100 100
++wm maxsize $win $screenwidth $screenheight
++wm minsize $win 100 100
+ wm protocol $win delete "DeleteHeadWindow $win ;"
+ wm fullscreen $win on
+ 
+@@ -656,7 +665,7 @@ place configure $win.col1\
+   -x 0\
+   -y 0\
+   -width $HeadPanelWidth\
+-  -height $screenheight
++  -relheight 1.0
+ 
+ pack append $win.col1\
+     $win.col1.w1		{top frame nw fillx} \
+@@ -684,8 +693,17 @@ pack append $win.col1\
+ place configure $win.col2\
+   -x [expr "$HeadPanelWidth + 5"]\
+   -y 0\
+-  -width [expr "($screenwidth - $HeadPanelWidth) - 5"]\
+-  -height $screenheight
++  -relheight 1.0\
++  -width [expr "($screenwidth - $HeadPanelWidth) - 5"]
++
++proc resizeeditor {win width} {
++  global HeadPanelWidth
++
++  place configure $win.col2\
++    -width [expr "($width - $HeadPanelWidth) - 5"]
++}
++
++bind $win <Configure> "resizeeditor $win %w"
+ 
+ #pack append $win.col2\
+ #    $win.col2.x1		{top frame nw fillx} \

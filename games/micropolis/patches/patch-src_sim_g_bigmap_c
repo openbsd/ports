@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_sim_g_bigmap_c,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+--- src/sim/g_bigmap.c.orig	Fri Nov 30 21:49:55 2007
++++ src/sim/g_bigmap.c	Tue Jan 15 20:28:31 2008
+@@ -169,6 +169,15 @@ MemDrawBeegMapRect(SimView *view, int x, int y, int w,
+ #define ROW8_16(n) ROW4_16(n) ROW4_16(n+4)
+ #define ROW16_16() ROW8_16(0) ROW8_16(8)
+ 
++#define ROW1_32(n) \
++      memcpy((char *)image, (char *)mem + (4 * 16 * (n)), 4 * 16); \
++      image = (unsigned QUAD *)(((unsigned char *)image) + lineBytes);
++
++#define ROW2_32(n) ROW1_32(n) ROW1_32(n+1)
++#define ROW4_32(n) ROW2_32(n) ROW2_32(n+2)
++#define ROW8_32(n) ROW4_32(n) ROW4_32(n+4)
++#define ROW16_32() ROW8_32(0) ROW8_32(8)
++
+ 	  switch (view->x->depth) {
+ 
+ 	  case 8:
+@@ -182,6 +191,9 @@ MemDrawBeegMapRect(SimView *view, int x, int y, int w,
+ 
+ 	  case 24:
+ 	  case 32:
++	    ROW16_32();
++	    break;
++
+ 	  default:
+ 	    /* XXX: handle different depths */
+ 	    break;
