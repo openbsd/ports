@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/01/17 20:33:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/18 08:48:12 sthen Exp $
 
 COMMENT=	command line interface to popular WWW search engines
 
@@ -23,7 +23,7 @@ pre-configure:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/elvi.1sr ${PREFIX}/man/man1/elvi.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/surfraw
-	${INSTALL_DATA} ${WRKSRC}/surfraw.conf ${WRKSRC}/surfraw.bookmarks} \
+	${INSTALL_DATA} ${WRKSRC}/surfraw.conf ${WRKSRC}/surfraw.bookmarks \
 	    ${PREFIX}/share/examples/surfraw
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/surfraw
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/HACKING \
