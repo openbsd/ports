@@ -1,0 +1,42 @@
+$OpenBSD: patch-XMonad_Operations_hs,v 1.1 2008/01/18 21:51:13 kili Exp $
+
+Backport for ghc-6.6 and X11-extras.
+
+--- XMonad/Operations.hs.orig	Mon Dec 10 00:25:43 2007
++++ XMonad/Operations.hs	Sat Jan  5 09:24:33 2008
+@@ -76,7 +76,7 @@ manage w = whenX (not <$> isClient w) $ withDisplay $ 
+ unmanage :: Window -> X ()
+ unmanage w = do
+     windows (W.delete w)
+-    setWMState w withdrawnState
++    setWMState w 0
+     modify (\s -> s {mapped = S.delete w (mapped s), waitingUnmap = M.delete w (waitingUnmap s)})
+ 
+ -- | Modify the size of the status gap at the top of the current screen
+@@ -185,7 +185,7 @@ hide w = whenX (gets (S.member w . mapped)) $ withDisp
+     io $ do selectInput d w (clientMask .&. complement structureNotifyMask)
+             unmapWindow d w
+             selectInput d w clientMask
+-    setWMState w iconicState
++    setWMState w 3
+     -- this part is key: we increment the waitingUnmap counter to distinguish
+     -- between client and xmonad initiated unmaps.
+     modify (\s -> s { waitingUnmap = M.insertWith (+) w 1 (waitingUnmap s)
+@@ -195,7 +195,7 @@ hide w = whenX (gets (S.member w . mapped)) $ withDisp
+ -- this is harmless if the window was already visible
+ reveal :: Window -> X ()
+ reveal w = withDisplay $ \d -> do
+-    setWMState w normalState
++    setWMState w 1
+     io $ mapWindow d w
+     modify (\s -> s { mapped = S.insert w (mapped s) })
+ 
+@@ -206,7 +206,7 @@ clientMask = structureNotifyMask .|. enterWindowMask .
+ -- | Set some properties when we initially gain control of a window
+ setInitialProperties :: Window -> X ()
+ setInitialProperties w = asks normalBorder >>= \nb -> withDisplay $ \d -> do
+-    setWMState w iconicState
++    setWMState w 3
+     io $ selectInput d w $ clientMask
+     bw <- asks (borderWidth . config)
+     io $ setWindowBorderWidth d w bw

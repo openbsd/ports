@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-lib,v 1.1 2008/01/18 21:51:13 kili Exp $
+lib/xmonad-${V}/
+lib/xmonad-${V}/ghc-6.6.1/
+lib/xmonad-${V}/ghc-6.6.1/HSxmonad-${V}.o
+lib/xmonad-${V}/ghc-6.6.1/XMonad/
+lib/xmonad-${V}/ghc-6.6.1/XMonad.hi
+lib/xmonad-${V}/ghc-6.6.1/XMonad/Config.hi
+lib/xmonad-${V}/ghc-6.6.1/XMonad/Core.hi
+lib/xmonad-${V}/ghc-6.6.1/XMonad/Layout.hi
+lib/xmonad-${V}/ghc-6.6.1/XMonad/Main.hi
+lib/xmonad-${V}/ghc-6.6.1/XMonad/ManageHook.hi
+lib/xmonad-${V}/ghc-6.6.1/XMonad/Operations.hi
+lib/xmonad-${V}/ghc-6.6.1/XMonad/StackSet.hi
+lib/xmonad-${V}/ghc-6.6.1/include/
+lib/xmonad-${V}/ghc-6.6.1/libHSxmonad-${V}.a
+lib/xmonad-${V}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/xmonad-${V}/register.sh
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/xmonad-${V}/unregister.sh
+lib/xmonad-${V}/unregister.sh
+share/doc/xmonad/
+share/doc/xmonad/CONFIG
+share/doc/xmonad/xmonad.hs
