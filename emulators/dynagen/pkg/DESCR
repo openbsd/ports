@@ -1,0 +1,9 @@
+Dynagen is a text-based front-end, using an INI-like configuration
+file to provision Dynamips emulator networks.
+
+It takes care of specifying the right port adapters, generating
+and matching up NIO descriptors, specifying bridges, frame-relay,
+ATM switches, etc.
+
+It also provides a management CLI for listing devices, suspending
+and reloading instances, determining and managing idle-pc values, etc.
