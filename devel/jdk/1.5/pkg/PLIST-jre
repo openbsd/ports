@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.12 2007/10/25 20:51:41 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.13 2008/01/18 15:52:55 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.5,<1.6
 @pkgpath devel/jdk/1.5,-jre,native_bootstrap
@@ -77,7 +77,6 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libjsig.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsound.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libmanagement.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libmlib_image.so
-${JREHOME}/lib/${MACHINE_ARCH}/libnative_chmod.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnet.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnio.so
 ${JREHOME}/lib/${MACHINE_ARCH}/librmi.so

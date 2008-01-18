@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2007/11/30 14:57:23 kurt Exp $
+# $OpenBSD: Makefile,v 1.48 2008/01/18 15:52:55 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,8 @@ COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
 COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.5.0.13
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}
-PKGNAME-jre=		jre-${V}
+PKGNAME-main=		jdk-${V}p0
+PKGNAME-jre=		jre-${V}p0
 
 CATEGORIES=		devel/jdk java
 
@@ -204,6 +204,7 @@ do-install:
 	cd ${JREIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JREHOME} -xf -
 	cd ${WRKDIR} && \
 		${INSTALL_DATA} JavaResearchLicense.txt ${PREFIX}/${JDKHOME}/LICENSE && \
+		${INSTALL_DATA} JavaResearchLicense.txt ${PREFIX}/${JDKHOME}/jre/LICENSE && \
 		${INSTALL_DATA} JavaResearchLicense.txt ${PREFIX}/${JREHOME}/LICENSE
 
 .include <bsd.port.mk>

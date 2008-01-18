@@ -1,0 +1,23 @@
+$OpenBSD: patch-j2se_make_java_redist_Makefile,v 1.1 2008/01/18 15:52:55 kurt Exp $
+--- j2se/make/java/redist/Makefile.orig	Thu Jan 17 19:54:48 2008
++++ j2se/make/java/redist/Makefile	Thu Jan 17 19:56:01 2008
+@@ -96,8 +96,8 @@ ifeq ($(ARCH_DATA_MODEL), 32)
+                $(LIB_LOCATION)/$(CLIENT_LOCATION)/Xusage.txt
+ endif
+ 
+-ifeq ($(LINUX_OR_BSD), true)
+-# linux || bsd
++ifeq ($(PLATFORM), linux)
++# linux
+ OPTIMIZED_LIBCHMOD_NAME = $(LIB_PREFIX)native_chmod$(OPT_SUFFIX).$(LIBRARY_SUFFIX)
+ DEBUG_LIBCHMOD_NAME  = $(LIB_PREFIX)native_chmod$(DBG_SUFFIX).$(LIBRARY_SUFFIX)
+ 
+@@ -111,7 +111,7 @@ $(LIBDIR)/$(LIBARCH)/$(DEBUG_LIBCHMOD_NAME): \
+ 	$(RM) $@
+ 	($(GUNZIP) < $<) | ($(CD) $(LIBDIR)/$(LIBARCH); $(TAR) xf -)
+ 	$(ECHO) $@ >> $(INSTALLED_FILES_FILE)
+-# linux || bsd
++# linux
+ endif
+ 
+ ifeq ($(PLATFORM), windows)
