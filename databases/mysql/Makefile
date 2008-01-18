@@ -1,18 +1,14 @@
-# $OpenBSD: Makefile,v 1.137 2008/01/04 17:48:34 espie Exp $
-
-.if ${MACHINE_ARCH} == "m88k"
-BROKEN=		gen_lex_hash hangs
-.endif
+# $OpenBSD: Makefile,v 1.138 2008/01/18 20:34:14 merdely Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite)
 
-VERSION=	5.0.45
+VERSION=	5.0.51
 DISTNAME=	mysql-${VERSION}
-PKGNAME-main=	mysql-client-${VERSION}p0
-PKGNAME-server=	mysql-server-${VERSION}p0
-PKGNAME-tests= 	mysql-tests-${VERSION}p0
+PKGNAME-main=	mysql-client-${VERSION}
+PKGNAME-server=	mysql-server-${VERSION}
+PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
 SHARED_LIBS +=	mysqlclient_r        18.0     # .15.0
