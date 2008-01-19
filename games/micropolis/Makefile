@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/19 21:21:55 ian Exp $
+
 COMMENT=	city-building simulation
 
 DISTNAME=	micropolis-activity-source
@@ -20,7 +21,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
-RUN_DEPENDS=	::audio/esound
+RUN_DEPENDS=	::audio/esound \
+		::devel/desktop-file-utils
 
 WANTLIB=	c m X11 Xext Xpm
 
@@ -52,5 +54,9 @@ do-install:
             find manual -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/micropolis/{} \;
 	@${INSTALL_SCRIPT} ${WRKSRC}/Micropolis ${PREFIX}/bin/micropolis
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/sim/sim ${PREFIX}/libexec/sim
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
+	@${INSTALL_DATA} ${WRKSRC}/Micropolis.png ${PREFIX}/share/pixmaps/micropolis.png
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${FILESDIR}/micropolis.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>

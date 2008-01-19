@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/19 21:21:55 ian Exp $
 bin/micropolis
 libexec/sim
+share/applications/
+share/applications/micropolis.desktop
 share/doc/micropolis/
 share/doc/micropolis/manual/
 share/doc/micropolis/manual/Ask.html
@@ -570,3 +572,7 @@ share/micropolis/res/wscen.tcl
 share/micropolis/res/wscen_old.tcl
 share/micropolis/res/wscen_older.tcl
 share/micropolis/res/wsplash.tcl
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+share/pixmaps/
+share/pixmaps/micropolis.png
