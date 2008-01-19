@@ -1,0 +1,23 @@
+NOMAN = noman
+
+.if ${MACHINE_ARCH} == "i386"
+    CFLAGS += -Wall -DI386
+    COMMON = kqemu-mod-i386.o
+.elif ${MACHINE_ARCH} == "amd64"
+    CFLAGS += -Wall -DAMD64
+    COMMON = kqemu-mod-x86_64.o
+.endif
+
+SRCS = kqemu-openbsd.c
+OBJS = ${COMMON}
+LKM = kqemu
+COMBINED = kqemu.o
+
+.include <bsd.lkm.mk>
+
+${COMMON}:
+	gmake -C common all
+
+clean:
+	rm -f $(COMMON)
+	gmake -C common clean

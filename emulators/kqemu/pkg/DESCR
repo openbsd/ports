@@ -1,0 +1,9 @@
+The QEMU Accelerator (KQEMU) is a driver allowing a user application to
+run x86 code in a Virtual Machine (VM). The code can be either user or
+kernel code, in 64, 32 or 16 bit protected mode. KQEMU is very similar
+in essence to the VM86 Linux syscall call, but it adds some new concepts
+to improve memory handling.
+
+KQEMU is ported on many host OSes (currently Linux, Windows, FreeBSD,
+Solaris). It can execute code from many guest OSes (e.g. Linux, Windows
+2000/XP) even if the host CPU does not support hardware virtualization.

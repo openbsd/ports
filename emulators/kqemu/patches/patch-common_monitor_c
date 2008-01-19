@@ -1,0 +1,34 @@
+$OpenBSD: patch-common_monitor_c,v 1.1.1.1 2008/01/19 23:55:19 todd Exp $
+--- common/monitor.c.orig	Tue Feb  6 22:02:00 2007
++++ common/monitor.c	Mon Nov 12 23:59:17 2007
+@@ -990,7 +990,8 @@ static void *map_vaddr(struct kqemu_stat
+     e = &s->soft_tlb[(addr >> PAGE_SHIFT) & (SOFT_TLB_SIZE - 1)];
+  redo:
+     if (e->vaddr[(is_user << 1) + is_write] != (addr & PAGE_MASK)) {
+-        soft_tlb_fill(s, addr, is_write, is_user);
++        if(cpu_x86_handle_mmu_fault(s, addr, is_write, is_user, 1))
++                return NULL;
+         goto redo;
+     } else {
+         taddr = e->addend + addr;
+@@ -1802,6 +1803,11 @@ static void update_dt_cache(struct kqemu
+             page_end = dt_end;
+         sel2 = sel + (page_end - dt_ptr);
+         ptr = map_vaddr(s, dt_ptr, 0, 0);
++        if(!ptr)
++                /* Open/NetBSD have a 'dynamic' GDT, but they load the gdt
++                   register with LGDT only once and with a limit far beyond
++                   the end of the memory actually mapped for the table */
++                goto skip_the_rest;
+         ram_addr = ram_ptr_to_ram_addr(s, ptr);
+         if (dt_changed || 
+             s->dt_ram_addr[dt_type][pindex] != ram_addr ||
+@@ -1818,7 +1824,7 @@ static void update_dt_cache(struct kqemu
+     sel_end = (s->dt_limit[dt_type] + 1) & ~7;
+     if (sel < sel_end)
+         reset_dt_entries(s, dt_type, sel, sel_end);
+-
++skip_the_rest:
+     s->dt_base[dt_type] = base;
+     s->dt_limit[dt_type] = limit;
+ }

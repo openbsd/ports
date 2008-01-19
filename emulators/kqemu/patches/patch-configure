@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/01/19 23:55:19 todd Exp $
+--- configure.orig	Tue Feb  6 22:02:00 2007
++++ configure	Mon Nov 12 23:59:17 2007
+@@ -112,6 +112,10 @@ oss="yes"
+ OpenBSD)
+ bsd="yes"
+ oss="yes"
++openbsd="yes"
++if [ "$cpu" = "i386" -o "$cpu" = "x86_64" ] ; then
++    kqemu="yes"
++fi
+ ;;
+ Darwin)
+ bsd="yes"
+@@ -344,6 +348,9 @@ if test $linux = "yes" ; then
+   if test $kbuild26 = "yes" ; then
+     echo "CONFIG_KBUILD26=yes" >> $config_mak
+   fi
++fi
++if test $openbsd = "yes"; then
++  echo "CONFIG_OPENBSD=yes" >> $config_mak
+ fi
+ echo "SRC_PATH=$source_path" >> $config_mak
+ 
