@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/15 18:56:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/19 11:10:33 ajacoutot Exp $
 
 COMMENT=		frontend to mpd written in Python
 
-DISTNAME=		pympd-0.07
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		pympd-0.08
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://pympd.sourceforge.net/
@@ -23,7 +22,7 @@ RUN_DEPENDS=		::x11/py-gtk2 \
 			:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=		Yes
-
+PKG_ARCH=		*
 NO_REGRESS=		Yes
 
 do-configure:

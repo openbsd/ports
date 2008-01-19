@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/15 18:56:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/01/19 11:10:33 ajacoutot Exp $
 bin/pympd
+lib/python${MODPY_VERSION}/site-packages/Pympd-0.07-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pympd/
 lib/python${MODPY_VERSION}/site-packages/pympd/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pympd/__init__.pyc
@@ -28,6 +29,11 @@ share/pympd/glade/coverviewer.glade
 share/pympd/glade/favorites.glade
 share/pympd/glade/logger.glade
 share/pympd/glade/pympd.glade
+share/pympd/glade/pympd.svg
+share/pympd/pixmaps/
+share/pympd/pixmaps/pause.png
+share/pympd/pixmaps/play.png
+share/pympd/pixmaps/test.png
 share/pympd/plugins/
 share/pympd/plugins/artisttracker.py
 share/pympd/plugins/audioscrobbler.py
@@ -36,8 +42,10 @@ share/pympd/plugins/coverviewer.py
 share/pympd/plugins/embeddedart.py
 share/pympd/plugins/favorites.py
 share/pympd/plugins/fixdisplay.py
+share/pympd/plugins/gajim.py
 share/pympd/plugins/logger.py
 share/pympd/plugins/simplequeue.py
+share/pympd/plugins/songfollow.py
 share/pympd/plugins/stopbutton.py
 share/pympd/plugins/trayicon.py
 share/pympd/pympd.svg
