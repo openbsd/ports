@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/01/09 10:17:54 todd Exp $
+# $OpenBSD: Makefile,v 1.24 2008/01/19 23:53:58 todd Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 arm i386 powerpc
@@ -32,8 +32,13 @@ REGRESS_TARGET=		test test2
 PATCH_LIST=     patch-* misc-*
 .endif
 
-FLAVORS=		no_x11
+FLAVORS=		no_x11 kqemu
 FLAVOR?=
+
+.if ${FLAVOR:L:Mkqemu}
+#CONFIGURE_ARGS+=	--enable-kqemu
+CONFIGURE_ENV+= USE_KQEMU=yes
+.endif
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--disable-gfx-check \
