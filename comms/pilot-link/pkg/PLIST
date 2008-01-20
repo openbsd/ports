@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/03/22 23:41:28 ajacoutot Exp $
-bin/pilot-650foto
+@comment $OpenBSD: PLIST,v 1.14 2008/01/20 15:19:31 ajacoutot Exp $
 bin/pilot-addresses
 bin/pilot-clip
 bin/pilot-csd
@@ -8,6 +7,8 @@ bin/pilot-dedupe
 bin/pilot-dlpsh
 bin/pilot-file
 bin/pilot-foto
+bin/pilot-foto-treo600
+bin/pilot-foto-treo650
 bin/pilot-getram
 bin/pilot-getrom
 bin/pilot-getromtoken
@@ -33,7 +34,6 @@ bin/pilot-read-veo
 bin/pilot-reminders
 bin/pilot-schlep
 bin/pilot-sync-plan
-bin/pilot-treofoto
 bin/pilot-undelete
 bin/pilot-wav
 bin/pilot-xfer
@@ -104,6 +104,8 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
 @man man/man1/pilot-dedupe.1
 @man man/man1/pilot-dlpsh.1
 @man man/man1/pilot-file.1
+@man man/man1/pilot-foto-treo600.1
+@man man/man1/pilot-foto-treo650.1
 @man man/man1/pilot-foto.1
 @man man/man1/pilot-getram.1
 @man man/man1/pilot-getrom.1
@@ -128,7 +130,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
 @man man/man1/pilot-read-veo.1
 @man man/man1/pilot-reminders.1
 @man man/man1/pilot-schlep.1
-@man man/man1/pilot-treofoto.1
 @man man/man1/pilot-wav.1
 @man man/man1/pilot-xfer.1
 @man man/man7/pilot-link.7

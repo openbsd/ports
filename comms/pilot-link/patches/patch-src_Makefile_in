@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2006/10/20 11:48:06 ajacoutot Exp $
---- src/Makefile.in.orig	Mon Sep 18 10:42:17 2006
-+++ src/Makefile.in	Mon Sep 18 10:42:30 2006
-@@ -480,7 +480,7 @@ PISYNC_AGE = @PISYNC_AGE@
- PISYNC_CURRENT = @PISYNC_CURRENT@
+$OpenBSD: patch-src_Makefile_in,v 1.3 2008/01/20 15:19:31 ajacoutot Exp $
+--- src/Makefile.in.orig	Mon Nov 12 19:14:09 2007
++++ src/Makefile.in	Thu Jan 17 09:00:41 2008
+@@ -503,7 +503,7 @@ PISYNC_CURRENT = @PISYNC_CURRENT@
  PISYNC_REVISION = @PISYNC_REVISION@
+ PKG_CONFIG = @PKG_CONFIG@
  PNG_CFLAGS = @PNG_CFLAGS@
 -PNG_LIBS = @PNG_LIBS@
 +PNG_LIBS = @PNG_LIBS@ -lz -lm
