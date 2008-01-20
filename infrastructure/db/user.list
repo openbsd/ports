@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.82 2007/11/21 18:44:34 ajacoutot Exp $
+$OpenBSD: user.list,v 1.83 2008/01/20 15:12:31 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -105,3 +105,4 @@ id  user		group		port options
 594 _ejabberd		_ejabberd	net/ejabberd
 595 _poppassd		_poppassd	sysutils/openpoppassd
 596 _heartbeat		_heartbeat	sysutils/heartbeat
+597			_kqemu		emulators/kqemu
