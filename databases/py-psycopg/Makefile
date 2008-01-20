@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2008/01/14 13:24:16 winiger Exp $
+# $OpenBSD: Makefile,v 1.31 2008/01/20 10:41:09 winiger Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ VERSION=		1.1.21
 DISTNAME=		psycopg-${VERSION}
 PKGNAME=		py-${DISTNAME}p6
 PKGNAME-main=		py-${DISTNAME}p6
-FULLPKGNAME-examples=	py-${DISTNAME}
+FULLPKGNAME-examples=	py-${DISTNAME}-examples
 FULLPKGNAME-zope=	py-psycopg-zope-${VERSION}p2
 CATEGORIES=		databases
 
@@ -36,7 +36,7 @@ FLAVORS=	python2.4 python2.5
 FLAVOR?=	python2.5
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
-MULTI_PACKAGES=	-main -examples -zope
+MULTI_PACKAGES=	-main -zope
 .elif ${FLAVOR:L:Mpython2.5} && !${FLAVOR:L:Npython2.5}
 MULTI_PACKAGES=	-main -examples
 .else
