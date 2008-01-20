@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/20 19:11:01 bernd Exp $
 
 COMMENT=	pure-ruby implementation of the SFTP client protocol
 
 DISTNAME=	net-sftp-1.1.0
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	net
 
 # bsd/ruby
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=net-ssh/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-net-ssh-1.1.1:net/ruby-net-ssh
+RUN_DEPENDS=	:ruby-net-ssh->=1.1.1:net/ruby-net-ssh
 
 CONFIGURE_STYLE=ruby gem
 
