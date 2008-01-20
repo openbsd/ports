@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/19 23:55:19 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/20 15:11:05 ajacoutot Exp $
 @newgroup _kqemu:597
-kqemu.o
+lib/kqemu/
+lib/kqemu/kqemu.o
