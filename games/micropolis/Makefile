@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/01/19 21:23:40 ian Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/20 17:41:22 ajacoutot Exp $
 
 COMMENT=	city-building simulation
 
 DISTNAME=	micropolis-activity-source
 WRKDIST=	${WRKDIR}/micropolis-activity
-PKGNAME=	micropolis-20080117p0
+PKGNAME=	micropolis-20080117p1
 
 CATEGORIES=	games
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+NO_REGRESS=	Yes
 USE_X11=	Yes
 RUN_DEPENDS=	::audio/esound \
 		::devel/desktop-file-utils
