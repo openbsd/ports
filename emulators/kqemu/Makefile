@@ -23,8 +23,12 @@ CONFIGURE_STYLE=	gnu
 MAKE_FILE=		Makefile.openbsd
 PREFIX=			${LOCALBASE}/lib/kqemu
 
+FILES= Makefile.openbsd kqemu-openbsd.c
+
 post-extract:
-	@cp ${FILESDIR}/* ${WRKBUILD}
+.for _f in ${FILES}
+	@cp ${FILESDIR}/${_f} ${WRKBUILD}
+.endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}
