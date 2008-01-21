@@ -1,0 +1,12 @@
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.1 2008/01/21 21:47:56 espie Exp $
+--- ksysguard/ksysguardd/OpenBSD/ProcessList.c.orig	Sun Jan 20 05:23:24 2008
++++ ksysguard/ksysguardd/OpenBSD/ProcessList.c	Sun Jan 20 05:23:38 2008
+@@ -20,8 +20,6 @@
+ 
+ */
+ 
+-#include <config.h>
+-
+ #include <ctype.h>
+ #include <dirent.h>
+ #include <pwd.h>

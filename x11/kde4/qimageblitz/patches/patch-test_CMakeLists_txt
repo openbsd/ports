@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_CMakeLists_txt,v 1.1 2008/01/21 21:47:56 espie Exp $
+--- test/CMakeLists.txt.orig	Thu Oct 25 09:36:44 2007
++++ test/CMakeLists.txt	Fri Oct 26 00:27:30 2007
+@@ -25,7 +25,7 @@ qt4_automoc(${blitztest_SRCS}) 
+ add_executable(blitztest ${blitztest_SRCS})
+ 
+ target_link_libraries(blitztest ${QT_QTCORE_LIBRARY}
+-${QT_QTGUI_LIBRARY} qimageblitz)
++${QT_QTGUI_LIBRARY} qimageblitz ${QT_QTCORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES} pthread)
+ 
+ install(TARGETS blitztest DESTINATION ${BIN_INSTALL_DIR})
+ 

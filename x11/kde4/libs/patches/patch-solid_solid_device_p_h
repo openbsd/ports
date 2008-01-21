@@ -1,0 +1,12 @@
+$OpenBSD: patch-solid_solid_device_p_h,v 1.1 2008/01/21 21:47:56 espie Exp $
+--- solid/solid/device_p.h.orig	Thu Oct 25 01:19:19 2007
++++ solid/solid/device_p.h	Thu Oct 25 01:20:39 2007
+@@ -40,7 +40,7 @@ namespace Solid
+ 
+         QString udi() const { return m_udi; }
+ 
+-        Ifaces::Device *backendObject() const { return m_backendObject; }
++        QPointer<Ifaces::Device> backendObject() const { return m_backendObject; }
+         void setBackendObject(Ifaces::Device *object);
+ 
+         DeviceInterface *interface(const DeviceInterface::Type &type) const;

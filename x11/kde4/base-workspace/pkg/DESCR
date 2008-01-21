@@ -1,0 +1,7 @@
+KDE base workspace applications:
+such as 
+* kdm        Login/session manager
+* ksysguard  System monitor
+* klipper    cut&paste
+* kwin       window manager
+* plasma     on-screen tools

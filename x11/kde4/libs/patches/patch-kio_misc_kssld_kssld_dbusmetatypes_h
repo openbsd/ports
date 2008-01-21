@@ -1,0 +1,58 @@
+$OpenBSD: patch-kio_misc_kssld_kssld_dbusmetatypes_h,v 1.1 2008/01/21 21:47:56 espie Exp $
+--- kio/misc/kssld/kssld_dbusmetatypes.h.orig	Sat Jan 19 19:36:11 2008
++++ kio/misc/kssld/kssld_dbusmetatypes.h	Sat Jan 19 19:36:30 2008
+@@ -59,7 +59,27 @@ QDBusArgument &operator<<(QDBusArgument &argument, con
+     return argument;
+ }
+ 
++QDBusArgument &operator<<(QDBusArgument &argument, const KSslError::Error &error)
++{
++    argument.beginStructure();  //overhead ho!
++    argument << static_cast<int>(error);
++    argument.endStructure();
++    return argument;
++}
+ 
++
++const QDBusArgument &operator>>(const QDBusArgument &argument, KSslError::Error &error)
++{
++    int data;
++    argument.beginStructure();
++    argument >> data;
++    argument.endStructure();
++    error = static_cast<KSslError::Error>(data);
++    return argument;
++}
++
++
++
+ const QDBusArgument &operator>>(const QDBusArgument &argument, KSslCertificateRule &rule)
+ {
+     QSslCertificate cert;
+@@ -76,26 +96,6 @@ const QDBusArgument &operator>>(const QDBusArgument &a
+     ret.setExpiryDateTime(QDateTime::fromString(expiryStr, Qt::ISODate));
+     ret.setIgnoredErrors(ignoredErrors);
+     rule = ret;
+-    return argument;
+-}
+-
+-
+-QDBusArgument &operator<<(QDBusArgument &argument, const KSslError::Error &error)
+-{
+-    argument.beginStructure();  //overhead ho!
+-    argument << static_cast<int>(error);
+-    argument.endStructure();
+-    return argument;
+-}
+-
+-
+-const QDBusArgument &operator>>(const QDBusArgument &argument, KSslError::Error &error)
+-{
+-    int data;
+-    argument.beginStructure();
+-    argument >> data;
+-    argument.endStructure();
+-    error = static_cast<KSslError::Error>(data);
+     return argument;
+ }
+ 

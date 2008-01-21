@@ -1,0 +1,16 @@
+$OpenBSD: patch-kdecore_network_ConfigureChecks_cmake,v 1.1 2008/01/21 21:47:56 espie Exp $
+--- kdecore/network/ConfigureChecks.cmake.orig	Mon Jan 21 15:22:24 2008
++++ kdecore/network/ConfigureChecks.cmake	Mon Jan 21 15:23:00 2008
+@@ -44,9 +44,9 @@ check_function_exists(if_nametoindex  HAVE_IF_NAMETOIN
+ 
+ check_prototype_exists(getservbyname_r netdb.h      HAVE_GETSERVBYNAME_R_PROTO)
+ 
+-check_symbol_exists(freeaddrinfo    "sys/socket.h;netdb.h"     HAVE_FREEADDRINFO)
+-check_symbol_exists(getnameinfo     "sys/socket.h;netdb.h"     HAVE_GETNAMEINFO)
+-check_symbol_exists(getaddrinfo     "sys/socket.h;netdb.h"     HAVE_GETADDRINFO)
++check_symbol_exists(freeaddrinfo    "sys/types.h;sys/socket.h;netdb.h"     HAVE_FREEADDRINFO)
++check_symbol_exists(getnameinfo     "sys/types.h;sys/socket.h;netdb.h"     HAVE_GETNAMEINFO)
++check_symbol_exists(getaddrinfo     "sys/types.h;sys/socket.h;netdb.h"     HAVE_GETADDRINFO)
+ 
+ check_symbol_exists(res_init        "sys/types.h;netinet/in.h;arpa/nameser.h;resolv.h" HAVE_RES_INIT)
+ # redundant? check_function_exists(res_init        HAVE_RES_INIT)

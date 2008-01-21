@@ -1,0 +1,21 @@
+$OpenBSD: patch-cmake_modules_FindKDE4Internal_cmake,v 1.1 2008/01/21 21:47:56 espie Exp $
+--- cmake/modules/FindKDE4Internal.cmake.orig	Sat Jan  5 00:59:39 2008
++++ cmake/modules/FindKDE4Internal.cmake	Sat Jan 19 15:44:04 2008
+@@ -252,7 +252,7 @@ endif(kdelibs_SOURCE_DIR)
+ 
+ if (_kdeBootStrapping)
+    set(KDE4_INCLUDE_DIR ${kdelibs_SOURCE_DIR})
+-   set(KDE4_KDECORE_LIBS ${QT_QTCORE_LIBRARY} kdecore)
++   set(KDE4_KDECORE_LIBS ${QT_QTCORE_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} kdecore)
+    set(KDE4_KDEUI_LIBS ${KDE4_KDECORE_LIBS} kdeui)
+    set(KDE4_KIO_LIBS ${KDE4_KDEUI_LIBS} kio)
+    set(KDE4_KPARTS_LIBS ${KDE4_KIO_LIBS} kparts)
+@@ -262,7 +262,7 @@ if (_kdeBootStrapping)
+    set(KDE4_KUTILS_LIBS ${KDE4_KIO_LIBS} kutils)
+    set(KDE4_KDE3SUPPORT_LIBS ${KDE4_KIO_LIBS} kde3support)
+    set(KDE4_SOLID_LIBS ${KDE4_KDECORE_LIBS} solid)
+-   set(KDE4_PHONON_LIBS ${QT_QTDBUS_LIBRARY} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} phonon)
++   set(KDE4_PHONON_LIBS ${QT_QTDBUS_LIBRARY} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_DBUS_LIB_DEPENDENCIES} ${QT_CORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES} phonon)
+    set(KDE4_KAUDIODEVICELIST_LIBS ${KDE4_SOLID_LIBS} kaudiodevicelist)
+    set(KDE4_KFILE_LIBS ${KDE4_KDE3SUPPORT_LIBS} kfile)
+    set(KDE4_KHTML_LIBS ${KDE4_KPARTS_LIBS} khtml)

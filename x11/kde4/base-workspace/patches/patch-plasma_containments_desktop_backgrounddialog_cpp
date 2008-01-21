@@ -1,0 +1,13 @@
+$OpenBSD: patch-plasma_containments_desktop_backgrounddialog_cpp,v 1.1 2008/01/21 21:47:56 espie Exp $
+--- plasma/containments/desktop/backgrounddialog.cpp.orig	Sun Jan 20 05:30:51 2008
++++ plasma/containments/desktop/backgrounddialog.cpp	Sun Jan 20 05:31:16 2008
+@@ -693,7 +693,8 @@ void BackgroundDialog::setPreview(const QString& img, 
+ 
+ void BackgroundDialog::slotAddDir()
+ {
+-    KDirSelectDialog dialog(KUrl(), true, this);
++    KUrl k;
++    KDirSelectDialog dialog(k, true, this);
+     if (dialog.exec()) {
+         m_dirlist->addItem(dialog.url().path());
+         updateSlideshow();

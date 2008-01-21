@@ -1,8 +1,8 @@
-$OpenBSD: patch-kjs_math_object_cpp,v 1.1.1.1 2007/03/22 22:24:33 espie Exp $
---- kjs/math_object.cpp.orig	Wed Aug 23 13:26:53 2006
-+++ kjs/math_object.cpp	Wed Aug 23 13:28:00 2006
-@@ -47,6 +47,11 @@ static __inline int signbit(double x)
- 
+$OpenBSD: patch-kjs_math_object_cpp,v 1.2 2008/01/21 21:47:56 espie Exp $
+--- kjs/math_object.cpp.orig	Sat Jan  5 00:59:52 2008
++++ kjs/math_object.cpp	Sat Jan 19 15:44:04 2008
+@@ -35,6 +35,11 @@ static inline int signbit(double x)
+ }
  #endif
  
 +static __inline int signbit(double x)

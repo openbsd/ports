@@ -1,0 +1,11 @@
+$OpenBSD: patch-kioslave_http_http_h,v 1.1 2008/01/21 21:47:56 espie Exp $
+--- kioslave/http/http.h.orig	Sat Jan  5 01:00:11 2008
++++ kioslave/http/http.h	Sat Jan 19 15:44:04 2008
+@@ -26,6 +26,7 @@
+ #define HTTP_H_
+ 
+ 
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <string.h>

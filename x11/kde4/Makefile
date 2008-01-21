@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.4 2007/04/03 22:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/21 21:47:56 espie Exp $
 
-     SUBDIR += accessibility
-     SUBDIR += admin
-     SUBDIR += artwork
+#     SUBDIR += accessibility
+#     SUBDIR += admin
+#     SUBDIR += artwork
      SUBDIR += base
-     SUBDIR += edu
-     SUBDIR += games
-     SUBDIR += graphics
+     SUBDIR += base-runtime
+     SUBDIR += base-workspace
+#     SUBDIR += edu
+#     SUBDIR += games
+#     SUBDIR += graphics
      SUBDIR += libs
-     SUBDIR += network
-     SUBDIR += pim
+#     SUBDIR += network
+#     SUBDIR += pim
      SUBDIR += pimlibs
-     SUBDIR += toys
-     SUBDIR += utils
+#     SUBDIR += toys
+#     SUBDIR += utils
+     SUBDIR += qimageblitz
 
 .include <bsd.port.subdir.mk>

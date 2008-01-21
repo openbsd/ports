@@ -1,0 +1,17 @@
+$OpenBSD: patch-plasma_plasma_plasmaapp_cpp,v 1.1 2008/01/21 21:47:56 espie Exp $
+--- plasma/plasma/plasmaapp.cpp.orig	Sun Jan 20 05:32:03 2008
++++ plasma/plasma/plasmaapp.cpp	Sun Jan 20 05:37:10 2008
+@@ -138,9 +138,13 @@ PlasmaApp::PlasmaApp(Display* display, Qt::HANDLE visu
+     }
+     cacheSize += cacheSize / 10;
+ 
++#if 0
+     // Calculate the size of physical system memory
+     int memorySize = sysconf(_SC_PHYS_PAGES);
+     memorySize *= sysconf(_SC_PAGESIZE) / 1024;
++#endif
++
++	int memorySize = 1024*1024;
+ 
+     // Increase the pixmap cache size to 1% of system memory if it isn't already
+     // larger so as to maximize cache usage. 1% of 1GB ~= 10MB.
