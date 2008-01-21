@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/01/04 16:27:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/21 22:10:21 jasper Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
 DISTNAME=	vym-1.10.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	productivity x11
 
 HOMEPAGE=	http://www.insilmaril.de/vym/
@@ -22,6 +23,8 @@ WANTLIB=	ICE SM Qt3Support QtGui QtNetwork QtSql QtXml X11 Xcursor Xext \
 
 MODULES=	devel/gettext \
 		x11/qt4
+
+RUN_DEPENDS=	::archivers/zip
 
 USE_X11=	Yes
 PORTHOME=	${WRKDIR}
