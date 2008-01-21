@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/20 17:41:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/21 12:14:04 espie Exp $
 
 COMMENT=	city-building simulation
 
 DISTNAME=	micropolis-activity-source
 WRKDIST=	${WRKDIR}/micropolis-activity
+WRKSRC=		${WRKDIST}/src
+MAKE_FILE=	makefile
 PKGNAME=	micropolis-20080117p1
 
 CATEGORIES=	games
@@ -14,7 +16,8 @@ MASTER_SITES=	${HOMEPAGE}
 MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
-# GPL
+# GPLv3
+# beware of SimCity, tm of Electronic Arts
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -27,36 +30,33 @@ RUN_DEPENDS=	::audio/esound \
 
 WANTLIB=	c m X11 Xext Xpm
 
-pre-configure:
-	@perl -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKSRC}/Micropolis
-	@perl -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKSRC}/res/micropolis.tcl
-	@perl -pi -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKSRC}/res/micropolis.tcl
-	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/src/sim/makefile
-	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/src/tclx/config.mk
-	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/src/tk/makefile
-
-do-build:
-	@cd ${WRKSRC}/src && ${MAKE}
+do-configure:
+	@perl -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKDIST}/Micropolis
+	@perl -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKDIST}/res/micropolis.tcl
+	@perl -pi -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKDIST}/res/micropolis.tcl
+	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/sim/makefile
+	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/tclx/config.mk
+	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/tk/makefile
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/micropolis
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/micropolis
-	@cd ${WRKSRC} && \
+	@cd ${WRKDIST} && \
             find res -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/micropolis/{} \;
-	@cd ${WRKSRC} && \
+	@cd ${WRKDIST} && \
             find images -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/micropolis/{} \;
-	@cd ${WRKSRC} && \
+	@cd ${WRKDIST} && \
             find manual -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/micropolis/{} \;
-	@cd ${WRKSRC} && \
+	@cd ${WRKDIST} && \
             find res -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/micropolis/{} \;
-	@cd ${WRKSRC} && \
+	@cd ${WRKDIST} && \
             find images -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/micropolis/{} \;
-	@cd ${WRKSRC} && \
+	@cd ${WRKDIST} && \
             find manual -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/micropolis/{} \;
-	@${INSTALL_SCRIPT} ${WRKSRC}/Micropolis ${PREFIX}/bin/micropolis
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/sim/sim ${PREFIX}/libexec/sim
+	@${INSTALL_SCRIPT} ${WRKDIST}/Micropolis ${PREFIX}/bin/micropolis
+	@${INSTALL_PROGRAM} ${WRKSRC}/sim/sim ${PREFIX}/libexec/sim
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	@${INSTALL_DATA} ${WRKSRC}/Micropolis.png ${PREFIX}/share/pixmaps/micropolis.png
+	@${INSTALL_DATA} ${WRKDIST}/Micropolis.png ${PREFIX}/share/pixmaps/micropolis.png
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${FILESDIR}/micropolis.desktop ${PREFIX}/share/applications
 
