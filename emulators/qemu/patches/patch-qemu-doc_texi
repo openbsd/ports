@@ -1,0 +1,20 @@
+$OpenBSD: patch-qemu-doc_texi,v 1.1 2008/01/21 20:40:20 sthen Exp $
+--- qemu-doc.texi.orig	Mon Jan 21 14:11:49 2008
++++ qemu-doc.texi	Mon Jan 21 14:11:51 2008
+@@ -513,6 +513,16 @@ Use @var{file} as initial ram disk.
+ 
+ @end table
+ 
++Kernel QEMU options:
++@table @option
++
++@item -kernel-kqemu
++Enable KQEMU full virtualization (default is user mode only).
++
++@item -no-kqemu
++Disable KQEMU kernel module usage.
++@end table
++
+ Debug/Expert options:
+ @table @option
+ 
