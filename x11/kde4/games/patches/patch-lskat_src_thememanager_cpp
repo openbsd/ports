@@ -1,0 +1,13 @@
+$OpenBSD: patch-lskat_src_thememanager_cpp,v 1.1 2008/01/21 22:08:14 espie Exp $
+--- lskat/src/thememanager.cpp.orig	Sun Jan 20 13:11:59 2008
++++ lskat/src/thememanager.cpp	Sun Jan 20 13:12:14 2008
+@@ -120,7 +120,8 @@ void ThemeManager::updateCardTheme(const QString &them
+   QString cardSVG    = cardGroup.readEntry("SVG", QString());
+   if (global_debug > 1) kDebug() << "SVG card =" << cardSVG << "is" << (!cardSVG.isNull());
+ 
+-  QFileInfo svgInfo(QDir(cards), cardSVG);
++  QDir d(cards);
++  QFileInfo svgInfo(d, cardSVG);
+   QString svgfile = svgInfo.filePath();
+ 
+   mCardRenderer = 0;

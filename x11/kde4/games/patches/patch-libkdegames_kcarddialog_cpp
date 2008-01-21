@@ -1,0 +1,23 @@
+$OpenBSD: patch-libkdegames_kcarddialog_cpp,v 1.1 2008/01/21 22:08:14 espie Exp $
+--- libkdegames/kcarddialog.cpp.orig	Sun Jan 20 13:00:21 2008
++++ libkdegames/kcarddialog.cpp	Sun Jan 20 13:01:40 2008
+@@ -421,7 +421,8 @@ void KCardDialog::readFronts()
+         QString svg    = cfgcg.readEntry("SVG", QString());
+         if (!svg.isNull())
+         {
+-          QFileInfo svgInfo(QDir(path), svg);
++	  QDir d(path);
++          QFileInfo svgInfo(d, svg);
+           info.svgfile = svgInfo.filePath();
+         }
+         else
+@@ -828,7 +829,8 @@ void KCardDialog::readBacks()
+         QString svg    = cfgcg.readEntry("SVG", QString());
+         if (!svg.isNull())
+         {
+-          QFileInfo svgInfo(QDir(path), svg);
++	  QDir d(path);
++          QFileInfo svgInfo(d, svg);
+           info.svgfile = svgInfo.filePath();
+         }
+         else

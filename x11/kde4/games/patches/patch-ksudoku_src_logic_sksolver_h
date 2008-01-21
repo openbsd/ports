@@ -1,0 +1,12 @@
+$OpenBSD: patch-ksudoku_src_logic_sksolver_h,v 1.1 2008/01/21 22:08:14 espie Exp $
+--- ksudoku/src/logic/sksolver.h.orig	Sun Jan 20 13:08:52 2008
++++ ksudoku/src/logic/sksolver.h	Sun Jan 20 13:09:02 2008
+@@ -58,7 +58,7 @@ typedef unsigned int uint;
+ 
+ #include <math.h>
+ // SUDOKU PUZZLE SOLVER BASIC ALGORITHM - BY FRANCESCO ROSSI 2005 redsh@email.it
+-class SolverState;
++class ksudoku::SolverState;
+ 
+ /**
+ @author Francesco Rossi

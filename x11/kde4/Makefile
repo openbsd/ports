@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/21 21:47:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/21 22:08:14 espie Exp $
 
 #     SUBDIR += accessibility
 #     SUBDIR += admin
@@ -7,7 +7,7 @@
      SUBDIR += base-runtime
      SUBDIR += base-workspace
 #     SUBDIR += edu
-#     SUBDIR += games
+     SUBDIR += games
 #     SUBDIR += graphics
      SUBDIR += libs
 #     SUBDIR += network

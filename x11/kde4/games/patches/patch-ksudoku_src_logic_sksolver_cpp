@@ -1,0 +1,39 @@
+$OpenBSD: patch-ksudoku_src_logic_sksolver_cpp,v 1.1 2008/01/21 22:08:14 espie Exp $
+--- ksudoku/src/logic/sksolver.cpp.orig	Sun Jan 20 13:03:17 2008
++++ ksudoku/src/logic/sksolver.cpp	Sun Jan 20 13:18:45 2008
+@@ -40,7 +40,7 @@ SKPuzzle stack[625+1];
+ using namespace ksudoku;
+ using namespace std;
+ 
+-class SolverState {
++class ksudoku::SolverState {
+ public:
+ 	SolverState(uint size, uint order)
+ 		: m_size(size), m_order(order), m_values(size, 0), m_flags(order),
+@@ -144,7 +144,7 @@ SKSolver::SKSolver(SKGraph* gr)
+ 
+ SKSolver::SKSolver(int n, bool threedimensionalf)
+ {
+-	base = static_cast<int>(sqrt(n));
++	base = static_cast<int>(sqrt(static_cast<double>(n)));
+ 	order=n;
+ 	m_type = threedimensionalf ? roxdoku : sudoku;
+ 	           ///@TODO fix above so more than 2
+@@ -335,7 +335,7 @@ int SKSolver::remove_numbers(SKPuzzle* p, int level, i
+ 	}
+ 	
+ 	
+-	int numberOfNumbersToAdd = (7*(3-level)*(((type!=1) ? ((int) sqrt(p->size)) : p->order )+LEVINC-(p->order-2)*(type==1)))/10;
++	int numberOfNumbersToAdd = (7*(3-level)*(((type!=1) ? ((int) sqrt((double)p->size)) : p->order )+LEVINC-(p->order-2)*(type==1)))/10;
+  	printf("%d\n", numberOfNumbersToAdd);
+ 
+ 	ITERATE(i, numberOfNumbersToAdd)
+@@ -579,7 +579,7 @@ uint SKSolver::removeAtIndex(QVector<uint>& puzzle, ui
+ 		puzzle[indices[i]] = 0;
+ 	}
+ 	
+-	::SolverState state(size, order);
++	ksudoku::SolverState state(size, order);
+ 	for(uint i = 0; i < static_cast<uint>(size); ++i) {
+ 		if(puzzle[i]) state.setValue(i, puzzle[i], g);
+ 	}
