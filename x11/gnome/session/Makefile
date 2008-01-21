@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2007/12/16 14:36:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2008/01/21 19:47:15 jasper Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.20.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		x11
 
 # GPL/LGPL
@@ -38,6 +38,7 @@ RUN_DEPENDS+=		::x11/gnome/alacarte \
 			::x11/gnome/controlcenter2 \
 			::x11/gnome/gdm \
 			::x11/gnome/gedit \
+			::x11/gnome/media \
 			::x11/gnome/terminal \
 			::x11/gnome/themes \
 			::x11/gnome/themes-extras \
