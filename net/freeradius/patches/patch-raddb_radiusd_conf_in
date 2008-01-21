@@ -1,61 +1,112 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.3 2007/09/16 22:11:31 rui Exp $
---- raddb/radiusd.conf.in.orig	Mon Jul 16 11:53:13 2007
-+++ raddb/radiusd.conf.in	Sat Sep 15 09:46:18 2007
-@@ -23,7 +23,7 @@
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
+--- raddb/radiusd.conf.in.orig	Sat Dec 29 04:33:26 2007
++++ raddb/radiusd.conf.in	Mon Jan 21 16:21:31 2008
+@@ -26,7 +26,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
  sysconfdir = @sysconfdir@
 -localstatedir = @localstatedir@
-+localstatedir = /var
++localstatedir = /var 
  sbindir = @sbindir@
  logdir = @logdir@
  raddbdir = @raddbdir@
-@@ -71,7 +71,7 @@ log_file = ${logdir}/radius.log
+@@ -81,7 +81,7 @@ log_destination = files
  #	make
  #	make install
  #
 -libdir = @libdir@
-+libdir = @prefix@/lib/freeradius
++libdir = @prefix@/lib/freeradius 
  
  #  pidfile: Where to place the PID of the RADIUS server.
  #
-@@ -106,8 +106,8 @@ pidfile = ${run_dir}/radiusd.pid
+@@ -116,8 +116,8 @@ pidfile = ${run_dir}/radiusd.pid
  #  that the debugging mode server is running as a user that can read the
  #  shadow info, and the user listed below can not.
  #
 -#user = nobody
 -#group = nobody
-+user = _freeradius
-+group = _freeradius
++user = _freeradius 
++group = _freeradius 
  
  #  max_request_time: The maximum time (in seconds) to handle a request.
  #
-@@ -425,8 +425,8 @@ security {
+@@ -408,8 +408,8 @@ security {
  #
  #  allowed values: {no, yes}
  #
 -proxy_requests  = yes
--$INCLUDE  ${confdir}/proxy.conf
-+proxy_requests  = no
-+# $INCLUDE  ${confdir}/proxy.conf
+-$INCLUDE proxy.conf
++proxy_requests  = no 
++#$INCLUDE ${confdir}/proxy.conf
  
  
  # CLIENTS CONFIGURATION
-@@ -665,7 +665,7 @@ modules {
+@@ -425,7 +425,7 @@ $INCLUDE proxy.conf
+ #  Anything listed in 'clients.conf' will take precedence over the
+ #  information from the old-style configuration files.
+ #
+-$INCLUDE clients.conf
++$INCLUDE ${confdir}/clients.conf
+ 
+ 
+ # SNMP CONFIGURATION
+@@ -437,7 +437,7 @@ $INCLUDE clients.conf
+ #  'snmp' attribute to 'yes'
+ #
+ snmp	= no
+-$INCLUDE snmp.conf
++$INCLUDE ${confdir}/snmp.conf
+ 
+ 
+ # THREAD POOL CONFIGURATION
+@@ -609,7 +609,7 @@ modules {
  	#  For all EAP related authentications.
  	#  Now in another file, because it is very large.
  	#
--$INCLUDE ${confdir}/eap.conf
+-$INCLUDE eap.conf
 +	$INCLUDE ${confdir}/eap.conf
  
  	# Microsoft CHAP authentication
  	#
-@@ -1253,7 +1253,7 @@ $INCLUDE ${confdir}/eap.conf
- 	#  For MS-SQL, use:	 	${confdir}/mssql.conf
- 	#  For Oracle, use:	 	${confdir}/oraclesql.conf
+@@ -1246,7 +1246,7 @@ $INCLUDE eap.conf
+ 	#  Include another file that has the SQL-related configuration.
+ 	#  This is another file only because it tends to be big.
  	#
--	$INCLUDE  ${confdir}/sql.conf
-+	# $INCLUDE  ${confdir}/sql.conf
+-	$INCLUDE sql.conf
++	$INCLUDE ${confdir}/sql.conf
  
  
  	#  For Cisco VoIP specific accounting with Postgresql,
+@@ -1440,8 +1440,8 @@ $INCLUDE eap.conf
+ 	#  totally dependent on the SQL module to process Accounting
+ 	#  packets.
+ 	#
+-	$INCLUDE sql/mysql/counter.conf
+-	#$INCLUDE sql/postgresql/counter.conf
++	$INCLUDE ${confdir}/sql/mysql/counter.conf
++	#$INCLUDE ${confdir}/sql/postgresql/counter.conf
+ 
+ 	#
+ 	# The "always" module is here for debugging purposes. Each
+@@ -1744,10 +1744,10 @@ $INCLUDE eap.conf
+ 		#key = "%{NAS-IP-Address} %{NAS-Port}"
+ 	}
+ 
+-	# $INCLUDE sqlippool.conf
++	# $INCLUDE ${confdir}/sqlippool.conf
+ 
+ 	# OTP token support.  Not included by default.
+-	# $INCLUDE otp.conf
++	# $INCLUDE ${confdir}/otp.conf
+ 
+ 	#
+ 	#  Kerberos.  See doc/rlm_krb5 for minimal docs.
+@@ -1842,7 +1842,7 @@ instantiate {
+ #	to multiple times.
+ #
+ ######################################################################
+-$INCLUDE policy.conf
++$INCLUDE ${confdir}/policy.conf
+ 
+ ######################################################################
+ #

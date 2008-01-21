@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_session_c,v 1.3 2007/09/16 22:11:31 rui Exp $
---- src/main/session.c.orig	Tue May 15 10:50:51 2007
-+++ src/main/session.c	Sat Sep 15 09:46:18 2007
-@@ -203,7 +203,7 @@ int rad_check_ts(uint32_t nasaddr, unsigned int portnu
+$OpenBSD: patch-src_main_session_c,v 1.4 2008/01/21 22:21:24 rui Exp $
+--- src/main/session.c.orig	Fri Nov 23 13:46:52 2007
++++ src/main/session.c	Mon Jan 21 16:21:31 2008
+@@ -202,7 +202,7 @@ int rad_check_ts(uint32_t nasaddr, unsigned int portnu
  	   processor to execute checkrad
  	*/
  	execl(getenv("COMSPEC"), "", "/C","checkrad", cl->nastype, address, port,

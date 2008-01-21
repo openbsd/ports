@@ -1,19 +1,19 @@
-$OpenBSD: patch-src_modules_rules_mak,v 1.3 2007/09/16 22:11:31 rui Exp $
---- src/modules/rules.mak.orig	Thu Jul  6 17:42:57 2006
-+++ src/modules/rules.mak	Sat Sep 15 09:46:18 2007
-@@ -111,9 +111,9 @@ build-module: $(TARGET).la $(RLM_UTILS)
+$OpenBSD: patch-src_modules_rules_mak,v 1.4 2008/01/21 22:21:24 rui Exp $
+--- src/modules/rules.mak.orig	Thu Jan 10 10:12:01 2008
++++ src/modules/rules.mak	Mon Jan 21 16:21:32 2008
+@@ -113,9 +113,9 @@ build-module: $(TARGET).la $(RLM_UTILS)
  	@cp $< $(top_builddir)/src/modules/lib
  
  $(TARGET).la: $(LT_OBJS)
 -	$(LIBTOOL) --mode=link $(CC) -release $(RADIUSD_VERSION) \
 +	$(LIBTOOL) --mode=link $(CC) -avoid-version \
  	-module $(LINK_MODE) $(LDFLAGS) $(RLM_LDFLAGS) -o $@     \
--	-rpath $(libdir) $^ $(top_builddir)/src/lib/libradius.la \
-+	-rpath $(libdir)/freeradius $^ $(top_builddir)/src/lib/libradius.la \
- 	$(RLM_LIBS) $(LIBS)
+-	-rpath $(libdir) $^ $(LIBRADIUS) $(RLM_LIBS) $(LIBS)
++	-rpath $(libdir)/freeradius $^ $(LIBRADIUS) $(RLM_LIBS) $(LIBS)
  
  #######################################################################
-@@ -161,7 +161,5 @@ install:
+ #
+@@ -162,7 +162,5 @@ install:
  	@[ "x$(RLM_INSTALL)" = "x" ] || $(MAKE) $(MFLAGS) $(RLM_INSTALL)
  	if [ "x$(TARGET)" != "x" ]; then \
  	    $(LIBTOOL) --mode=install $(INSTALL) -c \

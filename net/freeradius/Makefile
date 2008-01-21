@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 22:11:31 rui Exp $
+# $OpenBSD: Makefile,v 1.11 2008/01/21 22:21:24 rui Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,23 +8,24 @@ COMMENT-mysql=		freeradius mysql rlm addon
 COMMENT-pgsql=		freeradius pgsql rlm addon
 COMMENT-ldap=		freeradius ldap rlm addon
 
-V=			1.1.7
-DISTNAME=		freeradius-$V
-PKGNAME-main=		${DISTNAME}
+V=			2.0.0
+DISTNAME=		freeradius-server-$V
+PKGNAME-main=		freeradius-$V
 PKGNAME-iodbc=		freeradius-iodbc-$V
 PKGNAME-mysql=		freeradius-mysql-$V
 PKGNAME-pgsql=		freeradius-pgsql-$V
 PKGNAME-ldap=		freeradius-ldap-$V
-SHARED_LIBS=		eap	3.0 \
-			radius	3.0
+SHARED_LIBS=		freeradius-eap	0.0 \
+			freeradius-radius 0.0
 
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/old/
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.freeradius.org/
 
-MAINTAINER=	Tim Kornau <opti@openbsd.de>
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,6 +40,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-snmp \
 		--with-pic \
 		--without-rlm-perl \
+		--without-rlm-python \
+		--without-rlm_eap_ikev2 \
 		--without-rlm_pam \
 		--without-rlm_sql_oracle \
 		--without-rlm_sql_db2 \
@@ -102,16 +105,15 @@ CONFIGURE_ARGS+=--with-rlm_sql_postgresql \
 
 LIB_DEPENDS-iodbc=	iodbc.>=2::databases/iodbc
 RUN_DEPENDS-iodbc=	::net/freeradius
-WANTLIB-iodbc=		pthread
 LIB_DEPENDS-ldap=	lber.>=8,ldap_r.>=8:openldap-client-*:databases/openldap \
-			radius.>=1::net/freeradius
+			freeradius-radius.>=0::net/freeradius
 WANTLIB-ldap=		crypto pthread sasl2 ssl asn1 com_err gssapi krb5
 LIB_DEPENDS-mysql=	mysqlclient_r.>=16:mysql-client-*:databases/mysql
 RUN_DEPENDS-mysql=	::net/freeradius
 WANTLIB-mysql=		crypto m pthread ssl z
 LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
 RUN_DEPENDS-pgsql=	::net/freeradius
-WANTLIB-main=		c com_err crypto krb5 pthread ssl
+WANTLIB-main=		c com_err crypto krb5 pcap pthread ssl
 
 post-configure:
 	@perl -pi -e 's,/etc/raddb,${SYSCONFDIR}/raddb,g' ${WRKSRC}/man/*/*
