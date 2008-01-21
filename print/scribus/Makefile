@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2007/12/16 11:30:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/21 17:13:32 ian Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.3.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 
 # These are actually internal modules, not generic shared libs
@@ -33,7 +33,8 @@ EXTRACT_SUFX=	.tar.bz2
 MODULES=	x11/qt3 converters/libiconv lang/python
 MODQT_MT=	Yes
 
-RUN_DEPENDS=	:shared-mime-info-*:misc/shared-mime-info
+RUN_DEPENDS=	:shared-mime-info-*:misc/shared-mime-info \
+		::devel/desktop-file-utils
 LIB_DEPENDS=	jpeg::graphics/jpeg \
 		lcms::graphics/lcms \
 		art_lgpl_2::graphics/libart \
@@ -78,5 +79,7 @@ post-install:
 	rm -rf ${WRKINST}/usr/local/share/doc/scribus
 	mv ${WRKINST}/usr/local/share/doc/${DISTNAME} \
 	    ${WRKINST}/usr/local/share/doc/scribus
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKSRC}/scribus.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>
