@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/21 22:52:43 espie Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -9,7 +9,7 @@ DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
 FULLPKGNAME-qt=	poppler-qt-$V
-FULLPKGNAME-qt4=poppler-qt4-$V
+FULLPKGNAME-qt4=poppler-qt4-$Vp0
 
 SHARED_LIBS +=	poppler              3.0      # .2.0
 SHARED_LIBS +=	poppler-glib         3.0      # .2.0
@@ -25,6 +25,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
+
+QT4INC=
 
 PSEUDO_FLAVORS=no_qt no_qt4
 MULTI_PACKAGES=-main
@@ -51,10 +53,12 @@ MAKE_FLAGS+=	POPPLER_QT4_CFLAGS='-pthread -I${X11BASE}/include -I${MODQT4_INCDIR
 		qt4_pc_file=poppler-qt4.pc \
 		poppler_arthur=libpoppler-arthur.la \
 		libpoppler_arthur_la_SOURCES="ArthurOutputDev.h ArthurOutputDev.cc" \
+		am_libpoppler_arthur_la_OBJECTS=ArthurOutputDev.lo \
 		arthur_includes='$$(POPPLER_QT4_CXXFLAGS)' \
 		arthur_libs='$$(POPPLER_QT4_LIBS)'
 
 MODULES+=	x11/qt4
+QT4INC=		-I${MODQT4_INCDIR}
 .endif
 
 WANTLIB=	expat freetype fontconfig jpeg m z
@@ -82,7 +86,7 @@ CONFIGURE_ARGS= --enable-xpdf-headers \
 		--disable-utils \
 		--enable-zlib
 
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${QT4INC}" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
