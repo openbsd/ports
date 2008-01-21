@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/21 23:54:56 espie Exp $
 
-COMMENT=		K Desktop Environment, graphics
-DISTNAME=		kdegraphics-${VERSION}
-PKGNAME=		${DISTNAME}p1
+COMMENT =		K Desktop Environment, graphics
+DISTNAME =		kdegraphics-${VERSION}
+PKGNAME =		${DISTNAME}
 
-SHARED_LIBS +=	djvu                 0.0      # .0.0
-SHARED_LIBS +=	kghostviewlib        2.0      # .1.0
-SHARED_LIBS +=	kscan                3.0      # .1.0
-SHARED_LIBS +=	ligaturePluginGUI    0.0      # .2.0
-SHARED_LIBS +=	ligaturecore         0.0      # .2.0
-SHARED_LIBS +=	lkpovmodeler         0.0      # .0.0
+SHARED_LIBS +=  gwenviewlib          0.0      # .1.0
+SHARED_LIBS +=  kolourpaint4_lgpl     0.0      # .4.0
+SHARED_LIBS +=  okularcore           0.0      # .1.0
 
-LIB_DEPENDS+=	kdecore.>=8,kde3support,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kutils,kwalletclient::x11/kde4/libs \
+LIB_DEPENDS+=	kdecore.>=8,kde3support,kdeui,kio,kparts,kutils,kfile,khtml,kjs,knewstuff2,kpty,ktexteditor,phonon,solid,threadweaver::x11/kde4/libs \
 		poppler-qt4::print/poppler,-qt4 \
 		sane::graphics/sane-backends \
-		Imlib::graphics/imlib
+		chm::devel/chmlib \
+		djvulibre::graphics/djvulibre \
+		qimageblitz::x11/kde4/qimageblitz
 
 WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xft Xi Xinerama Xpm
 WANTLIB += Xrandr Xrender Xtst c fontconfig freetype jpeg m png
 WANTLIB += pthread stdc++ tiff util z
-WANTLIB += Qt3Support QtDBus QtGui QtSvg QtXml
+WANTLIB += Qt3Support QtDBus QtGui QtSvg QtXml QtNetwork
 WANTLIB += gphoto2 gphoto2_port
-WANTLIB += Half Iex IlmImf Imath bz2
-WANTLIB += GL GLU Xmu Xxf86vm
+WANTLIB += bz2
+WANTLIB += Xxf86vm
+WANTLIB += Xfixes dbus-1 exiv2 fam gif glib-2.0 gthread-2.0 iconv
+WANTLIB += intl pcre pcreposix poppler streamanalyzer streams
+
 
 
 .include <bsd.port.mk>
