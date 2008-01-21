@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_liboctave_Makefile_in,v 1.5 2007/07/28 07:09:19 steven Exp $
---- doc/liboctave/Makefile.in.orig	Wed Jul 25 21:23:26 2007
-+++ doc/liboctave/Makefile.in	Thu Jul 26 11:19:49 2007
-@@ -46,7 +46,7 @@ SPELL = $(patsubst %.texi, %.spell, $(TEXINFO))
+$OpenBSD: patch-doc_liboctave_Makefile_in,v 1.6 2008/01/21 18:30:13 steven Exp $
+--- doc/liboctave/Makefile.in.orig	Fri Oct 26 20:22:05 2007
++++ doc/liboctave/Makefile.in	Sat Dec 29 17:13:51 2007
+@@ -59,7 +59,7 @@ SPELL = $(patsubst %.texi, %.spell, $(TEXINFO))
  	$(SED) -e 's/@@/ at /g' -e 's/@[a-zA-Z]*//g' $< | spell > $@.tmp
  	mv $@.tmp $@
  

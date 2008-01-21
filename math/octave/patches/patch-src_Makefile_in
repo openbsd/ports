@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2007/09/23 08:06:59 steven Exp $
---- src/Makefile.in.orig	Mon Sep 17 22:47:41 2007
-+++ src/Makefile.in	Tue Sep 18 20:51:43 2007
-@@ -285,6 +285,9 @@ else
+$OpenBSD: patch-src_Makefile_in,v 1.7 2008/01/21 18:30:13 steven Exp $
+--- src/Makefile.in.orig	Wed Dec  5 18:07:42 2007
++++ src/Makefile.in	Sat Dec 29 17:13:51 2007
+@@ -298,6 +298,9 @@ else
    PIC_XERBLA = $(XERBLA)
  endif
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2007/09/23 08:06:59 steven Exp $
  ifeq ($(SHARED_LIBS), true)
    ifeq ($(STATIC_LIBS), true)
      LIBRARIES = $(LIBPRE)octinterp.$(LIBEXT) $(LIBPRE)octinterp.$(SHLEXT_VER)
-@@ -308,12 +311,8 @@ $(LIBPRE)octinterp.$(LIBEXT): $(OBJECTS) $(XERBLA)
+@@ -321,12 +324,8 @@ $(LIBPRE)octinterp.$(LIBEXT): $(OBJECTS) $(XERBLA)
  	$(TEMPLATE_AR) $(TEMPLATE_ARFLAGS) $@ $^
  	$(RANLIB) $@
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2007/09/23 08:06:59 steven Exp $
  	$(SH_LD) $(SH_LDFLAGS) $(SONAME_FLAGS) -o $@ $^ $(OCTINTERP_LINK_DEPS)
  
  stamp-prereq: defaults.h graphics.h oct-conf.h oct-gperf.h parse.cc lex.cc __gnuplot_raw__.cc $(OPT_HANDLERS)
-@@ -410,8 +409,7 @@ install-strip:
+@@ -421,8 +420,7 @@ install-strip:
  install-bin:
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
  	rm -f $(DESTDIR)$(bindir)/octave$(EXEEXT)
@@ -35,7 +35,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2007/09/23 08:06:59 steven Exp $
  .PHONY: install-bin
  
  install-oct:
-@@ -435,10 +433,8 @@ install-lib:
+@@ -446,10 +444,8 @@ install-lib:
  	fi
  	if $(SHARED_LIBS); then \
  	  rm -f $(DESTDIR)$(octlibdir)/$(LIBPRE)octinterp.$(SHLEXT_VER); \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2007/12/15 20:54:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2008/01/21 18:30:13 steven Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -6,9 +6,8 @@ NOT_FOR_ARCHS=	vax sparc
 
 COMMENT=	high-level language for numerical computations
 
-VERSION=	2.9.14
+VERSION=	3.0.0
 DISTNAME=	octave-${VERSION}
-PKGNAME=	${DISTNAME}p1
 CATEGORIES=	math
 
 SHARED_LIBS=	cruft		5.0 \
@@ -19,7 +18,7 @@ HOMEPAGE=	http://www.octave.org/
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
-# GPL
+# GPL v3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -52,7 +51,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-hdf5
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		F77=${FC}
+		F77=${FC} \
+		SED=/usr/bin/sed
 MAKE_ENV=	LIBcruft_VERSION=${LIBcruft_VERSION} \
 		LIBoctave_VERSION=${LIBoctave_VERSION} \
 		LIBoctinterp_VERSION=${LIBoctinterp_VERSION}

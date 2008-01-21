@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_pkg_pkg_m,v 1.1 2007/11/10 11:15:05 steven Exp $
---- scripts/pkg/pkg.m.orig	Sat Nov 10 12:10:44 2007
-+++ scripts/pkg/pkg.m	Sat Nov 10 12:10:52 2007
-@@ -996,7 +996,7 @@ function configure_make (desc, packdir, verbose)   
+$OpenBSD: patch-scripts_pkg_pkg_m,v 1.2 2008/01/21 18:30:13 steven Exp $
+--- scripts/pkg/pkg.m.orig	Thu Dec 20 17:55:26 2007
++++ scripts/pkg/pkg.m	Sat Dec 29 17:13:51 2007
+@@ -1052,7 +1052,7 @@ function configure_make (desc, packdir, verbose)   
      ## make
      if (exist (fullfile (src, "Makefile"), "file"))
        [status, output] = shell (strcat ("export INSTALLDIR=\"", desc.dir,

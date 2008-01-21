@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_interpreter_Makefile_in,v 1.5 2007/09/23 08:06:59 steven Exp $
---- doc/interpreter/Makefile.in.orig	Wed Sep 12 08:40:58 2007
-+++ doc/interpreter/Makefile.in	Tue Sep 18 20:51:42 2007
-@@ -132,7 +132,7 @@ SPELL = $(patsubst %.texi, %.spell, $(TEXINFO))
+$OpenBSD: patch-doc_interpreter_Makefile_in,v 1.6 2008/01/21 18:30:13 steven Exp $
+--- doc/interpreter/Makefile.in.orig	Wed Dec  5 02:18:41 2007
++++ doc/interpreter/Makefile.in	Sat Dec 29 17:13:51 2007
+@@ -155,7 +155,7 @@ SPELL = $(patsubst %.texi, %.spell, $(TEXINFO))
  	$(SED) -e 's/@@/ at /g' -e 's/@[a-zA-Z]*//g' $< | spell > $@.tmp
  	mv $@.tmp $@
  
