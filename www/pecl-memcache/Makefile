@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/21 20:36:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP interface to memcached
 
 DISTNAME=	memcache-1.5
-PKGNAME=	pecl-${DISTNAME}p0
+PKGNAME=	pecl-${DISTNAME}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://pecl.php.net/package/memcache
@@ -52,5 +52,8 @@ post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pecl-memcache
 	@${INSTALL_DATA} ${WRKSRC}/example.php \
 		${PREFIX}/share/examples/pecl-memcache
+	@${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
+	@echo "extension=memcache.so" > \
+		${PREFIX}/conf/php5.sample/memcache.ini
 
 .include <bsd.port.mk>

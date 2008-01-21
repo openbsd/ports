@@ -1,7 +1,8 @@
-To completely deinstall the pecl-memcache, you need
-to disable the module by using the following command
+You can disable this module by removing the
+${PREFIX}/conf/php5/memcache.ini symbolic link by
+issuing the following command: 
 
-    # ${LOCALBASE}/sbin/phpxs -r memcache
+rm -f ${PREFIX}/conf/php5/memcache.ini
 
 If you already have Apache running on your machine,
 you should not use "apachectl restart" - instead,

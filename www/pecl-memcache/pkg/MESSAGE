@@ -1,7 +1,9 @@
-To finish the install of pecl-memcache, you need
-to enable the module by using the following command
+You can enable this module by creating a symbolic
+link from ${PREFIX}/conf/php5.sample/memcache.ini to
+${PREFIX}/conf/php5/memcache.ini.
 
-    # ${LOCALBASE}/sbin/phpxs -a memcache
+ln -fs ${PREFIX}/conf/php5.sample/memcache.ini \
+        ${PREFIX}/conf/php5/memcache.ini
 
 If you already have Apache running on your machine,
 you should not use "apachectl restart" - instead,

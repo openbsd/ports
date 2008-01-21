@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/23 14:40:47 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/21 20:36:05 sthen Exp $
+@comment conf/php5.sample/
+conf/php5.sample/memcache.ini
 lib/
 lib/php/
 lib/php/modules/
+@group bin
 lib/php/modules/memcache.so
+@group
 share/
 share/examples/
 share/examples/pecl-memcache/
