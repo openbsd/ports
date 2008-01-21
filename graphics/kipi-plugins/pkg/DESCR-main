@@ -18,3 +18,5 @@ image manipulation plugins accessible through libkipi:
 - kameraklient
 - metadata editor
 - gps data
+
+The kcal calendar is in ${PKGNAME-cal} because of its extra dependencies

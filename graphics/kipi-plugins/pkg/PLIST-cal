@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-cal,v 1.1 2008/01/21 11:35:22 espie Exp $
+${KDE}/kipiplugin_calendar.la
+${KDE}/kipiplugin_calendar.so
+share/services/kipiplugin_calendar.desktop
