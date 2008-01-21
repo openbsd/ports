@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/24 22:49:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/21 13:36:14 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	document indexer
 CATEGORIES=	databases devel textproc sysutils
 
-HOMEPAGE=	http://www.vandenoever.info/software/strigi/
-DISTNAME=	strigi-0.5.5
+HOMEPAGE=	http://strigi.sourceforge.net
+DISTNAME=	strigi-0.5.7
 EXTRACT_SUFX=	.tar.bz2
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=strigi/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -24,7 +24,8 @@ SHARED_LIBS +=  strigiqtdbusclient 0.0 # .0.5
 LIB_DEPENDS=		clucene::textproc/clucene \
 			bz2::archivers/bzip2 \
 			xml2::textproc/libxml \
-			lib/qt4/QtCore,lib/qt4/QtGui,lib/qt4/QtDBus::x11/qt4
+			lib/qt4/QtCore,lib/qt4/QtGui,lib/qt4/QtDBus::x11/qt4 \
+			exiv2::graphics/exiv2
 
 WANTLIB += ICE SM X11 Xcursor Xext Xi Xinerama Xrandr Xrender
 WANTLIB += c dbus-1 fontconfig freetype glib-2.0 gthread-2.0 iconv
