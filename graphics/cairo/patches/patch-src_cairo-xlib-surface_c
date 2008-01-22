@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.7 2007/12/08 22:39:36 eric Exp $
---- src/cairo-xlib-surface.c.orig	Tue Nov 27 07:20:12 2007
-+++ src/cairo-xlib-surface.c	Fri Nov 30 22:14:14 2007
+$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.8 2008/01/22 20:30:01 eric Exp $
+--- src/cairo-xlib-surface.c.orig	Tue Jan 15 00:23:07 2008
++++ src/cairo-xlib-surface.c	Sun Jan 20 00:09:24 2008
 @@ -494,6 +494,255 @@ _swap_ximage_to_native (XImage *ximage)
      }
  }
@@ -504,7 +504,7 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.7 2007/12/08 22:39:36 eric Exp $
      ximage.bits_per_pixel = bpp;
      ximage.red_mask = red;
      ximage.green_mask = green;
-@@ -1946,6 +2395,7 @@ _cairo_xlib_surface_create_internal (Display		       *
+@@ -1947,6 +2396,7 @@ _cairo_xlib_surface_create_internal (Display		       *
  				     int			height,
  				     int			depth)
  {
@@ -512,7 +512,7 @@ $OpenBSD: patch-src_cairo-xlib-surface_c,v 1.7 2007/12/08 22:39:36 eric Exp $
      cairo_xlib_surface_t *surface;
      cairo_xlib_screen_info_t *screen_info;
  
-@@ -2043,7 +2493,38 @@ _cairo_xlib_surface_create_internal (Display		       *
+@@ -2044,7 +2494,38 @@ _cairo_xlib_surface_create_internal (Display		       *
      surface->have_clip_rects = FALSE;
      surface->clip_rects = surface->embedded_clip_rects;
      surface->num_clip_rects = 0;
