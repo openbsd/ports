@@ -1,0 +1,12 @@
+$OpenBSD: patch-libkdeedu_keduvocdocument_keduvocgrammar_h,v 1.1 2008/01/22 19:59:28 espie Exp $
+--- libkdeedu/keduvocdocument/keduvocgrammar.h.orig	Tue Jan 22 11:51:27 2008
++++ libkdeedu/keduvocdocument/keduvocgrammar.h	Tue Jan 22 11:51:40 2008
+@@ -80,7 +80,7 @@ class KEDUVOCDOCUMENT_EXPORT KEduVocArticle (public)
+      * @param nat_def reference to a QString with the definite neutral article
+      * @param nat_indef reference to a QString with the indefinite neutral article
+      */
+-    KDE_DEPRECATED KEduVocArticle( const QString &fem_def, const QString &fem_indef, const QString &mal_def, const QString &mal_indef, const QString &nat_def, const QString &nat_indef );
++    KEduVocArticle( const QString &fem_def, const QString &fem_indef, const QString &mal_def, const QString &mal_indef, const QString &nat_def, const QString &nat_indef );
+ 
+     /**
+      * default destructor, deletes the d pointer

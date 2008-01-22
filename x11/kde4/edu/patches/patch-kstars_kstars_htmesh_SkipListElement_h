@@ -1,0 +1,12 @@
+$OpenBSD: patch-kstars_kstars_htmesh_SkipListElement_h,v 1.1 2008/01/22 19:59:28 espie Exp $
+--- kstars/kstars/htmesh/SkipListElement.h.orig	Tue Jan 22 11:58:07 2008
++++ kstars/kstars/htmesh/SkipListElement.h	Tue Jan 22 12:00:31 2008
+@@ -24,7 +24,7 @@
+ #ifdef _WIN32
+ #define KEY_MAX _I64_MAX
+ #else
+-#  if defined(__FreeBSD__) || defined(__NetBSD__)
++#  if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #    define KEY_MAX LLONG_MAX
+ #  else
+ #    define KEY_MAX LONG_LONG_MAX

@@ -1,17 +1,17 @@
-$OpenBSD: patch-kmplot_kmplot_parser_cpp,v 1.2 2007/03/24 13:23:59 espie Exp $
---- kmplot/kmplot/parser.cpp.orig	Mon Feb 19 10:53:35 2007
-+++ kmplot/kmplot/parser.cpp	Sat Mar 24 13:28:39 2007
-@@ -45,6 +45,9 @@
- #include <math.h>
+$OpenBSD: patch-kmplot_kmplot_parser_cpp,v 1.3 2008/01/22 19:59:28 espie Exp $
+--- kmplot/kmplot/parser.cpp.orig	Sat Jan  5 00:56:47 2008
++++ kmplot/kmplot/parser.cpp	Tue Jan 22 01:12:39 2008
+@@ -46,6 +46,9 @@
  #include <assert.h>
  #include <cmath>
+ #include <locale.h>
 +#ifdef __OpenBSD__
 +#define tgamma	gamma
 +#endif
  
  double Parser::m_radiansPerAngleUnit = 0;
  
-@@ -950,7 +953,9 @@ bool Parser::tryConstant()
+@@ -1035,7 +1038,9 @@ bool Parser::tryConstant()
  	CHECK_CONSTANT( "pi", M_PI );
  	CHECK_CONSTANT( PiSymbol, M_PI );
  	CHECK_CONSTANT( "e", M_E );

@@ -1,0 +1,16 @@
+$OpenBSD: patch-kalgebra_src_calgebra_main_cpp,v 1.1 2008/01/22 19:59:28 espie Exp $
+--- kalgebra/src/calgebra/main.cpp.orig	Tue Jan 22 13:28:26 2008
++++ kalgebra/src/calgebra/main.cpp	Tue Jan 22 19:13:32 2008
+@@ -107,8 +107,11 @@ int main(int argc, char *argv[])
+ 	
+ 	for(int i=0; i<history_get_history_state()->length; i++) {
+ 		HIST_ENTRY *he = remove_history(i);
+-// 		free(he->line);
++ 		free(he->line);
++		free(he);
++#if 0
+ 		free_history_entry(he);
++#endif
+ 	}
+ 	return 0;
+ }
