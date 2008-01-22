@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2007/10/23 11:28:10 steven Exp $
---- configure.in.orig	Tue Sep 25 10:51:19 2007
-+++ configure.in	Tue Oct  2 11:51:20 2007
+$OpenBSD: patch-configure_in,v 1.3 2008/01/22 20:31:11 steven Exp $
+--- configure.in.orig	Wed Nov 21 13:41:55 2007
++++ configure.in	Sun Jan  6 01:03:30 2008
 @@ -4065,7 +4065,7 @@ if test "$TOOLKIT" != "MSW" ; then
  
          AC_CHECK_HEADER([sql.h], [found_sql_h=1],, [ ])
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure_in,v 1.2 2007/10/23 11:28:10 steven Exp $
  
 @@ -4411,7 +4411,7 @@ fi
  
- WX_VERSION_TAG=`echo WX${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}_${WX_RELEASE} | tr "[[a-z]]" "[[A-Z]]"`
+ WX_VERSION_TAG=`echo WX${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}_${WX_RELEASE} | tr a-z A-Z`
  
 -TOOLCHAIN_NAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}-${WX_RELEASE}"
 +TOOLCHAIN_NAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}"
@@ -54,7 +54,7 @@ $OpenBSD: patch-configure_in,v 1.2 2007/10/23 11:28:10 steven Exp $
  else
      AC_MSG_WARN([Wide character support is unavailable])
  fi
-@@ -6002,8 +5994,37 @@ if test "$USE_UNIX" = "1" ; then
+@@ -6020,8 +6012,37 @@ if test "$USE_UNIX" = "1" ; then
          ])
      fi
  
