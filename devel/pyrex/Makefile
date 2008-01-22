@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/22 13:35:01 deanna Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python-alike language for writing Python extension modules
 
-DISTNAME=	Pyrex-0.9.4.1
-PKGNAME=	${DISTNAME:L}p0
+DISTNAME=	Pyrex-0.9.6.4
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
-
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 # Free, check README.txt for details 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,10 +28,11 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pyrex
-	${INSTALL_DATA} ${WRKSRC}/Doc/* ${PREFIX}/share/doc/pyrex/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pyrex
 	@cd ${WRKSRC}/Demos && tar cvf - . | \
 		(cd ${PREFIX}/share/examples/pyrex && tar xf -)
+	@cd ${WRKSRC}/Doc && tar cvf - . | \
+		(cd ${PREFIX}/share/doc/pyrex && tar xf -)
 
 do-regress:
 	@cd ${WRKSRC}/Demos && \
