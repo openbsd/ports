@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/01/06 10:02:59 eric Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/22 20:03:31 eric Exp $
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
@@ -21,8 +21,6 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 
 PSEUDO_FLAVORS=	gui
 FLAVOR?=
-
-BUILD_DEPENDS=	::devel/tmake
 
 USE_GMAKE=	Yes
 MODULES=	converters/libiconv
