@@ -1,12 +1,12 @@
-$OpenBSD: patch-icons_Makefile_in,v 1.1 2003/01/26 20:50:17 fgsch Exp $
---- icons/Makefile.in.orig	Tue Aug 14 04:39:09 2001
-+++ icons/Makefile.in	Sun Jan 26 17:26:03 2003
-@@ -84,7 +84,7 @@ WINDRES = @WINDRES@
+$OpenBSD: patch-icons_Makefile_in,v 1.2 2008/01/22 20:12:48 fgsch Exp $
+--- icons/Makefile.in.orig	Wed Jan  9 11:54:25 2008
++++ icons/Makefile.in	Wed Jan  9 11:54:35 2008
+@@ -178,7 +178,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  x_cflags = @x_cflags@
  x_libs = @x_libs@
- 
 -iconsdir = $(datadir)/icons
 +iconsdir = $(datadir)/pavuk/icons
- 
- icons_DATA = pavuk_16x16.xpm pavuk_32x32.xpm pavuk_64x64.xpm 	pavuk_as_icon.xpm pavuk_prg_icon.xpm
+ icons_DATA = pavuk_16x16.xpm pavuk_32x32.xpm pavuk_64x64.xpm \
+ 	pavuk_as_icon.xpm pavuk_prg_icon.xpm
  

@@ -1,30 +1,30 @@
-$OpenBSD: patch-configure,v 1.1 2004/08/12 21:23:00 naddy Exp $
---- configure.orig	Thu Aug 12 21:43:36 2004
-+++ configure	Thu Aug 12 21:44:13 2004
-@@ -3014,7 +3014,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
+$OpenBSD: patch-configure,v 1.2 2008/01/22 20:12:48 fgsch Exp $
+--- configure.orig	Wed Jan  9 11:54:18 2008
++++ configure	Wed Jan  9 11:55:00 2008
+@@ -7406,7 +7406,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 3020 "configure"
- #include "confdefs.h"
-@@ -3042,7 +3042,7 @@ LIBS="$ac_save_LIBS"
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -7478,7 +7478,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_intl_gettext" >&5
+ echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6; }
+ if test $ac_cv_lib_intl_gettext = yes; then
 -  INTL_LIBS="-lintl";_INTL_LIB="intl"
 +  INTL_LIBS="-lintl -liconv";_INTL_LIB="intl"
- else
-   echo "$ac_t""no" 1>&6
  fi
-@@ -3056,7 +3056,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
+ 
+ 	fi
+@@ -7497,7 +7497,7 @@ if { as_var=$as_ac_Lib; eval "test \"\${$as_var+set}\"
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-l$_INTL_LIB  $LIBS"
 +LIBS="-l$_INTL_LIB -liconv $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 3062 "configure"
- #include "confdefs.h"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
