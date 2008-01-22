@@ -1,0 +1,19 @@
+$OpenBSD: patch-gst___init___py,v 1.1.1.1 2008/01/22 08:53:41 ajacoutot Exp $
+--- gst/__init__.py.orig	Thu Jun 14 21:14:12 2007
++++ gst/__init__.py	Mon Jan 21 11:06:21 2008
+@@ -122,13 +122,13 @@ class Fraction(Value):
+ import sys
+ dlsave = sys.getdlopenflags()
+ try:
+-    from DLFCN import RTLD_GLOBAL, RTLD_LAZY
++    from dl import RTLD_GLOBAL, RTLD_LAZY
+ except ImportError:
+     RTLD_GLOBAL = -1
+     RTLD_LAZY = -1
+     import os
+     osname = os.uname()[0]
+-    if osname == 'Linux' or osname == 'SunOS' or osname == 'FreeBSD':
++    if osname == 'Linux' or osname == 'SunOS' or osname == 'FreeBSD' or osname == 'OpenBSD':
+         RTLD_GLOBAL = 0x100
+         RTLD_LAZY = 0x1
+     elif osname == 'Darwin':
