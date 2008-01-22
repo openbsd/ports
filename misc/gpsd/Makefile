@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/01/04 18:57:07 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.20 2008/01/22 11:42:19 espie Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
@@ -7,7 +7,7 @@ COMMENT-python=		python bindings for gpsd
 
 VERSION=		2.36
 DISTNAME=		gpsd-${VERSION}
-PKGNAME-main=		gpsd-${VERSION}
+PKGNAME-main=		gpsd-${VERSION}p0
 PKGNAME-motif=		gpsd-motif-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
 PKGNAME-python=		gpsd-python-${VERSION}
@@ -78,6 +78,7 @@ PREFIX-php=		/var/www/
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/var/www/gpsd
 	${INSTALL_SCRIPT} ${WRKSRC}/gpsd.php ${WRKINST}/var/www/gpsd
+	${INSTALL_DATA} ${WRKSRC}/gpsd_config.h ${PREFIX}/include
 
 .include <bsd.port.mk>
 
