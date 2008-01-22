@@ -1,0 +1,13 @@
+$OpenBSD: patch-kopete_protocols_oscar_liboscar_client_cpp,v 1.1 2008/01/22 22:01:52 espie Exp $
+--- kopete/protocols/oscar/liboscar/client.cpp.orig	Tue Jan 22 21:49:54 2008
++++ kopete/protocols/oscar/liboscar/client.cpp	Tue Jan 22 21:53:47 2008
+@@ -995,7 +995,8 @@ void Client::setPrivacyTLVs( Oscar::BYTE privacy, Osca
+ 	if ( !item )
+ 	{
+ 		kDebug( OSCAR_RAW_DEBUG ) << "Adding new privacy TLV item";
+-		OContact s( QString(), 0, ssiManager()->nextContactId(), ROSTER_VISIBILITY, tList );
++		QString str;
++		OContact s( str, 0, ssiManager()->nextContactId(), ROSTER_VISIBILITY, tList );
+ 		modifyContactItem( item, s );
+ 	}
+ 	else
