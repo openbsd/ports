@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/01/03 19:10:08 oga Exp $
+# $OpenBSD: Makefile,v 1.26 2008/01/22 09:37:38 ajacoutot Exp $
 
      SUBDIR += avidemux
      SUBDIR += devede
@@ -17,6 +17,7 @@
      SUBDIR += mjpegtools
      SUBDIR += mjpegtools,quicktime
      SUBDIR += mkvtoolnix
+     SUBDIR += oggconvert
      SUBDIR += ogmtools
      SUBDIR += pspvc
      SUBDIR += regionset
