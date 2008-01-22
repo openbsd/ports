@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/08 19:36:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/22 21:59:49 okan Exp $
 %%SHARED%%
 bin/yaz-asncomp
 bin/yaz-client
 bin/yaz-config
 bin/yaz-iconv
+bin/yaz-icu
+bin/yaz-illclient
 bin/yaz-marcdump
 bin/yaz-ztest
-bin/ziffy
 bin/zoomsh
 include/yaz/
 include/yaz/backend.h
@@ -14,10 +15,12 @@ include/yaz/ccl.h
 include/yaz/ccl_xml.h
 include/yaz/charneg.h
 include/yaz/comstack.h
+include/yaz/copy_types.h
 include/yaz/cql.h
 include/yaz/diagbib1.h
 include/yaz/diagsru_update.h
 include/yaz/diagsrw.h
+include/yaz/icu.h
 include/yaz/ill-core.h
 include/yaz/ill.h
 include/yaz/item-req.h
@@ -25,15 +28,22 @@ include/yaz/libxml2_error.h
 include/yaz/log.h
 include/yaz/logrpn.h
 include/yaz/marcdisp.h
+include/yaz/match_glob.h
+include/yaz/mutex.h
 include/yaz/nmem.h
 include/yaz/nmem_xml.h
+include/yaz/oclc-ill-req-ext.h
 include/yaz/odr.h
-include/yaz/oid.h
+include/yaz/oid_db.h
+include/yaz/oid_std.h
+include/yaz/oid_util.h
 include/yaz/options.h
 include/yaz/otherinfo.h
+include/yaz/poll.h
 include/yaz/pquery.h
 include/yaz/proto.h
 include/yaz/prt-ext.h
+include/yaz/query-charset.h
 include/yaz/querytowrbuf.h
 include/yaz/readconf.h
 include/yaz/record_conv.h
@@ -46,6 +56,7 @@ include/yaz/statserv.h
 include/yaz/tcpip.h
 include/yaz/test.h
 include/yaz/timing.h
+include/yaz/tokenizer.h
 include/yaz/tpath.h
 include/yaz/unix.h
 include/yaz/wrbuf.h
@@ -90,13 +101,18 @@ include/yaz/zgdu.h
 include/yaz/zoom.h
 lib/libyaz.a
 lib/libyaz.la
+lib/libyaz_icu.a
+lib/libyaz_icu.la
+lib/libyaz_server.a
+lib/libyaz_server.la
 lib/pkgconfig/
 lib/pkgconfig/yaz.pc
 @man man/man1/yaz-asncomp.1
 @man man/man1/yaz-client.1
 @man man/man1/yaz-iconv.1
+@man man/man1/yaz-icu.1
+@man man/man1/yaz-illclient.1
 @man man/man1/yaz-marcdump.1
-@man man/man1/ziffy.1
 @man man/man1/zoomsh.1
 @man man/man7/yaz-log.7
 @man man/man7/yaz.7
@@ -108,13 +124,8 @@ share/doc/yaz/
 share/doc/yaz/apilayer.png
 share/doc/yaz/asn.external.html
 share/doc/yaz/asn.html
-share/doc/yaz/asn.oid.html
 share/doc/yaz/asn.pdu.html
 share/doc/yaz/asn.preparing.html
-share/doc/yaz/client.commands.html
-share/doc/yaz/client.html
-share/doc/yaz/client.invoking.html
-share/doc/yaz/client.searching.html
 share/doc/yaz/common/
 share/doc/yaz/common/id.png
 share/doc/yaz/common/style1.css
@@ -137,12 +148,13 @@ share/doc/yaz/installation.win32.html
 share/doc/yaz/introduction.api.html
 share/doc/yaz/introduction.html
 share/doc/yaz/license.html
-share/doc/yaz/license.other.html
+share/doc/yaz/list-oids.html
 share/doc/yaz/marc.html
 share/doc/yaz/odr.debugging.html
 share/doc/yaz/odr.html
 share/doc/yaz/odr.programming.html
 share/doc/yaz/odr.use.html
+share/doc/yaz/reference.html
 share/doc/yaz/server.backend.html
 share/doc/yaz/server.backendfunctions.html
 share/doc/yaz/server.frontend.html
@@ -159,8 +171,16 @@ share/doc/yaz/tools.log.html
 share/doc/yaz/tools.nmem.html
 share/doc/yaz/tools.oid.html
 share/doc/yaz/tools.retrieval.html
-share/doc/yaz/ziffy.html
-share/doc/yaz/ziffy.using.html
+share/doc/yaz/yaz-asncomp.html
+share/doc/yaz/yaz-client.html
+share/doc/yaz/yaz-config.html
+share/doc/yaz/yaz-iconv.html
+share/doc/yaz/yaz-icu.html
+share/doc/yaz/yaz-illclient.html
+share/doc/yaz/yaz-log.html
+share/doc/yaz/yaz-marcdump.html
+share/doc/yaz/yaz-ztest.html
+share/doc/yaz/yaz.html
 share/doc/yaz/zoom.events.html
 share/doc/yaz/zoom.extendedservices.html
 share/doc/yaz/zoom.html
@@ -169,6 +189,7 @@ share/doc/yaz/zoom.query.html
 share/doc/yaz/zoom.records.html
 share/doc/yaz/zoom.resultsets.html
 share/doc/yaz/zoom.scan.html
+share/doc/yaz/zoomsh.html
 share/yaz/
 share/yaz/etc/
 share/yaz/etc/MARC21slim2DC.xsl
@@ -183,6 +204,7 @@ share/yaz/ill/
 share/yaz/ill/ill.tcl
 share/yaz/ill/ill9702.asn
 share/yaz/ill/item-req.asn
+share/yaz/ill/oclc-ill-req-ext.asn
 share/yaz/z39.50/
 share/yaz/z39.50/charneg-3.asn
 share/yaz/z39.50/datetime.asn

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/22 21:59:49 okan Exp $
 
 COMMENT=		Z39.50/SR client and API library
-DISTNAME=		yaz-2.1.54
+DISTNAME=		yaz-3.0.22
 CATEGORIES=		net
 
-SHARED_LIBS +=	yaz                  0.0      # .2.1
+SHARED_LIBS+=		yaz		1.0	# 3.0
+SHARED_LIBS+=		yaz_icu		1.0	# 3.0
+SHARED_LIBS+=		yaz_server	1.0	# 3.0
 
 HOMEPAGE=		http://www.indexdata.dk/yaz/
 
@@ -18,8 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=		Yes
 
-WANTLIB=		c crypto m ncurses pcap pthread readline ssl z iconv \
-			intl
+WANTLIB=		c crypto m ncurses pthread readline ssl z iconv intl
 
 MASTER_SITES=		http://ftp.indexdata.dk/pub/yaz/ \
 			ftp://ftp.indexdata.dk/pub/yaz/
