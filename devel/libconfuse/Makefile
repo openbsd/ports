@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/20 11:43:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/22 18:51:04 merdely Exp $
 
 COMMENT=		configuration file parser library
-DISTNAME=		confuse-2.5
-PKGNAME=		lib${DISTNAME}p0
-SHARED_LIBS=		confuse 0.0	# .0.0
+DISTNAME=		confuse-2.6
+PKGNAME=		lib${DISTNAME}
+SHARED_LIBS=		confuse 1.0	# .0.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.nongnu.org/confuse/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.savannah.gnu.org/releases/confuse/
+MASTER_SITES=		http://bzero.se/confuse/
 
 MODULES=		devel/gettext
 
