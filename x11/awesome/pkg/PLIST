@@ -1,9 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/16 21:27:14 pyr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/01/22 18:51:46 merdely Exp $
 bin/awesome
 bin/awesome-client
 @man man/man1/awesome-client.1
 @man man/man1/awesome.1
+@man man/man1/awesomerc.1
+share/awesome/
+share/awesome/icons/
+share/awesome/icons/layouts/
+share/awesome/icons/layouts/dwindle.png
+share/awesome/icons/layouts/dwindlew.png
+share/awesome/icons/layouts/floating.png
+share/awesome/icons/layouts/floatingw.png
+share/awesome/icons/layouts/max.png
+share/awesome/icons/layouts/maxw.png
+share/awesome/icons/layouts/spiral.png
+share/awesome/icons/layouts/spiralw.png
+share/awesome/icons/layouts/tile.png
+share/awesome/icons/layouts/tileleft.png
+share/awesome/icons/layouts/tileleftw.png
+share/awesome/icons/layouts/tilew.png
 share/doc/awesome/
 share/doc/awesome/README
+share/doc/awesome/STYLE
+share/doc/awesome/awesomerc
 share/examples/awesome/
 share/examples/awesome/awesomerc
