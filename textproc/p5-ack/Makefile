@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/08/29 08:05:10 pyr Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/22 09:19:09 landry Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
 MODULES=		cpan
-DISTNAME=		ack-1.64
+DISTNAME=		ack-1.76
 CPAN_AUTHOR=		PETDANCE
 CATEGORIES=		textproc
 
@@ -16,5 +16,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 BUILD_DEPENDS=		::devel/p5-File-Next
+RUN_DEPENDS=		${BUILD_DEPENDS}
 
 .include <bsd.port.mk>
