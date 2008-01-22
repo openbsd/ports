@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2007/12/17 20:31:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2008/01/22 17:48:48 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		control-center
 GNOME_VERSION=		2.18.1
 DISTNAME=		control-center-${VERSION}
-PKGNAME=		control-center2-${VERSION}p3
+PKGNAME=		control-center2-${VERSION}p4
 SHARED_LIBS +=	gnome-window-settings 1.0      # .1.0
 
 CATEGORIES=		x11
@@ -42,7 +42,9 @@ LIB_DEPENDS=		gstaudio-0.10.>=0.1,gstinterfaces-0.10.>=0.1::multimedia/gstreamer
 BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 			:scrollkeeper-*:textproc/scrollkeeper
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			:scrollkeeper-*:textproc/scrollkeeper
+			:scrollkeeper-*:textproc/scrollkeeper \
+			::multimedia/gstreamer-0.10/plugins-good,-esd \
+			::multimedia/gstreamer-0.10/plugins-good,-gconf
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
