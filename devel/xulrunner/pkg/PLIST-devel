@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.4 2007/08/08 17:11:48 martynas Exp $
+@comment $OpenBSD: PLIST-devel,v 1.5 2008/01/23 16:32:04 martynas Exp $
 @conflict xulrunner-<1.8.0.4p0
 lib/pkgconfig/
 lib/pkgconfig/xulrunner-gtkmozembed.pc
@@ -181,10 +181,12 @@ xulrunner/idl/nsIConverterInputStream.idl
 xulrunner/idl/nsIConverterOutputStream.idl
 xulrunner/idl/nsICookie.idl
 xulrunner/idl/nsICookie2.idl
+xulrunner/idl/nsICookieAcceptDialog.idl
 xulrunner/idl/nsICookieConsent.idl
 xulrunner/idl/nsICookieManager.idl
 xulrunner/idl/nsICookieManager2.idl
 xulrunner/idl/nsICookiePermission.idl
+xulrunner/idl/nsICookiePromptService.idl
 xulrunner/idl/nsICookieService.idl
 xulrunner/idl/nsICookieStorage.idl
 xulrunner/idl/nsICryptoFIPSInfo.idl
@@ -681,6 +683,7 @@ xulrunner/idl/nsIPassword.idl
 xulrunner/idl/nsIPasswordInternal.idl
 xulrunner/idl/nsIPasswordManager.idl
 xulrunner/idl/nsIPasswordManagerInternal.idl
+xulrunner/idl/nsIPermission.idl
 xulrunner/idl/nsIPermissionManager.idl
 xulrunner/idl/nsIPersistentProperties2.idl
 xulrunner/idl/nsIPhonetic.idl
@@ -1309,6 +1312,10 @@ xulrunner/include/content/nsTextFragment.h
 xulrunner/include/content/nsXBLAtomList.h
 xulrunner/include/content/nsXBLAtoms.h
 xulrunner/include/content/nsXMLNameSpaceMap.h
+xulrunner/include/cookie/
+xulrunner/include/cookie/nsICookieAcceptDialog.h
+xulrunner/include/cookie/nsICookiePromptService.h
+xulrunner/include/cookie/nsIPermission.h
 xulrunner/include/dbm/
 xulrunner/include/dbm/cdefs.h
 xulrunner/include/dbm/mcom_db.h

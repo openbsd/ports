@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/12/07 22:10:28 martynas Exp $
+# $OpenBSD: Makefile,v 1.16 2008/01/23 16:32:04 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -8,14 +8,14 @@ COMMENT-devel=	devel files for Gecko
 VER=		1.8.1.11
 DISTNAME=	mozilla
 PKGNAME=	xulrunner-${VER}
-PKGNAME-main=	xulrunner-${VER}
-PKGNAME-devel=	xulrunner-devel-${VER}
+PKGNAME-main=	xulrunner-${VER}p0
+PKGNAME-devel=	xulrunner-devel-${VER}p0
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-.for _lib in auth autoconfig fileview gtkembedmoz mozjs nullplugin \
-	pipboot pipnss pippki system-pref transformiix universalchardet \
-	unixprintplugin websrvcs xmlextras xpcom xul xulutil
+.for _lib in auth autoconfig cookie fileview gtkembedmoz mozjs nullplugin \
+	permissions pipboot pipnss pippki system-pref transformiix \
+	universalchardet unixprintplugin websrvcs xmlextras xpcom xul xulutil
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
@@ -85,7 +85,8 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--enable-svg-renderer=cairo	\
 		--enable-system-cairo		\
 		--enable-canvas			\
-		--enable-application=xulrunner
+		--enable-application=xulrunner	\
+		--enable-extensions=default,cookie,permissions
 
 MAKE_ENV=	MOZ_CO_PROJECT=xulrunner \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \

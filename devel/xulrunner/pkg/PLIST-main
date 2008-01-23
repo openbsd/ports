@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/08/06 14:43:48 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/01/23 16:32:04 martynas Exp $
 @unexec xulrunner --unregister-global
 %%SHARED%%
 bin/xulrunner
@@ -42,6 +42,7 @@ xulrunner/components/content_htmldoc.xpt
 xulrunner/components/content_xmldoc.xpt
 xulrunner/components/content_xslt.xpt
 xulrunner/components/content_xtf.xpt
+xulrunner/components/cookie.xpt
 xulrunner/components/directory.xpt
 xulrunner/components/docshell.xpt
 xulrunner/components/dom.xpt
@@ -362,11 +363,10 @@ xulrunner/xulrunner-bin
 xulrunner/xulrunner-stub
 @sample ${SYSCONFDIR}/gre.d/
 @exec xulrunner --register-global
-@cwd ${LOCALBASE}/xulrunner
 @exec rm -rf /tmp/.mozilla
-@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regxpcom
+@exec cd %D/xulrunner && env HOME=/tmp LD_LIBRARY_PATH=%D/xulrunner ./regxpcom
 @exec rm -rf /tmp/.mozilla
-@unexec rm -f %D/components/compreg.dat
-@unexec rm -f %D/components/xpti.dat
-@unexec rm -rf %D/extensions
-@unexec rm -rf %D/updates
+@unexec rm -f %D/xulrunner/components/compreg.dat
+@unexec rm -f %D/xulrunner/components/xpti.dat
+@unexec rm -rf %D/xulrunner/extensions
+@unexec rm -rf %D/xulrunner/updates
