@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2007/12/07 22:09:30 martynas Exp $
+# $OpenBSD: Makefile,v 1.27 2008/01/23 12:29:56 jasper Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
-GNOME_VERSION=		2.20.2
-SHARED_LIBS +=  gnome-desktop-2      5.7      # .5.15
+GNOME_VERSION=		2.20.3
+SHARED_LIBS +=  gnome-desktop-2      5.8      # .5.16
 CATEGORIES=		x11
 
 # LGPL
@@ -20,8 +20,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png popt pthread \
-		ssl util xml2 z
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png popt \
+		pthread ssl util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
