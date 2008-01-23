@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/23 21:22:27 merdely Exp $
 
 COMMENT=	small, Lisp-like interpreted language
 
 DISTNAME=	Klone359
-PKGNAME=	klone-2.1a
+PKGNAME=	klone-2.1ap0
 CATEGORIES=	lang
 
 MASTER_SITES=	http://koala.ilog.fr/ftp/pub/Klone/
@@ -17,7 +17,9 @@ WANTLIB=		c m
 WRKDIST=	${WRKDIR}/Klone
 
 post-extract:
-	@sed -e s#!!PREFIX!!#${PREFIX}# \
+	@sed -e "s#!!PREFIX!!#${PREFIX}#; \
+		 s#!!CFLAGS!!#${CFLAGS}#; \
+		 s#!!CC!!#${CC}#" \
 		${FILESDIR}/openbsd > ${WRKSRC}/Configs/openbsd
 
 do-configure:
