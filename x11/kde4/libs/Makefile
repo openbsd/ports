@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/21 21:47:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/23 15:08:58 todd Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
@@ -45,6 +45,8 @@ SHARED_LIBS +=	krossui              0.0      # .4.0
 SHARED_LIBS +=	phonon               0.0      # .4.0
 SHARED_LIBS +=	phononexperimental   0.0      # .4.0
 SHARED_LIBS +=  kpty                 0.0      # .4.0
+
+BUILD_DEPENDS += ::misc/shared-mime-info
 
 LIB_DEPENDS +=	Half,Iex,IlmImf,Imath::graphics/openexr \
 		gif::graphics/libungif \
