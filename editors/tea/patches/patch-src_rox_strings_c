@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_rox_strings_c,v 1.1.1.1 2008/01/23 17:02:30 okan Exp $
+--- src/rox_strings.c.orig	Wed Jan 23 08:17:33 2008
++++ src/rox_strings.c	Wed Jan 23 08:19:39 2008
+@@ -2320,7 +2320,7 @@ gchar* text_load_msdoc (const gchar *filename)
+   if (! filename)
+      return NULL;
+ 
+-  gchar *cm = g_strconcat ("antiword -m UTF-8.txt ", filename, " > ", confile.tmp_file, NULL);
++  gchar *cm = g_strconcat ("antiword -m UTF-8.txt \"", filename, "\" > ", confile.tmp_file, NULL);
+   system (cm);
+   g_free (cm);
+   return get_tmp_file_string ();
+@@ -3113,4 +3113,4 @@ gint count_of_char (const gchar *s, gchar c)
+   g_print ("%d", i);
+   return count;
+ }
+-*/
+\ No newline at end of file
++*/

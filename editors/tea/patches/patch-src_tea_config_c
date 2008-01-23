@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_tea_config_c,v 1.1.1.1 2008/01/23 17:02:30 okan Exp $
+--- src/tea_config.c.orig	Wed Jan 23 14:26:06 2008
++++ src/tea_config.c	Wed Jan 23 14:26:49 2008
+@@ -1108,9 +1108,9 @@ void confile_reload (void)
+   confile.autoclose_tags = ht_get_int_value ("autoclose_tags", 0);
+ 
+   confile.rtf_enc = ht_get_char_value ("rtf_enc", "CP1251");
+-  confile.def_filesave_charset = ht_get_char_value ("def_filesave_charset", "UTF-8");
++  confile.def_filesave_charset = ht_get_char_value ("def_filesave_charset", "autodetect");
+ 
+-  confile.default_charset = ht_get_char_value ("default_charset", "UTF-8");
++  confile.default_charset = ht_get_char_value ("default_charset", "autodetect");
+ 
+   confile.main_wnd_show_full_path = ht_get_int_value ("main_wnd_show_full_path", 1);
+   confile.do_backup = ht_get_int_value ("do_backup", 0);
+@@ -1348,4 +1348,4 @@ GList* get_color_scheme_ids (void)
+   return NULL;
+ 
+ #endif
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,42 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/01/23 17:02:30 okan Exp $
+--- Makefile.in.orig	Sat Oct 27 15:11:04 2007
++++ Makefile.in	Sat Oct 27 15:15:47 2007
+@@ -629,7 +629,7 @@ uninstall-am: uninstall-local
+ 
+ @DEB_TRUE@install-data-local:
+ @DEB_TRUE@	@$(NORMAL_INSTALL)
+-@DEB_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; 
++@DEB_TRUE@	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc; 
+ @DEB_FALSE@@FINK_TRUE@install-data-local:
+ @DEB_FALSE@@FINK_TRUE@	@$(NORMAL_INSTALL)
+ @DEB_FALSE@@FINK_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pkgdocdir); \
+@@ -650,19 +650,19 @@ uninstall-am: uninstall-local
+ @DEB_FALSE@@FINK_TRUE@	fi 
+ @DEB_FALSE@@FINK_FALSE@install-data-local:
+ @DEB_FALSE@@FINK_FALSE@	@$(NORMAL_INSTALL)
+-@DEB_FALSE@@FINK_FALSE@	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@@FINK_FALSE@	cp -r $(srcdir)/doc $(DESTDIR)$(pkgdatadir); \
+-@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/AUTHORS $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/ChangeLog $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/README $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/NEWS $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/COPYING $(DESTDIR)$(pkgdatadir)/doc; \
+-@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/TODO $(DESTDIR)$(pkgdatadir)/doc; \
++@DEB_FALSE@@FINK_FALSE@	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/tea; \
++@DEB_FALSE@@FINK_FALSE@	cp -r $(srcdir)/doc/* $(DESTDIR)$(datadir)/doc/tea; \
++@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/AUTHORS $(DESTDIR)$(datadir)/doc/tea; \
++@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/ChangeLog $(DESTDIR)$(datadir)/doc/tea; \
++@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/README $(DESTDIR)$(datadir)/doc/tea; \
++@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/NEWS $(DESTDIR)$(datadir)/doc/tea; \
++@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/COPYING $(DESTDIR)$(datadir)/doc/tea; \
++@DEB_FALSE@@FINK_FALSE@	cp $(srcdir)/TODO $(DESTDIR)$(datadir)/doc/tea; \
+ @DEB_FALSE@@FINK_FALSE@	if test -d $(srcdir)/pixmaps; then \
+-@DEB_FALSE@@FINK_FALSE@	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
++@DEB_FALSE@@FINK_FALSE@	  $(mkinstalldirs) $(DESTDIR)$(datadir)/pixmaps/tea; \
+ @DEB_FALSE@@FINK_FALSE@	  for pixmap in $(srcdir)/pixmaps/*; do \
+ @DEB_FALSE@@FINK_FALSE@	    if test -f $$pixmap; then \
+-@DEB_FALSE@@FINK_FALSE@	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/pixmaps; \
++@DEB_FALSE@@FINK_FALSE@	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/pixmaps/tea; \
+ @DEB_FALSE@@FINK_FALSE@	    fi \
+ @DEB_FALSE@@FINK_FALSE@	  done \
+ @DEB_FALSE@@FINK_FALSE@	fi 

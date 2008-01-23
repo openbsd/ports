@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tea_defs_h,v 1.1.1.1 2008/01/23 17:02:30 okan Exp $
+--- src/tea_defs.h.orig	Fri Dec  7 22:02:59 2007
++++ src/tea_defs.h	Mon Dec 31 17:18:17 2007
+@@ -116,7 +116,7 @@
+ 
+ #else
+ 
+-#if defined(DARWIN)
++#if defined(DARWIN) || defined(OpenBSD)
+ 
+ #define TEA_DOC_DIR PACKAGE_DATA_DIR"/doc/tea/"
+ 
