@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2007/12/07 21:48:01 martynas Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.1 2008/01/23 16:42:44 martynas Exp $
+@pkgpath www/seamonkey,-main
 bin/seamonkey
 @man man/man1/seamonkey.1
 seamonkey/
 seamonkey/LICENSE
 seamonkey/README.OpenBSD
-seamonkey/TestGtkEmbed
 seamonkey/chrome/
 seamonkey/chrome/AD.jar
 seamonkey/chrome/AT.jar
@@ -181,6 +180,83 @@ seamonkey/components/layout_base.xpt
 seamonkey/components/layout_printing.xpt
 seamonkey/components/layout_xul.xpt
 seamonkey/components/layout_xul_tree.xpt
+@lib seamonkey/components/libaccessibility.so.${LIBaccessibility_VERSION}
+@lib seamonkey/components/libaddrbook.so.${LIBaddrbook_VERSION}
+@lib seamonkey/components/libappcomps.so.${LIBappcomps_VERSION}
+@lib seamonkey/components/libauth.so.${LIBauth_VERSION}
+@lib seamonkey/components/libautoconfig.so.${LIBautoconfig_VERSION}
+@lib seamonkey/components/libbayesflt.so.${LIBbayesflt_VERSION}
+@lib seamonkey/components/libcaps.so.${LIBcaps_VERSION}
+@lib seamonkey/components/libchrome.so.${LIBchrome_VERSION}
+@lib seamonkey/components/libcomposer.so.${LIBcomposer_VERSION}
+@lib seamonkey/components/libcookie.so.${LIBcookie_VERSION}
+@lib seamonkey/components/libdocshell.so.${LIBdocshell_VERSION}
+@lib seamonkey/components/libeditor.so.${LIBeditor_VERSION}
+@lib seamonkey/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
+@lib seamonkey/components/libfileview.so.${LIBfileview_VERSION}
+@lib seamonkey/components/libgfx_gtk.so.${LIBgfx_gtk_VERSION}
+@lib seamonkey/components/libgfxps.so.${LIBgfxps_VERSION}
+@lib seamonkey/components/libgklayout.so.${LIBgklayout_VERSION}
+@lib seamonkey/components/libgkplugin.so.${LIBgkplugin_VERSION}
+@lib seamonkey/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
+@lib seamonkey/components/libi18n.so.${LIBi18n_VERSION}
+@lib seamonkey/components/libimglib2.so.${LIBimglib2_VERSION}
+@lib seamonkey/components/libimpComm4xMail.so.${LIBimpComm4xMail_VERSION}
+@lib seamonkey/components/libimpText.so.${LIBimpText_VERSION}
+@lib seamonkey/components/libimport.so.${LIBimport_VERSION}
+@lib seamonkey/components/libjar50.so.${LIBjar50_VERSION}
+@lib seamonkey/components/libjsd.so.${LIBjsd_VERSION}
+@lib seamonkey/components/liblocalmail.so.${LIBlocalmail_VERSION}
+@lib seamonkey/components/libmailnews.so.${LIBmailnews_VERSION}
+@lib seamonkey/components/libmailview.so.${LIBmailview_VERSION}
+@lib seamonkey/components/libmime.so.${LIBmime_VERSION}
+@lib seamonkey/components/libmimeemitter.so.${LIBmimeemitter_VERSION}
+@lib seamonkey/components/libmork.so.${LIBmork_VERSION}
+@lib seamonkey/components/libmozfind.so.${LIBmozfind_VERSION}
+@lib seamonkey/components/libmozldap.so.${LIBmozldap_VERSION}
+@lib seamonkey/components/libmsgcompose.so.${LIBmsgcompose_VERSION}
+@lib seamonkey/components/libmsgdb.so.${LIBmsgdb_VERSION}
+@lib seamonkey/components/libmsgimap.so.${LIBmsgimap_VERSION}
+@lib seamonkey/components/libmsgmdn.so.${LIBmsgmdn_VERSION}
+@lib seamonkey/components/libmsgnews.so.${LIBmsgnews_VERSION}
+@lib seamonkey/components/libmsgsmime.so.${LIBmsgsmime_VERSION}
+@lib seamonkey/components/libmyspell.so.${LIBmyspell_VERSION}
+@lib seamonkey/components/libnecko.so.${LIBnecko_VERSION}
+@lib seamonkey/components/libnecko2.so.${LIBnecko2_VERSION}
+@lib seamonkey/components/libnsappshell.so.${LIBnsappshell_VERSION}
+@lib seamonkey/components/libnsprefm.so.${LIBnsprefm_VERSION}
+@lib seamonkey/components/liboji.so.${LIBoji_VERSION}
+@lib seamonkey/components/libp3p.so.${LIBp3p_VERSION}
+@lib seamonkey/components/libpermissions.so.${LIBpermissions_VERSION}
+@lib seamonkey/components/libpipboot.so.${LIBpipboot_VERSION}
+@lib seamonkey/components/libpipnss.so.${LIBpipnss_VERSION}
+@lib seamonkey/components/libpippki.so.${LIBpippki_VERSION}
+@lib seamonkey/components/libpref.so.${LIBpref_VERSION}
+@lib seamonkey/components/libprofile.so.${LIBprofile_VERSION}
+@lib seamonkey/components/librdf.so.${LIBrdf_VERSION}
+@lib seamonkey/components/libremoteservice.so.${LIBremoteservice_VERSION}
+@lib seamonkey/components/libsearchservice.so.${LIBsearchservice_VERSION}
+@lib seamonkey/components/libspellchecker.so.${LIBspellchecker_VERSION}
+@lib seamonkey/components/libsroaming.so.${LIBsroaming_VERSION}
+@lib seamonkey/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
+@lib seamonkey/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
+@lib seamonkey/components/libtransformiix.so.${LIBtransformiix_VERSION}
+@lib seamonkey/components/libtxmgr.so.${LIBtxmgr_VERSION}
+@lib seamonkey/components/libtypeaheadfind.so.${LIBtypeaheadfind_VERSION}
+@lib seamonkey/components/libuconv.so.${LIBuconv_VERSION}
+@lib seamonkey/components/libucvmath.so.${LIBucvmath_VERSION}
+@lib seamonkey/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
+@lib seamonkey/components/libvcard.so.${LIBvcard_VERSION}
+@lib seamonkey/components/libwallet.so.${LIBwallet_VERSION}
+@lib seamonkey/components/libwalletviewers.so.${LIBwalletviewers_VERSION}
+@lib seamonkey/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
+@lib seamonkey/components/libwebsrvcs.so.${LIBwebsrvcs_VERSION}
+@lib seamonkey/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
+@lib seamonkey/components/libxmlextras.so.${LIBxmlextras_VERSION}
+@lib seamonkey/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
+@lib seamonkey/components/libxpconnect.so.${LIBxpconnect_VERSION}
+@lib seamonkey/components/libxpinstall.so.${LIBxpinstall_VERSION}
+@lib seamonkey/components/libxremoteservice.so.${LIBxremoteservice_VERSION}
 seamonkey/components/locale.xpt
 seamonkey/components/lwbrk.xpt
 seamonkey/components/mailnews.xpt
@@ -337,9 +413,23 @@ seamonkey/greprefs/security-prefs.js
 seamonkey/greprefs/xpinstall.js
 seamonkey/init.d/
 seamonkey/init.d/README
+@lib seamonkey/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
+@lib seamonkey/libgkgfx.so.${LIBgkgfx_VERSION}
+@lib seamonkey/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
+@lib seamonkey/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
+@lib seamonkey/libjsj.so.${LIBjsj_VERSION}
+@lib seamonkey/libldap50.so.${LIBldap50_VERSION}
+@lib seamonkey/libmozjs.so.${LIBmozjs_VERSION}
+@lib seamonkey/libmsgbaseutil.so.${LIBmsgbaseutil_VERSION}
+@lib seamonkey/libprldap50.so.${LIBprldap50_VERSION}
+@lib seamonkey/libxpcom.so.${LIBxpcom_VERSION}
+@lib seamonkey/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
+@lib seamonkey/libxpcom_core.so.${LIBxpcom_core_VERSION}
+@lib seamonkey/libxpistub.so.${LIBxpistub_VERSION}
 seamonkey/mozilla-xremote-client
-seamonkey/nsinstall
 seamonkey/plugins/
+@lib seamonkey/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
+@lib seamonkey/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
 seamonkey/regchrome
 seamonkey/regxpcom
 seamonkey/res/
@@ -528,13 +618,12 @@ seamonkey/searchplugins/google.gif
 seamonkey/searchplugins/google.src
 seamonkey/searchplugins/jeeves.gif
 seamonkey/searchplugins/jeeves.src
-@cwd ${LOCALBASE}/seamonkey
 @exec rm -rf /tmp/.mozilla
-@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regchrome
-@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regxpcom
+@exec cd %D/seamonkey && env HOME=/tmp LD_LIBRARY_PATH=%D/seamonkey ./regchrome
+@exec cd %D/seamonkey && env HOME=/tmp LD_LIBRARY_PATH=%D/seamonkey ./regxpcom
 @exec rm -rf /tmp/.mozilla
-@unexec rm -f %D/chrome/chrome.rdf
-@unexec rm -f %D/chrome/overlays.rdf
-@unexec rm -f %D/chrome/stylesheets.rdf
-@unexec rm -f %D/components/compreg.dat
-@unexec rm -f %D/components/xpti.dat
+@unexec rm -f %D/seamonkey/chrome/chrome.rdf
+@unexec rm -f %D/seamonkey/chrome/overlays.rdf
+@unexec rm -f %D/seamonkey/chrome/stylesheets.rdf
+@unexec rm -f %D/seamonkey/components/compreg.dat
+@unexec rm -f %D/seamonkey/components/xpti.dat

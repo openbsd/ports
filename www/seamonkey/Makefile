@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2007/12/07 21:48:01 martynas Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/23 16:42:44 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
-COMMENT-main=	integrated mozilla application suite
-COMMENT-devel=  devel files for Gecko
+COMMENT=	integrated mozilla application suite
 
 VER=		1.1.7
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}
-PKGNAME-main=	seamonkey-${VER}
-PKGNAME-devel=	seamonkey-devel-${VER}
+PKGNAME=	seamonkey-${VER}p0
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -36,8 +33,6 @@ SHARED_LIBS+=	${_lib}	${SO_VERSION}
 CATEGORIES=	www mail net news
 
 HOMEPAGE=	http://www.mozilla.org/projects/seamonkey/
-
-MULTI_PACKAGES= -main -devel
 
 # mozilla public license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -80,23 +75,20 @@ EXTRACT_CASES += *.xpi) \
 DIST_SUBDIR=	seamonkey-${VER}
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=  :zip->=2.3:archivers/zip \
+BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
+		:zip->=2.3:archivers/zip \
 		:unzip-*:archivers/unzip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
-WANTLIB=	c glib-2.0 m pthread stdc++
 
-RUN_DEPENDS-main= :esound-*:audio/esound
-WANTLIB-main=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
+RUN_DEPENDS=	:esound-*:audio/esound
+WANTLIB=	c glib-2.0 m pthread stdc++ \
+		X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 \
 		cairo expat fontconfig freetype glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pangox-1.0 png z
-
-LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
-		seamonkey/mozjs,seamonkey/xpcom,seamonkey/xpcom_core:${PKGNAME-main}:www/seamonkey,-main
-WANTLIB-devel=	${WANTLIB} nspr4 plc4 plds4
 
 VMEM_WARNING=	Yes
 
@@ -153,7 +145,6 @@ MOZ=		${PREFIX}/seamonkey
 
 DATADIRS=	chrome components defaults dictionaries greprefs \
 		init.d plugins res searchplugins
-DISTDIRS=	include idl
 
 post-extract:
 .for i in ${BINLANGS}	# normalize
@@ -172,11 +163,6 @@ pre-configure:
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 
 do-install:
-	cd ${WRKSRC}/dist && \
-		find ${DISTDIRS} -type d \
-			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
-		find ${DISTDIRS} ! -type d \
-			-exec ${INSTALL_DATA} {} ${MOZ}/{} \;
 	cd ${MOB} && \
 		find ${DATADIRS} -type d \
 			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
@@ -185,15 +171,10 @@ do-install:
 	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/seamonkey{,-config} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${MOB}/seamonkey ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/TestGtkEmbed \
-		${MOB}/mozilla-xremote-client ${MOB}/nsinstall \
-		${MOB}/regchrome ${MOB}/regxpcom ${MOB}/seamonkey-bin \
-		${MOB}/xpcshell ${MOB}/xpicleanup ${MOB}/xpidl \
-		${MOB}/xpt_dump ${MOB}/xpt_link ${MOZ}
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
-	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
+	${INSTALL_PROGRAM} ${MOB}/mozilla-xremote-client ${MOB}/regchrome \
+		${MOB}/regxpcom ${MOB}/seamonkey-bin ${MOZ}
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 	${INSTALL_MAN} ${WRKSRC}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2007/12/20 21:50:31 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.17 2008/01/23 16:41:40 martynas Exp $
 @conflict mozilla-firebird-*
-@pkgpath ${BASE_PKGPATH}
-%%SHARED%%
+@pkgpath www/mozilla-firefox,-main
 bin/firefox
 bin/mozilla-firefox
 @man man/man1/firefox.1
@@ -102,6 +101,61 @@ mozilla-firefox/components/layout_base.xpt
 mozilla-firefox/components/layout_printing.xpt
 mozilla-firefox/components/layout_xul.xpt
 mozilla-firefox/components/layout_xul_tree.xpt
+@lib mozilla-firefox/components/libaccessibility.so.${LIBaccessibility_VERSION}
+@lib mozilla-firefox/components/libappcomps.so.${LIBappcomps_VERSION}
+@lib mozilla-firefox/components/libauth.so.${LIBauth_VERSION}
+@lib mozilla-firefox/components/libautoconfig.so.${LIBautoconfig_VERSION}
+@lib mozilla-firefox/components/libbrowsercomps.so.${LIBbrowsercomps_VERSION}
+@lib mozilla-firefox/components/libbrowserdirprovider.so.${LIBbrowserdirprovider_VERSION}
+@lib mozilla-firefox/components/libcaps.so.${LIBcaps_VERSION}
+@lib mozilla-firefox/components/libchrome.so.${LIBchrome_VERSION}
+@lib mozilla-firefox/components/libcommandlines.so.${LIBcommandlines_VERSION}
+@lib mozilla-firefox/components/libcomposer.so.${LIBcomposer_VERSION}
+@lib mozilla-firefox/components/libcookie.so.${LIBcookie_VERSION}
+@lib mozilla-firefox/components/libdocshell.so.${LIBdocshell_VERSION}
+@lib mozilla-firefox/components/libeditor.so.${LIBeditor_VERSION}
+@lib mozilla-firefox/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
+@lib mozilla-firefox/components/libfileview.so.${LIBfileview_VERSION}
+@lib mozilla-firefox/components/libgfx_gtk.so.${LIBgfx_gtk_VERSION}
+@lib mozilla-firefox/components/libgfxps.so.${LIBgfxps_VERSION}
+@lib mozilla-firefox/components/libgklayout.so.${LIBgklayout_VERSION}
+@lib mozilla-firefox/components/libgkplugin.so.${LIBgkplugin_VERSION}
+@lib mozilla-firefox/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
+@lib mozilla-firefox/components/libi18n.so.${LIBi18n_VERSION}
+@lib mozilla-firefox/components/libimglib2.so.${LIBimglib2_VERSION}
+@lib mozilla-firefox/components/libjar50.so.${LIBjar50_VERSION}
+@lib mozilla-firefox/components/libjsd.so.${LIBjsd_VERSION}
+@lib mozilla-firefox/components/libmork.so.${LIBmork_VERSION}
+@lib mozilla-firefox/components/libmozfind.so.${LIBmozfind_VERSION}
+@lib mozilla-firefox/components/libmyspell.so.${LIBmyspell_VERSION}
+@lib mozilla-firefox/components/libnecko.so.${LIBnecko_VERSION}
+@lib mozilla-firefox/components/libnecko2.so.${LIBnecko2_VERSION}
+@lib mozilla-firefox/components/libnsappshell.so.${LIBnsappshell_VERSION}
+@lib mozilla-firefox/components/liboji.so.${LIBoji_VERSION}
+@lib mozilla-firefox/components/libpermissions.so.${LIBpermissions_VERSION}
+@lib mozilla-firefox/components/libpipboot.so.${LIBpipboot_VERSION}
+@lib mozilla-firefox/components/libpipnss.so.${LIBpipnss_VERSION}
+@lib mozilla-firefox/components/libpippki.so.${LIBpippki_VERSION}
+@lib mozilla-firefox/components/libpref.so.${LIBpref_VERSION}
+@lib mozilla-firefox/components/librdf.so.${LIBrdf_VERSION}
+@lib mozilla-firefox/components/libremoteservice.so.${LIBremoteservice_VERSION}
+@lib mozilla-firefox/components/libsearchservice.so.${LIBsearchservice_VERSION}
+@lib mozilla-firefox/components/libspellchecker.so.${LIBspellchecker_VERSION}
+@lib mozilla-firefox/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
+@lib mozilla-firefox/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
+@lib mozilla-firefox/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
+@lib mozilla-firefox/components/libtransformiix.so.${LIBtransformiix_VERSION}
+@lib mozilla-firefox/components/libtxmgr.so.${LIBtxmgr_VERSION}
+@lib mozilla-firefox/components/libuconv.so.${LIBuconv_VERSION}
+@lib mozilla-firefox/components/libucvmath.so.${LIBucvmath_VERSION}
+@lib mozilla-firefox/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
+@lib mozilla-firefox/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
+@lib mozilla-firefox/components/libwebsrvcs.so.${LIBwebsrvcs_VERSION}
+@lib mozilla-firefox/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
+@lib mozilla-firefox/components/libxmlextras.so.${LIBxmlextras_VERSION}
+@lib mozilla-firefox/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
+@lib mozilla-firefox/components/libxpconnect.so.${LIBxpconnect_VERSION}
+@lib mozilla-firefox/components/libxpinstall.so.${LIBxpinstall_VERSION}
 mozilla-firefox/components/locale.xpt
 mozilla-firefox/components/lwbrk.xpt
 mozilla-firefox/components/microsummaries.xpt
@@ -250,9 +304,21 @@ mozilla-firefox/icons/mozicon16.xpm
 mozilla-firefox/icons/mozicon50.xpm
 mozilla-firefox/init.d/
 mozilla-firefox/init.d/README
+@lib mozilla-firefox/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
+@lib mozilla-firefox/libgkgfx.so.${LIBgkgfx_VERSION}
+@lib mozilla-firefox/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
+@lib mozilla-firefox/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
+@lib mozilla-firefox/libjsj.so.${LIBjsj_VERSION}
+@lib mozilla-firefox/libmozjs.so.${LIBmozjs_VERSION}
+@lib mozilla-firefox/libxpcom.so.${LIBxpcom_VERSION}
+@lib mozilla-firefox/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
+@lib mozilla-firefox/libxpcom_core.so.${LIBxpcom_core_VERSION}
+@lib mozilla-firefox/libxpistub.so.${LIBxpistub_VERSION}
 mozilla-firefox/mozilla-firefox-bin
 mozilla-firefox/mozilla-xremote-client
 mozilla-firefox/plugins/
+@lib mozilla-firefox/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
+@lib mozilla-firefox/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
 mozilla-firefox/regxpcom
 mozilla-firefox/res/
 mozilla-firefox/res/EditorOverride.css

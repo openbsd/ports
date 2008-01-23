@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.90 2007/12/20 22:41:18 martynas Exp $
+# $OpenBSD: Makefile,v 1.91 2008/01/23 16:41:40 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
-COMMENT-main=	redesign of Mozilla's browser component
-COMMENT-devel=	devel files for Gecko
+COMMENT=	redesign of Mozilla's browser component
 
 VER=		2.0.0.10
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}
-PKGNAME-main=	mozilla-firefox-${VER}p2
-PKGNAME-devel=	mozilla-firefox-devel-${VER}p2
+PKGNAME=	mozilla-firefox-${VER}p3
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -34,8 +31,6 @@ FLAVOR?=
 
 HOMEPAGE=	http://www.mozilla.org/projects/firefox/
 
-MULTI_PACKAGES=	-main -devel
-
 # mozilla public license
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -48,7 +43,8 @@ DISTFILES=	firefox-${VER}-source.tar.bz2
 MODULES=	devel/gettext
 RUN_DEPENDS=	:esound-*:audio/esound \
 		:desktop-file-utils-*:devel/desktop-file-utils
-BUILD_DEPENDS=	:zip->=2.3:archivers/zip
+BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
+		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
@@ -56,14 +52,8 @@ WANTLIB=	X11 Xau Xcomposite Xdamage Xcursor Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		png pthread stdc++ z
-
-WANTLIB-main=	${WANTLIB} Xft Xinerama Xt gthread-2.0 jpeg pangox-1.0
-
-LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
-		mozilla-firefox/gtkembedmoz,mozilla-firefox/mozjs,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:${PKGNAME-main}:www/mozilla-firefox,-main
-WANTLIB-devel=	${WANTLIB} gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
-		nspr4 plc4 plds4
+		png pthread stdc++ z \
+		Xft Xinerama Xt gthread-2.0 jpeg pangox-1.0
 
 VMEM_WARNING=	Yes
 
@@ -122,7 +112,6 @@ MOZ=		${PREFIX}/mozilla-firefox
 
 DATADIRS=	chrome components defaults dictionaries extensions \
 		greprefs icons init.d plugins res searchplugins
-DISTDIRS=	include idl
 
 pre-configure:
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
@@ -134,11 +123,6 @@ post-build:
 	@cd ${WRKSRC}/xpfe/bootstrap && ${MAKE_PROGRAM} firefox.1
 
 do-install:
-	cd ${WRKSRC}/dist && \
-		find ${DISTDIRS} -type d \
-			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
-		find ${DISTDIRS} ! -type d \
-			-exec ${INSTALL_DATA} {} ${MOZ}/{} \;
 	cd ${MOB} && \
 		find ${DATADIRS} -type d \
 			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
@@ -148,19 +132,14 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE \
 		${FILESDIR}/browserconfig.properties ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/firefox \
-		${MOB}/firefox-config ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin
 	ln -f ${PREFIX}/bin/firefox ${PREFIX}/bin/mozilla-firefox
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/firefox-bin ${MOB}/mozilla-xremote-client \
-		${MOB}/regxpcom ${MOB}/TestGtkEmbed ${MOB}/nsinstall \
-		${MOB}/xpcshell ${MOB}/xpicleanup ${MOB}/xpidl \
-		${MOB}/xpt_dump ${MOB}/xpt_link ${MOZ}
+		${MOB}/regxpcom ${MOZ}
 	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
-	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
 	${INSTALL_MAN} ${WRKSRC}/xpfe/bootstrap/firefox.1 ${PREFIX}/man/man1/
 	@ln -f ${PREFIX}/man/man1/firefox.1 ${PREFIX}/man/man1/mozilla-firefox.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
