@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/01/23 16:36:03 martynas Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		embedded video player for mozilla
 
 DISTNAME=		mplayerplug-in-3.50
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		www
 
@@ -29,16 +30,19 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mplayerplug-in/}
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:mozilla-firefox-devel-*:www/mozilla-firefox,-devel
+BUILD_DEPENDS=		:xulrunner-devel-*:devel/xulrunner,-devel
 RUN_DEPENDS=		::www/mozilla-firefox \
 			::x11/mplayer
 
 USE_X11=		yes
 USE_GMAKE=		yes
-CONFIGURE_STYLE=	gnu
+
+AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+= 	--enable-gmp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-			-I${X11BASE}/include -DBSD" \
+			-I${X11BASE}/include \
+			-I${LOCALBASE}/xulrunner/include/xpcom -DBSD" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_REGRESS=		Yes

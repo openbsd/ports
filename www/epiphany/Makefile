@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/12/19 07:31:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2008/01/23 16:38:00 martynas Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	extremely lightweight and simple web browser for gnome
@@ -6,7 +6,7 @@ COMMENT=	extremely lightweight and simple web browser for gnome
 M=		2.18
 V=		2.18.2
 DISTNAME=	epiphany-${V}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/epiphany/$M/}
 
-BUILD_DEPENDS=	:mozilla-firefox-devel->=2.0:www/mozilla-firefox,-devel
+BUILD_DEPENDS=	:xulrunner-devel->=1.8.1:devel/xulrunner,-devel
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 RUN_DEPENDS=	:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 		:gnome-icon-theme-*:x11/gnome/icon-theme \
@@ -30,7 +30,7 @@ RUN_DEPENDS=	:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gnome-desktop-2::x11/gnome/desktop \
 		gnomeui-2.>=1400::x11/gnome/libgnomeui \
-		mozilla-firefox/gtkembedmoz,mozilla-firefox/mozjs,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:mozilla-firefox->=2.0:www/mozilla-firefox \
+		xulrunner/gtkembedmoz,xulrunner/mozjs,xulrunner/xpcom,xulrunner/xul:xulrunner->=1.8.1:devel/xulrunner \
 		xml2.>=6.12::textproc/libxml \
 		xslt.>=1::textproc/libxslt
 
@@ -45,20 +45,21 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
 		m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 plc4 \
 		plds4 png popt pthread ssl startup-notification-1 util z \
-		freebl3 nss3 nssckbi smime3 softokn3 ssl3
+		freebl3 nss3 nssckbi smime3 softokn3 ssl3 \
+		Xcomposite Xdamage gailutil pcre
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--with-gecko=firefox \
+CONFIGURE_ARGS+=--with-gecko=xulrunner \
 		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \
 		--disable-python \
 		--disable-schemas-install \
 		--disable-scrollkeeper
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nss -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lfreebl3 -lnss3 -lnssckbi -lsmime3 -lsoftokn3 -lssl3 -pthread -L${LOCALBASE}/mozilla-firefox" \
+		LDFLAGS="-Wl,-rpath-link,${LOCALBASE}/lib/ -Wl,-rpath-link,${X11BASE}/lib/ -L${LOCALBASE}/lib -lfreebl3 -lnss3 -lnssckbi -lsmime3 -lsoftokn3 -lssl3 -pthread -L${LOCALBASE}/xulrunner" \
 		HOME=/tmp
 
 SUBST_VARS+=	M

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2007/12/15 21:14:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2008/01/23 16:37:16 martynas Exp $
 
 COMMENT=	GNOME web browser based on gecko
 
 V=		2.0.3
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -24,13 +24,14 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 plc4 \
 		plds4 png popt pthread ssl startup-notification-1 stdc++ \
 		util z \
-		freebl3 nss3 nssckbi smime3 softokn3 ssl3
+		freebl3 nss3 nssckbi smime3 softokn3 ssl3 \
+		Xcomposite Xdamage gailutil pcre
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	:mozilla-firefox-devel->=2.0:www/mozilla-firefox,-devel \
+BUILD_DEPENDS=	:xulrunner-devel->=1.8.1:devel/xulrunner,-devel \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
@@ -42,17 +43,17 @@ RUN_DEPENDS=	:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gnome-desktop-2::x11/gnome/desktop \
 		gnomeui-2.>=1400::x11/gnome/libgnomeui \
-		mozilla-firefox/gtkembedmoz,mozilla-firefox/xpcom,mozilla-firefox/xpcom_core:mozilla-firefox->=2.0:www/mozilla-firefox \
+		xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul:xulrunner->=1.8.1:devel/xulrunner \
 		xml2.>=6.12::textproc/libxml
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nss -I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lfreebl3 -lnss3 -lnssckbi -lsmime3 -lsoftokn3 -lssl3 -pthread -L${X11BASE}/lib -L${LOCALBASE}/mozilla-firefox"
+		LDFLAGS="-L${LOCALBASE}/lib -lfreebl3 -lnss3 -lnssckbi -lsmime3 -lsoftokn3 -lssl3 -pthread -L${X11BASE}/lib -L${LOCALBASE}/xulrunner"
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-mozilla=firefox \
+CONFIGURE_ARGS=	--with-mozilla=xulrunner \
 		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/galeon \
 		--disable-schemas-install \
 		--disable-gtkhtml
