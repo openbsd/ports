@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/16 01:40:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/01/23 02:18:10 kurt Exp $
 
 COMMENT=	descramble scrambled DVDs
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 USE_LIBTOOL=Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		ac_cv_path_DOXYGEN=no ac_cv_path_LATEX=no
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 .include <bsd.port.mk>
