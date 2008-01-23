@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2007/12/11 11:07:54 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.64 2008/01/23 16:34:30 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	videolan client; multimedia player
 
 V=		0.8.6d
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -52,8 +52,7 @@ WANTLIB-main=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.61
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${WRKSRC}/include -I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-		XPIDL="${LOCALBASE}/seamonkey/xpidl"
+		CPPFLAGS="-I${WRKSRC}/include -I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
 
 CONFIGURE_ARGS+=--disable-pth \
 		--disable-st \
@@ -172,10 +171,12 @@ FLAVOR?=
 .if !${FLAVOR:L:Mno_web}
 MULTI_PACKAGES+=-web
 COMMENT-web=	mozilla plugin for embedded media playback
-PKGNAME-web=	vlc-web-${V}
-BUILD_DEPENDS+=	:seamonkey-devel-*:www/seamonkey,-devel
+PKGNAME-web=	vlc-web-${V}p0
+BUILD_DEPENDS+=	:xulrunner-devel-*:devel/xulrunner,-devel
 CONFIGURE_ARGS+=--enable-mozilla
-PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/seamonkey
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/bin/xulrunner-config" \
+		XPIDL="${LOCALBASE}/xulrunner/xpidl"
+PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner
 LIB_DEPENDS-web=${LIB_DEPENDS}
 RUN_DEPENDS-web=::${BUILD_PKGPATH}
 WANTLIB-web=	ICE SM X11 Xau Xdmcp Xext Xinerama Xt Xv Xxf86vm dvbpsi m ogg theora
@@ -186,7 +187,7 @@ CONFIGURE_ARGS+=--disable-mozilla
 .if !${FLAVOR:L:Mno_arts}
 MULTI_PACKAGES+=-arts
 COMMENT-arts=	artsd audio output module for vlc
-FULLPKGNAME-arts=vlc-arts-${V}
+FULLPKGNAME-arts=vlc-arts-${V}p0
 CONFIGURE_ARGS+=--enable-arts
 LIB_DEPENDS-arts=${LIB_DEPENDS} artsc.>=1::x11/kde/arts3
 # any FLAVOR of vlc will do
@@ -199,7 +200,7 @@ CONFIGURE_ARGS+=--disable-arts
 .if !${FLAVOR:L:Mno_esd}
 MULTI_PACKAGES+=-esd
 COMMENT-esd=	esound audio output module for vlc
-FULLPKGNAME-esd=vlc-esd-${V}
+FULLPKGNAME-esd=vlc-esd-${V}p0
 CONFIGURE_ARGS+=--enable-esd
 LIB_DEPENDS-esd=esd.>=2::audio/esound
 # any FLAVOR of vlc will do
