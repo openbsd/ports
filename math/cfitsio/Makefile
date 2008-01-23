@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/23 15:57:26 naddy Exp $
 
 COMMENT=	library for handling FITS data
 CATEGORIES=	math graphics devel
@@ -8,7 +8,7 @@ HOMEPAGE= 	http://heasarc.gsfc.nasa.gov/fitsio/fitsio.html
 DISTNAME=	cfitsio3006
 WRKDIST=	${WRKDIR}/cfitsio
 
-PKGNAME=	cfitsio-3.006
+PKGNAME=	cfitsio-3.006p0
 MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/
 
 CONFIGURE_STYLE=autoconf no-autoheader
