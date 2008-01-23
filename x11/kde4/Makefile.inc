@@ -1,4 +1,7 @@
 
+FLAVOR ?=
+FLAVORS ?=		debug
+SEPARATE_BUILD =	flavored
 CATEGORIES?=		x11 x11/kde
 VERSION?=		4.0.0
 DIST_SUBDIR?=		kde
@@ -26,5 +29,9 @@ SEPARATE_BUILD=		simple
 #MAKE_FLAGS=	VERBOSE=2
 
 #CONFIGURE_ARGS+=	--debug-output --debug-trycompile
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS+=-DCMAKE_BUILD_TYPE:String=Debug
+.else
 CONFIGURE_ARGS+=	-DCMAKE_BUILD_TYPE:String=Release
+.endif
 
