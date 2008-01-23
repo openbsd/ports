@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2008/01/22 17:48:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2008/01/23 21:47:46 jasper Exp $
 
 COMMENT=		GNOME control center
 
-GNOME_PROJECT=		control-center
-GNOME_VERSION=		2.18.1
-DISTNAME=		control-center-${VERSION}
-PKGNAME=		control-center2-${VERSION}p4
-SHARED_LIBS +=	gnome-window-settings 1.0      # .1.0
-
+GNOME_PROJECT=		gnome-control-center
+GNOME_VERSION=		2.20.3
+PKGNAME=		control-center2-${VERSION}
+SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -25,8 +23,9 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnome-2 gnome-desktop-2 gnome-keyring gnome-menu gnomecanvas-2 \
 		gnomeui-2 gnomevfs-2 gobject-2.0 gsf-1 gstbase-0.10 \
 		gstreamer-0.10 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 png popt pthread \
-		rpcsvc ssl startup-notification-1 stdc++ util xkbfile xml2 z
+		pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre png popt \
+		pthread rpcsvc ssl startup-notification-1 stdc++ util \
+		xkbfile xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -42,20 +41,21 @@ LIB_DEPENDS=		gstaudio-0.10.>=0.1,gstinterfaces-0.10.>=0.1::multimedia/gstreamer
 BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 			:scrollkeeper-*:textproc/scrollkeeper
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			:scrollkeeper-*:textproc/scrollkeeper \
 			::multimedia/gstreamer-0.10/plugins-good,-esd \
-			::multimedia/gstreamer-0.10/plugins-good,-gconf
+			::multimedia/gstreamer-0.10/plugins-good,-gconf \
+			:scrollkeeper-*:textproc/scrollkeeper
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
-CONFIGURE_ARGS+=	--disable-hal \
+CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control-center2 \
+			--disable-schemas-install \
+			--disable-hal \
 			--disable-alsa \
 			--enable-esd \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control-center2
+			--enable-gstreamer \
+			--disable-aboutme # needs fixed EDS
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-NO_REGRESS=		Yes
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
