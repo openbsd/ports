@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/09/10 23:22:29 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/01/24 09:19:28 ajacoutot Exp $
 bin/kaffeine
 include/kaffeine/
 include/kaffeine/kaffeineaudioencoder.h
@@ -21,6 +21,7 @@ share/apps/kaffeine/kaffeinedisc.rc
 share/apps/kaffeine/kaffeineplaylist.rc
 share/apps/kaffeine/kaffeineui.rc
 share/apps/kaffeine/logo
+share/apps/kaffeine/logo.avi
 share/apps/kaffeine/logo.mpg
 share/apps/kaffeine/mms.protocol
 share/apps/kaffeine/nocover.png
@@ -139,3 +140,7 @@ share/mimelnk/application/x-kaffeine.desktop
 share/services/kaffeineoggvorbis.desktop
 share/services/xine_part.desktop
 share/servicetypes/kaffeineaudioencoder.desktop
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

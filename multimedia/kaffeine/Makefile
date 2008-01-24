@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/10 23:22:29 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.12 2008/01/24 09:19:27 ajacoutot Exp $
 
 CATEGORIES=	multimedia x11 x11/kde
 COMMENT=	video player for KDE
 
 HOMEPAGE=	http://kaffeine.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kaffeine/}
-DISTNAME=	kaffeine-0.8.5
+DISTNAME=	kaffeine-0.8.6
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=	kaffeinepart         0.0      # .0.1
@@ -14,7 +14,7 @@ SHARED_LIBS +=	kaffeineaudioencoder 0.0      # .0.1
 MODULES=	x11/kde
 MODKDE_VERSION=		3.5.7
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.60
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--disable-libsuffix \
 			--without-gstreamer \
@@ -27,10 +27,11 @@ MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 SEPARATE_BUILD=		simple
 
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=		kdecore.>=7,DCOP,kdesu,kio,kdefx,kparts,kutils,kdeprint,kdeui,kwalletclient,khtml,kjs::x11/kde/libs3 \
 			vorbis,vorbisenc::audio/libvorbis \
 			cdda_interface,cdda_paranoia::audio/cdparanoia \
-			xine::multimedia/xine-lib
+			xine.>=20::multimedia/xine-lib
 
 WANTLIB=	X11 ICE Xrender SM Xext freetype Xinerama \
 		util m pthread z c stdc++ expat fontconfig \
