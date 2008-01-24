@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2007/11/13 12:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2008/01/24 15:57:27 merdely Exp $
 
 COMMENT=	X11-based audio mixer
 DISTNAME=	xmix-2.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 
 PERMIT_PACKAGE_CDROM=	Yes

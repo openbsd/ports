@@ -1,6 +1,15 @@
-$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 20:28:51 ajacoutot Exp $
---- Imakefile.orig	Wed Feb  2 05:54:35 1994
-+++ Imakefile	Fri Oct 26 22:14:51 2007
+$OpenBSD: patch-Imakefile,v 1.2 2008/01/24 15:57:27 merdely Exp $
+--- Imakefile.orig	Tue Feb  1 21:54:35 1994
++++ Imakefile	Wed Jan 23 21:27:35 2008
+@@ -2,7 +2,7 @@
+ # xmix Imakefile.
+ #
+ #CDEBUGFLAGS=-gstabs
+-CDEBUGFLAGS=-O
++#CDEBUGFLAGS=-O
+ #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+ 
+ SRCS1=	xmix.c
 @@ -12,6 +12,8 @@ PROGRAMS = xmix
  
  all::  $(PROGRAMS)
