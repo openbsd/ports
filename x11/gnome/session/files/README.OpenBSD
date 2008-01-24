@@ -1,0 +1,48 @@
+$OpenBSD: README.OpenBSD,v 1.1 2008/01/24 11:43:31 jasper Exp $
+The OpenBSD/GNOME desktop
+
+* Introduction
+The gnome-session package will install a minimal working GNOME desktop.
+It provides you with the basic interface (including themes), a control
+panel, a terminal, a text editor and a lot more other utilities.
+
+This file will briefly explain to you how to make this experience more
+pleasant.
+
+* Installing more packages
+If your needs aren't satisfied yet, there are many other packages
+you can install. The most important ones will be mentioned by category:
+
+ - Communication
+   * empathy - Telepathy based messenger
+   * epiphany - lightweight and simple web browser
+   * evolution - integrated email and PIM software
+   * gossip - Jabber client
+
+ - Accessibility
+   * dasher - predictive text input system
+
+ - Development
+   * devel-docs - developer documentation
+   * devhelp - API documentation browser
+   * gedit-plugins - plugins for Gedit
+   * zenity - easy-to-script dialogs
+
+ - Utilities
+   * eog - image viewer and categorizer
+   * evince - document viewer for multiple document formats
+   * file-roller - archive manager
+   * gcalctool - desktop calculator
+   * ggv - frontend for GhostScript
+   * gucharmap - Unicode character map
+   * planner - project management
+   * seahorse - encryption keys manager
+
+* Startup and more documentation
+One can log in using the login manager, GDM. Or by using the 'startx' command.
+In order to use the latter, add a line like the following to your .xinitrc
+or .xsession script: 'exec !!PREFIX!!/bin/gnome-session' .
+
+For more information on using OpenBSD packages please refer to:
+http://www.OpenBSD.org/faq/faq15.html . For more general information on
+using GNOME, please see: http://live.gnome.org/ .
