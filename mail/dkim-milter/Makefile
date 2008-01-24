@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2008/01/03 07:54:45 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/24 15:27:55 naddy Exp $
 
 COMMENT=	DKIM milter
 
 DISTNAME=	dkim-milter-2.4.2
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dkim-milter/
 
@@ -20,6 +20,11 @@ PERMIT_DISTFILES_FTP=		Yes
 WANTLIB=	c crypto pthread milter ssl
 
 EXAMPLESDIR=	share/examples/dkim-milter
+
+post-configure:
+	@(echo "define(\`confCC', \`${CC}')"; \
+	  echo "define(\`confOPTIMIZE', \`${CFLAGS}')") \
+		>${WRKSRC}/devtools/Site/site.config.m4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj.*/dkim-filter/dkim-filter ${PREFIX}/libexec
