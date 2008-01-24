@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/24 04:53:55 okan Exp $
+${P5SITE}/Text/
+${P5SITE}/Text/MultiMarkdown.pm
+@man man/man3p/Text::MultiMarkdown.3p
