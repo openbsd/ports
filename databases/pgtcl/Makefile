@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2008/01/24 18:34:01 merdely Exp $
 
 SHARED_ONLY=	Yes
  
@@ -6,7 +6,7 @@ COMMENT=	Tcl interface to PostgreSQL
 
 V=		1.5
 DISTNAME=	pgtcl$V
-PKGNAME=	pgtcl-$V
+PKGNAME=	pgtcl-$Vp0
 SHARED_LIBS= 	pgtcl	0.0
 CATEGORIES=	databases
 
@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-postgres-lib=${LOCALBASE}/lib
 
 MAKE_FLAGS=	PKG_LIB_FILE=libpgtcl.so.${LIBpgtcl_VERSION}
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgtcl/html
