@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2008/01/24 18:31:24 merdely Exp $
 
 COMMENT=	PGP sign/encrypt/decrypt messages automatically
 
-DISTNAME=       PGPsendmail-v1.4.5
-PKGNAME=	pgpsendmail-1.4.5
+V=1.4.5
+DISTNAME=       PGPsendmail-v$V
+PKGNAME=	pgpsendmail-$Vp0
 CATEGORIES=	mail
 
 MASTER_SITES=   ftp://ftp.atnf.csiro.au/pub/people/rgooch/ \

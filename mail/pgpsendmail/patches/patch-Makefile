@@ -1,16 +1,40 @@
-$OpenBSD: patch-Makefile,v 1.1 2000/06/05 00:04:02 espie Exp $
---- Makefile.orig	Tue Oct 21 00:58:19 1997
-+++ Makefile	Mon Jun  5 01:29:48 2000
+$OpenBSD: patch-Makefile,v 1.2 2008/01/24 18:31:24 merdely Exp $
+--- Makefile.orig	Mon Oct 20 18:58:19 1997
++++ Makefile	Wed Jan 23 23:08:34 2008
 @@ -30,7 +30,7 @@ DEFINES =
  
  # Where do your manpages reside?
  #
 -MANDIR = /usr/man
-+MANDIR = /usr/local/man
++MANDIR = ${PREFIX}/man
  
  
  # Various compilers: if you have problems compiling, you may comment out the
-@@ -112,8 +112,8 @@ match-email-addr:	match-email-addr.o lib
+@@ -38,7 +38,7 @@ MANDIR = /usr/man
+ # please send me a patch
+ 
+ # Generic ANSI compiler
+-CC = cc
++CC ?= cc
+ 
+ # HP/UX compiler
+ #CC = cc -Aa -D_HPUX_SOURCE
+@@ -48,12 +48,12 @@ CC = cc
+ 
+ 
+ # Maybe you want debugging instead, or more optimisation?
+-COPTIMISE = -O
++# COPTIMISE = -O
+ 
+ ###############################################################################
+ #			No user servicable parts below
+ #
+-CFLAGS = $(DEFINES) -Iinclude $(COPTIMISE) $(NO_PATH_H) $(PATH_SENDMAIL) \
++CFLAGS += $(DEFINES) -Iinclude $(COPTIMISE) $(NO_PATH_H) $(PATH_SENDMAIL) \
+ 	$(PATH_MAILDIR)
+ 
+ LDFLAGS = -s $(COPTIMISE) -Llib -lpgpsendmail
+@@ -112,8 +112,8 @@ match-email-addr:	match-email-addr.o lib/libpgpsendmai
  	$(CC) -o match-email-addr match-email-addr.o $(LDFLAGS)
  
  
@@ -21,7 +45,7 @@ $OpenBSD: patch-Makefile,v 1.1 2000/06/05 00:04:02 espie Exp $
  	./install pgpsendmail $(SENDMAIL)
  	./install pgpdaemon
  	./install sendpgppass
-@@ -123,8 +123,7 @@ install: dummy pgpsendmail pgpdaemon sen
+@@ -123,8 +123,7 @@ install: dummy pgpsendmail pgpdaemon sendpgppass pgppi
  	./install match-email-addr
  
  install.man: clean

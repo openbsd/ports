@@ -1,10 +1,10 @@
-$OpenBSD: patch-install,v 1.2 2001/10/14 17:14:43 espie Exp $
+$OpenBSD: patch-install,v 1.3 2008/01/24 18:31:25 merdely Exp $
 --- install.orig	Thu Oct  9 14:58:17 1997
 +++ install	Sun Oct 14 18:55:43 2001
 @@ -1,5 +1,7 @@
  #! /bin/csh -f
  
-+set USRBINPATH=${DESTDIR}/usr/local/bin
++set USRBINPATH=${PREFIX}/bin
 +
  if ("$#argv" < "1") then
      echo "Usage:	install binary"
