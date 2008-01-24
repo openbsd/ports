@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_cpp,v 1.4 2005/04/24 19:02:05 sturm Exp $
+$OpenBSD: patch-app_cpp,v 1.5 2008/01/24 11:49:21 ajacoutot Exp $
 --- app.cpp.orig	Sat Nov  6 00:25:29 2004
-+++ app.cpp	Thu Apr 21 19:59:48 2005
-@@ -2444,7 +2444,7 @@ void XxApp::editFile( const QString& fil
++++ app.cpp	Thu Jan 24 09:43:06 2008
+@@ -2444,7 +2444,7 @@ void XxApp::editFile( const QString& filename )
        size_t size;
        /* Bind a name to the socket.   */
        name.sun_family = AF_FILE;

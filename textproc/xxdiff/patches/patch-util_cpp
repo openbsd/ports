@@ -1,7 +1,7 @@
-$OpenBSD: patch-util_cpp,v 1.1 2005/04/24 19:02:05 sturm Exp $
---- util.cpp.orig	Fri Apr 22 20:14:58 2005
-+++ util.cpp	Fri Apr 22 20:19:56 2005
-@@ -1031,10 +1031,28 @@ QString XxUtil::escapeChars( const QStri
+$OpenBSD: patch-util_cpp,v 1.2 2008/01/24 11:49:21 ajacoutot Exp $
+--- util.cpp.orig	Fri Nov  5 19:47:06 2004
++++ util.cpp	Thu Jan 24 09:43:07 2008
+@@ -1031,10 +1031,28 @@ QString XxUtil::escapeChars( const QString& format )
  QString XxUtil::unescapeChars( const QString& format )
  {
     QString newFormat = format;
