@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2008/01/25 20:17:26 ian Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,7 +11,7 @@ COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p2
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p3
 PKGNAME-swt=		swt-${ECLIPSE_VER}
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
@@ -68,7 +68,8 @@ MULTI_PACKAGES=		-main -swt -gnome -browser
 
 RUN_DEPENDS-main=	::java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
-			:${PKGNAME-browser}:devel/eclipse/sdk,-browser
+			:${PKGNAME-browser}:devel/eclipse/sdk,-browser \
+			::devel/desktop-file-utils
 LIB_DEPENDS-main=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
@@ -145,5 +146,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/
 	${INSTALL_DATA} ${WRKBUILD}/eclipse/plugins/org.eclipse.swt.gtk.openbsd.${ECLIPSE_ARCH}_${ECLIPSE_VER}.v${ECLIPSE_BUILD}.jar \
 		${PREFIX}/share/java/classes/swt.jar
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	@sed -e 's+%%PREFIX%%+${TRUEPREFIX}+' ${FILESDIR}/eclipse.desktop > \
+		${PREFIX}/share/applications/eclipse.desktop
 
 .include <bsd.port.mk>

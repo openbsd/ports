@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Eclipse
+GenericName=Eclipse, an IDE for all reasons
+Icon=%%PREFIX%%/eclipse/icon.xpm
+Exec=%%PREFIX%%/eclipse/eclipse
+Terminal=false
+Categories=Development;

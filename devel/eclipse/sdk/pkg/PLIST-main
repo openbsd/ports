@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/04/13 14:30:43 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/01/25 20:17:26 ian Exp $
 @conflict eclipse-sdk-gtk2-<=3.0.1
 @conflict eclipse-sdk-motif-<=3.0.1
 @pkgpath devel/eclipse/sdk
@@ -1695,3 +1695,7 @@ eclipse/plugins/org.junit_3.8.1/plugin.xml
 eclipse/readme/
 eclipse/readme/readme_eclipse.html
 eclipse/startup.jar
+share/applications/
+share/applications/eclipse.desktop
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
