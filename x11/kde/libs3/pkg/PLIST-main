@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/12/15 23:47:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/01/25 17:36:17 ajacoutot Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -18,7 +18,7 @@ bin/dcopref
 bin/dcopserver
 bin/dcopserver_shutdown
 bin/dcopstart
-bin/filesharelist
+@comment bin/filesharelist
 @comment bin/fileshareset
 bin/imagetops
 bin/kab2kabc
