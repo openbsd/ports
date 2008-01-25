@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/01/13 20:34:24 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/01/25 20:39:57 martynas Exp $
 @conflict py-cherrypy2-*
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/cherrypy/
@@ -73,6 +73,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/helper.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/helper.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modpy.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modpy.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modwsgi.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modwsgi.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/static/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/static/dirback.jpg
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/static/index.html
@@ -101,6 +103,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_objectmapping.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_objectmapping.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_proxy.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_proxy.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_refleaks.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_refleaks.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_routes.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_routes.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_session.py

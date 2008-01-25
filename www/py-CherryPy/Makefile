@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/01/13 20:34:24 martynas Exp $
+# $OpenBSD: Makefile,v 1.11 2008/01/25 20:39:57 martynas Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
-VERSION=	3.0.2
+VERSION=	3.0.3
 DISTNAME=	CherryPy-${VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www
