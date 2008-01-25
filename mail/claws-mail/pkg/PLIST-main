@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/01/08 23:13:23 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2008/01/25 14:20:31 landry Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 bin/claws-mail
@@ -225,14 +225,14 @@ include/claws-mail/vcard.h
 include/claws-mail/wizard.h
 lib/claws-mail/
 lib/claws-mail/plugins/
-@comment lib/claws-mail/plugins/pgpcore.la
-@comment lib/claws-mail/plugins/pgpcore.so
-@comment lib/claws-mail/plugins/pgpinline.deps
-@comment lib/claws-mail/plugins/pgpinline.la
-@comment lib/claws-mail/plugins/pgpinline.so
-@comment lib/claws-mail/plugins/pgpmime.deps
-@comment lib/claws-mail/plugins/pgpmime.la
-@comment lib/claws-mail/plugins/pgpmime.so
+lib/claws-mail/plugins/pgpcore.la
+lib/claws-mail/plugins/pgpcore.so
+lib/claws-mail/plugins/pgpinline.deps
+lib/claws-mail/plugins/pgpinline.la
+lib/claws-mail/plugins/pgpinline.so
+lib/claws-mail/plugins/pgpmime.deps
+lib/claws-mail/plugins/pgpmime.la
+lib/claws-mail/plugins/pgpmime.so
 lib/claws-mail/plugins/trayicon.la
 lib/claws-mail/plugins/trayicon.so
 lib/pkgconfig/

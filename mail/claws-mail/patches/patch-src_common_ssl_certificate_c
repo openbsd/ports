@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_common_ssl_certificate_c,v 1.1 2008/01/08 23:13:23 landry Exp $
---- src/common/ssl_certificate.c.orig	Tue Dec 18 19:40:50 2007
-+++ src/common/ssl_certificate.c	Tue Dec 18 20:07:02 2007
+$OpenBSD: patch-src_common_ssl_certificate_c,v 1.2 2008/01/25 14:20:31 landry Exp $
+--- src/common/ssl_certificate.c.orig	Mon Dec 17 06:37:01 2007
++++ src/common/ssl_certificate.c	Thu Jan 24 17:54:43 2008
 @@ -37,6 +37,9 @@
  #include <glib.h>
  #include <glib/gi18n.h>

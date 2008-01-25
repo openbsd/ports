@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/01/08 23:13:23 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2008/01/25 14:20:31 landry Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-docs=		documentation
@@ -9,7 +9,8 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.2.0
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}
+
+PKGNAME-main=			${DISTNAME}p0
 FULLPKGNAME-docs=		claws-mail-docs-${V}
 FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
 FULLPKGNAME-clamav=		claws-mail-clamav-${V}
@@ -71,8 +72,7 @@ LIB_DEPENDS=		atk-1.0::devel/atk \
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			:desktop-file-utils-*:devel/desktop-file-utils
-# at the moment, pgpcore/pgpinline/pgpmime plugins are built but not installed
-# http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=1348
+
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			gthread-2.0::devel/glib2 \
 			startup-notification-1::devel/startup-notification \

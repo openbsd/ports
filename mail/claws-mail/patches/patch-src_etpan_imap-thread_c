@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_etpan_imap-thread_c,v 1.1 2008/01/25 14:20:31 landry Exp $
+--- src/etpan/imap-thread.c.orig	Thu Jan 24 17:55:29 2008
++++ src/etpan/imap-thread.c	Thu Jan 24 17:55:56 2008
+@@ -288,6 +288,9 @@ void imap_main_set_timeout(int sec)
+ void imap_main_done(void)
+ {
+ 	etpan_thread_manager_stop(thread_manager);
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
++	return;
++#endif
+ 	etpan_thread_manager_join(thread_manager);
+ 	
+ 	g_source_remove(thread_manager_signal);
