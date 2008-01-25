@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/01/21 22:21:24 rui Exp $
+# $OpenBSD: Makefile,v 1.12 2008/01/25 18:59:19 rui Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ COMMENT-mysql=		freeradius mysql rlm addon
 COMMENT-pgsql=		freeradius pgsql rlm addon
 COMMENT-ldap=		freeradius ldap rlm addon
 
-V=			2.0.0
+V=			2.0.1
 DISTNAME=		freeradius-server-$V
 PKGNAME-main=		freeradius-$V
 PKGNAME-iodbc=		freeradius-iodbc-$V
@@ -107,7 +107,7 @@ LIB_DEPENDS-iodbc=	iodbc.>=2::databases/iodbc
 RUN_DEPENDS-iodbc=	::net/freeradius
 LIB_DEPENDS-ldap=	lber.>=8,ldap_r.>=8:openldap-client-*:databases/openldap \
 			freeradius-radius.>=0::net/freeradius
-WANTLIB-ldap=		crypto pthread sasl2 ssl asn1 com_err gssapi krb5
+WANTLIB-ldap=		crypto sasl2 ssl asn1 com_err gssapi krb5
 LIB_DEPENDS-mysql=	mysqlclient_r.>=16:mysql-client-*:databases/mysql
 RUN_DEPENDS-mysql=	::net/freeradius
 WANTLIB-mysql=		crypto m pthread ssl z
