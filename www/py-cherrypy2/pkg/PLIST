@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/27 15:23:13 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/01/25 20:41:18 martynas Exp $
 @conflict py-CherryPy-*
+lib/python${MODPY_VERSION}/site-packages/CherryPy-2.3.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/cherrypy/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.pyc
@@ -23,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgi.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgi.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgiserver.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgiserver.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgiserver3.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgiserver3.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/config.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/config.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/favicon.ico
@@ -113,12 +116,16 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_custom_filters.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_custom_filters.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_decodingencoding_filter.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_decodingencoding_filter.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_etags.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_etags.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_gzip_filter.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_gzip_filter.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_http.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_http.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_logdebuginfo_filter.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_logdebuginfo_filter.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_misc_tools.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_misc_tools.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_noserver.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_noserver.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_objectmapping.py
