@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2007/06/19 18:10:26 rui Exp $
---- configure.orig	Mon Jun 18 14:27:25 2007
-+++ configure	Mon Jun 18 14:28:29 2007
-@@ -5879,6 +5879,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.4 2008/01/25 01:21:17 okan Exp $
+--- configure.orig	Thu Nov 29 04:36:33 2007
++++ configure	Mon Jan 14 17:19:14 2008
+@@ -6002,6 +6002,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  extern char pcap_version[];
  int main() {
    int major, minor1, minor2;
@@ -9,3 +9,123 @@ $OpenBSD: patch-configure,v 1.3 2007/06/19 18:10:26 rui Exp $
    sscanf(pcap_version,"%d.%d.%d", &major, &minor1, &minor2);
    if (major > 0)
      exit(0);
+@@ -6310,8 +6311,8 @@ fi
+ 
+ else
+   if test "${ac_cv_header_pcre_pcre_h+set}" = set; then
+-  echo "$as_me:$LINENO: checking for pcre/pcre.h" >&5
+-echo $ECHO_N "checking for pcre/pcre.h... $ECHO_C" >&6
++  echo "$as_me:$LINENO: checking for pcre.h" >&5
++echo $ECHO_N "checking for pcre.h... $ECHO_C" >&6
+ if test "${ac_cv_header_pcre_pcre_h+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ fi
+@@ -6319,8 +6320,8 @@ echo "$as_me:$LINENO: result: $ac_cv_header_pcre_pcre_
+ echo "${ECHO_T}$ac_cv_header_pcre_pcre_h" >&6
+ else
+   # Is the header compilable?
+-echo "$as_me:$LINENO: checking pcre/pcre.h usability" >&5
+-echo $ECHO_N "checking pcre/pcre.h usability... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking pcre.h usability" >&5
++echo $ECHO_N "checking pcre.h usability... $ECHO_C" >&6
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -6328,7 +6329,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
+-#include <pcre/pcre.h>
++#include <pcre.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+@@ -6364,15 +6365,15 @@ echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
+ echo "${ECHO_T}$ac_header_compiler" >&6
+ 
+ # Is the header present?
+-echo "$as_me:$LINENO: checking pcre/pcre.h presence" >&5
+-echo $ECHO_N "checking pcre/pcre.h presence... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking pcre.h presence" >&5
++echo $ECHO_N "checking pcre.h presence... $ECHO_C" >&6
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <pcre/pcre.h>
++#include <pcre.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+@@ -6406,25 +6407,25 @@ echo "${ECHO_T}$ac_header_preproc" >&6
+ # So?  What about this header?
+ case $ac_header_compiler:$ac_header_preproc:$ac_c_preproc_warn_flag in
+   yes:no: )
+-    { echo "$as_me:$LINENO: WARNING: pcre/pcre.h: accepted by the compiler, rejected by the preprocessor!" >&5
+-echo "$as_me: WARNING: pcre/pcre.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: pcre/pcre.h: proceeding with the compiler's result" >&5
+-echo "$as_me: WARNING: pcre/pcre.h: proceeding with the compiler's result" >&2;}
++    { echo "$as_me:$LINENO: WARNING: pcre.h: accepted by the compiler, rejected by the preprocessor!" >&5
++echo "$as_me: WARNING: pcre.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
++    { echo "$as_me:$LINENO: WARNING: pcre.h: proceeding with the compiler's result" >&5
++echo "$as_me: WARNING: pcre.h: proceeding with the compiler's result" >&2;}
+     ac_header_preproc=yes
+     ;;
+   no:yes:* )
+-    { echo "$as_me:$LINENO: WARNING: pcre/pcre.h: present but cannot be compiled" >&5
+-echo "$as_me: WARNING: pcre/pcre.h: present but cannot be compiled" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: pcre/pcre.h:     check for missing prerequisite headers?" >&5
+-echo "$as_me: WARNING: pcre/pcre.h:     check for missing prerequisite headers?" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: pcre/pcre.h: see the Autoconf documentation" >&5
+-echo "$as_me: WARNING: pcre/pcre.h: see the Autoconf documentation" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: pcre/pcre.h:     section \"Present But Cannot Be Compiled\"" >&5
+-echo "$as_me: WARNING: pcre/pcre.h:     section \"Present But Cannot Be Compiled\"" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: pcre/pcre.h: proceeding with the preprocessor's result" >&5
+-echo "$as_me: WARNING: pcre/pcre.h: proceeding with the preprocessor's result" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: pcre/pcre.h: in the future, the compiler will take precedence" >&5
+-echo "$as_me: WARNING: pcre/pcre.h: in the future, the compiler will take precedence" >&2;}
++    { echo "$as_me:$LINENO: WARNING: pcre.h: present but cannot be compiled" >&5
++echo "$as_me: WARNING: pcre.h: present but cannot be compiled" >&2;}
++    { echo "$as_me:$LINENO: WARNING: pcre.h:     check for missing prerequisite headers?" >&5
++echo "$as_me: WARNING: pcre.h:     check for missing prerequisite headers?" >&2;}
++    { echo "$as_me:$LINENO: WARNING: pcre.h: see the Autoconf documentation" >&5
++echo "$as_me: WARNING: pcre.h: see the Autoconf documentation" >&2;}
++    { echo "$as_me:$LINENO: WARNING: pcre.h:     section \"Present But Cannot Be Compiled\"" >&5
++echo "$as_me: WARNING: pcre.h:     section \"Present But Cannot Be Compiled\"" >&2;}
++    { echo "$as_me:$LINENO: WARNING: pcre.h: proceeding with the preprocessor's result" >&5
++echo "$as_me: WARNING: pcre.h: proceeding with the preprocessor's result" >&2;}
++    { echo "$as_me:$LINENO: WARNING: pcre.h: in the future, the compiler will take precedence" >&5
++echo "$as_me: WARNING: pcre.h: in the future, the compiler will take precedence" >&2;}
+     (
+       cat <<\_ASBOX
+ ## ------------------------------------------ ##
+@@ -6435,8 +6436,8 @@ _ASBOX
+       sed "s/^/$as_me: WARNING:     /" >&2
+     ;;
+ esac
+-echo "$as_me:$LINENO: checking for pcre/pcre.h" >&5
+-echo $ECHO_N "checking for pcre/pcre.h... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for pcre.h" >&5
++echo $ECHO_N "checking for pcre.h... $ECHO_C" >&6
+ if test "${ac_cv_header_pcre_pcre_h+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+@@ -6540,7 +6541,7 @@ subdirs="$subdirs libpcre "
+ else
+ # We only need to check for and use this if we are NOT using included pcre
+ 
+-for ac_header in pcre/pcre.h
++for ac_header in pcre.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -6783,6 +6784,7 @@ if test "${with_liblua+set}" = set; then
+   *)
+     CXXFLAGS="-I$with_liblua/include $CXXFLAGS"
+     LDFLAGS="-L$with_liblua/lib $LDFLAGS"
++    LIBLUA_LIBS="-llua"
+     have_lua=yes
+   ;;
+   esac

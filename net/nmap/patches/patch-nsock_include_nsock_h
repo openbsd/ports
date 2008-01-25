@@ -1,0 +1,21 @@
+$OpenBSD: patch-nsock_include_nsock_h,v 1.1 2008/01/25 01:21:17 okan Exp $
+--- nsock/include/nsock.h.orig	Sat Dec 22 07:32:18 2007
++++ nsock/include/nsock.h	Mon Jan 14 17:14:56 2008
+@@ -78,6 +78,8 @@
+ extern "C" {
+ #endif
+ 
++#include <pcap.h>
++
+ /* The read calls will generally return after reading at least this
+  * much data so that the caller can process it and so that the
+  * connection spewing data doesn't monopolize resources.  The caller
+@@ -513,7 +515,7 @@ nsock_event_id nsock_pcap_read_packet(nsock_pool nsp, 
+ void nse_readpcap(nsock_event nsee,
+ 	const unsigned char **l2_data, size_t *l2_len,
+ 	const unsigned char **l3_data, size_t *l3_len,
+-	size_t *packet_len, struct timeval *ts); 
++	size_t *packet_len, struct bpf_timeval *ts); 
+ 
+ /* Well. Just pcap-style datalink. Like DLT_EN10MB or DLT_SLIP. Check in pcap(3) manpage. */
+ int nsi_pcap_linktype(nsock_iod nsiod);

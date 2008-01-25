@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsock_src_nsock_pcap_h,v 1.1 2008/01/25 01:21:17 okan Exp $
+--- nsock/src/nsock_pcap.h.orig	Mon Jan 14 17:07:38 2008
++++ nsock/src/nsock_pcap.h	Mon Jan 14 17:07:55 2008
+@@ -73,7 +73,7 @@ typedef struct{
+ 
+ 
+ typedef struct{
+-	struct timeval ts;
++	struct bpf_timeval ts;
+ 	int caplen;
+ 	int len;
+ 	const unsigned char *packet;	// caplen bytes

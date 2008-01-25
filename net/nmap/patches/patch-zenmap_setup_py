@@ -1,0 +1,11 @@
+$OpenBSD: patch-zenmap_setup_py,v 1.1 2008/01/25 01:21:17 okan Exp $
+--- zenmap/setup.py.orig	Tue Dec 18 15:22:37 2007
++++ zenmap/setup.py	Tue Dec 18 15:22:57 2007
+@@ -85,7 +85,6 @@ class my_install(install):
+         self.set_perms()
+         self.set_modules_path()
+         self.fix_paths()
+-        self.create_uninstaller()
+ 
+     def create_uninstaller(self):
+         uninstaller_filename = os.path.join(self.install_scripts, "uninstall_" + APP_NAME)

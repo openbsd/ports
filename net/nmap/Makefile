@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.73 2007/11/17 20:39:03 steven Exp $
+# $OpenBSD: Makefile,v 1.74 2008/01/25 01:21:17 okan Exp $
 
-COMMENT=	scan ports and fingerprint stack of network hosts
+COMMENT-main=	scan ports and fingerprint stack of network hosts
+COMMENT-zenmap=	graphical frontend for nmap
 
-DISTNAME=	nmap-4.20
-PKGNAME=	${DISTNAME}p0
+V=		4.53
+DISTNAME=	nmap-$V
+PKGNAME-main=	${DISTNAME}
+PKGNAME-zenmap=	nmap-zenmap-$V
+
 CATEGORIES=	net security
-
 MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
 
@@ -19,40 +22,42 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto m pcap ssl stdc++ 
+MULTI_PACKAGES=	-main -zenmap
 
-USE_GMAKE=		yes
+WANTLIB-main=	c crypto m pcap ssl stdc++ 
 
-CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS=		--with-libpcap=/usr \
-			--with-openssl=/usr \
-			--with-libpcre=${LOCALBASE} \
-			--with-libdnet=${LOCALBASE}
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} \
-				${WRKSRC}/nbase \
-				${WRKSRC}/nsock/src
+SUBST_VARS=	V
 
-FLAVORS=	no_x11
-FLAVOR?=	
+USE_GMAKE=	yes
+MODULES=	lang/python
 
-LIB_DEPENDS+=	pcre::devel/pcre \
-		dnet::net/libdnet
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-libpcap=/usr \
+		--with-openssl=/usr \
+		--with-libdnet=${LOCALBASE} \
+		--with-liblua=${LOCALBASE} \
+		--with-libpcre=${LOCALBASE}
 
-.if ${FLAVOR:L:Mno_x11}
-ALL_TARGET=	nmap
-CONFIGURE_ARGS+=--without-nmapfe
-.else
-LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	pcre::devel/pcre \
+		dnet::net/libdnet \
+		lua.>=5::lang/lua
 
-USE_X11=	Yes
-ALL_TARGET=	nmap nmapfe/nmapfe
-WANTLIB+=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xcomposite Xdamage Xrender expat fontconfig freetype z \
-		atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 glitz png \
-		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo
-MODULES=	devel/gettext
-.endif
+LIB_DEPENDS-zenmap=
+
+RUN_DEPENDS-main=
+RUN_DEPENDS-zenmap=	::x11/py-gtk2 \
+			::databases/py-sqlite2 \
+			::net/nmap
 
 NO_REGRESS=	Yes
+
+post-extract:
+	@cd ${WRKSRC} && rm -rf libpcap/ libdnet-stripped/ liblua/ libpcre/
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/docs/zenmap.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

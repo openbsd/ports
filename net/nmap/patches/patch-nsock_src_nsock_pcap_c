@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsock_src_nsock_pcap_c,v 1.1 2008/01/25 01:21:17 okan Exp $
+--- nsock/src/nsock_pcap.c.orig	Mon Jan 14 17:10:14 2008
++++ nsock/src/nsock_pcap.c	Mon Jan 14 17:10:31 2008
+@@ -324,7 +324,7 @@ int do_actual_pcap_read(msevent *nse)
+ void nse_readpcap(nsock_event nsee,
+ 	const unsigned char **l2_data, size_t *l2_len,
+ 	const unsigned char **l3_data, size_t *l3_len,
+-	size_t *packet_len, struct timeval *ts) 
++	size_t *packet_len, struct bpf_timeval *ts) 
+ {
+ 	msevent *nse = (msevent *)nsee;
+ 	msiod  *iod = nse->iod;

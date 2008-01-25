@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.3 2005/02/08 19:06:42 sturm Exp $
-bin/nmapfe
-bin/xnmap
-@man man/man1/nmapfe.1
-@man man/man1/xnmap.1
-share/applications/
-share/applications/nmapfe.desktop
