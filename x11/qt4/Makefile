@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2008/01/06 13:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2008/01/26 18:46:36 espie Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples for qt4
@@ -114,10 +114,24 @@ MULTI_PACKAGES=-main -html -mysql -postgresql -sqlite2 -sqlite
 
 
 .if ${FLAVOR:L:Mno_examples}
-ALL_TARGET=sub-src-all-ordered sub-tools-all-ordered
-INSTALL_TARGET=sub-src-install_subtargets-ordered \
-	sub-tools-install_subtargets-ordered install_htmldocs \
-	install_translations install_qmake install_mkspecs
+SUBTARGETS= sub-moc \
+		sub-rcc \
+		sub-uic \
+		sub-corelib \
+		sub-xml \
+		sub-gui \
+		sub-sql \
+		sub-network \
+		sub-svg \
+		sub-script \
+		sub-opengl \
+		sub-qt3support \
+		sub-uic3 \
+		sub-plugins \
+		sub-tools
+ALL_TARGET=${SUBTARGETS}
+INSTALL_TARGET=${SUBTARGETS:S/$/-install_subtargets/} \
+	install_htmldocs install_translations install_qmake install_mkspecs
 .else
 MULTI_PACKAGES+=-examples
 PROGRAMS+=	qtdemo pixeltool
@@ -134,7 +148,7 @@ commonLIB_DEPENDS=	png.>=2::graphics/png \
 			dbus-1::x11/dbus
 
 sqlWANTLIB=		m z
-sqlLIB_DEPENDS= 	QtCore.>=4,QtSql::${BUILD_PKGPATH}
+sqlLIB_DEPENDS= 	QtCore.>=4,QtSql::${BASE_PKGPATH}
 
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
@@ -166,7 +180,7 @@ WANTLIB-sqlite=		${WANTLIB} ${sqlWANTLIB}
 
 
 LIB_DEPENDS-examples=	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus,QtScript::${BUILD_PKGPATH}
+			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus,QtScript::${BASE_PKGPATH}
 WANTLIB-examples=	${WANTLIB} ${commonWANTLIB}
 
 
