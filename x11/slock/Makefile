@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/26 18:48:19 matthieu Exp $
 
 COMMENT=		simple X screen locker
 
-DISTNAME=		slock-0.6
+DISTNAME=		slock-0.7
 
 CATEGORIES=		x11
 

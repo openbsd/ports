@@ -1,0 +1,65 @@
+$OpenBSD: patch-slock_c,v 1.1 2008/01/26 18:48:19 matthieu Exp $
+--- slock.c.orig	Sat Nov 24 21:18:01 2007
++++ slock.c	Fri Jan 25 21:43:05 2008
+@@ -17,6 +17,11 @@
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ 
++#if HAVE_BSD_AUTH
++#include <login_cap.h>
++#include <bsd_auth.h>
++#endif
++
+ void
+ eprint(const char *errstr, ...) {
+ 	va_list ap;
+@@ -27,6 +32,7 @@
+ 	exit(EXIT_FAILURE);
+ }
+ 
++#ifndef HAVE_BSD_AUTH
+ const char *
+ get_password() { /* only run as root */
+ 	const char *rval;
+@@ -51,13 +57,16 @@
+ 		eprint("slock: cannot drop privileges\n");
+ 	return rval;
+ }
++#endif
+ 
+ int
+ main(int argc, char **argv) {
+ 	char curs[] = {0, 0, 0, 0, 0, 0, 0, 0};
+ 	char buf[32], passwd[256];
+ 	int num, screen;
++#ifndef HAVE_BSD_AUTH
+ 	const char *pws;
++#endif
+ 	unsigned int len;
+ 	Bool running = True;
+ 	Cursor invisible;
+@@ -71,7 +80,9 @@
+ 
+ 	if((argc > 1) && !strncmp(argv[1], "-v", 3))
+ 		eprint("slock-"VERSION", © 2006-2007 Anselm R. Garbe, Sander van Dijk\n");
++#ifndef HAVE_BSD_AUTH
+ 	pws = get_password();
++#endif
+ 	if(!(dpy = XOpenDisplay(0)))
+ 		eprint("slock: cannot open display\n");
+ 	screen = DefaultScreen(dpy);
+@@ -118,7 +129,13 @@
+ 			switch(ksym) {
+ 			case XK_Return:
+ 				passwd[len] = 0;
+-				if((running = strcmp(crypt(passwd, pws), pws)) != 0)
++#ifndef HAVE_BSD_AUTH
++				running = strcmp(crypt(passwd, pws), pws);
++#else
++				running = !auth_userokay(getlogin(), NULL,
++				    "auth-xlock", passwd);
++#endif
++				if (running != 0)
+ 					XBell(dpy, 100);
+ 				len = 0;
+ 				break;

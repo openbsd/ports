@@ -1,14 +1,12 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2007/01/19 05:24:08 steven Exp $
---- config.mk.orig	Sat Jan 13 08:12:11 2007
-+++ config.mk	Sat Jan 13 08:16:20 2007
-@@ -4,18 +4,18 @@ VERSION = 0.4
+$OpenBSD: patch-config_mk,v 1.2 2008/01/26 18:48:19 matthieu Exp $
+--- config.mk.orig	Fri Jan 25 21:48:50 2008
++++ config.mk	Fri Jan 25 21:48:38 2008
+@@ -4,24 +4,29 @@
  # Customize below to fit your system
  
  # paths
 -PREFIX = /usr/local
--MANPREFIX = ${PREFIX}/share/man
 +#PREFIX = /usr/local
-+MANPREFIX = ${PREFIX}/man
  
 -X11INC = /usr/X11R6/include
 -X11LIB = /usr/X11R6/lib
@@ -23,7 +21,20 @@ $OpenBSD: patch-config_mk,v 1.1.1.1 2007/01/19 05:24:08 steven Exp $
  
  # flags
 -CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\" -DHAVE_SHADOW_H
-+CFLAGS += ${INCS} -DVERSION=\"${VERSION}\"
++CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"  -DHAVE_BSD_AUTH
  LDFLAGS = ${LIBS}
  #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\" -DHAVE_SHADOW_H
  #LDFLAGS = -g ${LIBS}
+ 
+-# On *BSD remove -DHAVE_SHADOW_H from CFLAGS
++# On *BSD remove -DHAVE_SHADOW_H from CFLAGS and add -DHAVE_BSD_AUTH
+ # On OpenBSD and Darwin remove -lcrypt from LIBS
+ 
+ # compiler and linker
+ CC = cc
+ LD = ${CC}
++
++# Install mode. On BSD systems MODE=2755 and GROUP=auth
++# On others MODE=4755 and GROUP=root
++MODE=2755
++GROUP=auth

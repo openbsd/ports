@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1 2008/01/26 18:48:19 matthieu Exp $
+--- Makefile.orig	Sat Nov 24 21:18:01 2007
++++ Makefile	Fri Jan 25 21:46:27 2008
+@@ -41,9 +41,7 @@
+ install: all
+ 	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
+ 	@mkdir -p ${DESTDIR}${PREFIX}/bin
+-	@cp -f slock ${DESTDIR}${PREFIX}/bin
+-	@chmod 755 ${DESTDIR}${PREFIX}/bin/slock
+-	@chmod u+s ${DESTDIR}${PREFIX}/bin/slock
++	@install -c -m ${MODE} -o root -g ${GROUP} slock ${DESTDIR}${PREFIX}/bin
+ 
+ uninstall:
+ 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
