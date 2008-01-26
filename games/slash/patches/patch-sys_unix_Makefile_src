@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.1 2000/04/16 21:19:07 espie Exp $
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.2 2008/01/26 19:07:40 espie Exp $
 --- sys/unix/Makefile.src.orig	Tue Dec 10 21:20:09 1996
-+++ sys/unix/Makefile.src	Fri Apr 14 15:10:49 2000
++++ sys/unix/Makefile.src	Sun Dec 30 13:56:29 2007
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
  #	SCCS Id: @(#)Makefile.src	3.2	96/10/26
@@ -9,18 +9,19 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.1 2000/04/16 21:19:07 espie Exp $
  # newer makes predefine $(MAKE) to 'make' and do smarter processing of
  # recursive make calls if $(MAKE) is used
  # these makes allow $(MAKE) to be overridden by the environment if someone
-@@ -124,9 +125,7 @@ SYSOBJ = ioctl.o unixmain.o unixtty.o un
+@@ -124,10 +125,8 @@ SYSOBJ = ioctl.o unixmain.o unixtty.o unixunix.o
  # flags for debugging:
  # CFLAGS = -g -I../include
  
 -CFLAGS = -O -I../include
 -LFLAGS = 
--
 +CFLAGS += -DHACKDIR=\"${NHDIR}\" -DHAVE_SYS_PARAM_H -I../include 
  
+-
  # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired
  # combination of windowing systems.  Also set windowing systems in config.h.
-@@ -146,9 +145,6 @@ WINX11OBJ = Window.o dialogs.o winX.o wi
+ #
+@@ -146,9 +145,6 @@ WINX11OBJ = Window.o dialogs.o winX.o winmap.o winmenu
  	winmisc.o winstat.o wintext.o winval.o tile.o
  #
  # 

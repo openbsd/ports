@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2008/01/26 19:07:40 espie Exp $
 
 COMMENT=	dungeon explorin', hackin', game.  Hard
 DISTNAME=	se007e7f1
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termlib
 
-PKGNAME=slash-em-3.4.3.7e7f1p0
+PKGNAME=slash-em-3.4.3.7e7f1p1
 V=	3.4.3.7e7f1
 
 WRKDIST=${WRKDIR}/slashem-0.0.7E7F1
