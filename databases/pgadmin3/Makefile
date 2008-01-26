@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/11/04 19:49:25 aanriot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/26 10:20:48 sthen Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
-VERSION=	1.8.0
+VERSION=	1.8.1
 DISTNAME=	pgadmin3-${VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases devel
 
 HOMEPAGE=	http://www.pgadmin.org/
@@ -20,7 +19,7 @@ WANTLIB=	c iconv m pthread stdc++ z
 
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/pgadmin3/release/v${VERSION}/src/
 
-LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_html,wx_gtk2_stc,wx_gtk2_ogl,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.6.3:x11/wxWidgets \
+LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_html,wx_gtk2_richtext,wx_gtk2_stc,wx_gtk2_ogl,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.8.7:x11/wxWidgets \
 		pq.>=4::databases/postgresql \
 		xml2.>=6:libxml->=2.4.8:textproc/libxml \
 		xslt.>=3::textproc/libxslt
