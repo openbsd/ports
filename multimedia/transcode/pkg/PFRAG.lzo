@@ -1,7 +1,5 @@
-@comment $OpenBSD: PFRAG.lzo,v 1.2 2005/11/13 21:11:13 jakemsr Exp $
-@comment lib/transcode/export_lzo.a
+@comment $OpenBSD: PFRAG.lzo,v 1.3 2008/01/26 02:17:50 jakemsr Exp $
 @comment lib/transcode/export_lzo.la
 lib/transcode/export_lzo.so
-@comment lib/transcode/import_lzo.a
 @comment lib/transcode/import_lzo.la
 lib/transcode/import_lzo.so

@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.5 2007/05/29 05:33:16 pvalchev Exp $
---- configure.orig	Mon May 28 18:31:45 2007
-+++ configure	Mon May 28 18:32:16 2007
-@@ -9566,6 +9566,7 @@ echo "$as_me:$LINENO: result: $have_asm_altivec" >&5
- echo "${ECHO_T}$have_asm_altivec" >&6
+$OpenBSD: patch-configure,v 1.6 2008/01/26 02:17:50 jakemsr Exp $
+--- configure.orig	Sat Jan  5 06:38:47 2008
++++ configure	Sat Jan 19 20:23:08 2008
+@@ -10222,6 +10222,7 @@ fi
+ echo "${ECHO_T}$have_asm_altivec" >&6; }
  if test x"$have_asm_altivec" = x"yes" ; then
  
 +CFLAGS="$CFLAGS -maltivec"
