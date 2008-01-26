@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_codec_ffmpeg_mux_c,v 1.1 2008/01/26 11:27:05 jakemsr Exp $
+--- modules/codec/ffmpeg/mux.c.orig	Sun Jan 20 02:12:43 2008
++++ modules/codec/ffmpeg/mux.c	Sun Jan 20 02:12:57 2008
+@@ -133,7 +133,7 @@ int E_(OpenMux)( vlc_object_t *p_this )
+         return VLC_EGENERIC;
+     }
+ 
+-    p_sys->oc->pb = p_sys->io;
++    p_sys->oc->pb = &p_sys->io;
+     p_sys->oc->nb_streams = 0;
+ 
+     p_sys->b_write_header = VLC_TRUE;
