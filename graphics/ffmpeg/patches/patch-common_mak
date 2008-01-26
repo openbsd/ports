@@ -1,18 +1,39 @@
-$OpenBSD: patch-common_mak,v 1.5 2007/09/24 07:51:24 jakemsr Exp $
---- common.mak.orig	Mon Sep 10 19:18:12 2007
-+++ common.mak	Mon Sep 10 19:57:58 2007
-@@ -71,13 +71,7 @@ install-libs: $(INSTLIBTARGETS)
+$OpenBSD: patch-common_mak,v 1.6 2008/01/26 01:56:02 jakemsr Exp $
+--- common.mak.orig	Fri Dec 14 23:57:08 2007
++++ common.mak	Sun Jan 20 00:45:42 2008
+@@ -10,9 +10,10 @@ OBJS     += $(OBJS-yes)
+ ASM_OBJS += $(ASM_OBJS-yes)
+ CPP_OBJS += $(CPP_OBJS-yes)
+ 
+-CFLAGS += -DHAVE_AV_CONFIG_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE \
+-          -D_ISOC9X_SOURCE -I$(BUILD_ROOT) -I$(SRC_PATH) \
+-          -I$(SRC_PATH)/libavutil $(OPTFLAGS)
++# already added in top level Makefile
++#CFLAGS += -DHAVE_AV_CONFIG_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE \
++#          -D_ISOC9X_SOURCE -I$(BUILD_ROOT) -I$(SRC_PATH) \
++#          -I$(SRC_PATH)/libavutil $(OPTFLAGS)
+ 
+ SRCS := $(OBJS:.o=.c) $(ASM_OBJS:.o=.S) $(CPPOBJS:.o=.cpp)
+ OBJS := $(OBJS) $(ASM_OBJS) $(CPPOBJS)
+@@ -66,13 +67,14 @@ install-libs: $(INSTALL_TARGETS-yes)
  
  install-lib-shared: $(SLIBNAME)
  	install -d "$(SHLIBDIR)"
 -	install -m 755 $(SLIBNAME) "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
 -	$(STRIP) "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
 -	cd "$(SHLIBDIR)" && \
--		ln -sf $(SLIBNAME_WITH_VERSION) $(SLIBNAME_WITH_MAJOR)
+-		$(LN_S) $(SLIBNAME_WITH_VERSION) $(SLIBNAME_WITH_MAJOR)
 -	cd "$(SHLIBDIR)" && \
--		ln -sf $(SLIBNAME_WITH_VERSION) $(SLIBNAME)
+-		$(LN_S) $(SLIBNAME_WITH_VERSION) $(SLIBNAME)
 -	$(SLIB_INSTALL_EXTRA_CMD)
++#	install -m 755 $(SLIBNAME) "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
++#	$(STRIP) "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
++#	cd "$(SHLIBDIR)" && \
++#		$(LN_S) $(SLIBNAME_WITH_VERSION) $(SLIBNAME_WITH_MAJOR)
++#	cd "$(SHLIBDIR)" && \
++#		$(LN_S) $(SLIBNAME_WITH_VERSION) $(SLIBNAME)
++#	$(SLIB_INSTALL_EXTRA_CMD)
 +	install -m 755 $(SLIBNAME) $(SHLIBDIR)
  
- install-lib-static: $(LIB)
+ install-lib-static: $(LIBNAME)
  	install -d "$(LIBDIR)"

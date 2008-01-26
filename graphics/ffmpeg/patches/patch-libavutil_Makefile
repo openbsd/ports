@@ -1,8 +1,8 @@
-$OpenBSD: patch-libavutil_Makefile,v 1.4 2007/09/24 07:51:24 jakemsr Exp $
---- libavutil/Makefile.orig	Mon Sep 10 19:18:00 2007
-+++ libavutil/Makefile	Mon Sep 10 19:53:09 2007
-@@ -34,7 +34,9 @@ HEADERS = adler32.h \
-           rational.h \
+$OpenBSD: patch-libavutil_Makefile,v 1.5 2008/01/26 01:56:02 jakemsr Exp $
+--- libavutil/Makefile.orig	Fri Jan 18 01:21:41 2008
++++ libavutil/Makefile	Sat Jan 19 18:35:16 2008
+@@ -39,7 +39,9 @@ HEADERS = adler32.h \
+           sha1.h
  
  NAME=avutil
 -LIBVERSION=$(LAVUVERSION)

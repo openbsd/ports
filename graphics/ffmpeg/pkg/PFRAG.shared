@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.16 2007/09/24 07:51:24 jakemsr Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.17 2008/01/26 01:56:02 jakemsr Exp $
 @lib lib/libavcodec.so.${LIBavcodec_VERSION}
+@lib lib/libavdevice.so.${LIBavdevice_VERSION}
 @lib lib/libavformat.so.${LIBavformat_VERSION}
 @lib lib/libavutil.so.${LIBavutil_VERSION}
 @lib lib/libpostproc.so.${LIBpostproc_VERSION}

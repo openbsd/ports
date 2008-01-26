@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure,v 1.17 2007/10/19 14:32:57 jakemsr Exp $
---- configure.orig	Mon Sep 10 19:18:12 2007
-+++ configure	Fri Oct 19 03:02:40 2007
-@@ -2076,26 +2076,26 @@ Cflags: -I\${includedir}
+$OpenBSD: patch-configure,v 1.18 2008/01/26 01:56:02 jakemsr Exp $
+--- configure.orig	Fri Jan 18 01:21:47 2008
++++ configure	Sun Jan 20 00:36:03 2008
+@@ -1785,7 +1785,7 @@ enabled extra_warnings && check_cflags -Winline
+ # add some linker flags
+ check_ldflags -Wl,--warn-common
+ check_ldflags $LDLATEFLAGS
+-check_ldflags -Wl,-Bsymbolic
++# check_ldflags -Wl,-Bsymbolic
+ 
+ if enabled small; then
+     check_cflags -Os            # not all compilers support -Os
+@@ -2158,28 +2158,28 @@ Cflags: -I\${includedir}
  EOF
  }
  
@@ -11,30 +20,33 @@ $OpenBSD: patch-configure,v 1.17 2007/10/19 14:32:57 jakemsr Exp $
  
 -pkgconfig_generate libavcodec "FFmpeg codec library" "$lavc_version" "-lavcodec $extralibs" "$pkg_requires libavutil = $lavu_version" ffmpeg
 -pkgconfig_generate_uninstalled libavcodec "FFmpeg codec library" "$lavc_version" "$extralibs" "$pkg_requires libavutil = $lavu_version"
-+pkgconfig_generate libavcodec "FFmpeg codec library" "$lavc_version" "-lavcodec $LIBavcodec_EXTRALIBS" "libavutil = $lavu_version $LIBavcodec_REQUIRES" ffmpeg
-+pkgconfig_generate_uninstalled libavcodec "FFmpeg codec library" "$lavc_version" "-pthread" ""
++pkgconfig_generate libavcodec "FFmpeg codec library" "$lavc_version" "-lavcodec $LIBavcodec_EXTRALIBS" "libavutil = $lavu_version" ffmpeg
++pkgconfig_generate_uninstalled libavcodec "FFmpeg codec library" "$lavc_version" "-pthread"
  
 -pkgconfig_generate libavformat "FFmpeg container format library" "$lavf_version" "-lavformat $extralibs" "$pkg_requires libavcodec = $lavc_version" ffmpeg
 -pkgconfig_generate_uninstalled libavformat "FFmpeg container format library" "$lavf_version" "$extralibs" "$pkg_requires libavcodec = $lavc_version"
-+pkgconfig_generate libavformat "FFmpeg container format library" "$lavf_version" "-lavformat $LIBavformat_EXTRALIBS" "libavcodec = $lavc_version $LIBavformat_REQUIRES" ffmpeg
-+pkgconfig_generate_uninstalled libavformat "FFmpeg container format library" "$lavf_version" "" ""
++pkgconfig_generate libavformat "FFmpeg container format library" "$lavf_version" "-lavformat $LIBavformat_EXTRALIBS" "libavutil = $lavu_version libavcodec = $lavc_version" ffmpeg
++pkgconfig_generate_uninstalled libavformat "FFmpeg container format library" "$lavf_version"
  
+-pkgconfig_generate libavdevice "FFmpeg device handling library" "$lavd_version" "-lavdevice $extralibs" "$pkg_requires libavformat = $lavf_version" ffmpeg
+-pkgconfig_generate_uninstalled libavdevice "FFmpeg device handling library" "$lavd_version" "$extralibs" "$pkg_requires libavformat = $lavf_version"
++pkgconfig_generate libavdevice "FFmpeg device handling library" "$lavd_version" "-lavdevice $LIBavdevice_EXTRALIBS" "libavutil = $lavu_version libavformat = $lavf_version" ffmpeg
++pkgconfig_generate_uninstalled libavdevice "FFmpeg device handling library" "$lavd_version"
  if enabled pp; then
--  pkgconfig_generate libpostproc "FFmpeg post processing library" "$pp_version" -lpostproc "" postproc
-+  pkgconfig_generate libpostproc "FFmpeg post processing library" "$pp_version" "-lpostproc $LIBpostproc_EXTRALIBS" "" postproc
-   pkgconfig_generate_uninstalled libpostproc "FFmpeg post processing library" "$pp_version"
+-    pkgconfig_generate libpostproc "FFmpeg post processing library" "$pp_version" -lpostproc "" postproc
++    pkgconfig_generate libpostproc "FFmpeg post processing library" "$pp_version" "-lpostproc $LIBpostproc_EXTRALIBS" "libavutil = $lavu_version " postproc
+     pkgconfig_generate_uninstalled libpostproc "FFmpeg post processing library" "$pp_version"
  fi
  
  if enabled swscaler; then
--  pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" -lswscale "libavutil = $lavu_version" ffmpeg
--  pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" "libavutil = $lavu_version"
-+  pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" "-lswscale $LIBswscale_EXTRALIBS" "libavutil = $lavu_version" ffmpeg
-+  pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" ""
+     pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" -lswscale "libavutil = $lavu_version" ffmpeg
+-    pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" "libavutil = $lavu_version"
++    pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version"
  else
--  pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" "" "$pkg_requires libavcodec = $lavc_version" ffmpeg
--  pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" "$pkg_requires libavcodec = $lavc_version"
-+  pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" "" "" ffmpeg
-+  pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" ""
-   apply libswscale.pc sed s/^Libs:.*$/Libs:/
-   apply libswscale-uninstalled.pc sed s/^Libs:.*$/Libs:/
+-    pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" "" "$pkg_requires libavcodec = $lavc_version" ffmpeg
+-    pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version" "" "$pkg_requires libavcodec = $lavc_version"
++    pkgconfig_generate libswscale "FFmpeg image rescaling library" "$sws_version" "" "libavcodec = $lavc_version" ffmpeg
++    pkgconfig_generate_uninstalled libswscale "FFmpeg image rescaling library" "$sws_version"
+     apply libswscale.pc sed s/^Libs:.*$/Libs:/
+     apply libswscale-uninstalled.pc sed s/^Libs:.*$/Libs:/
  fi

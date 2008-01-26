@@ -1,0 +1,35 @@
+$OpenBSD: patch-libpostproc_postprocess_template_c,v 1.1 2008/01/26 01:56:02 jakemsr Exp $
+--- libpostproc/postprocess_template.c.orig	Mon Jan 21 18:24:55 2008
++++ libpostproc/postprocess_template.c	Mon Jan 21 18:25:45 2008
+@@ -3748,6 +3748,7 @@ static void RENAME(postProcess)(uint8_t src[], int src
+                                         if(y>0) RENAME(dering)(dstBlock - stride - 8, stride, &c);
+                                 }
+ 
++#if 0
+                                 if(mode & TEMP_NOISE_FILTER)
+                                 {
+                                         RENAME(tempNoiseReducer)(dstBlock-8, stride,
+@@ -3755,6 +3756,7 @@ static void RENAME(postProcess)(uint8_t src[], int src
+                                                 c.tempBluredPast[isColor] + (y>>3)*256 + (x>>3),
+                                                 c.ppMode.maxTmpNoise);
+                                 }
++#endif
+                         }
+ 
+                         dstBlock+=8;
+@@ -3772,6 +3774,7 @@ static void RENAME(postProcess)(uint8_t src[], int src
+                                 if(y > 0) RENAME(dering)(dstBlock - dstStride - 8, dstStride, &c);
+                 }
+ 
++#if 0
+                 if((mode & TEMP_NOISE_FILTER))
+                 {
+                         RENAME(tempNoiseReducer)(dstBlock-8, dstStride,
+@@ -3779,6 +3782,7 @@ static void RENAME(postProcess)(uint8_t src[], int src
+                                 c.tempBluredPast[isColor] + (y>>3)*256 + (x>>3),
+                                 c.ppMode.maxTmpNoise);
+                 }
++#endif
+ 
+                 /* did we use a tmp buffer for the last lines*/
+                 if(y+15 >= height)

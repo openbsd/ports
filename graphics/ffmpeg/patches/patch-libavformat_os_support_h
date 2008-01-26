@@ -1,0 +1,12 @@
+$OpenBSD: patch-libavformat_os_support_h,v 1.1 2008/01/26 01:56:02 jakemsr Exp $
+--- libavformat/os_support.h.orig	Sat Jan 19 19:27:17 2008
++++ libavformat/os_support.h	Sat Jan 19 19:56:55 2008
+@@ -27,7 +27,7 @@
+  * miscellaneous OS support macros and functions.
+  */
+ 
+-#ifndef HAVE_SOCKLEN_T
++#if 0
+ typedef int socklen_t;
+ #endif
+ 

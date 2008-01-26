@@ -1,0 +1,18 @@
+$OpenBSD: patch-libavdevice_Makefile,v 1.1 2008/01/26 01:56:02 jakemsr Exp $
+--- libavdevice/Makefile.orig	Fri Jan 18 01:21:47 2008
++++ libavdevice/Makefile	Sat Jan 19 18:36:15 2008
+@@ -1,12 +1,10 @@
+ include ../config.mak
+ 
+ NAME=avdevice
+-LIBVERSION=$(LAVDVERSION)
++LIBVERSION=$(LIBavdevice_VERSION)
+ LIBMAJOR=$(LAVDMAJOR)
+ 
+-EXTRALIBS := -L$(BUILD_ROOT)/libavformat -lavformat$(BUILDSUF) \
+-             -L$(BUILD_ROOT)/libavcodec  -lavcodec$(BUILDSUF) \
+-             -L$(BUILD_ROOT)/libavutil   -lavutil$(BUILDSUF) $(EXTRALIBS)
++EXTRALIBS=$(LIBavdevice_EXTRALIBS)
+ 
+ CFLAGS += -I$(SRC_PATH)/libavcodec -I$(SRC_PATH)/libavformat
+ 

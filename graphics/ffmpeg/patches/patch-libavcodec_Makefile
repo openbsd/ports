@@ -1,18 +1,19 @@
-$OpenBSD: patch-libavcodec_Makefile,v 1.15 2007/09/24 07:51:24 jakemsr Exp $
---- libavcodec/Makefile.orig	Mon Sep 10 19:17:57 2007
-+++ libavcodec/Makefile	Mon Sep 10 19:52:11 2007
-@@ -380,7 +380,7 @@ ASM_OBJS-$(HAVE_ARMV6)                 += armv4l/simpl
- OBJS-$(ARCH_SPARC)                     += sparc/dsputil_vis.o \
-                                           sparc/simple_idct_vis.o \
+$OpenBSD: patch-libavcodec_Makefile,v 1.16 2008/01/26 01:56:02 jakemsr Exp $
+--- libavcodec/Makefile.orig	Fri Jan 18 01:21:38 2008
++++ libavcodec/Makefile	Mon Jan 21 14:19:24 2008
+@@ -431,6 +431,9 @@ ALTIVEC-OBJS-$(CONFIG_WMV3_DECODER)    += ppc/vc1dsp_a
+ # -maltivec is needed in order to build AltiVec code.
+ $(ALTIVEC-OBJS-yes): CFLAGS += -maltivec -mabi=altivec
  
--sparc/dsputil_vis.o: CFLAGS += -mcpu=ultrasparc -mtune=ultrasparc
-+# sparc/dsputil_vis.o: CFLAGS += -mcpu=ultrasparc -mtune=ultrasparc
- 
- OBJS-$(HAVE_MLIB)                      += mlib/dsputil_mlib.o \
- 
-@@ -426,10 +426,11 @@ ASM_OBJS-$(ARCH_BFIN)                  += bfin/pixels_
-                                           bfin/fdct_bfin.o   \
++# compiler optimizations cause problems
++ppc/mpegvideo_altivec.o: CFLAGS += -O
++
+ # check_altivec must be built without -maltivec
+ OBJS-$(HAVE_ALTIVEC)                   += $(ALTIVEC-OBJS-yes)       \
+                                           ppc/check_altivec.o
+@@ -444,10 +447,11 @@ ASM_OBJS-$(ARCH_BFIN)                  += bfin/pixels_
                                            bfin/idct_bfin.o   \
+                                           bfin/vp3_idct_bfin.o   \
  
 -EXTRALIBS := -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) $(EXTRALIBS)
 +#EXTRALIBS := -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) $(EXTRALIBS)
@@ -24,12 +25,12 @@ $OpenBSD: patch-libavcodec_Makefile,v 1.15 2007/09/24 07:51:24 jakemsr Exp $
  LIBMAJOR=$(LAVCMAJOR)
  
  include ../common.mak
-@@ -464,7 +465,7 @@ dct-test: dct-test.o fdctref.o $(LIB)
- fft-test: fft-test.o $(LIB)
+@@ -482,7 +486,7 @@ dct-test: dct-test.o fdctref.o $(LIBNAME)
+ fft-test: fft-test.o $(LIBNAME)
  
- imgresample-test: imgresample.c $(LIB)
+ imgresample-test: imgresample.c $(LIBNAME)
 -	$(CC) $(CFLAGS) -DTEST -o $@ $^ $(EXTRALIBS)
 +	$(CC) $(CFLAGS) -DTEST -o $@ $^ $(LIBavcodec_EXTRALIBS)
  
- motion-test: motion-test.o $(LIB)
+ motion-test: motion-test.o $(LIBNAME)
  

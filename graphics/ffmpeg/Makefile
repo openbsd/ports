@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.33 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2008/01/26 01:56:02 jakemsr Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
-DISTNAME=		ffmpeg-svn-20070910
-PKGNAME=		${DISTNAME:S/-svn//}p1
-SHARED_LIBS=		avutil		4.0 \
-			avcodec		10.0 \
-			avformat	10.0 \
-			postproc	10.0
+V=			20080118
+DISTNAME=		ffmpeg-svn-${V}
+PKGNAME=		ffmpeg-${V}
+SHARED_LIBS=		avutil		5.0 \
+			avcodec		11.0 \
+			avformat	11.0 \
+			postproc	11.0 \
+			avdevice	1.0
 
 CATEGORIES=		graphics multimedia
 
@@ -46,9 +48,10 @@ CFLAGS+=-fomit-frame-pointer
 
 # inter-library dependencies for the current configuration
 LIBavutil_EXTRALIBS=-lm
-LIBavcodec_EXTRALIBS=-lavutil -lm -lz -L${LOCALBASE}/lib -lfaac -lfaad -lmp3lame -lvorbis -lvorbisenc -la52 -ltheora -logg -lx264 -pthread -Wl,-rpath,${LOCALBASE}/lib
-LIBavformat_EXTRALIBS=-lavutil -lavcodec -lossaudio -lm -L${LOCALBASE}/lib -logg -L${X11BASE}/lib -lX11 -lXext -Wl,-rpath,${LOCALBASE}/lib  -Wl,-rpath,${X11BASE}/lib
+LIBavcodec_EXTRALIBS=-lavutil -L${LOCALBASE}/lib -lfaac -lfaad -lmp3lame -lvorbis -lvorbisenc -la52 -ltheora -logg -lx264 -lz -lm -pthread -Wl,-rpath,${LOCALBASE}/lib 
+LIBavformat_EXTRALIBS=-lavutil -lavcodec -lm -Wl,-rpath,${LOCALBASE}/lib
 LIBpostproc_EXTRALIBS=-lavutil -lm
+LIBavdevice_EXTRALIBS=-lavutil -lavformat -L${X11BASE}/lib -lX11 -lXext -lossaudio -lm -Wl,-rpath,${LOCALBASE}/lib -Wl,-rpath,${X11BASE}/lib
 
 # configure wants a directory it can execute files in 
 WRKTMP=			${WRKDIR}/tmp
@@ -56,8 +59,9 @@ WRKTMP=			${WRKDIR}/tmp
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--cc=${CC} \
+			--mandir=${PREFIX}/man \
 			--disable-debug \
-			--disable-opts \
+			--disable-optimizations \
 			--enable-pp \
 			--enable-gpl \
 			--enable-pthreads \
@@ -65,20 +69,19 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-libfaac \
 			--enable-libfaad \
 			--enable-libmp3lame \
-			--enable-libogg \
 			--enable-libtheora \
 			--enable-libvorbis \
 			--enable-libx264 \
 			--enable-x11grab \
 			--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include"
+			--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			--disable-decoder=cavs
 
 CONFIGURE_ENV+=		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 			LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 			LIBavformat_EXTRALIBS="${LIBavformat_EXTRALIBS}" \
 			LIBpostproc_EXTRALIBS="${LIBpostproc_EXTRALIBS}" \
-			LIBavcodec_REQUIRES="vorbis vorbisenc theora x264" \
-			LIBavformat_REQUIRES="ogg" \
+			LIBavdevice_EXTRALIBS="${LIBavdevice_EXTRALIBS}" \
 			TMPDIR=${WRKTMP} \
 			CPPFLAGS="-I${X11BASE}/include"
 
@@ -86,16 +89,19 @@ MAKE_FLAGS=		LIBavutil_VERSION=$(LIBavutil_VERSION) \
 			LIBavcodec_VERSION=$(LIBavcodec_VERSION) \
 			LIBavformat_VERSION=$(LIBavformat_VERSION) \
 			LIBpostproc_VERSION=$(LIBpostproc_VERSION) \
+			LIBavdevice_VERSION=$(LIBavdevice_VERSION) \
 			LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 			LIBavcodec_EXTRALIBS="-L${WRKBUILD}/libavutil ${LIBavcodec_EXTRALIBS}" \
 			LIBavformat_EXTRALIBS="-L${WRKBUILD}/libavutil -L${WRKBUILD}/libavcodec ${LIBavformat_EXTRALIBS}" \
-			LIBpostproc_EXTRALIBS="-L${WRKBUILD}/libavutil ${LIBpostproc_EXTRALIBS}"
+			LIBpostproc_EXTRALIBS="-L${WRKBUILD}/libavutil ${LIBpostproc_EXTRALIBS}" \
+			LIBavdevice_EXTRALIBS="-L${WRKBUILD}/libavutil -L${WRKBUILD}/libavformat ${LIBavdevice_EXTRALIBS}"
 
 FAKE_FLAGS=		LDCONFIG=true \
 			LIBavutil_VERSION=$(LIBavutil_VERSION) \
 			LIBavcodec_VERSION=$(LIBavcodec_VERSION) \
 			LIBavformat_VERSION=$(LIBavformat_VERSION) \
-			LIBpostproc_VERSION=$(LIBpostproc_VERSION)
+			LIBpostproc_VERSION=$(LIBpostproc_VERSION) \
+			LIBavdevice_VERSION=$(LIBavdevice_VERSION)
 
 REGRESS_TARGET=		codectest
 
