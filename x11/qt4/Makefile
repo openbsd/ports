@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2008/01/26 18:46:36 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2008/01/26 20:01:22 espie Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples for qt4
@@ -16,6 +16,8 @@ PKGNAME-sqlite2=	qt4-sqlite2-${VERSION}
 PKGNAME-sqlite=		qt4-sqlite-${VERSION}
 PKGNAME-main=		qt4-${VERSION}
 FULLPKGNAME-html=	qt4-html-${VERSION}
+FULLPKGPATH-hml=	${BASE_PKGPATH},-html
+
 SHARED_LIBS=	Qt3Support 8.0 \
 		QtCore 7.0 \
 		QtDesigner 7.0 \
