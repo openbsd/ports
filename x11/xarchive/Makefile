@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/16 21:35:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/26 12:49:12 jasper Exp $
 
 COMMENT=	GTK+2 front-end for command line archiving tools
 
 DISTNAME=	xarchive-0.2.8-6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://xarchive.sourceforge.net/
@@ -20,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xarchive/}
 WANTLIB=        X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
                 Xrender c expat fontconfig freetype m z atk-1.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 glitz png pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo
+		pangoft2-1.0 pangocairo-1.0 cairo Xcomposite Xdamage
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk_pixbuf-2.0.>=1000,gdk-x11-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
