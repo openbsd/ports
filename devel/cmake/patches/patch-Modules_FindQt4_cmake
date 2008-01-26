@@ -1,16 +1,16 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.4 2007/08/25 08:35:20 espie Exp $
---- Modules/FindQt4.cmake.orig	Mon Jul 16 23:12:30 2007
-+++ Modules/FindQt4.cmake	Sun Aug 12 16:02:01 2007
-@@ -174,7 +174,7 @@ SET(QT_USE_FILE ${CMAKE_ROOT}/Modules/UseQt4.cmake)
- SET( QT_DEFINITIONS "")
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.5 2008/01/26 21:26:32 espie Exp $
+--- Modules/FindQt4.cmake.orig	Mon Jan 21 19:59:51 2008
++++ Modules/FindQt4.cmake	Sat Jan 26 20:48:28 2008
+@@ -250,7 +250,7 @@ ENDMACRO(QT_QUERY_QMAKE)
  
+ GET_FILENAME_COMPONENT(qt_install_version "[HKEY_CURRENT_USER\\Software\\trolltech\\Versions;DefaultQtVersion]" NAME)
  # check for qmake
--FIND_PROGRAM(QT_QMAKE_EXECUTABLE NAMES qmake qmake-qt4 PATHS
-+FIND_PROGRAM(QT_QMAKE_EXECUTABLE NAMES qmake4 qmake qmake-qt4 PATHS
+-FIND_PROGRAM(QT_QMAKE_EXECUTABLE NAMES qmake qmake4 qmake-qt4 PATHS
++FIND_PROGRAM(QT_QMAKE_EXECUTABLE NAMES qmake4 qmake qmake4 qmake-qt4 PATHS
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
-   $ENV{QTDIR}/bin
-@@ -884,7 +884,8 @@ IF (QT4_QMAKE_FOUND)
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\${qt_install_version};InstallDir]/bin"
+@@ -1129,7 +1129,8 @@ IF (QT4_QMAKE_FOUND)
    ###############################################
  
    SET(QT_GUI_LIB_DEPENDENCIES "")
@@ -20,7 +20,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.4 2007/08/25 08:35:20 espie Exp $
    
    # shared build needs -DQT_SHARED
    IF(NOT QT_CONFIG MATCHES "static")
-@@ -899,7 +900,37 @@ IF (QT4_QMAKE_FOUND)
+@@ -1144,7 +1145,37 @@ IF (QT4_QMAKE_FOUND)
      FIND_LIBRARY(QT_PNG_LIBRARY NAMES png)
      SET(QT_GUI_LIB_DEPENDENCIES ${QT_GUI_LIB_DEPENDENCIES} ${QT_PNG_LIBRARY})
      MARK_AS_ADVANCED(QT_PNG_LIBRARY)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Utilities_cmtar_encode_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Utilities/cmtar/encode.c.orig	Mon Jul  3 15:14:22 2006
-+++ Utilities/cmtar/encode.c	Mon Jul  3 15:16:08 2006
+$OpenBSD: patch-Utilities_cmtar_encode_c,v 1.2 2008/01/26 21:26:32 espie Exp $
+--- Utilities/cmtar/encode.c.orig	Mon Jan 21 19:59:58 2008
++++ Utilities/cmtar/encode.c	Sat Jan 26 20:47:18 2008
 @@ -91,7 +91,7 @@ th_set_path(TAR *t, char *pathname)
    t->th_buf.gnu_longname = NULL;
  
@@ -8,7 +8,7 @@ $OpenBSD: patch-Utilities_cmtar_encode_c,v 1.1.1.1 2006/07/20 09:23:13 espie Exp
 -    strcpy(suffix, "/");
 +    strlcpy(suffix, "/", sizeof suffix);
  
-   if (strlen(pathname) > T_NAMELEN && (t->options & TAR_GNU))
+   if (strlen(pathname)+strlen(suffix) >= T_NAMELEN && (t->options & TAR_GNU))
    {
 @@ -135,7 +135,7 @@ th_set_link(TAR *t, char *linkname)
    {

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/08/25 08:35:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/01/26 21:26:32 espie Exp $
 bin/ccmake
 bin/cmake
 bin/cpack
@@ -62,6 +62,7 @@ share/CMake/Modules/CMakeVS71FindMake.cmake
 share/CMake/Modules/CMakeVS7BackwardCompatibility.cmake
 share/CMake/Modules/CMakeVS7FindMake.cmake
 share/CMake/Modules/CMakeVS8FindMake.cmake
+share/CMake/Modules/CMakeVS9FindMake.cmake
 share/CMake/Modules/CPack.Description.plist.in
 share/CMake/Modules/CPack.Info.plist.in
 share/CMake/Modules/CPack.STGZ_Header.sh.in
@@ -183,7 +184,9 @@ share/CMake/Modules/Platform/CYGWIN-g77.cmake
 share/CMake/Modules/Platform/CYGWIN.cmake
 share/CMake/Modules/Platform/Darwin-xlc.cmake
 share/CMake/Modules/Platform/Darwin.cmake
+share/CMake/Modules/Platform/DragonFly.cmake
 share/CMake/Modules/Platform/FreeBSD.cmake
+share/CMake/Modules/Platform/GNU.cmake
 share/CMake/Modules/Platform/HP-UX.cmake
 share/CMake/Modules/Platform/IRIX.cmake
 share/CMake/Modules/Platform/IRIX64.cmake

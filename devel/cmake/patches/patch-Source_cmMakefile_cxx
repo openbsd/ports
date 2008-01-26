@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmMakefile_cxx,v 1.4 2007/08/25 08:35:20 espie Exp $
---- Source/cmMakefile.cxx.orig	Mon Jul 16 23:12:31 2007
-+++ Source/cmMakefile.cxx	Sun Aug 12 16:02:02 2007
-@@ -1874,9 +1874,9 @@ void cmMakefile::AddDefaultDefinitions()
+$OpenBSD: patch-Source_cmMakefile_cxx,v 1.5 2008/01/26 21:26:32 espie Exp $
+--- Source/cmMakefile.cxx.orig	Mon Jan 21 19:59:53 2008
++++ Source/cmMakefile.cxx	Sat Jan 26 20:47:17 2008
+@@ -1884,9 +1884,9 @@ void cmMakefile::AddDefaultDefinitions()
  #endif
  
    char temp[1024];

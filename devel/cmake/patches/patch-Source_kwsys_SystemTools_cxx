@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.6 2007/08/25 08:35:20 espie Exp $
---- Source/kwsys/SystemTools.cxx.orig	Mon Jul 16 23:12:33 2007
-+++ Source/kwsys/SystemTools.cxx	Sun Aug 12 16:02:02 2007
-@@ -366,7 +366,9 @@ bool SystemTools::MakeDirectory(const char* path)
+$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.7 2008/01/26 21:26:32 espie Exp $
+--- Source/kwsys/SystemTools.cxx.orig	Mon Jan 21 19:59:55 2008
++++ Source/kwsys/SystemTools.cxx	Sat Jan 26 20:47:18 2008
+@@ -371,7 +371,9 @@ bool SystemTools::MakeDirectory(const char* path)
    while((pos = dir.find('/', pos)) != kwsys_stl::string::npos)
      {
      topdir = dir.substr(0, pos);
@@ -12,7 +12,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.6 2007/08/25 08:35:20 espie Exp
      pos++;
      }
    if(dir[dir.size()-1] == '/')
-@@ -928,13 +930,14 @@ char* SystemTools::AppendStrings(const char* str1, con
+@@ -963,13 +965,14 @@ char* SystemTools::AppendStrings(const char* str1, con
      return SystemTools::DuplicateString(str1);
      }
    size_t len1 = strlen(str1);
@@ -30,7 +30,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.6 2007/08/25 08:35:20 espie Exp
    return newstr;
  }
  
-@@ -955,14 +958,15 @@ char* SystemTools::AppendStrings(
+@@ -990,14 +993,15 @@ char* SystemTools::AppendStrings(
      }
  
    size_t len1 = strlen(str1), len2 = strlen(str2);
@@ -50,7 +50,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.6 2007/08/25 08:35:20 espie Exp
    return newstr;
  }
  
-@@ -1130,8 +1134,10 @@ char* SystemTools::DuplicateString(const char* str)
+@@ -1165,8 +1169,10 @@ char* SystemTools::DuplicateString(const char* str)
  {
    if (str)
      {
@@ -63,7 +63,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.6 2007/08/25 08:35:20 espie Exp
      }
    return NULL;
  }
-@@ -1828,7 +1834,7 @@ bool SystemTools::ConvertDateMacroString(const char *s
+@@ -1863,7 +1869,7 @@ bool SystemTools::ConvertDateMacroString(const char *s
    static char month_names[] = "JanFebMarAprMayJunJulAugSepOctNovDec";
  
    char buffer[12];
@@ -72,7 +72,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.6 2007/08/25 08:35:20 espie Exp
  
    buffer[3] = 0;
    char *ptr = strstr(month_names, buffer);
-@@ -1879,7 +1885,7 @@ bool SystemTools::ConvertTimeStampMacroString(const ch
+@@ -1914,7 +1920,7 @@ bool SystemTools::ConvertTimeStampMacroString(const ch
    static char month_names[] = "JanFebMarAprMayJunJulAugSepOctNovDec";
  
    char buffer[27];
@@ -81,7 +81,7 @@ $OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.6 2007/08/25 08:35:20 espie Exp
  
    buffer[7] = 0;
    char *ptr = strstr(month_names, buffer + 4);
-@@ -3384,12 +3390,12 @@ bool SystemTools::GetShortPath(const char* path, kwsys
+@@ -3412,12 +3418,12 @@ bool SystemTools::GetShortPath(const char* path, kwsys
    // if the path passed in has quotes around it, first remove the quotes
    if (path[0] == '"' && path[strlen(path)-1] == '"')
      {

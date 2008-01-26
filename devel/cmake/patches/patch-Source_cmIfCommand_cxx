@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_cmIfCommand_cxx,v 1.5 2007/08/25 08:35:20 espie Exp $
---- Source/cmIfCommand.cxx.orig	Mon Jul 16 23:12:31 2007
-+++ Source/cmIfCommand.cxx	Sun Aug 12 16:02:01 2007
+$OpenBSD: patch-Source_cmIfCommand_cxx,v 1.6 2008/01/26 21:26:32 espie Exp $
+--- Source/cmIfCommand.cxx.orig	Mon Jan 21 19:59:52 2008
++++ Source/cmIfCommand.cxx	Sat Jan 26 20:47:17 2008
 @@ -220,8 +220,7 @@ bool cmIfCommand::IsTrue(const std::vector<std::string
    const char *def;
    const char *def2;
@@ -11,7 +11,7 @@ $OpenBSD: patch-Source_cmIfCommand_cxx,v 1.5 2007/08/25 08:35:20 espie Exp $
  
    // handle empty invocation
    if (args.size() < 1)
-@@ -374,8 +373,7 @@ bool cmIfCommand::IsTrue(const std::vector<std::string
+@@ -390,8 +389,7 @@ bool cmIfCommand::IsTrue(const std::vector<std::string
            cmOStringStream error;
            error << "Regular expression \"" << rex << "\" cannot compile";
            delete [] *errorString;
