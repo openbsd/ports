@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2007/12/16 19:13:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2008/01/26 12:13:51 landry Exp $
 
 COMMENT=		gnome music player client
 
 VERSION=		0.15.5.0
 DISTNAME=		gmpc-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		audio
 
 MAINTAINER=		Landry Breuil <gaston@gcu.info>
@@ -36,9 +36,8 @@ USE_X11=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
-BUILD_DEPENDS=		::textproc/p5-XML-Parser
-RUN_DEPENDS=		::x11/hicolor-icon-theme \
-			:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
+
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--enable-configdir \
