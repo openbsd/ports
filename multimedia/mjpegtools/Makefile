@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/26 02:10:26 jakemsr Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
-DISTNAME=		mjpegtools-1.8.0
-PKGNAME=		${DISTNAME}p3
+DISTNAME=		mjpegtools-1.9.0rc3
 CATEGORIES=		multimedia
-SHARED_LIBS=		lavfile		3.0 \
-			lavfile-1.8	3.0 \
-			lavjpeg		3.0 \
-			lavjpeg-1.8	3.0 \
-			lavplay		3.0 \
-			lavplay-1.8	3.0 \
-			mjpegutils	3.0 \
-			mjpegutils-1.8	3.0 \
-			mpeg2encpp	4.0 \
-			mpeg2encpp-1.8	4.0 \
-			mplex2		4.0 \
-			mplex2-1.8	4.0
+SHARED_LIBS=		lavfile		4.0 \
+			lavfile-1.9	4.0 \
+			lavjpeg		4.0 \
+			lavjpeg-1.9	4.0 \
+			lavplay		4.0 \
+			lavplay-1.9	4.0 \
+			mjpegutils	4.0 \
+			mjpegutils-1.9	4.0 \
+			mpeg2encpp	5.0 \
+			mpeg2encpp-1.9	5.0 \
+			mplex2		5.0 \
+			mplex2-1.9	5.0
 
 HOMEPAGE=		http://mjpeg.sourceforge.net/
 
@@ -28,8 +27,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
 
-WANTLIB=		ICE SM X11 Xext Xrender c cairo fontconfig \
-			freetype glitz m pthread stdc++ usbhid z
+WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+			Xfixes Xi Xinerama Xrandr Xrender c cairo expat \
+			fontconfig freetype glitz m pcre pthread stdc++ \
+			usbhid z
 
 MODULES+=		devel/gettext
 
@@ -44,15 +45,12 @@ LIB_DEPENDS=		SDL.>=2:sdl-*-!no_x11:devel/sdl \
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
-AUTOMAKE_VERSION=	1.9
-AUTOCONF_VERSION=	2.59
 
-SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	autoconf no-autoheader automake
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-x --with-libpng --with-libdv
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PKG_CONFIG="/usr/bin/pkg-config"
 
@@ -68,12 +66,9 @@ CONFIGURE_ARGS+=	--disable-simd-accel
 .if ${FLAVOR:L:Mquicktime}
 LIB_DEPENDS+=		quicktime.>=2::multimedia/libquicktime
 CONFIGURE_ARGS+=	--with-libquicktime
+WANTLIB+=		GL
 .else
 CONFIGURE_ARGS+=	--without-libquicktime
 .endif
-
-pre-configure:
-	cd ${WRKSRC} && env AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} automake
 
 .include <bsd.port.mk>

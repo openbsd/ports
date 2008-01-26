@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.5 2008/01/26 02:10:26 jakemsr Exp $
+--- configure.orig	Sat Jan 19 22:18:42 2008
++++ configure	Sat Jan 19 22:20:38 2008
+@@ -26853,7 +26853,7 @@ echo "${ECHO_T}no" >&6
+   fi
+ fi
+ 
+-
++if test x"opts" = x"yes"; then
+ if test x$have_x86cpu = xtrue -o x$have_ppccpu = xtrue; then
+   if test x$host_alias != x; then
+         echo "$as_me:$LINENO: checking sub-architecture settings" >&5
+@@ -26879,6 +26879,7 @@ echo $ECHO_N "checking sub-architecture settings... $E
+   fi
+   echo "$as_me:$LINENO: result: $ARCHFLAGS" >&5
+ echo "${ECHO_T}$ARCHFLAGS" >&6
++fi
+ fi
+ 
+ if test "x$enable_force_static" = "xyes" ; then
