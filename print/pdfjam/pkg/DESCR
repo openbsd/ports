@@ -1,0 +1,20 @@
+PDFjam is a small collection of shell scripts which provide a simple
+interface to some of the functionality of the excellent pdfpages
+package for pdfLaTeX.
+
+At present the utilities available are:
+- pdfnup:
+	allows PDF files to be "n-upped" in roughly the way that psnup
+	does for PostScript files.
+- pdfjoin:
+	concatenates the pages of multiple PDF files together into a
+	single file
+- pdf90:
+	rotates the pages of one or more PDF files through 90 degrees
+
+In every case, source files are left unchanged.
+
+A potential drawback of these utilities is that any hyperlinks in the
+source PDF are lost.  On the positive side, there is no appreciable
+degradation of image quality in processing PDF files with these
+programs.
