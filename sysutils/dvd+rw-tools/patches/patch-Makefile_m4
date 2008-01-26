@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_m4,v 1.1 2008/01/26 02:21:28 jakemsr Exp $
+--- Makefile.m4.orig	Thu Jan 17 22:21:13 2008
++++ Makefile.m4	Thu Jan 17 22:21:13 2008
+@@ -12,7 +12,7 @@ WARN=#-Wall	# developers are welcomed to build with `m
+ ifelse(substr(OS,0,7),[CYGWIN_],[define([OS],[MINGW32])])
+ ifelse(substr(OS,0,7),[MINGW32],[define([OS],[MINGW32])])
+ ifelse(OS,NetBSD,[define([OS],[BSD])CXXFLAGS+=-D__unix])
+-ifelse(OS,OpenBSD,[define([OS],[BSD])])
++ifelse(OS,OpenBSD,[define([OS],[BSD])LDLIBS=-pthread])
+ ifelse(OS,FreeBSD,[define([OS],[BSD])LDLIBS=-lcam])
+ ifelse(OS,IRIX64,[define([OS],[IRIX])])
+ 

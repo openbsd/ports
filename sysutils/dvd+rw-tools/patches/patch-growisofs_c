@@ -1,38 +1,21 @@
---- growisofs.c.orig	Tue Aug 24 16:02:29 2004
-+++ growisofs.c	Wed Jan 26 19:16:28 2005
-@@ -1334,7 +1334,7 @@ int builtin_dd (int infd,int outfd,off64
-     close (fd);
-     if (progress == MAP_FAILED)
- 	fprintf (stderr,":-( unable to anonymously mmap %lu?\n",
--			sizeof(*progress)),
-+			(unsigned long)sizeof(*progress)),
- 	perror (NULL), exit(FATAL_START(errno));
- 
-     if (fstat64 (infd,&sb))
-@@ -1684,7 +1684,7 @@ int main (int argc, char *argv[])
-     mkisofs_argv = malloc ((argc+3)*sizeof(char *));
-     if (mkisofs_argv == NULL)
-         fprintf (stderr,":-( unable to allocate %lu bytes: ",
--			(argc+3)*sizeof(char *)),
-+			(unsigned long) ((argc+3)*sizeof(char *))),
- 	perror (NULL), exit (FATAL_START(errno));
- 
-     env = getenv ("MKISOFS");
-@@ -1837,7 +1837,7 @@ int main (int argc, char *argv[])
- 		printf ("  front-ending to %s: ",mkisofs_argv[0]);
- 		fflush (stdout);
- 		setuid(getuid());
--		execlp (mkisofs_argv[0],mkisofs_argv[0],"-version",NULL);
-+		execlp (mkisofs_argv[0],mkisofs_argv[0],"-version",(char *)0);
- 		fprintf (stderr,"\n- %s: unable to execute %s: ",
- 				argv[0],mkisofs_argv[0]),
- 		perror (NULL), exit (FATAL_START(errno));
-@@ -2061,7 +2061,7 @@ int main (int argc, char *argv[])
+$OpenBSD: patch-growisofs_c,v 1.3 2008/01/26 02:21:28 jakemsr Exp $
+--- growisofs.c.orig	Thu Jan 17 22:18:18 2008
++++ growisofs.c	Thu Jan 17 22:18:18 2008
+@@ -2296,7 +2296,7 @@ int builtin_dd (int infd,int outfd,off64_t outoff)
  	    fcntl (in_fd,F_SETFD,rval&~FD_CLOEXEC);
  
  	    sprintf (str,"%d",in_fd);
--	    execlp (argv[0],"-umount",str,in_device,NULL);
-+	    execlp (argv[0],"-umount",str,in_device,(char *)0);
+-	    execlp (argv0,"-umount",str,in_device,NULL);
++	    execlp (argv0,"-umount",str,in_device,(char *)NULL);
  	    exit (FATAL_START(errno));
  	}
  	while (1)
+@@ -2908,7 +2908,7 @@ int main (int argc, char *argv[])
+ 		fflush (stdout);
+ #if defined(__unix) || defined(__unix__)
+ 		setuid(getuid());
+-		execlp (mkisofs_argv[0],mkisofs_argv[0],"-version",NULL);
++		execlp (mkisofs_argv[0],mkisofs_argv[0],"-version",(char *)NULL);
+ #elif defined(_WIN32)
+ 		if (_spawnl (_P_WAIT,mkisofs_argv[0],
+ 		    "mkisofs.exe","-version",NULL) != -1)
