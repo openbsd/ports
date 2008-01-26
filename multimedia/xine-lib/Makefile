@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/01/15 00:36:46 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.24 2008/01/26 04:26:00 jakemsr Exp $
 
 COMMENT-main=		multimedia decoding library
 COMMENT-esd=		esound audio output module for xine-lib
@@ -6,7 +6,7 @@ COMMENT-arts=		artsd audio output muodule for xine-lib
 
 V=			1.1.9.1
 DISTNAME=		xine-lib-${V}
-PKGNAME-main=		xine-lib-${V}
+PKGNAME-main=		xine-lib-${V}p0
 PKGNAME-esd=		xine-lib-esd-${V}
 PKGNAME-arts=		xine-lib-arts-${V}
 EXTRACT_SUFX=		.tar.bz2
@@ -27,7 +27,7 @@ MULTI_PACKAGES=		-main -esd -arts
 
 WANTLIB=		expat fontconfig freetype m z
 WANTLIB-main=		${WANTLIB} X11 Xau Xdmcp Xext Xinerama Xrandr \
-			Xrender Xv faac jpeg lcms mp3lame usbhid x264
+			Xrender Xv jpeg lcms usbhid
 WANTLIB-esd=		${WANTLIB}
 WANTLIB-arts=		${WANTLIB} pcre stdc++ glib-2.0 \
 			gmodule-2.0 gthread-2.0
@@ -43,13 +43,13 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			FLAC.>=5::audio/flac \
 			SDL.>=3::devel/sdl \
 			a52::audio/liba52 \
-			avcodec.>=7,avutil.>=2,postproc.>=7::graphics/ffmpeg \
+			avcodec.>=7,postproc.>=7::graphics/ffmpeg \
 			dvdnav.>=5::multimedia/libdvdnav \
 			faad.>=1::audio/faad \
 			mad.>=2::audio/libmad \
 			mng.>=3::graphics/libmng \
 			ogg.>=5::audio/libogg \
-			vorbis.>=4,vorbisenc.>=2::audio/libvorbis \
+			vorbis.>=4::audio/libvorbis \
 			speex.>=3::audio/speex \
 			theora.>=1::multimedia/libtheora
 
@@ -108,13 +108,14 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-external-libmad=yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			FFMPEG_CPPFLAGS="$$(pkg-config --cflags libavcodec libpostproc)" \
-			FFMPEG_LIBS="$$(pkg-config --libs libavcodec libpostproc)" \
-			FFMPEG_POSTPROC_LIBS="$$(pkg-config --libs libavcodec libpostproc)" \
+			FFMPEG_LIBS="-lavcodec -lpostproc -pthread" \
+			FFMPEG_POSTPROC_LIBS="-lavcodec -lpostproc -pthread" \
 			PTHREAD_LIBS="-pthread" \
 			PTHREAD_CFLAGS="-pthread" \
 			XV_LIBS="-lXv" \
+			EXTRA_X_LIBS="-Wl,-R,${LOCALBASE}/lib -Wl,-R,${X11BASE}/lib" \
 			ac_cv_member_audio_info_t_output_muted=yes
 
 post-patch:
