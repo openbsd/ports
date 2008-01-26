@@ -1,10 +1,10 @@
-$OpenBSD: patch-utils_yuv4toyuv_c,v 1.2 2006/02/03 04:55:56 jakemsr Exp $
---- utils/yuv4toyuv.c.orig	Mon Dec  6 09:15:48 2004
-+++ utils/yuv4toyuv.c	Sun Jan 16 18:44:29 2005
+$OpenBSD: patch-utils_yuv4toyuv_c,v 1.3 2008/01/26 02:02:50 jakemsr Exp $
+--- utils/yuv4toyuv.c.orig	Wed Feb 14 03:40:59 2007
++++ utils/yuv4toyuv.c	Sat Jan 19 21:06:11 2008
 @@ -1,5 +1,6 @@
- #include <quicktime/lqt.h>
- #include <lqt_funcprotos.h>
+ /*******************************************************************************
+  yuv4toyuv.c
 +#include "funcprotos.h"
  
- int usage(void)
- {
+  libquicktime - A library for reading and writing quicktime/avi/mp4 files.
+  http://libquicktime.sourceforge.net

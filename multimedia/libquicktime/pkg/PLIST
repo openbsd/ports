@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/02/03 04:55:56 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/01/26 02:02:50 jakemsr Exp $
 bin/libquicktime_config
 bin/lqt-config
 bin/lqt_transcode
 bin/lqtplay
-bin/lqtvrplay
+bin/qt2text
 bin/qtdechunk
 bin/qtdump
 bin/qtinfo
@@ -13,11 +13,11 @@ bin/qtyuv4toyuv
 include/lqt/
 include/lqt/colormodels.h
 include/lqt/lqt.h
-include/lqt/lqt1394_config.h
+include/lqt/lqt_atoms.h
 include/lqt/lqt_codecapi.h
 include/lqt/lqt_codecinfo.h
+include/lqt/lqt_qtvr.h
 include/lqt/lqt_version.h
-include/lqt/qtprivate.h
 include/lqt/quicktime.h
 lib/libquicktime/
 lib/libquicktime.la
@@ -26,6 +26,10 @@ lib/libquicktime.la
 lib/libquicktime/lqt_audiocodec.so
 @comment lib/libquicktime/lqt_dv.la
 lib/libquicktime/lqt_dv.so
+lib/libquicktime/lqt_faac.la
+lib/libquicktime/lqt_faac.so
+lib/libquicktime/lqt_faad2.la
+lib/libquicktime/lqt_faad2.so
 @comment lib/libquicktime/lqt_ffmpeg.la
 lib/libquicktime/lqt_ffmpeg.so
 @comment lib/libquicktime/lqt_lame.la
@@ -40,6 +44,65 @@ lib/libquicktime/lqt_rtjpeg.so
 lib/libquicktime/lqt_videocodec.so
 @comment lib/libquicktime/lqt_vorbis.la
 lib/libquicktime/lqt_vorbis.so
+lib/libquicktime/lqt_x264.la
+lib/libquicktime/lqt_x264.so
 lib/pkgconfig/libquicktime.pc
 @man man/man1/lqtplay.1
 share/aclocal/lqt.m4
+share/doc/libquicktime/
+share/doc/libquicktime/apiref/
+share/doc/libquicktime/apiref/annotated.html
+share/doc/libquicktime/apiref/colormodels_8h-source.html
+share/doc/libquicktime/apiref/dir_53292056a2aca918f7f93eaa35ab24bb.html
+share/doc/libquicktime/apiref/dir_ac6d6cfc5ba22cfe0e9bc6c52513f95c.html
+share/doc/libquicktime/apiref/dirs.html
+share/doc/libquicktime/apiref/doxygen.css
+share/doc/libquicktime/apiref/doxygen.png
+share/doc/libquicktime/apiref/files.html
+share/doc/libquicktime/apiref/functions.html
+share/doc/libquicktime/apiref/functions_vars.html
+share/doc/libquicktime/apiref/globals.html
+share/doc/libquicktime/apiref/globals_0x71.html
+share/doc/libquicktime/apiref/globals_defs.html
+share/doc/libquicktime/apiref/globals_enum.html
+share/doc/libquicktime/apiref/globals_eval.html
+share/doc/libquicktime/apiref/globals_func.html
+share/doc/libquicktime/apiref/globals_type.html
+share/doc/libquicktime/apiref/group__atoms.html
+share/doc/libquicktime/apiref/group__audio.html
+share/doc/libquicktime/apiref/group__audio__codecs.html
+share/doc/libquicktime/apiref/group__audio__decode.html
+share/doc/libquicktime/apiref/group__audio__encode.html
+share/doc/libquicktime/apiref/group__codec__parameters.html
+share/doc/libquicktime/apiref/group__codec__registry.html
+share/doc/libquicktime/apiref/group__color.html
+share/doc/libquicktime/apiref/group__general.html
+share/doc/libquicktime/apiref/group__log.html
+share/doc/libquicktime/apiref/group__metadata.html
+share/doc/libquicktime/apiref/group__multichannel.html
+share/doc/libquicktime/apiref/group__text.html
+share/doc/libquicktime/apiref/group__text__decode.html
+share/doc/libquicktime/apiref/group__text__encode.html
+share/doc/libquicktime/apiref/group__video.html
+share/doc/libquicktime/apiref/group__video__codecs.html
+share/doc/libquicktime/apiref/group__video__decode.html
+share/doc/libquicktime/apiref/group__video__encode.html
+share/doc/libquicktime/apiref/index.html
+share/doc/libquicktime/apiref/lqt_8h-source.html
+share/doc/libquicktime/apiref/lqt_8h.html
+share/doc/libquicktime/apiref/lqt__atoms_8h-source.html
+share/doc/libquicktime/apiref/lqt__codecinfo_8h-source.html
+share/doc/libquicktime/apiref/modules.html
+share/doc/libquicktime/apiref/quicktime_8h-source.html
+share/doc/libquicktime/apiref/quicktime_8h.html
+share/doc/libquicktime/apiref/structlqt__codec__info__t.html
+share/doc/libquicktime/apiref/structlqt__parameter__info__t.html
+share/doc/libquicktime/apiref/structquicktime__clap__t.html
+share/doc/libquicktime/apiref/structquicktime__colr__t.html
+share/doc/libquicktime/apiref/structquicktime__pasp__t.html
+share/doc/libquicktime/apiref/tab_b.gif
+share/doc/libquicktime/apiref/tab_l.gif
+share/doc/libquicktime/apiref/tab_r.gif
+share/doc/libquicktime/apiref/tabs.css
+share/doc/libquicktime/apiref/unionlqt__parameter__value__t.html
+share/locale/de/LC_MESSAGES/libquicktime.mo

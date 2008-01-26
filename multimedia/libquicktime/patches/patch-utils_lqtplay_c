@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_lqtplay_c,v 1.3 2006/02/03 04:55:56 jakemsr Exp $
---- utils/lqtplay.c.orig	Mon May 23 06:33:55 2005
-+++ utils/lqtplay.c	Sun Jul 31 14:26:54 2005
-@@ -912,7 +912,7 @@ static void qt_init(FILE *fp, char *file
+$OpenBSD: patch-utils_lqtplay_c,v 1.4 2008/01/26 02:02:50 jakemsr Exp $
+--- utils/lqtplay.c.orig	Sat Nov 10 16:38:12 2007
++++ utils/lqtplay.c	Sat Jan 19 21:06:11 2008
+@@ -937,7 +937,7 @@ static void qt_init(FILE *fp, char *filename)
             qt_hasaudio = 0;}
    }
    else {
