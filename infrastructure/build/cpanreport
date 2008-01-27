@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+# $OpenBSD: cpanreport,v 1.1 2008/01/27 23:28:25 simon Exp $
+# Copyright (c) 2007, 2008 Simon Bertrang <simon@openbsd.org>
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+use strict;
+use Getopt::Std qw(getopts);
+use Test::Reporter;
+
+my $distname;
+my $log;
+my %opts = (
+	'f'	=> $ENV{'REGRESS_LOGFILE'} || '-',
+	'g'	=> '',
+	's'	=> $ENV{'CPAN_REPORT_FROM'} || '',
+);
+my $reporter;
+
+sub usage {
+	die("usage: $0 [-f regress.log] -s address" .
+	    " -g fail|pass|na|unknown distname\n");
+}
+
+unless (getopts('f:g:s:', \%opts)) {
+	usage();
+}
+
+unless ($opts{'g'} && $opts{'g'} =~ m/^(?:pass|fail|na|unknown)$/o) {
+	usage();
+}
+
+unless ($distname = shift(@ARGV)) {
+	usage();
+}
+
+unless ($opts{'g'} eq 'pass') {
+	my $fh;
+
+	unless (open($fh, $opts{'f'})) {
+		die("$0: $!: $opts{'f'}\n");
+	}
+
+	{
+		local($/) = undef;
+		$log = <$fh>;
+	}
+
+	close($fh);
+}
+
+$reporter = Test::Reporter->new();
+
+$reporter->from($opts{'s'});
+$reporter->grade($opts{'g'});
+$reporter->distribution($distname);
+
+if ($log) {
+	$reporter->comments($log);
+}
+
+$reporter->write(\*STDOUT);
+
