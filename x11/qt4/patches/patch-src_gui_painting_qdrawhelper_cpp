@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_painting_qdrawhelper_cpp,v 1.1 2008/01/27 05:01:37 espie Exp $
+--- src/gui/painting/qdrawhelper.cpp.orig	Sun Jan 27 01:14:38 2008
++++ src/gui/painting/qdrawhelper.cpp	Sun Jan 27 01:14:59 2008
+@@ -5413,6 +5413,8 @@ void qInitDrawhelperAsm()
+     if (features != 0xffffffff)
+         return;
+     features = detectCPUFeatures();
++    // XXX doesn't work on OpenBSD, currently.
++    features &= ~SSE2;
+ 
+     qt_memfill32 = qt_memfill_template<quint32, quint32>;
+     qt_memfill16 = qt_memfill_quint16; //qt_memfill_template<quint16, quint16>;
