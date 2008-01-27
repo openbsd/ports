@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_video_x11_SDL_x11gl_c,v 1.12 2007/09/22 01:12:38 pvalchev Exp $
---- src/video/x11/SDL_x11gl.c.orig	Fri Jul 20 01:52:25 2007
-+++ src/video/x11/SDL_x11gl.c	Sat Sep  8 23:37:43 2007
+$OpenBSD: patch-src_video_x11_SDL_x11gl_c,v 1.13 2008/01/27 18:43:20 pvalchev Exp $
+--- src/video/x11/SDL_x11gl.c.orig	Sun Dec 30 20:48:13 2007
++++ src/video/x11/SDL_x11gl.c	Sun Jan 27 10:37:35 2008
 @@ -34,7 +34,7 @@
  #elif defined(__QNXNTO__)
  #define DEFAULT_OPENGL	"libGL.so.3"
  #elif defined(__OpenBSD__)
 -#define DEFAULT_OPENGL	"libGL.so.4.0"
-+#define DEFAULT_OPENGL	"libGL.so.5.1"
++#define DEFAULT_OPENGL	"libGL.so"
  #else
  #define DEFAULT_OPENGL	"libGL.so.1"
  #endif
