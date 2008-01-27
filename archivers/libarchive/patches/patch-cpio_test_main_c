@@ -1,8 +1,8 @@
-$OpenBSD: patch-cpio_test_main_c,v 1.2 2007/12/11 20:29:40 naddy Exp $
---- cpio/test/main.c.orig	Tue Dec 11 02:37:09 2007
-+++ cpio/test/main.c	Tue Dec 11 18:09:42 2007
-@@ -294,8 +294,8 @@ test_assert_equal_wstring(const char *file, int line,
- 		return;
+$OpenBSD: patch-cpio_test_main_c,v 1.3 2008/01/27 17:17:04 naddy Exp $
+--- cpio/test/main.c.orig	Mon Jan 21 00:08:26 2008
++++ cpio/test/main.c	Sun Jan 27 16:39:51 2008
+@@ -308,8 +308,8 @@ test_assert_equal_wstring(const char *file, int line,
+ 		return (0);
  	fprintf(stderr, "%s:%d: Assertion failed: Unicode strings not equal\n",
  	    file, line);
 -	fwprintf(stderr, L"      %s = \"%ls\"\n", e1, v1);
@@ -10,5 +10,5 @@ $OpenBSD: patch-cpio_test_main_c,v 1.2 2007/12/11 20:29:40 naddy Exp $
 +/*	fwprintf(stderr, L"      %s = \"%ls\"\n", e1, v1);
 +	fwprintf(stderr, L"      %s = \"%ls\"\n", e2, v2); */
  	report_failure(extra);
+ 	return (0);
  }
- 

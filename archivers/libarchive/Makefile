@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/11 20:29:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/27 17:17:04 naddy Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
-V=		2.4.6
+V=		2.4.12
 DISTNAME=	libarchive-$V
-SHARED_LIBS +=  archive              1.1      # .6.6
+SHARED_LIBS +=  archive              1.2      # .6.12
 CATEGORIES=	archivers
 HOMEPAGE=	http://people.freebsd.org/~kientzle/libarchive/
 

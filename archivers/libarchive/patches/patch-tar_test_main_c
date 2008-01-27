@@ -1,7 +1,7 @@
-$OpenBSD: patch-tar_test_main_c,v 1.1 2007/12/11 20:29:40 naddy Exp $
---- tar/test/main.c.orig	Tue Dec 11 02:37:00 2007
-+++ tar/test/main.c	Tue Dec 11 18:09:42 2007
-@@ -294,8 +294,8 @@ test_assert_equal_wstring(const char *file, int line,
+$OpenBSD: patch-tar_test_main_c,v 1.2 2008/01/27 17:17:04 naddy Exp $
+--- tar/test/main.c.orig	Tue Dec 18 03:52:39 2007
++++ tar/test/main.c	Sun Jan 27 16:39:51 2008
+@@ -305,8 +305,8 @@ test_assert_equal_wstring(const char *file, int line,
  		return;
  	fprintf(stderr, "%s:%d: Assertion failed: Unicode strings not equal\n",
  	    file, line);
