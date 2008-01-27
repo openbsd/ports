@@ -1,0 +1,18 @@
+$OpenBSD: patch-kcachegrind_kcachegrind_callgraphview_cpp,v 1.1.1.1 2008/01/27 05:07:18 espie Exp $
+--- kcachegrind/kcachegrind/callgraphview.cpp.orig	Wed Jan 23 14:18:18 2008
++++ kcachegrind/kcachegrind/callgraphview.cpp	Wed Jan 23 14:18:48 2008
+@@ -1105,11 +1105,12 @@ void PanningView::drawForeground(QPainter * p, const Q
+ 	if (!_zoomRect.isValid())
+ 		return;
+ 
+-	QPen pen(QColor(Qt::red).dark());
++	QColor red(Qt::red);
++	QPen pen(red.dark());
+ 	pen.setWidthF(2.0 / matrix().m11());
+ 	p->setPen(pen);
+ 
+-	QColor c(QColor(Qt::red).dark());
++	QColor c(red.dark());
+ 	c.setAlphaF(0.05);
+ 	p->setBrush(QBrush(c));
+ 

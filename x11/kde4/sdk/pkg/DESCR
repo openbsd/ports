@@ -1,0 +1,13 @@
+Applications and tools used by KDE developers:
+
+* cervisia: CVS client part
+* kapptemplate: shell script to easy the beginning of new apps
+* kexample: a sample KDE application, heavily documented
+* kbabel: an editor for *.po files
+* kbugbuster: a graphical frontend for the KDE bug reporting system
+* kdepalettes: palettes matching KDE's style for Gimp and XPaint
+* kmtrace: converts glibc's mtrace log into a full backtrace
+* kspy: displays all used QObjects in an application
+* kstartperf: startup time measurement
+* poxml: 
+* scripts: various helper scripts (see scripts/README)
