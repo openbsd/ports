@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2008/01/27 13:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2008/01/27 14:17:58 espie Exp $
 
      SUBDIR += accessibility
-#     SUBDIR += admin
+     SUBDIR += admin
 #     SUBDIR += artwork
      SUBDIR += base
      SUBDIR += base-runtime
