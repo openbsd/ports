@@ -1,0 +1,13 @@
+$OpenBSD: patch-kmouth_phrasebook_phrasebook_cpp,v 1.1 2008/01/27 13:00:19 espie Exp $
+--- kmouth/phrasebook/phrasebook.cpp.orig	Sun Jan 27 13:15:38 2008
++++ kmouth/phrasebook/phrasebook.cpp	Sun Jan 27 13:35:49 2008
+@@ -263,7 +263,8 @@ int PhraseBook::save (QWidget *parent, const QString &
+    else
+       filters = i18n("*.txt|Plain Text Files (*.txt)\n*.phrasebook|Phrase Books (*.phrasebook)\n*|All Files");
+ 
+-   KFileDialog fdlg(QString(),filters, parent);
++   QString s;
++   KFileDialog fdlg(s, filters, parent);
+    fdlg.setCaption(title);
+    fdlg.setOperationMode( KFileDialog::Saving );
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-kttsd_kttsd_speechdata_cpp,v 1.1 2008/01/27 13:00:19 espie Exp $
+--- kttsd/kttsd/speechdata.cpp.orig	Sun Jan 27 13:02:52 2008
++++ kttsd/kttsd/speechdata.cpp	Sun Jan 27 13:03:04 2008
+@@ -85,8 +85,8 @@ class SpeechDataPrivate (public)
+         }
+         pooledFilterMgrs.clear();
+ 
+-        foreach (AppData* appData, appData)
+-            delete appData;
++        foreach (AppData* dt, appData)
++            delete dt;
+         appData.clear();
+     }
+ 
