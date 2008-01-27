@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/01/22 22:01:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/27 05:09:15 espie Exp $
 
 #     SUBDIR += accessibility
 #     SUBDIR += admin
@@ -13,8 +13,10 @@
      SUBDIR += network
 #     SUBDIR += pim
      SUBDIR += pimlibs
+     SUBDIR += sdk
      SUBDIR += toys
 #     SUBDIR += utils
+     SUBDIR += webdev
      SUBDIR += qimageblitz
 
 .include <bsd.port.subdir.mk>

@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/27 05:09:15 espie Exp $
 
-COMMENT=		K Desktop Environment, toys
-DISTNAME=		kdetoys-${VERSION}
-PKGNAME=		${DISTNAME}p0
+COMMENT =		K Desktop Environment, toys
+DISTNAME =		kdetoys-${VERSION}
+PKGNAME =		${DISTNAME}
 
-LIB_DEPENDS+= 	kdecore.>=8,kde3support,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,knotifyconfig,kparts,ktexteditor,kutils,kwalletclient,phononcore::x11/kde4/libs \
-		kickermain.>=3,kscreensaver::x11/kde4/base
+LIB_DEPENDS+= 	kdecore.>=8,kde3support,kdeui,khtml,kio,kjs,knotifyconfig,kparts,ktexteditor,kfile,kpty,phonon,solid::x11/kde4/libs \
+		kscreensaver.>=8::x11/kde4/base-workspace
 
 WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xft Xi Xinerama Xpm
 WANTLIB += Xrandr Xrender Xtst c fontconfig freetype jpeg m png
 WANTLIB += pthread stdc++ util z
-WANTLIB += Qt3Support QtDBus QtGui QtSvg QtXml
+WANTLIB += Qt3Support QtDBus QtGui QtSvg QtXml QtNetwork
 WANTLIB += bz2 gif pcre pcreposix
+WANTLIB += Xfixes dbus-1 fam glib-2.0 gthread-2.0 iconv intl streamanalyzer
+WANTLIB += streams
+
 
 .include <bsd.port.mk>
