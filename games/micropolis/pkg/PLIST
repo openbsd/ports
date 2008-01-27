@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/01/20 17:41:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/01/27 16:34:32 deanna Exp $
 bin/micropolis
 libexec/sim
 share/applications/
@@ -479,7 +479,6 @@ share/micropolis/res/init.tcl
 share/micropolis/res/listbox.tcl
 share/micropolis/res/menu.tcl
 share/micropolis/res/micropolis.tcl
-@comment share/micropolis/res/micropolis.tcl.orig
 share/micropolis/res/mkindex.tcl
 share/micropolis/res/parray.tcl
 share/micropolis/res/snro.111
@@ -523,6 +522,7 @@ share/micropolis/res/sounds/nuclear.wav
 share/micropolis/res/sounds/o.wav
 share/micropolis/res/sounds/oop.wav
 share/micropolis/res/sounds/park.wav
+@comment share/micropolis/res/sounds/player
 share/micropolis/res/sounds/police.wav
 share/micropolis/res/sounds/quack.wav
 share/micropolis/res/sounds/quackquack.wav
@@ -562,7 +562,6 @@ share/micropolis/res/wfile.tcl
 share/micropolis/res/wfrob.tcl
 share/micropolis/res/wgraph.tcl
 share/micropolis/res/whead.tcl
-@comment share/micropolis/res/whead.tcl.orig
 share/micropolis/res/whelp.tcl
 share/micropolis/res/wish.tcl
 share/micropolis/res/wishx.tcl

@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/21 12:14:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2008/01/27 16:34:32 deanna Exp $
 
 COMMENT=	city-building simulation
 
-DISTNAME=	micropolis-activity-source
-WRKDIST=	${WRKDIR}/micropolis-activity
+DISTNAME=	micropolis-20080126
+WRKDIST=	${WRKDIR}/micropolis
 WRKSRC=		${WRKDIST}/src
 MAKE_FILE=	makefile
-PKGNAME=	micropolis-20080117p1
 
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.donhopkins.com/home/micropolis/
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://freedaemon.com/~deanna/
 
 MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
-EXTRACT_SUFX=	.tgz
 
 # GPLv3
 # beware of SimCity, tm of Electronic Arts

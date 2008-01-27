@@ -1,17 +1,7 @@
-$OpenBSD: patch-src_sim_headers_sim_h,v 1.1.1.1 2008/01/18 03:36:32 deanna Exp $
---- src/sim/headers/sim.h.orig	Sat Jan 12 15:15:46 2008
-+++ src/sim/headers/sim.h	Sat Jan 12 15:17:14 2008
-@@ -91,7 +91,9 @@
- #include <assert.h>
- #include <ctype.h>
- #include <setjmp.h>
-+#ifndef __OpenBSD__
- #include <malloc.h>
-+#endif
- #include <errno.h>
- #include <signal.h>
- #include <math.h>
-@@ -104,7 +106,9 @@
+$OpenBSD: patch-src_sim_headers_sim_h,v 1.2 2008/01/27 16:34:32 deanna Exp $
+--- src/sim/headers/sim.h.orig	Sat Jan 26 18:16:57 2008
++++ src/sim/headers/sim.h	Sat Jan 26 18:17:14 2008
+@@ -103,7 +103,9 @@
  #include <sys/resource.h>
  #ifndef MSDOS
  #ifndef HPUX
