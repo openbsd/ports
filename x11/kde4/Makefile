@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/01/27 14:17:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2008/01/27 14:45:26 espie Exp $
 
      SUBDIR += accessibility
      SUBDIR += admin
@@ -15,7 +15,7 @@
      SUBDIR += pimlibs
      SUBDIR += sdk
      SUBDIR += toys
-#     SUBDIR += utils
+     SUBDIR += utils
      SUBDIR += webdev
      SUBDIR += qimageblitz
 
