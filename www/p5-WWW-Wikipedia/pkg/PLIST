@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/01/16 14:52:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/01/28 21:55:41 bernd Exp $
+@conflict surfraw-*
 bin/wikipedia
 ${P5SITE}/WWW/Wikipedia/
 ${P5SITE}/WWW/Wikipedia.pm

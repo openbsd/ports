@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/28 21:55:41 bernd Exp $
 
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
 DISTNAME=		WWW-Wikipedia-1.92
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		www
 
 MODULES=		cpan

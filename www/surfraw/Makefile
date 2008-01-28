@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2008/01/18 08:48:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2008/01/28 21:55:41 bernd Exp $
 
 COMMENT=	command line interface to popular WWW search engines
 
 DISTNAME=	surfraw-2.2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 HOMEPAGE=	http://surfraw.alioth.debian.org/
 
