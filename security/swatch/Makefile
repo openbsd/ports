@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2008/01/28 23:14:22 rui Exp $
 
 COMMENT=	simple log monitoring program
 
-DISTNAME=	swatch-3.2.1
+DISTNAME=	swatch-3.2.2
 CATEGORIES=	security sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swatch/} \
-		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swatch/}
 
 HOMEPAGE=	http://swatch.sourceforge.net/
 
-MAINTAINER=	Jason Peel <jsyn@openbsd.org>
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 RUN_DEPENDS=	:p5-Date-Calc-*:devel/p5-Date-Calc \
 		:p5-File-Tail-*:devel/p5-File-Tail \
