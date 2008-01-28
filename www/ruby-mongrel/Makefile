@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/22 11:35:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/28 18:32:40 bernd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast HTTP library and server for Ruby
 
-DISTNAME=	mongrel-1.1.2
+DISTNAME=	mongrel-1.1.3
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	www
 
