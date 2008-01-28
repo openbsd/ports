@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2007/09/19 05:47:36 steven Exp $
---- configure.orig	Tue Sep  4 22:09:24 2007
-+++ configure	Tue Sep 18 17:00:40 2007
-@@ -2583,7 +2583,7 @@ do
+$OpenBSD: patch-configure,v 1.4 2008/01/28 19:48:47 bernd Exp $
+--- configure.orig	Thu Jan 10 17:54:40 2008
++++ configure	Wed Jan 23 22:21:27 2008
+@@ -2588,7 +2588,7 @@ do
    ap_last="${ap_cur}"
    ap_cur=`eval "echo ${ap_cur}"`
  done

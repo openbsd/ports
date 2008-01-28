@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/09/19 05:47:36 steven Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/01/28 19:48:47 bernd Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -102,6 +102,7 @@ lib/apache2/mod_setenvif.so
 lib/apache2/mod_speling.so
 lib/apache2/mod_ssl.so
 lib/apache2/mod_status.so
+lib/apache2/mod_substitute.so
 lib/apache2/mod_unique_id.so
 lib/apache2/mod_userdir.so
 lib/apache2/mod_usertrack.so
@@ -155,13 +156,16 @@ share/doc/apache2/bind.html.ja.euc-jp
 share/doc/apache2/bind.html.ko.euc-kr
 share/doc/apache2/caching.html
 share/doc/apache2/caching.html.en
+share/doc/apache2/caching.html.fr
 share/doc/apache2/configuring.html
 share/doc/apache2/configuring.html.de
 share/doc/apache2/configuring.html.en
+share/doc/apache2/configuring.html.fr
 share/doc/apache2/configuring.html.ja.euc-jp
 share/doc/apache2/configuring.html.ko.euc-kr
 share/doc/apache2/content-negotiation.html
 share/doc/apache2/content-negotiation.html.en
+share/doc/apache2/content-negotiation.html.fr
 share/doc/apache2/content-negotiation.html.ja.euc-jp
 share/doc/apache2/content-negotiation.html.ko.euc-kr
 share/doc/apache2/convenience.map
@@ -215,6 +219,7 @@ share/doc/apache2/glossary.html
 share/doc/apache2/glossary.html.de
 share/doc/apache2/glossary.html.en
 share/doc/apache2/glossary.html.es
+share/doc/apache2/glossary.html.fr
 share/doc/apache2/glossary.html.ko.euc-kr
 share/doc/apache2/handler.html
 share/doc/apache2/handler.html.en
@@ -314,6 +319,8 @@ share/doc/apache2/misc/
 share/doc/apache2/misc/index.html
 share/doc/apache2/misc/index.html.en
 share/doc/apache2/misc/index.html.ko.euc-kr
+share/doc/apache2/misc/password_encryptions.html
+share/doc/apache2/misc/password_encryptions.html.en
 share/doc/apache2/misc/perf-tuning.html
 share/doc/apache2/misc/perf-tuning.html.en
 share/doc/apache2/misc/perf-tuning.html.ko.euc-kr
@@ -576,6 +583,8 @@ share/doc/apache2/mod/mod_status.html
 share/doc/apache2/mod/mod_status.html.en
 share/doc/apache2/mod/mod_status.html.ja.euc-jp
 share/doc/apache2/mod/mod_status.html.ko.euc-kr
+share/doc/apache2/mod/mod_substitute.html
+share/doc/apache2/mod/mod_substitute.html.en
 share/doc/apache2/mod/mod_suexec.html
 share/doc/apache2/mod/mod_suexec.html.en
 share/doc/apache2/mod/mod_suexec.html.ja.euc-jp
@@ -728,6 +737,7 @@ share/doc/apache2/rewrite/rewrite_tech.html
 share/doc/apache2/rewrite/rewrite_tech.html.en
 share/doc/apache2/sections.html
 share/doc/apache2/sections.html.en
+share/doc/apache2/sections.html.fr
 share/doc/apache2/sections.html.ja.euc-jp
 share/doc/apache2/sections.html.ko.euc-kr
 share/doc/apache2/server-wide.html
@@ -822,6 +832,7 @@ share/doc/apache2/suexec.html.ko.euc-kr
 share/doc/apache2/upgrading.html
 share/doc/apache2/upgrading.html.de
 share/doc/apache2/upgrading.html.en
+share/doc/apache2/upgrading.html.fr
 share/doc/apache2/upgrading.html.ja.euc-jp
 share/doc/apache2/upgrading.html.ko.euc-kr
 share/doc/apache2/upgrading.html.pt-br
