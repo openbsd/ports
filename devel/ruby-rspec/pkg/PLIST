@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/22 11:32:25 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/01/28 18:24:02 bernd Exp $
 bin/spec
 bin/spec_translator
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
@@ -13,6 +13,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Object.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RCov/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RCov.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RCov/VerifyTask.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Regexp.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RspecCommandError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec.html
@@ -282,6 +283,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/runner_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/story/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/story/extensions/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/story/extensions/main_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/story/extensions/regexp_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/story/extensions/string_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/story/extensions_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/story/given_scenario_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/story/runner/
@@ -334,6 +337,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RCov/VerifyTask/cdesc-VerifyTask
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RCov/VerifyTask/define-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RCov/VerifyTask/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RCov/cdesc-RCov.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Regexp/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Regexp/arg_regexp-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Regexp/cdesc-Regexp.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Regexp/step_name-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RspecCommandError/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RspecCommandError/cdesc-RspecCommandError.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/
@@ -504,7 +511,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/Match/cdesc-Match.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/MatcherError/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/MatcherError/cdesc-MatcherError.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/ModuleMethods/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/ModuleMethods/capture_generated_description-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/ModuleMethods/cdesc-ModuleMethods.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/ModuleMethods/clear_generated_description-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/NegativeOperatorMatcher/
@@ -1082,6 +1088,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Step/matches%3f-i.yam
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Step/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Step/parse_args-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Step/perform-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Step/sanitize-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/StepGroup/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/StepGroup/%3c%3c-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/StepGroup/Given-i.yaml
@@ -1152,7 +1159,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/exit%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/run%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/run-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/arg_regexp-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/cdesc-String.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/step_name-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Symbol/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Symbol/cdesc-Symbol.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Test/
@@ -1381,6 +1390,8 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/story.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/story/extensions/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/story/extensions.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/story/extensions/main.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/story/extensions/regexp.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/story/extensions/string.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/story/given_scenario.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/story/runner/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/story/runner.rb
@@ -1573,6 +1584,8 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/spec/example_gro
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/spec/simple_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/steps/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/steps/running_rspec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/stories/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/stories/failing_story.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/test/spec_and_test_together.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/test/test_case_with_should_methods.rb
