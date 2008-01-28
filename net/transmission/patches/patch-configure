@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2008/01/11 18:15:00 naddy Exp $
---- configure.orig	Sat Jan  5 01:18:29 2008
-+++ configure	Sat Jan  5 19:53:04 2008
-@@ -20782,10 +20782,6 @@ else
+$OpenBSD: patch-configure,v 1.6 2008/01/28 15:40:43 naddy Exp $
+--- configure.orig	Thu Jan 24 16:59:10 2008
++++ configure	Thu Jan 24 16:59:29 2008
+@@ -20046,10 +20046,6 @@ else
  fi
  
  
@@ -9,6 +9,6 @@ $OpenBSD: patch-configure,v 1.5 2008/01/11 18:15:00 naddy Exp $
 -    CFLAGS="-g -Wall -W -O3 -funroll-loops"
 -    CXXFLAGS="-g -Wall -W -O3 -funroll-loops"
 -fi
- { echo "$as_me:$LINENO: checking for ANSI C header files" >&5
- echo $ECHO_N "checking for ANSI C header files... $ECHO_C" >&6; }
+ echo "$as_me:$LINENO: checking for ANSI C header files" >&5
+ echo $ECHO_N "checking for ANSI C header files... $ECHO_C" >&6
  if test "${ac_cv_header_stdc+set}" = set; then
