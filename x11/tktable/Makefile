@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/28 15:19:16 merdely Exp $
 
 COMMENT=	tk extension
 
-DISTNAME=	Tktable2.9
-PKGNAME=	Tktable-2.9
+V=		2.9
+DISTNAME=	Tktable$V
+PKGNAME=	Tktable-$Vp0
 SHARED_LIBS=	Tktable29 1.0
 CATEGORIES=	x11
 
