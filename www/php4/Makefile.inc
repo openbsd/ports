@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.33 2006/07/18 21:22:56 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.34 2008/01/28 15:40:35 robert Exp $
+
+# !!! Support for PHP 4 has been discontinued since 2007-12-31,
+# !!! and no more security fixes are going to be released after 2008-08-08.
+# !!! Consider upgrading to php5!
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
