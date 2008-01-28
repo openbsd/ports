@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/26 10:35:55 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2008/01/28 23:03:09 steven Exp $
 
 PKG_ARCH=	*
 
@@ -31,7 +31,7 @@ NO_REGRESS=	Yes
 
 do-install:
 .for p in pdf90 pdfjoin pdfnup
-	${INSTALL_PROGRAM} ${WRKSRC}/scripts/$p ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/$p ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man1/$p.1 /${PREFIX}/man/man1
 .endfor
 
