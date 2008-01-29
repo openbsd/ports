@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2007/12/28 02:09:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.58 2008/01/29 18:46:27 fgsch Exp $
 
 COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.15.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
@@ -19,7 +19,8 @@ WANTLIB=	c jpeg m png z
 MASTER_SITES=	${HOMEPAGE}pub/ \
 		${HOMEPAGE}pub/old
 
-RUN_DEPENDS=	::net/p5-SNMP_Session
+RUN_DEPENDS=	::net/p5-Net-SNMP \
+		::net/p5-SNMP_Session
 LIB_DEPENDS=	gd.>=18::graphics/gd
 
 USE_X11=	Yes
@@ -47,8 +48,8 @@ do-install:
 	    ${PREFIX}/share/doc/mrtg
 	cd ${WRKSRC}/bin; ${INSTALL_SCRIPT} cfgmaker indexmaker mrtg \
 	    ${PREFIX}/bin
-	cd ${WRKSRC}/lib/mrtg2; ${INSTALL_DATA} MRTG_lib.pm locales_mrtg.pm \
-	    ${PREFIX}/libdata/perl5/site_perl/
+	cd ${WRKSRC}/lib/mrtg2; ${INSTALL_DATA} MRTG_lib.pm Net_SNMP_util.pm \
+	    locales_mrtg.pm ${PREFIX}/libdata/perl5/site_perl/
 	cd ${WRKSRC}/lib/mrtg2/Pod; ${INSTALL_DATA} *.pm \
 	    ${PREFIX}/libdata/perl5/site_perl/Pod
 	${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2007/12/19 08:58:03 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.22 2008/01/29 18:46:27 fgsch Exp $
 @newgroup _mrtg:578
 @newuser _mrtg:578:578:daemon:MRTG account:/var/empty:/sbin/nologin
 bin/cfgmaker
@@ -6,6 +6,7 @@ bin/indexmaker
 bin/mrtg
 bin/rateup
 libdata/perl5/site_perl/MRTG_lib.pm
+libdata/perl5/site_perl/Net_SNMP_util.pm
 libdata/perl5/site_perl/Pod/
 libdata/perl5/site_perl/Pod/InputObjects.pm
 libdata/perl5/site_perl/Pod/Parser.pm
