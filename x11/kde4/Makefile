@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/01/29 00:26:25 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2008/01/29 00:28:05 espie Exp $
 
      SUBDIR += accessibility
      SUBDIR += admin
@@ -18,5 +18,6 @@
      SUBDIR += utils
      SUBDIR += webdev
      SUBDIR += qimageblitz
+     SUBDIR += extragear-plasma
 
 .include <bsd.port.subdir.mk>
