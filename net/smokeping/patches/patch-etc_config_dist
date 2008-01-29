@@ -1,16 +1,19 @@
-$OpenBSD: patch-etc_config_dist,v 1.4 2007/12/19 17:54:51 sthen Exp $
---- etc/config.dist.orig	Wed Sep 12 23:34:58 2007
-+++ etc/config.dist	Tue Oct 23 11:04:55 2007
-@@ -3,14 +3,14 @@
+$OpenBSD: patch-etc_config_dist,v 1.5 2008/01/29 19:58:39 sthen Exp $
+--- etc/config.dist.orig	Mon Jan 21 14:02:04 2008
++++ etc/config.dist	Thu Jan 24 19:57:42 2008
+@@ -3,17 +3,17 @@
  owner    = Peter Random
  contact  = some@address.nowhere
  mailhost = my.mail.host
 -sendmail = /usr/lib/sendmail
++sendmail = /usr/sbin/sendmail
+ # NOTE: do not put the Image Cache below cgi-bin
+ # since all files under cgi-bin will be executed ... this is not
+ # good for images.
 -imgcache = /home/oetiker/public_html/smokeping-ms/cache
 -imgurl   = cache
 -datadir  = /tmp/smokeping-ms/data
 -piddir  = /tmp/smokeping-ms/var
-+sendmail = /usr/sbin/sendmail
 +imgcache = /var/www/htdocs/smokeping/img
 +imgurl   = /smokeping/img
 +datadir  = /var/db/smokeping
@@ -23,7 +26,7 @@ $OpenBSD: patch-etc_config_dist,v 1.4 2007/12/19 17:54:51 sthen Exp $
  # specify this to get syslog logging
  syslogfacility = local0
  # each probe is now run in its own process
-@@ -44,7 +44,7 @@ AVERAGE  0.5 144   720
+@@ -47,7 +47,7 @@ AVERAGE  0.5 144   720
  
  *** Presentation ***
  
@@ -32,7 +35,7 @@ $OpenBSD: patch-etc_config_dist,v 1.4 2007/12/19 17:54:51 sthen Exp $
  
  + charts
  
-@@ -96,10 +96,10 @@ unison_tolerance = 2
+@@ -105,10 +105,10 @@ unison_tolerance = 2
  
  + FPing
  

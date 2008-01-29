@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/12/19 17:54:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/01/29 19:58:39 sthen Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeping
@@ -47,6 +47,7 @@ ${PMDIR}/Smokeping/probes/LDAP.pm
 ${PMDIR}/Smokeping/probes/Radius.pm
 ${PMDIR}/Smokeping/probes/RemoteFPing.pm
 ${PMDIR}/Smokeping/probes/SSH.pm
+${PMDIR}/Smokeping/probes/TCPPing.pm
 ${PMDIR}/Smokeping/probes/TacacsPlus.pm
 ${PMDIR}/Smokeping/probes/TelnetIOSPing.pm
 ${PMDIR}/Smokeping/probes/TelnetJunOSPing.pm
@@ -107,6 +108,7 @@ share/doc/smokeping/probes/LDAP.txt
 share/doc/smokeping/probes/Radius.txt
 share/doc/smokeping/probes/RemoteFPing.txt
 share/doc/smokeping/probes/SSH.txt
+share/doc/smokeping/probes/TCPPing.txt
 share/doc/smokeping/probes/TacacsPlus.txt
 share/doc/smokeping/probes/TelnetIOSPing.txt
 share/doc/smokeping/probes/TelnetJunOSPing.txt

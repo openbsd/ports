@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2007/12/19 17:54:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2008/01/29 19:58:39 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
-DISTNAME=	smokeping-2.2.7
+DISTNAME=	smokeping-2.3.0
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
