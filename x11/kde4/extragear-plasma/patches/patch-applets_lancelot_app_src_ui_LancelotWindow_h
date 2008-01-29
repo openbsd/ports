@@ -1,0 +1,12 @@
+$OpenBSD: patch-applets_lancelot_app_src_ui_LancelotWindow_h,v 1.1 2008/01/29 22:11:28 espie Exp $
+--- applets/lancelot/app/src/ui_LancelotWindow.h.orig	Sun Jan 27 17:14:11 2008
++++ applets/lancelot/app/src/ui_LancelotWindow.h	Sun Jan 27 17:15:12 2008
+@@ -343,7 +343,7 @@ class LancelotWindow (protected)
+ 
+         layoutSearch->addItem(editSearchPositioner,
+             Plasma::NodeLayout::NodeCoordinate(0.5, 0.5, 0, 0),
+-            Plasma::NodeLayout::NodeCoordinate(1.0, 0.5, -10, INFINITY)
++            Plasma::NodeLayout::NodeCoordinate(1.0, 0.5, -10, DBL_MAX)
+         );
+         layoutSearch->addItem(labelSearch,
+             Plasma::NodeLayout::NodeCoordinate(0.5, 0.5, 0, 0),
