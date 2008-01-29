@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/28 21:02:54 todd Exp $
+# $OpenBSD: Makefile,v 1.7 2008/01/29 00:24:40 espie Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 
 SHARED_LIBS +=	kaudiodevicelist     4.0      # .4.0
 SHARED_LIBS +=	kde3support          0.0      # .4.0
@@ -65,6 +65,7 @@ LIB_DEPENDS +=	Half,Iex,IlmImf,Imath::graphics/openexr \
 CONFIGURE_ARGS += -DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err"
 CONFIGURE_ARGS += -DGSSAPI_INCS:STRING="/usr/include/kerberosV"
 CONFIGURE_ARGS += -DGSSAPI_FLAVOR:STRING="HEIMDAL"
+CONFIGURE_ARGS += -DGSSAPI_FOUND:BOOL=TRUE
 
 
 WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xft Xi Xinerama Xpm
