@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2008/01/29 07:49:57 jakob Exp $
+--- Makefile.in.orig	Mon Jan 28 10:04:29 2008
++++ Makefile.in	Mon Jan 28 10:04:12 2008
+@@ -79,7 +79,8 @@ bin_PROGRAMS = scanssh
+ scanssh_SOURCES = scanssh.c atomicio.c exclude.c connecter.c xmalloc.c 	interface.c socks.c http.c telnet.c exclude.h interface.h 	scanssh.h socks.h xmalloc.h
+ 
+ scanssh_LDADD = @LIBOBJS@ @PCAPLIB@ @EVENTLIB@ @DNETLIB@
+-CFLAGS = -O2 -Wall -g
++CFLAGS ?= -O2 -g
++CFLAGS += -Wall
+ 
+ INCLUDES = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat 	@EVENTINC@ @PCAPINC@ @DNETINC@
+ 
