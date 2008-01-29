@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2008/01/24 04:54:56 okan Exp $
+# $OpenBSD: Makefile,v 1.229 2008/01/29 11:12:56 laurent Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -221,6 +221,7 @@
      SUBDIR += sablotron
      SUBDIR += scrollkeeper
      SUBDIR += sgmlformat
+     SUBDIR += sim
      SUBDIR += source-highlight
      SUBDIR += sp
      SUBDIR += spiff
