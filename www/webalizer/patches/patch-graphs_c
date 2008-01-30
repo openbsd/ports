@@ -1,84 +1,74 @@
-$OpenBSD: patch-graphs_c,v 1.1 2002/04/17 16:17:45 danh Exp $
---- graphs.c.orig	Wed Apr 17 11:07:33 2002
-+++ graphs.c	Wed Apr 17 11:11:43 2002
-@@ -137,7 +137,7 @@ int year_graph6x(  char *fname,         
-       if (data5[i] > maxval) maxval = data5[i];
+$OpenBSD: patch-graphs_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
+--- graphs.c.orig	Tue Aug  7 13:25:17 2007
++++ graphs.c	Wed Jan 30 13:42:39 2008
+@@ -30,6 +30,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <sys/types.h>
++#include <sys/socket.h>
+ #include <gd.h>
+ #include <gdfontt.h>
+ #include <gdfonts.h>
+@@ -198,7 +199,7 @@ int year_graph6x(  char *fname,            /* file nam
+       if (data7[i] > maxval) maxval = data7[i];
     }
     if (maxval <= 0) maxval = 1;
 -   sprintf(maxvaltxt, "%lu", maxval);
 +   snprintf(maxvaltxt, sizeof maxvaltxt, "%lu", maxval);
-    gdImageStringUp(im,gdFontSmall,8,26+(strlen(maxvaltxt)*6),maxvaltxt,black);
+    gdImageStringUp(im,gdFontSmall,8,26+(strlen(maxvaltxt)*6),maxvaltxt,CHLEGENDCOLOR);
  
     if (graph_legend)                          /* print color coded legends? */
-@@ -221,7 +221,7 @@ int year_graph6x(  char *fname,         
-        if (data6[i] > maxval) maxval = data6[i];
+@@ -292,7 +293,7 @@ int year_graph6x(  char *fname,            /* file nam
+        if (data8[i] > maxval) maxval = data8[i];
     }
     if (maxval <= 0) maxval = 1;
 -   sprintf(maxvaltxt, "%lu", maxval);
 +   snprintf(maxvaltxt, sizeof maxvaltxt, "%lu", maxval);
     gdImageStringUp(im, gdFontSmall,493,26+(strlen(maxvaltxt)*6),
-                    maxvaltxt, black);
+                    maxvaltxt,CHLEGENDCOLOR);
  
-@@ -257,7 +257,7 @@ int year_graph6x(  char *fname,         
-    for (i=0; i<12; i++)
-        if (data4[i] > fmaxval) fmaxval = data4[i];         /* get max val    */
+@@ -331,7 +332,7 @@ int year_graph6x(  char *fname,            /* file nam
+        if (data6[i] > fmaxval) fmaxval = data6[i];         /* get max val    */
+    }
     if (fmaxval <= 0.0) fmaxval = 1.0;
 -   sprintf(maxvaltxt, "%.0f", fmaxval);
 +   snprintf(maxvaltxt, sizeof maxvaltxt, "%.0f", fmaxval);
     gdImageStringUp(im, gdFontSmall,493,130+(strlen(maxvaltxt)*6),
-                    maxvaltxt,black);
+                    maxvaltxt,CHLEGENDCOLOR);
  
-@@ -354,7 +354,7 @@ int month_graph6(  char *fname,         
-        if (data5[i] > maxval) maxval = data5[i];
+@@ -458,7 +459,7 @@ int month_graph6(  char *fname,            /* filename
+        if (data7[i] > maxval) maxval = data7[i];
     }
     if (maxval <= 0) maxval = 1;
 -   sprintf(maxvaltxt, "%lu", maxval);
 +   snprintf(maxvaltxt, sizeof maxvaltxt, "%lu", maxval);
     gdImageStringUp(im, gdFontSmall,8,26+(strlen(maxvaltxt)*6),
-                    maxvaltxt,black);
+                    maxvaltxt,CHLEGENDCOLOR);
  
-@@ -434,7 +434,7 @@ int month_graph6(  char *fname,         
-       if (data6[i]>maxval) maxval = data6[i];
+@@ -555,7 +556,7 @@ int month_graph6(  char *fname,            /* filename
+       if (data8[i]>maxval) maxval = data8[i];
     }
     if (maxval <= 0) maxval = 1;
 -   sprintf(maxvaltxt, "%lu", maxval);
 +   snprintf(maxvaltxt, sizeof maxvaltxt, "%lu", maxval);
-    gdImageStringUp(im, gdFontSmall,8,180+(strlen(maxvaltxt)*6),
-                    maxvaltxt, black);
+    gdImageStringUp(im, gdFontSmall,8,224+(strlen(maxvaltxt)*6),
+                    maxvaltxt,CHLEGENDCOLOR);
     
-@@ -467,7 +467,7 @@ int month_graph6(  char *fname,         
-    for (i=0; i<31; i++)
-       if (data4[i]>fmaxval) fmaxval = data4[i];
+@@ -590,7 +591,7 @@ int month_graph6(  char *fname,            /* filename
+       if (data6[i]>fmaxval) fmaxval = data6[i];
+    }
     if (fmaxval <= 0.0) fmaxval = 1.0;
 -   sprintf(maxvaltxt, "%.0f", fmaxval/1024);
 +   snprintf(maxvaltxt, sizeof maxvaltxt, "%.0f", fmaxval/1024);
-    gdImageStringUp(im, gdFontSmall,8,280+(strlen(maxvaltxt)*6),
-                    maxvaltxt, black);
-    
-@@ -531,7 +531,7 @@ int day_graph3(  char *fname,
+    gdImageStringUp(im, gdFontSmall,8,352+(strlen(maxvaltxt)*6),
+                    maxvaltxt,CHLEGENDCOLOR);
+ 
+@@ -679,7 +680,7 @@ int day_graph3(  char *fname,
        if (data3[i] > maxval) maxval = data3[i];
     }
     if (maxval <= 0) maxval = 1;
 -   sprintf(maxvaltxt, "%lu", maxval);
 +   snprintf(maxvaltxt, sizeof maxvaltxt, "%lu", maxval);
     gdImageStringUp(im, gdFontSmall, 8, 26+(strlen(maxvaltxt)*6),
-                    maxvaltxt, black);
+                    maxvaltxt,CHLEGENDCOLOR);
     
-@@ -654,7 +654,7 @@ int pie_chart(char *fname, char *title, 
-          gdImageLine(im, CX, CY, gdata.x, gdata.y, black);
-          gdImageFill(im, gdata.mx, gdata.my, i+4);
- 
--         sprintf(buffer,"%s (%d%%)",legend[i], percent);
-+         snprintf(buffer, sizeof buffer, "%s (%d%%)",legend[i], percent);
-          x=480-(strlen(buffer)*7);
-          gdImageString(im,gdFontMediumBold, x+1, y+1, buffer, black);
-          gdImageString(im,gdFontMediumBold, x, y, buffer, i+4);
-@@ -667,7 +667,7 @@ int pie_chart(char *fname, char *title, 
-       gdata=*calc_arc(s_arc,1.0);
- 
-       gdImageFill(im, gdata.mx, gdata.my, white);
--      sprintf(buffer,"%s (%d%%)",msg_h_other,100-(int)(s_arc*100));
-+      snprintf(buffer, sizeof buffer, "%s (%d%%)",msg_h_other,100-(int)(s_arc*100));
-       x=480-(strlen(buffer)*7);
-       gdImageString(im,gdFontMediumBold, x+1, y+1, buffer, black);
-       gdImageString(im,gdFontMediumBold, x, y, buffer, white);

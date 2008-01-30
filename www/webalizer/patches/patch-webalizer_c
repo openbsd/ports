@@ -1,16 +1,15 @@
-$OpenBSD: patch-webalizer_c,v 1.3 2002/04/17 16:17:45 danh Exp $
---- webalizer.c.orig	Wed Apr 17 11:59:59 2002
-+++ webalizer.c	Wed Apr 17 12:05:26 2002
-@@ -263,7 +263,7 @@ int main(int argc, char *argv[])
-    /* add default index. alias */
-    add_nlist("index.",&index_alias);
+$OpenBSD: patch-webalizer_c,v 1.4 2008/01/30 20:06:48 mbalmer Exp $
+--- webalizer.c.orig	Sat Dec  8 12:49:25 2007
++++ webalizer.c	Wed Jan 30 13:44:10 2008
+@@ -38,6 +38,7 @@
+ #include <ctype.h>
+ #include <sys/utsname.h>
+ #include <sys/times.h>
++#include <sys/socket.h>
+ #include <zlib.h>
  
--   sprintf(tmp_buf,"%s/webalizer.conf",ETCDIR);
-+   snprintf(tmp_buf,sizeof tmp_buf,"%s/webalizer.conf",ETCDIR);
-    /* check for default config file */
-    if (!access("webalizer.conf",F_OK))
-       get_config("webalizer.conf");
-@@ -560,7 +560,7 @@ int main(int argc, char *argv[])
+ /* ensure getopt */
+@@ -687,7 +688,7 @@ int main(int argc, char *argv[])
        }
  
        /* got a record... */
@@ -19,7 +18,7 @@ $OpenBSD: patch-webalizer_c,v 1.3 2002/04/17 16:17:45 danh Exp $
        if (parse_record(buffer))           /* parse the record             */
        {
           /*********************************************/
-@@ -750,7 +750,7 @@ int main(int argc, char *argv[])
+@@ -891,7 +892,7 @@ int main(int argc, char *argv[])
                 if (!isurlchar(*cp1))
                 {
                    /* Save query portion in log.rec.srchstr */
@@ -28,7 +27,28 @@ $OpenBSD: patch-webalizer_c,v 1.3 2002/04/17 16:17:45 danh Exp $
                    *cp1++='\0';
                    break;
                 }
-@@ -1007,7 +1007,7 @@ int main(int argc, char *argv[])
+@@ -1269,7 +1270,7 @@ int main(int argc, char *argv[])
+ 
+          /* if this is a IPv4 address in IPv6 notation, normalize it back */
+ 	 if (strncmp(log_rec.hostname, "::ffff:", 7) == 0) {
+-	    strcpy(log_rec.hostname, log_rec.hostname+7);
++	    strlcpy(log_rec.hostname, log_rec.hostname+7, sizeof(log_rec.hostname));
+ 	 }
+ 
+          /* Save IP address for later checks */
+@@ -1307,9 +1308,9 @@ int main(int argc, char *argv[])
+                else
+                {
+                   if (strcmp(log_rec.hostname,ip)!=0)
+-                     strcpy(log_rec.hostname,ip);
++                     strlcpy(log_rec.hostname,ip,sizeof(log_rec.hostname));
+                   else
+-                     strncpy(log_rec.hostname,"Invalid",8);
++                     strlcpy(log_rec.hostname,"Invalid",sizeof(log_rec.hostname));
+                   invalid = 1; break;
+                }
+             }
+@@ -1322,7 +1323,7 @@ int main(int argc, char *argv[])
  
           /* Catch blank hostnames here */
           if (log_rec.hostname[0]=='\0')
@@ -37,7 +57,7 @@ $OpenBSD: patch-webalizer_c,v 1.3 2002/04/17 16:17:45 danh Exp $
  
           /* Ignore/Include check */
           if ( (isinlist(include_sites,log_rec.hostname)==NULL) &&
-@@ -1809,7 +1809,7 @@ void srch_string(char *ptr)
+@@ -2260,7 +2261,7 @@ void srch_string(char *ptr)
     if ( (cps=isinglist(search_list,log_rec.refer))==NULL) return; 
  
     /* Try to find query variable */

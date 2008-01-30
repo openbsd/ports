@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2008/01/30 20:06:48 mbalmer Exp $
 
 COMMENT=	web server log file analysis program
 
-DISTNAME=	webalizer-2.01-10-src
-PKGNAME=	webalizer-2.01.10p3
+DISTNAME=	webalizer-2.01-10-RB21-src
+PKGNAME=	webalizer-2.01.10p4
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb21/
 
-HOMEPAGE=	http://www.mrunix.net/webalizer/
+HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
+
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 LIB_DEPENDS=	gd.>=18::graphics/gd
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
@@ -23,7 +22,7 @@ WANTLIB=		c jpeg m png z
 
 MODULES=	converters/libiconv
 
-WRKDIST=	${WRKDIR}/webalizer-2.01-10
+WRKDIST=	${WRKDIR}/webalizer-2.01-10-RB21
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-dns
@@ -31,6 +30,10 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS="-ljpeg"
 
 NO_REGRESS=	Yes
+
+pre-patch:
+	tr -d \\r <${WRKSRC}/sample.conf >${WRKSRC}/sample.conf.new && \
+	    mv ${WRKSRC}/sample.conf.new ${WRKSRC}/sample.conf
 
 post-install:
 	cd ${PREFIX}/bin && ln -s webalizer webazolver

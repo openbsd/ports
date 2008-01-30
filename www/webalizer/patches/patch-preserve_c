@@ -1,7 +1,15 @@
-$OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
---- preserve.c.orig	Wed Oct 24 02:22:42 2001
-+++ preserve.c	Mon Jan 20 23:51:14 2003
-@@ -196,38 +196,38 @@ int save_state()
+$OpenBSD: patch-preserve_c,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
+--- preserve.c.orig	Tue Jul  3 12:19:00 2007
++++ preserve.c	Wed Jan 30 13:41:34 2008
+@@ -38,6 +38,7 @@
+ #include <ctype.h>
+ #include <sys/utsname.h>
+ #include <sys/times.h>
++#include <sys/socket.h>
+ 
+ /* ensure getopt */
+ #ifdef HAVE_GETOPT_H
+@@ -203,7 +204,7 @@ int save_state()
     /* Saving current run data... */
     if (verbose>1)
     {
@@ -10,26 +18,20 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
         cur_month,cur_day,cur_year,cur_hour,cur_min,cur_sec);
        printf("%s [%s]\n",msg_put_data,buffer);
     }
- 
-    /* first, save the easy stuff */
-    /* Header record */
--   sprintf(buffer,
-+   snprintf(buffer,sizeof buffer,
-      "# Webalizer V%s-%s Incremental Data - %02d/%02d/%04d %02d:%02d:%02d\n",
-       version,editlvl,cur_month,cur_day,cur_year,cur_hour,cur_min,cur_sec);
+@@ -216,25 +217,25 @@ int save_state()
     if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
  
     /* Current date/time          */
 -   sprintf(buffer,"%d %d %d %d %d %d\n",
-+   snprintf(buffer,sizeof buffer,"%d %d %d %d %d %d\n",
++   snprintf(buffer,sizeof(buffer),"%d %d %d %d %d %d\n",
          cur_year, cur_month, cur_day, cur_hour, cur_min, cur_sec);
     if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
  
     /* Monthly totals for sites, urls, etc... */
--   sprintf(buffer,"%lu %lu %lu %lu %lu %lu %.0f %lu %lu %lu\n",
-+   snprintf(buffer,sizeof buffer,"%lu %lu %lu %lu %lu %lu %.0f %lu %lu %lu\n",
+-   sprintf(buffer,"%lu %lu %lu %lu %lu %lu %.0f %lu %lu %lu %.0f %.0f\n",
++   snprintf(buffer,sizeof buffer,"%lu %lu %lu %lu %lu %lu %.0f %lu %lu %lu %.0f %.0f\n",
          t_hit, t_file, t_site, t_url,
-         t_ref, t_agent, t_xfer, t_page, t_visit, t_user);
+         t_ref, t_agent, t_xfer, t_page, t_visit, t_user, t_ixfer, t_oxfer);
     if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
  
     /* Daily totals for sites, urls, etc... */
@@ -41,21 +43,21 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
     /* Monthly (by day) total array */
     for (i=0;i<31;i++)
     {
--      sprintf(buffer,"%lu %lu %.0f %lu %lu %lu\n",
-+      snprintf(buffer,sizeof buffer,"%lu %lu %.0f %lu %lu %lu\n",
-         tm_hit[i],tm_file[i],tm_xfer[i],tm_site[i],tm_page[i],tm_visit[i]);
+-      sprintf(buffer,"%lu %lu %.0f %lu %lu %lu %.0f %.0f\n",
++      snprintf(buffer,sizeof buffer,"%lu %lu %.0f %lu %lu %lu %.0f %.0f\n",
+         tm_hit[i],tm_file[i],tm_xfer[i],tm_site[i],
+         tm_page[i],tm_visit[i],tm_ixfer[i],tm_oxfer[i]);
        if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
-    }
-@@ -235,7 +235,7 @@ int save_state()
+@@ -243,7 +244,7 @@ int save_state()
     /* Daily (by hour) total array */
     for (i=0;i<24;i++)
     {
--      sprintf(buffer,"%lu %lu %.0f %lu\n",
-+      snprintf(buffer,sizeof buffer,"%lu %lu %.0f %lu\n",
-         th_hit[i],th_file[i],th_xfer[i],th_page[i]);
+-      sprintf(buffer,"%lu %lu %.0f %lu %.0f %.0f\n",
++      snprintf(buffer,sizeof buffer,"%lu %lu %.0f %lu %.0f %.0f\n",
+         th_hit[i],th_file[i],th_xfer[i],th_page[i],th_ixfer[i],th_oxfer[i]);
        if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
     }
-@@ -243,7 +243,7 @@ int save_state()
+@@ -251,7 +252,7 @@ int save_state()
     /* Response codes */
     for (i=0;i<TOTAL_RC;i++)
     {
@@ -64,34 +66,34 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
        if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
     }
  
-@@ -255,7 +255,7 @@ int save_state()
+@@ -263,7 +264,7 @@ int save_state()
        uptr=um_htab[i];
        while (uptr!=NULL)
        {
--         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu\n", uptr->string,
-+         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu\n", uptr->string,
+-         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu %.0f %.0f\n", uptr->string,
++         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu %.0f %.0f\n", uptr->string,
                uptr->flag, uptr->count, uptr->files, uptr->xfer,
-               uptr->entry, uptr->exit);
+               uptr->entry, uptr->exit,uptr->ixfer, uptr->oxfer);
           if (fputs(buffer,fp)==EOF) return 1;
-@@ -272,7 +272,7 @@ int save_state()
+@@ -280,7 +281,7 @@ int save_state()
        hptr=sm_htab[i];
        while (hptr!=NULL)
        {
--         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu\n%s\n",
-+         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu\n%s\n",
+-         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu %.0f %.0f\n%s\n",
++         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu %.0f %.0f\n%s\n",
                hptr->string,
                hptr->flag,
                hptr->count,
-@@ -294,7 +294,7 @@ int save_state()
+@@ -304,7 +305,7 @@ int save_state()
        hptr=sd_htab[i];
        while (hptr!=NULL)
        {
--         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu\n%s\n",
-+         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu\n%s\n",
+-         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu %.0f %.0f\n%s\n",
++         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu %.0f %.0f\n%s\n",
                hptr->string,
                hptr->flag,
                hptr->count,
-@@ -318,7 +318,7 @@ int save_state()
+@@ -330,7 +331,7 @@ int save_state()
           rptr=rm_htab[i];
           while (rptr!=NULL)
           {
@@ -100,7 +102,7 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
                   rptr->flag, rptr->count);
              if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
              rptr=rptr->next;
-@@ -336,7 +336,7 @@ int save_state()
+@@ -348,7 +349,7 @@ int save_state()
           aptr=am_htab[i];
           while (aptr!=NULL)
           {
@@ -109,7 +111,7 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
                   aptr->flag, aptr->count);
              if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
              aptr=aptr->next;
-@@ -352,7 +352,7 @@ int save_state()
+@@ -364,7 +365,7 @@ int save_state()
        sptr=sr_htab[i];
        while (sptr!=NULL)
        {
@@ -118,16 +120,32 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
           if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
           sptr=sptr->next;
        }
-@@ -367,7 +367,7 @@ int save_state()
+@@ -379,7 +380,7 @@ int save_state()
        iptr=im_htab[i];
        while (iptr!=NULL)
        {
--         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu\n",
-+         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu\n",
+-         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu %.0f %.0f\n",
++         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu %.0f %.0f\n",
                iptr->string,
                iptr->flag,
                iptr->count,
-@@ -417,7 +417,7 @@ int restore_state()
+@@ -396,13 +397,13 @@ int save_state()
+    if (fputs("# End Of Table - usernames\n",fp)==EOF) return 1;
+ 
+    /* 404 error list */
+-   sprintf(buffer,"%lu\n",resp_counter); /* save total 404 counter */
++   snprintf(buffer,sizeof buffer,"%lu\n",resp_counter); /* save total 404 counter */
+    if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+    
+    if (fputs("# -notfounderrors- \n",fp)==EOF) return 1;  /* error exit */
+    if (resp_counter>0) {
+       for (i=0;i<resp_counter;i++) {
+-      	sprintf(buffer,"%s\n%lu\n",respnotfound[i].respurl,respnotfound[i].count);
++      	snprintf(buffer,sizeof buffer,"%s\n%lu\n",respnotfound[i].respurl,respnotfound[i].count);
+       	if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+       }
+    }
+@@ -444,7 +445,7 @@ int restore_state()
     if (verbose>1) printf("%s %s\n",msg_get_data,state_fname);
  
     /* get easy stuff */
@@ -136,7 +154,7 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
     if ((fgets(buffer,BUFSIZE,fp)) != NULL)                 /* Header record */
       {if (strncmp(buffer,tmp_buf,17)) return 99;} /* bad magic? */
     else return 1;   /* error exit */
-@@ -493,7 +493,7 @@ int restore_state()
+@@ -537,7 +538,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -145,7 +163,7 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
        tmp_buf[strlen(tmp_buf)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 10;  /* error exit */
-@@ -524,7 +524,7 @@ int restore_state()
+@@ -574,7 +575,7 @@ int restore_state()
     {
        /* Check for end of table */
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -154,7 +172,7 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 8;  /* error exit */
-@@ -564,7 +564,7 @@ int restore_state()
+@@ -620,7 +621,7 @@ int restore_state()
     {
        /* Check for end of table */
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -163,7 +181,7 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 9;  /* error exit */
-@@ -603,7 +603,7 @@ int restore_state()
+@@ -664,7 +665,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -172,7 +190,7 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 11;  /* error exit */
-@@ -628,7 +628,7 @@ int restore_state()
+@@ -689,7 +690,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -181,7 +199,7 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 12;  /* error exit */
-@@ -653,7 +653,7 @@ int restore_state()
+@@ -714,7 +715,7 @@ int restore_state()
     while ((fgets(buffer,BUFSIZE,fp)) != NULL)
     {
        if (!strncmp(buffer,"# End Of Table ",15)) break;
@@ -190,7 +208,7 @@ $OpenBSD: patch-preserve_c,v 1.2 2003/01/21 05:16:43 danh Exp $
        tmp_buf[strlen(buffer)-1]=0;
  
        if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 13;  /* error exit */
-@@ -678,7 +678,7 @@ int restore_state()
+@@ -739,7 +740,7 @@ int restore_state()
     {
        /* Check for end of table */
        if (!strncmp(buffer,"# End Of Table ",15)) break;

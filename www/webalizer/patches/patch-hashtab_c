@@ -1,6 +1,6 @@
-$OpenBSD: patch-parser_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
---- parser.c.orig	Wed Jan 30 13:41:49 2008
-+++ parser.c	Wed Jan 30 13:42:01 2008
+$OpenBSD: patch-hashtab_c,v 1.1 2008/01/30 20:06:48 mbalmer Exp $
+--- hashtab.c.orig	Wed Jan 30 13:40:22 2008
++++ hashtab.c	Wed Jan 30 13:40:33 2008
 @@ -38,6 +38,7 @@
  #include <ctype.h>
  #include <sys/utsname.h>
