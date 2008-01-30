@@ -1,16 +1,7 @@
-$OpenBSD: patch-libktorrent_net_socket_cpp,v 1.2 2007/12/27 10:24:51 sthen Exp $
---- libktorrent/net/socket.cpp.orig	Tue Nov 13 14:36:49 2007
-+++ libktorrent/net/socket.cpp	Fri Nov 16 04:42:46 2007
-@@ -38,7 +38,7 @@
- #include <sys/filio.h>
- #endif
- 
--#if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || (defined(Q_OS_FREEBSD) && __FreeBSD_version < 600020) || defined (Q_OS_SOLARIS) || defined(Q_OS_NETBSD) 
-+#if defined(Q_OS_MACX) || defined(Q_OS_DARWIN) || (defined(Q_OS_FREEBSD) && __FreeBSD_version < 600020) || defined (Q_OS_SOLARIS) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
- #define MSG_NOSIGNAL 0
- #endif
- 
-@@ -260,7 +260,7 @@ namespace net
+$OpenBSD: patch-libktorrent_net_socket_cpp,v 1.3 2008/01/30 12:18:59 sthen Exp $
+--- libktorrent/net/socket.cpp.orig	Sun Jan 27 07:05:46 2008
++++ libktorrent/net/socket.cpp	Mon Jan 28 12:19:27 2008
+@@ -264,7 +264,7 @@ namespace net
  	
  	bool Socket::setTOS(unsigned char type_of_service)
  	{
