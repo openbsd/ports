@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_xine-engine_audio_out_c,v 1.6 2008/01/15 00:36:46 jakemsr Exp $
---- src/xine-engine/audio_out.c.orig	Tue Jan  1 08:30:09 2008
-+++ src/xine-engine/audio_out.c	Wed Jan  9 01:50:22 2008
-@@ -1083,7 +1083,7 @@ static void *ao_loop (void *this_gen) {
+$OpenBSD: patch-src_xine-engine_audio_out_c,v 1.7 2008/01/30 03:52:32 jakemsr Exp $
+--- src/xine-engine/audio_out.c.orig	Thu Jan 24 18:32:41 2008
++++ src/xine-engine/audio_out.c	Tue Jan 29 11:48:37 2008
+@@ -1084,7 +1084,7 @@ static void *ao_loop (void *this_gen) {
                                  in_buf->format.rate,
                                  in_buf->format.mode) == 0 ) {
               in_buf->stream->emergency_brake = 1;
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_xine-engine_audio_out_c,v 1.6 2008/01/15 00:36:46 jakemsr Ex
           }
        }
      }
-@@ -1114,7 +1114,7 @@ static void *ao_loop (void *this_gen) {
+@@ -1115,7 +1115,7 @@ static void *ao_loop (void *this_gen) {
  	  stream = xine_list_get_value (this->streams, ite);
            if( !stream->emergency_brake ) {
              stream->emergency_brake = 1;
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_xine-engine_audio_out_c,v 1.6 2008/01/15 00:36:46 jakemsr Ex
            }
  	}
  	pthread_mutex_unlock(&this->streams_lock);
-@@ -1498,7 +1498,7 @@ static int ao_open(xine_audio_port_t *this_gen, xine_s
+@@ -1499,7 +1499,7 @@ static int ao_open(xine_audio_port_t *this_gen, xine_s
        
        if( !ret ) {
          stream->emergency_brake = 1;
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_xine-engine_audio_out_c,v 1.6 2008/01/15 00:36:46 jakemsr Ex
          return 0;
        }
      } else {
-@@ -2247,7 +2247,9 @@ xine_audio_port_t *_x_ao_new_port (xine_t *xine, ao_dr
+@@ -2252,7 +2252,9 @@ xine_audio_port_t *_x_ao_new_port (xine_t *xine, ao_dr
      this->audio_loop_running = 1;  
      
      pthread_attr_init(&pth_attrs);
