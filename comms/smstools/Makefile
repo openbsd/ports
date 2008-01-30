@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/04 10:33:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2008/01/30 14:34:01 jasper Exp $
 
 COMMENT=		gateway to send and receive SMS through GSM mobile phones
 
@@ -26,6 +26,13 @@ USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 WRKDIST=		${WRKDIR}/smstools3
 WRKSRC= 		${WRKDIST}/src
+
+# gcc 3.3.5 internal compiler error
+.if ${MACHINE_ARCH} == "mips64"
+EXTRA_CFLAGS=   -O0
+.endif
+
+MAKE_FLAGS+=		EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/smsd ${PREFIX}/bin
