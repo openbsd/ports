@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/01/30 06:19:20 jasper Exp $
+@lib lib/libgtkhex.so.${LIBgtkhex_VERSION}
