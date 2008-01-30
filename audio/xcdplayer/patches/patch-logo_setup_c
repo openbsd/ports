@@ -1,6 +1,6 @@
-$OpenBSD: patch-logo_setup_c,v 1.2 2005/11/19 15:37:10 naddy Exp $
---- logo_setup.c.orig	Tue Jan 12 11:59:46 1993
-+++ logo_setup.c	Wed Nov 16 21:18:21 2005
+$OpenBSD: patch-logo_setup_c,v 1.3 2008/01/30 15:02:51 jasper Exp $
+--- logo_setup.c.orig	Tue Jan 12 19:59:46 1993
++++ logo_setup.c	Wed Jan 30 16:01:35 2008
 @@ -28,6 +28,9 @@
  # include <stdio.h>
  
@@ -91,7 +91,7 @@ $OpenBSD: patch-logo_setup_c,v 1.2 2005/11/19 15:37:10 naddy Exp $
  		return;
  
  	    if ((cdi.state & CDROM_STATE_PAUSE) == 0)
-@@ -413,7 +419,7 @@ volume_jump_proc(scroll_widget, client_d
+@@ -413,7 +419,7 @@ volume_jump_proc(scroll_widget, client_data, percent)
  	vol = PCT2VAL(*(float *)percent);
  #else
  	vol = (*(float *) percent) * MAXVOL;

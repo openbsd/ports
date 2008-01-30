@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2007/11/13 12:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2008/01/30 15:02:51 jasper Exp $
 
 COMMENT=	CD player for X11
 DISTNAME=	xcdplayer-2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}

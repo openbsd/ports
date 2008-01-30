@@ -1,7 +1,7 @@
-$OpenBSD: patch-XCdplayer_ad,v 1.1 2003/08/24 22:15:56 naddy Exp $
---- XCdplayer.ad.orig	1993-01-12 19:59:41.000000000 +0100
-+++ XCdplayer.ad	2003-08-24 22:38:23.000000000 +0200
-@@ -19,11 +19,10 @@ XCdplayer*Font:				-misc-fixed-bold-r-no
+$OpenBSD: patch-XCdplayer_ad,v 1.2 2008/01/30 15:02:51 jasper Exp $
+--- XCdplayer.ad.orig	Tue Jan 12 19:59:41 1993
++++ XCdplayer.ad	Wed Jan 30 16:01:35 2008
+@@ -19,11 +19,10 @@ XCdplayer*Font:				-misc-fixed-bold-r-normal--13-*
  
  XCdplayer*logoLabel.foreground:		Gold
  XCdplayer*logoLabel.background:		Black
@@ -57,7 +57,7 @@ $OpenBSD: patch-XCdplayer_ad,v 1.1 2003/08/24 22:15:56 naddy Exp $
  XCdplayer*trackButton.fromVert:		versionLabel
  XCdplayer*trackButton.fromHoriz:	ledsLabel
  XCdplayer*trackButton.borderWidth:	2
-@@ -108,27 +107,22 @@ XCdplayer*timerButton.fromHoriz:	trackBu
+@@ -108,27 +107,22 @@ XCdplayer*timerButton.fromHoriz:	trackButton
  XCdplayer*timerButton.left:		ChainRight
  XCdplayer*timerButton.right:		ChainRight
  

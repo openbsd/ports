@@ -1,6 +1,6 @@
-$OpenBSD: patch-cdrom_callb_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
---- cdrom_callb.c.orig	1993-01-12 19:59:48.000000000 +0100
-+++ cdrom_callb.c	2003-08-24 23:05:11.000000000 +0200
+$OpenBSD: patch-cdrom_callb_c,v 1.2 2008/01/30 15:02:51 jasper Exp $
+--- cdrom_callb.c.orig	Tue Jan 12 19:59:48 1993
++++ cdrom_callb.c	Wed Jan 30 16:01:35 2008
 @@ -22,6 +22,9 @@
  
  # include "debug.h"
@@ -20,7 +20,7 @@ $OpenBSD: patch-cdrom_callb_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
  void		cdrom_new_disc();
  
  /*
-@@ -287,7 +292,7 @@ cb_cdrom_previous(widget, client_data, c
+@@ -287,7 +292,7 @@ cb_cdrom_previous(widget, client_data, call_data)
  	 * if playing less than replayThreshold seconds, back up to 
  	 * previous track; otherwise start at beginning of current track:
  	 */
