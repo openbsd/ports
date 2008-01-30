@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/05/18 12:22:46 henning Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/01/30 20:55:59 mbalmer Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
@@ -8,29 +8,28 @@
 bin/al175
 bin/apcsmart
 bin/bcmxcp
+bin/bcmxcp_usb
 bin/belkin
 bin/belkinunv
 bin/bestfcom
 bin/bestuferrups
 bin/bestups
-bin/blazer
 bin/cpsups
 bin/cyberpower
-bin/esupssmart
+bin/dummy-ups
 bin/etapro
 bin/everups
-bin/fentonups
 bin/gamatronic
 bin/genericups
-bin/ippon
 bin/isbmex
 bin/liebert
 bin/masterguard
 bin/megatec
+bin/megatec_usb
 bin/metasys
 bin/mge-shut
 bin/mge-utalk
-bin/mustek
+bin/newmge-shut
 bin/nitram
 bin/oneac
 bin/optiups
@@ -38,9 +37,10 @@ bin/powercom
 bin/powerpanel
 bin/rhino
 bin/safenet
-bin/sms
+bin/skel
 bin/solis
 bin/tripplite
+bin/tripplite_usb
 bin/tripplitesu
 bin/upsc
 bin/upscmd
@@ -48,12 +48,15 @@ bin/upscode2
 bin/upsdrvctl
 bin/upslog
 bin/upsrw
+bin/upssched-cmd
+bin/usbhid-ups
 bin/victronups
 @comment html/
 @comment html/bottom.html
 @comment html/header.html
 @comment html/index.html
 html/nut-banner.png
+lib/pkgconfig/
 @man man/man5/hosts.conf.5
 @man man/man5/ups.conf.5
 @man man/man5/upsd.conf.5
@@ -65,6 +68,7 @@ html/nut-banner.png
 @man man/man8/al175.8
 @man man/man8/apcsmart.8
 @man man/man8/bcmxcp.8
+@man man/man8/bcmxcp_usb.8
 @man man/man8/belkin.8
 @man man/man8/belkinunv.8
 @man man/man8/bestfcom.8
@@ -75,27 +79,27 @@ html/nut-banner.png
 @man man/man8/dummy-ups.8
 @man man/man8/etapro.8
 @man man/man8/everups.8
-@man man/man8/fentonups.8
+@man man/man8/gamatronic.8
 @man man/man8/genericups.8
-@man man/man8/ippon.8
 @man man/man8/isbmex.8
 @man man/man8/liebert.8
 @man man/man8/masterguard.8
 @man man/man8/megatec.8
+@man man/man8/megatec_usb.8
 @man man/man8/metasys.8
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
-@man man/man8/mustek.8
 @man man/man8/nitram.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
 @man man/man8/optiups.8
 @man man/man8/powercom.8
 @man man/man8/powerpanel.8
+@man man/man8/rhino.8
 @man man/man8/safenet.8
-@man man/man8/sms.8
 @man man/man8/solis.8
 @man man/man8/tripplite.8
+@man man/man8/tripplite_usb.8
 @man man/man8/tripplitesu.8
 @man man/man8/upsc.8
 @man man/man8/upscmd.8
@@ -109,12 +113,16 @@ html/nut-banner.png
 @man man/man8/upssched.8
 @man man/man8/upsset.cgi.8
 @man man/man8/upsstats.cgi.8
+@man man/man8/usbhid-ups.8
 @man man/man8/victronups.8
 sbin/upsd
 sbin/upsmon
 sbin/upssched
 share/doc/nut/
 share/doc/nut/FAQ
+share/doc/nut/Makefile
+share/doc/nut/Makefile.am
+share/doc/nut/Makefile.in
 share/doc/nut/README
 share/doc/nut/acpi.txt
 share/doc/nut/al175-vars.txt
@@ -138,9 +146,11 @@ share/doc/nut/design.txt
 share/doc/nut/developers.txt
 share/doc/nut/hid-subdrivers.txt
 share/doc/nut/ideas.txt
+share/doc/nut/macros.txt
 share/doc/nut/megatec.txt
 share/doc/nut/new-drivers.txt
 share/doc/nut/new-names.txt
+share/doc/nut/nut-hal.txt
 share/doc/nut/osd-notify.txt
 share/doc/nut/pager.txt
 share/doc/nut/powersaving.txt

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2007/10/02 09:21:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2008/01/30 20:55:59 mbalmer Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPSs via SNMP
 
-DISTNAME=		nut-2.0.5
+DISTNAME=		nut-2.2.1
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
 CATEGORIES=		sysutils
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.networkupstools.org/
 
 MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
-MASTER_SITES=		http://random.networkupstools.org/source/2.0/
+MASTER_SITES=		${HOMEPAGE}source/2.2/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,30 +26,34 @@ NUT_USER=		_ups
 NUT_ID=			529
 SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID
 
-CONFIGURE_STYLE=	gnu old
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/nut \
 			--datadir=${PREFIX}/share/ups \
 			--mandir=${PREFIX}/man \
 			--with-statepath=/var/db/nut \
 			--with-user=${NUT_USER} \
+			--with-group=${NUT_USER} \
 			--with-ssl \
 			--enable-strip
-
 ALL_TARGET=		all
 INSTALL_TARGET=		install
 
-PSEUDO_FLAVORS=		no_cgi snmp
+PSEUDO_FLAVORS=		snmp
 FLAVOR?=
-MULTI_PACKAGES=		-main
-.if !${FLAVOR:L:Mno_cgi}
-MULTI_PACKAGES+=	-cgi
-.endif
+MULTI_PACKAGES=		-main -cgi
 .if ${FLAVOR:L:Msnmp}
 MULTI_PACKAGES+=	-snmp
 .endif
 
+LIB_DEPENDS-main=	usb::devel/libusb
+
 PREFIX-cgi=		${WEB_ROOT}
-WANTLIB-cgi=
+LIB_DEPENDS-cgi=	gd::graphics/gd \
+			iconv::converters/libiconv \
+			jpeg::graphics/jpeg
+
+WANTLIB-cgi=		X11 Xau Xdmcp c crypto expat fontconfig freetype m
+WANTLIB-cgi+=		ssl z png
 
 LIB_DEPENDS-snmp=	netsnmp::net/net-snmp
 
@@ -58,16 +62,9 @@ BUILD_DEPENDS+=		:gd->=1.8.3:graphics/gd
 
 CONFIGURE_ARGS+=	--with-cgi \
 			--with-cgipath="${WEB_ROOT}/cgi-bin/nut" \
-			--with-gd-libs="-L${PREFIX}/lib -lgd -lpng -lz -ljpeg -lm" \
+			--with-gd-libs="-L/usr/X11R6/lib -L${PREFIX}/lib \
+			    -lgd -lpng -lz -ljpeg -lm -lfreetype -lX11" \
 			--with-gd-includes="-I${PREFIX}/include"
-
-ALL_TARGET+=		cgi
-INSTALL_TARGET+=	install-cgi
-.endif
-
-.if ${MULTI_PACKAGES:M-snmp}
-ALL_TARGET+=		snmp
-INSTALL_TARGET+=	install-snmp
 .endif
 
 NO_REGRESS=		Yes
@@ -77,13 +74,15 @@ post-install:
 	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/nut/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nut/
 .for file in upsmon.conf upsd.conf upsd.users upssched.conf ups.conf
-	${INSTALL_DATA} ${WRKBUILD}/conf/${file} ${PREFIX}/share/examples/nut/
+	${INSTALL_DATA} ${WRKBUILD}/conf/${file}.sample \
+	    ${PREFIX}/share/examples/nut/${file}
 .endfor
 # Yes, we install the CGI config files even if we're not building CGI support,
 # it will get properly handled by packaging.
 	${INSTALL_DATA_DIR} ${WRKINST}${WEB_ROOT}/conf/nut/
 .for file in hosts.conf upsset.conf upsstats.html upsstats-single.html
-	${INSTALL_DATA} ${WRKBUILD}/conf/${file} ${WRKINST}${WEB_ROOT}/conf/nut/${file}.sample
+	${INSTALL_DATA} ${WRKBUILD}/conf/${file}.sample \
+	    ${WRKINST}${WEB_ROOT}/conf/nut/${file}.sample
 .endfor
 
 .include <bsd.port.mk>

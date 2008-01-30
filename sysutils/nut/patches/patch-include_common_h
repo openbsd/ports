@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_common_h,v 1.4 2007/05/18 12:22:46 henning Exp $
---- include/common.h.orig	Thu Jan  4 21:19:27 2007
-+++ include/common.h	Thu Jan 18 00:41:09 2007
-@@ -81,6 +81,9 @@ void syslogbit_set(void);
+$OpenBSD: patch-include_common_h,v 1.5 2008/01/30 20:55:59 mbalmer Exp $
+--- include/common.h.orig	Sun May 27 16:07:56 2007
++++ include/common.h	Wed Aug  1 12:59:20 2007
+@@ -82,6 +82,9 @@ void syslogbit_set(void);
  /* Return the default path for the directory containing configuration files */
  const char * confpath(void);
  

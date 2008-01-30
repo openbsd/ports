@@ -1,18 +1,18 @@
-$OpenBSD: patch-clients_upsset_c,v 1.5 2007/05/18 12:22:46 henning Exp $
---- clients/upsset.c.orig	Mon Jul 10 14:33:14 2006
-+++ clients/upsset.c	Fri May 18 13:54:23 2007
-@@ -202,7 +202,7 @@ static void do_pickups(const char *currfunc)
+$OpenBSD: patch-clients_upsset_c,v 1.6 2008/01/30 20:55:59 mbalmer Exp $
+--- clients/upsset.c.orig	Sat May 26 16:24:26 2007
++++ clients/upsset.c	Wed Aug  1 12:59:05 2007
+@@ -192,7 +192,7 @@ static void do_pickups(const char *currfunc)
  	char	hostfn[SMALLBUF];
- 	PCONF_CTX	ctx;
+ 	PCONF_CTX_t	ctx;
  
 -	snprintf(hostfn, sizeof(hostfn), "%s/hosts.conf", confpath());
 +	snprintf(hostfn, sizeof(hostfn), "%s/hosts.conf", cgiconfpath());
  
  	printf("<FORM METHOD=\"POST\" ACTION=\"upsset.cgi\">\n");
  
-@@ -989,7 +989,7 @@ static void check_conf(void)
+@@ -979,7 +979,7 @@ static void check_conf(void)
  	char	fn[SMALLBUF];
- 	PCONF_CTX	ctx;
+ 	PCONF_CTX_t	ctx;
  
 -	snprintf(fn, sizeof(fn), "%s/upsset.conf", confpath());
 +	snprintf(fn, sizeof(fn), "%s/upsset.conf", cgiconfpath());
