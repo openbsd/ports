@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2008/01/30 14:01:35 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
-DISTNAME=		liferea-1.4.10
+DISTNAME=		liferea-1.4.11
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
@@ -26,10 +26,10 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liferea/}
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			textproc/intltool
 
-BUILD_DEPENDS=		::devel/xulrunner,-devel \
-			::textproc/p5-XML-Parser
+BUILD_DEPENDS=		::devel/xulrunner,-devel
 LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunner,-main \
 			gconf-2.>=5::devel/gconf2 \
 			notify.>=2::devel/libnotify \
