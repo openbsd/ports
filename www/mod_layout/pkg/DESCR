@@ -1,7 +1,7 @@
-mod_layout is an Apache module to wrap pages.  This means that you
-can add at both the beginning (header) and the end (footer) of the
-document some information.  By using the Layout directive, you can
-actually dynamically insert layouts anywhere in the document. This
-allows you to create a single look and feel throughout a website
-without using server side includes (SSI) to "automagically" add
-content in either of these two locations.
+mod_layout is an Apache module to wrap pages.  This means that you can
+add at both the beginning (header) and the end (footer) of the document
+some information.  By using the Layout directive, you can actually
+dynamically insert layouts anywhere in the document.  This allows you to
+create a single look and feel throughout a website without using server
+side includes (SSI) to "automagically" add content in either of these
+two locations.

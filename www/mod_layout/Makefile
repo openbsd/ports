@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/01/30 19:19:11 okan Exp $
 
 COMMENT=	Apache module for implementing a framework for doing design
 
-DISTNAME=	mod_layout-3.2
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	mod_layout-3.4
 CATEGORIES=	www
 
-HOMEPAGE=	http://software.tangent.org/projects.pl?view=mod_layout
-MASTER_SITES=	http://software.tangent.org/download/ \
-		ftp://ftp.tangent.org/pub/apache/
+HOMEPAGE=	http://tangent.org/
+MASTER_SITES=	http://download.tangent.org/
 MODULES+=	apache-module
 
 # Apache Software License
