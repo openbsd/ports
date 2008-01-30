@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2008/01/10 09:07:59 landry Exp $
+# $OpenBSD: Makefile,v 1.204 2008/01/30 15:59:41 okan Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -81,6 +81,7 @@
      SUBDIR += kpoppassd
      SUBDIR += ldapvacation
      SUBDIR += libetpan
+     SUBDIR += libspf2
      SUBDIR += mail-notification
      SUBDIR += mailcrypt
      SUBDIR += maildrop
