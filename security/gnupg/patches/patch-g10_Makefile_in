@@ -1,10 +1,10 @@
-$OpenBSD: patch-g10_Makefile_in,v 1.6 2007/05/10 11:38:28 steven Exp $
---- g10/Makefile.in.orig	Mon Mar  5 10:44:42 2007
-+++ g10/Makefile.in	Thu May 10 11:13:41 2007
-@@ -368,7 +368,7 @@ sbindir = @sbindir@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
+$OpenBSD: patch-g10_Makefile_in,v 1.7 2008/01/30 20:18:10 bernd Exp $
+--- g10/Makefile.in.orig	Mon Jan 28 20:52:01 2008
++++ g10/Makefile.in	Mon Jan 28 20:52:09 2008
+@@ -342,7 +342,7 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/intl \
 +AM_CPPFLAGS = -I$(top_srcdir)/include \
  	@LIBUSB_CPPFLAGS@ $(am__append_1)

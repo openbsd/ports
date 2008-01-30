@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.6 2007/05/10 11:38:28 steven Exp $
---- tools/Makefile.in.orig	Mon Mar  5 10:44:43 2007
-+++ tools/Makefile.in	Thu May 10 11:14:28 2007
-@@ -328,7 +328,7 @@ sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-tools_Makefile_in,v 1.7 2008/01/30 20:18:10 bernd Exp $
+--- tools/Makefile.in.orig	Thu Dec 20 08:54:09 2007
++++ tools/Makefile.in	Mon Jan 28 20:50:47 2008
+@@ -305,7 +305,7 @@ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  EXTRA_DIST = lspgpot ring-a-party mail-signed-keys convert-from-106
 -AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/intl \
 +AM_CPPFLAGS = -I$(top_srcdir)/include \
