@@ -1,7 +1,7 @@
 mod_random provides three services.  The first service is as a
-redirector.  You feed it URLs and it will redirect to random URLs
-that you have loaded.  The second is that it provides environmental
-variables that can be used for doing ad banner systems.  The third
-is that it can be used to display entire pages of random html.  It
-uses its own custom handlers in combination with random ads and
-quotes that you feed into the system.
+redirector.  You feed it URLs and it will redirect to random URLs that
+you have loaded.  The second is that it provides environmental variables
+that can be used for doing ad banner systems.  The third is that it can
+be used to display entire pages of random html.  It uses its own custom
+handlers in combination with random ads and quotes that you feed into
+the system.

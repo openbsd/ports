@@ -1,18 +1,16 @@
-mod_text2html is an Apache module.  It is written in C and was
-designed to replace Apache's internal text/plain handler
-(the core handler found in http_core.c).  It has a couple
-of key points.
+mod_text2html is an Apache module.  It is written in C and was designed
+to replace Apache's internal text/plain handler (the core handler found
+in http_core.c).  It has a couple of key points.
 
 1) It converts newlines to <BR>.
 
-2) If it finds valid URLs it turns them in <A HREF> (and does 
-   a good job of trying to not muddle up HTML that has 
-   been flagged as text).
+2) If it finds valid URLs it turns them in <A HREF> (and does
+   a good job of trying to not muddle up HTML that has been flagged as
+   text).
 
 3) It converts '<', '>', and '&' to HTML entities.
 
 4) Using the same method as the Unix file utility it
-   determines if the file is text in the first place.  If it
-   determines that it is not text it sends the files, but
-   does so as application/octet-stream (so no nasty
-   dumps of binary to the screen).
+   determines if the file is text in the first place.  If it determines
+   that it is not text it sends the files, but does so as
+   application/octet-stream (so no nasty dumps of binary to the screen).
