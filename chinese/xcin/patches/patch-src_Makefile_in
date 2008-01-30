@@ -1,7 +1,17 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2007/12/28 13:47:21 espie Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2008/01/30 14:04:18 jasper Exp $
 --- src/Makefile.in.orig	Wed Feb 24 09:30:33 1999
-+++ src/Makefile.in	Fri Dec 28 14:45:27 2007
-@@ -53,14 +53,18 @@ xcin: $(OBJS1) $(OBJS2)
++++ src/Makefile.in	Tue Jan 29 19:11:15 2008
+@@ -41,6 +41,9 @@ all: @MAKEALL@
+ .PHONY: all install install_xcin install_cin2tab install_tsintools \
+ 	install_tsintabsrc clean veryclean distclean
+ 
++cin2tab.o: cin2tab.c
++	$(CC) -c -o $*.o $(CFLAGS) $(EXTRA_CFLAGS) $(DEFS) $(INC_PATH) $<
++
+ .c.o:
+ 	$(CC) -c -o $*.o $(CFLAGS) $(DEFS) $(INC_PATH) $<
+ 
+@@ -53,14 +56,18 @@ xcin: $(OBJS1) $(OBJS2)
  #
  tsintab: $(TSINTABS)
  
@@ -22,7 +32,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.2 2007/12/28 13:47:21 espie Exp $
  tsin.rel: tsa2rel tsin.rel.src
  	./tsa2rel tsin.rel.src > tsin.rel
  
-@@ -178,7 +182,7 @@ install_tsintabsrc:
+@@ -178,7 +185,7 @@ install_tsintabsrc:
  	done
  
  clean:
