@@ -1,0 +1,8 @@
+If you are updating from a previous version of webalizer, please note
+that this package is now based on webalizer xtended(sic), an extended
+version of the original webalizer code that supports additional features,
+most notably detailed http 404 error reports and IPv6 support.
+
+The webalizer.current file format has changed, please remove any
+existing such files from your statistics directories if you are using
+the webalizer in incremental mode.
