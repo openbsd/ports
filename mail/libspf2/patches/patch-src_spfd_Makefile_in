@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_spfd_Makefile_in,v 1.1.1.1 2008/01/30 15:58:50 okan Exp $
+--- src/spfd/Makefile.in.orig	Wed Dec 12 11:21:56 2007
++++ src/spfd/Makefile.in	Wed Dec 12 17:42:52 2007
+@@ -39,7 +39,7 @@ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ host_triplet = @host@
+-bin_PROGRAMS = spfd$(EXEEXT) spfd_static$(EXEEXT)
++bin_PROGRAMS = spfd$(EXEEXT)
+ subdir = src/spfd
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

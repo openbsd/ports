@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2008/01/30 15:58:50 okan Exp $
+--- src/Makefile.in.orig	Wed Dec 12 11:19:42 2007
++++ src/Makefile.in	Wed Dec 12 11:19:08 2007
+@@ -108,7 +108,7 @@ RANLIB = @RANLIB@
+ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+-SUBDIRS = include libreplace libspf2 spfquery spftest spfd spf_example
++SUBDIRS = include libreplace libspf2 spfquery spftest spfd
+ VERSION = @VERSION@
+ ac_ct_AR = @ac_ct_AR@
+ ac_ct_CC = @ac_ct_CC@
