@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2008/01/28 22:25:39 rui Exp $
+# $OpenBSD: Makefile,v 1.10 2008/01/30 21:25:12 rui Exp $
 
 COMMENT=		network traffic viewer
 DISTNAME=		pktstat-1.8.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.adaptive-enterprises.com.au/~d/software/pktstat/
 
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
+MAINTAINER=		Rui Reis <rui@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
