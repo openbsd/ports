@@ -1,8 +1,8 @@
-mod_mp3 turns the Apache Web Server into an MP3 or Ogg streaming
-server.  It can play from a list of files, either in order or
-randomly.  It can also be used to cache MP3s into memory and have
-the server operate entirely from memory.
+mod_mp3 turns the Apache Web Server into an MP3 or Ogg streaming server.
+It can play from a list of files, either in order or randomly.  It can
+also be used to cache MP3s into memory and have the server operate
+entirely from memory.
 
 Available flavors:
-  mysql       - Fetch data from MySQL database.
-  postgresql  - Fetch data from PostgreSQL database (alpha).
+  mysql	     - Fetch data from MySQL database.
+  postgresql - Fetch data from PostgreSQL database.

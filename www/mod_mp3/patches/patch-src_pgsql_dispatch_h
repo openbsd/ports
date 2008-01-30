@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_pgsql_dispatch_h,v 1.1 2008/01/30 20:41:41 okan Exp $
+--- src/pgsql_dispatch.h.orig	Sat Jan 26 20:51:42 2008
++++ src/pgsql_dispatch.h	Sat Jan 26 20:53:07 2008
+@@ -4,7 +4,7 @@
+ 
+ #define PG_MP3_GET "SELECT name,filename,signature,artist,album,comment,track,year,genre FROM %s WHERE signature = '%s'"
+ #define PG_MP3_GET_RANDOM "SELECT name,filename,signature,artist,album,comment,track,year,genre FROM %s ORDER BY round(random()*1000) LIMIT 1"
+-#define PG_MP3_INSERT "INSERT INTO %s (name,filename,signature,artist,album,comment,track,year,genre) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s')"
++#define PG_MP3_INSERT "INSERT INTO %s (name,filename,signature,artist,album,comment,track,year,genre) VALUES (E'%s',E'%s',E'%s',E'%s',E'%s',E'%s',E'%s',E'%s',E'%s')"
+ 
+ #define PG_MP3_GETS "SELECT name,filename,signature,artist,album,comment,track,year,genre FROM %s"
+ #define PG_MP3_GET_LIST "SELECT name,filename,signature,artist,album,comment,track,year,genre FROM %s WHERE signature IN (%s)"

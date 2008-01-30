@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 23:36:43 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2008/01/30 20:41:41 okan Exp $
 
 COMMENT=	turns Apache into an MP3 or Ogg streaming server
 
-DISTNAME=	mod_mp3-0.39
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	mod_mp3-0.40
 CATEGORIES=	www audio
-MASTER_SITES=	http://download.tangent.org/ \
-		ftp://ftp.tangent.org/pub/apache/
 
 HOMEPAGE=	http://tangent.org/
+MASTER_SITES=	http://download.tangent.org/
 
 MODULES+=	apache-module
 
@@ -39,16 +37,16 @@ ERRORS+= "Fatal: mutually exclusive flavors: ${FLAVORS}"
 
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=	lib/mysql/mysqlclient.>=10::databases/mysql
-CONFIGURE_ARGS+=	--with-mysql="${LOCALBASE}"
-CONF=	${EXAMPLESRC}/mp3_with_mysql.conf
+CONFIGURE_ARGS+=--with-mysql="${LOCALBASE}/bin"
+CONF=		${EXAMPLESRC}/mp3_with_mysql.conf
 EXAMPLES+=	${EXAMPLESRC}/mysql_schema
-WANTLIB=	m
+WANTLIB+=	crypto m ssl z
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 LIB_DEPENDS+=	pq.>=2::databases/postgresql
-CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
-CONF=	${FILESDIR}/mp3_with_postgresql.conf
+CONFIGURE_ARGS+=--with-postgres="${LOCALBASE}"
+CONF=		${FILESDIR}/mp3_with_postgresql.conf
 EXAMPLES+=	${EXAMPLESRC}/pgsql_schema
 .endif
 

@@ -3,16 +3,12 @@ to enable the module by using the following command
 
   ${PREFIX}/sbin/${MODAPACHE_ENABLE}
 
-Also, copy the following file into your Apache config
-directory:
+A sample configuration has been copied to:
+/var/www/conf/modules.sample/mp3.conf
 
-  ${PREFIX}/share/examples/mod_mp3/mp3.conf
-
-Add the following line to your httpd.conf:
-
-  include conf/mp3.conf
-
-Edit mp3.conf to suit your needs. 
+Modify the sample configuration and create a symbolic link:
+ln -s /var/www/conf/modules.sample/mp3.conf \
+	/var/www/conf/modules/mp3.conf
 
 If you already have Apache running on your machine,
 you should not use "apachectl restart" - instead,
