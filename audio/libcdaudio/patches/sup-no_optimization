@@ -1,5 +1,6 @@
---- src/Makefile.in.orig	Sat Oct  2 18:53:33 2004
-+++ src/Makefile.in	Thu Sep 20 22:44:36 2007
+$OpenBSD: sup-no_optimization,v 1.1 2008/01/30 14:08:54 jasper Exp $
+--- src/Makefile.in.orig	Mon Jan 28 17:12:41 2008
++++ src/Makefile.in	Mon Jan 28 17:13:55 2008
 @@ -272,6 +272,9 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/data.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/extra_objs.Plo@am__quote@
