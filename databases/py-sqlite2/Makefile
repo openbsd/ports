@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2008/01/12 23:05:13 eric Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.10 2008/01/30 17:33:13 eric Exp $
 
 COMMENT=	SQLite3 adapter for Python
 
-VERSION=	2.4.0
+VERSION=	2.4.1
 DISTNAME=	pysqlite-${VERSION}
 PKGNAME=	py-sqlite2-${VERSION}
 CATEGORIES=	databases devel
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
 
-MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/${VERSION:R}/${VERSION}/
 HOMEPAGE=	http://pysqlite.org/
+
+MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/${VERSION:R}/${VERSION}/ \
+		http://mirrors.protection.cx/~martynas/
 
 # BSD-like
 PERMIT_PACKAGE_FTP=	Yes
@@ -28,11 +28,7 @@ SUBST_VARS=	VERSION
 MODULES=	lang/python
 
 pre-configure:
-	cd ${WRKSRC} && \
-	    sed "s|/usr/local|${LOCALBASE}|" setup.cfg | \
-	    sed "s|^\(include_dirs\)=.*|\1=${LOCALBASE}/include/|" | \
-	    sed "s|^\(library_dirs\)=.*|\1=${LOCALBASE}/lib/|" > setup.cfg_
-	mv ${WRKSRC}/setup.cfg_ ${WRKSRC}/setup.cfg
+	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g' ${WRKSRC}/setup.cfg
 
 do-regress: fake
 	@cd ${WRKSRC}/pysqlite2/test && \
