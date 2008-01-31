@@ -1,0 +1,13 @@
+$OpenBSD: patch-klinkstatus_src_ui_treeview_cpp,v 1.1 2008/01/31 08:38:28 espie Exp $
+--- klinkstatus/src/ui/treeview.cpp.orig	Thu Jan 24 01:27:12 2008
++++ klinkstatus/src/ui/treeview.cpp	Thu Jan 24 01:27:31 2008
+@@ -193,7 +193,8 @@ void TreeView::showAll()
+ 
+ QList<LinkStatus*> TreeView::getBrokenLinks() const
+ {
+-    LinkMatcher matcher(QString(), LinkStatusHelper::bad);
++    QString q;
++    LinkMatcher matcher(q, LinkStatusHelper::bad);
+     return getLinksWithCriteria(matcher);
+ }
+ 
