@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2008/01/31 20:44:55 okan Exp $
 
 COMMENT=		ARM/MIPS/PowerPC/SuperH machines emulator
 
-DISTNAME=		gxemul-0.4.6
+DISTNAME=		gxemul-0.4.6.2
 CATEGORIES=		emulators
 HOMEPAGE=		http://gavare.se/gxemul/
 
@@ -37,7 +37,8 @@ INSTALL_STRIP=
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gxemul ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gxemul
-	${INSTALL_DATA} ${WRKSRC}/doc/*.{gif,png,html} ${PREFIX}/share/doc/gxemul
+	${INSTALL_DATA} ${WRKSRC}/doc/*.{gif,png,html} \
+		${PREFIX}/share/doc/gxemul
 	${INSTALL_DATA} ${WRKSRC}/man/gxemul.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
