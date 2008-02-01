@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/01 16:11:47 merdely Exp $
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ldapplugin/
+lib/python${MODPY_VERSION}/site-packages/ldapplugin/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ldapplugin/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ldapplugin/api.py
+lib/python${MODPY_VERSION}/site-packages/ldapplugin/api.pyc

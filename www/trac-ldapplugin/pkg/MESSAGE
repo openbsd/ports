@@ -1,0 +1,10 @@
+To enable Trac LDAP Plugin for your project, enable LDAP authentication
+for your Apache 2.2 trac Location and add the following to your
+project's /path/to/projenv/conf/trac.ini file:
+[components]
+ldapplugin.* = enabled
+
+[ldap]
+enable = true
+basedn = dc=domain,dc=tld
+host = ldap.domain.tld
