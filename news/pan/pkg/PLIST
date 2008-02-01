@@ -1,21 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:21:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/02/01 20:30:49 ajacoutot Exp $
 bin/pan
-share/doc/pan/
-share/doc/pan/faq.html
-share/gnome/
-share/gnome/apps/
-share/gnome/apps/Internet/
-share/gnome/apps/Internet/pan.desktop
+share/applications/pan.desktop
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/pan.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/pan.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
+share/locale/az/LC_MESSAGES/pan.mo
+share/locale/bg/LC_MESSAGES/pan.mo
 share/locale/ca/LC_MESSAGES/pan.mo
 share/locale/cs/LC_MESSAGES/pan.mo
 share/locale/da/LC_MESSAGES/pan.mo
 share/locale/de/LC_MESSAGES/pan.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/pan.mo
 share/locale/el/LC_MESSAGES/pan.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
+share/locale/en_CA/LC_MESSAGES/pan.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/pan.mo
@@ -23,10 +29,9 @@ share/locale/es/LC_MESSAGES/pan.mo
 share/locale/et/LC_MESSAGES/pan.mo
 share/locale/fi/LC_MESSAGES/pan.mo
 share/locale/fr/LC_MESSAGES/pan.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/pan.mo
 share/locale/gl/LC_MESSAGES/pan.mo
+share/locale/hr/LC_MESSAGES/pan.mo
 share/locale/hu/LC_MESSAGES/pan.mo
 share/locale/it/LC_MESSAGES/pan.mo
 share/locale/ja/LC_MESSAGES/pan.mo
@@ -35,16 +40,21 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/pan.mo
 share/locale/lv/LC_MESSAGES/pan.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/pan.mo
+share/locale/nb/LC_MESSAGES/pan.mo
 share/locale/nl/LC_MESSAGES/pan.mo
-share/locale/no/LC_MESSAGES/pan.mo
 share/locale/pl/LC_MESSAGES/pan.mo
 share/locale/pt/LC_MESSAGES/pan.mo
 share/locale/pt_BR/LC_MESSAGES/pan.mo
+share/locale/ro/LC_MESSAGES/pan.mo
 share/locale/ru/LC_MESSAGES/pan.mo
 share/locale/sk/LC_MESSAGES/pan.mo
 share/locale/sl/LC_MESSAGES/pan.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/pan.mo
 share/locale/sr/LC_MESSAGES/pan.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
@@ -52,9 +62,10 @@ share/locale/sr@Latn/LC_MESSAGES/pan.mo
 share/locale/sv/LC_MESSAGES/pan.mo
 share/locale/tr/LC_MESSAGES/pan.mo
 share/locale/uk/LC_MESSAGES/pan.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/pan.mo
 share/locale/zh_CN/LC_MESSAGES/pan.mo
+share/locale/zh_TW/LC_MESSAGES/pan.mo
 share/pixmaps/
 share/pixmaps/pan.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

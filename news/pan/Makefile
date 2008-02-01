@@ -1,23 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2007/11/17 20:39:03 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2008/02/01 20:30:49 ajacoutot Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
-VER=		0.14.2
-DISTNAME=	pan-${VER}
-PKGNAME=	${DISTNAME}p4
+V=		0.132
+DISTNAME=	pan-${V}
 CATEGORIES=	news x11
-MASTER_SITES=	http://pan.rebelbase.com/download/releases/${VER}/SOURCE/
-
-LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0.>=0.5,gtk-x11-2.0.>=0.5::x11/gtk+2 \
-		glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
-		xml2.>=6.22::textproc/libxml \
-		gnet-2.0.>=0.3::net/gnet
 
 HOMEPAGE=	http://pan.rebelbase.com/
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
-
-MODULES=	devel/gettext
+MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,19 +16,29 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
-		Xrandr Xext Xrender c cairo expat fontconfig freetype m \
-		atk-1.0 pango-1.0 pangocairo-1.0 glitz png \
-		pangoft2-1.0 pthread z
+WANTLIB= 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+	 	Xi Xinerama Xrandr Xrender c expat fontconfig freetype \
+	 	m pthread stdc++ z glib-2.0 gmodule-2.0 gobject-2.0 \
+		gthread-2.0 pcre glitz png pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 aspell atk-1.0 cairo
+
+MASTER_SITES=	http://pan.rebelbase.com/download/releases/${V}/source/
+
+MODULES=	devel/gettext \
+		textproc/intltool # regress target
+
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		gmime-2.0::mail/gmime \
+		gtkspell.>=1::textproc/gtkspell
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-gtkspell
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pan
-	${INSTALL_DATA} ${WRKBUILD}/docs/faq.html ${PREFIX}/share/doc/pan
+post-configure:
+	cd ${WRKSRC}/po && for i in $$(ls *.po) ; do ${LOCALBASE}/bin/msgfmt -c -o $${i%%po}gmo $$i ; done
 
 .include <bsd.port.mk>
