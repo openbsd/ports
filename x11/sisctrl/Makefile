@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/01/12 22:38:14 martynas Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/01 21:47:16 steven Exp $
 
 COMMENT=		Display Control Panel for X.org SiS driver
 
 DISTNAME=		sisctrl-0.0.20051202
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.winischhofer.eu/linuxsispart1.shtml\#sisctrl
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.winischhofer.net/sis/
 
 WANTLIB=		ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
-			Xrandr Xrender Xv Xxf86vm atk-1.0 c cairo expat \
+			Xcomposite Xdamage Xrandr Xrender Xv Xxf86vm \
+			atk-1.0 c cairo expat \
 			fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 			gobject-2.0 iconv intl m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 png z
