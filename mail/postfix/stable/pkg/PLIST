@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2007/05/31 10:19:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2008/02/01 16:37:53 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -7,6 +7,7 @@
 @unexec ${PREFIX}/sbin/postfix-disable
 @unexec rm -f /etc/mailer.conf.postfix
 @extra ${SYSCONFDIR}/postfix/
+@extra /var/postfix/
 @extra /var/spool/postfix/
 libexec/postfix/
 libexec/postfix/anvil
@@ -151,6 +152,7 @@ share/doc/postfix/html/SMTPD_ACCESS_README.html
 share/doc/postfix/html/SMTPD_POLICY_README.html
 share/doc/postfix/html/SMTPD_PROXY_README.html
 share/doc/postfix/html/STANDARD_CONFIGURATION_README.html
+share/doc/postfix/html/STRESS_README.html
 share/doc/postfix/html/TLS_LEGACY_README.html
 share/doc/postfix/html/TLS_README.html
 share/doc/postfix/html/TUNING_README.html
@@ -262,6 +264,7 @@ share/doc/postfix/readme/SMTPD_ACCESS_README
 share/doc/postfix/readme/SMTPD_POLICY_README
 share/doc/postfix/readme/SMTPD_PROXY_README
 share/doc/postfix/readme/STANDARD_CONFIGURATION_README
+share/doc/postfix/readme/STRESS_README
 share/doc/postfix/readme/TLS_LEGACY_README
 share/doc/postfix/readme/TLS_README
 share/doc/postfix/readme/TUNING_README

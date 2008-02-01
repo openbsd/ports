@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: postfix-install,v 1.1 2007/05/31 10:19:00 espie Exp $
+# $OpenBSD: postfix-install,v 1.2 2008/02/01 16:37:53 jakob Exp $
 #
 # Post-installation setup of postfix
 
@@ -7,6 +7,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 CONFIG_DIR=${SYSCONFDIR}/postfix
 SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/postfix
 SPOOL_DIR=/var/spool/postfix
+DATA_DIR=/var/postfix
 
 # Function: set up the postfix spool dir / chroot area
 #
@@ -19,6 +20,9 @@ do_spooldir()
     for file in localtime services resolv.conf ; do
 	install -o root -g wheel -m 644 /etc/$file $SPOOL_DIR/etc
     done
+
+    echo "-> Creating Postfix data directory under $DATA_DIR"
+    [ -d $DATA_DIR ] || install -d -o _postfix -g wheel -m 700 $DATA_DIR
 }
 
 # Function: replace sendmail binaries with postfix
@@ -51,13 +55,13 @@ update_scripts()
 #
 do_configs()
 {
-    PINSTALL="${CONFIG_DIR}/post-install command_directory=${PREFIX}/sbin"
+    POSTFIX="${PREFIX}/sbin/postfix"
 
     if [ -d $CONFIG_DIR ]; then
 	update_scripts
 
 	echo ""
-	$PINSTALL upgrade-configuration
+	$POSTFIX upgrade-configuration
 	echo ""
 
 	echo "+---------------"
@@ -74,15 +78,14 @@ do_configs()
 
 	update_scripts
 
-	$PINSTALL first-install-reminder
-
 	echo "+---------------"
 	echo "| Configuration files have been installed in $CONFIG_DIR."
 	echo "| Please update these files to meet your needs."
 	echo "+---------------"
     fi
 
-    $PINSTALL set-permissions create-missing
+    $POSTFIX set-permissions
+    $POSTFIX check
 }
 
 do_mailwrapper

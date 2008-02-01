@@ -1,7 +1,6 @@
-$OpenBSD: patch-master.cf,v 1.13 2007/04/02 11:37:43 jakob Exp $
---- conf/master.cf.orig	Wed Jan 31 22:23:56 2007
-+++ conf/master.cf	Tue Mar 20 00:53:35 2007
-@@ -6,42 +6,42 @@
+--- conf/master.cf.orig	Sun Jan 13 18:13:45 2008
++++ conf/master.cf	Fri Jan 25 12:51:34 2008
+@@ -8,8 +8,8 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
@@ -9,14 +8,13 @@ $OpenBSD: patch-master.cf,v 1.13 2007/04/02 11:37:43 jakob Exp $
 -#submission inet n       -       n       -       -       smtpd
 +smtp      inet  n       -       -       -       -       smtpd
 +#submission inet n       -       -       -       -       smtpd
- #  -o smtpd_enforce_tls=yes
+ #  -o smtpd_tls_security_level=encrypt
  #  -o smtpd_sasl_auth_enable=yes
  #  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
--#smtps     inet  n       -       n       -       -       smtpd
-+#smtps     inet  n       -       -       -       -       smtpd
- #  -o smtpd_tls_wrappermode=yes
+@@ -19,34 +19,34 @@
  #  -o smtpd_sasl_auth_enable=yes
  #  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
+ #  -o milter_macro_daemon_name=ORIGINATING
 -#628      inet  n       -       n       -       -       qmqpd
 -pickup    fifo  n       -       n       60      1       pickup
 -cleanup   unix  n       -       n       -       0       cleanup
@@ -42,12 +40,13 @@ $OpenBSD: patch-master.cf,v 1.13 2007/04/02 11:37:43 jakob Exp $
 +verify    unix  -       -       -       -       1       verify
 +flush     unix  n       -       -       1000?   0       flush
  proxymap  unix  -       -       n       -       -       proxymap
+ proxywrite unix -       -       n       -       -       proxymap
 -smtp      unix  -       -       n       -       -       smtp
 +smtp      unix  -       -       -       -       -       smtp
  # When relaying mail as backup MX, disable fallback_relay to avoid MX loops
 -relay     unix  -       -       n       -       -       smtp
 +relay     unix  -       -       -       -       -       smtp
- 	-o fallback_relay=
+ 	-o smtp_fallback_relay=
  #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 -showq     unix  n       -       n       -       -       showq
 -error     unix  -       -       n       -       -       error
@@ -61,14 +60,14 @@ $OpenBSD: patch-master.cf,v 1.13 2007/04/02 11:37:43 jakob Exp $
  virtual   unix  -       n       n       -       -       virtual
 -lmtp      unix  -       -       n       -       -       lmtp
 -anvil     unix  -       -       n       -       1       anvil
--scache	  unix	-	-	n	-	1	scache
+-scache    unix  -       -       n       -       1       scache
 +lmtp      unix  -       -       -       -       -       lmtp
 +anvil     unix  -       -       -       -       1       anvil
-+scache	  unix	-	-	-	-	1	scache
++scache    unix  -       -       -       -       1       scache
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -63,7 +63,7 @@ scache	  unix	-	-	n	-	1	scache
+@@ -68,7 +68,7 @@
  # The Cyrus deliver program has changed incompatibly, multiple times.
  #
  #old-cyrus unix  -       n       n       -       -       pipe
@@ -77,7 +76,7 @@ $OpenBSD: patch-master.cf,v 1.13 2007/04/02 11:37:43 jakob Exp $
  #
  # ====================================================================
  #
-@@ -71,7 +71,7 @@ scache	  unix	-	-	n	-	1	scache
+@@ -76,7 +76,7 @@
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
