@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/01 20:26:42 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	document centric objects and utilities
 
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.2.2
 V=		${GNOME_VERSION}
 SHARED_LIBS +=	goffice-1            0.0      # .2.2
 CATEGORIES=	devel
-
-MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/02/01 20:26:42 martynas Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/03/05 17:07:28 nectar Exp $
 
 COMMENT=	delay program with feedback to the user
 
 DISTNAME=	delay-1.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 MASTER_SITES=	${HOMEPAGE}dl/
 
 HOMEPAGE=	http://onegeek.org/~tom/software/delay/
-
-MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

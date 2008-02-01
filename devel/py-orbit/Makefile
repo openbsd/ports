@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2008/02/01 20:26:42 martynas Exp $
 
 COMMENT=	ORBit2 Python bindings
 
 V=		2.14.3
 DISTNAME=	pyorbit-${V}
-PKGNAME=	py-orbit-${V}p1
+PKGNAME=	py-orbit-${V}p2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.pygtk.org/
-
-MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/12 22:11:51 okan Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/01 20:26:42 martynas Exp $
 
 COMMENT=		curses calendar front-end to remind
 
 DISTNAME=		wyrd-1.4.3
+PKGNAME=		${PKGNAME}p0
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://www.eecs.umich.edu/~pelzlpj/wyrd/
 
-MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
+MAINTAINER=		Okan Demirmen <okan@openbsd.org>
 
 MASTER_SITES=		${HOMEPAGE}
 
