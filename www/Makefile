@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.324 2008/01/28 15:40:35 robert Exp $
+# $OpenBSD: Makefile,v 1.325 2008/02/01 16:12:49 merdely Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -283,6 +283,7 @@
      SUBDIR += tomcat
      SUBDIR += trac
      SUBDIR += trac-adminplugin
+     SUBDIR += trac-ldapplugin
      SUBDIR += transproxy
      SUBDIR += turba
      SUBDIR += twiki
