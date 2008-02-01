@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/13 17:26:23 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/02/01 19:15:40 martynas Exp $
 bin/tg-admin
 lib/python${MODPY_VERSION}/site-packages/TurboGears-${VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/TurboGears-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -21,6 +21,8 @@ lib/python${MODPY_VERSION}/site-packages/turbogears/command/info.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/command/info.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/command/quickstart.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/command/quickstart.pyc
+lib/python${MODPY_VERSION}/site-packages/turbogears/command/sacommand.py
+lib/python${MODPY_VERSION}/site-packages/turbogears/command/sacommand.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/config.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/config.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/controllers.py
@@ -559,30 +561,32 @@ lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+einame+.
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+einame+.egg-info/paster_plugins.txt
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+einame+.egg-info/sqlobject.txt_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/
-lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/__init__.py_tmpl
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/__init__.py
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/release.py_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/css/
-lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/css/empty
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/css/empty_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/images/
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/images/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/images/tg_under_the_hood.png
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/images/under_the_hood_blue.png
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/javascript/
-lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/javascript/empty
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/static/javascript/empty_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/templates/
-lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/templates/__init__.py_tmpl
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/templates/__init__.py
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/qsbase/+package+/templates/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/commands.py_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/config/
-lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/config/__init__.py_tmpl
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/config/__init__.py
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/config/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/config/app.cfg_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/config/log.cfg_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/controllers.py_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/json.py_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/model.py_tmpl
-lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/sqlobject-history/
-lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/sqlobject-history/empty
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/static/
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/static/css/
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/static/css/style.css
@@ -595,7 +599,8 @@ lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+pack
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/templates/master.kid
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/templates/welcome.kid
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/tests/
-lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/tests/__init__.py_tmpl
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/tests/test_controllers.py_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/+package+/tests/test_model.py_tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/qstemplates/quickstart/README.txt_tmpl
@@ -673,6 +678,7 @@ lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/MochiKit.js
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/__init__.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/i18n_base.js
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/interpreter.js
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/tool-man/
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/tool-man/cookies.js
@@ -712,7 +718,9 @@ lib/python${MODPY_VERSION}/site-packages/turbogears/tests/locale/fi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/locale/fi/LC_MESSAGES/messages.mo
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/locale/fi/LC_MESSAGES/messages.po
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/othertemplate.kid
+lib/python${MODPY_VERSION}/site-packages/turbogears/tests/paginate.kid
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/simple.kid
+lib/python${MODPY_VERSION}/site-packages/turbogears/tests/simplecheetah.tmpl
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_catwalk.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_catwalk.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_command_i18n.py
@@ -733,6 +741,8 @@ lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_form_controllers.
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_form_controllers.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_genericfunctions.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_genericfunctions.pyc
+lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_paginate.py
+lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_paginate.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_sqlalchemy.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_sqlalchemy.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/tests/test_testutil.py
