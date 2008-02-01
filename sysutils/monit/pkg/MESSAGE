@@ -1,7 +1,7 @@
 To have monit start at boot time, you must have an entry similar to the 
 following in /etc/rc.local.
 
-	if [ -x ${PREFIX}/bin/monit ]; then
-		echo -n ' monit';	${PREFIX}/bin/monit \
-			-d 300 -c ${SYSCONFDIR}/monitrc >/dev/null 2>&1
-	fi
+if [ -x ${PREFIX}/bin/monit ]; then
+	echo -n ' monit'
+	${PREFIX}/bin/monit -d 300 -c ${SYSCONFDIR}/monitrc >/dev/null 2>&1
+fi

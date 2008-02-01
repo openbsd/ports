@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/04/05 23:02:58 alek Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/02/01 23:29:42 okan Exp $
 bin/monit
 @man man/man1/monit.1
 share/doc/monit/
@@ -11,4 +11,5 @@ share/doc/monit/monit.html
 share/examples/monit/
 share/examples/monit/monit.php
 share/examples/monit/monitrc
+@mode 0600
 @sample ${SYSCONFDIR}/monitrc

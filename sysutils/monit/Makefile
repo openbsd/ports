@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2008/02/01 23:29:42 okan Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
-DISTNAME=	monit-4.9
+DISTNAME=	monit-4.10.1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.tildeslash.com/monit/
