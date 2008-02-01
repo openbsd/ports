@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.43 2008/02/01 21:38:27 steven Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
 VERSION=		0.9.15.1
 DISTNAME=		fluxbox-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fluxbox/}
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xft Xinerama Xpm Xrandr Xrender \
-			fontconfig freetype stdc++ m c
+			Xau Xdmcp expat fontconfig freetype stdc++ m c z
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59

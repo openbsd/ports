@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/01 21:38:27 steven Exp $
 
 COMMENT=	glib bindings for dbus message system
 
 DISTNAME=	dbus-glib-0.73
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	dbus-glib-1          3.0      # .3.0
 CATEGORIES=	x11
 
@@ -14,7 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		expat c pthread
+
+WANTLIB=	expat c pthread pcre
 
 MASTER_SITES=	${HOMEPAGE}releases/dbus-glib/
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:11:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/01 21:38:27 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	MSN style 'toaster' popups plugin for Pidgin
 
 DISTNAME=	pidgin-guifications-2.14
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://plugins.guifications.org/trac/
@@ -17,8 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama m \
-		Xrender Xrandr glitz atk-1.0 fontconfig freetype cairo \
+WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xcomposite \
+		Xdamage Xrender Xrandr glitz atk-1.0 fontconfig freetype \
+		m cairo pcre \
 		gmodule-2.0 gobject-2.0 pango-1.0 gthread-2.0 glib-2.0 \
 		png z pangoft2-1.0 gdk-x11-2.0 pangocairo-1.0 gtk-x11-2.0 \
 		gdk_pixbuf-2.0 dbus-1 dbus-glib-1 expat ncurses xml2

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/29 18:47:29 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/01 21:38:27 steven Exp $
 
 COMMENT=		X11 program launcher
 
 DISTNAME=		gmrun-0.9
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		x11
 
@@ -17,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
+			Xcomposite Xdamage \
 			Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 			freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 			m pango-1.0 pangocairo-1.0 pangoft2-1.0 png stdc++ z

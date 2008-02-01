@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2007/10/25 13:49:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2008/02/01 21:38:27 steven Exp $
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
 
 GNOME_PROJECT=		gtkmm
 GNOME_VERSION=		2.12.1
-PKGNAME-main=		gtk2mm-${VERSION}
+PKGNAME-main=		gtk2mm-${VERSION}p0
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
@@ -27,7 +27,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=		-main -docs
 
 WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-			Xrender atk-1.0 cairo expat fontconfig freetype \
+			Xcomposite Xdamage Xrender atk-1.0 cairo expat \
+			fontconfig freetype pcre \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 png sigc-2.0 z
 MODULES=		devel/gettext \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/02/01 21:38:27 steven Exp $
 
 COMMENT=		small tool to make annotations on the screen
 
 DISTNAME=		gromit-20041213
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.home.unix-ag.org/simon/gromit/
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext
 
 WANTLIB=		Xext Xrender c freetype X11 m z fontconfig \
+			Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
+			Xi Xinerama Xrandr expat \
 			atk-1.0 glib-2.0 gobject-2.0 glitz png \
 			gmodule-2.0 pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 cairo

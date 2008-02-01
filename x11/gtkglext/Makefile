@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/01 21:38:27 steven Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
 DISTNAME=	gtkglext-1.2.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gdkglext-x11-1.0	0.0 \
 		gtkglext-x11-1.0	0.0
 CATEGORIES=	x11 graphics devel
@@ -19,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkglext/}
 
-WANTLIB=	GL GLU ICE SM X11 Xext Xmu Xrender Xt m z \
+WANTLIB=	GL GLU ICE SM X11 Xext Xmu Xrender Xt Xau Xcomposite Xcursor \
+		Xdamage Xdmcp Xfixes Xi Xinerama Xrandr expat pcre m z \
 		gmodule-2.0 glib-2.0 intl iconv png cairo \
 		pangocairo-1.0 pango-1.0 gobject-2.0 \
 		gdk_pixbuf-2.0 gdk-x11-2.0 freetype fontconfig \

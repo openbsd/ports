@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/01 21:38:27 steven Exp $
 
 COMMENT=	GTK2 based xmessage clone
 
 DISTNAME=	gxmessage-2.6.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://homepages.ihug.co.nz/~trmusson/programs.html\#gxmessage
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://homepages.ihug.co.nz/~trmusson/stuff/
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage \
 		Xrender atk-1.0 c cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png z

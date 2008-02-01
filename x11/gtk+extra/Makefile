@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:04:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/01 21:38:27 steven Exp $
 
 COMMENT=	GTK Extra Widget Set
 
 DISTNAME=	gtk+extra-0.99.17
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	gtkextra 17.0
 CATEGORIES=	x11 devel
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/src/
 
-WANTLIB=	X11 Xext Xi m glib gmodule
+WANTLIB=	X11 Xext Xi Xau Xdmcp m glib gmodule
 
 MODULES=	devel/gettext
 

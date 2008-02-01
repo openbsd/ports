@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/06/26 09:35:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/01 21:38:27 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	beautiful glass-like GTK+ 2.x engine and themes
 
 VERSION=	0.53.1
 DISTNAME=	murrine-${VERSION}
-PKGNAME=	gtk2-murrine-engine-${VERSION}
+PKGNAME=	gtk2-murrine-engine-${VERSION}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://cimi.netsons.org/pages/murrine.php
@@ -31,6 +31,7 @@ DISTFILES=	${DISTNAME}.tar.bz2:0 \
 		MurrinaLoveGray.tar.bz2
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage pcre \
 		Xrender cairo expat fontconfig freetype glitz m png z \
 		atk-1.0 gmodule-2.0 gobject-2.0 glib-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0

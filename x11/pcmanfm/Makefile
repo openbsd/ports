@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/18 06:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/02/01 21:38:27 steven Exp $
 
 COMMENT=	fast and lightweight file manager
 
 DISTNAME=	pcmanfm-0.3.2.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pcmanfm.sourceforge.net/
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcmanfm/}
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xcomposite Xdamage \
 		Xrender atk-1.0 c cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z

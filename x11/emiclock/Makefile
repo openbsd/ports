@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/02/01 21:38:27 steven Exp $
 
 COMMENT=	hyper-animated face analog clock for X11
 
 DISTNAME=	emiclock-2.0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
@@ -14,7 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	may not modify/package
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_CDROM=	may not modify/package
-WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m
+
+WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xp Xpm Xt c m
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
