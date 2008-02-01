@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.69 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.70 2008/02/01 23:33:52 rui Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.0.9
+VERSION=	2.1.3
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
-PKGNAME-client=	freeciv-client-${VERSION}p2
+PKGNAME-client=	freeciv-client-${VERSION}
 PKGNAME-share=	freeciv-share-${VERSION}
 CATEGORIES=	games
 HOMEPAGE=	http://www.freeciv.org/
 
-MAINTAINER=	Rui Reis <rui@rui.cx>
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -51,13 +51,13 @@ RUN_DEPENDS-share=
 WANTLIB-client=	${WANTLIB} \
 		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
 		Xrandr expat \
-		X11 Xext Xrender atk-1.0 fontconfig freetype audiofile \
-		glib-2.0 gmodule-2.0 gobject-2.0 glitz png pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 audiofile cairo
+		X11 Xext Xrender atk-1.0 fontconfig freetype glib-2.0 \
+		gmodule-2.0 gobject-2.0 glitz png pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 cairo
 LIB_DEPENDS-client=${LIB_DEPENDS} \
-	gtk-x11-2.0.>=0.5,gdk-x11-2.0.>=0.5,gdk_pixbuf-2.0.>=0.5::x11/gtk+2 \
-	esd.>=2::audio/esound 
-RUN_DEPENDS-client=	:freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
+	gtk-x11-2.0.>=0.5,gdk-x11-2.0.>=0.5,gdk_pixbuf-2.0.>=0.5::x11/gtk+2
+RUN_DEPENDS-client=	:desktop-file-utils-*:devel/desktop-file-utils \
+			:freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
 
 RUN_DEPENDS-main=	:freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
 
