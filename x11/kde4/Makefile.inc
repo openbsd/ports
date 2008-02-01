@@ -18,6 +18,7 @@ CONFIGURE_STYLE?=	cmake
 EXTRACT_SUFX?=		.tar.bz2
 MASTER_SITES?=	${MASTER_SITE_KDE:=stable/${VERSION}/src/}
 
+PORTHOME?=		${WRKDIR}
 
 # GPL (LGPL for the central libraries)
 PERMIT_DISTFILES_CDROM?=	Yes
