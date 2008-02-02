@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2008/02/02 01:02:56 jolan Exp $
 
 COMMENT=	free MPEG-2 video stream decoder
-DISTNAME=	mpeg2dec-0.4.0b
-PKGNAME=	${DISTNAME:S/mpeg2dec/libmpeg2/}p1
+
+DISTNAME=	mpeg2dec-0.4.1
+PKGNAME=	${DISTNAME:S/mpeg2dec/libmpeg2/}
 SHARED_LIBS=	mpeg2		0.0 \
 		mpeg2convert	0.0
 CATEGORIES=	graphics x11
 MASTER_SITES=	${HOMEPAGE}files/
 
 HOMEPAGE=	http://libmpeg2.sourceforge.net/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,8 +21,6 @@ WANTLIB=	X11 Xau Xdmcp Xext Xv
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-
-WRKDIST=${WRKDIR}/mpeg2dec-0.4.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
