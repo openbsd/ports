@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.580 2008/02/02 10:42:24 bernd Exp $
+# $OpenBSD: Makefile,v 1.581 2008/02/02 11:10:55 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -640,6 +640,7 @@
      SUBDIR += ruby-gettext
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
+     SUBDIR += ruby-mocha
      SUBDIR += ruby-ncurses
      SUBDIR += ruby-needle
      SUBDIR += ruby-rake
