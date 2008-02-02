@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/02/02 09:40:58 ajacoutot Exp $
+--- Makefile.in.orig	Tue Jan  8 16:49:36 2008
++++ Makefile.in	Tue Jan  8 16:49:51 2008
+@@ -1004,7 +1004,7 @@ console_cflags = \
+ 	-DDATADIR=\""$(pioneers_datadir)"\" \
+ 	-DTHEMEDIR=\""$(pioneers_themedir_embed)"\" \
+ 	-DLOCALEDIR=\""$(pioneers_localedir)"\" \
+-	-DPIONEERS_DIR_DEFAULT=\""$(pioneers_datadir)/games/pioneers"\" \
++	-DPIONEERS_DIR_DEFAULT=\""$(pioneers_datadir)/pioneers"\" \
+ 	-DPIONEERS_SERVER_CONSOLE_PATH=\""$(bindir)/pioneers-server-console"\" \
+ 	-DPIONEERS_SERVER_GTK_PATH=\""$(bindir)/pioneers-server-gtk"\" \
+ 	-DPIONEERS_CLIENT_GTK_PATH=\""$(bindir)/pioneers"\" \
+@@ -1030,7 +1030,7 @@ gtk_libs = \
+ 	$(GNOME2_LIBS) \
+ 	$(GTK2_LIBS)
+ 
+-configdir = $(datadir)/games/pioneers
++configdir = $(datadir)/pioneers
+ icondir = $(datadir)/pixmaps
+ pixmapdir = $(datadir)/pixmaps/pioneers
+ desktopdir = $(datadir)/applications

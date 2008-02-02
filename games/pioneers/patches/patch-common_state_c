@@ -1,0 +1,48 @@
+$OpenBSD: patch-common_state_c,v 1.1.1.1 2008/02/02 09:40:58 ajacoutot Exp $
+--- common/state.c.orig	Sun Oct  7 19:56:39 2007
++++ common/state.c	Fri Jan 11 10:38:05 2008
+@@ -71,7 +71,11 @@ static void route_event(StateMachine * sm, gint event)
+ 	StateFunc curr_state;
+ 	gpointer user_data;
+ 
+-	curr_state = sm_current(sm);
++	if (sm->stack_ptr >= 0)
++		curr_state = sm_current(sm);
++	else
++		curr_state = NULL;
++
+ 	user_data = sm->user_data;
+ 	if (user_data == NULL)
+ 		user_data = sm;
+@@ -89,16 +93,18 @@ static void route_event(StateMachine * sm, gint event)
+ 
+ 	switch (event) {
+ 	case SM_ENTER:
+-		curr_state(user_data, event);
++		if (curr_state != NULL)
++			curr_state(user_data, event);
+ 		break;
+ 	case SM_INIT:
+-		curr_state(user_data, event);
++		if (curr_state != NULL)
++			curr_state(user_data, event);
+ 		if (!sm->is_dead && sm->global !=NULL)
+ 			sm->global (user_data, event);
+ 		break;
+ 	case SM_RECV:
+ 		sm_cancel_prefix(sm);
+-		if (curr_state(user_data, event))
++		if (curr_state != NULL && curr_state(user_data, event))
+ 			break;
+ 		sm_cancel_prefix(sm);
+ 		if (!sm->is_dead
+@@ -112,7 +118,8 @@ static void route_event(StateMachine * sm, gint event)
+ 	case SM_NET_CLOSE:
+ 		sm_close(sm);
+ 	default:
+-		curr_state(user_data, event);
++		if (curr_state != NULL)
++			curr_state(user_data, event);
+ 		if (!sm->is_dead && sm->global !=NULL)
+ 			sm->global (user_data, event);
+ 		break;
