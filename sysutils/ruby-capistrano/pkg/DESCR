@@ -1,0 +1,10 @@
+Capistrano is a utility and framework for executing commands in parallel
+on multiple remote machines, via SSH. It uses a simple DSL (borrowed in
+part from Rake that allows you to define _tasks_), which may be applied
+to machines in certain roles. It also supports tunneling connections via
+some gateway machine to allow operations to be performed behind VPN's
+and firewalls.
+
+Capistrano was originally designed to simplify and automate deployment
+of web applications to distributed environments, and originally came
+bundled with a set of tasks designed for deploying Rails applications.
