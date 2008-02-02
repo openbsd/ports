@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgksu_libgksu_c,v 1.1.1.1 2008/01/17 18:45:56 jasper Exp $
+$OpenBSD: patch-libgksu_libgksu_c,v 1.2 2008/02/02 20:42:04 jasper Exp $
 --- libgksu/libgksu.c.orig	Sun Jun 10 20:28:43 2007
-+++ libgksu/libgksu.c	Sat Dec 15 22:12:24 2007
++++ libgksu/libgksu.c	Thu Jan 31 20:57:44 2008
 @@ -23,7 +23,12 @@
  #include <unistd.h>
  #include <string.h>
@@ -14,7 +14,25 @@ $OpenBSD: patch-libgksu_libgksu_c,v 1.1.1.1 2008/01/17 18:45:56 jasper Exp $
  #include <pwd.h>
  #include <sys/types.h>
  #include <sys/wait.h>
-@@ -1897,7 +1902,7 @@ gksu_su_full (GksuContext *context,
+@@ -1081,6 +1086,7 @@ get_xauth_token (GksuContext *context, gchar *display)
+   FILE *xauth_output;
+   gchar *tmp = NULL;
+   gchar *xauth = g_new0 (gchar, 256);
++  size_t r;
+ 
+   /* find out where the xauth binary is located */
+   if (g_file_test ("/usr/bin/xauth", G_FILE_TEST_IS_EXECUTABLE))
+@@ -1108,7 +1114,8 @@ get_xauth_token (GksuContext *context, gchar *display)
+ 	       strerror(errno));
+       return NULL;
+     }
+-  fread (xauth, sizeof(char), 255, xauth_output);
++  r = fread (xauth, sizeof(char), 256, xauth_output);
++  xauth[r] = '\0';
+   pclose (xauth_output);
+   g_free (tmp);
+ 
+@@ -1897,7 +1904,7 @@ gksu_su_full (GksuContext *context,
        gchar **cmd = g_malloc (sizeof(gchar*)*7);
  
        setsid();   // make us session leader
@@ -23,7 +41,7 @@ $OpenBSD: patch-libgksu_libgksu_c,v 1.1.1.1 2008/01/17 18:45:56 jasper Exp $
        if (context->login_shell)
  	{
  	  cmd[i] = g_strdup ("-"); i++;
-@@ -1919,7 +1924,7 @@ gksu_su_full (GksuContext *context,
+@@ -1919,7 +1926,7 @@ gksu_su_full (GksuContext *context,
        if (execv (cmd[0], cmd) == -1)
  	{
  	  fprintf (stderr,
