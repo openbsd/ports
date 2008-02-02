@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/02 14:06:05 bernd Exp $
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/mysql.so
+share/doc/ruby-mysql/
+share/doc/ruby-mysql/README.html
+share/doc/ruby-mysql/tommy.css
