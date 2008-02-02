@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2008/01/18 03:45:03 deanna Exp $
+# $OpenBSD: Makefile,v 1.165 2008/02/02 09:42:58 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -54,7 +54,6 @@
      SUBDIR += gcompris
      SUBDIR += gemdropx
      SUBDIR += glutton
-     SUBDIR += gnocatan
      SUBDIR += gnuchess
      SUBDIR += gnugo
      SUBDIR += gnushogi
@@ -92,6 +91,7 @@
      SUBDIR += omega
      SUBDIR += openttd
      SUBDIR += pathological
+     SUBDIR += pioneers
      SUBDIR += prboom
      SUBDIR += qgo
      SUBDIR += qstat
