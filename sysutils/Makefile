@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2008/01/17 18:13:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.145 2008/02/02 11:43:03 bernd Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -83,6 +83,7 @@
      SUBDIR += radmind
      SUBDIR += rdiff-backup
      SUBDIR += rtty
+     SUBDIR += ruby-capistrano
      SUBDIR += ruby-facter
      SUBDIR += ruby-mongrel_cluster
      SUBDIR += ruby-puppet
