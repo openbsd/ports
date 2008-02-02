@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/16 01:40:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2008/02/02 09:30:54 steven Exp $
 
 COMMENT=	library functions to access Microsoft Word/Excel files
 
 DISTNAME=	wv2-0.2.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	wv2                  2.1      # .1.8
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		gobject-2.0 m z
+
+WANTLIB=	gobject-2.0 pcre m z
 
 MODULES=	devel/gettext
 
