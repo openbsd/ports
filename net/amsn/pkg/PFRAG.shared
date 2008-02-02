@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/22 19:32:25 steven Exp $
-share/amsn/utils/Tclxml/libTclxml3.1.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/02/02 21:17:50 steven Exp $
 share/amsn/utils/TkCximage/TkCximage.so
+share/amsn/utils/linux/linflash/flash.so
 share/amsn/utils/linux/traydock/libtray.so
+share/amsn/utils/tcl_siren/tcl_siren.so
 share/amsn/utils/webcamsn/webcamsn.so

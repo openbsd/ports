@@ -1,29 +1,27 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/10/22 19:32:24 steven Exp $
---- configure.orig	Wed Nov  1 18:05:49 2006
-+++ configure	Tue Sep 18 13:24:52 2007
-@@ -1364,9 +1364,9 @@ case `uname -s` in
- 
- 	OpenBSD)
- 		# *BSD has important stuff (from ports) in /usr/local ...
--		CFLAGS="$CFLAGS -lm -I/usr/local/include/libpng -I/usr/local/include -L/usr/local/lib"
+$OpenBSD: patch-configure,v 1.2 2008/02/02 21:17:50 steven Exp $
+--- configure.orig	Mon Dec 24 22:35:51 2007
++++ configure	Sat Feb  2 20:13:16 2008
+@@ -1781,8 +1781,8 @@ case `uname -s` in
+ 	OpenBSD | FreeBSD | NetBSD)
+ 		# *BSD has important stuff (from ports)
+ 		# in /usr/local ...
+-		CFLAGS="$CFLAGS -I/usr/local/include -L/usr/local/lib"
 -		LDFLAGS="$LDFLAGS -L/usr/local/lib"
--		TK_INC_SPEC=/usr/local/include/tk8.4/generic
 +		CFLAGS="$CFLAGS $CPPFLAGS"
 +		LDFLAGS="$LDFLAGS"
-+#		TK_INC_SPEC=/usr/local/include/tk8.4/generic
  		FOUND_OS="bsd"
  		;;
- 
-@@ -1472,7 +1472,7 @@ echo X"$prefix" |
+ 	Darwin)
+@@ -1904,7 +1904,7 @@ echo X"$prefix" |
  fi
  
  
 -TCLSH=`which tclsh`
 +#TCLSH=`which tclsh`
  VERSION=`echo "puts $::tcl_version ; exit" | ${TCLSH}`
- # Check whether --enable-version-check or --disable-version-check was given.
+ # Check whether --enable-version-check was given.
  if test "${enable_version_check+set}" = set; then
-@@ -2849,7 +2849,7 @@ echo $ECHO_N "checking tcl build dir... $ECHO_C" >&6
+@@ -3279,7 +3279,7 @@ echo $ECHO_N "checking tcl build dir... $ECHO_C" >&6; 
  		/usr/lib64/tcl8.5.* \
  		/usr/local/lib64/tcl8.5 \
  		/usr/local/lib64/tcl8.5.* \
@@ -32,7 +30,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/10/22 19:32:24 steven Exp $
  
  	for i in $dirs ; do
  
-@@ -2997,7 +2997,7 @@ echo $ECHO_N "checking tk build dir... $ECHO_C" >&6
+@@ -3427,7 +3427,7 @@ echo $ECHO_N "checking tk build dir... $ECHO_C" >&6; }
  		/usr/lib64/tk8.5.* \
  		/usr/local/lib64/tk8.5 \
  		/usr/local/lib64/tk8.5.* \

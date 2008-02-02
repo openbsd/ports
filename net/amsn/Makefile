@@ -1,9 +1,8 @@
-#$OpenBSD: Makefile,v 1.2 2007/12/15 21:00:30 ajacoutot Exp $
+#$OpenBSD: Makefile,v 1.3 2008/02/02 21:17:49 steven Exp $
 
 COMMENT=	open source MSN Messenger clone
 
-DISTNAME=	amsn-0.96
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	amsn-0.97
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.amsn-project.net/
@@ -30,7 +29,7 @@ BUILD_DEPENDS= 	:tk-8.4.*:x11/tk/8.4 \
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	verbose=yes
-CONFIGURE_STYLE=gnu dest
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tk=${LOCALBASE}/lib/tk8.4
 
@@ -41,7 +40,6 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" 
 
 pre-configure:
 	perl -pi -e 's|__LOCALBASE__|${LOCALBASE}|' ${WRKSRC}/amsn*
-	perl -pi -e 's|AMSN_BWidget|BWidget|' ${WRKSRC}/*.tcl
 
 post-install:
 .for a in amsn amsn-remote amsn-remote-CLI
