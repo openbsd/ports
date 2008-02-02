@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/10 16:09:10 okan Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/02 09:51:05 steven Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
 V=		3.0.4
-PKGNAME=	filezilla-$Vp0
+PKGNAME=	filezilla-$Vp1
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
 
@@ -23,7 +23,7 @@ WANTLIB=	c m pthread stdc++ z gcrypt gpg-error
 MODULES=	devel/gettext
 LIB_DEPENDS=	gnutls.>=13::security/gnutls \
 		idn::devel/libidn \
-		wx_gtk2_aui,wx_base_xml,wx_base_odbc,wx_gtk2_html,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
+		wx_gtk2_aui,wx_base_xml,wx_base_odbc,wx_gtk2_html,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core,wx_gtk2_richtext:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
 
 BUILD_DEPENDS=	::devel/cppunit
 RUN_DEPENDS=	::devel/desktop-file-utils

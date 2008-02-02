@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2008/01/23 16:34:30 martynas Exp $
+# $OpenBSD: Makefile,v 1.65 2008/02/02 09:51:05 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	videolan client; multimedia player
 
 V=		0.8.6d
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -42,7 +42,7 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
                 dvdread.>=3.0::devel/libdvdread \
 		x264::multimedia/x264 \
 		dvbpsi.>=3::graphics/libdvbpsi \
-		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
+		wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_richtext:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB-main=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \

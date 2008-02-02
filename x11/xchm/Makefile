@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/02 09:51:05 steven Exp $
 
 COMMENT=	display chm files
 
 DISTNAME=	xchm-1.13
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel textproc x11
 
 HOMEPAGE=	http://xchm.sourceforge.net/
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xchm/}
 
 LIB_DEPENDS=	chm::devel/chmlib \
-		wx_base_xml,wx_gtk2_qa,wx_base_odbc,wx_gtk2_html,wx_base,wx_gtk2_adv,wx_gtk2_xrc,wx_gtk2_core,wx_base_net,wx_gtk2_dbgrid:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+		wx_base_xml,wx_gtk2_qa,wx_base_odbc,wx_gtk2_html,wx_base,wx_gtk2_adv,wx_gtk2_xrc,wx_gtk2_core,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_aui,wx_gtk2_richtext:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 
 WANTLIB=	m c stdc++ pthread
 
