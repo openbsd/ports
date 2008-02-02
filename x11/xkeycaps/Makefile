@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:04:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2008/02/02 09:18:54 steven Exp $
 
 COMMENT=	keymap editor for the X window system
 
 DISTNAME=	xkeycaps-2.46
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11 sysutils
 
 MASTER_SITES=	http://www.jwz.org/xkeycaps/
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		ICE SM X11 Xaw Xext Xmu Xt c 
+
+WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c 
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake
