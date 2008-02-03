@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_gd2_rb,v 1.1.1.1 2008/02/03 01:10:01 jcs Exp $
+--- lib/gd2.rb.orig	Sat Feb  2 19:02:32 2008
++++ lib/gd2.rb	Sat Feb  2 19:02:54 2008
+@@ -33,7 +33,7 @@ module GD2
+     when /mswin32/, /cygwin/
+       'bgd.dll'
+     else
+-      'libgd.so.2'
++      'libgd.so'
+     end
+   end
+ 

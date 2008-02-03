@@ -1,0 +1,7 @@
+Ruby/GD2 is a Ruby interface to Thomas Boutell's gd 2 graphics
+library.
+
+Ruby/GD2 is 100% Ruby and uses dl to link with the gd shared
+library. Most of the gd API is supported in some way, however the
+interface is quite different so that things can be done The Ruby Way
+as much as possible.
