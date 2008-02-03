@@ -1,12 +1,21 @@
-$OpenBSD: patch-src_input_c,v 1.1.1.1 2007/01/08 11:00:40 ajacoutot Exp $
---- src/input.c.orig	Sun Jan  7 12:44:44 2007
-+++ src/input.c	Sun Jan  7 12:44:57 2007
-@@ -303,7 +303,7 @@ int open_datasource(DataSource source)
- 	gtk_window_set_title(GTK_WINDOW(errbox),"ERROR!!!");
- 	label = gtk_label_new(
- 		"Error, Cannot connect to input source!!\n"
--		"PLease check settings in the options panel.\n");
-+		"Please check settings in the options panel.\n");
- 	gtk_container_add(GTK_CONTAINER(errbox), label);
- 	gtk_widget_show_all(errbox);
+$OpenBSD: patch-src_input_c,v 1.2 2008/02/03 20:18:09 ajacoutot Exp $
+--- src/input.c.orig	Fri Dec 14 02:41:08 2007
++++ src/input.c	Sun Feb  3 21:09:47 2008
+@@ -67,7 +67,7 @@ int open_datasource(DataSource source)
+ 			/* esd rate is rate for each channel */
+ 		ring_rate=ESD_DEFAULT_RATE;
+ 		update_ring_channels(2);  /* since ESD_STEREO is set */
+-		handle.fd=esd_monitor_stream(ESD_BITS16|ESD_STEREO|ESD_STREAM|ESD_RECORD,ring_rate,"127.0.0.1","eXtace");
++		handle.fd=esd_monitor_stream(ESD_BITS16|ESD_STEREO|ESD_STREAM|ESD_RECORD,ring_rate,NULL,"eXtace");
+ 		if (handle.fd > 0) 
+ 			handle.open = 1;
+ 		break;
+@@ -91,7 +91,7 @@ int open_datasource(DataSource source)
  
+ 	errbox = gtk_message_dialog_new(NULL,GTK_DIALOG_DESTROY_WITH_PARENT,
+ 			GTK_MESSAGE_ERROR,GTK_BUTTONS_OK,
+-			"Error, Cannot connect to input source!!\nPLease check settings in the options panel.\n");
++			"Error, Cannot connect to input source!!\nPlease check settings in the options panel.\n");
+ 
+ 
+ 	gtk_dialog_run(GTK_DIALOG(errbox));

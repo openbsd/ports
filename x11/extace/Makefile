@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/03 20:18:09 ajacoutot Exp $
 
 COMMENT=	audio visualization plugin for the X-Window System
 
-DISTNAME=	extace-1.9.6
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	extace-1.9.9
 CATEGORIES=	x11 audio
 
 HOMEPAGE=	http://extace.sourceforge.net/
@@ -18,24 +17,23 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=extace/}
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xi audiofile c gdk glib \
-		gmodule gthread gtk jpeg m png pthread tiff ungif z
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 audiofile c cairo \
+		expat fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre png pthread z
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	esd.>=2::audio/esound \
-		fftw3.>=4::math/fftw3 \
-		gdk_imlib.>=19::graphics/imlib
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0.>=1200::x11/gtk+2 \
+		esd.>=2::audio/esound \
+		fftw3.>=4::math/fftw3
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu
 
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-
-pre-configure:
-	perl -pi -e 's,-O2 ,${CFLAGS},g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
