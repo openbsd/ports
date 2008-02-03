@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/19 14:56:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/03 21:02:19 jasper Exp $
 %%SHARED%%
 include/libgnomecups-1/
 include/libgnomecups-1/libgnomecups/
@@ -11,10 +11,17 @@ lib/libgnomecups-1.0.a
 lib/libgnomecups-1.0.la
 lib/pkgconfig/
 lib/pkgconfig/libgnomecups-1.0.pc
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/libgnomecups.mo
 share/locale/bg/LC_MESSAGES/libgnomecups.mo
 share/locale/ca/LC_MESSAGES/libgnomecups.mo
 share/locale/cs/LC_MESSAGES/libgnomecups.mo
+share/locale/da/LC_MESSAGES/libgnomecups.mo
 share/locale/de/LC_MESSAGES/libgnomecups.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/libgnomecups.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/libgnomecups.mo
@@ -44,21 +51,28 @@ share/locale/ja/LC_MESSAGES/libgnomecups.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libgnomecups.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
+share/locale/mk/LC_MESSAGES/libgnomecups.mo
 share/locale/nb/LC_MESSAGES/libgnomecups.mo
 share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/libgnomecups.mo
 share/locale/nl/LC_MESSAGES/libgnomecups.mo
-share/locale/no/LC_MESSAGES/libgnomecups.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/libgnomecups.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libgnomecups.mo
+share/locale/pl/LC_MESSAGES/libgnomecups.mo
 share/locale/pt/LC_MESSAGES/libgnomecups.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomecups.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/libgnomecups.mo
 share/locale/sk/LC_MESSAGES/libgnomecups.mo
+share/locale/sl/LC_MESSAGES/libgnomecups.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libgnomecups.mo
@@ -70,9 +84,12 @@ share/locale/sv/LC_MESSAGES/libgnomecups.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/libgnomecups.mo
+share/locale/tr/LC_MESSAGES/libgnomecups.mo
 share/locale/uk/LC_MESSAGES/libgnomecups.mo
+share/locale/vi/LC_MESSAGES/libgnomecups.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/libgnomecups.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomecups.mo
+share/locale/zh_HK/LC_MESSAGES/libgnomecups.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomecups.mo

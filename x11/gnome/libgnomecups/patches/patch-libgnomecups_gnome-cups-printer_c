@@ -1,7 +1,18 @@
-$OpenBSD: patch-libgnomecups_gnome-cups-printer_c,v 1.1 2007/07/11 23:00:47 jasper Exp $
---- libgnomecups/gnome-cups-printer.c.orig	Thu Jul 12 00:31:35 2007
-+++ libgnomecups/gnome-cups-printer.c	Thu Jul 12 00:47:46 2007
-@@ -976,8 +976,11 @@ gnome_cups_printer_get_is_local (GnomeCupsPrinter *pri
+$OpenBSD: patch-libgnomecups_gnome-cups-printer_c,v 1.2 2008/02/03 21:02:19 jasper Exp $
+--- libgnomecups/gnome-cups-printer.c.orig	Tue Jan  2 01:18:51 2007
++++ libgnomecups/gnome-cups-printer.c	Wed Jan 30 14:59:24 2008
+@@ -515,6 +515,10 @@ parse_lpoptions (cups_dest_t **dests)
+ 	num_dests = cups_get_dests (filename, num_dests, dests);
+ 	g_free (filename);
+ 
++	filename = g_build_filename (g_get_home_dir (), ".cups", "lpoptions", NULL);
++	num_dests = cups_get_dests (filename, num_dests, dests);
++	g_free (filename);
++
+ 	return num_dests;
+ }
+ 
+@@ -1030,8 +1034,11 @@ gnome_cups_printer_get_is_local (GnomeCupsPrinter *pri
  {
  	g_return_val_if_fail (GNOME_CUPS_IS_PRINTER (printer), FALSE);
  
@@ -15,7 +26,7 @@ $OpenBSD: patch-libgnomecups_gnome-cups-printer_c,v 1.1 2007/07/11 23:00:47 jasp
  }
  
  void
-@@ -1098,7 +1101,7 @@ gnome_cups_printer_get_ppd (GnomeCupsPrinter *printer)
+@@ -1152,7 +1159,7 @@ gnome_cups_printer_get_ppd (GnomeCupsPrinter *printer)
  		return NULL;
  	}
  
@@ -24,20 +35,23 @@ $OpenBSD: patch-libgnomecups_gnome-cups-printer_c,v 1.1 2007/07/11 23:00:47 jasp
  	ppdpath = get_ppd_uri_path (printer);
  
  	gnome_cups_request_file (host, ppdpath, fd, &error);
-@@ -1234,7 +1237,11 @@ gnome_cups_printer_get_description (GnomeCupsPrinter *
+@@ -1288,9 +1295,14 @@ gnome_cups_printer_get_description (GnomeCupsPrinter *
  	g_return_val_if_fail (printer->details->description, "");
  
  	return printer->details->description;
 -	
+ }
+ 
 +
 +/* Define the CUPS-Add-Modify-Printer,
 + * see http://www.cups.org/documentation.php/spec-ipp.html#CUPS_ADD_MODIFY_PRINTER
 + */
 +#define CUPS_ADD_MODIFY_PRINTER 0x4003
- }
- 
++
  void
-@@ -1252,7 +1259,11 @@ gnome_cups_printer_set_description (GnomeCupsPrinter *
+ gnome_cups_printer_set_description (GnomeCupsPrinter *printer,
+ 				    const char *description,
+@@ -1306,7 +1318,11 @@ gnome_cups_printer_set_description (GnomeCupsPrinter *
  		return;
  	}
  
@@ -50,7 +64,7 @@ $OpenBSD: patch-libgnomecups_gnome-cups-printer_c,v 1.1 2007/07/11 23:00:47 jasp
  						      printer);
  	ippAddString (request, IPP_TAG_PRINTER, IPP_TAG_TEXT,
  		      "printer-info", NULL, description);
-@@ -1284,8 +1295,12 @@ gnome_cups_printer_set_location (GnomeCupsPrinter *pri
+@@ -1338,8 +1354,12 @@ gnome_cups_printer_set_location (GnomeCupsPrinter *pri
  		return;
  	}
  
@@ -64,31 +78,32 @@ $OpenBSD: patch-libgnomecups_gnome-cups-printer_c,v 1.1 2007/07/11 23:00:47 jasp
  	ippAddString (request, IPP_TAG_PRINTER, IPP_TAG_TEXT,
  		"printer-location", NULL, location);
  	response = gnome_cups_request_execute (request, NULL, "/admin/", error);
-@@ -1963,4 +1978,27 @@ _gnome_cups_printer_get_host (GnomeCupsPrinter *printe
+@@ -2018,5 +2038,28 @@ _gnome_cups_printer_get_host (GnomeCupsPrinter *printe
+ 		}
  	}
  	
- 	return host;
++	return host;
 +}
 +
 +gchar *
 +_gnome_cups_printer_get_ppd_host (GnomeCupsPrinter *printer)
 +{
-+       gchar *host = NULL;
++	gchar *host = NULL;
 +
-+       if (printer->details->printer_uri) {
-+	       gchar *x, *y;
++	if (printer->details->printer_uri) {
++		gchar *x, *y;
 +
-+	       x = strstr (printer->details->printer_uri, "://");
++		x = strstr (printer->details->printer_uri, "://");
 +
-+	       if (x) {
-+		       x += 3;
-+		       y = strpbrk (x, ":/");
-+		       if (y)
-+			       host = g_strndup (x, y - x);
-+		       else 
-+			       host = g_strdup (x);
-+	       }
-+       }
++		if (x) {
++			x += 3;
++			y = strpbrk (x, ":/");
++			if (y)
++				host = g_strndup (x, y - x);
++			else 
++			host = g_strdup (x);
++		}
++	}
 +       
-+       return host;
+ 	return host;
  }

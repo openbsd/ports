@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgnomecups_gnome-cups-request_c,v 1.1 2007/07/11 23:00:47 jasper Exp $
---- libgnomecups/gnome-cups-request.c.orig	Thu Jul 12 00:38:17 2007
-+++ libgnomecups/gnome-cups-request.c	Thu Jul 12 00:46:50 2007
+$OpenBSD: patch-libgnomecups_gnome-cups-request_c,v 1.2 2008/02/03 21:02:19 jasper Exp $
+--- libgnomecups/gnome-cups-request.c.orig	Tue Jan 29 23:51:24 2008
++++ libgnomecups/gnome-cups-request.c	Tue Jan 29 23:51:59 2008
 @@ -349,7 +349,7 @@ request_thread_main (GnomeCupsRequest *request,
  		if (request->response == NULL)
  			status = IPP_INTERNAL_ERROR;
@@ -10,23 +10,3 @@ $OpenBSD: patch-libgnomecups_gnome-cups-request_c,v 1.1 2007/07/11 23:00:47 jasp
  			g_warning ("IPP request failed with status %d", status);
  			if (request->error != NULL)
  				*(request->error) = g_error_new (GNOME_CUPS_ERROR, 
-@@ -470,17 +470,12 @@ gnome_cups_request_add_requested_attributes (ipp_t *re
- 					     char **attributes)
- {
- 	ipp_attribute_t *attr;
--	int i;
- 	
- 	attr = ippAddStrings (request, 
- 			      group,
--			      IPP_TAG_KEYWORD,
-+			      IPP_TAG_KEYWORD | IPP_TAG_COPY,
- 			      "requested-attributes",
--			      n_attributes, NULL, NULL);
--
--	for (i = 0; i < n_attributes; i++) {
--		attr->values[i].string.text = gnome_cups_strdup (attributes[i]);
--	}
-+			      n_attributes, NULL, attributes);
- }
- 
- typedef struct
