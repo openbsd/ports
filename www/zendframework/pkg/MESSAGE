@@ -1,0 +1,6 @@
+The ZendFramework has been installed into ${INSTDIR}
+
+You should add this to your include_path in php.ini:
+
+include_path = ".:/pear/lib:/var/www/pear/lib:${INSTDIR}"
+
