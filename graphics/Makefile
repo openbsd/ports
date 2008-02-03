@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2008/01/10 21:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.198 2008/02/03 01:14:23 jcs Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -144,6 +144,7 @@
      SUBDIR += py-matplotlib
      SUBDIR += py-pyx
      SUBDIR += qiv
+     SUBDIR += ruby-gd2
      SUBDIR += ruby-gdk-imlib
      SUBDIR += ruby-gdk-pixbuf
      SUBDIR += s10sh
