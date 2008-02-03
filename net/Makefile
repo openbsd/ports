@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.507 2008/01/25 03:19:58 okan Exp $
+# $OpenBSD: Makefile,v 1.508 2008/02/03 19:08:30 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -57,7 +57,6 @@
      SUBDIR += dnsreflector
      SUBDIR += dnstracer
      SUBDIR += doc
-     SUBDIR += drill
      SUBDIR += dsocks
      SUBDIR += dss
      SUBDIR += dxpc
