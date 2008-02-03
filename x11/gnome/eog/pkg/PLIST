@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/12/15 17:56:25 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/02/03 20:43:56 jasper Exp $
 bin/eog
 include/eog-2.20/
 include/eog-2.20/eog/
@@ -24,7 +24,6 @@ include/eog-2.20/eog/eog-thumbnail.h
 include/eog-2.20/eog/eog-transform.h
 include/eog-2.20/eog/eog-window.h
 lib/pkgconfig/eog.pc
-share/applications/
 share/applications/eog.desktop
 share/eog/
 share/eog/eog-toolbar.xml
@@ -193,8 +192,6 @@ share/locale/el/LC_MESSAGES/eog.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/eog.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/eog.mo
 share/locale/es/LC_MESSAGES/eog.mo
 share/locale/et/LC_MESSAGES/eog.mo
