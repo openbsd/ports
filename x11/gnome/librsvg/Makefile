@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2007/11/10 16:00:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2008/02/03 21:08:35 jasper Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
-GNOME_VERSION=	2.18.2
-SHARED_LIBS +=	rsvg-2         19.0           # .20.1
+GNOME_VERSION=	2.20.0
+SHARED_LIBS +=	rsvg-2         20.0           # .22.0
 CATEGORIES=	devel
 
 # LGPL
@@ -17,12 +17,11 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 bz2 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread xml2 z pcre
+		pangoft2-1.0 pcre png pthread xml2 z
 
 MODULES=	devel/gettext x11/gnome
 
-LIB_DEPENDS=	gailutil.>=20::x11/gnome/gail \
-		gdk-x11-2.0.>=1200,gdk_pixbuf-2.0.>=1200,gtk-x11-2.0.>=1200::x11/gtk+2 \
+LIB_DEPENDS=	gdk-x11-2.0.>=1200,gdk_pixbuf-2.0.>=1200,gtk-x11-2.0.>=1200::x11/gtk+2 \
 		croco-0.6.>=3::www/libcroco
 
 USE_X11=		Yes
@@ -42,7 +41,8 @@ CONFIGURE_ARGS+=--disable-gnome-print \
 		--disable-gnome-vfs
 LIB_DEPENDS+=	gsf-1::devel/libgsf,no_gnome
 .else
-LIB_DEPENDS+=	gnomevfs-2.>=1800::x11/gnome/vfs2 \
+LIB_DEPENDS+=	gailutil.>=20::x11/gnome/gail \
+		gnomevfs-2.>=1800::x11/gnome/vfs2 \
 		gnomeprintui-2-2.>=2::x11/gnome/libgnomeprintui \
 		gsf-1::devel/libgsf
 WANTLIB+=	crypto ssl util ORBit-2 art_lgpl_2 dbus-1 dbus-glib-1 \
