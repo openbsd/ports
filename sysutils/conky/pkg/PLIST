@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/10 21:20:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/03 16:04:09 jasper Exp $
 bin/conky
 share/doc/conky/
 share/doc/conky/README
@@ -6,4 +6,7 @@ share/doc/conky/config_settings.html
 share/doc/conky/docs.html
 share/doc/conky/variables.html
 share/examples/conky/
+@sample ${SYSCONFDIR}/conky/
+share/examples/conky/conky.conf
+@sample ${SYSCONFDIR}/conky/conky.conf
 share/examples/conky/conkyrc.sample
