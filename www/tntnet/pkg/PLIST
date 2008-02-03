@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/26 21:03:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/03 17:16:00 jasper Exp $
 %%SHARED%%
 bin/ecppc
 bin/ecppl
@@ -16,6 +16,7 @@ include/tnt/convert.h
 include/tnt/cookie.h
 include/tnt/data.h
 include/tnt/deflatestream.h
+include/tnt/dispatcher.h
 include/tnt/ecpp.h
 include/tnt/encoding.h
 include/tnt/htmlescostream.h
@@ -27,7 +28,9 @@ include/tnt/httpparser.h
 include/tnt/httpreply.h
 include/tnt/httprequest.h
 include/tnt/inflatestream.h
+include/tnt/job.h
 include/tnt/langlib.h
+include/tnt/maptarget.h
 include/tnt/messageattribute.h
 include/tnt/messageheader.h
 include/tnt/messageheaderparser.h
@@ -38,6 +41,9 @@ include/tnt/objectptr.h
 include/tnt/objecttemplate.h
 include/tnt/parser.h
 include/tnt/pointer.h
+include/tnt/poller.h
+include/tnt/query_params.h
+include/tnt/regex.h
 include/tnt/savepoint.h
 include/tnt/scope.h
 include/tnt/scopemanager.h
@@ -45,8 +51,11 @@ include/tnt/sessionscope.h
 include/tnt/sodata.h
 include/tnt/stringlessignorecase.h
 include/tnt/tntconfig.h
+include/tnt/tntnet.h
 include/tnt/unzipfile.h
+include/tnt/urlescostream.h
 include/tnt/urlmapper.h
+include/tnt/worker.h
 include/tnt/zdata.h
 lib/libtntnet.a
 lib/libtntnet.la
@@ -105,7 +114,7 @@ lib/tntnet/strings.la
 lib/tntnet/strings.so.0.0
 lib/tntnet/tntnet.a
 lib/tntnet/tntnet.la
-lib/tntnet/tntnet.so.6.1
+lib/tntnet/tntnet.so.7.1
 lib/tntnet/upload.a
 lib/tntnet/upload.la
 lib/tntnet/upload.so.0.0

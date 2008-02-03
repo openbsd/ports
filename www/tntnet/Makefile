@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/31 17:37:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/03 17:16:00 jasper Exp $
 
 COMMENT=		modular webapplication server for C++
 
-DISTNAME=		tntnet-1.6.0.2
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		tntnet-1.6.1
 CATEGORIES=		www devel
 
 HOMEPAGE=		http://www.tntnet.org/
 
-SO_VERSION=	0.1
+MAINTAINER=		Vijay Ramesh <vramesh2@uiuc.edu>
+
+SO_VERSION=	1.0
 .for _lib in alldemos calc calcajax calci18n calcmvc chat comp config controls \
 cookie extlib hello savepoint session sprintf strings tntnet tntnet_cgi \
 tntnet_sdk upload
