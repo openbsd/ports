@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/11/10 15:42:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/02/03 20:47:18 jasper Exp $
 bin/gnome-terminal
 lib/bonobo/
 lib/bonobo/servers/
 lib/bonobo/servers/gnome-terminal.server
-share/applications/
 share/applications/gnome-terminal.desktop
 share/gnome/
 share/gnome-terminal/
