@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/08 14:39:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/03 21:19:30 robert Exp $
 bin/a2x
 bin/asciidoc
 @man man/man1/a2x.1
@@ -103,6 +103,7 @@ share/examples/asciidoc/javascripts/LaTeXMathML.js
 @sample ${SYSCONFDIR}/asciidoc/javascripts/LaTeXMathML.js
 share/examples/asciidoc/javascripts/toc.js
 @sample ${SYSCONFDIR}/asciidoc/javascripts/toc.js
+share/examples/asciidoc/lang-es.conf
 share/examples/asciidoc/latex.conf
 @sample ${SYSCONFDIR}/asciidoc/latex.conf
 share/examples/asciidoc/linuxdoc.conf
