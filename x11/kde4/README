@@ -1,16 +1,15 @@
-This is completely experimental ! This is there so that people can
+This is completely experimental! This is here so that people can
 play with it.
 
-Things will break !  This is totally expected. Dependencies are very much
-incomplete,
+Things *will* break!  This is totally expected. Dependencies are still
+incomplete.
 
-There are issues in kde proper (like duh, what do you expect, this is a 
-beta), and some issues related to OpenBSD.
+There are issues in KDE proper (it's released, but it's still early
+days yet for KDE4), and some issues related to OpenBSD.
 
-For now, the most annoying issue is that cmake does not handle our shared
-libraries correctly *at all*.
-
-So, the library dependencies between stuff within kde are broken so far.
-
-Also, this kde4 will leave you with quite a few processes lying around
+Also, this KDE4 will leave you with quite a few processes lying around
 when you've played with it.
+
+It should be obvious, but the list of things to be done is too long to
+maintain; just find something that doesn't work for you, fix it, and 
+post a "cvs diff -u" to ports@.
