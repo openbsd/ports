@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2008/01/30 20:55:59 mbalmer Exp $
---- configure.orig	Thu Jul  5 15:21:20 2007
-+++ configure	Wed Aug  1 12:59:05 2007
-@@ -23608,7 +23608,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.10 2008/02/03 18:06:41 kili Exp $
+--- configure.orig	Fri Dec 21 13:00:49 2007
++++ configure	Sun Feb  3 13:54:59 2008
+@@ -25318,7 +25318,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <openssl/ssl.h>
  int

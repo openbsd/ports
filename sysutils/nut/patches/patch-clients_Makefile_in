@@ -1,0 +1,16 @@
+$OpenBSD: patch-clients_Makefile_in,v 1.7 2008/02/03 18:06:41 kili Exp $
+--- clients/Makefile.in.orig	Fri Dec 21 13:00:51 2007
++++ clients/Makefile.in	Sun Feb  3 15:03:06 2008
+@@ -339,9 +339,12 @@ upssched_SOURCES = upssched.c upssched.h
+ upssched_LDADD = ../common/libcommon.a $(NETLIBS) ../common/parseconf.o 
+ upsimage_cgi_SOURCES = upsimage.c upsclient.h upsimagearg.h cgilib.c cgilib.h
+ upsimage_cgi_LDADD = $(LDADD) $(LIBGD_LDFLAGS)
++upsimage_cgi_LDFLAGS = $(LDFLAGS) -all-static
+ upsset_cgi_SOURCES = upsset.c upsclient.h cgilib.c cgilib.h
++upsset_cgi_LDADD = $(LDADD) -all-static
+ upsstats_cgi_SOURCES = upsstats.c upsclient.h status.h upsstats.h	\
+  upsimagearg.h cgilib.c cgilib.h
++upsstats_cgi_LDADD = $(LDADD) -all-static
+ 
+ 
+ # not LDADD.

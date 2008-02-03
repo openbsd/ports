@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2008/01/30 20:55:59 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.26 2008/02/03 18:06:41 kili Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPSs via SNMP
 
 DISTNAME=		nut-2.2.1
-PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
-PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}p0
+PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}p0
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.networkupstools.org/
 
@@ -26,7 +27,7 @@ NUT_USER=		_ups
 NUT_ID=			529
 SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/nut \
 			--datadir=${PREFIX}/share/ups \
 			--mandir=${PREFIX}/man \
@@ -35,8 +36,6 @@ CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/nut \
 			--with-group=${NUT_USER} \
 			--with-ssl \
 			--enable-strip
-ALL_TARGET=		all
-INSTALL_TARGET=		install
 
 PSEUDO_FLAVORS=		snmp
 FLAVOR?=
@@ -48,12 +47,7 @@ MULTI_PACKAGES+=	-snmp
 LIB_DEPENDS-main=	usb::devel/libusb
 
 PREFIX-cgi=		${WEB_ROOT}
-LIB_DEPENDS-cgi=	gd::graphics/gd \
-			iconv::converters/libiconv \
-			jpeg::graphics/jpeg
-
-WANTLIB-cgi=		X11 Xau Xdmcp c crypto expat fontconfig freetype m
-WANTLIB-cgi+=		ssl z png
+WANTLIB-cgi=
 
 LIB_DEPENDS-snmp=	netsnmp::net/net-snmp
 
