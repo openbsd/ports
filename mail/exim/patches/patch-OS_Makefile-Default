@@ -1,6 +1,6 @@
---- OS/Makefile-Default.orig	Mon Nov 28 11:57:32 2005
-+++ OS/Makefile-Default	Tue Nov 29 11:54:49 2005
-@@ -71,7 +71,7 @@
+--- OS/Makefile-Default.orig	Fri Feb 10 15:33:26 2006
++++ OS/Makefile-Default	Wed Jan 30 23:03:20 2008
+@@ -71,7 +71,7 @@ PERL_COMMAND=/usr/bin/perl
  
  # CC contains the name of the C compiler to be used.
  
