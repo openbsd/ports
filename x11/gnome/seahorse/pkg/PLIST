@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/03 19:14:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/02/03 21:10:57 jasper Exp $
 %%SHARED%%
 bin/seahorse
 @mode 4555
@@ -17,8 +17,6 @@ include/libcryptui/cryptui.h
 lib/bonobo/
 lib/bonobo/servers/
 lib/bonobo/servers/GNOME_SeahorseApplet.server
-lib/epiphany/
-lib/epiphany/2.18/
 lib/epiphany/2.18/extensions/
 lib/epiphany/2.18/extensions/libseahorseextension.a
 lib/epiphany/2.18/extensions/libseahorseextension.la
@@ -189,24 +187,16 @@ share/gnome/help/seahorse/vi/figures/seahorse-window.png
 share/gnome/help/seahorse/vi/figures/signature.png
 share/gnome/help/seahorse/vi/figures/text-editor.png
 share/gnome/help/seahorse/vi/seahorse.xml
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/seahorse-preferences.svg
 share/icons/hicolor/22x22/apps/seahorse.svg
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/seahorse-applet.png
 share/icons/hicolor/48x48/apps/seahorse-preferences.png
 share/icons/hicolor/48x48/apps/seahorse.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/seahorse-applet.svg
 share/icons/hicolor/scalable/apps/seahorse-preferences.svg
 share/icons/hicolor/scalable/apps/seahorse.svg
 share/locale/ar/LC_MESSAGES/seahorse.mo
 share/locale/az/LC_MESSAGES/seahorse.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/seahorse.mo
 share/locale/bg/LC_MESSAGES/seahorse.mo
 share/locale/bn/LC_MESSAGES/seahorse.mo
@@ -241,8 +231,6 @@ share/locale/ms/LC_MESSAGES/seahorse.mo
 share/locale/nb/LC_MESSAGES/seahorse.mo
 share/locale/ne/LC_MESSAGES/seahorse.mo
 share/locale/nl/LC_MESSAGES/seahorse.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/seahorse.mo
 share/locale/or/LC_MESSAGES/seahorse.mo
 share/locale/pa/LC_MESSAGES/seahorse.mo
@@ -251,8 +239,6 @@ share/locale/pt/LC_MESSAGES/seahorse.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse.mo
 share/locale/ru/LC_MESSAGES/seahorse.mo
 share/locale/rw/LC_MESSAGES/seahorse.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/seahorse.mo
 share/locale/sk/LC_MESSAGES/seahorse.mo
 share/locale/sl/LC_MESSAGES/seahorse.mo
@@ -261,8 +247,6 @@ share/locale/sr/LC_MESSAGES/seahorse.mo
 share/locale/sr@Latn/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/ta/LC_MESSAGES/seahorse.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/seahorse.mo
 share/locale/th/LC_MESSAGES/seahorse.mo
 share/locale/tr/LC_MESSAGES/seahorse.mo
