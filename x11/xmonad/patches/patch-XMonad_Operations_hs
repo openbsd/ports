@@ -1,19 +1,19 @@
-$OpenBSD: patch-XMonad_Operations_hs,v 1.1 2008/01/18 21:51:13 kili Exp $
+$OpenBSD: patch-XMonad_Operations_hs,v 1.2 2008/02/03 18:17:51 kili Exp $
 
 Backport for ghc-6.6 and X11-extras.
 
---- XMonad/Operations.hs.orig	Mon Dec 10 00:25:43 2007
-+++ XMonad/Operations.hs	Sat Jan  5 09:24:33 2008
-@@ -76,7 +76,7 @@ manage w = whenX (not <$> isClient w) $ withDisplay $ 
- unmanage :: Window -> X ()
- unmanage w = do
-     windows (W.delete w)
--    setWMState w withdrawnState
-+    setWMState w 0
-     modify (\s -> s {mapped = S.delete w (mapped s), waitingUnmap = M.delete w (waitingUnmap s)})
+--- XMonad/Operations.hs.orig	Sun Jan 27 23:02:10 2008
++++ XMonad/Operations.hs	Mon Jan 28 20:37:49 2008
+@@ -170,7 +170,7 @@ windows f = do
+     -- all windows that are no longer in the windowset are marked as
+     -- withdrawn, it is important to do this after the above, otherwise 'hide'
+     -- will overwrite withdrawnState with iconicState
+-    mapM_ (flip setWMState withdrawnState) (W.allWindows old \\ W.allWindows ws)
++    mapM_ (flip setWMState 0) (W.allWindows old \\ W.allWindows ws)
  
- -- | Modify the size of the status gap at the top of the current screen
-@@ -185,7 +185,7 @@ hide w = whenX (gets (S.member w . mapped)) $ withDisp
+     clearEvents enterWindowMask
+ 
+@@ -186,7 +186,7 @@ hide w = whenX (gets (S.member w . mapped)) $ withDisp
      io $ do selectInput d w (clientMask .&. complement structureNotifyMask)
              unmapWindow d w
              selectInput d w clientMask
@@ -22,7 +22,7 @@ Backport for ghc-6.6 and X11-extras.
      -- this part is key: we increment the waitingUnmap counter to distinguish
      -- between client and xmonad initiated unmaps.
      modify (\s -> s { waitingUnmap = M.insertWith (+) w 1 (waitingUnmap s)
-@@ -195,7 +195,7 @@ hide w = whenX (gets (S.member w . mapped)) $ withDisp
+@@ -196,7 +196,7 @@ hide w = whenX (gets (S.member w . mapped)) $ withDisp
  -- this is harmless if the window was already visible
  reveal :: Window -> X ()
  reveal w = withDisplay $ \d -> do
@@ -31,7 +31,7 @@ Backport for ghc-6.6 and X11-extras.
      io $ mapWindow d w
      modify (\s -> s { mapped = S.insert w (mapped s) })
  
-@@ -206,7 +206,7 @@ clientMask = structureNotifyMask .|. enterWindowMask .
+@@ -207,7 +207,7 @@ clientMask = structureNotifyMask .|. enterWindowMask .
  -- | Set some properties when we initially gain control of a window
  setInitialProperties :: Window -> X ()
  setInitialProperties w = asks normalBorder >>= \nb -> withDisplay $ \d -> do

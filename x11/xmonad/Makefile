@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/18 21:51:13 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2008/02/03 18:17:51 kili Exp $
 
 COMMENT-main=		tiling window manager
 COMMENT-lib=		libraries for runtime configuration
 
-V=			0.5
+V=			0.6
 DISTNAME=		xmonad-$V
 PKGNAME-main=		xmonad-$V
 PKGNAME-lib=		xmonad-lib-$V
