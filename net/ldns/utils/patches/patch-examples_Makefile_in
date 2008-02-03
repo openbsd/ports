@@ -1,0 +1,13 @@
+Index: examples/Makefile.in
+===================================================================
+--- examples/Makefile.in	(revision 2544)
++++ examples/Makefile.in	(revision 2543)
+@@ -104,7 +104,7 @@
+ 		$(INSTALL) -d -m 755 $(DESTDIR)$(mandir)/man1
+ 		for i in $(PROGRAMS); do \
+ 			$(libtool) --tag=CC --mode=install ${INSTALL} -c $$i $(DESTDIR)$(bindir) ; \
+-			$(INSTALL) -c -m 644 $$i.1 $(DESTDIR)$(mandir)/man1/$$i.1 ; \
++			$(INSTALL) -c -m 644 $(srcdir)/$$i.1 $(DESTDIR)$(mandir)/man1/$$i.1 ; \
+ 			done
+ 		exit 0
+ 

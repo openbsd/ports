@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST,v 1.1 2008/02/03 19:09:49 jakob Exp $
+bin/ldns-chaos
+bin/ldns-compare-zones
+bin/ldns-dpa
+bin/ldns-key2ds
+bin/ldns-keyfetcher
+bin/ldns-keygen
+bin/ldns-mx
+bin/ldns-notify
+bin/ldns-read-zone
+bin/ldns-resolver
+bin/ldns-rrsig
+bin/ldns-signzone
+bin/ldns-testns
+bin/ldns-update
+bin/ldns-version
+bin/ldns-walk
+bin/ldns-zcat
+bin/ldns-zsplit
+bin/ldnsd
+@man man/man1/ldns-chaos.1
+@man man/man1/ldns-compare-zones.1
+@man man/man1/ldns-dpa.1
+@man man/man1/ldns-key2ds.1
+@man man/man1/ldns-keyfetcher.1
+@man man/man1/ldns-keygen.1
+@man man/man1/ldns-mx.1
+@man man/man1/ldns-notify.1
+@man man/man1/ldns-read-zone.1
+@man man/man1/ldns-resolver.1
+@man man/man1/ldns-rrsig.1
+@man man/man1/ldns-signzone.1
+@man man/man1/ldns-testns.1
+@man man/man1/ldns-update.1
+@man man/man1/ldns-version.1
+@man man/man1/ldns-walk.1
+@man man/man1/ldns-zcat.1
+@man man/man1/ldns-zsplit.1
+@man man/man1/ldnsd.1
