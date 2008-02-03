@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/07/17 19:57:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/02/03 15:06:48 kili Exp $
 @newgroup _polipo:548
 @newuser _polipo:548:_polipo:daemon:Polipo Account:/nonexistent:/sbin/nologin
 bin/polipo
@@ -26,8 +26,12 @@ share/doc/polipo/doc/DNS.html
 share/doc/polipo/doc/Daemon.html
 share/doc/polipo/doc/Disk-cache.html
 share/doc/polipo/doc/Disk-format.html
+share/doc/polipo/doc/External-redirectors.html
 share/doc/polipo/doc/Forbidden.html
+share/doc/polipo/doc/HTTP-parent-proxies.html
+share/doc/polipo/doc/HTTP-tuning.html
 share/doc/polipo/doc/Harvest-and-Squid.html
+share/doc/polipo/doc/Internal-forbidden-list.html
 share/doc/polipo/doc/Junkbuster.html
 share/doc/polipo/doc/Latency-and-throughput.html
 share/doc/polipo/doc/Limiting-chunk-usage.html
@@ -38,6 +42,7 @@ share/doc/polipo/doc/Logging.html
 share/doc/polipo/doc/Malloc-memory.html
 share/doc/polipo/doc/Memory-cache.html
 share/doc/polipo/doc/Memory-usage.html
+share/doc/polipo/doc/Modifying-the-on_002ddisk-cache.html
 share/doc/polipo/doc/Network-traffic.html
 share/doc/polipo/doc/Network.html
 share/doc/polipo/doc/OS-usage-limits.html
@@ -56,12 +61,16 @@ share/doc/polipo/doc/Privoxy.html
 share/doc/polipo/doc/Proxies-and-caches.html
 share/doc/polipo/doc/Purging.html
 share/doc/polipo/doc/Running.html
+share/doc/polipo/doc/SOCKS-parent-proxies.html
 share/doc/polipo/doc/Server-statistics.html
+share/doc/polipo/doc/Server_002dside-behaviour.html
 share/doc/polipo/doc/Stopping.html
 share/doc/polipo/doc/The-web.html
 share/doc/polipo/doc/Tuning-POST-and-PUT.html
 share/doc/polipo/doc/Tuning-the-HTTP-parser.html
+share/doc/polipo/doc/Tuning-validation.html
 share/doc/polipo/doc/Tunnelling-connections.html
+share/doc/polipo/doc/Tweaking-validation.html
 share/doc/polipo/doc/Variable-index.html
 share/doc/polipo/doc/WWWOFFLE.html
 share/doc/polipo/doc/Web-interface.html

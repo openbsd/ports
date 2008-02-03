@@ -1,26 +1,26 @@
---- Makefile.orig	Mon Jun 28 23:30:07 2004
-+++ Makefile	Fri Aug  5 22:45:35 2005
-@@ -1,15 +1,15 @@
+--- Makefile.orig	Sat Oct  6 15:43:15 2007
++++ Makefile	Fri Nov 16 23:48:55 2007
+@@ -1,9 +1,8 @@
 -PREFIX = /usr/local
  BINDIR = $(PREFIX)/bin
  MANDIR = $(PREFIX)/man
  INFODIR = $(PREFIX)/info
 -LOCAL_ROOT = /usr/share/polipo/www
 -DISK_CACHE_ROOT = /var/cache/polipo
-+#LOCAL_ROOT = ${PREFIX}/share/polipo
 +LOCAL_ROOT = ${PREFIX}/share/doc/polipo
 +DISK_CACHE_ROOT = /var/polipo/cache
  
- # CDEBUGFLAGS = -O
+ # To compile with Unix CC:
+ 
+@@ -13,7 +12,6 @@ DISK_CACHE_ROOT = /var/cache/polipo
  
  # CC = gcc
- # CDEBUGFLAGS = -O -g -Wall -std=gnu99
--CDEBUGFLAGS = -O -g -Wall
-+# CDEBUGFLAGS = -O -g -Wall
+ # CDEBUGFLAGS = -Os -g -Wall -std=gnu99
+-CDEBUGFLAGS = -Os -g -Wall
  # CDEBUGFLAGS = -Os -Wall
  # CDEBUGFLAGS = -g -Wall
  
-@@ -47,7 +47,7 @@ FILE_DEFINES = -DLOCAL_ROOT=\"$(LOCAL_RO
+@@ -63,7 +61,7 @@ FILE_DEFINES = -DLOCAL_ROOT=\"$(LOCAL_ROOT)/\" \
  
  DEFINES = $(FILE_DEFINES) $(PLATFORM_DEFINES)
  
@@ -29,33 +29,34 @@
  
  SRCS = util.c event.c io.c chunk.c atom.c object.c log.c diskcache.c main.c \
         config.c local.c http.c client.c server.c auth.c tunnel.c \
-@@ -71,21 +71,17 @@ all: polipo polipo.info html/index.html 
+@@ -89,20 +87,19 @@ all: polipo$(EXE) polipo.info html/index.html localind
  install: install.binary install.man
  
  install.binary: all
 -	mkdir -p $(TARGET)$(BINDIR)
 -	mkdir -p $(TARGET)$(LOCAL_ROOT)
 -	mkdir -p $(TARGET)$(LOCAL_ROOT)/doc
-+	$(BSD_INSTALL_DATA_DIR) $(TARGET)$(BINDIR)
-+	$(BSD_INSTALL_DATA_DIR) $(TARGET)$(LOCAL_ROOT)
-+	$(BSD_INSTALL_DATA_DIR) $(TARGET)$(LOCAL_ROOT)/doc
++	${BSD_INSTALL_DATA_DIR} $(TARGET)$(BINDIR)
++	${BSD_INSTALL_DATA_DIR} $(TARGET)$(LOCAL_ROOT)
++	${BSD_INSTALL_DATA_DIR} $(TARGET)$(LOCAL_ROOT)/doc
  	rm -f $(TARGET)$(BINDIR)/polipo
 -	cp -f polipo $(TARGET)$(BINDIR)/
 -	cp -f html/* $(TARGET)$(LOCAL_ROOT)/doc
 -	cp -f localindex.html $(TARGET)$(LOCAL_ROOT)/index.html
-+	$(BSD_INSTALL_PROGRAM) polipo $(TARGET)$(BINDIR)/
-+	$(BSD_INSTALL_DATA) html/* $(TARGET)$(LOCAL_ROOT)/doc
-+	$(BSD_INSTALL_DATA) localindex.html $(TARGET)$(LOCAL_ROOT)/index.html
++	${BSD_INSTALL_PROGRAM} polipo $(TARGET)$(BINDIR)/
++	${BSD_INSTALL_DATA} html/* $(TARGET)$(LOCAL_ROOT)/doc
++	${BSD_INSTALL_DATA} localindex.html $(TARGET)$(LOCAL_ROOT)/index.html
  
  install.man: all
 -	mkdir -p $(TARGET)$(MANDIR)/man1
 -	mkdir -p $(TARGET)$(INFODIR)
 -	cp -f polipo.man $(TARGET)$(MANDIR)/man1/polipo.1
 -	cp polipo.info $(TARGET)$(INFODIR)/
--	install-info --info-dir=$(INFODIR) polipo.info
--
-+	$(BSD_INSTALL_MAN) polipo.man $(TARGET)$(MANDIR)/man1/polipo.1
-+	$(BSD_INSTALL_DATA) polipo.info $(TARGET)$(INFODIR)/
+-	install-info --info-dir=$(TARGET)$(INFODIR) polipo.info
++	${BSD_INSTALL_MAN_DIR} $(TARGET)$(MANDIR)/man1
++	${BSD_INSTALL_DATA_DIR} $(TARGET)$(INFODIR)
++	${BSD_INSTALL_MAN} polipo.man $(TARGET)$(MANDIR)/man1/polipo.1
++	${BSD_INSTALL_DATA} polipo.info $(TARGET)$(INFODIR)/
+ 
  
  polipo.info: polipo.texi
- 	makeinfo polipo.texi

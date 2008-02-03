@@ -1,7 +1,7 @@
-$OpenBSD: patch-main_c,v 1.1.1.1 2005/08/06 21:21:53 aanriot Exp $
---- main.c.orig	Tue Oct  5 20:46:02 2004
-+++ main.c	Sun Jan  2 12:14:22 2005
-@@ -125,6 +125,24 @@ main(int argc, char **argv)
+$OpenBSD: patch-main_c,v 1.2 2008/02/03 15:06:48 kili Exp $
+--- main.c.orig	Tue Mar  6 20:29:05 2007
++++ main.c	Sun May 27 07:45:45 2007
+@@ -126,6 +126,24 @@ main(int argc, char **argv)
          i++;
      }
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-polipo_h,v 1.1.1.1 2005/08/06 21:21:53 aanriot Exp $
---- polipo.h.orig	Mon Jun 28 23:30:07 2004
-+++ polipo.h	Sun Jan  2 12:00:55 2005
-@@ -58,6 +58,9 @@ THE SOFTWARE.
+$OpenBSD: patch-polipo_h,v 1.2 2008/02/03 15:06:48 kili Exp $
+--- polipo.h.orig	Tue Mar  6 20:29:05 2007
++++ polipo.h	Sun May 27 07:45:45 2007
+@@ -62,6 +62,9 @@ THE SOFTWARE.
  #define MAP_ANONYMOUS MAP_ANON
  #endif
  
