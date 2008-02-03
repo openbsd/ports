@@ -1,3 +1,3 @@
-Class::Inner is yet nother implementation of an anonymous class with
+Class::Inner is yet another implementation of an anonymous class with
 per object overrideable methods, but with the added attraction of
 sort of working dispatch to the parent class's method.
