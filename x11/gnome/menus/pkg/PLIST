@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/12/15 18:21:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/02/03 20:45:40 jasper Exp $
 bin/gmenu-simple-editor
 bin/gnome-menu-spec-test
 include/gnome-menus/
@@ -68,6 +68,7 @@ share/examples/gnome-menus/xdg/menus/settings.menu
 share/gnome-menus/
 share/gnome-menus/glade/
 share/gnome-menus/glade/gmenu-simple-editor.glade
+share/locale/af/LC_MESSAGES/gnome-menus.mo
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
 share/locale/as/LC_MESSAGES/gnome-menus.mo
 share/locale/be/LC_MESSAGES/gnome-menus.mo

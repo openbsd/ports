@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2007/12/15 18:21:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2008/02/03 20:45:40 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
 GNOME_PROJECT=		gnome-menus
-GNOME_VERSION=		2.20.2
-PKGNAME=		${DISTNAME}p0
-SHARED_LIBS +=	gnome-menu           3.10      # .3.18
+GNOME_VERSION=		2.20.3
+SHARED_LIBS +=	gnome-menu           3.11      # .3.19
 
-# GPL
+# GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,7 +19,9 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-LIB_DEPENDS=		glib-2.0.>=0::devel/glib2 \
+DESKTOP_FILES=		Yes
+
+LIB_DEPENDS=		glib-2.0::devel/glib2 \
 			fam.>=0::sysutils/fam
 RUN_DEPENDS=		:py-gtk2->=2.10.3:x11/py-gtk2
 
