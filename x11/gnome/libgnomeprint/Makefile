@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/19 15:07:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2008/02/03 21:05:33 jasper Exp $
 
 COMMENT=		printing framework for GNOME
 
 GNOME_PROJECT=		libgnomeprint
-GNOME_VERSION=		2.18.2
+GNOME_VERSION=		2.18.3
 SHARED_LIBS +=	gnomeprint-2-2 2.1            # .1.0
 CATEGORIES=		devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp expat fontconfig freetype glib-2.0 gmodule-2.0 \
-		gobject-2.0 m z
+		gobject-2.0 m pcre z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -23,12 +23,11 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		:bison-*:devel/bison
 LIB_DEPENDS=		pango-1.0.>=1300.0,pangoft2-1.0.>=1300.0::devel/pango \
 			art_lgpl_2.>=5::graphics/libart \
-			xml2.>=9::textproc/libxml \
-			popt.>=0::devel/popt
+			xml2.>=9::textproc/libxml
 
 USE_X11=		Yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--without-cups
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--without-cups
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

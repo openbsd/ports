@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/09/19 15:07:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2008/02/03 21:05:33 jasper Exp $
 %%SHARED%%
 include/libgnomeprint-2.2/
 include/libgnomeprint-2.2/libgnomeprint/
@@ -141,6 +141,9 @@ share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/be/LC_MESSAGES/libgnomeprint-2.2.mo
+share/locale/be@latin/
+share/locale/be@latin/LC_MESSAGES/
+share/locale/be@latin/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/bg/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
