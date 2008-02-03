@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/22 21:59:49 okan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/02/03 15:59:19 okan Exp $
 %%SHARED%%
 bin/yaz-asncomp
 bin/yaz-client
@@ -198,6 +198,7 @@ share/yaz/etc/MARC21slim2RDFDC.xsl
 share/yaz/etc/MARC21slimUtils.xsl
 share/yaz/etc/cqlpass.properties
 share/yaz/etc/maps.xml
+share/yaz/etc/opacxml.xsd
 share/yaz/etc/pqf.properties
 share/yaz/etc/yazgfs.xml
 share/yaz/ill/
