@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2008/01/04 18:38:52 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2008/02/04 17:55:19 jasper Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 CATEGORIES=		x11
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://www.gnome.org/projects/nautilus/
 

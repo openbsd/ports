@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/01/23 12:29:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		components for the GNOME desktop
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.20.3
 SHARED_LIBS +=  gnome-desktop-2      5.8      # .5.16
 CATEGORIES=		x11
+PKGNAME=		${DISTNAME}p0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

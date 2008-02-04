@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/11/10 15:01:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		user interface components for libgnomeprint
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		libgnomeprintui
 GNOME_VERSION=		2.18.1
 SHARED_LIBS +=	gnomeprintui-2-2    2.0      # .1.0
 CATEGORIES=		devel
+PKGNAME=		${DISTNAME}p0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

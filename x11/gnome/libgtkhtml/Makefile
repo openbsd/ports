@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2007/11/10 15:51:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		libgtkhtml
 GNOME_VERSION=		2.11.1
 SHARED_LIBS +=	gtkhtml-2            1.1      # .0.0
+PKGNAME=		${DISTNAME}p0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

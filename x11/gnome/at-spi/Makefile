@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/18 13:36:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		GNOME accessibility interface
 
@@ -7,6 +7,7 @@ GNOME_VERSION=		1.20.1
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
 SHARED_LIBS +=	cspi                 0.0      # .10.11
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=	http://developer.gnome.org/projects/gap/
 

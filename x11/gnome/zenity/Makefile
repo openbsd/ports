@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2007/12/07 22:08:45 martynas Exp $
+# $OpenBSD: Makefile,v 1.20 2008/02/04 17:55:19 jasper Exp $
 
 COMMENT=		dialogs for Gnome
 
 GNOME_PROJECT=		zenity
 GNOME_VERSION=		2.20.1
+PKGNAME=		${DISTNAME}p0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/01/04 18:38:52 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		Eazel Extensions Library
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		eel
 GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	eel-2                21.0     # .22.0
 CATEGORIES=		devel
+PKGNAME=		${DISTNAME}p0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

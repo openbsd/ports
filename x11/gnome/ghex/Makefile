@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/30 06:19:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		binary editor
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		ghex
 GNOME_VERSION=		2.20.1
 SHARED_LIBS=		gtkhex 0.0
 CATEGORIES=		sysutils editors
+PKGNAME=		${DISTNAME}p0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

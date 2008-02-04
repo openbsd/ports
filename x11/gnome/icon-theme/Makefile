@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2007/10/24 15:50:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		base icon theme for GNOME
 
 GNOME_PROJECT=		gnome-icon-theme
 GNOME_VERSION=		2.20.0
 CATEGORIES=		x11
+PKGNAME=		${DISTNAME}p0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

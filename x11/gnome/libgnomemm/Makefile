@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/10 16:25:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		C++ interface for libgnome
 
 GNOME_PROJECT=		libgnomemm
 GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	gnomemm-2.6          0.0      # .1.5
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://gtkmm.sourceforge.net/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/01/04 18:38:52 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		graphics library for GNOME
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		libgnomecanvas
 GNOME_VERSION=		2.20.1.1
 SHARED_LIBS +=	gnomecanvas-2        2001.0   # .2001.0
 CATEGORIES=		x11
+PKGNAME=		${DISTNAME}p0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

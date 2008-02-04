@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/03 21:02:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/04 17:55:18 jasper Exp $
 
 BROKEN= 		need fixes to work on *BSD
 
@@ -8,6 +8,7 @@ GNOME_PROJECT=		libgnomecups
 GNOME_VERSION=		0.2.3
 SHARED_LIBS=		gnomecups-1.0	1.0
 CATEGORIES=		devel
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
 

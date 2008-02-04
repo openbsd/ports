@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2007/07/11 22:11:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		GNOME frontend for GhostScript
+
 GNOME_PROJECT=		ggv
 GNOME_VERSION=		2.12.0
 CATEGORIES=		print

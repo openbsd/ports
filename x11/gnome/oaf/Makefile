@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2008/02/04 17:55:19 jasper Exp $
 
 COMMENT=		Object Activation Framework for GNOME
 
 GNOME_PROJECT=		oaf
 GNOME_VERSION=		0.6.10
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS=		oaf 1.0
 CATEGORIES=		devel
 

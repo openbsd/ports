@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/01/23 12:41:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		GNOME component and compound document system
 
@@ -7,6 +7,7 @@ GNOME_VERSION=		2.20.3
 SHARED_LIBS +=	bonobo-activation    6.0      # .4.0
 SHARED_LIBS +=	bonobo-2             2.0      # .0.0
 CATEGORIES=		devel
+PKGNAME=		${DISTNAME}p0
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes

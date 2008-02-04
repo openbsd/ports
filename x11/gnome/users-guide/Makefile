@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2008/02/04 17:55:19 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -6,7 +6,7 @@ COMMENT=		general GNOME User Documentation
 
 GNOME_PROJECT=		gnome-user-docs
 GNOME_VERSION=		2.18.1
-PKGNAME=		gnome2-user-docs-${VERSION}
+PKGNAME=		gnome2-user-docs-${VERSION}p0
 
 # GNU FDL
 PERMIT_PACKAGE_CDROM=	Yes

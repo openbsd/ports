@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/24 22:47:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		GTK2 desktop calculator
 
 GNOME_PROJECT=		gcalctool
 GNOME_VERSION=		5.20.2
+PKGNAME=		${DISTNAME}p0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

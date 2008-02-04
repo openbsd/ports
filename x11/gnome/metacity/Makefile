@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/02/03 21:09:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2008/02/04 17:55:19 jasper Exp $
 
 COMMENT=		lightweight window manager
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		metacity
 GNOME_VERSION=		2.20.2
 SHARED_LIBS=		metacity-private 0.0
 CATEGORIES=		x11
+PKGNAME=		${DISTNAME}p0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

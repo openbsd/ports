@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/03 20:41:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		API documentation browser for GNOME
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		devhelp
 GNOME_VERSION=		0.18
 SHARED_LIBS +=	devhelp-1             0.0        # .0.0
 CATEGORIES=		textproc
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://developer.imendio.com/projects/devhelp/
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2007/11/10 15:43:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2008/02/04 17:55:19 jasper Exp $
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.20.0.1
 SHARED_LIBS +=  gdict-1.0      5.13      # .5.15
+PKGNAME=		${DISTNAME}p0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

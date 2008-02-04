@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2007/07/05 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		libraries for the GNOME project
 
 GNOME_PROJECT=		gnome-libs
 GNOME_VERSION=		1.4.2
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 SHARED_LIBS=		art_lgpl	4.0	\
 			gnome		36.3	\
 			gnomesupport	0.0	\

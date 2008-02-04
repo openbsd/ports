@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/11/10 15:00:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=		keyboard configuration library
 
@@ -7,6 +7,7 @@ GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	gnomekbd             2.0      # .1.0
 SHARED_LIBS +=	gnomekbdui           2.0      # .1.0
 CATEGORIES=		devel
+PKGNAME=		${DISTNAME}p0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

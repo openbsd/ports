@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2008/02/03 21:08:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2008/02/04 17:55:18 jasper Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.20.0
 SHARED_LIBS +=	rsvg-2         20.0           # .22.0
 CATEGORIES=	devel
+PKGNAME=	${DISTNAME}p0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
