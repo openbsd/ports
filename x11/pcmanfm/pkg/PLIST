@@ -1,20 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/26 17:11:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/04 09:29:22 ajacoutot Exp $
 bin/pcmanfm
-share/applications/
 share/applications/pcmanfm.desktop
 share/locale/ca/LC_MESSAGES/pcmanfm.mo
 share/locale/de/LC_MESSAGES/pcmanfm.mo
 share/locale/es/LC_MESSAGES/pcmanfm.mo
+share/locale/eu/LC_MESSAGES/pcmanfm.mo
 share/locale/fr/LC_MESSAGES/pcmanfm.mo
 share/locale/hu/LC_MESSAGES/pcmanfm.mo
 share/locale/it/LC_MESSAGES/pcmanfm.mo
+share/locale/ja/LC_MESSAGES/pcmanfm.mo
 share/locale/pl/LC_MESSAGES/pcmanfm.mo
 share/locale/pt_BR/LC_MESSAGES/pcmanfm.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/pcmanfm.mo
 share/locale/ru/LC_MESSAGES/pcmanfm.mo
 share/locale/sv_SE/
 share/locale/sv_SE/LC_MESSAGES/
 share/locale/sv_SE/LC_MESSAGES/pcmanfm.mo
+share/locale/tr/LC_MESSAGES/pcmanfm.mo
 share/locale/zh_CN/LC_MESSAGES/pcmanfm.mo
 share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
+share/mime/packages/libmimetype.xml
+share/pcmanfm/
+share/pcmanfm/icons/
+share/pcmanfm/icons/file.png
+share/pcmanfm/icons/folder.png
+share/pcmanfm/mount.rules
+share/pixmaps/
+share/pixmaps/pcmanfm.png
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

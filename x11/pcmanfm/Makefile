@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2008/02/01 21:38:27 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/04 09:29:22 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
-DISTNAME=	pcmanfm-0.3.2.2
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	pcmanfm-0.3.5.7
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pcmanfm.sourceforge.net/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -18,11 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcmanfm/}
 
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xcomposite Xdamage \
-		Xrender atk-1.0 c cairo expat fontconfig freetype \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png pthread z
 
 LIB_DEPENDS=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2 \
 		fam::sysutils/fam \
@@ -38,10 +37,12 @@ USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lm"
-CONFIGURE_ARGS=	--disable-hal
+CONFIGURE_ARGS=	--disable-hal \
+		--disable-inotify
 
 pre-configure:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/src/xdgmime/xdgmime.c
+		${WRKSRC}/src/app-chooser-dialog.c \
+		${WRKSRC}/src/pref-dialog.c
 
 .include <bsd.port.mk>

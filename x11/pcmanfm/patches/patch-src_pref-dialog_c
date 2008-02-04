@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_pref-dialog_c,v 1.1 2008/02/04 09:29:22 ajacoutot Exp $
+--- src/pref-dialog.c.orig	Fri Feb  1 06:07:16 2008
++++ src/pref-dialog.c	Sun Feb  3 21:40:07 2008
+@@ -26,7 +26,7 @@
+ #include "settings.h"
+ 
+ #if 0
+-static const char theme_dir[] = "/usr/share/icons";
++static const char theme_dir[] = "!!LOCALBASE!!/share/icons";
+ 
+ gboolean is_theme_compatible_with_gnome( const char* theme_name )
+ {
