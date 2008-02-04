@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/04 20:05:41 jasper Exp $
-${P5SITE}/Config/
-${P5SITE}/Config/Options.pm
-@man man/man3p/Config::Options.3p
