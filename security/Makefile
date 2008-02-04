@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2008/01/08 10:52:12 jakob Exp $
+# $OpenBSD: Makefile,v 1.192 2008/02/04 22:09:01 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += libfwbuilder
      SUBDIR += libgcrypt
      SUBDIR += libgpg-error
+     SUBDIR += libgringotts
      SUBDIR += libident
      SUBDIR += libmcrypt
      SUBDIR += libotr
