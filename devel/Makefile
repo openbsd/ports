@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.581 2008/02/02 11:10:55 bernd Exp $
+# $OpenBSD: Makefile,v 1.582 2008/02/04 20:26:58 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -276,6 +276,7 @@
      SUBDIR += p5-Config-General
      SUBDIR += p5-Config-Grammar
      SUBDIR += p5-Config-IniFiles
+     SUBDIR += p5-Config-Options
      SUBDIR += p5-Config-Tiny
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-UI
@@ -542,6 +543,7 @@
      SUBDIR += p5-Time-modules
      SUBDIR += p5-Tree-DAG_Node
      SUBDIR += p5-Tree-Simple
+     SUBDIR += p5-Tree-Simple-View
      SUBDIR += p5-Tree-Simple-VisitorFactory
      SUBDIR += p5-Universal-can
      SUBDIR += p5-Universal-exports
