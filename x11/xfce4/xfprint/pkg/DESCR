@@ -1,0 +1,5 @@
+Xfprint is a graphical frontend for printing, a printer management,
+and a job queue management. It doesn't let you configure printers
+but only use printing systems that have already been configured
+properly.
+It supports CUPS, BSD-LPR and File (PostScript) backends.
