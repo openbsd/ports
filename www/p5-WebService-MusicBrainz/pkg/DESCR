@@ -1,0 +1,2 @@
+This module will act as a factory using static methods to return
+specific web service objects.
