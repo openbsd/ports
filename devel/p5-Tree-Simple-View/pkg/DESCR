@@ -1,0 +1,3 @@
+This serves as an abstract base class to the Tree::Simple::View::*
+classes. There are two implementing classes included here:
+Tree::Simple::View::HTML and Tree::Simple::View::DHTML.
