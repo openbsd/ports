@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/01/10 12:06:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/02/04 18:01:47 jasper Exp $
+%%SHARED%%
 include/gnet-2.0/
 include/gnet-2.0/base64.h
 include/gnet-2.0/conn-http.h
@@ -25,4 +26,3 @@ lib/libgnet-2.0.la
 lib/pkgconfig/
 lib/pkgconfig/gnet-2.0.pc
 share/aclocal/gnet-2.0.m4
-%%SHARED%%
