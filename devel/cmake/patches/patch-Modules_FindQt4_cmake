@@ -1,7 +1,99 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.5 2008/01/26 21:26:32 espie Exp $
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.6 2008/02/04 22:31:20 espie Exp $
 --- Modules/FindQt4.cmake.orig	Mon Jan 21 19:59:51 2008
-+++ Modules/FindQt4.cmake	Sat Jan 26 20:48:28 2008
-@@ -250,7 +250,7 @@ ENDMACRO(QT_QUERY_QMAKE)
++++ Modules/FindQt4.cmake	Mon Feb  4 23:15:04 2008
+@@ -29,33 +29,52 @@
+ # Add this variable to your TARGET_LINK_LIBRARIES.
+ #  
+ #  macro QT4_WRAP_CPP(outfiles inputfile ... OPTIONS ...)
++#        create moc code from a list of files containing Qt class with
++#        the Q_OBJECT declaration.  Options may be given to moc, such as those found
++#        when executing "moc -help"
++#
+ #  macro QT4_WRAP_UI(outfiles inputfile ... OPTIONS ...)
++#        create code from a list of Qt designer ui files.
++#        Options may be given to uic, such as those found
++#        when executing "uic -help"
++#
+ #  macro QT4_ADD_RESOURCES(outfiles inputfile ... OPTIONS ...)
++#        create code from a list of Qt resource files.
++#        Options may be given to rcc, such as those found
++#        when executing "rcc -help"
++#
+ #  macro QT4_AUTOMOC(inputfile ... )
+ #  macro QT4_GENERATE_MOC(inputfile outputfile )
+ #
+ #  macro QT4_ADD_DBUS_INTERFACE(outfiles interface basename)
+ #        create a the interface header and implementation files with the 
+ #        given basename from the given interface xml file and add it to 
+-#        the list of sources
++#        the list of sources.
++#        To disable generating a namespace header, set the source file property 
++#        NO_NAMESPACE to TRUE on the interface file.
+ #
+ #  macro QT4_ADD_DBUS_INTERFACES(outfiles inputfile ... )
+ #        create the interface header and implementation files 
+ #        for all listed interface xml files
+ #        the name will be automatically determined from the name of the xml file
+ #
+-#  macro QT4_ADD_DBUS_ADAPTOR(outfiles xmlfile parentheader parentclassname [basename] )
++#        To disable generating namespace headers, set the source file property 
++#        NO_NAMESPACE to TRUE for these inputfiles.
++#  macro QT4_ADD_DBUS_ADAPTOR(outfiles xmlfile parentheader parentclassname [basename] [classname])
+ #        create a dbus adaptor (header and implementation file) from the xml file
+ #        describing the interface, and add it to the list of sources. The adaptor
+ #        forwards the calls to a parent class, defined in parentheader and named
+ #        parentclassname. The name of the generated files will be
+-#        <basename>adaptor.{cpp,h} where basename is the basename of the xml file.
++#        <basename>adaptor.{cpp,h} where basename defaults to the basename of the xml file.
++#        If <classname> is provided, then it will be used as the classname of the
++#        adaptor itself.
+ #
+-#  macro QT4_GENERATE_DBUS_INTERFACE( header [interfacename] )
++#  macro QT4_GENERATE_DBUS_INTERFACE( header [interfacename] OPTIONS ...)
+ #        generate the xml interface file from the given header.
+ #        If the optional argument interfacename is omitted, the name of the 
+ #        interface file is constructed from the basename of the header with
+ #        the suffix .xml appended.
++#        Options may be given to uic, such as those found when executing "qdbuscpp2xml --help"
+ #
+ #  QT_FOUND         If false, don't try to use Qt.
+ #  QT4_FOUND        If false, don't try to use Qt 4.
+@@ -213,13 +232,34 @@
+ # (They make no sense in Qt4)
+ #  QT_QT_LIBRARY        Qt-Library is now split
+ 
++if (QT4_QMAKE_FOUND)
++   # Check already done in this cmake run, nothing more to do
++
++else (QT4_QMAKE_FOUND)
++
++# check that QT_NO_DEBUG is defined for release configurations
++MACRO(QT_CHECK_FLAG_EXISTS FLAG VAR DOC)
++  IF(NOT ${VAR} MATCHES "${FLAG}")
++    SET(${VAR} "${${VAR}} ${FLAG}" 
++      CACHE STRING "Flags used by the compiler during ${DOC} builds." FORCE)
++  ENDIF(NOT ${VAR} MATCHES "${FLAG}")
++ENDMACRO(QT_CHECK_FLAG_EXISTS FLAG VAR)
++QT_CHECK_FLAG_EXISTS(-DQT_NO_DEBUG CMAKE_CXX_FLAGS_RELWITHDEBINFO "Release with Debug Info")
++QT_CHECK_FLAG_EXISTS(-DQT_NO_DEBUG CMAKE_CXX_FLAGS_RELEASE "release")
++QT_CHECK_FLAG_EXISTS(-DQT_NO_DEBUG CMAKE_CXX_FLAGS_MINSIZEREL "release minsize")
++
+ INCLUDE(CheckSymbolExists)
+ INCLUDE(MacroAddFileDependencies)
++INCLUDE(MacroPushRequiredVars)
+ 
+ SET(QT_USE_FILE ${CMAKE_ROOT}/Modules/UseQt4.cmake)
+ 
+ SET( QT_DEFINITIONS "")
+ 
++IF (WIN32)
++  SET(QT_DEFINITIONS -DQT_DLL)
++ENDIF(WIN32)
++
+ SET(QT4_INSTALLED_VERSION_TOO_OLD FALSE)
+ 
+ #  macro for asking qmake to process pro files
+@@ -250,7 +290,7 @@ ENDMACRO(QT_QUERY_QMAKE)
  
  GET_FILENAME_COMPONENT(qt_install_version "[HKEY_CURRENT_USER\\Software\\trolltech\\Versions;DefaultQtVersion]" NAME)
  # check for qmake
@@ -10,19 +102,214 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.5 2008/01/26 21:26:32 espie Exp $
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\${qt_install_version};InstallDir]/bin"
-@@ -1129,7 +1129,8 @@ IF (QT4_QMAKE_FOUND)
-   ###############################################
+@@ -322,6 +362,12 @@ ENDIF (QT_QMAKE_EXECUTABLE)
  
+ IF (QT4_QMAKE_FOUND)
+ 
++  if (WIN32)
++    # get qt install dir 
++    get_filename_component(_DIR ${QT_QMAKE_EXECUTABLE} PATH )
++    get_filename_component(QT_INSTALL_DIR ${_DIR} PATH )
++  endif (WIN32)
++
+   # ask qmake for the library dir
+   # Set QT_LIBRARY_DIR
+   IF (NOT QT_LIBRARY_DIR)
+@@ -424,9 +470,8 @@ IF (QT4_QMAKE_FOUND)
+   # Find out what window system we're using
+   #
+   #############################################
+-  # Save required variable
+-  SET(CMAKE_REQUIRED_INCLUDES_SAVE ${CMAKE_REQUIRED_INCLUDES})
+-  SET(CMAKE_REQUIRED_FLAGS_SAVE    ${CMAKE_REQUIRED_FLAGS})
++  # Save required includes and required_flags variables
++  macro_push_required_vars()
+   # Add QT_INCLUDE_DIR to CMAKE_REQUIRED_INCLUDES
+   SET(CMAKE_REQUIRED_INCLUDES "${CMAKE_REQUIRED_INCLUDES};${QT_INCLUDE_DIR}")
+   # On Mac OS X when Qt has framework support, also add the framework path
+@@ -447,8 +492,8 @@ IF (QT4_QMAKE_FOUND)
+   ENDIF (QT_QTCOPY_REQUIRED)
+ 
+   # Restore CMAKE_REQUIRED_INCLUDES and CMAKE_REQUIRED_FLAGS variables
+-  SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES_SAVE})
+-  SET(CMAKE_REQUIRED_FLAGS    ${CMAKE_REQUIRED_FLAGS_SAVE})
++  # Restore CMAKE_REQUIRED_INCLUDES+CMAKE_REQUIRED_FLAGS variables
++  macro_pop_required_vars()
+   #
+   #############################################
+ 
+@@ -836,20 +881,21 @@ IF (QT4_QMAKE_FOUND)
+   #
+   ######################################
+ 
+-  MACRO (QT4_EXTRACT_OPTIONS qt4_files qt4_options)
+-    SET(${qt4_files} ${ARGN})
+-    SET(${qt4_options})
+-    LIST(FIND ${qt4_files} OPTIONS _index)
+-    IF(NOT _index EQUAL -1)
+-      LIST(REMOVE_ITEM ${qt4_files} OPTIONS)
+-      LIST(LENGTH ${qt4_files} _length)
+-      WHILE(_length GREATER ${_index})
+-        LIST(GET ${qt4_files} ${_index} _opt_value)
+-        LIST(REMOVE_AT ${qt4_files} ${_index})
+-        LIST(APPEND ${qt4_options} ${_opt_value})
+-        LIST(LENGTH ${qt4_files} _length)
+-      ENDWHILE(_length GREATER ${_index})
+-    ENDIF(NOT _index EQUAL -1)
++  MACRO (QT4_EXTRACT_OPTIONS _qt4_files _qt4_options)
++    SET(${_qt4_files} ${ARGN})
++    SET(${_qt4_options})
++    SET(_QT4_DOING_OPTIONS FALSE)
++    FOREACH(_currentArg ${ARGN})
++       IF ("${_currentArg}" STREQUAL "OPTIONS")
++          SET(_QT4_DOING_OPTIONS TRUE)
++       ELSE ("${_currentArg}" STREQUAL "OPTIONS")
++          IF(_QT4_DOING_OPTIONS)
++             LIST(APPEND ${_qt4_options} "${_currentArg}")
++          ELSE(_QT4_DOING_OPTIONS)
++             LIST(APPEND ${_qt4_files} "${_currentArg}")
++          ENDIF(_QT4_DOING_OPTIONS)
++       ENDIF ("${_currentArg}" STREQUAL "OPTIONS")
++    ENDFOREACH(_currentArg)
+   ENDMACRO (QT4_EXTRACT_OPTIONS)
+ 
+   MACRO (QT4_GET_MOC_INC_DIRS _moc_INC_DIRS)
+@@ -881,6 +927,7 @@ IF (QT4_QMAKE_FOUND)
+ 
+ 
+   # QT4_WRAP_CPP(outfiles inputfile ... )
++  # TODO  perhaps add support for -D, -U and other minor options
+ 
+   MACRO (QT4_WRAP_CPP outfiles )
+     # get include dirs
+@@ -922,6 +969,7 @@ IF (QT4_QMAKE_FOUND)
+ 
+ 
+   # QT4_ADD_RESOURCES(outfiles inputfile ... )
++  # TODO  perhaps consider adding support for compression and root options to rcc
+ 
+   MACRO (QT4_ADD_RESOURCES outfiles )
+     QT4_EXTRACT_OPTIONS(rcc_files rcc_options ${ARGN})
+@@ -960,8 +1008,20 @@ IF (QT4_QMAKE_FOUND)
+     SET(_impl   ${CMAKE_CURRENT_BINARY_DIR}/${_basename}.cpp)
+     SET(_moc    ${CMAKE_CURRENT_BINARY_DIR}/${_basename}.moc)
+   
++    GET_SOURCE_FILE_PROPERTY(_nonamespace ${_interface} NO_NAMESPACE)
++    IF ( _nonamespace )
++        SET(_params -N -m)
++    ELSE ( _nonamespace )
++        SET(_params -m)
++    ENDIF ( _nonamespace )
++
++    GET_SOURCE_FILE_PROPERTY(_include ${_interface} INCLUDE)
++    IF ( _include )
++        SET(_params ${_params} -i ${_include})
++    ENDIF ( _include )
++
+     ADD_CUSTOM_COMMAND(OUTPUT ${_impl} ${_header}
+-        COMMAND ${QT_DBUSXML2CPP_EXECUTABLE} -m -p ${_basename} ${_infile}
++        COMMAND ${QT_DBUSXML2CPP_EXECUTABLE} ${_params} -p ${_basename} ${_infile}
+         DEPENDS ${_infile})
+   
+     SET_SOURCE_FILES_PROPERTIES(${_impl} PROPERTIES SKIP_AUTOMOC TRUE)
+@@ -985,7 +1045,9 @@ IF (QT4_QMAKE_FOUND)
+   ENDMACRO(QT4_ADD_DBUS_INTERFACES)
+   
+   
+-  MACRO(QT4_GENERATE_DBUS_INTERFACE _header) # _customName )
++  MACRO(QT4_GENERATE_DBUS_INTERFACE _header) # _customName OPTIONS -some -options )
++    QT4_EXTRACT_OPTIONS(_customName _qt4_dbus_options ${ARGN})
++
+     SET(_customName "${ARGV1}")
+     GET_FILENAME_COMPONENT(_in_file ${_header} ABSOLUTE)
+     GET_FILENAME_COMPONENT(_basename ${_header} NAME_WE)
+@@ -997,13 +1059,13 @@ IF (QT4_QMAKE_FOUND)
+     ENDIF (_customName)
+   
+     ADD_CUSTOM_COMMAND(OUTPUT ${_target}
+-        COMMAND ${QT_DBUSCPP2XML_EXECUTABLE} ${_in_file} > ${_target}
++        COMMAND ${QT_DBUSCPP2XML_EXECUTABLE} ${_qt4_dbus_options} ${_in_file} > ${_target}
+         DEPENDS ${_in_file}
+     )
+   ENDMACRO(QT4_GENERATE_DBUS_INTERFACE)
+   
+   
+-  MACRO(QT4_ADD_DBUS_ADAPTOR _sources _xml_file _include _parentClass) # _optionalBasename )
++  MACRO(QT4_ADD_DBUS_ADAPTOR _sources _xml_file _include _parentClass) # _optionalBasename _optionalClassName)
+     GET_FILENAME_COMPONENT(_infile ${_xml_file} ABSOLUTE)
+     
+     SET(_optionalBasename "${ARGV4}")
+@@ -1094,12 +1156,27 @@ IF (QT4_QMAKE_FOUND)
+   IF( QT_LIBRARY_DIR AND QT_INCLUDE_DIR AND QT_MOC_EXECUTABLE AND QT_UIC_EXECUTABLE AND QT_RCC_EXECUTABLE)
+     SET( QT4_FOUND "YES" )
+     IF( NOT Qt4_FIND_QUIETLY)
+-      MESSAGE(STATUS "Found Qt-Version ${QTVERSION}")
++      MESSAGE(STATUS "Found Qt-Version ${QTVERSION} (using ${QT_QMAKE_EXECUTABLE})")
+     ENDIF( NOT Qt4_FIND_QUIETLY)
+   ELSE( QT_LIBRARY_DIR AND QT_INCLUDE_DIR AND QT_MOC_EXECUTABLE AND QT_UIC_EXECUTABLE AND QT_RCC_EXECUTABLE)
+     SET( QT4_FOUND "NO")
+     SET(QT_QMAKE_EXECUTABLE "${QT_QMAKE_EXECUTABLE}-NOTFOUND" CACHE FILEPATH "Invalid qmake found" FORCE)
+     IF( Qt4_FIND_REQUIRED)
++      IF ( NOT QT_LIBRARY_DIR )
++        MESSAGE(STATUS "Qt libraries NOT found!")
++      ENDIF(NOT QT_LIBRARY_DIR )
++      IF ( NOT QT_INCLUDE_DIR )
++        MESSAGE(STATUS "Qt includes NOT found!")
++      ENDIF( NOT QT_INCLUDE_DIR )
++      IF ( NOT QT_MOC_EXECUTABLE )
++        MESSAGE(STATUS "Qt's moc NOT found!")
++      ENDIF( NOT QT_MOC_EXECUTABLE )
++      IF ( NOT QT_UIC_EXECUTABLE )
++        MESSAGE(STATUS "Qt's uic NOT found!")
++      ENDIF( NOT QT_UIC_EXECUTABLE )
++      IF ( NOT QT_RCC_EXECUTABLE )
++        MESSAGE(STATUS "Qt's rcc NOT found!")
++      ENDIF( NOT QT_RCC_EXECUTABLE )
+       MESSAGE( FATAL_ERROR "Qt libraries, includes, moc, uic or/and rcc NOT found!")
+     ENDIF( Qt4_FIND_REQUIRED)
+   ENDIF( QT_LIBRARY_DIR AND QT_INCLUDE_DIR AND QT_MOC_EXECUTABLE AND QT_UIC_EXECUTABLE AND  QT_RCC_EXECUTABLE)
+@@ -1108,9 +1185,19 @@ IF (QT4_QMAKE_FOUND)
+ 
+   #######################################
+   #
+-  #       Qt configuration
++  #       System dependent settings  
+   #
+   #######################################
++  # for unix add X11 stuff
++  IF(UNIX)
++    # on OS X X11 may not be required
++    IF (Q_WS_X11)
++      FIND_PACKAGE(X11 REQUIRED)
++    ENDIF (Q_WS_X11)
++    FIND_PACKAGE(Threads)
++    SET(QT_QTCORE_LIBRARY ${QT_QTCORE_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})
++  ENDIF(UNIX)
++
+   IF(EXISTS "${QT_MKSPECS_DIR}/qconfig.pri")
+     FILE(READ ${QT_MKSPECS_DIR}/qconfig.pri _qconfig_FILE_contents)
+     STRING(REGEX MATCH "QT_CONFIG[^\n]+" QT_QCONFIG ${_qconfig_FILE_contents})
+@@ -1122,14 +1209,9 @@ IF (QT4_QMAKE_FOUND)
+   ENDIF("${QT_EDITION}" MATCHES "DesktopLight")
+ 
+   
+-  ###############################################
+-  #
+-  #       configuration/system dependent settings  
+-  #
+-  ###############################################
+-
    SET(QT_GUI_LIB_DEPENDENCIES "")
--  SET(QT_CORE_LIB_DEPENDENCIES "")
-+  SET(QT_CORE_LIB_DEPENDENCIES "-pthread")
+   SET(QT_CORE_LIB_DEPENDENCIES "")
 +  SET(QT_DBUS_LIB_DEPENDENCIES "")
    
    # shared build needs -DQT_SHARED
    IF(NOT QT_CONFIG MATCHES "static")
-@@ -1144,7 +1145,37 @@ IF (QT4_QMAKE_FOUND)
+@@ -1143,8 +1225,44 @@ IF (QT4_QMAKE_FOUND)
+   IF(QT_QCONFIG MATCHES "system-png")
      FIND_LIBRARY(QT_PNG_LIBRARY NAMES png)
      SET(QT_GUI_LIB_DEPENDENCIES ${QT_GUI_LIB_DEPENDENCIES} ${QT_PNG_LIBRARY})
++      MESSAGE(STATUS "add png ${QT_GUI_LIB_DEPENDENCIES}")
      MARK_AS_ADVANCED(QT_PNG_LIBRARY)
 +    FIND_PATH(QT_PNG_INCLUDE_DIR png.h
 +    /usr/local/include
@@ -33,6 +320,11 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.5 2008/01/26 21:26:32 espie Exp $
 +    SET(QT_INCLUDES ${QT_INCLUDES} ${QT_PNG_INCLUDE_DIR})
 +
    ENDIF(QT_QCONFIG MATCHES "system-png")
++
++  # for X11, get X11 library directory
++  IF(Q_WS_X11)
++    SET(QMAKE_LIBDIR_X11 "/usr/X11R6/lib")
++  ENDIF(Q_WS_X11)
 +
 +  IF(QT_QCONFIG MATCHES "glib")
 +    FIND_LIBRARY(QT_GTHREAD_LIBRARY NAMES gthread-2.0)
@@ -58,3 +350,22 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.5 2008/01/26 21:26:32 espie Exp $
    
    # for X11, get X11 library directory
    IF(Q_WS_X11)
+@@ -1281,6 +1399,11 @@ IF (QT4_QMAKE_FOUND)
+     SET(QT_CORE_LIB_DEPENDENCIES ${QT_CORE_LIB_DEPENDENCIES} "-framework ApplicationServices")
+   ENDIF(Q_WS_MAC)
+ 
++
++# XXX OpenBSD
++    SET(QT_QTCORE_LIBRARY ${QT_QTCORE_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES})
++    SET(QT_QTGUI_LIBRARY ${QT_QTGUI_LIBRARY} ${QT_QTCORE_LIBRARY} ${QT_GUI_LIB_DEPENDENCIES})
++
+   #######################################
+   #
+   #       compatibility settings 
+@@ -1307,5 +1430,6 @@ ELSE(QT4_QMAKE_FOUND)
+       ENDIF(QT4_INSTALLED_VERSION_TOO_OLD AND NOT Qt4_FIND_QUIETLY)
+    ENDIF(Qt4_FIND_REQUIRED)
+  
++ENDIF (QT4_QMAKE_FOUND)
+ ENDIF (QT4_QMAKE_FOUND)
+ 
