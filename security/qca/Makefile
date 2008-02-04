@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/04 23:59:02 espie Exp $
 
 COMMENT=	Qt Cryptographic Architecture
 
 DISTNAME=	qca-1.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	security
 SHARED_LIBS=	qca	2.0
 
@@ -32,7 +32,9 @@ CONFIGURE_ENV=		LOCALBASE=${LOCALBASE}
 MAKE_FLAGS=		LIBqca_VERSION=${LIBqca_VERSION}
 
 do-install:
-	${INSTALL_DATA} ${WRKBUILD}/libqca.so.${LIBqca_VERSION} ${PREFIX}/lib
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt3
+	${INSTALL_DATA} ${WRKBUILD}/libqca.so.${LIBqca_VERSION} ${PREFIX}/lib/qt3
+	cd ${PREFIX}/lib && ln -s qt3/libqca.so.${LIBqca_VERSION}
 	${INSTALL_DATA} ${WRKSRC}/src/qca.h ${PREFIX}/include
 
 .include <bsd.port.mk>
