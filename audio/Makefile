@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2008/01/02 14:49:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.186 2008/02/04 20:13:42 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -101,6 +101,7 @@
      SUBDIR += opennap
      SUBDIR += p5-Audio-CD
      SUBDIR += p5-Audio-FLAC-Header
+     SUBDIR += p5-Audio-M4P
      SUBDIR += p5-Audio-MPD
      SUBDIR += p5-Audio-MPD-Common
      SUBDIR += p5-Audio-Musepack
@@ -113,6 +114,7 @@
      SUBDIR += p5-MP4-Info
      SUBDIR += p5-MPEG-Audio-Frame
      SUBDIR += p5-Ogg-Vorbis-Header
+     SUBDIR += p5-Ogg-Vorbis-Header-PurePerl
      SUBDIR += p5-POE-Component-Client-MPD
      SUBDIR += p5-cddb
      SUBDIR += p5-libvorbis
