@@ -1,0 +1,7 @@
+An object-oriented interface to Ogg Vorbis information and comment
+fields, implemented entirely in Perl. Intended to be a drop in
+replacement for Ogg::Vobis::Header.
+
+Unlike Ogg::Vorbis::Header, this module will go ahead and fill in all of
+the information fields as soon as you construct the object. In other
+words, the new and load constructors have identical behavior.
