@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/02/04 22:07:15 ajacoutot Exp $
+@lib lib/libgringotts.so.${LIBgringotts_VERSION}

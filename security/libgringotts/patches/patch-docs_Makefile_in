@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_Makefile_in,v 1.1.1.1 2008/02/04 22:07:15 ajacoutot Exp $
+--- docs/Makefile.in.orig	Mon Feb  4 22:46:02 2008
++++ docs/Makefile.in	Mon Feb  4 22:46:47 2008
+@@ -131,7 +131,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ EXTRA_DIST = manual.htm
+ 
+-libgringottsdocdir = $(datadir)/doc/libgringotts-@VERSION@
++libgringottsdocdir = $(datadir)/doc/libgringotts
+ 
+ libgringottsdoc_DATA = manual.htm
+ subdir = docs

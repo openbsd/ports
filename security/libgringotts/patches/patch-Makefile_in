@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/02/04 22:07:15 ajacoutot Exp $
+--- Makefile.in.orig	Thu Apr 24 13:33:50 2003
++++ Makefile.in	Mon Feb  4 22:57:44 2008
+@@ -485,7 +485,7 @@ install-data: install-data-recursive
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ 
+ installcheck: installcheck-recursive
+ install-strip:
+@@ -579,19 +579,6 @@ dist-hook: libgringotts.spec
+ install-exec-local:
+ 	mkdir -p $(DESTDIR)$(pcdir)/
+ 	cp libgringotts.pc $(DESTDIR)$(pcdir)/
+-	@echo
+-	@echo
+-	@echo ----------------------------------------------------------------------
+-	@echo   md5sum of relevant files:
+-	@echo
+-	@md5sum $(DESTDIR)$(libdir)/libgringotts.so|(read A B; echo $$B ":"; echo $$A)
+-	@echo
+-	@md5sum $(DESTDIR)$(includedir)/libgringotts.h|(read A B; echo $$B ":"; echo $$A)
+-	@echo
+-	@echo use these values to check library integrity at any time
+-	@echo ----------------------------------------------------------------------
+-	@echo
+-	@echo
+ 
+ uninstall-local:
+ 	rm -f $(DESTDIR)$(libdir)/pkgconfig/libgringotts.pc
