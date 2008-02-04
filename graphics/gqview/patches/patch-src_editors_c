@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_editors_c,v 1.1 2008/02/04 08:44:48 ajacoutot Exp $
+--- src/editors.c.orig	Thu Jan 31 20:48:54 2008
++++ src/editors.c	Thu Jan 31 20:49:02 2008
+@@ -47,7 +47,7 @@ struct _EditorVerboseData {
+ 
+ 
+ static gchar *editor_slot_defaults[] = {
+-	N_("The Gimp"), "gimp-remote -n %f",
++	N_("The Gimp"), "gimp-remote %f",
+ 	N_("XV"), "xv %f",
+ 	N_("Xpaint"), "xpaint %f",
+ 	NULL, NULL,

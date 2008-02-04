@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.24 2007/12/15 20:42:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2008/02/04 08:44:48 ajacoutot Exp $
 bin/gqview
 @man man/man1/gqview.1
-share/applications/
 share/applications/gqview.desktop
 share/doc/gqview/
 @comment share/doc/gqview/COPYING
