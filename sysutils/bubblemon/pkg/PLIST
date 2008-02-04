@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/01/19 08:48:27 steven Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/02/04 12:53:52 ajacoutot Exp $
 lib/bonobo/
 lib/bonobo/servers/
 lib/bonobo/servers/GNOME_BubblemonApplet.server
 libexec/bubblemon-gnome2
-man/hu/
+@comment man/hu/
 @comment man/hu/man1/
 @comment @man man/hu/man1/bubblemon-gnome2.1
 @man man/man1/bubblemon-gnome2.1
-man/sv/
+@comment man/sv/
 @comment man/sv/man1/
 @comment @man man/sv/man1/bubblemon-gnome2.1
 share/gnome-2.0/
