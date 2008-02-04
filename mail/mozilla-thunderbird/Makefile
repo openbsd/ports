@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2008/01/23 16:46:48 martynas Exp $
+# $OpenBSD: Makefile,v 1.66 2008/02/04 19:52:25 jasper Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's mail component
 
 VER=		2.0.0.9
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p0
+PKGNAME=	mozilla-thunderbird-${VER}p1
 SO_VERSION=	13.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
@@ -46,7 +46,8 @@ MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/$
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
 
 MODULES=	devel/gettext
-RUN_DEPENDS=	:esound-*:audio/esound
+RUN_DEPENDS=	:esound-*:audio/esound \
+		:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
@@ -131,5 +132,9 @@ do-install:
 	ln -f ${MOZ}/thunderbird-bin ${MOZ}/mozilla-thunderbird-bin
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
+		< ${FILESDIR}/thunderbird.desktop > \
+			${PREFIX}/share/applications/thunderbird.desktop
 
 .include <bsd.port.mk>
