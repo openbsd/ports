@@ -1,0 +1,3 @@
+Gringotts can only use memory locking when the binary has the setuid bit
+set which is NOT the case by default.  To enable it (at your own risk):
+ sudo chmod u+s ${PREFIX}/bin/gringotts

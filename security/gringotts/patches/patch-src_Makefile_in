@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2008/02/05 09:18:29 ajacoutot Exp $
+--- src/Makefile.in.orig	Tue Feb  5 10:09:08 2008
++++ src/Makefile.in	Tue Feb  5 10:09:17 2008
+@@ -485,7 +485,6 @@ uninstall-am: uninstall-binPROGRAMS
+ 
+ install-exec-local:
+ 	strip $(DESTDIR)$(bindir)/gringotts
+-	chmod u+s $(DESTDIR)$(bindir)/gringotts
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

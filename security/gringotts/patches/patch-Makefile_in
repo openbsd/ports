@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/02/05 09:18:29 ajacoutot Exp $
+--- Makefile.in.orig	Fri Jan 25 16:18:07 2008
++++ Makefile.in	Tue Feb  5 09:38:45 2008
+@@ -200,7 +200,7 @@ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = src pixmaps po
+-doc_DATA = BUGS FAQ README AUTHORS ChangeLog TODO NEWS COPYING
++doc_DATA = FAQ README
+ EXTRA_DIST = gringotts.spec.in gringotts.desktop.in $(doc_DATA) \
+ 	autogen.sh
+ Dsktpdir = $(datadir)/gnome/apps/Utilities
+@@ -689,17 +689,6 @@ dist-hook: gringotts.spec
+ 	cp gringotts.spec $(distdir)
+ 
+ install-exec-local:
+-	@echo
+-	@echo
+-	@echo ----------------------------------------------------------------------
+-	@echo   md5sum of relevant files:
+-	@echo
+-	@md5sum $(DESTDIR)$(bindir)/gringotts|(read A B; echo $$B ": " $$A)
+-	@echo
+-	@echo use this value to check program integrity at any time
+-	@echo ----------------------------------------------------------------------
+-	@echo
+-	@echo
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

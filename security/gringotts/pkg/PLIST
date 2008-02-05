@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/05 09:18:29 ajacoutot Exp $
+bin/gringotts
+share/doc/gringotts/
+share/doc/gringotts/FAQ
+share/doc/gringotts/README
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Utilities/
+share/gnome/apps/Utilities/gringotts.desktop
+share/locale/de/LC_MESSAGES/gringotts.mo
+share/locale/fr/LC_MESSAGES/gringotts.mo
+share/locale/it/LC_MESSAGES/gringotts.mo
+share/locale/pl/LC_MESSAGES/gringotts.mo
+share/locale/ru/LC_MESSAGES/gringotts.mo
+share/pixmaps/
+share/pixmaps/gringotts-32.xpm
+share/pixmaps/gringotts.xpm
