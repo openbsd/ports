@@ -1,14 +1,13 @@
-SEC is a free and platform independent event correlation tool that
-was designed to fill the gap between commercial event correlation
-systems and homegrown solutions that usually comprise of a few
-simple shell scripts. SEC accepts input from regular files, named
-pipes, and standard input, making it suitable to employ with any
-application that is able to write its output to a file stream. The
-SEC configuration is stored in text files as rules, each rule
-specifying an event matching condition, an action list, and optionally
-a Boolean expression whose truth value decides whether the rule can
-be applied at a given moment. Regular expressions are used for
-defining event matching conditions, and output events can be produced
-by executing user-specified shell scripts or programs (e.g., snmptrap
-or mail), by writing messages to pipes or files, and by various
-other means.
+SEC is a free and platform independent event correlation tool that was
+designed to fill the gap between commercial event correlation systems
+and homegrown solutions that usually comprise of a few simple shell
+scripts.  SEC accepts input from regular files, named pipes, and
+standard input, making it suitable to employ with any application that
+is able to write its output to a file stream.  The SEC configuration is
+stored in text files as rules, each rule specifying an event matching
+condition, an action list, and optionally a Boolean expression whose
+truth value decides whether the rule can be applied at a given moment.
+Regular expressions are used for defining event matching conditions, and
+output events can be produced by executing user-specified shell scripts
+or programs (e.g., snmptrap or mail), by writing messages to pipes or
+files, and by various other means.
