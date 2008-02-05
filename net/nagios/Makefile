@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2006/06/20 12:27:28 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/05 23:01:49 sthen Exp $
 
+  SUBDIR += cnagios
   SUBDIR += nagios
   SUBDIR += nagios,chroot
   SUBDIR += nrpe
