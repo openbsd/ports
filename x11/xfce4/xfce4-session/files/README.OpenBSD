@@ -12,7 +12,7 @@ $ sudo pkg_add xfce4-icon-theme xfwm4-themes gtk-xfce-engine
 
 And some cool xfce-companion apps for a nicer desktop:
 $ sudo pkg_add terminal orage notification-daemon-xfce ristretto
-mousepad xfce4-appfinder xfce4-mixer
+mousepad xfce4-appfinder xfce4-mixer xfprint
 
 Finally, have a look at available panel plugins here:
 http://goodies.xfce.org/projects/panel-plugins/start
@@ -27,7 +27,8 @@ provided by the xfce-utils package. Simply add
 '!!LOCALBASE!!/bin/startxfce4'
 to your .xinitrc/.xsession script if you use startx, xdm or slim.
 If you use gdm or kdm, have a look at
-http://wiki.xfce.org/faq#starting_xfce
+http://wiki.xfce.org/faq#starting_xfce. An xfce4.desktop file is
+provided for use by gdm.
 
 - logging out and shutting down the computer
 If your installation supports complete shutdown, clicking on the logout

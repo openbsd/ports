@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2008/01/06 12:00:07 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2008/02/05 12:52:09 landry Exp $
 
 COMMENT=	xfce4 session manager
 
 V=		4.4.2
 DISTNAME=	xfce4-session-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS +=  xfsm-4.2             0.1      # .0.1
 
@@ -43,7 +43,12 @@ post-install:
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},' \
 		-e 's,!!LOCALBASE!!,${LOCALBASE},' \
 		${FILESDIR}/README.OpenBSD > ${WRKBUILD}/README.OpenBSD
+	@sed -e 's,!!LOCALBASE!!,${LOCALBASE},' \
+		${FILESDIR}/xfce4.desktop > ${WRKBUILD}/xfce4.desktop
 	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
 		${PREFIX}/share/xfce4/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/xsessions/
+	${INSTALL_DATA} ${WRKBUILD}/xfce4.desktop \
+		${PREFIX}/share/xsessions/
 
 .include <bsd.port.mk>

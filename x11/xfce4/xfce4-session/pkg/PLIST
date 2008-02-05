@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/01/06 12:00:07 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/02/05 12:52:09 landry Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 bin/xfce4-autostart-editor
@@ -127,6 +127,8 @@ share/xfce4/doc/fr/xfce4-session.html
 share/xfce4/tips/
 share/xfce4/tips/tips
 share/xfce4/tips/tips.dat
+share/xsessions/
+share/xsessions/xfce4.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
