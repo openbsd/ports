@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2008/02/05 14:09:47 landry Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=		:sox-*:audio/sox \
 			:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-audio-*:x11/gnome/audio \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme
-LIB_DEPENDS=		rsvg-2.>=18.1::x11/gnome/librsvg
+LIB_DEPENDS=		rsvg-2.>=18.1:librsvg->=2.18.1-!no_gnome:x11/gnome/librsvg
 
 MODULES=		devel/gettext \
 			x11/gnome
