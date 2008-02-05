@@ -1,24 +1,23 @@
-$OpenBSD: patch-libktorrent_util_fileops_cpp,v 1.2 2008/01/30 12:18:59 sthen Exp $
---- libktorrent/util/fileops.cpp.orig	Sun Jan 27 12:06:02 2008
-+++ libktorrent/util/fileops.cpp	Tue Jan 29 20:36:58 2008
-@@ -29,6 +29,8 @@
- #include <kio/netaccess.h>
- #include <sys/stat.h>
- #include <sys/types.h>
-+#include <sys/param.h>
-+#include <sys/mount.h>
- #include <fcntl.h>
- #include <qdir.h>
- #include <qfile.h>
-@@ -62,7 +64,6 @@ typedef	int64_t		__s64;
+$OpenBSD: patch-libktorrent_util_fileops_cpp,v 1.3 2008/02/05 19:17:15 naddy Exp $
+--- libktorrent/util/fileops.cpp.orig	Sun Jan 27 07:06:02 2008
++++ libktorrent/util/fileops.cpp	Sat Feb  2 13:27:40 2008
+@@ -61,10 +61,13 @@ typedef	int64_t		__s64;
+ #define O_LARGEFILE 0
  #endif
  
- 				 
--#include <sys/statvfs.h>
+-				 
++#if HAVE_STATVFS
+ #include <sys/statvfs.h>
++#else
++#include <sys/param.h>
++#include <sys/mount.h>
++#endif
  
- 
+-
  namespace bt
-@@ -445,7 +446,19 @@ namespace bt
+ {
+ 	void MakeDir(const QString & dir,bool nothrow)
+@@ -445,7 +448,19 @@ namespace bt
  			return false;
  		}
  #else
