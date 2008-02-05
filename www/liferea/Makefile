@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/01/30 14:01:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2008/02/05 22:13:51 martynas Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
-DISTNAME=		liferea-1.4.11
+DISTNAME=		liferea-1.4.12
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
@@ -30,7 +30,7 @@ MODULES=		devel/gettext \
 			textproc/intltool
 
 BUILD_DEPENDS=		::devel/xulrunner,-devel
-LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunner,-main \
+LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom::devel/xulrunner,-main \
 			gconf-2.>=5::devel/gconf2 \
 			notify.>=2::devel/libnotify \
 			lua.>=5::lang/lua \
@@ -44,7 +44,6 @@ LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunn
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::x11/hicolor-icon-theme
 
-MAKE_FLAGS=		liblinotiflibnotify_la_LDFLAGS="-module -avoid-version"
 FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
 CFLAGS+=		-I${LOCALBASE}/xulrunner/include/webbrwsr/ \
 			-I${LOCALBASE}/xulrunner/include/dom/ \
