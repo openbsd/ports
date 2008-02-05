@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/05 11:13:30 ajacoutot Exp $
+bin/osmo
+share/pixmaps/
+share/pixmaps/osmo.png
+share/pixmaps/osmo.svg

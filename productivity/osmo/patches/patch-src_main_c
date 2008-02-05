@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_main_c,v 1.1.1.1 2008/02/05 11:13:29 ajacoutot Exp $
+--- src/main.c.orig	Mon Jan 21 16:34:13 2008
++++ src/main.c	Mon Jan 21 16:34:26 2008
+@@ -26,6 +26,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <config.h>
++#include <sys/stat.h>
+ 
+ #include "gui.h"
+ #include "calendar.h"

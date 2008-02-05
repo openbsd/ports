@@ -1,0 +1,8 @@
+Osmo is a handy personal organizer, which includes calendar, tasks
+manager and address book modules.  It was designed to be a small, easy
+to use and good looking PIM tool to help managing personal information.
+In its current state the organizer is quite convenient to use - for
+example, the user can perform nearly all operations using the keyboard.
+Also, a lot of parameters are configurable to meet the user's
+preferences.  On the technical side, Osmo is GTK+ based tool which uses
+a plain XML database to store all personal data.

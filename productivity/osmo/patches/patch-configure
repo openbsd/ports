@@ -1,0 +1,38 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/02/05 11:13:29 ajacoutot Exp $
+--- configure.orig	Sat Feb  2 19:12:50 2008
++++ configure	Sat Feb  2 19:13:03 2008
+@@ -4404,13 +4404,13 @@ echo "$as_me: error: You do not appear to have libxml2
+ fi
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for pthread_attr_init in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_attr_init in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_attr_init in -pthread" >&5
++echo $ECHO_N "checking for pthread_attr_init in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_attr_init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -4472,7 +4472,7 @@ else
+ fi
+ 
+ if test "$lib" = "yes"; then
+-    LDFLAGS="${LDFLAGS} -lpthread"
++    LDFLAGS="${LDFLAGS} -pthread"
+     { echo "$as_me:$LINENO: checking for icalparser_new in -lical" >&5
+ echo $ECHO_N "checking for icalparser_new in -lical... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_ical_icalparser_new+set}" = set; then
+@@ -4541,7 +4541,7 @@ else
+ fi
+ 
+     if test "$lib" = "yes"; then
+-        ical_LIBS="-lical -lpthread"
++        ical_LIBS="-lical -pthread"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_ICAL 1
