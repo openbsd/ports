@@ -1,0 +1,7 @@
+Cnagios is a full-screen terminal interface for viewing Nagios
+HOST and SERVICE objects, and the durations of their current states.
+
+It's lightning fast because it's written in C using the curses
+library. And it's super flexible because it uses hooks directly
+into the perl C library to shorten plugin output and filter the
+displayed HOSTs or SERVICEs.

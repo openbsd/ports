@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/02/05 23:00:22 sthen Exp $
+--- configure.orig	Tue Feb  5 12:53:01 2008
++++ configure	Tue Feb  5 14:27:53 2008
+@@ -1480,6 +1480,9 @@ fi;
+ if  test "X $DATA_VER" != "X " ; then
+   echo "nagios data ver is $DATA_VER"
+   NAGIOS_STATUS_DATA_VERSION=$DATA_VER
++  if test "${DATA_VER}" == "2" ; then
++    NAGIOS_STATUS_DATA_FILE="$NAGIOS_VAR_DIR/status.dat"
++  fi
+ fi
+ 
+ echo "nagios status file... $NAGIOS_STATUS_DATA_FILE"
+@@ -1488,17 +1491,8 @@ echo "nagios data version... $NAGIOS_STATUS_DATA_VERSI
+ 
+ 
+ 
+-if  test "X $HOSTNAME" = "X chive.hep.wisc.edu" ; then
+-  SITE_NAME="TEST "
++  SITE_NAME="OpenBSD World: "
+   echo "site name... $SITE_NAME"
+-else
+-  echo "enter terse site name (just return for none): "
+-  read SITE_NAME
+-  if  test "X $SITE_NAME" != "X " ; then
+-    SITE_NAME="$SITE_NAME "
+-  fi
+-fi
+-
+ 
+ 
+                     ac_config_files="$ac_config_files Makefile cnagios.h"
