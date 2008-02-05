@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/02/05 10:00:40 landry Exp $
+@lib lib/libgiggle.so.${LIBgiggle_VERSION}

@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/05 10:00:40 landry Exp $
+%%SHARED%%
+bin/giggle
+lib/libgiggle.a
+lib/libgiggle.la
+share/applications/giggle.desktop
+share/giggle/
+share/giggle/glade/
+share/giggle/glade/main-window.glade
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/giggle.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/giggle.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/giggle.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/giggle.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/giggle.svg
+share/locale/ca/LC_MESSAGES/giggle.mo
+share/locale/de/LC_MESSAGES/giggle.mo
+share/locale/es/LC_MESSAGES/giggle.mo
+share/locale/fr/LC_MESSAGES/giggle.mo
+share/locale/pl/LC_MESSAGES/giggle.mo
+share/locale/sv/LC_MESSAGES/giggle.mo
+share/locale/vi/LC_MESSAGES/giggle.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
