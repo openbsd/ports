@@ -1,15 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/10/12 09:44:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/02/06 10:55:12 landry Exp $
 %%SHARED%%
 bin/geany
 lib/geany/
+lib/geany/autosave.a
+@comment lib/geany/autosave.la
 lib/geany/classbuilder.a
 @comment lib/geany/classbuilder.la
 lib/geany/export.a
 @comment lib/geany/export.la
+lib/geany/filebrowser.a
+@comment lib/geany/filebrowser.la
 lib/geany/htmlchars.a
 @comment lib/geany/htmlchars.la
+lib/geany/vcdiff.a
+@comment lib/geany/vcdiff.la
 @man man/man1/geany.1
-share/applications/
 share/applications/geany.desktop
 share/doc/geany/
 share/doc/geany/README
@@ -18,11 +23,13 @@ share/doc/geany/html/
 share/doc/geany/html/images/
 share/doc/geany/html/images/find_dialog.png
 share/doc/geany/html/images/find_in_files_dialog.png
+share/doc/geany/html/images/pref_dialog_display.png
 share/doc/geany/html/images/pref_dialog_edit.png
 share/doc/geany/html/images/pref_dialog_files.png
 share/doc/geany/html/images/pref_dialog_gen.png
 share/doc/geany/html/images/pref_dialog_interface.png
 share/doc/geany/html/images/pref_dialog_keys.png
+share/doc/geany/html/images/pref_dialog_printing.png
 share/doc/geany/html/images/pref_dialog_templ.png
 share/doc/geany/html/images/pref_dialog_toolbar.png
 share/doc/geany/html/images/pref_dialog_tools.png
@@ -32,7 +39,6 @@ share/doc/geany/html/index.html
 share/doc/geany/manual.txt
 share/geany/
 share/geany/GPL-2
-share/geany/autocomplete.conf
 share/geany/filetype_extensions.conf
 share/geany/filetypes.asm
 share/geany/filetypes.c
@@ -61,6 +67,7 @@ share/geany/filetypes.pascal
 share/geany/filetypes.perl
 share/geany/filetypes.php
 share/geany/filetypes.python
+share/geany/filetypes.restructuredtext
 share/geany/filetypes.ruby
 share/geany/filetypes.sh
 share/geany/filetypes.sql
@@ -72,6 +79,7 @@ share/geany/html_entities.tags
 share/geany/latex.tags
 share/geany/pascal.tags
 share/geany/php.tags
+share/geany/snippets.conf
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
@@ -89,6 +97,7 @@ share/locale/bg/LC_MESSAGES/geany.mo
 share/locale/ca/LC_MESSAGES/geany.mo
 share/locale/cs/LC_MESSAGES/geany.mo
 share/locale/de/LC_MESSAGES/geany.mo
+share/locale/el/LC_MESSAGES/geany.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/geany.mo
@@ -97,15 +106,17 @@ share/locale/fi/LC_MESSAGES/geany.mo
 share/locale/fr/LC_MESSAGES/geany.mo
 share/locale/hu/LC_MESSAGES/geany.mo
 share/locale/it/LC_MESSAGES/geany.mo
+share/locale/ja/LC_MESSAGES/geany.mo
 share/locale/nl/LC_MESSAGES/geany.mo
 share/locale/pl/LC_MESSAGES/geany.mo
 share/locale/pt_BR/LC_MESSAGES/geany.mo
 share/locale/ru/LC_MESSAGES/geany.mo
+share/locale/sv/LC_MESSAGES/geany.mo
+share/locale/uk/LC_MESSAGES/geany.mo
 share/locale/vi/LC_MESSAGES/geany.mo
 share/locale/zh_CN/LC_MESSAGES/geany.mo
 share/locale/zh_TW/LC_MESSAGES/geany.mo
 share/pixmaps/
-share/pixmaps/geany.ico
 share/pixmaps/geany.png
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

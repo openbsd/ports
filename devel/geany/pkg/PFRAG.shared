@@ -1,4 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2007/10/12 08:22:58 landry Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/02/06 10:55:12 landry Exp $
+lib/geany/autosave.so
 lib/geany/classbuilder.so
 lib/geany/export.so
+lib/geany/filebrowser.so
 lib/geany/htmlchars.so
+lib/geany/vcdiff.so
