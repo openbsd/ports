@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2008/02/06 10:55:12 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2008/02/06 11:00:25 landry Exp $
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.13
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://geany.uvena.de/

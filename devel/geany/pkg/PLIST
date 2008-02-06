@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/02/06 10:55:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/02/06 11:00:25 landry Exp $
 %%SHARED%%
 bin/geany
 lib/geany/
@@ -120,3 +120,5 @@ share/pixmaps/
 share/pixmaps/geany.png
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
