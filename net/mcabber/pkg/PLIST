@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/03 18:42:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/06 11:35:17 martynas Exp $
 bin/mcabber
 @man man/man1/mcabber.1
-share/applications/
 share/applications/mcabber.desktop
 share/examples/mcabber/
 share/examples/mcabber/mcabberrc.example
