@@ -1,0 +1,9 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/02/06 21:42:28 bernd Exp $
+--- Makefile.orig	Fri Feb  1 20:57:42 2008
++++ Makefile	Fri Feb  1 20:57:42 2008
+@@ -1,4 +1,4 @@
+-prefix=/usr/local
++prefix=$(LOCALBASE)
+ sbindir=$(prefix)/sbin
+ datadir=$(prefix)/share
+ mandir=$(datadir)/man

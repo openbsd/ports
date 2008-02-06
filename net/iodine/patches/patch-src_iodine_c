@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_iodine_c,v 1.1.1.1 2008/02/06 21:42:28 bernd Exp $
+
+Drop privileges and chroot by default.
+
+--- src/iodine.c.orig	Fri Nov 30 23:11:30 2007
++++ src/iodine.c	Fri Feb  1 20:54:41 2008
+@@ -621,9 +621,9 @@ main(int argc, char **argv)
+ 	int dns_fd;
+ 
+ 	memset(password, 0, 33);
+-	username = NULL;
++	username = "_iodine";
+ 	foreground = 0;
+-	newroot = NULL;
++	newroot = "/var/empty";
+ 	device = NULL;
+ 	chunkid = 0;
+ 
