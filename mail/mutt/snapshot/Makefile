@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2007/11/11 10:09:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2008/02/06 15:01:56 okan Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
 VERSION=	1.5.17
 DISTNAME=	mutt-${VERSION}
+PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	${MASTER_SITES_MUTT:=devel/}
 
 FLAVORS=	idn sasl sidebar
