@@ -1,0 +1,6 @@
+Vlad the Deployer is pragmatic application deployment automation,
+without mercy. Much like Capistrano, but with 1/10th the
+complexity. Vlad integrates seamlessly with Rake, and uses familiar
+and standard tools like ssh and rsync.
+
+Impale your application on the heartless spike of the Deployer.
