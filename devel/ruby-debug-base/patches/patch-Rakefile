@@ -1,0 +1,12 @@
+$OpenBSD: patch-Rakefile,v 1.1.1.1 2008/02/07 19:48:56 bernd Exp $
+--- Rakefile.orig	Wed Feb  6 22:56:31 2008
++++ Rakefile	Wed Feb  6 22:56:38 2008
+@@ -159,7 +159,7 @@ task :default => [:package]
+ # Windows specification
+ win_spec = base_spec.clone
+ win_spec.extensions = []
+-win_spec.platform = Gem::Platform::WIN32
++win_spec.platform = Gem::Platform::CURRENT
+ win_spec.files += ["lib/#{SO_NAME}"]
+ 
+ desc "Create Windows Gem"

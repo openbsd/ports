@@ -1,0 +1,2 @@
+ruby-debug is a fast implementation of the standard debugger debug.rb.
+The faster execution speed is achieved by utilizing a new hook Ruby C API.
