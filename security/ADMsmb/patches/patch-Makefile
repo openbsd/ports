@@ -1,7 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.1 2002/03/24 07:44:53 jsyn Exp $
---- Makefile.orig	Mon May 31 12:48:45 1999
-+++ Makefile	Mon May 31 12:51:46 1999
-@@ -137,11 +137,11 @@
+$OpenBSD: patch-Makefile,v 1.2 2008/02/07 22:27:22 merdely Exp $
+--- Makefile.orig	Thu Aug  6 18:45:53 1998
++++ Makefile	Wed Jan 23 09:06:57 2008
+@@ -23,7 +23,7 @@ INSTALLPERMS = 0755
+ 
+ # Add any optimisation or debugging flags here
+ # add -DSYSLOG for syslog support
+-FLAGS1 = -O
++FLAGS1 = $(CFLAGS0)
+ LIBS1 = 
+ 
+ # You will need to use a ANSI C compiler. This means under SunOS 4 you can't 
+@@ -137,11 +137,11 @@ AWK = awk
  
  # Use this for Linux with glibc2 (libc6) - RedHat Linux v5.0 with PAM
  # contributed by John H Terpstra <jht@aquasoft.com.au>
