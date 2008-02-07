@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/06 21:42:28 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/07 12:42:11 sthen Exp $
 @newgroup _iodine:598
 @newuser _iodine:598:598:daemon:Iodine User:/nonexistent:/sbin/nologin
 sbin/iodine
 sbin/iodined
-share/man/
-share/man/man8/
-@man share/man/man8/iodine.8
+man/man8/
+@man man/man8/iodine.8
