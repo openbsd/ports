@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/12/22 11:52:17 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/02/07 20:25:20 bernd Exp $
 bin/rake
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -203,6 +203,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/FtpFile/mode-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/FtpFile/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/FtpFile/path-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/FtpFile/symlink%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/FtpFile/time-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/FtpUploader/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/FtpUploader/cdesc-FtpUploader.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/FtpUploader/close-i.yaml
