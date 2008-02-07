@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/26 17:08:13 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/07 20:22:14 bernd Exp $
 
 COMMENT=		alternative to ruby ri command-line tool
 
-DISTNAME=		fastri-0.3.0.1
+DISTNAME=		fastri-0.3.1.1
 PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		textproc ruby
 
@@ -21,5 +21,11 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 PKG_ARCH=		*
+
+REGRESS_DEPENDS=	::devel/ruby-rake \
+			::devel/ruby-rcov
+
+do-regress:
+	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
 
 .include <bsd.port.mk>

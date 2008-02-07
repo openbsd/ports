@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/09/27 05:29:54 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/02/07 20:22:14 bernd Exp $
 bin/fastri-server
 bin/fri
 bin/qri
@@ -19,18 +19,18 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FormatterRedire
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/M000038.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/M000039.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/M000040.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/M000041.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/M000042.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/M000043.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/M000044.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/M000045.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex.src/M000046.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex/Result.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex/Result.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex/Result.src/M000045.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex/Result.src/M000046.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex/Result.src/M000047.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex/Result.src/M000048.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndex/Result.src/M000049.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndexer.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndexer.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndexer.src/M000030.html
@@ -43,8 +43,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndexer
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/FullTextIndexer.src/M000037.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/NameDescriptor.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/NameDescriptor.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/NameDescriptor.src/M000038.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/NameDescriptor.src/M000039.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/NameDescriptor.src/M000048.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/NameDescriptor.src/M000049.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/RedirectedAnsiFormatter.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/RedirectedTextFormatter.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FastRI/RiIndex/
@@ -294,6 +294,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RI/TextFormatter/print-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RI/TextFormatter/puts-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RI/cdesc-RI.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/cdesc-.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGES
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/COPYING
