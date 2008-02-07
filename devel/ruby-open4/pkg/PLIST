@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/07 21:04:40 bernd Exp $
+lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/gemspec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/install.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/open4.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sample/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sample/bg.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sample/block.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sample/exception.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sample/simple.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sample/spawn.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sample/stdin_timeout.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sample/timeout.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/white_box/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/white_box/leak.rb
+lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec
