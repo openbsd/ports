@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.583 2008/02/05 10:02:41 landry Exp $
+# $OpenBSD: Makefile,v 1.584 2008/02/07 19:57:25 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -636,6 +636,8 @@
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-daemons
+     SUBDIR += ruby-debug
+     SUBDIR += ruby-debug-base
      SUBDIR += ruby-fastthread
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gem_plugin
