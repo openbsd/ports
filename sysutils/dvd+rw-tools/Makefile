@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/26 02:21:28 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/07 01:53:23 jakemsr Exp $
 
 COMMENT=		mastering tools for DVD+RW/+R/-R/-RW
 
 DISTNAME=		dvd+rw-tools-7.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils
 HOMEPAGE=		http://fy.chalmers.se/~appro/linux/DVD+RW/
 
