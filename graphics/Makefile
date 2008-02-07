@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2008/02/03 01:14:23 jcs Exp $
+# $OpenBSD: Makefile,v 1.199 2008/02/07 22:01:59 bernd Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -147,6 +147,7 @@
      SUBDIR += ruby-gd2
      SUBDIR += ruby-gdk-imlib
      SUBDIR += ruby-gdk-pixbuf
+     SUBDIR += ruby-rmagick
      SUBDIR += s10sh
      SUBDIR += sane-backends
      SUBDIR += sane-frontends
