@@ -1,15 +1,12 @@
-$OpenBSD: patch-scripts_mtx-changer_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
---- scripts/mtx-changer.in.orig	Wed Oct 11 17:34:24 2006
-+++ scripts/mtx-changer.in	Sat May 26 15:33:25 2007
-@@ -1,6 +1,6 @@
- #!/bin/sh
+$OpenBSD: patch-scripts_mtx-changer_in,v 1.2 2008/02/07 02:53:35 merdely Exp $
+--- scripts/mtx-changer.in.orig	Thu Aug 16 09:01:19 2007
++++ scripts/mtx-changer.in	Wed Jan  9 16:17:45 2008
+@@ -2,3 +2,3 @@
  #
 -# Bacula interface to mtx autoloader
 +# Bacula interface to chio autoloader
  #
- #  $Id: patch-scripts_mtx-changer_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
- #
-@@ -27,10 +27,10 @@
+@@ -39,10 +39,10 @@
  #    e.g.   mt -f $4 offline
  #
  #  Many changers need an offline after the unload. Also many
@@ -22,7 +19,7 @@ $OpenBSD: patch-scripts_mtx-changer_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp 
  #   exit code, Bacula will assume the request failed.
  #
  
-@@ -149,17 +149,17 @@ debug "Parms: $ctl $cmd $slot $device $drive"
+@@ -161,17 +161,17 @@ debug "Parms: $ctl $cmd $slot $device $drive"
  
  case $cmd in 
     unload)
@@ -44,7 +41,7 @@ $OpenBSD: patch-scripts_mtx-changer_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp 
        rtn=$?
  #
  # Increase the sleep time if you have a slow device
-@@ -170,14 +170,14 @@ case $cmd in 
+@@ -182,36 +182,37 @@ case $cmd in 
        ;;
  
     list) 
@@ -55,14 +52,17 @@ $OpenBSD: patch-scripts_mtx-changer_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp 
  #     ${MTX} -f $ctl inventory
        ${MTX} -f $ctl status >${TMPFILE}
        rtn=$?
--      cat ${TMPFILE} | grep " *Storage Element [0-9]*:.*Full" | awk "{print \$3 \$4}" | sed "s/Full *\(:VolumeTag=\)*//"
--      cat ${TMPFILE} | grep "^Data Transfer Element [0-9]*:Full (Storage Element [0-9]" | awk '{printf "%s:%s\n",$7,$10}'
+-      cat ${TMPFILE} | grep " Storage Element [0-9]*:.*Full" | awk "{print \$3 \$4}" | sed "s/Full *\(:VolumeTag=\)*//"
 +      cat ${TMPFILE} | grep " *slot [0-9]*: <ACCESS,.*FULL.*>" | awk "{print \$2 \$4 \$5 \$6 \$7 \$8}"
-+      cat ${TMPFILE} | grep " *drive [0-9]*: <.*FULL.*>" | awk "{print \$2 \$4 \$5 \$6 \$7 \$8}" | sed "s/^/D/"
-       rm -f ${TMPFILE} >/dev/null 2>&1
  #
  # If you have a VXA PacketLoader and the above does not work, try
-@@ -187,18 +187,19 @@ case $cmd in 
+ #  turning it off and enabling the following line.
+ #     cat ${TMPFILE} | grep " *Storage Element [0-9]*:.*Full" | sed "s/ Storage Element //" | sed "s/Full :VolumeTag=//"
+ #
+-      cat ${TMPFILE} | grep "^Data Transfer Element [0-9]*:Full (Storage Element [0-9]" | awk '{printf "%s:%s\n",$7,$10}'
++      cat ${TMPFILE} | grep " *drive [0-9]*: <.*FULL.*>" | awk "{print \$2 \$4 \$5 \$6 \$7 \$8}" | sed "s/^/D/"
+       rm -f ${TMPFILE} >/dev/null 2>&1
+       exit $rtn
        ;;
  
     loaded)

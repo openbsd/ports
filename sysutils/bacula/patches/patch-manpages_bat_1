@@ -1,0 +1,12 @@
+$OpenBSD: patch-manpages_bat_1,v 1.1 2008/02/07 02:53:35 merdely Exp $
+--- manpages/bat.1.orig	Mon Oct 22 15:29:44 2007
++++ manpages/bat.1	Mon Oct 22 15:29:53 2007
+@@ -22,7 +22,7 @@ but it is graphical oriented.
+ bat [\-s] [\-c config_file] [\-d debug_level] [-t]
+ .TP
+ .B \-c <config>
+-Specify configuration file.  Default is bat.conf.
++Specify configuration file.  Default is !!BACULACONF!!/bat.conf.
+ .TP
+ .B \-d <nn>
+ Set debug level to \fInn\fP.

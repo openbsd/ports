@@ -1,41 +1,35 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/09 15:39:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/02/07 02:53:35 merdely Exp $
 
-COMMENT-main=		network backup solution
-COMMENT-client=		network backup solution (client)
+COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 
-VERSION=		2.0.3
-DISTNAME=		bacula-${VERSION}
-PKGNAME-main=		${DISTNAME}p3
-FULLPKGNAME-client=	bacula-client-${VERSION}p3
-PKGNAME-server=		bacula-server-${VERSION}p4
+V=			2.2.8
+DISTNAME=		bacula-$V
+FULLPKGNAME-main=	bacula-client-$V
+PKGNAME-server=		bacula-server-$V
 CATEGORIES=		sysutils
-DIST_SUBDIR=		bacula
-PATCHFILES=		${VERSION}-restore.patch
-PATCH_DIST_ARGS=	-d ${WRKSRC}/src/stored --quiet
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
-
 HOMEPAGE=		http://www.bacula.org/
 
 MAINTAINER=		Michael Erdely <merdely@openbsd.org>
 
 WANTLIB=		c pthread crypto ssl z m stdc++
 WANTLIB-server=		${WANTLIB} readline termcap
-WANTLIB-main=		${WANTLIB} readline termcap
 
-MULTI_PACKAGES=		-main -client -server
+MULTI_PACKAGES=		-main -server
 
-# Modified GPLv2
-# http://bacula.org/dev-manual/Bacula_Copyri_Tradem_Licens.html
+# GPL (majority), LGPL (some libraries) and PD
+# http://bacula.org/en/dev-manual/Bacula_Copyri_Tradem_Licens.html
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+SD_USER=		_bacula-sd
 BACULACONF=		/etc/bacula
 BACULASTATE=		/var/bacula
-SUBST_VARS=		BACULACONF BACULASTATE
+SUBST_VARS=		SD_USER BACULACONF BACULASTATE
 
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
@@ -56,8 +50,8 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--with-working-dir=${BACULASTATE} \
 			--with-dir-user=_bacula \
 			--with-dir-group=_bacula \
-			--with-sd-user=root \
-			--with-sd-group=wheel \
+			--with-sd-user=${SD_USER} \
+			--with-sd-group=_bacula \
 			--with-sbin-perm=755 \
 			--without-x \
 			--without-tcp-wrappers \
@@ -65,7 +59,7 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--without-job-email \
 			--without-dump-email \
 			--disable-gnome \
-			--disable-wx-console \
+			--disable-bwx-console \
 			--disable-tray-monitor \
 			--disable-nls \
 			--disable-conio \
@@ -79,7 +73,9 @@ CONFIGURE_ENV+=		CPPFLAGS="-I/usr/include/readline \
 			PTHREAD_LIBS="${PTHREAD_LIBS}" \
 			MTX=/bin/chio \
 			TAPEDRIVE=/dev/rst0 \
-			CONFIG_SITE=${PORTSDIR}/infrastructure/db/config.site
+			CONFIG_SITE=${PORTSDIR}/infrastructure/db/config.site \
+			QMAKEQT4=${LOCALBASE}/bin/qmake4 \
+			PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4/pkgconfig:${LOCALBASE}/lib/qt4"
 
 BACKEND=
 .if ${FLAVOR:L:Mpgsql}
@@ -103,7 +99,8 @@ ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite or sqlite3"
 CONFIGURE_ARGS+=	--without-postgresql \
 			--with-mysql \
 			--without-sqlite \
-			--without-sqlite3
+			--without-sqlite3 \
+			--enable-batch-insert
 LIB_DEPENDS+=		lib/mysql/mysqlclient.>=10::databases/mysql
 BACKEND=		mysql
 .else
@@ -143,7 +140,27 @@ SUBST_VARS+=		BACKEND
 ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite or sqlite3"
 .endif
 
-LIB_DEPENDS-client=
+LIB_DEPENDS-main=
+
+PSEUDO_FLAVORS+=	no_bat
+.if ${FLAVOR:L:Mno_bat}
+CONFIGURE_ARGS+=	--disable-bat \
+			--without-qwt
+.else
+CONFIGURE_ARGS+=	--enable-bat \
+			--with-qwt=${LOCALBASE}
+FULLPKGNAME-bat=	bacula-bat-$V
+WANTLIB-bat=		${WANTLIB} ICE QtCore QtGui SM X11 Xcursor Xext Xfixes
+WANTLIB-bat+=		Xi Xinerama Xrandr Xrender fontconfig freetype glib-2.0
+WANTLIB-bat+=		gthread-2.0 iconv intl png
+MULTI_PACKAGES+=	-bat
+LIB_DEPENDS-bat=	qwt.>=5::x11/qwt
+COMMENT-bat=		network backup solution (gui-client)
+.endif
+
+pre-configure:
+	perl -pi -e "s%!!BACULACONF!!%${BACULACONF}%" \
+		${WRKSRC}/manpages/bat.1 ${WRKSRC}/src/qt-console/main.cpp
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bacula
@@ -152,5 +169,17 @@ post-install:
 		${WRKINST}/etc/bacula/bacula-sd.conf \
 		${WRKINST}/etc/bacula/bconsole.conf \
 		${PREFIX}/share/examples/bacula/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bacula
+	perl -pe "s%!!TRUEPREFIX!!%${TRUEPREFIX}%g,s%!!BACULACONF!!%${BACULACONF}%g" \
+		${FILESDIR}/README-client.OpenBSD > \
+		${PREFIX}/share/doc/bacula/README-client.OpenBSD
+	perl -pe "s%!!TRUEPREFIX!!%${TRUEPREFIX}%g,s%!!BACULACONF!!%${BACULACONF}%g,s%!!SD_USER!!%${SD_USER}%g" \
+		${FILESDIR}/README-server.OpenBSD > \
+		${PREFIX}/share/doc/bacula/README-server.OpenBSD
+.if !${FLAVOR:L:Mno_bat}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKINST}/etc/bacula/bat.conf \
+		${PREFIX}/share/examples/bacula/
+.endif
 
 .include <bsd.port.mk>

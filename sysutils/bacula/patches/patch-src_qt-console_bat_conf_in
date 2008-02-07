@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_qt-console_bat_conf_in,v 1.1 2008/02/07 02:53:35 merdely Exp $
+--- src/qt-console/bat.conf.in.orig	Sat Jul 28 06:36:28 2007
++++ src/qt-console/bat.conf.in	Mon Oct 22 11:51:54 2007
+@@ -3,8 +3,8 @@
+ #
+ 
+ Director {
+-  Name = @hostname@-dir
++  Name = bacula-dir
+   DIRport = @dir_port@
+-  address = @hostname@
++  address = 127.0.0.1
+   Password = "@dir_password@"
+ }

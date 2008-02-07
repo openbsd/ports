@@ -1,16 +1,23 @@
 Bacula comes by night and sucks the vital essence from your computers.
 
 Bacula is a set of computer programs that permit you (or the system
-administrator) to manage backup, recovery, and verification of
-computer data across a network of computers of different kinds.
-In technical terms, it is a network Client/Server based backup program.
-Bacula is relatively easy to use and efficient, while offering many
-advanced storage management features that make it easy to find and
-recover lost or damaged files. Due to its modular design, Bacula is
-scalable from small single computer systems to systems consisting of
-hundreds of computers located over a large network.
+administrator) to manage backup, recovery, and verification of computer
+data across a network of computers of different kinds.  In technical
+terms, it is a network Client/Server based backup program.  Bacula is
+relatively easy to use and efficient, while offering many advanced
+storage management features that make it easy to find and recover lost
+or damaged files. Due to its modular design, Bacula is scalable from
+small single computer systems to systems consisting of hundreds of
+computers located over a large network.
 
 bacula-server contains the bacula-sd "storage daemon" that writes the
 backup data to the backup device.  bacula-dir is the "director" that
-manages backups.  bconsole is the management application to control
-the director and get status of file daemons and storage daemons.
+manages backups.  bconsole is the management application to control the
+director and get status of file daemons and storage daemons.
+
+Available flavors are:
+	- sqlite: use the sqlite 2.x library as a storage engine.
+	- sqlite3: use the sqlite 3.x library as a storage engine.
+	  This is the default.
+	- pgsql: use a postgresql server as a storage engine.
+	- mysql: use a mysql server as a storage engine.
