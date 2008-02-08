@@ -1,0 +1,17 @@
+$OpenBSD: patch-etc_faxsetup_sh_in,v 1.1 2008/02/08 23:10:45 okan Exp $
+--- etc/faxsetup.sh.in.orig	Tue Nov 13 15:33:30 2007
++++ etc/faxsetup.sh.in	Sat Nov 24 23:27:24 2007
+@@ -2265,12 +2265,7 @@ if onServer; then
+ 
+     findproc()
+     {
+-	# NB: ps ax should give an error on System V, so we try it first!
+-	pid="`ps ax 2>/dev/null | $AWK \"\
+-		/[\/ (]$1[ )]/	{print \\$1;}
+-		/[\/ ]$1\$/	{print \\$1;}\"`"
+-	test "$pid" ||
+-	    pid="`ps -e 2>/dev/null | $AWK \"/ $1[ ]*\$/ {print \\$1;}\"`"
++    	pid="`/usr/bin/pgrep $1`"
+ 	echo "$pid"
+     }
+ 

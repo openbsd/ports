@@ -1,24 +1,4 @@
 Congratulations, HylaFAX has been installed!
 
-It now needs some manual configuration before it is usable.
-
-Setting up: (for the impatient)
-
-	Invoke ${PREFIX}/sbin/faxsetup to interactively configure it.
-	When you are asked to specify the name of tty device, use a
-	tty device existing on your architecture instead of "ttyd1".
-
-	Consult ${PREFIX}/lib/fax/hylafax.sh.sample for an example
-	of what to put in /etc/rc.local.
-
-	For accepting incoming FAX/data calls, modify /etc/ttys(5) to
-	contain something like this:
-
-	    cua00	"${PREFIX}/sbin/faxgetty"	dialup	on
-
-	and send a SIGHUP to init(8).
-
-Documentation: (for the methodical)
-
-	On Line Manuals: 	man hylafax
-	World Wide Web site:	http://www.hylafax.org/
+Instructions for configuration may be found in the file
+${PREFIX}/share/doc/hylafax/README.OpenBSD

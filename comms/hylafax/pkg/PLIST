@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2006/11/07 22:22:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2008/02/08 23:10:46 okan Exp $
 @conflict p5-SendPage-*
 @mode 4555
 @owner uucp
@@ -24,7 +24,6 @@ lib/fax/faxcover.ps
 lib/fax/faxcover_example_sgi.ps
 lib/fax/faxmail.ps
 lib/fax/hfaxd.conf
-lib/fax/hylafax.sh.sample
 lib/fax/pagesizes
 lib/fax/typerules
 @owner uucp
@@ -35,9 +34,14 @@ libdata/hylafax/COPYRIGHT
 libdata/hylafax/archive/
 libdata/hylafax/bin/
 libdata/hylafax/bin/archive
+libdata/hylafax/bin/b64-encode.awk
+libdata/hylafax/bin/common-functions
+libdata/hylafax/bin/dictionary
 libdata/hylafax/bin/faxrcvd
 libdata/hylafax/bin/mkcover
 libdata/hylafax/bin/notify
+libdata/hylafax/bin/notify-4.1
+libdata/hylafax/bin/notify-4.2
 libdata/hylafax/bin/notify.awk
 libdata/hylafax/bin/pcl2fax
 libdata/hylafax/bin/pdf2fax.gs
@@ -45,7 +49,9 @@ libdata/hylafax/bin/pollrcvd
 libdata/hylafax/bin/ps2fax.dps
 libdata/hylafax/bin/ps2fax.gs
 libdata/hylafax/bin/ps2fax.imp
+libdata/hylafax/bin/qp-encode.awk
 libdata/hylafax/bin/tiff2fax
+libdata/hylafax/bin/tiff2pdf
 libdata/hylafax/bin/wedged
 libdata/hylafax/client/
 libdata/hylafax/config/
@@ -59,6 +65,7 @@ libdata/hylafax/config/class1.0
 libdata/hylafax/config/class2
 libdata/hylafax/config/class2.0
 libdata/hylafax/config/class2.1
+libdata/hylafax/config/conexant-1.0
 libdata/hylafax/config/davicom-2
 libdata/hylafax/config/digi
 libdata/hylafax/config/digi-2
@@ -73,12 +80,18 @@ libdata/hylafax/config/exar
 libdata/hylafax/config/gvc-288
 libdata/hylafax/config/gvc-288-2
 libdata/hylafax/config/hayes
+libdata/hylafax/config/iaxmodem
 libdata/hylafax/config/intel-400e
+libdata/hylafax/config/ip568x
+libdata/hylafax/config/linux-isdn-2
 libdata/hylafax/config/lucent
 libdata/hylafax/config/lucent-isa
+libdata/hylafax/config/lucent-mt-10
 libdata/hylafax/config/lucent-mt-2
 libdata/hylafax/config/lucent-mt-20
 libdata/hylafax/config/lucent-mt-21
+libdata/hylafax/config/mainpine-2
+libdata/hylafax/config/mainpine-21
 libdata/hylafax/config/moto-288
 libdata/hylafax/config/mt-1432
 libdata/hylafax/config/nuvo-voyager
@@ -95,6 +108,7 @@ libdata/hylafax/config/rockwell-k56
 libdata/hylafax/config/rockwell-rc
 libdata/hylafax/config/sierra
 libdata/hylafax/config/skel
+libdata/hylafax/config/t38modem
 libdata/hylafax/config/telebit-qblazer
 libdata/hylafax/config/telebit-t3000
 libdata/hylafax/config/telebit-wb
@@ -121,6 +135,223 @@ libdata/hylafax/etc/dialrules.sf-ba
 libdata/hylafax/etc/dpsprinter.ps
 libdata/hylafax/etc/hosts.hfaxd
 libdata/hylafax/etc/lutRS18.pcf
+libdata/hylafax/etc/templates/
+libdata/hylafax/etc/templates/README
+libdata/hylafax/etc/templates/de/
+libdata/hylafax/etc/templates/de/faxrcvd-error.txt
+libdata/hylafax/etc/templates/de/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/de/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/de/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/de/faxrcvd-success.txt
+libdata/hylafax/etc/templates/de/notify-blocked.txt
+libdata/hylafax/etc/templates/de/notify-done-page.txt
+libdata/hylafax/etc/templates/de/notify-done.txt
+libdata/hylafax/etc/templates/de/notify-failed-page.txt
+libdata/hylafax/etc/templates/de/notify-failed.txt
+libdata/hylafax/etc/templates/de/notify-format_failed.txt
+libdata/hylafax/etc/templates/de/notify-killed.txt
+libdata/hylafax/etc/templates/de/notify-no_formatter.txt
+libdata/hylafax/etc/templates/de/notify-poll_failed.txt
+libdata/hylafax/etc/templates/de/notify-poll_no_document.txt
+libdata/hylafax/etc/templates/de/notify-poll_rejected.txt
+libdata/hylafax/etc/templates/de/notify-rejected.txt
+libdata/hylafax/etc/templates/de/notify-removed.txt
+libdata/hylafax/etc/templates/de/notify-requeued.txt
+libdata/hylafax/etc/templates/de/notify-timedout.txt
+libdata/hylafax/etc/templates/en/
+libdata/hylafax/etc/templates/en/faxrcvd-error.txt
+libdata/hylafax/etc/templates/en/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/en/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/en/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/en/faxrcvd-success.txt
+libdata/hylafax/etc/templates/en/notify-blocked.txt
+libdata/hylafax/etc/templates/en/notify-done-page.txt
+libdata/hylafax/etc/templates/en/notify-done.txt
+libdata/hylafax/etc/templates/en/notify-failed-page.txt
+libdata/hylafax/etc/templates/en/notify-failed.txt
+libdata/hylafax/etc/templates/en/notify-format_failed.txt
+libdata/hylafax/etc/templates/en/notify-killed.txt
+libdata/hylafax/etc/templates/en/notify-no_formatter.txt
+libdata/hylafax/etc/templates/en/notify-poll_failed.txt
+libdata/hylafax/etc/templates/en/notify-poll_no_document.txt
+libdata/hylafax/etc/templates/en/notify-poll_rejected.txt
+libdata/hylafax/etc/templates/en/notify-rejected.txt
+libdata/hylafax/etc/templates/en/notify-removed.txt
+libdata/hylafax/etc/templates/en/notify-requeued.txt
+libdata/hylafax/etc/templates/en/notify-timedout.txt
+libdata/hylafax/etc/templates/es/
+libdata/hylafax/etc/templates/es/faxrcvd-error.txt
+libdata/hylafax/etc/templates/es/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/es/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/es/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/es/faxrcvd-success.txt
+libdata/hylafax/etc/templates/es/notify-blocked.txt
+libdata/hylafax/etc/templates/es/notify-done-page.txt
+libdata/hylafax/etc/templates/es/notify-done.txt
+libdata/hylafax/etc/templates/es/notify-failed-page.txt
+libdata/hylafax/etc/templates/es/notify-failed.txt
+libdata/hylafax/etc/templates/es/notify-format_failed.txt
+libdata/hylafax/etc/templates/es/notify-killed.txt
+libdata/hylafax/etc/templates/es/notify-no_formatter.txt
+libdata/hylafax/etc/templates/es/notify-poll_failed.txt
+libdata/hylafax/etc/templates/es/notify-poll_no_document.txt
+libdata/hylafax/etc/templates/es/notify-poll_rejected.txt
+libdata/hylafax/etc/templates/es/notify-rejected.txt
+libdata/hylafax/etc/templates/es/notify-removed.txt
+libdata/hylafax/etc/templates/es/notify-requeued.txt
+libdata/hylafax/etc/templates/es/notify-timedout.txt
+libdata/hylafax/etc/templates/fr/
+libdata/hylafax/etc/templates/fr/faxrcvd-error.txt
+libdata/hylafax/etc/templates/fr/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/fr/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/fr/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/fr/faxrcvd-success.txt
+libdata/hylafax/etc/templates/fr/notify-blocked.txt
+libdata/hylafax/etc/templates/fr/notify-done-page.txt
+libdata/hylafax/etc/templates/fr/notify-done.txt
+libdata/hylafax/etc/templates/fr/notify-failed-page.txt
+libdata/hylafax/etc/templates/fr/notify-failed.txt
+libdata/hylafax/etc/templates/fr/notify-format_failed.txt
+libdata/hylafax/etc/templates/fr/notify-killed.txt
+libdata/hylafax/etc/templates/fr/notify-no_formatter.txt
+libdata/hylafax/etc/templates/fr/notify-poll_failed.txt
+libdata/hylafax/etc/templates/fr/notify-poll_no_document.txt
+libdata/hylafax/etc/templates/fr/notify-poll_rejected.txt
+libdata/hylafax/etc/templates/fr/notify-rejected.txt
+libdata/hylafax/etc/templates/fr/notify-removed.txt
+libdata/hylafax/etc/templates/fr/notify-requeued.txt
+libdata/hylafax/etc/templates/fr/notify-timedout.txt
+libdata/hylafax/etc/templates/html-sample1/
+libdata/hylafax/etc/templates/html-sample1/css.inc
+libdata/hylafax/etc/templates/html-sample1/divider.inc
+libdata/hylafax/etc/templates/html-sample1/fax-attach.inc
+libdata/hylafax/etc/templates/html-sample1/fax-data.inc
+libdata/hylafax/etc/templates/html-sample1/fax-dispatched.inc
+libdata/hylafax/etc/templates/html-sample1/faxrcvd-error.txt
+libdata/hylafax/etc/templates/html-sample1/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/html-sample1/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/html-sample1/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/html-sample1/faxrcvd-success.txt
+libdata/hylafax/etc/templates/html-sample1/footer.inc
+libdata/hylafax/etc/templates/html-sample1/header.inc
+libdata/hylafax/etc/templates/html-sample1/hook.sh
+libdata/hylafax/etc/templates/html-sample1/job-data.inc
+libdata/hylafax/etc/templates/html-sample1/notify-blocked.txt
+libdata/hylafax/etc/templates/html-sample1/notify-done.txt
+libdata/hylafax/etc/templates/html-sample1/notify-failed.txt
+libdata/hylafax/etc/templates/html-sample1/notify-format_failed.txt
+libdata/hylafax/etc/templates/html-sample1/notify-killed.txt
+libdata/hylafax/etc/templates/html-sample1/notify-no_formatter.txt
+libdata/hylafax/etc/templates/html-sample1/notify-rejected.txt
+libdata/hylafax/etc/templates/html-sample1/notify-removed.txt
+libdata/hylafax/etc/templates/html-sample1/notify-requeued.txt
+libdata/hylafax/etc/templates/html-sample1/notify-timedout.txt
+libdata/hylafax/etc/templates/html-sample1/session_log.inc
+libdata/hylafax/etc/templates/it/
+libdata/hylafax/etc/templates/it/faxrcvd-error.txt
+libdata/hylafax/etc/templates/it/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/it/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/it/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/it/faxrcvd-success.txt
+libdata/hylafax/etc/templates/it/notify-blocked.txt
+libdata/hylafax/etc/templates/it/notify-done-page.txt
+libdata/hylafax/etc/templates/it/notify-done.txt
+libdata/hylafax/etc/templates/it/notify-failed-page.txt
+libdata/hylafax/etc/templates/it/notify-failed.txt
+libdata/hylafax/etc/templates/it/notify-format_failed.txt
+libdata/hylafax/etc/templates/it/notify-killed.txt
+libdata/hylafax/etc/templates/it/notify-no_formatter.txt
+libdata/hylafax/etc/templates/it/notify-poll_failed.txt
+libdata/hylafax/etc/templates/it/notify-poll_no_document.txt
+libdata/hylafax/etc/templates/it/notify-poll_rejected.txt
+libdata/hylafax/etc/templates/it/notify-rejected.txt
+libdata/hylafax/etc/templates/it/notify-removed.txt
+libdata/hylafax/etc/templates/it/notify-requeued.txt
+libdata/hylafax/etc/templates/it/notify-timedout.txt
+libdata/hylafax/etc/templates/pl/
+libdata/hylafax/etc/templates/pl/faxrcvd-error.txt
+libdata/hylafax/etc/templates/pl/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/pl/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/pl/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/pl/faxrcvd-success.txt
+libdata/hylafax/etc/templates/pl/notify-blocked.txt
+libdata/hylafax/etc/templates/pl/notify-done-page.txt
+libdata/hylafax/etc/templates/pl/notify-done.txt
+libdata/hylafax/etc/templates/pl/notify-failed-page.txt
+libdata/hylafax/etc/templates/pl/notify-failed.txt
+libdata/hylafax/etc/templates/pl/notify-format_failed.txt
+libdata/hylafax/etc/templates/pl/notify-killed.txt
+libdata/hylafax/etc/templates/pl/notify-no_formatter.txt
+libdata/hylafax/etc/templates/pl/notify-poll_failed.txt
+libdata/hylafax/etc/templates/pl/notify-poll_no_document.txt
+libdata/hylafax/etc/templates/pl/notify-poll_rejected.txt
+libdata/hylafax/etc/templates/pl/notify-rejected.txt
+libdata/hylafax/etc/templates/pl/notify-removed.txt
+libdata/hylafax/etc/templates/pl/notify-requeued.txt
+libdata/hylafax/etc/templates/pl/notify-timedout.txt
+libdata/hylafax/etc/templates/pt/
+libdata/hylafax/etc/templates/pt/faxrcvd-error.txt
+libdata/hylafax/etc/templates/pt/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/pt/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/pt/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/pt/faxrcvd-success.txt
+libdata/hylafax/etc/templates/pt/notify-blocked.txt
+libdata/hylafax/etc/templates/pt/notify-done-page.txt
+libdata/hylafax/etc/templates/pt/notify-done.txt
+libdata/hylafax/etc/templates/pt/notify-failed-page.txt
+libdata/hylafax/etc/templates/pt/notify-failed.txt
+libdata/hylafax/etc/templates/pt/notify-format_failed.txt
+libdata/hylafax/etc/templates/pt/notify-killed.txt
+libdata/hylafax/etc/templates/pt/notify-no_formatter.txt
+libdata/hylafax/etc/templates/pt/notify-poll_failed.txt
+libdata/hylafax/etc/templates/pt/notify-poll_no_document.txt
+libdata/hylafax/etc/templates/pt/notify-poll_rejected.txt
+libdata/hylafax/etc/templates/pt/notify-rejected.txt
+libdata/hylafax/etc/templates/pt/notify-removed.txt
+libdata/hylafax/etc/templates/pt/notify-requeued.txt
+libdata/hylafax/etc/templates/pt/notify-timedout.txt
+libdata/hylafax/etc/templates/pt_BR/
+libdata/hylafax/etc/templates/pt_BR/faxrcvd-error.txt
+libdata/hylafax/etc/templates/pt_BR/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/pt_BR/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/pt_BR/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/pt_BR/faxrcvd-success.txt
+libdata/hylafax/etc/templates/pt_BR/notify-blocked.txt
+libdata/hylafax/etc/templates/pt_BR/notify-done-page.txt
+libdata/hylafax/etc/templates/pt_BR/notify-done.txt
+libdata/hylafax/etc/templates/pt_BR/notify-failed-page.txt
+libdata/hylafax/etc/templates/pt_BR/notify-failed.txt
+libdata/hylafax/etc/templates/pt_BR/notify-format_failed.txt
+libdata/hylafax/etc/templates/pt_BR/notify-killed.txt
+libdata/hylafax/etc/templates/pt_BR/notify-no_formatter.txt
+libdata/hylafax/etc/templates/pt_BR/notify-poll_failed.txt
+libdata/hylafax/etc/templates/pt_BR/notify-poll_no_document.txt
+libdata/hylafax/etc/templates/pt_BR/notify-poll_rejected.txt
+libdata/hylafax/etc/templates/pt_BR/notify-rejected.txt
+libdata/hylafax/etc/templates/pt_BR/notify-removed.txt
+libdata/hylafax/etc/templates/pt_BR/notify-requeued.txt
+libdata/hylafax/etc/templates/pt_BR/notify-timedout.txt
+libdata/hylafax/etc/templates/ro/
+libdata/hylafax/etc/templates/ro/faxrcvd-error.txt
+libdata/hylafax/etc/templates/ro/faxrcvd-failure.txt
+libdata/hylafax/etc/templates/ro/faxrcvd-notify-error.txt
+libdata/hylafax/etc/templates/ro/faxrcvd-notify-success.txt
+libdata/hylafax/etc/templates/ro/faxrcvd-success.txt
+libdata/hylafax/etc/templates/ro/notify-blocked.txt
+libdata/hylafax/etc/templates/ro/notify-done-page.txt
+libdata/hylafax/etc/templates/ro/notify-done.txt
+libdata/hylafax/etc/templates/ro/notify-failed-page.txt
+libdata/hylafax/etc/templates/ro/notify-failed.txt
+libdata/hylafax/etc/templates/ro/notify-format_failed.txt
+libdata/hylafax/etc/templates/ro/notify-killed.txt
+libdata/hylafax/etc/templates/ro/notify-no_formatter.txt
+libdata/hylafax/etc/templates/ro/notify-poll_failed.txt
+libdata/hylafax/etc/templates/ro/notify-poll_no_document.txt
+libdata/hylafax/etc/templates/ro/notify-poll_rejected.txt
+libdata/hylafax/etc/templates/ro/notify-rejected.txt
+libdata/hylafax/etc/templates/ro/notify-removed.txt
+libdata/hylafax/etc/templates/ro/notify-requeued.txt
+libdata/hylafax/etc/templates/ro/notify-timedout.txt
 libdata/hylafax/etc/xferfaxlog
 libdata/hylafax/info/
 libdata/hylafax/log/
@@ -131,6 +362,7 @@ libdata/hylafax/status/
 libdata/hylafax/tmp/
 @owner
 @group
+@man man/man1/edit-faxcover.1
 @man man/man1/faxalter.1
 @man man/man1/faxcover.1
 @man man/man1/faxmail.1
@@ -141,8 +373,6 @@ libdata/hylafax/tmp/
 @man man/man1/sendpage.1
 @man man/man1/sgi2fax.1
 @man man/man1/textfmt.1
-@man man/man5/cid.5f
-@man man/man5/destctrls.5f
 @man man/man5/dialrules.5f
 @man man/man5/doneq.5f
 @man man/man5/hosts.hfaxd.5f
@@ -182,6 +412,7 @@ libdata/hylafax/tmp/
 @man man/man8/faxstate.8c
 @man man/man8/faxwatch.8c
 @man man/man8/hfaxd.8c
+@man man/man8/jobcontrol.8c
 @man man/man8/mkcover.8c
 @man man/man8/notify.8c
 @man man/man8/pagesend.8c
@@ -198,6 +429,7 @@ libdata/hylafax/tmp/
 sbin/choptest
 sbin/cqtest
 sbin/dialtest
+sbin/edit-faxcover
 sbin/faxabort
 sbin/faxaddmodem
 sbin/faxadduser
@@ -245,21 +477,9 @@ sbin/tiffcheck
 sbin/tsitest
 sbin/typetest
 sbin/xferfaxstats
-@exec install -d -o uucp -g dialer -m 755 /var/spool/hylafax
-@exec ln -s /var/spool/hylafax %D/hylafax
-@exec install -d -o uucp -g dialer -m 700 %D/hylafax/archive
-@exec install -d -o uucp -g dialer -m 755 %D/hylafax/bin
-@exec install -d -o uucp -g dialer -m 755 %D/hylafax/client
-@exec install -d -o uucp -g dialer -m 755 %D/hylafax/config
-@exec install -d -o uucp -g dialer -m 755 %D/hylafax/dev
-@exec install -d -o uucp -g dialer -m 700 %D/hylafax/docq
-@exec install -d -o uucp -g dialer -m 700 %D/hylafax/doneq
-@exec install -d -o uucp -g dialer -m 755 %D/hylafax/etc
-@exec install -d -o uucp -g dialer -m 755 %D/hylafax/info
-@exec install -d -o uucp -g dialer -m 755 %D/hylafax/log
-@exec install -d -o uucp -g dialer -m 700 %D/hylafax/pollq
-@exec install -d -o uucp -g dialer -m 755 %D/hylafax/recvq
-@exec install -d -o uucp -g dialer -m 700 %D/hylafax/sendq
-@exec install -d -o uucp -g dialer -m 755 %D/hylafax/status
-@exec install -d -o uucp -g dialer -m 700 %D/hylafax/tmp
-@exec mkfifo %D/hylafax/FIFO; chown uucp:dialer %D/hylafax/FIFO; chmod 600 %D/hylafax/FIFO
+share/doc/hylafax/
+share/doc/hylafax/README.OpenBSD
+@exec ln -sf %D/libdata/hylafax /var/spool/hylafax
+@exec mkfifo %D/libdata/hylafax/FIFO; chown uucp:dialer %D/libdata/hylafax/FIFO; chmod 600 %D/libdata/hylafax/FIFO
+@unexec rm %D/libdata/hylafax/FIFO
+@unexec rm -fr /var/spool/hylafax/

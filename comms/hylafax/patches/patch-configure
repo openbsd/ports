@@ -1,98 +1,12 @@
-$OpenBSD: patch-configure,v 1.6 2006/10/18 08:09:43 ajacoutot Exp $
---- configure.orig	Tue Oct  1 16:05:55 2002
-+++ configure	Tue Oct 17 15:39:54 2006
-@@ -37,10 +37,10 @@
- #
- # Setup general configuration parameters.
- #
--DIR_BIN=/usr/local/bin
--DIR_SBIN=/usr/local/sbin
--DIR_LIBDATA=/usr/local/lib/fax
--DIR_LIB=/usr/local/lib
-+DIR_BIN=${PREFIX}/bin
-+DIR_SBIN=${PREFIX}/sbin
-+DIR_LIBDATA=${PREFIX}/lib/fax
-+DIR_LIB=${PREFIX}/lib
- DIR_LIBEXEC=$DIR_SBIN
- DIR_SPOOL=/var/spool/hylafax
- DIR_HTML=/var/httpd/htdocs/hylafax
-@@ -59,7 +59,7 @@ DSO=auto
- GETTY=auto
- HTML=no
- PS=auto
--SYSVINIT=auto
-+SYSVINIT=no
- FAXQ_SERVER=yes			# init script starts faxq
- HFAXD_SERVER=yes		# init script starts hfaxd
- HFAXD_OLD_PROTOCOL=no		# don't start old protocol
-@@ -72,8 +72,8 @@ DPS=no
- GS=no
- IMP=no
- UTMP=auto
--LIBTIFF="-L/usr/local/lib -ltiff"
--TIFFINC=/usr/local/include
-+LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg -lz"
-+TIFFINC=${LOCALBASE}/include
- TIFFBIN=
- LIBZ=
- ZLIBINC=
-@@ -81,8 +81,8 @@ REGEX=yes
- LIBREGEX='-L${DEPTH}/regex -lregex'
- REGEXINC='${DEPTH}/${TOPSRCDIR}/regex'
- DBLIB=no
--LIBDB="-L/usr/local/lib -ldb"
--DBLIBINC=/usr/local/include
-+LIBDB="-L${LOCALBASE}/lib -ldb"
-+DBLIBINC=${LOCALBASE}/include
- FAXD=
- LIBFAXSERVER='libfaxserver.${DSO}'
- LIBUTIL='${UTIL}/libfaxutil.${DSO}'
-@@ -2312,11 +2312,10 @@ EOF
- 	Note "  Found tiffio.h version ${header_ver}"
- 	Note "  Found libtiff version ${lib_ver}"
- 	if [ ${header_ver} -ge 19960307 ]; then
--	    if [ "${lib_ver}" = "3.4" ]; then
--		tiff_runlen_t="uint16"
--	    elif [ "${lib_ver}" = "3.5" ]; then
--		tiff_runlen_t="uint32"
--	    fi
-+	    case ${lib_ver} in
-+	    3.4)	tiff_runlen_t="uint16" ;;
-+	    3.[5-8])	tiff_runlen_t="uint32" ;;
-+	    esac
- 	fi
-     else
- 	cat 1>&2 <<EOF
-@@ -2351,9 +2350,10 @@ EOF
- 
- Incompatible TIFF Library.
- 
--HylaFAX ${VERSION} requires TIFF software distribution ver 3.4 or 3.5.
--If you do not have up to date TIFF software on your system then you can
--retrieve it from the location where you obtained this software.
-+HylaFAX ${VERSION} requires TIFF software distribution ver 3.4, 3.5, or
-+3.6.  If you do not have up to date TIFF software on your system then
-+you can retrieve it from the location where you obtained this software.
-+The Home Page for version 3.5 and later is http://www.libtiff.org
+$OpenBSD: patch-configure,v 1.7 2008/02/08 23:10:45 okan Exp $
+--- configure.orig	Thu Aug 23 15:02:32 2007
++++ configure	Wed Nov  7 17:29:51 2007
+@@ -1521,7 +1521,7 @@ int t() { $f(); return 0; }
+ int main(){ t(); return 0; }
  EOF
- 	boom
- 	return 1
-@@ -3669,17 +3669,8 @@ else
- fi
+     capture cat t.c
+-    runMake t "t:; \${CCF} t.c $libs"
++    runMake t "t:; \${CCF} t.c -L%%LOCALBASE%%/lib $libs"
+ }
  
- # vgetty support
--if [ -z "$PATH_VGETTY" ]; then
--    PATH_VGETTY=`findApp vgetty /usr/libexec:/sbin:$PATH` 
--    if [ -z "$PATH_VGETTY" ]; then
--	PATH_VGETTY=/bin/vgetty
--	Note "WARNING, no vgetty program found to handle a voice call, using $PATH_VGETTY."
--    else
--	Note "Looks like $PATH_VGETTY is the program to exec for a voice call."
--    fi
--else
-+	PATH_VGETTY=${LOCALBASE}/libexec/vgetty
-     Note "Using $PATH_VGETTY as the program to exec for a voice call."
--fi
- 
- # egetty support
- if [ -z "$PATH_EGETTY" ]; then
+ #

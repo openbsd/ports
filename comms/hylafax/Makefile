@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2008/01/04 17:48:33 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2008/02/08 23:10:45 okan Exp $
 
 COMMENT=		send/receive faxes and share modems
-DISTNAME=		hylafax-4.1.5
-PKGNAME=		${DISTNAME}p7
+DISTNAME=		hylafax-4.4.4
 CATEGORIES=		comms
 
-FLAVORS=		a4
-FLAVOR?=
 HOMEPAGE=		http://www.HylaFAX.org/
+
+MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
 
 MASTER_SITES=		ftp://ftp.hylafax.org/source/
 
@@ -17,23 +16,30 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+FLAVORS=		a4
+FLAVOR?=
+
 WANTLIB=		c m stdc++ util z
 
-RUN_DEPENDS=		:ghostscript-*:print/ghostscript/gnu
-LIB_DEPENDS=		tiff::graphics/tiff \
-			jpeg::graphics/jpeg
+BUILD_DEPENDS=		:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS=		::mail/metamail
+LIB_DEPENDS=		jbig::graphics/jbigkit \
+			tiff::graphics/tiff
 
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		Yes
 
-CONFIGURE_ARGS =	--nointeractive
-CONFIGURE_ARGS+=	--with-CC="${CC}"
-CONFIGURE_ARGS+=	--with-CXX="${CXX}"
-CONFIGURE_ARGS+=        --with-INSTALL=""
+CONFIGURE_ARGS=		--nointeractive \
+			--disable-pam \
+			--with-CC="${CC}" \
+			--with-CXX="${CXX}" \
+			--with-INSTALL=""
 
 CONFIGURE_ENV+=		CCOMPILER="${CC}" CXXCOMPILER="${CXX}" \
 			GCOPTS="${CFLAGS}" GCXXOPTS="${CXXFLAGS}" \
-			PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}"
+			PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}" \
+			SCRIPT_SH=/bin/ksh
 
 .if ${FLAVOR:L} == "a4"
 CONFIGURE_ARGS+=	--with-PAGESIZE=A4
@@ -41,17 +47,15 @@ CONFIGURE_ARGS+=	--with-PAGESIZE=A4
 
 FAKE_FLAGS=	ROOT=${WRKINST} SPOOL=${PREFIX}/libdata/hylafax
 
-SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
-		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
-
 NO_REGRESS=	Yes
-NO_SYSTRACE=	"test -d '' succeeds"
+
+pre-configure:
+	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/configure
 
 post-install:
-	@chown uucp:dialer ${SUID_EXES}
-	@chmod a=rx,u+s ${SUID_EXES}
-	${INSTALL_DATA} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/lib/fax
-	@ln -sf ${TRUEPREFIX}/libdata/hylafax ${WRKINST}/var/spool/hylafax
-	@chown -R uucp:dialer ${PREFIX}/libdata/hylafax
+	@sed -e s,%%PREFIX%%,${TRUEPREFIX},g ${FILESDIR}/README.OpenBSD > \
+		${WRKBUILD}/README.OpenBSD
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hylafax/
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/hylafax/
 
 .include <bsd.port.mk>

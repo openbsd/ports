@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_faxaddmodem_sh_in,v 1.1 2008/02/08 23:10:45 okan Exp $
+--- etc/faxaddmodem.sh.in.orig	Sat Nov 24 23:49:32 2007
++++ etc/faxaddmodem.sh.in	Sat Nov 24 23:49:53 2007
+@@ -1745,7 +1745,7 @@ fi
+ FIFO=$SPOOL/FIFO.$DEVID
+ test -p $FIFO || {
+     prompt "Creating fifo $FIFO for faxgetty..."
+-    if (mkfifo $FIFO) >/dev/null 2>&1; then
++    if (/sbin/mkfifo $FIFO) >/dev/null 2>&1; then
+ 	echo "done."
+     elif (mknod $FIFO p) >/dev/null 2>&1; then
+ 	echo "done."

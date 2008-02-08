@@ -1,13 +1,14 @@
-HylaFAX is an enterprise-class system for sending and receiving facsimiles as
-well as for sending alpha-numeric pages.  The software is designed around a
-client-server architecture. Fax modems may reside on a single machine on a
-network and clients can submit an outbound job from any other machine on the
-network. Client software is designed to be lightweight and easy to port.
+HylaFAX is an enterprise-class system for sending and receiving
+facsimiles as well as for sending alpha-numeric pages.  The software is
+designed around a client-server architecture.  Fax modems may reside on
+a single machine on a network and clients can submit an outbound job
+from any other machine on the network.  Client software is designed to
+be lightweight and easy to port.
 
-HylaFAX is designed to be very robust and reliable. The fax server is designed
-to guard against unexpected failures in the software, in the configuration, in
-the hardware and in general use. HylaFAX can support multiple modems and a
-heavy traffic load.
+HylaFAX is designed to be very robust and reliable.  The fax server is
+designed to guard against unexpected failures in the software, in the
+configuration, in the hardware and in general use.  HylaFAX can support
+multiple modems and a heavy traffic load.
 
-If you expect to send more than a few facsimiles a day, then HylaFAX is the fax
-package for you!!
+If you expect to send more than a few facsimiles a day, then HylaFAX is
+the fax package for you!!
