@@ -1,6 +1,6 @@
-$OpenBSD: patch-gitk,v 1.1.1.1 2006/11/12 15:59:05 matthieu Exp $
---- gitk.orig	Thu Oct 19 01:32:58 2006
-+++ gitk	Tue Oct 31 21:54:50 2006
+$OpenBSD: patch-gitk-git_gitk,v 1.1 2008/02/08 17:56:01 bernd Exp $
+--- gitk-git/gitk.orig	Fri Feb  1 23:09:01 2008
++++ gitk-git/gitk	Sat Feb  2 19:33:24 2008
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # Tcl ignores the next line -*- tcl -*- \

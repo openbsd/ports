@@ -1,7 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.11 2007/12/17 20:00:05 bernd Exp $
---- Makefile.orig	Sun Nov 18 23:55:49 2007
-+++ Makefile	Thu Nov 22 20:32:19 2007
-@@ -139,13 +139,13 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
+--- Makefile.orig	Fri Feb  1 23:09:01 2008
++++ Makefile	Sat Feb  2 19:32:17 2008
+@@ -150,13 +150,13 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -15,9 +14,9 @@ $OpenBSD: patch-Makefile,v 1.11 2007/12/17 20:00:05 bernd Exp $
 -prefix = $(HOME)
 +#prefix = $(HOME)
  bindir = $(prefix)/bin
- gitexecdir = $(bindir)
- sharedir = $(prefix)/share
-@@ -156,7 +156,7 @@ else
+ mandir = $(prefix)/share/man
+ infodir = $(prefix)/share/info
+@@ -170,7 +170,7 @@ else
  sysconfdir = $(prefix)/etc
  endif
  lib = lib
@@ -26,9 +25,9 @@ $OpenBSD: patch-Makefile,v 1.11 2007/12/17 20:00:05 bernd Exp $
  # DESTDIR=
  
  # default configuration for gitweb
-@@ -177,15 +177,15 @@ GITWEB_SITE_FOOTER =
+@@ -192,15 +192,15 @@ GITWEB_SITE_FOOTER =
  
- export prefix bindir gitexecdir sharedir template_dir sysconfdir
+ export prefix bindir gitexecdir sharedir template_dir htmldir sysconfdir
  
 -CC = gcc
 +CC ?= gcc
@@ -45,11 +44,12 @@ $OpenBSD: patch-Makefile,v 1.11 2007/12/17 20:00:05 bernd Exp $
  
  export TCL_PATH TCLTK_PATH
  
-@@ -445,10 +445,9 @@ ifeq ($(uname_S),FreeBSD)
+@@ -469,11 +469,10 @@ ifeq ($(uname_S),FreeBSD)
  	BASIC_LDFLAGS += -L/usr/local/lib
  endif
  ifeq ($(uname_S),OpenBSD)
 -	NO_STRCASESTR = YesPlease
+ 	NO_MEMMEM = YesPlease
  	NEEDS_LIBICONV = YesPlease
 -	BASIC_CFLAGS += -I/usr/local/include
 -	BASIC_LDFLAGS += -L/usr/local/lib
@@ -58,7 +58,7 @@ $OpenBSD: patch-Makefile,v 1.11 2007/12/17 20:00:05 bernd Exp $
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -535,7 +534,7 @@ endif
+@@ -577,7 +576,7 @@ endif
  EXTLIBS += -lz
  
  ifndef NO_OPENSSL
@@ -67,7 +67,7 @@ $OpenBSD: patch-Makefile,v 1.11 2007/12/17 20:00:05 bernd Exp $
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -967,7 +966,7 @@ all:: $(TEST_PROGRAMS)
+@@ -1021,7 +1020,7 @@ all:: $(TEST_PROGRAMS)
  
  export NO_SVN_TESTS
  

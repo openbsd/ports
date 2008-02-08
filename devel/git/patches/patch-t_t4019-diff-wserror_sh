@@ -1,0 +1,80 @@
+$OpenBSD: patch-t_t4019-diff-wserror_sh,v 1.1 2008/02/08 17:56:01 bernd Exp $
+--- t/t4019-diff-wserror.sh.orig	Sat Feb  2 18:41:02 2008
++++ t/t4019-diff-wserror.sh	Sat Feb  2 18:41:17 2008
+@@ -21,8 +21,8 @@ blue_grep='7;34m' ;# ESC [ 7 ; 3 4 m
+ test_expect_success default '
+ 
+ 	git diff --color >output
+-	grep "$blue_grep" output >error
+-	grep -v "$blue_grep" output >normal
++	grep -a "$blue_grep" output >error
++	grep -a -v "$blue_grep" output >normal
+ 
+ 	grep Eight normal >/dev/null &&
+ 	grep HT error >/dev/null &&
+@@ -35,8 +35,8 @@ test_expect_success 'without -trail' '
+ 
+ 	git config core.whitespace -trail
+ 	git diff --color >output
+-	grep "$blue_grep" output >error
+-	grep -v "$blue_grep" output >normal
++	grep -a "$blue_grep" output >error
++	grep -a -v "$blue_grep" output >normal
+ 
+ 	grep Eight normal >/dev/null &&
+ 	grep HT error >/dev/null &&
+@@ -50,8 +50,8 @@ test_expect_success 'without -trail (attribute)' '
+ 	git config --unset core.whitespace
+ 	echo "F whitespace=-trail" >.gitattributes
+ 	git diff --color >output
+-	grep "$blue_grep" output >error
+-	grep -v "$blue_grep" output >normal
++	grep -a "$blue_grep" output >error
++	grep -a -v "$blue_grep" output >normal
+ 
+ 	grep Eight normal >/dev/null &&
+ 	grep HT error >/dev/null &&
+@@ -65,8 +65,8 @@ test_expect_success 'without -space' '
+ 	rm -f .gitattributes
+ 	git config core.whitespace -space
+ 	git diff --color >output
+-	grep "$blue_grep" output >error
+-	grep -v "$blue_grep" output >normal
++	grep -a "$blue_grep" output >error
++	grep -a -v "$blue_grep" output >normal
+ 
+ 	grep Eight normal >/dev/null &&
+ 	grep HT normal >/dev/null &&
+@@ -80,8 +80,8 @@ test_expect_success 'without -space (attribute)' '
+ 	git config --unset core.whitespace
+ 	echo "F whitespace=-space" >.gitattributes
+ 	git diff --color >output
+-	grep "$blue_grep" output >error
+-	grep -v "$blue_grep" output >normal
++	grep -a "$blue_grep" output >error
++	grep -a -v "$blue_grep" output >normal
+ 
+ 	grep Eight normal >/dev/null &&
+ 	grep HT normal >/dev/null &&
+@@ -95,8 +95,8 @@ test_expect_success 'with indent-non-tab only' '
+ 	rm -f .gitattributes
+ 	git config core.whitespace indent,-trailing,-space
+ 	git diff --color >output
+-	grep "$blue_grep" output >error
+-	grep -v "$blue_grep" output >normal
++	grep -a "$blue_grep" output >error
++	grep -a -v "$blue_grep" output >normal
+ 
+ 	grep Eight error >/dev/null &&
+ 	grep HT normal >/dev/null &&
+@@ -110,8 +110,8 @@ test_expect_success 'with indent-non-tab only (attribu
+ 	git config --unset core.whitespace
+ 	echo "F whitespace=indent,-trailing,-space" >.gitattributes
+ 	git diff --color >output
+-	grep "$blue_grep" output >error
+-	grep -v "$blue_grep" output >normal
++	grep -a "$blue_grep" output >error
++	grep -a -v "$blue_grep" output >normal
+ 
+ 	grep Eight error >/dev/null &&
+ 	grep HT normal >/dev/null &&
