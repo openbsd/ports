@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:43:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/02/08 22:00:48 landry Exp $
 ${P5SITE}/Curses/
 ${P5SITE}/Curses/UI/
 ${P5SITE}/Curses/UI.pm
@@ -15,11 +15,13 @@ ${P5SITE}/Curses/UI/Dialog/Dirbrowser.pm
 ${P5SITE}/Curses/UI/Dialog/Error.pm
 ${P5SITE}/Curses/UI/Dialog/Filebrowser.pm
 ${P5SITE}/Curses/UI/Dialog/Progress.pm
+${P5SITE}/Curses/UI/Dialog/Question.pm
 ${P5SITE}/Curses/UI/Dialog/Status.pm
 ${P5SITE}/Curses/UI/Label.pm
 ${P5SITE}/Curses/UI/Language/
 ${P5SITE}/Curses/UI/Language.pm
 ${P5SITE}/Curses/UI/Language/chinese.pm
+${P5SITE}/Curses/UI/Language/czech.pm
 ${P5SITE}/Curses/UI/Language/dutch.pm
 ${P5SITE}/Curses/UI/Language/english.pm
 ${P5SITE}/Curses/UI/Language/french.pm
@@ -29,10 +31,12 @@ ${P5SITE}/Curses/UI/Language/norwegian.pm
 ${P5SITE}/Curses/UI/Language/polish.pm
 ${P5SITE}/Curses/UI/Language/portuguese.pm
 ${P5SITE}/Curses/UI/Language/russian.pm
+${P5SITE}/Curses/UI/Language/slovak.pm
 ${P5SITE}/Curses/UI/Language/spanish.pm
 ${P5SITE}/Curses/UI/Language/turkish.pm
 ${P5SITE}/Curses/UI/Listbox.pm
 ${P5SITE}/Curses/UI/Menubar.pm
+${P5SITE}/Curses/UI/Notebook.pm
 ${P5SITE}/Curses/UI/PasswordEntry.pm
 ${P5SITE}/Curses/UI/Popupmenu.pm
 ${P5SITE}/Curses/UI/Progressbar.pm
@@ -57,10 +61,12 @@ ${P5SITE}/Curses/UI/Window.pm
 @man man/man3p/Curses::UI::Dialog::Error.3p
 @man man/man3p/Curses::UI::Dialog::Filebrowser.3p
 @man man/man3p/Curses::UI::Dialog::Progress.3p
+@man man/man3p/Curses::UI::Dialog::Question.3p
 @man man/man3p/Curses::UI::Dialog::Status.3p
 @man man/man3p/Curses::UI::Label.3p
 @man man/man3p/Curses::UI::Listbox.3p
 @man man/man3p/Curses::UI::Menubar.3p
+@man man/man3p/Curses::UI::Notebook.3p
 @man man/man3p/Curses::UI::PasswordEntry.3p
 @man man/man3p/Curses::UI::Popupmenu.3p
 @man man/man3p/Curses::UI::Progressbar.3p
@@ -74,8 +80,12 @@ ${P5SITE}/Curses/UI/Window.pm
 @man man/man3p/Curses::UI::Window.3p
 share/examples/p5-Curses-UI/
 share/examples/p5-Curses-UI/color_editor
+share/examples/p5-Curses-UI/demo-add
+share/examples/p5-Curses-UI/demo-buttonbox
 share/examples/p5-Curses-UI/demo-color
+share/examples/p5-Curses-UI/demo-cuml
 share/examples/p5-Curses-UI/demo-language
+share/examples/p5-Curses-UI/demo-notebook
 share/examples/p5-Curses-UI/demo-widgets
 share/examples/p5-Curses-UI/editor
 share/examples/p5-Curses-UI/hello_world
