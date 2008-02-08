@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/02/08 12:03:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	look up country by IP address/hostname
 
 MODULES=	cpan
-DISTNAME=	Geo-IP-1.28
+DISTNAME=	Geo-IP-1.30
 CATEGORIES=	net geo
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
