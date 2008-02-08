@@ -1,0 +1,12 @@
+$OpenBSD: patch-tkhylafax_man,v 1.1 2008/02/08 23:12:38 okan Exp $
+--- tkhylafax.man.orig	Tue Jan 29 13:55:21 2008
++++ tkhylafax.man	Tue Jan 29 13:56:22 2008
+@@ -273,7 +273,7 @@ A legal line in this file, for example, would be ``*fa
+ ``!'' in the first column of any line is treated as a comment. A 
+ sample .tkhylafax-default file is included in this distribution.
+ If no such file in the user's home directory is found, the system-wide
+-resource file '/usr/local/lib/tkhylafax-<version>/tkhylafax-defaults is used.
++resource file '%%PREFIX%%/lib/tkhylafax/tkhylafax-defaults is used.
+ 
+ I'm thinking of adding a 
+ .I few

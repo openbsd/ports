@@ -1,47 +1,69 @@
-$OpenBSD: patch-Makefile,v 1.1 2007/10/26 20:38:21 ajacoutot Exp $
---- Makefile.orig	Sun Dec 29 19:26:39 1996
-+++ Makefile	Fri Oct 26 22:34:13 2007
-@@ -14,10 +14,10 @@ TCLPRG_DEST = /usr/local/bin
- TCLMAN_DEST = /usr/local/man/man1
+$OpenBSD: patch-Makefile,v 1.2 2008/02/08 23:12:37 okan Exp $
+--- Makefile.orig	Sat Mar 14 14:57:48 1998
++++ Makefile	Tue Jan 29 14:22:02 2008
+@@ -5,10 +5,8 @@ SHELL = /bin/sh
+ 
+ ### EDIT THE NEXT LINES ONLY ###
+ 
+-PREFIX = /usr/local
+-
+ # The directory where the tkhylafax library will be installed
+-TCLLIB_DEST = $(PREFIX)/lib/tkhylafax-3.2
++TCLLIB_DEST = $(PREFIX)/lib/tkhylafax
+ 
+ # The directory where the tkhylafax command will be installed
+ TCLPRG_DEST = $(PREFIX)/bin
+@@ -17,13 +15,13 @@ TCLPRG_DEST = $(PREFIX)/bin
+ TCLMAN_DEST = $(PREFIX)/man/man1
  
  # The full path to tclsh
--TCLSH = /usr/local/bin/tclsh
-+TCLSH = tclsh7.6
+-TCLSH = /usr/bin/tclsh
++TCLSH = %%LOCALBASE%%/bin/tclsh8.4
  
  # The full path to wish.
--WISH = /usr/local/bin/wish
-+WISH = wish4.2
+-WISH = /usr/bin/wish
++WISH = %%LOCALBASE%%/bin/wish8.4
+ 
+ # The full path to your postscript viewer
+-GHOSTVIEW = /usr/X11/bin/gv
++GHOSTVIEW = %%LOCALBASE%%/bin/gv
+ 
  ### DON'T EDIT ANYTHING BELOW THIS LINE ###
  
- TCLLIB_FILES =  \
-@@ -40,7 +40,9 @@ TCLLIB_FILES =  \
- TCLPRG_FILE = tkhylafax
- TCLMAN_FILE = tkhylafax
+@@ -52,7 +50,6 @@ TCLMAN_FILE = tkhylafax
  
--all: lib install.man tkhylafax
-+all:
-+
-+install: lib install.man tkhylafax.inst
- 	echo 'auto_mkindex $(TCLLIB_DEST) *.tcl *.t' | $(TCLSH);
+ all:
+ 	$(MAKE) build
+-	$(MAKE) install
+ 
+ build: Makefile
+ 	@echo "Patching tkhylafax..."
+@@ -66,24 +63,24 @@ install: install.lib install.man install.tkhylafax
  
  $(TCLLIB_DEST):
-@@ -59,16 +61,15 @@ $(TCLPRG_DEST):
- 	if [ ! -d $(TCLPRG_DEST) ]; then mkdir -p $(TCLPRG_DEST); fi
- 	chmod 775 $(TCLPRG_DEST)
+ 	if [ ! -d $(TCLLIB_DEST) ]; then mkdir -p $(TCLLIB_DEST); fi
+-	chmod 775 $(TCLLIB_DEST)
++	chmod 755 $(TCLLIB_DEST)
  
--tkhylafax: $(TCLPRG_DEST)
-+tkhylafax.inst: $(TCLPRG_DEST)
- 	@echo "Patching tkhylafax..." 
- 	mv tkhylafax tkhylafax.unpatched
- 	sed -e 's|XXX_TKHYLAFAX_XXX|$(TCLLIB_DEST)|g' \
- 	    tkhylafax.unpatched > tkhylafax
+ install.lib: $(TCLLIB_DEST)
+ 	@echo "Installing tkhylafax library..." 
+ 	-for i in $(TCLLIB_FILES) ; do \
+ 	    cp $$i $(TCLLIB_DEST)/$$i ; \
+-	    chmod 664 $(TCLLIB_DEST)/$$i ; \
++	    chmod 644 $(TCLLIB_DEST)/$$i ; \
+ 	done
  	@echo "Done" 
+ 
+ $(TCLPRG_DEST):
+ 	if [ ! -d $(TCLPRG_DEST) ]; then mkdir -p $(TCLPRG_DEST); fi
+-	chmod 775 $(TCLPRG_DEST)
++	chmod 755 $(TCLPRG_DEST)
+ 
+ install.tkhylafax: $(TCLPRG_DEST) $(TCLPRG_FILE) 
  	@echo "Installing tkhylafax command..." 
--	cp $(TCLPRG_FILE) $(TCLPRG_DEST)/$@
--	chmod 775 $(TCLPRG_DEST)/$@
--	mv tkhylafax.unpatched tkhylafax
-+	cp $(TCLPRG_FILE) $(TCLPRG_DEST)/tkhylafax
-+	chmod 775 $(TCLPRG_DEST)/tkhylafax
+ 	cp $(TCLPRG_FILE) $(TCLPRG_DEST)/$(TCLPRG_FILE)
+-	chmod 775 $(TCLPRG_DEST)/$(TCLPRG_FILE)
++	chmod 755 $(TCLPRG_DEST)/$(TCLPRG_FILE)
  	@echo "Done" 
  
  install.man:
