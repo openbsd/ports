@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.16 2008/01/14 18:39:07 bernd Exp $
+# $OpenBSD: ruby.port.mk,v 1.17 2008/02/08 17:13:15 bernd Exp $
 
 # ruby module
 
@@ -28,7 +28,7 @@ CONFIGURE_SCRIPT=	${LOCALBASE}/bin/ruby extconf.rb
 .elif ${CONFIGURE_STYLE:L:Mgem}
 EXTRACT_SUFX=	.gem
 
-BUILD_DEPENDS+=		:ruby-gems->=0.9.4p2:devel/ruby-gems
+BUILD_DEPENDS+=		:ruby-gems->=1.0.1:devel/ruby-gems
 MODRUBY_RUN_DEPENDS+=	::devel/ruby-gems
 NO_BUILD=	Yes
 
