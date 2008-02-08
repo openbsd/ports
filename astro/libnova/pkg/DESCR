@@ -1,0 +1,27 @@
+libnova is a general purpose, double precision, Celestial Mechanics,
+Astrometry and Astrodynamics library.
+
+Currently computes:
+
+    * Aberration
+    * Nutation
+    * Apparent Position
+    * Dynamical Time
+    * Julian Day
+    * Precession
+    * Proper Motion
+    * Sidereal Time
+    * Solar Coordinates (using VSOP87)
+    * Coordinate Transformations
+    * Planetary Positions Mercury - Pluto (Mercury - Neptune using VSOP87)
+    * Planetary Magnitude, illuminated disk and phase angle.
+    * Lunar Position (using ELP82), phase angle.
+    * Elliptic Motion of bodies (Asteroid + Comet positional and orbit data)
+    * Asteroid + Comet magnitudes
+    * Parabolic Motion of bodies (Comet positional data)
+    * Orbit velocities and lengths
+    * Atmospheric refraction
+    * Rise, Set and Transit times.
+    * Semidiameters of the Sun, Moon, Planets and asteroids.
+    * Angular separation of bodies
+    * Hyperbolic motion of bodies
