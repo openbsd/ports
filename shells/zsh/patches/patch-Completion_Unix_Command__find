@@ -1,7 +1,7 @@
-$OpenBSD: patch-Completion_Unix_Command__find,v 1.1 2004/07/12 19:46:52 lebel Exp $
---- Completion/Unix/Command/_find.orig	Tue Dec 11 10:46:22 2001
-+++ Completion/Unix/Command/_find	Mon Jul  1 10:05:34 2002
-@@ -1,59 +1,39 @@
+$OpenBSD: patch-Completion_Unix_Command__find,v 1.2 2008/02/08 04:55:08 okan Exp $
+--- Completion/Unix/Command/_find.orig	Thu Dec 13 15:04:47 2007
++++ Completion/Unix/Command/_find	Thu Dec 13 15:13:49 2007
+@@ -1,71 +1,40 @@
 -#compdef find
 +#compdef find (OpenBSD)
 +# Sebastian Stark <seb@todesplanet.de>
@@ -11,11 +11,16 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.1 2004/07/12 19:46:52 lebel Ex
 -  '*-depth' \
 -  '*-follow' \
 -  '*-help' \
+-  '*-ignore_readdir_race' \
 -  '*-maxdepth:maximum search depth:' \
 -  '*-mindepth:minimum search depth:' \
 -  '*-mount' \
+-  '*-noignore_readdir_race' \
 -  '*-noleaf' \
+-  '*-regextype:regexp syntax:(emacs posix-awk posix-basic posix-egrep posix-extended)' \
 -  '*-version' \
+-  '*-warn' \
+-  '*-nowarn' \
 -  '*-xdev' \
 -  '*-amin:access time (minutes):' \
 -  '*-cmin:inode change time (minutes):' \
@@ -51,6 +56,8 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.1 2004/07/12 19:46:52 lebel Ex
 -  '*-ipath:path pattern to search (case insensitive):' \
 -  '*-regex:regular expression to search:' \
 -  '*-iregex:regular expression to search (case insensitive):' \
+-  '*-wholename:full path pattern to search:' \
+-  '*-iwholename:full path pattern to search (case insensitive):' \
 -  '*-inum:inode number:' \
 +  '*-inum:inode number' \
    '*-links:number of links:' \
@@ -65,12 +72,16 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.1 2004/07/12 19:46:52 lebel Ex
    '*-nogroup' \
 -  '*-perm:file permission bits:' \
 -  '*-size:file size:' \
+-  '*-samefile:same inode as:_files' \
 -  '*-true' \
 -  '*-type:file type:((b\:block\ special\ file c\:character\ special\ file d\:directory p\:named\ pipe f\:normal\ file l\:symbolic\ link s\:socket))' \
 -  '*-xtype:file type:((b\:block\ special\ file c\:character\ special\ file d\:directory p\:named\ pipe f\:normal\ file l\:symbolic\ link s\:socket))' \
+-  '*-delete' \
 -  '*-exec:program: _command_names -e:*\;::program arguments: _normal' \
+-  '*-execdir:program: _command_names -e:*\;::program arguments: _normal' \
    '*-ok:program: _command_names -e:*\;::program arguments: _normal' \
--  '*-fls:output file:_files' \
+-  '*-okdir:program: _command_names -e:*\;::program arguments: _normal' \
+   '*-fls:output file:_files' \
 -  '*-fprint:output file:_files' \
 -  '*-fprint0:output file:_files' \
 -  '*-fprintf:output file:_files:output format:' \
@@ -80,6 +91,7 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.1 2004/07/12 19:46:52 lebel Ex
    '*-print0' \
 -  '*-printf:output format:' \
    '*-prune' \
+-  '*-quit' \
 -  '*-ls' \
 +  '*-size:file size:' \
 +  '*-type:file type:((b\:block\ special\ file c\:character\ special\ file d\:directory p\:named\ pipe f\:normal\ file l\:symbolic\ link s\:socket))' \
