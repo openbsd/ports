@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/16 00:04:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/02/08 15:30:54 okan Exp $
 bin/tellico
 share/applications/kde/tellico.desktop
 share/apps/kconf_update/tellico-rename.upd
@@ -26,6 +26,7 @@ share/apps/tellico/entry-templates/Compact.xsl
 share/apps/tellico/entry-templates/Default.xsl
 share/apps/tellico/entry-templates/Fancy.xsl
 share/apps/tellico/entry-templates/Video.xsl
+share/apps/tellico/gcstar2tellico.xsl
 share/apps/tellico/hddvd-logo.png
 share/apps/tellico/isbndb2tellico.xsl
 share/apps/tellico/mods2tellico.xsl
@@ -95,6 +96,7 @@ share/apps/tellico/vhs-logo.png
 share/apps/tellico/yahoo2tellico.xsl
 share/apps/tellico/z3950-servers.cfg
 share/config.kcfg/tellico_config.kcfg
+share/config/tellicorc
 share/doc/HTML/en/tellico/
 share/doc/HTML/en/tellico/advanced.docbook
 share/doc/HTML/en/tellico/amazon-options.png
@@ -212,6 +214,7 @@ share/locale/pt_BR/LC_MESSAGES/tellico.mo
 share/locale/ro/LC_MESSAGES/tellico.mo
 share/locale/ru/LC_MESSAGES/tellico.mo
 share/locale/sv/LC_MESSAGES/tellico.mo
+share/locale/tr/LC_MESSAGES/tellico.mo
 share/mimelnk/application/x-tellico.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
