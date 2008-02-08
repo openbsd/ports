@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/11 09:25:59 winiger Exp $
+# $OpenBSD: Makefile,v 1.7 2008/02/08 10:36:06 mbalmer Exp $
 
 COMMENT=	Zope LDAPUserFolder product
 
-VERSION=	2_7
+VERSION=	2.8
 DISTNAME=	LDAPUserFolder-${VERSION}
-PKGNAME=	zope-${DISTNAME:S/_/./:L}p0
+PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 HOMEPAGE=	http://www.dataflake.org/software/ldapuserfolder
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/ldapuserfolder_${VERSION:S/_/./g}/
+MASTER_SITES=	${HOMEPAGE}/ldapuserfolder_${VERSION}/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	www/zope
