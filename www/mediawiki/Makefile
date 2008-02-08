@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/12/19 10:29:49 winiger Exp $
+# $OpenBSD: Makefile,v 1.17 2008/02/08 10:39:34 mbalmer Exp $
 
 COMMENT=	web-based collaborative editing environment
 
-DISTNAME=	mediawiki-1.11.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	mediawiki-1.11.1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.mediawiki.org/
@@ -29,9 +28,9 @@ SUBST_VARS=	INSTDIR
 RUN_DEPENDS=	:php5-gd-*:www/php5/extensions,-gd
 
 do-install:
-	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@mv ${WRKDIST} ${INSTDIR}
 	@find ${PREFIX} -name '.cvsignore' -exec rm {} \;
+	@find ${PREFIX} -name \*.orig -exec rm {} \;
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
-	@mv ${INSTDIR}-${DISTNAME:S/mediawiki-//} ${INSTDIR}
 
 .include <bsd.port.mk>
