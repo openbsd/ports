@@ -1,0 +1,50 @@
+$OpenBSD: patch-igmpproxy_conf,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
+--- igmpproxy.conf.orig	Fri Apr 29 20:27:50 2005
++++ igmpproxy.conf	Sat Jan 26 12:05:26 2008
+@@ -9,11 +9,11 @@
+ #   If multicast traffic originates outside the
+ #   upstream subnet, the "altnet" option can be
+ #   used in order to define legal multicast sources.
+-#   (Se example...)
++#   (See example...)
+ #
+ #   The "quickleave" should be used to avoid saturation
+ #   of the upstream link. The option should only
+-#   be used if it's absolutely nessecary to
++#   be used if it's absolutely necessary to
+ #   accurately imitate just one Client.
+ #
+ ########################################################
+@@ -25,22 +25,23 @@ quickleave
+ 
+ 
+ ##------------------------------------------------------
+-## Configuration for eth0 (Upstream Interface)
++## Configuration for em0 (Upstream Interface)
+ ##------------------------------------------------------
+-phyint eth0 upstream  ratelimit 0  threshold 1
+-        altnet 10.0.0.0/8 
+-        altnet 192.168.0.0/24
++phyint em0 upstream  ratelimit 0  threshold 1
++        altnet 10.0.0.0/8
++#	altnet 132.185.0.0/16	# BBC multicast trial
++#	altnet 217.0.119.0/24	# T-Home Entertain
++#	altnet 193.158.35.0/24	# T-Home Entertain
+ 
+-
+ ##------------------------------------------------------
+-## Configuration for eth1 (Downstream Interface)
++## Configuration for ipw0 (Downstream Interface)
+ ##------------------------------------------------------
+-phyint eth1 downstream  ratelimit 0  threshold 1
++phyint ipw0 downstream  ratelimit 0  threshold 1
+ 
+ 
+ ##------------------------------------------------------
+-## Configuration for eth2 (Disabled Interface)
++## Configuration for lo0 (Disabled Interface)
+ ##------------------------------------------------------
+-phyint eth2 disabled
++phyint lo0 disabled
+ 
+ 

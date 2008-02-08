@@ -1,0 +1,82 @@
+$OpenBSD: patch-igmp_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
+--- igmp.c.orig	Tue May 24 17:49:16 2005
++++ igmp.c	Mon Aug 13 15:16:51 2007
+@@ -41,8 +41,6 @@
+ uint32     allhosts_group;          /* All hosts addr in net order */
+ uint32     allrouters_group;          /* All hosts addr in net order */
+               
+-extern int MRouterFD;
+-
+ /*
+  * Open and initialize the igmp socket, and fill in the non-changing
+  * IP header fields in the output packet buffer.
+@@ -128,6 +126,7 @@ void acceptIgmp(int recvlen) {
+         }
+         else {
+             struct IfDesc *checkVIF;
++	    int downIf = -1;
+             
+             // Check if the source address matches a valid address on upstream vif.
+             checkVIF = getIfByIx( upStreamVif );
+@@ -141,15 +140,30 @@ void acceptIgmp(int recvlen) {
+                 return;
+             }
+             else if(!isAdressValidForIf(checkVIF, src)) {
+-                log(LOG_WARNING, 0, "The source address %s for group %s, is not in any valid net for upstream VIF.",
+-                    inetFmt(src, s1), inetFmt(dst, s2));
+-                return;
++		unsigned Ix;
++		struct IfDesc *Dp;
++
++		for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
++		    if ((Dp->state == IF_STATE_DOWNSTREAM) &&isAdressValidForIf(Dp, src)) {
++			downIf = Ix;
++			break;
++		    }
++		}
++		
++		if (downIf == -1) {
++                   log(LOG_WARNING, 0, "The source address %s for group %s, is not in any valid net for upstream VIF.",
++                       inetFmt(src, s1), inetFmt(dst, s2));
++                   return;
++		} else {
++		    log(LOG_NOTICE, 0, "The source address %s for group %s, is valid DOWNSTREAM VIF #%d.",
++			inetFmt(src, s1), inetFmt(dst, s2), downIf);
++		}
+             }
+             
+             // Activate the route.
+-            IF_DEBUG log(LOG_DEBUG, 0, "Route activate request from %s to %s",
+-                         inetFmt(src,s1), inetFmt(dst,s2));
+-            activateRoute(dst, src);
++            IF_DEBUG log(LOG_DEBUG, 0, "Route activate request from %s to %s, downIf %d",
++                         inetFmt(src,s1), inetFmt(dst,s2), downIf);
++            activateRoute(dst, src, downIf);
+             
+ 
+         }
+@@ -176,9 +190,9 @@ void acceptIgmp(int recvlen) {
+         return;
+     }
+ 
+-    log(LOG_NOTICE, 0, "RECV %s from %-15s to %s",
++    log(LOG_NOTICE, 0, "RECV %s from %-15s to %s (ip_hl %d, data %d)",
+         igmpPacketKind(igmp->igmp_type, igmp->igmp_code),
+-        inetFmt(src, s1), inetFmt(dst, s2) );
++        inetFmt(src, s1), inetFmt(dst, s2), iphdrlen, ipdatalen);
+ 
+     switch (igmp->igmp_type) {
+     case IGMP_V1_MEMBERSHIP_REPORT:
+@@ -190,12 +204,9 @@ void acceptIgmp(int recvlen) {
+         acceptLeaveMessage(src, group);
+         return;
+     
+-        /*
+     case IGMP_MEMBERSHIP_QUERY:
+         //accept_membership_query(src, dst, group, igmp->igmp_code);
+         return;
+-
+-    */
+ 
+     default:
+         log(LOG_INFO, 0,

@@ -1,0 +1,53 @@
+$OpenBSD: patch-mroute-api_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
+--- mroute-api.c.orig	Tue May 24 17:48:33 2005
++++ mroute-api.c	Mon Aug 13 15:12:06 2007
+@@ -37,7 +37,7 @@
+ */
+ 
+ 
+-#define USE_LINUX_IN_H
++//#define USE_LINUX_IN_H
+ #include "defs.h"
+ 
+ // MAX_MC_VIFS from mclab.h must have same value as MAXVIFS from mroute.h
+@@ -47,7 +47,7 @@
+      
+ // need an IGMP socket as interface for the mrouted API
+ // - receives the IGMP messages
+-int         MRouterFD;        /* socket for all network I/O  */
++int         MRouterFD = -1;        /* socket for all network I/O  */
+ char        *recv_buf;           /* input packet buffer         */
+ char        *send_buf;           /* output packet buffer        */
+ 
+@@ -177,13 +177,14 @@ int addMRoute( struct MRouteDesc *Dp )
+         log( LOG_NOTICE, 0, "Adding MFC: %s -> %s, InpVIf: %d", 
+              fmtInAdr( FmtBuO, CtlReq.mfcc_origin ), 
+              fmtInAdr( FmtBuM, CtlReq.mfcc_mcastgrp ),
+-             CtlReq.mfcc_parent == ALL_VIFS ? -1 : CtlReq.mfcc_parent
++             CtlReq.mfcc_parent
+            );
+     }
+ 
+     if ( setsockopt( MRouterFD, IPPROTO_IP, MRT_ADD_MFC,
+                      (void *)&CtlReq, sizeof( CtlReq ) ) )
+         log( LOG_WARNING, errno, "MRT_ADD_MFC" );
++    return (0);
+ }
+ 
+ /*
+@@ -210,13 +211,14 @@ int delMRoute( struct MRouteDesc *Dp )
+         log( LOG_NOTICE, 0, "Removing MFC: %s -> %s, InpVIf: %d", 
+              fmtInAdr( FmtBuO, CtlReq.mfcc_origin ), 
+              fmtInAdr( FmtBuM, CtlReq.mfcc_mcastgrp ),
+-             CtlReq.mfcc_parent == ALL_VIFS ? -1 : CtlReq.mfcc_parent
++             CtlReq.mfcc_parent
+            );
+     }
+ 
+     if ( setsockopt( MRouterFD, IPPROTO_IP, MRT_DEL_MFC,
+                      (void *)&CtlReq, sizeof( CtlReq ) ) )
+         log( LOG_WARNING, errno, "MRT_DEL_MFC" );
++    return (0);
+ }
+ 
+ /*

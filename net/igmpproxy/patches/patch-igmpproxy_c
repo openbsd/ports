@@ -1,0 +1,84 @@
+$OpenBSD: patch-igmpproxy_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
+--- igmpproxy.c.orig	Sat Aug 20 13:56:32 2005
++++ igmpproxy.c	Mon Nov 19 12:56:50 2007
+@@ -41,8 +41,8 @@
+ #include "version.h"
+ #include "build.h"
+ 
++#include <sys/sysctl.h>
+ 
+-
+ // Constants
+ static const char Version[] = 
+ "igmpproxy, Version " VERSION ", Build" BUILD "\n"
+@@ -80,7 +80,7 @@ int         upStreamVif;   
+ *   on commandline. The number of commandline arguments, and a
+ *   pointer to the arguments are recieved on the line...
+ */    
+-int main( int ArgCn, const char *ArgVc[] ) {
++int main( int ArgCn, char *ArgVc[] ) {
+ 
+     int debugMode = 0;
+ 
+@@ -133,6 +133,24 @@ int main( int ArgCn, const char *ArgVc[] ) {
+     	exit(1);
+     }
+ 
++    {
++	int ipmforwarding = 0;
++	int mib[4];
++	size_t len;
++
++        /* multicast IP forwarding must be enabled */
++        mib[0] = CTL_NET;
++        mib[1] = PF_INET;
++        mib[2] = IPPROTO_IP;
++        mib[3] = IPCTL_MFORWARDING;
++        len = sizeof(ipmforwarding);
++        if (sysctl(mib, 4, &ipmforwarding, &len, NULL, 0) == -1)
++	    log(LOG_ERR, 0, "sysctl");
++
++        if (!ipmforwarding)
++	    log(LOG_ERR, 0, "multicast IP forwarding not enabled");
++    }
++
+     // Write debug notice with file path...
+     IF_DEBUG log(LOG_DEBUG, 0, "Searching for config file at '%s'" , configFilePath);
+ 
+@@ -155,17 +173,8 @@ int main( int ArgCn, const char *ArgVc[] ) {
+         if ( ! debugMode ) {
+     
+             IF_DEBUG log( LOG_DEBUG, 0, "Starting daemon mode.");
+-    
+-            // Only daemon goes past this line...
+-            if (fork()) exit(0);
+-    
+-            // Detach deamon from terminal
+-            if ( close( 0 ) < 0 || close( 1 ) < 0 || close( 2 ) < 0 
+-                 || open( "/dev/null", 0 ) != 0 || dup2( 0, 1 ) < 0 || dup2( 0, 2 ) < 0
+-                 || setpgrp() < 0
+-               ) {
++            if ( daemon(1, 0) < 0)
+                 log( LOG_ERR, errno, "failed to detach deamon" );
+-            }
+         }
+         
+         // Go to the main loop.
+@@ -218,7 +227,7 @@ int igmpProxyInit() {
+         int     vifcount = 0;
+         upStreamVif = -1;
+ 
+-        for ( Ix = 0; Dp = getIfByIx( Ix ); Ix++ ) {
++        for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
+ 
+             if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {
+                 if(Dp->state == IF_STATE_UPSTREAM) {
+@@ -237,7 +246,7 @@ int igmpProxyInit() {
+ 
+         // If there is only one VIF, or no defined upstream VIF, we send an error.
+         if(vifcount < 2 || upStreamVif < 0) {
+-            log(LOG_ERR, 0, "There must be at least 2 Vif's where one is upstream.");
++            log(LOG_ERR, 0, "There must be at least 2 Vif's where one is upstream. (vifcount %d, upStreamVif %d)", vifcount, upStreamVif);
+         }
+     }  
+     

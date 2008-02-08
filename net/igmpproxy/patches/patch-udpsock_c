@@ -1,0 +1,12 @@
+$OpenBSD: patch-udpsock_c,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
+--- udpsock.c.orig	Sat Aug 20 13:35:00 2005
++++ udpsock.c	Mon Nov 19 12:56:50 2007
+@@ -58,7 +58,7 @@ int openUdpSocket( uint32 PeerInAdr, uint16 PeerPort )
+     memset( &SockAdr.sin_zero, 0, sizeof( SockAdr.sin_zero ) );
+     
+     if( connect( Sock, (struct sockaddr *)&SockAdr, sizeof( SockAdr ) ) )
+-        log( LOG_ERR, errno, "UDP socket connect" );
++        log( LOG_ERR, errno, "UDP socket connect (port %d)", PeerPort);
+     
+     return Sock;
+ }

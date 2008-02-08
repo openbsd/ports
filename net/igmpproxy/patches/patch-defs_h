@@ -1,0 +1,104 @@
+$OpenBSD: patch-defs_h,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
+--- defs.h.orig	Sat Aug 20 13:44:47 2005
++++ defs.h	Mon Nov 19 12:56:50 2007
+@@ -40,10 +40,18 @@
+ #include <stdlib.h>
+ #include <syslog.h>
+ #include <signal.h>
++#include <string.h>
++#include <unistd.h>
+ 
++//#include <sys/socket.h>
++//#include <sys/un.h>
++//#include <sys/time.h>
++#include <sys/param.h>
++#include <sys/errno.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+-#include <sys/un.h>
+-#include <sys/time.h>
++#include <sys/ioctl.h>
++#include <sys/uio.h>
+ 
+ #include <net/if.h>
+ 
+@@ -52,13 +60,32 @@
+     #include <linux/in.h>
+     #include <linux/mroute.h>
+ #else
++    #include <netinet/in_systm.h>
+     #include <netinet/in.h>
+     #include <netinet/ip.h>
+     #include <netinet/igmp.h>
++    #include <netinet/ip_mroute.h>
+     #include <arpa/inet.h>
+ #endif
+ 
++#ifndef IGMP_MEMBERSHIP_QUERY
++#define IGMP_MEMBERSHIP_QUERY IGMP_HOST_MEMBERSHIP_QUERY
++#endif
++#ifndef IGMP_V1_MEMBERSHIP_REPORT
++#define IGMP_V1_MEMBERSHIP_REPORT IGMP_v1_HOST_MEMBERSHIP_REPORT
++#endif
++#ifndef IGMP_V2_MEMBERSHIP_REPORT
++#define IGMP_V2_MEMBERSHIP_REPORT IGMP_v2_HOST_MEMBERSHIP_REPORT
++#endif
++#ifndef IGMP_V2_LEAVE_GROUP
++#define IGMP_V2_LEAVE_GROUP IGMP_HOST_LEAVE_MESSAGE
++#endif
+ 
++#ifndef INADDR_ALLRTRS_GROUP
++/* address for multicast mtrace msg */
++#define INADDR_ALLRTRS_GROUP    (u_int32_t)0xe0000002   /* 224.0.0.2 */
++#endif
++
+ // The default path for the config file...
+ #define     IGMPPROXY_CONFIG_FILEPATH     "/etc/igmpproxy.conf"
+ #define     ENABLE_DEBUG    1
+@@ -73,8 +100,12 @@
+ #define MAX_MC_VIFS    32     // !!! check this const in the specific includes
+ 
+ // Useful macros..          
++#ifndef MIN
+ #define MIN( a, b ) ((a) < (b) ? (a) : (b))
++#endif
++#ifndef MAX
+ #define MAX( a, b ) ((a) < (b) ? (b) : (a))
++#endif
+ #define VCMC( Vc )  (sizeof( Vc ) / sizeof( (Vc)[ 0 ] ))
+ #define VCEP( Vc )  (&(Vc)[ VCMC( Vc ) ])
+ 
+@@ -126,6 +157,7 @@ extern char LogLastMsg[ 128 ];    // last logged messa
+ 
+ #define	    IF_DEBUG	if(Log2Stderr & LOG_DEBUG)
+ 
++#define log logit
+ void log( int Serverity, int Errno, const char *FmtSt, ... );
+ 
+ /* ifvc.c
+@@ -196,6 +228,7 @@ void buildIfVc( void );
+ struct IfDesc *getIfByName( const char *IfName );
+ struct IfDesc *getIfByIx( unsigned Ix );
+ struct IfDesc *getIfByAddress( uint32 Ix );
++int isAdressValidForIf( struct IfDesc* intrface, uint32 ipaddr );
+ 
+ /* mroute-api.c
+  */
+@@ -235,7 +268,7 @@ void sendIgmp (uint32, uint32, int, int, uint32,int);
+ char   *fmtInAdr( char *St, struct in_addr InAdr );
+ char   *inetFmt(uint32 addr, char *s);
+ char   *inetFmts(uint32 addr, uint32 mask, char *s);
+-int     inetCksum(u_short *addr, u_int len);
++int     inetChksum(u_short *addr, u_int len);
+ 
+ /* kern.c
+  */
+@@ -264,7 +297,7 @@ int leaveMcGroup( int UdpSock, struct IfDesc *IfDp, ui
+ void initRouteTable();
+ void clearAllRoutes();
+ int insertRoute(uint32 group, int ifx);
+-int activateRoute(uint32 group, uint32 originAddr);
++int activateRoute(uint32 group, uint32 originAddr, int downIf);
+ void ageActiveRoutes();
+ void setRouteLastMemberMode(uint32 group);
+ int lastMemberGroupAge(uint32 group);
