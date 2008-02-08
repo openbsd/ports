@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/12/14 15:08:18 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/02/08 12:58:57 mbalmer Exp $
 bin/R
 bin/Rscript
 lib/R/
@@ -4165,7 +4165,6 @@ lib/R/library/grid/R-ex/grid.edit.R
 lib/R/library/grid/R-ex/grid.frame.R
 lib/R/library/grid/R-ex/grid.get.R
 lib/R/library/grid/R-ex/grid.grab.R
-lib/R/library/grid/R-ex/grid.grob.R
 lib/R/library/grid/R-ex/grid.layout.R
 lib/R/library/grid/R-ex/grid.lines.R
 lib/R/library/grid/R-ex/grid.locator.R
@@ -4537,6 +4536,7 @@ lib/R/library/lattice/data/Rdata.rds
 lib/R/library/lattice/data/Rdata.rdx
 lib/R/library/lattice/demo/
 lib/R/library/lattice/demo/intervals.R
+lib/R/library/lattice/demo/labels.R
 lib/R/library/lattice/demo/lattice.R
 lib/R/library/lattice/demo/panel.R
 lib/R/library/lattice/help/
@@ -4962,6 +4962,10 @@ lib/R/library/methods/libs/methods.so
 lib/R/library/methods/man/
 lib/R/library/methods/man/methods.Rd.gz
 lib/R/library/methods/po/
+lib/R/library/methods/po/de/
+lib/R/library/methods/po/de/LC_MESSAGES/
+lib/R/library/methods/po/de/LC_MESSAGES/R-methods.mo
+lib/R/library/methods/po/de/LC_MESSAGES/methods.mo
 lib/R/library/methods/po/en@quot/
 lib/R/library/methods/po/en@quot/LC_MESSAGES/
 lib/R/library/methods/po/en@quot/LC_MESSAGES/R-methods.mo
@@ -6813,6 +6817,10 @@ lib/R/library/splines/libs/splines.so
 lib/R/library/splines/man/
 lib/R/library/splines/man/splines.Rd.gz
 lib/R/library/splines/po/
+lib/R/library/splines/po/de/
+lib/R/library/splines/po/de/LC_MESSAGES/
+lib/R/library/splines/po/de/LC_MESSAGES/R-splines.mo
+lib/R/library/splines/po/de/LC_MESSAGES/splines.mo
 lib/R/library/splines/po/en@quot/
 lib/R/library/splines/po/en@quot/LC_MESSAGES/
 lib/R/library/splines/po/en@quot/LC_MESSAGES/R-splines.mo

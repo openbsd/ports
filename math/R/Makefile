@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2008/02/08 12:58:57 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
-DISTNAME=	R-2.6.1
-SHARED_LIBS=	Rlapack 26.1 \
-		Rblas	26.1
+DISTNAME=	R-2.6.2
+SHARED_LIBS=	Rlapack 26.2 \
+		Rblas	26.2
 
 CATEGORIES=    	math
 HOMEPAGE=	http://www.r-project.org/
