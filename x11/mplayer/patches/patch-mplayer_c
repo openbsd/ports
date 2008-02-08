@@ -1,7 +1,7 @@
-$OpenBSD: patch-mplayer_c,v 1.7 2007/04/19 08:37:09 ajacoutot Exp $
---- mplayer.c.orig	Sun Jun 11 20:35:47 2006
-+++ mplayer.c	Thu Apr 19 09:41:04 2007
-@@ -614,7 +614,7 @@ static void exit_sighandler(int x){
+$OpenBSD: patch-mplayer_c,v 1.8 2008/02/08 17:32:42 jakemsr Exp $
+--- mplayer.c.orig	Sun Oct  7 12:49:33 2007
++++ mplayer.c	Sun Dec 16 21:06:56 2007
+@@ -774,7 +774,7 @@ static void exit_sighandler(int x){
          gdb_pid = fork();
          mp_msg(MSGT_CPLAYER, MSGL_INFO, "Forked...\n");
          if (gdb_pid == 0) { // We are the child
@@ -10,35 +10,3 @@ $OpenBSD: patch-mplayer_c,v 1.7 2007/04/19 08:37:09 ajacoutot Exp $
              mp_msg(MSGT_CPLAYER, MSGL_ERR, "Couldn't start gdb\n");
          } else if (gdb_pid < 0) 
            mp_msg(MSGT_CPLAYER, MSGL_ERR, "Couldn't fork\n");
-@@ -4527,7 +4527,7 @@ if (stream->type==STREAMTYPE_DVDNAV && dvd_nav_still)
- 	{
- #ifdef USE_SUB
- 	if (sh_video) {
--		mp_msg(MSGT_GLOBAL,MSGL_INFO, "ANS_SUB_VISIBILITY=%d\n", sub_visibility);
-+		mp_msg(MSGT_GLOBAL,MSGL_INFO, "ANS_SUB_VISIBILITY=%d\n", (long)sub_visibility);
- 	}
- #endif
- 	} break;
-@@ -4548,11 +4548,11 @@ if (stream->type==STREAMTYPE_DVDNAV && dvd_nav_still)
- 
- 	case MP_CMD_GET_VO_FULLSCREEN : {
- 	if(video_out && vo_config_count)
--		mp_msg(MSGT_GLOBAL,MSGL_INFO, "ANS_VO_FULLSCREEN=%d\n", vo_fs);
-+		mp_msg(MSGT_GLOBAL,MSGL_INFO, "ANS_VO_FULLSCREEN=%d\n", (long)vo_fs);
- 	} break;
-     
-     case MP_CMD_GET_PERCENT_POS : {
--	mp_msg(MSGT_GLOBAL,MSGL_INFO, "ANS_PERCENT_POSITION=%d\n", demuxer_get_percent_pos(demuxer));
-+	mp_msg(MSGT_GLOBAL,MSGL_INFO, "ANS_PERCENT_POSITION=%d\n", (long)demuxer_get_percent_pos(demuxer));
-     } break;
-     case MP_CMD_GET_TIME_POS : {
-       float pos = 0;
-@@ -4570,7 +4570,7 @@ if (stream->type==STREAMTYPE_DVDNAV && dvd_nav_still)
-     case MP_CMD_RUN : {
- #ifndef __MINGW32__
-         if(!fork()) {
--          execl("/bin/sh","sh","-c",cmd->args[0].v.s,NULL);
-+          execl("/bin/sh","sh","-c",cmd->args[0].v.s,(char *)NULL);
-           exit(0);
-         }
- #endif

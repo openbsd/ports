@@ -1,0 +1,32 @@
+$OpenBSD: patch-libmpcodecs_ad_faad_c,v 1.1 2008/02/08 17:32:41 jakemsr Exp $
+--- libmpcodecs/ad_faad.c.orig	Mon Dec 17 19:39:01 2007
++++ libmpcodecs/ad_faad.c	Mon Dec 17 19:42:41 2007
+@@ -66,8 +66,8 @@ static int aac_probe(unsigned char *buffer, int len)
+ 	
+ static int init(sh_audio_t *sh)
+ {
+-  unsigned long faac_samplerate;
+-  unsigned char faac_channels;
++  uint32_t faac_samplerate;
++  uint8_t faac_channels;
+   int faac_init, pos = 0;
+   faac_hdec = faacDecOpen();
+ 
+@@ -148,7 +148,7 @@ static int init(sh_audio_t *sh)
+     return 0;
+   } else {
+     mp_msg(MSGT_DECAUDIO,MSGL_V,"FAAD: Decoder init done (%dBytes)!\n", sh->a_in_buffer_len); // XXX: remove or move to debug!
+-    mp_msg(MSGT_DECAUDIO,MSGL_V,"FAAD: Negotiated samplerate: %ldHz  channels: %d\n", faac_samplerate, faac_channels);
++    mp_msg(MSGT_DECAUDIO,MSGL_V,"FAAD: Negotiated samplerate: %dHz  channels: %d\n", faac_samplerate, faac_channels);
+     sh->channels = faac_channels;
+     if (audio_output_channels <= 2) sh->channels = faac_channels > 1 ? 2 : 1;
+     sh->samplerate = faac_samplerate;
+@@ -276,7 +276,7 @@ static int decode_audio(sh_audio_t *sh,unsigned char *
+     } else {
+       /* XXX: samples already multiplied by channels! */
+       mp_msg(MSGT_DECAUDIO,MSGL_DBG2,"FAAD: Successfully decoded frame (%ld Bytes)!\n",
+-      sh->samplesize*faac_finfo.samples);
++      (long)sh->samplesize*faac_finfo.samples);
+       memcpy(buf+len,faac_sample_buffer, sh->samplesize*faac_finfo.samples);
+       last_dec_len = sh->samplesize*faac_finfo.samples;
+       len += last_dec_len;

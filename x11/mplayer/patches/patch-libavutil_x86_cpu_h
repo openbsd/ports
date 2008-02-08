@@ -1,0 +1,12 @@
+$OpenBSD: patch-libavutil_x86_cpu_h,v 1.1 2008/02/08 17:32:41 jakemsr Exp $
+--- libavutil/x86_cpu.h.orig	Sat Jan 26 15:11:55 2008
++++ libavutil/x86_cpu.h	Sat Jan 26 15:14:22 2008
+@@ -61,7 +61,7 @@
+ #  define HAVE_7REGS 1
+ #endif
+ 
+-#if defined(ARCH_X86_64) && defined(PIC)
++#if defined(ARCH_X86_64)  /* && defined(PIC)) the stuff under this condition just isn't amd64 compatible */  
+ #  define BROKEN_RELOCATIONS 1
+ #endif
+ 

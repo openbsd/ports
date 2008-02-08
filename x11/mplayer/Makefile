@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.123 2007/11/15 07:50:27 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.124 2008/02/08 17:32:41 jakemsr Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
 
 COMMENT=		movie player supporting MPEG, DivX, AVI, ASF, MOV & more
 
-DISTNAME=		MPlayer-1.0pre8
-DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p17
-CATEGORIES=		x11
+V=			1.0rc2
+N=			mplayer
+DISTNAME=		MPlayer-${V}
+DIST_SUBDIR=		${N}
+PKGNAME=		${N}-${V}
+CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.mplayerhq.hu/
@@ -18,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses pthread stdc++ util z crypto
+WANTLIB=		c m ncurses pthread stdc++ util z
 
 MASTER_SITES=		http://www1.mplayerhq.hu/MPlayer/releases/ \
 			http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -29,7 +31,6 @@ MASTER_SITES=		http://www1.mplayerhq.hu/MPlayer/releases/ \
 # locally, do NOT change this.
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
 MASTER_SITES0=		${MASTER_SITE_BACKUP}
-MASTER_SITES1=		http://www.nazgul.ch/dev/
 
 MAINTAINER=     Bjorn Sandell <biorn@chalmers.se>
 
@@ -48,12 +49,10 @@ LIB_DEPENDS=	png::graphics/png \
 		mpcdec::audio/libmpcdec \
 		ogg.>=5::audio/libogg \
 		xvidcore::multimedia/xvidcore \
-		x264::multimedia/x264
+		x264::multimedia/x264 \
+		faad::audio/faad
 
-BUILD_DEPENDS=	:rtunes->=0.6:audio/rtunes \
-		::net/livemedia
-
-PATCHFILES=     rtunes_ao.diff:1
+BUILD_DEPENDS=	::net/livemedia
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
@@ -65,30 +64,38 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-nas \
 		--disable-liblzo \
 		--disable-caca \
-		--disable-internal-vidix \
-		--disable-external-vidix \
+		--disable-vidix-internal \
+		--disable-vidix-external \
 		--disable-libdv \
 		--disable-smb \
-		--disable-external-tremor \
+		--disable-tremor-external \
+		--enable-tremor-internal \
 		--disable-faac \
-		--enable-theora \
 		--disable-select \
-		--enable-vorbis \
+		--enable-theora \
 		--enable-menu \
 		--enable-iconv \
 		--enable-cdparanoia \
 		--enable-x264 \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
-		--with-livelibdir=${LOCALBASE}/live \
+		--extra-libs-mplayer="$$(pkg-config --libs x264)" \
+		--extra-libs-mencoder="$$(pkg-config --libs x264)" \
 		--confdir=${CONFDIR} \
+		--mandir=${LOCALBASE}/man \
 		--disable-langinfo \
-		--disable-fribidi
+		--disable-fribidi \
+		--disable-openal \
+		--disable-jack \
+		--disable-faad-internal \
+		--enable-faad-external \
+		--disable-libvorbis
 
 CONFIGURE_ENV+=	TMPDIR="${WRKBUILD}"
 
 .if ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
+CONFIGURE_ARGS+=--disable-ssse3
 .endif
 
 .if ${MACHINE_ARCH:Mpowerpc}
@@ -150,7 +157,6 @@ MODULES=	devel/gettext
 CONFIGURE_ARGS+=--enable-sdl \
 		--with-sdl-config=${LOCALBASE}/bin/sdl-config
 LIB_DEPENDS+=	SDL:sdl-1.2.4p1,>=1.2.5:devel/sdl
-WANTLIB+=	usbhid 
 .else
 CONFIGURE_ARGS+=--disable-sdl
 .endif
@@ -174,12 +180,11 @@ CONFIGURE_ARGS+=--disable-mad
 .endif
 
 .if ${MACHINE_ARCH:Mi386}
-PATCH_LIST=	patch-* i386-patch-postproc_Makefile
-CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32 \
+CONFIGURE_ARGS+=--win32codecsdir=${LOCALBASE}/lib/win32 \
 		--enable-qtx \
-		--with-reallibdir=${LOCALBASE}/lib/win32
+		--realcodecsdir=${LOCALBASE}/lib/win32
 .else
-CONFIGURE_ARGS+=--disable-win32 \
+CONFIGURE_ARGS+=--disable-win32dll \
 		--disable-qtx \
 		--disable-real
 .endif
