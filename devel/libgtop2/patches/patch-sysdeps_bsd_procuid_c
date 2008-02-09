@@ -1,0 +1,65 @@
+$OpenBSD: patch-sysdeps_bsd_procuid_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/procuid.c.orig	Mon Jan 28 15:20:42 2008
++++ sysdeps/bsd/procuid.c	Mon Jan 28 15:23:01 2008
+@@ -28,6 +28,7 @@
+ 
+ static const unsigned long _glibtop_sysdeps_proc_uid =
+ (1L << GLIBTOP_PROC_UID_UID) + (1L << GLIBTOP_PROC_UID_EUID) +
++(1L << GLIBTOP_PROC_UID_GID) +
+ (1L << GLIBTOP_PROC_UID_EGID) + (1L << GLIBTOP_PROC_UID_PID) +
+ (1L << GLIBTOP_PROC_UID_PPID) + (1L << GLIBTOP_PROC_UID_PGRP) +
+ (1L << GLIBTOP_PROC_UID_TPGID) + (1L << GLIBTOP_PROC_UID_PRIORITY) +
+@@ -51,7 +52,11 @@ void
+ glibtop_get_proc_uid_p (glibtop *server, glibtop_proc_uid *buf,
+ 			pid_t pid)
+ {
++#if defined (__OpenBSD__)
++	struct kinfo_proc2 *pinfo;
++#else
+ 	struct kinfo_proc *pinfo;
++#endif
+ 	int count = 0;
+ 
+ #if LIBGTOP_VERSION_CODE >= 1001000
+@@ -69,7 +74,12 @@ glibtop_get_proc_uid_p (glibtop *server, glibtop_proc_
+ 	if (pid == 0) return;
+ 
+ 	/* Get the process information */
++#if defined (__OpenBSD__)
++	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
++			      sizeof (*pinfo), &count);
++#else
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
++#endif
+ 	if ((pinfo == NULL) || (count != 1)) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		return;
+@@ -86,6 +96,20 @@ glibtop_get_proc_uid_p (glibtop *server, glibtop_proc_
+ #define	PROC_TPGID	ki_tpgid
+ #define	PROC_NICE	ki_nice
+ #define	PROC_PRIORITY	ki_pri.pri_user
++
++#elif defined (__OpenBSD__)
++
++#define PROC_RUID	p_ruid
++#define PROC_SVUID	p_svuid
++#define PROC_RGID	p_rgid
++#define PROC_SVGID	p_svgid
++#define PROC_PID	p_pid
++#define PROC_PPID	p_ppid
++#define PROC_PGID	p__pgid
++#define PROC_TPGID	p_tpgid
++#define PROC_NICE	p_nice
++#define PROC_PRIORITY	p_priority
++
+ #else
+ 
+ #define	PROC_RUID	kp_eproc.e_pcred.p_ruid
+@@ -105,6 +129,7 @@ glibtop_get_proc_uid_p (glibtop *server, glibtop_proc_
+ 	buf->gid  = pinfo [0].PROC_RGID;
+ 	buf->egid = pinfo [0].PROC_SVGID;
+ 
++	buf->pid   = pinfo [0].PROC_PID;
+ 	buf->ppid  = pinfo [0].PROC_PPID;
+ 	buf->pgrp  = pinfo [0].PROC_PGID;
+ 	buf->tpgid = pinfo [0].PROC_TPGID;

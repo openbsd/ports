@@ -1,0 +1,11 @@
+$OpenBSD: patch-sysdeps_bsd_glibtop_server_h,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/glibtop_server.h.orig	Sun Dec 30 19:35:57 2007
++++ sysdeps/bsd/glibtop_server.h	Sun Dec 30 19:36:12 2007
+@@ -42,6 +42,7 @@ G_BEGIN_DECLS
+ #define GLIBTOP_SUID_PROC_SEGMENT	(1 << GLIBTOP_SYSDEPS_PROC_SEGMENT)
+ #define GLIBTOP_SUID_PROC_ARGS		(1 << GLIBTOP_SYSDEPS_PROC_ARGS)
+ #define GLIBTOP_SUID_PROC_MAP		(1 << GLIBTOP_SYSDEPS_PROC_MAP)
++#define GLIBTOP_SUID_PROC_WD		0
+ #define GLIBTOP_SUID_NETLOAD		(1 << GLIBTOP_SYSDEPS_NETLOAD)
+ #define GLIBTOP_SUID_NETLIST		0
+ #define GLIBTOP_SUID_PPP		(1 << GLIBTOP_SYSDEPS_PPP)

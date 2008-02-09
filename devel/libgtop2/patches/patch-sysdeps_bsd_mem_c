@@ -1,0 +1,11 @@
+$OpenBSD: patch-sysdeps_bsd_mem_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/mem.c.orig	Fri Dec 28 16:31:10 2007
++++ sysdeps/bsd/mem.c	Fri Dec 28 16:31:45 2007
+@@ -34,6 +34,7 @@
+ 
+ #if defined(__NetBSD__)  && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
+ #include <uvm/uvm_extern.h>
++#include <uvm/uvm_param.h>
+ #endif
+ 
+ static const unsigned long _glibtop_sysdeps_mem =

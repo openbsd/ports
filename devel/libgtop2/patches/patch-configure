@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure,v 1.3 2007/12/28 14:31:52 jasper Exp $
---- configure.orig	Thu Jan 11 21:37:51 2007
-+++ configure	Fri Dec 28 15:29:17 2007
-@@ -6185,6 +6185,16 @@ freebsd* | dragonfly*)
+$OpenBSD: patch-configure,v 1.4 2008/02/09 16:52:25 ajacoutot Exp $
+--- configure.orig	Sat Jan  5 14:49:53 2008
++++ configure	Sat Feb  2 00:21:13 2008
+@@ -6192,6 +6192,16 @@ freebsd* | dragonfly*)
    fi
    ;;
  
 +openbsd*)
 +  lt_cv_file_magic_cmd=/usr/bin/file
 +  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
-+  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
 +    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
 +  else
 +    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
@@ -18,23 +18,15 @@ $OpenBSD: patch-configure,v 1.3 2007/12/28 14:31:52 jasper Exp $
  gnu*)
    lt_cv_deplibs_check_method=pass_all
    ;;
-@@ -20874,7 +20884,6 @@ echo $ECHO_N "checking for libgtop sysdeps directory..
- 	  libgtop_sysdeps_dir=freebsd
+@@ -21132,7 +21142,6 @@ echo $ECHO_N "checking for libgtop sysdeps directory..
+ 	  libgtop_sysdeps_dir=bsd
  	  libgtop_use_machine_h=yes
  	  libgtop_need_server=yes
--	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server && chmod 2755 $(bindir)/libgtop_server'
+-	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2755 $(bindir)/libgtop_server2'
  	  ;;
- 	solaris*)
- 	  libgtop_sysdeps_dir=solaris
-@@ -21382,6 +21391,7 @@ else
- 	    for def in nothing KERNEL _KERNEL; do
- 	      cat >conftest.$ac_ext <<_ACEOF
- #define $def
-+#include <sys/types.h>
- #include <sys/ipc.h>
- #include <sys/msg.h>
- #include <stdio.h>
-@@ -26161,7 +26171,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
+ 	freebsd*|kfreebsd*)
+ 	  libgtop_sysdeps_dir=freebsd
+@@ -26192,7 +26201,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -43,39 +35,50 @@ $OpenBSD: patch-configure,v 1.3 2007/12/28 14:31:52 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -26221,7 +26231,7 @@ if test $ac_cv_lib_intl_strftime = yes; then
- #define HAVE_STRFTIME 1
- _ACEOF
- 
--LIBS="-lintl $LIBS"
-+LIBS="-lintl -liconv $LIBS"
- fi
- 
- fi
-@@ -27365,7 +27375,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+@@ -27368,7 +27377,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
-+LIBS="-lintl  -liconv $LIBS"
++LIBS="-lintl -liconv $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -27701,7 +27711,7 @@ fi
-         #
-         if test "$gt_cv_func_dgettext_libintl" = "yes" ; then
-           glib_save_LIBS="$LIBS"
--          LIBS="$LIBS -lintl $libintl_extra_libs"
-+          LIBS="$LIBS -lintl -liconv $libintl_extra_libs"
-           unset ac_cv_func_bind_textdomain_codeset
- 
- for ac_func in bind_textdomain_codeset
-@@ -27816,7 +27826,7 @@ done
-       fi
- 
-       if test "$gt_cv_func_dgettext_libintl" = "yes"; then
--        INTLLIBS="-lintl $libintl_extra_libs"
-+        INTLLIBS="-lintl -liconv $libintl_extra_libs"
-       fi
- 
-       if test "$gt_cv_have_gettext" = "yes"; then
+@@ -27430,7 +27439,7 @@ if test "${ac_cv_lib_intl_ngettext+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -27492,7 +27501,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -28326,11 +28335,7 @@ glib_save_datarootdir="$datarootdir"
+ test "x$prefix" = xNONE && prefix=$ac_default_prefix
+ test "x$exec_prefix" = xNONE && exec_prefix=$prefix
+ datarootdir=`eval echo "${datarootdir}"`
+-if test "x$CATOBJEXT" = "x.mo" ; then
+-  localedir=`eval echo "${libdir}/locale"`
+-else
+   localedir=`eval echo "${datadir}/locale"`
+-fi
+ prefix="$glib_save_prefix"
+ exec_prefix="$glib_save_exec_prefix"
+ datarootdir="$glib_save_datarootdir"
+@@ -30388,6 +30393,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ $ac_includes_default
+ #include <$ac_header>
+ _ACEOF

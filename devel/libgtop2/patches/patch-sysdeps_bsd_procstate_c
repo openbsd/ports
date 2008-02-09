@@ -1,0 +1,42 @@
+$OpenBSD: patch-sysdeps_bsd_procstate_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/procstate.c.orig	Thu Sep 27 22:34:55 2007
++++ sysdeps/bsd/procstate.c	Mon Jan 28 15:05:59 2008
+@@ -54,7 +54,11 @@ glibtop_get_proc_state_p (glibtop *server,
+ 			  glibtop_proc_state *buf,
+ 			  pid_t pid)
+ {
++#if defined(__OpenBSD__)
++	struct kinfo_proc2 *pinfo;
++#else
+ 	struct kinfo_proc *pinfo;
++#endif
+ 	int count = 0;
+ 
+ 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_STATE), 0);
+@@ -65,7 +69,12 @@ glibtop_get_proc_state_p (glibtop *server,
+ 	if (pid == 0) return;
+ 
+ 	/* Get the process information */
++#if defined(__OpenBSD__)
++	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
++			      sizeof (*pinfo), &count);
++#else
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
++#endif
+ 	if ((pinfo == NULL) || (count != 1)) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		return;
+@@ -78,6 +87,13 @@ glibtop_get_proc_state_p (glibtop *server,
+ #define	PROC_RUID	ki_ruid
+ #define	PROC_RGID	ki_rgid
+ #define PROC_STAT	ki_stat
++
++#elif defined(__OpenBSD__)
++
++#define PROC_COMM	p_comm
++#define PROC_SVUID	p_svuid
++#define PROC_SVGID	p_svgid
++#define PROC_STAT	p_stat
+ 
+ #else
+ #define	PROC_COMM	kp_proc.p_comm

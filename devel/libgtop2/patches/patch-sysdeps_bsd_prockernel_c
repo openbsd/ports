@@ -1,0 +1,114 @@
+$OpenBSD: patch-sysdeps_bsd_prockernel_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/prockernel.c.orig	Thu Sep 27 22:34:55 2007
++++ sysdeps/bsd/prockernel.c	Mon Jan 28 15:18:44 2008
+@@ -34,7 +34,7 @@
+ #include <sys/user.h>
+ #endif
+ #if !defined(__bsdi__) && !(defined(__FreeBSD__) && defined(__alpha__)) && \
+-    !defined(__NetBSD__) 
++    !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #include <machine/pcb.h>
+ #endif
+ 
+@@ -64,13 +64,18 @@
+ 
+ static const unsigned long _glibtop_sysdeps_proc_kernel_pstats =
+ (1L << GLIBTOP_PROC_KERNEL_MIN_FLT) +
+-(1L << GLIBTOP_PROC_KERNEL_MAJ_FLT) +
+-(1L << GLIBTOP_PROC_KERNEL_CMIN_FLT) +
+-(1L << GLIBTOP_PROC_KERNEL_CMAJ_FLT);
++(1L << GLIBTOP_PROC_KERNEL_MAJ_FLT)
++#if !defined(__OpenBSD__)
+++ (1L << GLIBTOP_PROC_KERNEL_CMIN_FLT) +
++(1L << GLIBTOP_PROC_KERNEL_CMAJ_FLT)
++#endif
++;
+ 
++#if !defined(__OpenBSD__)
+ static const unsigned long _glibtop_sysdeps_proc_kernel_pcb =
+ (1L << GLIBTOP_PROC_KERNEL_KSTK_EIP) +
+ (1L << GLIBTOP_PROC_KERNEL_KSTK_ESP);
++#endif
+ 
+ static const unsigned long _glibtop_sysdeps_proc_kernel_wchan =
+ (1L << GLIBTOP_PROC_KERNEL_NWCHAN) +
+@@ -82,7 +87,9 @@ void
+ _glibtop_init_proc_kernel_p (glibtop *server)
+ {
+ 	server->sysdeps.proc_kernel = _glibtop_sysdeps_proc_kernel_pstats |
++#if !defined(__OpenBSD__)
+ 		_glibtop_sysdeps_proc_kernel_pcb |
++#endif
+ 		_glibtop_sysdeps_proc_kernel_wchan;
+ }
+ 
+@@ -91,12 +98,16 @@ glibtop_get_proc_kernel_p (glibtop *server,
+ 			   glibtop_proc_kernel *buf,
+ 			   pid_t pid)
+ {
++#if defined(__OpenBSD__)
++	struct kinfo_proc2 *pinfo;
++#else
+ 	struct kinfo_proc *pinfo;
+ #if !(defined(__FreeBSD__) || defined(__FreeBSD_kernel__))
+ 	struct user *u_addr = (struct user *)USRSTACK;
+ 	struct pstats pstats;
+ 	struct pcb pcb;
+-#endif
++#endif /* --FreeBSD__ */
++#endif /* __OpenBSD__ */
+ 	int count;
+ 
+ 	char filename [BUFSIZ];
+@@ -113,7 +124,12 @@ glibtop_get_proc_kernel_p (glibtop *server,
+ 	if (pid == 0) return;
+ 
+ 	/* Get the process information */
++#if defined(__OpenBSD__)
++	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
++			      sizeof(*pinfo), &count);
++#else
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
++#endif /* __OpenBSD__ */
+ 	if ((pinfo == NULL) || (count != 1)) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		return;
+@@ -125,6 +141,9 @@ glibtop_get_proc_kernel_p (glibtop *server,
+ #define	PROC_WMESG	ki_wmesg
+ #define	PROC_WMESG	ki_wmesg
+ 
++#elif defined(__OpenBSD__)
++/* empty, not for too long though! */
++
+ #else
+ 
+ #define	PROC_WCHAN	kp_proc.p_wchan
+@@ -133,6 +152,21 @@ glibtop_get_proc_kernel_p (glibtop *server,
+ 
+ #endif
+ 
++#if defined(__OpenBSD__)
++
++	buf->nwchan = pinfo[0].p_wchan;
++	if (pinfo[0].p_wchan && pinfo[0].p_wmesg)
++		g_strlcpy(buf->wchan, pinfo[0].p_wmesg,
++			  sizeof buf->wchan);
++	
++	buf->min_flt = pinfo[0].p_uru_minflt;
++	buf->maj_flt = pinfo[0].p_uru_majflt;
++
++	buf->flags |= (_glibtop_sysdeps_proc_kernel_wchan
++		| _glibtop_sysdeps_proc_kernel_pstats);
++
++#else
++
+ #if !defined(__NetBSD__) || !defined(SACTIVE)
+ 	buf->nwchan = (unsigned long) pinfo [0].PROC_WCHAN &~ KERNBASE;
+ 
+@@ -267,4 +301,6 @@ glibtop_get_proc_kernel_p (glibtop *server,
+ 	 */
+ 	return;
+ #endif /* __FreeBSD__ */
++
++#endif /* __OpenBSD */
+ }

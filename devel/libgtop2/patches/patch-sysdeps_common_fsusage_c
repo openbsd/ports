@@ -1,0 +1,12 @@
+$OpenBSD: patch-sysdeps_common_fsusage_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/common/fsusage.c.orig	Fri Dec 28 17:23:01 2007
++++ sysdeps/common/fsusage.c	Fri Dec 28 17:23:28 2007
+@@ -270,7 +270,7 @@ glibtop_get_fsusage_s (glibtop *server, glibtop_fsusag
+     return;
+ 
+ #if (defined(sun) || defined(__sun)) && (defined(__SVR4) || defined(__svr4__)) \
+-	|| defined(__FreeBSD__)
++	|| defined(__FreeBSD__) || defined(__OpenBSD__)
+   /* Solaris but not SunOS and FreeBSD */
+   buf->block_size = fsd.f_frsize;
+ #else

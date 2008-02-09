@@ -1,0 +1,13 @@
+$OpenBSD: patch-sysdeps_bsd_fsusage_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/fsusage.c.orig	Sat Feb  2 21:06:25 2008
++++ sysdeps/bsd/fsusage.c	Sat Feb  2 21:07:11 2008
+@@ -55,7 +55,8 @@ _glibtop_bsd_get_fsusage_read_write(glibtop *server,
+ 
+ #if !defined(__OpenBSD__)
+ 	buf->read = sfs.f_syncreads + sfs.f_asyncreads;
++	buf->flags |= (1 << GLIBTOP_FSUSAGE_READ);
+ #endif
+ 	buf->write = sfs.f_syncwrites + sfs.f_asyncwrites;
+-	buf->flags |= (1 << GLIBTOP_FSUSAGE_READ) | (1 << GLIBTOP_FSUSAGE_WRITE);
++	buf->flags |= (1 << GLIBTOP_FSUSAGE_WRITE);
+ }

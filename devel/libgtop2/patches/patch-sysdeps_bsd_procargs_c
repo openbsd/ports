@@ -1,0 +1,54 @@
+$OpenBSD: patch-sysdeps_bsd_procargs_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/procargs.c.orig	Mon Jan 28 14:59:01 2008
++++ sysdeps/bsd/procargs.c	Mon Jan 28 15:01:26 2008
+@@ -47,12 +47,16 @@ char *
+ glibtop_get_proc_args_p (glibtop *server, glibtop_proc_args *buf,
+ 			 pid_t pid, unsigned max_len)
+ {
++#if defined(__OpenBSD__)
++	struct kinfo_proc2 *pinfo;
++#else
+ 	struct kinfo_proc *pinfo;
++#endif
+ 	char *retval, **args, **ptr;
+ 	size_t size = 0, pos = 0;
+ 	int count;
+ 
+-#ifndef __bsdi__
++#if !defined(__bsdi__) && !defined(__OpenBSD__)
+ 	char filename [BUFSIZ];
+ 	struct stat statb;
+ #endif
+@@ -64,7 +68,7 @@ glibtop_get_proc_args_p (glibtop *server, glibtop_proc
+ 	/* swapper, init, pagedaemon, vmdaemon, update - this doen't work. */
+ 	if (pid < 5) return NULL;
+ 
+-#ifndef __bsdi__
++#if !defined(__bsdi__) && !defined(__OpenBSD__)
+ 	sprintf (filename, "/proc/%d/mem", pid);
+ 	if (stat (filename, &statb)) return NULL;
+ #endif
+@@ -72,14 +76,23 @@ glibtop_get_proc_args_p (glibtop *server, glibtop_proc
+ 	glibtop_suid_enter (server);
+ 
+ 	/* Get the process data */
++#if defined(__OpenBSD__)
++	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
++			       sizeof (*pinfo), &count);
++#else
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
++#endif
+ 	if ((pinfo == NULL) || (count < 1)) {
+ 		glibtop_suid_leave (server);
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		return NULL;
+ 	}
+ 
++#if defined(__OpenBSD__)
++	args = kvm_getargv2 (server->machine.kd, pinfo, max_len);
++#else
+ 	args = kvm_getargv (server->machine.kd, pinfo, max_len);
++#endif
+ 	if (args == NULL) {
+ 		glibtop_suid_leave (server);
+ 		glibtop_warn_io_r (server, "kvm_getargv (%d)", pid);

@@ -1,0 +1,47 @@
+$OpenBSD: patch-sysdeps_bsd_proclist_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/proclist.c.orig	Fri Dec 28 19:03:21 2007
++++ sysdeps/bsd/proclist.c	Fri Dec 28 19:16:25 2007
+@@ -56,11 +56,15 @@ _glibtop_init_proclist_p (glibtop *server)
+ 	server->sysdeps.proclist = _glibtop_sysdeps_proclist;
+ }
+ 
+-unsigned *
++pid_t *
+ glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
+ 			gint64 real_which, gint64 arg)
+ {
++#if defined(__OpenBSD__)
++	struct kinfo_proc2 *pinfo;
++#else
+ 	struct kinfo_proc *pinfo;
++#endif
+ 	unsigned *pids = NULL;
+ 	int which, count;
+ 	int i,j;
+@@ -72,7 +76,12 @@ glibtop_get_proclist_p (glibtop *server, glibtop_procl
+ 	which = (int)(real_which & GLIBTOP_KERN_PROC_MASK);
+ 
+ 	/* Get the process data */
+-	pinfo = kvm_getprocs (server->machine.kd, which, arg, &count);
++#if defined(__OpenBSD__)
++	pinfo = kvm_getproc2 (server->machine.kd, which, arg,
++			      sizeof (*pinfo), &count);
++#else
++ 	pinfo = kvm_getprocs (server->machine.kd, which, arg, &count);
++#endif
+ 	if ((pinfo == NULL) || (count < 1)) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (proclist)");
+ 		return NULL;
+@@ -88,6 +97,12 @@ glibtop_get_proclist_p (glibtop *server, glibtop_procl
+ #define PROC_STAT	ki_stat
+ #define PROC_RUID	ki_ruid
+ #define PROC_PID	ki_pid
++
++#elif defined(__OpenBSD__)
++
++#define PROC_STAT	p_stat
++#define PROC_RUID	p_ruid
++#define PROC_PID	p_pid
+ 
+ #else
+ #define PROC_STAT	kp_proc.p_stat

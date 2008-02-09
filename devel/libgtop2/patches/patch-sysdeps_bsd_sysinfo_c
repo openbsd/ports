@@ -1,0 +1,65 @@
+$OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/sysinfo.c.orig	Sat May 19 16:27:30 2007
++++ sysdeps/bsd/sysinfo.c	Fri Dec 28 19:00:25 2007
+@@ -35,16 +35,49 @@ static glibtop_sysinfo sysinfo = { .flags = 0 };
+ static void
+ init_sysinfo (glibtop *server)
+ {
+-	char *model;
+-	guint64 ncpus = 1;
++	char model[64];
++#if defined(__OpenBSD__)
++	int mib[2];
++#endif
++	int ncpus = 0;
+ 	int mhz = 0;
+-	size_t len;
++	size_t len = 0;
+ 
+ 	if (G_LIKELY (sysinfo.flags))
+ 		return;
+ 
+ 	glibtop_init_s (&server, GLIBTOP_SYSDEPS_CPU, 0);
+ 
++#if defined(__OpenBSD__)
++	mib[0] = CTL_HW;
++
++	/* Get the number of CPU's present */
++	mib[1] = HW_NCPU;
++
++	len = sizeof(ncpus);
++	if (sysctl(mib, 2, &ncpus, &len, NULL, 0) != 0) {
++		ncpus = 1; /* we have at least 1 cpu... */
++		printf("Couldn't determine hw.ncpu.\n");
++	}
++
++	/* Get the CPU model */
++	mib[1] = HW_MODEL;
++	len = sizeof(model);
++
++	if (sysctl(mib, 2, model, &len, NULL, 0) != 0) {
++		(void)strlcpy(model, "unknown", sizeof(model));
++		printf("Couldn't determine hw.model.\n");
++	}
++
++	/* Get the clockrate */
++	mib[1] = HW_CPUSPEED;
++	len = sizeof(mhz);
++
++	if (sysctl(mib, 2, &mhz, &len, NULL, 0) != 0) {
++		mhz = 0;
++		printf("Couldn't determine hw.cpuspeed.\n");
++	}
++#else
+ 	len = sizeof (ncpus);
+ 	sysctlbyname ("hw.ncpu", &ncpus, &len, NULL, 0);
+ 	len = 0;
+@@ -53,6 +86,8 @@ init_sysinfo (glibtop *server)
+ 	sysctlbyname ("hw.model", model, &len, NULL, 0);
+ 	len = sizeof (mhz);
+ 	sysctlbyname ("hw.clockrate", &mhz, &len, NULL, 0);
++
++#endif /* __OpenBSD__ */
+ 
+ 	for (sysinfo.ncpu = 0;
+ 	     sysinfo.ncpu < GLIBTOP_NCPU && sysinfo.ncpu < ncpus;

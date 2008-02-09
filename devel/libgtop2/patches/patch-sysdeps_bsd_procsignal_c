@@ -1,0 +1,102 @@
+$OpenBSD: patch-sysdeps_bsd_procsignal_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
+--- sysdeps/bsd/procsignal.c.orig	Sun Dec 30 19:57:24 2007
++++ sysdeps/bsd/procsignal.c	Sun Dec 30 20:06:42 2007
+@@ -51,7 +51,11 @@ glibtop_get_proc_signal_p (glibtop *server,
+ 			   glibtop_proc_signal *buf,
+ 			   pid_t pid)
+ {
++#if defined(__OpenBSD__)
++	struct kinfo_proc2 *pinfo;
++#else
+ 	struct kinfo_proc *pinfo;
++#endif
+ 	int count = 0;
+ 
+ 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_SIGNAL), 0);
+@@ -62,7 +66,12 @@ glibtop_get_proc_signal_p (glibtop *server,
+ 	if (pid == 0) return;
+ 
+ 	/* Get the process information */
++#if defined(__OpenBSD__)
++	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
++			      sizeof (*pinfo), &count);
++#else
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
++#endif
+ 	if ((pinfo == NULL) || (count != 1)) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		return;
+@@ -75,6 +84,10 @@ glibtop_get_proc_signal_p (glibtop *server,
+ #define	PROC_SIGIGNORE	ki_sigignore
+ #define	PROC_SIGCATCH	ki_sigcatch
+ 
++#elif defined(__OpenBSD__)
++
++/* nothing to see here, move along */
++
+ #else
+ 
+ #define	PROC_SIGLIST	kp_proc.p_siglist
+@@ -87,6 +100,9 @@ glibtop_get_proc_signal_p (glibtop *server,
+ 	/* signal: mask of pending signals.
+ 	 *         pinfo [0].kp_proc.p_siglist
+ 	 */
++#if defined(__OpenBSD__)
++	buf->signal [0] = pinfo [0].p_siglist;
++#else
+ #if defined(__NetBSD__) && (__NetBSD_Version__ >= 105150000)
+ 	buf->signal [0] = pinfo [0].kp_proc.p_sigctx.ps_siglist.__bits[0];
+ #elif (defined(__NetBSD__) && (NSIG > 32)) || \
+@@ -95,10 +111,14 @@ glibtop_get_proc_signal_p (glibtop *server,
+ #else
+ 	buf->signal [0] = pinfo [0].kp_proc.p_siglist;
+ #endif
++#endif /* __OpenBSD__ */
+ 
+ 	/* blocked: mask of blocked signals.
+ 	 *          pinfo [0].kp_proc.p_sigmask
+ 	 */
++#if defined(__OpenBSD__)
++	buf->blocked [0] = pinfo [0].p_sigmask;
++#else
+ #if defined(__NetBSD__) && (__NetBSD_Version__ >= 105150000)
+ 	buf->blocked [0] = pinfo [0].kp_proc.p_sigctx.ps_sigmask.__bits[0];
+ #elif (defined(__NetBSD__) && (NSIG > 32)) || \
+@@ -107,10 +127,14 @@ glibtop_get_proc_signal_p (glibtop *server,
+ #else
+ 	buf->blocked [0] = pinfo [0].kp_proc.p_sigmask;
+ #endif
++#endif /* __OpenBSD__ */
+ 
+ 	/* sigignore: mask of ignored signals.
+ 	 *            pinfo [0].kp_proc.p_sigignore
+ 	*/
++#if defined(__OpenBSD__)
++	buf->sigignore [0] = pinfo [0].p_sigignore;
++#else
+ #if defined(__NetBSD__) && (__NetBSD_Version__ >= 105150000)
+ 	buf->sigignore [0] = pinfo [0].kp_proc.p_sigctx.ps_sigignore.__bits[0];
+ #elif (defined(__NetBSD__) && (NSIG > 32)) || \
+@@ -119,10 +143,14 @@ glibtop_get_proc_signal_p (glibtop *server,
+ #else
+ 	buf->sigignore [0] = pinfo [0].kp_proc.p_sigignore;
+ #endif
++#endif /* __OpenBSD__ */
+ 
+ 	/* sigcatch: mask of caught signals.
+ 	 *           pinfo [0].kp_proc.p_sigcatch
+ 	*/
++#if defined(__OpenBSD__)
++	buf->sigcatch [0] = pinfo [0].p_sigcatch;
++#else
+ #if defined(__NetBSD__) && (__NetBSD_Version__ >= 105150000)
+ 	buf->sigcatch [0] = pinfo [0].kp_proc.p_sigctx.ps_sigcatch.__bits[0];
+ #elif (defined(__NetBSD__) && (NSIG > 32)) || \
+@@ -131,6 +159,7 @@ glibtop_get_proc_signal_p (glibtop *server,
+ #else
+ 	buf->sigcatch [0] = pinfo [0].kp_proc.p_sigcatch;
+ #endif
++#endif /* __OpenBSD__ */
+ 
+ 	buf->flags = _glibtop_sysdeps_proc_signal;
+ }
