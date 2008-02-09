@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-docs,v 1.21 2008/01/17 22:26:50 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.22 2008/02/09 17:55:39 jasper Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
+share/gtk-doc/html/gdk/
 share/gtk-doc/html/gdk-pixbuf/
 share/gtk-doc/html/gdk-pixbuf/GdkPixbufLoader.html
 share/gtk-doc/html/gdk-pixbuf/apa.html
@@ -45,7 +46,6 @@ share/gtk-doc/html/gdk-pixbuf/rn01.html
 share/gtk-doc/html/gdk-pixbuf/rn02.html
 share/gtk-doc/html/gdk-pixbuf/style.css
 share/gtk-doc/html/gdk-pixbuf/up.png
-share/gtk-doc/html/gdk/
 share/gtk-doc/html/gdk/GdkDisplay.html
 share/gtk-doc/html/gdk/GdkDisplayManager.html
 share/gtk-doc/html/gdk/GdkScreen.html
