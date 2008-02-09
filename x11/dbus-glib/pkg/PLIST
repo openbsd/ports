@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/02/01 07:56:24 todd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/02/09 17:37:14 jasper Exp $
 %%SHARED%%
 bin/dbus-binding-tool
 include/dbus-1.0/
@@ -26,7 +26,7 @@ share/gtk-doc/html/dbus-glib/dbus-glib-DBusGError.html
 share/gtk-doc/html/dbus-glib/dbus-glib-DBusGMessage.html
 share/gtk-doc/html/dbus-glib/dbus-glib-DBusGMethod.html
 share/gtk-doc/html/dbus-glib/dbus-glib-DBusGProxy.html
-share/gtk-doc/html/dbus-glib/dbus-glib-GType-utility-functions.html
+share/gtk-doc/html/dbus-glib/dbus-glib-Specializable-GType-System.html
 share/gtk-doc/html/dbus-glib/dbus-glib.devhelp
 share/gtk-doc/html/dbus-glib/dbus-glib.devhelp2
 share/gtk-doc/html/dbus-glib/home.png
