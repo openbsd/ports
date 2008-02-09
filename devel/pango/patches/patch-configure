@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2007/09/10 19:14:19 jasper Exp $
---- configure.orig	Fri Jul 27 23:27:07 2007
-+++ configure	Wed Aug 29 20:55:10 2007
-@@ -21730,7 +21730,7 @@ if test -n "$PKG_CONFIG"; then
+$OpenBSD: patch-configure,v 1.15 2008/02/09 17:49:12 jasper Exp $
+--- configure.orig	Mon Jan  7 22:14:29 2008
++++ configure	Fri Feb  1 09:11:37 2008
+@@ -21816,7 +21816,7 @@ if test -n "$PKG_CONFIG"; then
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.14 2007/09/10 19:14:19 jasper Exp $
  else
    pkg_failed=yes
  fi
-@@ -21942,7 +21942,7 @@ if test -n "$PKG_CONFIG"; then
+@@ -22028,7 +22028,7 @@ if test -n "$PKG_CONFIG"; then
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; then

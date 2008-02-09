@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2007/10/31 21:54:11 winiger Exp $
+# $OpenBSD: Makefile,v 1.28 2008/02/09 17:49:12 jasper Exp $
 
 COMMENT=		library for layout and rendering of text
 
-DISTNAME=		pango-1.18.3
-PKGNAME=		${DISTNAME}p0
-SHARED_LIBS += pango-1.0	   1400.0    # .1800.2
-SHARED_LIBS += pangox-1.0	   1400.0    # .1800.2
-SHARED_LIBS += pangoft2-1.0	   1400.0    # .1800.2
-SHARED_LIBS += pangoxft-1.0	   1400.0    # .1800.2
-SHARED_LIBS += pangocairo-1.0	   1400.0    # .1800.2
+DISTNAME=		pango-1.18.4
+SHARED_LIBS += pango-1.0	   1400.1    # .1800.4
+SHARED_LIBS += pangox-1.0	   1400.1    # .1800.4
+SHARED_LIBS += pangoft2-1.0	   1400.1    # .1800.4
+SHARED_LIBS += pangoxft-1.0	   1400.1    # .1800.4
+SHARED_LIBS += pangocairo-1.0	   1400.1    # .1800.4
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org/
