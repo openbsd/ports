@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2008/01/23 16:32:04 martynas Exp $
+# $OpenBSD: Makefile,v 1.17 2008/02/09 20:57:43 sthen Exp $
 
-ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
+ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT-main=	standalone XUL/XPCOM runtime environment
 COMMENT-devel=	devel files for Gecko
