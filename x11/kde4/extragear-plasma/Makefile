@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/29 00:27:18 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/09 13:18:16 espie Exp $
 
 COMMENT =		K Desktop Environment, extra plasmoids
 DISTNAME =		extragear-plasma-${VERSION}
@@ -6,13 +6,13 @@ PKGNAME =		${DISTNAME}
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/${VERSION}/src/extragear/}
 
-LIB_DEPENDS +=	kdecore.>=8,kdeui,kio,solid::x11/kde4/libs \
+LIB_DEPENDS +=	kdecore.>=8,kdeui,kio,solid,kfile::x11/kde4/libs \
 		syndication::x11/kde4/pimlibs \
-		plasma,taskmanager::x11/kde4/base-workspace
+		plasma::x11/kde4/base-workspace
 
 WANTLIB += GL GLU ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft
 WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xtst c fontconfig freetype
-WANTLIB += glib-2.0 gthread-2.0 iconv intl m png pthread stdc++
+WANTLIB += glib-2.0 gthread-2.0 iconv intl m png pthread
 WANTLIB += z
 WANTLIB += QtDBus QtGui QtNetwork QtOpenGL QtSvg QtXml
 WANTLIB += bz2 fam streamanalyzer streams

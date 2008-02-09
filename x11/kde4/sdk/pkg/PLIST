@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/27 05:07:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/09 13:18:17 espie Exp $
 bin/adddebug
 bin/build-progress.sh
 bin/cervisia
@@ -61,6 +61,7 @@ bin/svn-clean
 bin/svn2dist
 bin/svnbackport
 bin/svnchangesince
+bin/svnforwardport
 bin/svngettags
 bin/svnintegrate
 bin/svnlastchange
@@ -80,7 +81,6 @@ include/kate/pluginconfigpageinterface.h
 include/kate/pluginmanager.h
 include/kate_export.h
 include/kprofilemethod.h
-lib/kde4/
 lib/kde4/kabcformat_kdeaccounts.so
 lib/kde4/kateexternaltoolsplugin.so
 lib/kde4/katefilebrowserplugin.so
@@ -113,7 +113,6 @@ lib/libkomparedialogpages.so
 lib/libkomparediff2.so
 lib/libkompareinterface.so
 @lib lib/libkompareinterface.so.${LIBkompareinterface_VERSION}
-lib/strigi/
 lib/strigi/strigila_diff.so
 lib/strigi/strigita_ts.so
 share/applications/
@@ -126,14 +125,11 @@ share/applications/kde4/kcachegrind.desktop
 share/applications/kde4/kompare.desktop
 share/applications/kde4/kuiviewer.desktop
 share/applications/kde4/umbrello.desktop
-share/apps/
 share/apps/cervisia/
 share/apps/cervisia/cervisia.notifyrc
 share/apps/cervisia/cervisiashellui.rc
 share/apps/cervisiapart/
 share/apps/cervisiapart/cervisiaui.rc
-share/apps/kabc/
-share/apps/kabc/formats/
 share/apps/kabc/formats/kdeaccountsplugin.desktop
 share/apps/kapptemplate/
 share/apps/kapptemplate/appframework/
@@ -277,8 +273,6 @@ share/apps/kate/plugins/katetabbarextension/ui.rc
 share/apps/kate/plugins/katetextfilter/
 share/apps/kate/plugins/katetextfilter/ui.rc
 share/apps/kate/tips
-share/apps/katepart/
-share/apps/katepart/syntax/
 share/apps/katepart/syntax/katetemplate.xml
 share/apps/katepart/syntax/kdesvn-buildrc.xml
 share/apps/kbugbuster/
@@ -304,7 +298,6 @@ share/apps/kcachegrind/icons/hicolor/32x32/actions/
 share/apps/kcachegrind/icons/hicolor/32x32/actions/percent.png
 share/apps/kcachegrind/kcachegrindui.rc
 share/apps/kcachegrind/tips
-share/apps/kconf_update/
 share/apps/kconf_update/cervisia-change_repos_list.pl
 share/apps/kconf_update/cervisia-normalize_cvsroot.pl
 share/apps/kconf_update/cervisia.upd
@@ -487,23 +480,19 @@ share/apps/umbrello/pics/usecase.png
 share/apps/umbrello/umbrelloui.rc
 share/apps/umbrello/xmi.css
 share/apps/umbrello/xmi2docbook.xsl
-share/config/
-share/config.kcfg/
 share/config.kcfg/cervisiapart.kcfg
 share/config/katefiletemplates.knsrc
 share/config/katerc
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.kde.cervisia.cvsjob.xml
 share/dbus-1/interfaces/org.kde.cervisia.cvsloginjob.xml
 share/dbus-1/interfaces/org.kde.cervisia.cvsservice.xml
 share/dbus-1/interfaces/org.kde.cervisia.repository.xml
 share/dbus-1/interfaces/org.kde.ksvnd.xml
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/cervisia/
 share/doc/HTML/en/cervisia/annotate.png
 share/doc/HTML/en/cervisia/checkout.png
 share/doc/HTML/en/cervisia/commit.png
+share/doc/HTML/en/cervisia/common
 share/doc/HTML/en/cervisia/diff.png
 share/doc/HTML/en/cervisia/history.png
 share/doc/HTML/en/cervisia/import.png
@@ -517,6 +506,7 @@ share/doc/HTML/en/cervisia/repositories.png
 share/doc/HTML/en/cervisia/resolve.png
 share/doc/HTML/en/cervisia/updatetag.png
 share/doc/HTML/en/kapptemplate/
+share/doc/HTML/en/kapptemplate/common
 share/doc/HTML/en/kapptemplate/index.cache.bz2
 share/doc/HTML/en/kapptemplate/index.docbook
 share/doc/HTML/en/kapptemplate/kapp-main.png
@@ -529,6 +519,7 @@ share/doc/HTML/en/kapptemplate/ksimpleapp.png
 share/doc/HTML/en/kapptemplate/man-kapptemplate.1.docbook
 share/doc/HTML/en/kate/
 share/doc/HTML/en/kate-plugins/
+share/doc/HTML/en/kate-plugins/common
 share/doc/HTML/en/kate-plugins/configure_insertcommand.png
 share/doc/HTML/en/kate-plugins/filetemplates.docbook
 share/doc/HTML/en/kate-plugins/htmltools.docbook
@@ -541,6 +532,7 @@ share/doc/HTML/en/kate-plugins/textfilter.docbook
 share/doc/HTML/en/kate-plugins/xmlcheck.docbook
 share/doc/HTML/en/kate-plugins/xmltools.docbook
 share/doc/HTML/en/kate/advanced.docbook
+share/doc/HTML/en/kate/common
 share/doc/HTML/en/kate/configdialog01.png
 share/doc/HTML/en/kate/configdialog02.png
 share/doc/HTML/en/kate/configuring.docbook
@@ -559,15 +551,19 @@ share/doc/HTML/en/kate/plugins.docbook
 share/doc/HTML/en/kate/regular-expressions.docbook
 share/doc/HTML/en/kate/unhighlighted.png
 share/doc/HTML/en/kbugbuster/
+share/doc/HTML/en/kbugbuster/common
 share/doc/HTML/en/kbugbuster/index.cache.bz2
 share/doc/HTML/en/kbugbuster/index.docbook
 share/doc/HTML/en/kcachegrind/
+share/doc/HTML/en/kcachegrind/common
 share/doc/HTML/en/kcachegrind/index.cache.bz2
 share/doc/HTML/en/kcachegrind/index.docbook
 share/doc/HTML/en/kdesvn-build/
+share/doc/HTML/en/kdesvn-build/common
 share/doc/HTML/en/kdesvn-build/index.cache.bz2
 share/doc/HTML/en/kdesvn-build/index.docbook
 share/doc/HTML/en/kompare/
+share/doc/HTML/en/kompare/common
 share/doc/HTML/en/kompare/index.cache.bz2
 share/doc/HTML/en/kompare/index.docbook
 share/doc/HTML/en/kompare/settings-diff1.png
@@ -588,6 +584,7 @@ share/doc/HTML/en/umbrello/class.png
 share/doc/HTML/en/umbrello/code-import.png
 share/doc/HTML/en/umbrello/code_import_and_generation.docbook
 share/doc/HTML/en/umbrello/collaboration-diagram.png
+share/doc/HTML/en/umbrello/common
 share/doc/HTML/en/umbrello/composition.png
 share/doc/HTML/en/umbrello/credits.docbook
 share/doc/HTML/en/umbrello/disjoint-specialization.png
@@ -609,14 +606,11 @@ share/doc/HTML/en/umbrello/umbrello-ui.png
 share/doc/HTML/en/umbrello/uml_basics.docbook
 share/doc/HTML/en/umbrello/use-case-diagram.png
 share/doc/HTML/en/umbrello/working_with_umbrello.docbook
-share/icons/
-share/icons/hicolor/
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kbugbuster.png
 share/icons/hicolor/128x128/apps/kompare.png
 share/icons/hicolor/128x128/apps/umbrello.png
-share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/cervisia.png
 share/icons/hicolor/16x16/apps/kbugbuster.png
@@ -631,7 +625,6 @@ share/icons/hicolor/22x22/apps/cervisia.png
 share/icons/hicolor/22x22/apps/kbugbuster.png
 share/icons/hicolor/22x22/apps/kompare.png
 share/icons/hicolor/22x22/apps/umbrello.png
-share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/cervisia.png
 share/icons/hicolor/32x32/apps/kbugbuster.png
@@ -641,7 +634,6 @@ share/icons/hicolor/32x32/apps/kuiviewer.png
 share/icons/hicolor/32x32/apps/umbrello.png
 share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/umbrellofile.png
-share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/cervisia.png
 share/icons/hicolor/48x48/apps/kbugbuster.png
@@ -761,8 +753,6 @@ share/icons/oxygen/scalable/actions/vcs_diff.svgz
 share/icons/oxygen/scalable/actions/vcs_remove.svgz
 share/icons/oxygen/scalable/actions/vcs_status.svgz
 share/icons/oxygen/scalable/actions/vcs_update.svgz
-share/kde4/
-share/kde4/services/
 share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/subversion.desktop
 share/kde4/services/ServiceMenus/subversion_toplevel.desktop
@@ -779,12 +769,9 @@ share/kde4/services/katequickdocumentswitcher.desktop
 share/kde4/services/katesymbolviewer.desktop
 share/kde4/services/katetabbarextension.desktop
 share/kde4/services/katetextfilter.desktop
-share/kde4/services/kded/
 share/kde4/services/kded/ksvnd.desktop
 share/kde4/services/komparenavtreepart.desktop
 share/kde4/services/komparepart.desktop
-share/kde4/services/kresources/
-share/kde4/services/kresources/kcal/
 share/kde4/services/kresources/kcal/bugzilla.desktop
 share/kde4/services/kuiviewer_part.desktop
 share/kde4/services/svn+file.protocol
@@ -792,10 +779,7 @@ share/kde4/services/svn+http.protocol
 share/kde4/services/svn+https.protocol
 share/kde4/services/svn+ssh.protocol
 share/kde4/services/svn.protocol
-share/kde4/servicetypes/
 share/kde4/servicetypes/kateplugin.desktop
 share/kde4/servicetypes/komparenavigationpart.desktop
 share/kde4/servicetypes/kompareviewpart.desktop
-share/man/
-share/man/man1/
 @man share/man/man1/cervisia.1

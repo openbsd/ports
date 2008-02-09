@@ -1,0 +1,14 @@
+$OpenBSD: patch-nepomuk_rcgen_rcgen_cpp,v 1.1 2008/02/09 13:18:16 espie Exp $
+--- nepomuk/rcgen/rcgen.cpp.orig	Mon Feb  4 19:43:58 2008
++++ nepomuk/rcgen/rcgen.cpp	Mon Feb  4 19:44:23 2008
+@@ -23,7 +23,9 @@
+ 
+ static int usage()
+ {
+-    QTextStream( stderr, QIODevice::WriteOnly )
++    QTextStream out( stderr, QIODevice::WriteOnly );
++
++    out
+         << "Usage:" << endl
+         << "   " << QCoreApplication::instance()->arguments()[0] << " --writeall [--templates <tmpl1> [<tmpl2> [<tmpl3> ...]]] --target <sourcefolder> --ontologies <ontologyfile(s)>" << endl
+         << "   " << QCoreApplication::instance()->arguments()[0] << " --listincludes --ontologies <ontologyfile(s)>" << endl

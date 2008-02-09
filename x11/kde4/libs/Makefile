@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/29 00:24:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/09 13:18:16 espie Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}
 
 SHARED_LIBS +=	kaudiodevicelist     4.0      # .4.0
 SHARED_LIBS +=	kde3support          0.0      # .4.0
@@ -45,6 +45,7 @@ SHARED_LIBS +=	krossui              0.0      # .4.0
 SHARED_LIBS +=	phonon               0.0      # .4.0
 SHARED_LIBS +=	phononexperimental   0.0      # .4.0
 SHARED_LIBS +=  kpty                 0.0      # .4.0
+SHARED_LIBS +=  nepomuk              0.0      # .0.0
 
 BUILD_DEPENDS += ::misc/shared-mime-info
 RUN_DEPENDS += ::misc/shared-mime-info
@@ -59,7 +60,8 @@ LIB_DEPENDS +=	Half,Iex,IlmImf,Imath::graphics/openexr \
 		pcre,pcreposix::devel/pcre \
 		dbus-1::x11/dbus \
 		fam::sysutils/fam \
-		streams,streamanalyzer::databases/strigi
+		streams,streamanalyzer::databases/strigi \
+		soprano,sopranoclient::databases/soprano
 
 # we don't have krb5-config
 CONFIGURE_ARGS += -DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err"
@@ -67,11 +69,13 @@ CONFIGURE_ARGS += -DGSSAPI_INCS:STRING="/usr/include/kerberosV"
 CONFIGURE_ARGS += -DGSSAPI_FLAVOR:STRING="HEIMDAL"
 CONFIGURE_ARGS += -DGSSAPI_FOUND:BOOL=TRUE
 
+post-extract:
+	cd ${WRKDIST}/cmake/modules && rm FindQt4.cmake MacroPushRequiredVars.cmake
 
 WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xft Xi Xinerama Xpm
 WANTLIB += Xrandr Xrender Xfixes Xtst c fontconfig freetype jpeg m png
 WANTLIB += pthread stdc++ util z
-WANTLIB += Qt3Support QtDBus QtDesigner QtGui QtSvg QtXml
+WANTLIB += Qt3Support QtDBus QtDesigner QtGui QtSvg QtXml QtTest
 WANTLIB += QtNetwork xml2 ssl glib-2.0 gthread-2.0 intl iconv
 WANTLIB += asn1 com_err gssapi krb5
 

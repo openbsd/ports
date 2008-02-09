@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/01/21 21:47:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/02/09 13:18:17 espie Exp $
 bin/checkXML
 bin/kbuildsycoca4
 bin/kconfig_compiler
@@ -18,6 +18,7 @@ bin/kunittestmodrunner
 bin/kwrapper4
 bin/makekdewidgets
 bin/meinproc4
+bin/nepomuk-rcgen
 bin/preparetips
 etc/
 etc/xdg/
@@ -603,6 +604,7 @@ include/KDE/KPluginLoader
 include/KDE/KPluginSelector
 include/KDE/KPopupFrame
 include/KDE/KPreviewWidgetBase
+include/KDE/KPrintPreview
 include/KDE/KProcess
 include/KDE/KProgressDialog
 include/KDE/KPropertiesDialog
@@ -1460,6 +1462,29 @@ include/kxmlguifactory.h
 include/kxmlguiwindow.h
 include/kxyselector.h
 include/kzip.h
+include/nepomuk/
+include/nepomuk/class.h
+include/nepomuk/desktopontologyloader.h
+include/nepomuk/entity.h
+include/nepomuk/fileontologyloader.h
+include/nepomuk/global.h
+include/nepomuk/kmetadatatagcloud.h
+include/nepomuk/kmetadatatagwidget.h
+include/nepomuk/kratingwidget.h
+include/nepomuk/ktagcloudwidget.h
+include/nepomuk/ktagdisplaywidget.h
+include/nepomuk/literal.h
+include/nepomuk/nepomuk_export.h
+include/nepomuk/nepomukontologyloader.h
+include/nepomuk/ontology.h
+include/nepomuk/ontologyloader.h
+include/nepomuk/ontologymanager.h
+include/nepomuk/property.h
+include/nepomuk/resource.h
+include/nepomuk/resourcemanager.h
+include/nepomuk/tag.h
+include/nepomuk/tools.h
+include/nepomuk/variant.h
 include/netwm.h
 include/netwm_def.h
 include/passdlg.h
@@ -1673,6 +1698,8 @@ lib/libkutils.so
 @lib lib/libkutils.so.${LIBkutils_VERSION}
 lib/libkwalletbackend.so
 @lib lib/libkwalletbackend.so.${LIBkwalletbackend_VERSION}
+lib/libnepomuk.so
+@lib lib/libnepomuk.so.${LIBnepomuk_VERSION}
 lib/libphonon.so
 @lib lib/libphonon.so.${LIBphonon_VERSION}
 lib/libphononexperimental.so
@@ -1758,7 +1785,6 @@ share/apps/cmake/modules/FindPopplerQt4.cmake
 share/apps/cmake/modules/FindPostgreSQL.cmake
 share/apps/cmake/modules/FindQCA2.cmake
 share/apps/cmake/modules/FindQImageBlitz.cmake
-share/apps/cmake/modules/FindQt4.cmake
 share/apps/cmake/modules/FindRUBY.cmake
 share/apps/cmake/modules/FindSamba.cmake
 share/apps/cmake/modules/FindSane.cmake
@@ -1789,7 +1815,6 @@ share/apps/cmake/modules/MacroLogFeature.cmake
 share/apps/cmake/modules/MacroOptionalAddSubdirectory.cmake
 share/apps/cmake/modules/MacroOptionalDependPackage.cmake
 share/apps/cmake/modules/MacroOptionalFindPackage.cmake
-share/apps/cmake/modules/MacroPushRequiredVars.cmake
 share/apps/cmake/modules/NepomukMacros.cmake
 share/apps/cmake/modules/UsePkgConfig.cmake
 share/apps/cmake/modules/Win32Macros.cmake
@@ -2496,6 +2521,7 @@ share/apps/ksgmltools2/customization/ko/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/ko/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/ko/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/ko/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/ko/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/ko/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/ko/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/ko/lang.entities
@@ -3598,6 +3624,30 @@ share/apps/ktexteditor_kdatatool/
 share/apps/ktexteditor_kdatatool/ktexteditor_kdatatoolui.rc
 share/apps/libphonon/
 share/apps/libphonon/hardwaredatabase
+share/apps/nepomuk/
+share/apps/nepomuk/ontologies/
+share/apps/nepomuk/ontologies/dces.desktop
+share/apps/nepomuk/ontologies/dces.rdf
+share/apps/nepomuk/ontologies/dcq.desktop
+share/apps/nepomuk/ontologies/dcq.rdf
+share/apps/nepomuk/ontologies/dctype.desktop
+share/apps/nepomuk/ontologies/dctype.rdf
+share/apps/nepomuk/ontologies/nao.desktop
+share/apps/nepomuk/ontologies/nao.trig
+share/apps/nepomuk/ontologies/nfo.desktop
+share/apps/nepomuk/ontologies/nfo.rdfs
+share/apps/nepomuk/ontologies/nrl.desktop
+share/apps/nepomuk/ontologies/nrl.trig
+share/apps/nepomuk/ontologies/rdf.desktop
+share/apps/nepomuk/ontologies/rdf.rdfs
+share/apps/nepomuk/ontologies/rdfs.desktop
+share/apps/nepomuk/ontologies/rdfs.rdfs
+share/apps/nepomuk/ontologies/xesam.desktop
+share/apps/nepomuk/ontologies/xesam.rdfs
+share/apps/nepomuk/ontologies/xss.desktop
+share/apps/nepomuk/ontologies/xss.rdfs
+share/apps/nepomuk/pics/
+share/apps/nepomuk/pics/rating.png
 share/apps/phonon/
 share/apps/phonon/phonon.notifyrc
 share/apps/proxyscout/
@@ -3616,7 +3666,6 @@ share/config/kdxspreviewrc
 share/config/ksslcalist
 share/config/ui/
 share/config/ui/ui_standards.rc
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.kde.KCookieServer.xml
 share/dbus-1/interfaces/org.kde.KDirNotify.xml
 share/dbus-1/interfaces/org.kde.KHTMLPart.xml
@@ -3679,6 +3728,7 @@ share/doc/HTML/en/common/top.jpg
 share/doc/HTML/en/common/x11-license.html
 share/doc/HTML/en/common/xml.dcl
 share/doc/HTML/en/sonnet/
+share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
 share/icons/
@@ -3807,6 +3857,4 @@ share/man/man7/
 @man share/man/man7/qtoptions.7
 share/man/man8/
 @man share/man/man8/kbuildsycoca4.8
-share/mime/
-share/mime/packages/
 share/mime/packages/kde.xml

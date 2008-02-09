@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/21 21:47:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/09 13:18:16 espie Exp $
 
 COMMENT =		K Desktop Environment, base
 DISTNAME =		kdebase-${VERSION}
@@ -21,7 +21,7 @@ SHARED_LIBS +=	taskmanager          3.0      # .4.0
 SHARED_LIBS +=	dolphinprivate       0.0      # .1.0
 SHARED_LIBS +=	konquerorprivate     0.0      # .4.0
 
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kfile,khtml,kio,kjs,knotifyconfig,kparts,kpty,ktexteditor,kutils,phonon,solid::x11/kde4/libs \
+LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kfile,khtml,kio,kjs,knotifyconfig,kparts,kpty,ktexteditor,kutils,phonon,solid,nepomuk::x11/kde4/libs \
 		qimageblitz::x11/kde4/qimageblitz
 
 WANTLIB += ICE SM X11 Xau Xcursor Xdmcp
@@ -31,7 +31,7 @@ WANTLIB += stdc++ util z
 WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml
 WANTLIB += gif bz2 pcre pcreposix
 WANTLIB += dbus-1 fam glib-2.0 gthread-2.0 iconv intl
-WANTLIB += streams streamanalyzer
+WANTLIB += streams streamanalyzer soprano
 
 
 .include <bsd.port.mk>

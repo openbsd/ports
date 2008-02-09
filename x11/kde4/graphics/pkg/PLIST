@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/01/21 23:54:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/02/09 13:18:16 espie Exp $
 bin/gwenview
 bin/kbackgroundsnapshot
 bin/kcolorchooser
@@ -43,6 +43,7 @@ lib/kde4/okularGenerator_comicbook.so
 lib/kde4/okularGenerator_djvu.so
 lib/kde4/okularGenerator_dvi.so
 lib/kde4/okularGenerator_fb.so
+lib/kde4/okularGenerator_ghostview.so
 lib/kde4/okularGenerator_kimgio.so
 lib/kde4/okularGenerator_ooo.so
 lib/kde4/okularGenerator_plucker.so
@@ -57,8 +58,9 @@ lib/libkolourpaint4_lgpl.so
 @lib lib/libkolourpaint4_lgpl.so.${LIBkolourpaint4_lgpl_VERSION}
 lib/libokularcore.so
 @lib lib/libokularcore.so.${LIBokularcore_VERSION}
+lib/libspectreOkular.so
+@lib lib/libspectreOkular.so.${LIBspectreOkular_VERSION}
 lib/strigi/strigita_dvi.so
-lib/strigi/strigita_ico.so
 share/applications/
 share/applications/kde4/
 share/applications/kde4/gwenview.desktop
@@ -72,6 +74,7 @@ share/applications/kde4/okularApplication_comicbook.desktop
 share/applications/kde4/okularApplication_djvu.desktop
 share/applications/kde4/okularApplication_dvi.desktop
 share/applications/kde4/okularApplication_fb.desktop
+share/applications/kde4/okularApplication_ghostview.desktop
 share/applications/kde4/okularApplication_kimgio.desktop
 share/applications/kde4/okularApplication_ooo.desktop
 share/applications/kde4/okularApplication_pdf.desktop
@@ -220,6 +223,14 @@ share/apps/kruler/pics/kruler-west.png
 share/apps/kruler/sounds/
 share/apps/kruler/sounds/move.wav
 share/apps/okular/
+share/apps/okular/icons/
+share/apps/okular/icons/hicolor/
+share/apps/okular/icons/hicolor/16x16/
+share/apps/okular/icons/hicolor/16x16/apps/
+share/apps/okular/icons/hicolor/16x16/apps/okular-gv.png
+share/apps/okular/icons/hicolor/32x32/
+share/apps/okular/icons/hicolor/32x32/apps/
+share/apps/okular/icons/hicolor/32x32/apps/okular-gv.png
 share/apps/okular/part.rc
 share/apps/okular/pics/
 share/apps/okular/pics/checkmark.png
@@ -253,12 +264,28 @@ share/config.kcfg/
 share/config.kcfg/okular.kcfg
 share/config/okular.knsrc
 share/dbus-1/interfaces/org.kde.ksnapshot.xml
+share/doc/HTML/en/gwenview/
+share/doc/HTML/en/gwenview/browse_mode.png
+share/doc/HTML/en/gwenview/common
+share/doc/HTML/en/gwenview/dock_grip.png
+share/doc/HTML/en/gwenview/docked_windows.docbook
+share/doc/HTML/en/gwenview/external_tools.docbook
+share/doc/HTML/en/gwenview/external_tools_dialog.png
+share/doc/HTML/en/gwenview/index.cache.bz2
+share/doc/HTML/en/gwenview/index.docbook
+share/doc/HTML/en/gwenview/interface.docbook
+share/doc/HTML/en/gwenview/introduction.docbook
+share/doc/HTML/en/gwenview/keybindings.docbook
+share/doc/HTML/en/gwenview/mouse.docbook
+share/doc/HTML/en/gwenview/view_mode.png
 share/doc/HTML/en/kamera/
+share/doc/HTML/en/kamera/common
 share/doc/HTML/en/kamera/index.cache.bz2
 share/doc/HTML/en/kamera/index.docbook
 share/doc/HTML/en/kolourpaint4/
 share/doc/HTML/en/kolourpaint4/brush_shapes.png
 share/doc/HTML/en/kolourpaint4/color_box.png
+share/doc/HTML/en/kolourpaint4/common
 share/doc/HTML/en/kolourpaint4/eraser_shapes.png
 share/doc/HTML/en/kolourpaint4/fcc_std_text.png
 share/doc/HTML/en/kolourpaint4/fcc_trans_text.png
@@ -309,14 +336,17 @@ share/doc/HTML/en/kolourpaint4/tool_spraycan.png
 share/doc/HTML/en/kolourpaint4/tool_text.png
 share/doc/HTML/en/kolourpaint4/view_thumbnails.png
 share/doc/HTML/en/kruler/
+share/doc/HTML/en/kruler/common
 share/doc/HTML/en/kruler/index.cache.bz2
 share/doc/HTML/en/kruler/index.docbook
 share/doc/HTML/en/ksnapshot/
+share/doc/HTML/en/ksnapshot/common
 share/doc/HTML/en/ksnapshot/index.cache.bz2
 share/doc/HTML/en/ksnapshot/index.docbook
 share/doc/HTML/en/ksnapshot/preview.png
 share/doc/HTML/en/ksnapshot/window.png
 share/doc/HTML/en/okular/
+share/doc/HTML/en/okular/common
 share/doc/HTML/en/okular/configure.png
 share/doc/HTML/en/okular/embedded-files-bar.png
 share/doc/HTML/en/okular/index.cache.bz2
@@ -384,6 +414,7 @@ share/kde4/services/libokularGenerator_comicbook.desktop
 share/kde4/services/libokularGenerator_djvu.desktop
 share/kde4/services/libokularGenerator_dvi.desktop
 share/kde4/services/libokularGenerator_fb.desktop
+share/kde4/services/libokularGenerator_ghostview.desktop
 share/kde4/services/libokularGenerator_kimgio.desktop
 share/kde4/services/libokularGenerator_ooo.desktop
 share/kde4/services/libokularGenerator_plucker.desktop
@@ -396,6 +427,7 @@ share/kde4/services/okularComicbook.desktop
 share/kde4/services/okularDjvu.desktop
 share/kde4/services/okularDvi.desktop
 share/kde4/services/okularFb.desktop
+share/kde4/services/okularGhostview.desktop
 share/kde4/services/okularKimgio.desktop
 share/kde4/services/okularOoo.desktop
 share/kde4/services/okularPlucker.desktop

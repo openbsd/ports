@@ -1,0 +1,12 @@
+$OpenBSD: patch-kstars_kstars_indi_libs_indicom_h,v 1.1 2008/02/09 13:18:16 espie Exp $
+--- kstars/kstars/indi/libs/indicom.h.orig	Mon Feb  4 15:38:12 2008
++++ kstars/kstars/indi/libs/indicom.h	Mon Feb  4 15:38:19 2008
+@@ -46,7 +46,7 @@
+ #include <config.h>
+ 
+ #ifdef HAVE_NOVA_H
+-#include <libnova.h>
++#include <libnova/libnova.h>
+ #endif
+ 
+ #define J2000 2451545.0

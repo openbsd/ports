@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/27 05:09:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/02/09 13:18:17 espie Exp $
 bin/kfilereplace
 bin/kimagemapeditor
 bin/klinkstatus
@@ -47,6 +47,7 @@ share/doc/HTML/en/kfilereplace/addstringsdialog_window.png
 share/doc/HTML/en/kfilereplace/backup_option.png
 share/doc/HTML/en/kfilereplace/casesensitive_option.png
 share/doc/HTML/en/kfilereplace/command_option.png
+share/doc/HTML/en/kfilereplace/common
 share/doc/HTML/en/kfilereplace/edit.png
 share/doc/HTML/en/kfilereplace/edit_add.png
 share/doc/HTML/en/kfilereplace/edit_remove.png
@@ -72,14 +73,17 @@ share/doc/HTML/en/kfilereplace/strings_view.png
 share/doc/HTML/en/kfilereplace/toolbar.png
 share/doc/HTML/en/kfilereplace/unsortedList.png
 share/doc/HTML/en/kimagemapeditor/
+share/doc/HTML/en/kimagemapeditor/common
 share/doc/HTML/en/kimagemapeditor/index.cache.bz2
 share/doc/HTML/en/kimagemapeditor/index.docbook
 share/doc/HTML/en/klinkstatus/
+share/doc/HTML/en/klinkstatus/common
 share/doc/HTML/en/klinkstatus/index.cache.bz2
 share/doc/HTML/en/klinkstatus/index.docbook
 share/doc/HTML/en/klinkstatus/screenshot.png
 share/doc/HTML/en/xsldbg/
 share/doc/HTML/en/xsldbg/commands.docbook
+share/doc/HTML/en/xsldbg/common
 share/doc/HTML/en/xsldbg/credits.docbook
 share/doc/HTML/en/xsldbg/index.cache.bz2
 share/doc/HTML/en/xsldbg/index.docbook

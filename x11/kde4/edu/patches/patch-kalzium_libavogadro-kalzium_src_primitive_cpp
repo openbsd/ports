@@ -1,0 +1,30 @@
+$OpenBSD: patch-kalzium_libavogadro-kalzium_src_primitive_cpp,v 1.1 2008/02/09 13:18:16 espie Exp $
+--- kalzium/libavogadro-kalzium/src/primitive.cpp.orig	Mon Feb  4 14:40:55 2008
++++ kalzium/libavogadro-kalzium/src/primitive.cpp	Mon Feb  4 14:42:27 2008
+@@ -115,7 +115,7 @@ namespace Avogadro {
+   {
+   }
+ 
+-  Atom * Molecule::CreateAtom()
++  OpenBabel::OBAtom * Molecule::CreateAtom()
+   {
+     Atom *atom = new Atom(this);
+     connect(atom, SIGNAL(updated()), this, SLOT(updatePrimitive()));
+@@ -123,7 +123,7 @@ namespace Avogadro {
+     return(atom);
+   }
+ 
+-  Bond * Molecule::CreateBond()
++  OpenBabel::OBBond * Molecule::CreateBond()
+   {
+     Bond *bond = new Bond(this);
+     connect(bond, SIGNAL(updated()), this, SLOT(updatePrimitive()));
+@@ -131,7 +131,7 @@ namespace Avogadro {
+     return(bond);
+   }
+ 
+-  Residue * Molecule::CreateResidue()
++  OpenBabel::OBResidue * Molecule::CreateResidue()
+   {
+     Residue *residue = new Residue(this);
+     connect(residue, SIGNAL(updated()), this, SLOT(updatePrimitive()));

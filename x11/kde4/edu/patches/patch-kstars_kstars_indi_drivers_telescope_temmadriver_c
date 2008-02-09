@@ -1,0 +1,12 @@
+$OpenBSD: patch-kstars_kstars_indi_drivers_telescope_temmadriver_c,v 1.1 2008/02/09 13:18:16 espie Exp $
+--- kstars/kstars/indi/drivers/telescope/temmadriver.c.orig	Mon Feb  4 15:46:18 2008
++++ kstars/kstars/indi/drivers/telescope/temmadriver.c	Mon Feb  4 15:46:27 2008
+@@ -33,7 +33,7 @@
+ 
+ #include <config.h>
+ 
+-#include <libnova.h>
++#include <libnova/libnova.h>
+ 
+ #include "indicom.h"
+ #include "indidevapi.h"

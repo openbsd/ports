@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/01/21 21:47:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/02/09 13:18:16 espie Exp $
 @newgroup _kdesud:583
 bin/dolphin
 bin/kappfinder
@@ -461,13 +461,6 @@ share/apps/konqsidebartng/entries/home.desktop
 share/apps/konqsidebartng/entries/remote.desktop
 share/apps/konqsidebartng/entries/root.desktop
 share/apps/konqsidebartng/entries/services.desktop
-share/apps/konqsidebartng/kicker_entries/
-share/apps/konqsidebartng/kicker_entries/bookmarks.desktop
-share/apps/konqsidebartng/kicker_entries/history.desktop
-share/apps/konqsidebartng/kicker_entries/home.desktop
-share/apps/konqsidebartng/kicker_entries/remote.desktop
-share/apps/konqsidebartng/kicker_entries/root.desktop
-share/apps/konqsidebartng/kicker_entries/services.desktop
 share/apps/konqsidebartng/virtual_folders/
 share/apps/konqsidebartng/virtual_folders/remote/
 share/apps/konqsidebartng/virtual_folders/remote/.directory
@@ -484,7 +477,6 @@ share/apps/konqsidebartng/virtual_folders/services/
 share/apps/konqsidebartng/virtual_folders/services/.directory
 share/apps/konqsidebartng/virtual_folders/services/applications.desktop
 share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
-share/apps/konqsidebartng/virtual_folders/services/settings.desktop
 share/apps/konqsidebartng/websidebar/
 share/apps/konqsidebartng/websidebar/websidebar.html
 share/apps/konqueror/
@@ -551,6 +543,7 @@ share/apps/plugin/
 share/apps/plugin/nspluginpart.rc
 share/autostart/
 share/autostart/konqy_preload.desktop
+share/config.kcfg/
 share/config.kcfg/dolphin_columnmodesettings.kcfg
 share/config.kcfg/dolphin_detailsmodesettings.kcfg
 share/config.kcfg/dolphin_directoryviewpropertysettings.kcfg
@@ -575,6 +568,7 @@ share/doc/HTML/en/dolphin/bookmarkbutton.png
 share/doc/HTML/en/dolphin/bookmarksidebar.png
 share/doc/HTML/en/dolphin/breadcrumb.png
 share/doc/HTML/en/dolphin/browsebutton.png
+share/doc/HTML/en/dolphin/common
 share/doc/HTML/en/dolphin/configurationwindow.png
 share/doc/HTML/en/dolphin/configurationwindow2.png
 share/doc/HTML/en/dolphin/configurationwindow3.png
@@ -589,6 +583,7 @@ share/doc/HTML/en/dolphin/systemmediadirectory.png
 share/doc/HTML/en/dolphin/toolbarbuttons.png
 share/doc/HTML/en/dolphin/workspacebuttons.png
 share/doc/HTML/en/kfind/
+share/doc/HTML/en/kfind/common
 share/doc/HTML/en/kfind/index.cache.bz2
 share/doc/HTML/en/kfind/index.docbook
 share/doc/HTML/en/kfind/man-kfind.1.docbook
@@ -598,6 +593,7 @@ share/doc/HTML/en/konqueror/bookmarks.docbook
 share/doc/HTML/en/konqueror/browser.docbook
 share/doc/HTML/en/konqueror/cmndline.png
 share/doc/HTML/en/konqueror/commands.docbook
+share/doc/HTML/en/konqueror/common
 share/doc/HTML/en/konqueror/config.docbook
 share/doc/HTML/en/konqueror/credits.docbook
 share/doc/HTML/en/konqueror/dirtree.png
@@ -617,11 +613,13 @@ share/doc/HTML/en/konqueror/shortcut1.png
 share/doc/HTML/en/konqueror/shortcut2.png
 share/doc/HTML/en/konqueror/sidebar.docbook
 share/doc/HTML/en/konsole/
+share/doc/HTML/en/konsole/common
 share/doc/HTML/en/konsole/index.cache.bz2
 share/doc/HTML/en/konsole/index.docbook
 share/doc/HTML/en/konsole/konsole.png
 share/doc/HTML/en/konsole/tabbar.png
 share/doc/HTML/en/kwrite/
+share/doc/HTML/en/kwrite/common
 share/doc/HTML/en/kwrite/index.cache.bz2
 share/doc/HTML/en/kwrite/index.docbook
 share/icons/hicolor/128x128/

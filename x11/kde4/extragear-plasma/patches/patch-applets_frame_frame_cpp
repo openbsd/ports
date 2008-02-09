@@ -1,0 +1,13 @@
+$OpenBSD: patch-applets_frame_frame_cpp,v 1.1 2008/02/09 13:18:16 espie Exp $
+--- applets/frame/frame.cpp.orig	Mon Feb  4 16:40:02 2008
++++ applets/frame/frame.cpp	Mon Feb  4 16:40:14 2008
+@@ -122,7 +122,8 @@ void Frame::choosePicture(const KUrl& currentUrl)
+ 
+ void Frame::addDir()
+ {
+-    KDirSelectDialog dialog(KUrl(), true);
++    KUrl empty;
++    KDirSelectDialog dialog(empty, true);
+     if (dialog.exec()) {
+         QString path = dialog.url().path();
+         if (!m_slideShowPaths.contains(path)) {

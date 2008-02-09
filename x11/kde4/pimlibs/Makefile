@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/01 07:02:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/09 13:18:17 espie Exp $
 
 COMMENT =		K Desktop Environment, pimlibs
 DISTNAME =		kdepimlibs-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}
 
 SHARED_LIBS +=	emailfunctions       0.0      # .4.0
 SHARED_LIBS +=	kabc                 5.0      # .4.0

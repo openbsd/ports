@@ -1,0 +1,23 @@
+$OpenBSD: patch-cmake_modules_FindNova_cmake,v 1.1 2008/02/09 13:18:16 espie Exp $
+--- cmake/modules/FindNova.cmake.orig	Mon Feb  4 15:27:06 2008
++++ cmake/modules/FindNova.cmake	Mon Feb  4 15:27:20 2008
+@@ -19,8 +19,8 @@ if (NOVA_INCLUDE_DIR AND NOVA_LIBRARIES AND NOVA_FUNCT
+ 
+ else (NOVA_INCLUDE_DIR AND NOVA_LIBRARIES)
+ 
+-  find_path(NOVA_INCLUDE_DIR libnova.h
+-    PATH_SUFFIXES libnova
++  find_path(NOVA_INCLUDE_DIR libnova/libnova.h
++    PATH_SUFFIXES
+     ${_obIncDir}
+     ${GNUWIN32_DIR}/include
+   )
+@@ -33,7 +33,7 @@ else (NOVA_INCLUDE_DIR AND NOVA_LIBRARIES)
+ 
+  set(CMAKE_REQUIRED_INCLUDES ${NOVA_INCLUDE_DIR})
+  set(CMAKE_REQUIRED_LIBRARIES ${NOVA_LIBRARIES})
+- check_cxx_source_compiles("#include <libnova.h> 
++ check_cxx_source_compiles("#include <libnova/libnova.h> 
+  int main() { ln_get_date_from_tm(NULL, NULL); return 0; }" NOVA_FUNCTION_COMPILE)
+ 
+  include(FindPackageHandleStandardArgs)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-kstars_kstars_indi_drivers_telescope_lx200generic_cpp,v 1.1 2008/02/09 13:18:16 espie Exp $
+--- kstars/kstars/indi/drivers/telescope/lx200generic.cpp.orig	Mon Feb  4 15:46:18 2008
++++ kstars/kstars/indi/drivers/telescope/lx200generic.cpp	Mon Feb  4 15:46:23 2008
+@@ -35,7 +35,7 @@
+ #include <config.h>
+ 
+ #ifdef HAVE_NOVA_H
+-#include <libnova.h>
++#include <libnova/libnova.h>
+ #endif
+ 
+ LX200Generic *telescope = NULL;

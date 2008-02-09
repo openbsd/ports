@@ -1,0 +1,15 @@
+$OpenBSD: patch-kjs_JSImmediate_h,v 1.1 2008/02/09 13:18:16 espie Exp $
+--- kjs/JSImmediate.h.orig	Fri Feb  1 20:16:26 2008
++++ kjs/JSImmediate.h	Fri Feb  1 20:16:52 2008
+@@ -33,6 +33,11 @@
+ #endif
+ #include <stdlib.h>
+ 
++static __inline int signbit(double x)
++{
++	return x < 0.0;
++}
++
+ namespace KJS {
+ 
+ class ExecState;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/01/27 13:00:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/02/09 13:18:16 espie Exp $
 bin/kmag
 bin/kmousetool
 bin/kmouth
@@ -137,15 +137,18 @@ share/apps/kttsd/xslt/
 share/apps/kttsd/xslt/SSMLtoPlainText.xsl
 share/config/kmouthrc
 share/doc/HTML/en/kmag/
+share/doc/HTML/en/kmag/common
 share/doc/HTML/en/kmag/index.cache.bz2
 share/doc/HTML/en/kmag/index.docbook
 share/doc/HTML/en/kmag/man-kmag.1.docbook
 share/doc/HTML/en/kmag/screenshot.png
 share/doc/HTML/en/kmousetool/
+share/doc/HTML/en/kmousetool/common
 share/doc/HTML/en/kmousetool/index.cache.bz2
 share/doc/HTML/en/kmousetool/index.docbook
 share/doc/HTML/en/kmousetool/man-kmousetool.1.docbook
 share/doc/HTML/en/kmouth/
+share/doc/HTML/en/kmouth/common
 share/doc/HTML/en/kmouth/index.cache.bz2
 share/doc/HTML/en/kmouth/index.docbook
 share/doc/HTML/en/kmouth/kmouthcpref.png
@@ -158,6 +161,7 @@ share/doc/HTML/en/kmouth/man-kmouth.1.docbook
 share/doc/HTML/en/kttsd/
 share/doc/HTML/en/kttsd/addtalker.png
 share/doc/HTML/en/kttsd/audio.png
+share/doc/HTML/en/kttsd/common
 share/doc/HTML/en/kttsd/festivalintconf.png
 share/doc/HTML/en/kttsd/filters.png
 share/doc/HTML/en/kttsd/general.png

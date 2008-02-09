@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/01/27 14:45:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/02/09 13:18:17 espie Exp $
 bin/ark
 bin/kcalc
 bin/kcharselect
@@ -29,8 +29,6 @@ lib/libkmilo.so
 @lib lib/libkmilo.so.${LIBkmilo_VERSION}
 lib/libsuperkaramba.so
 @lib lib/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
-share/applications/
-share/applications/kde4/
 share/applications/kde4/KCharSelect.desktop
 share/applications/kde4/KFloppy.desktop
 share/applications/kde4/Kjots.desktop
@@ -136,7 +134,6 @@ share/apps/superkaramba/
 share/apps/superkaramba/superkarambaui.rc
 share/apps/sweeper/
 share/apps/sweeper/sweeperui.rc
-share/autostart/
 share/autostart/kgpg.desktop
 share/config.kcfg/ark.kcfg
 share/config.kcfg/kcalc.kcfg
@@ -148,25 +145,31 @@ share/dbus-1/interfaces/org.kde.kmilod.xml
 share/dbus-1/interfaces/org.kde.superkaramba.xml
 share/dbus-1/interfaces/org.kde.sweeper.xml
 share/doc/HTML/en/ark/
+share/doc/HTML/en/ark/common
 share/doc/HTML/en/ark/index.cache.bz2
 share/doc/HTML/en/ark/index.docbook
 share/doc/HTML/en/ark/man-ark.1.docbook
 share/doc/HTML/en/kcalc/
 share/doc/HTML/en/kcalc/commands.docbook
+share/doc/HTML/en/kcalc/common
 share/doc/HTML/en/kcalc/index.cache.bz2
 share/doc/HTML/en/kcalc/index.docbook
 share/doc/HTML/en/kcharselect/
+share/doc/HTML/en/kcharselect/common
 share/doc/HTML/en/kcharselect/index.cache.bz2
 share/doc/HTML/en/kcharselect/index.docbook
 share/doc/HTML/en/kdf/
+share/doc/HTML/en/kdf/common
 share/doc/HTML/en/kdf/index.cache.bz2
 share/doc/HTML/en/kdf/index.docbook
 share/doc/HTML/en/kdf/kdf.png
 share/doc/HTML/en/kdf/kdf_config.png
 share/doc/HTML/en/kfloppy/
+share/doc/HTML/en/kfloppy/common
 share/doc/HTML/en/kfloppy/index.cache.bz2
 share/doc/HTML/en/kfloppy/index.docbook
 share/doc/HTML/en/kgpg/
+share/doc/HTML/en/kgpg/common
 share/doc/HTML/en/kgpg/editor.png
 share/doc/HTML/en/kgpg/index.cache.bz2
 share/doc/HTML/en/kgpg/index.docbook
@@ -178,12 +181,15 @@ share/doc/HTML/en/kgpg/keyserver.png
 share/doc/HTML/en/kgpg/kicker.png
 share/doc/HTML/en/kgpg/options.png
 share/doc/HTML/en/kjots/
+share/doc/HTML/en/kjots/common
 share/doc/HTML/en/kjots/index.cache.bz2
 share/doc/HTML/en/kjots/index.docbook
 share/doc/HTML/en/ktimer/
+share/doc/HTML/en/ktimer/common
 share/doc/HTML/en/ktimer/index.cache.bz2
 share/doc/HTML/en/ktimer/index.docbook
 share/doc/HTML/en/kwallet/
+share/doc/HTML/en/kwallet/common
 share/doc/HTML/en/kwallet/edit1.png
 share/doc/HTML/en/kwallet/edit2.png
 share/doc/HTML/en/kwallet/edit3.png
@@ -195,10 +201,9 @@ share/doc/HTML/en/kwallet/ox22-action-wallet_open.png
 share/doc/HTML/en/kwallet/password1.png
 share/doc/HTML/en/kwallet/password2.png
 share/doc/HTML/en/superkaramba/
+share/doc/HTML/en/superkaramba/common
 share/doc/HTML/en/superkaramba/index.cache.bz2
 share/doc/HTML/en/superkaramba/index.docbook
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kdf.png
 share/icons/hicolor/128x128/apps/kfloppy.png
 share/icons/hicolor/128x128/apps/ktimer.png
@@ -206,7 +211,6 @@ share/icons/hicolor/128x128/apps/kwalletmanager.png
 share/icons/hicolor/128x128/apps/kwalletmanager2.png
 share/icons/hicolor/128x128/apps/kwikdisk.png
 share/icons/hicolor/128x128/apps/superkaramba.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kcalc.png
 share/icons/hicolor/16x16/apps/kdf.png
 share/icons/hicolor/16x16/apps/kfloppy.png
@@ -217,8 +221,6 @@ share/icons/hicolor/16x16/apps/kwalletmanager.png
 share/icons/hicolor/16x16/apps/kwalletmanager2.png
 share/icons/hicolor/16x16/apps/kwikdisk.png
 share/icons/hicolor/16x16/apps/superkaramba.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kcalc.png
 share/icons/hicolor/22x22/apps/kdf.png
 share/icons/hicolor/22x22/apps/kfloppy.png
@@ -227,7 +229,6 @@ share/icons/hicolor/22x22/apps/kjots.png
 share/icons/hicolor/22x22/apps/kwalletmanager.png
 share/icons/hicolor/22x22/apps/kwikdisk.png
 share/icons/hicolor/22x22/apps/superkaramba.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kcalc.png
 share/icons/hicolor/32x32/apps/kdf.png
 share/icons/hicolor/32x32/apps/kfloppy.png
@@ -238,7 +239,6 @@ share/icons/hicolor/32x32/apps/kwalletmanager.png
 share/icons/hicolor/32x32/apps/kwalletmanager2.png
 share/icons/hicolor/32x32/apps/kwikdisk.png
 share/icons/hicolor/32x32/apps/superkaramba.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kcalc.png
 share/icons/hicolor/48x48/apps/kdf.png
 share/icons/hicolor/48x48/apps/kfloppy.png
@@ -249,8 +249,6 @@ share/icons/hicolor/48x48/apps/kwalletmanager.png
 share/icons/hicolor/48x48/apps/kwalletmanager2.png
 share/icons/hicolor/48x48/apps/kwikdisk.png
 share/icons/hicolor/48x48/apps/superkaramba.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kcalc.png
 share/icons/hicolor/64x64/apps/kdf.png
 share/icons/hicolor/64x64/apps/kfloppy.png
@@ -263,17 +261,9 @@ share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/kcalc.svgz
 share/icons/hicolor/scalable/apps/superkaramba.svgz
-share/icons/oxygen/
-share/icons/oxygen/16x16/
-share/icons/oxygen/16x16/apps/
 share/icons/oxygen/16x16/apps/kcmdf.png
-share/icons/oxygen/22x22/
-share/icons/oxygen/22x22/apps/
 share/icons/oxygen/22x22/apps/kcmdf.png
-share/icons/oxygen/32x32/
-share/icons/oxygen/32x32/apps/
 share/icons/oxygen/32x32/apps/kcmdf.png
-share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/encryptfile.desktop
 share/kde4/services/ServiceMenus/encryptfolder.desktop
 share/kde4/services/ServiceMenus/floppy_format.desktop

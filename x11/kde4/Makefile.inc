@@ -3,7 +3,7 @@ FLAVOR ?=
 FLAVORS ?=		debug
 SEPARATE_BUILD =	flavored
 CATEGORIES?=		x11 x11/kde
-VERSION?=		4.0.0
+VERSION?=		4.0.1
 DIST_SUBDIR?=		kde
 PKGNAME?=		${DISTNAME}
 MODULES+=		x11/qt4
@@ -12,7 +12,7 @@ MODQT_OVERRIDE_UIC?=	No
 SHARED_ONLY?=		Yes
 
 MODULES+=		devel/cmake
-BUILD_DEPENDS+=		:cmake->=2.4.7:devel/cmake
+BUILD_DEPENDS+=		:cmake->=2.4.8p0:devel/cmake
 CONFIGURE_STYLE?=	cmake
 
 EXTRACT_SUFX?=		.tar.bz2

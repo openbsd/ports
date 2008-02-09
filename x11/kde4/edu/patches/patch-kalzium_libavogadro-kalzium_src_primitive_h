@@ -1,0 +1,30 @@
+$OpenBSD: patch-kalzium_libavogadro-kalzium_src_primitive_h,v 1.1 2008/02/09 13:18:16 espie Exp $
+--- kalzium/libavogadro-kalzium/src/primitive.h.orig	Mon Feb  4 14:32:23 2008
++++ kalzium/libavogadro-kalzium/src/primitive.h	Mon Feb  4 14:42:18 2008
+@@ -289,7 +289,7 @@ namespace Avogadro {
+        *
+        * @return pointer to a newly allocated Atom object
+        */
+-      Atom *CreateAtom(void);
++      OpenBabel::OBAtom *CreateAtom(void);
+ 
+       /**
+        * Virtual function inherited from OpenBabel::OBMol.  
+@@ -297,15 +297,14 @@ namespace Avogadro {
+        *
+        * @return pointer to a newly allocated Bond object
+        */
+-      Bond * CreateBond(void);
+-
++      OpenBabel::OBBond * CreateBond(void);
+       /**
+        * Virtual function inherited from OpenBabel::OBMol.  
+        * Creates a new Residue object.
+        *
+        * @return pointer to a newly allocated Residue object
+        */
+-      Residue * CreateResidue(void);
++      OpenBabel::OBResidue * CreateResidue(void);
+ 
+       /**
+        * Virtual function inherited from OpenBabel::OBMol.
