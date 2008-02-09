@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/02/09 00:31:55 simon Exp $
 
 COMMENT=		Perl plugin for Eclipse IDE
 
 V=			0.5.33
 DISTNAME=		org.epic.updatesite_0.5.33_20070406
-PKGNAME=		eclipse-plugin-epic-${V}
-CATEGORIES=		devel/eclipse/plugins perl
+PKGNAME=		eclipse-plugin-epic-${V}p0
+CATEGORIES=		devel/eclipse/plugins perl5
 
 HOMEPAGE=		http://e-p-i-c.sourceforge.net/
 
