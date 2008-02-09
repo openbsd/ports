@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/09/25 18:29:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/02/09 09:28:33 bernd Exp $
 bin/obconf
-share/applications/
 share/applications/obconf.desktop
 share/locale/cs/LC_MESSAGES/obconf.mo
 share/locale/en@boldquot/LC_MESSAGES/obconf.mo
@@ -8,7 +7,9 @@ share/locale/en@quot/LC_MESSAGES/obconf.mo
 share/locale/es/LC_MESSAGES/obconf.mo
 share/locale/fr/LC_MESSAGES/obconf.mo
 share/locale/it/LC_MESSAGES/obconf.mo
+share/locale/no/LC_MESSAGES/obconf.mo
 share/locale/sv/LC_MESSAGES/obconf.mo
+share/locale/tr/LC_MESSAGES/obconf.mo
 share/locale/zh_TW/LC_MESSAGES/obconf.mo
 share/mime/packages/obconf.xml
 share/mimelnk/
@@ -21,3 +22,5 @@ share/obconf/video-display.png
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec %D/bin/update-mime-database %D/share/mime
+share/pixmaps/
+share/pixmaps/obconf.png
