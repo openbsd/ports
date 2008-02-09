@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.510 2008/02/08 19:32:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.511 2008/02/09 01:14:19 okan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -318,6 +318,7 @@
      SUBDIR += py-flowtools
      SUBDIR += py-irclib
      SUBDIR += py-libpcap
+     SUBDIR += py-medusa
      SUBDIR += py-msnp
      SUBDIR += py-pcs
      SUBDIR += py-snmp
