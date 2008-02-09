@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/08 08:22:38 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2008/02/09 17:46:10 jasper Exp $
 
 COMMENT=		curses front-end for various audio players
 
 DISTNAME=		cplay-1.49
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		audio
 
 HOMEPAGE=		http://mask.tf.hut.fi/~flu/hacks/cplay/
@@ -26,6 +26,7 @@ PKG_ARCH=		*
 
 do-configure:
 	@perl -pi -e "s,/etc/,${SYSCONFDIR}/," ${WRKSRC}/cplay{,.1}
+	@perl -pi -e "s,^#!.*python,#!${MODPY_BIN}," ${WRKSRC}/cplay
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cplay ${PREFIX}/bin/
