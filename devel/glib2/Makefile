@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.43 2008/01/22 18:27:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2008/02/09 17:47:34 jasper Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
-VERSION=		2.14.4
+VERSION=		2.14.5
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p0
+PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org/
 
-SHARED_LIBS +=	glib-2.0             1400.2   # .1400.4
-SHARED_LIBS +=	gobject-2.0          1400.2   # .1400.4
-SHARED_LIBS +=	gmodule-2.0          1400.2   # .1400.4
-SHARED_LIBS +=	gthread-2.0          1400.2   # .1400.4
+SHARED_LIBS +=	glib-2.0             1400.3   # .1400.5
+SHARED_LIBS +=	gobject-2.0          1400.3   # .1400.5
+SHARED_LIBS +=	gmodule-2.0          1400.3   # .1400.5
+SHARED_LIBS +=	gthread-2.0          1400.3   # .1400.5
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
