@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2008/02/09 10:45:36 espie Exp $
+--- CMakeLists.txt.orig	Mon Feb  4 17:54:11 2008
++++ CMakeLists.txt	Mon Feb  4 17:54:15 2008
+@@ -131,7 +131,7 @@ INSTALL(FILES "${CMAKE_BINARY_DIR}/crypto.prf" DESTINA
+ 
+ add_subdirectory(src)
+ add_subdirectory(tools)
+-add_subdirectory(plugins)
++#add_subdirectory(plugins)
+ if(BUILD_TESTS)
+ 	ENABLE_TESTING()
+         add_subdirectory(unittest)
