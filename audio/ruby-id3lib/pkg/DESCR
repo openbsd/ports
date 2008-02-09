@@ -1,0 +1,2 @@
+id3lib-ruby provides a Ruby interface to the id3lib C++ library for 
+easily editing ID3 tags (v1 and v2) of MP3 audio files.

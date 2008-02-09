@@ -1,0 +1,20 @@
+$OpenBSD: patch-Rakefile,v 1.1.1.1 2008/02/09 11:31:54 bernd Exp $
+--- Rakefile.orig	Thu Jan  1 01:00:00 1970
++++ Rakefile	Sat Feb  9 12:20:26 2008
+@@ -48,6 +48,7 @@ Rake::TestTask.new do |t|
+   t.libs = ['lib', 'ext']
+   t.test_files = FileList['test/test_*.rb']
+   t.verbose = true
++  t.ruby_opts = ['-rubygems']
+ end
+ 
+ 
+@@ -93,7 +94,7 @@ if defined? Gem
+   spec_mswin32.files = FILES_COMMON + FileList['ext/mswin32/id3lib_api.so']
+   spec_mswin32.extensions = []
+   spec_mswin32.require_paths = ['lib', 'ext/mswin32']
+-  spec_mswin32.platform = Gem::Platform::WIN32
++  spec_mswin32.platform = Gem::Platform::CURRENT
+ 
+   desc "Build mswin32 gem."
+   task :gem_mswin32 => [:ext_mswin32] do
