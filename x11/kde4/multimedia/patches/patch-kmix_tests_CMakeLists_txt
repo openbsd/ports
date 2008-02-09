@@ -1,0 +1,12 @@
+$OpenBSD: patch-kmix_tests_CMakeLists_txt,v 1.1.1.1 2008/02/09 15:39:24 espie Exp $
+--- kmix/tests/CMakeLists.txt.orig	Sat Feb  9 16:30:49 2008
++++ kmix/tests/CMakeLists.txt	Sat Feb  9 16:30:59 2008
+@@ -21,7 +21,7 @@ kde4_add_executable(profiletest ${profiletest_SRCS} 
+     ${kmix_adaptor_SRCS}
+     )
+ 
+-target_link_libraries(profiletest  ${KDE4_KDECORE_LIBS} ${KDE4_SOLID_LIBS})
++target_link_libraries(profiletest  ${KDE4_KDECORE_LIBS} ${KDE4_SOLID_LIBS} ${OSSCOMPAT_LIBRARY})
+ 
+ if (HAVE_LIBASOUND2)
+     target_link_libraries(profiletest ${ASOUND_LIBRARY})

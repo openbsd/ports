@@ -1,0 +1,12 @@
+$OpenBSD: patch-ConfigureChecks_cmake,v 1.1.1.1 2008/02/09 15:39:24 espie Exp $
+--- ConfigureChecks.cmake.orig	Sat Feb  9 16:12:54 2008
++++ ConfigureChecks.cmake	Sat Feb  9 16:13:01 2008
+@@ -16,7 +16,7 @@ macro_bool_to_01(OGGVORBIS_FOUND HAVE_VORBIS)
+ macro_bool_to_01(X11_XShm_FOUND  HAVE_XSHMGETEVENTBASE)
+ 
+ MACRO_PUSH_REQUIRED_VARS()
+-SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /usr/include/cdda)
++SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /usr/include/cdda /usr/local/include)
+ check_struct_member("struct cdrom_drive" "ioctl_device_name" "cdda_interface.h" CDDA_IOCTL_DEVICE_EXISTS)
+ MACRO_POP_REQUIRED_VARS()
+ macro_bool_to_01(CDDA_IOCTL_DEVICE_EXISTS HAVE_CDDA_IOCTL_DEVICE)

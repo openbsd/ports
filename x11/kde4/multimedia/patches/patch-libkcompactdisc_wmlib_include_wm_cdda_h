@@ -1,0 +1,11 @@
+$OpenBSD: patch-libkcompactdisc_wmlib_include_wm_cdda_h,v 1.1.1.1 2008/02/09 15:39:24 espie Exp $
+--- libkcompactdisc/wmlib/include/wm_cdda.h.orig	Sat Feb  9 15:58:15 2008
++++ libkcompactdisc/wmlib/include/wm_cdda.h	Sat Feb  9 15:58:28 2008
+@@ -39,6 +39,7 @@
+  */
+ 
+ #ifdef HAVE_MACHINE_ENDIAN_H
++	#include <sys/types.h>
+ 	#include <machine/endian.h>
+ 	#if BYTE_ORDER == LITTLE_ENDIAN
+ 		#define WM_LITTLE_ENDIAN 1
