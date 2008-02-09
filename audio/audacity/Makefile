@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2008/02/02 09:51:04 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2008/02/09 15:07:19 ajacoutot Exp $
 
 COMMENT=	free audio editor
 
 V=		1.3.4
 DISTNAME=	audacity-src-${V}
-PKGNAME=	audacity-${V}p1
+PKGNAME=	audacity-${V}p2
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -77,6 +77,9 @@ NO_REGRESS=	Yes
 pre-configure:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/src/export/ExportMP3.cpp
+	@perl -pi -e 's,!!CXXFLAGS!!,${CXXFLAGS},g' \
+		${WRKSRC}/lib-src/libvamp/Makefile.in \
+		${WRKSRC}/lib-src/allegro/Makefile.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
