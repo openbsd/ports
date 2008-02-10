@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/10 14:44:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/02/10 20:12:10 jasper Exp $
 
 COMMENT-main=	C++ bindings for libglade
 COMMENT-docs=	C++ bindings for libglade documentation
 
 GNOME_PROJECT=	libglademm
-GNOME_VERSION=	2.6.5
+GNOME_VERSION=	2.6.6
 PKGNAME-main=	${DISTNAME}
 PKGNAME-docs=	libglademm-docs-${GNOME_VERSION}
-SHARED_LIBS +=	glademm-2.4          1.6      # .1.5
+SHARED_LIBS +=	glademm-2.4          1.7      # .1.5
 CATEGORIES=	devel
 
 HOMEPAGE=	http://gtkmm.sourceforge.net/
