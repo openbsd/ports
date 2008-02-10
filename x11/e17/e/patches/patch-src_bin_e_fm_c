@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_bin_e_fm_c,v 1.2 2007/12/07 15:10:27 mbalmer Exp $
---- src/bin/e_fm.c.orig	Wed Nov  7 11:45:43 2007
-+++ src/bin/e_fm.c	Fri Dec  7 15:44:09 2007
+$OpenBSD: patch-src_bin_e_fm_c,v 1.3 2008/02/10 20:42:59 laurent Exp $
+--- src/bin/e_fm.c.orig	Fri Dec 14 12:23:03 2007
++++ src/bin/e_fm.c	Wed Jan 30 20:23:02 2008
 @@ -104,7 +104,7 @@ struct _E_Fm2_Smart_Data
     E_Drop_Handler     *drop_handler;
     E_Fm2_Icon         *drop_icon;
@@ -10,24 +10,4 @@ $OpenBSD: patch-src_bin_e_fm_c,v 1.2 2007/12/07 15:10:27 mbalmer Exp $
     unsigned char       drop_show : 1;
     unsigned char       drop_in_show : 1;
     unsigned char       drop_all : 1;
-@@ -3214,7 +3214,7 @@ _e_fm2_uri_parse(const char *val)
-    p = val + 7;
-    if (*p != '/')
-      {
--	for (i = 0; *p != '/' && *p != '\0' && i < _POSIX_HOST_NAME_MAX; p++, i++)
-+	for (i = 0; *p != '/' && *p != '\0' && i < MAXHOSTNAMELEN; p++, i++)
- 	  hostname[i] = *p;
-      }
-    hostname[i] = '\0';
-@@ -3247,9 +3247,9 @@ _e_fm2_uri_path_list_get(Evas_List *uri_list)
- {
-    E_Fm2_Uri *uri;
-    Evas_List *l, *path_list = NULL;
--   char current_hostname[_POSIX_HOST_NAME_MAX];
-+   char current_hostname[MAXHOSTNAMELEN];
-    
--   if (gethostname(current_hostname, _POSIX_HOST_NAME_MAX) == -1)
-+   if (gethostname(current_hostname, MAXHOSTNAMELEN) == -1)
-      current_hostname[0] = '\0';
- 
-    for (l = uri_list; l; l = l->next)
+
