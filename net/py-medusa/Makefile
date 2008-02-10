@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/09 01:10:00 okan Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.2 2008/02/10 14:23:05 okan Exp $
 
 COMMENT=		Python framework for async socket-based servers
 
 DISTNAME=		medusa-0.5.4
-PKGNAME=		py-${DISTNAME}
+PKGNAME=		py-${DISTNAME}p0
 CATEGORIES=		net devel
 
 HOMEPAGE=		http://www.amk.ca/python/code/medusa.html
@@ -19,6 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/python
+
+PKG_ARCH=		*
 
 EXAMPLESDIR=		${PREFIX}/share/examples/py-medusa
 EXAMPLEDIRS=		demo test thread
