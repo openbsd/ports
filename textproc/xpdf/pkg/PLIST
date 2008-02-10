@@ -1,19 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:44:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/02/10 20:25:14 landry Exp $
 bin/pdffonts
 bin/pdfimages
 bin/pdfinfo
-bin/pdftoppm
 bin/pdftops
 bin/pdftotext
-bin/xpdf
 @man man/man1/pdffonts.1
 @man man/man1/pdfimages.1
 @man man/man1/pdfinfo.1
-@man man/man1/pdftoppm.1
 @man man/man1/pdftops.1
 @man man/man1/pdftotext.1
-@man man/man1/xpdf.1
 @man man/man5/xpdfrc.5
 share/examples/xpdf/
 share/examples/xpdf/xpdfrc
 @sample ${SYSCONFDIR}/xpdfrc
+!%%no_x11%%

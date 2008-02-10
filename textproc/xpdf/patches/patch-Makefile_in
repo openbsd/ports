@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2008/02/10 20:25:14 landry Exp $
+--- Makefile.in.orig	Mon Nov 12 11:33:36 2007
++++ Makefile.in	Mon Nov 12 11:34:40 2007
+@@ -94,13 +94,8 @@ install: dummy
+ 	$(INSTALL_DATA) $(srcdir)/doc/pdfimages.1 $(DESTDIR)@mandir@/man1/pdfimages.1
+ 	-mkdir -p $(DESTDIR)@mandir@/man5
+ 	$(INSTALL_DATA) $(srcdir)/doc/xpdfrc.5 $(DESTDIR)@mandir@/man5/xpdfrc.5
+-	-mkdir -p $(DESTDIR)@sysconfdir@
+-	@if test ! -f $(DESTDIR)@sysconfdir@/xpdfrc; then \
+-		echo "$(INSTALL_DATA) $(srcdir)/doc/sample-xpdfrc $(DESTDIR)@sysconfdir@/xpdfrc"; \
+-		$(INSTALL_DATA) $(srcdir)/doc/sample-xpdfrc $(DESTDIR)@sysconfdir@/xpdfrc; \
+-	else \
+-		echo "# not overwriting the existing $(DESTDIR)@sysconfdir@/xpdfrc"; \
+-	fi
++	-mkdir -p $(PREFIX)/share/examples/xpdf
++	$(INSTALL_DATA) $(srcdir)/doc/sample-xpdfrc $(PREFIX)/share/examples/xpdf/xpdfrc
+ 
+ clean:
+ 	-cd goo; $(MAKE) clean
