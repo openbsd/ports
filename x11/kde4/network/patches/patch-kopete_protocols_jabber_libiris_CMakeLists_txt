@@ -1,0 +1,15 @@
+$OpenBSD: patch-kopete_protocols_jabber_libiris_CMakeLists_txt,v 1.1 2008/02/11 16:00:10 espie Exp $
+--- kopete/protocols/jabber/libiris/CMakeLists.txt.orig	Mon Feb 11 15:46:10 2008
++++ kopete/protocols/jabber/libiris/CMakeLists.txt	Mon Feb 11 15:46:25 2008
+@@ -18,10 +18,10 @@ ${CMAKE_CURRENT_SOURCE_DIR}/iris/jabber/ 
+ ${CMAKE_CURRENT_SOURCE_DIR}/iris/xmpp-core/ 
+ ${CMAKE_CURRENT_SOURCE_DIR}/iris/xmpp-im/ 
+ ${CMAKE_CURRENT_SOURCE_DIR}/iris/ 
+-${QCA2_INCLUDE_DIR} 
+ ${IDN_INCLUDE_DIR}
+ ${ZLIB_INCLUDE_DIR}
+ )
++include_directories(BEFORE ${QCA2_INCLUDE_DIR})
+ 
+ set(cutestuff_SRCS 
+ cutestuff/legacy/ndns.cpp

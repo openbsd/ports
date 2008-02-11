@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/09 13:18:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/11 16:00:10 espie Exp $
 
 COMMENT =		K Desktop Environment, network
 DISTNAME =		kdenetwork-${VERSION}
@@ -34,7 +34,6 @@ WANTLIB += ssl streamanalyzer streams xml2 xslt sasl2 lber ldap
 WANTLIB += qimageblitz idn
 
 
-# XXX for now, if qca and qca are installed, build will fail
 CONFIGURE_ARGS += -DQCA2_INCLUDE_DIR:PATH=${LOCALBASE}/include/QtCrypto
 CONFIGURE_ARGS += -DQCA2_DEFINITIONS:STRING=-DQT_SHARED
 CONFIGURE_ARGS += -DQCA2_LIBRARIES:FILEPATH=${LOCALBASE}/lib/libqca.so.3.0

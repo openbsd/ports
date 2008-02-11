@@ -1,0 +1,13 @@
+$OpenBSD: patch-kopete_protocols_groupwise_libgroupwise_CMakeLists_txt,v 1.1 2008/02/11 16:00:10 espie Exp $
+--- kopete/protocols/groupwise/libgroupwise/CMakeLists.txt.orig	Mon Feb 11 15:46:10 2008
++++ kopete/protocols/groupwise/libgroupwise/CMakeLists.txt	Mon Feb 11 15:46:35 2008
+@@ -4,8 +4,8 @@ add_subdirectory( tasks )
+ 
+ include_directories(
+ 	${CMAKE_SOURCE_DIR}/kopete/protocols/groupwise/libgroupwise/tasks
+-	${QCA2_INCLUDE_DIR}
+ )
++include_directories(BEFORE ${QCA2_INCLUDE_DIR})
+ 
+ ########### tasks target ###############
+ 
