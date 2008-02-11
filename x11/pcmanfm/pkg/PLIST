@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/02/04 09:29:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/02/11 20:02:27 ajacoutot Exp $
 bin/pcmanfm
 share/applications/pcmanfm.desktop
 share/locale/ca/LC_MESSAGES/pcmanfm.mo
@@ -19,6 +19,9 @@ share/locale/sv_SE/
 share/locale/sv_SE/LC_MESSAGES/
 share/locale/sv_SE/LC_MESSAGES/pcmanfm.mo
 share/locale/tr/LC_MESSAGES/pcmanfm.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/pcmanfm.mo
 share/locale/zh_CN/LC_MESSAGES/pcmanfm.mo
 share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
 share/mime/packages/libmimetype.xml

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_vfs_vfs-file-info_h,v 1.1.1.1 2007/05/26 17:11:48 ajacoutot Exp $
---- src/vfs/vfs-file-info.h.orig	Tue May  8 12:27:26 2007
-+++ src/vfs/vfs-file-info.h	Tue May  8 12:27:43 2007
-@@ -46,7 +46,7 @@ struct _VFSFileInfo
+$OpenBSD: patch-src_vfs_vfs-file-info_h,v 1.2 2008/02/11 20:02:27 ajacoutot Exp $
+--- src/vfs/vfs-file-info.h.orig	Mon Feb 11 06:51:10 2008
++++ src/vfs/vfs-file-info.h	Mon Feb 11 18:39:10 2008
+@@ -48,7 +48,7 @@ struct _VFSFileInfo
      time_t atime;
      /* FIXME: blksize_t blksize; */
      long blksize;
