@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/01/23 16:41:40 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/02/11 18:13:44 bernd Exp $
 @conflict mozilla-firebird-*
 @pkgpath www/mozilla-firefox,-main
 bin/firefox
@@ -490,7 +490,6 @@ mozilla-firefox/searchplugins/creativecommons.xml
 mozilla-firefox/searchplugins/eBay.xml
 mozilla-firefox/searchplugins/google.xml
 mozilla-firefox/searchplugins/yahoo.xml
-share/applications/
 share/applications/firefox.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
