@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.138 2008/01/18 20:34:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.139 2008/02/11 01:03:34 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite)
 
-VERSION=	5.0.51
+VERSION=	5.0.51a
 DISTNAME=	mysql-${VERSION}
 PKGNAME-main=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
