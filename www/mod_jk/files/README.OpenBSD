@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.5 2007/01/09 18:42:05 kurt Exp $
+$OpenBSD: README.OpenBSD,v 1.6 2008/02/11 02:18:28 kurt Exp $
 
                           OpenBSD mod_jk Package
                        Apache-Tomcat AJP Connector
@@ -45,7 +45,7 @@ http://tomcat.apache.org/connectors-doc/index.html
 
 The mailing list archives for tomcat-user can be found at:
 
-http://marc.theaimsgroup.com/
+http://marc.info/
 
 Configuration questions can be asked (after checking archives of course)
 by subscribing to the tomcat-user mailing list. Instructions for subscribing
