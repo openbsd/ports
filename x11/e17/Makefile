@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/30 16:04:37 dlg Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/11 13:51:50 laurent Exp $
 
      SUBDIR += e
      SUBDIR += ecore
+     SUBDIR += edb
      SUBDIR += edje
      SUBDIR += eet
      SUBDIR += efreet
      SUBDIR += embryo
+     SUBDIR += epeg
+     SUBDIR += etk
      SUBDIR += evas
 
 CFLAGS+= -g
