@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_wizard_c,v 1.1 2008/02/11 09:03:31 jasper Exp $
+--- src/wizard.c.orig	Mon Feb 11 00:34:30 2008
++++ src/wizard.c	Mon Feb 11 00:34:44 2008
+@@ -67,7 +67,7 @@ gint wizard (tilda_window *ltw)
+     DEBUG_ASSERT (ltw != NULL);
+ 
+     gchar *window_title;
+-    const gchar *glade_file = g_build_filename (DATADIR, "tilda.glade", NULL);
++    const gchar *glade_file = g_build_filename (DATADIR, "tilda", "tilda.glade", NULL);
+     GtkWidget *wizard_window;
+ 
+     /* Make sure that there isn't already a wizard showing */
