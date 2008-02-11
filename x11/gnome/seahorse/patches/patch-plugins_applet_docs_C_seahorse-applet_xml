@@ -1,12 +1,14 @@
-$OpenBSD: patch-plugins_applet_docs_C_seahorse-applet_xml,v 1.1 2008/01/17 18:50:13 jasper Exp $
---- plugins/applet/docs/C/seahorse-applet.xml.orig	Thu Jan 17 19:38:36 2008
-+++ plugins/applet/docs/C/seahorse-applet.xml	Thu Jan 17 19:39:05 2008
-@@ -100,7 +100,7 @@
+$OpenBSD: patch-plugins_applet_docs_C_seahorse-applet_xml,v 1.2 2008/02/11 17:18:41 jasper Exp $
+--- plugins/applet/docs/C/seahorse-applet.xml.orig	Mon Jan  7 17:53:17 2008
++++ plugins/applet/docs/C/seahorse-applet.xml	Sun Feb 10 20:02:34 2008
+@@ -100,8 +100,8 @@
  	   <title>&applet; Preferences</title>
  	   <para>
  	       The preferences for the <application>&applet;</application> are part of your <application>Encryption 
 -	       Preferences</application> and can be edited by selecting <menuchoice><guimenu>Desktop</guimenu>
-+	       Preferences</application> and can be edited by selecting <menuchoice><guimenu>System</guimenu>
- 	       <guimenuitem>Preferences</guimenuitem><guimenuitem>Encryption Preferences</guimenuitem></menuchoice>, 
+-	       <guimenuitem>Preferences</guimenuitem><guimenuitem>Encryption Preferences</guimenuitem></menuchoice>, 
++	       and Keyrings</application> and can be edited by selecting <menuchoice><guimenu>System</guimenu>
++	       <guimenuitem>Preferences</guimenuitem><guimenuitem>Encryption and Keyrings</guimenuitem></menuchoice>, 
  	       or by right clicking on the <application>&applet;</application> and selecting 
  	       <guimenuitem>Preferences</guimenuitem>.
+ 	   </para> 
