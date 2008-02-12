@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/02/12 23:26:31 martynas Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.11.7
+VERSION=		3.11.9
 DISTNAME=		nss-${VERSION}
-SO_VERSION=		20.0
+SO_VERSION=		21.0
 .for _lib in freebl3 nss3 nssckbi smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -64,7 +64,8 @@ do-install:
 		${PREFIX}/bin/nss-config ${PREFIX}/lib/pkgconfig/nss.pc
 
 do-regress:
-	cd ${WRKSRC}/tests && ${SETENV} PATH="${NSSOBJ}/bin:${PATH}" \
+	cd ${WRKSRC}/tests && ${SETENV} BUILD_OPT=1 \
+		PATH="${NSSOBJ}/bin:${PATH}" \
 		LD_LIBRARY_PATH="${NSSOBJ}/lib" ./all.sh
 
 .include <bsd.port.mk>
