@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.4 2007/12/11 07:55:05 jakemsr Exp $
---- configure.in.orig	Thu Feb  1 19:14:18 2007
-+++ configure.in	Sat Mar 17 23:29:04 2007
-@@ -844,7 +844,7 @@ AC_MSG_RESULT($amarok_glibcsched_works)
+$OpenBSD: patch-configure_in,v 1.5 2008/02/12 10:47:01 jakemsr Exp $
+--- configure.in.orig	Mon Dec 17 07:53:20 2007
++++ configure.in	Tue Jan 29 18:30:12 2008
+@@ -809,7 +809,7 @@ AC_MSG_RESULT($amarok_glibcsched_works)
  ###############################################################################
  
  KDE_CHECK_HEADER(konqsidebarplugin.h, have_konqsidebar=yes, have_konqsidebar=no)
