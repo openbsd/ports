@@ -1,11 +1,13 @@
---- src/dynamic-plugins/sf_dynamic_plugins.c.orig	Wed Sep 20 16:10:44 2006
-+++ src/dynamic-plugins/sf_dynamic_plugins.c	Wed Sep 20 16:09:23 2006
-@@ -42,6 +42,8 @@
- #define EXT "*.sl"
- #elif defined(MACOS)
- #define EXT "*.dylib"
-+#elif defined(OPENBSD)
-+#define EXT "*.so.*"
- #else
- #define EXT "*.so"
- #endif
+$OpenBSD: patch-src_dynamic-plugins_sf_dynamic_plugins_c,v 1.2 2008/02/12 14:13:32 rui Exp $
+--- src/dynamic-plugins/sf_dynamic_plugins.c.orig	Thu Feb  7 09:41:13 2008
++++ src/dynamic-plugins/sf_dynamic_plugins.c	Thu Feb  7 09:41:29 2008
+@@ -218,8 +218,7 @@ void LoadAllLibs(char *path, LoadLibraryFunc loadFunc)
+         dirEntry = readdir(directory);
+         while (dirEntry)
+         {
+-            if (dirEntry->d_reclen &&
+-                !fnmatch(EXT, dirEntry->d_name, FNM_PATHNAME | FNM_PERIOD))
++                if(!fnmatch(EXT, dirEntry->d_name, FNM_PATHNAME | FNM_PERIOD))
+             {
+                 SnortSnprintf(path_buf, PATH_MAX, "%s%s%s", path, "/", dirEntry->d_name);
+                 loadFunc(path_buf, 1);

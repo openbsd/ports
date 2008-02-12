@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_preprocessors_spp_sfportscan_c,v 1.1 2008/02/12 14:13:32 rui Exp $
+--- src/preprocessors/spp_sfportscan.c.orig	Fri Sep  7 19:59:20 2007
++++ src/preprocessors/spp_sfportscan.c	Mon Nov 19 22:39:50 2007
+@@ -247,7 +247,7 @@ static int LogPortscanAlert(Packet *p, char *msg, u_in
+         return 0;
+     }
+ 
+-    ts_print((struct timeval *)&p->pkth->ts, timebuf);
++    ts_print((struct timeval32 *)&p->pkth->ts, timebuf);
+ 
+     fprintf(g_logfile, "Time: %s\n", timebuf);
+ 

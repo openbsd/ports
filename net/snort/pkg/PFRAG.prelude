@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.prelude,v 1.1 2008/02/12 14:13:32 rui Exp $
+@exec usermod -G _prelude _snort

@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_util_h,v 1.1 2008/02/12 14:13:32 rui Exp $
+--- src/util.h.orig	Mon Aug 20 18:35:44 2007
++++ src/util.h	Mon Nov 19 22:31:17 2007
+@@ -34,6 +34,7 @@
+ #endif
+ 
+ #include "sf_types.h"
++#include "pcap_pkthdr32.h"
+ 
+ /* specifies that a function does not return 
+  * used for quieting Visual Studio warnings
+@@ -139,7 +140,7 @@ typedef struct _IntervalStats
+ int DisplayBanner();
+ void GetTime(char *);
+ int gmt2local(time_t);
+-void ts_print(register const struct timeval *, char *);
++void ts_print(register const struct timeval32 *, char *);
+ char *copy_argv(char **);
+ void strip(char *);
+ double CalcPct(UINT64, UINT64);

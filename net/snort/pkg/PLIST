@@ -1,22 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.15 2006/10/10 13:33:17 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/02/12 14:13:32 rui Exp $
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
+%%prelude%%
 %%SHARED%%
 bin/snort
 lib/snort_dynamicengine/
 lib/snort_dynamicengine/libsf_engine.a
 @comment lib/snort_dynamicengine/libsf_engine.la
 lib/snort_dynamicpreprocessor/
+lib/snort_dynamicpreprocessor/lib_sfdynamic_preprocessor_example.a
+@comment lib/snort_dynamicpreprocessor/lib_sfdynamic_preprocessor_example.la
+lib/snort_dynamicpreprocessor/libsf_dcerpc_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_dcerpc_preproc.la
 lib/snort_dynamicpreprocessor/libsf_dns_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_dns_preproc.la
 lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_ftptelnet_preproc.la
 lib/snort_dynamicpreprocessor/libsf_smtp_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_smtp_preproc.la
+lib/snort_dynamicpreprocessor/libsf_ssh_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_ssh_preproc.la
+lib/snort_dynamicrules/
+lib/snort_dynamicrules/lib_sfdynamic_example_rule.a
+@comment lib/snort_dynamicrules/lib_sfdynamic_example_rule.la
 @man man/man8/snort.8
 share/doc/snort/
 share/doc/snort/AUTHORS
+share/doc/snort/BUGS
 share/doc/snort/CREDITS
+share/doc/snort/INSTALL
+share/doc/snort/NEWS
+share/doc/snort/PROBLEMS
+share/doc/snort/README
+share/doc/snort/README.ARUBA
 share/doc/snort/README.FLEXRESP
 share/doc/snort/README.FLEXRESP2
 share/doc/snort/README.INLINE
@@ -29,6 +45,8 @@ share/doc/snort/README.alert_order
 share/doc/snort/README.asn1
 share/doc/snort/README.csv
 share/doc/snort/README.database
+share/doc/snort/README.dcerpc
+share/doc/snort/README.decode
 share/doc/snort/README.dns
 share/doc/snort/README.event_queue
 share/doc/snort/README.flow
@@ -37,25 +55,39 @@ share/doc/snort/README.flowbits
 share/doc/snort/README.frag3
 share/doc/snort/README.ftptelnet
 share/doc/snort/README.http_inspect
+share/doc/snort/README.ipv6
+share/doc/snort/README.ppm
 share/doc/snort/README.sfportscan
+share/doc/snort/README.ssh
+share/doc/snort/README.stream4
+share/doc/snort/README.stream5
+share/doc/snort/README.tag
 share/doc/snort/README.thresholding
+share/doc/snort/README.variables
 share/doc/snort/README.wireless
+share/doc/snort/TODO
+share/doc/snort/USAGE
+share/doc/snort/WISHLIST
 share/doc/snort/faq.pdf
+share/doc/snort/generators
 share/doc/snort/snort_manual.pdf
 share/doc/snort/snort_schema_v106.pdf
 share/examples/snort/
 @sample ${SYSCONFDIR}/snort/
 @sample ${SYSCONFDIR}/snort/rules/
+@sample ${SYSCONFDIR}/snort/preproc_rules/
 share/examples/snort/classification.config
 @sample ${SYSCONFDIR}/snort/classification.config
+share/examples/snort/decoder.rules
+@sample ${SYSCONFDIR}/snort/preproc_rules/decoder.rules
 share/examples/snort/gen-msg.map
 @sample ${SYSCONFDIR}/snort/gen-msg.map
 share/examples/snort/generators
 @sample ${SYSCONFDIR}/snort/generators
+share/examples/snort/preprocessor.rules
+@sample ${SYSCONFDIR}/snort/preproc_rules/preprocessor.rules
 share/examples/snort/reference.config
 @sample ${SYSCONFDIR}/snort/reference.config
-share/examples/snort/sid
-@sample ${SYSCONFDIR}/snort/sid
 share/examples/snort/sid-msg.map
 @sample ${SYSCONFDIR}/snort/sid-msg.map
 share/examples/snort/snort.conf

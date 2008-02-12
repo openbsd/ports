@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-preprocessors_ftptelnet_Makefile_in,v 1.1 2006/10/10 13:33:17 aanriot Exp $
---- src/dynamic-preprocessors/ftptelnet/Makefile.in.orig	Tue Oct 10 12:18:08 2006
-+++ src/dynamic-preprocessors/ftptelnet/Makefile.in	Tue Oct 10 12:18:34 2006
-@@ -409,7 +409,7 @@ distdir: $(DISTFILES)
+$OpenBSD: patch-src_dynamic-preprocessors_ftptelnet_Makefile_in,v 1.2 2008/02/12 14:13:32 rui Exp $
+--- src/dynamic-preprocessors/ftptelnet/Makefile.in.orig	Wed Nov 14 15:32:47 2007
++++ src/dynamic-preprocessors/ftptelnet/Makefile.in	Thu Nov 29 12:07:52 2007
+@@ -415,7 +415,7 @@ distdir: $(DISTFILES)
  check-am: all-am
  check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-am

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_preprocessors_Stream5_snort_stream5_tcp_c,v 1.1 2008/02/12 14:13:32 rui Exp $
+--- src/preprocessors/Stream5/snort_stream5_tcp.c.orig	Tue Nov 13 21:32:49 2007
++++ src/preprocessors/Stream5/snort_stream5_tcp.c	Thu Nov 29 12:08:00 2007
+@@ -6076,7 +6076,7 @@ static int ProcessTcp(Stream5LWSession *lwssn, Packet 
+                     char src_addr[17];
+                     char dst_addr[17];
+                     bzero((char *)timestamp, TIMEBUF_SIZE);
+-                    ts_print((struct timeval *) &p->pkth->ts, timestamp);
++                    ts_print((struct timeval32 *) &p->pkth->ts, timestamp);
+                     SnortSnprintf(src_addr, 17, "%s",
+                         inet_ntoa(GET_SRC_ADDR(p)));
+                     SnortSnprintf(dst_addr, 17, "%s",
