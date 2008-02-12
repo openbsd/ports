@@ -1,0 +1,19 @@
+$OpenBSD: patch-libao2_audio_out_c,v 1.1 2008/02/12 11:33:16 jakemsr Exp $
+--- libao2/audio_out.c.orig	Sun Oct  7 12:49:27 2007
++++ libao2/audio_out.c	Sun Feb 10 17:00:56 2008
+@@ -74,6 +74,7 @@ extern ao_functions_t audio_out_v4l2;
+ extern ao_functions_t audio_out_mpegpes;
+ extern ao_functions_t audio_out_pcm;
+ extern ao_functions_t audio_out_pss;
++extern ao_functions_t audio_out_rtunes;
+ 
+ ao_functions_t* audio_out_drivers[] =
+ {
+@@ -140,6 +141,7 @@ ao_functions_t* audio_out_drivers[] =
+         &audio_out_null,
+ // should not be auto-selected:
+ 	&audio_out_pcm,
++	&audio_out_rtunes,
+ 	NULL
+ };
+ 

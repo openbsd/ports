@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2008/02/11 00:22:03 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.126 2008/02/12 11:33:16 jakemsr Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p0
+PKGNAME=		${N}-${V}p1
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -52,7 +52,8 @@ LIB_DEPENDS=	png::graphics/png \
 		x264::multimedia/x264 \
 		faad::audio/faad
 
-BUILD_DEPENDS=	::net/livemedia
+BUILD_DEPENDS=	::net/livemedia \
+		:rtunes->=0.7:audio/rtunes
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
@@ -201,6 +202,9 @@ CONFIGURE_ARGS+=--disable-aa
 .endif
 
 NO_REGRESS=	Yes
+
+post-patch:
+	cp ${FILESDIR}/ao_rtunes.c ${WRKSRC}/libao2/
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mplayer

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.17 2008/02/12 11:33:16 jakemsr Exp $
+--- Makefile.orig	Sun Oct  7 12:49:33 2007
++++ Makefile	Tue Feb 12 02:49:30 2008
+@@ -88,7 +88,7 @@ ALL_PRG-$(MPLAYER)  += mplayer$(EXESUF)
+ ALL_PRG-$(MENCODER) += mencoder$(EXESUF)
+ 
+ COMMON_LIBS  += $(COMMON_LIBS-yes)
+-LIBS_MPLAYER += $(LIBS_MPLAYER-yes)
++LIBS_MPLAYER += $(LIBS_MPLAYER-yes) -lrtunes -lcrypto
+ OBJS_MPLAYER += $(OBJS_MPLAYER-yes)
+ PARTS        += $(PARTS-yes)
+ ALL_PRG      += $(ALL_PRG-yes)
