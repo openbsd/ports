@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2008/02/12 23:21:38 martynas Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 COMMENT-main=		Netscape Portable Runtime
 COMMENT-docs=		HTML Documentation for NSPR
 
-VER=			4.6.7
+VER=			4.6.8
 DISTNAME=		nspr-${VER}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-docs=		nspr-docs-${VER}
