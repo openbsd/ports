@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2008/01/21 18:30:13 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2008/02/12 14:44:06 merdely Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -56,6 +56,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ENV=	LIBcruft_VERSION=${LIBcruft_VERSION} \
 		LIBoctave_VERSION=${LIBoctave_VERSION} \
 		LIBoctinterp_VERSION=${LIBoctinterp_VERSION}
+
+.if ${MACHINE_ARCH} == "alpha"
+CONFIGURE_ENV+=	FFLAGS="${FFLAGS}"
+.endif
 
 # needed to build on amd64
 GCC_ARCH=	${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
