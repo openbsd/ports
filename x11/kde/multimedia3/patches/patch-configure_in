@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.30 2007/12/11 07:55:05 jakemsr Exp $
---- configure.in.orig	Mon Oct  8 16:26:39 2007
-+++ configure.in	Wed Oct 24 12:03:20 2007
+$OpenBSD: patch-configure_in,v 1.31 2008/02/12 17:10:31 jakemsr Exp $
+--- configure.in.orig	Mon Oct  8 07:26:39 2007
++++ configure.in	Tue Feb 12 07:34:11 2008
 @@ -164,22 +164,22 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
      [:], [have_oggvorbis=no])
  
@@ -151,7 +151,22 @@ $OpenBSD: patch-configure_in,v 1.30 2007/12/11 07:55:05 jakemsr Exp $
  AC_SUBST(THIS_LIB_LIBS)
  dnl =======================================================
  dnl FILE: ./mpeglib/lib/mpegplay/configure.in.in
-@@ -1765,7 +1758,7 @@ dnl Check for new internal xine symbol names
+@@ -1602,11 +1595,11 @@ AC_ARG_ENABLE(xinetest, 
+       XINE_CFLAGS=`$XINE_CONFIG $xine_config_args --cflags`
+       XINE_LIBS=`$XINE_CONFIG $xine_config_args --libs`
+       xine_config_major_version=`$XINE_CONFIG $xine_config_args --version | \
+-             sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\1/'`
++             sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\).*/\1/'`
+       xine_config_minor_version=`$XINE_CONFIG $xine_config_args --version | \
+-             sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\2/'`
++             sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\).*/\2/'`
+       xine_config_sub_version=`$XINE_CONFIG $xine_config_args --version | \
+-             sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\3/'`
++             sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\).*/\3/'`
+       xine_script_dir=`$XINE_CONFIG $xine_config_args --scriptdir`
+       xine_plugin_dir=`$XINE_CONFIG $xine_config_args --plugindir`
+       xine_locale_dir=`$XINE_CONFIG $xine_config_args --localedir`
+@@ -1768,7 +1761,7 @@ dnl Check for new internal xine symbol names
  KDE_CHECK_LIB(xine, _x_ao_new_port, :, 
  [
    AC_DEFINE(_x_ao_new_port, ao_new_port, [Compatibility with older version of xine])
