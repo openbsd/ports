@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.1 2005/02/04 17:06:45 kurt Exp $
---- hotspot/build/bsd/makefiles/vm.make.orig	Tue Jan  4 16:41:18 2005
-+++ hotspot/build/bsd/makefiles/vm.make	Tue Jan  4 17:03:26 2005
-@@ -73,6 +73,10 @@ BUILD_VERSION$(HOTSPOT_BUILD_VERSION) = 
+$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.2 2008/02/13 13:53:50 kurt Exp $
+--- hotspot/build/bsd/makefiles/vm.make.orig	Mon Jan 28 17:59:34 2008
++++ hotspot/build/bsd/makefiles/vm.make	Mon Jan 28 17:59:37 2008
+@@ -67,6 +67,10 @@ BUILD_VERSION$(HOTSPOT_BUILD_VERSION) = 
  
  CPPFLAGS = ${SYSDEFS} ${INCLUDES} ${BUILD_VERSION}
  
