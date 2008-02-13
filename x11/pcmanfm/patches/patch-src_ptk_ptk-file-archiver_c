@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ptk_ptk-file-archiver_c,v 1.1 2008/02/13 15:26:27 ajacoutot Exp $
+--- src/ptk/ptk-file-archiver.c.orig	Wed Feb 13 15:50:20 2008
++++ src/ptk/ptk-file-archiver.c	Wed Feb 13 15:53:59 2008
+@@ -32,8 +32,8 @@ const ArchiveHandler handlers[]=
+     {
+         {
+             "application/x-bzip-compressed-tar",
+-            "tar --bzip2 -cvf",
+-            "tar --bzip2 -xvf",
++            "gtar --bzip2 -cvf",
++            "gtar --bzip2 -xvf",
+             ".tar.bz2", TRUE
+         },
+         {

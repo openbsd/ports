@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/02/11 21:12:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/13 15:26:27 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
-DISTNAME=	pcmanfm-0.3.5.8
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	pcmanfm-0.3.5.9
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pcmanfm.sourceforge.net/
