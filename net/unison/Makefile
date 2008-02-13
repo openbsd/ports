@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2005/05/22 17:46:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/13 23:13:52 okan Exp $
 
-SUBDIR+=	snapshot
-SUBDIR+=	snapshot,no_x11
+# SUBDIR+=	snapshot
+# SUBDIR+=	snapshot,no_x11
 SUBDIR+=	stable
 SUBDIR+=	stable,no_x11
 
