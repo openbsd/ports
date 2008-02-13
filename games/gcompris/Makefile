@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/12/12 14:43:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2008/02/13 11:12:50 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
-DISTNAME=	gcompris-8.4.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gcompris-8.4.3
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -23,7 +24,7 @@ WANTLIB=	Xau Xdmcp X11 Xext Xrender Xcomposite atk-1.0 c cairo z \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 util pcre \
 		pangoft2-1.0 png pthread Xxf86vm expat Xcursor Xfixes \
-		Xi Xinerama Xrandr
+		Xi Xinerama Xrandr art_lgpl_2 gailutil gnomecanvas-2
 
 MODULES=	devel/gettext lang/python textproc/intltool
 
@@ -48,13 +49,14 @@ RUN_DEPENDS=	::games/gnuchess \
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
 
+LIBTOOL_FLAGS=	--tag=disable-static
+
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread"
-
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static \
+		--disable-static \
 		--localstatedir=/var \
 		--enable-xf86vidmode \
 		--enable-sqlite \
