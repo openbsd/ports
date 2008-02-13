@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2008/02/10 20:25:14 landry Exp $
-bin/pdftoppm
-bin/xpdf
-@man man/man1/pdftoppm.1
-@man man/man1/xpdf.1

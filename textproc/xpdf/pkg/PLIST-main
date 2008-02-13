@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2008/02/13 16:18:33 landry Exp $
+@pkgpath textproc/xpdf
+bin/pdftoppm
+bin/pdftops
+bin/xpdf
+@man man/man1/pdftoppm.1
+@man man/man1/pdftops.1
+@man man/man1/xpdf.1

@@ -1,0 +1,3 @@
+These are various command line tools distributed by the Xpdf project,
+including a PDF text extractor, a PDF to JPEG/PNM/PBM converter, and
+other utilities such as pdffonts and pdfinfo.
