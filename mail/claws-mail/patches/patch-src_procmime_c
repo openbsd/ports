@@ -1,15 +1,7 @@
-$OpenBSD: patch-src_procmime_c,v 1.4 2008/01/08 23:13:23 landry Exp $
---- src/procmime.c.orig	Mon Dec 17 06:37:02 2007
-+++ src/procmime.c	Fri Dec 28 23:49:56 2007
-@@ -1055,14 +1055,14 @@ GList *procmime_get_mime_type_list(void)
- 	if (mime_type_list) 
- 		return mime_type_list;
- 	
--#if defined(__NetBSD__)
-+#if defined(__NetBSD__) || defined(__OpenBSD__)
- 	if ((fp = g_fopen(DATAROOTDIR "/mime/globs", "rb")) == NULL) 
- #else
- 	if ((fp = g_fopen("/usr/share/mime/globs", "rb")) == NULL) 
+$OpenBSD: patch-src_procmime_c,v 1.5 2008/02/13 13:17:26 landry Exp $
+--- src/procmime.c.orig	Fri Feb  8 06:33:17 2008
++++ src/procmime.c	Fri Feb  8 18:19:56 2008
+@@ -1083,7 +1083,7 @@ GList *procmime_get_mime_type_list(void)
  #endif
  	{
  		fp_is_glob_file = FALSE;

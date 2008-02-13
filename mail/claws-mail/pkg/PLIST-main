@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2008/01/25 14:20:31 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2008/02/13 13:17:26 landry Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 bin/claws-mail
@@ -302,6 +302,7 @@ share/locale/en_GB/LC_MESSAGES/claws-mail.mo
 share/locale/es/LC_MESSAGES/claws-mail.mo
 share/locale/fi/LC_MESSAGES/claws-mail.mo
 share/locale/fr/LC_MESSAGES/claws-mail.mo
+share/locale/he/LC_MESSAGES/claws-mail.mo
 share/locale/hr/LC_MESSAGES/claws-mail.mo
 share/locale/hu/LC_MESSAGES/claws-mail.mo
 share/locale/it/LC_MESSAGES/claws-mail.mo

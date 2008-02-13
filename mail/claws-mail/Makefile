@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/01/25 14:20:31 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2008/02/13 13:17:26 landry Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-docs=		documentation
@@ -7,13 +7,12 @@ COMMENT-clamav=		clamav plugin
 COMMENT-dillo=		dillo plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.2.0
+V=			3.3.0
 DISTNAME=		claws-mail-${V}
 
-PKGNAME-main=			${DISTNAME}p0
+PKGNAME-main=			${DISTNAME}
 FULLPKGNAME-docs=		claws-mail-docs-${V}
 FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
-FULLPKGNAME-clamav=		claws-mail-clamav-${V}
 FULLPKGNAME-dillo=		claws-mail-dillo-${V}
 FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 
@@ -34,8 +33,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 DIST_SUBDIR=		claws
 
-MULTI_PACKAGES=		-main -docs -bogofilter -clamav -dillo \
-			-spamassassin
+MULTI_PACKAGES=		-main -docs -bogofilter -dillo -spamassassin
 FLAVORS=		jpilot compface ldap debug
 FLAVOR?=
 
@@ -45,28 +43,21 @@ SUBST_VARS=		FLAVOR_STRING
 SHARED_ONLY=		Yes
 RUN_DEPENDS-bogofilter=	::${BUILD_PKGPATH} \
 			::mail/bogofilter 
-RUN_DEPENDS-clamav=	::${BUILD_PKGPATH}
 RUN_DEPENDS-dillo=	::${BUILD_PKGPATH} \
 			::www/dillo 
 RUN_DEPENDS-spamassassin=::${BUILD_PKGPATH} \
 			::mail/p5-Mail-SpamAssassin 
 
 WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-			Xi Xinerama Xrandr Xrender crypto expat fontconfig \
-			freetype m ssl z pcre
+			Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto expat \
+			fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+			m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png ssl z
 
-WANTLIB-main=		${WANTLIB} ICE SM c pthread stdc++
+WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 gpg-error pthread stdc++
 
 WANTLIB-docs=		
-WANTLIB-clamav=		${WANTLIB} bz2 gmp
 
-LIB_DEPENDS=		atk-1.0::devel/atk \
-			cairo::graphics/cairo \
-			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-			glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
-			glitz::graphics/glitz \
-			pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango \
-			png::graphics/png \
+LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 			etpan::mail/libetpan \
 			sasl2::security/cyrus-sasl2
 
@@ -74,18 +65,16 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			:desktop-file-utils-*:devel/desktop-file-utils
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			gthread-2.0::devel/glib2 \
 			startup-notification-1::devel/startup-notification \
 			aspell::textproc/aspell/core \
 			gpgme::security/gpgme \
-			gpg-error::security/libgpg-error
-CONFIGURE_ARGS+=	--disable-gnomeprint
+			dbus-glib-1::x11/dbus-glib
+
+CONFIGURE_ARGS+=	--disable-gnomeprint \
+			--disable-networkmanager-support
 
 LIB_DEPENDS-docs=
 PKG_ARCH-docs=	*
-
-LIB_DEPENDS-clamav=	${LIB_DEPENDS} \
-			clamav::security/clamav
 
 MODULES=		devel/gettext
 USE_X11=		Yes
