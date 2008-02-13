@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/13 01:10:31 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/13 09:53:46 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
-DISTNAME=		roxterm-1.9.1
+DISTNAME=		roxterm-1.10.1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
@@ -10,7 +10,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
 
 MAINTAINER=		Jona Joachim <jaj@hcl-club.lu>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
