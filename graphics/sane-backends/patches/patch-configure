@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2006/07/21 10:31:09 alek Exp $
---- configure.orig	Mon Jul  3 00:22:09 2006
-+++ configure	Mon Jul  3 16:43:49 2006
-@@ -5779,7 +5779,7 @@ done
+$OpenBSD: patch-configure,v 1.6 2008/02/13 13:23:58 ajacoutot Exp $
+--- configure.orig	Mon Feb 11 00:02:31 2008
++++ configure	Tue Feb 12 11:47:39 2008
+@@ -6388,7 +6388,7 @@ done
  
    #check if links for dynamic libs should be created
    case "${host_os}" in
@@ -10,10 +10,37 @@ $OpenBSD: patch-configure,v 1.5 2006/07/21 10:31:09 alek Exp $
      USE_LINKS=no
      ;;
    *)
-@@ -7549,17 +7549,17 @@ if test "${with_group+set}" = set; then
+@@ -7657,13 +7657,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+ _ACEOF
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -7723,7 +7723,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
  fi
  
-     # check if the group does exist
+@@ -7884,18 +7884,6 @@ if test "${with_group+set}" = set; then
+ 
+ fi
+ 
+-    # check if the group does exist
 -    lasterror=""
 -    touch sanetest.file
 -    chgrp $LOCKPATH_GROUP sanetest.file 2>/dev/null || lasterror=$?
@@ -25,26 +52,15 @@ $OpenBSD: patch-configure,v 1.5 2006/07/21 10:31:09 alek Exp $
 -echo "$as_me: WARNING: Locking feature will be disabled." >&2;}
 -      use_locking=no
 -    fi
-+#    lasterror=""
-+#    touch sanetest.file
-+#    chgrp $LOCKPATH_GROUP sanetest.file 2>/dev/null || lasterror=$?
-+#    rm -f sanetest.file
-+#    if test ! -z "$lasterror"; then
-+#      { echo "$as_me:$LINENO: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&5
-+#echo "$as_me: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&2;}
-+#      { echo "$as_me:$LINENO: WARNING: Locking feature will be disabled." >&5
-+#echo "$as_me: WARNING: Locking feature will be disabled." >&2;}
-+#      use_locking=no
-+#    fi
    fi
    if test $use_locking = yes ; then
      INSTALL_LOCKPATH=install-lockpath
-@@ -28966,7 +28966,7 @@ echo "$as_me: Manually selected backends
-     BACKENDS="abaton agfafocus apple artec as6e avision bh canon \
-           canon630u coolscan coolscan2 dc25 dmc \
-           epson fujitsu genesys gt68xx hp leo lexmark matsushita microtek \
--          microtek2 mustek mustek_usb nec pie pixma plustek \
-+          microtek2 mustek mustek_usb nec pie plustek \
-           plustek_pp ricoh s9036 sceptre sharp \
-           sp15c st400 tamarack test teco1 teco2 teco3 umax umax_pp umax1220u \
-           artec_eplus48u ma1509 ibm hp5400 u12 snapscan niash sm3840 hp4200 \
+@@ -27050,7 +27038,7 @@ echo "$as_me: Manually selected backends: ${BACKENDS}"
+ 	  hp hp3500 hp3900 hp4200 hp5400 hp5590 hpljm1005 hs2p \
+ 	  ibm leo lexmark \
+ 	  ma1509 matsushita microtek microtek2 mustek mustek_usb \
+-	  nec niash pie pixma plustek ricoh \
++	  nec niash pie plustek ricoh \
+ 	  s9036 sceptre sharp sm3600 sm3840 snapscan sp15c st400 stv680 \
+ 	  tamarack teco1 teco2 teco3 test u12 umax umax_pp umax1220u"
+ 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/10/25 20:43:14 winiger Exp $
+# $OpenBSD: Makefile,v 1.17 2008/02/13 13:23:58 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
-DISTNAME=	sane-backends-1.0.18
-PKGNAME=	${DISTNAME}p3
-SHARED_LIBS=	sane 1.17
+DISTNAME=	sane-backends-1.0.19
+SHARED_LIBS=	sane 1.17 # .0.0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/
@@ -22,6 +21,7 @@ MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
 		http://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
+
 WANTLIB=	c m pthread exif ltdl z
 
 LIB_DEPENDS=	usb.>=7::devel/libusb \
@@ -30,20 +30,23 @@ LIB_DEPENDS=	usb.>=7::devel/libusb \
 		gphoto2.>=2,gphoto2_port.>=5::graphics/libgphoto2
 
 MODULES=	devel/gettext
+
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
 
+NO_REGRESS=	Yes
+
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_MAKEDEPEND="no"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--sbindir=${LOCALBASE}/libexec \
-		--with-docdir=${LOCALBASE}/share/doc/sane-backends \
+		--sbindir=${PREFIX}/libexec \
+		--with-docdir=${PREFIX}/share/doc/sane-backends \
 		--localstatedir=/var/spool \
 		--with-gphoto2 \
 		--with-group=553
 
-NO_REGRESS=	Yes
+FAKE_FLAGS=	configdir=${PREFIX}/share/examples/sane-backends/sane.d
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/07/21 10:31:09 alek Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/02/13 13:23:58 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -32,6 +32,8 @@ lib/sane/libsane-canon.a
 lib/sane/libsane-canon.la
 lib/sane/libsane-canon630u.a
 lib/sane/libsane-canon630u.la
+lib/sane/libsane-cardscan.a
+lib/sane/libsane-cardscan.la
 lib/sane/libsane-coolscan.a
 lib/sane/libsane-coolscan.la
 lib/sane/libsane-coolscan2.a
@@ -48,8 +50,12 @@ lib/sane/libsane-dll.a
 lib/sane/libsane-dll.la
 lib/sane/libsane-dmc.a
 lib/sane/libsane-dmc.la
+lib/sane/libsane-epjitsu.a
+lib/sane/libsane-epjitsu.la
 lib/sane/libsane-epson.a
 lib/sane/libsane-epson.la
+lib/sane/libsane-epson2.a
+lib/sane/libsane-epson2.la
 lib/sane/libsane-fujitsu.a
 lib/sane/libsane-fujitsu.la
 lib/sane/libsane-genesys.a
@@ -62,10 +68,18 @@ lib/sane/libsane-hp.a
 lib/sane/libsane-hp.la
 lib/sane/libsane-hp3500.a
 lib/sane/libsane-hp3500.la
+lib/sane/libsane-hp3900.a
+lib/sane/libsane-hp3900.la
 lib/sane/libsane-hp4200.a
 lib/sane/libsane-hp4200.la
 lib/sane/libsane-hp5400.a
 lib/sane/libsane-hp5400.la
+lib/sane/libsane-hp5590.a
+lib/sane/libsane-hp5590.la
+lib/sane/libsane-hpljm1005.a
+lib/sane/libsane-hpljm1005.la
+lib/sane/libsane-hs2p.a
+lib/sane/libsane-hs2p.la
 lib/sane/libsane-ibm.a
 lib/sane/libsane-ibm.la
 lib/sane/libsane-leo.a
@@ -154,6 +168,7 @@ libexec/saned
 @man man/man5/sane-canon.5
 @man man/man5/sane-canon630u.5
 @comment @man man/man5/sane-canon_pp.5
+@man man/man5/sane-cardscan.5
 @man man/man5/sane-coolscan.5
 @man man/man5/sane-coolscan2.5
 @man man/man5/sane-dc210.5
@@ -161,6 +176,7 @@ libexec/saned
 @man man/man5/sane-dc25.5
 @man man/man5/sane-dll.5
 @man man/man5/sane-dmc.5
+@man man/man5/sane-epjitsu.5
 @man man/man5/sane-epson.5
 @man man/man5/sane-fujitsu.5
 @man man/man5/sane-genesys.5
@@ -168,9 +184,13 @@ libexec/saned
 @man man/man5/sane-gt68xx.5
 @man man/man5/sane-hp.5
 @man man/man5/sane-hp3500.5
+@man man/man5/sane-hp3900.5
 @man man/man5/sane-hp4200.5
 @man man/man5/sane-hp5400.5
+@man man/man5/sane-hp5590.5
+@man man/man5/sane-hpljm1005.5
 @comment @man man/man5/sane-hpsj5s.5
+@man man/man5/sane-hs2p.5
 @man man/man5/sane-ibm.5
 @man man/man5/sane-leo.5
 @man man/man5/sane-lexmark.5
@@ -334,6 +354,8 @@ share/examples/sane-backends/sane.d/canon.conf
 @sample ${SYSCONFDIR}/sane.d/canon.conf
 share/examples/sane-backends/sane.d/canon630u.conf
 @sample ${SYSCONFDIR}/sane.d/canon630u.conf
+share/examples/sane-backends/sane.d/cardscan.conf
+@sample ${SYSCONFDIR}/sane.d/cardscan.conf
 share/examples/sane-backends/sane.d/coolscan.conf
 @sample ${SYSCONFDIR}/sane.d/coolscan.conf
 share/examples/sane-backends/sane.d/coolscan2.conf
@@ -344,12 +366,18 @@ share/examples/sane-backends/sane.d/dc240.conf
 @sample ${SYSCONFDIR}/sane.d/dc240.conf
 share/examples/sane-backends/sane.d/dc25.conf
 @sample ${SYSCONFDIR}/sane.d/dc25.conf
+share/examples/sane-backends/sane.d/dell1600n_net.conf
+@sample ${SYSCONFDIR}/sane.d/dell1600n_net.conf
 share/examples/sane-backends/sane.d/dll.conf
 @sample ${SYSCONFDIR}/sane.d/dll.conf
 share/examples/sane-backends/sane.d/dmc.conf
 @sample ${SYSCONFDIR}/sane.d/dmc.conf
+share/examples/sane-backends/sane.d/epjitsu.conf
+@sample ${SYSCONFDIR}/sane.d/epjitsu.conf
 share/examples/sane-backends/sane.d/epson.conf
 @sample ${SYSCONFDIR}/sane.d/epson.conf
+share/examples/sane-backends/sane.d/epson2.conf
+@sample ${SYSCONFDIR}/sane.d/epson2.conf
 share/examples/sane-backends/sane.d/fujitsu.conf
 @sample ${SYSCONFDIR}/sane.d/fujitsu.conf
 share/examples/sane-backends/sane.d/genesys.conf
@@ -360,10 +388,13 @@ share/examples/sane-backends/sane.d/gt68xx.conf
 @sample ${SYSCONFDIR}/sane.d/gt68xx.conf
 share/examples/sane-backends/sane.d/hp.conf
 @sample ${SYSCONFDIR}/sane.d/hp.conf
+share/examples/sane-backends/sane.d/hp3900.conf
 share/examples/sane-backends/sane.d/hp4200.conf
 @sample ${SYSCONFDIR}/sane.d/hp4200.conf
 share/examples/sane-backends/sane.d/hp5400.conf
 @sample ${SYSCONFDIR}/sane.d/hp5400.conf
+share/examples/sane-backends/sane.d/hs2p.conf
+@sample ${SYSCONFDIR}/sane.d/hs2p.conf
 share/examples/sane-backends/sane.d/ibm.conf
 @sample ${SYSCONFDIR}/sane.d/ibm.conf
 share/examples/sane-backends/sane.d/leo.conf
@@ -434,18 +465,20 @@ share/locale/bg/LC_MESSAGES/sane-backends.mo
 share/locale/cs/LC_MESSAGES/sane-backends.mo
 share/locale/da/LC_MESSAGES/sane-backends.mo
 share/locale/de/LC_MESSAGES/sane-backends.mo
+share/locale/eo/LC_MESSAGES/sane-backends.mo
 share/locale/es/LC_MESSAGES/sane-backends.mo
 share/locale/fi/LC_MESSAGES/sane-backends.mo
 share/locale/fr/LC_MESSAGES/sane-backends.mo
 share/locale/it/LC_MESSAGES/sane-backends.mo
+share/locale/nb/LC_MESSAGES/sane-backends.mo
 share/locale/nl/LC_MESSAGES/sane-backends.mo
-share/locale/no/LC_MESSAGES/sane-backends.mo
 share/locale/pl/LC_MESSAGES/sane-backends.mo
 share/locale/pt/LC_MESSAGES/sane-backends.mo
 share/locale/ru/LC_MESSAGES/sane-backends.mo
 share/locale/sv/LC_MESSAGES/sane-backends.mo
 share/sane/
 share/sane/artec_eplus48u/
+share/sane/epjitsu/
 share/sane/gt68xx/
 share/sane/snapscan/
 @mode 775
