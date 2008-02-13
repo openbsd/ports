@@ -1,11 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:25 merdely Exp $
-
-# 64-bit/endian issue?
-NOT_FOR_ARCHS=	sparc64
+# $OpenBSD: Makefile,v 1.7 2008/02/13 17:51:13 jcs Exp $
 
 COMMENT=	interact with an EWMH/NetWM window manager
-DISTNAME=	wmctrl-1.05
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	wmctrl-1.07
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}dist/
 
