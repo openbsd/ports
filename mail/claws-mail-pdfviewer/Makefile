@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/10 09:07:07 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/13 13:21:05 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	pdf and ps viewer plugin for Claws Mail
 
-VERSION=	0.8
+VERSION=	0.9
 DISTNAME=	pdf_viewer-${VERSION}
 PKGNAME=	claws-mail-pdfviewer-${VERSION}
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
