@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/13 13:25:50 landry Exp $
+@pkgpath mail/claws-mail,-clamav
+lib/claws-mail/plugins/clamav.la
+lib/claws-mail/plugins/clamav.so
+share/locale/en_GB/LC_MESSAGES/clamav.mo
+share/locale/es/LC_MESSAGES/clamav.mo
+share/locale/fi/LC_MESSAGES/clamav.mo
+share/locale/hu/LC_MESSAGES/clamav.mo
+share/locale/it/LC_MESSAGES/clamav.mo
