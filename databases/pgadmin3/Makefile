@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/26 10:20:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/13 12:07:01 sthen Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
-VERSION=	1.8.1
+VERSION=	1.8.2
 DISTNAME=	pgadmin3-${VERSION}
 CATEGORIES=	databases devel
 

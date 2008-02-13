@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/10/23 17:26:34 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/02/13 12:07:01 sthen Exp $
 bin/pgadmin3
 bin/pgagent
 share/pgadmin3/
@@ -195,6 +195,8 @@ share/pgadmin3/docs/fr_FR/hints/pk.html
 share/pgadmin3/docs/fr_FR/hints/vacuum.html
 share/pgadmin3/docs/fr_FR/hints/view-without-pk.html
 share/pgadmin3/docs/fr_FR/tips.txt
+share/pgadmin3/docs/it_IT/
+share/pgadmin3/docs/it_IT/tips.txt
 share/pgadmin3/docs/sl_SI/
 share/pgadmin3/docs/sl_SI/hints/
 share/pgadmin3/docs/sl_SI/hints/autovacuum.html
@@ -275,6 +277,9 @@ share/pgadmin3/i18n/it_IT/wxstd.mo
 share/pgadmin3/i18n/ja_JP/
 share/pgadmin3/i18n/ja_JP/pgadmin3.mo
 share/pgadmin3/i18n/ja_JP/wxstd.mo
+share/pgadmin3/i18n/ko_KR/
+share/pgadmin3/i18n/ko_KR/pgadmin3.mo
+share/pgadmin3/i18n/ko_KR/wxstd.mo
 share/pgadmin3/i18n/nl_NL/
 share/pgadmin3/i18n/nl_NL/pgadmin3.mo
 share/pgadmin3/i18n/nl_NL/wxstd.mo
