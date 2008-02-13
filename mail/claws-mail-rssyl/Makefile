@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/08 23:33:11 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/13 13:21:44 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	RSS aggregator plugin for Claws-mail
 
-VERSION=	0.17
+VERSION=	0.18
 DISTNAME=	rssyl-${VERSION}
 PKGNAME=	claws-mail-rssyl-${VERSION}
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
