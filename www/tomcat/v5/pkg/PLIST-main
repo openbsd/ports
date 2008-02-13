@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/12/11 23:43:03 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/02/13 13:48:22 kurt Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/jakarta-tomcat/v5
 @pkgpath www/tomcat/v5
@@ -89,7 +89,7 @@ tomcat/bin/bootstrap.jar
 tomcat/bin/catalina-tasks.xml
 tomcat/bin/catalina.sh
 tomcat/bin/commons-daemon.jar
-tomcat/bin/commons-logging-api.jar
+tomcat/bin/commons-logging-api-1.1.1.jar
 tomcat/bin/digest.sh
 tomcat/bin/jkstatus-tasks.xml
 tomcat/bin/jmxaccessor-tasks.xml
@@ -162,7 +162,7 @@ tomcat/server/webapps/manager/
 tomcat/server/webapps/manager/WEB-INF/
 tomcat/server/webapps/manager/WEB-INF/lib/
 tomcat/server/webapps/manager/WEB-INF/lib/catalina-manager.jar
-tomcat/server/webapps/manager/WEB-INF/lib/commons-fileupload-1.0.jar
+tomcat/server/webapps/manager/WEB-INF/lib/commons-fileupload-1.2.jar
 tomcat/server/webapps/manager/WEB-INF/web.xml
 tomcat/server/webapps/manager/html-manager-howto.html
 tomcat/server/webapps/manager/images/

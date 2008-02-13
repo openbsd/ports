@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-admin,v 1.1.1.1 2006/10/25 18:10:19 kurt Exp $
+@comment $OpenBSD: PLIST-admin,v 1.2 2008/02/13 13:48:22 kurt Exp $
 share/examples/tomcat/admin.xml
 tomcat/server/webapps/admin/
 tomcat/server/webapps/admin/WEB-INF/
@@ -7,9 +7,14 @@ tomcat/server/webapps/admin/WEB-INF/lib/
 tomcat/server/webapps/admin/WEB-INF/lib/catalina-admin.jar
 tomcat/server/webapps/admin/WEB-INF/lib/commons-beanutils.jar
 tomcat/server/webapps/admin/WEB-INF/lib/commons-collections.jar
-tomcat/server/webapps/admin/WEB-INF/lib/commons-digester-1.7.jar
+tomcat/server/webapps/admin/WEB-INF/lib/commons-digester-1.8.jar
 tomcat/server/webapps/admin/WEB-INF/lib/struts.jar
+tomcat/server/webapps/admin/WEB-INF/struts-bean.tld
 tomcat/server/webapps/admin/WEB-INF/struts-config.xml
+tomcat/server/webapps/admin/WEB-INF/struts-html.tld
+tomcat/server/webapps/admin/WEB-INF/struts-logic.tld
+tomcat/server/webapps/admin/WEB-INF/struts-nested.tld
+tomcat/server/webapps/admin/WEB-INF/struts-tiles.tld
 tomcat/server/webapps/admin/WEB-INF/web.xml
 tomcat/server/webapps/admin/admin.css
 tomcat/server/webapps/admin/admin.xml

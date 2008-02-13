@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2007/12/11 23:43:03 kurt Exp $
+@comment $OpenBSD: PLIST-examples,v 1.4 2008/02/13 13:48:22 kurt Exp $
 @pkgpath www/jakarta-tomcat/v5,-examples
 @owner _tomcat
 @group _tomcat
@@ -135,10 +135,10 @@ webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/el/functions_jsp.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/el/implicit_002dobjects_jsp.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspattribute/
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspattribute/jspattribute_jsp.class
-webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspattribute/shuffle_jsp$shuffle_jspHelper.class
+webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspattribute/shuffle_jsp$Helper.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspattribute/shuffle_jsp.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspx/
-webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspx/basic_jspx$basic_jspxHelper.class
+webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspx/basic_jspx$Helper.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspx/basic_jspx.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/jspx/textRotate_jspx.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/misc/
@@ -147,13 +147,13 @@ webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/misc/dynamicattrs_jsp.c
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/simpletag/
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/simpletag/book_jsp.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/simpletag/hello_jsp.class
-webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/simpletag/repeat_jsp$repeat_jspHelper.class
+webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/simpletag/repeat_jsp$Helper.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/simpletag/repeat_jsp.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/tagfiles/
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/tagfiles/hello_jsp.class
-webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/tagfiles/panel_jsp$panel_jspHelper.class
+webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/tagfiles/panel_jsp$Helper.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/tagfiles/panel_jsp.class
-webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/tagfiles/products_jsp$products_jspHelper.class
+webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/tagfiles/products_jsp$Helper.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsp2/tagfiles/products_jsp.class
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsptoserv/
 webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/jsptoserv/hello_jsp.class
