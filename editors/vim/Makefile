@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2008/01/01 17:02:26 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.89 2008/02/13 16:28:18 ckuethe Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 DISTNAME=	vim-7.1
-REVISION=	175
+REVISION=	244
 VERSION=	7.1.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
@@ -26,10 +26,11 @@ MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 PATCHFILES=	#
 _patches!=	jot -w%03d - 1 ${REVISION} 1 | \
-	egrep -v '003|007|041|065|070|072|080|088|091|092|122|123|124|126|128|129|134|146|158|168'
+	egrep -v '003|007|041|065|070|072|080|088|091|092|122|123|124|126|128|129|134|146|158|168|176|178|186|187|191|196|197|204'
 .for p in ${_patches}
 PATCHFILES+=	7.1.${p}:0
 .endfor
+PATCHFILES+=	7.1.126ne:0
 
 # allow vim to build on m68k and vax
 .if (${MACHINE_ARCH} == "m68k")
@@ -97,14 +98,15 @@ USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt
 .elif ${FLAVOR:L:Mgtk2} && \
 		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
-LD+=		-pthread
-CC+=		-pthread
+MAKE_FLAGS+=	'LDFLAGS=-pthread'
+MAKE_FLAGS+=	'CFLAGS=-pthread'
 LIB_DEPENDS+=	gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
 USE_X11=	Yes
 WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
-	 	atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 png\
-		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread glitz
+	 	atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 png expat\
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread\
+		glitz Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
 .else
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif
