@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2008/02/09 17:47:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2008/02/13 12:01:53 sthen Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -37,11 +37,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
-
-# hppa's threads are broken (configure test gives Bus error)...
-.if (${MACHINE_ARCH} == "hppa")
-CONFIGURE_ARGS+=	--disable-threads
-.endif
 
 # disable optimization on powerpc because it can lead to a
 # segfault under some circumstances
