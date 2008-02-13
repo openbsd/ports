@@ -1,0 +1,13 @@
+To start slapd, configure it in ${SYSCONFDIR}/openldap/slapd.conf then add
+the following line to /etc/rc.conf.local:
+
+slapd_flags="-u _openldap"
+
+and to /etc/rc.local (be sure to start it _before_ any daemon that may
+need it):
+
+if [ "$slapd_flags" != "NO" -a -x ${PREFIX}/libexec/slapd ]; then
+    install -d -o _openldap /var/run/openldap
+    ${PREFIX}/libexec/slapd $slapd_flags
+    echo -n ' slapd'
+fi
