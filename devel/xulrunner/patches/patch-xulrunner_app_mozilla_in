@@ -1,6 +1,6 @@
-$OpenBSD: patch-xulrunner_app_mozilla_in,v 1.2 2007/06/28 19:50:05 martynas Exp $
---- xulrunner/app/mozilla.in.orig	Wed Sep 21 00:13:06 2005
-+++ xulrunner/app/mozilla.in	Fri Jun  8 17:48:05 2007
+$OpenBSD: patch-xulrunner_app_mozilla_in,v 1.3 2008/02/13 20:52:28 martynas Exp $
+--- xulrunner/app/mozilla.in.orig	Fri Jan 11 05:20:02 2008
++++ xulrunner/app/mozilla.in	Mon Feb 11 00:11:31 2008
 @@ -93,6 +93,7 @@ moz_pis_startstop_scripts()
  #set -x
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-xulrunner_app_mozilla_in,v 1.2 2007/06/28 19:50:05 martynas Exp 
  MRE_HOME=%MREDIR%
  
  # Use run-mozilla.sh in the current dir if it exists
-@@ -269,7 +270,11 @@ do
+@@ -270,7 +271,11 @@ do
    esac
  done
  
