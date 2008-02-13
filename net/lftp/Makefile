@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2007/10/02 07:39:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2008/02/13 16:27:10 okan Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-3.5.14
+DISTNAME=	lftp-3.6.1
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
@@ -34,6 +34,7 @@ NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lftp
-	${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/share/examples/lftp/lftp.conf-sample
+	${INSTALL_DATA} ${WRKSRC}/lftp.conf \
+		${PREFIX}/share/examples/lftp/lftp.conf-sample
 
 .include <bsd.port.mk>
