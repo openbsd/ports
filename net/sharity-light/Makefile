@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2008/02/13 23:01:23 merdely Exp $
 # $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
 
 COMMENT=	userland smbfs --- SMB to NFS protocols converter
 
-VERSION=	1.2
+VERSION=	1.3
 DISTNAME=	Sharity-Light.${VERSION}
 PKGNAME=	sharity-light-${VERSION}
 CATEGORIES=	net

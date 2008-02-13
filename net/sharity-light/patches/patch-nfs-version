@@ -1,6 +1,6 @@
---- nfs/syscalls.c.orig	Tue Jun 30 14:24:56 1998
-+++ nfs/syscalls.c	Tue Jun 20 17:45:53 2000
-@@ -72,7 +72,7 @@ struct nfs_args		nfs_args;
+--- nfs/syscalls.c.orig	Mon Dec 29 06:11:57 2003
++++ nfs/syscalls.c	Wed Feb 13 16:47:13 2008
+@@ -78,7 +78,7 @@ struct nfs_args		nfs_args;
  #endif
  
  	bzero(&nfs_args, sizeof(nfs_args));

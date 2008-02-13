@@ -1,0 +1,12 @@
+$OpenBSD: patch-rumba_c,v 1.1 2008/02/13 23:01:23 merdely Exp $
+--- rumba.c.orig	Wed Feb 13 16:49:10 2008
++++ rumba.c	Wed Feb 13 16:49:18 2008
+@@ -87,7 +87,7 @@ static inline void	str_upper(char *name)
+ 
+ static void	print_version(void)
+ {
+-	printf("%s: Version 1.2 (2003-12-29)\n", progname);
++	printf("%s: Version 1.3 (2003-12-29)\n", progname);
+ 	exit(0);
+ }
+ 

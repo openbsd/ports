@@ -1,7 +1,7 @@
-$OpenBSD: patch-README,v 1.1 2000/06/20 15:51:55 espie Exp $
---- README.orig	Tue Jun 20 17:47:36 2000
-+++ README	Tue Jun 20 17:49:29 2000
-@@ -178,8 +178,7 @@ I have added the man-page for smbmount t
+$OpenBSD: patch-README,v 1.2 2008/02/13 23:01:23 merdely Exp $
+--- README.orig	Mon Dec 29 06:11:57 2003
++++ README	Wed Feb 13 16:47:12 2008
+@@ -178,8 +178,7 @@ I have added the man-page for smbmount to this distrib
  the operation of Sharity-Light and smbmount is so similar. You can view
  it in a terminal window by typing:
  
