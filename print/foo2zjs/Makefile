@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/04 15:47:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/13 04:40:17 merdely Exp $
 
 COMMENT=		driver for ZjStream wire protocol compatible printers
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://bigio.snb.it/openbsd/distfiles/ \
 			http://openbsd.dead-parrot.de/distfiles/ \
 			http://spacehopper.org/m/ \
 			http://meta-planets.net/~openbsd/ \
-			http://www.phxbsd.com/OpenBSD/
+			http://www.phxbsd.com/OpenBSD/distfiles/
 
 USE_GMAKE=		Yes
 WRKDIST=		${WRKDIR}/foo2zjs
