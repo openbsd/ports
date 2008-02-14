@@ -1,16 +1,22 @@
-# $OpenBSD: Makefile,v 1.33 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.34 2008/02/14 08:52:51 winiger Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	Python imaging library
+COMMENT-main=		Python imaging library
+COMMENT-examples=	example programs for the Python Imaging Library
+COMMENT-bin=		binaries for the Python Imaging Library
 
-DISTNAME=	Imaging-1.1.5
-PKGNAME=	py-${DISTNAME}p1
-CATEGORIES=	graphics
+VERSION=		1.1.5
+DISTNAME=		Imaging-${VERSION}
+PKGNAME-main=		py-${DISTNAME}p2
+FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}
+FULLPKGNAME-bin=	py-Imaging-bin-${VERSION}
 
-HOMEPAGE=	http://www.pythonware.com/products/pil/
+CATEGORIES=		graphics
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+HOMEPAGE=		http://www.pythonware.com/products/pil/
+
+MAINTAINER=		Aleksander Piotrowski <alek@openbsd.org>
 
 # PIL Software License
 # Permission to use, copy, modify and distribute freely.
@@ -18,18 +24,31 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	freetype tcl84 z
+WANTLIB=		freetype tcl84 z
 
-MASTER_SITES=	http://effbot.org/media/downloads/
+MASTER_SITES=		http://effbot.org/media/downloads/
 
-MODULES=	lang/python
+MODULES=		lang/python
 
-RUN_DEPENDS=	${MODPY_TKINTER_DEPENDS}
-BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
-		tk84:tk-8.4.*:x11/tk/8.4
+RUN_DEPENDS=		${MODPY_TKINTER_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
+			tk84:tk-8.4.*:x11/tk/8.4
 
-USE_X11=	Yes
+FLAVORS=		python2.4 python2.5
+FLAVOR?=		python2.5
+
+.if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
+MULTI_PACKAGES= -main
+.elif ${FLAVOR:L:Mpython2.5} && !${FLAVOR:L:Npython2.5}
+MULTI_PACKAGES= -main -examples -bin
+.else
+ERRORS+=		"Fatal: You must select one version: ${FLAVORS}"
+.endif
+
+MODPY_VERSION=		${FLAVOR:S/python//}
+
+USE_X11=		Yes
 
 do-configure:
 	@perl -pi -e "s|!LOCALBASE!|${LOCALBASE}|g; s|!X11BASE!|${X11BASE}|g; s|!MODPY_VERSION!|${MODPY_VERSION}|g" \
@@ -44,6 +63,7 @@ post-install:
 	for file in ${WRKSRC}/Scripts/pil*.py; do \
 		${INSTALL_SCRIPT} $$file ${PREFIX}/bin/`basename $$file .py`; \
 	done
+	find ${WRKINST} -name \*.egg-info -exec rm {} \;
 
 do-regress: fake
 	@cd ${WRKSRC} && \

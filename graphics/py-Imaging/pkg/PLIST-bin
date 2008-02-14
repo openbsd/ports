@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-bin,v 1.1 2008/02/14 08:52:51 winiger Exp $
+bin/pilconvert
+bin/pildriver
+bin/pilfile
+bin/pilfont
+bin/pilprint

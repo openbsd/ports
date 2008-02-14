@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/11/20 13:59:50 alek Exp $
-bin/pilconvert
-bin/pildriver
-bin/pilfile
-bin/pilfont
-bin/pilprint
+@comment $OpenBSD: PLIST-main,v 1.1 2008/02/14 08:52:51 winiger Exp $
+@option no-default-conflict
+@conflict py-Imaging-*-python${MODPY_VERSION}
+@pkgpath graphics/py-Imaging
 lib/python${MODPY_VERSION}/site-packages/PIL/
 lib/python${MODPY_VERSION}/site-packages/PIL.pth
 lib/python${MODPY_VERSION}/site-packages/PIL/ArgImagePlugin.py
@@ -157,18 +155,3 @@ lib/python${MODPY_VERSION}/site-packages/PIL/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.so
-share/examples/py-Imaging/
-share/examples/py-Imaging/README
-share/examples/py-Imaging/enhancer.py
-share/examples/py-Imaging/explode.py
-share/examples/py-Imaging/gifmaker.py
-share/examples/py-Imaging/image2py.py
-share/examples/py-Imaging/painter.py
-share/examples/py-Imaging/pilconvert.py
-share/examples/py-Imaging/pildriver.py
-share/examples/py-Imaging/pilfile.py
-share/examples/py-Imaging/pilfont.py
-share/examples/py-Imaging/pilprint.py
-share/examples/py-Imaging/player.py
-share/examples/py-Imaging/thresholder.py
-share/examples/py-Imaging/viewer.py
