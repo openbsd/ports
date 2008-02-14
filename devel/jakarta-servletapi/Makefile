@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/02/14 21:51:31 kurt Exp $
 
 COMMENT=	implementation of the JSP and Java Servlet APIs
 
 V=		3.2.4
 DISTNAME=	jakarta-servletapi-${V}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	www devel
 MASTER_SITES=	http://archive.apache.org/dist/jakarta/tomcat-3/archive/v${V}/bin/
 EXTRACT_SUFX=	.zip
