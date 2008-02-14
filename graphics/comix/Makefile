@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/15 20:43:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/02/14 08:58:23 winiger Exp $
 
 COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-3.6.2
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	graphics
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -17,14 +17,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=comix/}
 
 MODULES=	lang/python
+PY_FLAVOR=	python${MODPY_VERSION}
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::graphics/py-Imaging \
+RUN_DEPENDS=	:py-Imaging-*-${PY_FLAVOR}:graphics/py-Imaging,${PY_FLAVOR} \
 		::x11/py-gtk2 \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
 NO_REGRESS=	Yes
-
-PYTHON=		${LOCALBASE}/bin/python${MODPY_VERSION}
 
 post-extract:
 		${GUNZIP_CMD} ${WRKSRC}/comix.1.gz
