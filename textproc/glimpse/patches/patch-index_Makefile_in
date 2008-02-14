@@ -1,0 +1,12 @@
+$OpenBSD: patch-index_Makefile_in,v 1.1 2008/02/14 21:00:00 merdely Exp $
+--- index/Makefile.in.orig	Wed Jan 23 09:40:06 2008
++++ index/Makefile.in	Wed Jan 23 09:40:13 2008
+@@ -36,7 +36,7 @@ LIBAGREP	= agrep
+ LIBTEMPLATE	= template
+ LIBUTIL		= util
+ 
+-CFLAGS = @CFLAGS@ -O -DSTRUCTURED_QUERIES=1
++CFLAGS = @CFLAGS@ -DSTRUCTURED_QUERIES=1
+ ALL_CFLAGS    = $(CFLAGS) $(DEFS) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ LINKFLAGS	= @LINKFLAGS@ -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ 
