@@ -1,0 +1,3 @@
+To use the GNOME layout as default for the applications menu, as root:
+ ln -sf ${SYSCONFDIR}/xdg/menus/gnome-applications.menu \
+	${SYSCONFDIR}/xdg/menus/applications.menu

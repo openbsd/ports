@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/02/03 20:45:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/02/14 18:02:10 ajacoutot Exp $
 bin/gmenu-simple-editor
 bin/gnome-menu-spec-test
 include/gnome-menus/
@@ -29,7 +29,6 @@ lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menutreemodel.pyo
 lib/python${MODPY_VERSION}/site-packages/gmenu.a
 lib/python${MODPY_VERSION}/site-packages/gmenu.la
 lib/python${MODPY_VERSION}/site-packages/gmenu.so
-share/applications/
 share/applications/gmenu-simple-editor.desktop
 share/desktop-directories/
 share/desktop-directories/Accessibility.directory
@@ -60,7 +59,7 @@ share/examples/gnome-menus/xdg/
 share/examples/gnome-menus/xdg/menus/
 @sample ${SYSCONFDIR}/xdg/menus/
 share/examples/gnome-menus/xdg/menus/applications.menu
-@sample ${SYSCONFDIR}/xdg/menus/applications.menu
+@sample ${SYSCONFDIR}/xdg/menus/gnome-applications.menu
 share/examples/gnome-menus/xdg/menus/preferences.menu
 @sample ${SYSCONFDIR}/xdg/menus/preferences.menu
 share/examples/gnome-menus/xdg/menus/settings.menu
@@ -159,3 +158,4 @@ share/locale/zh_HK/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec ln -s ${SYSCONFDIR}/xdg/menus/gnome-applications.menu ${SYSCONFDIR}/xdg/menus/applications.menu 2> /dev/null || true

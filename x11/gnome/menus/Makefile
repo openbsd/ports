@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2008/02/06 11:36:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2008/02/14 18:02:10 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 GNOME_PROJECT=		gnome-menus
 GNOME_VERSION=		2.20.3
 SHARED_LIBS +=	gnome-menu           3.11      # .3.19
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
