@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.12 2007/06/27 21:33:33 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.13 2008/02/14 21:48:43 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -25,7 +25,7 @@ MODJAVA_JRERUN?=no
 #
 # NOTE: All source built java ports must properly set
 # javac -source and -target build arguments. Depending
-# on the architecture a 1.3 or 1.4 level port my built
+# on the architecture a 1.3 or 1.4 level port may be built
 # by a 1.5 jdk. The JAVA_HOME variable points to the
 # build jdk not the default RUN_DEPEND jdk, so it
 # should not be used to set a default jdk to run with.
@@ -72,12 +72,8 @@ MODJAVA_JRERUN?=no
        _MODJAVA_RUNDEP= jdk-1.3.1
 .    endif
 .  endif
-.  if ${MACHINE_ARCH} == "i386"
-.    if ${MODJAVA_VER} == "1.3+"
-       MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}|jdk-linux-1.3.1*:devel/jdk/1.5
-.    else
-       MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}|jdk-linux-1.3.1*:devel/jdk/1.3
-.    endif
+.  if ${MACHINE_ARCH} == "i386" && ${MODJAVA_VER} == "1.3+"
+     MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}:devel/jdk/1.5
 .  else
      MODJAVA_RUN_DEPENDS= :${_MODJAVA_RUNDEP}:devel/jdk/1.3
 .  endif
