@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/02/14 19:54:16 naddy Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
-DISTNAME=	mpfr-2.2.0
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS +=  mpfr                 0.0      # .1.0
+DISTNAME=	mpfr-2.3.1
+SHARED_LIBS +=  mpfr                 0.1      # .1.1
 CATEGORIES=	devel math
 HOMEPAGE=	http://www.mpfr.org/
 
@@ -18,13 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}${DISTNAME}/
 DIST_SUBDIR=	${DISTNAME}
-.for i in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16
-PATCHFILES+=	patch$i
-.endfor
-PATCH_DIST_STRIP=-p1
 
 # no interlibrary dependency, though
-LIB_DEPENDS=	gmp:gmp->=4.1.0:devel/gmp
+LIB_DEPENDS=	gmp:gmp->=4.2.0:devel/gmp
 
 SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes
@@ -40,7 +35,7 @@ REGRESS_FLAGS=	LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs} \
 # needed on sparc64 at least: the mpfr tests are insufficient without 
 # gmp's internals
 
-BUILD_DEPENDS=	:gmp->=4.1.0:devel/gmp:configure
+BUILD_DEPENDS=	:gmp->=4.2.0:devel/gmp:configure
 pre-configure:
 	ln -s ${WRKDIR}/devel/gmp/gmp-* ${WRKDIR}/gmp
 	cd ${WRKDIR}/gmp && ${MAKE} fib_table.h mp_bases.h
