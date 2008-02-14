@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/14 21:36:27 rui Exp $
 
 COMMENT=	socat is a relay for bidirectional data transfer 
 
 DISTNAME=	socat-1.6.0.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.dest-unreach.org/socat/
 
-MAINTAINER=	Rui Reis <rui@rui.cx>
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

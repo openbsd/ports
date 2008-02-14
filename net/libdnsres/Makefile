@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/14 21:36:27 rui Exp $
 
 COMMENT=	non-blocking thread-safe API for resolving DNS names
 
 DISTNAME= 	libdnsres-0.1a
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	dnsres	0.1	# .0.1
 CATEGORIES=	net devel
 
 HOMEPAGE=	http://monkey.org/~provos/libdnsres/
 
-MAINTAINER=	Rui Reis <rui@rui.cx>
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # BSD 
 PERMIT_PACKAGE_CDROM=	Yes

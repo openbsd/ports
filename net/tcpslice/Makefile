@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2007/07/13 08:16:16 rui Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/14 21:36:27 rui Exp $
 
 COMMENT=	tool for extracting and gluing pcap (tcpdump) files
 
 DISTNAME=	tcpslice-2007.07.09
-PKGNAME=        ${DISTNAME:S/.//g}
+PKGNAME=        ${DISTNAME:S/.//g}p0
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.tcpdump.org/weekly/
 
-MAINTAINER=	Rui Reis <rui@rui.cx>
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2007/12/13 21:47:32 rui Exp $
+# $OpenBSD: Makefile,v 1.19 2008/02/14 21:36:27 rui Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	determine the malware activity on a network
 
 DISTNAME= 	nepenthes-20070830
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	net
 
 HOMEPAGE=	http://nepenthes.mwcollect.org/
 
-MAINTAINER=	Rui Reis <rui@rui.cx>
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

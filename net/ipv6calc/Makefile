@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:54 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/02/14 21:36:27 rui Exp $
 
 COMMENT=	tool for manipulating IPv6 addresses
 
 DISTNAME=	ipv6calc-0.71.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 HOMEPAGE=	http://www.deepspace6.net/projects/ipv6calc.html
 
-MAINTAINER=	Rui Reis <rui@rui.cx>
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/ \
 		ftp://ftp.uni-muenster.de/pub/IPv6/mirrors/ftp.bieringer.de/pub/linux/IPv6/ipv6calc/ \

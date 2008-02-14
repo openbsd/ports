@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.39 2007/11/06 09:44:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2008/02/14 21:36:27 rui Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
 DISTNAME=	unrarsrc-3.7.8
-PKGNAME=	unrar-3.78
+PKGNAME=	unrar-3.78p0
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
 
-MAINTAINER=	Rui Reis <rui@rui.cx>
+MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # Restrictive
 PERMIT_PACKAGE_CDROM=	no fee
