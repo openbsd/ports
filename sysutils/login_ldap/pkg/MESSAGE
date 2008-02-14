@@ -1,0 +1,4 @@
+Note: Some configuration options for login_ldap in login.conf have changed.
+If you're upgrading from previous versions, make sure to consult the
+man page, login_ldap(8), and look at the examples in
+${PREFIX}/share/examples/login_ldap/.
