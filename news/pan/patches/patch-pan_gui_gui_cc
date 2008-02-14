@@ -1,0 +1,12 @@
+$OpenBSD: patch-pan_gui_gui_cc,v 1.1 2008/02/14 13:40:55 ajacoutot Exp $
+--- pan/gui/gui.cc.orig	Wed Aug  1 19:00:00 2007
++++ pan/gui/gui.cc	Thu Feb 14 14:29:49 2008
+@@ -1755,7 +1755,7 @@ GUI :: set_queue_size_label (unsigned int running,
+ 
+   // build the tooltip
+   gulong queued, unused, stopped;
+-  guint64 KiB_remain;
++  uint64_t KiB_remain;
+   double KiBps;
+   int hr, min, sec;
+   _queue.get_stats (queued, unused, stopped,

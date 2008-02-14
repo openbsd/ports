@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2008/02/01 20:30:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2008/02/14 13:40:55 ajacoutot Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
 V=		0.132
 DISTNAME=	pan-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	news x11
 
 HOMEPAGE=	http://pan.rebelbase.com/
@@ -32,6 +33,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		gtkspell.>=1::textproc/gtkspell
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
+VMEM_WARNING=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
