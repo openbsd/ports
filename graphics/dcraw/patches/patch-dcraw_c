@@ -1,15 +1,26 @@
---- dcraw.c.orig	Thu May 25 21:08:17 2006
-+++ dcraw.c	Thu May 25 21:09:19 2006
-@@ -2482,7 +2482,7 @@
-     for (j=0; j < 3; j++)
-       FORC3 last[i][j] += correct[i][c] * cam_xyz[c][j];
+--- dcraw.c.orig	Mon Dec 10 07:43:31 2007
++++ dcraw.c	Mon Feb  4 00:14:31 2008
+@@ -1250,8 +1250,8 @@ void CLASS nikon_3700()
+   bits = (dp[8] & 3) << 4 | (dp[20] & 3);
+   for (i=0; i < sizeof table / sizeof *table; i++)
+     if (bits == table[i].bits) {
+-      strcpy (make,  table[i].make );
+-      strcpy (model, table[i].model);
++      strlcpy (make,  table[i].make,  sizeof make);
++      strlcpy (model, table[i].model, sizeof model);
+     }
+ }
  
+@@ -3007,7 +3007,7 @@ void CLASS foveon_interpolate()
+     FORC3 diag[c][i] = LAST(1,1)*LAST(2,2) - LAST(1,2)*LAST(2,1);
+   #undef LAST
+   FORC3 div[c] = diag[c][0]*0.3127 + diag[c][1]*0.329 + diag[c][2]*0.3583;
 -  sprintf (str, "%sRGBNeutral", model2);
 +  snprintf (str, sizeof str, "%sRGBNeutral", model2);
    if (foveon_camf_param ("IncludeBlocks", str))
      foveon_fixed (div, 3, str);
-   else {
-@@ -2853,9 +2853,9 @@
+   num = 0;
+@@ -3371,9 +3371,9 @@ void CLASS bad_pixels()
      if (*cp == '\\') *cp = '/';
  #endif
    cp = fname + strlen(fname);
@@ -21,43 +32,25 @@
      if ((fp = fopen (fname, "r"))) break;
      if (cp == fname) break;
      while (*--cp != '/');
-@@ -3902,7 +3902,7 @@
-   while (1) {
-     fread (data, 1, 8, ifp);
-     if (strcmp(data,"PKTS")) break;
--    if (!make[0]) strcpy(make,"Leaf");
-+    if (!make[0]) strlcpy (make, "Leaf", sizeof make);
-     fread (data, 1, 40, ifp);
-     skip = get4();
-     from = ftell(ifp);
-@@ -3918,7 +3918,7 @@
-       fread (data, 1, 40, ifp);
-       for (i=0; i < sizeof mod / sizeof *mod; i++)
- 	if (data[0] == mod[i][0] && data[1] == toupper(mod[i][1]))
--	  sprintf (model, "%s %d", mod[i], atoi(data+2));
-+	  snprintf (model, sizeof model, "%s %d", mod[i], atoi(data+2));
+@@ -4746,7 +4746,7 @@ void CLASS parse_mos (int offset)
+     if (!strcmp(data,"ShootObj_back_type")) {
+       fscanf (ifp, "%d", &i);
+       if ((unsigned) i < sizeof mod / sizeof (*mod))
+-	strcpy (model, mod[i]);
++	strlcpy (model, mod[i], sizeof model);
      }
-     if (!strcmp(data,"CaptProf_color_matrix") && use_camera_wb) {
+     if (!strcmp(data,"icc_camera_to_tone_matrix")) {
        for (i=0; i < 9; i++)
-@@ -4053,7 +4053,7 @@
+@@ -5073,7 +5073,7 @@ int CLASS parse_tiff_ifd (int base)
+ 	  if (flip % 180 == 90) SWAP(width,height);
+ 	  filters = flip = 0;
  	}
- 	break;
-       case 400:
--	strcpy (make, "Sarnoff");
-+	strlcpy (make, "Sarnoff", sizeof make);
- 	maximum = 0xfff;
- 	break;
-       case 29184: sony_offset = get4();  break;
-@@ -4110,7 +4110,7 @@
- 	}
- 	break;
-       case 46275:			/* Imacon tags */
--	strcpy (make, "Imacon");
-+	strlcpy (make, "Imacon", sizeof make);
- 	data_offset = ftell(ifp);
- 	ima_len = len;
- 	break;
-@@ -4389,6 +4389,7 @@
+-	sprintf (model, "Ixpress %d-Mp", height*width/1000000);
++	snprintf (model, sizeof model, "Ixpress %d-Mp", height*width/1000000);
+ 	load_raw = &CLASS imacon_full_load_raw;
+ 	if (filters) {
+ 	  if (left_margin & 1) filters = 0x61616161;
+@@ -5376,6 +5376,7 @@ void CLASS parse_external_jpeg()
  {
    char *file, *ext, *jname, *jfile, *jext;
    FILE *save=ifp;
@@ -65,7 +58,7 @@
  
    ext  = strrchr (ifname, '.');
    file = strrchr (ifname, '/');
-@@ -4396,13 +4397,15 @@
+@@ -5383,13 +5384,15 @@ void CLASS parse_external_jpeg()
    if (!file) file = ifname-1;
    file++;
    if (!ext || strlen(ext) != 4 || ext-file != 8) return;
@@ -84,48 +77,34 @@
      memcpy (jfile, file+4, 4);
      memcpy (jfile+4, file, 4);
    } else
-@@ -4585,8 +4588,8 @@
-   t.tm_mon -= 1;
-   if (mktime(&t) > 0)
-     timestamp = mktime(&t);
--  strcpy (make, "Rollei");
--  strcpy (model,"d530flex");
-+  strlcpy (make, "Rollei", sizeof make);
-+  strlcpy (model,"d530flex", sizeof model);
-   write_thumb = rollei_thumb;
- }
- 
-@@ -4647,13 +4650,13 @@
-   load_raw = ph1.format < 3 ?
- 	phase_one_load_raw : phase_one_load_raw_c;
-   maximum = 0xffff;
--  strcpy (make, "Phase One");
-+  strlcpy (make, "Phase One", sizeof make);
-   if (model[0]) return;
-   switch (raw_height) {
--    case 2060: strcpy (model,"LightPhase");	break;
--    case 2682: strcpy (model,"H 10");		break;
--    case 4128: strcpy (model,"H 20");		break;
--    case 5488: strcpy (model,"H 25");		break;
-+    case 2060: strlcpy (model,"LightPhase", sizeof model);	break;
-+    case 2682: strlcpy (model,"H 10", sizeof model);		break;
-+    case 4128: strlcpy (model,"H 20", sizeof model);		break;
-+    case 5488: strlcpy (model,"H 25", sizeof model);		break;
+@@ -5606,7 +5609,7 @@ void CLASS parse_sinar_ia()
+   fread (make, 64, 1, ifp);
+   make[63] = 0;
+   if ((cp = strchr(make,' '))) {
+-    strcpy (model, cp+1);
++    strlcpy (model, cp+1, sizeof model);
+     *cp = 0;
    }
- }
- 
-@@ -4756,8 +4759,8 @@
-   if (ver > 6) data_offset = get4();
+   raw_width  = get2();
+@@ -5784,7 +5787,7 @@ void CLASS parse_smal (int offset, int fsize)
    raw_height = height = get2();
    raw_width  = width  = get2();
--  strcpy (make, "SMaL");
+   strcpy (make, "SMaL");
 -  sprintf (model, "v%d %dx%d", ver, width, height);
-+  strlcpy (make, "SMaL", sizeof make);
 +  snprintf (model, sizeof model, "v%d %dx%d", ver, width, height);
-   if (ver == 6) load_raw = smal_v6_load_raw;
-   if (ver == 9) load_raw = smal_v9_load_raw;
+   if (ver == 6) load_raw = &CLASS smal_v6_load_raw;
+   if (ver == 9) load_raw = &CLASS smal_v9_load_raw;
  }
-@@ -4833,11 +4836,11 @@
+@@ -5812,7 +5815,7 @@ void CLASS parse_cine()
+   }
+   fseek (ifp, off_setup+792, SEEK_SET);
+   strcpy (make, "CINE");
+-  sprintf (model, "%d", get4());
++  snprintf (model, sizeof model, "%d", get4());
+   fseek (ifp, 12, SEEK_CUR);
+   switch ((i=get4()) & 0xffffff) {
+     case  3:  filters = 0x94949494;  break;
+@@ -5910,11 +5913,11 @@ void CLASS parse_foveon()
  	  if (!strcmp (name, "ISO"))
  	    iso_speed = atoi(value);
  	  if (!strcmp (name, "CAMMANUF"))
@@ -140,7 +119,7 @@
  	  if (!strcmp (name, "TIME"))
  	    timestamp = atoi(value);
  	  if (!strcmp (name, "EXPTIME"))
-@@ -5118,7 +5121,7 @@
+@@ -6305,7 +6308,7 @@ void CLASS adobe_coeff (char *make, char *model)
    char name[130];
    int i, j;
  
@@ -149,45 +128,7 @@
    for (i=0; i < sizeof table / sizeof *table; i++)
      if (!strncmp (name, table[i].prefix, strlen(table[i].prefix))) {
        if (table[i].black)
-@@ -5278,14 +5281,14 @@
-     order = 0x4949;
-     fseek (ifp, 38, SEEK_SET);
-     if (get4() == 2834 && get4() == 2834 && get4() == 0 && get4() == 4096) {
--      strcpy (model, "BMQ");
-+      strlcpy (model, "BMQ", sizeof model);
-       flip = 3;
-       goto nucore;
-     }
-   } else if (!memcmp (head,"BR",2)) {
--    strcpy (model, "RAW");
-+    strlcpy (model, "RAW", sizeof model);
- nucore:
--    strcpy (make, "Nucore");
-+    strlcpy (make, "Nucore", sizeof make);
-     order = 0x4949;
-     fseek (ifp, 10, SEEK_SET);
-     data_offset += get4();
-@@ -5296,15 +5299,15 @@
-       data_offset -= 0x1000;
-     }
-   } else if (!memcmp (head+25,"ARECOYK",7)) {
--    strcpy (make, "Contax");
--    strcpy (model,"N Digital");
-+    strlcpy (make, "Contax", sizeof make);
-+    strlcpy (model,"N Digital", sizeof model);
-     fseek (ifp, 33, SEEK_SET);
-     get_timestamp(1);
-     fseek (ifp, 60, SEEK_SET);
-     FORC4 cam_mul[c ^ (c >> 1)] = get4();
-   } else if (!strcmp (head, "PXN")) {
--    strcpy (make, "Logitech");
--    strcpy (model,"Fotoman Pixtura");
-+    strlcpy (make, "Logitech", sizeof make);
-+    strlcpy (model,"Fotoman Pixtura", sizeof model);
-   } else if (!memcmp (head,"FUJIFILM",8)) {
-     fseek (ifp, 84, SEEK_SET);
-     thumb_offset = get4();
-@@ -5332,8 +5335,8 @@
+@@ -6527,8 +6530,8 @@ void CLASS identify()
    else
      for (i=0; i < sizeof table / sizeof *table; i++)
        if (fsize == table[i].fsize) {
@@ -198,7 +139,7 @@
  	if (table[i].withjpeg)
  	  parse_external_jpeg();
        }
-@@ -5344,7 +5347,7 @@
+@@ -6537,7 +6540,7 @@ void CLASS identify()
  
    for (i=0; i < sizeof corp / sizeof *corp; i++)
      if (strstr (make, corp[i]))		/* Simplify company names */
@@ -207,144 +148,26 @@
    if (!strncmp (make,"KODAK",5))
      make[16] = model[16] = 0;
    cp = make + strlen(make);		/* Remove trailing spaces */
-@@ -5368,7 +5371,7 @@
-     xmag = ymag = 1;
-   }
-   if (dng_version) {
--    strcat (model," DNG");
-+    strlcat (model," DNG", sizeof model);
-     if (filters == UINT_MAX) filters = 0;
-     if (!filters)
-       colors = tiff_samples;
-@@ -5542,7 +5545,7 @@
-     filters = 0xe1e1e1e1;
-     load_raw = nikon_load_raw;
-     if (!timestamp && nikon_e995())
--      strcpy (model, "E995");
-+      strlcpy (model, "E995", sizeof model);
-     if (strcmp(model,"E995")) {
-       filters = 0xb4b4b4b4;
-       simple_coeff(3);
-@@ -5559,7 +5562,7 @@
-     pre_mul[2] = 1.040;
-   } else if (!strcmp(model,"E2500")) {
- cp_e2500:
--    strcpy (model, "E2500");
-+    strlcpy (model, "E2500", sizeof model);
-     height = 1204;
-     width  = 1616;
-     colors = 4;
-@@ -5571,11 +5574,11 @@
-     pre_mul[0] = 1.818;
-     pre_mul[2] = 1.618;
-     if ((i = nikon_3700()) == 2) {
--      strcpy (make, "OLYMPUS");
--      strcpy (model, "C740UZ");
-+      strlcpy (make, "OLYMPUS", sizeof make);
-+      strlcpy (model, "C740UZ", sizeof model);
-     } else if (i == 0) {
--      strcpy (make, "PENTAX");
--      strcpy (model,"Optio 33WR");
-+      strlcpy (make, "PENTAX", sizeof make);
-+      strlcpy (model,"Optio 33WR", sizeof model);
-       flip = 1;
-       filters = 0x16161616;
-       pre_mul[0] = 1.331;
-@@ -5586,8 +5589,8 @@
-     width  = 2288;
-     filters = 0x16161616;
-     if (!timestamp && minolta_z2()) {
--      strcpy (make, "Minolta");
--      strcpy (model,"DiMAGE Z2");
-+      strlcpy (make, "Minolta", sizeof make);
-+      strlcpy (model,"DiMAGE Z2", sizeof model);
-     }
-     if (make[0] == 'M')
-       load_raw = nikon_e2100_load_raw;
-@@ -5610,7 +5613,7 @@
+@@ -6894,7 +6897,7 @@ cp_e2500:
      maximum = 0x3e00;
    } else if (!strncmp(model,"FinePix",7)) {
      if (!strcmp(model+7,"S2Pro")) {
 -      strcpy (model+7," S2Pro");
-+      strlcpy (model + 7, " S2Pro", sizeof model - 7);
++      strcpy (model + 7, " S2Pro");
        height = 2144;
        width  = 2880;
        flip = 6;
-@@ -5658,7 +5661,7 @@
+@@ -6937,7 +6940,7 @@ cp_e2500:
      } else if (!strncmp(model,"ALPHA",5) ||
  	       !strncmp(model,"DYNAX",5) ||
  	       !strncmp(model,"MAXXUM",6)) {
--      sprintf (model, "DYNAX %s", model+6 + (model[0]=='M'));
-+      snprintf (model, sizeof model, "DYNAX %s", model+6 + (model[0]=='M'));
-       load_raw = packed_12_load_raw;
+-      sprintf (model+20, "DYNAX %-10s", model+6+(model[0]=='M'));
++      snprintf (model+20, sizeof model - 20, "DYNAX %-10s", model+6+(model[0]=='M'));
+       adobe_coeff (make, model+20);
+       load_raw = &CLASS packed_12_load_raw;
        maximum = 0xffb;
-     } else if (!strncmp(model,"DiMAGE G",8)) {
-@@ -5782,11 +5785,11 @@
-       height -= 16;
-       width  -= 28;
-       maximum = 0xf5c0;
--      strcpy (make, "ISG");
-+      strlcpy (make, "ISG", sizeof make);
-       model[0] = 0;
-     }
-   } else if (!strcmp(make,"Imacon")) {
--    sprintf (model, "Ixpress %d-Mp", height*width/1000000);
-+    snprintf (model, sizeof model, "Ixpress %d-Mp", height*width/1000000);
-     load_raw = imacon_full_load_raw;
-     if (filters) {
-       data_offset += (top_margin*raw_width + left_margin) * 2;
-@@ -5809,7 +5812,7 @@
-       load_raw = lossless_jpeg_load_raw;
-     maximum = 0x3fff;
-     if (filters == 0) {
--      strcpy (model, "Volare");
-+      strlcpy (model, "Volare", sizeof model);
-       load_raw = leaf_full_load_raw;
-       maximum = 0xffff;
-       raw_color = 0;
-@@ -5871,7 +5874,7 @@
-     load_raw = sony_load_raw;
-     filters = 0x9c9c9c9c;
-     colors = 4;
--    strcpy (cdesc, "RGBE");
-+    strlcpy (cdesc, "RGBE", sizeof cdesc);
-   } else if (!strcmp(model,"DSC-V3")) {
-     width = 3109;
-     left_margin = 59;
-@@ -5916,7 +5919,7 @@
-     if (load_raw == eight_bit_load_raw)
- 	load_raw = kodak_easy_load_raw;
-     if (strstr(model,"DC25")) {
--      strcpy (model, "DC25");
-+      strlcpy (model, "DC25", sizeof model);
-       data_offset = 15424;
-     }
-     if (!strncmp(model,"DC2",3)) {
-@@ -5935,19 +5938,19 @@
-       pre_mul[3] = 1.036;
-       load_raw = kodak_easy_load_raw;
-     } else if (!strcmp(model,"Digital Camera 40")) {
--      strcpy (model, "DC40");
-+      strlcpy (model, "DC40", sizeof model);
-       height = 512;
-       width  = 768;
-       data_offset = 1152;
-       load_raw = kodak_radc_load_raw;
-     } else if (strstr(model,"DC50")) {
--      strcpy (model, "DC50");
-+      strlcpy (model, "DC50", sizeof model);
-       height = 512;
-       width  = 768;
-       data_offset = 19712;
-       load_raw = kodak_radc_load_raw;
-     } else if (strstr(model,"DC120")) {
--      strcpy (model, "DC120");
-+      strlcpy (model, "DC120", sizeof model);
-       height = 976;
-       width  = 848;
-       load_raw = (tiff_compress == 7)
-@@ -6063,7 +6066,7 @@
-     }
+@@ -7502,7 +7505,7 @@ qt_common:
+     pre_mul[2] = 1.504;
    }
    if (!model[0])
 -    sprintf (model, "%dx%d", width, height);
@@ -352,42 +175,56 @@
    if (filters == UINT_MAX) filters = 0x94949494;
    if (raw_color) adobe_coeff (make, model);
    if (thumb_offset && !thumb_height) {
-@@ -6084,7 +6087,7 @@
-   if (flip == -1) flip = tiff_flip;
-   if (flip == -1) flip = 0;
-   if (!cdesc[0])
--    strcpy (cdesc, colors == 3 ? "RGB":"GMCY");
-+    strlcpy (cdesc, colors == 3 ? "RGB":"GMCY", sizeof cdesc);
-   if (!raw_height) raw_height = height;
-   if (!raw_width ) raw_width  = width;
-   if (filters && colors == 3)
-@@ -6374,6 +6377,7 @@
+@@ -7666,8 +7669,8 @@ void CLASS convert_to_rgb()
+       }
+     for (i=0; i < phead[0]/4; i++)
+       oprof[i] = htonl(oprof[i]);
+-    strcpy ((char *)oprof+pbody[2]+8, "auto-generated by dcraw");
+-    strcpy ((char *)oprof+pbody[5]+12, name[output_color-1]);
++    strlcpy ((char *)oprof+pbody[2]+8, "auto-generated by dcraw", sizeof oprof-pbody[2]-8);
++    strlcpy ((char *)oprof+pbody[5]+12, name[output_color-1], sizeof oprof-pbody[5]-12);
+     for (i=0; i < 3; i++)
+       for (j=0; j < colors; j++)
+ 	for (out_cam[i][j] = k=0; k < 3; k++)
+@@ -7897,7 +7900,7 @@ void CLASS tiff_head (struct tiff_hdr *th, int full)
+   strncpy (th->model, model, 64);
+   strcpy (th->soft, "dcraw v"VERSION);
+   t = gmtime (&timestamp);
+-  sprintf (th->date, "%04d:%02d:%02d %02d:%02d:%02d",
++  snprintf (th->date, sizeof th->date, "%04d:%02d:%02d %02d:%02d:%02d",
+       t->tm_year+1900,t->tm_mon+1,t->tm_mday,t->tm_hour,t->tm_min,t->tm_sec);
+   strncpy (th->artist, artist, 64);
+ }
+@@ -7974,6 +7977,7 @@ int CLASS main (int argc, char **argv)
+   char opm, opt, *ofname, *sp, *cp, *dark_frame=0;
    const char *write_ext;
    struct utimbuf ut;
-   FILE *ofp = stdout;
 +  size_t ofsize;
-   void (*write_image)(FILE *) = write_ppm;
+   FILE *ofp;
  #ifndef NO_LCMS
-   char *cam_profile = NULL, *out_profile = NULL;
-@@ -6649,16 +6653,17 @@
-       write_ext = ".psd";
+   char *cam_profile=0, *out_profile=0;
+@@ -8291,19 +8295,20 @@ thumbnail:
+       write_ext = ".tiff";
      else
        write_ext = ".pgm\0.ppm\0.ppm\0.pam" + colors*5-5;
--    ofname = (char *) malloc (strlen(ifname) + 16);
-+    ofsize = strlen(ifname) + 16;
+-    ofname = (char *) malloc (strlen(ifname) + 64);
++    ofsize = strlen(ifname) + 64;
 +    ofname = (char *) malloc (ofsize);
      merror (ofname, "main()");
      if (write_to_stdout)
--      strcpy (ofname, "standard output");
-+      strlcpy (ofname, "standard output", ofsize);
+       strcpy (ofname,_("standard output"));
      else {
 -      strcpy (ofname, ifname);
 +      strlcpy (ofname, ifname, ofsize);
        if ((cp = strrchr (ofname, '.'))) *cp = 0;
+       if (multi_out)
+-	sprintf (ofname+strlen(ofname), "_%0*d",
++	snprintf (ofname+strlen(ofname), ofsize-strlen(ofname), "_%0*d",
+ 		snprintf(0,0,"%d",is_raw-1), shot_select);
        if (thumbnail_only)
 -	strcat (ofname, ".thumb");
 -      strcat (ofname, write_ext);
-+        strlcat (ofname, ".thumb", ofsize);
++	strlcat (ofname, ".thumb", ofsize);
 +      strlcat (ofname, write_ext, ofsize);
        ofp = fopen (ofname, "wb");
        if (!ofp) {
