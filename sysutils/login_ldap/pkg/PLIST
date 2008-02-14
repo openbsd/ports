@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/10/01 17:12:30 espie Exp $
-bin/enable-login_ldap
+@comment $OpenBSD: PLIST,v 1.7 2008/02/14 16:19:49 merdely Exp $
 libexec/auth/
 @group auth
 libexec/auth/login_-ldap
 @mode 0555
 @owner root
 @sample /usr/libexec/auth/login_-ldap
+@mode
 @owner
 @group
-@mode
 @man man/cat8/login_ldap.0
-share/login_ldap/
-share/login_ldap/active-directory.login_ldap.conf
-share/login_ldap/login_ldap.conf
+share/examples/login_ldap/
+share/examples/login_ldap/active-directory.login_ldap.conf
+share/examples/login_ldap/login_ldap.conf
