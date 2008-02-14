@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/10/21 14:33:07 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2008/02/14 18:51:59 ajacoutot Exp $
 
 COMMENT-main=		multimedia framework - good plugins
 COMMENT-aalib=		multimedia framework - aalib plugin
@@ -17,20 +17,20 @@ COMMENT-shout=		multimedia framework - shoutcast plugin
 
 V=			0.10.5
 DISTNAME=		gst-plugins-good-$V
-PKGNAME-main=		gstreamer-plugins-good-$Vp1
-PKGNAME-aalib=		gstreamer-aalib-$Vp1
-PKGNAME-cairo=		gstreamer-cairo-$Vp2
-PKGNAME-gconf=		gstreamer-confelements-$Vp2
-PKGNAME-esd=		gstreamer-esd-$Vp0
-PKGNAME-flac=		gstreamer-flac-$Vp1
-PKGNAME-speex=		gstreamer-speex-$Vp0
-PKGNAME-taglib=		gstreamer-taglib-$Vp0
-PKGNAME-dv=		gstreamer-dv-$Vp0
-PKGNAME-jpeg=		gstreamer-jpeg-$Vp0
-PKGNAME-png=		gstreamer-png-$Vp0
-PKGNAME-gdk=		gstreamer-gdk-pixbuf-$Vp2
-PKGNAME-caca=		gstreamer-libcaca-$Vp1
-PKGNAME-shout=		gstreamer-shoutcast-$Vp0
+PKGNAME-main=		gstreamer-plugins-good-$Vp2
+PKGNAME-aalib=		gstreamer-aalib-$Vp2
+PKGNAME-cairo=		gstreamer-cairo-$Vp3
+PKGNAME-gconf=		gstreamer-confelements-$Vp3
+PKGNAME-esd=		gstreamer-esd-$Vp1
+PKGNAME-flac=		gstreamer-flac-$Vp2
+PKGNAME-speex=		gstreamer-speex-$Vp1
+PKGNAME-taglib=		gstreamer-taglib-$Vp1
+PKGNAME-dv=		gstreamer-dv-$Vp1
+PKGNAME-jpeg=		gstreamer-jpeg-$Vp1
+PKGNAME-png=		gstreamer-png-$Vp1
+PKGNAME-gdk=		gstreamer-gdk-pixbuf-$Vp3
+PKGNAME-caca=		gstreamer-libcaca-$Vp2
+PKGNAME-shout=		gstreamer-shoutcast-$Vp1
 
 
 MULTI_PACKAGES=		-main -aalib -cairo -gconf -esd -flac -speex \
@@ -44,7 +44,7 @@ MODULES=		devel/gettext
 
 RUN_DEPENDS=		::${BUILD_PKGPATH}
 WANTLIB=		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-			xml2 m z
+			pcre xml2 m z
 LIB_DEPENDS=		gstreamer-0.10:gstreamer->=0.10:multimedia/gstreamer-0.10/core
 
 WANTLIB-main=		${WANTLIB} \
@@ -117,9 +117,10 @@ LIB_DEPENDS-png=	${LIB_DEPENDS} \
 			png::graphics/png
 
 WANTLIB-gdk=		${WANTLIB} \
-			X11 Xext Xrender atk-1.0 cairo fontconfig freetype \
-			glitz pango-1.0 pangocairo-1.0 pangoft2-1.0 png \
-			gstbase-0.10 Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
+			X11 Xcomposite Xdamage Xext Xrender atk-1.0 \
+			cairo fontconfig freetype glitz pango-1.0 \
+			pangocairo-1.0 pangoft2-1.0 png gstbase-0.10 \
+			Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
 
 LIB_DEPENDS-gdk=	${LIB_DEPENDS} \
 			gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2

@@ -1,0 +1,15 @@
+$OpenBSD: patch-common_m4_gst-default_m4,v 1.1 2008/02/14 18:52:00 ajacoutot Exp $
+--- common/m4/gst-default.m4.orig	Thu Feb 14 09:39:16 2008
++++ common/m4/gst-default.m4	Thu Feb 14 09:43:41 2008
+@@ -25,6 +25,11 @@ AC_DEFUN([GST_DEFAULT_ELEMENTS],
+       DEFAULT_AUDIOSRC="osxaudiosrc"
+       DEFAULT_VIDEOSINK="osxvideosink"
+       ;;
++    *-openbsd* )
++      DEFAULT_AUDIOSINK="osssink"
++      DEFAULT_AUDIOSRC="osssrc"
++      DEFAULT_VIDEOSINK="xvimagesink"
++      ;;
+   esac
+   
+   AC_SUBST(DEFAULT_AUDIOSINK)
