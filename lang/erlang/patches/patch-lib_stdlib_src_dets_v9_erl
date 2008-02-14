@@ -1,0 +1,13 @@
+Fixes issue described in http://thread.gmane.org/gmane.comp.lang.erlang.general/27478
+$OpenBSD: patch-lib_stdlib_src_dets_v9_erl,v 1.1 2008/02/14 22:44:36 sthen Exp $
+--- lib/stdlib/src/dets_v9.erl.orig	Thu Feb  7 16:22:04 2008
++++ lib/stdlib/src/dets_v9.erl	Thu Feb  7 16:22:39 2008
+@@ -1934,6 +1934,8 @@ grow(Head, Extra, _SegZero) when Extra =< 0 ->
+     {Head, ok};
+ grow(Head, Extra, undefined) ->
+     grow(Head, Extra, seg_zero());
++grow(Head, _Extra, _SegZero) when Head#head.next >= Head#head.max_no_slots ->                                 
++    {Head, ok};        
+ grow(Head, Extra, SegZero) ->
+     #head{n = N, next = Next, m = M} = Head,
+     SegNum = Next div ?SEGSZP,    
