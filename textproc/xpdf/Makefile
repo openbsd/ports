@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2008/02/13 16:18:33 landry Exp $
+# $OpenBSD: Makefile,v 1.60 2008/02/14 08:52:35 landry Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
 
 DISTNAME=	xpdf-3.02
-PKGNAME-main=	xpdf-3.02pl2p1
+PKGNAME-main=	xpdf-3.02pl2p2
 PKGNAME-utils=	xpdf-utils-3.02pl2
 CATEGORIES=	textproc x11
 
@@ -39,7 +39,7 @@ LIB_DEPENDS-utils=
 LIB_DEPENDS-main=	t1.>=3::devel/t1lib ${LIB_DEPENDS}
 RUN_DEPENDS-utils=	::print/ghostscript/gnu-fonts
 RUN_DEPENDS-main=	${RUN_DEPENDS-utils} \
-			:${FULLPKGNAME-utils}:textproc/xpdf
+			:${FULLPKGNAME-utils}:textproc/xpdf,-utils
 
 WANTLIB-utils=		c m pthread stdc++ z
 WANTLIB-main=		${WANTLIB-utils} ICE SM X11 Xext Xp Xpm Xt freetype
