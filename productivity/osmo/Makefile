@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/05 11:17:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/15 14:36:24 ajacoutot Exp $
 
 COMMENT=	handy personal organizer
 
-DISTNAME=	osmo-0.1.6
+DISTNAME=	osmo-0.2.0
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clay.ll.pl/osmo/
@@ -26,7 +26,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		xml2.>=6::textproc/libxml \
-		ical::textproc/libical
+		ical::textproc/libical \
+		gringotts::security/libgringotts
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

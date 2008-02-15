@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/02/05 11:13:29 ajacoutot Exp $
---- configure.orig	Sat Feb  2 19:12:50 2008
-+++ configure	Sat Feb  2 19:13:03 2008
-@@ -4404,13 +4404,13 @@ echo "$as_me: error: You do not appear to have libxml2
+$OpenBSD: patch-configure,v 1.2 2008/02/15 14:36:24 ajacoutot Exp $
+--- configure.orig	Sat Feb  9 00:58:27 2008
++++ configure	Fri Feb 15 15:23:49 2008
+@@ -4259,13 +4259,13 @@ echo "$as_me: error: You do not appear to have libxml2
  fi
  
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/02/05 11:13:29 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -4472,7 +4472,7 @@ else
+@@ -4327,7 +4327,7 @@ else
  fi
  
  if test "$lib" = "yes"; then
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/02/05 11:13:29 ajacoutot Exp $
      { echo "$as_me:$LINENO: checking for icalparser_new in -lical" >&5
  echo $ECHO_N "checking for icalparser_new in -lical... $ECHO_C" >&6; }
  if test "${ac_cv_lib_ical_icalparser_new+set}" = set; then
-@@ -4541,7 +4541,7 @@ else
+@@ -4396,7 +4396,7 @@ else
  fi
  
      if test "$lib" = "yes"; then
@@ -35,4 +35,4 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/02/05 11:13:29 ajacoutot Exp $
 +        ical_LIBS="-lical -pthread"
  
  cat >>confdefs.h <<\_ACEOF
- #define HAVE_ICAL 1
+ #define HAVE_LIBICAL 1
