@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.187 2008/02/09 11:34:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.188 2008/02/15 15:52:55 steven Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
      SUBDIR += ac3dec
      SUBDIR += akode
      SUBDIR += amarok
+     SUBDIR += aqualung
      SUBDIR += ascd
      SUBDIR += audacious
      SUBDIR += audacious-plugins
