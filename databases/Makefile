@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2008/02/02 14:08:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.131 2008/02/15 12:34:20 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -27,7 +27,6 @@
      SUBDIR += ocaml-postgresql
      SUBDIR += ocaml-sqlite3
      SUBDIR += openldap
-     SUBDIR += openldap,bdb
      SUBDIR += p5-AsciiDB-TagFile
      SUBDIR += p5-BerkeleyDB
      SUBDIR += p5-Catalyst-Controller-Rose

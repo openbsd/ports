@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2008/02/13 09:45:54 landry Exp $
+# $OpenBSD: Makefile,v 1.83 2008/02/15 12:34:20 sthen Exp $
 
 COMMENT-main=	Open source LDAP software (client)
 COMMENT-server=	Open source LDAP software (server)
@@ -77,6 +77,7 @@ LIB_DEPENDS+=		sasl2::security/cyrus-sasl2
 CPPFLAGS+=		-I${LOCALBASE}/include/sasl
 
 .if ${FLAVOR:L:Mbdb}
+BROKEN=			OpenLDAP 2.3 is incompatible with Berkeley DB 4.6
 CONFIGURE_ARGS+=	--enable-bdb --enable-hdb
 LIB_DEPENDS+=		lib/db4/db.>=4:db-4.*:databases/db/v4
 CPPFLAGS+=		-I${LOCALBASE}/include/db4
