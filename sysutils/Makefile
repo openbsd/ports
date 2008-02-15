@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2008/02/07 21:15:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.147 2008/02/15 12:33:53 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -41,6 +41,7 @@
      SUBDIR += iogen
      SUBDIR += ipmitool
      SUBDIR += knutclient
+     SUBDIR += krename
      SUBDIR += libgksu
      SUBDIR += libgksuui
      SUBDIR += libretto-config
