@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/07 20:02:57 winiger Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/15 15:13:14 winiger Exp $
 
 COMMENT=	multi user weblog
 
-DISTNAME=	wordpress-mu-1.3
+DISTNAME=	wordpress-mu-1.3.3
 CATEGORIES=	www
 
 HOMEPAGE=	http://mu.wordpress.org/
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://humppa.hu/distfiles/ \
-		http://ftp.twaren.net/local-distfiles/wpmu/
+		http://www.bsdfrog.org/OpenBSD/distfiles/
 
 RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql
 
