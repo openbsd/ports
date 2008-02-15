@@ -1,7 +1,10 @@
-To use the Java plugin with Mozilla or Mozilla-firefox you must create
+Use and distribution of this technology is subject to the Java Research
+License included herein.
+
+To use the Java plugin with Seamonkey or Firefox you must create
 a symbolic link (do not copy or hard link) from
 
-${PREFIX}/${JREHOME}/plugin/i386/ns7/libjavaplugin_oji.so
+${PREFIX}/${JREHOME}/plugin/${MACHINE_ARCH}/ns7/libjavaplugin_oji.so
 
 to your local Mozilla plugins directory, which is found at
 
