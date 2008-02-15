@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/02/13 11:12:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/02/15 12:29:46 ajacoutot Exp $
 bin/gcompris
 @info info/gcompris.info
 lib/gcompris/
@@ -6647,6 +6647,7 @@ share/gcompris/boards/voices/tr/misc/super.ogg
 share/gcompris/boards/voices/tr/misc/waytogo.ogg
 share/gcompris/boards/voices/tr/misc/welcome.ogg
 share/gcompris/boards/voices/ur/
+share/gcompris/boards/voices/ur/README
 share/gcompris/boards/voices/ur/alphabet/
 share/gcompris/boards/voices/ur/alphabet/10.ogg
 share/gcompris/boards/voices/ur/alphabet/11.ogg
@@ -6858,7 +6859,6 @@ share/gcompris/boards/voices/ur/misc/super.ogg
 share/gcompris/boards/voices/ur/misc/way_to_go.ogg
 share/gcompris/boards/voices/ur/misc/waytogo.ogg
 share/gcompris/boards/voices/ur/misc/welcome.ogg
-share/gcompris/boards/voices/voices_bg.tgz
 share/gcompris/boards/watercycle/
 share/gcompris/boards/watercycle.xml
 share/gcompris/boards/watercycle/README
