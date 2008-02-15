@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2007/12/14 12:41:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2008/02/15 15:44:00 jasper Exp $
 
 COMMENT=	window manipulation tool
 
-DISTNAME=	devilspie-0.21
+DISTNAME=	devilspie-0.22
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.burtonini.com/blog/computers/devilspie
