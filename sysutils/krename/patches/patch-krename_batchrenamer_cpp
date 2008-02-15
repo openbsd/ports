@@ -1,0 +1,25 @@
+$OpenBSD: patch-krename_batchrenamer_cpp,v 1.1.1.1 2008/02/15 12:33:10 ajacoutot Exp $
+--- krename/batchrenamer.cpp.orig	Mon Jan  8 12:29:53 2007
++++ krename/batchrenamer.cpp	Fri Feb 15 10:17:49 2008
+@@ -312,9 +312,9 @@ void BatchRenamer::work( ProgressDialog* p )
+         if( undo )
+             if( dst.isLocalFile() && src.isLocalFile() ) {
+                 // Plugins ???
+-                (*tundo) << "echo \"" << src.fileName()
+-                         << " -> " << dst.fileName() << "\"" << endl;
+-                (*tundo) << "mv --force -b --suffix=.krename_ \"" << m_files[i].dst.name
++                (*tundo) << "echo \"" << dst.fileName()
++                         << " -> " << src.fileName() << "\"" << endl;
++                (*tundo) << "mv -f \"" << m_files[i].dst.name
+                          << "\" \"" << m_files[i].src.name << "\"" << endl;
+             } else
+                 p->warning( QString( i18n("Undo is not possible for remote file: %1") ).arg( dst.prettyURL() ) );
+@@ -855,7 +855,7 @@ QString BatchRenamer::doReplace( QString text, QString
+ void BatchRenamer::writeUndoScript( QTextStream* t )
+ {
+     // write header comments
+-    (*t) << "#!/bin/bash" << endl
++    (*t) << "#!/bin/sh" << endl
+          << "# KRename Undo Script" << endl << "#" << endl
+          << "# KRename was written by:" << endl
+          << "# Dominik Seichter <domseichter@web.de>" << endl
