@@ -1,0 +1,34 @@
+To enable a decent configuration of drupal, please create a symbolic
+link from ${PREFIX}/conf/modules.sample/drupal.conf
+to ${PREFIX}/conf/modules/drupal.conf
+
+ln -s ${PREFIX}/conf/modules.sample/drupal.conf \
+	${PREFIX}/conf/modules
+
+It is highly recommended to setup https (see SSL(8)) and to
+enable securelogin.
+
+In order to run with standard OpenBSD chroot'ed httpd:
+
+- make sure you can connect to your database.
+
+For mysql on localhost:
+
+	mkdir -p /var/www/var/run/mysql
+	ln /var/run/mysql/mysql.sock /var/www/var/run/mysql
+
+is a way to do it.
+
+- file uploads require a tmp directory writable by www.
+.e.g., with the default php setup:
+
+	mkdir -p /var/www/tmp
+	chown www /var/www/tmp
+
+Don't forget to set the character set to utf8 in your database.
+
+In mysql, assuming you're connected as admin initially.
+
+create user drupal identified by 'password';
+create database drupal character set utf8;
+grant all on drupal.* to user drupal@localhost:
