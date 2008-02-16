@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/16 19:04:03 espie Exp $
 @owner www
 @group www
-${KLUDGE}/po/
-${KLUDGE}/po/${LANG}.po
+${DRUPAL_LOCALE}/po/
+${DRUPAL_LOCALE}/po/${LANG}.po
 ${DRUPAL_ROOT}/profiles/localized/${LANG}.po
