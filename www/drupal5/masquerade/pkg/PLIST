@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 22:38:29 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/masquerade/
+${DRUPAL_MODS}/masquerade/LICENSE.txt
+${DRUPAL_MODS}/masquerade/masquerade.info
+${DRUPAL_MODS}/masquerade/masquerade.install
+${DRUPAL_MODS}/masquerade/masquerade.module
