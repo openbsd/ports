@@ -1,0 +1,10 @@
+The dba module provides Drupal administrators with direct access
+to their Drupal database tables from within the standard Drupal
+user interface. It is possible to execute scripts to create and
+alter tables, to backup one or more tables, to view/edit/delete
+data within tables, and to empty or drop tables. If using MySQL,
+it is also possible to check and repair tables.
+
+Great tool to view your drupal tables and figure out how it works.
+
+Be very careful with permissions!
