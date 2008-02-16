@@ -1,0 +1,28 @@
+$OpenBSD: patch-dlint,v 1.1 2008/02/16 10:44:00 rui Exp $
+--- dlint.orig	Sun Jun 10 18:48:36 2007
++++ dlint	Sat Feb 16 09:49:06 2008
+@@ -319,10 +319,10 @@ i=1
+ badns=true
+ while test $i -le `wc -l < $TMPNS`; do
+ 	badns=false
+-	ns=`tail --lines=+$i $TMPNS | head -1`
++	ns=`tail -n +$i $TMPNS | head -1`
+ 	echo ";; trying nameserver $ns"
+-#echo "XX @$ns $domain AXFR"
+-	dig @$ns $domain AXFR $digopts 2> $TMPERR | $rrfilt > $TMPZONE
++#echo "XX @$ns $domain AXF"
++	dig @$ns $domain AXF $digopts 2> $TMPERR | $rrfilt > $TMPZONE
+ 	# Ignore run-time errors that aren't real errors:
+ 	#	(BIND 9.0.1 default build in RedHat Linux 7.0)
+ 	grep -v setsockopt $TMPERR > $TMPERR2
+@@ -567,8 +567,8 @@ fi
+ #
+ 
+ if $recurse; then
+-#echo "XX @$ns $domain AXFR"
+-	dig @$ns $domain AXFR $digopts | $rrfilt | awk '$2=="NS" {print $1}' | grep -iv "^$domain\$" | sort -u > $TMPSUBDOMS
++#echo "XX @$ns $domain AXF"
++	dig @$ns $domain AXF $digopts | $rrfilt | awk '$2=="NS" {print $1}' | grep -iv "^$domain\$" | sort -u > $TMPSUBDOMS
+ 	if test -s $TMPSUBDOMS; then
+ 		i=1
+ 		len=`wc -l < $TMPSUBDOMS`

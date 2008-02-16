@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/16 10:44:00 rui Exp $
 
 COMMENT=		DNS zone verification tool
 
-DISTNAME=		dlint1.4.0
-PKGNAME=		dlint-1.4.0
-CATEGORIES=    		net
+V=			1.4.1
+DISTNAME=		dlint${V}
+PKGNAME=		dlint-${V}
+CATEGORIES=		net
 
-HOMEPAGE=		http://www.domtools.com/dns/dlint.shtml
+HOMEPAGE=		http://www.domtools.com/
 
-MAINTAINER=		Jason Peel <jsyn@openbsd.org>
+MAINTAINER=		Rui Reis <rui@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
