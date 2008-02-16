@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/02/16 20:47:49 rui Exp $
 
-DISTNAME=	dnstracer-1.8
+DISTNAME=	dnstracer-1.9
 CATEGORIES=	net
 
 # bsd
