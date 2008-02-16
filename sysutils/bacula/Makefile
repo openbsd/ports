@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2008/02/07 02:53:35 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/02/16 21:22:41 merdely Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 
 V=			2.2.8
 DISTNAME=		bacula-$V
-FULLPKGNAME-main=	bacula-client-$V
-PKGNAME-server=		bacula-server-$V
+FULLPKGNAME-main=	bacula-client-$Vp0
+PKGNAME-server=		bacula-server-$Vp0
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
@@ -149,7 +149,7 @@ CONFIGURE_ARGS+=	--disable-bat \
 .else
 CONFIGURE_ARGS+=	--enable-bat \
 			--with-qwt=${LOCALBASE}
-FULLPKGNAME-bat=	bacula-bat-$V
+FULLPKGNAME-bat=	bacula-bat-$Vp0
 WANTLIB-bat=		${WANTLIB} ICE QtCore QtGui SM X11 Xcursor Xext Xfixes
 WANTLIB-bat+=		Xi Xinerama Xrandr Xrender fontconfig freetype glib-2.0
 WANTLIB-bat+=		gthread-2.0 iconv intl png
