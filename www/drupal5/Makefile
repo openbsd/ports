@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/02/16 21:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/16 22:39:14 espie Exp $
 
     SUBDIR += IMCE
     SUBDIR += admin-menu
@@ -21,6 +21,7 @@
     SUBDIR += locale-fr
     SUBDIR += locale-it
     SUBDIR += locale-ja
+    SUBDIR += masquerade
     SUBDIR += meta-tags
     SUBDIR += pathauto
     SUBDIR += printer-friendly
