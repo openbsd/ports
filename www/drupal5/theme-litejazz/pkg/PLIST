@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 20:38:14 espie Exp $
+@owner www
+@group www
+${DRUPAL_THEMES}/litejazz/
+${DRUPAL_THEMES}/litejazz/block.tpl.php
+${DRUPAL_THEMES}/litejazz/content.css
+${DRUPAL_THEMES}/litejazz/css/
+${DRUPAL_THEMES}/litejazz/css/blue.css
+${DRUPAL_THEMES}/litejazz/css/red.css
+${DRUPAL_THEMES}/litejazz/images/
+${DRUPAL_THEMES}/litejazz/images/blue/
+${DRUPAL_THEMES}/litejazz/images/blue/bg.png
+${DRUPAL_THEMES}/litejazz/images/blue/body-bg.png
+${DRUPAL_THEMES}/litejazz/images/blue/bottomregion-bg.png
+${DRUPAL_THEMES}/litejazz/images/blue/footer-bg.png
+${DRUPAL_THEMES}/litejazz/images/blue/footer-l.png
+${DRUPAL_THEMES}/litejazz/images/blue/footer-r.png
+${DRUPAL_THEMES}/litejazz/images/blue/mast-bg.png
+${DRUPAL_THEMES}/litejazz/images/blue/mast-l.png
+${DRUPAL_THEMES}/litejazz/images/blue/mast-r.png
+${DRUPAL_THEMES}/litejazz/images/blue/menu-bg.png
+${DRUPAL_THEMES}/litejazz/images/blue/menu-div.png
+${DRUPAL_THEMES}/litejazz/images/blue/topregion-bg.png
+${DRUPAL_THEMES}/litejazz/images/red/
+${DRUPAL_THEMES}/litejazz/images/red/bg.png
+${DRUPAL_THEMES}/litejazz/images/red/body-bg.png
+${DRUPAL_THEMES}/litejazz/images/red/bottomregion-bg.png
+${DRUPAL_THEMES}/litejazz/images/red/footer-bg.png
+${DRUPAL_THEMES}/litejazz/images/red/footer-l.png
+${DRUPAL_THEMES}/litejazz/images/red/footer-r.png
+${DRUPAL_THEMES}/litejazz/images/red/mast-bg.png
+${DRUPAL_THEMES}/litejazz/images/red/mast-l.png
+${DRUPAL_THEMES}/litejazz/images/red/mast-r.png
+${DRUPAL_THEMES}/litejazz/images/red/menu-bg.png
+${DRUPAL_THEMES}/litejazz/images/red/menu-div.png
+${DRUPAL_THEMES}/litejazz/images/red/topregion-bg.png
+${DRUPAL_THEMES}/litejazz/js/
+${DRUPAL_THEMES}/litejazz/js/jquery.pngFix.js
+${DRUPAL_THEMES}/litejazz/logo.png
+${DRUPAL_THEMES}/litejazz/node.tpl.php
+${DRUPAL_THEMES}/litejazz/page.tpl.php
+${DRUPAL_THEMES}/litejazz/roopletheme.png
+${DRUPAL_THEMES}/litejazz/screenshot.png
+${DRUPAL_THEMES}/litejazz/settings.php
+${DRUPAL_THEMES}/litejazz/style.css
+${DRUPAL_THEMES}/litejazz/template.php
