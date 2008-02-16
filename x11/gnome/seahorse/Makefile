@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/02/11 17:18:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/16 19:46:03 jasper Exp $
 
 COMMENT=		manage encryption keys
 
@@ -53,7 +53,6 @@ MODULES=		devel/gettext \
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/seahorse \
 			--with-gecko=xulrunner \

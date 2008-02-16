@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/02/16 19:46:03 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -39,7 +39,6 @@ RUN_DEPENDS=		::devel/vte,-python \
 
 USE_X11=		Yes
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gedit \
 			--disable-schemas-install \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/04 17:55:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/16 19:46:03 jasper Exp $
 
 COMMENT=		project management application
 
@@ -44,7 +44,6 @@ LIB_DEPENDS=		bonoboui-2::x11/gnome/libbonoboui \
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
-CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/planner \
 			--disable-schemas-install \
