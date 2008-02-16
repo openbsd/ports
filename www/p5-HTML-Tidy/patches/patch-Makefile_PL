@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2008/02/16 22:55:26 simon Exp $
+--- Makefile.PL.orig	Sat Nov 11 05:06:24 2006
++++ Makefile.PL	Mon Aug 20 12:21:23 2007
+@@ -8,7 +8,7 @@ use warnings;
+ use ExtUtils::MakeMaker;
+ use ExtUtils::Liblist;
+ 
+-my @vars = ExtUtils::Liblist->ext( '-L/sw/lib -ltidy', 0, 1 );
++my @vars = ExtUtils::Liblist->ext( "-L$ENV{LOCALBASE}/lib -ltidy", 0, 1 );
+ my $libs = $vars[2];
+ 
+ if ( !$libs ) {
+@@ -55,7 +55,7 @@ WriteMakefile(
+ 
+     LIBS                => [$libs],
+     NEEDS_LINKING       => 1,
+-    INC                 => '-I. -I/usr/include/tidy -I/usr/local/include/tidy -I/sw/include/tidy',
++    INC                 => "-I. -I$ENV{LOCALBASE}/include/tidy",
+ 
+     EXE_FILES           => [qw(bin/webtidy)],
+     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
