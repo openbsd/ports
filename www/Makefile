@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.328 2008/02/16 16:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.329 2008/02/16 22:55:29 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -178,6 +178,7 @@
      SUBDIR += p5-HTML-Tagset
      SUBDIR += p5-HTML-Template
      SUBDIR += p5-HTML-Template-Expr
+     SUBDIR += p5-HTML-Tidy
      SUBDIR += p5-HTML-TokeParser-Simple
      SUBDIR += p5-HTML-Tree
      SUBDIR += p5-HTML-TreeBuilder-XPath
