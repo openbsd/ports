@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/admin_menu/
+${DRUPAL_MODS}/admin_menu/CHANGELOG.txt
+${DRUPAL_MODS}/admin_menu/LICENSE.txt
+${DRUPAL_MODS}/admin_menu/README.txt
+${DRUPAL_MODS}/admin_menu/admin_menu.css
+@comment ${DRUPAL_MODS}/admin_menu/admin_menu.css.orig
+${DRUPAL_MODS}/admin_menu/admin_menu.inc
+${DRUPAL_MODS}/admin_menu/admin_menu.info
+${DRUPAL_MODS}/admin_menu/admin_menu.js
+${DRUPAL_MODS}/admin_menu/admin_menu.module
+${DRUPAL_MODS}/admin_menu/images/
+${DRUPAL_MODS}/admin_menu/images/arrow.png
+${DRUPAL_MODS}/admin_menu/images/bkg.png
+${DRUPAL_MODS}/admin_menu/images/icon_users.png
+${DRUPAL_MODS}/admin_menu/po/
+${DRUPAL_MODS}/admin_menu/po/admin_menu.pot
+${DRUPAL_MODS}/admin_menu/po/de.po
+${DRUPAL_MODS}/admin_menu/po/hu.po
+${DRUPAL_MODS}/admin_menu/po/ja.po

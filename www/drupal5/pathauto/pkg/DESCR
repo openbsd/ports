@@ -1,0 +1,5 @@
+default drupal url are not very readable.
+
+With pathauto, one can easily build decent url, for search engines,
+or simply to make more sense for users.
+

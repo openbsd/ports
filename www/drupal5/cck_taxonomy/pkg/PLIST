@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/cck_taxonomy/
+${DRUPAL_MODS}/cck_taxonomy/LICENSE.txt
+${DRUPAL_MODS}/cck_taxonomy/cck_taxonomy.info
+${DRUPAL_MODS}/cck_taxonomy/cck_taxonomy.module

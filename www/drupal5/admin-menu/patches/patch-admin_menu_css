@@ -1,0 +1,12 @@
+$OpenBSD: patch-admin_menu_css,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+--- admin_menu.css.orig	Tue Feb 12 22:36:13 2008
++++ admin_menu.css	Tue Feb 12 22:36:32 2008
+@@ -5,7 +5,7 @@
+  * Implementation of Sons of Suckerfish Dropdowns.
+  * @see www.htmldog.com/articles/suckerfish
+  **/
+-#admin_menu { position: absolute; top: 0px; left: 0px; font-size: 9px; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; background: url(images/bkg.png) bottom left repeat-x #101010; width: 100%; text-align: left; }
++#admin_menu { position: absolute; top: 0px; left: 0px; font-size: 12px; font-family: "lucida grande", tahoma, verdana, arial, sans-serif; background: url(images/bkg.png) bottom left repeat-x #101010; width: 100%; text-align: left; }
+ #admin_menu li.admin_menu-icon a { padding: 1px 8px 4px; }
+ #admin_menu li.admin_menu-icon ul a { padding: 4px 8px; }
+ #admin_menu li.admin_menu-icon img { vertical-align: bottom; }

@@ -1,0 +1,4 @@
+provides italian translation of drupal5.
+
+If you install this module prior to configuring drupal, thanks
+to autolocale, the installation itself will be available in italian!

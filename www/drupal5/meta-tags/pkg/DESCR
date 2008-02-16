@@ -1,0 +1,10 @@
+This module allows you to set some meta tags for each node, view
+or panels page.
+
+Giving more attention to the important keywords and/or description
+on some of your nodes allows you to get better search engine
+positioning (given that you really only provide the keywords which
+exist in the node body itself, and do not try to lie).
+
+The module may also be known under following names: nodewords or
+node (key)words. Meta tags is the preferred name.

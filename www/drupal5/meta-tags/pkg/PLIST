@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/nodewords/
+${DRUPAL_MODS}/nodewords/LICENSE.txt
+${DRUPAL_MODS}/nodewords/README.txt
+${DRUPAL_MODS}/nodewords/metatags/
+${DRUPAL_MODS}/nodewords/metatags/abstract.inc
+${DRUPAL_MODS}/nodewords/metatags/copyright.inc
+${DRUPAL_MODS}/nodewords/metatags/description.inc
+${DRUPAL_MODS}/nodewords/metatags/geourl.inc
+${DRUPAL_MODS}/nodewords/metatags/keywords.inc
+${DRUPAL_MODS}/nodewords/metatags/robots.inc
+${DRUPAL_MODS}/nodewords/node.tpl.php-example
+${DRUPAL_MODS}/nodewords/nodewords.info
+${DRUPAL_MODS}/nodewords/nodewords.install
+${DRUPAL_MODS}/nodewords/nodewords.module
+${DRUPAL_MODS}/nodewords/po/
+${DRUPAL_MODS}/nodewords/po/de.po
+${DRUPAL_MODS}/nodewords/po/nodewords.pot
+${DRUPAL_MODS}/nodewords/po/ru.po

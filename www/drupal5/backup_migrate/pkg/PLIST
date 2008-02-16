@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_ROOT}/files/backup_migrate/
+${DRUPAL_MODS}/backup_migrate/
+${DRUPAL_MODS}/backup_migrate/LICENSE.txt
+${DRUPAL_MODS}/backup_migrate/README.txt
+${DRUPAL_MODS}/backup_migrate/backup_migrate.info
+${DRUPAL_MODS}/backup_migrate/backup_migrate.install
+${DRUPAL_MODS}/backup_migrate/backup_migrate.module
+@extraunexec rm -rf ${DRUPAL_ROOT}/files/backup_migrate/*

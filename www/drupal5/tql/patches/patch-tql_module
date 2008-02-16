@@ -1,0 +1,21 @@
+$OpenBSD: patch-tql_module,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+--- tql.module.orig	Sat Feb 16 16:09:14 2008
++++ tql.module	Sat Feb 16 16:09:31 2008
+@@ -95,7 +95,7 @@ function tql_views_tables() {
+               '#autocomplete_path' => 'tql/autocomplete/0',
+             ),
+             'option' => 'string',
+-            'operator' => array('Has'),
++            'operator' => array(t('Has')),
+             'handler' => 'tql_handler_filter_query',
+             'help' => t('All terms from every vocabulary will be used to check against the specified query. This filter is not aware of taxonomy hierarchies. Please see the taxonomy help for more information.'),
+           ),
+@@ -116,7 +116,7 @@ function tql_views_tables() {
+               '#autocomplete_path' => 'tql/autocomplete/' . $voc->vid,
+             ),
+             'option' => 'string',
+-            'operator' => array('Has'),
++            'operator' => array(t('Has')),
+             'handler' => 'tql_handler_filter_query',
+             'vocabulary' => $voc->vid,
+             'help' => t("Only terms associated with %voc-name will be used to check against the specified query. This filter is not aware of taxonomy hierarchies. Please see the taxonomy help for more information.", array('%voc-name' => $voc->name)),

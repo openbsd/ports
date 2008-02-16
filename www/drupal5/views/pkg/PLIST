@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/views/
+${DRUPAL_MODS}/views/CHANGELOG.txt
+${DRUPAL_MODS}/views/LICENSE.txt
+${DRUPAL_MODS}/views/README.txt
+${DRUPAL_MODS}/views/go-bottom.png
+${DRUPAL_MODS}/views/go-down.png
+${DRUPAL_MODS}/views/go-top.png
+${DRUPAL_MODS}/views/go-up.png
+${DRUPAL_MODS}/views/modules/
+${DRUPAL_MODS}/views/modules/views_book.inc
+${DRUPAL_MODS}/views/modules/views_comment.inc
+${DRUPAL_MODS}/views/modules/views_forum.inc
+${DRUPAL_MODS}/views/modules/views_node.inc
+${DRUPAL_MODS}/views/modules/views_profile.inc
+${DRUPAL_MODS}/views/modules/views_search.inc
+${DRUPAL_MODS}/views/modules/views_statistics.inc
+${DRUPAL_MODS}/views/modules/views_taxonomy.inc
+${DRUPAL_MODS}/views/modules/views_upload.inc
+${DRUPAL_MODS}/views/modules/views_user.inc
+${DRUPAL_MODS}/views/po/
+${DRUPAL_MODS}/views/po/da.po
+${DRUPAL_MODS}/views/po/de.po
+${DRUPAL_MODS}/views/po/el.po
+${DRUPAL_MODS}/views/po/es.po
+${DRUPAL_MODS}/views/po/fr.po
+${DRUPAL_MODS}/views/po/he.po
+${DRUPAL_MODS}/views/po/hu.po
+${DRUPAL_MODS}/views/po/pl.po
+${DRUPAL_MODS}/views/po/views.pot
+${DRUPAL_MODS}/views/user-trash.png
+${DRUPAL_MODS}/views/views.info
+${DRUPAL_MODS}/views/views.install
+${DRUPAL_MODS}/views/views.module
+${DRUPAL_MODS}/views/views_cache.inc
+${DRUPAL_MODS}/views/views_query.inc
+${DRUPAL_MODS}/views/views_rss.info
+${DRUPAL_MODS}/views/views_rss.module
+${DRUPAL_MODS}/views/views_theme_wizard.info
+${DRUPAL_MODS}/views/views_theme_wizard.module
+${DRUPAL_MODS}/views/views_ui.css
+${DRUPAL_MODS}/views/views_ui.info
+${DRUPAL_MODS}/views/views_ui.module

@@ -1,0 +1,5 @@
+In some cases, one may want to just use the taxonomy vocabularies
+as cck fields for the hierarchical properties, and not for tagging.
+
+Among other things, this should provide for views and token integration.
+Not as useful as it would seem.

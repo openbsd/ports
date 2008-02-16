@@ -1,0 +1,3 @@
+allows easy backup of the drupal database to a file of sql statements,
+by selecting which tables you don't need.
+

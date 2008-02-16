@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/imce/
+${DRUPAL_MODS}/imce/LICENSE.txt
+${DRUPAL_MODS}/imce/README.txt
+${DRUPAL_MODS}/imce/imce.css
+${DRUPAL_MODS}/imce/imce.info
+${DRUPAL_MODS}/imce/imce.module
+${DRUPAL_MODS}/imce/imce_browse.js
+${DRUPAL_MODS}/imce/imce_extras.js
+${DRUPAL_MODS}/imce/imce_set_fck.js
+${DRUPAL_MODS}/imce/imce_set_inline.js
+${DRUPAL_MODS}/imce/imce_set_tinymce.js

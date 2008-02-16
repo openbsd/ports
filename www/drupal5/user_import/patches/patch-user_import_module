@@ -1,0 +1,12 @@
+$OpenBSD: patch-user_import_module,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+--- user_import.module.orig	Tue Feb 12 23:32:10 2008
++++ user_import.module	Tue Feb 12 23:33:10 2008
+@@ -1171,7 +1171,7 @@ function _user_import_sanitise_username(&$username) {
+     if ($sanitised == 0) {
+   
+         // username cannot contain an illegal character
+-        $username = preg_replace('/[^a-zA-Z0-9@ ]/', ' ', $username);
++        $username = preg_replace('/[^-_a-zA-Z0-9@ ]/', ' ', $username);
+         // username cannot contain multiple spaces in a row
+         $username = preg_replace('/[ ]+/', ' ', $username);   
+         

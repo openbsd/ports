@@ -1,0 +1,5 @@
+- alternate-login doesn't allow for easy swapping
+- advanced-user profile notification doesn't even check for actual changes
+and doesn't handle profile fields.
+- basic system should allow to create new accounts and generate one-shot passwords and send them through email
+- user-import should deal correctly with contact form and alternate-login

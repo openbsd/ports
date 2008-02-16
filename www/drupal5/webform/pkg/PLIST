@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/webform/
+${DRUPAL_MODS}/webform/INSTALL.txt
+${DRUPAL_MODS}/webform/LICENSE.txt
+${DRUPAL_MODS}/webform/README.txt
+${DRUPAL_MODS}/webform/THEMING.txt
+${DRUPAL_MODS}/webform/components/
+${DRUPAL_MODS}/webform/components/date.inc
+${DRUPAL_MODS}/webform/components/email.inc
+${DRUPAL_MODS}/webform/components/fieldset.inc
+${DRUPAL_MODS}/webform/components/file.inc
+${DRUPAL_MODS}/webform/components/grid.inc
+${DRUPAL_MODS}/webform/components/hidden.inc
+${DRUPAL_MODS}/webform/components/markup.inc
+${DRUPAL_MODS}/webform/components/pagebreak.inc
+${DRUPAL_MODS}/webform/components/select.inc
+${DRUPAL_MODS}/webform/components/textarea.inc
+${DRUPAL_MODS}/webform/components/textfield.inc
+${DRUPAL_MODS}/webform/components/time.inc
+${DRUPAL_MODS}/webform/po/
+${DRUPAL_MODS}/webform/po/da.po
+${DRUPAL_MODS}/webform/po/de.po
+${DRUPAL_MODS}/webform/po/el.po
+${DRUPAL_MODS}/webform/po/es.po
+${DRUPAL_MODS}/webform/po/he.po
+${DRUPAL_MODS}/webform/po/hu.po
+${DRUPAL_MODS}/webform/po/it.po
+${DRUPAL_MODS}/webform/po/nl.po
+${DRUPAL_MODS}/webform/po/ru.po
+${DRUPAL_MODS}/webform/po/sv.po
+${DRUPAL_MODS}/webform/po/webform.pot
+${DRUPAL_MODS}/webform/webform.css
+${DRUPAL_MODS}/webform/webform.inc
+${DRUPAL_MODS}/webform/webform.info
+${DRUPAL_MODS}/webform/webform.install
+${DRUPAL_MODS}/webform/webform.module
+${DRUPAL_MODS}/webform/webform_report.inc

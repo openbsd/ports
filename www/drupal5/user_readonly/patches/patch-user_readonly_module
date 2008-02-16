@@ -1,0 +1,17 @@
+$OpenBSD: patch-user_readonly_module,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+--- user_readonly.module.orig	Fri Feb 15 21:37:10 2008
++++ user_readonly.module	Fri Feb 15 21:38:31 2008
+@@ -205,7 +205,12 @@ function user_readonly_form_alter($form_id, &$form) { 
+             // as disabled fields are not submitted.
+             $form[$group]['user_readonly'][$key] = $form[$group][$key];
+             $form[$group]['user_readonly'][$key]['#type'] = 'hidden';
+-            $form[$group][$key]['#attributes']['disabled']=TRUE;
++	    if (!is_set ($form[$group][$key]['#attributes'])) {
++	      $form[$group][$key]['#attributes'] = array('disabled'=> TRUE);
++	    }
++	    else {
++	      $form[$group][$key]['#attributes']['disabled']=TRUE;
++	    }
+             break;
+         }
+ 	    }

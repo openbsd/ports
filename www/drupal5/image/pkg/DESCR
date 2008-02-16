@@ -1,0 +1,8 @@
+Adds support to upload images, and manage image content types to drupal.
+You can then attach images to any node type, or create image galleries.
+
+(the views:bonus grid plugin is especially valuable for this)
+
+Features automatic thumbnail creation, works with file uploads set to
+private method.
+

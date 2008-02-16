@@ -1,0 +1,3 @@
+redirects logins to an https url.
+highly recommended, the only drawback is that you have to setup https
+

@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/daterange/
+${DRUPAL_MODS}/daterange/LICENSE.txt
+${DRUPAL_MODS}/daterange/README.txt
+${DRUPAL_MODS}/daterange/daterange.info
+${DRUPAL_MODS}/daterange/daterange.js
+${DRUPAL_MODS}/daterange/daterange.module

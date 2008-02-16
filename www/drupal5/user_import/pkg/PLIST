@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/user_import/
+${DRUPAL_MODS}/user_import/LICENSE.txt
+${DRUPAL_MODS}/user_import/README.txt
+${DRUPAL_MODS}/user_import/sample.txt
+${DRUPAL_MODS}/user_import/user_import.info
+${DRUPAL_MODS}/user_import/user_import.install
+${DRUPAL_MODS}/user_import/user_import.module
+@comment ${DRUPAL_MODS}/user_import/user_import.module.orig

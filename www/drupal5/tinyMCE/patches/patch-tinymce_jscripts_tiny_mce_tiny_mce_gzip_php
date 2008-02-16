@@ -1,0 +1,12 @@
+$OpenBSD: patch-tinymce_jscripts_tiny_mce_tiny_mce_gzip_php,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+--- tinymce/jscripts/tiny_mce/tiny_mce_gzip.php.orig	Fri Feb 15 18:55:49 2008
++++ tinymce/jscripts/tiny_mce/tiny_mce_gzip.php	Fri Feb 15 18:56:08 2008
+@@ -22,7 +22,7 @@
+ 	$compress = getParam("compress", "true") == "true";
+ 	$core = getParam("core", "true") == "true";
+ 	$suffix = getParam("suffix", "_src") == "_src" ? "_src" : "";
+-	$cachePath = realpath("."); // Cache path, this is where the .gz files will be stored
++	$cachePath = realpath("cache"); // Cache path, this is where the .gz files will be stored
+ 	$expiresOffset = 3600 * 24 * 10; // Cache for 10 days in browser cache
+ 	$content = "";
+ 	$encodings = array();

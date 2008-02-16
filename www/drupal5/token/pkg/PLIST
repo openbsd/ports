@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/token/
+${DRUPAL_MODS}/token/API.txt
+${DRUPAL_MODS}/token/CHANGELOG.txt
+${DRUPAL_MODS}/token/LICENSE.txt
+${DRUPAL_MODS}/token/README.txt
+${DRUPAL_MODS}/token/token.inc
+${DRUPAL_MODS}/token/token.info
+${DRUPAL_MODS}/token/token.install
+${DRUPAL_MODS}/token/token.module
+${DRUPAL_MODS}/token/token_cck.inc
+${DRUPAL_MODS}/token/token_comment.inc
+${DRUPAL_MODS}/token/token_node.inc
+${DRUPAL_MODS}/token/token_taxonomy.inc
+${DRUPAL_MODS}/token/token_user.inc

@@ -1,0 +1,12 @@
+Module Functions
+
+    * Filtering of users based on profile.module fields
+    * Mass emailing/deleting of the filtered users
+    * Show all users who never logged in
+    * Notify selected roles when a new user registers for an account or when an account is modified. The notification emails include:
+    o User's email address
+    o A link to google and yahoo searches for user's email address - great for doing a quick spammer check on the user's email address.
+
+
+Mostly useful for:
+    * Notify selected roles when user updates profile fields

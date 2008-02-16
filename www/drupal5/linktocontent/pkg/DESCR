@@ -1,0 +1,9 @@
+This allows the `easy' insertion of link to nodes and menus
+in tinyMCE.
+
+The activation is a bit complicated:
+- activate the module
+- activate the plugins in the tinyMCE profiles that need it
+- set up administer link-to-content in appropriate roles
+- go to the link-to-content administration pages, and select
+the type of content you want to see in the menus

@@ -1,0 +1,16 @@
+Unfortunately Drupal does not include the powers of immortality or
+invincibility. You may someday get hit by a truck, or even just
+decide that you no longer want to maintain the site. So someone
+else may have to take over.
+
+Where do they start? I know you documented the site really well,
+but the next person doesn't want to read those 14 binders of
+documentation you left behind. They can always go through all the
+administration screens and look for the information, but that can
+take a lot of time and even those pages don't tell you everything.
+Some things you're only going to get by looking directly into the
+database.
+
+This is what the Site Documentation module is designed to do. In
+addition, it will detect some problems that may exist in your
+installation, and optionally correct some of them.

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/sitedoc/
+${DRUPAL_MODS}/sitedoc/LICENSE.txt
+${DRUPAL_MODS}/sitedoc/README.txt
+${DRUPAL_MODS}/sitedoc/po/
+${DRUPAL_MODS}/sitedoc/po/sitedoc.pot
+${DRUPAL_MODS}/sitedoc/sitedoc.css
+${DRUPAL_MODS}/sitedoc/sitedoc.info
+${DRUPAL_MODS}/sitedoc/sitedoc.install
+${DRUPAL_MODS}/sitedoc/sitedoc.module

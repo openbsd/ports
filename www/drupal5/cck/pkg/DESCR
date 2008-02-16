@@ -1,0 +1,7 @@
+The Content Construction Kit (CCK) is one of the most
+common plugins to drupal.
+
+It allows for the easy insertion of defined fields in content types.
+
+This plays nicely with Views, where you can order contents by types,
+vocabularies, or cck fields.

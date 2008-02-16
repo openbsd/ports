@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/date/
+${DRUPAL_MODS}/date/CHANGELOG.txt
+${DRUPAL_MODS}/date/INSTALL.txt
+${DRUPAL_MODS}/date/LICENSE.txt
+${DRUPAL_MODS}/date/date.css
+${DRUPAL_MODS}/date/date.inc
+${DRUPAL_MODS}/date/date.info
+${DRUPAL_MODS}/date/date.install
+${DRUPAL_MODS}/date/date.module
+${DRUPAL_MODS}/date/date_admin.inc
+${DRUPAL_MODS}/date/date_api.info
+${DRUPAL_MODS}/date/date_api.module
+${DRUPAL_MODS}/date/date_api_ical.inc
+${DRUPAL_MODS}/date/date_copy.info
+${DRUPAL_MODS}/date/date_copy.module
+${DRUPAL_MODS}/date/date_ical.inc
+${DRUPAL_MODS}/date/date_pathauto.inc
+${DRUPAL_MODS}/date/date_timezones.inc
+${DRUPAL_MODS}/date/date_views.inc
+${DRUPAL_MODS}/date/images/
+${DRUPAL_MODS}/date/images/ical16x16.gif
+${DRUPAL_MODS}/date/po/
+${DRUPAL_MODS}/date/po/da.po
+${DRUPAL_MODS}/date/po/date.pot

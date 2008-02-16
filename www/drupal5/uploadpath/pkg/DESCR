@@ -1,0 +1,3 @@
+By default, drupal's upload file system is `flat'.
+This allows one to set file paths according to various
+content type properties and vocabulary properties (tokens).

@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/tql/
+${DRUPAL_MODS}/tql/LICENSE.txt
+${DRUPAL_MODS}/tql/README
+${DRUPAL_MODS}/tql/ast/
+${DRUPAL_MODS}/tql/ast/Makefile
+${DRUPAL_MODS}/tql/ast/TqlAbstractAstVisitor.php
+${DRUPAL_MODS}/tql/ast/TqlAstDumper.php
+${DRUPAL_MODS}/tql/ast/TqlErrorFormatter.php
+${DRUPAL_MODS}/tql/ast/TqlLexer.php
+${DRUPAL_MODS}/tql/ast/TqlLexer.plex
+${DRUPAL_MODS}/tql/ast/TqlMySqlGenerator.php
+${DRUPAL_MODS}/tql/ast/TqlNameToTid.php
+${DRUPAL_MODS}/tql/ast/TqlParser.php
+${DRUPAL_MODS}/tql/ast/TqlParser.y
+${DRUPAL_MODS}/tql/ast/TqlSqlGenerator.php
+${DRUPAL_MODS}/tql/ast/tql.php
+${DRUPAL_MODS}/tql/tql.info
+${DRUPAL_MODS}/tql/tql.module
+@comment ${DRUPAL_MODS}/tql/tql.module.orig

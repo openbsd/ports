@@ -1,0 +1,12 @@
+$OpenBSD: patch-advuser_module,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+--- advuser.module.orig	Sat Feb 16 15:33:24 2008
++++ advuser.module	Sat Feb 16 15:33:31 2008
+@@ -42,7 +42,7 @@ function advuser_menu($may_cache) {
+ 
+     $items[] = array(
+             'path' => 'admin/user/advuser', 
+-            'title' => t('Advanced managment'),
++            'title' => t('Advanced management'),
+             'callback' => 'advuser_admin_users',
+             'type' => MENU_NORMAL_ITEM,
+ //            'weight' => 7,

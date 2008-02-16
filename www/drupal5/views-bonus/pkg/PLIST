@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/views_bonus/
+${DRUPAL_MODS}/views_bonus/CHAGELOG.txt
+${DRUPAL_MODS}/views_bonus/INSTALL.txt
+${DRUPAL_MODS}/views_bonus/LICENSE.txt
+${DRUPAL_MODS}/views_bonus/README.txt
+${DRUPAL_MODS}/views_bonus/csv.png
+${DRUPAL_MODS}/views_bonus/doc.png
+${DRUPAL_MODS}/views_bonus/views_bonus.css
+${DRUPAL_MODS}/views_bonus/views_bonus_archive.info
+${DRUPAL_MODS}/views_bonus/views_bonus_archive.module
+${DRUPAL_MODS}/views_bonus/views_bonus_audio_playlist.info
+${DRUPAL_MODS}/views_bonus/views_bonus_audio_playlist.module
+${DRUPAL_MODS}/views_bonus/views_bonus_export.info
+${DRUPAL_MODS}/views_bonus/views_bonus_export.module
+${DRUPAL_MODS}/views_bonus/views_bonus_grid.info
+${DRUPAL_MODS}/views_bonus/views_bonus_grid.module
+${DRUPAL_MODS}/views_bonus/views_bonus_lineage_tree.info
+${DRUPAL_MODS}/views_bonus/views_bonus_lineage_tree.module
+${DRUPAL_MODS}/views_bonus/views_bonus_panels.info
+${DRUPAL_MODS}/views_bonus/views_bonus_panels.module
+${DRUPAL_MODS}/views_bonus/views_bonus_sparkline.info
+${DRUPAL_MODS}/views_bonus/views_bonus_sparkline.module
+${DRUPAL_MODS}/views_bonus/views_bonus_summary_combo.info
+${DRUPAL_MODS}/views_bonus/views_bonus_summary_combo.module
+${DRUPAL_MODS}/views_bonus/views_bonus_tag_cloud.css
+${DRUPAL_MODS}/views_bonus/views_bonus_tag_cloud.info
+${DRUPAL_MODS}/views_bonus/views_bonus_tag_cloud.module

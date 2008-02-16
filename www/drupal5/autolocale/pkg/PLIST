@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/autolocale/
+${DRUPAL_MODS}/autolocale/LICENSE.txt
+${DRUPAL_MODS}/autolocale/README.txt
+${DRUPAL_MODS}/autolocale/autolocale.info
+${DRUPAL_MODS}/autolocale/autolocale.install
+${DRUPAL_MODS}/autolocale/autolocale.module
+${DRUPAL_MODS}/autolocale/po/
+${DRUPAL_MODS}/autolocale/po/autolocale.pot
+${DRUPAL_MODS}/autolocale/po/de.po
+${DRUPAL_MODS}/autolocale/po/fr.po
+${DRUPAL_MODS}/autolocale/po/he.po
+${DRUPAL_MODS}/autolocale/po/hu.po
+${DRUPAL_MODS}/autolocale/po/ja.po
+${DRUPAL_MODS}/autolocale/po/pt.po
+${DRUPAL_MODS}/autolocale/po/ru.po
+${DRUPAL_MODS}/autolocale/po/tr.po
+${DRUPAL_ROOT}/profiles/localized/
+${DRUPAL_ROOT}/profiles/localized/localized.profile

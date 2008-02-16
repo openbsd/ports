@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/print/
+${DRUPAL_MODS}/print/CHANGELOG.txt
+${DRUPAL_MODS}/print/CREDITS.txt
+${DRUPAL_MODS}/print/INSTALL.txt
+${DRUPAL_MODS}/print/LICENSE.txt
+${DRUPAL_MODS}/print/MAINTAINERS.txt
+${DRUPAL_MODS}/print/README.txt
+${DRUPAL_MODS}/print/po/
+${DRUPAL_MODS}/print/po/ca.po
+${DRUPAL_MODS}/print/po/cs.po
+${DRUPAL_MODS}/print/po/de.po
+${DRUPAL_MODS}/print/po/es.po
+${DRUPAL_MODS}/print/po/fr.po
+${DRUPAL_MODS}/print/po/hu.po
+${DRUPAL_MODS}/print/po/it.po
+${DRUPAL_MODS}/print/po/nl.po
+${DRUPAL_MODS}/print/po/no.po
+${DRUPAL_MODS}/print/po/print.pot
+${DRUPAL_MODS}/print/po/pt-br.po
+${DRUPAL_MODS}/print/po/pt-pt.po
+${DRUPAL_MODS}/print/po/ro.po
+${DRUPAL_MODS}/print/po/ru.po
+${DRUPAL_MODS}/print/po/uk.po
+${DRUPAL_MODS}/print/print.css
+${DRUPAL_MODS}/print/print.info
+${DRUPAL_MODS}/print/print.install
+${DRUPAL_MODS}/print/print.module
+${DRUPAL_MODS}/print/print.tpl.php
