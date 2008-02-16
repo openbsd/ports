@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.327 2008/02/04 20:27:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.328 2008/02/16 16:50:04 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -22,6 +22,7 @@
      SUBDIR += dansguardian,clamav
      SUBDIR += decss
      SUBDIR += dillo
+     SUBDIR += drupal5
      SUBDIR += elinks
      SUBDIR += epiphany
      SUBDIR += fcgi
