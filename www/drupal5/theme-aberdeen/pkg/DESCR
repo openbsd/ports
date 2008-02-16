@@ -1,0 +1,17 @@
+A fresh design that balances simplicity, soft, neutral background
+colors, plenty of whitespace and big nice typography.
+
+List of features:
+
+    * Standards-compliant XHTML 1.0 Strict and CSS (No CSS hacks).
+    * Liquid CSS layout (tableless) - the whole layout increases
+    or decreases proportionally as dimensions are specified in ems.
+    Try changing the font size to see this working.
+    * Supports one, two and three columns.
+    * Cross-browser compatible. Works fine in Firefox 2.0 and IE 6.
+    * Cute icons (all GPL or created by myself).
+    * Coded with SEO in mind, the order of the columns are 2dn, 3rd
+    and 1st - usually the 1st is intended for navigation, the other
+    two for content, Google likes that.
+    * Slinding doors tabs for primary links that blend with main content area.
+
