@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/09/02 22:42:55 rui Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/02/16 10:56:41 rui Exp $
 @newgroup _nepenthes:584
 @newuser _nepenthes:584:584:daemon:nepenthes user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -87,12 +87,8 @@ share/examples/nepenthes/log-prelude.conf
 @sample ${SYSCONFDIR}/nepenthes/log-prelude.conf
 share/examples/nepenthes/log-surfnet.conf
 @sample ${SYSCONFDIR}/nepenthes/log-surfnet.conf
-share/examples/nepenthes/module-bridge.conf
-@sample ${SYSCONFDIR}/nepenthes/module-bridge.conf
 share/examples/nepenthes/module-honeytrap.conf
 @sample ${SYSCONFDIR}/nepenthes/module-honeytrap.conf
-share/examples/nepenthes/module-peiros.conf
-@sample ${SYSCONFDIR}/nepenthes/module-peiros.conf
 share/examples/nepenthes/module-portwatch.conf
 @sample ${SYSCONFDIR}/nepenthes/module-portwatch.conf
 share/examples/nepenthes/nepenthes.conf
@@ -164,8 +160,6 @@ share/examples/nepenthes/vuln-pnp.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-pnp.conf
 share/examples/nepenthes/vuln-sasserftpd.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-sasserftpd.conf
-share/examples/nepenthes/vuln-ssh.conf
-@sample ${SYSCONFDIR}/nepenthes/vuln-ssh.conf
 share/examples/nepenthes/vuln-sub7.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-sub7.conf
 share/examples/nepenthes/vuln-upnp.conf

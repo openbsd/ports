@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/02/14 21:36:27 rui Exp $
+# $OpenBSD: Makefile,v 1.20 2008/02/16 10:56:41 rui Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	determine the malware activity on a network
 
-DISTNAME= 	nepenthes-20070830
-PKGNAME=	${DISTNAME}p4
+DISTNAME=	nepenthes-0.2.2 
 CATEGORIES=	net
 
 HOMEPAGE=	http://nepenthes.mwcollect.org/
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nepenthes/}
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
