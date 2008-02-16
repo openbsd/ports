@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/16 20:02:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/16 20:43:41 espie Exp $
 
     SUBDIR += IMCE
     SUBDIR += admin-menu
@@ -33,8 +33,11 @@
     SUBDIR += user_readonly
     SUBDIR += usernode
     SUBDIR += theme-aberdeen
+    SUBDIR += theme-bealestreet
     SUBDIR += theme-bluebreeze
     SUBDIR += theme-denver
+    SUBDIR += theme-litejazz
+    SUBDIR += theme-newsflash
     SUBDIR += themesettingsapi
     SUBDIR += views
     SUBDIR += views-bonus
