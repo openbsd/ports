@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/16 20:43:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2008/02/16 21:39:14 espie Exp $
 
     SUBDIR += IMCE
     SUBDIR += admin-menu
@@ -12,6 +12,7 @@
     SUBDIR += core
     SUBDIR += date
     SUBDIR += daterange
+    SUBDIR += dba
     SUBDIR += dhtml_menu
     SUBDIR += image
     SUBDIR += linktocontent
