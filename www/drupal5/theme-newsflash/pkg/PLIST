@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 20:38:43 espie Exp $
+@owner www
+@group www
+${DRUPAL_THEMES}/newsflash/
+${DRUPAL_THEMES}/newsflash/Release Notes.txt
+${DRUPAL_THEMES}/newsflash/block.tpl.php
+${DRUPAL_THEMES}/newsflash/content.css
+${DRUPAL_THEMES}/newsflash/css/
+${DRUPAL_THEMES}/newsflash/css/blue.css
+${DRUPAL_THEMES}/newsflash/css/copper.css
+${DRUPAL_THEMES}/newsflash/css/green.css
+${DRUPAL_THEMES}/newsflash/css/suckerfish_blue.css
+${DRUPAL_THEMES}/newsflash/css/suckerfish_copper.css
+${DRUPAL_THEMES}/newsflash/css/suckerfish_green.css
+${DRUPAL_THEMES}/newsflash/images/
+${DRUPAL_THEMES}/newsflash/images/blue/
+${DRUPAL_THEMES}/newsflash/images/blue/BottomBG.png
+${DRUPAL_THEMES}/newsflash/images/blue/MastBG.png
+${DRUPAL_THEMES}/newsflash/images/blue/MenuDiv.png
+${DRUPAL_THEMES}/newsflash/images/blue/RoopleThemeLogo.png
+${DRUPAL_THEMES}/newsflash/images/blue/logo.png
+${DRUPAL_THEMES}/newsflash/images/copper/
+${DRUPAL_THEMES}/newsflash/images/copper/BottomBG.png
+${DRUPAL_THEMES}/newsflash/images/copper/MastBG.png
+${DRUPAL_THEMES}/newsflash/images/copper/MenuDiv.png
+${DRUPAL_THEMES}/newsflash/images/copper/RoopleThemeLogo.png
+${DRUPAL_THEMES}/newsflash/images/copper/logo.png
+${DRUPAL_THEMES}/newsflash/images/green/
+${DRUPAL_THEMES}/newsflash/images/green/BottomBG.png
+${DRUPAL_THEMES}/newsflash/images/green/MastBG.png
+${DRUPAL_THEMES}/newsflash/images/green/MenuDiv.png
+${DRUPAL_THEMES}/newsflash/images/green/RoopleThemeLogo.png
+${DRUPAL_THEMES}/newsflash/images/green/logo.png
+${DRUPAL_THEMES}/newsflash/images/menu_arrow.png
+${DRUPAL_THEMES}/newsflash/js/
+${DRUPAL_THEMES}/newsflash/js/jquery.pngFix.js
+${DRUPAL_THEMES}/newsflash/js/suckerfish.js
+${DRUPAL_THEMES}/newsflash/logo.png
+${DRUPAL_THEMES}/newsflash/node.tpl.php
+${DRUPAL_THEMES}/newsflash/page.tpl.php
+${DRUPAL_THEMES}/newsflash/screenshot-drupal.org.png
+${DRUPAL_THEMES}/newsflash/screenshot.png
+${DRUPAL_THEMES}/newsflash/settings.php
+${DRUPAL_THEMES}/newsflash/style.css
+${DRUPAL_THEMES}/newsflash/template.php
