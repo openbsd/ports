@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/17 13:18:47 espie Exp $
 @owner www
 @group www
 ${DRUPAL_MODS}/alt_login/
@@ -7,6 +7,7 @@ ${DRUPAL_MODS}/alt_login/README.txt
 ${DRUPAL_MODS}/alt_login/alt_login.info
 ${DRUPAL_MODS}/alt_login/alt_login.install
 ${DRUPAL_MODS}/alt_login/alt_login.module
+@comment ${DRUPAL_MODS}/alt_login/alt_login.module.orig
 ${DRUPAL_MODS}/alt_login/po/
 ${DRUPAL_MODS}/alt_login/po/alt_login.pot
 ${DRUPAL_MODS}/alt_login/po/ja.po
