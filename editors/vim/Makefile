@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2008/02/13 16:28:18 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.90 2008/02/17 18:10:04 espie Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -8,7 +8,7 @@ REVISION=	244
 VERSION=	7.1.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
-PKGNAME-main=	vim-${VERSION}
+PKGNAME-main=	vim-${VERSION}p0
 PKGNAME-lang=	vim-lang-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
