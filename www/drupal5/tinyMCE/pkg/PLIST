@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/17 14:34:14 espie Exp $
 @owner www
 @group www
 ${DRUPAL_MODS}/tinymce/
@@ -54,6 +54,7 @@ ${DRUPAL_MODS}/tinymce/tinymce/
 ${DRUPAL_MODS}/tinymce/tinymce.info
 ${DRUPAL_MODS}/tinymce/tinymce.install
 ${DRUPAL_MODS}/tinymce/tinymce.module
+@comment ${DRUPAL_MODS}/tinymce/tinymce.module.orig
 ${DRUPAL_MODS}/tinymce/tinymce/jscripts/
 ${DRUPAL_MODS}/tinymce/tinymce/jscripts/tiny_mce/
 ${DRUPAL_MODS}/tinymce/tinymce/jscripts/tiny_mce/blank.htm

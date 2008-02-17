@@ -1,0 +1,13 @@
+$OpenBSD: patch-tinymce_module,v 1.1 2008/02/17 14:34:14 espie Exp $
+--- tinymce.module.orig	Sun Feb 17 15:11:23 2008
++++ tinymce.module	Sun Feb 17 15:12:53 2008
+@@ -78,6 +78,9 @@ function tinymce_process_textarea($element) {
+   global $user;
+   static $profile_name;
+ 
++  if (isset($element['#noMCE']) && $element['#noMCE']) {
++    return $element;
++  }
+   //$element is an array of attributes for the textarea but there is no just 'name' value, so we extract this from the #id field
+   $textarea_name = substr($element['#id'], strpos($element['#id'], '-') + 1);
+ 

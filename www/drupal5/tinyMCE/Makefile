@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/17 14:34:14 espie Exp $
 
 COMMENT =	tinymce for drupal
 
 DISTNAME = 	tinymce-5.x-1.9
-PKGNAME =	drupal5-tinymce-1.9
+PKGNAME =	drupal5-tinymce-1.9p0
 
 DISTFILES =	${DISTNAME}.tar.gz \
 		tinymce_2_1_3.zip:0 tinymce_compressor_php_2_0.zip:0

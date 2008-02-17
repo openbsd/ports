@@ -1,0 +1,19 @@
+$OpenBSD: patch-components_grid_inc,v 1.1 2008/02/17 14:34:14 espie Exp $
+--- components/grid.inc.orig	Wed Jan 23 05:45:29 2008
++++ components/grid.inc	Sun Feb 17 15:31:57 2008
+@@ -19,6 +19,7 @@ function _webform_edit_grid($currfield) {
+     '#rows' => 5,
+     '#weight' => -3,
+     '#required' => TRUE,
++    '#noMCE' => TRUE,
+   );
+   $edit_fields['extra']['questions'] = array(
+     '#type' => 'textarea',
+@@ -29,6 +30,7 @@ function _webform_edit_grid($currfield) {
+     '#rows' => 5,
+     '#weight' => -2,
+     '#required' => TRUE,
++    '#noMCE' => TRUE,
+   );
+   $edit_fields['extra']['optrand'] = array(
+     '#type' => 'checkbox',

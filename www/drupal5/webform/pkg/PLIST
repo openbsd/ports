@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/17 14:34:14 espie Exp $
 @owner www
 @group www
 ${DRUPAL_MODS}/webform/
@@ -12,10 +12,12 @@ ${DRUPAL_MODS}/webform/components/email.inc
 ${DRUPAL_MODS}/webform/components/fieldset.inc
 ${DRUPAL_MODS}/webform/components/file.inc
 ${DRUPAL_MODS}/webform/components/grid.inc
+@comment ${DRUPAL_MODS}/webform/components/grid.inc.orig
 ${DRUPAL_MODS}/webform/components/hidden.inc
 ${DRUPAL_MODS}/webform/components/markup.inc
 ${DRUPAL_MODS}/webform/components/pagebreak.inc
 ${DRUPAL_MODS}/webform/components/select.inc
+@comment ${DRUPAL_MODS}/webform/components/select.inc.orig
 ${DRUPAL_MODS}/webform/components/textarea.inc
 ${DRUPAL_MODS}/webform/components/textfield.inc
 ${DRUPAL_MODS}/webform/components/time.inc

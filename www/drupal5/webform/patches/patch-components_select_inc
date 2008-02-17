@@ -1,0 +1,11 @@
+$OpenBSD: patch-components_select_inc,v 1.1 2008/02/17 14:34:14 espie Exp $
+--- components/select.inc.orig	Sun Feb 10 07:26:40 2008
++++ components/select.inc	Sun Feb 17 15:31:57 2008
+@@ -20,6 +20,7 @@ function _webform_edit_select($currfield) {
+     '#rows' => 5,
+     '#weight' => -2,
+     '#required' => TRUE,
++    '#noMCE' => TRUE,
+   );
+   $edit_fields['value'] = array(
+     '#type' => 'textfield',
