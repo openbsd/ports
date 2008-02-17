@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.17 2007/11/16 15:37:20 steven Exp $
+# $OpenBSD: libtool,v 1.18 2008/02/17 02:01:42 jakemsr Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -355,6 +355,8 @@ if ($mode eq 'compile') {
 	}
 	print "linkmode: $linkmode\n" if $D;
 
+	handle_special_chars(\@ARGV);
+
 	my $argvstring = join ' ', @ARGV;
 	$argvstring = parse_linkargs($argvstring, 1);
 	@ARGV = split /\s+/, $argvstring;
@@ -362,8 +364,6 @@ if ($mode eq 'compile') {
 
 	# eat multiple version-info arguments, we only accept the first.
 	map { $_ = '' if ($_ =~ m/\d+:\d+:\d+/); } @ARGV;
-
-	handle_special_chars(\@ARGV);
 
 	my @objs;
 	my @sobjs;
