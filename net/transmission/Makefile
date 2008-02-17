@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2008/02/03 15:45:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2008/02/17 21:59:32 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
 
-VER=		1.04
+VER=		1.05
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gui=	transmission-gui-${VER}
@@ -52,7 +52,8 @@ WANTLIB-gui=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=
-RUN_DEPENDS-gui=:${PKGNAME-main}:net/transmission,-main ${RUN_DEPENDS}
+RUN_DEPENDS-gui=:${PKGNAME-main}:net/transmission,-main \
+		::devel/desktop-file-utils ${RUN_DEPENDS}
 USE_X11=	Yes
 .endif
 
