@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2006/11/05 14:42:56 bernd Exp $
---- doc/Makefile.in.orig	Fri Oct 27 19:44:34 2006
-+++ doc/Makefile.in	Fri Oct 27 19:44:43 2006
-@@ -121,7 +121,7 @@ am__quote = @am__quote@
- install_sh = @install_sh@
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2008/02/17 18:53:02 bernd Exp $
+--- doc/Makefile.in.orig	Fri Feb 15 14:11:31 2008
++++ doc/Makefile.in	Fri Feb 15 14:11:31 2008
+@@ -200,7 +200,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  man_MANS = mpd.1 mpd.conf.5
- docdir = $(prefix)/share/doc/$(PACKAGE)
 -doc_DATA = COMMANDS mpdconf.example
 +doc_DATA = COMMANDS
  EXTRA_DIST = $(man_MANS) $(doc_DATA)
- subdir = doc
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ all: all-am
+ 

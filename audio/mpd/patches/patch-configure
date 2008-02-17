@@ -1,6 +1,6 @@
---- configure.orig	Mon May 28 15:20:18 2007
-+++ configure	Mon Sep  3 21:10:03 2007
-@@ -28231,7 +28231,7 @@ fi
+--- configure.orig	Mon Jan 28 07:59:22 2008
++++ configure	Fri Feb 15 14:05:22 2008
+@@ -26420,7 +26420,7 @@ fi
      LIBFLAC_LIBS="-L$libdir"
    fi
  
