@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/10/30 14:19:14 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2008/02/17 10:54:21 steven Exp $
 
 COMMENT=	small, portable, general purpose computer algebra system
 
-DISTNAME=	mathomatic-12.7.9
+DISTNAME=	mathomatic-12.8.7
 CATEGORIES=	math
 
 HOMEPAGE=	http://mathomatic.orgserve.de/math/
@@ -20,14 +20,10 @@ EXTRACT_SUFX=	.tar.bz2
 
 MAKE_ENV=	READLINE=1
 MAKE_FILE=	makefile
+FAKE_FLAGS=	prefix=${WRKINST}${PREFIX}
 
 REGRESS_TARGET=	test
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/mathomatic ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/mathomatic.1 ${PREFIX}/man/man1/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mathomatic
-	${INSTALL_DATA} ${WRKSRC}/changes.txt ${WRKSRC}/doc/*.html \
-		${PREFIX}/share/doc/mathomatic/
+RUN_DEPENDS=	::devel/desktop-file-utils
 
 .include <bsd.port.mk>
