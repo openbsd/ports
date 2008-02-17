@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2008/02/01 16:53:58 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.45 2008/02/17 17:51:34 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -23,6 +23,9 @@ libexec/postfix/nqmgr
 libexec/postfix/oqmgr
 libexec/postfix/pickup
 libexec/postfix/pipe
+libexec/postfix/post-install
+libexec/postfix/postfix-files
+libexec/postfix/postfix-script
 libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
@@ -287,9 +290,6 @@ share/examples/postfix/main.cf
 share/examples/postfix/main.cf.default
 share/examples/postfix/makedefs.out
 share/examples/postfix/master.cf
-share/examples/postfix/post-install
-share/examples/postfix/postfix-files
-share/examples/postfix/postfix-script
 share/examples/postfix/relocated
 share/examples/postfix/transport
 share/examples/postfix/virtual
