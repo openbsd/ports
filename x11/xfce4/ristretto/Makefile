@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/18 21:05:06 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/02/17 20:21:15 landry Exp $
 
 COMMENT=	lightweight image-viewer for xfce4
 
-V=		0.0.15
+V=		0.0.17
 DISTNAME=	ristretto-${V}
 
 HOMEPAGE=	http://goodies.xfce.org/projects/applications/ristretto
