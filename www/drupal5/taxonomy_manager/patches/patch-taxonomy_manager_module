@@ -1,0 +1,30 @@
+$OpenBSD: patch-taxonomy_manager_module,v 1.1.1.1 2008/02/17 00:36:43 espie Exp $
+--- taxonomy_manager.module.orig	Sun Feb 17 01:34:33 2008
++++ taxonomy_manager.module	Sun Feb 17 01:35:05 2008
+@@ -172,7 +172,7 @@ function taxonomy_manager_form($vid, $tid = 0, $filter
+     '#search_string' => ($tid) ? NULL : $filter,
+   );
+   
+-  $search_description = t("You can search directly for exisiting terms. 
++  $search_description = t("You can search directly for existing terms. 
+       If your input doesn't match an existing term, it will be used for filtering root level terms (useful for non-hierarchical vocabularies).");
+   
+   $form['search'] = array(  
+@@ -409,7 +409,7 @@ function taxonomy_manager_merge_form($voc) {
+   $form = array();
+   
+   $description .= t("The selected terms get merged into one term. 
+-    This resulting merged term can either be an exisiting term or a completely new term. 
++    This resulting merged term can either be an existing term or a completely new term. 
+     The selected terms will automatically get synomyms of the merged term and will be deleted afterwards.");
+   
+   $form['merge'] = array( 
+@@ -1006,7 +1006,7 @@ function taxonomy_manager_delete_terms($tids, $options
+  *   array of term ids to move
+  * @param $options
+  *   array of additional options for moving
+- *   'keep_old_parents': if true, exisiting parents doesn't get deleted (only possible with multi hierarchies)
++ *   'keep_old_parents': if true, existing parents don't get deleted (only possible with multi hierarchies)
+  */
+ function taxonomy_manager_move($parents, $children, $options = array()) {
+   if (!is_array($parents)) array($parents);

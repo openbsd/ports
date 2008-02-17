@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/17 00:36:43 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/taxonomy_manager/
+${DRUPAL_MODS}/taxonomy_manager/LICENSE.txt
+${DRUPAL_MODS}/taxonomy_manager/README.txt
+${DRUPAL_MODS}/taxonomy_manager/css/
+${DRUPAL_MODS}/taxonomy_manager/css/taxonomy_manager.css
+${DRUPAL_MODS}/taxonomy_manager/images/
+${DRUPAL_MODS}/taxonomy_manager/images/2downarrow.png
+${DRUPAL_MODS}/taxonomy_manager/images/ajax-loader.gif
+${DRUPAL_MODS}/taxonomy_manager/images/dialog-cancel.png
+${DRUPAL_MODS}/taxonomy_manager/images/document-save.png
+${DRUPAL_MODS}/taxonomy_manager/images/edit-find.png
+${DRUPAL_MODS}/taxonomy_manager/images/go-down-small.png
+${DRUPAL_MODS}/taxonomy_manager/images/go-down.png
+${DRUPAL_MODS}/taxonomy_manager/images/go-up-small.png
+${DRUPAL_MODS}/taxonomy_manager/images/go-up.png
+${DRUPAL_MODS}/taxonomy_manager/images/list-add.png
+${DRUPAL_MODS}/taxonomy_manager/images/list-remove.png
+${DRUPAL_MODS}/taxonomy_manager/images/merge.png
+${DRUPAL_MODS}/taxonomy_manager/images/move.png
+${DRUPAL_MODS}/taxonomy_manager/images/tv-collapsable-last.gif
+${DRUPAL_MODS}/taxonomy_manager/images/tv-collapsable.gif
+${DRUPAL_MODS}/taxonomy_manager/images/tv-expandable-last.gif
+${DRUPAL_MODS}/taxonomy_manager/images/tv-expandable.gif
+${DRUPAL_MODS}/taxonomy_manager/images/tv-item-last.gif
+${DRUPAL_MODS}/taxonomy_manager/images/tv-item.gif
+${DRUPAL_MODS}/taxonomy_manager/js/
+${DRUPAL_MODS}/taxonomy_manager/js/childForm.js
+${DRUPAL_MODS}/taxonomy_manager/js/hideForm.js
+${DRUPAL_MODS}/taxonomy_manager/js/siblingsForm.js
+${DRUPAL_MODS}/taxonomy_manager/js/termData.js
+${DRUPAL_MODS}/taxonomy_manager/js/tree.js
+${DRUPAL_MODS}/taxonomy_manager/js/updateWeight.js
+${DRUPAL_MODS}/taxonomy_manager/taxonomy_manager.info
+${DRUPAL_MODS}/taxonomy_manager/taxonomy_manager.install
+${DRUPAL_MODS}/taxonomy_manager/taxonomy_manager.module
