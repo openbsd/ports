@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/21 06:00:11 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2008/02/17 23:25:17 sthen Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
@@ -30,7 +30,10 @@ SEPARATE_BUILD=		concurrent
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-static \
-			--disable-asm
+			--enable-static
+
+.if ${MACHINE_ARCH} != "hppa"
+CONFIGURE_ARGS+=       --disable-asm
+.endif
 
 .include <bsd.port.mk>
