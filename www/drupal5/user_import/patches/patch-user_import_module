@@ -1,7 +1,17 @@
-$OpenBSD: patch-user_import_module,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
---- user_import.module.orig	Tue Feb 12 23:32:10 2008
-+++ user_import.module	Tue Feb 12 23:33:10 2008
-@@ -1171,7 +1171,7 @@ function _user_import_sanitise_username(&$username) {
+$OpenBSD: patch-user_import_module,v 1.2 2008/02/17 12:37:22 espie Exp $
+--- user_import.module.orig	Tue Jul 24 00:49:45 2007
++++ user_import.module	Sun Feb 17 13:32:54 2008
+@@ -1088,6 +1088,9 @@ function user_import_edit_match_fields(&$form, $import
+     $profile_fields[0] = '-------------';
+     $profile_fields['email'] = t('Email Address') . '*';
+     $profile_fields['password'] = t('Password');
++    if (module_exists('alt_login')) {
++      $profile_fields['alt_login'] = t('Alternate Login');
++    }
+     asort($profile_fields);  
+       
+     $row = 0;
+@@ -1171,7 +1174,7 @@ function _user_import_sanitise_username(&$username) {
      if ($sanitised == 0) {
    
          // username cannot contain an illegal character
@@ -10,3 +20,21 @@ $OpenBSD: patch-user_import_module,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
          // username cannot contain multiple spaces in a row
          $username = preg_replace('/[ ]+/', ' ', $username);   
          
+@@ -1549,6 +1552,7 @@ function _user_import_process($settings) {	
+                             $username_order[ $column_id ] = $setting['username'];
+                             $username_abbreviate[$column_id]= $setting['abbreviate'];
+                     } 
++		    if ($setting['field_match'] == 'alt_login') $alt_login = trim($data[$column_id]);
+                 }
+                 
+                 if ($errors == 'duplicate email' && $settings['setting'] == 'import') _user_import_group_add($settings, $email, $fields);
+@@ -1572,6 +1576,9 @@ function _user_import_process($settings) {	
+                             'roles' => $roles,
+                             'contact' => $contact
+                          );
++			 if (!empty($alt_login)) {
++			   $account['alt_login'] = $alt_login;
++			 }
+                          
+                          if (!empty($settings['options']['activate'])) {
+                             $account['access'] = time();
