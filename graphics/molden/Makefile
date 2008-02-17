@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/12 18:14:21 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/17 20:25:07 ckuethe Exp $
 
 COMMENT=	ab initio MOLecular DENsity display program
 
 V=		4.6
 DISTNAME=	molden${V}
-PKGNAME=	molden-${V}p0
+PKGNAME=	molden-${V}p1
 CATEGORIES=	biology graphics
 
 HOMEPAGE=	http://www.cmbi.ru.nl/molden/molden.html
 
 MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
+BROKEN=Author keeps patching and rolling the tarball without bumping version
 
 # Free for private, non-profit use. Commercial license required otherwise
 PERMIT_PACKAGE_CDROM=	No
