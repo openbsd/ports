@@ -1,7 +1,7 @@
-$OpenBSD: patch-main.cf,v 1.7 2008/02/01 16:37:53 jakob Exp $
---- conf/main.cf.orig	Fri Mar 24 21:38:54 2006
-+++ conf/main.cf	Sat Apr  8 18:43:44 2006
-@@ -108,6 +108,9 @@ mail_owner = postfix
+$OpenBSD: patch-main.cf,v 1.8 2008/02/17 21:03:58 jakob Exp $
+--- conf/main.cf.orig	Tue Dec 18 14:50:25 2007
++++ conf/main.cf	Sun Feb 17 05:05:14 2008
+@@ -114,6 +114,9 @@ mail_owner = postfix
  #inet_interfaces = $myhostname
  #inet_interfaces = $myhostname, localhost
  
