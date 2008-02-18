@@ -1,6 +1,6 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
---- raddb/radiusd.conf.in.orig	Sat Dec 29 04:33:26 2007
-+++ raddb/radiusd.conf.in	Mon Jan 21 16:21:31 2008
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.5 2008/02/18 15:46:43 ajacoutot Exp $
+--- raddb/radiusd.conf.in.orig	Mon Jan 21 11:29:59 2008
++++ raddb/radiusd.conf.in	Mon Feb 18 14:50:28 2008
 @@ -26,7 +26,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
@@ -10,7 +10,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  sbindir = @sbindir@
  logdir = @logdir@
  raddbdir = @raddbdir@
-@@ -81,7 +81,7 @@ log_destination = files
+@@ -71,7 +71,7 @@ db_dir = $(raddbdir)
  #	make
  #	make install
  #
@@ -19,7 +19,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  
  #  pidfile: Where to place the PID of the RADIUS server.
  #
-@@ -116,8 +116,8 @@ pidfile = ${run_dir}/radiusd.pid
+@@ -106,8 +106,8 @@ pidfile = ${run_dir}/radiusd.pid
  #  that the debugging mode server is running as a user that can read the
  #  shadow info, and the user listed below can not.
  #
@@ -30,7 +30,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  
  #  max_request_time: The maximum time (in seconds) to handle a request.
  #
-@@ -408,8 +408,8 @@ security {
+@@ -411,8 +411,8 @@ security {
  #
  #  allowed values: {no, yes}
  #
@@ -41,7 +41,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  
  
  # CLIENTS CONFIGURATION
-@@ -425,7 +425,7 @@ $INCLUDE proxy.conf
+@@ -428,7 +428,7 @@ $INCLUDE proxy.conf
  #  Anything listed in 'clients.conf' will take precedence over the
  #  information from the old-style configuration files.
  #
@@ -50,7 +50,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  
  
  # SNMP CONFIGURATION
-@@ -437,7 +437,7 @@ $INCLUDE clients.conf
+@@ -440,7 +440,7 @@ $INCLUDE clients.conf
  #  'snmp' attribute to 'yes'
  #
  snmp	= no
@@ -59,7 +59,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  
  
  # THREAD POOL CONFIGURATION
-@@ -609,7 +609,7 @@ modules {
+@@ -612,7 +612,7 @@ modules {
  	#  For all EAP related authentications.
  	#  Now in another file, because it is very large.
  	#
@@ -68,7 +68,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  
  	# Microsoft CHAP authentication
  	#
-@@ -1246,7 +1246,7 @@ $INCLUDE eap.conf
+@@ -1249,7 +1249,7 @@ $INCLUDE eap.conf
  	#  Include another file that has the SQL-related configuration.
  	#  This is another file only because it tends to be big.
  	#
@@ -77,7 +77,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  
  
  	#  For Cisco VoIP specific accounting with Postgresql,
-@@ -1440,8 +1440,8 @@ $INCLUDE eap.conf
+@@ -1443,8 +1443,8 @@ $INCLUDE eap.conf
  	#  totally dependent on the SQL module to process Accounting
  	#  packets.
  	#
@@ -88,7 +88,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  
  	#
  	# The "always" module is here for debugging purposes. Each
-@@ -1744,10 +1744,10 @@ $INCLUDE eap.conf
+@@ -1747,10 +1747,10 @@ $INCLUDE eap.conf
  		#key = "%{NAS-IP-Address} %{NAS-Port}"
  	}
  
@@ -101,7 +101,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.4 2008/01/21 22:21:24 rui Exp $
  
  	#
  	#  Kerberos.  See doc/rlm_krb5 for minimal docs.
-@@ -1842,7 +1842,7 @@ instantiate {
+@@ -1845,7 +1845,7 @@ instantiate {
  #	to multiple times.
  #
  ######################################################################

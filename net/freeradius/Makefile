@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/01/25 18:59:19 rui Exp $
+# $OpenBSD: Makefile,v 1.13 2008/02/18 15:46:43 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ COMMENT-ldap=		freeradius ldap rlm addon
 
 V=			2.0.1
 DISTNAME=		freeradius-server-$V
-PKGNAME-main=		freeradius-$V
+PKGNAME-main=		freeradius-$Vp0
 PKGNAME-iodbc=		freeradius-iodbc-$V
 PKGNAME-mysql=		freeradius-mysql-$V
 PKGNAME-pgsql=		freeradius-pgsql-$V
@@ -27,7 +27,7 @@ HOMEPAGE=	http://www.freeradius.org/
 
 MAINTAINER=	Rui Reis <rui@openbsd.org>
 
-# GPL
+# GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
