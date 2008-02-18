@@ -1,0 +1,6 @@
+Coder-review is a drupal package that analyses drupal code for
+various issues (database compatibility, help in porting to various
+versions of drupal, etc, looking for bad practices)
+
+It's based on regexp matches, so it has limitations, but it does
+a good job of it.

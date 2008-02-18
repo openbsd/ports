@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/18 15:28:20 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/coder/
+${DRUPAL_MODS}/coder/LICENSE.txt
+${DRUPAL_MODS}/coder/README.txt
+${DRUPAL_MODS}/coder/coder.css
+${DRUPAL_MODS}/coder/coder.info
+${DRUPAL_MODS}/coder/coder.install
+${DRUPAL_MODS}/coder/coder.js
+${DRUPAL_MODS}/coder/coder.module
+${DRUPAL_MODS}/coder/images/
+${DRUPAL_MODS}/coder/images/critical.png
+${DRUPAL_MODS}/coder/images/minor.png
+${DRUPAL_MODS}/coder/images/more.png
+${DRUPAL_MODS}/coder/images/normal.png
+${DRUPAL_MODS}/coder/includes/
+${DRUPAL_MODS}/coder/includes/coder_47.inc
+${DRUPAL_MODS}/coder/includes/coder_50.inc
+${DRUPAL_MODS}/coder/includes/coder_6x.inc
+${DRUPAL_MODS}/coder/includes/coder_comment.inc
+${DRUPAL_MODS}/coder/includes/coder_security.inc
+${DRUPAL_MODS}/coder/includes/coder_sql.inc
+${DRUPAL_MODS}/coder/includes/coder_style.inc
+${DRUPAL_MODS}/coder/scripts/
+${DRUPAL_MODS}/coder/scripts/coder_format/
+${DRUPAL_MODS}/coder/scripts/coder_format/CHANGELOG.txt
+${DRUPAL_MODS}/coder/scripts/coder_format/README.txt
+${DRUPAL_MODS}/coder/scripts/coder_format/coder_format-uninstall.reg
+${DRUPAL_MODS}/coder/scripts/coder_format/coder_format.cmd
+${DRUPAL_MODS}/coder/scripts/coder_format/coder_format.inc
+${DRUPAL_MODS}/coder/scripts/coder_format/coder_format.php
+${DRUPAL_MODS}/coder/scripts/coder_format/coder_format.reg
+${DRUPAL_MODS}/coder/tests/
+${DRUPAL_MODS}/coder/tests/coder_5x.inc
+${DRUPAL_MODS}/coder/tests/coder_6x.inc
+${DRUPAL_MODS}/coder/tests/coder_comment.inc
+${DRUPAL_MODS}/coder/tests/coder_sql.inc
+${DRUPAL_MODS}/coder/tests/coder_style.inc
