@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/02/18 18:47:45 jasper Exp $
+lib/gnome-build-1.0/backends/libgbf-am.so
+lib/gnome-build-1.0/backends/libgbf-mkfile.so
+@lib lib/libgbf-1.so.${LIBgbf-1_VERSION}
+@lib lib/libgbf-widgets-1.so.${LIBgbf-widgets-1_VERSION}
