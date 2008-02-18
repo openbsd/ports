@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.43 2008/02/08 17:32:41 jakemsr Exp $
---- configure.orig	Sun Oct  7 12:49:33 2007
-+++ configure	Mon Feb  4 16:20:05 2008
+$OpenBSD: patch-configure,v 1.44 2008/02/18 16:37:38 espie Exp $
+--- configure.orig	Sun Oct  7 21:49:33 2007
++++ configure	Mon Feb 18 17:25:13 2008
 @@ -76,7 +76,7 @@ cc_check() {
  }
  
@@ -104,3 +104,12 @@ $OpenBSD: patch-configure,v 1.43 2008/02/08 17:32:41 jakemsr Exp $
  else
    _def_zlib='#undef HAVE_ZLIB'
    _libavdecoders=`echo $_libavdecoders | sed -e s/FLASHSV_DECODER// -e s/PNG_DECODER// -e s/ZMBV_DECODER// -e s/DXA_DECODER// `
+@@ -6207,7 +6211,7 @@ if test "$_real" = auto ; then
+   _real=no
+   _res_comment="dynamic loader support needed"
+   if test "$_dl" = yes || test "$_win32dll" = yes &&
+-     (linux || freebsd || netbsd || win32 || darwin) ; then
++     (linux || freebsd || netbsd || openbsd || win32 || darwin) ; then
+     _real=yes
+   fi
+ fi
