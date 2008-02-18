@@ -1,0 +1,21 @@
+$OpenBSD: patch-krename_encodingplugin_cpp,v 1.1 2008/02/18 09:48:22 ajacoutot Exp $
+--- krename/encodingplugin.cpp.orig	Fri Dec  8 20:02:37 2006
++++ krename/encodingplugin.cpp	Mon Feb 18 10:21:59 2008
+@@ -105,14 +105,9 @@ bool EncodingPlugin::checkError()
+ 
+ QString EncodingPlugin::processFile( BatchRenamer*, int, QString token, int )
+ {
+-    QString input   = token;
+-    QString unicode = QString::null;
+-
+-    QTextCodec* toUnicode = QTextCodec::codecForName(m_input_codec); // get the codec for KOI8-R
+-    QTextCodec* fromUnicode = QTextCodec::codecForName(m_output_codec);
+-
+-    unicode = toUnicode->toUnicode( input );
+-    return fromUnicode->fromUnicode( unicode );
++    QTextCodec* inputCodec = QTextCodec::codecForName(m_input_codec);
++    QTextCodec* outputCodec = QTextCodec::codecForName(m_output_codec);
++    return inputCodec->toUnicode(outputCodec->fromUnicode(token));
+ }
+ 
+ void EncodingPlugin::finished()
