@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2008/01/09 22:47:30 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.16 2008/02/18 08:35:19 mbalmer Exp $ 
 
 COMMENT=	contact management module for Horde
 
 HORDE_MODULE=	turba
 HORDE_NAME=	Turba
 
-DISTNAME=	${HORDE_MODULE}-h3-2.1.6
+DISTNAME=	${HORDE_MODULE}-h3-2.1.7
 CATEGORIES=	www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
