@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/18 09:48:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/18 21:20:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,8 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender c jpeg m png pthread \
 		rpcsvc stdc++ util z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krename/} \
-		http://www.krename.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krename/}
 
 MODULES=	x11/kde devel/gettext
 
