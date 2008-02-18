@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_net_net-support_c,v 1.1 2008/02/18 20:50:00 martynas Exp $
+--- src/net/net-support.c.orig	Mon Jul 23 20:56:52 2007
++++ src/net/net-support.c	Mon Feb 18 00:38:28 2008
+@@ -272,7 +272,7 @@ int NetSupportAuth (struct feed_request * cur_ptr, cha
+ 	return 0;
+ }
+ 
+-/* HTTP header may only contain ASCII characters.
++/* HTTP token may only contain ASCII characters.
+  *
+  * Ensure that we don't hit the terminating \0 in a string
+  * with the for loop.
+@@ -291,6 +291,8 @@ int checkValidHTTPHeader (const unsigned char * header
+ 		if (((header[i] < 32) || (header[i] > 127)) &&
+ 			(header[i] != '\t') && (header[i] != '\r') && (header[i] != '\n'))
+ 			return -1;
++		if (header[i] == ':')
++			break;
+ 	}
+ 	return 0;
+ }
