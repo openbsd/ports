@@ -1,6 +1,6 @@
-$OpenBSD: patch-user_import_module,v 1.2 2008/02/17 12:37:22 espie Exp $
+$OpenBSD: patch-user_import_module,v 1.3 2008/02/18 14:26:07 espie Exp $
 --- user_import.module.orig	Tue Jul 24 00:49:45 2007
-+++ user_import.module	Sun Feb 17 13:32:54 2008
++++ user_import.module	Mon Feb 18 15:24:34 2008
 @@ -1088,6 +1088,9 @@ function user_import_edit_match_fields(&$form, $import
      $profile_fields[0] = '-------------';
      $profile_fields['email'] = t('Email Address') . '*';
@@ -20,7 +20,24 @@ $OpenBSD: patch-user_import_module,v 1.2 2008/02/17 12:37:22 espie Exp $
          // username cannot contain multiple spaces in a row
          $username = preg_replace('/[ ]+/', ' ', $username);   
          
-@@ -1549,6 +1552,7 @@ function _user_import_process($settings) {	
+@@ -1395,7 +1398,15 @@ function _user_import_settings_save($settings, $messag
+             VALUES ('%s', '%s', '%s', '%s', %d, %d, %d, %d, %d, %d, %d, %d, '%s', '%s', '%s', '%s')
+             ", trim($settings['name']), $settings['filename'], $settings['oldfilename'], $settings['filepath'], time(), $settings['pointer'], $settings['processed'], $settings['valid'], $settings['first_line_skip'], $settings['contact'], $settings['username_space'], $settings['send_email'], serialize($settings['field_match']), serialize($settings['roles']), serialize($settings['options']), $settings['setting']);
+             
+-        $settings['import_id'] = db_result(db_query("SELECT LAST_INSERT_ID()"));
++	switch ($GLOBALS['db_type']) {
++	  case 'mysql':
++	  case 'mysqli':
++	    $settings['import_id'] = db_result(db_query("SELECT LAST_INSERT_ID()"));
++	    break;
++	  case 'pgsql':
++	    $settings['import_id'] = db_result(db_query("SELECT currval('user_import_import_id_seq')"));
++	    break;
++	}
+     }
+     
+     return $settings;
+@@ -1549,6 +1560,7 @@ function _user_import_process($settings) {	
                              $username_order[ $column_id ] = $setting['username'];
                              $username_abbreviate[$column_id]= $setting['abbreviate'];
                      } 
@@ -28,7 +45,7 @@ $OpenBSD: patch-user_import_module,v 1.2 2008/02/17 12:37:22 espie Exp $
                  }
                  
                  if ($errors == 'duplicate email' && $settings['setting'] == 'import') _user_import_group_add($settings, $email, $fields);
-@@ -1572,6 +1576,9 @@ function _user_import_process($settings) {	
+@@ -1572,6 +1584,9 @@ function _user_import_process($settings) {	
                              'roles' => $roles,
                              'contact' => $contact
                           );

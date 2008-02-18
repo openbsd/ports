@@ -1,11 +1,42 @@
-$OpenBSD: patch-user_import_install,v 1.1 2008/02/18 10:46:07 espie Exp $
---- user_import.install.orig	Mon Feb 18 11:40:10 2008
-+++ user_import.install	Mon Feb 18 11:40:50 2008
-@@ -15,6 +15,7 @@ function user_import_install() {
-   switch ($GLOBALS['db_type']) {
-     case 'mysqli':
-     case 'mysql':
+$OpenBSD: patch-user_import_install,v 1.2 2008/02/18 14:26:07 espie Exp $
+--- user_import.install.orig	Mon Mar  5 02:39:43 2007
++++ user_import.install	Mon Feb 18 15:06:55 2008
+@@ -47,6 +47,38 @@ function user_import_install() {
+         $created = TRUE;
+       }
+       break;      
 +    case 'pgsql':
-       $query1 = db_query("CREATE TABLE IF NOT EXISTS {user_import} (
-                         import_id int(10) unsigned NOT NULL auto_increment,
-                         name varchar(25) NOT NULL default '',
++      $query1 = db_query("CREATE TABLE {user_import} (
++                        import_id serial,
++                        name varchar(25) NOT NULL default '',
++                        filename varchar(50) NOT NULL default '',
++                        oldfilename varchar(50) NOT NULL default '',
++                        filepath text NOT NULL,
++                        started int NOT NULL default '0',
++                        pointer int NOT NULL default '0',
++                        processed int NOT NULL default '0',
++                        valid int NOT NULL default '0',
++                        first_line_skip int NOT NULL default '0',
++                        contact int NOT NULL default '0',
++                        username_space int NOT NULL default '0',
++                        send_email int NOT NULL default '0',
++                        field_match text NOT NULL,
++                        roles varchar(255) NOT NULL default '',
++                        options text NOT NULL,
++                        setting varchar(10) NOT NULL default '',
++                        PRIMARY KEY  (import_id)
++                        ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
++  
++      $query2 = db_query("CREATE TABLE {user_import_errors} (
++                        import_id serial,
++                        data text NOT NULL,
++                        error varchar(25) NOT NULL default ''
++                        ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
++
++      if ($query1 && $query2) {
++        $created = TRUE;
++      }
++      break;      
+   }
+   
+   if ($created) {
