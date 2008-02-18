@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/16 15:43:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/02/18 18:19:36 rui Exp $
 @conflict ja-jvim-*
 bin/dcalc
 bin/dcat
-bin/diskstat
+@comment bin/disk_sreset
+@comment bin/disk_stat
 bin/dls
 bin/dstat
 bin/ffind
@@ -12,17 +13,49 @@ bin/hfind
 bin/icat
 bin/ifind
 bin/ils
+bin/img_cat
+bin/img_stat
 bin/istat
 bin/jcat
 bin/jls
 bin/mactime
 bin/mmls
+bin/mmstat
 bin/sigfind
 bin/sorter
-bin/sstrings
+bin/srch_strings
+include/tsk/
+include/tsk/base/
+include/tsk/base/tsk_base.h
+include/tsk/base/tsk_os.h
+include/tsk/fs/
+include/tsk/fs/tsk_ext2fs.h
+include/tsk/fs/tsk_fatfs.h
+include/tsk/fs/tsk_ffs.h
+include/tsk/fs/tsk_fs.h
+include/tsk/fs/tsk_hfs.h
+include/tsk/fs/tsk_iso9660.h
+include/tsk/fs/tsk_ntfs.h
+include/tsk/hashdb/
+include/tsk/hashdb/tsk_hashdb.h
+include/tsk/img/
+include/tsk/img/tsk_img.h
+include/tsk/libtsk.h
+include/tsk/tsk_incs.h
+include/tsk/vs/
+include/tsk/vs/tsk_bsd.h
+include/tsk/vs/tsk_dos.h
+include/tsk/vs/tsk_gpt.h
+include/tsk/vs/tsk_mac.h
+include/tsk/vs/tsk_sun.h
+include/tsk/vs/tsk_vs.h
+lib/libtsk.a
+lib/libtsk.la
+@lib lib/libtsk.so.${LIBtsk_VERSION}
 @man man/man1/dcalc.1
 @man man/man1/dcat.1
-@man man/man1/diskstat.1
+@man man/man1/disk_sreset.1
+@man man/man1/disk_stat.1
 @man man/man1/dls.1
 @man man/man1/dstat.1
 @man man/man1/ffind.1
@@ -32,35 +65,26 @@ bin/sstrings
 @man man/man1/icat.1
 @man man/man1/ifind.1
 @man man/man1/ils.1
+@man man/man1/img_cat.1
+@man man/man1/img_stat.1
 @man man/man1/istat.1
 @man man/man1/jcat.1
 @man man/man1/jls.1
 @man man/man1/mactime.1
 @man man/man1/mmls.1
+@man man/man1/mmstat.1
 @man man/man1/sigfind.1
 @man man/man1/sorter.1
-@comment man/man1/sorter.1.orig
-share/doc/sleuthkit/
-share/doc/sleuthkit/CHANGES.FROM.TCT
-share/doc/sleuthkit/README
-share/doc/sleuthkit/README.FIRST
-share/doc/sleuthkit/README.txt
-share/doc/sleuthkit/additional-resources
-share/doc/sleuthkit/bibliography
-share/doc/sleuthkit/help-recovering-file
-share/doc/sleuthkit/help-when-broken-into
-share/doc/sleuthkit/nsrl.txt
-share/doc/sleuthkit/other.txt
-share/doc/sleuthkit/ref_fs.txt
-share/doc/sleuthkit/ref_timeline.txt
-share/doc/sleuthkit/skins_fat.txt
-share/doc/sleuthkit/skins_ntfs.txt
-share/sleuthkit/
-share/sleuthkit/sorter/
-share/sleuthkit/sorter/default.sort
-share/sleuthkit/sorter/freebsd.sort
-share/sleuthkit/sorter/images.sort
-share/sleuthkit/sorter/linux.sort
-share/sleuthkit/sorter/openbsd.sort
-share/sleuthkit/sorter/solaris.sort
-share/sleuthkit/sorter/windows.sort
+share/tsk/
+share/tsk/lib/
+share/tsk/lib/Date/
+share/tsk/lib/Date/Manip.pm
+share/tsk/lib/Date/Manip.pod
+share/tsk/sorter/
+share/tsk/sorter/default.sort
+share/tsk/sorter/freebsd.sort
+share/tsk/sorter/images.sort
+share/tsk/sorter/linux.sort
+share/tsk/sorter/openbsd.sort
+share/tsk/sorter/solaris.sort
+share/tsk/sorter/windows.sort

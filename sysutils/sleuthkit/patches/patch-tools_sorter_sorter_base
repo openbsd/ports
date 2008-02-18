@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_sorter_sorter_base,v 1.1 2008/02/18 18:19:36 rui Exp $
+--- tools/sorter/sorter.base.orig	Sat Feb 16 14:09:11 2008
++++ tools/sorter/sorter.base	Sat Feb 16 14:09:51 2008
+@@ -23,9 +23,9 @@ my $SK_ICAT    = "${BIN_DIR}/icat";
+ my $SK_HFIND   = "${BIN_DIR}/hfind";
+ my $SK_FSSTAT  = "${BIN_DIR}/fsstat";
+ my $SK_IMGSTAT = "${BIN_DIR}/img_stat";
+-my $SK_FILE    = "";
+-my $SK_MD5     = "";
+-my $SK_SHA1    = "";
++my $SK_FILE    = "/usr/bin/file";
++my $SK_MD5     = "/bin/md5";
++my $SK_SHA1    = "/bin/sha1";
+ 
+ my $MIS_NAME        = "mismatch";
+ my $UNK_NAME        = "unknown";

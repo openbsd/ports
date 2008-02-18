@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_timeline_mactime_base,v 1.1 2008/02/18 18:19:36 rui Exp $
+--- tools/timeline/mactime.base.orig	Sat Feb 16 22:39:24 2008
++++ tools/timeline/mactime.base	Sat Feb 16 22:40:03 2008
+@@ -405,7 +405,7 @@ sub print_tl {
+         $delim = ",";
+     }
+ 
+-    for $key (sort { $a <=> $b } keys %time2macstr) {
++    for $key (sort { $a cmp $b } keys %time2macstr) {
+         if ($key =~ /^(\d+),([\d-]+),(.*)$/) {
+             $time  = $1;
+             $inode = $2;

@@ -1,29 +1,30 @@
---- man/man1/sorter.1.orig	Tue Jan  6 23:50:51 2004
-+++ man/man1/sorter.1	Wed Feb 16 21:27:02 2005
-@@ -67,7 +67,7 @@ have priority over the standard files.  
+$OpenBSD: patch-man_sorter_1,v 1.1 2008/02/18 18:19:36 rui Exp $
+--- man/sorter.1.orig	Tue Dec 18 22:43:30 2007
++++ man/sorter.1	Sat Feb 16 14:24:00 2008
+@@ -73,7 +73,7 @@ have priority over the standard files.  
  .IP "-C config"
  Specify the location of the ONLY configuration file.  The standard config
  files will not be loaded if this option is given.  For example, in the
 -\'share/sort\' directory there is a file called 'images.sort'.  This file
-+\'%%PREFIX%%/share/sleuthkit/sorter/\' directory there is a file called 'images.sort'.  This file
++\'%%PREFIX%%/share/tsk/sorter/\' directory there is a file called 'images.sort'.  This file
  contains only rules about graphic images.  If it is specified with -C, then
  only images will be saved about the image.  
  .IP "-m mnt"
-@@ -192,7 +192,7 @@ file systems will produce data from this
+@@ -198,7 +198,7 @@ file systems will produce data from this step).  
  Configuration files are used to define what file types belong in which
  categories and what extensions belong to what file types.  Configuration
  files are distributed with the 'sorter' tool and are located in the
 -installation directory in the 'share/sorter' directory.  
-+installation directory in the \'%%PREFIX%%/share/sleuthkit/sorter/' directory.  
++installation directory in the '%%PREFIX%%/share/tsk/sorter/' directory.  
  
  The 'default.sort' file is used by any file system type.  It contains
  entries for common file types.  A specific operating system file also
-@@ -263,7 +263,7 @@ To include the NSRL, an exclude, and an 
+@@ -273,7 +273,7 @@ To include the NSRL, an exclude, and an alert hash dat
  
  To just identify images using the supplied 'images.sort' file:
  
 -    # sorter -f ntfs -C /usr/local/sleuthkit/share/sort/images.sort \
-+    # sorter -f ntfs -C %%PREFIX%%/share/sleuthkit/sorter/images.sort \
++    # sorter -f ntfs -C %%PREFIX%%/share/tsk/sort/images.sort \
  	  -d data/sorter -h -s images/hda1.dd
  
  .SH REQUIREMENTS

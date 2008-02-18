@@ -1,0 +1,63 @@
+$OpenBSD: patch-man_hfind_1,v 1.1 2008/02/18 18:19:36 rui Exp $
+--- man/hfind.1.orig	Sat Feb 16 14:14:32 2008
++++ man/hfind.1	Sat Feb 16 14:15:28 2008
+@@ -16,7 +16,7 @@ hfind \- Lookup a hash value in a hash database
+ looks up hash values in a database using a binary search algorithm. 
+ This allows one to easily create a hash database and identify if a file
+ is known or not.  It works with the NIST National Software Reference
+-Library (NSRL) and the output of 'md5sum'.  
++Library (NSRL) and the output of 'md5'.  
+ 
+ Before the database can be used by 'hfind', an index file must be created
+ with the '-i' option.  
+@@ -31,7 +31,7 @@ The options are as follows:
+ .IP "-i db_type"
+ Create an index file for the database.  This step must be done before
+ a lookup can be performed. The 'db_type' argument specifies the 
+-database type (i.e. nsrl-md5 or md5sum).  See section below.
++database type (i.e. nsrl-md5 or md5).  See section below.
+ .IP "-f lookup_file"
+ Specify the location of a file that contains one hash value per line.  
+ These hashes will be looked up in the database.  
+@@ -72,7 +72,7 @@ to the entry in the original database.
+ 
+ The following input types are valid.  For NSRL, 'nsrl-md5' and
+ \'nsrl-sha1' can be used.  The difference is which hash value the index is
+-sorted by.  The 'md5sum' value can also be used to sort and index "home made"
++sorted by.  The 'md5' value can also be used to sort and index "home made"
+ databases.  'hfind' can take data in both common formats:
+ 
+ 	MD5 (test.txt) = 76b1f4de1522c20b67acc132937cf82e
+@@ -103,11 +103,11 @@ You can even do both SHA-1 and MD5 if you want:
+ 
+ 	80001A80B3F1B80076B297CEE8805AAA04E1B5BA  thrdcore.cpp
+ 
+-To make a database of critical binaries of a trusted system, use 'md5sum':
++To make a database of critical binaries of a trusted system, use 'md5':
+ 
+-	# md5sum /bin/* /sbin/* /usr/bin/* /usr/bin/* /usr/local/bin/* /usr/local/sbin/* > system.md5
++	# md5 -s /bin/* /sbin/* /usr/bin/* /usr/bin/* /usr/local/bin/* /usr/local/sbin/* > system.md5
+ 
+-	# hfind -i md5sum system.md5
++	# hfind -i md5 -s system.md5
+ 
+ To look entries up, the following will work:
+ 
+@@ -117,7 +117,7 @@ To look entries up, the following will work:
+ 
+ or
+ 
+-	# md5sum -q /bin/* | hfind system.md5
++	# md5 -s /bin/* | hfind system.md5
+ 
+ 	928682269cd3edb1acdf9a7f7e606ff2  /bin/bash
+ 
+@@ -125,7 +125,7 @@ or
+ 
+ or
+ 
+-	# md5sum -q /bin/* > bin.md5
++	# md5 -s /bin/* > bin.md5
+ 
+ 	# hfind -f bin.md5 system.md5
+ 
