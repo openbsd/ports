@@ -1,0 +1,11 @@
+$OpenBSD: patch-usernode_install,v 1.1 2008/02/18 14:42:12 espie Exp $
+--- usernode.install.orig	Mon Feb 18 15:40:44 2008
++++ usernode.install	Mon Feb 18 15:41:07 2008
+@@ -39,6 +39,7 @@ function usernode_uninstall() {
+                      "JOIN {node} n ON u.uid = n.uid ".
+                      "WHERE n.type = '". USERNODE_CONTENT_TYPE ."'");
+ 
++  drupal_load('module', 'usernode');
+   while ($user = db_fetch_object($result)) {
+     usernode_delete_node($user);
+   }

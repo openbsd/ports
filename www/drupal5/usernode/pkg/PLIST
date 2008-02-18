@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/18 14:42:12 espie Exp $
 @owner www
 @group www
 ${DRUPAL_MODS}/usernode/
@@ -7,4 +7,5 @@ ${DRUPAL_MODS}/usernode/README.txt
 ${DRUPAL_MODS}/usernode/template.php
 ${DRUPAL_MODS}/usernode/usernode.info
 ${DRUPAL_MODS}/usernode/usernode.install
+@comment ${DRUPAL_MODS}/usernode/usernode.install.orig
 ${DRUPAL_MODS}/usernode/usernode.module
