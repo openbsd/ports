@@ -1,51 +1,12 @@
-$OpenBSD: patch-pathauto_install,v 1.1 2008/02/18 12:40:16 espie Exp $
---- pathauto.install.orig	Mon Feb 18 13:36:27 2008
-+++ pathauto.install	Mon Feb 18 13:37:57 2008
-@@ -7,7 +7,38 @@
-  * 
-  */
- 
-+function ouch1($sql) {
-+  $result = db_query($sql);
-+  return array('success' => $result !== FALSE, 'query' => check_plain($sql));
-+}
-+
-  
-+function ouch(&$ret, $table, $column, $column_new, $type, $attributes = array()) {
-+  if (array_key_exists('not null', $attributes) and $attributes['not null']) {
-+    $not_null = 'NOT NULL';
-+  }
-+  if (array_key_exists('default', $attributes)) {
-+    if (is_null($attributes['default'])) {
-+      $default_val = 'NULL';
-+      $default = 'default NULL';
-+    }
-+    elseif ($attributes['default'] === FALSE) {
-+      $default = '';
-+    }
-+    else {
-+      $default_val = "$attributes[default]";
-+      $default = "default $attributes[default]";
-+    }
-+  }
-+
-+  $ret[] = ouch1("ALTER TABLE {". $table ."} RENAME $column TO ". $column ."_old");
-+  $ret[] = ouch1("ALTER TABLE {". $table ."} ADD $column_new $type");
-+  $ret[] = ouch1("UPDATE {". $table ."} SET $column_new = ". $column ."_old");
-+  if ($default) { $ret[] = ouch1("ALTER TABLE {". $table ."} ALTER $column_new SET $default"); }
-+  if ($not_null) { $ret[] = ouch1("ALTER TABLE {". $table ."} ALTER $column_new SET NOT NULL"); }
-+  $ret[] = ouch1("ALTER TABLE {". $table ."} DROP ". $column ."_old");
-+}
-+
-  
- /**
-  * Implementation of hook_install().
-@@ -55,7 +86,7 @@ function pathauto_install() {
+$OpenBSD: patch-pathauto_install,v 1.2 2008/02/18 12:44:18 espie Exp $
+--- pathauto.install.orig	Mon Feb 18 13:42:22 2008
++++ pathauto.install	Mon Feb 18 13:42:39 2008
+@@ -55,7 +55,7 @@ function pathauto_install() {
    // Make the variable column wide enough for long cck names
    switch ($GLOBALS['db_type']) {
      case 'pgsql':
 -      db_change_column($ret, 'variable', 'name', 'name', 'varchar(128)', array('not null' => TRUE, 'default' => "''"));
-+      ouch($ret, 'variable', 'name', 'name', 'varchar(128)', array('not null' => TRUE, 'default' => "''"));
++      db_query("ALTER TABLE {variable} ALTER name TYPE varchar(128)");
        break;
      case 'mysql':
      case 'mysqli':
