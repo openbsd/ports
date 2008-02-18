@@ -1,0 +1,9 @@
+This package contains components and libraries that are intended to be
+shared between GNOME development tools.
+
+The current pieces of GDL include:
+
+ - A symbol browser bonobo component (symbol-browser-control).
+ - A docking widget (gdl).
+ - A utility library that also contains the stubs and skels for
+   the symbol browser and text editor components (gdl, idl).
