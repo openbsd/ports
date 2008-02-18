@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.585 2008/02/07 21:07:00 bernd Exp $
+# $OpenBSD: Makefile,v 1.586 2008/02/18 18:15:13 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -596,6 +596,7 @@
      SUBDIR += py-mxDateTime,python2.4
      SUBDIR += py-mxDateTime,python2.5
      SUBDIR += py-nose
+     SUBDIR += py-notify
      SUBDIR += py-openbsd
      SUBDIR += py-optik
      SUBDIR += py-orbit
