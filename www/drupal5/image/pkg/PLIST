@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/18 12:19:11 espie Exp $
 @owner www
 @group www
 ${DRUPAL_MODS}/image/
@@ -14,8 +14,10 @@ ${DRUPAL_MODS}/image/contrib/image_attach/image_attach.install
 ${DRUPAL_MODS}/image/contrib/image_attach/image_attach.module
 ${DRUPAL_MODS}/image/contrib/image_attach/po/
 ${DRUPAL_MODS}/image/contrib/image_attach/po/da.po
+${DRUPAL_MODS}/image/contrib/image_attach/po/de.po
 ${DRUPAL_MODS}/image/contrib/image_attach/po/image_attach-module.hu.po
 ${DRUPAL_MODS}/image/contrib/image_attach/po/image_attach-module.sl.po
+${DRUPAL_MODS}/image/contrib/image_attach/po/image_attach.pot
 ${DRUPAL_MODS}/image/contrib/image_gallery/
 ${DRUPAL_MODS}/image/contrib/image_gallery/image_gallery.css
 ${DRUPAL_MODS}/image/contrib/image_gallery/image_gallery.info
@@ -23,23 +25,29 @@ ${DRUPAL_MODS}/image/contrib/image_gallery/image_gallery.install
 ${DRUPAL_MODS}/image/contrib/image_gallery/image_gallery.module
 ${DRUPAL_MODS}/image/contrib/image_gallery/po/
 ${DRUPAL_MODS}/image/contrib/image_gallery/po/da.po
-${DRUPAL_MODS}/image/contrib/image_gallery/po/image_gallery-module.de.po
+${DRUPAL_MODS}/image/contrib/image_gallery/po/de.po
 ${DRUPAL_MODS}/image/contrib/image_gallery/po/image_gallery-module.es.po
 ${DRUPAL_MODS}/image/contrib/image_gallery/po/image_gallery-module.he.po
 ${DRUPAL_MODS}/image/contrib/image_gallery/po/image_gallery-module.hu.po
+${DRUPAL_MODS}/image/contrib/image_gallery/po/image_gallery-module.sk.po
 ${DRUPAL_MODS}/image/contrib/image_gallery/po/image_gallery-module.sl.po
 ${DRUPAL_MODS}/image/contrib/image_gallery/po/image_gallery.pot
 ${DRUPAL_MODS}/image/contrib/image_im_advanced/
 ${DRUPAL_MODS}/image/contrib/image_im_advanced/image_im_advanced.info
 ${DRUPAL_MODS}/image/contrib/image_im_advanced/image_im_advanced.module
+${DRUPAL_MODS}/image/contrib/image_im_advanced/po/
+${DRUPAL_MODS}/image/contrib/image_im_advanced/po/de.po
+${DRUPAL_MODS}/image/contrib/image_im_advanced/po/image_im_advanced.pot
 ${DRUPAL_MODS}/image/contrib/image_import/
 ${DRUPAL_MODS}/image/contrib/image_import/image_import.info
 ${DRUPAL_MODS}/image/contrib/image_import/image_import.install
 ${DRUPAL_MODS}/image/contrib/image_import/image_import.module
 ${DRUPAL_MODS}/image/contrib/image_import/po/
 ${DRUPAL_MODS}/image/contrib/image_import/po/da.po
+${DRUPAL_MODS}/image/contrib/image_import/po/de.po
 ${DRUPAL_MODS}/image/contrib/image_import/po/image_import-module.hu.po
 ${DRUPAL_MODS}/image/contrib/image_import/po/image_import-module.sl.po
+${DRUPAL_MODS}/image/contrib/image_import/po/image_import.pot
 ${DRUPAL_MODS}/image/image.imagemagick.inc
 ${DRUPAL_MODS}/image/image.info
 ${DRUPAL_MODS}/image/image.install

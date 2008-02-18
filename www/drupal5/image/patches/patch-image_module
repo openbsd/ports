@@ -1,13 +1,15 @@
-$OpenBSD: patch-image_module,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
---- image.module.orig	Fri Feb 15 20:45:40 2008
-+++ image.module	Fri Feb 15 21:32:02 2008
-@@ -391,6 +391,9 @@ function image_file_download($filename) {
-       // size. This will be the case when the orignal is smaller than a 
-       // derivative size.
-       $images = $node->images;
-+      if (!defined($images)) {
-+      	return;
-+      }
-       unset($images[IMAGE_ORIGINAL]);
-       if (user_access('view original images') || in_array($filepath, $images)) {
-         return array(
+$OpenBSD: patch-image_module,v 1.2 2008/02/18 12:19:11 espie Exp $
+--- image.module.orig	Sun Jan  6 23:03:38 2008
++++ image.module	Sun Feb 17 11:53:23 2008
+@@ -391,7 +391,10 @@ function image_file_download($filename) {
+         // the path must be listed for something other than the node's original
+         // size. This will be the case when the orignal is smaller than a 
+         // derivative size.
+-        $images = (array) $node->images;
++        $images = $node->images;
++	if (!defined($images)) {
++	  return;
++	}
+         unset($images[IMAGE_ORIGINAL]);
+         if (user_access('view original images') || in_array($filepath, $images)) {
+           return array(
