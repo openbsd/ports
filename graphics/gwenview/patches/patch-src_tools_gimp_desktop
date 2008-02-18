@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_tools_gimp_desktop,v 1.1 2008/02/18 18:43:56 ajacoutot Exp $
+--- src/tools/gimp.desktop.orig	Mon Feb 18 19:29:42 2008
++++ src/tools/gimp.desktop	Mon Feb 18 19:29:52 2008
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ ServiceTypes=image/*
+-Exec=gimp-remote -n %F
++Exec=gimp-remote %F
+ Icon=gimp
+ Name=The GIMP
+ Name[br]=Ar GIMP
