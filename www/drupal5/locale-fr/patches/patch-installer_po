@@ -1,0 +1,12 @@
+$OpenBSD: patch-installer_po,v 1.1 2008/02/18 12:19:51 espie Exp $
+--- installer.po.orig	Mon Feb 18 11:20:21 2008
++++ installer.po	Mon Feb 18 11:20:43 2008
+@@ -45,7 +45,7 @@ msgstr "Configuration de la base de données Drupal"
+ 
+ #: install.php:170
+ msgid "Database configuration"
+-msgstr "Configuration de la base de donées"
++msgstr "Configuration de la base de données"
+ 
+ #: install.php:183
+ msgid ""
