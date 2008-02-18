@@ -1,0 +1,34 @@
+This module will display any Views date field in calendar formats,
+including CCK date fields, Event module event fields, node created
+or updated dates, etc. Switch between year, month, and day views.
+Back and next navigation is provided for all views.
+
+Note that calendar is a bit difficult to set up correctly, but it is
+fairly useful.
+
+Setup:
+
+    * Select the Calendar display as the page type for your view.
+If you want to have a mini calendar available in a block, select
+the Calendar display as the block type as well as the page type.
+
+    * Add any fields you want to display on the calendar as fields
+to the view. Be sure to include fields that contain the dates that
+need to be shown on the calendar. Date fields can include CCK date
+fields, event start and end dates, or dates like the node created
+or updated dates. If you use CCK date fields, set them to 'Do not
+group multiple values' so each value will display in its own date
+box.
+
+    * Add three arguments to the view: Calendar Year, Calendar
+Month, and Calendar Day, in that order. Set each of them to 'Display
+All Values'.
+
+    * Add sorts to the view for each date field so the dates are
+sorted correctly.
+
+    * In most cases, add a Node: Type filter to filter the view by
+the content types that contain your selected date fields. The default
+view has a Node: Type filter that selects all node types. Change
+it to select only the node types you want in your calendar.
+
