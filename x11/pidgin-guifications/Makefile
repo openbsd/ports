@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/01 21:38:27 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/02/18 19:25:53 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	MSN style 'toaster' popups plugin for Pidgin
 
 DISTNAME=	pidgin-guifications-2.14
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
-HOMEPAGE=	http://plugins.guifications.org/trac/
+HOMEPAGE=	http://plugins.guifications.org/trac/wiki/Guifications
 
 MAINTAINER=	Thomas Wood <grand.edgemaster@gmail.com>
 
