@@ -1,0 +1,13 @@
+Action Views is used together with the views module. Action views
+adds a view type of "Action View" to the views interface. This will
+present your view as a table, and adds a list of actions you can
+perform against the results of the query executed by the view. We
+have taken a modular approach whereby additional actions can easily
+be added to the module in the form of an include file.
+
+The typical kind of usage for this module is to execute actions
+against multiple records, so for example, deleting a bunch of nodes
+in one go; changing taxonomies for a bunch of stories in one go,
+etc.
+
+Don't forget to review supplementary actions available in the roles pages.

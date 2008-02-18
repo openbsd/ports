@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/18 18:58:43 espie Exp $
+@owner www
+@group www
+${DRUPAL_MODS}/action_view/
+${DRUPAL_MODS}/action_view/LICENSE.txt
+${DRUPAL_MODS}/action_view/actionview.info
+${DRUPAL_MODS}/action_view/actionview.module
+${DRUPAL_MODS}/action_view/modules/
+${DRUPAL_MODS}/action_view/modules/action_view_content.inc
+${DRUPAL_MODS}/action_view/modules/action_view_node.inc
+${DRUPAL_MODS}/action_view/modules/action_view_profile.inc
+${DRUPAL_MODS}/action_view/modules/action_view_taxonomy.inc
+${DRUPAL_MODS}/action_view/modules/action_view_usernode.inc
+${DRUPAL_MODS}/action_view/modules/actionview_content.inc
+${DRUPAL_MODS}/action_view/modules/actionview_node.inc
+${DRUPAL_MODS}/action_view/modules/actionview_profile.inc
+${DRUPAL_MODS}/action_view/modules/actionview_taxonomy.inc
+${DRUPAL_MODS}/action_view/modules/actionview_usernode.inc
