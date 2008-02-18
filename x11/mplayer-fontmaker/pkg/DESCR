@@ -1,5 +1,0 @@
-subtitle font generator, taken from mplayer, and packaged separately.
-
-Added a simple font generator script (mksubfont) that can
-be used to build simple font outlines for full functionality in
-mplayer.
