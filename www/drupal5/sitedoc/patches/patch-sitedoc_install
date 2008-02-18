@@ -1,0 +1,20 @@
+$OpenBSD: patch-sitedoc_install,v 1.1 2008/02/18 10:47:13 espie Exp $
+--- sitedoc.install.orig	Mon Feb 18 11:38:34 2008
++++ sitedoc.install	Mon Feb 18 11:39:01 2008
+@@ -8,7 +8,7 @@
+  */
+ function sitedoc_install() {
+   global $user;
+-  watchdog('Site Documentation', 'sitedoc module installed by '. $user->uid);
++  watchdog('Site Doc.', 'sitedoc module installed by '. $user->uid);
+   drupal_set_message(t('The Site Documentation module was installed. You may want to go to the <a href="!settings">settings page now</a>.', array('!settings' => url('admin/settings/sitedoc'))));
+ }
+ 
+@@ -27,5 +27,5 @@ function sitedoc_uninstall() {
+   cache_clear_all('*', 'cache_menu', TRUE);
+ 
+   drupal_set_message('Site Documentation module removed.');
+-  watchdog('Site Documentation', 'sitedoc module removed by user '. $user->uid);
+- }
++  watchdog('Site Doc.', 'sitedoc module removed by user '. $user->uid);
++ }
