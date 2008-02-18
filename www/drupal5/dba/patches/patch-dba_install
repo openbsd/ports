@@ -1,0 +1,37 @@
+$OpenBSD: patch-dba_install,v 1.1 2008/02/18 12:02:47 espie Exp $
+--- dba.install.orig	Mon Feb 18 12:35:07 2008
++++ dba.install	Mon Feb 18 12:38:42 2008
+@@ -0,0 +1,33 @@
++<?php
++
++function dba_install() {
++  switch($GLOBALS['db_type']) {
++    case 'pgsql':
++      $query = db_query("CREATE VIEW drupal_system_catalog (
++			  dbname,
++			  tabname,
++			  colname,
++			  coltype,
++			  colnull,
++			  coldefault,
++			  colextra
++			) AS
++			SELECT
++			 table_catalog,
++			 table_name,
++			 column_name,
++			 data_type,
++			 is_nullable,
++			 column_default,
++			 ordinal_position
++			FROM information_schema.columns
++			WHERE table_schema NOT IN ('pg_catalog','information_schema')");
++  }
++}
++
++function dba_uninstall() {
++  switch($GLOBALS['db_type']) {
++    case 'pgsql':
++      $query = db_query("DROP VIEW drupal_system_catalog");
++  }
++}

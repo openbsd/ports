@@ -1,0 +1,18 @@
+$OpenBSD: patch-dba_module,v 1.1 2008/02/18 12:02:47 espie Exp $
+--- dba.module.orig	Mon Feb 18 12:33:45 2008
++++ dba.module	Mon Feb 18 12:33:58 2008
+@@ -1492,7 +1492,13 @@ function dba_drop_table($table) {
+ }
+ 
+ function _is_mysql() {
+-  return $GLOBALS['db_type'] == 'mysql' || 'mysqli' ? 1 : 0;
++  switch($GLOBALS['db_type']) {
++    case 'mysql':
++    case 'mysqli':
++      return 1;
++    default:
++      return 0;
++  }
+ }
+ 
+ /**

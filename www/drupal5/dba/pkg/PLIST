@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 21:38:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/18 12:02:47 espie Exp $
 @owner www
 @group www
 ${DRUPAL_MODS}/dba/
@@ -7,7 +7,10 @@ ${DRUPAL_MODS}/dba/LICENSE.txt
 ${DRUPAL_MODS}/dba/README.pgsql
 ${DRUPAL_MODS}/dba/README.txt
 ${DRUPAL_MODS}/dba/dba.info
+${DRUPAL_MODS}/dba/dba.install
+@comment ${DRUPAL_MODS}/dba/dba.install.orig
 ${DRUPAL_MODS}/dba/dba.module
+@comment ${DRUPAL_MODS}/dba/dba.module.orig
 ${DRUPAL_MODS}/dba/po/
 ${DRUPAL_MODS}/dba/po/dba.pot
 ${DRUPAL_MODS}/dba/scripts/
