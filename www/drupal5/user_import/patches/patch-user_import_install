@@ -1,0 +1,11 @@
+$OpenBSD: patch-user_import_install,v 1.1 2008/02/18 10:46:07 espie Exp $
+--- user_import.install.orig	Mon Feb 18 11:40:10 2008
++++ user_import.install	Mon Feb 18 11:40:50 2008
+@@ -15,6 +15,7 @@ function user_import_install() {
+   switch ($GLOBALS['db_type']) {
+     case 'mysqli':
+     case 'mysql':
++    case 'pgsql':
+       $query1 = db_query("CREATE TABLE IF NOT EXISTS {user_import} (
+                         import_id int(10) unsigned NOT NULL auto_increment,
+                         name varchar(25) NOT NULL default '',
