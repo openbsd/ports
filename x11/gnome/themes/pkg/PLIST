@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/10/25 14:00:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2008/02/19 14:57:34 ajacoutot Exp $
 @conflict gtk2-clearlooks-engine-*
 share/icons/Crux/
 share/icons/Crux/16x16/
@@ -3127,3 +3127,21 @@ share/themes/Mist/metacity-1/metacity-theme-1.xml
 share/themes/Simple/
 share/themes/Simple/gtk-2.0/
 share/themes/Simple/gtk-2.0/gtkrc
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Crux
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Crux
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrast-SVG
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrast-SVG
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastInverse
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastInverse
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastLargePrint
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastLargePrint
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastLargePrintInverse
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastLargePrintInverse
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LargePrint
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LargePrint
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrast
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrast
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrastLargePrint
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrastLargePrint
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Mist
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Mist
