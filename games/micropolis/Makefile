@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/27 18:16:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/19 13:25:18 deanna Exp $
 
 COMMENT=	city-building simulation
 
-DISTNAME=	micropolis-20080126
+DISTNAME=	micropolis-20080211
 WRKDIST=	${WRKDIR}/micropolis
-WRKSRC=		${WRKDIST}/src
-MAKE_FILE=	makefile
-PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	games
 
@@ -24,39 +21,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
-RUN_DEPENDS=	::audio/esound \
-		::devel/desktop-file-utils
+RUN_DEPENDS=	::devel/desktop-file-utils
+WANTLIB=	c m X11 Xext Xpm pthread
+LIB_DEPENDS=	SDL::devel/sdl \
+		SDL_mixer::devel/sdl-mixer
 
-WANTLIB=	c m X11 Xext Xpm
+CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 
 do-configure:
 	@perl -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKDIST}/Micropolis
 	@perl -pi -e s,%%PREFIX%%,${PREFIX}, ${WRKDIST}/res/micropolis.tcl
 	@perl -pi -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKDIST}/res/micropolis.tcl
-	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/sim/makefile
-	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/tclx/config.mk
-	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/tk/makefile
-
-do-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/micropolis
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/micropolis
-	@cd ${WRKDIST} && \
-            find res -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/micropolis/{} \;
-	@cd ${WRKDIST} && \
-            find images -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/micropolis/{} \;
-	@cd ${WRKDIST} && \
-            find manual -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/micropolis/{} \;
-	@cd ${WRKDIST} && \
-            find res -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/micropolis/{} \;
-	@cd ${WRKDIST} && \
-            find images -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/micropolis/{} \;
-	@cd ${WRKDIST} && \
-            find manual -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/micropolis/{} \;
-	@${INSTALL_SCRIPT} ${WRKDIST}/Micropolis ${PREFIX}/bin/micropolis
-	@${INSTALL_PROGRAM} ${WRKSRC}/sim/sim ${PREFIX}/libexec/sim
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	@${INSTALL_DATA} ${WRKDIST}/Micropolis.png ${PREFIX}/share/pixmaps/micropolis.png
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${FILESDIR}/micropolis.desktop ${PREFIX}/share/applications
+	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/src/tclx/config.mk
+	@perl -pi -e s,%%X11BASE%%,${X11BASE},g ${WRKSRC}/src/tk/makefile
 
 .include <bsd.port.mk>

@@ -1,15 +1,14 @@
-$OpenBSD: patch-src_sim_makefile,v 1.2 2008/01/27 16:34:32 deanna Exp $
---- src/sim/makefile.orig	Sat Jan 26 18:23:50 2008
-+++ src/sim/makefile	Sat Jan 26 18:27:08 2008
-@@ -1,28 +1,26 @@
+$OpenBSD: patch-src_sim_makefile,v 1.3 2008/02/19 13:25:18 deanna Exp $
+--- src/sim/makefile.orig	Mon Feb 11 23:14:17 2008
++++ src/sim/makefile	Mon Feb 11 23:14:33 2008
+@@ -1,4 +1,3 @@
 -XINCLUDE = /usr/include/X11
-+XINCLUDE = %%X11BASE%%/include
-+XLIBS = %%X11BASE%%/lib
  TCLHOME = ../tcl
  TKHOME = ../tk
  TCLXHOME = ../tclx
- TCLLIBRARY = /usr/local/lib/tcl
- TKLIBRARY = /usr/local/lib/tk
+@@ -8,15 +7,13 @@ TKLIBRARY = /usr/local/lib/tk
+ SDLINCLUDE = $$(/bin/sh ./sdl_helper cflags)
+ SDLLIBS = $$(/bin/sh ./sdl_helper libs)
  
 -CC = gcc
 -
@@ -20,26 +19,8 @@ $OpenBSD: patch-src_sim_makefile,v 1.2 2008/01/27 16:34:32 deanna Exp $
 -DEFINES = -DIS_LINUX -DNO_AIRCRASH
 +DEFINES = -DIS_LINUX 
  
--CFLAGS = $(OPTFLAGS) $(DEFINES)
+-CFLAGS += $(OPTFLAGS) $(DEFINES)
 +CFLAGS += $(DEFINES)
  
  #LDFLAGS = -Bstatic
--LDFLAGS=-L/usr/X11/lib -L/usr/X11R6/lib
-+LDFLAGS += -L$(XLIBS)
- 
- INSTALL = install -s
- 
- INCLUDES = \
- 	-Iheaders \
--	-I$(XPMHOME) \
- 	-I$(XINCLUDE) \
- 	-I$(TCLHOME) \
- 	-I$(TCLXHOME)/src \
-@@ -32,6 +30,7 @@ CPPFLAGS = $(INCLUDES)
- 
- LIBS =	$(TCLXHOME)/libtk.a \
- 	$(TCLXHOME)/libtcl.a \
-+	-L$(XLIBS) \
- 	-lm \
-         -lX11 \
-         -lXext \
+ LDFLAGS=-L/usr/X11/lib -L/usr/X11R6/lib
