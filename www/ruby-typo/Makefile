@@ -1,0 +1,38 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2008/02/19 12:20:31 bernd Exp $
+
+COMMENT=	weblog system written in Ruby using Ruby on Rails
+
+DISTNAME=	typo-5.0.2
+PKGNAME=	ruby-${DISTNAME}
+
+CATEGORIES=	www
+
+MAINTAINER=	Paul Irofti <bulibuta@gmail.com>
+
+# MIT/X Consortium
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=typo/}
+
+MODULES=	lang/ruby
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:ruby-rails->=2.0.2:www/ruby-rails \
+		:ruby-mongrel->=1.1.3:www/ruby-mongrel \
+		::sysutils/ruby-mongrel_cluster \
+		::databases/ruby-sqlite3 \
+		::sysutils/ruby-rails-app-installer \
+		::net/ruby-xmpp4r \
+		:ruby-rcov->=0.8.1:devel/ruby-rcov \
+		:ruby-flexmock->=0.8.0:devel/ruby-flexmock \
+		:ruby-rspec->=1.1.1:devel/ruby-rspec \
+		::devel/ruby-debug
+
+CONFIGURE_STYLE=ruby gem
+
+PKG_ARCH=	*
+
+.include <bsd.port.mk>

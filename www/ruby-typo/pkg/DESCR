@@ -1,0 +1,3 @@
+Typo is a lean weblogging engine powered by rails. It supports XMLRPC 
+posting, ping/trackback, comments, textile, markdown, categories, all
+common exports, fulltext search and so on.                            
