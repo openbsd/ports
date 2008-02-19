@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.326 2008/02/18 21:04:56 espie Exp $
+# $OpenBSD: Makefile,v 1.327 2008/02/19 08:49:06 bernd Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -64,6 +64,7 @@
      SUBDIR += gammapage
      SUBDIR += gatos-bin
      SUBDIR += gbdfed
+     SUBDIR += gdesklets
      SUBDIR += gentoo
      SUBDIR += gmrun
      SUBDIR += gnome
