@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2008/02/15 12:33:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2008/02/19 11:32:50 bernd Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -88,6 +88,7 @@
      SUBDIR += ruby-facter
      SUBDIR += ruby-mongrel_cluster
      SUBDIR += ruby-puppet
+     SUBDIR += ruby-rails-app-installer
      SUBDIR += ruby-vlad
      SUBDIR += runit
      SUBDIR += safecat
