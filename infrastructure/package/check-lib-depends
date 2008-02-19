@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.13 2007/10/27 22:15:28 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.14 2008/02/19 11:02:53 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -397,9 +397,12 @@ sub record_needed_libs
 	my $n = shellquote($source->retrieve($item));
 	my $cmd;
 	if ($main::opt_o) {
-		open($cmd, "ldd -f 'NEEDED lib%o.so.%m.%n\\n' $n|");
+		open($cmd, "-|", "ldd", "-f", "NEEDED lib%o.so.%m.%n\n", $n) or die "open: $!";
 	} else {
-		open($cmd, "objdump -p $n 2>/dev/null|");
+		unless (open($cmd, '-|')) {
+			open(STDERR, '>', '/dev/null');
+			exec('objdump', '-p', $n) or die "exec: $!";
+		}
 	}
 	my @l;
 	while(my $line = <$cmd>) {
