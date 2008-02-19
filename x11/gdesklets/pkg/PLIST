@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/19 08:46:54 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/19 16:14:18 ajacoutot Exp $
 bin/gdesklets
 lib/gdesklets/
 lib/gdesklets/Controls/
@@ -655,3 +655,5 @@ share/pixmaps/gdesklets.png
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome
