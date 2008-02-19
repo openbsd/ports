@@ -1,0 +1,12 @@
+$OpenBSD: patch-libdesklets_system_gtop_c,v 1.1.1.1 2008/02/19 08:46:52 bernd Exp $
+--- libdesklets/system/gtop.c.orig	Tue Jul 26 22:56:27 2005
++++ libdesklets/system/gtop.c	Sat Jan 19 00:33:08 2008
+@@ -45,7 +45,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
+-
++#include <netinet/in.h>
+ 
+ typedef struct
+ {

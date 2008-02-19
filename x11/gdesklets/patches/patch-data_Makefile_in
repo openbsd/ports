@@ -1,0 +1,22 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2008/02/19 08:46:52 bernd Exp $
+--- data/Makefile.in.orig	Thu Oct  5 14:04:35 2006
++++ data/Makefile.in	Sat Jan 19 00:33:08 2008
+@@ -550,12 +550,12 @@ install-data-hook:
+ 	$(LN_S) -f $(pixmapdir)/gdesklets.png \
+ 	$(DESTDIR)$(fakepixmapdir)/gdesklets.png;
+ 
+-	if test -n "$(UPDATE_MIME_DATABASE)"; then \
+-	    $(UPDATE_MIME_DATABASE) "$(DESTDIR)${sharedmimedir}"; \
+-	fi;
+-	if test -n "$(UPDATE_DESKTOP_DATABASE)"; then \
+-	    $(UPDATE_DESKTOP_DATABASE) "$(DESTDIR)${desktopdir}"; \
+-	fi;
++#	if test -n "$(UPDATE_MIME_DATABASE)"; then \
++#	    $(UPDATE_MIME_DATABASE) "$(DESTDIR)${sharedmimedir}"; \
++#	fi;
++#	if test -n "$(UPDATE_DESKTOP_DATABASE)"; then \
++#	    $(UPDATE_DESKTOP_DATABASE) "$(DESTDIR)${desktopdir}"; \
++#	fi;
+ 
+ uninstall-local: uninstall-desktopDATA uninstall-sharedmimepackageDATA
+ 	if test -n "$(UPDATE_MIME_DATABASE)"; then \
