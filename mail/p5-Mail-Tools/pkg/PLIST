@@ -1,45 +1,42 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/11/17 15:08:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/02/20 03:35:14 todd Exp $
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/Address.pm
+${P5SITE}/Mail/Address.pod
 ${P5SITE}/Mail/Cap.pm
+${P5SITE}/Mail/Cap.pod
 ${P5SITE}/Mail/Field/
 ${P5SITE}/Mail/Field.pm
+${P5SITE}/Mail/Field.pod
 ${P5SITE}/Mail/Field/AddrList.pm
+${P5SITE}/Mail/Field/AddrList.pod
 ${P5SITE}/Mail/Field/Date.pm
+${P5SITE}/Mail/Field/Date.pod
+${P5SITE}/Mail/Field/Generic.pm
+${P5SITE}/Mail/Field/Generic.pod
 ${P5SITE}/Mail/Filter.pm
+${P5SITE}/Mail/Filter.pod
 ${P5SITE}/Mail/Header.pm
+${P5SITE}/Mail/Header.pod
 ${P5SITE}/Mail/Internet.pm
+${P5SITE}/Mail/Internet.pod
 ${P5SITE}/Mail/Mailer/
 ${P5SITE}/Mail/Mailer.pm
+${P5SITE}/Mail/Mailer.pod
 ${P5SITE}/Mail/Mailer/qmail.pm
 ${P5SITE}/Mail/Mailer/rfc822.pm
 ${P5SITE}/Mail/Mailer/sendmail.pm
 ${P5SITE}/Mail/Mailer/smtp.pm
 ${P5SITE}/Mail/Mailer/testfile.pm
 ${P5SITE}/Mail/Send.pm
+${P5SITE}/Mail/Send.pod
 ${P5SITE}/Mail/Util.pm
-${P5SITE}/auto/
-${P5SITE}/auto/Mail/
-${P5SITE}/auto/Mail/Internet/
-${P5SITE}/auto/Mail/Internet/_prephdr.al
-${P5SITE}/auto/Mail/Internet/add_signature.al
-${P5SITE}/auto/Mail/Internet/autosplit.ix
-${P5SITE}/auto/Mail/Internet/escape_from.al
-${P5SITE}/auto/Mail/Internet/nntppost.al
-${P5SITE}/auto/Mail/Internet/reply.al
-${P5SITE}/auto/Mail/Internet/send.al
-${P5SITE}/auto/Mail/Internet/sign.al
-${P5SITE}/auto/Mail/Internet/smtpsend.al
-${P5SITE}/auto/Mail/Internet/unescape_from.al
-${P5SITE}/auto/Mail/Util/
-${P5SITE}/auto/Mail/Util/autosplit.ix
-${P5SITE}/auto/Mail/Util/mailaddress.al
-${P5SITE}/auto/Mail/Util/maildomain.al
-${P5SITE}/auto/Mail/Util/read_mbox.al
+${P5SITE}/Mail/Util.pod
 @man man/man3p/Mail::Address.3p
 @man man/man3p/Mail::Cap.3p
 @man man/man3p/Mail::Field.3p
 @man man/man3p/Mail::Field::AddrList.3p
+@man man/man3p/Mail::Field::Date.3p
+@man man/man3p/Mail::Field::Generic.3p
 @man man/man3p/Mail::Filter.3p
 @man man/man3p/Mail::Header.3p
 @man man/man3p/Mail::Internet.3p
