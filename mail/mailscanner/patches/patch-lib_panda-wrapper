@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_panda-wrapper,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- lib/panda-wrapper.orig	Mon Mar 20 17:48:20 2006
++++ lib/panda-wrapper	Mon Mar 20 17:48:20 2006
+@@ -38,7 +38,7 @@
+ 
+ # To test from the command line change to the directory you wish to
+ # check and issue this command (change paths to reflect your install)
+-# "/opt/MailScanner/lib/panda-wrapper /usr -nsb -eng -aex -nso -aut -cmp ."
++# "%PREFIX%/lib/MailScanner/lib/panda-wrapper /usr -nsb -eng -aex -nso -aut -cmp ."
+ # Make sure your testing dir is one directory deep (don't for get the . BTW)
+ # example
+ # test+

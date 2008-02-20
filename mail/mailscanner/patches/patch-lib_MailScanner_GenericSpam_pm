@@ -1,0 +1,78 @@
+$OpenBSD: patch-lib_MailScanner_GenericSpam_pm,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- lib/MailScanner/GenericSpam.pm.orig	Thu Dec  7 13:12:22 2006
++++ lib/MailScanner/GenericSpam.pm	Thu Dec  7 13:33:07 2006
+@@ -101,19 +101,19 @@ sub Checks {
+   push(@WholeMessage, "\n");
+   $message->{store}->ReadBody(\@WholeMessage, $maxsize);
+ 
+-  my($GenericSpamResult, $GenericSpamReport);
++  my($GenericSpamResult, $GenericSpamReport, @GenericSpamHeaders);
+   $GenericSpamResult = 0;
+   $GenericSpamReport = "";
+-  ($GenericSpamResult, $GenericSpamReport) =
++  ($GenericSpamResult, $GenericSpamReport, @GenericSpamHeaders) =
+     GSForkAndTest($message, \@WholeMessage);
+-  return ($GenericSpamResult, $GenericSpamReport);
++  return ($GenericSpamResult, $GenericSpamReport, @GenericSpamHeaders);
+ }
+ 
+ # Run the generic spam scanner, and capture the 2 lines of output
+ sub GSForkAndTest {
+   my($Message, $Contents) = @_;
+ 
+-  my($pipe, $gsscore, $gsreport, $queuelength);
++  my($pipe, $gsscore, $gsreport, @gsheaders, $queuelength);
+   my $PipeReturn = 0;
+ 
+   $queuelength = MailScanner::Config::Value('gstimeoutlen', $Message);
+@@ -129,23 +129,25 @@ sub GSForkAndTest {
+     # In the child
+     $pipe->writer();
+     $pipe->autoflush();
+-    my($gsscore, $gsreport);
++    my($gsscore, $gsreport, @gsheaders);
+     eval {
+       #print STDERR "ClientIP = " . $Message->{clientip} . "\n";
+       #print STDERR "From = " . $Message->{from} . "\n";
+       #print STDERR "To = " . join(', ', @{$Message->{to}}) . "\n";
+       #print STDERR "This is in the caller\n";
+ 
+-      ($gsscore, $gsreport) = MailScanner::CustomConfig::GenericSpamScanner(
+-       $Message->{clientip},
+-       $Message->{from},
+-       $Message->{to},
++      ($gsscore, $gsreport, @gsheaders) = MailScanner::CustomConfig::GenericSpamScanner(
++       $Message,
+        $Contents);
+     };
+     
+     $gsscore = $gsscore + 0.0;
+     print $pipe "$gsscore\n";
+     print $pipe $gsreport . "\n";
++    foreach my $header (@gsheaders) {
++        #print STDERR " to pipe .. <$header> \n";
++	print $pipe $header . "\n";
++    }
+     $pipe->close();
+     $pipe = undef;
+     exit 0;
+@@ -157,6 +159,10 @@ sub GSForkAndTest {
+     alarm MailScanner::Config::Value('gstimeout');
+     $gsscore = <$pipe>;
+     $gsreport = <$pipe>;
++    foreach my $h (<$pipe>) {
++	chomp $h;
++	push @gsheaders,$h;
++    }
+ 
+     # Not sure if next 2 lines should be this way round...
+     waitpid $pid, 0;
+@@ -246,7 +252,7 @@ sub GSForkAndTest {
+   #print STDERR "Generic Spam Scanner points = $gsscore\n";
+   #print STDERR "Generic Spam Scanner report = $gsreport\n";
+ 
+-  return ($gsscore, $gsreport);
++  return ($gsscore, $gsreport, @gsheaders);
+ }
+ 
+ 1;

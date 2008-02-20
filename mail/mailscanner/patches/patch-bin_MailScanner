@@ -1,0 +1,45 @@
+$OpenBSD: patch-bin_MailScanner,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- bin/MailScanner.orig	Fri Jan  4 14:06:47 2008
++++ bin/MailScanner	Sun Feb 17 20:42:06 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/opt/MailScanner/lib
++#!/usr/bin/perl -I%PREFIX%/lib/MailScanner
+ #
+ #   MailScanner - SMTP E-Mail Virus Scanner
+ #   Copyright (C) 2002  Julian Field
+@@ -48,7 +48,7 @@ BEGIN {
+   # of each element
+   foreach $path (reverse @oldinc) {
+     next unless $path =~ /\//;
+-    $path =~ s/^\/usr/\/usr\/lib\/MailScanner\/utils/;
++    $path =~ s/^\/usr/\/usr\/local\/lib\/MailScanner\/utils/;
+     unshift @INC, $path;
+   }
+ 
+@@ -169,8 +169,6 @@ if ($Versions) {
+   my($module, $s, $v, $m);
+ 
+   printf("Running on\n%s", `uname -a`);
+-  printf("This is %s", `cat /etc/redhat-release`)   if -f "/etc/redhat-release";
+-  printf("This is %s", `head -1 /etc/SuSE-release`) if -f "/etc/SuSE-release";
+   printf("This is Perl version %f (%vd)\n", $], $^V);
+   print "\nThis is MailScanner version " . $MailScanner::Config::MailScannerVersion . "\n";
+   print "Module versions are:\n";
+@@ -235,7 +233,7 @@ if ($WantLintOnly) {
+ # Find the mailscanner.conf file, with a default just in case.
+ my $ConfFile = $ARGV[0];
+ # Use the default if we couldn't find theirs. Will save a lot of grief.
+-$ConfFile = '/opt/MailScanner/etc/MailScanner.conf' if $ConfFile eq "" ||
++$ConfFile = '%SYSCONFDIR%/MailScanner/MailScanner.conf' if $ConfFile eq "" ||
+                                                        !(-f $ConfFile);
+ 
+ # Check the MailScanner version number against what is in MailScanner.conf
+@@ -280,7 +278,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
+ Currently you are using no virus scanners.
+ This is probably not what you want.
+ 
+-In your /opt/MailScanner/etc/MailScanner.conf file, set
++In your %SYSCONFDIR%/MailScanner.conf file, set
+     Virus Scanners = clamav
+ Then download
+     http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/install-Clam-SA.tar.gz

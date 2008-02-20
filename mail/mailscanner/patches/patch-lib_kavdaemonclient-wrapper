@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_kavdaemonclient-wrapper,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- lib/kavdaemonclient-wrapper.orig	Sat Aug  9 06:04:02 2003
++++ lib/kavdaemonclient-wrapper	Wed Mar 22 20:40:19 2006
+@@ -2,9 +2,9 @@
+ 
+ # kavdaemonclient-wrapper --  invoke Kaspersky Daemon client for use with
+ #                             mailscanner
+-# It uses AvpDaemonClient from /opt/AVP/DaemonClients/Sample1
++# It uses AvpDaemonClient from %PREFIX%/AVP/DaemonClients/Sample1
+ # You should build it like this:
+-#   cd /opt/AVP/DaemonClients
++#   cd %PREFIX%/AVP/DaemonClients
+ #   ./configure
+ #   make
+ #   cp Sample1/AvpDaemonClient /usr/local/bin

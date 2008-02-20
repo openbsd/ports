@@ -1,0 +1,16 @@
+$OpenBSD: patch-bin_Sophos_install,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- bin/Sophos.install.orig	Mon Aug 20 15:16:58 2007
++++ bin/Sophos.install	Sat Dec 15 15:12:36 2007
+@@ -204,9 +204,9 @@ if [ -f /etc/sav.conf ]; then
+   rm -f /etc/sav.conf
+ fi
+ 
+-echo Creating links so Perl-SAVI module compiles
+-[ -e ${SOPHOS}/lib/libsavi.so.2 ] && ln -sf libsavi.so.2 ${SOPHOS}/lib/libsavi.so
+-[ -e ${SOPHOS}/lib/libsavi.so.3 ] && ln -sf libsavi.so.3 ${SOPHOS}/lib/libsavi.so
++#echo Creating links so Perl-SAVI module compiles
++#[ -e ${SOPHOS}/lib/libsavi.so.2 ] && ln -sf libsavi.so.2 ${SOPHOS}/lib/libsavi.so
++#[ -e ${SOPHOS}/lib/libsavi.so.3 ] && ln -sf libsavi.so.3 ${SOPHOS}/lib/libsavi.so
+ 
+ echo
+ echo Fetching latest IDE virus identities from www.sophos.com

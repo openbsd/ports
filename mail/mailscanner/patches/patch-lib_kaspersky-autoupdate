@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_kaspersky-autoupdate,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- lib/kaspersky-autoupdate.orig	Thu Jul 19 14:37:44 2007
++++ lib/kaspersky-autoupdate	Sun Aug  5 04:03:26 2007
+@@ -4,7 +4,7 @@ use Sys::Syslog;
+ 
+ # Note that there are shell bugs in the kavupdater.sh where they have used
+ # == instead of = for comparing numbers.
+-$PackageDir = shift || "/opt/AVP";
++$PackageDir = shift || "%PREFIX%/AVP";
+ $KavUpdateBinary  = "$PackageDir/kavupdater.sh";
+ $KavUpdateCommand = "cat $KavUpdateBinary | sed -e 's/==/=/g' | sh";
+ 
+@@ -66,8 +66,8 @@ if (-x $KavUpdateBinary) {
+   $result = system($Command);
+   &Unlock();
+   if ($result) {
+-    Sys::Syslog::syslog('err', "Kaspersky update failed. You may need to add 'UpdatePath=http://www.kaspersky-labs.com/updates/' to your /opt/AVP/AvpUnix.ini");
+-    print STDERR "Kaspersky update failed. You may need to add\nUpdatePath=http://www.kaspersky-labs.com/updates/\nto your /opt/AVP/AvpUnix.ini\n";
++    Sys::Syslog::syslog('err', "Kaspersky update failed. You may need to add 'UpdatePath=http://www.kaspersky-labs.com/updates/' to your %PREFIX%/AVP/AvpUnix.ini");
++    print STDERR "Kaspersky update failed. You may need to add\nUpdatePath=http://www.kaspersky-labs.com/updates/\nto your %PREFIX%/AVP/AvpUnix.ini\n";
+   } else {
+     Sys::Syslog::syslog('info', "Kaspersky updated");
+   }

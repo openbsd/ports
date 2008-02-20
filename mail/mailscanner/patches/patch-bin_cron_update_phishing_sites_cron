@@ -1,0 +1,24 @@
+$OpenBSD: patch-bin_cron_update_phishing_sites_cron,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- bin/cron/update_phishing_sites.cron.orig	Wed Aug  1 13:34:28 2007
++++ bin/cron/update_phishing_sites.cron	Sun Aug  5 04:03:25 2007
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Insert a random delay up to this value, to spread virus updates round
+ # the clock. 1800 seconds = 30 minutes.
+@@ -9,12 +9,12 @@ if [ -f /etc/sysconfig/MailScanner ] ; then
+ fi
+ export UPDATEMAXDELAY
+ 
+-[ -x /opt/MailScanner/bin/update_phishing_sites ] || exit 0
++[ -x %PREFIX%/bin/update_phishing_sites ] || exit 0
+ if [ "x$UPDATEMAXDELAY" = "x0" ]; then
+   :
+ else
+   logger -p mail.info -t update.phishing.sites Delaying cron job up to $UPDATEMAXDELAY seconds
+   perl -e "sleep int(rand($UPDATEMAXDELAY));"
+ fi
+-exec /opt/MailScanner/bin/update_phishing_sites > /dev/null 2>&1
++exec %PREFIX%/bin/update_phishing_sites > /dev/null 2>&1
+ exit 0

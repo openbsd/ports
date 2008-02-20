@@ -1,0 +1,130 @@
+$OpenBSD: patch-lib_MailScanner_CustomFunctions_GenericSpamScanner_pm,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- lib/MailScanner/CustomFunctions/GenericSpamScanner.pm.orig	Thu Dec  7 13:12:22 2006
++++ lib/MailScanner/CustomFunctions/GenericSpamScanner.pm	Thu Dec  7 13:32:50 2006
+@@ -35,66 +35,80 @@ use IPC::Open2;
+ use FileHandle;
+ 
+ sub GenericSpamScanner {
+-  my($ip, $from, $to, $message) = @_;
++  my($Message, $message) = @_;
++  my($ip, $from, $to) = ($Message->{clientip},
++	$Message->{from},
++	$Message->{to});
+ 
+-  print STDERR "Generic Spam Scanner\n";
+-  print STDERR "====================\n";
+-  print STDERR "\n";
+-  print STDERR "IP = \"$ip\"\n";
+-  print STDERR "From = \"$from\"\n";
+-  print STDERR "To = \"" . join(", ", @$to) . "\"\n";
++  #print STDERR "Generic Spam Scanner\n";
++  #print STDERR "====================\n";
++  #print STDERR "\n";
++  #print STDERR "IP = \"$ip\"\n";
++  #print STDERR "From = \"$from\"\n";
++  #print STDERR "To = \"" . join(", ", @$to) . "\"\n";
+   #print STDERR "Message = \"" . join(", ", @$message) . "\"\n";
+ 
+  # To call a remote program you might want to do this:
+- my($fhread, $fhwrite, $pid, $score, $report);
+- die "Can't fork: $!" unless defined($pid = open2($fhread, $fhwrite,
+-                                     '/usr/local/bin/yourprogramhere'));
+- $fhwrite->print("$ip\n");
+- $fhwrite->print("$from\n");
++ my($fhread, $fhwrite, $pid, @result, $report, $users);
+  foreach my $address (@$to) {
+-  $fhwrite->print("$address\n");
++  $users .= "$address ";
+  }
++ my $cmd = sprintf "/usr/local/bin/dspamc --client --stdout --deliver=innocent,spam --mode=tum --user %s",$users;
++ #print STDERR "cmd: $cmd\n";
++ die "Can't fork: $!" unless defined($pid = open2($fhread, $fhwrite, $cmd));
+  $fhwrite->print(@$message);
+  $fhwrite->flush();
+  $fhwrite->close();
+- $score = <$fhread>;
+- chomp $score;
+- print STDERR "Read \"$score\" from your program\n\n";
++ my $state = 0;
++ my ($score,$report);
++ my @headers = ();
++ foreach my $line (<$fhread>) {
++	next if ($state > 0);
++ 	chomp $line;
++	if ($line =~ m/^$/) {
++		$state++;
++		next;
++	}
++	if ($line =~ m/^X-DSPAM/) {
++		$line =~ m/^([^:]*): (.*)$/;
++		my ($header,$val)=($1,$2);
++		next if ($header eq "X-DSPAM-Processed");
++		push @headers,"$header:$val";
++		#printf STDERR "Storing: $header \/ $val, now %s headers\n", $#headers;
++		$global::MS->{mta}->AddHeader($Message,
++				"${header}:", $val);
++		#@$message = ($line,@$message);
++		if ($header eq "X-DSPAM-Result") {
++			$result=$val;
++		}
++		if ($header eq "X-DSPAM-Confidence") {
++			# Confidence is a percentage, so
++			# make it 'spam' for 1.0 - 7.0, and
++			# make it 'ham' for 0.0 - 0.999999
++			if ($result eq "Spam") {
++				$score= 6.0*$val+1.0;
++			} else {
++				$score = 1.0-$val;
++			}
++			#print STDERR "Score! $score\n";
++		}
++		if ($header eq "X-DSPAM-Improbability") {
++			$report=$val;
++			#print STDERR "Report! $report\n";
++		}
++	}
++	next;
++ }
++	
++ #print STDERR "Read \"$score\" from your program\n";
+  $score = $score+0.0;
+ 
+- $report = <$fhread>;
+- chomp $report; 
+- print STDERR "Read \"$report\" from your program\n\n";
++ #print STDERR "Read \"$report\" from your program\n";
++ #printf STDERR "Read %d headers from your program\n",$#headers;
+ 
+- return ($score, $report);
++ return ($score, $report, @headers);
+ 
+  # return (0.0, 'No report');
+ }
+ 
+ 1;
+-
+-__DATA__
+-
+-#------------------------------------------------------------
+-#
+-# C source code of a skeleton yourprogramhere program
+-#
+-#------------------------------------------------------------
+-
+-#include <stdio.h>
+-#include <stdlib.h>
+-
+-char buffer[256];
+-
+-int main(void) {
+-  char *result;
+-
+-  result = fgets(buffer, 256, stdin);
+-  while(result!=NULL) {
+-    result = fgets(buffer, 256, stdin);
+-  }
+-
+-  printf("55\n");
+-  printf("This is a report\n");
+-}
+-

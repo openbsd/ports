@@ -1,0 +1,302 @@
+$OpenBSD: patch-etc_MailScanner_conf,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- etc/MailScanner.conf.orig	Fri Jan  4 13:06:47 2008
++++ etc/MailScanner.conf	Mon Feb 18 01:20:02 2008
+@@ -72,17 +72,17 @@
+ %web-site% = www.your-organisation.com
+ 
+ # Configuration directory containing this file
+-%etc-dir% = /opt/MailScanner/etc
++%etc-dir% = %SYSCONFDIR%/MailScanner
+ 
+ # Set the directory containing all the reports in the required language
+-%report-dir% = /opt/MailScanner/etc/reports/en
++%report-dir% = %PREFIX%/share/MailScanner/reports/en
+ 
+ # Rulesets directory containing your ".rules" files
+-%rules-dir% = /opt/MailScanner/etc/rules
++%rules-dir% = %SYSCONFDIR%/MailScanner/rules
+ 
+ # Configuration directory containing files related to MCP
+ # (Message Content Protection)
+-%mcp-dir% = /opt/MailScanner/etc/mcp
++%mcp-dir% = %SYSCONFDIR%/MailScanner/mcp
+ 
+ # One other that is set automatically for you is %version% which is,
+ # unsurprisingly, the string of the MailScanner version. It does not
+@@ -135,7 +135,7 @@ Queue Scan Interval = 6
+ #    Example: /var/spool/mqueue.in/*
+ # 3. The name of a file containing a list of directory names,
+ #    which can in turn contain wildcards.
+-#    Example: /opt/MailScanner/etc/mqueue.in.list.conf
++#    Example: %SYSCONFDIR%/MailScanner/mqueue.in.list.conf
+ #
+ # If you are using sendmail and have your queues split into qf, df, xf
+ # directories, then just specify the main directory, do not give me the
+@@ -167,7 +167,7 @@ Incoming Work Dir = /var/spool/MailScanner/incoming
+ Quarantine Dir = /var/spool/MailScanner/quarantine
+ 
+ # Set where to store the process id number so you can stop MailScanner
+-PID file = /opt/MailScanner/var/MailScanner.pid
++PID file = /var/run/MailScanner.pid
+ 
+ # To avoid resource leaks, re-start periodically. Forces a re-read of all
+ # the configuration files too, so new updates to the bad phishing sites list
+@@ -182,7 +182,7 @@ MTA = sendmail
+ # Set how to invoke MTA when sending messages MailScanner has created
+ # (e.g. to sender/recipient saying "found a virus in your message")
+ # This can also be the filename of a ruleset.
+-Sendmail = /usr/lib/sendmail
++Sendmail = /usr/sbin/sendmail
+ 
+ # Sendmail2 is provided for Exim users.
+ # It is the command used to attempt delivery of outgoing cleaned/disinfected
+@@ -190,9 +190,11 @@ Sendmail = /usr/lib/sendmail
+ # This is not usually required for sendmail.
+ # This can also be the filename of a ruleset.
+ #For Exim users: Sendmail2 = /usr/sbin/exim -C /etc/exim/exim_send.conf
+-#For sendmail users: Sendmail2 = /usr/lib/sendmail
++#For sendmail users: Sendmail2 = /usr/bin/true # /usr/sbin/sendmail
++#   `true' reduces mail server load, let normal runners catch messages
++#   instead of fork of sendmail per message
+ #Sendmail2 = /usr/sbin/sendmail -C /etc/exim/exim_send.conf
+-Sendmail2 = /usr/lib/sendmail
++Sendmail2 = /usr/bin/true
+ 
+ #
+ # Incoming Work Dir Settings
+@@ -375,7 +377,7 @@ Deliver Unparsable TNEF = no
+ # may be. It helps protect against Denial Of Service attacks in TNEF files.
+ # This can also be the filename of a ruleset.
+ #TNEF Expander  = internal
+-TNEF Expander = /opt/MailScanner/bin/tnef --maxsize=100000000
++TNEF Expander = %PREFIX%/bin/tnef --maxsize=100000000
+ 
+ # The maximum length of time the TNEF Expander is allowed to run for 1 message.
+ # (in seconds)
+@@ -395,7 +397,7 @@ File Timeout = 20
+ # This is used for expanding .gz files.
+ # To disable gzipped file checking, set this value to blank
+ # and the timeout to 0.
+-Gunzip Command = /bin/gunzip
++Gunzip Command = /usr/bin/gunzip
+ 
+ # The maximum length of time the "gunzip" command is allowed to run to expand
+ # 1 attachment file (in seconds).
+@@ -411,7 +413,7 @@ Gunzip Timeout = 50
+ # scanner, with one exception:
+ # If using the clavavmodule virus scanner, this adds external RAR checking
+ # to that scanner which is needed for archives which are RAR version 3.
+-Unrar Command = /usr/bin/unrar
++Unrar Command = %PREFIX%/bin/unrar
+ 
+ # The maximum length of time the "unrar" command is allowed to run for 1
+ # RAR archive (in seconds)
+@@ -565,7 +567,7 @@ Virus Scanning = yes
+ #       want none, then specify "none".
+ #
+ # This *cannot* be the filename of a ruleset.
+-Virus Scanners = auto
++Virus Scanners = none
+ 
+ # The maximum length of time the commercial virus scanner is allowed to run
+ # for 1 batch of messages (in seconds).
+@@ -693,19 +695,19 @@ Allowed Sophos Error Messages =
+ # The directory (or a link to it) containing all the Sophos *.ide files.
+ # This is only used by the "sophossavi" virus scanner, and is irrelevant
+ # for all other scanners.
+-Sophos IDE Dir = /opt/sophos-av/lib/sav
++Sophos IDE Dir = %PREFIX%/sophos-av/lib/sav
+ 
+ # The directory (or a link to it) containing all the Sophos *.so libraries.
+ # This is only used by the "sophossavi" virus scanner, and is irrelevant
+ # for all other scanners.
+-Sophos Lib Dir = /opt/sophos-av/lib
++Sophos Lib Dir = %PREFIX%/sophos-av/lib
+ 
+ # SophosSAVI only: monitor each of these files for changes in size to
+ # detect when a Sophos update has happened. The date of the Sophos Lib Dir
+ # is also monitored.
+ # This is only used by the "sophossavi" virus scanner, not the "sophos"
+ # scanner setting.
+-Monitors For Sophos Updates = /opt/sophos-av/lib/sav/*.ide
++Monitors For Sophos Updates = %PREFIX%/sophos-av/lib/sav/*.ide
+ 
+ #
+ # Options specific to ClamAV Anti-Virus
+@@ -716,7 +718,7 @@ Monitors For Sophos Updates = /opt/sophos-av/lib/sav/*
+ # detect when a ClamAV update has happened.
+ # This is only used by the "clamavmodule" virus scanner, not the "clamav"
+ # scanner setting.
+-Monitors for ClamAV Updates = /usr/local/share/clamav/*.inc/* /usr/local/share/clamav/*.cvd
++Monitors for ClamAV Updates = %PREFIX%/share/clamav/*.inc/* %PREFIX%/share/clamav/*.cvd
+ 
+ # ClamAVModule only: set limits when scanning for viruses.
+ #
+@@ -1306,7 +1308,7 @@ Sign Messages Already Processed = no
+ # Add the "Inline HTML Signature" or "Inline Text Signature" to the end
+ # of uninfected messages?
+ # This can also be the filename of a ruleset.
+-Sign Clean Messages = yes
++Sign Clean Messages = no
+ 
+ # If you are using HTML signatures, you can embed an image in the signature.
+ # For the filename(s) of the image, see the settings "Signature Image
+@@ -1371,7 +1373,7 @@ Deliver Cleaned Messages = yes
+ # Do you want to notify the people who sent you messages containing
+ # viruses or badly-named filenames?
+ # This can also be the filename of a ruleset.
+-Notify Senders = yes
++Notify Senders = no
+ 
+ # *If* "Notify Senders" is set to yes, do you want to notify people
+ # who sent you messages containing viruses?
+@@ -1433,7 +1435,7 @@ Scanned Subject Text = {Scanned}
+ #      end   = Add text to the end of the subject line.
+ # This makes filtering in Outlook very easy.
+ # This can also be the filename of a ruleset.
+-Virus Modify Subject = start
++Virus Modify Subject = no
+ 
+ # This is the text to add to the start of the subject if the
+ # "Virus Modify Subject" option is set.
+@@ -1449,7 +1451,7 @@ Virus Subject Text = {Virus?}
+ #      end   = Add text to the end of the subject line.
+ # This makes filtering in Outlook very easy.
+ # This can also be the filename of a ruleset.
+-Filename Modify Subject = start
++Filename Modify Subject = no
+ 
+ # This is the text to add to the start of the subject if the
+ # "Filename Modify Subject" option is set.
+@@ -1467,7 +1469,7 @@ Filename Subject Text = {Filename?}
+ #      end   = Add text to the end of the subject line.
+ # This makes filtering in Outlook very easy.
+ # This can also be the filename of a ruleset.
+-Content Modify Subject = start
++Content Modify Subject = no
+ 
+ # This is the text to add to the start of the subject if the
+ # "Content Modify Subject" option is set.
+@@ -1486,7 +1488,7 @@ Content Subject Text = {Dangerous Content?}
+ #      end   = Add text to the end of the subject line.
+ # This makes filtering in Outlook very easy.
+ # This can also be the filename of a ruleset.
+-Size Modify Subject = start
++Size Modify Subject = no
+ 
+ # This is the text to add to the start of the subject if the
+ # "Size Modify Subject" option is set.
+@@ -1505,7 +1507,7 @@ Size Subject Text = {Size}
+ #      yes   = Add text to the start of the subject line, or
+ #      end   = Add text to the end of the subject line.
+ # This can also be the filename of a ruleset.
+-Disarmed Modify Subject = start
++Disarmed Modify Subject = no
+ 
+ # This is the text to add to the start of the subject if the
+ # "Disarmed Modify Subject" option is set.
+@@ -1535,7 +1537,7 @@ Phishing Subject Text = {Fraud?}
+ #      end   = Add text to the end of the subject line.
+ # This makes filtering in Outlook very easy.
+ # This can also be the filename of a ruleset.
+-Spam Modify Subject = start
++Spam Modify Subject = no
+ 
+ # This is the text to add to the start of the subject if the
+ # "Spam Modify Subject" option is set.
+@@ -1555,7 +1557,7 @@ Spam Subject Text = {Spam?}
+ #      yes   = Add text to the start of the subject line, or
+ #      end   = Add text to the end of the subject line.
+ # This can also be the filename of a ruleset.
+-High Scoring Spam Modify Subject = start
++High Scoring Spam Modify Subject = no
+ 
+ # This is just like the "Spam Subject Text" option above, except that
+ # it applies when the score from SpamAssassin is higher than the
+@@ -1624,7 +1626,7 @@ Archive Mail =
+ # Notify the local system administrators ("Notices To") when any infections
+ # are found?
+ # This can also be the filename of a ruleset.
+-Send Notices = yes
++Send Notices = no
+ 
+ # Include the full headers of each message in the notices sent to the local
+ # system administrators?
+@@ -1679,7 +1681,7 @@ Virus Scanner Definitions = %etc-dir%/virus.scanners.c
+ #       If you want to just disable the "Spam List" feature then set
+ #       "Spam List =" (i.e. an empty list) in the setting below.
+ # This can also be the filename of a ruleset.
+-Spam Checks = yes
++Spam Checks = no
+ 
+ # This is the list of spam blacklists (RBLs) which you are using.
+ # See the "Spam List Definitions" file for more information about what
+@@ -1858,7 +1860,7 @@ Watermark Header = X-%org-name%-MailScanner-Watermark:
+ 
+ # Do you want to find spam using the "SpamAssassin" package?
+ # This can also be the filename of a ruleset.
+-Use SpamAssassin = yes
++Use SpamAssassin = no
+ 
+ # SpamAssassin is not very fast when scanning huge messages, so messages
+ # bigger than this value will be truncated to this length for SpamAssassin
+@@ -1955,7 +1957,7 @@ Include Binary Attachments In SpamAssassin = no
+ # whatever SpamAssassin threshold they want. For example, they just look
+ # for "sssss" for every message whose score is > 5, for example.
+ # This can also be the filename of a ruleset.
+-Spam Score = yes
++Spam Score = no
+ 
+ # Many naive spammers send out the same message to lots of people.
+ # These messages are very likely to have roughly the same SpamAssassin score.
+@@ -2319,14 +2321,14 @@ SpamAssassin Install Prefix =
+ SpamAssassin Site Rules Dir = /etc/mail/spamassassin
+ 
+ # The site-local rules are searched for here, and in prefix/etc/spamassassin,
+-# prefix/etc/mail/spamassassin, /usr/local/etc/spamassassin, /etc/spamassassin,
++# prefix/etc/mail/spamassassin, %PREFIX%/etc/spamassassin, /etc/spamassassin,
+ # /etc/mail/spamassassin, and maybe others.
+ # Be careful of setting this: it may mean the spam.assassin.prefs.conf file
+ # is missed out, you will need to insert a soft-link with "ln -s" to link
+ # the file into mailscanner.cf in the new directory.
+ # If this is set then it replaces the list of places that are searched;
+ # otherwise it has no effect.
+-#SpamAssassin Local Rules Dir = /opt/MailScanner/etc/mail/spamassassin
++#SpamAssassin Local Rules Dir = %PREFIX%/mail/spamassassin
+ SpamAssassin Local Rules Dir =
+ 
+ # The rules created by the "sa-update" tool are searched for here.
+@@ -2340,10 +2342,10 @@ SpamAssassin Local Rules Dir =
+ SpamAssassin Local State Dir = # /var/lib/spamassassin
+ 
+ # The default rules are searched for here, and in prefix/share/spamassassin,
+-# /usr/local/share/spamassassin, /usr/share/spamassassin, and maybe others.
++# %PREFIX%/share/spamassassin, /usr/share/spamassassin, and maybe others.
+ # If this is set then it adds to the list of places that are searched;
+ # otherwise it has no effect.
+-#SpamAssassin Default Rules Dir = /opt/MailScanner/share/spamassassin
++#SpamAssassin Default Rules Dir = %PREFIX%/share/spamassassin
+ SpamAssassin Default Rules Dir =
+ 
+ #
+@@ -2376,9 +2378,9 @@ MCP Actions = deliver
+ High Scoring MCP Actions = deliver
+ Bounce MCP As Attachment = no
+ 
+-MCP Modify Subject = start
++MCP Modify Subject = no
+ MCP Subject Text = {MCP?}
+-High Scoring MCP Modify Subject = start
++High Scoring MCP Modify Subject = no
+ High Scoring MCP Subject Text = {MCP?}
+ 
+ Is Definitely MCP = no
+@@ -2524,7 +2526,7 @@ Lockfile Dir = /tmp
+ # directory should be over-written by the installation or upgrade process.
+ # All files starting with "." or ending with ".rpmnew" will be ignored,
+ # all other files will be compiled and may be used with Custom Functions.
+-Custom Functions Dir = /opt/MailScanner/lib/MailScanner/CustomFunctions
++Custom Functions Dir = %PREFIX%/lib/MailScanner/MailScanner/CustomFunctions
+ 
+ # How to lock spool files.
+ # Don't set this unless you *know* you need to.

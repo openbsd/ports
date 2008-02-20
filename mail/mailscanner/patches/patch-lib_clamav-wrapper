@@ -1,0 +1,41 @@
+$OpenBSD: patch-lib_clamav-wrapper,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- lib/clamav-wrapper.orig	Tue Jun  6 12:03:41 2006
++++ lib/clamav-wrapper	Mon Feb 18 01:38:02 2008
+@@ -51,7 +51,7 @@
+ 
+ # You may want to check this script for bash-isms
+ 
+-TempDir="/tmp/clamav.$$"
++TempDir="`mktemp -d /var/spool/MailScanner/clamav.XXXXXXXXXXXXXXX`"
+ ClamUser="clamav"
+ ClamGroup="clamav"
+ 
+@@ -98,23 +98,23 @@ ExtraScanOptions="$ExtraScanOptions --deb"  
+ # LESS COMMON unpackers, which probably aren't installed by default
+ # (hence disabled)
+ # Uncomment ONE of the following lines if you have unrar installed
+-#ExtraScanOptions="$ExtraScanOptions --unrar"  
++ExtraScanOptions="$ExtraScanOptions --unrar"  
+ #ExtraScanOptions="$ExtraScanOptions --unrar=/path/to/unrar" 
+ 
+ # Uncomment ONE of the following lines if you have unarj installed
+-#ExtraScanOptions="$ExtraScanOptions --unarj"  
++ExtraScanOptions="$ExtraScanOptions --unarj"  
+ #ExtraScanOptions="$ExtraScanOptions --unarj=/path/to/unarj" 
+ 
+ # Uncomment ONE of the following lines if you have unace installed
+-#ExtraScanOptions="$ExtraScanOptions --unace"  
++ExtraScanOptions="$ExtraScanOptions --unace"  
+ #ExtraScanOptions="$ExtraScanOptions --unace=/path/to/unace" 
+ 
+ # Uncomment ONE of the following lines if you have lha installed
+-#ExtraScanOptions="$ExtraScanOptions --lha"  
++ExtraScanOptions="$ExtraScanOptions --lha"  
+ #ExtraScanOptions="$ExtraScanOptions --lha=/path/to/lha" 
+ 
+ # Uncomment ONE of the following lines if you have zoo installed
+-#ExtraScanOptions="$ExtraScanOptions --zoo"  
++ExtraScanOptions="$ExtraScanOptions --zoo"  
+ #ExtraScanOptions="$ExtraScanOptions --zoo=/path/to/unzoo" 
+ 
+ # Now increase the allowed expansion size of zip files

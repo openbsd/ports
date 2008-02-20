@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_upgrade_MailScanner_conf,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- bin/upgrade_MailScanner_conf.orig	Fri Jul 27 10:52:56 2007
++++ bin/upgrade_MailScanner_conf	Sun Aug  5 04:03:25 2007
+@@ -106,7 +106,7 @@ If you are using the tar distribution so that the old 
+ /opt/MailScanner and the new one is in /opt/MailScanner.new then:
+ 
+ cd /opt/MailScanner.new/etc/reports/en
+-../../../bin/upgrade_languages_conf /opt/MailScanner/etc/reports/en/languages.conf /opt/MailScanner.new/etc/reports/en/languages.conf > languages.new
++../../../bin/upgrade_languages_conf %SYSCONFDIR%/MailScanner/reports/en/languages.conf /opt/MailScanner.new/etc/reports/en/languages.conf > languages.new
+ mv -f languages.conf languages.old
+ mv -f languages.new  languages.conf
+ 

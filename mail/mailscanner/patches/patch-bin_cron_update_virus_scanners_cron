@@ -1,0 +1,31 @@
+$OpenBSD: patch-bin_cron_update_virus_scanners_cron,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- bin/cron/update_virus_scanners.cron.orig	Wed Aug  1 13:34:28 2007
++++ bin/cron/update_virus_scanners.cron	Sun Aug  5 04:03:25 2007
+@@ -3,23 +3,21 @@
+ Disabled=no
+ if [ "x$Disabled" = "xyes" ]; then
+   exit 0
+-fi
++#!/bin/sh
+ 
+ # Insert a random delay up to this value, to spread virus updates round
+ # the clock. 1800 seconds = 30 minutes.
+ # Set this to 0 to disable it.
+ UPDATEMAXDELAY=600
+-if [ -f /etc/sysconfig/MailScanner ] ; then
+-        . /etc/sysconfig/MailScanner
+-fi
++. /etc/rc.conf
+ export UPDATEMAXDELAY
+ 
+-[ -x /opt/MailScanner/bin/update_virus_scanners ] || exit 0
++[ -x %PREFIX%/bin/update_virus_scanners ] || exit 0
+ if [ "x$UPDATEMAXDELAY" = "x0" ]; then
+   :
+ else
+   logger -p mail.info -t update.virus.scanners Delaying cron job up to $UPDATEMAXDELAY seconds
+   perl -e "sleep int(rand($UPDATEMAXDELAY));"
+ fi
+-exec /opt/MailScanner/bin/update_virus_scanners
++exec %PREFIX%/bin/update_virus_scanners
+ exit 0

@@ -1,0 +1,10 @@
+$OpenBSD: patch-bin_cron_check_MailScanner_cron,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- bin/cron/check_MailScanner.cron.orig	Mon Mar 20 17:48:20 2006
++++ bin/cron/check_MailScanner.cron	Mon Mar 20 17:48:20 2006
+@@ -16,5 +16,5 @@ fi
+ [ -f $LOCKFILE ] && exit 0
+ trap "rm -f $LOCKFILE" EXIT
+ touch $LOCKFILE
+-/opt/MailScanner/bin/check_mailscanner -q # >/dev/null 2>&1
++%PREFIX%/bin/check_MailScanner -q # >/dev/null 2>&1
+ exit 0

@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_check_mailscanner,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- bin/check_mailscanner.orig	Sat Mar 11 11:25:43 2006
++++ bin/check_mailscanner	Wed Mar 22 20:44:27 2006
+@@ -42,8 +42,8 @@
+ # unless MailScanner actually had to be started.
+ 
+ process=MailScanner
+-msbindir=/opt/MailScanner/bin
+-config=/opt/MailScanner/etc/MailScanner.conf
++msbindir=%PREFIX%/bin
++config=%SYSCONFDIR%/MailScanner/MailScanner.conf
+ 
+ # These seem to get put all over the shop...
+ PATH=/usr/bin:/bin

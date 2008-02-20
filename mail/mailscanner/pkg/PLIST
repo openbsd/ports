@@ -1,0 +1,1047 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+bin/MailScanner
+bin/analyse_SpamAssassin_cache
+bin/check_mailscanner
+bin/clean.SA.cache
+bin/clean.quarantine
+bin/d2mbox
+bin/df2mbox
+bin/update_phishing_sites
+lib/MailScanner/
+@sample /var/spool/MailScanner/
+@sample /var/spool/MailScanner/quarantine/
+@sample /var/spool/MailScanner/incoming/
+@sample /var/spool/MailScanner/outgoing/
+lib/MailScanner/MailScanner/
+lib/MailScanner/MailScanner.pm
+lib/MailScanner/MailScanner/BinHex.pm
+lib/MailScanner/MailScanner/Config.pm
+lib/MailScanner/MailScanner/ConfigDefs.pl
+lib/MailScanner/MailScanner/CustomConfig.pm
+lib/MailScanner/MailScanner/CustomFunctions/
+lib/MailScanner/MailScanner/CustomFunctions/CustomAction.pm
+lib/MailScanner/MailScanner/CustomFunctions/DavidHooton.pm
+lib/MailScanner/MailScanner/CustomFunctions/GenericSpamScanner.pm
+lib/MailScanner/MailScanner/CustomFunctions/LastSpam.pm
+lib/MailScanner/MailScanner/CustomFunctions/MyExample.pm
+lib/MailScanner/MailScanner/CustomFunctions/Ruleset-from-Function.pm
+lib/MailScanner/MailScanner/CustomFunctions/SpamWhitelist.pm
+lib/MailScanner/MailScanner/CustomFunctions/ZMRouterDirHash.pm
+lib/MailScanner/MailScanner/Exim.pm
+lib/MailScanner/MailScanner/EximDiskStore.pm
+lib/MailScanner/MailScanner/GenericSpam.pm
+lib/MailScanner/MailScanner/Lock.pm
+lib/MailScanner/MailScanner/Log.pm
+lib/MailScanner/MailScanner/MCP.pm
+lib/MailScanner/MailScanner/MCPMessage.pm
+lib/MailScanner/MailScanner/Mail.pm
+lib/MailScanner/MailScanner/Message.pm
+lib/MailScanner/MailScanner/MessageBatch.pm
+lib/MailScanner/MailScanner/PFDiskStore.pm
+lib/MailScanner/MailScanner/Postfix.pm
+lib/MailScanner/MailScanner/QMDiskStore.pm
+lib/MailScanner/MailScanner/Qmail.pm
+lib/MailScanner/MailScanner/Quarantine.pm
+lib/MailScanner/MailScanner/Queue.pm
+lib/MailScanner/MailScanner/RBLs.pm
+lib/MailScanner/MailScanner/SA.pm
+lib/MailScanner/MailScanner/SMDiskStore.pm
+lib/MailScanner/MailScanner/Sendmail.pm
+lib/MailScanner/MailScanner/SweepContent.pm
+lib/MailScanner/MailScanner/SweepOther.pm
+lib/MailScanner/MailScanner/SweepViruses.pm
+lib/MailScanner/MailScanner/SystemDefs.pm
+lib/MailScanner/MailScanner/TNEF.pm
+lib/MailScanner/MailScanner/WorkArea.pm
+lib/MailScanner/MailScanner/ZMDiskStore.pm
+lib/MailScanner/MailScanner/ZMailer.pm
+lib/MailScanner/MailScanner/notes.txt
+libexec/MailScanner/
+libexec/MailScanner/MailScanner
+share/MailScanner/
+share/doc/MailScanner/
+share/doc/MailScanner/README
+share/doc/MailScanner/README.OpenBSD.port
+share/examples/MailScanner/
+@sample ${SYSCONFDIR}/MailScanner/
+share/examples/MailScanner/MailScanner.conf
+@sample ${SYSCONFDIR}/MailScanner/MailScanner.conf
+share/examples/MailScanner/country.domains.conf
+@sample ${SYSCONFDIR}/MailScanner/country.domains.conf
+share/examples/MailScanner/filename.rules.conf
+@sample ${SYSCONFDIR}/MailScanner/filename.rules.conf
+share/examples/MailScanner/filetype.rules.conf
+@sample ${SYSCONFDIR}/MailScanner/filetype.rules.conf
+share/examples/MailScanner/libexec/
+@mode 755
+share/examples/MailScanner/libexec/antivir-autoupdate.sample
+@sample libexec/MailScanner/antivir-autoupdate
+share/examples/MailScanner/libexec/antivir-wrapper.sample
+@sample libexec/MailScanner/antivir-wrapper
+share/examples/MailScanner/libexec/avast-autoupdate.sample
+share/examples/MailScanner/libexec/avast-wrapper.sample
+share/examples/MailScanner/libexec/avastd-wrapper.sample
+share/examples/MailScanner/libexec/avg-autoupdate.sample
+@sample libexec/MailScanner/avg-autoupdate
+share/examples/MailScanner/libexec/avg-wrapper.sample
+@sample libexec/MailScanner/avg-wrapper
+share/examples/MailScanner/libexec/bitdefender-autoupdate.sample
+@sample libexec/MailScanner/bitdefender-autoupdate
+share/examples/MailScanner/libexec/bitdefender-wrapper.sample
+@sample libexec/MailScanner/bitdefender-wrapper
+share/examples/MailScanner/libexec/clamav-autoupdate.sample
+@sample libexec/MailScanner/clamav-autoupdate
+share/examples/MailScanner/libexec/clamav-wrapper.sample
+@sample libexec/MailScanner/clamav-wrapper
+share/examples/MailScanner/libexec/command-wrapper.sample
+@sample libexec/MailScanner/command-wrapper
+share/examples/MailScanner/libexec/css-autoupdate.sample
+@sample libexec/MailScanner/css-autoupdate
+share/examples/MailScanner/libexec/css-wrapper.sample
+@sample libexec/MailScanner/css-wrapper
+share/examples/MailScanner/libexec/drweb-wrapper.sample
+@sample libexec/MailScanner/drweb-wrapper
+share/examples/MailScanner/libexec/etrust-autoupdate.sample
+@sample libexec/MailScanner/etrust-autoupdate
+share/examples/MailScanner/libexec/etrust-wrapper.sample
+@sample libexec/MailScanner/etrust-wrapper
+share/examples/MailScanner/libexec/f-prot-6-autoupdate.sample
+@sample libexec/MailScanner/f-prot-6-autoupdate
+share/examples/MailScanner/libexec/f-prot-6-wrapper.sample
+@sample libexec/MailScanner/f-prot-6-wrapper
+share/examples/MailScanner/libexec/f-prot-autoupdate.sample
+@sample libexec/MailScanner/f-prot-autoupdate
+share/examples/MailScanner/libexec/f-prot-wrapper.sample
+@sample libexec/MailScanner/f-prot-wrapper
+share/examples/MailScanner/libexec/f-secure-autoupdate.sample
+@sample libexec/MailScanner/f-secure-autoupdate
+share/examples/MailScanner/libexec/f-secure-wrapper.sample
+@sample libexec/MailScanner/f-secure-wrapper
+share/examples/MailScanner/libexec/generic-autoupdate.sample
+@sample libexec/MailScanner/generic-autoupdate
+share/examples/MailScanner/libexec/generic-wrapper.sample
+@sample libexec/MailScanner/generic-wrapper
+share/examples/MailScanner/libexec/inoculan-autoupdate.sample
+@sample libexec/MailScanner/inoculan-autoupdate
+share/examples/MailScanner/libexec/inoculan-wrapper.sample
+@sample libexec/MailScanner/inoculan-wrapper
+share/examples/MailScanner/libexec/inoculate-wrapper.sample
+@sample libexec/MailScanner/inoculate-wrapper
+share/examples/MailScanner/libexec/kaspersky-autoupdate.sample
+@sample libexec/MailScanner/kaspersky-autoupdate
+share/examples/MailScanner/libexec/kaspersky-wrapper.sample
+@sample libexec/MailScanner/kaspersky-wrapper
+share/examples/MailScanner/libexec/kavdaemonclient-wrapper.sample
+share/examples/MailScanner/libexec/mcafee-autoupdate.sample
+@sample libexec/MailScanner/mcafee-autoupdate
+share/examples/MailScanner/libexec/mcafee-wrapper.sample
+@sample libexec/MailScanner/mcafee-wrapper
+share/examples/MailScanner/libexec/nod32-autoupdate.sample
+@sample libexec/MailScanner/nod32-autoupdate
+share/examples/MailScanner/libexec/nod32-wrapper.sample
+@sample libexec/MailScanner/nod32-wrapper
+share/examples/MailScanner/libexec/norman-autoupdate.sample
+@sample libexec/MailScanner/norman-autoupdate
+share/examples/MailScanner/libexec/norman-wrapper.sample
+@sample libexec/MailScanner/norman-wrapper
+share/examples/MailScanner/libexec/panda-autoupdate.sample
+@sample libexec/MailScanner/panda-autoupdate
+share/examples/MailScanner/libexec/panda-wrapper.sample
+@sample libexec/MailScanner/panda-wrapper
+share/examples/MailScanner/libexec/rav-autoupdate.sample
+@sample libexec/MailScanner/rav-autoupdate
+share/examples/MailScanner/libexec/rav-wrapper.sample
+@sample libexec/MailScanner/rav-wrapper
+share/examples/MailScanner/libexec/sophos-autoupdate.sample
+@sample libexec/MailScanner/sophos-autoupdate
+share/examples/MailScanner/libexec/sophos-wrapper.sample
+@sample libexec/MailScanner/sophos-wrapper
+share/examples/MailScanner/libexec/symscanengine-autoupdate.sample
+@sample libexec/MailScanner/symscanengine-autoupdate
+share/examples/MailScanner/libexec/symscanengine-wrapper.sample
+@sample libexec/MailScanner/symscanengine-wrapper
+share/examples/MailScanner/libexec/trend-autoupdate.sample
+@sample libexec/MailScanner/trend-autoupdate
+share/examples/MailScanner/libexec/trend-wrapper.sample
+@sample libexec/MailScanner/trend-wrapper
+share/examples/MailScanner/libexec/vexira-autoupdate.sample
+@sample libexec/MailScanner/vexira-autoupdate
+share/examples/MailScanner/libexec/vexira-wrapper.sample
+@sample libexec/MailScanner/vexira-wrapper
+@mode
+share/examples/MailScanner/mcp/
+@sample ${SYSCONFDIR}/MailScanner/mcp/
+share/examples/MailScanner/mcp/10_example.cf
+@sample ${SYSCONFDIR}/MailScanner/mcp/10_example.cf
+share/examples/MailScanner/mcp/mcp.spam.assassin.prefs.conf
+@sample ${SYSCONFDIR}/MailScanner/mcp/mcp.spam.assassin.prefs.conf
+share/examples/MailScanner/mcp/v320.pre
+@sample ${SYSCONFDIR}/MailScanner/mcp/v320.pre
+share/examples/MailScanner/phishing.bad.sites.conf
+@sample ${SYSCONFDIR}/MailScanner/phishing.bad.sites.conf
+share/examples/MailScanner/phishing.safe.sites.conf
+@sample ${SYSCONFDIR}/MailScanner/phishing.safe.sites.conf
+share/examples/MailScanner/reports/
+@sample share/MailScanner/reports/
+share/examples/MailScanner/reports/ca/
+@sample share/MailScanner/reports/ca/
+share/examples/MailScanner/reports/ca/deleted.content.message.txt
+@sample share/MailScanner/reports/ca/deleted.content.message.txt
+share/examples/MailScanner/reports/ca/deleted.filename.message.txt
+@sample share/MailScanner/reports/ca/deleted.filename.message.txt
+share/examples/MailScanner/reports/ca/deleted.size.message.txt
+@sample share/MailScanner/reports/ca/deleted.size.message.txt
+share/examples/MailScanner/reports/ca/deleted.virus.message.txt
+@sample share/MailScanner/reports/ca/deleted.virus.message.txt
+share/examples/MailScanner/reports/ca/disinfected.report.txt
+@sample share/MailScanner/reports/ca/disinfected.report.txt
+share/examples/MailScanner/reports/ca/inline.sig.html
+@sample share/MailScanner/reports/ca/inline.sig.html
+share/examples/MailScanner/reports/ca/inline.sig.txt
+@sample share/MailScanner/reports/ca/inline.sig.txt
+share/examples/MailScanner/reports/ca/inline.spam.warning.txt
+@sample share/MailScanner/reports/ca/inline.spam.warning.txt
+share/examples/MailScanner/reports/ca/inline.warning.html
+@sample share/MailScanner/reports/ca/inline.warning.html
+share/examples/MailScanner/reports/ca/inline.warning.txt
+@sample share/MailScanner/reports/ca/inline.warning.txt
+share/examples/MailScanner/reports/ca/languages.conf
+@sample share/MailScanner/reports/ca/languages.conf
+share/examples/MailScanner/reports/ca/recipient.mcp.report.txt
+@sample share/MailScanner/reports/ca/recipient.mcp.report.txt
+share/examples/MailScanner/reports/ca/recipient.spam.report.txt
+@sample share/MailScanner/reports/ca/recipient.spam.report.txt
+share/examples/MailScanner/reports/ca/rejection.report.txt
+@sample share/MailScanner/reports/ca/rejection.report.txt
+share/examples/MailScanner/reports/ca/sender.content.report.txt
+@sample share/MailScanner/reports/ca/sender.content.report.txt
+share/examples/MailScanner/reports/ca/sender.error.report.txt
+@sample share/MailScanner/reports/ca/sender.error.report.txt
+share/examples/MailScanner/reports/ca/sender.filename.report.txt
+@sample share/MailScanner/reports/ca/sender.filename.report.txt
+share/examples/MailScanner/reports/ca/sender.mcp.report.txt
+@sample share/MailScanner/reports/ca/sender.mcp.report.txt
+share/examples/MailScanner/reports/ca/sender.size.report.txt
+@sample share/MailScanner/reports/ca/sender.size.report.txt
+share/examples/MailScanner/reports/ca/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/ca/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/ca/sender.spam.report.txt
+@sample share/MailScanner/reports/ca/sender.spam.report.txt
+share/examples/MailScanner/reports/ca/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/ca/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/ca/sender.virus.report.txt
+@sample share/MailScanner/reports/ca/sender.virus.report.txt
+share/examples/MailScanner/reports/ca/stored.content.message.txt
+@sample share/MailScanner/reports/ca/stored.content.message.txt
+share/examples/MailScanner/reports/ca/stored.filename.message.txt
+@sample share/MailScanner/reports/ca/stored.filename.message.txt
+share/examples/MailScanner/reports/ca/stored.size.message.txt
+@sample share/MailScanner/reports/ca/stored.size.message.txt
+share/examples/MailScanner/reports/ca/stored.virus.message.txt
+@sample share/MailScanner/reports/ca/stored.virus.message.txt
+share/examples/MailScanner/reports/cy+en/
+@sample share/MailScanner/reports/cy+en/
+share/examples/MailScanner/reports/cy+en/deleted.content.message.txt
+@sample share/MailScanner/reports/cy+en/deleted.content.message.txt
+share/examples/MailScanner/reports/cy+en/deleted.filename.message.txt
+@sample share/MailScanner/reports/cy+en/deleted.filename.message.txt
+share/examples/MailScanner/reports/cy+en/deleted.size.message.txt
+@sample share/MailScanner/reports/cy+en/deleted.size.message.txt
+share/examples/MailScanner/reports/cy+en/deleted.virus.message.txt
+@sample share/MailScanner/reports/cy+en/deleted.virus.message.txt
+share/examples/MailScanner/reports/cy+en/disinfected.report.txt
+@sample share/MailScanner/reports/cy+en/disinfected.report.txt
+share/examples/MailScanner/reports/cy+en/inline.sig.html
+@sample share/MailScanner/reports/cy+en/inline.sig.html
+share/examples/MailScanner/reports/cy+en/inline.sig.txt
+@sample share/MailScanner/reports/cy+en/inline.sig.txt
+share/examples/MailScanner/reports/cy+en/inline.spam.warning.txt
+@sample share/MailScanner/reports/cy+en/inline.spam.warning.txt
+share/examples/MailScanner/reports/cy+en/inline.warning.html
+@sample share/MailScanner/reports/cy+en/inline.warning.html
+share/examples/MailScanner/reports/cy+en/inline.warning.txt
+@sample share/MailScanner/reports/cy+en/inline.warning.txt
+share/examples/MailScanner/reports/cy+en/languages.conf
+@sample share/MailScanner/reports/cy+en/languages.conf
+share/examples/MailScanner/reports/cy+en/recipient.mcp.report.txt
+@sample share/MailScanner/reports/cy+en/recipient.mcp.report.txt
+share/examples/MailScanner/reports/cy+en/recipient.spam.report.txt
+@sample share/MailScanner/reports/cy+en/recipient.spam.report.txt
+share/examples/MailScanner/reports/cy+en/rejection.report.txt
+@sample share/MailScanner/reports/cy+en/rejection.report.txt
+share/examples/MailScanner/reports/cy+en/sender.content.report.txt
+@sample share/MailScanner/reports/cy+en/sender.content.report.txt
+share/examples/MailScanner/reports/cy+en/sender.error.report.txt
+@sample share/MailScanner/reports/cy+en/sender.error.report.txt
+share/examples/MailScanner/reports/cy+en/sender.filename.report.txt
+@sample share/MailScanner/reports/cy+en/sender.filename.report.txt
+share/examples/MailScanner/reports/cy+en/sender.mcp.report.txt
+@sample share/MailScanner/reports/cy+en/sender.mcp.report.txt
+share/examples/MailScanner/reports/cy+en/sender.size.report.txt
+@sample share/MailScanner/reports/cy+en/sender.size.report.txt
+share/examples/MailScanner/reports/cy+en/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/cy+en/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/cy+en/sender.spam.report.txt
+@sample share/MailScanner/reports/cy+en/sender.spam.report.txt
+share/examples/MailScanner/reports/cy+en/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/cy+en/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/cy+en/sender.virus.report.txt
+@sample share/MailScanner/reports/cy+en/sender.virus.report.txt
+share/examples/MailScanner/reports/cy+en/stored.content.message.txt
+@sample share/MailScanner/reports/cy+en/stored.content.message.txt
+share/examples/MailScanner/reports/cy+en/stored.filename.message.txt
+@sample share/MailScanner/reports/cy+en/stored.filename.message.txt
+share/examples/MailScanner/reports/cy+en/stored.size.message.txt
+@sample share/MailScanner/reports/cy+en/stored.size.message.txt
+share/examples/MailScanner/reports/cy+en/stored.virus.message.txt
+@sample share/MailScanner/reports/cy+en/stored.virus.message.txt
+share/examples/MailScanner/reports/cz/
+@sample share/MailScanner/reports/cz/
+share/examples/MailScanner/reports/cz/deleted.content.message.txt
+@sample share/MailScanner/reports/cz/deleted.content.message.txt
+share/examples/MailScanner/reports/cz/deleted.filename.message.txt
+@sample share/MailScanner/reports/cz/deleted.filename.message.txt
+share/examples/MailScanner/reports/cz/deleted.size.message.txt
+@sample share/MailScanner/reports/cz/deleted.size.message.txt
+share/examples/MailScanner/reports/cz/deleted.virus.message.txt
+@sample share/MailScanner/reports/cz/deleted.virus.message.txt
+share/examples/MailScanner/reports/cz/disinfected.report.txt
+@sample share/MailScanner/reports/cz/disinfected.report.txt
+share/examples/MailScanner/reports/cz/inline.sig.html
+@sample share/MailScanner/reports/cz/inline.sig.html
+share/examples/MailScanner/reports/cz/inline.sig.txt
+@sample share/MailScanner/reports/cz/inline.sig.txt
+share/examples/MailScanner/reports/cz/inline.spam.warning.txt
+@sample share/MailScanner/reports/cz/inline.spam.warning.txt
+share/examples/MailScanner/reports/cz/inline.warning.html
+@sample share/MailScanner/reports/cz/inline.warning.html
+share/examples/MailScanner/reports/cz/inline.warning.txt
+@sample share/MailScanner/reports/cz/inline.warning.txt
+share/examples/MailScanner/reports/cz/languages.conf
+@sample share/MailScanner/reports/cz/languages.conf
+share/examples/MailScanner/reports/cz/recipient.mcp.report.txt
+@sample share/MailScanner/reports/cz/recipient.mcp.report.txt
+share/examples/MailScanner/reports/cz/recipient.spam.report.txt
+@sample share/MailScanner/reports/cz/recipient.spam.report.txt
+share/examples/MailScanner/reports/cz/rejection.report.txt
+@sample share/MailScanner/reports/cz/rejection.report.txt
+share/examples/MailScanner/reports/cz/sender.content.report.txt
+@sample share/MailScanner/reports/cz/sender.content.report.txt
+share/examples/MailScanner/reports/cz/sender.error.report.txt
+@sample share/MailScanner/reports/cz/sender.error.report.txt
+share/examples/MailScanner/reports/cz/sender.filename.report.txt
+@sample share/MailScanner/reports/cz/sender.filename.report.txt
+share/examples/MailScanner/reports/cz/sender.mcp.report.txt
+@sample share/MailScanner/reports/cz/sender.mcp.report.txt
+share/examples/MailScanner/reports/cz/sender.size.report.txt
+@sample share/MailScanner/reports/cz/sender.size.report.txt
+share/examples/MailScanner/reports/cz/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/cz/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/cz/sender.spam.report.txt
+@sample share/MailScanner/reports/cz/sender.spam.report.txt
+share/examples/MailScanner/reports/cz/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/cz/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/cz/sender.virus.report.txt
+@sample share/MailScanner/reports/cz/sender.virus.report.txt
+share/examples/MailScanner/reports/cz/stored.content.message.txt
+@sample share/MailScanner/reports/cz/stored.content.message.txt
+share/examples/MailScanner/reports/cz/stored.filename.message.txt
+@sample share/MailScanner/reports/cz/stored.filename.message.txt
+share/examples/MailScanner/reports/cz/stored.size.message.txt
+@sample share/MailScanner/reports/cz/stored.size.message.txt
+share/examples/MailScanner/reports/cz/stored.virus.message.txt
+@sample share/MailScanner/reports/cz/stored.virus.message.txt
+share/examples/MailScanner/reports/de/
+@sample share/MailScanner/reports/de/
+share/examples/MailScanner/reports/de/README.1ST
+@sample share/MailScanner/reports/de/README.1ST
+share/examples/MailScanner/reports/de/deleted.content.message.txt
+@sample share/MailScanner/reports/de/deleted.content.message.txt
+share/examples/MailScanner/reports/de/deleted.filename.message.txt
+@sample share/MailScanner/reports/de/deleted.filename.message.txt
+share/examples/MailScanner/reports/de/deleted.size.message.txt
+@sample share/MailScanner/reports/de/deleted.size.message.txt
+share/examples/MailScanner/reports/de/deleted.virus.message.txt
+@sample share/MailScanner/reports/de/deleted.virus.message.txt
+share/examples/MailScanner/reports/de/disinfected.report.txt
+@sample share/MailScanner/reports/de/disinfected.report.txt
+share/examples/MailScanner/reports/de/inline.sig.html
+@sample share/MailScanner/reports/de/inline.sig.html
+share/examples/MailScanner/reports/de/inline.sig.txt
+@sample share/MailScanner/reports/de/inline.sig.txt
+share/examples/MailScanner/reports/de/inline.spam.warning.txt
+@sample share/MailScanner/reports/de/inline.spam.warning.txt
+share/examples/MailScanner/reports/de/inline.warning.html
+@sample share/MailScanner/reports/de/inline.warning.html
+share/examples/MailScanner/reports/de/inline.warning.txt
+@sample share/MailScanner/reports/de/inline.warning.txt
+share/examples/MailScanner/reports/de/languages.conf
+@sample share/MailScanner/reports/de/languages.conf
+share/examples/MailScanner/reports/de/recipient.mcp.report.txt
+@sample share/MailScanner/reports/de/recipient.mcp.report.txt
+share/examples/MailScanner/reports/de/recipient.spam.report.txt
+@sample share/MailScanner/reports/de/recipient.spam.report.txt
+share/examples/MailScanner/reports/de/rejection.report.txt
+@sample share/MailScanner/reports/de/rejection.report.txt
+share/examples/MailScanner/reports/de/sender.content.report.txt
+@sample share/MailScanner/reports/de/sender.content.report.txt
+share/examples/MailScanner/reports/de/sender.error.report.txt
+@sample share/MailScanner/reports/de/sender.error.report.txt
+share/examples/MailScanner/reports/de/sender.filename.report.txt
+@sample share/MailScanner/reports/de/sender.filename.report.txt
+share/examples/MailScanner/reports/de/sender.mcp.report.txt
+@sample share/MailScanner/reports/de/sender.mcp.report.txt
+share/examples/MailScanner/reports/de/sender.size.report.txt
+@sample share/MailScanner/reports/de/sender.size.report.txt
+share/examples/MailScanner/reports/de/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/de/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/de/sender.spam.report.txt
+@sample share/MailScanner/reports/de/sender.spam.report.txt
+share/examples/MailScanner/reports/de/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/de/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/de/sender.virus.report.txt
+@sample share/MailScanner/reports/de/sender.virus.report.txt
+share/examples/MailScanner/reports/de/stored.content.message.txt
+@sample share/MailScanner/reports/de/stored.content.message.txt
+share/examples/MailScanner/reports/de/stored.filename.message.txt
+@sample share/MailScanner/reports/de/stored.filename.message.txt
+share/examples/MailScanner/reports/de/stored.size.message.txt
+@sample share/MailScanner/reports/de/stored.size.message.txt
+share/examples/MailScanner/reports/de/stored.virus.message.txt
+@sample share/MailScanner/reports/de/stored.virus.message.txt
+share/examples/MailScanner/reports/dk/
+@sample share/MailScanner/reports/dk/
+share/examples/MailScanner/reports/dk/deleted.content.message.txt
+@sample share/MailScanner/reports/dk/deleted.content.message.txt
+share/examples/MailScanner/reports/dk/deleted.filename.message.txt
+@sample share/MailScanner/reports/dk/deleted.filename.message.txt
+share/examples/MailScanner/reports/dk/deleted.size.message.txt
+@sample share/MailScanner/reports/dk/deleted.size.message.txt
+share/examples/MailScanner/reports/dk/deleted.virus.message.txt
+@sample share/MailScanner/reports/dk/deleted.virus.message.txt
+share/examples/MailScanner/reports/dk/disinfected.report.txt
+@sample share/MailScanner/reports/dk/disinfected.report.txt
+share/examples/MailScanner/reports/dk/inline.sig.html
+@sample share/MailScanner/reports/dk/inline.sig.html
+share/examples/MailScanner/reports/dk/inline.sig.txt
+@sample share/MailScanner/reports/dk/inline.sig.txt
+share/examples/MailScanner/reports/dk/inline.spam.warning.txt
+@sample share/MailScanner/reports/dk/inline.spam.warning.txt
+share/examples/MailScanner/reports/dk/inline.warning.html
+@sample share/MailScanner/reports/dk/inline.warning.html
+share/examples/MailScanner/reports/dk/inline.warning.txt
+@sample share/MailScanner/reports/dk/inline.warning.txt
+share/examples/MailScanner/reports/dk/languages.conf
+@sample share/MailScanner/reports/dk/languages.conf
+share/examples/MailScanner/reports/dk/recipient.mcp.report.txt
+@sample share/MailScanner/reports/dk/recipient.mcp.report.txt
+share/examples/MailScanner/reports/dk/recipient.spam.report.txt
+@sample share/MailScanner/reports/dk/recipient.spam.report.txt
+share/examples/MailScanner/reports/dk/rejection.report.txt
+@sample share/MailScanner/reports/dk/rejection.report.txt
+share/examples/MailScanner/reports/dk/sender.content.report.txt
+@sample share/MailScanner/reports/dk/sender.content.report.txt
+share/examples/MailScanner/reports/dk/sender.error.report.txt
+@sample share/MailScanner/reports/dk/sender.error.report.txt
+share/examples/MailScanner/reports/dk/sender.filename.report.txt
+@sample share/MailScanner/reports/dk/sender.filename.report.txt
+share/examples/MailScanner/reports/dk/sender.mcp.report.txt
+@sample share/MailScanner/reports/dk/sender.mcp.report.txt
+share/examples/MailScanner/reports/dk/sender.size.report.txt
+@sample share/MailScanner/reports/dk/sender.size.report.txt
+share/examples/MailScanner/reports/dk/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/dk/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/dk/sender.spam.report.txt
+@sample share/MailScanner/reports/dk/sender.spam.report.txt
+share/examples/MailScanner/reports/dk/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/dk/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/dk/sender.virus.report.txt
+@sample share/MailScanner/reports/dk/sender.virus.report.txt
+share/examples/MailScanner/reports/dk/stored.content.message.txt
+@sample share/MailScanner/reports/dk/stored.content.message.txt
+share/examples/MailScanner/reports/dk/stored.filename.message.txt
+@sample share/MailScanner/reports/dk/stored.filename.message.txt
+share/examples/MailScanner/reports/dk/stored.size.message.txt
+@sample share/MailScanner/reports/dk/stored.size.message.txt
+share/examples/MailScanner/reports/dk/stored.virus.message.txt
+@sample share/MailScanner/reports/dk/stored.virus.message.txt
+share/examples/MailScanner/reports/en/
+@sample share/MailScanner/reports/en/
+share/examples/MailScanner/reports/en/deleted.content.message.txt
+@sample share/MailScanner/reports/en/deleted.content.message.txt
+share/examples/MailScanner/reports/en/deleted.filename.message.txt
+@sample share/MailScanner/reports/en/deleted.filename.message.txt
+share/examples/MailScanner/reports/en/deleted.size.message.txt
+@sample share/MailScanner/reports/en/deleted.size.message.txt
+share/examples/MailScanner/reports/en/deleted.virus.message.txt
+@sample share/MailScanner/reports/en/deleted.virus.message.txt
+share/examples/MailScanner/reports/en/disinfected.report.txt
+@sample share/MailScanner/reports/en/disinfected.report.txt
+share/examples/MailScanner/reports/en/inline.sig.html
+@sample share/MailScanner/reports/en/inline.sig.html
+share/examples/MailScanner/reports/en/inline.sig.txt
+@sample share/MailScanner/reports/en/inline.sig.txt
+share/examples/MailScanner/reports/en/inline.spam.warning.txt
+@sample share/MailScanner/reports/en/inline.spam.warning.txt
+share/examples/MailScanner/reports/en/inline.warning.html
+@sample share/MailScanner/reports/en/inline.warning.html
+share/examples/MailScanner/reports/en/inline.warning.txt
+@sample share/MailScanner/reports/en/inline.warning.txt
+share/examples/MailScanner/reports/en/languages.conf
+@sample share/MailScanner/reports/en/languages.conf
+share/examples/MailScanner/reports/en/recipient.mcp.report.txt
+@sample share/MailScanner/reports/en/recipient.mcp.report.txt
+share/examples/MailScanner/reports/en/recipient.spam.report.txt
+@sample share/MailScanner/reports/en/recipient.spam.report.txt
+share/examples/MailScanner/reports/en/rejection.report.txt
+@sample share/MailScanner/reports/en/rejection.report.txt
+share/examples/MailScanner/reports/en/sender.content.report.txt
+@sample share/MailScanner/reports/en/sender.content.report.txt
+share/examples/MailScanner/reports/en/sender.error.report.txt
+@sample share/MailScanner/reports/en/sender.error.report.txt
+share/examples/MailScanner/reports/en/sender.filename.report.txt
+@sample share/MailScanner/reports/en/sender.filename.report.txt
+share/examples/MailScanner/reports/en/sender.mcp.report.txt
+@sample share/MailScanner/reports/en/sender.mcp.report.txt
+share/examples/MailScanner/reports/en/sender.size.report.txt
+@sample share/MailScanner/reports/en/sender.size.report.txt
+share/examples/MailScanner/reports/en/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/en/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/en/sender.spam.report.txt
+@sample share/MailScanner/reports/en/sender.spam.report.txt
+share/examples/MailScanner/reports/en/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/en/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/en/sender.virus.report.txt
+@sample share/MailScanner/reports/en/sender.virus.report.txt
+share/examples/MailScanner/reports/en/stored.content.message.txt
+@sample share/MailScanner/reports/en/stored.content.message.txt
+share/examples/MailScanner/reports/en/stored.filename.message.txt
+@sample share/MailScanner/reports/en/stored.filename.message.txt
+share/examples/MailScanner/reports/en/stored.size.message.txt
+@sample share/MailScanner/reports/en/stored.size.message.txt
+share/examples/MailScanner/reports/en/stored.virus.message.txt
+@sample share/MailScanner/reports/en/stored.virus.message.txt
+share/examples/MailScanner/reports/es/
+@sample share/MailScanner/reports/es/
+share/examples/MailScanner/reports/es/deleted.content.message.txt
+@sample share/MailScanner/reports/es/deleted.content.message.txt
+share/examples/MailScanner/reports/es/deleted.filename.message.txt
+@sample share/MailScanner/reports/es/deleted.filename.message.txt
+share/examples/MailScanner/reports/es/deleted.size.message.txt
+@sample share/MailScanner/reports/es/deleted.size.message.txt
+share/examples/MailScanner/reports/es/deleted.virus.message.txt
+@sample share/MailScanner/reports/es/deleted.virus.message.txt
+share/examples/MailScanner/reports/es/disinfected.report.txt
+@sample share/MailScanner/reports/es/disinfected.report.txt
+share/examples/MailScanner/reports/es/inline.sig.html
+@sample share/MailScanner/reports/es/inline.sig.html
+share/examples/MailScanner/reports/es/inline.sig.txt
+@sample share/MailScanner/reports/es/inline.sig.txt
+share/examples/MailScanner/reports/es/inline.spam.warning.txt
+@sample share/MailScanner/reports/es/inline.spam.warning.txt
+share/examples/MailScanner/reports/es/inline.warning.html
+@sample share/MailScanner/reports/es/inline.warning.html
+share/examples/MailScanner/reports/es/inline.warning.txt
+@sample share/MailScanner/reports/es/inline.warning.txt
+share/examples/MailScanner/reports/es/languages.conf
+@sample share/MailScanner/reports/es/languages.conf
+share/examples/MailScanner/reports/es/recipient.mcp.report.txt
+@sample share/MailScanner/reports/es/recipient.mcp.report.txt
+share/examples/MailScanner/reports/es/recipient.spam.report.txt
+@sample share/MailScanner/reports/es/recipient.spam.report.txt
+share/examples/MailScanner/reports/es/rejection.report.txt
+@sample share/MailScanner/reports/es/rejection.report.txt
+share/examples/MailScanner/reports/es/sender.content.report.txt
+@sample share/MailScanner/reports/es/sender.content.report.txt
+share/examples/MailScanner/reports/es/sender.error.report.txt
+@sample share/MailScanner/reports/es/sender.error.report.txt
+share/examples/MailScanner/reports/es/sender.filename.report.txt
+@sample share/MailScanner/reports/es/sender.filename.report.txt
+share/examples/MailScanner/reports/es/sender.mcp.report.txt
+@sample share/MailScanner/reports/es/sender.mcp.report.txt
+share/examples/MailScanner/reports/es/sender.size.report.txt
+@sample share/MailScanner/reports/es/sender.size.report.txt
+share/examples/MailScanner/reports/es/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/es/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/es/sender.spam.report.txt
+@sample share/MailScanner/reports/es/sender.spam.report.txt
+share/examples/MailScanner/reports/es/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/es/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/es/sender.virus.report.txt
+@sample share/MailScanner/reports/es/sender.virus.report.txt
+share/examples/MailScanner/reports/es/stored.content.message.txt
+@sample share/MailScanner/reports/es/stored.content.message.txt
+share/examples/MailScanner/reports/es/stored.filename.message.txt
+@sample share/MailScanner/reports/es/stored.filename.message.txt
+share/examples/MailScanner/reports/es/stored.size.message.txt
+@sample share/MailScanner/reports/es/stored.size.message.txt
+share/examples/MailScanner/reports/es/stored.virus.message.txt
+@sample share/MailScanner/reports/es/stored.virus.message.txt
+share/examples/MailScanner/reports/fr/
+@sample share/MailScanner/reports/fr/
+share/examples/MailScanner/reports/fr/deleted.content.message.txt
+@sample share/MailScanner/reports/fr/deleted.content.message.txt
+share/examples/MailScanner/reports/fr/deleted.filename.message.txt
+@sample share/MailScanner/reports/fr/deleted.filename.message.txt
+share/examples/MailScanner/reports/fr/deleted.size.message.txt
+@sample share/MailScanner/reports/fr/deleted.size.message.txt
+share/examples/MailScanner/reports/fr/deleted.virus.message.txt
+@sample share/MailScanner/reports/fr/deleted.virus.message.txt
+share/examples/MailScanner/reports/fr/disinfected.report.txt
+@sample share/MailScanner/reports/fr/disinfected.report.txt
+share/examples/MailScanner/reports/fr/inline.sig.html
+@sample share/MailScanner/reports/fr/inline.sig.html
+share/examples/MailScanner/reports/fr/inline.sig.txt
+@sample share/MailScanner/reports/fr/inline.sig.txt
+share/examples/MailScanner/reports/fr/inline.spam.warning.txt
+@sample share/MailScanner/reports/fr/inline.spam.warning.txt
+share/examples/MailScanner/reports/fr/inline.warning.html
+@sample share/MailScanner/reports/fr/inline.warning.html
+share/examples/MailScanner/reports/fr/inline.warning.txt
+@sample share/MailScanner/reports/fr/inline.warning.txt
+share/examples/MailScanner/reports/fr/languages.conf
+@sample share/MailScanner/reports/fr/languages.conf
+share/examples/MailScanner/reports/fr/recipient.mcp.report.txt
+@sample share/MailScanner/reports/fr/recipient.mcp.report.txt
+share/examples/MailScanner/reports/fr/recipient.spam.report.txt
+@sample share/MailScanner/reports/fr/recipient.spam.report.txt
+share/examples/MailScanner/reports/fr/rejection.report.txt
+@sample share/MailScanner/reports/fr/rejection.report.txt
+share/examples/MailScanner/reports/fr/sender.content.report.txt
+@sample share/MailScanner/reports/fr/sender.content.report.txt
+share/examples/MailScanner/reports/fr/sender.error.report.txt
+@sample share/MailScanner/reports/fr/sender.error.report.txt
+share/examples/MailScanner/reports/fr/sender.filename.report.txt
+@sample share/MailScanner/reports/fr/sender.filename.report.txt
+share/examples/MailScanner/reports/fr/sender.mcp.report.txt
+@sample share/MailScanner/reports/fr/sender.mcp.report.txt
+share/examples/MailScanner/reports/fr/sender.size.report.txt
+@sample share/MailScanner/reports/fr/sender.size.report.txt
+share/examples/MailScanner/reports/fr/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/fr/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/fr/sender.spam.report.txt
+@sample share/MailScanner/reports/fr/sender.spam.report.txt
+share/examples/MailScanner/reports/fr/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/fr/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/fr/sender.virus.report.txt
+@sample share/MailScanner/reports/fr/sender.virus.report.txt
+share/examples/MailScanner/reports/fr/stored.content.message.txt
+@sample share/MailScanner/reports/fr/stored.content.message.txt
+share/examples/MailScanner/reports/fr/stored.filename.message.txt
+@sample share/MailScanner/reports/fr/stored.filename.message.txt
+share/examples/MailScanner/reports/fr/stored.size.message.txt
+@sample share/MailScanner/reports/fr/stored.size.message.txt
+share/examples/MailScanner/reports/fr/stored.virus.message.txt
+@sample share/MailScanner/reports/fr/stored.virus.message.txt
+share/examples/MailScanner/reports/hu/
+@sample share/MailScanner/reports/hu/
+share/examples/MailScanner/reports/hu/deleted.content.message.txt
+@sample share/MailScanner/reports/hu/deleted.content.message.txt
+share/examples/MailScanner/reports/hu/deleted.filename.message.txt
+@sample share/MailScanner/reports/hu/deleted.filename.message.txt
+share/examples/MailScanner/reports/hu/deleted.size.message.txt
+@sample share/MailScanner/reports/hu/deleted.size.message.txt
+share/examples/MailScanner/reports/hu/deleted.virus.message.txt
+@sample share/MailScanner/reports/hu/deleted.virus.message.txt
+share/examples/MailScanner/reports/hu/disinfected.report.txt
+@sample share/MailScanner/reports/hu/disinfected.report.txt
+share/examples/MailScanner/reports/hu/inline.sig.html
+@sample share/MailScanner/reports/hu/inline.sig.html
+share/examples/MailScanner/reports/hu/inline.sig.txt
+@sample share/MailScanner/reports/hu/inline.sig.txt
+share/examples/MailScanner/reports/hu/inline.spam.warning.txt
+@sample share/MailScanner/reports/hu/inline.spam.warning.txt
+share/examples/MailScanner/reports/hu/inline.warning.html
+@sample share/MailScanner/reports/hu/inline.warning.html
+share/examples/MailScanner/reports/hu/inline.warning.txt
+@sample share/MailScanner/reports/hu/inline.warning.txt
+share/examples/MailScanner/reports/hu/languages.conf
+@sample share/MailScanner/reports/hu/languages.conf
+share/examples/MailScanner/reports/hu/recipient.mcp.report.txt
+@sample share/MailScanner/reports/hu/recipient.mcp.report.txt
+share/examples/MailScanner/reports/hu/recipient.spam.report.txt
+@sample share/MailScanner/reports/hu/recipient.spam.report.txt
+share/examples/MailScanner/reports/hu/rejection.report.txt
+@sample share/MailScanner/reports/hu/rejection.report.txt
+share/examples/MailScanner/reports/hu/sender.content.report.txt
+@sample share/MailScanner/reports/hu/sender.content.report.txt
+share/examples/MailScanner/reports/hu/sender.error.report.txt
+@sample share/MailScanner/reports/hu/sender.error.report.txt
+share/examples/MailScanner/reports/hu/sender.filename.report.txt
+@sample share/MailScanner/reports/hu/sender.filename.report.txt
+share/examples/MailScanner/reports/hu/sender.mcp.report.txt
+@sample share/MailScanner/reports/hu/sender.mcp.report.txt
+share/examples/MailScanner/reports/hu/sender.size.report.txt
+@sample share/MailScanner/reports/hu/sender.size.report.txt
+share/examples/MailScanner/reports/hu/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/hu/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/hu/sender.spam.report.txt
+@sample share/MailScanner/reports/hu/sender.spam.report.txt
+share/examples/MailScanner/reports/hu/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/hu/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/hu/sender.virus.report.txt
+@sample share/MailScanner/reports/hu/sender.virus.report.txt
+share/examples/MailScanner/reports/hu/stored.content.message.txt
+@sample share/MailScanner/reports/hu/stored.content.message.txt
+share/examples/MailScanner/reports/hu/stored.filename.message.txt
+@sample share/MailScanner/reports/hu/stored.filename.message.txt
+share/examples/MailScanner/reports/hu/stored.size.message.txt
+@sample share/MailScanner/reports/hu/stored.size.message.txt
+share/examples/MailScanner/reports/hu/stored.virus.message.txt
+@sample share/MailScanner/reports/hu/stored.virus.message.txt
+share/examples/MailScanner/reports/it/
+@sample share/MailScanner/reports/it/
+share/examples/MailScanner/reports/it/deleted.content.message.txt
+@sample share/MailScanner/reports/it/deleted.content.message.txt
+share/examples/MailScanner/reports/it/deleted.filename.message.txt
+@sample share/MailScanner/reports/it/deleted.filename.message.txt
+share/examples/MailScanner/reports/it/deleted.size.message.txt
+@sample share/MailScanner/reports/it/deleted.size.message.txt
+share/examples/MailScanner/reports/it/deleted.virus.message.txt
+@sample share/MailScanner/reports/it/deleted.virus.message.txt
+share/examples/MailScanner/reports/it/disinfected.report.txt
+@sample share/MailScanner/reports/it/disinfected.report.txt
+share/examples/MailScanner/reports/it/inline.sig.html
+@sample share/MailScanner/reports/it/inline.sig.html
+share/examples/MailScanner/reports/it/inline.sig.txt
+@sample share/MailScanner/reports/it/inline.sig.txt
+share/examples/MailScanner/reports/it/inline.spam.warning.txt
+@sample share/MailScanner/reports/it/inline.spam.warning.txt
+share/examples/MailScanner/reports/it/inline.warning.html
+@sample share/MailScanner/reports/it/inline.warning.html
+share/examples/MailScanner/reports/it/inline.warning.txt
+@sample share/MailScanner/reports/it/inline.warning.txt
+share/examples/MailScanner/reports/it/languages.conf
+@sample share/MailScanner/reports/it/languages.conf
+share/examples/MailScanner/reports/it/recipient.mcp.report.txt
+@sample share/MailScanner/reports/it/recipient.mcp.report.txt
+share/examples/MailScanner/reports/it/recipient.spam.report.txt
+@sample share/MailScanner/reports/it/recipient.spam.report.txt
+share/examples/MailScanner/reports/it/rejection.report.txt
+@sample share/MailScanner/reports/it/rejection.report.txt
+share/examples/MailScanner/reports/it/sender.content.report.txt
+@sample share/MailScanner/reports/it/sender.content.report.txt
+share/examples/MailScanner/reports/it/sender.error.report.txt
+@sample share/MailScanner/reports/it/sender.error.report.txt
+share/examples/MailScanner/reports/it/sender.filename.report.txt
+@sample share/MailScanner/reports/it/sender.filename.report.txt
+share/examples/MailScanner/reports/it/sender.mcp.report.txt
+@sample share/MailScanner/reports/it/sender.mcp.report.txt
+share/examples/MailScanner/reports/it/sender.size.report.txt
+@sample share/MailScanner/reports/it/sender.size.report.txt
+share/examples/MailScanner/reports/it/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/it/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/it/sender.spam.report.txt
+@sample share/MailScanner/reports/it/sender.spam.report.txt
+share/examples/MailScanner/reports/it/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/it/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/it/sender.virus.report.txt
+@sample share/MailScanner/reports/it/sender.virus.report.txt
+share/examples/MailScanner/reports/it/stored.content.message.txt
+@sample share/MailScanner/reports/it/stored.content.message.txt
+share/examples/MailScanner/reports/it/stored.filename.message.txt
+@sample share/MailScanner/reports/it/stored.filename.message.txt
+share/examples/MailScanner/reports/it/stored.size.message.txt
+@sample share/MailScanner/reports/it/stored.size.message.txt
+share/examples/MailScanner/reports/it/stored.virus.message.txt
+@sample share/MailScanner/reports/it/stored.virus.message.txt
+share/examples/MailScanner/reports/nl/
+@sample share/MailScanner/reports/nl/
+share/examples/MailScanner/reports/nl/deleted.content.message.txt
+@sample share/MailScanner/reports/nl/deleted.content.message.txt
+share/examples/MailScanner/reports/nl/deleted.filename.message.txt
+@sample share/MailScanner/reports/nl/deleted.filename.message.txt
+share/examples/MailScanner/reports/nl/deleted.size.message.txt
+@sample share/MailScanner/reports/nl/deleted.size.message.txt
+share/examples/MailScanner/reports/nl/deleted.virus.message.txt
+@sample share/MailScanner/reports/nl/deleted.virus.message.txt
+share/examples/MailScanner/reports/nl/disinfected.report.txt
+@sample share/MailScanner/reports/nl/disinfected.report.txt
+share/examples/MailScanner/reports/nl/inline.sig.html
+@sample share/MailScanner/reports/nl/inline.sig.html
+share/examples/MailScanner/reports/nl/inline.sig.txt
+@sample share/MailScanner/reports/nl/inline.sig.txt
+share/examples/MailScanner/reports/nl/inline.spam.warning.txt
+@sample share/MailScanner/reports/nl/inline.spam.warning.txt
+share/examples/MailScanner/reports/nl/inline.warning.html
+@sample share/MailScanner/reports/nl/inline.warning.html
+share/examples/MailScanner/reports/nl/inline.warning.txt
+@sample share/MailScanner/reports/nl/inline.warning.txt
+share/examples/MailScanner/reports/nl/languages.conf
+@sample share/MailScanner/reports/nl/languages.conf
+share/examples/MailScanner/reports/nl/recipient.mcp.report.txt
+@sample share/MailScanner/reports/nl/recipient.mcp.report.txt
+share/examples/MailScanner/reports/nl/recipient.spam.report.txt
+@sample share/MailScanner/reports/nl/recipient.spam.report.txt
+share/examples/MailScanner/reports/nl/rejection.report.txt
+@sample share/MailScanner/reports/nl/rejection.report.txt
+share/examples/MailScanner/reports/nl/sender.content.report.txt
+@sample share/MailScanner/reports/nl/sender.content.report.txt
+share/examples/MailScanner/reports/nl/sender.error.report.txt
+@sample share/MailScanner/reports/nl/sender.error.report.txt
+share/examples/MailScanner/reports/nl/sender.filename.report.txt
+@sample share/MailScanner/reports/nl/sender.filename.report.txt
+share/examples/MailScanner/reports/nl/sender.mcp.report.txt
+@sample share/MailScanner/reports/nl/sender.mcp.report.txt
+share/examples/MailScanner/reports/nl/sender.size.report.txt
+@sample share/MailScanner/reports/nl/sender.size.report.txt
+share/examples/MailScanner/reports/nl/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/nl/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/nl/sender.spam.report.txt
+@sample share/MailScanner/reports/nl/sender.spam.report.txt
+share/examples/MailScanner/reports/nl/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/nl/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/nl/sender.virus.report.txt
+@sample share/MailScanner/reports/nl/sender.virus.report.txt
+share/examples/MailScanner/reports/nl/stored.content.message.txt
+@sample share/MailScanner/reports/nl/stored.content.message.txt
+share/examples/MailScanner/reports/nl/stored.filename.message.txt
+@sample share/MailScanner/reports/nl/stored.filename.message.txt
+share/examples/MailScanner/reports/nl/stored.size.message.txt
+@sample share/MailScanner/reports/nl/stored.size.message.txt
+share/examples/MailScanner/reports/nl/stored.virus.message.txt
+@sample share/MailScanner/reports/nl/stored.virus.message.txt
+share/examples/MailScanner/reports/pt_br/
+@sample share/MailScanner/reports/pt_br/
+share/examples/MailScanner/reports/pt_br/deleted.content.message.txt
+@sample share/MailScanner/reports/pt_br/deleted.content.message.txt
+share/examples/MailScanner/reports/pt_br/deleted.filename.message.txt
+@sample share/MailScanner/reports/pt_br/deleted.filename.message.txt
+share/examples/MailScanner/reports/pt_br/deleted.size.message.txt
+@sample share/MailScanner/reports/pt_br/deleted.size.message.txt
+share/examples/MailScanner/reports/pt_br/deleted.virus.message.txt
+@sample share/MailScanner/reports/pt_br/deleted.virus.message.txt
+share/examples/MailScanner/reports/pt_br/disinfected.report.txt
+@sample share/MailScanner/reports/pt_br/disinfected.report.txt
+share/examples/MailScanner/reports/pt_br/inline.sig.html
+@sample share/MailScanner/reports/pt_br/inline.sig.html
+share/examples/MailScanner/reports/pt_br/inline.sig.txt
+@sample share/MailScanner/reports/pt_br/inline.sig.txt
+share/examples/MailScanner/reports/pt_br/inline.spam.warning.txt
+@sample share/MailScanner/reports/pt_br/inline.spam.warning.txt
+share/examples/MailScanner/reports/pt_br/inline.warning.html
+@sample share/MailScanner/reports/pt_br/inline.warning.html
+share/examples/MailScanner/reports/pt_br/inline.warning.txt
+@sample share/MailScanner/reports/pt_br/inline.warning.txt
+share/examples/MailScanner/reports/pt_br/languages.conf
+@sample share/MailScanner/reports/pt_br/languages.conf
+share/examples/MailScanner/reports/pt_br/recipient.mcp.report.txt
+@sample share/MailScanner/reports/pt_br/recipient.mcp.report.txt
+share/examples/MailScanner/reports/pt_br/recipient.spam.report.txt
+@sample share/MailScanner/reports/pt_br/recipient.spam.report.txt
+share/examples/MailScanner/reports/pt_br/rejection.report.txt
+@sample share/MailScanner/reports/pt_br/rejection.report.txt
+share/examples/MailScanner/reports/pt_br/sender.content.report.txt
+@sample share/MailScanner/reports/pt_br/sender.content.report.txt
+share/examples/MailScanner/reports/pt_br/sender.error.report.txt
+@sample share/MailScanner/reports/pt_br/sender.error.report.txt
+share/examples/MailScanner/reports/pt_br/sender.filename.report.txt
+@sample share/MailScanner/reports/pt_br/sender.filename.report.txt
+share/examples/MailScanner/reports/pt_br/sender.mcp.report.txt
+@sample share/MailScanner/reports/pt_br/sender.mcp.report.txt
+share/examples/MailScanner/reports/pt_br/sender.size.report.txt
+@sample share/MailScanner/reports/pt_br/sender.size.report.txt
+share/examples/MailScanner/reports/pt_br/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/pt_br/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/pt_br/sender.spam.report.txt
+@sample share/MailScanner/reports/pt_br/sender.spam.report.txt
+share/examples/MailScanner/reports/pt_br/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/pt_br/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/pt_br/sender.virus.report.txt
+@sample share/MailScanner/reports/pt_br/sender.virus.report.txt
+share/examples/MailScanner/reports/pt_br/stored.content.message.txt
+@sample share/MailScanner/reports/pt_br/stored.content.message.txt
+share/examples/MailScanner/reports/pt_br/stored.filename.message.txt
+@sample share/MailScanner/reports/pt_br/stored.filename.message.txt
+share/examples/MailScanner/reports/pt_br/stored.size.message.txt
+@sample share/MailScanner/reports/pt_br/stored.size.message.txt
+share/examples/MailScanner/reports/pt_br/stored.virus.message.txt
+@sample share/MailScanner/reports/pt_br/stored.virus.message.txt
+share/examples/MailScanner/reports/ro/
+@sample share/MailScanner/reports/ro/
+share/examples/MailScanner/reports/ro/deleted.content.message.txt
+@sample share/MailScanner/reports/ro/deleted.content.message.txt
+share/examples/MailScanner/reports/ro/deleted.filename.message.txt
+@sample share/MailScanner/reports/ro/deleted.filename.message.txt
+share/examples/MailScanner/reports/ro/deleted.size.message.txt
+@sample share/MailScanner/reports/ro/deleted.size.message.txt
+share/examples/MailScanner/reports/ro/deleted.virus.message.txt
+@sample share/MailScanner/reports/ro/deleted.virus.message.txt
+share/examples/MailScanner/reports/ro/disinfected.report.txt
+@sample share/MailScanner/reports/ro/disinfected.report.txt
+share/examples/MailScanner/reports/ro/inline.sig.html
+@sample share/MailScanner/reports/ro/inline.sig.html
+share/examples/MailScanner/reports/ro/inline.sig.txt
+@sample share/MailScanner/reports/ro/inline.sig.txt
+share/examples/MailScanner/reports/ro/inline.spam.warning.txt
+@sample share/MailScanner/reports/ro/inline.spam.warning.txt
+share/examples/MailScanner/reports/ro/inline.warning.html
+@sample share/MailScanner/reports/ro/inline.warning.html
+share/examples/MailScanner/reports/ro/inline.warning.txt
+@sample share/MailScanner/reports/ro/inline.warning.txt
+share/examples/MailScanner/reports/ro/languages.conf
+@sample share/MailScanner/reports/ro/languages.conf
+share/examples/MailScanner/reports/ro/recipient.mcp.report.txt
+@sample share/MailScanner/reports/ro/recipient.mcp.report.txt
+share/examples/MailScanner/reports/ro/recipient.spam.report.txt
+@sample share/MailScanner/reports/ro/recipient.spam.report.txt
+share/examples/MailScanner/reports/ro/rejection.report.txt
+@sample share/MailScanner/reports/ro/rejection.report.txt
+share/examples/MailScanner/reports/ro/sender.content.report.txt
+@sample share/MailScanner/reports/ro/sender.content.report.txt
+share/examples/MailScanner/reports/ro/sender.error.report.txt
+@sample share/MailScanner/reports/ro/sender.error.report.txt
+share/examples/MailScanner/reports/ro/sender.filename.report.txt
+@sample share/MailScanner/reports/ro/sender.filename.report.txt
+share/examples/MailScanner/reports/ro/sender.mcp.report.txt
+@sample share/MailScanner/reports/ro/sender.mcp.report.txt
+share/examples/MailScanner/reports/ro/sender.size.report.txt
+@sample share/MailScanner/reports/ro/sender.size.report.txt
+share/examples/MailScanner/reports/ro/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/ro/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/ro/sender.spam.report.txt
+@sample share/MailScanner/reports/ro/sender.spam.report.txt
+share/examples/MailScanner/reports/ro/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/ro/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/ro/sender.virus.report.txt
+@sample share/MailScanner/reports/ro/sender.virus.report.txt
+share/examples/MailScanner/reports/ro/stored.content.message.txt
+@sample share/MailScanner/reports/ro/stored.content.message.txt
+share/examples/MailScanner/reports/ro/stored.filename.message.txt
+@sample share/MailScanner/reports/ro/stored.filename.message.txt
+share/examples/MailScanner/reports/ro/stored.size.message.txt
+@sample share/MailScanner/reports/ro/stored.size.message.txt
+share/examples/MailScanner/reports/ro/stored.virus.message.txt
+@sample share/MailScanner/reports/ro/stored.virus.message.txt
+share/examples/MailScanner/reports/se/
+@sample share/MailScanner/reports/se/
+share/examples/MailScanner/reports/se/README
+@sample share/MailScanner/reports/se/README
+share/examples/MailScanner/reports/se/deleted.content.message.txt
+@sample share/MailScanner/reports/se/deleted.content.message.txt
+share/examples/MailScanner/reports/se/deleted.filename.message.txt
+@sample share/MailScanner/reports/se/deleted.filename.message.txt
+share/examples/MailScanner/reports/se/deleted.size.message.txt
+@sample share/MailScanner/reports/se/deleted.size.message.txt
+share/examples/MailScanner/reports/se/deleted.virus.message.txt
+@sample share/MailScanner/reports/se/deleted.virus.message.txt
+share/examples/MailScanner/reports/se/disinfected.report.txt
+@sample share/MailScanner/reports/se/disinfected.report.txt
+share/examples/MailScanner/reports/se/inline.sig.html
+@sample share/MailScanner/reports/se/inline.sig.html
+share/examples/MailScanner/reports/se/inline.sig.txt
+@sample share/MailScanner/reports/se/inline.sig.txt
+share/examples/MailScanner/reports/se/inline.spam.warning.txt
+@sample share/MailScanner/reports/se/inline.spam.warning.txt
+share/examples/MailScanner/reports/se/inline.warning.html
+@sample share/MailScanner/reports/se/inline.warning.html
+share/examples/MailScanner/reports/se/inline.warning.txt
+@sample share/MailScanner/reports/se/inline.warning.txt
+share/examples/MailScanner/reports/se/languages.conf
+@sample share/MailScanner/reports/se/languages.conf
+share/examples/MailScanner/reports/se/recipient.mcp.report.txt
+@sample share/MailScanner/reports/se/recipient.mcp.report.txt
+share/examples/MailScanner/reports/se/recipient.spam.report.txt
+@sample share/MailScanner/reports/se/recipient.spam.report.txt
+share/examples/MailScanner/reports/se/rejection.report.txt
+@sample share/MailScanner/reports/se/rejection.report.txt
+share/examples/MailScanner/reports/se/sender.content.report.txt
+@sample share/MailScanner/reports/se/sender.content.report.txt
+share/examples/MailScanner/reports/se/sender.error.report.txt
+@sample share/MailScanner/reports/se/sender.error.report.txt
+share/examples/MailScanner/reports/se/sender.filename.report.txt
+@sample share/MailScanner/reports/se/sender.filename.report.txt
+share/examples/MailScanner/reports/se/sender.mcp.report.txt
+@sample share/MailScanner/reports/se/sender.mcp.report.txt
+share/examples/MailScanner/reports/se/sender.size.report.txt
+@sample share/MailScanner/reports/se/sender.size.report.txt
+share/examples/MailScanner/reports/se/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/se/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/se/sender.spam.report.txt
+@sample share/MailScanner/reports/se/sender.spam.report.txt
+share/examples/MailScanner/reports/se/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/se/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/se/sender.virus.report.txt
+@sample share/MailScanner/reports/se/sender.virus.report.txt
+share/examples/MailScanner/reports/se/stored.content.message.txt
+@sample share/MailScanner/reports/se/stored.content.message.txt
+share/examples/MailScanner/reports/se/stored.filename.message.txt
+@sample share/MailScanner/reports/se/stored.filename.message.txt
+share/examples/MailScanner/reports/se/stored.size.message.txt
+@sample share/MailScanner/reports/se/stored.size.message.txt
+share/examples/MailScanner/reports/se/stored.virus.message.txt
+@sample share/MailScanner/reports/se/stored.virus.message.txt
+share/examples/MailScanner/reports/sk/
+@sample share/MailScanner/reports/sk/
+share/examples/MailScanner/reports/sk/deleted.content.message.txt
+@sample share/MailScanner/reports/sk/deleted.content.message.txt
+share/examples/MailScanner/reports/sk/deleted.filename.message.txt
+@sample share/MailScanner/reports/sk/deleted.filename.message.txt
+share/examples/MailScanner/reports/sk/deleted.size.message.txt
+@sample share/MailScanner/reports/sk/deleted.size.message.txt
+share/examples/MailScanner/reports/sk/deleted.virus.message.txt
+@sample share/MailScanner/reports/sk/deleted.virus.message.txt
+share/examples/MailScanner/reports/sk/disinfected.report.txt
+@sample share/MailScanner/reports/sk/disinfected.report.txt
+share/examples/MailScanner/reports/sk/inline.sig.html
+@sample share/MailScanner/reports/sk/inline.sig.html
+share/examples/MailScanner/reports/sk/inline.sig.txt
+@sample share/MailScanner/reports/sk/inline.sig.txt
+share/examples/MailScanner/reports/sk/inline.spam.warning.txt
+@sample share/MailScanner/reports/sk/inline.spam.warning.txt
+share/examples/MailScanner/reports/sk/inline.warning.html
+@sample share/MailScanner/reports/sk/inline.warning.html
+share/examples/MailScanner/reports/sk/inline.warning.txt
+@sample share/MailScanner/reports/sk/inline.warning.txt
+share/examples/MailScanner/reports/sk/languages.conf
+@sample share/MailScanner/reports/sk/languages.conf
+share/examples/MailScanner/reports/sk/recipient.mcp.report.txt
+@sample share/MailScanner/reports/sk/recipient.mcp.report.txt
+share/examples/MailScanner/reports/sk/recipient.spam.report.txt
+@sample share/MailScanner/reports/sk/recipient.spam.report.txt
+share/examples/MailScanner/reports/sk/rejection.report.txt
+@sample share/MailScanner/reports/sk/rejection.report.txt
+share/examples/MailScanner/reports/sk/sender.content.report.txt
+@sample share/MailScanner/reports/sk/sender.content.report.txt
+share/examples/MailScanner/reports/sk/sender.error.report.txt
+@sample share/MailScanner/reports/sk/sender.error.report.txt
+share/examples/MailScanner/reports/sk/sender.filename.report.txt
+@sample share/MailScanner/reports/sk/sender.filename.report.txt
+share/examples/MailScanner/reports/sk/sender.mcp.report.txt
+@sample share/MailScanner/reports/sk/sender.mcp.report.txt
+share/examples/MailScanner/reports/sk/sender.size.report.txt
+@sample share/MailScanner/reports/sk/sender.size.report.txt
+share/examples/MailScanner/reports/sk/sender.spam.rbl.report.txt
+@sample share/MailScanner/reports/sk/sender.spam.rbl.report.txt
+share/examples/MailScanner/reports/sk/sender.spam.report.txt
+@sample share/MailScanner/reports/sk/sender.spam.report.txt
+share/examples/MailScanner/reports/sk/sender.spam.sa.report.txt
+@sample share/MailScanner/reports/sk/sender.spam.sa.report.txt
+share/examples/MailScanner/reports/sk/sender.virus.report.txt
+@sample share/MailScanner/reports/sk/sender.virus.report.txt
+share/examples/MailScanner/reports/sk/stored.content.message.txt
+@sample share/MailScanner/reports/sk/stored.content.message.txt
+share/examples/MailScanner/reports/sk/stored.filename.message.txt
+@sample share/MailScanner/reports/sk/stored.filename.message.txt
+share/examples/MailScanner/reports/sk/stored.size.message.txt
+@sample share/MailScanner/reports/sk/stored.size.message.txt
+share/examples/MailScanner/reports/sk/stored.virus.message.txt
+@sample share/MailScanner/reports/sk/stored.virus.message.txt
+share/examples/MailScanner/rules/
+@sample ${SYSCONFDIR}/MailScanner/rules/
+share/examples/MailScanner/rules/EXAMPLES
+@sample ${SYSCONFDIR}/MailScanner/rules/EXAMPLES
+share/examples/MailScanner/rules/README
+@sample ${SYSCONFDIR}/MailScanner/rules/README
+share/examples/MailScanner/rules/bounce.rules
+@sample ${SYSCONFDIR}/MailScanner/rules/bounce.rules
+share/examples/MailScanner/rules/max.message.size.rules
+@sample ${SYSCONFDIR}/MailScanner/rules/max.message.size.rules
+share/examples/MailScanner/rules/spam.whitelist.rules
+@sample ${SYSCONFDIR}/MailScanner/rules/spam.whitelist.rules
+share/examples/MailScanner/spam.assassin.prefs.conf
+@sample ${SYSCONFDIR}/MailScanner/spam.assasin.prefs.conf
+share/examples/MailScanner/spam.lists.conf
+@sample ${SYSCONFDIR}/MailScanner/spam.lists.conf
+share/examples/MailScanner/virus.scanners.conf
+@sample ${SYSCONFDIR}/MailScanner/virus.scanners.conf

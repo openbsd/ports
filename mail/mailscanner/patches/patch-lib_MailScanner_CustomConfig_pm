@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_MailScanner_CustomConfig_pm,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- lib/MailScanner/CustomConfig.pm.orig	Mon Mar 20 17:48:20 2006
++++ lib/MailScanner/CustomConfig.pm	Mon Mar 20 17:48:20 2006
+@@ -1675,7 +1675,7 @@ __DATA__
+ #      SO17 1BJ
+ #      United Kingdom
+ #
+-push @INC,"/usr/lib/MailScanner","/opt/MailScanner/lib";
++push @INC,"%PREFIX%/lib/MailScanner";
+ use FileHandle;
+ use Fcntl qw(:DEFAULT :flock);
+ use Sys::Syslog;

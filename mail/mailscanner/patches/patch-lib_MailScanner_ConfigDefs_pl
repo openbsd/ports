@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_MailScanner_ConfigDefs_pl,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- lib/MailScanner/ConfigDefs.pl.orig	Sat Dec 29 16:28:47 2007
++++ lib/MailScanner/ConfigDefs.pl	Sun Feb 17 20:42:07 2008
+@@ -327,8 +327,8 @@ qmailintdhashnumber		1
+ # filename containing a list of directories.
+ [Simple,Other]
+ cachetiming		1800,300,10800,172800,600
+-ClamWatchFiles		/usr/local/share/clamav/*.cvd
+-CustomFunctionsDir	/usr/lib/MailScanner/MailScanner/CustomFunctions
++ClamWatchFiles		%PREFIX%/share/clamav/*.cvd
++CustomFunctionsDir	%PREFIX%/lib/MailScanner/MailScanner/CustomFunctions
+ FileCommand		/usr/bin/file
+ FirstCheck		mcp
+ GunzipCommand		/bin/gunzip
+@@ -350,7 +350,7 @@ QuarantinePerms		0600
+ RunAsUser		0
+ RunAsGroup		0
+ SACache			/var/spool/MailScanner/incoming/SpamAssassin.cache.db
+-SAVIWatchFiles		/usr/local/Sophos/ide/*.zip
++SAVIWatchFiles		%PREFIX%/Sophos/ide/*.zip
+ SophosAllowedErrors	
+ sophoside		
+ sophoslib		

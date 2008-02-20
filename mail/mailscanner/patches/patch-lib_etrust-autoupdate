@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_etrust-autoupdate,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- lib/etrust-autoupdate.orig	Sat Dec 29 16:04:03 2007
++++ lib/etrust-autoupdate	Sun Feb 17 20:43:01 2008
+@@ -7,7 +7,7 @@
+ 
+ use Sys::Syslog;
+ 
+-$PackageDir = shift || "/opt/CA/eTrustITM";
++$PackageDir = shift || "%PREFIX%/CA/eTrustITM";
+ 
+ $LockFile = "/tmp/eTrustBusy.lock";
+ 

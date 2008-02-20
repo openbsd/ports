@@ -1,0 +1,58 @@
+The MailScanner port is using the original MailScanner tarball from 
+www.mailscanner.info. This tarball puts all the MailScanner files in 
+subdirectories
+
+bin	MailScanner binary / MailScanner start script etc.
+etc	MailScanner config files / rules / report templates
+lib	Virus wrapper and autoupdate scripts / MailScanner Perl libraries
+docs	Documentation
+var	pid file
+
+In order to make this OpenBSD compliant the port installs those files
+in the following directories:
+
+/usr/local/libexec/MailScanner	MailScanner binary, virus wrapper/autoupdate
+/usr/local/lib/MailScanner	MailScanner Perl libraries
+/usr/local/share/MailScanner	MailScanner report templates
+/usr/local/share/doc/MailScanner	Documentation
+/usr/local/share/examples/MailScanner	Example files
+/etc/MailScanner		MailScanner config files / rules
+
+To activate this port, you must do the following for sendmail:
+
+1. Set the following in your sendmail.mc file:
+
+	define(`confDELIVER_MODE',`queue')
+	define(`confPRIVACY_FLAGS',`noetrn')
+
+   (if you do not have a sendmail.mc file, use
+    /usr/share/sendmail/cf/openbsd-proto.mc)
+
+   and regenerate your sendmail.cf
+
+   (if you do not know how, try:
+
+	m4 /usr/share/sendmail/m4/cf.m4 sendmail.mc > test.cf
+   )
+   
+
+2. Put the following line in /etc/rc.conf.local:
+
+	sendmail_flags="-L sm-mta -bd -OQueueDirectory=/var/spool/mqueue.in"
+
+3. Add the following to /etc/rc.local:
+
+  # MailScanner
+  if [ -x /usr/sbin/sendmail ]; then
+        echo -n ' sm-mta-queue'; /usr/sbin/sendmail -q30s -L sm-mta-queue
+  fi
+
+  # MailScanner outbound queue
+  if [ -x /usr/local/bin/check_mailscanner ]; then
+        echo -n ' MailScanner'; /usr/local/bin/check_mailscanner
+  fi
+
+4. Add the following to root's crontab:
+
+  # Check the status of MailScanner every hour
+  0       *       *       *       *       /usr/local/bin/check_mailscanner -q

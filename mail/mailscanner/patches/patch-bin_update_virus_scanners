@@ -1,0 +1,11 @@
+$OpenBSD: patch-bin_update_virus_scanners,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- bin/update_virus_scanners.orig	Fri Jun 22 08:57:23 2007
++++ bin/update_virus_scanners	Sun Aug  5 04:03:25 2007
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-SCANNERSCONF=/opt/MailScanner/etc/virus.scanners.conf
++SCANNERSCONF=%SYSCONFDIR%/MailScanner/virus.scanners.conf
+ 
+ Disabled=no
+ if [ "x$Disabled" = "xyes" ]; then

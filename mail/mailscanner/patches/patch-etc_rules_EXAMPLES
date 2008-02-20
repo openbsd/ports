@@ -1,0 +1,52 @@
+$OpenBSD: patch-etc_rules_EXAMPLES,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- etc/rules/EXAMPLES.orig	Wed May 30 12:30:36 2007
++++ etc/rules/EXAMPLES	Sun Aug  5 04:03:26 2007
+@@ -5,7 +5,7 @@ Here are a few ideas of how to implement features usin
+ 
+ 1. Spam WhiteList
+ 
+-   Set "Is Definitely Not Spam = /opt/MailScanner/etc/rules/whitelist.rules".
++   Set "Is Definitely Not Spam = %SYSCONFDIR%/MailScanner/rules/whitelist.rules".
+    Set addresses to be whitelisted using rules such as
+    From:	user@good.domain.com	yes
+    From:	*@friendly.domain.com	yes
+@@ -18,7 +18,7 @@ Here are a few ideas of how to implement features usin
+ 
+ 2. Spam BlackList
+ 
+-   Set "Is Definitely Spam = /opt/MailScanner/etc/rules/blacklist.rules".
++   Set "Is Definitely Spam = %SYSCONFDIR%/MailScanner/rules/blacklist.rules".
+    Set addresses to be blacklisted using rules such as
+    From:	user@nasty.domain.com	yes
+    From:	*@spammers.com		yes
+@@ -28,7 +28,7 @@ Here are a few ideas of how to implement features usin
+ 
+ 3. Only sign outgoing messages
+ 
+-   Set "Sign Clean Messages = /opt/MailScanner/etc/rules/signing.rules".
++   Set "Sign Clean Messages = %SYSCONFDIR%/MailScanner/rules/signing.rules".
+    If your messages come from "yourdomain.com", then try this:
+    From:	192.168.		yes
+    FromOrTo:	default			no
+@@ -36,16 +36,16 @@ Here are a few ideas of how to implement features usin
+ 
+ 4. Use different signatures for different domains
+ 
+-   Set "Inline Text Signature = /opt/MailScanner/etc/rules/sig.text.rules" &
+-   set "Inline HTML Signature = /opt/MailScanner/etc/rules/sig.html.rules".
++   Set "Inline Text Signature = %SYSCONFDIR%/MailScanner/rules/sig.text.rules" &
++   set "Inline HTML Signature = %SYSCONFDIR%/MailScanner/rules/sig.html.rules".
+    Use rules for each file that look like this:
+-   From:	*@domain1.com	/opt/MailScanner/etc/reports/domain1.sig.txt
+-   From:	*@domain2.com	/opt/MailScanner/etc/reports/domain2.sig.txt
++   From:	*@domain1.com	%SYSCONFDIR%/MailScanner/reports/domain1.sig.txt
++   From:	*@domain2.com	%SYSCONFDIR%/MailScanner/reports/domain2.sig.txt
+    with equivalent rules in the "sig.html.rules" file.
+ 
+ 5. Only virus scan some domains
+ 
+-   Set "Virus Scanning = /opt/MailScanner/etc/rules/virus.scanning.rules".
++   Set "Virus Scanning = %SYSCONFDIR%/MailScanner/rules/virus.scanning.rules".
+    FromOrTo:	*@scanme.com		yes
+    FromOrTo:	*@scanme-too.com	yes
+    FromOrTo:	default			no

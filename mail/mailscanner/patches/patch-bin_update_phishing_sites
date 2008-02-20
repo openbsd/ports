@@ -1,0 +1,23 @@
+$OpenBSD: patch-bin_update_phishing_sites,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- bin/update_phishing_sites.orig	Tue Jun 26 05:06:26 2007
++++ bin/update_phishing_sites	Sun Aug  5 04:03:25 2007
+@@ -34,8 +34,8 @@
+ PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/etc:/usr/local/bin:/usr/sfw/bin
+ export PATH
+ 
+-if [ -d /opt/MailScanner/etc ]; then
+-    cd /opt/MailScanner/etc
++if [ -d %SYSCONFDIR%/MailScanner ]; then
++    cd %SYSCONFDIR%/MailScanner
+ else
+     logger -p mail.warn -t update.phishing.sites Cannot find MailScanner configuration directory, update failed.
+     echo Cannot find MailScanner configuration directory.
+@@ -43,7 +43,7 @@ else
+     exit 1
+ fi
+ 
+-wget http://www.mailscanner.info/phishing.safe.sites.conf.master || \
++ftp http://www.mailscanner.info/phishing.safe.sites.conf.master || \
+ curl -O http://www.mailscanner.info/phishing.safe.sites.conf.master || \
+ ( logger -p mail.warn -t update.phishing.sites Cannot find wget or curl, update failed. ; echo Cannot find wget or curl to do phishing sites update. ; exit 1 )
+ 

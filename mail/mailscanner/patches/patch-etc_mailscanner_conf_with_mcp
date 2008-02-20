@@ -1,0 +1,87 @@
+$OpenBSD: patch-etc_mailscanner_conf_with_mcp,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+--- etc/mailscanner.conf.with.mcp.orig	Wed May 30 12:30:39 2007
++++ etc/mailscanner.conf.with.mcp	Sun Aug  5 04:03:26 2007
+@@ -31,17 +31,17 @@
+ #
+ 
+ # Set the directory containing all the reports in the required language
+-%report-dir% = /opt/MailScanner/etc/reports/en
++%report-dir% = %SYSCONFDIR%/MailScanner/reports/en
+ 
+ # Configuration directory containing this file
+-%etc-dir% = /opt/MailScanner/etc
++%etc-dir% = %SYSCONFDIR%/MailScanner
+ 
+ # Rulesets directory containing your ".rules" files
+-%rules-dir% = /opt/MailScanner/etc/rules
++%rules-dir% = %SYSCONFDIR%/MailScanner/rules
+ 
+ # Configuration directory containing files related to MCP
+ # (Text Content Protection)
+-%mcp-dir% = /opt/MailScanner/etc/mcp
++%mcp-dir% = %SYSCONFDIR%/MailScanner/mcp
+ 
+ #
+ # System settings
+@@ -86,7 +86,7 @@ Queue Scan Interval = 5
+ #    Example: /var/spool/mqueue.in/*
+ # 3. The name of a file containing a list of directory names,
+ #    which can in turn contain wildcards.
+-#    Example: /opt/MailScanner/etc/mqueue.in.list.conf
++#    Example: %SYSCONFDIR%/MailScanner/mqueue.in.list.conf
+ #
+ Incoming Queue Dir = /var/spool/mqueue.in
+ 
+@@ -102,7 +102,7 @@ Incoming Work Dir = /var/spool/MailScanner/incoming
+ Quarantine Dir = /var/spool/MailScanner/quarantine
+ 
+ # Set where to store the process id number so you can stop MailScanner
+-PID file = /opt/MailScanner/var/MailScanner.pid
++PID file = /var/run/MailScanner.pid
+ 
+ # To avoid resource leaks, re-start periodically
+ Restart Every = 14400
+@@ -115,7 +115,7 @@ MTA = sendmail
+ # Set how to invoke MTA when sending messages MailScanner has created
+ # (e.g. to sender/recipient saying "found a virus in your message")
+ # This can also be the filename of a ruleset.
+-Sendmail = /usr/lib/sendmail
++Sendmail = /usr/sbin/sendmail
+ 
+ # Sendmail2 is provided for Exim users.
+ # It is the command used to attempt delivery of outgoing cleaned/disinfected
+@@ -123,9 +123,9 @@ Sendmail = /usr/lib/sendmail
+ # This is not usually required for sendmail.
+ # This can also be the filename of a ruleset.
+ #For Exim users: Sendmail2 = /usr/sbin/exim -C /etc/exim/exim_send.conf
+-#For sendmail users: Sendmail2 = /usr/lib/sendmail
++#For sendmail users: Sendmail2 = /usr/sbin/sendmail
+ #Sendmail2 = /usr/sbin/sendmail -C /etc/exim/exim_send.conf
+-Sendmail2 = /usr/lib/sendmail
++Sendmail2 = /usr/sbin/sendmail
+ 
+ #
+ # Processing Incoming Mail
+@@ -169,7 +169,7 @@ Deliver Unparsable TNEF = no
+ # may be. It helps protect against Denial Of Service attacks in TNEF files.
+ #TNEF Expander    = internal
+ # This can also be the filename of a ruleset.
+-TNEF Expander = /opt/MailScanner/bin/tnef --maxsize=100000000
++TNEF Expander = %PREFIX%/bin/tnef --maxsize=100000000
+ 
+ # The maximum length of time the TNEF Expander is allowed to run for 1 message.
+ # (in seconds)
+@@ -1107,11 +1107,11 @@ Log Permitted Filetypes = no
+ SpamAssassin User State Dir =
+ 
+ # This setting is useful if SpamAssassin is installed in an unusual place,
+-# e.g. /opt/MailScanner. The install prefix is used to find some fallback
++# e.g. %PREFIX%. The install prefix is used to find some fallback
+ # directories if neither of the following two settings work.
+ # If this is set then it adds to the list of places that are searched;
+ # otherwise it has no effect.
+-#SpamAssassin Install Prefix = /opt/MailScanner
++#SpamAssassin Install Prefix = %PREFIX%
+ SpamAssassin Install Prefix =
+ 
+ # The site-local rules are searched for here, and in prefix/etc/spamassassin,
