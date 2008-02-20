@@ -21,3 +21,6 @@ MailScanner itself is entirely open source, but it uses widely known
 commercial virus scanning packages at its core. The other software it
 uses is all high quality open source software, leading to a system that
 can be trusted for performance and reliability.
+
+Optionally, unrar, unarj, and/or unace may be installed and MailScanner
+will use them if they are installed.
