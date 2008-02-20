@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2008/02/15 10:07:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.27 2008/02/20 07:42:32 jakob Exp $
 
 COMMENT=	perl-compatible regular expression library
 
@@ -31,8 +31,9 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-utf8 \
 			--enable-unicode-properties
 
+# XXX compiler bugs
 .if ${MACHINE_ARCH} == "vax"
-CFLAGS+=	-O0 # XXX compiler bugs
+CFLAGS+=	-O0
 .endif
 
 .include <bsd.port.mk>
