@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2007/09/10 17:49:23 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.27 2008/02/20 09:18:01 landry Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 bin/RunCache
@@ -21,67 +21,129 @@ share/examples/squid/
 share/examples/squid/errors/
 @sample share/squid/errors/
 share/examples/squid/errors/Armenian/
+@sample share/squid/errors/Armenian/
 share/examples/squid/errors/Armenian/ERR_ACCESS_DENIED
+@sample share/squid/errors/Armenian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Armenian/ERR_CACHE_ACCESS_DENIED
+@sample share/squid/errors/Armenian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Armenian/ERR_CACHE_MGR_ACCESS_DENIED
+@sample share/squid/errors/Armenian/ERR_CACHE_MGR_ACCESS_DENIED
 share/examples/squid/errors/Armenian/ERR_CANNOT_FORWARD
+@sample share/squid/errors/Armenian/ERR_CANNOT_FORWARD
 share/examples/squid/errors/Armenian/ERR_CONNECT_FAIL
+@sample share/squid/errors/Armenian/ERR_CONNECT_FAIL
 share/examples/squid/errors/Armenian/ERR_DNS_FAIL
+@sample share/squid/errors/Armenian/ERR_DNS_FAIL
 share/examples/squid/errors/Armenian/ERR_FORWARDING_DENIED
+@sample share/squid/errors/Armenian/ERR_FORWARDING_DENIED
 share/examples/squid/errors/Armenian/ERR_FTP_DISABLED
+@sample share/squid/errors/Armenian/ERR_FTP_DISABLED
 share/examples/squid/errors/Armenian/ERR_FTP_FAILURE
+@sample share/squid/errors/Armenian/ERR_FTP_FAILURE
 share/examples/squid/errors/Armenian/ERR_FTP_FORBIDDEN
+@sample share/squid/errors/Armenian/ERR_FTP_FORBIDDEN
 share/examples/squid/errors/Armenian/ERR_FTP_NOT_FOUND
+@sample share/squid/errors/Armenian/ERR_FTP_NOT_FOUND
 share/examples/squid/errors/Armenian/ERR_FTP_PUT_CREATED
+@sample share/squid/errors/Armenian/ERR_FTP_PUT_CREATED
 share/examples/squid/errors/Armenian/ERR_FTP_PUT_ERROR
+@sample share/squid/errors/Armenian/ERR_FTP_PUT_ERROR
 share/examples/squid/errors/Armenian/ERR_FTP_PUT_MODIFIED
+@sample share/squid/errors/Armenian/ERR_FTP_PUT_MODIFIED
 share/examples/squid/errors/Armenian/ERR_FTP_UNAVAILABLE
+@sample share/squid/errors/Armenian/ERR_FTP_UNAVAILABLE
 share/examples/squid/errors/Armenian/ERR_INVALID_REQ
+@sample share/squid/errors/Armenian/ERR_INVALID_REQ
 share/examples/squid/errors/Armenian/ERR_INVALID_RESP
+@sample share/squid/errors/Armenian/ERR_INVALID_RESP
 share/examples/squid/errors/Armenian/ERR_INVALID_URL
+@sample share/squid/errors/Armenian/ERR_INVALID_URL
 share/examples/squid/errors/Armenian/ERR_LIFETIME_EXP
+@sample share/squid/errors/Armenian/ERR_LIFETIME_EXP
 share/examples/squid/errors/Armenian/ERR_NO_RELAY
+@sample share/squid/errors/Armenian/ERR_NO_RELAY
 share/examples/squid/errors/Armenian/ERR_ONLY_IF_CACHED_MISS
+@sample share/squid/errors/Armenian/ERR_ONLY_IF_CACHED_MISS
 share/examples/squid/errors/Armenian/ERR_READ_ERROR
+@sample share/squid/errors/Armenian/ERR_READ_ERROR
 share/examples/squid/errors/Armenian/ERR_READ_TIMEOUT
+@sample share/squid/errors/Armenian/ERR_READ_TIMEOUT
 share/examples/squid/errors/Armenian/ERR_SHUTTING_DOWN
+@sample share/squid/errors/Armenian/ERR_SHUTTING_DOWN
 share/examples/squid/errors/Armenian/ERR_SOCKET_FAILURE
+@sample share/squid/errors/Armenian/ERR_SOCKET_FAILURE
 share/examples/squid/errors/Armenian/ERR_TOO_BIG
+@sample share/squid/errors/Armenian/ERR_TOO_BIG
 share/examples/squid/errors/Armenian/ERR_UNSUP_REQ
+@sample share/squid/errors/Armenian/ERR_UNSUP_REQ
 share/examples/squid/errors/Armenian/ERR_URN_RESOLVE
+@sample share/squid/errors/Armenian/ERR_URN_RESOLVE
 share/examples/squid/errors/Armenian/ERR_WRITE_ERROR
+@sample share/squid/errors/Armenian/ERR_WRITE_ERROR
 share/examples/squid/errors/Armenian/ERR_ZERO_SIZE_OBJECT
+@sample share/squid/errors/Armenian/ERR_ZERO_SIZE_OBJECT
 share/examples/squid/errors/Azerbaijani/
+@sample share/squid/errors/Azerbaijani/
 share/examples/squid/errors/Azerbaijani/ERR_ACCESS_DENIED
+@sample share/squid/errors/Azerbaijani/ERR_ACCESS_DENIED
 share/examples/squid/errors/Azerbaijani/ERR_CACHE_ACCESS_DENIED
+@sample share/squid/errors/Azerbaijani/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Azerbaijani/ERR_CACHE_MGR_ACCESS_DENIED
+@sample share/squid/errors/Azerbaijani/ERR_CACHE_MGR_ACCESS_DENIED
 share/examples/squid/errors/Azerbaijani/ERR_CANNOT_FORWARD
+@sample share/squid/errors/Azerbaijani/ERR_CANNOT_FORWARD
 share/examples/squid/errors/Azerbaijani/ERR_CONNECT_FAIL
+@sample share/squid/errors/Azerbaijani/ERR_CONNECT_FAIL
 share/examples/squid/errors/Azerbaijani/ERR_DNS_FAIL
+@sample share/squid/errors/Azerbaijani/ERR_DNS_FAIL
 share/examples/squid/errors/Azerbaijani/ERR_FORWARDING_DENIED
+@sample share/squid/errors/Azerbaijani/ERR_FORWARDING_DENIED
 share/examples/squid/errors/Azerbaijani/ERR_FTP_DISABLED
+@sample share/squid/errors/Azerbaijani/ERR_FTP_DISABLED
 share/examples/squid/errors/Azerbaijani/ERR_FTP_FAILURE
+@sample share/squid/errors/Azerbaijani/ERR_FTP_FAILURE
 share/examples/squid/errors/Azerbaijani/ERR_FTP_FORBIDDEN
+@sample share/squid/errors/Azerbaijani/ERR_FTP_FORBIDDEN
 share/examples/squid/errors/Azerbaijani/ERR_FTP_NOT_FOUND
+@sample share/squid/errors/Azerbaijani/ERR_FTP_NOT_FOUND
 share/examples/squid/errors/Azerbaijani/ERR_FTP_PUT_CREATED
+@sample share/squid/errors/Azerbaijani/ERR_FTP_PUT_CREATED
 share/examples/squid/errors/Azerbaijani/ERR_FTP_PUT_ERROR
+@sample share/squid/errors/Azerbaijani/ERR_FTP_PUT_ERROR
 share/examples/squid/errors/Azerbaijani/ERR_FTP_PUT_MODIFIED
+@sample share/squid/errors/Azerbaijani/ERR_FTP_PUT_MODIFIED
 share/examples/squid/errors/Azerbaijani/ERR_FTP_UNAVAILABLE
+@sample share/squid/errors/Azerbaijani/ERR_FTP_UNAVAILABLE
 share/examples/squid/errors/Azerbaijani/ERR_INVALID_REQ
+@sample share/squid/errors/Azerbaijani/ERR_INVALID_REQ
 share/examples/squid/errors/Azerbaijani/ERR_INVALID_RESP
+@sample share/squid/errors/Azerbaijani/ERR_INVALID_RESP
 share/examples/squid/errors/Azerbaijani/ERR_INVALID_URL
+@sample share/squid/errors/Azerbaijani/ERR_INVALID_URL
 share/examples/squid/errors/Azerbaijani/ERR_LIFETIME_EXP
+@sample share/squid/errors/Azerbaijani/ERR_LIFETIME_EXP
 share/examples/squid/errors/Azerbaijani/ERR_NO_RELAY
+@sample share/squid/errors/Azerbaijani/ERR_NO_RELAY
 share/examples/squid/errors/Azerbaijani/ERR_ONLY_IF_CACHED_MISS
+@sample share/squid/errors/Azerbaijani/ERR_ONLY_IF_CACHED_MISS
 share/examples/squid/errors/Azerbaijani/ERR_READ_ERROR
+@sample share/squid/errors/Azerbaijani/ERR_READ_ERROR
 share/examples/squid/errors/Azerbaijani/ERR_READ_TIMEOUT
+@sample share/squid/errors/Azerbaijani/ERR_READ_TIMEOUT
 share/examples/squid/errors/Azerbaijani/ERR_SHUTTING_DOWN
+@sample share/squid/errors/Azerbaijani/ERR_SHUTTING_DOWN
 share/examples/squid/errors/Azerbaijani/ERR_SOCKET_FAILURE
+@sample share/squid/errors/Azerbaijani/ERR_SOCKET_FAILURE
 share/examples/squid/errors/Azerbaijani/ERR_TOO_BIG
+@sample share/squid/errors/Azerbaijani/ERR_TOO_BIG
 share/examples/squid/errors/Azerbaijani/ERR_UNSUP_REQ
+@sample share/squid/errors/Azerbaijani/ERR_UNSUP_REQ
 share/examples/squid/errors/Azerbaijani/ERR_URN_RESOLVE
+@sample share/squid/errors/Azerbaijani/ERR_URN_RESOLVE
 share/examples/squid/errors/Azerbaijani/ERR_WRITE_ERROR
+@sample share/squid/errors/Azerbaijani/ERR_WRITE_ERROR
 share/examples/squid/errors/Azerbaijani/ERR_ZERO_SIZE_OBJECT
+@sample share/squid/errors/Azerbaijani/ERR_ZERO_SIZE_OBJECT
 share/examples/squid/errors/Bulgarian/
 @sample share/squid/errors/Bulgarian/
 share/examples/squid/errors/Bulgarian/ERR_ACCESS_DENIED
