@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2007/12/15 20:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2008/02/20 01:17:53 merdely Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	2.4.6
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.abisource.com/
@@ -14,6 +14,7 @@ MODULES=	devel/gettext
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	fribidi::devel/fribidi \
+		popt::devel/popt \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		gnomeprintui-2-2::x11/gnome/libgnomeprintui
 
@@ -25,10 +26,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xft Xrender art_lgpl_2 atk-1.0 c Xrandr \
 		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
-		expat fontconfig freetype glade-2.0 glib-2.0 gmodule-2.0 \
-		gnomecanvas-2 gnomeprint-2-2 gobject-2.0 glitz \
+		expat fontconfig freetype gailutil glade-2.0 glib-2.0 \
+		gmodule-2.0 gnomecanvas-2 gnomeprint-2-2 gobject-2.0 glitz \
 		gthread-2.0 m pango-1.0 pangocairo-1.0 cairo \
-		pangoft2-1.0 pangoxft-1.0 png popt pthread stdc++ \
+		pangoft2-1.0 pangoxft-1.0 png pthread stdc++ \
 		xml2.>=9 z
 
 MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/

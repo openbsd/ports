@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2007/12/15 20:32:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2008/02/20 01:17:53 merdely Exp $
 bin/AbiWord-${MAJORVER}
 bin/abiword
 bin/ttfadmin.sh
@@ -290,7 +290,6 @@ share/AbiSuite-${MAJORVER}/templates/normal.awt-ur_PK
 share/AbiSuite-${MAJORVER}/templates/normal.awt-yi
 share/AbiSuite-${MAJORVER}/templates/normal.awt-zh_CN
 share/AbiSuite-${MAJORVER}/templates/normal.awt-zh_TW
-share/applications/
 share/applications/abiword.desktop
 share/doc/abiword/
 share/doc/abiword/Manual/
