@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.65 2007/12/15 21:14:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2008/02/20 20:48:56 naddy Exp $
 
 COMMENT=	GTK+2 IRC client
 
 MAJOR=		2.8
 VERSION=	${MAJOR}.4
 DISTNAME=	xchat-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	net x11
 
 HOMEPAGE=	http://www.xchat.org/
-
-MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.77 2007/11/06 21:18:10 rui Exp $
+# $OpenBSD: Makefile,v 1.78 2008/02/20 20:48:56 naddy Exp $
 
 COMMENT=	mail/news client in gtk+
 
 MAJOR=		2.4
 VERSION=	${MAJOR}.5
 DISTNAME=	sylpheed-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	mail news x11
 HOMEPAGE=	http://sylpheed.sraoss.jp/en
-
-MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/02/20 20:48:56 naddy Exp $
 
 COMMENT=		dependency configuration tool
 
 VERSION=		0.9.3
 DISTNAME=		pmk-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://pmk.sourceforge.net/
-
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
