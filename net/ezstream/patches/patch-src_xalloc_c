@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_xalloc_c,v 1.1 2008/02/20 22:03:11 merdely Exp $
+--- src/xalloc.c.orig	Wed Jan 23 07:59:22 2008
++++ src/xalloc.c	Wed Jan 23 07:59:40 2008
+@@ -172,7 +172,7 @@ _xalloc_error(int errnum, const char *fmt, ...)
+ 	if (errnum > 0) {
+ 		if (xalloc_initialized)
+ 			XALLOC_LOCK(strerror_mutex);
+-		vfprintf(debug_output, ": %s\n", strerror(errnum));
++		fprintf(debug_output, ": %s\n", strerror(errnum));
+ 		if (xalloc_initialized)
+ 			XALLOC_UNLOCK(strerror_mutex);
+ 	}

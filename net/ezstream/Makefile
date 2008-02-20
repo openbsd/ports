@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 13:07:27 mgrimm Exp $
+# $OpenBSD: Makefile,v 1.8 2008/02/20 22:03:10 merdely Exp $
 
 COMMENT=	streaming source client that uses external en-/decoders
 
 DISTNAME=	ezstream-0.5.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net multimedia
 
 HOMEPAGE=	http://www.icecast.org/ezstream.php
