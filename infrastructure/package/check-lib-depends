@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.14 2008/02/19 11:02:53 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.15 2008/02/20 07:04:25 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -359,13 +359,6 @@ sub register_libs
 
 package OpenBSD::PackingElement::FileBase;
 use File::Basename;
-sub shellquote
-{
-	local $_ = shift;
-	s/[*?;() #\\'"`\${}]/\\$&/g;
-	return $_;
-}
-
 sub find_libs
 {
 	my ($item, $dest, $special) = @_;
@@ -394,7 +387,7 @@ sub record_needed_libs
 		$source->skip($item);
 		return;
 	}
-	my $n = shellquote($source->retrieve($item));
+	my $n = $source->retrieve($item);
 	my $cmd;
 	if ($main::opt_o) {
 		open($cmd, "-|", "ldd", "-f", "NEEDED lib%o.so.%m.%n\n", $n) or die "open: $!";
