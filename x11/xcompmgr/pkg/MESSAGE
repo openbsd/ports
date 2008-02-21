@@ -1,6 +1,0 @@
-To enable the COMPOSITE extension, add the following at the end of 
-/etc/X11/xorg.conf:
-
-Section "Extensions"
-        Option  "Composite" "On"
-EndSection
