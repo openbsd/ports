@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2008/02/22 19:16:49 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		Ruby interface to LBL Packet Capture library
 
 VERSION=		0.6
 DISTNAME=		ruby-pcap-${VERSION}
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.goto.info.waseda.ac.jp/~fukusima/ruby/pcap-e.html
