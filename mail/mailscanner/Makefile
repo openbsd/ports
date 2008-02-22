@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/20 04:25:12 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2008/02/22 18:38:03 todd Exp $
 
 COMMENT=	virus/spam scanning framework
 
@@ -16,7 +16,6 @@ HOMEPAGE=	http://www.mailscanner.info/
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
-MODULE=		cpan
 RUN_DEPENDS+=	::databases/p5-DBI \
 		::archivers/p5-Archive-Zip \
 		::archivers/p5-Compress-Zlib \
