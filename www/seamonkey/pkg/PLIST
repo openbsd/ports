@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2008/01/23 16:42:44 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/02/22 12:55:49 martynas Exp $
 @pkgpath www/seamonkey,-main
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -12,6 +12,7 @@ seamonkey/chrome/BR.jar
 seamonkey/chrome/BY.jar
 seamonkey/chrome/CZ.jar
 seamonkey/chrome/FR.jar
+seamonkey/chrome/HU.jar
 seamonkey/chrome/IL.jar
 seamonkey/chrome/IT.jar
 seamonkey/chrome/NL.jar
@@ -49,6 +50,8 @@ seamonkey/chrome/he-unix.jar
 seamonkey/chrome/help.jar
 seamonkey/chrome/hi-IN.jar
 seamonkey/chrome/hi-unix.jar
+seamonkey/chrome/hu-HU.jar
+seamonkey/chrome/hu-unix.jar
 seamonkey/chrome/icons/
 seamonkey/chrome/icons/default/
 seamonkey/chrome/icons/default/abcardWindow.xpm

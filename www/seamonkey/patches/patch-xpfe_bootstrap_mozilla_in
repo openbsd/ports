@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.3 2007/06/13 12:09:19 martynas Exp $
---- xpfe/bootstrap/mozilla.in.orig	Mon Aug 21 01:44:28 2006
-+++ xpfe/bootstrap/mozilla.in	Wed Jun 13 00:17:15 2007
+$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.4 2008/02/22 12:55:49 martynas Exp $
+--- xpfe/bootstrap/mozilla.in.orig	Tue Jan 29 21:31:44 2008
++++ xpfe/bootstrap/mozilla.in	Wed Feb 20 23:18:05 2008
 @@ -92,7 +92,13 @@ moz_pis_startstop_scripts()
  #uncomment for debugging
  #set -x
@@ -15,7 +15,7 @@ $OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.3 2007/06/13 12:09:19 martynas Exp
  MRE_HOME=%MREDIR%
  
  # Use run-mozilla.sh in the current dir if it exists
-@@ -273,7 +279,11 @@ do
+@@ -274,7 +280,11 @@ do
    esac
  done
  

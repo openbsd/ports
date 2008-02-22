@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2008/01/23 16:42:44 martynas Exp $
+# $OpenBSD: Makefile,v 1.20 2008/02/22 12:55:49 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		1.1.7
+VER=		1.1.8
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p0
+PKGNAME=	seamonkey-${VER}
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -41,26 +41,27 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-.for i in 1.1.2 1.1.3 1.1.4 1.1.5 1.1.6 1.1.7
+.for i in 1.1.2 1.1.3 1.1.4 1.1.5 1.1.6 1.1.7 1.1.8
 MASTER_SITES${i:E}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/$i/contrib-localized/
 .endfor
 
 LANGUAGES=	be-BY 1.1.2 \
 		ca-AD 1.1.4 \
-		cs-CZ 1.1.6 \
-		de-AT 1.1.7 \
+		cs-CZ 1.1.8 \
+		de-AT 1.1.8 \
 		el-GR 1.1.2 \
-		es-ES 1.1.6 \
-		fr-FR 1.1.6 \
+		es-ES 1.1.8 \
+		fr-FR 1.1.8 \
 		he-IL 1.1.2 \
-		hi-IN 1.1.5 \
+		hi-IN 1.1.7 \
+		hu-HU 1.1.7 \
 		it-IT 1.1.6 \
 		nl-NL 1.1.4 \
-		pl-PL 1.1.7 \
-		pt-BR 1.1.6 \
-		ru-RU 1.1.6 \
-		ur-PK 1.1.4 \
-		sv-SE 1.1.6
+		pl-PL 1.1.8 \
+		pt-BR 1.1.8 \
+		ru-RU 1.1.8 \
+		ur-PK 1.1.8 \
+		sv-SE 1.1.8
 BINLANGS=	be-BY el-GR fr-FR hi-IN pl-PL pt-BR
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
