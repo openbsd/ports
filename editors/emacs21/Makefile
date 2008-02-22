@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.39 2008/02/22 17:06:25 naddy Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -6,7 +6,7 @@ COMMENT-leim=		Library of Emacs Input Methods
 
 VERSION=		21.4
 DISTNAME=		emacs-${VERSION}
-PKGNAME-main=		${DISTNAME}p5
+PKGNAME-main=		${DISTNAME}p6
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 
