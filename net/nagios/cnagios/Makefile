@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/05 23:00:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/23 18:06:51 sthen Exp $
 
 COMMENT =		console interface for nagios
 
@@ -26,6 +26,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-nagios-data=2 \
 			--with-etc-dir="${SYSCONFDIR}/cnagios" \
 			--with-var-dir="/var/nagios"
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 ALL_TARGET =		cnagios
 
