@@ -32,3 +32,8 @@ In mysql, assuming you're connected as admin initially.
 create user drupal identified by 'password';
 create database drupal character set utf8;
 grant all on drupal.* to user drupal@localhost:
+
+In postgresql, assuming an `admin' account has all rights:
+
+createuser -U admin --pwprompt --no-superuser --createdb --no-createrole drupal
+createdb -U drupal -E UTF8 drupal

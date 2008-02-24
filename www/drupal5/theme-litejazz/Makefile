@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/16 20:38:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/24 15:48:26 espie Exp $
 
 COMMENT =	off-beat jazzy theme
 DISTFILES =	litejazz015.zip
-DISTNAME =	drupal5-theme-litejazz-0.15
+DISTNAME =	drupal5-theme-litejazz-0.15p0
 
 # still GPL
 HOMEPAGE =	http://www.roopletheme.com/

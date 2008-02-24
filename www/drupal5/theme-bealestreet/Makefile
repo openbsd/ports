@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/16 20:37:50 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/24 15:48:26 espie Exp $
 
 COMMENT =	nice literary theme
 DISTFILES =	bealestreet011.zip
-DISTNAME =	drupal5-theme-bealestreet-0.11
+DISTNAME =	drupal5-theme-bealestreet-0.11p0
 
 # still GPL
 HOMEPAGE =	http://www.roopletheme.com/

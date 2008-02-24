@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1 2008/02/16 16:49:10 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/02/24 15:48:25 espie Exp $
 
 COMMENT =	powerful content management system
  
 DISTNAME =	drupal-5.7
+PKGNAME=	${DISTNAME}p0
 
 RUN_DEPENDS = 	::www/php5/core \
 	:php5-mysql-*|php5-mysqli-*|php5-pgsql-*:www/php5/extensions,-mysql \
@@ -22,6 +23,8 @@ do-install:
 		cd ${PREFIX}/${DRUPAL_ROOT}/sites/default && \
 			mv settings.php settings.php.sample
 		${INSTALL_DATA_DIR} ${PREFIX}/${DRUPAL_ROOT}/files
+		${INSTALL_DATA_DIR} ${PREFIX}/${DRUPAL_ROOT}/sites/all/modules
+		${INSTALL_DATA_DIR} ${PREFIX}/${DRUPAL_ROOT}/sites/all/themes
 		# give everything to www
 		chown -R www.www ${PREFIX}/${DRUPAL_ROOT}
 

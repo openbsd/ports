@@ -1,0 +1,15 @@
+$OpenBSD: patch-calendar_install,v 1.1 2008/02/24 15:48:25 espie Exp $
+--- calendar.install.orig	Fri Feb 22 19:28:14 2008
++++ calendar.install	Fri Feb 22 19:28:35 2008
+@@ -25,11 +25,8 @@ function calendar_disable() {
+ 
+ /**
+  * Implementation of hook_install().
+- * Reset the calendar caches.
+  */
+ function calendar_install() {
+-  include_once(drupal_get_path('module', 'calendar') .'/calendar.module');
+-  calendar_clear_all();
+ }
+ 
+ /**

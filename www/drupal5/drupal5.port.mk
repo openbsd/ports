@@ -1,4 +1,4 @@
-# $OpenBSD: drupal5.port.mk,v 1.2 2008/02/16 19:04:03 espie Exp $
+# $OpenBSD: drupal5.port.mk,v 1.3 2008/02/24 15:48:25 espie Exp $
 
 
 # three types of things we can install, by default plugin
@@ -25,8 +25,8 @@ WRKDIST =	${WRKDIR}/${DISTNAME:C/-5.x.*$//}
 PREFIX ?=	/var/www
 DRUPAL ?=	drupal
 DRUPAL_ROOT ?=	htdocs/${DRUPAL}
-DRUPAL_MODS ?=	${DRUPAL_ROOT}/modules
-DRUPAL_THEMES ?=${DRUPAL_ROOT}/themes
+DRUPAL_MODS ?=	${DRUPAL_ROOT}/sites/all/modules
+DRUPAL_THEMES ?=${DRUPAL_ROOT}/sites/all/themes
 DRUPAL_LOCALE ?=${DRUPAL_MODS}/node
 SUBST_VARS += 	DRUPAL_LOCALE DRUPAL_MODS DRUPAL_THEMES DRUPAL_ROOT
 
