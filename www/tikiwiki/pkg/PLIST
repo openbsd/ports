@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/25 20:36:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/02/24 15:51:28 ajacoutot Exp $
 tikiwiki/
 tikiwiki/INSTALL
 tikiwiki/README
@@ -31,7 +31,6 @@ tikiwiki/db/Makefile
 tikiwiki/db/README.txt
 tikiwiki/db/_htaccess
 tikiwiki/db/case_patch.php
-tikiwiki/db/dbg_console.sql
 tikiwiki/db/fulltext.sql
 tikiwiki/db/index.php
 tikiwiki/db/oracle/
@@ -2361,6 +2360,7 @@ tikiwiki/lib/wiki-plugins/wikiplugin_sort.php
 tikiwiki/lib/wiki-plugins/wikiplugin_split.php
 tikiwiki/lib/wiki-plugins/wikiplugin_sql.php
 tikiwiki/lib/wiki-plugins/wikiplugin_sub.php
+tikiwiki/lib/wiki-plugins/wikiplugin_sup.php
 tikiwiki/lib/wiki-plugins/wikiplugin_tag.php
 tikiwiki/lib/wiki-plugins/wikiplugin_thumb.php
 tikiwiki/lib/wiki-plugins/wikiplugin_titlesearch.php
