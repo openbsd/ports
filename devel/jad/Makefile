@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/02/24 15:56:49 naddy Exp $
 
+BROKEN=		bad system call
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	fast Java decompiler
