@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_demuxers_demux_flac_c,v 1.1 2008/02/24 20:36:15 jakemsr Exp $
+--- src/demuxers/demux_flac.c.orig	Sat Feb 23 23:14:59 2008
++++ src/demuxers/demux_flac.c	Sat Feb 23 23:16:31 2008
+@@ -202,7 +202,7 @@ static int open_flac_file(demux_flac_t *flac) {
+ 
+           length = _X_LE_32(ptr);
+           ptr += 4 + length;
+-          if (length >= block_length - 8)
++          if (length > block_length - 8)
+             return 0; /* bad length or too little left in the buffer */
+ 
+           user_comment_list_length = _X_LE_32(ptr);
