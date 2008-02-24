@@ -1,5 +1,2 @@
 bluetooth-tools package consists of a few Bluetooth network tools
-derived from FreeBSD.
-
-hccontrol program allows to send HCI layer commands directly to the
-Bluetooth adapter.
+derived from FreeBSD and NetBSD.

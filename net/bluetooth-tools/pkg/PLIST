@@ -1,15 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/06/07 13:28:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/02/24 21:56:43 uwe Exp $
 @newgroup _sdpd:589
 @newuser _sdpd:589:_sdpd::Service Discovery Protol Daemon:/nonexistent:/sbin/nologin
+bin/bthfp
+bin/btkey
 bin/btpin
 bin/rfcomm_sppd
 bin/sdpquery
+@man man/cat1/bthfp.0
+@man man/cat1/btkey.0
 @man man/cat1/btpin.0
 @man man/cat1/rfcomm_sppd.0
 @man man/cat1/sdpquery.0
 @man man/cat8/btconfig.0
+@man man/cat8/btdevctl.0
 @man man/cat8/bthcid.0
 @man man/cat8/sdpd.0
 sbin/btconfig
+sbin/btdevctl
 sbin/bthcid
 sbin/sdpd
+@extra /var/db/btdevctl
+@extra /var/db/bthcid.keys
