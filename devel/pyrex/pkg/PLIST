@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/22 13:35:01 deanna Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/02/25 16:59:23 espie Exp $
+@conflict Pyrex-*
 bin/pyrexc
 lib/python${MODPY_VERSION}/site-packages/Pyrex/
 lib/python${MODPY_VERSION}/site-packages/Pyrex-0.9.6.4-py${MODPY_VERSION}.egg-info
