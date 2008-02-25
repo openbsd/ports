@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_common_utils_c,v 1.1 2008/02/25 17:14:18 landry Exp $
+--- src/common/utils.c.orig	Mon Feb 25 13:02:36 2008
++++ src/common/utils.c	Mon Feb 25 13:03:20 2008
+@@ -1522,6 +1522,8 @@ gint scan_mailto_url(const gchar *mailto, gchar **from
+ 	const gchar *forbidden_uris[] = { ".gnupg/",
+ 					  "/etc/passwd",
+ 					  "/etc/shadow",
++					  ".ssh/",
++					  "../",
+ 					  NULL };
+ 	gint num_attach = 0;
+ 	gchar **my_att = NULL;
