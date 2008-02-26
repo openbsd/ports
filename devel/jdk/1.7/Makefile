@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/09 15:27:55 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2008/02/26 18:26:23 kurt Exp $
+
+BROKEN+= Work-in-progress and outdated
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	i386 amd64
@@ -23,8 +25,7 @@ FLAVOR?=
 
 HOMEPAGE=		https://jdk7.dev.java.net/
 MASTER_SITES=		http://www.java.net/download/jdk7/ \
-			http://www.java.net/download/jdk7/archive/$B/ \
-			http://www.intricatesoftware.com/distfiles/
+			http://www.java.net/download/jdk7/archive/$B/
 
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
