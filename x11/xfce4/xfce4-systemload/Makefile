@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/12/18 21:17:30 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2008/02/26 17:33:10 landry Exp $
 
 COMMENT=	displays cpu/memory/swap/uptime in xfce4 panel
 
 V=		0.4.2
 DISTNAME=	xfce4-systemload-plugin-${V}
-PKGNAME=	xfce4-systemload-${V}p0
+PKGNAME=	xfce4-systemload-${V}p1
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-systemload-plugin
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
