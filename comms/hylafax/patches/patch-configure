@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.7 2008/02/08 23:10:45 okan Exp $
---- configure.orig	Thu Aug 23 15:02:32 2007
-+++ configure	Wed Nov  7 17:29:51 2007
+$OpenBSD: patch-configure,v 1.8 2008/02/26 18:37:38 merdely Exp $
+--- configure.orig	Wed Nov 21 07:45:23 2007
++++ configure	Tue Feb 26 09:46:17 2008
+@@ -69,7 +69,7 @@ DPS=no
+ GS=no
+ IMP=no
+ UTMP=auto
+-OPTIMIZER="-O"
++#OPTIMIZER="-O"
+ LIBTIFF="-L/usr/local/lib -ltiff"
+ TIFFINC=/usr/local/include
+ TIFFBIN=
 @@ -1521,7 +1521,7 @@ int t() { $f(); return 0; }
  int main(){ t(); return 0; }
  EOF
