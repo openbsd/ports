@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.3 2007/11/03 11:16:21 espie Exp $
---- Makefile.pre.in.orig	Fri Dec  8 21:46:13 2006
-+++ Makefile.pre.in	Mon Oct 29 22:18:11 2007
-@@ -337,6 +337,7 @@ $(BUILDPYTHON):	Modules/python.o $(LIBRARY) $(LDLIBRAR
+$OpenBSD: patch-Makefile_pre_in,v 1.4 2008/02/27 00:30:47 djm Exp $
+--- Makefile.pre.in.orig	Thu Dec  6 07:43:57 2007
++++ Makefile.pre.in	Fri Feb 15 11:55:22 2008
+@@ -340,6 +340,7 @@ $(BUILDPYTHON):	Modules/python.o $(LIBRARY) $(LDLIBRAR
  		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
  			Modules/python.o \
  			$(BLDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.3 2007/11/03 11:16:21 espie Exp $
  
  platform: $(BUILDPYTHON)
  	$(RUNSHARED) ./$(BUILDPYTHON) -E -c 'import sys ; from distutils.util import get_platform ; print get_platform()+"-"+sys.version[0:3]' >platform
-@@ -373,6 +374,11 @@ libpython$(VERSION).so: $(LIBRARY_OBJS)
+@@ -376,6 +377,11 @@ libpython$(VERSION).so: $(LIBRARY_OBJS)
  libpython$(VERSION).sl: $(LIBRARY_OBJS)
  	$(LDSHARED) -o $@ $(LIBRARY_OBJS) $(SHLIBS) $(LIBC) $(LIBM)
  
@@ -21,12 +21,13 @@ $OpenBSD: patch-Makefile_pre_in,v 1.3 2007/11/03 11:16:21 espie Exp $
  # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
  # minimal framework (not including the Lib directory and such) in the current
  # directory.
-@@ -650,13 +656,12 @@ bininstall:	altbininstall
+@@ -658,14 +664,13 @@ bininstall:	altbininstall
  	then rm -f $(DESTDIR)$(BINDIR)/$(PYTHON); \
  	else true; \
  	fi
 -	(cd $(DESTDIR)$(BINDIR); $(LN) python$(VERSION)$(EXE) $(PYTHON))
- 	(cd $(DESTDIR)$(BINDIR); $(LN) -sf python$(VERSION)-config python-config)
+ 	-rm -f $(DESTDIR)$(BINDIR)/python-config
+ 	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)-config python-config)
  
  # Install the interpreter with $(VERSION) affixed
  # This goes into $(exec_prefix)
@@ -36,7 +37,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.3 2007/11/03 11:16:21 espie Exp $
  	do \
  		if test ! -d $(DESTDIR)$$i; then \
  			echo "Creating directory $$i"; \
-@@ -665,14 +670,12 @@ altbininstall:	$(BUILDPYTHON)
+@@ -674,14 +679,12 @@ altbininstall:	$(BUILDPYTHON)
  		fi; \
  	done
  	$(INSTALL_PROGRAM) $(BUILDPYTHON) $(DESTDIR)$(BINDIR)/python$(VERSION)$(EXE)
@@ -54,7 +55,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.3 2007/11/03 11:16:21 espie Exp $
  		fi; \
  	else	true; \
  	fi
-@@ -688,7 +691,7 @@ maninstall:
+@@ -697,7 +700,7 @@ maninstall:
  		fi; \
  	done
  	$(INSTALL_DATA) $(srcdir)/Misc/python.man \
@@ -63,7 +64,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.3 2007/11/03 11:16:21 espie Exp $
  
  # Install the library
  PLATDIR=	plat-$(MACHDEP)
-@@ -716,7 +719,7 @@ LIBSUBDIRS=	lib-tk site-packages test test/output test
+@@ -725,7 +728,7 @@ LIBSUBDIRS=	lib-tk site-packages test test/output test
  		distutils distutils/command distutils/tests $(XMLLIBSUBDIRS) \
  		setuptools setuptools/command setuptools/tests setuptools.egg-info \
  		curses $(MACHDEPS)
@@ -72,7 +73,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.3 2007/11/03 11:16:21 espie Exp $
  	@for i in $(SCRIPTDIR) $(LIBDEST); \
  	do \
  		if test ! -d $(DESTDIR)$$i; then \
-@@ -790,8 +793,8 @@ libinstall:	$(BUILDPYTHON) $(srcdir)/Lib/$(PLATDIR)
+@@ -799,8 +802,8 @@ libinstall:	$(BUILDPYTHON) $(srcdir)/Lib/$(PLATDIR)
  		-x badsyntax $(DESTDIR)$(LIBDEST)/site-packages
  
  # Create the PLATDIR source directory, if one wasn't distributed..

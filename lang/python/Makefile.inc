@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.53 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.54 2008/02/27 00:30:47 djm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -24,7 +24,7 @@ DISTNAME=	Python-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
 MASTER_SITES=	http://www.python.org/ftp/${PSUBDIR}/ \
 		http://python.mirrors.pair.com/pub/${PSUBDIR}/
-PSUBDIR=	python/${VERSION}${PATCHLEVEL}
+PSUBDIR?=	python/${VERSION}${PATCHLEVEL}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.python.org/
@@ -169,7 +169,7 @@ MAKE_FLAGS+=	LDLIBRARY=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION} \
 		LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
 FAKE_FLAGS+=	RANLIB=:
 
-ALL_TARGET=	all ${WRKSRC}/Lib/plat-openbsd4
+ALL_TARGET?=	all ${WRKSRC}/Lib/plat-openbsd4
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile

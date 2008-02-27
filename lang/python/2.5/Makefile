@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2007/11/21 18:45:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/02/27 00:30:47 djm Exp $
 
 VERSION=		2.5
-PATCHLEVEL=		.1
-PKG_PATCHLEVEL=		p7
+PATCHLEVEL=		.2
+PKG_PATCHLEVEL=		
 SHARED_LIBS=		python2.5 0.0
 
 # PSUBDIR=		python/${VERSION}
@@ -14,7 +14,9 @@ PATCH_LIST=		patch-* sup64-*
 CFLAGS+=		-mieee
 .endif
 
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	--with-cxx_main
+ALL_TARGET?=		all ./Lib/plat-openbsd4
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat

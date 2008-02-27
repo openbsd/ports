@@ -1,10 +1,42 @@
-$OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
---- setup.py.orig	Wed Feb 14 05:53:41 2007
-+++ setup.py	Sat Apr 28 03:49:19 2007
-@@ -592,209 +592,14 @@ class PyBuildExt(build_ext):
+$OpenBSD: patch-setup_py,v 1.4 2008/02/27 00:30:47 djm Exp $
+--- setup.py.orig	Tue Feb  5 10:41:02 2008
++++ setup.py	Tue Feb 19 23:59:33 2008
+@@ -244,8 +244,8 @@ class PyBuildExt(build_ext):
+ 
+     def detect_modules(self):
+         # Ensure that /usr/local is always used
+-        add_dir_to_list(self.compiler.library_dirs, '/usr/local/lib')
+-        add_dir_to_list(self.compiler.include_dirs, '/usr/local/include')
++        add_dir_to_list(self.compiler.library_dirs, '!!LOCALBASE!!/lib')
++        add_dir_to_list(self.compiler.include_dirs, '!!LOCALBASE!!/include')
+ 
+         # Add paths specified in the environment variables LDFLAGS and
+         # CPPFLAGS for header and library files.
+@@ -521,8 +521,6 @@ class PyBuildExt(build_ext):
+                                depends = ['socketmodule.h']) )
+         # Detect SSL support for the socket module (via _ssl)
+         search_for_ssl_incs_in = [
+-                              '/usr/local/ssl/include',
+-                              '/usr/contrib/ssl/include/'
+                              ]
+         ssl_incs = find_file('openssl/ssl.h', inc_dirs,
+                              search_for_ssl_incs_in
+@@ -533,9 +531,7 @@ class PyBuildExt(build_ext):
+             if krb5_h:
+                 ssl_incs += krb5_h
+         ssl_libs = find_library_file(self.compiler, 'ssl',lib_dirs,
+-                                     ['/usr/local/ssl/lib',
+-                                      '/usr/contrib/ssl/lib/'
+-                                     ] )
++                                     [ ] )
+ 
+         if (ssl_incs is not None and
+             ssl_libs is not None):
+@@ -592,223 +588,15 @@ class PyBuildExt(build_ext):
+             exts.append( Extension('_sha256', ['sha256module.c']) )
              exts.append( Extension('_sha512', ['sha512module.c']) )
  
- 
+-
 -        # Modules that provide persistent dictionary-like semantics.  You will
 -        # probably want to arrange for at least one of them to be available on
 -        # your machine, though none are defined by default because of library
@@ -12,14 +44,18 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
 -        # implementation independent wrapper for these; dumbdbm.py provides
 -        # similar functionality (but slower of course) implemented in Python.
 -
--        # Sleepycat Berkeley DB interface.  http://www.sleepycat.com
+-        # Sleepycat^WOracle Berkeley DB interface.
+-        #  http://www.oracle.com/database/berkeley-db/db/index.html
 -        #
--        # This requires the Sleepycat DB code. The supported versions
--        # are set below.  Visit http://www.sleepycat.com/ to download
+-        # This requires the Sleepycat^WOracle DB code. The supported versions
+-        # are set below.  Visit the URL above to download
 -        # a release.  Most open source OSes come with one or more
 -        # versions of BerkeleyDB already installed.
 -
 -        max_db_ver = (4, 5)
+-        # NOTE: while the _bsddb.c code links against BerkeleyDB 4.6.x
+-        # we leave that version disabled by default as it has proven to be
+-        # quite a buggy library release on many platforms.
 -        min_db_ver = (3, 3)
 -        db_setup_debug = False   # verbose debug prints from this script?
 -
@@ -36,7 +72,7 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
 -            '/sw/include/db3',
 -        ]
 -        # 4.x minor number specific paths
--        for x in (0,1,2,3,4,5):
+-        for x in range(max_db_ver[1]+1):
 -            db_inc_paths.append('/usr/include/db4%d' % x)
 -            db_inc_paths.append('/usr/include/db4.%d' % x)
 -            db_inc_paths.append('/usr/local/BerkeleyDB.4.%d/include' % x)
@@ -59,7 +95,7 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
 -        for dn in inc_dirs:
 -            std_variants.append(os.path.join(dn, 'db3'))
 -            std_variants.append(os.path.join(dn, 'db4'))
--            for x in (0,1,2,3,4):
+-            for x in range(max_db_ver[1]+1):
 -                std_variants.append(os.path.join(dn, "db4%d"%x))
 -                std_variants.append(os.path.join(dn, "db4.%d"%x))
 -            for x in (2,3):
@@ -86,6 +122,15 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
 -                        m = re.search(r"#define\WDB_VERSION_MINOR\W(\d+)", f)
 -                        db_minor = int(m.group(1))
 -                        db_ver = (db_major, db_minor)
+-
+-                        # Avoid 4.6 prior to 4.6.21 due to a BerkeleyDB bug
+-                        if db_ver == (4, 6):
+-                            m = re.search(r"#define\WDB_VERSION_PATCH\W(\d+)", f)
+-                            db_patch = int(m.group(1))
+-                            if db_patch < 21:
+-                                print "db.h:", db_ver, "patch", db_patch,
+-                                print "being ignored (4.6.x must be >= 4.6.21)"
+-                                continue
 -
 -                        if ( (not db_ver_inc_map.has_key(db_ver)) and
 -                           (db_ver <= max_db_ver and db_ver >= min_db_ver) ):
@@ -159,8 +204,8 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
 +                                  libraries=["db"]))
  
 -        # The sqlite interface
--        sqlite_setup_debug = True   # verbose debug prints from this script?
--
+-        sqlite_setup_debug = False # verbose debug prints from this script?
+ 
 -        # We hunt for #define SQLITE_VERSION "n.n.n"
 -        # We need to find >= sqlite version 3.0.8
 -        sqlite_incdir = sqlite_libdir = None
@@ -217,7 +262,7 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
              sqlite_srcs = ['_sqlite/cache.c',
                  '_sqlite/connection.c',
                  '_sqlite/cursor.c',
-@@ -804,31 +609,14 @@ class PyBuildExt(build_ext):
+@@ -818,31 +606,14 @@ class PyBuildExt(build_ext):
                  '_sqlite/row.c',
                  '_sqlite/statement.c',
                  '_sqlite/util.c', ]
@@ -253,7 +298,15 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
                                    libraries=["sqlite3",]))
  
          # Look for Berkeley db 1.85.   Note that it is built as a different
-@@ -878,8 +666,7 @@ class PyBuildExt(build_ext):
+@@ -856,6 +627,7 @@ class PyBuildExt(build_ext):
+         # we do not build this one.  Otherwise this build will pick up
+         # the more recent berkeleydb's db.h file first in the include path
+         # when attempting to compile and it will fail.
++        db_incs = []
+         f = "/usr/include/db.h"
+         if os.path.exists(f) and not db_incs:
+             data = open(f).read()
+@@ -897,8 +669,7 @@ class PyBuildExt(build_ext):
                                                        ('DB_DBM_HSEARCH',None)],
                                         libraries=dblibs))
  
@@ -263,7 +316,7 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
              exts.append( Extension('gdbm', ['gdbmmodule.c'],
                                     libraries = ['gdbm'] ) )
  
-@@ -970,53 +757,35 @@ class PyBuildExt(build_ext):
+@@ -989,53 +760,35 @@ class PyBuildExt(build_ext):
                                             libraries = ['z'],
                                             extra_link_args = zlib_extra_link_args))
  
@@ -341,7 +394,7 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
          # Hye-Shik Chang's CJKCodecs modules.
          if have_unicode:
              exts.append(Extension('_multibytecodec',
-@@ -1132,8 +901,16 @@ class PyBuildExt(build_ext):
+@@ -1151,8 +904,16 @@ class PyBuildExt(build_ext):
  
          self.extensions.extend(exts)
  
@@ -360,7 +413,7 @@ $OpenBSD: patch-setup_py,v 1.3 2007/04/28 10:06:25 bernd Exp $
  
      def detect_tkinter_darwin(self, inc_dirs, lib_dirs):
          # The _tkinter module, using frameworks. Since frameworks are quite
-@@ -1516,8 +1293,7 @@ def main():
+@@ -1535,8 +1296,7 @@ def main():
            ext_modules=[Extension('_struct', ['_struct.c'])],
  
            # Scripts to install
