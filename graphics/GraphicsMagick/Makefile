@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2008/02/26 18:45:28 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2008/02/27 08:04:51 bernd Exp $
 
 HOMEPAGE=	http://www.graphicsmagick.org/
 CATEGORIES=	devel graphics
 COMMENT=	image processing tools with stable ABI
 DISTNAME=	GraphicsMagick-1.1.11
+PKGNAME=	${DISTNAME}p0
 
-SHARED_LIBS +=	GraphicsMagick       0.1      # .1.11
+SHARED_LIBS +=	GraphicsMagick       0.2      # .1.11
 SHARED_LIBS +=	GraphicsMagickWand   0.1      # .0.4
 SHARED_LIBS +=	GraphicsMagick++     0.1      # .1.3
 
