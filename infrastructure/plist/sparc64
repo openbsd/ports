@@ -1,4 +1,4 @@
-# $OpenBSD: sparc64,v 1.28 2008/02/08 22:24:24 okan Exp $
+# $OpenBSD: sparc64,v 1.29 2008/02/27 19:05:23 pvalchev Exp $
 # This is the master list of subdirs used to choose sparc64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -9,7 +9,7 @@ editors/vim,no_x11
 editors/emacs21
 archivers/unzip
 archivers/bzip2
-print/texlive/base
+#print/texlive/base
 net/nmap
 net/pptp
 sysutils/cdrtools
@@ -30,37 +30,37 @@ textproc/xpdf
 x11/windowmaker
 x11/windowmaker-extra
 www/tidy
-#editors/nedit
-#databases/openldap,-server
-#x11/rxvt
-#x11/xpostit
-#x11/xdaliclock
-#x11/xkeycaps
-#audio/mp3cddb
-#editors/nano
+editors/nedit
+databases/openldap,-server
+x11/rxvt
+x11/xpostit
+x11/xdaliclock
+x11/xkeycaps
+audio/mp3cddb
+editors/nano
 textproc/antiword
 editors/ted
 lang/python/2.5
 lang/python/2.5,-tools
-#www/mod_perl
-#games/xkobo,harder
-#games/xlife
+www/mod_perl
+games/xkobo,harder
+games/xlife
 #cad/qcad
 #x11/xglobe
 #graphics/mpeg_play
 #benchmarks/tcpblast
-#www/links
+www/links
 #graphics/gqview
-#net/epic4
-#net/irssi
-#sysutils/pftop
-#security/bsd-airtools
+net/epic4
+net/irssi
+sysutils/pftop
+security/bsd-airtools
 #editors/abiword
-#archivers/zip
-#net/snort
-#x11/aterm
-#net/ettercap
-#security/stunnel
-#net/silc-client
-#graphics/xfig
-#x11/xautolock
+archivers/zip
+net/snort
+x11/aterm
+net/ettercap
+security/stunnel
+net/silc-client
+graphics/xfig
+x11/xautolock
