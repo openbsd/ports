@@ -1,0 +1,19 @@
+$OpenBSD: patch-agent_mibgroup_hardware_memory_memory_netbsd_c,v 1.1 2008/02/28 18:26:28 okan Exp $
+--- agent/mibgroup/hardware/memory/memory_netbsd.c.orig	Mon Mar  6 11:23:52 2006
++++ agent/mibgroup/hardware/memory/memory_netbsd.c	Thu Feb 28 11:22:10 2008
+@@ -37,11 +37,11 @@ int netsnmp_mem_arch_load( netsnmp_cache *cache, void 
+     size_t         total_size  = sizeof(total);
+     int            total_mib[] = { CTL_VM, VM_METER };
+ 
+-    long            phys_mem;
+-    long            user_mem;
++    int64_t         phys_mem;
++    int64_t         user_mem;
+     size_t          mem_size  = sizeof(phys_mem);
+-    int             phys_mem_mib[] = { CTL_HW, HW_PHYSMEM };
+-    int             user_mem_mib[] = { CTL_HW, HW_USERMEM };
++    int             phys_mem_mib[] = { CTL_HW, HW_PHYSMEM64 };
++    int             user_mem_mib[] = { CTL_HW, HW_USERMEM64 };
+ 
+     /*
+      * Retrieve the memory information from the underlying O/S...
