@@ -1,9 +1,12 @@
 [Desktop Entry]
+Version=1.0
 Encoding=UTF-8
 Type=Application
 Name=Eclipse
-GenericName=Eclipse, an IDE for all reasons
+GenericName=Eclipse IDE
+Comment=Eclipse Integrated Development Environment
 Icon=%%PREFIX%%/eclipse/icon.xpm
-Exec=%%PREFIX%%/eclipse/eclipse
+Exec=%%PREFIX%%/bin/eclipse
 Terminal=false
-Categories=Development;
+StartupNotify=true
+Categories=Application;Development;
