@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2006/01/09 23:38:18 naddy Exp $
---- configure.orig	Mon Jan  9 12:41:55 2006
-+++ configure	Mon Jan  9 12:42:27 2006
+$OpenBSD: patch-configure,v 1.2 2008/02/28 21:47:52 merdely Exp $
+--- configure.orig	Fri Sep 21 08:08:22 2001
++++ configure	Thu Feb 28 11:12:28 2008
 @@ -1774,7 +1774,7 @@ rm -f conftest*
      # must not use .so.1.0 here
      ;;
@@ -10,3 +10,12 @@ $OpenBSD: patch-configure,v 1.1 2006/01/09 23:38:18 naddy Exp $
      ;;
    *cygwin32*)
      have_cdk=yes;
+@@ -1854,8 +1854,6 @@ fi
+ #
+ 
+ 
+-CXXFLAGS=`echo " $CXXFLAGS " | sed -e 's/ -g / /g' -e 's/ -O[0-9]* / /g'`
+-CFLAGS=`echo " $CFLAGS " | sed -e 's/ -g / /g' -e 's/ -O[0-9]* / /g'`
+ 
+ if test X"$use_opt" != Xno; then
+   CXXFLAGS="$CONF_OPT_FLAGS $CXXFLAGS"

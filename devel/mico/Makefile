@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2008/02/28 21:47:52 merdely Exp $
 
 COMMENT=	free and complete CORBA-compliant implementation
 
 DISTNAME=	mico-2.3.6
-PKGNAME=	$(DISTNAME)p1
+PKGNAME=	$(DISTNAME)p2
 CATEGORIES=	devel
 
 # The build framework accommodates only a single shared lib extension.
@@ -17,8 +17,6 @@ LIB_VERSION=	2.0
 HOMEPAGE=	http://www.mico.org/
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Andre S. Barbosa <andre@ravel.ufrj.br>
-
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -28,6 +26,7 @@ WANTLIB=		c m ncurses readline stdc++
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LIB_VERSION=${LIB_VERSION}
+CONFIGURE_ARGS+=	--disable-optimize
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 
