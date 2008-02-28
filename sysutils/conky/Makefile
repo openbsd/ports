@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/02/03 16:04:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/02/28 18:28:56 okan Exp $
 
 # needs apmvar.h
 ONLY_FOR_ARCHS= amd64 arm i386 macppc sparc
@@ -6,6 +6,8 @@ ONLY_FOR_ARCHS= amd64 arm i386 macppc sparc
 COMMENT=	light-weight system monitor
 
 DISTNAME=	conky-1.4.9
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
 
