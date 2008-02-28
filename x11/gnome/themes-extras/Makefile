@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/02/19 14:57:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/02/28 17:24:00 ajacoutot Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes-extras
 GNOME_VERSION=		2.20
 CATEGORIES=		x11
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 TAR=			${LOCALBASE}/bin/gtar
 
