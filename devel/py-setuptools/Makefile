@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/13 20:51:24 martynas Exp $
+# $OpenBSD: Makefile,v 1.7 2008/02/29 17:19:05 merdely Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
 DISTNAME=	setuptools-0.6c7
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	devel
 PKG_ARCH=	*
 

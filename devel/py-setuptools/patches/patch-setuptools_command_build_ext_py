@@ -1,0 +1,12 @@
+$OpenBSD: patch-setuptools_command_build_ext_py,v 1.1 2008/02/29 17:19:05 merdely Exp $
+--- setuptools/command/build_ext.py.orig	Thu Feb 28 17:28:13 2008
++++ setuptools/command/build_ext.py	Thu Feb 28 17:28:33 2008
+@@ -70,7 +70,7 @@ class build_ext(_build_ext):
+                 self.write_stub(package_dir or os.curdir, ext, True)
+ 
+ 
+-    if _build_ext is not _du_build_ext:
++    if _build_ext is not _du_build_ext and not hasattr(_build_ext,'pyrex_sources'):
+         # Workaround for problems using some Pyrex versions w/SWIG and/or 2.4
+         def swig_sources(self, sources, *otherargs):
+             # first do any Pyrex processing
