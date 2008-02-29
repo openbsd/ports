@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2008/02/29 09:28:45 espie Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 
 COMMENT=	programmable MUD client, with macro support and more
 
-PKGNAME=	tinyfugue-4.0s1p2
+PKGNAME=	tinyfugue-4.0s1p3
 DISTNAME=	tf-40s1
 CATEGORIES=	net games
 
-HOMEPAGE=	http://tf.tcp.com/~hawkeye/tf/
+HOMEPAGE=	http://tinyfugue.sourceforge.net/
+
+MAINTAINER=	Markus Lude <markus.lude@gmx.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m termcap z 
 
-MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyfugue/} \
 		ftp://ftp.demon.co.uk/pub/games/mud/
 
 MASTER_SITES0=	http://inphobia.net/openbsd/patches/
