@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/16 21:35:04 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2008/02/29 21:51:01 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GnuPG extension for Thunderbird
 
 VER=		0.95.5
 DISTNAME=	enigmail-${VER}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail security
 
 SHARED_LIBS=	enigmime	13.0
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	::${THUNDERBIRD_DIR}:configure \
 		::archivers/unzip
 RUN_DEPENDS=	::security/gnupg
 
-LIB_DEPENDS=	mozilla-thunderbird/xpcom,mozilla-thunderbird/xpcom_compat,mozilla-thunderbird/xpcom_core:mozilla-thunderbird-2.0.0.9:${THUNDERBIRD_DIR}
+LIB_DEPENDS=	mozilla-thunderbird/xpcom,mozilla-thunderbird/xpcom_compat,mozilla-thunderbird/xpcom_core:mozilla-thunderbird-2.0.0.12:${THUNDERBIRD_DIR}
 WANTLIB=	c m nspr4 plc4 plds4
 
 USE_X11=	Yes
