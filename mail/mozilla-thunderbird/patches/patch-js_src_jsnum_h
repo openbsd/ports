@@ -1,13 +1,12 @@
-$OpenBSD: patch-js_src_jsnum_h,v 1.1 2008/02/12 23:19:37 sthen Exp $
---- js/src/jsnum.h.orig	Sun Feb 10 22:56:20 2008
-+++ js/src/jsnum.h	Sun Feb 10 22:54:34 2008
-@@ -61,7 +61,9 @@ JS_BEGIN_EXTERN_C
+$OpenBSD: patch-js_src_jsnum_h,v 1.2 2008/02/29 21:49:48 bernd Exp $
+--- js/src/jsnum.h.orig	Thu Nov  1 21:52:24 2007
++++ js/src/jsnum.h	Wed Feb 27 12:39:54 2008
+@@ -61,7 +61,7 @@ JS_BEGIN_EXTERN_C
   */
  
  #if defined(__arm) || defined(__arm32__) || defined(__arm26__) || defined(__arm__)
-+#if !defined(__QNXNTO__) && !defined(__OpenBSD__) /* Armel ABI */
+-#ifndef __QNXNTO__
++#if !defined(__QNXNTO__) && !defined(__OpenBSD__)
  #define CPU_IS_ARM
-+#endif
  #endif
- 
- typedef union jsdpun {
+ #endif
