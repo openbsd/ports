@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_util_c,v 1.1 2008/02/29 09:29:10 espie Exp $
+--- src/util.c.orig	Sat Mar  6 23:43:25 1999
++++ src/util.c	Wed Nov 28 12:48:49 2007
+@@ -1124,6 +1124,7 @@ int tftime(dest, fmt, sec, usec)
+         CONST char *s;
+         static char fmtbuf[3] = "%?";  /* static to allow init in K&R C */
+         struct tm *local = NULL;
++        time_t lt;
+         if (!*fmt) fmt = "%c";
+         for (s = fmt; *s; s++) {
+             if (*s != '%') {
+@@ -1133,7 +1134,7 @@ int tftime(dest, fmt, sec, usec)
+             } else if (*s == '.') {
+                 Sprintf(dest, SP_APPEND, "%02ld", (usec + 5000) / 10000);
+             } else {
+-                if (!local) local = localtime(&sec);
++                if (!local) { lt = sec; local = localtime(&lt); }
+                 fmtbuf[1] = *s;
+                 Stringterm(dest, dest->len + 32);
+                 dest->len += strftime(dest->s + dest->len, 32, fmtbuf, local);
