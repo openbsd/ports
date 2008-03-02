@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_server_c,v 1.5 2008/03/02 10:04:22 jasper Exp $
+--- src/server.c.orig	Fri Feb 29 15:52:04 2008
++++ src/server.c	Fri Feb 29 18:59:11 2008
+@@ -697,9 +697,6 @@ int main (int argc, char **argv) {
+ 			}
+ 		}
+ 
+-		/* #372: solaris need some fds extra for devpoll */
+-		if (rlim.rlim_cur > 10) rlim.rlim_cur -= 10;
+-
+ 		if (srv->event_handler == FDEVENT_HANDLER_SELECT) {
+ 			srv->max_fds = rlim.rlim_cur < FD_SETSIZE - 200 ? rlim.rlim_cur : FD_SETSIZE - 200;
+ 		} else {
+@@ -759,6 +756,19 @@ int main (int argc, char **argv) {
+ 
+ 			return -1;
+ 		}
++
++#ifdef HAVE_PWD_H
++		/**
++		 * initgroups() has to be called before chroot()
++		 */
++		if (srv->srvconf.groupname->used) {
++			setgid(grp->gr_gid);
++			setgroups(0, NULL);
++			if (srv->srvconf.username->used) {
++				initgroups(srv->srvconf.username->ptr, grp->gr_gid);
++			}
++		}
++#endif
+ #ifdef HAVE_CHROOT
+ 		if (srv->srvconf.changeroot->used) {
+ 			tzset();
+@@ -775,15 +785,7 @@ int main (int argc, char **argv) {
+ #endif
+ #ifdef HAVE_PWD_H
+ 		/* drop root privs */
+-		if (srv->srvconf.groupname->used) {
+-			setgid(grp->gr_gid);
+-			setgroups(0, NULL);
+-		}
+-
+ 		if (srv->srvconf.username->used) {
+-			if (srv->srvconf.groupname->used) {
+-				initgroups(srv->srvconf.username->ptr, grp->gr_gid);
+-			}
+ 			setuid(pwd->pw_uid);
+ 		}
+ #endif

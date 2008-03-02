@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fdevent_solaris_devpoll_c,v 1.1 2008/03/02 10:04:22 jasper Exp $
+--- src/fdevent_solaris_devpoll.c.orig	Fri Feb 29 15:51:27 2008
++++ src/fdevent_solaris_devpoll.c	Fri Feb 29 15:51:47 2008
+@@ -67,7 +67,7 @@ static int fdevent_solaris_devpoll_poll(fdevents *ev, 
+ 	int ret;
+ 
+ 	dopoll.dp_timeout = timeout_ms;
+-	dopoll.dp_nfds = ev->maxfds;
++	dopoll.dp_nfds = ev->maxfds - 1;
+ 	dopoll.dp_fds = ev->devpollfds;
+ 
+ 	ret = ioctl(ev->devpoll_fd, DP_POLL, &dopoll);
