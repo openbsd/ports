@@ -7,3 +7,5 @@ functionality of programming for a particular web server API.
 Nonetheless, the feature set is rich enough for programming virtually
 any type of web application, but the result is generally more
 scalable.
+
+At this point, FastCGI does not work with apache1 and Php.

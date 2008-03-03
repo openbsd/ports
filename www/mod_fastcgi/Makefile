@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/03/03 19:32:53 espie Exp $
 
 COMMENT=        Apache FastCGI module
 
 DISTNAME=       mod_fastcgi-2.4.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CATEGORIES=     www
 
