@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/02 09:40:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/03/03 08:47:10 ajacoutot Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
 DISTNAME=	pioneers-0.11.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11/gnome
 
 PATCHFILES=	pioneers_0_11_3.patch:0
 
 HOMEPAGE=	http://pio.sourceforge.net/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,10 +20,10 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
 		atk-1.0 audiofile bonobo-2 bonobo-activation c cairo \
 		crypto dbus-1 dbus-glib-1 esd expat fontconfig \
-		freetype gconf-2 glib-2.0 glitz gmodule-2.0 gnome-2 \
-		gnomevfs-2 gobject-2.0 gthread-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre png popt pthread ssl \
-		util xml2 z
+		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pcre png popt pthread ssl util xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pio/}
 MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
@@ -35,7 +36,7 @@ RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
 		:desktop-file-utils-*:devel/desktop-file-utils \
 		::x11/gnome/librsvg,no_gnome \
 		::x11/gnome/yelp
-LIB_DEPENDS=	gtk-x11-2.0,gdk_pixbuf-2.0,gdk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	gnome-2.>=1900::x11/gnome/libgnome
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
