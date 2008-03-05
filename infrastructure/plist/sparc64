@@ -1,4 +1,4 @@
-# $OpenBSD: sparc64,v 1.29 2008/02/27 19:05:23 pvalchev Exp $
+# $OpenBSD: sparc64,v 1.30 2008/03/05 17:52:25 pvalchev Exp $
 # This is the master list of subdirs used to choose sparc64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -46,11 +46,11 @@ www/mod_perl
 games/xkobo,harder
 games/xlife
 #cad/qcad
-#x11/xglobe
-#graphics/mpeg_play
-#benchmarks/tcpblast
+x11/xglobe
+graphics/mpeg_play
+benchmarks/tcpblast
 www/links
-#graphics/gqview
+graphics/gqview
 net/epic4
 net/irssi
 sysutils/pftop
