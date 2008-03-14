@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/03/14 23:55:30 djm Exp $
 COMMENT=	Python syntax highlighter
 
-DISTNAME=	Pygments-0.8
-PKGNAME=	${DISTNAME:L:S/^/py-/}p0
+DISTNAME=	Pygments-0.9
+PKGNAME=	${DISTNAME:L:S/^/py-/}
 CATEGORIES=    	textproc devel
 
 HOMEPAGE=	http://pygments.org/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pygments/}
+MASTER_SITES=	http://pypi.python.org/packages/source/P/Pygments/
 
 MODPY_SETUPTOOLS=	Yes
 
