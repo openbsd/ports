@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2008/01/06 13:48:13 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2008/03/15 09:44:12 espie Exp $
 @pkgpath x11/qt4
 %%SHARED%%
 bin/assistant4
@@ -1804,6 +1804,10 @@ include/X11/qt4/QtOpenGL/QGLFormat
 include/X11/qt4/QtOpenGL/QGLFramebufferObject
 include/X11/qt4/QtOpenGL/QGLPixelBuffer
 include/X11/qt4/QtOpenGL/QGLWidget
+include/X11/qt4/QtOpenGL/QMacCompatGLenum
+include/X11/qt4/QtOpenGL/QMacCompatGLint
+include/X11/qt4/QtOpenGL/QMacCompatGLuint
+include/X11/qt4/QtOpenGL/QMacGLCompatTypes
 include/X11/qt4/QtOpenGL/QtOpenGL
 include/X11/qt4/QtOpenGL/qgl.h
 include/X11/qt4/QtOpenGL/qglcolormap.h
@@ -2362,13 +2366,16 @@ lib/qt4/translations/assistant_de.qm
 lib/qt4/translations/assistant_ja.qm
 lib/qt4/translations/assistant_pl.qm
 lib/qt4/translations/assistant_zh_CN.qm
+lib/qt4/translations/assistant_zh_TW.qm
 lib/qt4/translations/designer_de.qm
 lib/qt4/translations/designer_ja.qm
 lib/qt4/translations/designer_pl.qm
 lib/qt4/translations/designer_zh_CN.qm
+lib/qt4/translations/designer_zh_TW.qm
 lib/qt4/translations/linguist_ja.qm
 lib/qt4/translations/linguist_pl.qm
 lib/qt4/translations/linguist_zh_CN.qm
+lib/qt4/translations/linguist_zh_TW.qm
 lib/qt4/translations/qt_ar.qm
 lib/qt4/translations/qt_de.qm
 lib/qt4/translations/qt_es.qm
@@ -2382,10 +2389,13 @@ lib/qt4/translations/qt_sk.qm
 lib/qt4/translations/qt_sv.qm
 lib/qt4/translations/qt_uk.qm
 lib/qt4/translations/qt_zh_CN.qm
+lib/qt4/translations/qt_zh_TW.qm
 lib/qt4/translations/qtconfig_pl.qm
 lib/qt4/translations/qtconfig_zh_CN.qm
+lib/qt4/translations/qtconfig_zh_TW.qm
 lib/qt4/translations/qvfb_pl.qm
 lib/qt4/translations/qvfb_zh_CN.qm
+lib/qt4/translations/qvfb_zh_TW.qm
 share/doc/qt4/
 share/doc/qt4/OPENSOURCE-NOTICE.TXT
 share/doc/qt4/README

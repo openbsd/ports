@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_network_qsslsocket_openssl_symbols_cpp,v 1.4 2008/01/06 13:48:12 espie Exp $
---- src/network/qsslsocket_openssl_symbols.cpp.orig	Tue Dec  4 17:43:19 2007
-+++ src/network/qsslsocket_openssl_symbols.cpp	Mon Dec 24 12:17:31 2007
-@@ -203,7 +203,7 @@ DEFINEFUNC3(DSA *, d2i_DSAPrivateKey, DSA **a, a, unsi
+$OpenBSD: patch-src_network_qsslsocket_openssl_symbols_cpp,v 1.5 2008/03/15 09:44:12 espie Exp $
+--- src/network/qsslsocket_openssl_symbols.cpp.orig	Tue Feb 19 18:47:39 2008
++++ src/network/qsslsocket_openssl_symbols.cpp	Mon Mar  3 10:10:16 2008
+@@ -210,7 +210,7 @@ DEFINEFUNC3(DSA *, d2i_DSAPrivateKey, DSA **a, a, unsi
          qWarning("QSslSocket: cannot resolve "#func);
  #endif
  
