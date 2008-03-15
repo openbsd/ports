@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/15 09:29:46 jasper Exp $
+bin/gnome-autogen.sh
+bin/gnome-doc-common
+share/aclocal/
+share/aclocal/gnome-common.m4
+share/aclocal/gnome-compiler-flags.m4
+share/doc/gnome-common/
+share/doc/gnome-common/README
+share/gnome-common/
+share/gnome-common/data/
+share/gnome-common/data/omf.make
+share/gnome-common/data/xmldocs.make
