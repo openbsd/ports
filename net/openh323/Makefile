@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2008/03/15 17:38:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 video conferencing library
 
-DISTNAME=	openh323-v1_18_0
-PKGNAME=	openh323-1.18.0p2
+V=		1_19_0_1
+DISTNAME=	openh323-v${V}
+PKGNAME=	openh323-${V:S/_/./g}
 CATEGORIES=	net devel
 
 EXTRACT_SUFX=	-src-tar.gz
 
-SHARED_LIBS=	h323	1.18    # 1.18
+SHARED_LIBS=	h323	2.0    # 1.19
 
-HOMEPAGE=	http://www.voxgratia.org/
+HOMEPAGE=	http://openh323.sourceforge.net/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -22,11 +23,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/releases/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323/}
 
 WANTLIB=	crypto expat ossaudio ssl
 
-LIB_DEPENDS=	pt.>=1::devel/pwlib \
+LIB_DEPENDS=	pt.>=2::devel/pwlib \
 		speex.>=4::audio/speex \
 		avutil.>=2::graphics/ffmpeg
 
@@ -41,7 +42,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread -lavutil"
 CONFIGURE_ARGS=	--enable-h263avcodec \
-		--disable-localspeex
+		--disable-localspeex \
+		--disable-vich263
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 CFLAGS+=	-fPIC
@@ -49,18 +51,20 @@ CFLAGS+=	-fPIC
 
 MAKE_ENV+=	STDCCFLAGS="${STDCCFLAGS} -I${WRKSRC}/include" \
 		CC=${CC} CPLUS=${CXX} BUILDSELF="1"
+MAKE_FLAGS=	LIB_MAJOR_VERSION=${LIBh323_VERSION:R} \
+		LIB_MINOR_VERSION=${LIBh323_VERSION:E}
 
 do-extract:
 	@tar xzf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR}
 
 pre-configure:
-	@perl -pi -e 's,MAJOR_VERSION.*,MAJOR_VERSION ${LIBh323_VERSION:R},g;' \
-		-e 's,MINOR_VERSION.*,MINOR_VERSION ${LIBh323_VERSION:E},g' \
-		${WRKSRC}/version.h
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/plugins/audio/Speex/Makefile.in
 	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g;' \
 		-e 's,!!SOSUFX!!,so.${LIBh323_VERSION},g' \
 		${WRKSRC}/openh323u.mak.in
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/version.h ${PREFIX}/share/openh323
 
 .include <bsd.port.mk>

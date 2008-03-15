@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_ffh263codec_cxx,v 1.1 2007/04/26 14:10:30 ajacoutot Exp $
+$OpenBSD: patch-src_ffh263codec_cxx,v 1.2 2008/03/15 17:38:43 ajacoutot Exp $
 --- src/ffh263codec.cxx.orig	Wed Dec  8 03:03:59 2004
-+++ src/ffh263codec.cxx	Sat Apr 14 17:26:09 2007
-@@ -193,7 +193,7 @@ class FfmpgLink : public H323DynaLink
++++ src/ffh263codec.cxx	Tue Mar  4 14:29:13 2008
+@@ -142,6 +142,7 @@
+  *
+  */
+ #include <ptlib.h>
++#include <ptlib/video.h>
+ #include "h263codec.h"
+ 
+ #ifdef __GNUC__
+@@ -193,7 +194,7 @@ class FfmpgLink : public H323DynaLink
  
    AVFrame *AvcodecAllocFrame(void);
  
@@ -10,7 +18,7 @@ $OpenBSD: patch-src_ffh263codec_cxx,v 1.1 2007/04/26 14:10:30 ajacoutot Exp $
  
    int AvcodecClose(AVCodecContext *ctx);
    int AvcodecDecodeVideo(AVCodecContext *ctx, AVFrame *picture, int *got_picture_ptr, BYTE *buf, int buf_size);
-@@ -217,7 +217,9 @@ class FfmpgLink : public H323DynaLink
+@@ -217,7 +218,9 @@ class FfmpgLink : public H323DynaLink
  
    void (*Favcodec_get_context_defaults)(AVCodecContext *s);
    void (*Favcodec_init)(void);
@@ -20,7 +28,7 @@ $OpenBSD: patch-src_ffh263codec_cxx,v 1.1 2007/04/26 14:10:30 ajacoutot Exp $
    void (*Favcodec_register_all)(void);
  };           
  
-@@ -287,17 +289,21 @@ FfmpgLink::FfmpgLink()
+@@ -287,17 +290,21 @@ FfmpgLink::FfmpgLink()
      return;
    }
  
@@ -42,7 +50,7 @@ $OpenBSD: patch-src_ffh263codec_cxx,v 1.1 2007/04/26 14:10:30 ajacoutot Exp $
  
    isLoadedOK = TRUE;
  }
-@@ -388,10 +394,12 @@ void FfmpgLink::AvcodecInit(void)
+@@ -388,10 +395,12 @@ void FfmpgLink::AvcodecInit(void)
    Favcodec_init();
  }
  
@@ -55,7 +63,7 @@ $OpenBSD: patch-src_ffh263codec_cxx,v 1.1 2007/04/26 14:10:30 ajacoutot Exp $
  
  void FfmpgLink::AFavcodecRegisterAll(void)
  {
-@@ -614,9 +622,9 @@ void H323_FFH263Codec::InitialiseCodec()
+@@ -614,9 +623,9 @@ void H323_FFH263Codec::InitialiseCodec()
      }
  
  #ifdef FRAME_RATE_BASE  

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_h261codec_cxx,v 1.1 2008/03/15 17:38:43 ajacoutot Exp $
+--- src/h261codec.cxx.orig	Tue Jun  6 10:05:40 2006
++++ src/h261codec.cxx	Tue Mar  4 11:18:30 2008
+@@ -279,6 +279,7 @@
+ #include "h245.h"
+ #include "rtp.h"
+ 
++#include <ptlib/video.h>
+ #include "vic/p64.h"
+ #include "vic/p64encoder.h"
+ 

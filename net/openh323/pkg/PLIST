@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/04/26 14:10:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/03/15 17:38:43 ajacoutot Exp $
 include/openh323/
 include/openh323/QTIoctl.h
 include/openh323/channels.h
@@ -43,6 +43,7 @@ include/openh323/h4508.h
 include/openh323/h4509.h
 include/openh323/h450pdu.h
 include/openh323/h460.h
+include/openh323/h4601.h
 include/openh323/h501.h
 include/openh323/h501pdu.h
 include/openh323/hid.h
@@ -85,3 +86,5 @@ lib/pwlib/codecs/audio/lpc10_audio_pwplugin.so
 lib/pwlib/codecs/audio/speex_audio_pwplugin.so
 share/openh323/
 share/openh323/openh323u.mak
+share/openh323/version.h
+@extra rm -f %D/lib/pwlib/libavcodec.so

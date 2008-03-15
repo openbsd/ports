@@ -1,7 +1,7 @@
-$OpenBSD: patch-openh323u_mak_in,v 1.2 2007/08/02 14:37:31 ajacoutot Exp $
---- openh323u.mak.in.orig	Mon Jan  3 06:25:51 2005
-+++ openh323u.mak.in	Wed Aug  1 18:40:01 2007
-@@ -163,8 +163,12 @@
+$OpenBSD: patch-openh323u_mak_in,v 1.3 2008/03/15 17:38:43 ajacoutot Exp $
+--- openh323u.mak.in.orig	Tue May 30 13:09:24 2006
++++ openh323u.mak.in	Mon Mar  3 12:29:57 2008
+@@ -166,8 +166,12 @@
  #
  
  PWLIBDIR	= @PWLIBDIR@
@@ -14,7 +14,7 @@ $OpenBSD: patch-openh323u_mak_in,v 1.2 2007/08/02 14:37:31 ajacoutot Exp $
  LDFLAGS		+= @LDFLAGS@
  LDLIBS		+= @LDLIBS@
  ENDLDLIBS	:= @ENDLDLIBS@ $(ENDLDLIBS)
-@@ -197,15 +201,13 @@ LIBDIRS += $(OPENH323DIR)
+@@ -201,15 +205,13 @@ LIBDIRS += $(OPENH323DIR)
  #OH323_SUPPRESS_H235	= 1
  
  OH323_SRCDIR = $(OPENH323DIR)/src
@@ -34,7 +34,7 @@ $OpenBSD: patch-openh323u_mak_in,v 1.2 2007/08/02 14:37:31 ajacoutot Exp $
  
  ifeq ($(NOTRACE), 1)
  STDCCFLAGS += -DPASN_NOPRINTON -DPASN_LEANANDMEAN
-@@ -216,8 +218,12 @@ RCFLAGS	   += -DPTRACING
+@@ -220,8 +222,12 @@ RCFLAGS	   += -DPTRACING
  OH323_SUFFIX = $(OBJ_SUFFIX)
  endif # NOTRACE
  
