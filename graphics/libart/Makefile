@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2008/02/03 20:52:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2008/03/15 09:21:11 jasper Exp $
 
 COMMENT=		high-performance 2D graphics library
 
-VERSION=		2.3.20
-DISTNAME=		libart_lgpl-${VERSION}
-PKGNAME=		libart-${VERSION}
+GNOME_PROJECT=		libart_lgpl
+GNOME_VERSION=		2.3.20
+PKGNAME=		libart-${VERSION}p0
 SHARED_LIBS +=	art_lgpl_2           5.20     # .5.20
 CATEGORIES=		graphics
 
-HOMEPAGE=		http://www.artofcode.com/libart.html
+HOMEPAGE=		http://www.levien.com/libart/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,9 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libart_lgpl/2.3/}
+MODULES=		x11/gnome
 
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
