@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Encoding=UTF-8
+Name=Aqualung
+Name[de]=Aqualung
+Name[fi]=Aqualung
+GenericName=Music Player
+GenericName[de]=Musik-Wiedergabe
+GenericName[fi]=musiikkisoitin
+Icon=%%PREFIX%%/share/aqualung/icon_64.png
+Exec=aqualung
+Terminal=false
+Categories=Application;AudioVideo;Audio;Player;

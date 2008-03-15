@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/15 15:52:02 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2008/03/15 11:54:10 landry Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta9.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://aqualung.factorial.hu/
@@ -32,6 +33,8 @@ LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		avcodec,avformat,avutil::graphics/ffmpeg \
 		vorbis,vorbisfile,vorbisenc::audio/libvorbis \
 		bz2::archivers/bzip2
+
+RUN_DEPENDS=	::devel/desktop-file-utils
 		
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender c expat freetype fontconfig atk-1.0 \
@@ -78,5 +81,9 @@ CONFIGURE_ARGS=	--with-flac \
 
 post-install:
 	mv ${PREFIX}/share/aqualung/doc ${PREFIX}/share/doc/aqualung
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	sed -e 's+%%PREFIX%%+${TRUEPREFIX}+' ${FILESDIR}/aqualung.desktop > \
+		${PREFIX}/share/applications/aqualung.desktop
+
 
 .include <bsd.port.mk>
