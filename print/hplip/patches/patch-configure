@@ -1,17 +1,17 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
---- configure.orig	Sat Oct 20 00:38:38 2007
-+++ configure	Sat Oct 27 16:59:18 2007
+$OpenBSD: patch-configure,v 1.2 2008/03/15 10:18:30 ajacoutot Exp $
+--- configure.orig	Fri Mar  7 09:26:40 2008
++++ configure	Fri Mar  7 09:28:25 2008
 @@ -726,10 +726,10 @@ MAKEFLAGS=
  SHELL=${CONFIG_SHELL-/bin/sh}
  
  # Identity of this package.
 -PACKAGE_NAME='HP Linux Imaging and Printing'
-+PACKAGE_NAME='HP Unix Imaging and Printing'
++PACKAGE_NAME='HP Linux (Unix) Imaging and Printing'
  PACKAGE_TARNAME='hplip'
- PACKAGE_VERSION='2.7.10'
--PACKAGE_STRING='HP Linux Imaging and Printing 2.7.10'
-+PACKAGE_STRING='HP Unix Imaging and Printing 2.7.10'
- PACKAGE_BUGREPORT='2.7.10.11'
+ PACKAGE_VERSION='2.7.12'
+-PACKAGE_STRING='HP Linux Imaging and Printing 2.7.12'
++PACKAGE_STRING='HP Linux (Unix) Imaging and Printing 2.7.12'
+ PACKAGE_BUGREPORT='2.7.12.10'
  
  # Factoring default headers for most tests.
 @@ -20513,13 +20513,13 @@ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m
@@ -40,10 +40,11 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
  
  fi
  
-@@ -20733,80 +20733,6 @@ echo "$as_me: error: \"cannot find libjpeg support\"" 
+@@ -20732,82 +20732,6 @@ else
+ echo "$as_me: error: \"cannot find libjpeg support\"" >&2;}
     { (exit 102); exit 102; }; }
  fi
- 
+-
 -
 -{ echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
 -echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6; }
@@ -118,6 +119,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
 -echo "$as_me: error: \"cannot find libdl support\"" >&2;}
 -   { (exit 104); exit 104; }; }
 -fi
- 
+-
  
  # Checks for required header files.
+ { echo "$as_me:$LINENO: checking for ANSI C header files" >&5

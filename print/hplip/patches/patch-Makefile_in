@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
---- Makefile.in.orig	Sat Oct 20 00:38:37 2007
-+++ Makefile.in	Tue Oct 23 19:19:30 2007
-@@ -1845,7 +1845,7 @@ lib_LTLIBRARIES = $(am__append_4)
+$OpenBSD: patch-Makefile_in,v 1.2 2008/03/15 10:18:30 ajacoutot Exp $
+--- Makefile.in.orig	Fri Dec 14 23:31:14 2007
++++ Makefile.in	Fri Mar  7 10:24:29 2008
+@@ -1883,7 +1883,7 @@ lib_LTLIBRARIES = $(am__append_4)
  @DOC_BUILD_TRUE@www243dir = $(docdir)/install/step4/suse
  @DOC_BUILD_TRUE@dist_www243_DATA = $(wwwsrc)/install/step4/suse/*
  @DOC_BUILD_TRUE@www251dir = $(docdir)/install/manual
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
  @DOC_BUILD_TRUE@www252dir = $(docdir)/install/manual/distros
  @DOC_BUILD_TRUE@dist_www252_DATA = $(wwwsrc)/install/manual/distros/*
  @DOC_BUILD_TRUE@www261dir = $(docdir)/install/install
-@@ -1857,7 +1857,7 @@ lib_LTLIBRARIES = $(am__append_4)
+@@ -1895,7 +1895,7 @@ lib_LTLIBRARIES = $(am__append_4)
  @DOC_BUILD_TRUE@www5dir = $(docdir)/supported_devices
  @DOC_BUILD_TRUE@dist_www5_DATA = $(wwwsrc)/supported_devices/*
  @DOC_BUILD_TRUE@www6dir = $(docdir)/tech_docs
@@ -19,7 +19,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
  @DOC_BUILD_TRUE@www61dir = $(docdir)/tech_docs/man_pages
  @DOC_BUILD_TRUE@dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*
  @DOC_BUILD_TRUE@www7dir = $(docdir)/troubleshooting
-@@ -7102,7 +7102,7 @@ install-data-am: install-cupsextLTLIBRARIES install-di
+@@ -1947,7 +1947,7 @@ lib_LTLIBRARIES = $(am__append_4)
+ @HPLIP_BUILD_TRUE@localzdir = $(hplipdir)/data/localization
+ @HPLIP_BUILD_TRUE@dist_postscript_DATA = data/ps/testpage.ps.gz data/ps/clean_page.pdf.gz
+ @HPLIP_BUILD_TRUE@dist_models_DATA = data/models/models.dat
+-@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@dist_images_DATA = data/images/*
++@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@dist_images_DATA = data/images/*.png
+ @HPLIP_BUILD_TRUE@dist_pcl_DATA = data/pcl/align1_8xx.pcl.gz data/pcl/align1_9xx.pcl.gz data/pcl/align2_8xx.pcl.gz data/pcl/align3_8xx.pcl.gz data/pcl/align4_8xx.pcl.gz \
+ @HPLIP_BUILD_TRUE@	data/pcl/align5_8xx.pcl.gz data/pcl/align2_9xx.pcl.gz data/pcl/align3_9xx.pcl.gz data/pcl/align4_450.pcl.gz data/pcl/align6_450.pcl.gz \
+ @HPLIP_BUILD_TRUE@	data/pcl/colorcal1_450.pcl.gz data/pcl/colorcal2_450.pcl.gz data/pcl/crbcal.pcl.gz data/pcl/crcaldone.pcl.gz data/pcl/crcbcal.pcl.gz data/pcl/crccal.pcl.gz \
+@@ -7175,7 +7175,7 @@ install-data-am: install-cupsextLTLIBRARIES install-di
  	install-dist_localzDATA install-dist_modelsDATA \
  	install-dist_pcardSCRIPTS install-dist_pclDATA \
  	install-dist_pluginsSCRIPTS install-dist_postscriptDATA \
@@ -28,7 +37,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
  	install-dist_scanSCRIPTS install-dist_uiSCRIPTS \
  	install-dist_unrelDATA install-dist_www0DATA \
  	install-dist_www1DATA install-dist_www21DATA \
-@@ -7113,8 +7113,8 @@ install-data-am: install-cupsextLTLIBRARIES install-di
+@@ -7186,8 +7186,8 @@ install-data-am: install-cupsextLTLIBRARIES install-di
  	install-dist_www261DATA install-dist_www2DATA \
  	install-dist_www3DATA install-dist_www4DATA \
  	install-dist_www5DATA install-dist_www61DATA \
@@ -39,7 +48,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
  	install-hplip_desktopDATA install-hpmudextLTLIBRARIES \
  	install-libsane_hpaioLTLIBRARIES install-pcardextLTLIBRARIES \
  	install-scanextLTLIBRARIES
-@@ -7249,17 +7249,6 @@ uninstall-am: uninstall-binPROGRAMS uninstall-cupsextL
+@@ -7322,17 +7322,6 @@ uninstall-am: uninstall-binPROGRAMS uninstall-cupsextL
  
  
  install-data-hook: install-foo 
@@ -57,7 +66,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/11/02 15:48:55 ajacoutot Exp $
  #	   Create hp-xxx commands in bindir.
  @HPLIP_BUILD_TRUE@	$(mkinstalldirs) $(DESTDIR)$(bindir)
  @HPLIP_BUILD_TRUE@	for i in $(dist_cmd_SCRIPTS); do \
-@@ -7279,12 +7268,7 @@ install-foo:
+@@ -7352,12 +7341,7 @@ install-foo:
  	if [ "$(foomatic_ppd_install)" = "yes" ]; then \
  	   $(mkinstalldirs) $(DESTDIR)$(hpppddir); \
  	   $(INSTALL_DATA) $(foomatic_ppd_printers) $(DESTDIR)$(hpppddir); \
