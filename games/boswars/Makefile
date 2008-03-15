@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/08 20:21:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/03/15 10:06:00 ajacoutot Exp $
 
 COMMENT=	real-time strategy game
 
-V=		2.4.1
+V=		2.5
 DISTNAME=	boswars-${V}-src
-PKGNAME=	boswars-${V}p0
+PKGNAME=	boswars-${V}
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.boswars.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -35,7 +35,7 @@ LIB_DEPENDS=	SDL.>=7::devel/sdl \
 USE_X11=	Yes
 NO_REGRESS=	Yes
 
-DATA_DIR=	campaigns graphics languages maps scripts sounds units video
+DATA_DIR=	campaigns graphics intro maps languages scripts sounds units
 
 pre-configure:
 	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' \
