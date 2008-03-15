@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/15 12:38:53 mcbride Exp $
+# $OpenBSD: Makefile,v 1.2 2008/03/15 13:24:10 mcbride Exp $
 
-COMMENT=	http://www.suckless.org/download/libixp-0.4.tar.gz
+COMMENT=	stand-alone client/server 9P library
 
 DISTNAME=	libixp-0.4
-PKGNAME=	${DISTNAME}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.suckless.org
