@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2008/03/15 10:32:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.208 2008/03/15 11:01:20 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -155,6 +155,7 @@
      SUBDIR += perdition
      SUBDIR += pflogsumm
      SUBDIR += pgpsendmail
+     SUBDIR += pine-pgp-filters
      SUBDIR += popclient
      SUBDIR += poppassd
      SUBDIR += poppy
