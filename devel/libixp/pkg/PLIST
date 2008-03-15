@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/15 12:38:53 mcbride Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/03/15 15:52:53 mcbride Exp $
 bin/ixpc
-etc/
+@comment etc/
 include/ixp.h
 include/ixp_fcall.h
 lib/libixp.a
 lib/libixp_pthread.a
-share/man/
-share/man/man1/
-@man share/man/man1/ixpc.1
+@man man/man1/ixpc.1
