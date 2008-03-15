@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_libutil_memblock_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
---- lib/libutil/memblock.c.orig	Mon Dec 18 13:29:37 2006
-+++ lib/libutil/memblock.c	Mon Dec 18 13:30:00 2006
-@@ -73,8 +73,8 @@ xmlrpc_mem_block_init(xmlrpc_env *      
+$OpenBSD: patch-lib_libutil_memblock_c,v 1.2 2008/03/15 10:35:54 ajacoutot Exp $
+--- lib/libutil/memblock.c.orig	Fri Sep 23 04:17:35 2005
++++ lib/libutil/memblock.c	Wed Jan 16 14:20:17 2008
+@@ -73,8 +73,8 @@ xmlrpc_mem_block_init(xmlrpc_env *       const envP,
  
      blockP->_block = (void*) malloc(blockP->_allocated);
      if (!blockP->_block)

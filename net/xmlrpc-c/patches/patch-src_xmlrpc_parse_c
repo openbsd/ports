@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_xmlrpc_parse_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+$OpenBSD: patch-src_xmlrpc_parse_c,v 1.2 2008/03/15 10:35:54 ajacoutot Exp $
 --- src/xmlrpc_parse.c.orig	Thu Mar 23 00:48:31 2006
-+++ src/xmlrpc_parse.c	Mon Dec 18 13:41:28 2006
++++ src/xmlrpc_parse.c	Wed Jan 16 14:20:18 2008
 @@ -57,9 +57,9 @@
      do \
          if (xml_element_children_size(elem) != (count)) \
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_xmlrpc_parse_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
      while (0)
  
  static xml_element *
-@@ -595,7 +595,8 @@ parseMethodNameElement(xmlrpc_env *  con
+@@ -595,7 +595,8 @@ parseMethodNameElement(xmlrpc_env *  const envP,
          xmlrpc_env_set_fault_formatted(
              envP, XMLRPC_PARSE_ERROR,
              "A <methodName> element should not have children.  "
@@ -24,7 +24,7 @@ $OpenBSD: patch-src_xmlrpc_parse_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
      else {
          const char * const cdata = xml_element_cdata(nameElemP);
  
-@@ -654,8 +655,8 @@ parseCallChildren(xmlrpc_env *    const 
+@@ -654,8 +655,8 @@ parseCallChildren(xmlrpc_env *    const envP,
                      xmlrpc_env_set_fault_formatted(
                          envP, XMLRPC_PARSE_ERROR,
                          "<methodCall> has extraneous children, other than "
@@ -35,7 +35,7 @@ $OpenBSD: patch-src_xmlrpc_parse_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
                      
                  if (envP->fault_occurred)
                      xmlrpc_DECREF(*paramArrayPP);
-@@ -697,8 +698,8 @@ xmlrpc_parse_call(xmlrpc_env *    const 
+@@ -697,8 +698,8 @@ xmlrpc_parse_call(xmlrpc_env *    const envP,
      if (xmlLen > xmlrpc_limit_get(XMLRPC_XML_SIZE_LIMIT_ID))
          xmlrpc_env_set_fault_formatted(
              envP, XMLRPC_LIMIT_EXCEEDED_ERROR,
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_xmlrpc_parse_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
      else {
          xml_element * callElemP;
          parseCallXml(envP, xmlData, xmlLen, &callElemP);
-@@ -773,8 +774,8 @@ parseFaultElement(xmlrpc_env *        co
+@@ -773,8 +774,8 @@ parseFaultElement(xmlrpc_env *        const envP,
      if (xml_element_children_size(faultElement) != 1)
          xmlrpc_env_set_fault_formatted(
              envP, XMLRPC_PARSE_ERROR,
@@ -57,7 +57,7 @@ $OpenBSD: patch-src_xmlrpc_parse_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
      else {
          xml_element * const faultValueP =
              xml_element_children(faultElement)[0];
-@@ -869,8 +870,8 @@ parseMethodResponseElt(xmlrpc_env *     
+@@ -869,8 +870,8 @@ parseMethodResponseElt(xmlrpc_env *        const envP,
      } else
          xmlrpc_env_set_fault_formatted(
              envP, XMLRPC_PARSE_ERROR,
@@ -68,7 +68,7 @@ $OpenBSD: patch-src_xmlrpc_parse_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
  }
  
  
-@@ -908,9 +909,10 @@ xmlrpc_parse_response2(xmlrpc_env *    c
+@@ -908,9 +909,10 @@ xmlrpc_parse_response2(xmlrpc_env *    const envP,
      if (xmlDataLen > xmlrpc_limit_get(XMLRPC_XML_SIZE_LIMIT_ID))
          xmlrpc_env_set_fault_formatted(
              envP, XMLRPC_LIMIT_EXCEEDED_ERROR,
