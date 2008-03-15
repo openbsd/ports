@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2008/01/25 18:56:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2008/03/15 09:15:31 jasper Exp $
 
 COMMENT=		shared mime database for desktops
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		http://freedesktop.org/~hadess/
+MASTER_SITES=		http://people.freedesktop.org/~hadess/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext \
