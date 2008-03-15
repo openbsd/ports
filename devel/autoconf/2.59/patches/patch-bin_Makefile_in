@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_Makefile_in,v 1.1.1.1 2004/02/10 00:00:14 espie Exp $
---- bin/Makefile.in.orig	2003-11-06 10:33:26.000000000 +0100
-+++ bin/Makefile.in	2004-02-09 22:43:26.000000000 +0100
+$OpenBSD: patch-bin_Makefile_in,v 1.2 2008/03/15 07:24:38 espie Exp $
+--- bin/Makefile.in.orig	Thu Nov  6 10:33:26 2003
++++ bin/Makefile.in	Sat Mar  8 14:09:55 2008
 @@ -198,7 +198,7 @@ edit = sed \
  	-e 's,@AWK\@,$(AWK),g' \
  	-e 's,@VERSION\@,$(VERSION),g' \
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_Makefile_in,v 1.1.1.1 2004/02/10 00:00:14 espie Exp $
  
  
  # autoconf is written in M4sh.
-@@ -468,49 +468,49 @@ $(srcdir)/autoconf.in: $(srcdir)/autocon
+@@ -468,49 +468,49 @@ $(srcdir)/autoconf.in: $(srcdir)/autoconf.as # FIXME: 
  
  autoconf: $(srcdir)/autoconf.in Makefile
  	rm -f autoconf autoconf.tmp

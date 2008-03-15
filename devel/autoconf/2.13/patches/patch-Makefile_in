@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2003/02/15 23:58:57 brad Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2008/03/15 07:24:38 espie Exp $
 --- Makefile.in.orig	Tue Jan  5 14:27:16 1999
-+++ Makefile.in	Wed Nov 17 16:41:36 1999
++++ Makefile.in	Sat Mar  8 14:09:51 2008
 @@ -22,6 +22,7 @@ srcdir = @srcdir@
  VPATH = @srcdir@
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2003/02/15 23:58:57 brad Exp $
  	done
  	for i in $(M4FROZEN); do \
  	  $(INSTALL_DATA) $$i $(acdatadir)/$$i; \
-@@ -150,7 +151,7 @@ install: all $(M4FILES) acconfig.h insta
+@@ -150,7 +151,7 @@ install: all $(M4FILES) acconfig.h installdirs install
  	  $(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
  	done
  	-if test -f autoscan; then \

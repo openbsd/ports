@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2008/03/15 07:24:38 espie Exp $
 --- Makefile.in.orig	Wed Jul 18 16:41:38 2001
-+++ Makefile.in	Sun Sep 16 20:27:20 2001
++++ Makefile.in	Sat Mar  8 14:09:51 2008
 @@ -44,6 +44,7 @@ ACLOCAL = @ACLOCAL@
  AUTOCONF = @AUTOCONF@
  AUTOMAKE = @AUTOMAKE@
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
-@@ -89,7 +90,7 @@ m4sources = m4sugar.m4 m4sh.m4          
+@@ -89,7 +90,7 @@ m4sources = m4sugar.m4 m4sh.m4               $(srcdir)
  distpkgdataDATA = acfunctions acheaders acidentifiers acmakevars acprograms                   aclibraries $(m4sources)
  
  

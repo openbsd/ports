@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_Makefile_in,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
---- man/Makefile.in.orig	Sat Jul 14 19:41:42 2001
-+++ man/Makefile.in	Wed Jul 18 17:09:22 2001
+$OpenBSD: patch-man_Makefile_in,v 1.2 2008/03/15 07:24:38 espie Exp $
+--- man/Makefile.in.orig	Wed Jul 18 16:41:40 2001
++++ man/Makefile.in	Sat Mar  8 14:09:51 2008
 @@ -67,7 +67,9 @@ PERL = @PERL@
  PERLSCRIPTS = @PERLSCRIPTS@
  VERSION = @VERSION@
@@ -20,7 +20,7 @@ $OpenBSD: patch-man_Makefile_in,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
  	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
  	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
  	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
-@@ -223,16 +226,16 @@ install-am install uninstall-am uninstal
+@@ -223,16 +226,16 @@ install-am install uninstall-am uninstall all-redirect
  installdirs mostlyclean-generic distclean-generic clean-generic \
  maintainer-clean-generic clean mostlyclean distclean maintainer-clean
  

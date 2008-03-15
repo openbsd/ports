@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_Makefile_in,v 1.1.1.1 2003/06/24 23:03:23 espie Exp $
---- bin/Makefile.in.orig	Tue Jun 24 18:32:07 2003
-+++ bin/Makefile.in	Tue Jun 24 18:32:21 2003
-@@ -346,7 +346,10 @@ uninstall-am: uninstall-binSCRIPTS unins
+$OpenBSD: patch-bin_Makefile_in,v 1.2 2008/03/15 07:24:38 espie Exp $
+--- bin/Makefile.in.orig	Fri Sep 13 10:15:20 2002
++++ bin/Makefile.in	Sat Mar  8 14:09:52 2008
+@@ -346,7 +346,10 @@ uninstall-am: uninstall-binSCRIPTS uninstall-info-am
  
  $(srcdir)/autoconf.in: $(srcdir)/autoconf.as $(m4sh_m4f_dependencies)
  	$(AUTOM4SH) $(srcdir)/autoconf.as -o $@

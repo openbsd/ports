@@ -1,6 +1,6 @@
-$OpenBSD: patch-autoconf_in,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
+$OpenBSD: patch-autoconf_in,v 1.2 2008/03/15 07:24:38 espie Exp $
 --- autoconf.in.orig	Thu Jul 12 14:46:00 2001
-+++ autoconf.in	Tue Sep 18 11:34:34 2001
++++ autoconf.in	Sat Mar  8 14:09:51 2008
 @@ -99,21 +99,16 @@ ac_LF_and_DOT=`echo; echo .`
  case "$M4" in
    [\\/]* | ?:[\\/]*) test -f "$M4" || M4=m4 ;;
@@ -30,7 +30,7 @@ $OpenBSD: patch-autoconf_in,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
  
  
  # Find a good AWK.
-@@ -279,8 +274,8 @@ test -f "$autoconf_dir/acsite.m4" && acs
+@@ -279,8 +274,8 @@ test -f "$autoconf_dir/acsite.m4" && acsite_m4="$autoc
  test -f "$localdir/aclocal.m4"   && aclocal_m4="$localdir/aclocal.m4"
  m4_common="-I $autoconf_dir -I $localdir -Dm4_tmpdir=$tmp"
  m4_prefiles="                $autoconf_dir/autoconf.m4  $acsite_m4 $aclocal_m4"

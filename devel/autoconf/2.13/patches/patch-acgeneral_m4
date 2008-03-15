@@ -1,6 +1,6 @@
-$OpenBSD: patch-acgeneral_m4,v 1.1 2003/02/15 23:58:57 brad Exp $
+$OpenBSD: patch-acgeneral_m4,v 1.2 2008/03/15 07:24:38 espie Exp $
 --- acgeneral.m4.orig	Tue Jan  5 14:27:37 1999
-+++ acgeneral.m4	Sun Sep 16 15:31:16 2001
++++ acgeneral.m4	Sat Mar  8 14:09:51 2008
 @@ -733,8 +733,8 @@ ac_help="$ac_help
  [$2]"
  AC_DIVERT_POP()dnl
@@ -23,7 +23,7 @@ $OpenBSD: patch-acgeneral_m4,v 1.1 2003/02/15 23:58:57 brad Exp $
    ifelse([$3], , :, [$3])
  ifelse([$4], , , [else
    $4
-@@ -859,7 +859,7 @@ dnl do not automatically need to distrib
+@@ -859,7 +859,7 @@ dnl do not automatically need to distribute the other 
  dnl AC_CONFIG_AUX_DIRS(DIR ...)
  AC_DEFUN(AC_CONFIG_AUX_DIRS,
  [ac_aux_dir=
