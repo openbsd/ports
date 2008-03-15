@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
 bin/ptlib-config
 include/ptbuildopts.h
 include/ptclib/
@@ -11,6 +11,7 @@ include/ptclib/delaychan.h
 include/ptclib/dtmf.h
 include/ptclib/enum.h
 include/ptclib/ftp.h
+include/ptclib/guid.h
 include/ptclib/html.h
 include/ptclib/http.h
 include/ptclib/httpform.h
@@ -21,24 +22,32 @@ include/ptclib/ipacl.h
 include/ptclib/memfile.h
 include/ptclib/mime.h
 include/ptclib/modem.h
+include/ptclib/paec.h
 include/ptclib/pasn.h
 include/ptclib/pdns.h
 include/ptclib/pils.h
 include/ptclib/pldap.h
 include/ptclib/pnat.h
+include/ptclib/podbc.h
 include/ptclib/psasl.h
 include/ptclib/psnmp.h
 include/ptclib/psoap.h
+include/ptclib/psockbun.h
 include/ptclib/pssl.h
 include/ptclib/pstun.h
 include/ptclib/ptts.h
+include/ptclib/pvfiledev.h
+include/ptclib/pvidfile.h
 include/ptclib/pwavfile.h
+include/ptclib/pwavfiledev.h
 include/ptclib/pxml.h
 include/ptclib/pxmlrpc.h
 include/ptclib/pxmlrpcs.h
 include/ptclib/qchannel.h
 include/ptclib/random.h
+include/ptclib/rfc1155.h
 include/ptclib/shttpsvc.h
+include/ptclib/snmp.h
 include/ptclib/sockagg.h
 include/ptclib/socks.h
 include/ptclib/telnet.h
@@ -60,6 +69,7 @@ include/ptlib/config.h
 include/ptlib/contain.h
 include/ptlib/contain.inl
 include/ptlib/critsec.h
+include/ptlib/devplugin.h
 include/ptlib/dict.h
 include/ptlib/dynalink.h
 include/ptlib/ethsock.h
@@ -137,6 +147,7 @@ include/ptlib/unix/ptlib/resampler.h
 include/ptlib/unix/ptlib/semaphor.h
 include/ptlib/unix/ptlib/serchan.h
 include/ptlib/unix/ptlib/sfile.h
+include/ptlib/unix/ptlib/shmvideo.h
 include/ptlib/unix/ptlib/socket.h
 include/ptlib/unix/ptlib/sound.h
 include/ptlib/unix/ptlib/svcproc.h
@@ -163,14 +174,9 @@ lib/pwlib/devices/videoinput/bsdvideo_pwplugin.so
 share/pwlib/
 share/pwlib/make/
 share/pwlib/make/common.mak
-share/pwlib/make/defaultgui.mak
-share/pwlib/make/gui.mak
 share/pwlib/make/lib.mak
-share/pwlib/make/motif.mak
 share/pwlib/make/plugins.mak
 share/pwlib/make/ptbuildopts.mak
 share/pwlib/make/ptlib.mak
-share/pwlib/make/pwlib.mak
-share/pwlib/make/qt.mak
 share/pwlib/make/unix.mak
-share/pwlib/make/xlib.mak
+share/pwlib/version.h

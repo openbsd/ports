@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_ptclib_dtmf_h,v 1.1 2008/03/15 17:38:07 ajacoutot Exp $
+--- include/ptclib/dtmf.h.orig	Mon Mar  3 16:37:36 2008
++++ include/ptclib/dtmf.h	Mon Mar  3 16:38:25 2008
+@@ -69,6 +69,7 @@ class PDTMFDecoder : public PObject
+   public:
+     PDTMFDecoder();
+     PString Decode(const short * sampleData, PINDEX numSamples);
++    PString Decode(const void * buf, PINDEX bytes);
+ 
+   protected:
+     enum {

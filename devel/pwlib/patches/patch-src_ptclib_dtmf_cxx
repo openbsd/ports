@@ -1,0 +1,69 @@
+$OpenBSD: patch-src_ptclib_dtmf_cxx,v 1.1 2008/03/15 17:38:07 ajacoutot Exp $
+--- src/ptclib/dtmf.cxx.orig	Fri Oct 19 08:22:33 2007
++++ src/ptclib/dtmf.cxx	Tue Mar  4 11:01:18 2008
+@@ -121,6 +121,65 @@ PDTMFDecoder::PDTMFDecoder()
+ }
+ 
+ 
++/* From FreeBSD ports */
++PString PDTMFDecoder::Decode(const void *buf, PINDEX bytes)
++{
++  int x;
++  int s, kk;
++  int c, d, f, n;
++  short *buffer = (short *)buf;
++
++  PINDEX numSamples = bytes >> 1;
++
++  PString keyString;
++
++  PINDEX pos;
++  for (pos = 0; pos < numSamples; pos++) {
++
++    /* Read (and scale) the next 16 bit sample */
++    x = ((int)(*buffer++)) / (32768/FSC);
++
++    /* Input amplitude */
++    if (x > 0)
++      ia += (x - ia) / 128;
++    else
++      ia += (-x - ia) / 128;
++
++    /* For each tone */
++    s = 0;
++    for(kk = 0; kk < 8; kk++) {
++
++      /* Turn the crank */
++      c = (P2 * (x - k[kk])) / FSC;
++      d = x + c;
++      f = (p1[kk] * (d - h[kk])) / FSC;
++      n = x - k[kk] - c;
++      k[kk] = h[kk] + f;
++      h[kk] = f + d;
++
++      /* Detect and Average */
++      if (n > 0)
++        y[kk] += (n - y[kk]) / 64;
++      else
++        y[kk] += (-n - y[kk]) / 64;
++
++      /* Threshold */
++      if (y[kk] > FSC/10 && y[kk] > ia)
++        s |= 1 << kk;
++    }
++
++    /* Hysteresis and noise supressor */
++    if (s != so) {
++      nn = 0;
++      so = s;
++    } else if (nn++ == 520 && s < 256 && key[s] != '?') {
++      PTRACE(3,"DTMF\tDetected '" << key[s] << "' in PCM-16 stream");
++      keyString += key[s];
++    }
++  }
++  return keyString;
++}
++
+ PString PDTMFDecoder::Decode(const short * sampleData, PINDEX numSamples)
+ {
+   int x;

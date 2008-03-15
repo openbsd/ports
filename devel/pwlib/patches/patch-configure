@@ -1,16 +1,28 @@
-$OpenBSD: patch-configure,v 1.2 2007/04/27 13:38:09 ajacoutot Exp $
---- configure.orig	Wed Feb 22 12:53:28 2006
-+++ configure	Fri Apr 27 15:28:49 2007
-@@ -1951,7 +1951,7 @@ LIBDIR=${libdir}
- MAJOR_VERSION=`cat ${PWLIBDIR}/version.h | grep MAJOR_VERSION | cut -f3 -d' '`
- MINOR_VERSION=`cat ${PWLIBDIR}/version.h | grep MINOR_VERSION | cut -f3 -d' '`
- BUILD_NUMBER=`cat ${PWLIBDIR}/version.h | grep BUILD_NUMBER | cut -f3 -d' '`
--PWLIB_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}.${BUILD_NUMBER}"
-+PWLIB_VERSION="${MAJOR_VERSION}.${MINOR_VERSION}"
+$OpenBSD: patch-configure,v 1.3 2008/03/15 17:38:07 ajacoutot Exp $
+--- configure.orig	Fri Oct 19 08:22:39 2007
++++ configure	Mon Mar  3 12:14:54 2008
+@@ -2163,7 +2163,7 @@ case "$target_cpu" in
+    x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
+                    ;;
  
+-   x86_64)	   MACHTYPE=x86_64 ;
++   x86_64|amd64)	   MACHTYPE=x86_64 ;
+ 		   P_64BIT=1 ;
+                    LIB64=1 ;
+ 		   ;;
+@@ -2175,6 +2175,11 @@ case "$target_cpu" in
+    sparc )         MACHTYPE=sparc ;
+ 		   ;;
  
++   sparc64 )       MACHTYPE=sparc ;
++		   P_64BIT=1 ;
++                   LIB64=1 ;
++		   ;;
++
+    powerpc )       MACHTYPE=ppc ;
+ 		   ;;
  
-@@ -4567,8 +4567,12 @@ else
+@@ -4754,8 +4759,12 @@ else
  fi
  
  if test ${HAS_PTHREADS} = yes ; then
@@ -25,16 +37,7 @@ $OpenBSD: patch-configure,v 1.2 2007/04/27 13:38:09 ajacoutot Exp $
  else
    if test ${OSTYPE} = FreeBSD ; then
      HAS_PTHREADS=yes
-@@ -4789,7 +4793,7 @@ cat >>conftest.$ac_ext <<_ACEOF
- int
- main ()
- {
--pthread_mutexattr_t attr; pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE_NP);
-+pthread_mutexattr_t attr; pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
-   ;
-   return 0;
- }
-@@ -5495,19 +5499,9 @@ fi
+@@ -5691,19 +5700,9 @@ fi
  
  
  

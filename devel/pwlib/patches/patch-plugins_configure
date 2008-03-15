@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_configure,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
---- plugins/configure.orig	Fri Jan 27 04:43:25 2006
-+++ plugins/configure	Mon Apr  9 09:48:02 2007
-@@ -3300,7 +3300,7 @@ echo "${ECHO_T}$ac_cv_header_sys_soundcard_h" >&6
+$OpenBSD: patch-plugins_configure,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
+--- plugins/configure.orig	Fri Oct 19 08:22:33 2007
++++ plugins/configure	Fri Jan  4 14:04:45 2008
+@@ -3479,7 +3479,7 @@ echo "${ECHO_T}$ac_cv_header_sys_soundcard_h" >&6
  else
    # Is the header compilable?
  echo "$as_me:$LINENO: checking sys/soundcard.h usability" >&5
@@ -10,7 +10,7 @@ $OpenBSD: patch-plugins_configure,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -3308,7 +3308,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -3487,7 +3487,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -19,7 +19,7 @@ $OpenBSD: patch-plugins_configure,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
  _ACEOF
  rm -f conftest.$ac_objext
  if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
-@@ -3343,18 +3343,18 @@ echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
+@@ -3523,18 +3523,18 @@ echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
  echo "${ECHO_T}$ac_header_compiler" >&6
  
  # Is the header present?
@@ -43,7 +43,7 @@ $OpenBSD: patch-plugins_configure,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
    ac_status=$?
    grep -v '^ *+' conftest.er1 >conftest.err
    rm -f conftest.er1
-@@ -3415,7 +3415,7 @@ _ASBOX
+@@ -3595,7 +3595,7 @@ _ASBOX
      ;;
  esac
  echo "$as_me:$LINENO: checking for sys/soundcard.h" >&5
@@ -52,7 +52,7 @@ $OpenBSD: patch-plugins_configure,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
  if test "${ac_cv_header_sys_soundcard_h+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -4304,8 +4304,8 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -4485,8 +4485,8 @@ cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <dev/ic/bt8xx.h>
  _ACEOF

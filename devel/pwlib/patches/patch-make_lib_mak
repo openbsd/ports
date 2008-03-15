@@ -1,8 +1,23 @@
-$OpenBSD: patch-make_lib_mak,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
---- make/lib.mak.orig	Sun Sep 25 12:51:23 2005
-+++ make/lib.mak	Mon Apr 23 14:35:56 2007
-@@ -131,6 +131,9 @@ ifneq ($(OSTYPE),Darwin)
-   LIBNAME_MIN	= $(LIBNAME_MAJ).$(MINOR_VERSION)
+$OpenBSD: patch-make_lib_mak,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
+--- make/lib.mak.orig	Fri Oct 19 08:22:33 2007
++++ make/lib.mak	Mon Mar  3 14:23:51 2008
+@@ -126,11 +126,22 @@
+ # Added copyright notice
+ #
+ 
++ifndef (LIB_MAJOR_VERSION)
++  LIB_MAJOR_VERSION	= $(MAJOR_VERSION)
++endif
++
++ifndef (LIB_MINOR_VERSION)
++  LIB_MINOR_VERSION	= $(MINOR_VERSION)
++endif
++
+ ifneq ($(OSTYPE),Darwin)
+-  LIBNAME_MAJ	= $(LIB_FILENAME).$(MAJOR_VERSION)
+-  LIBNAME_MIN	= $(LIBNAME_MAJ).$(MINOR_VERSION)
++  LIBNAME_MAJ	= $(LIB_FILENAME).$(LIB_MAJOR_VERSION)
++  LIBNAME_MIN	= $(LIBNAME_MAJ).$(LIB_MINOR_VERSION)
    ifeq ($(BUILD_TYPE),.)
      LIBNAME_PAT	= $(LIBNAME_MIN).$(BUILD_NUMBER)
 +   ifeq ($(OSTYPE),OpenBSD)
@@ -11,7 +26,7 @@ $OpenBSD: patch-make_lib_mak,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
    else
      LIBNAME_PAT	= $(LIBNAME_MIN)-$(BUILD_TYPE)$(BUILD_NUMBER)
    endif
-@@ -151,7 +154,7 @@ CLEAN_FILES += $(LIBDIR)/$(LIBNAME_PAT) $(LIBDIR)/$(LI
+@@ -151,7 +162,7 @@ CLEAN_FILES += $(LIBDIR)/$(LIBNAME_PAT) $(LIBDIR)/$(LI
  ifneq ($(P_SHAREDLIB),1)
    STATIC_LIB_FILE = $(LIBDIR)/$(LIB_FILENAME)
  else
@@ -20,7 +35,7 @@ $OpenBSD: patch-make_lib_mak,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
  endif
  
  $(LIBDIR)/$(LIB_FILENAME) : $(TARGETLIB)
-@@ -178,7 +181,7 @@ ifeq ($(P_SHAREDLIB),1)
+@@ -178,7 +189,7 @@ ifeq ($(P_SHAREDLIB),1)
    endif
  
    ifneq ($(OSTYPE), QNX)
@@ -29,7 +44,7 @@ $OpenBSD: patch-make_lib_mak,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
        ifdef P_PTHREADS
          EXTLIBS += -pthread
        endif
-@@ -207,10 +210,16 @@ ifeq ($(P_SHAREDLIB),1)
+@@ -207,10 +218,16 @@ ifeq ($(P_SHAREDLIB),1)
      LD = $(CPLUS)
    endif
  
@@ -46,7 +61,7 @@ $OpenBSD: patch-make_lib_mak,v 1.1.1.1 2007/04/25 11:12:26 ajacoutot Exp $
  
    $(LIBDIR)/$(LIBNAME_PAT): $(STATIC_LIB_FILE)
  	@echo EXTLIBS = $(EXTLIBS)
-@@ -220,9 +229,11 @@ ifeq ($(P_SHAREDLIB),1)
+@@ -220,9 +237,11 @@ ifeq ($(P_SHAREDLIB),1)
  
    install: $(LIBDIR)/$(LIBNAME_PAT)
  	$(INSTALL) $(LIBDIR)/$(LIBNAME_PAT) $(INSTALLLIB_DIR)/$(LIBNAME_PAT)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ptlib_common_pluginmgr_cxx,v 1.1.1.1 2007/04/25 11:12:27 ajacoutot Exp $
---- src/ptlib/common/pluginmgr.cxx.orig	Wed Apr 11 15:07:18 2007
-+++ src/ptlib/common/pluginmgr.cxx	Wed Apr 11 15:07:44 2007
-@@ -120,7 +120,7 @@
+$OpenBSD: patch-src_ptlib_common_pluginmgr_cxx,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
+--- src/ptlib/common/pluginmgr.cxx.orig	Fri Oct 19 08:22:32 2007
++++ src/ptlib/common/pluginmgr.cxx	Fri Jan  4 14:04:45 2008
+@@ -168,7 +168,7 @@
  #  ifdef  _WIN32
  #    define P_DEFAULT_PLUGIN_DIR ".;C:\\PWLIB_PLUGINS"
  #  else

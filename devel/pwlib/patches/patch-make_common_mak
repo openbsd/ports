@@ -1,0 +1,12 @@
+$OpenBSD: patch-make_common_mak,v 1.1 2008/03/15 17:38:07 ajacoutot Exp $
+--- make/common.mak.orig	Wed Mar  5 09:34:59 2008
++++ make/common.mak	Wed Mar  5 09:35:13 2008
+@@ -384,7 +384,7 @@ TARGET_LIBS	= $(PWLIBDIR)/lib/$(PTLIB_FILE)
+ 
+ # distinguish betweek building and using pwlib
+ ifeq (,$(wildcard $(PWLIBDIR)/src))
+-TARGET_LIBS     = $(SYSLIBDIR)/$(PTLIB_FILE)
++TARGET_LIBS     = # empty
+ endif
+ 
+ $(TARGET):	$(OBJS) $(TARGET_LIBS)
