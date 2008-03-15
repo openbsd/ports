@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.ldap,v 1.1 2008/03/15 12:50:46 ajacoutot Exp $
+share/doc/sasl2/LDAP_SASLAUTHD
+share/examples/sasl2/saslauthd.conf
+@mode 640
+@sample ${SYSCONFDIR}/saslauthd.conf
+@mode

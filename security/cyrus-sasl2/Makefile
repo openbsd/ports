@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2007/10/25 21:05:33 steven Exp $
+# $OpenBSD: Makefile,v 1.44 2008/03/15 12:50:46 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.22
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
 		digestmd5	2.22 \
@@ -112,7 +112,8 @@ CONFIGURE_ARGS+=--enable-sql \
 
 pre-configure:
 	@perl -pi -e "s,/usr/local/etc,${SYSCONFDIR},g" \
-		${WRKSRC}/saslauthd/saslauthd.mdoc
+		${WRKSRC}/saslauthd/saslauthd.mdoc \
+		${WRKSRC}/saslauthd/LDAP_SASLAUTHD
 
 post-build:
 	cd ${WRKBUILD}/saslauthd; \
@@ -123,10 +124,16 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl2
 	${INSTALL_DATA} ${WRKSRC}/doc/{*.html,*.txt} ${PREFIX}/share/doc/sasl2
 	${INSTALL_PROGRAM} ${WRKBUILD}/saslauthd/testsaslauthd ${PREFIX}/sbin
-.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sasl2
+.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
 	${INSTALL_DATA} ${FILESDIR}/Sendmail.conf-sql \
 		${PREFIX}/share/examples/sasl2
+.endif
+.if ${FLAVOR:L:Mldap}
+	${INSTALL_DATA} ${WRKSRC}/saslauthd/LDAP_SASLAUTHD \
+		${PREFIX}/share/doc/sasl2
+	sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' ${FILESDIR}/saslauthd.conf > \
+		${PREFIX}/share/examples/sasl2/saslauthd.conf
 .endif
 
 .include <bsd.port.mk>
