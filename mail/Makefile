@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2008/03/15 11:01:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.209 2008/03/15 19:14:26 simon Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -178,6 +178,7 @@
      SUBDIR += solid-pop3d
      SUBDIR += solid-pop3d,apop
      SUBDIR += spambayes
+     SUBDIR += swaks
      SUBDIR += sylpheed
      SUBDIR += sylpheed,gpgme
      SUBDIR += teapop
