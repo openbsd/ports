@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/02/18 15:46:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2008/03/15 10:14:44 ajacoutot Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -318,6 +318,11 @@ share/examples/freeradius/attrs.accounting_response
 @sample ${SYSCONFDIR}/raddb/attrs.accounting_response
 share/examples/freeradius/attrs.pre-proxy
 share/examples/freeradius/certs/
+@mode 750
+@group _freeradius
+@sample ${SYSCONFDIR}/raddb/certs/
+@mode
+@group
 share/examples/freeradius/certs/Makefile
 share/examples/freeradius/certs/README
 share/examples/freeradius/certs/bootstrap
@@ -325,6 +330,7 @@ share/examples/freeradius/certs/ca.cnf
 share/examples/freeradius/certs/client.cnf
 share/examples/freeradius/certs/server.cnf
 share/examples/freeradius/certs/xpextensions
+@sample ${SYSCONFDIR}/raddb/certs/xpextensions
 share/examples/freeradius/clients.conf
 @mode 640
 @sample ${SYSCONFDIR}/raddb/clients.conf
