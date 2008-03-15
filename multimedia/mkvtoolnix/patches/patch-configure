@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2007/08/27 11:36:21 ajacoutot Exp $
---- configure.orig	Sun Aug 19 11:26:47 2007
-+++ configure	Mon Aug 27 12:28:26 2007
-@@ -4627,7 +4627,7 @@ fi
+$OpenBSD: patch-configure,v 1.4 2008/03/15 10:11:34 ajacoutot Exp $
+--- configure.orig	Tue Mar  4 08:37:23 2008
++++ configure	Thu Mar  6 14:42:06 2008
+@@ -4724,7 +4724,7 @@ fi
      OPTIMIZATION_CFLAGS=""
    else
      DEBUG_CFLAGS=""

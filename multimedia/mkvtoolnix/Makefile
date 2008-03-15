@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/11/17 20:39:02 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2008/03/15 10:11:34 ajacoutot Exp $
 
 COMMENT=	set of tools to create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-2.1.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	mkvtoolnix-2.2.0
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -54,7 +53,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=--disable-gui
 .else
 WANTLIB+=	pthread
-LIB_DEPENDS+=	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_aui:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+LIB_DEPENDS+=	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_aui,wx_gtk2_richtext:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
 CONFIGURE_ARGS+=--enable-gui \
 		--enable-wxwidgets
 .endif
