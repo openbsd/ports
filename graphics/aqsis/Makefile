@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/12/18 22:04:32 deanna Exp $
+# $OpenBSD: Makefile,v 1.9 2008/03/15 10:03:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ HOMEPAGE=	http://www.aqsis.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL - LGPL
+# GPLv2 - LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -68,9 +68,7 @@ do-build:
 		install_prefix='${PREFIX}' \
 		no_rpath=true build
 
-do-install:
-	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${MODSCONS_BIN}
-		install_prefix='${PREFIX}'
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/aqsis
 	${INSTALL_DATA} ${WRKSRC}/build/aqsisrc \
 		${PREFIX}/share/examples/aqsis/
