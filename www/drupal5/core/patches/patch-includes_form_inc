@@ -1,0 +1,77 @@
+$OpenBSD: patch-includes_form_inc,v 1.1 2008/03/15 09:36:48 espie Exp $
+--- includes/form.inc.orig	Sun Feb 17 13:00:26 2008
++++ includes/form.inc	Sun Feb 17 13:00:40 2008
+@@ -1122,6 +1122,13 @@ function expand_password_confirm($element) {
+     '#value' => $element['#value']['pass2'],
+     '#required' => $element['#required'],
+   );
++  if (isset($element['#autogen'])) {
++    $element['autogen'] = array(
++      '#type' => 'checkbox',
++      '#title' => t('Autogenerate password'),
++      '#value' => $element['#value']['autogen']
++    );
++  }
+   $element['#validate'] = array('password_confirm_validate' => array());
+   $element['#tree'] = TRUE;
+ 
+@@ -1132,19 +1139,51 @@ function expand_password_confirm($element) {
+   return $element;
+ }
+ 
++ /**
++ * Generate a random alphanumeric password.
++ */
++function new_password($length = 10) {
++  // This variable contains the list of allowable characters for the
++  // password. Note that the number 0 and the letter 'O' have been
++  // removed to avoid confusion between the two. The same is true
++  // of 'I', 1, and l.
++  $allowable_characters = 'abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789';
++
++  // Zero-based count of characters in the allowable list:
++  $len = strlen($allowable_characters) - 1;
++
++  // Declare the password as a blank string.
++  $pass = '';
++
++  // Loop the number of times specified by $length.
++  for ($i = 0; $i < $length; $i++) {
++
++    // Each iteration, pick a random character from the
++    // allowable string and append it to the password:
++    $pass .= $allowable_characters[mt_rand(0, $len)];
++  }
++
++  return $pass;
++}
++
+ /**
+  * Validate password_confirm element.
+  */
+ function password_confirm_validate($form) {
+-  $pass1 = trim($form['pass1']['#value']);
+-  if (!empty($pass1)) {
+-    $pass2 = trim($form['pass2']['#value']);
+-    if ($pass1 != $pass2) {
+-      form_error($form, t('The specified passwords do not match.'));
+-    }
++  if (isset($form['autogen']) && $form['autogen']['#value']) {
++    $pass1 = new_password();
+   }
+-  elseif ($form['#required'] && !empty($form['#post'])) {
+-    form_error($form, t('Password field is required.'));
++  else {
++    $pass1 = trim($form['pass1']['#value']);
++    if (!empty($pass1)) {
++      $pass2 = trim($form['pass2']['#value']);
++      if ($pass1 != $pass2) {
++	form_error($form, t('The specified passwords do not match.'));
++      }
++    }
++    elseif ($form['#required'] && !empty($form['#post'])) {
++      form_error($form, t('Password field is required.'));
++    }
+   }
+ 
+   // Password field must be converted from a two-element array into a single

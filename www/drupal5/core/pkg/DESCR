@@ -19,7 +19,6 @@ work without needing to change everything all over the place
 
 It is highly recommended you also install:
 drupal5-securelogin
-drupal5-backup-migrate
 
 Most sites will need 
 drupal5-views

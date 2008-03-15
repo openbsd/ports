@@ -1,0 +1,80 @@
+$OpenBSD: patch-modules_user_user_module,v 1.1 2008/03/15 09:36:48 espie Exp $
+--- modules/user/user.module.orig	Sun Feb 17 16:31:26 2008
++++ modules/user/user.module	Sun Feb 17 16:55:58 2008
+@@ -321,27 +321,7 @@ function user_validate_picture($file, &$edit, $user) {
+  * Generate a random alphanumeric password.
+  */
+ function user_password($length = 10) {
+-  // This variable contains the list of allowable characters for the
+-  // password. Note that the number 0 and the letter 'O' have been
+-  // removed to avoid confusion between the two. The same is true
+-  // of 'I', 1, and l.
+-  $allowable_characters = 'abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+-
+-  // Zero-based count of characters in the allowable list:
+-  $len = strlen($allowable_characters) - 1;
+-
+-  // Declare the password as a blank string.
+-  $pass = '';
+-
+-  // Loop the number of times specified by $length.
+-  for ($i = 0; $i < $length; $i++) {
+-
+-    // Each iteration, pick a random character from the
+-    // allowable string and append it to the password:
+-    $pass .= $allowable_characters[mt_rand(0, $len)];
+-  }
+-
+-  return $pass;
++  return new_password($length);
+ }
+ 
+ /**
+@@ -1263,9 +1243,12 @@ function user_register_submit($form_id, $form_values) 
+     return 'user/1/edit';
+   }
+   else {
++
+     if ($admin && !$notify) {
+-      drupal_set_message(t('Created a new user account. No e-mail has been sent.'));
+-    }
++      $message = t('Created a new user account. No e-mail has been sent.');
++      $message = $message.' '.t('Password').': '.$pass;
++      drupal_set_message($message);
++    } 
+     else if (!variable_get('user_email_verification', TRUE) && $account->status && !$admin) {
+       // No e-mail verification is required, create new user account, and login user immediately.
+       $subject = _user_mail_text('welcome_subject', $variables);
+@@ -1339,6 +1322,7 @@ function user_edit_form($uid, $edit, $register = FALSE
+       '#description' => t('Provide a password for the new account in both fields.'),
+       '#required' => TRUE,
+       '#size' => 25,
++      '#autogen' => TRUE
+     );
+   }
+   if ($admin) {
+@@ -1820,6 +1804,10 @@ function user_admin_perm($rid = NULL) {
+   while ($role = db_fetch_object($result)) {
+     $role_names[$role->rid] = $role->name;
+   }
++  if (!is_numeric($rid)) {
++    $role_names[1] = t('anon.');
++    $role_names[2] = t('auth.');
++  }
+ 
+   // Render role/permission overview:
+   $options = array();
+@@ -1859,7 +1847,12 @@ function theme_user_admin_perm($form) {
+       $row = array();
+       // Module name
+       if (is_numeric($key)) {
+-        $row[] = array('data' => t('@module module', array('@module' => drupal_render($form['permission'][$key]))), 'class' => 'module', 'id' => 'module-'. $form['permission'][$key]['#value'], 'colspan' => count($form['role_names']) + 1);
++        $row[] = array('data' => t('@module module', array('@module' => drupal_render($form['permission'][$key]))), 'class' => 'module', 'id' => 'module-'. $form['permission'][$key]['#value']);//, 'colspan' => count($form['role_names']) + 1);
++  foreach (element_children($form['role_names']) as $rid) {
++    if (is_array($form['role_names'][$rid])) {
++      $row[] = array('data' => $form['role_names'][$rid]['#value']);
++    }
++  }
+       }
+       else {
+         $row[] = array('data' => drupal_render($form['permission'][$key]), 'class' => 'permission');

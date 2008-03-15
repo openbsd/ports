@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/02/24 15:48:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/03/15 09:36:48 espie Exp $
 @owner www
 @group www
 ${DRUPAL_ROOT}/
@@ -15,12 +15,14 @@ ${DRUPAL_ROOT}/includes/
 ${DRUPAL_ROOT}/includes/bootstrap.inc
 ${DRUPAL_ROOT}/includes/cache.inc
 ${DRUPAL_ROOT}/includes/common.inc
+@comment ${DRUPAL_ROOT}/includes/common.inc.orig
 ${DRUPAL_ROOT}/includes/database.inc
 ${DRUPAL_ROOT}/includes/database.mysql.inc
 ${DRUPAL_ROOT}/includes/database.mysqli.inc
 ${DRUPAL_ROOT}/includes/database.pgsql.inc
 ${DRUPAL_ROOT}/includes/file.inc
 ${DRUPAL_ROOT}/includes/form.inc
+@comment ${DRUPAL_ROOT}/includes/form.inc.orig
 ${DRUPAL_ROOT}/includes/image.inc
 ${DRUPAL_ROOT}/includes/install.inc
 ${DRUPAL_ROOT}/includes/install.mysql.inc
@@ -209,6 +211,7 @@ ${DRUPAL_ROOT}/modules/user/
 ${DRUPAL_ROOT}/modules/user/user.css
 ${DRUPAL_ROOT}/modules/user/user.info
 ${DRUPAL_ROOT}/modules/user/user.module
+@comment ${DRUPAL_ROOT}/modules/user/user.module.orig
 ${DRUPAL_ROOT}/modules/watchdog/
 ${DRUPAL_ROOT}/modules/watchdog/watchdog.css
 ${DRUPAL_ROOT}/modules/watchdog/watchdog.info
@@ -225,7 +228,6 @@ ${DRUPAL_ROOT}/scripts/cron-lynx.sh
 ${DRUPAL_ROOT}/sites/
 ${DRUPAL_ROOT}/sites/all/
 ${DRUPAL_ROOT}/sites/all/README.txt
-${DRUPAL_MODS}/
 ${DRUPAL_THEMES}/
 ${DRUPAL_ROOT}/sites/default/
 ${DRUPAL_ROOT}/sites/default/settings.php.sample
