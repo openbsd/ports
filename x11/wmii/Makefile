@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/03/15 12:52:50 mcbride Exp $
 
 COMMENT=	dynamic window manager
 
-DISTNAME=	wmii-3.1
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	wmii-3.6
+PKGNAME=	${DISTNAME}
 CATEGORIES=	x11
 
-HOMEPAGE=	http://wmii.suckless.org
+HOMEPAGE=	http://www.suckless.org
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,15 +18,16 @@ MASTER_SITES=	${HOMEPAGE}/download/
 
 WANTLIB=	X11 c m
 
+LIB_DEPENDS=	ixp.>=0.4::devel/libixp \
+		iconv.>=4.0::converters/libiconv
+
+RUN_DEPENDS=	::x11/dmenu
+
 USE_X11=	Yes
 
 NO_REGRESS=	Yes
 
-FAKE_FLAGS=	SYSCONFDIR=${SYSCONFDIR}
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wmii-3
-	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/wmii-3/* \
-		${PREFIX}/share/examples/wmii-3
+FAKE_FLAGS=	PREFIX=${WRKINST}/usr/local \
+		MAN=${WRKINST}/usr/local/man
 
 .include <bsd.port.mk>

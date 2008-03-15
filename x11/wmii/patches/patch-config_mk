@@ -1,22 +1,29 @@
---- config.mk.orig	Sat Jun 17 13:44:29 2006
-+++ config.mk	Sat Jun 17 19:28:41 2006
-@@ -2,8 +2,8 @@
+$OpenBSD: patch-config_mk,v 1.3 2008/03/15 12:52:50 mcbride Exp $
+--- config.mk.orig	Fri Nov 16 06:59:15 2007
++++ config.mk	Tue Feb 19 03:56:08 2008
+@@ -1,10 +1,10 @@
+ # Customize below to fit your system
  
  # paths
- PREFIX = /usr/local
--CONFPREFIX = ${PREFIX}/etc
--MANPREFIX = ${PREFIX}/share/man
-+CONFPREFIX = ${SYSCONFDIR}
-+MANPREFIX = ${PREFIX}/man
+-PREFIX = /usr/local
++#PREFIX = /usr/local
+ BIN = ${PREFIX}/bin
+-MAN = ${PREFIX}/share/man
+-ETC = ${PREFIX}/etc
++MAN = ${PREFIX}/man
++ETC = ${PREFIX}/share/examples/
+ LIBDIR = ${PREFIX}/lib
+ INCLUDE = ${PREFIX}/include
  
- X11INC = /usr/X11R6/include
- X11LIB = /usr/X11R6/lib
-@@ -14,7 +14,7 @@ VERSION = 3.1
- LIBS = -L${PREFIX}/lib -L/usr/lib -lc -L${X11LIB} -lX11
+@@ -31,9 +31,8 @@ P9PATHS = ${PLAN9}:"'$${HOME}/plan9'":/usr/local/plan9
  
- # Linux/BSD
--CFLAGS = -O3 -I. -I${PREFIX}/include -I/usr/include -I${X11INC} \
-+CFLAGS+= -I. -I${PREFIX}/include -I/usr/include -I${X11INC} \
- 	-DVERSION=\"${VERSION}\"
- LDFLAGS = ${LIBS}
+ INCX11 = -I/usr/X11R6/include
+ LIBX11 = -L/usr/X11R6/lib -lX11
+-LIBICONV = # Leave blank if your libc includes iconv (glibc does)
+-LIBIXP = ${ROOT}/libixp/libixp.a
+-LIBIXP = ${LIBDIR}/libixp.a
++LIBICONV = /usr/local/lib/libiconv.a
++LIBIXP = /usr/local/lib/libixp.a
  
+ # Solaris
+ #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
