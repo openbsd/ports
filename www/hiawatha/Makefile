@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2008/02/10 15:59:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2008/03/15 10:16:30 ajacoutot Exp $
 
 COMMENT=	secure webserver
 
-DISTNAME=	hiawatha-6.4
+DISTNAME=	hiawatha-6.5
 CATEGORIES=	www net
 
 HOMEPAGE=	http://hiawatha.leisink.org
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
