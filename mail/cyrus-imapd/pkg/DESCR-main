@@ -23,6 +23,5 @@ packages:
 Cyrus-imapd uses the LOG_LOCAL6 syslog facility for logging. This port
 of cyrus-imapd uses idled for IMAP IDLE.
 
-Available flavors:
+Available flavor:
     drac     - Build drac support (for roaming users relay)
-    kerberos - Build support for KerberosV authentication

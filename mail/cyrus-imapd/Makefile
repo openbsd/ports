@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2007/12/11 11:04:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2008/03/15 10:07:20 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
 
 V=		2.3.11
 DISTNAME=	cyrus-imapd-${V}
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
 CATEGORIES=	mail
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/imap/
 
-WANTLIB=	crypto ssl 
+WANTLIB=	crypto ssl
 
 LIB_DEPENDS=	sasl2.>=2::security/cyrus-sasl2 \
 		lib/db4/db.>=4:db-4.*:databases/db/v4
@@ -32,7 +32,7 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 PATCH_LIST=	patch-*
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I/usr/include/kerberosV" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_resolv_res_search=no \
 		ac_cv_sys_long_file_names=yes \
@@ -50,6 +50,8 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-lock=fcntl \
 		--with-com_err=/usr \
 		--with-libwrap=/usr \
+		--with-gss_impl=heimdal \
+		--enable-gssapi=/usr \
 		--enable-idled \
 		--enable-listext \
 		--enable-murder \
@@ -60,7 +62,7 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 MULTI_PACKAGES=	-main ${NO_SHARED_LIBS:S/Yes//:S/No/-perl/}
 CONFIGURE_ARGS+=--with${NO_SHARED_LIBS:S/Yes/out/:S/No//}-perl
 
-FLAVORS=	drac kerberos
+FLAVORS=	drac
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdrac}
@@ -69,18 +71,7 @@ PATCH_LIST+=	${WRKSRC}/contrib/drac_auth.patch \
 		drac-patch-imap_Makefile.in
 .endif
 
-.if ${FLAVOR:L:Mkerberos}
-WANTLIB+=	com_err krb5 gssapi asn1
-CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/kerberosV" \
-CONFIGURE_ARGS+=--with-auth=krb5 \
-		--enable-gssapi=/usr \
-		--with-gss_impl=heimdal
-.else
-CONFIGURE_ARGS+=--with-auth=unix \
-		--disable-gssapi
-.endif
-
-WANTLIB-main=	${WANTLIB} wrap c pthread
+WANTLIB-main=	${WANTLIB} asn1 c com_err gssapi krb5 pthread wrap
 WANTLIB-perl=	crypto ssl
 
 NO_REGRESS=	Yes

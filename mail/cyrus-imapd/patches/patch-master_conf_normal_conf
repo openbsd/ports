@@ -1,6 +1,6 @@
-$OpenBSD: patch-master_conf_normal_conf,v 1.1 2007/05/04 08:05:00 ajacoutot Exp $
---- master/conf/normal.conf.orig	Fri May  4 09:47:10 2007
-+++ master/conf/normal.conf	Fri May  4 09:50:57 2007
+$OpenBSD: patch-master_conf_normal_conf,v 1.2 2008/03/15 10:07:20 ajacoutot Exp $
+--- master/conf/normal.conf.orig	Thu Mar 30 18:01:39 2006
++++ master/conf/normal.conf	Tue Mar  4 09:13:24 2008
 @@ -5,17 +5,17 @@ START {
    recover	cmd="ctl_cyrusdb -r"
  
@@ -23,3 +23,11 @@ $OpenBSD: patch-master_conf_normal_conf,v 1.1 2007/05/04 08:05:00 ajacoutot Exp 
  
    # these are only necessary if receiving/exporting usenet via NNTP
  #  nntp		cmd="nntpd" listen="nntp" prefork=0
+@@ -39,4 +39,7 @@ EVENTS {
+ 
+   # this is only necessary if caching TLS sessions
+   tlsprune	cmd="tls_prune" at=0400
++
++  # create SQUAT indexes for all mailboxes
++#  squatter	cmd="squatter -s -r user" at=0540
+ }

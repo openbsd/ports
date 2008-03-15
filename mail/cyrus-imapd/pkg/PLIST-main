@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/10/25 09:42:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/03/15 10:07:20 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
+@pkgpath ${BASE_PKGPATH},-main,kerberos
 @newgroup _cyrus:543
 @newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/var/empty:/sbin/nologin
 bin/imtest
