@@ -1,38 +1,38 @@
-# $OpenBSD: Makefile,v 1.34 2008/01/04 17:48:33 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2008/03/15 10:10:15 ajacoutot Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
-VERSION=	3.96.1
-
-DISTNAME=	lame-${VERSION}
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	lame-3.97
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
-SHARED_LIBS +=	mp3lame              0.1      # .0.1
 
-HOMEPAGE=	http://www.mp3dev.org/
+SHARED_LIBS=	mp3lame	1.0	# .0.1
 
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+HOMEPAGE=	http://lame.sourceforge.net/
 
-PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# GPLv2 - patent restriction
+PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
+PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses
 
-USE_GMAKE=	Yes
+WANTLIB=	c m ncurses
 
-CONFIGURE_STYLE=	gnu
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
 
 FLAVORS=	no_x11
 FLAVOR?=
 
-CONFIGURE_ARGS+=	--enable-mp3rtp
-MAKE_FLAGS=	pkghtmldir=${TRUEPREFIX}/share/doc/lame
+USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-# XXX gcc3/nasm issue
-.if (${MACHINE_ARCH} == "i386") && (${CC} != "egcc")
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--enable-mp3rtp
+
+MAKE_FLAGS=	pkghtmldir=${TRUEPREFIX}/share/doc/lame
+
+.if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	::devel/nasm
 CONFIGURE_ARGS+= --enable-nasm
 .else
@@ -40,11 +40,12 @@ CONFIGURE_ARGS+= --disable-nasm
 .endif
 
 .if ${FLAVOR:L} != "no_x11"
-USE_X11=		Yes
-CONFIGURE_ARGS+=	--enable-mp3x \
-			--with-gtk-prefix=${LOCALBASE}
-LIB_DEPENDS+=		gtk.>=1.2,gdk.>=1.2::x11/gtk+
-WANTLIB+=		X11 Xau Xdmcp Xext Xi glib gmodule iconv intl
+USE_X11=	Yes
+CONFIGURE_ARGS+=--enable-mp3x \
+		--with-gtk-prefix=${LOCALBASE}
+LIB_DEPENDS+=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
+MODULES+=	devel/gettext
+WANTLIB+=	X11 Xau Xdmcp Xext Xi glib gmodule
 .endif
 
 .include <bsd.port.mk>

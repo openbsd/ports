@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2001/08/26 12:00:38 espie Exp $
---- configure.orig	Sat Aug 25 14:23:30 2001
-+++ configure	Sat Aug 25 14:23:55 2001
-@@ -1842,7 +1842,7 @@ LIB_MAJOR_VERSION=0
+$OpenBSD: patch-configure,v 1.2 2008/03/15 10:10:15 ajacoutot Exp $
+--- configure.orig	Sun Sep 24 15:53:31 2006
++++ configure	Mon Feb 18 15:45:31 2008
+@@ -19943,7 +19943,7 @@ LIB_MAJOR_VERSION=0
  
  # increase this when changes are made, but they are upward compatible
  # to previous versions
 -LIB_MINOR_VERSION=0
 +LIB_MINOR_VERSION=1
  
- echo $ac_n "checking for AIX""... $ac_c" 1>&6
- echo "configure:1849: checking for AIX" >&5
+ if test "${ac_cv_cygwin}" = "yes"; then
+ 	if test "${CC}" != "gcc"; then

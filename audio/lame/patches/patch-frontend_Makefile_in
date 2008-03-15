@@ -1,7 +1,7 @@
-$OpenBSD: patch-frontend_Makefile_in,v 1.1 2005/03/23 21:02:30 alek Exp $
---- frontend/Makefile.in.orig	Mon Mar 14 08:28:15 2005
-+++ frontend/Makefile.in	Mon Mar 14 08:28:20 2005
-@@ -91,7 +91,7 @@ LDADD = @LDADD@ \
+$OpenBSD: patch-frontend_Makefile_in,v 1.2 2008/03/15 10:10:15 ajacoutot Exp $
+--- frontend/Makefile.in.orig	Sun Sep 24 15:53:31 2006
++++ frontend/Makefile.in	Mon Feb 18 15:45:31 2008
+@@ -156,7 +156,7 @@ LDADD = @LDADD@ \
  	$(top_builddir)/libmp3lame/libmp3lame.la \
  	@FRONTEND_LDADD@
  
