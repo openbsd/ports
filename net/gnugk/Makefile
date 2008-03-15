@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/08/30 15:14:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/03/15 17:40:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
 DISTNAME=	gnugk-2.2.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net telephony
 
 HOMEPAGE=	http://www.gnugk.org/
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
 WANTLIB=	avutil c crypto expat m ossaudio pt pthread ssl stdc++
 
-LIB_DEPENDS=	h323.>=1::net/openh323
+LIB_DEPENDS=	h323.>=2::net/openh323
 
 GNUGK_ID=	_gnugk
 SUBST_VARS=	GNUGK_ID
@@ -37,8 +37,7 @@ CONFIGURE_ARGS=	--enable-radius \
 
 MAKE_ENV+=	CC=${CC} CPLUS=${CXX} \
 		STDCCFLAGS="${STDCCFLAGS} -I${LOCALBASE}/include/openh323" \
-		SYSLIBDIR=`ptlib-config --libdir` \
-		PTLIB_FILE=libpt.`ptlib-config --sharedlibext`.`ptlib-config --version`
+		SYSLIBDIR=`ptlib-config --libdir`
 
 FLAVORS=	mysql pgsql
 FLAVOR?=

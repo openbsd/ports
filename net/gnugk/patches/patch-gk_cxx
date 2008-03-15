@@ -1,0 +1,18 @@
+$OpenBSD: patch-gk_cxx,v 1.1 2008/03/15 17:40:06 ajacoutot Exp $
+--- gk.cxx.orig	Wed Mar 21 23:30:16 2007
++++ gk.cxx	Thu Mar  6 12:45:10 2008
+@@ -392,11 +392,13 @@ BOOL Gatekeeper::InitToolkit(const PArgList& /*args*/)
+ BOOL Gatekeeper::InitConfig(const PArgList &args)
+ {
+ 	// get the name of the config file
+-	PFilePath fp("gatekeeper.ini");
++	PFilePath fp;
+ 	PString section("Gatekeeper::Main");
+ 
+ 	if (args.HasOption('c')) 
+ 		fp = PFilePath(args.GetOptionString('c'));
++	else
++		fp = "gatekeeper.ini";
+ 
+ 	if (args.HasOption('s')) 
+ 		section = args.GetOptionString('s');
