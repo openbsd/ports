@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/15 10:59:46 ajacoutot Exp $
+bin/ppf_mime
+bin/ppf_mime_decrypt
+libexec/ppf_decrypt
+libexec/ppf_encrypt
+libexec/ppf_mime
+libexec/ppf_mime_decrypt
+libexec/ppf_sign
+libexec/ppf_verify
+share/doc/pine-pgp-filters/
+share/doc/pine-pgp-filters/INSTALL
+share/doc/pine-pgp-filters/README
