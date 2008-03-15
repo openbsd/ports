@@ -1,0 +1,2 @@
+swaks is the Swiss Army Knife for SMTP transaction testing.  It provides
+command line SMTP testing capabilities, including TLS and AUTH.
