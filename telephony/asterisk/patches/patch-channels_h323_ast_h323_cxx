@@ -1,0 +1,11 @@
+$OpenBSD: patch-channels_h323_ast_h323_cxx,v 1.1 2008/03/15 17:41:12 ajacoutot Exp $
+--- channels/h323/ast_h323.cxx.orig	Thu Mar  6 09:33:18 2008
++++ channels/h323/ast_h323.cxx	Thu Mar  6 09:33:45 2008
+@@ -81,6 +81,7 @@ static MyH323EndPoint *endPoint = NULL;
+ /** PWLib entry point */
+ static MyProcess *localProcess = NULL;
+ 
++int timerChangePipe[2];
+ static int _timerChangePipe[2];
+ 
+ static unsigned traceOptions = PTrace::Timestamp | PTrace::Thread | PTrace::FileAndLine;

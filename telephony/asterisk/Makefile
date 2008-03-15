@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2008/02/07 22:08:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2008/03/15 17:41:12 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -14,6 +14,8 @@ HOMEPAGE=		http://www.asterisk.org/
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2 except iaxy.bin (freely redistributable, see LICENSE)
+# "Specific permission is also granted to link Asterisk with OpenSSL
+# and OpenH323 and distribute the resulting binary files."
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -166,14 +168,17 @@ CONFIGURE_ARGS+=        --with-gnutls=${LOCALBASE} \
 
 # h323
 .if ${FLAVOR:L:Mh323}
-IS_INTERACTIVE=		Yes
-# must restart build by hand.
 LIB_DEPENDS-main+=	h323::net/openh323 \
 			pt::devel/pwlib
 CONFIGURE_ARGS+=	--with-pwlib=${LOCALBASE}/lib \
 			--with-h323=${LOCALBASE}/lib
 WANTLIB-main+=		expat ossaudio avutil
-FULLPKGNAME-main=	${DISTNAME}-h323
+FULLPKGNAME-main=	${DISTNAME}p0-h323
+
+pre-build:
+	cd ${WRKSRC} && ${MAKE_PROGRAM} include/asterisk/buildopts.h
+	cd ${WRKSRC}/channels/h323 && ${MAKE_PROGRAM} opt
+
 .else
 CONFIGURE_ARGS+=	--with-pwlib=no \
 			--with-h323=no
