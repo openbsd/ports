@@ -1,0 +1,32 @@
+$OpenBSD: patch-core_swing_tabcontrol_beanstubs_org_openide_util_Utilities_java,v 1.1 2008/03/16 13:26:55 kurt Exp $
+--- core/swing/tabcontrol/beanstubs/org/openide/util/Utilities.java.orig	Tue Feb 26 07:30:30 2008
++++ core/swing/tabcontrol/beanstubs/org/openide/util/Utilities.java	Tue Feb 26 07:40:32 2008
+@@ -95,11 +95,14 @@ public final class Utilities {
+      * @since 4.50
+      */
+     public static final int OS_FREEBSD = OS_OTHER << 1;
++    /** Operating system is OpenBSD
++     */
++    public static final int OS_OPENBSD = OS_FREEBSD << 1;
+ 
+     /** A mask for Windows platforms. */
+     public static final int OS_WINDOWS_MASK = OS_WINNT | OS_WIN95 | OS_WIN98 | OS_WIN2000 | OS_WIN_OTHER;
+     /** A mask for Unix platforms. */
+-    public static final int OS_UNIX_MASK = OS_SOLARIS | OS_LINUX | OS_HP | OS_AIX | OS_IRIX | OS_SUNOS | OS_TRU64 | OS_MAC | OS_FREEBSD;
++    public static final int OS_UNIX_MASK = OS_SOLARIS | OS_LINUX | OS_HP | OS_AIX | OS_IRIX | OS_SUNOS | OS_TRU64 | OS_MAC | OS_FREEBSD | OS_OPENBSD;
+ 
+     /** A height of the windows's taskbar */
+     public static final int TYPICAL_WINDOWS_TASKBAR_HEIGHT = 27;
+@@ -148,9 +151,10 @@ public final class Utilities {
+                 operatingSystem = OS_MAC;
+             else if (osName.startsWith ("Darwin")) // NOI18N
+                 operatingSystem = OS_MAC;
+-            else if (osName.toLowerCase (Locale.US).startsWith ("freebsd")) { // NOI18N 
++            else if (osName.toLowerCase (Locale.US).startsWith ("freebsd")) // NOI18N 
+                 operatingSystem = OS_FREEBSD;
+-            }
++            else if ("OpenBSD".equals (osName)) // NOI18N
++                operatingSystem = OS_OPENBSD;
+             else
+                 operatingSystem = OS_OTHER;
+         }
