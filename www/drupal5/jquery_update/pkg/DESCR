@@ -1,0 +1,6 @@
+This module facilitates the upgrade of JQuery. JQuery 1.0.1 is
+included with Drupal 5, however it is not very well supported in the JQuery
+community. In order to use most current and advanced JQuery functionality
+you will want to build off a newer version of JQuery. This module includes
+John Resig's compat-1.0.js plugin that provides backwards compatiblity for
+newer versions of JQuery to work with the JS code in Drupal 5.
