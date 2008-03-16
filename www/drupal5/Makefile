@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/18 19:00:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2008/03/16 11:44:57 espie Exp $
 
     SUBDIR += IMCE
     SUBDIR += admin-menu
@@ -12,12 +12,15 @@
     SUBDIR += cck
     SUBDIR += cck_taxonomy
     SUBDIR += coder
+    SUBDIR += content_access
     SUBDIR += core
     SUBDIR += date
     SUBDIR += daterange
+    SUBDIR += devel
     SUBDIR += dba
     SUBDIR += dhtml_menu
     SUBDIR += image
+    SUBDIR += jstools
     SUBDIR += linktocontent
     SUBDIR += locale-de
     SUBDIR += locale-es
