@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/16 12:35:06 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/find_path/
+${DRUPAL_MODS}/find_path/LICENSE.txt
+${DRUPAL_MODS}/find_path/find_path.info
+${DRUPAL_MODS}/find_path/find_path.module
+${DRUPAL_MODS}/find_path/po/
+${DRUPAL_MODS}/find_path/po/de.po
+${DRUPAL_MODS}/find_path/po/find_path.pot
