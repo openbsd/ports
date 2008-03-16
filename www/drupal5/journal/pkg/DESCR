@@ -1,0 +1,28 @@
+The Journal module adds additional fields to all forms in a Drupal site
+to allow developers and site administrators to record and track all
+actions that have been performed to setup a site or change its
+configuration.
+
+Journal is primarily useful for developers and site administrators
+working in a team environment. Since Drupal is a full-fledged content
+management framework, it is often not easy to communicate, track
+and audit all changes that have been applied to a site. Even without
+contributed modules one is able to build a totally customized site.
+
+As of now, all journal log entries have to be written manually.
+Thus, the significance of journal entries depends on the given
+information (by a human). This may change in upcoming versions of
+Journal (patches are always welcome).
+
+Journal forces a user to enter a journal entry on system_settings_forms,
+because it is obvious that something in the site configuration is
+about to be changed.
+
+The journal log is similar to the watchdog log in Drupal core.
+However, watchdog logs can be truncated or emptied at any time, so
+you would loose all journal entries.
+
+Only users granted the 'access journal' permission are able to add
+entries to the journal. Journal form fields may be disabled for
+certain forms, for example forms that are displayed in blocks, like
+the user login form.
