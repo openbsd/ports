@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_lighttpd_conf,v 1.4 2007/09/10 20:41:59 rui Exp $
---- doc/lighttpd.conf.orig	Tue Aug 14 20:05:57 2007
-+++ doc/lighttpd.conf	Mon Sep 10 21:18:56 2007
-@@ -186,10 +186,10 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
+$OpenBSD: patch-doc_lighttpd_conf,v 1.5 2008/03/16 18:43:31 brad Exp $
+--- doc/lighttpd.conf.orig	Thu Jan 17 07:41:14 2008
++++ doc/lighttpd.conf	Tue Mar 11 16:37:56 2008
+@@ -187,10 +187,10 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
  #server.chroot              = "/"
  
  ## change uid to <uid> (default: don't care)
