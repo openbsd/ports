@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/16 08:32:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/03/16 14:26:51 ajacoutot Exp $
 bin/mnemosyne
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/
-lib/python${MODPY_VERSION}/site-packages/mnemosyne-1.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mnemosyne-1.0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/core/
@@ -56,11 +56,21 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/import_frm.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/import_frm.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_XX.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_cs.qm
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_de.qm
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_es.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_fr.qm
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_nl.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_zh_CN.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_zh_HK.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_zh_SG.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/mnemosyne_zh_TW.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/qt_cs.qm
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/qt_de.qm
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/qt_es.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/qt_fr.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/qt_zh-cn.qm
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/locale/qt_zh-tw.qm
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/main_dlg.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/main_dlg.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/main_frm.py
@@ -91,7 +101,6 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/tip_frm.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/tip_frm.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/version.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/version.pyc
-share/applications/
 share/applications/mnemosyne.desktop
 share/pixmaps/
 share/pixmaps/mnemosyne.png

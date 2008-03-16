@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/16 08:32:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/03/16 14:26:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	flash-card tool which optimises your learning process
 
-DISTNAME=	mnemosyne-1.0
+DISTNAME=	mnemosyne-1.0.1
 CATEGORIES=	games education
 
 EXTRACT_SUFX=	.tgz
@@ -13,7 +13,7 @@ HOMEPAGE=	http://mnemosyne-proj.sourceforge.net/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
