@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/03/16 11:44:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2008/03/16 11:45:27 espie Exp $
 
     SUBDIR += IMCE
     SUBDIR += admin-menu
@@ -20,6 +20,7 @@
     SUBDIR += dba
     SUBDIR += dhtml_menu
     SUBDIR += image
+    SUBDIR += jquery_update
     SUBDIR += jstools
     SUBDIR += linktocontent
     SUBDIR += locale-de
