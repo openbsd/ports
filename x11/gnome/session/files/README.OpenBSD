@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1 2008/01/24 11:43:31 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2008/03/16 17:52:34 jasper Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -35,6 +35,7 @@ you can install. The most important ones will be mentioned by category:
    * gcalctool - desktop calculator
    * ggv - frontend for GhostScript
    * gucharmap - Unicode character map
+   * pessulus - lockdown editor for desktop
    * planner - project management
    * seahorse - encryption keys manager
 
