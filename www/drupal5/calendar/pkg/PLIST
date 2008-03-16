@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/18 18:59:17 espie Exp $
-@owner www
-@group www
+@comment $OpenBSD: PLIST,v 1.2 2008/03/16 10:15:28 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/calendar/
 ${DRUPAL_MODS}/calendar/CHANGELOG.txt
 ${DRUPAL_MODS}/calendar/LICENSE.txt
 ${DRUPAL_MODS}/calendar/calendar.css
 ${DRUPAL_MODS}/calendar/calendar.info
 ${DRUPAL_MODS}/calendar/calendar.install
+@comment ${DRUPAL_MODS}/calendar/calendar.install.orig
 ${DRUPAL_MODS}/calendar/calendar.module
 ${DRUPAL_MODS}/calendar/calendar.theme
 ${DRUPAL_MODS}/calendar/calendar_admin.inc

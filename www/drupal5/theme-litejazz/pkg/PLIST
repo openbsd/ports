@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 20:38:14 espie Exp $
-@owner www
-@group www
+@comment $OpenBSD: PLIST,v 1.2 2008/03/16 10:15:29 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
 ${DRUPAL_THEMES}/litejazz/
 ${DRUPAL_THEMES}/litejazz/block.tpl.php
 ${DRUPAL_THEMES}/litejazz/content.css

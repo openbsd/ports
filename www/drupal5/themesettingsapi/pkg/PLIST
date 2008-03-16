@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/16 19:54:05 espie Exp $
-@owner www
-@group www
+@comment $OpenBSD: PLIST,v 1.2 2008/03/16 10:15:29 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/themesettingsapi/
 ${DRUPAL_MODS}/themesettingsapi/CHANGELOG.txt
 ${DRUPAL_MODS}/themesettingsapi/LICENSE.txt

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/03/15 09:36:48 espie Exp $
-@owner www
-@group www
+@comment $OpenBSD: PLIST,v 1.5 2008/03/16 10:15:28 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/
 ${DRUPAL_ROOT}/CHANGELOG.txt
 ${DRUPAL_ROOT}/INSTALL.mysql.txt
@@ -228,6 +228,7 @@ ${DRUPAL_ROOT}/scripts/cron-lynx.sh
 ${DRUPAL_ROOT}/sites/
 ${DRUPAL_ROOT}/sites/all/
 ${DRUPAL_ROOT}/sites/all/README.txt
+${DRUPAL_MODS}/
 ${DRUPAL_THEMES}/
 ${DRUPAL_ROOT}/sites/default/
 ${DRUPAL_ROOT}/sites/default/settings.php.sample
