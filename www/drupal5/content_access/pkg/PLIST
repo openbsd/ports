@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/16 11:24:23 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/content_access/
+${DRUPAL_MODS}/content_access/LICENSE.txt
+${DRUPAL_MODS}/content_access/README.txt
+${DRUPAL_MODS}/content_access/content_access.css
+${DRUPAL_MODS}/content_access/content_access.info
+${DRUPAL_MODS}/content_access/content_access.install
+${DRUPAL_MODS}/content_access/content_access.module
