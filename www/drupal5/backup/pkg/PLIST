@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/16 12:39:02 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/backup/
+${DRUPAL_MODS}/backup/INSTALL.txt
+${DRUPAL_MODS}/backup/LICENSE.txt
+${DRUPAL_MODS}/backup/README.txt
+${DRUPAL_MODS}/backup/backup.info
+${DRUPAL_MODS}/backup/backup.module
+${DRUPAL_MODS}/backup/backup_lib.php
+${DRUPAL_MODS}/backup/forms.inc.php
+${DRUPAL_MODS}/backup/functions.inc.php

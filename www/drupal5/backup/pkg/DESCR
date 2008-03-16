@@ -1,0 +1,4 @@
+This backups the whole database and files/ directory as one single tarball
+you can then download
+
+Works only with mysql
