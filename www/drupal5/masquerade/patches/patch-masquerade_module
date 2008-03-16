@@ -1,0 +1,32 @@
+$OpenBSD: patch-masquerade_module,v 1.1 2008/03/16 10:18:04 espie Exp $
+--- masquerade.module.orig	Sun Mar 16 11:16:31 2008
++++ masquerade.module	Sun Mar 16 11:16:46 2008
+@@ -198,7 +198,14 @@ function _masquerade_block_1_form($record) {
+  * masquerade block form submit
+  */
+ function _masquerade_block_1_form_submit($form_id, $form_values) {
+-  $masq_user = user_load(array('name' => $form_values['masquerade_user_field']));
++  if (module_exists('alt_login')) {
++    $name = $form_values['masquerade_user_field'];
++    $alt = db_fetch_object(db_query("SELECT u.name FROM {users} u INNER JOIN {alt_login} al ON u.uid = al.uid WHERE al.alt_login = '%s'", $name));
++    if ($alt->name) {
++      $name = $alt->name;
++    }
++  }
++  $masq_user = user_load(array('name' => $name));
+   masquerade_switch_user($masq_user->uid);
+   drupal_goto();
+ }
+@@ -326,6 +333,12 @@ function masquerade_autocomplete($string) {
+   $result = db_query_range("SELECT name FROM {users} WHERE LOWER(name) LIKE LOWER('%s%%')", $string, 0, 10);
+   while ($user = db_fetch_object($result)) {
+     $matches[$user->name] = check_plain($user->name);
++  }
++  if (module_exists('alt_login')) {
++    $result = db_query_range("SELECT alt_login FROM {alt_login} WHERE LOWER(alt_login) LIKE LOWER('%s%%')", $string, 0, 10);
++    while ($user = db_fetch_object($result)) {
++      $matches[$user->alt_login] = check_plain($user->alt_login);
++    }
+   }
+   print drupal_to_js($matches);
+   exit();
