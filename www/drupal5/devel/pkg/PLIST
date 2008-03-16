@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/16 11:23:32 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/devel/
+${DRUPAL_MODS}/devel/LICENSE.txt
+${DRUPAL_MODS}/devel/README.txt
+${DRUPAL_MODS}/devel/README_devel_node_access.txt
+${DRUPAL_MODS}/devel/devel.css
+${DRUPAL_MODS}/devel/devel.info
+${DRUPAL_MODS}/devel/devel.install
+${DRUPAL_MODS}/devel/devel.js
+${DRUPAL_MODS}/devel/devel.module
+${DRUPAL_MODS}/devel/devel_generate.inc
+${DRUPAL_MODS}/devel/devel_generate.info
+${DRUPAL_MODS}/devel/devel_generate.module
+${DRUPAL_MODS}/devel/devel_node_access.info
+${DRUPAL_MODS}/devel/devel_node_access.install
+${DRUPAL_MODS}/devel/devel_node_access.module
+${DRUPAL_MODS}/devel/generate/
+${DRUPAL_MODS}/devel/generate/generate-og-users.php
+${DRUPAL_MODS}/devel/generate/generate-og2list-mail.php
+${DRUPAL_MODS}/devel/macro.info
+${DRUPAL_MODS}/devel/macro.module
+${DRUPAL_MODS}/devel/po/
+${DRUPAL_MODS}/devel/po/da.po
+${DRUPAL_MODS}/devel/po/de.po
+${DRUPAL_MODS}/devel/po/devel-module.pot
+${DRUPAL_MODS}/devel/po/fr.po
+${DRUPAL_MODS}/devel/po/hu.po
+${DRUPAL_MODS}/devel/po/it.po
+${DRUPAL_MODS}/devel/po/tr.po
+@owner
+@group
