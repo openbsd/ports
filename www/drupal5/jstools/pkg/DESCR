@@ -1,0 +1,10 @@
+A collection of javascript tools that can be attached on a
+per-css basis.
+
+* activeedit: in-place ajax editing
+* activemenu: ajax menus, slower than dhtml
+* ajaxsubmit: form submission through ajax
+* collapsiblocks: make blocks collapsible
+
+* jscalendar: a very nice calendar for date input
+
