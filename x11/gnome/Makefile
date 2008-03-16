@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2008/03/15 09:30:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2008/03/16 17:51:02 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -54,6 +54,7 @@
      SUBDIR += nautilus
      SUBDIR += oaf
      SUBDIR += panel
+     SUBDIR += pessulus
      SUBDIR += planner
      SUBDIR += py-gnome
      SUBDIR += seahorse
