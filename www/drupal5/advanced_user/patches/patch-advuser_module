@@ -1,6 +1,6 @@
-$OpenBSD: patch-advuser_module,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
---- advuser.module.orig	Sat Feb 16 15:33:24 2008
-+++ advuser.module	Sat Feb 16 15:33:31 2008
+$OpenBSD: patch-advuser_module,v 1.2 2008/03/16 10:26:16 espie Exp $
+--- advuser.module.orig	Sun Jun  3 00:45:47 2007
++++ advuser.module	Sun Mar 16 11:18:52 2008
 @@ -42,7 +42,7 @@ function advuser_menu($may_cache) {
  
      $items[] = array(
@@ -10,3 +10,100 @@ $OpenBSD: patch-advuser_module,v 1.1.1.1 2008/02/16 16:46:59 espie Exp $
              'callback' => 'advuser_admin_users',
              'type' => MENU_NORMAL_ITEM,
  //            'weight' => 7,
+@@ -660,9 +660,13 @@ function advuser_settings() {
+       '#collapsed' => FALSE,
+     );
+ 
++  $result = db_query('SELECT DISTINCT name FROM {profile_fields}');
++  while ($value = db_fetch_array($result)) {
++      $vars[] = '%'.$value[name];
++  }
+   $form['advuser_mail']['variables'] = array(
+       '#type' => 'markup', 
+-      '#value' => '<div class="advuser-inset-panel"><strong>Substitution variables</strong> available in subject and email body<br/><em> %username, %site, %uri, %user_email, %google_user (search google for user email), %yahoo_user (search yahoo for user email)</em></div>'
++      '#value' => '<div class="advuser-inset-panel"><strong>Substitution variables</strong> available in subject and email body<br/><em> %username, %site, %uri, %user_email, %google_user (search google for user email), %yahoo_user (search yahoo for user email) '.implode(" ", $vars).'</em></div>'
+     );
+ 
+   //New User Notification
+@@ -793,6 +797,11 @@ function _advuser_get_variables(&$user) {
+           '%google_user' => "http:/www.google.com/search?q=%22$user->mail%22",
+           '%yahoo_user' => "http://search.yahoo.com/search/?p=%22$user->mail%22", 
+           );
++  $result = db_query('SELECT DISTINCT name FROM {profile_fields}');
++  while ($value = db_fetch_array($result)) {
++    $field = $value[name];
++    $variables['%'.$field] = $user->$field;
++  }
+   return $variables;
+ }
+ 
+@@ -855,28 +864,48 @@ function advuser_user_insert($edit, $user, $category) 
+  * TODO: Need 'send test email' -> sends test email for current user account, to current user account
+  */
+ 
++function advuser_user_update($edit, $user, $category) {
++	global $old_subject;
++	global $old_body;
++
++  // create mail with original values
++  if ( variable_get('advuser_modify_notify', ADVUSER_DEFAULT_MODIFY_NOTIFY) ) {
++    $from = variable_get("site_mail", ini_get("sendmail_from"));
++    $body = variable_get('advuser_modify_mail', ADVUSER_DEFAULT_MODIFY_MAIL);
++    $subject = variable_get('advuser_modify_subject', ADVUSER_DEFAULT_MODIFY_SUBJECT);
++
++    $variables = _advuser_get_variables($user);
++    $old_subject = strtr($subject, $variables);
++    $old_body = strtr($body, $variables);
++  }
++}
++
+ /**
+  * Handle user edit
+  * TODO: DRY (don't repeat yourself!)
+  */
+-function advuser_user_update($edit, $user, $category) {
+-  // send mail
++function advuser_user_after_update($edit, $user, $category) {
++  global $old_subject;
++  global $old_body;
++
++  // prepare mail
+   if ( variable_get('advuser_modify_notify', ADVUSER_DEFAULT_MODIFY_NOTIFY) ) {
+     $from = variable_get("site_mail", ini_get("sendmail_from"));
+     $body = variable_get('advuser_modify_mail', ADVUSER_DEFAULT_MODIFY_MAIL);
+     $subject = variable_get('advuser_modify_subject', ADVUSER_DEFAULT_MODIFY_SUBJECT);
+ 
+-    // these are invariant for all sent emails
+     $variables = _advuser_get_variables($user);
+     $user_subject = strtr($subject, $variables);
+     $user_body = strtr($body, $variables);
++		// send mail if it changed
++    if ($user_body != $old_body || $user_subject != $old_subject) {
++			watchdog('advuser', "Sending user account mail: subj='$user_subject' body='$user_body'");
+ 
+-    watchdog('advuser', "Sending user account mail: subj='$user_subject' body='$user_body'");
+-
+-    $roles = variable_get('advuser_new_roles', ADVUSER_DEFAULT_NEW_ROLES);
+-    $result = _advuser_dbquery_users_to_notify($roles);
+-    while ($row = db_fetch_object($result)) {
+-      drupal_mail('advanced-user-mail', $row->mail, $user_subject, $user_body, $from);
++			$roles = variable_get('advuser_new_roles', ADVUSER_DEFAULT_NEW_ROLES);
++			$result = _advuser_dbquery_users_to_notify($roles);
++			while ($row = db_fetch_object($result)) {
++				drupal_mail('advanced-user-mail', $row->mail, $user_subject, $user_body, $from);
++			}
+     }
+   }
+ }
+@@ -891,9 +920,9 @@ function advuser_user($type, &$edit, &$user, $category
+     return advuser_user_insert($edit, $user, $category);
+   case 'update':
+     return advuser_user_update($edit, $user, $category);
++  case 'after_update':
++    return advuser_user_after_update($edit, $user, $category);
+   }
+-  
+-  //print $type;
+ }
+ 
+ // vim:ft=php:et:sw=2:ts=2:sts=2:ai:sta
