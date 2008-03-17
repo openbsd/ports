@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/12/18 20:59:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/03/17 10:23:44 landry Exp $
 @conflict xfcalendar-*
 %%SHARED%%
 bin/globaltime
@@ -10,7 +10,6 @@ lib/xfce4/mcs-plugins/orage_plugin.la
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
 libexec/xfce4/panel-plugins/orageclock
-share/applications/
 share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop
 share/dbus-1/
@@ -25,6 +24,9 @@ share/icons/hicolor/48x48/apps/xfcalendar.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xfcalendar.svg
+share/locale/am/
+share/locale/am/LC_MESSAGES/
+share/locale/am/LC_MESSAGES/orage.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/orage.mo
@@ -81,6 +83,7 @@ share/locale/ko/LC_MESSAGES/orage.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/orage.mo
+share/locale/lv/LC_MESSAGES/orage.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/orage.mo
@@ -114,6 +117,9 @@ share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/orage.mo
 share/locale/tr/LC_MESSAGES/orage.mo
 share/locale/uk/LC_MESSAGES/orage.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/orage.mo
 share/locale/vi/LC_MESSAGES/orage.mo
 share/locale/zh_CN/LC_MESSAGES/orage.mo
 share/locale/zh_TW/LC_MESSAGES/orage.mo
@@ -129,12 +135,15 @@ share/orage/doc/C/images/orage_calendar_edit_menu.png
 share/orage/doc/C/images/orage_calendar_file_menu.png
 share/orage/doc/C/images/orage_calendar_help_menu.png
 share/orage/doc/C/images/orage_calendar_view_menu.png
+share/orage/doc/C/images/orage_daylist.png
 share/orage/doc/C/images/orage_desktop_menuitem.png
 share/orage/doc/C/images/orage_eventlist.png
-share/orage/doc/C/images/orage_preferences_archives.png
+share/orage/doc/C/images/orage_exchange_foreign.png
+share/orage/doc/C/images/orage_exchange_impexp.png
+share/orage/doc/C/images/orage_exchange_oragefiles.png
 share/orage/doc/C/images/orage_preferences_display.png
-share/orage/doc/C/images/orage_preferences_sound.png
-share/orage/doc/C/images/orage_preferences_timezone.png
+share/orage/doc/C/images/orage_preferences_extra.png
+share/orage/doc/C/images/orage_preferences_main.png
 share/orage/doc/C/orage.html
 share/orage/sounds/
 share/orage/sounds/Boiling.wav
