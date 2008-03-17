@@ -1,0 +1,28 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_amd64_vm_os_bsd_amd64_cpp,v 1.1 2008/03/17 03:28:26 kurt Exp $
+--- hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp.orig	Sun Mar 16 09:33:24 2008
++++ hotspot/src/os_cpu/bsd_amd64/vm/os_bsd_amd64.cpp	Sun Mar 16 09:47:09 2008
+@@ -449,6 +449,24 @@ JVM_handle_bsd_signal(int sig,
+                thread->doing_unsafe_access()) {
+       stub = StubRoutines::handler_for_unsafe_access();
+     }
++
++    // jni_fast_Get<Primitive>Field can trap at certain pc's if a GC kicks in
++    // and the heap gets shrunk before the field access.
++    if ((sig == SIGSEGV) || (sig == SIGBUS)) {
++      address addr = JNI_FastGetField::find_slowcase_pc(pc);
++      if (addr != (address)-1) {
++        stub = addr;
++      }
++    }
++
++    // Check to see if we caught the safepoint code in the
++    // process of write protecting the memory serialization page.
++    // It write enables the page immediately after protecting it
++    // so we can just return to retry the write.
++    if ((sig == SIGSEGV || sig == SIGBUS) &&
++        os::is_memory_serialize_page(thread, (address)info->si_addr)) {
++      return true;
++    }
+   }
+ 
+   if (stub != NULL) {

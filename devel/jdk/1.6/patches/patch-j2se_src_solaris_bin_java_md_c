@@ -1,0 +1,52 @@
+$OpenBSD: patch-j2se_src_solaris_bin_java_md_c,v 1.1 2008/03/17 03:28:26 kurt Exp $
+--- j2se/src/solaris/bin/java_md.c.orig	Sun Mar 16 09:33:26 2008
++++ j2se/src/solaris/bin/java_md.c	Sun Mar 16 09:33:27 2008
+@@ -1032,21 +1032,28 @@ uint64_t
+ physical_memory(void) {
+ 
+ #if defined(_ALLBSD_SOURCE)
++  uint64_t result;
++  size_t len;
++#ifdef HW_PHYSMEM64
++  int64_t physmem;
++  int mib[2] = { CTL_HW, HW_PHYSMEM64 };
++#else
++  unsigned long physmem;
++  int mib[2] = { CTL_HW, HW_PHYSMEM };
++#endif
+ 
+-  unsigned long result;
+-  int mib[2];
+-  size_t rlen;
+-
+   /* fetch sysctl(hw.physmem) value */
+-  mib[0] = CTL_HW;
+-  mib[1] = HW_PHYSMEM;
+-  rlen = sizeof(result);
+-  if (sysctl(mib, 2, &result, &rlen, NULL, 0) == -1)
+-	result = 256 * MB;
++  len = sizeof(result);
++  if (sysctl(mib, 2, &physmem, &len, NULL, 0) == -1)
++	physmem = 256 * MB;
+ 
++  result = (uint64_t)physmem;
++
++# define UINT64_FORMAT "%" PRIu64
++
+   if (_launcher_debug) {
+-    printf( "  physical memory: %ju (%.3fGB)\n",
+-           (uintmax_t) result, result / (double) GB);
++    printf( "  physical memory: " UINT64_FORMAT " (%.3fGB)\n",
++           result, result / (double) GB);
+   }
+ 
+ #else /* !_ALLBSD_SOURCE */
+@@ -1389,7 +1396,7 @@ physical_processors(void) {
+     }
+   }
+   if (_launcher_debug) {
+-    printf("physical processors: %lu\n", result);
++    printf("physical processors: %lu\n", (unsigned long)result);
+   }
+ 
+   return result;

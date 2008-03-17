@@ -1,7 +1,7 @@
-$OpenBSD: patch-deploy_make_common_DeployRules-solaris_gmk,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
---- deploy/make/common/DeployRules-solaris.gmk.orig	Thu Oct 11 21:36:13 2007
-+++ deploy/make/common/DeployRules-solaris.gmk	Thu Oct 11 21:37:05 2007
-@@ -28,9 +28,9 @@ ifeq ($(PLATFORM), solaris)
+$OpenBSD: patch-deploy_make_common_DeployRules-solaris_gmk,v 1.2 2008/03/17 03:28:26 kurt Exp $
+--- deploy/make/common/DeployRules-solaris.gmk.orig	Sun Mar 16 09:33:23 2008
++++ deploy/make/common/DeployRules-solaris.gmk	Sun Mar 16 09:33:27 2008
+@@ -34,9 +34,9 @@ ifeq ($(PLATFORM), solaris)
  
      LDFLAGS = -xnolib -norunpath -lCrun -lnsl -ldl -lc
  else
@@ -12,5 +12,5 @@ $OpenBSD: patch-deploy_make_common_DeployRules-solaris_gmk,v 1.1.1.1 2007/11/19 
 +    CXX  ?= $(COMPILER_PATH)g++
 +    LINK = $(CXX)
  
-     # Option used to create a shared library
-     SHARED_LIBRARY_FLAG = -fPIC -shared
+     ifeq ($(OS_VENDOR),Apple)
+       # Option used to create a shared library

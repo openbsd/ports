@@ -1,17 +1,17 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
---- hotspot/build/bsd/makefiles/gcc.make.orig	Sat Nov 17 16:55:39 2007
-+++ hotspot/build/bsd/makefiles/gcc.make	Sat Nov 17 17:25:34 2007
-@@ -8,8 +8,7 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.2 2008/03/17 03:28:26 kurt Exp $
+--- hotspot/build/bsd/makefiles/gcc.make.orig	Sun Mar 16 09:33:24 2008
++++ hotspot/build/bsd/makefiles/gcc.make	Sun Mar 16 09:35:24 2008
+@@ -13,8 +13,7 @@ UNAME.s         = $(shell $(UNAME) -s)
  #------------------------------------------------------------------------
  # CC, CPP & AS
  
 -CPP = g++
 -CC  = gcc
 +CPP = $(CXX)
- AS  = $(CC) -c
+ AS  = $(CC) -c -x assembler-with-cpp
  
  # -dumpversion in gcc-2.91 shows "egcs-2.91.66". In later version, it only
-@@ -68,7 +67,7 @@ endif
+@@ -93,7 +92,7 @@ endif
  WARNINGS_ARE_ERRORS = -Werror
  # Except for a few acceptable ones
  ACCEPTABLE_WARNINGS = -Wpointer-arith -Wconversion -Wsign-compare

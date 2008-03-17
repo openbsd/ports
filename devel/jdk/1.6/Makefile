@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/01/18 16:08:05 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2008/03/17 03:28:26 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,8 @@ COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
 COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.6.0.03
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p0
-PKGNAME-jre=		jre-${V}p0
+PKGNAME-main=		jdk-${V}p1
+PKGNAME-jre=		jre-${V}p1
 
 CATEGORIES=		devel/jdk java
 
@@ -21,7 +21,7 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 JRLSRC=			jdk-6u3-fcs-src-b05-jrl-24_sep_2007.jar
 JRLBIN=			jdk-6u3-fcs-bin-b05-jrl-24_sep_2007.jar
 JRLMOZ=			jdk-6u3-fcs-mozilla_headers-b05-unix-24_sep_2007.jar
-PATCHSET=		bsd-jdk16-patches-3.tar.bz2
+PATCHSET=		bsd-jdk16-patches-4.tar.bz2
 
 DISTFILES=		${JRLSRC} \
 			${JRLBIN} \
