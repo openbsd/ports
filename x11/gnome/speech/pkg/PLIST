@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/17 19:07:38 jasper Exp $
+%%SHARED%%
+bin/festival-synthesis-driver
+bin/test-speech
+include/gnome-speech-1.0/
+include/gnome-speech-1.0/gnome-speech/
+include/gnome-speech-1.0/gnome-speech/GNOME_Speech.h
+include/gnome-speech-1.0/gnome-speech/gnome-speech.h
+include/gnome-speech-1.0/gnome-speech/speaker.h
+lib/bonobo/
+lib/bonobo/servers/
+lib/bonobo/servers/GNOME_Speech_SynthesisDriver_Festival.server
+lib/libgnomespeech.a
+lib/libgnomespeech.la
+lib/orbit-2.0/
+lib/orbit-2.0/GNOME_Speech_module.a
+lib/orbit-2.0/GNOME_Speech_module.la
+lib/pkgconfig/
+lib/pkgconfig/gnome-speech-1.0.pc
+share/idl/
+share/idl/gnome-speech-1.0/
+share/idl/gnome-speech-1.0/GNOME_Speech.idl
+share/idl/gnome-speech-1.0/GNOME_Speech_Speaker.idl
+share/idl/gnome-speech-1.0/GNOME_Speech_SpeechCallback.idl
+share/idl/gnome-speech-1.0/GNOME_Speech_SynthesisDriver.idl

@@ -1,0 +1,4 @@
+The GNOME Speech API allows developers to incorporate speech technology
+into user interfaces for their GNOME applications. This API specifies a
+cross-platform interface to support command and control recognizers,
+dictation systems and speech synthesizers.
