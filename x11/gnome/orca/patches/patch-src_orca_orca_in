@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_orca_orca_in,v 1.1.1.1 2008/03/17 19:11:58 jasper Exp $
+--- src/orca/orca.in.orig	Fri Dec 28 12:30:02 2007
++++ src/orca/orca.in	Fri Dec 28 12:31:02 2007
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Orca
+ #
+@@ -30,7 +30,7 @@
+ 
+ # Set the user's $PATH for this script.
+ #
+-export PATH="/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
++#export PATH="/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
+ 
+ # If you set RUNONCE to "true", then this will just run Orca once and quit.
+ #
+@@ -258,7 +258,7 @@ if [ "x$RUNONCE" = "xfalse" -a "x$ARGS" = "x" ]
+ then
+     main
+ else
+-    if [ `grep -c "\-q" <<< $ARGS` -gt 0 ]
++    if [ `echo $ARGS | grep -c "\-q"` -gt 0 ]
+     then
+         cleanup
+     else
+@@ -270,7 +270,7 @@ else
+         # erroneously types an illegal command line argument, the
+         # help text is emitted and the other orca is not killed.
+         #
+-        if [ `egrep -c "\-s|\-g|\-t|\-n|\-u|\-e|\-d" <<< $ARGS` -eq 0 ]
++        if [ `echo $ARGS | egrep -c "\-s|\-g|\-t|\-n|\-u|\-e|\-d"` -eq 0 ]
+         then
+             runOrca "NO_CLEANUP"
+         else
