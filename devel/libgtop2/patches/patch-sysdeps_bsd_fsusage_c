@@ -1,13 +1,22 @@
-$OpenBSD: patch-sysdeps_bsd_fsusage_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
---- sysdeps/bsd/fsusage.c.orig	Sat Feb  2 21:06:25 2008
-+++ sysdeps/bsd/fsusage.c	Sat Feb  2 21:07:11 2008
-@@ -55,7 +55,8 @@ _glibtop_bsd_get_fsusage_read_write(glibtop *server,
+$OpenBSD: patch-sysdeps_bsd_fsusage_c,v 1.2 2008/03/17 08:38:32 ajacoutot Exp $
+--- sysdeps/bsd/fsusage.c.orig	Thu Sep 27 22:34:55 2007
++++ sysdeps/bsd/fsusage.c	Sun Mar 16 21:39:03 2008
+@@ -1,7 +1,7 @@
+ #include <config.h>
  
- #if !defined(__OpenBSD__)
- 	buf->read = sfs.f_syncreads + sfs.f_asyncreads;
-+	buf->flags |= (1 << GLIBTOP_FSUSAGE_READ);
+ /* Although FreeBSD ships with statvfs it seems incomplete, so prefer statfs */
+-#if defined (__FreeBSD__) || defined (__FreeBSD_kernel__)
++#if defined (__FreeBSD__) || defined (__FreeBSD_kernel__) || defined (__OpenBSD__)
+ #undef HAVE_SYS_STATVFS_H
+ #undef STAT_STATVFS
  #endif
+@@ -53,9 +53,7 @@ _glibtop_bsd_get_fsusage_read_write(glibtop *server,
+ 		return;
+ 	}
+ 
+-#if !defined(__OpenBSD__)
+ 	buf->read = sfs.f_syncreads + sfs.f_asyncreads;
+-#endif
  	buf->write = sfs.f_syncwrites + sfs.f_asyncwrites;
--	buf->flags |= (1 << GLIBTOP_FSUSAGE_READ) | (1 << GLIBTOP_FSUSAGE_WRITE);
-+	buf->flags |= (1 << GLIBTOP_FSUSAGE_WRITE);
+ 	buf->flags |= (1 << GLIBTOP_FSUSAGE_READ) | (1 << GLIBTOP_FSUSAGE_WRITE);
  }
