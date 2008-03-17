@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2008/03/16 17:51:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2008/03/17 19:14:46 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -25,6 +25,8 @@
      SUBDIR += gedit-plugins
      SUBDIR += ggv
      SUBDIR += ghex
+     SUBDIR += gnopernicus
+     SUBDIR += gok
      SUBDIR += gossip
      SUBDIR += gucharmap
      SUBDIR += icon-theme
@@ -47,18 +49,21 @@
      SUBDIR += librsvg,no_gnome
      SUBDIR += libs
      SUBDIR += libxklavier
+     SUBDIR += mag
      SUBDIR += media
      SUBDIR += menus
      SUBDIR += metacity
      SUBDIR += mime-data
      SUBDIR += nautilus
      SUBDIR += oaf
+     SUBDIR += orca
      SUBDIR += panel
      SUBDIR += pessulus
      SUBDIR += planner
      SUBDIR += py-gnome
      SUBDIR += seahorse
      SUBDIR += session
+     SUBDIR += speech
      SUBDIR += terminal
      SUBDIR += themes
      SUBDIR += themes-extras
