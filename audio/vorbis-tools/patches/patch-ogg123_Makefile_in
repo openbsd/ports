@@ -1,0 +1,12 @@
+$OpenBSD: patch-ogg123_Makefile_in,v 1.9 2008/03/17 21:33:06 naddy Exp $
+--- ogg123/Makefile.in.orig	Wed Feb  6 23:35:39 2008
++++ ogg123/Makefile.in	Sat Feb  9 21:22:39 2008
+@@ -605,7 +605,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 

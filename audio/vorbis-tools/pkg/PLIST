@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/07/05 13:35:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/03/17 21:33:06 naddy Exp $
 bin/ogg123
 bin/oggdec
 bin/oggenc
@@ -13,8 +13,6 @@ bin/vorbiscomment
 @man man/man1/vorbiscomment.1
 share/examples/vorbis-tools/
 share/examples/vorbis-tools/ogg123rc
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/vorbis-tools.mo
 share/locale/cs/LC_MESSAGES/vorbis-tools.mo
 share/locale/da/LC_MESSAGES/vorbis-tools.mo
