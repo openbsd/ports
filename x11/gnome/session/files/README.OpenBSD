@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2008/03/16 17:52:34 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2008/03/17 19:30:37 jasper Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -21,9 +21,14 @@ you can install. The most important ones will be mentioned by category:
 
  - Accessibility
    * dasher - predictive text input system
+   * gnome-mag - screen magnifier
+   * gnome-speech - speech module
+   * gnopernicus - screen reader and magnifier
+   * gok - on-screen keyboard
+   * orca - assistive technology for visually impaired
 
  - Development
-   * devel-docs - developer documentation
+   * gnome-devel-docs - developer documentation
    * devhelp - API documentation browser
    * gedit-plugins - plugins for Gedit
    * zenity - easy-to-script dialogs
