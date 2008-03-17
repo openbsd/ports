@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.58 2008/03/17 19:44:51 sturm Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
-DISTNAME=	getmail-4.7.6
-PKGNAME=	${DISTNAME}p0
+V=		4.8.0
+DISTNAME=	getmail-$V
 CATEGORIES=	mail
 
 HOMEPAGE=	http://pyropus.ca/software/getmail/
@@ -22,6 +22,7 @@ MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
+SUBST_VARS=	V
 EXDIR=		${PREFIX}/share/examples/getmail
 
 post-install:
