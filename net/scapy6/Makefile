@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/03/17 20:59:47 sthen Exp $
 
 COMMENT=	scapy extension to handle IPv6
 
 DISTNAME=	scapy6-20070426
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://namabiiru.hongo.wide.ad.jp/scapy6
@@ -19,7 +19,7 @@ MASTER_SITES=	http://diehard.n-r-g.com/files/
 MODULES=	lang/python
 
 RUN_DEPENDS=	:scapy->=1.1:net/scapy \
-		:python-bz2-*:lang/python/2.4,-bz2
+		:python-bz2-*:lang/python/${MODPY_VERSION},-bz2
 
 PKG_ARCH=	*
 NO_REGRESS=	Yes
