@@ -1,0 +1,4 @@
+GOK is an on-screen keyboard that provides access to the GNOME desktop
+via dynamically generated keyboards, and text entry via one of the
+provided alphanumeric keyboards, or a dynamic keyboard created based on
+the users current system keyboard driver, or even a user made keyboard.

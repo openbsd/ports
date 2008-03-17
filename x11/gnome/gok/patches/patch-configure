@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/03/17 19:04:28 jasper Exp $
+--- configure.orig	Sun Oct 14 01:46:55 2007
++++ configure	Thu Jan 17 21:58:25 2008
+@@ -23934,7 +23934,7 @@ if test "${ac_cv_lib_Xext_XevieStart+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lXext  $LIBS"
++LIBS="-lXext -lXevie $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -23995,7 +23995,7 @@ fi
+ 
+ 
+ 	if test "x$have_xevie" = "xyes"; then
+-		XEVIE_LIBS="-lXext"
++		XEVIE_LIBS="-lXext -lXevie"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_XEVIE 1
