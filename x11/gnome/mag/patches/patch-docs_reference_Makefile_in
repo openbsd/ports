@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_reference_Makefile_in,v 1.1.1.1 2008/03/17 19:02:20 jasper Exp $
+--- docs/reference/Makefile.in.orig	Tue Feb 26 09:40:32 2008
++++ docs/reference/Makefile.in	Tue Feb 26 09:40:41 2008
+@@ -257,7 +257,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ doxygen_configfile = Doxyfile
+ EXTRA_DIST = README Doxyfile
+-referencetopdir = $(datadir)/doc/gnome-mag-$(VERSION)/reference
++referencetopdir = $(datadir)/doc/gnome-mag/reference
+ referencedir = $(referencetopdir)/html
+ CLEANFILES = doxygen-warnings.txt doxygen-output.txt
+ all: all-am

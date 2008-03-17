@@ -1,0 +1,18 @@
+$OpenBSD: patch-docs_man_magnifier_1,v 1.1.1.1 2008/03/17 19:02:20 jasper Exp $
+--- docs/man/magnifier.1.orig	Mon Mar 17 19:50:48 2008
++++ docs/man/magnifier.1	Mon Mar 17 19:50:53 2008
+@@ -131,11 +131,11 @@ command line help
+ command line synopsis
+ .SH FILES
+ .TP
+-.B /usr/share/gnome-mag/1_32/*.xpm
++.B !!PREFIX!!/gnome-mag/1_32/*.xpm
+ .TP
+-.B /usr/lib/bonobo/servers/GNOME_Magnifier.server
++.B !!PREFIX!!/lib/bonobo/servers/GNOME_Magnifier.server
+ .TP
+-.B /usr/lib/libgnome-mag.so.2
++.B !!PREFIX!!/lib/libgnome-mag.so.!!LIBgnome-mag_VERSION!!
+ .SH BUGS
+ See
+ .I http://bugs.gnome.org
