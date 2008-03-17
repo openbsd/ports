@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2007/12/16 14:09:26 jasper Exp $
---- configure.orig	Sun Dec 16 13:41:23 2007
-+++ configure	Sun Dec 16 13:43:43 2007
-@@ -9320,7 +9320,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+$OpenBSD: patch-configure,v 1.7 2008/03/17 18:59:39 ajacoutot Exp $
+--- configure.orig	Sun Mar  2 06:34:45 2008
++++ configure	Mon Mar 17 10:52:02 2008
+@@ -9380,7 +9380,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.6 2007/12/16 14:09:26 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9387,7 +9387,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
+@@ -9447,7 +9447,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.6 2007/12/16 14:09:26 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9456,7 +9456,7 @@ fi
+@@ -9516,7 +9516,7 @@ fi
  	  fi
  
            if test "$gt_cv_func_dgettext_libintl" = "yes"; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.6 2007/12/16 14:09:26 jasper Exp $
            fi
  
  	  if test "$gt_cv_func_dgettext_libc" = "yes" \
-@@ -16299,13 +16299,13 @@ echo "${ECHO_T}adding \"$osx_crud\" to GL_LIBS" >&6; }
+@@ -16380,13 +16380,13 @@ echo "${ECHO_T}adding \"$osx_crud\" to GL_LIBS" >&6; }
      # link -lpthread after the Mesa libs (be they named -lGL or -lMesaGL.)
      #
      if test "$ac_have_mesa_gl" = yes; then
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.6 2007/12/16 14:09:26 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -16361,7 +16361,7 @@ fi
+@@ -16442,7 +16442,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then

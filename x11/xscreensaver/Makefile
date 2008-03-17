@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2007/12/16 14:09:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2008/03/17 18:59:39 ajacoutot Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
-DISTNAME=		xscreensaver-5.04
+DISTNAME=		xscreensaver-5.05
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
@@ -14,19 +14,20 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86misc \
-		Xxf86vm atk-1.0 c cairo expat fontconfig freetype glib-2.0 \
-		glitz gmodule-2.0 gobject-2.0 jpeg m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread util z
+		Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt \
+		Xxf86misc Xxf86vm atk-1.0 c cairo expat fontconfig \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gdk_pixbuf_xlib-2.0 glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gtk-x11-2.0 jpeg m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 png pthread util xml2 z
 
 MASTER_SITES=		${HOMEPAGE}
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			textproc/intltool
 
 RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gdk_pixbuf_xlib-2.0,gtk-x11-2.0::x11/gtk+2 \
-			glade-2.0::devel/libglade2 \
-			xml2.>=6::textproc/libxml
+LIB_DEPENDS=		glade-2.0::devel/libglade2
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
