@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/18 21:09:25 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2008/03/17 10:29:10 landry Exp $
 
 COMMENT=	query a dictionary server from the xfce4 panel
 
-V=		0.2.1
+V=		0.3.0
 DISTNAME=	xfce4-dict-plugin-${V}
-PKGNAME=	xfce4-dict-${V}p0
+PKGNAME=	xfce4-dict-${V}
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-dict-plugin
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-dict-plugin/
-EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
 LIB_DEPENDS=	xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
