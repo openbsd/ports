@@ -1,0 +1,10 @@
+This module improves non-ascii filename interoperability of Apache
+(and mod_dav).
+
+It seems many WebDAV clients send filename in its platform-local
+encoding.  But since mod_dav expects everything, even HTTP request line,
+to be in UTF-8, this causes an interoperability problem.
+
+This module adds following directives:
+EncodingEngine, SetServerEncoding, AddClientEncoding,
+DefaultClientEncoding, and NormalizeUsername.

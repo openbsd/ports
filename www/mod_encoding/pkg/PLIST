@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/17 11:28:38 ajacoutot Exp $
+lib/${MODAPACHE_MODULE}
+sbin/${MODAPACHE_ENABLE}
+share/doc/mod_encoding/
+share/doc/mod_encoding/README
