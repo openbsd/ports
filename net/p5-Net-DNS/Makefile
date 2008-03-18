@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/07 11:39:51 winiger Exp $
+# $OpenBSD: Makefile,v 1.33 2008/03/18 21:31:36 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		module to interface the DNS resolver
 
 MODULES=		cpan
-DISTNAME=		Net-DNS-0.61
+DISTNAME=		Net-DNS-0.63
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.net-dns.org/
