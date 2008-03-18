@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/18 21:26:53 simon Exp $
+bin/beediff
