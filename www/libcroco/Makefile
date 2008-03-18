@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/03/18 22:03:34 jasper Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
-DISTNAME=		libcroco-0.6.1
+GNOME_PROJECT=		libcroco
+GNOME_VERSION=		0.6.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	croco-0.6            3.1      # .3.1
-CATEGORIES=		www devel x11/gnome
+CATEGORIES=		www devel
 
 HOMEPAGE=		http://www.freespiders.org/projects/libcroco/
 
@@ -13,17 +15,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c z m
+WANTLIB=		c m pcre z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libcroco/0.6/}
-EXTRACT_SUFX=		.tar.bz2
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODULES=		devel/gettext
 LIB_DEPENDS=		glib-2.0::devel/glib2 \
 			xml2::textproc/libxml
 
-USE_LIBTOOL=		Yes
-USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
