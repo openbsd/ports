@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/03/18 19:08:07 ajacoutot Exp $
 
 COMMENT=		implementation of the ATK interface for GNOME widgets
 
 GNOME_PROJECT=		libgail-gnome
 GNOME_VERSION=		1.20.0
-SHARED_LIBS +=	gail-gnome           0.0      # .0.0
 CATEGORIES=		devel
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://developer.gnome.org/projects/gap/
 

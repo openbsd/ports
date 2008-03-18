@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/11/19 18:29:52 jasper Exp $
-@lib lib/gtk-2.0/modules/libgail-gnome.so.${LIBgail-gnome_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/03/18 19:08:07 ajacoutot Exp $
+@lib lib/gtk-2.0/modules/libgail-gnome.so
