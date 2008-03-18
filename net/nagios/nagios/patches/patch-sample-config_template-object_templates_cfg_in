@@ -1,0 +1,27 @@
+$OpenBSD: patch-sample-config_template-object_templates_cfg_in,v 1.1 2008/03/18 20:25:11 sturm Exp $
+--- sample-config/template-object/templates.cfg.in.orig	Sat Sep  1 10:21:28 2007
++++ sample-config/template-object/templates.cfg.in	Sat Sep  1 10:22:01 2007
+@@ -63,17 +63,17 @@ define host{
+         }
+ 
+ 
+-# Linux host definition template - This is NOT a real host, just a template!
++# OpenBSD host definition template - This is NOT a real host, just a template!
+ 
+ define host{
+-	name				linux-server	; The name of this host template
++	name				openbsd-server	; The name of this host template
+ 	use				generic-host	; This template inherits other values from the generic-host template
+-	check_period			24x7		; By default, Linux hosts are checked round the clock
++	check_period			24x7		; By default, OpenBSD hosts are checked round the clock
+ 	check_interval			5		; Actively check the host every 5 minutes
+ 	retry_interval			1		; Schedule host check retries at 1 minute intervals
+-	max_check_attempts		10		; Check each Linux host 10 times (max)
+-        check_command           	check-host-alive ; Default command to check Linux hosts
+-	notification_period		workhours	; Linux admins hate to be woken up, so we only notify during the day
++	max_check_attempts		10		; Check each OpenBSD host 10 times (max)
++        check_command           	check-host-alive ; Default command to check OpenBSD hosts
++	notification_period		workhours	; OpenBSD admins hate to be woken up, so we only notify during the day
+ 							; Note that the notification_period variable is being overridden from
+ 							; the value that is inherited from the generic-host template!
+ 	notification_interval		120		; Resend notifications every 2 hours

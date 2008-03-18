@@ -1,20 +1,31 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/06/24 08:29:35 sturm Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/03/18 20:25:11 sturm Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _nagios:550
 @newuser _nagios:550:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
 bin/nagiostats
 sbin/nagios
 share/examples/nagios/
-share/examples/nagios/cgi.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/
+share/examples/nagios/cgi.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/cgi.cfg
-share/examples/nagios/commands.cfg
-@sample ${CHROOT}${SYSCONFDIR}/nagios/commands.cfg
 share/examples/nagios/httpd.conf
-share/examples/nagios/localhost.cfg
-@sample ${CHROOT}${SYSCONFDIR}/nagios/localhost.cfg
 share/examples/nagios/nagios.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/nagios.cfg
+share/examples/nagios/objects/
+@sample ${CHROOT}${SYSCONFDIR}/nagios/objects/
+share/examples/nagios/objects/commands.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/objects/commands.cfg
+share/examples/nagios/objects/contacts.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/objects/contacts.cfg
+share/examples/nagios/objects/localhost.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/objects/localhost.cfg
+share/examples/nagios/objects/printer.cfg
+share/examples/nagios/objects/switch.cfg
+share/examples/nagios/objects/templates.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/objects/templates.cfg
+share/examples/nagios/objects/timeperiods.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/objects/timeperiods.cfg
+share/examples/nagios/objects/windows.cfg
 share/examples/nagios/resource.cfg
 @sample ${CHROOT}${SYSCONFDIR}/nagios/resource.cfg
 @mode 755
@@ -23,6 +34,7 @@ share/examples/nagios/resource.cfg
 @sample ${CHROOT}/var/log/nagios/
 @sample ${CHROOT}/var/log/nagios/archives/
 @sample ${CHROOT}/var/nagios/
+@sample /var/spool/nagios/
 @mode 775
 @group www
 @sample ${CHROOT}/var/nagios/rw/
@@ -31,7 +43,7 @@ share/examples/nagios/resource.cfg
 @group
 @sample /var/www/nagios/
 %%chroot%%
-@extra ${CHROOT}/var/log/nagios/nagios
+@extra ${CHROOT}/var/log/nagios/nagios.log
 @extra ${CHROOT}/var/nagios/comments.dat
 @extra ${CHROOT}/var/nagios/downtime.dat
 @extra ${CHROOT}/var/nagios/objects.cache

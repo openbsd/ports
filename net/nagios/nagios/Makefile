@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2008/01/06 09:01:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2008/03/18 20:25:11 sturm Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		2.10
+V=		3.0
 DISTNAME=	nagios-${V}
-PKGNAME-main=	nagios-${V}p0
+PKGNAME-main=	nagios-${V}
 PKGNAME-web=	nagios-web-${V}
 CATEGORIES=	net
 
@@ -23,8 +23,11 @@ MULTI_PACKAGES=	-main -web
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
+MODULES=	devel/gettext
+
 BUILD_DEPENDS=	:gd-*:graphics/gd
-LIB_DEPENDS=	ltdl.>=4::devel/libtool,-ltdl
+LIB_DEPENDS=	glib-2.0::devel/glib2 \
+		ltdl.>=4::devel/libtool,-ltdl
 RUN_DEPENDS=	:nagios-plugins-*:net/nagios/plugins
 
 CONFIGURE_STYLE=gnu
@@ -33,13 +36,15 @@ CONFIGURE_ARGS+=--datadir=/var/www/nagios \
 		--localstatedir=/var/nagios \
 		--sbindir=/var/www/cgi-bin/nagios \
 		--with-cgiurl=/cgi-bin/nagios \
+		--with-checkresult-dir=/var/spool/nagios \
 		--with-command-group=www \
 		--with-gd-inc=${LOCALBASE}/include \
 		--with-gd-lib=${LOCALBASE}/lib \
 		--with-lockfile=/var/run/nagios/nagios.pid \
 		--with-nagios-group=_nagios \
 		--with-nagios-user=_nagios
-CONFIGURE_ENV+=	LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 
 USE_X11=	Yes
 
@@ -62,8 +67,10 @@ WANTLIB-web=
 LIB_DEPENDS-web=
 RUN_DEPENDS-web=:nagios-${V}-chroot:net/nagios/nagios,chroot
 .else
-WANTLIB-web=	${WANTLIB} fontconfig freetype jpeg png z
-LIB_DEPENDS-web=gd::graphics/gd
+WANTLIB-web=	${WANTLIB} fontconfig freetype iconv intl jpeg z
+LIB_DEPENDS-web=glib-2.0::devel/glib2 \
+		gd::graphics/gd \
+		png::graphics/png
 RUN_DEPENDS-web=:nagios-${V}-!chroot:net/nagios/nagios
 .endif
 
@@ -71,23 +78,26 @@ WANTLIB-main=	${WANTLIB} pthread
 
 NO_REGRESS=	Yes
 
-CFLAGS=		-D_DIRENT_HAVE_D_TYPE
+CFLAGS+=	-D_DIRENT_HAVE_D_TYPE
 
 CONFIG_FILES0=	cgi.cfg httpd.conf nagios.cfg resource.cfg
-CONFIG_FILES1=	commands.cfg localhost.cfg
+CONFIG_FILES1=	commands.cfg contacts.cfg localhost.cfg printer.cfg switch.cfg \
+		templates.cfg timeperiods.cfg windows.cfg
 EXDIR=		${PREFIX}/share/examples/nagios
 
+INSTALL_TARGET=	install-unstripped
 SUBST_VARS=	CHROOT
 
 post-install:
-	${INSTALL_DATA_DIR} ${EXDIR}
+	${INSTALL_DATA_DIR} ${EXDIR}/objects
 	@perl -i -pe "s,%%SYSCONFDIR%%,${SYSCONFDIR}," \
 		${WRKSRC}/sample-config/httpd.conf
 .for f in ${CONFIG_FILES0}
 	${INSTALL_DATA} ${WRKSRC}/sample-config/${f} ${EXDIR}
 .endfor
 .for f in ${CONFIG_FILES1}
-	${INSTALL_DATA} ${WRKSRC}/sample-config/template-object/${f} ${EXDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample-config/template-object/${f} \
+		${EXDIR}/objects
 .endfor
 
 .include <bsd.port.mk>

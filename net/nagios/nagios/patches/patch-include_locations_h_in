@@ -1,14 +1,14 @@
-$OpenBSD: patch-include_locations_h_in,v 1.2 2006/01/15 13:37:44 sturm Exp $
---- include/locations.h.in.orig	Wed Nov 16 09:49:35 2005
-+++ include/locations.h.in	Sun Jan 15 14:11:40 2006
-@@ -20,8 +20,8 @@
- 
- #define DEFAULT_TEMP_FILE			"@localstatedir@/tempfile"
+$OpenBSD: patch-include_locations_h_in,v 1.3 2008/03/18 20:25:11 sturm Exp $
+--- include/locations.h.in.orig	Sat Sep  1 09:14:45 2007
++++ include/locations.h.in	Sat Sep  1 09:16:32 2007
+@@ -22,8 +22,8 @@
+ #define DEFAULT_TEMP_PATH                       "/tmp"
+ #define DEFAULT_CHECK_RESULT_PATH		"@localstatedir@/spool/checkresults"
  #define DEFAULT_STATUS_FILE			"@localstatedir@/status.dat"
 -#define DEFAULT_LOG_FILE			"@localstatedir@/nagios.log"
 -#define DEFAULT_LOG_ARCHIVE_PATH		"@localstatedir@/archives/"
-+#define DEFAULT_LOG_FILE			"/var/log/nagios/nagios"
++#define DEFAULT_LOG_FILE			"/var/log/nagios/nagios.log"
 +#define DEFAULT_LOG_ARCHIVE_PATH		"/var/log/nagios/archives/"
+ #define DEFAULT_DEBUG_FILE                      "@localstatedir@/nagios.debug"
  #define DEFAULT_COMMENT_FILE			"@localstatedir@/comments.dat"
  #define DEFAULT_DOWNTIME_FILE			"@localstatedir@/downtime.dat"
- #define DEFAULT_RETENTION_FILE			"@localstatedir@/retention.dat"

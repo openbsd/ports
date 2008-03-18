@@ -1,0 +1,14 @@
+$OpenBSD: patch-cgi_cgiutils_c,v 1.1 2008/03/18 20:25:11 sturm Exp $
+--- cgi/cgiutils.c.orig	Sun Mar 16 15:17:27 2008
++++ cgi/cgiutils.c	Sun Mar 16 15:17:31 2008
+@@ -1346,6 +1346,10 @@ char *mmap_fgets_multiline(mmapfile *temp_mmapfile){
+ 		else
+ 			end=len-1;
+ 
++		/* array indices may not be negative */
++		if(end<0)
++			end=0;
++
+ 		/* two backslashes found, so unescape first backslash first and break */
+ 		if(end>=1 && buf[end-1]=='\\' && buf[end]=='\\'){
+ 			buf[end]='\n';

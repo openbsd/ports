@@ -1,6 +1,6 @@
-$OpenBSD: patch-sample-config_nagios_cfg_in,v 1.2 2007/02/13 21:59:13 sturm Exp $
---- sample-config/nagios.cfg.in.orig	Fri Dec 22 02:43:20 2006
-+++ sample-config/nagios.cfg.in	Fri Feb  2 09:43:50 2007
+$OpenBSD: patch-sample-config_nagios_cfg_in,v 1.3 2008/03/18 20:25:11 sturm Exp $
+--- sample-config/nagios.cfg.in.orig	Thu Jan 24 19:58:02 2008
++++ sample-config/nagios.cfg.in	Sat Mar 15 19:47:52 2008
 @@ -16,7 +16,7 @@
  # for historical purposes.  This should be the first option specified 
  # in the config file!!!
@@ -10,16 +10,7 @@ $OpenBSD: patch-sample-config_nagios_cfg_in,v 1.2 2007/02/13 21:59:13 sturm Exp 
  
  
  
-@@ -31,7 +31,7 @@ log_file=@localstatedir@/nagios.log
- # separate from host and contact definitions...
- 
- # Command definitions
--cfg_file=@sysconfdir@/commands.cfg
-+#cfg_file=@sysconfdir@/commands.cfg
- 
- # Host and service definitions for monitoring this machine
- cfg_file=@sysconfdir@/localhost.cfg
-@@ -245,7 +245,7 @@ log_rotation_method=d
+@@ -264,7 +264,7 @@ log_rotation_method=d
  # This is the directory where archived (rotated) log files should be 
  # placed (assuming you've chosen to do log rotation).
  
