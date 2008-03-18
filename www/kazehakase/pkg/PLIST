@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/11 14:47:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/03/18 19:25:55 landry Exp $
 %%SHARED%%
 bin/kazehakase
 lib/kazehakase/
@@ -9,7 +9,6 @@ lib/kazehakase/libkazehakase.a
 lib/kazehakase/libkazehakase.la
 lib/kazehakase/search/
 @man man/man1/kazehakase.1
-share/applications/
 share/applications/kazehakase.desktop
 share/examples/kazehakase/
 @sample ${SYSCONFDIR}/kazehakase/

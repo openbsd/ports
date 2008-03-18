@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/01/11 14:47:28 landry Exp $
---- Makefile.in.orig	Thu Jan 10 13:18:54 2008
-+++ Makefile.in	Thu Jan 10 13:19:04 2008
-@@ -284,7 +284,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-Makefile_in,v 1.2 2008/03/18 19:25:55 landry Exp $
+--- Makefile.in.orig	Fri Feb 29 14:49:47 2008
++++ Makefile.in	Sat Mar 15 14:07:27 2008
+@@ -286,7 +286,7 @@ target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I macros

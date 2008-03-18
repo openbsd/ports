@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/11 14:47:28 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/03/18 19:25:55 landry Exp $
 
 COMMENT=	lightweight gecko-based web browser
 CATEGORIES=	www
 
 SHARED_LIBS=	kazehakase 0.0 #.1.0
 
-DISTNAME=	kazehakase-0.5.1
-MASTER_SITES=	http://osdn.dl.sourceforge.jp/kazehakase/28710/
+DISTNAME=	kazehakase-0.5.3
+MASTER_SITES=	http://osdn.dl.sourceforge.jp/kazehakase/29695/
 #doesn't work
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/}
 
