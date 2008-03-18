@@ -12,6 +12,7 @@ Available flavors:
 
 cups	Enable CUPS support
 ldap	Enable LDAP support
+ads	Enable Active Directory support
 
 Available subpackage:
 

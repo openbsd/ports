@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.89 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.90 2008/03/18 09:15:50 dlg Exp $
 
 COMMENT-main=	SMB and CIFS client and server for UNIX
 COMMENT-docs=	documentation and examples for samba
 
 DISTNAME=		samba-3.0.28
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	1.0 \
 			msrpc		1.0
@@ -60,7 +60,7 @@ CONFIGURE_ARGS= --localstatedir="/var" \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,--export-dynamic"
 
-FLAVORS=        cups ldap
+FLAVORS=        cups ldap ads
 FLAVOR?=
 
 MULTI_PACKAGES= -main -docs
@@ -73,10 +73,23 @@ WANTLIB+=	ssl crypto m pthread z
 CONFIGURE_ARGS+= --disable-cups
 .endif
 
+.if ${FLAVOR:L:Mldap} && ${FLAVOR:L:Mads}
+ERRORS+="Fatal: ldap and ads flavors conflict"
+.endif
+
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+= --with-ldap --without-ads
 LIB_DEPENDS+=	ldap,lber::databases/openldap
 BUILD_DEPENDS+=	::misc/libutf8
+.else
+CONFIGURE_ARGS+= --without-ldap --without-ads
+.endif
+
+.if ${FLAVOR:L:Mads}
+CONFIGURE_ARGS+= --with-ldap --with-krb5="${WRKDIR}/usr" --with-ads
+LIB_DEPENDS+=	ldap,lber::databases/openldap
+BUILD_DEPENDS+=	::misc/libutf8
+WANTLIB+=	asn1 com_err gssapi krb5
 .else
 CONFIGURE_ARGS+= --without-ldap --without-ads
 .endif
@@ -101,6 +114,10 @@ pre-configure:
 	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
 		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/../docs/manpages/swat.8
+
+post-extract:
+	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
+	chmod a+x ${WRKDIR}/bin/krb5-config
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/pdf
