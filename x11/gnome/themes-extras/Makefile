@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/02/28 17:24:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/03/18 15:05:28 ajacoutot Exp $
 
 COMMENT=		themes collection for GNOME
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/2.20/}
-EXTRACT_SUFX=		.tar.bz2
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION}/}
 
 MODULES=		x11/gnome
 
