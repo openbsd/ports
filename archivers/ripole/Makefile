@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/25 10:40:32 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2008/03/18 19:14:28 jasper Exp $
 
 COMMENT=		extract attachments from OLE2 data files
 DISTNAME=		ripole-0.2.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		archivers
 
 HOMEPAGE=		http://www.pldaniels.com/ripole/
@@ -21,6 +22,8 @@ MASTER_SITES=		${HOMEPAGE} \
 
 ALL_TARGET=		default
 NO_REGRESS=		Yes
+
+MAKE_ENV=		CFLAGS="${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ripole ${PREFIX}/bin

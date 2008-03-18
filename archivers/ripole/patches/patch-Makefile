@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile,v 1.1 2008/03/18 19:14:28 jasper Exp $
+--- Makefile.orig	Mon Dec 12 04:06:21 2005
++++ Makefile	Tue Mar 18 19:51:24 2008
+@@ -1,6 +1,6 @@
+ 
+ OBJS= ole.o olestream-unwrap.o bytedecoders.o logger.o pldstr.o bt-int.o
+-CFLAGS=-Wall -g -O2 -I.
++CFLAGS+=-Wall -g -I.
+ 
+ 
+ .c.o:
