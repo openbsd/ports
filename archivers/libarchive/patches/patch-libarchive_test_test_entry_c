@@ -1,0 +1,12 @@
+$OpenBSD: patch-libarchive_test_test_entry_c,v 1.1 2008/03/18 21:43:35 naddy Exp $
+--- libarchive/test/test_entry.c.orig	Fri Feb 15 07:27:47 2008
++++ libarchive/test/test_entry.c	Tue Mar 18 21:45:19 2008
+@@ -676,7 +676,7 @@ DEFINE_TEST(test_entry)
+ 	 * Exercise the character-conversion logic, if we can.
+ 	 */
+ 	failure("Can't exercise charset-conversion logic.");
+-	if (assert(NULL != setlocale(LC_ALL, "de_DE.UTF-8"))) {
++	if (NULL != setlocale(LC_ALL, "de_DE.UTF-8")) {
+ 		/* A filename that cannot be converted to wide characters. */
+ 		archive_entry_copy_pathname(e, "abc\314\214mno\374xyz");
+ 		failure("Converting invalid chars to Unicode should fail.");

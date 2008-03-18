@@ -1,7 +1,7 @@
-$OpenBSD: patch-libarchive_test_main_c,v 1.4 2008/01/27 17:17:04 naddy Exp $
---- libarchive/test/main.c.orig	Tue Jan  1 23:42:46 2008
-+++ libarchive/test/main.c	Sun Jan 27 16:39:51 2008
-@@ -306,8 +306,8 @@ test_assert_equal_wstring(const char *file, int line,
+$OpenBSD: patch-libarchive_test_main_c,v 1.5 2008/03/18 21:43:35 naddy Exp $
+--- libarchive/test/main.c.orig	Tue Feb 19 06:52:30 2008
++++ libarchive/test/main.c	Tue Mar 18 20:00:19 2008
+@@ -304,8 +304,8 @@ test_assert_equal_wstring(const char *file, int line,
  		return;
  	fprintf(stderr, "%s:%d: Assertion failed: Unicode strings not equal\n",
  	    file, line);

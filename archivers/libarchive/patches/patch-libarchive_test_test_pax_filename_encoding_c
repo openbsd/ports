@@ -1,0 +1,12 @@
+$OpenBSD: patch-libarchive_test_test_pax_filename_encoding_c,v 1.1 2008/03/18 21:43:35 naddy Exp $
+--- libarchive/test/test_pax_filename_encoding.c.orig	Tue Mar 18 21:05:02 2008
++++ libarchive/test/test_pax_filename_encoding.c	Tue Mar 18 21:06:03 2008
+@@ -60,7 +60,7 @@ DEFINE_TEST(test_pax_filename_encoding)
+ 	 */
+ 	/* If it doesn't exist, just warn and return. */
+ 	failure("We need a suitable locale for the encoding tests.");
+-	if (!assert(NULL != setlocale(LC_ALL, "de_DE.UTF-8")))
++	if (NULL == setlocale(LC_ALL, "de_DE.UTF-8"))
+ 		return;
+ 
+ 	assert((a = archive_write_new()) != NULL);
