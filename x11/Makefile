@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.327 2008/02/19 08:49:06 bernd Exp $
+# $OpenBSD: Makefile,v 1.328 2008/03/18 09:15:53 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -312,6 +312,7 @@
      SUBDIR += xwit
      SUBDIR += xwrits
      SUBDIR += xzoom
+     SUBDIR += yakuake
      SUBDIR += yeahlaunch
 
 .include <bsd.port.subdir.mk>
