@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.587 2008/03/15 12:41:17 mcbride Exp $
+# $OpenBSD: Makefile,v 1.588 2008/03/18 21:26:56 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -25,6 +25,7 @@
      SUBDIR += autogen
      SUBDIR += automake
      SUBDIR += avr
+     SUBDIR += beediff
      SUBDIR += bison
      SUBDIR += blame
      SUBDIR += bluetooth-libs
