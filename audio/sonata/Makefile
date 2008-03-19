@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/02/19 16:14:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/03/19 15:52:31 winiger Exp $
 
 COMMENT=	elegant music player for MPD
 
-DISTNAME=	sonata-1.4.1
+DISTNAME=	sonata-1.4.2
 CATEGORIES=	audio
 
 HOMEPAGE=	http://sonata.berlios.de/
-MAINTAINER=	Dmitri Alenitchev <dma@dma.org.ru>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +26,6 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	::x11/py-gtk2
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::devel/py-SOAPpy \
-		::textproc/py-ElementTree \
 		::x11/py-gtk2
 
 USE_X11=	Yes

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/02/19 16:14:13 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/03/19 15:52:31 winiger Exp $
 bin/sonata
-lib/python${MODPY_VERSION}/site-packages/Sonata-1.4.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Sonata-1.4.2-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/audioscrobbler.py
 lib/python${MODPY_VERSION}/site-packages/audioscrobbler.pyc
 lib/python${MODPY_VERSION}/site-packages/mmkeys.so
