@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2008/03/15 17:41:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2008/03/19 08:18:10 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-V=			1.4.18
+V=			1.4.18.1
 DISTNAME=		asterisk-$V
 FULLPKGNAME-main=	${DISTNAME}
 
@@ -27,8 +27,7 @@ WANTLIB-main=		c crypto m pthread ssl stdc++ termcap z
 
 LIB_DEPENDS-main=	popt::devel/popt
 
-MASTER_SITES=		http://downloads.digium.com/pub/telephony/asterisk/ \
-			http://downloads.digium.com/pub/telephony/asterisk/old-releases/
+MASTER_SITES=		http://downloads.digium.com/pub/telephony/asterisk/releases/
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
