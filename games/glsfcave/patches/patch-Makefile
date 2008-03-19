@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/03/19 20:22:09 simon Exp $
+--- Makefile.orig	Fri Mar 14 13:35:20 2008
++++ Makefile	Mon Mar 17 11:32:06 2008
+@@ -1,9 +1,9 @@
+ ## MacOS X
+-LDFLAGS+=-framework OpenGL -framework GLUT -framework Foundation
++#LDFLAGS+=-framework OpenGL -framework GLUT -framework Foundation
+ ## IRIX
+ #LDFLAGS=-lglut -lGLU -lGL -lXmu -lXi -lXext -lX11 -lgen
+ ## FreeBSD/Linux
+-#LDFLAGS=-L/usr/X11R6/lib -lglut -lGLU -lGL -lXmu -lXi -lXext -lX11
++LDFLAGS+=-lglut -lGLU -lGL -lXmu -lXi -lXext -lX11 -lm
+ 
+ glsfcave: main.o
+ 	$(CC) $(CFLAGS) -o glsfcave main.o $(LDFLAGS) 
