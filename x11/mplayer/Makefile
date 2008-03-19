@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2008/02/18 16:37:38 espie Exp $
+# $OpenBSD: Makefile,v 1.128 2008/03/19 22:35:35 jasper Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -90,7 +90,8 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-jack \
 		--disable-faad-internal \
 		--enable-faad-external \
-		--disable-libvorbis
+		--disable-libvorbis \
+		--disable-libcdio
 
 CONFIGURE_ENV+=	TMPDIR="${WRKBUILD}"
 
