@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/13 17:16:49 martynas Exp $
+# $OpenBSD: Makefile,v 1.7 2008/03/19 11:39:34 winiger Exp $
 
 COMMENT=		HTML form validation, generation, and conversion
 
-VERSION=		0.9
+VERSION=		1.0
 DISTNAME=		FormEncode-${VERSION}
 PKGNAME=		py-formencode-${VERSION}
 
@@ -20,18 +20,20 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://cheeseshop.python.org/packages/source/F/FormEncode/
 
-MODULES=		devel/gettext lang/python
-RUN_DEPENDS=		::textproc/py-ElementTree \
-			::devel/py-ruledispatch
-REGRESS_DEPENDS=	::textproc/py-ElementTree \
-			::devel/py-py \
-			::devel/py-ruledispatch
+MODULES=		devel/gettext \
+			lang/python
+
+RUN_DEPENDS=		::devel/py-ruledispatch
+REGRESS_DEPENDS=	::devel/py-py \
+			::devel/py-ruledispatch \
+			::devel/py-nose
 
 SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
 post-install:
+	rm -f ${WRKSRC}/docs/test_docs.py{.orig,c}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-formencode
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/py-formencode/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-formencode
@@ -41,6 +43,5 @@ post-install:
 
 do-regress:
 	cd ${WRKSRC} && py.test .
-	rm -f ${WRKSRC}/docs/test_docs.py{.orig,c}
 
 .include <bsd.port.mk>

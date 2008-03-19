@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/13 17:16:49 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/03/19 11:39:34 winiger Exp $
 lib/python${MODPY_VERSION}/site-packages/FormEncode-${VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/FormEncode-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/FormEncode-${VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/FormEncode-${VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/FormEncode-${VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/FormEncode-${VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/formencode/
 lib/python${MODPY_VERSION}/site-packages/formencode/__init__.py
@@ -56,12 +55,24 @@ lib/python${MODPY_VERSION}/site-packages/formencode/i18n/es/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/es/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/es/LC_MESSAGES/FormEncode.mo
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/es/LC_MESSAGES/FormEncode.po
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/fi/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/fi/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/fi/LC_MESSAGES/FormEncode.mo
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/fi/LC_MESSAGES/FormEncode.po
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/fr/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/fr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/fr/LC_MESSAGES/FormEncode.mo
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/fr/LC_MESSAGES/FormEncode.po
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/it/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/it/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/it/LC_MESSAGES/FormEncode.mo
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/it/LC_MESSAGES/FormEncode.po
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/msgfmt.py
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/msgfmt.pyc
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nb_NO/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nb_NO/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nb_NO/LC_MESSAGES/FormEncode.mo
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nb_NO/LC_MESSAGES/FormEncode.po
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nl/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nl/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nl/LC_MESSAGES/FormEncode.mo
