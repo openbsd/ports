@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.16 2008/01/03 17:39:40 pvalchev Exp $
+$OpenBSD: patch-configure,v 1.17 2008/03/19 13:33:29 jakemsr Exp $
 --- configure.orig	Sun Dec 30 21:09:39 2007
-+++ configure	Wed Jan  2 18:41:16 2008
++++ configure	Mon Feb 18 00:21:17 2008
+@@ -25578,7 +25578,7 @@ fi
+             : # arts isn't installed
+         else
+             ARTS_CFLAGS=`$ARTSCONFIG --cflags`
+-            ARTS_LIBS=`$ARTSCONFIG --libs`
++            ARTS_LIBS="`$ARTSCONFIG --libs` -lstdc++"
+             ARTS_PREFIX=`$ARTSCONFIG --arts-prefix`
+             { echo "$as_me:$LINENO: checking for aRts development environment" >&5
+ echo $ECHO_N "checking for aRts development environment... $ECHO_C" >&6; }
 @@ -26333,9 +26333,6 @@ echo "${ECHO_T}$CompileNASM_ret" >&6; }
                win32)
                    NASMFLAGS="-f win32"

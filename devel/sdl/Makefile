@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2008/01/27 18:43:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.62 2008/03/19 13:33:29 jakemsr Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -59,6 +59,7 @@ CONFIGURE_ARGS+= --disable-nasm
 .endif
 
 .if ${FLAVOR:L:Mesd}
+# used via dlopen()
 LIB_DEPENDS+=	esd.>=2::audio/esound
 CONFIGURE_ARGS+= --enable-esd
 .else
@@ -67,7 +68,8 @@ CONFIGURE_ARGS+= --disable-esd
 
 .if ${FLAVOR:L:Marts}
 LIB_DEPENDS+=	artsc::x11/kde/arts3
-CONFIGURE_ARGS+= --enable-arts
+WANTLIB+=	glib-2.0 gmodule-2.0 gthread-2.0 intl pcre stdc++
+CONFIGURE_ARGS+= --enable-arts --disable-arts-shared
 .else
 CONFIGURE_ARGS+= --disable-arts
 .endif
