@@ -1,14 +1,12 @@
-$OpenBSD: patch-cgi_cgiutils_c,v 1.1 2008/03/18 20:25:11 sturm Exp $
---- cgi/cgiutils.c.orig	Sun Mar 16 15:17:27 2008
-+++ cgi/cgiutils.c	Sun Mar 16 15:17:31 2008
-@@ -1346,6 +1346,10 @@ char *mmap_fgets_multiline(mmapfile *temp_mmapfile){
- 		else
- 			end=len-1;
+$OpenBSD: patch-cgi_cgiutils_c,v 1.2 2008/03/19 17:15:53 sturm Exp $
+--- cgi/cgiutils.c.orig	Tue Feb 26 16:58:32 2008
++++ cgi/cgiutils.c	Wed Mar 19 18:05:15 2008
+@@ -1354,7 +1354,7 @@ char *mmap_fgets_multiline(mmapfile *temp_mmapfile){
+ 			}
  
-+		/* array indices may not be negative */
-+		if(end<0)
-+			end=0;
-+
- 		/* two backslashes found, so unescape first backslash first and break */
- 		if(end>=1 && buf[end-1]=='\\' && buf[end]=='\\'){
- 			buf[end]='\n';
+ 		/* one backslash found, so we should continue reading the next line */
+-		else if(buf[end]=='\\')
++		else if(end>=0 && buf[end]=='\\')
+ 			buf[end]='\x0';
+ 
+ 		/* else no continuation marker was found, so break */

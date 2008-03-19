@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_utils_c,v 1.1 2008/03/19 17:15:53 sturm Exp $
+--- base/utils.c.orig	Mon Mar 10 21:58:33 2008
++++ base/utils.c	Wed Mar 19 18:04:29 2008
+@@ -3482,7 +3482,7 @@ char *mmap_fgets_multiline(mmapfile *temp_mmapfile){
+ 			}
+ 
+ 		/* one backslash found, so we should continue reading the next line */
+-		else if(buf[end]=='\\')
++		else if(end>=0 && buf[end]=='\\')
+ 			buf[end]='\x0';
+ 
+ 		/* else no continuation marker was found, so break */
