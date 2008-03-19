@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/03/19 14:37:54 jasper Exp $
+--- configure.orig	Wed Mar 19 15:32:43 2008
++++ configure	Wed Mar 19 15:33:43 2008
+@@ -23219,7 +23219,7 @@ s,@PKG_CONFIG@,$PKG_CONFIG,;t t
+ s,@ac_pt_PKG_CONFIG@,$ac_pt_PKG_CONFIG,;t t
+ s,@LIBCDIO_CFLAGS@,$LIBCDIO_CFLAGS,;t t
+ s,@LIBCDIO_LIBS@,$LIBCDIO_LIBS,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@with_iconv@,$with_iconv,;t t
+ s,@LTLIBOBJS@,$LTLIBOBJS,;t t

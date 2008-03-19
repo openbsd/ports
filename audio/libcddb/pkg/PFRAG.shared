@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/03/19 14:37:54 jasper Exp $
+@lib lib/libcddb.so.${LIBcddb_VERSION}

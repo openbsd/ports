@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/19 14:37:54 jasper Exp $
+%%SHARED%%
+bin/cddb_query
+include/cddb/
+include/cddb/cddb.h
+include/cddb/cddb_cmd.h
+include/cddb/cddb_config.h
+include/cddb/cddb_conn.h
+include/cddb/cddb_disc.h
+include/cddb/cddb_error.h
+include/cddb/cddb_log.h
+include/cddb/cddb_site.h
+include/cddb/cddb_track.h
+include/cddb/version.h
+lib/libcddb.a
+lib/libcddb.la
+lib/pkgconfig/
+lib/pkgconfig/libcddb.pc

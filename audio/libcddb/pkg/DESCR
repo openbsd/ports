@@ -1,0 +1,11 @@
+Libcddb is a C library to access data on a CDDB server (freedb.org). It
+allows you to:
+
+- Search the database for possible CD matches.
+- Retrieve detailed information about a specific CD.
+- Submit new CD entries to the database.
+
+Libcddb supports both the custom CDDB protocol and tunnelling the query
+and read operations over plain HTTP. It is also possible to use an HTTP
+proxy server. If you want to speed things up, you can make use of the
+built-in caching facility provided by the library.
