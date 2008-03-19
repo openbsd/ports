@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/02/01 19:15:40 martynas Exp $
+# $OpenBSD: Makefile,v 1.7 2008/03/19 13:02:59 winiger Exp $
 
 COMMENT=		Python web development megaframework
 
 VERSION=		1.0.4.2
 DISTNAME=		TurboGears-${VERSION}
-PKGNAME=		py-turbogears-${VERSION}
+PKGNAME=		py-turbogears-${VERSION}p0
 
 CATEGORIES=		www
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://files.turbogears.org/eggs/
 
 MODULES=		lang/python
+
 RUN_DEPENDS=		::databases/py-sqlalchemy \
 			::databases/py-sqlobject \
 			::devel/py-cheetah \
@@ -32,8 +33,6 @@ RUN_DEPENDS=		::databases/py-sqlalchemy \
 			::devel/py-turbocheetah \
 			::devel/py-turbojson \
 			::devel/py-turbokid \
-			::textproc/py-ElementTree \
-			::textproc/py-cElementTree \
 			::www/py-cherrypy2 \
 			::www/py-formencode \
 			::www/py-paste \
