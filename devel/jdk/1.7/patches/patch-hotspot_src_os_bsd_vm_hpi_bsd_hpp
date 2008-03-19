@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_hpi_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/os/bsd/vm/hpi_bsd.hpp.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/src/os/bsd/vm/hpi_bsd.hpp	Mon Apr 16 08:42:38 2007
-@@ -39,26 +39,22 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_hpi_bsd_hpp,v 1.2 2008/03/19 18:05:43 kurt Exp $
+--- hotspot/src/os/bsd/vm/hpi_bsd.hpp.orig	Wed Nov  7 12:41:29 2007
++++ hotspot/src/os/bsd/vm/hpi_bsd.hpp	Wed Nov  7 12:55:54 2007
+@@ -36,26 +36,22 @@
  // HPI_FileInterface
  
  inline int hpi::close(int fd) {
@@ -32,7 +32,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_hpi_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:19 
  }
  
  inline int hpi::socket(int domain, int type, int protocol) {
-@@ -66,11 +62,11 @@ inline int hpi::socket(int domain, int type, int proto
+@@ -63,11 +59,11 @@ inline int hpi::socket(int domain, int type, int proto
  }
  
  inline int hpi::recv(int fd, char *buf, int nBytes, int flags) {
@@ -46,23 +46,21 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_hpi_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:19 
  }
  
  inline int hpi::timeout(int fd, long timeout) {
-@@ -81,13 +77,13 @@ inline int hpi::timeout(int fd, long timeout) {
-   prevtime = ((julong)t.tv_sec * 1000)  +  t.tv_usec / 1000;
+@@ -79,11 +75,12 @@ inline int hpi::timeout(int fd, long timeout) {
  
    for(;;) {
-+    int res;
      struct pollfd pfd;
++    int res;
  
      pfd.fd = fd;
      pfd.events = POLLIN | POLLERR;
-   
+ 
 -    int res = ::poll(&pfd, 1, timeout);
--
 +    INTERRUPTIBLE_NORESTART(::poll(&pfd, 1, timeout), res, os::Bsd::clear_interrupted);
+ 
      if (res == OS_ERR && errno == EINTR) {
  
-       // On Bsd any value < 0 means "forever"
-@@ -110,7 +106,26 @@ inline int hpi::listen(int fd, int count) {
+@@ -107,7 +104,26 @@ inline int hpi::listen(int fd, int count) {
  }
  
  inline int hpi::connect(int fd, struct sockaddr *him, int len) {
@@ -90,7 +88,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_hpi_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:19 
  }
  
  inline int hpi::accept(int fd, struct sockaddr *him, int *len) {
-@@ -121,26 +136,33 @@ inline int hpi::accept(int fd, struct sockaddr *him, i
+@@ -118,26 +134,32 @@ inline int hpi::accept(int fd, struct sockaddr *him, i
    // to 64 bits on some platform that we support.
    // Bsd doc says this can't return EINTR, unlike accept() on Solaris
  
@@ -101,13 +99,13 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_hpi_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:19 
  }
  
  inline int hpi::recvfrom(int fd, char *buf, int nBytes, int flags,
- 		         sockaddr *from, int *fromlen) {
+                          sockaddr *from, int *fromlen) {
 -  RESTARTABLE_RETURN_INT(::recvfrom(fd, buf, nBytes, (unsigned int) flags, from, (socklen_t *)fromlen));
 +  INTERRUPTIBLE_RETURN_INT((int)::recvfrom(fd, buf, nBytes, (unsigned int) flags, from, (socklen_t *)fromlen), os::Bsd::clear_interrupted);
  }
  
  inline int hpi::sendto(int fd, char *buf, int len, int flags,
- 			struct sockaddr *to, int tolen) {
+                         struct sockaddr *to, int tolen) {
 -  RESTARTABLE_RETURN_INT(::sendto(fd, buf, len, (unsigned int) flags, to, tolen));
 +  INTERRUPTIBLE_RETURN_INT((int)::sendto(fd, buf, len, (unsigned int) flags, to, tolen),os::Bsd::clear_interrupted);
  }
@@ -115,22 +113,21 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_hpi_bsd_hpp,v 1.1.1.1 2007/05/08 17:06:19 
  inline int hpi::socket_available(int fd, jint *pbytes) {
 -  // Bsd doc says EINTR not returned, unlike Solaris
 -  int ret = ::ioctl(fd, FIONREAD, pbytes);
++  int ret;
+ 
 +  if (fd < 0)
 +    return OS_OK;
- 
-+  int ret;
 +
 +  RESTARTABLE(::ioctl(fd, FIONREAD, pbytes), ret);
 +
    //%% note ioctl can return 0 when successful, JVM_SocketAvailable
    // is expected to return 0 on failure and 1 on success to the jdk.
 -  return (ret < 0) ? 0 : 1;
-+
 +  return (ret == OS_ERR) ? 0 : 1;
  }
  
  
-@@ -167,7 +189,7 @@ HPIDECL(bind, "bind", _socket, Bind, 
+@@ -164,7 +186,7 @@ HPIDECL(bind, "bind", _socket, Bind,
          (fd, him, len));
  */
  inline int hpi::bind(int fd, struct sockaddr *him, int len){

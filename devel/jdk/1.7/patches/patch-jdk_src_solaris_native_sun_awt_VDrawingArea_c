@@ -1,0 +1,15 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_VDrawingArea_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/native/sun/awt/VDrawingArea.c.orig	Tue Dec  4 04:05:24 2007
++++ jdk/src/solaris/native/sun/awt/VDrawingArea.c	Fri Dec  7 17:50:26 2007
+@@ -31,7 +31,11 @@
+ #endif /* !HEADLESS */
+ 
+ #include <stdio.h>
++#if defined(_ALLBSD_SOURCE)
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ 
+ #ifdef __linux__
+ /* XXX: Shouldn't be necessary. */

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-jre,v 1.1 2007/09/06 15:46:20 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.2 2008/03/19 18:05:46 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8
 ${JREHOME}/
-${JREHOME}/COPYRIGHT
+${JREHOME}/ASSEMBLY_EXCEPTION
 ${JREHOME}/LICENSE
-${JREHOME}/README
-${JREHOME}/Welcome.html
+${JREHOME}/README.html
+${JREHOME}/THIRD_PARTY_README
 ${JREHOME}/bin/
 ${JREHOME}/bin/java
 ${JREHOME}/bin/keytool
@@ -25,14 +25,11 @@ ${JREHOME}/lib/${MACHINE_ARCH}/jexec
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/libjli.so
 ${JREHOME}/lib/${MACHINE_ARCH}/jvm.cfg
-${JREHOME}/lib/${MACHINE_ARCH}/libJdbcOdbc.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libawt.so
-${JREHOME}/lib/${MACHINE_ARCH}/libdcpr.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libdt_socket.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libfontmanager.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libhprof.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libinstrument.so
-${JREHOME}/lib/${MACHINE_ARCH}/libioser12.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libj2gss.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libj2pcsc.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libj2pkcs11.so
@@ -44,7 +41,7 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libjdwp.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjpeg.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsig.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsound.so
-${JREHOME}/lib/${MACHINE_ARCH}/libkcms.so
+${JREHOME}/lib/${MACHINE_ARCH}/liblcms.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libmanagement.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libmlib_image.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnet.so
@@ -55,8 +52,6 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libsplashscreen.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libunpack.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libverify.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libzip.so
-${JREHOME}/lib/${MACHINE_ARCH}/motif21/
-${JREHOME}/lib/${MACHINE_ARCH}/motif21/libmawt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/native_threads/
 ${JREHOME}/lib/${MACHINE_ARCH}/native_threads/libhpi.so
 ${JREHOME}/lib/${MACHINE_ARCH}/server/
@@ -74,8 +69,6 @@ ${JREHOME}/lib/classlist
 ${JREHOME}/lib/cmm/
 ${JREHOME}/lib/cmm/CIEXYZ.pf
 ${JREHOME}/lib/cmm/GRAY.pf
-${JREHOME}/lib/cmm/LINEAR_RGB.pf
-${JREHOME}/lib/cmm/PYCC.pf
 ${JREHOME}/lib/cmm/sRGB.pf
 ${JREHOME}/lib/content-types.properties
 ${JREHOME}/lib/currency.data
@@ -88,16 +81,6 @@ ${JREHOME}/lib/ext/sunpkcs11.jar
 ${JREHOME}/lib/flavormap.properties
 ${JREHOME}/lib/fontconfig.bfc
 ${JREHOME}/lib/fontconfig.properties.src
-${JREHOME}/lib/fonts/
-${JREHOME}/lib/fonts/LucidaBrightDemiBold.ttf
-${JREHOME}/lib/fonts/LucidaBrightDemiItalic.ttf
-${JREHOME}/lib/fonts/LucidaBrightItalic.ttf
-${JREHOME}/lib/fonts/LucidaBrightRegular.ttf
-${JREHOME}/lib/fonts/LucidaSansDemiBold.ttf
-${JREHOME}/lib/fonts/LucidaSansRegular.ttf
-${JREHOME}/lib/fonts/LucidaTypewriterBold.ttf
-${JREHOME}/lib/fonts/LucidaTypewriterRegular.ttf
-${JREHOME}/lib/fonts/fonts.dir
 ${JREHOME}/lib/im/
 ${JREHOME}/lib/im/indicim.jar
 ${JREHOME}/lib/im/thaiim.jar
@@ -123,12 +106,6 @@ ${JREHOME}/lib/management/management.properties
 ${JREHOME}/lib/management/snmp.acl.template
 ${JREHOME}/lib/meta-index
 ${JREHOME}/lib/net.properties
-${JREHOME}/lib/oblique-fonts/
-${JREHOME}/lib/oblique-fonts/LucidaSansDemiOblique.ttf
-${JREHOME}/lib/oblique-fonts/LucidaSansOblique.ttf
-${JREHOME}/lib/oblique-fonts/LucidaTypewriterBoldOblique.ttf
-${JREHOME}/lib/oblique-fonts/LucidaTypewriterOblique.ttf
-${JREHOME}/lib/oblique-fonts/fonts.dir
 ${JREHOME}/lib/psfont.properties.ja
 ${JREHOME}/lib/psfontj2d.properties
 ${JREHOME}/lib/resources.jar
@@ -259,6 +236,7 @@ ${JREHOME}/lib/zi/America/Indiana/Indianapolis
 ${JREHOME}/lib/zi/America/Indiana/Knox
 ${JREHOME}/lib/zi/America/Indiana/Marengo
 ${JREHOME}/lib/zi/America/Indiana/Petersburg
+${JREHOME}/lib/zi/America/Indiana/Tell_City
 ${JREHOME}/lib/zi/America/Indiana/Vevay
 ${JREHOME}/lib/zi/America/Indiana/Vincennes
 ${JREHOME}/lib/zi/America/Indiana/Winamac

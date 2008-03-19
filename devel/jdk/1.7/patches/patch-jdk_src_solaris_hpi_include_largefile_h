@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_src_solaris_hpi_include_largefile_h,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/hpi/include/largefile.h.orig	Tue Oct 30 05:04:03 2007
++++ jdk/src/solaris/hpi/include/largefile.h	Wed Nov  7 18:16:19 2007
+@@ -34,6 +34,10 @@
+ #include "largefile_linux.h"
+ #endif
+ 
++#ifdef _ALLBSD_SOURCE
++#include "largefile_bsd.h"
++#endif
++
+ /*
+  * Prototypes for wrappers that we define.  These wrapper functions
+  * are low-level I/O routines that will use 64 bit versions if

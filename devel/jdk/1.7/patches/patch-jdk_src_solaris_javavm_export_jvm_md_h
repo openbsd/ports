@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_src_solaris_javavm_export_jvm_md_h,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/javavm/export/jvm_md.h.orig	Tue Oct 30 05:04:03 2007
++++ jdk/src/solaris/javavm/export/jvm_md.h	Wed Nov  7 18:16:19 2007
+@@ -66,7 +66,7 @@
+ #define JVM_O_O_APPEND   O_APPEND
+ #define JVM_O_EXCL       O_EXCL
+ #define JVM_O_CREAT      O_CREAT
+-#define JVM_O_DELETE     0x10000
++#define JVM_O_DELETE     0x10000000
+ 
+ /* Signals */
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-jdk_src_solaris_transport_socket_socket_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/transport/socket/socket_md.c.orig	Tue Dec  4 04:05:49 2007
++++ jdk/src/solaris/transport/socket/socket_md.c	Thu Feb 14 18:04:45 2008
+@@ -36,7 +36,7 @@
+ #ifdef __solaris__
+ #include <thread.h>
+ #endif
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <pthread.h>
+ #include <sys/poll.h>
+ #endif
+@@ -283,7 +283,7 @@ dbgsysTlsGet(int index) {
+ 
+ #endif
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ int
+ dbgsysTlsAlloc() {
+     pthread_key_t key;

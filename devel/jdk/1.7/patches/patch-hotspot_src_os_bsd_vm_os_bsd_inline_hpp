@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_inline_hpp,v 1.1.1.1 2007/05/08 17:06:19 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.inline.hpp.orig	Mon Apr 16 08:42:36 2007
-+++ hotspot/src/os/bsd/vm/os_bsd.inline.hpp	Mon Apr 16 08:42:39 2007
-@@ -64,7 +64,15 @@ inline bool os::uses_stack_guard_pages() {
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_inline_hpp,v 1.2 2008/03/19 18:05:43 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.inline.hpp.orig	Wed Nov  7 12:41:29 2007
++++ hotspot/src/os/bsd/vm/os_bsd.inline.hpp	Wed Nov  7 12:41:35 2007
+@@ -61,7 +61,15 @@ inline bool os::uses_stack_guard_pages() {
  
  inline bool os::allocate_stack_guard_pages() {
    assert(uses_stack_guard_pages(), "sanity check");
@@ -17,7 +17,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_inline_hpp,v 1.1.1.1 2007/05/08 17:
  }
  
  
-@@ -111,6 +119,107 @@ inline int os::closedir(DIR *dirp)
+@@ -108,6 +116,107 @@ inline int os::closedir(DIR *dirp)
    assert(dirp != NULL, "just checking");
    return ::closedir(dirp);
  }

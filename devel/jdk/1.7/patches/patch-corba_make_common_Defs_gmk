@@ -1,0 +1,13 @@
+$OpenBSD: patch-corba_make_common_Defs_gmk,v 1.1 2008/03/19 18:05:43 kurt Exp $
+--- corba/make/common/Defs.gmk.orig	Thu Nov  8 11:46:42 2007
++++ corba/make/common/Defs.gmk	Thu Nov  8 11:47:38 2007
+@@ -97,6 +97,9 @@ ifdef PROGRAM
+     LDLIBS_COMMON = -ldl
+   endif
+ 
++  ifeq ($(PLATFORM), bsd)
++    LDLIBS_COMMON = -pthread
++  endif
+ endif # PROGRAM
+ 
+ LDLIBS_COMMON += $(EXTRA_LIBS)

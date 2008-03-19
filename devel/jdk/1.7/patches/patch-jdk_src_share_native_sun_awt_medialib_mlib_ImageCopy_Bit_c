@@ -1,0 +1,222 @@
+$OpenBSD: patch-jdk_src_share_native_sun_awt_medialib_mlib_ImageCopy_Bit_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c.orig	Tue Oct 30 05:03:47 2007
++++ jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Wed Nov  7 18:16:18 2007
+@@ -95,7 +95,7 @@ void mlib_ImageCopy_bit_na(const mlib_u8 *sa,
+     dst = dp[0];
+     if (ld_offset + size < 32) {
+       dmask = (mask0 << (32 - size)) >> ld_offset;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+       src = (src0 >> (ld_offset - ls_offset));
+       dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -104,12 +104,12 @@ void mlib_ImageCopy_bit_na(const mlib_u8 *sa,
+ #else
+       src = (src0 >> (ld_offset - ls_offset));
+       dp[0] = (dst & (~dmask)) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       return;
+     }
+ 
+     dmask = mask0 >> ld_offset;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+     src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+     src = (src0 >> (ld_offset - ls_offset));
+     dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -118,7 +118,7 @@ void mlib_ImageCopy_bit_na(const mlib_u8 *sa,
+ #else
+     src = (src0 >> (ld_offset - ls_offset));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+     j = 32 - ld_offset;
+     dp++;
+     ls_offset += j;
+@@ -131,7 +131,7 @@ void mlib_ImageCopy_bit_na(const mlib_u8 *sa,
+ 
+     if (ld_offset + size < 32) {
+       dmask = (mask0 << (32 - size)) >> ld_offset;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+       src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+       src = (src0 << shift) | (src1 >> (32 - shift));
+@@ -141,12 +141,12 @@ void mlib_ImageCopy_bit_na(const mlib_u8 *sa,
+ #else
+       src = (src0 << shift) | (src1 >> (32 - shift));
+       dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       return;
+     }
+ 
+     dmask = mask0 >> ld_offset;
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+     src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 << shift) | (src1 >> (32 - shift));
+@@ -156,7 +156,7 @@ void mlib_ImageCopy_bit_na(const mlib_u8 *sa,
+ #else
+     src = (src0 << shift) | (src1 >> (32 - shift));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+     j = 32 - ld_offset;
+     dp++;
+     sp++;
+@@ -164,19 +164,19 @@ void mlib_ImageCopy_bit_na(const mlib_u8 *sa,
+   }
+ 
+   if (j < size) src1 = sp[0];
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+   src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+   for (; j <= size - 32; j += 32) {
+     src0 = src1;
+     src1 = sp[1];
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 << ls_offset) | (src1 >> (32 - ls_offset));
+     dp[0] = (src << 24) | ((src & 0xFF00) << 8) | ((src >> 8) & 0xFF00) | (src >> 24);
+ #else
+     dp[0] = (src0 << ls_offset) | (src1 >> (32 - ls_offset));
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+     sp++;
+     dp++;
+   }
+@@ -187,7 +187,7 @@ void mlib_ImageCopy_bit_na(const mlib_u8 *sa,
+     if (ls_offset + j > 32) src1 = sp[1];
+     dst = dp[0];
+     dmask = mask0 << (32 - j);
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 << ls_offset) | (src1 >> (32 - ls_offset));
+     dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -196,7 +196,7 @@ void mlib_ImageCopy_bit_na(const mlib_u8 *sa,
+ #else
+     src = (src0 << ls_offset) | (src1 >> (32 - ls_offset));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+   }
+ 
+ #else /* _LONGLONG */
+@@ -315,7 +315,7 @@ void mlib_ImageCopy_bit_na_r(const mlib_u8 *sa,
+     dst = dp[0];
+     if (ld_offset >= size) {
+       dmask = (lmask0 << (32 - size)) >> (ld_offset - size);
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+       src = (src0 << (ls_offset - ld_offset));
+       dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -324,12 +324,12 @@ void mlib_ImageCopy_bit_na_r(const mlib_u8 *sa,
+ #else
+       src = (src0 << (ls_offset - ld_offset));
+       dp[0] = (dst & (~dmask)) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       return;
+     }
+ 
+     dmask = lmask0 << (32 - ld_offset);
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+     src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+     src = (src0 << (ls_offset - ld_offset));
+     dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -338,7 +338,7 @@ void mlib_ImageCopy_bit_na_r(const mlib_u8 *sa,
+ #else
+     src = (src0 << (ls_offset - ld_offset));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+     j = ld_offset;
+     dp--;
+     ls_offset -= j;
+@@ -351,7 +351,7 @@ void mlib_ImageCopy_bit_na_r(const mlib_u8 *sa,
+ 
+     if (ld_offset >= size) {
+       dmask = (lmask0 << (32 - size)) >> (ld_offset - size);
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+       src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+       src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+       src = (src0 >> shift) | (src1 << (32 - shift));
+@@ -361,12 +361,12 @@ void mlib_ImageCopy_bit_na_r(const mlib_u8 *sa,
+ #else
+       src = (src0 >> shift) | (src1 << (32 - shift));
+       dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+       return;
+     }
+ 
+     dmask = lmask0 << (32 - ld_offset);
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+     src0 = (src0 << 24) | ((src0 & 0xFF00) << 8) | ((src0 >> 8) & 0xFF00) | (src0 >> 24);
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 >> shift) | (src1 << (32 - shift));
+@@ -376,7 +376,7 @@ void mlib_ImageCopy_bit_na_r(const mlib_u8 *sa,
+ #else
+     src = (src0 >> shift) | (src1 << (32 - shift));
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+     j = ld_offset;
+     dp--;
+     sp--;
+@@ -384,22 +384,22 @@ void mlib_ImageCopy_bit_na_r(const mlib_u8 *sa,
+   }
+ 
+   if (j < size) src1 = sp[0];
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+   src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+ #ifdef __SUNPRO_C
+ #pragma pipeloop(0)
+ #endif /* __SUNPRO_C */
+   for (; j <= size - 32; j += 32) {
+     src0 = src1;
+     src1 = sp[-1];
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 >> (32 - ls_offset)) | (src1 << ls_offset);
+     dp[0] = (src << 24) | ((src & 0xFF00) << 8) | ((src >> 8) & 0xFF00) | (src >> 24);
+ #else
+     dp[0] = (src0 >> (32 - ls_offset)) | (src1 << ls_offset);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+     sp--;
+     dp--;
+   }
+@@ -410,7 +410,7 @@ void mlib_ImageCopy_bit_na_r(const mlib_u8 *sa,
+     if (ls_offset < j) src1 = sp[-1];
+     dst = dp[0];
+     dmask = lmask0 >> (32 - j);
+-#ifdef _LITTLE_ENDIAN
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+     src1 = (src1 << 24) | ((src1 & 0xFF00) << 8) | ((src1 >> 8) & 0xFF00) | (src1 >> 24);
+     src = (src0 >> (32 - ls_offset)) | (src1 << ls_offset);
+     dst = (dst << 24) | ((dst & 0xFF00) << 8) | ((dst >> 8) & 0xFF00) | (dst >> 24);
+@@ -419,7 +419,7 @@ void mlib_ImageCopy_bit_na_r(const mlib_u8 *sa,
+ #else
+     src = (src0 >> (32 - ls_offset)) | (src1 << ls_offset);
+     dp[0] = (dst & ~dmask) | (src & dmask);
+-#endif /* _LITTLE_ENDIAN */
++#endif /* BYTE_ORDER == LITTLE_ENDIAN */
+   }
+ 
+ #else  /* _LONGLONG */

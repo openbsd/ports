@@ -1,0 +1,22 @@
+$OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/make/common/Defs.gmk.orig	Sat Dec  1 00:00:00 2007
++++ jdk/make/common/Defs.gmk	Sun Mar  2 15:08:40 2008
+@@ -213,6 +213,7 @@ DEVTOOLS_FT_DIR_EXISTS = $(shell \
+ 
+   ifdef ALT_FREETYPE_LIB_PATH
+     FREETYPE_LIB_PATH = $(ALT_FREETYPE_LIB_PATH)
++    USING_SYSTEM_FT_LIB=true
+   else
+     ifeq ($(DEVTOOLS_FT_DIR_EXISTS), true)
+       FREETYPE_LIB_PATH = $(DEVTOOLS_FT_DIR)/lib
+@@ -275,6 +276,10 @@ ifdef PROGRAM
+ 
+   ifeq ($(PLATFORM), linux)
+     LDLIBS_COMMON = -ldl
++  endif
++
++  ifeq ($(PLATFORM), bsd)
++    LDLIBS_COMMON = -pthread
+   endif
+ 
+ endif # PROGRAM

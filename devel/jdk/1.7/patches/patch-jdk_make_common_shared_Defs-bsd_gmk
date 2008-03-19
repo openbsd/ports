@@ -1,0 +1,29 @@
+$OpenBSD: patch-jdk_make_common_shared_Defs-bsd_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/make/common/shared/Defs-bsd.gmk.orig	Wed Nov  7 14:40:30 2007
++++ jdk/make/common/shared/Defs-bsd.gmk	Wed Nov  7 14:53:08 2007
+@@ -54,7 +54,7 @@ $(shell if [ "$1" != "" -a -d "$1" ]; then (cd $1 && p
+ endef
+ 
+ # Location on system where jdk installs might be
+-USRJDKINSTANCES_PATH =/opt/java
++USRJDKINSTANCES_PATH =/usr/local
+ 
+ # UNIXCOMMAND_PATH: path to where the most common Unix commands are.
+ #  NOTE: Must end with / so that it could be empty, allowing PATH usage.
+@@ -121,15 +121,7 @@ endif
+ BUILD_HEADLESS = true
+ LIBM=-lm
+ 
+-# GCC29_COMPILER_PATH: is the path to where the gcc 2.9 compiler is installed
+-#  NOTE: Must end with / so that it could be empty, allowing PATH usage.
+-ifneq "$(origin ALT_GCC29_COMPILER_PATH)" "undefined"
+-  GCC29_COMPILER_PATH :=$(call PrefixPath,$(ALT_GCC29_COMPILER_PATH))
+-else
+-  GCC29_COMPILER_PATH = $(JDK_DEVTOOLS_DIR)/$(PLATFORM)/gcc29/usr/
+-endif
+-
+-_CUPS_HEADERS_PATH=/usr/include
++_CUPS_HEADERS_PATH=/usr/local/include
+ 
+ # Import JDK images allow for partial builds, components not built are
+ #    imported (or copied from) these import areas when needed.

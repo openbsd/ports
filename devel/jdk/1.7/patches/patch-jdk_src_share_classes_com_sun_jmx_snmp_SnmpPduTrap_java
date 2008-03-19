@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_src_share_classes_com_sun_jmx_snmp_SnmpPduTrap_java,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/src/share/classes/com/sun/jmx/snmp/SnmpPduTrap.java.orig	Sat Dec  1 00:00:00 2007
++++ jdk/src/share/classes/com/sun/jmx/snmp/SnmpPduTrap.java	Tue Mar 18 15:45:37 2008
+@@ -78,6 +78,9 @@ public class SnmpPduTrap extends SnmpPduPacket {
+      */
+     public long            timeStamp ;
+ 
++    // TODO: IcedTea: I am a stub.
++    static public int trapAuthenticationFailure = 0;
++
+ 
+ 
+     /**

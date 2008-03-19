@@ -1,0 +1,44 @@
+$OpenBSD: patch-jdk_make_java_nio_Makefile,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/make/java/nio/Makefile.orig	Tue Oct 30 05:04:23 2007
++++ jdk/make/java/nio/Makefile	Wed Nov  7 18:01:59 2007
+@@ -82,7 +82,7 @@ FILES_export += \
+ 	sun/nio/ch/WindowsSelectorImpl.java
+ endif # PLATFORM = windows
+ 
+-ifeq ($(PLATFORM), linux)
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+ FILES_java += \
+         sun/nio/ch/AbstractPollSelectorImpl.java \
+ 	sun/nio/ch/EPollArrayWrapper.java \
+@@ -126,6 +126,11 @@ OTHER_INCLUDES += \
+   -I$(PLATFORM_SRC)/native/java/net \
+   -I$(CLASSHDRDIR)/../../../java.lang/java/CClassHeaders
+ 
++ifeq ($(PLATFORM), bsd)
++OTHER_INCLUDES += \
++  -I$(PLATFORM_SRC)/hpi/include
++endif
++
+ ifeq ($(PLATFORM),windows)
+   OTHER_LDLIBS += $(JVMLIB) ws2_32.lib \
+      -libpath:$(LIBDIR) java.lib \
+@@ -137,6 +142,9 @@ ifeq ($(PLATFORM), linux)
+ COMPILER_WARNINGS_FATAL=true
+ OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH) -ljava -lnet -lpthread -ldl
+ endif
++ifeq ($(PLATFORM), bsd)
++OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH) -ljava -lnet -pthread
++endif
+ ifeq ($(PLATFORM), solaris)
+ OTHER_LDLIBS += $(JVMLIB) $(LIBSOCKET) -lposix4 -ldl \
+ 		-L$(LIBDIR)/$(LIBARCH) -ljava -lnet
+@@ -158,6 +166,9 @@ FILES_m = mapfile-solaris
+ endif
+ ifeq ($(PLATFORM), linux)
+ FILES_m = mapfile-linux
++endif
++ifeq ($(PLATFORM), bsd)
++FILES_m = mapfile-bsd
+ endif
+ include $(BUILDDIR)/common/Mapfile-vers.gmk
+ include $(BUILDDIR)/common/Library.gmk

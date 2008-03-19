@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_src_solaris_hpi_native_threads_src_condvar_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/hpi/native_threads/src/condvar_md.c.orig	Tue Oct 30 05:04:03 2007
++++ jdk/src/solaris/hpi/native_threads/src/condvar_md.c	Wed Nov  7 18:16:19 2007
+@@ -58,7 +58,7 @@ condvarDestroy(condvar_t *condvar)
+ {
+     int err;
+ 
+-#ifdef __linux__
++#ifdef USE_PTHREADS
+     err = pthread_cond_destroy((cond_t *) &condvar->cond);
+ #else
+     err = cond_destroy((cond_t *) condvar);

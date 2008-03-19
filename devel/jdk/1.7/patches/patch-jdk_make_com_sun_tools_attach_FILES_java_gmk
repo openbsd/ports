@@ -1,0 +1,15 @@
+$OpenBSD: patch-jdk_make_com_sun_tools_attach_FILES_java_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/make/com/sun/tools/attach/FILES_java.gmk.orig	Tue Oct 30 05:04:21 2007
++++ jdk/make/com/sun/tools/attach/FILES_java.gmk	Wed Nov  7 17:55:17 2007
+@@ -43,6 +43,11 @@ FILES_java += \
+ 	sun/tools/attach/LinuxAttachProvider.java
+ endif
+ 
++ifeq ($(PLATFORM), bsd)
++FILES_java += \
++	$(TARGDIR)/sun/tools/attach/BsdAttachProvider.java
++endif
++
+ #
+ # Files that need to be copied
+ #

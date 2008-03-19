@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_make_javax_sound_FILES_c_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/make/javax/sound/FILES_c.gmk.orig	Sat Dec  1 00:00:00 2007
++++ jdk/make/javax/sound/FILES_c.gmk	Tue Feb 26 22:16:45 2008
+@@ -34,6 +34,8 @@ FILES_solaris = \
+ 
+ FILES_linux = 
+ 
++FILES_bsd =
++
+ FILES_windows = \
+ 	PLATFORM_API_WinOS_MidiIn.c \
+ 	PLATFORM_API_WinOS_MidiOut.c \

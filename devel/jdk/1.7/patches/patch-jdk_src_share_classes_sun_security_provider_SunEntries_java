@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_src_share_classes_sun_security_provider_SunEntries_java,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/share/classes/sun/security/provider/SunEntries.java.orig	Tue Oct 30 05:03:18 2007
++++ jdk/src/share/classes/sun/security/provider/SunEntries.java	Wed Nov  7 18:57:09 2007
+@@ -252,7 +252,7 @@ final class SunEntries {
+     // name of the *Security* property
+     private final static String PROP_RNDSOURCE = "securerandom.source";
+ 
+-    final static String URL_DEV_RANDOM = "file:/dev/random";
++    final static String URL_DEV_RANDOM = "file:/dev/srandom";
+     final static String URL_DEV_URANDOM = "file:/dev/urandom";
+ 
+     private static final String seedSource;

@@ -1,141 +1,111 @@
-# $OpenBSD: Makefile,v 1.11 2008/02/26 18:26:23 kurt Exp $
+# $OpenBSD: Makefile,v 1.12 2008/03/19 18:05:43 kurt Exp $
 
-BROKEN+= Work-in-progress and outdated
+SHARED_ONLY=	Yes
+ONLY_FOR_ARCHS=	i386 amd64
 
-SHARED_ONLY=		Yes
-ONLY_FOR_ARCHS= 	i386 amd64
+COMMENT-main=	Java2(TM) SE Dev Kit v${V} Early Access ${B}
+COMMENT-jre=	Java2(TM) SE Runtime Environment v${V} Early Access ${B}
+V=		1.7.0.00
+B=		b24
+DISTFILES=	openjdk7-${B}.tar.bz2 \
+		jdk-7-icedtea-plugs-1.6.tar.gz
+PKGNAME=	jdk-${V}
+PKGNAME-main=	jdk-${V}
+PKGNAME-jre=	jre-${V}
 
-COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
-COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
-V=			1.7.0
-B=			b19
-D=			30_aug_2007
-DISTFILES=		jdk-7-ea-src-${B}-jrl-${D}.jar \
-			jdk-7-ea-bin-${B}-jrl-${D}.jar
-PKGNAME=		jdk-${V}.${B}
-PKGNAME-main=		jdk-${V}.${B}p0
-PKGNAME-jre=		jre-${V}.${B}p0
+CATEGORIES=	devel/jdk java
 
-CATEGORIES=		devel/jdk java
+MULTI_PACKAGES=	-main -jre
 
-MULTI_PACKAGES= 	-main -jre
-
-FLAVORS=		with_ipv6
+FLAVORS=	with_ipv6
+PSEUDO_FLAVORS=	native_bootstrap
 FLAVOR?=
 
-HOMEPAGE=		https://jdk7.dev.java.net/
-MASTER_SITES=		http://www.java.net/download/jdk7/ \
-			http://www.java.net/download/jdk7/archive/$B/
+HOMEPAGE=	https://jdk7.dev.java.net/
 
-MAINTAINER=		Kurt Miller <kurt@openbsd.org>
+MASTER_SITES=	http://www.intricatesoftware.com/distfiles/
 
-# Java Research License
-# http://www.java.net/jrl.csp
-PERMIT_PACKAGE_CDROM=	JRL
-PERMIT_PACKAGE_FTP=	JRL
-PERMIT_DISTFILES_CDROM= JRL
-PERMIT_DISTFILES_FTP=	JRL
+MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
-NO_REGRESS=		Yes
+# GLPv2 w/CLASSPATH exception
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		:jdk-1.5.0*:devel/jdk/1.5 \
-			::archivers/zip \
-			::archivers/unzip \
-			::print/cups
-USE_MOTIF=		openmotif
-MODULES=		converters/libiconv
-WANTLIB=		X11 Xext Xi Xp Xt Xtst c freetype m ossaudio \
-			pthread stdc++
+NO_REGRESS=	Yes
 
-USE_GMAKE=		Yes
-
-ALT_BOOTDIR=		${LOCALBASE}/jdk-1.5.0
-
-MAKE_ENV=		ALT_BOOTDIR=${ALT_BOOTDIR} \
-			ALT_MOTIF_DIR=${LOCALBASE} \
-			ALT_FREETYPE_HEADERS_PATH=${X11BASE}/include \
-			ALT_FREETYPE_LIB_PATH=${X11BASE}/lib \
-			SKIP_COMPARE_IMAGES=true \
-			BUILD_INSTALL=false \
-			NO_DOCS=true \
-			CC="${CC}" \
-			CXX="${CXX}" \
-			DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
-			USERNAME=${USER} \
-			HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu` \
-			SKIP_FASTDEBUG_BUILD=true \
-			BUILD_DEPLOY=false \
-			USE_FREETYPE=true
-
-.if !${FLAVOR:L:Mwith_ipv6}
-MAKE_ENV+=		DONT_ENABLE_IPV6="YES"
+.if ${FLAVOR:L:Mnative_bootstrap}
+BUILD_DEPENDS+=	:jdk-1.7.0.*:devel/jdk/1.7
+ALT_BOOTDIR=	${LOCALBASE}/jdk-1.7.0
+.else
+BUILD_DEPENDS+=	:jdk-1.6.0.*:devel/jdk/1.6
+ALT_BOOTDIR=	${LOCALBASE}/jdk-1.6.0
 .endif
 
-JDKHOME=		jdk-1.7.0
-JREHOME=		jre-1.7.0
+BUILD_DEPENDS+=	::devel/apache-ant \
+		::archivers/zip \
+		::archivers/unzip \
+		::print/cups
+MODULES=	converters/libiconv
+WANTLIB=	X11 Xext Xi Xtst c freetype m ossaudio pthread stdc++
 
-SUBST_VARS=		JDKHOME JREHOME
+USE_GMAKE=	Yes
 
-WRKDIST=		${WRKDIR}
-WRKBUILD=		${WRKDIST}/control/make
-JVMARCH=		${MACHINE_ARCH:S/i386/i586/}
-JDKIMAGEDIR=		${WRKDIST}/control/build/bsd-${JVMARCH}/j2sdk-image
-JREIMAGEDIR=		${WRKDIST}/control/build/bsd-${JVMARCH}/j2re-image
+MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
+		ALT_FREETYPE_HEADERS_PATH=${X11BASE}/include \
+		ALT_FREETYPE_LIB_PATH=${X11BASE}/lib \
+		ALT_BINARY_PLUGS_PATH=${WRKDIR}/jdk-7-icedtea-plugs \
+		ANT_HOME=${LOCALBASE} \
+		DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
+		NO_DOCS=true \
+		CC="${CC}" \
+		CXX="${CXX}" \
+		USERNAME=${USER} \
+		HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu`
+
+#ALL_TARGET=	debug_build
+
+.if !${FLAVOR:L:Mwith_ipv6}
+MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
+.endif
+
+JDKHOME=	jdk-1.7.0
+JREHOME=	jre-1.7.0
+
+SUBST_VARS=	JDKHOME JREHOME
+
+WRKDIST=	${WRKDIR}/openjdk7-${B}
+JVMARCH=	${MACHINE_ARCH:S/i386/i586/}
+BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}
+JDKIMAGEDIR=	${BUILDDIR}/j2sdk-image
+JREIMAGEDIR=	${BUILDDIR}/j2re-image
  
 .if ${MACHINE_ARCH} == "i386"
-PKG_ARGS+=		-Dclient_vm=1
+PKG_ARGS+=	-Dclient_vm=1
 .else
-PKG_ARGS+=		-Dclient_vm=0
+PKG_ARGS+=	-Dclient_vm=0
 .endif
 
 COPYDIRS=	hotspot/src/os/linux/launcher \
 		hotspot/src/os/linux/vm \
-		hotspot/src/os_cpu/linux_amd64/vm \
-		hotspot/src/os_cpu/linux_i486/vm \
+		hotspot/src/os_cpu/linux_x86/vm \
 		hotspot/build/linux \
 		hotspot/build/linux/makefiles \
-		install/make/installer/binaries/linux \
-		j2se/src/linux/doc/man
+		jdk/src/linux/doc/man
 
-COPYFILES=	control/make/common/Defs-linux.gmk \
-		install/make/common/Defs-linux.gmk \
-		j2se/make/common/Defs-linux.gmk \
-		j2se/make/common/shared/Defs-linux.gmk \
-		j2se/make/java/nio/mapfile-linux \
-		j2se/make/netbeans/common/architectures/name-Linux.properties \
-		j2se/make/sun/awt/mapfile-vers-linux \
-		j2se/make/tools/sharing/classlist.linux \
-		j2se/src/closed/solaris/classes/sun/awt/fontconfigs/linux.fontconfig.properties \
-		j2se/src/closed/solaris/native/com/sun/media/sound/engine/HAE_API_LinuxOS.c \
-		j2se/src/closed/solaris/native/com/sun/media/sound/engine/HAE_API_LinuxOS_Capture.c \
-		j2se/src/solaris/classes/java/lang/UNIXProcess.java.linux \
-		j2se/src/solaris/classes/sun/awt/fontconfigs/linux.fontconfig.properties \
-		j2se/src/solaris/classes/sun/tools/attach/LinuxAttachProvider.java \
-		j2se/src/solaris/hpi/include/largefile_linux.h
-
-.include <bsd.own.mk>
-
-ACCEPT_JRL_LICENSE ?= No
-
-.if ${ACCEPT_JRL_LICENSE:L} != "yes"
-BROKEN += \n
-BROKEN += You must read and accept Sun's JRL license located\n
-BROKEN += at ${FILESDIR}/JavaResearchLicense.txt\n
-BROKEN += To indicate your acceptance of the JRL add ACCEPT_JRL_LICENSE=Yes\n
-BROKEN += to /etc/mk.conf and restart the build
-.endif
-
-do-extract:
-	@rm -rf ${WRKDIR}/tmp && mkdir ${WRKDIR}/tmp && \
-		${CC} ${CFLAGS} -o ${WRKDIR}/tmp/x_x2zip ${FILESDIR}/x_x2zip.c
-.for jar in ${DISTFILES}
-	@cd ${WRKDIR}/tmp && \
-		unzip -qo ${FULLDISTDIR}/${jar} X_X && \
-		./x_x2zip "YES I ACCEPT THE CLICK THROUGH LICENSE.  " X_X && \
-		cd ${WRKDIR} && \
-		unzip -q ${WRKDIR}/tmp/X_X.zip -x */lib*.so
-.endfor
-	@rm -rf ${WRKDIR}/tmp
+COPYFILES=	corba/make/common/Defs-linux.gmk \
+		corba/make/common/shared/Defs-linux.gmk \
+		jdk/make/common/Defs-linux.gmk \
+		jdk/make/common/shared/Defs-linux.gmk \
+		jdk/make/java/nio/mapfile-linux \
+		jdk/make/netbeans/common/architectures/name-Linux.properties \
+		jdk/make/sun/awt/mapfile-vers-linux \
+		jdk/make/tools/sharing/classlist.linux \
+		jdk/src/solaris/classes/java/lang/UNIXProcess.java.linux \
+		jdk/src/solaris/classes/sun/awt/fontconfigs/linux.fontconfig.properties \
+		jdk/src/solaris/classes/sun/tools/attach/LinuxAttachProvider.java \
+		jdk/src/solaris/hpi/include/largefile_linux.h
 
 # create initial bsd src from linux src (except for threads_solaris.c)
 pre-patch:
@@ -154,20 +124,21 @@ pre-patch:
 		sed 's/linux/bsd/g; s/Linux/Bsd/g' < ${WRKDIST}/$$f > ${WRKDIST}/$$t; \
 	done
 	@sed 's/solaris/bsd/g; s/Solaris/Bsd/g' \
-		< ${WRKDIST}/j2se/src/solaris/hpi/native_threads/src/threads_solaris.c \
-		> ${WRKDIST}/j2se/src/solaris/hpi/native_threads/src/threads_bsd.c
+		< ${WRKDIST}/jdk/src/solaris/hpi/native_threads/src/threads_solaris.c \
+		> ${WRKDIST}/jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
 
 post-build:
-	@rm -rf ${JDKIMAGEDIR}/man/ja \
-		${JDKIMAGEDIR}/man/ja_JP.eucJP \
-		${JREIMAGEDIR}/man/ja \
-		${JREIMAGEDIR}/man/ja_JP.eucJP
+	@rm -rf ${JDKIMAGEDIR}/man/ja ${JREIMAGEDIR}/man/ja
+	@rm -f ${BUILDDIR}/democlasses/demo/jvmti/hprof/src/hprof_md.c.orig \
+		${BUILDDIR}/impsrc/com/sun/tools/javah/Util.java.orig \
+		${BUILDDIR}/langtools/build/bootstrap/classes/com/sun/tools/javah/Util.java.orig \
+		${BUILDDIR}/langtools/build/classes/com/sun/tools/javah/Util.java.orig \
+		${BUILDDIR}/classes/com/sun/tools/javah/Util.java.orig
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${JDKHOME}
 	cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JDKHOME} -xf - 
 	${INSTALL_DATA_DIR} ${PREFIX}/${JREHOME}
 	cd ${JREIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JREHOME} -xf -
-
 
 .include <bsd.port.mk>

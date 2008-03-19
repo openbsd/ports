@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_Robot_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/native/sun/awt/awt_Robot.c.orig	Tue Dec  4 04:05:27 2007
++++ jdk/src/solaris/native/sun/awt/awt_Robot.c	Thu Feb 14 17:45:41 2008
+@@ -45,7 +45,7 @@
+ #include "wsutils.h"
+ #include "list.h"
+ #include "multiVis.h"
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <sys/socket.h>
+ #endif
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_make_javax_sound_SoundDefs_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/make/javax/sound/SoundDefs.gmk.orig	Tue Oct 30 05:04:24 2007
++++ jdk/make/javax/sound/SoundDefs.gmk	Wed Nov  7 18:08:26 2007
+@@ -40,6 +40,10 @@ ifeq ($(PLATFORM), linux)
+   CPPFLAGS += -DX_PLATFORM=X_LINUX
+ endif # PLATFORM linux
+ 
++ifeq ($(PLATFORM), bsd)
++  CPPFLAGS += -DX_PLATFORM=X_BSD
++endif # PLATFORM bsd
++
+ ifeq ($(PLATFORM), solaris)
+   CPPFLAGS += -DX_PLATFORM=X_SOLARIS
+ 

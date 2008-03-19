@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_src_solaris_classes_sun_security_provider_NativePRNG_java,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/classes/sun/security/provider/NativePRNG.java.orig	Tue Oct 30 05:04:01 2007
++++ jdk/src/solaris/classes/sun/security/provider/NativePRNG.java	Wed Nov  7 18:16:19 2007
+@@ -63,7 +63,7 @@ public final class NativePRNG extends SecureRandomSpi 
+     private static final long serialVersionUID = -6599091113397072932L;
+ 
+     // name of the pure random file (also used for setSeed())
+-    private static final String NAME_RANDOM = "/dev/random";
++    private static final String NAME_RANDOM = "/dev/srandom";
+     // name of the pseudo random file
+     private static final String NAME_URANDOM = "/dev/urandom";
+ 

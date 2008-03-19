@@ -1,0 +1,15 @@
+$OpenBSD: patch-jdk_src_share_native_com_sun_media_sound_DirectAudioDevice_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c.orig	Tue Oct 30 05:03:36 2007
++++ jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Wed Nov  7 19:05:04 2007
+@@ -33,7 +33,11 @@
+ 
+ #include <jni.h>
+ // for malloc
++#ifdef _ALLBSD_SOURCE
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #include "SoundDefs.h"
+ #include "DirectAudio.h"
+ #include "Utilities.h"

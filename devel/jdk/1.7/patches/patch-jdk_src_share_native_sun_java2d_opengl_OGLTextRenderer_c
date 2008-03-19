@@ -1,0 +1,15 @@
+$OpenBSD: patch-jdk_src_share_native_sun_java2d_opengl_OGLTextRenderer_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/share/native/sun/java2d/opengl/OGLTextRenderer.c.orig	Tue Oct 30 05:03:54 2007
++++ jdk/src/share/native/sun/java2d/opengl/OGLTextRenderer.c	Wed Nov  7 18:16:19 2007
+@@ -25,7 +25,11 @@
+ 
+ #ifndef HEADLESS
+ 
++#ifdef _ALLBSD_SOURCE
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #include <math.h>
+ #include <jlong.h>
+ 

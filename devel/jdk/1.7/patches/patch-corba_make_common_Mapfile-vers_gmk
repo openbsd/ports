@@ -1,0 +1,12 @@
+$OpenBSD: patch-corba_make_common_Mapfile-vers_gmk,v 1.1 2008/03/19 18:05:43 kurt Exp $
+--- corba/make/common/Mapfile-vers.gmk.orig	Tue Feb 26 21:48:18 2008
++++ corba/make/common/Mapfile-vers.gmk	Tue Feb 26 21:49:03 2008
+@@ -77,7 +77,7 @@ endif
+ endif # PLATFORM
+ 
+ 
+-ifeq ($(PLATFORM), linux)
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+ 
+ ifeq ($(VARIANT), OPT)
+   # OPT build MUST have a mapfile?

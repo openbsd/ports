@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_management_FileSystemImpl_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/native/sun/management/FileSystemImpl.c.orig	Tue Dec  4 04:05:47 2007
++++ jdk/src/solaris/native/sun/management/FileSystemImpl.c	Thu Feb 14 17:56:51 2008
+@@ -26,6 +26,10 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ 
++#if defined(_ALLBSD_SOURCE)
++#include "largefile_bsd.h"
++#endif
++
+ #include "jni.h"
+ #include "jni_util.h"
+ #include "sun_management_FileSystemImpl.h"

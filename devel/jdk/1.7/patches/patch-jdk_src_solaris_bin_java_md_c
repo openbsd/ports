@@ -1,0 +1,82 @@
+$OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/bin/java_md.c.orig	Sat Dec  1 00:00:00 2007
++++ jdk/src/solaris/bin/java_md.c	Tue Feb 26 20:20:09 2008
+@@ -34,10 +34,14 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <sys/types.h>
++#if defined(_ALLBSD_SOURCE)
++#include <sys/time.h>
++#endif
++
+ #include "manifest_info.h"
+ #include "version_comp.h"
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+ #include <pthread.h>
+ #else
+ #include <thread.h>
+@@ -77,7 +81,13 @@ extern char **environ;
+  *      A collection of useful strings. One should think of these as #define
+  *      entries, but actual strings can be more efficient (with many compilers).
+  */
+-#ifdef __linux__
++#if defined(__FreeBSD__)
++static const char *system_dir	= "/usr/local/jdk1.7.0";
++static const char *user_dir	= "/java";
++#elif defined(__OpenBSD__)
++static const char *system_dir	= "/usr/local/jdk-1.7.0";
++static const char *user_dir	= "/java";
++#elif defined(__linux__)
+ static const char *system_dir   = "/usr/java";
+ static const char *user_dir     = "/java";
+ #else /* Solaris */
+@@ -414,7 +424,7 @@ CreateExecutionEnvironment(int *_argcp,
+       runpath = getenv("LD_LIBRARY_PATH");
+ #endif /* __solaris__ */
+ 
+-#ifdef __linux
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+       /*
+        * On linux, if a binary is running as sgid or suid, glibc sets
+        * LD_LIBRARY_PATH to the empty string for security purposes.  (In
+@@ -841,7 +851,7 @@ static const char*
+ SetExecname(char **argv)
+ {
+     char* exec_path = NULL;
+-#if defined(__solaris__)
++#if defined(__solaris__) || defined(_ALLBSD_SOURCE)
+     {
+         Dl_info dlinfo;
+         int (*fptr)();
+@@ -1209,6 +1219,20 @@ UnsetEnv(char *name)
+     return(borrowed_unsetenv(name));
+ }
+ 
++#if defined(_ALLBSD_SOURCE)
++/*
++ * BSD's implementation of CounterGet()
++ */
++int64_t
++CounterGet()
++{
++	struct timeval tv;
++	gettimeofday(&tv, NULL);
++	return (tv.tv_sec * 1000) + tv.tv_usec;
++}
++#endif
++
++
+ /* --- Splash Screen shared library support --- */
+ 
+ static const char* SPLASHSCREEN_SO = "libsplashscreen.so";
+@@ -1247,7 +1271,7 @@ jlong_format_specifier() {
+ int
+ ContinueInNewThread0(int (JNICALL *continuation)(void *), jlong stack_size, void * args) {
+     int rslt;
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     pthread_t tid;
+     pthread_attr_t attr;
+     pthread_attr_init(&attr);

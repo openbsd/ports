@@ -1,0 +1,18 @@
+$OpenBSD: patch-jdk_make_java_redist_FILES_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/make/java/redist/FILES.gmk.orig	Tue Oct 30 05:04:23 2007
++++ jdk/make/java/redist/FILES.gmk	Wed Nov  7 18:01:59 2007
+@@ -38,6 +38,14 @@ SHARED_FONTFILES =					\
+ 	$(LIBDIR)/fonts/LucidaSansDemiBold.ttf       	\
+ 
+ ifeq ($(PLATFORM), linux)
++NEED_OBLIQUE_FONTS = true
++endif
++
++ifeq ($(PLATFORM), bsd)
++NEED_OBLIQUE_FONTS = true
++endif
++
++ifeq ($(NEED_OBLIQUE_FONTS), true)
+ 
+ # The oblique versions of the font are derived from the base versions
+ # and since 2D can do this derivation on the fly at run time there is no

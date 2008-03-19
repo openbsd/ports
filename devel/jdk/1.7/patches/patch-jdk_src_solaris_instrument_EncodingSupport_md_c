@@ -1,0 +1,32 @@
+$OpenBSD: patch-jdk_src_solaris_instrument_EncodingSupport_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/instrument/EncodingSupport_md.c.orig	Tue Oct 30 05:04:03 2007
++++ jdk/src/solaris/instrument/EncodingSupport_md.c	Thu Nov  8 09:31:21 2007
+@@ -28,7 +28,10 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <locale.h>
++#ifndef __OpenBSD__
++#define HAVE_NL_LANGINFO
+ #include <langinfo.h>
++#endif
+ #include <iconv.h>
+ 
+ /* Routines to convert back and forth between Platform Encoding and UTF-8 */
+@@ -63,6 +66,7 @@ utfInitialize(void)
+     /* Set the locale from the environment */
+     (void)setlocale(LC_ALL, "");
+ 
++#ifdef HAVE_NL_LANGINFO
+     /* Get the codeset name */
+     codeset = (char*)nl_langinfo(CODESET);
+     if ( codeset == NULL || codeset[0] == 0 ) {
+@@ -77,6 +81,9 @@ utfInitialize(void)
+         UTF_DEBUG(("NO iconv() being used because it is not needed\n"));
+         return;
+     }
++#else
++    codeset = "ISO-8859-1";
++#endif
+ 
+     /* Open conversion descriptors */
+     iconvToPlatform   = iconv_open(codeset, "UTF-8");

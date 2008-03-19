@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_sa_make,v 1.2 2007/09/06 15:46:18 kurt Exp $
---- hotspot/build/bsd/makefiles/sa.make.orig	Sun Sep  2 14:06:00 2007
-+++ hotspot/build/bsd/makefiles/sa.make	Sun Sep  2 14:06:01 2007
+$OpenBSD: patch-hotspot_build_bsd_makefiles_sa_make,v 1.3 2008/03/19 18:05:43 kurt Exp $
+--- hotspot/build/bsd/makefiles/sa.make.orig	Wed Nov  7 12:41:30 2007
++++ hotspot/build/bsd/makefiles/sa.make	Wed Nov  7 12:41:35 2007
 @@ -31,6 +31,7 @@
  include $(GAMMADIR)/build/bsd/makefiles/rules.make
  
@@ -18,8 +18,8 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_sa_make,v 1.2 2007/09/06 15:46:18 ku
  
  SA_CLASSDIR = $(GENERATED)/saclasses
  
-@@ -54,11 +55,11 @@ SA_VERSION = $(HS_MAJOR_VER)
- SA_VERSION_PROP = "sun.jvm.hotspot.runtime.VM.supportedVersion=$(SA_VERSION)"
+@@ -50,11 +51,11 @@ SA_BUILD_VERSION_PROP = "sun.jvm.hotspot.runtime.VM.sa
+ 
  SA_PROPERTIES = $(SA_CLASSDIR)/sa.properties
  
 -# if $(AGENT_DIR) does not exist, we don't build SA

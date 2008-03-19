@@ -1,0 +1,12 @@
+$OpenBSD: patch-corba_make_common_shared_Defs-bsd_gmk,v 1.1 2008/03/19 18:05:43 kurt Exp $
+--- corba/make/common/shared/Defs-bsd.gmk.orig	Thu Nov  8 12:05:45 2007
++++ corba/make/common/shared/Defs-bsd.gmk	Thu Nov  8 12:06:44 2007
+@@ -54,7 +54,7 @@ $(shell if [ "$1" != "" -a -d "$1" ]; then (cd $1 && p
+ endef
+ 
+ # Location on system where jdk installs might be
+-USRJDKINSTANCES_PATH =/opt/java
++USRJDKINSTANCES_PATH =/usr/lock
+ 
+ # UNIXCOMMAND_PATH: path to where the most common Unix commands are.
+ #  NOTE: Must end with / so that it could be empty, allowing PATH usage.

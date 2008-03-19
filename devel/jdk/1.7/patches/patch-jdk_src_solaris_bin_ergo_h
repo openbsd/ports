@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_src_solaris_bin_ergo_h,v 1.1 2008/03/19 18:05:46 kurt Exp $
+--- jdk/src/solaris/bin/ergo.h.orig	Thu Feb 28 15:51:41 2008
++++ jdk/src/solaris/bin/ergo.h	Thu Feb 28 15:52:52 2008
+@@ -33,6 +33,10 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <sys/types.h>
++#ifdef _ALLBSD_SOURCE
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#endif
+ 
+ #include "java.h"
+ 

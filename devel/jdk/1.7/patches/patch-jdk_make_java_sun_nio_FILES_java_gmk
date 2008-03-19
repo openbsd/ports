@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_make_java_sun_nio_FILES_java_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/make/java/sun_nio/FILES_java.gmk.orig	Tue Oct 30 05:04:23 2007
++++ jdk/make/java/sun_nio/FILES_java.gmk	Wed Nov  7 18:01:59 2007
+@@ -130,6 +130,8 @@ FILES_java += \
+     sun/io/CharToByteCp1257.java \
+     sun/io/ByteToCharKOI8_R.java \
+     sun/io/CharToByteKOI8_R.java \
++    sun/io/ByteToCharKOI8_U.java \
++    sun/io/CharToByteKOI8_U.java \
+     sun/io/ByteToCharSingleByte.java \
+     sun/io/CharToByteSingleByte.java
+ 

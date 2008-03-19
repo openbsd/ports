@@ -1,0 +1,14 @@
+$OpenBSD: patch-corba_make_common_shared_Compiler_gmk,v 1.1 2008/03/19 18:05:43 kurt Exp $
+--- corba/make/common/shared/Compiler.gmk.orig	Thu Nov  8 12:07:05 2007
++++ corba/make/common/shared/Compiler.gmk	Thu Nov  8 12:08:00 2007
+@@ -37,8 +37,8 @@ ifeq ($(PLATFORM), solaris)
+   override CC_VERSION = sun
+ endif
+ 
+-# Linux uses GNU compilers by default
+-ifeq ($(PLATFORM), linux)
++# Linux & BSD uses GNU compilers by default
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+   override CC_VERSION = gcc
+ endif
+ 

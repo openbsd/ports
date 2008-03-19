@@ -1,0 +1,45 @@
+$OpenBSD: patch-jdk_make_common_Program_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
+--- jdk/make/common/Program.gmk.orig	Sat Dec  1 00:00:00 2007
++++ jdk/make/common/Program.gmk	Mon Mar  3 14:04:43 2008
+@@ -67,11 +67,19 @@ endif
+ # Create a dependency on libjli (Java Launcher Infrastructure)
+ #
+ # On UNIX, this is a relative dependency using $ORIGIN. Unfortunately, to
+-# do this reliably on Linux takes a different syntax than Solaris.
++# do this reliably on Linux takes a different syntax than Solaris. BSD's
++# don't support $ORIGIN so build an archive instead.
+ #
+ # On Windows, this is done by using the same directory as the executable
+ # itself, as with all the Windows libraries.
+ #
++ifeq ($(PLATFORM), bsd)
++    LDFLAGS += -Wl,--whole-archive
++    LDFLAGS += $(OUTPUTDIR)/tmp/java/jli/$(OBJDIRNAME)/static/libjli.a
++    LDFLAGS += -Wl,--no-whole-archive
++# Work-around an dlsym(RTLD_DEFAULT) bug in at least FreeBSD & OpenBSD
++    LDFLAGS += -Wl,--export-dynamic
++endif
+ ifneq (,$(findstring $(PLATFORM), linux solaris))	# UNIX systems
+     LDFLAGS += -L $(LIBDIR)/$(LIBARCH)/jli
+     OTHER_LDLIBS += -ljli
+@@ -174,6 +182,10 @@ else # USE_PTHREADS
+   THREADLIBS = $(LIBTHREAD)
+ endif # USE_PTHREADS
+ 
++ifeq ($(PLATFORM), bsd)
++THREADLIBS = -pthread
++endif
++
+ #
+ # This rule only applies on unix.  It supports quantify and its ilk.
+ #
+@@ -242,7 +254,9 @@ endif
+ 
+ 
+ ifneq ($(PLATFORM), windows)
++ifneq ($(PLATFORM), bsd)
+ HAVE_GETHRTIME=true
++endif
+ endif
+ 
+ ifeq ($(HAVE_GETHRTIME),true)

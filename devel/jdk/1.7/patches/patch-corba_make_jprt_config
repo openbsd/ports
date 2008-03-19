@@ -1,0 +1,39 @@
+$OpenBSD: patch-corba_make_jprt_config,v 1.1 2008/03/19 18:05:43 kurt Exp $
+--- corba/make/jprt.config.orig	Tue Feb 26 21:49:17 2008
++++ corba/make/jprt.config	Tue Feb 26 21:53:42 2008
+@@ -180,6 +180,35 @@ elif [ "${osname}" = Linux ] ; then
+ 
+     umask 002
+    
++elif [ "${osname}" = OpenBSD ] ; then
++   
++    # LINUX: X86, AMD64
++    osarch=`uname -m`
++    if [ "${osarch}" = i386 ] ; then
++	bsd_arch=i586
++    elif [ "${osarch}" = amd64 ] ; then
++	bsd_arch=amd64
++    fi
++
++    # Get the compilers into path (make sure it matches ALT setting)
++    compiler_path=/usr/bin
++    compiler_name=usr_bin
++    ALT_COMPILER_PATH="${compiler_path}"
++    export ALT_COMPILER_PATH
++    dirMustExist "${compiler_path}" ALT_COMPILER_PATH
++    path4sdk=${compiler_path}:${sharebin}:${antbin}:${findbugsbin}
++    
++    # Add basic paths
++    path4sdk=${path4sdk}:/usr/bin:/bin:/usr/sbin:/sbin
++
++    # Get the previous JDK to be used to bootstrap the build
++    path4sdk=${bootdir}/bin:${path4sdk}
++    
++    # Find GNU make
++    make=gmake
++
++    umask 002
++   
+ else
+ 
+     # Windows: Differs on CYGWIN vs. MKS, and the compiler available.
