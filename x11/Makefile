@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.328 2008/03/18 09:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.329 2008/03/19 14:11:42 laurent Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -40,6 +40,7 @@
      SUBDIR += dwm
      SUBDIR += dzen2
      SUBDIR += e16keyedit
+     SUBDIR += e17
      SUBDIR += ecoliercourt-fonts
      SUBDIR += emiclock
      SUBDIR += enlightenment
