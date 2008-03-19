@@ -1,0 +1,32 @@
+$OpenBSD: patch-avidemux_ADM_osSupport_ADM_crashdump_cpp,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
+--- avidemux/ADM_osSupport/ADM_crashdump.cpp.orig	Wed Jan  9 14:36:11 2008
++++ avidemux/ADM_osSupport/ADM_crashdump.cpp	Wed Jan  9 15:26:39 2008
+@@ -249,7 +249,9 @@ EXCEPTION_DISPOSITION exceptionHandler(struct _EXCEPTI
+ }
+ #else
+ #include <signal.h>
++#ifndef __OpenBSD__
+ #include <execinfo.h>
++#endif
+ void sig_segfault_handler(int signo);
+ void installSigHandler()
+ {
+@@ -370,6 +372,10 @@ void ADM_backTrack(int lineno,const char *file)
+       
+      saveCrashProject();
+       printf("\n*********** BACKTRACK **************\n");
++#ifdef __OpenBSD__
++      printf("\nNot supported under OpenBSD\n");
++      printf("*********** BACKTRACK **************\n");
++#else
+       count = backtrace(stack, 20);
+       functions = backtrace_symbols(stack, count);
+       
+@@ -391,6 +397,7 @@ void ADM_backTrack(int lineno,const char *file)
+       const char *title="Crash BackTrace";
+       if(lineno) title="Assert failed";
+       diaFactoryRun(title,count+1,(diaElem **)txt);
++#endif
+       
+       //
+      printf("Memory stat:\n");

@@ -1,0 +1,55 @@
+$OpenBSD: patch-configure_in_in,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
+--- configure.in.in.orig	Mon Feb 18 09:35:13 2008
++++ configure.in.in	Mon Feb 18 09:36:50 2008
+@@ -771,7 +771,7 @@ have_oss=no
+ if test "x$with_oss" != "xno"; then
+ 	AC_MSG_CHECKING(for OSS support)
+ 	AC_TRY_COMPILE([
+-		#ifdef __NetBSD__
++		#if defined(__NetBSD__) || defined(__OpenBSD__)
+ 			#include <sys/ioccom.h>
+ 			#include <soundcard.h>
+ 		#else
+@@ -786,6 +786,7 @@ if test "x$with_oss" != "xno"; then
+ 
+ 	if test "x$have_oss" = "xyes"; then
+ 		AC_DEFINE(OSS_SUPPORT,1,[OSS detected])
++		LIBS="-lossaudio $LIBS"
+ 	fi
+ fi
+ 
+@@ -1191,7 +1192,7 @@ case $host_cpu in
+ 		AC_DEFINE(ENABLE_MMX,0,[post proc])
+ 		AC_DEFINE(HAVE_FAST_64BIT,1,"FFMPEG")
+ 		;;
+-	ppc)
++	powerpc)
+ 		have_little_endian=no;
+ 		LMPG_OPT="";
+ 		AC_DEFINE(FPM_PPC,1,[Mad ])       
+@@ -1200,9 +1201,6 @@ case $host_cpu in
+ 		AC_DEFINE(restrict,__restrict__,[roundup function])
+ 		AC_DEFINE(ADM_BIG_ENDIAN,1,[Big endian CPU - SPARC or PowerPC])
+ 		AC_DEFINE(ARCH_POWERPC,1,[Enable PowerPC optim])		
+-		AC_ARG_ENABLE(altivec, 
+-			AC_HELP_STRING([--enable-altivec], [enable AltiVec acceleration (PowerPC)]),
+-			have_altivec=yes)
+ 		AC_DEFINE(WORDS_BIGENDIAN,1,[Big endian CPU - SPARC or PowerPC])
+ 		AC_DEFINE(ENABLE_MMX,0,[post proc])       
+ 		;;
+@@ -1342,11 +1340,11 @@ if test "x$use_debug" = "xyes"; then
+ else
+ 	dnl -- built-in means gcc3, for gcc 2 we stick to -O2 --
+ 	if test "x$use_builtin" = "xyes"; then
+-		CXXFLAGS="$CXXFLAGS -O3"
+-		CFLAGS="$CFLAGS -O3"
++		CXXFLAGS="$CXXFLAGS"
++		CFLAGS="$CFLAGS"
+ 	else
+-		CXXFLAGS="$CXXFLAGS -O2"
+-		CFLAGS="$CFLAGS -O2"
++		CXXFLAGS="$CXXFLAGS"
++		CFLAGS="$CFLAGS"
+ 	fi
+ fi
+ 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-avidemux_ADM_audiocodec_ADM_codecfaad_cpp,v 1.1 2007/06/29 06:19:46 jakemsr Exp $
---- avidemux/ADM_audiocodec/ADM_codecfaad.cpp.orig	Thu May 31 22:55:01 2007
-+++ avidemux/ADM_audiocodec/ADM_codecfaad.cpp	Thu May 31 23:02:00 2007
-@@ -34,11 +34,11 @@ ADM_faad::ADM_faad( uint32_t fourcc ,WAVHeader *info,u
+$OpenBSD: patch-avidemux_ADM_audiocodec_ADM_codecfaad_cpp,v 1.2 2008/03/19 09:21:37 ajacoutot Exp $
+--- avidemux/ADM_audiocodec/ADM_codecfaad.cpp.orig	Mon Jan  7 09:14:57 2008
++++ avidemux/ADM_audiocodec/ADM_codecfaad.cpp	Mon Jan  7 09:16:14 2008
+@@ -34,11 +34,11 @@ ADM_faad::ADM_faad( uint32_t fourcc ,uint32_t highEffi
  {
  faacDecConfigurationPtr conf;
  #ifdef OLD_FAAD_PROTO
@@ -15,7 +15,7 @@ $OpenBSD: patch-avidemux_ADM_audiocodec_ADM_codecfaad_cpp,v 1.1 2007/06/29 06:19
  		_inited=0;
  		_instance=NULL;
  		_inbuffer=0;
-@@ -108,16 +108,16 @@ uint8_t ADM_faad::endDecompress( void ) 
+@@ -115,16 +115,16 @@ uint8_t ADM_faad::endDecompress( void ) 
  uint8_t ADM_faad::run(uint8_t *inptr, uint32_t nbIn, float *outptr, uint32_t *nbOut)
  {
  uint32_t xin;

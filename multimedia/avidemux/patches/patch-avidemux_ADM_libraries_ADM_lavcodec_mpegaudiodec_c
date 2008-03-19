@@ -1,0 +1,74 @@
+$OpenBSD: patch-avidemux_ADM_libraries_ADM_lavcodec_mpegaudiodec_c,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
+--- avidemux/ADM_libraries/ADM_lavcodec/mpegaudiodec.c.orig	Mon Jul 16 19:46:57 2007
++++ avidemux/ADM_libraries/ADM_lavcodec/mpegaudiodec.c	Tue Jan 15 21:34:19 2008
+@@ -2357,70 +2357,6 @@ static int mp_decode_frame(MPADecodeContext *s,
+     return nb_frames * 32 * sizeof(OUT_INT) * s->nb_channels;
+ }
+ 
+-static int decode_frame(AVCodecContext * avctx,
+-                        void *data, int *data_size,
+-                        uint8_t * buf, int buf_size)
+-{
+-    MPADecodeContext *s = avctx->priv_data;
+-    uint32_t header;
+-    int out_size;
+-    OUT_INT *out_samples = data;
+-
+-retry:
+-    if(buf_size < HEADER_SIZE)
+-        return -1;
+-
+-    header = AV_RB32(buf);
+-    if(ff_mpa_check_header(header) < 0){
+-        buf++;
+-//        buf_size--;
+-        av_log(avctx, AV_LOG_ERROR, "Header missing skipping one byte.\n");
+-        goto retry;
+-    }
+-
+-    if (ff_mpegaudio_decode_header(s, header) == 1) {
+-        /* free format: prepare to compute frame size */
+-        s->frame_size = -1;
+-        return -1;
+-    }
+-    /* update codec info */
+-    avctx->channels = s->nb_channels;
+-    avctx->bit_rate = s->bit_rate;
+-    avctx->sub_id = s->layer;
+-    switch(s->layer) {
+-    case 1:
+-        avctx->frame_size = 384;
+-        break;
+-    case 2:
+-        avctx->frame_size = 1152;
+-        break;
+-    case 3:
+-        if (s->lsf)
+-            avctx->frame_size = 576;
+-        else
+-            avctx->frame_size = 1152;
+-        break;
+-    }
+-
+-    if(s->frame_size<=0 || s->frame_size > buf_size){
+-        av_log(avctx, AV_LOG_ERROR, "incomplete frame\n");
+-        return -1;
+-    }else if(s->frame_size < buf_size){
+-        av_log(avctx, AV_LOG_ERROR, "incorrect frame size\n");
+-        buf_size= s->frame_size;
+-    }
+-
+-    out_size = mp_decode_frame(s, out_samples, buf, buf_size);
+-    if(out_size>=0){
+-        *data_size = out_size;
+-        avctx->sample_rate = s->sample_rate;
+-        //FIXME maybe move the other codec info stuff from above here too
+-    }else
+-        av_log(avctx, AV_LOG_DEBUG, "Error while decoding MPEG audio frame.\n"); //FIXME return -1 / but also return the number of bytes consumed
+-    s->frame_size = 0;
+-    return buf_size;
+-}
+-
+ static void flush(AVCodecContext *avctx){
+     MPADecodeContext *s = avctx->priv_data;
+     s->last_buf_size= 0;

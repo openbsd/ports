@@ -1,0 +1,47 @@
+$OpenBSD: patch-avidemux_ADM_videoFilter_ADM_vidParticle_cpp,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
+--- avidemux/ADM_videoFilter/ADM_vidParticle.cpp.orig	Sun Feb  3 13:04:10 2008
++++ avidemux/ADM_videoFilter/ADM_vidParticle.cpp	Mon Feb 18 10:50:21 2008
+@@ -797,8 +797,8 @@ uint8_t ImageTool::autoOutline (uint32_t x, uint32_t y
+ 
+     if (my_outImage)
+     {
+-        uint32_t px = static_cast <uint32_t> (nearbyintf (my_particle.centroidX));
+-        uint32_t py = static_cast <uint32_t> (nearbyintf (my_particle.centroidY));
++        uint32_t px = static_cast <uint32_t> (rint (my_particle.centroidX));
++        uint32_t py = static_cast <uint32_t> (rint (my_particle.centroidY));
+         if (validPixel (px, py))
+             outPixel (px, py) = 255;
+         else
+@@ -1157,8 +1157,8 @@ static inline
+ char & pixel_char (vector <string> & grid, int16_t xbase, int16_t ybase,
+                    float cX, float cY, float dX, float dY)
+ {
+-    uint16_t x = static_cast <uint16_t> (nearbyintf (cX + dX));
+-    uint16_t y = static_cast <uint16_t> (nearbyintf (cY + dY));
++    uint16_t x = static_cast <uint16_t> (rint (cX + dX));
++    uint16_t y = static_cast <uint16_t> (rint (cY + dY));
+     return grid [y - ybase][x - xbase];
+ }
+ 
+@@ -1319,8 +1319,8 @@ void ImageTool::showStuff (ShowStuff what) const
+             ++plit;
+         }
+ 
+-        uint32_t px = static_cast <uint32_t> (nearbyintf (my_particle.centroidX));
+-        uint32_t py = static_cast <uint32_t> (nearbyintf (my_particle.centroidY));
++        uint32_t px = static_cast <uint32_t> (rint (my_particle.centroidX));
++        uint32_t py = static_cast <uint32_t> (rint (my_particle.centroidY));
+         char & ch = grid [py - ybase][px - xbase];
+         if (ch == 'x')
+             ch = 'X';
+@@ -1353,8 +1353,8 @@ void ImageTool::showStuff (ShowStuff what) const
+                 }
+             }
+         }
+-        uint32_t px = static_cast <uint32_t> (nearbyintf (my_particle.centroidX));
+-        uint32_t py = static_cast <uint32_t> (nearbyintf (my_particle.centroidY));
++        uint32_t px = static_cast <uint32_t> (rint (my_particle.centroidX));
++        uint32_t py = static_cast <uint32_t> (rint (my_particle.centroidY));
+         char & ch = grid [py - ybase][px - xbase];
+         if (ch == '.')
+             ch = '*';

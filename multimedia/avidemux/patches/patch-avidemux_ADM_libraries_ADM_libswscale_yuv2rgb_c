@@ -1,0 +1,13 @@
+$OpenBSD: patch-avidemux_ADM_libraries_ADM_libswscale_yuv2rgb_c,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
+--- avidemux/ADM_libraries/ADM_libswscale/yuv2rgb.c.orig	Mon Jan  7 09:23:59 2008
++++ avidemux/ADM_libraries/ADM_libswscale/yuv2rgb.c	Mon Jan  7 09:24:33 2008
+@@ -665,6 +665,9 @@ SwsFunc yuv2rgb_get_func_ptr (SwsContext *c)
+ 
+     switch(c->dstFormat){
+     case PIX_FMT_BGR32:
++#ifdef ADM_BIG_ENDIAN
++    case PIX_FMT_BGRA:
++#endif
+     case PIX_FMT_RGB32: return yuv2rgb_c_32;
+     case PIX_FMT_RGB24: return yuv2rgb_c_24_rgb;
+     case PIX_FMT_BGR24: return yuv2rgb_c_24_bgr;

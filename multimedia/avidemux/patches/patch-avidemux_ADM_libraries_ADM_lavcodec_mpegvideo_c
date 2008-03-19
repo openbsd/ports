@@ -1,0 +1,12 @@
+$OpenBSD: patch-avidemux_ADM_libraries_ADM_lavcodec_mpegvideo_c,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
+--- avidemux/ADM_libraries/ADM_lavcodec/mpegvideo.c.orig	Mon Jan  7 09:23:20 2008
++++ avidemux/ADM_libraries/ADM_lavcodec/mpegvideo.c	Mon Jan  7 09:23:34 2008
+@@ -151,8 +151,6 @@ static int DCT_common_init(MpegEncContext *s)
+     MPV_common_init_mmi(s);
+ #elif defined(ARCH_ARMV4L)
+     MPV_common_init_armv4l(s);
+-#elif defined(ARCH_POWERPC)
+-    MPV_common_init_ppc(s);
+ #elif defined(ARCH_BFIN)
+     MPV_common_init_bfin(s);
+ #endif
