@@ -1,0 +1,83 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/20 18:24:42 jasper Exp $
+%%SHARED%%
+bin/cd-drive
+bin/cd-info
+bin/cd-paranoia
+bin/cd-read
+bin/cdda-player
+bin/iso-info
+bin/iso-read
+bin/mmc-tool
+include/cdio/
+include/cdio++/
+include/cdio++/cdio.hpp
+include/cdio++/cdtext.hpp
+include/cdio++/device.hpp
+include/cdio++/devices.hpp
+include/cdio++/disc.hpp
+include/cdio++/enum.hpp
+include/cdio++/iso9660.hpp
+include/cdio++/mmc.hpp
+include/cdio++/read.hpp
+include/cdio++/track.hpp
+include/cdio/audio.h
+include/cdio/bytesex.h
+include/cdio/bytesex_asm.h
+include/cdio/cd_types.h
+include/cdio/cdda.h
+include/cdio/cdio.h
+include/cdio/cdio_config.h
+include/cdio/cdtext.h
+include/cdio/device.h
+include/cdio/disc.h
+include/cdio/ds.h
+include/cdio/dvd.h
+include/cdio/ecma_167.h
+include/cdio/iso9660.h
+include/cdio/logging.h
+include/cdio/mmc.h
+include/cdio/paranoia.h
+include/cdio/posix.h
+include/cdio/read.h
+include/cdio/rock.h
+include/cdio/sector.h
+include/cdio/track.h
+include/cdio/types.h
+include/cdio/udf.h
+include/cdio/udf_file.h
+include/cdio/udf_time.h
+include/cdio/utf8.h
+include/cdio/util.h
+include/cdio/version.h
+include/cdio/xa.h
+@info info/libcdio.info
+lib/libcdio++.a
+lib/libcdio++.la
+lib/libcdio.a
+lib/libcdio.la
+lib/libcdio_cdda.a
+lib/libcdio_cdda.la
+lib/libcdio_paranoia.a
+lib/libcdio_paranoia.la
+lib/libiso9660++.a
+lib/libiso9660++.la
+lib/libiso9660.a
+lib/libiso9660.la
+lib/libudf.a
+lib/libudf.la
+lib/pkgconfig/
+lib/pkgconfig/libcdio++.pc
+lib/pkgconfig/libcdio.pc
+lib/pkgconfig/libcdio_paranoia.pc
+lib/pkgconfig/libiso9660++.pc
+lib/pkgconfig/libiso9660.pc
+lib/pkgconfig/libudf.pc
+man/jp/
+man/jp/man1/
+@man man/jp/man1/cd-paranoia.1
+@man man/man1/cd-drive.1
+@man man/man1/cd-info.1
+@man man/man1/cd-paranoia.1
+@man man/man1/cd-read.1
+@man man/man1/iso-info.1
+@man man/man1/iso-read.1

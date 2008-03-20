@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/03/20 18:24:42 jasper Exp $
+@lib lib/libcdio++.so.${LIBcdio++_VERSION}
+@lib lib/libcdio.so.${LIBcdio_VERSION}
+@lib lib/libcdio_cdda.so.${LIBcdio_cdda_VERSION}
+@lib lib/libcdio_paranoia.so.${LIBcdio_paranoia_VERSION}
+@lib lib/libiso9660++.so.${LIBiso9660++_VERSION}
+@lib lib/libiso9660.so.${LIBiso9660_VERSION}
+@lib lib/libudf.so.${LIBudf_VERSION}
