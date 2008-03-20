@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.511 2008/02/09 01:14:19 okan Exp $
+# $OpenBSD: Makefile,v 1.512 2008/03/20 08:31:07 dlg Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -341,7 +341,9 @@
      SUBDIR += ruby-xmpp4r
      SUBDIR += samba
      SUBDIR += samba,cups
+     SUBDIR += samba,cups,ads
      SUBDIR += samba,cups,ldap
+     SUBDIR += samba,ads
      SUBDIR += samba,ldap
      SUBDIR += scapy
      SUBDIR += scapy6
