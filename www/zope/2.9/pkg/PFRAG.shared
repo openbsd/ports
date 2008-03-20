@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2008/03/20 11:37:47 winiger Exp $
+lib/zope/lib/python/AccessControl/cAccessControl.so
+lib/zope/lib/python/BTrees/_IIBTree.so
+lib/zope/lib/python/BTrees/_IOBTree.so
+lib/zope/lib/python/BTrees/_OIBTree.so
+lib/zope/lib/python/BTrees/_OOBTree.so
+lib/zope/lib/python/BTrees/_fsBTree.so
+lib/zope/lib/python/DocumentTemplate/cDocumentTemplate.so
+lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/ISO_8859_1_Splitter.so
+lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/UnicodeSplitter.so
+lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/ZopeSplitter.so
+lib/zope/lib/python/Products/ZCTextIndex/okascore.so
+lib/zope/lib/python/Products/ZCTextIndex/stopper.so
+lib/zope/lib/python/ZODB/winlock.so

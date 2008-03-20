@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/10/03 09:16:16 mbalmer Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.1 2008/03/20 11:37:47 winiger Exp $
 lib/zope/lib/python/AccessControl/cAccessControl.so
 lib/zope/lib/python/BTrees/_IIBTree.so
 lib/zope/lib/python/BTrees/_IOBTree.so

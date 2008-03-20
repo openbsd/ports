@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2006/10/03 09:16:16 mbalmer Exp $
+$OpenBSD: README.OpenBSD,v 1.1 2008/03/20 11:37:47 winiger Exp $
 
 In this document we'll see how to create a zope instance and have it
 start at boot time. Throughout this document, we will assume that the
