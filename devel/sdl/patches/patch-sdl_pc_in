@@ -1,0 +1,11 @@
+$OpenBSD: patch-sdl_pc_in,v 1.1 2008/03/20 22:00:15 pvalchev Exp $
+--- sdl.pc.in.orig	Thu Mar 20 07:59:18 2008
++++ sdl.pc.in	Thu Mar 20 07:59:38 2008
+@@ -10,5 +10,5 @@ Description: Simple DirectMedia Layer is a cross-platf
+ Version: @SDL_VERSION@
+ Requires:
+ Conflicts:
+-Libs: -L${libdir} @SDL_RLD_FLAGS@ @SDL_LIBS@
+-Cflags: -I${includedir}/SDL @SDL_CFLAGS@
++Libs: -L${libdir} @SDL_RLD_FLAGS@ @SDL_LIBS@ @X_LIBS@
++Cflags: -I${includedir}/SDL @SDL_CFLAGS@ @X_CFLAGS@
