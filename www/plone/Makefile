@@ -1,31 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2008/03/20 11:42:34 winiger Exp $
 
-COMMENT=	content management system built on top of Zope
+SUBDIR+=	2.1
+SUBDIR+=	2.5
+SUBDIR+=	3.0
 
-DISTNAME=	Plone-2.1.4
-PKGNAME=	${DISTNAME:L}
-CATEGORIES=	www
-
-HOMEPAGE=	http://www.plone.org/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
-
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plone/}
-
-MODULES=	www/zope
-
-RUN_DEPENDS=	:python-expat-${MODZOPE_PYTHON_VERSION}*:lang/python/${MODZOPE_PYTHON_VERSION},-expat \
-		::graphics/py-Imaging
-
-do-install:
-	${INSTALL_PROGRAM_DIR} ${MODZOPE_PRODUCTSDIR}
-	cp -R ${WRKBUILD}/* ${MODZOPE_PRODUCTSDIR}
-	rm -r ${MODZOPE_PRODUCTSDIR}/BTreeFolder2
-
-.include <bsd.port.mk>
+.include <bsd.port.subdir.mk>
