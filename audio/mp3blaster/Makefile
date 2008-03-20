@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2008/03/20 17:23:04 jasper Exp $
 
 COMMENT=	text console audio player with an interactive interface
 
 DISTNAME=	mp3blaster-3.2.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
-HOMEPAGE=	http://www.stack.nl/~brama/mp3blaster/
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
+HOMEPAGE=	http://mp3blaster.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
