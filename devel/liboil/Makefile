@@ -1,18 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/03/20 18:21:39 jasper Exp $
 
 COMMENT=	library of optimized inner loops
 
-DISTNAME=	liboil-0.3.10
-PKGNAME=	${DISTNAME}p0
-
-SHARED_LIBS +=  oil-0.3              2.0      # .1.0
-
+DISTNAME=	liboil-0.3.14
+SHARED_LIBS +=  oil-0.3              3.0      # .2.0
 CATEGORIES=	devel
-MASTER_SITES=	${HOMEPAGE}download/
+
+MASTER_SITES=	${HOMEPAGE}/download/
 
 HOMEPAGE=	http://liboil.freedesktop.org/
-
-MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
