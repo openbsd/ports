@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/20 18:59:15 ian Exp $
+bin/gsutil
+share/doc/gsutil/
+share/doc/gsutil/README

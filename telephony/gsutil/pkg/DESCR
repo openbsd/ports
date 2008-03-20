@@ -1,0 +1,4 @@
+GsUtil is a short Perl program to dump and restore the data of Grandstream
+BudgeTone 100 VOIP and GX2000 telephones and HandyTone ATA's.  Since
+a reboot is required to make configuration changes effective, this
+program does that too.
