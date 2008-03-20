@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/28 13:11:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/03/20 11:58:26 winiger Exp $
 
 COMMENT=	synchronize and compare Zope objects
 
 DISTNAME=	ZSyncer-0.7.1
-PKGNAME=	zope-${DISTNAME:L}
+PKGNAME=	zope-${DISTNAME:L}p0
 CATEGORIES=	www
 HOMEPAGE=	http://zsyncer.sourceforge.net
 

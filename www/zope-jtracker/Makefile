@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/03/20 11:58:25 winiger Exp $
 
 COMMENT=	Zope-based issues tracker
 
 V=		1_11
 DISTNAME=	JTracker-${V}
-PKGNAME=	zope-${DISTNAME:S/_/./:L}
+PKGNAME=	zope-${DISTNAME:S/_/./:L}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.dataflake.org/software/jtracker/

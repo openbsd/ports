@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/11/28 13:11:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/03/20 11:58:26 winiger Exp $
 
 COMMENT=	methods to apply to Zope objects for XML/XSLT processing
 
 VERSION=	1.0.0
 DISTNAME=	zopexmlmethods-${VERSION:S/./-/g}
-PKGNAME=	zope-xmlmethods-${VERSION}p0
+PKGNAME=	zope-xmlmethods-${VERSION}p1
 CATEGORIES=	www
 HOMEPAGE=	http://zopexmlmethods.sourceforge.net/
 

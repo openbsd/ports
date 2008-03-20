@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/02/08 10:36:06 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.8 2008/03/20 11:58:25 winiger Exp $
 
 COMMENT=	Zope LDAPUserFolder product
 
 VERSION=	2.8
 DISTNAME=	LDAPUserFolder-${VERSION}
-PKGNAME=	zope-${DISTNAME:L}
+PKGNAME=	zope-${DISTNAME:L}p0
 CATEGORIES=	www
 HOMEPAGE=	http://www.dataflake.org/software/ldapuserfolder
 
