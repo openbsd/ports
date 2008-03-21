@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/03/19 20:44:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.14 2008/03/21 02:46:43 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -10,8 +10,8 @@ B=		b24
 DISTFILES=	openjdk7-${B}.tar.bz2 \
 		jdk-7-icedtea-plugs-1.6.tar.gz
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}${B}
-PKGNAME-jre=	jre-${V}${B}
+PKGNAME-main=	jdk-${V}${B}p0
+PKGNAME-jre=	jre-${V}${B}p0
 
 CATEGORIES=	devel/jdk java
 
@@ -43,6 +43,7 @@ BUILD_DEPENDS+=	:jdk-1.6.0.*:devel/jdk/1.6
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.6.0
 .endif
 
+VMEM_WARNING=	Yes
 BUILD_DEPENDS+=	::devel/apache-ant \
 		::archivers/zip \
 		::archivers/unzip \
