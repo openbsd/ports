@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2008/03/15 10:14:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2008/03/21 19:25:33 rui Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -285,6 +285,7 @@ share/doc/freeradius/rfc/rfc4679.txt
 share/doc/freeradius/rfc/rfc4818.txt
 share/doc/freeradius/rfc/rfc4849.txt
 share/doc/freeradius/rfc/rfc5080.txt
+share/doc/freeradius/rfc/rfc5176.txt
 share/doc/freeradius/rlm_dbm
 share/doc/freeradius/rlm_eap
 share/doc/freeradius/rlm_expiration
@@ -371,6 +372,8 @@ share/examples/freeradius/sites-enabled/
 @sample ${SYSCONFDIR}/raddb/sites-enabled/
 share/examples/freeradius/sites-enabled/default
 @sample ${SYSCONFDIR}/raddb/sites-enabled/default
+share/examples/freeradius/sites-enabled/inner-tunnel
+@sample ${SYSCONFDIR}/raddb/sites-enabled/inner-tunnel
 share/examples/freeradius/snmp.conf
 @sample ${SYSCONFDIR}/raddb/snmp.conf
 share/examples/freeradius/sql/
@@ -510,6 +513,7 @@ share/freeradius/dictionary.rfc4675
 share/freeradius/dictionary.rfc4679
 share/freeradius/dictionary.rfc4818
 share/freeradius/dictionary.rfc4849
+share/freeradius/dictionary.rfc5176
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
 share/freeradius/dictionary.shasta
