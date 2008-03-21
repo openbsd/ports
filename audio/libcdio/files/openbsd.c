@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.c,v 1.1.1.1 2008/03/20 18:24:42 jasper Exp $ */
+/* $OpenBSD: openbsd.c,v 1.2 2008/03/21 12:41:22 ajacoutot Exp $ */
 
 
 /* $NetBSD: _cdio_netbsd.c,v 1.4 2005/05/31 17:05:36 drochner Exp $ */
@@ -168,7 +168,7 @@ _cdio_read_mode2_sector(void *user_data, void *data, lsn_t lsn,
 		return 1;
 	}
 	if (req.retsts != SCCMD_OK) {
-		fprintf(stderr, "SCIOCCOMMAND cmd %0xbe sts %d\n", req.retsts);
+		fprintf(stderr, "SCIOCCOMMAND cmd 0xbe sts %d\n", req.retsts);
 		return 1;
 	}
 
