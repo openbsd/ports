@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2008/03/21 15:09:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.202 2008/03/21 15:27:21 merdely Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -49,7 +49,6 @@
      SUBDIR += giftrans
      SUBDIR += gii
      SUBDIR += gimp
-     SUBDIR += gimp,altivec
      SUBDIR += gle
      SUBDIR += glitz
      SUBDIR += glpng
