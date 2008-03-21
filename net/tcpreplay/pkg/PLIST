@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/01/17 00:16:11 rui Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/03/21 19:28:13 rui Exp $
 bin/tcpbridge
 bin/tcpprep
 bin/tcpreplay
 bin/tcprewrite
 @man man/man1/tcpbridge.1
 @man man/man1/tcpprep.1
+@man man/man1/tcpreplay-edit.1
 @man man/man1/tcpreplay.1
 @man man/man1/tcprewrite.1
