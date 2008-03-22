@@ -1,29 +1,27 @@
-$OpenBSD: operops-patch-apps_silcd_command_c,v 1.1 2005/09/09 20:08:54 brad Exp $
---- apps/silcd/command.c.orig	Fri Sep  9 13:05:36 2005
-+++ apps/silcd/command.c	Fri Sep  9 13:08:28 2005
-@@ -3431,6 +3431,8 @@ SILC_SERVER_CMD_FUNC(cumode)
- 						  client_id, TRUE, NULL);
+$OpenBSD: operops-patch-apps_silcd_command_c,v 1.2 2008/03/22 23:06:50 sthen Exp $
+--- apps/silcd/command.c.orig	Sun Nov 18 07:37:54 2007
++++ apps/silcd/command.c	Fri Feb 29 23:43:39 2008
+@@ -3486,6 +3486,8 @@ SILC_SERVER_CMD_FUNC(cumode)
+ 						  TRUE, NULL);
  
    if (target_client != client &&
 +      !(client->mode & SILC_UMODE_SERVER_OPERATOR) &&
 +      !(client->mode & SILC_UMODE_ROUTER_OPERATOR) &&
        !(sender_mask & SILC_CHANNEL_UMODE_CHANFO) &&
        !(sender_mask & SILC_CHANNEL_UMODE_CHANOP)) {
-     silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
-@@ -3550,8 +3552,10 @@ SILC_SERVER_CMD_FUNC(cumode)
+     tmp_ch_id = silc_argument_get_arg_type(cmd->args, 1, &tmp_ch_len);
+@@ -3609,7 +3611,9 @@ SILC_SERVER_CMD_FUNC(cumode)
      /* Promote to operator */
      if (!(chl->mode & SILC_CHANNEL_UMODE_CHANOP)) {
        if (!(sender_mask & SILC_CHANNEL_UMODE_CHANOP) &&
 -          !(sender_mask & SILC_CHANNEL_UMODE_CHANFO)) {
--        silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
 +          !(sender_mask & SILC_CHANNEL_UMODE_CHANFO) &&
 +          !(client->mode & SILC_UMODE_SERVER_OPERATOR) &&
 +          !(client->mode & SILC_UMODE_ROUTER_OPERATOR)) {
-+       silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
+ 	tmp_ch_id = silc_argument_get_arg_type(cmd->args, 1, &tmp_ch_len);
+         silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
  					     SILC_STATUS_ERR_NO_CHANNEL_PRIV,
- 					     0, 2, tmp_ch_id, tmp_ch_len);
-         goto out;
-@@ -3563,7 +3567,9 @@ SILC_SERVER_CMD_FUNC(cumode)
+@@ -3623,7 +3627,9 @@ SILC_SERVER_CMD_FUNC(cumode)
    } else {
      if (chl->mode & SILC_CHANNEL_UMODE_CHANOP) {
        if (!(sender_mask & SILC_CHANNEL_UMODE_CHANOP) &&
@@ -31,6 +29,6 @@ $OpenBSD: operops-patch-apps_silcd_command_c,v 1.1 2005/09/09 20:08:54 brad Exp 
 +          !(sender_mask & SILC_CHANNEL_UMODE_CHANFO) &&
 +          !(client->mode & SILC_UMODE_SERVER_OPERATOR) &&
 +          !(client->mode & SILC_UMODE_ROUTER_OPERATOR)) {
+ 	tmp_ch_id = silc_argument_get_arg_type(cmd->args, 1, &tmp_ch_len);
          silc_server_command_send_status_data(cmd, SILC_COMMAND_CUMODE,
  					     SILC_STATUS_ERR_NO_CHANNEL_PRIV,
- 					     0, 2, tmp_ch_id, tmp_ch_len);
