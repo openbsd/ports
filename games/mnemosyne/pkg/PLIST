@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/16 14:26:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/03/22 17:34:49 ajacoutot Exp $
 bin/mnemosyne
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/
-lib/python${MODPY_VERSION}/site-packages/mnemosyne-1.0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mnemosyne-1.0.1.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/core/

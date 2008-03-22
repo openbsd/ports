@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/03/16 14:26:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/03/22 17:34:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	flash-card tool which optimises your learning process
 
-DISTNAME=	mnemosyne-1.0.1
+DISTNAME=	mnemosyne-1.0.1.1
 CATEGORIES=	games education
 
 EXTRACT_SUFX=	.tgz
