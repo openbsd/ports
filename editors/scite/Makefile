@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/13 14:06:22 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/03/22 11:44:42 steven Exp $
 
 COMMENT=		flexible and small GTK+ editor
 
-VERSION=		1.74
+VERSION=		1.76
 DISTNAME=		scite${VERSION:S/.//}
-PKGNAME=		scite-${VERSION}p0
+PKGNAME=		scite-${VERSION}
 CATEGORIES=		editors x11
 
 HOMEPAGE=		http://www.scintilla.org/SciTE.html
@@ -30,7 +30,7 @@ EXTRACT_SUFX=		.tgz
 MODULES=	        devel/gettext
 
 LIB_DEPENDS=		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
-			scintilla.>=5,scintilla_lexers.>=5::editors/scintilla
+			scintilla.>=6,scintilla_lexers.>=6::editors/scintilla
 
 USE_GMAKE=		Yes
 USE_X11=		Yes

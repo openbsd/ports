@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/08/01 09:21:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/03/22 11:44:42 steven Exp $
 bin/SciTE
 share/doc/scite/
 share/doc/scite/CommandValues.html
@@ -20,6 +20,7 @@ share/scite/
 share/scite/Embedded.properties
 share/scite/SciTE.properties
 share/scite/SciTEGlobal.properties
+share/scite/abaqus.properties
 share/scite/abbrev.properties
 share/scite/ada.properties
 share/scite/asm.properties
@@ -62,9 +63,11 @@ share/scite/others.properties
 share/scite/pascal.properties
 share/scite/perl.properties
 share/scite/pov.properties
+share/scite/powershell.properties
 share/scite/ps.properties
 share/scite/purebasic.properties
 share/scite/python.properties
+share/scite/r.properties
 share/scite/rebol.properties
 share/scite/ruby.properties
 share/scite/scriptol.properties

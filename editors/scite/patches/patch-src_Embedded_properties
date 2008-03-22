@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Embedded_properties,v 1.2 2007/08/01 09:21:07 steven Exp $
---- src/Embedded.properties.orig	Fri Jun  8 16:42:52 2007
-+++ src/Embedded.properties	Wed Jun 20 08:23:23 2007
+$OpenBSD: patch-src_Embedded_properties,v 1.3 2008/03/22 11:44:42 steven Exp $
+--- src/Embedded.properties.orig	Fri Jun  8 17:42:52 2007
++++ src/Embedded.properties	Fri Mar 21 15:42:32 2008
 @@ -79,7 +79,7 @@ if PLAT_WIN
  	command.scite.help.subsystem=2
  if PLAT_GTK

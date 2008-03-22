@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtk_makefile,v 1.3 2007/08/01 09:21:07 steven Exp $
---- gtk/makefile.orig	Thu Jun 14 17:37:56 2007
-+++ gtk/makefile	Wed Jun 20 11:14:35 2007
+$OpenBSD: patch-gtk_makefile,v 1.4 2008/03/22 11:44:42 steven Exp $
+--- gtk/makefile.orig	Fri Nov 30 16:27:26 2007
++++ gtk/makefile	Fri Mar 21 15:42:27 2008
 @@ -26,26 +26,26 @@ ifdef GTK2
  CONFIGFLAGS=$(shell pkg-config --cflags gtk+-2.0)
  CONFIGLIB=$(shell pkg-config --libs gtk+-2.0 gthread-2.0)
@@ -18,7 +18,7 @@ $OpenBSD: patch-gtk_makefile,v 1.3 2007/08/01 09:21:07 steven Exp $
    prefix=$(gnomeprefix)
  else
 -  prefix=/usr
-+  prefix=$(PREFIX)
++  prefix=${PREFIX}
  endif
  endif
  datadir=$(prefix)/share
@@ -27,8 +27,8 @@ $OpenBSD: patch-gtk_makefile,v 1.3 2007/08/01 09:21:07 steven Exp $
  SYSCONF_PATH=$(prefix)/share/scite
 +DOC_PATH=$(prefix)/share/doc/scite
  
--INSTALL=install -o root -g root
-+INSTALL=install -o root -g bin 
+-INSTALL=install
++INSTALL=install -o root -g bin
  
  PROG	= ../bin/SciTE
  
@@ -37,9 +37,9 @@ $OpenBSD: patch-gtk_makefile,v 1.3 2007/08/01 09:21:07 steven Exp $
  
  #CXXFLAGS= -g -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -Wwrite-strings
 -INCLUDEDIRS=-I ../../scintilla/include -I ../src
--CXXBASEFLAGS=-W -Wall -pedantic -Os -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
-+INCLUDEDIRS=-I $(prefix)/include/scintilla -I ../src -I $(prefix)/include
-+CXXBASEFLAGS=-W -Wall -pedantic -Dunix -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
+-CXXBASEFLAGS=-W -Wall -Wno-char-subscripts -pedantic -Os -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
++INCLUDEDIRS=-I ${prefix}/include/scintilla -I ../src -I ${prefix}/include
++CXXBASEFLAGS=-W -Wall -Wno-char-subscripts -pedantic -Dunix -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
  
  ifdef DEBUG
 -CXXTFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
@@ -91,11 +91,13 @@ $OpenBSD: patch-gtk_makefile,v 1.3 2007/08/01 09:21:07 steven Exp $
 -# make should be run in ../../scintilla/gtk to compile all the lexers.
 -COMPLIB=../../scintilla/bin/scintilla.a
 -
- $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
- MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
- 	$(COMPLIB) $(LUA_OBJS)
--	$(CC) `$(CONFIGTHREADS)` -DGTK $^ -o $@ $(CONFIGLIB)
-+	$(CXX) $(CONFIGTHREADS) $(LIBS) -DGTK $^ -o $@ $(CONFIGLIB)
+ $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o \
+-PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
+-	JobQueue.o GTKMutex.o $(COMPLIB) $(LUA_OBJS)
+-	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB)
++	PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
++	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
++	$(CXX) $(CONFIGTHREADS) $(LIBS) -rdynamic -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB)
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
