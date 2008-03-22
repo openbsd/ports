@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2008/03/21 14:53:51 merdely Exp $
+# $OpenBSD: Makefile,v 1.31 2008/03/22 22:46:12 merdely Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.4.5
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gimp-2.0	245.00	\
 		gimpbase-2.0	245.00	\
 		gimpcolor-2.0	245.00	\
@@ -70,18 +71,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "altivec"
 ONLY_FOR_ARCHS= powerpc   
-CONFIGURE_ARGS+= --enable-altivec
 .else
 CONFIGURE_ARGS+= --disable-altivec
-.endif
-
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE} == "amd64"
-CONFIGURE_ARGS+= --enable-mmx
-.if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ARGS+= --enable-sse
-.else
-CONFIGURE_ARGS+= --disable-sse
-.endif
 .endif
 
 .include <bsd.port.mk>
