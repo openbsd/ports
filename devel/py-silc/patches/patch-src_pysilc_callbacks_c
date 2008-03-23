@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_pysilc_callbacks_c,v 1.3 2007/10/02 17:35:48 martynas Exp $
---- src/pysilc_callbacks.c.orig	Sun Jul  9 20:18:27 2006
-+++ src/pysilc_callbacks.c	Sun Jul  1 22:52:11 2007
+$OpenBSD: patch-src_pysilc_callbacks_c,v 1.4 2008/03/23 05:46:29 fgsch Exp $
+--- src/pysilc_callbacks.c.orig	Sun Jul  9 18:18:27 2006
++++ src/pysilc_callbacks.c	Sun Mar 23 05:38:15 2008
 @@ -46,6 +46,81 @@
  #define PYSILC_SILCBUFFER_TO_PYLIST(source, destination, Type) \
      do { } while (0);
@@ -466,7 +466,15 @@ $OpenBSD: patch-src_pysilc_callbacks_c,v 1.3 2007/10/02 17:35:48 martynas Exp $
              Py_DECREF(callback);
              return;
          }
-@@ -696,14 +807,11 @@ static void _pysilc_client_callback_command_reply(Silc
+@@ -677,7 +788,6 @@ static void _pysilc_client_callback_command_reply(Silc
+     case SILC_COMMAND_PING:
+     {
+         PYSILC_GET_CALLBACK_OR_BREAK("command_reply_ping");    
+-        printf("command ping callback found\n")    ;
+         if ((result = PyObject_CallObject(callback, args)) == 0)
+             PyErr_Print();        
+         break;
+@@ -696,14 +806,11 @@ static void _pysilc_client_callback_command_reply(Silc
          memset(context, 0, sizeof(PySilcClient_Callback_Join_Context));
          if (!context)
              break;
@@ -483,7 +491,7 @@ $OpenBSD: patch-src_pysilc_callbacks_c,v 1.3 2007/10/02 17:35:48 martynas Exp $
          tmpstr = va_arg(va, char *);
          if (tmpstr)
              context->channel_name = strdup(tmpstr);
-@@ -711,27 +819,19 @@ static void _pysilc_client_callback_command_reply(Silc
+@@ -711,27 +818,19 @@ static void _pysilc_client_callback_command_reply(Silc
          context->pychannel = pychannel;
          Py_INCREF(pychannel);
          context->channel_mode = va_arg(va, SilcUInt32);
@@ -517,7 +525,23 @@ $OpenBSD: patch-src_pysilc_callbacks_c,v 1.3 2007/10/02 17:35:48 martynas Exp $
          break;
      }
      case SILC_COMMAND_MOTD:
-@@ -846,7 +946,7 @@ static void _pysilc_client_callback_command_reply(Silc
+@@ -832,21 +931,19 @@ static void _pysilc_client_callback_command_reply(Silc
+         PYSILC_NEW_CHANNEL_OR_BREAK(va_arg(va, SilcChannelEntry), pychannel);
+         
+         // get all users from this channel .. tedious
+-        SilcUInt32 user_count = va_arg(va, SilcUInt32);
+-        pyuser = PyTuple_New(user_count); // hijack pyuser so we get autocleanup
+         int i = 0;
+         SilcHashTableList hash_list;
+         SilcClientEntry user, cached;
+         SilcChannelUser user_channel;
+         PyObject *u = NULL;
+         SilcChannelEntry channel = ((PySilcChannel *)pychannel)->silcobj;
++        SilcUInt32 user_count = silc_hash_table_count(channel->user_list);
++        pyuser = PyTuple_New(user_count); // hijack pyuser so we get autocleanup
+ 
+-        printf("user: %d\n", user_count);
+-        
          if (channel && channel->user_list) {
              silc_hash_table_list(channel->user_list, &hash_list);
              while (silc_hash_table_get(&hash_list, (void *)&user, (void *)&user_channel)) {
@@ -526,7 +550,7 @@ $OpenBSD: patch-src_pysilc_callbacks_c,v 1.3 2007/10/02 17:35:48 martynas Exp $
                  if (cached) {
                      u = PySilcUser_New(cached);
                      PyTuple_SetItem(pyuser, i, u);
-@@ -880,60 +980,37 @@ cleanup:
+@@ -880,60 +977,37 @@ cleanup:
      Py_XDECREF(pyuser);
  }
  
@@ -602,7 +626,7 @@ $OpenBSD: patch-src_pysilc_callbacks_c,v 1.3 2007/10/02 17:35:48 martynas Exp $
  }                                        
  
  static void _pysilc_client_callback_ftp(SilcClient client,
-@@ -973,25 +1050,3 @@ cleanup:
+@@ -973,25 +1047,3 @@ cleanup:
      Py_XDECREF(callback);
      Py_XDECREF(result);
  }

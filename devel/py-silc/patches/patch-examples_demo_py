@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_demo_py,v 1.3 2007/10/02 17:35:48 martynas Exp $
---- examples/demo.py.orig	Mon Jul 10 02:57:15 2006
-+++ examples/demo.py	Sun Jul  1 22:52:11 2007
+$OpenBSD: patch-examples_demo_py,v 1.4 2008/03/23 05:46:29 fgsch Exp $
+--- examples/demo.py.orig	Mon Jul 10 00:57:15 2006
++++ examples/demo.py	Sun Mar 23 05:36:57 2008
 @@ -29,6 +29,10 @@ class SupySilcClient(silc.SilcClient):
      def _cache_channel(self, channel):
          self.channels[channel.channel_name] = channel
@@ -12,7 +12,19 @@ $OpenBSD: patch-examples_demo_py,v 1.3 2007/10/02 17:35:48 martynas Exp $
      def connected(self):
          print 'SILC: Connected to server.'
          self.isconnected = True
-@@ -209,7 +213,6 @@ class SupySilcClient(silc.SilcClient):
+@@ -195,8 +199,9 @@ class SupySilcClient(silc.SilcClient):
+         print 'SILC: Reply (Leave):', channel
+         
+     def command_reply_users(self, channel, users):
+-        self._cache_user(user)
+-        print 'SILC: Reply (Users):', type, user
++        for user in users:
++            self._cache_user(user)
++        print 'SILC: Reply (Users):', channel, users
+         
+     def command_reply_service(self, *args):
+         pass # not implemented
+@@ -209,7 +214,6 @@ class SupySilcClient(silc.SilcClient):
  if __name__ == "__main__":
      import sys
      c = SupySilcClient()

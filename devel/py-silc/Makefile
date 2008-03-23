@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2008/03/23 05:46:29 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Python bindings for the SILC toolkit
 
 V=		0.4
 DISTNAME=	pysilc-${V}
-PKGNAME=	py-silc-${V}p2v0
+PKGNAME=	py-silc-${V}p3v0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.liquidx.net/pysilc/
