@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2008/03/23 21:36:20 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast and stable PHP opcode cache
 
-VERSION=	1.2.1
+VERSION=	1.2.2
 DISTNAME=	xcache-${VERSION}
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${VERSION}/
 
-HOMEPAGE=	http://trac.lighttpd.net/xcache/
+HOMEPAGE=	http://xcache.lighttpd.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 AUTOCONF_VERSION=	2.59
 
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
-			::www/php5/core
+			::www/php5/core \
+			::devel/re2c
 RUN_DEPENDS+=		::www/php5/core
 
 USE_LIBTOOL=		Yes
@@ -46,11 +47,10 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/xcache
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/xcache
-	${INSTALL_DATA} ${WRKSRC}/xcache.ini ${PREFIX}/xcache
-
 	${INSTALL_DATA_DIR} ${PREFIX}/xcache/admin
+	${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
 	cd ${WRKSRC}/admin && ${INSTALL_DATA} * ${PREFIX}/xcache/admin
+	${INSTALL_DATA} ${WRKSRC}/xcache.ini ${PREFIX}/conf/php5.sample/xcache.ini.dist
 
 .if ${FLAVOR:L:Mcoverager}
 	${INSTALL_DATA_DIR} ${PREFIX}/xcache/coverager

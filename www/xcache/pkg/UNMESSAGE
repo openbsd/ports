@@ -1,7 +1,8 @@
-To completely deinstall XCache, you need to disable
-the module by using the following command
+You can disable this module by removing the
+${PREFIX}/conf/php5/xcache.ini symbolic link by
+issuing the following command: 
 
-    # ${LOCALBASE}/sbin/phpxs -r xcache
+rm -f ${PREFIX}/conf/php5/xcache.ini
 
 If you already have Apache running on your machine,
 you should not use "apachectl restart" - instead,
