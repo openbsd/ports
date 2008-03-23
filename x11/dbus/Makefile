@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/03/23 10:53:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/03/23 12:50:54 ajacoutot Exp $
 
 COMMENT=		message system
 
@@ -40,7 +40,7 @@ USE_LIBTOOL=		Yes
 
 FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/dbus
 
-pre-fake:
+pre-install:
 	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
 		${WRKSRC}/tools/dbus-uuidgen.1
 
