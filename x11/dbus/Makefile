@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.12 2008/02/29 13:38:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2008/03/23 10:53:55 ajacoutot Exp $
 
 COMMENT=		message system
 
 DISTNAME=		dbus-1.0.2
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=  dbus-1               6.0      # .5.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://dbus.freedesktop.org/
 
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+
 WANTLIB=		ICE X11 Xau Xdmcp SM c expat pthread
 
 MASTER_SITES=		${HOMEPAGE}releases/dbus/
@@ -38,5 +39,9 @@ USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
 FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/dbus
+
+pre-fake:
+	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
+		${WRKSRC}/tools/dbus-uuidgen.1
 
 .include <bsd.port.mk>

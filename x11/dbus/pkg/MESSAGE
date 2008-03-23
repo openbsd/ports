@@ -2,9 +2,6 @@ To start systemwide message dbus daemon whenever the machine boots,
 add the following lines to /etc/rc.local:
 
 if [ -x ${PREFIX}/bin/dbus-daemon ]; then
-	mkdir -p /var/run/dbus
-	chmod 0755 /var/run/dbus
-	chown _dbus:_dbus /var/run/dbus
-
-	${PREFIX}/bin/dbus-daemon --system
+	install -d -o _dbus -g _dbus /var/run/dbus
+	echo -n ' dbus'; ${PREFIX}/bin/dbus-daemon --system
 fi
