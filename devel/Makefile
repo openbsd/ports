@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.588 2008/03/18 21:26:56 simon Exp $
+# $OpenBSD: Makefile,v 1.589 2008/03/23 09:00:15 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -118,6 +118,7 @@
      SUBDIR += jakarta-servletapi
      SUBDIR += jam
      SUBDIR += jdk
+     SUBDIR += json-c
      SUBDIR += kdbg
      SUBDIR += lam
      SUBDIR += lib765
