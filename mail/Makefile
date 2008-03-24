@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2008/03/15 19:14:26 simon Exp $
+# $OpenBSD: Makefile,v 1.210 2008/03/24 22:29:36 simon Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -115,6 +115,7 @@
      SUBDIR += p5-Email-Abstract
      SUBDIR += p5-Email-Address
      SUBDIR += p5-Email-Date
+     SUBDIR += p5-Email-Date-Format
      SUBDIR += p5-Email-Folder
      SUBDIR += p5-Email-FolderType
      SUBDIR += p5-Email-LocalDelivery
