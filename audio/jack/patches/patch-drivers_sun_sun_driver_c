@@ -1,6 +1,6 @@
-$OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr Exp $
+$OpenBSD: patch-drivers_sun_sun_driver_c,v 1.2 2008/03/24 21:45:14 jakemsr Exp $
 --- drivers/sun/sun_driver.c.orig	Tue Mar 18 03:24:22 2008
-+++ drivers/sun/sun_driver.c	Fri Mar 21 18:35:18 2008
++++ drivers/sun/sun_driver.c	Mon Mar 24 05:19:21 2008
 @@ -50,7 +50,6 @@
  #include <float.h>
  #include <stdarg.h>
@@ -50,13 +50,14 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  		return;
  	}
  
+-	memset(localbuf, 0, localsize);
+-	for (i = 0; i < nperiods; i++)
 +	printf("sun_driver: writing %ld bytes of silence: "
 +		"nframes = %ld, bits = %d, channels = %d\n",
 +		(long)localsize, (long)nframes, driver->bits,
 +		driver->playback_channels);
 +
- 	memset(localbuf, 0, localsize);
--	for (i = 0; i < nperiods; i++)
++	bzero(localbuf, localsize);
 +	io_res = write(driver->outfd, localbuf, localsize);
 +	if (io_res < (ssize_t) localsize)
  	{
@@ -383,7 +384,14 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  	for (channel = 0; channel < driver->capture_channels; channel++)
  	{
  		snprintf(channel_name, sizeof(channel_name), 
-@@ -519,15 +533,14 @@ static int sun_driver_attach (sun_driver_t *driver, ja
+@@ -513,21 +527,18 @@ static int sun_driver_attach (sun_driver_t *driver, ja
+ 			jack_slist_append(driver->playback_ports, port);
+ 	}
+ 
+-	jack_activate(driver->client);
+-
+-	return 0;
++	return jack_activate(driver->client);
  }
  
  
@@ -402,7 +410,7 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  	node = driver->capture_ports;
  	while (node != NULL)
  	{
-@@ -548,22 +561,82 @@ static int sun_driver_detach (sun_driver_t *driver, ja
+@@ -548,22 +559,88 @@ static int sun_driver_detach (sun_driver_t *driver, ja
  	jack_slist_free(driver->playback_ports);
  	driver->playback_ports = NULL;
  
@@ -428,8 +436,11 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
 +		AUDIO_INITINFO(&audio_if);
 +		audio_if.record.pause = 0;
 +		if (ioctl(driver->infd, AUDIO_SETINFO, &audio_if) < 0)
++		{
 +			jack_error("sun_driver: trigger capture failed: %s: "
 +				"%s@%i", strerror(errno), __FILE__, __LINE__);
++			return -1;
++		}
 +	}
 +
 +	if (driver->outfd >= 0)
@@ -437,8 +448,11 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
 +		AUDIO_INITINFO(&audio_if);
 +		audio_if.play.pause = 0;
 +		if (ioctl(driver->outfd, AUDIO_SETINFO, &audio_if) < 0)
++		{
 +			jack_error("sun_driver: trigger playback failed: %s: "
 +				"%s@%i", strerror(errno), __FILE__, __LINE__);
++			return -1;
++		}
 +	}
 +
  	return 0;
@@ -488,7 +502,23 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  	if ((strcmp(indev, outdev) == 0) &&
  	    ((driver->capture_channels > 0) && (driver->playback_channels > 0)))
  	{
-@@ -610,6 +683,7 @@ static int sun_driver_start (sun_driver_t *driver)
+@@ -593,6 +670,7 @@ static int sun_driver_start (sun_driver_t *driver)
+ 				jack_error("sun_driver: failed to open input "
+ 					"device %s: %s: %s@%i", indev,
+ 					strerror(errno), __FILE__, __LINE__);
++				return -1;
+ 			}
+ 		}
+ 		if (driver->playback_channels > 0)
+@@ -603,6 +681,7 @@ static int sun_driver_start (sun_driver_t *driver)
+ 				jack_error("sun_driver: failed to open output "
+ 					"device %s: %s: %s@%i", outdev,
+ 					strerror(errno), __FILE__, __LINE__);
++				return -1;
+ 			}
+ 		}
+ 	}
+@@ -610,6 +689,7 @@ static int sun_driver_start (sun_driver_t *driver)
  	{
  		jack_error("sun_driver: no device was opened: %s@%i",
  			__FILE__, __LINE__);
@@ -496,7 +526,7 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  	}
  
  	driver->infd = infd;
-@@ -625,7 +699,10 @@ static int sun_driver_start (sun_driver_t *driver)
+@@ -625,7 +705,10 @@ static int sun_driver_start (sun_driver_t *driver)
  		audio_if_in.record.channels = driver->capture_channels;
  		audio_if_in.record.sample_rate = driver->sample_rate;
  		audio_if_in.record.pause = 1;
@@ -508,7 +538,7 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  	}
  	if (outfd >= 0)
  	{
-@@ -634,15 +711,22 @@ static int sun_driver_start (sun_driver_t *driver)
+@@ -634,15 +717,22 @@ static int sun_driver_start (sun_driver_t *driver)
  		audio_if_out.play.channels = driver->playback_channels;
  		audio_if_out.play.sample_rate = driver->sample_rate;
  		audio_if_out.play.pause = 1;
@@ -533,8 +563,35 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  
  	if (infd == outfd)
  	{
-@@ -681,7 +765,7 @@ static int sun_driver_start (sun_driver_t *driver)
+@@ -660,17 +750,23 @@ static int sun_driver_start (sun_driver_t *driver)
+ 	if (infd > 0)
+ 	{
+ 		if (ioctl(infd, AUDIO_SETINFO, &audio_if_in) < 0)
++		{
+ 			jack_error("sun_driver: failed to set parameters for "
+ 				"%s: %s: %s@%i", indev, strerror(errno),
+ 				__FILE__, __LINE__);
++			return -1;
++		}
+ 	}
+ 
+ 	if (outfd > 0 && outfd != infd)
+ 	{
+ 		if (ioctl(outfd, AUDIO_SETINFO, &audio_if_out) < 0)
++		{
+ 			jack_error("sun_driver: failed to set parameters for "
+ 				"%s: %s: %s@%i", outdev, strerror(errno),
+ 				__FILE__, __LINE__);
++			return -1;
++		}
+ 	}
+ 
+ 	if (infd > 0)
+@@ -679,19 +775,25 @@ static int sun_driver_start (sun_driver_t *driver)
+ 		{
+ 			jack_error("sun_driver: AUDIO_GETINFO failed: %s: "
  				"%s@%i", strerror(errno), __FILE__, __LINE__);
++			return -1;
  		}
  
 -		if (audio_if_in.record.encoding != driver->format ||
@@ -542,9 +599,10 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  		    audio_if_in.record.precision != driver->bits ||
  		    audio_if_in.record.channels != driver->capture_channels ||
  		    audio_if_in.record.sample_rate != driver->sample_rate)
-@@ -689,9 +773,13 @@ static int sun_driver_start (sun_driver_t *driver)
+ 		{
  			jack_error("sun_driver: setting capture parameters "
  				"failed: %s@%i", __FILE__, __LINE__);
++			return -1;
  		}
 -
 -		period_size = 8 * audio_if_in.blocksize /
@@ -559,7 +617,11 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  	}
  
  	if (outfd > 0)
-@@ -710,7 +798,7 @@ static int sun_driver_start (sun_driver_t *driver)
+@@ -707,36 +809,55 @@ static int sun_driver_start (sun_driver_t *driver)
+ 				jack_error("sun_driver: AUDIO_GETINFO failed: "
+ 					"%s: %s@%i", strerror(errno),
+ 					__FILE__, __LINE__);
++				return -1;
  			}
  		}
  
@@ -568,9 +630,10 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  		    audio_if_out.play.precision != driver->bits ||
  		    audio_if_out.play.channels != driver->playback_channels ||
  		    audio_if_out.play.sample_rate != driver->sample_rate)
-@@ -718,25 +806,42 @@ static int sun_driver_start (sun_driver_t *driver)
+ 		{
  			jack_error("sun_driver: playback settings failed: "
  				"%s@%i", __FILE__, __LINE__);
++			return -1;
  		}
 +#ifdef __OpenBSD__
 +		play_period = audio_if_out.play.block_size /
@@ -617,7 +680,16 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  		driver->indevbuf = malloc(driver->indevbufsize);
  		if (driver->indevbuf == NULL)
  		{
-@@ -755,7 +860,7 @@ static int sun_driver_start (sun_driver_t *driver)
+@@ -744,7 +865,7 @@ static int sun_driver_start (sun_driver_t *driver)
+ 				__FILE__, __LINE__);
+ 			return -1;
+ 		}
+-		memset(driver->indevbuf, 0x00, driver->indevbufsize);
++		bzero(driver->indevbuf, driver->indevbufsize);
+ 	}
+ 	else
+ 	{
+@@ -755,7 +876,7 @@ static int sun_driver_start (sun_driver_t *driver)
  	if (driver->playback_channels > 0)
  	{
  		driver->outdevbufsize = driver->period_size * 
@@ -626,7 +698,16 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  		driver->outdevbuf = malloc(driver->outdevbufsize);
  		if (driver->outdevbuf == NULL)
  		{
-@@ -774,89 +879,57 @@ static int sun_driver_start (sun_driver_t *driver)
+@@ -763,7 +884,7 @@ static int sun_driver_start (sun_driver_t *driver)
+ 				__FILE__, __LINE__);
+ 			return -1;
+ 		}
+-		memset(driver->outdevbuf, 0x00, driver->outdevbufsize);
++		bzero(driver->outdevbuf, driver->outdevbufsize);
+ 	}
+ 	else
+ 	{
+@@ -774,89 +895,63 @@ static int sun_driver_start (sun_driver_t *driver)
  	printf("sun_driver: indevbuf %zd B, outdevbuf %zd B\n",
  		driver->indevbufsize, driver->outdevbufsize);
  
@@ -682,8 +763,11 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
 +		AUDIO_INITINFO(&audio_if);
 +		audio_if.record.pause = 1;
 +		if (ioctl(driver->infd, AUDIO_SETINFO, &audio_if) < 0)
++		{
 +			jack_error("sun_driver: capture pause failed: %s: "
 +				"%s@%i", strerror(errno), __FILE__, __LINE__);
++			return -1;
++		}
  	}
  
 -	if (driver->indevbuf != NULL)
@@ -694,8 +778,11 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
 +		AUDIO_INITINFO(&audio_if);
 +		audio_if.play.pause = 1;
 +		if (ioctl(driver->outfd, AUDIO_SETINFO, &audio_if) < 0)
++		{
 +			jack_error("sun_driver: playback pause failed: %s: "
 +				"%s@%i", strerror(errno), __FILE__, __LINE__);
++			return -1;
++		}
  	}
 -	if (driver->outdevbuf != NULL)
 -	{
@@ -736,7 +823,7 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  	node = driver->capture_ports;
  	channel = 0;
  	while (node != NULL)
-@@ -876,32 +949,54 @@ static int sun_driver_read (sun_driver_t *driver, jack
+@@ -876,31 +971,55 @@ static int sun_driver_read (sun_driver_t *driver, jack
  		channel++;
  	}
  
@@ -794,11 +881,11 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  	}
  
 -	pthread_mutex_lock(&driver->io_mutex);
--
++	bzero(driver->outdevbuf, driver->outdevbufsize);
+ 
  	node = driver->playback_ports;
  	channel = 0;
- 	while (node != NULL)
-@@ -921,131 +1016,180 @@ static int sun_driver_write (sun_driver_t *driver, jac
+@@ -921,131 +1040,180 @@ static int sun_driver_write (sun_driver_t *driver, jac
  		channel++;
  	}
  
@@ -1068,7 +1155,7 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  }
  
  
-@@ -1055,10 +1199,8 @@ static void *io_thread (void *param)
+@@ -1055,10 +1223,8 @@ static void *io_thread (void *param)
  const char driver_client_name[] = "sun";
  
  
@@ -1081,7 +1168,7 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  {
  	jack_driver_desc_t *desc;
  	jack_driver_param_desc_t *params;
-@@ -1088,8 +1230,8 @@ jack_driver_desc_t * driver_get_descriptor ()
+@@ -1088,8 +1254,8 @@ jack_driver_desc_t * driver_get_descriptor ()
  }
  
  
@@ -1092,7 +1179,7 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  {
  	int bits = SUN_DRIVER_DEF_BITS;
  	jack_nframes_t sample_rate = SUN_DRIVER_DEF_FS;
-@@ -1101,31 +1243,13 @@ jack_driver_t * driver_initialize (jack_client_t *clie
+@@ -1101,31 +1267,13 @@ jack_driver_t * driver_initialize (jack_client_t *clie
  	unsigned int playback_channels = SUN_DRIVER_DEF_OUTS;
  	const JSList *pnode;
  	const jack_driver_param_t *param;
@@ -1129,7 +1216,7 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  	pnode = params;
  	while (pnode != NULL)
  	{
-@@ -1152,13 +1276,13 @@ jack_driver_t * driver_initialize (jack_client_t *clie
+@@ -1152,13 +1300,13 @@ jack_driver_t * driver_initialize (jack_client_t *clie
  				playback_channels = param->value.ui;
  				break;
  			case 'C':
@@ -1146,7 +1233,7 @@ $OpenBSD: patch-drivers_sun_sun_driver_c,v 1.1.1.1 2008/03/24 03:01:29 jakemsr E
  				break;
  			case 'I':
  				in_latency = param->value.ui;
-@@ -1170,47 +1294,7 @@ jack_driver_t * driver_initialize (jack_client_t *clie
+@@ -1170,47 +1318,7 @@ jack_driver_t * driver_initialize (jack_client_t *clie
  		pnode = jack_slist_next(pnode);
  	}
  	
