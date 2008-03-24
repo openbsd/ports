@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_node_c,v 1.1 2008/03/24 13:24:27 jasper Exp $
+--- src/node.c.orig	Mon Mar 24 14:19:44 2008
++++ src/node.c	Mon Mar 24 14:20:12 2008
+@@ -276,6 +276,9 @@ node_process_update_result (nodePtr node, const struct
+ void
+ node_mark_all_read (nodePtr node)
+ {
++	if (NULL == node)
++		return;
++
+ 	if (0 != node->unreadCount) {
+ 		item_state_set_all_read (node);
+ 		node->unreadCount = 0;
