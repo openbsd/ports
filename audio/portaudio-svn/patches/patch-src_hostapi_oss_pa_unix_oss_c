@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.3 2007/11/18 14:03:32 jakemsr Exp $
---- src/hostapi/oss/pa_unix_oss.c.orig	Sat Sep 29 19:11:09 2007
-+++ src/hostapi/oss/pa_unix_oss.c	Sun Oct 28 17:05:10 2007
-@@ -72,6 +72,9 @@
+$OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.4 2008/03/24 05:26:46 jakemsr Exp $
+--- src/hostapi/oss/pa_unix_oss.c.orig	Mon Feb 25 17:37:41 2008
++++ src/hostapi/oss/pa_unix_oss.c	Mon Feb 25 18:32:40 2008
+@@ -76,6 +76,9 @@
  #elif defined(HAVE_MACHINE_SOUNDCARD_H)
  # include <machine/soundcard.h> /* JH20010905 */
  # define DEVICE_NAME_BASE            "/dev/audio"
@@ -11,31 +11,25 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.3 2007/11/18 14:03:32 jakemsr 
  #else
  # error No sound card header file
  #endif
-@@ -97,7 +100,7 @@ static pthread_t mainThread_;
-             /* PaUtil_SetLastHostErrorInfo should only be used in the main thread */ \
-             if( (code) == paUnanticipatedHostError && pthread_self() == mainThread_ ) \
-             { \
--                PaUtil_SetLastHostErrorInfo( paALSA, sysErr_, strerror( errno ) ); \
-+                PaUtil_SetLastHostErrorInfo( paOSS, sysErr_, strerror( errno ) ); \
-             } \
-             \
-             PaUtil_DebugPrint(( "Expression '" #expr "' failed in '" __FILE__ "', line: " STRINGIZE( __LINE__ ) "\n" )); \
-@@ -403,8 +406,12 @@ static PaError QueryDirection( const char *deviceName,
+@@ -409,8 +412,15 @@ static PaError QueryDirection( const char *deviceName,
+     if( *defaultSampleRate < 0 )
+     {
          sr = 44100;
-         if( ioctl( devHandle, SNDCTL_DSP_SPEED, &sr ) < 0 )
-         {
--            result = paUnanticipatedHostError;
--            goto error;
+-        ENSURE_( ioctl( devHandle, SNDCTL_DSP_SPEED, &sr ), paUnanticipatedHostError );
+-
++        if( ioctl( devHandle, SNDCTL_DSP_SPEED, &sr ) < 0 )
++        {
 +            sr = 48000;
 +            if( ioctl( devHandle, SNDCTL_DSP_SPEED, &sr ) < 0 )
 +            {
 +                result = paUnanticipatedHostError;
 +                goto error;
 +	    }
-         }
- 
++        }
          *defaultSampleRate = sr;
-@@ -597,6 +604,7 @@ static PaError IsFormatSupported( struct PaUtilHostApi
+     }
+ 
+@@ -594,6 +604,7 @@ static PaError IsFormatSupported( struct PaUtilHostApi
      int tempDevHandle = -1;
      int flags;
      PaSampleFormat inputSampleFormat, outputSampleFormat;
@@ -43,7 +37,7 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.3 2007/11/18 14:03:32 jakemsr 
  
      if( inputParameters )
      {
-@@ -692,6 +700,43 @@ static PaError IsFormatSupported( struct PaUtilHostApi
+@@ -689,6 +700,43 @@ static PaError IsFormatSupported( struct PaUtilHostApi
      /* PaOssStream_Configure will do the rest of the checking for us */
      /* PA_ENSURE( PaOssStream_Configure( tempDevHandle, deviceName, outputChannelCount, &sampleRate ) ); */
  
@@ -87,7 +81,7 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.3 2007/11/18 14:03:32 jakemsr 
      /* everything succeeded! */
  
   error:
-@@ -810,9 +855,11 @@ static PaError OpenDevices( const char *idevName, cons
+@@ -807,9 +855,11 @@ static PaError OpenDevices( const char *idevName, cons
          ENSURE_( *idev = open( idevName, flags ), paDeviceUnavailable );
          PA_ENSURE( ModifyBlocking( *idev, 1 ) ); /* Blocking */
  
@@ -99,7 +93,7 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.3 2007/11/18 14:03:32 jakemsr 
      }
      if( odevName )
      {
-@@ -821,9 +868,11 @@ static PaError OpenDevices( const char *idevName, cons
+@@ -818,9 +868,11 @@ static PaError OpenDevices( const char *idevName, cons
              ENSURE_( *odev = open( odevName, flags ), paDeviceUnavailable );
              PA_ENSURE( ModifyBlocking( *odev, 1 ) ); /* Blocking */
  
@@ -111,16 +105,3 @@ $OpenBSD: patch-src_hostapi_oss_pa_unix_oss_c,v 1.3 2007/11/18 14:03:32 jakemsr 
          }
          else
          {
-@@ -1226,10 +1275,12 @@ static PaError OpenStream( struct PaUtilHostApiReprese
-         }
-     }
- 
-+#if 0
-     /* Round framesPerBuffer to the next power-of-two to make OSS happy. */
-     framesPerBuffer &= INT_MAX;
-     for (i = 1; framesPerBuffer > i; i <<= 1) ;
-     framesPerBuffer = i;
-+#endif
- 
-     /* allocate and do basic initialization of the stream structure */
-     PA_UNLESS( stream = (PaOssStream*)PaUtil_AllocateMemory( sizeof(PaOssStream) ), paInsufficientMemory );
