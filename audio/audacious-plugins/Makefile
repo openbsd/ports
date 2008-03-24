@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/13 12:44:22 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2008/03/24 06:39:55 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -66,7 +66,8 @@ LIB_DEPENDS-arts=	artsc.>=1::x11/kde/arts3
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--with-dev-dsp=/dev/audio \
-			--disable-flac
+			--disable-flac \
+			--disable-jack
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_header_altivec_h=no
