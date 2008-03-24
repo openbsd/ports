@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/12/11 07:55:05 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.9 2008/03/24 05:50:05 jakemsr Exp $
 COMMENT=	Decoding Library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
@@ -39,6 +39,8 @@ AUTOCONF_VERSION=	2.60
 CONFIGURE=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
 CONFIGURE_ENV=		PTHREAD_LIBS=-pthread
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include \
-			--with-extra-libs=${LOCALBASE}/lib
+			--with-extra-libs=${LOCALBASE}/lib \
+			--without-jack \
+			--without-polyaudio
 
 .include <bsd.port.mk>
