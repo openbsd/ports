@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.5 2007/09/20 19:20:48 mbalmer Exp $
---- configure.orig	Fri Sep 14 22:18:26 2007
-+++ configure	Mon Sep 17 09:12:54 2007
-@@ -6535,7 +6535,7 @@ fi
+$OpenBSD: patch-configure,v 1.6 2008/03/24 17:26:12 simon Exp $
+--- configure.orig	Fri Nov 16 05:59:25 2007
++++ configure	Tue Nov 27 15:35:52 2007
+@@ -7053,7 +7053,7 @@ fi
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_com_err" = no; then
--  for ac_lib in krb5 'krb5 -ldes -lasn1 -lroken' com_err; do
-+  for ac_lib in krb5 'krb5 -ldes -lasn1 -lroken' 'com_err -lssl -lcrypto' ; do
+-  for ac_lib in krb5 'krb5 -lcrypto -ldes -lasn1 -lroken' com_err; do
++  for ac_lib in krb5 'krb5 -lcrypto -ldes -lasn1 -lroken' 'com_err -lssl -lcrypto' ; do
      LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
      cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */

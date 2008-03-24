@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/01/07 16:34:52 mbalmer Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2008/03/24 17:26:12 simon Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -54,19 +54,20 @@ include/postgresql/sql3types.h
 include/postgresql/sqlca.h
 lib/libecpg.a
 @comment lib/libecpg.so
-@comment lib/libecpg.so.6
+@comment lib/libecpg.so.7
 @lib lib/libecpg.so.${LIBecpg_VERSION}
 lib/libecpg_compat.a
 @comment lib/libecpg_compat.so
-@comment lib/libecpg_compat.so.3
+@comment lib/libecpg_compat.so.4
 @lib lib/libecpg_compat.so.${LIBecpg_compat_VERSION}
 lib/libpgport.a
 lib/libpgtypes.a
 @comment lib/libpgtypes.so
-@comment lib/libpgtypes.so.3
+@comment lib/libpgtypes.so.4
 @lib lib/libpgtypes.so.${LIBpgtypes_VERSION}
 lib/libpq.a
 @comment lib/libpq.so
+@comment lib/libpq.so.5
 @lib lib/libpq.so.${LIBpq_VERSION}
 lib/postgresql/
 lib/postgresql/pgxs/
@@ -109,14 +110,20 @@ lib/postgresql/pgxs/src/test/regress/pg_regress
 @man man/man7/alter_language.7
 @man man/man7/alter_operator.7
 @man man/man7/alter_operator_class.7
+@man man/man7/alter_operator_family.7
 @man man/man7/alter_role.7
 @man man/man7/alter_schema.7
 @man man/man7/alter_sequence.7
 @man man/man7/alter_table.7
 @man man/man7/alter_tablespace.7
+@man man/man7/alter_text_search_configuration.7
+@man man/man7/alter_text_search_dictionary.7
+@man man/man7/alter_text_search_parser.7
+@man man/man7/alter_text_search_template.7
 @man man/man7/alter_trigger.7
 @man man/man7/alter_type.7
 @man man/man7/alter_user.7
+@man man/man7/alter_view.7
 @man man/man7/analyze.7
 @man man/man7/begin.7
 @man man/man7/checkpoint.7
@@ -138,6 +145,7 @@ lib/postgresql/pgxs/src/test/regress/pg_regress
 @man man/man7/create_language.7
 @man man/man7/create_operator.7
 @man man/man7/create_operator_class.7
+@man man/man7/create_operator_family.7
 @man man/man7/create_role.7
 @man man/man7/create_rule.7
 @man man/man7/create_schema.7
@@ -145,6 +153,10 @@ lib/postgresql/pgxs/src/test/regress/pg_regress
 @man man/man7/create_table.7
 @man man/man7/create_table_as.7
 @man man/man7/create_tablespace.7
+@man man/man7/create_text_search_configuration.7
+@man man/man7/create_text_search_dictionary.7
+@man man/man7/create_text_search_parser.7
+@man man/man7/create_text_search_template.7
 @man man/man7/create_trigger.7
 @man man/man7/create_type.7
 @man man/man7/create_user.7
@@ -152,6 +164,7 @@ lib/postgresql/pgxs/src/test/regress/pg_regress
 @man man/man7/deallocate.7
 @man man/man7/declare.7
 @man man/man7/delete.7
+@man man/man7/discard.7
 @man man/man7/drop_aggregate.7
 @man man/man7/drop_cast.7
 @man man/man7/drop_conversion.7
@@ -163,6 +176,7 @@ lib/postgresql/pgxs/src/test/regress/pg_regress
 @man man/man7/drop_language.7
 @man man/man7/drop_operator.7
 @man man/man7/drop_operator_class.7
+@man man/man7/drop_operator_family.7
 @man man/man7/drop_owned.7
 @man man/man7/drop_role.7
 @man man/man7/drop_rule.7
@@ -170,6 +184,10 @@ lib/postgresql/pgxs/src/test/regress/pg_regress
 @man man/man7/drop_sequence.7
 @man man/man7/drop_table.7
 @man man/man7/drop_tablespace.7
+@man man/man7/drop_text_search_configuration.7
+@man man/man7/drop_text_search_dictionary.7
+@man man/man7/drop_text_search_parser.7
+@man man/man7/drop_text_search_template.7
 @man man/man7/drop_trigger.7
 @man man/man7/drop_type.7
 @man man/man7/drop_user.7
@@ -216,6 +234,7 @@ share/postgresql/information_schema.sql
 share/postgresql/postgres.description
 share/postgresql/psqlrc.sample
 share/postgresql/recovery.conf.sample
+share/postgresql/snowball_create.sql
 share/postgresql/sql_features.txt
 share/postgresql/system_views.sql
 share/postgresql/timezone/

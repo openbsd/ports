@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.114 2008/01/07 16:34:52 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.115 2008/03/24 17:26:12 simon Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
 
-VERSION=	8.2.6
+VERSION=	8.3.1
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -13,10 +13,10 @@ PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		6.0 \
-		ecpg_compat	3.0 \
-		pgtypes		3.0 \
-		pq		5.0
+SHARED_LIBS=	ecpg		7.0 \
+		ecpg_compat	4.0 \
+		pgtypes		4.0 \
+		pq		5.1
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -51,16 +51,22 @@ CONFIGURE_STYLE=gnu
 
 .include <bsd.own.mk>
 
+INCLUDES=	${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 		--with-perl \
 		--enable-integer-datetimes \
 		--includedir="${PREFIX}/include/postgresql" \
 		--datadir="${PREFIX}/share/postgresql" \
 		--with-docdir="${PREFIX}/share/doc/postgresql" \
-		--with-openssl
+		--with-includes="${INCLUDES}" \
+		--with-libraries="${LOCALBASE}/lib" \
+		--with-openssl \
+		--with-ossp-uuid \
+		--with-libxml
 
 .if ${KERBEROS5} == "yes"
-CONFIGURE_ARGS+=--with-krb5 --with-includes=/usr/include/kerberosV
+CONFIGURE_ARGS+=--with-krb5
+INCLUDES+=	/usr/include/kerberosV
 .endif
 
 # There is no spinlock support for hppa yet. Until we have access to
@@ -75,12 +81,17 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
 INSTALL_TARGET=	install
 
+LIB_DEPENDS-main= xml2::textproc/libxml
+
 WANTLIB-server=	${WANTLIB} perl
 
-LIB_DEPENDS-server= pq.>=4:postgresql-client-${VERSION}:databases/postgresql
+LIB_DEPENDS-server= pq.>=4:postgresql-client-${VERSION}:databases/postgresql \
+		    ${LIB_DEPENDS-main}
 RUN_DEPENDS-contrib=:postgresql-server-${VERSION}:databases/postgresql,-server
 
-LIB_DEPENDS-contrib= pq.>=4:postgresql-client-${VERSION}:databases/postgresql
+LIB_DEPENDS-contrib= pq.>=4:postgresql-client-${VERSION}:databases/postgresql \
+		     ${LIB_DEPENDS-main} \
+		     uuid::devel/uuid
 
 WANTLIB-docs=
 PKG_ARCH-docs=	*

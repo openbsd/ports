@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-contrib,v 1.2 2007/07/04 19:18:46 jasper Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.3 2008/03/24 17:26:12 simon Exp $
+@conflict postgresql-uuid-*
+@pkgpath devel/uuid,-pgsql
 bin/oid2name
 bin/pgbench
 bin/vacuumlo
@@ -30,6 +32,7 @@ lib/postgresql/sslinfo.so
 lib/postgresql/tablefunc.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch2.so
+lib/postgresql/uuid-ossp.so
 share/postgresql/contrib/
 share/postgresql/contrib/_int.sql
 share/postgresql/contrib/adminpack.sql
@@ -38,8 +41,9 @@ share/postgresql/contrib/btree_gist.sql
 share/postgresql/contrib/chkpass.sql
 share/postgresql/contrib/cube.sql
 share/postgresql/contrib/dblink.sql
+share/postgresql/contrib/dict_int.sql
+share/postgresql/contrib/dict_xsyn.sql
 share/postgresql/contrib/earthdistance.sql
-share/postgresql/contrib/english.stop
 share/postgresql/contrib/fuzzystrmatch.sql
 share/postgresql/contrib/hstore.sql
 share/postgresql/contrib/insert_username.sql
@@ -48,6 +52,7 @@ share/postgresql/contrib/isn.sql
 share/postgresql/contrib/lo.sql
 share/postgresql/contrib/ltree.sql
 share/postgresql/contrib/moddatetime.sql
+share/postgresql/contrib/pageinspect.sql
 share/postgresql/contrib/pg_buffercache.sql
 share/postgresql/contrib/pg_freespacemap.sql
 share/postgresql/contrib/pg_trgm.sql
@@ -55,12 +60,10 @@ share/postgresql/contrib/pgcrypto.sql
 share/postgresql/contrib/pgrowlocks.sql
 share/postgresql/contrib/pgstattuple.sql
 share/postgresql/contrib/refint.sql
-share/postgresql/contrib/russian.stop
-share/postgresql/contrib/russian.stop.utf8
 share/postgresql/contrib/seg.sql
 share/postgresql/contrib/sslinfo.sql
 share/postgresql/contrib/tablefunc.sql
-share/postgresql/contrib/thesaurus
+share/postgresql/contrib/test_parser.sql
 share/postgresql/contrib/timetravel.sql
 share/postgresql/contrib/tsearch2.sql
 share/postgresql/contrib/uninstall__int.sql
@@ -69,6 +72,8 @@ share/postgresql/contrib/uninstall_btree_gist.sql
 share/postgresql/contrib/uninstall_chkpass.sql
 share/postgresql/contrib/uninstall_cube.sql
 share/postgresql/contrib/uninstall_dblink.sql
+share/postgresql/contrib/uninstall_dict_int.sql
+share/postgresql/contrib/uninstall_dict_xsyn.sql
 share/postgresql/contrib/uninstall_earthdistance.sql
 share/postgresql/contrib/uninstall_fuzzystrmatch.sql
 share/postgresql/contrib/uninstall_hstore.sql
@@ -76,6 +81,7 @@ share/postgresql/contrib/uninstall_int_aggregate.sql
 share/postgresql/contrib/uninstall_isn.sql
 share/postgresql/contrib/uninstall_lo.sql
 share/postgresql/contrib/uninstall_ltree.sql
+share/postgresql/contrib/uninstall_pageinspect.sql
 share/postgresql/contrib/uninstall_pg_buffercache.sql
 share/postgresql/contrib/uninstall_pg_freespacemap.sql
 share/postgresql/contrib/uninstall_pg_trgm.sql
@@ -85,4 +91,7 @@ share/postgresql/contrib/uninstall_pgstattuple.sql
 share/postgresql/contrib/uninstall_seg.sql
 share/postgresql/contrib/uninstall_sslinfo.sql
 share/postgresql/contrib/uninstall_tablefunc.sql
+share/postgresql/contrib/uninstall_test_parser.sql
 share/postgresql/contrib/uninstall_tsearch2.sql
+share/postgresql/contrib/uninstall_uuid-ossp.sql
+share/postgresql/contrib/uuid-ossp.sql
