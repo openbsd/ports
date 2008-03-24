@@ -1,0 +1,49 @@
+$OpenBSD: patch-drivers_sun_sun_driver_h,v 1.1.1.1 2008/03/24 03:01:29 jakemsr Exp $
+--- drivers/sun/sun_driver.h.orig	Tue Mar 18 03:24:22 2008
++++ drivers/sun/sun_driver.h	Fri Mar 21 14:35:28 2008
+@@ -51,12 +51,13 @@ typedef jack_default_audio_sample_t jack_sample_t;
+ 
+ typedef struct _sun_driver
+ {
+-	JACK_DRIVER_DECL
++	JACK_DRIVER_NT_DECL
+ 
+ 	jack_nframes_t sample_rate;
+ 	jack_nframes_t period_size;
+ 	unsigned int nperiods;
+ 	int bits;
++	int sample_bytes;
+ 	unsigned int capture_channels;
+ 	unsigned int playback_channels;
+ 
+@@ -73,26 +74,22 @@ typedef struct _sun_driver
+ 	void *indevbuf;
+ 	void *outdevbuf;
+ 
++	int poll_timeout;
++	jack_time_t poll_last;
++	jack_time_t poll_next;
+ 	float iodelay;
++
+ 	jack_nframes_t sys_in_latency;
+ 	jack_nframes_t sys_out_latency;
+ 
+ 	JSList *capture_ports;
+ 	JSList *playback_ports;
+ 
+-	jack_engine_t *engine;
+ 	jack_client_t *client;
+ 
+-	int playback_ready;
+-	int capture_ready;
+-
+ 	int playback_drops;
+ 	int capture_drops;
+ 
+-	volatile int run;
+-	pthread_t io_thread;
+-	pthread_mutex_t io_mutex;
+-	sem_t sem_start;
+ } sun_driver_t;
+ 
+ 

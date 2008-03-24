@@ -1,0 +1,154 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2008/03/24 03:01:28 jakemsr Exp $
+--- configure.ac.orig	Fri Mar 14 09:02:59 2008
++++ configure.ac	Tue Mar 18 03:42:20 2008
+@@ -87,12 +87,17 @@ case "${host_os}" in
+     # current FreeBSD header files conflict with the OSS driver's
+     # barrier code, this may be fixed in 5.3, stay tuned.
+     USE_BARRIER="no"
++    JACK_HOST_HAS_BSD_POLL="yes"
+     ;;
+   openbsd*)
+     # pthread_barrier* not implemented
+     USE_BARRIER="no"
+     # need small realtime stack
+     JACK_THREAD_STACK_TOUCH=10000
++    JACK_HOST_HAS_BSD_POLL="yes"
++    # use -pthread for pthreads
++    LIBS="$LIBS -pthread"
++    CFLAGS="$CFLAGS -pthread"
+     ;;
+   darwin*)
+     JACK_THREAD_STACK_TOUCH=10000	# need small realtime stack
+@@ -101,11 +106,16 @@ case "${host_os}" in
+     JACK_USE_MACH_THREADS=1
+     OS_LDFLAGS="-framework CoreAudio -framework CoreServices -framework AudioUnit"
+     TRY_POSIX_SHM=yes			# POSIX shm works better
++    JACK_HOST_HAS_BSD_POLL="yes"
+     ;;
+ esac
+ 
+ AC_SUBST(OS_LDFLAGS)
+ 
++if test x"$JACK_HOST_HAS_BSD_POLL" = x"yes"; then
++    AC_DEFINE(JACK_HOST_HAS_BSD_POLL, 1, [must use read() to signal eof])
++fi
++
+ #
+ # We need to establish suitable defaults for a 64-bit OS
+ libnn=lib
+@@ -216,9 +226,8 @@ AM_CONDITIONAL(USE_POSIX_SHM, $USE_POSIX_SHM)
+ 
+ JACK_CORE_CFLAGS="-I\$(top_srcdir)/config -I\$(top_srcdir) \
+ -I\$(top_srcdir) -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -Wall -g"
+-JACK_OPT_CFLAGS="$JACK_CORE_CFLAGS -march=pentium2 -mcpu=pentium4 -O3 \
+--ffast-math -funroll-loops -fprefetch-loop-arrays"
+-JACK_CFLAGS="$JACK_CORE_CFLAGS $CFLAGS"
++JACK_OPT_CFLAGS="-ffast-math -funroll-loops -fprefetch-loop-arrays"
++CFLAGS="$JACK_CORE_CFLAGS $CFLAGS"
+ 
+ dnl
+ dnl figure out how best to optimize
+@@ -263,6 +272,10 @@ if test "$target_cpu" = "powerpc"; then
+ 
+ elif echo $target_cpu | egrep '(i.86|x86_64)' >/dev/null; then
+ 
++    if test x"$target_cpu" = x"i386" ; then
++        target_cpu="i`sysctl hw.model | sed -e 's#.*\(.86\)-class.*#\1#'`"
++    fi
++
+     dnl Check for MMX/SSE assembly
+     
+     if test -r /proc/cpuinfo ; then
+@@ -273,16 +286,28 @@ elif echo $target_cpu | egrep '(i.86|x86_64)' >/dev/nu
+ 	if echo $procflags | grep -s sse ; then
+ 	    cpu_supports_sse=yes
+ 	fi
++    else
++        if test x"$target_cpu" = x"x86_64" ; then
++            cpu_supports_mmx=yes
++            cpu_supports_sse=yes
++        else
++            cpu_supports_mmx=yes
++            if grep ^cpu /var/run/dmesg.boot | grep SSE ; then
++                cpu_supports_sse=yes
++            else
++                cpu_supports_sse=no
++            fi
++        fi
+     fi
+     
+     AC_ARG_ENABLE(optimization-by-compiler,
+-	[  --enable-optimization-by-compiler  use compiler (NOT processor) capabilities to determine optimization flags],,
+-	optimization_by_compiler=no
++	[  --enable-optimization-by-compiler  use compiler (NOT processor) capabilities to determine optimization flags],[],
++	enable_optimization_by_compiler=no
+     )
+     
+     AC_ARG_ENABLE(optimization-by-cpu,
+-	[  --enable-optimization-by-cpu  use processor capabilities to determine optimization flags],,
+-	optimization_by_cpu=yes
++	[  --enable-optimization-by-cpu  use processor capabilities to determine optimization flags],[],
++	enable_optimization_by_cpu=yes
+     )
+     
+     AC_ARG_ENABLE(mmx,
+@@ -302,7 +327,7 @@ elif echo $target_cpu | egrep '(i.86|x86_64)' >/dev/nu
+ 	    AC_DEFINE(USE_MMX, 1, [Define to 1 if MMX assembly is available.])
+ 	    AC_MSG_RESULT(yes)
+ 	    
+-	    if test x$optimization_by_cpu = xyes ; then
++	    if test x$enable_optimization_by_cpu = xyes ; then
+ 		if test x$cpu_supports_mmx = xyes ; then
+ 		    MMX_FLAGS="-mmmx"
+ 		fi
+@@ -326,7 +351,7 @@ elif echo $target_cpu | egrep '(i.86|x86_64)' >/dev/nu
+ 	    AC_DEFINE(USE_SSE, 1,
+ 		[Define to 1 if SSE assembly is available.])
+ 	    
+-	    if test x$optimization_by_cpu = xyes ; then
++	    if test x$enable_optimization_by_cpu = xyes ; then
+ 		if test x$cpu_supports_sse = xyes ; then
+ 		    SSE_FLAGS="-msse -mfpmath=sse"
+ 		fi
+@@ -345,14 +370,14 @@ elif echo $target_cpu | egrep '(i.86|x86_64)' >/dev/nu
+     fi
+ 
+     AC_DEFINE(x86, 1, "Nope it's intel")
+-    COMMON_X86_OPT_FLAGS="-DREENTRANT -O3 -fomit-frame-pointer -ffast-math -funroll-loops"
++    COMMON_X86_OPT_FLAGS="-fomit-frame-pointer -ffast-math -funroll-loops"
+     
+     if test "$target_cpu" = "i586"; then
+ 	JACK_OPT_CFLAGS="-march=i586 "
+     elif test "$target_cpu" = "i686"; then
+ 	JACK_OPT_CFLAGS="-march=i686"
+     elif test "$target_cpu" = "x86_64"; then
+-	JACK_OPT_CFLAGS="-march=k8"
++	JACK_OPT_CFLAGS="-march=i686"
+     else
+ 	:
+     fi
+@@ -373,7 +398,7 @@ AC_ARG_ENABLE(optimize,
+     AC_HELP_STRING([--enable-optimize],
+ 	[ask the compiler for its best optimizations]),
+     [ if test x$enable_optimize != xno ; then
+-	JACK_CFLAGS="$JACK_CORE_CFLAGS $JACK_OPT_CFLAGS"
++	CFLAGS="$CFLAGS $JACK_OPT_CFLAGS"
+ 	AC_MSG_WARN([optimization in use.........................])
+       else
+ 	JACK_OPT_CFLAGS=""
+@@ -382,13 +407,13 @@ AC_ARG_ENABLE(optimize,
+     ]
+ )
+ 
+-AC_SUBST(JACK_CFLAGS)
++dnl AC_SUBST(JACK_CFLAGS)
+ 
+ dnl
+ dnl use JACK_CFLAGS for jackd compilation
+ dnl 
+ 
+-CFLAGS=$JACK_CFLAGS
++dnl CFLAGS=$JACK_CFLAGS
+ 
+ # allow buffer resizing unless --disable-resize specified
+ buffer_resizing=yes

@@ -1,0 +1,34 @@
+$OpenBSD: patch-jackd_engine_c,v 1.1.1.1 2008/03/24 03:01:28 jakemsr Exp $
+--- jackd/engine.c.orig	Tue Mar 18 03:24:21 2008
++++ jackd/engine.c	Fri Mar 21 00:01:11 2008
+@@ -912,7 +912,7 @@ jack_watchdog_thread (void *arg)
+ 	engine->watchdog_check = 0;
+ 
+ 	while (1) {
+-		usleep (1000 * JACKD_WATCHDOG_TIMEOUT);
++		usleep (100 * JACKD_WATCHDOG_TIMEOUT);
+ 		if (!engine->freewheeling && engine->watchdog_check == 0) {
+ 
+ 			jack_error ("jackd watchdog: timeout - killing jackd");
+@@ -1468,10 +1468,8 @@ jack_server_thread (void *arg)
+ 				    (engine, pfd[i].fd)) {
+ 					jack_error ("could not handle external"
+ 						    " client request");
+-#ifdef JACK_USE_MACH_THREADS
+-                                    /* poll is implemented using
+-				       select (see the macosx/fakepoll
+-				       code). When the socket is closed
++#ifdef JACK_HOST_HAS_BSD_POLL
++                                    /* When the socket is closed
+ 				       select does not return any error,
+ 				       POLLIN is true and the next read
+ 				       will return 0 bytes. This
+@@ -1481,7 +1479,7 @@ jack_server_thread (void *arg)
+ 				       and remove the client.
+                                     */
+                                     jack_client_disconnect(engine, pfd[i].fd);
+-#endif /* JACK_USE_MACH_THREADS */
++#endif /* JACK_HOST_HAS_BSD_POLL */
+ 				}
+ 			}
+ 		}
