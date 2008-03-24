@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.28 2008/02/24 20:36:15 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.29 2008/03/24 03:26:34 jakemsr Exp $
 
 COMMENT-main=		multimedia decoding library
 COMMENT-esd=		esound audio output module for xine-lib
 COMMENT-arts=		artsd audio output module for xine-lib
+COMMENT-jack=		jackd audio output module for xine-lib
 
-V=			1.1.10
-VER=			${V}.1
-DISTNAME=		xine-lib-${VER}
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-esd=		xine-lib-esd-${VER}
-PKGNAME-arts=		xine-lib-arts-${VER}
+V=			1.1.11
+DISTNAME=		xine-lib-${V}
+PKGNAME-main=		${DISTNAME}
+PKGNAME-esd=		xine-lib-esd-${V}
+PKGNAME-arts=		xine-lib-arts-${V}
+PKGNAME-jack=		xine-lib-jack-${V}
+
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
-SHARED_LIBS=		xine	20.0
+SHARED_LIBS=		xine	20.1
 
 HOMEPAGE=		http://xinehq.de/
 
@@ -24,7 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 
-MULTI_PACKAGES=		-main -esd -arts
+MULTI_PACKAGES=		-main -esd -arts -jack
 
 WANTLIB=		expat fontconfig freetype m z
 WANTLIB-main=		${WANTLIB} X11 Xau Xdmcp Xext Xinerama Xrandr \
@@ -32,6 +34,7 @@ WANTLIB-main=		${WANTLIB} X11 Xau Xdmcp Xext Xinerama Xrandr \
 WANTLIB-esd=		${WANTLIB}
 WANTLIB-arts=		${WANTLIB} pcre stdc++ glib-2.0 \
 			gmodule-2.0 gthread-2.0
+WANTLIB-jack=		${WANTLIB}
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=		-Di386=1
@@ -63,6 +66,10 @@ LIB_DEPENDS-arts=	${LIB_DEPENDS} \
 			artsc.>=1::x11/kde/arts3 \
 			::${BUILD_PKGPATH}
 RUN_DEPENDS-arts=	${RUN_DEPENDS}
+LIB_DEPENDS-jack=	${LIB_DEPENDS} \
+			jack::audio/jack \
+			::${BUILD_PKGPATH}
+RUN_DEPENDS-jack=	${RUN_DEPENDS}
 
 SHARED_ONLY=		Yes
 USE_X11=		Yes
@@ -70,7 +77,8 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 
-SUBST_VARS+=		V
+XINEAPI_REV=		1.20
+SUBST_VARS+=		XINEAPI_REV
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
@@ -91,7 +99,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-alsa \
 			--with-esound \
 			--with-arts \
-			--without-jack \
+			--with-jack \
 			--without-imagemagick \
 			--disable-samba \
 			--disable-xvmc \
