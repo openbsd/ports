@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/18 21:13:54 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2008/03/24 19:59:13 landry Exp $
 
 COMMENT=	simple client plugin for Music Player Daemon
 
-V=		0.3.2
+V=		0.3.3
 DISTNAME=	xfce4-mpc-plugin-${V}
-PKGNAME=	xfce4-mpc-${V}p0
+PKGNAME=	xfce4-mpc-${V}
 
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin
