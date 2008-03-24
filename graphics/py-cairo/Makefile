@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2007/10/08 08:22:41 steven Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.13 2008/03/24 13:43:13 eric Exp $
 
 COMMENT=	cairo bindings for Python
 
-V=		1.4.0
-DISTNAME=	pycairo-${V}
-PKGNAME=	py-cairo-${V}p0
+VERSION=	1.4.12
+DISTNAME=	pycairo-${VERSION}
+PKGNAME=	py-cairo-${VERSION}
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://cairographics.org/introduction/
 
-MAINTAINER=	Eric Faurot <eric.faurot@gmail.com>
+MAINTAINER=	Eric Faurot <eric@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
