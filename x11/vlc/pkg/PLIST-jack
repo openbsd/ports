@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-jack,v 1.1 2008/03/24 04:46:26 jakemsr Exp $
+lib/vlc/audio_output/libjack_plugin.so

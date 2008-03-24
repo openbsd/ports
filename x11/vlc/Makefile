@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2008/03/02 02:27:04 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.67 2008/03/24 04:46:26 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -165,7 +165,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 MULTI_PACKAGES=-main
 
 FLAVORS=altivec
-PSEUDO_FLAVORS=no_web no_arts no_esd
+PSEUDO_FLAVORS=no_web no_arts no_esd no_jack
 FLAVOR?=
 
 .if !${FLAVOR:L:Mno_web}
@@ -208,6 +208,19 @@ RUN_DEPENDS-esd=::x11/vlc
 WANTLIB-esd=	audiofile m
 .else
 CONFIGURE_ARGS+=--disable-esd
+.endif
+
+.if !${FLAVOR:L:Mno_jack}
+MULTI_PACKAGES+=-jack
+COMMENT-jack=	jackd audio output module for vlc
+FULLPKGNAME-jack=vlc-jack-${V}
+CONFIGURE_ARGS+=--enable-jack
+LIB_DEPENDS-jack=jack::audio/jack
+# any FLAVOR of vlc will do
+RUN_DEPENDS-jack=::x11/vlc
+WANTLIB-jack=	m
+.else
+CONFIGURE_ARGS+=--disable-jack
 .endif
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
