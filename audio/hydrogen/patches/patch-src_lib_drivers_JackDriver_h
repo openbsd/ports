@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_lib_drivers_JackDriver_h,v 1.1 2008/03/24 03:09:42 jakemsr Exp $
+--- src/lib/drivers/JackDriver.h.orig	Fri Feb 29 18:19:39 2008
++++ src/lib/drivers/JackDriver.h	Sat Mar  1 00:07:56 2008
+@@ -36,7 +36,8 @@
+ #include <jack/jack.h>
+ #include <jack/transport.h>
+ 
+-#include "../Globals.h"\
++#include "../Globals.h"
++#include "lib/Hydrogen.h"
+ 
+ ///
+ /// Jack (Jack Audio Connection Kit) server driver
+@@ -59,7 +60,6 @@ class JackDriver : public GenericDriver
+ 
+ 		unsigned getSampleRate();
+ 
+-
+ 		jack_transport_state_t getTransportState() {	return m_JackTransportState;	}
+ 		jack_position_t getTransportPos() {	return m_JackTransportPos;	}
+ 
+@@ -81,13 +81,19 @@ class JackDriver : public GenericDriver
+ 		virtual void locate( unsigned long nFrame );
+ 		virtual void updateTransportInfo();
+ 		virtual void setBpm(float fBPM);
++		void calculateFrameOffset();
+ 
+ 	private:
++		void relocateBBT();
++		long long bbt_frame_offset;
++		int must_relocate;
++
+ 		JackProcessCallback processCallback;
+ 		jack_port_t *output_port_1;
+ 		jack_port_t *output_port_2;
+ 		string output_port_name_1;
+ 		string output_port_name_2;
++		int track_port_count;
+ 		jack_port_t *track_output_ports_L[MAX_INSTRUMENTS];
+ 		jack_port_t *track_output_ports_R[MAX_INSTRUMENTS];
+ 

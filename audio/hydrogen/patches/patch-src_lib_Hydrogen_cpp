@@ -1,0 +1,111 @@
+$OpenBSD: patch-src_lib_Hydrogen_cpp,v 1.1 2008/03/24 03:09:42 jakemsr Exp $
+--- src/lib/Hydrogen.cpp.orig	Fri Feb 29 18:26:51 2008
++++ src/lib/Hydrogen.cpp	Sat Mar  1 00:19:56 2008
+@@ -511,6 +511,11 @@ inline void audioEngine_process_checkBPMChanged()
+ 			// update tickSize
+ 			m_pAudioDriver->m_transport.m_nFrames = fNewFrames;
+ 
++#ifdef JACK_SUPORT
++			if ( "JackDriver" == m_pAudioDriver->getClassName() && m_audioEngineState == STATE_PLAYING ) {
++				static_cast< JackDriver* >( m_pAudioDriver )->calculateFrameOffset();
++			}
++#endif
+ 			fTickNumber = (float)m_pAudioDriver->m_transport.m_nFrames / (float)m_pAudioDriver->m_transport.m_nTickSize;
+ //			hydrogenInstance->infoLog("[audioEngine_process_checkBPMChanged] New tick number: " + toString( fTickNumber ) );
+ 
+@@ -1789,10 +1794,6 @@ GenericDriver* createDriver(const std::string& sDriver
+ 		}
+ 		else {
+ #ifdef JACK_SUPPORT
+-			// set use track outputs flag
+-			m_bUseTrackOuts = pPref->m_bJackTrackOuts;
+-			((JackDriver *) pDriver)->setTrackOuts( m_bUseTrackOuts );
+-
+ 			m_bUseDefaultOuts = pPref->m_bJackConnectDefaults;
+ 			((JackDriver *) pDriver)->setConnectDefaults( m_bUseDefaultOuts );
+ #endif
+@@ -1923,7 +1924,7 @@ void audioEngine_startAudioDrivers() {
+ 		m_pAudioDriver->setBpm( m_pSong->m_fBPM );
+ 	}
+ 
+-	audioEngine_unlock();	// test...
++	// audioEngine_unlock();	// test...
+ 
+ 	if ( m_pAudioDriver ) {
+ 		int res = m_pAudioDriver->connect();
+@@ -1946,15 +1947,6 @@ void audioEngine_startAudioDrivers() {
+ 			hydrogenInstance->errorLog( "[audioEngine_startAudioDrivers] m_pMainBuffer_R == NULL" );
+ 		}
+ 
+-#ifdef JACK_SUPPORT
+-		if (m_bUseTrackOuts) {
+-			for (unsigned i = 0; i < MAX_INSTRUMENTS; ++i) {
+-				m_pTrackBuffers_L[i] = ((JackDriver*)m_pAudioDriver)->getTrackOut_L(i);
+-				m_pTrackBuffers_R[i] = ((JackDriver*)m_pAudioDriver)->getTrackOut_R(i);
+-			}
+-		}
+-#endif
+-
+ 		audioEngine_setupLadspaFX( m_pAudioDriver->getBufferSize() );
+ 	}
+ 
+@@ -1966,6 +1958,8 @@ void audioEngine_startAudioDrivers() {
+ 	else if ( m_audioEngineState == STATE_READY ) {
+ 		EventQueue::getInstance()->pushEvent( EVENT_STATE, STATE_READY );
+ 	}
++
++	audioEngine_unlock();	// Unlocking earlier might execute he jack process() callback before we are fully initialized.
+ }
+ 
+ 
+@@ -2568,21 +2562,20 @@ unsigned long Hydrogen::getTotalFrames()
+ }
+ 
+ 
+-
+-/// Set the position in the song
+-void Hydrogen::setPatternPos( int pos )
++long Hydrogen::getTickForPosition( int pos )
+ {
+-	audioEngine_lock( "Hydrogen::setPatternPos" );
+-
+ 	int nPatternGroups = (m_pSong->getPatternGroupVector())->size();
+ 	if ( pos >= nPatternGroups ) {
+-		hydrogenInstance->warningLog( "[Hydrogen::setPatternPos()] patternPos > nPatternGroups. pos: " + toString(pos) + ", nPatternGroups: " + toString(nPatternGroups) );
+-		audioEngine_unlock();
+-		return;
++		if (m_pSong->isLoopEnabled() ) {
++			pos = pos % nPatternGroups;
++		} else {
++			hydrogenInstance->warningLog( "[Hydrogen::setPatternPos()] patternPos > nPatternGroups. pos: " + toString(pos) + ", nPatternGroups: " + toString(nPatternGroups) );
++			return -1;
++		}
+ 	}
+ 
+ 	vector<PatternList*> *pColumns = m_pSong->getPatternGroupVector();
+-	int totalTick = 0;
++	long totalTick = 0;
+ 	int nPatternSize;
+ 	Pattern *pPattern = NULL;
+ 	for ( int i = 0; i < pos; ++i ) {
+@@ -2596,6 +2589,20 @@ void Hydrogen::setPatternPos( int pos )
+ 		}
+ 
+ 		totalTick += nPatternSize;
++	}
++	return totalTick;
++}
++
++
++/// Set the position in the song
++void Hydrogen::setPatternPos( int pos )
++{
++	audioEngine_lock( "Hydrogen::setPatternPos" );
++
++	long totalTick = getTickForPosition (pos );
++	if ( totalTick < 0 ) {
++		audioEngine_unlock();
++		return;
+ 	}
+ 
+ 	if (getState() != STATE_PLAYING) {

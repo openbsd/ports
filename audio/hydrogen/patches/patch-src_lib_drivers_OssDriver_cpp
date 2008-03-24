@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lib_drivers_OssDriver_cpp,v 1.2 2007/05/02 17:51:16 grange Exp $
---- src/lib/drivers/OssDriver.cpp.orig	Tue Oct 18 02:32:04 2005
-+++ src/lib/drivers/OssDriver.cpp	Wed May  2 21:36:46 2007
+$OpenBSD: patch-src_lib_drivers_OssDriver_cpp,v 1.3 2008/03/24 03:09:42 jakemsr Exp $
+--- src/lib/drivers/OssDriver.cpp.orig	Mon Oct 17 15:32:04 2005
++++ src/lib/drivers/OssDriver.cpp	Sat Mar  1 00:48:07 2008
 @@ -41,6 +41,7 @@ unsigned nNextFrames = 0;
  
  void* ossDriver_processCaller(void* param)
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_lib_drivers_OssDriver_cpp,v 1.2 2007/05/02 17:51:16 grange E
  
  	string audioDevice;
 -#ifdef __NetBSD__
-+#if defined(__NetBSD__) || defined(__OpenBSD__)
++#if defined(__NetBSD__)
  	audioDevice = "/dev/audio";
  #else
  	audioDevice = preferencesMng->m_sOSSDevice;

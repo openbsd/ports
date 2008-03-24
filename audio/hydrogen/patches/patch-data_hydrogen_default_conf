@@ -1,0 +1,19 @@
+$OpenBSD: patch-data_hydrogen_default_conf,v 1.1 2008/03/24 03:09:42 jakemsr Exp $
+--- data/hydrogen.default.conf.orig	Fri Feb 29 19:07:57 2008
++++ data/hydrogen.default.conf	Fri Feb 29 19:08:41 2008
+@@ -17,12 +17,12 @@
+ 		<samplerate>44100</samplerate>
+ 
+ 		<oss_driver>
+-			<ossDevice>/dev/dsp</ossDevice>
++			<ossDevice>/dev/audio</ossDevice>
+ 		</oss_driver>
+ 
+ 		<jack_driver>
+-			<jack_port_name_1>alsa_pcm:playback_1</jack_port_name_1>
+-			<jack_port_name_2>alsa_pcm:playback_2</jack_port_name_2>
++			<jack_port_name_1>system:playback_1</jack_port_name_1>
++			<jack_port_name_2>system:playback_2</jack_port_name_2>
+ 			<jack_transport_mode>USE_JACK_TRANSPORT</jack_transport_mode>
+ 			<jack_connect_defaults>true</jack_connect_defaults>
+ 			<jack_track_outs>false</jack_track_outs>
