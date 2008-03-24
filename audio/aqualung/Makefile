@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/03/15 11:54:10 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2008/03/24 03:15:27 jakemsr Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta9.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://aqualung.factorial.hu/
@@ -32,7 +32,8 @@ LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		ogg::audio/libogg \
 		avcodec,avformat,avutil::graphics/ffmpeg \
 		vorbis,vorbisfile,vorbisenc::audio/libvorbis \
-		bz2::archivers/bzip2
+		bz2::archivers/bzip2 \
+		jack::audio/jack
 
 RUN_DEPENDS=	::devel/desktop-file-utils
 		
@@ -51,11 +52,11 @@ CONFIGURE_ENV=	LDFLAGS="-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib" \
 
 # cddb, ifp, wavpack (requires lib*) - no package
 # cdda (requires libcdio) - no package
-# jack - package not yet in tree
-# ladspa (requires liblrdf) - no package 
+# ladspa (requires liblrdf) - no package
 # mod (requires libmodplug) - no package
 # speex (requires liboggz) - no package
 CONFIGURE_ARGS=	--with-flac \
+		--with-jack \
 		--with-lame \
 		--with-lavc \
 		--with-loop \
@@ -73,7 +74,6 @@ CONFIGURE_ARGS=	--with-flac \
 		--without-cdda \
 		--without-cddb \
 		--without-ifp \
-		--without-jack \
 		--without-ladspa \
 		--without-mod \
 		--without-speex \
