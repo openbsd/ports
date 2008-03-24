@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2007/10/24 21:52:16 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2008/03/24 04:48:08 jakemsr Exp $
 
 COMMENT=		K Desktop Environment, aRTs
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.8
 DISTNAME=		arts-1.5.8
 MODKDE_VERSION?=	3.5.8
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=	mcop                 2.0      # .1.0
 SHARED_LIBS +=	artsflow_idl         2.0      # .1.0
@@ -34,7 +34,8 @@ LIB_DEPENDS= 	audiofile::devel/libaudiofile \
 SEPARATE_BUILD=flavored
 
 CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	${ENABLE_SHARED}
+CONFIGURE_ARGS+=	${ENABLE_SHARED} \
+			--without-jack
 
 WANTLIB=	ICE SM X11 Xext c iconv intl jpeg m ossaudio png pthread \
 		stdc++ vorbisenc z Xau Xdmcp
