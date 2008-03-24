@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/02/17 18:53:02 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2008/03/24 06:51:04 jakemsr Exp $
 
 COMMENT=		Music Player Daemon
 DISTNAME=		mpd-0.13.1
@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=        --enable-ao \
                         --disable-oss \
                         --disable-pulse \
                         --disable-sun \
+			--disable-jack \
 			--enable-mod \
 			--bindir=${PREFIX}/sbin \
 			--with-zeroconf=no
