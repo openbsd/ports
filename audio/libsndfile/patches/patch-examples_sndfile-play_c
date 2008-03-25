@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_sndfile-play_c,v 1.2 2005/05/23 23:49:28 naddy Exp $
---- examples/sndfile-play.c.orig	Sun Nov 14 20:57:17 2004
-+++ examples/sndfile-play.c	Mon May 23 22:43:53 2005
+$OpenBSD: patch-examples_sndfile-play_c,v 1.3 2008/03/25 21:24:24 naddy Exp $
+--- examples/sndfile-play.c.orig	Thu Aug 31 05:22:07 2006
++++ examples/sndfile-play.c	Sat Jun  9 11:59:02 2007
 @@ -43,7 +43,7 @@
  	#include <Carbon.h>
  	#include <CoreAudio/AudioHardware.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-examples_sndfile-play_c,v 1.2 2005/05/23 23:49:28 naddy Exp $
  	#include <fcntl.h>
  	#include <sys/ioctl.h>
  	#include <sys/audioio.h>
-@@ -798,7 +798,7 @@ win32_play (int argc, char *argv [])
+@@ -819,7 +819,7 @@ win32_play (int argc, char *argv [])
  **	Solaris.
  */
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-examples_sndfile-play_c,v 1.2 2005/05/23 23:49:28 naddy Exp $
  
  static void
  solaris_play (int argc, char *argv [])
-@@ -835,8 +835,10 @@ solaris_play (int argc, char *argv [])
+@@ -856,8 +856,10 @@ solaris_play (int argc, char *argv [])
  		audio_info.play.channels = sfinfo.channels ;
  		audio_info.play.precision = 16 ;
  		audio_info.play.encoding = AUDIO_ENCODING_LINEAR ;
@@ -30,7 +30,7 @@ $OpenBSD: patch-examples_sndfile-play_c,v 1.2 2005/05/23 23:49:28 naddy Exp $
  
  		if ((error = ioctl (audio_fd, AUDIO_SETINFO, &audio_info)))
  		{	perror ("ioctl (AUDIO_SETINFO) failed") ;
-@@ -914,7 +916,7 @@ main (int argc, char *argv [])
+@@ -935,7 +937,7 @@ main (int argc, char *argv [])
  		linux_play (argc, argv) ;
  #elif (defined (__MACH__) && defined (__APPLE__))
  	macosx_play (argc, argv) ;
