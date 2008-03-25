@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.83 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2008/03/25 17:34:14 espie Exp $
 
 COMMENT-main= 		K Desktop Environment, basic applications
 COMMENT-plugins=	Konqueror nsplugins, essentially native JDK
 COMMENT-samba=		K Desktop Environment, samba support
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.8
+VERSION=		3.5.9
 DISTNAME=		kdebase-${VERSION}
-PKGNAME-main=		${DISTNAME}p1
+PKGNAME-main=		${DISTNAME}
 PKGNAME-samba=		kdesamba-${VERSION}
 MODKDE_VERSION?=	3.5.8
 SHARED_LIBS +=	konq                 7.0      # .6.0
@@ -27,7 +27,7 @@ MULTI_PACKAGES=		-main -samba
 FLAVORS=		debug
 
 LIB_DEPENDS=	kdecore.>=6,DCOP,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
-WANTLIB=	ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext idn iconv fam rpcsvc intl stdc++ Xdmcp Xau 
+WANTLIB=	ICE Xrender SM util X11 m z png jpeg art_lgpl_2 Xext idn iconv fam rpcsvc intl stdc++ Xdmcp Xau 
 
 RUN_DEPENDS-main=${RUN_DEPENDS} \
 		:desktop-file-utils-*:devel/desktop-file-utils
@@ -45,7 +45,7 @@ WANTLIB-main=	${WANTLIB} \
 		vorbis vorbisenc vorbisfile xkbfile GLU \
 		Xinerama Xft Xfixes fontconfig GL Xcomposite Xdamage \
 		Half Imath IlmImf Iex asn1 com_err gssapi krb5 \
-		expat
+		expat pthread 
 
 
 LIB_DEPENDS-samba= ${LIB_DEPENDS} \

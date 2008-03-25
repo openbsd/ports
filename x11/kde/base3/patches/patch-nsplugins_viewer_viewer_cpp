@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsplugins_viewer_viewer_cpp,v 1.3 2007/05/25 09:49:54 espie Exp $
---- nsplugins/viewer/viewer.cpp.orig	Thu Jan 19 18:01:49 2006
-+++ nsplugins/viewer/viewer.cpp	Mon May 14 19:06:24 2007
-@@ -212,6 +212,9 @@ bool qt_set_socket_handler( int sockfd, int type, QObj
+$OpenBSD: patch-nsplugins_viewer_viewer_cpp,v 1.4 2008/03/25 17:34:14 espie Exp $
+--- nsplugins/viewer/viewer.cpp.orig	Wed Feb 13 10:40:38 2008
++++ nsplugins/viewer/viewer.cpp	Fri Feb 15 00:05:14 2008
+@@ -213,6 +213,9 @@ bool qt_set_socket_handler( int sockfd, int type, QObj
  }
  #endif
  

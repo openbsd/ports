@@ -1,8 +1,8 @@
-$OpenBSD: patch-startkde,v 1.20 2007/10/24 21:52:16 espie Exp $
---- startkde.orig	Mon Oct  8 13:09:44 2007
-+++ startkde	Thu Oct 18 14:52:58 2007
+$OpenBSD: patch-startkde,v 1.21 2008/03/25 17:34:14 espie Exp $
+--- startkde.orig	Wed Feb 13 10:49:19 2008
++++ startkde	Fri Feb 15 00:05:14 2008
 @@ -3,6 +3,11 @@
- #  DEFAULT KDE STARTUP SCRIPT ( KDE-3.5.8 )
+ #  DEFAULT KDE STARTUP SCRIPT ( KDE-3.5.9 )
  #
  
 +case X"$DISPLAY" in
