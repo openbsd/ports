@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2007/12/15 23:47:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2008/03/25 12:26:03 espie Exp $
 bin/apmount
 bin/blinken
 bin/celestrongps
@@ -1864,6 +1864,10 @@ share/apps/ktouch/sl.keyboard
 share/apps/ktouch/slovenian.ktouch.xml
 share/apps/ktouch/spanish.ktouch.xml
 share/apps/ktouch/splash.png
+share/apps/ktouch/sv.keyboard
+share/apps/ktouch/tr.f.keyboard
+share/apps/ktouch/tr.q.keyboard
+share/apps/ktouch/turkish.ktouch.xml
 share/apps/ktouch/typewriter.wav
 share/apps/ktouch/up.wav
 share/apps/kturtle/
