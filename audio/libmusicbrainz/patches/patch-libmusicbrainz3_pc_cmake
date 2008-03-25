@@ -1,0 +1,12 @@
+$OpenBSD: patch-libmusicbrainz3_pc_cmake,v 1.1.1.1 2008/03/25 09:19:23 jasper Exp $
+--- libmusicbrainz3.pc.cmake.orig	Thu Mar  6 13:33:29 2008
++++ libmusicbrainz3.pc.cmake	Thu Mar  6 13:33:45 2008
+@@ -7,7 +7,7 @@ Name: ${PROJECT_NAME}
+ Description: The Musicbrainz Client Library.
+ URL: http://musicbrainz.org/doc/libmusicbrainz
+ Version: ${PROJECT_VERSION}
+-Requires: neon >= 0.25, libdiscid
++Requires: neon >= 0.25
+ Libs: -L${LIB_INSTALL_DIR} -lmusicbrainz3
+ Cflags: -I${INCLUDE_INSTALL_DIR}
+ 
