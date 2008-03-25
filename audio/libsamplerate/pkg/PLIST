@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/21 16:30:53 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/03/25 13:54:30 ajacoutot Exp $
 %%SHARED%%
 bin/sndfile-resample
 include/samplerate.h
@@ -10,6 +10,10 @@ share/doc/libsamplerate/
 share/doc/libsamplerate/SRC.css
 share/doc/libsamplerate/SRC.png
 share/doc/libsamplerate/api.html
+share/doc/libsamplerate/api_callback.html
+share/doc/libsamplerate/api_full.html
+share/doc/libsamplerate/api_misc.html
+share/doc/libsamplerate/api_simple.html
 share/doc/libsamplerate/download.html
 share/doc/libsamplerate/faq.html
 share/doc/libsamplerate/history.html
