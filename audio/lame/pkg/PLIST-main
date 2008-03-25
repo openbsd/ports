@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/05 03:28:12 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2008/03/25 17:27:27 fgsch Exp $
+@pkgpath audio/lame
+@pkgpath audio/lame,no_x11
 bin/lame
 bin/mp3rtp
 include/lame/
@@ -18,5 +20,4 @@ share/doc/lame/modes.html
 share/doc/lame/node6.html
 share/doc/lame/presets.html
 share/doc/lame/switchs.html
-!%%no_x11%%
 %%SHARED%%
