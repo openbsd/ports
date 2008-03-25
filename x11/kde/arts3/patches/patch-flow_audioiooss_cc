@@ -1,7 +1,7 @@
-$OpenBSD: patch-flow_audioiooss_cc,v 1.1 2007/10/08 01:37:15 jakemsr Exp $
---- flow/audioiooss.cc.orig	Thu Sep 27 22:09:15 2007
-+++ flow/audioiooss.cc	Thu Sep 27 22:25:52 2007
-@@ -185,6 +185,20 @@ bool AudioIOOSS::open()
+$OpenBSD: patch-flow_audioiooss_cc,v 1.2 2008/03/25 11:45:08 espie Exp $
+--- flow/audioiooss.cc.orig	Wed Feb 13 10:35:23 2008
++++ flow/audioiooss.cc	Sun Mar 16 13:49:53 2008
+@@ -186,6 +186,20 @@ bool AudioIOOSS::open()
  	artsdebug("device capabilities: revision%d %s",
  					device_caps & DSP_CAP_REVISION, caps.c_str());
  

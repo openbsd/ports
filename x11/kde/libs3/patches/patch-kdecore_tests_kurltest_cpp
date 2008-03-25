@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdecore_tests_kurltest_cpp,v 1.2 2007/10/24 21:52:18 espie Exp $
---- kdecore/tests/kurltest.cpp.orig	Mon Oct  8 11:51:54 2007
-+++ kdecore/tests/kurltest.cpp	Thu Oct 18 00:38:52 2007
-@@ -298,6 +298,16 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-kdecore_tests_kurltest_cpp,v 1.3 2008/03/25 11:45:08 espie Exp $
+--- kdecore/tests/kurltest.cpp.orig	Wed Feb 13 10:41:08 2008
++++ kdecore/tests/kurltest.cpp	Thu Feb 14 21:09:53 2008
+@@ -312,6 +312,16 @@ int main(int argc, char *argv[])
    check("KURL::prettyURL()", whitespaceInPath2.prettyURL(),
            "http://www.google.com/foo%20%20%20%20%20%20 bar/");
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-kdecore_tests_kurltest_cpp,v 1.2 2007/10/24 21:52:18 espie Exp $
    KURL carsten;
    carsten.setPath("/home/gis/src/kde/kdelibs/kfile/.#kfiledetailview.cpp.1.18");
    check("KURL::path()", carsten.path(), "/home/gis/src/kde/kdelibs/kfile/.#kfiledetailview.cpp.1.18");
-@@ -603,6 +613,15 @@ int main(int argc, char *argv[])
+@@ -617,6 +627,15 @@ int main(int argc, char *argv[])
          "http://meine.db24.de#link=home_c_login_login");
    check("http: URL with empty path string path", waba1.path(),
          "");

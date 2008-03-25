@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2008/02/14 18:02:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2008/03/25 11:45:08 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -1029,7 +1029,6 @@ lib/libkwalletclient.la
 @lib lib/libkwalletclient.so.${LIBkwalletclient_VERSION}
 lib/libvcard.la
 @lib lib/libvcard.so.${LIBvcard_VERSION}
-share/applications/
 share/applications/kde/
 share/applications/kde/kresources.desktop
 share/apps/
