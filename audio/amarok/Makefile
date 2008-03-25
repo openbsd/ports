@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/02/12 10:47:01 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.26 2008/03/25 08:23:54 jasper Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	music player for kde
@@ -50,7 +50,8 @@ CONFIGURE_ARGS+=	--without-arts \
 			--without-opengl --without-gstreamer \
 			--with-xine --without-included-sqlite \
 			--without-xmms \
-			--without-libmtp
+			--without-libmtp \
+			--without-musicbrainz
 
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
