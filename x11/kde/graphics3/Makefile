@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2007/12/18 16:00:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2008/03/25 21:22:52 espie Exp $
 
 COMMENT-main=		K Desktop Environment, graphic applications
 COMMENT-kamera=		KDE interface to digital cameras
 COMMENT-kpov=		KDE modeller for povray
 COMMENT-sane=		KDE interface to scanners
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.8
+VERSION=		3.5.9
 DISTNAME=		kdegraphics-${VERSION}
 MODKDE_VERSION=		3.5.8
 
@@ -14,13 +14,10 @@ SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}p3
+PKGNAME-main=	${DISTNAME}
 PKGNAME-kamera=	kamera-${VERSION}
-PKGNAME-kpov=	kpovmodeller-${VERSION}p0
-PKGNAME-sane=	ksane-${VERSION}p0
-
-MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
-PATCHFILES=		post-3.5.8-kdegraphics-kpdf.diff:0
+PKGNAME-kpov=	kpovmodeller-${VERSION}
+PKGNAME-sane=	ksane-${VERSION}
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -32,7 +29,7 @@ SHARED_LIBS +=	kscan                2.0      # .1.0
 
 BUILD_DEPENDS=		::print/texlive/base
 LIB_DEPENDS=		kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu::x11/kde/libs3
-WANTLIB=		X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext \
+WANTLIB=		X11 art_lgpl_2 ICE png util jpeg z SM Xext \
 			m idn iconv Xau Xdmcp fam rpcsvc stdc++
 
 
@@ -51,15 +48,15 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 WANTLIB-main=		${WANTLIB} \
 			tiff fontconfig lcms Xrender ICE c \
 			freetype pcreposix pcre Xxf86vm SM Xext Xft \
-			expat intl xml2
+			expat intl xml2 pthread
 
 
 LIB_DEPENDS-kpov=	${LIB_DEPENDS} \
 			kparts::x11/kde/libs3
 RUN_DEPENDS-kpov=	::graphics/povray \
 		:desktop-file-utils-*:devel/desktop-file-utils
-WANTLIB-kpov=		${WANTLIB} GL freetype Xrender Xmu GLU c Xi  Xt intl
-
+WANTLIB-kpov=		${WANTLIB} GL freetype Xrender Xmu GLU c Xi \
+			Xt intl pthread
 
 LIB_DEPENDS-kamera= 	${LIB_DEPENDS} \
 			gphoto2,gphoto2_port::graphics/libgphoto2
@@ -69,7 +66,7 @@ RUN_DEPENDS-sane=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-sane= 	${LIB_DEPENDS-kamera} \
 			ktexteditor,vcard,kabc,kparts,kresources,kspell,kdeprint::x11/kde/libs3 \
 			sane::graphics/sane-backends
-WANTLIB-sane=		${WANTLIB-kamera} usb tiff c ltdl
+WANTLIB-sane=		${WANTLIB-kamera} usb tiff c ltdl pthread
 
 
 CONFIGURE_ENV+=	\
