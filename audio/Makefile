@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2008/03/25 09:22:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.193 2008/03/25 17:31:27 fgsch Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -53,7 +53,6 @@
      SUBDIR += ksmp3play
      SUBDIR += ladspa
      SUBDIR += lame
-     SUBDIR += lame,no_x11
      SUBDIR += liba52
      SUBDIR += libao,
      SUBDIR += libcdaudio
