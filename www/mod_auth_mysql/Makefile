@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2008/03/25 23:23:15 simon Exp $
 
 COMMENT=	Apache MySQL authentication module
 
 VERSION=	3.2
 DISTNAME=	mod_auth_mysql-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www
 
 HOMEPAGE=	http://sourceforge.net/projects/mod-auth-mysql
