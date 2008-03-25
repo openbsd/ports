@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2008/03/25 19:39:30 jasper Exp $
 
 COMMENT=	extract, list & test files in a ZIP archive
 
 VERSION=	5.52
 DISTNAME=	unzip${VERSION:S/.//}
-PKGNAME=	unzip-${VERSION}
+PKGNAME=	unzip-${VERSION}p0
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=infozip/} \
 		http://mirror.switch.ch/ftp/mirror/infozip/src/ \
