@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2008/03/19 22:35:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.129 2008/03/25 17:29:57 fgsch Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p2
+PKGNAME=		${N}-${V}p3
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -50,7 +50,8 @@ LIB_DEPENDS=	png::graphics/png \
 		ogg.>=5::audio/libogg \
 		xvidcore::multimedia/xvidcore \
 		x264::multimedia/x264 \
-		faad::audio/faad
+		faad::audio/faad \
+		mp3lame:lame-*:audio/lame
 
 BUILD_DEPENDS=	::net/livemedia \
 		:rtunes->=0.7:audio/rtunes
@@ -139,14 +140,12 @@ CONFIGURE_ARGS+=--disable-gui \
 		--disable-x11 \
 		--disable-fontconfig \
 		--disable-freetype
-LIB_DEPENDS+=	mp3lame:lame-*:audio/lame,no_x11
 .  endif
 .else
 CONFIGURE_ARGS+=--enable-gui \
 		--enable-gl
 USE_X11=	Yes
-LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		mp3lame:lame-*:audio/lame
+LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 WANTLIB+=	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86dga Xxf86vm \
 		atk-1.0 cairo expat fontconfig freetype glib-2.0 glitz \

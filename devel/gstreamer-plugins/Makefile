@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2008/03/24 06:52:02 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.39 2008/03/25 17:29:57 fgsch Exp $
 
 COMMENT-main=		GStreamer Streaming-media framework plug-ins
 
@@ -84,7 +84,7 @@ PSEUDO_FLAVORS+=	no_${PLUGIN}
 .  if !${FLAVOR:L:Mno_${PLUGIN}} && !${FLAVOR:L:Mminimal}
 MULTI_PACKAGES+=	-${PLUGIN}
 # also check for individual overrides below
-PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}p15
+PKGNAME-${PLUGIN}=	gstreamer-${PLUGIN}-${VERSION}p16
 BASENAME-${PLUGIN}=	gstreamer-${PLUGIN}
 .  endif
 .endfor
@@ -181,7 +181,7 @@ LIB_DEPENDS-jpeg=	jpeg::graphics/jpeg \
 COMMENT-lame=		GStreamer plugin for encoding mp3 files using LAME
 PERMIT_PACKAGE_CDROM-lame=	patent issues
 WANTLIB-lame=		${myWANTLIB}
-LIB_DEPENDS-lame=	mp3lame:lame-*:audio/lame,no_x11 \
+LIB_DEPENDS-lame=	mp3lame:lame-*:audio/lame \
 			${myLIB_DEPENDS}
 
 # mad

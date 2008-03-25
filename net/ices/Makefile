@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/10/22 14:47:58 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2008/03/25 17:29:57 fgsch Exp $
 
 COMMENT=	icecast source for streaming MP3
 
 DISTNAME=	ices-0.4
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/ices.php
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-docdir=${LOCALBASE}/share/doc/ices \
 		--with-flac=${LOCALBASE}
 
 MODULES=	converters/libiconv
-LIB_DEPENDS=	mp3lame:lame-*:audio/lame,no_x11 \
+LIB_DEPENDS=	mp3lame:lame-*:audio/lame \
 		shout.>=3::net/libshout \
 		speex.>=4::audio/speex \
 		FLAC.>=5::audio/flac \
