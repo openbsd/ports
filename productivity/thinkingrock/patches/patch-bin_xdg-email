@@ -1,0 +1,20 @@
+$OpenBSD: patch-bin_xdg-email,v 1.1.1.1 2008/03/26 20:18:35 sturm Exp $
+--- bin/xdg-email.orig	Sun Jun 17 00:37:41 2007
++++ bin/xdg-email	Thu Mar  6 07:34:16 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #---------------------------------------------
+ #   xdg-email
+ #
+@@ -599,8 +599,8 @@ mailto=`echo "${mailto}"| sed 's/[?&]$//'`
+ # Shouldn't happen
+ [ x"${mailto}" != x"" ] || exit_failure_syntax
+ 
+-if which xdg-email-hook.sh > /dev/null 2> /dev/null; then
+-    xdg-email-hook.sh "${mailto}"
++if which xdg-email-hook > /dev/null 2> /dev/null; then
++    xdg-email-hook "${mailto}"
+     if [ $? -eq 0 ]; then
+         exit_success
+     else

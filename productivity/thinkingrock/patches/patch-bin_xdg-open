@@ -1,0 +1,25 @@
+$OpenBSD: patch-bin_xdg-open,v 1.1.1.1 2008/03/26 20:18:35 sturm Exp $
+--- bin/xdg-open.orig	Sun Jun 17 00:37:41 2007
++++ bin/xdg-open	Thu Mar  6 07:38:57 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #---------------------------------------------
+ #   xdg-open
+ #
+@@ -401,6 +401,15 @@ done
+ 
+ if [ -z "${url}" ] ; then
+     exit_failure_syntax "file or URL argument missing"
++fi
++
++if which xdg-open-hook > /dev/null 2> /dev/null; then
++    xdg-open-hook "$url"
++    if [ $? -eq 0 ]; then
++        exit_success
++    else
++        exit_failure_operation_failed
++    fi
+ fi
+ 
+ detectDE
