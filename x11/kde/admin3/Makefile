@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2007/12/15 23:47:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2008/03/26 10:04:21 espie Exp $
 
 COMMENT= 		K Desktop Environment, admin tools
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.8
+VERSION=		3.5.9
 DISTNAME=		kdeadmin-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION?=	3.5.8
 
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
