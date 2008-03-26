@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2008/02/02 18:18:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2008/03/26 20:19:35 sthen Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -18,7 +18,7 @@ PKGNAME-game=	nagios-plugins-game-${V}
 PKGNAME-ldap=	nagios-plugins-ldap-${V}
 PKGNAME-mysql=	nagios-plugins-mysql-${V}
 PKGNAME-ntp=	nagios-plugins-ntp-${V}
-PKGNAME-pgsql=	nagios-plugins-pgsql-${V}
+PKGNAME-pgsql=	nagios-plugins-pgsql-${V}p0
 PKGNAME-samba=	nagios-plugins-samba-${V}
 PKGNAME-snmp=	nagios-plugins-snmp-${V}
 CATEGORIES=	net
