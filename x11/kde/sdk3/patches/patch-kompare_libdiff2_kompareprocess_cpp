@@ -1,7 +1,7 @@
-$OpenBSD: patch-kompare_libdiff2_kompareprocess_cpp,v 1.1 2006/02/20 14:08:14 espie Exp $
---- kompare/libdiff2/kompareprocess.cpp.orig	Mon Feb 20 14:57:09 2006
-+++ kompare/libdiff2/kompareprocess.cpp	Mon Feb 20 15:00:13 2006
-@@ -118,7 +118,11 @@ void KompareProcess::writeCommandLine()
+$OpenBSD: patch-kompare_libdiff2_kompareprocess_cpp,v 1.2 2008/03/26 13:22:22 espie Exp $
+--- kompare/libdiff2/kompareprocess.cpp.orig	Wed Feb 13 10:38:00 2008
++++ kompare/libdiff2/kompareprocess.cpp	Wed Mar 26 12:14:07 2008
+@@ -120,7 +120,11 @@ void KompareProcess::writeCommandLine()
  		break;
  	}
  
