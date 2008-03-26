@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/03/26 19:57:23 eric Exp $
 
 COMMENT=	documentation generator
 
-DISTNAME=	TwistedLore-0.2.0
-PKGNAME=	py-twisted-lore-0.2.0p0
+VERSION=	0.3.0
+DISTNAME=	TwistedLore-${VERSION}
+PKGNAME=	py-twisted-lore-${VERSION}
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedLore
 
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Lore/0.2/ 
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Lore/${VERSION:R}/ 
 
 REGRESS_DEPENDS=:py-twisted-lore-*:devel/py-twisted/lore
 RUN_DEPENDS=	:py-twisted-web-*:devel/py-twisted/web

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/03/26 19:57:24 eric Exp $
 
 COMMENT=	chat and instant messaging module for Twisted
 
-DISTNAME=	TwistedWords-0.4.0
-PKGNAME=	py-twisted-words-0.4.0p0
+VERSION=	0.5.0
+DISTNAME=	TwistedWords-${VERSION}
+PKGNAME=	py-twisted-words-${VERSION}
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedWords
 
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Words/0.4/ 
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Words/${VERSION:R}/ 
 
 REGRESS_DEPENDS=:py-twisted-words-*:devel/py-twisted/words
 RUN_DEPENDS=	:py-twisted-web-*:devel/py-twisted/web

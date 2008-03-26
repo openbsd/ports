@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2008/03/26 19:57:23 eric Exp $
 
 COMMENT=	SSH and SFTP protocol implementation
 
 CATEGORIES=	net
 
-DISTNAME=	TwistedConch-0.7.0
-PKGNAME=	py-twisted-conch-0.7.0p1
+VERSION=	0.8.0
+DISTNAME=	TwistedConch-${VERSION}
+PKGNAME=	py-twisted-conch-${VERSION}
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedConch
 
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Conch/0.7/
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Conch/${VERSION:R}/
 
 REGRESS_DEPENDS=:py-twisted-conch-*:devel/py-twisted/conch
 RUN_DEPENDS=	:py-crypto-*:security/py-crypto

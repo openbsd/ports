@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/29 14:37:46 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/03/26 19:57:24 eric Exp $
 bin/im
+lib/python${MODPY_VERSION}/site-packages/Twisted_Words-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_words.py
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_words.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/
@@ -59,10 +60,16 @@ lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/componen
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/component.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/error.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/error.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/ijabber.py
+lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/ijabber.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/jid.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/jid.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/jstrports.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/jstrports.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/sasl.py
+lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/sasl.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/sasl_mechanisms.py
+lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/sasl_mechanisms.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/xmlstream.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/xmlstream.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/protocols/jabber/xmpp_stringprep.py
@@ -85,16 +92,24 @@ lib/python${MODPY_VERSION}/site-packages/twisted/words/tap.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_basesupport.py
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_basesupport.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_domish.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_domish.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_irc.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_irc.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberclient.py
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberclient.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabbercomponent.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabbercomponent.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabbererror.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabbererror.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberjid.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberjid.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabbersasl.py
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabbersasl.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabbersaslmechanisms.py
+lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabbersaslmechanisms.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberxmlstream.py
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberxmlstream.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/words/test/test_jabberxmppstringprep.py

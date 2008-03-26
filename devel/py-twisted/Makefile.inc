@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2006/07/29 14:37:37 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2008/03/26 19:57:23 eric Exp $
 
 CATEGORIES+=	devel
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Eric Faurot <eric@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE_FTP=	Yes
@@ -13,6 +13,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
+
+SUBST_VARS+=	VERSION
 
 .if empty(PKGNAME:L:M*core*)
 RUN_DEPENDS+=	:py-twisted-core-*:devel/py-twisted/core

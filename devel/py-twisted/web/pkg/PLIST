@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/29 14:37:39 alek Exp $
-bin/websetroot
+@comment $OpenBSD: PLIST,v 1.2 2008/03/26 19:57:23 eric Exp $
+lib/python${MODPY_VERSION}/site-packages/Twisted_Web-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_web.py
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_web.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/
@@ -37,11 +37,6 @@ lib/python${MODPY_VERSION}/site-packages/twisted/web/rewrite.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/rewrite.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/script.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/script.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/web/scripts/
-lib/python${MODPY_VERSION}/site-packages/twisted/web/scripts/__init__.py
-lib/python${MODPY_VERSION}/site-packages/twisted/web/scripts/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/web/scripts/websetroot.py
-lib/python${MODPY_VERSION}/site-packages/twisted/web/scripts/websetroot.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/server.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/server.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/soap.py

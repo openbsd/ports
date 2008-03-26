@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/03/26 19:57:24 eric Exp $
+
+BROKEN=		does not work with 2.5.0 yet
 
 COMMENT=	experimental HTTP/1.1 server framework
 

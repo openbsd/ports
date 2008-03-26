@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/29 14:37:47 alek Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2008/03/26 19:57:23 eric Exp $
+lib/python${MODPY_VERSION}/site-packages/Twisted_Runner-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/__init__.pyc
@@ -12,6 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/twisted/runner/inetdconf.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/inetdtap.py
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/inetdtap.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/portmap.c
+lib/python${MODPY_VERSION}/site-packages/twisted/runner/portmap.so
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/procmon.py
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/procmon.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/procutils.py

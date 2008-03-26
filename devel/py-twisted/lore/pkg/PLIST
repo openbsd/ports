@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/29 14:37:47 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/03/26 19:57:23 eric Exp $
 bin/bookify
 bin/lore
+lib/python${MODPY_VERSION}/site-packages/Twisted_Lore-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/__init__.pyc

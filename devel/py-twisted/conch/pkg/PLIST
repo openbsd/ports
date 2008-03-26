@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/08/09 10:24:51 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/03/26 19:57:23 eric Exp $
 @conflict cftp-*
 bin/cftp
 bin/ckeygen
 bin/conch
 bin/tkconch
+lib/python${MODPY_VERSION}/site-packages/Conch-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/_version.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/_version.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/authorizer.py
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/authorizer.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/avatar.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/avatar.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/checkers.py
@@ -32,8 +31,6 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/unix.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/unix.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/error.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/error.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/identity.py
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/identity.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/insults/__init__.pyc
