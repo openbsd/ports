@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2007/12/15 23:47:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2008/03/26 09:15:47 espie Exp $
 
 COMMENT= 		KDE personal information applications
 COMMENT-kpilot=		KDE interface to sync with Palm Pilot
 CATEGORIES=		x11 x11/kde productivity
-VERSION=		3.5.8
+VERSION=		3.5.9
 DISTNAME=		kdepim-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.8
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
@@ -25,6 +25,7 @@ SHARED_LIBS +=	kpilot               1.0      # .0.0
 SHARED_LIBS +=	ksync                2.0      # .1.0
 SHARED_LIBS +=	kpimidentities       2.0      # .1.0
 SHARED_LIBS +=	kpimexchange         2.0      # .1.0
+SHARED_LIBS +=	knodecommon          0.0      # .3.0
 SHARED_LIBS +=	ksync2               1.0      # .0.0
 SHARED_LIBS +=	konnector            1.0      # .0.0
 SHARED_LIBS +=	kitchensyncui        1.0      # .0.0
@@ -56,6 +57,9 @@ SHARED_LIBS +=	kcal_groupdav        2.0      # .1.0
 SHARED_LIBS +=	kabc_groupdav        2.0      # .1.0
 SHARED_LIBS +=	kcal_newexchange     2.0      # .1.0
 SHARED_LIBS +=	kabc_newexchange     2.0      # .1.0
+SHARED_LIBS +=	kabcscalix           0.0      # .0.0
+SHARED_LIBS +=	kcalscalix           0.0      # .0.0
+SHARED_LIBS +=	knotesscalix         0.0      # .0.0
 SHARED_LIBS +=	kpinterfaces         2.0      # .1.0
 SHARED_LIBS +=	kontact              2.0      # .1.0
 
@@ -99,3 +103,5 @@ CONFIGURE_ENV+= ac_cv_header_boost_format_hpp=no
 
 SEPARATE_BUILD=	flavored
 .include <bsd.port.mk>
+
+CONFIGURE_ARGS += --disable-final

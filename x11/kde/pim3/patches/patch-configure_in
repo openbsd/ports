@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.5 2007/09/30 09:36:58 ajacoutot Exp $
---- configure.in.orig	Thu May 17 08:43:38 2007
-+++ configure.in	Sat Sep 29 23:38:37 2007
+$OpenBSD: patch-configure_in,v 1.6 2008/03/26 09:15:47 espie Exp $
+--- configure.in.orig	Wed Feb 13 16:18:12 2008
++++ configure.in	Tue Mar 25 22:27:11 2008
 @@ -402,29 +402,30 @@ if test -d "$with_opensync"; then
  fi
  export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:$prefix/lib/pkgconfig:/usr/local/lib/pkgconfig
@@ -47,7 +47,7 @@ $OpenBSD: patch-configure_in,v 1.5 2007/09/30 09:36:58 ajacoutot Exp $
  
  dnl Check if we can compile KitchenSync
  AM_CONDITIONAL(compile_kitchensync, test "$HAVE_OPENSYNC" = 1 -a "$HAVE_OPENSYNC_ENGINE" = 1)
-@@ -717,7 +718,8 @@ if test "$HAVE_PISOCK" = "1" ; then
+@@ -761,7 +762,8 @@ if test "$HAVE_PISOCK" = "1" ; then
  			],
  			[-lsocket]
  			)
@@ -57,7 +57,7 @@ $OpenBSD: patch-configure_in,v 1.5 2007/09/30 09:36:58 ajacoutot Exp $
  		)
  fi
  fi
-@@ -855,7 +857,7 @@ if test "x$with_mal" = "xCHECK" ; then
+@@ -899,7 +901,7 @@ if test "x$with_mal" = "xCHECK" ; then
          mal_libdir)
        if test -r $mal_libdir/libmal.$ext ; then
          if test "x$mal_libdir" != "x/usr/lib$kdelibsuff" ; then

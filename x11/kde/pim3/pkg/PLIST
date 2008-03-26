@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2007/12/15 23:47:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2008/03/26 09:15:47 espie Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -39,6 +39,8 @@ bin/ktnef
 bin/kwatchgnupg
 bin/kxml_compiler
 bin/networkstatustestservice
+bin/scalixadmin
+bin/scalixwizard
 bin/sloxwizard
 include/KNotesAppIface.h
 include/KNotesIface.h
@@ -124,6 +126,7 @@ include/kleo/keylistjob.h
 include/kleo/keylistview.h
 include/kleo/keyrequester.h
 include/kleo/keyselectiondialog.h
+include/kleo/messagebox.h
 include/kleo/multideletejob.h
 include/kleo/passphrasedialog.h
 include/kleo/progressbar.h
@@ -301,6 +304,8 @@ ${KDE}/kabc_kolab.la
 ${KDE}/kabc_kolab.so
 ${KDE}/kabc_newexchange.la
 ${KDE}/kabc_newexchange.so
+${KDE}/kabc_scalix.la
+${KDE}/kabc_scalix.so
 ${KDE}/kabc_slox.la
 ${KDE}/kabc_slox.so
 ${KDE}/kabc_xmlrpc.la
@@ -323,6 +328,8 @@ ${KDE}/kcal_remote.la
 ${KDE}/kcal_remote.so
 ${KDE}/kcal_resourcefeatureplan.la
 ${KDE}/kcal_resourcefeatureplan.so
+${KDE}/kcal_scalix.la
+${KDE}/kcal_scalix.so
 ${KDE}/kcal_slox.la
 ${KDE}/kcal_slox.so
 ${KDE}/kcal_xmlrpc.la
@@ -369,12 +376,16 @@ ${KDE}/kio_imap4.la
 ${KDE}/kio_imap4.so
 ${KDE}/kio_mbox.la
 ${KDE}/kio_mbox.so
+${KDE}/kio_scalix.la
+${KDE}/kio_scalix.so
 ${KDE}/kio_sieve.la
 ${KDE}/kio_sieve.so
 ${KDE}/knotes_kolab.la
 ${KDE}/knotes_kolab.so
 ${KDE}/knotes_local.la
 ${KDE}/knotes_local.so
+${KDE}/knotes_scalix.la
+${KDE}/knotes_scalix.so
 ${KDE}/knotes_xmlrpc.la
 ${KDE}/knotes_xmlrpc.so
 ${KDE}/ldifvcardthumbnail.la
@@ -477,6 +488,8 @@ ${KDE}/libkorg_yearlyprint.la
 ${KDE}/libkorg_yearlyprint.so
 ${KDE}/libkorganizerpart.la
 ${KDE}/libkorganizerpart.so
+${KDE}/libscalixwizard.la
+${KDE}/libscalixwizard.so
 ${KDE}/libsloxwizard.la
 ${KDE}/libsloxwizard.so
 ${KDE}/plugins/designer/kdepimwidgets.la
@@ -505,6 +518,8 @@ lib/libkabc_xmlrpc.la
 @lib lib/libkabc_xmlrpc.so.${LIBkabc_xmlrpc_VERSION}
 lib/libkabckolab.la
 @lib lib/libkabckolab.so.${LIBkabckolab_VERSION}
+lib/libkabcscalix.la
+@lib lib/libkabcscalix.so.${LIBkabcscalix_VERSION}
 lib/libkabinterfaces.la
 @lib lib/libkabinterfaces.so.${LIBkabinterfaces_VERSION}
 lib/libkaddressbook.la
@@ -527,6 +542,8 @@ lib/libkcal_xmlrpc.la
 @lib lib/libkcal_xmlrpc.so.${LIBkcal_xmlrpc_VERSION}
 lib/libkcalkolab.la
 @lib lib/libkcalkolab.so.${LIBkcalkolab_VERSION}
+lib/libkcalscalix.la
+@lib lib/libkcalscalix.so.${LIBkcalscalix_VERSION}
 lib/libkdepim.la
 @lib lib/libkdepim.so.${LIBkdepim_VERSION}
 lib/libkgantt.la
@@ -544,11 +561,13 @@ lib/libkmailprivate.so
 lib/libkmime.la
 @lib lib/libkmime.so.${LIBkmime_VERSION}
 lib/libknodecommon.la
-lib/libknodecommon.so
+@lib lib/libknodecommon.so.${LIBknodecommon_VERSION}
 lib/libknotes_xmlrpc.la
 @lib lib/libknotes_xmlrpc.so.${LIBknotes_xmlrpc_VERSION}
 lib/libknoteskolab.la
 @lib lib/libknoteskolab.so.${LIBknoteskolab_VERSION}
+lib/libknotesscalix.la
+@lib lib/libknotesscalix.so.${LIBknotesscalix_VERSION}
 lib/libkocorehelper.la
 @lib lib/libkocorehelper.so.${LIBkocorehelper_VERSION}
 lib/libkode.la
@@ -597,6 +616,7 @@ share/applications/kde/kleopatra_import.desktop
 share/applications/kde/kmail_view.desktop
 share/applications/kde/knotes.desktop
 share/applications/kde/konsolekalendar.desktop
+share/applications/kde/kontactdcop.desktop
 share/applications/kde/korganizer.desktop
 share/applications/kde/kpalmdoc.desktop
 share/applications/kde/kpilot.desktop
@@ -742,6 +762,7 @@ share/apps/kconf_update/kmail-3.5-trigger-flag-migration.pl
 share/apps/kconf_update/kmail-pgpidentity.pl
 share/apps/kconf_update/kmail-upd-identities.pl
 share/apps/kconf_update/kmail.upd
+share/apps/kconf_update/kolab-resource.upd
 share/apps/kconf_update/korganizer.upd
 share/apps/kconf_update/korn-3-4-config_change.upd
 share/apps/kconf_update/korn-3-5-metadata-update.pl
@@ -751,6 +772,7 @@ share/apps/kconf_update/kpalmdoc.upd
 share/apps/kconf_update/kpgp-3.1-upgrade-address-data.pl
 share/apps/kconf_update/kpgp.upd
 share/apps/kconf_update/kpilot.upd
+share/apps/kconf_update/upgrade-resourcetype.pl
 share/apps/kconf_update/upgrade-signature.pl
 share/apps/kconf_update/upgrade-transport.pl
 share/apps/kdepim/
@@ -864,6 +886,21 @@ share/apps/kmail/kmcomposerui.rc
 share/apps/kmail/kmmainwin.rc
 share/apps/kmail/kmreadermainwin.rc
 share/apps/kmail/pics/
+share/apps/kmail/pics/enterprise_bottom.png
+share/apps/kmail/pics/enterprise_bottom_left.png
+share/apps/kmail/pics/enterprise_bottom_right.png
+share/apps/kmail/pics/enterprise_icon.png
+share/apps/kmail/pics/enterprise_left.png
+share/apps/kmail/pics/enterprise_right.png
+share/apps/kmail/pics/enterprise_s_left.png
+share/apps/kmail/pics/enterprise_s_right.png
+share/apps/kmail/pics/enterprise_sbar.png
+share/apps/kmail/pics/enterprise_sp_right.png
+share/apps/kmail/pics/enterprise_sw.png
+share/apps/kmail/pics/enterprise_top.png
+share/apps/kmail/pics/enterprise_top_left.png
+share/apps/kmail/pics/enterprise_top_right.png
+share/apps/kmail/pics/enterprise_w.png
 share/apps/kmail/pics/key.png
 share/apps/kmail/pics/key_bad.png
 share/apps/kmail/pics/key_ok.png
@@ -989,6 +1026,15 @@ share/apps/kontact/about/main.html
 share/apps/kontact/about/top-right-kontact.png
 share/apps/kontact/kontact.setdlg
 share/apps/kontact/kontactui.rc
+share/apps/kontact/profiles/
+share/apps/kontact/profiles/KontactDefaults/
+share/apps/kontact/profiles/KontactDefaults/kontactrc
+share/apps/kontact/profiles/KontactDefaults/korganizerrc
+share/apps/kontact/profiles/KontactDefaults/profile.cfg
+share/apps/kontact/profiles/OutlookDefaults/
+share/apps/kontact/profiles/OutlookDefaults/kontactrc
+share/apps/kontact/profiles/OutlookDefaults/korganizerrc
+share/apps/kontact/profiles/OutlookDefaults/profile.cfg
 share/apps/kontactsummary/
 share/apps/kontactsummary/kontactsummary_part.rc
 share/apps/korgac/
@@ -1657,6 +1703,7 @@ share/config.kcfg/mk4config.kcfg
 share/config.kcfg/pimemoticons.kcfg
 share/config.kcfg/popmail.kcfg
 share/config.kcfg/replyphrases.kcfg
+share/config.kcfg/scalix.kcfg
 share/config.kcfg/slox.kcfg
 share/config.kcfg/sysinfoconduit.kcfg
 share/config.kcfg/templatesconfiguration_kfg.kcfg
@@ -2246,6 +2293,7 @@ share/services/kresources/kabc/kabc_ox.desktop
 share/services/kresources/kabc/kabc_slox.desktop
 share/services/kresources/kabc/kabc_xmlrpc.desktop
 share/services/kresources/kabc/kolab.desktop
+share/services/kresources/kabc/scalix.desktop
 share/services/kresources/kcal/
 share/services/kresources/kcal/exchange.desktop
 share/services/kresources/kcal/imap.desktop
@@ -2262,12 +2310,14 @@ share/services/kresources/kcal/kolab.desktop
 share/services/kresources/kcal/local.desktop
 share/services/kresources/kcal/localdir.desktop
 share/services/kresources/kcal/remote.desktop
+share/services/kresources/kcal/scalix.desktop
 share/services/kresources/kcal_manager.desktop
 share/services/kresources/knotes/
 share/services/kresources/knotes/imap.desktop
 share/services/kresources/knotes/knotes_xmlrpc.desktop
 share/services/kresources/knotes/kolabresource.desktop
 share/services/kresources/knotes/local.desktop
+share/services/kresources/knotes/scalix.desktop
 share/services/kresources/knotes_manager.desktop
 share/services/ldifvcardthumbnail.desktop
 share/services/mal_conduit.desktop
@@ -2275,6 +2325,8 @@ share/services/mbox.protocol
 share/services/memofile-conduit.desktop
 share/services/notepad-conduit.desktop
 share/services/popmail-conduit.desktop
+share/services/scalix.protocol
+share/services/scalixs.protocol
 share/services/sieve.protocol
 share/services/sysinfo_conduit.desktop
 share/services/time_conduit.desktop
