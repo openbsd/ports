@@ -1,6 +1,6 @@
-$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.10 2007/08/10 16:07:28 kurt Exp $
---- klaptopdaemon/portable.cpp.orig	Mon May 14 03:40:45 2007
-+++ klaptopdaemon/portable.cpp	Wed Aug  8 16:20:57 2007
+$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.11 2008/03/26 11:11:42 espie Exp $
+--- klaptopdaemon/portable.cpp.orig	Wed Feb 13 10:38:14 2008
++++ klaptopdaemon/portable.cpp	Wed Mar 26 10:54:47 2008
 @@ -40,6 +40,7 @@
  //	Linux 		(#if __linux__)
  //	FreeBSD		(#elif __FreeBSD__)
@@ -9,7 +9,7 @@ $OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.10 2007/08/10 16:07:28 kurt Exp $
  //	generic nothing	(#else)
  //
  //
-@@ -2792,6 +2793,390 @@ laptop_portable::get_battery_status(int &num_batteries
+@@ -2794,6 +2795,390 @@ laptop_portable::get_battery_status(int &num_batteries
  	values.append(s);
  }
  

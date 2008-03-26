@@ -1,7 +1,7 @@
-$OpenBSD: patch-kcalc_knumber_knumber_priv_h,v 1.1 2005/12/06 07:06:20 espie Exp $
---- kcalc/knumber/knumber_priv.h.orig	Thu Nov 24 11:59:31 2005
-+++ kcalc/knumber/knumber_priv.h	Thu Nov 24 12:00:01 2005
-@@ -29,7 +29,8 @@ class QString;
+$OpenBSD: patch-kcalc_knumber_knumber_priv_h,v 1.2 2008/03/26 11:11:42 espie Exp $
+--- kcalc/knumber/knumber_priv.h.orig	Wed Feb 13 10:38:15 2008
++++ kcalc/knumber/knumber_priv.h	Wed Mar 26 10:54:47 2008
+@@ -30,7 +30,8 @@ class QString;
  #endif
  // this is really ugly
  #ifndef NAN
