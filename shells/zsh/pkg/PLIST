@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2008/02/08 04:55:08 okan Exp $
+@comment $OpenBSD: PLIST,v 1.23 2008/03/26 16:45:43 landry Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -78,6 +78,7 @@ share/zsh/${V}/functions/_cal
 share/zsh/${V}/functions/_call_function
 share/zsh/${V}/functions/_call_program
 share/zsh/${V}/functions/_canonical_paths
+@comment share/zsh/${V}/functions/_canonical_paths.orig
 share/zsh/${V}/functions/_ccal
 share/zsh/${V}/functions/_cd
 share/zsh/${V}/functions/_cdbs-edit-patch
