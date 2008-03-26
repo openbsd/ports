@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/11/28 16:13:46 okan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/03/26 20:43:44 landry Exp $
 %%SHARED%%
 bin/hg
-bin/hgmerge
 lib/python${MODPY_VERSION}/site-packages/hgext/
 lib/python${MODPY_VERSION}/site-packages/hgext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hgext/__init__.pyc
@@ -13,11 +12,17 @@ lib/python${MODPY_VERSION}/site-packages/hgext/bugzilla.py
 lib/python${MODPY_VERSION}/site-packages/hgext/bugzilla.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/children.py
 lib/python${MODPY_VERSION}/site-packages/hgext/children.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/churn.py
+lib/python${MODPY_VERSION}/site-packages/hgext/churn.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/color.py
+lib/python${MODPY_VERSION}/site-packages/hgext/color.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/common.py
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/common.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/convert/convcmd.py
+lib/python${MODPY_VERSION}/site-packages/hgext/convert/convcmd.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/cvs.py
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/cvs.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/darcs.py
@@ -26,8 +31,12 @@ lib/python${MODPY_VERSION}/site-packages/hgext/convert/filemap.py
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/filemap.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/git.py
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/git.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/convert/gnuarch.py
+lib/python${MODPY_VERSION}/site-packages/hgext/convert/gnuarch.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/hg.py
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/hg.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/convert/monotone.py
+lib/python${MODPY_VERSION}/site-packages/hgext/convert/monotone.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/subversion.py
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/subversion.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/transport.py
@@ -40,18 +49,22 @@ lib/python${MODPY_VERSION}/site-packages/hgext/gpg.py
 lib/python${MODPY_VERSION}/site-packages/hgext/gpg.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/graphlog.py
 lib/python${MODPY_VERSION}/site-packages/hgext/graphlog.pyc
-lib/python${MODPY_VERSION}/site-packages/hgext/hbisect.py
-lib/python${MODPY_VERSION}/site-packages/hgext/hbisect.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/hgk.py
 lib/python${MODPY_VERSION}/site-packages/hgext/hgk.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/highlight.py
+lib/python${MODPY_VERSION}/site-packages/hgext/highlight.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/imerge.py
 lib/python${MODPY_VERSION}/site-packages/hgext/imerge.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/interhg.py
 lib/python${MODPY_VERSION}/site-packages/hgext/interhg.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/keyword.py
+lib/python${MODPY_VERSION}/site-packages/hgext/keyword.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/mq.py
 lib/python${MODPY_VERSION}/site-packages/hgext/mq.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/notify.py
 lib/python${MODPY_VERSION}/site-packages/hgext/notify.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/pager.py
+lib/python${MODPY_VERSION}/site-packages/hgext/pager.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/parentrevspec.py
 lib/python${MODPY_VERSION}/site-packages/hgext/parentrevspec.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/patchbomb.py
@@ -62,10 +75,12 @@ lib/python${MODPY_VERSION}/site-packages/hgext/record.py
 lib/python${MODPY_VERSION}/site-packages/hgext/record.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/transplant.py
 lib/python${MODPY_VERSION}/site-packages/hgext/transplant.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/win32mbcs.py
+lib/python${MODPY_VERSION}/site-packages/hgext/win32mbcs.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/win32text.py
 lib/python${MODPY_VERSION}/site-packages/hgext/win32text.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/
-lib/python${MODPY_VERSION}/site-packages/mercurial-0.9.5-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mercurial-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mercurial/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/__version__.py
@@ -88,6 +103,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/commands.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/commands.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/context.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/context.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/copies.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/copies.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/demandimport.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/demandimport.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/dirstate.py
@@ -100,6 +117,10 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/fancyopts.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/fancyopts.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/filelog.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/filelog.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/filemerge.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/filemerge.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/hbisect.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/hbisect.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/help.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/help.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/hg.py
@@ -113,10 +134,14 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/hgweb_mod.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/hgweb_mod.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/hgwebdir_mod.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/hgwebdir_mod.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/protocol.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/protocol.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/request.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/request.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/server.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/server.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/webcommands.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/webcommands.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/wsgicgi.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/hgweb/wsgicgi.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/hook.py
@@ -151,14 +176,14 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/osutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/osutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/patch.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/patch.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/remoterepo.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/remoterepo.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/repair.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/repair.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/repo.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/repo.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlog.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlog.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/simplemerge.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/simplemerge.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/sshrepo.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/sshrepo.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/sshserver.py
@@ -169,6 +194,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/streamclone.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/streamclone.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/strutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/strutil.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/templatefilters.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/templatefilters.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/templater.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/templater.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/
@@ -217,31 +244,15 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.changel
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.compact
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.default
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/notfound.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/changelog.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/changelogentry.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/changeset.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/fileannotate.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/filediff.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/filelog.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/filelogentry.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/filerevision.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/footer.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/header.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/manifest.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/map
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/search.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/shortlog.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/shortlogentry.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/old/tags.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/changeset.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/error.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/fileannotate.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/filediff.tmpl
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/header.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/index.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/manifest.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/map
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/notfound.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/rss/
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/rss/changelog.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/rss/changelogentry.tmpl
@@ -256,6 +267,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/shortlog.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/shortlogentry.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/hgicon.png
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/hglogo.png
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/highlight.css
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/style-gitweb.css
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/style.css
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/tags.tmpl
@@ -273,7 +286,6 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/verify.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/version.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/version.pyc
 @man man/man1/hg.1
-@man man/man1/hgmerge.1
 @man man/man5/hgignore.5
 @man man/man5/hgrc.5
 share/mercurial/
@@ -288,11 +300,15 @@ share/mercurial/git-viz/git-rev-tree
 share/mercurial/git-viz/hg-viz
 share/mercurial/hg-ssh
 share/mercurial/hgdiff
+share/mercurial/hgeditor
 share/mercurial/hgk
 share/mercurial/hgsh/
 share/mercurial/hgsh/Makefile
 share/mercurial/hgsh/hgsh.c
+share/mercurial/hgwebdir.fcgi
 share/mercurial/mercurial.el
+share/mercurial/mergetools.hgrc
+share/mercurial/mq.el
 share/mercurial/sample.hgrc
 share/mercurial/tcsh_completion
 share/mercurial/tcsh_completion_build.sh

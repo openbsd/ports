@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/28 16:13:46 okan Exp $
+# $OpenBSD: Makefile,v 1.10 2008/03/26 20:43:44 landry Exp $
 
 COMMENT=		fast, lightweight source control management
 
-DISTNAME=		mercurial-0.9.5
+VERSION=		1.0
+DISTNAME=		mercurial-${VERSION}
 CATEGORIES=     	devel
 HOMEPAGE=		http://www.selenic.com/mercurial/
 
@@ -18,11 +19,13 @@ MASTER_SITES=		http://www.selenic.com/mercurial/release/
 
 MODULES=		lang/python
 
-# Many regress tests broken on OpenBSD.
-NO_REGRESS=		Yes
+SUBST_VARS+=		VERSION
+REGRESS_DEPENDS=	:python-bz2-*:lang/python/${MODPY_VERSION},-bz2
 
 CONTRIBFILES=		bash_completion mercurial.el sample.hgrc \
-			tcsh_completion zsh_completion
+			tcsh_completion zsh_completion hgwebdir.fcgi \
+			mergetools.hgrc mq.el
+
 CONTRIBDIRS=		git-viz hgsh vim
 SCRIPTS=		convert-repo darcs2hg.py hg-ssh hgdiff hgk \
 			tcsh_completion_build.sh
@@ -30,9 +33,9 @@ SCRIPTS=		convert-repo darcs2hg.py hg-ssh hgdiff hgk \
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/hg.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/hgignore.5 ${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/doc/hgmerge.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/hgrc.5 ${PREFIX}/man/man5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mercurial/
+	${INSTALL_SCRIPT} ${WRKSRC}/hgeditor ${PREFIX}/share/mercurial
 .	for file in ${CONTRIBFILES}
 		${INSTALL_DATA} ${WRKSRC}/contrib/${file} \
 			${PREFIX}/share/mercurial
@@ -46,5 +49,8 @@ post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/contrib/${script} \
 			${PREFIX}/share/mercurial
 .	endfor
+
+do-regress:
+	@cd ${WRKSRC}/tests && ${MODPY_BIN} run-tests.py -v 1>&2
 
 .include <bsd.port.mk>
