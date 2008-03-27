@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2007/10/24 21:52:16 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2008/03/27 09:35:01 espie Exp $
 
 COMMENT= 		K Desktop Environment, additional artwork
 CATEGORIES=		x11 x11/kde
-VERSION=		3.5.8
+VERSION=		3.5.9
 DISTNAME=		kdeartwork-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.5.8
@@ -21,7 +21,7 @@ WANTLIB=	GL GLU ICE SM X11 Xext Xrender Xt art_lgpl_2 artsflow \
 		gmodule-2.0 gthread-2.0 iconv intl jpeg kmedia2_idl \
 		kwalletclient m mad mcop ogg ossaudio png pthread qtmcop \
 		soundserver_idl stdc++ util vorbis vorbisenc vorbisfile z \
-		idn Xau Xdmcp fam rpcsvc
+		idn Xau Xdmcp fam rpcsvc pcre
 
 
 .include <bsd.port.mk>
