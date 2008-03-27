@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/02/27 00:30:47 djm Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/03/27 14:31:31 merdely Exp $
 @option no-default-conflict
 @conflict python->=2.5,<2.6
 @pkgpath lang/python/2.5
@@ -131,8 +131,6 @@ lib/python2.5/SocketServer.pyo
 lib/python2.5/StringIO.py
 lib/python2.5/StringIO.pyc
 lib/python2.5/StringIO.pyo
-lib/python2.5/Tools/buildbot/buildmsi.bat
-lib/python2.5/Tools/buildbot/getchm.py
 lib/python2.5/UserDict.py
 lib/python2.5/UserDict.pyc
 lib/python2.5/UserDict.pyo

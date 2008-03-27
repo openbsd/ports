@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.1 2006/11/01 20:59:18 alek Exp $
+@comment $OpenBSD: PLIST-tools,v 1.2 2008/03/27 14:31:31 merdely Exp $
 @option no-default-conflict
 @conflict python-tools->=2.5,<2.6
 lib/python2.5/Tools/
@@ -26,8 +26,10 @@ lib/python2.5/Tools/bgen/bgen/scantools.py
 lib/python2.5/Tools/buildbot/
 lib/python2.5/Tools/buildbot/Makefile
 lib/python2.5/Tools/buildbot/build.bat
+lib/python2.5/Tools/buildbot/buildmsi.bat
 lib/python2.5/Tools/buildbot/clean.bat
 lib/python2.5/Tools/buildbot/external.bat
+lib/python2.5/Tools/buildbot/getchm.py
 lib/python2.5/Tools/buildbot/kill_python.bat
 lib/python2.5/Tools/buildbot/kill_python.c
 lib/python2.5/Tools/buildbot/kill_python.mak
