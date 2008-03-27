@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/03/24 03:26:34 jakemsr Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/03/27 01:35:02 jakemsr Exp $
 @pkgpath multimedia/xine-lib
 %%i386%%
 bin/xine-config
@@ -54,7 +54,6 @@ lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_goom.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_mosaico.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_planar.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_switch.so
-lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_tvtime.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_visualizations.so
 @comment lib/xine/plugins/${XINEAPI_REV}/vidix/
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_file.so

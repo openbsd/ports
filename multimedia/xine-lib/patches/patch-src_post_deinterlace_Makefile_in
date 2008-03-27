@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_post_deinterlace_Makefile_in,v 1.1 2008/03/27 01:35:02 jakemsr Exp $
+--- src/post/deinterlace/Makefile.in.orig	Wed Mar 26 16:59:42 2008
++++ src/post/deinterlace/Makefile.in	Wed Mar 26 17:24:02 2008
+@@ -415,7 +415,7 @@ xinepostdir = $(XINE_PLUGINDIR)/post
+ vidixdir = $(XINE_PLUGINDIR)/vidix
+ SUBDIRS = plugins
+ EXTRA_DIST = 
+-xinepost_LTLIBRARIES = xineplug_post_tvtime.la
++${TOMSMOCOMP_LINKS}xinepost_LTLIBRARIES = xineplug_post_tvtime.la
+ xineplug_post_tvtime_la_SOURCES = xine_plugin.c \
+ 	deinterlace.c pulldown.c speedy.c tvtime.c 
+ 
