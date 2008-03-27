@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/03/21 12:41:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/03/27 13:02:50 ajacoutot Exp $
 
 COMMENT=		compact disk input and control library
 
 DISTNAME=		libcdio-0.80
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio devel
 
 HOMEPAGE=		http://www.gnu.org/software/libcdio/
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m ncurses
+WANTLIB=	c m
 
 MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
 
@@ -48,12 +48,16 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-cd-drive \
 		--with-cd-info \
 		--with-cd-paranoia \
-		--with-cdda-player \
 		--with-cd-read \
 		--with-iso-info \
 		--with-iso-read
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+
+# XXX
+# disable cdda-player as it is not functional and hangs forever with
+# "action : read toc...SCIOCCOMMAND cmd 0x43 sts 3"
+CONFIGURE_ARGS+=--without-cdda-player
 
 # Shamelessly copied NetBSD's hack
 post-extract:

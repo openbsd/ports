@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/20 18:24:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/03/27 13:02:50 ajacoutot Exp $
 %%SHARED%%
 bin/cd-drive
 bin/cd-info
 bin/cd-paranoia
 bin/cd-read
-bin/cdda-player
 bin/iso-info
 bin/iso-read
 bin/mmc-tool
