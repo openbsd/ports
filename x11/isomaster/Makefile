@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2008/03/15 11:54:24 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/03/28 11:31:49 ajacoutot Exp $
 
 COMMENT=		gui cd image editor
 
-DISTNAME=		isomaster-1.3
+DISTNAME=		isomaster-1.3.1
 CATEGORIES=		x11
 HOMEPAGE=		http://littlesvr.ca/isomaster/
 
 MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -30,5 +30,8 @@ WANTLIB=	c iconv intl m X11 Xau Xcursor Xdmcp Xext Xfixes \
 USE_X11=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
+
+FAKE_FLAGS=	MYMANPATH=${WRKINST}/${TRUEPREFIX}/man/man1 \
+		DESTDIR=""
 
 .include <bsd.port.mk>
