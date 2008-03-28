@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2008/01/07 19:57:40 reyk Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2008/03/28 15:47:58 ajacoutot Exp $
 
 CATEGORIES?=		x11
 
@@ -14,6 +14,8 @@ AUTOCONF_VERSION?=	2.61
 AUTOMAKE_VERSION?=	1.9
 AUTOMAKE_ENV?=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+
+CFLAGS +=	-g
 
 e17-post-patch:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} NOCONFIGURE=true \

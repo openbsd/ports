@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/11 13:51:50 laurent Exp $
+# $OpenBSD: Makefile,v 1.3 2008/03/28 15:47:58 ajacoutot Exp $
 
      SUBDIR += e
      SUBDIR += ecore
@@ -10,7 +10,5 @@
      SUBDIR += epeg
      SUBDIR += etk
      SUBDIR += evas
-
-CFLAGS+= -g
 
 .include <bsd.port.subdir.mk>
