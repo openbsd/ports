@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/03/29 18:31:16 espie Exp $
 
 COMMENT-main=	yahoo ui library toolkit
 COMMENT-docs=	yahoo ui library examples
@@ -22,6 +22,7 @@ PKG_ARCH=	*
 HOMEPAGE=	http://developer.yahoo.com/yui/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yui/}
 EXTRACT_ONLY=
+BUILD_DEPENDS=	::archivers/unzip
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
