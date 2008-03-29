@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: meta.in,v 1.3 2004/11/08 22:00:09 mbalmer Exp $
+# $OpenBSD: meta.in,v 1.4 2008/03/29 19:24:40 bernd Exp $
 
 # Copyright (c) 2003,2004 Marc Espie.
 # 
@@ -26,7 +26,8 @@
 
 case "x$@PROG_VERSION" in
 x)	# figure out manually what to do
-	echo "Provide an @PROG_VERSION environment variable, please"
+	echo "Provide an @PROG_VERSION environment variable, please" >&2
+	exit 1
 	;;
 x*)	
 	exec @LOCALBASE@/bin/@SCRIPT@-$@PROG_VERSION "$@"
