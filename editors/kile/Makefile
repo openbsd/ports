@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2007/12/16 00:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2008/03/29 16:35:13 steven Exp $
 
 COMMENT=	integrated LaTeX environment for KDE
-DISTNAME=	kile-1.9.3
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	kile-2.0
 CATEGORIES=	editors x11/kde
 
 HOMEPAGE=	http://kile.sourceforge.net/
@@ -37,7 +36,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION=2.61
 USE_LIBTOOL=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS=${MODKDE_CONFIG_GUESS_DIRS}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.3 2006/07/20 11:52:20 steven Exp $
---- src/kile/syntax/Makefile.in.orig	Sun May  7 20:33:47 2006
-+++ src/kile/syntax/Makefile.in	Thu Jul 13 17:46:05 2006
-@@ -59,9 +59,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.
+$OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.4 2008/03/29 16:35:13 steven Exp $
+--- src/kile/syntax/Makefile.in.orig	Sun Nov 18 22:05:55 2007
++++ src/kile/syntax/Makefile.in	Sat Mar 22 13:52:40 2008
+@@ -55,9 +55,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
  am__installdirs = "$(DESTDIR)$(syntaxdir)"
  syntaxDATA_INSTALL = $(INSTALL_DATA)
  DATA = $(syntax_DATA)
@@ -10,9 +10,9 @@ $OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.3 2006/07/20 11:52:20 steven Exp
 -DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
 +DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
  ACLOCAL = @ACLOCAL@
- AMDEP_FALSE = @AMDEP_FALSE@
- AMDEP_TRUE = @AMDEP_TRUE@
-@@ -314,25 +312,11 @@ xdg_appsdir = @xdg_appsdir@
+ AMTAR = @AMTAR@
+ AR = @AR@
+@@ -308,25 +306,11 @@ xdg_appsdir = @xdg_appsdir@
  xdg_directorydir = @xdg_directorydir@
  xdg_menudir = @xdg_menudir@
  syntaxdir = $(kde_datadir)/katepart/syntax
@@ -40,7 +40,7 @@ $OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.3 2006/07/20 11:52:20 steven Exp
  	@for dep in $?; do \
  	  case '$(am__configure_deps)' in \
  	    *$$dep*) \
-@@ -344,7 +328,6 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefi
+@@ -338,7 +322,6 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__c
  	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  src/kile/syntax/Makefile'; \
  	cd $(top_srcdir) && \
  	  $(AUTOMAKE) --gnu  src/kile/syntax/Makefile
@@ -48,7 +48,7 @@ $OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.3 2006/07/20 11:52:20 steven Exp
  .PRECIOUS: Makefile
  Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
  	@case '$?' in \
-@@ -454,13 +437,9 @@ distclean-generic:
+@@ -443,13 +426,9 @@ distclean-generic:
  maintainer-clean-generic:
  	@echo "This command is intended for maintainers to use"
  	@echo "it deletes files that may require special tools to rebuild."
@@ -64,26 +64,26 @@ $OpenBSD: patch-src_kile_syntax_Makefile_in,v 1.3 2006/07/20 11:52:20 steven Exp
  
  distclean: distclean-am
  	-rm -f Makefile
-@@ -514,74 +493,16 @@ uninstall-am: uninstall-info-am uninstal
+@@ -515,74 +494,16 @@ uninstall-am: uninstall-syntaxDATA
  	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
- 	uninstall uninstall-am uninstall-info-am uninstall-syntaxDATA
+ 	uninstall uninstall-am uninstall-syntaxDATA
  
-+
 +# dl - 4 January 2006
 +# Rename these files so they don't conflict with the KDE
 +# defaults. This gives the user a choice between the syntax
 +# files provided by Kile, and those shipped with KDE
-+latex-kile.xml: 
++latex-kile.xml:
 +	mv latex.xml latex-kile.xml
 +
-+bibtex-kile.xml: 
++bibtex-kile.xml:
 +	mv bibtex.xml bibtex-kile.xml
++
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
 -
 -#>+ 2
--KDE_DIST=latex.xml bibtex.xml Makefile.am Makefile.in 
+-KDE_DIST=latex.xml bibtex.xml Makefile.in CMakeLists.txt Makefile.am 
 -
 -#>+ 2
 -docs-am:
