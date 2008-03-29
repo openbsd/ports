@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2008/02/19 11:32:50 bernd Exp $
+# $OpenBSD: Makefile,v 1.149 2008/03/29 11:43:36 matthieu Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -33,6 +33,7 @@
      SUBDIR += freeipmi
      SUBDIR += ggrep
      SUBDIR += gkrellm
+     SUBDIR += glastree
      SUBDIR += gpioflicker
      SUBDIR += grub
      SUBDIR += heartbeat
