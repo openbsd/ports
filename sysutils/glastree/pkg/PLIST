@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/29 11:42:40 matthieu Exp $
+bin/glastree
+bin/glastreeprune
+@man man/man1/glastree.1
+@man man/man1/glastreeprune.1

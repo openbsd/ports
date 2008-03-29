@@ -1,0 +1,9 @@
+The poor man's daily snapshot, glastree builds live backup trees, with
+branches for each day. Users directly browse the past to recover older
+documents or retrieve lost files. Hard links serve to compress out
+unchanged files, while modified ones are copied verbatim. A prune
+utility effects a constant, sliding window.
+
+Satoru Takabayashi has writen a similar program, in Ruby, pdumpfs.
+
+Inspired by Plan9, of course.
