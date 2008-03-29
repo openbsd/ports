@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/12/27 18:32:33 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/03/29 12:05:27 bernd Exp $
 @pkgpath lang/ruby
 bin/erb
 bin/irb
@@ -341,6 +341,7 @@ lib/ruby/${REV}/rexml/source.rb
 lib/ruby/${REV}/rexml/streamlistener.rb
 lib/ruby/${REV}/rexml/syncenumerator.rb
 lib/ruby/${REV}/rexml/text.rb
+lib/ruby/${REV}/rexml/undefinednamespaceexception.rb
 lib/ruby/${REV}/rexml/validation/
 lib/ruby/${REV}/rexml/validation/relaxng.rb
 lib/ruby/${REV}/rexml/validation/validation.rb
@@ -5109,6 +5110,9 @@ share/ri/${REV}/system/REXML/Text/wrap-i.yaml
 share/ri/${REV}/system/REXML/Text/write-i.yaml
 share/ri/${REV}/system/REXML/Text/write_with_substitution-i.yaml
 share/ri/${REV}/system/REXML/Text/xpath-i.yaml
+share/ri/${REV}/system/REXML/UndefinedNamespaceException/
+share/ri/${REV}/system/REXML/UndefinedNamespaceException/cdesc-UndefinedNamespaceException.yaml
+share/ri/${REV}/system/REXML/UndefinedNamespaceException/new-c.yaml
 share/ri/${REV}/system/REXML/Validation/
 share/ri/${REV}/system/REXML/Validation/Choice/
 share/ri/${REV}/system/REXML/Validation/Choice/%3c%3c-i.yaml
@@ -9761,6 +9765,7 @@ share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/exec_handler-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/get_handler-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/new-c.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/nondisclosure_name%3f-i.yaml
+share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/prevent_directory_traversal-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/remove_handler-c.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/search_file-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/search_index_file-i.yaml
