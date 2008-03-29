@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/31 02:20:01 okan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/03/29 13:50:39 bernd Exp $
 @newgroup _nginx:593
 @newuser _nginx:593:_nginx:daemon:nginx user:/nonexistent:/sbin/nologin
 sbin/nginx
@@ -6,8 +6,12 @@ sbin/nginx
 @sample ${NGINX_DIR}/
 @sample /var/log/nginx/
 @mode 700
+@owner _nginx
+@group _nginx
 @sample ${NGINX_DIR}/tmp/
 @mode
+@owner
+@group
 share/nginx/
 @sample ${SYSCONFDIR}/nginx/
 share/nginx/fastcgi_params
