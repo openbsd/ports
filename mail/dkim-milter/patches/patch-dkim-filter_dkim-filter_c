@@ -1,12 +1,12 @@
-$OpenBSD: patch-dkim-filter_dkim-filter_c,v 1.6 2007/09/08 08:46:33 jakob Exp $
---- dkim-filter/dkim-filter.c.orig	Tue Aug 28 19:20:56 2007
-+++ dkim-filter/dkim-filter.c	Fri Aug 31 06:53:10 2007
-@@ -4261,7 +4261,7 @@ main(int argc, char **argv)
+$OpenBSD: patch-dkim-filter_dkim-filter_c,v 1.7 2008/03/29 12:01:58 jakob Exp $
+--- dkim-filter/dkim-filter.c.orig	Fri Mar 28 00:07:10 2008
++++ dkim-filter/dkim-filter.c	Sat Mar 29 12:51:33 2008
+@@ -6382,7 +6382,7 @@ main(int argc, char **argv)
+ 	unsigned long tmpl;
  	const char *args = CMDLINEOPTS;
  	FILE *f;
- 	char *be = NULL;
 -	char *become = NULL;
 +	char *become = "_dkim-milter";
- 	char *domlist = NULL;
- 	char *mtalist = NULL;
  	char *p;
+ 	char *pidfile = NULL;
+ #if POPAUTH
