@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2007/11/14 10:53:50 robert Exp $
+# $OpenBSD: Makefile,v 1.42 2008/03/30 11:59:56 robert Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 COMMENT-main=		informational package about PHP5 extensions
@@ -262,6 +262,17 @@ MULTI_PACKAGES+=	-pgsql
 COMMENT-pgsql=		pgsql database access extensions for php5
 CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
+.endif
+
+# pspell
+PSEUDO_FLAVORS+=	no_pspell
+.if ${FLAVOR:L:Mno_pspell}
+CONFIGURE_ARGS+=	--without-pspell
+.else
+MULTI_PACKAGES+=	-pspell
+COMMENT-pspell=		pspell library extensions for php5
+CONFIGURE_ARGS+=	--with-pspell=shared,${LOCALBASE}
+LIB_DEPENDS-pspell=	aspell.>=16.0::textproc/aspell/core
 .endif
 
 # shmop
