@@ -1,0 +1,12 @@
+$OpenBSD: patch-libjack_client_c,v 1.1 2008/03/30 08:46:15 jakemsr Exp $
+--- libjack/client.c.orig	Sat Mar 29 21:30:38 2008
++++ libjack/client.c	Sat Mar 29 21:50:43 2008
+@@ -1533,7 +1533,7 @@ jack_wake_next_client (jack_client_t* client)
+ 		jack_error ("cannot complete execution of the "
+ 			    "processing graph (%s)",
+ 			    strerror(errno));
+-		return -1;
++		// return -1;
+ 	}
+ 	
+ 	return 0;
