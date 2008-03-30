@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2008/03/19 20:22:13 simon Exp $
+# $OpenBSD: Makefile,v 1.167 2008/03/30 13:52:14 simon Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -87,6 +87,7 @@
      SUBDIR += nethack,no_x11
      SUBDIR += nethack,qt
      SUBDIR += netris
+     SUBDIR += neverball
      SUBDIR += newvox
      SUBDIR += oilwar
      SUBDIR += omega
