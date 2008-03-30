@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/26 22:56:49 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/03/30 15:05:04 simon Exp $
 bin/barrage
-share/applications/
 share/applications/barrage.desktop
 share/barrage/
 share/barrage/gfx/
@@ -30,5 +29,7 @@ share/barrage/sounds/gunfire.wav
 share/barrage/sounds/highlight.wav
 share/barrage/sounds/scream1.wav
 share/barrage/sounds/scream2.wav
+share/doc/barrage/
+share/doc/barrage/README
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
