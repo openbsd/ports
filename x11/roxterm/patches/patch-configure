@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/10/31 07:30:06 eric Exp $
---- configure.orig	Wed Oct 24 13:21:48 2007
-+++ configure	Wed Oct 24 13:22:09 2007
-@@ -20440,7 +20440,7 @@ dbus_version=`pkg-config --modversion dbus-1`
+$OpenBSD: patch-configure,v 1.2 2008/03/30 15:15:57 ajacoutot Exp $
+--- configure.orig	Fri Mar 28 15:15:09 2008
++++ configure	Sun Mar 30 17:07:25 2008
+@@ -20834,7 +20834,7 @@ dbus_version=`pkg-config --modversion dbus-1`
  { echo "$as_me:$LINENO: result: $dbus_version" >&5
  echo "${ECHO_T}$dbus_version" >&6; }
  dbus_old_args=0
