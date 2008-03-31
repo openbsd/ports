@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2008/03/22 23:06:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2008/03/31 11:07:45 sthen Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
 DISTNAME=	silc-server-1.1.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -46,7 +47,8 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 		 --with-logsdir=/var/log/silcd \
 		 --with-silcd-config-file=${CONFDIR}/silcd.conf \
 		 --with-silcd-pid-file=/var/run/silcd.pid \
-		 --without-libtoolfix
+		 --without-libtoolfix \
+		 --enable-debug
 
 .if ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-asm
