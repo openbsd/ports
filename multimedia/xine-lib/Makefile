@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2008/03/27 01:35:02 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.31 2008/03/31 11:28:59 jakemsr Exp $
 
 COMMENT-main=		multimedia decoding library
 COMMENT-esd=		esound audio output module for xine-lib
 COMMENT-arts=		artsd audio output module for xine-lib
 COMMENT-jack=		jackd audio output module for xine-lib
 
-V=			1.1.11
+V=			1.1.11.1
 DISTNAME=		xine-lib-${V}
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}
 PKGNAME-esd=		xine-lib-esd-${V}
 PKGNAME-arts=		xine-lib-arts-${V}
 PKGNAME-jack=		xine-lib-jack-${V}
