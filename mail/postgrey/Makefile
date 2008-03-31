@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/03/31 21:26:15 jakob Exp $
 
 COMMENT=	postfix greylist daemon
 
-VERSION=	1.27
+VERSION=	1.31
 DISTNAME=	postgrey-${VERSION}
+PKGNAME=	postgrey-${VERSION}
 CATEGORIES=	mail
 
-MASTER_SITES=	http://isg.ee.ethz.ch/tools/postgrey/pub/ \
-		http://isg.ee.ethz.ch/tools/postgrey/pub/old/
-
 HOMEPAGE=	http://isg.ee.ethz.ch/tools/postgrey/
+
+MASTER_SITES=	${HOMEPAGE}/pub/ \
+		${HOMEPAGE}/pub/old/
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -25,10 +26,15 @@ NO_REGRESS=		Yes
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/p5-Net-Server \
 			::devel/p5-IO-Multiplex \
-			::databases/p5-BerkeleyDB
+			::databases/p5-BerkeleyDB \
+			::net/p5-Net-DNS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/postgrey ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/postgreyreport ${PREFIX}/sbin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postgrey/
+	${INSTALL_DATA} ${WRKSRC}/postgrey_whitelist_clients ${PREFIX}/share/examples/postgrey
+	${INSTALL_DATA} ${WRKSRC}/postgrey_whitelist_recipients ${PREFIX}/share/examples/postgrey
 	pod2man ${WRKSRC}/postgrey ${PREFIX}/man/man1/postgrey.1
 
 .include <bsd.port.mk>
