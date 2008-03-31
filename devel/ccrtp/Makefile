@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/08 05:23:20 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2008/03/31 01:10:27 jakemsr Exp $
 
 COMMENT=	implementation of the Real-time Transport Protocol
 
-DISTNAME=	ccrtp-1.5.1
+DISTNAME=	ccrtp-1.6.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ccrtp/}
 
-SHARED_LIBS=	ccrtp1	0.0	# 1.0
+SHARED_LIBS=	ccrtp1	1.0	# 2.0
 
 HOMEPAGE=	http://wiki.gnutelephony.org/index.php/GNU_ccRTP
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	crypto
 
-LIB_DEPENDS=	ccgnu2::devel/commoncpp
+LIB_DEPENDS=	ccgnu2.>=1::devel/commoncpp
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
@@ -26,7 +26,7 @@ CONFIGURE_ARGS+= ${CONFIGURED_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_DOXYGEN=no \
-		ac_cv_lib_gcrypt_gcry_cipher_open=no
+		ac_cv_path_LIBGCRYPT_CONFIG=no
 
 NO_REGRESS=	Yes
 
