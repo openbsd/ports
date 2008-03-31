@@ -1,6 +1,6 @@
-$OpenBSD: patch-vl_c,v 1.15 2008/03/31 14:26:00 todd Exp $
+$OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
 --- vl.c.orig	Tue Feb  6 00:01:54 2007
-+++ vl.c	Sun Feb 10 02:30:48 2008
++++ vl.c	Mon Mar 31 21:42:05 2008
 @@ -44,7 +44,8 @@
  #include <netdb.h>
  #ifdef _BSD
@@ -203,7 +203,15 @@ $OpenBSD: patch-vl_c,v 1.15 2008/03/31 14:26:00 todd Exp $
  
      /* temporary options */
      { "usb", 0, QEMU_OPTION_usb },
-@@ -6570,7 +6653,11 @@ int main(int argc, char **argv)
+@@ -6329,6 +6412,7 @@ static void read_passwords(void)
+     for(i = 0; i < 6; i++) {
+         bs = get_bdrv(i);
+         if (bs && bdrv_is_encrypted(bs)) {
++        		qemu_bh_poll();
+             term_printf("%s is encrypted.\n", bdrv_get_device_name(bs));
+             for(j = 0; j < 3; j++) {
+                 monitor_readline("Password: ", 
+@@ -6570,7 +6654,11 @@ int main(int argc, char **argv)
      gdbstub_port = DEFAULT_GDBSTUB_PORT;
  #endif
      snapshot = 0;
@@ -215,7 +223,7 @@ $OpenBSD: patch-vl_c,v 1.15 2008/03/31 14:26:00 todd Exp $
      kernel_filename = NULL;
      kernel_cmdline = "";
  #ifdef TARGET_PPC
-@@ -6580,14 +6667,14 @@ int main(int argc, char **argv)
+@@ -6580,14 +6668,14 @@ int main(int argc, char **argv)
  #endif
      cyls = heads = secs = 0;
      translation = BIOS_ATA_TRANSLATION_AUTO;
@@ -233,7 +241,7 @@ $OpenBSD: patch-vl_c,v 1.15 2008/03/31 14:26:00 todd Exp $
      for(i = 1; i < MAX_PARALLEL_PORTS; i++)
          parallel_devices[i][0] = '\0';
      parallel_device_index = 0;
-@@ -6940,6 +7027,9 @@ int main(int argc, char **argv)
+@@ -6940,6 +7028,9 @@ int main(int argc, char **argv)
  		break;
              case QEMU_OPTION_no_acpi:
                  acpi_enabled = 0;
