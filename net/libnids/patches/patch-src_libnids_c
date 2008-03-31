@@ -1,7 +1,20 @@
-$OpenBSD: patch-src_libnids_c,v 1.3 2008/01/16 21:02:49 kili Exp $
+$OpenBSD: patch-src_libnids_c,v 1.4 2008/03/31 11:39:48 sthen Exp $
 --- src/libnids.c.orig	Sat Jan 29 05:03:24 2005
-+++ src/libnids.c	Mon Nov  5 04:30:05 2007
-@@ -214,6 +214,7 @@ static void pcap_hand(u_char * par, struct pcap_pkthdr
++++ src/libnids.c	Fri Jan 25 19:06:09 2008
+@@ -28,6 +28,12 @@
+ #include "util.h"
+ #include "nids.h"
+ 
++#ifdef DLT_PFLOG
++#include <sys/socket.h>
++#include <net/if.h>
++#include <net/if_pflog.h>
++#endif
++
+ #ifdef __linux__
+ extern int set_all_promisc();
+ #endif
+@@ -214,6 +220,7 @@ static void pcap_hand(u_char * par, struct pcap_pkthdr
  #endif
  #ifdef DLT_IEEE802_11
      case DLT_IEEE802_11:
@@ -9,7 +22,7 @@ $OpenBSD: patch-src_libnids_c,v 1.3 2008/01/16 21:02:49 kili Exp $
  	/* I don't know why frame control is always little endian, but it 
  	 * works for tcpdump, so who am I to complain? (wam)
  	 */
-@@ -462,6 +463,7 @@ int nids_init()
+@@ -462,6 +469,7 @@ int nids_init()
      case DLT_PRISM_HEADER:
  #endif
      case DLT_IEEE802_11:
@@ -17,7 +30,7 @@ $OpenBSD: patch-src_libnids_c,v 1.3 2008/01/16 21:02:49 kili Exp $
  	/* wireless, need to calculate offset per frame */
  	break;
  #endif
-@@ -469,12 +471,20 @@ int nids_init()
+@@ -469,22 +477,46 @@ int nids_init()
      case DLT_NULL:
          linkoffset = 4;
          break;
@@ -33,9 +46,36 @@ $OpenBSD: patch-src_libnids_c,v 1.3 2008/01/16 21:02:49 kili Exp $
  	break;
      case DLT_PPP:
  	linkoffset = 4;
-+	break;
+ 	break;
++#ifdef DLT_PPP_ETHER
 +    case DLT_PPP_ETHER:
 +	linkoffset = 8;
- 	break;
++	break;
++#endif
  	/* Token Ring Support by vacuum@technotronic.com, thanks dugsong! */
      case DLT_IEEE802:
+ 	linkoffset = 22;
+ 	break;
+-
+     case DLT_RAW:
+     case DLT_SLIP:
+ 	linkoffset = 0;
+ 	break;
++#ifdef DLT_OLD_PFLOG
++    case DLT_OLD_PFLOG:
++	linkoffset = 28;
++	break;
++#endif
++#ifdef DLT_PFLOG
++    case DLT_PFLOG:
++	linkoffset = PFLOG_HDRLEN;
++	break;
++#endif
++#ifdef DLT_PFSYNC
++    case DLT_PFSYNC:
++	linkoffset = 4;
++	break;
++#endif
+ #define DLT_LINUX_SLL   113
+     case DLT_LINUX_SLL:
+ 	linkoffset = 16;

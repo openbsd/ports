@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2008/01/16 21:02:49 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2008/03/31 11:39:48 sthen Exp $
 
 COMMENT=	network monitoring library with TCP/IP reassembly
 
 DISTNAME=	libnids-1.20
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libnids/}
