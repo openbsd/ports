@@ -1,10 +1,21 @@
-$OpenBSD: patch-qemu-doc_texi,v 1.1 2008/01/21 20:40:20 sthen Exp $
---- qemu-doc.texi.orig	Mon Jan 21 14:11:49 2008
-+++ qemu-doc.texi	Mon Jan 21 14:11:51 2008
-@@ -513,6 +513,16 @@ Use @var{file} as initial ram disk.
+$OpenBSD: patch-qemu-doc_texi,v 1.2 2008/03/31 14:26:00 todd Exp $
+--- qemu-doc.texi.orig	Tue Feb  6 00:01:54 2007
++++ qemu-doc.texi	Sun Feb 10 02:32:12 2008
+@@ -461,7 +461,7 @@ or @file{C:\WINNT\SYSTEM32\DRIVERS\ETC\LMHOSTS} (Windo
+ Then @file{dir} can be accessed in @file{\\smbserver\qemu}.
  
- @end table
+ Note that a SAMBA server must be installed on the host OS in
+-@file{/usr/sbin/smbd}. QEMU was tested successfully with smbd version
++@file{!!LOCALBASE!!/libexec/smbd}. QEMU was tested successfully with smbd version
+ 2.2.7a from the Red Hat 9 and version 3.0.10-1.fc3 from Fedora Core 3.
  
+ @item -redir [tcp|udp]:host-port:[guest-host]:guest-port
+@@ -511,6 +511,16 @@ Use @var{cmdline} as kernel command line
+ @item -initrd file
+ Use @var{file} as initial ram disk.
+ 
++@end table
++
 +Kernel QEMU options:
 +@table @option
 +
@@ -13,8 +24,6 @@ $OpenBSD: patch-qemu-doc_texi,v 1.1 2008/01/21 20:40:20 sthen Exp $
 +
 +@item -no-kqemu
 +Disable KQEMU kernel module usage.
-+@end table
-+
- Debug/Expert options:
- @table @option
+ @end table
  
+ Debug/Expert options:

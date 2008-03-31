@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2008/03/31 06:49:27 todd Exp $
+# $OpenBSD: Makefile,v 1.27 2008/03/31 14:25:59 todd Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 arm i386 powerpc
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		amd64 arm i386 powerpc
 COMMENT=		multi system emulator
 
 DISTNAME=		qemu-0.9.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://fabrice.bellard.free.fr/qemu/
@@ -50,6 +50,9 @@ LIB_DEPENDS=    	SDL::devel/sdl \
 USE_X11=		Yes
 WANTLIB+=		X11 Xext pthread usbhid
 .endif
+
+pre-configure:
+	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g;" ${WRKSRC}/vl.c ${WRKSRC}/qemu-doc.texi
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu

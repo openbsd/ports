@@ -1,6 +1,6 @@
-$OpenBSD: patch-vl_c,v 1.14 2007/05/01 12:55:14 todd Exp $
---- vl.c.orig	Mon Feb  5 17:01:54 2007
-+++ vl.c	Sat Apr 21 19:48:30 2007
+$OpenBSD: patch-vl_c,v 1.15 2008/03/31 14:26:00 todd Exp $
+--- vl.c.orig	Tue Feb  6 00:01:54 2007
++++ vl.c	Sun Feb 10 02:30:48 2008
 @@ -44,7 +44,8 @@
  #include <netdb.h>
  #ifdef _BSD
@@ -11,6 +11,15 @@ $OpenBSD: patch-vl_c,v 1.14 2007/05/01 12:55:14 todd Exp $
  #include <libutil.h>
  #endif
  #else
+@@ -92,7 +93,7 @@
+ #ifdef __sun__
+ #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
+ #else
+-#define SMBD_COMMAND "/usr/sbin/smbd"
++#define SMBD_COMMAND "!!LOCALBASE!!/libexec/smbd"
+ #endif
+ 
+ //#define DEBUG_UNUSED_IOPORT
 @@ -168,6 +169,7 @@ const char *vnc_display;
  int acpi_enabled = 1;
  int fd_bootchk = 1;
