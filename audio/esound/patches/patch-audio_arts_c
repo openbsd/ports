@@ -1,0 +1,89 @@
+$OpenBSD: patch-audio_arts_c,v 1.1 2008/03/31 01:05:54 jakemsr Exp $
+--- audio_arts.c.orig	Thu Apr 19 07:43:59 2007
++++ audio_arts.c	Sun Mar  9 22:03:23 2008
+@@ -19,6 +19,7 @@
+  *
+  */
+ 
++#if 0
+ #include <dlfcn.h>
+ 
+ enum arts_parameter_t_enum { ARTS_P_BUFFER_TIME = 2 };
+@@ -37,14 +38,17 @@ static int (*arts_stream_set)(arts_stream_t sst, arts_
+ 
+ static arts_stream_t (*arts_play_stream)(int rrate, int bbits, int cch, const char *nn);
+ static arts_stream_t (*arts_record_stream)(int rrate, int bbits, int cch, const char *nn);
++#endif
+ 
++#include <artsc/artsc.h>
++
+ static arts_stream_t stream;
+ static int err_arts = -1;
+ static int arts_exit = 1;
+ 
+ static int arts()
+ {
+-
++#if 0
+     handle = dlopen ("libartsc.so", RTLD_LAZY);
+ 
+     if (!handle) {
+@@ -61,12 +65,13 @@ static int arts()
+     arts_record_stream = dlsym(handle, "arts_record_stream");
+     arts_close_stream = dlsym(handle, "arts_close_stream");
+     arts_stream_set = dlsym(handle, "arts_stream_set");
++#endif
+ 
+     err_arts = arts_init();
+ 
+     if (err_arts < 0) {
+ 	arts_exit = 0;
+-        dlclose(handle);
++        // dlclose(handle);
+         return err_arts;
+     }
+     
+@@ -83,6 +88,8 @@ int arts_esd_audio_open()
+     int channels;
+     int bits;
+ 
++    err_arts = arts_init();
++
+     channels = ( ( ( esd_audio_format & ESD_MASK_CHAN) == ESD_STEREO )
+         	? /* stereo */ 2 : /* mono */ 1 );
+     bits = ( (esd_audio_format & ESD_MASK_BITS) == ESD_BITS16 )
+@@ -105,7 +112,7 @@ void arts_esd_audio_close()
+     arts_close_stream(stream);
+     arts_exit = 0;
+     arts_free();
+-    dlclose(handle);
++    // dlclose(handle);
+     return;
+ }
+ 	
+@@ -131,11 +138,13 @@ void arts_esd_audio_flush()
+ 
+ static void impl_exit()
+ {
++#if 0
+     if ((arts_exit > 0) && (handle)) {
+ 	if (err_arts >= 0) 
+ 	    arts_free();
+ 	dlclose(handle);
+     }
++#endif
+ }
+ 
+ void artschk() 
+@@ -148,6 +157,10 @@ void artschk() 
+ 	impl_esd_audio_flush = arts_esd_audio_flush;
+ 	impl_esd_audio_write = arts_esd_audio_write;
+ 	impl_esd_audio_read = arts_esd_audio_read;
++	/* close connection.  esd carelessly close()s 0-128, which will likely
++	   include our connection and leave us messed up.  open it again when
++	   ready to send data. */
++	arts_free();
+     }
+-    atexit(impl_exit);
++    // atexit(impl_exit);
+ }
