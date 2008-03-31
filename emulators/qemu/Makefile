@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/03/31 20:36:35 todd Exp $
+# $OpenBSD: Makefile,v 1.30 2008/03/31 20:59:21 okan Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 arm i386 powerpc
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		amd64 arm i386 powerpc
 COMMENT=		multi system emulator
 
 DISTNAME=		qemu-0.9.0
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://fabrice.bellard.free.fr/qemu/
@@ -32,12 +32,10 @@ REGRESS_TARGET=		test test2
 PATCH_LIST=     patch-* misc-*
 .endif
 
-FLAVORS=		no_x11 kqemu
+FLAVORS=		no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mkqemu}
-CONFIGURE_ENV+= USE_KQEMU=yes
-.endif
+CONFIGURE_ENV+=		USE_KQEMU=yes
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--disable-gfx-check \
