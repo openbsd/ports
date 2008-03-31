@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2008/01/16 21:04:11 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2008/03/31 11:40:53 sthen Exp $
 
 DISTNAME=	scanlogd-2.2.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	security
 COMMENT=	TCP port scan detection tool
 
