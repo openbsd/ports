@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/29 04:23:00 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/01 22:12:16 bernd Exp $
 bin/rubyforge
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -49,24 +49,23 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Client.src/M000040.htm
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Client.src/M000041.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.src/M000067.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.src/M000068.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.src/M000069.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.src/M000070.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.src/M000071.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.src/M000072.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.src/M000073.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DebugSocket.src/M000074.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP.src/M000074.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP.src/M000075.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP.src/M000076.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/BadResponseError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Error.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/M000077.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/M000078.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/M000079.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/M000080.html
@@ -90,16 +89,16 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/M0000
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/M000098.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/M000099.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/M000100.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message.src/M000101.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Body.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Body.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Body.src/M000101.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Body.src/M000102.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Body.src/M000103.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Body.src/M000104.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Body.src/M000105.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Body.src/M000106.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.src/M000106.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.src/M000107.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.src/M000108.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.src/M000109.html
@@ -111,9 +110,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.s
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.src/M000115.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.src/M000116.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.src/M000117.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Message/Headers.src/M000118.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Status.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Status.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Status.src/M000076.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTP/Status.src/M000077.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/HTTPAccess2.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RubyForge.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RubyForge.src/
@@ -128,9 +128,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RubyForge.src/M000049.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RubyForge.src/M000050.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RubyForge.src/M000051.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RubyForge.src/M000052.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RubyForge.src/M000053.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/M000053.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/M000054.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/M000055.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/M000056.html
@@ -144,8 +144,12 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/M000
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/M000064.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/M000065.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/M000066.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SSLSocketWrap.src/M000067.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/History_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/Manifest_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README_txt.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/http-access2/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/http-access2/cookie_rb.html
@@ -278,6 +282,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RubyForge/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RubyForge/add_file-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RubyForge/add_release-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RubyForge/cdesc-RubyForge.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RubyForge/client-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RubyForge/create_package-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RubyForge/delete_package-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RubyForge/login-i.yaml
@@ -323,7 +328,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/WebAgent/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/WebAgent/cdesc-WebAgent.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/.cvsignore
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/History.txt
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Manifest.txt
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README.txt
