@@ -1,12 +1,29 @@
-$OpenBSD: patch-configure,v 1.1 2005/02/12 19:24:22 alek Exp $
+$OpenBSD: patch-configure,v 1.2 2008/04/01 09:14:31 ajacoutot Exp $
 --- configure.orig	Sat Feb 12 19:09:25 2005
 +++ configure	Sat Feb 12 19:09:27 2005
-@@ -7275,7 +7275,7 @@ if test "${ac_cv_lib_SDL_image_IMG_LoadP
+@@ -7688,13 +7688,13 @@ fi
+ 
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
--LIBS="-lSDL_image $SDL_CFLAGS $LIBS"
-+LIBS="-lSDL_image $SDL_CFLAGS $SDL_LIBS $LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
+ /* confdefs.h.  */
+ _ACEOF
+@@ -7754,7 +7754,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 

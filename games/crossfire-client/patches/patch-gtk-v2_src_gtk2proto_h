@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk-v2_src_gtk2proto_h,v 1.1 2008/04/01 09:14:31 ajacoutot Exp $
+--- gtk-v2/src/gtk2proto.h.orig	Mon Mar 31 20:58:22 2008
++++ gtk-v2/src/gtk2proto.h	Mon Mar 31 20:58:26 2008
+@@ -110,7 +110,7 @@ extern void menu_quit_character(GtkMenuItem *menuitem,
+ extern void enable_menu_items(int enable);
+ /* metaserver.c */
+ extern gboolean metaserver_selection_func(GtkTreeSelection *selection, GtkTreeModel *model, GtkTreePath *path, gboolean path_currently_selected, gpointer userdata);
+-extern void get_metaserver(void);
++extern char *get_metaserver(void);
+ extern void on_metaserver_select_clicked(GtkButton *button, gpointer user_data);
+ extern void on_treeview_metaserver_row_activated(GtkTreeView *treeview, GtkTreePath *path, GtkTreeViewColumn *column, gpointer user_data);
+ extern void on_metaserver_text_entry_activate(GtkEntry *entry, gpointer user_data);

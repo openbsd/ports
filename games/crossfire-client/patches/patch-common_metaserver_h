@@ -1,0 +1,11 @@
+$OpenBSD: patch-common_metaserver_h,v 1.1 2008/04/01 09:14:31 ajacoutot Exp $
+--- common/metaserver.h.orig	Mon Mar 31 20:58:50 2008
++++ common/metaserver.h	Mon Mar 31 20:58:56 2008
+@@ -24,6 +24,7 @@
+     The author can be reached via e-mail to crossfire-devel@real-time.com
+ */
+ 
++#include <pthread.h>
+ 
+ /* Arbitrary size.  At some point, we would need to cut this off simply
+  * for display/selection reasons.
