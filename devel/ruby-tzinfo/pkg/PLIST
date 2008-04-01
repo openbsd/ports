@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/25 08:48:16 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/01 22:06:11 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -356,6 +356,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Africa/Abid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Africa/Accra.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Africa/Addis_Ababa.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Africa/Algiers.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Africa/Asmara.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Africa/Asmera.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Africa/Bamako.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Africa/Bangui.rb
@@ -420,6 +421,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Arg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/Mendoza.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/Rio_Gallegos.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/San_Juan.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/San_Luis.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/Tucuman.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/Ushuaia.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Aruba.rb
@@ -478,8 +480,10 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Ind
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Indiana/Knox.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Indiana/Marengo.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Indiana/Petersburg.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Indiana/Tell_City.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Indiana/Vevay.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Indiana/Vincennes.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Indiana/Winamac.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Indianapolis.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Inuvik.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Iqaluit.rb
@@ -497,6 +501,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Lou
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Maceio.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Managua.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Manaus.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Marigot.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Martinique.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Mazatlan.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Mendoza.rb
@@ -530,6 +535,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Rai
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Rankin_Inlet.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Recife.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Regina.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Resolute.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Rio_Branco.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Rosario.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Santiago.rb
@@ -537,6 +543,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/San
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Sao_Paulo.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Scoresbysund.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Shiprock.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/St_Barthelemy.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/St_Johns.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/St_Kitts.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/St_Lucia.rb
@@ -597,6 +604,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Dubai.
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Dushanbe.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Gaza.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Harbin.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Ho_Chi_Minh.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Hong_Kong.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Hovd.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Irkutsk.rb
@@ -609,6 +617,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kamcha
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Karachi.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kashgar.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Katmandu.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kolkata.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Krasnoyarsk.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kuala_Lumpur.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kuching.rb
@@ -662,6 +671,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Atlantic/Be
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Atlantic/Canary.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Atlantic/Cape_Verde.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Atlantic/Faeroe.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Atlantic/Faroe.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Atlantic/Jan_Mayen.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Atlantic/Madeira.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Atlantic/Reykjavik.rb
@@ -676,6 +686,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Australia/B
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Australia/Canberra.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Australia/Currie.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Australia/Darwin.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Australia/Eucla.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Australia/Hobart.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Australia/LHI.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Australia/Lindeman.rb
@@ -966,4 +977,3 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_timezone_transition_info.r
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_timezone_utc.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/ts_all.rb
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec
-share/nls/pl_PL.ISO_8859-2/

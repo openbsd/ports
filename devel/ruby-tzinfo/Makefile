@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/20 12:48:05 msf Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.4 2008/04/01 22:06:11 bernd Exp $
 
 COMMENT=		Ruby timezone library
 
-VERSION=		0.3.3
+VERSION=		0.3.8
 DISTNAME=		tzinfo-${VERSION}
 PKGNAME=		ruby-tzinfo-${VERSION}
 CATEGORIES=		devel
@@ -24,5 +22,7 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
 
 NO_REGRESS=		Yes
+
+PKG_ARCH=		*
 
 .include <bsd.port.mk>
