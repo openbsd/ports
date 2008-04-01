@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.329 2008/03/19 14:11:42 laurent Exp $
+# $OpenBSD: Makefile,v 1.330 2008/04/01 07:49:43 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -265,6 +265,7 @@
      SUBDIR += xcursor-themes
      SUBDIR += xcursorgen
      SUBDIR += xdaliclock
+     SUBDIR += xdesktopwaves
      SUBDIR += xdmchoose
      SUBDIR += xdrawchem
      SUBDIR += xdtm
