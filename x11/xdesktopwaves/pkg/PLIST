@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/01 07:47:39 ajacoutot Exp $
+bin/xdesktopwaves
+@man man/man1/xdesktopwaves.1
