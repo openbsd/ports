@@ -1,6 +1,42 @@
-$OpenBSD: patch-configure,v 1.14 2007/07/18 17:29:46 naddy Exp $
---- configure.orig	Thu Jul 12 22:55:10 2007
-+++ configure	Thu Jul 12 22:55:30 2007
+$OpenBSD: patch-configure,v 1.15 2008/04/01 17:43:04 kurt Exp $
+--- configure.orig	Thu May 31 08:17:05 2007
++++ configure	Fri Feb  8 08:37:16 2008
+@@ -7893,7 +7893,7 @@ if test "${ac_cv_lib_gc_GC_init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgc  $LIBS"
++LIBS="-lgc -pthread $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -7949,7 +7949,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_gc_GC_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_gc_GC_init" >&6; }
+ if test $ac_cv_lib_gc_GC_init = yes; then
+-  LIBGC="-lgc"
++  LIBGC="-lgc -pthread"
+ fi
+ 
+  if test x"$ac_cv_lib_gc_GC_init" = xno; then
+@@ -7970,7 +7970,7 @@ if test "${ac_cv_lib_gc_GC_init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgc  $LIBS"
++LIBS="-lgc -pthread $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -8026,7 +8026,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_gc_GC_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_gc_GC_init" >&6; }
+ if test $ac_cv_lib_gc_GC_init = yes; then
+-  gclibdir="$dir/lib"; LIBGC="-L$dir/lib -lgc"; break
++  gclibdir="$dir/lib"; LIBGC="-L$dir/lib -lgc -pthread"; break
+ fi
+ 
+       LDFLAGS="$ldflags"
 @@ -11565,7 +11565,7 @@ MSGMERGE!$MSGMERGE$ac_delim
  LIBICONV!$LIBICONV$ac_delim
  LTLIBICONV!$LTLIBICONV$ac_delim

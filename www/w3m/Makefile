@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.68 2008/04/01 17:43:04 kurt Exp $
 
 COMMENT=	pager/text-based web browser
 
 DISTNAME=	w3m-0.5.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
@@ -15,8 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	gc.>=2::devel/boehm-gc
-WANTLIB=	c crypto curses m ssl z
+LIB_DEPENDS=	gc.>=3::devel/boehm-gc
+WANTLIB=	c crypto curses m pthread ssl z
 
 FLAVORS=	image japanese
 FLAVOR?=
