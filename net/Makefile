@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.513 2008/04/01 12:52:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.514 2008/04/01 13:53:13 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -312,6 +312,7 @@
      SUBDIR += pure-ftpd,postgresql
      SUBDIR += putty
      SUBDIR += py-IP
+     SUBDIR += py-adns
      SUBDIR += py-curl
      SUBDIR += py-dns
      SUBDIR += py-dnspython
