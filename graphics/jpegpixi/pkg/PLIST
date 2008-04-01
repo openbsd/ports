@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/01 20:23:07 kili Exp $
+bin/jpeghotp
+bin/jpegpixi
+man/de/
+man/de/man1/
+@man man/de/man1/jpeghotp.1
+@man man/de/man1/jpegpixi.1
+man/fi/
+man/fi/man1/
+@man man/fi/man1/jpeghotp.1
+@man man/fi/man1/jpegpixi.1
+man/fr/
+man/fr/man1/
+@man man/fr/man1/jpeghotp.1
+@man man/fr/man1/jpegpixi.1
+@man man/man1/jpeghotp.1
+@man man/man1/jpegpixi.1

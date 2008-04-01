@@ -1,0 +1,6 @@
+"Jpegpixi" is short for "JPEG pixel interpolator".  The intent of
+the program is to interpolate pixels in JFIF images (commonly
+referred to as "JPEG images").  This is useful to correct images
+from a digital camera with CCD defects. For example, if one pixel
+is always bright green, this pixel can be interpolated away with
+jpegpixi.
