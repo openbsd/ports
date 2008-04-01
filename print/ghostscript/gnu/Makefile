@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2008/04/01 20:37:00 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
-VERSION=	8.60
+VERSION=	8.62
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
-SHARED_LIBS=	gs	10.0
+SHARED_LIBS=	gs	11.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ghostscript/}
 
@@ -97,8 +97,11 @@ WANTLIB+=	Xcomposite Xcursor Xdamage Xau Xdmcp Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0
-MAKE_FLAGS+=	SOC_CFLAGS="$$(pkg-config gtk+-2.0 --cflags)" \
-		SOC_LIBS="$$(pkg-config gtk+-2.0 --libs)"
+MAKE_FLAGS+=	SOC_CFLAGS="$$(pkg-config gtk+-2.0 --cflags)"
+# This one is used in the addition of SOC_LIBS to MAKE_FLAGS later.
+# We need this stunt to get gsc and gsx linked correctly when the cups
+# flavor is enabled.
+SOC_LIBS=	$$(pkg-config gtk+-2.0 --libs)
 ALL_TARGET=	so
 INSTALL_TARGET=	install install-so
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -113,10 +116,19 @@ DEVICES+=	${X11_DEVICES}
 
 .if ${FLAVOR:L:Mcups}
 LIB_DEPENDS+=	cups.>=3,cupsimage.>=2::print/cups
-EXTRALIBS+=	$$(cups-config --image --libs)
+CUPSLIBS=	$$(cups-config --image --libs)
+EXTRALIBS+=	${CUPSLIBS}
+SOC_LIBS+=	${CUPSLIBS}
 DEVICES+=	${CUPS_DEVICES}
 WANTLIB+=	crypto pthread ssl tiff
+MAKE_FLAGS+=	CUPSCFLAGS="$$(cups-config --cflags)" \
+		CUPSSERVERBIN="$$(cups-config --serverbin)" \
+		CUPSSERVERROOT="$$(cups-config --serverroot)" \
+		CUPSDATA="$$(cups-config --datadir)"
 .endif
+
+SOC_LIBS?=
+MAKE_FLAGS+=	SOC_LIBS="${SOC_LIBS}"
 
 NO_REGRESS=	Yes
 
@@ -258,7 +270,7 @@ DEVICES+=	tiff12nc tiff24nc tiff32nc tiffcrle tiffgray tifflzw \
 DEVICES+=	pcx16 pcx24b pcx256 pcx2up pcxcmyk pcxgray pcxmono
 
 # PBM_DEVS
-DEVICES+=	pam pbm pbmraw pgm pgmraw pgnm pgnmraw pkm pkmraw \
+DEVICES+=	pam pamcmyk32 pbm pbmraw pgm pgmraw pgnm pgnmraw pkm pkmraw \
 		pksm pksmraw pnm pnmraw ppm ppmraw
 
 # PS_DEVS

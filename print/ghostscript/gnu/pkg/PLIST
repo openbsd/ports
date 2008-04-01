@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/11/19 20:06:56 kili Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/04/01 20:37:01 kili Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 bin/bdftops
 bin/dumphint
@@ -295,11 +295,19 @@ share/ghostscript/${VERSION}/Resource/CMap/UniJIS-UTF32-H
 share/ghostscript/${VERSION}/Resource/CMap/UniJIS-UTF32-V
 share/ghostscript/${VERSION}/Resource/CMap/UniJIS-UTF8-H
 share/ghostscript/${VERSION}/Resource/CMap/UniJIS-UTF8-V
+share/ghostscript/${VERSION}/Resource/CMap/UniJIS2004-UTF16-H
+share/ghostscript/${VERSION}/Resource/CMap/UniJIS2004-UTF16-V
+share/ghostscript/${VERSION}/Resource/CMap/UniJIS2004-UTF32-H
+share/ghostscript/${VERSION}/Resource/CMap/UniJIS2004-UTF32-V
+share/ghostscript/${VERSION}/Resource/CMap/UniJIS2004-UTF8-H
+share/ghostscript/${VERSION}/Resource/CMap/UniJIS2004-UTF8-V
 share/ghostscript/${VERSION}/Resource/CMap/UniJISPro-UCS2-HW-V
 share/ghostscript/${VERSION}/Resource/CMap/UniJISPro-UCS2-V
 share/ghostscript/${VERSION}/Resource/CMap/UniJISPro-UTF8-V
 share/ghostscript/${VERSION}/Resource/CMap/UniJISX0213-UTF32-H
 share/ghostscript/${VERSION}/Resource/CMap/UniJISX0213-UTF32-V
+share/ghostscript/${VERSION}/Resource/CMap/UniJISX02132004-UTF32-H
+share/ghostscript/${VERSION}/Resource/CMap/UniJISX02132004-UTF32-V
 share/ghostscript/${VERSION}/Resource/CMap/UniKS-UCS2-H
 share/ghostscript/${VERSION}/Resource/CMap/UniKS-UCS2-V
 share/ghostscript/${VERSION}/Resource/CMap/UniKS-UTF16-H
@@ -325,6 +333,42 @@ share/ghostscript/${VERSION}/Resource/Decoding/StandardEncoding
 share/ghostscript/${VERSION}/Resource/Decoding/Unicode
 share/ghostscript/${VERSION}/Resource/Encoding/
 share/ghostscript/${VERSION}/Resource/Encoding/Wingdings
+share/ghostscript/${VERSION}/Resource/Font/
+share/ghostscript/${VERSION}/Resource/Font/CenturySchL-Bold
+share/ghostscript/${VERSION}/Resource/Font/CenturySchL-BoldItal
+share/ghostscript/${VERSION}/Resource/Font/CenturySchL-Ital
+share/ghostscript/${VERSION}/Resource/Font/CenturySchL-Roma
+share/ghostscript/${VERSION}/Resource/Font/Dingbats
+share/ghostscript/${VERSION}/Resource/Font/NimbusMonL-Bold
+share/ghostscript/${VERSION}/Resource/Font/NimbusMonL-BoldObli
+share/ghostscript/${VERSION}/Resource/Font/NimbusMonL-Regu
+share/ghostscript/${VERSION}/Resource/Font/NimbusMonL-ReguObli
+share/ghostscript/${VERSION}/Resource/Font/NimbusRomNo9L-Medi
+share/ghostscript/${VERSION}/Resource/Font/NimbusRomNo9L-MediItal
+share/ghostscript/${VERSION}/Resource/Font/NimbusRomNo9L-Regu
+share/ghostscript/${VERSION}/Resource/Font/NimbusRomNo9L-ReguItal
+share/ghostscript/${VERSION}/Resource/Font/NimbusSanL-Bold
+share/ghostscript/${VERSION}/Resource/Font/NimbusSanL-BoldCond
+share/ghostscript/${VERSION}/Resource/Font/NimbusSanL-BoldCondItal
+share/ghostscript/${VERSION}/Resource/Font/NimbusSanL-BoldItal
+share/ghostscript/${VERSION}/Resource/Font/NimbusSanL-Regu
+share/ghostscript/${VERSION}/Resource/Font/NimbusSanL-ReguCond
+share/ghostscript/${VERSION}/Resource/Font/NimbusSanL-ReguCondItal
+share/ghostscript/${VERSION}/Resource/Font/NimbusSanL-ReguItal
+share/ghostscript/${VERSION}/Resource/Font/StandardSymL
+share/ghostscript/${VERSION}/Resource/Font/URWBookmanL-DemiBold
+share/ghostscript/${VERSION}/Resource/Font/URWBookmanL-DemiBoldItal
+share/ghostscript/${VERSION}/Resource/Font/URWBookmanL-Ligh
+share/ghostscript/${VERSION}/Resource/Font/URWBookmanL-LighItal
+share/ghostscript/${VERSION}/Resource/Font/URWChanceryL-MediItal
+share/ghostscript/${VERSION}/Resource/Font/URWGothicL-Book
+share/ghostscript/${VERSION}/Resource/Font/URWGothicL-BookObli
+share/ghostscript/${VERSION}/Resource/Font/URWGothicL-Demi
+share/ghostscript/${VERSION}/Resource/Font/URWGothicL-DemiObli
+share/ghostscript/${VERSION}/Resource/Font/URWPalladioL-Bold
+share/ghostscript/${VERSION}/Resource/Font/URWPalladioL-BoldItal
+share/ghostscript/${VERSION}/Resource/Font/URWPalladioL-Ital
+share/ghostscript/${VERSION}/Resource/Font/URWPalladioL-Roma
 share/ghostscript/${VERSION}/doc/
 share/ghostscript/${VERSION}/doc/API.htm
 share/ghostscript/${VERSION}/doc/C-style.htm
@@ -386,8 +430,6 @@ share/ghostscript/${VERSION}/examples/tiger.eps
 share/ghostscript/${VERSION}/examples/vasarely.ps
 share/ghostscript/${VERSION}/examples/waterfal.ps
 share/ghostscript/${VERSION}/lib/
-share/ghostscript/${VERSION}/lib/FCOfontmap-PCLPS2
-share/ghostscript/${VERSION}/lib/Fontmap
 share/ghostscript/${VERSION}/lib/Fontmap.GS
 share/ghostscript/${VERSION}/lib/PDFA_def.ps
 share/ghostscript/${VERSION}/lib/PDFX_def.ps
@@ -425,7 +467,6 @@ share/ghostscript/${VERSION}/lib/cdj550.upp
 share/ghostscript/${VERSION}/lib/cdj690.upp
 share/ghostscript/${VERSION}/lib/cdj690ec.upp
 share/ghostscript/${VERSION}/lib/cid2code.ps
-share/ghostscript/${VERSION}/lib/cidfmap
 share/ghostscript/${VERSION}/lib/decrypt.ps
 share/ghostscript/${VERSION}/lib/dnj750c.upp
 share/ghostscript/${VERSION}/lib/dnj750m.upp
@@ -537,6 +578,7 @@ share/ghostscript/${VERSION}/lib/packfile.ps
 share/ghostscript/${VERSION}/lib/pcharstr.ps
 share/ghostscript/${VERSION}/lib/pdf2dsc.ps
 share/ghostscript/${VERSION}/lib/pdf_base.ps
+share/ghostscript/${VERSION}/lib/pdf_cslayer.ps
 share/ghostscript/${VERSION}/lib/pdf_draw.ps
 share/ghostscript/${VERSION}/lib/pdf_font.ps
 share/ghostscript/${VERSION}/lib/pdf_main.ps
@@ -612,7 +654,6 @@ share/ghostscript/${VERSION}/lib/viewps2a.ps
 share/ghostscript/${VERSION}/lib/wftopfa.ps
 share/ghostscript/${VERSION}/lib/winmaps.ps
 share/ghostscript/${VERSION}/lib/wrfont.ps
-share/ghostscript/${VERSION}/lib/xlatmap
 share/ghostscript/${VERSION}/lib/zeroline.ps
 %%cups%%
 %%gtk%%

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_devs_mak,v 1.1 2007/11/19 20:06:56 kili Exp $
---- src/devs.mak.orig	Thu Jun  7 00:03:27 2007
-+++ src/devs.mak	Thu Oct 25 14:25:34 2007
-@@ -659,14 +659,13 @@ $(GLOBJ)gdevlj56.$(OBJ) : $(GLSRC)gdevlj56.c $(PDEVH) 
+$OpenBSD: patch-src_devs_mak,v 1.2 2008/04/01 20:37:01 kili Exp $
+--- src/devs.mak.orig	Thu Jan 17 14:37:19 2008
++++ src/devs.mak	Sat Mar 22 22:28:22 2008
+@@ -653,14 +653,13 @@ $(GLOBJ)gdevlj56.$(OBJ) : $(GLSRC)gdevlj56.c $(PDEVH) 
  
  ### -------------------- The ijs client ----------------- ###
  

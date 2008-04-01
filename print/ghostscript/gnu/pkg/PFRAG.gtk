@@ -1,4 +1,8 @@
-@comment $OpenBSD: PFRAG.gtk,v 1.5 2007/11/19 20:06:56 kili Exp $
+@comment $OpenBSD: PFRAG.gtk,v 1.6 2008/04/01 20:37:01 kili Exp $
 bin/gsc
 bin/gsx
+include/ghostscript/
+include/ghostscript/gdevdsp.h
+include/ghostscript/iapi.h
+include/ghostscript/ierrors.h
 @lib lib/libgs.so.${LIBgs_VERSION}
