@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.35 2007/09/16 02:52:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.36 2008/04/01 17:41:13 kurt Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	garbage collection and memory leak detection for C and C++
 
 VERSION=	7.0
 DISTNAME=	gc-${VERSION}
-PKGNAME=	boehm-gc-${VERSION}
+PKGNAME=	boehm-gc-${VERSION}p0
 
-SHARED_LIBS +=	gc	2.0	# .1.2
-SHARED_LIBS +=  cord	1.3	# .1.3
+SHARED_LIBS +=	gc	3.0	# .1.2
+SHARED_LIBS +=  cord	2.3	# .1.3
 
 CATEGORIES=	devel
 
@@ -18,7 +18,8 @@ HOMEPAGE=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
-NOT_FOR_ARCHS=	hppa powerpc vax
+# currently works only on most ELF archs
+NOT_FOR_ARCHS=	m68k m88k vax mips64
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -31,17 +32,14 @@ MAKE_ENV=	CP="cp" \
 
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION= 2.61
+CONFIGURE_STYLE= autoconf no-autoheader
 
-CONFIGURE_ARGS= ${CONFIGURE_SHARED}
-
-#XXX: support not finished yet
-#	--enable-threads=pthreads
+CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
+		--enable-threads=pthreads
 
 pre-configure:
-	@mv ${WRKSRC}/doc/gc.man ${WRKSRC}/doc/gc.man.in
-	@sed -e "s,@PREFIX@,${PREFIX},g" ${WRKSRC}/doc/gc.man.in > \
-		${WRKSRC}/doc/gc.man
+	@perl -pi -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/doc/gc.man
 
 aliases=	malloc malloc_atomic free realloc enable_incremental \
 		register_finalizer malloc_ignore_off_page \

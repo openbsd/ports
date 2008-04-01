@@ -1,0 +1,110 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2008/04/01 17:41:13 kurt Exp $
+--- Makefile.in.orig	Thu Jun 28 17:12:36 2007
++++ Makefile.in	Thu Feb  7 09:35:26 2008
+@@ -103,11 +103,12 @@ check_PROGRAMS = gctest$(EXEEXT) leaktest$(EXEEXT) mid
+ @PTHREADS_TRUE@am__append_1 = pthread_support.c pthread_stop_world.c
+ @DARWIN_THREADS_TRUE@am__append_2 = darwin_stop_world.c
+ @WIN32_THREADS_TRUE@am__append_3 = win32_threads.c
++@OPENBSD_THREADS_TRUE@am__append_4 = openbsd_stop_world.c
+ 
+ # C++ Interface
+ # -------------
+-@CPLUSPLUS_TRUE@am__append_4 = libgccpp.la
+-@CPLUSPLUS_TRUE@am__append_5 = include/gc_cpp.h include/gc_allocator.h
++@CPLUSPLUS_TRUE@am__append_5 = libgccpp.la
++@CPLUSPLUS_TRUE@am__append_6 = include/gc_cpp.h include/gc_allocator.h
+ DIST_COMMON = $(am__configure_deps) $(am__pkginclude_HEADERS_DIST) \
+ 	$(dist_noinst_HEADERS) $(dist_noinst_SCRIPTS) \
+ 	$(dist_pkgconfig_DATA) $(dist_pkgdata_DATA) $(include_HEADERS) \
+@@ -122,10 +123,10 @@ DIST_COMMON = $(am__configure_deps) $(am__pkginclude_H
+ #check_PROGRAMS += tracetest
+ #tracetest_SOURCES = tests/trace_test.c
+ #tracetest_LDADD = $(test_ldadd)
+-@THREADS_TRUE@am__append_6 = threadleaktest$(EXEEXT)
+-@THREADS_TRUE@am__append_7 = threadleaktest
+-@CPLUSPLUS_TRUE@am__append_8 = test_cpp$(EXEEXT)
+-@CPLUSPLUS_TRUE@am__append_9 = test_cpp
++@THREADS_TRUE@am__append_7 = threadleaktest$(EXEEXT)
++@THREADS_TRUE@am__append_8 = threadleaktest
++@CPLUSPLUS_TRUE@am__append_9 = test_cpp$(EXEEXT)
++@CPLUSPLUS_TRUE@am__append_10 = test_cpp
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
+@@ -159,18 +160,20 @@ am__libgc_la_SOURCES_DIST = allchblk.c alloc.c blackls
+ 	new_hblk.c obj_map.c os_dep.c pcr_interface.c ptr_chck.c \
+ 	real_malloc.c reclaim.c specific.c stubborn.c typd_mlc.c \
+ 	backgraph.c thread_local_alloc.c pthread_support.c \
+-	pthread_stop_world.c darwin_stop_world.c win32_threads.c
++	pthread_stop_world.c darwin_stop_world.c win32_threads.c \
++	openbsd_stop_world.c
+ @PTHREADS_TRUE@am__objects_1 = pthread_support.lo \
+ @PTHREADS_TRUE@	pthread_stop_world.lo
+ @DARWIN_THREADS_TRUE@am__objects_2 = darwin_stop_world.lo
+ @WIN32_THREADS_TRUE@am__objects_3 = win32_threads.lo
++@OPENBSD_THREADS_TRUE@am__objects_4 = openbsd_stop_world.lo
+ am_libgc_la_OBJECTS = allchblk.lo alloc.lo blacklst.lo checksums.lo \
+ 	dbg_mlc.lo dyn_load.lo finalize.lo gc_dlopen.lo gcj_mlc.lo \
+ 	headers.lo malloc.lo mallocx.lo mark.lo mark_rts.lo misc.lo \
+ 	new_hblk.lo obj_map.lo os_dep.lo pcr_interface.lo ptr_chck.lo \
+ 	real_malloc.lo reclaim.lo specific.lo stubborn.lo typd_mlc.lo \
+ 	backgraph.lo thread_local_alloc.lo $(am__objects_1) \
+-	$(am__objects_2) $(am__objects_3)
++	$(am__objects_2) $(am__objects_3) $(am__objects_4)
+ @NEED_ATOMIC_OPS_ASM_FALSE@@USE_INTERNAL_LIBATOMIC_OPS_TRUE@nodist_libgc_la_OBJECTS = atomic_ops.lo
+ @NEED_ATOMIC_OPS_ASM_TRUE@nodist_libgc_la_OBJECTS =  \
+ @NEED_ATOMIC_OPS_ASM_TRUE@	atomic_ops_sysdeps.lo
+@@ -295,6 +298,8 @@ CXXINCLUDES = @CXXINCLUDES@
+ CYGPATH_W = @CYGPATH_W@
+ DARWIN_THREADS_FALSE = @DARWIN_THREADS_FALSE@
+ DARWIN_THREADS_TRUE = @DARWIN_THREADS_TRUE@
++OPENBSD_THREADS_FALSE = @OPENBSD_THREADS_FALSE@
++OPENBSD_THREADS_TRUE = @OPENBSD_THREADS_TRUE@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
+ ECHO = @ECHO@
+@@ -461,12 +466,12 @@ EXTRA_DIST = gc_cpp.cpp README.QUICK BCC_MAKEFILE NT_M
+ 
+ # C Library
+ # ---------
+-lib_LTLIBRARIES = libgc.la $(am__append_4) libcord.la
++lib_LTLIBRARIES = libgc.la $(am__append_5) libcord.la
+ include_HEADERS = 
+ 
+ # installed headers
+ #
+-pkginclude_HEADERS = $(am__append_5) include/gc.h include/gc_typed.h \
++pkginclude_HEADERS = $(am__append_6) include/gc.h include/gc_typed.h \
+ 	include/gc_inline.h include/gc_mark.h include/gc_cpp.h \
+ 	include/weakpointer.h include/new_gc_alloc.h \
+ 	include/gc_allocator.h include/gc_backptr.h include/gc_gcj.h \
+@@ -488,10 +493,11 @@ dist_noinst_HEADERS = version.h include/private/gc_hdr
+ 	include/private/pthread_stop_world.h \
+ 	include/private/darwin_semaphore.h \
+ 	include/private/darwin_stop_world.h \
++	include/private/openbsd_stop_world.h \
+ 	include/private/thread_local_alloc.h include/cord.h \
+ 	include/ec.h include/javaxfc.h
+ TESTS = gctest$(EXEEXT) leaktest$(EXEEXT) middletest$(EXEEXT) \
+-	$(am__append_6) $(am__append_8)
++	$(am__append_7) $(am__append_9)
+ pkgconfigdir = $(libdir)/pkgconfig
+ dist_pkgconfig_DATA = bdw-gc.pc
+ libgc_la_SOURCES = allchblk.c alloc.c blacklst.c checksums.c dbg_mlc.c \
+@@ -500,7 +506,7 @@ libgc_la_SOURCES = allchblk.c alloc.c blacklst.c check
+ 	os_dep.c pcr_interface.c ptr_chck.c real_malloc.c reclaim.c \
+ 	specific.c stubborn.c typd_mlc.c backgraph.c \
+ 	thread_local_alloc.c $(am__append_1) $(am__append_2) \
+-	$(am__append_3)
++	$(am__append_3) $(am__append_4)
+ @NEED_ATOMIC_OPS_ASM_TRUE@nodist_libgc_la_SOURCES = atomic_ops_sysdeps.S
+ @USE_INTERNAL_LIBATOMIC_OPS_TRUE@nodist_libgc_la_SOURCES = atomic_ops.c
+ 
+@@ -746,6 +752,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/blacklst.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checksums.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/darwin_stop_world.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/openbsd_stop_world.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dbg_mlc.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dyn_load.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/finalize.Plo@am__quote@

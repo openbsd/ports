@@ -1,7 +1,26 @@
-$OpenBSD: patch-pthread_support_c,v 1.1 2007/07/14 22:16:17 kili Exp $
---- pthread_support.c.orig	Thu Jul 12 11:12:40 2007
-+++ pthread_support.c	Thu Jul 12 11:13:47 2007
-@@ -1103,6 +1103,12 @@ void * GC_start_routine(void * arg)
+$OpenBSD: patch-pthread_support_c,v 1.2 2008/04/01 17:41:13 kurt Exp $
+--- pthread_support.c.orig	Tue May 15 06:24:46 2007
++++ pthread_support.c	Mon Feb 11 16:35:23 2008
+@@ -774,6 +774,9 @@ void GC_thr_init(void)
+ #       if defined(GC_NETBSD_THREADS)
+ 	  GC_nprocs = get_ncpu();
+ #       endif
++#       if defined(GC_OPENBSD_THREADS)
++	  GC_nprocs = 1;
++#       endif
+ #       if defined(GC_DARWIN_THREADS) || defined(GC_FREEBSD_THREADS)
+ 	  int ncpus = 1;
+ 	  size_t len = sizeof(ncpus);
+@@ -848,7 +851,7 @@ void GC_init_parallel(void)
+ }
+ 
+ 
+-#if !defined(GC_DARWIN_THREADS)
++#if !defined(GC_DARWIN_THREADS) && !defined(GC_OPENBSD_THREADS)
+ int WRAP_FUNC(pthread_sigmask)(int how, const sigset_t *set, sigset_t *oset)
+ {
+     sigset_t fudged_set;
+@@ -1103,6 +1106,12 @@ void * GC_start_routine(void * arg)
          GC_enable();
  #     endif
        return GC_inner_start_routine(&sb, arg);
@@ -14,3 +33,12 @@ $OpenBSD: patch-pthread_support_c,v 1.1 2007/07/14 22:16:17 kili Exp $
  #   else
        return GC_call_with_stack_base(GC_inner_start_routine, arg);
  #   endif
+@@ -1297,7 +1306,7 @@ void GC_generic_lock(pthread_mutex_t * lock)
+ /* as STL alloc.h.  This isn't really the right way to do this.   */
+ /* but until the POSIX scheduling mess gets straightened out ...  */
+ 
+-volatile AO_TS_t GC_allocate_lock = 0;
++volatile AO_TS_t GC_allocate_lock = AO_TS_INITIALIZER;
+ 
+ 
+ void GC_lock(void)

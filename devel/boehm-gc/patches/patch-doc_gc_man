@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_gc_man,v 1.4 2007/07/14 22:16:17 kili Exp $
+$OpenBSD: patch-doc_gc_man,v 1.5 2008/04/01 17:41:13 kurt Exp $
 --- doc/gc.man.orig	Mon Oct 10 18:33:34 2005
-+++ doc/gc.man	Tue Jul 10 22:53:44 2007
++++ doc/gc.man	Wed Feb  6 19:33:58 2008
 @@ -1,4 +1,4 @@
 -.TH GC_MALLOC 1L "2 October 2003"
 +.TH GC_MALLOC 3 "2 October 2003"
@@ -19,9 +19,9 @@ $OpenBSD: patch-doc_gc_man,v 1.4 2007/07/14 22:16:17 kili Exp $
 +and
 +.I gc_cpp.h
 +will be found in
-+.I @PREFIX@/include ,
++.I /usr/local/include ,
 +and the libraries in
-+.I @PREFIX@/lib.
++.I /usr/local/lib.
 +.LP
 +These libraries have been compiled as drop-in replacements
 +for malloc and free (which is to say, all malloc

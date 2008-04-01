@@ -1,5 +1,5 @@
 --- os_dep.c.orig	Fri Jun 29 15:17:44 2007
-+++ os_dep.c	Thu Jul 12 22:25:04 2007
++++ os_dep.c	Fri Feb  8 15:35:41 2008
 @@ -486,7 +486,7 @@ static void *tiny_sbrk(ptrdiff_t increment)
  #define sbrk tiny_sbrk
  # endif /* ECOS */
@@ -9,12 +9,12 @@
    ptr_t GC_data_start;
  
    void GC_init_netbsd_elf(void)
-@@ -499,6 +499,106 @@ static void *tiny_sbrk(ptrdiff_t increment)
+@@ -499,6 +499,103 @@ static void *tiny_sbrk(ptrdiff_t increment)
    }
  #endif
  
 +#if defined(OPENBSD)
-+  ptr_t GC_data_end1, GC_data_start2;
++  static struct sigaction old_segv_act;
 +  sigjmp_buf GC_jmp_buf_openbsd;
 +
 +# if defined(GC_OPENBSD_THREADS)
@@ -32,20 +32,18 @@
 +    /*ARGSUSED*/
 +    void GC_fault_handler_openbsd(int sig)
 +    {
-+        siglongjmp(GC_jmp_buf_openbsd, 1);
++	siglongjmp(GC_jmp_buf_openbsd, 1);
 +    }
 +
-+    /* Return the first nonaddressible location > p (up) or 	*/
-+    /* the smallest location q s.t. [q,p) is addressable (!up).	*/
-+    /* We assume that p (up) or p-1 (!up) is addressable.	*/
++    /* Return the first nonaddressible location > p or bound	*/
 +    /* Requires allocation lock.				*/
-+    ptr_t GC_find_limit_openbsd(ptr_t p, GC_bool up, ptr_t bound)
++    ptr_t GC_find_limit_openbsd(ptr_t p, ptr_t bound)
 +    {
 +        static volatile ptr_t result;
-+    		/* Safer if static, since otherwise it may not be	*/
-+    		/* preserved across the longjmp.  Can safely be 	*/
-+    		/* static since it's only called with the		*/
-+    		/* allocation lock held.				*/
++               /* Safer if static, since otherwise it may not be       */
++               /* preserved across the longjmp.  Can safely be         */
++               /* static since it's only called with the               */
++               /* allocation lock held.                                */
 +        struct sigaction act;
 +	size_t pgsz = (size_t)sysconf(_SC_PAGESIZE);
 +
@@ -53,70 +51,69 @@
 +
 +        act.sa_handler = GC_fault_handler_openbsd;
 +        sigemptyset(&act.sa_mask);
-+        act.sa_flags = SA_NODEFER | SA_RESETHAND | SA_RESTART;
-+        sigaction(SIGSEGV, &act, NULL);
++        act.sa_flags = SA_NODEFER | SA_RESTART;
++        sigaction(SIGSEGV, &act, &old_segv_act);
 +
 +	if (sigsetjmp(GC_jmp_buf_openbsd, 1) == 0) {
-+	    result = (ptr_t)(((word)(p))
-+			      & ~(pgsz-1));
++	    result = (ptr_t)(((word)(p)) & ~(pgsz-1));
 +	    for (;;) {
-+ 	        if (up) {
-+		    result += pgsz;
-+		    if (result >= bound) {
-+		        result = bound;
-+			break;
-+		    }
-+ 	        } else {
-+		    result -= pgsz;
-+		    if (result <= bound) {
-+		        result = bound;
-+			break;
-+		    }
++	        result += pgsz;
++	        if (result >= bound) {
++		    result = bound;
++		    break;
 + 	        }
-+		GC_noop1((word)(*result));
++	        GC_noop1((word)(*result));
 +	    }
 +	}
++
 +# if defined(GC_OPENBSD_THREADS)
 +	/* due to the siglongjump we need to manually unmask SIGPROF */
-+	 __syscall(SYS_sigprocmask, SIG_UNBLOCK, sigmask(SIGPROF));
++	__syscall(SYS_sigprocmask, SIG_UNBLOCK, sigmask(SIGPROF));
 +# endif
-+ 	if (!up && result != bound) {
-+	    result += pgsz;
-+ 	}
++
++	sigaction(SIGSEGV, &old_segv_act, 0);
++
 +	return(result);
 +    }
 +
-+  /*
-+   * Depending on arch alignment there can be two holes in
-+   * .data - end of .bss. Fortunately no pointers can be stored
-+   * between the two holes. A better way of doing this would
-+   * be to do something similar to how libraries are handled
-+   * (section by section).
-+   */
-+  void GC_init_openbsd()
-+  {
-+    extern char _edata[];
-+    ptr_t GC_find_limit(ptr_t, GC_bool);
-+    GC_data_end1 = GC_find_limit_openbsd(DATASTART, TRUE, DATAEND2);
-+    if (GC_data_end1 >= DATAEND2) {
-+	/* no holes */
-+        GC_data_end1 = (ptr_t)(&_edata);
-+        GC_data_start2 = GC_data_end1;
-+    } else {
-+        /* search back to find second hole */
-+        GC_data_start2 = GC_find_limit_openbsd(DATAEND2, FALSE, DATASTART);
-+	/* not needed but for sanity */
-+	if (GC_data_start2 < GC_data_end1)
-+		GC_data_start2 = GC_data_end1;
++    /* Return first addressable location > p or bound */
++    /* Requires allocation lock. */
++    ptr_t GC_skip_hole_openbsd(ptr_t p, ptr_t bound)
++    {
++        static volatile ptr_t result;
++        struct sigaction act;
++	size_t pgsz = (size_t)sysconf(_SC_PAGESIZE);
++	static volatile int firstpass;
++
++	GC_ASSERT(I_HOLD_LOCK());
++
++        act.sa_handler = GC_fault_handler_openbsd;
++        sigemptyset(&act.sa_mask);
++        act.sa_flags = SA_NODEFER | SA_RESTART;
++        sigaction(SIGSEGV, &act, &old_segv_act);
++
++	firstpass = 1;
++	result = (ptr_t)(((word)(p)) & ~(pgsz-1));
++	if (sigsetjmp(GC_jmp_buf_openbsd, 1) != 0 || firstpass) {
++	    firstpass = 0;
++	    result += pgsz;
++	    if (result >= bound) {
++		result = bound;
++	    } else
++	        GC_noop1((word)(*result));
++        }
++
++	sigaction(SIGSEGV, &old_segv_act, 0);
++
++	return(result);
 +    }
-+  }
 +#endif
 +
 +
  # ifdef OS2
  
  # include <stddef.h>
-@@ -1097,7 +1197,7 @@ ptr_t GC_get_main_stack_base(void)
+@@ -1097,7 +1194,7 @@ ptr_t GC_get_main_stack_base(void)
  
  #if !defined(BEOS) && !defined(AMIGA) && !defined(MSWIN32) \
      && !defined(MSWINCE) && !defined(OS2) && !defined(NOSYS) && !defined(ECOS) \
@@ -125,11 +122,10 @@
  
  ptr_t GC_get_main_stack_base(void)
  {
-@@ -1205,6 +1305,35 @@ int GC_get_stack_base(struct GC_stack_base *b)
- #define HAVE_GET_STACK_BASE
+@@ -1206,6 +1303,35 @@ int GC_get_stack_base(struct GC_stack_base *b)
  
  #endif /* GC_LINUX_THREADS */
-+
+ 
 +#if defined(GC_OPENBSD_THREADS)
 +
 +/* Find the stack using pthread_stackseg_np() */
@@ -158,6 +154,49 @@
 +}
 +
 +#endif /* GC_OPENBSD_THREADS */
- 
++
  #ifndef HAVE_GET_STACK_BASE
  /* Retrieve stack base.						*/
+ /* Using the GC_find_limit version is risky.			*/
+@@ -1660,8 +1786,33 @@ ptr_t GC_FreeBSDGetDataStart(size_t max_page_size, ptr
+ 
+ #else /* !OS2 && !Windows && !AMIGA */
+ 
++#if defined(OPENBSD)
++
++/*
++ * Depending on arch alignment there can be multiple holes
++ * between DATASTART & DATAEND. Scan from DATASTART - DATAEND
++ * and register each region.
++ */
+ void GC_register_data_segments(void)
+ {
++  ptr_t region_start, region_end;
++
++  region_start = DATASTART;
++
++  for(;;) {
++    region_end = GC_find_limit_openbsd(region_start, DATAEND);
++    GC_add_roots_inner(region_start, region_end, FALSE);
++    if (region_end < DATAEND)
++    	region_start = GC_skip_hole_openbsd(region_end, DATAEND);
++    else
++	break;
++  }
++}
++
++# else /* !OS2 && !Windows && !AMIGA && !OPENBSD */
++
++void GC_register_data_segments(void)
++{
+ #   if !defined(PCR) && !defined(MACOS)
+ #     if defined(REDIRECT_MALLOC) && defined(GC_SOLARIS_THREADS)
+ 	/* As of Solaris 2.3, the Solaris threads implementation	*/
+@@ -1717,6 +1868,7 @@ void GC_register_data_segments(void)
+     /* change.								*/
+ }
+ 
++# endif  /* ! OPENBSD */
+ # endif  /* ! AMIGA */
+ # endif  /* ! MSWIN32 && ! MSWINCE*/
+ # endif  /* ! OS2 */

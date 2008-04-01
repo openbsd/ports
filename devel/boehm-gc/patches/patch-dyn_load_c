@@ -1,6 +1,6 @@
-$OpenBSD: patch-dyn_load_c,v 1.5 2007/07/14 22:16:17 kili Exp $
---- dyn_load.c.orig	Thu Jun 28 23:36:03 2007
-+++ dyn_load.c	Fri Jul  6 22:13:16 2007
+$OpenBSD: patch-dyn_load_c,v 1.6 2008/04/01 17:41:13 kurt Exp $
+--- dyn_load.c.orig	Thu Jun 28 17:36:03 2007
++++ dyn_load.c	Thu Mar 20 18:09:28 2008
 @@ -63,6 +63,7 @@ static int (*GC_has_static_roots)(const char *, void *
      !defined(HPUX) && !(defined(LINUX) && defined(__ELF__)) && \
      !defined(AIX) && !defined(SCO_ELF) && !defined(DGUX) && \
@@ -20,6 +20,15 @@ $OpenBSD: patch-dyn_load_c,v 1.5 2007/07/14 22:16:17 kili Exp $
  #   include <link.h>
  #endif
  
+@@ -99,7 +100,7 @@ static int (*GC_has_static_roots)(const char *, void *
+ #      else
+ #        define ElfW(type) Elf64_##type
+ #      endif
+-#    elif defined(NETBSD)
++#    elif defined(NETBSD) || defined(OPENBSD)
+ #      if ELFSIZE == 32
+ #        define ElfW(type) Elf32_##type
+ #      else
 @@ -216,6 +217,7 @@ void GC_register_dynamic_libraries()
  
  #if defined(LINUX) && defined(__ELF__) || defined(SCO_ELF) || \
