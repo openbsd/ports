@@ -1,10 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/07/27 21:20:29 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/04/01 21:50:14 fkr Exp $
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
 @man man/man8/openvpn.8
 sbin/openvpn
 share/examples/openvpn/
 share/examples/openvpn/easy-rsa/
+share/examples/openvpn/easy-rsa/1.0/
+share/examples/openvpn/easy-rsa/1.0/README
+share/examples/openvpn/easy-rsa/1.0/build-ca
+share/examples/openvpn/easy-rsa/1.0/build-dh
+share/examples/openvpn/easy-rsa/1.0/build-inter
+share/examples/openvpn/easy-rsa/1.0/build-key
+share/examples/openvpn/easy-rsa/1.0/build-key-pass
+share/examples/openvpn/easy-rsa/1.0/build-key-pkcs12
+share/examples/openvpn/easy-rsa/1.0/build-key-server
+share/examples/openvpn/easy-rsa/1.0/build-req
+share/examples/openvpn/easy-rsa/1.0/build-req-pass
+share/examples/openvpn/easy-rsa/1.0/clean-all
+share/examples/openvpn/easy-rsa/1.0/list-crl
+share/examples/openvpn/easy-rsa/1.0/make-crl
+share/examples/openvpn/easy-rsa/1.0/openssl.cnf
+share/examples/openvpn/easy-rsa/1.0/revoke-crt
+share/examples/openvpn/easy-rsa/1.0/revoke-full
+share/examples/openvpn/easy-rsa/1.0/sign-req
+share/examples/openvpn/easy-rsa/1.0/vars
 share/examples/openvpn/easy-rsa/2.0/
 @comment share/examples/openvpn/easy-rsa/2.0/Makefile
 share/examples/openvpn/easy-rsa/2.0/README
@@ -27,24 +46,6 @@ share/examples/openvpn/easy-rsa/2.0/revoke-full
 share/examples/openvpn/easy-rsa/2.0/sign-req
 share/examples/openvpn/easy-rsa/2.0/vars
 @comment share/examples/openvpn/easy-rsa/2.0/whichopensslcnf
-share/examples/openvpn/easy-rsa/README
-share/examples/openvpn/easy-rsa/build-ca
-share/examples/openvpn/easy-rsa/build-dh
-share/examples/openvpn/easy-rsa/build-inter
-share/examples/openvpn/easy-rsa/build-key
-share/examples/openvpn/easy-rsa/build-key-pass
-share/examples/openvpn/easy-rsa/build-key-pkcs12
-share/examples/openvpn/easy-rsa/build-key-server
-share/examples/openvpn/easy-rsa/build-req
-share/examples/openvpn/easy-rsa/build-req-pass
-share/examples/openvpn/easy-rsa/clean-all
-share/examples/openvpn/easy-rsa/list-crl
-share/examples/openvpn/easy-rsa/make-crl
-share/examples/openvpn/easy-rsa/openssl.cnf
-share/examples/openvpn/easy-rsa/revoke-crt
-share/examples/openvpn/easy-rsa/revoke-full
-share/examples/openvpn/easy-rsa/sign-req
-share/examples/openvpn/easy-rsa/vars
 share/examples/openvpn/sample-config-files/
 share/examples/openvpn/sample-config-files/README
 share/examples/openvpn/sample-config-files/client.conf
@@ -64,6 +65,8 @@ share/examples/openvpn/sample-config-files/xinetd-client-config
 share/examples/openvpn/sample-config-files/xinetd-server-config
 share/examples/openvpn/sample-keys/
 share/examples/openvpn/sample-keys/README
+share/examples/openvpn/sample-keys/ca.crt
+share/examples/openvpn/sample-keys/ca.key
 share/examples/openvpn/sample-keys/client.crt
 share/examples/openvpn/sample-keys/client.key
 share/examples/openvpn/sample-keys/dh1024.pem
@@ -72,11 +75,10 @@ share/examples/openvpn/sample-keys/pass.key
 share/examples/openvpn/sample-keys/pkcs12.p12
 share/examples/openvpn/sample-keys/server.crt
 share/examples/openvpn/sample-keys/server.key
-share/examples/openvpn/sample-keys/tmp-ca.crt
-share/examples/openvpn/sample-keys/tmp-ca.key
 share/examples/openvpn/sample-scripts/
 share/examples/openvpn/sample-scripts/auth-pam.pl
 share/examples/openvpn/sample-scripts/bridge-start
 share/examples/openvpn/sample-scripts/bridge-stop
 share/examples/openvpn/sample-scripts/openvpn.init
+share/examples/openvpn/sample-scripts/ucn.pl
 share/examples/openvpn/sample-scripts/verify-cn
