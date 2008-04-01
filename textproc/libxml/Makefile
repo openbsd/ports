@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2008/04/01 11:34:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.112 2008/04/01 11:36:24 jasper Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -50,6 +50,7 @@ FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/ \
 .endif
 
 CONFIGURE_ARGS+=	--without-threads
+BUILD_DEPENDS+= 	::net/wget
 REGRESS_DEPENDS=	::devel/gmake
 
 post-configure:
