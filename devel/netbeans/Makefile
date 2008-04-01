@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/03/26 13:07:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2008/04/01 21:57:20 kurt Exp $
 
 COMMENT=		NetBeans Java IDE
 
 DISTNAME=		netbeans-5_5-ide_sources
-PKGNAME=		netbeans-5.5p2
+PKGNAME=		netbeans-5.5p3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.netbeans.org/
@@ -27,6 +27,8 @@ MODJAVA_VER=		1.5+
 USE_ZIP=		Yes
 
 BUILD_DEPENDS=		:apache-ant->=1.7.0:devel/apache-ant
+
+RUN_DEPENDS=		::java/javaPathHelper
 
 MAKE_ENV=		JAVA_HOME=${JAVA_HOME} \
 			ANT_HOME=${LOCALBASE}/ant
