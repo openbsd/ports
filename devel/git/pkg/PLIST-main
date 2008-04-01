@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2008/02/19 09:05:58 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2008/04/01 22:36:30 bernd Exp $
 @pkgpath devel/git
 bin/git
 bin/git-add
@@ -19,7 +19,6 @@ bin/git-checkout
 bin/git-checkout-index
 bin/git-cherry
 bin/git-cherry-pick
-bin/git-citool
 bin/git-clean
 bin/git-clone
 bin/git-commit
@@ -49,7 +48,6 @@ bin/git-fsck-objects
 bin/git-gc
 bin/git-get-tar-commit-id
 bin/git-grep
-bin/git-gui
 bin/git-hash-object
 bin/git-help--browse
 bin/git-http-fetch
@@ -138,7 +136,6 @@ bin/git-verify-pack
 bin/git-verify-tag
 bin/git-whatchanged
 bin/git-write-tree
-bin/gitk
 lib/libgit.a
 libdata/perl5/site_perl/Git.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
@@ -159,7 +156,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-checkout.1
 @man man/man1/git-cherry-pick.1
 @man man/man1/git-cherry.1
-@man man/man1/git-citool.1
 @man man/man1/git-clean.1
 @man man/man1/git-clone.1
 @man man/man1/git-commit-tree.1
@@ -188,7 +184,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-gc.1
 @man man/man1/git-get-tar-commit-id.1
 @man man/man1/git-grep.1
-@man man/man1/git-gui.1
 @man man/man1/git-hash-object.1
 @man man/man1/git-help.1
 @man man/man1/git-http-fetch.1
@@ -271,7 +266,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-whatchanged.1
 @man man/man1/git-write-tree.1
 @man man/man1/git.1
-@man man/man1/gitk.1
 @man man/man3p/Git.3p
 @man man/man5/gitattributes.5
 @man man/man5/gitcli.5
@@ -310,6 +304,9 @@ share/doc/git/RelNotes-1.5.3.8.txt
 share/doc/git/RelNotes-1.5.3.txt
 share/doc/git/RelNotes-1.5.4.1.txt
 share/doc/git/RelNotes-1.5.4.2.txt
+share/doc/git/RelNotes-1.5.4.3.txt
+share/doc/git/RelNotes-1.5.4.4.txt
+share/doc/git/RelNotes-1.5.4.5.txt
 share/doc/git/RelNotes-1.5.4.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
@@ -368,8 +365,6 @@ share/doc/git/git-cherry-pick.html
 share/doc/git/git-cherry-pick.txt
 share/doc/git/git-cherry.html
 share/doc/git/git-cherry.txt
-share/doc/git/git-citool.html
-share/doc/git/git-citool.txt
 share/doc/git/git-clean.html
 share/doc/git/git-clean.txt
 share/doc/git/git-clone.html
@@ -426,8 +421,6 @@ share/doc/git/git-get-tar-commit-id.html
 share/doc/git/git-get-tar-commit-id.txt
 share/doc/git/git-grep.html
 share/doc/git/git-grep.txt
-share/doc/git/git-gui.html
-share/doc/git/git-gui.txt
 share/doc/git/git-hash-object.html
 share/doc/git/git-hash-object.txt
 share/doc/git/git-help.html
@@ -602,8 +595,6 @@ share/doc/git/gitcli.html
 share/doc/git/gitcli.txt
 share/doc/git/gitignore.html
 share/doc/git/gitignore.txt
-share/doc/git/gitk.html
-share/doc/git/gitk.txt
 share/doc/git/gitmodules.html
 share/doc/git/gitmodules.txt
 share/doc/git/glossary.html
@@ -665,51 +656,3 @@ share/git-core/templates/hooks/pre-rebase
 share/git-core/templates/hooks/update
 share/git-core/templates/info/
 share/git-core/templates/info/exclude
-share/git-gui/
-share/git-gui/lib/
-share/git-gui/lib/about.tcl
-share/git-gui/lib/blame.tcl
-share/git-gui/lib/branch.tcl
-share/git-gui/lib/branch_checkout.tcl
-share/git-gui/lib/branch_create.tcl
-share/git-gui/lib/branch_delete.tcl
-share/git-gui/lib/branch_rename.tcl
-share/git-gui/lib/browser.tcl
-share/git-gui/lib/checkout_op.tcl
-share/git-gui/lib/choose_font.tcl
-share/git-gui/lib/choose_repository.tcl
-share/git-gui/lib/choose_rev.tcl
-share/git-gui/lib/class.tcl
-share/git-gui/lib/commit.tcl
-share/git-gui/lib/console.tcl
-share/git-gui/lib/database.tcl
-share/git-gui/lib/date.tcl
-share/git-gui/lib/diff.tcl
-share/git-gui/lib/encoding.tcl
-share/git-gui/lib/error.tcl
-share/git-gui/lib/git-gui.ico
-share/git-gui/lib/index.tcl
-share/git-gui/lib/logo.tcl
-share/git-gui/lib/merge.tcl
-share/git-gui/lib/msgs/
-share/git-gui/lib/msgs/de.msg
-share/git-gui/lib/msgs/fr.msg
-share/git-gui/lib/msgs/hu.msg
-share/git-gui/lib/msgs/it.msg
-share/git-gui/lib/msgs/ja.msg
-share/git-gui/lib/msgs/ru.msg
-share/git-gui/lib/msgs/sv.msg
-share/git-gui/lib/msgs/zh_cn.msg
-share/git-gui/lib/option.tcl
-share/git-gui/lib/remote.tcl
-share/git-gui/lib/remote_branch_delete.tcl
-share/git-gui/lib/shortcut.tcl
-share/git-gui/lib/status_bar.tcl
-share/git-gui/lib/tclIndex
-share/git-gui/lib/transport.tcl
-share/git-gui/lib/win32.tcl
-share/git-gui/lib/win32_shortcut.js
-share/gitk/
-share/gitk/lib/
-share/gitk/lib/msgs/
-share/gitk/lib/msgs/de.msg

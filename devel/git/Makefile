@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2008/03/28 19:06:20 bernd Exp $
+# $OpenBSD: Makefile,v 1.22 2008/04/01 22:36:30 bernd Exp $
 
 COMMENT-main=		GIT - Tree History Storage Tool
 COMMENT-svn=		GIT - subversion interoperability tools
+COMMENT-x11=		GIT - graphical tools
 
-V=			1.5.4.2
+V=			1.5.4.5
 DISTNAME=		git-${V}
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
+PKGNAME-x11=		git-x11-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://git.or.cz/
@@ -33,11 +35,10 @@ MODULES=		converters/libiconv
 BUILD_DEPENDS=		::archivers/gtar \
 			::devel/p5-Error
 
-MULTI_PACKAGES=		-main -svn
+MULTI_PACKAGES=		-main -svn -x11
 
 WANTLIB-main=		c expat crypto z
-RUN_DEPENDS-main=	::x11/tk/8.4 \
-			::net/rsync \
+RUN_DEPENDS-main=	::net/rsync \
 			::devel/p5-Error \
 			${MODLIBICONV_RUN_DEPENDS}
 LIB_DEPENDS-main=	curl.>=3::net/curl \
@@ -49,6 +50,11 @@ RUN_DEPENDS-svn=	::${BASE_PKGPATH} \
 			::www/p5-libwww
 LIB_DEPENDS-svn=
 PKG_ARCH-svn=		*
+
+RUN_DEPENDS-x11=	:${PKGNAME}:${BASE_PKGPATH},-main \
+			::x11/tk/8.4
+LIB_DEPENDS-x11=
+PKG_ARCH-x11=		*
 
 MAKE_ENV=		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \
 			SYSCONFDIR=${SYSCONFDIR} \
