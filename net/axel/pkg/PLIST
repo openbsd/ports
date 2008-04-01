@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/01 12:52:00 ajacoutot Exp $
+bin/axel
+@man man/man1/axel.1
+share/examples/axel/
+share/examples/axel/axelrc
+@sample ${SYSCONFDIR}/axelrc
+share/locale/de/LC_MESSAGES/axel.mo
+share/locale/nl/LC_MESSAGES/axel.mo

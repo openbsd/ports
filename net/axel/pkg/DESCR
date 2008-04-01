@@ -1,0 +1,10 @@
+Axel does the same thing any other accelerator does: it opens more than
+one HTTP/FTP connection per download and each connection transfers its
+own, separate, part of the file.
+
+Be forewarned that some FTP operators don't like it when you do this.
+You may either specify a list of mirrors to use or tell the program to
+search for mirrors.
+
+Axel puts all the data in the right file, in the right order, at
+download time.  Axel is console-based and uses few system resources.
