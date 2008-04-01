@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/11/22 17:20:56 okan Exp $
+# $OpenBSD: Makefile,v 1.22 2008/04/01 20:47:30 kili Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		object-oriented Perl interface to ImageMagick
 VER=			6.3.6
 DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		p5-PerlMagick-${VER}.${DASHVER}
+PKGNAME=		p5-PerlMagick-${VER}.${DASHVER}p0
 CATEGORIES=		graphics devel
 
 HOMEPAGE=		http://www.imagemagick.org
@@ -34,7 +34,7 @@ WRKSRC=			${WRKDIST}/PerlMagick
 CFLAGS+=		-I${WRKDIR}
 
 pre-configure:
-	@cd ${WRKDIR} && ln -s print/ghostscript/gnu/ghostscript-8.60/src ghostscript
+	@cd ${WRKDIR} && ln -s print/ghostscript/gnu/ghostscript-8.62/src ghostscript
 	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%X11BASE%%|${X11BASE}|g; \
 		s|%%CFLAGS%%|${CFLAGS}|g;' ${WRKSRC}/Makefile.PL
