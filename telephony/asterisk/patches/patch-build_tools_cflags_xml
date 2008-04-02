@@ -1,11 +1,10 @@
-$OpenBSD: patch-build_tools_cflags_xml,v 1.1 2007/09/05 22:42:52 sthen Exp $
---- build_tools/cflags.xml.orig	Tue Jul 31 16:53:42 2007
-+++ build_tools/cflags.xml	Tue Aug  7 23:24:28 2007
-@@ -13,6 +13,7 @@
- 		<member name="DO_CRASH" displayname="Crash on fatal errors">
- 		</member>
+$OpenBSD: patch-build_tools_cflags_xml,v 1.2 2008/04/02 23:18:11 sthen Exp $
+--- build_tools/cflags.xml.orig	Wed Mar 19 17:12:52 2008
++++ build_tools/cflags.xml	Fri Mar 28 23:42:25 2008
+@@ -1,5 +1,6 @@
+ 	<category name="MENUSELECT_CFLAGS" displayname="Compiler Flags" positive_output="yes" remove_on_change=".lastclean">
  		<member name="DONT_OPTIMIZE" displayname="Disable Optimizations by the Compiler">
 +			<defaultenabled>yes</defaultenabled>
  		</member>
- 		<member name="DUMP_SCHEDULER" displayname="Dump Scheduler Contents for Debugging">
+ 		<member name="DEBUG_CHANNEL_LOCKS" displayname="Debug Channel Locking">
  		</member>

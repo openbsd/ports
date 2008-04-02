@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2008/03/19 08:18:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2008/04/02 23:18:11 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-V=			1.4.18.1
+V=			1.4.19
 DISTNAME=		asterisk-$V
-FULLPKGNAME-main=	${DISTNAME}
+FULLPKGNAME-main=	asterisk-$V
 
 CATEGORIES=		telephony
 
@@ -172,7 +172,7 @@ LIB_DEPENDS-main+=	h323::net/openh323 \
 CONFIGURE_ARGS+=	--with-pwlib=${LOCALBASE}/lib \
 			--with-h323=${LOCALBASE}/lib
 WANTLIB-main+=		expat ossaudio avutil
-FULLPKGNAME-main=	${DISTNAME}p0-h323
+FULLPKGNAME-main=	asterisk-$V-h323
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_PROGRAM} include/asterisk/buildopts.h

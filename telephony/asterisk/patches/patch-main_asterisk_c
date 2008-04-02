@@ -1,7 +1,7 @@
-$OpenBSD: patch-main_asterisk_c,v 1.4 2008/02/07 22:08:30 sthen Exp $
---- main/asterisk.c.orig	Thu Jan 24 17:22:09 2008
-+++ main/asterisk.c	Wed Jan 30 22:22:58 2008
-@@ -2410,6 +2410,7 @@ static void ast_readconfig(void) 
+$OpenBSD: patch-main_asterisk_c,v 1.5 2008/04/02 23:18:11 sthen Exp $
+--- main/asterisk.c.orig	Fri Mar  7 06:36:33 2008
++++ main/asterisk.c	Tue Mar 18 09:45:42 2008
+@@ -2412,6 +2412,7 @@ static void ast_readconfig(void) 
  			snprintf(ast_config_AST_MONITOR_DIR, sizeof(ast_config_AST_MONITOR_DIR) - 1, "%s/monitor", v->value);
  		} else if (!strcasecmp(v->name, "astvarlibdir")) {
  			ast_copy_string(ast_config_AST_VAR_DIR, v->value, sizeof(ast_config_AST_VAR_DIR));
@@ -9,7 +9,7 @@ $OpenBSD: patch-main_asterisk_c,v 1.4 2008/02/07 22:08:30 sthen Exp $
  			snprintf(ast_config_AST_DB, sizeof(ast_config_AST_DB), "%s/astdb", v->value);
  		} else if (!strcasecmp(v->name, "astdatadir")) {
  			ast_copy_string(ast_config_AST_DATA_DIR, v->value, sizeof(ast_config_AST_DATA_DIR));
-@@ -2707,6 +2708,7 @@ int main(int argc, char *argv[])
+@@ -2709,6 +2710,7 @@ int main(int argc, char *argv[])
  		rungroup = ast_config_AST_RUN_GROUP;
  	if ((!runuser) && !ast_strlen_zero(ast_config_AST_RUN_USER))
  		runuser = ast_config_AST_RUN_USER;

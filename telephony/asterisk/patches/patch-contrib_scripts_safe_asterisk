@@ -1,6 +1,6 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.5 2007/10/04 11:25:44 sthen Exp $
---- contrib/scripts/safe_asterisk.orig	Thu Sep 20 22:01:20 2007
-+++ contrib/scripts/safe_asterisk	Wed Oct  3 21:15:26 2007
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.6 2008/04/02 23:18:11 sthen Exp $
+--- contrib/scripts/safe_asterisk.orig	Tue Feb 12 22:22:54 2008
++++ contrib/scripts/safe_asterisk	Tue Mar 18 09:45:42 2008
 @@ -1,20 +1,21 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -42,7 +42,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.5 2007/10/04 11:25:44 sthen Ex
  fi
  
  #
-@@ -167,7 +174,7 @@ run_asterisk()
+@@ -162,7 +169,7 @@ run_asterisk()
  		sleep $SLEEPSECS
  		if [ $KILLALLMPG123 ]
  		then
