@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/12/19 22:58:58 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2008/04/02 15:30:51 fgsch Exp $
 
 COMMENT=	Python clone of WikiWiki
 
-DISTNAME=	moin-1.5.8
-PKGNAME=	moin${DISTNAME}p1
+DISTNAME=	moin-1.6.2
+PKGNAME=	moin${DISTNAME}
 CATEGORIES=	www
-PKG_ARCH=	*
-
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=moin/}
 
 HOMEPAGE=	http://moinmo.in/
 
@@ -17,15 +14,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	lang/python
+MASTER_SITES=	http://static.moinmo.in/files/
 
+MODULES=	lang/python
 RUN_DEPENDS=	${MODPY_EXPAT_DEPENDS}
 
 NO_REGRESS=	Yes
 
+PKG_ARCH=	*
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/moinmoin
-	cd ${WRKSRC}/docs && ${INSTALL_DATA} INSTALL.html \
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} CHANGES INSTALL.html \
 	  README.migration ${PREFIX}/share/doc/moinmoin
 
 .include <bsd.port.mk>
