@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/03/24 05:26:46 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.5 2008/04/02 06:46:03 jakemsr Exp $
 
 COMMENT=		portable cross-platform audio API
 DISTNAME=		portaudio-svn-1360
@@ -29,5 +29,7 @@ CONFIGURE_ARGS=		--without-alsa
 # builds non-automated, interactive tests in ${WRKBUILD}/bin
 REGRESS_TARGET=		tests
 REGRESS_IS_INTERACTIVE=	Yes
+
+CFLAGS+=		-DALLOW_SMP_DANGERS
 
 .include <bsd.port.mk>
