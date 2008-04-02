@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_sun_audio_c,v 1.1 2008/04/02 00:39:19 fgsch Exp $
+--- src/sun/audio.c.orig	Mon Mar 31 02:47:49 2008
++++ src/sun/audio.c	Mon Mar 31 02:48:03 2008
+@@ -122,14 +122,12 @@ static void sun_setformat(AFormat fmt, int rate, int n
+ 	
+ 	sun = sun_format(fmt);
+ 
+-	effect.format.sun = sun;
+ 	effect.format.xmms = fmt;
+ 	effect.frequency = rate;
+ 	effect.channels = nch;
+ 	effect.bps = sun_bps(sun, rate, nch);
+ 
+ 	output.format.sun = sun;
+-	output.format.xmms = fmt;
+ 	output.frequency = rate;
+ 	output.channels = nch;
+ 	sun_setparams();

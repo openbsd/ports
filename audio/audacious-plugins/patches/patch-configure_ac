@@ -1,0 +1,37 @@
+$OpenBSD: patch-configure_ac,v 1.1 2008/04/02 00:39:19 fgsch Exp $
+--- configure.ac.orig	Thu Mar 13 22:22:35 2008
++++ configure.ac	Mon Mar 31 23:08:49 2008
+@@ -811,13 +811,21 @@ AC_ARG_ENABLE( jack,
+                 [enable_jack="yes"])
+ 
+ if test "x$enable_jack" = xyes; then
+-        AM_PATH_JACK(have_jack=yes, have_jack=no)
++	PKG_CHECK_MODULES(JACK, jack >= 0.109.10, , [AC_MSG_WARN(
++	[*** Cannot find jack 0.109.10 or newer, jack will not be built ***])
++	enable_jack=no])
+ else
+         AC_MSG_RESULT([*** jack plugin disabled per user request ***])
+-        have_jack=no
++        enable_jack=no
+ fi
+ 
+-if test "$have_jack" = yes; then
++if test "x$enable_jack" = xyes; then
++	PKG_CHECK_MODULES(SAMPLERATE, samplerate >= 0.0.15, , [AC_MSG_WARN(
++	[Could not find libsamplerate, necessary for jack output plugin.])
++	enable_jack=no])
++fi
++
++if test "x$enable_jack" = xyes; then
+ 	OUTPUT_PLUGINS="$OUTPUT_PLUGINS jack"
+ fi
+ 
+@@ -1636,7 +1644,7 @@ echo "  Open Sound System (oss):                $have_
+ echo "  Open Sound System v4 (oss4):            $have_oss4"
+ echo "  Advanced Linux Sound Arch. (alsa):      $have_alsa"
+ echo "  Enlightenment Sound Daemon (esd):       $have_esd"
+-echo "  Jack Audio Connection Kit (jack):       $have_jack"
++echo "  Jack Audio Connection Kit (jack):       $enable_jack"
+ echo "  Analog Realtime Synthesizer (arts):     $have_arts"
+ echo "  BSD/SUN audio output (sun):             $have_sun"
+ echo "  PulseAudio sound server (pulse_audio):  $have_pulse"

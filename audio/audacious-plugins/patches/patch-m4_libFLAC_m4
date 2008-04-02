@@ -1,0 +1,12 @@
+$OpenBSD: patch-m4_libFLAC_m4,v 1.1 2008/04/02 00:39:19 fgsch Exp $
+--- m4/libFLAC.m4.orig	Mon Mar 31 23:57:52 2008
++++ m4/libFLAC.m4	Mon Mar 31 23:58:32 2008
+@@ -22,7 +22,7 @@ AC_ARG_ENABLE(libFLACtest, [  --disable-libFLACtest   
+     LIBFLAC_LIBS="-L$libdir"
+   fi
+ 
+-  LIBFLAC_LIBS="$LIBFLAC_LIBS -lFLAC -lm"
++  LIBFLAC_LIBS="$LIBFLAC_LIBS -lFLAC -logg -lm"
+ 
+   if test "x$libFLAC_includes" != "x" ; then
+     LIBFLAC_CFLAGS="-I$libFLAC_includes"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-buildsys_mk_in,v 1.1 2008/04/02 00:39:19 fgsch Exp $
+--- buildsys.mk.in.orig	Thu Mar 13 22:22:35 2008
++++ buildsys.mk.in	Sun Mar 23 17:23:07 2008
+@@ -76,7 +76,7 @@ OBJS5 = ${OBJS4:.erl=.beam}
+ OBJS += ${OBJS5:.m=.o}
+ DEPS += ${OBJS:.o=.dep}
+ 
+-.SILENT:
++#.SILENT:
+ .SUFFIXES: .beam .c .cc .cxx .d .dep .erl .m
+ .PHONY: all subdirs pre-depend depend install install-extra uninstall uninstall-extra clean distclean
+ 

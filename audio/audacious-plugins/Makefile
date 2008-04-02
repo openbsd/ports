@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2008/03/24 06:39:55 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.12 2008/04/02 00:39:19 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	input and output plugins for audacious
 COMMENT-arts=	arts helper and plugin for audacious
 
-V=		1.3.5
+V=		1.5.0
 DISTNAME=	audacious-plugins-$V
-PKGNAME-main=	${DISTNAME}p2
-PKGNAME-arts=	audacious-arts-$Vp0
+PKGNAME-main=	${DISTNAME}
+PKGNAME-arts=	audacious-arts-$V
+
 CATEGORIES=	audio multimedia
 
 HOMEPAGE=	http://audacious-media-player.org/
@@ -19,10 +20,44 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://static.audacious-media-player.org/release/
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
+		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv \
+		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 png stdc++ z
+WANTLIB-main=	${WANTLIB} dbus-1 dbus-glib-1 mowgli ogg samplerate ossaudio \
+		xml2
+WANTLIB-arts=	${WANTLIB} c pthread
+
+MASTER_SITES=	http://distfiles.atheme.org/
+
 EXTRACT_SUFX=	.tgz
 
 MULTI_PACKAGES=	-main
+
+BUILD_DEPENDS=	${RUN_DEPENDS-main}
+
+RUN_DEPENDS-main=	:audacious->=1.4:audio/audacious
+RUN_DEPENDS-arts=	::audio/audacious-plugins,-main
+
+LIB_DEPENDS-main=	esd.>=2::audio/esound \
+			faad.>=1,mp4ff::audio/faad \
+			FLAC.>=7::audio/flac \
+			jack::audio/jack \
+			mp3lame::audio/lame \
+			mad::audio/libmad \
+			mpcdec.>=2::audio/libmpcdec \
+			sndfile.>=2::audio/libsndfile \
+			vorbis.>=5,vorbisfile.>=4,vorbisenc::audio/libvorbis \
+			tag.>=6:taglib->=1.4:audio/taglib \
+			audiofile::devel/libaudiofile \
+			SDL.>=6::devel/sdl \
+			curl.>=5::net/curl \
+			neon.>=26::net/neon
+LIB_DEPENDS-arts=	artsc.>=1::x11/kde/arts3
+
+USE_X11=	Yes
+USE_GMAKE=	Yes
 
 PSEUDO_FLAVORS=	no_arts
 FLAVOR?=
@@ -33,43 +68,32 @@ CONFIGURE_ARGS+=--disable-arts
 MULTI_PACKAGES+=-arts
 .endif
 
-USE_X11=	Yes
-NO_REGRESS=	Yes
+AUTOCONF_VERSION=	2.61
 
-WANTLIB=	X11 Xau Xdmcp Xrender Xcursor Xext Xfixes Xi Xinerama Xrandr \
-	 	Xcomposite Xdamage m z expat fontconfig freetype iconv intl \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0 cairo \
-		glib-2.0 gthread-2.0 gmodule-2.0 gobject-2.0 \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 glitz png
-
-WANTLIB-main=	${WANTLIB} ossaudio stdc++ ogg xml2
-WANTLIB-arts=	${WANTLIB} Xext c pthread
-
-BUILD_DEPENDS=	${RUN_DEPENDS-main}
-
-RUN_DEPENDS-main=	:audacious->=1.2:audio/audacious
-RUN_DEPENDS-arts=	::audio/audacious-plugins,-main
-
-LIB_DEPENDS-main=	tag.>=6:taglib->=1.4:audio/taglib \
-			faad.>=1,mp4ff::audio/faad \
-			audiofile::devel/libaudiofile \
-			curl.>=5::net/curl \
-			SDL.>=6::devel/sdl \
-			vorbis.>=5,vorbisfile.>=4::audio/libvorbis \
-			mpcdec.>=2::audio/libmpcdec \
-			mad::audio/libmad \
-			mp3lame::audio/lame \
-			esd.>=2::audio/esound \
-			sndfile.>=1::audio/libsndfile
-LIB_DEPENDS-arts=	artsc.>=1::x11/kde/arts3
-
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--with-dev-dsp=/dev/audio \
-			--disable-flac \
-			--disable-jack
+			--disable-pulse \
+			--disable-altivec \
+			--disable-lirc \
+			--disable-rootvis \
+			--disable-adplug \
+			--disable-wavpack \
+			--disable-sid \
+			--disable-alsa \
+			--disable-amidiplug \
+			--disable-cdaudio \
+			--disable-mms \
+			--disable-mtp_up \
+			--disable-projectm \
+			--disable-projectm-1.0
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			ac_cv_header_altivec_h=no
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+.if ${MACHINE_ARCH} != "amd64"
+CONFIGURE_ARGS+=	--disable-sse2
+.endif
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
