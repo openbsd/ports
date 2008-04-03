@@ -1,21 +1,20 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
---- configure.orig	Sat Nov  5 11:30:41 2005
-+++ configure	Sat Oct  7 10:41:22 2006
-@@ -289,7 +289,7 @@ LIBS=$LIBS
+$OpenBSD: patch-configure,v 1.2 2008/04/03 07:44:40 bernd Exp $
+--- configure.orig	Thu May 10 01:09:39 2007
++++ configure	Wed Jan  9 08:01:33 2008
+@@ -9,7 +9,6 @@
+ 
+ BJAM=""
+ TOOLSET=""
+-BJAM_CONFIG=""
+ BUILD=""
+ PREFIX=/usr/local
+ EPREFIX=
+@@ -326,7 +325,7 @@ LIBS=$LIBS
  
  all: .dummy
- 	@echo "\$(BJAM) \$(BJAM_CONFIG) -sTOOLS=\$(TOOLSET) \$(LIBS)"
--	@\$(BJAM) \$(BJAM_CONFIG) -sTOOLS=\$(TOOLSET) \$(LIBS) || \\
-+	@\$(BJAM) \$(BJAM_CONFIG) -sTOOLS=\$(TOOLSET) -sNO_BZIP2=1 \$(LIBS) stage || \\
+ 	@echo "\$(BJAM) \$(BJAM_CONFIG) --user-config=user-config.jam \$(LIBS)"
+-	@\$(BJAM) \$(BJAM_CONFIG) --user-config=user-config.jam \$(LIBS) || \\
++	@\$(BJAM) \$(BJAM_CONFIG) --user-config=user-config.jam \$(LIBS) stage || \\
  	echo "Not all Boost libraries built properly."
  
  clean: .dummy
-@@ -299,7 +299,7 @@ distclean: clean
- 	rm -rf Makefile config.log
- 
- check: .dummy
--	@cd status && ../\$(BJAM) \$(BJAM_CONFIG) -sTOOLS=\$(TOOLSET) test || echo "Some Boost regression tests failed. This is normal."
-+	@cd status && ../\$(BJAM) \$(BJAM_CONFIG) -sTOOLS=\$(TOOLSET) -sNO_BZIP2=1 test || echo "Some Boost regression tests failed. This is normal."
- 
- install: .dummy
- 	@echo "\$(BJAM) \$(BJAM_CONFIG) --prefix=\$(PREFIX) --exec-prefix=\$(EPREFIX) --libdir=\$(LIBDIR) --includedir=\$(INCLUDEDIR) -sTOOLS=\$(TOOLSET) \$(LIBS) install"

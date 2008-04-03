@@ -1,0 +1,66 @@
+$OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.1 2008/04/03 07:44:40 bernd Exp $
+--- tools/build/v2/tools/gcc.jam.orig	Tue Jun 12 00:47:49 2007
++++ tools/build/v2/tools/gcc.jam	Sun Mar 30 20:20:02 2008
+@@ -41,8 +41,10 @@ generators.override gcc.searched-lib-generator : searc
+ 
+ # Make the "o" suffix used for gcc toolset on all
+ # platforms
++local so_version = [ modules.peek : SO_VERSION ] ;
+ type.set-generated-target-suffix OBJ : <toolset>gcc : o ;
+ type.set-generated-target-suffix STATIC_LIB : <toolset>gcc : a ;
++type.set-generated-target-suffix SHARED_LIB : <toolset>gcc : so.$(so_version) ;
+ 
+ type.set-generated-target-suffix IMPORT_LIB : <toolset>gcc <target-os>cygwin : dll.a ;
+ type.set-generated-target-suffix IMPORT_LIB : <toolset>gcc <target-os>windows : a ;
+@@ -268,7 +270,7 @@ flags gcc.compile PCH_FILE <pch>on : <pch-file> ;
+ 
+ # Declare flags and action for compilation
+ flags gcc.compile OPTIONS <optimization>off : -O0 ;
+-flags gcc.compile OPTIONS <optimization>speed : -O3 ;
++flags gcc.compile OPTIONS <optimization>speed : -O2 ;
+ flags gcc.compile OPTIONS <optimization>space : -Os ;
+ 
+ flags gcc.compile OPTIONS <inlining>off : -fno-inline ;
+@@ -362,11 +364,13 @@ rule compile.c
+ 
+ actions compile.c++ bind PCH_FILE
+ {
++    echo "$(CONFIG_COMMAND)" $(LANG) -ftemplate-depth-128 $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<:W)" "$(>:W)"
+     "$(CONFIG_COMMAND)" $(LANG) -ftemplate-depth-128 $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<:W)" "$(>:W)"
+ }
+ 
+ actions compile.c bind PCH_FILE
+ {
++    echo "$(CONFIG_COMMAND)" $(LANG) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<)" "$(>)" 
+     "$(CONFIG_COMMAND)" $(LANG) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<)" "$(>)" 
+ }
+ 
+@@ -490,12 +494,6 @@ rule init-link-flags ( toolset linker condition )
+     {
+     case gnu :
+         {
+-        # Strip the binary when no debugging is needed.
+-        # We use --strip-all flag as opposed to -s since icc
+-        # (intel's compiler) is generally option-compatible with
+-        # and inherits from gcc toolset, but does not support -s
+-        flags $(toolset).link OPTIONS $(condition)/<debug-symbols>off : -Wl,--strip-all 
+-          : unchecked ;
+         flags $(toolset).link RPATH $(condition) : <dll-path> : unchecked ;
+         flags $(toolset).link RPATH_LINK $(condition) : <xdll-path> : unchecked ;
+         flags $(toolset).link START-GROUP $(condition) : -Wl,--start-group : unchecked ;
+@@ -565,6 +563,7 @@ rule link ( targets * : sources * : properties * )
+ 
+ actions link bind LIBRARIES
+ {
++    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-ST) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+     "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-ST) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+ }
+ 
+@@ -629,6 +628,7 @@ rule link.dll ( targets * : sources * : properties * )
+ # Differ from 'link' above only by -shared.
+ actions link.dll bind LIBRARIES
+ {
++    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-ST) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+     "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-ST) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+ }
+ 

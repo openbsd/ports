@@ -1,8 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2008/01/06 00:01:15 deanna Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2008/04/03 07:44:40 bernd Exp $
 @lib lib/libboost_date_time-mt.so.${LIBboost_date_time-mt_VERSION}
 @lib lib/libboost_date_time.so.${LIBboost_date_time_VERSION}
 @lib lib/libboost_filesystem-mt.so.${LIBboost_filesystem-mt_VERSION}
 @lib lib/libboost_filesystem.so.${LIBboost_filesystem_VERSION}
+@lib lib/libboost_graph-mt.so.${LIBboost_graph-mt_VERSION}
+@lib lib/libboost_graph.so.${LIBboost_graph_VERSION}
 @lib lib/libboost_iostreams-mt.so.${LIBboost_iostreams-mt_VERSION}
 @lib lib/libboost_iostreams.so.${LIBboost_iostreams_VERSION}
 @lib lib/libboost_prg_exec_monitor-mt.so.${LIBboost_prg_exec_monitor-mt_VERSION}
@@ -17,8 +19,8 @@
 @lib lib/libboost_serialization.so.${LIBboost_serialization_VERSION}
 @lib lib/libboost_signals-mt.so.${LIBboost_signals-mt_VERSION}
 @lib lib/libboost_signals.so.${LIBboost_signals_VERSION}
-@lib lib/libboost_test_exec_monitor-mt.so.${LIBboost_test_exec_monitor-mt_VERSION}
-@lib lib/libboost_test_exec_monitor.so.${LIBboost_test_exec_monitor_VERSION}
 @lib lib/libboost_thread-mt.so.${LIBboost_thread-mt_VERSION}
 @lib lib/libboost_unit_test_framework-mt.so.${LIBboost_unit_test_framework-mt_VERSION}
 @lib lib/libboost_unit_test_framework.so.${LIBboost_unit_test_framework_VERSION}
+@lib lib/libboost_wave-mt.so.${LIBboost_wave-mt_VERSION}
+@lib lib/libboost_wave.so.${LIBboost_wave_VERSION}

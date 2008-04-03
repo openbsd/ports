@@ -1,35 +1,29 @@
-# $OpenBSD: Makefile,v 1.11 2008/01/06 00:01:15 deanna Exp $
+# $OpenBSD: Makefile,v 1.12 2008/04/03 07:44:39 bernd Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
-PKGNAME=	boost-${VERSION}p2
+PKGNAME=	boost-${VERSION}
 
-VERSION=	1.33.1
+VERSION=	1.34.1
 DISTNAME=	boost_${VERSION:S/./_/g}
 
-SHARED_LIBS=	boost_date_time			0.0 \
-		boost_date_time-mt		0.0 \
-		boost_filesystem		0.0 \
-		boost_filesystem-mt		0.0 \
-		boost_iostreams			0.0 \
-		boost_iostreams-mt		0.0 \
-		boost_prg_exec_monitor		0.0 \
-		boost_prg_exec_monitor-mt	0.0 \
-		boost_program_options		0.0 \
-		boost_program_options-mt	0.0 \
-		boost_python			0.0 \
-		boost_python-mt			0.0 \
-		boost_regex			0.0 \
-		boost_regex-mt			0.0 \
-		boost_serialization		0.0 \
-		boost_serialization-mt		0.0 \
-		boost_signals			0.0 \
-		boost_signals-mt		0.0 \
-		boost_test_exec_monitor		0.0 \
-		boost_test_exec_monitor-mt	0.0 \
-		boost_thread-mt			0.0 \
-		boost_unit_test_framework	0.0 \
-		boost_unit_test_framework-mt	0.0
+SO_VERSION=	1.0
+BOOST_LIBS=	boost_date_time boost_date_time-mt \
+		boost_filesystem boost_filesystem-mt \
+		boost_graph boost_graph-mt \
+		boost_iostreams boost_iostreams-mt \
+		boost_prg_exec_monitor boost_prg_exec_monitor-mt \
+		boost_program_options boost_program_options-mt \
+		boost_python boost_python-mt \
+		boost_regex boost_regex-mt \
+		boost_serialization boost_serialization-mt \
+		boost_signals boost_signals-mt \
+		boost_thread-mt \
+		boost_unit_test_framework boost_unit_test_framework-mt \
+		boost_wave boost_wave-mt
+.for _lib in ${BOOST_LIBS}
+SHARED_LIBS+=	${_lib} ${SO_VERSION}
+.endfor
 
 CATEGORIES=	devel
 
@@ -46,6 +40,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
+CONFIGURE_ENV=	BJAM_CONFIG="-sNO_BZIP2=1 -sSO_VERSION=${SO_VERSION}"
 
 REGRESS_TARGET=	check
 
@@ -69,7 +64,7 @@ post-configure:
 	    --with-python-version=${MODPY_VERSION}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/jam_src/bin.*/bjam \
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/jam/src/bin.*/bjam \
 		${PREFIX}/bin
 
 	${INSTALL_DATA} ${WRKSRC}/stage/lib/lib!(*.so) ${PREFIX}/lib
@@ -77,6 +72,6 @@ do-install:
 	@cd ${WRKSRC} && \
 		find boost -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \;
 	@cd ${WRKSRC} && \
-		find boost -type f -exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
+		find boost ! -name \*.orig -type f -exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
 
 .include <bsd.port.mk>
