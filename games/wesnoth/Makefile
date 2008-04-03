@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2007/12/16 00:09:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2008/04/03 10:23:01 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.2.8
+DISTNAME=	wesnoth-1.4
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.wesnoth.org/
@@ -21,7 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 c freetype m pthread stdc++ z
 
 USE_LIBTOOL=	Yes
-LIB_DEPENDS=	SDL::devel/sdl \
+LIB_DEPENDS=	boost_iostreams-mt::devel/boost \
+		SDL::devel/sdl \
 		SDL_image::devel/sdl-image \
 		SDL_net::devel/sdl-net \
 		SDL_mixer::devel/sdl-mixer \
@@ -56,7 +57,8 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 CONFIGURE_ARGS+=--enable-server \
 		--enable-campaign-server \
 		--enable-editor \
-		--with-fifodir=/var/run
+		--with-fifodir=/var/run \
+		--disable-desktop-entry
 
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
 

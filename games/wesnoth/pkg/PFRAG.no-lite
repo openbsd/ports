@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-lite,v 1.5 2007/03/17 16:59:31 jasper Exp $
+@comment $OpenBSD: PFRAG.no-lite,v 1.6 2008/04/03 10:23:01 jasper Exp $
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/story/
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/story/arrival_of_the_heir.png
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/story/httt_story1.jpg
@@ -12,13 +12,23 @@ share/wesnoth/data/campaigns/Heir_To_The_Throne/images/story/httt_story8.jpg
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/story/story6.png
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/story/story7.png
 share/wesnoth/data/campaigns/Heir_To_The_Throne/images/story/story9.png
+share/wesnoth/data/campaigns/Liberty/images/story/
+share/wesnoth/data/campaigns/Liberty/images/story/Halstead.jpg
+share/wesnoth/data/campaigns/Liberty/images/story/frontier.jpg
+share/wesnoth/data/campaigns/Liberty/images/story/island.jpg
+share/wesnoth/data/campaigns/Liberty/images/story/return_to_Dallben_and_Delwyn.jpg
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/east.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/fall_of_eldaric.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/prince_finds_wesnoth.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/rough_landing.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/story1.png
-share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/the_duel.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/tgi-blackmore.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/tgi-clearwater.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/tgi-jevyan.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/tgi-southbay.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/tgi-stormvale.png
+share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/tgi-thegreenisle.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/the_great_continent.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/the_green_isle.png
 share/wesnoth/data/campaigns/The_Rise_Of_Wesnoth/images/story/trow-logo.png
@@ -27,23 +37,4 @@ share/wesnoth/data/campaigns/The_South_Guard/images/story/
 share/wesnoth/data/campaigns/The_South_Guard/images/story/bigmap.jpg
 share/wesnoth/data/campaigns/The_South_Guard/images/story/fall.jpg
 share/wesnoth/data/campaigns/The_South_Guard/images/story/summer.jpg
-share/wesnoth/data/campaigns/The_South_Guard/images/story/westin.jpg
 share/wesnoth/data/campaigns/The_South_Guard/images/story/winter.jpg
-share/wesnoth/images/maps/
-share/wesnoth/images/maps/northlands.jpg
-share/wesnoth/images/maps/wesnoth-httt.jpg
-share/wesnoth/images/maps/wesnoth.png
-share/wesnoth/music/
-share/wesnoth/music/defeat.ogg
-share/wesnoth/music/elf-land.ogg
-share/wesnoth/music/frantic.ogg
-share/wesnoth/music/gameplay01.ogg
-share/wesnoth/music/gameplay02.ogg
-share/wesnoth/music/gameplay03.ogg
-share/wesnoth/music/main_menu.ogg
-share/wesnoth/music/main_menu_new.ogg
-share/wesnoth/music/underground.ogg
-share/wesnoth/music/victory.ogg
-share/wesnoth/music/wesnoth-1.ogg
-share/wesnoth/music/wesnoth-2.ogg
-share/wesnoth/music/wesnoth-5.ogg
