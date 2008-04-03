@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_pdf_1,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
---- tools/pdf.1.orig	Mon Jun 12 11:56:11 2006
-+++ tools/pdf.1	Mon Jun 12 11:56:22 2006
+$OpenBSD: patch-tools_pdf_1,v 1.2 2008/04/03 12:13:48 wcmaier Exp $
+--- tools/pdf.1.orig	Wed Jan 25 12:51:51 2006
++++ tools/pdf.1	Mon Mar 31 21:02:12 2008
 @@ -144,7 +144,7 @@ in the cluster.
  .It Ev RCMD_CMD
  Command to use to connect to remote machines.  The command chosen must
@@ -10,3 +10,19 @@ $OpenBSD: patch-tools_pdf_1,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
  .\" .Sh FILES
  .Sh EXAMPLES
  To find all the filesystems which are more than 90% full across your cluster,
+@@ -157,7 +157,7 @@ Exit status is 0 on success, 1 if an error occurs.
+ .Sh SEE ALSO
+ .Xr dsh 1 ,
+ .Xr df 1 ,
+-.Xr rsh 1 ,
++.Xr ssh 1 ,
+ .Xr kerberos 3 ,
+ .Xr hosts.equiv 5 ,
+ .Xr rhosts 5
+@@ -183,4 +183,4 @@ addition, numbers longer than 9 digits will be truncat
+ will only work on nodes that produce the
+ .Xr df 1
+ output that it expects.  It has been made to work on HP-UX, Solaris, and
+-AIX, along with any BSD, and most versions of Linux.
+\ No newline at end of file
++AIX, along with any BSD, and most versions of Linux.

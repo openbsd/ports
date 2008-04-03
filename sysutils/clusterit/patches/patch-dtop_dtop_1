@@ -1,7 +1,7 @@
-$OpenBSD: patch-dsh_rseq_1,v 1.2 2008/04/03 12:13:48 wcmaier Exp $
---- dsh/rseq.1.orig	Wed Jan 10 14:36:11 2007
-+++ dsh/rseq.1	Mon Mar 31 21:00:49 2008
-@@ -167,7 +167,7 @@ in the cluster.
+$OpenBSD: patch-dtop_dtop_1,v 1.1 2008/04/03 12:13:48 wcmaier Exp $
+--- dtop/dtop.1.orig	Mon Mar 31 19:52:13 2008
++++ dtop/dtop.1	Mon Mar 31 19:52:15 2008
+@@ -181,7 +181,7 @@ in the cluster.
  .It Ev RCMD_CMD
  Command to use to connect to remote machines.  The command chosen must
  be able to connect with no password to the remote host.  Defaults to
@@ -9,4 +9,4 @@ $OpenBSD: patch-dsh_rseq_1,v 1.2 2008/04/03 12:13:48 wcmaier Exp $
 +.Ic ssh .
  .It Ev RCMD_CMD_ARGS
  Arguments to pass to the remote shell command.  Defaults to none.
- .It Ev RCMD_USER
+ .It Ev RCMD_PORT

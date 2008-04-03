@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/04/03 12:13:48 wcmaier Exp $
 
 COMMENT=		suite of clustering tools based on IBM's PSSP
 
-DISTNAME=		clusterit-2.4
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		clusterit-2.5
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.garbled.net/clusterit.html
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
+WANTLIB=		c curses
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clusterit/}
 

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/03 12:13:48 wcmaier Exp $
 bin/barrier
 bin/barrierd
 bin/clustersed
 bin/dsh
 bin/dshbak
+bin/dtop
 bin/jsd
 bin/jsh
 bin/pcp
@@ -16,6 +17,7 @@ bin/run
 @man man/man1/clustersed.1
 @man man/man1/dsh.1
 @man man/man1/dshbak.1
+@man man/man1/dtop.1
 @man man/man1/jsd.1
 @man man/man1/jsh.1
 @man man/man1/pcp.1

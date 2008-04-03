@@ -1,6 +1,6 @@
-$OpenBSD: patch-jsd_jsd_1,v 1.1.1.1 2006/06/13 19:39:07 steven Exp $
---- jsd/jsd.1.orig	Mon Jun 12 11:54:38 2006
-+++ jsd/jsd.1	Mon Jun 12 11:54:53 2006
+$OpenBSD: patch-jsd_jsd_1,v 1.2 2008/04/03 12:13:48 wcmaier Exp $
+--- jsd/jsd.1.orig	Mon Mar 31 19:44:57 2008
++++ jsd/jsd.1	Mon Mar 31 19:45:00 2008
 @@ -173,7 +173,7 @@ in the cluster.
  .It Ev RCMD_CMD
  Command to use to connect to remote machines.  The command chosen must
