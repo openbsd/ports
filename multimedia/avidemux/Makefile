@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2008/03/19 09:21:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2008/04/03 10:21:26 ajacoutot Exp $
 
 COMMENT=	free video editor
 
 V=		2.4.1
 DISTNAME=	avidemux_${V}
-PKGNAME=	avidemux-${V}
+PKGNAME=	avidemux-${V}p0
 
 CATEGORIES=	multimedia
 
@@ -44,9 +44,6 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-
-# force minimal optimisation; needed for overwhole stability
-CFLAGS+=	-O0
 
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.8
