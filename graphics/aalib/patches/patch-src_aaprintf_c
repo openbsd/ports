@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_aaprintf_c,v 1.1 2008/04/03 12:42:45 jasper Exp $
+--- src/aaprintf.c.orig	Wed Apr  2 00:48:56 2008
++++ src/aaprintf.c	Wed Apr  2 00:49:15 2008
+@@ -7,7 +7,7 @@ int aa_printf(aa_context *c, int x, int y, enum aa_att
+   char buf[1025];
+   int i;
+   va_start(args,fmt);
+-  i=vsprintf(buf,fmt,args);
++  i=vsnprintf(buf,sizeof(buf),fmt,args);
+   va_end(args);
+   aa_puts(c,x,y,attr,buf);
+   return i;
