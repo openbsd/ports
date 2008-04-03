@@ -1,0 +1,11 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2008/04/03 12:03:09 jasper Exp $
+--- CMakeLists.txt.orig	Thu Apr  3 13:58:34 2008
++++ CMakeLists.txt	Thu Apr  3 13:58:42 2008
+@@ -14,7 +14,6 @@ SET(musicbrainz3_SOVERSION ${musicbrainz3_SOVERSION_CU
+ 
+ SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
+ FIND_PACKAGE(Neon REQUIRED)
+-FIND_PACKAGE(CppUnit)
+ FIND_PACKAGE(DiscId)
+ 
+ SET(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)")
