@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2008/03/24 22:29:36 simon Exp $
+# $OpenBSD: Makefile,v 1.211 2008/04/03 12:41:17 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -75,6 +75,7 @@
      SUBDIR += imap-uw,plaintext
      SUBDIR += imapfilter
      SUBDIR += imapproxy
+     SUBDIR += imapsync
      SUBDIR += imp
      SUBDIR += ingo
      SUBDIR += isync
