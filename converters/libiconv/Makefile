@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2007/11/19 13:12:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2008/04/03 09:23:40 sturm Exp $
 
 COMMENT=	character set conversion library
 
@@ -34,11 +34,11 @@ CONFIGURE_ARGS+= --enable-static \
 USE_LIBTOOL=Yes
 
 pre-configure:
-	@cd ${WRKSRC}; make -f Makefile.devel lib/aliases.h
+	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} make -f Makefile.devel lib/aliases.h
 
 .include <bsd.port.mk>
 
 .if ${NO_SHARED_LIBS:L} == "no"
-CONFIGURE_ENV=	LIBTOOL_FLAGS="-fPIC -DPIC"
+CONFIGURE_ENV+=	LIBTOOL_FLAGS="-fPIC -DPIC"
 .endif
 
