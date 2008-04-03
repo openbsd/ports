@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/03/15 17:40:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/04/03 07:18:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
-DISTNAME=	gnugk-2.2.6
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	gnugk-2.2.7
 CATEGORIES=	net telephony
 
 HOMEPAGE=	http://www.gnugk.org/
@@ -53,6 +52,7 @@ CONFIGURE_ARGS+=--disable-mysql
 .if ${FLAVOR:L:Mpgsql}
 LIB_DEPENDS+=	pq.>=5::databases/postgresql
 CONFIGURE_ARGS+=--enable-pgsql \
+		--with-pgsql-lib-dir=${LOCALBASE}/lib \
 		--with-pgsql-include-dir=${LOCALBASE}/include/postgresql
 .else
 CONFIGURE_ARGS+=--disable-pgsql
