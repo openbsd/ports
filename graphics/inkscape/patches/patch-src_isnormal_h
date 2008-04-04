@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_isnormal_h,v 1.1.1.1 2008/04/04 14:37:26 landry Exp $
+--- src/isnormal.h.orig	Sat Mar 29 12:23:26 2008
++++ src/isnormal.h	Sat Mar 29 12:28:01 2008
+@@ -9,7 +9,12 @@
+ 
+ 	#include <ieeefp.h>
+ 	#define isnormal(x) (fpclass(x) >= FP_NZERO)
+-  
++
++#elif defined(__OpenBSD__) && !defined(isnormal)
++    
++    #include <math.h>
++    #define isnormal(_a) (finite(_a) && ((_a) != 0.0))
++
+ #else
+ 
+ 	using std::isnormal;

@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_isnan_h,v 1.1.1.1 2008/04/04 14:37:26 landry Exp $
+--- src/isnan.h.orig	Tue Mar 25 10:32:24 2008
++++ src/isnan.h	Tue Mar 25 10:34:01 2008
+@@ -19,8 +19,11 @@
+  * 2005 modification hereby placed in public domain.  Probably supercedes the 2004 copyright
+  * for the code itself.
+  */
+-
++#if defined(__OpenBSD__)
++#include <cmath>
++#else
+ #include <math.h>
++#endif
+ /* You might try changing the above to <cmath> if you have problems.
+  * Whether you use math.h or cmath, you may need to edit the .cpp file
+  * and/or other .h files to use the same header file.
+@@ -32,7 +35,7 @@
+ # define isNaN(_a) (__isnan(_a))	/* MacOSX/Darwin definition < 10.4 */
+ #elif defined(WIN32) || defined(_isnan)
+ # define isNaN(_a) (_isnan(_a)) 	/* Win32 definition */
+-#elif defined(isnan) || defined(__FreeBSD__) || defined(__osf__)
++#elif defined(isnan) || defined(__FreeBSD__) || defined(__osf__) || defined(__OpenBSD__)
+ # define isNaN(_a) (isnan(_a))		/* GNU definition */
+ #elif defined (SOLARIS_2_8) && __GNUC__ == 3 && __GNUC_MINOR__ == 2
+ # define isNaN(_a) (isnan(_a))		/* GNU definition */
+@@ -53,7 +56,7 @@
+ # define isFinite(_a) (_isfinite(_a))
+ #elif defined(isfinite)
+ # define isFinite(_a) (isfinite(_a))
+-#elif defined(__osf__)
++#elif defined(__osf__) || defined(__OpenBSD__)
+ # define isFinite(_a) (finite(_a) && !isNaN(_a))
+ #elif defined (SOLARIS_2_8) && __GNUC__ == 3 && __GNUC_MINOR__ == 2
+ #include  <ieeefp.h>

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_ui_dialog_print_cpp,v 1.1.1.1 2008/04/04 14:37:26 landry Exp $
+--- src/ui/dialog/print.cpp.orig	Fri Mar 28 17:50:41 2008
++++ src/ui/dialog/print.cpp	Fri Mar 28 17:51:21 2008
+@@ -16,6 +16,9 @@
+ #include <io.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <unistd.h>
++#endif
+ #include <gtkmm/stock.h>
+ #include "print.h"
+ 
