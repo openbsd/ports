@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/04/04 19:29:26 okan Exp $
 
 COMMENT=		easy-to-use date/time formatting
 
-DISTNAME=		Time-Format-1.02
+DISTNAME=		Time-Format-1.07
 CATEGORIES=		devel
 
 MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>
@@ -16,7 +16,5 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 REGRESS_DEPENDS=	::converters/p5-DateManip \
 			::devel/p5-DateTime
-
-PKG_ARCH=		*
 
 .include <bsd.port.mk>
