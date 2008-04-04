@@ -1,111 +1,14 @@
-$OpenBSD: patch-include_vlc_threads_funcs_h,v 1.4 2007/04/08 17:34:20 ajacoutot Exp $
---- include/vlc_threads_funcs.h.orig	Sat Dec  9 02:12:27 2006
-+++ include/vlc_threads_funcs.h	Sun Apr  8 10:45:29 2007
-@@ -69,7 +69,7 @@ static inline int __vlc_mutex_lock( const char * psz_f
- {
-     int i_result;
-     /* In case of error : */
--    int i_thread = -1;
-+    long i_thread = -1;
-     const char * psz_error = "";
- 
- #if defined( PTH_INIT_IN_PTH_H )
-@@ -111,7 +111,7 @@ static inline int __vlc_mutex_lock( const char * psz_f
-     i_result = pthread_mutex_lock( &p_mutex->mutex );
-     if ( i_result )
+$OpenBSD: patch-include_vlc_threads_funcs_h,v 1.5 2008/04/04 00:53:01 jakemsr Exp $
+--- include/vlc_threads_funcs.h.orig	Mon Mar 31 15:07:51 2008
++++ include/vlc_threads_funcs.h	Thu Apr  3 03:51:08 2008
+@@ -486,8 +486,8 @@ static inline int __vlc_cond_wait( const char * psz_fi
      {
--        i_thread = (int)pthread_self();
-+        i_thread = (long)pthread_self();
-         psz_error = strerror(i_result);
-     }
+         /* People keep pissing me off with this. --Meuuh */
+         msg_Dbg( p_condvar->p_this,
+-                  "thread %u: secret message triggered "
+-                  "at %s:%d (%s)", (int)pthread_self(),
++                  "thread %lu: secret message triggered "
++                  "at %s:%d (%s)", (long)pthread_self(),
+                   psz_file, i_line, strerror(i_result) );
  
-@@ -124,7 +124,7 @@ static inline int __vlc_mutex_lock( const char * psz_f
-     if( i_result )
-     {
-         msg_Err( p_mutex->p_this,
--                 "thread %u: mutex_lock failed at %s:%d (%d:%s)",
-+                 "thread %lu: mutex_lock failed at %s:%d (%d:%s)",
-                  i_thread, psz_file, i_line, i_result, psz_error );
-     }
-     return i_result;
-@@ -141,7 +141,7 @@ static inline int __vlc_mutex_unlock( const char * psz
- {
-     int i_result;
-     /* In case of error : */
--    int i_thread = -1;
-+    long i_thread = -1;
-     const char * psz_error = "";
- 
- #if defined( PTH_INIT_IN_PTH_H )
-@@ -184,7 +184,7 @@ static inline int __vlc_mutex_unlock( const char * psz
-     i_result = pthread_mutex_unlock( &p_mutex->mutex );
-     if ( i_result )
-     {
--        i_thread = (int)pthread_self();
-+        i_thread = (long)pthread_self();
-         psz_error = strerror(i_result);
-     }
- 
-@@ -197,7 +197,7 @@ static inline int __vlc_mutex_unlock( const char * psz
-     if( i_result )
-     {
-         msg_Err( p_mutex->p_this,
--                 "thread %u: mutex_unlock failed at %s:%d (%d:%s)",
-+                 "thread %lu: mutex_unlock failed at %s:%d (%d:%s)",
-                  i_thread, psz_file, i_line, i_result, psz_error );
-     }
- 
-@@ -227,7 +227,7 @@ static inline int __vlc_cond_signal( const char * psz_
- {
-     int i_result;
-     /* In case of error : */
--    int i_thread = -1;
-+    long i_thread = -1;
-     const char * psz_error = "";
- 
- #if defined( PTH_INIT_IN_PTH_H )
-@@ -322,7 +322,7 @@ static inline int __vlc_cond_signal( const char * psz_
-     i_result = pthread_cond_signal( &p_condvar->cond );
-     if ( i_result )
-     {
--        i_thread = (int)pthread_self();
-+        i_thread = (long)pthread_self();
-         psz_error = strerror(i_result);
-     }
- 
-@@ -339,7 +339,7 @@ static inline int __vlc_cond_signal( const char * psz_
-     if( i_result )
-     {
-         msg_Err( p_condvar->p_this,
--                 "thread %u: cond_signal failed at %s:%d (%d:%s)",
-+                 "thread %lu: cond_signal failed at %s:%d (%d:%s)",
-                  i_thread, psz_file, i_line, i_result, psz_error );
-     }
- 
-@@ -357,7 +357,7 @@ static inline int __vlc_cond_wait( const char * psz_fi
- {
-     int i_result;
-     /* In case of error : */
--    int i_thread = -1;
-+    long i_thread = -1;
-     const char * psz_error = "";
- 
- #if defined( PTH_INIT_IN_PTH_H )
-@@ -512,7 +512,7 @@ static inline int __vlc_cond_wait( const char * psz_fi
- 
-     if ( i_result )
-     {
--        i_thread = (int)pthread_self();
-+        i_thread = (long)pthread_self();
-         psz_error = strerror(i_result);
-     }
- 
-@@ -525,7 +525,7 @@ static inline int __vlc_cond_wait( const char * psz_fi
-     if( i_result )
-     {
-         msg_Err( p_condvar->p_this,
--                 "thread %u: cond_wait failed at %s:%d (%d:%s)",
-+                 "thread %lu: cond_wait failed at %s:%d (%d:%s)",
-                  i_thread, psz_file, i_line, i_result, psz_error );
-     }
- 
+         i_result = pthread_cond_wait( &p_condvar->cond, &p_mutex->mutex );

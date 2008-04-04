@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2008/03/24 04:46:26 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.68 2008/04/04 00:53:01 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	videolan client; multimedia player
 
-V=		0.8.6e
+V=		0.8.6f
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 CATEGORIES=	x11
@@ -171,7 +171,7 @@ FLAVOR?=
 .if !${FLAVOR:L:Mno_web}
 MULTI_PACKAGES+=-web
 COMMENT-web=	mozilla plugin for embedded media playback
-PKGNAME-web=	vlc-web-${V}p0
+PKGNAME-web=	vlc-web-${V}
 BUILD_DEPENDS+=	:xulrunner-devel-*:devel/xulrunner,-devel
 CONFIGURE_ARGS+=--enable-mozilla
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/bin/xulrunner-config" \
@@ -187,7 +187,7 @@ CONFIGURE_ARGS+=--disable-mozilla
 .if !${FLAVOR:L:Mno_arts}
 MULTI_PACKAGES+=-arts
 COMMENT-arts=	artsd audio output module for vlc
-FULLPKGNAME-arts=vlc-arts-${V}p0
+FULLPKGNAME-arts=vlc-arts-${V}
 CONFIGURE_ARGS+=--enable-arts
 LIB_DEPENDS-arts=${LIB_DEPENDS} artsc.>=1::x11/kde/arts3
 # any FLAVOR of vlc will do
@@ -200,7 +200,7 @@ CONFIGURE_ARGS+=--disable-arts
 .if !${FLAVOR:L:Mno_esd}
 MULTI_PACKAGES+=-esd
 COMMENT-esd=	esound audio output module for vlc
-FULLPKGNAME-esd=vlc-esd-${V}p0
+FULLPKGNAME-esd=vlc-esd-${V}
 CONFIGURE_ARGS+=--enable-esd
 LIB_DEPENDS-esd=esd.>=2::audio/esound
 # any FLAVOR of vlc will do
