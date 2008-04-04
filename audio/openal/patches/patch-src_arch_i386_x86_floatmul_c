@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_arch_i386_x86_floatmul_c,v 1.1 2006/10/30 23:31:37 steven Exp $
---- src/arch/i386/x86_floatmul.c.orig	Sat Oct 21 11:22:41 2006
-+++ src/arch/i386/x86_floatmul.c	Sat Oct 21 11:22:57 2006
-@@ -34,7 +34,7 @@ void _alFloatMul(ALshort *bpt, ALfloat s
+$OpenBSD: patch-src_arch_i386_x86_floatmul_c,v 1.2 2008/04/04 09:33:10 jasper Exp $
+--- src/arch/i386/x86_floatmul.c.orig	Wed Dec 21 14:06:35 2005
++++ src/arch/i386/x86_floatmul.c	Tue Apr  1 15:30:54 2008
+@@ -34,7 +34,7 @@ void _alFloatMul(ALshort *bpt, ALfloat sa, ALuint len)
  	ALint scaled_sa = sa * SCALING_FACTOR;
  	ALint iter;
  	

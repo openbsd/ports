@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_arch_i386_x86_cpu_caps_prk_c,v 1.1 2006/10/30 23:31:37 steven Exp $
---- src/arch/i386/x86_cpu_caps_prk.c.orig	Sat Oct 21 11:21:22 2006
-+++ src/arch/i386/x86_cpu_caps_prk.c	Sat Oct 21 11:21:42 2006
-@@ -47,7 +47,7 @@ struct x86cpu_caps_s x86cpu_caps_use = {
+$OpenBSD: patch-src_arch_i386_x86_cpu_caps_prk_c,v 1.2 2008/04/04 09:33:10 jasper Exp $
+--- src/arch/i386/x86_cpu_caps_prk.c.orig	Thu Jan 19 15:58:51 2006
++++ src/arch/i386/x86_cpu_caps_prk.c	Tue Apr  1 15:30:54 2008
+@@ -47,7 +47,7 @@ struct x86cpu_caps_s x86cpu_caps_use = { 1, 1, 1, 1, 1
  void _alDetectCPUCaps(void)
  {
  	/* compile time detection */
