@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2008/04/01 20:24:20 kili Exp $
+# $OpenBSD: Makefile,v 1.204 2008/04/04 14:38:34 landry Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -67,6 +67,7 @@
      SUBDIR += imlib
      SUBDIR += imlib2
      SUBDIR += indexpage
+     SUBDIR += inkscape
      SUBDIR += iview
      SUBDIR += jasper
      SUBDIR += jbigkit
