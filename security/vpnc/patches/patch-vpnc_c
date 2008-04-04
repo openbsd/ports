@@ -1,7 +1,7 @@
-$OpenBSD: patch-vpnc_c,v 1.2 2005/11/11 19:38:07 sturm Exp $
---- vpnc.c.orig	Fri Nov  4 00:09:49 2005
-+++ vpnc.c	Fri Nov  4 00:11:03 2005
-@@ -196,10 +196,11 @@ static void addenv(const void *name, con
+$OpenBSD: patch-vpnc_c,v 1.3 2008/04/04 21:41:27 okan Exp $
+--- vpnc.c.orig	Mon Sep 10 15:39:48 2007
++++ vpnc.c	Wed Sep 12 16:47:27 2007
+@@ -159,10 +159,11 @@ static void addenv(const void *name, const char *value
  
  	oldval = getenv(name);
  	if (oldval != NULL) {
