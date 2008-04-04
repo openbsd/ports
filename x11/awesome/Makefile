@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/22 18:51:46 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/04/04 18:58:17 wcmaier Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
-V=			2.1
-DISTNAME=		awesome-$V
+DISTNAME=		awesome-2.2
 
 CATEGORIES=		x11
 
