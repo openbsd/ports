@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/05/01 08:25:59 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/04/04 14:54:23 ajacoutot Exp $
 bin/lftp
 bin/lftpget
 lib/lftp/
@@ -9,7 +9,7 @@ lib/liblftp-tasks.la
 @man man/man1/lftp.1
 @man man/man1/lftpget.1
 share/examples/lftp/
-share/examples/lftp/lftp.conf-sample
+share/examples/lftp/lftp.conf
 @sample ${SYSCONFDIR}/lftp.conf
 share/lftp/
 share/lftp/convert-netscape-cookies
@@ -26,4 +26,5 @@ share/locale/pl/LC_MESSAGES/lftp.mo
 share/locale/pt_BR/LC_MESSAGES/lftp.mo
 share/locale/ru/LC_MESSAGES/lftp.mo
 share/locale/zh_CN/LC_MESSAGES/lftp.mo
+share/locale/zh_HK/LC_MESSAGES/lftp.mo
 share/locale/zh_TW/LC_MESSAGES/lftp.mo
