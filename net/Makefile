@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.514 2008/04/01 13:53:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.515 2008/04/04 22:14:59 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -101,6 +101,7 @@
      SUBDIR += ickle
      SUBDIR += icmpinfo
      SUBDIR += ifstat
+     SUBDIR += iftop
      SUBDIR += igmpproxy
      SUBDIR += ii
      SUBDIR += ike-scan
