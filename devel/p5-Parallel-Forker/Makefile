@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/01 06:59:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/04 20:41:58 okan Exp $
 
 COMMENT=	parallel job forking and management
 
-DISTNAME=	Parallel-Forker-1.221
+DISTNAME=	Parallel-Forker-1.222
 CATEGORIES=	devel
 
 # Artistic
@@ -14,7 +14,5 @@ PERMIT_DISTFILES_FTP=   Yes
 MODULES=	cpan
 
 RUN_DEPENDS=	::sysutils/p5-Proc-ProcessTable
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>
