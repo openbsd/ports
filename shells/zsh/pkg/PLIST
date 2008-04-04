@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2008/03/26 16:45:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.24 2008/04/04 07:46:03 landry Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -75,10 +75,10 @@ share/zsh/${V}/functions/_bzip2
 share/zsh/${V}/functions/_bzr
 share/zsh/${V}/functions/_cache_invalid
 share/zsh/${V}/functions/_cal
+share/zsh/${V}/functions/_calendar
 share/zsh/${V}/functions/_call_function
 share/zsh/${V}/functions/_call_program
 share/zsh/${V}/functions/_canonical_paths
-@comment share/zsh/${V}/functions/_canonical_paths.orig
 share/zsh/${V}/functions/_ccal
 share/zsh/${V}/functions/_cd
 share/zsh/${V}/functions/_cdbs-edit-patch
@@ -134,6 +134,7 @@ share/zsh/${V}/functions/_debfoster
 share/zsh/${V}/functions/_debsign
 share/zsh/${V}/functions/_default
 share/zsh/${V}/functions/_defaults
+share/zsh/${V}/functions/_delimiters
 share/zsh/${V}/functions/_describe
 share/zsh/${V}/functions/_description
 share/zsh/${V}/functions/_dhclient
@@ -211,6 +212,8 @@ share/zsh/${V}/functions/_getmail
 share/zsh/${V}/functions/_git
 share/zsh/${V}/functions/_global
 share/zsh/${V}/functions/_global_tags
+share/zsh/${V}/functions/_globqual_delims
+share/zsh/${V}/functions/_globquals
 share/zsh/${V}/functions/_gnome-gv
 share/zsh/${V}/functions/_gnu_generic
 share/zsh/${V}/functions/_gnutls
@@ -231,6 +234,7 @@ share/zsh/${V}/functions/_hash
 share/zsh/${V}/functions/_hdiutil
 share/zsh/${V}/functions/_history
 share/zsh/${V}/functions/_history_complete_word
+share/zsh/${V}/functions/_history_modifiers
 share/zsh/${V}/functions/_hosts
 share/zsh/${V}/functions/_iconv
 share/zsh/${V}/functions/_id
