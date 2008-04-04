@@ -1,32 +1,32 @@
-$OpenBSD: patch-config,v 1.2 2003/04/01 20:52:59 sturm Exp $
---- config.orig	Wed Mar  5 11:34:15 2003
-+++ config	Sat Mar 29 18:17:02 2003
-@@ -104,7 +104,7 @@
- #      flat, except for confdir/templates, where the HTML templates
- #      for CGI output reside (e.g. Privoxy's 404 error page).
- #  
--confdir .
-+confdir %%SYSCONFDIR%%/privoxy
- 
- #  
- #  1.2. logdir
-@@ -131,7 +131,7 @@ confdir .
- #  
- #      No trailing "/", please
- #  
--logdir .
-+logdir /var/log/privoxy
- 
- #  
- #  1.3. actionsfile
-@@ -438,8 +438,8 @@ jarfile jarfile
+$OpenBSD: patch-config,v 1.3 2008/04/04 02:21:29 merdely Exp $
+--- config.orig	Wed Apr  2 15:30:46 2008
++++ config	Wed Apr  2 15:31:57 2008
+@@ -163,8 +163,8 @@
  #      don't end up locked out from the information on why they were
  #      locked out in the first place!
- #  
+ #
 -trust-info-url  http://www.example.com/why_we_block.html
 -trust-info-url  http://www.example.com/what_we_allow.html
 +#trust-info-url  http://www.example.com/why_we_block.html
 +#trust-info-url  http://www.example.com/what_we_allow.html
- 
- #  
- #  2.3. admin-address
+ #
+ #
+ #  1.3. admin-address
+@@ -260,7 +260,7 @@ trust-info-url  http://www.example.com/what_we_allow.h
+ #
+ #      No trailing "/", please.
+ #
+-confdir .
++confdir %%SYSCONFDIR%%/privoxy
+ #
+ #
+ #  2.2. templdir
+@@ -315,7 +315,7 @@ confdir .
+ #
+ #      No trailing "/", please.
+ #
+-logdir .
++logdir /var/log/privoxy
+ #
+ #
+ #  2.4. actionsfile

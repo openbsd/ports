@@ -1,15 +1,7 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.3 2004/05/23 21:38:11 pvalchev Exp $
---- GNUmakefile.in.orig	2002-11-04 00:04:03.000000000 -0700
-+++ GNUmakefile.in	2004-05-23 15:31:25.000000000 -0600
-@@ -154,7 +154,6 @@ DOC_STATUS = @DOC_STATUS@
- #DOSFILTER  = gawk -v ORS='\r\n' '{print $0;}'
- DOSFILTER  = $(PERL) -p -e 's/\n/\r\n/'
- CVSROOT    = :pserver:anonymous@cvs.ijbswa.sourceforge.net:/cvsroot/ijbswa
--TMPDIR     := $(shell mktemp -d /tmp/$(PROGRAM).XXXXXX)
- 
- #############################################################################
- # Setup for make distribution rh and suse for now 
-@@ -226,7 +225,7 @@ PTHREAD_LIB  = @PTHREAD_ONLY@@PTHREAD_LI
+$OpenBSD: patch-GNUmakefile_in,v 1.4 2008/04/04 02:21:29 merdely Exp $
+--- GNUmakefile.in.orig	Wed Apr  2 15:27:11 2008
++++ GNUmakefile.in	Wed Apr  2 15:27:48 2008
+@@ -226,7 +226,7 @@ PTHREAD_LIB  = @PTHREAD_ONLY@@PTHREAD_LIB@
  SRCS         = $(C_SRC)  $(W32_SRC)  $(PCRS_SRC)  $(PCRE_SRC)  $(REGEX_SRC)
  OBJS         = $(C_OBJS) $(W32_OBJS) $(PCRS_OBJS) $(PCRE_OBJS) $(REGEX_OBJS)
  HDRS         = $(C_HDRS) $(W32_HDRS) $(PCRS_HDRS) $(PCRE_OBJS) $(REGEX_HDRS)
@@ -18,11 +10,3 @@ $OpenBSD: patch-GNUmakefile_in,v 1.3 2004/05/23 21:38:11 pvalchev Exp $
  
  
  #############################################################################
-@@ -333,6 +332,7 @@ dist-check:
- # This creates a tar.gz and spec-file for a Red Hat 6.x version.
- #############################################################################
- create-snapshot:
-+	TMPDIR = $(shell mktemp -d /tmp/$(PROGRAM).XXXXXX)
- 	@tag=`cvs -d $(CVSROOT) status Makefile | awk ' /Sticky Tag/ { print $$3 } '` 2> /dev/null; \
- 	[ x"$$tag" = x"(none)" ] && tag=HEAD; \
- 	echo "*** Creating package from $$tag!"; \

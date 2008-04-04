@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2008/04/04 02:21:29 merdely Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
-DISTNAME=	privoxy-3.0.3-2-stable
-PKGNAME=	${DISTNAME:S/-2-stable//}p0
+V=		3.0.8
+DISTNAME=	privoxy-${V}-stable
+PKGNAME=	privoxy-${V}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.privoxy.org/
 
-MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>
+MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,9 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pthread
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ijbswa/}
-EXTRACT_SUFX=	.src.tar.gz
-
-WRKDIST=	${WRKDIR}/${DISTNAME:S/-2//}
+EXTRACT_SUFX=	-src.tar.gz
 
 NO_REGRESS=	Yes
 

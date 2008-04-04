@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/11/25 21:07:50 alek Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/04/04 02:21:29 merdely Exp $
 @newgroup _privoxy:516
 @newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/nonexistent:/sbin/nologin
 @man man/man1/privoxy.1
@@ -23,6 +23,12 @@ share/examples/privoxy/default.filter
 @owner _privoxy
 @group _privoxy
 @sample ${SYSCONFDIR}/privoxy/default.filter
+@owner
+@group
+share/examples/privoxy/regression-tests.action
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/regression-tests.action
 @owner
 @group
 share/examples/privoxy/standard.action
@@ -155,6 +161,12 @@ share/examples/privoxy/templates/edit-actions-url-form
 @owner _privoxy
 @group _privoxy
 @sample ${SYSCONFDIR}/privoxy/templates/edit-actions-url-form
+@owner
+@group
+share/examples/privoxy/templates/forwarding-failed
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/forwarding-failed
 @owner
 @group
 share/examples/privoxy/templates/mod-local-help
