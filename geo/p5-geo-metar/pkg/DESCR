@@ -1,0 +1,8 @@
+METAR reports are available on-line, thanks to the National Weather
+Service.  Since reading the METAR format isn't easy for non-pilots,
+these reports are relatively useles to the common man who just wants a
+quick glace at the weather.  This module tries to parse the METAR
+reports so the data can be used to create readable weather reports
+and/or process the data in applications.
+
+Note: fetch_temp.pl example script requires p5-libwww.

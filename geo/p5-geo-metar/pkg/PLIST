@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/05 04:06:36 okan Exp $
+${P5SITE}/Geo/
+${P5SITE}/Geo/METAR.pm
+@man man/man3p/Geo::METAR.3p
+share/examples/p5-Geo-METAR/
+share/examples/p5-Geo-METAR/fetch_temp.pl
+share/examples/p5-Geo-METAR/simple_dump.pl
