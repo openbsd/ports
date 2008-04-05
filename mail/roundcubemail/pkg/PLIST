@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/03/19 01:38:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/04/05 16:42:26 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess
 roundcubemail/CHANGELOG
@@ -8,7 +8,6 @@ roundcubemail/README
 roundcubemail/SQL/
 roundcubemail/SQL/mssql.initial.sql
 roundcubemail/SQL/mysql.initial.sql
-roundcubemail/SQL/mysql.update-0.1a.sql
 roundcubemail/SQL/mysql.update.sql
 roundcubemail/SQL/mysql5.initial.sql
 roundcubemail/SQL/postgres.initial.sql
@@ -204,6 +203,7 @@ roundcubemail/program/js/tiny_mce/themes/advanced/anchor.htm
 roundcubemail/program/js/tiny_mce/themes/advanced/charmap.htm
 roundcubemail/program/js/tiny_mce/themes/advanced/color_picker.htm
 roundcubemail/program/js/tiny_mce/themes/advanced/css/
+roundcubemail/program/js/tiny_mce/themes/advanced/css/editor_content.css
 roundcubemail/program/js/tiny_mce/themes/advanced/css/editor_popup.css
 roundcubemail/program/js/tiny_mce/themes/advanced/docs/
 roundcubemail/program/js/tiny_mce/themes/advanced/docs/en/
@@ -526,6 +526,9 @@ roundcubemail/program/localization/ja/messages.inc
 roundcubemail/program/localization/kr/
 roundcubemail/program/localization/kr/labels.inc
 roundcubemail/program/localization/kr/messages.inc
+roundcubemail/program/localization/ku/
+roundcubemail/program/localization/ku/labels.inc
+roundcubemail/program/localization/ku/messages.inc
 roundcubemail/program/localization/lt/
 roundcubemail/program/localization/lt/labels.inc
 roundcubemail/program/localization/lt/messages.inc
@@ -647,6 +650,7 @@ roundcubemail/program/steps/settings/identities.inc
 roundcubemail/program/steps/settings/manage_folders.inc
 roundcubemail/program/steps/settings/save_identity.inc
 roundcubemail/program/steps/settings/save_prefs.inc
+roundcubemail/robots.txt
 roundcubemail/skins/
 roundcubemail/skins/default/
 roundcubemail/skins/default/addresses.css
