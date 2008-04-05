@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/02/25 17:14:18 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2008/04/05 11:43:22 landry Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-docs=		documentation
@@ -7,15 +7,13 @@ COMMENT-clamav=		clamav plugin
 COMMENT-dillo=		dillo plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.3.0
+V=			3.3.1
 DISTNAME=		claws-mail-${V}
-
-PKGNAME-main=			${DISTNAME}p0
+PKGNAME-main=			${DISTNAME}
 FULLPKGNAME-docs=		claws-mail-docs-${V}
 FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
 FULLPKGNAME-dillo=		claws-mail-dillo-${V}
 FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}
-
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
@@ -87,6 +85,7 @@ CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I/usr/include/openssl" \
 			OPENSSL_LIBS="-lssl -lcrypto" \
 			CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
+
 .if ${FLAVOR:L:Mjpilot}
 LIB_DEPENDS-main+=	pisock::comms/pilot-link 
 RUN_DEPENDS-main+=	::comms/jpilot
