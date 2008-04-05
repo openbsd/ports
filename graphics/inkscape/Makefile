@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/04 14:37:26 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/05 10:23:01 landry Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.46
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
@@ -39,7 +40,8 @@ LIB_DEPENDS=	gc.>=3::devel/boehm-gc \
 		atkmm-1.6,gdkmm-2.4,gtkmm-2.4,pangomm-1.4::x11/gtk2mm \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
-RUN_DEPENDS=	::devel/desktop-file-utils
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::textproc/py-lxml
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
