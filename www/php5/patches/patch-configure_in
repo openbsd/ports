@@ -1,6 +1,25 @@
-$OpenBSD: patch-configure_in,v 1.10 2007/09/05 09:11:34 robert Exp $
+$OpenBSD: patch-configure_in,v 1.11 2008/04/05 05:45:19 sturm Exp $
 --- configure.in.orig	Wed Sep  5 10:38:41 2007
 +++ configure.in	Wed Sep  5 10:39:20 2007
++@@ -325,13 +325,13 @@ AC_CHECK_LIB(m, sin)
++
++ dnl Check for resolver routines.
++ dnl Need to check for both res_search and __res_search
++-dnl in -lc, -lbind, -lresolv and -lsocket
++-PHP_CHECK_FUNC(res_search, resolv, bind, socket)
+++dnl in -lc, -lresolv and -lsocket
+++PHP_CHECK_FUNC(res_search, resolv, socket)
++
++ dnl Check for inet_aton and dn_skipname
++-dnl in -lc, -lbind and -lresolv
++-PHP_CHECK_FUNC(inet_aton, resolv, bind)
++-PHP_CHECK_FUNC(dn_skipname, resolv, bind)
+++dnl in -lc and -lresolv
+++PHP_CHECK_FUNC(inet_aton, resolv)
+++PHP_CHECK_FUNC(dn_skipname, resolv)
++
++
++ dnl Then headers.
 @@ -893,7 +893,7 @@ enable_static=yes
  
  case $php_build_target in

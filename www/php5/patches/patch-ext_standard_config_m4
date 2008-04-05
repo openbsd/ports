@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_standard_config_m4,v 1.1 2008/04/05 05:45:19 sturm Exp $
+--- ext/standard/config.m4.orig	Fri Apr  4 22:34:19 2008
++++ ext/standard/config.m4	Fri Apr  4 22:34:33 2008
+@@ -311,9 +311,9 @@ dnl
+ dnl Detect library functions needed by php dns_xxx functions
+ dnl ext/standard/dns.h will collect these in a single define: HAVE_DNS_FUNCS
+ dnl
+-PHP_CHECK_FUNC(res_nmkquery, resolv, bind, socket)
+-PHP_CHECK_FUNC(res_nsend, resolv, bind, socket)
+-PHP_CHECK_FUNC(dn_expand, resolv, bind, socket)
++PHP_CHECK_FUNC(res_nmkquery, resolv, socket)
++PHP_CHECK_FUNC(res_nsend, resolv, socket)
++PHP_CHECK_FUNC(dn_expand, resolv, socket)
+ 
+ dnl
+ dnl Check if atof() accepts NAN
