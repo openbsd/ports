@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_unix-gcc_mak,v 1.6 2008/04/01 20:37:01 kili Exp $
+$OpenBSD: patch-src_unix-gcc_mak,v 1.7 2008/04/06 15:48:13 kili Exp $
 --- src/unix-gcc.mak.orig	Fri Feb 29 09:13:08 2008
-+++ src/unix-gcc.mak	Sat Mar 22 22:28:54 2008
++++ src/unix-gcc.mak	Fri Apr  4 19:44:50 2008
 @@ -30,6 +30,7 @@ PSLIBDIR=./lib
  PSRESDIR=./Resource
  PSGENDIR=./obj
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_unix-gcc_mak,v 1.6 2008/04/01 20:37:01 kili Exp $
  #DEVICE_DEVS1=
  #DEVICE_DEVS2=
  #DEVICE_DEVS3=
-@@ -375,31 +382,8 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
+@@ -375,33 +382,13 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
  #DEVICE_DEVS19=
  #DEVICE_DEVS20=
  
@@ -96,8 +96,13 @@ $OpenBSD: patch-src_unix-gcc_mak,v 1.6 2008/04/01 20:37:01 kili Exp $
 +#GS_SHARED_OBJS=$(GLOBJDIR)/X11.so $(GLOBJDIR)/lvga256.so $(GLOBJDIR)/vgalib.so
  #GS_SHARED_OBJS=$(GLOBJDIR)/X11.so
  
++# Copied from Makefile.in
++EXTRA_INIT_FILES= Fontmap cidfmap xlatmap FAPI FCOfontmap-PCLPS2 gs_cet.ps
++
  # ---------------------------- End of options --------------------------- #
-@@ -440,6 +424,7 @@ include $(GLSRCDIR)/jpeg.mak
+ 
+ # Define the name of the partial makefile that specifies options --
+@@ -440,6 +427,7 @@ include $(GLSRCDIR)/jpeg.mak
  include $(GLSRCDIR)/zlib.mak
  include $(GLSRCDIR)/libpng.mak
  include $(GLSRCDIR)/jbig2.mak
@@ -105,7 +110,7 @@ $OpenBSD: patch-src_unix-gcc_mak,v 1.6 2008/04/01 20:37:01 kili Exp $
  include $(GLSRCDIR)/icclib.mak
  include $(GLSRCDIR)/ijs.mak
  include $(GLSRCDIR)/devs.mak
-@@ -449,6 +434,8 @@ include $(GLSRCDIR)/unixlink.mak
+@@ -449,6 +437,8 @@ include $(GLSRCDIR)/unixlink.mak
  include $(GLSRCDIR)/unix-dll.mak
  include $(GLSRCDIR)/unix-end.mak
  include $(GLSRCDIR)/unixinst.mak

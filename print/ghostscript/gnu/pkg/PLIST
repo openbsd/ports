@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2008/04/01 20:37:01 kili Exp $
+@comment $OpenBSD: PLIST,v 1.13 2008/04/06 15:48:13 kili Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 bin/bdftops
 bin/dumphint
@@ -430,6 +430,8 @@ share/ghostscript/${VERSION}/examples/tiger.eps
 share/ghostscript/${VERSION}/examples/vasarely.ps
 share/ghostscript/${VERSION}/examples/waterfal.ps
 share/ghostscript/${VERSION}/lib/
+share/ghostscript/${VERSION}/lib/FCOfontmap-PCLPS2
+share/ghostscript/${VERSION}/lib/Fontmap
 share/ghostscript/${VERSION}/lib/Fontmap.GS
 share/ghostscript/${VERSION}/lib/PDFA_def.ps
 share/ghostscript/${VERSION}/lib/PDFX_def.ps
@@ -467,6 +469,7 @@ share/ghostscript/${VERSION}/lib/cdj550.upp
 share/ghostscript/${VERSION}/lib/cdj690.upp
 share/ghostscript/${VERSION}/lib/cdj690ec.upp
 share/ghostscript/${VERSION}/lib/cid2code.ps
+share/ghostscript/${VERSION}/lib/cidfmap
 share/ghostscript/${VERSION}/lib/decrypt.ps
 share/ghostscript/${VERSION}/lib/dnj750c.upp
 share/ghostscript/${VERSION}/lib/dnj750m.upp
@@ -654,6 +657,7 @@ share/ghostscript/${VERSION}/lib/viewps2a.ps
 share/ghostscript/${VERSION}/lib/wftopfa.ps
 share/ghostscript/${VERSION}/lib/winmaps.ps
 share/ghostscript/${VERSION}/lib/wrfont.ps
+share/ghostscript/${VERSION}/lib/xlatmap
 share/ghostscript/${VERSION}/lib/zeroline.ps
 %%cups%%
 %%gtk%%
