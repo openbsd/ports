@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/06 21:29:32 kili Exp $
+${P5SITE}/Tk/
+${P5SITE}/Tk/FastSplash.pm
+${P5SITE}/Tk/ProgressSplash.pm
+${P5SITE}/Tk/Splash.pm
+@man man/man3p/Tk::FastSplash.3p
+@man man/man3p/Tk::ProgressSplash.3p
+@man man/man3p/Tk::Splash.3p
