@@ -1,8 +1,9 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2008/01/25 01:21:17 okan Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2008/04/06 18:21:44 okan Exp $
 libexec/nmap/
 libexec/nmap/nselib-bin/
 libexec/nmap/nselib-bin/bit.so
 share/nmap/nselib/
+share/nmap/nselib/http.lua
 share/nmap/nselib/ipOps.lua
 share/nmap/nselib/listop.lua
 share/nmap/nselib/match.lua
@@ -10,6 +11,7 @@ share/nmap/nselib/packet.lua
 share/nmap/nselib/shortport.lua
 share/nmap/nselib/stdnse.lua
 share/nmap/nselib/strbuf.lua
+share/nmap/nselib/tab.lua
 share/nmap/nselib/url.lua
 share/nmap/scripts/
 share/nmap/scripts/HTTPAuth.nse

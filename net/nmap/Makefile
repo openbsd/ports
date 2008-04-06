@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.74 2008/01/25 01:21:17 okan Exp $
+# $OpenBSD: Makefile,v 1.75 2008/04/06 18:21:44 okan Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-V=		4.53
+V=		4.60
 DISTNAME=	nmap-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-zenmap=	nmap-zenmap-$V
 
 CATEGORIES=	net security
-MASTER_SITES=	${HOMEPAGE}dist/
+MASTER_SITES=	http://download.insecure.org/nmap/dist/
 EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://www.insecure.org/nmap/
+HOMEPAGE=	http://www.nmap.org/
 
 MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
 
