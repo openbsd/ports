@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.1 2008/04/06 10:12:23 jakemsr Exp $
+--- src/demuxers/demux_matroska.c.orig	Tue Apr  1 19:47:42 2008
++++ src/demuxers/demux_matroska.c	Tue Apr  1 19:48:55 2008
+@@ -2915,7 +2915,8 @@ static const char *get_extensions (demux_class_t *this
+ 
+ 
+ static const char *get_mimetypes (demux_class_t *this_gen) {
+-  return "video/mkv: mkv: matroska;";
++  return "video/mkv: mkv: matroska;"
++	"video/x-matroska: mkv: matroska;";
+ }
+ 
+ 

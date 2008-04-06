@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_demuxers_ebml_c,v 1.1 2008/04/06 10:12:23 jakemsr Exp $
+--- src/demuxers/ebml.c.orig	Fri Apr  4 22:55:14 2008
++++ src/demuxers/ebml.c	Fri Apr  4 22:55:38 2008
+@@ -327,7 +327,7 @@ char *ebml_alloc_read_ascii (ebml_parser_t *ebml, ebml
+   if (text)
+   {
+     text[elem->len] = '\0';
+-    if (ebml_read_ascii (ebml, &elem, text))
++    if (ebml_read_ascii (ebml, elem, text))
+       return text;
+     free (text);
+   }
