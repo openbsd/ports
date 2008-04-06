@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2008/03/25 17:31:27 fgsch Exp $
+# $OpenBSD: Makefile,v 1.194 2008/04/06 22:44:46 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -26,6 +26,7 @@
      SUBDIR += festival
      SUBDIR += flac
      SUBDIR += flite
+     SUBDIR += fluidsynth
      SUBDIR += freealut
      SUBDIR += gimmix
      SUBDIR += gmpc
