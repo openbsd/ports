@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fluid_jack_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
+--- src/fluid_jack.c.orig	Sat Apr  5 15:42:46 2008
++++ src/fluid_jack.c	Sat Apr  5 15:43:54 2008
+@@ -83,7 +83,7 @@ fluid_jack_audio_driver_settings(fluid_settings_t* set
+ {
+   fluid_settings_register_str(settings, "audio.jack.id", "fluidsynth", 0, NULL, NULL);
+   fluid_settings_register_str(settings, "audio.jack.multi", "no", 0, NULL, NULL);
+-  fluid_settings_register_int(settings, "audio.jack.autoconnect", 0, 0, 1, FLUID_HINT_TOGGLED, NULL, NULL);
++  fluid_settings_register_int(settings, "audio.jack.autoconnect", 1, 0, 1, FLUID_HINT_TOGGLED, NULL, NULL);
+ }
+ 
+ 

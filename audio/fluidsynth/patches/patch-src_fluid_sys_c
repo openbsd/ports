@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_fluid_sys_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
+--- src/fluid_sys.c.orig	Sun Nov 11 11:47:30 2007
++++ src/fluid_sys.c	Fri Feb 15 17:09:36 2008
+@@ -709,8 +709,10 @@ new_fluid_timer(int msec, fluid_timer_callback_t callb
+ {
+   pthread_attr_t *attr = NULL;
+   pthread_attr_t rt_attr;
++#if !defined(__OpenBSD__)
+   int sched = SCHED_FIFO;
+   struct sched_param priority;
++#endif
+   int err;
+ 
+   fluid_timer_t* timer = FLUID_NEW(fluid_timer_t);
+@@ -726,6 +728,7 @@ new_fluid_timer(int msec, fluid_timer_callback_t callb
+   timer->auto_destroy = auto_destroy;
+ 
+   err = pthread_attr_init(&rt_attr);
++#if !defined(__OpenBSD__)
+   if (err == 0) {
+ 	  err = pthread_attr_setschedpolicy(&rt_attr, SCHED_FIFO);
+ 	  if (err == 0) {
+@@ -736,6 +739,7 @@ new_fluid_timer(int msec, fluid_timer_callback_t callb
+ 		  }
+ 	  }
+   }
++#endif
+ 
+   if (new_thread) {
+ 	  err = pthread_create(&timer->thread, attr, fluid_timer_start, (void*) timer);

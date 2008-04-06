@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
+%%SHARED%%
+bin/fluidsynth
+include/fluidsynth/
+include/fluidsynth.h
+include/fluidsynth/audio.h
+include/fluidsynth/event.h
+include/fluidsynth/gen.h
+include/fluidsynth/log.h
+include/fluidsynth/midi.h
+include/fluidsynth/misc.h
+include/fluidsynth/mod.h
+include/fluidsynth/ramsfont.h
+include/fluidsynth/seq.h
+include/fluidsynth/seqbind.h
+include/fluidsynth/settings.h
+include/fluidsynth/sfont.h
+include/fluidsynth/shell.h
+include/fluidsynth/synth.h
+include/fluidsynth/types.h
+include/fluidsynth/version.h
+include/fluidsynth/voice.h
+lib/libfluidsynth.a
+lib/libfluidsynth.la
+lib/pkgconfig/
+lib/pkgconfig/fluidsynth.pc
+@man man/man1/fluidsynth.1

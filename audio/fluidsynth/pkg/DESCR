@@ -1,0 +1,10 @@
+FluidSynth is a real-time software synthesizer based on the SoundFont 2
+specifications. 
+
+Features: 
+ * Cross platform support (Linux, Mac OSX and Windows to name a few) 
+ * SoundFont 2 support 
+ * Realtime effect modulation using SoundFont 2.01 modulators 
+ * Shared library which can be used in other programs 
+ * Built in command line shell 
+ * Playback of MIDI files 

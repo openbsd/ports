@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_fluidsynth_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
+--- src/fluidsynth.c.orig	Sun Nov 11 02:09:48 2007
++++ src/fluidsynth.c	Fri Feb 15 17:09:36 2008
+@@ -212,9 +212,9 @@ int main(int argc, char** argv)
+   int audio_channels = 0;
+   int with_server = 0;
+   int dump = 0;
+-  int connect_lash = 1;
+   char *optchars = "a:C:c:df:G:g:hijK:L:lm:no:R:r:sVvz:";
+ #ifdef LASH_ENABLED
++  int connect_lash = 1;
+   int enabled_lash = 0;		/* set to TRUE if lash gets enabled */
+   fluid_lash_args_t *lash_args;
+ 
+@@ -237,7 +237,9 @@ int main(int argc, char** argv)
+       {"audio-groups", 1, 0, 'G'},
+       {"chorus", 1, 0, 'C'},
+       {"connect-jack-outputs", 0, 0, 'j'},
++#ifdef LASH_ENABLED
+       {"disable-lash", 0, 0, 'l'},
++#endif
+       {"dump", 0, 0, 'd'},
+       {"gain", 1, 0, 'g'},
+       {"help", 0, 0, 'h'},
+@@ -343,9 +345,11 @@ int main(int argc, char** argv)
+       audio_channels = atoi(optarg);
+       fluid_settings_setint(settings, "synth.audio-channels", audio_channels);
+       break;
++#ifdef LASH_ENABLED
+     case 'l':			/* disable LASH */
+       connect_lash = 0;
+       break;
++#endif
+     case 'm':
+       fluid_settings_setstr(settings, "midi.driver", optarg);
+       break;
+@@ -417,12 +421,14 @@ int main(int argc, char** argv)
+ #endif
+ 
+ #ifdef LASH_ENABLED
++#ifdef LASH_ENABLED
+   /* connect to the lash server */
+   if (connect_lash)
+     {
+       enabled_lash = fluid_lash_connect (lash_args);
+       fluid_settings_setint (settings, "lash.enable", enabled_lash ? 1 : 0);
+     }
++#endif
+ #endif
+ 
+   /* The 'groups' setting is only relevant for LADSPA operation

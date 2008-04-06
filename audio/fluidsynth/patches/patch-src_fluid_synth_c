@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fluid_synth_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
+--- src/fluid_synth.c.orig	Sat Apr  5 15:21:35 2008
++++ src/fluid_synth.c	Sat Apr  5 15:21:51 2008
+@@ -127,7 +127,7 @@ void fluid_synth_settings(fluid_settings_t* settings)
+   fluid_settings_register_int(settings, "synth.effects-channels",
+ 			     2, 2, 2, 0, NULL, NULL);
+   fluid_settings_register_num(settings, "synth.sample-rate",
+-			     44100.0f, 22050.0f, 96000.0f,
++			     48000.0f, 22050.0f, 96000.0f,
+ 			     0, NULL, NULL);
+ }
+ 
