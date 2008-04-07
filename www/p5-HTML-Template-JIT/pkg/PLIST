@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/07 15:35:56 okan Exp $
+${P5SITE}/HTML/Template/
+${P5SITE}/HTML/Template/JIT/
+${P5SITE}/HTML/Template/JIT.pm
+${P5SITE}/HTML/Template/JIT/Base.pm
+${P5SITE}/HTML/Template/JIT/Compiler.pm
+@man man/man3p/HTML::Template::JIT.3p
+@man man/man3p/HTML::Template::JIT::Base.3p
+@man man/man3p/HTML::Template::JIT::Compiler.3p
