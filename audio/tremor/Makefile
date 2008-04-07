@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2008/04/07 04:08:35 fgsch Exp $
 
 COMMENT=	integer-only, fully Ogg Vorbis compliant decoder library
-DISTNAME=	tremor-20050411
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS +=	vorbisidec           1.2      # .1.2
+
+DISTNAME=	tremor-20080326
+SHARED_LIBS +=	vorbisidec           2.0      # .1.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.itee.uq.edu.au/~dlg/OpenBSD/
 
 HOMEPAGE=	http://www.xiph.org/vorbis/
 
@@ -15,24 +14,22 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
-
-AUTOCONF_VERSION=2.59
-AUTOMAKE_VERSION=1.4
+MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/                       
 
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION} \
 		:automake-${AUTOMAKE_VERSION}*:devel/automake/${AUTOMAKE_VERSION} \
 		::devel/metaauto
 
-WRKDIST=	${WRKDIR}/Tremor
+AUTOCONF_VERSION=2.61
+AUTOMAKE_VERSION=1.9
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
+WRKDIST=	${WRKDIR}/Tremor
+
 pre-configure:
-	cd ${WRKSRC} && env AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
-	cd ${WRKSRC} && env AUTOMAKE_VERSION=${AUTOMAKE_VERSION} libtoolize --automake
-	cd ${WRKSRC} && env AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake --add-missing
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>
