@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_connections_c,v 1.5 2008/04/03 10:18:15 jasper Exp $
+$OpenBSD: patch-src_connections_c,v 1.6 2008/04/08 19:11:40 jasper Exp $
 --- src/connections.c.orig	Wed Feb 27 18:41:35 2008
-+++ src/connections.c	Thu Apr  3 02:33:53 2008
++++ src/connections.c	Mon Apr  7 21:39:42 2008
 @@ -199,6 +199,7 @@ static int connection_handle_read_ssl(server *srv, con
  
  	/* don't resize the buffer if we were in SSL_ERROR_WANT_* */
@@ -27,7 +27,7 @@ $OpenBSD: patch-src_connections_c,v 1.5 2008/04/03 10:18:15 jasper Exp $
 +					ERR_clear_error();
 +					if (-1 != (ret = SSL_shutdown(con->ssl))) break;
 +
-+					// fall through
++					/* fall through */
  				default:
 -					log_error_write(srv, __FILE__, __LINE__, "sds", "SSL:",
 -							SSL_get_error(con->ssl, ret),
@@ -48,7 +48,7 @@ $OpenBSD: patch-src_connections_c,v 1.5 2008/04/03 10:18:15 jasper Exp $
 +							} while((err = ERR_get_error()));
 +						} else {
 +							log_error_write(srv, __FILE__, __LINE__, "sddds", "SSL (error):",
-+									ssl_r, r, errno,
++									ssl_r, ret, errno,
 +									strerror(errno));
 +						}
 +	
