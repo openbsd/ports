@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2008/03/30 13:52:14 simon Exp $
+# $OpenBSD: Makefile,v 1.168 2008/04/08 09:51:50 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -94,6 +94,7 @@
      SUBDIR += openttd
      SUBDIR += pathological
      SUBDIR += pioneers
+     SUBDIR += pokerth
      SUBDIR += prboom
      SUBDIR += qgo
      SUBDIR += qstat
