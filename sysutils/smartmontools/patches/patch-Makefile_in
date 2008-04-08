@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2007/11/20 21:24:28 okan Exp $
---- Makefile.in.orig	Wed Dec 20 15:38:50 2006
-+++ Makefile.in	Tue Nov 20 15:44:27 2007
-@@ -172,7 +172,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
+$OpenBSD: patch-Makefile_in,v 1.4 2008/04/08 19:48:16 okan Exp $
+--- Makefile.in.orig	Mon Mar 10 11:44:13 2008
++++ Makefile.in	Tue Mar 18 09:06:45 2008
+@@ -169,7 +169,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
  docsDATA_INSTALL = $(INSTALL_DATA)
  initdDATA_INSTALL = $(INSTALL_DATA)
  sysconfDATA_INSTALL = $(INSTALL_DATA)
 -DATA = $(docs_DATA) $(initd_DATA) $(sysconf_DATA)
-+DATA = $(docs_DATA) $(sysconf_DATA)
++DATA = $(docs_DATA)
+ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+   distclean-recursive maintainer-clean-recursive
  ETAGS = etags
- CTAGS = ctags
- DIST_SUBDIRS = $(SUBDIRS)
-@@ -346,15 +346,7 @@ EXTRA_smartctl_SOURCES = os_linux.cpp os_linux.h os_fr
+@@ -340,15 +340,7 @@ EXTRA_smartctl_SOURCES = os_linux.cpp os_linux.h os_fr
  @OS_SOLARIS_FALSE@                  smartd.8
  
  docsdir = $(docdir)
@@ -27,15 +27,35 @@ $OpenBSD: patch-Makefile_in,v 1.3 2007/11/20 21:24:28 okan Exp $
  
  sysconf_DATA = smartd.conf$(smartd_suffix)
  EXTRA_DIST = smartmontools.spec                    \
-@@ -1122,9 +1114,9 @@ info: info-recursive
+@@ -772,13 +764,6 @@ install-docsDATA: $(docs_DATA)
+ 	done
+ install-sysconfDATA: $(sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
+-	@list='$(sysconf_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
+-	done
+ 
+ uninstall-sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -1066,7 +1051,7 @@ check: check-recursive
+ all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(docsdir)" "$(DESTDIR)$(initddir)" "$(DESTDIR)$(sysconfdir)"; do \
++	for dir in "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(docsdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-recursive
+@@ -1115,7 +1100,7 @@ info: info-recursive
  
  info-am:
  
 -install-data-am: install-docsDATA install-initdDATA install-man
 +install-data-am: install-docsDATA install-man
  
--install-exec-am: install-sbinPROGRAMS install-sysconfDATA
-+install-exec-am: install-sbinPROGRAMS
- 
- install-info: install-info-recursive
+ install-dvi: install-dvi-recursive
  
