@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_linux_MGConnectDialog_cc,v 1.1 2008/04/08 13:37:19 jasper Exp $
+--- source/linux/MGConnectDialog.cc.orig	Tue Apr  8 14:58:03 2008
++++ source/linux/MGConnectDialog.cc	Tue Apr  8 14:58:12 2008
+@@ -683,7 +683,7 @@ void MGConnectDialog::show_connection_failed()
+   Glib::ustring title= _app_title + " " + _("Error");
+   char *ping_args[]= 
+   {
+-    "/bin/ping",
++    "/sbin/ping",
+         NULL,
+         NULL
+   };

@@ -1,0 +1,20 @@
+$OpenBSD: patch-library_base-library_source_myx_network_c,v 1.1 2008/04/08 13:37:19 jasper Exp $
+--- library/base-library/source/myx_network.c.orig	Tue Apr  8 14:58:32 2008
++++ library/base-library/source/myx_network.c	Tue Apr  8 14:58:44 2008
+@@ -216,14 +216,14 @@ int myx_ping_host(unsigned long ip, int ping_timeout,
+   
+   strcpy(buf, (char*)inet_ntoa(*(struct in_addr*)&ip));
+   
+-  argv[0]= "/bin/ping";
++  argv[0]= "/sbin/ping";
+   argv[1]= buf;
+   argv[2]= "-c";
+   argv[3]= "1";
+   argv[4]= NULL;
+ 
+   /*
+-   * exec() external /bin/ping since doing it ourselves would require
++   * exec() external /sbin/ping since doing it ourselves would require
+    * the program being ran as root.
+    */
+   
