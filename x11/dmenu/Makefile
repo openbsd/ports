@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/27 12:33:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/04/08 18:04:10 merdely Exp $
 
 COMMENT=		dynamic menu for X11
-DISTNAME=		dmenu-3.4
+DISTNAME=		dmenu-3.6
 
 CATEGORIES=		x11
 HOMEPAGE=		http://www.suckless.org/wiki/tools/xlib
