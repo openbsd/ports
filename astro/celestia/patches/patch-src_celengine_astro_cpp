@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_celengine_astro_cpp,v 1.1 2008/04/08 16:04:27 ajacoutot Exp $
+--- src/celengine/astro.cpp.orig	Fri Apr  4 10:41:18 2008
++++ src/celengine/astro.cpp	Fri Apr  4 10:44:01 2008
+@@ -445,7 +445,7 @@ const char* astro::Date::toCStr(Format format) const
+ {
+     static char date[255];
+ 
+-#ifdef __GNUC__
++#if defined __GNUC__ && !defined __OpenBSD__
+     struct tm cal_time;
+     memset(&cal_time, 0, sizeof(cal_time));
+     cal_time.tm_year = year-1900;

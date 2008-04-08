@@ -1,11 +1,13 @@
-$OpenBSD: patch-src_celutil_util_h,v 1.1.1.1 2007/07/16 17:39:21 ajacoutot Exp $
---- src/celutil/util.h.orig	Wed Jul 11 16:40:18 2007
-+++ src/celutil/util.h	Wed Jul 11 16:40:31 2007
-@@ -28,6 +28,7 @@
- #ifdef _WIN32
- #define _(s) s
+$OpenBSD: patch-src_celutil_util_h,v 1.2 2008/04/08 16:04:27 ajacoutot Exp $
+--- src/celutil/util.h.orig	Tue Nov 21 20:38:35 2006
++++ src/celutil/util.h	Fri Apr  4 10:46:07 2008
+@@ -33,6 +33,9 @@
+ #include "libintl.h"
+ #define _(string) gettext (string)
  #else
++#ifdef __OpenBSD__
 +#include <libintl.h>
- #define _(s) gettext(s)
++#endif
+ #define _(string) gettext (string)
  #endif
  

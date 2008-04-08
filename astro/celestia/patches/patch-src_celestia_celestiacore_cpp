@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_celestia_celestiacore_cpp,v 1.1.1.1 2007/07/16 17:39:21 ajacoutot Exp $
---- src/celestia/celestiacore.cpp.orig	Thu Jul 12 09:43:25 2007
-+++ src/celestia/celestiacore.cpp	Thu Jul 12 09:43:58 2007
-@@ -3547,7 +3547,7 @@ bool CelestiaCore::initSimulation(const string* config
+$OpenBSD: patch-src_celestia_celestiacore_cpp,v 1.2 2008/04/08 16:04:27 ajacoutot Exp $
+--- src/celestia/celestiacore.cpp.orig	Tue Jan 22 03:44:57 2008
++++ src/celestia/celestiacore.cpp	Fri Apr  4 10:22:59 2008
+@@ -3915,7 +3915,7 @@ bool CelestiaCore::initSimulation(const string* config
      }
      else
      {
