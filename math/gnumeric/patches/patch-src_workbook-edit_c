@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_workbook-edit_c,v 1.1 2008/04/09 13:31:37 jasper Exp $
+--- src/workbook-edit.c.orig	Mon Apr  7 17:01:00 2008
++++ src/workbook-edit.c	Mon Apr  7 17:01:38 2008
+@@ -9,7 +9,8 @@
+  * (C) 2000-2005 Ximian, Inc.
+  */
+ #include <gnumeric-config.h>
+-#include <glib/gi18n.h>
++#include <glib/gi18n.h>3
++#include <glib/gtestutils.h>
+ #include "gnumeric.h"
+ #include "workbook-edit.h"
+ 

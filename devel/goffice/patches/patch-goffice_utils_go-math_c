@@ -1,0 +1,11 @@
+$OpenBSD: patch-goffice_utils_go-math_c,v 1.1 2008/04/09 13:31:02 jasper Exp $
+--- goffice/utils/go-math.c.orig	Mon Apr  7 17:30:25 2008
++++ goffice/utils/go-math.c	Mon Apr  7 17:34:12 2008
+@@ -6,6 +6,7 @@
+  */
+ 
+ #include <goffice/goffice-config.h>
++#include <glib/gtestutils.h>
+ #include "go-math.h"
+ #include <glib.h>
+ #include <stdlib.h>

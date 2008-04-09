@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2008/04/09 13:31:37 jasper Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
-PKGNAME=		${DISTNAME}p0
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.6.3
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		math
 
 HOMEPAGE=		http://www.gnome.org/projects/gnumeric/

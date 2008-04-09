@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/01 20:26:42 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2008/04/09 13:31:02 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	document centric objects and utilities
 
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.2.2
 V=		${GNOME_VERSION}

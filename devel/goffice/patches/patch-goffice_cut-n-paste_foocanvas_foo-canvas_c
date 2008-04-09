@@ -1,0 +1,11 @@
+$OpenBSD: patch-goffice_cut-n-paste_foocanvas_foo-canvas_c,v 1.1 2008/04/09 13:31:02 jasper Exp $
+--- goffice/cut-n-paste/foocanvas/foo-canvas.c.orig	Mon Apr  7 17:30:25 2008
++++ goffice/cut-n-paste/foocanvas/foo-canvas.c	Mon Apr  7 17:34:00 2008
+@@ -75,6 +75,7 @@
+ #include <gtk/gtksignal.h>
+ #include <gtk/gtkaccessible.h>
+ #include <gtk/gtkwindow.h>
++#include <glib/gtestutils.h>
+ #include "foo-canvas.h"
+ #include "foo-canvas-i18n.h"
+ 

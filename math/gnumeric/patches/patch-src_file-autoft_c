@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_file-autoft_c,v 1.1 2008/04/09 13:31:37 jasper Exp $
+--- src/file-autoft.c.orig	Mon Apr  7 17:01:00 2008
++++ src/file-autoft.c	Mon Apr  7 17:02:26 2008
+@@ -22,6 +22,7 @@
+ 
+ #include <gnumeric-config.h>
+ #include <glib/gi18n.h>
++#include <glib/gtestutils.h>
+ #include "gnumeric.h"
+ #include "file-autoft.h"
+ 

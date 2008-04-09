@@ -1,0 +1,11 @@
+$OpenBSD: patch-goffice_app_error-info_h,v 1.1 2008/04/09 13:31:02 jasper Exp $
+--- goffice/app/error-info.h.orig	Mon Apr  7 17:30:25 2008
++++ goffice/app/error-info.h	Mon Apr  7 17:33:08 2008
+@@ -3,6 +3,7 @@
+ 
+ #include <goffice/app/goffice-app.h>
+ #include <glib.h>
++#include <glib/gtestutils.h>
+ 
+ G_BEGIN_DECLS
+ 

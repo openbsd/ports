@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2008/02/14 13:40:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2008/04/09 13:30:32 jasper Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
 V=		0.132
 DISTNAME=	pan-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	news x11
 
 HOMEPAGE=	http://pan.rebelbase.com/

@@ -1,0 +1,11 @@
+$OpenBSD: patch-goffice_utils_go-regression_c,v 1.1 2008/04/09 13:31:02 jasper Exp $
+--- goffice/utils/go-regression.c.orig	Mon Apr  7 17:30:25 2008
++++ goffice/utils/go-regression.c	Mon Apr  7 17:34:19 2008
+@@ -8,6 +8,7 @@
+  */
+ 
+ #include <goffice/goffice-config.h>
++#include <glib/gtestutils.h>
+ #include "go-regression.h"
+ #include "go-rangefunc.h"
+ #include "go-math.h"

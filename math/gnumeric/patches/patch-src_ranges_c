@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ranges_c,v 1.1 2008/04/09 13:31:37 jasper Exp $
+--- src/ranges.c.orig	Mon Apr  7 17:01:00 2008
++++ src/ranges.c	Mon Apr  7 17:01:51 2008
+@@ -27,6 +27,7 @@
+ #include <stdio.h>
+ #include <glib.h>
+ #include <glib/gi18n.h>
++#include <glib/gtestutils.h>
+ #include <string.h>
+ 
+ #undef RANGE_DEBUG

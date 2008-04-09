@@ -1,0 +1,11 @@
+$OpenBSD: patch-goffice_app_go-plugin_c,v 1.1 2008/04/09 13:31:02 jasper Exp $
+--- goffice/app/go-plugin.c.orig	Mon Apr  7 17:30:25 2008
++++ goffice/app/go-plugin.c	Mon Apr  7 17:33:13 2008
+@@ -29,6 +29,7 @@
+ 
+ #include <glib-object.h>
+ #include <glib/gi18n-lib.h>
++#include <glib/gtestutils.h>
+ #include <gmodule.h>
+ 
+ #include <stdlib.h>
