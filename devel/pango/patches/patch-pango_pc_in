@@ -1,10 +1,10 @@
---- pango.pc.in.orig	Sat Jan  8 16:32:10 2005
-+++ pango.pc.in	Wed Mar 30 21:02:53 2005
-@@ -9,6 +9,6 @@ Name: Pango
+$OpenBSD: patch-pango_pc_in,v 1.6 2008/04/09 13:13:40 jasper Exp $
+--- pango.pc.in.orig	Tue Jan 29 23:26:57 2008
++++ pango.pc.in	Wed Mar 12 23:31:16 2008
+@@ -9,5 +9,5 @@ Name: Pango
  Description: Internationalized text handling
  Version: @VERSION@
  Requires: glib-2.0,gobject-2.0,gmodule-no-export-2.0
 -Libs: -L${libdir} -lpango-@PANGO_API_VERSION@ @PKGCONFIG_MATH_LIBS@
-+Libs: -L${libdir} @PKGCONFIG_X_LIBS@ -lpango-@PANGO_API_VERSION@ @PKGCONFIG_MATH_LIBS@
++Libs: -L${libdir} @X_LIBS@ -lpango-@PANGO_API_VERSION@ @PKGCONFIG_MATH_LIBS@
  Cflags: -I${includedir}/pango-1.0
- 
