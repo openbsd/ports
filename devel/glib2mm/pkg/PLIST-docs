@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.6 2007/10/24 22:35:28 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.7 2008/04/09 13:20:44 jasper Exp $
 share/doc/glibmm-${V}/
 share/doc/glibmm-${V}/docs/
 share/doc/glibmm-${V}/docs/images/
@@ -129,11 +129,6 @@ share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Quark__inherit__graph.png
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1QueryQuark-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1QueryQuark.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1QueryQuark__inherit__graph.png
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Regex-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Regex.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RegexError-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RegexError.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RegexError__inherit__graph.png
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RWLock-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RWLock.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RWLock_1_1ReaderLock-members.html
@@ -150,6 +145,11 @@ share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RecMutex_1_1Lock.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RecMutex__inherit__graph.png
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RefPtr-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RefPtr.html
+share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Regex-members.html
+share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Regex.html
+share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RegexError-members.html
+share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RegexError.html
+share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1RegexError__inherit__graph.png
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SListHandle-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1SListHandle.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Sequence-members.html
@@ -310,7 +310,6 @@ share/doc/glibmm-${V}/docs/reference/html/containers_8h.html
 share/doc/glibmm-${V}/docs/reference/html/convert_8h.html
 share/doc/glibmm-${V}/docs/reference/html/date_8h.html
 share/doc/glibmm-${V}/docs/reference/html/debug_8h.html
-share/doc/glibmm-${V}/docs/reference/html/deprecated.html
 share/doc/glibmm-${V}/docs/reference/html/dispatcher_8h.html
 share/doc/glibmm-${V}/docs/reference/html/doxygen.css
 share/doc/glibmm-${V}/docs/reference/html/doxygen.png
@@ -1201,9 +1200,9 @@ share/doc/glibmm-${V}/docs/reference/html/namespacemembers_eval.html
 share/doc/glibmm-${V}/docs/reference/html/namespacemembers_func.html
 share/doc/glibmm-${V}/docs/reference/html/namespacemembers_type.html
 share/doc/glibmm-${V}/docs/reference/html/namespaces.html
-share/doc/glibmm-${V}/docs/reference/html/newin2p6s.html
 share/doc/glibmm-${V}/docs/reference/html/newin2p12s.html
 share/doc/glibmm-${V}/docs/reference/html/newin2p14s.html
+share/doc/glibmm-${V}/docs/reference/html/newin2p6s.html
 share/doc/glibmm-${V}/docs/reference/html/object_8h.html
 share/doc/glibmm-${V}/docs/reference/html/objectbase_8h.html
 share/doc/glibmm-${V}/docs/reference/html/optioncontext_8h.html
