@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.21 2008/02/01 21:38:27 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2008/04/09 13:23:11 jasper Exp $
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		2.12.1
-PKGNAME-main=		gtk2mm-${VERSION}p0
+GNOME_VERSION=		2.12.7
+PKGNAME-main=		gtk2mm-${VERSION}
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
-SHARED_LIBS=		atkmm-1.6	6.0 \
-			gdkmm-2.4	6.0 \
-			gtkmm-2.4	6.0 \
-			pangomm-1.4	6.0
+SHARED_LIBS=		atkmm-1.6	6.1 \
+			gdkmm-2.4	6.1 \
+			gtkmm-2.4	6.1 \
+			pangomm-1.4	6.1
 
 HOMEPAGE=		http://www.gtkmm.org/
 
@@ -33,8 +33,8 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 			pangocairo-1.0 pangoft2-1.0 png sigc-2.0 z
 MODULES=		devel/gettext \
 			x11/gnome
-LIB_DEPENDS=		glibmm-2.4:glib2mm->=2.12:devel/glib2mm \
-			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0:gtk+2->=2.8:x11/gtk+2 \
+LIB_DEPENDS=		glibmm-2.4:glib2mm->=2.14.2:devel/glib2mm \
+			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0:gtk+2->=2.12:x11/gtk+2 \
 			cairomm-1.0::graphics/cairomm
 
 PKG_ARCH-docs=		*
