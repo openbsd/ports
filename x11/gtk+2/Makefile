@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.60 2008/02/09 17:55:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2008/04/09 13:15:44 jasper Exp $
 
 SHARED_ONLY=			Yes
 
 COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+-2 documentation
 
-VERSION=			2.12.7
+VERSION=			2.12.9
 DISTNAME=			gtk+-${VERSION}
 PKGNAME-main=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-SHARED_LIBS +=	gdk_pixbuf-2.0       1200.7   # .1200.7
-SHARED_LIBS +=	gdk-x11-2.0          1200.7   # .1200.7
-SHARED_LIBS +=	gtk-x11-2.0          1200.7   # .1200.7
-SHARED_LIBS +=	gdk_pixbuf_xlib-2.0  1200.7   # .1200.7
+SHARED_LIBS +=	gdk_pixbuf-2.0       1200.9   # .1200.9
+SHARED_LIBS +=	gdk-x11-2.0          1200.9   # .1200.9
+SHARED_LIBS +=	gtk-x11-2.0          1200.9   # .1200.9
+SHARED_LIBS +=	gdk_pixbuf_xlib-2.0  1200.9   # .1200.9
 CATEGORIES=			x11 devel
 
 HOMEPAGE=			http://www.gtk.org/
@@ -35,7 +35,7 @@ WANTLIB-main=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 MODULES=			devel/gettext
 
-LIB_DEPENDS=			glib-2.0.>=1000.0,gmodule-2.0.>=1000.0,gobject-2.0.>=1000.0::devel/glib2 \
+LIB_DEPENDS=			glib-2.0.>=1600.0,gmodule-2.0.>=1600.0,gobject-2.0.>=1600.0::devel/glib2 \
 				pango-1.0.>=1300.0,pangocairo-1.0.>=1300.0,pangoft2-1.0.>=1300.0::devel/pango \
 				atk-1.0.>=1809.0::devel/atk \
 				tiff.>=35::graphics/tiff \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.19 2008/02/09 17:55:39 jasper Exp $
---- configure.orig	Wed Jan 30 04:13:49 2008
-+++ configure	Fri Feb  1 14:23:41 2008
-@@ -32939,7 +32939,9 @@ fi
+$OpenBSD: patch-configure,v 1.20 2008/04/09 13:15:44 jasper Exp $
+--- configure.orig	Wed Mar 12 05:18:17 2008
++++ configure	Thu Mar 13 00:01:34 2008
+@@ -32948,7 +32948,9 @@ fi
  
- fi
+   fi
  
 -
 +if test "x$ENABLE_CUPS"  != "xyes"; then
