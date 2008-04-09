@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_ylocale_cc,v 1.1 2008/04/09 10:15:36 ajacoutot Exp $
+--- src/ylocale.cc.orig	Wed Apr  9 12:02:08 2008
++++ src/ylocale.cc	Wed Apr  9 12:02:44 2008
+@@ -149,7 +149,8 @@ YUChar *YLocale::unicodeString(const YLChar *lStr, siz
+         return NULL;
+ 
+     YUChar * uStr(new YUChar[lLen + 1]);
+-    char * inbuf((char *) lStr), * outbuf((char *) uStr);
++    const char * inbuf((char *) lStr);
++    char * outbuf((char *) uStr);
+     size_t inlen(lLen), outlen(4 * lLen);
+ 
+     if (0 > (int) iconv(instance->toUnicode, &inbuf, &inlen, &outbuf, &outlen))

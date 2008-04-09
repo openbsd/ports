@@ -1,42 +1,45 @@
-# $OpenBSD: Makefile,v 1.30 2007/10/05 14:15:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2008/04/09 10:15:36 ajacoutot Exp $
 
-COMMENT=		small, fast window manager
+COMMENT=	small, fast window manager
 
-DISTNAME=		icewm-1.2.32
-CATEGORIES=		x11	
+DISTNAME=	icewm-1.2.35
+CATEGORIES=	x11	
 
-HOMEPAGE=		http://www.icewm.org/
+HOMEPAGE=	http://www.icewm.org/
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# LGPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE Imlib SM X11 Xext Xft Xinerama Xrandr Xrender \
-			c fontconfig freetype jpeg m png stdc++ tiff ungif z \
-			Xau Xdmcp expat
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xrandr Xrender \
+		c expat fontconfig freetype jpeg m png stdc++ tiff \
+		ungif z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=icewm/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}
 
-MODULES=		devel/gettext
+MODULES=	devel/gettext
 
-LIB_DEPENDS=		Imlib.>=19::graphics/imlib
+LIB_DEPENDS=	Imlib.>=19::graphics/imlib
 
-USE_X11=		Yes
-NO_REGRESS=		Yes
-CONFIGURE_STYLE=	gnu		
-CONFIGURE_ARGS=		--with-imlib=${PREFIX}/bin \
-			--with-docdir=${PREFIX}/share/doc \
-			--with-libdir=${PREFIX}/share/icewm \
-			--with-cfgdir=${SYSCONFDIR}/icewm \
-			--disable-i18n \
-			--enable-shaped-decorations \
-			--enable-gradients
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+USE_X11=	Yes
+
+CONFIGURE_STYLE=gnu		
+CONFIGURE_ARGS=	--with-imlib=${PREFIX}/bin \
+		--with-docdir=${PREFIX}/share/doc \
+		--with-libdir=${PREFIX}/share/icewm \
+		--with-cfgdir=${SYSCONFDIR}/icewm \
+		--with-kdedatadir=${LOCALBASE}/share \
+		--with-x \
+		--enable-shaped-decorations \
+		--enable-gradients \
+		--enable-corefonts \
+		--enable-i18n
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
  || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc"

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2007/10/05 14:15:13 ajacoutot Exp $
---- src/Makefile.in.orig	Fri Oct  5 16:04:21 2007
-+++ src/Makefile.in	Fri Oct  5 16:05:14 2007
-@@ -33,7 +33,7 @@ DEFS =          @DEFS@ \
+$OpenBSD: patch-src_Makefile_in,v 1.7 2008/04/09 10:15:36 ajacoutot Exp $
+--- src/Makefile.in.orig	Sat Jan  5 08:34:24 2008
++++ src/Makefile.in	Wed Apr  9 12:08:29 2008
+@@ -33,12 +33,12 @@ DEFS =          @DEFS@ \
                  -DICEWMBGEXE='"icewmbg$(EXEEXT)"' \
                  -DICESMEXE='"icewm-session$(EXEEXT)"' \
                  -DICEHELPEXE='"icehelp$(EXEEXT)"' \
@@ -10,17 +10,23 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2007/10/05 14:15:13 ajacoutot Exp $
  
  CXXFLAGS =      @CXXFLAGS@ $(DEBUG) $(DEFS) \
  	        @CORE_CFLAGS@ @IMAGE_CFLAGS@ @AUDIO_CFLAGS@ # `fc-config --cflags`
-@@ -207,11 +207,11 @@ clean:
+ LFLAGS =	@LDFLAGS@
+-LIBS =          @LIBS@
++LIBS =          @LIBS@ -lintl
+ 
+ CORE_LIBS =     @CORE_LIBS@ # `fc-config --libs`
+ IMAGE_LIBS =    @IMAGE_LIBS@
+@@ -206,11 +206,11 @@ clean:
  
  %.o: %.cc
- 	@echo "  CXX   " $@
+ 	@echo "  CXX     " $@
 -	@$(CXX) $(CXXFLAGS) $(GCCDEP) -c $<
 +	$(CXX) $(CXXFLAGS) $(GCCDEP) -c $<
  
  $(BINARIES):
- 	@echo "  LD    " $@
--	@$(LD) -o $@$(EXEEXT) $($@_OBJS) $(LFLAGS) $($@_LFLAGS) $(LIBS) $($@_LIBS)
-+	$(LD) -o $@$(EXEEXT) $($@_OBJS) $(LFLAGS) $($@_LFLAGS) $(LIBS) $($@_LIBS)
+ 	@echo "  LD      " $@
+-	@$(LD) -o $@ $($(@:$(EXEEXT)=)_OBJS) $(LFLAGS) $($(@:$(EXEEXT)=)_LFLAGS) $(LIBS) $($(@:$(EXEEXT)=)_LIBS)
++	$(LD) -o $@ $($(@:$(EXEEXT)=)_OBJS) $(LFLAGS) $($(@:$(EXEEXT)=)_LFLAGS) $(LIBS) $($(@:$(EXEEXT)=)_LIBS)
  
  genpref.o: genpref.cc
- 	@echo "  HOSTCXX   " $@
+ 	@echo "  HOSTCXX " $@
