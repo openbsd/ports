@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/23 18:06:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2008/04/09 14:29:44 merdely Exp $
 
 COMMENT =		console interface for nagios
 
-DISTNAME =		cnagios-0.21
+DISTNAME =		cnagios-0.23
 CATEGORIES =		net/nagios
 
 HOMEPAGE =		http://noc.hep.wisc.edu/cnagios.html
@@ -21,9 +21,9 @@ MASTER_SITES =		ftp://noc.hep.wisc.edu/pub/src/cnagios/
 
 NO_REGRESS =		Yes
 
-RUN_DEPENDS =		::net/nagios/nagios
+RUN_DEPENDS =		:nagios->=3.0:net/nagios/nagios
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-nagios-data=2 \
+CONFIGURE_ARGS =	--with-nagios-data=3 \
 			--with-etc-dir="${SYSCONFDIR}/cnagios" \
 			--with-var-dir="/var/nagios"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config

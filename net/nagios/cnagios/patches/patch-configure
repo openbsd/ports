@@ -1,32 +1,52 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/02/05 23:00:22 sthen Exp $
---- configure.orig	Tue Feb  5 12:53:01 2008
-+++ configure	Tue Feb  5 14:27:53 2008
-@@ -1480,6 +1480,9 @@ fi;
- if  test "X $DATA_VER" != "X " ; then
-   echo "nagios data ver is $DATA_VER"
-   NAGIOS_STATUS_DATA_VERSION=$DATA_VER
-+  if test "${DATA_VER}" == "2" ; then
-+    NAGIOS_STATUS_DATA_FILE="$NAGIOS_VAR_DIR/status.dat"
-+  fi
- fi
+$OpenBSD: patch-configure,v 1.2 2008/04/09 14:29:44 merdely Exp $
+--- configure.orig	Tue Apr  8 19:52:18 2008
++++ configure	Tue Apr  8 19:54:23 2008
+@@ -1472,47 +1472,7 @@ fi
+ #----------------------------------------
+ # nagios status data file and it's format...
  
- echo "nagios status file... $NAGIOS_STATUS_DATA_FILE"
-@@ -1488,17 +1491,8 @@ echo "nagios data version... $NAGIOS_STATUS_DATA_VERSI
- 
- 
- 
--if  test "X $HOSTNAME" = "X chive.hep.wisc.edu" ; then
--  SITE_NAME="TEST "
-+  SITE_NAME="OpenBSD World: "
-   echo "site name... $SITE_NAME"
--else
--  echo "enter terse site name (just return for none): "
--  read SITE_NAME
--  if  test "X $SITE_NAME" != "X " ; then
--    SITE_NAME="$SITE_NAME "
--  fi
+-NAGIOS_STATUS_LOG="$NAGIOS_VAR_DIR/status.log"
+-NAGIOS_STATUS_DAT="$NAGIOS_VAR_DIR/status.dat"
+-
+-if test -f "$NAGIOS_STATUS_LOG" ; then
+-  NAGIOS_STATUS_DATA_FILE=$NAGIOS_STATUS_LOG
 -fi
 -
+-if test -f "$NAGIOS_STATUS_DAT" ; then
+-  NAGIOS_STATUS_DATA_FILE=$NAGIOS_STATUS_DAT
+-fi
+-
+-if test -f "$NAGIOS_STATUS_LOG" && test -f "$NAGIOS_STATUS_DAT" ; then
+-  echo
+-  echo "WARNING: detected status.log and status.dat in $NAGIOS_VAR_DIR"
+-  echo "WARNING: using $NAGIOS_STATUS_DAT"
+-  echo
+-fi
+-
+-NAGIOS_STATUS_DATA_VERSION=`head -20 $NAGIOS_STATUS_DATA_FILE | perl -ane '
+-  BEGIN { $v='UNKNOWN'; }
+-  if ( $_ =~ /Nagios 1.*? Status File/ ) { $v="1"; last; }
+-  if ( $_ =~ /version=(\d+)/ ) { $v="$1"; last; }
+-  END { print $v; }
+-'`
+-
+-if test "$NAGIOS_STATUS_DATA_VERSION" = "UNKNOWN" ; then
+-  echo
+-  echo "FATAL ERROR: failed to detect data version in $NAGIOS_STATUS_DATA_FILE"
+-  echo "It appears you do not have a working Nagios installation."
+-  echo
+-  exit
+-fi
+-
+-if test "$NAGIOS_STATUS_DATA_VERSION" -gt 3 ; then
+-  echo
+-  echo "FATAL ERROR: unsupported data version ($NAGIOS_STATUS_DATA_VERSION) in $NAGIOS_STATUS_DATA_VERSION"
+-  echo "Currently supported versions are 1, 2 and 3."
+-  echo
+-  exit
+-fi
+-
++NAGIOS_STATUS_DATA_FILE="$NAGIOS_VAR_DIR/status.dat"
  
- 
-                     ac_config_files="$ac_config_files Makefile cnagios.h"
+ # Check whether --with-nagios-data or --without-nagios-data was given.
+ if test "${with_nagios_data+set}" = set; then
