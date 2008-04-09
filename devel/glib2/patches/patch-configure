@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.8 2008/04/09 13:10:17 jasper Exp $
+--- configure.orig	Tue Mar 11 01:41:11 2008
++++ configure	Tue Mar 11 21:22:36 2008
+@@ -32747,6 +32747,8 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
++#include <sys/mount.h>
+ $ac_includes_default
+ int
+ main ()

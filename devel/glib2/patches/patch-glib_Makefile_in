@@ -1,0 +1,12 @@
+$OpenBSD: patch-glib_Makefile_in,v 1.8 2008/04/09 13:10:17 jasper Exp $
+--- glib/Makefile.in.orig	Mon Feb 25 17:41:41 2008
++++ glib/Makefile.in	Thu Mar  6 22:27:34 2008
+@@ -592,7 +592,7 @@ INSTALL_PROGS = $(am__append_1) $(am__append_2)
+ @OS_WIN32_TRUE@gspawn_win32_helper_console_LDADD = libglib-2.0.la
+ @OS_UNIX_TRUE@gtester_SOURCES = gtester.c
+ @OS_UNIX_TRUE@gtester_LDADD = libglib-2.0.la
+-@OS_UNIX_TRUE@auto_config_binscripts = gtester-report
++@OS_UNIX_TRUE@auto_config_binscripts =
+ @OS_UNIX_TRUE@bin_SCRIPTS = ${auto_config_binscripts}
+ @OS_UNIX_TRUE@CONFIGVARS = \
+ @OS_UNIX_TRUE@        "bindir"    	: "${bindir}",		\

@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_refcount_Makefile_in,v 1.6 2008/02/09 17:47:34 jasper Exp $
---- tests/refcount/Makefile.in.orig	Tue Jan  8 02:42:13 2008
-+++ tests/refcount/Makefile.in	Fri Feb  1 00:39:45 2008
-@@ -264,7 +264,6 @@ libgobject = $(top_builddir)/gobject/libgobject-2.0.la
+$OpenBSD: patch-tests_refcount_Makefile_in,v 1.7 2008/04/09 13:10:17 jasper Exp $
+--- tests/refcount/Makefile.in.orig	Mon Feb 11 18:21:42 2008
++++ tests/refcount/Makefile.in	Fri Feb 22 11:40:06 2008
+@@ -341,7 +341,6 @@ libgmodule = $(top_builddir)/gmodule/libgmodule-2.0.la
+ libgobject = $(top_builddir)/gobject/libgobject-2.0.la
  LDADD = $(libglib) $(libgobject) $(libgthread) $(G_THREAD_LIBS)
- 
  test_programs = \
 -	closures				\
  	objects					\

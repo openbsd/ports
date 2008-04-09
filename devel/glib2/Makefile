@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2008/02/13 12:01:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2008/04/09 13:10:17 jasper Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
-VERSION=		2.14.5
+VERSION=		2.16.1
 DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
@@ -11,10 +11,11 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org/
 
-SHARED_LIBS +=	glib-2.0             1400.3   # .1400.5
-SHARED_LIBS +=	gobject-2.0          1400.3   # .1400.5
-SHARED_LIBS +=	gmodule-2.0          1400.3   # .1400.5
-SHARED_LIBS +=	gthread-2.0          1400.3   # .1400.5
+SHARED_LIBS +=	glib-2.0             1600.0   # .1600.1
+SHARED_LIBS +=	gobject-2.0          1600.0   # .1600.1
+SHARED_LIBS +=	gmodule-2.0          1600.0   # .1600.1
+SHARED_LIBS +=	gthread-2.0          1600.0   # .1600.1
+SHARED_LIBS +=  gio-2.0              1600.0   # .0.0
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,12 +23,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.14/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.16/}
 EXTRACT_SUFX=		.tar.bz2
 
 MULTI_PACKAGES=		-main -docs
 
 MODULES=		devel/gettext
+
 WANTLIB-main=		c
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
@@ -49,7 +51,8 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
-			--with-pcre=system
+			--with-pcre=system \
+			--disable-fam
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
