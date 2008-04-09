@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/03/16 10:15:28 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/04/09 14:32:22 naddy Exp $
 
 COMMENT =	powerful content management system
  
@@ -24,9 +24,8 @@ do-install:
 		cd ${PREFIX}/${DRUPAL_ROOT}/sites/default && \
 			mv settings.php settings.php.sample
 		${INSTALL_DATA_DIR} ${PREFIX}/${DRUPAL_ROOT}/files
-		${INSTALL_DATA_DIR} ${PREFIX}/${DRUPAL_ROOT}/sites/all/modules
-		${INSTALL_DATA_DIR} ${PREFIX}/${DRUPAL_ROOT}/sites/all/themes
-		${INSTALL_DATA_DIR} ${DRUPAL_MODS}
+		${INSTALL_DATA_DIR} ${PREFIX}/${DRUPAL_MODS}
+		${INSTALL_DATA_DIR} ${PREFIX}/${DRUPAL_THEMES}
 		# give everything to www
 		chown -R www.www ${PREFIX}/${DRUPAL_ROOT}
 
