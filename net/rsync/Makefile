@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.52 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.53 2008/04/10 15:06:45 espie Exp $
 
-COMMENT=	mirroring/synchronization over low bandwidth links
+COMMENT =	mirroring/synchronization over low bandwidth links
 
-DISTNAME=	rsync-2.6.9
-CATEGORIES=	net
-HOMEPAGE=	http://rsync.samba.org/
+DISTNAME =	rsync-3.0.2
+CATEGORIES =	net
+HOMEPAGE =	http://rsync.samba.org/
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+WANTLIB =		c
 
-MASTER_SITES=	ftp://ftp.samba.org/pub/rsync/ \
+MASTER_SITES =	ftp://ftp.samba.org/pub/rsync/ \
 		ftp://ftp.samba.org/pub/rsync/old-versions/ \
 		http://ftp.samba.org/ftp/rsync/ \
 		ftp://ftp.funet.fi/pub/mirrors/samba.org/pub/rsync/
 
-SEPARATE_BUILD=	simple
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-included-popt \
+#SEPARATE_BUILD =	simple
+CONFIGURE_STYLE =gnu
+CONFIGURE_ARGS =--with-included-popt \
 		--with-rsyncd-conf="${SYSCONFDIR}/rsyncd.conf" \
 		--with-rsh="ssh -T"
 
-DOCDIR=	${PREFIX}/share/doc/rsync
+DOCDIR =	${PREFIX}/share/doc/rsync
 
 do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
