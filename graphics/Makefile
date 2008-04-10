@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2008/04/04 14:38:34 landry Exp $
+# $OpenBSD: Makefile,v 1.205 2008/04/10 10:10:31 djm Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -20,6 +20,7 @@
      SUBDIR += comix
      SUBDIR += compface
      SUBDIR += cqcam
+     SUBDIR += dcmtk
      SUBDIR += dcraw
      SUBDIR += dia
      SUBDIR += digikam
