@@ -1,0 +1,12 @@
+$OpenBSD: patch-extensions_Makefile_in,v 1.1.1.1 2008/04/10 14:11:43 ajacoutot Exp $
+--- extensions/Makefile.in.orig	Thu Apr 10 10:41:08 2008
++++ extensions/Makefile.in	Thu Apr 10 10:42:05 2008
+@@ -201,7 +201,7 @@ CFILES = $(wildcard $(srcdir)/*.c)
+ SOBJS = $(subst $(srcdir)/,,$(CFILES:.c=$(SHREXT)))
+ INSTALLED_ITEMS = $(subst $(srcdir),$(ext_dir),$(CFILES:.c=$(SHREXT)))
+ EXTRA_DIST = $(wildcard *.[ch])
+-@OS_WIN32_FALSE@LDADD = $(top_builddir)/babl/.libs/libbabl-$(BABL_API_VERSION)$(SHREXT) $(MATH_LIB)
++@OS_WIN32_FALSE@LDADD = $(top_builddir)/babl/.libs/libbabl-$(BABL_API_VERSION)$(SHREXT).!!LIBbabl-0.0_VERSION!! $(MATH_LIB)
+ @OS_WIN32_TRUE@LDADD = $(no-undefined) $(libbabldlla) $(MATH_LIB)
+ ext_dir = $(DESTDIR)$(libdir)/babl-@BABL_API_VERSION@
+ all: all-am

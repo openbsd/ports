@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/10 14:11:43 ajacoutot Exp $
+include/babl-0.0/
+include/babl-0.0/babl/
+include/babl-0.0/babl/babl-classes.h
+include/babl-0.0/babl/babl.h
+lib/babl-0.0/
+lib/babl-0.0/CIE-Lab.so
+lib/babl-0.0/gegl-fixups.so
+lib/babl-0.0/gggl-lies.so
+lib/babl-0.0/gggl.so
+lib/babl-0.0/gimp-8bit.so
+lib/babl-0.0/naive-CMYK.so
+lib/libbabl-0.0.la
+@lib lib/libbabl-0.0.so.${LIBbabl-0.0_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/babl.pc
