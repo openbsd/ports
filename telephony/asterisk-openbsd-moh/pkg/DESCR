@@ -1,0 +1,14 @@
+Development of OpenBSD is a continuous, 24/7 activity.  Every six
+months, Theo de Raadt and the team put a lot of effort into the
+OpenBSD release cycle.  Every release since 3.0 has been accompanied
+by a release song, produced by Ty Semaka and a team of hired musicians.
+
+This port fetches the collected OpenBSD Release Songs and repackages
+them for use on Asterisk's Music-On-Hold feature, installing them
+so they "just work" with the standard Asterisk configuration. This
+provides some additional royalty-free music and is intended to
+promote the OpenBSD project.
+
+Copyright in these songs is held by Theo de Raadt. The songs are free
+for non-commercial use; you may use them in a company's phone system
+but may not resell them by themselves or as part of a collection.
