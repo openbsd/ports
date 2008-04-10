@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2008/04/10 10:10:31 djm Exp $
+# $OpenBSD: Makefile,v 1.206 2008/04/10 14:14:45 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -11,6 +11,7 @@
      SUBDIR += agg
      SUBDIR += animorph
      SUBDIR += aqsis
+     SUBDIR += babl
      SUBDIR += barcode
      SUBDIR += blender
      SUBDIR += cadubi
@@ -42,6 +43,7 @@
      SUBDIR += fyre
      SUBDIR += gd
      SUBDIR += gdk-pixbuf
+     SUBDIR += gegl
      SUBDIR += gfract
      SUBDIR += ggi
      SUBDIR += gif2png
