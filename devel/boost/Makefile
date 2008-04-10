@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/04/06 17:57:43 deanna Exp $
+# $OpenBSD: Makefile,v 1.14 2008/04/10 20:06:52 deanna Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
@@ -61,7 +61,8 @@ post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure \
 	    --with-python=${MODPY_BIN} \
 	    --with-python-root=${LOCALBASE} \
-	    --with-python-version=${MODPY_VERSION}
+	    --with-python-version=${MODPY_VERSION} \
+	    --without-icu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/jam/src/bin.*/bjam \
