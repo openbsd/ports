@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/09/15 00:42:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2008/04/10 03:39:54 fgsch Exp $
 bin/bochs
+bin/bxcommit
 bin/bximage
 @man man/man1/bochs-dlx.1
 @man man/man1/bochs.1
@@ -7,23 +8,15 @@ bin/bximage
 @man man/man1/bximage.1
 @man man/man5/bochsrc.5
 share/bochs/
-share/bochs/bios/
-share/bochs/bios/BIOS-bochs-2-processors
-share/bochs/bios/BIOS-bochs-4-processors
-share/bochs/bios/BIOS-bochs-8-processors
-share/bochs/bios/BIOS-bochs-latest
-share/bochs/bios/VGABIOS-elpin-2.40
-share/bochs/bios/VGABIOS-elpin-LICENSE
-share/bochs/bios/VGABIOS-lgpl-README
-share/bochs/bios/VGABIOS-lgpl-latest
+share/bochs/BIOS-bochs-latest
+share/bochs/VGABIOS-elpin-2.40
+share/bochs/VGABIOS-elpin-LICENSE
+share/bochs/VGABIOS-lgpl-README
+share/bochs/VGABIOS-lgpl-latest
+share/bochs/VGABIOS-lgpl-latest-cirrus
+share/bochs/VGABIOS-lgpl-latest-cirrus-debug
 share/bochs/bochsrc
 share/doc/bochs/
-share/doc/bochs/3rdparty.license.html
 share/doc/bochs/Linux.html
-share/doc/bochs/Minix.html
-share/doc/bochs/changelog.html
-share/doc/bochs/codingguidelines.html
 share/doc/bochs/cosimulation.html
-share/doc/bochs/guestNT.html
 share/doc/bochs/index.html
-share/doc/bochs/iodebug.html

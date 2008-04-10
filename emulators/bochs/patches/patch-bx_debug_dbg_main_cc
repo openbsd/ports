@@ -1,0 +1,12 @@
+$OpenBSD: patch-bx_debug_dbg_main_cc,v 1.1 2008/04/10 03:39:54 fgsch Exp $
+--- bx_debug/dbg_main.cc.orig	Wed Mar 26 19:46:26 2008
++++ bx_debug/dbg_main.cc	Wed Mar 26 19:47:59 2008
+@@ -1070,7 +1070,7 @@ void bx_dbg_xlate_address(bx_lin_address laddr)
+   bx_phy_address paddr;
+   laddr &= BX_CONST64(0xfffffffffffff000);
+ 
+-  bx_bool paddr_valid = BX_CPU(which_cpu)->dbg_xlate_linear2phy(laddr, &paddr);
++  bx_bool paddr_valid = BX_CPU(dbg_cpu)->dbg_xlate_linear2phy(laddr, &paddr);
+   if (paddr_valid) {
+     dbg_printf("linear page 0x" FMT_ADDRX " maps to physical page 0x%08x\n", laddr, paddr);
+   }

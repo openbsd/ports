@@ -1,43 +1,23 @@
-$OpenBSD: patch-_bochsrc,v 1.1 2004/08/11 04:46:49 brad Exp $
---- .bochsrc.orig	Tue Aug 10 17:28:34 2004
-+++ .bochsrc	Tue Aug 10 17:32:42 2004
-@@ -66,7 +66,7 @@
- # You can also use the environment variable $BXSHARE to specify the
- # location of the BIOS.
- #=======================================================================
--romimage: file=$BXSHARE/BIOS-bochs-latest, address=0xf0000
-+romimage: file=!!PREFIX!!/share/bochs/bios/BIOS-bochs-latest, address=0xf0000
- #romimage: file=bios/BIOS-bochs-2-processors, address=0xf0000
- #romimage: file=bios/BIOS-bochs-4-processors, address=0xf0000
- #romimage: file=bios/rombios.bin, address=0xf0000
-@@ -107,7 +107,7 @@ megs: 32
- #=======================================================================
- #vgaromimage: bios/VGABIOS-lgpl-latest
- #vgaromimage: bios/VGABIOS-elpin-2.40
--vgaromimage: $BXSHARE/VGABIOS-elpin-2.40
-+vgaromimage: !!PREFIX!!/share/bochs/bios/VGABIOS-elpin-2.40
- 
- #=======================================================================
- # FLOPPYA:
-@@ -130,7 +130,7 @@ vgaromimage: $BXSHARE/VGABIOS-elpin-2.40
- # drive letters such as a: or b: as the path.  Raw floppy access is not
- # supported on Windows 95 and 98.
+$OpenBSD: patch-_bochsrc,v 1.2 2008/04/10 03:39:54 fgsch Exp $
+--- .bochsrc.orig	Sat Sep 15 12:00:17 2007
++++ .bochsrc	Tue Sep 18 04:15:27 2007
+@@ -197,13 +197,13 @@ vga: extension=vbe
+ # such as a: or b: as the path.  The parameter 'image' works with image files
+ # only. In that case the size must match one of the supported types.
  #=======================================================================
 -floppya: 1_44=/dev/fd0, status=inserted
-+floppya: 1_44=/dev/rfd0a, status=inserted
- #floppya: file=../1.44, status=inserted
++#floppya: 1_44=/dev/fd0, status=inserted
+ #floppya: image=../1.44, status=inserted
  #floppya: 1_44=/dev/fd0H1440, status=inserted
  #floppya: 1_2=../1_2, status=inserted
-@@ -143,7 +143,7 @@ floppya: 1_44=/dev/fd0, status=inserted
- # See FLOPPYA above for syntax
- #=======================================================================
- #floppyb: 1_44=b:, status=inserted
--floppyb: 1_44=b.img, status=inserted
-+#floppyb: 1_44=b.img, status=inserted
+ #floppya: 1_44=a:, status=inserted
+ #floppya: 1_44=a.img, status=inserted
+-#floppya: 1_44=/dev/rfd0a, status=inserted
++floppya: 1_44=/dev/rfd0a, status=inserted
  
  #=======================================================================
- # ATA0, ATA1, ATA2, ATA3
-@@ -309,8 +309,8 @@ floppy_bootsig_check: disabled=0
+ # FLOPPYB:
+@@ -358,8 +358,8 @@ floppy_bootsig_check: disabled=0
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================
