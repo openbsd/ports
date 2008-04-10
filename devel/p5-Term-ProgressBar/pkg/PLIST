@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/10 17:43:42 okan Exp $
+${P5SITE}/Term/
+${P5SITE}/Term/ProgressBar.pm
+@man man/man3p/Term::ProgressBar.3p
