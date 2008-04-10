@@ -1,0 +1,12 @@
+$OpenBSD: patch-cupsconnection_c,v 1.1.1.1 2008/04/10 10:21:42 jasper Exp $
+--- cupsconnection.c.orig	Wed Apr  9 23:35:15 2008
++++ cupsconnection.c	Wed Apr  9 23:35:35 2008
+@@ -2722,7 +2722,7 @@ Connection_printTestPage (Connection *self, PyObject *
+     
+   if (!fileobj) {
+     if ((datadir = getenv ("CUPS_DATADIR")) == NULL)
+-      datadir = "/usr/share/cups";
++      datadir = "!!LOCALBASE!!/share/cups";
+ 
+     snprintf (filename, sizeof (filename), "%s/data/testprint.ps", datadir);
+     file = filename;

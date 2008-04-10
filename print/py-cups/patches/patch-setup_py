@@ -1,0 +1,10 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2008/04/10 10:21:42 jasper Exp $
+--- setup.py.orig	Thu Jul  5 18:43:55 2007
++++ setup.py	Thu Mar 27 15:25:11 2008
+@@ -3,4 +3,5 @@ setup (name="cups", version="1.0",
+        ext_modules=[Extension("cups",
+                               ["cupsmodule.c", "cupsconnection.c",
+                                "cupsppd.c"],
+-                              libraries=["cups"])])
++                              libraries=["cups", "iconv"],
++			      include_dirs=['/usr/local/include'])])

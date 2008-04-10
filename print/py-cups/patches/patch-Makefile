@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/04/10 10:21:42 jasper Exp $
+--- Makefile.orig	Mon Mar 17 13:10:22 2008
++++ Makefile	Thu Mar 27 15:23:38 2008
+@@ -9,7 +9,7 @@ DIST=Makefile test.py \
+ 	COPYING NEWS README TODO ChangeLog
+ 
+ cups.so: $(SOURCES)
+-	CFLAGS=-DVERSION=\\\"$(VERSION)\\\" python setup.py build
++	CFLAGS=-DVERSION=\\\"$(VERSION)\\\" ${PYTHON} setup.py build
+ 	mv build/lib*/$@ .
+ 
+ doc:	cups.so
+@@ -29,7 +29,7 @@ dist:
+ install:
+ 	ROOT= ; \
+ 	if [ -n "$$DESTDIR" ]; then ROOT="--root $$DESTDIR"; fi; \
+-	python setup.py install $$ROOT
++	${PYTHON} setup.py install $$ROOT
+ 
+ .PHONY: doc clean dist install
+ 

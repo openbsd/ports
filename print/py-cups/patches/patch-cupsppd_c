@@ -1,0 +1,12 @@
+$OpenBSD: patch-cupsppd_c,v 1.1.1.1 2008/04/10 10:21:42 jasper Exp $
+--- cupsppd.c.orig	Thu Mar  6 11:08:23 2008
++++ cupsppd.c	Thu Mar 27 15:36:34 2008
+@@ -451,7 +451,7 @@ PPD_nondefaultsMarked (PPD *self)
+   return PyBool_FromLong (nondefaults_marked);
+ }
+ 
+-#ifdef __SVR4
++#if defined(__SVR4) || defined(__OpenBSD__)
+ /*
+  * A rudimentary emulation of getline() for systems that dont support it
+  * natively.  Since this is used for PPD file reading, it assumes (possibly
