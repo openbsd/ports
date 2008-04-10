@@ -1,0 +1,5 @@
+This module will parse a Zone File and put all the Resource Records
+(RRs) into an anonymous hash structure.  At the moment, the following
+types of RRs are supported: SOA, NS, MX, A, CNAME, TXT, PTR.  It could
+be useful for maintaining DNS zones, or for transferring DNS zones to
+other servers.
