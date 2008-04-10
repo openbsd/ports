@@ -1,0 +1,5 @@
+DCMTK is a collection of libraries and applications implementing large
+parts of the DICOM standard for medical imaging. It includes software
+for examining, constructing and converting DICOM image files, handling
+offline media, sending and receiving images over a network connection,
+as well as demonstrative image storage and worklist servers.

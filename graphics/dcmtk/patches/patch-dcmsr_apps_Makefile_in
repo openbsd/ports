@@ -1,0 +1,15 @@
+$OpenBSD: patch-dcmsr_apps_Makefile_in,v 1.1.1.1 2008/04/10 10:09:56 djm Exp $
+--- dcmsr/apps/Makefile.in.orig	Mon Aug 20 20:29:44 2007
++++ dcmsr/apps/Makefile.in	Mon Aug 20 20:29:56 2007
+@@ -49,9 +49,9 @@ install-bin: all
+ 	done
+ 
+ install-support:
+-	$(configdir)/mkinstalldirs $(libdir)
++	$(configdir)/mkinstalldirs $(datadir)
+ 	for file in $(support); do \
+-		$(INSTALL_DATA) $$file $(libdir) ;\
++		$(INSTALL_DATA) $$file $(datadir) ;\
+ 	done
+ 
+ clean:

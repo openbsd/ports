@@ -1,0 +1,127 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/10 10:09:56 djm Exp $
+bin/dcm2pnm
+bin/dcm2xml
+bin/dcmcjpeg
+bin/dcmconv
+bin/dcmcrle
+bin/dcmdjpeg
+bin/dcmdrle
+bin/dcmdspfn
+bin/dcmdump
+bin/dcmftest
+bin/dcmgpdir
+bin/dcmj2pnm
+bin/dcmmkcrv
+bin/dcmmkdir
+bin/dcmmklut
+bin/dcmodify
+bin/dcmp2pgm
+bin/dcmprscp
+bin/dcmprscu
+bin/dcmpschk
+bin/dcmpsmk
+bin/dcmpsprt
+bin/dcmpsrcv
+bin/dcmpssnd
+bin/dcmqridx
+bin/dcmqrscp
+bin/dcmqrti
+bin/dcmquant
+bin/dcmscale
+bin/dcmsign
+bin/dcod2lum
+bin/dconvlum
+bin/dsr2html
+bin/dsr2xml
+bin/dsrdump
+bin/dump2dcm
+bin/echoscu
+bin/findscu
+bin/movescu
+bin/pdf2dcm
+bin/storescp
+bin/storescu
+bin/termscu
+bin/wlmscpfs
+bin/xml2dcm
+bin/xml2dsr
+lib/dcm2xml.dtd
+@man man/man1/dcm2pnm.1
+@man man/man1/dcm2xml.1
+@man man/man1/dcmcjpeg.1
+@man man/man1/dcmconv.1
+@man man/man1/dcmcrle.1
+@man man/man1/dcmdjpeg.1
+@man man/man1/dcmdrle.1
+@man man/man1/dcmdspfn.1
+@man man/man1/dcmdump.1
+@man man/man1/dcmftest.1
+@man man/man1/dcmgpdir.1
+@man man/man1/dcmj2pnm.1
+@man man/man1/dcmmkcrv.1
+@man man/man1/dcmmkdir.1
+@man man/man1/dcmmklut.1
+@man man/man1/dcmodify.1
+@man man/man1/dcmp2pgm.1
+@man man/man1/dcmprscp.1
+@man man/man1/dcmprscu.1
+@man man/man1/dcmpschk.1
+@man man/man1/dcmpsmk.1
+@man man/man1/dcmpsprt.1
+@man man/man1/dcmpsrcv.1
+@man man/man1/dcmpssnd.1
+@man man/man1/dcmqridx.1
+@man man/man1/dcmqrscp.1
+@man man/man1/dcmqrti.1
+@man man/man1/dcmquant.1
+@man man/man1/dcmscale.1
+@man man/man1/dcmsign.1
+@man man/man1/dcod2lum.1
+@man man/man1/dconvlum.1
+@man man/man1/dsr2html.1
+@man man/man1/dsr2xml.1
+@man man/man1/dsrdump.1
+@man man/man1/dump2dcm.1
+@man man/man1/echoscu.1
+@man man/man1/findscu.1
+@man man/man1/movescu.1
+@man man/man1/pdf2dcm.1
+@man man/man1/storescp.1
+@man man/man1/storescu.1
+@man man/man1/termscu.1
+@man man/man1/wlmscpfs.1
+@man man/man1/xml2dcm.1
+@man man/man1/xml2dsr.1
+share/dcmtk/
+share/dcmtk/camera.lut
+share/dcmtk/dicom.dic
+share/dcmtk/dsr2xml.xsd
+share/dcmtk/dumppat.txt
+share/dcmtk/monitor.lut
+share/dcmtk/philips.lut
+share/dcmtk/printer.lut
+share/dcmtk/scanner.lut
+share/doc/dcmtk/
+share/doc/dcmtk/COPYRIGHT
+share/doc/dcmtk/FAQ
+share/doc/dcmtk/HISTORY
+share/doc/dcmtk/asconfig.txt
+share/doc/dcmtk/ciphers.txt
+share/doc/dcmtk/datadict.txt
+share/doc/dcmtk/dcmqrcnf.txt
+share/doc/dcmtk/dcmqrset.txt
+share/doc/dcmtk/randseed.txt
+share/doc/dcmtk/testing.txt
+share/doc/dcmtk/wwwapp.txt
+share/examples/dcmtk/
+@sample ${SYSCONFDIR}/dcmtk/
+share/examples/dcmtk/dcmpstat.cfg
+@sample ${SYSCONFDIR}/dcmtk/dcmpstat.cfg
+share/examples/dcmtk/dcmqrscp.cfg
+@sample ${SYSCONFDIR}/dcmtk/dcmqrscp.cfg
+share/examples/dcmtk/printers.cfg
+@sample ${SYSCONFDIR}/dcmtk/printers.cfg
+share/examples/dcmtk/storescp.cfg
+@sample ${SYSCONFDIR}/dcmtk/storescp.cfg
+share/examples/dcmtk/storescu.cfg
+@sample ${SYSCONFDIR}/dcmtk/storescu.cfg

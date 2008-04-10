@@ -1,0 +1,19 @@
+$OpenBSD: patch-dcmdata_libsrc_Makefile_in,v 1.1.1.1 2008/04/10 10:09:56 djm Exp $
+--- dcmdata/libsrc/Makefile.in.orig	Mon Aug 20 20:27:43 2007
++++ dcmdata/libsrc/Makefile.in	Mon Aug 20 20:28:09 2007
+@@ -56,12 +56,12 @@ install-lib: $(library)
+ 	$(INSTALL_DATA) $(library) $(libdir)/$(library)
+ 
+ install-support: $(DICTFILE) $(PRIVDICTFILE)
+-	$(configdir)/mkinstalldirs $(libdir)
++	$(configdir)/mkinstalldirs $(datadir)
+ 	if [ "x$(INSTALL_PRIVATE_DICTIONARY)" = "xYES" ] ; then \
+ 		cat $(DICTFILE) $(PRIVDICTFILE) >dicom.tmp ; \
+-		$(INSTALL_DATA) dicom.tmp $(libdir)/dicom.dic ; \
++		$(INSTALL_DATA) dicom.tmp $(datadir)/dicom.dic ; \
+ 	else \
+-		$(INSTALL_DATA) $(DICTFILE) $(libdir)/dicom.dic ; \
++		$(INSTALL_DATA) $(DICTFILE) $(datadir)/dicom.dic ; \
+ 	fi
+ 
+ 

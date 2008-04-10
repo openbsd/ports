@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_Makefile_def_in,v 1.1.1.1 2008/04/10 10:09:56 djm Exp $
+--- config/Makefile.def.in.orig	Mon Aug 20 20:26:28 2007
++++ config/Makefile.def.in	Mon Aug 20 20:27:17 2007
+@@ -10,9 +10,9 @@ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ 
+ bindir = $(DESTDIR)@bindir@
+-etcdir = $(DESTDIR)@sysconfdir@
+-datadir = $(DESTDIR)@datadir@/data
+-docdir = $(DESTDIR)@datadir@/doc
++etcdir = $(DESTDIR)@sysconfdir@/dcmtk
++datadir = $(DESTDIR)@datadir@/dcmtk
++docdir = $(DESTDIR)@datadir@/doc/dcmtk
+ mandir = $(DESTDIR)@mandir@
+ libdir = $(DESTDIR)@libdir@
+ includedir = $(DESTDIR)@includedir@
