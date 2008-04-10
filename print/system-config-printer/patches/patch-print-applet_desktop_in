@@ -1,0 +1,12 @@
+$OpenBSD: patch-print-applet_desktop_in,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+--- print-applet.desktop.in.orig	Thu Mar 27 18:26:21 2008
++++ print-applet.desktop.in	Thu Mar 27 18:26:31 2008
+@@ -2,7 +2,7 @@
+ Encoding=UTF-8
+ _Name=Print Queue Applet
+ _Comment=System tray icon for managing print jobs
+-Exec=/usr/bin/system-config-printer-applet
++Exec=!!PREFIX!!/bin/system-config-printer-applet
+ Terminal=false
+ Type=Application
+ Icon=printer

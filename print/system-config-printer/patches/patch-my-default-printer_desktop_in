@@ -1,0 +1,12 @@
+$OpenBSD: patch-my-default-printer_desktop_in,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+--- my-default-printer.desktop.in.orig	Thu Mar 27 18:26:45 2008
++++ my-default-printer.desktop.in	Thu Mar 27 18:26:56 2008
+@@ -2,7 +2,7 @@
+ Encoding=UTF-8
+ _Name=Default Printer
+ _Comment=Select default printer
+-Exec=/usr/bin/my-default-printer
++Exec=!!PREFIX!!/bin/my-default-printer
+ Terminal=false
+ Type=Application
+ Icon=printer

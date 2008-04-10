@@ -1,0 +1,12 @@
+$OpenBSD: patch-manage-print-jobs_desktop_in,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+--- manage-print-jobs.desktop.in.orig	Thu Mar 27 18:28:56 2008
++++ manage-print-jobs.desktop.in	Thu Mar 27 18:30:18 2008
+@@ -2,7 +2,7 @@
+ Encoding=UTF-8
+ _Name=Manage Print Jobs
+ _Comment=Cancel, pause, resume or reprint jobs
+-Exec=/usr/bin/system-config-printer-applet --no-tray-icon
++Exec=!!PREFIX!!/bin/system-config-printer-applet --no-tray-icon
+ Terminal=false
+ Type=Application
+ Icon=printer

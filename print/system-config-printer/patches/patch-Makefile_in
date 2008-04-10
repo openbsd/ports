@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+--- Makefile.in.orig	Thu Apr  3 17:54:22 2008
++++ Makefile.in	Tue Apr  8 15:23:20 2008
+@@ -290,7 +290,7 @@ man_MANS = \
+ dbus_DATA = \
+ 	newprinternotification.conf
+ 
+-dbusdir = $(sysconfdir)/dbus-1/system.d/
++dbusdir = $(datadir)/examples/system-config-printer/
+ desktop_DATA = \
+ 	system-config-printer.desktop \
+ 	print-applet.desktop \
+@@ -933,13 +933,6 @@ install-desktopDATA: $(desktop_DATA)
+ 	  --add-category HardwareSettings	\
+ 	  --add-category GTK			\
+ 	  my-default-printer.desktop
+-	desktop-file-install --vendor redhat	\
+-	  --dir $(DESTDIR)$(autostartdir)	\
+-	  --add-category X-Red-Hat-Base		\
+-	  --add-category System			\
+-	  --add-category Monitor		\
+-	  --add-category GTK			\
+-	  print-applet.desktop
+ 
+ uninstall-desktopDATA:
+ 	rm -f $(DESTDIR)$(desktopdir)/redhat-system-config-printer.desktop

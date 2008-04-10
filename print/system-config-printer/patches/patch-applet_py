@@ -1,0 +1,30 @@
+$OpenBSD: patch-applet_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+--- applet.py.orig	Thu Apr  3 17:54:02 2008
++++ applet.py	Tue Apr  8 15:23:21 2008
+@@ -31,7 +31,7 @@ import gobject
+ import pynotify
+ import time
+ 
+-APPDIR="/usr/share/system-config-printer"
++APPDIR="!!PREFIX!!/share/system-config-printer"
+ DOMAIN="system-config-printer"
+ GLADE="applet.glade"
+ ICON="printer"
+@@ -151,7 +151,7 @@ class NewPrinterNotification(dbus.service.Object):
+         pid = os.fork ()
+         if pid == 0:
+             # Child.
+-            cmd = "/usr/bin/system-config-printer"
++            cmd = "!!PREFIX!!/system-config-printer"
+             argv.insert (0, cmd)
+             os.execvp (cmd, argv)
+             sys.exit (1)
+@@ -169,7 +169,7 @@ class NewPrinterNotification(dbus.service.Object):
+         pid = os.fork ()
+         if pid == 0:
+             # Child.
+-            argv = ["/usr/bin/system-install-packages"]
++            argv = ["/usr/bin/true"]
+             argv.extend (missing_pkgs)
+             os.execv (argv[0], argv)
+             sys.exit (1)
