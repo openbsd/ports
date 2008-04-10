@@ -1,0 +1,4 @@
+GEGL (GEneric Graphics Library) is a graph based image processing
+framework.
+This package provides the SDL, OpenEXR and FFmpeg optional plugins for
+GEPL.
