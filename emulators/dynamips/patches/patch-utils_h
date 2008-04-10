@@ -1,7 +1,33 @@
-$OpenBSD: patch-utils_h,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
+$OpenBSD: patch-utils_h,v 1.2 2008/04/10 15:22:17 sthen Exp $
 --- utils.h.orig	Sun Oct 14 09:43:07 2007
-+++ utils.h	Tue Jan 15 19:17:22 2008
-@@ -84,7 +84,7 @@
++++ utils.h	Wed Apr  9 11:05:18 2008
+@@ -14,6 +14,7 @@
+ #include <netinet/in.h>
+ #include <pthread.h>
+ #include <signal.h>
++#include <machine/endian.h>
+ 
+ /* True/False definitions */
+ #ifndef FALSE
+@@ -42,6 +43,9 @@
+ #define ARCH_BIG_ENDIAN     0x4321
+ #define ARCH_LITTLE_ENDIAN  0x1234
+ 
++#ifdef BYTE_ORDER
++#define ARCH_BYTE_ORDER BYTE_ORDER
++#else
+ #if defined(PPC) || defined(__powerpc__) || defined(__ppc__)
+ #define ARCH_BYTE_ORDER ARCH_BIG_ENDIAN
+ #elif defined(__sparc) || defined(__sparc__)
+@@ -55,6 +59,7 @@
+ #elif defined(__ia64__)
+ #define ARCH_BYTE_ORDER ARCH_LITTLE_ENDIAN
+ #endif
++#endif
+ 
+ #ifndef ARCH_BYTE_ORDER
+ #error Please define your architecture in utils.h!
+@@ -84,7 +89,7 @@
  #define fastcall   __attribute__((regparm(3)))
  
  #if __GNUC__ > 2
@@ -10,7 +36,7 @@ $OpenBSD: patch-utils_h,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
  #define no_inline __attribute__ ((noinline))
  #else
  #define forced_inline inline
-@@ -255,12 +255,15 @@ static inline u_int normalize_size(u_int val,u_int nb,
+@@ -255,12 +260,15 @@ static inline u_int normalize_size(u_int val,u_int nb,
     return(((val+nb-1) & ~(nb-1)) >> shift);
  }
  
@@ -26,7 +52,7 @@ $OpenBSD: patch-utils_h,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
  /* Convert a 32-bit number between little and big endian */
  static forced_inline m_uint32_t swap32(m_uint32_t value)
  {
-@@ -272,7 +275,9 @@ static forced_inline m_uint32_t swap32(m_uint32_t valu
+@@ -272,7 +280,9 @@ static forced_inline m_uint32_t swap32(m_uint32_t valu
     result |= (value & 0xff) << 24;
     return(result);
  }
@@ -36,7 +62,7 @@ $OpenBSD: patch-utils_h,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
  /* Convert a 64-bit number between little and big endian */
  static forced_inline m_uint64_t swap64(m_uint64_t value)
  {
-@@ -282,6 +287,7 @@ static forced_inline m_uint64_t swap64(m_uint64_t valu
+@@ -282,6 +292,7 @@ static forced_inline m_uint64_t swap64(m_uint64_t valu
     result |= swap32(value >> 32);
     return(result);
  }
