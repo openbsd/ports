@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.21 2008/03/30 15:45:12 wcmaier Exp $
+# $OpenBSD: OpenBSD,v 1.22 2008/04/10 08:03:55 form Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -83,6 +83,7 @@
 53.56		-113.51		"beck"		# Bob Beck
 53.562888	9.961555	"henning"	# Henning Brauer
 53.59		10.05		"simon"		# Simon Bertrang
+54.869288       83.08799        "form"          # Oleg Safiullin
 55.16		23.88		"martynas"	# Martynas Venckus
 55.599		-2.4324		"jmc"		# Jason McIntyre
 55.8589		13.0837		"wilfried"	# Peter Stromberg
@@ -90,6 +91,7 @@
 57.717		11.967		"niklas"	# Niklas Hallqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
+59.838977       30.49680        "mikeb"         # Mike Belopuhov
 
 #-27.48         153.20          "d"             # David Leonard
 #-33.536466     151.093514      "dons"          # Don Stewart
@@ -113,7 +115,6 @@
 #48.3           15.7            "reinhard"      # Reinhard J. Sammer
 #48.76472       9.17027         "pb"            # Philipp Buehler
 #53.29836       -6.2233         "cathcart"      # David Cathcart
-#55.02          82.54           "form"          # Oleg Safiullin
 #57.0           24.0            "mpech"         # Mike Pechkin
 #59.52          17.38           "nino"          # Nils Nordman
 #60.10          24.57           "heko"          # Heikki Korpela
