@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/10 10:09:56 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/11 11:27:24 steven Exp $
 
 COMMENT=		DICOM toolkit
 
@@ -8,7 +8,7 @@ CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.dcmtk.org/dcmtk.php.en
 
-MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354
+MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/
 
 # Several ISC and BSDish
 # ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/COPYRIGHT
