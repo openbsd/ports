@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/04/11 11:16:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2008/04/11 20:38:13 ajacoutot Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -6,7 +6,7 @@ COMMENT-doc=	developer documentation for OpenEXR
 
 V=		1.6.1
 DISTNAME=	openexr-$V
-PKGNAME-main=	OpenEXR-$V
+PKGNAME-main=	OpenEXR-$Vp0
 PKGNAME-tools=  OpenEXR-tools-$V
 PKGNAME-doc=	OpenEXR-doc-$V
 SHARED_LIBS=	IlmImf               4.0      # .6.0	
@@ -25,7 +25,7 @@ MASTER_SITES=		http://download.savannah.nongnu.org/releases/openexr/
 
 MULTI_PACKAGES= 	-main -tools -doc
 
-WANTLIB-main=		z
+WANTLIB-main=		m z stdc++
 LIB_DEPENDS-main=	Half,Iex,Imath,IlmThread::graphics/ilmbase
 
 WANTLIB-tools=		${WANTLIB-main} c m pthread stdc++
@@ -45,5 +45,5 @@ DOCDIR= 		${PREFIX}/share/doc/OpenEXR
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCDIR}
-	
+
 .include <bsd.port.mk>
