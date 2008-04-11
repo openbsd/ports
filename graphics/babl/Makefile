@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/10 14:11:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/11 17:54:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,6 +30,8 @@ LIBTOOL_FLAGS=	--tag=disable-static
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	ac_cv_path_W3M=no \
+		ac_cv_path_INKSCAPE=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static
 
