@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/11 22:48:48 simon Exp $
+bin/sitetear
+${P5SITE}/HTML/SiteTear/
+${P5SITE}/HTML/SiteTear.pm
+${P5SITE}/HTML/SiteTear/CSS.pm
+${P5SITE}/HTML/SiteTear/Item.pm
+${P5SITE}/HTML/SiteTear/Page.pm
+${P5SITE}/HTML/SiteTear/PageFilter.pm
+${P5SITE}/HTML/SiteTear/Root.pm
+@man man/man1/sitetear.1
+@man man/man3p/HTML::SiteTear.3p
+@man man/man3p/HTML::SiteTear::CSS.3p
+@man man/man3p/HTML::SiteTear::Item.3p
+@man man/man3p/HTML::SiteTear::Page.3p
+@man man/man3p/HTML::SiteTear::PageFilter.3p
+@man man/man3p/HTML::SiteTear::Root.3p

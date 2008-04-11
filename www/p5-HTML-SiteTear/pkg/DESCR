@@ -1,0 +1,3 @@
+HTML::SiteTear make a separated copy of a part of web site in local file
+system.  All linked files (HTML file, image file, javascript, cascading
+style shieet) from a source HTML file will be copied under a new file.
