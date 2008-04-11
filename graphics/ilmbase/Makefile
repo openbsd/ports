@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2008/04/11 11:47:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/04/11 20:37:55 ajacoutot Exp $
 
-COMMENT=		ILM base libraries
+COMMENT=	ILM base libraries
 
-DISTNAME=		ilmbase-1.0.1
-PKGNAME=		${DISTNAME}p1
+DISTNAME=	ilmbase-1.0.1
+PKGNAME=	${DISTNAME}p2
+CATEGORIES=	graphics
+
 SHARED_LIBS +=	Half                 4.0      # .6.0
 SHARED_LIBS +=	Iex                  4.0      # .6.0
 SHARED_LIBS +=	Imath                4.0      # .6.0
 SHARED_LIBS +=	IlmThread            4.0      # .6.0
-CATEGORIES=		graphics
 
-HOMEPAGE=		http://www.openexr.com/
+HOMEPAGE=	http://www.openexr.com/
 
 # Modified BSD license
 # `name of ILM not to be used for advertizing without written agreement'
@@ -19,10 +20,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.savannah.nongnu.org/releases/openexr/
+MASTER_SITES=	http://download.savannah.nongnu.org/releases/openexr/
 
-CONFIGURE_STYLE=	gnu
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
+WANTLIB=	m stdc++
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	LIBS="-lstdc++ -lm"
+
+USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>
