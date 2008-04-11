@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2008/04/10 14:14:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.207 2008/04/11 11:07:29 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -67,6 +67,7 @@
      SUBDIR += gtksee
      SUBDIR += gwenview
      SUBDIR += gwenview-i18n
+     SUBDIR += ilmbase
      SUBDIR += imlib
      SUBDIR += imlib2
      SUBDIR += indexpage
