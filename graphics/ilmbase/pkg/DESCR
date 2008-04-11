@@ -1,4 +1,4 @@
-ILM Base libraries providing:
+ILM base libraries providing:
 
 - Half is a class that encapsulates our 16-bit floating-point format.
 - IlmThread is a thread abstraction library for use with OpenEXR and
