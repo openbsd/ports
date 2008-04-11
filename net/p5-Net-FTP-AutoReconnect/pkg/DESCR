@@ -1,0 +1,7 @@
+Net::FTP::AutoReconnect is a wrapper module around Net::FTP.  For many
+commands, if anything goes wrong on the first try, it tries to
+disconnect and reconnect to the server, restore the state to the same as
+it was when the command was executed, then execute it again.  The state
+includes login credentials, authorize credentials, trans- fer mode
+(ASCII or binary), current working directory, and any restart, passive,
+or port commands sent.
