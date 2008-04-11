@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.333 2008/04/07 15:37:11 okan Exp $
+# $OpenBSD: Makefile,v 1.334 2008/04/11 22:48:53 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -122,6 +122,7 @@
      SUBDIR += p5-CGI-SpeedyCGI
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
+     SUBDIR += p5-CSS-Minifier
      SUBDIR += p5-CSS-Squish
      SUBDIR += p5-CSS-Tiny
      SUBDIR += p5-Catalyst-Action-RenderView
@@ -158,6 +159,7 @@
      SUBDIR += p5-HTML-CGIChecker
      SUBDIR += p5-HTML-Calendar-Month-Simple
      SUBDIR += p5-HTML-Clean
+     SUBDIR += p5-HTML-Copy
      SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FillInForm
      SUBDIR += p5-HTML-Format
@@ -171,6 +173,7 @@
      SUBDIR += p5-HTML-ResolveLink
      SUBDIR += p5-HTML-Scrubber
      SUBDIR += p5-HTML-SimpleParse
+     SUBDIR += p5-HTML-SiteTear
      SUBDIR += p5-HTML-Stream
      SUBDIR += p5-HTML-Table
      SUBDIR += p5-HTML-TableContentParser
@@ -198,6 +201,7 @@
      SUBDIR += p5-HTTP-Server-Simple-Mason
      SUBDIR += p5-HTTP-Server-Simple-Recorder
      SUBDIR += p5-HTTPD-Log-Filter
+     SUBDIR += p5-JavaScript-Minifier
      SUBDIR += p5-LWP-Authen-Wsse
      SUBDIR += p5-LWP-UserAgent-Determined
      SUBDIR += p5-MasonX-Interp-WithCallbacks
@@ -228,6 +232,7 @@
      SUBDIR += p5-XML-Feed
      SUBDIR += p5-libapreq
      SUBDIR += p5-libwww
+     SUBDIR += p5-pQuery
      SUBDIR += pear
      SUBDIR += pear-HTML-Common2
      SUBDIR += pear-HTML-Page2
