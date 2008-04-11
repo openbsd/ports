@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.516 2008/04/10 17:45:54 okan Exp $
+# $OpenBSD: Makefile,v 1.517 2008/04/11 22:05:32 okan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -222,6 +222,7 @@
      SUBDIR += p5-Net-Daemon
      SUBDIR += p5-Net-Dict
      SUBDIR += p5-Net-Domain-TLD
+     SUBDIR += p5-Net-FTP-AutoReconnect
      SUBDIR += p5-Net-FTP-Recursive
      SUBDIR += p5-Net-FTPServer
      SUBDIR += p5-Net-Google
