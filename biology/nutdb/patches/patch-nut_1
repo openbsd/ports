@@ -1,6 +1,6 @@
-$OpenBSD: patch-nut_1,v 1.4 2007/06/11 21:02:40 jasper Exp $
---- nut.1.orig	Thu Jun  7 00:21:06 2007
-+++ nut.1	Thu Jun  7 00:22:56 2007
+$OpenBSD: patch-nut_1,v 1.5 2008/04/11 09:15:49 jasper Exp $
+--- nut.1.orig	Tue Apr  8 15:32:55 2008
++++ nut.1	Tue Apr  8 15:34:13 2008
 @@ -1,17 +1,17 @@
 -.\" manual page [] for nut
 +.\" manual page [] for nutdb
@@ -9,8 +9,8 @@ $OpenBSD: patch-nut_1,v 1.4 2007/06/11 21:02:40 jasper Exp $
  .\" LP paragraph
  .\" IP indented paragraph
  .\" TP hanging label
--.TH "nut" "1" "2007.04.12" "" ""
-+.TH "nutdb" "1" "2007.04.12" "" ""
+-.TH "nut" "1" "2008.04.04" "" ""
++.TH "nutdb" "1" "2008.04.04" "" ""
  .SH "NAME"
 -.B nut \- analyze meals with the USDA Nutrient Database
 +.B nutdb \- analyze meals with the USDA Nutrient Database
@@ -23,8 +23,8 @@ $OpenBSD: patch-nut_1,v 1.4 2007/06/11 21:02:40 jasper Exp $
 +.B NUTDB
  allows you to record what you eat and analyze your meals for nutrient
  composition.  The database included is the 
- USDA Nutrient Database for Standard Reference, Release 19, which contains
-@@ -40,7 +40,7 @@ You may add your own recipes to the database, 
+ USDA Nutrient Database for Standard Reference, Release 20.
+@@ -39,7 +39,7 @@ You may add your own recipes to the database, 
  by creating them from the foods in the database.
  You can also add foods from the information on commercial food labels. The program is completely menu\-driven and there are no commands to learn.
  
@@ -33,25 +33,16 @@ $OpenBSD: patch-nut_1,v 1.4 2007/06/11 21:02:40 jasper Exp $
  can be called with an optional argument to specify a database subdirectory.
  For example, if a user tracks meals for other family members, each person
  can have his own database, and each database is entirely separate.
-@@ -84,7 +84,7 @@ By pressing "m" the macronutrient ratios are reset to 
- values in the analysis, including calories, protein, carbohydrates,
- and fats.
- (There is also an "n" option, not shown in the prompt, which works just
--like "m" but sets the groups of fatty acids to NUT reference values, and sets the micronutrients by percentage rather than absolute values.)
-+like "m" but sets the groups of fatty acids to NUTDB reference values, and sets the micronutrients by percentage rather than absolute values.)
- By pressing "e" all values are reset to the absolute values in the
- analysis.
- By pressing "o" all DV defaults are restored.
-@@ -146,7 +146,7 @@ desired,
+@@ -139,7 +139,7 @@ desired,
  and provides an opportunity to adjust the weight of the servings to allow
  for water gained or lost in preparation.
  
 -NUT allows you to add a labeled food
 +NUTDB allows you to add a labeled food
- with an ordered list of ingredients and a nutrition statement, 
+ with an ordered list of ingredients and a nutrition statement. 
  The new food will have  additional nutrients that
  were not on the nutrition statement, but that the database says are in the food.
-@@ -165,10 +165,10 @@ the program are the USA standard 2000\-calorie Daily V
+@@ -163,10 +163,10 @@ the program are the USA standard 2000\-calorie Daily V
  customized options\-\-but users can always set the label's nutrient information in grams.
  Only Daily Value nutrients greater than zero are considered as
  constraints when
@@ -65,7 +56,7 @@ $OpenBSD: patch-nut_1,v 1.4 2007/06/11 21:02:40 jasper Exp $
  that according
  to the food database, there is no way to match the ingredients with the
  constraints of the nutrition statement.
-@@ -177,11 +177,11 @@ edit the
+@@ -175,11 +175,11 @@ edit the
  nutrient values.
  Perhaps the food was so heavily fortified with vitamins
  that the user waited until
@@ -79,7 +70,7 @@ $OpenBSD: patch-nut_1,v 1.4 2007/06/11 21:02:40 jasper Exp $
  in the same manner as a recipe.
  
  To modify the serving size of an existing food, the food is selected
-@@ -256,7 +256,7 @@ non\-fiber carb as  "." and fiber as ":".
+@@ -265,7 +265,7 @@ non\-fiber carb as  "." and fiber as ":".
  
  .B Record 'The Usual'\-\-Customary Meals:
  When 
@@ -88,7 +79,7 @@ $OpenBSD: patch-nut_1,v 1.4 2007/06/11 21:02:40 jasper Exp $
  asks what you are having, you can answer "the usual."  Specifically,
  this function allows you to record a customary meal, 
  and give it a name.  Later, when
-@@ -287,7 +287,7 @@ food.db         Food database
+@@ -296,7 +296,7 @@ food.db         Food database
  meal.db         Meal database
  theusual.db     Customary Meals database
  OPTIONS.txt     Personal Options records
