@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-tools,v 1.1 2005/09/06 11:19:49 espie Exp $
+@comment $OpenBSD: PLIST-tools,v 1.2 2008/04/11 11:16:20 jasper Exp $
 @conflict OpenEXR-<=1.2.2p0
-bin/exrdisplay
 bin/exrenvmap
 bin/exrheader
 bin/exrmakepreview

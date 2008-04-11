@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2008/04/11 11:16:20 jasper Exp $
+--- doc/Makefile.in.orig	Thu Apr 10 20:24:30 2008
++++ doc/Makefile.in	Thu Apr 10 20:24:49 2008
+@@ -179,7 +179,7 @@ EXTRA_DIST = \
+ 	TechnicalIntroduction.pdf \
+ 	OpenEXRFileLayout.pdf
+ 
+-docdir = $(datadir)/doc/OpenEXR-@OPENEXR_VERSION@
++docdir = $(datadir)/doc/OpenEXR
+ doc_DATA = $(EXTRA_DIST)
+ all: all-am
+ 

@@ -1,21 +1,22 @@
-@comment $OpenBSD: PLIST-doc,v 1.1 2005/09/06 11:19:49 espie Exp $
+@comment $OpenBSD: PLIST-doc,v 1.2 2008/04/11 11:16:20 jasper Exp $
 @conflict OpenEXR-<=1.2.2p0
-share/doc/OpenEXR-1.2.2/
-share/doc/OpenEXR-1.2.2/ReadingAndWritingImageFiles.pdf
-share/doc/OpenEXR-1.2.2/TechnicalIntroduction.pdf
-share/doc/OpenEXR-1.2.2/examples/
-share/doc/OpenEXR-1.2.2/examples/drawImage.cpp
-share/doc/OpenEXR-1.2.2/examples/drawImage.h
-share/doc/OpenEXR-1.2.2/examples/generalInterfaceExamples.cpp
-share/doc/OpenEXR-1.2.2/examples/generalInterfaceExamples.h
-share/doc/OpenEXR-1.2.2/examples/generalInterfaceTiledExamples.cpp
-share/doc/OpenEXR-1.2.2/examples/generalInterfaceTiledExamples.h
-share/doc/OpenEXR-1.2.2/examples/lowLevelIoExamples.cpp
-share/doc/OpenEXR-1.2.2/examples/lowLevelIoExamples.h
-share/doc/OpenEXR-1.2.2/examples/main.cpp
-share/doc/OpenEXR-1.2.2/examples/previewImageExamples.cpp
-share/doc/OpenEXR-1.2.2/examples/previewImageExamples.h
-share/doc/OpenEXR-1.2.2/examples/rgbaInterfaceExamples.cpp
-share/doc/OpenEXR-1.2.2/examples/rgbaInterfaceExamples.h
-share/doc/OpenEXR-1.2.2/examples/rgbaInterfaceTiledExamples.cpp
-share/doc/OpenEXR-1.2.2/examples/rgbaInterfaceTiledExamples.h
+share/doc/OpenEXR/
+share/doc/OpenEXR/OpenEXRFileLayout.pdf
+share/doc/OpenEXR/ReadingAndWritingImageFiles.pdf
+share/doc/OpenEXR/TechnicalIntroduction.pdf
+share/doc/OpenEXR/examples/
+share/doc/OpenEXR/examples/drawImage.cpp
+share/doc/OpenEXR/examples/drawImage.h
+share/doc/OpenEXR/examples/generalInterfaceExamples.cpp
+share/doc/OpenEXR/examples/generalInterfaceExamples.h
+share/doc/OpenEXR/examples/generalInterfaceTiledExamples.cpp
+share/doc/OpenEXR/examples/generalInterfaceTiledExamples.h
+share/doc/OpenEXR/examples/lowLevelIoExamples.cpp
+share/doc/OpenEXR/examples/lowLevelIoExamples.h
+share/doc/OpenEXR/examples/main.cpp
+share/doc/OpenEXR/examples/previewImageExamples.cpp
+share/doc/OpenEXR/examples/previewImageExamples.h
+share/doc/OpenEXR/examples/rgbaInterfaceExamples.cpp
+share/doc/OpenEXR/examples/rgbaInterfaceExamples.h
+share/doc/OpenEXR/examples/rgbaInterfaceTiledExamples.cpp
+share/doc/OpenEXR/examples/rgbaInterfaceTiledExamples.h

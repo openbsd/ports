@@ -1,34 +1,36 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2008/04/11 11:16:20 jasper Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
 COMMENT-doc=	developer documentation for OpenEXR
+
+V=		1.6.1
+DISTNAME=	openexr-$V
+PKGNAME-main=	OpenEXR-$V
+PKGNAME-tools=  OpenEXR-tools-$V
+PKGNAME-doc=	OpenEXR-doc-$V
+SHARED_LIBS=	IlmImf               4.0      # .6.0	
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://www.openexr.com/index.html
-MASTER_SITES=	http://savannah.nongnu.org/download/openexr/
+HOMEPAGE=	http://www.openexr.com/
 
-V=		1.2.2
-DISTNAME=	OpenEXR-$V
-MULTI_PACKAGES=	-main -tools -doc
-PKGNAME-main=	OpenEXR-$Vp3
-PKGNAME-tools=  OpenEXR-tools-$Vp0
-PKGNAME-doc=	OpenEXR-doc-$Vp0
-SHARED_LIBS=	Half	3.0	\
-		Iex	3.0	\
-		IlmImf	3.0	\
-		Imath	3.0	
-
-# Almost BSD
+# Modified BSD license
 # `name of ILM not to be used for advertizing without written agreement'
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS-tools=	fltk,fltk_gl::x11/fltk \
-			Half,Iex,IlmImf,Imath,::graphics/openexr
-WANTLIB-tools=		GL GLU X11 Xext c m stdc++ z Xau Xdmcp
+MASTER_SITES=		http://download.savannah.nongnu.org/releases/openexr/
+
+MULTI_PACKAGES= 	-main -tools -doc
+
+WANTLIB-main=		z
+LIB_DEPENDS-main=	Half,Iex,Imath,IlmThread::graphics/ilmbase
+
+WANTLIB-tools=		${WANTLIB-main} c m pthread stdc++
+LIB_DEPENDS-tools=	${LIB_DEPENDS-main} \
+			IlmImf.>=4::graphics/openexr
 PKG_ARCH-doc=		*
 
 # Regress unhappy with separate build
@@ -39,9 +41,9 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
 
-DOCDIR=${PREFIX}/share/doc/${DISTNAME}
+DOCDIR= 		${PREFIX}/share/doc/OpenEXR
 
 post-install:
-	${INSTALL_DATA} ${WRKDIST}/doc/*.pdf ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCDIR}
 	
 .include <bsd.port.mk>
