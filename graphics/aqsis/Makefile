@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/03/15 10:03:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/04/11 11:16:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	photorealistic 3D rendering solution
 
 V=		1.2.0
 DISTNAME=	aqsis-${V}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics
 
 SHARED_LIBS+=	aqsis		1.0 \
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqsis/}
 
-WANTLIB=	c m stdc++ z
+WANTLIB=	Half Iex Imath c m stdc++ z
 
 MODULES=	devel/scons
 
@@ -37,7 +37,7 @@ BUILD_DEPENDS=	::textproc/libxslt \
 LIB_DEPENDS=	fltk.>=1::x11/fltk \
 		jpeg.>=62::graphics/jpeg \
 		tiff.>=38::graphics/tiff \
-		Half.>=3,Iex.>=3,IlmImf.>=3,Imath.>=3::graphics/openexr
+		IlmImf.>=4::graphics/openexr
 
 NO_REGRESS=	Yes
 
