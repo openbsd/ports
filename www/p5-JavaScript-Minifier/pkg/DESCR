@@ -1,0 +1,5 @@
+This module removes unnecessary whitespace from JavaScript code.  The
+primary requirement developing this module is to not break working code:
+if working JavaScript is in input then working JavaScript is output.  It
+is ok if the input has missing semi-colons, snips like '++ +' or '12
+.toString()', for example.
