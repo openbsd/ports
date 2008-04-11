@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/11 22:19:36 okan Exp $
+bin/spc
+@man man/man1/spc.1
+share/examples/supercat/
+@sample ${SYSCONFDIR}/supercat/
+share/examples/supercat/spcrc-ChangeLog
+@sample ${SYSCONFDIR}/supercat/spcrc-ChangeLog
+share/examples/supercat/spcrc-access_log
+@sample ${SYSCONFDIR}/supercat/spcrc-access_log
+share/examples/supercat/spcrc-c
+@sample ${SYSCONFDIR}/supercat/spcrc-c
+share/examples/supercat/spcrc-diff
+@sample ${SYSCONFDIR}/supercat/spcrc-diff
+share/examples/supercat/spcrc-emerge
+@sample ${SYSCONFDIR}/supercat/spcrc-emerge
+share/examples/supercat/spcrc-error_log
+@sample ${SYSCONFDIR}/supercat/spcrc-error_log
+share/examples/supercat/spcrc-gentooconfd
+@sample ${SYSCONFDIR}/supercat/spcrc-gentooconfd
+share/examples/supercat/spcrc-patch
+@sample ${SYSCONFDIR}/supercat/spcrc-patch
+share/examples/supercat/spcrc-py
+@sample ${SYSCONFDIR}/supercat/spcrc-py
+share/examples/supercat/spcrc-svn
+@sample ${SYSCONFDIR}/supercat/spcrc-svn
+share/examples/supercat/spcrc-xorg
+@sample ${SYSCONFDIR}/supercat/spcrc-xorg
