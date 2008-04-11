@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/11 22:48:45 simon Exp $
+${P5SITE}/pQuery/
+${P5SITE}/pQuery.pm
+@comment ${P5SITE}/pQuery.pm.orig
+${P5SITE}/pQuery/DOM.pm
+@man man/man3p/pQuery.3p
+@man man/man3p/pQuery::DOM.3p
