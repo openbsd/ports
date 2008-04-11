@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/11 11:15:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/04/11 11:47:00 jasper Exp $
 
 COMMENT=		ILM base libraries
 
 DISTNAME=		ilmbase-1.0.1
-PKGNAME=		${DISTNAME}p0
-SHARED_LIBS +=	Half                 0.0      # .6.0
-SHARED_LIBS +=	Iex                  0.0      # .6.0
-SHARED_LIBS +=	Imath                0.0      # .6.0
-SHARED_LIBS +=	IlmThread            0.0      # .6.0
+PKGNAME=		${DISTNAME}p1
+SHARED_LIBS +=	Half                 4.0      # .6.0
+SHARED_LIBS +=	Iex                  4.0      # .6.0
+SHARED_LIBS +=	Imath                4.0      # .6.0
+SHARED_LIBS +=	IlmThread            4.0      # .6.0
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.openexr.com/
