@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2008/03/25 21:22:52 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2008/04/11 11:24:03 jasper Exp $
 
 COMMENT-main=		K Desktop Environment, graphic applications
 COMMENT-kamera=		KDE interface to digital cameras
@@ -14,7 +14,7 @@ SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-kamera=	kamera-${VERSION}
 PKGNAME-kpov=	kpovmodeller-${VERSION}
 PKGNAME-sane=	ksane-${VERSION}
@@ -40,12 +40,12 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			kdeprint,khtml,kjs,kparts,kutils::x11/kde/libs3 \
 			Imlib::graphics/imlib \
 			ungif::graphics/libungif \
-			Iex,Half,Imath,IlmImf::graphics/openexr \
 			fribidi::devel/fribidi \
 			paper::print/libpaper \
 			poppler::print/poppler \
 			poppler-qt::print/poppler,-qt
 WANTLIB-main=		${WANTLIB} \
+			Half Iex IlmImf IlmThread Imath \
 			tiff fontconfig lcms Xrender ICE c \
 			freetype pcreposix pcre Xxf86vm SM Xext Xft \
 			expat intl xml2 pthread

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.91 2008/03/25 11:45:08 espie Exp $
+# $OpenBSD: Makefile,v 1.92 2008/04/11 11:24:03 jasper Exp $
 
 COMMENT-main=		K Desktop Environment, libraries
 COMMENT-cups=		K Desktop Environment, cups support
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.9
-DISTNAME=		kdelibs-${VERSION}
+DISTNAME=		kdelibs-${VERSION}p0
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 
 PKGNAME-main=		${DISTNAME}
@@ -71,10 +71,11 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 		bz2::archivers/bzip2 \
 		tiff.>=35::graphics/tiff \
 		jasper::graphics/jasper \
-		Half,Iex,Imath,IlmImf::graphics/openexr	\
+		IlmImf.>=4::graphics/openexr \
 		aspell::textproc/aspell/core
 
 WANTLIB-main=	${WANTLIB} \
+		Half Iex IlmThread Imath \
 		audiofile esd glib-2.0 \
 		gmodule-2.0 gthread-2.0 mad ogg \
 		ossaudio vorbisenc vorbis vorbisfile \
