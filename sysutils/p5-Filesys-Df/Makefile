@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/15 00:19:30 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/12 21:46:39 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		filesystem disk space information
 
 DISTNAME=		Filesys-Df-0.92
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		sysutils
+
+# XXX Force dependency on libc; this doesn't actually use libc, but doing
+#     this ensures that changes to syscalls alter the package signature.
+WANTLIB += c
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes
