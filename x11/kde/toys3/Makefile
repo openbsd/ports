@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2007/12/15 23:47:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2008/04/12 20:39:33 espie Exp $
 
 COMMENT= 		some useless KDE applications
 CATEGORIES=		x11 x11/kde games
-VERSION=		3.5.8
+VERSION=		3.5.9
 DISTNAME=		kdetoys-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION?=	3.5.8
 
 RUN_DEPENDS+=		:desktop-file-utils-*:devel/desktop-file-utils
