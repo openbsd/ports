@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.1.1.1 2007/05/12 15:19:35 alek Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.2 2008/04/12 08:19:28 steven Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for purple
@@ -94,7 +94,7 @@ ssl_openssl_handshake_cb(gpointer data, gint source, PurpleInputCondition cond)
 	PurpleSslOpensslData *openssl_data = PURPLE_SSL_OPENSSL_DATA(gsc);
 	int ret, ret2;
 
-	purple_debug_info("openssl", "Connecting\n");
+	purple_debug_info("openssl", "Connecting to %s\n", gsc->host);
 
 	/*
 	 * do the negotiation that sets up the SSL connection between
@@ -102,13 +102,13 @@ ssl_openssl_handshake_cb(gpointer data, gint source, PurpleInputCondition cond)
 	 */
 	ret = SSL_connect(openssl_data->ssl);
 	if (ret <= 0) {
-		purple_debug_info("openssl", "SSL_get_error\n");
 		ret2 = SSL_get_error(openssl_data->ssl, ret);
 
 		if (ret2 == SSL_ERROR_WANT_READ || ret2 == SSL_ERROR_WANT_WRITE)
 			return;
 
-		purple_debug_error("openssl", "SSL_connect failed\n");
+		purple_debug_error("openssl", "SSL_connect failed: %d\n",
+		    ret2);
 
 		if (gsc->error_cb != NULL)
 			gsc->error_cb(gsc, PURPLE_SSL_HANDSHAKE_FAILED,
@@ -121,7 +121,7 @@ ssl_openssl_handshake_cb(gpointer data, gint source, PurpleInputCondition cond)
 	purple_input_remove(openssl_data->handshake_handler);
 	openssl_data->handshake_handler = 0;
 
-	purple_debug_info("openssl", "SSL_connect complete\n");
+	purple_debug_info("openssl", "Connected to %s\n", gsc->host);
 
 	/* SSL connected now */
 	gsc->connect_cb(gsc->connect_cb_data, gsc, cond);
