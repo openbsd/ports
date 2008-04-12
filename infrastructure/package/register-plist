@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.16 2007/06/16 12:14:53 espie Exp $
+# $OpenBSD: register-plist,v 1.17 2008/04/12 13:09:58 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -130,6 +130,17 @@ sub forget_details
 {
 	my $self = shift;
 	$self->{name} =~ s/\d+\.\d+$/0.0/;
+}
+
+package OpenBSD::PackingElement::Comment;
+
+sub forget_details
+{
+	my $self = shift;
+
+	if ($self->{name} =~ m/^VARS:/) {
+		$self->{name} = 'VARS';
+	}
 }
 
 package OpenBSD::PackingElement::CVSTag;
