@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.94 2007/05/12 14:02:08 espie Exp $
+# $OpenBSD: make-plist,v 1.95 2008/04/12 13:04:21 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -23,26 +23,98 @@
 
 use strict;
 use warnings;
+
+use lib $ENV{PORTSDIR}."/infrastructure";
 use OpenBSD::PackingList;
 use OpenBSD::PackingElement;
 use OpenBSD::PackageLocator;
 use OpenBSD::PackageInfo;
 use OpenBSD::Mtree;
+use OpenBSD::Subst;
 use File::Spec;
 use File::Find;
 use File::Compare;
 use File::Basename;
 use File::Temp;
 
+package OpenBSD::ReverseSubst;
+our @ISA = (qw(OpenBSD::Subst));
+
+sub new
+{
+	bless {h => {}, r => [], l => {}}, shift;
+}
+
+sub hash
+{
+	my $self = shift;
+	return $self->{h};
+}
+
+sub value
+{
+	my ($self, $k) = @_;
+	return $self->{h}->{$k};
+}	
+
+sub add
+{
+	my ($self, $k, $v) = @_;
+	if ($k =~ m/^LIB(.*)_VERSION$/) {
+		$self->{l}->{$1} = $v;
+	} else {
+		push(@{$self->{r}}, $k) if $v ne '';
+	}
+	$k =~ s/^\^//;
+	$self->{h}->{$k} = $v;
+}
+
+sub reverse
+{
+	my $self = shift;
+	local $_ = shift;
+	for my $k (@{$self->{r}}) {
+		if ($k =~ m/^\^(.*)$/) {
+			$k = $1;
+			my $v = $self->{h}->{$k};
+			s/^\Q$v\E/\$\{\Q$k\E\}/g;
+		} else {
+			my $v = $self->{h}->{$k};
+			s/\Q$v\E/\$\{\Q$k\E\}/g;
+		}
+	}
+	return $_;
+}
+
+sub reverse_with_lib
+{
+	my $self = shift;
+	local $_ = shift;
+	if (m/^(.*)lib([^\/]+)\.so\.(\d+\.\d+)$/) {
+		my ($path, $name, $version) = ($1, $2, $3);
+		if (!defined $self->{l}->{$name}) {
+			print STDERR "WARNING: unregistered shared lib: $name "
+			. "(version: $version)\n";
+		    $self->{l}->{$name} = $version;
+		} elsif ($self->{l}->{$name} ne $version) {
+			print STDERR "WARNING: version mismatch for lib: $name "
+			. "($version vs. $self->{l}->{$name})\n";
+		}
+		return $self->reverse("${path}lib$name.so.\${LIB${name}_VERSION}");
+	} else {
+		return $self->reverse($_);
+	}
+}
+
+package main;
 
 # Plists use variable substitution, we have to be able to do it
 # both ways to recognize existing entries.
 
 my $base;
-my (@backsubst, @libbacksubst);
+our $subst = new OpenBSD::ReverseSubst;
 my $destdir = $ENV{'DESTDIR'};
 my %known_libs;
-my $lib_warnings = {};
 
 die "No $destdir" unless -d $destdir;
 
@@ -84,25 +156,17 @@ sub build_mtree
 sub parse_arg
 {
 	local $_ = shift;
-	if (m/^PREFIX(\-.*?)\=(.*)\/?$/) {
+	if (m/^DEPPATHS(-.*?)\=/) {
+		$mtree{$1} = build_mtree($1, $');
+		return;
+	} 
+	if (m/\=/) {
+		$subst->parse_option($_);
+	}
+	if (m/^\^PREFIX(\-.*?)\=(.*)\/?$/) {
 		$prefix{$1} = $2;
 	} elsif (m/^PLIST(\-.*?)\=/) {
 		$plistname{$1} = $';
-	} elsif (m/^DEPPATHS(-.*?)\=/) {
-		$mtree{$1} = build_mtree($1, $');
-	} elsif (m/\=/) {
-		my $back = $`;
-		my $v = $';
-		$v =~ s/^\'(.*)\'$/$1/;
-		$v =~ s/^\"(.*)\"$/$1/;
-		if ($back =~ m/^LIB(.*)_VERSION$/) {
-			$known_libs{$1}=$v;
-			push(@libbacksubst, ["\${$back}", $v]) if $v ne '';
-		} else {
-			push(@backsubst, ["\${$back}", $v]) if $v ne '';
-		}
-	} else {
-		die "Incorrect argument to $0: $_";
 	}
 }
 
@@ -152,54 +216,6 @@ sub deduce_name
 	}
 }
 
-sub lib_backsubst
-{
-	local $_ = shift;
-	if (m/lib([^\/]+)\.so\.(\d+\.\d+)$/) {
-		my ($name, $v) = ($1, $2);
-		if (!defined $known_libs{$name}) {
-			$lib_warnings->{$name}->{missing} = $v;
-		} else {
-			if ($known_libs{$name} ne $v) {
-				$lib_warnings->{$name}->{version} = [$v,
-				    $known_libs{$name}];
-			}
-		}
-		s/^(.*?)\d+\.\d+$/var_backsubst($1)/e;
-		$_ .= "\$\{LIB$name\_VERSION\}";
-		return $_;
-	} elsif (m/\.so\.\$\{LIB.*_VERSION\}$/) {
-		return var_backsubst($`).$&;
-	} else {
-		return var_backsubst($_);
-	}
-}
-
-sub var_backsubst
-{
-	local $_ = shift;
-	for my $l (@backsubst) {
-		my $v = $l->[1];
-		my $r = $l->[0];
-		if ($r eq '${SYSCONFDIR}') {
-			s/^\Q$v\E/$r/;
-		} else {
-			s/\Q$v\E/$r/g;
-		}
-	}
-	return $_;
-}
-
-sub var_subst
-{
-	local $_ = shift;
-	for my $l (@backsubst, @libbacksubst) {
-		my $v = $l->[0];
-		my $r = $l->[1];
-		s/\Q$v\E/$r/g;
-	}
-	return $_;
-}
 
 sub possible_subpackages
 {
@@ -346,8 +362,8 @@ sub register
 
 	$self->{plist} = $plist;
 	$self->{end_faked} = $plist->{state}->{end_faked};
-	my $fullname = $self->fullname();
-	my $n = main::var_backsubst($fullname);
+	my $fullname = $self->fullname;
+	my $n = $main::subst->reverse($fullname);
 	$files->{$n} = $self;
 }
 
@@ -366,8 +382,8 @@ sub register
 	$plist->{state}->{lastobject} = $self;
 	$self->{plist} = $plist;
 	$self->{end_faked} = $plist->{state}->{end_faked};
-	my $fullname = $self->fullname();
-	my $n = main::lib_backsubst($fullname);
+	my $fullname = $self->fullname;
+	my $n = $main::subst->reverse_with_lib($fullname);
 	$files->{$n} = $self;
 }
 
@@ -940,9 +956,9 @@ sub handle_file
 	my $k;
 	
 	if ($type eq 'library') {
-		$k = lib_backsubst($i);
+		$k = $subst->reverse_with_lib($i);
 	} else {
-		$k = var_backsubst($i);
+		$k = $subst->reverse($i);
 	}
 	my $short;
 	my $p;
@@ -993,9 +1009,9 @@ sub handle_file
 		return;
 	}
 	if ($type eq 'library') {
-		$short = lib_backsubst($short);
+		$short = $subst->reverse_with_lib($short);
 	} else {
-		$short = var_backsubst($short);
+		$short = $subst->reverse($short);
 	}
 	# If the resulting name is arch-dependent, we warn.
 	# We don't fix it automatically, as this may need special handling.
@@ -1118,19 +1134,6 @@ for my $k (sort keys %$foundcomments) {
 	next if defined $foundcomments->{$k}->{accounted_for};
 	print "Not accounted for: \@comment $k\n";
 }
-
-for my $name (sort keys %$lib_warnings) {
-	if (defined $lib_warnings->{$name}->{missing}) {
-		print STDERR "WARNING: unregistered shared lib: $name "
-		    . "(version: $lib_warnings->{$name}->{missing})\n";
-	}
-	if (defined $lib_warnings->{$name}->{version}) {
-		my ($v1, $v2) = @{$lib_warnings->{$name}->{version}};
-		print STDERR "WARNING: version mismatch for lib $name "
-		    . "($v1 vs. $v2)\n";
-	}
-}
-
 
 # write new info over, as joe user.
 # first we write out everything in /tmp

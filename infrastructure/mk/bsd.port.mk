@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.925 2008/04/07 11:12:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.926 2008/04/12 13:04:21 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -733,8 +733,8 @@ _lt_libs += lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 .endfor
 
 # Create the generic variable substitution list, from subst vars
-SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT \
-	MAINTAINER BASE_PKGPATH
+SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE ^PREFIX ^SYSCONFDIR FLAVOR_EXT \
+	MAINTAINER ^BASE_PKGPATH
 _tmpvars =
 
 _PKG_ADD_AUTO ?=
@@ -753,18 +753,18 @@ _PKG_ARGS += -L${LOCALBASE}
 PKG_ARGS${_S} ?= ${PKG_ARGS}
 PKG_ARGS${_S} += ${_PKG_ARGS}
 .  for _v in ${SUBST_VARS}
-.    if defined(${_v}${_S})
-PKG_ARGS${_S} += -D${_v}=${${_v}${_S}:Q}
-_tmpvars += ${_v}${_S}=${${_v}${_S}:Q}
+.    if defined(${_v:S/^^//}${_S})
+PKG_ARGS${_S} += -D${_v}=${${_v:S/^^//}${_S}:Q}
+_tmpvars += ${_v}${_S}=${${_v:S/^^//}${_S}:Q}
 .    else
-PKG_ARGS${_S} += -D${_v}=${${_v}:Q}
-_tmpvars += ${_v}=${${_v}:Q}
+PKG_ARGS${_S} += -D${_v}=${${_v:S/^^//}:Q}
+_tmpvars += ${_v}=${${_v:S/^^//}:Q}
 .    endif
 .  endfor
 
 SUBST_CMD = perl ${PORTSDIR}/infrastructure/build/pkg_subst
 .for _v in ${SUBST_VARS}
-SUBST_CMD += -D${_v}=${${_v}:Q}
+SUBST_CMD += -D${_v}=${${_v:S/^^//}:Q}
 .endfor
 
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
