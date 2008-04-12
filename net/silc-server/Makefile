@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2008/03/31 11:07:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2008/04/12 22:52:46 sthen Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
-DISTNAME=	silc-server-1.1.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	silc-server-1.1.3
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -27,6 +26,10 @@ MASTER_SITES=	http://ftp.silcnet.org/server/sources/ \
 
 MODULES=	converters/libiconv
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+=	:yasm-*:devel/yasm
+.endif
+
 FLAVORS=	operops
 FLAVOR?=
 
@@ -41,6 +44,9 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+CONFIGURE_ENV+=	ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
+.endif
 CONFIGURE_ARGS+= --enable-ipv6 \
 		 --docdir=${PREFIX}/share/doc/silcd \
 		 --with-etcdir=${CONFDIR} \
@@ -50,7 +56,7 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 		 --without-libtoolfix \
 		 --enable-debug
 
-.if ${MACHINE_ARCH} != "i386"
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-asm
 .endif
 
