@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nds,v 1.12 2007/10/24 21:52:17 espie Exp $
+@comment $OpenBSD: PLIST-nds,v 1.13 2008/04/13 12:14:11 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/nds/
@@ -422,6 +422,7 @@ ${LOC}kio_nntp.mo
 ${LOC}kio_pop3.mo
 ${LOC}kio_print.mo
 ${LOC}kio_remote.mo
+${LOC}kio_scalix.mo
 ${LOC}kio_settings.mo
 ${LOC}kio_sftp.mo
 ${LOC}kio_sieve.mo
@@ -529,6 +530,7 @@ ${LOC}kres_groupware.mo
 ${LOC}kres_groupwise.mo
 ${LOC}kres_kolab.mo
 ${LOC}kres_remote.mo
+${LOC}kres_scalix.mo
 ${LOC}kres_tvanytime.mo
 ${LOC}kres_xmlrpc.mo
 ${LOC}kreversi.mo
@@ -659,6 +661,7 @@ ${LOC}privacy.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo
+${LOC}scalixadmin.mo
 ${LOC}searchbarplugin.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
