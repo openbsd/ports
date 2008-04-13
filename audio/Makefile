@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2008/04/06 22:44:46 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.195 2008/04/13 00:22:04 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -96,6 +96,7 @@
      SUBDIR += mpg321
      SUBDIR += mppenc
      SUBDIR += mt-daapd
+     SUBDIR += multimux
      SUBDIR += nap
      SUBDIR += ncmpc
      SUBDIR += normalize
