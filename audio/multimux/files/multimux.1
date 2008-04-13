@@ -1,0 +1,108 @@
+.\" Copyright (c) 2007, Girish Venkatachalam, <girish1729@gmail.com>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd
+.Dt MULTIMUX 1
+.Os
+.Sh NAME
+.Nm multimux
+.Nd create multichannel audio files
+.Sh SYNOPSIS
+.Nm multimux
+.Bk -words
+.Op Fl fhirsv
+.Op Fl a Ar bitrate
+.Op Fl d Ar delay
+.Ek
+.Sh DESCRIPTION
+.Nm
+multiplexes up to 8 mono WAV audio files for various purposes such as
+creating 5.1 channel surround sound AC3 files commonly used in DVDs.
+.Pp
+.Sh OPTIONS
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl a
+AC3 bitrate in kilobits per second.
+Passed to ffmpeg when -f flag is used.
+.It Fl d
+Delays in milliseconds for audio channels.
+.It Fl f
+Encode output directly to AC3 via ffmpeg.
+Output file name will be Xch.ac3, where X is a single digit representing
+the number of channels.
+.It Fl h
+Display help message.
+.It Fl i
+Ignore data_length field in input WAV headers.
+This option is ignored when the -f flag is used.
+.It Fl r
+Output raw (headerless) PCM data.
+Useful for piping output when total output size > 4 GB.
+.It Fl s
+Silent mode.
+Expected output file size and bytes written information is not
+displayed.
+.It Fl v
+Verbose mode.
+Functions and arguments are displayed.
+.El
+.Pp
+.Sh EXAMPLES
+Create 5 channel (4.1) AC3 audio file 5ch.ac3.
+.Pp
+.Bd -filled -offset indent
+.Nm
+-f file1.wav file2.wav file3.wav file4.wav file5.wav
+.Ed
+.Pp
+Creates a WAV file with an English, Spanish, French and Italian channel.
+.Pp
+.Bd -filled -offset indent
+.Nm
+-d 0,0,0,0  English.wav Spanish.wav French.wav Italian.wav >
+english-spanish-french-italian.wav
+.Ed
+.Pp
+Use ffmpeg explicitly instead of invoking internally using the raw option.
+.Pp
+.Bd -filled -offset indent
+.Nm
+-r q1.wav q2.wav q3.wav q4.wav q5.wav | ffmpeg -f s16le -ac 5 -ar 48000
+-i /dev/stdin -ab 320k -acodec ac3 5ch.ac3
+.Ed
+.Pp
+Create 4channel.wav with delays.
+.Pp
+.Bd -filled -offset indent
+.Nm
+-d 0,1000,2000,3000 file1.wav file2.wav file3.wav file4.wav >
+4channel.wav
+.Ed
+.Pp
+Encode to 6 channel (5.1) AC3 file 6ch.ac3.
+.Pp
+.Bd -filled -offset indent
+.Nm
+-f file1.wav file2.wav file3.wav file4.wav file4.wav file5.wav file6.wav
+.Ed
+.Pp
+Create a raw (headerless PCM) output file.
+.Pp
+.Bd -filled -offset indent
+.Nm
+ -r file1.wav file2.wav file3.wav file4.wav > 4ch.raw
+.Ed
+.Sh AUTHOR
+Jan Panteltje <panteltje@yahoo.com>

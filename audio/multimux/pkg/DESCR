@@ -1,0 +1,4 @@
+multimux allows you to multiplex up to 8 mono WAV files into a single
+PCM audio data stream.  Additionally, multimux can add a WAV header to
+this stream or pipe the stream to ffmpeg to create a multichannel AC3
+file as commonly found in DVDs.

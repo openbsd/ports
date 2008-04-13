@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/13 00:04:11 jakemsr Exp $
+bin/multimux
+@man man/man1/multimux.1
+share/doc/multimux/
+share/doc/multimux/README
