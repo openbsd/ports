@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.17 2007/10/24 21:52:18 espie Exp $
---- kscd/libwm/Makefile.in.orig	Mon Oct  8 16:27:12 2007
-+++ kscd/libwm/Makefile.in	Wed Oct 24 12:05:08 2007
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.18 2008/04/13 09:48:57 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Wed Feb 13 16:07:45 2008
++++ kscd/libwm/Makefile.in	Sun Apr 13 06:34:07 2008
 @@ -16,7 +16,7 @@
  @SET_MAKE@
  
@@ -47,7 +47,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.17 2007/10/24 21:52:18 espie Exp $
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(libworkman_la_LDFLAGS) $(LDFLAGS) -o $@
 +	$(libkworkman_la_LDFLAGS) $(LDFLAGS) -o $@
- DEFAULT_INCLUDES = -I. -I$(top_builddir)@am__isrc@
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
  am__depfiles_maybe = depfiles
 @@ -87,8 +87,8 @@ CCLD = $(CC)
@@ -87,7 +87,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.17 2007/10/24 21:52:18 espie Exp $
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -832,8 +832,8 @@ uninstall-am:
+@@ -831,8 +831,8 @@ uninstall-am:
  	uninstall uninstall-am
  
  
@@ -98,7 +98,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.17 2007/10/24 21:52:18 espie Exp $
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
-@@ -884,19 +884,19 @@ bcheck-am:
+@@ -883,19 +883,19 @@ bcheck-am:
  
  #>+ 3
  final:
