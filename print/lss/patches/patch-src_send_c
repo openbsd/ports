@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_send_c,v 1.1.1.1 2008/04/13 17:45:43 jasper Exp $
+--- src/send.c.orig	Sun Apr 13 19:06:53 2008
++++ src/send.c	Sun Apr 13 19:23:47 2008
+@@ -83,9 +83,9 @@ GtkTargetEntry source_table[] = {
+ gboolean
+ send_symbol_to_gvim (gchar *symbol) {
+ 
+-FILE *handle;
++FILE *handle = NULL;
+ gchar server_name[BUFFER_SIZE];
+-gint i, flag, len;
++gint i, flag, len, rc;
+ gchar *cmdline[4], command[PATH_MAX];
+ 
+     handle = popen(GVIM_SERVERS_LIST_CMD, "r");
+@@ -107,7 +107,9 @@ gchar *cmdline[4], command[PATH_MAX];
+             break;
+         }
+ 
+-    if(!WIFEXITED(pclose(handle)))
++
++    rc = pclose(handle);
++    if(!WIFEXITED(rc))
+         return FALSE;
+ 
+     if (flag) {

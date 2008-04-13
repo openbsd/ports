@@ -1,0 +1,8 @@
+LSS is a symbol browser to help creating LaTeX documents with many math
+symbols.
+
+All symbols are grouped into categories and user can copy symbol name to
+system-wide clipboard (or insert it directly to first running copy of
+gVIM) by selecting symbol icon from list. Many non-standard (and
+unsupported in LSS) symbols can be found in the comprehensive LATEX
+symbol list.
