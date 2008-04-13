@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.72 2008/04/10 10:24:19 jasper Exp $
+#	$OpenBSD: Makefile,v 1.73 2008/04/13 17:46:36 jasper Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -37,6 +37,7 @@
     SUBDIR += libpaper
     SUBDIR += lilypond
     SUBDIR += lout
+    SUBDIR += lss
     SUBDIR += lyx
     SUBDIR += mftrace
     SUBDIR += mpage,a4
