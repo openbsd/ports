@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: soffice.sh,v 1.7 2007/06/01 05:00:04 ajacoutot Exp $
+# $OpenBSD: soffice.sh,v 1.8 2008/04/14 14:28:35 jasper Exp $
 #
 
 # Since the openoffice-java package may not exist
@@ -41,7 +41,7 @@ in
 		exec %%LOCALBASE%%/openoffice/program/spadmin "$@"
 		;;
 	*setofficelang)
-		exec %%LOCALBASE%%/openoffice/program/setofficelang "S@"
+		exec %%LOCALBASE%%/openoffice/program/setofficelang "$@"
 		;;
 	*)
 		exec %%LOCALBASE%%/openoffice/program/soffice "$@"
