@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2008/04/14 13:37:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2008/04/14 14:18:06 ajacoutot Exp $
 
 COMMENT=	small, fast window manager
 
@@ -42,8 +42,9 @@ CONFIGURE_ARGS=	--with-imlib=${PREFIX}/bin \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+# we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
 .if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
- || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc" \
+ || ${MACHINE_ARCH} == "macppc" || ${MACHINE_ARCH} == "sparc" \
  || ${MACHINE_ARCH} == "amd64"
 PATCH_LIST=	patch-* apm-*
 .endif
