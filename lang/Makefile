@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2007/02/19 17:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2008/04/14 12:30:22 deanna Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -37,6 +37,7 @@
      SUBDIR += pm3
      SUBDIR += python
      SUBDIR += ruby
+     SUBDIR += sbcl
      SUBDIR += scheme-report
      SUBDIR += scheme48
      SUBDIR += scm
