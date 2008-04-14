@@ -1,0 +1,2 @@
+To run or dump a copy of the SBCL runtime with an embedded core, /proc
+must be mounted.
