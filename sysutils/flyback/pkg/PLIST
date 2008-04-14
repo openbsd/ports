@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/14 13:39:51 jasper Exp $
+bin/flyback
+lib/python${MODPY_VERSION}/site-packages/flyback/
+lib/python${MODPY_VERSION}/site-packages/flyback/backup_backend.py
+lib/python${MODPY_VERSION}/site-packages/flyback/config_backend.py
+lib/python${MODPY_VERSION}/site-packages/flyback/desktop.py
+lib/python${MODPY_VERSION}/site-packages/flyback/flyback.py
+lib/python${MODPY_VERSION}/site-packages/flyback/help_data.py
+lib/python${MODPY_VERSION}/site-packages/flyback/opengl_viewer.py
+share/flyback/
+share/flyback/GPL.txt
+share/flyback/viewer.glade
