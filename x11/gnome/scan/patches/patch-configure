@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/04/14 12:38:02 ajacoutot Exp $
+--- configure.orig	Thu Apr 10 16:02:18 2008
++++ configure	Thu Apr 10 16:02:39 2008
+@@ -22018,7 +22018,7 @@ fi
+ MODULE_DIR=${libdir}/${PACKAGE_NAME}-${API_VERSION}
+ 
+ 
+-ICON_DIR=${datadir}/${PACKAGE_NAME}/icons
++ICON_DIR=${datadir}/icons
+ 
+ 
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_ref_Makefile_in,v 1.1.1.1 2008/04/14 12:38:02 ajacoutot Exp $
+--- doc/ref/Makefile.in.orig	Thu Apr 10 16:05:08 2008
++++ doc/ref/Makefile.in	Thu Apr 10 16:05:40 2008
+@@ -232,7 +232,7 @@ AUTOMAKE_OPTIONS = 1.9
+ # of using the various options.
+ 
+ # The name of the module, e.g. 'glib'.
+-DOC_MODULE = gnome-scan-@API_VERSION@
++DOC_MODULE = gnome-scan
+ 
+ # The top-level SGML file. You can change this if you want to.
+ DOC_MAIN_SGML_FILE = $(DOC_MODULE)-docs.sgml
