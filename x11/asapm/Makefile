@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2007/07/19 13:06:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2008/04/14 14:05:56 jasper Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
-ONLY_FOR_ARCHS=	arm i386 macppc
+ONLY_FOR_ARCHS= amd64 arm i386 macppc sparc
 
 COMMENT=	Advanced Power Management monitor utility for X
 
 DISTNAME=	asapm-2.13
+PKGNAME=	${DISTNAME}p0
 HOMEPAGE=	http://www.tigr.net/afterstep/
 
 CATEGORIES=	x11
