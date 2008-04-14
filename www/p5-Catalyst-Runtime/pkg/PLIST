@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/11/21 21:20:09 simon Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/04/14 21:42:55 simon Exp $
 @conflict p5-Catalyst-Manual-<5.701003
 bin/catalyst.pl
 ${P5SITE}/Catalyst/
@@ -41,6 +41,7 @@ ${P5SITE}/Catalyst/Request.pm
 ${P5SITE}/Catalyst/Request/Upload.pm
 ${P5SITE}/Catalyst/Response.pm
 ${P5SITE}/Catalyst/Runtime.pm
+${P5SITE}/Catalyst/Stats.pm
 ${P5SITE}/Catalyst/Test.pm
 ${P5SITE}/Catalyst/Utils.pm
 ${P5SITE}/Catalyst/View.pm
@@ -77,6 +78,7 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Request::Upload.3p
 @man man/man3p/Catalyst::Response.3p
 @man man/man3p/Catalyst::Runtime.3p
+@man man/man3p/Catalyst::Stats.3p
 @man man/man3p/Catalyst::Test.3p
 @man man/man3p/Catalyst::Utils.3p
 @man man/man3p/Catalyst::View.3p
