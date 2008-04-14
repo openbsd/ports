@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2008/04/09 10:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2008/04/14 13:37:42 ajacoutot Exp $
 
 COMMENT=	small, fast window manager
 
 DISTNAME=	icewm-1.2.35
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11	
 
 HOMEPAGE=	http://www.icewm.org/
@@ -42,7 +43,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
- || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc"
+ || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc" \
+ || ${MACHINE_ARCH} == "amd64"
 PATCH_LIST=	patch-* apm-*
 .endif
 
