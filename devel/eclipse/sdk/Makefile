@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2008/04/14 07:17:41 bernd Exp $
+# $OpenBSD: Makefile,v 1.42 2008/04/14 13:26:06 bernd Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,7 +11,7 @@ COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p5
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p6
 PKGNAME-swt=		swt-${ECLIPSE_VER}p0
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p0
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p0
@@ -68,7 +68,7 @@ MULTI_PACKAGES=		-main -swt -gnome -browser
 
 RUN_DEPENDS-main=	::java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
-			:${PKGNAME-browser}:devel/eclipse/sdk,-browser \
+			:swt-browser-${ECLIPSE_VER}*:devel/eclipse/sdk,-browser \
 			::devel/desktop-file-utils
 LIB_DEPENDS-main=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
