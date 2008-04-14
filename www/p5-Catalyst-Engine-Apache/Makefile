@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/09 18:25:01 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2008/04/14 21:34:53 simon Exp $
 
 COMMENT= 	Catalyst Apache engine
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Engine-Apache-1.11
+DISTNAME=	Catalyst-Engine-Apache-1.12
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
