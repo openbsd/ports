@@ -1,0 +1,120 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/14 15:32:46 ajacoutot Exp $
+bin/bulk_loader
+bin/cube_dispatcher
+bin/londiste
+bin/pgqadm
+bin/queue_mover
+bin/queue_splitter
+bin/scriptmgr
+bin/skytools_upgrade
+bin/table_dispatcher
+bin/walmgr
+lib/postgresql/logtriga.so
+lib/postgresql/pgq_lowlevel.so
+lib/postgresql/pgq_triggers.so
+lib/python${MODPY_VERSION}/site-packages/londiste/
+lib/python${MODPY_VERSION}/site-packages/londiste/__init__.py
+lib/python${MODPY_VERSION}/site-packages/londiste/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/compare.py
+lib/python${MODPY_VERSION}/site-packages/londiste/compare.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/file_read.py
+lib/python${MODPY_VERSION}/site-packages/londiste/file_read.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/file_write.py
+lib/python${MODPY_VERSION}/site-packages/londiste/file_write.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/installer.py
+lib/python${MODPY_VERSION}/site-packages/londiste/installer.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/playback.py
+lib/python${MODPY_VERSION}/site-packages/londiste/playback.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/repair.py
+lib/python${MODPY_VERSION}/site-packages/londiste/repair.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/setup.py
+lib/python${MODPY_VERSION}/site-packages/londiste/setup.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/syncer.py
+lib/python${MODPY_VERSION}/site-packages/londiste/syncer.pyc
+lib/python${MODPY_VERSION}/site-packages/londiste/table_copy.py
+lib/python${MODPY_VERSION}/site-packages/londiste/table_copy.pyc
+lib/python${MODPY_VERSION}/site-packages/pgq/
+lib/python${MODPY_VERSION}/site-packages/pgq/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pgq/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pgq/consumer.py
+lib/python${MODPY_VERSION}/site-packages/pgq/consumer.pyc
+lib/python${MODPY_VERSION}/site-packages/pgq/event.py
+lib/python${MODPY_VERSION}/site-packages/pgq/event.pyc
+lib/python${MODPY_VERSION}/site-packages/pgq/maint.py
+lib/python${MODPY_VERSION}/site-packages/pgq/maint.pyc
+lib/python${MODPY_VERSION}/site-packages/pgq/producer.py
+lib/python${MODPY_VERSION}/site-packages/pgq/producer.pyc
+lib/python${MODPY_VERSION}/site-packages/pgq/status.py
+lib/python${MODPY_VERSION}/site-packages/pgq/status.pyc
+lib/python${MODPY_VERSION}/site-packages/pgq/ticker.py
+lib/python${MODPY_VERSION}/site-packages/pgq/ticker.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/
+lib/python${MODPY_VERSION}/site-packages/skytools-2.1.6-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/skytools/__init__.py
+lib/python${MODPY_VERSION}/site-packages/skytools/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/_cquoting.so
+lib/python${MODPY_VERSION}/site-packages/skytools/_pyquoting.py
+lib/python${MODPY_VERSION}/site-packages/skytools/_pyquoting.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/config.py
+lib/python${MODPY_VERSION}/site-packages/skytools/config.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/dbstruct.py
+lib/python${MODPY_VERSION}/site-packages/skytools/dbstruct.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/gzlog.py
+lib/python${MODPY_VERSION}/site-packages/skytools/gzlog.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/installer_config.py
+lib/python${MODPY_VERSION}/site-packages/skytools/installer_config.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/parsing.py
+lib/python${MODPY_VERSION}/site-packages/skytools/parsing.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/psycopgwrapper.py
+lib/python${MODPY_VERSION}/site-packages/skytools/psycopgwrapper.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/quoting.py
+lib/python${MODPY_VERSION}/site-packages/skytools/quoting.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/scripting.py
+lib/python${MODPY_VERSION}/site-packages/skytools/scripting.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/skylog.py
+lib/python${MODPY_VERSION}/site-packages/skytools/skylog.pyc
+lib/python${MODPY_VERSION}/site-packages/skytools/sqltools.py
+lib/python${MODPY_VERSION}/site-packages/skytools/sqltools.pyc
+@man man/man1/bulk_loader.1
+@man man/man1/cube_dispatcher.1
+@man man/man1/londiste.1
+@man man/man1/pgqadm.1
+@man man/man1/queue_mover.1
+@man man/man1/queue_splitter.1
+@man man/man1/scriptmgr.1
+@man man/man1/skytools_upgrade.1
+@man man/man1/table_dispatcher.1
+@man man/man1/walmgr.1
+@man man/man5/londiste.5
+share/doc/postgresql/
+share/doc/postgresql/contrib/
+share/doc/postgresql/contrib/README.londiste
+share/doc/postgresql/contrib/README.pgq
+share/doc/postgresql/contrib/README.pgq_ext
+share/examples/skytools/
+share/examples/skytools/conf/
+share/examples/skytools/conf/bulk_loader.ini.templ
+share/examples/skytools/conf/cube_dispatcher.ini.templ
+share/examples/skytools/conf/londiste.ini
+share/examples/skytools/conf/pgqadm.ini
+share/examples/skytools/conf/queue_mover.ini.templ
+share/examples/skytools/conf/queue_splitter.ini.templ
+share/examples/skytools/conf/scriptmgr.ini.templ
+share/examples/skytools/conf/table_dispatcher.ini.templ
+share/examples/skytools/conf/wal-master.ini
+share/examples/skytools/conf/wal-slave.ini
+share/postgresql/contrib/
+share/postgresql/contrib/logtriga.sql
+share/postgresql/contrib/londiste.sql
+share/postgresql/contrib/londiste.upgrade.sql
+share/postgresql/contrib/pgq.sql
+share/postgresql/contrib/pgq.upgrade.sql
+share/postgresql/contrib/pgq_ext.sql
+share/postgresql/contrib/pgq_lowlevel.sql
+share/postgresql/contrib/pgq_triggers.sql
+share/postgresql/contrib/uninstall_pgq.sql
+share/skytools/
+share/skytools/logtriga.sql
+share/skytools/londiste.sql
+share/skytools/pgq.sql
+share/skytools/pgq_ext.sql

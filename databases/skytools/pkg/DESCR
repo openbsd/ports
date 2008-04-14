@@ -1,0 +1,2 @@
+PostgreSQL management tools from Skype: WAL shipping, queueing, 
+replication. The tools are named walmgr, PgQ and Londiste.
