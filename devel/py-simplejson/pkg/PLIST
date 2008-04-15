@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/13 17:20:14 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/04/15 09:36:06 martynas Exp $
 %%SHARED%%
 lib/python${MODPY_VERSION}/site-packages/simplejson/
-lib/python${MODPY_VERSION}/site-packages/simplejson-${VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/simplejson-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/simplejson-${VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/simplejson-${VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/simplejson-${VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/simplejson-${VERSION}-py${MODPY_VERSION}.egg-info/native_libs.txt
-lib/python${MODPY_VERSION}/site-packages/simplejson-${VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/simplejson-${VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/native_libs.txt
+lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/simplejson/__init__.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/decoder.py
@@ -22,8 +22,10 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/scanner.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_attacks.py
-lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_attacks.pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_decode.py
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_decode.pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_default.py
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_default.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_dump.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_dump.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_fail.py

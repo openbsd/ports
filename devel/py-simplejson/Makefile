@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/13 17:20:14 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2008/04/15 09:36:06 martynas Exp $
 
 COMMENT=		JSON encoder/decoder
 
-VERSION=		1.7.3
-DISTNAME=		simplejson-${VERSION}
+MODPY_EGG_VERSION=	1.8.1
+DISTNAME=		simplejson-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		devel
@@ -22,8 +22,6 @@ MASTER_SITES=		http://cheeseshop.python.org/packages/source/s/simplejson/
 
 MODULES=		lang/python
 REGRESS_DEPENDS=	::devel/py-nose
-
-SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
