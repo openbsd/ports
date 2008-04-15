@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.3 2008/02/01 19:15:40 martynas Exp $
---- setup.py.orig	Mon Jan 21 23:34:11 2008
-+++ setup.py	Fri Jan 25 22:33:36 2008
+$OpenBSD: patch-setup_py,v 1.4 2008/04/15 09:36:37 martynas Exp $
+--- setup.py.orig	Mon Mar  3 23:30:58 2008
++++ setup.py	Sun Apr 13 03:16:20 2008
 @@ -12,19 +12,6 @@ if sys.version_info < (2, 3):
  execfile(os.path.join("turbogears", "release.py"))
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-setup_py,v 1.3 2008/02/01 19:15:40 martynas Exp $
 -    "ConfigObj >= 4.3.2",
 -    "DecoratorTools >= 1.4",
 -    "FormEncode >= 0.7.1",
--    "PasteScript >= 0.9.7,<1.6",
+-    "PasteScript >= 1.6.2",
 -    "RuleDispatch >= 0.5a0.dev-r2303",
 -    "setuptools >= 0.6c2",
 -    "simplejson >= 1.3",

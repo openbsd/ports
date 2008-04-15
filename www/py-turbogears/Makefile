@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/03/19 13:02:59 winiger Exp $
+# $OpenBSD: Makefile,v 1.8 2008/04/15 09:36:37 martynas Exp $
 
 COMMENT=		Python web development megaframework
 
-VERSION=		1.0.4.2
-DISTNAME=		TurboGears-${VERSION}
-PKGNAME=		py-turbogears-${VERSION}p0
+MODPY_EGG_VERSION=	1.0.4.4
+DISTNAME=		TurboGears-${MODPY_EGG_VERSION}
+PKGNAME=		py-turbogears-${MODPY_EGG_VERSION}
 
 CATEGORIES=		www
 
@@ -18,7 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://files.turbogears.org/eggs/
+MASTER_SITES=		http://cheeseshop.python.org/packages/source/T/TurboGears/ \
+			http://files.turbogears.org/eggs/
 
 MODULES=		lang/python
 
@@ -40,8 +41,6 @@ RUN_DEPENDS=		::databases/py-sqlalchemy \
 			::www/py-paste-script
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
 			::databases/py-sqlite2
-
-SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
