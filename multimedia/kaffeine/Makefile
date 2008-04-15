@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/01/24 09:19:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2008/04/15 11:27:54 jakemsr Exp $
 
 CATEGORIES=	multimedia x11 x11/kde
 COMMENT=	video player for KDE
@@ -6,6 +6,7 @@ COMMENT=	video player for KDE
 HOMEPAGE=	http://kaffeine.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kaffeine/}
 DISTNAME=	kaffeine-0.8.6
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=	kaffeinepart         0.0      # .0.1
