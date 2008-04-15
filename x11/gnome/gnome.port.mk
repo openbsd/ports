@@ -1,5 +1,7 @@
-# $OpenBSD: gnome.port.mk,v 1.15 2007/12/27 20:45:54 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.16 2008/04/15 11:51:23 jasper Exp $
+#
 # Module for GNOME related ports
+#
 
 CATEGORIES+=		x11/gnome
 
@@ -11,9 +13,22 @@ USE_LIBTOOL?=		Yes
 MODULES+=		textproc/intltool
 .endif
 
-.if defined(DESKTOP_FILES)
-MODGNOME_RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+# Set to 'yes' if there are .desktop files in the package list.
+.if defined(DESKTOP_FILES) && ${DESKTOP_FILES:L} == "yes"
+MODGNOME_RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
+.endif
 
+# Set to 'yes' if there are .devhelp files in the package list.
+.if defined(MODGNOME_DEVHELP_FILES) && ${MODGNOME_DEVHELP_FILES:L} == "yes"
+MODGNOME_RUN_DEPENDS+=	:devhelp-*:x11/gnome/devhelp
+.endif
+
+# Set to 'yes' if there are GNOME help files in the package list.
+.if defined(MODGNOME_HELP_FILES) && ${MODGNOME_HELP_FILES:L} == "yes"
+MODGNOME_RUN_DEPENDS+=	:yelp-*:x11/gnome/yelp
+.endif
+
+.if defined(MODGNOME_RUN_DEPENDS)
 RUN_DEPENDS+=		${MODGNOME_RUN_DEPENDS}
 .endif
 
