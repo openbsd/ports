@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.590 2008/04/10 17:44:08 okan Exp $
+# $OpenBSD: Makefile,v 1.591 2008/04/15 21:40:57 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -416,6 +416,7 @@
      SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Install
      SUBDIR += p5-Module-Load
+     SUBDIR += p5-Module-Loaded
      SUBDIR += p5-Module-Pluggable
      SUBDIR += p5-Module-Pluggable-Fast
      SUBDIR += p5-Module-Refresh
