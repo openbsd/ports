@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/13 17:10:11 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/04/15 09:33:49 martynas Exp $
 bin/sqlobject-admin
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sqlobject/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/__init__.pyc
@@ -108,8 +108,6 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/sybase/sybaseconnection.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/sqlobject/util/backports.py
-lib/python${MODPY_VERSION}/site-packages/sqlobject/util/backports.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/csvexport.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/csvexport.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/util/csvimport.py
@@ -121,6 +119,8 @@ lib/python${MODPY_VERSION}/site-packages/sqlobject/util/threadinglocal.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/versioning/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/sqlobject/views.py
+lib/python${MODPY_VERSION}/site-packages/sqlobject/views.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlobject/wsgi_middleware.py
 lib/python${MODPY_VERSION}/site-packages/sqlobject/wsgi_middleware.pyc
 share/doc/py-sqlobject/
@@ -130,11 +130,14 @@ share/doc/py-sqlobject/FAQ.comments.txt
 share/doc/py-sqlobject/FAQ.txt
 share/doc/py-sqlobject/Inheritance.txt
 share/doc/py-sqlobject/News.txt
+share/doc/py-sqlobject/News1.txt
 share/doc/py-sqlobject/SQLBuilder.txt
 share/doc/py-sqlobject/SQLObject.comments.txt
 share/doc/py-sqlobject/SQLObject.txt
+share/doc/py-sqlobject/SelectResults.txt
 share/doc/py-sqlobject/TODO.txt
 share/doc/py-sqlobject/Versioning.txt
+share/doc/py-sqlobject/Views.txt
 share/doc/py-sqlobject/community.txt
 share/doc/py-sqlobject/download.txt
 share/doc/py-sqlobject/index.comments.txt
