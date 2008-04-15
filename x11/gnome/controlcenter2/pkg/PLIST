@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/01/23 21:47:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/04/15 15:07:03 jasper Exp $
 @conflict control-center-1*
 %%SHARED%%
 bin/gnome-accessibility-keyboard-properties
@@ -41,6 +41,7 @@ lib/nautilus/extensions-1.0/libnautilus-fontilus.a
 lib/nautilus/extensions-1.0/libnautilus-fontilus.la
 lib/nautilus/extensions-1.0/libnautilus-themus.a
 lib/nautilus/extensions-1.0/libnautilus-themus.la
+lib/pkgconfig/gnome-keybindings.pc
 lib/pkgconfig/gnome-settings-daemon.pc
 lib/pkgconfig/gnome-window-settings-2.0.pc
 lib/window-manager-settings/
@@ -264,8 +265,6 @@ share/locale/el/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -404,8 +403,6 @@ share/omf/control-center/control-center-sv.omf
 share/omf/control-center/control-center-uk.omf
 share/omf/control-center/control-center-vi.omf
 share/omf/control-center/control-center-zh_CN.omf
-share/pkgconfig/
-share/pkgconfig/gnome-keybindings.pc
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/control-center2/*.schemas > /dev/null
 share/schemas/control-center2/
 share/schemas/control-center2/apps_gnome_settings_daemon_default_editor.schemas
