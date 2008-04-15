@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_imageutils_jpegcontent_cpp,v 1.1 2008/04/15 03:45:11 merdely Exp $
+--- src/imageutils/jpegcontent.cpp.orig	Mon Apr 14 21:27:52 2008
++++ src/imageutils/jpegcontent.cpp	Mon Apr 14 21:30:20 2008
+@@ -329,12 +329,17 @@ int JPEGContent::dotsPerMeter(const QString& keyName) 
+ 	//         2 = inches
+ 	//         3 = centimeters
+ 	//         Other = reserved
+-	const float INCHESPERMETER = (100. / 2.54); 
++	const double INCHESPERMETER = (100. / 2.54); 
++	Exiv2::Rational r = it->toRational();
++	if (r.second == 0) {
++		// a rational with 0 as second will make hang toLong() conversion
++		r.second = 1;
++	}
+ 	switch (res) {
+ 	case 3:  // dots per cm 
+-		return (it->toLong() * 100); 
++		return int(double(r.first) * 100 / double(r.second)); 
+ 	default:  // dots per inch 
+-		return (it->toLong() * INCHESPERMETER); 
++		return int(double(r.first) * INCHESPERMETER / double(r.second)); 
+ 	}
+ 
+ 	return 0;
