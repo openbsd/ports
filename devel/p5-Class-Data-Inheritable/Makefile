@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/04/15 21:52:28 jasper Exp $
 
 COMMENT=	inheritable, overridable class data
 
 MODULES=	cpan
-DISTNAME=	Class-Data-Inheritable-0.06
+DISTNAME=	Class-Data-Inheritable-0.08
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-# Artistic License
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
