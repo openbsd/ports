@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/24 21:56:36 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/15 09:33:15 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/configobj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/configobj.py
 lib/python${MODPY_VERSION}/site-packages/configobj.pyc
 lib/python${MODPY_VERSION}/site-packages/validate.py
