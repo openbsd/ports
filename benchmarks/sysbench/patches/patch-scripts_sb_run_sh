@@ -1,0 +1,44 @@
+$OpenBSD: patch-scripts_sb_run_sh,v 1.1.1.1 2008/04/15 14:14:08 sthen Exp $
+--- scripts/sb_run.sh.orig	Tue Jan 31 11:15:49 2006
++++ scripts/sb_run.sh	Tue Apr 15 12:52:29 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # File: sb_run.sh
+ #
+ # Copyright (C) 2004 Alexey Kopytov & MySQL AB
+@@ -7,10 +7,10 @@ sbname=sysbench
+ 
+ #Install signals handlers
+ trap 'echo "Got SIGINT, exiting..."; \
+-      killall vmstat; killall iostat; killall mpstat' INT
++      pkill vmstat; pkill iostat' INT
+ 
+ trap 'echo "Got SIGTERM, exiting..."; \
+-      killall vmstat; killall iostat; killall mpstat' TERM
++      pkill vmstat; pkill iostat' TERM
+ 
+ 
+ # First try to find SysBench in the current dir
+@@ -83,13 +83,13 @@ RUN_NUMBER=`expr $RUN_NUMBER + 1`
+ echo $RUN_NUMBER > .run_number
+ 
+ # Start vmstat
+-nohup vmstat -n $UPDATES_INTERVAL >$OUTPUT_DIR/vmstat.out 2>&1 &
++nohup vmstat $UPDATES_INTERVAL >$OUTPUT_DIR/vmstat.out 2>&1 &
+ 
+ # Start iostat
+ nohup iostat $UPDATES_INTERVAL >$OUTPUT_DIR/iostat.out 2>&1 &
+ 
+ # Start mpstat
+-nohup mpstat $UPDATES_INTERVAL >$OUTPUT_DIR/mpstat.out 2>&1 &
++# nohup mpstat $UPDATES_INTERVAL >$OUTPUT_DIR/mpstat.out 2>&1 &
+ 
+ cat  >$OUTPUT_DIR/desc.txt <<EOF
+ $sbname command line args: $sbpath $sbargs
+@@ -101,4 +101,4 @@ echo "Running $sbpath $sbargs"
+ 
+ $sbpath $sbargs >$OUTPUT_DIR/sysbench.out 2>&1
+ 
+-killall vmstat; killall iostat; killall mpstat
++pkill vmstat; pkill iostat

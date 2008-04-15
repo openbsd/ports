@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/15 14:14:08 sthen Exp $
+bin/sysbench
+share/doc/sysbench/
+share/doc/sysbench/manual.html
+share/examples/sysbench/
+share/examples/sysbench/sb_run.sh
+share/examples/sysbench/sb_test_ps.sh

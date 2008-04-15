@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2008/04/15 14:14:08 sthen Exp $
+--- doc/Makefile.in.orig	Tue Apr 15 12:13:50 2008
++++ doc/Makefile.in	Tue Apr 15 12:14:17 2008
+@@ -193,7 +193,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ XHTML_STYLESHEET = $(srcdir)/xsl/xhtml.xsl
+ CHUNK_XHTML_STYLESHEET = $(srcdir)/xsl/xhtml-chunk.xsl
+-XML_CATALOG_FILES = xsl/catalog.xml
++XML_CATALOG_FILES = ${PREFIX}/share/xsl/docbook/catalog.xml
+ htmldir = $(prefix)/share/doc/sysbench
+ dist_html_DATA = manual.html
+ EXTRA_DIST = manual.xml xsl/catalog.xml.in xsl/xhtml-chunk.xsl xsl/xhtml-common.xsl xsl/xhtml.xsl

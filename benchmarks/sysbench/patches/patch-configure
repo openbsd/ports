@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/04/15 14:14:08 sthen Exp $
+--- configure.orig	Tue Apr 15 11:36:17 2008
++++ configure	Tue Apr 15 11:36:48 2008
+@@ -19859,7 +19859,7 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ XSLTPROC_FLAGS=--nonet
+ DOCBOOK_ROOT=
+ if test ! -f /etc/xml/catalog; then
+-	for i in /usr/share/sgml/docbook/stylesheet/xsl/nwalsh /usr/share/sgml/docbook/xsl-stylesheets/;
++	for i in /usr/share/sgml/docbook/stylesheet/xsl/nwalsh /usr/share/sgml/docbook/xsl-stylesheets/ ${PREFIX}/share/xsl/docbook/xhtml;
+ 	do
+ 		if test -d "$i"; then
+ 			DOCBOOK_ROOT=$i

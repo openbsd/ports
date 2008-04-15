@@ -1,0 +1,38 @@
+$OpenBSD: patch-scripts_sb_test_ps_sh,v 1.1.1.1 2008/04/15 14:14:08 sthen Exp $
+--- scripts/sb_test_ps.sh.orig	Tue Jan 31 11:15:49 2006
++++ scripts/sb_test_ps.sh	Tue Apr 15 14:09:01 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # File: sb_test_ps.sh
+ #
+ # Copyright (C) 2004 Alexey Kopytov & MySQL AB
+@@ -25,23 +25,24 @@ run_test()
+ {
+     tname="$1"
+     sbargs="--num-threads=$NUM_THREADS --max-requests=0 --max-time=60 \
+---test=oltp --oltp-table-size=100000 --mysql-table-type=myisam \
++--test=oltp --oltp-table-size=100000 --mysql-table-engine=myisam \
+ --oltp-point-selects=$point_selects \
+ --oltp-simple-ranges=$simple_ranges
+ --oltp-sum-ranges=$sum_ranges
+ --oltp-order-ranges=$order_ranges
+ --oltp-distinct-ranges=$distinct_ranges
+ --oltp-index-updates=$index_updates
+---oltp-non-index-updates=$non_index_updates"
++--oltp-non-index-updates=$non_index_updates
++--db-driver=mysql"
+ 
+     echo -e "\n*** Running test for $tname (client-side PS) ***\n"
+     sysbench $sbargs prepare >/dev/null
+-    sb_run.sh -c "$tname (client-side PS)" $sbargs --db-ps-mode=disable run
++    $sbrun -c "$tname (client-side PS)" $sbargs --db-ps-mode=disable run
+     sysbench $sbargs cleanup >/dev/null
+ 
+     echo -e "\n*** Running test for $tname (server-side PS)... ***\n"
+     sysbench $sbargs prepare >/dev/null
+-    sb_run.sh -c "$tname (server-side PS)" $sbargs run
++    $sbrun -c "$tname (server-side PS)" $sbargs run
+     sysbench $sbargs cleanup >/dev/null
+ }
+ 
