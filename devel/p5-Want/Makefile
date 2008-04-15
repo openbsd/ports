@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/27 16:50:43 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2008/04/15 21:47:31 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	implementation of the want command
 
 MODULES=	cpan
-DISTNAME=	Want-0.15
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Want-0.18
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
