@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/05 16:20:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/04/15 21:44:46 jasper Exp $
 
 COMMENT=	see what modules shipped with versions of Perl
 
 MODULES=	cpan
-DISTNAME=	Module-CoreList-2.12
+DISTNAME=	Module-CoreList-2.15
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
