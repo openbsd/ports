@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/26 19:57:23 eric Exp $
-lib/python${MODPY_VERSION}/site-packages/Twisted_Web-${VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.3 2008/04/15 11:04:27 eric Exp $
+lib/python${MODPY_VERSION}/site-packages/Twisted_Web-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_web.py
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_web.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/
@@ -60,10 +60,14 @@ lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_http.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_http.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_mvc.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_mvc.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_proxy.py
+lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_proxy.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_soap.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_soap.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_static.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_static.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_tap.py
+lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_tap.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_web.py
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_web.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/web/test/test_webclient.py

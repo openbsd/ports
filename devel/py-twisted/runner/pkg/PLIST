@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/26 19:57:23 eric Exp $
-lib/python${MODPY_VERSION}/site-packages/Twisted_Runner-${VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.3 2008/04/15 11:04:27 eric Exp $
+lib/python${MODPY_VERSION}/site-packages/Twisted_Runner-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/runner/__init__.pyc

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/26 19:57:23 eric Exp $
-lib/python${MODPY_VERSION}/site-packages/Twisted_Names-${VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.3 2008/04/15 11:04:27 eric Exp $
+lib/python${MODPY_VERSION}/site-packages/Twisted_Names-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/names/
 lib/python${MODPY_VERSION}/site-packages/twisted/names/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/names/__init__.pyc
@@ -44,6 +44,8 @@ lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_names.py
 lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_names.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_rootresolve.py
 lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_rootresolve.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_srvconnect.py
+lib/python${MODPY_VERSION}/site-packages/twisted/names/test/test_srvconnect.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_names.py
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/twisted_names.pyc
 @exec %D/sbin/twisted-regen-dropin.cache

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/26 19:57:23 eric Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/04/15 11:04:27 eric Exp $
 bin/mailmail
-lib/python${MODPY_VERSION}/site-packages/Twisted_Mail-${VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Twisted_Mail-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/__init__.pyc
@@ -42,7 +42,6 @@ lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/pop3testserver.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/pop3testserver.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/process.alias.sh
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/rfc822.message
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/test_bounce.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/test/test_bounce.pyc

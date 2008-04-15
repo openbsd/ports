@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/26 19:57:23 eric Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/04/15 11:04:27 eric Exp $
 bin/bookify
 bin/lore
-lib/python${MODPY_VERSION}/site-packages/Twisted_Lore-${VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Twisted_Lore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/__init__.pyc
@@ -66,6 +66,8 @@ lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/simple4foo.xhtml
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/template.tpl
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_lore.py
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_lore.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_man2lore.py
+lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_man2lore.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/texi.py
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/texi.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/tree.py

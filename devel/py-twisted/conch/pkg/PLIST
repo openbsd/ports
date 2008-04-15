@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/03/26 19:57:23 eric Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/04/15 11:04:27 eric Exp $
 @conflict cftp-*
 bin/cftp
 bin/ckeygen
 bin/conch
 bin/tkconch
-lib/python${MODPY_VERSION}/site-packages/Conch-${VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Conch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/__init__.pyc
@@ -118,10 +118,16 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/telnet.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/keydata.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/keydata.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_cftp.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_cftp.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_channel.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_channel.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_conch.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_conch.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_connection.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_connection.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_filetransfer.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_filetransfer.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_helper.py
@@ -142,6 +148,12 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_telnet.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_telnet.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_text.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_text.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_transport.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_transport.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_userauth.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_userauth.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_window.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_window.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/ttymodes.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/ttymodes.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/ui/

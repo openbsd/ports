@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2008/03/26 19:57:23 eric Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2008/04/15 11:04:27 eric Exp $
 
 CATEGORIES+=	devel
 
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
-SUBST_VARS+=	VERSION
+MODPY_EGG_VERSION?=	${VERSION}
 
 .if empty(PKGNAME:L:M*core*)
 RUN_DEPENDS+=	:py-twisted-core-*:devel/py-twisted/core

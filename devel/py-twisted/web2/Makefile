@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2008/03/26 19:57:24 eric Exp $
-
-BROKEN=		does not work with 2.5.0 yet
+# $OpenBSD: Makefile,v 1.6 2008/04/15 11:04:27 eric Exp $
 
 COMMENT=	experimental HTTP/1.1 server framework
 
-CATEGORIES=	www
+CATEGORIES+=	www
 
-DISTNAME=	TwistedWeb2-0.2.0
-PKGNAME=	py-twisted-web2-0.2.0p0
+VERSION=	8.0.1
+DISTNAME=	TwistedWeb2-${VERSION}
+PKGNAME=	py-twisted-web2-${VERSION}
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedWeb2
 
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Web2/
+MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Web2/${VERSION:R}/
 
-REGRESS_DEPENDS=:py-twisted-web2-*:devel/py-twisted/web2
-RUN_DEPENDS=	:py-twisted-web-*:devel/py-twisted/web
+REGRESS_DEPENDS=:py-twisted-web2-*:devel/py-twisted/web2 \
+		:py-twisted-web-*:devel/py-twisted/web
 
 do-regress:
 	${LOCALBASE}/bin/trial \
