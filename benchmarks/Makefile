@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/05/10 11:18:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2008/04/15 14:16:56 sthen Exp $
 # $FreeBSD: Makefile,v 1.4 1997/02/16 13:32:59 andreas Exp $
 #
 
@@ -14,6 +14,8 @@
      SUBDIR += pear-Benchmark
      SUBDIR += randread
      SUBDIR += smtp-benchmark
+     SUBDIR += sysbench
+     SUBDIR += sysbench,mysql
      SUBDIR += tcpblast
      SUBDIR += ubench
      SUBDIR += xengine
