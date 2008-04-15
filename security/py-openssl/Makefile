@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/03/25 22:20:09 eric Exp $
+# $OpenBSD: Makefile,v 1.9 2008/04/15 11:00:52 eric Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
-VERSION=	0.6
+VERSION=	0.7
 DISTNAME=	pyOpenSSL-${VERSION}
 PKGNAME=        py-openssl-${VERSION}
 CATEGORIES=    	security devel
@@ -22,16 +22,21 @@ WANTLIB=	crypto ssl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyopenssl/}
 
 MODULES=	lang/python
-SUBST_VARS=	VERSION
+
+MODPY_EGG_VERSION=${VERSION}
+
+REGRESS_DEPENDS=:py-twisted-core-*:devel/py-twisted/core
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-openssl
-
-NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/simple
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/simple/* ${EXAMPLESDIR}/simple
+
+do-regress: fake
+	PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${LOCALBASE}/bin/trial \
+		--temp-directory=${WRKBUILD} OpenSSL.test
 
 .include <bsd.port.mk>

@@ -1,15 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/03/25 22:20:09 eric Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/04/15 11:00:52 eric Exp $
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.so
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/__init__.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/crypto.so
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/rand.so
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_crypto.py
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_crypto.pyc
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_ssl.py
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_ssl.pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/tsafe.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/tsafe.pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/version.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/version.pyc
-lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 share/examples/py-openssl/
 share/examples/py-openssl/README
 share/examples/py-openssl/SecureXMLRPCServer.py
@@ -17,11 +24,6 @@ share/examples/py-openssl/certgen.py
 share/examples/py-openssl/mk_simple_certs.py
 share/examples/py-openssl/proxy.py
 share/examples/py-openssl/simple/
-share/examples/py-openssl/simple/CA.cert
-share/examples/py-openssl/simple/CA.pkey
-share/examples/py-openssl/simple/client.cert
-share/examples/py-openssl/simple/client.pkey
+share/examples/py-openssl/simple/README
 share/examples/py-openssl/simple/client.py
-share/examples/py-openssl/simple/server.cert
-share/examples/py-openssl/simple/server.pkey
 share/examples/py-openssl/simple/server.py
