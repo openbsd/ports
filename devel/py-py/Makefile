@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2008/04/15 09:35:43 martynas Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64 powerpc
 
 COMMENT=		agile development and test support library
 
-V=			0.9.0
-DISTNAME=		py-${V}
-PKGNAME=		py-py-${V}p0
+MODPY_EGG_VERSION=	0.9.1
+DISTNAME=		py-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		devel
 

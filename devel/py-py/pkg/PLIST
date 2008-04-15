@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/24 10:29:41 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/15 09:35:43 martynas Exp $
 %%SHARED%%
 bin/_docgen.py
 bin/_findpy.py
@@ -11,6 +11,7 @@ bin/py.rest
 bin/py.test
 bin/pytest.cmd
 lib/python${MODPY_VERSION}/site-packages/py/
+lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/py/LICENSE
 lib/python${MODPY_VERSION}/site-packages/py/__init__.py
 lib/python${MODPY_VERSION}/site-packages/py/__init__.pyc
@@ -262,6 +263,7 @@ lib/python${MODPY_VERSION}/site-packages/py/doc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/py/doc/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/py/doc/apigen.txt
 lib/python${MODPY_VERSION}/site-packages/py/doc/bin.txt
+lib/python${MODPY_VERSION}/site-packages/py/doc/changes-${MODPY_EGG_VERSION}.txt
 lib/python${MODPY_VERSION}/site-packages/py/doc/code.txt
 lib/python${MODPY_VERSION}/site-packages/py/doc/coding-style.txt
 lib/python${MODPY_VERSION}/site-packages/py/doc/confrest.py
@@ -294,6 +296,7 @@ lib/python${MODPY_VERSION}/site-packages/py/doc/log.txt
 lib/python${MODPY_VERSION}/site-packages/py/doc/misc.txt
 lib/python${MODPY_VERSION}/site-packages/py/doc/path.txt
 lib/python${MODPY_VERSION}/site-packages/py/doc/release-0.9.0.txt
+lib/python${MODPY_VERSION}/site-packages/py/doc/release-${MODPY_EGG_VERSION}.txt
 lib/python${MODPY_VERSION}/site-packages/py/doc/style.css
 lib/python${MODPY_VERSION}/site-packages/py/doc/talk/
 lib/python${MODPY_VERSION}/site-packages/py/doc/talk/execnet-overview.txt
@@ -450,6 +453,8 @@ lib/python${MODPY_VERSION}/site-packages/py/misc/error.py
 lib/python${MODPY_VERSION}/site-packages/py/misc/error.pyc
 lib/python${MODPY_VERSION}/site-packages/py/misc/findmissingdocstrings.py
 lib/python${MODPY_VERSION}/site-packages/py/misc/findmissingdocstrings.pyc
+lib/python${MODPY_VERSION}/site-packages/py/misc/killproc.py
+lib/python${MODPY_VERSION}/site-packages/py/misc/killproc.pyc
 lib/python${MODPY_VERSION}/site-packages/py/misc/rest.py
 lib/python${MODPY_VERSION}/site-packages/py/misc/rest.pyc
 lib/python${MODPY_VERSION}/site-packages/py/misc/std.py
@@ -471,6 +476,8 @@ lib/python${MODPY_VERSION}/site-packages/py/misc/testing/test_error.py
 lib/python${MODPY_VERSION}/site-packages/py/misc/testing/test_error.pyc
 lib/python${MODPY_VERSION}/site-packages/py/misc/testing/test_initpkg.py
 lib/python${MODPY_VERSION}/site-packages/py/misc/testing/test_initpkg.pyc
+lib/python${MODPY_VERSION}/site-packages/py/misc/testing/test_oskill.py
+lib/python${MODPY_VERSION}/site-packages/py/misc/testing/test_oskill.pyc
 lib/python${MODPY_VERSION}/site-packages/py/misc/testing/test_std.py
 lib/python${MODPY_VERSION}/site-packages/py/misc/testing/test_std.pyc
 lib/python${MODPY_VERSION}/site-packages/py/misc/testing/test_svnlook.py
@@ -528,6 +535,8 @@ lib/python${MODPY_VERSION}/site-packages/py/path/svn/testing/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/py/path/svn/testing/repotest.dump
 lib/python${MODPY_VERSION}/site-packages/py/path/svn/testing/svntestbase.py
 lib/python${MODPY_VERSION}/site-packages/py/path/svn/testing/svntestbase.pyc
+lib/python${MODPY_VERSION}/site-packages/py/path/svn/testing/test_auth.py
+lib/python${MODPY_VERSION}/site-packages/py/path/svn/testing/test_auth.pyc
 lib/python${MODPY_VERSION}/site-packages/py/path/svn/testing/test_test_repo.py
 lib/python${MODPY_VERSION}/site-packages/py/path/svn/testing/test_test_repo.pyc
 lib/python${MODPY_VERSION}/site-packages/py/path/svn/testing/test_urlcommand.py
