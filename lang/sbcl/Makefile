@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/14 12:29:40 deanna Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/15 12:07:31 deanna Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS=		i386
@@ -55,7 +55,7 @@ REGRESS_IS_INTERACTIVE=Yes
 BUILD_DEPENDS+=		::lang/sbcl
 BOOTSTRAP_CMD=		${LOCALBASE}/bin/sbcl \
 			--disable-debugger --no-sysinit --no-userinit
-.else
+.elif !empty(SBCL_BOOTSTRAP)
 DISTFILES+=		${SBCL_BOOTSTRAP}.tar.bz2:0
 BOOTSTRAP_CMD=		${WRKDIR}/${SBCL_BOOTSTRAP}/sbcl \
 			--core ${WRKDIR}/${SBCL_BOOTSTRAP}/sbcl.core \
