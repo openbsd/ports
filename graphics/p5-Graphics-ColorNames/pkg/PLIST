@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/07/28 14:43:51 simon Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/04/15 21:42:07 jasper Exp $
 ${P5SITE}/Graphics/
 ${P5SITE}/Graphics/ColorNames/
 ${P5SITE}/Graphics/ColorNames.pm
@@ -6,10 +6,8 @@ ${P5SITE}/Graphics/ColorNames/HTML.pm
 ${P5SITE}/Graphics/ColorNames/Netscape.pm
 ${P5SITE}/Graphics/ColorNames/Windows.pm
 ${P5SITE}/Graphics/ColorNames/X.pm
-${P5SITE}/Graphics/ColourNames.pm
 @man man/man3p/Graphics::ColorNames.3p
 @man man/man3p/Graphics::ColorNames::HTML.3p
 @man man/man3p/Graphics::ColorNames::Netscape.3p
 @man man/man3p/Graphics::ColorNames::Windows.3p
 @man man/man3p/Graphics::ColorNames::X.3p
-@man man/man3p/Graphics::ColourNames.3p
