@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_tagtool_glade,v 1.1 2008/04/15 20:43:20 jasper Exp $
+--- src/tagtool.glade.orig	Tue Apr 15 21:20:40 2008
++++ src/tagtool.glade	Tue Apr 15 21:23:59 2008
+@@ -98,6 +98,7 @@
+ 		      <property name="label" translatable="yes">Quit</property>
+ 		      <property name="use_underline">True</property>
+ 		      <signal name="activate" handler="cb_file_quit" last_modification_time="Fri, 02 Apr 2004 20:35:37 GMT"/>
++                      <accelerator key="q" modifiers="GDK_CONTROL_MASK" signal="activate"/>
+ 
+ 		      <child internal-child="image">
+ 			<widget class="GtkImage" id="image125">
