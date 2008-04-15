@@ -1,6 +1,8 @@
+# $OpenBSD: Makefile,v 1.2 2008/04/15 21:01:32 jasper Exp $
+
 COMMENT=		bunch of common helper classes for MPD
 
-DISTNAME=		Audio-MPD-Common-0.1.1
+DISTNAME=		Audio-MPD-Common-0.1.2
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -16,7 +18,7 @@ CPAN_AUTHOR=		JQUELIN
 
 CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=		::devel/p5-Class-Accessor
-REGRESS_DEPENDS=	::devel/p5-Readonly
+RUN_DEPENDS=		::devel/p5-Class-Accessor \
+			::devel/p5-Readonly
 
 .include <bsd.port.mk>
