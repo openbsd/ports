@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/03/27 01:35:02 jakemsr Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2008/04/15 11:24:14 jakemsr Exp $
 @pkgpath multimedia/xine-lib
 %%i386%%
 bin/xine-config
+bin/xine-list-1.1
 include/xine/
 include/xine.h
 include/xine/alphablend.h
@@ -119,10 +120,12 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtsp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_none.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_raw.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_sdl.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xshm.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xv.so
 @man man/man1/xine-config.1
+@man man/man1/xine-list-1.1.1
 @man man/man5/xine.5
 share/aclocal/xine.m4
 share/doc/xine-lib/

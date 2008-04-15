@@ -1,19 +1,7 @@
-$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.4 2008/04/06 10:12:23 jakemsr Exp $
---- src/demuxers/demux_qt.c.orig	Fri Mar 28 18:50:47 2008
-+++ src/demuxers/demux_qt.c	Tue Apr  1 19:47:19 2008
-@@ -896,11 +896,6 @@ static qt_error parse_trak_atom (qt_trak *trak,
-     current_atom_size = _X_BE_32(&trak_atom[i - 4]);	
-     current_atom = _X_BE_32(&trak_atom[i]);
- 
--    if (current_atom_size > trak_atom_size - i) {
--      last_error = QT_NOT_A_VALID_FILE;
--      goto free_trak;
--    }
--
-     if (current_atom == TKHD_ATOM) {
-       trak->flags = _X_BE_16(&trak_atom[i + 6]);
-     } else if (current_atom == ELST_ATOM) {
-@@ -3028,7 +3023,7 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
+$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.5 2008/04/15 11:24:14 jakemsr Exp $
+--- src/demuxers/demux_qt.c.orig	Mon Apr 14 16:27:20 2008
++++ src/demuxers/demux_qt.c	Mon Apr 14 20:28:43 2008
+@@ -3023,7 +3023,7 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
        /* special consideration for DRM-protected files */
        if (this->qt->last_error == QT_DRM_NOT_SUPPORTED)
          _x_message (this->stream, XINE_MSG_ENCRYPTED_SOURCE,

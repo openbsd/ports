@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_audio_out_Makefile_in,v 1.7 2008/03/24 03:26:34 jakemsr Exp $
---- src/audio_out/Makefile.in.orig	Wed Mar 19 09:15:46 2008
-+++ src/audio_out/Makefile.in	Fri Mar 21 13:00:19 2008
-@@ -622,7 +622,7 @@ xineplug_ao_out_sun_la_LDFLAGS = -avoid-version -modul
+$OpenBSD: patch-src_audio_out_Makefile_in,v 1.8 2008/04/15 11:24:14 jakemsr Exp $
+--- src/audio_out/Makefile.in.orig	Mon Apr 14 16:55:33 2008
++++ src/audio_out/Makefile.in	Mon Apr 14 20:28:43 2008
+@@ -623,7 +623,7 @@ xineplug_ao_out_sun_la_LDFLAGS = -avoid-version -modul
  #xineplug_ao_out_irixal_la_CFLAGS = $(VISIBILITY_FLAG) $(IRIXAL_CFLAGS)
  #xineplug_ao_out_irixal_la_LDFLAGS = -avoid-version -module
  xineplug_ao_out_arts_la_SOURCES = audio_arts_out.c

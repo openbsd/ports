@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.32 2008/04/06 10:12:23 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.33 2008/04/15 11:24:14 jakemsr Exp $
 
 COMMENT-main=		multimedia decoding library
 COMMENT-esd=		esound audio output module for xine-lib
 COMMENT-arts=		artsd audio output module for xine-lib
 COMMENT-jack=		jackd audio output module for xine-lib
 
-V=			1.1.11.1
+V=			1.1.12
 DISTNAME=		xine-lib-${V}
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}
 PKGNAME-esd=		xine-lib-esd-${V}
 PKGNAME-arts=		xine-lib-arts-${V}
 PKGNAME-jack=		xine-lib-jack-${V}
 
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
-SHARED_LIBS=		xine	20.1
+SHARED_LIBS=		xine	20.2
 
 HOMEPAGE=		http://xinehq.de/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -30,7 +30,7 @@ MULTI_PACKAGES=		-main -esd -arts -jack
 
 WANTLIB=		expat fontconfig freetype m z
 WANTLIB-main=		${WANTLIB} X11 Xau Xdmcp Xext Xinerama Xrandr \
-			Xrender Xv jpeg lcms usbhid
+			Xrender Xv c jpeg lcms pthread usbhid
 WANTLIB-esd=		${WANTLIB}
 WANTLIB-arts=		${WANTLIB} pcre stdc++ glib-2.0 \
 			gmodule-2.0 gthread-2.0
@@ -77,7 +77,7 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 
-XINEAPI_REV=		1.20
+XINEAPI_REV=		1.21
 SUBST_VARS+=		XINEAPI_REV
 
 .if ${MACHINE_ARCH} == "i386"
