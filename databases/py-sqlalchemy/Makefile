@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2008/04/15 09:34:31 martynas Exp $
 
 COMMENT=		database toolkit for Python
 
-V=			0.4.1
-DISTNAME=		SQLAlchemy-${V}
-PKGNAME=		py-sqlalchemy-${V}
+MODPY_EGG_VERSION=	0.4.5
+DISTNAME=		SQLAlchemy-${MODPY_EGG_VERSION}
+PKGNAME=		py-sqlalchemy-${MODPY_EGG_VERSION}
 
 CATEGORIES=		databases
 
 HOMEPAGE=		http://www.sqlalchemy.org/
 
-MAINTAINER=		Will Maier <willmaier@ml1.net>
+MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,8 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sqlalchemy/}
-
-SUBST_VARS=		V
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/11/23 11:56:42 martynas Exp $
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${V}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${V}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
+@comment $OpenBSD: PLIST,v 1.4 2008/04/15 09:34:31 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy.egg-info/SOURCES.txt
@@ -65,6 +65,8 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/assignmapper.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/assignmapper.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/associationproxy.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/associationproxy.pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative.py
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/orderinglist.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/orderinglist.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/selectresults.py
@@ -130,6 +132,8 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/compiler.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/compiler.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/expression.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/expression.pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/functions.py
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/functions.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/operators.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/operators.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/sql/util.py
@@ -212,6 +216,7 @@ share/doc/py-sqlalchemy/sqlalchemy_engine_threadlocal.html
 share/doc/py-sqlalchemy/sqlalchemy_engine_url.html
 share/doc/py-sqlalchemy/sqlalchemy_exceptions.html
 share/doc/py-sqlalchemy/sqlalchemy_ext_associationproxy.html
+share/doc/py-sqlalchemy/sqlalchemy_ext_declarative.html
 share/doc/py-sqlalchemy/sqlalchemy_ext_orderinglist.html
 share/doc/py-sqlalchemy/sqlalchemy_ext_sqlsoup.html
 share/doc/py-sqlalchemy/sqlalchemy_interfaces.html
@@ -266,4 +271,6 @@ share/examples/py-sqlalchemy/polymorph/single.py
 share/examples/py-sqlalchemy/sharding/
 share/examples/py-sqlalchemy/sharding/attribute_shard.py
 share/examples/py-sqlalchemy/vertical/
+share/examples/py-sqlalchemy/vertical/dictlike-polymorphic.py
+share/examples/py-sqlalchemy/vertical/dictlike.py
 share/examples/py-sqlalchemy/vertical/vertical.py
