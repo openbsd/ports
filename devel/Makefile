@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.591 2008/04/15 21:40:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.592 2008/04/16 12:07:37 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -627,6 +627,7 @@
      SUBDIR += py-unit,no_x11
      SUBDIR += py-urwid
      SUBDIR += py-wsgiutils
+     SUBDIR += py-xdg
      SUBDIR += py-zopeinterface
      SUBDIR += pygame
      SUBDIR += pylint
