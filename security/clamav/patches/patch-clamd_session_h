@@ -1,9 +1,9 @@
-$OpenBSD: patch-clamd_session_h,v 1.3 2007/08/25 10:08:28 mbalmer Exp $
---- clamd/session.h.orig	Sat Mar 31 20:57:53 2007
-+++ clamd/session.h	Sat Aug 25 09:35:06 2007
+$OpenBSD: patch-clamd_session_h,v 1.4 2008/04/16 19:46:01 mbalmer Exp $
+--- clamd/session.h.orig	Wed Apr  2 22:53:44 2008
++++ clamd/session.h	Mon Apr 14 18:41:12 2008
 @@ -37,6 +37,7 @@
  #define CMD11 "SHUTDOWN"
- #define CMD12 "FD"
+ /* #define CMD12 "FD" */
  #define CMD13 "MULTISCAN"
 +#define CMD14 "FILDES"
  

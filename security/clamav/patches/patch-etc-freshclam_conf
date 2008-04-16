@@ -1,5 +1,5 @@
---- etc/freshclam.conf.orig	Thu Dec  6 13:59:09 2007
-+++ etc/freshclam.conf	Tue Dec 18 10:18:09 2007
+--- etc/freshclam.conf.orig	Thu Mar  6 19:41:13 2008
++++ etc/freshclam.conf	Mon Apr 14 18:41:12 2008
 @@ -10,7 +10,7 @@ Example
  # Path to the database directory.
  # WARNING: It must match clamd.conf's directive!

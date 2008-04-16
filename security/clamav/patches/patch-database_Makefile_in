@@ -1,10 +1,10 @@
-$OpenBSD: patch-database_Makefile_in,v 1.1 2007/12/30 22:42:39 bernd Exp $
---- database/Makefile.in.orig	Tue Dec 18 10:41:33 2007
-+++ database/Makefile.in	Tue Dec 18 10:42:53 2007
-@@ -357,20 +357,7 @@ uninstall-am:
+$OpenBSD: patch-database_Makefile_in,v 1.2 2008/04/16 19:46:01 mbalmer Exp $
+--- database/Makefile.in.orig	Wed Apr  9 17:55:29 2008
++++ database/Makefile.in	Tue Apr 15 09:45:45 2008
+@@ -362,20 +362,7 @@ uninstall-am:
  
  
- install:
+ install-data-local:
 -	$(mkinstalldirs) $(DESTDIR)$(DBINST)
 -	@test -f $(DESTDIR)$(DBINST)/main.cvd || test -d $(DESTDIR)$(DBINST)/main.inc || $(INSTALL_DATA) $(srcdir)/main.cvd $(DESTDIR)$(DBINST)
 -	@test -f $(DESTDIR)$(DBINST)/daily.cvd || test -d $(DESTDIR)$(DBINST)/daily.inc || $(INSTALL_DATA) $(srcdir)/daily.cvd $(DESTDIR)$(DBINST)

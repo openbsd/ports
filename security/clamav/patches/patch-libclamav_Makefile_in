@@ -1,0 +1,12 @@
+$OpenBSD: patch-libclamav_Makefile_in,v 1.6 2008/04/16 19:46:02 mbalmer Exp $
+--- libclamav/Makefile.in.orig	Wed Apr  9 17:55:30 2008
++++ libclamav/Makefile.in	Mon Apr 14 18:46:29 2008
+@@ -265,7 +265,7 @@ SUBDIRS = lzma .
+ AM_CPPFLAGS = -I$(top_srcdir) -I@srcdir@/nsis -I@srcdir@/lzma
+ @ENABLE_UNRAR_FALSE@libclamav_la_LIBADD = @LIBCLAMAV_LIBS@ @THREAD_LIBS@ lzma/liblzma.la
+ @ENABLE_UNRAR_TRUE@libclamav_la_LIBADD = @LIBCLAMAV_LIBS@ @THREAD_LIBS@ lzma/liblzma.la $(top_builddir)/libclamunrar_iface/libclamunrar_iface.la
+-libclamav_la_LDFLAGS = @TH_SAFE@ -version-info @LIBCLAMAV_VERSION@ \
++libclamav_la_LDFLAGS = @TH_SAFE@ $(LIBclamav_LTVERSION) @LIBCLAMAV_VERSION@ \
+ 	-no-undefined $(am__append_1)
+ include_HEADERS = clamav.h
+ libclamav_la_SOURCES = \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-clamd_session_c,v 1.4 2007/08/25 10:08:28 mbalmer Exp $
---- clamd/session.c.orig	Sat Mar 31 20:57:47 2007
-+++ clamd/session.c	Sat Aug 25 09:35:06 2007
-@@ -59,8 +59,10 @@ int command(int desc, const struct cl_engine *engine, 
+$OpenBSD: patch-clamd_session_c,v 1.5 2008/04/16 19:46:01 mbalmer Exp $
+--- clamd/session.c.orig	Wed Apr  2 22:53:44 2008
++++ clamd/session.c	Mon Apr 14 18:41:12 2008
+@@ -58,8 +58,10 @@ int command(int desc, const struct cl_engine *engine, 
  {
  	char buff[1025];
  	int bread, opt;
@@ -13,7 +13,7 @@ $OpenBSD: patch-clamd_session_c,v 1.4 2007/08/25 10:08:28 mbalmer Exp $
      bread = readsock(desc, buff, sizeof(buff)-1, '\n', timeout, 0, 1);
      if(bread == -2) /* timeout */
  	return -2;
-@@ -155,6 +157,29 @@ int command(int desc, const struct cl_engine *engine, 
+@@ -140,6 +142,29 @@ int command(int desc, const struct cl_engine *engine, 
  	    if(cfgopt(copt, "ExitOnOOM")->enabled)
  		return COMMAND_SHUTDOWN;
  
