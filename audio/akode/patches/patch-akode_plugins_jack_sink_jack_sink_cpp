@@ -1,0 +1,28 @@
+$OpenBSD: patch-akode_plugins_jack_sink_jack_sink_cpp,v 1.1 2008/04/16 02:10:21 jakemsr Exp $
+--- akode/plugins/jack_sink/jack_sink.cpp.orig	Mon Mar 24 03:18:18 2008
++++ akode/plugins/jack_sink/jack_sink.cpp	Mon Mar 24 03:54:26 2008
+@@ -84,7 +84,7 @@ static int process (jack_nframes_t nframes, void *arg)
+         m_data->pos++;
+     }
+ 
+-    return n;
++    return 0;
+ }
+ 
+ static void shutdown (void *arg)
+@@ -147,13 +147,13 @@ int JACKSink::setAudioConfiguration(const AudioConfigu
+ 
+     if (config->channel_config != MonoStereo ) return -1;
+     m_data->left_port = jack_port_register (m_data->client, "left", JACK_DEFAULT_AUDIO_TYPE, JackPortIsOutput, 0);
+-    if (jack_connect (m_data->client, jack_port_name (m_data->left_port), "alsa_pcm:playback_1")) {
++    if (jack_connect (m_data->client, jack_port_name (m_data->left_port), "system:playback_1")) {
+         m_data->error = true;
+         return -1;
+     }
+     if (config->channels > 1) {
+         m_data->right_port = jack_port_register (m_data->client, "right", JACK_DEFAULT_AUDIO_TYPE, JackPortIsOutput, 0);
+-        if (jack_connect (m_data->client, jack_port_name (m_data->right_port), "alsa_pcm:playback_2")) {
++        if (jack_connect (m_data->client, jack_port_name (m_data->right_port), "system:playback_2")) {
+             m_data->config.channels = 1;
+             res = 1;
+         }

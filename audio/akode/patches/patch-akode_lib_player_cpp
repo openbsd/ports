@@ -1,0 +1,27 @@
+$OpenBSD: patch-akode_lib_player_cpp,v 1.1 2008/04/16 02:10:21 jakemsr Exp $
+--- akode/lib/player.cpp.orig	Mon Mar 24 01:59:23 2008
++++ akode/lib/player.cpp	Mon Mar 24 02:54:46 2008
+@@ -398,7 +398,10 @@ bool Player::load() {
+         if (d->sample_rate != first_frame.sample_rate) {
+             AKODE_DEBUG("Resampling to " << d->sample_rate);
+             d->resampler->setSampleRate(d->sample_rate);
+-        }
++        } else {
++            delete d->resampler;
++	    d->resampler = 0;
++	}
+         int out_channels = d->sink->audioConfiguration()->channels;
+         int in_channels = first_frame.channels;
+         if (in_channels != out_channels) {
+@@ -419,7 +422,10 @@ bool Player::load() {
+                 d->converter = new Converter(out_width);
+             else
+                 d->converter->setSampleWidth(out_width);
+-        }
++        } else {
++	    delete d->converter;
++	    d->converter = 0;
++	}
+     }
+     else
+     {
