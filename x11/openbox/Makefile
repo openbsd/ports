@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2008/04/16 07:41:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2008/04/16 08:26:48 ajacoutot Exp $
 
 COMMENT=	small, fast & usable window manager
 
 DISTNAME=	openbox-3.4.7
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS+=	obparser	8.0 # .21.1
 SHARED_LIBS+=	obrender	8.0 # .21.1
 CATEGORIES=	x11
@@ -24,6 +25,8 @@ WANTLIB=	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
 		gobject-2.0 Xau Xcursor Xdmcp Xfixes expat pcre
 
 MODULES=	devel/gettext
+
+BUILD_DEPENDS=	::textproc/docbook-to-man
 LIB_DEPENDS+=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
 		xml2.>=6::textproc/libxml \
 		startup-notification-1.>=1::devel/startup-notification
@@ -45,5 +48,11 @@ pre-configure:
 	@chmod +x ${WRKSRC}/install-sh
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/data/autostart.sh.in
+
+pre-build:
+.for i in openbox-gnome-session.1 openbox-kde-session.1 openbox-session.1 openbox.1
+	${LOCALBASE}/bin/docbook-to-man \
+		${WRKSRC}/doc/${i}.sgml > ${WRKSRC}/doc/${i}.in
+.endfor
 
 .include <bsd.port.mk>
