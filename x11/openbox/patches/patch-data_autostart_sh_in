@@ -1,8 +1,16 @@
-$OpenBSD: patch-data_autostart_sh_in,v 1.1 2008/04/16 07:41:35 ajacoutot Exp $
---- data/autostart.sh.in.orig	Wed Apr 16 09:20:58 2008
-+++ data/autostart.sh.in	Wed Apr 16 09:22:21 2008
-@@ -22,8 +22,8 @@ if which dbus-launch >/dev/null && test -z "$DBUS_SESS
- fi
+$OpenBSD: patch-data_autostart_sh_in,v 1.2 2008/04/16 19:54:34 ajacoutot Exp $
+--- data/autostart.sh.in.orig	Fri Feb 29 22:18:12 2008
++++ data/autostart.sh.in	Wed Apr 16 21:36:49 2008
+@@ -17,13 +17,13 @@ fi
+ test -z $BG || $BG -solid "#303030"
+ 
+ # D-bus
+-if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+-       eval `dbus-launch --sh-syntax --exit-with-session`
+-fi
++#if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
++#       eval `dbus-launch --sh-syntax --exit-with-session`
++#fi
  
  # Make GTK apps look and behave how they were set up in the gnome config tools
 -if test -x /usr/libexec/gnome-settings-daemon >/dev/null; then
