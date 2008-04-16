@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.5 2008/04/15 15:14:21 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.6 2008/04/16 18:07:35 jasper Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -40,6 +40,7 @@ you can install. The most important ones will be mentioned by category:
    * zenity - easy-to-script dialogs
 
  - Utilities
+   * gnomebaker - CD/DVD burning application
    * eog - image viewer and categorizer
    * evince - document viewer for multiple document formats
    * file-roller - archive manager
