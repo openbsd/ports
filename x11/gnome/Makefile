@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2008/04/14 12:39:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2008/04/16 16:09:11 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
      SUBDIR += at-spi
      SUBDIR += audio
      SUBDIR += backgrounds
+     SUBDIR += baker
      SUBDIR += build
      SUBDIR += common
      SUBDIR += controlcenter2
