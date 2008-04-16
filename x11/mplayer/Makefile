@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2008/03/30 20:39:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.131 2008/04/16 01:43:12 jakemsr Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p4
+PKGNAME=		${N}-${V}p5
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -88,7 +88,6 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-langinfo \
 		--disable-fribidi \
 		--disable-openal \
-		--disable-jack \
 		--disable-faad-internal \
 		--enable-faad-external \
 		--disable-libvorbis \
@@ -105,7 +104,7 @@ CONFIGURE_ARGS+=--disable-ssse3
 CONFIGURE_ARGS+=--disable-altivec
 .endif
 
-FLAVORS=	arts esd sdl ggi debug mad no_x11 aa
+FLAVORS=	arts esd sdl ggi debug mad no_x11 aa jack
 FLAVOR?=
 
 .if ${MACHINE_ARCH:Marm}
@@ -199,6 +198,13 @@ LIB_DEPENDS+=	aa.>=1.3:aalib-*:graphics/aalib
 .endif
 .else
 CONFIGURE_ARGS+=--disable-aa
+.endif
+
+.if ${FLAVOR:L:Mjack}
+CONFIGURE_ARGS+=--enable-jack
+LIB_DEPENDS+=	jack::audio/jack
+.else
+CONFIGURE_ARGS+=--disable-jack
 .endif
 
 NO_REGRESS=	Yes

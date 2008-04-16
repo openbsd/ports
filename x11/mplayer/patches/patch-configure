@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.44 2008/02/18 16:37:38 espie Exp $
+$OpenBSD: patch-configure,v 1.45 2008/04/16 01:43:12 jakemsr Exp $
 --- configure.orig	Sun Oct  7 21:49:33 2007
 +++ configure	Mon Feb 18 17:25:13 2008
 @@ -76,7 +76,7 @@ cc_check() {
@@ -73,6 +73,25 @@ $OpenBSD: patch-configure,v 1.44 2008/02/18 16:37:38 espie Exp $
    _inc_extra="$_inc_extra `artsc-config --cflags`"
  else
    _noaomodules="arts $_noaomodules"
+@@ -5129,7 +5133,7 @@ fi
+ echocheck "JACK"
+ if test "$_jack" = auto ; then
+   _jack=yes
+-
++fi
+ cat > $TMPC << EOF
+ #include <jack/jack.h>
+ int main(void) { jack_client_new("test"); return 0; }
+@@ -5142,8 +5146,8 @@ EOF
+   else
+     _jack=no
+   fi
+-fi
+ 
++
+ if test "$_jack" = yes ; then
+   _def_jack='#define USE_JACK 1'
+   _aosrc="$_aosrc ao_jack.c"
 @@ -5343,7 +5347,7 @@ fi #if irix
  
  
