@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.38 2008/02/09 09:27:35 bernd Exp $
+# $OpenBSD: Makefile,v 1.39 2008/04/16 07:41:35 ajacoutot Exp $
 
 COMMENT=	small, fast & usable window manager
 
-DISTNAME=	openbox-3.4.6.1
-SHARED_LIBS+=	obparser	7.0 # .16.4
-SHARED_LIBS+=	obrender	7.0 # .16.4
+DISTNAME=	openbox-3.4.7
+SHARED_LIBS+=	obparser	8.0 # .21.1
+SHARED_LIBS+=	obrender	8.0 # .21.1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -35,9 +35,15 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--docdir=${PREFIX}/share/examples/openbox
+
+MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
+FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/openbox"
 
 pre-configure:
 	@chmod +x ${WRKSRC}/install-sh
+	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+		${WRKSRC}/data/autostart.sh.in
 
 .include <bsd.port.mk>

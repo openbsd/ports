@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/02/09 09:27:35 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/04/16 07:41:35 ajacoutot Exp $
 %%SHARED%%
+bin/gdm-control
 bin/gnome-panel-control
 bin/openbox
 bin/openbox-gnome-session
@@ -23,6 +24,8 @@ lib/libobparser.a
 lib/libobparser.la
 lib/libobrender.a
 lib/libobrender.la
+lib/openbox/
+lib/openbox/xdg-autostart
 lib/pkgconfig/
 lib/pkgconfig/obparser-3.0.pc
 lib/pkgconfig/obrender-3.0.pc
@@ -30,26 +33,29 @@ lib/pkgconfig/obrender-3.0.pc
 @man man/man1/openbox-kde-session.1
 @man man/man1/openbox-session.1
 @man man/man1/openbox.1
-share/doc/openbox/
+share/examples/openbox/
 @sample ${SYSCONFDIR}/xdg/openbox/
-share/doc/openbox/autostart.sh
-share/doc/openbox/menu.xml
+share/examples/openbox/menu.xml
 @sample ${SYSCONFDIR}/xdg/openbox/menu.xml
-share/doc/openbox/menu.xsd
-share/doc/openbox/rc-mouse-focus.xml
-share/doc/openbox/rc.xml
+share/examples/openbox/menu.xsd
+share/examples/openbox/rc-mouse-focus.xml
+share/examples/openbox/rc.xml
 @sample ${SYSCONFDIR}/xdg/openbox/rc.xml
-share/doc/openbox/rc.xsd
-share/doc/openbox/xbm/
-share/doc/openbox/xbm/bullet.xbm
-share/doc/openbox/xbm/close.xbm
-share/doc/openbox/xbm/desk.xbm
-share/doc/openbox/xbm/desk_toggled.xbm
-share/doc/openbox/xbm/iconify.xbm
-share/doc/openbox/xbm/max.xbm
-share/doc/openbox/xbm/max_toggled.xbm
-share/doc/openbox/xbm/shade.xbm
-share/doc/openbox/xbm/shade_toggled.xbm
+share/examples/openbox/rc.xsd
+share/examples/openbox/xbm/
+share/examples/openbox/xbm/bullet.xbm
+share/examples/openbox/xbm/close.xbm
+share/examples/openbox/xbm/desk.xbm
+share/examples/openbox/xbm/desk_toggled.xbm
+share/examples/openbox/xbm/iconify.xbm
+share/examples/openbox/xbm/max.xbm
+share/examples/openbox/xbm/max_toggled.xbm
+share/examples/openbox/xbm/shade.xbm
+share/examples/openbox/xbm/shade_toggled.xbm
+share/examples/openbox/xdg/
+share/examples/openbox/xdg/openbox/
+share/examples/openbox/xdg/openbox/autostart.sh
+@sample ${SYSCONFDIR}/xdg/openbox/autostart.sh
 share/gnome/
 share/gnome/wm-properties/
 share/gnome/wm-properties/openbox.desktop
