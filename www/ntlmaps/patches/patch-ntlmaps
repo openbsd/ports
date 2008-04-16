@@ -1,0 +1,29 @@
+$OpenBSD: patch-ntlmaps,v 1.1.1.1 2008/04/16 17:34:47 wcmaier Exp $
+--- ntlmaps.orig	Fri Apr  4 15:00:18 2008
++++ ntlmaps	Fri Apr  4 15:00:36 2008
+@@ -18,17 +18,21 @@
+ # Free Software Foundation, Inc.,
+ # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+ #
+-import __init__
++import sys, os, grp, pwd
+ 
+-import sys
++from ntlmaps import server, config, config_affairs
+ 
+-import server, config, config_affairs
++# Drop privileges.
++uid = os.geteuid()
++if uid == 0:
++    os.setgid(grp.getgrnam('_ntlmaps')[2]);
++    os.setuid(pwd.getpwnam('_ntlmaps')[2]);
+ 
+ 
+ #--------------------------------------------------------------
+ # config affairs
+ # look for default config name in lib/config.py
+-conf = config.read_config(config.findConfigFileNameInArgv(sys.argv, __init__.ntlmaps_dir+'/'))
++conf = config.read_config(config.findConfigFileNameInArgv(sys.argv))
+ 
+ conf['GENERAL']['VERSION'] = '0.9.9.0.1'
+ 

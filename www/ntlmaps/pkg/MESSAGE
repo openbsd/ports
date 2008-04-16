@@ -1,0 +1,6 @@
+To run NTLMAPS at startup, you can add the following lines to
+/etc/rc.local.
+
+if [ -x ${PREFIX}/bin/ntlmaps ]; then
+	echo -n ' ntlmaps'; ${PREFIX}/bin/ntlmaps -c /etc/ntlmaps.cfg &
+fi

@@ -1,0 +1,53 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/16 17:34:47 wcmaier Exp $
+@newgroup _ntlmaps:600
+@newuser _ntlmaps:600:_ntlmaps:daemon:ntlmaps user:/nonexistent:/sbin/nologin
+bin/ntlmaps
+lib/python${MODPY_VERSION}/site-packages/NTLMaps-0.9.9.0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/U32.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/U32.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/basic_auth.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/basic_auth.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/config.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/config.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/config_affairs.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/config_affairs.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/des.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/des.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/des_c.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/des_c.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/des_data.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/des_data.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/http_header.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/http_header.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/logger.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/logger.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/md4.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/md4.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/monitor_upstream.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/monitor_upstream.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/ntlm_auth.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/ntlm_auth.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/ntlm_messages.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/ntlm_messages.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/ntlm_procs.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/ntlm_procs.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/proxy_client.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/proxy_client.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/server.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/server.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/utils.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/www_client.py
+lib/python${MODPY_VERSION}/site-packages/ntlmaps/www_client.pyc
+share/doc/ntlmaps/
+share/doc/ntlmaps/COPYING
+share/doc/ntlmaps/Install.txt
+share/doc/ntlmaps/changelog.txt
+share/doc/ntlmaps/readme.txt
+share/doc/ntlmaps/research.txt
+share/examples/ntlmaps/
+share/examples/ntlmaps/server.cfg
+@sample ${SYSCONFDIR}/ntlmaps.cfg
