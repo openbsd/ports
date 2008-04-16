@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2008/04/08 19:11:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2008/04/16 20:42:35 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
 DISTNAME=	lighttpd-1.4.19
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www net
 MASTER_SITES=	${HOMEPAGE}/download/
 
@@ -54,8 +54,17 @@ pre-build:
 	    ${WRKSRC}/doc/lighttpd.1
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lighttpd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lighttpd
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt \
+	    ${PREFIX}/share/doc/lighttpd
 	${INSTALL_DATA} ${WRKSRC}/doc/lighttpd.conf \
-		${PREFIX}/share/examples/lighttpd
+	    ${PREFIX}/share/examples/lighttpd
+	${INSTALL_DATA} ${WRKSRC}/doc/spawn-php.sh \
+	    ${PREFIX}/share/examples/lighttpd
+	${INSTALL_DATA} /dev/null \
+	    ${PREFIX}/share/examples/lighttpd/access.log
+	${INSTALL_DATA} /dev/null \
+	    ${PREFIX}/share/examples/lighttpd/error.log
 
 .include <bsd.port.mk>

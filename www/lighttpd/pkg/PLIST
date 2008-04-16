@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/09/10 20:41:59 rui Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/04/16 20:42:35 jasper Exp $
 @newgroup _lighttpd:585
 @newuser _lighttpd:585:_lighttpd:daemon:lighttpd Account:/nonexistent:/sbin/nologin
 bin/spawn-fcgi
@@ -70,6 +70,57 @@ lib/lighttpd/mod_webdav.so
 @man man/man1/spawn-fcgi.1
 sbin/lighttpd
 sbin/lighttpd-angel
+share/doc/lighttpd/
+share/doc/lighttpd/access.txt
+share/doc/lighttpd/accesslog.txt
+share/doc/lighttpd/alias.txt
+share/doc/lighttpd/authentication.txt
+share/doc/lighttpd/cgi.txt
+share/doc/lighttpd/cml.txt
+share/doc/lighttpd/compress.txt
+share/doc/lighttpd/configuration.txt
+share/doc/lighttpd/dirlisting.txt
+share/doc/lighttpd/evhost.txt
+share/doc/lighttpd/expire.txt
+share/doc/lighttpd/extforward.txt
+share/doc/lighttpd/fastcgi-state.txt
+share/doc/lighttpd/fastcgi.txt
+share/doc/lighttpd/features.txt
+share/doc/lighttpd/magnet.txt
+share/doc/lighttpd/mysqlvhost.txt
+share/doc/lighttpd/performance.txt
+share/doc/lighttpd/plugins.txt
+share/doc/lighttpd/proxy.txt
+share/doc/lighttpd/redirect.txt
+share/doc/lighttpd/rewrite.txt
+share/doc/lighttpd/rrdtool.txt
+share/doc/lighttpd/scgi.txt
+share/doc/lighttpd/secdownload.txt
+share/doc/lighttpd/security.txt
+share/doc/lighttpd/setenv.txt
+share/doc/lighttpd/simple-vhost.txt
+share/doc/lighttpd/skeleton.txt
+share/doc/lighttpd/ssi.txt
+share/doc/lighttpd/ssl.txt
+share/doc/lighttpd/state.txt
+share/doc/lighttpd/status.txt
+share/doc/lighttpd/traffic-shaping.txt
+share/doc/lighttpd/trigger_b4_dl.txt
+share/doc/lighttpd/userdir.txt
+share/doc/lighttpd/webdav.txt
 share/examples/lighttpd/
+share/examples/lighttpd/access.log
+@owner _lighttpd
+@group _lighttpd
+@sample /var/www/logs/access.log
+@owner
+@group
+share/examples/lighttpd/error.log
+@owner _lighttpd
+@group _lighttpd
+@sample /var/www/logs/error.log
+@owner
+@group
 share/examples/lighttpd/lighttpd.conf
 @sample ${SYSCONFDIR}/lighttpd.conf
+share/examples/lighttpd/spawn-php.sh
