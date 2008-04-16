@@ -1,6 +1,6 @@
-$OpenBSD: patch-devede_py,v 1.1 2007/11/17 11:06:14 ajacoutot Exp $
---- devede.py.orig	Sat Nov 17 11:49:57 2007
-+++ devede.py	Sat Nov 17 11:57:06 2007
+$OpenBSD: patch-devede_py,v 1.2 2008/04/16 13:35:23 ajacoutot Exp $
+--- devede.py.orig	Wed Apr 16 00:16:41 2008
++++ devede.py	Wed Apr 16 15:14:55 2008
 @@ -55,7 +55,7 @@ except:
  
  if found==False:
@@ -22,9 +22,47 @@ $OpenBSD: patch-devede_py,v 1.1 2007/11/17 11:06:14 ajacoutot Exp $
 -	pic_path="/usr/local/share/devede"
 +	share_locale="!!LOCALBASE!!/share/locale"
 +	glade="!!PREFIX!!/share/devede/devede.glade"
-+	sys.path.append("!!PREFIX!!/lib/devede")
++	sys.path.append("!!MODPY_SITEPKG!!/devede")
 +	font_path="!!PREFIX!!/share/devede"
 +	pic_path="!!PREFIX!!/share/devede"
  elif tipo==2:
  	# if the files aren't at /usr/local, try with ./
  	#gettext.bindtextdomain('devede', './po/')
+@@ -138,32 +137,11 @@ arbol=gtk.glade.XML(glade,domain="devede")
+ #   The following shortcut are usually used:
+ _ = gettext.gettext
+ 
+-try:
+-	from devede_other import *
+-except:
+-	print "Failed to load modules DEVEDE_OTHER. Exiting"
+-	sys.exit(1)
+-try:
+-	import devede_convert
+-except:
+-	print "Failed to load modules DEVEDE_CONVERT. Exiting"
+-	sys.exit(1)
+-try:
+-	import devede_newfiles
+-except:
+-	print "Failed to load module DEVEDE_NEWFILES. Exiting"
+-	sys.exit(1)
+-try:
+-	import devede_xml_menu
+-except:
+-	print "Failed to load module DEVEDE_XML_MENU"
+-	sys.exit(1)
+-
+-try:
+-	import devede_disctype
+-except:
+-	print "Failed to load module DEVEDE_DISCTYPE"
+-	sys.exit(1)
++from devede_other import *
++import devede_convert
++import devede_newfiles
++import devede_xml_menu
++import devede_disctype
+ 
+ 
+ # TODO Change the following to work on both linux and windows
