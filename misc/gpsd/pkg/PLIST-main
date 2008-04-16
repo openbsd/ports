@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/01/22 11:43:38 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/04/16 06:53:35 ckuethe Exp $
 @newuser _gpsd:551:dialer::GPS server:/nonexistent:/sbin/nologin
 %%SHARED%%
 bin/cgps
 bin/cgpxlogger
+bin/gpsctl
 bin/gpsflash
 bin/gpspipe
 bin/rtcmdecode
@@ -15,11 +16,12 @@ lib/libgps.a
 lib/libgps.la
 lib/pkgconfig/
 lib/pkgconfig/libgps.pc
-@comment lib/pkgconfig/libgpsd.pc
+lib/pkgconfig/libgpsd.pc
 @man man/man1/cgps.1
 @man man/man1/cgpxlogger.1
 @man man/man1/gps.1
 @man man/man1/gpsflash.1
+@man man/man1/gpscat.1
 @man man/man1/gpspipe.1
 @man man/man1/rtcmdecode.1
 @man man/man1/sirfmon.1
