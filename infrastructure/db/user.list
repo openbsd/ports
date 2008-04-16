@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.85 2008/02/16 21:22:41 merdely Exp $
+$OpenBSD: user.list,v 1.86 2008/04/16 17:33:16 wcmaier Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -108,3 +108,4 @@ id  user		group		port options
 597			_kqemu		emulators/kqemu
 598 _iodine		_iodine		net/iodine
 599 _bacula-sd				sysutils/bacula
+600 _ntlmaps		_ntlmaps	www/ntlmaps
