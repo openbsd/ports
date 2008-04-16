@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/16 12:05:28 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/pyxdg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/xdg/
+lib/python${MODPY_VERSION}/site-packages/xdg/BaseDirectory.py
+lib/python${MODPY_VERSION}/site-packages/xdg/BaseDirectory.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/Config.py
+lib/python${MODPY_VERSION}/site-packages/xdg/Config.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/DesktopEntry.py
+lib/python${MODPY_VERSION}/site-packages/xdg/DesktopEntry.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/Exceptions.py
+lib/python${MODPY_VERSION}/site-packages/xdg/Exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/IconTheme.py
+lib/python${MODPY_VERSION}/site-packages/xdg/IconTheme.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/IniFile.py
+lib/python${MODPY_VERSION}/site-packages/xdg/IniFile.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/Locale.py
+lib/python${MODPY_VERSION}/site-packages/xdg/Locale.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/Menu.py
+lib/python${MODPY_VERSION}/site-packages/xdg/Menu.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/MenuEditor.py
+lib/python${MODPY_VERSION}/site-packages/xdg/MenuEditor.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/Mime.py
+lib/python${MODPY_VERSION}/site-packages/xdg/Mime.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/RecentFiles.py
+lib/python${MODPY_VERSION}/site-packages/xdg/RecentFiles.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/__init__.py
+lib/python${MODPY_VERSION}/site-packages/xdg/__init__.pyc

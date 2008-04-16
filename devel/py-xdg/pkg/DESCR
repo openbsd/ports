@@ -1,0 +1,9 @@
+PyXDG is a python library to access freedesktop.org standards.
+Currently supported are:
+
+  * Base Directory Specification
+  * Menu Specification
+  * Desktop Entry Specification
+  * Icon Theme Specification
+  * Recent File Spec
+  * Shared-MIME-Database Specification

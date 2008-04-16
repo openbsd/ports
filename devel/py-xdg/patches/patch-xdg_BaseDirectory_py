@@ -1,0 +1,12 @@
+$OpenBSD: patch-xdg_BaseDirectory_py,v 1.1.1.1 2008/04/16 12:05:28 jasper Exp $
+--- xdg/BaseDirectory.py.orig	Thu May 26 23:46:05 2005
++++ xdg/BaseDirectory.py	Tue Apr 15 16:09:33 2008
+@@ -39,7 +39,7 @@ xdg_config_home = os.environ.get('XDG_CONFIG_HOME',
+ 			os.path.join(_home, '.config'))
+ 
+ xdg_config_dirs = [xdg_config_home] + \
+-	os.environ.get('XDG_CONFIG_DIRS', '/etc/xdg').split(':')
++	os.environ.get('XDG_CONFIG_DIRS', '!!SYSCONFDIR!!/xdg').split(':')
+ 
+ xdg_cache_home = os.environ.get('XDG_CACHE_HOME',
+ 			os.path.join(_home, '.cache'))
