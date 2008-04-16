@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/02/04 17:55:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/04/16 20:31:24 jasper Exp $
 
 COMMENT=		GNOME media utilities
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		2.20.1
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 SHARED_LIBS +=	cddb-slave2          0.0      # .0.0
 CATEGORIES=		x11
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

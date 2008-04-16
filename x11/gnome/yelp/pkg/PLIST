@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/12/15 18:21:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/04/16 20:31:24 jasper Exp $
 bin/gnome-help
 bin/yelp
 share/applications/
@@ -212,3 +212,5 @@ share/yelp/xslt/yelp-common.xsl
 share/yelp/yelp.js
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

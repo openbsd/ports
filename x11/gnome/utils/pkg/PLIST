@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/11/10 15:43:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2008/04/16 20:31:24 jasper Exp $
 %%SHARED%%
 bin/baobab
 bin/gnome-dictionary
@@ -564,3 +564,5 @@ share/schemas/gnome-utils/logview.schemas
 @unexec %D/bin/scrollkeeper-update -q
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
