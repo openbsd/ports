@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/17 19:45:24 mbalmer Exp $
 
 COMMENT=		web frontend to symon
 DISTNAME=		syweb-0.55
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www sysutils
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
-MAINTAINER=		Marc Winiger <winiger@openbsd.org>
+MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
