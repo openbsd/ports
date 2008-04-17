@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_MailScanner,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- bin/MailScanner.orig	Fri Jan  4 14:06:47 2008
-+++ bin/MailScanner	Sun Feb 17 20:42:06 2008
+$OpenBSD: patch-bin_MailScanner,v 1.2 2008/04/17 07:30:27 jasper Exp $
+--- bin/MailScanner.orig	Fri Jan  4 20:06:47 2008
++++ bin/MailScanner	Thu Apr 17 09:24:09 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -I/opt/MailScanner/lib
 +#!/usr/bin/perl -I%PREFIX%/lib/MailScanner
@@ -25,7 +25,19 @@ $OpenBSD: patch-bin_MailScanner,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
    printf("This is Perl version %f (%vd)\n", $], $^V);
    print "\nThis is MailScanner version " . $MailScanner::Config::MailScannerVersion . "\n";
    print "Module versions are:\n";
-@@ -235,7 +233,7 @@ if ($WantLintOnly) {
+@@ -193,9 +191,10 @@ if ($Versions) {
+ 
+ # Check version of MIME-tools against its requirements
+ my $error = 0;
++
+ if ($MIME::Tools::VERSION > 5.420) {
+   # They have a new MIME-tools so must have new File::Temp
+-  if ($IO::VERSION<1.23) {
++  if ($IO::VERSION<1.22) {
+     print STDERR "\n\n**** ERROR: You must upgrade your perl IO module to at least\n**** ERROR: version 1.2301 or MailScanner will not work!\n\n";
+     $error = 1;
+   }
+@@ -235,7 +234,7 @@ if ($WantLintOnly) {
  # Find the mailscanner.conf file, with a default just in case.
  my $ConfFile = $ARGV[0];
  # Use the default if we couldn't find theirs. Will save a lot of grief.
@@ -34,7 +46,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
                                                         !(-f $ConfFile);
  
  # Check the MailScanner version number against what is in MailScanner.conf
-@@ -280,7 +278,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
+@@ -280,7 +279,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
  Currently you are using no virus scanners.
  This is probably not what you want.
  
