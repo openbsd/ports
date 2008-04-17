@@ -1,7 +1,14 @@
-$OpenBSD: patch-xdg_BaseDirectory_py,v 1.1.1.1 2008/04/16 12:05:28 jasper Exp $
+$OpenBSD: patch-xdg_BaseDirectory_py,v 1.2 2008/04/17 16:54:52 ajacoutot Exp $
 --- xdg/BaseDirectory.py.orig	Thu May 26 23:46:05 2005
-+++ xdg/BaseDirectory.py	Tue Apr 15 16:09:33 2008
-@@ -39,7 +39,7 @@ xdg_config_home = os.environ.get('XDG_CONFIG_HOME',
++++ xdg/BaseDirectory.py	Thu Apr 17 17:17:39 2008
+@@ -33,13 +33,13 @@ xdg_data_home = os.environ.get('XDG_DATA_HOME',
+ 			os.path.join(_home, '.local', 'share'))
+ 
+ xdg_data_dirs = [xdg_data_home] + \
+-	os.environ.get('XDG_DATA_DIRS', '/usr/local/share:/usr/share').split(':')
++	os.environ.get('XDG_DATA_DIRS', '!!LOCALBASE!!/share:/usr/share').split(':')
+ 
+ xdg_config_home = os.environ.get('XDG_CONFIG_HOME',
  			os.path.join(_home, '.config'))
  
  xdg_config_dirs = [xdg_config_home] + \
