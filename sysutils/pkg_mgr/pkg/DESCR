@@ -1,0 +1,5 @@
+pkg_mgr is a high-level, user-friendly package browser for OpenBSD. It
+allows the user to install, uninstall, search and browse available
+packages, using a simple curses interface. It relies on sqlports for
+its internal database, and pkg_add/pkg_info/pkg_delete for package
+operations.

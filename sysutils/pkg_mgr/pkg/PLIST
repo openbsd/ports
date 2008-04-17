@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/17 11:27:40 landry Exp $
+${P5SITE}/OpenBSD/
+${P5SITE}/OpenBSD/PackageManager/
+${P5SITE}/OpenBSD/PackageManager/Controller.pm
+${P5SITE}/OpenBSD/PackageManager/DBIModel.pm
+${P5SITE}/OpenBSD/PackageManager/View.pm
+sbin/pkg_mgr
