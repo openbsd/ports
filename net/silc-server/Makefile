@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2008/04/12 22:52:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2008/04/17 10:26:15 sthen Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
-DISTNAME=	silc-server-1.1.3
+DISTNAME=	silc-server-1.1.4
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
