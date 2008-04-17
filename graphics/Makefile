@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2008/04/11 11:07:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.208 2008/04/17 07:15:40 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -161,7 +161,6 @@
      SUBDIR += scrot
      SUBDIR += smpeg-xmms
      SUBDIR += sng
-     SUBDIR += sodipodi
      SUBDIR += swfdec
      SUBDIR += synaesthesia
      SUBDIR += tgif
