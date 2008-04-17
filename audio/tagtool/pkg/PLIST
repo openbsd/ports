@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/15 18:56:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/04/17 08:10:10 ajacoutot Exp $
 bin/tagtool
 share/applications/
 share/applications/tagtool.desktop
@@ -49,7 +49,7 @@ share/tagtool/tab_rename.png
 share/tagtool/tab_tag.png
 share/tagtool/tagtool.glade
 share/tagtool/warn.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

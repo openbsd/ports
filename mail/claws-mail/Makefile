@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/04/05 11:43:22 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2008/04/17 08:10:10 ajacoutot Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-docs=		documentation
@@ -9,7 +9,7 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.3.1
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}
+PKGNAME-main=			${DISTNAME}p0
 FULLPKGNAME-docs=		claws-mail-docs-${V}
 FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
 FULLPKGNAME-dillo=		claws-mail-dillo-${V}

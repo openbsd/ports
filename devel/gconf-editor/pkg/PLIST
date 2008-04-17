@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/11/10 14:10:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/04/17 08:10:10 ajacoutot Exp $
 bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/
@@ -225,5 +225,5 @@ share/schemas/gconf-editor/gconf-editor.schemas
 @unexec %D/bin/scrollkeeper-update -q
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/05 10:00:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/17 08:10:10 ajacoutot Exp $
 %%SHARED%%
 bin/giggle
 lib/libgiggle.a
@@ -31,7 +31,7 @@ share/locale/fr/LC_MESSAGES/giggle.mo
 share/locale/pl/LC_MESSAGES/giggle.mo
 share/locale/sv/LC_MESSAGES/giggle.mo
 share/locale/vi/LC_MESSAGES/giggle.mo
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

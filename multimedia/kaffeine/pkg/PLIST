@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/01/24 09:19:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/04/17 08:10:11 ajacoutot Exp $
 bin/kaffeine
 include/kaffeine/
 include/kaffeine/kaffeineaudioencoder.h
@@ -140,7 +140,7 @@ share/mimelnk/application/x-kaffeine.desktop
 share/services/kaffeineoggvorbis.desktop
 share/services/xine_part.desktop
 share/servicetypes/kaffeineaudioencoder.desktop
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

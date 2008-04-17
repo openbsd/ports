@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-client,v 1.5 2008/02/01 23:33:52 rui Exp $
+@comment $OpenBSD: PLIST-client,v 1.6 2008/04/17 08:10:10 ajacoutot Exp $
 @conflict freeciv-share-<2
 @pkgpath games/freeciv,-client,gtk2
 bin/civclient
@@ -682,7 +682,7 @@ share/icons/hicolor/64x64/apps/freeciv-client.png
 share/icons/hicolor/64x64/apps/freeciv-server.png
 share/pixmaps/
 share/pixmaps/freeciv-client.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

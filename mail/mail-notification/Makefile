@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2007/12/15 21:13:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2008/04/17 08:10:10 ajacoutot Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-4.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		mail	
 
 HOMEPAGE=		http://www.nongnu.org/mailnotify/
