@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/02/05 03:22:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2008/04/17 10:25:31 ajacoutot Exp $
 
 COMMENT=	virtual sticky pad system
 
 DISTNAME=	xpad-2.14
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xpad/}
