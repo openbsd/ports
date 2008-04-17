@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/15 12:33:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/17 08:35:16 ajacoutot Exp $
 bin/krename
 share/applications/kde/krename.desktop
 share/apps/konqueror/servicemenus/krename_dir.desktop
@@ -38,7 +38,7 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/krename.mo
 share/locale/zh_TW.Big5/
 share/locale/zh_TW.Big5/LC_MESSAGES/
 share/locale/zh_TW.Big5/LC_MESSAGES/krename.mo
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

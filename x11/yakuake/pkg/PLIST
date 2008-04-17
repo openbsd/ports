@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/18 09:15:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/17 08:35:16 ajacoutot Exp $
 bin/yakuake
 share/applications/kde/yakuake.desktop
 share/apps/yakuake/
@@ -117,7 +117,7 @@ share/locale/pt/LC_MESSAGES/yakuake.mo
 share/locale/pt_BR/LC_MESSAGES/yakuake.mo
 share/locale/sv/LC_MESSAGES/yakuake.mo
 share/locale/tr/LC_MESSAGES/yakuake.mo
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

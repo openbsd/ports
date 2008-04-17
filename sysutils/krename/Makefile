@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/18 21:20:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/04/17 08:35:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful KDE batch file renamer
 
 DISTNAME=	krename-3.0.14
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils x11 x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -28,8 +28,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krename/}
 MODULES=	x11/kde devel/gettext
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::x11/kde/base3 \
-		::x11/gtk+2 # gtk-update-icon-cache
+		::x11/kde/base3
 LIB_DEPENDS=	art_lgpl_2.>=5::graphics/libart \
 		fam::sysutils/fam \
 		idn.>=16.30:libidn->=1.1:devel/libidn \

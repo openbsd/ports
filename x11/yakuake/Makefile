@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/18 09:15:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/17 08:35:16 ajacoutot Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
 DISTNAME=	yakuake-2.8.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -23,8 +24,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn \
 MODULES=	devel/gettext \
 		x11/kde
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::x11/gtk+2 # gtk-update-icon-cache(1)
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	kdecore.>=7,kdefx,kdesu,kdeui,kio,kwalletclient,DCOP::x11/kde/libs3
 
 USE_X11=	Yes

@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2007/12/08 16:44:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/04/17 08:35:16 ajacoutot Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
 DISTNAME=		kbilliards-0.8.7b
+PKGNAME=		${DISTNAME}p0
+
 HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/
 EXTRACT_SUFX=		.tar.bz2
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,9 +23,6 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 artsflow \
 		vorbisfile z
 
 MODULES=		x11/kde	devel/gettext
-
-# gtk-update-icon-cache
-RUN_DEPENDS=		::x11/gtk+2
 
 LIB_DEPENDS=		kdecore.>=6,kdesu,kdeui,DCOP,kdeprint,kio,kwalletclient,kdefx,artskde,kparts::x11/kde/libs3
 
