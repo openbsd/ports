@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/17 19:45:24 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2008/04/17 19:57:27 sthen Exp $
 
 COMMENT=		web frontend to symon
 DISTNAME=		syweb-0.55
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www sysutils
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
@@ -33,5 +33,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/install_rrdtool.sh ${PREFIX}/symon
 	mkdir ${PREFIX}/symon/rrds
 	mkdir ${PREFIX}/symon/cache
+	cd ${PREFIX}/htdocs/syweb && mv setup.inc setup.inc.sample
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/17 19:57:27 sthen Exp $
 @owner root
 @group www
 htdocs/syweb/
@@ -14,7 +14,8 @@ htdocs/syweb/configtest.php
 htdocs/syweb/graph.php
 htdocs/syweb/graph_defaults.inc
 htdocs/syweb/index.php
-htdocs/syweb/setup.inc
+htdocs/syweb/setup.inc.sample
+@sample htdocs/syweb/setup.inc
 htdocs/syweb/spacer.png
 htdocs/syweb/symon.css
 htdocs/syweb/symon.png
