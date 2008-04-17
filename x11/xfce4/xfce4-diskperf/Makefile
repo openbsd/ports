@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2008/03/03 09:18:55 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2008/04/17 13:14:28 landry Exp $
 
 COMMENT=	displays instant disk performance in the xfce4 panel
 
-BROKEN=		doesn't display accurate values
-
-V=		2.1.0
+V=		2.2.0
 DISTNAME=	xfce4-diskperf-plugin-${V}
-PKGNAME=	xfce4-diskperf-${V}p1
+PKGNAME=	xfce4-diskperf-${V}
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-diskperf-plugin
 
