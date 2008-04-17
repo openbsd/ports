@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2008/02/13 13:08:53 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2008/04/17 09:00:24 landry Exp $
 
 COMMENT=	essential utilities and scripts for xfce4
 
 V=		4.4.2
 DISTNAME=	xfce-utils-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 HOMEPAGE=	http://www.xfce.org/projects/xfce-utils/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>

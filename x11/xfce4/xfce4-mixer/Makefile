@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/18 20:44:12 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2008/04/17 09:00:25 landry Exp $
 
 COMMENT=	volume mixer module for xfce4-panel
 
 V=		4.4.2
 DISTNAME=	xfce4-mixer-${V}
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	xfce4mixer 1.0
 
 HOMEPAGE=	http://www.xfce.org/projects/xfce4-mixer

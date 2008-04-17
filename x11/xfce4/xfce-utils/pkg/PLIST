@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/12/18 20:30:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/04/17 09:00:24 landry Exp $
 bin/startxfce4
 bin/xfbrowser4
 bin/xfce4-about
@@ -107,5 +107,5 @@ share/xfce4/doc/it/index.html
 share/xfce4/doc/xfce-chunk.css
 share/xfce4/doc/xfce-mouse.png
 share/xfce4/doc/xfce.css
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

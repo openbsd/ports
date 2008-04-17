@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2007/12/18 21:15:48 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2008/04/17 09:00:25 landry Exp $
 
 COMMENT=	sticky notes for the xfce4 desktop
 
 V=		1.4.1
 DISTNAME=	xfce4-notes-plugin-${V}
-PKGNAME=	xfce4-notes-${V}p1
+PKGNAME=	xfce4-notes-${V}p2
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-notes-plugin
 

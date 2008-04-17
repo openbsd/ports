@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2007/12/18 20:39:20 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2008/04/17 09:00:25 landry Exp $
 
 COMMENT=	xfce4 desktop manager
 
 V=		4.4.2
 DISTNAME=	xfdesktop-${V}
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://www.xfce.org/projects/xfdesktop/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>

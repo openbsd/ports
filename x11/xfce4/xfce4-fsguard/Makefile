@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2007/12/18 21:11:33 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2008/04/17 09:00:24 landry Exp $
 
 COMMENT=	monitors a chosen mountpoint for free disk space
 
 V=		0.4.0
 DISTNAME=	xfce4-fsguard-plugin-${V}
-PKGNAME=	xfce4-fsguard-${V}p0
+PKGNAME=	xfce4-fsguard-${V}p1
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin
 MAINTAINER=	Landry Breuil <gaston@gcu.info>

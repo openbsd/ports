@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/12/18 20:44:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/04/17 09:00:25 landry Exp $
 %%SHARED%%
 bin/xfce4-mixer
 lib/libxfce4mixer.a
@@ -66,7 +66,7 @@ share/locale/zh_CN/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mixer.mo
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/xfce4-mixer.desktop
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @unexec %D/bin/update-desktop-database

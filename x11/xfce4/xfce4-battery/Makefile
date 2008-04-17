@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/02/26 19:39:09 jcs Exp $
+# $OpenBSD: Makefile,v 1.17 2008/04/17 09:00:24 landry Exp $
 
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc
 
@@ -6,7 +6,7 @@ COMMENT=	battery monitor panel plugin for xfce4
 
 V=		0.5.0
 DISTNAME=	xfce4-battery-plugin-${V}
-PKGNAME=	xfce4-battery-${V}p1
+PKGNAME=	xfce4-battery-${V}p2
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-battery-plugin/
 

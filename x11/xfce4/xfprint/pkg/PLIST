@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/04 11:22:58 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/17 09:00:25 landry Exp $
 %%SHARED%%
 bin/xfprint4
 bin/xfprint4-manager
@@ -119,7 +119,7 @@ share/xfce4/doc/fr/images/xfprint_prettyprinting.png
 share/xfce4/doc/fr/images/xfprint_sheets.png
 share/xfce4/doc/fr/images/xfprint_virtualpages.png
 share/xfce4/doc/fr/xfprint.html
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

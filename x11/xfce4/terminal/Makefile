@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/18 20:55:13 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2008/04/17 09:00:24 landry Exp $
 
 COMMENT=	lightweight vte-based terminal for xfce4
 
 V=		0.2.8
 DISTNAME=	Terminal-${V}
-PKGNAME=	terminal-${V}
+PKGNAME=	terminal-${V}p0
 
 HOMEPAGE=	http://www.xfce.org/projects/terminal/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>

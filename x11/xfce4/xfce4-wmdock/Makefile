@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/04 11:27:34 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/17 09:00:25 landry Exp $
 
 COMMENT=	integrates WindowMaker dockapps into xfce4 panel
 
 V=		0.1.8
 DISTNAME=	xfce4-wmdock-plugin-${V}
-PKGNAME=	xfce4-wmdock-${V}
+PKGNAME=	xfce4-wmdock-${V}p0
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-wmdock-plugin
 MAINTAINER=	Landry Breuil <gaston@gcu.info>

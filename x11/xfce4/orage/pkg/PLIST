@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/03/17 10:23:44 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/04/17 09:00:24 landry Exp $
 @conflict xfcalendar-*
 %%SHARED%%
 bin/globaltime
@@ -544,7 +544,7 @@ share/orage/zoneinfo/zones.tab
 share/xfce4/
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/orageclock.desktop
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @unexec %D/bin/update-desktop-database

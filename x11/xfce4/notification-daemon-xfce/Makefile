@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/19 12:58:20 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2008/04/17 09:00:24 landry Exp $
 
 COMMENT=	notification daemon for Xfce4 desktop
 DISTNAME=	notification-daemon-xfce-0.3.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 HOMEPAGE=	http://goodies.xfce.org/projects/applications/notification-daemon-xfce
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
