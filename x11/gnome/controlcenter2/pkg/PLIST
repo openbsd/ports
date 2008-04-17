@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2008/04/15 15:07:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2008/04/17 08:46:48 ajacoutot Exp $
 @conflict control-center-1*
 %%SHARED%%
 bin/gnome-accessibility-keyboard-properties
@@ -419,5 +419,5 @@ share/schemas/control-center2/themus.schemas
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

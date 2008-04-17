@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/02/03 21:10:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/04/17 08:46:49 ajacoutot Exp $
 %%SHARED%%
 bin/seahorse
 @mode 4555
@@ -371,5 +371,5 @@ share/seahorse/glade/seahorse-ssh-upload.glade
 @unexec %D/bin/scrollkeeper-update -q
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

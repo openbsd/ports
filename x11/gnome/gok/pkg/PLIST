@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/17 19:04:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/17 08:46:49 ajacoutot Exp $
 bin/create-branching-keyboard
 bin/gok
 lib/bonobo/
@@ -1048,5 +1048,5 @@ share/schemas/gok/gok.schemas
 @unexec %D/bin/scrollkeeper-update -q
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -f -q -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -f -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/02/28 17:24:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/04/17 08:49:54 ajacoutot Exp $
 share/icons/Foxtrot/
 share/icons/Foxtrot/16x16/
 share/icons/Foxtrot/16x16/actions/
@@ -5396,9 +5396,9 @@ share/themes/Darklooks/
 share/themes/Darklooks/gtk-2.0/
 share/themes/Darklooks/gtk-2.0/gtkrc
 share/themes/Darklooks/index.theme
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Foxtrot
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Foxtrot
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Gion
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Gion
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Neu
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Neu
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Foxtrot 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Foxtrot 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Gion 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Gion 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Neu 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Neu 2> /dev/null || true
