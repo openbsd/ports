@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2008/04/14 13:41:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.151 2008/04/17 11:28:39 landry Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -80,6 +80,7 @@
      SUBDIR += pciutils
      SUBDIR += perfd
      SUBDIR += pftop
+     SUBDIR += pkg_mgr
      SUBDIR += pscpug
      SUBDIR += pstree
      SUBDIR += radiusreport
