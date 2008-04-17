@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2008/04/16 07:41:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2008/04/17 10:57:17 ajacoutot Exp $
 %%SHARED%%
 bin/gdm-control
 bin/gnome-panel-control
@@ -26,7 +26,6 @@ lib/libobrender.a
 lib/libobrender.la
 lib/openbox/
 lib/openbox/xdg-autostart
-lib/pkgconfig/
 lib/pkgconfig/obparser-3.0.pc
 lib/pkgconfig/obrender-3.0.pc
 @man man/man1/openbox-gnome-session.1
@@ -59,11 +58,7 @@ share/examples/openbox/xdg/openbox/autostart.sh
 share/gnome/
 share/gnome/wm-properties/
 share/gnome/wm-properties/openbox.desktop
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/openbox.mo
-share/locale/bn_IN/
-share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/openbox.mo
 share/locale/ca/LC_MESSAGES/openbox.mo
 share/locale/cs/LC_MESSAGES/openbox.mo
@@ -72,8 +67,6 @@ share/locale/en@boldquot/LC_MESSAGES/openbox.mo
 share/locale/en@quot/LC_MESSAGES/openbox.mo
 share/locale/es/LC_MESSAGES/openbox.mo
 share/locale/et/LC_MESSAGES/openbox.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/openbox.mo
 share/locale/fi/LC_MESSAGES/openbox.mo
 share/locale/fr/LC_MESSAGES/openbox.mo
