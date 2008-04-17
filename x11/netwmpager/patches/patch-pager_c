@@ -1,0 +1,16 @@
+$OpenBSD: patch-pager_c,v 1.1 2008/04/17 09:19:50 bernd Exp $
+
+Fix a problem with newer openbox. (>= 3.4.7.x)
+
+http://bugs.gentoo.org/show_bug.cgi?id=216012
+
+--- pager.c.orig	Thu Apr 17 10:50:16 2008
++++ pager.c	Thu Apr 17 10:50:40 2008
+@@ -1137,6 +1137,7 @@ void pager_button_release(struct pager *pager, int x, 
+ 		if (pager->mouse.window_idx == -1) {
+ 			x_set_current_desktop(desk);
+ 		} else if (!pager->mouse.dragging) {
++			x_set_current_desktop(desk);
+ 			x_set_active_window(pager->windows[pager->mouse.window_idx].window, SOURCE_INDICATION_PAGER);
+ 		}
+ 	} else if (button == 2) {
