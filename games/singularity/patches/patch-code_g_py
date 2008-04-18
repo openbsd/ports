@@ -1,28 +1,28 @@
-$OpenBSD: patch-code_g_py,v 1.1.1.1 2007/08/31 06:23:37 ajacoutot Exp $
---- code/g.py.orig	Mon Aug 13 05:32:26 2007
-+++ code/g.py	Thu Aug 30 13:17:50 2007
-@@ -71,7 +71,7 @@ font0 = "vera.ttf"
+$OpenBSD: patch-code_g_py,v 1.2 2008/04/18 18:17:38 ajacoutot Exp $
+--- code/g.py.orig	Fri Apr 18 19:52:27 2008
++++ code/g.py	Fri Apr 18 19:53:49 2008
+@@ -64,7 +64,7 @@ default_savegame_name = "Default Save"
+ font0 = "vera.ttf"
  font1 = "acknowtt.ttf"
  
- global data_loc
 -data_loc = "../data/"
 +data_loc = "!!PREFIX!!/share/singularity/"
  
  def quit_game():
      sys.exit()
-@@ -141,7 +141,7 @@ def load_music():
-     global musicarraylen
-     musicarray = []
-     musicarraylen=0
--    musicpath=path.join(data_loc, "..", "music")
-+    musicpath=path.join(data_loc, "music")
-     if not path.isdir(musicpath):
-         makedirs(musicpath)
-     temp_ls = listdir(musicpath)
-@@ -990,7 +990,7 @@ def fix_data_dir():
+@@ -203,7 +203,7 @@ load_music() loads music for the game.  It looks in mu
+ 
+     # Build the set of paths we'll check for music.
+     music_paths = (
+-        os.path.join(data_loc, "..", "music"),
++        os.path.join(data_loc, "music"),
+         os.path.join(get_save_folder(True), "music")
+     )
+     for music_path in music_paths:
+@@ -1085,7 +1085,7 @@ def fix_data_dir():
      global data_loc
-     if path.exists(data_loc): return
-     elif path.exists("data"):
+     if os.path.exists(data_loc): return
+     elif os.path.exists("data"):
 -        data_loc = "data/"
 +        data_loc = "!!PREFIX!!/share/singularity/"
          return
