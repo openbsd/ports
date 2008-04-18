@@ -1,6 +1,15 @@
-$OpenBSD: patch-man_famd_8,v 1.1 2007/05/10 19:56:19 ajacoutot Exp $
---- man/famd.8.orig	Thu May 10 14:53:46 2007
-+++ man/famd.8	Thu May 10 14:56:18 2007
+$OpenBSD: patch-man_famd_8,v 1.2 2008/04/18 14:02:24 ajacoutot Exp $
+--- man/famd.8.orig	Mon Jan 20 01:58:11 2003
++++ man/famd.8	Fri Apr 18 15:53:05 2008
+@@ -2,7 +2,7 @@
+ .SH NAME
+ famd \- The File Alteration Monitor (FAM) daemon
+ .SH SYNOPSIS
+-\fBfamd\fR [\fB\-CdflLv\fR] [\fB\-C\fR \fIconffile\fR] [\fB\-p\fR \fIprog.vers\fR] [\fB\-t\fR \fIperiod\fR] [\fB\-T\fR \fItimeout\fR]
++\fBfamd\fR [\fB\-CdflLv\fR] [\fB\-c\fR \fIconffile\fR] [\fB\-p\fR \fIprog.vers\fR] [\fB\-t\fR \fIperiod\fR] [\fB\-T\fR \fItimeout\fR]
+ .SH DESCRIPTION
+ \fBFAM\fR, the File Alteration Monitor, is a subsystem that
+ applications can use to be notified when specific files
 @@ -21,7 +21,7 @@ independently.  Only one instance of \fBfamd\fR can be
  run at a time.
  .P
@@ -10,6 +19,17 @@ $OpenBSD: patch-man_famd_8,v 1.1 2007/05/10 19:56:19 ajacoutot Exp $
  providing the following command line options:
  .SH OPTIONS
  .TP
+@@ -52,8 +52,8 @@ Register with the portmapper using the specifed RPC pr
+ and version numbers.
+ .TP
+ \fB\-t\fR \fIperiod\fR
+-Poll a remove NFS server every \fIperiod\fR seconds
+-to obtain file updates if the remove server is not running \fBfamd\fR.
++Poll a remote NFS server every \fIperiod\fR seconds
++to obtain file updates if the remote server is not running \fBfamd\fR.
+ .TP
+ \fB\-T\fR \fItimeout\fR
+ Exit \fItimeout\fR seconds after the last client disconnects.
 @@ -63,8 +63,8 @@ A value of 0 causes \fBfamd\fR to run forever.
  files that the client can \fBstat\fR.
  .SH FILES

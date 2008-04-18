@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/11/07 19:30:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/04/18 14:02:24 ajacoutot Exp $
 
 COMMENT=	File Alteration Monitor
 
 DISTNAME=	fam-2.7.0
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS +=	fam	0.0	# .0.0
 CATEGORIES=	sysutils
 
@@ -11,11 +11,12 @@ HOMEPAGE=	http://oss.sgi.com/projects/fam/
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
-# GPL
+# GPLv2 - LGPLv2
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+
 WANTLIB=		c m pthread rpcsvc stdc++
 
 MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/stable/ \
