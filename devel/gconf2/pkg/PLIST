@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/11/10 14:08:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/04/18 09:07:33 ajacoutot Exp $
 %%SHARED%%
 bin/gconf-merge-tree
 bin/gconftool-2
@@ -206,6 +206,7 @@ share/sgml/
 share/sgml/gconf/
 share/sgml/gconf/gconf-1.0.dtd
 @sample /var/db/gconf/
+@sample /var/db/gconf/2/
 @sample /var/db/gconf/gconf.xml.defaults/
 @sample /var/db/gconf/gconf.xml.mandatory/
 @extraunexec rm -fr /var/db/gconf/gconf.xml.defaults/*
