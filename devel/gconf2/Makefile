@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2008/04/18 09:07:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2008/04/18 09:19:21 jasper Exp $
 
 COMMENT=	configuration database system for GNOME
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	2.20.1
-PKGNAME=	gconf2-${GNOME_VERSION}p0
+PKGNAME=	gconf2-${GNOME_VERSION}p1
 SHARED_LIBS +=	gconf-2              6.0      # .5.2
 CATEGORIES=	devel
 

@@ -1,6 +1,15 @@
-$OpenBSD: patch-gconf_Makefile_in,v 1.9 2007/11/10 14:08:16 jasper Exp $
---- gconf/Makefile.in.orig	Mon Oct 15 04:02:53 2007
-+++ gconf/Makefile.in	Fri Oct 19 13:55:59 2007
+$OpenBSD: patch-gconf_Makefile_in,v 1.10 2008/04/18 09:19:21 jasper Exp $
+--- gconf/Makefile.in.orig	Mon Oct 15 12:02:53 2007
++++ gconf/Makefile.in	Fri Apr 18 11:04:37 2008
+@@ -301,7 +301,7 @@ INCLUDES = \
+ 	-DGCONF_LOCALE_DIR=\""$(datadir)/locale"\"			\
+         -DGCONF_SRCDIR=\""$(absolute_top_srcdir)"\"			\
+ 	-DGCONF_CONFDIR=\""$(sysgconfdir)/$(MAJOR_VERSION)"\"		\
+-	-DGCONF_ETCDIR=\""$(sysgconfdir)"\"				\
++	-DGCONF_ETCDIR=\""/var/db/"\"				\
+ 	-DGCONF_BINDIR=\""$(bindir)"\"					\
+ 	-DGCONF_SERVERDIR=\""$(libexecdir)"\"           \
+ 	-DGCONF_BUILDDIR=\""$(top_builddir)"\"				\
 @@ -794,8 +794,8 @@ default.path: $(srcdir)/default.path.in
  		<$(srcdir)/default.path.in >default.path
  
