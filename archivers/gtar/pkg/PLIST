@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2007/06/10 19:27:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.23 2008/04/18 14:52:25 naddy Exp $
 bin/gtar
 @info info/tar.info
 @comment lib/charset.alias
@@ -31,15 +31,11 @@ share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/tar.mo
 share/locale/nb/LC_MESSAGES/tar.mo
 share/locale/nl/LC_MESSAGES/tar.mo
-share/locale/no/LC_MESSAGES/tar.mo
 share/locale/pl/LC_MESSAGES/tar.mo
 share/locale/pt/LC_MESSAGES/tar.mo
 share/locale/pt_BR/LC_MESSAGES/tar.mo
 share/locale/ro/LC_MESSAGES/tar.mo
 share/locale/ru/LC_MESSAGES/tar.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
-share/locale/rw/LC_MESSAGES/tar.mo
 share/locale/sk/LC_MESSAGES/tar.mo
 share/locale/sl/LC_MESSAGES/tar.mo
 share/locale/sv/LC_MESSAGES/tar.mo
@@ -47,3 +43,4 @@ share/locale/tr/LC_MESSAGES/tar.mo
 share/locale/uk/LC_MESSAGES/tar.mo
 share/locale/vi/LC_MESSAGES/tar.mo
 share/locale/zh_CN/LC_MESSAGES/tar.mo
+share/locale/zh_TW/LC_MESSAGES/tar.mo

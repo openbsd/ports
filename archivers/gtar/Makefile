@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2007/10/22 16:33:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2008/04/18 14:52:25 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.19
+DISTNAME=	tar-1.20
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	http://www.gnu.org/software/tar/
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
-RUN_DEPENDS=	:bzip2-*:archivers/bzip2
+RUN_DEPENDS=	::archivers/bzip2 ::archivers/lzma
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g
