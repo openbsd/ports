@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.93 2008/03/27 21:51:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.94 2008/04/18 15:17:17 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's browser component
 
-VER=		2.0.0.13
+VER=		2.0.0.14
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
 SO_VERSION=	19.0
