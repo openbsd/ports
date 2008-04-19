@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_luaconf_h,v 1.3 2007/10/29 20:30:32 espie Exp $
---- src/luaconf.h.orig	Sat Mar 24 04:01:55 2007
-+++ src/luaconf.h	Mon Oct 29 21:26:20 2007
+$OpenBSD: patch-src_luaconf_h,v 1.4 2008/04/19 17:59:32 okan Exp $
+--- src/luaconf.h.orig	Fri Jan 18 18:07:48 2008
++++ src/luaconf.h	Mon Mar 24 13:53:08 2008
 @@ -33,7 +33,7 @@
  #define LUA_WIN
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_luaconf_h,v 1.3 2007/10/29 20:30:32 espie Exp $
  #define LUA_USE_POSIX
  #define LUA_USE_DLOPEN		/* needs an extra library: -ldl */
  #define LUA_USE_READLINE	/* needs some extra libraries */
-@@ -519,7 +519,7 @@
+@@ -520,7 +520,7 @@
  */
  #define LUA_NUMBER_SCAN		"%lf"
  #define LUA_NUMBER_FMT		"%.14g"
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_luaconf_h,v 1.3 2007/10/29 20:30:32 espie Exp $
  #define LUAI_MAXNUMBER2STR	32 /* 16 digits, sign, point, and \0 */
  #define lua_str2number(s,p)	strtod((s), (p))
  
-@@ -646,7 +646,7 @@ union luai_Cast { double l_d; long l_l; };
+@@ -647,7 +647,7 @@ union luai_Cast { double l_d; long l_l; };
  #include <unistd.h>
  #define LUA_TMPNAMBUFSIZE	32
  #define lua_tmpnam(b,e)	{ \

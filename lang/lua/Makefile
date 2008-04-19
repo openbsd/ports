@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2007/10/29 22:38:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.34 2008/04/19 17:59:32 okan Exp $
 
 COMMENT=	powerful, light-weight programming language
 
-DISTNAME=	lua-5.1.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	lua-5.1.3
 CATEGORIES=	lang
 
 MASTER_SITES=	http://www.lua.org/ftp/ \
@@ -23,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SHARED_ONLY=	Yes
 SHARED_LIBS=	lua 5.1
+MAKE_FLAGS+=	LIBlua_VERSION="${LIBlua_VERSION}"
 WANTLIB=	c m edit curses
 NO_REGRESS=	Yes
 
