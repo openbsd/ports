@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/09/25 12:55:30 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/04/19 09:24:50 ajacoutot Exp $
 bin/xmlproc_parse
 bin/xmlproc_val
+lib/python${MODPY_VERSION}/site-packages/PyXML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/FtCore.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/FtCore.pyc
@@ -545,3 +546,4 @@ share/doc/py-xml/xmlproc/xmlproc_cmdline.html
 share/doc/py-xml/xmlproc/xmlproc_dtdparser.html
 share/doc/py-xml/xmlproc/xmlproc_ns.html
 share/doc/py-xml/xmlproc/xmlproc_tut.html
+%%pyexpat%%

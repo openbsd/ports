@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2008/04/19 09:24:50 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python module for writing basic XML applications
 
-VERSION=	0.8.4
+MODPY_EGG_VERSION=0.8.4
+
+VERSION=	${MODPY_EGG_VERSION}
 DISTNAME=	PyXML-${VERSION}
-PKGNAME=	py-xml-${VERSION}p3
+PKGNAME=	py-xml-${VERSION}p4
 CATEGORIES=	textproc devel
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
