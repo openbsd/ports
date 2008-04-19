@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/10/14 15:39:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2008/04/19 18:26:46 bernd Exp $
 #
 
     SUBDIR += base64
@@ -41,6 +41,7 @@
     SUBDIR += qprint
     SUBDIR += recode
     SUBDIR += rpm2cpio
+    SUBDIR += ruby-json
     SUBDIR += trans
     SUBDIR += wv
     SUBDIR += wv2
