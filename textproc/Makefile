@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2008/04/03 11:32:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.231 2008/04/19 17:02:57 bernd Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -211,6 +211,7 @@
      SUBDIR += py-xml
      SUBDIR += rman
      SUBDIR += ruby-builder
+     SUBDIR += ruby-erubis
      SUBDIR += ruby-fastercsv
      SUBDIR += ruby-fastri
      SUBDIR += ruby-hyperestraier
