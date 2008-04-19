@@ -1,4 +1,4 @@
-// $OpenBSD: imon-compat.h,v 1.1.1.1 2007/04/27 22:00:55 jasper Exp $
+// $OpenBSD: imon-compat.h,v 1.2 2008/04/19 10:57:00 ajacoutot Exp $
 //  $NetBSD: imon-compat.h,v 1.1 2004/10/17 19:20:53 jmmv Exp $
 //
 //  Copyright (c) 2004 Julio M. Merino Vidal.
@@ -30,6 +30,7 @@
 #  error "cannot include imon-compat.h if imon is really present"
 #endif
 
+#if defined(HAVE_KQUEUE)
 #define HAVE_IMON 1
 
 typedef int intmask_t;
@@ -47,5 +48,7 @@ typedef struct {
 #define IMON_EXIT       (1 << 4)
 #define IMON_RENAME     (1 << 5)
 #define IMON_OVER       0xff
+
+#endif // defined(HAVE_KQUEUE)
 
 #endif // !defined(IMON_COMPAT_H)

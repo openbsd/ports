@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/18 14:02:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2008/04/19 10:57:00 ajacoutot Exp $
 
 COMMENT=	File Alteration Monitor
 
 DISTNAME=	fam-2.7.0
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 SHARED_LIBS +=	fam	0.0	# .0.0
 CATEGORIES=	sysutils
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB=		c m pthread rpcsvc stdc++
+WANTLIB=	c m rpcsvc stdc++
 
 MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/stable/ \
 		http://humppa.nl/distfiles/
@@ -26,8 +26,15 @@ USE_LIBTOOL=	Yes
 
 AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=autoconf
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -DHAVE_SOCKADDR_SUN_LEN" \
-		LDFLAGS="-pthread"
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -DHAVE_SOCKADDR_SUN_LEN"
+
+FLAVORS=	kqueue
+FLAVOR?=
+
+.if ${FLAVOR:L:Mkqueue}
+CXXFLAGS+=	-DHAVE_KQUEUE -pthread
+WANTLIB+=	pthread
+.endif
 
 post-patch:
 	rm -f ${WRKSRC}/configure
@@ -37,7 +44,11 @@ pre-configure:
 		${WRKSRC}/man/famd.conf.5 ${WRKSRC}/man/famd.8
 	cp ${FILESDIR}/*.* ${WRKSRC}/src
 	mv ${WRKSRC}/man/famd.conf.5 ${WRKSRC}/man/fam.conf.5
-
+.if ${FLAVOR:L:Mkqueue}
+	perl -pi -e 's,\@MONITOR_FUNCS\@,IMonKQueue,g' \
+		${WRKSRC}/src/Makefile.in
+.endif
+	
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fam/
 	mv ${WRKINST}/${SYSCONFDIR}/fam.conf ${PREFIX}/share/examples/fam/
