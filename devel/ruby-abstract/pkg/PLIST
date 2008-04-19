@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 15:52:11 bernd Exp $
+lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ChangeLog
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/abstract.gemspec
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/abstract.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/setup.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test.rb
+lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec
