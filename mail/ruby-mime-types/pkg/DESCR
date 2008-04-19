@@ -1,0 +1,3 @@
+This library allows for the identification of a file's likely MIME content
+type. The identification of MIME content type is based on a file's filename
+extensions.
