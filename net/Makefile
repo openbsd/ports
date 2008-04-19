@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.517 2008/04/11 22:05:32 okan Exp $
+# $OpenBSD: Makefile,v 1.518 2008/04/19 15:16:11 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -328,6 +328,7 @@
      SUBDIR += py-pcs
      SUBDIR += py-snmp
      SUBDIR += py-xmpp
+     SUBDIR += py-zsi
      SUBDIR += pymsn
      SUBDIR += quagga
      SUBDIR += queso
