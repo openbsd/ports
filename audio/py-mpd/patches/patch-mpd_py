@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpd_py,v 1.1.1.1 2008/04/19 15:08:31 ajacoutot Exp $
+--- mpd.py.orig	Sat Apr 19 12:10:21 2008
++++ mpd.py	Sat Apr 19 12:10:43 2008
+@@ -293,7 +293,7 @@ class MPDClient(object):
+         msg = "getaddrinfo returns an empty list"
+         for res in socket.getaddrinfo(host, port, socket.AF_UNSPEC,
+                                       socket.SOCK_STREAM, socket.IPPROTO_TCP,
+-                                      socket.AI_ADDRCONFIG):
++                                      socket.AF_INET):
+             af, socktype, proto, canonname, sa = res
+             try:
+                 self._sock = socket.socket(af, socktype, proto)

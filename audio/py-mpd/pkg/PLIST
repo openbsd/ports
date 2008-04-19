@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 15:08:31 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/mpd.py
+lib/python${MODPY_VERSION}/site-packages/mpd.pyc
+lib/python${MODPY_VERSION}/site-packages/python_mpd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+share/doc/py-mpd/
+share/doc/py-mpd/commands.txt
