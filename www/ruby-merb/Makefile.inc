@@ -1,0 +1,23 @@
+# $OpenBSD: Makefile.inc,v 1.1.1.1 2008/04/19 21:57:18 bernd Exp $
+
+VERSION?=	0.9.2
+PKGNAME?=	ruby-${DISTNAME}
+CATEGORIES?=	www lang/ruby
+
+HOMEPAGE?=	http://www.merbivore.com/
+
+# MIT
+PERMIT_PACKAGE_CDROM?=	Yes
+PERMIT_PACKAGE_FTP?=	Yes
+PERMIT_DISTFILES_CDROM?=Yes
+PERMIT_DISTFILES_FTP?=	Yes
+
+MASTER_SITES?=	${MASTER_SITE_RUBYFORGE:=merb/}
+
+MODULES?=	lang/ruby
+
+BUILD_DEPENDS?=	${RUN_DEPENDS}
+
+CONFIGURE_STYLE?=ruby gem
+
+PKG_ARCH?=	*
