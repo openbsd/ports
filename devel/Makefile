@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.592 2008/04/16 12:07:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.593 2008/04/19 15:53:30 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -639,6 +639,7 @@
      SUBDIR += rats
      SUBDIR += re2c
      SUBDIR += remake
+     SUBDIR += ruby-abstract
      SUBDIR += ruby-actionpack
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-color-tools
