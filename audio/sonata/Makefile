@@ -1,17 +1,21 @@
-# $OpenBSD: Makefile,v 1.8 2008/03/19 15:52:31 winiger Exp $
+# $OpenBSD: Makefile,v 1.9 2008/04/20 07:37:00 ajacoutot Exp $
 
 COMMENT=	elegant music player for MPD
 
-DISTNAME=	sonata-1.4.2
+MODPY_EGG_VERSION=1.5
+DISTNAME=	sonata-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
 
 HOMEPAGE=	http://sonata.berlios.de/
 
-# GPL
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xcomposite Xdamage \
 		Xrender atk-1.0 cairo expat fontconfig freetype gdk-x11-2.0 \
@@ -25,7 +29,8 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	::x11/py-gtk2
 RUN_DEPENDS=	::devel/desktop-file-utils \
-		::devel/py-SOAPpy \
+		::net/py-zsi \
+		::audio/py-mpd \
 		::x11/py-gtk2
 
 USE_X11=	Yes

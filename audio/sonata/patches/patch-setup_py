@@ -1,14 +1,14 @@
-$OpenBSD: patch-setup_py,v 1.3 2008/02/19 16:14:13 merdely Exp $
---- setup.py.orig	Sat Feb  2 23:31:14 2008
-+++ setup.py	Wed Feb 13 17:41:10 2008
-@@ -65,10 +65,9 @@ setup(name='Sonata',
+$OpenBSD: patch-setup_py,v 1.4 2008/04/20 07:37:00 ajacoutot Exp $
+--- setup.py.orig	Sat Apr 19 10:42:39 2008
++++ setup.py	Sat Apr 19 10:43:53 2008
+@@ -70,10 +70,9 @@ setup(name='Sonata',
          extra_link_args=capture("pkg-config --libs gtk+-2.0 pygtk-2.0").split()
           ),],
-         scripts = ['sonata'],
+         scripts = ['sonata/sonata'],
 -        data_files=[('share/sonata', ['README', 'CHANGELOG', 'TODO', 'TRANSLATORS']),
 -                    ('share/applications', ['sonata.desktop']),
 +        data_files=[('share/applications', ['sonata.desktop']),
-                     ('share/pixmaps', ['pixmaps/sonata.png', 'pixmaps/sonata_large.png', 'pixmaps/sonatacd.png', 'pixmaps/sonatacd_large.png', 'pixmaps/sonata-artist.png', 'pixmaps/sonata-album.png', 'pixmaps/sonata-stock_volume-mute.png', 'pixmaps/sonata-stock_volume-min.png', 'pixmaps/sonata-stock_volume-med.png', 'pixmaps/sonata-stock_volume-max.png', 'pixmaps/sonata_pause.png', 'pixmaps/sonata_play.png', 'pixmaps/sonata_disconnect.png']),
+                     ('share/pixmaps', glob.glob('sonata/pixmaps/*')),
 -                    ('share/man/man1', ['sonata.1']),
 +                    ('man/man1', ['sonata.1']),
                      ('share/locale/de/LC_MESSAGES', ['mo/de/sonata.mo']),
