@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/15 16:40:52 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/20 18:04:08 simon Exp $
 
 COMMENT=        security image (captcha) generator
 
 MODULES=	cpan
-DISTNAME=	GD-SecurityImage-1.64
+DISTNAME=	GD-SecurityImage-1.65
 CATEGORIES=     graphics security
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -20,7 +20,7 @@ CONFIGURE_STYLE=modbuild
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-GD-SecurityImage
-	sed -e 's!\r!!' ${WRKSRC}/eg/demo.pl \
-		> ${PREFIX}/share/examples/p5-GD-SecurityImage/demo.pl
+	${INSTALL_DATA} ${WRKSRC}/eg/demo.pl \
+		${PREFIX}/share/examples/p5-GD-SecurityImage
 
 .include <bsd.port.mk>
