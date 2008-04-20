@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 13:52:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/20 17:56:23 simon Exp $
 ${P5SITE}/Test/Deep/
 ${P5SITE}/Test/Deep.pm
 ${P5SITE}/Test/Deep.pod
@@ -43,3 +43,4 @@ ${P5SITE}/Test/Deep/Shallow.pm
 ${P5SITE}/Test/Deep/Stack.pm
 ${P5SITE}/Test/Deep/String.pm
 @man man/man3p/Test::Deep.3p
+@man man/man3p/Test::Deep::NoTest.3p

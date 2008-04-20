@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/04/20 17:56:23 simon Exp $
 
 COMMENT=        flexible deep comparison
 
 MODULES=	cpan
-DISTNAME=	Test-Deep-0.096
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Test-Deep-0.100
 CATEGORIES=     devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
