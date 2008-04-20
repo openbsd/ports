@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/03/23 12:50:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2008/04/20 21:00:19 jasper Exp $
 
-COMMENT=		message system
+COMMENT=		message bus system
 
 DISTNAME=		dbus-1.0.2
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 SHARED_LIBS +=  dbus-1               6.0      # .5.0
 CATEGORIES=		x11
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=		ICE X11 Xau Xdmcp SM c expat pthread
 
-MASTER_SITES=		${HOMEPAGE}releases/dbus/
+MASTER_SITES=		${HOMEPAGE}/releases/dbus/
 
 SEPARATE_BUILD=		simple
 
@@ -42,6 +42,6 @@ FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/dbus
 
 pre-install:
 	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
-		${WRKSRC}/tools/dbus-uuidgen.1
+		${WRKSRC}/tools/dbus-uuidgen.1 ${WRKSRC}/bus/dbus-daemon.1
 
 .include <bsd.port.mk>
