@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/22 15:59:19 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/20 17:52:24 simon Exp $
 
 COMMENT=	POE Inter-Kernel Communication
 
 MODULES=	cpan
-DISTNAME=	POE-Component-IKC-0.1904
+DISTNAME=	POE-Component-IKC-0.2001
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
