@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2008/04/13 12:14:11 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2008/04/21 20:21:19 naddy Exp $
 
 LANGS=  af ar az bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
 	nl nn pa pl pt pt_BR ro ru rw se sk sl sr sr@Latn ss sv ta tg th \
 	tr uk uz vi zh_CN zh_TW
 
-PATCH_LANGS=	fa
+PATCH_LANGS=	ru
 
 # some extra vars to compact PLISTs
 I=index.docbook
