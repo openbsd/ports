@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/27 23:44:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/04/21 17:59:36 sthen Exp $
 
 COMMENT=	true web content filtering for all
 DISTNAME=	dansguardian-2.9.8.5
@@ -16,6 +16,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++ z
 
+# This is deliberately not downloaded directly from the author's
+# master site, since although it is GPL code, the author only
+# grants commercial users permission to download it *once* from
+# official sources. http://dansguardian.org/?page=copyright2
 MASTER_SITES=		http://www.bsdfrog.org/OpenBSD/distfiles/
 
 LIB_DEPENDS=		pcre.>=1,pcreposix.>=1::devel/pcre
