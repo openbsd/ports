@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/03/15 17:38:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/04/21 15:03:12 merdely Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,6 +31,10 @@ BUILD_DEPENDS=	::devel/bison
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-/_/}
 NO_REGRESS=	Yes
+
+.if ${MACHINE_ARCH} == "alpha"
+STDCCFLAGS+=	-fPIC
+.endif
 
 USE_GMAKE=	Yes
 ALL_TARGET=	optshared
