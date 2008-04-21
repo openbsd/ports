@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_core_icb-commands_c,v 1.1 2008/04/21 10:35:27 sthen Exp $
+--- src/core/icb-commands.c.orig	Sat May  4 18:21:43 2002
++++ src/core/icb-commands.c	Sun Oct 21 15:31:29 2007
+@@ -29,9 +29,10 @@ static char *icb_commands[] = {
+ 	"whois", "p", "delete", "cp", "rname",
+ 	"phone", "addr", "email", "text", "www",
+ 	"read", "write", "secure", "nosecure", "info", "?",
+-
+ 	"invite", "v", "echoback", "name", "motd", "topic", "status",
+-	"boot", "pass", "drop", "shutdown", "wall",
++	"boot", "pass", "drop", "shutdown", "wall", "away", "noaway",
++	"nobeep", "cancel", "exclude", "news", "notify", "s_help",
++	"shuttime", "whereis", "hush", "talk",
+         NULL
+ };
+ 
+@@ -108,7 +109,6 @@ void icb_commands_init(void)
+ 
+ 	/* adds also some aliases known to IRC users :) */
+ 	command_bind_icb("quote", NULL, (SIGNAL_FUNC) cmd_quote);
+-	command_bind_icb("w", NULL, (SIGNAL_FUNC) cmd_who);
+ 	command_bind_icb("who", NULL, (SIGNAL_FUNC) cmd_who);
+         command_bind_icb("nick", NULL, (SIGNAL_FUNC) cmd_name);
+         command_bind_icb("kick", NULL, (SIGNAL_FUNC) cmd_boot);
+@@ -126,7 +126,6 @@ void icb_commands_deinit(void)
+ 		command_unbind(*cmd, (SIGNAL_FUNC) cmd_self);
+ 
+ 	command_unbind("quote", (SIGNAL_FUNC) cmd_quote);
+-	command_unbind("w", (SIGNAL_FUNC) cmd_who);
+         command_unbind("who", (SIGNAL_FUNC) cmd_who);
+         command_unbind("nick", (SIGNAL_FUNC) cmd_name);
+         command_unbind("kick", (SIGNAL_FUNC) cmd_boot);

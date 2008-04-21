@@ -1,0 +1,14 @@
+$OpenBSD: patch-README,v 1.1 2008/04/21 10:35:27 sthen Exp $
+--- README.orig	Sat Apr 27 21:56:18 2002
++++ README	Sun Oct 21 15:31:29 2007
+@@ -14,6 +14,10 @@ chatnets section:
+ 
+  icbnet = { type = "ICB"; };
+ 
++You'll also need to add to your startup file:
++
++ LOAD icb
++
+ and then:
+ 
+  /SERVER ADD -auto -icbnet icbnet default.icb.net

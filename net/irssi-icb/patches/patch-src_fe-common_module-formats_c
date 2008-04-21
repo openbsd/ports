@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_fe-common_module-formats_c,v 1.1 2008/04/21 10:35:27 sthen Exp $
+--- src/fe-common/module-formats.c.orig	Sat Apr 27 21:56:18 2002
++++ src/fe-common/module-formats.c	Sun Oct 21 15:31:29 2007
+@@ -30,7 +30,9 @@ FORMAT_REC fecommon_icb_formats[] = {
+ 	{ "status", "[$0] $1", 2, { 0, 0 } },
+ 	{ "important", "[$0!] $1", 2, { 0, 0 } },
+ 	{ "status", "{error [Error]} $0", 1, { 0 } },
+-	{ "beep", "[beep] $1 beeps you", 1, { 0 } },
++	{ "beep", "[beep] $0 wants to annoy you.", 1, { 0 } },
++	{ "who_header", " Nickname        Idle Sign-On      Account", 0 },
++	{ "who_list", "$0$[13]1 $[-6]2 $[12]3 $4@$5 $6", 7, { 0, 0, 0, 0, 0, 0, 0 } },
+ 
+ 	{ NULL, NULL, 0 }
+ };

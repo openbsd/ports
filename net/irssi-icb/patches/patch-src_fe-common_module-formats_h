@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_fe-common_module-formats_h,v 1.1 2008/04/21 10:35:27 sthen Exp $
+--- src/fe-common/module-formats.h.orig	Sat Apr 27 21:56:18 2002
++++ src/fe-common/module-formats.h	Sun Oct 21 15:31:29 2007
+@@ -8,7 +8,9 @@ enum {
+ 	ICBTXT_STATUS,
+ 	ICBTXT_IMPORTANT,
+ 	ICBTXT_ERROR,
+-	ICBTXT_BEEP
++	ICBTXT_BEEP,
++	ICBTXT_WHO_HEADER,
++	ICBTXT_WHO_LIST
+ };
+ 
+ extern FORMAT_REC fecommon_icb_formats[];

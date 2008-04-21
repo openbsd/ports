@@ -1,0 +1,168 @@
+$OpenBSD: patch-src_fe-common_fe-icb_c,v 1.1 2008/04/21 10:35:27 sthen Exp $
+--- src/fe-common/fe-icb.c.orig	Sat Apr 27 21:56:18 2002
++++ src/fe-common/fe-icb.c	Sun Oct 21 15:31:29 2007
+@@ -24,6 +24,7 @@
+ #include "commands.h"
+ #include "servers-setup.h"
+ #include "levels.h"
++#include "nicklist.h"
+ 
+ #include "icb.h"
+ #include "icb-servers.h"
+@@ -36,15 +37,90 @@
+ static void event_status(ICB_SERVER_REC *server, const char *data)
+ {
+ 	char **args;
++	int len;
++	char *oldnick, *newnick;
++	char *topic, *setby, *p1, *p2;
+ 
+ 	/* FIXME: status messages should probably divided into their own
+ 	   signals so irssi could track joins, parts, etc. */
+ 	args = icb_split(data, 2);
+ 	printformat(server, server->group->name, MSGLEVEL_CRAP,
+ 		    ICBTXT_STATUS, args[0], args[1]);
++
++	/* sample nick msg: oldnick changed nickname to newnick */
++	len = strlen("Name");
++	if (strncmp(args[0],"Name",len) == 0) {
++
++		oldnick = g_strdup(args[1]);
++		p2 = strchr(oldnick, ' ');
++		if (p2 != NULL)
++		{
++			*p2 = '\0';
++
++			/* make sure it's me changing the nick */
++			if (strcmp(oldnick, server->connrec->nick) == 0)
++			{
++				newnick = strrchr(args[1], ' ');
++				if (newnick != NULL) {
++					newnick++;  /* skip the space */
++
++					server_change_nick(SERVER(server), newnick);
++					nicklist_rename(SERVER(server), server->connrec->nick, newnick);
++					g_free(server->connrec->nick);
++					server->connrec->nick = g_strdup(newnick);
++				}
++			}
++		}
++		g_free(oldnick);
++	}
++
++	/* sample topic msg: nick changed the topic to \"test 1\" */
++	len = strlen("Topic");
++	if (strncmp(args[0],"Topic",len) == 0) {
++		p1 = strchr(args[1], '"');
++		p2 = strrchr(args[1], '"');
++
++		/* make sure there's something between those quotes */
++		if (p1)
++		{
++			p1++;
++			topic = g_strdup(p1);
++			p2 = strrchr(topic, '"');
++			*p2 = '\0';
++
++			setby = g_strdup(args[1]);
++			p2 = strchr(setby, ' ');
++			*p2 = '\0';
++
++			icb_channel_change_topic(server, topic, setby, time(NULL));
++
++			g_free(topic);
++			g_free(setby);
++		}
++	}
++
+         icb_split_free(args);
+ }
+ 
++static void icb_channel_change_topic(ICB_SERVER_REC *server, 
++				 const char *topic, const char *setby,
++				 time_t settime)
++{
++	if (topic != NULL) {
++		g_free_not_null(server->group->topic);
++		server->group->topic = g_strdup(topic);
++	}
++
++	if (setby != NULL) {
++		g_free_not_null(server->group->topic_by);
++		server->group->topic_by = g_strdup(setby);
++	}
++	
++	server->group->topic_time = settime;
++
++	signal_emit("channel topic changed", 1, server->group);
++}
++
+ static void event_error(ICB_SERVER_REC *server, const char *data)
+ {
+ 	printformat(server, NULL, MSGLEVEL_CRAP, ICBTXT_ERROR, data);
+@@ -62,7 +138,7 @@ static void event_important(ICB_SERVER_REC *server, co
+ 
+ static void event_beep(ICB_SERVER_REC *server, const char *data)
+ {
+-	printformat(server, data, MSGLEVEL_CRAP, ICBTXT_BEEP, data);
++	printformat(server, data, MSGLEVEL_MSGS, ICBTXT_BEEP, data);
+ }
+ 
+ static void event_open(ICB_SERVER_REC *server, const char *data)
+@@ -84,13 +160,51 @@ static void event_personal(ICB_SERVER_REC *server, con
+         icb_split_free(args);
+ }
+ 
++static char *icb_who_idle(char *line)
++{       
++	int	idle = atoi(line);
++	static	char	lbuf[16];
++        
++	if (idle > 99 * 60)
++		g_snprintf(lbuf, sizeof lbuf, "%5dm", idle / 60);
++	else
++	if (idle < 60)
++		g_snprintf(lbuf, sizeof lbuf, "%d sec", idle);
++	else
++		g_snprintf(lbuf, sizeof lbuf, "%d:%02ds", idle / 60, idle % 60);
++	lbuf[6] = 0;    /* XXX see below */
++	return (lbuf);
++}
++       
++static char *icb_who_signon(char *line)
++{       
++	time_t  their_time = (time_t)atoi(line);
++	char	*s = asctime(localtime(&their_time));
++        
++	s[16] = '\0';   /* XXX */
++	/* Tue Mar  2 05:10:10 1999J */
++	/*     <---------->          */
++	return (s + 4);
++}       
++
+ static void cmdout_default(ICB_SERVER_REC *server, char **args)
+ {
+-	char *data;
+-
+-	data = g_strjoinv(" ", args+1);
+-	printtext(server, server->group->name, MSGLEVEL_CRAP, "%s", data);
+-        g_free(data);
++	if (args[0][0] == 'w') {
++		if (args[0][1] == 'h')
++			printformat(server, NULL, MSGLEVEL_CRAP, ICBTXT_WHO_HEADER);
++		else if (args[0][1] == 'l') {
++			char *arg1 = args[1][0] == 'm' ? "*" : " ";
++			printformat(server, NULL, MSGLEVEL_CRAP,
++				ICBTXT_WHO_LIST, arg1, args[2],
++				icb_who_idle(args[3]),
++				icb_who_signon(args[5]),
++				args[6], args[7], args[8]);
++		}
++	} else {
++		char *data = g_strjoinv(" ", args+1);
++		printtext(server, server->group->name, MSGLEVEL_CRAP, "%s", data);
++		g_free(data);
++	}
+ }
+ 
+ static void sig_server_add_fill(SERVER_SETUP_REC *rec,
