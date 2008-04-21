@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.331 2008/04/06 21:31:05 kili Exp $
+# $OpenBSD: Makefile,v 1.332 2008/04/21 09:34:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -9,6 +9,7 @@
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += amiwm
+     SUBDIR += arabeyes-ttf
      SUBDIR += artwiz-aleczapka
      SUBDIR += asapm
      SUBDIR += asclock
@@ -49,6 +50,7 @@
      SUBDIR += evilwm
      SUBDIR += explorer
      SUBDIR += extace
+     SUBDIR += farsiweb-ttf
      SUBDIR += fbpanel
      SUBDIR += fleditor
      SUBDIR += fltk
