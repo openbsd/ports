@@ -1,0 +1,21 @@
+$OpenBSD: patch-bzrlib_patch_py,v 1.1 2008/04/21 19:00:56 okan Exp $
+--- bzrlib/patch.py.orig	Thu Mar 20 03:12:09 2008
++++ bzrlib/patch.py	Wed Apr  2 23:11:25 2008
+@@ -65,7 +65,7 @@ def patch(patch_contents, filename, output_filename=No
+     :type reverse: bool
+     :return: 0 on success, 1 if some hunks failed
+     """
+-    args = ["patch", "-f", "-s", "--posix", "--binary"]
++    args = ["patch", "-f", "-s", "--posix"]
+     if reverse:
+         args.append("--reverse")
+     if output_filename is not None:
+@@ -81,7 +81,7 @@ def diff3(out_file, mine_path, older_path, yours_path)
+     check_text_path(mine_path)
+     check_text_path(older_path)
+     check_text_path(yours_path)
+-    args = ['diff3', "-E", "--merge"]
++    args = ['gdiff3', "-E", "--merge"]
+     add_label(args, "TREE")
+     add_label(args, "ANCESTOR")
+     add_label(args, "MERGE-SOURCE")

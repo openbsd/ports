@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/04/21 19:00:56 okan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	distributed version control system by Canonical
 
-DISTNAME=	bzr-0.14
-PKGNAME=	${DISTNAME}p0
+MODPY_EGG_VERSION=1.3
+DISTNAME=	bzr-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://bazaar-vcs.org/
@@ -20,11 +20,21 @@ MASTER_SITES=	${HOMEPAGE}releases/src/
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	::textproc/py-cElementTree \
+RUN_DEPENDS+=	::lang/python/${MODPY_VERSION},-bz2 \
+		::lang/python/${MODPY_VERSION},-expat \
+		::net/py-curl \
+		::security/py-paramiko \
 		::textproc/gdiff
+
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
+SUBST_VARS=	MODPY_BIN
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/bzr ${WRKSRC}/bzrlib/tests/test_diff.py
+
+# need at least ulimit -n 512
 do-regress:
-	@cd ${WRKBUILD} && ./bzr selftest
+	@cd ${WRKBUILD} && ${MODPY_BIN} ./bzr selftest
  
 .include <bsd.port.mk>

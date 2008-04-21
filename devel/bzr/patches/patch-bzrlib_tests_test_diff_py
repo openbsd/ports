@@ -1,0 +1,21 @@
+$OpenBSD: patch-bzrlib_tests_test_diff_py,v 1.1 2008/04/21 19:00:56 okan Exp $
+--- bzrlib/tests/test_diff.py.orig	Thu Mar 20 03:12:10 2008
++++ bzrlib/tests/test_diff.py	Wed Apr  2 22:52:46 2008
+@@ -270,7 +270,7 @@ class TestDiffFiles(TestCaseInTempDir):
+         # Make sure external_diff doesn't fail in the current LANG
+         lines = external_udiff_lines(['\x00foobar\n'], ['foo\x00bar\n'])
+ 
+-        cmd = ['diff', '-u', '--binary', 'old', 'new']
++        cmd = ['gdiff', '-u', 'old', 'new']
+         open('old', 'wb').write('\x00foobar\n')
+         open('new', 'wb').write('foo\x00bar\n')
+         pipe = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+@@ -1257,7 +1257,7 @@ class TestDiffFromTool(TestCaseWithTransport):
+ 
+     def test_execute(self):
+         output = StringIO()
+-        diff_obj = DiffFromTool(['python', '-c',
++        diff_obj = DiffFromTool(['${MODPY_BIN}', '-c',
+                                  'print "%(old_path)s %(new_path)s"'],
+                                 None, None, output)
+         self.addCleanup(diff_obj.finish)
