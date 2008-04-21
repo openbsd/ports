@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2008/04/21 00:38:19 jakemsr Exp $
 
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
@@ -38,6 +38,11 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-portable-binary
+
+# g77 fails to compile (ICE) test programs on sgi
+.if ${MACHINE_ARCH} == "mips64"
+CONFIGURE_ARGS+=--disable-fortran
+.endif
 
 .if ${FLAVOR} == "float"
 CONFIGURE_ARGS+=--enable-float
