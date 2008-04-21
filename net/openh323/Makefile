@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/03/15 17:38:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2008/04/21 19:17:59 merdely Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,7 +45,7 @@ CONFIGURE_ARGS=	--enable-h263avcodec \
 		--disable-localspeex \
 		--disable-vich263
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-fPIC
 .endif
 
