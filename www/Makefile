@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.337 2008/04/19 22:19:33 bernd Exp $
+# $OpenBSD: Makefile,v 1.338 2008/04/21 19:17:33 eric Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -261,6 +261,7 @@
      SUBDIR += py-formencode
      SUBDIR += py-httplib2
      SUBDIR += py-jonpy
+     SUBDIR += py-nevow
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
      SUBDIR += py-paste-script
