@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/25 00:01:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/21 09:43:36 sturm Exp $
 
 COMMENT=	ruby library for handling credit card processor merchants
 
 DISTNAME=	activemerchant-1.3.2
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.activemerchant.org/
@@ -19,7 +19,8 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=activemerchant/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-builder-*:textproc/ruby-builder
+RUN_DEPENDS=	::devel/ruby-activesupport \
+		::textproc/ruby-builder
 
 CONFIGURE_STYLE=ruby gem
 
