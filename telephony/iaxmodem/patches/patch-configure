@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
+--- configure.orig	Thu Feb  7 20:58:41 2008
++++ configure	Thu Mar 27 21:13:17 2008
+@@ -22,6 +22,7 @@ if [ -n "${IAXVER}" ]; then
+ fi
+ 
+ cat Makefile.in | sed -e "s/@VERSION@/${IAXMODEMVER}/g" | \
++	sed -e "s,@LDFLAGS@,${LDFLAGS},g" | \
+ 	sed -e "s/@DSPVER@/${DSPVER}/g" | \
+ 	sed -e "s/@IAXVER@/${IAXVER}/g" > Makefile
+ 

@@ -1,0 +1,38 @@
+$OpenBSD: patch-iaxmodem_c,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
+--- iaxmodem.c.orig	Thu Feb  7 19:57:47 2008
++++ iaxmodem.c	Sat Mar 29 03:17:59 2008
+@@ -60,11 +60,13 @@
+ #endif
+ 
+ #include <spandsp.h>
+-#ifdef STATICLIBS
++/* #ifdef STATICLIBS */
+ #include <iax-client.h>
++/* 
+ #else
+ #include <iax/iax-client.h>
+ #endif
++ */
+ 
+ #ifndef MODEMVER
+ #define MODEMVER "0.0.0"
+@@ -163,6 +165,9 @@ int logmode = S_IRUSR | S_IWUSR | S_IRGRP;
+ #include "compat/headers.h"
+ #include "sys/stropts.h"
+ #endif
++#ifdef __OpenBSD__
++#include "compat/strings.c"
++#endif
+ 
+ void
+ printlog(FILE *fp, char *fmt, ...)
+@@ -637,7 +642,8 @@ iaxmodem(const char *config, int nondaemon)
+     int fd;
+     char logfile[256];
+ 
+-    printlog(LOG_ERROR, "Modem started\n");
++    printlog(LOG_ERROR, "Modem %s started\n",config);
++    setproctitle("uucp [%s]",config);
+ 
+     pwent = getpwnam("uucp");
+ 

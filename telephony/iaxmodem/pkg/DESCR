@@ -1,0 +1,7 @@
+IAXmodem is a software modem written in C that uses an IAX channel
+(commonly provided by an Asterisk PBX system) instead of a traditional
+phone line and uses a DSP library instead of DSP hardware chipsets.
+
+IAXmodem was originally conceived to function as a fax modem usable
+with HylaFAX, and it does that well. However IAXmodem also has been
+known to function with mgetty+sendfax and efax.

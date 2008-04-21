@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_spandsp_src_Makefile_in,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
+--- lib/spandsp/src/Makefile.in.orig	Thu Feb  7 20:59:43 2008
++++ lib/spandsp/src/Makefile.in	Thu Mar 27 21:32:34 2008
+@@ -485,7 +485,7 @@ clean-libLTLIBRARIES:
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+ libspandsp.la: $(libspandsp_la_OBJECTS) $(libspandsp_la_DEPENDENCIES) 
+-	$(LINK) -rpath $(libdir) $(libspandsp_la_LDFLAGS) $(libspandsp_la_OBJECTS) $(libspandsp_la_LIBADD) $(LIBS)
++	$(LINK) -rpath $(libdir) $(libspandsp_la_LDFLAGS) $(libspandsp_la_OBJECTS) $(libspandsp_la_LIBADD) $(LDFLAGS) $(LIBS)
+ 
+ clean-noinstPROGRAMS:
+ 	@list='$(noinst_PROGRAMS)'; for p in $$list; do \
+@@ -956,7 +956,7 @@ v29tx_floating_rrc.h: make_modem_filter$(EXEEXT)
+ 	./make_modem_filter$(EXEEXT) -m V.29 -t >v29tx_floating_rrc.h
+ 
+ make_modem_filter$(EXEEXT): make_modem_filter.c filter_tools.c filter_tools.h config.h
+-	$(CC_FOR_BUILD) -I. -o $@ make_modem_filter.c filter_tools.c -lm
++	$(CC_FOR_BUILD) $(CFLAGS) -I. -o $@ make_modem_filter.c filter_tools.c -lm
+ 
+ $(DSP): msvc/msvcproj.head msvc/msvcproj.foot Makefile.am
+ 	echo "creating $(DSP)"

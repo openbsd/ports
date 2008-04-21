@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
+--- Makefile.in.orig	Thu Feb  7 20:57:47 2008
++++ Makefile.in	Thu Mar 27 21:58:54 2008
+@@ -3,13 +3,13 @@ DSPVER=		@DSPVER@
+ IAXVER=		@IAXVER@
+ 
+ CFLAGS:=	-DMODEMVER=\"${MODEMVER}\" -DDSPVER=\"${DSPVER}\" -DIAXVER=\"${IAXVER}\" \
+-		-Wall -g -DSTATICLIBS -DUSE_UNIX98_PTY \
++		-Wall -g -DSTATICLIBS \
+ 		-std=c99 -Ilib/libiax2/src -Ilib/spandsp/src \
+ 		${CFLAGS}
+ OUR_CFLAGS=	-Wall -g -DSTATICLIBS -DUSE_UNIX98_PTY \
+ 		-std=c99 -Ilib/libiax2/src -Ilib/spandsp/src
+ OBJS=		iaxmodem.o lib/spandsp/src/.libs/libspandsp.a lib/libiax2/src/.libs/libiax.a
+-LDFLAGS+=	-lm -lutil -ltiff
++LDFLAGS+=	@LDFLAGS@ -lm -lutil -ltiff
+ 
+ all: iaxmodem
+ 

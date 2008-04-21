@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
+bin/iaxmodem
+@man man/man1/iaxmodem.1
+share/doc/iaxmodem/
+share/doc/iaxmodem/FAQ
+share/doc/iaxmodem/README
+share/examples/iaxmodem/
+@sample ${SYSCONFDIR}/iaxmodem/
+share/examples/iaxmodem/hylafax-cfg.ttyIAX
+share/examples/iaxmodem/iaxmodem-cfg.ttyIAX
+@sample ${SYSCONFDIR}/iaxmodem/ttyIAX0

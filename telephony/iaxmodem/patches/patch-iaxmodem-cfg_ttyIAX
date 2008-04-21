@@ -1,0 +1,10 @@
+$OpenBSD: patch-iaxmodem-cfg_ttyIAX,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
+--- iaxmodem-cfg.ttyIAX.orig	Sun Apr 20 22:18:51 2008
++++ iaxmodem-cfg.ttyIAX	Sun Apr 20 22:19:30 2008
+@@ -1,5 +1,5 @@
+ device		/dev/ttyIAX
+-owner		uucp:uucp
++owner		uucp:dialer
+ mode		660
+ port		4570
+ refresh		300
