@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/21 17:59:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2008/04/21 18:32:06 mbalmer Exp $
 
 COMMENT=	true web content filtering for all
 DISTNAME=	dansguardian-2.9.8.5
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www net
 
 HOMEPAGE=	http://www.dansguardian.org/
