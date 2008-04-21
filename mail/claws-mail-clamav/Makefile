@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/13 13:25:50 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/21 20:11:48 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	clamav plugin for Claws Mail
 
 VERSION=	3.3
 DISTNAME=	clamav-${VERSION}
-PKGNAME=	claws-mail-clamav-${VERSION}
+PKGNAME=	claws-mail-clamav-${VERSION}p0
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 

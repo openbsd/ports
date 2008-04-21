@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_clamav_plugin_c,v 1.1 2008/04/21 20:11:48 mbalmer Exp $
+--- src/clamav_plugin.c.orig	Mon Apr 21 20:02:43 2008
++++ src/clamav_plugin.c	Mon Apr 21 20:03:15 2008
+@@ -149,7 +149,6 @@ static gboolean mail_filtering_hook(gpointer source, g
+     	params.limits.maxfiles = 1000; /* max files */
+     	params.limits.maxfilesize = config.clamav_max_size * 1048576; /* maximum archived file size */
+     	params.limits.maxreclevel = 8; /* maximum recursion level */
+-	params.limits.maxratio = 200; /* maximal compression ratio */
+ 
+ 	if (config.clamav_enable_arc)
+ 		params.scan_archive = TRUE;
