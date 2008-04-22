@@ -1,0 +1,14 @@
+$OpenBSD: patch-apps_silcd_server_c,v 1.1 2008/04/22 00:34:30 sthen Exp $
+http://git.silcnet.org/gitweb/?p=silc.git;a=commitdiff;h=e10fb3ff712f60100846064c196d5f69921d1b43
+--- apps/silcd/server.c.orig	Sun Apr 20 21:20:39 2008
++++ apps/silcd/server.c	Sun Apr 20 21:21:19 2008
+@@ -3036,7 +3036,8 @@ void silc_server_free_sock_user_data(SilcServer server
+   if (!idata)
+     return;
+ 
+-  //  silc_schedule_task_del_by_context(server->schedule, sock);
++  silc_schedule_task_del_by_all(server->schedule, 0, silc_server_do_rekey,
++                               sock);
+ 
+   /* Cancel active protocols */
+   if (idata) {
