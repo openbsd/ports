@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/06 20:19:11 landry Exp $
-
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/06 20:19:11 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/22 23:33:49 fgsch Exp $
 
 COMMENT=	additional thumbnailers for Thunar
 
