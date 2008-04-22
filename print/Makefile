@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.73 2008/04/13 17:46:36 jasper Exp $
+#	$OpenBSD: Makefile,v 1.74 2008/04/22 10:12:47 fgsch Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -15,6 +15,7 @@
     SUBDIR += enscript
     SUBDIR += enscript,a4
     SUBDIR += epdfview
+    SUBDIR += epdfview,cups
     SUBDIR += foiltex
     SUBDIR += fontforge
     SUBDIR += foo2zjs
