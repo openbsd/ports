@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/24 03:01:29 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/22 09:34:58 jakemsr Exp $
 bin/jack_alias
-bin/jack_bufsize
 bin/jack_connect
 bin/jack_disconnect
 bin/jack_evmon
@@ -12,6 +11,7 @@ bin/jack_metro
 bin/jack_midiseq
 bin/jack_midisine
 bin/jack_monitor_client
+bin/jack_netsource
 bin/jack_showtime
 bin/jack_simple_client
 bin/jack_transport
@@ -39,8 +39,6 @@ lib/jack/jack_net.la
 lib/jack/jack_net.so
 lib/jack/jack_sun.la
 lib/jack/jack_sun.so
-lib/jack/netsource.la
-lib/jack/netsource.so
 lib/libjack.la
 @lib lib/libjack.so.${LIBjack_VERSION}
 lib/libjackserver.la

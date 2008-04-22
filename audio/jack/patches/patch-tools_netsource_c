@@ -1,0 +1,17 @@
+$OpenBSD: patch-tools_netsource_c,v 1.1 2008/04/22 09:34:58 jakemsr Exp $
+--- tools/netsource.c.orig	Mon Apr 21 21:58:12 2008
++++ tools/netsource.c	Mon Apr 21 21:58:35 2008
+@@ -31,10 +31,13 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, U
+ #include <stdlib.h>
+ #include <string.h>
+ 
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netdb.h>
+ 
++#ifdef HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ 
+ #include <jack/jack.h>
+ 

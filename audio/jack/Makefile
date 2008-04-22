@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/03/30 08:46:15 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2008/04/22 09:34:58 jakemsr Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		low latency sound server
 
-DISTNAME =		jack-0.109.10.1133
-PKGNAME =		${DISTNAME}p1
+DISTNAME =		jack-0.111.2.1169
 
 SHARED_LIBS +=		jack		0.0	# 0.28
 SHARED_LIBS +=		jackserver	0.0	# 0.28
@@ -40,11 +39,12 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-portaudio \
-			--with-default-tmpdir=/tmp \
 			--disable-optimize \
 			--enable-dynsimd
+
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
+			LIBS="-pthread" \
 			HAVE_DOXYGEN="false"
 
 .ifdef DEBUG
