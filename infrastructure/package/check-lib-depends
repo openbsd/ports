@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.15 2008/02/20 07:04:25 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.16 2008/04/22 21:36:06 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -377,7 +377,7 @@ sub record_needed_libs
 
 	my $linux_bin = 0;
 	my $freebsd_bin = 0;
-	if ($fullname =~ m,^/usr/local/emul/redhat/,) {
+	if ($fullname =~ m,^/usr/local/emul/(?:redhat|fedora)/,) {
 		$linux_bin = 1;
 	}
 	if ($fullname =~ m,^/usr/local/emul/freebsd/,) {
