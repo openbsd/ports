@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2008/04/22 00:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2008/04/22 20:24:10 sthen Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
-DISTNAME=	silc-server-1.1.5
+DISTNAME=	silc-server-1.1.6
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -18,11 +18,8 @@ WANTLIB=		c pthread
 
 MASTER_SITES=	http://ftp.silcnet.org/server/sources/ \
 		ftp://ftp.silcnet.org/silc/server/sources/ \
-		http://www.planetmirror.com/pub/silcnet/server/sources/ \
-		http://munitions.vipul.net/software/mirrors/silc/server/sources/ \
 		ftp://ftp.no.silcnet.org/pub/silc/server/sources/ \
-		http://the.wiretapped.net/security/network-security/silc/server/sources/ \
-		ftp://ftp.wiretapped.net/pub/security/network-security/silc/server/sources/
+		http://the.wiretapped.net/security/network-security/silc/server/sources/
 
 MODULES=	converters/libiconv
 
