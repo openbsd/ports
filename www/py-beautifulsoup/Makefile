@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/19 18:08:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2008/04/22 12:16:30 fgsch Exp $
 
 COMMENT=	HTML/XML parser that supports invalid markup
 
-DISTNAME=	BeautifulSoup-3.0.5
-PKGNAME=	py-${DISTNAME}p0
+MODPY_EGG_VERSION=	3.0.5
+DISTNAME=		BeautifulSoup-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}p1
+
 CATEGORIES=    	www
 
 HOMEPAGE=	http://www.crummy.com/software/BeautifulSoup/
@@ -17,6 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/download/
 
 MODULES=	lang/python
+
+PKG_ARCH=	*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
