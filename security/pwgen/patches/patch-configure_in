@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_in,v 1.2 2007/12/04 10:28:29 sthen Exp $
+$OpenBSD: patch-configure_in,v 1.3 2008/04/22 09:15:08 robert Exp $
 --- configure.in.orig	Thu Jul  5 01:42:19 2007
-+++ configure.in	Mon Dec  3 09:15:48 2007
++++ configure.in	Tue Apr 22 11:13:08 2008
 @@ -6,6 +6,6 @@ AC_PATH_PROG(MV, mv, mv)
  AC_PATH_PROG(RM, rm, rm)
  AC_PATH_PROG(SED, sed, sed)
  AC_PATH_PROG(PERL, perl, perl)
 -AC_CHECK_FUNCS(drand48 getopt_long)
-+AC_CHECK_FUNCS(arc4random drand48 getopt_long)
++AC_CHECK_FUNCS(arc4random arc4random_uniform drand48 getopt_long)
  AC_CHECK_HEADERS(getopt.h)
  AC_OUTPUT(Makefile)
