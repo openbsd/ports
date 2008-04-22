@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2008/02/04 17:55:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/04/22 14:51:40 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Gnome2 Python bindings
 
 GNOME_PROJECT=	gnome-python	
-GNOME_VERSION=	2.20.1
-PKGNAME=	py-gnome-${VERSION}p0
+GNOME_VERSION=	2.22.0
+PKGNAME=	py-gnome-${VERSION}
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -35,6 +35,8 @@ LIB_DEPENDS=	python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY
 		gnomeui-2.>=1800::x11/gnome/libgnomeui
 RUN_DEPENDS=	:py-gtk2->=2.10.3:x11/py-gtk2 \
 		::devel/py-orbit
+
+MODGNOME_DEVHELP_FILES=Yes
 
 USE_X11=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/01 18:06:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/22 14:51:40 ajacoutot Exp $
 include/gnome-python-2.0/
 include/gnome-python-2.0/pygnomevfs.h
 include/gnome-python-2.0/pygnomevfsbonobo.h
@@ -71,6 +71,20 @@ share/doc/py-gnome/vfs/pygvfsmethod/pyfs.conf
 share/doc/py-gnome/vfs/pygvfsmethod/pyfs.py
 share/doc/py-gnome/vfs/shell.py
 share/doc/py-gnome/vfs/sync-xfer.py
+share/gtk-doc/html/pygnomevfs/
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-context.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-directoryhandle.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-drive.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-fileinfo.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-handle.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-uri.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-volume.html
+share/gtk-doc/html/pygnomevfs/gnomevfs-class-reference.html
+share/gtk-doc/html/pygnomevfs/gnomevfs-constants.html
+share/gtk-doc/html/pygnomevfs/gnomevfs-functions.html
+share/gtk-doc/html/pygnomevfs/index.html
+share/gtk-doc/html/pygnomevfs/index.sgml
+share/gtk-doc/html/pygnomevfs/pygnomevfs.devhelp
 share/pygtk/2.0/argtypes/
 share/pygtk/2.0/argtypes/bonobo-arg-types.py
 share/pygtk/2.0/argtypes/bonobo-arg-types.pyc
