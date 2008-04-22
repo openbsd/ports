@@ -1,0 +1,16 @@
+$OpenBSD: patch-po_Makefile_in,v 1.1 2008/04/22 08:57:24 jasper Exp $
+--- po/Makefile.in.orig	Sat Apr 19 23:07:18 2008
++++ po/Makefile.in	Sat Apr 19 23:07:35 2008
+@@ -128,9 +128,9 @@ top_srcdir = @top_srcdir@
+ var = @var@
+ DOMAIN = osmo
+ POTFILES = $(wildcard ../src/*.c ../src/*.h)
+-MSGFMT = /usr/bin/msgfmt
+-XGETTEXT = /usr/bin/xgettext
+-MSGMERGE = /usr/bin/msgmerge
++MSGFMT = !!LOCALBASE!!/bin/msgfmt
++XGETTEXT = !!LOCALBASE!!/bin/xgettext
++MSGMERGE = !!LOCALBASE!!/bin/msgmerge
+ XGETTEXT_OPTS = --keyword=_ --keyword=N_ --keyword=X_ --add-comments=TRANSLATORS: --no-location
+ POFILES = cs.po de.po es.po fr.po lt.po nl.po pl.po pt.po
+ MOFILES = $(POFILES:.po=.mo)

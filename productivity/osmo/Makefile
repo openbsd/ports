@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/15 14:36:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/04/22 08:57:24 jasper Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clay.ll.pl/osmo/
@@ -37,5 +38,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		BUILD_CFLAGS="${CFLAGS}"
+
+pre-configure:
+	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.mk>
