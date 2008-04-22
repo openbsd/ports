@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2008/01/29 16:33:08 naddy Exp $
---- configure.orig	Tue Jan 29 17:21:15 2008
-+++ configure	Tue Jan 29 17:21:25 2008
-@@ -20782,10 +20782,6 @@ else
+$OpenBSD: patch-configure,v 1.8 2008/04/22 16:50:43 naddy Exp $
+--- configure.orig	Sat Mar 29 01:05:44 2008
++++ configure	Sun Mar 30 22:16:01 2008
+@@ -20808,10 +20808,6 @@ else
  fi
  
  

@@ -1,0 +1,23 @@
+$OpenBSD: patch-gtk_tr-torrent_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
+--- gtk/tr-torrent.c.orig	Tue Apr  1 17:10:00 2008
++++ gtk/tr-torrent.c	Tue Apr  1 17:10:37 2008
+@@ -297,15 +297,15 @@ tr_torrent_status_str ( TrTorrent * gtor )
+ 
+         case TR_STATUS_DONE:
+             top = g_strdup_printf(
+-                ngettext( "Uploading to %1$'d of %2$'d connected peer",
+-                          "Uploading to %1$'d of %2$'d connected peers", tpeers ),
++                ngettext( "Uploading to %1$d of %2$d connected peer",
++                          "Uploading to %1$d of %2$d connected peers", tpeers ),
+                           upeers, tpeers );
+             break;
+ 
+         case TR_STATUS_SEED:
+             top = g_strdup_printf(
+-                ngettext( "Seeding to %1$'d of %2$'d connected peer",
+-                          "Seeding to %1$'d of %2$'d connected peers", tpeers ),
++                ngettext( "Seeding to %1$d of %2$d connected peer",
++                          "Seeding to %1$d of %2$d connected peers", tpeers ),
+                           upeers, tpeers );
+             break;
+ 

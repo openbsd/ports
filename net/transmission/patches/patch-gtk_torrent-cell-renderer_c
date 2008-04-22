@@ -1,0 +1,25 @@
+$OpenBSD: patch-gtk_torrent-cell-renderer_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
+--- gtk/torrent-cell-renderer.c.orig	Tue Apr  1 17:13:40 2008
++++ gtk/torrent-cell-renderer.c	Tue Apr  1 17:13:53 2008
+@@ -195,8 +195,8 @@ getStatusString( const tr_stat * torStat )
+ 
+         case TR_STATUS_DOWNLOAD:
+             g_string_append_printf( gstr,
+-                ngettext( "Downloading from %1$'d of %2$'d connected peer",
+-                          "Downloading from %1$'d of %2$'d connected peers",
++                ngettext( "Downloading from %1$d of %2$d connected peer",
++                          "Downloading from %1$d of %2$d connected peers",
+                           torStat->peersConnected ),
+                 torStat->peersSendingToUs,
+                 torStat->peersConnected );
+@@ -205,8 +205,8 @@ getStatusString( const tr_stat * torStat )
+         case TR_STATUS_DONE:
+         case TR_STATUS_SEED:
+             g_string_append_printf( gstr,
+-                ngettext( "Seeding to %1$'d of %2$'d connected peer",
+-                          "Seeding to %1$'d of %2$'d connected peers",
++                ngettext( "Seeding to %1$d of %2$d connected peer",
++                          "Seeding to %1$d of %2$d connected peers",
+                           torStat->peersConnected ),
+                 torStat->peersGettingFromUs,
+                 torStat->peersConnected );

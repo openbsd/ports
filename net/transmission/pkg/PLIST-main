@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2008/02/17 21:59:32 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2008/04/22 16:50:43 naddy Exp $
 @pkgpath net/transmission
+bin/benc2php
 bin/transmission-daemon
 bin/transmission-proxy
 bin/transmission-remote
@@ -9,36 +10,3 @@ bin/transmissioncli
 @man man/man1/transmission-remote.1
 @man man/man1/transmissioncli.1
 @comment share/applications/
-@comment share/locale/
-@comment share/locale/de/
-@comment share/locale/de/LC_MESSAGES/
-@comment share/locale/es/
-@comment share/locale/es/LC_MESSAGES/
-@comment share/locale/fi/
-@comment share/locale/fi/LC_MESSAGES/
-@comment share/locale/fr/
-@comment share/locale/fr/LC_MESSAGES/
-@comment share/locale/hu/
-@comment share/locale/hu/LC_MESSAGES/
-@comment share/locale/it/
-@comment share/locale/it/LC_MESSAGES/
-@comment share/locale/nl/
-@comment share/locale/nl/LC_MESSAGES/
-@comment share/locale/pl/
-@comment share/locale/pl/LC_MESSAGES/
-@comment share/locale/pt/
-@comment share/locale/pt/LC_MESSAGES/
-@comment share/locale/pt_BR/
-@comment share/locale/pt_BR/LC_MESSAGES/
-@comment share/locale/ro/
-@comment share/locale/ro/LC_MESSAGES/
-@comment share/locale/ru/
-@comment share/locale/ru/LC_MESSAGES/
-@comment share/locale/sk/
-@comment share/locale/sk/LC_MESSAGES/
-@comment share/locale/sv/
-@comment share/locale/sv/LC_MESSAGES/
-@comment share/locale/tr/
-@comment share/locale/tr/LC_MESSAGES/
-@comment share/locale/zh_CN/
-@comment share/locale/zh_CN/LC_MESSAGES/

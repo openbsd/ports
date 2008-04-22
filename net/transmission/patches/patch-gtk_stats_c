@@ -1,0 +1,21 @@
+$OpenBSD: patch-gtk_stats_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
+--- gtk/stats.c.orig	Tue Apr  1 16:26:37 2008
++++ gtk/stats.c	Tue Apr  1 16:27:13 2008
+@@ -60,7 +60,7 @@ updateStats( gpointer gdata )
+     setLabel( ui->one_time_lb, tr_strltime( buf, one.secondsActive, sizeof(buf) ) );
+     setLabelFromRatio( ui->one_ratio_lb, one.ratio );
+ 
+-    fmt = ngettext( "Started %'d time", "Started %'d times", (int)all.sessionCount );
++    fmt = ngettext( "Started %d time", "Started %d times", (int)all.sessionCount );
+     g_snprintf( buf, sizeof(buf), fmt, (int)all.sessionCount );
+     setLabel( ui->all_sessions_lb, buf );
+     setLabel( ui->all_up_lb, tr_strlsize( buf, all.uploadedBytes, sizeof(buf) ) );
+@@ -108,7 +108,7 @@ stats_dialog_create( GtkWindow * parent, TrCore * core
+         hig_workarea_add_row( t, &row, _("Duration:"), l, NULL );
+     hig_workarea_add_section_divider( t, &row );
+     hig_workarea_add_section_title( t, &row, _("Total") );
+-        l = ui->all_sessions_lb = gtk_label_new( _("Started %'d time") );
++        l = ui->all_sessions_lb = gtk_label_new( _("Started %d time") );
+         hig_workarea_add_label_w( t, row++, l );
+         l = ui->all_up_lb = gtk_label_new( NULL );
+         hig_workarea_add_row( t, &row, _("Uploaded:"), l, NULL );

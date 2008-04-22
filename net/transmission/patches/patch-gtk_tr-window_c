@@ -1,0 +1,21 @@
+$OpenBSD: patch-gtk_tr-window_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
+--- gtk/tr-window.c.orig	Sat Mar 29 01:02:21 2008
++++ gtk/tr-window.c	Tue Apr  1 17:11:18 2008
+@@ -596,13 +596,13 @@ updateTorrentCount( PrivateData * p )
+         const int visibleCount = gtk_tree_model_iter_n_children( p->filter_model, NULL );
+ 
+         if( torrentCount != visibleCount )
+-            g_snprintf( buf, sizeof( buf ), ngettext( "%1$'d of %2$'d Torrent",
+-                                                      "%1$'d of %2$'d Torrents",
++            g_snprintf( buf, sizeof( buf ), ngettext( "%1$d of %2$d Torrent",
++                                                      "%1$d of %2$d Torrents",
+                                                       torrentCount ),
+                                             visibleCount, torrentCount );
+         else
+-            g_snprintf( buf, sizeof( buf ), ngettext( "%'d Torrent",
+-                                                      "%'d Torrents",
++            g_snprintf( buf, sizeof( buf ), ngettext( "%d Torrent",
++                                                      "%d Torrents",
+                                                       torrentCount ),
+                                             torrentCount );
+         gtk_label_set_text( GTK_LABEL( p->gutter_lb ), buf );
