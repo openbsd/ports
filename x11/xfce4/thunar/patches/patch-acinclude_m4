@@ -1,0 +1,15 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2008/04/22 23:33:01 fgsch Exp $
+--- acinclude.m4.orig	Tue Apr 22 18:40:13 2008
++++ acinclude.m4	Tue Apr 22 18:42:29 2008
+@@ -121,9 +121,9 @@ XDT_CHECK_PACKAGE([LIBFAM], [gamin], [0.1.0],
+   [
+     AC_CHECK_LIB([fam], [FAMOpen],
+     [
+-      have_libfam="yes" LIBFAM_LIBS="-lfam"
++      have_libfam="yes" LIBFAM_LIBS="-lfam -lm"
+       ac_bm_thunar_vfs_monitor_impl="FAM"
+-    ])
++    ], [], [-lm])
+   ])
+ ])
+ if test x"$have_libfam" = x"yes"; then

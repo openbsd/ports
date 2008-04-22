@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/17 09:00:24 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2008/04/22 23:33:01 fgsch Exp $
 
 COMMENT=	lightweight file manager for xfce4
 
 V=		0.9.0
 DISTNAME=	Thunar-${V}
-PKGNAME=	thunar-${V}p0
+PKGNAME=	thunar-${V}p1
 
 SHARED_LIBS=	thunarx-1	5.1 \
 		thunar-vfs-1	5.1
@@ -24,6 +24,8 @@ EXTRACT_SUFX=	.tar.bz2
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
+AUTOCONF_VERSION= 2.61
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--disable-gnome-thumbnailers \
 		--enable-startup-notification \
 		--enable-exif \
@@ -34,7 +36,8 @@ LIB_DEPENDS=	exo-0.3.>=4::x11/xfce4/exo \
 		xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
 		exif.>=12.1::graphics/libexif \
 		dbus-glib-1::x11/dbus-glib \
-		dbus-1.>=6::x11/dbus
+		dbus-1.>=6::x11/dbus \
+		fam::sysutils/fam
 
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::x11/xfce4/xfce4-icon-theme
