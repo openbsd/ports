@@ -1,40 +1,86 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:17:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/04/23 20:49:46 okan Exp $
+bin/ettercap
+bin/etterfilter
+bin/etterlog
 lib/ettercap/
+@comment lib/ettercap/ec_arp_cop.la
+lib/ettercap/ec_arp_cop.so
+@comment lib/ettercap/ec_autoadd.la
+lib/ettercap/ec_autoadd.so
+@comment lib/ettercap/ec_chk_poison.la
+lib/ettercap/ec_chk_poison.so
+@comment lib/ettercap/ec_dns_spoof.la
+lib/ettercap/ec_dns_spoof.so
+@comment lib/ettercap/ec_dos_attack.la
+lib/ettercap/ec_dos_attack.so
+@comment lib/ettercap/ec_dummy.la
+lib/ettercap/ec_dummy.so
+@comment lib/ettercap/ec_find_conn.la
+lib/ettercap/ec_find_conn.so
+@comment lib/ettercap/ec_find_ettercap.la
+lib/ettercap/ec_find_ettercap.so
+@comment lib/ettercap/ec_find_ip.la
+lib/ettercap/ec_find_ip.so
+@comment lib/ettercap/ec_finger.la
+lib/ettercap/ec_finger.so
+@comment lib/ettercap/ec_finger_submit.la
+lib/ettercap/ec_finger_submit.so
+@comment lib/ettercap/ec_gre_relay.la
+lib/ettercap/ec_gre_relay.so
+@comment lib/ettercap/ec_gw_discover.la
+lib/ettercap/ec_gw_discover.so
+@comment lib/ettercap/ec_isolate.la
+lib/ettercap/ec_isolate.so
+@comment lib/ettercap/ec_link_type.la
+lib/ettercap/ec_link_type.so
+@comment lib/ettercap/ec_pptp_chapms1.la
+lib/ettercap/ec_pptp_chapms1.so
+@comment lib/ettercap/ec_pptp_clear.la
+lib/ettercap/ec_pptp_clear.so
+@comment lib/ettercap/ec_pptp_pap.la
+lib/ettercap/ec_pptp_pap.so
+@comment lib/ettercap/ec_pptp_reneg.la
+lib/ettercap/ec_pptp_reneg.so
+@comment lib/ettercap/ec_rand_flood.la
+lib/ettercap/ec_rand_flood.so
+@comment lib/ettercap/ec_remote_browser.la
+lib/ettercap/ec_remote_browser.so
+@comment lib/ettercap/ec_reply_arp.la
+lib/ettercap/ec_reply_arp.so
+@comment lib/ettercap/ec_repoison_arp.la
+lib/ettercap/ec_repoison_arp.so
+@comment lib/ettercap/ec_scan_poisoner.la
+lib/ettercap/ec_scan_poisoner.so
+@comment lib/ettercap/ec_search_promisc.la
+lib/ettercap/ec_search_promisc.so
+@comment lib/ettercap/ec_smb_clear.la
+lib/ettercap/ec_smb_clear.so
+@comment lib/ettercap/ec_smb_down.la
+lib/ettercap/ec_smb_down.so
+@comment lib/ettercap/ec_stp_mangler.la
+lib/ettercap/ec_stp_mangler.so
+@man man/man5/etter.conf.5
 @man man/man8/ettercap.8
-sbin/ettercap
-share/doc/ettercap/
-share/doc/ettercap/AUTHORS
-share/doc/ettercap/CHANGELOG
-share/doc/ettercap/COPYING
-share/doc/ettercap/HISTORY
-share/doc/ettercap/HYDRA.HOWTO
-share/doc/ettercap/INSTALL
-share/doc/ettercap/KNOWN-BUGS
-share/doc/ettercap/PORTINGS
-share/doc/ettercap/README
-share/doc/ettercap/README.PLUGINS
-share/doc/ettercap/README.WIN32
-share/doc/ettercap/ROPER.HOWTO
-share/doc/ettercap/THANKS
-share/doc/ettercap/TODO
-share/doc/ettercap/TODO.WIN32
-share/doc/ettercap/ZARATAN.HOWTO
-share/doc/ettercap/debug.txt
-share/doc/ettercap/errors.txt
-share/doc/ettercap/ettercap.fr.8.in
-share/doc/ettercap/threads.txt
+@man man/man8/ettercap_curses.8
+@man man/man8/ettercap_plugins.8
+@man man/man8/etterfilter.8
+@man man/man8/etterlog.8
 share/ettercap/
-share/ettercap/AUTHORS
-share/ettercap/THANKS
-share/ettercap/etter.conf
 share/ettercap/etter.dns
+share/ettercap/etter.fields
 share/ettercap/etter.filter
+share/ettercap/etter.filter.examples
+share/ettercap/etter.filter.kill
 share/ettercap/etter.filter.ssh
+share/ettercap/etter.finger.mac
+share/ettercap/etter.finger.os
 share/ettercap/etter.mime
-share/ettercap/etter.passive.os.fp
+share/ettercap/etter.services
 share/ettercap/etter.ssl.crt
-share/ettercap/lc-converter.c
-share/ettercap/mac-fingerprints
-share/ettercap/nmap-os-fingerprints
-share/ettercap/services
-%%SHARED%%
+share/ettercap/ettercap.png
+share/ettercap/etterfilter.cnt
+share/ettercap/etterfilter.tbl
+share/ettercap/etterlog.dtd
+share/examples/ettercap/
+share/examples/ettercap/etter.conf
+@sample ${SYSCONFDIR}/etter.conf

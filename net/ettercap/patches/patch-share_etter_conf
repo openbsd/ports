@@ -1,0 +1,14 @@
+$OpenBSD: patch-share_etter_conf,v 1.1 2008/04/23 20:49:46 okan Exp $
+--- share/etter.conf.orig	Mon Mar 24 18:19:12 2008
++++ share/etter.conf	Mon Mar 24 18:19:28 2008
+@@ -14,8 +14,8 @@
+ ############################################################################
+ 
+ [privs]
+-ec_uid = 65534                # nobody is the default
+-ec_gid = 65534                # nobody is the default
++ec_uid = 32767                # nobody is the default
++ec_gid = 32767                # nobody is the default
+ 
+ [mitm]
+ arp_storm_delay = 10          # milliseconds

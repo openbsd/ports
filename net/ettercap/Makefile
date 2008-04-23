@@ -1,44 +1,57 @@
-# $OpenBSD: Makefile,v 1.37 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.38 2008/04/23 20:49:46 okan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
-VER=		0.6.b
-DISTNAME=	ettercap-${VER}
-PKGNAME=	${DISTNAME}p5
+VER=		0.7.3
+DISTNAME=	ettercap-NG-${VER}
+PKGNAME=	ettercap-${VER}
 CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
 HOMEPAGE=	http://ettercap.sourceforge.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/} \
-		${MASTER_SITE_PACKETSTORM:=sniffers/ettercap/}
-
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		pthread c crypto des form ncurses ssl
+WANTLIB+=	c crypto form menu ncurses panel pcap pthread ssl z
 
-FLAVORS=		no_x11
+LIB_DEPENDS=	lib/libnet-1.1/net.=11:libnet-1.1*:net/libnet/1.1 \
+		ltdl::devel/libtool,-ltdl \
+		pcre::devel/pcre
+
+FLAVORS=	no_x11
 FLAVOR?=
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-https
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-static
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.59
+CONFIGURE_ARGS+= --with-libnet=${LOCALBASE} \
+		 --with-libpcre=${LOCALBASE}
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+=	--enable-gtk=no
+CONFIGURE_ARGS+= --enable-gtk=no
 .else
-LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-WANTLIB+=		X11 Xext Xrender atk-1.0 fontconfig z \
-			freetype glib-2.0 gmodule-2.0 glitz png \
-			gobject-2.0 m pango-1.0 pangocairo-1.0 \
-			pangoft2-1.0 cairo
+LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
+		Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
+		freetype glib-2.0 glitz gmodule-2.0 gthread-2.0 \
+		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 png
 MODULES=	devel/gettext
 USE_X11=	Yes
 .endif
 
 NO_REGRESS=	Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ettercap
+	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/etter.conf \
+	    ${PREFIX}/share/examples/ettercap
 
 .include <bsd.port.mk>
