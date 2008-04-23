@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/04/23 21:01:04 landry Exp $
 
 COMMENT=	mail purpose library
 
-DISTNAME=	libetpan-0.49
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	libetpan-0.54
 CATEGORIES=	mail devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libetpan/}
-SHARED_LIBS=	etpan	11.0
+SHARED_LIBS=	etpan	12.0
 
 HOMEPAGE=	http://libetpan.sourceforge.net/
 
@@ -20,27 +19,28 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	converters/libiconv
 
-WANTLIB=	ssl crypto
+WANTLIB=	crypto expat ssl z intl
 
-LIB_DEPENDS+=	sasl2::security/cyrus-sasl2
+LIB_DEPENDS+=	curl::net/curl \
+		idn::devel/libidn \
+		sasl2::security/cyrus-sasl2
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --without-gnutls
-CONFIGURE_ARGS+= --with-sasl=${LOCALBASE}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+= --without-gnutls --with-sasl=${LOCALBASE}
+CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/${DISTNAME:S/.1//}
-
-DOCS=	API.html API.txt DOCUMENTATION README.html README.txt
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libetpan
-.for d in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${d} ${PREFIX}/share/doc/libetpan/${d}
-.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libetpan/html/{API,README}
+	${INSTALL_DATA} ${WRKSRC}/{COPYRIGHT,doc/{DOCUMENTATION,{API,README}.txt}} ${PREFIX}/share/doc/libetpan
+.       for d in API README
+	  ${INSTALL_DATA} ${WRKSRC}/doc/${d}.html ${PREFIX}/share/doc/libetpan/html
+	  cd ${WRKSRC}/doc/${d};\
+	  find * -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/libetpan/html/${d}/{} \;
+.	endfor
 
 .include <bsd.port.mk>

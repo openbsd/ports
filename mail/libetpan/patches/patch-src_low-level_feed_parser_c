@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_low-level_feed_parser_c,v 1.1 2008/04/23 21:01:04 landry Exp $
+--- src/low-level/feed/parser.c.orig	Wed Aug  8 18:31:43 2007
++++ src/low-level/feed/parser.c	Wed Aug  8 18:32:04 2007
+@@ -230,7 +230,7 @@ static int iconv_utf32_char(iconv_t cd, const char * i
+     return LEP_ICONV_OK;
+   }
+ #else
+-  return LEP_ICONV_FAIL;
++  return LEP_ICONV_FAILED;
+ #endif
+ }
+ 
