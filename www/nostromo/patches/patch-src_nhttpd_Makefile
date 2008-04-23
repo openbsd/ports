@@ -1,0 +1,11 @@
+--- src/nhttpd/Makefile.orig	Tue Apr 22 20:16:48 2008
++++ src/nhttpd/Makefile	Tue Apr 22 20:16:59 2008
+@@ -1,7 +1,7 @@
+ PROG= nhttpd
+ SRCS= main.c http.c sys.c
+ 
+-CFLAGS+= -Wall -Werror -Wstrict-prototypes
++CFLAGS+= -Wall -Wstrict-prototypes
+ LDADD+=	-L../libmy -lmy
+ 
+ PIPE= -pipe
