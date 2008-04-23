@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2008/04/17 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2008/04/23 21:11:29 landry Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-docs=		documentation
@@ -7,9 +7,9 @@ COMMENT-clamav=		clamav plugin
 COMMENT-dillo=		dillo plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.3.1
+V=			3.4.0
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}p0
+PKGNAME-main=			${DISTNAME}
 FULLPKGNAME-docs=		claws-mail-docs-${V}
 FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
 FULLPKGNAME-dillo=		claws-mail-dillo-${V}
@@ -47,11 +47,13 @@ RUN_DEPENDS-spamassassin=::${BUILD_PKGPATH} \
 			::mail/p5-Mail-SpamAssassin 
 
 WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-			Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto expat \
-			fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-			m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png ssl z
+			Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto curl \
+			expat fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+			gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 pcre png ssl z
 
-WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 gpg-error pthread stdc++
+WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 gpg-error \
+			pthread stdc++
 
 WANTLIB-docs=		
 
