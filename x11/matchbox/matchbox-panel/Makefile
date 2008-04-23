@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/04/23 22:18:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2008/04/23 22:20:56 jasper Exp $
 # XXX hardcoded apm list
 
 COMMENT=	window bar for holding application launchers
@@ -24,8 +24,10 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" 
 
 .include <bsd.port.mk>
 
-.if ${MACHINE_ARCH} == "i386" || ${ARCH} == "macppc" \
-	|| ${MACHINE_ARCH} == "sparc" || ${ARCH} == "zaurus"
+# We use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
+.if ${MACHINE_ARCH} != "amd64" || ${MACHINE_ARCH} != "arm" \
+ || ${MACHINE_ARCH} != "i386" || ${MACHINE_ARCH} != "macppc" \
+ || ${MACHINE_ARCH} != "sparc"
 PKG_ARGS+=-DAPM=1
 .else
 PKG_ARGS+=-DAPM=0
