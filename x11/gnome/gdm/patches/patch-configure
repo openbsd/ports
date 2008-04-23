@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.9 2007/11/27 20:26:13 jasper Exp $
+$OpenBSD: patch-configure,v 1.10 2008/04/23 11:30:59 jasper Exp $
 --- configure.orig	Mon Oct 15 23:55:40 2007
 +++ configure	Sat Oct 27 17:45:52 2007
 @@ -30752,7 +30752,6 @@ if test x$with_tcp_wrappers = xno ; then
@@ -31,10 +31,10 @@ $OpenBSD: patch-configure,v 1.9 2007/11/27 20:26:13 jasper Exp $
  *)
  	HOST_GDM_USER_PATH="/bin:/usr/bin"
 -	HOST_HALT_COMMAND="/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
-+	HALT_COMMAND="/sbin/halt -p;/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
++	HOST_HALT_COMMAND="/sbin/halt -p;/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
  	HOST_REBOOT_COMMAND="/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now"
 -	HOST_SUSPEND_COMMAND=""
-+	SUSPEND_COMMAND="/usr/sbin/zzz"
++	HOST_SUSPEND_COMMAND="/usr/sbin/zzz"
  	HOST_XSESSION_SHELL=/bin/sh
 -	HOST_SOUND_PROGRAM=/usr/bin/play
 +	HOST_SOUND_PROGRAM=$(prefix)/bin/play
