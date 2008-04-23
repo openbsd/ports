@@ -1,6 +1,6 @@
-$OpenBSD: patch-master_conf_normal_conf,v 1.2 2008/03/15 10:07:20 ajacoutot Exp $
+$OpenBSD: patch-master_conf_normal_conf,v 1.3 2008/04/23 13:33:22 ajacoutot Exp $
 --- master/conf/normal.conf.orig	Thu Mar 30 18:01:39 2006
-+++ master/conf/normal.conf	Tue Mar  4 09:13:24 2008
++++ master/conf/normal.conf	Mon Apr 21 16:29:36 2008
 @@ -5,17 +5,17 @@ START {
    recover	cmd="ctl_cyrusdb -r"
  
@@ -29,5 +29,5 @@ $OpenBSD: patch-master_conf_normal_conf,v 1.2 2008/03/15 10:07:20 ajacoutot Exp 
    tlsprune	cmd="tls_prune" at=0400
 +
 +  # create SQUAT indexes for all mailboxes
-+#  squatter	cmd="squatter -s -r user" at=0540
++#  squatter	cmd="squatter -s -r -i user" at=0540
  }

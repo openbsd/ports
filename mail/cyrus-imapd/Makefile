@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2008/03/15 10:07:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2008/04/23 13:33:22 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
 
-V=		2.3.11
+V=		2.3.12
 DISTNAME=	cyrus-imapd-${V}
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
 CATEGORIES=	mail
@@ -59,6 +59,8 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--without-zephyr \
 		--without-snmp
 
+# this is a needed hack; to update PLIST:
+# make SHARED_ONLY=Yes plist
 MULTI_PACKAGES=	-main ${NO_SHARED_LIBS:S/Yes//:S/No/-perl/}
 CONFIGURE_ARGS+=--with${NO_SHARED_LIBS:S/Yes/out/:S/No//}-perl
 
@@ -66,7 +68,8 @@ FLAVORS=	drac
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdrac}
-BUILD_DEPENDS=	::mail/drac
+BUILD_DEPENDS+=	::mail/drac
+RUN_DEPENDS+=	::mail/drac
 PATCH_LIST+=	${WRKSRC}/contrib/drac_auth.patch \
 		drac-patch-imap_Makefile.in
 .endif

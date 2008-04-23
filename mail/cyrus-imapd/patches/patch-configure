@@ -1,5 +1,5 @@
---- configure.orig	Wed Oct 24 20:12:43 2007
-+++ configure	Thu Oct 25 10:40:37 2007
+--- configure.orig	Mon Apr 21 13:17:40 2008
++++ configure	Mon Apr 21 16:16:41 2008
 @@ -5206,9 +5206,7 @@ CFLAGS=$save_CFLAGS
  fi
  
@@ -29,7 +29,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -14827,7 +14825,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
+@@ -14831,7 +14829,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -38,7 +38,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -14917,7 +14915,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+set}" = set; th
+@@ -14921,7 +14919,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+set}" = set; th
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -47,7 +47,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -15387,8 +15385,8 @@ fi
+@@ -15391,8 +15389,8 @@ fi
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -58,7 +58,7 @@
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
-@@ -15572,7 +15570,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
+@@ -15576,7 +15574,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -67,7 +67,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -17410,6 +17408,8 @@ extern "C"
+@@ -17414,6 +17412,8 @@ extern "C"
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
  char request_init ();
