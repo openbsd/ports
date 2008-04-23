@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
---- configure.orig	Mon Apr 11 04:18:51 2005
-+++ configure	Mon Jun  6 22:42:33 2005
-@@ -6446,7 +6446,7 @@ _ACEOF
- fi
+$OpenBSD: patch-configure,v 1.2 2008/04/23 22:18:27 jasper Exp $
+--- configure.orig	Tue Mar  7 19:46:56 2006
++++ configure	Thu Apr 24 00:02:20 2008
+@@ -6519,7 +6519,7 @@ _ACEOF
+   fi
  
  
 -for ac_header in apmvar.h

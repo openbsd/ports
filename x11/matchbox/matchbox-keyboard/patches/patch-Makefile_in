@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2006/07/20 21:14:21 robert Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2008/04/23 22:18:27 jasper Exp $
 --- Makefile.in.orig	Tue Feb 28 19:48:45 2006
-+++ Makefile.in	Thu Jul 20 18:52:28 2006
-@@ -178,7 +178,7 @@
++++ Makefile.in	Thu Apr 24 00:02:20 2008
+@@ -178,7 +178,7 @@ SUBDIRS = src layouts $(am__append_1)
  EXTRA_DIST = matchbox-keyboard.desktop matchbox-keyboard.png
  desktopdir = $(datadir)/applications/inputmethods
  desktop_DATA = matchbox-keyboard.desktop
