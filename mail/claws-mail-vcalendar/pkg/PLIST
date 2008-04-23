@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/26 13:59:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/23 21:40:18 landry Exp $
 include/claws-mail/ical.h
+include/claws-mail/plugins/vcalendar/
+include/claws-mail/plugins/vcalendar/vcal_interface.h
 lib/claws-mail/plugins/vcalendar.la
 lib/claws-mail/plugins/vcalendar.so
 share/locale/ca/LC_MESSAGES/vcalendar.mo
