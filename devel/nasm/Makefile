@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2008/04/23 20:48:33 okan Exp $
 
 COMMENT=	general-purpose multi-platform x86 assembler
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
-DISTNAME=	nasm-0.98.38
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	nasm-2.02
 CATEGORIES=	devel lang
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nasm/}
@@ -19,17 +18,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+DESTDIRNAME=	INSTALLROOT
+
+ALL_TARGET=	everything
+INSTALL_TARGET=	install_everything
 
 NO_REGRESS=	Yes
 
-DESTDIRNAME=	INSTALLROOT
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nasm
-	${INSTALL_MAN} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/nasm
-	${INSTALL_DATA} ${WRKBUILD}/doc/html/*.html ${PREFIX}/share/doc/nasm
-	${INSTALL_DATA} ${WRKBUILD}/doc/info/* $(PREFIX)/info
+	${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/nasm
 
 .include <bsd.port.mk>

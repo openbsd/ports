@@ -1,25 +1,38 @@
-$OpenBSD: patch-doc_Makefile.in,v 1.3 2005/01/27 02:09:52 naddy Exp $
---- doc/Makefile.in.orig	Sun May 19 00:17:28 2002
-+++ doc/Makefile.in	Thu Jan 27 02:41:55 2005
-@@ -22,7 +22,7 @@ TEXI2DVI        = texi2dvi
- PS2PDF          = ps2pdf -dOptimize=true	# Part of GhostScript
+$OpenBSD: patch-doc_Makefile.in,v 1.4 2008/04/23 20:48:33 okan Exp $
+--- doc/Makefile.in.orig	Tue Feb 19 14:08:57 2008
++++ doc/Makefile.in	Mon Apr 21 15:47:03 2008
+@@ -8,7 +8,7 @@ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ bindir		= @bindir@
+ mandir		= @mandir@
+-docdir		= $(prefix)/doc/nasm
++docdir		= $(prefix)/share/doc/nasm
+ infodir		= @infodir@
+ datarootdir	= @datarootdir@
+ 
+@@ -22,11 +22,8 @@ TEXI2DVI        = texi2dvi
+ PS2PDF          = ps2pdf		# Part of GhostScript
  
  SRCS		= nasmdoc.src
 -OUT		= nasm.info nasmdoc.ps nasmdoc.pdf
 +OUT		= nasm.info # nasmdoc.ps nasmdoc.pdf # don't build ps and pdf
  
+-# exports
+-export srcdir
+-export PERL
+ 
  all: $(OUT)
  
-@@ -31,7 +31,7 @@ os2: nasm.inf
+@@ -38,7 +35,7 @@ inslist.src: inslist.pl ../insns.dat
  # Consider html, txt and ps output a side effect
- nasmdoc.dip: nasmdoc.src rdsrc.pl
+ nasmdoc.dip: nasmdoc.src rdsrc.pl inslist.src
  	mkdir -p html
 -	$(PERL) $(srcdir)/rdsrc.pl < $<
 +	$(PERL) $(srcdir)/rdsrc.pl < $(srcdir)/nasmdoc.src
  	mv -f *.html html
  
  nasmdoc.texi: nasmdoc.dip
-@@ -48,7 +48,7 @@ nasm.info: info/nasm.info
+@@ -55,7 +52,7 @@ nasm.info: info/nasm.info
  
  info/nasm.info: nasmdoc.texi
  	mkdir -p info
@@ -28,7 +41,7 @@ $OpenBSD: patch-doc_Makefile.in,v 1.3 2005/01/27 02:09:52 naddy Exp $
  	mv -f *.info *.info-* info
  
  # DVI output from texinfo (optional)
-@@ -57,10 +57,10 @@ nasmdoc.dvi: nasmdoc.texi
+@@ -64,13 +61,12 @@ nasmdoc.dvi: nasmdoc.texi
  
  # Rules for building an OS/2 book
  nasmdoc.ipf: nasmdoc.texi
@@ -40,4 +53,13 @@ $OpenBSD: patch-doc_Makefile.in,v 1.3 2005/01/27 02:09:52 naddy Exp $
 +	ipfc -i -s $? $@
  
  clean:
- 	-rm -f *.rtf *.hpj *.texi *.gid *.ipf *.dip
+-	-rm -f *.rtf *.hpj *.texi *.gid *.ipf *.dip
+ 	-rm -f *.aux *.cp *.fn *.ky *.pg *.log *.toc *.tp *.vr
+ 
+ spotless: clean
+@@ -82,4 +78,4 @@ install: all
+ 	$(INSTALL_DATA) info/* $(INSTALLROOT)$(infodir)
+ 	mkdir -p $(INSTALLROOT)$(docdir)/html
+ 	$(INSTALL_DATA) html/* $(INSTALLROOT)$(docdir)/html
+-	$(INSTALL_DATA) nasmdoc.ps nasmdoc.pdf nasmdoc.txt $(INSTALLROOT)$(docdir)
++	$(INSTALL_DATA) nasmdoc.txt $(INSTALLROOT)$(docdir)

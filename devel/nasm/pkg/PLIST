@@ -1,22 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/09 11:09:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/04/23 20:48:33 okan Exp $
+bin/ldrdf
 bin/nasm
 bin/ndisasm
+bin/rdf2bin
+bin/rdf2com
+bin/rdf2ihx
+bin/rdfdump
+bin/rdflib
+bin/rdx
 @info info/nasm.info
+@man man/man1/ldrdf.1
 @man man/man1/nasm.1
 @man man/man1/ndisasm.1
+@man man/man1/rdf2bin.1
+@man man/man1/rdf2com.1
+@man man/man1/rdfdump.1
+@man man/man1/rdflib.1
+@man man/man1/rdx.1
 share/doc/nasm/
+share/doc/nasm/html/
+share/doc/nasm/html/nasmdo10.html
+share/doc/nasm/html/nasmdo11.html
+share/doc/nasm/html/nasmdoc0.html
+share/doc/nasm/html/nasmdoc1.html
+share/doc/nasm/html/nasmdoc2.html
+share/doc/nasm/html/nasmdoc3.html
+share/doc/nasm/html/nasmdoc4.html
+share/doc/nasm/html/nasmdoc5.html
+share/doc/nasm/html/nasmdoc6.html
+share/doc/nasm/html/nasmdoc7.html
+share/doc/nasm/html/nasmdoc8.html
+share/doc/nasm/html/nasmdoc9.html
+share/doc/nasm/html/nasmdoca.html
+share/doc/nasm/html/nasmdocb.html
+share/doc/nasm/html/nasmdoci.html
 share/doc/nasm/internal.doc
-share/doc/nasm/nasmdo10.html
-share/doc/nasm/nasmdoc0.html
-share/doc/nasm/nasmdoc1.html
-share/doc/nasm/nasmdoc2.html
-share/doc/nasm/nasmdoc3.html
-share/doc/nasm/nasmdoc4.html
-share/doc/nasm/nasmdoc5.html
-share/doc/nasm/nasmdoc6.html
-share/doc/nasm/nasmdoc7.html
-share/doc/nasm/nasmdoc8.html
-share/doc/nasm/nasmdoc9.html
-share/doc/nasm/nasmdoca.html
-share/doc/nasm/nasmdocb.html
-share/doc/nasm/nasmdoci.html
+share/doc/nasm/nasmdoc.txt
