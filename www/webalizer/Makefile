@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2008/01/30 21:38:48 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.25 2008/04/24 08:51:54 sthen Exp $
 
 COMMENT=	web server log file analysis program
 
 DISTNAME=	webalizer-2.01-10-RB21-src
-PKGNAME=	webalizer-2.01.10p5
+PKGNAME=	webalizer-2.01.10p6
 CATEGORIES=	www
 MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb21/
 
@@ -11,7 +11,8 @@ HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
-LIB_DEPENDS=	gd.>=18::graphics/gd
+LIB_DEPENDS=	gd.>=18::graphics/gd \
+		GeoIP.>=5::net/GeoIP
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
@@ -25,7 +26,7 @@ MODULES=	converters/libiconv
 WRKDIST=	${WRKDIR}/webalizer-2.01-10-RB21
 
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS=	--enable-dns
+CONFIGURE_ARGS=	--enable-dns --enable-geoip
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS="-ljpeg"
 
