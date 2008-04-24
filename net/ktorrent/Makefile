@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/04/24 00:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2008/04/24 23:57:24 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://ktorrent.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
