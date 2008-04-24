@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2008/04/24 08:27:24 sthen Exp $
 
 COMMENT=	archive and compress your old email
 
-DISTNAME=	archivemail-0.7.0
-PKGNAME=	${DISTNAME}p0
+VERSION=	0.7.2
+DISTNAME=	archivemail-${VERSION}
 CATEGORIES=	mail
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -20,6 +20,7 @@ MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
+SUBST_VARS=	VERSION
 PKG_ARCH=	*
 
 .include <bsd.port.mk>
