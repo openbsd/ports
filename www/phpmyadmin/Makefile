@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2007/11/06 21:13:46 rui Exp $ 
+# $OpenBSD: Makefile,v 1.23 2008/04/24 01:06:03 sthen Exp $ 
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
-V=		2.11.1.1
+V=		2.11.5.2
 DISTNAME=	phpMyAdmin-${V}
 CATEGORIES=	www
 HOMEPAGE=	http://www.phpmyadmin.net/
@@ -25,7 +25,7 @@ EXTRACT_ONLY=
 
 PREFIX=		/var/www
 INSTDIR=	${PREFIX}/phpMyAdmin
-SUBST_VARS=	INSTDIR
+SUBST_VARS=	INSTDIR V
 
 RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql \
 		:php5-mbstring-*:www/php5/extensions,-mbstring \
