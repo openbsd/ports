@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2008/04/24 19:36:14 okan Exp $
 
 COMMENT=	Exif Jpeg camera setting parser and thumbnail remover
 
-DISTNAME=	jhead-2.6
+DISTNAME=	jhead-2.82
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sentex.net/~mwandel/jhead/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,14 +18,9 @@ MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=	Yes
 
-.if ${MACHINE_ARCH} == "sparc64"
-CFLAGS+=	-O0
-.endif
+RUN_DEPENDS=	::graphics/jpeg
 
-do-build:
-	cd ${WRKSRC} && \
-		${CC} ${CFLAGS} -o jhead exif.c jhead.c \
-		jpgfile.c makernote.c gpsinfo.c -lm
+MAKE_FILE=	makefile
 
 post-build:
 	@gzip -d ${WRKSRC}/jhead.1.gz 
