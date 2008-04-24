@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_MailScanner,v 1.2 2008/04/17 07:30:27 jasper Exp $
---- bin/MailScanner.orig	Fri Jan  4 20:06:47 2008
-+++ bin/MailScanner	Thu Apr 17 09:24:09 2008
+$OpenBSD: patch-bin_MailScanner,v 1.3 2008/04/24 21:31:00 todd Exp $
+--- bin/MailScanner.orig	Tue Apr  1 11:28:10 2008
++++ bin/MailScanner	Fri Apr 18 21:28:17 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -I/opt/MailScanner/lib
 +#!/usr/bin/perl -I%PREFIX%/lib/MailScanner
@@ -16,7 +16,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.2 2008/04/17 07:30:27 jasper Exp $
      unshift @INC, $path;
    }
  
-@@ -169,8 +169,6 @@ if ($Versions) {
+@@ -171,8 +171,6 @@ if ($Versions) {
    my($module, $s, $v, $m);
  
    printf("Running on\n%s", `uname -a`);
@@ -25,7 +25,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.2 2008/04/17 07:30:27 jasper Exp $
    printf("This is Perl version %f (%vd)\n", $], $^V);
    print "\nThis is MailScanner version " . $MailScanner::Config::MailScannerVersion . "\n";
    print "Module versions are:\n";
-@@ -193,9 +191,10 @@ if ($Versions) {
+@@ -195,9 +193,10 @@ if ($Versions) {
  
  # Check version of MIME-tools against its requirements
  my $error = 0;
@@ -37,7 +37,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.2 2008/04/17 07:30:27 jasper Exp $
      print STDERR "\n\n**** ERROR: You must upgrade your perl IO module to at least\n**** ERROR: version 1.2301 or MailScanner will not work!\n\n";
      $error = 1;
    }
-@@ -235,7 +234,7 @@ if ($WantLintOnly) {
+@@ -238,7 +237,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
  # Find the mailscanner.conf file, with a default just in case.
  my $ConfFile = $ARGV[0];
  # Use the default if we couldn't find theirs. Will save a lot of grief.
@@ -46,7 +46,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.2 2008/04/17 07:30:27 jasper Exp $
                                                         !(-f $ConfFile);
  
  # Check the MailScanner version number against what is in MailScanner.conf
-@@ -280,7 +279,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
+@@ -283,7 +282,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
  Currently you are using no virus scanners.
  This is probably not what you want.
  

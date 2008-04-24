@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/17 07:30:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/04/24 21:31:00 todd Exp $
 
 COMMENT=	virus/spam scanning framework
 
-V=		4.66
-Vs=		5
-Vss=		${Vs}-3
+V=		4.68
+Vs=		8
+Vss=		${Vs}-1
 CATEGORIES=	mail
 MASTER_SITES=	http://mailscanner.info/files/4/tar/
 DISTNAME=       mailscanner-${V}.${Vss}
-PKGNAME=	mailscanner-${V}.${Vss:S/-/./}p1
+PKGNAME=	mailscanner-${V}.${Vss:S/-/./}
 DISTFILES=	MailScanner-install-${V}.${Vss}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/MailScanner-${V}.${Vss}
 
@@ -18,7 +18,6 @@ MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 RUN_DEPENDS+=	::databases/p5-DBI \
 		::archivers/p5-Archive-Zip \
-		::archivers/p5-Compress-Zlib \
 		::mail/p5-MIME-tools \
 		::net/p5-Net-CIDR \
 		::net/p5-Sys-Hostname-Long \
@@ -32,7 +31,7 @@ RUN_DEPENDS+=	::databases/p5-DBI \
 		::archivers/zoo \
 		::net/wget
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -46,8 +45,8 @@ post-extract:
 
 do-install:	install_libexec install_etc install_share install_lib install_bin
 
-BINS=	MailScanner df2mbox d2mbox update_phishing_sites check_mailscanner
-BINS+=	clean.quarantine clean.SA.cache analyse_SpamAssassin_cache
+BINS=	MailScanner df2mbox d2mbox update_bad_phishing_sites update_phishing_sites
+BINS+=	check_mailscanner clean.quarantine clean.SA.cache analyse_SpamAssassin_cache
 
 _MS_sed_frag= _subst() { sed 's,%PREFIX%,${LOCALBASE},g;s,%SYSCONFDIR%,${SYSCONFDIR},g' \
 		"$$2" > ${WRKDIST}/file; \

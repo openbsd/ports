@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_MailScanner_CustomConfig_pm,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- lib/MailScanner/CustomConfig.pm.orig	Mon Mar 20 17:48:20 2006
-+++ lib/MailScanner/CustomConfig.pm	Mon Mar 20 17:48:20 2006
-@@ -1675,7 +1675,7 @@ __DATA__
+$OpenBSD: patch-lib_MailScanner_CustomConfig_pm,v 1.2 2008/04/24 21:31:00 todd Exp $
+--- lib/MailScanner/CustomConfig.pm.orig	Mon Mar 24 09:07:46 2008
++++ lib/MailScanner/CustomConfig.pm	Fri Apr  4 01:05:04 2008
+@@ -1674,7 +1674,7 @@ __DATA__
  #      SO17 1BJ
  #      United Kingdom
  #

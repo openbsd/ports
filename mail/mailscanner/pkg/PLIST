@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/24 21:31:00 todd Exp $
 bin/MailScanner
 bin/analyse_SpamAssassin_cache
 bin/check_mailscanner
@@ -6,6 +6,7 @@ bin/clean.SA.cache
 bin/clean.quarantine
 bin/d2mbox
 bin/df2mbox
+bin/update_bad_phishing_sites
 bin/update_phishing_sites
 lib/MailScanner/
 @sample /var/spool/MailScanner/
@@ -55,7 +56,6 @@ lib/MailScanner/MailScanner/TNEF.pm
 lib/MailScanner/MailScanner/WorkArea.pm
 lib/MailScanner/MailScanner/ZMDiskStore.pm
 lib/MailScanner/MailScanner/ZMailer.pm
-lib/MailScanner/MailScanner/notes.txt
 libexec/MailScanner/
 libexec/MailScanner/MailScanner
 share/MailScanner/
@@ -101,6 +101,10 @@ share/examples/MailScanner/libexec/css-wrapper.sample
 @sample libexec/MailScanner/css-wrapper
 share/examples/MailScanner/libexec/drweb-wrapper.sample
 @sample libexec/MailScanner/drweb-wrapper
+share/examples/MailScanner/libexec/esets-autoupdate.sample
+@sample libexec/MailScanner/esets-autoupdate
+share/examples/MailScanner/libexec/esets-wrapper.sample
+@sample libexec/MailScanner/esets-wrapper
 share/examples/MailScanner/libexec/etrust-autoupdate.sample
 @sample libexec/MailScanner/etrust-autoupdate
 share/examples/MailScanner/libexec/etrust-wrapper.sample

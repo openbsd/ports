@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_symscanengine-autoupdate,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- lib/symscanengine-autoupdate.orig	Wed May 30 12:30:32 2007
-+++ lib/symscanengine-autoupdate	Sun Aug  5 04:03:26 2007
+$OpenBSD: patch-lib_symscanengine-autoupdate,v 1.2 2008/04/24 21:31:00 todd Exp $
+--- lib/symscanengine-autoupdate.orig	Sat Mar  1 20:36:16 2008
++++ lib/symscanengine-autoupdate	Tue Mar 18 14:16:39 2008
 @@ -2,7 +2,7 @@
   
  use Sys::Syslog;
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_symscanengine-autoupdate,v 1.1.1.1 2008/02/20 03:47:18 todd 
   
  $LockFile = "/tmp/SymScanEngineBusy.lock";
   
-@@ -20,7 +20,7 @@ BailOut("Installation dir \"$PackageDir\" does not exi
+@@ -30,7 +30,7 @@ BailOut("Installation dir \"$PackageDir\" does not exi
   
  # Need to add code to dymanically locate the java binary
  # SuSE has some info in /etc/java, is this a standard location for info?
