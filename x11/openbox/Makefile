@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2008/04/17 10:57:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2008/04/24 14:24:06 ajacoutot Exp $
 
 COMMENT=	small, fast & usable window manager
 
-DISTNAME=	openbox-3.4.7.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	openbox-3.4.7.2
 SHARED_LIBS+=	obparser	8.0 # .21.2
 SHARED_LIBS+=	obrender	8.0 # .21.2
 CATEGORIES=	x11
@@ -27,7 +26,6 @@ WANTLIB=	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
 MODULES=	devel/gettext \
 		lang/python
 
-BUILD_DEPENDS=	::textproc/docbook-to-man
 LIB_DEPENDS+=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
 		xml2.>=6::textproc/libxml \
 		startup-notification-1.>=1::devel/startup-notification
@@ -52,11 +50,5 @@ pre-configure:
 		${WRKSRC}/data/autostart.sh.in
 	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
 		${WRKSRC}/tools/xdg-autostart/xdg-autostart
-
-pre-build:
-.for i in openbox-gnome-session.1 openbox-kde-session.1 openbox-session.1 openbox.1
-	${LOCALBASE}/bin/docbook-to-man \
-		${WRKSRC}/doc/${i}.sgml > ${WRKSRC}/doc/${i}.in
-.endfor
 
 .include <bsd.port.mk>
