@@ -1,0 +1,27 @@
+$OpenBSD: patch-xpdf_XRef_cc,v 1.4 2008/04/25 19:19:05 deanna Exp $
+--- xpdf/XRef.cc.orig	Thu Apr 24 19:13:00 2008
++++ xpdf/XRef.cc	Thu Apr 24 19:50:06 2008
+@@ -771,19 +771,19 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
+ }
+ 
+ GBool XRef::okToPrint(GBool ignoreOwnerPW) {
+-  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permPrint);
++  return (1);
+ }
+ 
+ GBool XRef::okToChange(GBool ignoreOwnerPW) {
+-  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permChange);
++  return (1);
+ }
+ 
+ GBool XRef::okToCopy(GBool ignoreOwnerPW) {
+-  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permCopy);
++  return (1);
+ }
+ 
+ GBool XRef::okToAddNotes(GBool ignoreOwnerPW) {
+-  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permNotes);
++  return (1);
+ }
+ 
+ Object *XRef::fetch(int num, int gen, Object *obj) {
