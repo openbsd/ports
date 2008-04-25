@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/25 14:10:46 deanna Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/25 19:33:05 deanna Exp $
 
 COMMENT=	Tool Command Language
 
 VERSION=	8.5.2
 
 DISTNAME=	tcl${VERSION}
-PKGNAME=	tcl-${VERSION}
+PKGNAME=	tcl-${VERSION}p0
 SHARED_LIBS=	tcl85 0.0
 CATEGORIES=	lang lang/tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES=	tcl${VERSION}-src.tar.gz
 WANTLIB=	c m
 
-MAINTAINER=	Stuart Cassoff <aa72aa60@sympatico.ca>
+MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 HOMEPAGE=	http://www.tcl.tk/
 
 # BSD

@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/25 19:34:21 deanna Exp $
 
 COMMENT=	graphical toolkit for Tcl
 
 VERSION=	8.5.2
 
 DISTNAME=	tk${VERSION}
-PKGNAME=	tk-${VERSION}
+PKGNAME=	tk-${VERSION}p0
 SHARED_LIBS=	tk85 0.0
 CATEGORIES=	x11 x11/tk
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES=	tk${VERSION}-src.tar.gz
 WANTLIB=	X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig freetype m z
 
-MAINTAINER=	Stuart Cassoff <aa72aa60@sympatico.ca>
+MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 HOMEPAGE=	http://www.tcl.tk/
 
 # BSD 
