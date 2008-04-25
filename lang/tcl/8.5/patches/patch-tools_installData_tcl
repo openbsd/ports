@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_installData_tcl,v 1.1.1.1 2008/04/25 14:10:47 deanna Exp $
+--- tools/installData.tcl.orig	Mon Mar 24 01:13:42 2008
++++ tools/installData.tcl	Mon Mar 24 01:13:54 2008
+@@ -35,7 +35,7 @@ proc copyDir { d1 d2 } {
+ 	} elseif { [file isfile $f] } {
+ 	    file copy -force $f [file join $d2 $ftail]
+ 	    if { $::tcl_platform(platform) eq {unix} } {
+-		file attributes [file join $d2 $ftail] -permissions 0644
++		file attributes [file join $d2 $ftail] -permissions 0444
+ 	    } else {
+ 		file attributes [file join $d2 $ftail] -readonly 1
+ 	    }
