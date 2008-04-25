@@ -1,0 +1,261 @@
+$OpenBSD: patch-xonix_c,v 1.1 2008/04/25 22:39:36 miod Exp $
+--- xonix.c.orig	Thu Sep 14 11:52:10 1995
++++ xonix.c	Sat Feb  9 16:39:07 2008
+@@ -97,6 +97,7 @@ Boolean HorizontalBounceCheck (int x, int y, int size,
+ 							   unsigned char *bouncePartner);
+ Boolean VerticalBounceCheck (int x, int y, int size, 
+ 							 unsigned char *bouncePartner);
++void InitialEaterPosition (int);
+ 
+ /* ------------------------------------------------------------------------ */
+ /* Do_New startet ein komplett neues Spiel                                  */
+@@ -199,7 +200,44 @@ void NewRunner (void)
+     return;
+ }  
+ 
++/*
++ * Sets the initial position and direction of a given eater.
++ */
++void InitialEaterPosition (int eater)
++{
++	gEater[eater].sx = EATER_SIZE;
++	gEater[eater].sy = EATER_SIZE;
++	gEater[eater].dx = 1;
++	gEater[eater].dy = 1;
+ 
++	switch (eater % 4)				/* Anfangsrichtung der Fresser	*/
++	{
++		case 0: 
++			gEater[eater].x = H_STEPS - RATIO;
++			gEater[eater].y = V_STEPS - RATIO - 1 - eater * 4;
++			break;
++
++		case 1: 
++			gEater[eater].x = H_STEPS - RATIO - eater * 4;
++			gEater[eater].y = V_STEPS - RATIO;
++			gEater[eater].dy *= -1;
++			break;
++
++		case 2: 
++			gEater[eater].x = H_STEPS - RATIO - eater * 4;
++			gEater[eater].y = 0;
++			gEater[eater].dx *= -1;
++			break;
++
++		case 3: 
++			gEater[eater].x = 0;
++			gEater[eater].y = V_STEPS - RATIO;
++			gEater[eater].dx *= -1;
++			gEater[eater].dy *= -1;
++			break;
++	}
++}
++
+ /* ------------------------------------------------------------------------ */
+ /* NewEater erzeugt einen neuen Fresser im Rahmenbereich und traegt ihn in 	*/
+ /* das Statusfeld ein											            */
+@@ -209,37 +247,8 @@ void NewEater (void)
+ {
+ 	if (gEaterCount < MAX_EATER)
+ 	{
+-    	gEater[gEaterCount].sx = EATER_SIZE;
+-    	gEater[gEaterCount].sy = EATER_SIZE;
+-    	gEater[gEaterCount].dx = 1;
+-    	gEater[gEaterCount].dy = 1;
++		InitialEaterPosition (gEaterCount);
+ 
+-    	switch (gEaterCount % 4)			/* Anfangsrichtung der Fresser	*/
+-    	{
+-			case 0: 
+-				gEater[gEaterCount].x = H_STEPS - RATIO;
+-				gEater[gEaterCount].y = V_STEPS - RATIO - 1 - gEaterCount * 4;
+-				break;
+-
+-        	case 1: 
+-				gEater[gEaterCount].x = H_STEPS - RATIO - gEaterCount * 4;
+-                gEater[gEaterCount].y = V_STEPS - RATIO;
+-				gEater[gEaterCount].dy *= -1;
+-                break;
+-
+-        	case 2: 
+-				gEater[gEaterCount].x = H_STEPS - RATIO - gEaterCount * 4;
+-                gEater[gEaterCount].y = 0;
+-				gEater[gEaterCount].dx *= -1;
+-                break;
+-
+-        	case 3: 
+-				gEater[gEaterCount].x = 0;
+-                gEater[gEaterCount].y = V_STEPS - RATIO;
+-				gEater[gEaterCount].dx *= -1;
+-                gEater[gEaterCount].dy *= -1;
+-                break;
+-    	}
+ 		/* Fresser in Statusfeld eintragen */
+ 
+     	*(gMyStatusArea
+@@ -1092,7 +1101,7 @@ void FillNewArea (void)
+ /* Spielfigur angeknabbert, wird TRUE zurueckgegeben.                    	*/
+ /* ------------------------------------------------------------------------ */
+ 
+-Boolean NewEaterPosition (void)
++Boolean NewEaterPosition (Boolean reset)
+ {
+ 	int	i, j;
+ 	int nextX, nextY;
+@@ -1102,68 +1111,72 @@ Boolean NewEaterPosition (void)
+ 	GWorldEntry ();
+ 
+ 	returnFlag = FALSE;
+-	hbFlag = FALSE;
+-	vbFlag = FALSE;
+ 
+-	for (i = 0; i < gEaterCount; i ++)
++	if (reset == FALSE)
+ 	{
+-		nextX = gEater[i].x + gEater[i].dx;
+-		nextY = gEater[i].y + gEater[i].dy;
++		hbFlag = FALSE;
++		vbFlag = FALSE;
+ 
+-		if ((nextX >= 0) && (nextX < H_STEPS))	/* Alles bleibt im Rahmen	*/
++		for (i = 0; i < gEaterCount; i ++)
+ 		{
+-			if ((bouncePartner = *(gMyStatusArea + gEater[i].y * H_STEPS +
+-				nextX)) != (unsigned char) FILLED)	/* Bumm !!!				*/
++			nextX = gEater[i].x + gEater[i].dx;
++			nextY = gEater[i].y + gEater[i].dy;
++
++			if ((nextX >= 0) && (nextX < H_STEPS))	/* Alles bleibt im Rahmen */
+ 			{
+-				if ((bouncePartner & (unsigned char) RUNNER) == 
+-										(unsigned char) RUNNER)	/* Aetsch !	*/
++				if ((bouncePartner = *(gMyStatusArea + gEater[i].y * H_STEPS +
++					nextX)) != (unsigned char) FILLED)	/* Bumm !!!			*/
+ 				{
+-					returnFlag = TRUE;
+-				}
++					if ((bouncePartner & (unsigned char) RUNNER) == 
++											(unsigned char) RUNNER)	/* Aetsch !	*/
++					{
++						returnFlag = TRUE;
++					}
+ 
++					hbFlag = TRUE;
++					gEater[i].dx *= -1;
++				}
++			}
++			else							/* Hier darf keiner 'raus		*/
++			{
+ 				hbFlag = TRUE;
+-				gEater[i].dx *= -1;
++				gEater[i].dx *= -1;			/* Wende !!!					*/
+ 			}
+-		}
+-		else								/* Hier darf keiner 'raus		*/
+-		{
+-			hbFlag = TRUE;
+-			gEater[i].dx *= -1;				/* Wende !!!					*/
+-		}
+ 
+-        if ((nextY >= 0) && (nextY < V_STEPS)) 	/* Alles bleibt im Rahmen   */
+-        {   
+-            if ((bouncePartner = *(gMyStatusArea + nextY * H_STEPS +
+-                gEater[i].x)) != (unsigned char) FILLED)  		/* Bumm !   */
+-            {
+-				if ((bouncePartner & (unsigned char) RUNNER) == 
+-										(unsigned char) RUNNER)	/* Aetsch !	*/
+-                {
+-                    returnFlag = TRUE;
+-                }
++	        if ((nextY >= 0) && (nextY < V_STEPS)) 	/* Alles bleibt im Rahmen */
++			{   
++				if ((bouncePartner = *(gMyStatusArea + nextY * H_STEPS +
++					gEater[i].x)) != (unsigned char) FILLED)  	/* Bumm !   */
++				{
++					if ((bouncePartner & (unsigned char) RUNNER) == 
++											(unsigned char) RUNNER)	/* Aetsch !	*/
++					{
++						returnFlag = TRUE;
++					}
+             
+-                vbFlag = TRUE;
+-                gEater[i].dy *= -1;         
+-            }
+-        }
+-        else                                /* Hier darf keiner 'raus       */
+-        {
+-            vbFlag = TRUE;
+-            gEater[i].dy *= -1;             /* Wende !!!                    */
+-        }
++					vbFlag = TRUE;
++					gEater[i].dy *= -1;         
++				}
++			}
++			else							/* Hier darf keiner 'raus       */
++			{
++				vbFlag = TRUE;
++				gEater[i].dy *= -1;			/* Wende !!!                    */
++			}
+ 
+-		if ((vbFlag == FALSE) && (hbFlag == FALSE))	/* evtl. nur diagonal	*/
+-		{
+-			if ((bouncePartner = *(gMyStatusArea + nextY * H_STEPS +
+-                nextX)) != (unsigned char) FILLED)        		/* Bumm !   */
++			if ((vbFlag == FALSE) && (hbFlag == FALSE))	/* evtl. nur diagonal	*/
+ 			{
+-				gEater[i].dx *= -1;
+-				gEater[i].dy *= -1;
++				if ((bouncePartner = *(gMyStatusArea + nextY * H_STEPS +
++					nextX)) != (unsigned char) FILLED)        	/* Bumm !   */
++				{
++					gEater[i].dx *= -1;
++					gEater[i].dy *= -1;
+ 
+-				if ((bouncePartner & (unsigned char) RUNNER) == 
++					if ((bouncePartner & (unsigned char) RUNNER) == 
+ 										(unsigned char) RUNNER)	/* Aetsch !	*/
+-				{
+-					returnFlag = TRUE;
++					{
++						returnFlag = TRUE;
++					}
+ 				}
+ 			}
+ 		}
+@@ -1180,8 +1193,15 @@ Boolean NewEaterPosition (void)
+ 
+ 		UnsetEaterToStatus (gEater[i].x, gEater[i].y);
+ 
+-		gEater[i].x += gEater[i].dx;
+-		gEater[i].y += gEater[i].dy;
++		if (reset == TRUE)
++		{
++			InitialEaterPosition (i);
++		}
++		else
++		{
++			gEater[i].x += gEater[i].dx;
++			gEater[i].y += gEater[i].dy;
++		}
+ 
+ 		SetEaterToStatus (gEater[i].x, gEater[i].y);
+ 
+@@ -1247,6 +1267,7 @@ void GetNewPlayer (void)
+ 	else
+ 	{
+ 		NewRunner ();
++		NewEaterPosition (TRUE);	/* reset eater position */
+     
+ 		BELL ();
+ 	}
+@@ -1435,8 +1456,8 @@ void Animate (void) 
+ 
+ 		default:
+ 
+-    		if (NewEaterPosition () == TRUE)/* Spielfigur von Fresser "ange-*/
+-    		{                               /* knabbert"                    */
++    		if (NewEaterPosition (FALSE) == TRUE) /* Spielfigur von Fresser  */
++    		{                               /* "angeknabbert"                */
+         		GetNewPlayer ();
+     		}
+     		else if (NewFlyerPosition () == TRUE) /* Spur der Spielfigur von*/

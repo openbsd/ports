@@ -1,0 +1,17 @@
+$OpenBSD: patch-xonix_h,v 1.1 2008/04/25 22:39:36 miod Exp $
+--- xonix.h.orig	Fri Sep  8 09:51:30 1995
++++ xonix.h	Sat Feb  9 13:59:09 2008
+@@ -288,11 +288,11 @@ extern void ShowHighScore (void);
+ 
+ #endif /* USE_X11 */
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ #define rand() random()
+ #define srand(x) srandom(x)
+ 
+-#endif /* __FreeBSD */
++#endif /* __FreeBSD__ || __OpenBSD__ */
+ 
+ #endif /* XONIX_H */
