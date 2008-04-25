@@ -1,0 +1,13 @@
+$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.1 2008/04/25 04:15:34 ckuethe Exp $
+--- libpurple/protocols/silc/silc.c.orig	Thu Apr 24 16:36:05 2008
++++ libpurple/protocols/silc/silc.c	Thu Apr 24 16:36:56 2008
+@@ -601,8 +601,7 @@ silcpurple_close(PurpleConnection *gc)
+ 
+ 	/* Send QUIT */
+ 	silc_client_command_call(sg->client, sg->conn, NULL,
+-				 "QUIT", "Download Pidgin: " PURPLE_WEBSITE,
+-				 NULL);
++				 "QUIT", NULL);
+ 
+ 	if (sg->conn)
+ 		silc_client_close_connection(sg->client, sg->conn);
