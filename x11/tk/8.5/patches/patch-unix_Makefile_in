@@ -1,0 +1,190 @@
+$OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
+--- unix/Makefile.in.orig	Fri Mar 28 14:46:36 2008
++++ unix/Makefile.in	Thu Apr 17 11:07:46 2008
+@@ -241,6 +241,8 @@ TK_LIB_FILE		= @TK_LIB_FILE@
+ # Generic lib name used in rules that apply to tcl and tk
+ LIB_FILE		= ${TK_LIB_FILE}
+ 
++STATIC_LIB_FILE		= libtk${MAJOR_VERSION}${MINOR_VERSION}.a
++
+ TK_LIB_FLAG		= @TK_LIB_FLAG@
+ #TK_LIB_FLAG		= -ltk
+ 
+@@ -547,8 +549,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
+ 
+ # The private headers we want installed for install-private-headers
+ PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
+-	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
+-	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
++	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h
+ 
+ DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
+ 
+@@ -560,7 +561,7 @@ SHELL_ENV = \
+ 
+ all: binaries libraries doc
+ 
+-binaries: ${LIB_FILE} ${STUB_LIB_FILE} wish
++binaries: ${LIB_FILE} ${STUB_LIB_FILE} ${STATIC_LIB_FILE} wish
+ 
+ libraries:
+ 
+@@ -580,6 +581,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	rm -f $@
+ 	@MAKE_STUB_LIB@
+ 
++${STATIC_LIB_FILE}: ${OBJS}
++	rm -f $@
++	${STLIB_LD} $@ ${OBJS} ; ${RANLIB} $@
++
+ # Build Aqua resource files
+ ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
+ 	rm -f $@
+@@ -635,7 +640,6 @@ xttest: test.o tkTest.o tkSquare.o $(TK_LIB_FILE)
+ #	% make test TESTFLAGS="-verbose bps -file fileName.test"
+ 
+ test: test-classic test-ttk
+-	@
+ 
+ test-classic: tktest
+ 	$(SHELL_ENV) ./tktest $(TEST_DIR)/all.tcl -geometry +0+0 $(TESTFLAGS)
+@@ -674,7 +678,7 @@ gdb: wish
+ 	gdb ./wish --command=gdb.run
+ 	rm gdb.run
+ 
+-INSTALL_TARGETS = install-binaries install-libraries install-demos install-doc @EXTRA_INSTALL@
++INSTALL_TARGETS = install-binaries install-libraries install-demos install-doc @EXTRA_INSTALL@ print-msg-install
+ 
+ install: $(INSTALL_TARGETS)
+ 
+@@ -688,12 +692,11 @@ install-strip:
+ # possible (e.g. if installing as root).
+ 
+ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
+-	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" "$(PKG_INSTALL_DIR)"; \
++	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" "$(PKG_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)"; \
+ 	    do \
+ 	    if [ ! -d "$$i" ] ; then \
+ 		echo "Making directory $$i"; \
+-		mkdir -p "$$i"; \
+-		chmod 755 "$$i"; \
++		$(INSTALL_DATA_DIR) $$i; \
+ 		else true; \
+ 		fi; \
+ 	    done;
+@@ -710,10 +713,13 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+ 	    echo "package ifneeded Tk $(MAJOR_VERSION).$(MINOR_VERSION)$(PATCH_LEVEL)\
+ 		[list load [file join \$$dir $${relative}$(TK_LIB_FILE)] Tk]";\
+ 	    ) > "$(PKG_INDEX)"; \
++	    chmod 444 "$(PKG_INDEX)"; \
+ 	    fi
+ 	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
+ 	@@INSTALL_LIB@
+-	@chmod 555 "$(LIB_INSTALL_DIR)"/$(LIB_FILE)
++	@echo "Installing $(STATIC_LIB_FILE) to $(LIB_INSTALL_DIR)/"
++	@$(INSTALL_DATA) $(STATIC_LIB_FILE) "$(LIB_INSTALL_DIR)"/$(STATIC_LIB_FILE); \
++		(cd "$(LIB_INSTALL_DIR)" ; $(RANLIB) $(STATIC_LIB_FILE))
+ 	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
+ 	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
+ 	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
+@@ -721,8 +727,8 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+ 	    fi
+ 	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
+ 	@$(INSTALL_PROGRAM) wish "$(BIN_INSTALL_DIR)"/wish$(VERSION)
+-	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
+-	@$(INSTALL_DATA) tkConfig.sh "$(LIB_INSTALL_DIR)"/tkConfig.sh
++	@echo "Installing tkConfig.sh to $(SCRIPT_INSTALL_DIR)/"
++	@$(INSTALL_DATA) tkConfig.sh "$(SCRIPT_INSTALL_DIR)"/tkConfig.sh
+ 	@if test "$(STUB_LIB_FILE)" != "" ; then \
+ 	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
+ 	    @INSTALL_STUB_LIB@ ; \
+@@ -733,13 +739,14 @@ install-libraries: libraries
+ 	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
+ 	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
+ 	for i in "$(INCLUDE_INSTALL_DIR)" "$${XLIB_INCLUDE_INSTALL_DIR}" \
++		"$(INCLUDE_INSTALL_DIR)"/generic "$(INCLUDE_INSTALL_DIR)"/generic/ttk \
++		"$(INCLUDE_INSTALL_DIR)"/unix \
+ 		"$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)"/images \
+ 		"$(SCRIPT_INSTALL_DIR)"/msgs "$(SCRIPT_INSTALL_DIR)"/ttk; \
+ 	    do \
+ 	    if [ -n "$$i" -a ! -d "$$i" ] ; then \
+ 		echo "Making directory $$i"; \
+-		mkdir -p "$$i"; \
+-		chmod 755 "$$i"; \
++		$(INSTALL_DATA_DIR) $$i; \
+ 		else true; \
+ 		fi; \
+ 	    done;
+@@ -750,7 +757,20 @@ install-libraries: libraries
+ 	@for i in $(PUBLIC_HDRS); \
+ 	    do \
+ 	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
++	    cd "$(INCLUDE_INSTALL_DIR)"/generic && ln -sf ../`basename $$i` ./`basename $$i`; \
+ 	    done;
++	@for i in $(PRIVATE_HDRS); \
++	    do \
++	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/generic; \
++	    done;
++	@for i in $(TTK_HDRS); \
++	    do \
++	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/generic/ttk; \
++	    done;
++	@for i in $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS); \
++	    do \
++	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/unix; \
++	    done;
+ 	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
+ 	    do \
+ 	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/X11; \
+@@ -790,8 +810,7 @@ install-demos:
+ 	    do \
+ 	    if [ ! -d "$$i" ] ; then \
+ 		echo "Making directory $$i"; \
+-		mkdir -p "$$i"; \
+-		chmod 755 "$$i"; \
++		$(INSTALL_DATA_DIR) $$i; \
+ 		else true; \
+ 		fi; \
+ 	    done;
+@@ -801,11 +820,12 @@ install-demos:
+ 	    if [ -f $$i ] ; then \
+ 		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
+ 			$$i > "$(SCRIPT_INSTALL_DIR)"/demos/`basename $$i`; \
++		chmod 444 "$(SCRIPT_INSTALL_DIR)"/demos/`basename $$i`; \
+ 	    fi; \
+ 	    done;
+ 	@for i in $(DEMOPROGS); \
+ 	    do \
+-	    chmod 755 "$(SCRIPT_INSTALL_DIR)"/demos/$$i; \
++	    chmod 555 "$(SCRIPT_INSTALL_DIR)"/demos/$$i; \
+ 	    done;
+ 	@echo "Installing demo images";
+ 	@for i in $(TOP_DIR)/library/demos/images/*; \
+@@ -823,8 +843,7 @@ install-doc:
+ 	    do \
+ 	    if [ ! -d "$$i" ] ; then \
+ 		echo "Making directory $$i"; \
+-		mkdir -p "$$i"; \
+-		chmod 755 "$$i"; \
++		$(INSTALL_DATA_DIR) $$i; \
+ 		else true; \
+ 		fi; \
+ 	    done;
+@@ -865,6 +884,17 @@ install-private-headers: libraries
+ 	@if test -f tkConfig.h; then\
+ 	    $(INSTALL_DATA) tkConfig.h "$(PRIVATE_INCLUDE_INSTALL_DIR)"; \
+ 	    fi;
++
++print-msg-install:
++	@echo "**********"
++	@echo "IMPORTANT:"
++	@echo "**********"
++	@echo "tkConfig.sh     in $(TK_LIBRARY)/tkConfig.sh"
++	@echo "tk.h            in $(includedir)/tk.h"
++	@echo "tkDecls.h       in $(includedir)/tkDecls.h"
++	@echo "tkPlatDecls.h   in $(includedir)/tkPlatDecls.h"
++	@echo "These are NOT in the default place, but in a good place to avoid"
++	@echo "conflicting with another version of Tcl/Tk."
+ 
+ Makefile: $(UNIX_DIR)/Makefile.in
+ 	$(SHELL) config.status
