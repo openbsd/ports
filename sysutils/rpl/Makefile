@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/20 21:26:36 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/25 18:19:09 merdely Exp $
 
 COMMENT =		replace strings with new strings in multiple text files
 
-DISTNAME =		rpl-1.4.0
+DISTNAME =		rpl-1.4.1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.laffeycomputer.com/rpl.html
