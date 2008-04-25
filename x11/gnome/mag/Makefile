@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/17 19:02:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/25 16:37:17 jasper Exp $
 
 COMMENT=		screen magnifier for the GNOME desktop
 
 GNOME_PROJECT=		gnome-mag
 GNOME_VERSION=		0.14.10
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	gnome-mag            0.0      # .4.10
 CATEGORIES=		sysutils
 
@@ -38,6 +39,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+MAKE_ENV+=		DOXYGEN_ENCODE_PATH_STRIP="${WRKSRC}"
 
 pre-configure:
 	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g;' \
