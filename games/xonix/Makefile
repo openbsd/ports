@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2007/11/13 14:54:32 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2008/04/25 13:54:27 deanna Exp $
 
 COMMENT=	win land without colliding with 'flyers' and 'eaters'
 
 DISTNAME=	xonix-1.4
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
@@ -18,5 +18,9 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xp Xpm Xt c m
 CONFIGURE_STYLE=imake
 USE_X11=	Yes
 NO_REGRESS=	Yes
+
+post-install:
+		${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xonix
+		${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/xonix/xonix.scores
 
 .include <bsd.port.mk>

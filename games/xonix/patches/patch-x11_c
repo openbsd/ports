@@ -1,0 +1,14 @@
+$OpenBSD: patch-x11_c,v 1.1 2008/04/25 13:54:27 deanna Exp $
+--- x11.c.orig	Fri Apr 18 17:45:06 2008
++++ x11.c	Fri Apr 18 17:45:55 2008
+@@ -52,8 +52,8 @@
+ #ifdef __unix
+ 
+ #define MAXSCORES 10		/* number of entries in high score table */
+-#define PATH_HIGHSCORE XONIXDIR "/scores"
+-#define PATH_TEMPSCORE XONIXDIR "/score_tmp"
++#define PATH_HIGHSCORE "/var/games/xonix/xonix.scores"
++#define PATH_TEMPSCORE "/var/games/xonix/xonix.score_tmp"
+ 
+ #if defined(__unix) && !defined PATH_RMAIL
+ #define PATH_RMAIL "rmail"	/* rely on the $PATH */
