@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/19 21:57:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/04/26 09:31:57 bernd Exp $
+
+# It's intended that this list isn't sorted alphabetically.
+# Please keep it that way. Thanks.
 
     SUBDIR += core
     SUBDIR += action-args
@@ -11,5 +14,7 @@
     SUBDIR += cache
     SUBDIR += more
     SUBDIR += merb
+    SUBDIR += activerecord
+    SUBDIR += helpers
 
 .include <bsd.port.subdir.mk>
