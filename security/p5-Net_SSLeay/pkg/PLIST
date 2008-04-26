@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/01/27 03:27:04 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/04/26 16:37:34 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/SSLeay/
 ${P5ARCH}/Net/SSLeay.pm
 ${P5ARCH}/Net/SSLeay/Handle.pm
-${P5ARCH}/Net/ptrtstrun.pl
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/SSLeay/

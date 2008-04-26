@@ -1,4 +1,4 @@
 This module offers some high level convenience functions for accessing
 web pages on SSL servers, a sslcat() function for writing your own
-clients, and finally access to the SSL api of SSLeay package so you can
-write servers or clients for more complicated applications.
+clients, and finally access to the SSL api of SSLeay/OpenSSL package
+so you can write servers or clients for more complicated applications.

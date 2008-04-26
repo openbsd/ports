@@ -1,23 +1,27 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2008/04/26 16:37:33 bluhm Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	perl module for using OpenSSL
+COMMENT=		perl module for using OpenSSL
 
-MODULES=	cpan
-VERSION=	1.30
-DISTNAME=	Net_SSLeay.pm-${VERSION}
-PKGNAME=	p5-Net-SSLeay-${VERSION}p0
-CATEGORIES=	security
+DISTNAME=		Net-SSLeay-1.32
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
+CATEGORIES=		security
 
 # same terms as OpenSSL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		crypto ssl
+
+WANTLIB=		crypto ssl z
+
+MODULES=		cpan
+REGRESS_DEPENDS=	::devel/p5-Test-Exception \
+			::devel/p5-Test-Warn \
+			::devel/p5-Test-NoWarnings \
+			::devel/p5-Test-Pod \
+			::devel/p5-Test-Pod-Coverage
 
 PLDIR=	${PREFIX}/share/examples/p5-Net-SSLeay
 SRCDIR=	${WRKSRC}/examples

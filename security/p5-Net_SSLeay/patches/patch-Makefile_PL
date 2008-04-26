@@ -1,12 +1,15 @@
-$OpenBSD: patch-Makefile_PL,v 1.4 2006/01/21 18:02:56 sturm Exp $
---- Makefile.PL.orig	Sun Aug 17 09:12:55 2003
-+++ Makefile.PL	Sat Jan 21 18:57:39 2006
-@@ -46,7 +46,7 @@ $openssl_path = '/opt/ssl' if -x '/opt/s
-     || -x '/opt/ssl/sbin/openssl';
- $openssl_path = '/usr/local/ssl' if -x '/usr/local/ssl/bin/openssl';
- $openssl_path = '/apps/openssl/std' if -x '/apps/openssl/std/bin/openssl';
--$openssl_path = shift if @ARGV && $ARGV[0] ne '--';
-+#$openssl_path = shift if @ARGV && $ARGV[0] ne '--';
+$OpenBSD: patch-Makefile_PL,v 1.5 2008/04/26 16:37:33 bluhm Exp $
+--- Makefile.PL.orig	Sat Jul 14 22:01:26 2007
++++ Makefile.PL	Mon Apr 21 21:26:26 2008
+@@ -10,11 +10,6 @@ all_from('lib/Net/SSLeay.pm');
  
- shift if $ARGV[0] eq '--';   # Rest of args are for MakeMaker
+ ssleay();
  
+-build_requires('Sub::Uplevel');
+-build_requires('Test::Exception');
+-build_requires('Array::Compare');
+-build_requires('Tree::DAG_Node');
+-build_requires('Test::Warn');
+ requires('MIME::Base64');
+ 
+ clean_files(map { fixpath($_) } qw(
