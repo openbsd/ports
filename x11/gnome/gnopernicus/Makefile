@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/04/26 11:14:58 ajacoutot Exp $
 
 COMMENT=		screen reader and magnifier for GNOME desktop
 
 GNOME_PROJECT=		gnopernicus
 GNOME_VERSION=		1.1.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=  srutil               0.0      # .2.0
 SHARED_LIBS +=  srconf               0.0      # .2.0
 SHARED_LIBS +=  brl                  0.0      # .2.0
@@ -35,14 +35,17 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png \
 		popt pthread spi ssl util xml2 z
 
-BUILD_DEPENDS=		::textproc/scrollkeeper
+BUILD_DEPENDS=		::textproc/scrollkeeper \
+			::x11/gnome/libgail-gnome
 RUN_DEPENDS=		::textproc/scrollkeeper \
-			::x11/gnome/yelp
+			::x11/gnome/libgail-gnome
 LIB_DEPENDS=		gnome-mag::x11/gnome/mag \
 			gnomespeech::x11/gnome/speech
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
+MODGNOME_HELP_FILES=	Yes
+
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnopernicus/ \
