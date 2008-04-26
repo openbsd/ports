@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.595 2008/04/21 19:07:25 eric Exp $
+# $OpenBSD: Makefile,v 1.596 2008/04/26 16:33:44 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -563,6 +563,7 @@
      SUBDIR += p5-capitalization
      SUBDIR += p5-enum
      SUBDIR += p5-libintl
+     SUBDIR += p5-parent
      SUBDIR += p5-prefork
      SUBDIR += p5-version
      SUBDIR += pango
