@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 19:02:17 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/26 10:18:06 bernd Exp $
 bin/install_rubigen_scripts
 bin/ruby_app
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
@@ -451,8 +451,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/app_generators/ruby_app/ruby_app_g
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/app_generators/ruby_app/templates/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/app_generators/ruby_app/templates/README.txt
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/app_generators/ruby_app/templates/Rakefile
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/app_generators/ruby_app/templates/configs/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/app_generators/ruby_app/templates/configs/empty_log
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/app_generators/ruby_app/templates/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/app_generators/ruby_app/templates/lib/module.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/app_generators/ruby_app/templates/test/
@@ -490,8 +488,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rubigen/scripts/update.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rubigen/simple_logger.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rubigen/spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rubigen/version.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/log/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/log/debug.log
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/application_generator/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/application_generator/USAGE
@@ -508,6 +504,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/component_gene
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/component_generator/component_generator_generator.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/component_generator/templates/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/component_generator/templates/generator.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/component_generator/templates/rails_generator.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/component_generator/templates/readme
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/component_generator/templates/test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rubygems_generators/component_generator/templates/test_generator_helper.rb
