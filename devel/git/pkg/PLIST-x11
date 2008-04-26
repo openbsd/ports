@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-x11,v 1.1 2008/04/01 22:36:30 bernd Exp $
+@comment $OpenBSD: PLIST-x11,v 1.2 2008/04/26 09:24:04 bernd Exp $
 @conflict git-<=1.5.4.2p0
 bin/git-citool
 bin/git-gui
@@ -51,6 +51,7 @@ share/git-gui/lib/option.tcl
 share/git-gui/lib/remote.tcl
 share/git-gui/lib/remote_branch_delete.tcl
 share/git-gui/lib/shortcut.tcl
+share/git-gui/lib/spellcheck.tcl
 share/git-gui/lib/status_bar.tcl
 share/git-gui/lib/tclIndex
 share/git-gui/lib/transport.tcl
@@ -60,3 +61,4 @@ share/gitk/
 share/gitk/lib/
 share/gitk/lib/msgs/
 share/gitk/lib/msgs/de.msg
+share/gitk/lib/msgs/it.msg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2008/04/01 22:36:30 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2008/04/26 09:24:04 bernd Exp $
 @pkgpath devel/git
 bin/git
 bin/git-add
@@ -49,7 +49,6 @@ bin/git-gc
 bin/git-get-tar-commit-id
 bin/git-grep
 bin/git-hash-object
-bin/git-help--browse
 bin/git-http-fetch
 bin/git-http-push
 bin/git-imap-send
@@ -134,6 +133,7 @@ bin/git-upload-pack
 bin/git-var
 bin/git-verify-pack
 bin/git-verify-tag
+bin/git-web--browse
 bin/git-whatchanged
 bin/git-write-tree
 lib/libgit.a
@@ -263,6 +263,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @man man/man1/git-var.1
 @man man/man1/git-verify-pack.1
 @man man/man1/git-verify-tag.1
+@man man/man1/git-web--browse.1
 @man man/man1/git-whatchanged.1
 @man man/man1/git-write-tree.1
 @man man/man1/git.1
@@ -308,6 +309,8 @@ share/doc/git/RelNotes-1.5.4.3.txt
 share/doc/git/RelNotes-1.5.4.4.txt
 share/doc/git/RelNotes-1.5.4.5.txt
 share/doc/git/RelNotes-1.5.4.txt
+share/doc/git/RelNotes-1.5.5.1.txt
+share/doc/git/RelNotes-1.5.5.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
@@ -583,6 +586,8 @@ share/doc/git/git-verify-pack.html
 share/doc/git/git-verify-pack.txt
 share/doc/git/git-verify-tag.html
 share/doc/git/git-verify-tag.txt
+share/doc/git/git-web--browse.html
+share/doc/git/git-web--browse.txt
 share/doc/git/git-whatchanged.html
 share/doc/git/git-whatchanged.txt
 share/doc/git/git-write-tree.html
@@ -649,10 +654,12 @@ share/git-core/templates/hooks/applypatch-msg
 share/git-core/templates/hooks/commit-msg
 share/git-core/templates/hooks/post-commit
 share/git-core/templates/hooks/post-receive
+share/git-core/templates/hooks/post-receive-email
 share/git-core/templates/hooks/post-update
 share/git-core/templates/hooks/pre-applypatch
 share/git-core/templates/hooks/pre-commit
 share/git-core/templates/hooks/pre-rebase
+share/git-core/templates/hooks/prepare-commit-msg
 share/git-core/templates/hooks/update
 share/git-core/templates/info/
 share/git-core/templates/info/exclude

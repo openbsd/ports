@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2008/04/01 22:36:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.23 2008/04/26 09:24:04 bernd Exp $
 
 COMMENT-main=		GIT - Tree History Storage Tool
 COMMENT-svn=		GIT - subversion interoperability tools
 COMMENT-x11=		GIT - graphical tools
 
-V=			1.5.4.5
+V=			1.5.5.1
 DISTNAME=		git-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
@@ -85,6 +85,8 @@ post-install:
 	cd ${WRKBUILD}/doc && \
 		pax -rw *.html howto/*.html *.txt howto/*.txt \
 		${PREFIX}/share/doc/git
+	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/post-receive-email \
+		${PREFIX}/share/git-core/templates/hooks
 
 do-regress:
 	cd ${WRKSRC} && ${MAKE_ENV} NO_SVN_TESTS=Yes ${MAKE_PROGRAM} \

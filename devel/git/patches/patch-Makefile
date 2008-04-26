@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Feb 17 09:53:46 2008
-+++ Makefile	Wed Mar 26 23:03:15 2008
-@@ -150,15 +150,15 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
+--- Makefile.orig	Tue Apr  8 09:10:01 2008
++++ Makefile	Thu Apr 10 09:53:51 2008
+@@ -164,15 +164,15 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -19,7 +19,7 @@
  infodir = $(prefix)/share/info
  gitexecdir = $(bindir)
  sharedir = $(prefix)/share
-@@ -170,7 +170,7 @@ else
+@@ -184,7 +184,7 @@ else
  sysconfdir = $(prefix)/etc
  endif
  lib = lib
@@ -28,7 +28,7 @@
  # DESTDIR=
  
  # default configuration for gitweb
-@@ -192,15 +192,15 @@ GITWEB_SITE_FOOTER =
+@@ -206,15 +206,15 @@ GITWEB_SITE_FOOTER =
  
  export prefix bindir gitexecdir sharedir template_dir htmldir sysconfdir
  
@@ -47,8 +47,8 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -469,11 +469,10 @@ ifeq ($(uname_S),FreeBSD)
- 	BASIC_LDFLAGS += -L/usr/local/lib
+@@ -615,11 +615,10 @@ ifeq ($(uname_S),FreeBSD)
+ 	DIR_HAS_BSD_GROUP_SEMANTICS = YesPlease
  endif
  ifeq ($(uname_S),OpenBSD)
 -	NO_STRCASESTR = YesPlease
@@ -61,7 +61,7 @@
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -577,7 +576,7 @@ endif
+@@ -723,7 +722,7 @@ endif
  EXTLIBS += -lz
  
  ifndef NO_OPENSSL
@@ -70,7 +70,7 @@
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -1021,7 +1020,7 @@ all:: $(TEST_PROGRAMS)
+@@ -1187,7 +1186,7 @@ all:: $(TEST_PROGRAMS)
  
  export NO_SVN_TESTS
  
