@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2008/04/25 13:51:36 deanna Exp $
+# $OpenBSD: Makefile,v 1.21 2008/04/27 19:50:10 deanna Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.4
-PKGNAME=	wesnoth-1.4p0
+PKGNAME=	wesnoth-1.4p1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.wesnoth.org/
@@ -40,6 +40,8 @@ USE_X11=	Yes
 FLAVORS=	lite tinygui
 FLAVOR?=
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+
 .if ${FLAVOR:L:Mlite}
 CONFIGURE_ARGS+=--enable-lite
 .endif
@@ -59,7 +61,9 @@ CONFIGURE_ARGS+=--enable-server \
 		--enable-campaign-server \
 		--enable-editor \
 		--with-fifodir=/var/run \
-		--disable-desktop-entry
+		--enable-desktop-entry \
+		--with-desktop-dir=${PREFIX}/share/applications \
+		--with-icondir=${PREFIX}/share/pixmaps
 
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
 

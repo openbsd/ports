@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/04/25 13:51:37 deanna Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/04/27 19:50:10 deanna Exp $
 !%%lite%%
 bin/campaignd
 bin/wesnoth
@@ -77,6 +77,8 @@ man/zh_CN/man6/
 @man man/zh_CN/man6/wesnoth.6
 @man man/zh_CN/man6/wesnoth_editor.6
 @man man/zh_CN/man6/wesnothd.6
+share/applications/wesnoth.desktop
+share/applications/wesnoth_editor.desktop
 share/doc/wesnoth/
 share/doc/wesnoth/manual/
 share/doc/wesnoth/manual/images/
@@ -108,6 +110,9 @@ share/doc/wesnoth/manual/manual.txt
 share/doc/wesnoth/manual/manual.zh_CN.html
 share/doc/wesnoth/manual/styles/
 share/doc/wesnoth/manual/styles/manual.css
+share/pixmaps/
+share/pixmaps/wesnoth-icon.png
+share/pixmaps/wesnoth_editor-icon.png
 share/wesnoth/
 share/wesnoth/data/
 share/wesnoth/data/COPYING.txt
@@ -8143,3 +8148,5 @@ share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-tutorial.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-units.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-utbs.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
