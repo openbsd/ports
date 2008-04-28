@@ -32,7 +32,7 @@
 #define KQEMU_MODE		0660
 #define KQEMU_GID		597
 
-#ifdef AMD64
+#ifdef __amd64__
 #define want_resched (curcpu()->ci_want_resched)
 #define vtophys(VA) ((*vtopte(VA) & PG_FRAME) | ((unsigned)(VA) & ~PG_FRAME))
 #endif
@@ -42,10 +42,13 @@ kqemu_alloc_zeroed_page(unsigned long *ppage_index)
 {
 	vaddr_t va;
 	paddr_t pa;
-	if(!(va = uvm_km_zalloc(kernel_map, PAGE_SIZE)))
-		return 0;
+
+	if (!(va = uvm_km_zalloc(kernel_map, PAGE_SIZE)))
+		return (0);
+
 	pmap_extract(pmap_kernel(), va, &pa);
 	*ppage_index = pa >> PAGE_SHIFT;
+
 	return (struct kqemu_page*)va;
 }
 
@@ -58,7 +61,7 @@ kqemu_free_page(struct kqemu_page *page)
 void* CDECL
 kqemu_io_map(unsigned long page_index, unsigned int size)
 {
-	return 0; /*XXX*/
+	return (0); /*XXX*/
 }
 
 void CDECL
@@ -73,10 +76,13 @@ kqemu_lock_user_page(unsigned long *ppage_index, unsigned long user_addr)
 	vaddr_t va = (vaddr_t)user_addr;
 	vm_map_t map = &curproc->p_vmspace->vm_map;
 	paddr_t pa;
-	if(uvm_map_pageable(map, va, va + PAGE_SIZE, FALSE, 0))
-		return 0;
+
+	if (uvm_map_pageable(map, va, va + PAGE_SIZE, FALSE, 0))
+		return (0);
+
 	pmap_extract(vm_map_pmap(map), va, &pa);
 	*ppage_index = pa >> PAGE_SHIFT;
+
 	return (struct kqemu_user_page*)va;
 }
 
@@ -84,6 +90,7 @@ void CDECL
 kqemu_log(const char *fmt, ...)
 {
 	va_list va;
+
 	printf("kqemu: ");
 	va_start(va, fmt); vprintf(fmt, va); va_end(va);
 }
@@ -97,8 +104,9 @@ kqemu_page_kaddr(struct kqemu_page *page)
 int CDECL
 kqemu_schedule(void)
 {
-	if(want_resched)
+	if (want_resched)
 		yield();
+
 	return CURSIG(curproc);
 }
 
@@ -107,7 +115,8 @@ kqemu_unlock_user_page(struct kqemu_user_page *page)
 {
 	vaddr_t va = (vaddr_t)page;
 	vm_map_t map = &curproc->p_vmspace->vm_map;
-	if(uvm_map_pageable(map, va, va + PAGE_SIZE, TRUE, 0))
+
+	if (uvm_map_pageable(map, va, va + PAGE_SIZE, TRUE, 0))
 		printf("kqemu: failed to unwire page at 0x%08lx\n", va);
 }
 
@@ -126,9 +135,11 @@ unsigned long CDECL
 kqemu_vmalloc_to_phys(const void *vaddr)
 {
 	paddr_t pa = vtophys((vaddr_t)vaddr);
-	if(!pa)
-		return -1;
-	return pa >> PAGE_SHIFT;
+
+	if (!pa)
+		return (-1);
+
+	return (pa >> PAGE_SHIFT);
 }
 
 /* /dev/kqemu device operations */
@@ -145,30 +156,39 @@ static int
 kqemuopen(dev_t dev, int flag, int devtype, struct proc* p)
 {
 	struct kqemu_instance *ks;
+
 	if ((flag & (FREAD|FWRITE)) == FREAD)
-		return EPERM;
-	if(p->p_emuldata)
-		return EBUSY;
-	if(!(ks = malloc(sizeof *ks, M_EMULDATA, M_WAITOK)))
-		return ENOMEM;
+		return (EPERM);
+
+	if (p->p_emuldata)
+		return (EBUSY);
+
+	if (!(ks = malloc(sizeof *ks, M_EMULDATA, M_WAITOK)))
+		return (ENOMEM);
+
 	ks->magic = QEMU_MAGIC;
 	ks->state = 0;
 	p->p_emuldata = ks;
-	return 0;
+
+	return (0);
 }
 
 static int
 kqemuclose(dev_t dev, int flag, int devtype, struct proc* p)
 {
 	struct kqemu_instance *ks = p->p_emuldata;
-	if(!ks || ks->magic != QEMU_MAGIC){
+
+	if (!ks || ks->magic != QEMU_MAGIC) {
 		printf("kqemu: the kqemu instance was lost\n");
-		return EIO;
+		return (EIO);
 	}
-	if(ks->state) kqemu_delete(ks->state);
+
+	if (ks->state)
+		kqemu_delete(ks->state);
 	free(ks, M_EMULDATA);
 	p->p_emuldata = 0;
-	return 0;
+
+	return (0);
 }
 
 static int
@@ -176,18 +196,23 @@ kqemuioctl(dev_t dev, u_long cmd, caddr_t data, int flags, struct proc *p)
 {
 	struct kqemu_cpu_state *ctx;
 	struct kqemu_instance *ks = p->p_emuldata;
-	if(!ks || ks->magic != QEMU_MAGIC){
+
+	if (!ks || ks->magic != QEMU_MAGIC) {
 		printf("kqemu: the kqemu instance was lost\n");
-		return EIO;
+		return (EIO);
 	}
+
 	switch(cmd){
 	case KQEMU_INIT:
-		if(ks->state) return EIO;
+		if (ks->state)
+			return (EIO);
 		ks->state = kqemu_init((struct kqemu_init*)data, kqemu_gs);
-		if(!ks->state) return ENOMEM;
+		if (!ks->state)
+			return (ENOMEM);
 		break;
 	case KQEMU_EXEC:
-		if(!ks->state) return EIO;
+		if (!ks->state)
+			return (EIO);
 		ctx = kqemu_get_cpu_state(ks->state);
 		*ctx = *(struct kqemu_cpu_state*)data;
 		KERNEL_PROC_UNLOCK(p);
@@ -199,9 +224,10 @@ kqemuioctl(dev_t dev, u_long cmd, caddr_t data, int flags, struct proc *p)
 		*(int*)data = KQEMU_VERSION;
 		break;
 	default:
-		return ENOTTY;
+		return (ENOTTY);
 	}
-	return 0;
+
+	return (0);
 }
 
 static struct cdevsw kqemu_cdevsw = {
@@ -258,17 +284,16 @@ kqemu_chgrp(const char *path)
 
 	NDINIT(&nd, LOOKUP, FOLLOW, UIO_SYSSPACE, path, curproc);
 
-	if ((error = namei(&nd)) != 0) {
+	if ((error = namei(&nd)) != 0)
 		return (error);
-	}
 
 	vn_lock(nd.ni_vp, LK_EXCLUSIVE | LK_RETRY, curproc);
 	VATTR_NULL(&vattr);
 	vattr.va_gid  = KQEMU_GID;
 
-
 	error = VOP_SETATTR(nd.ni_vp, &vattr, curproc->p_ucred, curproc);
 	vput(nd.ni_vp);
+
 	return (error);
 }
 
@@ -304,8 +329,8 @@ kqemu_lkmentry(struct lkm_table *lkmtp, int cmd, int ver)
 	if ((error = lkmdispatch(lkmtp, cmd)) == 0) {
 		switch(cmd){
 		case LKM_E_LOAD:
-			if(!(kqemu_gs = kqemu_global_init(max_locked_pages)))
-				return ENOMEM;
+			if (!(kqemu_gs = kqemu_global_init(max_locked_pages)))
+				return (ENOMEM);
 			printf("kqemu: kqemu version 0x%08x loaded,"
 				" max locked mem=%dkB\n",
 				KQEMU_VERSION, max_locked_pages << (PAGE_SHIFT - 10));
@@ -315,13 +340,17 @@ kqemu_lkmentry(struct lkm_table *lkmtp, int cmd, int ver)
 			break;
 		case LKM_E_UNLOAD:
 			/* kqemu_global_delete() should return an
-			   error if kqemu_gs->nb_kqemu_states > 0.
-			   then this could be changed to:
-			   if(kqemu_global_delete(kqemu_gs)) return EBUSY; */
+			 * error if kqemu_gs->nb_kqemu_states > 0.
+			 * then this could be changed to:
+			 *
+			 * if (kqemu_global_delete(kqemu_gs))
+			 *	return (EBUSY);
+			 */
 			kqemu_global_delete(kqemu_gs);
 			kqemu_unlink(KQEMU_DEV);
 			break;
 		}
 	}
+
 	return (error);
 }

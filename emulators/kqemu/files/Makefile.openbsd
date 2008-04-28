@@ -1,15 +1,8 @@
 # $OpenBSD
 
 NOMAN = noman
-
-.if ${MACHINE_ARCH} == "i386"
-    CFLAGS += -Wall -DI386
-    COMMON = kqemu-mod-i386.o
-.elif ${MACHINE_ARCH} == "amd64"
-    CFLAGS += -Wall -DAMD64
-    COMMON = kqemu-mod-x86_64.o
-.endif
-
+CFLAGS += -Wall
+COMMON = kqemu-mod-${MACHINE_ARCH:S/amd64/x86_64/}.o
 SRCS = kqemu-openbsd.c
 OBJS = ${COMMON}
 LKM = kqemu
