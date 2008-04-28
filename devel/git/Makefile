@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/04/26 09:24:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.24 2008/04/28 15:24:25 bernd Exp $
 
 COMMENT-main=		GIT - Tree History Storage Tool
 COMMENT-svn=		GIT - subversion interoperability tools
@@ -8,7 +8,7 @@ V=			1.5.5.1
 DISTNAME=		git-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
-PKGNAME-x11=		git-x11-${V}
+PKGNAME-x11=		git-x11-${V}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://git.or.cz/
@@ -52,14 +52,14 @@ LIB_DEPENDS-svn=
 PKG_ARCH-svn=		*
 
 RUN_DEPENDS-x11=	:${PKGNAME}:${BASE_PKGPATH},-main \
-			::x11/tk/8.4
+			::x11/tk/8.5
 LIB_DEPENDS-x11=
 PKG_ARCH-x11=		*
 
 MAKE_ENV=		prefix=${PREFIX} CC="${CC}" CFLAGS="${CFLAGS}" V=1 \
 			SYSCONFDIR=${SYSCONFDIR} \
-			TCLTK_PATH=${LOCALBASE}/bin/wish8.4 \
-			TCL_PATH=${LOCALBASE}/bin/tclsh8.4
+			TCLTK_PATH=${LOCALBASE}/bin/wish8.5 \
+			TCL_PATH=${LOCALBASE}/bin/tclsh8.5
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
