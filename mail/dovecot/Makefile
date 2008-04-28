@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2008/03/16 18:46:14 brad Exp $
+# $OpenBSD: Makefile,v 1.92 2008/04/28 09:46:07 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ V_DOVECOT=	1.0.13
 V_SIEVE=	1.0.2
 
 PKGNAME=	dovecot-${V_DOVECOT}
-PKGNAME-server=	dovecot-${V_DOVECOT}
+PKGNAME-server=	dovecot-${V_DOVECOT}p0
 PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}p8
 
 DISTNAME=	dovecot-${V_DOVECOT}
@@ -31,7 +31,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-server=		c crypto ssl z
+WANTLIB-server=		c crypto gssapi krb5 ssl z
 WANTLIB-sieve=
 
 MODULES=	converters/libiconv
@@ -44,21 +44,23 @@ FLAVORS=	ldap mysql postgresql sqlite
 FLAVOR?=
 
 USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-ioloop=kqueue \
 			--with-ssl=openssl \
 			--with-ssldir=/etc/ssl \
+			--with-gssapi \
 			--without-pam \
 			--without-shadow \
 			--without-vpopmail
-CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I/usr/include/kerberosV -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !${FLAVOR:L:Mno_sieve}
 MULTI_PACKAGES+=	-sieve
 SIEVE_DIR=		${WRKDIR}/dovecot-sieve-${V_SIEVE}
-AUTOCONF_DIR+=		${SIEVE_DIR}
+AUTOCONF_DIR+=		${WRKSRC} ${SIEVE_DIR}
 RUN_DEPENDS-sieve=	::${BUILD_PKGPATH}
 LIB_DEPENDS-sieve=	${MODLIBICONV_LIB_DEPENDS}
 .endif
@@ -66,7 +68,7 @@ LIB_DEPENDS-sieve=	${MODLIBICONV_LIB_DEPENDS}
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-ldap
 LIB_DEPENDS+=		lber,ldap::databases/openldap
-WANTLIB-server+=	sasl2 asn1 com_err gssapi krb5
+WANTLIB-server+=	sasl2 asn1 com_err
 .endif
 
 .if ${FLAVOR:L:Mmysql}
