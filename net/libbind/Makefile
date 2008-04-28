@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:54 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/04/28 19:15:43 jakob Exp $
 
 COMMENT=	BIND 8 compatible stub resolver library
 
-VERSION=	9.3.2
+VERSION=	9.4.2
 DISTNAME=	bind-${VERSION}
-PKGNAME=	libbind-${VERSION}p0
+PKGNAME=	libbind-${VERSION}
 SHARED_LIBS=	bind	2.0
 CATEGORIES=	net
 
@@ -19,6 +19,7 @@ HOMEPAGE=	http://www.isc.org/products/BIND/
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
+# ISC
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
