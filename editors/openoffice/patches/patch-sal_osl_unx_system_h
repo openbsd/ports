@@ -1,7 +1,6 @@
-$OpenBSD: patch-sal_osl_unx_system_h,v 1.7 2007/11/13 09:46:28 robert Exp $
---- sal/osl/unx/system.h.orig.port	Thu Jul  5 11:06:28 2007
-+++ sal/osl/unx/system.h	Thu Oct 25 16:23:47 2007
-@@ -198,6 +198,32 @@
+--- sal/osl/unx/system.h.orig.port	Thu Jan 24 17:30:14 2008
++++ sal/osl/unx/system.h	Wed Apr 23 15:24:06 2008
+@@ -195,6 +195,32 @@
  #	define  NO_PTHREAD_RTL
  #endif
  
@@ -22,7 +21,7 @@ $OpenBSD: patch-sal_osl_unx_system_h,v 1.7 2007/11/13 09:46:28 robert Exp $
 +#   include <netinet/tcp.h>
 +#       define  IORESOURCE_TRANSFER_BSD
 +#   include <machine/endian.h>
-+#	define  PTR_SIZE_T(s)	((size_t *)&(s))
++#      define  PTR_SIZE_T(s)   ((size_t *)&(s))
 +#       define  IORESOURCE_TRANSFER_BSD
 +#       define  IOCHANNEL_TRANSFER_BSD_RENO
 +#       define  pthread_testcancel()
@@ -34,10 +33,10 @@ $OpenBSD: patch-sal_osl_unx_system_h,v 1.7 2007/11/13 09:46:28 robert Exp $
  #ifdef SCO
  #   define AF_IPX -1
  #	include <strings.h>
-@@ -376,7 +402,7 @@ int macxp_resolveAlias(char *path, int buflen);
+@@ -373,7 +399,7 @@ int macxp_resolveAlias(char *path, int buflen);
      !defined(LINUX)   && !defined(NETBSD) && !defined(FREEBSD) && !defined(SCO)  && \
  	!defined(AIX)     && !defined(HPUX)   && \
- 	!defined(SOLARIS) && !defined(IRIX)   && !defined(MAC) && \
+ 	!defined(SOLARIS) && !defined(IRIX)   && \
 -	!defined(MACOSX)
 +	!defined(MACOSX) && !defined(OPENBSD)
  #	error "Target platform not specified!"

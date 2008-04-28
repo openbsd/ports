@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2008/01/04 14:52:31 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2008/04/28 11:18:46 robert Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -200,6 +200,7 @@ openoffice/presets/gallery/sg30.sdv
 openoffice/presets/gallery/sg30.thm
 openoffice/program/
 openoffice/program/about.bmp
+openoffice/program/bootstrap.uno.so
 openoffice/program/bootstraprc
 openoffice/program/cde-open-url
 openoffice/program/configimport
@@ -214,8 +215,10 @@ openoffice/program/intro.bmp
 openoffice/program/jvmfwk3rc
 openoffice/program/kde-open-url
 openoffice/program/legacy_binfilters.rdb
+openoffice/program/libbf_so680.so
 openoffice/program/libcppu.so.3
 openoffice/program/libcppuhelpergcc3.so.3
+openoffice/program/libhelplinker680.so
 openoffice/program/libicudata.so.36
 openoffice/program/libicui18n.so.36
 openoffice/program/libicule.so.36
@@ -299,6 +302,7 @@ openoffice/program/resource/sb680en-US.res
 openoffice/program/resource/sc680en-US.res
 openoffice/program/resource/sd680en-US.res
 openoffice/program/resource/sdbcl680en-US.res
+openoffice/program/resource/sdberr680en-US.res
 openoffice/program/resource/sdbt680en-US.res
 openoffice/program/resource/sfx680en-US.res
 openoffice/program/resource/sm680en-US.res
@@ -332,6 +336,7 @@ openoffice/program/soffice.bin
 openoffice/program/sofficerc
 openoffice/program/spadmin
 openoffice/program/spadmin.bin
+openoffice/program/stocservices.uno.so
 openoffice/program/swriter
 openoffice/program/testtool.bin
 openoffice/program/testtoolrc
@@ -344,6 +349,7 @@ openoffice/program/unopkg
 openoffice/program/unopkg.bin
 openoffice/program/unorc
 openoffice/program/uri-encode
+openoffice/program/vbaapi.oxt
 openoffice/program/versionrc
 openoffice/program/viewdoc
 openoffice/readmes/
@@ -395,6 +401,7 @@ openoffice/share/autocorr/acor_en-GB.dat
 openoffice/share/autocorr/acor_en-US.dat
 openoffice/share/autocorr/acor_en-ZA.dat
 openoffice/share/autocorr/acor_es-ES.dat
+openoffice/share/autocorr/acor_fi-FI.dat
 openoffice/share/autocorr/acor_fr-FR.dat
 openoffice/share/autocorr/acor_hu-HU.dat
 openoffice/share/autocorr/acor_it-IT.dat
@@ -402,7 +409,6 @@ openoffice/share/autocorr/acor_ja-JP.dat
 openoffice/share/autocorr/acor_ko-KR.dat
 openoffice/share/autocorr/acor_nl-NL.dat
 openoffice/share/autocorr/acor_pl-PL.dat
-openoffice/share/autocorr/acor_pt-BR.dat
 openoffice/share/autocorr/acor_pt-PT.dat
 openoffice/share/autocorr/acor_ru-RU.dat
 openoffice/share/autocorr/acor_sk-SK.dat
@@ -650,6 +656,7 @@ openoffice/share/config/soffice.cfg/modules/dbreport/toolbar/alignmentbar.xml
 openoffice/share/config/soffice.cfg/modules/dbreport/toolbar/arrowshapes.xml
 openoffice/share/config/soffice.cfg/modules/dbreport/toolbar/basicshapes.xml
 openoffice/share/config/soffice.cfg/modules/dbreport/toolbar/calloutshapes.xml
+openoffice/share/config/soffice.cfg/modules/dbreport/toolbar/drawbar.xml
 openoffice/share/config/soffice.cfg/modules/dbreport/toolbar/flowchartshapes.xml
 openoffice/share/config/soffice.cfg/modules/dbreport/toolbar/reportcontrols.xml
 openoffice/share/config/soffice.cfg/modules/dbreport/toolbar/resizebar.xml
@@ -1090,7 +1097,6 @@ openoffice/share/config/soffice.cfg/modules/swriter/toolbar/fullscreenbar.xml
 openoffice/share/config/soffice.cfg/modules/swriter/toolbar/graffilterbar.xml
 openoffice/share/config/soffice.cfg/modules/swriter/toolbar/graphicobjectbar.xml
 openoffice/share/config/soffice.cfg/modules/swriter/toolbar/insertbar.xml
-openoffice/share/config/soffice.cfg/modules/swriter/toolbar/insertobjectbar.xml
 openoffice/share/config/soffice.cfg/modules/swriter/toolbar/mediaobjectbar.xml
 openoffice/share/config/soffice.cfg/modules/swriter/toolbar/moreformcontrols.xml
 openoffice/share/config/soffice.cfg/modules/swriter/toolbar/numobjectbar.xml
@@ -1341,7 +1347,10 @@ openoffice/share/dict/ooo/README_de_AT.txt
 openoffice/share/dict/ooo/README_de_CH.txt
 openoffice/share/dict/ooo/README_de_DE.txt
 openoffice/share/dict/ooo/README_en_GB.txt
+openoffice/share/dict/ooo/README_en_ZA.txt
+openoffice/share/dict/ooo/README_es_ES.txt
 openoffice/share/dict/ooo/README_et_EE.txt
+openoffice/share/dict/ooo/README_fr_FR.txt
 openoffice/share/dict/ooo/README_hu_HU.txt
 openoffice/share/dict/ooo/README_hyph_de_DE.txt
 openoffice/share/dict/ooo/README_hyph_et_EE.txt
@@ -1350,7 +1359,9 @@ openoffice/share/dict/ooo/README_hyph_lt_LT.txt
 openoffice/share/dict/ooo/README_hyph_pl_PL.txt
 openoffice/share/dict/ooo/README_hyph_sl_SI.txt
 openoffice/share/dict/ooo/README_it_IT.txt
+openoffice/share/dict/ooo/README_it_IT_thes.txt
 openoffice/share/dict/ooo/README_lt_LT.txt
+openoffice/share/dict/ooo/README_ne_NP.txt
 openoffice/share/dict/ooo/README_nl_NL.txt
 openoffice/share/dict/ooo/README_pl_PL.txt
 openoffice/share/dict/ooo/README_pt_BR.txt
@@ -1361,10 +1372,14 @@ openoffice/share/dict/ooo/README_sw_TZ.txt
 openoffice/share/dict/ooo/README_th_TH.txt
 openoffice/share/dict/ooo/README_th_de_CH_v2.txt
 openoffice/share/dict/ooo/README_th_de_DE_v2.txt
+openoffice/share/dict/ooo/README_th_ne_NP_v2.txt
 openoffice/share/dict/ooo/README_th_pl_PL_v2.txt
+openoffice/share/dict/ooo/README_thes_ru_RU.txt
 openoffice/share/dict/ooo/WordNet_license.txt
 openoffice/share/dict/ooo/af_ZA.aff
 openoffice/share/dict/ooo/af_ZA.dic
+openoffice/share/dict/ooo/da_DK.aff
+openoffice/share/dict/ooo/da_DK.dic
 openoffice/share/dict/ooo/de_AT.aff
 openoffice/share/dict/ooo/de_AT.dic
 openoffice/share/dict/ooo/de_CH.aff
@@ -1376,8 +1391,14 @@ openoffice/share/dict/ooo/en_GB.aff
 openoffice/share/dict/ooo/en_GB.dic
 openoffice/share/dict/ooo/en_US.aff
 openoffice/share/dict/ooo/en_US.dic
+openoffice/share/dict/ooo/en_ZA.aff
+openoffice/share/dict/ooo/en_ZA.dic
+openoffice/share/dict/ooo/es_ES.aff
+openoffice/share/dict/ooo/es_ES.dic
 openoffice/share/dict/ooo/et_EE.aff
 openoffice/share/dict/ooo/et_EE.dic
+openoffice/share/dict/ooo/fr_FR.aff
+openoffice/share/dict/ooo/fr_FR.dic
 openoffice/share/dict/ooo/hu_HU.aff
 openoffice/share/dict/ooo/hu_HU.dic
 openoffice/share/dict/ooo/hyph_af_ZA.dic
@@ -1393,10 +1414,13 @@ openoffice/share/dict/ooo/hyph_nl_NL.dic
 openoffice/share/dict/ooo/hyph_pl_PL.dic
 openoffice/share/dict/ooo/hyph_ru_RU.dic
 openoffice/share/dict/ooo/hyph_sl_SI.dic
+openoffice/share/dict/ooo/hyph_zu_ZA.dic
 openoffice/share/dict/ooo/it_IT.aff
 openoffice/share/dict/ooo/it_IT.dic
 openoffice/share/dict/ooo/lt_LT.aff
 openoffice/share/dict/ooo/lt_LT.dic
+openoffice/share/dict/ooo/ne_NP.aff
+openoffice/share/dict/ooo/ne_NP.dic
 openoffice/share/dict/ooo/nl_NL.aff
 openoffice/share/dict/ooo/nl_NL.dic
 openoffice/share/dict/ooo/pl_PL.aff
@@ -1422,8 +1446,14 @@ openoffice/share/dict/ooo/th_de_DE_v2.dat
 openoffice/share/dict/ooo/th_de_DE_v2.idx
 openoffice/share/dict/ooo/th_en_US_v2.dat
 openoffice/share/dict/ooo/th_en_US_v2.idx
+openoffice/share/dict/ooo/th_it_IT_v2.dat
+openoffice/share/dict/ooo/th_it_IT_v2.idx
+openoffice/share/dict/ooo/th_ne_NP_v2.dat
+openoffice/share/dict/ooo/th_ne_NP_v2.idx
 openoffice/share/dict/ooo/th_pl_PL_v2.dat
 openoffice/share/dict/ooo/th_pl_PL_v2.idx
+openoffice/share/dict/ooo/th_ru_RU_v2.dat
+openoffice/share/dict/ooo/th_ru_RU_v2.idx
 openoffice/share/dict/ooo/th_sk_SK_license.txt
 openoffice/share/dict/ooo/th_sk_SK_v2.dat
 openoffice/share/dict/ooo/th_sk_SK_v2.idx
@@ -1533,17 +1563,40 @@ openoffice/share/fingerprint/vietnamese.lm
 openoffice/share/fingerprint/welsh.lm
 openoffice/share/fingerprint/yiddish_utf.lm
 openoffice/share/fonts/
-openoffice/share/fonts/truetype/
-openoffice/share/fonts/truetype/Vera.ttf
-openoffice/share/fonts/truetype/VeraBI.ttf
-openoffice/share/fonts/truetype/VeraBd.ttf
-openoffice/share/fonts/truetype/VeraIt.ttf
-openoffice/share/fonts/truetype/VeraMoBI.ttf
-openoffice/share/fonts/truetype/VeraMoBd.ttf
-openoffice/share/fonts/truetype/VeraMoIt.ttf
-openoffice/share/fonts/truetype/VeraMono.ttf
-openoffice/share/fonts/truetype/VeraSe.ttf
-openoffice/share/fonts/truetype/VeraSeBd.ttf
+@fontdir openoffice/share/fonts/truetype/
+openoffice/share/fonts/truetype/DejaVuCondensedSans.ttf
+openoffice/share/fonts/truetype/DejaVuCondensedSansBold.ttf
+openoffice/share/fonts/truetype/DejaVuCondensedSansBoldOblique.ttf
+openoffice/share/fonts/truetype/DejaVuCondensedSansOblique.ttf
+openoffice/share/fonts/truetype/DejaVuCondensedSerif.ttf
+openoffice/share/fonts/truetype/DejaVuCondensedSerifBold.ttf
+openoffice/share/fonts/truetype/DejaVuCondensedSerifBoldItalic.ttf
+openoffice/share/fonts/truetype/DejaVuCondensedSerifItalic.ttf
+openoffice/share/fonts/truetype/DejaVuMonoSans.ttf
+openoffice/share/fonts/truetype/DejaVuMonoSansBold.ttf
+openoffice/share/fonts/truetype/DejaVuMonoSansBoldOblique.ttf
+openoffice/share/fonts/truetype/DejaVuMonoSansOblique.ttf
+openoffice/share/fonts/truetype/DejaVuSans.ttf
+openoffice/share/fonts/truetype/DejaVuSansBold.ttf
+openoffice/share/fonts/truetype/DejaVuSansBoldOblique.ttf
+openoffice/share/fonts/truetype/DejaVuSansExtraLight.ttf
+openoffice/share/fonts/truetype/DejaVuSansOblique.ttf
+openoffice/share/fonts/truetype/DejaVuSerif.ttf
+openoffice/share/fonts/truetype/DejaVuSerifBold.ttf
+openoffice/share/fonts/truetype/DejaVuSerifBoldItalic.ttf
+openoffice/share/fonts/truetype/DejaVuSerifItalic.ttf
+openoffice/share/fonts/truetype/LiberationMono-Bold.ttf
+openoffice/share/fonts/truetype/LiberationMono-BoldItalic.ttf
+openoffice/share/fonts/truetype/LiberationMono-Italic.ttf
+openoffice/share/fonts/truetype/LiberationMono-Regular.ttf
+openoffice/share/fonts/truetype/LiberationSans-Bold.ttf
+openoffice/share/fonts/truetype/LiberationSans-BoldItalic.ttf
+openoffice/share/fonts/truetype/LiberationSans-Italic.ttf
+openoffice/share/fonts/truetype/LiberationSans-Regular.ttf
+openoffice/share/fonts/truetype/LiberationSerif-Bold.ttf
+openoffice/share/fonts/truetype/LiberationSerif-BoldItalic.ttf
+openoffice/share/fonts/truetype/LiberationSerif-Italic.ttf
+openoffice/share/fonts/truetype/LiberationSerif-Regular.ttf
 openoffice/share/fonts/truetype/opens___.ttf
 openoffice/share/gallery/
 openoffice/share/gallery/apples.gif
@@ -2132,6 +2185,7 @@ openoffice/share/registry/data/org/openoffice/Inet.xcu
 openoffice/share/registry/data/org/openoffice/LDAP.xcu.sample
 openoffice/share/registry/data/org/openoffice/Office/
 openoffice/share/registry/data/org/openoffice/Office/Calc.xcu
+openoffice/share/registry/data/org/openoffice/Office/Canvas.xcu
 openoffice/share/registry/data/org/openoffice/Office/Common.xcu
 openoffice/share/registry/data/org/openoffice/Office/Compatibility.xcu
 openoffice/share/registry/data/org/openoffice/Office/DataAccess.xcu
@@ -2337,6 +2391,7 @@ openoffice/share/registry/schema/org/openoffice/Office/
 openoffice/share/registry/schema/org/openoffice/Office/Addons.xcs
 openoffice/share/registry/schema/org/openoffice/Office/Calc.xcs
 openoffice/share/registry/schema/org/openoffice/Office/CalcAddIns.xcs
+openoffice/share/registry/schema/org/openoffice/Office/Canvas.xcs
 openoffice/share/registry/schema/org/openoffice/Office/Chart.xcs
 openoffice/share/registry/schema/org/openoffice/Office/Commands.xcs
 openoffice/share/registry/schema/org/openoffice/Office/Common.xcs
@@ -2747,17 +2802,6 @@ openoffice/share/template/wizard/letter/pl/pri-mail_l.ott
 openoffice/share/template/wizard/letter/pl/pri-marine_l.ott
 openoffice/share/template/wizard/letter/pl/pri-redline_l.ott
 openoffice/share/template/wizard/letter/pt/
-openoffice/share/template/wizard/letter/pt-BR/
-openoffice/share/template/wizard/letter/pt-BR/bus-elegant_l.ott
-openoffice/share/template/wizard/letter/pt-BR/bus-modern_l.ott
-openoffice/share/template/wizard/letter/pt-BR/bus-office_l.ott
-openoffice/share/template/wizard/letter/pt-BR/off-elegant_l.ott
-openoffice/share/template/wizard/letter/pt-BR/off-modern_l.ott
-openoffice/share/template/wizard/letter/pt-BR/off-office_l.ott
-openoffice/share/template/wizard/letter/pt-BR/pri-bottle_l.ott
-openoffice/share/template/wizard/letter/pt-BR/pri-mail_l.ott
-openoffice/share/template/wizard/letter/pt-BR/pri-marine_l.ott
-openoffice/share/template/wizard/letter/pt-BR/pri-redline_l.ott
 openoffice/share/template/wizard/letter/pt/bus-elegant_l.ott
 openoffice/share/template/wizard/letter/pt/bus-modern_l.ott
 openoffice/share/template/wizard/letter/pt/bus-office_l.ott
@@ -2928,7 +2972,6 @@ openoffice/share/xslt/import/wordml/wordml2ooo_text.xsl
 openoffice/share/xslt/wiki/
 openoffice/share/xslt/wiki/odt2mediawiki.xsl
 openoffice/share/xslt/wiki/oopedia-style.ott
-share/applications/
 share/applications/openoffice/
 share/applications/openoffice/base.desktop
 share/applications/openoffice/calc.desktop
@@ -2936,7 +2979,6 @@ share/applications/openoffice/draw.desktop
 share/applications/openoffice/impress.desktop
 share/applications/openoffice/math.desktop
 share/applications/openoffice/writer.desktop
-share/icons/
 share/icons/openoffice/
 share/icons/openoffice/ooo-base.png
 share/icons/openoffice/ooo-calc.png
@@ -2944,3 +2986,7 @@ share/icons/openoffice/ooo-draw.png
 share/icons/openoffice/ooo-impress.png
 share/icons/openoffice/ooo-math.png
 share/icons/openoffice/ooo-writer.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/openoffice 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/openoffice 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

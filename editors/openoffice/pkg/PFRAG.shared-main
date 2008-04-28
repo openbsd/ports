@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.5 2008/01/04 14:52:31 robert Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.6 2008/04/28 11:18:46 robert Exp $
 openoffice/program/acceptor.uno.so
 openoffice/program/basprov680.uno.so
 openoffice/program/behelper.uno.so
@@ -19,7 +19,6 @@ openoffice/program/fsstorage.uno.so
 openoffice/program/hatchwindowfactory.uno.so
 openoffice/program/i18npool.uno.so
 openoffice/program/i18nsearch.uno.so
-openoffice/program/implreg.uno.so
 openoffice/program/introspection.uno.so
 openoffice/program/invocadapt.uno.so
 openoffice/program/invocation.uno.so
@@ -178,7 +177,6 @@ openoffice/program/libsfx680.so
 openoffice/program/libsimplecm680.so
 openoffice/program/libsm680.so
 openoffice/program/libsmd680.so
-openoffice/program/libso680.so
 openoffice/program/libsot680.so
 openoffice/program/libspa680.so
 openoffice/program/libspell680.so
@@ -237,21 +235,15 @@ openoffice/program/libxstor.so
 openoffice/program/localebe1.uno.so
 openoffice/program/migrationoo2.uno.so
 openoffice/program/namingservice.uno.so
-openoffice/program/nestedreg.uno.so
 openoffice/program/passwordcontainer.uno.so
 openoffice/program/productregistration.uno.so
 openoffice/program/proxyfac.uno.so
 openoffice/program/pythonloader.uno.so
 openoffice/program/pyuno.so
 openoffice/program/reflection.uno.so
-openoffice/program/regtypeprov.uno.so
 openoffice/program/remotebridge.uno.so
 openoffice/program/sax.uno.so
-openoffice/program/security.uno.so
-openoffice/program/servicemgr.uno.so
-openoffice/program/shlibloader.uno.so
 openoffice/program/simplecanvas.uno.so
-openoffice/program/simplereg.uno.so
 openoffice/program/slideshow.uno.so
 openoffice/program/streams.uno.so
 openoffice/program/stringresource680.uno.so
@@ -260,11 +252,8 @@ openoffice/program/sysmgr1.uno.so
 openoffice/program/syssh.uno.so
 openoffice/program/textinstream.uno.so
 openoffice/program/textoutstream.uno.so
-openoffice/program/typeconverter.uno.so
-openoffice/program/typemgr.uno.so
 openoffice/program/ucpexpand1.uno.so
 openoffice/program/ucptdoc1.uno.so
 openoffice/program/updatefeed.uno.so
-openoffice/program/uriproc.uno.so
 openoffice/program/uuresolver.uno.so
 openoffice/program/vclcanvas.uno.so

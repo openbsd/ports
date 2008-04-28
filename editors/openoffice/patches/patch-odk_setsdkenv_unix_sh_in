@@ -1,7 +1,7 @@
-$OpenBSD: patch-odk_setsdkenv_unix_sh_in,v 1.4 2007/03/17 15:27:45 robert Exp $
---- odk/setsdkenv_unix.sh.in.orig.port	Wed Jan 17 07:47:27 2007
-+++ odk/setsdkenv_unix.sh.in	Tue Feb  6 23:13:34 2007
-@@ -211,6 +211,28 @@ case $sd_platform in
+$OpenBSD: patch-odk_setsdkenv_unix_sh_in,v 1.5 2008/04/28 11:18:46 robert Exp $
+--- odk/setsdkenv_unix.sh.in.orig.port	Fri Jan 18 20:10:19 2008
++++ odk/setsdkenv_unix.sh.in	Wed Apr 23 15:24:06 2008
+@@ -215,6 +215,28 @@ case $sd_platform in
  	export PTHREAD_LIBS
      fi
      ;;

@@ -1,9 +1,8 @@
-$OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp $
---- config_office/configure.in.orig.port	Thu Dec  6 16:36:06 2007
-+++ config_office/configure.in	Thu Dec  6 16:36:08 2007
-@@ -831,6 +831,16 @@ case "$build_os" in
- 		AC_MSG_RESULT([$PTHREAD_LIBS])
- 		_os=FreeBSD
+--- config_office/configure.in.orig.port	Thu Jan 31 12:45:01 2008
++++ config_office/configure.in	Wed Apr 23 15:47:49 2008
+@@ -920,6 +920,16 @@ case "$build_os" in
+ 		echo "AIX is an alpha port --- Use at own risk" >> warn
+ 		_os=AIX
  		;;
 +	openbsd*)
 +		test_x=yes
@@ -15,24 +14,10 @@ $OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp
 +		PTHREAD_LIBS="-pthread"
 +		_os=OpenBSD
 +		;;
- 	osf)
- 		test_cups=no
- 		_os=OSF1
-@@ -2585,11 +2595,11 @@ dnl ==================================================
- dnl Checks for programs.
- dnl ===================================================================
- dnl Check whether there's a C pre-processor.
--if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" ; then
-+if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" ; then
-    AC_PROG_CPP
- fi
- dnl Check whether there's a C++ pre-processor.
--if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" ; then
-+if test "$_os" = "Linux" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" ; then
-    AC_PROG_CXXCPP
- fi
- 
-@@ -2719,6 +2729,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
+    *)
+    AC_MSG_ERROR([$_os operating system is not suitable to build OpenOffice.org!])
+    ;;
+@@ -2916,6 +2926,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
  	AIX)
  		PKGFORMAT=aix
  		;;
@@ -42,7 +27,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp
  	*BSD)
  		PKGFORMAT=bsd
  		;;
-@@ -3048,7 +3061,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
+@@ -3244,7 +3257,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
          test "$with_system_libwpd" != "no"; then
      AC_MSG_RESULT([external])
      SYSTEM_LIBWPD=YES
@@ -51,11 +36,12 @@ $OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp
  else
      AC_MSG_RESULT([internal])
      SYSTEM_LIBWPD=NO
-@@ -3159,12 +3172,13 @@ if test -n "$with_system_python" && test "$with_system
+@@ -3355,12 +3368,14 @@ if test -n "$with_system_python" && test "$with_system
  
     python_include=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('INCLUDEPY');"`
     python_version=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('VERSION');"`
 +   python_libs=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('LIBS');"`
++
     PYTHON_CFLAGS="-I$python_include"
  
     if test "$_os" = "Darwin"; then
@@ -66,7 +52,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp
     fi
     
     dnl check if the headers really work:
-@@ -3195,15 +3209,12 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
+@@ -3398,15 +3413,12 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
  	test "$with_system_db" != "no"; then
      SYSTEM_DB=YES
      AC_MSG_RESULT([external])
@@ -78,15 +64,15 @@ $OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp
 -             [ AC_MSG_ERROR(no. install the db4 libraries) ], []+             )
 -        ], []
 +    AC_CHECK_HEADER(db4/db.h, [ DB_INCLUDES=${prefix}/include/db4 ],
-+	     [ AC_MSG_ERROR(no. install the db4 libraries) ], []
++            [ AC_MSG_ERROR(no. install the db4 libraries) ], []
      )
      AC_MSG_CHECKING([whether db is at least 4.1])
 +    save_CXXFLAGS=$CXXFLAGS
 +    CXXFLAGS=-I$DB_INCLUDES
-     for v in 1 2 3 4 5; do
+     for v in 1 2 3 4 5 6; do
         AC_TRY_RUN([
  #include <db.h>
-@@ -3214,6 +3225,7 @@ int main(int argc, char **argv) {
+@@ -3417,6 +3429,7 @@ int main(int argc, char **argv) {
  }
         ], [DB_VERSION_MINOR=$v], [])
      done
@@ -94,7 +80,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp
      if test "$DB_VERSION_MINOR" -gt "1"; then
         AC_MSG_RESULT([OK])
         DB_VERSION=4.$DB_VERSION_MINOR
-@@ -3908,7 +3920,7 @@ elif test "$_os" != "WINNT" ; then
+@@ -4114,7 +4127,7 @@ elif test "$_os" != "WINNT" ; then
        AC_MSG_ERROR([No X includes found]) # Exit
     fi
     CFLAGS=$X_CFLAGS
@@ -103,15 +89,16 @@ $OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp
     AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
     dnl Check if the XauDisposeAuth symbol is provided by libXau.
     AC_CHECK_LIB(Xau, XauDisposeAuth, XAU_LIBS="-lXau", [])
-@@ -4103,7 +4115,6 @@ if test -n "$with_system_neon" -o -n "$with_system_lib
- 	test "$with_system_neon" != "no"; then
-         AC_MSG_RESULT([external])
-         PKG_CHECK_MODULES(NEON, neon >= 0.26.0)
--        PKG_CHECK_MODULES(NEON, neon < 0.27.0, , AC_MSG_ERROR([you need neon 0.26.x for system-neon]))
-         NEON_VERSION="`$PKG_CONFIG --modversion neon | $SED 's/\.//g'`"
-         NEON_CFLAGS="$NEON_CFLAGS -DSYSTEM_NEON -DUSE_DAV_LOCKS=1"
-         SYSTEM_NEON=YES
-@@ -4852,42 +4863,24 @@ KDE_LIBS=""
+@@ -4331,7 +4344,7 @@ if test -n "$with_system_openssl" -o -n "$with_system_
+     AC_MSG_RESULT([external])
+     # Mac OS builds should get out without extra stuff is the Mac porters'
+     # wish. And pkg-config is although Xcode ships a .pc for openssl
+-    if test "$_os" = "Darwin"; then
++    if test "$_os" = "Darwin" || test "$_os" = "OpenBSD"; then
+         OPENSSL_CFLAGS=
+         OPENSSL_LIBS="-lssl -lcrypto"
+     else
+@@ -5213,42 +5226,23 @@ KDE_LIBS=""
  MOC="moc"
  if test "$test_kde" = "yes" -a "$ENABLE_KDE" = "TRUE" ; then
      dnl Search paths for Qt and KDE
@@ -143,7 +130,7 @@ $OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp
 +    kde_incdirs="/usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/kde3/include /opt/kde/include $x_includes"
 +    kde_libdirs="/usr/local/lib /usr/lib/kde/lib /usr/local/kde/lib /usr/kde/lib /usr/lib/kde /usr/lib/kde3 /usr/lib /usr/X11R6/lib /opt/kde3/lib /opt/kde/lib /usr/X11R6/kde/lib $x_libraries"
      if test -n "$KDEDIR" ; then
-         kde_incdirs="$KDEDIR/include $kde_incdirs"
+-        kde_incdirs="$KDEDIR/include $kde_incdirs"
 -        if test "$build_cpu" != "x86_64" ; then
 -            kde_libdirs="$KDEDIR/lib $kde_libdirs"
 -        else
@@ -162,21 +149,21 @@ $OpenBSD: patch-config_office_configure_in,v 1.15 2007/12/07 11:30:55 robert Exp
  
      dnl Check for Qt headers
      AC_MSG_CHECKING([for Qt headers])
-@@ -4908,7 +4901,7 @@ your Qt installation by exporting QTDIR before running
+@@ -5269,7 +5263,7 @@ your Qt installation by exporting QTDIR before running
      AC_MSG_CHECKING([for Qt libraries])
      qt_libdir="no"
      for qt_check in $qt_libdirs ; do
 -        if test -r "$qt_check/$qt_test_library" ; then
-+	if test -r "`ls $qt_check/$qt_test_library | head -1`" ; then
++        if test -r "`ls $qt_check/$qt_test_library | head -1`" ; then
              qt_libdir="$qt_check"
              break
          fi
-@@ -4944,7 +4937,7 @@ your KDE installation by exporting KDEDIR before runni
+@@ -5305,7 +5299,7 @@ your KDE installation by exporting KDEDIR before runni
      AC_MSG_CHECKING([for KDE libraries])
      kde_libdir="no"
      for kde_check in $kde_libdirs ; do
 -        if test -r "$kde_check/$kde_test_library" ; then
-+	if test -r "`ls $kde_check/$kde_test_library | head -1`" ; then
++        if test -r "`ls $kde_check/$kde_test_library | head -1`" ; then
              kde_libdir="$kde_check"
              break
          fi

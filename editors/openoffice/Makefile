@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2008/04/14 14:28:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2008/04/28 11:18:46 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,13 +6,13 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
-VERSION=	2.3.1
+VERSION=	2.4.0
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOG680_m9
+WRKDIST=	${WRKDIR}/OOH680_m12
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p1
+PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
-PKGNAME-java=	openoffice-java-${VERSION}p0
+PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	icudata		36.0 \
@@ -58,10 +58,10 @@ FLAVORS=	debug
 FLAVOR?=
 
 .if !${FLAVOR:L:Mno_lang}
-LANGS=			bg br-pt ca de es fa fi fr hu it ja ko \
-			lt lv nl pl ru sl sv
+LANGS=			bg ca de es fa fi fr hu it ja ko \
+			lt lv nl pl pt-BR ru sl sv
 
-.for l in ${LANGS}
+.for l in ${LANGS:L}
 MULTI_PACKAGES+=	-i18n-$l
 PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
 COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
@@ -76,7 +76,6 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		:bison-*:devel/bison \
 		:tcsh-*:shells/tcsh \
 		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
-		::textproc/libxslt \
 		::print/cups \
 		::devel/apache-ant \
 		:db-java-4.*:databases/db/v4,-java,java \
@@ -86,15 +85,17 @@ MODULES+=	lang/python
 LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
 		db.>=4:db-4.*:databases/db/v4 \
+		xslt.>=3::textproc/libxslt \
 		curl.>=7::net/curl \
 		neon.>=24::net/neon \
 		wpd.>=8::textproc/libwpd
-WANTLIB-main=	ICE SM X11 Xau Xdmcp Xext Xrender Xcursor Xfixes Xi Xinerama \
-		Xrandr atk-1.0 c cairo expat \
+WANTLIB-main=	ICE SM X11 Xau Xcomposite Xdamage Xdmcp Xext Xrender Xcursor \
+		Xfixes Xi Xinerama Xrandr atk-1.0 c cairo crypto expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gthread-2.0 iconv intl ossaudio jpeg m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png pthread stdc++ util xml2 z
-RUN_DEPENDS-main=::java/javaPathHelper
+		gthread-2.0 iconv intl jpeg m ossaudio pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png pthread stdc++ ssl util xml2 z
+RUN_DEPENDS-main=	::java/javaPathHelper \
+			:desktop-file-utils-*:devel/desktop-file-utils
 
 MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	::editors/openoffice
@@ -117,7 +118,7 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
 
-PATCHFILES=	build-java-target-2.2.0.diff:0
+PATCHFILES=	build-java-target-2.4.0.diff:0
 
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
@@ -149,6 +150,7 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-db \
 		--with-system-boost \
 		--with-system-libwpd \
+		--with-system-openssl \
 		--with-epm=internal \
 		--with-alloc=system \
 		--with-java \

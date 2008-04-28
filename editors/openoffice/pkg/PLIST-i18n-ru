@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ru,v 1.2 2007/11/13 09:46:28 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ru,v 1.3 2008/04/28 11:18:46 robert Exp $
 openoffice/help/ru/
 openoffice/help/ru/default.css
 openoffice/help/ru/err.html
@@ -196,6 +196,7 @@ openoffice/program/resource/sb680ru.res
 openoffice/program/resource/sc680ru.res
 openoffice/program/resource/sd680ru.res
 openoffice/program/resource/sdbcl680ru.res
+openoffice/program/resource/sdberr680ru.res
 openoffice/program/resource/sdbt680ru.res
 openoffice/program/resource/sfx680ru.res
 openoffice/program/resource/sm680ru.res

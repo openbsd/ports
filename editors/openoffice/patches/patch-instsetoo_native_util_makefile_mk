@@ -1,6 +1,5 @@
-$OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.11 2007/12/07 11:30:55 robert Exp $
---- instsetoo_native/util/makefile.mk.orig.port	Thu Nov  1 12:03:38 2007
-+++ instsetoo_native/util/makefile.mk	Thu Dec  6 16:36:09 2007
+--- instsetoo_native/util/makefile.mk.orig.port	Wed Dec 12 16:38:02 2007
++++ instsetoo_native/util/makefile.mk	Fri Apr 25 10:15:12 2008
 @@ -54,12 +54,14 @@ PYTHONPATH:=$(PWD)$/$(BIN):$(SOLARLIBDIR):$(SOLARLIBDI
  .ENDIF			# "$(GUI)"=="WNT"
  .EXPORT: PYTHONPATH
@@ -25,16 +24,16 @@ $OpenBSD: patch-instsetoo_native_util_makefile_mk,v 1.11 2007/12/07 11:30:55 rob
  
  openofficedev: $(foreach,i,$(alllangiso) openofficedev_$i)
  
-@@ -226,7 +228,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
+@@ -236,7 +238,7 @@ openoffice_%{$(PKGFORMAT:^".")} :
+ .ELSE			# "$(PKGFORMAT)"!=""
  openoffice_% :
  .ENDIF			# "$(PKGFORMAT)"!=""
- .IF "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!="portable"
--	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) $(PKGFORMATSWITCH))
-+	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles -addsystemintegration $(subst,xxx,$(@:e:s/.//) -dontstrip $(PKGFORMATSWITCH))
- 	$(PERL) -w $(SOLARENV)$/bin$/gen_update_info.pl --buildid $(BUILD) --arch "$(RTL_ARCH)" --os "$(RTL_OS)" --lstfile $(PRJ)$/util$/openoffice.lst --product OpenOffice --languages $(subst,$(@:s/_/ /:1)_, $(@:b)) $(PRJ)$/util$/update.xml > $(MISC)/$(@:b)_$(RTL_OS)_$(RTL_ARCH).update.xml
- .ELSE                   # "$(OS)"!="MACOSX" || "$(PKGFORMAT)"!=""
- 	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -packagelist $(PRJ)$/inc_openoffice$/unix$/packagelist.txt -u $(OUT) -buildid $(BUILD) -destdir $(subst,$(@:s/_/ /:1)_,$(OUT)$/OpenOffice$/install$/ $(@:b))_inprogress$/ -simple staging
-@@ -525,11 +527,11 @@ hack_msitemplates .PHONY:
+-	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles $(subst,xxx,$(@:e:s/.//) $(PKGFORMATSWITCH))
++	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles $(subst,xxx,$(@:e:s/.//) -dontstrip $(PKGFORMATSWITCH))
+ 	$(PERL) -w $(SOLARENV)$/bin$/gen_update_info.pl --buildid $(BUILD) --arch "$(RTL_ARCH)" --os "$(RTL_OS)" --lstfile $(PRJ)$/util$/openoffice.lst --product OpenOffice --languages $(subst,$(@:s/_/ /:1)_, $(@:b)) $(PRJ)$/util$/update.xml > $(MISC)/$(@:b)_$(RTL_OS)_$(RTL_ARCH)$(@:e).update.xml
+ 
+ .IF "$(PKGFORMAT)"!=""
+@@ -403,11 +405,11 @@ hack_msitemplates .PHONY:
  	-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
  	-$(MKDIRHIER) $(MSISDKOOTEMPLATEDIR)
  	-$(MKDIRHIER) $(MSIURETEMPLATEDIR)

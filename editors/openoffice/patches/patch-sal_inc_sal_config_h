@@ -1,8 +1,8 @@
-$OpenBSD: patch-sal_inc_sal_config_h,v 1.4 2007/11/13 09:46:28 robert Exp $
---- sal/inc/sal/config.h.orig.port	Mon Mar 26 16:21:27 2007
-+++ sal/inc/sal/config.h	Thu Oct 25 16:23:47 2007
-@@ -110,7 +110,7 @@ extern "C" {
- /* don't know what to put in here */
+$OpenBSD: patch-sal_inc_sal_config_h,v 1.5 2008/04/28 11:18:46 robert Exp $
+--- sal/inc/sal/config.h.orig.port	Thu Nov  1 18:15:03 2007
++++ sal/inc/sal/config.h	Wed Apr 23 15:24:06 2008
+@@ -107,7 +107,7 @@ extern "C" {
+ #define SAL_SYSCONFIGFILE( name ) name ".ini"
  #endif
  
 -#if defined(SOLARIS) || defined(LINUX) || defined(NETBSD) || defined(FREEBSD) || defined(SCO) || defined(IRIX)

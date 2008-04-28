@@ -1,12 +1,11 @@
-$OpenBSD: patch-cppu_source_uno_data_cxx,v 1.4 2007/04/18 13:20:48 kurt Exp $
---- cppu/source/uno/data.cxx.orig.port	Sat Sep 16 20:21:05 2006
-+++ cppu/source/uno/data.cxx	Wed Apr 18 03:46:24 2007
-@@ -367,7 +367,7 @@ sal_Bool SAL_CALL uno_type_isAssignableFromData(
- #endif
+--- cppu/source/uno/data.cxx.orig.port	Fri Nov  2 13:53:59 2007
++++ cppu/source/uno/data.cxx	Tue Apr  1 14:20:54 2008
+@@ -368,7 +368,7 @@ sal_Bool SAL_CALL uno_type_isAssignableFromData(
  
  #if defined(INTEL) \
--    && (defined(__GNUC__) && (defined(LINUX) || defined(FREEBSD)) || defined(MACOSX) \
-+    && (defined(__GNUC__) && (defined(LINUX) || defined(FREEBSD)) || defined(MACOSX) || defined(OPENBSD) \
-         || defined(__SUNPRO_CC) && defined(SOLARIS))
+     && (defined(__GNUC__) && (defined(LINUX) || defined(FREEBSD) || defined(OS2)) || defined(MACOSX) \
+-        || defined(__SUNPRO_CC) && defined(SOLARIS))
++        || defined(__SUNPRO_CC) && defined(SOLARIS) || defined(OPENBSD))
  #define MAX_ALIGNMENT_4
  #endif
+ 

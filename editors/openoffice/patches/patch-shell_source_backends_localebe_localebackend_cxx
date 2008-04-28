@@ -1,12 +1,11 @@
-$OpenBSD: patch-shell_source_backends_localebe_localebackend_cxx,v 1.4 2007/04/18 13:20:48 kurt Exp $
---- shell/source/backends/localebe/localebackend.cxx.orig.port	Sat Sep 16 21:39:02 2006
-+++ shell/source/backends/localebe/localebackend.cxx	Wed Apr 18 03:46:27 2007
+--- shell/source/backends/localebe/localebackend.cxx.orig.port	Thu Sep 20 16:46:57 2007
++++ shell/source/backends/localebe/localebackend.cxx	Wed Apr 23 15:24:06 2008
 @@ -53,7 +53,7 @@
  
  #include <stdio.h>
  
--#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD)
-+#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD)
+-#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OS2)
++#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OS2) || defined(OPENBSD)
  
  #include <rtl/ustrbuf.hxx>
  #include <locale.h>
@@ -14,8 +13,8 @@ $OpenBSD: patch-shell_source_backends_localebe_localebackend_cxx,v 1.4 2007/04/1
  
  rtl::OUString LocaleBackend::getLocale(void)
  {
--#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD)
-+#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD)
+-#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OS2)
++#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OS2) || defined(OPENBSD)
      return ImplGetLocale(LC_CTYPE);
  #elif defined (MACOSX)
  	return ImplGetLocale("AppleLocale");
@@ -23,8 +22,8 @@ $OpenBSD: patch-shell_source_backends_localebe_localebackend_cxx,v 1.4 2007/04/1
  
  rtl::OUString LocaleBackend::getUILocale(void)
  {
--#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD)
-+#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OPENBSD)
+-#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OS2)
++#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD) || defined(OS2) || defined(OPENBSD)
      return ImplGetLocale(LC_MESSAGES);
  #elif defined(MACOSX)
  	return ImplGetLocale("AppleLanguages");

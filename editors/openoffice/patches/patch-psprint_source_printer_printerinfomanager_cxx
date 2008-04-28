@@ -1,6 +1,6 @@
---- psprint/source/printer/printerinfomanager.cxx.orig.port	Tue Jul  3 15:59:32 2007
-+++ psprint/source/printer/printerinfomanager.cxx	Thu Oct 25 16:23:47 2007
-@@ -1220,7 +1220,7 @@ struct SystemCommandParameters
+--- psprint/source/printer/printerinfomanager.cxx.orig.port	Wed Dec 12 15:56:19 2007
++++ psprint/source/printer/printerinfomanager.cxx	Wed Apr 23 15:24:06 2008
+@@ -1240,7 +1240,7 @@ struct SystemCommandParameters
      tokenHandler    pHandler;
  };
  
@@ -9,7 +9,7 @@
  static void lpgetSysQueueTokenHandler(
      const std::list< rtl::OString >& i_rLines,
      std::list< PrinterInfoManager::SystemPrintQueue >& o_rQueues,
-@@ -1365,7 +1365,7 @@ static void standardSysQueueTokenHandler(
+@@ -1385,7 +1385,7 @@ static void standardSysQueueTokenHandler(
  
  static const struct SystemCommandParameters aParms[] =
  {

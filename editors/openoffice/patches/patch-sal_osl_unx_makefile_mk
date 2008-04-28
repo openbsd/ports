@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_osl_unx_makefile_mk,v 1.3 2007/11/13 09:46:28 robert Exp $
---- sal/osl/unx/makefile.mk.orig.port	Tue Jul  3 14:48:28 2007
-+++ sal/osl/unx/makefile.mk	Thu Oct 25 16:23:47 2007
-@@ -117,7 +117,7 @@ OBJFILES=   $(OBJ)$/conditn.obj  \
+$OpenBSD: patch-sal_osl_unx_makefile_mk,v 1.4 2008/04/28 11:18:46 robert Exp $
+--- sal/osl/unx/makefile.mk.orig.port	Mon Oct 15 14:48:23 2007
++++ sal/osl/unx/makefile.mk	Wed Apr 23 15:24:06 2008
+@@ -120,7 +120,7 @@ OBJFILES=   $(OBJ)$/conditn.obj  \
  SLOFILES += $(SLO)$/osxlocale.obj
  .ENDIF
  

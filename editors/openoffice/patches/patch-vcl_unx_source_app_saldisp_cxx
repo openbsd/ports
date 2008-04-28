@@ -1,7 +1,7 @@
-$OpenBSD: patch-vcl_unx_source_app_saldisp_cxx,v 1.5 2007/03/17 15:27:45 robert Exp $
---- vcl/unx/source/app/saldisp.cxx.orig.port	Wed Jan 17 07:50:56 2007
-+++ vcl/unx/source/app/saldisp.cxx	Tue Feb  6 23:13:34 2007
-@@ -972,7 +972,7 @@ bHandleStartupNotification
+$OpenBSD: patch-vcl_unx_source_app_saldisp_cxx,v 1.6 2008/04/28 11:18:46 robert Exp $
+--- vcl/unx/source/app/saldisp.cxx.orig.port	Wed Jan 23 18:18:18 2008
++++ vcl/unx/source/app/saldisp.cxx	Wed Apr 23 15:24:06 2008
+@@ -927,7 +927,7 @@ void SalDisplay::Init()
          sscanf( pProperties, "%li", &nProperties_ );
      else
      {

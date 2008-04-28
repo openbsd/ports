@@ -1,15 +1,15 @@
-$OpenBSD: patch-desktop_source_migration_wizard_cxx,v 1.1 2007/11/13 09:46:28 robert Exp $
---- desktop/source/migration/wizard.cxx.orig.port	Mon Nov  5 10:23:43 2007
-+++ desktop/source/migration/wizard.cxx	Mon Nov  5 10:24:23 2007
-@@ -121,6 +121,7 @@ FirstStartWizard::FirstStartWizard(Window* pParent)
-     ,m_bLicenseWasAccepted(sal_False)
+$OpenBSD: patch-desktop_source_migration_wizard_cxx,v 1.2 2008/04/28 11:18:46 robert Exp $
+--- desktop/source/migration/wizard.cxx.orig.port	Thu Jan 24 16:51:48 2008
++++ desktop/source/migration/wizard.cxx	Wed Apr 23 15:24:05 2008
+@@ -122,6 +122,7 @@ FirstStartWizard::FirstStartWizard( Window* pParent, s
      ,m_bAutomaticUpdChk(sal_True)
+     ,m_aLicensePath( rLicensePath )
  {
 +    return;
      // ---
      // FreeResource();
  //	enableState(STATE_USER, sal_False);
-@@ -381,7 +382,7 @@ void FirstStartWizard::overrideCheck(sal_Bool bOverrid
+@@ -384,7 +385,7 @@ void FirstStartWizard::overrideCheck(sal_Bool bOverrid
  
  short FirstStartWizard::Execute()
  {
@@ -17,4 +17,4 @@ $OpenBSD: patch-desktop_source_migration_wizard_cxx,v 1.1 2007/11/13 09:46:28 ro
 +    return sal_True || svt::RoadmapWizard::Execute();
  }
  
- 
+ static OUString _makeDateTimeString (const DateTime& aDateTime, sal_Bool bUTC = sal_False)

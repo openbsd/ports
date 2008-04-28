@@ -1,6 +1,7 @@
---- instsetoo_native/inc_openoffice/unix/packagelist.txt.orig.port	Fri May 25 16:35:43 2007
-+++ instsetoo_native/inc_openoffice/unix/packagelist.txt	Sun Oct 28 09:10:30 2007
-@@ -29,7 +29,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+$OpenBSD: patch-setup_native_source_packinfo_packinfo_office_txt,v 1.1 2008/04/28 11:18:46 robert Exp $
+--- setup_native/source/packinfo/packinfo_office.txt.orig.port	Fri Apr 25 10:48:10 2008
++++ setup_native/source/packinfo/packinfo_office.txt	Fri Apr 25 10:49:04 2008
+@@ -29,7 +29,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Gnome integration module for %PRODUCTNAME %PRODUCTVERSION"
@@ -9,7 +10,7 @@
  End
  
  Start
-@@ -44,7 +44,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -44,7 +44,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "KDE integration module for %PRODUCTNAME %PRODUCTVERSION"
@@ -18,7 +19,7 @@
  End
  
  Start
-@@ -59,7 +59,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -59,7 +59,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Core module for %PRODUCTNAME %PRODUCTVERSION"
@@ -27,7 +28,7 @@
  End
  
  Start
-@@ -75,7 +75,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -75,7 +75,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Writer module for %PRODUCTNAME %PRODUCTVERSION"
@@ -36,7 +37,7 @@
  End
  
  Start
-@@ -91,7 +91,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -91,7 +91,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Calc module for %PRODUCTNAME %PRODUCTVERSION"
@@ -45,7 +46,7 @@
  End
  
  Start
-@@ -107,7 +107,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -107,7 +107,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Draw module for %PRODUCTNAME %PRODUCTVERSION"
@@ -54,7 +55,7 @@
  End
  
  Start
-@@ -123,7 +123,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -123,7 +123,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Impress module for %PRODUCTNAME %PRODUCTVERSION"
@@ -63,7 +64,7 @@
  End
  
  Start
-@@ -139,7 +139,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -139,7 +139,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Base module for %PRODUCTNAME %PRODUCTVERSION"
@@ -72,7 +73,7 @@
  End
  
  Start
-@@ -155,7 +155,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -155,7 +155,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Math module for %PRODUCTNAME %PRODUCTVERSION"
@@ -81,7 +82,7 @@
  End
  
  Start
-@@ -170,7 +170,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -170,7 +170,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Graphic filter module for %PRODUCTNAME %PRODUCTVERSION"
@@ -90,7 +91,7 @@
  End
  
  Start
-@@ -185,7 +185,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -185,7 +185,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Testtool module for %PRODUCTNAME %PRODUCTVERSION"
@@ -99,7 +100,7 @@
  End
  
  Start
-@@ -200,7 +200,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -200,7 +200,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "English spellchecker module for %PRODUCTNAME %PRODUCTVERSION"
@@ -108,7 +109,7 @@
  End
  
  Start
-@@ -215,7 +215,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -215,7 +215,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "XSLT filter samples module for %PRODUCTNAME %PRODUCTVERSION"
@@ -117,7 +118,7 @@
  End
  
  Start
-@@ -230,7 +230,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -230,7 +230,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Java filter module for %PRODUCTNAME %PRODUCTVERSION"
@@ -126,25 +127,7 @@
  End
  
  Start
-@@ -245,7 +245,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
- solariscopyright = "solariscopyrightfile"
- vendor = "%PRODUCTNAME"
- description = "Optional gallery for %PRODUCTNAME %PRODUCTVERSION"
--destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
-+destpath = "openoffice"
- End
- 
- Start
-@@ -260,7 +260,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
- solariscopyright = "solariscopyrightfile"
- vendor = "%PRODUCTNAME"
- description = "Language utilities for %PRODUCTNAME %PRODUCTVERSION"
--destpath = "/opt/%UNIXPRODUCTNAME%PRODUCTVERSION"
-+destpath = "openoffice"
- End
- 
- Start
-@@ -275,7 +275,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -245,7 +245,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "ActiveX control for %PRODUCTNAME %PRODUCTVERSION"
@@ -153,7 +136,7 @@
  End
  
  Start
-@@ -288,7 +288,7 @@ copyright = "1999-2005 by Sun Microsystems"
+@@ -258,7 +258,7 @@ copyright = "1999-2005 by Sun Microsystems"
  solariscopyright = "solariscopyrightfile"
  vendor = "Sun Microsystems, Inc."
  description = "Online update modul for %PRODUCTNAME %PRODUCTVERSION"
@@ -162,7 +145,7 @@
  End
  
  Start
-@@ -303,7 +303,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -273,7 +273,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Pyuno module for %PRODUCTNAME %PRODUCTVERSION"
@@ -171,7 +154,7 @@
  End
  
  Start
-@@ -318,7 +318,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -288,7 +288,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Email mailmerge module for %PRODUCTNAME %PRODUCTVERSION"
@@ -180,7 +163,7 @@
  End
  
  Start
-@@ -333,7 +333,7 @@ copyright = "1999-2007 by OpenOffice.org"
+@@ -303,7 +303,7 @@ copyright = "1999-2007 by OpenOffice.org"
  solariscopyright = "solariscopyrightfile"
  vendor = "OpenOffice.org"
  description = "Headless display module for %PRODUCTNAME %PRODUCTVERSION"
@@ -189,7 +172,7 @@
  End
  
  Start
-@@ -348,7 +348,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -318,7 +318,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Mailcap module for %PRODUCTNAME %PRODUCTVERSION"
@@ -198,7 +181,7 @@
  End
  
  Start
-@@ -364,7 +364,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -334,7 +334,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
@@ -207,7 +190,7 @@
  End
  
  Start
-@@ -379,7 +379,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -349,7 +349,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
@@ -216,7 +199,7 @@
  End
  
  Start
-@@ -394,7 +394,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -364,7 +364,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
@@ -225,7 +208,7 @@
  End
  
  Start
-@@ -409,7 +409,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -379,7 +379,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
@@ -234,7 +217,7 @@
  End
  
  Start
-@@ -424,7 +424,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -394,7 +394,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
@@ -243,7 +226,7 @@
  End
  
  Start
-@@ -439,7 +439,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -409,7 +409,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
@@ -252,7 +235,7 @@
  End
  
  Start
-@@ -454,7 +454,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -424,7 +424,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
@@ -261,7 +244,7 @@
  End
  
  Start
-@@ -469,7 +469,7 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -439,7 +439,7 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
@@ -270,7 +253,7 @@
  End
  
  Start
-@@ -485,5 +485,5 @@ copyright = "1999-2006 by %PRODUCTNAME"
+@@ -455,5 +455,5 @@ copyright = "1999-2007 by %PRODUCTNAME"
  solariscopyright = "solariscopyrightfile"
  vendor = "%PRODUCTNAME"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
