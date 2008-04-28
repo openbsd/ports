@@ -1,17 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.6 2007/05/01 12:55:14 todd Exp $
---- Makefile.orig	Mon Feb  5 17:01:54 2007
-+++ Makefile	Tue Mar 20 19:21:54 2007
-@@ -27,7 +27,7 @@ endif
- ifndef CONFIG_DARWIN
- ifndef CONFIG_WIN32
- ifndef CONFIG_SOLARIS
--LIBS+=-lrt
-+#LIBS+=-lrt
- endif
- endif
- endif
-@@ -51,7 +51,7 @@ clean:
- 	rm -f *.o *.a $(TOOLS) dyngen$(EXESUF) TAGS *.pod *~ */*~
+$OpenBSD: patch-Makefile,v 1.7 2008/04/28 22:52:38 todd Exp $
+--- Makefile.orig	Sun Jan  6 14:38:41 2008
++++ Makefile	Tue Apr  1 01:33:38 2008
+@@ -149,7 +149,7 @@ clean:
+ 	rm -f slirp/*.o slirp/*.d audio/*.o audio/*.d
  	$(MAKE) -C tests clean
  	for d in $(TARGET_DIRS); do \
 -	$(MAKE) -C $$d $@ || exit 1 ; \
@@ -19,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.6 2007/05/01 12:55:14 todd Exp $
          done
  
  distclean: clean
-@@ -106,7 +106,7 @@ cscope:
+@@ -206,7 +206,7 @@ cscope:
  
  # documentation
  %.html: %.texi

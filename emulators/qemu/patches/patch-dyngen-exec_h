@@ -1,6 +1,6 @@
-$OpenBSD: patch-dyngen-exec_h,v 1.5 2007/05/01 12:55:14 todd Exp $
---- dyngen-exec.h.orig	Mon Feb  5 17:01:54 2007
-+++ dyngen-exec.h	Sat Mar 10 16:39:39 2007
+$OpenBSD: patch-dyngen-exec_h,v 1.6 2008/04/28 22:52:38 todd Exp $
+--- dyngen-exec.h.orig	Sun Jan  6 14:38:42 2008
++++ dyngen-exec.h	Tue Apr  1 01:40:00 2008
 @@ -27,11 +27,15 @@
  #define _FILEDEFED
  #endif
@@ -12,7 +12,7 @@ $OpenBSD: patch-dyngen-exec_h,v 1.5 2007/05/01 12:55:14 todd Exp $
     host headers do not allow that. */
  #include <stddef.h>
 -
-+#ifdef __OpenBSD__
++#ifdef _BSD
 +#include <sys/types.h>
 +#else
  typedef unsigned char uint8_t;
@@ -26,19 +26,17 @@ $OpenBSD: patch-dyngen-exec_h,v 1.5 2007/05/01 12:55:14 todd Exp $
  
  /* XXX: This may be wrong for 64-bit ILP32 hosts.  */
  typedef void * host_reg_t;
-@@ -78,11 +83,15 @@ typedef void * host_reg_t;
- #define UINT32_MAX		(4294967295U)
- #define UINT64_MAX		((uint64_t)(18446744073709551615))
- 
-+#ifdef __OpenBSD__
-+typedef struct __sFILE FILE;
-+#else
+@@ -82,12 +87,12 @@ typedef void * host_reg_t;
+ typedef struct __sFILE FILE;
+ #else
  typedef struct FILE FILE;
+-#endif
  extern int fprintf(FILE *, const char *, ...);
+ extern int fputs(const char *, FILE *);
  extern int printf(const char *, ...);
  #undef NULL
  #define NULL 0
 +#endif
  
- #ifdef __i386__
+ #if defined(__i386__)
  #define AREG0 "ebp"

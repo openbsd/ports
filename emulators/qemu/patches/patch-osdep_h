@@ -1,6 +1,6 @@
-$OpenBSD: patch-osdep_h,v 1.3 2007/05/01 12:55:14 todd Exp $
---- osdep.h.orig	Mon Feb  5 17:01:54 2007
-+++ osdep.h	Sat Mar 10 16:39:40 2007
+$OpenBSD: patch-osdep_h,v 1.4 2008/04/28 22:52:38 todd Exp $
+--- osdep.h.orig	Sun Jan  6 14:38:42 2008
++++ osdep.h	Tue Apr  1 01:33:39 2008
 @@ -2,6 +2,10 @@
  #define QEMU_OSDEP_H
  
@@ -10,5 +10,5 @@ $OpenBSD: patch-osdep_h,v 1.3 2007/05/01 12:55:14 todd Exp $
 +#include <sys/signal.h>
 +#endif
  
- #define qemu_printf printf
- 
+ #ifndef glue
+ #define xglue(x, y) x ## y

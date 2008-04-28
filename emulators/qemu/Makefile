@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.31 2008/04/01 08:51:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2008/04/28 22:52:38 todd Exp $
 
 # no success building on other archs yet
-ONLY_FOR_ARCHS=		amd64 arm i386 powerpc
+ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
 COMMENT=		multi system emulator
 
-DISTNAME=		qemu-0.9.0
-PKGNAME=		${DISTNAME}p5
+DISTNAME=		qemu-0.9.1
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://fabrice.bellard.free.fr/qemu/
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
-# GPLv2 - LGPL
+# GPLv2/LGPLv2/BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -23,8 +22,10 @@ MASTER_SITES=		${HOMEPAGE}
 
 BUILD_DEPENDS=		::textproc/texi2html
 USE_GMAKE=		Yes
-WANTLIB=		m z ossaudio c
-CONFIGURE_STYLE=	gnu
+WANTLIB=		c m ossaudio z
+CONFIGURE_STYLE=	simple
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--disable-vnc-tls
 
 # Currently, the regression tests are utterly broken.
 REGRESS_TARGET=		test test2
@@ -36,17 +37,14 @@ PATCH_LIST=     patch-* misc-*
 FLAVORS=		no_x11
 FLAVOR?=
 
-CONFIGURE_ENV+=		USE_KQEMU=yes
-
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--disable-gfx-check \
 			--disable-sdl
 .else
-LIB_DEPENDS=    	SDL::devel/sdl \
-			aa::graphics/aalib
+LIB_DEPENDS=    	SDL::devel/sdl
 
 USE_X11=		Yes
-WANTLIB+=		X11 Xext pthread usbhid
+WANTLIB+=		pthread
 .endif
 
 pre-configure:
@@ -55,5 +53,8 @@ pre-configure:
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup ${PREFIX}/share/examples/qemu
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown ${PREFIX}/share/examples/qemu
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qemu
+	@${INSTALL_SCRIPT} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/qemu
 
 .include <bsd.port.mk>

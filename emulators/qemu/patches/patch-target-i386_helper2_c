@@ -1,21 +1,21 @@
-$OpenBSD: patch-target-i386_helper2_c,v 1.5 2007/05/01 12:55:14 todd Exp $
---- target-i386/helper2.c.orig	Mon Feb  5 17:01:54 2007
-+++ target-i386/helper2.c	Mon Mar 12 15:48:39 2007
-@@ -127,7 +127,7 @@ CPUX86State *cpu_x86_init(void)
-                 env->cpuid_model[i >> 2] |= c << (8 * (i & 3));
-             }
-         }
+$OpenBSD: patch-target-i386_helper2_c,v 1.6 2008/04/28 22:52:38 todd Exp $
+--- target-i386/helper2.c.orig	Sun Jan  6 14:38:45 2008
++++ target-i386/helper2.c	Tue Apr  1 01:49:51 2008
+@@ -133,7 +133,7 @@ typedef struct x86_def_t {
+           CPUID_PAT | CPUID_FXSR | CPUID_MMX | CPUID_SSE | CPUID_SSE2 | \
+           CPUID_PAE | CPUID_SEP | CPUID_APIC)
+ static x86_def_t x86_defs[] = {
 -#ifdef TARGET_X86_64
-+/* #ifdef TARGET_X86_64  -- You must enable it for Mac OS X x86 */
-         /* currently not enabled for std i386 because not fully tested */
-         env->cpuid_ext2_features = (env->cpuid_features & 0x0183F3FF);
-         env->cpuid_ext2_features |= CPUID_EXT2_LM | CPUID_EXT2_SYSCALL | CPUID_EXT2_NX;
-@@ -137,7 +137,7 @@ CPUX86State *cpu_x86_init(void)
-         env->cpuid_features |= CPUID_MTRR | CPUID_CLFLUSH | CPUID_MCA;
-         /* this feature is needed for Solaris and isn't fully implemented */
-         env->cpuid_features |= CPUID_PSE36;
++/* #ifdef TARGET_X86_64 -- You must enable it for Mac OS X x86 */
+     {
+         .name = "qemu64",
+         .level = 2,
+@@ -154,7 +154,7 @@ static x86_def_t x86_defs[] = {
+         .ext3_features = CPUID_EXT3_SVM,
+         .xlevel = 0x8000000A,
+     },
 -#endif
 +/* #endif -- To run Mac OS X x86 */
-     }
-     cpu_reset(env);
- #ifdef USE_KQEMU
+     {
+         .name = "qemu32",
+         .level = 2,

@@ -1,7 +1,7 @@
-$OpenBSD: patch-osdep_c,v 1.1 2008/01/19 23:53:58 todd Exp $
---- osdep.c.orig	Mon Feb  5 17:01:54 2007
-+++ osdep.c	Mon Jan  7 19:01:42 2008
-@@ -79,7 +79,14 @@ void qemu_vfree(void *ptr)
+$OpenBSD: patch-osdep_c,v 1.2 2008/04/28 22:52:38 todd Exp $
+--- osdep.c.orig	Sun Jan  6 14:38:42 2008
++++ osdep.c	Tue Apr  1 01:36:02 2008
+@@ -83,7 +83,14 @@ void qemu_vfree(void *ptr)
  
  #if defined(USE_KQEMU)
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-osdep_c,v 1.1 2008/01/19 23:53:58 todd Exp $
  #include <sys/mman.h>
  #include <fcntl.h>
  
-@@ -87,9 +94,15 @@ void *kqemu_vmalloc(size_t size)
+@@ -91,9 +98,15 @@ static void *kqemu_vmalloc(size_t size)
  {
      static int phys_ram_fd = -1;
      static int phys_ram_size = 0;
@@ -33,7 +33,7 @@ $OpenBSD: patch-osdep_c,v 1.1 2008/01/19 23:53:58 todd Exp $
  #ifdef HOST_SOLARIS
      struct statvfs stfs;
  #else
-@@ -151,11 +164,13 @@ void *kqemu_vmalloc(size_t size)
+@@ -155,11 +168,13 @@ static void *kqemu_vmalloc(size_t size)
          }
          unlink(phys_ram_file);
      }
@@ -41,10 +41,10 @@ $OpenBSD: patch-osdep_c,v 1.1 2008/01/19 23:53:58 todd Exp $
 +
      size = (size + 4095) & ~4095;
      ftruncate(phys_ram_fd, phys_ram_size + size);
-     ptr = mmap(NULL, 
-                size, 
--               PROT_WRITE | PROT_READ, MAP_SHARED, 
-+               PROT_WRITE | PROT_READ, map_anon|MAP_SHARED, 
+     ptr = mmap(NULL,
+                size,
+-               PROT_WRITE | PROT_READ, MAP_SHARED,
++               PROT_WRITE | PROT_READ, map_anon|MAP_SHARED,
                 phys_ram_fd, phys_ram_size);
      if (ptr == MAP_FAILED) {
          fprintf(stderr, "Could not map physical memory\n");

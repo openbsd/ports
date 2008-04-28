@@ -1,0 +1,14 @@
+$OpenBSD: patch-qemu-common_h,v 1.1 2008/04/28 22:52:38 todd Exp $
+--- qemu-common.h.orig	Tue Apr  1 01:45:33 2008
++++ qemu-common.h	Tue Apr  1 01:45:59 2008
+@@ -77,8 +77,8 @@ int qemu_bh_poll(void);
+ uint64_t muldiv64(uint64_t a, uint32_t b, uint32_t c);
+ 
+ /* cutils.c */
+-void pstrcpy(char *buf, int buf_size, const char *str);
+-char *pstrcat(char *buf, int buf_size, const char *s);
++void pstrcpy(char *buf, size_t buf_size, const char *str);
++char *pstrcat(char *buf, size_t buf_size, const char *s);
+ int strstart(const char *str, const char *val, const char **ptr);
+ int stristart(const char *str, const char *val, const char **ptr);
+ time_t mktimegm(struct tm *tm);

@@ -1,8 +1,8 @@
-$OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
---- vl.c.orig	Tue Feb  6 00:01:54 2007
-+++ vl.c	Mon Mar 31 21:42:05 2008
-@@ -44,7 +44,8 @@
- #include <netdb.h>
+$OpenBSD: patch-vl_c,v 1.17 2008/04/28 22:52:38 todd Exp $
+--- vl.c.orig	Sun Jan  6 14:38:42 2008
++++ vl.c	Tue Apr  1 22:43:39 2008
+@@ -61,7 +61,8 @@
+ #include <arpa/inet.h>
  #ifdef _BSD
  #include <sys/stat.h>
 -#ifndef __APPLE__
@@ -10,8 +10,8 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
 +#if !defined(__APPLE__) && !defined(__OpenBSD__)
  #include <libutil.h>
  #endif
- #else
-@@ -92,7 +93,7 @@
+ #elif defined (__GLIBC__) && defined (__FreeBSD_kernel__)
+@@ -136,7 +137,7 @@ int inet_aton(const char *cp, struct in_addr *ia);
  #ifdef __sun__
  #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
  #else
@@ -20,16 +20,8 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
  #endif
  
  //#define DEBUG_UNUSED_IOPORT
-@@ -168,6 +169,7 @@ const char *vnc_display;
- int acpi_enabled = 1;
- int fd_bootchk = 1;
- int no_reboot = 0;
-+int scsi_enabled = 0;
- int daemonize = 0;
- const char *option_rom[MAX_OPTION_ROMS];
- int nb_option_roms;
-@@ -2808,7 +2810,7 @@ static int parse_macaddr(uint8_t *macaddr, const char 
-     return 0;
+@@ -3491,7 +3492,7 @@ static int parse_macaddr(uint8_t *macaddr, const char 
+     return -1;
  }
  
 -static int get_str_sep(char *buf, int buf_size, const char **pp, int sep)
@@ -37,13 +29,13 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
  {
      const char *p, *p1;
      int len;
-@@ -3226,11 +3228,85 @@ static int tap_open(char *ifname, int ifname_size)
+@@ -3922,11 +3923,85 @@ static int tap_open(char *ifname, int ifname_size)
      char *dev;
      struct stat s;
  
 +    /* If the device was specified on the command line, use it */
 +    if (ifname[0]) {
-+       fd = open(ifname, O_RDWR);
++       TFR(fd = open(ifname, O_RDWR));
 +       if (fd < 0) {
 +          fprintf(stderr, "warning: could not open %s: no virtual network emulation\n", ifname);
 +            return -1;
@@ -52,7 +44,7 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
 +#ifdef __OpenBSD__
 +    struct ifreq ifr;
 +    int i = 0, enoentcount = 0, err = 0, sock;
-+    char dname[100], iname[100];
++    char dname[100];
 +
 +    bzero(&ifr, sizeof(ifr));
 +    if (ifname != NULL && ifname[0] != '\0') {
@@ -62,17 +54,17 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
 +    } else {
 +        for (; i != -1; i++) {
 +           snprintf(dname, sizeof dname, "/dev/tun%d", i);
-+            bzero(&ifr.ifr_name, sizeof(ifr.ifr_name));
++           bzero(&ifr.ifr_name, sizeof(ifr.ifr_name));
 +           snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "tun%d", i);
-+           fd = open(dname, O_RDWR);
++           TFR(fd = open(dname, O_RDWR));
 +           if (fd >= 0)
 +               break;
 +           else if (errno != ENOENT || ++enoentcount > 3) {
 +                if (errno != EBUSY) {
 +                    err = errno;
 +                    break;
-+                }
-+            } else
++                } 
++            } else  
 +                err = errno;
 +        }
 +    }
@@ -113,7 +105,7 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
 +    }
 +
 +#else
-     fd = open("/dev/tap", O_RDWR);
+     TFR(fd = open("/dev/tap", O_RDWR));
      if (fd < 0) {
          fprintf(stderr, "warning: could not open /dev/tap: no virtual network emulation\n");
          return -1;
@@ -123,25 +115,25 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
  
      fstat(fd, &s);
      dev = devname(s.st_rdev, S_IFCHR);
-@@ -3282,6 +3358,7 @@ static int net_tap_init(VLANState *vlan, const char *i
-     char *args[3];
-     char **parg;
+@@ -4141,6 +4216,7 @@ static int net_tap_init(VLANState *vlan, const char *i
+     TAPState *s;
+     int fd;
      char ifname[128];
 +    bzero(&ifname,sizeof(ifname));
  
      if (ifname1 != NULL)
          pstrcpy(ifname, sizeof(ifname), ifname1);
-@@ -3476,7 +3553,7 @@ static int net_socket_mcast_create(struct sockaddr_in 
+@@ -4320,7 +4396,7 @@ static int net_socket_mcast_create(struct sockaddr_in 
      /* Force mcast msgs to loopback (eg. several QEMUs in same host */
      val = 1;
-     ret=setsockopt(fd, IPPROTO_IP, IP_MULTICAST_LOOP, 
+     ret=setsockopt(fd, IPPROTO_IP, IP_MULTICAST_LOOP,
 -                   (const char *)&val, sizeof(val));
 +                   (const char *)&val, sizeof(char));
      if (ret < 0) {
  	perror("setsockopt(SOL_IP, IP_MULTICAST_LOOP)");
  	goto fail;
-@@ -3732,7 +3809,8 @@ static int net_socket_mcast_init(VLANState *vlan, cons
- 
+@@ -4609,7 +4685,8 @@ static const char *get_word(char *buf, int buf_size, c
+     return p;
  }
  
 -static int get_param_value(char *buf, int buf_size,
@@ -150,16 +142,17 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
                             const char *tag, const char *str)
  {
      const char *p;
-@@ -3856,6 +3934,8 @@ static int net_client_init(const char *str)
-     if (!strcmp(device, "tap")) {
+@@ -4748,6 +4825,9 @@ static int net_client_init(const char *str)
          char ifname[64];
-         char setup_script[1024];
-+	bzero(&ifname,sizeof(ifname));
-+	bzero(&setup_script,sizeof(setup_script));
+         char setup_script[1024], down_script[1024];
          int fd;
++        bzero(&ifname, sizeof(ifname));
++        bzero(&setup_script, sizeof(setup_script));
++        bzero(&down_script, sizeof(down_script));
+         vlan->nb_host_devs++;
          if (get_param_value(buf, sizeof(buf), "fd", p) > 0) {
              fd = strtol(buf, NULL, 0);
-@@ -3863,13 +3943,13 @@ static int net_client_init(const char *str)
+@@ -4755,16 +4835,16 @@ static int net_client_init(const char *str)
              if (net_tap_fd_init(vlan, fd))
                  ret = 0;
          } else {
@@ -169,49 +162,18 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
              if (get_param_value(setup_script, sizeof(setup_script), "script", p) == 0) {
                  pstrcpy(setup_script, sizeof(setup_script), DEFAULT_NETWORK_SCRIPT);
              }
--            ret = net_tap_init(vlan, ifname, setup_script);
+             if (get_param_value(down_script, sizeof(down_script), "downscript", p) == 0) {
+                 pstrcpy(down_script, sizeof(down_script), DEFAULT_NETWORK_DOWN_SCRIPT);
+             }
+-            ret = net_tap_init(vlan, ifname, setup_script, down_script);
 +            if (get_param_value(ifname, sizeof(ifname), "ifname", p) == 0)
-+		ret = net_tap_init(vlan, NULL, setup_script);
-+	    else
-+		ret = net_tap_init(vlan, NULL, setup_script);
++               ret = net_tap_init(vlan, NULL, setup_script, down_script);
++            else
++               ret = net_tap_init(vlan, NULL, setup_script, down_script);
          }
      } else
  #endif
-@@ -6117,6 +6197,7 @@ void help(void)
-            "-no-acpi        disable ACPI\n"
- #endif
-            "-no-reboot      exit instead of rebooting\n"
-+           "-scsienable     enable scsi devices\n"
-            "-loadvm file    start right away with a saved state (loadvm in monitor)\n"
- 	   "-vnc display    start a VNC server on display\n"
- #ifndef _WIN32
-@@ -6205,7 +6286,8 @@ enum {
-     QEMU_OPTION_no_reboot,
-     QEMU_OPTION_daemonize,
-     QEMU_OPTION_option_rom,
--    QEMU_OPTION_semihosting
-+    QEMU_OPTION_semihosting,
-+    QEMU_OPTION_scsi
- };
- 
- typedef struct QEMUOption {
-@@ -6281,6 +6363,7 @@ const QEMUOption qemu_options[] = {
-     { "usbdevice", HAS_ARG, QEMU_OPTION_usbdevice },
-     { "smp", HAS_ARG, QEMU_OPTION_smp },
-     { "vnc", HAS_ARG, QEMU_OPTION_vnc },
-+    { "scsienable", 0, QEMU_OPTION_scsi },
- 
-     /* temporary options */
-     { "usb", 0, QEMU_OPTION_usb },
-@@ -6329,6 +6412,7 @@ static void read_passwords(void)
-     for(i = 0; i < 6; i++) {
-         bs = get_bdrv(i);
-         if (bs && bdrv_is_encrypted(bs)) {
-+        		qemu_bh_poll();
-             term_printf("%s is encrypted.\n", bdrv_get_device_name(bs));
-             for(j = 0; j < 3; j++) {
-                 monitor_readline("Password: ", 
-@@ -6570,7 +6654,11 @@ int main(int argc, char **argv)
+@@ -8130,19 +8210,23 @@ int main(int argc, char **argv)
      gdbstub_port = DEFAULT_GDBSTUB_PORT;
  #endif
      snapshot = 0;
@@ -222,32 +184,19 @@ $OpenBSD: patch-vl_c,v 1.16 2008/03/31 20:16:52 todd Exp $
 +#endif
      kernel_filename = NULL;
      kernel_cmdline = "";
- #ifdef TARGET_PPC
-@@ -6580,14 +6668,14 @@ int main(int argc, char **argv)
- #endif
      cyls = heads = secs = 0;
      translation = BIOS_ATA_TRANSLATION_AUTO;
 -    pstrcpy(monitor_device, sizeof(monitor_device), "vc");
-+    pstrcpy(monitor_device, sizeof(monitor_device), nographic ? "stdio" : "vc" );
++    pstrcpy(monitor_device, sizeof(monitor_device), nographic ? "stdio" : "vc");
  
 -    pstrcpy(serial_devices[0], sizeof(serial_devices[0]), "vc");
 +    pstrcpy(serial_devices[0], sizeof(serial_devices[0]), nographic ? "stdio" : "vc");
      for(i = 1; i < MAX_SERIAL_PORTS; i++)
          serial_devices[i][0] = '\0';
      serial_device_index = 0;
-     
+ 
 -    pstrcpy(parallel_devices[0], sizeof(parallel_devices[0]), "vc");
 +    pstrcpy(parallel_devices[0], sizeof(parallel_devices[0]), "null");
      for(i = 1; i < MAX_PARALLEL_PORTS; i++)
          parallel_devices[i][0] = '\0';
      parallel_device_index = 0;
-@@ -6940,6 +7028,9 @@ int main(int argc, char **argv)
- 		break;
-             case QEMU_OPTION_no_acpi:
-                 acpi_enabled = 0;
-+                break;
-+            case QEMU_OPTION_scsi:
-+                scsi_enabled = 1;
-                 break;
-             case QEMU_OPTION_no_reboot:
-                 no_reboot = 1;
