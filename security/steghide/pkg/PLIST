@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/28 19:37:59 okan Exp $
+bin/steghide
+@man man/man1/steghide.1
+share/locale/de/LC_MESSAGES/steghide.mo
+share/locale/es/LC_MESSAGES/steghide.mo
+share/locale/fr/LC_MESSAGES/steghide.mo
+share/locale/ro/LC_MESSAGES/steghide.mo

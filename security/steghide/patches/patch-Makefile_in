@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/04/28 19:37:59 okan Exp $
+--- Makefile.in.orig	Wed Oct 15 10:01:28 2003
++++ Makefile.in	Thu Apr 17 19:28:20 2008
+@@ -161,7 +161,7 @@ AUTOMAKE_OPTIONS = dist-bzip2 dist-zip
+ SUBDIRS = m4 intl po doc src tests
+ docdir = $(prefix)/share/doc/$(PACKAGE)
+ EXTRA_DIST = config.rpath mkinstalldirs  ABOUT-NLS BUGS CREDITS HISTORY LEAME depcomp
+-doc_DATA = ABOUT-NLS BUGS COPYING CREDITS HISTORY INSTALL LEAME README TODO
++doc_DATA =
+ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 config.guess config.h.in \
+ config.sub configure depcomp install-sh missing mkinstalldirs steghide.doxygen steghide.spec
+ 
+@@ -233,13 +233,6 @@ uninstall-info-am:
+ docDATA_INSTALL = $(INSTALL_DATA)
+ install-docDATA: $(doc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(docdir)
+-	@list='$(doc_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f"; \
+-	  $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f; \
+-	done
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
