@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2008/03/25 08:23:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2008/04/28 00:39:10 sthen Exp $
 
 CATEGORIES=	audio x11 x11/kde
-COMMENT=	music player for kde
+COMMENT=	music player for KDE
 
 HOMEPAGE=	http://amarok.kde.org/
-V=		1.4.8
+V=		1.4.9.1
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME=	amarok-$V
 EXTRACT_SUFX=	.tar.bz2
@@ -14,11 +14,13 @@ FLAVORS=	debug
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS+=	lib/qt3/qt-mt.>=3.33::x11/qt3 \
 		kdecore.>=6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,kio,kdesu,kjs,knewstuff,kdnssd::x11/kde/libs3 \
+		konqsidebarplugin::x11/kde/base3 \
 		tag.>=5.0:taglib->=1.4:audio/taglib \
 		xine::multimedia/xine-lib \
 		sqlite3::databases/sqlite3 \
 		gpod::audio/libgpod \
-		njb::audio/libnjb
+		njb::audio/libnjb \
+		ruby::lang/ruby
 
 WANTLIB=	stdc++ Xext Xrender z X11 Xau Xdmcp util m SM c \
 		pthread ICE idn expat fontconfig freetype \
@@ -26,10 +28,7 @@ WANTLIB=	stdc++ Xext Xrender z X11 Xau Xdmcp util m SM c \
 		jpeg png art_lgpl_2 intl usb \
 		gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		fam rpcsvc expat fontconfig
-		
-LIB_DEPENDS+=	konqsidebarplugin::x11/kde/base3
 
-SHARED_ONLY=	Yes
 SHARED_LIBS +=	amarok               0.0      # .0.0
 SHARED_LIBS +=	http11               0.0      # .0.0
 
@@ -38,13 +37,10 @@ MODKDE_VERSION=		3.5.7
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
-USE_GMAKE?=		Yes
+USE_GMAKE=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
-
-LIB_DEPENDS+=		ruby::lang/ruby
-
 
 CONFIGURE_ARGS+=	--without-arts \
 			--without-opengl --without-gstreamer \
@@ -53,10 +49,10 @@ CONFIGURE_ARGS+=	--without-arts \
 			--without-libmtp \
 			--without-musicbrainz
 
+# GPLv2/LGPL v2/GFDL
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-
 
 .include <bsd.port.mk>
