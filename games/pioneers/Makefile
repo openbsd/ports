@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2008/03/03 08:47:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/04/28 09:17:07 ajacoutot Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
-DISTNAME=	pioneers-0.11.3
-PKGNAME=	${DISTNAME}p0
-CATEGORIES=	games x11/gnome
+GNOME_PROJECT=	pioneers
+GNOME_VERSION=	0.12.1
 
-PATCHFILES=	pioneers_0_11_3.patch:0
+CATEGORIES=	games
+
+EXTRACT_SUFX=	.tar.gz
 
 HOMEPAGE=	http://pio.sourceforge.net/
 
@@ -26,27 +27,26 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		pcre png popt pthread ssl util xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pio/}
-MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		x11/gnome
 
 BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
-		::x11/gnome/librsvg,no_gnome
+		::x11/gnome/librsvg
 RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
-		:desktop-file-utils-*:devel/desktop-file-utils \
-		::x11/gnome/librsvg,no_gnome \
-		::x11/gnome/yelp
+		::x11/gnome/librsvg
 LIB_DEPENDS=	gnome-2.>=1900::x11/gnome/libgnome
 
 USE_X11=	Yes
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
+DESKTOP_FILES=	Yes
+MODGNOME_HELP_FILES=Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_pngtopnm=""
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-protocol=IPv4
 
 pre-configure:
 	@perl -pi -e 's,games/pioneers,pioneers,g;' \

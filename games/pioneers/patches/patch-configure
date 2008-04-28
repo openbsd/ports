@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/02/02 09:40:58 ajacoutot Exp $
---- configure.orig	Tue Jan  8 16:49:13 2008
-+++ configure	Tue Jan  8 16:49:25 2008
-@@ -23458,7 +23458,7 @@ if test $pioneers_is_mingw_port = yes; then
+$OpenBSD: patch-configure,v 1.2 2008/04/28 09:17:07 ajacoutot Exp $
+--- configure.orig	Sun Apr 27 22:52:55 2008
++++ configure	Mon Apr 28 10:33:46 2008
+@@ -24140,7 +24140,7 @@ if test $pioneers_is_mingw_port = yes; then
  	pioneers_localedir=locale
  else
  	pioneers_datadir=$datadir

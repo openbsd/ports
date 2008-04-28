@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/02 09:40:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/04/28 09:17:07 ajacoutot Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
 bin/pioneers
@@ -58,6 +58,8 @@ share/gnome/help/pioneers/C/images/wool.png
 share/gnome/help/pioneers/C/legal.xml
 share/gnome/help/pioneers/C/pioneers.xml
 share/locale/af/LC_MESSAGES/pioneers.mo
+share/locale/cs/LC_MESSAGES/pioneers.mo
+share/locale/da/LC_MESSAGES/pioneers.mo
 share/locale/de/LC_MESSAGES/pioneers.mo
 share/locale/es/LC_MESSAGES/pioneers.mo
 share/locale/fr/LC_MESSAGES/pioneers.mo
@@ -65,6 +67,7 @@ share/locale/hu/LC_MESSAGES/pioneers.mo
 share/locale/it/LC_MESSAGES/pioneers.mo
 share/locale/ja/LC_MESSAGES/pioneers.mo
 share/locale/nl/LC_MESSAGES/pioneers.mo
+share/locale/pt/LC_MESSAGES/pioneers.mo
 share/locale/sv/LC_MESSAGES/pioneers.mo
 share/omf/pioneers/
 share/omf/pioneers/pioneers-C.omf
@@ -92,6 +95,7 @@ share/pioneers/pond.game
 share/pioneers/seafarers-gold.game
 share/pioneers/seafarers.game
 share/pioneers/small.game
+share/pioneers/south_africa.game
 share/pioneers/square.game
 share/pioneers/star.game
 share/pioneers/themes/
