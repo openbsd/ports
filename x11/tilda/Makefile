@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/11 09:03:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/04/28 14:50:20 jasper Exp $
 
 COMMENT=		drop-down terminal emulator
 
-DISTNAME=		tilda-0.9.5
+DISTNAME=		tilda-0.9.6
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tilda.sourceforge.net/
