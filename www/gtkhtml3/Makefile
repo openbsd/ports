@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2008/04/09 13:29:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2008/04/29 18:53:18 jasper Exp $
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
-GNOME_VERSION=		3.16.2
+GNOME_VERSION=		3.18.1
 API_VERSION=		3.14
-PKGNAME=		gtkhtml3-${VERSION}p0
-SHARED_LIBS +=	gtkhtml-3.14         1.0      # .20.0
+PKGNAME=		gtkhtml3-${VERSION}
+SHARED_LIBS +=	gtkhtml-3.14         2.0      # .20.0
 CATEGORIES=    		www
 
 # GPL/LGPL
@@ -39,7 +39,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS=		API_VERSION
-
-NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
