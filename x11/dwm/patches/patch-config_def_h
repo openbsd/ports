@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_def_h,v 1.1 2008/04/15 19:44:10 merdely Exp $
---- config.def.h.orig	Thu Apr  3 22:57:01 2008
-+++ config.def.h	Tue Apr  8 19:02:10 2008
-@@ -2,19 +2,20 @@
+$OpenBSD: patch-config_def_h,v 1.2 2008/04/29 13:49:08 sthen Exp $
+--- config.def.h.orig	Thu Apr  3 21:57:01 2008
++++ config.def.h	Mon Apr 28 22:18:14 2008
+@@ -2,20 +2,22 @@
  
  /* appearance */
  #define BORDERPX		1
@@ -27,9 +27,11 @@ $OpenBSD: patch-config_def_h,v 1.1 2008/04/15 19:44:10 merdely Exp $
  	/* class	instance	title		tags ref	isfloating */
 +	{ "Firefox",	NULL,		NULL,		tags[8],	False },
  	{ "Gimp",	NULL,		NULL,		NULL,		True },
++	{ "Xonix",	NULL,		NULL,		NULL,		True },
  };
  
-@@ -46,7 +47,7 @@ Key keys[] = {
+ /* geometries, s{x,y,w,h} and bh are already initualized here */
+@@ -46,7 +48,7 @@ Key keys[] = {
  	/* modifier			key		function	argument */
  	{ MODKEY,			XK_p,		spawn,
  		"exec dmenu_run -fn '"FONT"' -nb '"NORMBGCOLOR"' -nf '"NORMFGCOLOR"' -sb '"SELBGCOLOR"' -sf '"SELFGCOLOR"'" },
