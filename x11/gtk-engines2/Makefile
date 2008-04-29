@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.27 2008/02/01 21:38:27 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2008/04/29 17:39:01 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		collection of theme engines for GTK+2
 
-V=			2.12.2
+V=			2.14.1
 GNOME_PROJECT=		gtk-engines
 GNOME_VERSION=		${V}
-PKGNAME=		gtk-engines2-${V}p0
+PKGNAME=		gtk-engines2-${V}
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org/
 
-# GPL and LGPL
+# (L)GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
