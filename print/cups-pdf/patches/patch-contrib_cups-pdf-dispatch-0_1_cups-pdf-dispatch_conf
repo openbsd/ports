@@ -1,0 +1,24 @@
+$OpenBSD: patch-contrib_cups-pdf-dispatch-0_1_cups-pdf-dispatch_conf,v 1.1 2008/04/29 12:10:15 bernd Exp $
+
+The client's real username is useful to have.
+
+--- contrib/cups-pdf-dispatch-0.1/cups-pdf-dispatch.conf.orig	Sat Apr 26 11:05:20 2008
++++ contrib/cups-pdf-dispatch-0.1/cups-pdf-dispatch.conf	Sat Apr 26 11:06:08 2008
+@@ -90,7 +90,7 @@
+ 
+ # $GET_USER_MAILADDR_SUB
+ # Reference to a function which converts username to e-mail address.
+-# Arguments: username
++# Arguments: username, remote_user (useful if username doesn't exist locally)
+ # Returns: e-mail address
+ # $GET_USER_MAILADDR_SUB = sub{ $_[0]. '@'. hostname() };
+ #				# (i.e. user@hostname)
+@@ -98,7 +98,7 @@
+ # $GET_USER_REALNAME_SUB
+ # Reference to a function which converts username to user's realname (used
+ # when constructing To: header).
+-# Arguments: username
++# Arguments: username, remote_user (useful if username doesn't exist locally)
+ # Returns: user's real name
+ # $GET_USER_REALNAME_SUB = sub{ (split( /,/, (getpwnam($_[0]))[6], 2 ))[0] };
+ #				# (i.e. user's real name from gecos)

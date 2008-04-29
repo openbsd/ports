@@ -1,0 +1,30 @@
+$OpenBSD: patch-contrib_cups-pdf-dispatch-0_1_cups-pdf-dispatch,v 1.1 2008/04/29 12:10:15 bernd Exp $
+
+The client's real username is useful to have.
+
+--- contrib/cups-pdf-dispatch-0.1/cups-pdf-dispatch.orig	Sat Apr 26 11:03:38 2008
++++ contrib/cups-pdf-dispatch-0.1/cups-pdf-dispatch	Sat Apr 26 11:05:04 2008
+@@ -129,7 +129,7 @@ sub hacked_encode_mimewords
+ 
+ ### MAIN #######################################
+ 
+-my( $filename, $username ) = @ARGV;
++my( $filename, $username, $remote_user ) = @ARGV;
+ 
+ my $file_basename = basename( $filename );
+ my $file_prettyname = $file_basename;
+@@ -152,12 +152,12 @@ my $file_size;
+ }
+ my $file_link = sprintf( $LINK_FORMAT, $username, $file_basename );
+ 
+-my $user_mailaddr = $GET_USER_MAILADDR_SUB->( $username );
++my $user_mailaddr = $GET_USER_MAILADDR_SUB->( $username, $remote_user );
+ unless( defined( $user_mailaddr ) ) {
+ 	warn "User $username has no e-mail address.\n";
+ 	exit 0
+ }
+-my $user_realname = $GET_USER_REALNAME_SUB->( $username );
++my $user_realname = $GET_USER_REALNAME_SUB->( $username, $remote_user );
+ 
+ my $from_header = defined $FROM_REALNAME ?
+ 	hacked_encode_mimewords( $FROM_REALNAME ). '<'. $FROM_MAILADDR. '>' :

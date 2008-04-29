@@ -1,0 +1,12 @@
+$OpenBSD: patch-extra_cups-pdf_conf,v 1.1 2008/04/29 12:10:15 bernd Exp $
+--- extra/cups-pdf.conf.orig	Sun Mar 23 22:37:20 2008
++++ extra/cups-pdf.conf	Thu Apr 24 08:31:28 2008
+@@ -241,7 +241,7 @@
+ ##  set this to an empty value to use no postprocessing
+ ### Default: <empty>
+ 
+-#PostProcessing 
++#PostProcessing ${TRUEPREFIX}/bin/cups-pdf-dispatch
+ 
+ 
+ ###########################################################################
