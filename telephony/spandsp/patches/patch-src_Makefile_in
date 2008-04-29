@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2008/04/29 11:55:18 sthen Exp $
+--- src/Makefile.in.orig	Sun Apr 20 18:09:33 2008
++++ src/Makefile.in	Sun Apr 20 18:15:07 2008
+@@ -958,7 +958,7 @@ v29tx_floating_rrc.h: make_modem_filter$(EXEEXT)
+ 	./make_modem_filter$(EXEEXT) -m V.29 -t >v29tx_floating_rrc.h
+ 
+ make_modem_filter$(EXEEXT): make_modem_filter.c filter_tools.c filter_tools.h config.h
+-	$(CC_FOR_BUILD) -I. -o $@ make_modem_filter.c filter_tools.c -lm
++	$(COMPILE) -o $@ make_modem_filter.c filter_tools.c -lm
+ 
+ $(DSP): msvc/msvcproj.head msvc/msvcproj.foot Makefile.am
+ 	echo "creating $(DSP)"
