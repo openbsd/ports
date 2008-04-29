@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2007/10/31 19:10:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2008/04/29 17:30:33 jasper Exp $
 
 COMMENT=		SOAP implementation in C
 
 GNOME_PROJECT=		libsoup
-GNOME_VERSION=		2.2.103
-SHARED_LIBS +=	soup-2.2             13.1     # .13.0
-API_VERSION=		2.2
+GNOME_VERSION=		2.4.1
+SHARED_LIBS +=	soup-2.4             0.0      # .1.0
+API_VERSION=		2.4
 CATEGORIES=		devel
 
 # LGPL
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m pcre z
 
-LIB_DEPENDS=		glib-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
+LIB_DEPENDS=		gio-2.0,glib-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 			xml2.>=7::textproc/libxml
 
 MODULES=		devel/gettext \
