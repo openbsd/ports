@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/04/21 15:03:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/04/29 11:42:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	portable Windows library
 
 V=		1_12_0
 DISTNAME=	ptlib-v${V}
-PKGNAME=	pwlib-${V:S/_/./g}
+PKGNAME=	pwlib-${V:S/_/./g}p0
 CATEGORIES=	devel
 
 EXTRACT_SUFX=	-src.tar.gz
@@ -28,6 +28,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=h323plus/}
 WANTLIB=	crypto expat ossaudio ssl
 
 BUILD_DEPENDS=	::devel/bison
+LIB_DEPENDS=	esd.>=2::audio/esound
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-/_/}
 NO_REGRESS=	Yes
@@ -49,12 +50,16 @@ CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-plugins \
 		--enable-oss \
+		--enable-esd \
 		--enable-bsdvideo \
 		--disable-sunaudio \
 		--disable-alsa \
 		--disable-avc \
 		--disable-dc \
 		--disable-odbc
+
+# XXX sys/videoio.h
+CONFIGURE_ARGS+=--disable-v4l2
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 CFLAGS+=	-fPIC

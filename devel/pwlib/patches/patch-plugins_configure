@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_configure,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
+$OpenBSD: patch-plugins_configure,v 1.3 2008/04/29 11:42:45 ajacoutot Exp $
 --- plugins/configure.orig	Fri Oct 19 08:22:33 2007
-+++ plugins/configure	Fri Jan  4 14:04:45 2008
++++ plugins/configure	Tue Apr 29 09:49:24 2008
 @@ -3479,7 +3479,7 @@ echo "${ECHO_T}$ac_cv_header_sys_soundcard_h" >&6
  else
    # Is the header compilable?
@@ -52,6 +52,15 @@ $OpenBSD: patch-plugins_configure,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
  if test "${ac_cv_header_sys_soundcard_h+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
+@@ -3979,7 +3979,7 @@ if test "${enable_v4l2}z" = "yesz" ; then
+   if test "${OSTYPE}z" = "solaris2.11z"; then
+     VIDEODEV="sys/videodev2.h"
+   else
+-    VIDEODEV="linux/videodev2.h"
++    VIDEODEV="sys/videoio.h"
+   fi
+   as_ac_Header=`echo "ac_cv_header_$VIDEODEV" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for $VIDEODEV" >&5
 @@ -4485,8 +4485,8 @@ cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <dev/ic/bt8xx.h>
