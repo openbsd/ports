@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/04 18:38:51 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2008/04/29 17:49:34 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python bindings for glib2 gobject
 
-V=		2.14.0
+V=		2.14.1
 DISTNAME=	pygobject-${V}
-PKGNAME=	py-gobject-${V}p2
+PKGNAME=	py-gobject-${V}
 CATEGORIES=	devel x11
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -27,12 +27,11 @@ LIB_DEPENDS=	glib-2.0.>=1200.0,gobject-2.0.>=1200.0,gthread-2.0.>=1200.0::devel/
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
+CONFIGURE_ENV=	PYTHON="${MODPY_BIN}"
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point 
 # to the appropriate .Xauthority file. 
-
 REGRESS_IS_INTERACTIVE= Yes
 REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
