@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/11/10 14:15:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/04/29 19:13:33 jasper Exp $
 bin/wnckprop
 include/libwnck-1.0/
 include/libwnck-1.0/libwnck/
@@ -46,6 +46,7 @@ share/gtk-doc/html/libwnck/ix08.html
 share/gtk-doc/html/libwnck/ix09.html
 share/gtk-doc/html/libwnck/ix10.html
 share/gtk-doc/html/libwnck/ix11.html
+share/gtk-doc/html/libwnck/ix12.html
 share/gtk-doc/html/libwnck/left.png
 share/gtk-doc/html/libwnck/libwnck-Miscellaneous-Functions.html
 share/gtk-doc/html/libwnck/libwnck-Resource-Usage-of-X-Clients.html

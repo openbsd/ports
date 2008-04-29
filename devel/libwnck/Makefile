@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2008/02/03 20:57:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2008/04/29 19:13:33 jasper Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
-GNOME_VERSION=		2.20.3
-SHARED_LIBS +=	wnck-1               21.1     # .24.6
+GNOME_VERSION=		2.22.1
+SHARED_LIBS +=	wnck-1               22.0     # .25.7
 CATEGORIES=		devel
 
 # LGPL
@@ -22,12 +22,13 @@ WANTLIB=	ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp \
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		gdk-x11-2.0.>=1000.0,gdk_pixbuf-2.0.>=1000.0,gtk-x11-2.0.>=1000.0::x11/gtk+2 \
+LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 			startup-notification-1::devel/startup-notification
 
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
+			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
