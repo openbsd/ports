@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile.openbsd,v 1.4 2008/04/29 01:51:25 todd Exp $
 
 NOMAN = noman
 CFLAGS += -Wall
