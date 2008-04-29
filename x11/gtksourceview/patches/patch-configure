@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2007/11/26 21:01:21 bernd Exp $
---- configure.orig	Sun Oct 14 18:22:06 2007
-+++ configure	Sat Nov 24 07:46:30 2007
-@@ -23294,7 +23294,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+$OpenBSD: patch-configure,v 1.3 2008/04/29 19:47:09 jasper Exp $
+--- configure.orig	Mon Apr  7 21:55:40 2008
++++ configure	Tue Apr 29 21:20:16 2008
+@@ -23808,7 +23808,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.2 2007/11/26 21:01:21 bernd Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23356,7 +23356,7 @@ if test "${ac_cv_lib_intl_ngettext+set}" = set; then
+@@ -23870,7 +23870,7 @@ if test "${ac_cv_lib_intl_ngettext+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.2 2007/11/26 21:01:21 bernd Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23418,7 +23418,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
+@@ -23932,7 +23932,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.2 2007/11/26 21:01:21 bernd Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23630,7 +23630,7 @@ fi
+@@ -24144,7 +24144,7 @@ fi
          #
          if test "$gt_cv_func_dgettext_libintl" = "yes" ; then
            glib_save_LIBS="$LIBS"
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.2 2007/11/26 21:01:21 bernd Exp $
            unset ac_cv_func_bind_textdomain_codeset
  
  for ac_func in bind_textdomain_codeset
-@@ -23745,7 +23745,7 @@ done
+@@ -24259,7 +24259,7 @@ done
        fi
  
        if test "$gt_cv_func_dgettext_libintl" = "yes"; then
