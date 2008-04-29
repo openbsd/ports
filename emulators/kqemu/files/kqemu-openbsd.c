@@ -242,7 +242,13 @@ static struct cdevsw kqemu_cdevsw = {
 	(dev_type_mmap((*)))enodev,
 };
 
-MOD_DEV("kqemu", LM_DT_CHAR, -1, &kqemu_cdevsw);
+#ifdef MULTIPROCESSOR
+#define _KQ_NAME "kqemu_mp"
+#else
+#define _KQ_NAME "kqemu"
+#endif
+
+MOD_DEV(_KQ_NAME, LM_DT_CHAR, -1, &kqemu_cdevsw);
 int lkmexists(struct lkm_table *);
 
 static int
@@ -315,7 +321,11 @@ kqemu_unlink(const char *path)
 }
 
 int
+#ifdef MULTIPROCESSOR
+kqemu_mp_lkmentry(struct lkm_table *lkmtp, int cmd, int ver)
+#else
 kqemu_lkmentry(struct lkm_table *lkmtp, int cmd, int ver)
+#endif
 {
 	int error = 0;
 	int max_locked_pages = physmem / 2;

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/28 22:27:41 todd Exp $
+# $OpenBSD: Makefile,v 1.5 2008/04/29 20:38:03 todd Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=		QEMU accelerator module
 
 DISTNAME=		kqemu-1.3.0pre11
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://fabrice.bellard.free.fr/qemu/
@@ -28,21 +28,28 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--host-cc=${CC} \
 			--make=${MAKE_PROGRAM}
 
-MAKE_FILE=		Makefile.openbsd
 INSTDIR=		${PREFIX}/lib/kqemu
 SUBST_VARS=		INSTDIR
 
 NO_REGRESS=		Yes
 
-FILES= Makefile.openbsd kqemu-openbsd.c
+FILES=			Makefile.openbsd kqemu-openbsd.c
 
 post-extract:
 .for _f in ${FILES}
-	@cp ${FILESDIR}/${_f} ${WRKBUILD}
+	@cp ${FILESDIR}/${_f} ${WRKSRC}
 .endfor
+	@cd ${WRKSRC} && cp kqemu-openbsd.c kqemu-openbsd-mp.c
+
+do-build:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+	    ${MAKE_FLAGS} -f Makefile.openbsd
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+	    ${MAKE_FLAGS} -f Makefile.openbsd MP=1
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
-	${INSTALL_DATA} ${WRKBUILD}/kqemu.o ${INSTDIR}
+	cd ${WRKBUILD} && ${INSTALL_DATA} kqemu.o kqemu_mp.o \
+	    ${INSTDIR}
 
 .include <bsd.port.mk>

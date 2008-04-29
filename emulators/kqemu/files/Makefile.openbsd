@@ -1,12 +1,19 @@
-# $OpenBSD: Makefile.openbsd,v 1.4 2008/04/29 01:51:25 todd Exp $
+# $OpenBSD: Makefile.openbsd,v 1.5 2008/04/29 20:38:03 todd Exp $
 
 NOMAN = noman
 CFLAGS += -Wall
 COMMON = kqemu-mod-${MACHINE_ARCH:S/amd64/x86_64/}.o
+.if defined(MP)
+CFLAGS += -DMULTIPROCESSOR
+SRCS = kqemu-openbsd-mp.c
+LKM = kqemu_mp
+COMBINED = kqemu_mp.o
+.else
 SRCS = kqemu-openbsd.c
-OBJS = ${COMMON}
 LKM = kqemu
 COMBINED = kqemu.o
+.endif
+OBJS = ${COMMON}
 
 .include <bsd.lkm.mk>
 

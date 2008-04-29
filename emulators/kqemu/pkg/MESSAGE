@@ -1,8 +1,14 @@
 If you want to load this kernel module at boot time, add the following
 lines to /etc/rc.securelevel :
 
-if [ -r ${INSTDIR}/kqemu.o ]; then
-	echo ' kqemu'; /sbin/modload ${INSTDIR}/kqemu.o
+if nm /dev/ksyms | grep mp_lock >/dev/null; then
+        if [ -r ${INSTDIR}/kqemu_mp.o ]; then
+                echo ' kqemu'; /sbin/modload ${INSTDIR}/kqemu_mp.o
+        fi
+else
+        if [ -r ${INSTDIR}/kqemu.o ]; then
+                echo ' kqemu'; /sbin/modload ${INSTDIR}/kqemu.o
+        fi
 fi
 
 If you want a user to be able to use this module, add them to the group
