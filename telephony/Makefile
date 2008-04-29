@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/04/21 03:50:30 todd Exp $
+# $OpenBSD: Makefile,v 1.15 2008/04/29 11:56:19 sthen Exp $
 
      SUBDIR += app_conference
      SUBDIR += asterisk
@@ -15,5 +15,6 @@
      SUBDIR += p5-asterisk
      SUBDIR += pjsua
      SUBDIR += siproxd
+     SUBDIR += spandsp
 
 .include <bsd.port.subdir.mk>
