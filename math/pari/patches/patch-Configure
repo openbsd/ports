@@ -1,6 +1,6 @@
-$OpenBSD: patch-Configure,v 1.1.1.1 2005/02/08 02:36:12 msf Exp $
---- Configure.orig	Sat Feb  5 20:59:57 2005
-+++ Configure	Sat Feb  5 21:00:12 2005
+$OpenBSD: patch-Configure,v 1.2 2008/04/30 19:42:07 naddy Exp $
+--- Configure.orig	Thu Nov 25 16:58:25 2004
++++ Configure	Mon Apr 28 20:14:36 2008
 @@ -844,7 +844,7 @@ if test -n "$__gnuc__"; then
        esac
      ;;
@@ -10,3 +10,31 @@ $OpenBSD: patch-Configure,v 1.1.1.1 2005/02/08 02:36:12 msf Exp $
    DBGFLAGS="-g $warn"
    # Some architectures need -fPIC for building dynamic lib
    case "$osname-$arch" in hpux-*) DLCFLAGS=-fPIC;; esac
+@@ -1006,7 +1006,7 @@ if test "$optimization" = profiling; then DLLD=; else
+ #    aix-*)  DLSUFFIX=a  ;; dynamic linking does not work!
+     sunos-*) sodest=$VersionMajor$VersionMinor.$patch
+              soname=$sodest;;
+-    gnu-*|*-alpha|solaris-*|linux-*|freebsd-*)
++    gnu-*|solaris-*|linux-*|freebsd-*)
+       case $libpari_base in
+         pari) sodest=$version.$patch;; # released versions
+         *) sodest=$patch.0.0;; # unstable versions
+@@ -1044,10 +1044,6 @@ if test -n "$DLLD"; then
+       freebsd-*)  DLLDFLAGS="-Bshareable -x" ;;
+       gnu-*|linux-*)    DLLDFLAGS="-shared -soname \$(LIBPARI_SONAME)" ;;
+       irix-*)     DLLDFLAGS="-shared -elf -no_unresolved -all" ;;
+-      *-alpha)    DLLDFLAGS="-shared"; EXTRADLLDFLAGS='${LIBS}'
+-         case "$optimization" in
+-           full) DLLDFLAGS="$DLLDFLAGS -O3" ;;
+-         esac;;
+       sunos-*)    DLLDFLAGS="-assert nodefinitions" ;;
+       solaris-*)  DLLDFLAGS="-G -h \$(LIBPARI_SONAME)" ;;
+       *)          DLLD=;;
+@@ -1159,7 +1155,6 @@ extra_flags=
+ list=exp2; . ./look
+ list=strftime; . ./look
+ case "$arch" in
+-  alpha) list='times ftime';; # gp-dyn has problems with getrusage 
+   *) case "$osname" in
+     *cygwin*) list='times ftime';; # getrusage based timer always returns 0
+     *) list='getrusage times ftime';;
