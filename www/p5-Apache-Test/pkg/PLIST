@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/01/29 16:31:58 simon Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/04/30 19:25:23 simon Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Test.pm
 ${P5SITE}/Apache/Test5005compat.pm
@@ -7,7 +7,9 @@ ${P5SITE}/Apache/TestClient.pm
 ${P5SITE}/Apache/TestCommon.pm
 ${P5SITE}/Apache/TestCommonPost.pm
 ${P5SITE}/Apache/TestConfig.pm
+@comment ${P5SITE}/Apache/TestConfig.pm.orig
 ${P5SITE}/Apache/TestConfigC.pm
+${P5SITE}/Apache/TestConfigData.pm
 ${P5SITE}/Apache/TestConfigPHP.pm
 ${P5SITE}/Apache/TestConfigParrot.pm
 ${P5SITE}/Apache/TestConfigParse.pm
@@ -22,11 +24,13 @@ ${P5SITE}/Apache/TestReport.pm
 ${P5SITE}/Apache/TestReportPerl.pm
 ${P5SITE}/Apache/TestRequest.pm
 ${P5SITE}/Apache/TestRun.pm
+@comment ${P5SITE}/Apache/TestRun.pm.orig
 ${P5SITE}/Apache/TestRunPHP.pm
 ${P5SITE}/Apache/TestRunParrot.pm
 ${P5SITE}/Apache/TestRunPerl.pm
 ${P5SITE}/Apache/TestSSLCA.pm
 ${P5SITE}/Apache/TestServer.pm
+@comment ${P5SITE}/Apache/TestServer.pm.orig
 ${P5SITE}/Apache/TestSmoke.pm
 ${P5SITE}/Apache/TestSmokePerl.pm
 ${P5SITE}/Apache/TestSort.pm
@@ -36,6 +40,7 @@ ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/ApacheTest.pm
 @man man/man3p/Apache::Test.3p
 @man man/man3p/Apache::TestConfig.3p
+@man man/man3p/Apache::TestConfigData.3p
 @man man/man3p/Apache::TestMB.3p
 @man man/man3p/Apache::TestMM.3p
 @man man/man3p/Apache::TestReport.3p
