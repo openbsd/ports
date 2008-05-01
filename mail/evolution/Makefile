@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2008/04/17 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2008/05/01 10:25:50 bernd Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.12.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		mail
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-krb5-includes=/usr/include/kerberosV \
 			--with-cairo-calendar
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib/evolution/${R}:${LOCALBASE}/lib -Z"
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib/evolution/${R}/components:${LOCALBASE}/lib/evolution/${R}:${LOCALBASE}/lib -Z"
 
 R=			${GNOME_VERSION:R}
 SUBST_VARS=		R
