@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/11/21 16:10:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/05/01 10:15:04 bernd Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/broken-date-parser.h
@@ -400,11 +400,11 @@ lib/pkgconfig/libedataserver-1.2.pc
 lib/pkgconfig/libedataserverui-1.2.pc
 lib/pkgconfig/libegroupwise-1.2.pc
 lib/pkgconfig/libexchange-storage-1.2.pc
-@mode 4555
 libexec/camel-index-control-1.2
+@mode 4555
 libexec/camel-lock-helper-1.2
-libexec/evolution-data-server-${R}
 @mode
+libexec/evolution-data-server-${R}
 share/evolution-data-server-${R}/
 share/evolution-data-server-${R}/evolutionperson.schema
 share/evolution-data-server-${R}/glade/
