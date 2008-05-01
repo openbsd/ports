@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.3 2008/03/27 13:02:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/01 09:05:12 fgsch Exp $
 
 COMMENT=		compact disk input and control library
 
 DISTNAME=		libcdio-0.80
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		audio devel
 
 HOMEPAGE=		http://www.gnu.org/software/libcdio/
 
-SHARED_LIBS +=  cdio		0.0	# .8.1
-SHARED_LIBS +=  iso9660		0.0	# .6.0
-SHARED_LIBS +=  udf		0.0	# .0.0
-SHARED_LIBS +=  cdio_cdda	0.0	# .0.3
-SHARED_LIBS +=  cdio_paranoia 	0.0	# .0.2
-SHARED_LIBS +=  iso9660++	0.0	# .0.0
-SHARED_LIBS +=  cdio++		0.0	# .0.0
-SHARED_LIBS +=  iso9660		0.0	# .6.0
-SHARED_LIBS +=  udf		0.0	# .0.0
-SHARED_LIBS +=  cdio_cdda	0.0	# .0.3
-SHARED_LIBS +=  cdio_paranoia	0.0	# .0.2
+SHARED_LIBS +=  cdio		0.1	# .8.1
+SHARED_LIBS +=  iso9660		0.1	# .6.0
+SHARED_LIBS +=  udf		0.1	# .0.0
+SHARED_LIBS +=  cdio_cdda	0.1	# .0.3
+SHARED_LIBS +=  cdio_paranoia 	0.1	# .0.2
+SHARED_LIBS +=  iso9660++	0.1	# .0.0
+SHARED_LIBS +=  cdio++		0.1	# .0.0
+SHARED_LIBS +=  iso9660		0.1	# .6.0
+SHARED_LIBS +=  udf		0.1	# .0.0
+SHARED_LIBS +=  cdio_cdda	0.1	# .0.3
+SHARED_LIBS +=  cdio_paranoia	0.1	# .0.2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m
+WANTLIB=	c ncurses m
 
 MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
 
@@ -37,7 +37,9 @@ LIB_DEPENDS=	cddb::audio/libcddb
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION =	2.61
+
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-cxx \
 		--enable-joliet \
@@ -54,16 +56,11 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
-# XXX
-# disable cdda-player as it is not functional and hangs forever with
-# "action : read toc...SCIOCCOMMAND cmd 0x43 sts 3"
-CONFIGURE_ARGS+=--without-cdda-player
-
-# Shamelessly copied NetBSD's hack
 post-extract:
-	cp ${FILESDIR}/openbsd.c ${WRKSRC}/lib/driver/FreeBSD/freebsd.c
+	cp ${FILESDIR}/openbsd.c ${WRKSRC}/lib/driver
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/libcdio_paranoia.pc ${PREFIX}/lib/pkgconfig
+	cd ${WRKSRC} && ${INSTALL_DATA} libcdio_cdda.pc libcdio_paranoia.pc \
+	  ${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>

@@ -1,0 +1,38 @@
+$OpenBSD: patch-lib_driver_Makefile_in,v 1.1 2008/05/01 09:05:13 fgsch Exp $
+--- lib/driver/Makefile.in.orig	Wed Apr 30 17:43:08 2008
++++ lib/driver/Makefile.in	Wed Apr 30 17:44:02 2008
+@@ -104,8 +104,8 @@ am__objects_1 = _cdio_generic.lo _cdio_stdio.lo _cdio_
+ 	bsdi.lo audio.lo cd_types.lo cdio.lo cdtext.lo device.lo \
+ 	disc.lo ds.lo freebsd.lo freebsd_cam.lo freebsd_ioctl.lo \
+ 	gnu_linux.lo bincue.lo cdrdao.lo image_common.lo nrg.lo \
+-	logging.lo mmc.lo aspi32.lo win32_ioctl.lo win32.lo osx.lo \
+-	read.lo sector.lo solaris.lo track.lo utf8.lo util.lo
++	logging.lo mmc.lo aspi32.lo win32_ioctl.lo win32.lo openbsd.lo \
++	osx.lo read.lo sector.lo solaris.lo track.lo utf8.lo util.lo
+ am_libcdio_la_OBJECTS = $(am__objects_1)
+ libcdio_la_OBJECTS = $(am_libcdio_la_OBJECTS)
+ libcdio_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -173,6 +173,7 @@ HAVE_FREEBSD_CDROM = @HAVE_FREEBSD_CDROM@
+ HAVE_JOLIET = @HAVE_JOLIET@
+ HAVE_LINUX_CDROM = @HAVE_LINUX_CDROM@
+ HAVE_ROCK = @HAVE_ROCK@
++HAVE_OPENBSD_CDROM = @HAVE_OPENBSD_CDROM@
+ HAVE_SOLARIS_CDROM = @HAVE_SOLARIS_CDROM@
+ HAVE_WIN32_CDROM = @HAVE_WIN32_CDROM@
+ HELP2MAN = @HELP2MAN@
+@@ -322,6 +323,7 @@ libcdio_sources = \
+ 	MSWindows/win32_ioctl.c \
+ 	MSWindows/win32.c \
+ 	MSWindows/win32.h \
++	openbsd.c \
+ 	osx.c \
+ 	read.c \
+ 	sector.c \
+@@ -488,6 +490,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/logging.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mmc.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nrg.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/openbsd.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/osx.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/read.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sector.Plo@am__quote@

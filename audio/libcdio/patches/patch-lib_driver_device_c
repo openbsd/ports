@@ -1,0 +1,40 @@
+$OpenBSD: patch-lib_driver_device_c,v 1.1 2008/05/01 09:05:13 fgsch Exp $
+--- lib/driver/device.c.orig	Wed Apr 30 17:44:39 2008
++++ lib/driver/device.c	Wed Apr 30 17:46:40 2008
+@@ -66,6 +66,8 @@ const driver_id_t cdio_os_driver = DRIVER_BSDI;
+ const driver_id_t cdio_os_driver = DRIVER_FREEBSD;
+ #elif  HAVE_LINUX_CDROM
+ const driver_id_t cdio_os_driver = DRIVER_LINUX;
++#elif  HAVE_OPENBSD_CDROM
++const driver_id_t cdio_os_driver = DRIVER_OPENBSD;
+ #elif  HAVE_DARWIN_CDROM
+ const driver_id_t cdio_os_driver = DRIVER_OSX;
+ #elif  HAVE_DARWIN_SOLARIS
+@@ -175,6 +177,19 @@ CdIo_driver_t CdIo_all_drivers[CDIO_MAX_DRIVER+1] = {
+    &close_tray_solaris
+   },
+ 
++  {DRIVER_OPENBSD, 
++   CDIO_SRC_IS_DEVICE_MASK|CDIO_SRC_IS_NATIVE_MASK|CDIO_SRC_IS_SCSI_MASK,
++   "OpenBSD",
++   "OpenBSD driver",
++   &cdio_have_openbsd,
++   &cdio_open_openbsd,
++   &cdio_open_am_openbsd,
++   &cdio_get_default_device_openbsd,
++   &cdio_is_device_generic,
++   &cdio_get_devices_openbsd,
++   &close_tray_openbsd
++  },
++
+   {DRIVER_OSX, 
+    CDIO_SRC_IS_DEVICE_MASK|CDIO_SRC_IS_NATIVE_MASK|CDIO_SRC_IS_SCSI_MASK,
+    "OS X",
+@@ -925,6 +940,7 @@ cdio_open_am (const char *psz_orig_source, driver_id_t
+   case DRIVER_LINUX:
+   case DRIVER_SOLARIS:
+   case DRIVER_WIN32:
++  case DRIVER_OPENBSD:
+   case DRIVER_OSX:
+   case DRIVER_NRG:
+   case DRIVER_BINCUE:

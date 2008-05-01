@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_driver_cdio_private_h,v 1.1 2008/05/01 09:05:13 fgsch Exp $
+--- lib/driver/cdio_private.h.orig	Wed Apr 30 17:55:44 2008
++++ lib/driver/cdio_private.h	Wed Apr 30 17:55:58 2008
+@@ -469,6 +469,7 @@ extern "C" {
+   driver_return_code_t close_tray_bsdi    (const char *psz_drive);
+   driver_return_code_t close_tray_freebsd (const char *psz_drive);
+   driver_return_code_t close_tray_linux   (const char *psz_drive);
++  driver_return_code_t close_tray_openbsd (const char *psz_drive);
+   driver_return_code_t close_tray_osx     (const char *psz_drive);
+   driver_return_code_t close_tray_solaris (const char *psz_drive);
+   driver_return_code_t close_tray_win32   (const char *psz_drive);

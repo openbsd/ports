@@ -1,0 +1,66 @@
+$OpenBSD: patch-include_cdio_device_h,v 1.1 2008/05/01 09:05:12 fgsch Exp $
+--- include/cdio/device.h.orig	Wed Apr 30 17:48:56 2008
++++ include/cdio/device.h	Wed Apr 30 17:52:09 2008
+@@ -157,6 +157,7 @@ extern "C" {
+     DRIVER_FREEBSD, /**< FreeBSD driver - includes CAM and ioctl access */
+     DRIVER_LINUX,   /**< GNU/Linux Driver */
+     DRIVER_SOLARIS, /**< Sun Solaris Driver */
++    DRIVER_OPENBSD, /**< OpenBSD driver */
+     DRIVER_OSX,     /**< Apple OSX Driver */
+     DRIVER_WIN32,   /**< Microsoft Windows Driver. Includes ASPI and 
+ 		         ioctl acces. */
+@@ -456,6 +457,9 @@ extern "C" {
+   /*! True if Sun Solaris driver is available. */
+   bool cdio_have_solaris (void);
+ 
++  /*! True if OpenBSD driver is available. */
++  bool cdio_have_openbsd (void);
++
+   /*! True if Apple OSX driver is available. */
+   bool cdio_have_osx     (void);
+ 
+@@ -771,6 +775,44 @@ extern "C" {
+    */
+   char **cdio_get_devices_solaris(void);
+   
++  /*! Set up CD-ROM for reading using the OpenBSD driver. The
++      device_name is the some sort of device name.
++
++     NULL is returned on error or there is no OpenBSD driver.
++
++     In some situations of drivers or OS's we can't find a CD device if
++     there is no media in it and it is possible for this routine to return
++     NULL even though there may be a hardware CD-ROM.
++
++     @see cdio_open_cd, cdio_open
++   */
++  CdIo_t * cdio_open_openbsd (const char *psz_source);
++
++  /*! Set up CD-ROM for reading using the OpenBSD driver. The
++      device_name is the some sort of device name.
++
++     NULL is returned on error or there is no OpenBSD driver.
++
++     @see cdio_open_cd, cdio_open
++   */
++  CdIo_t * cdio_open_am_openbsd (const char *psz_source,
++			     const char *psz_access_mode);
++
++  /*! Return a string containing the default device name that the 
++      OpenBSD driver would use when none is specified. A scan is made
++      for CD-ROM drives with CDs in them.
++
++     In some situations of drivers or OS's we can't find a CD device if
++     there is no media in it and it is possible for this routine to return
++     NULL even though there may be a hardware CD-ROM.
++   */
++  char * cdio_get_default_device_openbsd(void);
++  
++  /*! Return a list of all of the CD-ROM devices that the OpenBSD driver
++      can find.
++   */
++  char **cdio_get_devices_openbsd(void);
++
+   /*! Set up CD-ROM for reading using the Apple OSX driver. The
+       device_name is the some sort of device name.
+ 

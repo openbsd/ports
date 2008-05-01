@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_h_in,v 1.1 2008/05/01 09:05:12 fgsch Exp $
+--- config.h.in.orig	Sat Mar 15 17:47:53 2008
++++ config.h.in	Wed Apr 30 18:18:25 2008
+@@ -139,6 +139,9 @@
+ /* Define to 1 if you have the <ncurses.h> header file. */
+ #undef HAVE_NCURSES_H
+ 
++/* Define 1 if you have OpenBSD CD-ROM support */
++#undef HAVE_OPENBSD_CDROM
++
+ /* Define to 1 if you have the <pwd.h> header file. */
+ #undef HAVE_PWD_H
+ 

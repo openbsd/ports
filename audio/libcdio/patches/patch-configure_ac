@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure_ac,v 1.1 2008/05/01 09:05:12 fgsch Exp $
+--- configure.ac.orig	Sat Mar 15 17:45:17 2008
++++ configure.ac	Wed Apr 30 18:53:06 2008
+@@ -460,6 +460,11 @@ int has_timeout=sizeof(test.timeout);],
+  	LIBS="$LIBS -lcam"
+   	cd_drivers="${cd_drivers}, FreeBSD "
+ 	;;
++     openbsd*)
++     	AC_DEFINE([HAVE_OPENBSD_CDROM], [1], 
++                  [Define 1 if you have OpenBSD CD-ROM support])
++	  cd_drivers="${cd_drivers}, OpenBSD"
++	;;
+      *)
+ 	AC_MSG_WARN([Don't have OS CD-reading support for ${host_os}...])
+ 	AC_MSG_WARN([Will use generic support.])
+@@ -490,6 +495,7 @@ AC_SUBST(HAVE_BSDI_CDROM)
+ AC_SUBST(HAVE_DARWIN_CDROM)
+ AC_SUBST(HAVE_FREEBSD_CDROM)
+ AC_SUBST(HAVE_LINUX_CDROM)
++AC_SUBST(HAVE_OPENBSD_CDROM)
+ AC_SUBST(HAVE_SOLARIS_CDROM)
+ AC_SUBST(HAVE_WIN32_CDROM)
+ 
