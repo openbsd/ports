@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.45 2008/04/16 01:43:12 jakemsr Exp $
---- configure.orig	Sun Oct  7 21:49:33 2007
-+++ configure	Mon Feb 18 17:25:13 2008
+$OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
+--- configure.orig	Sun Oct  7 20:49:33 2007
++++ configure	Thu May  1 00:29:07 2008
 @@ -76,7 +76,7 @@ cc_check() {
  }
  
@@ -73,26 +73,25 @@ $OpenBSD: patch-configure,v 1.45 2008/04/16 01:43:12 jakemsr Exp $
    _inc_extra="$_inc_extra `artsc-config --cflags`"
  else
    _noaomodules="arts $_noaomodules"
-@@ -5129,7 +5133,7 @@ fi
+@@ -5129,7 +5133,8 @@ fi
  echocheck "JACK"
  if test "$_jack" = auto ; then
    _jack=yes
 -
 +fi
++if test "$_jack" = yes ; then
  cat > $TMPC << EOF
  #include <jack/jack.h>
  int main(void) { jack_client_new("test"); return 0; }
-@@ -5142,8 +5146,8 @@ EOF
-   else
-     _jack=no
+@@ -5144,6 +5149,7 @@ EOF
    fi
--fi
+ fi
  
 +
  if test "$_jack" = yes ; then
    _def_jack='#define USE_JACK 1'
    _aosrc="$_aosrc ao_jack.c"
-@@ -5343,7 +5347,7 @@ fi #if irix
+@@ -5343,7 +5349,7 @@ fi #if irix
  
  
  echocheck "VCD support"
@@ -101,7 +100,7 @@ $OpenBSD: patch-configure,v 1.45 2008/04/16 01:43:12 jakemsr Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    _vcd="yes"
-@@ -5592,7 +5596,7 @@ int main()
+@@ -5592,7 +5598,7 @@ int main()
  }
  EOF
    _fontconfig=no
@@ -110,7 +109,7 @@ $OpenBSD: patch-configure,v 1.45 2008/04/16 01:43:12 jakemsr Exp $
      _ld_tmp="-lfontconfig $_ld_tmp"
      cc_check $_ld_tmp && _fontconfig=yes && _ld_extra="$_ld_extra $_ld_tmp" && break
    done
-@@ -5704,10 +5708,10 @@ cat > $TMPC << EOF
+@@ -5704,10 +5710,10 @@ cat > $TMPC << EOF
  int main(void) { (void) inflate(0, Z_NO_FLUSH); return 0; }
  EOF
  _zlib=no
@@ -123,7 +122,7 @@ $OpenBSD: patch-configure,v 1.45 2008/04/16 01:43:12 jakemsr Exp $
  else
    _def_zlib='#undef HAVE_ZLIB'
    _libavdecoders=`echo $_libavdecoders | sed -e s/FLASHSV_DECODER// -e s/PNG_DECODER// -e s/ZMBV_DECODER// -e s/DXA_DECODER// `
-@@ -6207,7 +6211,7 @@ if test "$_real" = auto ; then
+@@ -6207,7 +6213,7 @@ if test "$_real" = auto ; then
    _real=no
    _res_comment="dynamic loader support needed"
    if test "$_dl" = yes || test "$_win32dll" = yes &&
