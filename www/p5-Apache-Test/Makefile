@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2008/04/30 19:25:23 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2008/05/01 10:12:22 simon Exp $
 
 COMMENT=	Test wrapper with helpers for testing Apache
 
 MODULES=	cpan
 DISTNAME=	Apache-Test-1.30
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -15,5 +16,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV+=	APACHE_TEST_HTTPD=/usr/sbin/httpd
+
+pre-configure:
+	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/lib/Apache/TestConfig.pm
 
 .include <bsd.port.mk>

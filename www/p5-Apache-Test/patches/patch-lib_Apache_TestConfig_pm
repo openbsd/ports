@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Apache_TestConfig_pm,v 1.1 2008/04/30 19:25:23 simon Exp $
+$OpenBSD: patch-lib_Apache_TestConfig_pm,v 1.2 2008/05/01 10:12:22 simon Exp $
 --- lib/Apache/TestConfig.pm.orig	Thu Nov 15 00:59:24 2007
-+++ lib/Apache/TestConfig.pm	Tue Apr 29 22:44:26 2008
++++ lib/Apache/TestConfig.pm	Thu May  1 00:47:59 2008
 @@ -60,7 +60,7 @@ use vars qw(%Usage);
  
  # variables stored in $Apache::TestConfigData::vars
@@ -60,7 +60,18 @@ $OpenBSD: patch-lib_Apache_TestConfig_pm,v 1.1 2008/04/30 19:25:23 simon Exp $
  my $localhost;
  
  sub default_localhost {
-@@ -2593,6 +2608,12 @@ a tty. But sometimes there is a program that can answe
+@@ -846,7 +861,9 @@ sub find_apache_module {
+       ($vars->{src_dir},
+        $self->apxs('LIBEXECDIR'),
+        catfile($sroot, 'modules'),
+-       catfile($sroot, 'libexec'));
++       catfile($sroot, 'libexec'),
++       '/usr/lib/apache/modules',
++       '%%LOCALBASE%%/lib');
+ 
+     for (@trys) {
+         my $file = catfile $_, $module;
+@@ -2593,6 +2610,12 @@ a tty. But sometimes there is a program that can answe
  (e.g. when testing A-T itself). If this variable is true the
  interactive config won't be skipped (if needed).
  

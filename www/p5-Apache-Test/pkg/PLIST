@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/04/30 19:25:23 simon Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/05/01 10:12:22 simon Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Test.pm
 ${P5SITE}/Apache/Test5005compat.pm
@@ -14,6 +14,7 @@ ${P5SITE}/Apache/TestConfigPHP.pm
 ${P5SITE}/Apache/TestConfigParrot.pm
 ${P5SITE}/Apache/TestConfigParse.pm
 ${P5SITE}/Apache/TestConfigPerl.pm
+@comment ${P5SITE}/Apache/TestConfigPerl.pm.orig
 ${P5SITE}/Apache/TestHandler.pm
 ${P5SITE}/Apache/TestHarness.pm
 ${P5SITE}/Apache/TestHarnessPHP.pm
