@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.18 2008/02/17 02:01:42 jakemsr Exp $
+# $OpenBSD: libtool,v 1.19 2008/05/01 22:02:32 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -135,6 +135,9 @@ if (!($mode && grep { $_ eq $mode } @valid_modes)) {
 
 # from here, options may be intermixed with arguments
 $gp->configure('permute');
+
+print "\n###\n### WARNING: ",
+	"This version of libtool is EXPERIMENTAL. ###\n###\n\n";
 
 if ($mode eq 'compile') {
 	# deal with multi-arg ltprog
