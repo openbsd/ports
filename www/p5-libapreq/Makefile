@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/05/01 10:21:58 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,8 +24,8 @@ BUILD_DEPENDS=	:mod_perl-*:www/mod_perl \
 
 RUN_DEPENDS=	:mod_perl-*:www/mod_perl
 
-# XXX broken, see p5-Apache-Test
-NO_REGRESS=	Yes
+MAKE_ENV+=	APACHE_TEST_HTTPD=/usr/sbin/httpd
+PORTHOME=	${WRKDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-libapreq
