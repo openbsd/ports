@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/15 21:43:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/05/02 11:55:42 fgsch Exp $
 
 COMMENT=	lightweight PDF document viewer
 
 DISTNAME=	epdfview-0.1.6
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	print
 HOMEPAGE=	http://trac.emma-soft.com/epdfview/
 
@@ -46,5 +46,14 @@ CONFIGURE_ARGS+=	--with-cups
 .else
 CONFIGURE_ARGS+=        --without-cups
 .endif
+
+ICONDIR = $(PREFIX)/share/icons/hicolor
+
+post-install:
+	${INSTALL_DATA_DIR} ${ICONDIR}/{24x24,32x32,48x48}/apps
+	for i in 24 32 48; do \
+		${INSTALL_DATA} ${WRKSRC}/data/icon_epdfview-$${i}.png \
+		  ${ICONDIR}/$${i}x$${i}/apps/epdfview.png; \
+	done
 
 .include <bsd.port.mk>
