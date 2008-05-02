@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2008/05/02 13:17:16 sthen Exp $
 
 COMMENT=	graphical toolkit for Tcl
 
 VERSION=	8.4.7
 
 DISTNAME=	tk${VERSION}-src
-PKGNAME=	tk-${VERSION}p1
+PKGNAME=	tk-${VERSION}p2
 SHARED_LIBS=	tk84 1.0
 CATEGORIES=	x11 x11/tk
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c m
 
-LIB_DEPENDS=    tcl84:tcl->=8.4:lang/tcl/8.4
+LIB_DEPENDS=    tcl84:tcl-8.4.*:lang/tcl/8.4
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
