@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2008/05/01 10:25:50 bernd Exp $
+# $OpenBSD: Makefile,v 1.39 2008/05/02 14:44:54 jasper Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.12.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=    		mail
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
@@ -34,7 +34,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnomeui-2 gnomevfs-2 gobject-2.0 gssapi gthread-2.0 \
 		gtk-x11-2.0 jpeg krb5 m nspr4 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre plc4 plds4 png popt pthread sasl2 \
-		soup-2.2 ssl util xml2 z
+		soup-2.4 ssl util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
