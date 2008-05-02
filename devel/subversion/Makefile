@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2008/02/22 19:16:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2008/05/02 17:32:53 bernd Exp $
 
 COMMENT-main=	subversion revision control system
 COMMENT-perl=	perl interface to subversion
@@ -9,11 +9,11 @@ COMMENT-ap2=	apache2 subversion modules
 VERSION=	1.4.4
 DISTNAME=	subversion-${VERSION}
 PKGNAME=	${DISTNAME}
-PKGNAME-main=	${DISTNAME}
-PKGNAME-perl=	p5-SVN-${VERSION}
-PKGNAME-python=	py-subversion-${VERSION}p1
-PKGNAME-ruby=	ruby-subversion-${VERSION}p1
-PKGNAME-ap2=	ap2-subversion-${VERSION}
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-perl=	p5-SVN-${VERSION}p0
+PKGNAME-python=	py-subversion-${VERSION}p2
+PKGNAME-ruby=	ruby-subversion-${VERSION}p2
+PKGNAME-ap2=	ap2-subversion-${VERSION}p0
 
 SO_VERSION=	1.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -49,7 +49,7 @@ LIB_DEPENDS=	neon.>=24:neon->=0.24.7:net/neon \
 
 MULTI_PACKAGES=	-main
 
-WANTLIB-main=	${WANTLIB} c crypto m ssl xml2
+WANTLIB-main=	${WANTLIB} c crypto ssl
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 .if !${FLAVOR:L:Mno_ap2}
@@ -76,14 +76,14 @@ LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS}
 LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
-WANTLIB-python=	${WANTLIB} crypto m ssl neon xml2 aprutil-1
+WANTLIB-python=	${WANTLIB} crypto ssl neon aprutil-1
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
-WANTLIB-ruby=	${WANTLIB} crypto expat m ssl neon xml2 aprutil-1
+WANTLIB-ruby=	${WANTLIB} crypto expat ssl neon aprutil-1
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
