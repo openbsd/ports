@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.100 2007/11/22 17:20:19 okan Exp $
+# $OpenBSD: Makefile,v 1.101 2008/05/02 19:52:19 sthen Exp $
 
 COMMENT=		image processing tools
 
 VER=			6.3.6
 DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		ImageMagick-${VER}.${DASHVER}
+PKGNAME=		ImageMagick-${VER}.${DASHVER}p0
 SHARED_LIBS=		Magick++	12.1	\
 			Magick		12.1	\
 			Wand		12.1
@@ -24,16 +24,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c iconv jpeg m z
+WANTLIB=		c jpeg m z
 
 LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
 			jbig.>=1.2::graphics/jbigkit \
 			png.>=4::graphics/png \
 			tiff.>=36::graphics/tiff \
-			xml2.>=9::textproc/libxml \
 			lcms.>=1::graphics/lcms \
-			jasper.>=1::graphics/jasper \
-			wmflite.>=7::graphics/libwmf
+			jasper.>=1::graphics/jasper
 
 RUN_DEPENDS=		:netpbm-*:graphics/netpbm
 BUILD_DEPENDS=		:netpbm-*:graphics/netpbm
@@ -54,7 +52,6 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--without-threads \
 			--without-perl \
 			--without-rsvg \
-			--with-wmf \
 			--disable-ltdl-install
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
@@ -67,7 +64,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu,no_x11
 RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu,no_x11
-CONFIGURE_ARGS+=	--without-x --without-ttf --without-freetype
+CONFIGURE_ARGS+=	--without-x --without-ttf --without-freetype \
+			--without-wmf
 CONFIGURE_ENV+=		ac_cv_path_FIGDecodeDelegate=no
 .else
 BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
@@ -75,7 +73,10 @@ RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
 USE_X11=		Yes
 RUN_DEPENDS+=		:transfig-*:print/transfig
 BUILD_DEPENDS+=		:transfig-*:print/transfig
-WANTLIB+=		ICE SM X11 Xau Xdmcp Xext Xt expat fontconfig freetype 
+WANTLIB+=		ICE SM X11 Xau Xdmcp Xext Xt expat fontconfig freetype iconv
+CONFIGURE_ARGS+=	--with-wmf
+LIB_DEPENDS+=		wmflite.>=7::graphics/libwmf \
+			xml2.>=9::textproc/libxml
 .endif
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-${DASHVER}$//}
