@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2008/04/16 16:09:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2008/05/02 14:09:34 bernd Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -66,6 +66,7 @@
      SUBDIR += seahorse
      SUBDIR += session
      SUBDIR += speech
+     SUBDIR += ssh-askpass
      SUBDIR += terminal
      SUBDIR += themes
      SUBDIR += themes-extras
