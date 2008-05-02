@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure,v 1.1 2008/05/02 11:18:59 jasper Exp $
+--- configure.orig	Wed Apr 30 09:07:19 2008
++++ configure	Wed Apr 30 09:09:09 2008
+@@ -5764,22 +5764,6 @@ else
+ pkg_modules="gtk+-2.0 >= 2.4.0"
+ fi
+ 
+-
+-echo -n "checking for libcurl... "
+-if pkg-config --exists libcurl  ; then
+-	LIBS="$LIBS `pkg-config --libs libcurl `"
+-	CFLAGS="$CFLAGS `pkg-config --cflags libcurl `"
+-
+-cat >>confdefs.h <<\_ACEOF
+-#define LIBCURL_SUPPORTED 1
+-_ACEOF
+-
+-	echo "yes"
+-else
+-	echo "no"
+-fi
+-
+-
+ echo -n "checking for zziplib... "
+ if pkg-config --exists zziplib  ; then
+ 	LIBS="$LIBS `pkg-config --libs zziplib `"

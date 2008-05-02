@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/03/28 13:13:11 okan Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/02 11:18:59 jasper Exp $
 
 COMMENT=	powerful and simple GTK editor
 
 DISTNAME=	tea-17.6.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tea-editor/}
 EXTRACT_SUFX=	.tar.bz2
