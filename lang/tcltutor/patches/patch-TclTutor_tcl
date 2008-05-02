@@ -1,0 +1,67 @@
+$OpenBSD: patch-TclTutor_tcl,v 1.1.1.1 2008/05/02 06:43:46 steven Exp $
+--- TclTutor.tcl.orig	Wed Apr 30 20:40:43 2008
++++ TclTutor.tcl	Wed Apr 30 22:37:54 2008
+@@ -1,8 +1,8 @@
+-package provide app-tcltutor 1.0
+ #!/bin/sh 
+ # \
+-exec wish "$0" "$@"
++exec wish8.5 "$0" "$@"
+ 
++package provide app-tcltutor 1.0
+ package require Tk
+ 
+ ;# NAME:   TclTutor.tcl
+@@ -139,8 +139,8 @@ proc parseArgs {stateVar {throwError 1}} {
+ 
+     switch $tcl_platform(platform) {
+       "unix"	{
+-            set Tutor(sourceHome) [file dirname $argv0]
+-            set Tutor(lessonHome) [file dirname $argv0]/lesson
++            set Tutor(sourceHome) !!TT_LIB_DIR!!
++            set Tutor(lessonHome) !!TT_LSN_DIR!!
+ 	    set Tutor(rcHome) $env(HOME)
+             set Tutor(rcfile) [file join $Tutor(rcHome) .tcltutorrc]
+             set Tutor(logFileName) [file join $Tutor(rcHome) .tcltutoract]
+@@ -174,7 +174,7 @@ proc parseArgs {stateVar {throwError 1}} {
+       }
+    }
+ 
+-set Tutor(noSaves) {sourceHome lessonHome}
++set Tutor(noSaves) {sourceHome lessonHome logUsage mailUsage}
+ 
+ #
+ #   check if a Scripted Document 
+@@ -654,7 +654,6 @@ proc createDisplay {} {
+     foreach l {lesson code output} {
+       set t [labelframe .$l -text [string totitle $l] -height [expr $h/4]]
+       .pn add $t
+-      puts [.pn paneconfigure $t ]
+       set w [text $t.txt -yscrollcommand "$t.ysb set" ]
+       scrollbar $t.ysb -command "$w yview"
+       grid rowconfigure $t 0 -weight 1
+@@ -694,7 +693,7 @@ proc createDisplay {} {
+         $mbf.file add command -label $l -command $l2
+     }
+     
+-    if {[string match $tcl_platform(platform) "unix"]} {
++    if {0 && [string match $tcl_platform(platform) "unix"]} {
+         if {$Tutor(logUsage)} {
+            $mbf.file add command -label "Disable activity log" -command {set Tutor(logUsage) 0}
+          } else {
+@@ -1130,6 +1129,7 @@ proc SetFontSize {} {
+ proc logUsage {str} {
+     global Tutor
+     
++    return
+     if {$Tutor(logUsage) == 0} {return}
+ 
+     if {[string match $Tutor(logFile) ""]} {
+@@ -1156,6 +1156,7 @@ proc logUsage {str} {
+ # 
+ proc mailLog {} {
+   global Tutor tcl_platform
++  return
+   catch {close $Tutor(logFile)}
+   
+     switch $tcl_platform(platform) {
