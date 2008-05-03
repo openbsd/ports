@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2008/04/29 13:39:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2008/05/03 12:41:49 eric Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -97,6 +97,7 @@
      SUBDIR += pgtcl
      SUBDIR += postgresql
      SUBDIR += postgresql-jdbc
+     SUBDIR += py-axiom
      SUBDIR += py-cdb
      SUBDIR += py-ldap,python2.4
      SUBDIR += py-ldap,python2.5
