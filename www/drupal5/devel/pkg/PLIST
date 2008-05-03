@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/16 11:23:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/03 19:03:28 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/devel/
@@ -29,5 +29,3 @@ ${DRUPAL_MODS}/devel/po/fr.po
 ${DRUPAL_MODS}/devel/po/hu.po
 ${DRUPAL_MODS}/devel/po/it.po
 ${DRUPAL_MODS}/devel/po/tr.po
-@owner
-@group

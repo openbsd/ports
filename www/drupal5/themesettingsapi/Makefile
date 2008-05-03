@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/24 15:48:26 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/03 19:03:29 espie Exp $
 
 COMMENT =	extra settings for some themes
 
-DISTNAME = 	themesettingsapi-5.x-2.7
-PKGNAME =	drupal5-themesettings-2.7p0
+DISTNAME = 	themesettingsapi-5.x-2.8
+PKGNAME =	drupal5-themesettings-2.8
 
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/03/16 10:15:28 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2008/05/03 19:03:29 espie Exp $
 
 COMMENT =	create sensible urls automatically
 
-DISTNAME = 	pathauto-5.x-2.1
-PKGNAME =	drupal5-pathauto-2.1p0
+DISTNAME = 	pathauto-5.x-2.2
+PKGNAME =	drupal5-pathauto-2.2
 
 .include <bsd.port.mk>

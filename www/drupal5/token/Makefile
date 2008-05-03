@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/24 15:48:26 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/03 19:03:29 espie Exp $
 
 COMMENT =	placeholder api for drupal
 
-DISTNAME = 	token-5.x-1.10
-PKGNAME =	drupal5-token-1.10p0
+DISTNAME = 	token-5.x-1.11
+PKGNAME =	drupal5-token-1.11
 
 .include <bsd.port.mk>

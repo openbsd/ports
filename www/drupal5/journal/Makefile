@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/16 12:39:38 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/03 19:03:28 espie Exp $
 
 COMMENT =	forces admin to document site changes
 
-DISTNAME = 	journal-5.x-1.1
-PKGNAME =	drupal5-journal-1.1
+DISTNAME = 	journal-5.x-1.3
+PKGNAME =	drupal5-journal-1.3
 
 .include <bsd.port.mk>
