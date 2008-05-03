@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/05/03 12:35:27 eric Exp $
+# $OpenBSD: Makefile,v 1.8 2008/05/03 20:44:54 eric Exp $
 
 COMMENT=	event-based Python framework (core module)
 
@@ -18,7 +18,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-twisted-core
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/py-twisted-core/
 	${INSTALL_SCRIPT} ${FILESDIR}/twisted-regen-dropin.cache ${PREFIX}/sbin/
-	perl -pi -e "s,%%MODPY_BIN%%,${MODPY_BIN},; \
+	perl -pi -e "s,%%MODPY_BIN%%,${MODPY_BIN}," \
 		${PREFIX}/sbin/twisted-regen-dropin.cache
 	cd ${WRKSRC}/doc && \
 		find . -type d -exec ${INSTALL_DATA_DIR} \
