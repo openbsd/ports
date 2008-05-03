@@ -1,6 +1,12 @@
-#!/bin/sh
-# $OpenBSD: twisted-regen-dropin.cache,v 1.1 2006/07/29 15:12:17 alek Exp $
+#!%%MODPY_BIN%%
+# $OpenBSD: twisted-regen-dropin.cache,v 1.2 2008/05/03 12:35:27 eric Exp $
 
-/bin/rm -f %%MODPY_SITEPKG%%/twisted/plugins/dropin.cache
-%%MODPY_BIN%% -c "from twisted.plugin import IPlugin, getPlugins; \
-                  list(getPlugins(IPlugin))"
+import sys
+
+from twisted.plugin import IPlugin, getPlugins
+from twisted.python.reflect import namedModule
+
+names = sys.argv[1:] or [ 'twisted.plugins' ]
+
+for name in names:
+	list(getPlugins(IPlugin, namedModule(name)))

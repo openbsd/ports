@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/15 11:04:27 eric Exp $
+# $OpenBSD: Makefile,v 1.7 2008/05/03 12:35:27 eric Exp $
 
 COMMENT=	event-based Python framework (core module)
 
 VERSION=	8.0.1
 DISTNAME=	TwistedCore-${VERSION}
-PKGNAME=	py-twisted-core-${VERSION}
+PKGNAME=	py-twisted-core-${VERSION}p0
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedCore
 
@@ -19,7 +19,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/py-twisted-core/
 	${INSTALL_SCRIPT} ${FILESDIR}/twisted-regen-dropin.cache ${PREFIX}/sbin/
 	perl -pi -e "s,%%MODPY_BIN%%,${MODPY_BIN},; \
-	             s,%%MODPY_SITEPKG%%,${MODPY_SITEPKG}," \
 		${PREFIX}/sbin/twisted-regen-dropin.cache
 	cd ${WRKSRC}/doc && \
 		find . -type d -exec ${INSTALL_DATA_DIR} \
