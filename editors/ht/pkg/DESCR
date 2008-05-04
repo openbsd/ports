@@ -1,12 +1,7 @@
-HT is a file editor/viewer/analyzer for executables. 
-The goal is to combine the low-level functionality of a debugger 
-and the usability of IDEs. 
+HT is a file editor/viewer/analyzer for executables.  The goal is to
+combine the low-level functionality of a debugger and the usability of
+IDEs.
 
-- Supported formats
-Support means that HT will be able to correctly display and modify 
-the executable header, image and other extensions specific to the 
-file (import/export sections, relocations, debugging information 
-etc.). 
 Support includes the following file formats: 
 
 * Win32 portable executables (PE) (good support) 
@@ -18,4 +13,8 @@ Support includes the following file formats:
 * OS2 linear executables (LX) 
 * M$ object files (.obj) 
 
-Suports 'copy', 'paste', histories, as well as 'undo'.
+Support means that HT will be able to correctly display and modify the
+executable header, image and other extensions specific to the file
+(import/export sections, relocations, debugging information etc.).
+
+Supports 'copy', 'paste', histories, as well as 'undo'.

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/11/06 06:33:51 bernd Exp $
-@conflict texlive_base-*
-bin/ht
+@comment $OpenBSD: PLIST,v 1.4 2008/05/04 20:43:55 okan Exp $
+bin/hte
 share/doc/ht/
 share/doc/ht/README
 share/doc/ht/ht.html
