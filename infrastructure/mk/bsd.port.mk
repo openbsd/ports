@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.926 2008/04/12 13:04:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.927 2008/05/04 12:53:14 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2267,6 +2267,7 @@ ${_F}:
 .  else
 	@lock=${_F:T}.dist; ${_SIMPLE_LOCK}; mkdir -p ${_F:H}; \
 	cd ${_F:H}; \
+	test -f ${_F:T} && exit 0; \
 	select=${_EVERYTHING:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}; \
 	f=${_F:S@^${FULLDISTDIR}/@@}; \
 	${ECHO_MSG} ">> $$f doesn't seem to exist on this system."; \
