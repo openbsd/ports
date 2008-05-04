@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2008/04/20 07:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/05/04 08:20:28 ajacoutot Exp $
 
 COMMENT=	elegant music player for MPD
 
-MODPY_EGG_VERSION=1.5
+MODPY_EGG_VERSION=1.5.1
 DISTNAME=	sonata-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
 
@@ -31,6 +31,7 @@ BUILD_DEPENDS=	::x11/py-gtk2
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::net/py-zsi \
 		::audio/py-mpd \
+		::x11/dbus-python \
 		::x11/py-gtk2
 
 USE_X11=	Yes
