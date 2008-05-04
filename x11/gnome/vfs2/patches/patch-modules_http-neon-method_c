@@ -1,0 +1,56 @@
+$OpenBSD: patch-modules_http-neon-method_c,v 1.1 2008/05/04 14:36:44 ajacoutot Exp $
+--- modules/http-neon-method.c.orig	Mon Nov 12 09:36:43 2007
++++ modules/http-neon-method.c	Mon Apr 28 09:33:03 2008
+@@ -1188,7 +1188,7 @@ propfind_result (void *userdata, const char *href, con
+ 	time_t	time;
+ 	gulong  size;
+ 	ne_uri  uri;
+-	char *unesc_path;
++	char *unesc_path, *unesc_ctx_path;
+ 
+ 	ctx = (PropfindContext *) userdata;
+ 
+@@ -1205,10 +1205,10 @@ propfind_result (void *userdata, const char *href, con
+ 	info = gnome_vfs_file_info_new ();
+ 	unesc_path = ne_path_unescape (uri.path);
+ 	info->name = g_path_get_basename (unesc_path);
+-	NE_FREE (unesc_path);
+ 
++	unesc_ctx_path = ne_path_unescape (ctx->path);
+ 	DEBUG_HTTP_2 ("Comparing: \n\t[%s] \n\t[%s]", ctx->path, uri.path);
+-	if (ne_path_compare (ctx->path, uri.path) == 0) {
++	if (ne_path_compare (unesc_ctx_path, unesc_path) == 0) {
+ 		DEBUG_HTTP_3 ("target");
+ 		ctx->target = info;
+ 
+@@ -1225,6 +1225,8 @@ propfind_result (void *userdata, const char *href, con
+ 		ctx->children = g_list_append (ctx->children, info);
+ 	}
+ 
++	NE_FREE (unesc_ctx_path);
++	NE_FREE (unesc_path);
+ 	ne_uri_free (&uri);
+ 
+ 	/* getlastmodified */
+@@ -2400,19 +2402,12 @@ do_open (GnomeVFSMethod 	*method,
+ 			return result;
+ 		} 
+ 	} else {
+-		handle->use_range = (mode & GNOME_VFS_OPEN_RANDOM);
++                /* Always try to make Ranged puts */
++		handle->use_range = TRUE;
+ 	}
+ 
+ 	result = http_transfer_start (handle);	
+ 
+-	if (result == GNOME_VFS_OK && mode & GNOME_VFS_OPEN_READ) {
+-		
+-		if (handle->use_range && ! handle->can_range) {
+-			/*Review: Not supported or invalid open mode ? */
+-			result = GNOME_VFS_ERROR_NOT_SUPPORTED;
+-		}	
+-	} 
+-		
+ 	if (result != GNOME_VFS_OK) {
+ 		http_file_handle_destroy (handle);
+ 		handle = NULL;

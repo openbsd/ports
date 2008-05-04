@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_sftp-method_c,v 1.1 2008/04/09 13:26:15 jasper Exp $
---- modules/sftp-method.c.orig	Tue Apr  8 12:24:55 2008
-+++ modules/sftp-method.c	Tue Apr  8 12:27:29 2008
+$OpenBSD: patch-modules_sftp-method_c,v 1.2 2008/05/04 14:36:44 ajacoutot Exp $
+--- modules/sftp-method.c.orig	Mon Nov 12 09:36:43 2007
++++ modules/sftp-method.c	Mon Apr 28 09:15:28 2008
 @@ -317,7 +317,7 @@ buffer_send (Buffer *buf, int fd) 
  	g_return_val_if_fail (buf->base != NULL, GNOME_VFS_ERROR_INTERNAL);
  
@@ -708,7 +708,22 @@ $OpenBSD: patch-modules_sftp-method_c,v 1.1 2008/04/09 13:26:15 jasper Exp $
  		sftp_connection_unlock (handle->connection);
  		return GNOME_VFS_ERROR_EOF;
  	}
-@@ -3238,7 +3238,7 @@ do_set_file_info (GnomeVFSMethod          *method,
+@@ -3144,11 +3144,12 @@ do_rename (GnomeVFSMethod  *method,
+ 	buffer_send (&msg, conn->out_fd);
+ 	buffer_free (&msg);
+ 
++	res = iobuf_read_result (conn->in_fd, id);
++
++bail:
+ 	g_free (old_path);
+ 	g_free (new_path);
+ 
+-	res = iobuf_read_result (conn->in_fd, id);
+-
+ 	sftp_connection_unref (conn);
+ 	sftp_connection_unlock (conn);
+ 
+@@ -3238,7 +3239,7 @@ do_set_file_info (GnomeVFSMethod          *method,
  	guint id;
  	gchar *path;
  
@@ -717,7 +732,7 @@ $OpenBSD: patch-modules_sftp-method_c,v 1.1 2008/04/09 13:26:15 jasper Exp $
  
  	if ((mask & ~(GNOME_VFS_SET_FILE_INFO_NAME |
  		      GNOME_VFS_SET_FILE_INFO_PERMISSIONS |
-@@ -3270,7 +3270,7 @@ do_set_file_info (GnomeVFSMethod          *method,
+@@ -3270,7 +3271,7 @@ do_set_file_info (GnomeVFSMethod          *method,
  	if (res == GNOME_VFS_OK && (mask & GNOME_VFS_SET_FILE_INFO_NAME))
  		res = do_rename (method, uri, info->name, context);
  
