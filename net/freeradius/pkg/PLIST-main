@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/03/21 19:25:33 rui Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2008/05/05 19:32:02 rui Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -91,9 +91,6 @@ lib/freeradius/rlm_eap_sim.so
 lib/freeradius/rlm_eap_tls.a
 lib/freeradius/rlm_eap_tls.la
 lib/freeradius/rlm_eap_tls.so
-lib/freeradius/rlm_eap_tnc.a
-lib/freeradius/rlm_eap_tnc.la
-lib/freeradius/rlm_eap_tnc.so
 lib/freeradius/rlm_eap_ttls.a
 lib/freeradius/rlm_eap_ttls.la
 lib/freeradius/rlm_eap_ttls.so
@@ -202,7 +199,6 @@ lib/libfreeradius-radius.la
 @man man/man8/radsqlrelay.8
 @man man/man8/radwatch.8
 @man man/man8/rlm_ippool_tool.8
-sbin/check-radiusd-config
 sbin/checkrad
 sbin/radiusd
 sbin/radwatch
@@ -366,8 +362,16 @@ share/examples/freeradius/radiusd.conf
 share/examples/freeradius/sites-available/
 @sample ${SYSCONFDIR}/raddb/sites-available/
 share/examples/freeradius/sites-available/README
+share/examples/freeradius/sites-available/buffered-sql
+share/examples/freeradius/sites-available/copy-acct-to-home-server
 share/examples/freeradius/sites-available/default
+share/examples/freeradius/sites-available/dhcp
 share/examples/freeradius/sites-available/example
+share/examples/freeradius/sites-available/inner-tunnel
+share/examples/freeradius/sites-available/proxy-inner-tunnel
+share/examples/freeradius/sites-available/robust-proxy-accounting
+share/examples/freeradius/sites-available/virtual.example.com
+share/examples/freeradius/sites-available/vmps
 share/examples/freeradius/sites-enabled/
 @sample ${SYSCONFDIR}/raddb/sites-enabled/
 share/examples/freeradius/sites-enabled/default
@@ -387,6 +391,7 @@ share/examples/freeradius/sql/mssql/dialup.conf
 share/examples/freeradius/sql/mssql/schema.sql
 share/examples/freeradius/sql/mysql/
 @sample ${SYSCONFDIR}/raddb/sql/mysql/
+share/examples/freeradius/sql/mysql/admin.sql
 share/examples/freeradius/sql/mysql/counter.conf
 @sample ${SYSCONFDIR}/raddb/sql/mysql/counter.conf
 share/examples/freeradius/sql/mysql/dialup.conf
@@ -403,6 +408,7 @@ share/examples/freeradius/sql/oracle/nas.sql
 share/examples/freeradius/sql/oracle/schema.sql
 share/examples/freeradius/sql/postgresql/
 @sample ${SYSCONFDIR}/raddb/sql/postgresql/
+share/examples/freeradius/sql/postgresql/admin.sql
 share/examples/freeradius/sql/postgresql/cisco_h323_db_schema.sql
 share/examples/freeradius/sql/postgresql/counter.conf
 @sample ${SYSCONFDIR}/raddb/sql/postgresql/counter.conf
@@ -449,10 +455,12 @@ share/freeradius/dictionary.cisco
 share/freeradius/dictionary.cisco.bbsm
 share/freeradius/dictionary.cisco.vpn3000
 share/freeradius/dictionary.cisco.vpn5000
+share/freeradius/dictionary.clavister
 share/freeradius/dictionary.colubris
 share/freeradius/dictionary.columbia_university
 share/freeradius/dictionary.compat
 share/freeradius/dictionary.cosine
+share/freeradius/dictionary.dhcp
 share/freeradius/dictionary.digium
 share/freeradius/dictionary.epygi
 share/freeradius/dictionary.ericsson

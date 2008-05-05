@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/03/21 19:25:33 rui Exp $
+# $OpenBSD: Makefile,v 1.16 2008/05/05 19:32:02 rui Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ COMMENT-mysql=		freeradius mysql rlm addon
 COMMENT-pgsql=		freeradius pgsql rlm addon
 COMMENT-ldap=		freeradius ldap rlm addon
 
-V=			2.0.3
+V=			2.0.4
 DISTNAME=		freeradius-server-$V
 PKGNAME-main=		freeradius-$V
 PKGNAME-iodbc=		freeradius-iodbc-$V
@@ -120,8 +120,7 @@ post-configure:
 
 post-install:
 .for f in bin/radlast bin/radtest sbin/checkrad sbin/radwatch \
-    sbin/check-radiusd-config share/examples/freeradius/dictionary \
-    share/examples/freeradius/radiusd.conf
+    share/examples/freeradius/dictionary share/examples/freeradius/radiusd.conf 
 	@perl -pi -e 's,\$${DESTDIR},,g' ${PREFIX}/$f
 .endfor
 
