@@ -1,0 +1,18 @@
+$OpenBSD: patch-tests_testrunner_sh,v 1.1.1.1 2008/05/05 09:27:40 jasper Exp $
+--- tests/testrunner.sh.orig	Sun Apr 13 11:08:11 2008
++++ tests/testrunner.sh	Sun May  4 21:32:52 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ # testrunner.sh
+ #
+ # Copyright (C) 2006-2007  Jürg Billeter
+@@ -53,7 +53,7 @@ do
+ 		CODE=1
+ 		continue
+ 	fi
+-	if ./$testbuild 2>&1 | tee $testbuild.err | cmp -s $testsrc.exp
++	if ./$testbuild 2>&1 | tee $testbuild.err && cmp -s $testbuild.err $testsrc.exp
+ 	then
+ 		rm $testbuild.c $testbuild.h $testbuild$exe $testbuild.err
+ 	else
