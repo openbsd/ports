@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/03/21 02:46:43 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2008/05/05 02:51:20 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -27,7 +27,7 @@ MASTER_SITES=	http://www.intricatesoftware.com/distfiles/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
-# GLPv2 w/CLASSPATH exception
+# GPLv2 w/CLASSPATH exception
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
