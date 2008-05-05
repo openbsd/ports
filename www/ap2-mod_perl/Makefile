@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2008/05/05 21:21:43 simon Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
-DISTNAME=	mod_perl-2.0.3
-PKGNAME=	ap2-${DISTNAME}p6
+DISTNAME=	mod_perl-2.0.4
+PKGNAME=	ap2-${DISTNAME}
 CATEGORIES=	www net
 
 WANTLIB=	c m perl util apr-1 aprutil-1 db expat
@@ -19,13 +19,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_REGRESS=		Yes
 SHARED_ONLY=		Yes
 
 CONFIGURE_ARGS+=	MP_APXS=${LOCALBASE}/sbin/apxs2
 RUN_DEPENDS=		::www/apache-httpd
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			:p5-Apache-Test->=1.29:www/p5-Apache-Test
+
+PORTHOME=		${WRKDIR}
 
 # avoid conflicts
 post-extract:
