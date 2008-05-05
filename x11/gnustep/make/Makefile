@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2008/01/09 14:18:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2008/05/05 09:31:30 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	GNUstep makefile package
 
-DISTNAME=	gnustep-make-2.0.4
+DISTNAME=	gnustep-make-2.0.5
 CATEGORIES=	devel x11/gnustep
 
 HOMEPAGE=	http://www.gnustep.org/
