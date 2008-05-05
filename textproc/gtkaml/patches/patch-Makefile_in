@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/05/05 09:31:16 jasper Exp $
+--- Makefile.in.orig	Wed Apr  9 10:24:26 2008
++++ Makefile.in	Sun May  4 23:35:21 2008
+@@ -182,13 +182,7 @@ SUBDIRS = src \
+ 	examples/SimpleViewer2
+ 
+ gtkamldocdir = ${prefix}/doc/gtkaml
+-gtkamldoc_DATA = \
+-	README\
+-	COPYING\
+-	AUTHORS\
+-	ChangeLog\
+-	INSTALL\
+-	NEWS
++gtkamldoc_DATA =
+ 
+ EXTRA_DIST = $(gtkamldoc_DATA) \
+     debian/changelog debian/compat debian/control debian/dirs debian/docs debian/files debian/gtkaml.substvars debian/rules
+@@ -249,7 +243,7 @@ distclean-hdr:
+ 	-rm -f config.h stamp-h1
+ install-gtkamldocDATA: $(gtkamldoc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(gtkamldocdir)" || $(MKDIR_P) "$(DESTDIR)$(gtkamldocdir)"
++	test -z "$(gtkamldocdir)" || true
+ 	@list='$(gtkamldoc_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \

@@ -1,0 +1,3 @@
+gtkaml is an XML parser that extends the Vala.Parser (literally) and
+transforms all your tags into a valid Gtk+ UI class described in the
+Vala language.
