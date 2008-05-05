@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_inc_settings_mk,v 1.8 2008/04/28 11:18:46 robert Exp $
---- solenv/inc/settings.mk.orig.port	Thu Jan 17 17:04:51 2008
-+++ solenv/inc/settings.mk	Wed Apr 23 15:24:06 2008
-@@ -1067,6 +1067,8 @@ CDEFS+=-DOSL_DEBUG_LEVEL=$(DBG_LEVEL)
+$OpenBSD: patch-solenv_inc_settings_mk,v 1.9 2008/05/05 15:18:29 robert Exp $
+--- solenv/inc/settings.mk.orig.port	Thu May  1 13:10:51 2008
++++ solenv/inc/settings.mk	Thu May  1 13:10:53 2008
+@@ -1070,6 +1070,8 @@ CDEFS+=-DOSL_DEBUG_LEVEL=$(DBG_LEVEL)
  RSCDEFS+=-DOSL_DEBUG_LEVEL=$(DBG_LEVEL)
  .ENDIF
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-solenv_inc_settings_mk,v 1.8 2008/04/28 11:18:46 robert Exp $
  .IF "$(optimize)"!=""
  CDEFS+=$(CDEFSOPT)
  CFLAGS+=$(CFLAGSOPT)
-@@ -1199,7 +1201,7 @@ CFLAGSAPPEND+=$(ENVWARNFLAGS)
+@@ -1202,7 +1204,7 @@ CFLAGSAPPEND+=$(ENVWARNFLAGS)
  
  CDEFS+= $(ADDCDEFS)
  CDEFS+= $(ENVCDEFS)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2008/04/28 11:18:46 robert Exp $
+# $OpenBSD: Makefile,v 1.72 2008/05/05 15:18:29 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,17 +9,13 @@ COMMENT-java=	optional integration of OpenOffice java features
 VERSION=	2.4.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOH680_m12
-PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}
+PKGNAME=	openoffice-${VERSION}p0
+PKGNAME-main=	openoffice-${VERSION}p0
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-SHARED_LIBS=	icudata		36.0 \
-		icui18n		36.0 \
-		icule		36.0 \
-		icuuc		36.0 \
-		stlport_gcc	4.5
+SHARED_LIBS=	stlport_gcc	4.5
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -79,7 +75,8 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		::print/cups \
 		::devel/apache-ant \
 		:db-java-4.*:databases/db/v4,-java,java \
-		::devel/boost
+		::devel/boost \
+		::textproc/icu4c
 
 MODULES+=	lang/python
 LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
@@ -151,6 +148,7 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-boost \
 		--with-system-libwpd \
 		--with-system-openssl \
+		--with-system-icu \
 		--with-epm=internal \
 		--with-alloc=system \
 		--with-java \

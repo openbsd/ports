@@ -1,6 +1,6 @@
---- config_office/configure.in.orig.port	Thu Jan 31 12:45:01 2008
-+++ config_office/configure.in	Wed Apr 23 15:47:49 2008
-@@ -920,6 +920,16 @@ case "$build_os" in
+--- config_office/configure.in.orig.port	Thu May  1 13:10:51 2008
++++ config_office/configure.in	Thu May  1 13:19:08 2008
+@@ -931,6 +931,16 @@ case "$build_os" in
  		echo "AIX is an alpha port --- Use at own risk" >> warn
  		_os=AIX
  		;;
@@ -17,7 +17,7 @@
     *)
     AC_MSG_ERROR([$_os operating system is not suitable to build OpenOffice.org!])
     ;;
-@@ -2916,6 +2926,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
+@@ -2978,6 +2988,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
  	AIX)
  		PKGFORMAT=aix
  		;;
@@ -27,7 +27,7 @@
  	*BSD)
  		PKGFORMAT=bsd
  		;;
-@@ -3244,7 +3257,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
+@@ -3306,7 +3319,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
          test "$with_system_libwpd" != "no"; then
      AC_MSG_RESULT([external])
      SYSTEM_LIBWPD=YES
@@ -36,7 +36,7 @@
  else
      AC_MSG_RESULT([internal])
      SYSTEM_LIBWPD=NO
-@@ -3355,12 +3368,14 @@ if test -n "$with_system_python" && test "$with_system
+@@ -3417,12 +3430,14 @@ if test -n "$with_system_python" && test "$with_system
  
     python_include=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('INCLUDEPY');"`
     python_version=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('VERSION');"`
@@ -52,7 +52,7 @@
     fi
     
     dnl check if the headers really work:
-@@ -3398,15 +3413,12 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
+@@ -3460,15 +3475,12 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
  	test "$with_system_db" != "no"; then
      SYSTEM_DB=YES
      AC_MSG_RESULT([external])
@@ -72,7 +72,7 @@
      for v in 1 2 3 4 5 6; do
         AC_TRY_RUN([
  #include <db.h>
-@@ -3417,6 +3429,7 @@ int main(int argc, char **argv) {
+@@ -3479,6 +3491,7 @@ int main(int argc, char **argv) {
  }
         ], [DB_VERSION_MINOR=$v], [])
      done
@@ -80,7 +80,21 @@
      if test "$DB_VERSION_MINOR" -gt "1"; then
         AC_MSG_RESULT([OK])
         DB_VERSION=4.$DB_VERSION_MINOR
-@@ -4114,7 +4127,7 @@ elif test "$_os" != "WINNT" ; then
+@@ -4065,11 +4078,11 @@ if test -n "$with_system_icu" -o -n "$with_system_libs
+    if test -z "$SYSTEM_GENBRK"; then
+       AC_MSG_ERROR([\"genbrk\" not found in \$PATH, install the icu development tool \"genbrk"\])
+    fi
+-   AC_PATH_PROG(SYSTEM_GENCCODE, genccode, [], [$PATH:/usr/sbin:/sbin])
++   AC_PATH_PROG(SYSTEM_GENCCODE, genccode, [], [$PATH:/usr/sbin:/sbin:/usr/local/sbin])
+    if test -z "$SYSTEM_GENCCODE"; then
+       AC_MSG_ERROR([\"genccode\" not found in \$PATH, install the icu development tool \"genccode"\])
+    fi
+-   AC_PATH_PROG(SYSTEM_GENCMN, gencmn, [], [$PATH:/usr/sbin:/sbin])
++   AC_PATH_PROG(SYSTEM_GENCMN, gencmn, [], [$PATH:/usr/sbin:/sbin:/usr/local/sbin])
+    if test -z "$SYSTEM_GENCMN"; then
+       AC_MSG_ERROR([\"gencmn\" not found in \$PATH, install the icu development tool \"gencmn"\])
+    fi
+@@ -4176,7 +4189,7 @@ elif test "$_os" != "WINNT" ; then
        AC_MSG_ERROR([No X includes found]) # Exit
     fi
     CFLAGS=$X_CFLAGS
@@ -89,7 +103,7 @@
     AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
     dnl Check if the XauDisposeAuth symbol is provided by libXau.
     AC_CHECK_LIB(Xau, XauDisposeAuth, XAU_LIBS="-lXau", [])
-@@ -4331,7 +4344,7 @@ if test -n "$with_system_openssl" -o -n "$with_system_
+@@ -4393,7 +4406,7 @@ if test -n "$with_system_openssl" -o -n "$with_system_
      AC_MSG_RESULT([external])
      # Mac OS builds should get out without extra stuff is the Mac porters'
      # wish. And pkg-config is although Xcode ships a .pc for openssl
@@ -98,7 +112,7 @@
          OPENSSL_CFLAGS=
          OPENSSL_LIBS="-lssl -lcrypto"
      else
-@@ -5213,42 +5226,23 @@ KDE_LIBS=""
+@@ -5275,42 +5288,23 @@ KDE_LIBS=""
  MOC="moc"
  if test "$test_kde" = "yes" -a "$ENABLE_KDE" = "TRUE" ; then
      dnl Search paths for Qt and KDE
@@ -149,7 +163,7 @@
  
      dnl Check for Qt headers
      AC_MSG_CHECKING([for Qt headers])
-@@ -5269,7 +5263,7 @@ your Qt installation by exporting QTDIR before running
+@@ -5331,7 +5325,7 @@ your Qt installation by exporting QTDIR before running
      AC_MSG_CHECKING([for Qt libraries])
      qt_libdir="no"
      for qt_check in $qt_libdirs ; do
@@ -158,7 +172,7 @@
              qt_libdir="$qt_check"
              break
          fi
-@@ -5305,7 +5299,7 @@ your KDE installation by exporting KDEDIR before runni
+@@ -5367,7 +5361,7 @@ your KDE installation by exporting KDEDIR before runni
      AC_MSG_CHECKING([for KDE libraries])
      kde_libdir="no"
      for kde_check in $kde_libdirs ; do

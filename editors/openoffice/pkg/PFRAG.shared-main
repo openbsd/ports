@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.6 2008/04/28 11:18:46 robert Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.7 2008/05/05 15:18:29 robert Exp $
 openoffice/program/acceptor.uno.so
 openoffice/program/basprov680.uno.so
 openoffice/program/behelper.uno.so
@@ -114,10 +114,6 @@ openoffice/program/libi18nregexpgcc3.so
 openoffice/program/libi18nutilgcc3.so
 openoffice/program/libicd680.so
 openoffice/program/libicg680.so
-@lib openoffice/program/libicudata.so.${LIBicudata_VERSION}
-@lib openoffice/program/libicui18n.so.${LIBicui18n_VERSION}
-@lib openoffice/program/libicule.so.${LIBicule_VERSION}
-@lib openoffice/program/libicuuc.so.${LIBicuuc_VERSION}
 openoffice/program/libidx680.so
 openoffice/program/libime680.so
 openoffice/program/libindex_data.so
