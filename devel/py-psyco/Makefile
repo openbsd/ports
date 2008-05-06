@@ -1,27 +1,29 @@
-# $OpenBSD: Makefile,v 1.8 2007/11/20 04:33:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2008/05/06 17:36:47 martynas Exp $
 
-COMMENT=	extension module to speed up the execution of Python code
+ONLY_FOR_ARCHS = 	i386 
+SHARED_ONLY =		Yes
 
-SHARED_ONLY=	Yes
-ONLY_FOR_ARCHS=	i386 
+COMMENT =	extension module to speed up the execution of Python code
 
-DISTNAME=	psyco-snapshot
-PKGNAME=	py-psyco-1.5.2svn
-CATEGORIES=	devel
+MODPY_EGG_VERSION =	1.6
+DISTNAME =		psyco-${MODPY_EGG_VERSION}-src
+PKGNAME =		py-psyco-${MODPY_EGG_VERSION}
 
-MASTER_SITES=	http://wyvern.cs.uni-duesseldorf.de/psyco/
+CATEGORIES =	devel
 
-HOMEPAGE=	http://psyco.sourceforge.net/
+HOMEPAGE =	http://psyco.sourceforge.net/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
-MODULES=	lang/python
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=psyco/}
 
-WRKDIST=	${WRKDIR}/psyco-dist
+MODULES =	lang/python
+
+WRKDIST =	${WRKDIR}/psyco-${MODPY_EGG_VERSION}
 
 do-regress: fake
 	@cd ${WRKSRC}/test && env PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
