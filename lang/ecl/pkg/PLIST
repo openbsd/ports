@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/06 09:31:25 espie Exp $
+%%SHARED%%
+bin/ecl
+bin/ecl-config
+include/ecl/
+include/ecl/bytecodes.h
+include/ecl/config.h
+include/ecl/configpre.h
+include/ecl/cs.h
+include/ecl/ecl-cmp.h
+include/ecl/ecl-inl.h
+include/ecl/ecl.h
+include/ecl/eval.h
+include/ecl/external.h
+include/ecl/gc/
+include/ecl/gc/private/
+include/ecl/internal.h
+include/ecl/number.h
+include/ecl/object.h
+include/ecl/page.h
+include/ecl/stacks.h
+include/ecl/unify.h
+@info info/ecl.info
+@info info/ecldev.info
+lib/ecl/
+lib/ecl/BUILD-STAMP
+lib/ecl/asdf.fas
+lib/ecl/cmp.fas
+lib/ecl/defsystem.fas
+lib/ecl/dpp
+lib/ecl/ecl_min
+lib/ecl/help.doc
+lib/ecl/rt.fas
+lib/ecl/serve-event.fas
+lib/ecl/sockets.fas
+lib/ecl/sysfun.lsp
+@man man/man1/ecl-config.1
+@man man/man1/ecl.1
+@comment share/doc/Copyright
+@comment share/doc/LGPL
