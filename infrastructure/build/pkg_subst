@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.1 2008/04/07 11:10:16 espie Exp $
+# $OpenBSD: pkg_subst,v 1.2 2008/05/06 16:13:15 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -60,4 +60,10 @@ while (my $src = shift) {
 		rename($dest, $src) or die "Can't rename $dest: $!";
 	}
 	$subst->copy($src, $dest);
+	# copy rights as well (and owner/group if we're root)
+	my ($uid, $gid, $mode) = (stat $src)[4, 5, 2];
+	if ($< == 0) {
+		chown $uid, $gid, $dest; # not checked
+	}
+	chmod $mode & 07777, $dest; # not checked
 }
