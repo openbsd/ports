@@ -1,5 +1,5 @@
 #!/usr/local/bin/lua
--- $OpenBSD: yt.lua,v 1.9 2008/02/01 19:14:59 martynas Exp $
+-- $OpenBSD: yt.lua,v 1.10 2008/05/06 20:49:51 martynas Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -16,7 +16,7 @@ fetch = "ftp -o <file> <url>"
 convert = "ffmpeg -y -i <flv> -b 1000k -f mp4 -vcodec mpeg4 -acodec libfaac -ab 128k <mp4> 1>/dev/null 2>&1"
 
 -- Set this to the base location where to fetch YouTube videos from.
-base_url = "http://cache.googlevideo.com/get_video?origin=youtube.com"
+base_url = "http://www.youtube.com/get_video?origin=youtube.com"
 
 -- Fetch the page holding the embedded video.
 print(string.format("Getting %s ...", url))
