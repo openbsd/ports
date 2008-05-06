@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2008/05/05 09:28:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2008/05/06 09:33:19 espie Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -8,6 +8,7 @@
      SUBDIR += chicken
      SUBDIR += classpath
      SUBDIR += clisp
+     SUBDIR += ecl
      SUBDIR += eltclsh
      SUBDIR += erlang
      SUBDIR += expect
