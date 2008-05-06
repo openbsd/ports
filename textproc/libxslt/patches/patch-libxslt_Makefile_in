@@ -1,12 +1,12 @@
-$OpenBSD: patch-libxslt_Makefile_in,v 1.2 2007/07/05 16:05:56 steven Exp $
---- libxslt/Makefile.in.orig	Tue Jun 12 18:53:58 2007
-+++ libxslt/Makefile.in	Mon Jul  2 15:23:38 2007
-@@ -613,7 +613,7 @@ install-data-am: install-man install-xsltincHEADERS
+$OpenBSD: patch-libxslt_Makefile_in,v 1.3 2008/05/06 18:53:46 steven Exp $
+--- libxslt/Makefile.in.orig	Tue Apr  8 19:18:24 2008
++++ libxslt/Makefile.in	Sat Apr 26 10:28:19 2008
+@@ -613,7 +613,7 @@ install-dvi: install-dvi-am
  
  install-exec-am: install-libLTLIBRARIES
  	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
 +#	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
  
- install-info: install-info-am
+ install-html: install-html-am
  
