@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/05/03 20:44:54 eric Exp $
+# $OpenBSD: Makefile,v 1.9 2008/05/06 16:14:33 espie Exp $
 
 COMMENT=	event-based Python framework (core module)
 
@@ -14,12 +14,13 @@ RUN_DEPENDS=	:py-zopeinterface-*:devel/py-zopeinterface \
 		:py-openssl-*:security/py-openssl
 REGRESS_DEPENDS=:python-bz2-*:lang/python/${MODPY_VERSION},-bz2
 
+SUBST_VARS +=	MODPY_BIN
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-twisted-core
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/py-twisted-core/
 	${INSTALL_SCRIPT} ${FILESDIR}/twisted-regen-dropin.cache ${PREFIX}/sbin/
-	perl -pi -e "s,%%MODPY_BIN%%,${MODPY_BIN}," \
-		${PREFIX}/sbin/twisted-regen-dropin.cache
+	${SUBST_CMD} ${PREFIX}/sbin/twisted-regen-dropin.cache
 	cd ${WRKSRC}/doc && \
 		find . -type d -exec ${INSTALL_DATA_DIR} \
 			${PREFIX}/share/doc/py-twisted-core/{} \; && \
