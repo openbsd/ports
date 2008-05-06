@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2007/09/22 10:40:06 simon Exp $
+# $OpenBSD: Makefile,v 1.29 2008/05/06 22:03:08 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast XSLT module for perl
 
 MODULES=	cpan
-DISTNAME=	XML-LibXSLT-1.63
+DISTNAME=	XML-LibXSLT-1.66
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.axkit.org/
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		iconv m z 
 
 .include <bsd.port.mk>
