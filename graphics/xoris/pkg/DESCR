@@ -1,0 +1,9 @@
+xoris is a simple util that dumps a rgb-color value of any part of the
+screen to stdout.  The program can do this in three variants:
+
+1. hex (#b0958e)
+2. string of rgb numbers (229 229 229)
+3. abstract name (gray90)
+
+To get such enumerated color specifications, click: Button1,
+Ctrl+Button1, Shift+Button1 correspondingly.
