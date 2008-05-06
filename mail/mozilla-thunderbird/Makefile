@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2008/02/29 21:49:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.69 2008/05/06 20:35:48 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's mail component
 
-VER=		2.0.0.12
+VER=		2.0.0.14
 DISTNAME=	mozilla
 PKGNAME=	mozilla-thunderbird-${VER}
 SO_VERSION=	13.0
