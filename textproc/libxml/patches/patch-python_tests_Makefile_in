@@ -1,7 +1,16 @@
-$OpenBSD: patch-python_tests_Makefile_in,v 1.7 2007/07/05 16:05:09 steven Exp $
---- python/tests/Makefile.in.orig	Tue Jun 12 18:20:23 2007
-+++ python/tests/Makefile.in	Mon Jul  2 12:50:32 2007
-@@ -297,7 +297,6 @@ PYTESTS = \
+$OpenBSD: patch-python_tests_Makefile_in,v 1.8 2008/05/06 18:53:01 steven Exp $
+--- python/tests/Makefile.in.orig	Tue Apr  8 16:55:02 2008
++++ python/tests/Makefile.in	Sat Apr 26 11:59:41 2008
+@@ -270,7 +270,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-exampledir = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)/examples
++exampledir = $(datadir)/examples/libxml2
+ dist_example_DATA = $(PYTESTS) $(XMLS)
+ PYTESTS = \
+     build.py	\
+@@ -307,7 +307,6 @@ PYTESTS = \
      readererr.py\
      relaxng.py	\
      schema.py	\
