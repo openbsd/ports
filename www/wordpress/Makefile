@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/05/06 22:34:48 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2008/05/07 05:51:35 merdely Exp $
 
 COMMENT=	standard compliant weblog
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://wordpress.org/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
