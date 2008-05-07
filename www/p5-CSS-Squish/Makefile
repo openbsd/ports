@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/07 17:40:21 robert Exp $
 
 COMMENT=	compress CSS info for transmission
 
 MODULES=	cpan
-DISTNAME=	CSS-Squish-0.05
+DISTNAME=	CSS-Squish-0.07
 CATEGORIES=	www
 
 # perl
