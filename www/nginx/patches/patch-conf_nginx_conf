@@ -1,15 +1,6 @@
-$OpenBSD: patch-conf_nginx_conf,v 1.1.1.1 2007/09/04 21:58:26 merdely Exp $
---- conf/nginx.conf.orig	Thu Jan 18 00:08:18 2007
-+++ conf/nginx.conf	Mon Sep  3 12:34:22 2007
-@@ -15,7 +15,7 @@ events {
- 
- 
- http {
--    include       conf/mime.types;
-+    include       mime.types;
-     default_type  application/octet-stream;
- 
-     #log_format  main  '$remote_addr - $remote_user [$time_local] $request '
+$OpenBSD: patch-conf_nginx_conf,v 1.2 2008/05/07 23:08:24 merdely Exp $
+--- conf/nginx.conf.orig	Thu Feb 28 13:44:16 2008
++++ conf/nginx.conf	Wed May  7 11:22:35 2008
 @@ -41,7 +41,7 @@ http {
          #access_log  logs/host.access.log  main;
  
@@ -28,7 +19,7 @@ $OpenBSD: patch-conf_nginx_conf,v 1.1.1.1 2007/09/04 21:58:26 merdely Exp $
          }
  
          # proxy the PHP scripts to Apache listening on 127.0.0.1:80
-@@ -86,7 +86,7 @@ http {
+@@ -87,7 +87,7 @@ http {
      #    server_name  somename  alias  another.alias;
  
      #    location / {
@@ -37,7 +28,7 @@ $OpenBSD: patch-conf_nginx_conf,v 1.1.1.1 2007/09/04 21:58:26 merdely Exp $
      #        index  index.html index.htm;
      #    }
      #}
-@@ -109,7 +109,7 @@ http {
+@@ -110,7 +110,7 @@ http {
      #    ssl_prefer_server_ciphers   on;
  
      #    location / {
