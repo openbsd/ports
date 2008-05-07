@@ -1,19 +1,11 @@
-Zile is a small Emacs clone. Zile is a customizable, self-documenting
-real-time open-source display editor. Zile was written to be as
-similar as possible to Emacs; every Emacs user should feel at home.
+GNU Zile is a lightweight Emacs clone. Zile is short for Zile Is
+Lossy Emacs.  Zile has been written to be as similar as possible
+to Emacs; every Emacs user should feel at home.
 
-Zile features:
-    * Small. It is very useful for small footprint installations (like
-      on floppy disk) or quick editing sessions.
-    * 8-bit clean. Zile can operate with binary files.
-    * Looks like Emacs. Most Zile key sequences and function names are
-      identical to Emacs ones.
-    * Multi buffer editing with multi level undo. The number of files
-      and undo operations that Zile can handle is limited only by memory.
-    * Multi window. Zile can display multiple windows on the screen.
-    * Killing, yanking and registers. The standard killing, yanking and
-      register features of Emacs are available under Zile.
-    * Minibuffer completion. Zile can complete commands and filenames
-      in the minibuffer.
-    * Auto fill (word wrap). Zile automatically breaks the lines when
-      they become too wide (if the Auto Fill Mode is enabled).
+Zile has all of Emacs's basic editing features: it is 8-bit clean
+(though it currently lacks Unicode support), and the number of
+editing buffers and windows is only limited by available memory and
+screen space respectively.  Registers, minibuffer completion and
+auto fill are available.  Function and variable names are identical
+with Emacs's (except those containing the word "emacs", which instead
+contain the word "zile"!).
