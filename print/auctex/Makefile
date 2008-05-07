@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/10/01 11:42:30 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2008/05/07 05:10:30 steven Exp $
 
 COMMENT=	extensible emacs interface for TeX
 
 DISTNAME=	auctex-11.14
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.gnu.org/software/auctex/
