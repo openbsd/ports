@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2008/01/09 22:36:43 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.29 2008/05/07 20:12:10 mbalmer Exp $ 
 
 COMMENT=	modular framework for web-based applications
 
-DISTNAME=	horde-3.1.6
+DISTNAME=	horde-3.1.7
 CATEGORIES=	devel www
 HOMEPAGE=	http://www.horde.org/
 
