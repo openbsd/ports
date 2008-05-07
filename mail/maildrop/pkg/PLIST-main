@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 11:36:32 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/05/07 20:02:47 mbalmer Exp $
 @pkgpath mail/maildrop
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
@@ -13,6 +13,8 @@ bin/mailbot
 bin/maildrop
 @owner
 @group
+bin/makedat
+bin/makedatprog
 bin/makemime
 bin/reformail
 bin/reformime
@@ -47,6 +49,7 @@ share/doc/maildrop/html/maildrop.html
 share/doc/maildrop/html/maildropex.html
 share/doc/maildrop/html/maildropfilter.html
 share/doc/maildrop/html/maildropgdbm.html
+share/doc/maildrop/html/makedat.html
 share/doc/maildrop/html/makemime.html
 share/doc/maildrop/html/manpage.css
 share/doc/maildrop/html/reformail.html

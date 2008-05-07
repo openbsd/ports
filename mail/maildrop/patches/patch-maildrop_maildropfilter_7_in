@@ -1,12 +1,12 @@
-$OpenBSD: patch-maildrop_maildropfilter_7_in,v 1.1 2006/11/03 13:52:19 mbalmer Exp $
---- maildrop/maildropfilter.7.in.orig	Tue Feb  1 02:46:57 2005
-+++ maildrop/maildropfilter.7.in	Tue Feb  1 02:47:22 2005
-@@ -295,7 +295,7 @@ file, in order to avoid a race condition
- also trying to remove the same stale dot-lock, at the same time.
- .TP
- \fBLOGNAME\fR
--Name of the user to who the message is being
-+Name of the user to whom the message is being
- delivered.
- .TP
- \fBMAILFILTER\fR
+$OpenBSD: patch-maildrop_maildropfilter_7_in,v 1.2 2008/05/07 20:02:47 mbalmer Exp $
+--- maildrop/maildropfilter.7.in.orig	Sun Apr 22 17:26:58 2007
++++ maildrop/maildropfilter.7.in	Sun May  4 12:18:59 2008
+@@ -309,7 +309,7 @@ seconds before trying to create its own dot\-lock file
+ .PP
+ \fILOGNAME\fR
+ .RS 4
+-Name of the user to who the message is being delivered.
++Name of the user to whom the message is being delivered.
+ .RE
+ .PP
+ \fIMAILDROP_OLD_REGEXP\fR
