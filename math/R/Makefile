@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2008/02/08 12:58:57 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.26 2008/05/08 01:35:43 deanna Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.6.2
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	Rlapack 26.2 \
 		Rblas	26.2
 
@@ -35,6 +36,8 @@ CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-readline --with-tcltk \
+		--with-tcl-config=${LOCALBASE}/lib/tcl8.4/tclConfig.sh \
+		--with-tk-config=${LOCALBASE}/lib/tk8.4/tkConfig.sh \
 		--with-system-zlib --with-system-bzlib --with-system-pcre
 CONFIGURE_ENV=	FFLAGS="${FFLAGS}"
 
