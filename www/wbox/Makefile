@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/20 20:25:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/08 22:44:13 espie Exp $
 
 COMMENT=		HTTP testing tool
 
 DISTNAME=		wbox-4
-CATEGORIES=		net
+CATEGORIES=		net www
 
 HOMEPAGE=		http://www.hping.org/wbox/
 

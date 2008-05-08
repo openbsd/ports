@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/08 22:44:13 espie Exp $
 
 COMMENT=		Maketext from already interpolated strings
 
 MODULES=		cpan
 DISTNAME=		Locale-Maketext-Fuzzy-0.02
-CATEGORIES=		converters
+CATEGORIES=		converters devel
 
 MAINTAINER=		Mathieu Sauve-Frankel <msf@openbsd.org>
 

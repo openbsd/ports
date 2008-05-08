@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/01 13:50:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/08 22:44:13 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}/files/
 
 MODULES=		lang/python
+CATEGORIES =		net
 
 LIB_DEPENDS=		adns::net/adns
 

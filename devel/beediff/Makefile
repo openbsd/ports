@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/18 21:26:53 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/08 22:44:13 espie Exp $
 
 COMMENT=	graphical file comparator
 
 V=		1.5
 DISTNAME=	beediff_${V}_src
 PKGNAME=	beediff-${V}
-CATEGORIES=	textproc x11
+CATEGORIES=	textproc x11 devel
 
 HOMEPAGE=	http://www.beesoft.org/beediff.html
 MASTER_SITES=	http://www.beesoft.org/download/

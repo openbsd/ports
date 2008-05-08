@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/05/08 22:44:13 espie Exp $
 
 COMMENT=	protocol icq2000/2001 library
 
@@ -7,7 +7,7 @@ PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=		icq2000 6.0
 MODGNU_SHARED_LIBS=	icq2000 ''
 
-CATEGORIES=	net
+CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libicq2000/}
 
 HOMEPAGE=	http://libicq2000.sourceforge.net

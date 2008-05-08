@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/08 22:44:13 espie Exp $
 
 COMMENT= 	DBI model class for Catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Model-DBI-0.19
-CATEGORIES=	www
+CATEGORIES=	www databases
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

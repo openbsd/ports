@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2007/11/17 20:39:02 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2008/05/08 22:44:13 espie Exp $
 
 COMMENT=	implementation of Lotus Sametime Community Client protocol
 
 DISTNAME=	meanwhile-1.0.2
 PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	meanwhile 1.2
-CATEGORIES=	devel
+CATEGORIES=	devel net
 
 HOMEPAGE=	http://meanwhile.sourceforge.net/
 
