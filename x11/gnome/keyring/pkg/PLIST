@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/05/05 08:47:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/05/08 10:56:24 ajacoutot Exp $
 %%SHARED%%
 bin/gnome-keyring-daemon
 include/gnome-keyring-1/
@@ -13,9 +13,9 @@ lib/libgnome-keyring.la
 lib/pkgconfig/
 lib/pkgconfig/gnome-keyring-1.pc
 libexec/gnome-keyring-ask
-@comment share/dbus-1/
-@comment share/dbus-1/services/
-@comment share/dbus-1/services/org.gnome.keyring.service
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.keyring.service
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gnome-keyring/
