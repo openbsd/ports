@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_Driver_sql_php,v 1.1 2008/05/08 09:57:56 mbalmer Exp $
+--- lib/Driver/sql.php.orig	Thu Mar  8 14:52:35 2007
++++ lib/Driver/sql.php	Thu May  8 11:47:41 2008
+@@ -271,17 +271,17 @@ class Kronolith_Driver_sql extends Kronolith_Driver {
+         $etime = sprintf('%04d-%02d-%02d 00:00:00', $endInterval->year, $endInterval->month, $endInterval->mday);
+         if (isset($startInterval)) {
+             $stime = sprintf('%04d-%02d-%02d 00:00:00', $startInterval->year, $startInterval->month, $startInterval->mday);
+-            $q .= 'event_end > ? AND ';
++            $q .= 'event_end > CAST(? as timestamp) AND ';
+             $values[] = $stime;
+         }
+-        $q .= 'event_start < ?) OR (';
++        $q .= 'event_start < CAST(? as timestamp)) OR (';
+         $values[] = $etime;
+         if (isset($stime)) {
+-            $q .= 'event_recurenddate >= ? AND ';
++            $q .= 'event_recurenddate >= CAST(? as timestamp) AND ';
+             $values[] = $stime;
+         }
+-        $q .= 'event_start <= ?' .
+-            ' AND event_recurtype <> ?))';
++        $q .= 'event_start <= CAST(? as timestamp)' .
++            ' AND event_recurtype <> CAST(? as varchar)))';
+         array_push($values, $etime, KRONOLITH_RECUR_NONE);
+ 
+         // Log the query at a DEBUG log level.

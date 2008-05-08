@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/05/05 13:59:52 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/05/08 09:57:56 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
@@ -170,6 +170,8 @@ horde/${HORDE_MODULE}/locale/sv_SE/
 horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/tr_TR/
+horde/${HORDE_MODULE}/locale/tr_TR/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/tr_TR/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/tr_TR/help.xml
 horde/${HORDE_MODULE}/locale/zh_CN/
 horde/${HORDE_MODULE}/locale/zh_CN/LC_MESSAGES/
@@ -208,6 +210,7 @@ horde/${HORDE_MODULE}/po/ru_RU.po
 horde/${HORDE_MODULE}/po/sk_SK.po
 horde/${HORDE_MODULE}/po/sl_SI.po
 horde/${HORDE_MODULE}/po/sv_SE.po
+horde/${HORDE_MODULE}/po/tr_TR.po
 horde/${HORDE_MODULE}/po/zh_CN.po
 horde/${HORDE_MODULE}/po/zh_TW.po
 horde/${HORDE_MODULE}/scripts/
