@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/03/20 18:21:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/05/08 15:10:07 ajacoutot Exp $
 
 COMMENT=	library of optimized inner loops
 
@@ -17,6 +17,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=		c m
+
+MODULES=		gcc4
+
+MODGCC4_ARCHES=		powerpc
+MODGCC4_LANGS=		c
 
 USE_LIBTOOL=		Yes
 
