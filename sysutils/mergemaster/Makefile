@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/05/08 14:59:49 naddy Exp $
+
+COMES_WITH=	4.4	# sysmerge(8)
 
 COMMENT=	aids with merging configuration files during an upgrade
 
