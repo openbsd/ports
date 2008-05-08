@@ -1,0 +1,9 @@
+$OpenBSD: patch-tutorial_advanced_py,v 1.1.1.1 2008/05/08 16:53:22 wcmaier Exp $
+--- tutorial/advanced.py.orig	Mon Apr 14 13:29:06 2008
++++ tutorial/advanced.py	Mon Apr 14 13:30:37 2008
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#!${MODPY_BIN}
+ # advanced.py - demo of advanced features of PostGres. Some may not be ANSI.
+ # inspired from the Postgres tutorial 
+ # adapted to Python 1995 by Pascal Andre
