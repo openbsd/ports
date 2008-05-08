@@ -1,0 +1,4 @@
+Pycha is a very simple Python package for drawing charts using the great
+Cairo library. Its goals are to be lightweight, simple to use, nice
+looking with default values, allow customization. It won't try to draw
+any possible chart on earth but draw the most common ones nicely.
