@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.929 2008/05/06 19:20:16 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.930 2008/05/08 22:35:51 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1037,7 +1037,21 @@ MAINTAINER ?= The OpenBSD ports mailing-list <ports@openbsd.org>
 
 .if !defined(CATEGORIES)
 ERRORS += "Fatal: CATEGORIES is mandatory."
+.else
+_badcat = Yes
+.  for _i in ${CATEGORIES}
+.    if ${_badcat} == "Yes"
+.      if ${PKGPATH:M${_i}/*}
+_badcat = No
+.      endif
+.    endif
+.  endfor
+
+.  if ${_badcat} == "Yes"
+ERRORS += "Fatal: no category to match pkgpath"
+.  endif
 .endif
+
 
 
 CONFIGURE_SCRIPT ?= configure
