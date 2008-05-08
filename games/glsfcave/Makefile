@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/19 20:22:09 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/08 06:48:37 simon Exp $
 
 COMMENT=	control a ribbon to avoid hitting walls
 
 V=		1.0
 DISTNAME= 	glsfcave-$V-mitl
-PKGNAME=	glsfcave-$V
+PKGNAME=	glsfcave-$Vp0
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://user.ecc.u-tokyo.ac.jp/~g650192/glsfcave/
+HOMEPAGE=	http://user.ecc.u-tokyo.ac.jp/~s081016/glsfcave/
 MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
