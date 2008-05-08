@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2008/05/06 22:32:22 simon Exp $
+# $OpenBSD: Makefile,v 1.211 2008/05/08 15:46:05 wcmaier Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -150,6 +150,7 @@
      SUBDIR += py-gd
      SUBDIR += py-matplotlib
      SUBDIR += py-pyx
+     SUBDIR += pycha
      SUBDIR += qiv
      SUBDIR += ruby-gd2
      SUBDIR += ruby-gdk-imlib
