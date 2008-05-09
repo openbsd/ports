@@ -1,0 +1,20 @@
+$OpenBSD: patch-support_devel_all_tcl,v 1.1 2008/05/09 19:45:18 sthen Exp $
+--- support/devel/all.tcl.pat.orig	Fri Oct 13 12:09:34 2006
++++ support/devel/all.tcl	Thu May  1 15:28:19 2008
+@@ -98,6 +98,7 @@ if {[catch {::tcltest::normalizePath ::tcltest::testsD
+ set root $::tcltest::testsDirectory
+ 
+ proc Note {k v} {
++return
+     puts  stdout [list @@ $k $v]
+     flush stdout
+     return
+@@ -196,7 +197,7 @@ foreach module $modules {
+ 	set ::tcltest::testsDirectory [pSet ::tcltest::testsDirectory]
+ 
+ 	# configure not present in tcltest 1.x
+-	if {[catch {::tcltest::configure -verbose bstep}]} {
++	if {[catch {::tcltest::configure -verbose {be}}]} {
+ 	    set ::tcltest::verbose psb
+ 	}
+     }

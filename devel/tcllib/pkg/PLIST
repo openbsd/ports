@@ -1,407 +1,513 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/04/02 18:59:46 jasper Exp $
-lib/${TCLLIB}/
-lib/${TCLLIB}/aes/
-lib/${TCLLIB}/aes/aes.tcl
-lib/${TCLLIB}/aes/pkgIndex.tcl
-lib/${TCLLIB}/asn/
-lib/${TCLLIB}/asn/asn.tcl
-lib/${TCLLIB}/asn/pkgIndex.tcl
-lib/${TCLLIB}/base64/
-lib/${TCLLIB}/base64/base64.tcl
-lib/${TCLLIB}/base64/base64c.tcl
-lib/${TCLLIB}/base64/pkgIndex.tcl
-lib/${TCLLIB}/base64/uuencode.tcl
-lib/${TCLLIB}/base64/yencode.tcl
-lib/${TCLLIB}/bee/
-lib/${TCLLIB}/bee/bee.tcl
-lib/${TCLLIB}/bee/pkgIndex.tcl
-lib/${TCLLIB}/bibtex/
-lib/${TCLLIB}/bibtex/bibtex.tcl
-lib/${TCLLIB}/bibtex/pkgIndex.tcl
-lib/${TCLLIB}/blowfish/
-lib/${TCLLIB}/blowfish/blowfish.tcl
-lib/${TCLLIB}/blowfish/pkgIndex.tcl
-lib/${TCLLIB}/cmdline/
-lib/${TCLLIB}/cmdline/cmdline.tcl
-lib/${TCLLIB}/cmdline/pkgIndex.tcl
-lib/${TCLLIB}/cmdline/typedCmdline.tcl
-lib/${TCLLIB}/comm/
-lib/${TCLLIB}/comm/comm.tcl
-lib/${TCLLIB}/comm/pkgIndex.tcl
-lib/${TCLLIB}/control/
-lib/${TCLLIB}/control/ascaller.tcl
-lib/${TCLLIB}/control/assert.tcl
-lib/${TCLLIB}/control/control.tcl
-lib/${TCLLIB}/control/do.tcl
-lib/${TCLLIB}/control/no-op.tcl
-lib/${TCLLIB}/control/pkgIndex.tcl
-lib/${TCLLIB}/control/tclIndex
-lib/${TCLLIB}/counter/
-lib/${TCLLIB}/counter/counter.tcl
-lib/${TCLLIB}/counter/pkgIndex.tcl
-lib/${TCLLIB}/crc/
-lib/${TCLLIB}/crc/cksum.tcl
-lib/${TCLLIB}/crc/crc16.tcl
-lib/${TCLLIB}/crc/crc32.tcl
-lib/${TCLLIB}/crc/crcc.tcl
-lib/${TCLLIB}/crc/pkgIndex.tcl
-lib/${TCLLIB}/crc/sum.tcl
-lib/${TCLLIB}/csv/
-lib/${TCLLIB}/csv/csv.tcl
-lib/${TCLLIB}/csv/pkgIndex.tcl
-lib/${TCLLIB}/des/
-lib/${TCLLIB}/des/des.tcl
-lib/${TCLLIB}/des/pkgIndex.tcl
-lib/${TCLLIB}/des/tcldes.tcl
-lib/${TCLLIB}/des/tcldesjr.tcl
-lib/${TCLLIB}/dns/
-lib/${TCLLIB}/dns/dns.tcl
-lib/${TCLLIB}/dns/ip.tcl
-lib/${TCLLIB}/dns/ipMore.tcl
-lib/${TCLLIB}/dns/ipMoreC.tcl
-lib/${TCLLIB}/dns/msgs/
-lib/${TCLLIB}/dns/msgs/en.msg
-lib/${TCLLIB}/dns/pkgIndex.tcl
-lib/${TCLLIB}/dns/resolv.tcl
-lib/${TCLLIB}/dns/spf.tcl
-lib/${TCLLIB}/docstrip/
-lib/${TCLLIB}/docstrip/docstrip.tcl
-lib/${TCLLIB}/docstrip/docstrip_util.tcl
-lib/${TCLLIB}/docstrip/pkgIndex.tcl
-lib/${TCLLIB}/doctools/
-lib/${TCLLIB}/doctools/api.tcl
-lib/${TCLLIB}/doctools/api_idx.tcl
-lib/${TCLLIB}/doctools/api_toc.tcl
-lib/${TCLLIB}/doctools/changelog.tcl
-lib/${TCLLIB}/doctools/checker.tcl
-lib/${TCLLIB}/doctools/checker_idx.tcl
-lib/${TCLLIB}/doctools/checker_toc.tcl
-lib/${TCLLIB}/doctools/cvs.tcl
-lib/${TCLLIB}/doctools/docidx.tcl
-lib/${TCLLIB}/doctools/doctoc.tcl
-lib/${TCLLIB}/doctools/doctools.tcl
-lib/${TCLLIB}/doctools/mpformats/
-lib/${TCLLIB}/doctools/mpformats/_common.tcl
-lib/${TCLLIB}/doctools/mpformats/_html.tcl
-lib/${TCLLIB}/doctools/mpformats/_idx_common.tcl
-lib/${TCLLIB}/doctools/mpformats/_nroff.tcl
-lib/${TCLLIB}/doctools/mpformats/_text.tcl
-lib/${TCLLIB}/doctools/mpformats/_toc_common.tcl
-lib/${TCLLIB}/doctools/mpformats/_xml.tcl
-lib/${TCLLIB}/doctools/mpformats/c.msg
-lib/${TCLLIB}/doctools/mpformats/de.msg
-lib/${TCLLIB}/doctools/mpformats/en.msg
-lib/${TCLLIB}/doctools/mpformats/fmt.desc
-lib/${TCLLIB}/doctools/mpformats/fmt.html
-lib/${TCLLIB}/doctools/mpformats/fmt.latex
-lib/${TCLLIB}/doctools/mpformats/fmt.list
-lib/${TCLLIB}/doctools/mpformats/fmt.nroff
-lib/${TCLLIB}/doctools/mpformats/fmt.null
-lib/${TCLLIB}/doctools/mpformats/fmt.text
-lib/${TCLLIB}/doctools/mpformats/fmt.tmml
-lib/${TCLLIB}/doctools/mpformats/fmt.wiki
-lib/${TCLLIB}/doctools/mpformats/fr.msg
-lib/${TCLLIB}/doctools/mpformats/idx.html
-lib/${TCLLIB}/doctools/mpformats/idx.nroff
-lib/${TCLLIB}/doctools/mpformats/idx.null
-lib/${TCLLIB}/doctools/mpformats/idx.text
-lib/${TCLLIB}/doctools/mpformats/idx.wiki
-lib/${TCLLIB}/doctools/mpformats/toc.html
-lib/${TCLLIB}/doctools/mpformats/toc.nroff
-lib/${TCLLIB}/doctools/mpformats/toc.null
-lib/${TCLLIB}/doctools/mpformats/toc.text
-lib/${TCLLIB}/doctools/mpformats/toc.tmml
-lib/${TCLLIB}/doctools/mpformats/toc.wiki
-lib/${TCLLIB}/doctools/pkgIndex.tcl
-lib/${TCLLIB}/exif/
-lib/${TCLLIB}/exif/exif.tcl
-lib/${TCLLIB}/exif/pkgIndex.tcl
-lib/${TCLLIB}/fileutil/
-lib/${TCLLIB}/fileutil/fileutil.tcl
-lib/${TCLLIB}/fileutil/pkgIndex.tcl
-lib/${TCLLIB}/ftp/
-lib/${TCLLIB}/ftp/ftp.tcl
-lib/${TCLLIB}/ftp/ftp_geturl.tcl
-lib/${TCLLIB}/ftp/pkgIndex.tcl
-lib/${TCLLIB}/ftpd/
-lib/${TCLLIB}/ftpd/ftpd.tcl
-lib/${TCLLIB}/ftpd/pkgIndex.tcl
-lib/${TCLLIB}/fumagic/
-lib/${TCLLIB}/fumagic/cfront.tcl
-lib/${TCLLIB}/fumagic/cgen.tcl
-lib/${TCLLIB}/fumagic/filetypes.tcl
-lib/${TCLLIB}/fumagic/mimetypes.tcl
-lib/${TCLLIB}/fumagic/pkgIndex.tcl
-lib/${TCLLIB}/fumagic/rtcore.tcl
-lib/${TCLLIB}/grammar_fa/
-lib/${TCLLIB}/grammar_fa/dacceptor.tcl
-lib/${TCLLIB}/grammar_fa/dexec.tcl
-lib/${TCLLIB}/grammar_fa/fa.tcl
-lib/${TCLLIB}/grammar_fa/faop.tcl
-lib/${TCLLIB}/grammar_fa/pkgIndex.tcl
-lib/${TCLLIB}/grammar_me/
-lib/${TCLLIB}/grammar_me/me_cpu.tcl
-lib/${TCLLIB}/grammar_me/me_cpucore.tcl
-lib/${TCLLIB}/grammar_me/me_tcl.tcl
-lib/${TCLLIB}/grammar_me/me_util.tcl
-lib/${TCLLIB}/grammar_me/pkgIndex.tcl
-lib/${TCLLIB}/grammar_peg/
-lib/${TCLLIB}/grammar_peg/peg.tcl
-lib/${TCLLIB}/grammar_peg/peg_interp.tcl
-lib/${TCLLIB}/grammar_peg/pkgIndex.tcl
-lib/${TCLLIB}/html/
-lib/${TCLLIB}/html/html.tcl
-lib/${TCLLIB}/html/pkgIndex.tcl
-lib/${TCLLIB}/htmlparse/
-lib/${TCLLIB}/htmlparse/htmlparse.tcl
-lib/${TCLLIB}/htmlparse/pkgIndex.tcl
-lib/${TCLLIB}/http/
-lib/${TCLLIB}/http/autoproxy.tcl
-lib/${TCLLIB}/http/pkgIndex.tcl
-lib/${TCLLIB}/ident/
-lib/${TCLLIB}/ident/ident.tcl
-lib/${TCLLIB}/ident/pkgIndex.tcl
-lib/${TCLLIB}/inifile/
-lib/${TCLLIB}/inifile/ini.tcl
-lib/${TCLLIB}/inifile/pkgIndex.tcl
-lib/${TCLLIB}/irc/
-lib/${TCLLIB}/irc/irc.tcl
-lib/${TCLLIB}/irc/pkgIndex.tcl
-lib/${TCLLIB}/javascript/
-lib/${TCLLIB}/javascript/javascript.tcl
-lib/${TCLLIB}/javascript/pkgIndex.tcl
-lib/${TCLLIB}/jpeg/
-lib/${TCLLIB}/jpeg/jpeg.tcl
-lib/${TCLLIB}/jpeg/pkgIndex.tcl
-lib/${TCLLIB}/ldap/
-lib/${TCLLIB}/ldap/ldap.tcl
-lib/${TCLLIB}/ldap/pkgIndex.tcl
-lib/${TCLLIB}/log/
-lib/${TCLLIB}/log/log.tcl
-lib/${TCLLIB}/log/logger.tcl
-lib/${TCLLIB}/log/loggerAppender.tcl
-lib/${TCLLIB}/log/loggerUtils.tcl
-lib/${TCLLIB}/log/msgs/
-lib/${TCLLIB}/log/msgs/en.msg
-lib/${TCLLIB}/log/pkgIndex.tcl
-lib/${TCLLIB}/math/
-lib/${TCLLIB}/math/bessel.tcl
-lib/${TCLLIB}/math/bigfloat.tcl
-lib/${TCLLIB}/math/bignum.tcl
-lib/${TCLLIB}/math/calculus.tcl
-lib/${TCLLIB}/math/classic_polyns.tcl
-lib/${TCLLIB}/math/combinatorics.tcl
-lib/${TCLLIB}/math/constants.tcl
-lib/${TCLLIB}/math/elliptic.tcl
-lib/${TCLLIB}/math/exponential.tcl
-lib/${TCLLIB}/math/fourier.tcl
-lib/${TCLLIB}/math/fuzzy.tcl
-lib/${TCLLIB}/math/geometry.tcl
-lib/${TCLLIB}/math/interpolate.tcl
-lib/${TCLLIB}/math/linalg.tcl
-lib/${TCLLIB}/math/liststat.tcl
-lib/${TCLLIB}/math/math.tcl
-lib/${TCLLIB}/math/misc.tcl
-lib/${TCLLIB}/math/optimize.tcl
-lib/${TCLLIB}/math/pdf_stat.tcl
-lib/${TCLLIB}/math/pkgIndex.tcl
-lib/${TCLLIB}/math/plotstat.tcl
-lib/${TCLLIB}/math/polynomials.tcl
-lib/${TCLLIB}/math/qcomplex.tcl
-lib/${TCLLIB}/math/rational_funcs.tcl
-lib/${TCLLIB}/math/romannumerals.tcl
-lib/${TCLLIB}/math/special.tcl
-lib/${TCLLIB}/math/statistics.tcl
-lib/${TCLLIB}/math/tclIndex
-lib/${TCLLIB}/md4/
-lib/${TCLLIB}/md4/md4.tcl
-lib/${TCLLIB}/md4/md4c.tcl
-lib/${TCLLIB}/md4/pkgIndex.tcl
-lib/${TCLLIB}/md5/
-lib/${TCLLIB}/md5/md5.tcl
-lib/${TCLLIB}/md5/md5c.tcl
-lib/${TCLLIB}/md5/md5x.tcl
-lib/${TCLLIB}/md5/pkgIndex.tcl
-lib/${TCLLIB}/md5crypt/
-lib/${TCLLIB}/md5crypt/md5crypt.tcl
-lib/${TCLLIB}/md5crypt/md5cryptc.tcl
-lib/${TCLLIB}/md5crypt/pkgIndex.tcl
-lib/${TCLLIB}/mime/
-lib/${TCLLIB}/mime/mime.tcl
-lib/${TCLLIB}/mime/performance.tcl
-lib/${TCLLIB}/mime/pkgIndex.tcl
-lib/${TCLLIB}/mime/smtp.tcl
-lib/${TCLLIB}/multiplexer/
-lib/${TCLLIB}/multiplexer/multiplexer.tcl
-lib/${TCLLIB}/multiplexer/pkgIndex.tcl
-lib/${TCLLIB}/ncgi/
-lib/${TCLLIB}/ncgi/ncgi.tcl
-lib/${TCLLIB}/ncgi/pkgIndex.tcl
-lib/${TCLLIB}/nntp/
-lib/${TCLLIB}/nntp/nntp.tcl
-lib/${TCLLIB}/nntp/pkgIndex.tcl
-lib/${TCLLIB}/ntp/
-lib/${TCLLIB}/ntp/pkgIndex.tcl
-lib/${TCLLIB}/ntp/time.tcl
-lib/${TCLLIB}/page/
-lib/${TCLLIB}/page/analysis_peg_emodes.tcl
-lib/${TCLLIB}/page/analysis_peg_minimize.tcl
-lib/${TCLLIB}/page/analysis_peg_reachable.tcl
-lib/${TCLLIB}/page/analysis_peg_realizable.tcl
-lib/${TCLLIB}/page/gen_peg_canon.tcl
-lib/${TCLLIB}/page/gen_peg_cpkg.tcl
-lib/${TCLLIB}/page/gen_peg_hb.tcl
-lib/${TCLLIB}/page/gen_peg_me.tcl
-lib/${TCLLIB}/page/gen_peg_ser.tcl
-lib/${TCLLIB}/page/gen_tree_text.tcl
-lib/${TCLLIB}/page/parse_lemon.tcl
-lib/${TCLLIB}/page/parse_peg.tcl
-lib/${TCLLIB}/page/parse_peghb.tcl
-lib/${TCLLIB}/page/parse_pegser.tcl
-lib/${TCLLIB}/page/peg_grammar.tcl
-lib/${TCLLIB}/page/pkgIndex.tcl
-lib/${TCLLIB}/page/pluginmgr.tcl
-lib/${TCLLIB}/page/plugins/
-lib/${TCLLIB}/page/plugins/config_peg.tcl
-lib/${TCLLIB}/page/plugins/reader_hb.tcl
-lib/${TCLLIB}/page/plugins/reader_lemon.tcl
-lib/${TCLLIB}/page/plugins/reader_peg.tcl
-lib/${TCLLIB}/page/plugins/reader_ser.tcl
-lib/${TCLLIB}/page/plugins/reader_treeser.tcl
-lib/${TCLLIB}/page/plugins/transform_reachable.tcl
-lib/${TCLLIB}/page/plugins/transform_realizable.tcl
-lib/${TCLLIB}/page/plugins/writer_hb.tcl
-lib/${TCLLIB}/page/plugins/writer_identity.tcl
-lib/${TCLLIB}/page/plugins/writer_me.tcl
-lib/${TCLLIB}/page/plugins/writer_null.tcl
-lib/${TCLLIB}/page/plugins/writer_peg.tcl
-lib/${TCLLIB}/page/plugins/writer_ser.tcl
-lib/${TCLLIB}/page/plugins/writer_tpc.tcl
-lib/${TCLLIB}/page/plugins/writer_tree.tcl
-lib/${TCLLIB}/page/util_flow.tcl
-lib/${TCLLIB}/page/util_norm_lemon.tcl
-lib/${TCLLIB}/page/util_norm_peg.tcl
-lib/${TCLLIB}/page/util_peg.tcl
-lib/${TCLLIB}/page/util_quote.tcl
-lib/${TCLLIB}/pkgIndex.tcl
-lib/${TCLLIB}/pluginmgr/
-lib/${TCLLIB}/pluginmgr/pkgIndex.tcl
-lib/${TCLLIB}/pluginmgr/pluginmgr.tcl
-lib/${TCLLIB}/png/
-lib/${TCLLIB}/png/pkgIndex.tcl
-lib/${TCLLIB}/png/png.tcl
-lib/${TCLLIB}/pop3/
-lib/${TCLLIB}/pop3/pkgIndex.tcl
-lib/${TCLLIB}/pop3/pop3.tcl
-lib/${TCLLIB}/pop3d/
-lib/${TCLLIB}/pop3d/pkgIndex.tcl
-lib/${TCLLIB}/pop3d/pop3d.tcl
-lib/${TCLLIB}/pop3d/pop3d_dbox.tcl
-lib/${TCLLIB}/pop3d/pop3d_udb.tcl
-lib/${TCLLIB}/profiler/
-lib/${TCLLIB}/profiler/pkgIndex.tcl
-lib/${TCLLIB}/profiler/profiler.tcl
-lib/${TCLLIB}/rc4/
-lib/${TCLLIB}/rc4/pkgIndex.tcl
-lib/${TCLLIB}/rc4/rc4.tcl
-lib/${TCLLIB}/rc4/rc4c.tcl
-lib/${TCLLIB}/rcs/
-lib/${TCLLIB}/rcs/pkgIndex.tcl
-lib/${TCLLIB}/rcs/rcs.tcl
-lib/${TCLLIB}/report/
-lib/${TCLLIB}/report/pkgIndex.tcl
-lib/${TCLLIB}/report/report.tcl
-lib/${TCLLIB}/ripemd/
-lib/${TCLLIB}/ripemd/pkgIndex.tcl
-lib/${TCLLIB}/ripemd/ripemd128.tcl
-lib/${TCLLIB}/ripemd/ripemd160.tcl
-lib/${TCLLIB}/sasl/
-lib/${TCLLIB}/sasl/ntlm.tcl
-lib/${TCLLIB}/sasl/pkgIndex.tcl
-lib/${TCLLIB}/sasl/sasl.tcl
-lib/${TCLLIB}/sha1/
-lib/${TCLLIB}/sha1/pkgIndex.tcl
-lib/${TCLLIB}/sha1/sha1.tcl
-lib/${TCLLIB}/sha1/sha1c.tcl
-lib/${TCLLIB}/sha1/sha256.tcl
-lib/${TCLLIB}/smtpd/
-lib/${TCLLIB}/smtpd/pkgIndex.tcl
-lib/${TCLLIB}/smtpd/smtpd.tcl
-lib/${TCLLIB}/snit/
-lib/${TCLLIB}/snit/pkgIndex.tcl
-lib/${TCLLIB}/snit/snit.tcl
-lib/${TCLLIB}/snit/snit2.tcl
-lib/${TCLLIB}/snit/snit83.tcl
-lib/${TCLLIB}/snit/snit_tcl83_utils.tcl
-lib/${TCLLIB}/soundex/
-lib/${TCLLIB}/soundex/pkgIndex.tcl
-lib/${TCLLIB}/soundex/soundex.tcl
-lib/${TCLLIB}/stooop/
-lib/${TCLLIB}/stooop/mkpkgidx.tcl
-lib/${TCLLIB}/stooop/pkgIndex.tcl
-lib/${TCLLIB}/stooop/stooop.tcl
-lib/${TCLLIB}/stooop/switched.tcl
-lib/${TCLLIB}/stooop/xifo.tcl
-lib/${TCLLIB}/struct/
-lib/${TCLLIB}/struct/graph.tcl
-lib/${TCLLIB}/struct/graph1.tcl
-lib/${TCLLIB}/struct/list.tcl
-lib/${TCLLIB}/struct/matrix.tcl
-lib/${TCLLIB}/struct/matrix1.tcl
-lib/${TCLLIB}/struct/pkgIndex.tcl
-lib/${TCLLIB}/struct/pool.tcl
-lib/${TCLLIB}/struct/pooltest.tcl
-lib/${TCLLIB}/struct/prioqueue.tcl
-lib/${TCLLIB}/struct/queue.tcl
-lib/${TCLLIB}/struct/record.tcl
-lib/${TCLLIB}/struct/sets.tcl
-lib/${TCLLIB}/struct/skiplist.tcl
-lib/${TCLLIB}/struct/stack.tcl
-lib/${TCLLIB}/struct/struct.tcl
-lib/${TCLLIB}/struct/struct1.tcl
-lib/${TCLLIB}/struct/tree.tcl
-lib/${TCLLIB}/struct/tree1.tcl
-lib/${TCLLIB}/struct/tree_c.tcl
-lib/${TCLLIB}/struct/tree_tcl.tcl
-lib/${TCLLIB}/tar/
-lib/${TCLLIB}/tar/pkgIndex.tcl
-lib/${TCLLIB}/tar/tar.tcl
-lib/${TCLLIB}/textutil/
-lib/${TCLLIB}/textutil/adjust.tcl
-lib/${TCLLIB}/textutil/dehypht.tex
-lib/${TCLLIB}/textutil/eshyph_vo.tex
-lib/${TCLLIB}/textutil/expander.tcl
-lib/${TCLLIB}/textutil/ithyph.tex
-lib/${TCLLIB}/textutil/pkgIndex.tcl
-lib/${TCLLIB}/textutil/split.tcl
-lib/${TCLLIB}/textutil/tabify.tcl
-lib/${TCLLIB}/textutil/textutil.tcl
-lib/${TCLLIB}/textutil/trim.tcl
-lib/${TCLLIB}/tie/
-lib/${TCLLIB}/tie/pkgIndex.tcl
-lib/${TCLLIB}/tie/tie.tcl
-lib/${TCLLIB}/tie/tie_array.tcl
-lib/${TCLLIB}/tie/tie_dsource.tcl
-lib/${TCLLIB}/tie/tie_file.tcl
-lib/${TCLLIB}/tie/tie_log.tcl
-lib/${TCLLIB}/tie/tie_rarray.tcl
-lib/${TCLLIB}/treeql/
-lib/${TCLLIB}/treeql/pkgIndex.tcl
-lib/${TCLLIB}/treeql/treeql.tcl
-lib/${TCLLIB}/treeql/treeql84.tcl
-lib/${TCLLIB}/units/
-lib/${TCLLIB}/units/pkgIndex.tcl
-lib/${TCLLIB}/units/units.tcl
-lib/${TCLLIB}/uri/
-lib/${TCLLIB}/uri/pkgIndex.tcl
-lib/${TCLLIB}/uri/uri.tcl
-lib/${TCLLIB}/uri/urn-scheme.tcl
-lib/${TCLLIB}/uuid/
-lib/${TCLLIB}/uuid/pkgIndex.tcl
-lib/${TCLLIB}/uuid/uuid.tcl
+@comment $OpenBSD: PLIST,v 1.5 2008/05/09 19:45:18 sthen Exp $
+lib/tcllib/
+lib/tcllib/aes/
+lib/tcllib/aes/aes.tcl
+lib/tcllib/aes/pkgIndex.tcl
+lib/tcllib/asn/
+lib/tcllib/asn/asn.tcl
+lib/tcllib/asn/pkgIndex.tcl
+lib/tcllib/base32/
+lib/tcllib/base32/base32.tcl
+lib/tcllib/base32/base32_c.tcl
+lib/tcllib/base32/base32_tcl.tcl
+lib/tcllib/base32/base32core.tcl
+lib/tcllib/base32/base32hex.tcl
+lib/tcllib/base32/base32hex_c.tcl
+lib/tcllib/base32/base32hex_tcl.tcl
+lib/tcllib/base32/pkgIndex.tcl
+lib/tcllib/base64/
+lib/tcllib/base64/base64.tcl
+lib/tcllib/base64/base64c.tcl
+lib/tcllib/base64/pkgIndex.tcl
+lib/tcllib/base64/uuencode.tcl
+lib/tcllib/base64/yencode.tcl
+lib/tcllib/bee/
+lib/tcllib/bee/bee.tcl
+lib/tcllib/bee/pkgIndex.tcl
+lib/tcllib/bench/
+lib/tcllib/bench/bench.tcl
+lib/tcllib/bench/bench_read.tcl
+lib/tcllib/bench/bench_wcsv.tcl
+lib/tcllib/bench/bench_wtext.tcl
+lib/tcllib/bench/libbench.tcl
+lib/tcllib/bench/pkgIndex.tcl
+lib/tcllib/bibtex/
+lib/tcllib/bibtex/bibtex.tcl
+lib/tcllib/bibtex/pkgIndex.tcl
+lib/tcllib/blowfish/
+lib/tcllib/blowfish/blowfish.tcl
+lib/tcllib/blowfish/pkgIndex.tcl
+lib/tcllib/cmdline/
+lib/tcllib/cmdline/cmdline.tcl
+lib/tcllib/cmdline/pkgIndex.tcl
+lib/tcllib/comm/
+lib/tcllib/comm/comm.tcl
+lib/tcllib/comm/pkgIndex.tcl
+lib/tcllib/control/
+lib/tcllib/control/ascaller.tcl
+lib/tcllib/control/assert.tcl
+lib/tcllib/control/control.tcl
+lib/tcllib/control/do.tcl
+lib/tcllib/control/no-op.tcl
+lib/tcllib/control/pkgIndex.tcl
+lib/tcllib/control/tclIndex
+lib/tcllib/counter/
+lib/tcllib/counter/counter.tcl
+lib/tcllib/counter/pkgIndex.tcl
+lib/tcllib/crc/
+lib/tcllib/crc/cksum.tcl
+lib/tcllib/crc/crc16.tcl
+lib/tcllib/crc/crc32.tcl
+lib/tcllib/crc/crcc.tcl
+lib/tcllib/crc/pkgIndex.tcl
+lib/tcllib/crc/sum.tcl
+lib/tcllib/csv/
+lib/tcllib/csv/csv.tcl
+lib/tcllib/csv/pkgIndex.tcl
+lib/tcllib/des/
+lib/tcllib/des/des.tcl
+lib/tcllib/des/pkgIndex.tcl
+lib/tcllib/des/tcldes.tcl
+lib/tcllib/des/tcldesjr.tcl
+lib/tcllib/dns/
+lib/tcllib/dns/dns.tcl
+lib/tcllib/dns/ip.tcl
+lib/tcllib/dns/ipMore.tcl
+lib/tcllib/dns/ipMoreC.tcl
+lib/tcllib/dns/msgs/
+lib/tcllib/dns/msgs/en.msg
+lib/tcllib/dns/pkgIndex.tcl
+lib/tcllib/dns/resolv.tcl
+lib/tcllib/dns/spf.tcl
+lib/tcllib/docstrip/
+lib/tcllib/docstrip/docstrip.tcl
+lib/tcllib/docstrip/docstrip_util.tcl
+lib/tcllib/docstrip/pkgIndex.tcl
+lib/tcllib/doctools/
+lib/tcllib/doctools/api.tcl
+lib/tcllib/doctools/api_idx.tcl
+lib/tcllib/doctools/api_toc.tcl
+lib/tcllib/doctools/changelog.tcl
+lib/tcllib/doctools/checker.tcl
+lib/tcllib/doctools/checker_idx.tcl
+lib/tcllib/doctools/checker_toc.tcl
+lib/tcllib/doctools/cvs.tcl
+lib/tcllib/doctools/docidx.tcl
+lib/tcllib/doctools/doctoc.tcl
+lib/tcllib/doctools/doctools.tcl
+lib/tcllib/doctools/mpformats/
+lib/tcllib/doctools/mpformats/_common.tcl
+lib/tcllib/doctools/mpformats/_html.tcl
+lib/tcllib/doctools/mpformats/_idx_common.tcl
+lib/tcllib/doctools/mpformats/_nroff.tcl
+lib/tcllib/doctools/mpformats/_text.tcl
+lib/tcllib/doctools/mpformats/_toc_common.tcl
+lib/tcllib/doctools/mpformats/_xml.tcl
+lib/tcllib/doctools/mpformats/c.msg
+lib/tcllib/doctools/mpformats/de.msg
+lib/tcllib/doctools/mpformats/en.msg
+lib/tcllib/doctools/mpformats/fmt.desc
+lib/tcllib/doctools/mpformats/fmt.html
+lib/tcllib/doctools/mpformats/fmt.latex
+lib/tcllib/doctools/mpformats/fmt.list
+lib/tcllib/doctools/mpformats/fmt.nroff
+lib/tcllib/doctools/mpformats/fmt.null
+lib/tcllib/doctools/mpformats/fmt.text
+lib/tcllib/doctools/mpformats/fmt.tmml
+lib/tcllib/doctools/mpformats/fmt.wiki
+lib/tcllib/doctools/mpformats/fr.msg
+lib/tcllib/doctools/mpformats/idx.html
+lib/tcllib/doctools/mpformats/idx.nroff
+lib/tcllib/doctools/mpformats/idx.null
+lib/tcllib/doctools/mpformats/idx.text
+lib/tcllib/doctools/mpformats/idx.wiki
+lib/tcllib/doctools/mpformats/toc.html
+lib/tcllib/doctools/mpformats/toc.nroff
+lib/tcllib/doctools/mpformats/toc.null
+lib/tcllib/doctools/mpformats/toc.text
+lib/tcllib/doctools/mpformats/toc.tmml
+lib/tcllib/doctools/mpformats/toc.wiki
+lib/tcllib/doctools/pkgIndex.tcl
+lib/tcllib/exif/
+lib/tcllib/exif/exif.tcl
+lib/tcllib/exif/pkgIndex.tcl
+lib/tcllib/fileutil/
+lib/tcllib/fileutil/fileutil.tcl
+lib/tcllib/fileutil/multi.tcl
+lib/tcllib/fileutil/multiop.tcl
+lib/tcllib/fileutil/pkgIndex.tcl
+lib/tcllib/fileutil/traverse.tcl
+lib/tcllib/ftp/
+lib/tcllib/ftp/ftp.tcl
+lib/tcllib/ftp/ftp_geturl.tcl
+lib/tcllib/ftp/pkgIndex.tcl
+lib/tcllib/ftpd/
+lib/tcllib/ftpd/ftpd.tcl
+lib/tcllib/ftpd/pkgIndex.tcl
+lib/tcllib/fumagic/
+lib/tcllib/fumagic/cfront.tcl
+lib/tcllib/fumagic/cgen.tcl
+lib/tcllib/fumagic/filetypes.tcl
+lib/tcllib/fumagic/mimetypes.tcl
+lib/tcllib/fumagic/pkgIndex.tcl
+lib/tcllib/fumagic/rtcore.tcl
+lib/tcllib/grammar_fa/
+lib/tcllib/grammar_fa/dacceptor.tcl
+lib/tcllib/grammar_fa/dexec.tcl
+lib/tcllib/grammar_fa/fa.tcl
+lib/tcllib/grammar_fa/faop.tcl
+lib/tcllib/grammar_fa/pkgIndex.tcl
+lib/tcllib/grammar_me/
+lib/tcllib/grammar_me/gasm.tcl
+lib/tcllib/grammar_me/me_cpu.tcl
+lib/tcllib/grammar_me/me_cpucore.tcl
+lib/tcllib/grammar_me/me_tcl.tcl
+lib/tcllib/grammar_me/me_util.tcl
+lib/tcllib/grammar_me/pkgIndex.tcl
+lib/tcllib/grammar_peg/
+lib/tcllib/grammar_peg/peg.tcl
+lib/tcllib/grammar_peg/peg_interp.tcl
+lib/tcllib/grammar_peg/pkgIndex.tcl
+lib/tcllib/html/
+lib/tcllib/html/html.tcl
+lib/tcllib/html/pkgIndex.tcl
+lib/tcllib/htmlparse/
+lib/tcllib/htmlparse/htmlparse.tcl
+lib/tcllib/htmlparse/pkgIndex.tcl
+lib/tcllib/http/
+lib/tcllib/http/autoproxy.tcl
+lib/tcllib/http/pkgIndex.tcl
+lib/tcllib/ident/
+lib/tcllib/ident/ident.tcl
+lib/tcllib/ident/pkgIndex.tcl
+lib/tcllib/inifile/
+lib/tcllib/inifile/ini.tcl
+lib/tcllib/inifile/pkgIndex.tcl
+lib/tcllib/interp/
+lib/tcllib/interp/deleg_method.tcl
+lib/tcllib/interp/deleg_proc.tcl
+lib/tcllib/interp/interp.tcl
+lib/tcllib/interp/pkgIndex.tcl
+lib/tcllib/irc/
+lib/tcllib/irc/irc.tcl
+lib/tcllib/irc/pkgIndex.tcl
+lib/tcllib/javascript/
+lib/tcllib/javascript/javascript.tcl
+lib/tcllib/javascript/pkgIndex.tcl
+lib/tcllib/jpeg/
+lib/tcllib/jpeg/jpeg.tcl
+lib/tcllib/jpeg/pkgIndex.tcl
+lib/tcllib/json/
+lib/tcllib/json/json.tcl
+lib/tcllib/json/pkgIndex.tcl
+lib/tcllib/ldap/
+lib/tcllib/ldap/ldap.tcl
+lib/tcllib/ldap/ldapx.tcl
+lib/tcllib/ldap/pkgIndex.tcl
+lib/tcllib/log/
+lib/tcllib/log/log.tcl
+lib/tcllib/log/logger.tcl
+lib/tcllib/log/loggerAppender.tcl
+lib/tcllib/log/loggerUtils.tcl
+lib/tcllib/log/msgs/
+lib/tcllib/log/msgs/en.msg
+lib/tcllib/log/pkgIndex.tcl
+lib/tcllib/mapproj/
+lib/tcllib/mapproj/mapproj.tcl
+lib/tcllib/mapproj/pkgIndex.tcl
+lib/tcllib/math/
+lib/tcllib/math/bessel.tcl
+lib/tcllib/math/bigfloat.tcl
+lib/tcllib/math/bigfloat2.tcl
+lib/tcllib/math/bignum.tcl
+lib/tcllib/math/calculus.tcl
+lib/tcllib/math/classic_polyns.tcl
+lib/tcllib/math/combinatorics.tcl
+lib/tcllib/math/constants.tcl
+lib/tcllib/math/elliptic.tcl
+lib/tcllib/math/exponential.tcl
+lib/tcllib/math/fourier.tcl
+lib/tcllib/math/fuzzy.tcl
+lib/tcllib/math/geometry.tcl
+lib/tcllib/math/interpolate.tcl
+lib/tcllib/math/linalg.tcl
+lib/tcllib/math/liststat.tcl
+lib/tcllib/math/math.tcl
+lib/tcllib/math/misc.tcl
+lib/tcllib/math/mvlinreg.tcl
+lib/tcllib/math/optimize.tcl
+lib/tcllib/math/pdf_stat.tcl
+lib/tcllib/math/pkgIndex.tcl
+lib/tcllib/math/plotstat.tcl
+lib/tcllib/math/polynomials.tcl
+lib/tcllib/math/qcomplex.tcl
+lib/tcllib/math/rational_funcs.tcl
+lib/tcllib/math/romannumerals.tcl
+lib/tcllib/math/special.tcl
+lib/tcllib/math/statistics.tcl
+lib/tcllib/math/tclIndex
+lib/tcllib/md4/
+lib/tcllib/md4/md4.tcl
+lib/tcllib/md4/md4c.tcl
+lib/tcllib/md4/pkgIndex.tcl
+lib/tcllib/md5/
+lib/tcllib/md5/md5.tcl
+lib/tcllib/md5/md5c.tcl
+lib/tcllib/md5/md5x.tcl
+lib/tcllib/md5/pkgIndex.tcl
+lib/tcllib/md5crypt/
+lib/tcllib/md5crypt/md5crypt.tcl
+lib/tcllib/md5crypt/md5cryptc.tcl
+lib/tcllib/md5crypt/pkgIndex.tcl
+lib/tcllib/mime/
+lib/tcllib/mime/mime.tcl
+lib/tcllib/mime/pkgIndex.tcl
+lib/tcllib/mime/smtp.tcl
+lib/tcllib/multiplexer/
+lib/tcllib/multiplexer/multiplexer.tcl
+lib/tcllib/multiplexer/pkgIndex.tcl
+lib/tcllib/ncgi/
+lib/tcllib/ncgi/ncgi.tcl
+lib/tcllib/ncgi/pkgIndex.tcl
+lib/tcllib/nmea/
+lib/tcllib/nmea/nmea.tcl
+lib/tcllib/nmea/pkgIndex.tcl
+lib/tcllib/nns/
+lib/tcllib/nns/common.tcl
+lib/tcllib/nns/nns.tcl
+lib/tcllib/nns/nns_auto.tcl
+lib/tcllib/nns/pkgIndex.tcl
+lib/tcllib/nns/server.tcl
+lib/tcllib/nntp/
+lib/tcllib/nntp/nntp.tcl
+lib/tcllib/nntp/pkgIndex.tcl
+lib/tcllib/ntp/
+lib/tcllib/ntp/pkgIndex.tcl
+lib/tcllib/ntp/time.tcl
+lib/tcllib/otp/
+lib/tcllib/otp/otp.tcl
+lib/tcllib/otp/pkgIndex.tcl
+lib/tcllib/page/
+lib/tcllib/page/analysis_peg_emodes.tcl
+lib/tcllib/page/analysis_peg_minimize.tcl
+lib/tcllib/page/analysis_peg_reachable.tcl
+lib/tcllib/page/analysis_peg_realizable.tcl
+lib/tcllib/page/compiler_peg_mecpu.tcl
+lib/tcllib/page/gen_peg_canon.tcl
+lib/tcllib/page/gen_peg_cpkg.tcl
+lib/tcllib/page/gen_peg_hb.tcl
+lib/tcllib/page/gen_peg_me.tcl
+lib/tcllib/page/gen_peg_mecpu.tcl
+lib/tcllib/page/gen_peg_ser.tcl
+lib/tcllib/page/gen_tree_text.tcl
+lib/tcllib/page/parse_lemon.tcl
+lib/tcllib/page/parse_peg.tcl
+lib/tcllib/page/parse_peghb.tcl
+lib/tcllib/page/parse_pegser.tcl
+lib/tcllib/page/peg_grammar.tcl
+lib/tcllib/page/pkgIndex.tcl
+lib/tcllib/page/pluginmgr.tcl
+lib/tcllib/page/plugins/
+lib/tcllib/page/plugins/config_peg.tcl
+lib/tcllib/page/plugins/pkgIndex.tcl
+lib/tcllib/page/plugins/reader_hb.tcl
+lib/tcllib/page/plugins/reader_lemon.tcl
+lib/tcllib/page/plugins/reader_peg.tcl
+lib/tcllib/page/plugins/reader_ser.tcl
+lib/tcllib/page/plugins/reader_treeser.tcl
+lib/tcllib/page/plugins/transform_mecpu.tcl
+lib/tcllib/page/plugins/transform_reachable.tcl
+lib/tcllib/page/plugins/transform_realizable.tcl
+lib/tcllib/page/plugins/writer_hb.tcl
+lib/tcllib/page/plugins/writer_identity.tcl
+lib/tcllib/page/plugins/writer_me.tcl
+lib/tcllib/page/plugins/writer_mecpu.tcl
+lib/tcllib/page/plugins/writer_null.tcl
+lib/tcllib/page/plugins/writer_peg.tcl
+lib/tcllib/page/plugins/writer_ser.tcl
+lib/tcllib/page/plugins/writer_tpc.tcl
+lib/tcllib/page/plugins/writer_tree.tcl
+lib/tcllib/page/util_flow.tcl
+lib/tcllib/page/util_norm_lemon.tcl
+lib/tcllib/page/util_norm_peg.tcl
+lib/tcllib/page/util_peg.tcl
+lib/tcllib/page/util_quote.tcl
+lib/tcllib/pkgIndex.tcl
+lib/tcllib/pluginmgr/
+lib/tcllib/pluginmgr/pkgIndex.tcl
+lib/tcllib/pluginmgr/pluginmgr.tcl
+lib/tcllib/png/
+lib/tcllib/png/pkgIndex.tcl
+lib/tcllib/png/png.tcl
+lib/tcllib/pop3/
+lib/tcllib/pop3/pkgIndex.tcl
+lib/tcllib/pop3/pop3.tcl
+lib/tcllib/pop3d/
+lib/tcllib/pop3d/pkgIndex.tcl
+lib/tcllib/pop3d/pop3d.tcl
+lib/tcllib/pop3d/pop3d_dbox.tcl
+lib/tcllib/pop3d/pop3d_udb.tcl
+lib/tcllib/profiler/
+lib/tcllib/profiler/pkgIndex.tcl
+lib/tcllib/profiler/profiler.tcl
+lib/tcllib/rc4/
+lib/tcllib/rc4/pkgIndex.tcl
+lib/tcllib/rc4/rc4.tcl
+lib/tcllib/rc4/rc4c.tcl
+lib/tcllib/rcs/
+lib/tcllib/rcs/pkgIndex.tcl
+lib/tcllib/rcs/rcs.tcl
+lib/tcllib/report/
+lib/tcllib/report/pkgIndex.tcl
+lib/tcllib/report/report.tcl
+lib/tcllib/ripemd/
+lib/tcllib/ripemd/pkgIndex.tcl
+lib/tcllib/ripemd/ripemd128.tcl
+lib/tcllib/ripemd/ripemd160.tcl
+lib/tcllib/sasl/
+lib/tcllib/sasl/gtoken.tcl
+lib/tcllib/sasl/ntlm.tcl
+lib/tcllib/sasl/pkgIndex.tcl
+lib/tcllib/sasl/sasl.tcl
+lib/tcllib/sha1/
+lib/tcllib/sha1/pkgIndex.tcl
+lib/tcllib/sha1/sha1.tcl
+lib/tcllib/sha1/sha1c.tcl
+lib/tcllib/sha1/sha1v1.tcl
+lib/tcllib/sha1/sha256.tcl
+lib/tcllib/sha1/sha256c.tcl
+lib/tcllib/smtpd/
+lib/tcllib/smtpd/pkgIndex.tcl
+lib/tcllib/smtpd/smtpd.tcl
+lib/tcllib/snit/
+lib/tcllib/snit/main1.tcl
+lib/tcllib/snit/main1_83.tcl
+lib/tcllib/snit/main2.tcl
+lib/tcllib/snit/pkgIndex.tcl
+lib/tcllib/snit/snit.tcl
+lib/tcllib/snit/snit2.tcl
+lib/tcllib/snit/snit_tcl83_utils.tcl
+lib/tcllib/snit/validate.tcl
+lib/tcllib/soundex/
+lib/tcllib/soundex/pkgIndex.tcl
+lib/tcllib/soundex/soundex.tcl
+lib/tcllib/stooop/
+lib/tcllib/stooop/mkpkgidx.tcl
+lib/tcllib/stooop/pkgIndex.tcl
+lib/tcllib/stooop/stooop.tcl
+lib/tcllib/stooop/switched.tcl
+lib/tcllib/stooop/xifo.tcl
+lib/tcllib/struct/
+lib/tcllib/struct/graph.tcl
+lib/tcllib/struct/graph1.tcl
+lib/tcllib/struct/graph_c.tcl
+lib/tcllib/struct/graph_tcl.tcl
+lib/tcllib/struct/list.tcl
+lib/tcllib/struct/matrix.tcl
+lib/tcllib/struct/matrix1.tcl
+lib/tcllib/struct/pkgIndex.tcl
+lib/tcllib/struct/pool.tcl
+lib/tcllib/struct/prioqueue.tcl
+lib/tcllib/struct/queue.tcl
+lib/tcllib/struct/record.tcl
+lib/tcllib/struct/sets.tcl
+lib/tcllib/struct/sets_c.tcl
+lib/tcllib/struct/sets_tcl.tcl
+lib/tcllib/struct/skiplist.tcl
+lib/tcllib/struct/stack.tcl
+lib/tcllib/struct/struct.tcl
+lib/tcllib/struct/struct1.tcl
+lib/tcllib/struct/tree.tcl
+lib/tcllib/struct/tree1.tcl
+lib/tcllib/struct/tree_c.tcl
+lib/tcllib/struct/tree_tcl.tcl
+lib/tcllib/tar/
+lib/tcllib/tar/pkgIndex.tcl
+lib/tcllib/tar/tar.tcl
+lib/tcllib/term/
+lib/tcllib/term/ansi/
+lib/tcllib/term/ansi/code/
+lib/tcllib/term/ansi/code.tcl
+lib/tcllib/term/ansi/code/attr.tcl
+lib/tcllib/term/ansi/code/ctrl.tcl
+lib/tcllib/term/ansi/code/macros.tcl
+lib/tcllib/term/ansi/ctrlunix.tcl
+lib/tcllib/term/ansi/send.tcl
+lib/tcllib/term/bind.tcl
+lib/tcllib/term/imenu.tcl
+lib/tcllib/term/ipager.tcl
+lib/tcllib/term/pkgIndex.tcl
+lib/tcllib/term/receive.tcl
+lib/tcllib/term/send.tcl
+lib/tcllib/term/term.tcl
+lib/tcllib/textutil/
+lib/tcllib/textutil/adjust.tcl
+lib/tcllib/textutil/dehypht.tex
+lib/tcllib/textutil/eshyph_vo.tex
+lib/tcllib/textutil/expander.tcl
+lib/tcllib/textutil/ithyph.tex
+lib/tcllib/textutil/pkgIndex.tcl
+lib/tcllib/textutil/repeat.tcl
+lib/tcllib/textutil/split.tcl
+lib/tcllib/textutil/string.tcl
+lib/tcllib/textutil/tabify.tcl
+lib/tcllib/textutil/textutil.tcl
+lib/tcllib/textutil/trim.tcl
+lib/tcllib/tie/
+lib/tcllib/tie/pkgIndex.tcl
+lib/tcllib/tie/tie.tcl
+lib/tcllib/tie/tie_array.tcl
+lib/tcllib/tie/tie_dsource.tcl
+lib/tcllib/tie/tie_file.tcl
+lib/tcllib/tie/tie_growfile.tcl
+lib/tcllib/tie/tie_log.tcl
+lib/tcllib/tie/tie_rarray.tcl
+lib/tcllib/tiff/
+lib/tcllib/tiff/pkgIndex.tcl
+lib/tcllib/tiff/tiff.tcl
+lib/tcllib/transfer/
+lib/tcllib/transfer/connect.tcl
+lib/tcllib/transfer/copyops.tcl
+lib/tcllib/transfer/ddest.tcl
+lib/tcllib/transfer/dsource.tcl
+lib/tcllib/transfer/pkgIndex.tcl
+lib/tcllib/transfer/receiver.tcl
+lib/tcllib/transfer/tqueue.tcl
+lib/tcllib/transfer/transmitter.tcl
+lib/tcllib/treeql/
+lib/tcllib/treeql/pkgIndex.tcl
+lib/tcllib/treeql/treeql.tcl
+lib/tcllib/treeql/treeql84.tcl
+lib/tcllib/treeql/treeql85.tcl
+lib/tcllib/uev/
+lib/tcllib/uev/pkgIndex.tcl
+lib/tcllib/uev/uevent.tcl
+lib/tcllib/units/
+lib/tcllib/units/pkgIndex.tcl
+lib/tcllib/units/units.tcl
+lib/tcllib/uri/
+lib/tcllib/uri/pkgIndex.tcl
+lib/tcllib/uri/uri.tcl
+lib/tcllib/uri/urn-scheme.tcl
+lib/tcllib/uuid/
+lib/tcllib/uuid/pkgIndex.tcl
+lib/tcllib/uuid/uuid.tcl
+lib/tcllib/wip/
+lib/tcllib/wip/pkgIndex.tcl
+lib/tcllib/wip/wip.tcl
+lib/tcllib/wip/wip2.tcl
 @man man/mann/aes.n
+@man man/mann/ansi_cattr.n
+@man man/mann/ansi_cctrl.n
+@man man/mann/ansi_cmacros.n
+@man man/mann/ansi_code.n
+@man man/mann/ansi_ctrlu.n
+@man man/mann/ansi_send.n
 @man man/mann/asn.n
 @man man/mann/autoproxy.n
+@man man/mann/base32.n
+@man man/mann/base32core.n
+@man man/mann/base32hex.n
 @man man/mann/base64.n
 @man man/mann/bee.n
 @man man/mann/bibtex.n
@@ -415,27 +521,45 @@ lib/${TCLLIB}/uuid/uuid.tcl
 @man man/mann/combinatorics.n
 @man man/mann/comm.n
 @man man/mann/comm_wire.n
+@man man/mann/connect.n
 @man man/mann/constants.n
 @man man/mann/control.n
+@man man/mann/copyops.n
 @man man/mann/counter.n
 @man man/mann/crc16.n
 @man man/mann/crc32.n
 @man man/mann/csv.n
 @man man/mann/cvs.n
 @man man/mann/dacceptor.n
+@man man/mann/ddest.n
+@man man/mann/deleg_method.n
+@man man/mann/deleg_proc.n
 @man man/mann/des.n
 @man man/mann/dexec.n
 @man man/mann/docidx.n
-@man man/mann/docidx_api.n
-@man man/mann/docidx_fmt.n
+@man man/mann/docidx_intro.n
+@man man/mann/docidx_lang_cmdref.n
+@man man/mann/docidx_lang_faq.n
+@man man/mann/docidx_lang_intro.n
+@man man/mann/docidx_lang_syntax.n
+@man man/mann/docidx_plugin_apiref.n
 @man man/mann/docstrip.n
 @man man/mann/docstrip_util.n
 @man man/mann/doctoc.n
-@man man/mann/doctoc_api.n
-@man man/mann/doctoc_fmt.n
+@man man/mann/doctoc_intro.n
+@man man/mann/doctoc_lang_cmdref.n
+@man man/mann/doctoc_lang_faq.n
+@man man/mann/doctoc_lang_intro.n
+@man man/mann/doctoc_lang_syntax.n
+@man man/mann/doctoc_plugin_apiref.n
 @man man/mann/doctools.n
-@man man/mann/doctools_api.n
-@man man/mann/doctools_fmt.n
+@man man/mann/doctools_intro.n
+@man man/mann/doctools_lang_cmdref.n
+@man man/mann/doctools_lang_faq.n
+@man man/mann/doctools_lang_intro.n
+@man man/mann/doctools_lang_syntax.n
+@man man/mann/doctools_plugin_apiref.n
+@man man/mann/dsource.n
 @man man/mann/exif.n
 @man man/mann/expander.n
 @man man/mann/fa.n
@@ -452,17 +576,22 @@ lib/${TCLLIB}/uuid/uuid.tcl
 @man man/mann/html.n
 @man man/mann/htmlparse.n
 @man man/mann/ident.n
+@man man/mann/imenu.n
 @man man/mann/ini.n
 @man man/mann/interpolate.n
+@man man/mann/ipager.n
 @man man/mann/irc.n
 @man man/mann/javascript.n
 @man man/mann/jpeg.n
+@man man/mann/json.n
 @man man/mann/ldap.n
+@man man/mann/ldapx.n
 @man man/mann/linalg.n
 @man man/mann/log.n
 @man man/mann/logger.n
 @man man/mann/loggerAppender.n
 @man man/mann/loggerUtils.n
+@man man/mann/mapproj.n
 @man man/mann/math.n
 @man man/mann/matrix.n
 @man man/mann/matrix1.n
@@ -479,11 +608,27 @@ lib/${TCLLIB}/uuid/uuid.tcl
 @man man/mann/mime.n
 @man man/mann/mimetypes.n
 @man man/mann/mpexpand.n
+@man man/mann/multi.n
+@man man/mann/multiop.n
 @man man/mann/multiplexer.n
 @man man/mann/ncgi.n
+@man man/mann/nmea.n
+@man man/mann/nns_auto.n
+@man man/mann/nns_client.n
+@man man/mann/nns_common.n
+@man man/mann/nns_procotol.n
+@man man/mann/nns_server.n
 @man man/mann/nntp.n
 @man man/mann/ntp_time.n
 @man man/mann/optimize.n
+@man man/mann/otp.n
+@man man/mann/page_intro.n
+@man man/mann/page_pluginmgr.n
+@man man/mann/page_util_flow.n
+@man man/mann/page_util_norm_lemon.n
+@man man/mann/page_util_norm_peg.n
+@man man/mann/page_util_peg.n
+@man man/mann/page_util_quote.n
 @man man/mann/peg.n
 @man man/mann/peg_interp.n
 @man man/mann/pluginmgr.n
@@ -501,6 +646,8 @@ lib/${TCLLIB}/uuid/uuid.tcl
 @man man/mann/rational_funcs.n
 @man man/mann/rc4.n
 @man man/mann/rcs.n
+@man man/mann/receive.n
+@man man/mann/receiver.n
 @man man/mann/record.n
 @man man/mann/report.n
 @man man/mann/ripemd128.n
@@ -526,12 +673,115 @@ lib/${TCLLIB}/uuid/uuid.tcl
 @man man/mann/sum.n
 @man man/mann/tar.n
 @man man/mann/tcllib_dns.n
+@man man/mann/tcllib_interp.n
 @man man/mann/tcllib_ip.n
+@man man/mann/term.n
+@man man/mann/term_bind.n
+@man man/mann/term_send.n
 @man man/mann/textutil.n
 @man man/mann/tie.n
+@man man/mann/tiff.n
+@man man/mann/tqueue.n
+@man man/mann/transmitter.n
+@man man/mann/traverse.n
 @man man/mann/treeql.n
+@man man/mann/uevent.n
 @man man/mann/units.n
 @man man/mann/uri.n
 @man man/mann/uuencode.n
 @man man/mann/uuid.n
+@man man/mann/wip.n
 @man man/mann/yencode.n
+share/examples/tcllib/
+share/examples/tcllib/csv/
+share/examples/tcllib/csv/Bench.csv
+share/examples/tcllib/csv/Bench.html
+share/examples/tcllib/csv/Benchmark.75p2.csv
+share/examples/tcllib/csv/Benchmark.76p2.csv
+share/examples/tcllib/csv/Benchmark.805.csv
+share/examples/tcllib/csv/Benchmark.811.csv
+share/examples/tcllib/csv/Benchmark.823.csv
+share/examples/tcllib/csv/Benchmark.833.csv
+share/examples/tcllib/csv/Benchmark.84a3.csv
+share/examples/tcllib/csv/README
+share/examples/tcllib/csv/bench_join
+share/examples/tcllib/csv/csv2html
+share/examples/tcllib/csv/csvcut
+share/examples/tcllib/csv/csvdiff
+share/examples/tcllib/csv/csvjoin
+share/examples/tcllib/csv/csvsort
+share/examples/tcllib/csv/csvuniq
+share/examples/tcllib/dns/
+share/examples/tcllib/dns/tk_sample.tcl
+share/examples/tcllib/doctools/
+share/examples/tcllib/doctools/doctools.idx
+share/examples/tcllib/doctools/doctools.toc
+share/examples/tcllib/ftp/
+share/examples/tcllib/ftp/ChangeLog
+share/examples/tcllib/ftp/README
+share/examples/tcllib/ftp/ftpdemo.tcl
+share/examples/tcllib/ftp/ftpvalid
+share/examples/tcllib/ftp/hpupdate.tcl
+share/examples/tcllib/ftp/mirror.tcl
+share/examples/tcllib/ftp/newer.tcl
+share/examples/tcllib/ftpd/
+share/examples/tcllib/ftpd/ftpd
+share/examples/tcllib/ftpd/ftpd.test
+share/examples/tcllib/ftpd/ftpd.unix
+share/examples/tcllib/irc/
+share/examples/tcllib/irc/ChangeLog
+share/examples/tcllib/irc/irc_example.tcl
+share/examples/tcllib/irc/mainloop.tcl
+share/examples/tcllib/ldap/
+share/examples/tcllib/ldap/ldapChangeTest
+share/examples/tcllib/ldap/ldapChangeTest.output
+share/examples/tcllib/ldap/ldapquery
+share/examples/tcllib/ldap/ldifdump
+share/examples/tcllib/mapproj/
+share/examples/tcllib/mapproj/ChangeLog
+share/examples/tcllib/mapproj/ncar780.txt
+share/examples/tcllib/mapproj/tkmap.tcl
+share/examples/tcllib/math/
+share/examples/tcllib/math/bigfloat.demo.tcl
+share/examples/tcllib/math/bigfloat.help
+share/examples/tcllib/mime/
+share/examples/tcllib/mime/maildemo.tcl
+share/examples/tcllib/mime/mbot/
+share/examples/tcllib/mime/mbot/ChangeLog
+share/examples/tcllib/mime/mbot/README.html
+share/examples/tcllib/mime/mbot/README.txt
+share/examples/tcllib/mime/mbot/README.xml
+share/examples/tcllib/mime/mbot/impersonal.tcl
+share/examples/tcllib/mime/mbot/mbox.tcl
+share/examples/tcllib/mime/mbot/mutl.tcl
+share/examples/tcllib/mime/mbot/personal.tcl
+share/examples/tcllib/mime/mbot/pkgIndex.tcl
+share/examples/tcllib/nntp/
+share/examples/tcllib/nntp/README
+share/examples/tcllib/nntp/nntp.examples
+share/examples/tcllib/nntp/postnews
+share/examples/tcllib/ntp/
+share/examples/tcllib/ntp/rdate.tcl
+share/examples/tcllib/smtpd/
+share/examples/tcllib/smtpd/server-private.key
+share/examples/tcllib/smtpd/server-public.pem
+share/examples/tcllib/smtpd/tcl_smtpd
+share/examples/tcllib/smtpd/tk_smtpd
+share/examples/tcllib/struct/
+share/examples/tcllib/struct/README
+share/examples/tcllib/struct/diff.tcl
+share/examples/tcllib/struct/diff2.tcl
+share/examples/tcllib/term/
+share/examples/tcllib/term/attributes
+share/examples/tcllib/term/box
+share/examples/tcllib/term/box2
+share/examples/tcllib/term/clear
+share/examples/tcllib/term/colors
+share/examples/tcllib/term/frame
+share/examples/tcllib/term/graphics
+share/examples/tcllib/term/imenu
+share/examples/tcllib/term/ipager
+share/examples/tcllib/term/menu
+share/examples/tcllib/term/menu2
+share/examples/tcllib/term/para
+share/examples/tcllib/term/title
