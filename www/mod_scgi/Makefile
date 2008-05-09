@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/25 20:05:04 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/09 08:26:53 mbalmer Exp $
 
 COMMENT=	apache interface for SCGI servers
 
 DISTNAME=	scgi-1.12
-PKGNAME=	mod_${DISTNAME}	
+PKGNAME=	mod_${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://python.ca/scgi/
