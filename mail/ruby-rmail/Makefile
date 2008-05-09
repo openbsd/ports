@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/04 16:52:32 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/09 17:24:39 bernd Exp $
 
 COMMENT=	Ruby library to create and parse MIME messages
 
-DISTNAME=	rmail-0.17
+DISTNAME=	rmail-1.0.0
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	mail
 
@@ -25,6 +25,6 @@ CONFIGURE_STYLE=ruby gem
 PKG_ARCH=	*
 
 do-regress:
-	@cd ${WRKBUILD} && ${RUBY} tests/runtests.rb
+	@cd ${WRKBUILD} && ${RUBY} test/runtests.rb
 
 .include <bsd.port.mk>
