@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/22 19:09:55 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/09 11:31:10 fgsch Exp $
 
 PKG_ARCH=	*
 
@@ -7,7 +7,7 @@ COMMENT=	high-level widget set for Tcl/Tk
 V=		1.8.0
 DISTNAME=	BWidget-$V
 PKGNAME=	bwidget-$V
-CATEGORIES=	x11/tk
+CATEGORIES=	x11 x11/tk
 
 HOMEPAGE=	http://sourceforge.net/projects/tcllib/
 
