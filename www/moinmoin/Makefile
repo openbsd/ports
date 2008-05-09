@@ -1,27 +1,29 @@
-# $OpenBSD: Makefile,v 1.10 2008/04/02 15:30:51 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2008/05/09 22:15:30 fgsch Exp $
 
-COMMENT=	Python clone of WikiWiki
+COMMENT =	wiki engine written in python
 
-DISTNAME=	moin-1.6.2
-PKGNAME=	moin${DISTNAME}
-CATEGORIES=	www
+MODPY_EGG_VERSION = 1.6.3
+DISTNAME =	moin-${MODPY_EGG_VERSION}
+PKGNAME =	moin${DISTNAME}
 
-HOMEPAGE=	http://moinmo.in/
+CATEGORIES =	www
+
+HOMEPAGE =	http://moinmo.in/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	http://static.moinmo.in/files/
+MASTER_SITES =	http://static.moinmo.in/files/
 
-MODULES=	lang/python
-RUN_DEPENDS=	${MODPY_EXPAT_DEPENDS}
+MODULES =	lang/python
+RUN_DEPENDS =	${MODPY_EXPAT_DEPENDS}
 
-NO_REGRESS=	Yes
+NO_REGRESS =	Yes
 
-PKG_ARCH=	*
+PKG_ARCH =	*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/moinmoin
