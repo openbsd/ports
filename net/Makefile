@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.520 2008/04/29 07:02:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.521 2008/05/09 18:57:12 bernd Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -342,8 +342,10 @@
      SUBDIR += rsnapshot
      SUBDIR += rsync
      SUBDIR += rtorrent
+     SUBDIR += ruby-net-scp
      SUBDIR += ruby-net-sftp
      SUBDIR += ruby-net-ssh
+     SUBDIR += ruby-net-ssh-gateway
      SUBDIR += ruby-pcap
      SUBDIR += ruby-rrdtool
      SUBDIR += ruby-xmpp4r
