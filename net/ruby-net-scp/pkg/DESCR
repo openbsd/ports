@@ -1,0 +1,3 @@
+Net::SCP is a pure-Ruby implementation of the SCP protocol. This operates
+over SSH (and requires the Net::SSH library), and allows files and
+directory trees to copied to and from a remote server.
