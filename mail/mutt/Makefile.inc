@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.25 2007/11/11 10:09:43 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2008/05/09 17:46:51 bernd Exp $
 
 CATEGORIES=	mail
 
@@ -19,26 +19,24 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB+=	c crypto des gssapi krb5 ssl
 
 FLAVORS+=	slang mixmaster compressed
 FLAVOR?=
 
-AUTOCONF_VERSION?= 2.59
 CONFIGURE_STYLE= autoconf old
-CONFIGURE_ARGS+=--with-sharedir="${PREFIX}/share/mutt" \
-		--with-docdir="${PREFIX}/share/doc/mutt" \
+AUTOCONF_VERSION?= 2.61
+CONFIGURE_ARGS+=--enable-external_dotlock \
 		--enable-flock \
-		--disable-fcntl \
-		--enable-external_dotlock \
 		--enable-imap \
 		--enable-pop \
+		--disable-fcntl \
+		--mandir=${PREFIX}/man \
+		--sysconfdir=${CONFDIR} \
+		--with-docdir="${PREFIX}/share/doc/mutt" \
+		--with-gss \
+		--with-sharedir="${PREFIX}/share/mutt" \
 		--with-ssl \
-		--sysconfdir=${CONFDIR}
-
-.if ${KERBEROS5} == "yes"
-CONFIGURE_ARGS+=--with-gss
-WANTLIB+=	gssapi krb5
-.endif
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2007/11/11 10:09:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2008/05/09 17:46:51 bernd Exp $
 
 COMMENT=	tty-based e-mail client
 
 VERSION=	1.4.2.3
 DISTNAME=	mutt-${VERSION}
 MASTER_SITES=	${MASTER_SITES_MUTT}
-
-WANTLIB=	c crypto des ssl
 
 .include <bsd.port.mk>
