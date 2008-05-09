@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2008/05/08 16:53:50 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.137 2008/05/09 22:30:26 wcmaier Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -102,6 +102,7 @@
      SUBDIR += py-ldap,python2.4
      SUBDIR += py-ldap,python2.5
      SUBDIR += py-mysql
+     SUBDIR += py-pgsql
      SUBDIR += py-psycopg,python2.4
      SUBDIR += py-psycopg,python2.5
      SUBDIR += py-psycopg2
