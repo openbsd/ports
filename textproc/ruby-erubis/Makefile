@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/19 17:01:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/09 17:59:46 bernd Exp $
 
 COMMENT=		pure Ruby implementation of eRuby
 
-DISTNAME=		erubis-2.5.0
+DISTNAME=		erubis-2.6.0
 PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		textproc
 
@@ -24,5 +24,10 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/ruby-abstract
 
 PKG_ARCH=		*
+
+REGRESS_DEPENDS=	::${BASE_PKGPATH}
+
+do-regress:
+	@cd ${WRKBUILD} && ${SETENV} RUBYOPT="-rubygems" ${RUBY} test/test.rb
 
 .include <bsd.port.mk>
