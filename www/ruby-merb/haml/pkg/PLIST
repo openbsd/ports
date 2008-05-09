@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 21:57:18 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/09 17:33:16 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -67,4 +67,24 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-haml/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-haml.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-haml/merbtasks.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-haml/template.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/haml.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/capture_haml/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/capture_haml/index.html.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/concat_haml/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/concat_haml/index.html.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/haml_config/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/haml_config/index.html.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/haml_controller/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/haml_controller/index.html.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_haml/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_haml/_partial_haml.html.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_haml/index.html.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_ivars/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_ivars/_partial_haml.html.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_ivars/index.html.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/haml_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec_helper.rb
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 21:57:34 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/09 17:33:16 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -12,6 +12,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Template/Builder.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Template/Builder.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Template/Builder.src/M000001.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Template/Builder/Mixin.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Template/Builder/Mixin.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Template/Builder/Mixin.src/M000002.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Template/Builder/Mixin.src/M000003.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Template/Builder/Mixin.src/M000004.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/LICENSE.html
@@ -31,7 +35,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/Builder/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/Builder/Mixin/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/Builder/Mixin/_builder_buffer-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/Builder/Mixin/capture_builder-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/Builder/Mixin/cdesc-Mixin.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/Builder/Mixin/concat_builder-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/Builder/cdesc-Builder.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/Builder/compile_template-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Template/cdesc-Template.yaml
@@ -46,4 +53,24 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-builder/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-builder.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-builder/template.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/builder_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/builder.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/builder_config/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/builder_config/index.xml.builder
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/builder_controller/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/builder_controller/index.xml.builder
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/capture_builder/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/capture_builder/index.xml.builder
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/concat_builder/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/concat_builder/index.xml.builder
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_builder/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_builder/_partial_builder.xml.builder
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_builder/index.xml.builder
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_ivars/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_ivars/_partial_builder.xml.builder
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/views/partial_ivars/index.xml.builder
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec_helper.rb
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec

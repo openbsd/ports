@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 21:57:18 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/09 17:33:16 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -54,4 +54,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-action-args/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-action-args.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-action-args/abstract_controller.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-action-args/get_args.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/action_args_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/action-args.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec_helper.rb
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec

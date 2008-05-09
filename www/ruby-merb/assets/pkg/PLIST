@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 21:57:34 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/09 17:33:16 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -8,28 +8,31 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets.src/M000017.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets.src/M000018.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000021.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000022.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000023.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000024.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000025.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000026.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000027.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000028.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000029.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AbstractAssetBundler.src/M000030.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AssetHelpers.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AssetHelpers.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AssetHelpers.src/M000018.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/AssetHelpers.src/M000019.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/JavascriptAssetBundler.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/JavascriptAssetBundler.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/JavascriptAssetBundler.src/M000019.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/JavascriptAssetBundler.src/M000020.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/StylesheetAssetBundler.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/StylesheetAssetBundler.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/StylesheetAssetBundler.src/M000020.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/StylesheetAssetBundler.src/M000021.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/UniqueAssetPath.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/UniqueAssetPath.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/UniqueAssetPath.src/M000027.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/UniqueAssetPath.src/M000028.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/UniqueAssetPath.src/M000031.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Assets/UniqueAssetPath.src/M000032.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AssetsMixin.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AssetsMixin.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AssetsMixin.src/M000001.html
@@ -48,6 +51,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AssetsMixin.src/M
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AssetsMixin.src/M000014.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AssetsMixin.src/M000015.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AssetsMixin.src/M000016.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AssetsMixin.src/M000017.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/LICENSE.html
@@ -71,9 +75,12 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler/asset_type-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler/bundle%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler/bundle_files-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler/cache_bundle-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler/cached_bundle%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler/callbacks-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler/cdesc-AbstractAssetBundler.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AbstractAssetBundler/purge_bundle-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AssetHelpers/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AssetHelpers/asset_path-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/AssetHelpers/cdesc-AssetHelpers.yaml
@@ -90,6 +97,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/UniqueAssetPath/cdes
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/bundle%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Assets/cdesc-Assets.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/AssetsMixin/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/AssetsMixin/auto_link-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/AssetsMixin/cdesc-AssetsMixin.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/AssetsMixin/css_include_tag-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/AssetsMixin/escape_js-i.yaml
@@ -119,4 +127,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-assets/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-assets.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-assets/assets.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-assets/assets_mixin.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb-assets_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec_helper.rb
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec

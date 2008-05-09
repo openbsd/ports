@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 21:57:37 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/09 17:33:17 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -91,4 +91,25 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-parts/merbtasks.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-parts/mixins/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-parts/mixins/web_controller.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-parts/part_controller.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/controllers/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/controllers/main.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/todo_part.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/layout/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/layout/todo_part.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/layout/todo_part.xml.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/todo_part/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/todo_part/formatted_output.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/todo_part/formatted_output.js.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/todo_part/formatted_output.xml.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/todo_part/list.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/parts/views/todo_part/part_with_params.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/views/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/views/main/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixtures/views/main/part_within_view.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb-parts_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec_helper.rb
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec

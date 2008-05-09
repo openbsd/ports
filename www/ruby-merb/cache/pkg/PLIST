@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 21:57:36 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/09 17:33:16 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -279,4 +279,17 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-cache/cache-store/memcach
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-cache/cache-store/memory.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-cache/merb-cache.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-cache/merbtasks.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/config/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/config/database.yml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controller.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb-cache-action_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb-cache-fragment_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb-cache-page_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb-cache_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec_helper.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/views/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/views/cache_controller/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/views/cache_controller/action1.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/views/cache_controller/action2.html.haml
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec

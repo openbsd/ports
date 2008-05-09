@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/19 21:57:32 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/09 17:33:17 bernd Exp $
 
 COMMENT=	The Full Stack. Take what you need; leave what you don't.
 
@@ -12,6 +12,7 @@ RUN_DEPENDS=	::www/ruby-merb/core \
 		::www/ruby-merb/builder \
 		::www/ruby-merb/mailer \
 		::www/ruby-merb/parts \
-		::www/ruby-merb/cache
+		::www/ruby-merb/cache \
+		::www/ruby-merb/freezer
 
 .include <bsd.port.mk>

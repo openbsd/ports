@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 21:57:36 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/09 17:33:16 bernd Exp $
 bin/merb-gen
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -19,6 +19,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/GeneratorBase.src
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/GeneratorBase.src/M000009.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/GeneratorBase.src/M000010.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/GeneratorBase.src/M000011.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/GeneratorBase.src/M000012.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/GeneratorHelpers.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/GeneratorHelpers.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/GeneratorHelpers.src/M000001.html
@@ -52,6 +53,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/GeneratorBase/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/GeneratorBase/add_options%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/GeneratorBase/banner-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/GeneratorBase/cdesc-GeneratorBase.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/GeneratorBase/create_dirs-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/GeneratorBase/display_framework_selections-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/GeneratorBase/manifest-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/GeneratorBase/new-c.yaml
@@ -187,12 +189,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/controller/templat
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/controller/templates/app/views/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/controller/templates/app/views/%controller_file_name%/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/controller/templates/app/views/%controller_file_name%/index.html.erb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/freezer/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/freezer/USAGE
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/freezer/freezer_generator.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/freezer/templates/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/freezer/templates/script/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/freezer/templates/script/frozen-merb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/part_controller/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/part_controller/USAGE
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/merb_generators/part_controller/part_controller_generator.rb
