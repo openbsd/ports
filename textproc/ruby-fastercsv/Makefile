@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/09 17:51:12 bernd Exp $
 
 COMMENT=	faster ruby CSV library
 
-DISTNAME=	fastercsv-1.2.0
+DISTNAME=	fastercsv-1.2.3
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	textproc
 
@@ -19,5 +19,10 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 PKG_ARCH=	*
+
+REGRESS_DEPENDS=::devel/ruby-rake
+
+do-regress:
+	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
 
 .include <bsd.port.mk>
