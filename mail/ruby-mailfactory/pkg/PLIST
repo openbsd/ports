@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 18:12:13 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/09 17:23:26 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -71,9 +71,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/method_missing-i.yam
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/multipart%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/quote_address_if_necessary-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/quote_char-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/quote_if_necessary-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/quote_text_if_necessary-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/quoted_printable_encode-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/quoted_printable_with_instruction-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/rawhtml%3d-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/remove_header-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailFactory/replyto%3d-i.yaml
