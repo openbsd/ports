@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/11/26 18:01:07 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/05/09 17:22:44 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -33,6 +33,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/uuidtools/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/uuidtools/version_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/uuidtools_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/fr_class_index.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/fr_file_index.html
@@ -42,6 +44,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/rdoc-style.css
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/%3c%3d%3e-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/UUID_TOOLS_VERSION/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/UUID_TOOLS_VERSION/cdesc-UUID_TOOLS_VERSION.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/cdesc-UUID.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/eql%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UUID/get_mac_address-i.yaml
@@ -72,7 +76,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGELOG
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/uuidtools/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/uuidtools.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/uuidtools/version.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/create_test.rb
