@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2008/05/10 08:23:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2008/05/10 08:39:41 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -75,6 +75,8 @@
      SUBDIR += utils
      SUBDIR += vfs2
      SUBDIR += vfsmm
+     SUBDIR += vinagre
+     SUBDIR += vino
      SUBDIR += yelp
      SUBDIR += zenity
 
