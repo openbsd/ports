@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.54 2008/02/27 00:30:47 djm Exp $
+# $OpenBSD: Makefile.inc,v 1.55 2008/05/10 17:10:24 deanna Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -188,3 +188,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
 		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
+.if ${VERSION} == 2.5
+		${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
+		${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
+			${PREFIX}/share/emacs/site-lisp
+.endif
+

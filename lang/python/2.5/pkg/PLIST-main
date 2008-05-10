@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/03/27 14:31:31 merdely Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/05/10 17:10:24 deanna Exp $
 @option no-default-conflict
 @conflict python->=2.5,<2.6
 @pkgpath lang/python/2.5
@@ -1860,3 +1860,6 @@ share/doc/python2.5/
 share/doc/python2.5/CHANGES.OpenBSD
 %%mm%%
 %%ctypes%%
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/python-mode.el
