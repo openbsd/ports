@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_coroutine_ucontext_c,v 1.1.1.1 2008/05/10 08:35:31 jasper Exp $
+--- src/coroutine_ucontext.c.orig	Mon Feb 11 19:17:53 2008
++++ src/coroutine_ucontext.c	Mon Feb 11 19:18:03 2008
+@@ -48,7 +48,7 @@ int coroutine_init(struct coroutine *co)
+ 	co->cc.stack_size = co->stack_size;
+ 	co->cc.stack = mmap(0, co->stack_size,
+ 			    PROT_READ | PROT_WRITE,
+-			    MAP_PRIVATE | MAP_ANONYMOUS,
++			    MAP_PRIVATE | MAP_ANON,
+ 			    -1, 0);
+ 	if (co->cc.stack == MAP_FAILED)
+ 		return -1;

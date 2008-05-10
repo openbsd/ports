@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gvnc_c,v 1.1.1.1 2008/05/10 08:35:31 jasper Exp $
+--- src/gvnc.c.orig	Fri May  9 23:53:22 2008
++++ src/gvnc.c	Fri May  9 23:54:48 2008
+@@ -169,6 +169,10 @@ struct gvnc
+ #define nibhi(a) (((a) >> 4) & 0x0F)
+ #define niblo(a) ((a) & 0x0F)
+ 
++#if defined(__OpenBSD__)
++#define AI_ADDRCONFIG 0
++#endif
++
+ /* Main loop helper functions */
+ static gboolean g_io_wait_helper(GIOChannel *channel G_GNUC_UNUSED,
+ 				 GIOCondition cond,

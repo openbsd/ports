@@ -1,0 +1,6 @@
+gtk-vnc provides a core library written in C, using coroutines to allow
+it to be completely asynchronous while remaining single threaded. A
+wrapper library using PyGTK provides access to the widget functionality
+from Python. Two example programs illustrate use of the widget by
+re-implementing the traditional 'vncviewer' in a few 10's of lines of
+code.
