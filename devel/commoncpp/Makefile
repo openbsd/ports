@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.2 2008/03/31 01:08:46 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/10 23:49:56 sthen Exp $
 
 COMMENT=	GNU project portable class framework for C++
 
-DISTNAME=	commoncpp2-1.6.1
-PKGNAME=	commoncpp-1.6.1
+VER=		1.6.2
+DISTNAME=	commoncpp2-${VER}
+PKGNAME=	commoncpp-${VER}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=commoncpp/}
 
 SHARED_LIBS+=	ccext2	1.0	# 0.1
 SHARED_LIBS+=	ccgnu2	1.0	# 0.1
 
-HOMEPAGE=	http://wiki.gnutelephony.org/index.php/GNU_Common_CPP_Framework
+HOMEPAGE=	http://www.gnutelephony.org/index.php/GNU_Common_C++
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
 WANTLIB=	crypto ssl z
 
 USE_LIBTOOL=	Yes
