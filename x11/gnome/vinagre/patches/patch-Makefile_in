@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/05/10 08:37:40 jasper Exp $
+--- Makefile.in.orig	Mon Apr  7 15:12:45 2008
++++ Makefile.in	Sat May 10 00:01:34 2008
+@@ -687,7 +687,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-vinagredocDATA
++install-data-am:
+ 
+ install-exec-am:
+ 
