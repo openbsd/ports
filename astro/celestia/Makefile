@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/08 16:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/10 17:25:52 ajacoutot Exp $
 
 COMMENT=	free space simulator and planetarium
 
-DISTNAME=	celestia-1.5.0
+DISTNAME=	celestia-1.5.1
 CATEGORIES=	astro x11
 
 HOMEPAGE=	http://www.shatters.net/celestia/
@@ -45,8 +45,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-theora
 
 pre-configure:
-	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
-		${WRKSRC}/src/celestia/celestiacore.cpp
+	${SUBST_CMD} ${WRKSRC}/src/celestia/celestiacore.cpp
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/models/*.3ds \

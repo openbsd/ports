@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_celengine_render_cpp,v 1.1 2008/05/10 17:25:52 ajacoutot Exp $
+--- src/celengine/render.cpp.orig	Sat May 10 19:19:49 2008
++++ src/celengine/render.cpp	Sat May 10 19:19:55 2008
+@@ -7861,7 +7861,9 @@ void PointStarRenderer::process(const Star& star, floa
+     nProcessed++;
+ 
+     Point3f starPos = star.getPosition();
+-    Vec3f   relPos = starPos - obsPos;
++    Vec3f   relPos((float) ((double) starPos.x - obsPos.x),
++                   (float) ((double) starPos.y - obsPos.y),
++                   (float) ((double) starPos.z - obsPos.z));
+     float   orbitalRadius = star.getOrbitalRadius();
+     bool    hasOrbit = orbitalRadius > 0.0f;
+ 

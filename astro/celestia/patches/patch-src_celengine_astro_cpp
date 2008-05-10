@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_celengine_astro_cpp,v 1.1 2008/04/08 16:04:27 ajacoutot Exp $
---- src/celengine/astro.cpp.orig	Fri Apr  4 10:41:18 2008
-+++ src/celengine/astro.cpp	Fri Apr  4 10:44:01 2008
-@@ -445,7 +445,7 @@ const char* astro::Date::toCStr(Format format) const
+$OpenBSD: patch-src_celengine_astro_cpp,v 1.2 2008/05/10 17:25:52 ajacoutot Exp $
+--- src/celengine/astro.cpp.orig	Wed Apr 23 23:17:16 2008
++++ src/celengine/astro.cpp	Sat May 10 17:35:15 2008
+@@ -459,7 +459,7 @@ const char* astro::Date::toCStr(Format format) const
  {
      static char date[255];
  

@@ -1,22 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/08 16:04:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/05/10 17:25:52 ajacoutot Exp $
 bin/celestia
 share/applications/celestia.desktop
 share/celestia/
+share/celestia/COPYING
+@comment share/celestia/COPYING_bg
+@comment share/celestia/COPYING_de
+@comment share/celestia/COPYING_es
 @comment share/celestia/COPYING_fr
 @comment share/celestia/COPYING_it
+@comment share/celestia/COPYING_ja
 @comment share/celestia/COPYING_pt
 @comment share/celestia/COPYING_ru
 @comment share/celestia/COPYING_sv
+@comment share/celestia/COPYING_uk
 share/celestia/celestia-logo.png
 share/celestia/celestia.cfg
 @sample ${SYSCONFDIR}/celestia.cfg
 share/celestia/celestiaui.xml
 share/celestia/controls.txt
+share/celestia/controls_bg.txt
+share/celestia/controls_de.txt
+share/celestia/controls_es.txt
 share/celestia/controls_fr.txt
 share/celestia/controls_it.txt
+share/celestia/controls_ja.txt
+share/celestia/controls_nl.txt
 share/celestia/controls_pt.txt
 share/celestia/controls_ru.txt
 share/celestia/controls_sv.txt
+share/celestia/controls_uk.txt
 share/celestia/data/
 share/celestia/data/asterisms.dat
 share/celestia/data/asteroids.ssc
@@ -55,14 +67,18 @@ share/celestia/data/venus_locs.ssc
 share/celestia/data/visualbins.stc
 share/celestia/data/world-capitals.ssc
 share/celestia/demo.cel
+share/celestia/demo_de.cel
+share/celestia/demo_es.cel
 share/celestia/demo_fr.cel
 share/celestia/demo_it.cel
+share/celestia/demo_ja.cel
 share/celestia/demo_ko.cel
 share/celestia/demo_lv.cel
 share/celestia/demo_nl.cel
 share/celestia/demo_pt.cel
 share/celestia/demo_ru.cel
 share/celestia/demo_sv.cel
+share/celestia/demo_uk.cel
 share/celestia/extras/
 share/celestia/extras/apollo.ssc
 share/celestia/extras/comets.ssc
@@ -87,20 +103,38 @@ share/celestia/fonts/helvbold24.txf
 share/celestia/fonts/sans10.txf
 share/celestia/fonts/sans12.txf
 share/celestia/fonts/sans12_bg.txf
+share/celestia/fonts/sans12_ja.txf
+share/celestia/fonts/sans12_ru.txf
+share/celestia/fonts/sans12_uk.txf
+share/celestia/fonts/sans12_zh.txf
 share/celestia/fonts/sans14.txf
+share/celestia/fonts/sans14_ja.txf
+share/celestia/fonts/sans14_ru.txf
+share/celestia/fonts/sans14_uk.txf
+share/celestia/fonts/sans14_zh.txf
 share/celestia/fonts/sans20.txf
 share/celestia/fonts/sansbold10.txf
 share/celestia/fonts/sansbold12.txf
 share/celestia/fonts/sansbold14.txf
 share/celestia/fonts/sansbold20.txf
 share/celestia/fonts/sansbold20_bg.txf
+share/celestia/fonts/sansbold20_ja.txf
+share/celestia/fonts/sansbold20_ru.txf
+share/celestia/fonts/sansbold20_uk.txf
+share/celestia/fonts/sansbold20_zh.txf
 share/celestia/guide.cel
+share/celestia/guide_bg.cel
+share/celestia/guide_de.cel
+share/celestia/guide_es.cel
 share/celestia/guide_fr.cel
 share/celestia/guide_it.cel
+share/celestia/guide_ja.cel
 share/celestia/guide_ko.cel
+share/celestia/guide_nl.cel
 share/celestia/guide_pt.cel
 share/celestia/guide_ru.cel
 share/celestia/guide_sv.cel
+share/celestia/guide_uk.cel
 share/celestia/models/
 share/celestia/models/E0.png
 share/celestia/models/MilkyWay.png
@@ -220,15 +254,20 @@ share/celestia/shaders/texphong_nv.fp
 share/celestia/splash/
 share/celestia/splash/splash.png
 share/celestia/start.cel
+share/celestia/start_bg.cel
+share/celestia/start_de.cel
+share/celestia/start_es.cel
 share/celestia/start_fr.cel
 share/celestia/start_hu.cel
 share/celestia/start_it.cel
+share/celestia/start_ja.cel
 share/celestia/start_ko.cel
 share/celestia/start_lv.cel
 share/celestia/start_nl.cel
 share/celestia/start_pt.cel
 share/celestia/start_ru.cel
 share/celestia/start_sv.cel
+share/celestia/start_uk.cel
 share/celestia/textures/
 share/celestia/textures/flare.jpg
 share/celestia/textures/hires/
