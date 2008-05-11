@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_gui_wxwidgets_interface_hpp,v 1.1 2008/05/11 18:12:41 jakemsr Exp $
+--- modules/gui/wxwidgets/interface.hpp.orig	Mon Mar 24 00:41:49 2008
++++ modules/gui/wxwidgets/interface.hpp	Fri May  9 02:35:20 2008
+@@ -147,6 +147,9 @@ namespace wxvlc
+         void OnNextStream( wxCommandEvent& event );
+         void OnSlowStream( wxCommandEvent& event );
+         void OnFastStream( wxCommandEvent& event );
++	void OnToggleMute( wxCommandEvent& event );
++	void OnSlideVolume( wxScrollEvent& event );
++        void SyncVolume( );
+ 
+         void OnInteraction( wxCommandEvent& event );
+ 

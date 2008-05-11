@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2008/04/04 00:53:01 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.69 2008/05/11 18:12:40 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	videolan client; multimedia player
 
 V=		0.8.6f
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -213,7 +213,7 @@ CONFIGURE_ARGS+=--disable-esd
 .if !${FLAVOR:L:Mno_jack}
 MULTI_PACKAGES+=-jack
 COMMENT-jack=	jackd audio output module for vlc
-FULLPKGNAME-jack=vlc-jack-${V}
+FULLPKGNAME-jack=vlc-jack-${V}p0
 CONFIGURE_ARGS+=--enable-jack
 LIB_DEPENDS-jack=jack::audio/jack
 # any FLAVOR of vlc will do
