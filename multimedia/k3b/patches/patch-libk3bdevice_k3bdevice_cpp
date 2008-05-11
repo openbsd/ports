@@ -1,0 +1,102 @@
+$OpenBSD: patch-libk3bdevice_k3bdevice_cpp,v 1.1.1.1 2008/05/11 22:18:35 jakemsr Exp $
+--- libk3bdevice/k3bdevice.cpp.orig	Fri Nov  2 07:13:54 2007
++++ libk3bdevice/k3bdevice.cpp	Fri Feb  1 09:15:37 2008
+@@ -65,7 +65,7 @@ typedef unsigned char u8;
+ #define CD_FRAMESIZE_RAW 2352
+ #endif
+ 
+-#ifdef Q_OS_NETBSD
++#if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ #include <sys/cdio.h>
+ #endif
+ 
+@@ -106,7 +106,7 @@ const char* K3bDevice::Device::cdrdao_drivers[] =
+   };
+ 
+ 
+-#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ int K3bDevice::openDevice( const char* name, bool write )
+ {
+   int fd = -1;
+@@ -149,7 +149,7 @@ class K3bDevice::Device::Private (public)
+ #ifdef Q_OS_LINUX
+       deviceFd(-1),
+ #endif
+-#ifdef Q_OS_NETBSD
++#if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+       deviceFd(-1),
+ #endif
+ #ifdef Q_OS_FREEBSD
+@@ -166,7 +166,7 @@ class K3bDevice::Device::Private (public)
+ #ifdef Q_OS_LINUX
+   int deviceFd;
+ #endif
+-#ifdef Q_OS_NETBSD
++#if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+   int deviceFd;
+ #endif
+ #ifdef Q_OS_FREEBSD
+@@ -1494,7 +1494,7 @@ bool K3bDevice::Device::block( bool b ) const
+     usageUnlock();
+     if ( success )
+         return success;
+-#elif defined(Q_OS_NETBSD)
++#elif defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     bool success = false;
+     bool needToClose = !isOpen();
+     int arg = b ? 1 : 0;
+@@ -1542,7 +1542,7 @@ bool K3bDevice::Device::rewritable() const
+ 
+ bool K3bDevice::Device::eject() const
+ {
+-#ifdef Q_OS_NETBSD
++#if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     bool success = false;
+     bool needToClose = !isOpen();
+     int arg = 0;
+@@ -1591,7 +1591,7 @@ bool K3bDevice::Device::eject() const
+ 
+ bool K3bDevice::Device::load() const
+ {
+-#ifdef Q_OS_NETBSD
++#if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     bool success = false;
+     bool needToClose = !isOpen();
+     int arg = 0;
+@@ -1690,7 +1690,7 @@ bool K3bDevice::Device::open( bool write ) const
+ 
+   return (d->cam != 0);
+ #endif
+-#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+   if( d->deviceFd == -1 )
+     d->deviceFd = openDevice( QFile::encodeName(devicename()), write );
+ 
+@@ -1709,7 +1709,7 @@ void K3bDevice::Device::close() const
+     d->cam = 0;
+   }
+ #endif
+-#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+   if( d->deviceFd != -1 ) {
+     ::close( d->deviceFd );
+     d->deviceFd = -1;
+@@ -1723,7 +1723,7 @@ bool K3bDevice::Device::isOpen() const
+ #ifdef Q_OS_FREEBSD
+   return d->cam;
+ #endif
+-#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+   return ( d->deviceFd != -1 );
+ #endif
+ }
+@@ -3624,7 +3624,7 @@ QCString K3bDevice::Device::mediaId( int mediaType ) c
+ // int K3bDevice::Device::ioctl( int request, ... ) const
+ // {
+ //     int r = -1;
+-// #if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD)
++// #if defined(Q_OS_LINUX) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ //     d->mutex.lock();
+ 
+ //     va_list ap;

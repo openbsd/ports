@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_projects_k3bencodingconverter_cpp,v 1.1.1.1 2008/05/11 22:18:35 jakemsr Exp $
+--- src/projects/k3bencodingconverter.cpp.orig	Thu Jan 17 17:43:00 2008
++++ src/projects/k3bencodingconverter.cpp	Thu Jan 17 17:45:16 2008
+@@ -62,7 +62,7 @@ bool K3bEncodingConverter::encodedLocally( const QCStr
+ {
+ #ifdef HAVE_ICONV_H
+   QCString utf8Encoded( s.length()*2 );
+-#if defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+   const char* in = s.data();
+ #else
+   char* in = s.data();
+@@ -111,7 +111,7 @@ bool K3bEncodingConverter::convert( const QCString& s,
+   iconv_t ic = ::iconv_open( to.local8Bit(), from.local8Bit() );
+ 
+   result.resize( s.length() * 2 );
+-#if defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+   const char* in = s.data();
+ #else
+   char* in = s.data();
