@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2008/04/30 11:05:22 bernd Exp $
-@lib lib/libsoup-${API_VERSION}.so.${LIBsoup-2.4_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.10 2008/05/11 12:26:14 jasper Exp $
+@lib lib/libsoup-${API_VERSION}.so.${LIBsoup-2.2_VERSION}
