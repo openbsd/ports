@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2008/05/08 15:46:05 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.212 2008/05/11 11:55:38 simon Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -18,6 +18,7 @@
      SUBDIR += cairo
      SUBDIR += cairomm
      SUBDIR += camlimages
+     SUBDIR += colorexplorer
      SUBDIR += comix
      SUBDIR += compface
      SUBDIR += cqcam
