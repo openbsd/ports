@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.13 2007/05/22 20:57:25 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.14 2008/05/11 19:50:55 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -9,12 +9,12 @@ MODPERL_BUILD ?= Build
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
 .  if !${PKGPATH:M*devel/p5-Module-Build}
-BUILD_DEPENDS+=	::devel/p5-Module-Build
+BUILD_DEPENDS +=	::devel/p5-Module-Build
 .    if !${PKGPATH:M*devel/p5-version}
-BUILD_DEPENDS+=	::devel/p5-version
+BUILD_DEPENDS +=	::devel/p5-version
 .    endif
 .  endif
-MODPERL_configure= \
+MODPERL_configure = \
 	arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
     cd ${WRKSRC}; ${_SYSTRACE_CMD} ${SETENV} ${CONFIGURE_ENV} \
 	/usr/bin/perl Build.PL \
@@ -25,7 +25,7 @@ MODPERL_configure= \
 		install_path=bin="${PREFIX}/bin" \
 		install_path=script="${PREFIX}/bin" ${CONFIGURE_ARGS} 
 .else
-MODPERL_configure= \
+MODPERL_configure = \
 	arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
      cd ${WRKSRC}; ${_SYSTRACE_CMD} ${SETENV} ${CONFIGURE_ENV} \
 	 PERL_MM_USE_DEFAULT=Yes \
@@ -41,7 +41,7 @@ MODPERL_configure= \
 		INSTALLSCRIPT='$${INSTALLBIN}' ${CONFIGURE_ARGS}
 .endif
 
-MODPERL_pre_fake= \
+MODPERL_pre-fake = \
 	${SUDO} mkdir -p ${WRKINST}`/usr/bin/perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
