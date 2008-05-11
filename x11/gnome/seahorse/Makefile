@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/04/29 17:32:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/05/11 12:29:53 jasper Exp $
 
 COMMENT=		manage encryption keys
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.20.3
 SHARED_LIBS +=	cryptui              0.0      # .0.0
 CATEGORIES=		security
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 HOMEPAGE=		http://www.gnome.org/projects/seahorse/
 
@@ -41,7 +41,7 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			::x11/gnome/yelp
 LIB_DEPENDS=		lber,ldap::databases/openldap \
 			notify::devel/libnotify \
-			soup-2.4::devel/libsoup \
+			soup-2.2::devel/libsoup \
 			xulrunner/gtkembedmoz,xulrunner/xpcom::devel/xulrunner,-devel \
 			gpgme::security/gpgme \
 			nautilus-extension::x11/gnome/nautilus \
