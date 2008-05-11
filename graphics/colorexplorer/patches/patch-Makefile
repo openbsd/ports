@@ -1,0 +1,12 @@
+--- Makefile.orig	Tue Apr 15 05:28:52 2008
++++ Makefile	Sat May  3 19:58:36 2008
+@@ -1,8 +1,4 @@
+ BINDIR=/usr/local/bin
+ 
+ install:		ColorExplorer.tcl
+-			cp ColorExplorer.tcl ${BINDIR}/ColorExplorer
+-			(cd xoris;xmkmf;make;strip xoris;make install;make clean)
+-
+-
+-
++			cp ColorExplorer.tcl ${DESTDIR}${BINDIR}/ColorExplorer
