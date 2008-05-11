@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.930 2008/05/08 22:35:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.931 2008/05/11 11:12:09 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1465,7 +1465,9 @@ ${_INSTALL_COOKIE${_S}}:
 		_internal-runwantlib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${_S}} from ${_PKG_REPO}"
 .  for _m in ${MODULES}
-.    if defined(MOD${_m:U}_pre_install)
+.    if defined(MOD${_m:U}_pre-install)
+	@${MOD${_m:U}_pre-install}
+.    elif defined(MOD${_m:U}_pre_install)
 	@${MOD${_m:U}_pre_install}
 .    endif
 .  endfor
