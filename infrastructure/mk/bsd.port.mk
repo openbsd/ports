@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.932 2008/05/11 11:19:19 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.933 2008/05/11 19:36:12 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1465,11 +1465,11 @@ ${_INSTALL_COOKIE${_S}}:
 		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
 		_internal-runwantlib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${_S}} from ${_PKG_REPO}"
-.  for _m in ${MODULES}
-.    if defined(MOD${_m:U}_pre-install)
-	@${MOD${_m:U}_pre-install}
-.    elif defined(MOD${_m:U}_pre_install)
-	@${MOD${_m:U}_pre_install}
+.  for _m in ${MODULES:T:U}
+.    if defined(MOD${_m}_pre-install)
+	@${MOD${_m}_pre-install}
+.    elif defined(MOD${_m}_pre_install)
+	@${MOD${_m}_pre_install}
 .    endif
 .  endfor
 .  if ${TRUST_PACKAGES:L} == "yes"
@@ -2058,9 +2058,9 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if target(post-patch)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-patch
 .endif
-.for _m in ${MODULES}
-.  if defined(MOD${_m:U}_post-patch)
-	@${MOD${_m:U}_post-patch}
+.for _m in ${MODULES:T:U}
+.  if defined(MOD${_m}_post-patch)
+	@${MOD${_m}_post-patch}
 .  endif
 .endfor
 .if !empty(REORDER_DEPENDENCIES)
@@ -2096,9 +2096,9 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-configure
 .else
 # What CONFIGURE normally does
-.  for _c in ${CONFIGURE_STYLE:L}
-.    if defined(MOD${_c:U}_configure)
-	@${MOD${_c:U}_configure}
+.  for _c in ${CONFIGURE_STYLE:U}
+.    if defined(MOD${_c}_configure)
+	@${MOD${_c}_configure}
 .    endif
 .  endfor
 # End of CONFIGURE.
@@ -2177,9 +2177,9 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -r ${_p}
 .endfor
-.for _m in ${MODULES}
-.  if defined(MOD${_m:U}_pre-fake)
-	@${MOD${_m:U}_pre-fake}
+.for _m in ${MODULES:T:U}
+.  if defined(MOD${_m}_pre-fake)
+	@${MOD${_m}_pre-fake}
 .  endif
 .endfor
 
