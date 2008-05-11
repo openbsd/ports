@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/11 07:09:03 jakemsr Exp $
+bin/milkytracker
+share/doc/milkytracker/
+share/doc/milkytracker/FAQ.html
+share/doc/milkytracker/MilkyTracker.html

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_milkyplay_drivers_jack_AudioDriver_JACK_cpp,v 1.1.1.1 2008/05/11 07:09:03 jakemsr Exp $
+--- src/milkyplay/drivers/jack/AudioDriver_JACK.cpp.orig	Fri May  2 17:07:03 2008
++++ src/milkyplay/drivers/jack/AudioDriver_JACK.cpp	Fri May  2 17:20:30 2008
+@@ -64,6 +64,8 @@ int AudioDriver_JACK::jackProcess(jack_nframes_t nfram
+ 		leftBuffer[in] = audioDriver->rawStream[out++] * (1.0/32768.0);
+ 		rightBuffer[in] = audioDriver->rawStream[out++] * (1.0/32768.0);
+ 	}
++
++	return 0;
+ }
+ 
+ AudioDriver_JACK::AudioDriver_JACK() :
