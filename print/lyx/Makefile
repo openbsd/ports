@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2007/11/04 23:24:43 steven Exp $
+# $OpenBSD: Makefile,v 1.46 2008/05/11 19:41:20 espie Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -41,7 +41,7 @@ FLAVORS=	qt xforms
 FLAVOR?=	qt
 
 .if ${FLAVOR:L} == "qt"
-MODULES+=	qt3
+MODULES+=	x11/qt3
 MODQT_MT=	Yes
 WANTLIB+=	pthread
 CONFIGURE_ARGS=	--with-frontend=qt ${MODQT_CONFIGURE_ARGS}

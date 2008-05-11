@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/11 19:41:20 espie Exp $
 # $FreeBSD: ports/editors/texmaker/Makefile,v 1.2 2004/01/09 09:16:33 krion Exp $
 
 COMMENT=		LaTeX development environment
@@ -19,7 +19,7 @@ WANTLIB=		X11 Xext c m pthread stdc++
 MASTER_SITES=		${HOMEPAGE}			
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		qt3
+MODULES=		x11/qt3
 MODQT_MT=		Yes
 NO_REGRESS=		Yes
 

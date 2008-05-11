@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/11 19:41:20 espie Exp $
 
 COMMENT=	usb missile launcher control script
 DISTNAME=	pymissile-20061111
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 RUN_DEPENDS=	:pyusb-*:devel/pyusb \
 		:py-urwid-*:devel/py-urwid
