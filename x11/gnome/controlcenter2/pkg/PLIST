@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.19 2008/04/17 08:46:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2008/05/12 19:40:17 jasper Exp $
 @conflict control-center-1*
 %%SHARED%%
+bin/gnome-about-me
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-appearance-properties
 bin/gnome-at-mobility
@@ -52,6 +53,7 @@ libexec/gnome-settings-daemon
 share/applications/accessibility-keyboard.desktop
 share/applications/at-properties.desktop
 share/applications/default-applications.desktop
+share/applications/gnome-about-me.desktop
 share/applications/gnome-appearance-properties.desktop
 share/applications/gnome-font-viewer.desktop
 share/applications/gnome-network-preferences.desktop
@@ -93,6 +95,7 @@ share/gnome-control-center/glade/acme.glade
 share/gnome-control-center/glade/appearance.glade
 share/gnome-control-center/glade/apply-font.glade
 share/gnome-control-center/glade/at-enable-dialog.glade
+share/gnome-control-center/glade/gnome-about-me.glade
 share/gnome-control-center/glade/gnome-accessibility-keyboard-properties.glade
 share/gnome-control-center/glade/gnome-default-applications-properties.glade
 share/gnome-control-center/glade/gnome-keybinding-properties.glade
@@ -122,6 +125,8 @@ share/gnome-control-center/pixmaps/bar.png
 share/gnome-control-center/pixmaps/double-click-maybe.png
 share/gnome-control-center/pixmaps/double-click-off.png
 share/gnome-control-center/pixmaps/double-click-on.png
+share/gnome-control-center/pixmaps/gnome-about-me-lock-open.png
+share/gnome-control-center/pixmaps/gnome-about-me-lock.png
 share/gnome-control-center/pixmaps/gtk-theme-thumbnailing.png
 share/gnome-control-center/pixmaps/icon-theme-thumbnailing.png
 share/gnome-control-center/pixmaps/keyboard-bell.png

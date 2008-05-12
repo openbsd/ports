@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2008/05/12 19:40:17 jasper Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.20.3
-PKGNAME=		control-center2-${VERSION}p2
+PKGNAME=		control-center2-${VERSION}p3
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
 
@@ -16,21 +16,23 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama Xrandr \
-		Xrender Xss art_lgpl_2 atk-1.0 audiofile bonobo-2 bonobo-activation \
-		bonoboui-2 bz2 c cairo crypto dbus-1 dbus-glib-1 esd \
-		expat fam fontconfig freetype gailutil gconf-2 gdk-x11-2.0 \
-		gdk_pixbuf-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
-		gnome-2 gnome-desktop-2 gnome-keyring gnome-menu gnomecanvas-2 \
-		gnomeui-2 gnomevfs-2 gobject-2.0 gsf-1 gstbase-0.10 \
-		gstreamer-0.10 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre png popt \
-		pthread rpcsvc ssl startup-notification-1 stdc++ util \
-		xkbfile xml2 z
+		Xrender Xss art_lgpl_2 asn1 atk-1.0 audiofile bonobo-2 \
+		bonobo-activation bonoboui-2 bz2 c cairo com_err crypto \
+		db dbus-1 dbus-glib-1 esd expat fam fontconfig freetype \
+		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
+		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-desktop-2 \
+		gnome-keyring gnome-menu gnomecanvas-2 gnomeui-2 gnomevfs-2 \
+		gobject-2.0 gsf-1 gssapi gstbase-0.10 gstreamer-0.10 \
+		gthread-2.0 gtk-x11-2.0 jpeg krb5 m nspr4 nss3 pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre plc4 \
+		plds4 png popt pthread rpcsvc smime3 softokn3 ssl ssl3 \
+		startup-notification-1 stdc++ util xkbfile xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		gstaudio-0.10.>=0.1,gstinterfaces-0.10.>=0.1::multimedia/gstreamer-0.10/plugins-base \
+LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
+			gstaudio-0.10.>=0.1,gstinterfaces-0.10.>=0.1::multimedia/gstreamer-0.10/plugins-base \
 			croco-0.6::www/libcroco \
 			gnomekbd,gnomekbdui::x11/gnome/libgnomekbd \
 			rsvg-2::x11/gnome/librsvg \
@@ -53,7 +55,7 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control
 			--disable-alsa \
 			--enable-esd \
 			--enable-gstreamer \
-			--disable-aboutme # needs fixed EDS
+			--enable-aboutme
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
