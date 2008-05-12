@@ -1,0 +1,5 @@
+gnome-keyring-query has the capability to store and retrieve simple
+name/passphrase pairs in the default keyring. Unlike applications like
+Nautilus and Evolution, no additional fields are stored, with the
+exception of a 'magic' field to distinguish keys created by
+gnome-keyring-query from those created by other applications.
