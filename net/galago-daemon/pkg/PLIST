@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/12 14:45:07 jasper Exp $
+libexec/galago-daemon
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.freedesktop.Galago.service
+share/examples/galago-daemon/
+share/examples/galago-daemon/galago-daemon.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/galago-daemon.conf

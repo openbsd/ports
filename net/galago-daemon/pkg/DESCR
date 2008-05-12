@@ -1,0 +1,3 @@
+The Galago presence daemon, which is the center of all presence
+transactions for Galago. This service is automatically launched by D-BUS
+when needed.
