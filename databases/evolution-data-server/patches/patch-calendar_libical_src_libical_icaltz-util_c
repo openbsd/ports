@@ -1,6 +1,6 @@
-$OpenBSD: patch-calendar_libical_src_libical_icaltz-util_c,v 1.1 2007/11/21 16:10:24 jasper Exp $
---- calendar/libical/src/libical/icaltz-util.c.orig	Sun Oct 28 15:36:00 2007
-+++ calendar/libical/src/libical/icaltz-util.c	Sun Oct 28 19:44:04 2007
+$OpenBSD: patch-calendar_libical_src_libical_icaltz-util_c,v 1.2 2008/05/12 13:48:55 jasper Exp $
+--- calendar/libical/src/libical/icaltz-util.c.orig	Fri Oct 12 08:31:10 2007
++++ calendar/libical/src/libical/icaltz-util.c	Tue May  6 18:10:02 2008
 @@ -23,6 +23,15 @@
  #include <string.h>
  #if defined(sun) && defined(__SVR4)
@@ -17,3 +17,36 @@ $OpenBSD: patch-calendar_libical_src_libical_icaltz-util_c,v 1.1 2007/11/21 16:1
  #else
  #include <byteswap.h>
  #include <endian.h>
+@@ -148,7 +157,7 @@ find_transidx (time_t *transitions, ttinfo *types, int
+ 	idx = trans_idx [i];
+ 	types [idx].isdst ? (*dstidx = i) : (*stdidx = i);
+ 	
+-	if (i >= num_trans) 
++	if (i >= num_trans - 1) 
+ 		i--;
+ 	else 
+ 		i++;
+@@ -328,7 +337,10 @@ icaltzutil_fetch_timezone (const char *location)
+ 		icalprop = icalproperty_new_tzname (types [zidx].zname);
+ 		icalcomponent_add_property (std_comp, icalprop);
+ 
+-		trans = transitions [stdidx] + types [zidx].gmtoff;
++		if (num_trans)
++			trans = transitions [stdidx] + types [zidx].gmtoff;
++		else
++			trans = types [zidx].gmtoff;
+ 		icaltime = icaltime_from_timet (trans, 0);
+ 		dtstart = icaltime;
+ 		dtstart.year = 1970;
+@@ -369,7 +381,10 @@ icaltzutil_fetch_timezone (const char *location)
+ 		icalprop = icalproperty_new_tzname (types [zidx].zname);
+ 		icalcomponent_add_property (dst_comp, icalprop);
+ 
+-		trans = transitions [dstidx] + types [zidx].gmtoff;
++		if (num_trans)
++			trans = transitions [dstidx] + types [zidx].gmtoff;
++		else
++			trans = types [zidx].gmtoff;
+ 		icaltime = icaltime_from_timet (trans, 0);
+ 		dtstart = icaltime;
+ 		dtstart.year = 1970;
