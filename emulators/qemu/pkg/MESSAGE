@@ -1,2 +1,2 @@
-Please see ${LOCALBASE}/share/doc/qemu/README.OpenBSD for
+Please see ${PREFIX}/share/doc/qemu/README.OpenBSD for
 a brief intro to using qemu on OpenBSD.
