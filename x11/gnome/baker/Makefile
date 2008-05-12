@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/16 16:05:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/12 15:11:40 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
@@ -42,7 +42,6 @@ DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-libnotify
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
