@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.25 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2008/05/12 16:43:57 fgsch Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
 
-VERSION=		1.14.3
+VERSION=		1.14.4
 DISTNAME=		libgsf-${VERSION}
-PKGNAME-main=		${DISTNAME}p4
-PKGNAME-gnome=		libgsf-gnome-${VERSION}p3
-SHARED_LIBS +=  gsf-1                114.3     # .114.3
-SHARED_LIBS +=  gsf-gnome-1          114.3     # .114.3
+PKGNAME-main=		${DISTNAME}
+PKGNAME-gnome=		libgsf-gnome-${VERSION}
+SHARED_LIBS +=  gsf-1                114.4     # .114.4
+SHARED_LIBS +=  gsf-gnome-1          114.4     # .114.4
 
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
 
-# LGPL
+# LGPL 2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -35,9 +35,11 @@ LIB_DEPENDS=		bz2.>=10.2::archivers/bzip2 \
 			glib-2.0.>=0.12,gobject-2.0.>=0.12::devel/glib2 \
 			xml2.>=8.4::textproc/libxml
 
+AUTOCONF_VERSION =	2.61
+
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-bz2 \
 			--disable-schemas-install \

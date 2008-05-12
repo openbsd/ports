@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_in,v 1.1 2008/05/12 16:43:57 fgsch Exp $
+--- configure.in.orig	Thu May  8 11:37:27 2008
++++ configure.in	Thu May  8 11:42:27 2008
+@@ -377,7 +377,6 @@ else
+ 	*) AC_MSG_ERROR(bad value ${withval} for --with-bonobo) ;;
+ 	esac],
+ 	[WITH_BONOBO=yes]) dnl Default value
+-    AM_CONDITIONAL(WITH_BONOBO, test $WITH_BONOBO = yes)
+ 
+     if test $WITH_BONOBO = yes; then
+ 	libgsf_gnome_reqs="$libgsf_gnome_reqs libbonobo-2.0 >= 2.0.0"
+@@ -391,6 +390,7 @@ else
+ 	    AC_MSG_WARN([GNOME support disabled, unable to find required version of VFS and/or Bonobo])
+ 	 fi])
+ fi
++AM_CONDITIONAL(WITH_BONOBO, test x"$WITH_BONOBO" != x"no")
+ AM_CONDITIONAL(WITH_LIBGSF_GNOME, test $have_gnome = yes)
+ 
+ # ===================

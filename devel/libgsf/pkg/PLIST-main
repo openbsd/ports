@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/05/09 22:00:01 alek Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/05/12 16:43:57 fgsch Exp $
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
 %%SHARED%%
@@ -22,6 +22,7 @@ include/libgsf-1/gsf/gsf-infile-zip.h
 include/libgsf-1/gsf/gsf-infile.h
 include/libgsf-1/gsf/gsf-input-bzip.h
 include/libgsf-1/gsf/gsf-input-gzip.h
+include/libgsf-1/gsf/gsf-input-http.h
 include/libgsf-1/gsf/gsf-input-impl.h
 include/libgsf-1/gsf/gsf-input-iochannel.h
 include/libgsf-1/gsf/gsf-input-memory.h
@@ -32,6 +33,7 @@ include/libgsf-1/gsf/gsf-input.h
 include/libgsf-1/gsf/gsf-libxml.h
 include/libgsf-1/gsf/gsf-meta-names.h
 include/libgsf-1/gsf/gsf-msole-utils.h
+include/libgsf-1/gsf/gsf-open-pkg-utils.h
 include/libgsf-1/gsf/gsf-opendoc-utils.h
 include/libgsf-1/gsf/gsf-outfile-impl.h
 include/libgsf-1/gsf/gsf-outfile-msole.h
@@ -53,7 +55,6 @@ include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.la
-lib/pkgconfig/
 lib/pkgconfig/libgsf-1.pc
 lib/python${MODPY_VERSION}/site-packages/gsf/
 lib/python${MODPY_VERSION}/site-packages/gsf/__init__.py
@@ -85,6 +86,7 @@ share/gtk-doc/html/gsf/gsf-Text.html
 share/gtk-doc/html/gsf/gsf-XML-and-libxml.html
 share/gtk-doc/html/gsf/gsf-Zip.html
 share/gtk-doc/html/gsf/gsf-blobs.html
+share/gtk-doc/html/gsf/gsf-index.html
 share/gtk-doc/html/gsf/gsf-memory.html
 share/gtk-doc/html/gsf/gsf-metadata.html
 share/gtk-doc/html/gsf/gsf-users.html
@@ -97,7 +99,6 @@ share/gtk-doc/html/gsf/index.html
 share/gtk-doc/html/gsf/index.sgml
 share/gtk-doc/html/gsf/intro.html
 share/gtk-doc/html/gsf/io.html
-share/gtk-doc/html/gsf/ix01.html
 share/gtk-doc/html/gsf/left.png
 share/gtk-doc/html/gsf/misc.html
 share/gtk-doc/html/gsf/parsers.html
