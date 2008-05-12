@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.521 2008/05/09 18:57:12 bernd Exp $
+# $OpenBSD: Makefile,v 1.522 2008/05/12 14:47:43 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -82,6 +82,7 @@
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
      SUBDIR += gajim
+     SUBDIR += galago-daemon
      SUBDIR += gftp
      SUBDIR += gmudix
      SUBDIR += gnet
