@@ -1,9 +1,0 @@
-$OpenBSD: SECURITY,v 1.1.1.1 2001/08/11 00:51:31 avsm Exp $
-
-This package has some pretty dodgy temp-file creation routines.
-Some of them have been patched away by wrapping them around mktemp(1)
-calls, but some remain.  Set the TMPDIR environment variable to a
-unique directory to avoid this problem.
-
-The maintainer says that they are rewriting this package completely to
-avoid these problems in the future.
