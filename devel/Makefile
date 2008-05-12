@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.597 2008/04/29 10:01:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.598 2008/05/12 14:08:31 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -597,6 +597,7 @@
      SUBDIR += py-decoratortools
      SUBDIR += py-epsilon
      SUBDIR += py-fpconst
+     SUBDIR += py-gdata
      SUBDIR += py-gobject
      SUBDIR += py-kid
      SUBDIR += py-logilab-astng
