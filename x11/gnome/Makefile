@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2008/05/10 08:39:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2008/05/12 15:09:33 ajacoutot Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -71,6 +71,7 @@
      SUBDIR += terminal
      SUBDIR += themes
      SUBDIR += themes-extras
+     SUBDIR += totem-pl-parser
      SUBDIR += users-guide
      SUBDIR += utils
      SUBDIR += vfs2
