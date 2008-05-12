@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2008/05/12 15:09:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2008/05/12 21:58:15 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -33,6 +33,7 @@
      SUBDIR += icon-theme
      SUBDIR += keyring
      SUBDIR += keyring-manager
+     SUBDIR += keyring-query
      SUBDIR += libbonobo
      SUBDIR += libbonoboui
      SUBDIR += libgail-gnome
