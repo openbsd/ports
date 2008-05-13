@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2008/05/13 11:02:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2008/05/13 22:19:52 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -64,6 +64,8 @@
      SUBDIR += pessulus
      SUBDIR += planner
      SUBDIR += py-gnome
+     SUBDIR += py-gnome-desktop
+     SUBDIR += py-gnome-extras
      SUBDIR += scan
      SUBDIR += seahorse
      SUBDIR += session
