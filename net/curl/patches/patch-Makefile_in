@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2008/05/13 17:56:29 naddy Exp $
+--- Makefile.in.orig	Mon May 12 19:05:59 2008
++++ Makefile.in	Mon May 12 19:06:10 2008
+@@ -254,8 +254,8 @@ EXTRA_DIST = CHANGES COPYING maketgz reconf Makefile.d
+  curl-style.el sample.emacs RELEASE-NOTES buildconf buildconf.bat libcurl.pc.in
+ 
+ bin_SCRIPTS = curl-config
+-SUBDIRS = lib src
+-DIST_SUBDIRS = $(SUBDIRS) tests include packages docs
++SUBDIRS = lib src docs
++DIST_SUBDIRS = $(SUBDIRS) tests include packages
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libcurl.pc
+ all: all-recursive

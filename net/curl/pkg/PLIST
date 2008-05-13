@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2006/09/19 14:33:13 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.19 2008/05/13 17:56:29 naddy Exp $
 bin/curl
 bin/curl-config
 include/curl/
@@ -8,6 +8,7 @@ include/curl/easy.h
 include/curl/mprintf.h
 include/curl/multi.h
 include/curl/stdcheaders.h
+include/curl/typecheck-gcc.h
 include/curl/types.h
 lib/libcurl.a
 lib/libcurl.la
@@ -20,6 +21,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_easy_escape.3
 @man man/man3/curl_easy_getinfo.3
 @man man/man3/curl_easy_init.3
+@man man/man3/curl_easy_pause.3
 @man man/man3/curl_easy_perform.3
 @man man/man3/curl_easy_reset.3
 @man man/man3/curl_easy_setopt.3
@@ -64,9 +66,5 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/libcurl-share.3
 @man man/man3/libcurl-tutorial.3
 @man man/man3/libcurl.3
-share/curl/
-share/curl/curl-ca-bundle.crt
-share/emacs/
-share/emacs/site-lisp/
 share/emacs/site-lisp/curl-style.el
 %%SHARED%%
