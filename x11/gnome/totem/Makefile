@@ -1,0 +1,112 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2008/05/13 11:00:28 ajacoutot Exp $
+
+COMMENT=	simple media player for GNOME
+
+GNOME_PROJECT=	totem
+GNOME_VERSION=	2.22.2
+CATEGORIES=	multimedia
+
+HOMEPAGE=	http://www.gnome.org/projects/totem/
+
+# GPLv2 - LGPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
+		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender Xtst Xxf86vm art_lgpl_2 asn1 atk-1.0 audiofile \
+		bonobo-2 bonobo-activation bonoboui-2 c cairo \
+		camel-1.2 com_err crypto db dbus-1 dbus-glib-1 \
+		edataserver-1.2 esd expat fontconfig freetype gailutil \
+		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
+		gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
+		gnomevfs-2 gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 \
+		jpeg krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre plc4 plds4 png popt pthread smime3 \
+		softokn3 ssl ssl3 util xml2 z
+
+MODULES=	devel/gettext \
+		lang/python \
+		x11/gnome
+
+BUILD_DEPENDS=	::x11/gnome/controlcenter2 \
+		::x11/py-gtk2 \
+		:scrollkeeper-*:textproc/scrollkeeper \
+		:iso-codes-*:devel/iso-codes
+RUN_DEPENDS=	::x11/gnome/controlcenter2 \
+		::x11/py-gtk2 \
+		:scrollkeeper-*:textproc/scrollkeeper \
+		:iso-codes-*:devel/iso-codes \
+		::x11/gromit \
+		::devel/py-gdata \
+		::net/galago-daemon
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
+		totem-plparser::x11/gnome/totem-pl-parser \
+		galago::net/libgalago \
+		gnomeui-2::x11/gnome/libgnomeui \
+		nautilus-extension::x11/gnome/nautilus
+
+USE_X11=	Yes
+DESKTOP_FILES=	Yes
+MODGNOME_HELP_FILES=Yes
+
+TOTEM_PLUGINS=	"galago gromit media-player-keys ontop properties \
+		screensaver skipto thumbnail youtube" # Browser \
+		bemused lirc mythtv sample-python sample-val \
+		sidebar-test publish tracker
+
+CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PYTHON=${MODPY_BIN} \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include "
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+	        --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/totem \
+		--with-plugins=${TOTEM_PLUGINS} \
+		--with-dbus \
+		--without-hal \
+		--enable-nautilus \
+		--enable-python \
+		--disable-easy-codec-installation \
+		--disable-browser-plugins \
+		--disable-basic-plugin \
+		--disable-gmp-plugin \
+		--disable-complex-plugin \
+		--disable-narrowspace-plugin \
+		--disable-mully-plugin \
+		--disable-schemas-install \
+		--disable-scrollkeeper \
+		--disable-nvtv \
+		--disable-lirc \
+		--disable-vala
+
+FLAVORS=	xine
+FLAVOR?=
+
+.if ${FLAVOR:L:Mxine}
+LIB_DEPENDS+=	xine.>=20::multimedia/xine-lib
+RUN_DEPENDS+=	:xine-lib-esd-*:multimedia/xine-lib,-esd
+CONFIGURE_ARGS+=--enable-xine \
+		--disable-gstreamer
+.else
+WANTLIB+=	gstbase-0.10 gstreamer-0.10
+LIB_DEPENDS+=	gstaudio-0.10,gstinterfaces-0.10,gstpbutils-0.10,gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base
+# while the following are not "required" for totem to run, there's no
+# point in using a media player that can't play most modern media files
+RUN_DEPENDS+=	:gstreamer-vorbis-*:multimedia/gstreamer-0.10/plugins-base,-vorbis \
+		:gstreamer-ogg-*:multimedia/gstreamer-0.10/plugins-base,-ogg \
+		:gstreamer-xvid-*:multimedia/gstreamer-0.10/plugins-bad,-xvid \
+		:gstreamer-jpeg-*:multimedia/gstreamer-0.10/plugins-good,-jpeg \
+		:gstreamer-a52-*:multimedia/gstreamer-0.10/plugins-ugly,-a52 \
+		:gstreamer-mpeg2-*:multimedia/gstreamer-0.10/plugins-ugly,-mpeg2 \
+		:gstreamer-dvdread-*:multimedia/gstreamer-0.10/plugins-ugly,-dvdread \
+		:gstreamer-mad-*:multimedia/gstreamer-0.10/plugins-ugly,-mad
+CONFIGURE_ARGS+=--enable-gstreamer \
+		--disable-xine
+.endif
+
+post-patch:
+	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
+
+.include <bsd.port.mk>
