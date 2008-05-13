@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure_in,v 1.1 2008/05/13 14:48:33 naddy Exp $
+--- configure.in.orig	Thu Feb  1 07:11:14 2007
++++ configure.in	Sat May  3 14:07:13 2008
+@@ -34,7 +34,7 @@ dnl SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SU
+ dnl
+ dnl Process this file with autoconf to produce a configure script.
+ 
+-AC_PREREQ(2.13.20020210)
++AC_PREREQ(2.13)
+ AC_INIT(include/tin.h)
+ AC_CONFIG_HEADER(include/autoconf.h:include/autoconf.hin)
+ AC_PREFIX_DEFAULT(/usr/local)
+@@ -805,13 +805,15 @@ fi
+ ###	Checks for libraries.
+ # libuu/uudeview
+ # only define HAVE_LIBUU and HAVE_UUDEVIEW_H if both are found
+-AC_CHECK_LIB(uu, UUInitialize,
+-	[AC_CHECK_HEADER(uudeview.h,
+-		[AC_DEFINE(HAVE_LIBUU)
+-		AC_DEFINE(HAVE_UUDEVIEW_H)
+-		LIBS="$LIBS -luu"]
+-	)]
+-)
++dnl Disable to make sure the package does not change if someone ever ports this
++dnl
++dnl AC_CHECK_LIB(uu, UUInitialize,
++dnl 	[AC_CHECK_HEADER(uudeview.h,
++dnl 		[AC_DEFINE(HAVE_LIBUU)
++dnl 		AC_DEFINE(HAVE_UUDEVIEW_H)
++dnl 		LIBS="$LIBS -luu"]
++dnl 	)]
++dnl )
+ 
+ # libidn - Internationalized Domain Names
+ AC_CHECK_LIB(idn, stringprep_check_version,
+@@ -1018,7 +1020,11 @@ CF_TERMIOS
+ CF_PW_GECOS
+ CF_TM_GMTOFF
+ 
+-AC_SYS_LONG_FILE_NAMES
++dnl AC_SYS_LONG_FILE_NAMES tries to write to /usr and thus fails if /usr is
++dnl mounted read-only. Since OpenBSD always supports long filenames, set the
++dnl flag unconditionally.
++dnl AC_SYS_LONG_FILE_NAMES
++AC_DEFINE(HAVE_LONG_FILE_NAMES)
+ CF_FUNC_SYSTEM
+ 
+ # Check if we are trying to use curses+color, but cannot

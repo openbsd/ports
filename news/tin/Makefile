@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/15 21:41:50 merdely Exp $
+# $OpenBSD: Makefile,v 1.33 2008/05/13 14:48:33 naddy Exp $
 
-COMMENT=	threaded NNTP and spool based UseNet newsreader
+COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
-DISTNAME=	tin-${VERSION}.${PATCHLEVEL}
-PKGNAME=	${DISTNAME}
-VERSION=	1.8
+DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
+PKGNAME=	${DISTNAME}p0
+MAJORVERSION=	1.8
 PATCHLEVEL=	3
 CATEGORIES=	news
 
-MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${VERSION}/ \
-		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/v${VERSION}/ \
-		ftp://ftp.cuhk.edu.hk/pub/packages/news/tin/v${VERSION}/ \
-		ftp://ftp.sunet.se/pub/news/readers/tin/v${VERSION}/ \
+MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${MAJORVERSION}/ \
+		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/v${MAJORVERSION}/ \
+		ftp://ftp.cuhk.edu.hk/pub/packages/news/tin/v${MAJORVERSION}/ \
+		ftp://ftp.sunet.se/pub/news/readers/tin/v${MAJORVERSION}/ \
 		ftp://ftp.funet.fi/pub/unix/news/tin-unoff/
 
 HOMEPAGE=	http://www.tin.org/
 
-MAINTAINER=	Joachim Schipper <j.schipper@math.uu.nl>
+MAINTAINER=	Joachim Schipper <joachim@joachimschipper.nl>
 
 MODULES=	devel/gettext
 
@@ -29,7 +29,8 @@ PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.13
 # --with-x does not affect the build, but let's be safe.
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--without-metamail \
@@ -39,7 +40,7 @@ CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--with-screen=ncurses \
 			--with-pcre=${LOCALBASE} \
 			--with-libdir=${PREFIX}/lib/news \
-			--with-spooldir=/var/news \
+			--with-spooldir=/var/spool/news \
 			--enable-break-long-lines \
 			--enable-ipv6 \
 			--without-x
@@ -48,7 +49,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 LIB_DEPENDS+=	pcre::devel/pcre \
 		utf8::misc/libutf8 \
-		idn::devel/libidn
+		idn::devel/libidn \
+		icuuc::textproc/icu4c
 
 ALL_TARGET=	build
 

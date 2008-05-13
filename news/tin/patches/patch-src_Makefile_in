@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2007/03/21 17:28:50 naddy Exp $
---- src/Makefile.in.orig	Thu May  4 10:19:04 2006
-+++ src/Makefile.in	Sun Mar 18 22:54:49 2007
-@@ -78,6 +78,7 @@ LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS
+$OpenBSD: patch-src_Makefile_in,v 1.5 2008/05/13 14:48:33 naddy Exp $
+--- src/Makefile.in.orig	Thu May  4 03:19:04 2006
++++ src/Makefile.in	Wed Apr 30 20:24:39 2008
+@@ -78,6 +78,7 @@ LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS@ @INN_NNTPLIB
  # Where do you want the binary & manual page installed?
  DESTDIR	= @DESTDIR@
  INS_BINARY_DIR	= @bindir@
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.4 2007/03/21 17:28:50 naddy Exp $
  $(DESTDIR)$(INS_SYSDEF_DIR) :
  	$(top_srcdir)/mkdirs.sh $@
  
-@@ -336,8 +338,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL
+@@ -336,8 +338,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MAN
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/$(PROJECT).$(INS_MANUAL_EXT)
  	@( $(CD) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) && $(RM) -f r$(PROJECT).$(INS_MANUAL_EXT) && $(LN) $(PROJECT).$(INS_MANUAL_EXT) r$(PROJECT).$(INS_MANUAL_EXT) )
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.5 $(DESTDIR)$(INS_MANUAL_DIR)5/$(PROJECT).5
