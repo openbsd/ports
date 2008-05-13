@@ -1,12 +1,12 @@
-$OpenBSD: patch-tests_testrunner_sh,v 1.1.1.1 2008/05/05 09:27:40 jasper Exp $
---- tests/testrunner.sh.orig	Sun Apr 13 11:08:11 2008
-+++ tests/testrunner.sh	Sun May  4 21:32:52 2008
+$OpenBSD: patch-tests_testrunner_sh,v 1.2 2008/05/13 10:06:51 jasper Exp $
+--- tests/testrunner.sh.orig	Fri May  2 12:48:32 2008
++++ tests/testrunner.sh	Tue May 13 03:43:41 2008
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${LOCALBASE}/bin/bash
  # testrunner.sh
  #
- # Copyright (C) 2006-2007  Jürg Billeter
+ # Copyright (C) 2006-2008  Jürg Billeter
 @@ -53,7 +53,7 @@ do
  		CODE=1
  		continue

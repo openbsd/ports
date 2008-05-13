@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/05 09:27:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/13 10:06:51 jasper Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 bin/vala-gen-project
@@ -116,6 +116,7 @@ include/vala-1.0/vala/valacatchclause.h
 include/vala-1.0/vala/valacfgbuilder.h
 include/vala-1.0/vala/valacharacterliteral.h
 include/vala-1.0/vala/valaclass.h
+include/vala-1.0/vala/valaclassinstancetype.h
 include/vala-1.0/vala/valaclasstype.h
 include/vala-1.0/vala/valacodebinding.h
 include/vala-1.0/vala/valacodecontext.h
@@ -146,6 +147,7 @@ include/vala-1.0/vala/valaerrortype.h
 include/vala-1.0/vala/valaexpression.h
 include/vala-1.0/vala/valaexpressionstatement.h
 include/vala-1.0/vala/valafield.h
+include/vala-1.0/vala/valafieldprototype.h
 include/vala-1.0/vala/valaforeachstatement.h
 include/vala-1.0/vala/valaformalparameter.h
 include/vala-1.0/vala/valaforstatement.h
@@ -155,6 +157,7 @@ include/vala-1.0/vala/valainstancecast.h
 include/vala-1.0/vala/valaintegerliteral.h
 include/vala-1.0/vala/valaintegertype.h
 include/vala-1.0/vala/valainterface.h
+include/vala-1.0/vala/valainterfaceinstancetype.h
 include/vala-1.0/vala/valainterfacetype.h
 include/vala-1.0/vala/valainterfacewriter.h
 include/vala-1.0/vala/valainvalidtype.h
@@ -232,6 +235,7 @@ lib/vala/gen-introspect
 @man man/man1/vapigen.1
 share/devhelp/books/
 share/devhelp/books/vala/
+share/devhelp/books/vala/attributes.html
 share/devhelp/books/vala/classes.html
 share/devhelp/books/vala/default.css
 share/devhelp/books/vala/delegates.html
@@ -240,6 +244,7 @@ share/devhelp/books/vala/exceptions.html
 share/devhelp/books/vala/expressions.html
 share/devhelp/books/vala/index.html
 share/devhelp/books/vala/interfaces.html
+share/devhelp/books/vala/methods.html
 share/devhelp/books/vala/namespaces.html
 share/devhelp/books/vala/overview.html
 share/devhelp/books/vala/statements.html
@@ -269,12 +274,14 @@ share/vala/vapi/gio-2.0.vapi
 share/vala/vapi/gio-unix-2.0.deps
 share/vala/vapi/gio-unix-2.0.vapi
 share/vala/vapi/glib-2.0.vapi
+share/vala/vapi/gmodule-2.0.vapi
 share/vala/vapi/gnome-desktop-2.0.deps
 share/vala/vapi/gnome-desktop-2.0.vapi
 share/vala/vapi/gnome-keyring-1.vapi
 share/vala/vapi/gnome-vfs-2.0.vapi
 share/vala/vapi/goocanvas.deps
 share/vala/vapi/goocanvas.vapi
+share/vala/vapi/gstreamer-0.10.deps
 share/vala/vapi/gstreamer-0.10.vapi
 share/vala/vapi/gstreamer-audio-0.10.deps
 share/vala/vapi/gstreamer-audio-0.10.vapi
