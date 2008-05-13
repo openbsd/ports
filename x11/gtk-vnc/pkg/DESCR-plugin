@@ -1,0 +1,4 @@
+The gtk-vnc plugin supports all browsers which supply the NPAPI and
+XEmbed APIs.  This includes all modern Mozilla/Firefox-derived browsers
+on Unix, and [untested] WebKit-based browsers (eg. Konqueror, Safari)
+and Opera.

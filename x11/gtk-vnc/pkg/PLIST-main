@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/10 08:35:31 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-main,v 1.1 2008/05/13 09:48:56 ajacoutot Exp $
+@pkgpath ${BASE_PKGPATH}
 bin/gvncviewer
 include/gtk-vnc-1.0/
 include/gtk-vnc-1.0/vncdisplay.h
 lib/libgtk-vnc-1.0.a
 lib/libgtk-vnc-1.0.la
+@lib lib/libgtk-vnc-1.0.so.${LIBgtk-vnc-1.0_VERSION}
 lib/pkgconfig/gtk-vnc-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtkvnc.a
 lib/python${MODPY_VERSION}/site-packages/gtkvnc.la
+lib/python${MODPY_VERSION}/site-packages/gtkvnc.so

@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugin_Makefile_in,v 1.1 2008/05/13 09:48:56 ajacoutot Exp $
+--- plugin/Makefile.in.orig	Sat May 10 12:17:22 2008
++++ plugin/Makefile.in	Sat May 10 12:18:01 2008
+@@ -232,7 +232,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-@ENABLE_PLUGIN_TRUE@plugindir = $(libdir)/mozilla/plugins
++@ENABLE_PLUGIN_TRUE@plugindir = $(libdir)/mozilla-plugins
+ @ENABLE_PLUGIN_TRUE@plugin_LTLIBRARIES = gtk-vnc-plugin.la
+ @ENABLE_PLUGIN_TRUE@gtk_vnc_plugin_la_SOURCES = \
+ @ENABLE_PLUGIN_TRUE@	gtk-vnc-plugin.c gtk-vnc-plugin.h npshell.c npunix.c
