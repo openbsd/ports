@@ -1,0 +1,21 @@
+$OpenBSD: patch-gtop_gtop_c,v 1.1.1.1 2008/05/13 22:15:05 jasper Exp $
+--- gtop/gtop.c.orig	Wed Feb 27 12:59:58 2008
++++ gtop/gtop.c	Wed Feb 27 13:03:37 2008
+@@ -45,6 +45,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ 
+@@ -1379,8 +1380,8 @@ build_siglist(void)
+ 
+ 	for(i = 0; i < len; ++i)
+ 	{
+-		p = &glibtop_sys_siglist[i];
+ 		PyObject* d;
++		p = &glibtop_sys_siglist[i];
+ 
+ 		d = PyDict_New();
+ 		my_dict_add_and_decref(d, "number", PyI_L(p->number));

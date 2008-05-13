@@ -1,0 +1,14 @@
+py-gnome-desktop (also known as gnome-python-desktop) provides python
+interfacing modules for some GNOME libraries part of the GNOME Desktop.
+
+ - gnomeapplet
+ - gnomeprint
+ - gnomeprint.ui
+ - wnck
+ - totem.plparser
+ - gtop
+ - mediaprofiles
+ - metacity
+ - rsvg
+ - gnomekeyring
+ - gnomedesktop
