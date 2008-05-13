@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/05/13 13:06:55 jasper Exp $
 
 COMMENT= 		telepathy based messenger for the Gnome desktop
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		0.14
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=	empathy              0.0      # .4.0
 SHARED_LIBS +=	empathy-gtk          0.0      # .5.0
 CATEGORIES=		net
