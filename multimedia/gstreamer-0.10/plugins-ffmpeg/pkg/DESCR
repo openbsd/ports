@@ -1,0 +1,15 @@
+ffmpeg based plugins for gstreamer.
+
+The OpenBSD devs. are VERY BAD persons.
+We don't believe the ffmpeg people make ANY SENSE by refusing to
+distribute shared libraries, so we distribute shared libraries,
+and we build the gstreamer plugin against those libraries.
+
+This is GPL code! We can do that!
+
+Users who really wish to BLOAT their system and use ten UNMAINTAINED,
+UNADAPTED VERSIONS OF FFMPEG on their box can compile with the included
+ffmpeg source, and hope that stuff, that's mostly ever tested on 
+i386-linux, works on anything as weird as (shock, horror) an OpenBSD machine.
+
+So there...

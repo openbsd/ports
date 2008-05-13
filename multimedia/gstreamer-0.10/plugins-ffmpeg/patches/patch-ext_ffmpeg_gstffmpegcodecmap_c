@@ -1,0 +1,21 @@
+$OpenBSD: patch-ext_ffmpeg_gstffmpegcodecmap_c,v 1.1.1.1 2008/05/13 15:34:02 espie Exp $
+--- ext/ffmpeg/gstffmpegcodecmap.c.orig	Tue May 13 17:01:09 2008
++++ ext/ffmpeg/gstffmpegcodecmap.c	Tue May 13 17:01:18 2008
+@@ -558,7 +558,7 @@ gst_ffmpeg_codecid_to_caps (enum CodecID codec_id,
+       caps = gst_ff_vid_caps_new (context, codec_id, "video/x-theora", NULL);
+       break;
+ 
+-    case CODEC_ID_AAC:
++    //case CODEC_ID_AAC:
+     case CODEC_ID_MPEG4AAC:
+       caps = gst_ff_aud_caps_new (context, codec_id, "audio/mpeg",
+           "mpegversion", G_TYPE_INT, 4, NULL);
+@@ -2570,7 +2570,7 @@ gst_ffmpeg_get_codecid_longname (enum CodecID codec_id
+     case CODEC_ID_THEORA:
+       name = "Theora video";
+       break;
+-    case CODEC_ID_AAC:
++    //case CODEC_ID_AAC:
+     case CODEC_ID_MPEG4AAC:
+       name = "MPEG-2/4 AAC audio";
+       break;

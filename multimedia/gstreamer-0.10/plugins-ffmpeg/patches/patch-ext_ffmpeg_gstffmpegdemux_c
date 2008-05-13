@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_ffmpeg_gstffmpegdemux_c,v 1.1.1.1 2008/05/13 15:34:02 espie Exp $
+--- ext/ffmpeg/gstffmpegdemux.c.orig	Tue May 13 17:01:36 2008
++++ ext/ffmpeg/gstffmpegdemux.c	Tue May 13 17:02:09 2008
+@@ -143,9 +143,11 @@ gst_ffmpegdemux_averror (gint av_errno)
+     case AVERROR_NUMEXPECTED:
+       message = "Number syntax expected in filename";
+       break;
++#if 0
+     case AVERROR_INVALIDDATA:
+       message = "Invalid data found";
+       break;
++#endif
+     case AVERROR_NOMEM:
+       message = "Not enough memory";
+       break;
