@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_grip_c,v 1.4 2005/06/30 22:34:29 alek Exp $
---- src/grip.c.orig	Mon Jun  6 11:06:42 2005
-+++ src/grip.c	Mon Jun  6 11:07:30 2005
-@@ -732,7 +732,7 @@ static void DoLoadConfig(GripInfo *ginfo
+$OpenBSD: patch-src_grip_c,v 1.5 2008/05/13 14:20:25 naddy Exp $
+--- src/grip.c.orig	Thu Apr 15 20:23:54 2004
++++ src/grip.c	Tue May 13 16:15:31 2008
+@@ -732,7 +732,7 @@ static void DoLoadConfig(GripInfo *ginfo)
  
    *ginfo->version='\0';
  

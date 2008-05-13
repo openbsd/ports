@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2005/06/30 22:34:29 alek Exp $
+$OpenBSD: patch-configure,v 1.5 2008/05/13 14:20:25 naddy Exp $
 --- configure.orig	Mon Apr 26 19:19:32 2004
-+++ configure	Mon Jun 27 21:29:14 2005
++++ configure	Tue May 13 16:15:31 2008
 @@ -4140,7 +4140,7 @@ done
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2005/06/30 22:34:29 alek Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -9124,7 +9124,7 @@ echo "$as_me: error: curl libs are missi
+@@ -9124,7 +9124,7 @@ echo "$as_me: error: curl libs are missing" >&2;}
  fi
  
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.4 2005/06/30 22:34:29 alek Exp $
      LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
      cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
-@@ -10770,7 +10770,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+@@ -10770,7 +10770,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then

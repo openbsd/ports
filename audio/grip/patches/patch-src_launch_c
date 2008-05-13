@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_launch_c,v 1.1 2008/05/13 14:20:25 naddy Exp $
+--- src/launch.c.orig	Tue May 13 16:15:44 2008
++++ src/launch.c	Tue May 13 16:16:05 2008
+@@ -243,7 +243,7 @@ void ArgsToLocale(GString **args)
+   char *new_str;
+   GString *new_arg;
+   int pos;
+-  int len;
++  gsize len;
+ 
+   for(pos=1;args[pos];pos++) {
+     new_str=g_locale_from_utf8(args[pos]->str,-1,NULL,&len,NULL);
