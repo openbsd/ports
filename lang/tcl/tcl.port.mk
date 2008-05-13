@@ -1,0 +1,12 @@
+# $OpenBSD: tcl.port.mk,v 1.1 2008/05/13 12:07:14 deanna Exp $
+
+CATEGORIES +=		lang/tcl
+
+MODTCL_VERSION ?=	8.5
+
+MODTCL_BIN ?=		${LOCALBASE}/bin/tclsh${MODTCL_VERSION}
+MODTCL_INCDIR ?=	${LOCALBASE}/include/tcl${MODTCL_VERSION}
+MODTCL_CONFIG ?=	${LOCALBASE}/lib/tcl${MODTCL_VERSION}/tclConfig.sh
+
+SUBST_VARS +=		MODTCL_VERSION MODTCL_BIN
+

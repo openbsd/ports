@@ -1,0 +1,18 @@
+# $OpenBSD: tk.port.mk,v 1.1 2008/05/13 12:07:14 deanna Exp $
+
+CATEGORIES +=		x11/tk
+
+MODTK_VERSION ?= 	8.5
+
+MODTK_BIN ?=		${LOCALBASE}/bin/wish${MODTK_VERSION}
+MODTK_INCDIR ?=		${LOCALBASE}/include/tk${MODTK_VERSION}
+MODTK_CONFIG ?=		${LOCALBASE}/lib/tk${MODTK_VERSION}/tkConfig.sh
+
+USE_X11 =		Yes
+
+SUBST_VARS +=		MODTK_VERSION MODTK_BIN
+
+MODULES +=		lang/tcl
+
+MODTK_BUILD_DEPENDS =	::lang/tcl/${MODTCL_VERSION}
+MODTK_RUN_DEPENDS =	::lang/tcl/${MODTCL_VERSION}
