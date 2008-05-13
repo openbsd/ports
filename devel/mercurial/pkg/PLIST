@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/03/26 20:43:44 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/05/13 12:02:54 fgsch Exp $
 %%SHARED%%
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -305,6 +305,8 @@ share/mercurial/hgk
 share/mercurial/hgsh/
 share/mercurial/hgsh/Makefile
 share/mercurial/hgsh/hgsh.c
+share/mercurial/hgweb.cgi
+share/mercurial/hgwebdir.cgi
 share/mercurial/hgwebdir.fcgi
 share/mercurial/mercurial.el
 share/mercurial/mergetools.hgrc

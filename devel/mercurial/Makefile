@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2008/03/26 20:43:44 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2008/05/13 12:02:54 fgsch Exp $
 
 COMMENT=		fast, lightweight source control management
 
 VERSION=		1.0
 DISTNAME=		mercurial-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	devel
 HOMEPAGE=		http://www.selenic.com/mercurial/
 
@@ -22,6 +23,8 @@ MODULES=		lang/python
 SUBST_VARS+=		VERSION
 REGRESS_DEPENDS=	:python-bz2-*:lang/python/${MODPY_VERSION},-bz2
 
+FILES=			hgeditor hgweb.cgi hgwebdir.cgi
+
 CONTRIBFILES=		bash_completion mercurial.el sample.hgrc \
 			tcsh_completion zsh_completion hgwebdir.fcgi \
 			mergetools.hgrc mq.el
@@ -36,6 +39,10 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/hgrc.5 ${PREFIX}/man/man5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mercurial/
 	${INSTALL_SCRIPT} ${WRKSRC}/hgeditor ${PREFIX}/share/mercurial
+.	for file in ${FILES}
+		${INSTALL_DATA} ${WRKSRC}/${file} \
+			${PREFIX}/share/mercurial
+.	endfor
 .	for file in ${CONTRIBFILES}
 		${INSTALL_DATA} ${WRKSRC}/contrib/${file} \
 			${PREFIX}/share/mercurial
