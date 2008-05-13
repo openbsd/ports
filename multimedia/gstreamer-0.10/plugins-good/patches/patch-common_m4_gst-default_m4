@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_m4_gst-default_m4,v 1.1 2008/02/14 18:52:00 ajacoutot Exp $
---- common/m4/gst-default.m4.orig	Thu Feb 14 09:39:16 2008
-+++ common/m4/gst-default.m4	Thu Feb 14 09:43:41 2008
-@@ -25,6 +25,11 @@ AC_DEFUN([GST_DEFAULT_ELEMENTS],
+$OpenBSD: patch-common_m4_gst-default_m4,v 1.2 2008/05/13 15:11:51 espie Exp $
+--- common/m4/gst-default.m4.orig	Wed Apr  9 11:01:02 2008
++++ common/m4/gst-default.m4	Mon May 12 14:28:03 2008
+@@ -24,6 +24,11 @@ AC_DEFUN([AG_GST_DEFAULT_ELEMENTS],
        DEFAULT_AUDIOSRC="osxaudiosrc"
        DEFAULT_VIDEOSINK="osxvideosink"
        ;;
@@ -11,5 +11,5 @@ $OpenBSD: patch-common_m4_gst-default_m4,v 1.1 2008/02/14 18:52:00 ajacoutot Exp
 +      DEFAULT_VIDEOSINK="xvimagesink"
 +      ;;
    esac
-   
-   AC_SUBST(DEFAULT_AUDIOSINK)
+ 
+   dnl Default audio sink

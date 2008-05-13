@@ -1,34 +1,35 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/22 08:53:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/13 15:11:51 espie Exp $
 
-COMMENT=	Python bindings for gstreamer
+COMMENT =		Python bindings for gstreamer
 
-V=		0.10.9
-DISTNAME=	gst-python-$V
-PKGNAME=	py-gstreamer-$V
+V =			0.10.11
+DISTNAME =		gst-python-$V
+PKGNAME =		py-gstreamer-$V
 
-HOMEPAGE=	http://gstreamer.freedesktop.org/modules/gst-python.html
+HOMEPAGE =		http://gstreamer.freedesktop.org/modules/gst-python.html
 
-MASTER_SITES=	${MASTER_SITE_GST:=gst-python/}
+MASTER_SITES =		${MASTER_SITE_GST:=gst-python/}
 
-WANTLIB=	glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10 gstcontroller-0.10 \
-		gstdataprotocol-0.10 gstnet-0.10 gstreamer-0.10 gthread-2.0 \
-		m pcre xml2 z
+WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10 \
+			gstcontroller-0.10 gstdataprotocol-0.10 gstnet-0.10 \
+			gstreamer-0.10 gthread-2.0 gstpbutils-0.10 \
+			m pcre xml2 z
 
-MODULES=	devel/gettext
+MODULES =		devel/gettext
 
-BUILD_DEPENDS=	::x11/py-gtk2
-RUN_DEPENDS=	::x11/py-gtk2 \
-		:py-libxml-*:textproc/libxml,-python
-LIB_DEPENDS=	gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base
+BUILD_DEPENDS =		::x11/py-gtk2
+RUN_DEPENDS =		::x11/py-gtk2 \
+			:py-libxml-*:textproc/libxml,-python
+LIB_DEPENDS =		gstinterfaces-0.10::$P/plugins-base
 
-REGRESS_DEPENDS=::multimedia/gstreamer-0.10/plugins-good
+REGRESS_DEPENDS =	::$P/plugins-good
 
 # don't heritate from Makefile.inc
 # needed for the "regress" target
-SEPARATE_BUILD=	No
+SEPARATE_BUILD =	No
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-gcov
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--disable-gcov
 
 post-install:
 	@cd ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/ && \

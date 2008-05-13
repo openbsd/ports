@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/01/11 23:14:11 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/05/13 15:11:51 espie Exp $
 lib/gstreamer-${VERSION}/libgstalaw.la
 lib/gstreamer-${VERSION}/libgstalaw.so
 lib/gstreamer-${VERSION}/libgstalpha.la
@@ -17,16 +17,18 @@ lib/gstreamer-${VERSION}/libgstavi.la
 lib/gstreamer-${VERSION}/libgstavi.so
 lib/gstreamer-${VERSION}/libgstcutter.la
 lib/gstreamer-${VERSION}/libgstcutter.so
-lib/gstreamer-${VERSION}/libgstdebug.la
-lib/gstreamer-${VERSION}/libgstdebug.so
-lib/gstreamer-${VERSION}/libgstefence.la
-lib/gstreamer-${VERSION}/libgstefence.so
 lib/gstreamer-${VERSION}/libgsteffectv.la
 lib/gstreamer-${VERSION}/libgsteffectv.so
+lib/gstreamer-${VERSION}/libgstequalizer.la
+lib/gstreamer-${VERSION}/libgstequalizer.so
 lib/gstreamer-${VERSION}/libgstflxdec.la
 lib/gstreamer-${VERSION}/libgstflxdec.so
+lib/gstreamer-${VERSION}/libgstgamma.la
+lib/gstreamer-${VERSION}/libgstgamma.so
 lib/gstreamer-${VERSION}/libgstgoom.la
 lib/gstreamer-${VERSION}/libgstgoom.so
+lib/gstreamer-${VERSION}/libgstgoom2k1.la
+lib/gstreamer-${VERSION}/libgstgoom2k1.so
 lib/gstreamer-${VERSION}/libgsticydemux.la
 lib/gstreamer-${VERSION}/libgsticydemux.so
 lib/gstreamer-${VERSION}/libgstid3demux.la
@@ -37,18 +39,22 @@ lib/gstreamer-${VERSION}/libgstmatroska.la
 lib/gstreamer-${VERSION}/libgstmatroska.so
 lib/gstreamer-${VERSION}/libgstmulaw.la
 lib/gstreamer-${VERSION}/libgstmulaw.so
+lib/gstreamer-${VERSION}/libgstmultifile.la
+lib/gstreamer-${VERSION}/libgstmultifile.so
 lib/gstreamer-${VERSION}/libgstmultipart.la
 lib/gstreamer-${VERSION}/libgstmultipart.so
-lib/gstreamer-${VERSION}/libgstnavigationtest.la
-lib/gstreamer-${VERSION}/libgstnavigationtest.so
 lib/gstreamer-${VERSION}/libgstossaudio.la
 lib/gstreamer-${VERSION}/libgstossaudio.so
+lib/gstreamer-${VERSION}/libgstqtdemux.la
+lib/gstreamer-${VERSION}/libgstqtdemux.so
 lib/gstreamer-${VERSION}/libgstrtp.la
 lib/gstreamer-${VERSION}/libgstrtp.so
 lib/gstreamer-${VERSION}/libgstrtsp.la
 lib/gstreamer-${VERSION}/libgstrtsp.so
 lib/gstreamer-${VERSION}/libgstsmpte.la
 lib/gstreamer-${VERSION}/libgstsmpte.so
+lib/gstreamer-${VERSION}/libgstspectrum.la
+lib/gstreamer-${VERSION}/libgstspectrum.so
 @comment lib/gstreamer-${VERSION}/libgstsunaudio.la
 @comment lib/gstreamer-${VERSION}/libgstsunaudio.so
 lib/gstreamer-${VERSION}/libgstudp.la
@@ -57,6 +63,8 @@ lib/gstreamer-${VERSION}/libgstvideobalance.la
 lib/gstreamer-${VERSION}/libgstvideobalance.so
 lib/gstreamer-${VERSION}/libgstvideobox.la
 lib/gstreamer-${VERSION}/libgstvideobox.so
+lib/gstreamer-${VERSION}/libgstvideocrop.la
+lib/gstreamer-${VERSION}/libgstvideocrop.so
 lib/gstreamer-${VERSION}/libgstvideoflip.la
 lib/gstreamer-${VERSION}/libgstvideoflip.so
 lib/gstreamer-${VERSION}/libgstvideomixer.la
@@ -69,15 +77,27 @@ lib/gstreamer-${VERSION}/libgstximagesrc.la
 lib/gstreamer-${VERSION}/libgstximagesrc.so
 share/locale/af/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/bg/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/da/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/es/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/eu/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/fi/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/ja/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/or/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/pl/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/ru/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/sk/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/zh_CN/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/zh_HK/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/zh_TW/LC_MESSAGES/gst-plugins-good-${VERSION}.mo

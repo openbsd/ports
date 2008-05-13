@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_sunaudio_gstsunaudiosrc_c,v 1.2 2007/09/16 18:15:23 naddy Exp $
---- sys/sunaudio/gstsunaudiosrc.c.orig	Sat Dec 16 14:51:48 2006
-+++ sys/sunaudio/gstsunaudiosrc.c	Sun Sep 16 20:09:41 2007
-@@ -45,8 +45,6 @@
+$OpenBSD: patch-sys_sunaudio_gstsunaudiosrc_c,v 1.3 2008/05/13 15:11:51 espie Exp $
+--- sys/sunaudio/gstsunaudiosrc.c.orig	Thu Apr  3 00:37:29 2008
++++ sys/sunaudio/gstsunaudiosrc.c	Mon May 12 14:28:03 2008
+@@ -46,8 +46,6 @@
  #include <fcntl.h>
  #include <string.h>
  #include <unistd.h>
@@ -10,18 +10,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudiosrc_c,v 1.2 2007/09/16 18:15:23 naddy Ex
  
  #include "gstsunaudiosrc.h"
  
-@@ -248,9 +246,8 @@ gst_sunaudiosrc_open (GstAudioSrc * asrc)
-   int fd, ret, err;
- 
-   fd = open (sunaudiosrc->device, O_RDONLY);
--  err = ioctl (fd, AUDIO_MIXER_MULTIPLE_OPEN);
- 
--  if (fd == -1 || err == -1) {
-+  if (fd == -1) {
-     GST_ELEMENT_ERROR (sunaudiosrc, RESOURCE, OPEN_READ, (NULL),
-         ("can't open connection to Sun Audio device %s", sunaudiosrc->device));
- 
-@@ -375,7 +372,7 @@ gst_sunaudiosrc_prepare (GstAudioSrc * asrc, GstRingBu
+@@ -363,7 +361,7 @@ gst_sunaudiosrc_prepare (GstAudioSrc * asrc, GstRingBu
    }
  
  
@@ -30,7 +19,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudiosrc_c,v 1.2 2007/09/16 18:15:23 naddy Ex
  
    return TRUE;
  }
-@@ -429,7 +426,7 @@ gst_sunaudiosrc_reset (GstAudioSrc * asrc)
+@@ -417,7 +415,7 @@ gst_sunaudiosrc_reset (GstAudioSrc * asrc)
    }
  
    /* Flush the audio */

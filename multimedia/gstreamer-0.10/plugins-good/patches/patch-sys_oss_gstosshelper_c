@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_oss_gstosshelper_c,v 1.1 2008/02/14 18:52:00 ajacoutot Exp $
---- sys/oss/gstosshelper.c.orig	Thu Feb 14 09:28:31 2008
-+++ sys/oss/gstosshelper.c	Thu Feb 14 09:29:52 2008
-@@ -253,6 +253,12 @@ gst_oss_helper_rate_probe_check (GstOssProbe * probe)
+$OpenBSD: patch-sys_oss_gstosshelper_c,v 1.2 2008/05/13 15:11:51 espie Exp $
+--- sys/oss/gstosshelper.c.orig	Tue Apr  8 21:49:34 2008
++++ sys/oss/gstosshelper.c	Mon May 12 14:28:03 2008
+@@ -254,6 +254,12 @@ gst_oss_helper_rate_probe_check (GstOssProbe * probe)
       * driver is seriously buggy, and probably doesn't work with other
       * media libraries/apps.  */
      probe->min = gst_oss_helper_rate_check_rate (probe, 8000);

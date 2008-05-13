@@ -1,145 +1,146 @@
-# $OpenBSD: Makefile,v 1.15 2008/02/14 18:51:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2008/05/13 15:11:51 espie Exp $
 
-COMMENT-main=		multimedia framework - good plugins
-COMMENT-aalib=		multimedia framework - aalib plugin
-COMMENT-cairo=		multimedia framework - cairo plugin
-COMMENT-gconf=		multimedia framework - conf elements
-COMMENT-esd=		multimedia framework - esound plugin
-COMMENT-flac=		multimedia framework - flac plugin
-COMMENT-speex=		multimedia framework - speex plugin
-COMMENT-taglib=		multimedia framework - taglib plugin
-COMMENT-dv=		multimedia framework - dv plugin
-COMMENT-jpeg=		multimedia framework - jpeg plugin
-COMMENT-png=		multimedia framework - png plugin
-COMMENT-gdk=		multimedia framework - gdk pixbuf plugin
-COMMENT-caca=		multimedia framework - libcaca plugin
-COMMENT-shout=		multimedia framework - shoutcast plugin
+COMMENT-main =		multimedia framework - good plugins
+COMMENT-aalib =		multimedia framework - aalib plugin
+COMMENT-cairo =		multimedia framework - cairo plugin
+COMMENT-gconf =		multimedia framework - conf elements
+COMMENT-esd =		multimedia framework - esound plugin
+COMMENT-flac =		multimedia framework - flac plugin
+COMMENT-speex =		multimedia framework - speex plugin
+COMMENT-taglib =	multimedia framework - taglib plugin
+COMMENT-dv =		multimedia framework - dv plugin
+COMMENT-jpeg =		multimedia framework - jpeg plugin
+COMMENT-png =		multimedia framework - png plugin
+COMMENT-gdk =		multimedia framework - gdk pixbuf plugin
+COMMENT-caca =		multimedia framework - libcaca plugin
+COMMENT-shout =		multimedia framework - shoutcast plugin
 
-V=			0.10.5
-DISTNAME=		gst-plugins-good-$V
-PKGNAME-main=		gstreamer-plugins-good-$Vp2
-PKGNAME-aalib=		gstreamer-aalib-$Vp2
-PKGNAME-cairo=		gstreamer-cairo-$Vp3
-PKGNAME-gconf=		gstreamer-confelements-$Vp3
-PKGNAME-esd=		gstreamer-esd-$Vp1
-PKGNAME-flac=		gstreamer-flac-$Vp2
-PKGNAME-speex=		gstreamer-speex-$Vp1
-PKGNAME-taglib=		gstreamer-taglib-$Vp1
-PKGNAME-dv=		gstreamer-dv-$Vp1
-PKGNAME-jpeg=		gstreamer-jpeg-$Vp1
-PKGNAME-png=		gstreamer-png-$Vp1
-PKGNAME-gdk=		gstreamer-gdk-pixbuf-$Vp3
-PKGNAME-caca=		gstreamer-libcaca-$Vp2
-PKGNAME-shout=		gstreamer-shoutcast-$Vp1
+V =			0.10.8
+DISTNAME =		gst-plugins-good-$V
+PKGNAME-main =		gstreamer-plugins-good-$V
+PKGNAME-aalib =		gstreamer-aalib-$V
+PKGNAME-cairo =		gstreamer-cairo-$V
+PKGNAME-gconf =		gstreamer-confelements-$V
+PKGNAME-esd =		gstreamer-esd-$V
+PKGNAME-flac =		gstreamer-flac-$V
+PKGNAME-speex =		gstreamer-speex-$V
+PKGNAME-taglib =	gstreamer-taglib-$V
+PKGNAME-dv =		gstreamer-dv-$V
+PKGNAME-jpeg =		gstreamer-jpeg-$V
+PKGNAME-png =		gstreamer-png-$V
+PKGNAME-gdk =		gstreamer-gdk-pixbuf-$V
+PKGNAME-caca =		gstreamer-libcaca-$V
+PKGNAME-shout =		gstreamer-shoutcast-$V
 
 
-MULTI_PACKAGES=		-main -aalib -cairo -gconf -esd -flac -speex \
+MULTI_PACKAGES =	-main -aalib -cairo -gconf -esd -flac -speex \
 			-taglib -dv -jpeg -png -gdk -caca -shout
-SHARED_LIBS=
+SHARED_LIBS =
 
-MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
+MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
 
-USE_X11=		Yes
-MODULES=		devel/gettext
+USE_X11 =		Yes
+MODULES =		devel/gettext
 
-RUN_DEPENDS=		::${BUILD_PKGPATH}
-WANTLIB=		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
+RUN_DEPENDS =		::${BUILD_PKGPATH}
+WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 			pcre xml2 m z
-LIB_DEPENDS=		gstreamer-0.10:gstreamer->=0.10:multimedia/gstreamer-0.10/core
+LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:$P/core
 
-WANTLIB-main=		${WANTLIB} \
+WANTLIB-main =		${WANTLIB} \
 			ICE SM X11 Xdamage Xext Xfixes ossaudio \
 			gstcontroller-0.10 gstbase-0.10 Xau Xdmcp
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
-			gstaudio-0.10,gstinterfaces-0.10,gstnetbuffer-0.10,gstriff-0.10,gstrtp-0.10,gsttag-0.10,gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base
-RUN_DEPENDS-main=	
+			gstaudio-0.10,gstinterfaces-0.10,gstnetbuffer-0.10,gstriff-0.10,gstrtp-0.10,gsttag-0.10,gstvideo-0.10,gstfft-0.10,gstrtsp-0.10,gstsdp-0.10::$P/plugins-base
+RUN_DEPENDS-main =	
 
 WANTLIB-aalib=		${WANTLIB} \
 			X11 ncurses gstbase-0.10 Xau Xdmcp
-LIB_DEPENDS-aalib=	${LIB_DEPENDS} \
+LIB_DEPENDS-aalib =	${LIB_DEPENDS} \
 			aa::graphics/aalib
 
-WANTLIB-cairo=		${WANTLIB} \
+WANTLIB-cairo =		${WANTLIB} \
 			X11 Xau Xdmcp Xrender fontconfig freetype \
 			glitz png gstbase-0.10 expat
-LIB_DEPENDS-cairo=	${LIB_DEPENDS} \
+LIB_DEPENDS-cairo =	${LIB_DEPENDS} \
 			cairo::graphics/cairo
 
-WANTLIB-gconf=		${WANTLIB} \
+WANTLIB-gconf =		${WANTLIB} \
 			ORBit-2
-LIB_DEPENDS-gconf=	${LIB_DEPENDS} \
+LIB_DEPENDS-gconf =	${LIB_DEPENDS} \
 			gconf-2::devel/gconf2
 
-WANTLIB-esd=		${WANTLIB} \
+WANTLIB-esd =		${WANTLIB} \
 			audiofile gstbase-0.10
 
 LIB_DEPENDS-esd=	${LIB_DEPENDS} \
 			esd::audio/esound \
-			gstaudio-0.10,gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base
+			gstaudio-0.10,gstinterfaces-0.10::$P/plugins-base
 
-WANTLIB-flac=		${WANTLIB} \
+WANTLIB-flac =		${WANTLIB} \
 			ogg gstbase-0.10
 
-LIB_DEPENDS-flac=	${LIB_DEPENDS} \
+LIB_DEPENDS-flac =	${LIB_DEPENDS} \
 			FLAC::audio/flac \
-			gsttag-0.10::multimedia/gstreamer-0.10/plugins-base
+			gsttag-0.10::$P/plugins-base
 
-WANTLIB-speex=		${WANTLIB} \
+WANTLIB-speex =		${WANTLIB} \
 			gstbase-0.10
 
-LIB_DEPENDS-speex=	${LIB_DEPENDS} \
+LIB_DEPENDS-speex =	${LIB_DEPENDS} \
 			speex::audio/speex \
-			gsttag-0.10::multimedia/gstreamer-0.10/plugins-base
+			gsttag-0.10::$P/plugins-base
 
-WANTLIB-taglib=		${WANTLIB} \
-			stdc++
+WANTLIB-taglib =	${WANTLIB} \
+			stdc++ gstbase-0.10
 
-LIB_DEPENDS-taglib=	${LIB_DEPENDS} \
-			gsttag-0.10::multimedia/gstreamer-0.10/plugins-base \
+LIB_DEPENDS-taglib =	${LIB_DEPENDS} \
+			gsttag-0.10::$P/plugins-base \
 			tag::audio/taglib
 
-WANTLIB-dv=		${WANTLIB} \
+WANTLIB-dv =		${WANTLIB} \
 			gstbase-0.10
 
-LIB_DEPENDS-dv=		${LIB_DEPENDS} \
+LIB_DEPENDS-dv =	${LIB_DEPENDS} \
 			dv::multimedia/libdv \
-			gstaudio-0.10,gstinterfaces-0.10::multimedia/gstreamer-0.10/plugins-base
+			gstaudio-0.10,gstinterfaces-0.10::$P/plugins-base
 
-WANTLIB-jpeg=		${WANTLIB} \
+WANTLIB-jpeg =		${WANTLIB} \
 
-LIB_DEPENDS-jpeg=	${LIB_DEPENDS} \
+LIB_DEPENDS-jpeg =	${LIB_DEPENDS} \
 			jpeg::graphics/jpeg
 
-WANTLIB-png=		${WANTLIB} \
+WANTLIB-png =		${WANTLIB} \
 
-LIB_DEPENDS-png=	${LIB_DEPENDS} \
+LIB_DEPENDS-png =	${LIB_DEPENDS} \
 			png::graphics/png
 
-WANTLIB-gdk=		${WANTLIB} \
+WANTLIB-gdk =		${WANTLIB} \
 			X11 Xcomposite Xdamage Xext Xrender atk-1.0 \
 			cairo fontconfig freetype glitz pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 png gstbase-0.10 \
 			Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
 
-LIB_DEPENDS-gdk=	${LIB_DEPENDS} \
-			gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2
+LIB_DEPENDS-gdk =	${LIB_DEPENDS} \
+			gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
+			gstvideo-0.10::$P/plugins-base
 
-BUILD_DEPENDS+=		::graphics/libcaca
+BUILD_DEPENDS +=	::graphics/libcaca
 
-WANTLIB-caca=		${WANTLIB} \
+WANTLIB-caca =		${WANTLIB} \
 			X11 gstbase-0.10 ncurses Xau Xdmcp
 
-LIB_DEPENDS-caca=	${LIB_DEPENDS}
+LIB_DEPENDS-caca =	${LIB_DEPENDS}
 			
-WANTLIB-shout=		${WANTLIB} \
+WANTLIB-shout =		${WANTLIB} \
 			gstbase-0.10 ogg speex vorbis theora
 			
-LIB_DEPENDS-shout=	${LIB_DEPENDS} \
+LIB_DEPENDS-shout =	${LIB_DEPENDS} \
 			speex::audio/speex \
 			shout::net/libshout
 
-CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE} \
+CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-cdio \
 			--disable-dv1394 \
 			--without-check \

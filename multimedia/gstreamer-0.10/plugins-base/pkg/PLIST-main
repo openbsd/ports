@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/03/17 21:35:31 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/05/13 15:11:51 espie Exp $
 bin/gst-visualise-${VERSION}
 include/gstreamer-${VERSION}/gst/audio/
 include/gstreamer-${VERSION}/gst/audio/audio.h
@@ -12,6 +12,12 @@ include/gstreamer-${VERSION}/gst/audio/gstringbuffer.h
 include/gstreamer-${VERSION}/gst/audio/mixerutils.h
 include/gstreamer-${VERSION}/gst/audio/multichannel-enumtypes.h
 include/gstreamer-${VERSION}/gst/audio/multichannel.h
+include/gstreamer-${VERSION}/gst/fft/
+include/gstreamer-${VERSION}/gst/fft/gstfft.h
+include/gstreamer-${VERSION}/gst/fft/gstfftf32.h
+include/gstreamer-${VERSION}/gst/fft/gstfftf64.h
+include/gstreamer-${VERSION}/gst/fft/gstffts16.h
+include/gstreamer-${VERSION}/gst/fft/gstffts32.h
 include/gstreamer-${VERSION}/gst/floatcast/
 include/gstreamer-${VERSION}/gst/floatcast/floatcast.h
 include/gstreamer-${VERSION}/gst/interfaces/
@@ -34,6 +40,7 @@ include/gstreamer-${VERSION}/gst/pbutils/
 include/gstreamer-${VERSION}/gst/pbutils/descriptions.h
 include/gstreamer-${VERSION}/gst/pbutils/install-plugins.h
 include/gstreamer-${VERSION}/gst/pbutils/missing-plugins.h
+include/gstreamer-${VERSION}/gst/pbutils/pbutils-enumtypes.h
 include/gstreamer-${VERSION}/gst/pbutils/pbutils.h
 include/gstreamer-${VERSION}/gst/riff/
 include/gstreamer-${VERSION}/gst/riff/riff-ids.h
@@ -43,8 +50,24 @@ include/gstreamer-${VERSION}/gst/rtp/
 include/gstreamer-${VERSION}/gst/rtp/gstbasertpaudiopayload.h
 include/gstreamer-${VERSION}/gst/rtp/gstbasertpdepayload.h
 include/gstreamer-${VERSION}/gst/rtp/gstbasertppayload.h
+include/gstreamer-${VERSION}/gst/rtp/gstrtcpbuffer.h
 include/gstreamer-${VERSION}/gst/rtp/gstrtpbuffer.h
+include/gstreamer-${VERSION}/gst/rtp/gstrtppayloads.h
+include/gstreamer-${VERSION}/gst/rtsp/
+include/gstreamer-${VERSION}/gst/rtsp/gstrtsp-enumtypes.h
+include/gstreamer-${VERSION}/gst/rtsp/gstrtspbase64.h
+include/gstreamer-${VERSION}/gst/rtsp/gstrtspconnection.h
+include/gstreamer-${VERSION}/gst/rtsp/gstrtspdefs.h
+include/gstreamer-${VERSION}/gst/rtsp/gstrtspextension.h
+include/gstreamer-${VERSION}/gst/rtsp/gstrtspmessage.h
+include/gstreamer-${VERSION}/gst/rtsp/gstrtsprange.h
+include/gstreamer-${VERSION}/gst/rtsp/gstrtsptransport.h
+include/gstreamer-${VERSION}/gst/rtsp/gstrtspurl.h
+include/gstreamer-${VERSION}/gst/sdp/
+include/gstreamer-${VERSION}/gst/sdp/gstsdp.h
+include/gstreamer-${VERSION}/gst/sdp/gstsdpmessage.h
 include/gstreamer-${VERSION}/gst/tag/
+include/gstreamer-${VERSION}/gst/tag/gsttagdemux.h
 include/gstreamer-${VERSION}/gst/tag/tag.h
 include/gstreamer-${VERSION}/gst/video/
 include/gstreamer-${VERSION}/gst/video/gstvideofilter.h
@@ -70,6 +93,8 @@ lib/gstreamer-${VERSION}/libgstgdp.la
 lib/gstreamer-${VERSION}/libgstgdp.so
 lib/gstreamer-${VERSION}/libgstplaybin.la
 lib/gstreamer-${VERSION}/libgstplaybin.so
+lib/gstreamer-${VERSION}/libgstqueue2.la
+lib/gstreamer-${VERSION}/libgstqueue2.so
 lib/gstreamer-${VERSION}/libgstsubparse.la
 lib/gstreamer-${VERSION}/libgstsubparse.so
 lib/gstreamer-${VERSION}/libgsttcp.la
@@ -90,6 +115,8 @@ lib/gstreamer-${VERSION}/libgstxvimagesink.la
 lib/gstreamer-${VERSION}/libgstxvimagesink.so
 lib/libgstaudio-${VERSION}.la
 @lib lib/libgstaudio-${VERSION}.so.${LIBgstaudio-0.10_VERSION}
+lib/libgstfft-${VERSION}.la
+@lib lib/libgstfft-${VERSION}.so.${LIBgstfft-0.10_VERSION}
 lib/libgstinterfaces-${VERSION}.la
 @lib lib/libgstinterfaces-${VERSION}.so.${LIBgstinterfaces-0.10_VERSION}
 lib/libgstnetbuffer-${VERSION}.la
@@ -100,24 +127,51 @@ lib/libgstriff-${VERSION}.la
 @lib lib/libgstriff-${VERSION}.so.${LIBgstriff-0.10_VERSION}
 lib/libgstrtp-${VERSION}.la
 @lib lib/libgstrtp-${VERSION}.so.${LIBgstrtp-0.10_VERSION}
+lib/libgstrtsp-${VERSION}.la
+@lib lib/libgstrtsp-${VERSION}.so.${LIBgstrtsp-0.10_VERSION}
+lib/libgstsdp-${VERSION}.la
+@lib lib/libgstsdp-${VERSION}.so.${LIBgstsdp-0.10_VERSION}
 lib/libgsttag-${VERSION}.la
 @lib lib/libgsttag-${VERSION}.so.${LIBgsttag-0.10_VERSION}
 lib/libgstvideo-${VERSION}.la
 @lib lib/libgstvideo-${VERSION}.so.${LIBgstvideo-0.10_VERSION}
+lib/pkgconfig/gstreamer-audio-${VERSION}.pc
+lib/pkgconfig/gstreamer-cdda-${VERSION}.pc
+lib/pkgconfig/gstreamer-fft-${VERSION}.pc
+lib/pkgconfig/gstreamer-floatcast-${VERSION}.pc
+lib/pkgconfig/gstreamer-interfaces-${VERSION}.pc
+lib/pkgconfig/gstreamer-netbuffer-${VERSION}.pc
+lib/pkgconfig/gstreamer-pbutils-${VERSION}.pc
 lib/pkgconfig/gstreamer-plugins-base-${VERSION}.pc
+lib/pkgconfig/gstreamer-riff-${VERSION}.pc
+lib/pkgconfig/gstreamer-rtp-${VERSION}.pc
+lib/pkgconfig/gstreamer-rtsp-${VERSION}.pc
+lib/pkgconfig/gstreamer-sdp-${VERSION}.pc
+lib/pkgconfig/gstreamer-tag-${VERSION}.pc
+lib/pkgconfig/gstreamer-video-${VERSION}.pc
 @man man/man1/gst-visualise-${VERSION}.1
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/
 share/locale/af/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/bg/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/ca/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/da/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/de/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/es/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/fi/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/lt/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/or/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/pl/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/sk/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/zh_CN/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
