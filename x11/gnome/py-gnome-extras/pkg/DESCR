@@ -1,0 +1,12 @@
+py-gnome-extras (also known as gnome-python-extras) is a set of bindings
+for the GNOME platform libraries. It extends py-gnome with bindings for
+several libraries.
+
+Currently covered parts are:
+ - gtkhtml2
+ - egg.trayicon
+ - egg.recent
+ - gtkmozembed
+ - gtkspell
+ - gdl
+ - gksu2
