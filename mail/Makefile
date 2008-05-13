@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2008/04/28 20:11:14 landry Exp $
+# $OpenBSD: Makefile,v 1.215 2008/05/13 14:22:32 jasper Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += elm
      SUBDIR += enigmail
      SUBDIR += evolution
+     SUBDIR += evolution-plugin-rss
      SUBDIR += exim
      SUBDIR += exim,ldap
      SUBDIR += exim,ldap,no_x11
