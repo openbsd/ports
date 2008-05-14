@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.44 2008/03/15 12:50:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2008/05/14 07:38:42 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.22
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
 		digestmd5	2.22 \
 		gssapiv2	2.22 \
+		ldapdb		2.22 \
 		login		2.22 \
 		ntlm		2.22 \
 		otp		2.22 \
@@ -44,6 +45,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-login \
 		--enable-static \
 		--enable-ntlm \
+		--enable-auth-sasldb \
 		--disable-sample
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config
@@ -66,8 +68,10 @@ CONFIGURE_ARGS+=--with-dblib=ndbm \
 .endif
 
 .if ${FLAVOR:L:Mldap}
+WANTLIB+=	ssl
 LIB_DEPENDS+=	ldap.>=2,lber:openldap-client-2.*:databases/openldap
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} \
+		--enable-ldapdb
 .else
 CONFIGURE_ARGS+=--without-ldap
 .endif

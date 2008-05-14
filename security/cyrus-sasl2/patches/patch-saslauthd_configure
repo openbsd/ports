@@ -1,6 +1,6 @@
-$OpenBSD: patch-saslauthd_configure,v 1.12 2007/06/18 12:31:20 ajacoutot Exp $
+$OpenBSD: patch-saslauthd_configure,v 1.13 2008/05/14 07:38:42 ajacoutot Exp $
 --- saslauthd/configure.orig	Thu May 18 21:30:20 2006
-+++ saslauthd/configure	Fri Jun  1 08:49:08 2007
++++ saslauthd/configure	Wed May 14 09:18:39 2008
 @@ -753,10 +753,10 @@ ac_env_CC_set=${CC+set}
  ac_env_CC_value=$CC
  ac_cv_env_CC_set=${CC+set}
@@ -124,6 +124,15 @@ $OpenBSD: patch-saslauthd_configure,v 1.12 2007/06/18 12:31:20 ajacoutot Exp $
  fi
  
    SASL_MECHS="$SASL_MECHS libgssapiv2.la"
+@@ -9427,7 +9430,7 @@ fi
+ 
+ 
+ 
+-  SASL_DB_LIB="$SASL_DB_LIB ../sasldb/.libs/libsasldb.al"
++  SASL_DB_LIB="$SASL_DB_LIB ../sasldb/.libs/libsasldb.a"
+ fi
+ 
+ # Check whether --enable-httpform or --disable-httpform was given.
 @@ -9704,7 +9707,7 @@ if test "${ac_cv_lib_resolv_inet_aton+set}" = set; the
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
