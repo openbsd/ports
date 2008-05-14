@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/14 09:39:46 simon Exp $
 
 COMMENT= 	catalyst file storage backend for session data
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-Session-Store-File-0.10
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Catalyst-Plugin-Session-Store-File-0.13
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -17,9 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::devel/p5-Cache-Cache \
 		::www/p5-Catalyst-Plugin-Session
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes
-
-CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>
