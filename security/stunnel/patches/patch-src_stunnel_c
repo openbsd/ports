@@ -1,6 +1,6 @@
---- src/stunnel.c.orig	Tue Sep 26 10:03:59 2006
-+++ src/stunnel.c	Wed Sep 27 16:37:40 2006
-@@ -150,8 +150,8 @@ static void daemon_loop(void) {
+--- src/stunnel.c.orig	Thu Mar 27 09:27:07 2008
++++ src/stunnel.c	Mon Mar 31 23:59:14 2008
+@@ -171,8 +171,8 @@ static void daemon_loop(void) {
  #if !defined (USE_WIN32) && !defined (__vms) && !defined(USE_OS2)
      if(!(options.option.foreground))
          daemonize();
