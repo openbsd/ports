@@ -1,0 +1,12 @@
+$OpenBSD: patch-metadata_test-metadata_c,v 1.1 2008/05/14 09:41:56 jasper Exp $
+--- metadata/test-metadata.c.orig	Tue May 13 12:19:22 2008
++++ metadata/test-metadata.c	Tue May 13 12:19:39 2008
+@@ -81,7 +81,7 @@ load_metadata_cb (gpointer file)
+ 		if (uri[0] == '/') {
+ 			uri = g_strdup_printf ("file://%s", uri);
+ 		} else {
+-			char buf[600];
++			char buf[1024];
+ 			if (getcwd (buf, sizeof (buf)) != NULL)
+ 				uri = g_strdup_printf ("file://%s/%s", buf, uri);
+ 		}

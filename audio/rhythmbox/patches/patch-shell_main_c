@@ -1,0 +1,13 @@
+$OpenBSD: patch-shell_main_c,v 1.1 2008/05/14 09:41:56 jasper Exp $
+--- shell/main.c.orig	Tue May 13 13:08:26 2008
++++ shell/main.c	Tue May 13 13:09:35 2008
+@@ -381,7 +381,9 @@ main (int argc, char **argv)
+ 	} else {
+ 
+ 		rb_profile_start ("mainloop");
++		GDK_THREADS_ENTER ();
+ 		gtk_main ();
++		GDK_THREADS_LEAVE ();
+ 		rb_profile_end ("mainloop");
+ 
+ 		rb_debug ("out of toplevel loop");

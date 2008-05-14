@@ -1,0 +1,11 @@
+$OpenBSD: patch-podcast_rb-podcast-parse_h,v 1.1 2008/05/14 09:41:56 jasper Exp $
+--- podcast/rb-podcast-parse.h.orig	Sat Mar  8 16:42:20 2008
++++ podcast/rb-podcast-parse.h	Sat Mar  8 16:47:29 2008
+@@ -23,6 +23,7 @@
+ #define RB_PODCAST_PARSE_H
+ 
+ #include <glib.h>
++#include <inttypes.h>
+ 
+ typedef struct
+ {

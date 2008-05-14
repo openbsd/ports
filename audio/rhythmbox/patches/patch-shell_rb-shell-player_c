@@ -1,0 +1,32 @@
+$OpenBSD: patch-shell_rb-shell-player_c,v 1.1 2008/05/14 09:41:56 jasper Exp $
+--- shell/rb-shell-player.c.orig	Tue May 13 13:10:36 2008
++++ shell/rb-shell-player.c	Tue May 13 13:12:43 2008
+@@ -570,10 +570,8 @@ rb_shell_player_open_playlist_url (RBShellPlayer *play
+ 		rb_player_play (player->priv->mmplayer, &error);
+ 
+ 	if (error) {
+-		GDK_THREADS_ENTER ();
+ 		rb_shell_player_error (player, TRUE, error);
+ 		g_error_free (error);
+-		GDK_THREADS_LEAVE ();
+ 	}
+ 	g_idle_add ((GSourceFunc) notify_playing_idle, player);
+ }
+@@ -1149,13 +1147,17 @@ open_location_thread (OpenLocationThreadData *data)
+ 
+ 			location = g_queue_pop_head (data->player->priv->playlist_urls);
+ 			rb_debug ("playing first stream url %s", data->location);
++			GDK_THREADS_ENTER ();
+ 			rb_shell_player_open_playlist_url (data->player, location);
++			GDK_THREADS_LEAVE ();
+ 			g_free (location);
+ 		}
+ 	} else {
+ 		/* if we can't parse it as a playlist, just try playing it */
+ 		rb_debug ("playlist parser failed, playing %s directly", data->location);
++		GDK_THREADS_ENTER ();
+ 		rb_shell_player_open_playlist_url (data->player, data->location);
++		GDK_THREADS_LEAVE ();
+ 	}
+ 
+ 	g_free (data);

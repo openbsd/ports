@@ -1,59 +1,83 @@
-# $OpenBSD: Makefile,v 1.17 2007/12/19 07:31:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2008/05/14 09:41:56 jasper Exp $
 
-BROKEN=			needs an update to 0.11.x (and working totem)
+COMMENT=		music management application for GNOME
 
-COMMENT=		Music Management Application
-
-DISTNAME=		rhythmbox-0.8.8
-PKGNAME=		${DISTNAME}p6
+GNOME_PROJECT=		rhythmbox
+GNOME_VERSION=		0.10.1
+SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
 
-HOMEPAGE=		http://www.rhythmbox.org
+HOMEPAGE=		http://www.rhythmbox.org/
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/rhythmbox/0.8/}
-
-# LGPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xau Xdmcp Xrender \
-			c crypto expat fontconfig freetype pthread m ssl z \
-			ORBit-2 ORBitCosNaming-2 art_lgpl_2.>=5 atk-1.0 \
-			audiofile bonobo-2 bonobo-activation.>=4.0 bonoboui-2 \
-			esd.>=2 gconf-2 glade-2.0 jpeg popt xml2 \
-			glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-			pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
-			gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
-			gstcontrol-0.8.>=5.0 gstreamer-0.8.>=5.0 cairo glitz png
 
-MODULES=		devel/gettext
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
+		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender art_lgpl_2 asn1 atk-1.0 audiofile bonobo-2 \
+		bonobo-activation bonoboui-2 c cairo camel-1.2 com_err \
+		crypto db dbus-1 dbus-glib-1 edataserver-1.2 esd expat \
+		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
+		gnomecanvas-2 gnomevfs-2 gobject-2.0 gssapi gstbase-0.10 \
+		gstinterfaces-0.10 gstreamer-0.10 gthread-2.0 gtk-x11-2.0 \
+		jpeg krb5 m neon nspr4 nss3 pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre plc4 plds4 png popt pthread smime3 \
+		softokn3 soup-2.2 ssl ssl3 util xml2 z
 
-BUILD_DEPENDS=  	:scrollkeeper-*:textproc/scrollkeeper \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser \
-			:gstreamer-gnome-0.8.*:devel/gstreamer-plugins,-gnome
-LIB_DEPENDS= 		gstgconf-0.8::devel/gstreamer-plugins \
-			gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
-			:scrollkeeper-*:textproc/scrollkeeper \
-			:gstreamer-flac-0.8.*:devel/gstreamer-plugins,-flac \
-			:gstreamer-gnome-0.8.*:devel/gstreamer-plugins,-gnome \
-			:gstreamer-mad-0.8.*:devel/gstreamer-plugins,-mad \
-			:gstreamer-ogg-0.8.*:devel/gstreamer-plugins,-ogg \
-			:gstreamer-vorbis-0.8.*:devel/gstreamer-plugins,-vorbis
+MODULES=		devel/gettext \
+			x11/gnome
+
+BUILD_DEPENDS=		:gstreamer-gnome->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome
+LIB_DEPENDS=		musicbrainz3::audio/libmusicbrainz \
+			notify::devel/libnotify \
+			gnomeui-2::x11/gnome/libgnomeui \
+			gnome-media-profiles::x11/gnome/media \
+			totem-plparser::x11/gnome/totem-pl-parser \
+			sexy::x11/libsexy
+RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome \
+			:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-ogg \
+			:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-vorbis \
+			:gstreamer-plugins-good->=0.10.8:multimedia/gstreamer-0.10/plugins-good,-flac \
+			:gstreamer-plugins-good->=0.10.8:multimedia/gstreamer-0.10/plugins-good,-gconf \
+			:gstreamer-plugins-ugly->=0.10.7:multimedia/gstreamer-0.10/plugins-ugly,-mad \
+			::x11/gnome/icon-theme
+REGRESS_DEPENDS=	::devel/check
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/rhythmbox/
-CONFIGURE_ARGS+=	--disable-schemas-install
-CONFIGURE_ARGS+=	--enable-nautilus-menu
+DESKTOP_FILES=		Yes
+MODGNOME_HELP_FILES=	Yes
+MODGNOME_DEVHELP_FILES= Yes
+AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE= 	autoconf
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/rhythmbox/ \
+			--disable-schemas-install \
+			--enable-nautilus-menu \
+			--with-database=tree \
+			--with-metadata-helper \
+			--disable-scrollkeeper \
+			--disable-python \
+			--without-cd-burning \
+			--without-hal \
+			--without-mdns \
+			--without-mtp \
+			--without-ipod \
+			--disable-vala \
+			--disable-browser-plugin \
+			--disable-fm-radio \
+			--disable-lirc \
+			--without-internal-gsequence
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
+# The regression tests require a running instance of X.
+# You will also need to set the XAUTHORITY environment variable to point 
+# to the appropriate .Xauthority file. 
+REGRESS_IS_INTERACTIVE= Yes
+REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 .include <bsd.port.mk>

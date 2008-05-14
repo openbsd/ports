@@ -1,12 +1,13 @@
-Rhythmbox is an integrated music management application, originally
-inspired by Apple's iTunes. It is free software, designed to work well
-under the GNOME Desktop, and based on the powerful GStreamer media
-framework.
-
-Rhythmbox has a number of features, including:
+Rhythmbox is your one-stop multimedia application, supporting a music
+library, multiple playlists, internet radio, and more.  It has a number
+of features, including:
+                       
     * Easy to use music browser
-    * Searching and sorting
+    * Searching and sorting    
     * Comprehensive audio format support through GStreamer
-    * Internet Radio support
-    * Playlists
-
+    * Internet Radio support including last.fm streams    
+    * Playlists                                       
+    * Display audio visualizations
+    * Display album art and song lyrics downloaded from the internet
+    * Automatically download audio podcasts                         
+    * Browse, preview, and download albums from Magnatune and Jamendo

@@ -1,0 +1,13 @@
+$OpenBSD: patch-bindings_python_Makefile_in,v 1.1 2008/05/14 09:41:56 jasper Exp $
+--- bindings/python/Makefile.in.orig	Mon May 28 07:18:14 2007
++++ bindings/python/Makefile.in	Tue May 13 12:22:47 2008
+@@ -323,7 +323,8 @@ rb_la_LDFLAGS = \
+ rb_la_LIBADD = \
+ 	$(PYTHON_LIBS)		\
+ 	$(PYTHON_EXTRA_LIBS)	\
+-	$(PYGTK_LIBS)
++	$(PYGTK_LIBS)		\
++	$(top_srcdir)/sources/libsources.la
+ 
+ 
+ rb_la_CFLAGS = \
