@@ -1,5 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:09:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/05/14 07:52:53 pyr Exp $
+bin/get-cert
 bin/isync
+bin/mbsync
+bin/mdconvert
 @man man/man1/isync.1
+@man man/man1/mbsync.1
+@man man/man1/mdconvert.1
+share/doc/isync/
+share/doc/isync/AUTHORS
+share/doc/isync/ChangeLog
+share/doc/isync/NEWS
+share/doc/isync/README
+share/doc/isync/TODO
 share/examples/isync/
-share/examples/isync/isyncrc.sample
+share/examples/isync/mbsyncrc.sample
