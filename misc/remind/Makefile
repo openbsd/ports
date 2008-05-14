@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2007/12/12 21:39:40 okan Exp $
+# $OpenBSD: Makefile,v 1.25 2008/05/14 20:03:47 mbalmer Exp $
 
 COMMENT=	scripting language for reminders, with a Tk front end
 
 DISTNAME=	remind-03.01.03
-PKGNAME=	remind-3.1.3
+PKGNAME=	remind-3.1.3p0
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c m
 
 # Can run without TK, but most unglamorous without it.
-RUN_DEPENDS=	::x11/tk/8.4
+RUN_DEPENDS=	::x11/tk/8.4 \
+		::devel/tcllib
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
