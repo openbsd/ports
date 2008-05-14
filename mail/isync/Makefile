@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/05/14 07:52:53 pyr Exp $
+# $OpenBSD: Makefile,v 1.12 2008/05/14 08:24:14 pyr Exp $
 
 COMMENT= 	synchronize IMAP4 and maildir mailboxes
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=		lib/db4/db.>=4:db-4.*:databases/db/v4
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV+=		 CFLAGS="${CFLAGS} -I{LOCALBASE}/include/db4"	\
+CONFIGURE_ENV+=		 CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db4"	\
 			 LDFLAGS=-L${LOCALBASE}/lib/db4			\
 			 LDADD=-ldb
 
