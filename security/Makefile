@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2008/04/28 19:38:37 okan Exp $
+# $OpenBSD: Makefile,v 1.196 2008/05/15 21:21:03 merdely Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -62,6 +62,7 @@
      SUBDIR += libident
      SUBDIR += libmcrypt
      SUBDIR += libotr
+     SUBDIR += libssh2
      SUBDIR += libtasn1
      SUBDIR += logsentry
      SUBDIR += logsurfer
