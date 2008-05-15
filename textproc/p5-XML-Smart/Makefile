@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/05/15 21:48:26 okan Exp $
 
 COMMENT=	access/create XML files/datas easily
 
 MODULES=	cpan
 DISTNAME=	XML-Smart-1.6.9
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	textproc
 
-MAINTAINER=	Okan Demirmen <okan@demirmen.com>
+MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/11 06:55:43 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/15 21:48:26 okan Exp $
 
 COMMENT=	Perl Object Class for Revision Control System (RCS)
 
 DISTNAME=	Rcs-1.05
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 MODULES=	cpan
 
-MAINTAINER=	Okan Demirmen <okan@demirmen.com>
+MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/02 14:49:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/15 21:48:26 okan Exp $
 
 COMMENT=	regression testing software using Slay::Makefile
 
 DISTNAME=	Slay-Makefile-Gress-0.04
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 MODULES=	cpan
 
-MAINTAINER=	Okan Demirmen <okan@demirmen.com>
+MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
