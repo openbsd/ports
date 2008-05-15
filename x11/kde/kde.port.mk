@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.28 2007/12/11 07:55:05 jakemsr Exp $
+# $OpenBSD: kde.port.mk,v 1.29 2008/05/15 21:16:30 naddy Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -36,7 +36,7 @@ MODKDE_CONFIGURE_ENV+=		PTHREAD_LIBS=-pthread
 MODKDE_MAKE_FLAGS=		CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 MODKDE_MAKE_FLAGS+=		LIBRESOLV=
 
-MODX11/KDE_post-patch=	find ${WRKDIST} -name Makefile.am -exec touch {}.in \;
+MODKDE_post-patch=	find ${WRKDIST} -name Makefile.am -exec touch {}.in \;
 
 MODKDE_LIBTOOL?=No
 .if ${MODKDE_LIBTOOL:L} == "yes"
