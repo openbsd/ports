@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.935 2008/05/15 09:51:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.936 2008/05/15 09:57:03 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -945,12 +945,12 @@ DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
 
 _EVERYTHING = ${DISTFILES}
 _DISTFILES = ${DISTFILES:C/:[0-9]$//}
-ALLFILES = ${_DISTFILES}
+_ALLFILES = ${_DISTFILES}
 
 .if defined(PATCHFILES)
 _PATCHFILES = ${PATCHFILES:C/:[0-9]$//}
 _EVERYTHING += ${PATCHFILES}
-ALLFILES += ${_PATCHFILES}
+_ALLFILES += ${_PATCHFILES}
 .endif
 
 .if defined(SUPDISTFILES)
@@ -959,12 +959,12 @@ _EVERYTHING += ${SUPDISTFILES}
 
 __CKSUMFILES =
 # First, remove duplicates
-.for _file in ${ALLFILES}
+.for _file in ${_ALLFILES}
 .  if empty(__CKSUMFILES:M${_file})
 __CKSUMFILES += ${_file}
 .  endif
 .endfor
-ALLFILES := ${__CKSUMFILES}
+_ALLFILES := ${__CKSUMFILES}
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if !empty(DIST_SUBDIR)
@@ -973,16 +973,16 @@ CHECKSUMFILES = ${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 CHECKSUMFILES = ${__CKSUMFILES}
 .endif
 
-REALLY_ALLFILES = ${ALLFILES} ${SUPDISTFILES:C/:[0-9]$//}
+_REALLY_ALLFILES = ${_ALLFILES} ${SUPDISTFILES:C/:[0-9]$//}
 
 __MKSUMFILES =
 # First, remove duplicates
-.for _file in ${REALLY_ALLFILES}
+.for _file in ${_REALLY_ALLFILES}
 .  if empty(__MKSUMFILES:M${_file})
 __MKSUMFILES += ${_file}
 .  endif
 .endfor
-REALLY_ALLFILES := ${__MKSUMFILES}
+_REALLY_ALLFILES := ${__MKSUMFILES}
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if !empty(DIST_SUBDIR)
@@ -1092,7 +1092,7 @@ CONFIGURE_SHARED ?= --enable-shared
 FETCH_MANUALLY ?= No
 .if ${FETCH_MANUALLY:L} != "no"
 _ALLFILES_PRESENT = Yes
-.  for _F in ${ALLFILES:S@^@${FULLDISTDIR}/@}
+.  for _F in ${_ALLFILES:S@^@${FULLDISTDIR}/@}
 .    if !exists(${_F})
 _ALLFILES_PRESENT = No
 .    endif
@@ -1697,9 +1697,9 @@ _internal-fetch-all:
 .if target(do-fetch)
 	@cd ${.CURDIR} && exec ${MAKE} do-fetch __FETCH_ALL=Yes
 .else
-# What FETCH normally does:
-.  if !empty(REALLY_ALLFILES)
-	@cd ${.CURDIR} && exec ${MAKE} ${REALLY_ALLFILES:S@^@${FULLDISTDIR}/@}
+# What FETCH-ALL normally does:
+.  if !empty(_REALLY_ALLFILES)
+	@cd ${.CURDIR} && exec ${MAKE} ${_REALLY_ALLFILES:S@^@${FULLDISTDIR}/@}
 .    endif
 # End of FETCH
 .endif
@@ -1769,8 +1769,8 @@ _internal-fetch:
 	@cd ${.CURDIR} && exec ${MAKE} do-fetch
 .  else
 # What FETCH normally does:
-.    if !empty(ALLFILES)
-	@cd ${.CURDIR} && exec ${MAKE} ${ALLFILES:S@^@${FULLDISTDIR}/@}
+.    if !empty(_ALLFILES)
+	@cd ${.CURDIR} && exec ${MAKE} ${_ALLFILES:S@^@${FULLDISTDIR}/@}
 .    endif
 # End of FETCH
 .  endif
@@ -2299,7 +2299,7 @@ _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}
 
 # Separate target for each file fetch-all will retrieve
 
-.for _F in ${REALLY_ALLFILES:S@^@${FULLDISTDIR}/@}
+.for _F in ${_REALLY_ALLFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
 .  if ${FETCH_MANUALLY:L} != "no"
 .    for _M in ${FETCH_MANUALLY}
