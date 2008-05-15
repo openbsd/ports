@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.934 2008/05/12 14:45:48 deanna Exp $
+#	$OpenBSD: bsd.port.mk,v 1.935 2008/05/15 09:51:17 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -953,11 +953,8 @@ _EVERYTHING += ${PATCHFILES}
 ALLFILES += ${_PATCHFILES}
 .endif
 
-.if make(makesum) || make(addsum) || defined(__FETCH_ALL)
-.  if defined(SUPDISTFILES)
+.if defined(SUPDISTFILES)
 _EVERYTHING += ${SUPDISTFILES}
-ALLFILES += ${SUPDISTFILES:C/:[0-9]$//}
-.  endif
 .endif
 
 __CKSUMFILES =
@@ -969,15 +966,33 @@ __CKSUMFILES += ${_file}
 .endfor
 ALLFILES := ${__CKSUMFILES}
 
-.if defined(IGNOREFILES)
-ERRORS += "Fatal: don't use IGNOREFILES"
+# List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
+.if !empty(DIST_SUBDIR)
+CHECKSUMFILES = ${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
+.else
+CHECKSUMFILES = ${__CKSUMFILES}
 .endif
+
+REALLY_ALLFILES = ${ALLFILES} ${SUPDISTFILES:C/:[0-9]$//}
+
+__MKSUMFILES =
+# First, remove duplicates
+.for _file in ${REALLY_ALLFILES}
+.  if empty(__MKSUMFILES:M${_file})
+__MKSUMFILES += ${_file}
+.  endif
+.endfor
+REALLY_ALLFILES := ${__MKSUMFILES}
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if !empty(DIST_SUBDIR)
-_CKSUMFILES = ${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
+MAKESUMFILES = ${__MKSUMFILES:S/^/${DIST_SUBDIR}\//}
 .else
-_CKSUMFILES = ${__CKSUMFILES}
+MAKESUMFILES = ${__MKSUMFILES}
+.endif
+
+.if defined(IGNOREFILES)
+ERRORS += "Fatal: don't use IGNOREFILES"
 .endif
 
 # This is what is actually going to be extracted, and is overridable
@@ -1269,13 +1284,6 @@ _FAKE_SETUP = TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} \
 
 _CLEANDEPENDS ?= Yes
 
-# mirroring utilities
-.if !empty(DIST_SUBDIR)
-_ALLFILES = ${ALLFILES:S/^/${DIST_SUBDIR}\//}
-.else
-_ALLFILES = ${ALLFILES}
-.endif
-
 .for _S in ${MULTI_PACKAGES}
 _FMN += ${PKGPATH}/${FULLPKGNAME${_S}}
 .endfor
@@ -1517,11 +1525,11 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 	fi
 
 makesum: fetch-all
-.if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES)
+.if !defined(NO_CHECKSUM) && !empty(MAKESUMFILES)
 	@rm -f ${CHECKSUM_FILE}
-	@cd ${DISTDIR} && cksum -b -a "${_CIPHERS}" ${_CKSUMFILES} >> ${CHECKSUM_FILE}
+	@cd ${DISTDIR} && cksum -b -a "${_CIPHERS}" ${MAKESUMFILES} >> ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
-		for file in ${_CKSUMFILES}; do \
+		for file in ${MAKESUMFILES}; do \
 			${_size_fragment} >> ${CHECKSUM_FILE}; \
 		done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
@@ -1533,10 +1541,10 @@ addsum: fetch-all
 	@touch ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 	 	for cipher in ${_CIPHERS}; do \
-			cksum -b -a $$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
+			cksum -b -a $$cipher ${MAKESUMFILES} >> ${CHECKSUM_FILE}; \
 	    done
 	@cd ${DISTDIR} && \
-		for file in ${_CKSUMFILES}; do \
+		for file in ${MAKESUMFILES}; do \
 			${_size_fragment} >> ${CHECKSUM_FILE}; \
 		done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
@@ -1680,6 +1688,25 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 _internal-${_m:L}wantlib-depends: ${_DEP${_m}WANTLIB_COOKIE}
 .endfor
 
+_internal-fetch-all:
+# See ports/infrastructure/templates/Makefile.template
+	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
+.if target(pre-fetch)
+	@cd ${.CURDIR} && exec ${MAKE} pre-fetch __FETCH_ALL=Yes
+.endif
+.if target(do-fetch)
+	@cd ${.CURDIR} && exec ${MAKE} do-fetch __FETCH_ALL=Yes
+.else
+# What FETCH normally does:
+.  if !empty(REALLY_ALLFILES)
+	@cd ${.CURDIR} && exec ${MAKE} ${REALLY_ALLFILES:S@^@${FULLDISTDIR}/@}
+.    endif
+# End of FETCH
+.endif
+.if target(post-fetch)
+	@cd ${.CURDIR} && exec ${MAKE} post-fetch __FETCH_ALL=Yes
+.endif
+
 .if defined(IGNORE) && !defined(NO_IGNORE)
 _internal-fetch _internal-checksum _internal-extract _internal-patch \
 	_internal-configure _internal-all _internal-build _internal-install \
@@ -1761,7 +1788,7 @@ _internal-checksum: _internal-fetch
 	  exit 1; \
 	else \
 	  cd ${DISTDIR}; OK=true; list=''; \
-		for file in ${_CKSUMFILES}; do \
+		for file in ${CHECKSUMFILES}; do \
 		  for cipher in ${PREFERRED_CIPHERS}; do \
 			set -- `grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}` && break || \
 			  ${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
@@ -1885,7 +1912,8 @@ update-patches:
 # if locking exists.
 
 .for _t in extract patch distpatch configure build all install fake \
-	subupdate fetch checksum regress depends lib-depends build-depends \
+	subupdate fetch fetch-all checksum regress depends lib-depends \
+	build-depends \
 	run-depends regress-depends clean manpages-check \
 	plist update-plist update package install-all
 .  if defined(_LOCK)
@@ -2269,12 +2297,9 @@ _internal-package-only: ${_PACKAGE_COOKIES}
 
 _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}
 
-fetch-all:
-	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes fetch
+# Separate target for each file fetch-all will retrieve
 
-# Separate target for each file fetch will retrieve
-
-.for _F in ${ALLFILES:S@^@${FULLDISTDIR}/@}
+.for _F in ${REALLY_ALLFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
 .  if ${FETCH_MANUALLY:L} != "no"
 .    for _M in ${FETCH_MANUALLY}
@@ -2349,16 +2374,12 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:L:Mdist}
-.  if defined(SUPDISTFILES) && !empty(SUPDISTFILES) && !defined(__FETCH_ALL)
-	@exec ${MAKE} clean=dist __FETCH_ALL=Yes ECHO_MSG=:
-.  else
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${DISTDIR} 2>/dev/null; then \
-		rm -f ${_CKSUMFILES}; \
+		rm -f ${MAKESUMFILES}; \
 	fi
-.    if !empty(DIST_SUBDIR)
+.  if !empty(DIST_SUBDIR)
 	-@rmdir ${FULLDISTDIR}
-.    endif
 .  endif
 .endif
 .if ${_clean:L:Minstall}
@@ -2389,7 +2410,7 @@ _internal-clean:
 fetch-makefile:
 	@mk=`mktemp ${TMPDIR}/mk.XXXXXXX`; \
 	trap "rm -f $$mk" 0 1 2 3 13 15; \
-	if ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes _fetch-makefile >$$mk; then \
+	if ${MAKE} _fetch-makefile >$$mk; then \
 		cat $$mk >>${_FETCH_MAKEFILE}; \
 	else \
 		echo >&2 "Problem in ${PKGPATH}"; \
@@ -2414,13 +2435,13 @@ _fetch-makefile:
 # write generic package dependencies
 	@echo ".PHONY: ${_FMN}"
 .  if ${RECURSIVE_FETCH_LIST:L} == "yes"
-	@echo "${_FMN}: ${_ALLFILES} "`_FULL_PACKAGE_NAME=Yes ${MAKE} full-all-depends|fgrep -v ${PKGPATH}/`
+	@echo "${_FMN}: ${MAKESUMFILES} "`_FULL_PACKAGE_NAME=Yes ${MAKE} full-all-depends|fgrep -v ${PKGPATH}/`
 .  else
-	@echo "${_FMN}: ${_ALLFILES}"
+	@echo "${_FMN}: ${MAKESUMFILES}"
 .  endif
 .endif
-.if !empty(ALLFILES)
-.  for _F in ${_ALLFILES}
+.if !empty(MAKESUMFILES)
+.  for _F in ${MAKESUMFILES}
 	@: $${_DONE_FILES:=/dev/null}; if ! fgrep -q "|${_F}|" $${_DONE_FILES}; then \
 		echo "|${_F}|" >>$${_DONE_FILES}; \
 		${MAKE} _fetch-onefile _file=${_F}; \
@@ -2445,7 +2466,7 @@ _fetch-onefile:
 .  if ${FETCH_MANUALLY:L} != "no"
 	@echo '\t FETCH_MANUALLY="Yes" \\'
 .  endif
-.  if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
+.  if !defined(NO_CHECKSUM) && !empty(MAKESUMFILES:M${_F})
 	@if [ ! -f ${CHECKSUM_FILE} ]; then \
 	  echo >&2 "Missing checksum file: ${CHECKSUM_FILE}"; \
 	  echo '\t ERROR="no checksum file" \\'; \
@@ -2991,6 +3012,7 @@ _all_phony = ${_recursive_depends_targets} ${_recursive_describe_targets} \
 	_internal-buildlib-depends _internal-buildwantlib-depends \
 	_internal-checksum _internal-clean _internal-configure _internal-depends \
 	_internal-distpatch _internal-extract _internal-fake _internal-fetch \
+	_internal-fetch-all \
 	_internal-install-all _internal-lib-depends _internal-manpages-check \
 	_internal-package _internal-package-only _internal-plist \
 	_internal-regress _internal-regress-depends _internal-run-depends \
