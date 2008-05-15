@@ -27,24 +27,83 @@
 #include <machine/sysarch.h>
 #include <machine/pio.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include <err.h>
+
+static void
+usage(void)
+{
+	fprintf(stderr, 
+"Usage: tpwireless [-cde]\n"
+"  -c    Check BIOS bit to determine MiniPCI ID permission check state\n"
+"  -d    Set BIOS bit to disable MiniPCI ID permission check\n"
+"  -e    Clear BIOS bit to enable MiniPCI ID permission check\n");
+}
 
 int
 main(int argc, char **argv)
 {
-	unsigned int b;
+	unsigned int before, towrite, after, ch;
+	enum { TPW_NONE, TPW_SET, TPW_CLEAR, TPW_CHECK } action = TPW_NONE;
 
-	printf("Setting BIOS bit to disable MiniPCI ID permission check\n");
+	while ((ch = getopt(argc, argv, "cde")) != -1) {
+		switch(ch) {
+		case 'c':
+			action = TPW_CHECK;
+			break;
+		case 'd':
+			action = TPW_SET;
+			break;
+		case 'e':
+			action = TPW_CLEAR;
+			break;
+		default:
+			usage();
+			exit(1);
+		}
+	}
+
+	if (action == TPW_NONE) {
+		usage();
+		exit(1);
+	}
+
 	if (i386_iopl(3) == -1)
-		err(1, "iopl");
+		errx(1, "iopl");
 	outb(0x70, 0x6a);
-	b = inb(0x71);
+	before = inb(0x71);
 
-	printf("Before: *0x6a = %02x\n", b);
-	b |= 0x80;
-	outb(0x71, b);
-	printf("After:  *0x6a = %02x\n", b);
+	switch(action) {
+	case TPW_SET:	
+		printf("Setting BIOS bit to disable MiniPCI ID "
+		    "permission check\n");
+		towrite = before | 0x80;
+		break;
+	case TPW_CLEAR:
+		printf("Clearing BIOS bit to enable MiniPCI ID "
+		    "permission check\n");
+		towrite = before & ~0x80;
+		break;
+	case TPW_CHECK:
+		printf("MiniPCI checking is currently %s\n",
+			(before & 0x80) == 0x80 ? "off" : "on");
+		exit(0);
+	default:
+		errx(1, "Internal error");
+	}
 
-	return (0);
+	printf("Before:    *0x6a = %02x\n", before);
+	printf("Expecting: *0x6a = %02x\n", towrite);
+	outb(0x71, towrite);
+	outb(0x70, 0x6a);
+	after = inb(0x71);
+	printf("After:     *0x6a = %02x\n", after);
+
+	if (after != towrite) {
+		printf("Got unexpected value.\n");
+		exit(1);
+	}
+	exit(0);
 }
 
