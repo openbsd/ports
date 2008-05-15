@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_wwfetch_wwfetch_http_c,v 1.1 2008/05/15 19:34:20 naddy Exp $
+--- lib/wwfetch/wwfetch_http.c.orig	Thu May 15 19:12:32 2008
++++ lib/wwfetch/wwfetch_http.c	Thu May 15 19:17:28 2008
+@@ -96,7 +96,7 @@ wwfetch_error wwfetch_do_http_request(wwfetch *handle,
+ 	if ((handle->lastcurlerror = curl_easy_setopt(handle->curl, CURLOPT_HTTPHEADER, handle->curlheaders)) != CURLE_OK)
+ 		return WWFETCH_CURL_ERROR;
+ 
+-	if ((handle->lastcurlerror = curl_easy_setopt(handle->curl, CURLOPT_USERAGENT, "gaia/%s", GAIA_VERSION)) != CURLE_OK)
++	if ((handle->lastcurlerror = curl_easy_setopt(handle->curl, CURLOPT_USERAGENT, "gaia/" GAIA_VERSION)) != CURLE_OK)
+ 		return WWFETCH_CURL_ERROR;
+ 
+ 	if ((handle->lastcurlerror = curl_easy_setopt(handle->curl, CURLOPT_URL, url)) != CURLE_OK)
