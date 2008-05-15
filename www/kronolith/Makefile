@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2008/05/08 09:57:56 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.19 2008/05/15 18:45:32 mbalmer Exp $ 
 
 COMMENT=	web based calendar application using the horde framework
 
@@ -6,6 +6,7 @@ HORDE_MODULE=	kronolith
 HORDE_NAME=	Kronolith
 
 DISTNAME=	${HORDE_MODULE}-h3-2.1.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www mail
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
@@ -36,6 +37,7 @@ pre-fake:
 
 do-install:
 	mv ${WRKDIST} ${INSTDIR}/${HORDE_MODULE}
+	chown -R ${BINOWN}:daemon ${INSTDIR}/${HORDE_MODULE}
 	find ${INSTDIR}/${HORDE_MODULE} -name \*.orig -exec rm {} \;
 
 .include <bsd.port.mk>
