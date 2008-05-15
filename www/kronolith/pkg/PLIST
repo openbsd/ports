@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/05/08 09:57:56 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/05/15 19:44:52 mbalmer Exp $
+@group daemon
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
@@ -23,7 +24,7 @@ horde/${HORDE_MODULE}/config/prefs.php.dist
 @sample horde/${HORDE_MODULE}/config/prefs.php
 @mode
 @owner
-@group
+@group daemon
 horde/${HORDE_MODULE}/contacts.php
 horde/${HORDE_MODULE}/data.php
 horde/${HORDE_MODULE}/day.php
