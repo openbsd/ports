@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.936 2008/05/15 09:57:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.937 2008/05/15 10:09:29 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -973,15 +973,15 @@ CHECKSUMFILES = ${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 CHECKSUMFILES = ${__CKSUMFILES}
 .endif
 
-_REALLY_ALLFILES = ${_ALLFILES} ${SUPDISTFILES:C/:[0-9]$//}
-
-__MKSUMFILES =
+__MKSUMFILES = ${__CKSUMFILES}
+.if defined(SUPDISTFILES)
 # First, remove duplicates
-.for _file in ${_REALLY_ALLFILES}
-.  if empty(__MKSUMFILES:M${_file})
+.  for _file in ${SUPDISTFILES:C/:[0-9]$//}
+.    if empty(__MKSUMFILES:M${_file})
 __MKSUMFILES += ${_file}
-.  endif
-.endfor
+.    endif
+.  endfor
+.endif
 _REALLY_ALLFILES := ${__MKSUMFILES}
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
