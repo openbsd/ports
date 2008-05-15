@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-zenmap,v 1.1 2008/01/25 01:21:17 okan Exp $
+@comment $OpenBSD: PLIST-zenmap,v 1.2 2008/05/15 18:30:14 okan Exp $
 bin/nmapfe
 bin/xnmap
 bin/zenmap
+@comment lib/python${MODPY_VERSION}/
+@comment lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/higwidgets/
 lib/python${MODPY_VERSION}/site-packages/higwidgets/__init__.py
 lib/python${MODPY_VERSION}/site-packages/higwidgets/__init__.pyc
@@ -165,6 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/zenmapGUI/Wizard.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/__init__.pyc
 @man man/man1/zenmap.1
+@comment share/icons/
 share/icons/nmap-eye.ico
 share/icons/umit_128.ico
 share/icons/umit_16.ico

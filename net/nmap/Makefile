@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2008/04/06 18:21:44 okan Exp $
+# $OpenBSD: Makefile,v 1.76 2008/05/15 18:30:14 okan Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-V=		4.60
+V=		4.62
 DISTNAME=	nmap-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-zenmap=	nmap-zenmap-$V
@@ -31,9 +31,14 @@ SUBST_VARS=	V
 USE_GMAKE=	yes
 MODULES=	lang/python
 
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS+=	-mieee
+.endif
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-libpcap=/usr \
 		--with-openssl=/usr \
@@ -58,6 +63,7 @@ post-extract:
 	@cd ${WRKSRC} && rm -rf libpcap/ libdnet-stripped/ liblua/ libpcre/
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/zenmap.1 ${PREFIX}/man/man1/
+	cd ${WRKINST}${MODPY_SITEPKG} && \
+		${MODPY_BIN} -c 'import zenmapCore.Paths'
 
 .include <bsd.port.mk>

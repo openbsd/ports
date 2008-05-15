@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2008/04/06 18:21:44 okan Exp $
---- configure.orig	Sat Mar 15 02:21:22 2008
-+++ configure	Wed Mar 26 16:07:24 2008
-@@ -6431,6 +6431,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.6 2008/05/15 18:30:14 okan Exp $
+--- configure.orig	Mon Apr 28 19:53:32 2008
++++ configure	Wed May  7 12:52:54 2008
+@@ -6432,6 +6432,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  extern char pcap_version[];
  int main() {
    int major, minor1, minor2;
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.5 2008/04/06 18:21:44 okan Exp $
    sscanf(pcap_version,"%d.%d.%d", &major, &minor1, &minor2);
    if (major > 0)
      exit(0);
-@@ -6751,7 +6752,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -6752,7 +6753,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.5 2008/04/06 18:21:44 okan Exp $
  _ACEOF
  rm -f conftest.$ac_objext
  if { (ac_try="$ac_compile"
-@@ -6946,7 +6947,7 @@ if test $have_pcre != yes ; then
+@@ -6947,7 +6948,7 @@ if test $have_pcre != yes ; then
  else
  # We only need to check for and use this if we are NOT using included pcre
  
@@ -27,9 +27,9 @@ $OpenBSD: patch-configure,v 1.5 2008/04/06 18:21:44 okan Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
-@@ -7176,6 +7177,7 @@ if test "${with_liblua+set}" = set; then
+@@ -7181,6 +7182,7 @@ if test "${with_liblua+set}" = set; then
    *)
-     CXXFLAGS="-I$with_liblua/include $CXXFLAGS"
+     CPPFLAGS="-I$with_liblua/include $CPPFLAGS"
      LDFLAGS="-L$with_liblua/lib $LDFLAGS"
 +    LIBLUA_LIBS="-llua"
      have_lua=yes
