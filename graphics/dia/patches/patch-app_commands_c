@@ -1,4 +1,4 @@
-$OpenBSD: patch-app_commands_c,v 1.1 2007/10/18 14:18:40 ajacoutot Exp $
+$OpenBSD: patch-app_commands_c,v 1.2 2008/05/16 11:55:29 ajacoutot Exp $
 --- app/commands.c.orig	Sun Mar 18 20:49:14 2007
 +++ app/commands.c	Thu Oct 18 14:02:37 2007
 @@ -523,16 +523,13 @@ edit_redo_callback (GtkAction *action)
@@ -15,7 +15,7 @@ $OpenBSD: patch-app_commands_c,v 1.1 2007/10/18 14:18:40 ajacoutot Exp $
    GError *error = NULL;
  
 -  helpdir = dia_get_data_directory("help");
-+  helpdir = g_strdup("!!PREFIX!!/share/doc/dia/html");
++  helpdir = g_strdup("${PREFIX}/share/doc/dia/html");
    if (!helpdir) {
      message_warning(_("Could not find help directory"));
      return;

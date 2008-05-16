@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.gnome,v 1.1 2008/05/16 11:55:29 ajacoutot Exp $
+%%SHARED%%
+lib/dia/libgprint_filter.a
+lib/dia/libgprint_filter.la

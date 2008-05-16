@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/12/16 11:24:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/05/16 11:55:29 ajacoutot Exp $
+%%SHARED%%
 bin/dia
 lib/dia/
 lib/dia/libaadl_objects.a
@@ -64,7 +65,6 @@ lib/dia/libxfig_filter.la
 lib/dia/libxslt_filter.a
 lib/dia/libxslt_filter.la
 @man man/man1/dia.1
-share/applications/
 share/applications/dia.desktop
 share/dia/
 share/dia/dia_logo.png
@@ -1805,6 +1805,8 @@ share/locale/am/LC_MESSAGES/dia.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/dia.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/dia.mo
 share/locale/be/LC_MESSAGES/dia.mo
 share/locale/bg/LC_MESSAGES/dia.mo
@@ -1823,6 +1825,8 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/dia.mo
 share/locale/es/LC_MESSAGES/dia.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/dia.mo
 share/locale/fi/LC_MESSAGES/dia.mo
 share/locale/fr/LC_MESSAGES/dia.mo
@@ -1840,6 +1844,8 @@ share/locale/is/LC_MESSAGES/dia.mo
 share/locale/it/LC_MESSAGES/dia.mo
 share/locale/ja/LC_MESSAGES/dia.mo
 share/locale/ko/LC_MESSAGES/dia.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/dia.mo
 share/locale/lv/LC_MESSAGES/dia.mo
 share/locale/mk/
@@ -1851,6 +1857,8 @@ share/locale/ml/LC_MESSAGES/dia.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/dia.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/dia.mo
 share/locale/nb/LC_MESSAGES/dia.mo
 share/locale/ne/
@@ -1863,9 +1871,13 @@ share/locale/pt/LC_MESSAGES/dia.mo
 share/locale/pt_BR/LC_MESSAGES/dia.mo
 share/locale/ro/LC_MESSAGES/dia.mo
 share/locale/ru/LC_MESSAGES/dia.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/dia.mo
 share/locale/sk/LC_MESSAGES/dia.mo
 share/locale/sl/LC_MESSAGES/dia.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/dia.mo
 share/locale/sr/LC_MESSAGES/dia.mo
 share/locale/sr@Latn/
@@ -1889,6 +1901,6 @@ share/mime-info/dia.mime
 share/pixmaps/
 share/pixmaps/dia-diagram.png
 share/pixmaps/dia_gnome_icon.png
-%%SHARED%%
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+%%gnome%%
