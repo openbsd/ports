@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=xCHM
+Comment=Compiled HTML Help (CHM) file viewer
+Comment[fr]=Visionneuse de fichiers Compiled HTML Help (CHM)
+Exec=xchm %f
+TryExec=xchm
+Terminal=false
+Type=Application
+Icon=xchm-48
+Categories=Office;Viewer;GTK;
+MimeType=application/x-chm;
+
+[Desktop Action View]
+Exec=xchm %f
