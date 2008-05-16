@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu May 15 20:59:29 2008
++++ Makefile.in	Thu May 15 20:59:42 2008
+@@ -200,7 +200,7 @@
+ VERSION = @VERSION@
+ WHOAMI = @WHOAMI@
+ XMKMF = @XMKMF@
+-XMLTO = @XMLTO@
++XMLTO = @XMLTO@ --skip-validation
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
