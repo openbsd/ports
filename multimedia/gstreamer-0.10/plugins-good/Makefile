@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/05/13 15:11:51 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2008/05/16 14:24:01 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -17,7 +17,7 @@ COMMENT-shout =		multimedia framework - shoutcast plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$V
+PKGNAME-main =		gstreamer-plugins-good-$Vp0
 PKGNAME-aalib =		gstreamer-aalib-$V
 PKGNAME-cairo =		gstreamer-cairo-$V
 PKGNAME-gconf =		gstreamer-confelements-$V
@@ -145,6 +145,12 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-dv1394 \
 			--without-check \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gst-plugins \
-			--disable-schemas-install
+			--disable-schemas-install \
+			--enable-experimental \
+			--enable-gst_v4l2 \
+			--with-default-audiosink=osssink \
+			--with-default-audiosrc=osssrc \
+			--with-default-videosink=xvimagesink \
+			--with-default-videosrc=v4l2src
 
 .include <bsd.port.mk>

@@ -1,0 +1,18 @@
+$OpenBSD: patch-sys_v4l2_gstv4l2object_h,v 1.1 2008/05/16 14:24:01 ajacoutot Exp $
+--- sys/v4l2/gstv4l2object.h.orig	Wed May 14 12:29:12 2008
++++ sys/v4l2/gstv4l2object.h	Wed May 14 12:37:14 2008
+@@ -37,11 +37,13 @@
+  * errors here, check your linux/time.h && sys/time.h header setup.
+  */
+ #include <sys/types.h>
+-#ifndef __sun
++#if !defined __sun && !defined __OpenBSD__
+ #include <linux/types.h>
+ #define _LINUX_TIME_H
+ #define __user
+ #include <linux/videodev2.h>
++#elif defined __OpenBSD__
++#include <sys/videoio.h>
+ #else
+ #include <sys/videodev2.h>
+ #endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/05/13 15:11:51 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2008/05/16 14:24:01 ajacoutot Exp $
 lib/gstreamer-${VERSION}/libgstalaw.la
 lib/gstreamer-${VERSION}/libgstalaw.so
 lib/gstreamer-${VERSION}/libgstalpha.la
@@ -37,6 +37,8 @@ lib/gstreamer-${VERSION}/libgstlevel.la
 lib/gstreamer-${VERSION}/libgstlevel.so
 lib/gstreamer-${VERSION}/libgstmatroska.la
 lib/gstreamer-${VERSION}/libgstmatroska.so
+lib/gstreamer-${VERSION}/libgstmonoscope.la
+lib/gstreamer-${VERSION}/libgstmonoscope.so
 lib/gstreamer-${VERSION}/libgstmulaw.la
 lib/gstreamer-${VERSION}/libgstmulaw.so
 lib/gstreamer-${VERSION}/libgstmultifile.la
@@ -59,6 +61,8 @@ lib/gstreamer-${VERSION}/libgstspectrum.so
 @comment lib/gstreamer-${VERSION}/libgstsunaudio.so
 lib/gstreamer-${VERSION}/libgstudp.la
 lib/gstreamer-${VERSION}/libgstudp.so
+lib/gstreamer-${VERSION}/libgstvideo4linux2.la
+lib/gstreamer-${VERSION}/libgstvideo4linux2.so
 lib/gstreamer-${VERSION}/libgstvideobalance.la
 lib/gstreamer-${VERSION}/libgstvideobalance.so
 lib/gstreamer-${VERSION}/libgstvideobox.la
