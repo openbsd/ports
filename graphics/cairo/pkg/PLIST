@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/07/24 17:47:07 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/05/16 17:52:18 eric Exp $
 %%SHARED%%
 include/cairo/
 include/cairo/cairo-deprecated.h
@@ -48,6 +48,8 @@ share/gtk-doc/html/cairo/cairo-PNG-Support.html
 share/gtk-doc/html/cairo/cairo-Paths.html
 share/gtk-doc/html/cairo/cairo-Patterns.html
 share/gtk-doc/html/cairo/cairo-PostScript-Surfaces.html
+share/gtk-doc/html/cairo/cairo-Quartz-Fonts.html
+share/gtk-doc/html/cairo/cairo-Quartz-Surfaces.html
 share/gtk-doc/html/cairo/cairo-SVG-Surfaces.html
 share/gtk-doc/html/cairo/cairo-Scaled-Fonts.html
 share/gtk-doc/html/cairo/cairo-Text.html
@@ -66,13 +68,12 @@ share/gtk-doc/html/cairo/cairo.devhelp2
 share/gtk-doc/html/cairo/home.png
 share/gtk-doc/html/cairo/index-1.2.html
 share/gtk-doc/html/cairo/index-1.4.html
+share/gtk-doc/html/cairo/index-1.6.html
 share/gtk-doc/html/cairo/index.html
 share/gtk-doc/html/cairo/index.sgml
 share/gtk-doc/html/cairo/ix01.html
 share/gtk-doc/html/cairo/language-bindings.html
 share/gtk-doc/html/cairo/left.png
-share/gtk-doc/html/cairo/pt01.html
-share/gtk-doc/html/cairo/pt02.html
 share/gtk-doc/html/cairo/right.png
 share/gtk-doc/html/cairo/style.css
 share/gtk-doc/html/cairo/up.png
