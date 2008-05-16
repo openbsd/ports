@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zenmap,v 1.2 2008/05/15 18:30:14 okan Exp $
+@comment $OpenBSD: PLIST-zenmap,v 1.3 2008/05/16 20:50:56 wcmaier Exp $
 bin/nmapfe
 bin/xnmap
 bin/zenmap
@@ -41,7 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/higwidgets/higwindows.py
 lib/python${MODPY_VERSION}/site-packages/higwidgets/higwindows.pyc
 lib/python${MODPY_VERSION}/site-packages/higwidgets/utils.py
 lib/python${MODPY_VERSION}/site-packages/higwidgets/utils.pyc
-lib/python${MODPY_VERSION}/site-packages/zenmap-${V}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/zenmap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/BasePaths.py
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/BasePaths.pyc

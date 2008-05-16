@@ -1,11 +1,38 @@
-$OpenBSD: patch-zenmap_setup_py,v 1.1 2008/01/25 01:21:17 okan Exp $
---- zenmap/setup.py.orig	Tue Dec 18 15:22:37 2007
-+++ zenmap/setup.py	Tue Dec 18 15:22:57 2007
-@@ -85,7 +85,6 @@ class my_install(install):
+$OpenBSD: patch-zenmap_setup_py,v 1.2 2008/05/16 20:50:55 wcmaier Exp $
+--- zenmap/setup.py.orig	Tue Apr  8 14:14:54 2008
++++ zenmap/setup.py	Fri May 16 09:30:42 2008
+@@ -80,12 +80,11 @@ os.path.walk(locale_dir, mo_find, data_files)
+ 
+ class my_install(install):
+     def run(self):
++        self.fix_paths()
+         install.run(self)
+ 
          self.set_perms()
          self.set_modules_path()
-         self.fix_paths()
+-        self.fix_paths()
 -        self.create_uninstaller()
  
      def create_uninstaller(self):
          uninstaller_filename = os.path.join(self.install_scripts, "uninstall_" + APP_NAME)
+@@ -178,17 +177,10 @@ print
+                              "PIXMAPS_DIR": os.path.join(self.prefix, pixmaps_dir),
+                              "ICONS_DIR": os.path.join(self.prefix, icons_dir)}
+ 
+-        # Find and read the Paths.py file.
+-        pcontent = ""
+         paths_file = os.path.join("zenmapCore", "Paths.py")
+-        installed_files = self.get_outputs()
+-        for f in installed_files:
+-            if re.findall("(%s)" % re.escape(paths_file), f):
+-                paths_file = f
+-                pf = open(paths_file)
+-                pcontent = pf.read()
+-                pf.close()
+-                break
++        pf = open(paths_file)
++        pcontent = pf.read()
++        pf.close()
+ 
+         # Replace the path definitions.
+         for path, replacement in interesting_paths.items():

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.76 2008/05/15 18:30:14 okan Exp $
+# $OpenBSD: Makefile,v 1.77 2008/05/16 20:50:55 wcmaier Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-V=		4.62
-DISTNAME=	nmap-$V
-PKGNAME-main=	${DISTNAME}
-PKGNAME-zenmap=	nmap-zenmap-$V
+MODPY_EGG_VERSION=	4.62
+DISTNAME=		nmap-${MODPY_EGG_VERSION}
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}p0
 
 CATEGORIES=	net security
 MASTER_SITES=	http://download.insecure.org/nmap/dist/
@@ -25,8 +25,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=	-main -zenmap
 
 WANTLIB-main=	c crypto m pcap ssl stdc++ 
-
-SUBST_VARS=	V
 
 USE_GMAKE=	yes
 MODULES=	lang/python
@@ -61,9 +59,5 @@ NO_REGRESS=	Yes
 
 post-extract:
 	@cd ${WRKSRC} && rm -rf libpcap/ libdnet-stripped/ liblua/ libpcre/
-
-post-install:
-	cd ${WRKINST}${MODPY_SITEPKG} && \
-		${MODPY_BIN} -c 'import zenmapCore.Paths'
 
 .include <bsd.port.mk>
