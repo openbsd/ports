@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.22 2008/04/10 08:03:55 form Exp $
+# $OpenBSD: OpenBSD,v 1.23 2008/05/16 20:49:18 ckuethe Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -79,11 +79,11 @@
 53.317		9.817		"bernd"		# Bernd Ahlers
 53.36		10.02		"moritz"	# Moritz Jodeit
 53.5021		-113.484	"weingart"	# Tobias Weingartner
-53.538		-113.500	"ckuethe"	# Chris Kuethe
+37.3706		-122.0138	"ckuethe"	# Chris Kuethe
 53.56		-113.51		"beck"		# Bob Beck
 53.562888	9.961555	"henning"	# Henning Brauer
 53.59		10.05		"simon"		# Simon Bertrang
-54.869288       83.08799        "form"          # Oleg Safiullin
+54.869288       83.08799	"form"		# Oleg Safiullin
 55.16		23.88		"martynas"	# Martynas Venckus
 55.599		-2.4324		"jmc"		# Jason McIntyre
 55.8589		13.0837		"wilfried"	# Peter Stromberg
@@ -91,7 +91,7 @@
 57.717		11.967		"niklas"	# Niklas Hallqvist
 59.33		18.08		"art"		# Artur Grabowski
 59.43		17.81		"maja"		# Mats O Jansson
-59.838977       30.49680        "mikeb"         # Mike Belopuhov
+59.838977       30.49680	"mikeb"		# Mike Belopuhov
 
 #-27.48         153.20          "d"             # David Leonard
 #-33.536466     151.093514      "dons"          # Don Stewart
