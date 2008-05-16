@@ -1,0 +1,6 @@
+MimeTeX lets you easily embed LaTeX math in your html pages. It parses
+a LaTeX math expression and immediately emits the corresponding gif
+image, rather than the usual TeX dvi. And mimeTeX is an entirely
+separate little program that doesn't use TeX or its fonts in any way.
+It's just one cgi that will be installed in your site's cgi-bin/ directory,
+with no other dependencies. 
