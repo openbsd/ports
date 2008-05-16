@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.62 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2008/05/16 21:06:02 sthen Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-VERSION=	2.6
+VERSION=	2.8
 HELP_DATE=	20050315
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
 WANTLIB=	c crypto m ncurses ssl
 
 DESTDIRNAME=	IP
@@ -31,6 +30,8 @@ CONFIGURE_ARGS=	--without-perl \
 INSTALL_TARGET=	install installhelp
 
 NO_REGRESS=	Yes
+
+SUBST_VARS=	VERSION
 
 post-extract:
 	@mv -f ${WRKDIR}/help ${WRKSRC}
