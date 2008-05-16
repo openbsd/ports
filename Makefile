@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2007/09/23 18:14:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.57 2008/05/16 18:31:11 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -103,11 +103,23 @@ search:	${.CURDIR}/INDEX
 .  endif
 .endif
 
+LOCKDIR ?=
 
 mirror-maker:
 	@mkdir -p ${MIRROR_MK:H}
 # Indirection needed for broken OSes that don't grok this exec
-	@echo "EXEC=exec" >${MIRROR_MK}
+	@echo "EXEC = exec" >${MIRROR_MK}
+.if !empty(LOCKDIR)
+	@echo 'LOCKDIR = ${LOCKDIR}' >>${MIRROR_MK}
+	@echo 'PORTSDIR = ${PORTSDIR}' >>${MIRROR_MK}
+	@echo 'LOCK_CMD = perl $${PORTSDIR}/infrastructure/build/dolock' >>${MIRROR_MK}
+	@echo 'UNLOCK_CMD = rm -f' >>${MIRROR_MK}
+	@echo 'SIMPLE_LOCK = $${LOCK_CMD} $${LOCKDIR}/$$$$lock.lock; trap "$${UNLOCK_CMD} $$$$lock.lock" 0 1 2 3 13 15' >>${MIRROR_MK}
+.else
+	@echo 'SIMPLE_LOCK = :' >>${MIRROR_MK}
+.endif
+
+	@echo '' >>${MIRROR_MK}
 	@echo "default:: ftp cdrom" >>${MIRROR_MK}
 	@echo ".PHONY: default all ftp cdrom" >>${MIRROR_MK}
 	@_DONE_FILES=`mktemp /tmp/depends.XXXXXXXXX|| exit 1`; \
@@ -126,7 +138,7 @@ distfiles-update-locatedb:
 	@PORTSDIR=${.CURDIR} /bin/sh ${.CURDIR}/infrastructure/fetch/distfiles-update-locatedb ${DISTFILES_DB}
 
 pkglocatedb:
-	@pkg_mklocatedb ${.CURDIR}/packages/${MACHINE_ARCH}/all/* \
+	@pkg_mklocatedb -d ${.CURDIR}/packages/${MACHINE_ARCH}/all/ \
 	    >${.CURDIR}/packages/${MACHINE_ARCH}/ftp/pkglocatedb
 
 .PHONY: mirror-maker index search distfiles-update-locatedb \
