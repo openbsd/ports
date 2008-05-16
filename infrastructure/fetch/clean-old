@@ -3,7 +3,7 @@
 # This script actually produces another shell-script that you may edit
 # before executing.
 
-# $OpenBSD: clean-old,v 1.4 2008/05/15 10:12:28 espie Exp $
+# $OpenBSD: clean-old,v 1.5 2008/05/16 17:06:54 espie Exp $
 #
 # Copyright (c) 2000 Marc Espie.
 # 
@@ -43,7 +43,7 @@ if cd 2>/dev/null $PORTSDIR/mystuff
 then
     find . -type f -name Makefile|while read i
     	do
-		if fgrep -i bsd.port.mk $i
+		if fgrep -q bsd.port.mk $i
 		then
 			( cd `dirname $i` 
 			${MAKE} show=MAKESUMFILES ECHO_MSG=:  || true
