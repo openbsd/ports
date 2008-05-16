@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/24 21:31:00 todd Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/16 16:38:36 sthen Exp $
 
 COMMENT=	virus/spam scanning framework
 
-V=		4.68
-Vs=		8
+V=		4.69
+Vs=		9
 Vss=		${Vs}-1
 CATEGORIES=	mail
 MASTER_SITES=	http://mailscanner.info/files/4/tar/
@@ -29,9 +29,10 @@ RUN_DEPENDS+=	::databases/p5-DBI \
 		::archivers/unzip \
 		::archivers/lha \
 		::archivers/zoo \
-		::net/wget
+		::net/wget \
+		::devel/p5-OLE-Storage_Lite
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes

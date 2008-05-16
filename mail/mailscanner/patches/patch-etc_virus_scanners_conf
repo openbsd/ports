@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_virus_scanners_conf,v 1.2 2008/04/24 21:31:00 todd Exp $
---- etc/virus.scanners.conf.orig	Wed Mar 12 18:56:22 2008
-+++ etc/virus.scanners.conf	Fri Apr  4 01:24:36 2008
-@@ -11,42 +11,42 @@
+$OpenBSD: patch-etc_virus_scanners_conf,v 1.3 2008/05/16 16:38:36 sthen Exp $
+--- etc/virus.scanners.conf.orig	Sun May  4 10:29:47 2008
++++ etc/virus.scanners.conf	Mon May  5 00:56:14 2008
+@@ -11,43 +11,43 @@
  # should see some sensible output. If it fails, you will probably just see
  # an error message such as "Command not found" or similar.
  #
@@ -67,6 +67,7 @@ $OpenBSD: patch-etc_virus_scanners_conf,v 1.2 2008/04/24 21:31:00 todd Exp $
 -sophossavi	/bin/false				/tmp
 -symscanengine	/opt/MailScanner/lib/symscanengine-wrapper /opt/SYMCScan
 -trend		/opt/MailScanner/lib/trend-wrapper	/pack/trend
+-vba32		/opt/MailScanner/lib/vba32-wrapper	/opt/vba/vbacl
 -vexira		/opt/MailScanner/lib/vexira-wrapper	/usr/local/vexira
 +#nod32-1.99	%PREFIX%/libexec/MailScanner/nod32-wrapper	/usr/local/nod32
 +nod32-1.99	%PREFIX%/libexec/MailScanner/nod32-wrapper	/usr/sbin
@@ -79,4 +80,5 @@ $OpenBSD: patch-etc_virus_scanners_conf,v 1.2 2008/04/24 21:31:00 todd Exp $
 +sophossavi	/bin/false					/tmp
 +symscanengine	%PREFIX%/libexec/MailScanner/symscanengine-wrapper /opt/SYMCScan
 +trend		%PREFIX%/libexec/MailScanner/trend-wrapper	/pack/trend
++vba32		%PREFIX%/libexec/MailScanner/vba32-wrapper	/opt/vba/vbacl
 +vexira		%PREFIX%/libexec/MailScanner/vexira-wrapper	/usr/local/vexira

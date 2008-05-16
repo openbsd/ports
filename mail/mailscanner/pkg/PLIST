@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/24 21:31:00 todd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/05/16 16:38:36 sthen Exp $
 bin/MailScanner
 bin/analyse_SpamAssassin_cache
 bin/check_mailscanner
@@ -168,6 +168,10 @@ share/examples/MailScanner/libexec/trend-autoupdate.sample
 @sample libexec/MailScanner/trend-autoupdate
 share/examples/MailScanner/libexec/trend-wrapper.sample
 @sample libexec/MailScanner/trend-wrapper
+share/examples/MailScanner/libexec/vba32-autoupdate.sample
+@sample libexec/MailScanner/vba32-autoupdate
+share/examples/MailScanner/libexec/vba32-wrapper.sample
+@sample libexec/MailScanner/vba32-wrapper
 share/examples/MailScanner/libexec/vexira-autoupdate.sample
 @sample libexec/MailScanner/vexira-autoupdate
 share/examples/MailScanner/libexec/vexira-wrapper.sample
@@ -1044,7 +1048,7 @@ share/examples/MailScanner/rules/max.message.size.rules
 share/examples/MailScanner/rules/spam.whitelist.rules
 @sample ${SYSCONFDIR}/MailScanner/rules/spam.whitelist.rules
 share/examples/MailScanner/spam.assassin.prefs.conf
-@sample ${SYSCONFDIR}/MailScanner/spam.assasin.prefs.conf
+@sample ${SYSCONFDIR}/MailScanner/spam.assassin.prefs.conf
 share/examples/MailScanner/spam.lists.conf
 @sample ${SYSCONFDIR}/MailScanner/spam.lists.conf
 share/examples/MailScanner/virus.scanners.conf
