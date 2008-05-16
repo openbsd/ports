@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2008/05/11 18:12:40 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.70 2008/05/16 05:54:09 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	videolan client; multimedia player
 
 V=		0.8.6f
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -275,5 +275,10 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/mozilla/libvlcplugin.so \
 		${PREFIX}/lib/mozilla-plugins
 .endif
+.for _img in 16x16 32x32 48x48 128x128
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${_img}/apps
+	${INSTALL_DATA} ${WRKBUILD}/share/vlc${_img}.png \
+		${PREFIX}/share/icons/hicolor/${_img}/apps/vlc.png
+.endfor
 
 .include <bsd.port.mk>

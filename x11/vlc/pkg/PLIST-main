@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/12/11 11:07:54 jakemsr Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/05/16 05:54:09 bernd Exp $
 @pkgpath x11/vlc
 %%altivec%%
 %%win32%%
@@ -231,13 +231,16 @@ lib/vlc/video_output/libimage_plugin.so
 lib/vlc/video_output/libvout_sdl_plugin.so
 lib/vlc/video_output/libx11_plugin.so
 lib/vlc/visualization/
-share/applications/
 share/applications/vlc.desktop
 share/doc/vlc/
 share/doc/vlc/bugreport-howto.txt
 share/doc/vlc/fortunes.txt
 share/doc/vlc/intf-cdda.txt
 share/doc/vlc/intf-vcd.txt
+share/icons/hicolor/128x128/apps/vlc.png
+share/icons/hicolor/16x16/apps/vlc.png
+share/icons/hicolor/32x32/apps/vlc.png
+share/icons/hicolor/48x48/apps/vlc.png
 share/locale/af/LC_MESSAGES/vlc.mo
 share/locale/ar/LC_MESSAGES/vlc.mo
 share/locale/ca/LC_MESSAGES/vlc.mo
@@ -463,3 +466,5 @@ share/vlc/vlc48x48.ico
 share/vlc/vlc48x48.png
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
