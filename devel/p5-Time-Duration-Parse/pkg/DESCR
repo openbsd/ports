@@ -1,0 +1,2 @@
+Time::Duration::Parse is a module to parse human readable duration
+strings like "2 minutes and 3 seconds" to seconds.
