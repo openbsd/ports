@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/17 18:21:53 simon Exp $
 
 COMMENT= 	I18N for Catalyst
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-I18N-0.05
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Catalyst-Plugin-I18N-0.07
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -19,6 +18,7 @@ RUN_DEPENDS=	::devel/p5-Locale-Maketext-Lexicon \
 		::devel/p5-Locale-Maketext-Simple \
 		::devel/p5-I18N-LangTags \
 		::www/p5-Catalyst-Runtime
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes
 
