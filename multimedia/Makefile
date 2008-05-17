@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2008/05/11 22:20:08 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.28 2008/05/17 17:19:58 jasper Exp $
 
      SUBDIR += avidemux
      SUBDIR += devede
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
      SUBDIR += dvdcpy
+     SUBDIR += dvdstyler
      SUBDIR += ffmpeg2theora
      SUBDIR += gstreamer-0.10
      SUBDIR += k3b
@@ -18,6 +19,7 @@
      SUBDIR += mjpegtools
      SUBDIR += mjpegtools,quicktime
      SUBDIR += mkvtoolnix
+     SUBDIR += mpgtx
      SUBDIR += oggconvert
      SUBDIR += ogmtools
      SUBDIR += pspvc
