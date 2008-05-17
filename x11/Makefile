@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.334 2008/05/10 08:36:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.335 2008/05/17 17:12:51 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -247,6 +247,7 @@
      SUBDIR += wmweather
      SUBDIR += wmx
      SUBDIR += wterm
+     SUBDIR += wxSVG
      SUBDIR += wxWidgets
      SUBDIR += x11vnc
      SUBDIR += x2vnc
