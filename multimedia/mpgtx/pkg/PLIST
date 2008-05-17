@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/17 17:08:17 jasper Exp $
+bin/mpgcat
+bin/mpgdemux
+bin/mpginfo
+bin/mpgjoin
+bin/mpgsplit
+bin/mpgtx
+bin/tagmp3
+man/de/
+man/de/man1/
+@man man/de/man1/mpgcat.1
+@man man/de/man1/mpgdemux.1
+@man man/de/man1/mpginfo.1
+@man man/de/man1/mpgjoin.1
+@man man/de/man1/mpgsplit.1
+@man man/de/man1/mpgtx.1
+@man man/de/man1/tagmp3.1
+@man man/man1/mpgcat.1
+@man man/man1/mpgdemux.1
+@man man/man1/mpginfo.1
+@man man/man1/mpgjoin.1
+@man man/man1/mpgsplit.1
+@man man/man1/mpgtx.1
+@man man/man1/tagmp3.1

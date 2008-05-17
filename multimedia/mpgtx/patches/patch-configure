@@ -1,0 +1,40 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/05/17 17:08:17 jasper Exp $
+--- configure.orig	Sun Jan  2 22:19:23 2005
++++ configure	Thu May 15 22:24:51 2008
+@@ -9,7 +9,7 @@
+ prefix="/usr/local"
+ manprefix='$(PREFIX)'
+ #compiler flags
+-CC="g++"
++#CC?="g++"
+ common_cflags="-Wall"
+ devel_cflags="-g -Werror -fno-builtin"
+ optimization_cflags="-O3"
+@@ -29,7 +29,7 @@ static="no"
+ LFS="yes"
+ 
+ # cp flags
+-cpflags="d"
++cpflags="R"
+ 
+ # some stuff for MacOSX -----------------------------
+ HOSTNAME=`./config.guess`
+@@ -245,14 +245,14 @@ echo "manprefix=$manprefix" >> $makefilename
+ echo "cpflags=$cpflags" >> $makefilename
+ 
+ cat << EOF >>$makefilename
+-INSTALLDIR=\$(PREFIX)/bin
+-MANDIR=\$(manprefix)/man/man1
+-MANDIRDE=\$(manprefix)/man/de/man1
++INSTALLDIR=\$(DESTDIR)\$(PREFIX)/bin
++MANDIR=\$(DESTDIR)\$(manprefix)/man/man1
++MANDIRDE=\$(DESTDIR)\$(manprefix)/man/de/man1
+ # Compilation and linker flags
+ 
+ EOF
+ 
+-echo "CFLAGS=$cflags" >> $makefilename
++echo "CFLAGS+=$cflags" >> $makefilename
+ echo "LFLAGS=$lflags" >> $makefilename
+ 
+ cat << EOF >>$makefilename
