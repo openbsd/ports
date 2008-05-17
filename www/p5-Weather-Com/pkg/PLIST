@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 16:21:34 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/17 13:44:45 simon Exp $
 ${P5SITE}/Weather/
 ${P5SITE}/Weather/Com/
-${P5SITE}/Weather/Com.pod
+${P5SITE}/Weather/Com.pm
 ${P5SITE}/Weather/Com/AirPressure.pm
 ${P5SITE}/Weather/Com/Base.pm
 ${P5SITE}/Weather/Com/Cached.pm
