@@ -1,3 +1,2 @@
-mpgtx was designed with the good old Unix philosophy in mind: do few but
-do it well and provide end user an austary yet powerfull command line
-interface.
+mpgtx a command line MPEG audio/video/system file toolbox, that slices
+and joins audio and video files, including MPEG1, MPEG2 and MP3.
