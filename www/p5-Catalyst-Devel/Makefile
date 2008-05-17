@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/05/17 13:18:32 simon Exp $
 
 COMMENT= 	Catalyst development tools
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Devel-1.02
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Catalyst-Devel-1.06
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
@@ -17,12 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Catalyst-Manual \
-		::devel/p5-Class-Accessor \
+RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-File-Copy-Recursive \
 		::devel/p5-Module-Install \
 		::devel/p5-Path-Class \
 		::devel/p5-YAML \
+		::devel/p5-parent \
 		::textproc/p5-Template \
 		::www/p5-Catalyst-Action-RenderView \
 		::www/p5-Catalyst-Plugin-ConfigLoader \
