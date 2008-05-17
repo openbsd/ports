@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libjasper_bmp_bmp_dec_c,v 1.1 2008/05/17 09:32:16 espie Exp $
+--- src/libjasper/bmp/bmp_dec.c.orig	Fri May 16 21:00:25 2008
++++ src/libjasper/bmp/bmp_dec.c	Fri May 16 21:27:14 2008
+@@ -283,7 +283,7 @@ static bmp_info_t *bmp_getinfo(jas_stream_t *in)
+ 	}
+ 
+ 	if (info->numcolors > 0) {
+-		if (!(info->palents = jas_malloc(info->numcolors *
++		if (!(info->palents = jas_alloc2(info->numcolors,
+ 		  sizeof(bmp_palent_t)))) {
+ 			bmp_info_destroy(info);
+ 			return 0;

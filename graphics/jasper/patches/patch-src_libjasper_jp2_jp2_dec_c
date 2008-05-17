@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libjasper_jp2_jp2_dec_c,v 1.1.1.1 2004/05/14 05:33:57 brad Exp $
---- src/libjasper/jp2/jp2_dec.c.orig	2004-02-08 20:34:40.000000000 -0500
-+++ src/libjasper/jp2/jp2_dec.c	2004-04-22 21:37:19.000000000 -0400
-@@ -293,7 +293,9 @@ jas_image_t *jp2_decode(jas_stream_t *in
+$OpenBSD: patch-src_libjasper_jp2_jp2_dec_c,v 1.2 2008/05/17 09:32:16 espie Exp $
+--- src/libjasper/jp2/jp2_dec.c.orig	Fri Jan 19 22:43:05 2007
++++ src/libjasper/jp2/jp2_dec.c	Fri May 16 21:27:34 2008
+@@ -293,7 +293,9 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
  		  dec->colr->data.colr.iccplen);
  		assert(iccprof);
  		jas_iccprof_gethdr(iccprof, &icchdr);
@@ -12,3 +12,21 @@ $OpenBSD: patch-src_libjasper_jp2_jp2_dec_c,v 1.1.1.1 2004/05/14 05:33:57 brad E
  		jas_image_setclrspc(dec->image, fromiccpcs(icchdr.colorspc));
  		dec->image->cmprof_ = jas_cmprof_createfromiccprof(iccprof);
  		assert(dec->image->cmprof_);
+@@ -336,7 +338,7 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
+ 	}
+ 
+ 	/* Allocate space for the channel-number to component-number LUT. */
+-	if (!(dec->chantocmptlut = jas_malloc(dec->numchans * sizeof(uint_fast16_t)))) {
++	if (!(dec->chantocmptlut = jas_alloc2(dec->numchans, sizeof(uint_fast16_t)))) {
+ 		jas_eprintf("error: no memory\n");
+ 		goto error;
+ 	}
+@@ -354,7 +356,7 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
+ 			if (cmapent->map == JP2_CMAP_DIRECT) {
+ 				dec->chantocmptlut[channo] = channo;
+ 			} else if (cmapent->map == JP2_CMAP_PALETTE) {
+-				lutents = jas_malloc(pclrd->numlutents * sizeof(int_fast32_t));
++				lutents = jas_alloc2(pclrd->numlutents, sizeof(int_fast32_t));
+ 				for (i = 0; i < pclrd->numlutents; ++i) {
+ 					lutents[i] = pclrd->lutdata[cmapent->pcol + i * pclrd->numchans];
+ 				}

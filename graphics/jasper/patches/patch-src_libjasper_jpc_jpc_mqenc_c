@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libjasper_jpc_jpc_mqenc_c,v 1.1 2008/05/17 09:32:16 espie Exp $
+--- src/libjasper/jpc/jpc_mqenc.c.orig	Fri May 16 21:00:25 2008
++++ src/libjasper/jpc/jpc_mqenc.c	Fri May 16 21:00:52 2008
+@@ -197,7 +197,7 @@ jpc_mqenc_t *jpc_mqenc_create(int maxctxs, jas_stream_
+ 	mqenc->maxctxs = maxctxs;
+ 
+ 	/* Allocate memory for the per-context state information. */
+-	if (!(mqenc->ctxs = jas_malloc(mqenc->maxctxs * sizeof(jpc_mqstate_t *)))) {
++	if (!(mqenc->ctxs = jas_alloc2(mqenc->maxctxs, sizeof(jpc_mqstate_t *)))) {
+ 		goto error;
+ 	}
+ 

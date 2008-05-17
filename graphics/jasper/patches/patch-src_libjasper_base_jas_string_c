@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_libjasper_base_jas_string_c,v 1.1 2008/05/17 09:32:16 espie Exp $
+--- src/libjasper/base/jas_string.c.orig	Fri May 16 20:22:22 2008
++++ src/libjasper/base/jas_string.c	Fri May 16 20:23:02 2008
+@@ -88,9 +88,9 @@ char *jas_strdup(const char *s)
+ 	int n;
+ 	char *p;
+ 	n = strlen(s) + 1;
+-	if (!(p = jas_malloc(n * sizeof(char)))) {
++	if (!(p = jas_malloc(n))) {
+ 		return 0;
+ 	}
+-	strcpy(p, s);
++	strlcpy(p, s, n);
+ 	return p;
+ }
