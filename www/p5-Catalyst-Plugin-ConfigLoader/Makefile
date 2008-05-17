@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/05/17 13:22:11 simon Exp $
 
 COMMENT= 	catalyst plugin to Config::Any
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-ConfigLoader-0.14
+DISTNAME=	Catalyst-Plugin-ConfigLoader-0.19
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
