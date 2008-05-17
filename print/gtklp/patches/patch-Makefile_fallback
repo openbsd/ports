@@ -1,0 +1,64 @@
+$OpenBSD: patch-Makefile_fallback,v 1.1.1.1 2008/05/17 13:29:29 ajacoutot Exp $
+--- Makefile.fallback.orig	Fri May 16 17:50:48 2008
++++ Makefile.fallback	Fri May 16 17:52:53 2008
+@@ -1,21 +1,15 @@
+ # install paths
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ BINDIR=${PREFIX}/bin
+ MANDIR=${PREFIX}/man/man1
+ LOCALEDIR=${PREFIX}/share/locale
+ 
+ # config-pathes
+-GTK_CONFIG_PATH=gtk-config                                                                       
+-CUPS_CONFIG_PATH=cups-config                                                                     
++GTK_CONFIG_PATH=pkg-config gtk+-2.0
++CUPS_CONFIG_PATH=cups-config
+ 
+-# extra compiler options
+-CC=gcc
+-CCFLAGS=-Wall -g                                                                                      
+-#CFLAGS=
+-#EXTRA=                                               
+-
+ # pathes and languages for gettext
+-GMSGFMT = /usr/bin/msgfmt
++GMSGFMT = ${LOCALBASE}/bin/msgfmt
+ 
+ # some progs you should have installed...
+ STRIP=strip
+@@ -46,21 +40,21 @@ clean:
+ 	rm -f *.o gtklp/*.o gtklpq/*.o gtklp/gtklp gtklpq/gtklpq libgtklp/libgtklp.o libgtklp/libgtklp.a po/*.gmo config.h
+ 
+ install: all
+-	$(MKDIR) -p $(BINDIR)
+-	$(CP) gtklp/gtklp $(BINDIR)/gtklp
+-	$(CP) gtklpq/gtklpq $(BINDIR)/gtklpq
+-	$(MKDIR) -p $(MANDIR)
+-	$(CP) man/gtklp.1 $(MANDIR)/	
+-	$(CP) man/gtklpq.1 $(MANDIR)/
+-	$(CHMOD) 755 $(BINDIR)/gtklp
+-	$(CHMOD) 755 $(BINDIR)/gtklpq
+-	$(CHMOD) 644 $(MANDIR)/gtklp.1
+-	$(CHMOD) 644 $(MANDIR)/gtklpq.1
++	$(MKDIR) -p $(DESTDIR)$(BINDIR)
++	$(CP) gtklp/gtklp $(DESTDIR)$(BINDIR)/gtklp
++	$(CP) gtklpq/gtklpq $(DESTDIR)$(BINDIR)/gtklpq
++	$(MKDIR) -p $(DESTDIR)$(MANDIR)
++	$(CP) man/gtklp.1 $(DESTDIR)$(MANDIR)/	
++	$(CP) man/gtklpq.1 $(DESTDIR)$(MANDIR)/
++	$(CHMOD) 755 $(DESTDIR)$(BINDIR)/gtklp
++	$(CHMOD) 755 $(DESTDIR)$(BINDIR)/gtklpq
++	$(CHMOD) 644 $(DESTDIR)$(MANDIR)/gtklp.1
++	$(CHMOD) 644 $(DESTDIR)$(MANDIR)/gtklpq.1
+ 	for entry in po/*.gmo; do \
+ 		base=`basename $$entry | sed -e s/\.gmo//`; \
+-		$(MKDIR) -p $(LOCALEDIR)/$$base/LC_MESSAGES; \
+-		$(CP) $$entry $(LOCALEDIR)/$$base/LC_MESSAGES/gtklp.mo; \
+-		chmod 644 $(LOCALEDIR)/$$base/LC_MESSAGES/gtklp.mo ; \
++		$(MKDIR) -p $(DESTDIR)$(LOCALEDIR)/$$base/LC_MESSAGES; \
++		$(CP) $$entry $(DESTDIR)$(LOCALEDIR)/$$base/LC_MESSAGES/gtklp.mo; \
++		chmod 644 $(DESTDIR)$(LOCALEDIR)/$$base/LC_MESSAGES/gtklp.mo ; \
+ 	done	
+ 	
+ gtklp/gtklp: config.h gtklp/gtklp.o gtklp/file.o gtklp/general.o gtklp/gtklp_functions.o gtklp/gtklptab.o \

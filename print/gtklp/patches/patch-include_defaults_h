@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_defaults_h,v 1.1.1.1 2008/05/17 13:29:29 ajacoutot Exp $
+--- include/defaults.h.orig	Fri May 16 17:23:08 2008
++++ include/defaults.h	Fri May 16 17:23:34 2008
+@@ -40,6 +40,7 @@
+ #define INFRAME_SPACING_V 2
+ #define BUTTON_SPACING_H 10
+ #define BUTTON_SPACING_V 3
++#define MAX_PRT 150
+ #define MESSAGE_SIZE_H 300
+ #define MESSAGE_SIZE_V 100
+ #define MESSAGE_SPACING_H 10
