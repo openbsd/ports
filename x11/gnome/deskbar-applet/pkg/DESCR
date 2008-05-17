@@ -1,0 +1,7 @@
+The goal of DeskbarApplet is to provide an omnipresent versatile search
+interface. By typing search terms into the deskbar entry in your panel
+you are presented with the search results as you type.
+
+Seaches are handled by a series of plugins. DeskbarApplet provides a
+simple interface to manage these plugins to provide you with the search
+results that fit your needs.
