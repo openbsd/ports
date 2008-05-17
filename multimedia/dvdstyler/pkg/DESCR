@@ -1,0 +1,13 @@
+DVDStyler is a cross-platform DVD authoring application that makes
+possible for video enthusiasts to create professional-looking DVDs.
+The main DVDStyler features are:
+
+  * you can drag and drop MPEG files directly
+  * you can create NTSC/PAL menus
+  * you can import image file for background
+  * you can place text and images anywhere on the menu screen
+  * you can change font/color
+  * you can put buttons, change font and colors
+  * you can copy and paste any menu object
+  * you can set chapters for each movie
+  * you can change post command for each movie
