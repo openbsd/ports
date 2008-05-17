@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2008/05/17 17:10:40 jasper Exp $
+--- configure.in.orig	Tue Jan 15 13:59:31 2008
++++ configure.in	Thu May 15 23:32:24 2008
+@@ -3,7 +3,7 @@ dnl Process this file with autoconf to produce a confi
+ dnl initialization
+ AC_PREREQ(2.57)
+ AC_INIT([wxsvgtest], [1.0], [wx-svg-users@lists.sourceforge.net])
+-AM_INIT_AUTOMAKE
++AM_INIT_AUTOMAKE(wxsvg, 1.0b10)
+ AM_MAINTAINER_MODE
+ 
+ dnl options
