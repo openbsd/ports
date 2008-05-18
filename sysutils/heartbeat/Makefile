@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/21 23:36:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/18 15:53:54 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,7 @@ SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
 HOMEPAGE=	http://www.linux-ha.org
-MASTER_SITES=	http://hg.linux-ha.org/dev/archive/
+MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/
 MAINTAINER=     Sebastian Reitenbach <sebastia@l00-bugdead-prods.de>
 
 # GPL/LGPL
