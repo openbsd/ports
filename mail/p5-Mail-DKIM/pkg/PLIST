@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/03 17:00:40 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/18 20:47:31 jasper Exp $
 ${P5SITE}/Mail/DKIM/
 ${P5SITE}/Mail/DKIM.pm
 ${P5SITE}/Mail/DKIM/Algorithm/
@@ -37,7 +37,9 @@ ${P5SITE}/Mail/DKIM/Verifier.pm
 @man man/man3p/Mail::DKIM::DkSignature.3p
 @man man/man3p/Mail::DKIM::DkimPolicy.3p
 @man man/man3p/Mail::DKIM::Policy.3p
+@man man/man3p/Mail::DKIM::PrivateKey.3p
 @man man/man3p/Mail::DKIM::Signature.3p
 @man man/man3p/Mail::DKIM::Signer.3p
 @man man/man3p/Mail::DKIM::SignerPolicy.3p
+@man man/man3p/Mail::DKIM::TextWrap.3p
 @man man/man3p/Mail::DKIM::Verifier.3p
