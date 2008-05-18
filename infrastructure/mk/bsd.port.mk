@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.937 2008/05/15 10:09:29 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.938 2008/05/18 09:58:09 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1091,13 +1091,13 @@ CONFIGURE_SHARED ?= --enable-shared
 
 FETCH_MANUALLY ?= No
 .if ${FETCH_MANUALLY:L} != "no"
-_ALLFILES_PRESENT = Yes
-.  for _F in ${_ALLFILES:S@^@${FULLDISTDIR}/@}
-.    if !exists(${_F})
-_ALLFILES_PRESENT = No
+_MISSING_FILES = 
+.  for _F in ${CHECKSUMFILES}
+.    if !exists(${DISTDIR}/${_F})
+_MISSING_FILES += ${_F}
 .    endif
 .  endfor
-.  if ${_ALLFILES_PRESENT:L} == "no"
+.  if !empty(_MISSING_FILES)
 IS_INTERACTIVE = Yes
 .  endif
 .endif
@@ -2302,6 +2302,9 @@ _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}
 .for _F in ${_REALLY_ALLFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
 .  if ${FETCH_MANUALLY:L} != "no"
+.    if !empty(_MISSING_FILES)
+	@echo "*** You're missing files: ${_MISSING_FILES}"
+.    endif
 .    for _M in ${FETCH_MANUALLY}
 	@echo "*** ${_M}"
 .    endfor
