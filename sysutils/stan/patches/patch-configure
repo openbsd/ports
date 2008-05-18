@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/05/18 21:06:19 jasper Exp $
+--- configure.orig	Sun May 18 23:00:03 2008
++++ configure	Sun May 18 23:00:58 2008
+@@ -1095,7 +1095,7 @@ fi
+ 
+ if test "x$GCC" = "xyes" 
+ then
+-   CFLAGS="-Wall -O3"
++   CFLAGS=$CFLAGS
+ fi
+ 
+ echo $ac_n "checking for pow in -lm""... $ac_c" 1>&6

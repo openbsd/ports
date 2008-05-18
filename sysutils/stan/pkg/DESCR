@@ -1,0 +1,5 @@
+Stan is a console application that analyzes binary streams and
+calculates several useful statistical information from the observed
+data.  It features statistical, pattern and bit analysis. Stan has been
+designed as a "swiss-knife" for first steps in reverse engineering and
+cryptographic analysis.
