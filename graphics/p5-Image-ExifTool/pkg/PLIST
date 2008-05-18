@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/06/24 15:34:45 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/05/18 06:00:21 steven Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -13,6 +13,7 @@ ${P5SITE}/Image/ExifTool/APE.pm
 ${P5SITE}/Image/ExifTool/APP12.pm
 ${P5SITE}/Image/ExifTool/ASF.pm
 ${P5SITE}/Image/ExifTool/BMP.pm
+${P5SITE}/Image/ExifTool/BigTIFF.pm
 ${P5SITE}/Image/ExifTool/BuildTagLookup.pm
 ${P5SITE}/Image/ExifTool/Canon.pm
 ${P5SITE}/Image/ExifTool/CanonCustom.pm
@@ -37,6 +38,7 @@ ${P5SITE}/Image/ExifTool/HtmlDump.pm
 ${P5SITE}/Image/ExifTool/ICC_Profile.pm
 ${P5SITE}/Image/ExifTool/ID3.pm
 ${P5SITE}/Image/ExifTool/IPTC.pm
+${P5SITE}/Image/ExifTool/ITC.pm
 ${P5SITE}/Image/ExifTool/JPEG.pm
 ${P5SITE}/Image/ExifTool/JVC.pm
 ${P5SITE}/Image/ExifTool/Jpeg2000.pm
@@ -83,6 +85,7 @@ ${P5SITE}/Image/ExifTool/Vorbis.pm
 ${P5SITE}/Image/ExifTool/WriteCanonRaw.pl
 ${P5SITE}/Image/ExifTool/WriteExif.pl
 ${P5SITE}/Image/ExifTool/WriteIPTC.pl
+${P5SITE}/Image/ExifTool/WritePDF.pl
 ${P5SITE}/Image/ExifTool/WritePNG.pl
 ${P5SITE}/Image/ExifTool/WritePhotoshop.pl
 ${P5SITE}/Image/ExifTool/WritePostScript.pl
@@ -98,6 +101,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::APP12.3p
 @man man/man3p/Image::ExifTool::ASF.3p
 @man man/man3p/Image::ExifTool::BMP.3p
+@man man/man3p/Image::ExifTool::BigTIFF.3p
 @man man/man3p/Image::ExifTool::BuildTagLookup.3p
 @man man/man3p/Image::ExifTool::Canon.3p
 @man man/man3p/Image::ExifTool::CanonCustom.3p
@@ -122,6 +126,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::ICC_Profile.3p
 @man man/man3p/Image::ExifTool::ID3.3p
 @man man/man3p/Image::ExifTool::IPTC.3p
+@man man/man3p/Image::ExifTool::ITC.3p
 @man man/man3p/Image::ExifTool::JPEG.3p
 @man man/man3p/Image::ExifTool::JVC.3p
 @man man/man3p/Image::ExifTool::Jpeg2000.3p
@@ -167,6 +172,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::WriteCanonRaw.3p
 @man man/man3p/Image::ExifTool::WriteExif.3p
 @man man/man3p/Image::ExifTool::WriteIPTC.3p
+@man man/man3p/Image::ExifTool::WritePDF.3p
 @man man/man3p/Image::ExifTool::WritePNG.3p
 @man man/man3p/Image::ExifTool::WritePhotoshop.3p
 @man man/man3p/Image::ExifTool::WritePostScript.3p
