@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/16 13:51:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/18 09:17:34 ajacoutot Exp $
 bin/gpicview
 share/applications/gpicview.desktop
 share/gpicview/
@@ -21,3 +21,5 @@ share/locale/zh_CN/LC_MESSAGES/gpicview.mo
 share/locale/zh_TW/LC_MESSAGES/gpicview.mo
 share/pixmaps/
 share/pixmaps/gpicview.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
