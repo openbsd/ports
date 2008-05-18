@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.938 2008/05/18 09:58:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.939 2008/05/18 10:05:21 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -945,12 +945,10 @@ DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
 
 _EVERYTHING = ${DISTFILES}
 _DISTFILES = ${DISTFILES:C/:[0-9]$//}
-_ALLFILES = ${_DISTFILES}
 
 .if defined(PATCHFILES)
 _PATCHFILES = ${PATCHFILES:C/:[0-9]$//}
 _EVERYTHING += ${PATCHFILES}
-_ALLFILES += ${_PATCHFILES}
 .endif
 
 .if defined(SUPDISTFILES)
@@ -959,12 +957,11 @@ _EVERYTHING += ${SUPDISTFILES}
 
 __CKSUMFILES =
 # First, remove duplicates
-.for _file in ${_ALLFILES}
+.for _file in ${_DISTFILES} ${_PATCHFILES}
 .  if empty(__CKSUMFILES:M${_file})
 __CKSUMFILES += ${_file}
 .  endif
 .endfor
-_ALLFILES := ${__CKSUMFILES}
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if !empty(DIST_SUBDIR)
@@ -982,7 +979,6 @@ __MKSUMFILES += ${_file}
 .    endif
 .  endfor
 .endif
-_REALLY_ALLFILES := ${__MKSUMFILES}
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if !empty(DIST_SUBDIR)
@@ -1698,8 +1694,8 @@ _internal-fetch-all:
 	@cd ${.CURDIR} && exec ${MAKE} do-fetch __FETCH_ALL=Yes
 .else
 # What FETCH-ALL normally does:
-.  if !empty(_REALLY_ALLFILES)
-	@cd ${.CURDIR} && exec ${MAKE} ${_REALLY_ALLFILES:S@^@${FULLDISTDIR}/@}
+.  if !empty(MAKESUMFILES)
+	@cd ${.CURDIR} && exec ${MAKE} ${MAKESUMFILES:S@^@${DISTDIR}/@}
 .    endif
 # End of FETCH
 .endif
@@ -1769,8 +1765,8 @@ _internal-fetch:
 	@cd ${.CURDIR} && exec ${MAKE} do-fetch
 .  else
 # What FETCH normally does:
-.    if !empty(_ALLFILES)
-	@cd ${.CURDIR} && exec ${MAKE} ${_ALLFILES:S@^@${FULLDISTDIR}/@}
+.    if !empty(CHECKSUMFILES)
+	@cd ${.CURDIR} && exec ${MAKE} ${CHECKSUMFILES:S@^@${DISTDIR}/@}
 .    endif
 # End of FETCH
 .  endif
@@ -2299,7 +2295,7 @@ _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}
 
 # Separate target for each file fetch-all will retrieve
 
-.for _F in ${_REALLY_ALLFILES:S@^@${FULLDISTDIR}/@}
+.for _F in ${MAKESUMFILES:S@^@${DISTDIR}/@}
 ${_F}:
 .  if ${FETCH_MANUALLY:L} != "no"
 .    if !empty(_MISSING_FILES)
