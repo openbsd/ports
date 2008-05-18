@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/25 18:42:56 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/05/18 20:32:53 okan Exp $
 
 COMMENT=	limits the number of forked concurrent processes
 
-DISTNAME=	Proc-Queue-1.21
+DISTNAME=	Proc-Queue-1.23
 CATEGORIES=	sysutils
+MODULES=	cpan
 
-MAINTAINER=	Okan Demirmen <okan@demirmen.com>
+MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
-# GPL/Artistic
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MODULES=		cpan
 
 .include <bsd.port.mk>
