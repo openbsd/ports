@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2008/05/14 06:28:06 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.155 2008/05/18 21:09:13 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -104,6 +104,7 @@
      SUBDIR += smbldap-tools
      SUBDIR += socket
      SUBDIR += socklog
+     SUBDIR += stan
      SUBDIR += stow
      SUBDIR += stress
      SUBDIR += superscript
