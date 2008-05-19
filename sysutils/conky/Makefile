@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/28 18:28:56 okan Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/19 07:44:37 bernd Exp $
 
-# needs apmvar.h
+# we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
 ONLY_FOR_ARCHS= amd64 arm i386 macppc sparc
 
 COMMENT=	light-weight system monitor
