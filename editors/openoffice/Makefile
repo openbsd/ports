@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2008/05/05 15:18:29 robert Exp $
+# $OpenBSD: Makefile,v 1.73 2008/05/19 10:27:49 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,8 +9,8 @@ COMMENT-java=	optional integration of OpenOffice java features
 VERSION=	2.4.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOH680_m12
-PKGNAME=	openoffice-${VERSION}p0
-PKGNAME-main=	openoffice-${VERSION}p0
+PKGNAME=	openoffice-${VERSION}p1
+PKGNAME-main=	openoffice-${VERSION}p1
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
@@ -75,8 +75,7 @@ BUILD_DEPENDS=	:zip-*:archivers/zip \
 		::print/cups \
 		::devel/apache-ant \
 		:db-java-4.*:databases/db/v4,-java,java \
-		::devel/boost \
-		::textproc/icu4c
+		::devel/boost
 
 MODULES+=	lang/python
 LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
@@ -85,12 +84,13 @@ LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.
 		xslt.>=3::textproc/libxslt \
 		curl.>=7::net/curl \
 		neon.>=24::net/neon \
-		wpd.>=8::textproc/libwpd
+		wpd.>=8::textproc/libwpd \
+		icuuc.>=0::textproc/icu4c
 WANTLIB-main=	ICE SM X11 Xau Xcomposite Xdamage Xdmcp Xext Xrender Xcursor \
 		Xfixes Xi Xinerama Xrandr atk-1.0 c cairo crypto expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gthread-2.0 iconv intl jpeg m ossaudio pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread stdc++ ssl util xml2 z
+		gthread-2.0 iconv intl jpeg m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png pthread stdc++ ssl util xml2 z icui18n icule 
 RUN_DEPENDS-main=	::java/javaPathHelper \
 			:desktop-file-utils-*:devel/desktop-file-utils
 
