@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/19 09:57:43 fgsch Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
 DISTNAME=		libnotify-0.4.4
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		devel
 SHARED_LIBS +=	notify             2.2      # .2.2
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender Xcomposite Xdamage atk-1.0 c cairo expat pcre \
 		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
-		fontconfig freetype glib-2.0 pangoft2-1.0 png pthread z
+		fontconfig freetype glib-2.0 pangoft2-1.0 png pixman-1 \
+		pthread z
 
 MASTER_SITES=		${HOMEPAGE}/files/releases/source/libnotify/
 EXTRACT_SUFX=		.tar.bz2

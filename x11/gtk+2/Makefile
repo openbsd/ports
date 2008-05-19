@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2008/04/18 09:20:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2008/05/19 09:57:44 fgsch Exp $
 
 SHARED_ONLY=			Yes
 
@@ -8,7 +8,7 @@ COMMENT-cups=			gtk+2 CUPS print backend
 
 VERSION=			2.12.9
 DISTNAME=			gtk+-${VERSION}
-PKGNAME-main=			gtk+2-${VERSION}p1
+PKGNAME-main=			gtk+2-${VERSION}p2
 PKGNAME-docs=			gtk+2-docs-${VERSION}p0
 PKGNAME-cups=			gtk+2-cups-${VERSION}
 SHARED_LIBS +=	gdk_pixbuf-2.0       1200.9   # .1200.9
@@ -32,7 +32,7 @@ MULTI_PACKAGES=         	-main -docs -cups
 
 WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			Xfixes Xi Xinerama Xrandr Xrender cairo expat \
-			fontconfig freetype glitz m pcre z
+			fontconfig freetype glitz m pcre pixman-1 z
 
 MODULES=		devel/gettext
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2008/04/29 19:13:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2008/05/19 09:57:43 fgsch Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
 GNOME_VERSION=		2.22.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	wnck-1               22.0     # .25.7
 CATEGORIES=		devel
 
@@ -16,7 +17,7 @@ WANTLIB=	ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		expat fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre png z
+		pcre pixman-1 png z
 
 
 MODULES=		devel/gettext \

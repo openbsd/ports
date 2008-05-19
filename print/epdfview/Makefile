@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/05/02 11:55:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2008/05/19 09:57:44 fgsch Exp $
 
 COMMENT=	lightweight PDF document viewer
 
 DISTNAME=	epdfview-0.1.6
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	print
 HOMEPAGE=	http://trac.emma-soft.com/epdfview/
 
@@ -22,8 +22,8 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=	Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
 		Xrandr X11 Xext Xrender atk-1.0 c cairo fontconfig freetype \
                 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-                m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread \
-                stdc++ z expat
+                m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
+		pthread stdc++ z expat
 
 MODULES=	devel/gettext
 
