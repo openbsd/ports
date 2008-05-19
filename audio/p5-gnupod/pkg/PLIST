@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/19 20:21:42 okan Exp $
+bin/gnupod_INIT.pl
+bin/gnupod_addsong.pl
+bin/gnupod_check.pl
+bin/gnupod_convert_APE.pl
+bin/gnupod_convert_FLAC.pl
+bin/gnupod_convert_MIDI.pl
+bin/gnupod_convert_OGG.pl
+bin/gnupod_convert_RIFF.pl
+bin/gnupod_otgsync.pl
+bin/gnupod_search.pl
+bin/mktunes.pl
+bin/tunes2pod.pl
+@info info/gnupod.info
+${P5ARCH}/GNUpod/
+${P5ARCH}/GNUpod/ArtworkDB.pm
+${P5ARCH}/GNUpod/FileMagic.pm
+${P5ARCH}/GNUpod/FooBar.pm
+${P5ARCH}/GNUpod/Hash58.pm
+${P5ARCH}/GNUpod/Mktunes.pm
+${P5ARCH}/GNUpod/QTfile.pm
+${P5ARCH}/GNUpod/SysInfo.pm
+${P5ARCH}/GNUpod/XMLhelper.pm
+${P5ARCH}/GNUpod/iTunesDB.pm
+@man man/man1/gnupod_INIT.pl.1
+@man man/man1/gnupod_addsong.pl.1
+@man man/man1/gnupod_check.pl.1
+@man man/man1/gnupod_otgsync.pl.1
+@man man/man1/gnupod_search.pl.1
+@man man/man1/mktunes.pl.1
+@man man/man1/tunes2pod.pl.1
+share/examples/gnupod/
+share/examples/gnupod/gnupodrc

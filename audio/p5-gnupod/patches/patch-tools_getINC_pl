@@ -1,0 +1,6 @@
+$OpenBSD: patch-tools_getINC_pl,v 1.1.1.1 2008/05/19 20:21:42 okan Exp $
+--- tools/getINC.pl.orig	Sat May 17 16:58:11 2008
++++ tools/getINC.pl	Sat May 17 16:58:18 2008
+@@ -1 +1 @@
+-print $INC[0];
++print $INC[4];
