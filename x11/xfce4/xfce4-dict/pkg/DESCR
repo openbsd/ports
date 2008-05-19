@@ -1,3 +1,5 @@
 With xfce4-dict you can query a dictionary server (see RFC 2229) to search
 for the translation or explanation of a word. You can also choose a
 dictionary offered by the server to improve your search results.
+If used, the panel plugin provides a text field within the panel to
+directly enter text to search for.
