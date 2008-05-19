@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2008/04/17 10:25:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2008/05/19 03:20:13 fgsch Exp $
 
 COMMENT=	virtual sticky pad system
 
 DISTNAME=	xpad-2.14
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xpad/}
@@ -20,7 +20,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		expat fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		png z
+		pixman-1 png z
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
