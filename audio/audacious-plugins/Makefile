@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/04/02 00:39:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2008/05/19 15:22:49 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-arts=	arts helper and plugin for audacious
 
 V=		1.5.0
 DISTNAME=	audacious-plugins-$V
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-arts=	audacious-arts-$V
 
 CATEGORIES=	audio multimedia
@@ -24,9 +24,9 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv \
-		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 png stdc++ z
-WANTLIB-main=	${WANTLIB} dbus-1 dbus-glib-1 mowgli ogg samplerate ossaudio \
-		xml2
+		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
+		png stdc++ z
+WANTLIB-main=	${WANTLIB} dbus-1 dbus-glib-1 mowgli ogg samplerate ossaudio
 WANTLIB-arts=	${WANTLIB} c pthread
 
 MASTER_SITES=	http://distfiles.atheme.org/
@@ -37,7 +37,7 @@ MULTI_PACKAGES=	-main
 
 BUILD_DEPENDS=	${RUN_DEPENDS-main}
 
-RUN_DEPENDS-main=	:audacious->=1.4:audio/audacious
+RUN_DEPENDS-main=	:audacious->=1.5:audio/audacious
 RUN_DEPENDS-arts=	::audio/audacious-plugins,-main
 
 LIB_DEPENDS-main=	esd.>=2::audio/esound \
@@ -46,6 +46,7 @@ LIB_DEPENDS-main=	esd.>=2::audio/esound \
 			jack::audio/jack \
 			mp3lame::audio/lame \
 			mad::audio/libmad \
+			cddb,cdio,cdio_cdda::audio/libcdio \
 			mpcdec.>=2::audio/libmpcdec \
 			sndfile.>=2::audio/libsndfile \
 			vorbis.>=5,vorbisfile.>=4,vorbisenc::audio/libvorbis \
@@ -53,7 +54,8 @@ LIB_DEPENDS-main=	esd.>=2::audio/esound \
 			audiofile::devel/libaudiofile \
 			SDL.>=6::devel/sdl \
 			curl.>=5::net/curl \
-			neon.>=26::net/neon
+			neon.>=26::net/neon \
+			xml2::textproc/libxml
 LIB_DEPENDS-arts=	artsc.>=1::x11/kde/arts3
 
 USE_X11=	Yes
@@ -82,7 +84,6 @@ CONFIGURE_ARGS+=	--enable-ipv6 \
 			--disable-sid \
 			--disable-alsa \
 			--disable-amidiplug \
-			--disable-cdaudio \
 			--disable-mms \
 			--disable-mtp_up \
 			--disable-projectm \
