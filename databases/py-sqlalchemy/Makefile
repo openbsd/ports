@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/15 09:34:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2008/05/19 23:58:49 wcmaier Exp $
 
 COMMENT=		database toolkit for Python
 
-MODPY_EGG_VERSION=	0.4.5
+MODPY_EGG_VERSION=	0.4.6
 DISTNAME=		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME=		py-sqlalchemy-${MODPY_EGG_VERSION}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/15 09:34:31 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/05/19 23:58:49 wcmaier Exp $
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -249,6 +249,8 @@ share/examples/py-sqlalchemy/collections/
 share/examples/py-sqlalchemy/collections/large_collection.py
 share/examples/py-sqlalchemy/derived_attributes/
 share/examples/py-sqlalchemy/derived_attributes/attributes.py
+share/examples/py-sqlalchemy/dynamic_dict/
+share/examples/py-sqlalchemy/dynamic_dict/dynamic_dict.py
 share/examples/py-sqlalchemy/elementtree/
 share/examples/py-sqlalchemy/elementtree/adjacency_list.py
 share/examples/py-sqlalchemy/elementtree/optimized_al.py
