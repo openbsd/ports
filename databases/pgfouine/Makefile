@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.2 2008/05/19 12:42:02 ajacoutot Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 
-MASTER_SITES =	http://pgfoundry.org/frs/download.php/1334/
+MASTER_SITES =	http://pgfoundry.org/frs/download.php/1334/ \
+		http://pgfouine.projects.postgresql.org/releases/
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
