@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2008/05/19 18:42:56 simon Exp $
 
 COMMENT=		window manager theme utility
 
 DISTNAME=		wmtheme-1.3.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 
 
 HOMEPAGE=		http://wmtheme.sourceforge.net/
@@ -28,7 +29,7 @@ FAKE_FLAGS+=		prefix=${PREFIX}
 post-install:
 .for i in ${EXTRA_THEMES}
 	cd ${PREFIX}/bin; ln -sf wmtheme $i;
-	cd ${PREFIX}/man/man1; ln -sf wmtheme.1.gz $i.1.gz
+	cd ${PREFIX}/man/man1; ln -sf wmtheme.1 $i.1
 .endfor
 
 .include <bsd.port.mk>
