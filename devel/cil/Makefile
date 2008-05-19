@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2008/05/19 07:43:42 bernd Exp $
 
 # until tested on others, even though bytecode is produced
-ONLY_FOR_ARCHS=	i386 amd64 macppc
+ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 COMMENT=	framework for analysis and transformation of C
 
