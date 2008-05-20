@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.19 2007/11/14 10:53:50 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2008/05/20 14:01:45 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
-V=			5.2.5
+V=			5.2.6
 SUHOSIN_V=		0.9.20
 SUHOSIN_P_V=		0.9.6.2
 
@@ -18,7 +18,7 @@ MASTER_SITES=		http://us2.php.net/distributions/ \
 			http://se.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
-MASTER_SITES0=		http://www.hardened-php.net/suhosin/_media/
+MASTER_SITES0=		http://download.suhosin.org/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade

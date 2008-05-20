@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2008/03/30 11:59:56 robert Exp $
+# $OpenBSD: Makefile,v 1.43 2008/05/20 14:01:45 robert Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 COMMENT-main=		informational package about PHP5 extensions
@@ -272,7 +272,7 @@ CONFIGURE_ARGS+=	--without-pspell
 MULTI_PACKAGES+=	-pspell
 COMMENT-pspell=		pspell library extensions for php5
 CONFIGURE_ARGS+=	--with-pspell=shared,${LOCALBASE}
-LIB_DEPENDS-pspell=	aspell.>=16.0::textproc/aspell/core
+LIB_DEPENDS-pspell=	aspell.>=16.0,pspell.>=16.0::textproc/aspell/core
 .endif
 
 # shmop
@@ -307,7 +307,6 @@ MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		snmp protocol extensions for php5
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS-snmp=	netsnmp.>=6.2::net/net-snmp
-WANTLIB-snmp=		${WANTLIB} crypto
 .endif
 
 # sqlite
