@@ -1,6 +1,6 @@
-$OpenBSD: patch-alpine_Makefile_in,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
---- alpine/Makefile.in.orig	Tue Nov 20 14:03:52 2007
-+++ alpine/Makefile.in	Tue Nov 20 14:05:54 2007
+$OpenBSD: patch-alpine_Makefile_in,v 1.2 2008/05/20 07:17:16 ajacoutot Exp $
+--- alpine/Makefile.in.orig	Fri Jan 11 19:15:07 2008
++++ alpine/Makefile.in	Sun May 18 16:04:24 2008
 @@ -83,14 +83,14 @@ rpdump_LDADD = $(LDADD)
  rpdump_DEPENDENCIES = ../pico/libpico.a ../pico/osdep/libpicoosd.a \
  	../pith/libpith.a ../pith/osdep/libpithosd.a \
@@ -27,7 +27,7 @@ $OpenBSD: patch-alpine_Makefile_in,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
  AR = @AR@
  AUTOCONF = @AUTOCONF@
  AUTOHEADER = @AUTOHEADER@
-@@ -277,7 +277,7 @@ BUILT_SOURCES = date.c
+@@ -281,7 +281,7 @@ BUILT_SOURCES = date.c
  LDADD = ../pico/libpico.a ../pico/osdep/libpicoosd.a \
  	../pith/libpith.a ../pith/osdep/libpithosd.a  \
  	../pith/charconv/libpithcc.a \

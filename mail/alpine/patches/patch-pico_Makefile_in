@@ -1,7 +1,7 @@
-$OpenBSD: patch-pico_Makefile_in,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
---- pico/Makefile.in.orig	Tue Nov 20 14:09:31 2007
-+++ pico/Makefile.in	Tue Nov 20 14:10:29 2007
-@@ -255,7 +255,7 @@ pico_SOURCES = main.c utf8stub.c
+$OpenBSD: patch-pico_Makefile_in,v 1.2 2008/05/20 07:17:16 ajacoutot Exp $
+--- pico/Makefile.in.orig	Fri Jan 11 19:15:07 2008
++++ pico/Makefile.in	Sun May 18 16:04:24 2008
+@@ -259,7 +259,7 @@ pico_SOURCES = main.c utf8stub.c
  pilot_SOURCES = pilot.c utf8stub.c
  pico_LDADD = $(LDADD) $(INTLLIBS)
  pilot_LDADD = $(LDADD) $(INTLLIBS)
