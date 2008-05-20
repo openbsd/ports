@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2008/01/03 10:52:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2008/05/20 07:16:15 ajacoutot Exp $
 
 COMMENT-server=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=University of Washington IMAP4rev1/POP2/POP3 mail utility
 COMMENT-c-client=University of Washington's c-client mail access routines
 
-V=		2007
+V=		2007a1
 DISTNAME=	imap-${V}
 
 PKGNAME-server=	imap-uw-${V}
@@ -60,6 +60,8 @@ HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flockcyg.h \
 		mail.h misc.h netmsg.h newsrc.h nl.h nntp.h osdep.h pseudo.h \
 		rfc822.h smtp.h sslio.h tcp.h tcp_unix.h unix.h utf8.h \
 		utf8aux.h
+
+WRKDIST=	${WRKDIR}/imap-2007a
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
