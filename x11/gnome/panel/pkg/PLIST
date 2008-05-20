@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2008/04/17 08:46:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2008/05/20 11:08:14 jasper Exp $
 %%SHARED%%
 bin/gnome-desktop-item-edit
 bin/gnome-panel
@@ -23,7 +23,6 @@ libexec/fish-applet-2
 libexec/notification-area-applet
 libexec/wnck-applet
 @man man/man1/gnome-panel.1
-share/applications/
 share/applications/gnome-panel.desktop
 share/gnome/
 share/gnome-2.0/
