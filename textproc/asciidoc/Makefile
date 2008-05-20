@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/03 21:19:30 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/20 14:27:16 robert Exp $
 
 COMMENT=	A text document format for writing documents and man pages 
 
-DISTNAME=	asciidoc-8.2.5
+DISTNAME=	asciidoc-8.2.6
 CATEGORIES=	textproc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE} \
+		${MASTER_SITE_SOURCEFORGE:=asciidoc/}
 
 MODULES=	lang/python
 RUN_DEPENDS=	::misc/gnugetopt \
@@ -43,8 +44,6 @@ do-install:
 				${PREFIX}/share/examples/asciidoc/images/icons/callouts
 
 	${INSTALL_DATA} ${WRKSRC}/*.conf ${PREFIX}/share/examples/asciidoc
-	${INSTALL_DATA} ${WRKSRC}/filters/code-filter.conf \
-		${PREFIX}/share/examples/asciidoc/filters
 
 	${INSTALL_SCRIPT} ${WRKSRC}/filters/code-filter.py \
 				${WRKSRC}/filters/music2png.py \
