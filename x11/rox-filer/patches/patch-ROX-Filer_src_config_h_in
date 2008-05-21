@@ -1,7 +1,7 @@
-$OpenBSD: patch-ROX-Filer_src_config_h_in,v 1.1 2006/07/07 16:43:10 steven Exp $
---- ROX-Filer/src/config.h.in.orig	Wed Jul  5 17:17:52 2006
-+++ ROX-Filer/src/config.h.in	Wed Jul  5 17:18:25 2006
-@@ -54,7 +54,7 @@
+$OpenBSD: patch-ROX-Filer_src_config_h_in,v 1.2 2008/05/21 16:23:20 jasper Exp $
+--- ROX-Filer/src/config.h.in.orig	Sat May 17 16:40:24 2008
++++ ROX-Filer/src/config.h.in	Tue May 20 23:20:24 2008
+@@ -59,7 +59,7 @@
  
  /* printf format string to print file sizes */
  #ifdef LARGE_FILE_SUPPORT
