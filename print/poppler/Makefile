@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/04/19 07:52:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2008/05/21 11:52:49 jasper Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -7,7 +7,7 @@ COMMENT-qt4=	qt4 interface to PDF rendering library
 V=		0.6.2
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-PKGNAME-main=	poppler-$Vp0
+PKGNAME-main=	poppler-$Vp1
 FULLPKGNAME-qt=	poppler-qt-$Vp0
 FULLPKGNAME-qt4=poppler-qt4-$Vp1
 
