@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2008/05/05 15:18:29 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2008/05/21 06:36:58 bernd Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -2975,14 +2975,14 @@ share/applications/openoffice/draw.desktop
 share/applications/openoffice/impress.desktop
 share/applications/openoffice/math.desktop
 share/applications/openoffice/writer.desktop
-share/icons/openoffice/
-share/icons/openoffice/ooo-base.png
-share/icons/openoffice/ooo-calc.png
-share/icons/openoffice/ooo-draw.png
-share/icons/openoffice/ooo-impress.png
-share/icons/openoffice/ooo-math.png
-share/icons/openoffice/ooo-writer.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/openoffice 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/openoffice 2> /dev/null || true
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/ooo-base.png
+share/icons/hicolor/48x48/apps/ooo-calc.png
+share/icons/hicolor/48x48/apps/ooo-draw.png
+share/icons/hicolor/48x48/apps/ooo-impress.png
+share/icons/hicolor/48x48/apps/ooo-math.png
+share/icons/hicolor/48x48/apps/ooo-writer.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

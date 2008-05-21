@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2008/05/19 10:27:49 robert Exp $
+# $OpenBSD: Makefile,v 1.74 2008/05/21 06:36:58 bernd Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,8 +9,8 @@ COMMENT-java=	optional integration of OpenOffice java features
 VERSION=	2.4.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOH680_m12
-PKGNAME=	openoffice-${VERSION}p1
-PKGNAME-main=	openoffice-${VERSION}p1
+PKGNAME=	openoffice-${VERSION}p2
+PKGNAME-main=	openoffice-${VERSION}p2
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
@@ -32,7 +32,7 @@ MASTER_SITES=	http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/So
 MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 		http://humppa.hu/ooo/
 
-DISTFILES=	ooo-desktop.tar.gz:0
+DISTFILES=	ooo-desktop-0.1.tar.gz:0
 .for dfile in binfilter core l10n sdk system
 DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
 .endfor
@@ -197,7 +197,7 @@ do-install:
 				${PREFIX}/share/applications/openoffice; \
 		done && \
 		for ICONS in `ls -1 *.png`; do \
-			${INSTALL_DATA} $$ICONS ${PREFIX}/share/icons/openoffice; \
+			${INSTALL_DATA} $$ICONS ${PREFIX}/share/icons/hicolor/48x48/apps; \
 		done
 
 	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/en-US*/openbsd-* && \
