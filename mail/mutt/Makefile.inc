@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.26 2008/05/09 17:46:51 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2008/05/21 13:46:19 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -74,10 +74,10 @@ CONFIGURE_ARGS+=	--without-idn
 .endif
 
 .if ${FLAVOR:L:Msidebar}
-PATCHFILES+=		patch-1.5.17.sidebar.txt:1
+PATCHFILES+=		patch-${VERSION}.sidebar-b.txt:1
 PATCH_DIST_STRIP=	-p1
 .else
-SUPDISTFILES+=		patch-1.5.17.sidebar.txt:1
+SUPDISTFILES+=		patch-${VERSION}.sidebar-b.txt:1
 .endif
 
 .if defined(HOMESPOOL)
@@ -91,11 +91,12 @@ CONFIGURE_ARGS+=	--with-domain="${DOMAIN}"
 WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
 CONFDIR=	${SYSCONFDIR}/mutt
 SUBST_VARS=	CONFDIR
+MUTTRCDIR?=
 
 post-install:
 	@strip ${PREFIX}/bin/mutt
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mutt
-	${INSTALL_DATA} ${WRKSRC}/Muttrc \
+	${INSTALL_DATA} ${WRKSRC}/${MUTTRCDIR}Muttrc \
 		${PREFIX}/share/examples/mutt/Muttrc.sample
 	${INSTALL_DATA} ${WRKSRC}/mime.types \
 		${PREFIX}/share/examples/mutt/mime.types.sample

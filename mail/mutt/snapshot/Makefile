@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2008/05/09 17:46:51 bernd Exp $
+# $OpenBSD: Makefile,v 1.48 2008/05/21 13:46:19 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
-VERSION=	1.5.17
+VERSION=	1.5.18
 DISTNAME=	mutt-${VERSION}
-PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	${MASTER_SITES_MUTT:=devel/}
 
 WANTLIB=	z
@@ -22,5 +21,7 @@ LIB_DEPENDS=	qdbm.>=14::databases/qdbm
 CONFIGURE_ARGS+= --with-sasl=${LOCALBASE}
 LIB_DEPENDS+=	sasl2::security/cyrus-sasl2
 .endif
+
+MUTTRCDIR=	doc/
 
 .include <bsd.port.mk>
