@@ -1,59 +1,82 @@
-# $OpenBSD: Makefile,v 1.11 2008/04/17 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2008/05/21 22:13:35 bernd Exp $
 
-COMMENT=	document viewer for multiple document formats
+SHARED_ONLY=	Yes
 
-V=		2.20.2
-DISTNAME=	evince-$V
-PKGNAME=	${DISTNAME}p1
+COMMENT-main=	document viewer for multiple document formats
+COMMENT-djvu=	evince document viewer backend for djvu documents
+COMMENT-dvi=	evince document viewer backend for dvi documents
+
+V=		2.22.1.1
+DISTNAME=	evince-${V}
 CATEGORIES=	graphics print
+
+PKGNAME-main=	${DISTNAME}
+PKGNAME-djvu=	evince-djvu-${V}
+PKGNAME-dvi=	evince-dvi-${V}
+
+SHARED_LIBS=	evbackend	0.0 # .0.0
 
 HOMEPAGE=	http://www.gnome.org/projects/evince/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/evince/${V:C,\.[0-9]*$,,}/}
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/evince/${V:C,\.[0-9]\.[0-9]*$,,}/}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext textproc/intltool
 
-BUILD_DEPENDS=	:ghostscript-*:print/ghostscript/gnu \
-		:gnome-doc-utils-*:x11/gnome/doc-utils \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
-LIB_DEPENDS=	audiofile::devel/libaudiofile \
-		djvulibre::graphics/djvulibre \
-		esd.>=2::audio/esound \
-		gnome-keyring.>=2::x11/gnome/keyring \
-		gnomeprintui-2-2::x11/gnome/libgnomeprintui \
-		gnomeui-2.>=2000::x11/gnome/libgnomeui \
-		gnomevfs-2.>=2000::x11/gnome/vfs2 \
-		kpathsea::print/texlive/base \
-		poppler.>=3,poppler-glib.>=3::print/poppler
-RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu \
-		:scrollkeeper-*:textproc/scrollkeeper \
-		:shared-mime-info-*:misc/shared-mime-info
+BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils \
+		:ghostscript-*:print/ghostscript/gnu \
+		::x11/gnome/icon-theme
 
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
+MULTI_PACKAGES=	-main -djvu -dvi
+
+WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
-		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 expat \
-		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 \
-		gdk_pixbuf-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
-		gnome-2 gnomecanvas-2 gnomeprint-2-2 gobject-2.0 \
-		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre png popt pthread ssl tiff util xml2 z 
+		Xrender atk-1.0 audiofile bonobo-2 \
+		bonobo-activation cairo crypto dbus-1 dbus-glib-1 \
+		esd expat fontconfig freetype gconf-2 gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
+		gnome-2 gnomevfs-2 gobject-2.0 \
+		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre png popt ssl util xml2 z
+
+WANTLIB-main=		${WANTLIB} ICE SM art_lgpl_2 bonoboui-2 c gailutil \
+			glade-2.0 gnome-keyring gnomecanvas-2 jpeg pthread \
+			tiff
+LIB_DEPENDS-main=	gnomeui-2.>=2000::x11/gnome/libgnomeui \
+			poppler.>=3,poppler-glib.>=3::print/poppler \
+			${MODGETTEXT_LIB_DEPENDS}
+RUN_DEPENDS-main=	:scrollkeeper-*:textproc/scrollkeeper \
+			:shared-mime-info-*:misc/shared-mime-info \
+			:ghostscript-*:print/ghostscript/gnu \
+			::x11/gnome/icon-theme \
+			:devhelp-*:x11/gnome/devhelp \
+			:yelp-*:x11/gnome/yelp
+
+WANTLIB-djvu=		${WANTLIB} jpeg
+LIB_DEPENDS-djvu=	evbackend::${BASE_PKGPATH} \
+			djvulibre::graphics/djvulibre \
+			${MODGETTEXT_LIB_DEPENDS}
+
+WANTLIB-dvi=		${WANTLIB}
+LIB_DEPENDS-dvi=	evbackend::${BASE_PKGPATH} \
+			kpathsea::print/texlive/base \
+			${MODGETTEXT_LIB_DEPENDS}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-nautilus \
+CONFIGURE_ARGS=	--disable-comics \
+		--disable-impress \
+		--disable-nautilus \
 		--disable-schemas-install \
 		--disable-scrollkeeper \
 		--enable-djvu \
 		--enable-dvi \
 		--enable-pixbuf \
-		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evince/ \
-		--with-print=gtk
+		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evince/
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -62,7 +85,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
