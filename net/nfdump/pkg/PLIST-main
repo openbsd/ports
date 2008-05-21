@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/05/21 22:28:35 sthen Exp $
+bin/ft2nfdump
+bin/nfcapd
+bin/nfdump
+bin/nfexpire
+bin/nfreplay
+bin/sfcapd
+@man man/man1/ft2nfdump.1
+@man man/man1/nfcapd.1
+@man man/man1/nfdump.1
+@man man/man1/nfexpire.1
+@man man/man1/nfreplay.1
+@man man/man1/sfcapd.1
+share/doc/nfdump/
+share/doc/nfdump/COPYRIGHT
+share/doc/nfdump/README

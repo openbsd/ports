@@ -1,0 +1,4 @@
+nfprofile is a netflow profiler, which works with the nfdump tools.
+It reads the netflow data from the files stored by nfcapd, filters
+the netflow data according to the specified filter sets (profiles)
+and stores the filtered data into files for later use.

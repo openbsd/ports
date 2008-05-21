@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-nfprofile,v 1.1.1.1 2008/05/21 22:28:35 sthen Exp $
+bin/nfprofile
+@man man/man1/nfprofile.1

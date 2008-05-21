@@ -1,0 +1,19 @@
+The nfdump tools collect and process netflow data (v5, v7 and v9)
+on the command line. They are part of the NfSen project.
+
+nfcapd - netflow capture daemon.  Reads the netflow data from the
+network and stores the data into files. Automatically rotate files
+every n minutes (typically every 5 minutes). nfcapd reads netflow v5,
+v7 and v9 flows transparently. You need one nfcapd process for each
+netflow stream.
+
+nfdump - netflow dump.  Reads the netflow data from the files stored
+by nfcapd. Its syntax is similar to tcpdump. If you like tcpdump
+you will like nfdump. Displays netflow data and can create lots of
+top N statistics of flows IP addresses, ports etc in whichever
+order you like.
+
+nfreplay - netflow replay.  Reads the netflow data from the files
+stored by nfcapd and sends it over the network to another host.
+
+A web front-end, NfSen, is available at http://nfsen.sourceforge.net/
