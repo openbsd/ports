@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2008/04/19 18:26:46 bernd Exp $
+# $OpenBSD: Makefile,v 1.42 2008/05/21 12:57:55 simon Exp $
 #
 
     SUBDIR += base64
@@ -26,6 +26,7 @@
     SUBDIR += p5-Finance-Currency-Convert-XE
     SUBDIR += p5-IDNA-Punycode
     SUBDIR += p5-JSON
+    SUBDIR += p5-JSON-XS
     SUBDIR += p5-Jcode
     SUBDIR += p5-MARC-Record
     SUBDIR += p5-Net-IDN-Nameprep
