@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2008/03/31 21:26:15 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2008/05/21 10:52:40 sthen Exp $
 
 COMMENT=	postfix greylist daemon
 
-VERSION=	1.31
-DISTNAME=	postgrey-${VERSION}
-PKGNAME=	postgrey-${VERSION}
+DISTNAME=	postgrey-1.31
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 
-HOMEPAGE=	http://isg.ee.ethz.ch/tools/postgrey/
+HOMEPAGE=	http://postgrey.schweikert.ch/
 
 MASTER_SITES=	${HOMEPAGE}/pub/ \
 		${HOMEPAGE}/pub/old/
