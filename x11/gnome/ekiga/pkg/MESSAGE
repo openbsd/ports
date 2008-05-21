@@ -1,0 +1,3 @@
+You have to restart the GConf deamon by killing it before running Ekiga
+for the first time.
+  e.g. pkill gconfd-2 && ekiga

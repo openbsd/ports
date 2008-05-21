@@ -1,0 +1,63 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2008/05/21 14:15:29 ajacoutot Exp $
+
+COMMENT=	SIP and H.323 compatible conferencing application
+
+GNOME_PROJECT=	ekiga
+GNOME_VERSION=	2.0.12
+
+CATEGORIES=	net multimedia
+
+HOMEPAGE=	http://www.ekiga.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
+		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender art_lgpl_2 asn1 atk-1.0 audiofile bonobo-2 \
+		bonobo-activation bonoboui-2 c cairo com_err crypto db \
+		dbus-1 dbus-glib-1 esd expat fontconfig freetype \
+		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
+		gnomevfs-2 gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 \
+		jpeg krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre plc4 plds4 png popt pthread smime3 \
+		softokn3 ssl ssl3 stdc++ usbhid util xml2 z
+
+MODULES=	devel/gettext \
+		x11/gnome
+
+BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
+		::x11/gnome/doc-utils
+RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper
+LIB_DEPENDS=	pt.>=2:pwlib-*-ldap:devel/pwlib,ldap \
+		gnomeui-2.>=2000::x11/gnome/libgnomeui \
+		opal::net/opal \
+		SDL.>=8::devel/sdl \
+		camel-1.2.>=10,ebook-1.2,edataserver-1.2::databases/evolution-data-server
+
+USE_X11=	Yes
+DESKTOP_FILES=	Yes
+MODGNOME_HELP_FILES=Yes
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-dbus \
+		--disable-schemas-install \
+		--disable-scrollkeeper \
+		--disable-avahi \
+		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/ekiga \
+		--with-pwlib-dir=${LOCALBASE} \
+		--with-opal-dir=${LOCALBASE}
+
+pre-configure:
+	@perl -pi -e 's,G_GNUC_UNUSED,,g' \
+		${WRKSRC}/src/components/{dbus_stub.h,dbus-helper-stub.h}
+
+.include <bsd.port.mk>

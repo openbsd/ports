@@ -1,0 +1,50 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/05/21 14:15:29 ajacoutot Exp $
+--- configure.orig	Mon Mar 10 11:31:22 2008
++++ configure	Tue Apr 29 11:52:48 2008
+@@ -22060,8 +22060,8 @@ EKIGA_CFLAGS="$EKIGA_CFLAGS $EDS_CFLAGS"
+ EKIGA_LIBS="$EKIGA_LIBS $EDS_LIBS"
+ fi
+ 
+-PWLIB_REC_VERSION="1.10.10"
+-OPAL_REC_VERSION="2.2.11"
++PWLIB_REC_VERSION=""
++OPAL_REC_VERSION=""
+ 
+ 
+ if test ${enable_gnome} = yes ; then
+@@ -22146,6 +22146,14 @@ echo "${ECHO_T}yes" >&6; }
+     gm_platform="freebsd"
+     ;;
+ 
++  OpenBSD* | openbsd* )
++    ARCH_OPAL_CFLAGS="-DPTRACING -DNDEBUG"
++    ARCH_OPAL_LIBS="-lpt -lopal -lpthread"
++    { echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6; }
++    gm_platform="openbsd"
++    ;;
++
+   darwin* )
+     ARCH_OPAL_CFLAGS="-Os -Wall -DPTRACING -DNDEBUG -DNO_LONG_DOUBLE -DSTATIC_LIBS_USED"
+     ARCH_OPAL_LIBS="-multiply_defined suppress -lh323_Darwin_ppc_r_s -lpt_Darwin_ppc_r_s -lssl -lcrypto -lX11 -framework AudioToolbox -framework CoreAudio -framework CoreServices"
+@@ -22164,8 +22172,8 @@ echo "${ECHO_T}not really" >&6; }
+     ;;
+ 
+   *)
+-    { { echo "$as_me:$LINENO: error: Only Linux, FreeBSD, Solaris and Mac OS X are supported. Please contact the author to know how you can add more OS types." >&5
+-echo "$as_me: error: Only Linux, FreeBSD, Solaris and Mac OS X are supported. Please contact the author to know how you can add more OS types." >&2;}
++    { { echo "$as_me:$LINENO: error: Only Linux, FreeBSD, OpenBSD, Solaris and Mac OS X are supported. Please contact the author to know how you can add more OS types." >&5
++echo "$as_me: error: Only Linux, FreeBSD, OpenBSD, Solaris and Mac OS X are supported. Please contact the author to know how you can add more OS types." >&2;}
+    { (exit 1); exit 1; }; }
+     ;;
+ esac
+@@ -27076,9 +27084,7 @@ echo ""
+ echo "================ Final configuration ==================="
+ echo "          Installing into prefix  :  $prefix"
+ echo ""
+-echo "                 OPAL Version is  :  $OPAL_REC_VERSION"
+ echo "               OPAL Directory is  :  $with_opal_dir"
+-echo "                PWLIB Version is  :  $PWLIB_REC_VERSION"
+ echo "              PWLIB Directory is  :  $with_pwlib_dir"
+ echo "                 ptlib-config is  :  $with_pwlib_dir/bin/ptlib-config"
+ echo ""

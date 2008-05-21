@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_main_cpp,v 1.1.1.1 2008/05/21 14:15:29 ajacoutot Exp $
+--- src/gui/main.cpp.orig	Mon Apr 28 17:40:03 2008
++++ src/gui/main.cpp	Mon Apr 28 17:40:37 2008
+@@ -1297,7 +1297,7 @@ gm_mw_init_dialpad (GtkWidget *main_window)
+     gtk_container_set_border_width (GTK_CONTAINER (button), 0);
+     gtk_container_add (GTK_CONTAINER (button), box);
+    
+-    gtk_widget_add_accelerator (button, "activate", 
++    gtk_widget_add_accelerator (button, "clicked", 
+ 				mw->accel, key_kp [i], 
+ 				(GdkModifierType) 0, (GtkAccelFlags) 0);
+     
