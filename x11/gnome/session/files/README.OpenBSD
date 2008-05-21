@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.7 2008/05/13 11:05:27 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.8 2008/05/21 17:51:33 ajacoutot Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -19,6 +19,7 @@ If your needs aren't satisfied yet, there are many other packages
 you can install. The most important ones will be mentioned by category:
 
  - Communication
+   * ekiga - SIP and H.323 conferencing application
    * empathy - Telepathy based messenger
    * epiphany - lightweight and simple web browser
    * evolution - integrated email and PIM software
@@ -34,20 +35,21 @@ you can install. The most important ones will be mentioned by category:
    * orca - assistive technology for visually impaired
 
  - Development
-   * gnome-devel-docs - developer documentation
    * devhelp - API documentation browser
    * gedit-plugins - plugins for Gedit
+   * gnome-devel-docs - developer documentation
    * zenity - easy-to-script dialogs
 
  - Utilities
-   * gnomebaker - CD/DVD burning application
    * eog - image viewer and categorizer
    * evince - document viewer for multiple document formats
    * file-roller - archive manager
    * gcalctool - desktop calculator
    * ggv - frontend for GhostScript
    * gnome-scan - scanning application
+   * gnomebaker - CD/DVD burning application
    * gucharmap - Unicode character map
+   * keyring-manager - Keyring password management
    * pessulus - lockdown editor for desktop
    * planner - project management
    * seahorse - encryption keys manager
