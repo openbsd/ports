@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.96 2008/04/13 09:46:19 espie Exp $
+# $OpenBSD: make-plist,v 1.97 2008/05/21 10:07:14 espie Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -100,7 +100,7 @@ sub reverse_with_lib
 			print STDERR "WARNING: version mismatch for lib: $name "
 			. "($version vs. $self->{l}->{$name})\n";
 		}
-		return $self->reverse("${path}lib$name.so.\${LIB${name}_VERSION}");
+		return $self->reverse("${path}lib$name.so.")."\${LIB${name}_VERSION}";
 	} else {
 		return $self->reverse($_);
 	}
