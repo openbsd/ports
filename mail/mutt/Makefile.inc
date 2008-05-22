@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2008/05/21 13:46:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2008/05/22 14:40:12 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -71,13 +71,6 @@ CONFIGURE_ARGS+=	--with-idn
 LIB_DEPENDS+=		idn.>=16::devel/libidn
 .else
 CONFIGURE_ARGS+=	--without-idn
-.endif
-
-.if ${FLAVOR:L:Msidebar}
-PATCHFILES+=		patch-${VERSION}.sidebar-b.txt:1
-PATCH_DIST_STRIP=	-p1
-.else
-SUPDISTFILES+=		patch-${VERSION}.sidebar-b.txt:1
 .endif
 
 .if defined(HOMESPOOL)
