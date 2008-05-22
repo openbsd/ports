@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/05/22 14:52:48 simon Exp $
 
 COMMENT= 	Template Toolkit views for Catalyst
 
-DISTNAME=	Catalyst-View-TT-0.25
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Catalyst-View-TT-0.27
 CATEGORIES=	textproc
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
