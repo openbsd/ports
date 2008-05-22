@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/04/29 15:28:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/05/22 19:25:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	portable Windows library
 
 V=		1_12_0
 DISTNAME=	ptlib-v${V}
-PKGNAME=	pwlib-${V:S/_/./g}p1
+PKGNAME=	pwlib-${V:S/_/./g}p2
 CATEGORIES=	devel
 
 EXTRACT_SUFX=	-src.tar.gz
@@ -25,10 +25,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=h323plus/}
 
-WANTLIB=	crypto expat ossaudio ssl
+WANTLIB=	crypto expat ossaudio sasl2 ssl
 
 BUILD_DEPENDS=	::devel/bison
-LIB_DEPENDS=	esd.>=2::audio/esound
+LIB_DEPENDS=	esd.>=2::audio/esound \
+		lber.>=9,ldap,ldap_r::databases/openldap \
+		SDL.>=8::devel/sdl
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-/_/}
 NO_REGRESS=	Yes
@@ -53,6 +55,9 @@ CONFIGURE_ARGS=	--enable-plugins \
 		--enable-esd \
 		--enable-v4l2 \
 		--enable-bsdvideo \
+		--enable-openldap \
+		--enable-sasl \
+		--enable-sdl \
 		--disable-sunaudio \
 		--disable-alsa \
 		--disable-avc \
@@ -65,30 +70,6 @@ CFLAGS+=	-fPIC
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=		Compiles on powerpc but it does not work
-.endif
-
-FLAVORS=	ldap sasl sdl
-FLAVOR?=
-
-.if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=	lber.>=9,ldap.>=9,ldap_r.>=9::databases/openldap
-CONFIGURE_ARGS+=--enable-openldap
-.else
-CONFIGURE_ARGS+=--disable-openldap
-.endif
-
-.if ${FLAVOR:L:Msasl}
-LIB_DEPENDS+=   sasl2.>=2::security/cyrus-sasl2
-CONFIGURE_ARGS+=--enable-sasl
-.else
-CONFIGURE_ARGS+=--disable-sasl
-.endif
-
-.if ${FLAVOR:L:Msdl}
-LIB_DEPENDS+=   SDL.>=7::devel/sdl
-CONFIGURE_ARGS+=--enable-sdl
-.else
-CONFIGURE_ARGS+=--disable-sdl
 .endif
 
 pre-configure:
