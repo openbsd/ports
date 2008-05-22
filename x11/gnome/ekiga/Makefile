@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/21 14:15:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/22 19:31:09 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	2.0.12
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	net multimedia
 
@@ -35,7 +36,7 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
 		::x11/gnome/doc-utils
 RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper
-LIB_DEPENDS=	pt.>=2:pwlib-*-ldap:devel/pwlib,ldap \
+LIB_DEPENDS=	pt.>=2::devel/pwlib \
 		gnomeui-2.>=2000::x11/gnome/libgnomeui \
 		opal::net/opal \
 		SDL.>=8::devel/sdl \
@@ -46,7 +47,7 @@ DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-dbus \
 		--disable-schemas-install \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/05/21 14:15:29 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2008/05/22 19:31:09 ajacoutot Exp $
 --- configure.orig	Mon Mar 10 11:31:22 2008
 +++ configure	Tue Apr 29 11:52:48 2008
 @@ -22060,8 +22060,8 @@ EKIGA_CFLAGS="$EKIGA_CFLAGS $EDS_CFLAGS"
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/05/21 14:15:29 ajacoutot Exp $
  
 +  OpenBSD* | openbsd* )
 +    ARCH_OPAL_CFLAGS="-DPTRACING -DNDEBUG"
-+    ARCH_OPAL_LIBS="-lpt -lopal -lpthread"
++    ARCH_OPAL_LIBS="-lpt -lopal -pthread"
 +    { echo "$as_me:$LINENO: result: yes" >&5
 +echo "${ECHO_T}yes" >&6; }
 +    gm_platform="openbsd"
