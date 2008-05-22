@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/04/21 19:17:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/05/22 19:27:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	H.323 video conferencing library
 
 V=		1_19_0_1
 DISTNAME=	openh323-v${V}
-PKGNAME=	openh323-${V:S/_/./g}
+PKGNAME=	openh323-${V:S/_/./g}p0
 CATEGORIES=	net devel
 
 EXTRACT_SUFX=	-src-tar.gz
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323/}
 
-WANTLIB=	crypto expat ossaudio ssl
+WANTLIB=	SDL crypto expat lber ldap ldap_r ossaudio sasl2 ssl
 
 LIB_DEPENDS=	pt.>=2::devel/pwlib \
 		speex.>=4::audio/speex \
