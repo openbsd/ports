@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2008/05/22 19:45:19 naddy Exp $
 
 COMMENT=	multi-window tail(1) utility
 
-DISTNAME=	multitail-5.0.5
+DISTNAME=	multitail-5.2.2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.vanheusden.com/multitail/	
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,7 +21,7 @@ WANTLIB=	c m ncurses util panel
 NO_REGRESS=	Yes
 
 MAKE_FLAGS=	CC='${CC}' \
-		CFLAGS='${CFLAGS} -DVERSION=\"${VERSION}\" \
+		CFLAGS='${CFLAGS} -funsigned-char -DVERSION=\"$${VERSION}\" \
 			-DCONFIG_FILE=\"${SYSCONFDIR}/multitail.conf\"' \
 		LDFLAGS='-lpanel -lncurses -lutil -lm'
 
