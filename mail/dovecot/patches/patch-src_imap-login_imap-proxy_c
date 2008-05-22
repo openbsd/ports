@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_imap-login_imap-proxy_c,v 1.1 2008/05/22 07:55:08 sthen Exp $
+--- src/imap-login/imap-proxy.c.orig	Sun May 18 22:39:34 2008
++++ src/imap-login/imap-proxy.c	Sun May 18 22:40:30 2008
+@@ -45,9 +45,12 @@ static int proxy_input_line(struct imap_client *client
+ 		return 0;
+ 	} else if (strncmp(line, "P OK ", 5) == 0) {
+ 		/* Login successful. Send this line to client. */
+-		(void)o_stream_send_str(client->output, client->cmd_tag);
+-		(void)o_stream_send_str(client->output, line + 1);
+-		(void)o_stream_send(client->output, "\r\n", 2);
++		str = t_str_new(128);
++		str_append(str, client->cmd_tag);
++		str_append(str, line + 1);
++		str_append(str, "\r\n");
++		(void)o_stream_send(client->output,
++				    str_data(str), str_len(str));
+ 
+ 		msg = t_strdup_printf("proxy(%s): started proxying to %s:%u",
+ 				      client->common.virtual_user,

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_plugins_acl_acl-cache_c,v 1.1 2008/05/22 07:55:08 sthen Exp $
+--- src/plugins/acl/acl-cache.c.orig	Sun May 18 22:41:57 2008
++++ src/plugins/acl/acl-cache.c	Sun May 18 22:42:17 2008
+@@ -63,6 +63,8 @@ void acl_cache_deinit(struct acl_cache **_cache)
+ 	struct acl_cache *cache = *_cache;
+ 
+ 	*_cache = NULL;
++
++	acl_cache_flush_all(cache);
+ 	array_free(&cache->right_idx_name_map);
+ 	hash_destroy(cache->right_name_idx_map);
+ 	hash_destroy(cache->objects);
