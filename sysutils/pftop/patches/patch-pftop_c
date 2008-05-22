@@ -1,0 +1,26 @@
+$OpenBSD: patch-pftop_c,v 1.9 2008/05/22 06:46:44 canacar Exp $
+--- pftop.c.orig	Tue Nov  6 22:36:46 2007
++++ pftop.c	Tue May 20 23:50:29 2008
+@@ -1475,7 +1475,7 @@ print_rule(struct pf_rule *pr)
+ 	print_fld_str(FLD_LABEL, pr->label);
+ #endif
+ #ifdef HAVE_RULE_STATES
+-	print_fld_size(FLD_STATS, pr->states);
++	print_fld_size(FLD_STATS, pr->states_cur);
+ #endif
+ 
+ #ifdef HAVE_INOUT_COUNT_RULES
+@@ -1486,7 +1486,12 @@ print_rule(struct pf_rule *pr)
+ 	print_fld_size(FLD_BYTES, pr->bytes);
+ #endif
+ 	print_fld_uint(FLD_RULE, pr->nr);
+-	print_fld_str(FLD_DIR, pr->direction == PF_OUT ? "Out" : "In");
++	if (pr->direction == PF_IN)
++		print_fld_str(FLD_DIR, "In");
++	else if (pr->direction == PF_OUT)
++		print_fld_str(FLD_DIR, "Out");
++	else
++		print_fld_str(FLD_DIR, "Any");
+ 	if (pr->quick)
+ 		print_fld_str(FLD_QUICK, "Quick");
+ 
