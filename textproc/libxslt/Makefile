@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2008/05/06 18:53:46 steven Exp $
+# $OpenBSD: Makefile,v 1.57 2008/05/22 16:14:26 jasper Exp $
 
 COMMENT=		XSLT C Library for GNOME
 
-DISTNAME=		libxslt-1.1.23
-SHARED_LIBS=		exslt	9.6 \
-			xslt	3.6
+DISTNAME=		libxslt-1.1.24
+SHARED_LIBS=		exslt	9.7 \
+			xslt	3.7
 
 CATEGORIES=		textproc
 
