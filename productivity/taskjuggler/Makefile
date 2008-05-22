@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2008/02/02 09:35:42 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2008/05/22 11:48:05 sturm Exp $
 
 COMMENT=	project management tool
 
-DISTNAME=	taskjuggler-2.3.1
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	taskjuggler-2.4.1
 CATEGORIES=	productivity
-SHARED_LIBS=	taskjuggler	3.4
+SHARED_LIBS=	taskjuggler	4.0
 
 HOMEPAGE=	http://www.taskjuggler.org/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,8 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	DCOP ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c jpeg \
-		kabc kcal kdecore kdefx kdeprint kdesu kdeui khtml kio \
-		kresources ktexteditor ktnef kwalletclient m png pthread \
+		kabc kcal kdecore kdefx kdeprint kdesu kdeui khtml kio kjs \
+		kparts kresources ktexteditor ktnef kutils kwalletclient \
+		m pcre pcreposix png pthread \
 		stdc++ util vcard z iconv intl idn fam rpcsvc
 
 MASTER_SITES=	${HOMEPAGE}/download/
@@ -32,9 +30,10 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION=2.61
 CONFIGURE_ARGS+=${MODKDE_CONFIGURE_ARGS} \
 		--enable-dependency-tracking \
+		--disable-as-needed \
 		--disable-final \
 		--with-docdir=${PREFIX}/share/examples/taskjuggler/
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} \
