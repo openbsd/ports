@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2007/11/14 20:52:58 jakob Exp $
+# $OpenBSD: Makefile,v 1.42 2008/05/22 07:34:09 jakob Exp $
 
 COMMENT=	authoritative-only name server daemon
 
-VERSION=	3.0.7
+VERSION=	3.0.8
 DISTNAME=	nsd-${VERSION}
 PKGNAME=	nsd-${VERSION}
 CATEGORIES=	net
@@ -27,6 +27,7 @@ CFLAGS=	-O0
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-bind8-stats \
 			--enable-nsid \
+			--enable-nsec3 \
 			--with-ssl=/usr \
 			--with-user=named \
 			--with-pidfile=/var/nsd/nsd.pid \
