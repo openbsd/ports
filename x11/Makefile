@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.335 2008/05/17 17:12:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.336 2008/05/22 12:29:11 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -121,6 +121,7 @@
      SUBDIR += mouseclock
      SUBDIR += mowitz
      SUBDIR += mplayer
+     SUBDIR += mplayer,esd
      SUBDIR += mplayer,no_x11
      SUBDIR += mplayer,sdl
      SUBDIR += mrxvt
