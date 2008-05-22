@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/29 07:01:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/22 19:30:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
 DISTNAME=	opal-2.2.11
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	opal	0.0 # .2.2.11
 CATEGORIES=	net devel
 
@@ -20,9 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/admin/downloads/latest/sources/sources/
 
-WANTLIB=	crypto expat ossaudio ssl
+WANTLIB=	SDL crypto expat lber ldap ldap_r ossaudio sasl2 ssl
 
-LIB_DEPENDS=	speex.>=4::audio/speex \
+LIB_DEPENDS=	speex.>=7,speexdsp::audio/speex \
 		pt.>=2::devel/pwlib
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64" \
