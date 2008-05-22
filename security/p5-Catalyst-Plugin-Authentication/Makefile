@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/22 10:59:16 simon Exp $
 
 COMMENT= 	Catalyst authentication framework
 
-DISTNAME=	Catalyst-Plugin-Authentication-0.09
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Catalyst-Plugin-Authentication-0.10006
 CATEGORIES=	security
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -17,7 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 
 RUN_DEPENDS=	::devel/p5-Class-Inspector \
-		::www/p5-Catalyst-Runtime
+		::www/p5-Catalyst-Runtime \
+		::www/p5-Catalyst-Plugin-Session
+BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=::devel/p5-Test-WWW-Mechanize-Catalyst \
 		::security/p5-Digest-SHA1 \
 		::www/p5-Catalyst-Plugin-Session-State-Cookie
