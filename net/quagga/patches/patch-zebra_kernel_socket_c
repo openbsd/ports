@@ -1,6 +1,6 @@
-$OpenBSD: patch-zebra_kernel_socket_c,v 1.3 2007/09/12 20:31:18 rui Exp $
---- zebra/kernel_socket.c.orig	Wed Aug 22 17:22:57 2007
-+++ zebra/kernel_socket.c	Tue Sep 11 16:52:21 2007
+$OpenBSD: patch-zebra_kernel_socket_c,v 1.4 2008/05/23 12:55:58 claudio Exp $
+--- zebra/kernel_socket.c.orig	Wed Aug 22 18:22:57 2007
++++ zebra/kernel_socket.c	Tue Oct  9 23:54:58 2007
 @@ -136,7 +136,7 @@ struct message rtm_type_str[] =
    {RTM_REDIRECT, "RTM_REDIRECT"},
    {RTM_MISS,     "RTM_MISS"},
@@ -10,3 +10,14 @@ $OpenBSD: patch-zebra_kernel_socket_c,v 1.3 2007/09/12 20:31:18 rui Exp $
    {RTM_OLDADD,   "RTM_OLDADD"},
  #endif /* RTM_OLDADD */
  #ifdef RTM_OLDDEL
+@@ -705,9 +705,7 @@ rtm_read_mesg (struct rt_msghdr *rtm,
+ 
+   /* rt_msghdr version check. */
+   if (rtm->rtm_version != RTM_VERSION) 
+-      zlog (NULL, LOG_WARNING,
+-	      "Routing message version different %d should be %d."
+-	      "This may cause problem\n", rtm->rtm_version, RTM_VERSION);
++      return 0;
+   
+   /* Be sure structure is cleared */
+   memset (dest, 0, sizeof (union sockunion));
