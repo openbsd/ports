@@ -1,8 +1,0 @@
-GStreamer is a streaming-media framework, based on graphs of filters which
-operate on media data.   This package contains front-ends to the other
-programs.
-
-These binaries were split out so that people can install both gstreamer-0.8
-and gstreamer-0.10. The front-end know about version numbers, so you can
-install whatever version is most convenient, and have it use the correct
-gstreamer subsystem by saying e.g., gst-launch --gst-mm=0.8

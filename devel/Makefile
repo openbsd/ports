@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.600 2008/05/22 19:23:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.601 2008/05/23 09:51:07 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -99,8 +99,6 @@
      SUBDIR += gputils
      SUBDIR += grcs
      SUBDIR += gsl
-     SUBDIR += gstreamer
-     SUBDIR += gstreamer-plugins
      SUBDIR += guilib
      SUBDIR += haddock
      SUBDIR += happy

@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-jpeg,v 1.4 2007/01/08 19:52:25 espie Exp $
-@option no-default-conflict
-@conflict ${BASENAME}-<0.10
-lib/gstreamer-0.8/libgstjpeg.a
-lib/gstreamer-0.8/libgstjpeg.la
-lib/gstreamer-0.8/libgstjpeg.so
-@exec %D/bin/gst-register > /dev/null 2>&1
-@unexec %D/bin/gst-register > /dev/null 2>&1
