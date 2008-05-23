@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2008/05/20 21:10:18 kili Exp $
+# $OpenBSD: Makefile,v 1.66 2008/05/23 10:58:32 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -9,7 +9,7 @@ COMMENT-cups=			gtk+2 CUPS print backend
 VERSION=			2.12.9
 DISTNAME=			gtk+-${VERSION}
 PKGNAME-main=			gtk+2-${VERSION}p2
-PKGNAME-docs=			gtk+2-docs-${VERSION}p0
+PKGNAME-docs=			gtk+2-docs-${VERSION}p1
 PKGNAME-cups=			gtk+2-cups-${VERSION}p0
 SHARED_LIBS +=	gdk_pixbuf-2.0       1200.9   # .1200.9
 SHARED_LIBS +=	gdk-x11-2.0          1200.9   # .1200.9
@@ -49,7 +49,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 WANTLIB-main=		${WANTLIB} c pthread
 
 LIB_DEPENDS-docs=
-RUN_DEPENDS-docs=
+RUN_DEPENDS-docs=	:devhelp-*:x11/gnome/devhelp
 WANTLIB-docs=
 PKG_ARCH-docs=		*
 
