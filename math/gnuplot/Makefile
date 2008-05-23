@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/20 12:14:30 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2008/05/23 20:57:32 steven Exp $
 
 COMMENT=	command-driven interactive function plotting program
 
 V=		4.2
-PATCHLEVEL=	2
+PATCHLEVEL=	3
 DISTNAME=	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
