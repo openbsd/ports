@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/21 18:32:06 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.7 2008/05/23 14:32:08 sthen Exp $
 
 COMMENT=	true web content filtering for all
 DISTNAME=	dansguardian-2.9.8.5
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www net
 
 HOMEPAGE=	http://www.dansguardian.org/
 
 MAINTAINER=	Bartosz Kuzma <bartosz.kuzma@gmail.com>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -33,7 +33,7 @@ FLAVORS=clamav
 FLAVOR?=
 
 .if ${FLAVOR:L:Mclamav}
-WANTLIB+=	bz2 crypto curl gmp iconv idn pthread ssl
+WANTLIB+=	bz2 gmp iconv pthread
 LIB_DEPENDS+=	clamav.>=1::security/clamav
 CONFIGURE_ARGS+=--enable-clamav
 .endif
