@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2008/05/13 12:02:54 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2008/05/23 15:03:12 wcmaier Exp $
 
 COMMENT=		fast, lightweight source control management
 
-VERSION=		1.0
+VERSION=		1.0.1
 DISTNAME=		mercurial-${VERSION}
-PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	devel
 HOMEPAGE=		http://www.selenic.com/mercurial/
 
-MAINTAINER=		Will Maier <willmaier@ml1.net>
+MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -21,7 +20,8 @@ MASTER_SITES=		http://www.selenic.com/mercurial/release/
 MODULES=		lang/python
 
 SUBST_VARS+=		VERSION
-REGRESS_DEPENDS=	:python-bz2-*:lang/python/${MODPY_VERSION},-bz2
+REGRESS_DEPENDS=	:python-bz2-*:lang/python/${MODPY_VERSION},-bz2 \
+			::archivers/unzip
 
 FILES=			hgeditor hgweb.cgi hgwebdir.cgi
 
