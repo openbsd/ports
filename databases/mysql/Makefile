@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2008/05/23 12:05:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2008/05/23 14:38:08 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -7,7 +7,7 @@ COMMENT-tests=	multithreaded SQL database (regression test suite)
 VERSION=	5.0.51a
 DISTNAME=	mysql-${VERSION}
 PKGNAME-main=	mysql-client-${VERSION}
-PKGNAME-server=	mysql-server-${VERSION}p0
+PKGNAME-server=	mysql-server-${VERSION}p1
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
@@ -50,14 +50,15 @@ AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --localstatedir="${DB_DIR}" \
+		 --with-archive-storage-engine \
 		 --with-big-tables \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
+		 --with-federated-storage-engine \
 		 --with-libwrap \
 		 --with-low-memory \
 		 --with-mysqld-user="_mysql" \
 		 --with-openssl \
 		 --with-unix-socket-path="${SOCKET_DIR}/mysql.sock" \
-		 --with-vio \
 		 --without-bench \
 		 --without-debug \
 		 --without-docs \
