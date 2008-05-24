@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/11/08 22:00:36 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/05/24 04:17:11 wcmaier Exp $
 bin/${LNAME}-admin.py
-lib/python${MODPY_VERSION}/site-packages/Django-${V}.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/__init__.pyc
@@ -522,10 +522,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/formtools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/formtools/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/formtools/preview.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/formtools/preview.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/formtools/templates/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/formtools/templates/formtools/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/formtools/templates/formtools/form.html
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/formtools/templates/formtools/preview.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/__init__.pyc
