@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/04/22 23:33:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2008/05/24 01:24:31 fgsch Exp $
 
 COMMENT=	lightweight file manager for xfce4
 
 V=		0.9.0
 DISTNAME=	Thunar-${V}
-PKGNAME=	thunar-${V}p1
+PKGNAME=	thunar-${V}p2
 
 SHARED_LIBS=	thunarx-1	5.1 \
 		thunar-vfs-1	5.1
@@ -42,11 +42,11 @@ LIB_DEPENDS=	exo-0.3.>=4::x11/xfce4/exo \
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::x11/xfce4/xfce4-icon-theme
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xrender Xdamage atk-1.0 c cairo expat \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr Xcomposite fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread \
-		startup-notification-1 xfce4util z glitz jpeg png
+WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
+		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
+		png pthread rpcsvc startup-notification-1 stdc++ xfce4util z
 
 .include <bsd.port.mk>

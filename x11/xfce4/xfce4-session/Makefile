@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2008/04/17 09:00:25 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2008/05/24 01:24:31 fgsch Exp $
 
 COMMENT=	xfce4 session manager
 
 V=		4.4.2
 DISTNAME=	xfce4-session-${V}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 SHARED_LIBS +=  xfsm-4.2             0.1      # .0.1
 
@@ -32,12 +32,12 @@ LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::x11/xfce4/xfce-mcs-manager
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xdamage Xrender fontconfig freetype \
-		Xcursor Xext Xfixes Xi Xcomposite Xinerama Xrandr expat \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 m c z \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 pcre \
-		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
-		startup-notification-1 xfce4util
+WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
+		startup-notification-1 xfce4util z
 
 post-install:
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},' \

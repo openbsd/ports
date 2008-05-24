@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/18 21:18:50 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2008/05/24 01:24:31 fgsch Exp $
 
 COMMENT=	command line plugin for the xfce4 panel
 
 V=		0.3.5
 DISTNAME=	verve-plugin-${V}
-PKGNAME=	xfce4-verve-${V}p0
+PKGNAME=	xfce4-verve-${V}p1
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/verve-plugin
 
@@ -23,12 +23,11 @@ LIB_DEPENDS=	xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
 		dbus-glib-1::x11/dbus-glib \
 		pcre::devel/pcre
 
-WANTLIB=	ICE SM X11 Xdmcp Xrender Xdamage Xau fontconfig freetype \
-		Xcursor Xext Xfixes Xi Xcomposite Xinerama Xrandr expat \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 m z c \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
-		xfce4util exo-0.3 gthread-2.0 pthread \
-		startup-notification-1 dbus-1
+WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+	        Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
+		exo-0.3 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pixman-1 png pthread startup-notification-1 xfce4util z
 
 .include <bsd.port.mk>

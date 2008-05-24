@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/17 09:00:25 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2008/05/24 01:24:31 fgsch Exp $
 
 COMMENT=	volume mixer module for xfce4-panel
 
 V=		4.4.2
 DISTNAME=	xfce4-mixer-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	xfce4mixer 1.0
 
 HOMEPAGE=	http://www.xfce.org/projects/xfce4-mixer
@@ -28,12 +28,12 @@ LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::x11/xfce4/xfce-mcs-manager
 
-WANTLIB=	ICE Xrender Xau Xdamage Xdmcp expat SM freetype fontconfig \
-		X11 Xcursor Xcomposite Xext Xfixes Xi Xinerama Xrandr \
-		gmodule-2.0 glib-2.0 pangocairo-1.0 pango-1.0 pcre \
-		gdk_pixbuf-2.0 gtk-x11-2.0 gdk-x11-2.0 pangoft2-1.0 \
-		cairo startup-notification-1 glitz atk-1.0 png \
-		gobject-2.0 xfce4util.>=1 ossaudio c m z
+WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m ossaudio \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		png startup-notification-1 xfce4util z
 
 CONFIGURE_ARGS=	--with-sound=oss \
 		--enable-mighty-mouse \

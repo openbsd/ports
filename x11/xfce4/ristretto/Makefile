@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/04/17 09:00:24 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2008/05/24 01:24:31 fgsch Exp $
 
 COMMENT=	lightweight image-viewer for xfce4
 
 V=		0.0.17
 DISTNAME=	ristretto-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 HOMEPAGE=	http://goodies.xfce.org/projects/applications/ristretto
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -29,6 +29,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		exif exo-0.3 expat fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread xfce4util xfcegui4 z
+		pangoft2-1.0 pixman-1 png pthread xfce4util xfcegui4 z
 
 .include <bsd.port.mk>

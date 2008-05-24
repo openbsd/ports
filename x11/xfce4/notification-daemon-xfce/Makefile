@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/17 09:00:24 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2008/05/24 01:24:31 fgsch Exp $
 
 COMMENT=	notification daemon for Xfce4 desktop
 DISTNAME=	notification-daemon-xfce-0.3.7
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 HOMEPAGE=	http://goodies.xfce.org/projects/applications/notification-daemon-xfce
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -30,12 +30,11 @@ RUN_DEPENDS=	::x11/xfce4/xfce-mcs-manager \
 BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager \
 		::textproc/p5-XML-Parser
 
-WANTLIB=	ICE SM X11 Xext Xrender c fontconfig freetype m z \
-		Xcursor Xau Xdmcp Xfixes Xi Xinerama Xrandr expat \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
-		startup-notification-1 xml2 dbus-1 dbus-glib-1 \
-		Xcomposite Xdamage pcre xfce4util pthread
+WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
+		dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 \
+		gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+		pixman-1 png pthread startup-notification-1 xfce4util xml2 z
 
 .include <bsd.port.mk>

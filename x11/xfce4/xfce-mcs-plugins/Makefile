@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2008/04/17 09:00:24 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2008/05/24 01:24:31 fgsch Exp $
 
 COMMENT=	settings manager plug-ins for xfce4
 
 V=		4.4.2
 DISTNAME=	xfce-mcs-plugins-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 HOMEPAGE=	http://www.xfce.org/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -28,12 +28,11 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 
 BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager
 
-WANTLIB=	ICE SM X11 Xcursor Xext Xrandr Xrender Xxf86vm \
-		Xau Xdmcp Xfixes Xi Xinerama fontconfig \
-		Xcomposite Xdamage freetype m expat pcre \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo glitz png z \
-		startup-notification-1 xfce4util
+WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+		Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo \
+		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		png startup-notification-1 xfce4util z
 
 .include <bsd.port.mk>
