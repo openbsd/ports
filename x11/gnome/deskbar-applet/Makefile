@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/17 18:43:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/25 19:16:22 ajacoutot Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
 GNOME_VERSION=		2.20.3
 GNOME_PROJECT=		deskbar-applet
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://raphael.slinckx.net/deskbar/
@@ -36,11 +37,11 @@ BUILD_DEPENDS=		::x11/dbus-python \
 RUN_DEPENDS=		::lang/python/${MODPY_VERSION},-bz2 \
 			::mail/evolution \
 			::x11/dbus-python \
-			::x11/gnome/devhelp \
 			::x11/gnome/py-gnome-desktop
 LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server
 
 MODGNOME_HELP_FILES=	Yes
+MODGNOME_DEVHELP_FILES=	Yes
 
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/deskbar-applet \
 			--disable-schemas-install \
