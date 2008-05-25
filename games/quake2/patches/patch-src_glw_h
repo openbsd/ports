@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_glw_h,v 1.1 2008/05/25 02:54:58 jsg Exp $
+--- src/glw.h.orig	Sat May 24 20:42:41 2008
++++ src/glw.h	Sat May 24 20:42:52 2008
+@@ -30,7 +30,7 @@
+ #ifndef __GLW_H__
+ #define __GLW_H__
+ 
+-#if defined (__linux__)  || defined (__bsd__) || defined (__sgi) || defined (__FreeBSD__) || defined (__NetBSD__) || defined (__sun__)
++#if defined (__linux__)  || defined (__bsd__) || defined (__sgi) || defined (__FreeBSD__) || defined (__NetBSD__) || defined (__sun__) || defined(__OpenBSD__)
+ 
+ typedef struct
+ {
