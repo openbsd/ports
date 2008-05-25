@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/09/19 13:19:50 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/05/25 21:44:33 jasper Exp $
 @conflict py-gtk2-2.8.6*
 include/pygtk-2.0/
 include/pygtk-2.0/pygobject.h
@@ -27,8 +27,6 @@ lib/python${MODPY_VERSION}/site-packages/pygtk.pth
 lib/python${MODPY_VERSION}/site-packages/pygtk.py
 lib/python${MODPY_VERSION}/site-packages/pygtk.pyc
 lib/python${MODPY_VERSION}/site-packages/pygtk.pyo
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/pygobject/
 share/gtk-doc/html/pygobject/class-gobject.html
 share/gtk-doc/html/pygobject/class-gobjectgboxed.html
