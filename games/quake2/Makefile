@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2008/05/25 02:54:58 jsg Exp $
+# $OpenBSD: Makefile,v 1.11 2008/05/25 03:43:06 jsg Exp $
 
-ONLY_FOR_ARCHS= 	i386
+ONLY_FOR_ARCHS= 	amd64 i386
 SHARED_ONLY=		Yes
 
 COMMENT=		first person shooter
