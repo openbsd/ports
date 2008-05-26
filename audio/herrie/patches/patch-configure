@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure,v 1.2 2007/12/04 18:05:13 jasper Exp $
---- configure.orig	Sun Dec  2 16:12:31 2007
-+++ configure	Mon Dec  3 22:37:47 2007
-@@ -378,8 +378,8 @@ $APP_NAME$CFG_BINEXT: $OBJS
+$OpenBSD: patch-configure,v 1.3 2008/05/26 08:23:09 jasper Exp $
+--- configure.orig	Wed Apr 23 21:29:24 2008
++++ configure	Sun May 25 16:14:02 2008
+@@ -393,8 +393,8 @@ $APP_NAME$CFG_BINEXT: $OBJS
  	# Linking $APP_NAME$CFG_BINEXT
  	$DOIT$CC $OBJS $LDFLAGS -o $APP_NAME$CFG_BINEXT
- $APP_NAME.1.gz: $SRCDIR/$APP_NAME.1 Makefile
+ $APP_NAME.1.gz: $MANFILES Makefile
 -	# Generating manual page $APP_NAME.1.gz
--	${DOIT}sed -e 's|%%CONFFILE%%|$CONFFILE|' $SRCDIR/$APP_NAME.1 | gzip -9 > $APP_NAME.1.gz
+-	${DOIT}sed $MANREGEX $MANFILES | gzip -9 > $APP_NAME.1.gz
 +	# Generating manual page $APP_NAME.1
-+	${DOIT}perl -pi -e 's|\%\%CONFFILE\%\%|$CONFFILE|' $SRCDIR/$APP_NAME.1
++	${DOIT}sed $MANREGEX $MANFILES > $APP_NAME.1
  clean:
- 	# Removing $APP_NAME$CFG_BINEXT $APP_NAME.1.gz *.mo *.o
+ 	# Removing $APP_NAME$CFG_BINEXT $APP_NAME.1.gz *.dSYM *.mo *.o
  	${DOIT}rm -f $APP_NAME$CFG_BINEXT $APP_NAME.1.gz *.mo *.o
