@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/11/13 12:55:46 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/05/26 16:13:39 ajacoutot Exp $
 
-COMMENT=	Gnome multimode HF terminal
+COMMENT=	GNOME multimode HF terminal
 
 DISTNAME=	gmfsk-0.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
@@ -12,7 +12,7 @@ MASTER_SITES=	http://gmfsk.connect.fi/	\
 
 MAINTAINER=	Jason Wright <jason@openbsd.org>
 
-# GPL - FDL
+# GPLv2 - FDL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -25,8 +25,9 @@ WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama	Xcomposite \
 	png ORBit-2 art_lgpl_2 bonobo-2 bonobo-activation bonoboui-2	\
 	gconf-2 gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 popt xml2
 
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
-BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+			:yelp-*:x11/gnome/yelp
+BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		fftw.>=2::math/fftw \
 			gtk-x11-2.0,gdk_pixbuf-2.0,gdk-x11-2.0::x11/gtk+2 \
 			hamlib.>=2::comms/hamlib \
