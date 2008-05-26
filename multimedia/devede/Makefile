@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/16 13:35:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2008/05/26 13:49:59 ajacoutot Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
-DISTNAME=	devede-3.7
+DISTNAME=	devede-3.8
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -38,13 +38,12 @@ PKG_ARCH=	*
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
+SUBST_VARS=	^MODPY_SITEPKG
+
 pre-configure:
 	@find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
-		-e 's,!!PREFIX!!,${PREFIX},g;' \
-		-e 's,!!MODPY_SITEPKG!!,${MODPY_SITEPKG},g' \
-		${WRKSRC}/{devede_other,devede_executor,devede}.py
+	${SUBST_CMD} ${WRKSRC}/{devede_other,devede_executor,devede}.py
 
 do-install:
 	cd ${WRKSRC} && \

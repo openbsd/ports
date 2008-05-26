@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/16 13:35:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/05/26 13:49:59 ajacoutot Exp $
 bin/devede
 lib/python${MODPY_VERSION}/site-packages/devede/
 lib/python${MODPY_VERSION}/site-packages/devede/devede_bincue.py
@@ -22,12 +22,9 @@ share/devede/
 share/devede/background.png
 share/devede/barras.png
 share/devede/devede.glade
+share/devede/devede.svg
 share/devede/devedesans.ttf
 share/devede/estira.png
-share/devede/ntsc_active.png
-share/devede/ntsc_wide_active.png
-share/devede/pal_active.png
-share/devede/pal_wide_active.png
 share/devede/silence.wav
 share/doc/devede/
 share/doc/devede/html/
@@ -44,10 +41,13 @@ share/doc/devede/html/menu_opts.jpg
 share/doc/devede/html/movie1.jpg
 share/doc/devede/html/movie2.jpg
 share/doc/devede/html/movie3.jpg
+share/doc/devede/html/movie3b.jpg
 share/doc/devede/html/movie4.jpg
 share/doc/devede/html/movie5.jpg
 share/doc/devede/html/movie6.jpg
+share/doc/devede/html/movie7.jpg
 share/doc/devede/html/psf.html
+share/doc/devede/html/subs.jpg
 share/doc/devede/html/title_prop.jpg
 share/locale/ca/LC_MESSAGES/devede.mo
 share/locale/cs/LC_MESSAGES/devede.mo
@@ -58,10 +58,13 @@ share/locale/el/LC_MESSAGES/devede.mo
 share/locale/es/LC_MESSAGES/devede.mo
 share/locale/fr/LC_MESSAGES/devede.mo
 share/locale/gl/LC_MESSAGES/devede.mo
-share/locale/it/LC_MESSAGES/devede.mo
+share/locale/it_IT/
+share/locale/it_IT/LC_MESSAGES/
+share/locale/it_IT/LC_MESSAGES/devede.mo
 share/locale/nb_NO/
 share/locale/nb_NO/LC_MESSAGES/
 share/locale/nb_NO/LC_MESSAGES/devede.mo
+share/locale/nl/LC_MESSAGES/devede.mo
 share/locale/pl/LC_MESSAGES/devede.mo
 share/locale/pt_BR/LC_MESSAGES/devede.mo
 share/locale/pt_PT/
@@ -70,6 +73,7 @@ share/locale/pt_PT/LC_MESSAGES/devede.mo
 share/locale/ru/LC_MESSAGES/devede.mo
 share/locale/sk/LC_MESSAGES/devede.mo
 share/locale/sv/LC_MESSAGES/devede.mo
+share/locale/zh_TW/LC_MESSAGES/devede.mo
 share/pixmaps/devede.svg
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
