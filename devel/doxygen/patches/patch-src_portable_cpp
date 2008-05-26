@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_portable_cpp,v 1.1 2008/05/26 17:08:35 naddy Exp $
+--- src/portable.cpp.orig	Sat May 24 22:08:47 2008
++++ src/portable.cpp	Sat May 24 22:10:27 2008
+@@ -377,7 +377,7 @@ void * portable_iconv_open(const char* tocode, const c
+ size_t portable_iconv (void *cd, const char** inbuf,  size_t *inbytesleft, 
+                                        char** outbuf, size_t *outbytesleft)
+ {
+-#if ((defined(_LIBICONV_VERSION) && (_LIBICONV_VERSION>=0x0109)) || defined(_OS_SOLARIS_))
++#if ((defined(_LIBICONV_VERSION) && (_LIBICONV_VERSION>=0x0109 && _LIBICONV_VERSION<0x010B)) || defined(_OS_SOLARIS_))
+ #define CASTNEEDED(x) (x)
+ #else
+ #define CASTNEEDED(x) (char **)(x)
