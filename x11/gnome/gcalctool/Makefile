@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/26 10:28:46 ajacoutot Exp $
 
 COMMENT=		GTK2 desktop calculator
 
@@ -26,8 +26,8 @@ BUILD_DEPENDS=		::devel/bison \
 			::textproc/scrollkeeper \
 			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=		::x11/gnome/yelp
 
+MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 USE_LIBTOOL=		No

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2008/05/26 10:28:46 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
@@ -27,12 +27,12 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 
 BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=	:yelp-*:x11/gnome/yelp
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 USE_X11=		Yes
+MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \

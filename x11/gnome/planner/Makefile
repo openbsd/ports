@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/05/26 10:28:46 ajacoutot Exp $
 
 COMMENT=		project management application
 
@@ -34,8 +34,7 @@ BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:py-gtk2-*:x11/py-gtk2
 RUN_DEPENDS=		:py-gtk2-*:x11/py-gtk2 \
     			:scrollkeeper-*:textproc/scrollkeeper  \
-			:shared-mime-info->=0.21:misc/shared-mime-info \
-			:yelp-*:x11/gnome/yelp
+			:shared-mime-info->=0.21:misc/shared-mime-info
 
 LIB_DEPENDS=		bonoboui-2::x11/gnome/libbonoboui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui \
@@ -43,6 +42,7 @@ LIB_DEPENDS=		bonoboui-2::x11/gnome/libbonoboui \
     			exslt,xslt::textproc/libxslt
 
 USE_X11=		Yes
+MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/planner \

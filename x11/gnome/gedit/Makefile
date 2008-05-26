@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2008/05/26 10:28:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -44,10 +44,10 @@ LIB_DEPENDS=		enchant::textproc/enchant \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-doc-utils-*:x11/gnome/doc-utils \
-			:yelp-*:x11/gnome/yelp \
 			::x11/py-gtksourceview \
 			::x11/gnome/py-gnome
 
+MODGNOME_HELP_FILES=	Yes
 MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/05/11 12:29:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2008/05/26 10:28:46 ajacoutot Exp $
 
 COMMENT=		manage encryption keys
 
@@ -37,8 +37,7 @@ BUILD_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			::textproc/scrollkeeper \
 			::www/epiphany \
-			::x11/gnome/gedit \
-			::x11/gnome/yelp
+			::x11/gnome/gedit
 LIB_DEPENDS=		lber,ldap::databases/openldap \
 			notify::devel/libnotify \
 			soup-2.2::devel/libsoup \
@@ -51,6 +50,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 USE_X11=		Yes
+MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
