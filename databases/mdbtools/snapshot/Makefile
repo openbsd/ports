@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 22:27:39 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2008/05/26 16:29:26 ajacoutot Exp $
 
 COMMENT-main=	read microsoft Access MDB
 COMMENT-gmdb=	graphical interface to MDB tools
 DATE=		20070603
 DISTNAME=	mdbtools-${DATE}
 PKGNAME-main=	mdbtools-${DATE}
-PKGNAME-gmdb=	gmdb-${DATE}
+PKGNAME-gmdb=	gmdb-${DATE}p0
 HOMEPAGE=	http://mdbtools.sourceforge.net/
 
 CATEGORIES=	databases converters
@@ -40,6 +40,9 @@ MODULES=	devel/gettext
 LIB_DEPENDS-gmdb=${LIB_DEPENDS} \
 		gnomeui-2::x11/gnome/libgnomeui \
 		mdb,mdbsql::databases/mdbtools/snapshot
+RUN_DEPENDS-gmdb=${RUN_DEPENDS} \
+		:yelp-*:x11/gnome/yelp
+
 WANTLIB-gmdb=	${WANTLIB} \
 		audiofile bonobo-activation popt ORBit-2 pthread \
 		bonoboui-2  atk-1.0 gobject-2.0 m jpeg \

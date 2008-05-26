@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		archive manager for GNOME
 
 GNOME_PROJECT=		file-roller
 GNOME_VERSION=		2.20.3
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		archivers
 
 # GPL
@@ -34,6 +34,7 @@ LIB_DEPENDS=		gnomeui-2.>=1800::x11/gnome/libgnomeui \
 			nautilus-extension.>=1::x11/gnome/nautilus
 
 USE_X11=		Yes
+MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS=		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/file-roller \
 			--disable-schemas-install \

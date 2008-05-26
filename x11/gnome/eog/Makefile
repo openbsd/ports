@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME: an image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		2.20.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		graphics
 
 MAINTAINER=		Thomas Delaet <thomas@delaet.org>
@@ -37,6 +37,7 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 
+MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \

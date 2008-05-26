@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2008/05/11 12:29:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.12.1
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=    		mail
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
@@ -53,6 +53,7 @@ LIB_DEPENDS=		camel-1.2,camel-provider-1.2.>=4.1,ebook-1.2.>=4.1,ecal-1.2.>=2.1,
 			notify.>=2::devel/libnotify
 
 USE_X11=		Yes
+MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 YACC=			bison
 CONFIGURE_STYLE=	gnu

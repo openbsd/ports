@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2008/04/29 18:24:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2008/05/26 16:29:26 ajacoutot Exp $
 
 COMMENT=		editor for the GConf configuration system
 
 GNOME_PROJECT=		gconf-editor
 GNOME_VERSION=		2.22.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gconf/
@@ -37,6 +38,7 @@ MODULES=		devel/gettext \
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
+MODGNOME_HELP_FILES=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gconf-editor \
 			--disable-schemas-install

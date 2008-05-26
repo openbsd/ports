@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.20.3
 SHARED_LIBS +=  gnome-desktop-2      5.8      # .5.16
 CATEGORIES=		x11
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,6 +32,7 @@ RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			startup-notification-1::devel/startup-notification
 
+MODGNOME_HELP_FILES=	Yes
 MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2008/04/17 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-4.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		mail	
 
 HOMEPAGE=		http://www.nongnu.org/mailnotify/
@@ -33,7 +33,8 @@ BUILD_DEPENDS=         :scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme-*:x11/gnome/icon-theme \
-			:desktop-file-utils-*:devel/desktop-file-utils
+			:desktop-file-utils-*:devel/desktop-file-utils \
+			:yelp-*:x11/gnome/yelp
 LIB_DEPENDS=		notify::devel/libnotify \
 			eel-2::x11/gnome/eel
 

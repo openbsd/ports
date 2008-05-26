@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2008/05/16 11:55:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2008/05/26 16:29:26 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
 DISTNAME=	dia-0.96.1
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/Dia/
@@ -60,6 +60,7 @@ WANTLIB+=	ICE ORBit-2 ORBitCosNaming-2 SM audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 crypto dbus-1 dbus-glib-1 \
 		esd gailutil gconf-2 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 jpeg ssl util
+RUN_DEPENDS+=	:yelp-*:x11/gnome/yelp
 .else
 CONFIGURE_ARGS+=--disable-gnome \
 		--without-gnomeprint

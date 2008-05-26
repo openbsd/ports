@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		binary editor
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		ghex
 GNOME_VERSION=		2.20.1
 SHARED_LIBS=		gtkhex 0.0
 CATEGORIES=		sysutils editors
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,6 +30,7 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui
 
+MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${ENABLE_SHARED} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/05/14 15:26:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		GNOME media utilities
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		2.20.1
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 SHARED_LIBS +=	cddb-slave2          0.0      # .0.0
 CATEGORIES=		x11
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,6 +39,7 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango
 RUN_DEPENDS=		::textproc/scrollkeeper
 
+MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-media \

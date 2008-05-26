@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		developer documentation for GNOME
 
 GNOME_PROJECT=		gnome-devel-docs
 GNOME_VERSION=		2.20.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,6 +17,8 @@ MODULES=		x11/gnome
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			:gnome-doc-utils-*:x11/gnome/doc-utils
+
+MODGNOME_HELP_FILES=	Yes
 
 PKG_ARCH=		*
 USE_LIBTOOL=		No

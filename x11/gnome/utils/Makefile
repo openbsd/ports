@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.20.0.1
 SHARED_LIBS +=  gdict-1.0      5.13      # .5.15
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,6 +38,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 MODGNOME_DEVHELP_FILES=	Yes
+MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

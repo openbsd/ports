@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2008/04/09 13:28:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	2.18.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,6 +32,7 @@ LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
 		startup-notification-1::devel/startup-notification \
 		vte.>=11::devel/vte
 
+MODGNOME_HELP_FILES=	Yes
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
 CONFIGURE_ARGS= --with-widget=vte \

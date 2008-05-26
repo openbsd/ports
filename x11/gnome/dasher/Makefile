@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		graphical predictive text input system
 
 GNOME_PROJECT=		dasher
 GNOME_VERSION=		4.6.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		x11
 
@@ -32,6 +32,7 @@ LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			cspi,spi::x11/gnome/at-spi
 
 USE_X11=		Yes
+MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/dasher/ \
 			--disable-schema-install \

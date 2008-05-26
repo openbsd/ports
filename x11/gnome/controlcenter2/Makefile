@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2008/05/12 19:40:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.20.3
-PKGNAME=		control-center2-${VERSION}p3
+PKGNAME=		control-center2-${VERSION}p4
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
 
@@ -48,6 +48,7 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			:scrollkeeper-*:textproc/scrollkeeper
 
 USE_X11=		Yes
+MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control-center2 \
 			--disable-schemas-install \

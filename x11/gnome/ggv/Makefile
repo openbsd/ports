@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		GNOME frontend for GhostScript
 
 GNOME_PROJECT=		ggv
 GNOME_VERSION=		2.12.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print
 
 MAINTAINER=		Thomas Delaet <thomas@delaet.org>	
@@ -31,6 +32,7 @@ LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:ghostscript-*:print/ghostscript/gnu
 
+MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"

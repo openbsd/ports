@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2008/02/04 17:55:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=		dialogs for Gnome
 
 GNOME_PROJECT=		zenity
 GNOME_VERSION=		2.20.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,6 +29,7 @@ LIB_DEPENDS=		dbus-glib-1.>=3::x11/dbus-glib \
 			gnomecanvas-2::x11/gnome/libgnomecanvas \
 			notify::devel/libnotify
 
+MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 USE_LIBTOOL=		No
 CONFIGURE_ARGS= 	--enable-libnotify

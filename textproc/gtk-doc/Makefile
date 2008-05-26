@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/26 16:29:27 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
 VERSION=	1.7
 DISTNAME=	gtk-doc-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	textproc devel
 
 HOMEPAGE=	http://www.gtk.org/gtk-doc/
@@ -26,7 +26,8 @@ RUN_DEPENDS=	::textproc/openjade 	\
 		::textproc/docbook 	\
 		::textproc/docbook-xsl 	\
 		::textproc/libxslt	\
-		::textproc/scrollkeeper
+		::textproc/scrollkeeper	\
+		:yelp-*:x11/gnome/yelp
 
 post-extract:
 	cp ${LOCALBASE}/share/xml/docbook/catalog.xml \
