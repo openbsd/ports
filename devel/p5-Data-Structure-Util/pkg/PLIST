@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 15:58:02 simon Exp $
-@comment bin/packages.pl
+@comment $OpenBSD: PLIST,v 1.2 2008/05/26 07:28:56 simon Exp $
+${P5ARCH}/
 ${P5ARCH}/Data/
 ${P5ARCH}/Data/Structure/
 ${P5ARCH}/Data/Structure/Util.pm
+${P5ARCH}/auto/
 ${P5ARCH}/auto/Data/
 ${P5ARCH}/auto/Data/Structure/
 ${P5ARCH}/auto/Data/Structure/Util/
 ${P5ARCH}/auto/Data/Structure/Util/Util.bs
 ${P5ARCH}/auto/Data/Structure/Util/Util.so
-@comment @man man/man1/packages.pl.1
+${P5ARCH}/auto/Data/Structure/Util/autosplit.ix
 @man man/man3p/Data::Structure::Util.3p
