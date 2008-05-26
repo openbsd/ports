@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2008/05/08 10:56:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		2.21.5
 SHARED_LIBS +=	gnome-keyring        3.0      # .1.1
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,6 +28,7 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			tasn1.>=1::security/libtasn1 \
 			dbus-1::x11/dbus
 
+MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-keyring \
 			--disable-schemas-install \

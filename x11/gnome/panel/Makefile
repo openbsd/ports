@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2008/05/20 11:08:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=		GNOME panel
 
 GNOME_PROJECT=		gnome-panel
 GNOME_VERSION=		2.20.2
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 SHARED_LIBS=	panel-applet-2       2.18      # .2.26
 CATEGORIES=		x11
 
@@ -33,6 +33,7 @@ LIB_DEPENDS= 		gnome-desktop-2.>=5::x11/gnome/desktop \
 			gnome-menu::x11/gnome/menus \
 			wnck-1.>=21::devel/libwnck
 
+MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+= 	--disable-eds \

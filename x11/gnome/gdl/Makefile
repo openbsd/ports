@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/18 18:27:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=	GNOME Devtool Libraries (GDL)
 
 GNOME_PROJECT=	gdl
 GNOME_VERSION=	0.7.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=  gdl-1                0.0      # .0.0
 SHARED_LIBS +=  gdl-gnome-1          0.0      # .0.0
 
@@ -28,6 +28,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		popt ssl util xml2 z
 
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
+
+MODGNOME_DEVHELP_FILES=	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

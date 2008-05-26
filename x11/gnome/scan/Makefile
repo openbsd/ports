@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/14 12:38:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/26 08:32:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ GNOME_PROJECT=	gnome-scan
 GNOME_VERSION=	0.6
 CATEGORIES=	graphics
 
-PKGNAME-main=	${GNOME_PROJECT}-${GNOME_VERSION}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}
 
 SHARED_LIBS=	gnomescan	0.0 # .0.0
@@ -49,6 +49,9 @@ WANTLIB-gimp=	${WANTLIB} gegl-0.0
 LIB_DEPENDS-gimp= ${LIB_DEPENDS} \
 		gnomescan::${BUILD_PKGPATH},-main \
 		gimp-2.0.>=245,gimpbase-2.0,gimpcolor-2.0,gimpconfig-2.0,gimpmath-2.0,gimpmodule-2.0,gimpui-2.0,gimpwidgets-2.0::graphics/gimp/stable
+
+RUN_DEPENDS-main=${RUN_DEPENDS} \
+		:devhelp-*:x11/gnome/devhelp
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes

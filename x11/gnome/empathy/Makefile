@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/13 13:06:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for the Gnome desktop
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		0.14
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 SHARED_LIBS +=	empathy              0.0      # .4.0
 SHARED_LIBS +=	empathy-gtk          0.0      # .5.0
 CATEGORIES=		net
@@ -43,6 +43,7 @@ RUN_DEPENDS=		::net/telepathy/telepathy-butterfly \
 			::net/telepathy/telepathy-gabble \
 			::x11/hicolor-icon-theme
 
+MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

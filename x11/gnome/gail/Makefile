@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=		GNOME Accessibility Implementation Library
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		gail
 GNOME_VERSION=		1.20.2
 SHARED_LIBS +=	gailutil         20.0         # .18.1
 CATEGORIES=		devel
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,6 +24,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
+MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

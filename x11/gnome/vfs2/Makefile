@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2008/05/04 14:36:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2008/05/26 08:32:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ COMMENT-smb=		samba module for gnome-vfs2
 GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.20.1
 PKGNAME=		gnome-vfs2-${VERSION}
-PKGNAME-main=		gnome-vfs2-${VERSION}p4
+PKGNAME-main=		gnome-vfs2-${VERSION}p5
 PKGNAME-smb=		gnome-vfs2-smb-${VERSION}p2
 MULTI_PACKAGES=		-main -smb
 
@@ -37,7 +37,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			cdda_interface,cdda_paranoia::audio/cdparanoia \
 			bz2.>=10::archivers/bzip2 \
 			fam::sysutils/fam
-RUN_DEPENDS-main=	${RUN_DEPENDS}
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			:devhelp-*:x11/gnome/devhelp
 
 WANTLIB-smb=		${WANTLIB}
 LIB_DEPENDS-smb=	${LIB_DEPENDS} \

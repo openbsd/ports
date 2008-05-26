@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=		libraries for the GNOME project
 
 GNOME_PROJECT=		libgnome
 GNOME_VERSION=		2.20.1.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=	gnome-2              1900.0   # .1999.2
 
 # LGPL
@@ -27,6 +27,8 @@ LIB_DEPENDS=		esd.>=2.26::audio/esound \
 			bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
 			gnomevfs-2.>=1799::x11/gnome/vfs2 \
 			popt::devel/popt
+
+MODGNOME_DEVHELP_FILES=	Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libgnome \

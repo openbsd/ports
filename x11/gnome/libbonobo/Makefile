@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/04/09 13:27:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=		GNOME component and compound document system
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		2.20.3
 SHARED_LIBS +=	bonobo-activation    6.0      # .4.0
 SHARED_LIBS +=	bonobo-2             2.0      # .0.0
 CATEGORIES=		devel
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,6 +24,8 @@ BUILD_DEPENDS=		::devel/popt
 LIB_DEPENDS=		ORBit-2.>=2,ORBitCosNaming-2.>=2::devel/ORBit2 \
 			glib-2.0.>=1200.0,gmodule-2.0.>=1200.0,gobject-2.0.>=1200.0,gthread-2.0.>=1200.0::devel/glib2 \
 			xml2.>=9::textproc/libxml			
+
+MODGNOME_DEVHELP_FILES=	Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

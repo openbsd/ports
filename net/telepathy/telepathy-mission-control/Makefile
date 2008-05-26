@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/01/17 18:29:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
 DISTNAME=		telepathy-mission-control-4.55
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	missioncontrol-client 1.1      # .3.3
 SHARED_LIBS +=	missioncontrol-server 0.2      # .3.6
 
@@ -24,6 +25,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		::textproc/libxslt
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			telepathy.>=2::net/telepathy/libtelepathy
+RUN_DEPENDS=		:devhelp-*:x11/gnome/devhelp
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

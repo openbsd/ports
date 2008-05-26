@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/30 22:46:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
 DISTNAME=		telepathy-glib-0.7.0
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	telepathy-glib       1.0      # .4.0
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-glib/}
@@ -14,7 +15,8 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODPY_EXPAT_DEPENDS} \
-			::textproc/libxslt
+			::textproc/libxslt \
+			:devhelp-*:x11/gnome/devhelp
 LIB_DEPENDS=		dbus-glib-1::x11/dbus-glib
 
 USE_GMAKE=		Yes

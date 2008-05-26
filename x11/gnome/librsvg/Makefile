@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.20.0
 SHARED_LIBS +=	rsvg-2         20.0           # .22.0
 CATEGORIES=	devel
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,6 +25,7 @@ MODULES=	devel/gettext x11/gnome
 LIB_DEPENDS=	gdk-x11-2.0.>=1200,gdk_pixbuf-2.0.>=1200,gtk-x11-2.0.>=1200::x11/gtk+2 \
 		croco-0.6.>=3::www/libcroco
 
+MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-svgz \
 			--with-croco \

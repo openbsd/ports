@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
 GNOME_VERSION=		1.3.7
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://gok.ca/
 
@@ -35,6 +35,7 @@ LIB_DEPENDS=		wnck-1::devel/libwnck \
 			gnomeui-2::x11/gnome/libgnomeui \
 			gnomespeech::x11/gnome/speech
 
+MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

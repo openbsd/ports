@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2008/05/26 08:32:57 ajacoutot Exp $
 
 COMMENT=		user interface components for libgnomeprint
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		libgnomeprintui
 GNOME_VERSION=		2.18.1
 SHARED_LIBS +=	gnomeprintui-2-2    2.0      # .1.0
 CATEGORIES=		devel
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,6 +29,7 @@ RUN_DEPENDS=		:gnome-icon-theme->=1.2.0:x11/gnome/icon-theme
 LIB_DEPENDS=		gnomecanvas-2::x11/gnome/libgnomecanvas \
 			gnomeprint-2-2::x11/gnome/libgnomeprint
 
+MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
