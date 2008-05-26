@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/22 15:58:57 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/26 08:24:28 simon Exp $
 
 COMMENT=	map two-letter codes to state names and vice versa (US)
 
 MODULES=	cpan
-DISTNAME=	Locale-US-1.1
+DISTNAME=	Locale-US-1.2
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
