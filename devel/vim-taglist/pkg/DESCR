@@ -1,0 +1,4 @@
+The "Tag List" plugin is a source code browser for the Vim
+editor.  It provides an overview of the structure of source
+code files and allows you to efficiently browse through
+source code files in different programming languages.
