@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2008/04/09 13:23:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2008/05/26 09:53:22 ajacoutot Exp $
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
@@ -6,7 +6,7 @@ COMMENT-docs=		C++ interface for gtk2+ documentation
 GNOME_PROJECT=		gtkmm
 GNOME_VERSION=		2.12.7
 PKGNAME-main=		gtk2mm-${VERSION}
-PKGNAME-docs=		gtk2mm-docs-${VERSION}
+PKGNAME-docs=		gtk2mm-docs-${VERSION}p0
 CATEGORIES=		devel x11
 
 SHARED_LIBS=		atkmm-1.6	6.1 \
@@ -39,7 +39,7 @@ LIB_DEPENDS=		glibmm-2.4:glib2mm->=2.14.2:devel/glib2mm \
 
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
-RUN_DEPENDS-docs=
+RUN_DEPENDS-docs=	:devhelp-*:x11/gnome/devhelp
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
