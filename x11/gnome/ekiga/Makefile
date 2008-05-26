@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/22 19:31:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/26 06:59:41 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	2.0.12
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	net multimedia
 
@@ -27,8 +27,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 \
 		jpeg krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre plc4 plds4 png popt pthread smime3 \
-		softokn3 ssl ssl3 stdc++ usbhid util xml2 z
+		pangoft2-1.0 pcre plc4 plds4 png popt pt pthread \
+		smime3 softokn3 ssl ssl3 stdc++ usbhid util xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -36,8 +36,7 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
 		::x11/gnome/doc-utils
 RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper
-LIB_DEPENDS=	pt.>=2::devel/pwlib \
-		gnomeui-2.>=2000::x11/gnome/libgnomeui \
+LIB_DEPENDS=	gnomeui-2.>=2000::x11/gnome/libgnomeui \
 		opal::net/opal \
 		SDL.>=8::devel/sdl \
 		camel-1.2.>=10,ebook-1.2,edataserver-1.2::databases/evolution-data-server
