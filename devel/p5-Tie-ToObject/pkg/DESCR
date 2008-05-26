@@ -1,0 +1,7 @@
+While "tie" in Perl allows tying to an arbitrary object, the class in
+question must support this in it's implementation of TIEHASH, TIEARRAY
+or whatever.
+
+Tie::ToObject provides a very tie constructor that simply returns the
+object it was given as it's first argument.
+That way the side effects of calling $object->TIEHASH are avoided.
